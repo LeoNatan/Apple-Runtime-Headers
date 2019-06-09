@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
 + (id)dictionaryRepresentationOfCity:(id)arg1;
 + (id)temperatureFromDictionaryRepresentation:(id)arg1;
 + (id)dictionaryRepresentationOfTemperature:(id)arg1;
++ (id)scaleCategoryFromDictionaryRepresentation:(id)arg1;
++ (id)dictionaryRepresentationOfScaleCategory:(id)arg1;
 + (_Bool)isCityValid:(id)arg1;
 + (void)populateCity:(id)arg1 withHourlyForecastDictionaries:(id)arg2;
 + (void)populateCity:(id)arg1 withDayForecastDictionaries:(id)arg2;

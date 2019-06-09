@@ -9,5 +9,8 @@
 @interface NSDictionary (IDSMetadataFileURLType)
 - (id)idsMetadataFileKey;
 - (long long)idsMetadataFileURLType;
+- (id)objectSentinelNull;
+- (id)objectWithNSNulls:(id)arg1;
+- (id)objectWithNoNSNulls:(id *)arg1;
 @end
 

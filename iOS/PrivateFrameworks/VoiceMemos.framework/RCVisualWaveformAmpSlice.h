@@ -6,33 +6,42 @@
 
 #import <objc/NSObject.h>
 
-@class CALayer, NSMutableSet;
+@class CALayer, UIColor;
 
 __attribute__((visibility("hidden")))
 @interface RCVisualWaveformAmpSlice : NSObject
 {
-    NSMutableSet *_segments;
     double _visualAmplitudeHeight;
     double _interpolatingvisualAmplitudeHeight;
     double _interpolatingvisualAmplitudeHeightDiff;
     long long _interpolatingVisualAmplitudeHeightFrameCount;
-    _Bool _needsPathUpdate;
-    double _sliceIndex;
+    UIColor *_lastColor;
+    _Bool _hasProcessedSegments;
+    _Bool _hidden;
+    long long _sliceIndex;
     double _amplitude;
     long long _visualAmplitudeHeightInterpolatingFrames;
     CALayer *_sliceLayer;
+    unsigned long long _color;
 }
 
-@property(nonatomic) _Bool needsPathUpdate; // @synthesize needsPathUpdate=_needsPathUpdate;
++ (id)colorForSliceColor:(unsigned long long)arg1;
++ (void)setSecondaryColor:(id)arg1;
++ (id)secondaryColor;
++ (void)setPrimaryColor:(id)arg1;
++ (id)primaryColor;
+@property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
+@property(nonatomic) unsigned long long color; // @synthesize color=_color;
+@property(nonatomic) _Bool hasProcessedSegments; // @synthesize hasProcessedSegments=_hasProcessedSegments;
 @property(retain, nonatomic) CALayer *sliceLayer; // @synthesize sliceLayer=_sliceLayer;
 @property(nonatomic) long long visualAmplitudeHeightInterpolatingFrames; // @synthesize visualAmplitudeHeightInterpolatingFrames=_visualAmplitudeHeightInterpolatingFrames;
 @property(nonatomic) double amplitude; // @synthesize amplitude=_amplitude;
-@property(nonatomic) double sliceIndex; // @synthesize sliceIndex=_sliceIndex;
+@property(nonatomic) long long sliceIndex; // @synthesize sliceIndex=_sliceIndex;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) _Bool segmentsAreRendered;
-- (void)clearSegments;
-- (void)addSegment:(id)arg1;
 @property(nonatomic) double visualAmplitudeHeight;
+- (void)setFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) UIColor *uiColor;
+@property(readonly, nonatomic) _Bool hasVisualAmplitudeInterpolatingFramesLeft;
 - (id)init;
 - (id)initWithIndex:(double)arg1 amplitude:(double)arg2;
 

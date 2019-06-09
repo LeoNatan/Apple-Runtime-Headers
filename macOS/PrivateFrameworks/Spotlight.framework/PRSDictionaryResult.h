@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Spotlight/PRSResult.h>
+#import <SpotlightServices/SFSearchResult_SpotlightExtras.h>
 
 @class NSString;
 
-@interface PRSDictionaryResult : PRSResult
+@interface PRSDictionaryResult : SFSearchResult_SpotlightExtras
 {
     NSString *_dictionaryId;
     NSString *_definitionId;
@@ -19,14 +19,13 @@
 @property(retain) NSString *definitionId; // @synthesize definitionId=_definitionId;
 @property(retain) NSString *dictionaryId; // @synthesize dictionaryId=_dictionaryId;
 - (void).cxx_destruct;
-- (id)type;
 - (id)groupName;
 - (id)category;
 - (unsigned long long)resultOpenOptions;
-- (id)iconImage;
-- (id)iconImageForApplication;
+- (id)pathForApplicationToOpen;
 - (id)uniqueIdentifier;
 - (id)URL;
+- (BOOL)isLocalResult;
 - (id)initWithDisplayName:(id)arg1 definitionId:(id)arg2 dictionaryId:(id)arg3 query:(id)arg4;
 
 @end

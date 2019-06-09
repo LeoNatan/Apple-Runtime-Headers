@@ -15,7 +15,7 @@
 
 @property(readonly, nonatomic) PETScalarEventTracker *tracker; // @synthesize tracker=_tracker;
 - (void).cxx_destruct;
-- (void)trackEventWithScalar:(unsigned long long)arg1 extracted:(struct SGMBannerExtractionType_)arg2;
+- (void)trackEventWithScalar:(unsigned long long)arg1 extracted:(struct SGMBannerExtractionType_)arg2 extractionModelVersion:(unsigned long long)arg3;
 - (id)init;
 
 @end

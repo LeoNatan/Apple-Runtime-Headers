@@ -34,6 +34,7 @@
 - (id)addMoreConversationSpecificMessages:(id)arg1 conversationId:(id)arg2 mailbox:(id)arg3 isProtectedData:(_Bool)arg4;
 - (id)addMoreMessages:(id)arg1 mailbox:(id)arg2 isProtectedData:(_Bool)arg3;
 - (id)addMessages:(id)arg1 containsNewMessages:(_Bool)arg2 mailbox:(id)arg3;
+- (id)addAccountAuthenticationStatusRequest:(double)arg1;
 - (id)addStandaloneAccountIdentity:(id)arg1;
 - (id)updateMailboxListForAccount:(id)arg1 mailboxListChanged:(_Bool *)arg2;
 - (void)_createDefaultMailbox:(id)arg1;

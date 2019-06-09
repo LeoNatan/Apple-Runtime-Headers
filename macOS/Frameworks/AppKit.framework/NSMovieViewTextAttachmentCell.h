@@ -6,18 +6,10 @@
 
 #import <AppKit/NSViewTextAttachmentCell.h>
 
-@class QTMovie;
-
 @interface NSMovieViewTextAttachmentCell : NSViewTextAttachmentCell
 {
-    QTMovie *_movie;
-    struct CGSize _size;
 }
 
-- (void)dealloc;
-- (struct CGSize)cellSize;
-- (void)addView:(id)arg1 frame:(struct CGRect)arg2 toView:(id)arg3 characterIndex:(unsigned long long)arg4 layoutManager:(id)arg5;
-- (id)viewWithFrame:(struct CGRect)arg1 forView:(id)arg2 characterIndex:(unsigned long long)arg3 layoutManager:(id)arg4;
 - (id)initWithMovie:(id)arg1;
 
 @end

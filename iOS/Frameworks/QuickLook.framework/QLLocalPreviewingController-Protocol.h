@@ -10,7 +10,6 @@
 @protocol QLPrintingProtocol;
 
 @protocol QLLocalPreviewingController <NSObject>
-+ (Class)transformerClass;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(QLPreviewContext *)arg2 completionHandler:(void (^)(NSError *))arg3;
 
 @optional

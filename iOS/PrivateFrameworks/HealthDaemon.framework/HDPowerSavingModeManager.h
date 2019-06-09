@@ -8,14 +8,13 @@
 
 #import <HealthDaemon/HDAssertionObserver-Protocol.h>
 
-@class HDAssertionManager, NSString, RadiosPreferences;
+@class HDAssertionManager, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HDPowerSavingModeManager : NSObject <HDAssertionObserver>
 {
     NSObject<OS_dispatch_queue> *_queue;
     HDAssertionManager *_assertionManager;
-    RadiosPreferences *_radioPrefs;
     _Bool _powerSavingModeEnabled;
     _Bool _supportsCellularTelephony;
 }

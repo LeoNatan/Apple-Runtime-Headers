@@ -15,6 +15,9 @@ __attribute__((visibility("hidden")))
 + (void)_postGLInactiveNotification;
 + (void)_postGLActiveNotification;
 + (_Bool)setCurrentGLContext:(id)arg1;
++ (void)createSharedRepeatableTexture:(unsigned int *)arg1 withImageName:(id)arg2 ofType:(id)arg3;
++ (void)teardownSharedContext;
++ (id)createSharedGLContext;
 + (id)createPlatformGLContext;
 + (id)snapshotImageOfFrameBufferWithID:(unsigned int)arg1 bufferSize:(struct CGSize)arg2 displayScale:(float)arg3;
 +     // Error parsing type: v24@0:4^{?=[4]}8f12f16^{?=[4]}20, name: translateMatrix:byX:Y:result:

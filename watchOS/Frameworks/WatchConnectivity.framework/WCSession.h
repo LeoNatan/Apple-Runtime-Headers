@@ -20,6 +20,7 @@
     _Bool _reachable;
     _Bool _complicationEnabled;
     _Bool _watchAppInstalled;
+    _Bool _companionAppInstalled;
     _Bool _hasCompletedInitialActivation;
     _Bool _connectionWasInterrupted;
     _Bool _delegateSupportsAsyncActivate;
@@ -61,6 +62,7 @@
 @property(readonly) NSOperationQueue *workOperationQueue; // @synthesize workOperationQueue=_workOperationQueue;
 @property(readonly) NSOperationQueue *backgroundWorkOperationQueue; // @synthesize backgroundWorkOperationQueue=_backgroundWorkOperationQueue;
 @property(readonly) NSOperationQueue *delegateOperationQueue; // @synthesize delegateOperationQueue=_delegateOperationQueue;
+@property(nonatomic, getter=isCompanionAppInstalled) _Bool companionAppInstalled; // @synthesize companionAppInstalled=_companionAppInstalled;
 @property(nonatomic, getter=isWatchAppInstalled) _Bool watchAppInstalled; // @synthesize watchAppInstalled=_watchAppInstalled;
 @property(copy, nonatomic) NSDictionary *receivedApplicationContext; // @synthesize receivedApplicationContext=_receivedApplicationContext;
 @property(copy, nonatomic) NSDictionary *applicationContext; // @synthesize applicationContext=_applicationContext;

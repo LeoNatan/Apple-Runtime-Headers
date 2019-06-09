@@ -6,6 +6,7 @@
 
 #import <Foundation/NSOperation.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIRemoveFromWishlistOperation : NSOperation
 {
     long long _entityID;

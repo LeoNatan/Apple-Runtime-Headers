@@ -10,30 +10,33 @@
 
 @interface FPMemoryCategory : NSObject
 {
-    NSString *_name;
+    BOOL _isSummary;
     NSMutableSet *_memoryObjects;
     NSMutableSet *_memoryRegions;
+    unsigned char _segment;
     unsigned long long _totalDirtySize;
     unsigned long long _totalSwappedSize;
     unsigned long long _totalCleanSize;
     unsigned long long _totalReclaimableSize;
     unsigned long long _totalWiredSize;
-    unsigned char _segment;
 }
 
 @property(readonly, nonatomic) unsigned char segment; // @synthesize segment=_segment;
-@property(readonly) unsigned long long totalWiredSize; // @synthesize totalWiredSize=_totalWiredSize;
-@property(readonly) unsigned long long totalReclaimableSize; // @synthesize totalReclaimableSize=_totalReclaimableSize;
-@property(readonly) unsigned long long totalCleanSize; // @synthesize totalCleanSize=_totalCleanSize;
-@property(readonly) unsigned long long totalSwappedSize; // @synthesize totalSwappedSize=_totalSwappedSize;
-@property(readonly) unsigned long long totalDirtySize; // @synthesize totalDirtySize=_totalDirtySize;
-@property(readonly) NSSet *memoryObjects; // @synthesize memoryObjects=_memoryObjects;
-@property(readonly) NSString *name; // @synthesize name=_name;
+@property(nonatomic) unsigned long long totalWiredSize; // @synthesize totalWiredSize=_totalWiredSize;
+@property(nonatomic) unsigned long long totalReclaimableSize; // @synthesize totalReclaimableSize=_totalReclaimableSize;
+@property(nonatomic) unsigned long long totalCleanSize; // @synthesize totalCleanSize=_totalCleanSize;
+@property(nonatomic) unsigned long long totalSwappedSize; // @synthesize totalSwappedSize=_totalSwappedSize;
+@property(nonatomic) unsigned long long totalDirtySize; // @synthesize totalDirtySize=_totalDirtySize;
+@property(readonly, nonatomic) NSSet *memoryObjects; // @synthesize memoryObjects=_memoryObjects;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL purgeableNonVolatile;
-@property(readonly) int totalRegions;
+@property(readonly, nonatomic) int totalRegions;
 - (void)addMemoryObject:(id)arg1;
-- (id)initWithName:(id)arg1 segment:(unsigned char)arg2;
+@property(readonly, nonatomic) NSString *fullName;
+@property(readonly, nonatomic) NSString *detailedName;
+@property(readonly, nonatomic) NSString *name;
+- (id)initWithSegment:(unsigned char)arg1 summary:(BOOL)arg2;
+- (id)initWithSegment:(unsigned char)arg1;
 
 @end
 

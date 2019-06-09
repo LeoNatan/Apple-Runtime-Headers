@@ -9,6 +9,7 @@
 @class NSHashTable;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMetricsFlushTimer : NSObject
 {
     NSHashTable *_metricsControllers;

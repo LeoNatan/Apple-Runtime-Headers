@@ -9,6 +9,7 @@
 @class NSArray, NSImage, NSString;
 
 @protocol TabBarViewItem <NSObject>
+@property(readonly, copy, nonatomic) NSString *accessibilityItemIdentifier;
 @property(readonly, copy, nonatomic) NSArray *accessoryViews;
 @property(readonly, copy, nonatomic) NSString *toolTip;
 @property(readonly, copy, nonatomic) NSString *label;

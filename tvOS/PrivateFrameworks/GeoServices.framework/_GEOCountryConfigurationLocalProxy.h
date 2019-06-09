@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     id <_GEOCountryConfigurationServerProxyDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_dispatch_source> *_scheduledUpdateTimer;
+    id _countryCodeOverrideChangeListener;
 }
 
 - (void).cxx_destruct;

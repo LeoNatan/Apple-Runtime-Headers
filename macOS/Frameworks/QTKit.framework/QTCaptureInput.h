@@ -6,30 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class QTCaptureSession;
-
 @interface QTCaptureInput : NSObject
 {
-    QTCaptureSession *_session;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
-- (void)sessionWillUseOutputDecompressionOptions:(id)arg1 forConnection:(id)arg2;
-- (void)graphWillStopForSession:(id)arg1 dueToError:(id)arg2;
-- (void)graphWillStartForSession:(id)arg1;
-- (int)clockProviderNodeForConnection:(id)arg1;
-- (unsigned int)connectionUnitOutputNumberForConnection:(id)arg1;
-- (int)connectionGraphNodeForConnection:(id)arg1;
-- (void)removeInputUnitsForConnection:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
-- (BOOL)addInputUnitsForConnection:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
-- (id)notReadyError;
-- (id)defaultConnectionForMediaType:(id)arg1;
-- (id)connectionsForMediaType:(id)arg1;
-- (id)connections;
-- (void)_setSession:(id)arg1;
-- (id)session;
 - (id)init;
 
 @end

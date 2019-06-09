@@ -24,7 +24,7 @@
 @property unsigned char notifyDataStoreChangeReason; // @synthesize notifyDataStoreChangeReason=_notifyDataStoreChangeReason;
 @property unsigned char dataStoreType; // @synthesize dataStoreType=_dataStoreType;
 @property _Bool deviceUnlocked; // @synthesize deviceUnlocked=_deviceUnlocked;
-@property(retain) DBManager *dbManager; // @synthesize dbManager=_dbManager;
+@property(retain, nonatomic) DBManager *dbManager; // @synthesize dbManager=_dbManager;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)handleTemporaryCreated;

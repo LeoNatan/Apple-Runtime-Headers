@@ -11,6 +11,7 @@
 @class NSString, SKUIViewControllerContainerCollectionViewCell, UIScrollView, UIViewController;
 @protocol SKUIScrollingTabBarControllerItemContextDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIScrollingTabBarControllerItemContext : NSObject <SKUINavigationStackObserver>
 {
     _Bool _adjustingNestedPagingScrollViewContentOffset;

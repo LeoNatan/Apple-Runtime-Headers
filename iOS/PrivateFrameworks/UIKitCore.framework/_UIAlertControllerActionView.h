@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_checkToMarginConstraint;
     UIImageView *_imageView;
     NSLayoutConstraint *_marginToImageConstraint;
+    NSLayoutConstraint *_imageViewBaselineOrCenterYConstraint;
     NSLayoutConstraint *_imageViewTopConstraint;
     NSLayoutConstraint *_imageViewBottomConstraint;
     NSLayoutConstraint *_minimumHeightConstraint;
@@ -65,7 +66,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasLayoutHeightConstraintsIdenticalToInterfaceActionCustomView:(id)arg1;
 - (id)_interfaceActionViewState;
 - (void)_contentSizeChanged;
-- (id)tintColor;
 - (void)tintColorDidChange;
 @property(copy, nonatomic) UIAlertAction *action;
 - (void)_updateStyle;
@@ -87,6 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)_buildCheckViewConstraints;
 - (void)_updateImageView;
 - (void)_loadImageView;
+- (void)_prepareConstraintsForImage:(id)arg1;
 - (void)_buildImageViewConstraints;
 - (void)_updateDescriptiveText;
 - (void)_loadDescriptiveLabel;

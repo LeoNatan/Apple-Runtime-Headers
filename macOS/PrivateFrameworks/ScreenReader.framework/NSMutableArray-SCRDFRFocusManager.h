@@ -8,5 +8,6 @@
 
 @interface NSMutableArray (SCRDFRFocusManager)
 - (void)sortArrayOfDFRElements;
+- (void)scr_sortByPriority;
 @end
 

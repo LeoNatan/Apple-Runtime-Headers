@@ -8,7 +8,7 @@
 
 #import <WebApp/_SFWebAppViewControllerDelegate-Protocol.h>
 
-@class LoadingViewController, NSString, NSTimer, UIWebClip, UIWindow, _SFWebAppViewController, _UIAsyncInvocation;
+@class LoadingViewController, NSString, NSTimer, UIWebClip, _SFWebAppViewController, _UIAsyncInvocation;
 
 __attribute__((visibility("hidden")))
 @interface WebAppViewController : UIViewController <_SFWebAppViewControllerDelegate>
@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     _Bool _hasShownLoadingViewController;
     LoadingViewController *_loadingViewController;
     long long _orientation;
-    UIWindow *_window;
     NSTimer *_hideSnapshotTimer;
     UIWebClip *_webClip;
 }

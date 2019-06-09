@@ -8,7 +8,6 @@
 
 @class AUPannerView;
 
-__attribute__((visibility("hidden")))
 @interface AUPannerViewLoader : NSObject
 {
     AUPannerView *uiView;

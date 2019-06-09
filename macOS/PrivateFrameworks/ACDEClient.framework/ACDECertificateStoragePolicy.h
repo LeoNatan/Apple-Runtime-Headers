@@ -14,8 +14,8 @@
 {
 }
 
-- (struct OpaqueSecCertificateRef *)certificateWithLabel:(id)arg1 realm:(id)arg2;
-- (BOOL)storeCertificate:(struct OpaqueSecCertificateRef *)arg1 realm:(id)arg2;
+- (struct __SecCertificate *)certificateWithLabel:(id)arg1 realm:(id)arg2;
+- (BOOL)storeCertificate:(struct __SecCertificate *)arg1 realm:(id)arg2;
 - (BOOL)removeCertificateWithLabel:(id)arg1 realm:(id)arg2;
 - (id)environmnetPreferencesForRealm:(id)arg1;
 

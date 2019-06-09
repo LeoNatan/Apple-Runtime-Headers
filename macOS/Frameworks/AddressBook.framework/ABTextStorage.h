@@ -42,7 +42,6 @@
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (void)_setAttributedString:(id)arg1;

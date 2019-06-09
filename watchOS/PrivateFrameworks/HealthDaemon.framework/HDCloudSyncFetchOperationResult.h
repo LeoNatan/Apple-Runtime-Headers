@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
 @property(readonly, nonatomic) HDCloudSyncOperationConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) int minimumSupportedProtocolVersion;
 - (id)masterZoneForContainerID:(id)arg1;
 @property(readonly, nonatomic) NSSet *pullZones;
 @property(readonly, nonatomic) NSSet *seizedZones;

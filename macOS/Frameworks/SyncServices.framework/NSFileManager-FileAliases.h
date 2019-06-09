@@ -9,5 +9,7 @@
 @interface NSFileManager (FileAliases)
 - (id)isd_pathForFileAlias:(id)arg1 getNewAliasData:(id *)arg2;
 - (id)isd_fileAliasForFileAtPath:(id)arg1;
+- (BOOL)isd_bzip2FileAtPath:(id)arg1 replace:(BOOL)arg2;
+- (void)isd_bzip2FileAtPathInThread:(id)arg1;
 @end
 

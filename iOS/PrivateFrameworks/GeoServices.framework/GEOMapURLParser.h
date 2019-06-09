@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEOURLExtraStorage, GEOUserSessionEntity, NSString, NSURL;
+@class GEOMuninViewState, GEOURLCollectionStorage, GEOURLExtraStorage, GEOUserSessionEntity, NSString, NSURL;
 
 @interface GEOMapURLParser : NSObject
 {
@@ -45,47 +45,54 @@
     NSString *_lineName;
     long long _favoritesType;
     _Bool _tester;
+    GEOURLCollectionStorage *_collectionStorage;
     GEOURLExtraStorage *_extraStorage;
+    GEOMuninViewState *_muninViewState;
     NSString *_label;
+    _Bool _showCarDestinations;
 }
 
 + (_Bool)isValidMapsURLForAppendingSharedSessionID:(id)arg1;
 + (_Bool)isValidMapsCategoryURL:(id)arg1;
 + (_Bool)isValidMapURL:(id)arg1;
-@property(readonly) GEOURLExtraStorage *extraStorage; // @synthesize extraStorage=_extraStorage;
-@property(readonly) _Bool tester; // @synthesize tester=_tester;
-@property(readonly) long long favoritesType; // @synthesize favoritesType=_favoritesType;
-@property(readonly, copy) NSString *lineName; // @synthesize lineName=_lineName;
-@property(readonly) unsigned long long lineMUID; // @synthesize lineMUID=_lineMUID;
-@property(readonly) double roll; // @synthesize roll=_roll;
-@property(readonly) double tilt; // @synthesize tilt=_tilt;
-@property(readonly) double rotation; // @synthesize rotation=_rotation;
-@property(readonly) double altitude; // @synthesize altitude=_altitude;
-@property(readonly) GEOUserSessionEntity *userSessionEntity; // @synthesize userSessionEntity=_userSessionEntity;
-@property(readonly) NSString *cnAddressIdentifier; // @synthesize cnAddressIdentifier=_cnAddressIdentifier;
-@property(readonly) NSString *cnContactIdentifier; // @synthesize cnContactIdentifier=_cnContactIdentifier;
-@property(readonly) NSString *abAddressID; // @synthesize abAddressID=_abAddressID;
-@property(readonly) NSString *abRecordID; // @synthesize abRecordID=_abRecordID;
-@property(readonly) NSString *contentProviderID; // @synthesize contentProviderID=_contentProviderID;
-@property(readonly) NSString *contentProvider; // @synthesize contentProvider=_contentProvider;
-@property(readonly) unsigned long long searchUID; // @synthesize searchUID=_searchUID;
-@property(readonly) int searchProviderID; // @synthesize searchProviderID=_searchProviderID;
-@property(readonly) CDStruct_90e2a262 searchRegion; // @synthesize searchRegion=_searchRegion;
-@property(readonly) CDStruct_c3b9c2ee searchCoordinate; // @synthesize searchCoordinate=_searchCoordinate;
-@property(readonly) NSString *label; // @synthesize label=_label;
-@property(readonly) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
-@property(readonly) NSString *directionsDestinationAddressString; // @synthesize directionsDestinationAddressString=_directionsDestinationAddressString;
-@property(readonly) NSString *directionsSourceAddressString; // @synthesize directionsSourceAddressString=_directionsSourceAddressString;
-@property(readonly) NSString *addressString; // @synthesize addressString=_addressString;
-@property(readonly) float zoomLevel; // @synthesize zoomLevel=_zoomLevel;
-@property(readonly) CDStruct_c3b9c2ee span; // @synthesize span=_span;
-@property(readonly) CDStruct_c3b9c2ee centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
-@property(readonly) _Bool exactPositionSpecified; // @synthesize exactPositionSpecified=_exactPositionSpecified;
-@property(readonly) _Bool trackingModeSpecified; // @synthesize trackingModeSpecified=_trackingModeSpecified;
-@property(readonly) int trackingMode; // @synthesize trackingMode=_trackingMode;
-@property(readonly) int transportType; // @synthesize transportType=_transportType;
-@property(readonly) int mapType; // @synthesize mapType=_mapType;
+@property(readonly, nonatomic) _Bool showCarDestinations; // @synthesize showCarDestinations=_showCarDestinations;
+@property(readonly, nonatomic) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
+@property(readonly, nonatomic) GEOURLExtraStorage *extraStorage; // @synthesize extraStorage=_extraStorage;
+@property(readonly, nonatomic) GEOURLCollectionStorage *collectionStorage; // @synthesize collectionStorage=_collectionStorage;
+@property(readonly, nonatomic) _Bool tester; // @synthesize tester=_tester;
+@property(readonly, nonatomic) long long favoritesType; // @synthesize favoritesType=_favoritesType;
+@property(readonly, copy, nonatomic) NSString *lineName; // @synthesize lineName=_lineName;
+@property(readonly, nonatomic) unsigned long long lineMUID; // @synthesize lineMUID=_lineMUID;
+@property(readonly, nonatomic) double roll; // @synthesize roll=_roll;
+@property(readonly, nonatomic) double tilt; // @synthesize tilt=_tilt;
+@property(readonly, nonatomic) double rotation; // @synthesize rotation=_rotation;
+@property(readonly, nonatomic) double altitude; // @synthesize altitude=_altitude;
+@property(readonly, nonatomic) GEOUserSessionEntity *userSessionEntity; // @synthesize userSessionEntity=_userSessionEntity;
+@property(readonly, nonatomic) NSString *cnAddressIdentifier; // @synthesize cnAddressIdentifier=_cnAddressIdentifier;
+@property(readonly, nonatomic) NSString *cnContactIdentifier; // @synthesize cnContactIdentifier=_cnContactIdentifier;
+@property(readonly, nonatomic) NSString *abAddressID; // @synthesize abAddressID=_abAddressID;
+@property(readonly, nonatomic) NSString *abRecordID; // @synthesize abRecordID=_abRecordID;
+@property(readonly, nonatomic) NSString *contentProviderID; // @synthesize contentProviderID=_contentProviderID;
+@property(readonly, nonatomic) NSString *contentProvider; // @synthesize contentProvider=_contentProvider;
+@property(readonly, nonatomic) unsigned long long searchUID; // @synthesize searchUID=_searchUID;
+@property(readonly, nonatomic) int searchProviderID; // @synthesize searchProviderID=_searchProviderID;
+@property(readonly, nonatomic) CDStruct_90e2a262 searchRegion; // @synthesize searchRegion=_searchRegion;
+@property(readonly, nonatomic) CDStruct_c3b9c2ee searchCoordinate; // @synthesize searchCoordinate=_searchCoordinate;
+@property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
+@property(readonly, nonatomic) NSString *directionsDestinationAddressString; // @synthesize directionsDestinationAddressString=_directionsDestinationAddressString;
+@property(readonly, nonatomic) NSString *directionsSourceAddressString; // @synthesize directionsSourceAddressString=_directionsSourceAddressString;
+@property(readonly, nonatomic) NSString *addressString; // @synthesize addressString=_addressString;
+@property(readonly, nonatomic) float zoomLevel; // @synthesize zoomLevel=_zoomLevel;
+@property(readonly, nonatomic) CDStruct_c3b9c2ee span; // @synthesize span=_span;
+@property(readonly, nonatomic) CDStruct_c3b9c2ee centerCoordinate; // @synthesize centerCoordinate=_centerCoordinate;
+@property(readonly, nonatomic) _Bool exactPositionSpecified; // @synthesize exactPositionSpecified=_exactPositionSpecified;
+@property(readonly, nonatomic) _Bool trackingModeSpecified; // @synthesize trackingModeSpecified=_trackingModeSpecified;
+@property(readonly, nonatomic) int trackingMode; // @synthesize trackingMode=_trackingMode;
+@property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
+@property(readonly, nonatomic) int mapType; // @synthesize mapType=_mapType;
 - (void).cxx_destruct;
+- (id)restoreCodableOfClass:(Class)arg1 queryItem:(id)arg2 key:(id)arg3 compressedKey:(id)arg4;
 - (_Bool)parseIncludingCustomParameters:(_Bool)arg1;
 - (id)initWithURL:(id)arg1;
 

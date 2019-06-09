@@ -6,7 +6,7 @@
 
 #import <AssistantUI/NSObject-Protocol.h>
 
-@class AFMetrics, AFUIRequestOptions, AFUserUtteranceSelectionResults, AceObject, NSString, SABaseClientBoundCommand;
+@class AFMetrics, AFUserUtteranceSelectionResults, AceObject, NSString, SABaseClientBoundCommand, SASRequestOptions;
 @protocol SAAceCommand;
 
 @protocol AFUISiriSession <NSObject>
@@ -27,10 +27,10 @@
 - (void)telephonyRequestCompleted;
 - (void)sendReplyCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)end;
-- (void)updateRequestOptions:(AFUIRequestOptions *)arg1;
-- (void)stopRequestWithOptions:(AFUIRequestOptions *)arg1;
-- (void)startRequestWithOptions:(AFUIRequestOptions *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)startRequestWithOptions:(AFUIRequestOptions *)arg1;
+- (void)updateRequestOptions:(SASRequestOptions *)arg1;
+- (void)stopRequestWithOptions:(SASRequestOptions *)arg1;
+- (void)startRequestWithOptions:(SASRequestOptions *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)startRequestWithOptions:(SASRequestOptions *)arg1;
 - (void)setApplicationContext;
 - (void)setAlertContext;
 - (void)rollbackClearContext;

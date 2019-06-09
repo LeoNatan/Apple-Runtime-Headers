@@ -6,9 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, TrackerPolicy;
+@class NSArray, NSDate, NSMutableDictionary, NWUsageTargetSelector, NetworkAnalyticsStateRelay, TrackerPolicy;
 @protocol flowDispositionObserver;
 
+__attribute__((visibility("hidden")))
 @interface InterfaceTypeTracker : NSObject
 {
     NSArray *_alwaysNote;
@@ -18,8 +19,14 @@
     long long _interfaceType;
     id <flowDispositionObserver> _observer;
     TrackerPolicy *_defaultPolicy;
+    NWUsageTargetSelector *_targetFlowsNewWiFi;
+    NetworkAnalyticsStateRelay *_stateRelay;
+    NSDate *_madePrimaryDate;
 }
 
+@property(retain) NSDate *madePrimaryDate; // @synthesize madePrimaryDate=_madePrimaryDate;
+@property(retain) NetworkAnalyticsStateRelay *stateRelay; // @synthesize stateRelay=_stateRelay;
+@property(retain) NWUsageTargetSelector *targetFlowsNewWiFi; // @synthesize targetFlowsNewWiFi=_targetFlowsNewWiFi;
 @property(retain) TrackerPolicy *defaultPolicy; // @synthesize defaultPolicy=_defaultPolicy;
 @property(retain) id <flowDispositionObserver> observer; // @synthesize observer=_observer;
 @property long long interfaceType; // @synthesize interfaceType=_interfaceType;
@@ -30,15 +37,16 @@
 - (void).cxx_destruct;
 - (void)configurePolicies:(id)arg1;
 - (void)getNetworkActivity:(CDUnknownBlockType)arg1;
-- (void)noteFlow:(id)arg1 withOwner:(id)arg2 isADaemon:(BOOL)arg3;
-- (void)noteFlow:(id)arg1 withDelegatee:(id)arg2;
+- (void)noteFlow:(id)arg1 withOwner:(id)arg2 snapshot:(id)arg3;
+- (void)noteFlow:(id)arg1 withDelegatee:(id)arg2 snapshot:(id)arg3;
 - (void)removeLinkages:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_trackerCachePrune;
 - (void)_dumpState;
 - (id)infoDir;
 - (id)description;
 - (void)dealloc;
-- (id)init;
+- (id)initWithInterfaceType:(long long)arg1;
 
 @end
 

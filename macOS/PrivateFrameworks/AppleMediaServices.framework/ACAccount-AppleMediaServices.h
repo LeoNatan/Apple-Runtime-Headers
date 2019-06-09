@@ -8,38 +8,52 @@
 
 #import <AppleMediaServices/AMSHashable-Protocol.h>
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface ACAccount (AppleMediaServices) <AMSHashable>
 + (BOOL)_isAccountFlagWritable:(id)arg1;
 + (BOOL)_isAccountFlagValue:(id)arg1 validForAccountFlag:(id)arg2;
++ (id)_getSetCookiesForResponse:(id)arg1;
++ (id)_getSetGlobalCookiesForResponse:(id)arg1;
 + (id)_defaultValueForAccountFlag:(id)arg1;
 - (BOOL)ams_valueForAccountFlag:(id)arg1;
 - (void)ams_setValue:(BOOL)arg1 forAccountFlag:(id)arg2;
+- (BOOL)ams_postAccountFlagsWithBagContract:(id)arg1;
 - (id)ams_secureToken;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 dataProtectionClass:(unsigned long long)arg3 expectedClass:(Class)arg4;
 - (void)_setAccountProperty:(id)arg1 forKey:(id)arg2 expectedClass:(Class)arg3;
-- (void)_setCookies:(id)arg1;
+- (BOOL)_setCookies:(id)arg1;
 - (id)_createCookieStorage;
 - (id)_cookiesMatchingProperties:(id)arg1;
-- (id)_accountPropertyForKey:(id)arg1 dataProtectionClass:(unsigned long long)arg2 expectedClass:(Class)arg3 error:(id *)arg4;
+- (id)_accountPropertyForKey:(id)arg1 dataProtectionClass:(unsigned long long)arg2 expectedClasses:(id)arg3 error:(id *)arg4;
 - (id)_accountPropertyForKey:(id)arg1 expectedClass:(Class)arg2;
 @property(readonly) NSString *hashedDescription;
 - (void)ams_removeCookiesMatchingProperties:(id)arg1;
 - (void)ams_removeCookies:(id)arg1;
 - (void)ams_removeAllCookies;
 - (id)ams_cookiesForURL:(id)arg1;
-- (void)ams_addCookies:(id)arg1;
+- (BOOL)ams_addGlobalCookiesForResult:(id)arg1;
+- (BOOL)ams_addGlobalCookiesForResponse:(id)arg1;
+- (BOOL)ams_addCookiesForResult:(id)arg1;
+- (BOOL)ams_addCookiesForResponse:(id)arg1;
+- (BOOL)ams_addCookies:(id)arg1;
+- (id)ams_storefrontForMediaType:(id)arg1;
+- (void)ams_setStorefront:(id)arg1 forMediaType:(id)arg2;
+- (void)ams_setActive:(BOOL)arg1 forMediaType:(id)arg2;
 - (void)ams_setAccountFlagValue:(id)arg1 forAccountFlag:(id)arg2;
-- (BOOL)ams_postAccountFlagsWithBagContract:(id)arg1;
+- (long long)ams_mergePrivacyAcknowledgement:(id)arg1;
 - (BOOL)ams_isDuplicate:(id)arg1;
-- (BOOL)ams_encryptAccountFlags;
+- (BOOL)ams_isActiveForMediaType:(id)arg1;
+- (id)ams_delta:(id)arg1;
 - (id)ams_accountFlagValueForAccountFlag:(id)arg1;
 @property(readonly) NSString *ams_storefront;
 - (void)ams_setValidPayment:(BOOL)arg1;
 - (void)ams_setStorefront:(id)arg1;
+- (void)ams_setServerResponse:(id)arg1;
 - (void)ams_setRawPassword:(id)arg1;
 - (void)ams_setPassword:(id)arg1;
+@property(setter=ams_setMergedPrivacyAcknowledgement:) BOOL ams_mergedPrivacyAcknowledgement;
+- (void)ams_setManagedAppleID:(BOOL)arg1;
 - (void)ams_setLastName:(id)arg1;
 - (void)ams_setInGoodStanding:(BOOL)arg1;
 - (void)ams_setiCloudFamily:(BOOL)arg1;
@@ -49,10 +63,13 @@
 - (void)ams_setAltDSID:(id)arg1;
 - (void)ams_setAgreedToTerms:(BOOL)arg1;
 - (void)ams_setAccountFlags:(id)arg1;
+- (id)ams_lastAuthenticationServerResponse;
 @property(readonly) unsigned long long ams_securityLevel;
 - (BOOL)ams_requiresAuthKitUpdate;
 - (id)ams_rawPassword;
+@property(readonly) NSDictionary *ams_privacyAcknowledgement;
 - (id)ams_password;
+@property(setter=ams_setPaidPasswordPromptSetting:) unsigned long long ams_paidPasswordPromptSetting;
 @property(readonly) NSString *ams_lastName;
 - (BOOL)ams_isValidPayment;
 @property(readonly, getter=ams_isSandboxAccount) BOOL ams_sandboxAccount;
@@ -66,6 +83,7 @@
 @property(readonly, getter=ams_isHSA2) BOOL ams_HSA2;
 @property(readonly, getter=ams_isDemoAccount) BOOL ams_demoAccount;
 @property(readonly) NSString *ams_fullName;
+@property(setter=ams_setFreePasswordPromptSetting:) unsigned long long ams_freePasswordPromptSetting;
 @property(readonly) NSString *ams_firstName;
 @property(readonly) NSNumber *ams_DSID;
 - (BOOL)ams_didAgreeToTerms;

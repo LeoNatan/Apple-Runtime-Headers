@@ -11,13 +11,15 @@
 @interface CAMTimelapseShutterRingView : UIView
 {
     _Bool _animating;
-    long long _layoutStyle;
+    double __smallTickRotationRadians;
+    double __largeTickRotationRadians;
     CALayer *__smallTickLayer;
     CALayer *__largeTickLayer;
     CAReplicatorLayer *__smallTickReplicatorLayer;
     CAReplicatorLayer *__largeTickReplicatorLayer;
     CALayer *__timerHandLayer;
     CALayer *__timerHandParentLayer;
+    CDStruct_8ae1ff66 _spec;
 }
 
 @property(readonly, nonatomic) CALayer *_timerHandParentLayer; // @synthesize _timerHandParentLayer=__timerHandParentLayer;
@@ -26,8 +28,10 @@
 @property(readonly, nonatomic) CAReplicatorLayer *_smallTickReplicatorLayer; // @synthesize _smallTickReplicatorLayer=__smallTickReplicatorLayer;
 @property(readonly, nonatomic) CALayer *_largeTickLayer; // @synthesize _largeTickLayer=__largeTickLayer;
 @property(readonly, nonatomic) CALayer *_smallTickLayer; // @synthesize _smallTickLayer=__smallTickLayer;
+@property(readonly, nonatomic) double _largeTickRotationRadians; // @synthesize _largeTickRotationRadians=__largeTickRotationRadians;
+@property(readonly, nonatomic) double _smallTickRotationRadians; // @synthesize _smallTickRotationRadians=__smallTickRotationRadians;
 @property(nonatomic, getter=isAnimating) _Bool animating; // @synthesize animating=_animating;
-@property(readonly, nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
+@property(readonly, nonatomic) CDStruct_8ae1ff66 spec; // @synthesize spec=_spec;
 - (void).cxx_destruct;
 - (double)_rotationZFromTransform:(struct CATransform3D)arg1;
 - (void)_addStopAnimations;
@@ -38,13 +42,12 @@
 - (void)_stopAnimating;
 - (void)_startAnimating;
 - (double)_tickRadiusForTickSize:(struct CGSize)arg1 ringSize:(struct CGSize)arg2;
-- (struct CGSize)_largeTickSizeForLayoutStyle:(long long)arg1;
-- (struct CGSize)_smallTickSizeForLayoutStyle:(long long)arg1;
 - (void)layoutSublayersOfLayer:(id)arg1;
-- (void)_commonCAMTimelapseShutterRingViewInitializationWithLayoutStyle:(long long)arg1;
-- (id)initWithLayoutStyle:(long long)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithCoder:(id)arg1;
+- (double)_rotationRadiansFromTickCount:(long long)arg1;
+- (void)setSpec:(CDStruct_8ae1ff66)arg1;
+- (void)_commonCAMTimelapseShutterRingViewInitializationWithSpec:(CDStruct_8ae1ff66)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 spec:(CDStruct_8ae1ff66)arg2;
+- (id)initWithSpec:(CDStruct_8ae1ff66)arg1;
 
 @end
 

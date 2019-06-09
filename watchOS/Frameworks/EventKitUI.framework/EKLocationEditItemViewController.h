@@ -11,7 +11,7 @@
 #import <EventKitUI/UITableViewDataSource-Protocol.h>
 #import <EventKitUI/UITableViewDelegate-Protocol.h>
 
-@class EKCalendarItem, EKStructuredLocation, EKUIConferenceRoom, EKUILocationSearchModel, NSString, UISearchBar, UITableView;
+@class EKCalendarItem, EKStructuredLocation, EKUIConferenceRoom, EKUILocationSearchModel, NSMutableDictionary, NSString, UISearchBar, UITableView;
 
 @interface EKLocationEditItemViewController : EKEditItemViewController <UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, EKUILocationSearchModelDelegate>
 {
@@ -19,9 +19,11 @@
     UITableView *_tableView;
     EKUILocationSearchModel *_searchModel;
     EKCalendarItem *_calendarItem;
+    NSMutableDictionary *_cachedConferenceRooms;
     struct CGSize _preferredContentSize;
     _Bool _supportsStructuredLocations;
     _Bool _tableConstraintsInstalled;
+    _Bool _onlyAllowConferenceRooms;
     _Bool _needsSave;
     _Bool _onlyDisplayMapLocations;
     EKStructuredLocation *_structuredLocation;
@@ -36,7 +38,7 @@
 @property(nonatomic) _Bool onlyDisplayMapLocations; // @synthesize onlyDisplayMapLocations=_onlyDisplayMapLocations;
 @property(nonatomic) _Bool needsSave; // @synthesize needsSave=_needsSave;
 - (void).cxx_destruct;
-- (id)_cellForConferenceRoomRowInTableView:(id)arg1 indexPath:(id)arg2;
+- (id)_cellForConferenceRoom:(id)arg1 atIndexPath:(id)arg2;
 - (void)eventsSearchUpdated:(id)arg1;
 - (void)frequentsSearchUpdated:(id)arg1;
 - (void)mapSearchUpdated:(id)arg1;
@@ -44,12 +46,12 @@
 - (void)contactsSearchUpdated:(id)arg1;
 - (void)conferenceRoomSearchUpdated:(id)arg1;
 - (void)currentLocationUpdated:(id)arg1;
+- (_Bool)shouldIncludeConferenceRoom:(id)arg1;
 - (void)locationSearchModel:(id)arg1 selectedLocation:(id)arg2 withError:(id)arg3;
 - (id)calendarItemForSearchModel:(id)arg1;
 - (void)searchBarSearchButtonClicked:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
-- (id)greyPinImage;
-- (id)redPinImage;
+- (id)pinImage;
 - (id)contactsImage;
 - (id)locationArrowImage;
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
@@ -61,10 +63,12 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)conferenceRoomForRecent:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (void)useAsString:(id)arg1;
 - (_Bool)showingCurrentLocationRow;
 - (_Bool)showingTextRow;
+@property(nonatomic) _Bool onlyAllowConferenceRooms;
 - (_Bool)presentModally;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)updateViewConstraints;

@@ -8,17 +8,21 @@
 
 #import <UIKitCore/AFDictationDelegate-Protocol.h>
 
-@class AFDictationConnection, NSString;
+@class AFDictationConnection, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, UIDictationConnectionDelegate, UIDictationConnectionTokenFilterProtocol;
 
 __attribute__((visibility("hidden")))
 @interface UIDictationConnection : NSObject <AFDictationDelegate>
 {
     _Bool _offlineOnly;
+    _Bool _lowConfidenceAboutLanguageDetection;
     id <UIDictationConnectionDelegate> _delegate;
     id <UIDictationConnectionTokenFilterProtocol> _tokenFilter;
     AFDictationConnection *_connection;
     NSObject<OS_dispatch_queue> *_analyticsQueue;
+    NSString *_lastUsedPrimaryLanguage;
+    NSString *_lastUsedDetectedLanguage;
+    NSMutableArray *_lastUsedTopLanguages;
 }
 
 + (id)interpretationFromSpeechTokens:(id)arg1 startIndex:(unsigned long long)arg2 filterBlock:(CDUnknownBlockType)arg3;
@@ -29,6 +33,10 @@ __attribute__((visibility("hidden")))
 + (_Bool)dictationIsSupportedForLanguageCode:(id)arg1 error:(id *)arg2;
 + (_Bool)isDictationAvailable;
 + (id)analytics;
+@property(nonatomic) _Bool lowConfidenceAboutLanguageDetection; // @synthesize lowConfidenceAboutLanguageDetection=_lowConfidenceAboutLanguageDetection;
+@property(retain, nonatomic) NSMutableArray *lastUsedTopLanguages; // @synthesize lastUsedTopLanguages=_lastUsedTopLanguages;
+@property(copy, nonatomic) NSString *lastUsedDetectedLanguage; // @synthesize lastUsedDetectedLanguage=_lastUsedDetectedLanguage;
+@property(copy, nonatomic) NSString *lastUsedPrimaryLanguage; // @synthesize lastUsedPrimaryLanguage=_lastUsedPrimaryLanguage;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *analyticsQueue; // @synthesize analyticsQueue=_analyticsQueue;
 @property(nonatomic) _Bool offlineOnly; // @synthesize offlineOnly=_offlineOnly;
 @property(retain, nonatomic) AFDictationConnection *connection; // @synthesize connection=_connection;
@@ -38,7 +46,9 @@ __attribute__((visibility("hidden")))
 - (void)dictationConnection:(id)arg1 didReceiveSearchResults:(id)arg2 recognizedText:(id)arg3 stable:(_Bool)arg4 final:(_Bool)arg5;
 - (void)dictationConnnectionDidChangeAvailability:(id)arg1;
 - (void)dictationConnectionSpeechRecognitionDidSucceed:(id)arg1;
+- (void)dictationConnection:(id)arg1 didRecognizeMultilingualSpeech:(id)arg2;
 - (void)dictationConnection:(id)arg1 didRecognizePhrases:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4;
+- (void)dictationConnection:(id)arg1 didRecognizePartialResult:(id)arg2;
 - (void)dictationConnection:(id)arg1 didRecognizeTokens:(id)arg2 languageModel:(id)arg3;
 - (void)dictationConnectionSpeechRecordingDidCancel:(id)arg1;
 - (void)dictationConnectionSpeechRecordingDidEnd:(id)arg1;
@@ -46,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)dictationConnection:(id)arg1 speechRecordingDidFail:(id)arg2;
 - (void)dictationConnectionSpeechRecordingDidBegin:(id)arg1;
 - (void)dictationConnectionSpeechRecordingWillBegin:(id)arg1;
+- (void)dictationConnection:(id)arg1 didDetectLanguage:(id)arg2 confidenceScores:(id)arg3;
 - (void)preheat;
 - (void)logDidAcceptDictationResult:(id)arg1 reason:(id)arg2 result:(id)arg3 correctionIdentifier:(id)arg4;
 - (void)logDidSelectAlternative:(id)arg1 correctionIdentifier:(id)arg2;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSString, NSXPCListenerEndpoint;
+@class NSString, NSXPCListenerEndpoint;
 
 @protocol TKProtocolSlotRegistry
-- (void)addSlotWithEndpoint:(NSXPCListenerEndpoint *)arg1 name:(NSString *)arg2 type:(NSString *)arg3 forProcesses:(NSArray *)arg4 reply:(void (^)(NSString *))arg5;
+- (void)addSlotWithEndpoint:(NSXPCListenerEndpoint *)arg1 name:(NSString *)arg2 type:(NSString *)arg3 reply:(void (^)(NSString *))arg4;
 @end
 

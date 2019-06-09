@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
+- (id)_cn_ignorableKeys;
 - (id)_cn_optionalKeys;
 - (id)_cn_requiredKeys;
 - (void)_cn_executeGetterForRepresentedKeys:(CDUnknownBlockType)arg1;

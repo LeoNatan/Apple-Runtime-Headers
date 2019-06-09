@@ -6,12 +6,10 @@
 
 #import <Contacts/CNPredicate.h>
 
-#import <Contacts/CNSuggestedContactPredicate-Protocol.h>
-
-@class NSArray, NSMutableDictionary, NSString;
+@class NSArray, NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
-@interface CNContactsWithIdentifiersPredicate : CNPredicate <CNSuggestedContactPredicate>
+@interface CNContactsWithIdentifiersPredicate : CNPredicate
 {
     NSMutableDictionary *_internalIdentifiers;
     NSArray *_identifiers;
@@ -20,19 +18,13 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
 - (void).cxx_destruct;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)internalIdentifiersForStoreWithIdentifier:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifiers:(id)arg1;
-- (id)suggestionsWithSortOrder:(long long)arg1 mutableObjects:(_Bool)arg2 service:(id)arg3 error:(id *)arg4;
-- (_Bool)cn_supportsNativeSorting;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

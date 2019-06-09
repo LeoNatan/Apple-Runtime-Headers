@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class MPAVItem, MPQueuePlayer, NSArray, NSHashTable, NSMutableSet, NSOperationQueue;
-@protocol MPAVQueueCoordinatorDataSource;
+#import <MediaPlayer/MPAVQueueCoordinating-Protocol.h>
 
-@interface MPAVQueueCoordinator : NSObject
+@class MPAVItem, MPQueuePlayer, NSArray, NSHashTable, NSMutableSet, NSOperationQueue, NSString;
+@protocol MPAVQueueCoordinatingDataSource;
+
+@interface MPAVQueueCoordinator : NSObject <MPAVQueueCoordinating>
 {
     NSOperationQueue *_assetQueue;
     unsigned long long _backgroundTaskIdentifier;
@@ -25,20 +27,20 @@
     NSMutableSet *_reusableItems;
     _Bool _shouldExpectEmptyQueue;
     _Bool _shouldDeferItemLoading;
-    MPQueuePlayer *_player;
-    id <MPAVQueueCoordinatorDataSource> _dataSource;
     MPAVItem *_currentItem;
     NSArray *_items;
+    MPQueuePlayer *_player;
+    id <MPAVQueueCoordinatingDataSource> _dataSource;
     CDUnknownBlockType _equilibriumAchievedHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType equilibriumAchievedHandler; // @synthesize equilibriumAchievedHandler=_equilibriumAchievedHandler;
+@property(readonly, nonatomic) __weak id <MPAVQueueCoordinatingDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly, nonatomic) MPQueuePlayer *player; // @synthesize player=_player;
 @property(nonatomic) _Bool shouldDeferItemLoading; // @synthesize shouldDeferItemLoading=_shouldDeferItemLoading;
 @property(nonatomic) _Bool shouldExpectEmptyQueue; // @synthesize shouldExpectEmptyQueue=_shouldExpectEmptyQueue;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
-@property(readonly, nonatomic) __weak id <MPAVQueueCoordinatorDataSource> dataSource; // @synthesize dataSource=_dataSource;
-@property(readonly, nonatomic) MPQueuePlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
 - (void)_updateQueueDepthIfNeeded;
 - (void)_updateCurrentItem;
@@ -55,10 +57,17 @@
 - (void)_endBackgroundTaskAssertion;
 - (void)_beginBackgroundTaskAssertion;
 - (void)_currentItemHasFinishedDownloadingDidChangeNotification:(id)arg1;
+- (void)reset;
 - (void)reloadItemsKeepingCurrentItem:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1 dataSource:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

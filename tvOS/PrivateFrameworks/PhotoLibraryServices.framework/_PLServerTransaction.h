@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_changeScopeQueue;
 }
 
+- (void).cxx_destruct;
 - (void)completeTransactionScope:(id)arg1;
 - (void)completeTransaction;
 - (void)abortTransaction;
@@ -26,7 +27,7 @@
 - (void)popChangeScopesBatch;
 - (void)pushChangeScopesBatch;
 - (void)dealloc;
-- (id)init;
+- (id)initWithPathManager:(id)arg1;
 
 @end
 

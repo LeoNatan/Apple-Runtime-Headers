@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface MFPalette : NSObject <MFObject>
 {
     NSMutableArray *m_colours;

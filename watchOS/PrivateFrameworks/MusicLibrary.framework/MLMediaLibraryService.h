@@ -26,15 +26,15 @@
 - (id)_serviceConnection;
 - (void)importOperationWithIdentifier:(id)arg1 didUpdateWithProgress:(float)arg2;
 - (void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;
+- (id)mediaLibraryResourcesServiceListenerEndpointWithError:(id *)arg1;
 - (void)performMaintenanceTasksForDatabaseAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)performRestoreOfLatestBackupForDatabaseAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)performBackupOfDatabaseAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)updateSpotlightIndexForBundleID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)getDeviceSharedLibraryPath:(CDUnknownBlockType)arg1;
 - (void)getLanguageResourcesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)unlockDatabaseWithCompletion:(CDUnknownBlockType)arg1;
-- (void)lockDatabaseForReason:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)lockDatabaseForReason:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)cancelImportOperation:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performImport:(id)arg1 fromSource:(unsigned int)arg2 withProgressBlock:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setOptions:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -45,6 +45,7 @@
 - (void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 options:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)performDiagnosticWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)checkIntegrityOfDatabaseAtPath:(id)arg1 repairFaults:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)attemptDatabaseFileRecoveryAtPath:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)validateDatabaseAtPath:(id)arg1 error:(id *)arg2;
 - (void)dealloc;

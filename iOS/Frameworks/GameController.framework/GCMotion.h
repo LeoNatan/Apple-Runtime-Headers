@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class CMMotionManager, GCController;
+@class GCController;
 
 @interface GCMotion : NSObject
 {
     CDStruct_31142d93 _gravity;
-    CDStruct_31142d93 _prevGravity;
     CDStruct_31142d93 _userAcceleration;
     struct GCQuaternion _attitude;
     struct GCQuaternion _prevAttitude;
@@ -20,31 +19,28 @@
     CDStruct_31142d93 _rotationRate;
     float _tip;
     float _tilt;
-    CMMotionManager *_motionMgr;
-    _Bool _linkedOnOrAfterCompassFeature;
     _Bool _motionLite;
     _Bool _compassEnabled;
     CDUnknownBlockType _valueChangedHandler;
-    CDUnknownBlockType _internalValueChangedHandler;
-    _Bool _emulatedMotionEnabled;
-    _Bool _motionUpdatedEnabled;
-    _Bool _paused;
     GCController *_controller;
 }
 
 @property(readonly, nonatomic) __weak GCController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+- (void)_pauseMotionUpdates:(_Bool)arg1;
+- (void)setStateFromMotion:(id)arg1;
+- (void)setRotationRate:(CDStruct_39925896)arg1;
+- (void)setAttitude:(struct GCQuaternion)arg1;
+- (void)setUserAcceleration:(CDStruct_39925896)arg1;
+- (void)setGravity:(CDStruct_39925896)arg1;
+- (_Bool)_isUpdatingDeviceMotion;
+- (void)_stopDeviceMotionUpdates;
+- (void)_startDeviceMotionUpdates;
 - (void)_setRotationRate:(CDStruct_39925896)arg1;
 - (void)_setAttitude:(struct GCQuaternion)arg1;
 - (void)_setUserAcceleration:(CDStruct_39925896)arg1;
 - (void)_setGravity:(CDStruct_39925896)arg1;
-- (_Bool)_isUpdatingDeviceMotion;
-- (void)_pauseMotionUpdates:(_Bool)arg1;
-- (void)_stopDeviceMotionUpdates;
-- (void)_startDeviceMotionUpdates;
 - (_Bool)isEmulatedMicroGamepad;
-- (void)setInternalValueChangedHandler:(CDUnknownBlockType)arg1;
-- (CDUnknownBlockType)internalValueChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType valueChangedHandler;
 - (float)_tilt;
 - (float)_tip;

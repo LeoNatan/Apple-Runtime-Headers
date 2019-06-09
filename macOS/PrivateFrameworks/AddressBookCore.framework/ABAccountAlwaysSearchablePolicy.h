@@ -18,7 +18,6 @@
 - (Class)searchOperationClass;
 - (id)makeSearchOperation;
 - (BOOL)isSearchable;
-- (void)dealloc;
 - (id)initWithSearchOperationClass:(Class)arg1;
 
 // Remaining properties

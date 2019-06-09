@@ -6,21 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDateInterval;
+#import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@interface NSURLSessionTaskMetrics : NSObject
+@class NSArray, NSDateInterval, __CFN_TaskMetrics;
+
+@interface NSURLSessionTaskMetrics : NSObject <NSSecureCoding>
 {
+    __CFN_TaskMetrics *__metrics;
 }
 
-- (void)dealloc;
-- (id)_initWithTask:(id)arg1;
-- (id)initWithNoInit;
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) __CFN_TaskMetrics *_metrics; // @synthesize _metrics=__metrics;
+- (void).cxx_destruct;
+- (id)description;
+@property(readonly) unsigned long long redirectCount;
+@property(readonly, copy) NSDateInterval *taskInterval;
+@property(readonly, copy) NSArray *transactionMetrics;
+- (id)initWithMetrics:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property unsigned long long redirectCount; // @dynamic redirectCount;
-@property(copy) NSDateInterval *taskInterval; // @dynamic taskInterval;
-@property(copy) NSArray *transactionMetrics; // @dynamic transactionMetrics;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

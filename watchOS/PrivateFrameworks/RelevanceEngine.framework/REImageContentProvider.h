@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <RelevanceEngine/NSCoding-Protocol.h>
 #import <RelevanceEngine/NSCopying-Protocol.h>
+#import <RelevanceEngine/NSSecureCoding-Protocol.h>
 
 @class REImage;
 
-@interface REImageContentProvider : NSObject <NSCopying, NSCoding>
+@interface REImageContentProvider : NSObject <NSCopying, NSSecureCoding>
 {
     REImage *_onePieceImage;
     REImage *_twoPieceForegroundImage;
@@ -21,6 +21,7 @@
 + (id)imageContentProviderFromClockKitImageProvider:(id)arg1;
 + (id)imageContentProviderWithOnePieceImage:(id)arg1 twoPieceForegroundImage:(id)arg2 twoPieceBackgroundImage:(id)arg3;
 + (id)imageContentProviderWithOnePieceImage:(id)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) REImage *twoPieceBackgroundImage; // @synthesize twoPieceBackgroundImage=_twoPieceBackgroundImage;
 @property(readonly, nonatomic) REImage *twoPieceForegroundImage; // @synthesize twoPieceForegroundImage=_twoPieceForegroundImage;
 @property(readonly, nonatomic) REImage *onePieceImage; // @synthesize onePieceImage=_onePieceImage;

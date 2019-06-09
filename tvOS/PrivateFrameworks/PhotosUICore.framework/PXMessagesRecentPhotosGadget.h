@@ -26,9 +26,7 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
-- (void)userDidSelectAccessoryButton:(id)arg1;
-- (void)loadContentData;
-- (_Bool)hasLoadedContentData;
+- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateViewControllerInsets;
 - (struct NSObject *)contentViewController;
@@ -40,7 +38,7 @@
 @property(readonly, nonatomic) NSString *localizedTitle;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

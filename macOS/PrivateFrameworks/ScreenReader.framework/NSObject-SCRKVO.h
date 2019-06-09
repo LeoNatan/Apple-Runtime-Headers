@@ -9,5 +9,6 @@
 @interface NSObject (SCRKVO)
 + (id)scr_observeTarget:(id)arg1 observedKeyPath:(id)arg2 observer:(id)arg3 observerKeyPath:(id)arg4;
 - (id)scr_observeTarget:(id)arg1 observedKeyPath:(id)arg2 observerKeyPath:(id)arg3;
+- (BOOL)_isTopLevelSCRMenu;
 @end
 

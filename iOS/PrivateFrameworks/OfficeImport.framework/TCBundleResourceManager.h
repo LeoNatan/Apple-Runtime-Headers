@@ -16,9 +16,9 @@ __attribute__((visibility("hidden")))
 
 + (void)disposeInstance;
 + (id)instance;
+- (void).cxx_destruct;
 - (struct _xmlDoc *)xmlDocumentForResource:(id)arg1 ofType:(id)arg2 inPackage:(id)arg3 cacheResult:(_Bool)arg4;
 - (id)dataForResource:(id)arg1 ofType:(id)arg2 inPackage:(id)arg3 cacheResult:(_Bool)arg4;
-- (void)dealloc;
 - (id)init;
 - (id)packageWithName:(id)arg1 cacheResult:(_Bool)arg2;
 

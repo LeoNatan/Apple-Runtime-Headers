@@ -6,15 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <CarouselServices/NSCopying-Protocol.h>
+
 @class NSString;
 
-@interface CSLSAlertSuppressionToken : NSObject
+@interface CSLSAlertSuppressionToken : NSObject <NSCopying>
 {
     NSString *_identifier;
 }
 
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

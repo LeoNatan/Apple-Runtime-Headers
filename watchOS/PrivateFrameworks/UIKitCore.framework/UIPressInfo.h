@@ -16,10 +16,12 @@ __attribute__((visibility("hidden")))
     unsigned int _gameControllerComponent;
     float _force;
     unsigned int _clickCount;
+    unsigned int _contextID;
     double _timestamp;
 }
 
-+ (id)_keyboardPressInfoForType:(int)arg1 isKeyDown:(_Bool)arg2 timestamp:(double)arg3;
++ (id)_keyboardPressInfoForType:(int)arg1 isKeyDown:(_Bool)arg2 timestamp:(double)arg3 contextID:(unsigned int)arg4;
+@property(nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(nonatomic, getter=isLongClick) _Bool longClick; // @synthesize longClick=_longClick;
 @property(nonatomic) unsigned int clickCount; // @synthesize clickCount=_clickCount;
 @property(nonatomic) float force; // @synthesize force=_force;

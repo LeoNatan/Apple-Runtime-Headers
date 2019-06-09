@@ -17,7 +17,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSData *matchDataArray;
+@property(readonly, copy, nonatomic) NSData *matchDataArray;
 @property(readonly, nonatomic, getter=isMatchShifted) _Bool matchShifted;
 @property(readonly, nonatomic) int matchRoadClass;
 @property(readonly, nonatomic) int matchFormOfWay;

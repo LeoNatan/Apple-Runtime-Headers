@@ -6,106 +6,98 @@
 
 #import <UIKit/UIView.h>
 
-#import <AVKit/AVCaptureViewConfiguring-Protocol.h>
-#import <AVKit/AVContentTransitioning-Protocol.h>
+#import <AVKit/AVScrollViewObserverContentView-Protocol.h>
 
-@class AVExternalPlaybackIndicatorView, AVPlaybackControlsView, AVPlayerContentTransitioningView, AVPlayerLayerAndContentOverlayContainerView, AVStyleSheet, AVTurboModePlaybackControlsPlaceholderView, NSMutableDictionary, NSString, UIImageView, UIPanGestureRecognizer, _UIVisualEffectBackdropView, __AVPlayerLayerView;
-@protocol AVContentTransitioningDelegate, AVPlayerViewControllerContentViewDelegate;
+@class AVCABackdropLayerView, AVExternalPlaybackIndicatorView, AVPlaybackControlsView, AVScrollViewObserver, AVStyleSheet, AVTurboModePlaybackControlsPlaceholderView, NSMutableDictionary, NSNumber, NSString, UIImageView, __AVPlayerLayerView;
+@protocol AVPlaybackContentContainer, AVPlayerViewControllerContentViewDelegate;
 
-@interface AVPlayerViewControllerContentView : UIView <AVCaptureViewConfiguring, AVContentTransitioning>
+__attribute__((visibility("hidden")))
+@interface AVPlayerViewControllerContentView : UIView <AVScrollViewObserverContentView>
 {
+    _Bool _shouldLoadPlaybackControlsHint;
     _Bool _canAutomaticallyZoomLetterboxVideos;
     _Bool _styleSheetShouldUseCompactFullScreenItemSize;
     _Bool _needsInitialLayout;
-    _Bool _backdropCaptureViewHidden;
     NSString *_automaticVideoGravity;
-    NSString *_captureGroupName;
-    _UIVisualEffectBackdropView *_captureView;
     AVExternalPlaybackIndicatorView *_externalPlaybackIndicatorView;
     UIImageView *_unsupportedContentIndicatorView;
     UIImageView *_audioOnlyIndicatorView;
     UIView *_iAdPreRollView;
     id <AVPlayerViewControllerContentViewDelegate> _delegate;
+    UIView<AVPlaybackContentContainer> *_playbackContentContainerView;
     UIView *_interactiveContentOverlayView;
     AVPlaybackControlsView *_playbackControlsView;
     AVTurboModePlaybackControlsPlaceholderView *_turboModePlaybackControlsPlaceholderView;
-    AVPlayerContentTransitioningView *_contentTransitioningView;
     __AVPlayerLayerView *_playerLayerView;
     NSMutableDictionary *_targetVideoGravities;
+    AVCABackdropLayerView *_backdropLayerView;
     NSString *_externalPlaybackIndicatorTitle;
     NSString *_externalPlaybackIndicatorSubtitle;
     AVStyleSheet *_styleSheet;
+    AVScrollViewObserver *_scrollingObserver;
     struct UIEdgeInsets _edgeInsetsForLetterboxedContent;
-    struct CGRect _boundsForLastLayoutSubviews;
+    struct UIEdgeInsets _videoContentInset;
 }
 
-@property(nonatomic) _Bool backdropCaptureViewHidden; // @synthesize backdropCaptureViewHidden=_backdropCaptureViewHidden;
+@property(readonly, nonatomic) AVScrollViewObserver *scrollingObserver; // @synthesize scrollingObserver=_scrollingObserver;
 @property(retain, nonatomic) AVStyleSheet *styleSheet; // @synthesize styleSheet=_styleSheet;
-@property(nonatomic) struct CGRect boundsForLastLayoutSubviews; // @synthesize boundsForLastLayoutSubviews=_boundsForLastLayoutSubviews;
 @property(copy, nonatomic) NSString *externalPlaybackIndicatorSubtitle; // @synthesize externalPlaybackIndicatorSubtitle=_externalPlaybackIndicatorSubtitle;
 @property(copy, nonatomic) NSString *externalPlaybackIndicatorTitle; // @synthesize externalPlaybackIndicatorTitle=_externalPlaybackIndicatorTitle;
+@property(readonly, nonatomic) AVCABackdropLayerView *backdropLayerView; // @synthesize backdropLayerView=_backdropLayerView;
 @property(readonly, nonatomic) NSMutableDictionary *targetVideoGravities; // @synthesize targetVideoGravities=_targetVideoGravities;
 @property(nonatomic) _Bool needsInitialLayout; // @synthesize needsInitialLayout=_needsInitialLayout;
 @property(retain, nonatomic) __AVPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
-@property(readonly, nonatomic) AVPlayerContentTransitioningView *contentTransitioningView; // @synthesize contentTransitioningView=_contentTransitioningView;
+@property(nonatomic) struct UIEdgeInsets videoContentInset; // @synthesize videoContentInset=_videoContentInset;
 @property(nonatomic) _Bool styleSheetShouldUseCompactFullScreenItemSize; // @synthesize styleSheetShouldUseCompactFullScreenItemSize=_styleSheetShouldUseCompactFullScreenItemSize;
 @property(readonly, nonatomic) __weak AVTurboModePlaybackControlsPlaceholderView *turboModePlaybackControlsPlaceholderView; // @synthesize turboModePlaybackControlsPlaceholderView=_turboModePlaybackControlsPlaceholderView;
 @property(readonly, nonatomic) AVPlaybackControlsView *playbackControlsView; // @synthesize playbackControlsView=_playbackControlsView;
-@property(readonly, nonatomic) UIView *interactiveContentOverlayView; // @synthesize interactiveContentOverlayView=_interactiveContentOverlayView;
+@property(retain, nonatomic) UIView *interactiveContentOverlayView; // @synthesize interactiveContentOverlayView=_interactiveContentOverlayView;
 @property(nonatomic) struct UIEdgeInsets edgeInsetsForLetterboxedContent; // @synthesize edgeInsetsForLetterboxedContent=_edgeInsetsForLetterboxedContent;
 @property(nonatomic) _Bool canAutomaticallyZoomLetterboxVideos; // @synthesize canAutomaticallyZoomLetterboxVideos=_canAutomaticallyZoomLetterboxVideos;
+@property(nonatomic) _Bool shouldLoadPlaybackControlsHint; // @synthesize shouldLoadPlaybackControlsHint=_shouldLoadPlaybackControlsHint;
+@property(retain, nonatomic) UIView<AVPlaybackContentContainer> *playbackContentContainerView; // @synthesize playbackContentContainerView=_playbackContentContainerView;
 @property(nonatomic) __weak id <AVPlayerViewControllerContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_updateStyleSheet;
 - (void)_loadTurboModePlaybackControlsPlaceholderViewIfNeeded;
+- (void)_loadTurboOrFullPlaybackControlsIfNeeded;
 - (void)_insertPlaybackControlsOrPlaceholderView:(id)arg1;
 - (id)_mediaTimingFunctionForCurrentAnimationCurve;
 - (void)_applyVideoGravityIfNeeded:(long long)arg1;
-- (void)_updatePlayerLayerAndContentOverlayContainerViewLayoutMarginsForVideoGravity:(long long)arg1;
+- (void)_updateVideoContentInsetForVideoGravity:(long long)arg1;
 - (void)_updateVideoGravityDuringLayoutSubviewsAndAssertThatIfYouBreakThisMethodYouOwnThisMethod;
 - (_Bool)_isBeingTransitionedToOrFromFullScreen;
+@property(readonly, nonatomic, getter=isScrollingQuickly) _Bool scrollingQuickly;
+@property(readonly, nonatomic, getter=isScrolling) _Bool scrolling;
+@property(readonly, nonatomic, getter=isInAWindowAndNotScrolling) _Bool inAWindowAndNotScrolling;
 - (void)layoutSubviews;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
-- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)performTransition:(long long)arg1;
-@property(readonly, nonatomic, getter=isTransitionInteractive) _Bool transitionInteractive;
-@property(readonly, nonatomic) long long transitionDirection;
-@property(readonly, nonatomic) double transitionProgress;
-@property(readonly, nonatomic) long long transitionState;
-@property(readonly, nonatomic) AVPlayerLayerAndContentOverlayContainerView *transitioningContentView;
-@property(readonly, nonatomic) AVPlayerLayerAndContentOverlayContainerView *activeContentView;
-@property(nonatomic) __weak id <AVContentTransitioningDelegate> contentTransitioningDelegate;
-- (void)configureBackdropView:(id)arg1;
+- (id)avkit_backdropGroupLeader;
+- (void)removeTurboModePlaybackControlsPlaceholderViewIfNeeded;
 - (void)loadPlaybackControlsViewIfNeeded;
-- (void)playerLayerViewDidChange;
-@property(readonly, nonatomic) unsigned long long layoutClass;
-@property(readonly, nonatomic) _Bool isDescendantOfNonPagingScrollView;
+@property(readonly, nonatomic) NSNumber *layoutClass;
 @property(readonly, nonatomic) _Bool isCoveringWindow;
-- (void)setVideoGravityForTransitioningContent:(id)arg1;
 - (void)setTargetVideoGravity:(id)arg1 forLayoutClass:(unsigned long long)arg2;
 - (void)setExternalPlaybackIndicatorTitle:(id)arg1 subtitle:(id)arg2;
 - (void)setShowsExternalPlaybackIndicator:(_Bool)arg1;
 - (void)setShowsAudioOnlyIndicator:(_Bool)arg1;
 - (void)setShowsUnsupportedContentIndicator:(_Bool)arg1;
 - (_Bool)isViewDescendantOfPlaybackControlsSubview:(id)arg1;
-- (void)addPlayerLayerAndContentOverlayContainerViewIfNeeded;
-- (void)updateBackdropCaptureViewHidden;
+- (void)addPlaybackContentContainerViewIfNeeded;
+- (void)scrollViewObserverValuesDidChange:(id)arg1;
+- (void)avkit_needsUpdateBackdropCaptureViewHidden;
 @property(readonly, nonatomic) UIView *iAdPreRollViewIfLoaded;
 @property(readonly, nonatomic) UIView *iAdPreRollView; // @synthesize iAdPreRollView=_iAdPreRollView;
-@property(readonly, nonatomic) UIView *playerLayerAndContentOverlayContainerView;
-@property(readonly, nonatomic) UIPanGestureRecognizer *contentTransitioningViewGestureRecognizer;
 @property(readonly, nonatomic) UIImageView *audioOnlyIndicatorViewIfLoaded;
 @property(readonly, nonatomic) UIImageView *audioOnlyIndicatorView; // @synthesize audioOnlyIndicatorView=_audioOnlyIndicatorView;
 @property(readonly, nonatomic) UIImageView *unsupportedContentIndicatorViewIfLoaded;
 @property(readonly, nonatomic) UIImageView *unsupportedContentIndicatorView; // @synthesize unsupportedContentIndicatorView=_unsupportedContentIndicatorView;
 @property(readonly, nonatomic) AVExternalPlaybackIndicatorView *externalPlaybackIndicatorViewIfLoaded;
 @property(readonly, nonatomic) AVExternalPlaybackIndicatorView *externalPlaybackIndicatorView; // @synthesize externalPlaybackIndicatorView=_externalPlaybackIndicatorView;
-@property(readonly, nonatomic) _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
-@property(readonly, nonatomic) NSString *captureGroupName; // @synthesize captureGroupName=_captureGroupName;
 @property(copy, nonatomic) NSString *automaticVideoGravity; // @synthesize automaticVideoGravity=_automaticVideoGravity;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 playerLayerView:(id)arg2 targetVideoGravities:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 playbackContentContainerView:(id)arg2 targetVideoGravities:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

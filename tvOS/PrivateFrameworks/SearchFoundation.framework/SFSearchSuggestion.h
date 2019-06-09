@@ -30,9 +30,11 @@
     NSString *_bundleIdentifier;
     NSString *_fbr;
     NSString *_scopedSearchApplicationBundleIdentifier;
+    NSString *_utteranceText;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *utteranceText; // @synthesize utteranceText=_utteranceText;
 @property(copy, nonatomic) NSString *scopedSearchApplicationBundleIdentifier; // @synthesize scopedSearchApplicationBundleIdentifier=_scopedSearchApplicationBundleIdentifier;
 @property(copy, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(nonatomic) _Bool previouslyEngaged; // @synthesize previouslyEngaged=_previouslyEngaged;

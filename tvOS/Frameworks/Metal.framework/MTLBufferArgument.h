@@ -18,11 +18,13 @@ __attribute__((visibility("hidden")))
 - (id)formattedDescription:(unsigned long long)arg1;
 - (id)bufferIndirectArgumentType;
 - (id)bufferPointerType;
+- (id)structType;
 - (id)bufferStructType;
 - (unsigned long long)bufferDataSize;
 - (unsigned long long)bufferDataType;
 - (unsigned long long)bufferAlignment;
 - (void)setStructType:(id)arg1;
+- (void)setStructType:(id)arg1 doRetain:(_Bool)arg2;
 - (_Bool)isVertexDescriptorBuffer;
 - (void)setVertexDescriptorBuffer:(_Bool)arg1;
 - (void)setAlignment:(unsigned long long)arg1;

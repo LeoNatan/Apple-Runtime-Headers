@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <CoreParsec/NSObject-Protocol.h>
+
 @class NSData, NSDate, NSFileHandle, NSString, PARRequest, PARSessionConfiguration;
 
-@protocol PARDaemonXPC
+@protocol PARDaemonXPC <NSObject>
 - (void)getImageMap:(void (^)(NSDictionary *))arg1;
 - (void)updateParameters:(double)arg1 safariLast1day:(double)arg2 safariLast1week:(double)arg3 safariLast1month:(double)arg4 safariAll:(double)arg5 safariMostRecent:(double)arg6 minThresholdToSend:(double)arg7;
 - (void)addCompletion:(NSString *)arg1 forInput:(NSString *)arg2;
@@ -18,6 +20,7 @@
 - (void)teeFeedbackTo:(NSFileHandle *)arg1 prettyPrint:(BOOL)arg2 completion:(void (^)(NSError *))arg3;
 - (void)reportFeedbackPayloadData:(PARSessionConfiguration *)arg1 payloadData:(NSData *)arg2 queryId:(unsigned long long)arg3;
 - (void)request:(PARSessionConfiguration *)arg1 request:(PARRequest *)arg2 reply:(void (^)(unsigned long long, PARReply *, NSError *))arg3;
+- (void)forceFetchBag:(PARSessionConfiguration *)arg1 reply:(void (^)(PARBag *, NSError *))arg2;
 - (void)bag:(PARSessionConfiguration *)arg1 reply:(void (^)(PARBag *, NSError *))arg2;
 - (void)configure:(PARSessionConfiguration *)arg1 reply:(void (^)(NSXPCListenerEndpoint *))arg2;
 @end

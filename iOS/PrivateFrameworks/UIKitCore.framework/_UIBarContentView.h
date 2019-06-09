@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIButtonBarAppearanceDelegate-Protocol.h>
 
-@class NSString, UIColor, UIImage;
+@class NSString, UIColor, UIImage, _UIBarButtonItemAppearanceStorage;
 
 __attribute__((visibility("hidden")))
 @interface _UIBarContentView : UIView <_UIButtonBarAppearanceDelegate>
@@ -16,19 +16,18 @@ __attribute__((visibility("hidden")))
     _Bool _barWantsLetterpress;
     _Bool _centerTextButtons;
     Class _appearanceGuideClass;
-    id _appearanceStorage;
+    _UIBarButtonItemAppearanceStorage *_appearanceStorage;
     UIImage *_backIndicatorMaskImage;
 }
 
 @property(retain, nonatomic) UIImage *backIndicatorMaskImage; // @synthesize backIndicatorMaskImage=_backIndicatorMaskImage;
-@property(readonly, nonatomic) id appearanceStorage; // @synthesize appearanceStorage=_appearanceStorage;
+@property(readonly, nonatomic) _UIBarButtonItemAppearanceStorage *appearanceStorage; // @synthesize appearanceStorage=_appearanceStorage;
 @property(nonatomic) _Bool centerTextButtons; // @synthesize centerTextButtons=_centerTextButtons;
 @property(retain, nonatomic, setter=_setAppearanceGuideClass:) Class _appearanceGuideClass; // @synthesize _appearanceGuideClass;
 @property(nonatomic) _Bool barWantsLetterpress; // @synthesize barWantsLetterpress=_barWantsLetterpress;
 - (void).cxx_destruct;
 - (unsigned long long)_edgesPropagatingSafeAreaInsetsToDescendants;
-@property(retain, nonatomic) UIImage *backIndicatorImage; // @dynamic backIndicatorImage;
-- (id)defaultFontDescriptor;
+@property(retain, nonatomic) UIImage *backIndicatorImage;
 - (id)_titleTextAttributesForState:(unsigned long long)arg1;
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
@@ -50,13 +49,13 @@ __attribute__((visibility("hidden")))
 - (void)_UIAppearance_setBackgroundImage:(id)arg1 forState:(unsigned long long)arg2 barMetrics:(long long)arg3;
 - (void)_appearanceChanged;
 @property(readonly, nonatomic) double backButtonMaximumWidth;
-@property(readonly, nonatomic) double backButtonMargin; // @dynamic backButtonMargin;
+@property(readonly, nonatomic) double backButtonMargin;
 - (double)absorptionForItem:(id)arg1;
 @property(readonly, nonatomic) double defaultTextPadding;
 @property(readonly, nonatomic) double defaultEdgeSpacing;
 - (unsigned long long)edgesPaddingBarButtonItem:(id)arg1;
 @property(readonly, nonatomic) _Bool isRTL;
-@property(readonly, nonatomic) long long barMetrics; // @dynamic barMetrics;
+@property(readonly, nonatomic) _Bool compactMetrics;
 @property(readonly, nonatomic) long long barType;
 - (id)initWithFrame:(struct CGRect)arg1;
 

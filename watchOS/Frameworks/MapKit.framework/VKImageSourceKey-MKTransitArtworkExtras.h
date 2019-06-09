@@ -11,9 +11,10 @@
 #import <MapKit/GEOTransitShieldDataSource-Protocol.h>
 
 @class NSString;
-@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource;
+@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource, GEOTransitTextDataSource;
 
 @interface VKImageSourceKey (MKTransitArtworkExtras) <GEOTransitArtworkDataSource, GEOTransitIconDataSource, GEOTransitShieldDataSource>
+@property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource;
 @property(readonly, nonatomic) NSString *accessibilityText;
 @property(readonly, nonatomic) _Bool hasRoutingIncidentBadge;
 @property(readonly, nonatomic) int iconType;

@@ -6,7 +6,7 @@
 
 #import <Vision/VNFaceLandmarks.h>
 
-@class VNFaceLandmarkRegion2D;
+@class NSArray, VNFaceLandmarkRegion2D;
 
 @interface VNFaceLandmarks2D : VNFaceLandmarks
 {
@@ -23,23 +23,38 @@
     VNFaceLandmarkRegion2D *_innerLips;
     VNFaceLandmarkRegion2D *_leftPupil;
     VNFaceLandmarkRegion2D *_rightPupil;
+    unsigned long long _constellation;
+    NSArray *_precisionEstimatesPerPoint;
+    NSArray *_occlusionFlagsPerPoint;
 }
 
++ (id)_createNSArrayFrom:(id)arg1 withPointIndices:(const int *)arg2 andPointCount:(unsigned long long)arg3;
++ (_Bool)supportsSecureCoding;
+@property(retain) NSArray *occlusionFlagsPerPoint; // @synthesize occlusionFlagsPerPoint=_occlusionFlagsPerPoint;
+@property(retain) NSArray *precisionEstimatesPerPoint; // @synthesize precisionEstimatesPerPoint=_precisionEstimatesPerPoint;
+@property unsigned long long constellation; // @synthesize constellation=_constellation;
 - (void).cxx_destruct;
-@property(readonly) VNFaceLandmarkRegion2D *rightPupil;
-@property(readonly) VNFaceLandmarkRegion2D *leftPupil;
-@property(readonly) VNFaceLandmarkRegion2D *innerLips;
-@property(readonly) VNFaceLandmarkRegion2D *outerLips;
-@property(readonly) VNFaceLandmarkRegion2D *medianLine;
-@property(readonly) VNFaceLandmarkRegion2D *noseCrest;
-@property(readonly) VNFaceLandmarkRegion2D *nose;
-@property(readonly) VNFaceLandmarkRegion2D *rightEyebrow;
-@property(readonly) VNFaceLandmarkRegion2D *leftEyebrow;
-@property(readonly) VNFaceLandmarkRegion2D *rightEye;
-@property(readonly) VNFaceLandmarkRegion2D *leftEye;
-@property(readonly) VNFaceLandmarkRegion2D *faceContour;
-@property(readonly) VNFaceLandmarkRegion2D *allPoints;
-- (void *)createPointArray:(const int *)arg1 count:(unsigned long long)arg2;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) VNFaceLandmarkRegion2D *rightPupil; // @synthesize rightPupil=_rightPupil;
+@property(readonly) VNFaceLandmarkRegion2D *leftPupil; // @synthesize leftPupil=_leftPupil;
+@property(readonly) VNFaceLandmarkRegion2D *innerLips; // @synthesize innerLips=_innerLips;
+@property(readonly) VNFaceLandmarkRegion2D *outerLips; // @synthesize outerLips=_outerLips;
+@property(readonly) VNFaceLandmarkRegion2D *medianLine; // @synthesize medianLine=_medianLine;
+@property(readonly) VNFaceLandmarkRegion2D *noseCrest; // @synthesize noseCrest=_noseCrest;
+@property(readonly) VNFaceLandmarkRegion2D *nose; // @synthesize nose=_nose;
+@property(readonly) VNFaceLandmarkRegion2D *rightEyebrow; // @synthesize rightEyebrow=_rightEyebrow;
+@property(readonly) VNFaceLandmarkRegion2D *leftEyebrow; // @synthesize leftEyebrow=_leftEyebrow;
+@property(readonly) VNFaceLandmarkRegion2D *rightEye; // @synthesize rightEye=_rightEye;
+@property(readonly) VNFaceLandmarkRegion2D *leftEye; // @synthesize leftEye=_leftEye;
+- (id)_createFaceLandmarks2DRegionFromPointIndexes:(const int *)arg1 andPointCount:(unsigned long long)arg2;
+@property(readonly) VNFaceLandmarkRegion2D *faceContour; // @synthesize faceContour=_faceContour;
+@property(readonly) VNFaceLandmarkRegion2D *allPoints; // @synthesize allPoints=_allPoints;
+- (void *)_createPointArray:(const int *)arg1 count:(unsigned long long)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)hash;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithRequestRevision:(unsigned long long)arg1 pointsData:(id)arg2 pointCount:(unsigned long long)arg3 constellation:(unsigned long long)arg4 precisionEstimatesPerPoint:(id)arg5 occlusionFlagsPerPoint:(id)arg6 userFacingBBox:(struct CGRect)arg7 alignedBBox:(struct _Geometry2D_rect2D_)arg8 landmarkScore:(float)arg9;
 
 @end
 

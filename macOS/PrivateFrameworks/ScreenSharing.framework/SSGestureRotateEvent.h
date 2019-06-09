@@ -6,15 +6,13 @@
 
 #import <ScreenSharing/SSGestureEvent.h>
 
-__attribute__((visibility("hidden")))
 @interface SSGestureRotateEvent : SSGestureEvent
 {
     double mRotation;
-    void *mReservedForInstanceVariablesGestureRotate;
 }
 
 + (id)gestureRotateEventWithCoordinates:(struct SSPoint)arg1 subType:(long long)arg2 rotation:(double)arg3;
-@property(readonly) double rotation; // @synthesize rotation=mRotation;
+@property double rotation; // @synthesize rotation=mRotation;
 - (id)initWithCoordinates:(struct SSPoint)arg1 subType:(long long)arg2 rotation:(double)arg3;
 
 @end

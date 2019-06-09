@@ -8,6 +8,7 @@
 
 @protocol PKVoIPXPCClient
 - (void)voipPayloadReceived:(NSDictionary *)arg1 withCompletionHandler:(void (^)(void))arg2;
+- (void)voipPayloadReceived:(NSDictionary *)arg1 mustPostCall:(_Bool)arg2 withCompletionHandler:(void (^)(void))arg3;
 - (void)voipRegistrationSucceededWithDeviceToken:(NSData *)arg1;
 
 @optional

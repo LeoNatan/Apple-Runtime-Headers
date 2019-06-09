@@ -16,7 +16,6 @@
 + (id)sharedPalette;
 @property(readonly) UIColor *cellActionColor;
 @property(readonly) UIColor *cellActionDestructiveColor;
-@property(readonly) UIColor *monogramBackgroundColor;
 @property(readonly) UIColor *shareTintColor;
 @property(readonly) UIColor *challengesTintColor;
 @property(readonly) UIColor *friendRequestCaptionTintColor;
@@ -29,6 +28,7 @@
 @property(readonly) UIColor *activityIndicatorColor;
 @property(readonly) UIColor *pinnedHeaderViewBackgroundColor;
 @property(readonly) UIColor *floatingHeaderViewBackgroundColor;
+@property(readonly) UIColor *opaqueViewBackgroundColor;
 @property(readonly) UIColor *viewBackgroundColor;
 @property(readonly) UIColor *windowBackgroundColor;
 @property(readonly) UIColor *bubbleTextColor;

@@ -10,6 +10,11 @@
 {
 }
 
+- (id)_forcesByFingerIdentifierAtEventIndex:(unsigned int)arg1;
+- (id)_pointsByFingerIdentifierAtEventIndex:(unsigned int)arg1;
+- (void)_removeFingersAtEventIndex:(unsigned int)arg1;
+- (void)_addPoint:(struct CGPoint)arg1 force:(float)arg2 forFingerIdentifier:(id)arg3 atEventIndex:(unsigned int)arg4;
+- (void)_addPoint:(struct CGPoint)arg1 force:(float)arg2 forFingerIdentifier:(id)arg3 atTime:(double)arg4;
 - (void)addPointsFromReplayableGesture:(id)arg1;
 - (void)addPointsByFingerIdentifier:(id)arg1 forces:(id)arg2 atTime:(double)arg3;
 

@@ -18,8 +18,8 @@
 }
 
 - (void).cxx_destruct;
-- (CDStruct_912cb5d2)pixelSize;
-- (id)_evaluateImage:(out id *)arg1;
+- (CDStruct_912cb5d2)pixelSizeWithSourceOptions:(id)arg1;
+- (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (struct __CVBuffer *)_pixelBuffer:(out id *)arg1;
 - (void)dealloc;
 - (id)initWithSettings:(id)arg1 orientation:(long long)arg2;

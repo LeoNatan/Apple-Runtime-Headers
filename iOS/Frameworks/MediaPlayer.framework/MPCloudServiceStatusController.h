@@ -7,13 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlayer/ICEnvironmentMonitorObserver-Protocol.h>
-#import <MediaPlayer/ISURLBagObserver-Protocol.h>
-#import <MediaPlayer/SSVPlaybackLeaseDelegate-Protocol.h>
 
-@class NSOperationQueue, NSString, SSVFairPlaySubscriptionController, SSVFairPlaySubscriptionStatus, SSVPlaybackLease, SSVSubscriptionStatus;
+@class ICMusicSubscriptionFairPlayKeyStatus, ICMusicSubscriptionStatus, NSOperationQueue, NSString, SSVFairPlaySubscriptionStatus, SSVSubscriptionStatus;
 @protocol OS_dispatch_queue;
 
-@interface MPCloudServiceStatusController : NSObject <ICEnvironmentMonitorObserver, ISURLBagObserver, SSVPlaybackLeaseDelegate>
+@interface MPCloudServiceStatusController : NSObject <ICEnvironmentMonitorObserver>
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned long long _accountStoreChangeObservationCount;
@@ -24,15 +22,14 @@
     unsigned long long _cloudLibraryObservationCount;
     NSOperationQueue *_fairPlayOperationQueue;
     unsigned long long _fairPlaySubscriptionStatusObservationCount;
-    SSVFairPlaySubscriptionController *_fairPlaySubscriptionController;
     _Bool _hasLoadedMatchStatus;
+    _Bool _hasLoadedSubscriptionAvailability;
     _Bool _hasLoadedURLBag;
-    SSVFairPlaySubscriptionStatus *_lastKnownFairPlaySubscriptionStatus;
     SSVSubscriptionStatus *_lastKnownSubscriptionStatus;
+    ICMusicSubscriptionStatus *_lastKnownMusicSubscriptionStatus;
     unsigned long long _matchStatusObservationCount;
     unsigned long long _matchStatus;
     _Bool _observingNetworkReachability;
-    SSVPlaybackLease *_playbackLease;
     _Bool _hasSubscriptionLease;
     _Bool _shouldPlaybackRequireSubscriptionLease;
     unsigned long long _shouldPlaybackRequireSubscriptionLeaseObservationCount;
@@ -42,57 +39,38 @@
     NSOperationQueue *_subscriptionOperationQueue;
     unsigned long long _subscriptionStatusObservationCount;
     unsigned long long _URLBagObservationCount;
+    ICMusicSubscriptionFairPlayKeyStatus *_lastKnownSubscriptionFairPlayKeyStatus;
 }
 
 + (id)sharedController;
+@property(readonly, nonatomic) ICMusicSubscriptionFairPlayKeyStatus *lastKnownSubscriptionFairPlayKeyStatus; // @synthesize lastKnownSubscriptionFairPlayKeyStatus=_lastKnownSubscriptionFairPlayKeyStatus;
 - (void).cxx_destruct;
-- (void)_updateWithURLBagDictionary:(id)arg1;
+- (void)_updateSubscriptionStatusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateSubscriptionAvailability;
 - (void)_updateMatchStatus;
 - (void)_updateForNetworkReachabilityObserversCountChange;
-- (id)_fairPlaySubscriptionController;
-- (void)_endObservingURLBag;
 - (_Bool)_currentPurchaseHistoryEnabled;
 - (_Bool)_currentCloudLibraryEnabled;
 - (_Bool)_calculateShouldPlaybackRequireSubscriptionLeaseReturningLikelyToReachRemoteServer:(_Bool *)arg1;
-- (void)_beginObservingURLBag;
-- (id)_activeAccount;
-- (void)_setHasSubscriptionLease:(_Bool)arg1 endReasonType:(unsigned long long)arg2;
-- (void)_getCurrentFairPlaySubscriptionStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_updateSubscriptionInformationWithEndReasonType:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) SSVPlaybackLease *_existingPlaybackLease; // @dynamic _existingPlaybackLease;
-- (void)_endUsingSubscriptionLease;
-- (void)_beginUsingSubscriptionLeaseWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_subscriptionStatusDidChange:(id)arg1;
 - (void)_userIdentityStoreDidChange:(id)arg1;
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
-- (void)_fairPlaySubscriptionControllerSubscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_cloudClientAuthenticationDidChange;
-- (void)updateWithExternalLeaseResponseError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)refreshSubscriptionLeaseWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)preheatSubscriptionLeaseRequestsWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)performSubscriptionSecureKeyDeliveryRequestOperation:(id)arg1;
 - (void)getSubscriptionStatusWithOptions:(id)arg1 statusBlock:(CDUnknownBlockType)arg2;
-- (void)getSubscriptionAssetWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)getFairPlaySubscriptionStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)endObservingSubscriptionStatus;
-- (void)endObservingSubscriptionLease;
 - (void)endObservingSubscriptionAvailability;
-- (void)endObservingShouldPlaybackRequireSubscriptionLease;
 - (void)endObservingPurchaseHistoryEnabled;
-- (void)endObservingMatchStatus;
 - (void)endObservingFairPlaySubscriptionStatus;
+- (void)endObservingMatchStatus;
 - (void)endObservingCloudLibraryEnabled;
-- (void)endAutomaticallyRefreshingSubscriptionLease;
 - (void)beginObservingSubscriptionStatus;
-- (void)beginObservingSubscriptionLease;
 - (void)beginObservingSubscriptionAvailability;
-- (void)beginObservingShouldPlaybackRequireSubscriptionLease;
 - (void)beginObservingPurchaseHistoryEnabled;
-- (void)beginObservingMatchStatus;
 - (void)beginObservingFairPlaySubscriptionStatus;
+- (void)beginObservingMatchStatus;
 - (void)beginObservingCloudLibraryEnabled;
-- (void)beginAutomaticallyRefreshingSubscriptionLease;
-- (void)acquireSubscriptionLeaseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_subscriptionOperationQueue;
+@property(readonly, copy, nonatomic) ICMusicSubscriptionStatus *musicSubscriptionStatus;
 @property(readonly, copy, nonatomic) SSVSubscriptionStatus *subscriptionStatus;
 @property(readonly, nonatomic) _Bool shouldPlaybackRequireSubscriptionLease;
 @property(readonly, nonatomic) unsigned long long matchStatus;
@@ -100,9 +78,6 @@
 @property(readonly, nonatomic, getter=isSubscriptionAvailable) _Bool subscriptionAvailable;
 @property(readonly, nonatomic, getter=isPurchaseHistoryEnabled) _Bool purchaseHistoryEnabled;
 @property(readonly, nonatomic, getter=isCloudLibraryEnabled) _Bool cloudLibraryEnabled;
-- (void)playbackLease:(id)arg1 didEndWithReasonType:(unsigned long long)arg2;
-- (void)playbackLease:(id)arg1 automaticRefreshDidFinishWithResponse:(id)arg2 error:(id)arg3;
-- (void)bagDidChange:(id)arg1;
 - (void)environmentMonitorDidChangeNetworkReachability:(id)arg1;
 - (void)dealloc;
 - (id)init;

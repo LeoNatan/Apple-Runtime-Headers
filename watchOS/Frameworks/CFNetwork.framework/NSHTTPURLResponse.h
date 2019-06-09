@@ -23,6 +23,7 @@
 - (id)_peerCertificateChain;
 - (void)dealloc;
 @property(readonly) int statusCode;
+- (id)valueForHTTPHeaderField:(id)arg1;
 - (id)_allHTTPHeaderFieldsAsArrays;
 @property(readonly, copy) NSDictionary *allHeaderFields;
 - (id)description;
@@ -30,7 +31,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 HTTPVersion:(id)arg3 headerFields:(id)arg4;
 - (id)initWithURL:(id)arg1 statusCode:(int)arg2 headerFields:(id)arg3 requestTime:(double)arg4;
-- (id)_initWithCFURLResponse:(struct _CFURLResponse *)arg1;
+- (id)_initWithCFURLResponse:(id)arg1;
 
 @end
 

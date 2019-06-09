@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 
 // Remaining properties
+@property(nonatomic) _Bool areChildrenFocused;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly, copy, nonatomic, getter=_linearFocusMovementSequences) NSArray *linearFocusMovementSequences;

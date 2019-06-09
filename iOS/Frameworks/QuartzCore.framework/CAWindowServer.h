@@ -22,7 +22,6 @@
 @property(getter=isMirroringEnabled) _Bool mirroringEnabled; // @synthesize mirroringEnabled=_mirroringEnabled;
 - (unsigned int)contextIdHostingContextId:(unsigned int)arg1;
 - (unsigned int)taskNamePortOfContextId:(unsigned int)arg1;
-- (unsigned int)taskPortOfContextId:(unsigned int)arg1;
 - (unsigned int)clientPortOfContextId:(unsigned int)arg1;
 - (id)description;
 - (id)insecureProcessIds;
@@ -32,6 +31,7 @@
 @property(readonly) NSArray *displays;
 - (void)dealloc;
 - (void)_detectDisplays;
+- (_Bool)_detectSimDisplays;
 - (id)displayWithUniqueId:(id)arg1;
 - (id)displayWithDisplayId:(unsigned int)arg1;
 - (id)displayWithName:(id)arg1;

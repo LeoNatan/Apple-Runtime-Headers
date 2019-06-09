@@ -6,6 +6,7 @@
 
 #import <AutoBugCaptureCore/NetworkDiagnosticsReportGenerator.h>
 
+__attribute__((visibility("hidden")))
 @interface FetchLogArchivesReportGenerator : NetworkDiagnosticsReportGenerator
 {
 }

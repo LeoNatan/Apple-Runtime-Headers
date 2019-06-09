@@ -11,6 +11,7 @@
 
 @class EDAlignmentInfo, EDBorders, EDContentFormat, EDFill, EDFont, EDProtection, EDResources, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDStyle : NSObject <NSCopying, EDImmutableObject>
 {
     EDResources *mResources;
@@ -44,6 +45,7 @@
 @property(getter=isFillApplied) _Bool fillApplied; // @synthesize fillApplied=mFillApplied;
 @property(getter=isFontApplied) _Bool fontApplied; // @synthesize fontApplied=mFontApplied;
 @property(getter=isContentFormatApplied) _Bool contentFormatApplied; // @synthesize contentFormatApplied=mContentFormatApplied;
+- (void).cxx_destruct;
 - (void)setDoNotModify:(_Bool)arg1;
 - (unsigned long long)index;
 - (void)setParent:(id)arg1;
@@ -66,7 +68,6 @@
 - (_Bool)isEqualToStyle:(id)arg1;
 - (_Bool)isEquivalentToStyle:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)setAlignmentInfoIndex:(unsigned long long)arg1;

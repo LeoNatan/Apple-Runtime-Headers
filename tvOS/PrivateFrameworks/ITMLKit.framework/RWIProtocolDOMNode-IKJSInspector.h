@@ -9,6 +9,7 @@
 @interface RWIProtocolDOMNode (IKJSInspector)
 + (id)ik_nodeFromDOMNode:(id)arg1;
 + (id)ik_nodeFromDOMNode:(id)arg1 depth:(int)arg2;
++ (id)safe_initWithNodeId:(int)arg1 nodeType:(int)arg2 nodeName:(id)arg3 localName:(id)arg4 nodeValue:(id)arg5;
 - (void)ik_updateWithDOMNode:(id)arg1 fullfillChildren:(_Bool)arg2 dispatcher:(id)arg3;
 - (void)ik_updateWithDOMNode:(id)arg1 dispatcher:(id)arg2;
 - (id)ik_nodeWithNodeId:(int)arg1;

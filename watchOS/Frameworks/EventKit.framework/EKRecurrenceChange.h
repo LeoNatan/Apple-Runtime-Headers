@@ -6,10 +6,22 @@
 
 #import <EventKit/EKObjectChange.h>
 
-__attribute__((visibility("hidden")))
-@interface EKRecurrenceChange : EKObjectChange
+#import <EventKit/EKOwnerIDProviding-Protocol.h>
+
+@class EKObjectID;
+
+@interface EKRecurrenceChange : EKObjectChange <EKOwnerIDProviding>
 {
+    EKObjectID *_ownerID;
 }
+
++ (void)fetchRecurrenceChangesInCalendar:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (void)fetchRecurrenceChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (void)fetchRecurrenceChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (int)entityType;
+@property(readonly, nonatomic) EKObjectID *ownerID; // @synthesize ownerID=_ownerID;
+- (void).cxx_destruct;
+- (id)initWithChangeProperties:(id)arg1;
 
 @end
 

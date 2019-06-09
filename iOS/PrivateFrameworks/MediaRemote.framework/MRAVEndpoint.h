@@ -6,9 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class MRAVOutputDevice, MRExternalDevice, NSArray, NSDictionary, NSMutableArray, NSOperationQueue, NSString, NSTimer, _MRAVEndpointDescriptorProtobuf;
+@class MRAVOutputDevice, MRExternalDevice, NSArray, NSDictionary, NSMutableArray, NSOperationQueue, NSString, NSTimer, _MRAVEndpointDescriptorProtobuf, _MROriginProtobuf;
 
-__attribute__((visibility("hidden")))
 @interface MRAVEndpoint : NSObject
 {
     NSMutableArray *_pendingConnectionHandlers;
@@ -38,6 +37,9 @@ __attribute__((visibility("hidden")))
 - (id)outputDevicesMatchingPredicate:(CDUnknownBlockType)arg1;
 - (void)removeOutputDeviceFromParentGroup:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)scheduleEndpointOutputDevicesDidChangeNotification;
+- (void)canMigrateToDestination:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)migrateToDestination:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_prepateToMigrateToDestination:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)volumeControlCapabilitiesForOutputDevice:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setOutputDeviceVolume:(float)arg1 outputDevice:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -47,14 +49,17 @@ __attribute__((visibility("hidden")))
 - (_Bool)containsOutputDevice:(id)arg1;
 - (void)connectToExternalDeviceWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isLocalEndpoint) _Bool localEndpoint;
+@property(readonly, nonatomic) _MROriginProtobuf *origin;
 @property(readonly, nonatomic) NSDictionary *jsonEncodableDictionaryRepresentation;
 @property(readonly, nonatomic) NSString *shortDescription;
 - (_Bool)isVolumeControlAvailable;
 @property(readonly, nonatomic) _Bool canModifyGroupMembership;
+@property(readonly, nonatomic) NSString *debugName;
 @property(readonly, nonatomic) MRAVOutputDevice *designatedGroupLeader;
 @property(readonly, nonatomic) MRExternalDevice *externalDevice;
 @property(readonly, nonatomic) unsigned long long logicalOutputDeviceCount;
 @property(readonly, nonatomic) NSArray *outputDeviceUIDs;
+@property(readonly, nonatomic) NSArray *personalOutputDevices;
 @property(readonly, nonatomic) NSArray *outputDevices;
 @property(readonly, nonatomic) _MRAVEndpointDescriptorProtobuf *descriptor;
 - (_Bool)isEqual:(id)arg1;

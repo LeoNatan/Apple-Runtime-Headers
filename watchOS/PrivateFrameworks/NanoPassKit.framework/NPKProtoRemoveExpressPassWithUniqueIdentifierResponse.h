@@ -13,14 +13,14 @@
 @interface NPKProtoRemoveExpressPassWithUniqueIdentifierResponse : PBCodable <NSCopying>
 {
     NSData *_actualExpressPassInformation;
-    NSMutableArray *_currentExpressPasseInformations;
+    NSMutableArray *_currentExpressPassesInformations;
     _Bool _pending;
     _Bool _success;
     CDStruct_5ee4970e _has;
 }
 
-+ (Class)currentExpressPasseInformationType;
-@property(retain, nonatomic) NSMutableArray *currentExpressPasseInformations; // @synthesize currentExpressPasseInformations=_currentExpressPasseInformations;
++ (Class)currentExpressPassesInformationType;
+@property(retain, nonatomic) NSMutableArray *currentExpressPassesInformations; // @synthesize currentExpressPassesInformations=_currentExpressPassesInformations;
 @property(retain, nonatomic) NSData *actualExpressPassInformation; // @synthesize actualExpressPassInformation=_actualExpressPassInformation;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(nonatomic) _Bool pending; // @synthesize pending=_pending;
@@ -34,10 +34,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (id)currentExpressPasseInformationAtIndex:(unsigned int)arg1;
-- (unsigned int)currentExpressPasseInformationsCount;
-- (void)addCurrentExpressPasseInformation:(id)arg1;
-- (void)clearCurrentExpressPasseInformations;
+- (id)currentExpressPassesInformationAtIndex:(unsigned int)arg1;
+- (unsigned int)currentExpressPassesInformationsCount;
+- (void)addCurrentExpressPassesInformation:(id)arg1;
+- (void)clearCurrentExpressPassesInformations;
 @property(readonly, nonatomic) _Bool hasActualExpressPassInformation;
 @property(nonatomic) _Bool hasSuccess;
 @property(nonatomic) _Bool hasPending;

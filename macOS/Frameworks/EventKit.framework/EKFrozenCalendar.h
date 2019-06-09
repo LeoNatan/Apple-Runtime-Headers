@@ -46,6 +46,7 @@
     NSString *defaultOrganizerEncodedLikenessDataForNewItems;
     NSString *defaultOrganizerNameForNewItems;
     NSString *defaultOrganizerPhoneNumberForNewItems;
+    long long maxAttendees;
     NSString *notes;
     NSString *path;
     NSURL *prePublishURL;
@@ -65,6 +66,7 @@
 
 + (Class)meltedClass;
 + (id)propertiesUnavailableForPartialObjects;
++ (id)frozenObjectForObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3 forceUpdate:(BOOL)arg4;
 @property(readonly) NSDictionary *cachedPreFrozenRelationshipObjects; // @synthesize cachedPreFrozenRelationshipObjects=_cachedPreFrozenRelationshipObjects;
 @property(readonly, nonatomic) BOOL suppressEventSchedulingNotifications; // @synthesize suppressEventSchedulingNotifications=_suppressEventSchedulingNotifications;
 @property(readonly, nonatomic) BOOL isAffectingAvailability; // @synthesize isAffectingAvailability;
@@ -90,6 +92,7 @@
 @property(readonly, nonatomic) BOOL isColorEditable; // @synthesize isColorEditable;
 @property(readonly, nonatomic) BOOL isRenameable; // @synthesize isRenameable;
 @property(readonly, nonatomic) BOOL isFacebookBirthdayCalendar; // @synthesize isFacebookBirthdayCalendar;
+@property(readonly) long long maxAttendees; // @synthesize maxAttendees;
 @property(readonly) BOOL isMarkedImmutableSharees; // @synthesize isMarkedImmutableSharees;
 @property(readonly) BOOL isMarkedUndeletable; // @synthesize isMarkedUndeletable;
 @property(readonly, nonatomic) BOOL isFamilyCalendar; // @synthesize isFamilyCalendar;

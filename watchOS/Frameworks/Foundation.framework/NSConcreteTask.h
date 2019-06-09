@@ -12,18 +12,14 @@
 __attribute__((visibility("hidden")))
 @interface NSConcreteTask : NSTask
 {
-    struct _opaque_pthread_mutex_t _lock;
+    struct os_unfair_lock_s _lock;
     NSMutableDictionary *_dictionary;
     CDUnknownBlockType _terminationHandler;
     NSObject<OS_dispatch_source> *_dsrc;
     NSPort *_tmpPort;
     int _suspendCount;
     int _pid;
-    int _platformExitInfo;
-    _Bool _hasExeced;
-    _Bool _isRunning;
-    _Bool _hasPostedDeathNotification;
-    _Bool _terminationRun;
+    // Error parsing type: AQ, name: __exitRunningInfo
     BOOL _qos;
 }
 

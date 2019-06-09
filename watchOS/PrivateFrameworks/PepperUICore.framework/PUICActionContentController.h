@@ -67,7 +67,6 @@
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
-- (int)modalPresentationStyle;
 - (void)setModalPresentationStyle:(int)arg1;
 - (_Bool)prefersStatusBarHidden;
 - (id)puic_applicationStatusBarItem;

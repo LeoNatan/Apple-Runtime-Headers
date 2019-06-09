@@ -10,27 +10,29 @@
 {
 }
 
-+ (id)alertControllerForResettingPeopleWithCompletion:(CDUnknownBlockType)arg1;
-+ (id)alertControllerForRemovingNumberOfPeople:(long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
++ (id)memoryTitleStringFromPeople:(id)arg1;
++ (id)slideshowTitleStringForPeople:(id)arg1;
++ (id)_titleStringForPeople:(id)arg1 singlePersonFallback:(id)arg2 groupFallback:(id)arg3;
++ (id)titleStringForPeople:(id)arg1;
 + (void)_setDaysDictionary:(id)arg1;
 + (id)_daysDictionary;
 + (_Bool)_hasRecentlyHandledBootstrapForPerson:(id)arg1;
++ (void)markHandledBootstrapForPerson:(id)arg1;
++ (_Bool)shouldShowBootstrapForPerson:(id)arg1;
++ (void)_peopleFaceTilesForFaces:(id)arg1 asset:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (struct CGRect)faceRectForPeopleFaceTile:(id)arg1;
++ (id)personFaceTileByPersonIdForPersons:(id)arg1 options:(id)arg2;
++ (id)generateNewFaceTileFromFaceTile:(id)arg1;
++ (void)peopleFaceTilesForFaces:(id)arg1 asset:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)peopleFaceTilesForAsset:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (_Bool)isFavoritePerson:(id)arg1;
 + (long long)manualOrderForInsertingAtEndOfSectionWithType:(long long)arg1;
-+ (id)modelObjectsFromPersonItemArray:(id)arg1;
++ (id)sortDescriptorsForManualSort;
 + (CDUnknownBlockType)_manualOrderComparator;
-+ (CDUnknownBlockType)_otherPeopleComparator;
 + (CDUnknownBlockType)comparatorForFetchType:(unsigned long long)arg1;
-+ (_Bool)facesSyncFeatureEnabled;
++ (id)facesForPerson:(id)arg1 inAssets:(id)arg2;
 + (_Bool)isPersonHiddenFromPeopleHome:(id)arg1;
 + (id)assetCollectionListFetchResultForPerson:(id)arg1;
-+ (void)markHandledBootstrapForPerson:(id)arg1;
-+ (_Bool)showBootstrapIfNeededWithContext:(id)arg1 fromParentVC:(id)arg2 force:(_Bool)arg3 delegate:(id)arg4;
-+ (_Bool)showBootstrapIfNeededWithContext:(id)arg1 fromParentVC:(id)arg2 delegate:(id)arg3;
-+ (_Bool)showBootstrapIfNeededWithContext:(id)arg1 fromParentVC:(id)arg2;
-+ (id)bootstrapViewControllerForContext:(id)arg1 delegate:(id)arg2;
-+ (_Bool)shouldShowBootstrapForPerson:(id)arg1;
-+ (id)createDetailsForPerson:(id)arg1;
-+ (id)bootstrapContextForPersonSuggestion:(id)arg1 type:(unsigned long long)arg2;
 + (id)identifiersForPeople:(id)arg1;
 + (void)mergePersons:(id)arg1 withPerson:(id)arg2;
 + (id)_peopleHomeFetchResultForPersonType:(long long)arg1;
@@ -40,6 +42,12 @@
 + (id)peopleWithPersonUris:(id)arg1;
 + (id)personWithPersonUri:(id)arg1;
 + (id)sharedContactStore;
++ (id)alertControllerForResettingPeopleWithCompletion:(CDUnknownBlockType)arg1;
++ (id)alertControllerForRemovingNumberOfPeople:(long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
++ (_Bool)showBootstrapIfNeededWithContext:(id)arg1 fromParentVC:(id)arg2 force:(_Bool)arg3 delegate:(id)arg4;
++ (_Bool)showBootstrapIfNeededWithContext:(id)arg1 fromParentVC:(id)arg2 delegate:(id)arg3;
++ (_Bool)showBootstrapIfNeededWithContext:(id)arg1 fromParentVC:(id)arg2;
++ (id)bootstrapViewControllerForContext:(id)arg1 delegate:(id)arg2;
 
 @end
 

@@ -8,10 +8,14 @@
 
 @interface NTKActivitySignificantRingChangeModel : NSObject
 {
-    CDStruct_fbe50fab _lastSignificantRingPercentage;
+    struct {
+        float movePercentage;
+        float exercisePercentage;
+        float standPercentage;
+    } _lastSignificantRingPercentage;
 }
 
-- (void)updateSignificantRingValuesWithActiveEnergyPercentage:(float)arg1 briskPercentage:(float)arg2 sedentaryPercentage:(float)arg3;
+- (void)updateSignificantRingValuesWithMovePercentage:(float)arg1 exercisePercentage:(float)arg2 standPercentage:(float)arg3;
 - (id)init;
 
 @end

@@ -7,6 +7,7 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (ICAdditions)
+- (id)ic_dataValueForKey:(id)arg1;
 - (id)ic_stringValueForKey:(id)arg1;
 - (id)ic_dictionaryValueForKey:(id)arg1;
 - (id)ic_arrayValueForKey:(id)arg1;

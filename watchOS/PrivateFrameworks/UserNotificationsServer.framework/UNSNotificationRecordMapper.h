@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class BSCFBundle;
+@class BSCFBundle, UNSNotificationCategoryRepository;
 
 @interface UNSNotificationRecordMapper : NSObject
 {
     BSCFBundle *_bundle;
+    UNSNotificationCategoryRepository *_categoryRepository;
 }
 
 - (void).cxx_destruct;
@@ -20,7 +21,7 @@
 - (id)_notificationContentForNotificationRecord:(id)arg1;
 - (id)notificationRequestForNotificationRecord:(id)arg1;
 - (id)notificationForNotificationRecord:(id)arg1;
-- (id)initWithBundle:(id)arg1;
+- (id)initWithBundle:(id)arg1 categoryRepository:(id)arg2;
 
 @end
 

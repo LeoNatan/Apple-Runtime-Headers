@@ -18,21 +18,21 @@ __attribute__((visibility("hidden")))
     WDTableRowProperties *mTableRowProperties;
     WDTableCellProperties *mTableCellProperties;
     WDTableStyleOverride *mTableStyleOverrides[12];
-    WDStyleSheet *mStyleSheet;
-    WDStyle *mBaseStyle;
-    WDStyle *mNextStyle;
     _Bool mHidden;
     NSString *mName;
     NSString *mId;
     int mStyleType;
+    WDStyleSheet *mStyleSheet;
+    WDStyle *mBaseStyle;
+    WDStyle *mNextStyle;
 }
 
+@property __weak WDStyle *nextStyle; // @synthesize nextStyle=mNextStyle;
+@property(readonly) __weak WDStyleSheet *styleSheet; // @synthesize styleSheet=mStyleSheet;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)setNextStyle:(id)arg1;
-- (id)nextStyle;
-- (void)setBaseStyle:(id)arg1;
-- (id)baseStyle;
+@property __weak WDStyle *baseStyle; // @synthesize baseStyle=mBaseStyle;
 - (id)id;
 - (int)type;
 - (void)setName:(id)arg1;
@@ -44,10 +44,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isAnythingOverridden;
 - (void)setHidden:(_Bool)arg1;
 - (_Bool)hidden;
-- (id)styleSheet;
 - (id)characterProperties;
 - (id)paragraphProperties;
-- (void)dealloc;
 - (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;
 
 @end

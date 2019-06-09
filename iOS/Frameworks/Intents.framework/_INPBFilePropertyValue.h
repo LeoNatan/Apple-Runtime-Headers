@@ -24,6 +24,7 @@
     _INPBString *_value;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBString *value; // @synthesize value=_value;
 @property(retain, nonatomic) _INPBLong *quantity; // @synthesize quantity=_quantity;
 @property(retain, nonatomic) _INPBContact *person; // @synthesize person=_person;
@@ -34,6 +35,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasValue;

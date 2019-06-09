@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class ASAsset, NSString;
+@class MAAsset, NSString;
 
 @interface DUDefinitionDictionary : NSObject
 {
     struct __DCSDictionary *_dictionary;
-    ASAsset *_assetToUpgrade;
+    MAAsset *_assetToUpgrade;
     _Bool _activated;
     _Bool _isAppleDictionary;
     _Bool _isTTYDictionary;
     float _progress;
-    ASAsset *_rawAsset;
+    MAAsset *_rawAsset;
     NSString *_definitionLanguage;
 }
 
@@ -26,7 +26,7 @@
 @property float progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool activated; // @synthesize activated=_activated;
 @property(readonly) NSString *definitionLanguage; // @synthesize definitionLanguage=_definitionLanguage;
-@property(readonly) ASAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
+@property(readonly) MAAsset *rawAsset; // @synthesize rawAsset=_rawAsset;
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly) struct __DCSDictionary *dictionaryRef;

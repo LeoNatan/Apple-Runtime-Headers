@@ -8,16 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOCacheHit, GEOCacheMiss;
+@class GEOCacheHit, GEOCacheMiss, PBDataReader;
 
 @interface GEOLogMsgEventTileCacheAnalytic : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOCacheHit *_cacheHit;
     GEOCacheMiss *_cacheMiss;
+    struct {
+        unsigned int read_cacheHit:1;
+        unsigned int read_cacheMiss:1;
+        unsigned int wrote_cacheHit:1;
+        unsigned int wrote_cacheMiss:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOCacheMiss *cacheMiss; // @synthesize cacheMiss=_cacheMiss;
-@property(retain, nonatomic) GEOCacheHit *cacheHit; // @synthesize cacheHit=_cacheHit;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,10 +33,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOCacheMiss *cacheMiss;
 @property(readonly, nonatomic) _Bool hasCacheMiss;
+- (void)_readCacheMiss;
+@property(retain, nonatomic) GEOCacheHit *cacheHit;
 @property(readonly, nonatomic) _Bool hasCacheHit;
+- (void)_readCacheHit;
 
 @end
 

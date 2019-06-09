@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, NSURL;
 
 @protocol VCPStorageServiceProtocol
-- (void)registerClient:(NSString *)arg1 withReply:(void (^)(NSString *))arg2;
-- (void)storeAnalysis:(NSDictionary *)arg1 forAsset:(NSString *)arg2 withReply:(void (^)(void))arg3;
+- (void)registerClient:(NSString *)arg1 forPhotoLibraryURL:(NSURL *)arg2 withReply:(void (^)(NSString *))arg3;
+- (void)storeAnalysis:(NSDictionary *)arg1 forAsset:(NSString *)arg2 fromPhotoLibraryURL:(NSURL *)arg3 withReply:(void (^)(void))arg4;
 @end
 

@@ -9,6 +9,7 @@
 @class NSError, RTPersistenceContext;
 
 @protocol RTPersistenceContextDelegate <NSObject>
+- (_Bool)persistenceContextShouldExecute:(RTPersistenceContext *)arg1;
 - (void)persistenceContextPerformedSave:(RTPersistenceContext *)arg1;
 - (void)persistenceContext:(RTPersistenceContext *)arg1 encounteredError:(NSError *)arg2;
 @end

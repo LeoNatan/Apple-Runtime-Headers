@@ -10,9 +10,6 @@
 
 @interface _UIScreenEdgePanRecognizerSettings : _UISettings
 {
-    _Bool _analysisLoggingEnabled;
-    _Bool _analysisFailureOverlayVisible;
-    _Bool _analysisLoggingOverlayVisible;
     NSString *_multitaskingGestureMode;
     NSString *_navigationGestureMode;
     _UIScreenEdgePanRecognizerEdgeSettings *_edgeSettings;
@@ -21,20 +18,12 @@
 }
 
 + (id)settingsControllerModule;
-@property(nonatomic) _Bool analysisLoggingOverlayVisible; // @synthesize analysisLoggingOverlayVisible=_analysisLoggingOverlayVisible;
-@property(nonatomic) _Bool analysisFailureOverlayVisible; // @synthesize analysisFailureOverlayVisible=_analysisFailureOverlayVisible;
-@property(nonatomic) _Bool analysisLoggingEnabled; // @synthesize analysisLoggingEnabled=_analysisLoggingEnabled;
 @property(retain, nonatomic) _UIScreenEdgePanRecognizerCornerSettings *cornerSettings; // @synthesize cornerSettings=_cornerSettings;
 @property(retain, nonatomic) _UIScreenEdgePanRecognizerDwellSettings *dwellSettings; // @synthesize dwellSettings=_dwellSettings;
 @property(retain, nonatomic) _UIScreenEdgePanRecognizerEdgeSettings *edgeSettings; // @synthesize edgeSettings=_edgeSettings;
 @property(copy, nonatomic) NSString *navigationGestureMode; // @synthesize navigationGestureMode=_navigationGestureMode;
 @property(copy, nonatomic) NSString *multitaskingGestureMode; // @synthesize multitaskingGestureMode=_multitaskingGestureMode;
 - (void).cxx_destruct;
-- (id)navigationGestureModePost351;
-- (void)setNavigationGestureModePost351:(id)arg1;
-- (id)multitaskingGestureModePost351;
-- (void)setMultitaskingGestureModePost351:(id)arg1;
-- (void)setDefaultValues;
 
 @end
 

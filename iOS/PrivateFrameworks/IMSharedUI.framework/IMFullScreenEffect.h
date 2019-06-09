@@ -6,43 +6,37 @@
 
 #import <objc/NSObject.h>
 
-@class IMMessagePartChatItem, NSArray, NSString, NSURL, UIColor;
-@protocol IMFullScreenEffectDelegate;
+@class NSArray, NSString, NSURL, UIColor;
 
 @interface IMFullScreenEffect : NSObject
 {
     _Bool _triggeredByResponseKit;
-    _Bool _soundEffectHasHapticTrack;
+    id _triggeredByObject;
     NSString *_identifier;
-    IMMessagePartChatItem *_triggeringChatItem;
-    id <IMFullScreenEffectDelegate> _delegate;
     NSArray *_messageFilters;
     NSURL *_soundEffectFileURL;
+    unsigned long long _messageOrientation;
+    id _delegate;
 }
 
 + (id)stickerFilter;
 + (id)tapBackFilter;
 + (id)bigEmojiFilter;
 + (id)_monochromeDimmingFilterWithType:(long long)arg1;
-@property(readonly, nonatomic) _Bool soundEffectHasHapticTrack; // @synthesize soundEffectHasHapticTrack=_soundEffectHasHapticTrack;
+@property id delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) unsigned long long messageOrientation; // @synthesize messageOrientation=_messageOrientation;
 @property(readonly, nonatomic) NSURL *soundEffectFileURL; // @synthesize soundEffectFileURL=_soundEffectFileURL;
 @property(readonly, nonatomic) NSArray *messageFilters; // @synthesize messageFilters=_messageFilters;
-@property(nonatomic) __weak id <IMFullScreenEffectDelegate> delegate; // @synthesize delegate=_delegate;
-@property(copy, nonatomic) IMMessagePartChatItem *triggeringChatItem; // @synthesize triggeringChatItem=_triggeringChatItem;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) __weak id triggeredByObject; // @synthesize triggeredByObject=_triggeredByObject;
 @property(nonatomic) _Bool triggeredByResponseKit; // @synthesize triggeredByResponseKit=_triggeredByResponseKit;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) _Bool effectIsDark;
-- (void)stopSoundEffect;
-- (void)playSoundEffect;
 - (void)prepareSoundEffect;
-- (void)_didPrepareSoundEffect;
-- (void)clearMessageFiltersFromCells:(id)arg1;
-- (void)applyMessageFiltersToTriggeringCell:(id)arg1;
-- (void)applyMessageFiltersToCells:(id)arg1;
+@property(readonly, nonatomic) _Bool effectIsDark;
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic, getter=isForegroundEffect) _Bool foregroundEffect;
+@property(readonly, nonatomic) _Bool soundEffectHasHapticTrack;
 @property(readonly, nonatomic) _Bool shouldDrawOverNavigationBar;
 @property(readonly, nonatomic) Class effectViewClass;
 @property(readonly, nonatomic) unsigned long long layerCount;

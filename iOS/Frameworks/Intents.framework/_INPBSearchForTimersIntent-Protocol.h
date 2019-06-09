@@ -9,6 +9,8 @@
 @class NSString, _INPBDataString, _INPBIntentMetadata;
 
 @protocol _INPBSearchForTimersIntent <NSObject>
+@property(nonatomic) _Bool hasType;
+@property(nonatomic) int type;
 @property(nonatomic) _Bool hasState;
 @property(nonatomic) int state;
 @property(readonly, nonatomic) _Bool hasLabel;
@@ -17,6 +19,8 @@
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata;
 @property(nonatomic) _Bool hasDuration;
 @property(nonatomic) double duration;
+- (int)StringAsType:(NSString *)arg1;
+- (NSString *)typeAsString:(int)arg1;
 - (int)StringAsState:(NSString *)arg1;
 - (NSString *)stateAsString:(int)arg1;
 @end

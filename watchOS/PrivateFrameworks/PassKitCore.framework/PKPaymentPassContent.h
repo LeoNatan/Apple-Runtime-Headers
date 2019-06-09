@@ -21,9 +21,11 @@
     NSString *_appURLScheme;
     NSDictionary *_localizedSuspendedReasonsByAID;
     NSArray *_availableActions;
+    NSArray *_upgradeRequests;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSArray *upgradeRequests; // @synthesize upgradeRequests=_upgradeRequests;
 @property(copy, nonatomic) NSArray *availableActions; // @synthesize availableActions=_availableActions;
 @property(nonatomic) _Bool supportsTransitOnly; // @synthesize supportsTransitOnly=_supportsTransitOnly;
 @property(copy, nonatomic) NSDictionary *localizedSuspendedReasonsByAID; // @synthesize localizedSuspendedReasonsByAID=_localizedSuspendedReasonsByAID;

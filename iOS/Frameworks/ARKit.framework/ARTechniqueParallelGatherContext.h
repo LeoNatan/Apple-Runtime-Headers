@@ -25,6 +25,7 @@
 
 @property _Bool requiredTimeIntervalComplete; // @synthesize requiredTimeIntervalComplete=_requiredTimeIntervalComplete;
 - (void).cxx_destruct;
+- (id)description;
 - (id)lateResultDataForTechniqueAtIndex:(unsigned long long)arg1;
 - (id)addResultData:(id)arg1 forTechniqueAtIndex:(unsigned long long)arg2;
 - (id)captureGatheredData;

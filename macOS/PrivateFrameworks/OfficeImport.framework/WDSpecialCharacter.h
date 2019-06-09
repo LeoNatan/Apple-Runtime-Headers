@@ -6,6 +6,7 @@
 
 #import <OfficeImport/WDRunWithCharacterProperties.h>
 
+__attribute__((visibility("hidden")))
 @interface WDSpecialCharacter : WDRunWithCharacterProperties
 {
     int mType;

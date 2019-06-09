@@ -13,21 +13,16 @@
     CalXPCConnectionListenerProvider *_connectionListenerProvider;
 }
 
-+ (void)_sendToClients:(SEL)arg1 withObjects:(id)arg2;
 + (void)tearDownAllInstances;
-+ (void)sendToOtherClients:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-+ (void)sendToOtherClients:(SEL)arg1 withObject:(id)arg2;
-+ (void)sendToOtherClients:(SEL)arg1;
 + (void)sendToClients:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
-+ (void)sendToClients:(SEL)arg1 withObject:(id)arg2;
-+ (void)sendToClients:(SEL)arg1;
++ (void)performBlockWithAllClients:(CDUnknownBlockType)arg1;
 + (id)startWithMachServiceName:(id)arg1 exportedObject:(id)arg2;
 + (id)sharedInstanceWithMachServiceName:(id)arg1;
 + (id)sharedInstances;
 + (void)initialize;
 @property(retain) CalXPCConnectionListenerProvider *connectionListenerProvider; // @synthesize connectionListenerProvider=_connectionListenerProvider;
 - (void).cxx_destruct;
-- (void)_sendToClients:(SEL)arg1 withObjects:(id)arg2;
+- (void)_performBlockWithAllClients:(CDUnknownBlockType)arg1;
 - (void)tearDown;
 - (id)initWithMachServiceName:(id)arg1 exportedObject:(id)arg2;
 

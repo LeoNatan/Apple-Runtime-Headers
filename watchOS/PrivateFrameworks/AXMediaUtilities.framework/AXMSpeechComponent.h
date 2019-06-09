@@ -27,8 +27,8 @@
 - (void)speechSynthesizer:(id)arg1 didStartSpeechUtterance:(id)arg2;
 - (void)stopSpeakingAtNextWord;
 - (void)stopSpeakingImmediately;
-- (void)handleRequest:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)canHandleRequest:(id)arg1 options:(id)arg2;
+- (void)handleRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)canHandleRequest:(id)arg1;
 - (id)init;
 
 // Remaining properties

@@ -22,7 +22,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithName:(id)arg1 userInfo:(id)arg2;
 
 @end

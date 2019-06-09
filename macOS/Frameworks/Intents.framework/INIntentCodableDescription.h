@@ -6,13 +6,18 @@
 
 #import <Intents/INCodableDescription.h>
 
+#import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class INCodableAttribute, NSString;
 
-@interface INIntentCodableDescription : INCodableDescription <NSSecureCoding>
+@interface INIntentCodableDescription : INCodableDescription <NSSecureCoding, NSCopying>
 {
     BOOL _userConfirmationRequired;
+    BOOL _configurable;
+    BOOL _eligibleForSuggestions;
+    NSString *_inputAttributeName;
+    NSString *_keyAttributeName;
     NSString *_title;
     NSString *_titleLocID;
     NSString *_descriptiveText;
@@ -23,6 +28,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic, getter=isEligibleForSuggestions) BOOL eligibleForSuggestions; // @synthesize eligibleForSuggestions=_eligibleForSuggestions;
+@property(nonatomic, getter=isConfigurable) BOOL configurable; // @synthesize configurable=_configurable;
 @property(nonatomic) BOOL userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
 @property(copy, nonatomic) NSString *verb; // @synthesize verb=_verb;
 @property(nonatomic) long long intentCategory; // @synthesize intentCategory=_intentCategory;
@@ -31,11 +38,27 @@
 @property(copy, nonatomic) NSString *descriptiveText; // @synthesize descriptiveText=_descriptiveText;
 @property(copy, nonatomic) NSString *titleLocID; // @synthesize titleLocID=_titleLocID;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic, setter=_setKeyAttributeName:) NSString *_keyAttributeName; // @synthesize _keyAttributeName;
+@property(copy, nonatomic, setter=_setInputAttributeName:) NSString *_inputAttributeName; // @synthesize _inputAttributeName;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)_updateWithIntentCodableDescription:(id)arg1;
+- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (void)updateWithDictionary:(id)arg1;
+- (id)_attributesKeyPrefix;
+- (id)_attributeKeyPrefix;
+- (id)keyPrefix;
+- (id)_ignoredAttributeTags;
+- (id)localizedDescriptiveTextForLanguage:(id)arg1;
+@property(readonly, copy) NSString *localizedDescriptiveText;
+- (id)localizedTitleForLanguage:(id)arg1;
+@property(readonly, copy) NSString *localizedTitle;
+@property(readonly, nonatomic) INCodableAttribute *keyAttribute;
+@property(readonly, nonatomic) INCodableAttribute *inputAttribute;
+- (id)resolvableParameterCombinationsWithParameterCombinations:(id)arg1;
 - (id)attributes;
-- (id)_dictionaryRepresentation;
 
 @end
 

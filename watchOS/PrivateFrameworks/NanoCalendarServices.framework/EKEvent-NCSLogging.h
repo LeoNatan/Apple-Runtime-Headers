@@ -6,7 +6,9 @@
 
 #import <EventKit/EKEvent.h>
 
-@interface EKEvent (NCSLogging)
-- (id)nanoDescription;
+#import <NanoCalendarServices/NanoPrivacyAwareDescription-Protocol.h>
+
+@interface EKEvent (NCSLogging) <NanoPrivacyAwareDescription>
+- (id)nanoPrivacyAwareDescription;
 @end
 

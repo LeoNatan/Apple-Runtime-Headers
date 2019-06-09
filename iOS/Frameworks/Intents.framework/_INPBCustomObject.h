@@ -10,29 +10,39 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBCustomObject-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface _INPBCustomObject : PBCodable <_INPBCustomObject, NSSecureCoding, NSCopying>
 {
     struct _has;
+    NSArray *_alternatives;
     NSString *_displayString;
     NSString *_identifier;
     NSString *_pronunciationHint;
 }
 
++ (_Bool)supportsSecureCoding;
++ (Class)alternativeType;
 @property(copy, nonatomic) NSString *pronunciationHint; // @synthesize pronunciationHint=_pronunciationHint;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
+@property(copy, nonatomic) NSArray *alternatives; // @synthesize alternatives=_alternatives;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasPronunciationHint;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 @property(readonly, nonatomic) _Bool hasDisplayString;
+- (id)alternativeAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long alternativesCount;
+- (void)addAlternative:(id)arg1;
+- (void)clearAlternatives;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

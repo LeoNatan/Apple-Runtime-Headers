@@ -8,5 +8,6 @@
 
 @interface NSString (AppKit_SiriUIFrameworkAdditions)
 @property(readonly) NSString *siriui_simplifiedFilePath;
+- (struct CGSize)sizeWithFont:(id)arg1;
 @end
 

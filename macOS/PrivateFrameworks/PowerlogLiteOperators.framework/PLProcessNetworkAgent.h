@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class NSDate, NSDictionary, NSMutableSet, PLEntryNotificationOperatorComposition, PLMonotonicTimer, UsageFeed;
+@class NSDate, NSDictionary, NSMutableSet, PLCFNotificationOperatorComposition, PLEntryNotificationOperatorComposition, PLMonotonicTimer, UsageFeed;
 
 @interface PLProcessNetworkAgent : PLAgent
 {
@@ -17,18 +17,23 @@
     NSDictionary *_lastProcessNameToNetworkUsageEntry;
     NSDate *_lastEntryDate;
     NSMutableSet *_processes;
+    unsigned long long _lastNetworkBitmapTimestamp;
+    PLCFNotificationOperatorComposition *_flushNetworkBitmapsListener;
 }
 
 + (id)entryEventNoneDefinitions;
 + (id)entryEventIntervalDefinitionUsage;
 + (id)entryEventBackwardDefinitionUsage;
 + (id)entryEventForwardDefinitionLowInternet;
++ (id)entryEventBackwardDefinitionNetworkBitmap;
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitionConnection;
 + (id)entryEventPointDefinitions;
 + (void)load;
+@property(retain) PLCFNotificationOperatorComposition *flushNetworkBitmapsListener; // @synthesize flushNetworkBitmapsListener=_flushNetworkBitmapsListener;
+@property unsigned long long lastNetworkBitmapTimestamp; // @synthesize lastNetworkBitmapTimestamp=_lastNetworkBitmapTimestamp;
 @property(retain) NSMutableSet *processes; // @synthesize processes=_processes;
 @property(retain) NSDate *lastEntryDate; // @synthesize lastEntryDate=_lastEntryDate;
 @property(retain) NSDictionary *lastProcessNameToNetworkUsageEntry; // @synthesize lastProcessNameToNetworkUsageEntry=_lastProcessNameToNetworkUsageEntry;
@@ -37,6 +42,7 @@
 @property(retain) UsageFeed *usageFeed; // @synthesize usageFeed=_usageFeed;
 @property struct __NStatManager *statManagerRef; // @synthesize statManagerRef=_statManagerRef;
 - (void).cxx_destruct;
+- (unsigned long long)getCurrMachAbsTimeInSecs;
 - (void)accountWithNetworkUsageDiffEntries:(id)arg1 withStartDate:(id)arg2 withEndDate:(id)arg3;
 - (void)logEventBackwardUsageWithOutcome:(id)arg1;
 - (BOOL)outcomeHasDataUsage:(id)arg1;

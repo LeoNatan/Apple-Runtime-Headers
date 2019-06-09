@@ -6,55 +6,67 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSXPCConnection;
-@protocol BKSEventFocusIPCInterface, OS_dispatch_queue;
+#import <BackBoardServices/BKSHIDEventDeferringObserving-Protocol.h>
 
-@interface BKSEventFocusManager : NSObject
+@class BKSHIDEventDeliveryManager, BKSHIDEventObserver, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSXPCConnection;
+@protocol BSInvalidatable, OS_dispatch_queue;
+
+@interface BKSEventFocusManager : NSObject <BKSHIDEventDeferringObserving>
 {
-    id <BKSEventFocusIPCInterface> _ipcInterface;
+    BKSHIDEventObserver *_observer;
+    struct os_unfair_lock_s _focusDataLock;
+    BKSHIDEventDeliveryManager *_focusDataLock_manager;
+    _Bool _focusDataLock_adjustsFocusTargetPID;
+    int _focusDataLock_adjustedFocusTargetPID;
+    id <BSInvalidatable> _queue_keyCommandRulesAssertion;
+    NSMutableSet *_focusDataLock_currentState;
+    NSMutableDictionary *_focusDataLock_pendingStatesByPriority;
+    NSMutableArray *_focusDataLock_assertions;
+    int _pid;
+    NSString *_clientIdentifier;
+    id <BSInvalidatable> _observingAssertion;
     NSObject<OS_dispatch_queue> *_focusClientQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
     unsigned long long _propertyUpdateGeneration;
     _Bool _needsFlush;
-    _Bool _systemAppControlsFocusOnMainDisplay;
-    int _pid;
-    NSMutableSet *_currentState;
-    NSMutableDictionary *_pendingStatesByPriority;
     NSXPCConnection *_connection;
     NSMapTable *_infoPerFocusChangeObserver;
     NSSet *_cachedFocusedDeferralProperties;
-    NSString *_clientIdentifier;
 }
 
 + (id)sharedInstance;
-@property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
-@property(nonatomic) int pid; // @synthesize pid=_pid;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
+@property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSSet *cachedFocusedDeferralProperties; // @synthesize cachedFocusedDeferralProperties=_cachedFocusedDeferralProperties;
 @property(retain, nonatomic) NSMapTable *infoPerFocusChangeObserver; // @synthesize infoPerFocusChangeObserver=_infoPerFocusChangeObserver;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(nonatomic) _Bool systemAppControlsFocusOnMainDisplay; // @synthesize systemAppControlsFocusOnMainDisplay=_systemAppControlsFocusOnMainDisplay;
 @property(nonatomic) _Bool needsFlush; // @synthesize needsFlush=_needsFlush;
-@property(readonly, nonatomic) NSMutableDictionary *pendingStatesByPriority; // @synthesize pendingStatesByPriority=_pendingStatesByPriority;
-@property(readonly, nonatomic) NSMutableSet *currentState; // @synthesize currentState=_currentState;
 - (void).cxx_destruct;
 - (void)_syncObserverState;
-- (void)reallyFlushWithSet:(id)arg1;
+- (void)_focusDataLock_reallyFlushWithSet:(id)arg1;
 - (void)flush;
-- (void)_rebuildPendingStatesByPriority;
+- (void)_focusDataLock_rebuildPendingStatesByPriority;
 - (void)_pruneSet:(id)arg1 ofDeferralsPassingTest:(CDUnknownBlockType)arg2;
+- (void)_focusDataLock_updateFocusTargetOverride;
+- (void)_focusDataLock_updateKeyCommandDispatching;
+- (id)_queryDeferralResolutions;
+- (void)_focusClientQueue_deferringResolutionsChanged;
 - (void)setForegroundApplicationOnMainDisplay:(id)arg1 pid:(int)arg2;
+- (void)setSystemAppControlsFocusOnMainDisplay:(_Bool)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)deferEventsForClientWithProperties:(id)arg1 toClientWithProperties:(id)arg2 withPriority:(int)arg3;
 - (void)deferEventsForClientWithProperties:(id)arg1 toClientWithProperties:(id)arg2;
-- (void)touchDetachedForIdentifier:(unsigned int)arg1 context:(unsigned int)arg2 pid:(int)arg3;
-- (void)touchUpOccuredForIdentifier:(unsigned int)arg1 detached:(_Bool)arg2 context:(unsigned int)arg3 pid:(int)arg4;
-- (void)focusedDeferralPropertiesUpdatedWithProperties:(id)arg1;
-- (void)_connectToEventFocusService;
+- (void)deferringResolutionsChanged;
 - (void)dealloc;
-- (id)initWithIPCInterface:(id)arg1;
+- (id)_initWithManager:(id)arg1 observer:(id)arg2 pid:(int)arg3 clientIdentifier:(id)arg4;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -46,7 +46,6 @@
 + (unsigned long long)requiredScannerState;
 + (id)keyPathsForValuesAffectingIsFilevault;
 + (id)proxyFromDict:(id)arg1;
-+ (id)timeMachineSystemWithPath:(id)arg1 volumeName:(id)arg2 machineName:(id)arg3 isLiteBackup:(BOOL)arg4 backedUpOnVolume:(id)arg5;
 + (id)archivedSystemWithPath:(id)arg1 onVolume:(id)arg2;
 + (id)currentSystem;
 + (id)systemWithPath:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class NSString, PRLexicon;
 
+__attribute__((visibility("hidden")))
 @interface PRLanguageModel : NSObject
 {
     NSString *_localization;

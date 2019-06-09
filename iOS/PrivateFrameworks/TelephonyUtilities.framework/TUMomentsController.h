@@ -17,16 +17,16 @@
     id <TUMomentsControllerDataSource> _dataSource;
     id <TUMomentsControllerDelegate> _delegate;
     NSMutableDictionary *_capabilitiesByVideoStreamToken;
-    NSMutableDictionary *_callByVideoStreamToken;
+    NSMutableDictionary *_providerByVideoStreamToken;
 }
 
 + (_Bool)isFaceTimePhotosRestricted;
 + (void)setFaceTimePhotosEnabled:(_Bool)arg1;
 + (_Bool)isFaceTimePhotosEnabled;
-+ (void)setFaceTimePhotosEnabledGenerator:(CDUnknownBlockType)arg1;
-+ (CDUnknownBlockType)faceTimePhotosEnabledGenerator;
++ (void)setFaceTimePhotosEnabledDeterminer:(CDUnknownBlockType)arg1;
++ (CDUnknownBlockType)faceTimePhotosEnabledDeterminer;
 + (_Bool)isFaceTimePhotosEnabledByDefault;
-@property(readonly, nonatomic) NSMutableDictionary *callByVideoStreamToken; // @synthesize callByVideoStreamToken=_callByVideoStreamToken;
+@property(readonly, nonatomic) NSMutableDictionary *providerByVideoStreamToken; // @synthesize providerByVideoStreamToken=_providerByVideoStreamToken;
 @property(readonly, nonatomic) NSMutableDictionary *capabilitiesByVideoStreamToken; // @synthesize capabilitiesByVideoStreamToken=_capabilitiesByVideoStreamToken;
 @property(readonly, nonatomic) __weak id <TUMomentsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <TUMomentsControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -34,13 +34,13 @@
 - (void).cxx_destruct;
 - (void)serverDiedForDataSource:(id)arg1;
 - (void)dataSource:(id)arg1 didReceiveLocallyRequestedMomentDescriptor:(id)arg2;
-- (void)willCaptureRemoteRequestForDataSource:(id)arg1;
+- (void)dataSource:(id)arg1 willCaptureRemoteRequestFromRequesterID:(id)arg2;
 - (void)dataSource:(id)arg1 didUpdateCapabilities:(id)arg2 forVideoStreamToken:(long long)arg3;
-- (id)capabilitiesForCall:(id)arg1;
-- (void)unregisterCall:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)registerCall:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)capabilitiesForProvider:(id)arg1;
+- (void)unregisterProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)registerProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)endRequestWithTransactionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)startRequestWithMediaType:(int)arg1 forCall:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)startRequestWithMediaType:(int)arg1 forProvider:(id)arg2 requesteeID:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1 dataSource:(id)arg2;
 - (id)initWithDelegate:(id)arg1;

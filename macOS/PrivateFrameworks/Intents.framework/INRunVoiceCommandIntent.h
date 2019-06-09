@@ -8,7 +8,7 @@
 
 #import <Intents/INRunVoiceCommandIntentExport-Protocol.h>
 
-@class INSpeakableString, INVoiceCommandDeviceInformation, NSString;
+@class INIntentExecutionResult, INSpeakableString, INVoiceCommandDeviceInformation, NSString;
 
 @interface INRunVoiceCommandIntent : INIntent <INRunVoiceCommandIntentExport>
 {
@@ -22,11 +22,17 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+- (void)setPreviousIntentIdentifier:(id)arg1;
+@property(readonly, copy) NSString *previousIntentIdentifier;
+- (void)setExecutionResult:(id)arg1;
+@property(readonly, copy) INIntentExecutionResult *executionResult;
 - (void)setOriginDevice:(id)arg1;
 @property(readonly, copy) INVoiceCommandDeviceInformation *originDevice;
 - (void)setVoiceCommand:(id)arg1;
 @property(readonly, copy) INSpeakableString *voiceCommand;
+- (id)initWithVoiceCommand:(id)arg1 originDevice:(id)arg2 executionResult:(id)arg3;
 - (id)initWithVoiceCommand:(id)arg1 originDevice:(id)arg2;
+- (id)initWithVoiceCommand:(id)arg1 originDevice:(id)arg2 executionResult:(id)arg3 previousIntentIdentifier:(id)arg4;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;

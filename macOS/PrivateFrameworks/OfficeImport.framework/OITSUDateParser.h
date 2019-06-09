@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OITSULocale;
 
+__attribute__((visibility("hidden")))
 @interface OITSUDateParser : NSObject
 {
     NSMutableArray *_formatCategories;

@@ -20,12 +20,14 @@
         unsigned int hasBottomPadding:1;
         unsigned int separatorStyle:1;
         unsigned int isContact:1;
+        unsigned int suggestionType:1;
     } _has;
     _Bool _canBeHidden;
     _Bool _hasTopPadding;
     _Bool _hasBottomPadding;
     _Bool _isContact;
     int _separatorStyle;
+    int _suggestionType;
     NSArray *_punchoutOptions;
     NSString *_punchoutPickerTitle;
     NSString *_punchoutPickerDismissText;
@@ -36,6 +38,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) int suggestionType; // @synthesize suggestionType=_suggestionType;
 @property(copy, nonatomic) NSString *scopedSearchSectionBundleIdentifier; // @synthesize scopedSearchSectionBundleIdentifier=_scopedSearchSectionBundleIdentifier;
 @property(nonatomic) _Bool isContact; // @synthesize isContact=_isContact;
 @property(retain, nonatomic) SFRichText *suggestionText; // @synthesize suggestionText=_suggestionText;
@@ -54,6 +57,7 @@
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)hasSuggestionType;
 - (_Bool)hasIsContact;
 - (_Bool)hasSeparatorStyle;
 - (_Bool)hasHasBottomPadding;

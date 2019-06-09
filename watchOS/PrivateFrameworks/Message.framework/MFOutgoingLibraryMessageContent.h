@@ -14,10 +14,10 @@
 }
 
 @property(retain, nonatomic) MFLibraryMessage *libraryMessage; // @synthesize libraryMessage=_libraryMessage;
+- (void).cxx_destruct;
 - (id)libraryContent;
 - (id)headers;
 - (id)copy;
-- (void)dealloc;
 
 @end
 

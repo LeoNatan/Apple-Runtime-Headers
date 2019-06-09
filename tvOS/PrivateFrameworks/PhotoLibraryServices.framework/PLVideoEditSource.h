@@ -6,10 +6,15 @@
 
 #import <PhotoLibraryServices/PLEditSource.h>
 
+@class NSURL;
+
 @interface PLVideoEditSource : PLEditSource
 {
+    NSURL *_videoURL;
 }
 
+@property(readonly, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
+- (void).cxx_destruct;
 - (id)initWithVideoURL:(id)arg1;
 
 @end

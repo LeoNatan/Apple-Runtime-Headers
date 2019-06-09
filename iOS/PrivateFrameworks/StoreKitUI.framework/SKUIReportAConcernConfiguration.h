@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReportAConcernConfiguration : NSObject <NSCopying>
 {
     NSURL *_reportConcernURL;

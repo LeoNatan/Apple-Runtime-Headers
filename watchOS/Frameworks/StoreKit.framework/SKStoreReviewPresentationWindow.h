@@ -6,6 +6,7 @@
 
 #import <UIKit/UIApplicationRotationFollowingWindow.h>
 
+__attribute__((visibility("hidden")))
 @interface SKStoreReviewPresentationWindow : UIApplicationRotationFollowingWindow
 {
 }

@@ -8,23 +8,33 @@
 
 #import <ScreenshotServices/BSXPCCoding-Protocol.h>
 #import <ScreenshotServices/NSCopying-Protocol.h>
-#import <ScreenshotServices/NSSecureCoding-Protocol.h>
+#import <ScreenshotServices/SSLoggable-Protocol.h>
 
-@class NSString;
+@class NSString, SSHarvestedApplicationDocument, SSHarvestedApplicationMetadata;
 
-@interface SSEnvironmentElement : NSObject <NSSecureCoding, NSCopying, BSXPCCoding>
+@interface SSEnvironmentElement : NSObject <NSCopying, BSXPCCoding, SSLoggable>
 {
     struct CGRect _rect;
+    NSString *_bundleIdentifier;
+    NSString *_identifier;
+    SSHarvestedApplicationMetadata *_metadata;
+    SSHarvestedApplicationDocument *_document;
 }
 
-+ (_Bool)supportsSecureCoding;
++ (id)_metadataIdentifierBlacklist;
+@property(retain, nonatomic) SSHarvestedApplicationDocument *document; // @synthesize document=_document;
+@property(retain, nonatomic) SSHarvestedApplicationMetadata *metadata; // @synthesize metadata=_metadata;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool supportsMetadataCapture;
+@property(readonly, nonatomic) NSString *identifier;
+@property(readonly, nonatomic) NSString *bundleIdentifier;
 @property(readonly, nonatomic) struct CGRect rect;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+@property(readonly, nonatomic) NSString *loggableDescription;
 - (id)initWithDisplayLayoutElement:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

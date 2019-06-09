@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSString *remoteInterfaceTypeString;
 @property(readonly) NSString *localInterfaceTypeString;
 - (_Bool)matchesSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
+- (struct tagIPPORT)IPPortForNWConnection:(id)arg1;
 - (void)getSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
 @property unsigned int uplinkBitrateCap;
 @property unsigned int downlinkBitrateCap;

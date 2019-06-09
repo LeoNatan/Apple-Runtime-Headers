@@ -6,7 +6,7 @@
 
 #import <CoreSuggestions/NSObject-Protocol.h>
 
-@class NSArray, NSDate, NSTimeZone;
+@class NSArray, NSDate, NSString, NSTimeZone;
 
 @protocol SGEventForGeocode <NSObject>
 - (id)geocodedEventWithStartDate:(NSDate *)arg1 startTimeZone:(NSTimeZone *)arg2 endDate:(NSDate *)arg3 endTimeZone:(NSTimeZone *)arg4 locations:(NSArray *)arg5;
@@ -15,5 +15,7 @@
 - (NSDate *)geocodeEndDate;
 - (NSTimeZone *)geocodeStartTimeZone;
 - (NSDate *)geocodeStartDate;
+- (NSString *)poiFilters;
+- (unsigned long long)geocodingMode;
 @end
 

@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int format;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer;
 @property(readonly, nonatomic) struct CGRect region;
+@property(readonly, nonatomic) struct __IOSurface *surface;
 
 @end
 

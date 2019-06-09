@@ -9,7 +9,7 @@
 #import <AVKit/AVScrubberValueTransformerDelegate-Protocol.h>
 #import <AVKit/AVSlowMotionSliderDelegate-Protocol.h>
 
-@class AVChapterMenuController, AVOutputDeviceMenuController, AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerView, AVSlowMotionSlider, AVTouchBarPlaybackControlsProvider, NSButton, NSMenu, NSString, NSTextField, NSView;
+@class AVChapterMenuController, AVOutputDeviceMenuController, AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerView, AVSlowMotionSlider, AVTimecodeTextField, AVTouchBarPlaybackControlsProvider, NSButton, NSMenu, NSString, NSTextField, NSView;
 
 @interface AVPlayerControlsViewController : AVControlsViewController <AVScrubberValueTransformerDelegate, AVSlowMotionSliderDelegate>
 {
@@ -18,8 +18,13 @@
     AVPlayerControllerTimeResolver *_intervalTimeResolver;
     AVPlayerControllerTimeResolver *_resolutionTimeResolver;
     NSTextField *_elapsedTimeTextField;
+    AVTimecodeTextField *_timecodeTextField;
+    AVTimecodeTextField *_frameCountTextField;
     NSTextField *_remainingTimeTextField;
     NSTextField *_durationTextField;
+    NSButton *_durationStyleToggleButton;
+    NSString *_maxFramecount;
+    NSString *_maxTimecode;
     AVSlowMotionSlider *_slowMotionSlider;
     AVOutputDeviceMenuController *_outputDeviceMenuController;
     AVTouchBarPlaybackControlsProvider *_touchBarPlaybackControlsProvider;
@@ -32,13 +37,18 @@
     BOOL _gasPedaling;
     BOOL _havePostGasPedalRate;
     double _postGasPedalRate;
+    long long _activeTimeDisplayStyle;
     NSButton *_playPauseButton;
+    NSButton *_pictureInPictureButton;
 }
 
 + (id)keyPathsForValuesAffectingPlayPauseButtonEnabled;
++ (id)keyPathsForValuesAffectingScrubberHidden;
 + (id)keyPathsForValuesAffectingExternalPlaybackButtonHidden;
 + (id)keyPathsForValuesAffectingPlayerController;
+@property(retain) NSButton *pictureInPictureButton; // @synthesize pictureInPictureButton=_pictureInPictureButton;
 @property(retain) NSButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
+@property(nonatomic) long long activeTimeDisplayStyle; // @synthesize activeTimeDisplayStyle=_activeTimeDisplayStyle;
 @property(readonly) AVTouchBarPlaybackControlsProvider *touchBarPlaybackControlsProvider; // @synthesize touchBarPlaybackControlsProvider=_touchBarPlaybackControlsProvider;
 - (void).cxx_destruct;
 - (void)slowMotionSliderMouseDownEventTrackingEnded:(id)arg1;
@@ -49,7 +59,13 @@
 - (BOOL)scrubberValueTransformerRequiresTransformation:(id)arg1;
 - (id)makeTouchBar;
 - (void)_notifyPlayerViewDelegateOfMetricsCollectedEvent:(long long)arg1;
+- (BOOL)_startGeneratingTimecodes;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)frameCountEntered:(id)arg1;
+- (void)timecodeEntered:(id)arg1;
+- (void)timecodeButtonLeftClicked:(id)arg1;
+- (void)_updateTimeDisplayStyle;
+@property(nonatomic) long long userPreferredTimeDisplayStyle;
 @property(readonly) BOOL playPauseButtonEnabled;
 - (void)playPauseButtonPressed:(id)arg1;
 - (void)setPlayingState:(long long)arg1;
@@ -67,6 +83,7 @@
 - (void)hideControlsForAuxiliaryControl;
 - (void)showControlsForAuxiliaryControl;
 - (void)setView:(id)arg1;
+@property(readonly) BOOL scrubberHidden;
 @property(readonly) NSView *slowMotionSlider;
 @property(readonly) BOOL externalPlaybackButtonHidden;
 - (void)setOutputDeviceMenuController:(id)arg1;

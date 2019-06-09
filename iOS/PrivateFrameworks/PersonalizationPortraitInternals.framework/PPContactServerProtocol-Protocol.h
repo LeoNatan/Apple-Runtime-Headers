@@ -4,11 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
 
-@protocol PPContactServerProtocol
+@class NSArray, NSString, PPContactQuery;
+
+@protocol PPContactServerProtocol <PPFeedbackAccepting>
 - (void)contactNameRecordChangesForClient:(NSString *)arg1 queryId:(unsigned long long)arg2;
 - (void)contactNameRecordChangesForClient:(NSString *)arg1 completion:(void (^)(PPContactNameRecordChangeResult *, NSError *))arg2;
 - (void)contactNameRecordsForClient:(NSString *)arg1 queryId:(unsigned long long)arg2;
+- (void)feedbackDisambiguationResultWithChoicesIdentifiers:(NSArray *)arg1 chosenContactIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)rankedContactsWithQuery:(PPContactQuery *)arg1 queryId:(unsigned long long)arg2;
 @end
 

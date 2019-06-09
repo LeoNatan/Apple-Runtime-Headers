@@ -6,30 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class QTFormatDescriptionInternal;
-
 @interface QTFormatDescription : NSObject
 {
-    QTFormatDescriptionInternal *_internal;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
 + (id)formatDescriptionWithFigFormatDescription:(struct opaqueCMFormatDescription *)arg1;
-- (BOOL)isEqualToFormatDescription:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (struct CGSize)_scaledVideoSizeUsingCleanAperture:(BOOL)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (id)attributeForKey:(id)arg1;
-- (id)formatDescriptionAttributes;
-- (id)quickTimeSampleDescription;
-- (id)localizedFormatSummary;
-- (unsigned int)formatType;
-- (id)mediaType;
-- (struct opaqueCMFormatDescription *)figFormatDescription;
-- (void)finalize;
-- (void)dealloc;
 - (id)initEmptyFormatDescriptionWithMediaType:(id)arg1;
 - (id)initWithFigFormatDescription:(struct opaqueCMFormatDescription *)arg1;
 - (id)init;

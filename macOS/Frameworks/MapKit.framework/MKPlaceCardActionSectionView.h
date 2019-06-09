@@ -6,9 +6,10 @@
 
 #import <MapKit/MKPlaceSectionRowView.h>
 
-@class MKPlaceCardActionItem, MKPlatterView, NSButton, NSLayoutConstraint;
+@class MKPlaceCardActionItem, NSButton, NSLayoutConstraint;
 @protocol MKPlaceCardActionSectionViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceCardActionSectionView : MKPlaceSectionRowView
 {
     BOOL _useMarginLayout;
@@ -23,12 +24,10 @@
     NSButton *_rightButton;
     NSButton *_leftButton;
     id <MKPlaceCardActionSectionViewDelegate> _delegate;
-    MKPlatterView *_platterView;
 }
 
 + (void)_setButtonString:(id)arg1 forActionItem:(id)arg2 isLeftItem:(BOOL)arg3;
 + (id)_font:(BOOL)arg1;
-@property(retain, nonatomic) MKPlatterView *platterView; // @synthesize platterView=_platterView;
 @property(nonatomic) __weak id <MKPlaceCardActionSectionViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSButton *leftButton; // @synthesize leftButton=_leftButton;
 @property(retain, nonatomic) NSButton *rightButton; // @synthesize rightButton=_rightButton;

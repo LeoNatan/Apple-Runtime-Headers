@@ -38,7 +38,7 @@
     NSObject<OS_dispatch_group> *_outstandingReadsGroup;
     NSObject<OS_dispatch_queue> *_temporaryDirectoryQueue;
     TSUTemporaryDirectory *_temporaryDirectory;
-    struct hash_map<const long long, NSMutableArray *, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *>>> _loadObservers;
+    struct unordered_map<const long long, NSMutableArray *, TSP::IdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, NSMutableArray *>>> _loadObservers;
     _Bool _isDocumentModified;
     _Bool _isSupportModified;
     _Bool _isPasswordProtected;

@@ -18,13 +18,13 @@
     _Bool _lastNewLine;
 }
 
+- (void).cxx_destruct;
 - (id)data;
 - (void)done;
 - (long long)appendData:(id)arg1;
 - (id)rawData;
 - (_Bool)isLastCharacterNewLine;
 - (unsigned long long)count;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

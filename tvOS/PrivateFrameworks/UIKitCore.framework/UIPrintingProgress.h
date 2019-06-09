@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, UIAlertView, UIPrintingProgressViewController;
+@class NSString, UIAlertController, UIPrintingProgressViewController;
 
 __attribute__((visibility("hidden")))
 @interface UIPrintingProgress : NSObject
@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _cancelHandler;
     double _startTime;
     double _displayTime;
-    UIAlertView *_alert;
+    UIAlertController *_alertController;
     UIPrintingProgressViewController *_viewController;
     _Bool _donePrinting;
     _Bool _forceDisplayAsAlert;
@@ -32,12 +32,10 @@ __attribute__((visibility("hidden")))
 - (void)setPage:(long long)arg1 ofPage:(long long)arg2;
 - (void)setPrintInfoState:(int)arg1;
 - (void)endProgress;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(long long)arg2;
-- (void)alertViewCancel:(id)arg1;
-- (void)didPresentAlertView:(id)arg1;
 - (void)progressCancel;
 - (void)hideProgressAnimated:(_Bool)arg1;
 - (void)showProgress:(id)arg1 immediately:(_Bool)arg2;
+- (void)_endNoPresentingViewControllerAlertController:(id)arg1;
 @property(readonly) NSString *title;
 - (_Bool)progressVisible;
 - (id)initPDFCreationWithCancelHandler:(CDUnknownBlockType)arg1;

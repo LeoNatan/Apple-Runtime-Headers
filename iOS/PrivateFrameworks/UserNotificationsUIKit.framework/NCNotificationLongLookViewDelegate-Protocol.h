@@ -6,9 +6,10 @@
 
 #import <UserNotificationsUIKit/PLExpandedPlatterViewDelegate-Protocol.h>
 
-@class NCNotificationLongLookView, NSURL;
+@class NCNotificationLongLookView, NSURL, UITouch;
 
 @protocol NCNotificationLongLookViewDelegate <PLExpandedPlatterViewDelegate>
+- (_Bool)notificationLongLookView:(NCNotificationLongLookView *)arg1 tapGestureRecognizerShouldReceiveTouch:(UITouch *)arg2;
 - (void)notificationLongLookView:(NCNotificationLongLookView *)arg1 willInteractWithURL:(NSURL *)arg2;
 @end
 

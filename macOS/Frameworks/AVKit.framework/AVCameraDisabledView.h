@@ -8,6 +8,7 @@
 
 @class NSTextField;
 
+__attribute__((visibility("hidden")))
 @interface AVCameraDisabledView : NSView
 {
     NSTextField *_cameraDisabledReasonTextField;

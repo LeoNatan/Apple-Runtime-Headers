@@ -30,6 +30,11 @@ struct _CSTypeRef {
     unsigned long long _field2;
 };
 
+struct _NSRange {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
 struct kcdata_item;
 
 struct kcdata_iter {
@@ -101,6 +106,7 @@ struct vm_region_submap_info_64 {
     unsigned int _field16;
     unsigned short _field17;
     unsigned int _field18;
+    unsigned long long _field19;
 };
 
 #pragma mark Typedef'd Structures

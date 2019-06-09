@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface LoopAudioComposer : NSObject
 {
 }
 
-- (int)composeLoopWithAudio:(id)arg1 withAudioSource:(id)arg2 withAudioTemp:(id)arg3 startTime:(CDStruct_1b6d18a9)arg4 fadeTime:(CDStruct_1b6d18a9)arg5 periodTime:(CDStruct_1b6d18a9)arg6 metadata:(id)arg7 andOutputURL:(id)arg8;
+- (int)composeLoopWithAudio:(id)arg1 withAudioSource:(id)arg2 startTime:(CDStruct_1b6d18a9)arg3 fadeTime:(CDStruct_1b6d18a9)arg4 periodTime:(CDStruct_1b6d18a9)arg5 metadata:(id)arg6 andOutputURL:(id)arg7;
 
 @end
 

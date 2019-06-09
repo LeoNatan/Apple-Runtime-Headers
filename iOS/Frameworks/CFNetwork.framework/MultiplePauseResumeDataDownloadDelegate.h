@@ -12,10 +12,11 @@
 @class NSString;
 @protocol OS_dispatch_semaphore;
 
-__attribute__((visibility("hidden")))
 @interface MultiplePauseResumeDataDownloadDelegate : NSObject <NSURLSessionDownloadDelegate, NSURLSessionDelegate>
 {
     _Bool _expectDirectory;
+    _Bool _deleteTempFileOnce;
+    _Bool _expectZeroOffestResume;
     long long _sizeOfEntity;
     NSObject<OS_dispatch_semaphore> *_wait;
     _Bool _retryingWithResumeData;
@@ -33,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (long long)getSizeOfEntity;
 - (id)getWaiter;
 - (void)dealloc;
-- (id)initExpectingDirectory:(_Bool)arg1;
+- (id)initExpectingDirectory:(_Bool)arg1 deleteTempFileOnce:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

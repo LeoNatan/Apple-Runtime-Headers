@@ -8,7 +8,7 @@
 
 #import <ClockKit/NSXPCListenerDelegate-Protocol.h>
 
-@class BKSApplicationStateMonitor, NSDictionary, NSLock, NSMutableDictionary, NSMutableSet, NSString;
+@class BKSApplicationStateMonitor, NSDictionary, NSLock, NSMutableDictionary, NSMutableSet, NSString, SPComplicationManager;
 
 @interface CLKComplicationClientManager : NSObject <NSXPCListenerDelegate>
 {
@@ -22,6 +22,7 @@
     NSLock *_clientPIDsLock;
     unsigned int _nextWaitForClientTokenValue;
     NSLock *_nextWaitForClientTokenValueLock;
+    SPComplicationManager *_remoteComplicationManager;
     BKSApplicationStateMonitor *_applicationStateMonitor;
     CDUnknownBlockType _clientRegistrationHandler;
     CDUnknownBlockType _clientUnregistrationHandler;
@@ -39,6 +40,8 @@
 - (struct NSNumber *)waitForClientWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)enumerateClientsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSDictionary *clientsByIdentifier;
+- (void)_complicationVendorsDidChange;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

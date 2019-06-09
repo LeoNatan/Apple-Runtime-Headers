@@ -21,14 +21,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIResponder *firstResponderItem; // @synthesize firstResponderItem=_firstResponderItem;
 @property(readonly, nonatomic) UITextField *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
+- (double)minCellHeight;
 - (void)setBackgroundColor:(id)arg1;
 @property(retain, nonatomic) CNPropertyGroupItem *propertyItem;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)setCardGroupItem:(id)arg1;
-- (id)variableConstraints;
 - (id)constantConstraints;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)textFieldChanged:(id)arg1;
+- (_Bool)shouldIndentWhileEditing;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

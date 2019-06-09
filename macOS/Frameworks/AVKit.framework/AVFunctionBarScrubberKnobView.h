@@ -8,6 +8,7 @@
 
 @class AVPlayerLayer, AVThumbnail, AVTimer, NSLayoutConstraint;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarScrubberKnobView : NSView
 {
     BOOL _expanded;

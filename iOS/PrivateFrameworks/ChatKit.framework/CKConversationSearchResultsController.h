@@ -8,29 +8,39 @@
 
 #import <ChatKit/UISearchResultsUpdating-Protocol.h>
 
-@class CKSpotlightQuery, NSArray, NSString;
+@class CKSpotlightQuery, CSSearchQuery, NSArray, NSString;
 @protocol CKConversationResultsControllerDelegate;
 
 @interface CKConversationSearchResultsController : UITableViewController <UISearchResultsUpdating>
 {
+    _Bool _gotTopConversationResults;
     id <CKConversationResultsControllerDelegate> _delegate;
-    NSArray *_searchResults;
+    NSArray *_topConversationsResults;
+    NSArray *_messageResults;
     CKSpotlightQuery *_currentQuery;
+    CSSearchQuery *_topConversationsQuery;
     NSString *_selectedChatGUID;
 }
 
+@property(nonatomic) _Bool gotTopConversationResults; // @synthesize gotTopConversationResults=_gotTopConversationResults;
 @property(retain, nonatomic) NSString *selectedChatGUID; // @synthesize selectedChatGUID=_selectedChatGUID;
+@property(retain, nonatomic) CSSearchQuery *topConversationsQuery; // @synthesize topConversationsQuery=_topConversationsQuery;
 @property(retain, nonatomic) CKSpotlightQuery *currentQuery; // @synthesize currentQuery=_currentQuery;
-@property(retain, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
+@property(retain, nonatomic) NSArray *messageResults; // @synthesize messageResults=_messageResults;
+@property(retain, nonatomic) NSArray *topConversationsResults; // @synthesize topConversationsResults=_topConversationsResults;
 @property(nonatomic) __weak id <CKConversationResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_updateTableViewRowHeights;
 - (void)_selectChatGUID:(id)arg1;
 - (Class)_conversationListCellClass;
+@property(readonly, nonatomic) NSArray *searchResults;
 - (void)searchEnded;
 - (void)cancelCurrentQuery;
 - (void)setCurrentSearchResultSelected:(_Bool)arg1;
+- (void)_reloadDataForNewResults;
+- (void)topConversationsQueryCompletedWithResults:(id)arg1;
+- (id)_topConversationsQueryForText:(id)arg1;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;

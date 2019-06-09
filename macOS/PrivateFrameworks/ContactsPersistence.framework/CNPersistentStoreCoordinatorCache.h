@@ -21,6 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)pscKeyForStoreDescription:(id)arg1;
 + (id)cacheKeyForAllSources;
 + (id)sharedInstance;
+@property(readonly, nonatomic) CNPersistentStoreCoordinatorUpdater *coordinatorUpdater; // @synthesize coordinatorUpdater=_coordinatorUpdater;
+@property(readonly, nonatomic) CNPersistentStoreCoordinatorFactory *coordinatorFactory; // @synthesize coordinatorFactory=_coordinatorFactory;
+@property(readonly, nonatomic) CNQueue *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
+@property(readonly, nonatomic) CNCache *cache; // @synthesize cache=_cache;
+- (void).cxx_destruct;
 - (BOOL)addAllPersistentStoresAndReturnIsMainDatabasePristine;
 - (void)_updateCacheEntry:(id)arg1 withResult:(id)arg2 accountCollection:(id)arg3 storeDescriptionKey:(id)arg4;
 - (id)_pscResultFromCacheEntry:(id)arg1 withStoreDescriptionKey:(id)arg2;
@@ -30,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (id)coordinatorWithCacheKey:(id)arg1 storeDescription:(id)arg2;
 - (id)coordinatorForSourcesWithAccountCollection:(id)arg1;
 - (id)allCacheKeys;
-- (void)dealloc;
 - (id)initReadOnly:(BOOL)arg1;
 
 @end

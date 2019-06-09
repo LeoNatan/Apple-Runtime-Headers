@@ -18,6 +18,7 @@
 
 + (id)multiDictionaryWithObject:(id)arg1 forKey:(id)arg2;
 + (id)multiDictionary;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -30,7 +31,6 @@
 @property(readonly, nonatomic) unsigned long long count;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithEntries:(id)arg1;
 - (id)init;
 

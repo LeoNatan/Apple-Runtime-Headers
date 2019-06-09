@@ -42,6 +42,7 @@
 - (void)passcodeManager:(id)arg1 didTransitionFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)_animatedPasscodeViewTransitionToState:(unsigned long long)arg1 animation:(unsigned long long)arg2;
 - (id)_passcodeInputViewForState:(unsigned long long)arg1;
+- (id)passcodeInputView;
 - (void)passcodeInput:(id)arg1 enteredPasscode:(id)arg2;
 - (void)passcodeInput:(id)arg1 willChangeContents:(id)arg2;
 - (_Bool)_allowSkip;

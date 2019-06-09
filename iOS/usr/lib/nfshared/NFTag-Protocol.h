@@ -6,19 +6,22 @@
 
 #import <nfshared/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSString;
-@protocol NFTag;
+@class NSData, NSString;
+@protocol NFTag, NFTagA, NFTagB, NFTagF;
 
 @protocol NFTag <NSObject>
-@property(readonly, copy, nonatomic) NSData *UID;
+@property(readonly, nonatomic) id <NFTagF> tagF;
+@property(readonly, nonatomic) id <NFTagB> tagB;
+@property(readonly, nonatomic) id <NFTagA> tagA;
 @property(readonly, copy, nonatomic) NSData *AppData;
-@property(readonly, copy, nonatomic) NSArray *allSystemCodes;
-@property(readonly, copy, nonatomic) NSData *SystemCode;
-@property(readonly, copy, nonatomic) NSData *PMm;
-@property(readonly, copy, nonatomic) NSData *IDm;
+@property(readonly, nonatomic) unsigned long long ndefContainerSize;
+@property(readonly, nonatomic) unsigned long long ndefMessageSize;
+@property(readonly, nonatomic) unsigned int ndefAvailability;
+@property(readonly, copy, nonatomic) NSData *UID;
 @property(readonly, copy, nonatomic) NSData *tagID;
 @property(readonly, nonatomic) unsigned int technology;
 @property(readonly, nonatomic) unsigned int type;
+- (_Bool)isEqualToNFTag:(id <NFTag>)arg1;
 - (NSString *)description;
 - (id)initWithNFTag:(id <NFTag>)arg1;
 @end

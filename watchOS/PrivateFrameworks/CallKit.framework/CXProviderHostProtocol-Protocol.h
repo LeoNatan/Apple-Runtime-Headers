@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CallKit/NSObject-Protocol.h>
+#import <CallKit/CXAbstractProviderHostProtocol-Protocol.h>
 
-@class CXAction, CXCallFailureContext, CXCallUpdate, CXProviderConfiguration, CXTransaction, NSData, NSDate, NSString, NSUUID;
+@class CXCallFailureContext, CXCallUpdate, CXProviderConfiguration, CXTransaction, NSData, NSDate, NSString, NSUUID;
 
-@protocol CXProviderHostProtocol <NSObject>
-- (oneway void)actionCompleted:(CXAction *)arg1;
+@protocol CXProviderHostProtocol <CXAbstractProviderHostProtocol>
 - (oneway void)requestTransaction:(CXTransaction *)arg1 reply:(void (^)(NSError *))arg2;
 - (oneway void)reportCallWithUUID:(NSUUID *)arg1 crossDeviceIdentifier:(NSString *)arg2 changedBytesOfDataUsed:(int)arg3;
 - (oneway void)reportCallWithUUID:(NSUUID *)arg1 changedMeterLevel:(float)arg2 forDirection:(int)arg3;

@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
++ (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)didEndPossibleFileOperation:(id)arg1;
 + (id)willBeginPossibleDeletionOfItemAtURL:(id)arg1;
 + (id)willBeginPossibleMoveOfItemAtURL:(id)arg1 toURL:(id)arg2;

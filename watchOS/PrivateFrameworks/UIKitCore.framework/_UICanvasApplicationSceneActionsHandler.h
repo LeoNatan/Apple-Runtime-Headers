@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <UIKitCore/_UISceneApplicationActionsHandler.h>
 
 #import <UIKitCore/_UICanvasSceneActionsHandler-Protocol.h>
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
-@interface _UICanvasApplicationSceneActionsHandler : NSObject <_UICanvasSceneActionsHandler>
+@interface _UICanvasApplicationSceneActionsHandler : _UISceneApplicationActionsHandler <_UICanvasSceneActionsHandler>
 {
 }
 
-- (id)respondToActions:(id)arg1 forScene:(id)arg2 inCanvas:(id)arg3;
+- (id)respondToActions:(id)arg1 forScene:(id)arg2 inCanvas:(id)arg3 fromTransitionContext:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

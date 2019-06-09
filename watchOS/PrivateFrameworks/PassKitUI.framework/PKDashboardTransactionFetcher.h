@@ -8,41 +8,56 @@
 
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 
-@class NSDate, NSString, PKMerchant, PKPaymentDefaultDataProvider, PKPaymentPass;
-@protocol OS_dispatch_queue, PKDashboardTransactionFetcherDelegate;
+@class NSDate, NSDictionary, NSString, PKMerchant, PKPaymentPass;
+@protocol OS_dispatch_queue, PKDashboardTransactionFetcherDelegate, PKPaymentDataProvider;
 
 @interface PKDashboardTransactionFetcher : NSObject <PKPaymentDataProviderDelegate>
 {
     PKPaymentPass *_pass;
     NSString *_passUniqueID;
-    PKPaymentDefaultDataProvider *_paymentDataProvider;
+    id <PKPaymentDataProvider> _paymentDataProvider;
     id <PKDashboardTransactionFetcherDelegate> _delegate;
-    unsigned int _type;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_queue> *_replyQueue;
     struct os_unfair_lock_s _lockUpdate;
     _Bool _pendingUpdate;
+    _Bool _hasMoreUpdates;
     PKMerchant *_merchant;
     NSString *_counterpartHandle;
+    int _merchantCategory;
+    int _transactionType;
     unsigned int _limit;
+    NSString *_cashbackPassUniqueID;
+    PKPaymentPass *_cashbackPass;
+    _Bool _needsCashbackUniqueID;
+    NSDictionary *_cashbackGroups;
+    unsigned int _type;
     NSDate *_startDate;
     NSDate *_endDate;
 }
 
+@property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
+@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
+@property(nonatomic) __weak id <PKDashboardTransactionFetcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(_Bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)_sendUpdatedTransactions;
 - (id)_sortedTransactions:(id)arg1 ascending:(_Bool)arg2;
+- (id)cashbackPass;
+- (id)cashbackGroupForTransactionWithIdentifier:(id)arg1;
 - (void)transactionsMonthlyAmountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)transactionsYearlyCountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)reloadTransactionsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setLimit:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)_commonSetup;
-- (id)initWithCounterpartHandle:(id)arg1 paymentPass:(id)arg2 delegate:(id)arg3;
-- (id)initWithMerchant:(id)arg1 paymentPass:(id)arg2 delegate:(id)arg3;
-- (id)initWithPaymentPass:(id)arg1 delegate:(id)arg2;
+- (id)initWithTransactionType:(int)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;
+- (id)initWithMerchantCategory:(int)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;
+- (id)initWithCounterpartHandle:(id)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;
+- (id)initWithMerchant:(id)arg1 paymentPass:(id)arg2 paymentDataProvider:(id)arg3;
+- (id)initWithPaymentPass:(id)arg1 paymentDataProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

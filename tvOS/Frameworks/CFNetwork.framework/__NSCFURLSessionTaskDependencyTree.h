@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary, NSURL, __NSCFURLSessionTaskDependencyTreeNode;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLSessionTaskDependencyTree : NSURLSessionTaskDependencyTree
 {
     NSURL *_mainDocumentURL;

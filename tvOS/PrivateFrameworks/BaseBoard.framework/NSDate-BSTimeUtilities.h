@@ -9,5 +9,6 @@
 @interface NSDate (BSTimeUtilities)
 - (_Bool)isBeforeDate:(id)arg1;
 - (_Bool)isAfterDate:(id)arg1;
+- (id)bs_dateByAddingDays:(long long)arg1;
 @end
 

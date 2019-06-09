@@ -8,33 +8,42 @@
 
 @interface PXMemoriesRelatedSettings : PXSettings
 {
-    BOOL _enableUI;
     BOOL _enableFeedbackUI;
     BOOL _enableFeedbackComboUI;
     BOOL _enableMemoriesLivingOnFeedback;
     BOOL _enableManualRefreshUI;
-    BOOL _enableMemoryBlurryHeader;
+    BOOL _fakePeopleProximity;
+    BOOL _recoverBlacklistedMemories;
+    BOOL _useUnifiedFont;
+    BOOL _showMemoryTitleLayer;
+    BOOL _enableIPadWideHeader;
     double _refreshPhotoKitTimeout;
     double _widgetRefreshTimeInterval;
     long long _minimumNumberOfCuratedAssetsForInterestingMoments;
     long long _minimumNumberOfCuratedAssetsForMemories;
     long long _minimumNumberOfCuratedAssetsForMovieHeader;
     unsigned long long _deleteBehavior;
+    long long _subtitleFontSize;
 }
 
 + (id)sharedInstance;
++ (id)settingsControllerModule;
+@property(nonatomic) long long subtitleFontSize; // @synthesize subtitleFontSize=_subtitleFontSize;
+@property(nonatomic) BOOL enableIPadWideHeader; // @synthesize enableIPadWideHeader=_enableIPadWideHeader;
+@property(nonatomic) BOOL showMemoryTitleLayer; // @synthesize showMemoryTitleLayer=_showMemoryTitleLayer;
+@property(nonatomic) BOOL useUnifiedFont; // @synthesize useUnifiedFont=_useUnifiedFont;
+@property(nonatomic) BOOL recoverBlacklistedMemories; // @synthesize recoverBlacklistedMemories=_recoverBlacklistedMemories;
 @property(nonatomic) unsigned long long deleteBehavior; // @synthesize deleteBehavior=_deleteBehavior;
-@property(nonatomic) BOOL enableMemoryBlurryHeader; // @synthesize enableMemoryBlurryHeader=_enableMemoryBlurryHeader;
 @property(nonatomic) long long minimumNumberOfCuratedAssetsForMovieHeader; // @synthesize minimumNumberOfCuratedAssetsForMovieHeader=_minimumNumberOfCuratedAssetsForMovieHeader;
 @property(nonatomic) long long minimumNumberOfCuratedAssetsForMemories; // @synthesize minimumNumberOfCuratedAssetsForMemories=_minimumNumberOfCuratedAssetsForMemories;
 @property(nonatomic) long long minimumNumberOfCuratedAssetsForInterestingMoments; // @synthesize minimumNumberOfCuratedAssetsForInterestingMoments=_minimumNumberOfCuratedAssetsForInterestingMoments;
 @property(nonatomic) double widgetRefreshTimeInterval; // @synthesize widgetRefreshTimeInterval=_widgetRefreshTimeInterval;
 @property(nonatomic) double refreshPhotoKitTimeout; // @synthesize refreshPhotoKitTimeout=_refreshPhotoKitTimeout;
+@property(nonatomic) BOOL fakePeopleProximity; // @synthesize fakePeopleProximity=_fakePeopleProximity;
 @property(nonatomic) BOOL enableManualRefreshUI; // @synthesize enableManualRefreshUI=_enableManualRefreshUI;
 @property(nonatomic) BOOL enableMemoriesLivingOnFeedback; // @synthesize enableMemoriesLivingOnFeedback=_enableMemoriesLivingOnFeedback;
 @property(nonatomic) BOOL enableFeedbackComboUI; // @synthesize enableFeedbackComboUI=_enableFeedbackComboUI;
 @property(nonatomic) BOOL enableFeedbackUI; // @synthesize enableFeedbackUI=_enableFeedbackUI;
-@property(nonatomic) BOOL enableUI; // @synthesize enableUI=_enableUI;
 - (void)performPostSaveActions;
 - (void)setDefaultValues;
 - (id)parentSettings;

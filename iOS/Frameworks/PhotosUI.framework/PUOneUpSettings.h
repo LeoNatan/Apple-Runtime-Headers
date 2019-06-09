@@ -6,10 +6,13 @@
 
 #import <PhotosUICore/PXSettings.h>
 
-@class PUScrubberSettings;
+#import <PhotosUI/PXPreferencesObserver-Protocol.h>
 
-@interface PUOneUpSettings : PXSettings
+@class NSNumber, NSString, PUScrubberSettings;
+
+@interface PUOneUpSettings : PXSettings <PXPreferencesObserver>
 {
+    NSNumber *_cachedAutoplayVideoEnabled;
     _Bool _showInitialDetailsIndicator;
     _Bool _enableSuggestionsAnalysis;
     _Bool _initialDetailsIndicatorShouldSlideIn;
@@ -20,7 +23,8 @@
     _Bool _allowDoubleTapZoom;
     _Bool _allowFullsizeJPEGDisplay;
     _Bool _allowToggleOriginalBarItem;
-    _Bool _showFacesAreaRect;
+    _Bool _showSaliencyRects;
+    _Bool _showFacesRect;
     _Bool _hideToolbarWhenShowingAccessoryView;
     _Bool _useGlobalDetailsVisibility;
     _Bool _useGlobalCommentsVisibility;
@@ -34,10 +38,19 @@
     _Bool _forceURLWithFigPhotoTiledLayer;
     _Bool _enableFigPhotoBackgroundSizeBasedDisplay;
     _Bool _simulateWorstCaseFigPhotoBackgroundSize;
+    _Bool _autoplayVideo;
+    _Bool _hideChromeOnUnmute;
+    _Bool _unmuteOnChromeHide;
+    _Bool _showVideoUnmuteWhenChromeIsHidden;
+    _Bool _loopAllVideos;
     _Bool _allowPlayButtonInBars;
-    _Bool _playVideoInScrubber;
+    _Bool _placeMuteButtonOverContent;
+    _Bool _videoRemuteOnBackgrounding;
+    _Bool _applyPerspectiveTransformDuringVitality;
     _Bool _lockScrollDuringLivePhotoPlayback;
     _Bool _livePhotoScrubberShowForPlayback;
+    _Bool _shouldMergeOverlappingLivePhotos;
+    _Bool _showOffBadgeForDisabledLivePhotos;
     _Bool _allowGIFPlayback;
     _Bool _showGIFLoadingDelays;
     _Bool _useDebuggingColors;
@@ -79,8 +92,12 @@
     double _maximumInitialZoomToFillScaleForCompactSizeClass;
     double _maximumInitialZoomToFillScaleForRegularSizeClass;
     double _doubleTapZoomFactor;
+    double _videoAutoplayThreshold;
     double _videoPauseThreshold;
+    double _remuteButtonDisplayDuration;
     double _livePhotoInteractionThreshold;
+    double _livePhotoMinimumOverlappingDuration;
+    unsigned long long _overlappingLivePhotosCountLimit;
     unsigned long long _viewModelCacheCountLimit;
     double _visibilityDurationForEnteringQuickPagingRegime;
     double _visibilityDurationForExitingQuickPagingRegime;
@@ -128,12 +145,25 @@
 @property(nonatomic) double visibilityDurationForExitingQuickPagingRegime; // @synthesize visibilityDurationForExitingQuickPagingRegime=_visibilityDurationForExitingQuickPagingRegime;
 @property(nonatomic) double visibilityDurationForEnteringQuickPagingRegime; // @synthesize visibilityDurationForEnteringQuickPagingRegime=_visibilityDurationForEnteringQuickPagingRegime;
 @property(nonatomic) unsigned long long viewModelCacheCountLimit; // @synthesize viewModelCacheCountLimit=_viewModelCacheCountLimit;
+@property(nonatomic) _Bool showOffBadgeForDisabledLivePhotos; // @synthesize showOffBadgeForDisabledLivePhotos=_showOffBadgeForDisabledLivePhotos;
+@property(nonatomic) unsigned long long overlappingLivePhotosCountLimit; // @synthesize overlappingLivePhotosCountLimit=_overlappingLivePhotosCountLimit;
+@property(nonatomic) double livePhotoMinimumOverlappingDuration; // @synthesize livePhotoMinimumOverlappingDuration=_livePhotoMinimumOverlappingDuration;
+@property(nonatomic) _Bool shouldMergeOverlappingLivePhotos; // @synthesize shouldMergeOverlappingLivePhotos=_shouldMergeOverlappingLivePhotos;
 @property(nonatomic) _Bool livePhotoScrubberShowForPlayback; // @synthesize livePhotoScrubberShowForPlayback=_livePhotoScrubberShowForPlayback;
 @property(nonatomic) _Bool lockScrollDuringLivePhotoPlayback; // @synthesize lockScrollDuringLivePhotoPlayback=_lockScrollDuringLivePhotoPlayback;
+@property(nonatomic) _Bool applyPerspectiveTransformDuringVitality; // @synthesize applyPerspectiveTransformDuringVitality=_applyPerspectiveTransformDuringVitality;
 @property(nonatomic) double livePhotoInteractionThreshold; // @synthesize livePhotoInteractionThreshold=_livePhotoInteractionThreshold;
+@property(nonatomic) _Bool videoRemuteOnBackgrounding; // @synthesize videoRemuteOnBackgrounding=_videoRemuteOnBackgrounding;
+@property(nonatomic) _Bool placeMuteButtonOverContent; // @synthesize placeMuteButtonOverContent=_placeMuteButtonOverContent;
+@property(nonatomic) double remuteButtonDisplayDuration; // @synthesize remuteButtonDisplayDuration=_remuteButtonDisplayDuration;
 @property(nonatomic) double videoPauseThreshold; // @synthesize videoPauseThreshold=_videoPauseThreshold;
-@property(nonatomic) _Bool playVideoInScrubber; // @synthesize playVideoInScrubber=_playVideoInScrubber;
 @property(nonatomic) _Bool allowPlayButtonInBars; // @synthesize allowPlayButtonInBars=_allowPlayButtonInBars;
+@property(nonatomic) _Bool loopAllVideos; // @synthesize loopAllVideos=_loopAllVideos;
+@property(nonatomic) _Bool showVideoUnmuteWhenChromeIsHidden; // @synthesize showVideoUnmuteWhenChromeIsHidden=_showVideoUnmuteWhenChromeIsHidden;
+@property(nonatomic) _Bool unmuteOnChromeHide; // @synthesize unmuteOnChromeHide=_unmuteOnChromeHide;
+@property(nonatomic) _Bool hideChromeOnUnmute; // @synthesize hideChromeOnUnmute=_hideChromeOnUnmute;
+@property(nonatomic) double videoAutoplayThreshold; // @synthesize videoAutoplayThreshold=_videoAutoplayThreshold;
+@property(nonatomic) _Bool autoplayVideo; // @synthesize autoplayVideo=_autoplayVideo;
 @property(nonatomic) _Bool simulateWorstCaseFigPhotoBackgroundSize; // @synthesize simulateWorstCaseFigPhotoBackgroundSize=_simulateWorstCaseFigPhotoBackgroundSize;
 @property(nonatomic) _Bool enableFigPhotoBackgroundSizeBasedDisplay; // @synthesize enableFigPhotoBackgroundSizeBasedDisplay=_enableFigPhotoBackgroundSizeBasedDisplay;
 @property(nonatomic) _Bool forceURLWithFigPhotoTiledLayer; // @synthesize forceURLWithFigPhotoTiledLayer=_forceURLWithFigPhotoTiledLayer;
@@ -170,7 +200,8 @@
 @property(nonatomic) double minimumVisibleContentHeight; // @synthesize minimumVisibleContentHeight=_minimumVisibleContentHeight;
 @property(nonatomic) double accessoryInitialTopPosition; // @synthesize accessoryInitialTopPosition=_accessoryInitialTopPosition;
 @property(nonatomic) long long accessoryViewType; // @synthesize accessoryViewType=_accessoryViewType;
-@property(nonatomic) _Bool showFacesAreaRect; // @synthesize showFacesAreaRect=_showFacesAreaRect;
+@property(nonatomic) _Bool showFacesRect; // @synthesize showFacesRect=_showFacesRect;
+@property(nonatomic) _Bool showSaliencyRects; // @synthesize showSaliencyRects=_showSaliencyRects;
 @property(nonatomic) long long userNavigationMaximumDistance; // @synthesize userNavigationMaximumDistance=_userNavigationMaximumDistance;
 @property(nonatomic) _Bool allowToggleOriginalBarItem; // @synthesize allowToggleOriginalBarItem=_allowToggleOriginalBarItem;
 @property(nonatomic) _Bool allowFullsizeJPEGDisplay; // @synthesize allowFullsizeJPEGDisplay=_allowFullsizeJPEGDisplay;
@@ -191,10 +222,18 @@
 @property(nonatomic) long long suggestionMaximumAssetAgeInDays; // @synthesize suggestionMaximumAssetAgeInDays=_suggestionMaximumAssetAgeInDays;
 @property(nonatomic) long long suggestionsStyle; // @synthesize suggestionsStyle=_suggestionsStyle;
 - (void).cxx_destruct;
+- (void)preferencesDidChange;
+- (_Bool)allowAutoplayVideo;
 - (void)_updatePrototypeRelatedSettings;
 - (void)_invalidatePrototypeRelatedSettings;
 - (void)setDefaultValues;
 - (id)parentSettings;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

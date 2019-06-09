@@ -8,7 +8,7 @@
 
 #import <EventKit/EKJunkInvitationProtocol_Private-Protocol.h>
 
-@class EKCalendarDate, EKEventStore, EKParticipant, EKReadWriteLock, EKStructuredLocation, EKSuggestedEventInfo, NSArray, NSDate, NSNumber, NSString, NSURL;
+@class EKCalendarDate, EKEventStore, EKParticipant, EKReadWriteLock, EKStructuredLocation, EKSuggestedEventInfo, NSArray, NSDate, NSNumber, NSSet, NSString, NSURL;
 
 @interface EKEvent : EKCalendarItem <EKJunkInvitationProtocol_Private>
 {
@@ -30,6 +30,7 @@
 
 + (id)generateUniqueIDWithEvent:(id)arg1 originalEvent:(id)arg2 calendar:(id)arg3;
 + (long long)_eventAvailabilityForParticipantStatus:(long long)arg1 supportedEventAvailabilities:(unsigned long long)arg2 isAllDayEvent:(_Bool)arg3;
++ (id)externalUriScheme;
 + (id)eventWithEventStore:(id)arg1;
 + (id)knownKeysToUseForFutureChanges;
 + (id)knownKeysToSkipForFutureChanges;
@@ -59,10 +60,12 @@
 @property(retain, nonatomic) EKSuggestedEventInfo *suggestionInfo;
 - (id)privacyLevelString;
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(_Bool)arg3;
+- (_Bool)_shouldPreserveFutureWhenSlicingWithStartDate:(id)arg1 newStartDate:(id)arg2;
 - (id)committedCopy;
 - (void)rebase;
 - (_Bool)_noRemainingEarlierOccurrences;
 - (_Bool)_eventIsTheOnlyRemainingOccurrence;
+- (id)masterEvent;
 - (_Bool)removeWithSpan:(long long)arg1 error:(id *)arg2;
 - (_Bool)_isInitialOccurrenceDate:(id)arg1;
 - (void)_cancelDetachedEventsWithSpan:(long long)arg1;
@@ -82,6 +85,7 @@
 - (_Bool)_validateDurationConstrainedToRecurrenceInterval;
 - (_Bool)_validateDatesAndRecurrencesGivenSpan:(long long)arg1 error:(id *)arg2;
 - (_Bool)validateRecurrenceRule:(id)arg1 error:(id *)arg2;
+@property(copy, nonatomic) NSString *recurrenceSet;
 - (_Bool)hasAttendeeProposedTimes;
 - (id)_dateForNextOccurrence;
 - (void)rollback;
@@ -147,7 +151,6 @@
 - (_Bool)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id *)arg3;
 - (_Bool)isTentative;
 @property(retain, nonatomic) NSURL *conferenceURL;
-- (id)actions;
 - (void)setLocationPredictionAllowed:(_Bool)arg1;
 - (void)setPredictedLocationFrozen:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool hasPredictedLocation;
@@ -158,11 +161,13 @@
 - (void)_clearLocationPredictionCacheIfNotFrozen;
 - (void)_clearLocationPredictionCacheIfNotFrozenHoldingLock;
 - (id)_updatePredictedLocationCacheIfNeeded;
+- (id)_firstNonConferenceRoomLocationTitle;
 - (id)_updatePredictedLocationCacheIfNeededHoldingLock;
 - (_Bool)_needsPredictedLocationCacheUpdateHoldingLock;
 @property(copy, nonatomic) EKStructuredLocation *structuredLocation; // @dynamic structuredLocation;
 - (void)setURL:(id)arg1;
 - (void)setNotes:(id)arg1;
+- (_Bool)supportsAddingAttachments;
 @property(readonly, nonatomic) _Bool allowsProposedTimeModifications;
 - (_Bool)serverSupportedProposeNewTime;
 - (_Bool)canForward;
@@ -176,6 +181,7 @@
 @property(nonatomic) _Bool timeChanged;
 @property(nonatomic) _Bool dateChanged;
 - (void)_setInvitationChangedProperty:(_Bool)arg1 forFlag:(unsigned int)arg2;
+- (unsigned int)_invitationChangedPropertyFlags;
 - (_Bool)_invitationChangedPropertyForFlag:(unsigned int)arg1;
 @property(readonly, nonatomic) _Bool locationIsAConferenceRoom;
 @property(nonatomic) long long privacyLevel;
@@ -189,6 +195,13 @@
 @property(readonly, nonatomic) NSDate *startDateIncludingTravel;
 - (id)_travelTimeInternalDescription;
 @property(nonatomic) int externalTrackingStatus;
+- (_Bool)_shouldAlertInviteeDeclines;
+- (void)_setInvitationStatusUnalertedIfNecessary;
+- (void)_setInvitationStatusAlertedIfNecessary;
+@property(nonatomic) _Bool isAlerted;
+- (void)removeEventAction:(id)arg1;
+- (void)addEventAction:(id)arg1;
+@property(copy, nonatomic) NSSet *actions;
 - (void)clearInvitationStatus;
 @property(nonatomic) unsigned long long invitationStatus;
 - (void)setResponseComment:(id)arg1;
@@ -197,6 +210,9 @@
 - (id)startDateForRecurrence;
 - (void)setRecurrenceRule:(id)arg1;
 - (id)recurrenceRule;
+- (id)lunarCalendarString;
+- (void)setLunarCalendarString:(id)arg1;
+- (void)setBirthdayContact:(id)arg1;
 @property(readonly, nonatomic) NSString *birthdayContactIdentifier;
 @property(readonly, nonatomic) long long birthdayPersonID;
 - (long long)_parentParticipationStatus;
@@ -212,7 +228,9 @@
 - (CDStruct_79f9e052)startDatePinnedForAllDay;
 @property(readonly, nonatomic) CDStruct_79f9e052 endDateGr;
 @property(readonly, nonatomic) CDStruct_79f9e052 startDateGr;
-- (CDStruct_79f9e052)_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
+- (CDStruct_79f9e052)_endDateGrForTimeZone:(id)arg1;
+- (CDStruct_79f9e052)_startDateGrForTimeZone:(id)arg1;
+- (CDStruct_79f9e052)_gregorianDateCorrectedForTimeZone:(id)arg1 fromCalendarDate:(id)arg2 orNSDate:(id)arg3;
 @property(readonly, copy, nonatomic) NSDate *initialEndDate;
 @property(readonly, nonatomic) NSDate *occurrenceDate;
 @property(readonly, nonatomic) _Bool isMaster;
@@ -223,12 +241,14 @@
 - (id)_effectiveTimeZone;
 - (void)setTimeZone:(id)arg1;
 @property(copy, nonatomic) NSDate *endDate;
+- (void)updateEndDateForDate:(id)arg1;
 @property(readonly, nonatomic) EKCalendarDate *endCalendarDate;
 - (void)setEndDateRaw:(id)arg1;
 - (id)endDateRaw;
 @property(readonly, nonatomic) double durationIncludingTravel;
 @property(readonly, nonatomic) double duration;
 - (void)_setStartDate:(id)arg1 andClearProposedTimes:(_Bool)arg2;
+- (void)updateStartDateForDate:(id)arg1;
 - (void)overrideStartDate:(id)arg1;
 @property(copy, nonatomic) NSDate *startDate;
 @property(readonly, nonatomic) EKCalendarDate *startCalendarDate;

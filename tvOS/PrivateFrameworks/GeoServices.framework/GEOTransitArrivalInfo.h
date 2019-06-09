@@ -8,14 +8,21 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOTransitArrivalInfo : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     int _destinationLocation;
     struct {
-        unsigned int destinationLocation:1;
-    } _has;
+        unsigned int has_destinationLocation:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -23,12 +30,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsDestinationLocation:(id)arg1;
 - (id)destinationLocationAsString:(int)arg1;
 @property(nonatomic) _Bool hasDestinationLocation;
-@property(nonatomic) int destinationLocation; // @synthesize destinationLocation=_destinationLocation;
+@property(nonatomic) int destinationLocation;
 
 @end
 

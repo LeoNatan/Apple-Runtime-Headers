@@ -8,57 +8,66 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocation, GEOMapRegion, GEOPlaceSearchRequest, NSString;
+@class GEOLocation, GEOMapRegion, GEOPlaceSearchRequest, NSString, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOMapQuery : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     struct GEOSessionID _sessionID;
+    GEOMapRegion *_mapRegion;
+    GEOPlaceSearchRequest *_placeSearchRequest;
+    NSString *_query;
+    GEOLocation *_userLocation;
     int _clientImgFmt;
     int _clientImgMaxHeight;
     int _clientImgMaxWidth;
     int _mapCenterX;
     int _mapCenterY;
-    GEOMapRegion *_mapRegion;
     int _mapSpanX;
     int _mapSpanY;
-    GEOPlaceSearchRequest *_placeSearchRequest;
-    NSString *_query;
     int _requestType;
     int _tilesizeX;
     int _tilesizeY;
-    GEOLocation *_userLocation;
     int _zoomlevel;
     struct {
-        unsigned int sessionID:1;
-        unsigned int clientImgFmt:1;
-        unsigned int clientImgMaxHeight:1;
-        unsigned int clientImgMaxWidth:1;
-        unsigned int mapCenterX:1;
-        unsigned int mapCenterY:1;
-        unsigned int mapSpanX:1;
-        unsigned int mapSpanY:1;
-        unsigned int requestType:1;
-        unsigned int tilesizeX:1;
-        unsigned int tilesizeY:1;
-        unsigned int zoomlevel:1;
-    } _has;
+        unsigned int has_sessionID:1;
+        unsigned int has_clientImgFmt:1;
+        unsigned int has_clientImgMaxHeight:1;
+        unsigned int has_clientImgMaxWidth:1;
+        unsigned int has_mapCenterX:1;
+        unsigned int has_mapCenterY:1;
+        unsigned int has_mapSpanX:1;
+        unsigned int has_mapSpanY:1;
+        unsigned int has_requestType:1;
+        unsigned int has_tilesizeX:1;
+        unsigned int has_tilesizeY:1;
+        unsigned int has_zoomlevel:1;
+        unsigned int read_mapRegion:1;
+        unsigned int read_placeSearchRequest:1;
+        unsigned int read_query:1;
+        unsigned int read_userLocation:1;
+        unsigned int wrote_sessionID:1;
+        unsigned int wrote_mapRegion:1;
+        unsigned int wrote_placeSearchRequest:1;
+        unsigned int wrote_query:1;
+        unsigned int wrote_userLocation:1;
+        unsigned int wrote_clientImgFmt:1;
+        unsigned int wrote_clientImgMaxHeight:1;
+        unsigned int wrote_clientImgMaxWidth:1;
+        unsigned int wrote_mapCenterX:1;
+        unsigned int wrote_mapCenterY:1;
+        unsigned int wrote_mapSpanX:1;
+        unsigned int wrote_mapSpanY:1;
+        unsigned int wrote_requestType:1;
+        unsigned int wrote_tilesizeX:1;
+        unsigned int wrote_tilesizeY:1;
+        unsigned int wrote_zoomlevel:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPlaceSearchRequest *placeSearchRequest; // @synthesize placeSearchRequest=_placeSearchRequest;
-@property(nonatomic) struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
-@property(retain, nonatomic) GEOLocation *userLocation; // @synthesize userLocation=_userLocation;
-@property(retain, nonatomic) GEOMapRegion *mapRegion; // @synthesize mapRegion=_mapRegion;
-@property(nonatomic) int clientImgMaxHeight; // @synthesize clientImgMaxHeight=_clientImgMaxHeight;
-@property(nonatomic) int clientImgMaxWidth; // @synthesize clientImgMaxWidth=_clientImgMaxWidth;
-@property(nonatomic) int tilesizeY; // @synthesize tilesizeY=_tilesizeY;
-@property(nonatomic) int tilesizeX; // @synthesize tilesizeX=_tilesizeX;
-@property(nonatomic) int zoomlevel; // @synthesize zoomlevel=_zoomlevel;
-@property(nonatomic) int mapSpanY; // @synthesize mapSpanY=_mapSpanY;
-@property(nonatomic) int mapSpanX; // @synthesize mapSpanX=_mapSpanX;
-@property(nonatomic) int mapCenterY; // @synthesize mapCenterY=_mapCenterY;
-@property(nonatomic) int mapCenterX; // @synthesize mapCenterX=_mapCenterX;
-@property(retain, nonatomic) NSString *query; // @synthesize query=_query;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -67,30 +76,49 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPlaceSearchRequest *placeSearchRequest;
 @property(readonly, nonatomic) _Bool hasPlaceSearchRequest;
+- (void)_readPlaceSearchRequest;
 @property(nonatomic) _Bool hasSessionID;
+@property(nonatomic) struct GEOSessionID sessionID;
+@property(retain, nonatomic) GEOLocation *userLocation;
 @property(readonly, nonatomic) _Bool hasUserLocation;
+- (void)_readUserLocation;
+@property(retain, nonatomic) GEOMapRegion *mapRegion;
 @property(readonly, nonatomic) _Bool hasMapRegion;
+- (void)_readMapRegion;
 @property(nonatomic) _Bool hasClientImgMaxHeight;
+@property(nonatomic) int clientImgMaxHeight;
 @property(nonatomic) _Bool hasClientImgMaxWidth;
+@property(nonatomic) int clientImgMaxWidth;
 @property(nonatomic) _Bool hasTilesizeY;
+@property(nonatomic) int tilesizeY;
 @property(nonatomic) _Bool hasTilesizeX;
+@property(nonatomic) int tilesizeX;
 - (int)StringAsClientImgFmt:(id)arg1;
 - (id)clientImgFmtAsString:(int)arg1;
 @property(nonatomic) _Bool hasClientImgFmt;
-@property(nonatomic) int clientImgFmt; // @synthesize clientImgFmt=_clientImgFmt;
+@property(nonatomic) int clientImgFmt;
 @property(nonatomic) _Bool hasZoomlevel;
+@property(nonatomic) int zoomlevel;
 @property(nonatomic) _Bool hasMapSpanY;
+@property(nonatomic) int mapSpanY;
 @property(nonatomic) _Bool hasMapSpanX;
+@property(nonatomic) int mapSpanX;
 @property(nonatomic) _Bool hasMapCenterY;
+@property(nonatomic) int mapCenterY;
 @property(nonatomic) _Bool hasMapCenterX;
+@property(nonatomic) int mapCenterX;
 - (int)StringAsRequestType:(id)arg1;
 - (id)requestTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRequestType;
-@property(nonatomic) int requestType; // @synthesize requestType=_requestType;
+@property(nonatomic) int requestType;
+@property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) _Bool hasQuery;
+- (void)_readQuery;
 
 @end
 

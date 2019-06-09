@@ -16,6 +16,7 @@
 
 + (id)defaultBudget;
 - (void).cxx_destruct;
+- (id)throttlingState;
 - (void)doDiscretionaryWork:(CDUnknownBlockType)arg1 orElse:(CDUnknownBlockType)arg2;
 - (void)_endWork;
 - (void)_startWork;

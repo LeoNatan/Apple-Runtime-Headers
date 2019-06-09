@@ -10,7 +10,7 @@
 {
 }
 
-- (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
+- (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (_Bool)wantsSequencedRequestObservationsRecording;
 - (_Bool)allowsCachingOfResults;
 -     // Error parsing type: B72@0:8^{?=[3]}16^{__CVBuffer=}24^{__CVBuffer=}32^{ImageRegistrationCtx_s=}40^v48r^{?=[3]}56^@64, name: _calculateHomographicWarpTransform:ofFloatingImagePixelBuffer:ontoReferenceImagePixelBuffer:usingImageRegistrationContext:glContext:seededWithPreviousWarpTransform:error:

@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     GEOSearchCategory *_searchCategory;
 }
 
-+ (id)imageWithSearchCategory:(id)arg1;
-+ (id)browseItemWithCategory:(id)arg1;
++ (id)imageWithSearchCategory:(id)arg1 nightMode:(_Bool)arg2;
++ (id)browseItemWithCategory:(id)arg1 nightMode:(_Bool)arg2;
 @property(readonly, nonatomic) GEOSearchCategory *searchCategory; // @synthesize searchCategory=_searchCategory;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;

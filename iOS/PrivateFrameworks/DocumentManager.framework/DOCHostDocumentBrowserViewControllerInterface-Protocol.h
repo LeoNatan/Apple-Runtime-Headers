@@ -5,10 +5,10 @@
 //
 
 @class DOCItem, NSArray, NSError, NSString, NSURL, NSUUID;
-@protocol DOCServicePopoverTrackerProtocol;
+@protocol DOCItemActivityPerformer, DOCServicePopoverTrackerProtocol;
 
 @protocol DOCHostDocumentBrowserViewControllerInterface
-- (void)_presentActivityViewControllerForItems:(NSArray *)arg1 withPopoverTracker:(id <DOCServicePopoverTrackerProtocol>)arg2 sourceIsManaged:(_Bool)arg3;
+- (void)_presentActivityViewControllerForItems:(NSArray *)arg1 withPopoverTracker:(id <DOCServicePopoverTrackerProtocol>)arg2 isContentManaged:(_Bool)arg3 additionalActivities:(NSArray *)arg4 activityProxy:(id <DOCItemActivityPerformer>)arg5;
 - (void)_updateRemoteBarButtonFrames:(NSArray *)arg1 forUUID:(NSArray *)arg2;
 - (void)_failedToImportDocumentAtURL:(NSURL *)arg1 error:(NSError *)arg2;
 - (void)_didImportDocumentAtURL:(NSURL *)arg1 toDestinationItem:(DOCItem *)arg2;
@@ -16,6 +16,6 @@
 - (void)_commitDocumentURLPreview:(DOCItem *)arg1;
 - (void)_didPickItems:(NSArray *)arg1;
 - (void)_didTriggerBarButtonWithUUID:(NSUUID *)arg1;
-- (void)_didTriggerActionWithIdentifier:(NSString *)arg1 onItems:(NSArray *)arg2;
+- (void)_didTriggerCustomActionWithIdentifier:(NSString *)arg1 onItems:(NSArray *)arg2;
 @end
 

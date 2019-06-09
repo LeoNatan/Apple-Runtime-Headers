@@ -18,6 +18,9 @@
 - (Class)itemClass;
 
 @optional
+- (void)prefetchForItem:(id <PKDashboardItem>)arg1 inCollectionView:(UICollectionView *)arg2;
+- (_Bool)cellIsIndependentForItem:(id <PKDashboardItem>)arg1 inCollectionView:(UICollectionView *)arg2 atIndexPath:(NSIndexPath *)arg3;
+- (_Bool)cellIsStackableForItem:(id <PKDashboardItem>)arg1 inCollectionView:(UICollectionView *)arg2 atIndexPath:(NSIndexPath *)arg3;
 - (void)traitCollectionDidChangeFromTrait:(UITraitCollection *)arg1 toTrait:(UITraitCollection *)arg2 inCollectionView:(UICollectionView *)arg3;
 - (void)cellWillAppear:(UICollectionViewCell *)arg1 forItem:(id <PKDashboardItem>)arg2 inCollectionView:(UICollectionView *)arg3 atIndexPath:(NSIndexPath *)arg4;
 - (void)cellDidDisappear:(UICollectionViewCell *)arg1 foritem:(id <PKDashboardItem>)arg2 inCollectionView:(UICollectionView *)arg3 atIndexPath:(NSIndexPath *)arg4;

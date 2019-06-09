@@ -11,15 +11,14 @@
 __attribute__((visibility("hidden")))
 @interface BRCSyncUpOperationBuilder : NSObject
 {
+    NSMutableSet *_fullyChainedParentIDWhitelist;
+    NSMutableSet *_halfChainedParentIDWhitelist;
     BRCAccountSession *_session;
     BRCSyncUpOperation *_op;
-    NSMutableSet *_chainedParentID;
     BRCUserDefaults *_defaults;
 }
 
-+ (_Bool)shouldPCSChainItemID:(id)arg1 withParentItemID:(id)arg2 givenChainedParentID:(id)arg3 inZone:(id)arg4 canOptimisticallyChain:(_Bool)arg5 andGetIsChained:(_Bool *)arg6 defaults:(id)arg7;
 @property(retain, nonatomic) BRCUserDefaults *defaults; // @synthesize defaults=_defaults;
-@property(retain, nonatomic) NSMutableSet *chainedParentID; // @synthesize chainedParentID=_chainedParentID;
 @property(retain, nonatomic) BRCSyncUpOperation *op; // @synthesize op=_op;
 @property(retain, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
@@ -34,16 +33,15 @@ __attribute__((visibility("hidden")))
 - (float)addEditOfDirectory:(id)arg1;
 - (void)handleEditOfSharedItem:(id)arg1;
 - (void)handleDeletionOfSharedItem:(id)arg1;
-- (_Bool)shouldPCSChainDirectory:(id)arg1;
 - (float)fakeSyncForItem:(id)arg1 inZone:(id)arg2;
 - (void)prepareAppLibraryRootSyncUpForItem:(id)arg1;
 - (float)addDeletionOfSharedTopLevelItem:(id)arg1;
 - (float)addEditOfSharedTopLevelItem:(id)arg1;
-- (float)addDeletionOfRecordID:(id)arg1 etag:(id)arg2 previousZoneEtag:(id)arg3;
+- (float)addDeletionOfRecordID:(id)arg1 ckInfo:(id)arg2;
 - (float)addDeletionOfItem:(id)arg1;
 - (_Bool)checkIfSyncAllowedInSharedZoneForItem:(id)arg1;
-- (_Bool)shouldPCSChainItem:(id)arg1;
-- (_Bool)shouldPCSChainItem:(id)arg1 canOptimisticallyChain:(_Bool)arg2 andGetIsChained:(_Bool *)arg3;
+- (unsigned char)shouldPCSChainStatusForItem:(id)arg1;
+- (id)init;
 
 @end
 

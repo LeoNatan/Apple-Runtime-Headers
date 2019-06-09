@@ -51,7 +51,7 @@
 - (id)addEntry:(id)arg1;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void)dealloc;
-- (id)initWithPrefetchCount:(unsigned long long)arg1;
+- (id)initWithContactStore:(id)arg1 prefetchCount:(unsigned long long)arg2;
 - (id)init;
 
 // Remaining properties

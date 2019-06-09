@@ -35,16 +35,13 @@
 - (void)_updateOverlayContentSizeIfNeeded;
 - (void)_setupProcessingOverlayView;
 - (void)_loadComposition;
-- (id)_assetCollectionListFetchResultForPeople:(id)arg1 assetCount:(unsigned long long *)arg2;
 - (void)_createNewDetailView:(id)arg1;
 - (void)_suggestionsDidFinish:(id)arg1;
 - (void)refreshName;
-- (void)refreshPeople;
+- (id)_fetchRefreshedPeople:(id)arg1;
 - (void)presentBootstrapViewControllerWithType:(unsigned long long)arg1;
 - (_Bool)shouldUpdateStatusBarTitle;
 - (void)viewWillLayoutSubviews;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithPeople:(id)arg1;
 

@@ -9,5 +9,9 @@
 @interface UIScrollView (MoreExtras)
 - (void)freeze;
 - (void)centerPoint:(struct CGPoint)arg1 inContentView:(id)arg2;
+- (void)_npto_stopDeceleration;
+- (void)_npto_scrollToEndAnimated:(_Bool)arg1;
+- (_Bool)_npto_isScrolledToEnd;
+- (struct CGPoint)_npto_maxContentOffset;
 @end
 

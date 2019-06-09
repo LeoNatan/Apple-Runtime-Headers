@@ -31,6 +31,7 @@
 + (BOOL)_isScriptingEnabled;
 + (void)setSharedScriptSuiteRegistry:(id)arg1;
 + (id)sharedScriptSuiteRegistry;
++ (void)initialize;
 + (void)_loadScriptSuites;
 - (id)aeteResource:(id)arg1;
 - (id)commandDescriptionWithAppleEventClass:(unsigned int)arg1 andAppleEventCode:(unsigned int)arg2;

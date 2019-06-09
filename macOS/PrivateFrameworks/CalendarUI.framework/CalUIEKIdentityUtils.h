@@ -13,7 +13,7 @@
 + (id)tokenFieldFormattedAddressForIdentity:(id)arg1;
 + (id)identityFromABString:(id)arg1 isAttendee:(BOOL)arg2;
 + (BOOL)canAddIdentity:(id)arg1 toEvent:(id)arg2;
-+ (BOOL)canAddIdentityFromABPerson:(id)arg1 toEvent:(id)arg2;
++ (BOOL)canAddIdentityFromContact:(id)arg1 toEvent:(id)arg2;
 + (id)identityNameFromString:(id)arg1;
 + (id)displayNameUsingAddressAsBackupForIdentity:(id)arg1;
 + (id)displayAddressUsingNameAsBackupForIdentity:(id)arg1;

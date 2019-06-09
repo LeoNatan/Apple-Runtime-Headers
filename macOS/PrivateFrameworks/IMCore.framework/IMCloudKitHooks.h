@@ -15,7 +15,11 @@
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
 - (BOOL)mocAccountsMatch;
+- (void)reportMetricToCK:(id)arg1 withDict:(id)arg2;
+- (void)reportMetricToCK:(id)arg1 withSuccess:(BOOL)arg2;
+- (void)reportMetricToCK:(id)arg1;
 - (void)broadcastCloudKitStateAfterClearingErrors;
+- (void)broadcastCloudKitStateAfterFetchingAccountStatus;
 - (void)broadcastCloudKitState;
 - (void)tryToAutoCollectLogsWithErrorString:(id)arg1 sendLogsTo:(id)arg2;
 - (void)fetchCloudKitSyncStateDebuggingInfo:(id)arg1;

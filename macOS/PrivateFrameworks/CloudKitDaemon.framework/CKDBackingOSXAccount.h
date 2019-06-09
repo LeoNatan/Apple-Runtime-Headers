@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)dsid;
 - (id)username;
 - (id)primaryEmail;
-- (BOOL)canAuthWithCloudKit;
+- (BOOL)isPrimaryEmailVerified;
 @property(readonly, nonatomic) ACAccount *ckAccount;
 - (id)_initWithParentAccount:(id)arg1 inStore:(id)arg2;
 

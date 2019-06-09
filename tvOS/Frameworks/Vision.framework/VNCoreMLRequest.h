@@ -23,10 +23,10 @@
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 - (_Bool)allowsCachingOfResults;
 - (id)newDefaultRequestInstance;
+- (id)description;
 @property(nonatomic) unsigned long long imageCropAndScaleOption;
 - (id)initWithModel:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithModel:(id)arg1;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end
 

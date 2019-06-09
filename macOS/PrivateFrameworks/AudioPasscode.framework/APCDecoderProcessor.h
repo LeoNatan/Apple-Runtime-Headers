@@ -16,7 +16,9 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)getResultData:(id *)arg1;
 - (id)run;
+- (id)initWithInputURL:(id)arg1 codecConfig:(id)arg2 resultData:(id)arg3 error:(id *)arg4;
 - (id)initWithInputURL:(id)arg1 codecConfig:(id)arg2 error:(id *)arg3;
 
 @end

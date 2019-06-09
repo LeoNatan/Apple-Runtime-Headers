@@ -6,24 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _NSSoundAux : NSObject
 {
-    struct OpaqueAudioConverter *_audioConverter;
-    struct AudioBuffer _converterBuffer;
-    struct ComponentInstanceRecord *_outputUnit;
-    struct OpaqueAudioFileID *_audioFile;
-    struct AudioStreamBasicDescription _audioFormat;
-    long long _audioDataReadHeadPosition;
-    unsigned long long _audioDataLength;
-    long long _audioValidFrameCount;
-    unsigned int _maximumPackets;
-    struct AudioStreamPacketDescription *_audioPacketDescriptions;
     NSString *audioDeviceUID;
+    NSArray *channelMapping;
     float _volume;
-    struct os_unfair_lock_s _spinLock;
     unsigned char _ivarFlags;
     unsigned int _systemSoundID;
 }

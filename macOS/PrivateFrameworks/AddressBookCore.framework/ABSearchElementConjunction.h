@@ -42,7 +42,6 @@
 - (void)setIsRuleGrouping:(BOOL)arg1;
 - (BOOL)isRuleGrouping;
 - (void)setSearchValue:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)prefetchingRelationshipKeyPathsForImplClass:(Class)arg1 inAddressBook:(id)arg2;
 - (long long)conjunction;

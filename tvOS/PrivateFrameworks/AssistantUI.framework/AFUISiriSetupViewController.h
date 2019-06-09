@@ -37,6 +37,9 @@
 - (void)_continueTapped:(id)arg1;
 - (id)dimBackdropSettings;
 - (void)setBackdropVisible:(_Bool)arg1;
+- (void)setFluidDismissalState:(id)arg1;
+- (void)animatedDisappearanceWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)animatedAppearanceWithFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

@@ -17,10 +17,12 @@
     NSNumber *_stashedAssistantEnabled;
     NSNumber *_stashedAssistantVoiceTriggerEnabled;
     NSNumber *_stashedLocationServicesEnabled;
+    NSData *_stashedLocationServicesSettings;
     NSData *_stashedWatchData;
     NSArray *_stashedFlowSkipIdentifiers;
     NSNumber *_stashedScreenTimeEnabled;
     NSNumber *_stashedAutoUpdateEnabled;
+    NSData *_stashedAccessibilityData;
 }
 
 + (id)sharedManager;
@@ -28,11 +30,13 @@
 - (_Bool)removeSafeHaven;
 - (id)_shovePath:(id)arg1 toPath:(id)arg2;
 - (id)_preferencesForDomain:(id)arg1;
+- (void)_restoreAccessibilityData;
 - (void)_restoreWatchData;
 - (void)_restoreStashedFiles;
 - (void)_applyAutoUpdatePreferences;
 - (void)_applyScreenTimePreferences;
 - (void)_applyStashedFlowSkipIdentifiers;
+- (void)_applyLocationServicesSettings;
 - (void)_applyLocationServices;
 - (void)_applyAssistantPreferences;
 - (void)_applyStashedButtonHaptics;
@@ -48,15 +52,14 @@
 - (_Bool)_stashConfiguration:(_Bool)arg1;
 - (_Bool)hideStashInSafeHavenAsProvisional:(_Bool)arg1;
 - (_Bool)hideStashInSafeHaven;
+- (void)stashAccessibilityData:(id)arg1;
 - (void)setAutoUpdateEnabled:(_Bool)arg1;
 - (void)setScreenTimeEnabled:(_Bool)arg1;
 - (void)stashFlowSkipIdentifiers:(id)arg1;
-- (void)removeObjectForBuddyKey:(id)arg1;
-- (void)setObject:(id)arg1 forBuddyKey:(id)arg2;
-- (void)setBool:(_Bool)arg1 forBuddyKey:(id)arg2;
 - (void)setAssistantVoiceTriggerEnabled:(_Bool)arg1;
 - (void)setAssistantEnabled:(_Bool)arg1;
 - (void)stashWatchData:(id)arg1;
+- (void)stashLocationServicesSettings:(id)arg1;
 - (void)stashLocationServicesChoice:(_Bool)arg1;
 - (void)clearHapticTypeForButtonKind:(long long)arg1;
 - (void)stashHapticType:(long long)arg1 forButtonKind:(long long)arg2;
@@ -70,6 +73,7 @@
 - (id)stashProductVersion;
 - (id)stashBuildVersion;
 - (unsigned long long)stashVersion;
+- (id)loadConfigurationFromDisk;
 - (_Bool)hasStashedValuesOnDisk;
 - (_Bool)hasStashedValues;
 - (id)init;

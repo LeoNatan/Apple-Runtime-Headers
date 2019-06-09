@@ -20,6 +20,7 @@
 @property(nonatomic) long long columnIndex; // @synthesize columnIndex=_columnIndex;
 @property(retain, nonatomic) NSViewController *headerViewController; // @synthesize headerViewController=_headerViewController;
 @property(nonatomic) NSBrowser *browser; // @synthesize browser=_browser;
+- (BOOL)shouldAddColumnForSelection;
 - (void)noteHeightOfRowsWithIndexesChanged:(id)arg1;
 - (double)rowHeight;
 - (void)setRowHeight:(double)arg1;

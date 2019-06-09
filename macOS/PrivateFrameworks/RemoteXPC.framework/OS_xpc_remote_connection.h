@@ -37,26 +37,26 @@
     unsigned long long remote_service_version;
     unsigned int traffic_class;
     int error;
+    OS_remote_service *remote_service;
+    int preexisting_socket;
+    NSObject<OS_nw_connection> *preexisting_connection;
+    _Bool requires_nw_listener_create_workaround;
     _Bool _send_in_progress;
     int _state;
     int _type;
-    int _preexisting_socket;
     NSObject<OS_dispatch_queue> *_internal_queue;
     NSObject<OS_dispatch_queue> *_target_queue;
     CDUnknownBlockType _event_handler;
-    OS_remote_service *_remote_service;
     OS_xpc_remote_listener *_listener;
 }
 
-@property(retain) OS_xpc_remote_listener *listener; // @synthesize listener=_listener;
-@property int preexisting_socket; // @synthesize preexisting_socket=_preexisting_socket;
-@property(retain) OS_remote_service *remote_service; // @synthesize remote_service=_remote_service;
-@property _Bool send_in_progress; // @synthesize send_in_progress=_send_in_progress;
-@property int type; // @synthesize type=_type;
+@property(retain, nonatomic) OS_xpc_remote_listener *listener; // @synthesize listener=_listener;
+@property(nonatomic) _Bool send_in_progress; // @synthesize send_in_progress=_send_in_progress;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property int state; // @synthesize state=_state;
-@property(copy) CDUnknownBlockType event_handler; // @synthesize event_handler=_event_handler;
-@property(retain) NSObject<OS_dispatch_queue> *target_queue; // @synthesize target_queue=_target_queue;
-@property(retain) NSObject<OS_dispatch_queue> *internal_queue; // @synthesize internal_queue=_internal_queue;
+@property(copy, nonatomic) CDUnknownBlockType event_handler; // @synthesize event_handler=_event_handler;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *target_queue; // @synthesize target_queue=_target_queue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *internal_queue; // @synthesize internal_queue=_internal_queue;
 - (void).cxx_destruct;
 - (void)dealloc;
 

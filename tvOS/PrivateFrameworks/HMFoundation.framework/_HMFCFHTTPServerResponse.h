@@ -8,6 +8,7 @@
 
 @class _HMFCFHTTPMessage, _HMFCFHTTPServerRequest;
 
+__attribute__((visibility("hidden")))
 @interface _HMFCFHTTPServerResponse : HMFHTTPResponseInternal
 {
     struct _CFHTTPServerResponse *_responseRef;

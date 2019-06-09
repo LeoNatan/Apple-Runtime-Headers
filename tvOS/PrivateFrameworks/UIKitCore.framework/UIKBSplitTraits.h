@@ -8,13 +8,13 @@
 
 @interface UIKBSplitTraits : NSObject
 {
-    int _corners;
+    unsigned long long _corners;
     struct CGRect _leftFrame;
     struct CGRect _rightFrame;
 }
 
-+ (id)traitsWithLeftFrame:(struct CGRect)arg1 rightFrame:(struct CGRect)arg2 corners:(int)arg3;
-@property(readonly, nonatomic) int corners; // @synthesize corners=_corners;
++ (id)traitsWithLeftFrame:(struct CGRect)arg1 rightFrame:(struct CGRect)arg2 corners:(unsigned long long)arg3;
+@property(readonly, nonatomic) unsigned long long corners; // @synthesize corners=_corners;
 @property(readonly, nonatomic) struct CGRect rightFrame; // @synthesize rightFrame=_rightFrame;
 @property(readonly, nonatomic) struct CGRect leftFrame; // @synthesize leftFrame=_leftFrame;
 - (id)initWithLeftFrame:(struct CGRect)arg1 rightFrame:(struct CGRect)arg2 corners:(unsigned long long)arg3;

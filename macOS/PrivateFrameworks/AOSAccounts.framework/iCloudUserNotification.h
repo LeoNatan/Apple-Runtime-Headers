@@ -47,6 +47,7 @@
 @property(copy) NSString *informativeText; // @synthesize informativeText=_informativeText;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCacheDictionaryRepresentation:(id)arg1;
 - (id)cacheDictionaryRepresentation;

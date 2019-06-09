@@ -6,7 +6,7 @@
 
 #import <HealthKit/NSObject-Protocol.h>
 
-@class NSArray, NSString;
+@class HKMedicalCodingContext, NSArray, NSString;
 
 @protocol HKMedicalRecordCodings <NSObject>
 + (NSString *)defaultDisplayString;
@@ -14,5 +14,6 @@
 @property(readonly, nonatomic) NSArray *medicalRecordCodings;
 @property(readonly, nonatomic) NSArray *indexKeywords;
 - (NSString *)fallbackDisplayString;
+- (HKMedicalCodingContext *)primaryCodingContext;
 @end
 

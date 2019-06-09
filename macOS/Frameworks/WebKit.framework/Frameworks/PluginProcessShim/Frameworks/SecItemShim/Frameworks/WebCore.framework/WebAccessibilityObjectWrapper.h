@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)_accessibilitySetTestValue:(id)arg1 forAttribute:(id)arg2;
 - (void)_accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
 - (void)accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
+- (BOOL)accessibilityReplaceRange:(struct _NSRange)arg1 withText:(id)arg2;
 - (void)accessibilityPerformAction:(id)arg1;
 - (void)_accessibilityScrollToGlobalPoint:(struct CGPoint)arg1;
 - (void)_accessibilityScrollToMakeVisibleWithSubFocus:(struct CGRect)arg1;
@@ -54,10 +55,11 @@ __attribute__((visibility("hidden")))
 - (id)subrole;
 - (id)role;
 - (id)position;
+- (id)childrenVectorArray;
+- (unsigned long long)childrenVectorSize;
 - (id)primaryScreenHeight;
 - (id)path;
 - (id)bezierPathFromPath:(struct CGPath *)arg1;
-- (struct CGPoint)convertPointToScreenSpace:(struct FloatPoint *)arg1;
 - (id)associatedPluginParent;
 - (id)textMarkerRangeForSelection;
 - (id)remoteAccessibilityParentObject;

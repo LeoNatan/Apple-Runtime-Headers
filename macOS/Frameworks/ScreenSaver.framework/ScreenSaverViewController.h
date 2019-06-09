@@ -12,7 +12,6 @@
     BOOL _didFirstResize;
 }
 
-+ (struct CGRect)expectedViewFrame;
 @property BOOL didFirstResize; // @synthesize didFirstResize=_didFirstResize;
 @property BOOL initialAnimationState; // @synthesize initialAnimationState=_initialAnimationState;
 - (void)stopAnimation;

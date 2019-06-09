@@ -32,6 +32,7 @@
     UIView<NTKKeylineView> *_customEditingKeyline;
     UIView *_backgroundFillView;
     PUICNotchProvider *_notchProvider;
+    PUICClientSideAnimation *_fixupEditOptionScrollAnimation;
     id <NTKFaceEditViewDelegate> _delegate;
     UIButton *_customEditingConfirmButton;
 }
@@ -55,6 +56,7 @@
 - (_Bool)_handlePhysicalButton:(unsigned int)arg1 event:(unsigned int)arg2;
 - (_Bool)_wheelChangedWithEvent:(id)arg1;
 - (_Bool)_isInEditModeForEditingContentViewController;
+- (void)_disableCrownInputAnimated:(_Bool)arg1;
 - (void)_disableCrownInput;
 - (void)_enableCrownInput;
 - (void)_reachedFraction:(float)arg1 fromPageIndex:(unsigned int)arg2 toPageIndex:(unsigned int)arg3;

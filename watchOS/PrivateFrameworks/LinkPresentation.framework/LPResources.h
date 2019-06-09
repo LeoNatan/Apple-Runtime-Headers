@@ -11,12 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)preload;
++ (void)clearCachedResources;
++ (id)mapDirectionsIcon;
 + (id)indeterminateProgressSpinnerDarkInterface;
 + (id)indeterminateProgressSpinner;
-+ (id)beatsOneLogo;
-+ (id)musicPauseButton;
-+ (id)musicPlayButton;
++ (id)fileIcon;
 + (id)unmuteButton;
 + (id)muteButton;
 + (id)pauseButton;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (id)notesIcon;
 + (id)pagesIcon;
 + (id)safariIcon;
++ (id)chevronLeft;
 + (id)chevron;
 + (id)metadataExtractorJS;
 

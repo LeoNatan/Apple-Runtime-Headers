@@ -26,6 +26,8 @@
 @property(nonatomic, getter=isArrowVisible) _Bool arrowVisible;
 - (void)setProgressValue:(float)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 @property(nonatomic) float progressValue;
+- (void)setShadowColor:(id)arg1;
+- (void)setRingColor:(id)arg1;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

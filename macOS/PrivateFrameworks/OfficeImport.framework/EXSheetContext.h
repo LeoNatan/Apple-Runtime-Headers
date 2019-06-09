@@ -10,6 +10,7 @@
 
 @class EXReadState, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface EXSheetContext : NSObject <OCDDelayedNodeContext>
 {
     EXReadState *mSheetState;

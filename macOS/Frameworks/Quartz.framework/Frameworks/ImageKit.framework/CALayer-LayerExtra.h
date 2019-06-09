@@ -7,6 +7,7 @@
 #import <QuartzCore/CALayer.h>
 
 @interface CALayer (LayerExtra)
++ (id)delegate;
 - (BOOL)hasSubLayer:(id)arg1;
 - (void)saveState:(id)arg1;
 - (void)setSupportsUndo:(BOOL)arg1;
@@ -40,5 +41,15 @@
 - (id)ikImageLayer;
 - (id)ikView;
 - (id)ikRootLayer;
+- (void)setScannerBackgroundColor;
+- (struct CGColor *)createScannerBackgroundColorBottom;
+- (struct CGColor *)createScannerBackgroundColorTop;
+- (long long)layerType;
+- (void)setBackgroundGray:(double)arg1 alpha:(double)arg2;
+- (void)setBackgroundRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+- (void)setBorderGray:(double)arg1 alpha:(double)arg2;
+- (void)setBorderRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+- (void)debug;
+- (void)setAnchorPointWithoutShift:(struct CGPoint)arg1;
 @end
 

@@ -8,7 +8,6 @@
 
 #import <ConversationKit/NSObject-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit14TapInteraction : NSObject <NSObject>
 {
     // Error parsing type: , name: view

@@ -6,24 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@protocol NWAppRegistrationEventDelegate, OS_dispatch_queue;
+@protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface NWAppEventListener : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    id <NWAppRegistrationEventDelegate> _appRegistrationDelegate;
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(nonatomic) __weak id <NWAppRegistrationEventDelegate> appRegistrationDelegate; // @synthesize appRegistrationDelegate=_appRegistrationDelegate;
 - (void).cxx_destruct;
 - (id)initWithQueue:(id)arg1;
-- (void)activate;
 - (void)dealloc;
-- (void)stopObservingLaunchServices;
-- (void)startObservingLaunchServices;
-- (void)handleLaunchServicesApplicationUnregistration:(id)arg1;
-- (void)handleLaunchServicesApplicationRegistration:(id)arg1;
 
 @end
 

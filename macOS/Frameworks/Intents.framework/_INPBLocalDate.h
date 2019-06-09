@@ -26,6 +26,7 @@
     long long _year;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) long long year; // @synthesize year=_year;
 @property(nonatomic) long long month; // @synthesize month=_month;
 @property(nonatomic) int dayOfWeek; // @synthesize dayOfWeek=_dayOfWeek;
@@ -34,6 +35,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(nonatomic) BOOL hasYear;

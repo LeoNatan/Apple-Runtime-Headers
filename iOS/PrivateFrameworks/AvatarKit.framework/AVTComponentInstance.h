@@ -6,25 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, SCNNode;
+@class NSArray, NSDictionary, NSString, SCNNode;
 
 @interface AVTComponentInstance : NSObject
 {
     SCNNode *_assetNode;
     NSString *_assetImage;
     NSArray *_assets;
+    NSDictionary *_layers;
 }
 
 + (id)assetNodeWithPath:(id)arg1;
 @property(readonly) NSString *assetImage; // @synthesize assetImage=_assetImage;
 @property(readonly) SCNNode *assetNode; // @synthesize assetNode=_assetNode;
 - (void).cxx_destruct;
+- (id)assetImageForAsset:(id)arg1;
 - (_Bool)has3D;
 - (_Bool)has2D;
 - (void)updateMaterialsWithComponent:(id)arg1;
 - (id)initWithComponent:(id)arg1 forCaching:(_Bool)arg2;
 - (id)initWithComponent:(id)arg1;
 - (void)_commonInit:(_Bool)arg1 component:(id)arg2;
+@property(readonly) struct CGSize imageOffset;
+@property(readonly) _Bool imageMirror;
+@property(readonly) double imageScale;
+- (id)assetImageWithLayerNamed:(id)arg1;
 - (void)dealloc;
 
 @end

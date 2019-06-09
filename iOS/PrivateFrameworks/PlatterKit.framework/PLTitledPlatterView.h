@@ -14,26 +14,21 @@
 
 @interface PLTitledPlatterView : PLPlatterView <PLPlatterInternal, PLTitled, PLContentSizeCategoryAdjusting>
 {
-    UIView *_headerContainerView;
-    UIView *_headerOverlayView;
     PLPlatterHeaderContentView *_headerContentView;
     _Bool _didSetInitialCustomContentViewFrame;
-    _Bool _sashHidden;
+    _Bool _largerHeaderMarginEnabled;
 }
 
-@property(nonatomic, getter=isSashHidden) _Bool sashHidden; // @synthesize sashHidden=_sashHidden;
+@property(nonatomic, getter=isLargerHeaderMarginEnabled) _Bool largerHeaderMarginEnabled; // @synthesize largerHeaderMarginEnabled=_largerHeaderMarginEnabled;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
-- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (struct CGRect)_mainContentFrame;
 - (void)_layoutHeaderViews;
 - (void)layoutSubviews;
 - (void)setNeedsLayout;
 - (void)_configureHeaderContentViewIfNecessary;
-- (void)_configureHeaderOverlayViewIfNecessary;
-- (void)_configureHeaderContainerViewIfNecessary;
 - (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;
 - (void)setHeaderHeedsHorizontalLayoutMargins:(_Bool)arg1;
 - (_Bool)headerHeedsHorizontalLayoutMargins;
@@ -49,8 +44,8 @@
 @property(copy, nonatomic) NSArray *icons;
 @property(nonatomic) long long dateFormatStyle;
 - (void)setBackgroundView:(id)arg1;
-- (void)_configureMainOverlayView;
 - (void)_configureHeaderContentView;
+@property(nonatomic, getter=isSashHidden) _Bool sashHidden;
 
 // Remaining properties
 @property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred;

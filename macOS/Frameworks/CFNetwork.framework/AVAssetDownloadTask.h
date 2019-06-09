@@ -6,7 +6,6 @@
 
 #import <CFNetwork/NSURLSessionTask.h>
 
-__attribute__((visibility("hidden")))
 @interface AVAssetDownloadTask : NSURLSessionTask
 {
 }

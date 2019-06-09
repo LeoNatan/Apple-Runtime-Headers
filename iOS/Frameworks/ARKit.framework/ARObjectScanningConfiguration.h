@@ -14,6 +14,7 @@
 }
 
 + (id)supportedVideoFormats;
++ (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
 + (id)new;
 + (_Bool)isSupported;
 @property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;

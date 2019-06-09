@@ -6,12 +6,12 @@
 
 #import <Mail/MFAccount.h>
 
-#import <Mail/EMAccount-Protocol.h>
-#import <Mail/EMDeliveryAcount-Protocol.h>
+#import <Mail/EDAccount-Protocol.h>
+#import <Mail/EDDeliveryAcount-Protocol.h>
 
-@class MFMailAccount, NSArray, NSString;
+@class ACAccount, MFMailAccount, NSArray, NSString;
 
-@interface MFDeliveryAccount : MFAccount <EMAccount, EMDeliveryAcount>
+@interface MFDeliveryAccount : MFAccount <EDAccount, EDDeliveryAcount>
 {
     unsigned long long _maximumMessageBytes;
 }
@@ -46,10 +46,13 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSArray *emailAddressStrings;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) NSString *hostname;
-@property(copy, nonatomic) NSString *password;
+@property(copy) NSString *hostname;
+@property(readonly, copy) NSString *identifier;
+@property(copy) NSString *password;
 @property(readonly) Class superclass;
+@property(readonly, copy) ACAccount *systemAccount;
 
 @end
 

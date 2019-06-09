@@ -39,9 +39,8 @@
 - (id)modelsWithContact:(id)arg1 actionType:(id)arg2;
 - (id)schedulerProvider;
 - (void)setContactStore:(id)arg1;
-- (id)sharedTargetDiscoveringHelper:(id)arg1;
 - (id)initWithTargetDiscoveringHelper:(id)arg1 rankingHelper:(id)arg2 defaultActionFetcher:(id)arg3 discoveringEnvironment:(id)arg4;
-- (id)initWithDiscoveringEnvironment:(id)arg1 usingPerAppDiscoveringHelper:(_Bool)arg2;
+- (id)initWithDiscoveringEnvironment:(id)arg1;
 - (id)init;
 
 @end

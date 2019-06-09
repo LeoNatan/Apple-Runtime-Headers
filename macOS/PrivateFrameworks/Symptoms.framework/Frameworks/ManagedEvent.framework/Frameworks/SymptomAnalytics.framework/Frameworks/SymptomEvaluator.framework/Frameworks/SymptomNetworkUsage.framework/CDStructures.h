@@ -132,6 +132,7 @@ struct nstat_msg_src_update_convenient {
         struct nstat_route_descriptor route;
         struct nstat_ifnet_descriptor ifnet;
         struct nstat_sysinfo_descriptor sysinfo;
+        struct nstat_tcp_descriptor quic;
     } ;
 };
 
@@ -142,26 +143,6 @@ struct nstat_msg_src_update_hdr {
     struct nstat_counts counts;
     unsigned int provider;
     unsigned char reserved[4];
-};
-
-struct nstat_msg_src_update_tcp {
-    struct nstat_msg_hdr hdr;
-    unsigned long long srcref;
-    unsigned long long event_flags;
-    struct nstat_counts counts;
-    unsigned int provider;
-    unsigned char reserved[4];
-    struct nstat_tcp_descriptor tcp_desc;
-};
-
-struct nstat_msg_src_update_udp {
-    struct nstat_msg_hdr hdr;
-    unsigned long long srcref;
-    unsigned long long event_flags;
-    struct nstat_counts counts;
-    unsigned int provider;
-    unsigned char reserved[4];
-    struct nstat_udp_descriptor udp_desc;
 };
 
 struct nstat_route_descriptor {
@@ -280,6 +261,36 @@ struct update_subset_for_deltas {
     unsigned int savedRxDuplicateBytes;
     unsigned int savedRxOutOfOrderBytes;
     unsigned int savedTxRetransmittedBytes;
+};
+
+struct updater_nstat_msg_src_update_quic {
+    struct nstat_msg_hdr hdr;
+    unsigned long long srcref;
+    unsigned long long event_flags;
+    struct nstat_counts counts;
+    unsigned int provider;
+    unsigned char reserved[4];
+    struct nstat_tcp_descriptor quic_desc;
+};
+
+struct updater_nstat_msg_src_update_tcp {
+    struct nstat_msg_hdr hdr;
+    unsigned long long srcref;
+    unsigned long long event_flags;
+    struct nstat_counts counts;
+    unsigned int provider;
+    unsigned char reserved[4];
+    struct nstat_tcp_descriptor tcp_desc;
+};
+
+struct updater_nstat_msg_src_update_udp {
+    struct nstat_msg_hdr hdr;
+    unsigned long long srcref;
+    unsigned long long event_flags;
+    struct nstat_counts counts;
+    unsigned int provider;
+    unsigned char reserved[4];
+    struct nstat_udp_descriptor udp_desc;
 };
 
 #pragma mark Typedef'd Unions

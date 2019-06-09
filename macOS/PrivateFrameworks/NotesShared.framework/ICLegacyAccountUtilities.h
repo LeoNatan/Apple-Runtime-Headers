@@ -10,6 +10,7 @@
 {
 }
 
++ (id)accountIdentifierForAccount:(struct NFAccount *)arg1;
 + (struct NFAccount *)legacyAccountForLocalAccountWithContext:(struct NSManagedObjectContext *)arg1;
 + (struct NFAccount *)legacyAccountForPrimaryICloudAccountWithContext:(struct NSManagedObjectContext *)arg1;
 + (struct NFAccount *)accountForAccountIdentifier:(id)arg1 context:(struct NSManagedObjectContext *)arg2;

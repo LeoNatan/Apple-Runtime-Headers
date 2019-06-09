@@ -8,5 +8,13 @@
 
 @interface NSOutlineView (ASKContainerName)
 + (id)containerName_ask;
+- (id)handleItemForScriptCommand:(id)arg1;
+- (id)handleUpdateScriptCommand:(id)arg1;
+- (void)setSelectedDataItems:(id)arg1;
+- (id)selectedDataItems;
+- (void)setSelectedDataItem:(id)arg1;
+- (id)selectedDataItem;
+- (id)editedDataItem;
+- (id)clickedDataItem;
 @end
 

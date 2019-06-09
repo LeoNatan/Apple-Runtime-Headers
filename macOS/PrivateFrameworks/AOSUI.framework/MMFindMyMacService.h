@@ -20,8 +20,10 @@
 + (id)_errorWithFMMErroCode:(unsigned long long)arg1;
 @property(retain) NSImage *warningIcon; // @synthesize warningIcon=_warningIcon;
 @property(retain) NSError *fmmError; // @synthesize fmmError=_fmmError;
+- (void).cxx_destruct;
 - (BOOL)preflightForSignout:(id *)arg1 withWindow:(id)arg2 andDataclassActions:(id)arg3;
 - (BOOL)hasPreflightAction;
+- (BOOL)deviceHasBridgeOS;
 - (id)acquireAuthRights:(unsigned long long)arg1;
 - (void)showiCloudPasswordSheet:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)showSheetForWindow:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButtonTitle:(id)arg4 defaultKeyEquivalent:(id)arg5 alternateButtonTitle:(id)arg6 alternateKeyEquivalent:(id)arg7 otherButtonTitle:(id)arg8 otherKeyEquivalent:(id)arg9 andHelpHandler:(CDUnknownBlockType)arg10 completionHandler:(CDUnknownBlockType)arg11;
@@ -41,6 +43,8 @@
 - (BOOL)_containsRecoveryPartition;
 - (unsigned long long)_recoveryPatitionCheckTimeout;
 - (void)_updateStatus;
+- (void)handleEnableFMMWhenAlreadyActive:(id)arg1;
+- (void)disableFMMWithActivationLock:(id)arg1;
 - (void)showFMMMissingWiFiSheet:(id)arg1;
 - (void)showFMMAlreadyActiveSheet:(id)arg1;
 - (void)showFMMNetworkOffSheet:(id)arg1;
@@ -60,7 +64,6 @@
 - (id)_iconForError:(id)arg1;
 - (id)_fmmWarningIcon;
 - (id)_fmmIcon;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithServiceID:(id)arg1 forAccount:(id)arg2;
 

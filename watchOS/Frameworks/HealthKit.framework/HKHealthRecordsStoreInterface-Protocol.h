@@ -6,7 +6,10 @@
 
 #import <HealthKit/NSObject-Protocol.h>
 
+@class HKClinicalAccount;
+
 @protocol HKHealthRecordsStoreInterface <NSObject>
+- (void)clientRemote_accountDidChange:(HKClinicalAccount *)arg1 changeType:(int)arg2;
 - (void)clientRemote_updateIngestionState:(int)arg1;
 @end
 

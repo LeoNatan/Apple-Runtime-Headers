@@ -15,7 +15,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_source;
     NSObject<OS_dispatch_source> *_timer;
-    // Error parsing type: Ai, name: _sourceResumed
+    // Error parsing type: Ai, name: _sourceSuspendCount
     CDUnknownBlockType _eventBlock;
 }
 

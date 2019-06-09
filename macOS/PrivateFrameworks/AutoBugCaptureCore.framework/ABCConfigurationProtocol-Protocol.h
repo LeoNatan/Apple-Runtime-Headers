@@ -9,16 +9,18 @@
 @class NSNumber, NSString;
 
 @protocol ABCConfigurationProtocol <NSObject>
+@property(readonly, nonatomic) NSNumber *seed_flag;
 @property(readonly, nonatomic) NSNumber *carrier_seed_flag;
 @property(readonly, nonatomic) NSNumber *disable_internal_build;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureUploadPreapproved;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureSensitivePayloads;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureRegularPayloads;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureSignature;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureAvailable;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureEnabled;
-@property(readonly, nonatomic) NSNumber *logArchiveGID;
-@property(readonly, nonatomic) NSNumber *logArchiveUID;
+@property(readonly, nonatomic) BOOL autoBugCaptureUploadPreapproved;
+@property(readonly, nonatomic) BOOL autoBugCaptureSensitivePayloads;
+@property(readonly, nonatomic) BOOL autoBugCaptureRegularPayloads;
+@property(readonly, nonatomic) BOOL autoBugCaptureSignature;
+@property(readonly, nonatomic) BOOL autoBugCaptureAvailable;
+@property(readonly, nonatomic) BOOL autoFeedbackAssistantEnable;
+@property(readonly, nonatomic) BOOL autoBugCaptureEnabled;
+@property(readonly, nonatomic) unsigned int logArchiveGID;
+@property(readonly, nonatomic) unsigned int logArchiveUID;
 @property(readonly, nonatomic) NSString *logArchivePath;
 @end
 

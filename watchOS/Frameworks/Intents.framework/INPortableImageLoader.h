@@ -20,6 +20,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) id <INPortableImageLoaderHelping> helper; // @synthesize helper=_helper;
+@property(copy, nonatomic, setter=_setHelperClassName:) NSString *_helperClassName; // @synthesize _helperClassName;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

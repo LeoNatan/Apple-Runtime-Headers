@@ -14,7 +14,7 @@
     void *ctx;
     void *plan;
     CDStruct_2bc666a5 net;
-    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> output_layer_name;
+    basic_string_23d93216 output_layer_name;
     id <MTLCommandQueue> queue;
     id <MTLDevice> device;
     NSObject<OS_dispatch_queue> *dispatch_queue;
@@ -32,7 +32,7 @@
     struct shared_ptr<Espresso::generic_load_constant_kernel> noise_load_constant_kernel;
     NSString *currentNetworkPath;
     long long currentResolutionPreset;
-    struct shared_ptr<Espresso::blob<float, 1>> precomputed_noise;
+    shared_ptr_0954c506 precomputed_noise;
     id <MTLTexture> tmpDestinationTexture;
     int _rotation_degrees;
     int _flip_y;

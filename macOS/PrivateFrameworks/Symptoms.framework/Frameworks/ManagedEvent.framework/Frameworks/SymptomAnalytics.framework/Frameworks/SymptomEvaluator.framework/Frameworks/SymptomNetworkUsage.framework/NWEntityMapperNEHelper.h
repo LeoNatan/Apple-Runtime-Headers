@@ -6,6 +6,7 @@
 
 #import <SymptomNetworkUsage/NWEntityMapper.h>
 
+__attribute__((visibility("hidden")))
 @interface NWEntityMapperNEHelper : NWEntityMapper
 {
 }

@@ -35,7 +35,6 @@
 - (id)mediaObjectWithTransferGUID:(id)arg1 imMessage:(id)arg2 parentChatIsSpam:(_Bool)arg3;
 - (id)mediaObjectWithTransferGUID:(id)arg1 imMessage:(id)arg2;
 - (Class)classForFilename:(id)arg1;
-- (Class)classForFilename:(id)arg1 fileURL:(id)arg2;
 - (Class)classForUTIType:(id)arg1;
 - (id)allUTITypes;
 - (id)UTITypeForFilename:(id)arg1;

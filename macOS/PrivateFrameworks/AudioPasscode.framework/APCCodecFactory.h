@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createBestConfigForCapability:(id)arg1;
-+ (float)evaluateCarrierWithConfig:(id)arg1 carrier:(id)arg2 carrierOffset:(unsigned long long *)arg3;
++ (float)evaluateCarrierWithConfig:(id)arg1 carrier:(id)arg2 embeddingResult:(id *)arg3;
 + (unique_ptr_5bd60e54)createEncoderWithConfig:(id)arg1 apcConfig:(map_fc0e2ca7 *)arg2 payloadData:(id)arg3;
 + (unique_ptr_36d0a635)createDecoderWithConfig:(id)arg1 apcConfig:(map_fc0e2ca7 *)arg2 error:(id *)arg3;
 

@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AVAssetWriterConfigurationState, AVMediaFileType, AVWeakReference, NSArray, NSError, NSURL;
+@protocol AVAssetWriterDelegate;
 
 __attribute__((visibility("hidden")))
 @interface AVAssetWriterHelper : NSObject
@@ -17,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain) AVWeakReference *weakReferenceToAssetWriter; // @synthesize weakReferenceToAssetWriter=_weakReferenceToAssetWriter;
 @property(readonly, nonatomic) AVAssetWriterConfigurationState *configurationState; // @synthesize configurationState=_configurationState;
+- (void)flush;
 - (void)transitionToFailedStatusWithError:(id)arg1;
 - (_Bool)_transitionToClientInitiatedTerminalStatus:(long long)arg1;
 - (void)finishWritingWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldOptimizeForNetworkUse;
 @property(nonatomic) CDStruct_1b6d18a9 overallDurationHint;
 @property(nonatomic) CDStruct_1b6d18a9 movieFragmentInterval;
+@property __weak id <AVAssetWriterDelegate> delegate;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) long long status;
 @property(readonly, nonatomic) NSArray *availableMediaTypes;

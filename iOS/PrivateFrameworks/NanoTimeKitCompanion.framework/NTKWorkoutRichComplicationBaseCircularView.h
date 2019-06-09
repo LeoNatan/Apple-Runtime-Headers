@@ -6,25 +6,39 @@
 
 #import <UIKit/UIView.h>
 
-@class CLKComplicationTemplate, NTKColoringImageView;
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKWorkoutRichComplicationBaseCircularView : UIView
+@class CLKComplicationTemplate, NSString, NTKColoringImageView, UIColor;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKWorkoutRichComplicationBaseCircularView : UIView <CLKMonochromeComplicationView>
 {
     UIView *_backgroundView;
+    UIColor *_immutableBackgroundColor;
     NTKColoringImageView *_staticImageView;
     long long _state;
     _Bool _paused;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     CLKComplicationTemplate *_complicationTemplate;
 }
 
 @property(retain, nonatomic) CLKComplicationTemplate *complicationTemplate; // @synthesize complicationTemplate=_complicationTemplate;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
 - (void)_updateUI;
 - (void)_applyChanges;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithNoActiveWorkoutImageName:(id)arg1 animatedImagesName:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

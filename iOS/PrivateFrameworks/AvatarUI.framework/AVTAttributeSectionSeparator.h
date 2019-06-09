@@ -6,17 +6,11 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class CAShapeLayer;
-
 @interface AVTAttributeSectionSeparator : UICollectionReusableView
 {
-    CAShapeLayer *_line;
 }
 
 + (id)reuseIdentifier;
-@property(retain, nonatomic) CAShapeLayer *line; // @synthesize line=_line;
-- (void).cxx_destruct;
-- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

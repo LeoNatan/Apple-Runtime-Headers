@@ -8,6 +8,7 @@
 @protocol LAUIDelegate;
 
 @protocol LAContextClientEvaluationProt
+- (void)invalidateWithReply:(void (^)(_Bool, NSError *))arg1;
 - (void)setCredential:(NSData *)arg1 type:(int)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)isCredentialSet:(int)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)evaluateACL:(NSData *)arg1 operation:(id)arg2 options:(NSDictionary *)arg3 uiDelegate:(id <LAUIDelegate>)arg4 reply:(void (^)(NSDictionary *, NSError *))arg5;

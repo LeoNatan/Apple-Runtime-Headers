@@ -19,6 +19,7 @@
     NSArray *_distances;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)distanceType;
 @property(copy, nonatomic) NSArray *distances; // @synthesize distances=_distances;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)distanceAtIndex:(unsigned long long)arg1;

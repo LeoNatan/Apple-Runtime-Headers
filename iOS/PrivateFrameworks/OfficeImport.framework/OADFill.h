@@ -11,11 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface OADFill : OADProperties <NSCopying>
 {
+    _Bool mDefinedByStyle;
+    _Bool _definedByStyle;
 }
 
+@property _Bool definedByStyle; // @synthesize definedByStyle=_definedByStyle;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (_Bool)isOverridden;
 - (_Bool)usesPlaceholderColor;
 - (void)setStyleColor:(id)arg1;
 - (float)alpha;

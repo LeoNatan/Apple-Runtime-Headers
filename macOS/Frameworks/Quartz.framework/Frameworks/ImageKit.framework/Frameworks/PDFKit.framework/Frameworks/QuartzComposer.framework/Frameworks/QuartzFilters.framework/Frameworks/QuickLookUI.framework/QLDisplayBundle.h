@@ -12,12 +12,12 @@
 #import <QuickLookUI/QLPreviewPageNavigationDataSource-Protocol.h>
 #import <QuickLookUI/QLTimeSliderDataSource-Protocol.h>
 
-@class CALayer, NSArray, NSDictionary, NSMutableArray, NSResponder, NSString, NSTouchBar, NSURL, NSUUID, NSView, QLDisplayBundleViewController;
+@class CALayer, DMFApplicationPolicyMonitor, NSArray, NSDictionary, NSMutableArray, NSResponder, NSString, NSTouchBar, NSURL, NSUUID, NSView, QLDisplayBundleViewController, QLPreview;
 @protocol QLDisplayBundleOwner, QLPreviewItem;
 
 @interface QLDisplayBundle : NSObject <QLAccessibilityUIElementDelegate, QLPreviewPageNavigationDataSource, QLTimeSliderDataSource, QLDisplayable, NSPasteboardWriting>
 {
-    struct __QLPreview *_previewRef;
+    QLPreview *_preview;
     id <QLDisplayBundleOwner> _owner;
     NSMutableArray *_accessoryControllers;
     int _activation;
@@ -29,9 +29,11 @@
     NSArray *_invalidModes;
     BOOL _inMarkup;
     BOOL _documentDirty;
+    long long _currentScreentimePolicy;
+    DMFApplicationPolicyMonitor *_screentimePolicyMonitor;
 }
 
-+ (id)newPreviewDocumentDisplayBundleForPreview:(struct __QLPreview *)arg1;
++ (id)newPreviewDocumentDisplayBundleForPreview:(id)arg1;
 + (BOOL)generateThumbnail:(struct __QLThumbnailRequest *)arg1 withURL:(id)arg2 contentTypeUTI:(id)arg3 previewProperties:(id)arg4 properties:(id)arg5;
 + (BOOL)generateThumbnail:(struct __QLThumbnailRequest *)arg1 withData:(id)arg2 contentTypeUTI:(id)arg3 previewProperties:(id)arg4 properties:(id)arg5;
 + (id)imageForScreenshotKey:(id)arg1;
@@ -40,15 +42,19 @@
 + (id)keyPathsForValuesAffectingHasScrolling;
 + (id)keyPathsForValuesAffectingPlayedToTheEnd;
 + (id)keyPathsForValuesAffectingHasTime;
++ (id)screentimeTimeoutError;
 + (id)keyPathsForValuesAffectingBorderFrame;
 + (id)keyPathsForValuesAffectingContentFrameForSeamlessOpening;
 + (id)keyPathsForValuesAffectingContentFrame;
 + (id)keyPathsForValuesAffectingDisplayState;
-+ (id)potentialExpectedDisplayBundleIDsForPreview:(struct __QLPreview *)arg1;
++ (id)potentialExpectedDisplayBundleIDsForPreview:(id)arg1;
 + (id)keyPathsForValuesAffectingIsWindowKey;
 + (id)keyPathsForValuesAffectingHidePlayControl;
 + (id)keyPathsForValuesAffectingNeedsVolumeControl;
+@property(retain) DMFApplicationPolicyMonitor *screentimePolicyMonitor; // @synthesize screentimePolicyMonitor=_screentimePolicyMonitor;
+@property long long currentScreentimePolicy; // @synthesize currentScreentimePolicy=_currentScreentimePolicy;
 @property(retain) NSArray *invalidModes; // @synthesize invalidModes=_invalidModes;
+@property(retain) QLPreview *preview; // @synthesize preview=_preview;
 @property BOOL documentDirty; // @synthesize documentDirty=_documentDirty;
 @property BOOL inMarkup; // @synthesize inMarkup=_inMarkup;
 @property(retain) QLDisplayBundleViewController *qlViewController; // @synthesize qlViewController=_qlViewController;
@@ -135,6 +141,7 @@
 @property(readonly) NSView *markupControls;
 @property(readonly) BOOL rotateSupported;
 @property(readonly) BOOL markupSupported;
+- (void)saveModeDidChange;
 @property(readonly) NSTouchBar *touchBar;
 @property(readonly) BOOL supportsZoomActions;
 - (void)zoomWithAction:(long long)arg1;
@@ -173,6 +180,11 @@
 @property(readonly) BOOL hasTime;
 @property(readonly) BOOL showCompactPlayControl;
 @property(readonly) BOOL delegatesControls;
+- (id)bundleIDForScreentime;
+- (void)presentScreenTimeLockout:(BOOL)arg1 withBundleID:(id)arg2;
+- (void)checkScreenTimePolicy;
+- (void)endWatchingScreenTimePolicy;
+- (void)startWatchingScreenTimePolicy;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)layoutSublayersOfLayer:(id)arg1;
 @property(readonly) BOOL scalable;
@@ -194,9 +206,11 @@
 @property(readonly) int flavor;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)windowKeyDidChange;
+- (void)windowDidChange;
 - (void)hostedInWindowServerDidChange;
 - (void)backingScaleFactorDidChange;
 - (void)updateProperties:(CDUnknownBlockType)arg1;
+- (void)previewStatusDidChange;
 - (void)modeDidChange;
 @property(readonly) BOOL hasHorizontalScroller;
 @property(readonly) BOOL keepThumbnailUnderInlinePreview;
@@ -269,9 +283,8 @@
 @property(readonly) NSURL *URL;
 @property(readonly, retain) id <QLPreviewItem> previewItem;
 @property(readonly) NSString *displayBundleID;
-@property struct __QLPreview *preview;
 - (void)dealloc;
-- (id)initWithPreview:(struct __QLPreview *)arg1 owner:(id)arg2;
+- (id)initWithPreview:(id)arg1 owner:(id)arg2;
 - (struct CGRect)frameForUIElementWithIdentifier:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1 forUIElementWithIdentifier:(id)arg2;

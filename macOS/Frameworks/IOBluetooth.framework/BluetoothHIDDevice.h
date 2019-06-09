@@ -24,10 +24,13 @@
     struct __CFRunLoopSource *_runLoopSource;
     struct UnsignedWide _timestamp;
     unsigned int _interestNotification;
+    struct __IOHIDServiceClient *_hidService;
 }
 
 + (id)withBluetoothDevice:(id)arg1;
 + (id)withHIDDevice:(unsigned int)arg1;
+@property(nonatomic) struct __IOHIDServiceClient *hidService; // @synthesize hidService=_hidService;
+@property(readonly) float batteryPercent;
 - (BOOL)isCharging;
 - (BOOL)representsEventService:(unsigned int)arg1;
 - (BOOL)connectedOverUSB;

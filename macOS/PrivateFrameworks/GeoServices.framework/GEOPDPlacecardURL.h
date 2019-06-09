@@ -17,8 +17,9 @@ __attribute__((visibility("hidden")))
     NSString *_url;
 }
 
-@property(retain, nonatomic) NSString *url; // @synthesize url=_url;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -27,8 +28,10 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *url;
 @property(readonly, nonatomic) BOOL hasUrl;
 
 @end

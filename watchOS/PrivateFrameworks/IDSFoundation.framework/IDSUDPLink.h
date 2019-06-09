@@ -8,18 +8,20 @@
 
 #import <IDSFoundation/IDSLink-Protocol.h>
 
-@class IDSSockAddrWrapper, NSDictionary, NSString;
+@class IDSSockAddrWrapper, NSDictionary, NSIndexSet, NSString;
 @protocol IDSLinkDelegate;
 
 @interface IDSUDPLink : NSObject <IDSLink>
 {
     int _socket;
+    int _cellularSocket;
     int _addressFamily;
     IDSSockAddrWrapper *_localAddress;
     IDSSockAddrWrapper *_destinationAddress;
     _Bool _hasFixedDestination;
     NSDictionary *_destinationAddressToDeviceIDMap;
     unsigned short _port;
+    unsigned short _cellularPort;
     _Bool _wantsAWDL;
     _Bool _wantsWiFi;
     _Bool _wantsCellular;
@@ -31,7 +33,6 @@
     _Bool _isInvalidated;
     double _lastDestinationSent;
     double _lastDestinationReceived;
-    CDStruct_0cd1559e *_incomingPacketBuffer;
     unsigned int _state;
     unsigned long long _totalBytesSent;
     unsigned long long _totalPacketsSent;
@@ -46,28 +47,35 @@
     NSString *_deviceUniqueID;
     id <IDSLinkDelegate> _delegate;
     id <IDSLinkDelegate> _alternateDelegate;
+    NSIndexSet *_cellularInterfaceIndices;
+    _Bool _wifiAssistEnabled;
 }
 
-@property _Bool allowsLinkLocal; // @synthesize allowsLinkLocal=_allowsLinkLocal;
-@property _Bool skipTransportThread; // @synthesize skipTransportThread=_skipTransportThread;
+@property(nonatomic) _Bool wifiAssistEnabled; // @synthesize wifiAssistEnabled=_wifiAssistEnabled;
+@property(retain, nonatomic) NSIndexSet *cellularInterfaceIndices; // @synthesize cellularInterfaceIndices=_cellularInterfaceIndices;
+@property(nonatomic) _Bool allowsLinkLocal; // @synthesize allowsLinkLocal=_allowsLinkLocal;
+@property(readonly, nonatomic) int cellularSocket; // @synthesize cellularSocket=_cellularSocket;
+@property(nonatomic) _Bool skipTransportThread; // @synthesize skipTransportThread=_skipTransportThread;
 @property __weak id <IDSLinkDelegate> alternateDelegate; // @synthesize alternateDelegate=_alternateDelegate;
 @property __weak id <IDSLinkDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) double lastDestinationReceived; // @synthesize lastDestinationReceived=_lastDestinationReceived;
-@property double lastDestinationSent; // @synthesize lastDestinationSent=_lastDestinationSent;
-@property(readonly) _Bool isInvalidated; // @synthesize isInvalidated=_isInvalidated;
-@property _Bool useDefaultInterfaceOnly; // @synthesize useDefaultInterfaceOnly=_useDefaultInterfaceOnly;
-@property(readonly) int socket; // @synthesize socket=_socket;
-@property unsigned short port; // @synthesize port=_port;
+@property(readonly, nonatomic) double lastDestinationReceived; // @synthesize lastDestinationReceived=_lastDestinationReceived;
+@property(nonatomic) double lastDestinationSent; // @synthesize lastDestinationSent=_lastDestinationSent;
+@property(readonly, nonatomic) _Bool isInvalidated; // @synthesize isInvalidated=_isInvalidated;
+@property(nonatomic) _Bool useDefaultInterfaceOnly; // @synthesize useDefaultInterfaceOnly=_useDefaultInterfaceOnly;
+@property(readonly, nonatomic) int socket; // @synthesize socket=_socket;
+@property(nonatomic) unsigned short cellularPort; // @synthesize cellularPort=_cellularPort;
+@property(nonatomic) unsigned short port; // @synthesize port=_port;
 @property(retain) NSString *deviceUniqueID; // @synthesize deviceUniqueID=_deviceUniqueID;
 @property(retain) NSString *cbuuid; // @synthesize cbuuid=_cbuuid;
 @property(readonly) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (void)setWiFiAssistState:(_Bool)arg1;
 - (_Bool)setTrafficClass:(int)arg1;
 - (id)generateLinkReport:(double)arg1 isCurrentLink:(_Bool)arg2;
 - (unsigned int)sendPacketBufferArray:(CDStruct_183601bc **)arg1 arraySize:(int)arg2 toDeviceUniqueID:(id)arg3 cbuuid:(id)arg4;
-- (unsigned int)sendPacketBuffer:(CDStruct_0cd1559e *)arg1 sourceInterface:(id)arg2 destination:(id)arg3 toDeviceID:(id)arg4;
-- (unsigned int)sendPacketBuffer:(CDStruct_0cd1559e *)arg1 destination:(id)arg2 toDeviceID:(id)arg3;
-- (unsigned int)sendPacketBuffer:(CDStruct_0cd1559e *)arg1 toDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
+- (unsigned int)sendPacketBuffer:(CDStruct_05c4e9ef *)arg1 sourceInterface:(id)arg2 destination:(id)arg3 toDeviceID:(id)arg4;
+- (unsigned int)sendPacketBuffer:(CDStruct_05c4e9ef *)arg1 destination:(id)arg2 toDeviceID:(id)arg3;
+- (unsigned int)sendPacketBuffer:(CDStruct_05c4e9ef *)arg1 toDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
 - (id)copyCurrentNetworkInterfaces;
 - (id)newSocketWithIPVersion:(unsigned int)arg1 wantsAWDL:(_Bool)arg2 wantsWiFi:(_Bool)arg3 wantsCellular:(_Bool)arg4;
 - (id)newSocketWithIPVersion:(unsigned int)arg1 wantsAWDL:(_Bool)arg2 wantsWiFi:(_Bool)arg3 wantsCellular:(_Bool)arg4 clientUUID:(unsigned char [16])arg5;
@@ -79,11 +87,17 @@
 - (id)copyLinkStatsDict;
 @property(readonly, getter=linkTypeString) NSString *linkTypeString;
 @property(readonly) unsigned int headerOverhead;
+- (_Bool)_setTrafficClassOnSocket:(int)arg1 trafficClassValue:(int)arg2;
+- (int)_findSocketForInterfaceIndex:(int)arg1;
+- (_Bool)_isInterfaceIndexCellular:(int)arg1;
+- (int)_createNewUDPSocketWithIPVersion:(unsigned int)arg1 localPort:(unsigned short *)arg2 wantsAWDL:(_Bool)arg3 clientUUID:(unsigned char [16])arg4;
 - (unsigned int)_sendBytesArray:(const void **)arg1 lengthArray:(unsigned int *)arg2 arraySize:(int)arg3 localInterfaceIndex:(int)arg4 localAddress:(const struct sockaddr *)arg5 destinationAddress:(const struct sockaddr *)arg6 trafficClass:(unsigned short)arg7;
 - (unsigned int)_sendBytes:(const void *)arg1 length:(unsigned long)arg2 destinationAddress:(const struct sockaddr *)arg3;
 - (unsigned int)_sendBytes:(const void *)arg1 length:(unsigned long)arg2;
+- (void)_processIncomingCellularPacket;
 - (void)_processIncomingPacket;
-- (void)dealloc;
+- (void)_processIncomingPacketOnSocket:(int)arg1;
+- (id)_createNetworkInterfaceArrayWithIPVersion:(unsigned int)arg1 wantsAWDL:(_Bool)arg2 wantsWiFi:(_Bool)arg3 wantsCellular:(_Bool)arg4 allowsLinkLocal:(_Bool)arg5 useDefaultInterfaceOnly:(_Bool)arg6 defaultPairedDevice:(_Bool)arg7;
 - (id)initWithDeviceUniqueID:(id)arg1 cbuuid:(id)arg2;
 
 // Remaining properties

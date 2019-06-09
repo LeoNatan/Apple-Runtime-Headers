@@ -30,8 +30,10 @@
 - (void)_injectProxyProvider:(id)arg1;
 - (CDUnknownBlockType)_clientQueueCompletion:(CDUnknownBlockType)arg1;
 - (void)_remoteProxy:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
+- (void)availableMobileAssetsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setActivityChallengeAssetsServerURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchActivityChallengeAssetsServerURLWithCompletion:(CDUnknownBlockType)arg1;
+- (void)runMonthlyChallengesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)forceAwardingSchedulerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchEphemeralAchievementWithTemplateUniqueName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAchievementWithTemplateUniqueName:(id)arg1 completion:(CDUnknownBlockType)arg2;

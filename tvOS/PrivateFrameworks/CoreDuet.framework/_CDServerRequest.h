@@ -21,6 +21,7 @@
     NSMutableData *_responseData;
 }
 
++ (id)getHTTPModifiedSinceFromHeaders:(id)arg1;
 + (void)addHTTPIfModifiedSinceToHeaders:(id)arg1 date:(id)arg2;
 @property(retain) NSMutableData *responseData; // @synthesize responseData=_responseData;
 @property(retain) NSHTTPURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;

@@ -6,56 +6,101 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOComposedRouteStepTransitInstructionMerging-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSArray, NSMutableArray;
+@class GEOFormattedString, GEOTransitListTimeInstruction, NSArray, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
-@interface GEOTransitListInstruction : PBCodable <NSCopying>
+@interface GEOTransitListInstruction : PBCodable <GEOComposedRouteStepTransitInstructionMerging, NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSMutableArray *_commandFormatteds;
     NSMutableArray *_detailFormatteds;
+    GEOFormattedString *_expandableListFormatted;
     NSMutableArray *_noticeFormatteds;
     NSMutableArray *_priceFormatteds;
+    GEOTransitListTimeInstruction *_timeInstructions;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_commandFormatteds:1;
+        unsigned int read_detailFormatteds:1;
+        unsigned int read_expandableListFormatted:1;
+        unsigned int read_noticeFormatteds:1;
+        unsigned int read_priceFormatteds:1;
+        unsigned int read_timeInstructions:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_commandFormatteds:1;
+        unsigned int wrote_detailFormatteds:1;
+        unsigned int wrote_expandableListFormatted:1;
+        unsigned int wrote_noticeFormatteds:1;
+        unsigned int wrote_priceFormatteds:1;
+        unsigned int wrote_timeInstructions:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)priceFormattedType;
 + (Class)detailFormattedType;
 + (Class)commandFormattedType;
 + (Class)noticeFormattedType;
-@property(retain, nonatomic) NSMutableArray *priceFormatteds; // @synthesize priceFormatteds=_priceFormatteds;
-@property(retain, nonatomic) NSMutableArray *detailFormatteds; // @synthesize detailFormatteds=_detailFormatteds;
-@property(retain, nonatomic) NSMutableArray *commandFormatteds; // @synthesize commandFormatteds=_commandFormatteds;
-@property(retain, nonatomic) NSMutableArray *noticeFormatteds; // @synthesize noticeFormatteds=_noticeFormatteds;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
+@property(retain, nonatomic) GEOTransitListTimeInstruction *timeInstructions;
+@property(readonly, nonatomic) _Bool hasTimeInstructions;
+- (void)_readTimeInstructions;
+@property(retain, nonatomic) GEOFormattedString *expandableListFormatted;
+@property(readonly, nonatomic) _Bool hasExpandableListFormatted;
+- (void)_readExpandableListFormatted;
 - (id)priceFormattedAtIndex:(unsigned long long)arg1;
 - (unsigned long long)priceFormattedsCount;
+- (void)_addNoFlagsPriceFormatted:(id)arg1;
 - (void)addPriceFormatted:(id)arg1;
 - (void)clearPriceFormatteds;
+@property(retain, nonatomic) NSMutableArray *priceFormatteds;
+- (void)_readPriceFormatteds;
 - (id)detailFormattedAtIndex:(unsigned long long)arg1;
 - (unsigned long long)detailFormattedsCount;
+- (void)_addNoFlagsDetailFormatted:(id)arg1;
 - (void)addDetailFormatted:(id)arg1;
 - (void)clearDetailFormatteds;
+@property(retain, nonatomic) NSMutableArray *detailFormatteds;
+- (void)_readDetailFormatteds;
 - (id)commandFormattedAtIndex:(unsigned long long)arg1;
 - (unsigned long long)commandFormattedsCount;
+- (void)_addNoFlagsCommandFormatted:(id)arg1;
 - (void)addCommandFormatted:(id)arg1;
 - (void)clearCommandFormatteds;
+@property(retain, nonatomic) NSMutableArray *commandFormatteds;
+- (void)_readCommandFormatteds;
 - (id)noticeFormattedAtIndex:(unsigned long long)arg1;
 - (unsigned long long)noticeFormattedsCount;
+- (void)_addNoFlagsNoticeFormatted:(id)arg1;
 - (void)addNoticeFormatted:(id)arg1;
 - (void)clearNoticeFormatteds;
+@property(retain, nonatomic) NSMutableArray *noticeFormatteds;
+- (void)_readNoticeFormatteds;
 @property(readonly, nonatomic) NSArray *serverFormattedPrices;
 @property(readonly, nonatomic) NSArray *serverFormattedNotices;
 @property(readonly, nonatomic) NSArray *serverFormattedDetails;
 @property(readonly, nonatomic) NSArray *serverFormattedCommands;
+- (void)_transit_prepareForDeepMergeFrom:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -11,8 +11,8 @@
 @protocol CNManagedProfileConnection <NSObject>
 - (NSArray *)filteredOpenInOriginatingAccounts:(NSArray *)arg1 targetAppBundleID:(NSString *)arg2 targetAccountManagement:(long long)arg3;
 - (NSArray *)filteredOpenInAccounts:(NSArray *)arg1 originatingAppBundleID:(NSString *)arg2 sourceAccountManagement:(long long)arg3;
-- (BOOL)mayShowLocalAccountsForTargetBundleID:(NSString *)arg1 targetAccountManagement:(long long)arg2;
-- (BOOL)mayShowLocalAccountsForBundleID:(NSString *)arg1 sourceAccountManagement:(long long)arg2;
+- (BOOL)mayShowLocalContactsAccountsForTargetBundleID:(NSString *)arg1 targetAccountManagement:(long long)arg2;
+- (BOOL)mayShowLocalContactsAccountsForBundleID:(NSString *)arg1 sourceAccountManagement:(long long)arg2;
 - (BOOL)isOpenInRestrictionInEffect;
 @end
 

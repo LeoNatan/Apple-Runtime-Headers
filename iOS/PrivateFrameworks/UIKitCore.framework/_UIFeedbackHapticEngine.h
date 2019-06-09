@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     NSTimer *_finishTimeoutTimer;
 }
 
-+ (_Bool)_supportsPlayingFeedback:(id)arg1;
++ (_Bool)_supportsPlayingIndividualFeedback:(id)arg1;
 + (void)_setHapticPlayerCreationBlock:(CDUnknownBlockType)arg1;
 + (id)sharedEngine;
 @property(nonatomic) _Bool serverDown; // @synthesize serverDown=_serverDown;
@@ -30,19 +30,19 @@ __attribute__((visibility("hidden")))
 - (id)_stats_key;
 - (void)_recycleFeedbackPlayers:(id)arg1;
 - (void)_finishAndRecyclePlayers;
-- (void)_dequeueReusableFeedbackPlayerWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (_Bool)_cooldownUnderlyingPlayerIfPossible;
-- (void)_prewarmUnderlyingPlayerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_internal_dequeueReusableFeedbackPlayerWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_internal_cooldownUnderlyingPlayerIfPossibleWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_internal_prewarmUnderlyingPlayerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_releaseRenderResourcesIfPossible;
-- (_Bool)_teardownUnderlyingPlayerIfPossible;
+- (void)_internal_teardownUnderlyingPlayerIfPossibleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_resetChannelIndexes;
-- (void)_startRunningFeedbackPlayerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_internal_startRunningFeedbackPlayerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_initializeFeedbackPlayerWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_createFeedbackPlayer;
-- (void)_activateUnderlyingPlayerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_internal_activateUnderlyingPlayerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_restartFeedbackPlayerAfterFailure:(id)arg1;
 - (void)_feedbackPlayerDidFail:(id)arg1;
-- (_Bool)_isSuspended;
+- (_Bool)_internal_isSuspended;
 - (void)_subscribeToFeedbackServerFailureNotifications;
 - (double)currentTime;
 - (void)_resetHapticPlayer;

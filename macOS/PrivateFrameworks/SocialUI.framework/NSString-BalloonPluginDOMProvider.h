@@ -8,5 +8,8 @@
 
 @interface NSString (BalloonPluginDOMProvider)
 - (BOOL)isInvisibleInkImpactEffectID;
+- (struct _NSRange)_rangeOfTabInRange:(struct _NSRange)arg1;
+- (void)performRelayPhoneCall;
+- (BOOL)isAppKitSupportedImageType;
 @end
 

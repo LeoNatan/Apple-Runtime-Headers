@@ -77,8 +77,8 @@
 - (void)_evaluateTrust;
 - (id)policies;
 - (void)setPolicies:(id)arg1;
-- (struct OpaqueSecCertificateRef *)certificate;
-- (void)setCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (struct __SecCertificate *)certificate;
+- (void)setCertificate:(struct __SecCertificate *)arg1;
 - (void)dealloc;
 - (void)commonInit;
 - (id)initWithCoder:(id)arg1;

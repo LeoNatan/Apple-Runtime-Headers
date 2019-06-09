@@ -23,8 +23,10 @@
     _UIButtonGroupViewController *_representativeUI;
     float _minimumLeadingSpace;
     float _minimumTrailingSpace;
+    unsigned int _expandStyle;
 }
 
+@property(nonatomic, getter=_expandStyle, setter=_setExpandStyle:) unsigned int expandStyle; // @synthesize expandStyle=_expandStyle;
 @property(nonatomic, getter=_minimumTrailingSpace, setter=_setMinimumTrailingSpace:) float minimumTrailingSpace; // @synthesize minimumTrailingSpace=_minimumTrailingSpace;
 @property(nonatomic, getter=_minimumLeadingSpace, setter=_setMinimumLeadingSpace:) float minimumLeadingSpace; // @synthesize minimumLeadingSpace=_minimumLeadingSpace;
 @property(nonatomic, getter=_isHidden, setter=_setHidden:) _Bool hidden; // @synthesize hidden=_hidden;

@@ -10,6 +10,9 @@
 {
 }
 
++ (id)recordedTimeStampOfFile:(id)arg1;
++ (id)getUtteranceEnrollmentType:(id)arg1;
++ (_Bool)isUtteranceImplicitlyTrained:(id)arg1;
 + (void)_upgradeUtteranceMeta:(id)arg1;
 + (_Bool)_audioDirectoryNeedsUpgrade:(id)arg1;
 + (void)_upgradeLocaleDirectoryIfNecessary:(id)arg1;
@@ -18,7 +21,7 @@
 + (void)saveMetaVersionFileAtSATAudioDirectory:(id)arg1;
 + (void)_writeMetaDict:(id)arg1 forUtterancePath:(id)arg2;
 + (id)_getBaseMetaDictionaryForUtterancePath:(id)arg1;
-+ (void)saveUtteranceMetadataForUtterance:(id)arg1 isExplicitEnrollment:(_Bool)arg2 isHandheldEnrollment:(_Bool)arg3 triggerSource:(id)arg4 audioInput:(id)arg5 otherBiometricResult:(unsigned int)arg6 containsPayload:(_Bool)arg7;
++ (void)saveUtteranceMetadataForUtterance:(id)arg1 enrollmentType:(id)arg2 isHandheldEnrollment:(_Bool)arg3 triggerSource:(id)arg4 audioInput:(id)arg5 otherBiometricResult:(unsigned int)arg6 containsPayload:(_Bool)arg7;
 
 @end
 

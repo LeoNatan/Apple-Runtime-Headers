@@ -6,17 +6,17 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <PhotosUI/PLDismissableViewController-Protocol.h>
-#import <PhotosUI/PLNavigableCollectionContainer-Protocol.h>
+#import <PhotosUI/PLCloudFeedNavigating-Protocol.h>
 #import <PhotosUI/PUAlbumListTableViewCellDelegate-Protocol.h>
 #import <PhotosUI/PUAlbumStreamActivityDelegate-Protocol.h>
 #import <PhotosUI/PUCollectionViewReorderDelegate-Protocol.h>
 #import <PhotosUI/PUSectionedGridLayoutDelegate-Protocol.h>
 #import <PhotosUI/PUStackedAlbumControllerTransition-Protocol.h>
 #import <PhotosUI/PUStackedAlbumTransitionDelegate-Protocol.h>
-#import <PhotosUI/PXCloudFeedNavigating-Protocol.h>
 #import <PhotosUI/PXCollectionsDataSourceManagerObserver-Protocol.h>
 #import <PhotosUI/PXEditableNavigationTitleViewDelegate-Protocol.h>
+#import <PhotosUI/PXForcedDismissableViewController-Protocol.h>
+#import <PhotosUI/PXNavigableCollectionContainer-Protocol.h>
 #import <PhotosUI/PXNavigableSharedAlbumActivityFeedHostViewController-Protocol.h>
 #import <PhotosUI/PXPhotoLibraryUIChangeObserver-Protocol.h>
 #import <PhotosUI/PXPlacesSnapshotFactoryDelegate-Protocol.h>
@@ -31,21 +31,21 @@
 
 @class NSArray, NSMutableSet, NSString, NSUserActivity, PHCachingImageManager, PHCollection, PHImageRequestOptions, PUAlbumDropSessionController, PUAlbumListSectionHeaderView, PUAlbumListTransitionContext, PUAlbumListViewControllerSpec, PUAlbumStreamActivity, PUCollageView, PUCollectionView, PUFeedViewController, PUFontManager, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUSectionedGridLayout, PUSessionInfo, PXAssetBadgeManager, PXCollectionTileLayoutTemplate, PXEditableNavigationTitleView, PXFeatureSpec, PXFeatureSpecManager, PXPeopleAlbumProvider, PXPhotoKitCollectionsDataSource, PXPhotoKitCollectionsDataSourceManager, PXPhotoKitCollectionsDataSourceManagerConfiguration, PXPhotosGlobalFooterView, PXPlacesAlbumCoverProvider, UIAlertAction, UIAlertController, UIBarButtonItem, UICollectionViewLayout, UITableView, UIView, _UIContentUnavailableView;
 
-@interface PUAlbumListViewController : UIViewController <UICollectionViewDropDelegate, UIGestureRecognizerDelegate, PUStackedAlbumTransitionDelegate, PUAlbumStreamActivityDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUCollectionViewReorderDelegate, PUSectionedGridLayoutDelegate, UITableViewDataSource, UITableViewDelegate, PUAlbumListTableViewCellDelegate, UIPopoverPresentationControllerDelegate, PXPhotoLibraryUIChangeObserver, PXSettingsKeyObserver, PXCollectionsDataSourceManagerObserver, PXPlacesSnapshotFactoryDelegate, PXEditableNavigationTitleViewDelegate, PLNavigableCollectionContainer, PLDismissableViewController, PXCloudFeedNavigating, PXNavigableSharedAlbumActivityFeedHostViewController, PUStackedAlbumControllerTransition>
+@interface PUAlbumListViewController : UIViewController <UICollectionViewDropDelegate, UIGestureRecognizerDelegate, PUStackedAlbumTransitionDelegate, PUAlbumStreamActivityDelegate, UICollectionViewDataSource, UICollectionViewDelegate, PUCollectionViewReorderDelegate, PUSectionedGridLayoutDelegate, UITableViewDataSource, UITableViewDelegate, PUAlbumListTableViewCellDelegate, UIPopoverPresentationControllerDelegate, PXPhotoLibraryUIChangeObserver, PXSettingsKeyObserver, PXCollectionsDataSourceManagerObserver, PXPlacesSnapshotFactoryDelegate, PXEditableNavigationTitleViewDelegate, PXNavigableCollectionContainer, PXForcedDismissableViewController, PLCloudFeedNavigating, PXNavigableSharedAlbumActivityFeedHostViewController, PUStackedAlbumControllerTransition>
 {
     PUAlbumListViewControllerSpec *_spec;
     UIBarButtonItem *_doneButtonItem;
     UIBarButtonItem *_cancelButtonItem;
     UIBarButtonItem *_albumCreationButtonItem;
-    PUAlbumStreamActivity *_albumStreamActivity;
     NSString *_albumSubtitleFormat;
     _Bool _showAddNewAlbumPlaceholder;
     PUCollageView *_aggregateCollageView;
     NSArray *_keyAssetsForMoments;
+    PUAlbumListSectionHeaderView *_sectionHeaderView;
+    PUAlbumStreamActivity *_albumStreamActivity;
     _Bool _didInitialRequestForPlacesCount;
     _Bool _didInitialRequestForPeopleCount;
     _Bool _didInitializeMemoriesTitleSupport;
-    PUAlbumListSectionHeaderView *_sectionHeaderView;
     struct {
         _Bool preparedCellsConfiguration;
     } _needsUpdateFlags;
@@ -209,17 +209,18 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)handleTransitionFade:(_Bool)arg1 animate:(_Bool)arg2;
 - (void)setAlbumListTransitionLayout:(id)arg1 animated:(_Bool)arg2;
 - (id)gridLayout;
 - (id)collectionView;
-- (void)handleTransitionFade:(_Bool)arg1 animate:(_Bool)arg2;
+- (_Bool)isEmpty;
 - (void)albumStreamActivity:(id)arg1 didCreateAlbum:(struct NSObject *)arg2;
 - (void)albumStreamActivity:(id)arg1 didFinishSuccessfully:(_Bool)arg2;
 - (id)stackedAlbumTransition:(id)arg1 layoutForPHCollection:(id)arg2 forCollectionView:(id)arg3;
 - (void)stackedAlbumTransition:(id)arg1 setVisibility:(_Bool)arg2 forPHCollection:(id)arg3;
 - (id)stackedAlbumTransition:(id)arg1 layoutForCollection:(id)arg2 forCollectionView:(id)arg3;
 - (void)stackedAlbumTransition:(id)arg1 setVisibility:(_Bool)arg2 forCollection:(id)arg3;
-- (_Bool)pu_handleSecondTabTap;
+- (_Bool)pu_scrollToInitialPositionAnimated:(_Bool)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (void)navigateToSharedAlbumActivityFeedAnimated:(_Bool)arg1 configuration:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_nextCloudFeedNavigatingObject;
@@ -240,7 +241,9 @@
 - (id)_createControllerForFolder:(id)arg1;
 - (id)_createControllerForStandInCollection:(id)arg1;
 - (_Bool)canNavigateToCollection:(id)arg1;
-- (void)albumListCellContentView:(id)arg1 didEndRetitingFromTitle:(id)arg2 toTitle:(id)arg3;
+- (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)canRouteToDestination:(id)arg1;
+- (void)albumListCellContentView:(id)arg1 didEndRetitlingFromTitle:(id)arg2 toTitle:(id)arg3;
 - (_Bool)albumListCellContentViewShouldBeginRetitling:(id)arg1;
 - (void)albumListCellContentView:(id)arg1 performDeleteAction:(id)arg2;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
@@ -270,7 +273,6 @@
 - (void)_updateLayoutMetrics;
 - (void)viewDidLoad;
 - (id)_suppressionContexts;
-- (_Bool)_appAllowsSupressionOfAlerts;
 - (void)_invalidateSyncProgressAlbums;
 @property(readonly, nonatomic) NSArray *_syncProgressAlbums; // @synthesize _syncProgressAlbums=__syncProgressAlbums;
 - (void)_updatePreheatedAssets;
@@ -297,10 +299,11 @@
 - (id)_validateNewCollectionTitle:(id)arg1;
 - (void)_updateCreateAlbumTextField:(id)arg1;
 - (void)_dismissPhotosPickerControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)handleCreateAlbumOrFolder:(_Bool)arg1 helper:(id)arg2;
-- (void)_handleCreateAlbumOrFolder:(_Bool)arg1;
+- (void)handleCreateAlbumOrFolder:(_Bool)arg1 isSmartAlbum:(_Bool)arg2 helper:(id)arg3;
+- (void)_handleCreateAlbumOrFolder:(_Bool)arg1 isSmartAlbum:(_Bool)arg2;
 - (long long)_unfilteredFirstReorderableCollectionIndex;
 - (void)handleCreateFolder;
+- (void)handleCreateSmartAlbum;
 - (void)handleCreateAlbum;
 - (void)didSelectItemAtIndexPath:(id)arg1;
 - (void)_didSelectPlaceholderAtIndexPath:(id)arg1;
@@ -374,7 +377,6 @@
 - (unsigned long long)_editCapabilitiesForAlbum:(id)arg1;
 - (_Bool)shouldEnableCollection:(id)arg1;
 - (_Bool)showsEmptyPlaceholderWhenEmpty;
-- (_Bool)isEmpty;
 - (void)updateNavigationBarAnimated:(_Bool)arg1;
 - (_Bool)_updateInterfaceForIncrementalModelChangeHandler:(CDUnknownBlockType)arg1 withSectionedChangeDetails:(id)arg2 animated:(_Bool)arg3;
 - (void)_updateInterfaceForModelReloadAnimated:(_Bool)arg1;
@@ -396,7 +398,6 @@
 @property(readonly, nonatomic) PUAlbumListViewControllerSpec *spec;
 - (void)dealloc;
 - (id)initWithSpec:(id)arg1 isRootSharedAlbumList:(_Bool)arg2;
-- (id)px_gridPresentation;
 - (void)collectionView:(id)arg1 performDropWithCoordinator:(id)arg2;
 - (id)collectionView:(id)arg1 dropSessionDidUpdate:(id)arg2 withDestinationIndexPath:(id)arg3;
 - (_Bool)collectionView:(id)arg1 canHandleDropSesson:(id)arg2;
@@ -404,6 +405,7 @@
 - (void)_handleDrop:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (_Bool)_canHandleDropSession:(id)arg1;
 - (_Bool)_canDragIn;
+- (id)px_gridPresentation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,31 +8,35 @@
 
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKWorkoutConfiguration, NSArray, NSDate, NSString;
+@class HKWorkoutConfiguration, NSDate, NSString, NSUUID;
 
 @interface _HKCurrentWorkoutSnapshot : NSObject <NSSecureCoding>
 {
+    NSUUID *_sessionIdentifier;
     HKWorkoutConfiguration *_configuration;
-    int _state;
     NSString *_applicationIdentifier;
-    NSDate *_startDate;
-    NSArray *_events;
-    int _activeWorkoutState;
+    int _sessionState;
+    int _internalState;
+    NSDate *_snapshotDate;
+    double _elapsedTime;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) int activeWorkoutState; // @synthesize activeWorkoutState=_activeWorkoutState;
-@property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
-@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(readonly, nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
+@property(readonly, nonatomic) NSDate *snapshotDate; // @synthesize snapshotDate=_snapshotDate;
+@property(readonly, nonatomic) int internalState; // @synthesize internalState=_internalState;
+@property(readonly, nonatomic) int sessionState; // @synthesize sessionState=_sessionState;
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
-@property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, nonatomic) HKWorkoutConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(readonly, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (int)state;
+- (double)elapsedTimeAtDate:(id)arg1;
 @property(readonly, nonatomic) _Bool isFirstPartyWorkout;
 - (id)description;
-- (id)initWithWorkoutConfiguration:(id)arg1 state:(int)arg2 applicationIdentifier:(id)arg3 startDate:(id)arg4 events:(id)arg5 activeWorkoutState:(int)arg6;
+- (id)_initWithSessionIdentifier:(id)arg1 workoutConfiguration:(id)arg2 sessionServerState:(int)arg3 applicationIdentifier:(id)arg4 elapsedTime:(double)arg5 snapshotDate:(id)arg6;
 
 @end
 

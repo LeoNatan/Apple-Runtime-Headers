@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, SKUIImageGridViewReuseView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIImageGridView : UIView <SKUIViewElementView>
 {
     long long _columnCount;

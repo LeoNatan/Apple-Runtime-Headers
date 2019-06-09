@@ -8,24 +8,22 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocation, NSMutableArray;
+@class GEOLocation, NSMutableArray, PBDataReader;
 
 @interface GEODirectionsFeedbackLogMessage : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     struct GEONavigationAudioFeedback _navigationAudioFeedback;
-    double _durationOfTrip;
     NSMutableArray *_directionsFeedbacks;
+    double _durationOfTrip;
     GEOLocation *_finalLocation;
     _Bool _arrivedAtDestination;
-    CDStruct_47a5651d _has;
+    CDStruct_57366784 _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)directionsFeedbackType;
-@property(nonatomic) double durationOfTrip; // @synthesize durationOfTrip=_durationOfTrip;
-@property(nonatomic) struct GEONavigationAudioFeedback navigationAudioFeedback; // @synthesize navigationAudioFeedback=_navigationAudioFeedback;
-@property(nonatomic) _Bool arrivedAtDestination; // @synthesize arrivedAtDestination=_arrivedAtDestination;
-@property(retain, nonatomic) GEOLocation *finalLocation; // @synthesize finalLocation=_finalLocation;
-@property(retain, nonatomic) NSMutableArray *directionsFeedbacks; // @synthesize directionsFeedbacks=_directionsFeedbacks;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,16 +32,25 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasDurationOfTrip;
+@property(nonatomic) double durationOfTrip;
 @property(nonatomic) _Bool hasNavigationAudioFeedback;
+@property(nonatomic) struct GEONavigationAudioFeedback navigationAudioFeedback;
 @property(nonatomic) _Bool hasArrivedAtDestination;
+@property(nonatomic) _Bool arrivedAtDestination;
+@property(retain, nonatomic) GEOLocation *finalLocation;
 @property(readonly, nonatomic) _Bool hasFinalLocation;
+- (void)_readFinalLocation;
 - (id)directionsFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)directionsFeedbacksCount;
+- (void)_addNoFlagsDirectionsFeedback:(id)arg1;
 - (void)addDirectionsFeedback:(id)arg1;
 - (void)clearDirectionsFeedbacks;
+@property(retain, nonatomic) NSMutableArray *directionsFeedbacks;
+- (void)_readDirectionsFeedbacks;
 
 @end
 

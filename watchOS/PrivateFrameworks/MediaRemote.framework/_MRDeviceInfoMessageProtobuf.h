@@ -13,22 +13,25 @@
 @interface _MRDeviceInfoMessageProtobuf : PBCodable <NSCopying>
 {
     unsigned long long _protocolVersion;
+    NSMutableArray *_airplayReceivers;
     NSString *_applicationBundleIdentifier;
     NSString *_applicationBundleVersion;
     NSData *_bluetoothAddress;
     int _deviceClass;
+    NSString *_deviceUID;
     NSString *_groupName;
     NSString *_groupUID;
     NSMutableArray *_groupedDevices;
     unsigned int _lastSupportedMessageType;
-    NSString *_localReceiverPairingIdentity;
     NSString *_localizedModelName;
     unsigned int _logicalDeviceCount;
     NSString *_managedConfigDeviceID;
     NSString *_name;
+    NSString *_senderDefaultGroupUID;
     unsigned int _sharedQueueVersion;
     NSString *_systemBuildVersion;
     NSString *_systemMediaApplication;
+    NSString *_systemPodcastApplication;
     NSString *_tightSyncUID;
     NSString *_uniqueIdentifier;
     _Bool _allowsPairing;
@@ -60,7 +63,11 @@
     } _has;
 }
 
++ (Class)airplayReceiversType;
 + (Class)groupedDevicesType;
+@property(retain, nonatomic) NSMutableArray *airplayReceivers; // @synthesize airplayReceivers=_airplayReceivers;
+@property(retain, nonatomic) NSString *senderDefaultGroupUID; // @synthesize senderDefaultGroupUID=_senderDefaultGroupUID;
+@property(retain, nonatomic) NSString *systemPodcastApplication; // @synthesize systemPodcastApplication=_systemPodcastApplication;
 @property(nonatomic) _Bool isAirplayActive; // @synthesize isAirplayActive=_isAirplayActive;
 @property(nonatomic) _Bool isGroupLeader; // @synthesize isGroupLeader=_isGroupLeader;
 @property(retain, nonatomic) NSMutableArray *groupedDevices; // @synthesize groupedDevices=_groupedDevices;
@@ -71,7 +78,7 @@
 @property(nonatomic) _Bool tightlySyncedGroup; // @synthesize tightlySyncedGroup=_tightlySyncedGroup;
 @property(nonatomic) unsigned int logicalDeviceCount; // @synthesize logicalDeviceCount=_logicalDeviceCount;
 @property(retain, nonatomic) NSString *managedConfigDeviceID; // @synthesize managedConfigDeviceID=_managedConfigDeviceID;
-@property(retain, nonatomic) NSString *localReceiverPairingIdentity; // @synthesize localReceiverPairingIdentity=_localReceiverPairingIdentity;
+@property(retain, nonatomic) NSString *deviceUID; // @synthesize deviceUID=_deviceUID;
 @property(nonatomic) unsigned int sharedQueueVersion; // @synthesize sharedQueueVersion=_sharedQueueVersion;
 @property(retain, nonatomic) NSData *bluetoothAddress; // @synthesize bluetoothAddress=_bluetoothAddress;
 @property(nonatomic) _Bool supportsExtendedMotion; // @synthesize supportsExtendedMotion=_supportsExtendedMotion;
@@ -99,6 +106,12 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)airplayReceiversAtIndex:(unsigned int)arg1;
+- (unsigned int)airplayReceiversCount;
+- (void)addAirplayReceivers:(id)arg1;
+- (void)clearAirplayReceivers;
+@property(readonly, nonatomic) _Bool hasSenderDefaultGroupUID;
+@property(readonly, nonatomic) _Bool hasSystemPodcastApplication;
 @property(nonatomic) _Bool hasIsAirplayActive;
 @property(nonatomic) _Bool hasIsGroupLeader;
 - (id)groupedDevicesAtIndex:(unsigned int)arg1;
@@ -116,7 +129,7 @@
 @property(nonatomic) _Bool hasDeviceClass;
 @property(nonatomic) int deviceClass; // @synthesize deviceClass=_deviceClass;
 @property(readonly, nonatomic) _Bool hasManagedConfigDeviceID;
-@property(readonly, nonatomic) _Bool hasLocalReceiverPairingIdentity;
+@property(readonly, nonatomic) _Bool hasDeviceUID;
 @property(nonatomic) _Bool hasSharedQueueVersion;
 @property(readonly, nonatomic) _Bool hasBluetoothAddress;
 @property(nonatomic) _Bool hasSupportsExtendedMotion;
@@ -134,7 +147,6 @@
 @property(readonly, nonatomic) _Bool hasLocalizedModelName;
 @property(readonly, nonatomic) _Bool hasName;
 @property(readonly, nonatomic) _Bool hasUniqueIdentifier;
-@property(readonly, nonatomic) NSString *deviceUID;
 
 @end
 

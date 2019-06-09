@@ -40,6 +40,7 @@
 - (void)addCachedDirectoryServerObservable:(id)arg1;
 - (void)addSupplementalObservable:(id)arg1;
 - (void)addDuetObservable:(id)arg1 doOnTimeout:(CDUnknownBlockType)arg2;
+- (void)addLocalExtensionObservable:(id)arg1;
 - (void)addSuggestionsObservable:(id)arg1;
 - (void)addCoreRecentsObservable:(id)arg1;
 - (void)addContactsObservable:(id)arg1;

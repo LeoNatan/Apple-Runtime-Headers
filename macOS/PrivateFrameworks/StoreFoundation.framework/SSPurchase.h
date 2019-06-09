@@ -28,6 +28,7 @@
     BOOL _shouldBeInstalledAfterLogout;
     BOOL _isCancelled;
     BOOL _isDSIDLessPurchase;
+    NSString *_managedAppUUIDString;
     NSString *_sortableAccountIdentifier;
     unsigned long long _itemIdentifier;
     CDUnknownBlockType _authFallbackHandler;
@@ -52,6 +53,7 @@
 @property(retain, nonatomic) NSString *parentalControls; // @synthesize parentalControls=_parentalControls;
 @property(retain, nonatomic) NSData *receiptData; // @synthesize receiptData=_receiptData;
 @property(nonatomic) long long purchaseType; // @synthesize purchaseType=_purchaseType;
+@property(retain, nonatomic) NSString *managedAppUUIDString; // @synthesize managedAppUUIDString=_managedAppUUIDString;
 @property BOOL isVPP; // @synthesize isVPP=_isVPP;
 @property BOOL isRedownload; // @synthesize isRedownload=_isRedownload;
 @property BOOL isUpdate; // @synthesize isUpdate=_isUpdate;

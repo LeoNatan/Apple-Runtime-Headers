@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlaybackCore/MPMediaRemoteEntityArtworkGenerator-Protocol.h>
 #import <MediaPlaybackCore/MSVLRUDictionaryDelegate-Protocol.h>
 
 @class MPCFuture, MPCPlayerPath, MSVLRUDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MPArtworkDataSource, MPCSupportedCommands, OS_dispatch_queue;
 
-@interface MPCMediaRemoteController : NSObject <MSVLRUDictionaryDelegate>
+@interface MPCMediaRemoteController : NSObject <MSVLRUDictionaryDelegate, MPMediaRemoteEntityArtworkGenerator>
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
@@ -48,6 +49,7 @@
 + (void)_sendCommand:(unsigned int)arg1 options:(id)arg2 appOptions:(unsigned int)arg3 toPlayerPath:(id)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)sendCommand:(unsigned int)arg1 options:(id)arg2 toPlayerPath:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)controllerForPlayerPath:(id)arg1;
++ (id)mediaRemoteReplyQueue;
 @property(retain, nonatomic) id invalidationToken; // @synthesize invalidationToken=_invalidationToken;
 @property(retain, nonatomic) MPCPlayerPath *resolvedPlayerPath; // @synthesize resolvedPlayerPath=_resolvedPlayerPath;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
@@ -68,6 +70,8 @@
 - (void)_onQueue_mergeContentItems:(id)arg1 queueRange:(struct _MSVSignedRange)arg2 requestRange:(struct _MSVSignedRange)arg3;
 - (id)_onQueue_identifiersForRange:(struct _MSVSignedRange)arg1;
 - (id)_legacyCommands;
+- (id)_createExportableArtworkPropertiesForContentItem:(id)arg1;
+- (CDUnknownBlockType)artworkCatalogBlockForContentItem:(id)arg1;
 - (void)invalidateAllTokens;
 - (void)dictionary:(id)arg1 willRemoveObject:(id)arg2 forKey:(id)arg3;
 - (void)_contentItemArtworkChangedNotification:(id)arg1;

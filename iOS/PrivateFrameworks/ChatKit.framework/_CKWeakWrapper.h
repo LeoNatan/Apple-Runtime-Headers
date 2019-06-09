@@ -8,6 +8,7 @@
 
 @class IMWeakReference;
 
+__attribute__((visibility("hidden")))
 @interface _CKWeakWrapper : NSProxy
 {
     IMWeakReference *_weakReference;

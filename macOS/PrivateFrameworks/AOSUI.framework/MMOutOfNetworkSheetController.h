@@ -38,12 +38,13 @@
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-@property(retain) NSTextField *contactOwnerText; // @synthesize contactOwnerText=_contactOwnerText;
-@property(retain) NSTextField *titleText; // @synthesize titleText=_titleText;
-@property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-@property(retain) NSButton *verifyButton; // @synthesize verifyButton=_verifyButton;
-@property(retain) NSTableView *emailAddressTable; // @synthesize emailAddressTable=_emailAddressTable;
+@property __weak NSTextField *contactOwnerText; // @synthesize contactOwnerText=_contactOwnerText;
+@property __weak NSTextField *titleText; // @synthesize titleText=_titleText;
+@property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property __weak NSButton *verifyButton; // @synthesize verifyButton=_verifyButton;
+@property __weak NSTableView *emailAddressTable; // @synthesize emailAddressTable=_emailAddressTable;
 @property(retain) NSWindow *outOfNetworkSheet; // @synthesize outOfNetworkSheet=_outOfNetworkSheet;
+- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
@@ -58,7 +59,6 @@
 - (void)dismissOutOfNetworkSheet;
 - (void)showOutOfNetworkSheetForServices:(id)arg1 usingWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 - (void)awakeFromNib;
 - (id)init;
 

@@ -45,6 +45,7 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithProvisioningController:(id)arg1 context:(int)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

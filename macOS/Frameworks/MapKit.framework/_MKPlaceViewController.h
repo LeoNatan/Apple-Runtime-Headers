@@ -19,6 +19,7 @@
 #import <MapKit/MKStackingViewControllerDelegate-Protocol.h>
 #import <MapKit/MKTransitAttributionViewControllerDelegate-Protocol.h>
 #import <MapKit/MKTransitDepaturesViewControllerDelegate-Protocol.h>
+#import <MapKit/MKWebContentViewControllerDelegate-Protocol.h>
 #import <MapKit/NSSharingServiceDelegate-Protocol.h>
 #import <MapKit/NSSharingServicePickerDelegate-Protocol.h>
 #import <MapKit/_MKInfoCardAnalyticsDelegate-Protocol.h>
@@ -27,7 +28,7 @@
 @class CLLocation, CNContact, CNContactStore, GEOAutomobileOptions, GEOTransitOptions, MKETAProvider, MKMapItem, MKPlaceActionManager, MKPlaceCardActionsRowViewController, MKPlaceCardFooterActionsViewController, MKPlaceCardHeaderViewController, MKPlaceHeaderButtonsViewController, MKPlaceInfoViewController, MKPlaceInlineMapViewController, MKPlacePoisInlineMapViewController, NSMapTable, NSMutableArray, NSPopover, NSString, NSViewController, _MKDistanceDetailProvider, _MKPlaceActionButtonController;
 @protocol _MKPlaceItem, _MKPlaceViewControllerDelegate, _MKPlaceViewControllerFeedbackDelegate;
 
-@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceServiceHoursViewControllerProtocol, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
+@interface _MKPlaceViewController : MKLayoutCardViewController <MKStackingViewControllerDelegate, NSSharingServiceDelegate, NSSharingServicePickerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKPlaceCardHeaderViewControllerDelegate, MKTransitAttributionViewControllerDelegate, GEOLogContextDelegate, MKWebContentViewControllerDelegate, MKETAProviderDelegate, MKETAProviderObserver, MKPlaceHeaderButtonsViewControllerDelegate, MKPlaceServiceHoursViewControllerProtocol, _MKInfoCardController, _MKInfoCardAnalyticsDelegate, MKPlaceCardActionControllerDelegate>
 {
     MKPlaceActionManager *_actionManager;
     MKPlaceCardHeaderViewController *_headerViewController;
@@ -48,6 +49,7 @@
     BOOL _placeInBookmarks;
     BOOL _useSmallPictures;
     BOOL _showContactActions;
+    BOOL _placeInShortcuts;
     NSString *_headerTitle;
     _MKDistanceDetailProvider *_distanceMonitor;
     id <_MKPlaceItem> _placeItem;
@@ -64,18 +66,18 @@
     NSViewController *_topBarViewController;
     _MKPlaceActionButtonController *_headerSecondaryButtonController;
     NSMutableArray *_viewDidAppearBlocks;
-    _MKPlaceActionButtonController *_headerTertiaryButtonController;
     CLLocation *_location;
 }
 
 + (BOOL)isValidActionURL:(id)arg1;
 + (id)validateActionURLs:(id)arg1;
 + (double)headerHeightInMinimalMode;
++ (void)initialize;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
-@property(retain, nonatomic) _MKPlaceActionButtonController *headerTertiaryButtonController; // @synthesize headerTertiaryButtonController=_headerTertiaryButtonController;
+@property(nonatomic) BOOL placeInShortcuts; // @synthesize placeInShortcuts=_placeInShortcuts;
 @property(retain, nonatomic) NSMutableArray *viewDidAppearBlocks; // @synthesize viewDidAppearBlocks=_viewDidAppearBlocks;
 @property(retain, nonatomic) NSViewController *topBarViewController; // @synthesize topBarViewController=_topBarViewController;
-@property(retain) NSPopover *popover; // @synthesize popover;
+@property(retain, nonatomic) NSPopover *popover; // @synthesize popover;
 @property(nonatomic) BOOL showContactActions; // @synthesize showContactActions=_showContactActions;
 @property(nonatomic) BOOL useSmallPictures; // @synthesize useSmallPictures=_useSmallPictures;
 @property(retain, nonatomic) GEOTransitOptions *transitOptions; // @synthesize transitOptions=_transitOptions;
@@ -113,12 +115,17 @@
 - (void)placeCardActionControllerDidSelectReportAProblem:(id)arg1;
 - (id)transitDeparturesViewControllerTraits:(id)arg1;
 - (void)transitDeparturesViewController:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
+- (void)transitDeparturesViewController:(id)arg1 didSelectDepartureSequence:(id)arg2 transitMapItem:(id)arg3 transitLine:(id)arg4 fromCell:(id)arg5;
 - (void)transitDeparturesViewController:(id)arg1 showIncidents:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectConnectionInformation:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectAttributionController:(id)arg2;
 @property(readonly, nonatomic) double headerSecondaryNameLabelPadding;
 - (void)setContentAlpha:(double)arg1;
 - (double)contentAlpha;
+- (void)removeWebContentViewController:(id)arg1;
+- (void)webContentViewController:(id)arg1 performHeightChangeWithBlock:(CDUnknownBlockType)arg2 animated:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)webContentViewControllerDidStopLoading:(id)arg1;
+- (BOOL)isWebContentViewControllerParentPlacecardLoading:(id)arg1;
 - (int)mapTypeForETAProvider:(id)arg1;
 - (void)ETAProviderLocationUpdated:(id)arg1;
 - (void)placeHeaderButtonsViewController:(id)arg1 didSelectPrimaryType:(unsigned long long)arg2 withView:(id)arg3;
@@ -138,6 +145,8 @@
 - (void)placeCardReviewsControllerDidSelectViewAllReviews:(id)arg1;
 - (void)placeActionManager:(id)arg1 didSelectShareFromView:(id)arg2;
 - (BOOL)shouldUseSmallPhotosWithPhotosController:(id)arg1;
+- (void)placeCardPhotosControllerDidCloseFullscreenPhotos:(id)arg1;
+- (void)placeCardPhotosControllerDidOpenFullscreenPhotos:(id)arg1;
 - (void)placeCardPhotosController:(id)arg1 didSelectViewPhotoWithID:(id)arg2;
 - (double)stackingViewController:(id)arg1 heightForSeparatorBetweenUpperViewController:(id)arg2 andLowerViewController:(id)arg3;
 - (BOOL)stackingViewController:(id)arg1 showsTitleForViewController:(id)arg2;
@@ -169,15 +178,18 @@
 - (id)photoVC;
 - (id)poisInlineMapVC;
 - (id)inlineMapVC;
+- (id)webContentVCWithURL:(id)arg1;
 - (BOOL)shouldDisplayVenueBrowseVC;
 - (id)reservationVC;
 - (id)transitAttributionVC;
 - (id)transitVC;
 - (id)createRowActions;
 - (id)createFooterActions;
+- (int)_moduleTypeForViewController:(id)arg1;
 - (struct _MKUIViewController *)_createViewControllerForModule:(id)arg1;
 - (void)_createViewControllers:(id)arg1;
 - (void)_createViewControllersForBrand:(id)arg1;
+- (void)_logClientAndServerLayouts:(id)arg1;
 - (void)_updateViewControllers;
 - (BOOL)_shouldShowContactActions;
 - (id)_removeMapsDataFromContact:(id)arg1;
@@ -186,6 +198,8 @@
 - (id)_contactForEditOperations;
 - (BOOL)_hasContactAccess;
 - (id)_contactStore;
+- (void)showContentIfLoaded;
+- (BOOL)isLoading;
 - (void)_setDefaultViewControllers:(id)arg1;
 - (void)_didDismissReportAProblemWindow;
 - (void)_willShowReportAProblemWindow;

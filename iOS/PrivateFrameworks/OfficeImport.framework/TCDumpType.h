@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
     NSString *mName;
 }
 
+- (void).cxx_destruct;
 - (void)fromXml:(struct _xmlNode *)arg1 toBinary:(struct __sFILE *)arg2 state:(id)arg3;
 - (void)fromBinary:(struct __sFILE *)arg1 toXml:(struct _xmlNode *)arg2 state:(id)arg3;
 - (void)setName:(id)arg1;
 - (id)name;
-- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)init;
 

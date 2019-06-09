@@ -20,6 +20,7 @@
     NSString *_portName;
     NSString *_processName;
     NSProtocolChecker *_protocolChecker;
+    NSArray *_whitelistedClasses;
     NSMutableArray *_componentQueue;
     NSLock *_componentQueueLock;
     NSRecursiveLock *_componentQueueProcessingLock;
@@ -27,7 +28,7 @@
     _Bool _pendingComponentQueueProcessing;
     _Bool _busyForwarding;
     _Bool _offMainThread;
-    NSArray *_whitelistedClasses;
+    _Bool _wasInterrupted;
 }
 
 - (void)dealloc;

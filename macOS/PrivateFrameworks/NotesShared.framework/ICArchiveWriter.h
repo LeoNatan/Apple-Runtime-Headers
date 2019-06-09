@@ -12,12 +12,16 @@
 {
     struct archive *_archive;
     BOOL _usesCompression;
+    BOOL _flatten;
+    NSString *_flattenFolderName;
     NSURL *_destinationURL;
     NSString *_basePath;
 }
 
 @property(retain, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
 @property(retain, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
+@property(retain, nonatomic) NSString *flattenFolderName; // @synthesize flattenFolderName=_flattenFolderName;
+@property(nonatomic) BOOL flatten; // @synthesize flatten=_flatten;
 @property(nonatomic) BOOL usesCompression; // @synthesize usesCompression=_usesCompression;
 - (void).cxx_destruct;
 - (BOOL)writeURL:(id)arg1 isDirectory:(BOOL)arg2 error:(id *)arg3;

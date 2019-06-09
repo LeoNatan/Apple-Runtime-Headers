@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <BridgePreferences/BPSSetupPageViewController.h>
+#import <OnBoardingKit/OBTextWelcomeController.h>
 
-@class NSArray, NSMutableArray, NSString, UIImage, UIImageView, UILabel, UIScrollView, UIView;
+@class NSArray, NSString, UIImage;
 
-@interface BPSAboutDetailViewController : BPSSetupPageViewController
+@interface BPSAboutDetailViewController : OBTextWelcomeController
 {
     NSString *_headerString;
     NSString *_footerString;
@@ -16,24 +16,10 @@
     NSArray *_paragraphs;
     NSString *_titleString;
     UIImage *_headerGlyph;
-    UIScrollView *_scrollView;
-    UIImageView *_headerGlyphImageView;
-    UILabel *_headerLabel;
-    UILabel *_footerLabel;
-    NSMutableArray *_bulletLabels;
-    NSMutableArray *_paragraphLabels;
-    UIView *_lastViewInContentView;
     CDUnknownBlockType _onDismiss;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType onDismiss; // @synthesize onDismiss=_onDismiss;
-@property(retain, nonatomic) UIView *lastViewInContentView; // @synthesize lastViewInContentView=_lastViewInContentView;
-@property(retain, nonatomic) NSMutableArray *paragraphLabels; // @synthesize paragraphLabels=_paragraphLabels;
-@property(retain, nonatomic) NSMutableArray *bulletLabels; // @synthesize bulletLabels=_bulletLabels;
-@property(retain, nonatomic) UILabel *footerLabel; // @synthesize footerLabel=_footerLabel;
-@property(retain, nonatomic) UILabel *headerLabel; // @synthesize headerLabel=_headerLabel;
-@property(retain, nonatomic) UIImageView *headerGlyphImageView; // @synthesize headerGlyphImageView=_headerGlyphImageView;
-@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIImage *headerGlyph; // @synthesize headerGlyph=_headerGlyph;
 @property(retain, nonatomic) NSString *titleString; // @synthesize titleString=_titleString;
 @property(retain, nonatomic) NSArray *paragraphs; // @synthesize paragraphs=_paragraphs;
@@ -44,9 +30,7 @@
 - (void)presentWithController:(id)arg1 onDismiss:(CDUnknownBlockType)arg2;
 - (void)presentWithController:(id)arg1;
 - (void)donePressed;
-- (void)viewDidLayoutSubviews;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (_Bool)contentViewIsInAdjustedScrollView;
 - (id)init;
 

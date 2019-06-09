@@ -6,7 +6,7 @@
 
 #import <Safari/WKNavigationDelegate-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSError, NSURL, WKBackForwardListItem, WKFrameInfo, WKNavigation, WKNavigationAction, WKWebView;
+@class NSArray, NSData, NSDictionary, NSError, NSString, NSURL, WKBackForwardListItem, WKFrameInfo, WKNavigation, WKNavigationAction, WKWebView, _WKContentRuleListAction;
 @protocol NSSecureCoding;
 
 @protocol WKNavigationDelegatePrivate <WKNavigationDelegate>
@@ -20,6 +20,7 @@
 - (void)_webView:(WKWebView *)arg1 resolveWebGLLoadPolicyForURL:(NSURL *)arg2 decisionHandler:(void (^)(long long))arg3;
 - (void)_webView:(WKWebView *)arg1 webGLLoadPolicyForURL:(NSURL *)arg2 decisionHandler:(void (^)(long long))arg3;
 - (void)_webView:(WKWebView *)arg1 webContentProcessDidTerminateWithReason:(long long)arg2;
+- (void)_webView:(WKWebView *)arg1 contentRuleListWithIdentifier:(NSString *)arg2 performedAction:(_WKContentRuleListAction *)arg3 forURL:(NSURL *)arg4;
 - (void)_webView:(WKWebView *)arg1 URL:(NSURL *)arg2 contentRuleListIdentifiers:(NSArray *)arg3 notifications:(NSArray *)arg4;
 - (void)_webView:(WKWebView *)arg1 didFailNavigation:(WKNavigation *)arg2 withError:(NSError *)arg3 userInfo:(id <NSSecureCoding>)arg4;
 - (void)_webView:(WKWebView *)arg1 didStartProvisionalNavigation:(WKNavigation *)arg2 userInfo:(id <NSSecureCoding>)arg3;

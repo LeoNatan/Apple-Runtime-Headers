@@ -9,7 +9,7 @@
 #import <CloudDocsDaemon/BRCJobsMatching-Protocol.h>
 #import <CloudDocsDaemon/BRCZone-Protocol.h>
 
-@class BRCAccountSession, BRCClientZone, BRCPQLConnection, BRCPendingChangesStream, BRCServerChangeState, BRCSyncContext, BRCZoneRowID, BRMangledID, CKRecordZoneID, NSMutableDictionary, NSString;
+@class BRCAccountSession, BRCClientZone, BRCPQLConnection, BRCServerChangeState, BRCSyncContext, BRCZoneRowID, BRMangledID, CKRecordZoneID, NSArray, NSMutableDictionary, NSString;
 
 @interface BRCServerZone : NSObject <BRCJobsMatching, BRCZone>
 {
@@ -22,11 +22,11 @@
     unsigned int _state;
     BRCSyncContext *_syncContext;
     BRCSyncContext *_metadataSyncContext;
+    NSMutableDictionary *_failedListDirectoryOperations;
+    NSArray *_directoriesCreatedLastSyncUp;
     BOOL _needsSave;
-    BRCPendingChangesStream *_pendingChanges;
 }
 
-@property(readonly, nonatomic) BRCPendingChangesStream *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) BOOL needsSave; // @synthesize needsSave=_needsSave;
 @property(readonly, nonatomic) BRCPQLConnection *db; // @synthesize db=_db;
@@ -42,6 +42,8 @@
 - (BOOL)dumpStatusToContext:(id)arg1 error:(id *)arg2;
 - (struct PQLResultSet *)directDirectoryChildItemIDsOfParentEnumerator:(id)arg1;
 - (struct PQLResultSet *)itemsEnumeratorWithDB:(id)arg1;
+- (id)statInfoForItemID:(id)arg1;
+- (id)statInfoForItemID:(id)arg1 db:(id)arg2;
 - (id)itemByItemID:(id)arg1;
 - (id)itemByItemID:(id)arg1 db:(id)arg2;
 - (void)removeForegroundClient:(id)arg1;
@@ -49,8 +51,7 @@
 @property(readonly) BOOL isCloudDocsZone;
 - (void)clearStateBits:(unsigned int)arg1;
 - (BOOL)setStateBits:(unsigned int)arg1;
-- (void)destroyPendingChangesDBOnQueue:(BOOL)arg1;
-- (void)saveQueryRecords:(id)arg1;
+- (BOOL)saveQueryRecords:(id)arg1 zonesNeedingAllocRanks:(id)arg2 error:(id *)arg3;
 - (void)forceMoveToCloudDocs;
 - (BOOL)serverZoneIsCreated;
 - (BOOL)shouldRecreateServerZoneAfterError:(id)arg1;
@@ -60,9 +61,15 @@
 - (BOOL)resetServerTruthAndDestroyZone:(BOOL)arg1;
 - (void)collectTombstoneRanks:(id)arg1;
 - (void)_collectTombstoneForRank:(unsigned long long)arg1;
-- (unsigned long long)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 deletedShareRecordIDs:(id)arg5 movedZoneNames:(id)arg6 allocRankZones:(id *)arg7 syncStatus:(long long)arg8;
+- (id)failedListItemIDs;
+- (void)failedListingDirectoryChanges:(id)arg1 folderItemID:(id)arg2;
+- (unsigned long long)didListDirectoryChangesWithResults:(id)arg1 pendingFetchChanges:(id)arg2;
+- (unsigned long long)didSyncDownRequestID:(unsigned long long)arg1 serverChangeToken:(id)arg2 editedRecords:(id)arg3 deletedRecordIDs:(id)arg4 deletedShareRecordIDs:(id)arg5 movedZoneNames:(id)arg6 outOfBandChangedZones:(id *)arg7 fullSyncOp:(id)arg8 pendingChanges:(id)arg9;
+- (void)handleMovedZoneNames:(id)arg1;
+- (void)checkIfFinishedFullSync;
 - (void)handleBrokenStructure;
 - (BOOL)allocateRanks;
+- (void)recomputeMinLastUsedTime;
 - (BOOL)fixupLocalSharingOptions;
 - (long long)_fixupSharingOptions:(unsigned long long)arg1 underParentID:(id)arg2;
 - (id)_structurePrefixForType:(BOOL)arg1;
@@ -71,22 +78,22 @@
 - (void)_reportCantSaveProblem:(id)arg1 record:(id)arg2;
 - (BOOL)_saveDeletedRecordIDs:(id)arg1;
 - (BOOL)_saveEditedStructureRecords:(id)arg1 zonesNeedingAllocRanks:(id)arg2;
-- (BOOL)_savePendingChangesSharesIgnoringRecordIDs:(id)arg1 zonesNeedingAllocRanks:(id)arg2;
-- (BOOL)_savePendingChangesDeletedRecordIDsIgnoringRecordIDs:(id)arg1;
-- (BOOL)_savePendingChangesEditedContentRecordsIgnoringRecordIDs:(id)arg1 zonesNeedingAllocRanks:(id)arg2;
-- (BOOL)_savePendingChangesEditedStructureRecordsIgnoringRecordIDs:(id)arg1 zonesNeedingAllocRanks:(id)arg2;
+- (BOOL)_savePendingChangesSharesIgnoringRecordIDs:(id)arg1 zonesNeedingAllocRanks:(id)arg2 pendingChangeStream:(id)arg3 fullSyncOp:(id)arg4;
+- (BOOL)_savePendingChangesDeletedRecordIDsIgnoringRecordIDs:(id)arg1 pendingChangeStream:(id)arg2 fullSyncOp:(id)arg3;
+- (BOOL)_savePendingChangesEditedContentRecordsIgnoringRecordIDs:(id)arg1 zonesNeedingAllocRanks:(id)arg2 pendingChangeStream:(id)arg3 fullSyncOp:(id)arg4;
+- (BOOL)_savePendingChangesEditedStructureRecordsIgnoringRecordIDs:(id)arg1 zonesNeedingAllocRanks:(id)arg2 pendingChangeStream:(id)arg3 fullSyncOp:(id)arg4;
 - (BOOL)_markItemDeadForRecordID:(id)arg1;
 - (BOOL)_markShareIDDead:(id)arg1;
-- (BOOL)_saveEditedRecord:(id)arg1 zonesNeedingAllocRanks:(id)arg2 error:(id *)arg3;
-- (BOOL)_saveEditedShareRecord:(id)arg1 error:(id *)arg2;
+- (BOOL)_saveEditedRecord:(id)arg1 zonesNeedingAllocRanks:(id)arg2 forceHasShareID:(BOOL)arg3 error:(id *)arg4;
+- (BOOL)_saveEditedShareRecord:(id)arg1 forceHasShareID:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)_saveEditedAliasRecord:(id)arg1 zonesNeedingAllocRanks:(id)arg2 error:(id *)arg3;
 - (BOOL)_saveEditedFinderBookmarkRecord:(id)arg1 error:(id *)arg2;
 - (BOOL)_saveEditedSymlinkRecord:(id)arg1 error:(id *)arg2;
 - (BOOL)_saveEditedDocumentContentRecord:(id)arg1 error:(id *)arg2;
 - (BOOL)_saveEditedDirOrDocStructureRecord:(id)arg1 error:(id *)arg2;
 - (BOOL)_saveItemID:(id)arg1 version:(id)arg2 record:(id)arg3 iWorkSharingOptions:(unsigned long long)arg4;
-- (BOOL)_saveItemID:(id)arg1 stat:(id)arg2 record:(id)arg3 error:(id *)arg4;
-- (BOOL)_saveItemID:(id)arg1 stat:(id)arg2 record:(id)arg3 origName:(id)arg4 base:(id)arg5 no:(id)arg6 ext:(id)arg7;
+- (BOOL)_saveItemID:(id)arg1 stat:(id)arg2 serverMetrics:(id)arg3 record:(id)arg4 error:(id *)arg5;
+- (BOOL)_saveItemID:(id)arg1 stat:(id)arg2 serverMetrics:(id)arg3 record:(id)arg4 origName:(id)arg5 base:(id)arg6 no:(id)arg7 ext:(id)arg8;
 - (id)xattrForSignature:(id)arg1;
 - (BOOL)storeXattr:(id)arg1;
 - (BOOL)hasXattrWithSignature:(id)arg1;

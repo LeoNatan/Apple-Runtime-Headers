@@ -8,13 +8,12 @@
 
 #import <MapKit/MKETAProviderObserver-Protocol.h>
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
-#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 #import <MapKit/_MKStackViewDelegate-Protocol.h>
 
-@class MKPlaceSectionRowView, NSArray, NSLayoutConstraint, NSString, NSURL, UIImageView, UILayoutGuide, UIView, _MKDataHeaderModel, _MKLocalizedHoursBuilder, _MKTokenAttributedString, _MKUILabel;
+@class MKMaskContentView, MKPlaceSectionRowView, NSArray, NSLayoutConstraint, NSString, NSURL, UIImageView, UILayoutGuide, UIView, _MKDataHeaderModel, _MKLocalizedHoursBuilder, _MKTokenAttributedString, _MKUILabel;
 @protocol GEOTransitLineItem, MKPlaceCardHeaderViewControllerDelegate, _MKPlaceItem;
 
-@interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <_MKStackViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKETAProviderObserver>
+@interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <_MKStackViewDelegate, MKModuleViewControllerProtocol, MKETAProviderObserver>
 {
     unsigned long long _layout;
     MKPlaceSectionRowView *_titleSectionView;
@@ -24,6 +23,7 @@
     _MKUILabel *_firstLabel;
     _MKUILabel *_secondLabel;
     _MKUILabel *_secondaryNameLabel;
+    MKMaskContentView *_contentMaskView;
     _MKUILabel *_thirdLabel;
     UIView *_thirdDisplayedLabel;
     NSArray *_constraints;
@@ -61,9 +61,10 @@
 @property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
 @property(readonly, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
 - (void).cxx_destruct;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)updateContent;
 - (void)_contentSizeDidChange;
+- (void)_contentSizeDidChangeNotificationHandler;
 - (void)viewDidLayoutSubviews;
 - (void)setConstraints;
 - (void)updateViews;
@@ -84,6 +85,7 @@
 - (double)secondaryNameLabelPadding;
 - (void)animateSecondLabelWithPercentage:(double)arg1;
 @property(nonatomic) double contentAlpha;
+- (void)updateMaskAlpha:(double)arg1 onHeight:(double)arg2 withOffset:(double)arg3;
 - (void)hideTitle:(_Bool)arg1;
 - (void)updateHeaderTitle;
 - (void)viewWillAppear:(_Bool)arg1;

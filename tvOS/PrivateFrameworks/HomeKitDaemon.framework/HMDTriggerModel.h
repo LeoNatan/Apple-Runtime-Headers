@@ -17,7 +17,7 @@
 - (id)createPayload;
 
 // Remaining properties
-@property(retain, nonatomic) NSNumber *active; // @dynamic active;
+@property(copy, nonatomic) NSNumber *active; // @dynamic active;
 @property(retain, nonatomic) NSArray *currentActionSets; // @dynamic currentActionSets;
 @property(copy, nonatomic) NSDate *mostRecentFireDate; // @dynamic mostRecentFireDate;
 @property(retain, nonatomic) NSString *name; // @dynamic name;

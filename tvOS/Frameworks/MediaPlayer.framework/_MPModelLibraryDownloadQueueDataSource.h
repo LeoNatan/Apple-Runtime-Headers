@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <MediaPlayer/MPModelLazySectionedCollectionDataSource-Protocol.h>
+#import <MediaPlayer/MPLazySectionedCollectionDataSource-Protocol.h>
 
 @class MPMediaLibraryEntityTranslationContext, MPMediaLibraryEntityTranslator, MPModelLibraryDownloadQueueRequest, NSString;
 
-@interface _MPModelLibraryDownloadQueueDataSource : NSObject <MPModelLazySectionedCollectionDataSource>
+@interface _MPModelLibraryDownloadQueueDataSource : NSObject <MPLazySectionedCollectionDataSource>
 {
     MPModelLibraryDownloadQueueRequest *_request;
     MPMediaLibraryEntityTranslator *_entityTranslator;

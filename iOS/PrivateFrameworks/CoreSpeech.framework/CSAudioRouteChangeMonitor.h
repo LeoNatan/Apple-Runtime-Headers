@@ -24,7 +24,7 @@
 - (_Bool)_fetchHearstConnectionState;
 - (void)_stopMonitoring;
 - (void)_startMonitoringWithQueue:(id)arg1;
-- (void)jarvisAudioRouteDidChange:(id)arg1;
+- (void)carPlayAudioRouteDidChange:(id)arg1;
 - (void)preferredExternalRouteDidChange:(id)arg1;
 - (_Bool)jarvisConnected;
 - (void)getJarvisConnected:(CDUnknownBlockType)arg1;

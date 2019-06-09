@@ -39,6 +39,7 @@
     PKPaymentPreferencesViewController *_shippingAddressPreferencesController;
     PKPaymentPreferencesViewController *_shippingContactPreferencesController;
     PKPaymentPreferencesViewController *_paymentCardPreferencesController;
+    PKPaymentPreferencesViewController *_bankAccountPreferencesController;
     _Bool _viewAppeared;
     _Bool _visible;
     _Bool _authenticating;
@@ -86,7 +87,6 @@
 - (void)contextWillBeginPresentingSecondaryUI:(id)arg1;
 - (void)_removeSimulatorHIDListener;
 - (void)_startSimulatorHIDListener;
-- (int)_iconVariantForScale:(double)arg1;
 - (void)_sendDidEncounterAuthorizationEventIfNecessary:(unsigned long long)arg1;
 - (void)_updateCoachingInstruction;
 - (void)_updatePhysicalButtonInstruction;
@@ -110,6 +110,8 @@
 - (id)_unavailablePasses;
 - (long long)selectedPaymentApplicationIndexFromCardEntries:(id)arg1;
 - (id)_availablePasses;
+- (void)_updateBankAccounts;
+- (void)_setupBankAccounts;
 - (void)_setupShippingContact;
 - (void)_setupShippingAddress;
 - (void)_setupShippingMethods;
@@ -156,6 +158,8 @@
 - (void)authorizationDidSelectShippingAddressCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidSelectShippingMethodCompleteWithUpdate:(id)arg1;
 - (void)authorizationDidRequestMerchantSessionCompleteWithSession:(id)arg1 error:(id)arg2;
+- (void)authorizationDidUpdateAccountServicePaymentMethodCompleteWithUpdate:(id)arg1 signatureRequest:(id)arg2;
+- (void)authorizationDidAuthorizeApplePayTrustSignatureCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizeCashDisbursementWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuoteCompleteWithResult:(id)arg1;
 - (void)authorizationDidAuthorizePurchaseCompleteWithStatus:(long long)arg1;

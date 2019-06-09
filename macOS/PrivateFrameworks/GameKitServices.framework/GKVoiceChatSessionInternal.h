@@ -86,7 +86,7 @@
 - (void)networkStateDidChange;
 - (void)interfaceStateDidChangeWithWifiUp:(BOOL)arg1 cellUp:(BOOL)arg2;
 - (void)session:(id)arg1 didReceiveOOBAudioPacket:(id)arg2 fromPeerID:(id)arg3;
-- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
+- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(unsigned int)arg3;
 - (void)session:(id)arg1 didReceiveAudioPacket:(id)arg2 fromPeerID:(id)arg3;
 - (void)informClientVoiceChatFocusChange:(id)arg1;
 - (void)informClientVoiceChatSilent:(id)arg1;

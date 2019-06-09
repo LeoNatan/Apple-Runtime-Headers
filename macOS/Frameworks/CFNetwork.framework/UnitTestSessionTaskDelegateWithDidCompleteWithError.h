@@ -6,7 +6,6 @@
 
 #import <CFNetwork/UnitTestSessionTaskDelegate.h>
 
-__attribute__((visibility("hidden")))
 @interface UnitTestSessionTaskDelegateWithDidCompleteWithError : UnitTestSessionTaskDelegate
 {
     SmartBlockWithArgs_e26c205b _didDidCompleteWithErrorCompletionBlock;

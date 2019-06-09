@@ -10,6 +10,15 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGAffineTransform {
+    double a;
+    double b;
+    double c;
+    double d;
+    double tx;
+    double ty;
+};
+
 struct CGPoint {
     double x;
     double y;
@@ -34,6 +43,12 @@ struct UIEdgeInsets {
     double left;
     double bottom;
     double right;
+};
+
+struct WGWidgetListSettings {
+    unsigned long long carouselEdges;
+    _Bool useFavorites;
+    _Bool carouselIgnoresHeader;
 };
 
 struct _NSRange {

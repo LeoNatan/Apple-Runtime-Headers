@@ -6,16 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+#import <UIKitCore/_UISceneComponentProviding-Protocol.h>
+
+@class NSMutableArray, NSString, UIScene;
 
 __attribute__((visibility("hidden")))
-@interface UIAlertControllerStackManager : NSObject
+@interface UIAlertControllerStackManager : NSObject <_UISceneComponentProviding>
 {
     NSMutableArray *_alertControllerStack;
     NSMutableArray *_hiddenAlertControllers;
+    UIScene *_scene;
 }
 
-+ (id)sharedStackManager;
+@property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
 - (long long)_alertControllerStackCount;
 - (_Bool)_alertControllerShouldBeTrackedInStack:(id)arg1;
@@ -31,7 +34,13 @@ __attribute__((visibility("hidden")))
 - (void)_alertControllerWillDisappear:(id)arg1;
 - (void)_alertControllerDidAppear:(id)arg1;
 - (void)_alertControllerWillAppear:(id)arg1;
-- (id)init;
+- (id)initWithScene:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -20,7 +20,6 @@
 - (void)logRefCountForUrl:(id)arg1 withPrefix:(id)arg2 sender:(id)arg3;
 - (id)description;
 - (void)addPowerBoxURL:(id)arg1;
-- (void)addPowerBoxURLs:(id)arg1;
 - (void)stopAccessingURLs:(id)arg1;
 - (void)stopAccessingURL:(id)arg1;
 - (void)startAccessingURL:(id)arg1;

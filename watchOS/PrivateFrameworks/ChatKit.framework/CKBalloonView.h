@@ -9,7 +9,7 @@
 #import <ChatKit/CKInvisibleInkEffectHostView-Protocol.h>
 #import <ChatKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CABackdropLayer, CKInvisibleInkEffectController, CKManualUpdater, NSMutableArray, NSString, UIColor, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class CABackdropLayer, CKInvisibleInkEffectController, CKManualUpdater, NSMutableArray, NSString, UIColor, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer, UITraitCollection;
 @protocol CKBalloonViewDelegate;
 
 @interface CKBalloonView : CKBalloonImageView <CKInvisibleInkEffectHostView, UIGestureRecognizerDelegate>
@@ -27,6 +27,7 @@
     _Bool _invisibleInkEffectPaused;
     _Bool _animationPaused;
     id <CKBalloonViewDelegate> _delegate;
+    UITraitCollection *_transcriptTraitCollection;
     UITapGestureRecognizer *_tapGestureRecognizer;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
@@ -60,6 +61,7 @@
 @property(nonatomic) struct UIEdgeInsets textAlignmentInsets; // @synthesize textAlignmentInsets=_textAlignmentInsets;
 @property(nonatomic, getter=isFilled) _Bool filled; // @synthesize filled=_filled;
 @property(nonatomic) _Bool hasTail; // @synthesize hasTail=_hasTail;
+@property(retain, nonatomic) UITraitCollection *transcriptTraitCollection; // @synthesize transcriptTraitCollection=_transcriptTraitCollection;
 @property(nonatomic) BOOL orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <CKBalloonViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

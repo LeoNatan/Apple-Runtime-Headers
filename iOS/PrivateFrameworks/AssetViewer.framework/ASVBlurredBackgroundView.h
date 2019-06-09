@@ -15,6 +15,8 @@
     long long _backgroundStyle;
 }
 
++ (id)selectedEffectsForDarkModeStyle;
++ (id)normalEffectsForDarkModeStyle;
 + (id)selectedEffectsForARDarkStyle;
 + (id)normalEffectsForARDarkStyle;
 + (id)selectedEffects;

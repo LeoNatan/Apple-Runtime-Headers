@@ -22,6 +22,7 @@
     _Bool _allowsPaletteImageCompression;
     _Bool _allowsHevcCompression;
     _Bool _allowsDeepmapImageCompression;
+    _Bool _allowsDeepmap2ImageCompression;
     _Bool _flipped;
     struct CGImage *_sourceImage;
     long long _texturePixelFormat;
@@ -31,12 +32,15 @@
     unsigned long long _colorSpaceID;
     long long _textureInterpretation;
     int _exifOrientation;
+    long long _targetPlatform;
 }
 
+@property _Bool allowsDeepmap2ImageCompression; // @synthesize allowsDeepmap2ImageCompression=_allowsDeepmap2ImageCompression;
 @property _Bool allowsDeepmapImageCompression; // @synthesize allowsDeepmapImageCompression=_allowsDeepmapImageCompression;
 @property(nonatomic) int exifOrientation; // @synthesize exifOrientation=_exifOrientation;
 @property(nonatomic) long long textureInterpretation; // @synthesize textureInterpretation=_textureInterpretation;
 @property(nonatomic) unsigned long long colorSpaceID; // @synthesize colorSpaceID=_colorSpaceID;
+@property long long targetPlatform; // @synthesize targetPlatform=_targetPlatform;
 @property long long compressionType; // @synthesize compressionType=_compressionType;
 @property(nonatomic) double compressionQuality; // @synthesize compressionQuality=_compressionQuality;
 @property(nonatomic) _Bool flipped; // @synthesize flipped=_flipped;

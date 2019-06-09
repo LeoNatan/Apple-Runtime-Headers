@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)startTimingForMetric:(id)arg1;
 + (void)incrementMetric:(id)arg1;
 
 @end

@@ -61,7 +61,7 @@
 - (id)localizedString:(id)arg1;
 - (void)downloadRemoteAssetsWithCloudStoreCoordinatorDelegate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)downloadRemoteAssetsWithCompletion:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) BOOL remoteAssetsDownloaded;
+- (BOOL)remoteAssetsDownloaded;
 - (void)noteShared;
 - (void)requestUpdateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)revocationStatusWithCompletion:(CDUnknownBlockType)arg1;

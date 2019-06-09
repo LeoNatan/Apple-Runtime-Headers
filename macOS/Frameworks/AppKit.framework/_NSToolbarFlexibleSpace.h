@@ -6,13 +6,12 @@
 
 #import <AppKit/NSView.h>
 
-@class NSImage, NSToolbarFlexibleSpaceItem;
+@class NSToolbarFlexibleSpaceItem;
 
 @interface _NSToolbarFlexibleSpace : NSView
 {
     NSToolbarFlexibleSpaceItem *_spaceItem;
     BOOL _inPalette;
-    NSImage *_configPanelImage;
 }
 
 @property NSToolbarFlexibleSpaceItem *spaceItem; // @synthesize spaceItem=_spaceItem;

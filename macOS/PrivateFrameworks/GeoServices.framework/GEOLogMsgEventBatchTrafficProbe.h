@@ -15,7 +15,7 @@
     NSData *_locationCollection;
 }
 
-@property(retain, nonatomic) NSData *locationCollection; // @synthesize locationCollection=_locationCollection;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -24,8 +24,10 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSData *locationCollection;
 @property(readonly, nonatomic) BOOL hasLocationCollection;
 
 @end

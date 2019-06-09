@@ -8,30 +8,55 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class GEOPDMapsIdentifier, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDTransitInfo : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_labels;
     NSMutableArray *_lines;
     NSString *_searchDisplayName;
+    NSString *_subTitle;
     NSMutableArray *_systems;
+    NSString *_title;
     NSMutableArray *_transitConnections;
+    unsigned long long _transitId;
+    GEOPDMapsIdentifier *_transitMarketId;
+    struct {
+        unsigned int has_transitId:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_labels:1;
+        unsigned int read_lines:1;
+        unsigned int read_searchDisplayName:1;
+        unsigned int read_subTitle:1;
+        unsigned int read_systems:1;
+        unsigned int read_title:1;
+        unsigned int read_transitConnections:1;
+        unsigned int read_transitMarketId:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_labels:1;
+        unsigned int wrote_lines:1;
+        unsigned int wrote_searchDisplayName:1;
+        unsigned int wrote_subTitle:1;
+        unsigned int wrote_systems:1;
+        unsigned int wrote_title:1;
+        unsigned int wrote_transitConnections:1;
+        unsigned int wrote_transitId:1;
+        unsigned int wrote_transitMarketId:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)transitConnectionType;
 + (Class)labelType;
 + (Class)systemType;
 + (Class)lineType;
 + (id)transitInfoForPlaceData:(id)arg1;
-@property(retain, nonatomic) NSString *searchDisplayName; // @synthesize searchDisplayName=_searchDisplayName;
-@property(retain, nonatomic) NSMutableArray *transitConnections; // @synthesize transitConnections=_transitConnections;
-@property(retain, nonatomic) NSMutableArray *labels; // @synthesize labels=_labels;
-@property(retain, nonatomic) NSMutableArray *systems; // @synthesize systems=_systems;
-@property(retain, nonatomic) NSMutableArray *lines; // @synthesize lines=_lines;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,25 +65,51 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasTransitId;
+@property(nonatomic) unsigned long long transitId;
+@property(retain, nonatomic) NSString *subTitle;
+@property(readonly, nonatomic) _Bool hasSubTitle;
+- (void)_readSubTitle;
+@property(retain, nonatomic) NSString *title;
+@property(readonly, nonatomic) _Bool hasTitle;
+- (void)_readTitle;
+@property(retain, nonatomic) GEOPDMapsIdentifier *transitMarketId;
+@property(readonly, nonatomic) _Bool hasTransitMarketId;
+- (void)_readTransitMarketId;
+@property(retain, nonatomic) NSString *searchDisplayName;
 @property(readonly, nonatomic) _Bool hasSearchDisplayName;
+- (void)_readSearchDisplayName;
 - (id)transitConnectionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)transitConnectionsCount;
+- (void)_addNoFlagsTransitConnection:(id)arg1;
 - (void)addTransitConnection:(id)arg1;
 - (void)clearTransitConnections;
+@property(retain, nonatomic) NSMutableArray *transitConnections;
+- (void)_readTransitConnections;
 - (id)labelAtIndex:(unsigned long long)arg1;
 - (unsigned long long)labelsCount;
+- (void)_addNoFlagsLabel:(id)arg1;
 - (void)addLabel:(id)arg1;
 - (void)clearLabels;
+@property(retain, nonatomic) NSMutableArray *labels;
+- (void)_readLabels;
 - (id)systemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)systemsCount;
+- (void)_addNoFlagsSystem:(id)arg1;
 - (void)addSystem:(id)arg1;
 - (void)clearSystems;
+@property(retain, nonatomic) NSMutableArray *systems;
+- (void)_readSystems;
 - (id)lineAtIndex:(unsigned long long)arg1;
 - (unsigned long long)linesCount;
+- (void)_addNoFlagsLine:(id)arg1;
 - (void)addLine:(id)arg1;
 - (void)clearLines;
+@property(retain, nonatomic) NSMutableArray *lines;
+- (void)_readLines;
 
 @end
 

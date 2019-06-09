@@ -18,6 +18,7 @@
     BOOL _interfaceWired;
     BOOL _interfaceAWDL;
     BOOL _interfaceExpensive;
+    BOOL _interfaceCompanionLink;
     BOOL _countsIncludeHeaderOverhead;
     unsigned int _interfaceIndex;
     unsigned int _receiveBufferSize;
@@ -39,13 +40,16 @@
     unsigned long long _networkActivityMapStartTime;
     unsigned long long _networkActivityMapPart1;
     unsigned long long _networkActivityMapPart2;
+    unsigned long long _eventFlags;
 }
 
 + (void)initialize;
+@property(readonly) unsigned long long eventFlags; // @synthesize eventFlags=_eventFlags;
 @property(readonly) unsigned long long networkActivityMapPart2; // @synthesize networkActivityMapPart2=_networkActivityMapPart2;
 @property(readonly) unsigned long long networkActivityMapPart1; // @synthesize networkActivityMapPart1=_networkActivityMapPart1;
 @property(readonly) unsigned long long networkActivityMapStartTime; // @synthesize networkActivityMapStartTime=_networkActivityMapStartTime;
 @property(readonly) BOOL countsIncludeHeaderOverhead; // @synthesize countsIncludeHeaderOverhead=_countsIncludeHeaderOverhead;
+@property(readonly) BOOL interfaceCompanionLink; // @synthesize interfaceCompanionLink=_interfaceCompanionLink;
 @property(readonly) BOOL interfaceExpensive; // @synthesize interfaceExpensive=_interfaceExpensive;
 @property(readonly) BOOL interfaceAWDL; // @synthesize interfaceAWDL=_interfaceAWDL;
 @property(readonly) BOOL interfaceWired; // @synthesize interfaceWired=_interfaceWired;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSString *videoGravity;
     struct CGSize presentationSize;
     struct CGRect bounds;
+    _Bool preventsDisplaySleepDuringVideoPlayback;
     _Bool isRequestingMediaData;
     AVMediaDataRequester *mediaDataRequester;
     _Bool aboveHighWaterLevel;
@@ -34,6 +35,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *flushCallbackListQueue;
     NSObject<OS_dispatch_queue> *flushCallbackQueue;
     NSMutableArray *flushCallbacks;
+    NSObject<OS_dispatch_queue> *queueForProtectingPrerollCompleteCallback;
+    CDUnknownBlockType pendingPrerollCompleteCallback;
+    int pendingPrerollRequestID;
+    NSObject<OS_dispatch_queue> *queueForCallingPrerollCompleteCallback;
 }
 
 @end

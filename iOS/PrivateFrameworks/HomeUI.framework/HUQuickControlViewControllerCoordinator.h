@@ -10,7 +10,7 @@
 #import <HomeUI/HFOverrideCharacteristicValueProvider-Protocol.h>
 #import <HomeUI/HUQuickControlViewControllerDelegate-Protocol.h>
 
-@class HFItem, HFOverrideCharacteristicValueSource, HFSimpleItemManager, HMHome, HUQuickControlContentCharacteristicWritingUpdateAdapter, HUQuickControlViewController, NSArray, NSString;
+@class HFItem, HFOverrideCharacteristicValueSource, HFSimpleItemManager, HMHome, HUQuickControlContentCharacteristicWritingUpdateAdapter, HUQuickControlViewController, NSSet, NSString;
 @protocol HFIconDescriptor, HUQuickControlContentHosting, HUQuickControlViewControllerCoordinatorDelegate, NSCopying;
 
 @interface HUQuickControlViewControllerCoordinator : NSObject <HFItemManagerDelegate, HFOverrideCharacteristicValueProvider, HUQuickControlViewControllerDelegate>
@@ -22,14 +22,13 @@
     HFItem<NSCopying> *_item;
     id <HUQuickControlViewControllerCoordinatorDelegate> _delegate;
     id <HUQuickControlContentHosting> _controlHost;
-    unsigned long long _activeControllerType;
+    HUQuickControlViewController *_activeController;
     id <HFIconDescriptor> _iconDescriptor;
     NSString *_primaryStatusText;
     NSString *_secondaryStatusText;
-    HUQuickControlViewController *_primaryViewController;
-    HUQuickControlViewController *_alternateViewController;
     HFOverrideCharacteristicValueSource *_valueSource;
     HFSimpleItemManager *_itemManager;
+    NSSet *_controlItems;
     HFItem *_reachabilityItem;
     HFSimpleItemManager *_reachabilityItemManager;
     HUQuickControlContentCharacteristicWritingUpdateAdapter *_characteristicWritingAdapter;
@@ -38,17 +37,16 @@
 @property(readonly, nonatomic) HUQuickControlContentCharacteristicWritingUpdateAdapter *characteristicWritingAdapter; // @synthesize characteristicWritingAdapter=_characteristicWritingAdapter;
 @property(readonly, nonatomic) HFSimpleItemManager *reachabilityItemManager; // @synthesize reachabilityItemManager=_reachabilityItemManager;
 @property(readonly, nonatomic) HFItem *reachabilityItem; // @synthesize reachabilityItem=_reachabilityItem;
+@property(readonly, nonatomic) NSSet *controlItems; // @synthesize controlItems=_controlItems;
 @property(readonly, nonatomic) HFSimpleItemManager *itemManager; // @synthesize itemManager=_itemManager;
 @property(readonly, nonatomic) HFOverrideCharacteristicValueSource *valueSource; // @synthesize valueSource=_valueSource;
-@property(readonly, nonatomic) HUQuickControlViewController *alternateViewController; // @synthesize alternateViewController=_alternateViewController;
-@property(readonly, nonatomic) HUQuickControlViewController *primaryViewController; // @synthesize primaryViewController=_primaryViewController;
 @property(readonly, nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 @property(copy, nonatomic) NSString *secondaryStatusText; // @synthesize secondaryStatusText=_secondaryStatusText;
 @property(copy, nonatomic) NSString *primaryStatusText; // @synthesize primaryStatusText=_primaryStatusText;
 @property(readonly, nonatomic) _Bool showIconOffState; // @synthesize showIconOffState=_showIconOffState;
 @property(readonly, nonatomic) id <HFIconDescriptor> iconDescriptor; // @synthesize iconDescriptor=_iconDescriptor;
 @property(nonatomic, getter=areControlsVisible) _Bool controlsVisible; // @synthesize controlsVisible=_controlsVisible;
-@property(nonatomic) unsigned long long activeControllerType; // @synthesize activeControllerType=_activeControllerType;
+@property(retain, nonatomic) HUQuickControlViewController *activeController; // @synthesize activeController=_activeController;
 @property(nonatomic) __weak id <HUQuickControlContentHosting> controlHost; // @synthesize controlHost=_controlHost;
 @property(nonatomic) __weak id <HUQuickControlViewControllerCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HFItem<NSCopying> *item; // @synthesize item=_item;
@@ -65,10 +63,6 @@
 - (id)_primaryStatusTextForLatestResults:(id)arg1 showingSecondaryStatus:(_Bool)arg2;
 - (void)_updateIconDescriptorNotifyingDelegate:(_Bool)arg1;
 - (id)_itemToUseForIconAndStatus;
-@property(readonly, nonatomic) HUQuickControlViewController *alternateController;
-@property(readonly, nonatomic) HUQuickControlViewController *activeController;
-@property(readonly, nonatomic) NSArray *allControllers;
-- (id)viewControllerOfType:(unsigned long long)arg1;
 - (void)_createControlViewControllersForControlItems:(id)arg1;
 - (id)initWithItem:(id)arg1 controlItems:(id)arg2 home:(id)arg3 delegate:(id)arg4;
 

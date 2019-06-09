@@ -10,7 +10,6 @@
 
 @class NSData, NSString, NSXPCConnection, NSXPCInterface;
 
-__attribute__((visibility("hidden")))
 @interface NSURLStorage_CacheClient : NSObject <NSURLStorageCacheClient>
 {
     NSXPCInterface *_netStoreInterface;

@@ -6,22 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <SoftwareUpdate/SUUpdateClient-Protocol.h>
-
 @class NSDate, NSNumber, NSString, NSXPCConnection;
 
-@interface SUPreferenceManager : NSObject <SUUpdateClient>
+@interface SUPreferenceManager : NSObject
 {
     NSXPCConnection *_connection;
 }
 
 + (id)defaultManager;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-- (void)updatesQueuedForLaterDidChange;
-- (void)hiddenUpdatesDidChange;
-- (void)catalogURLDidChange;
-- (void)installStateDidChange:(id)arg1 forUpdateWithProductKey:(id)arg2;
-- (void)availableUpdatesDidChange;
 - (void)_reconnectIfNecessary;
 - (id)_newResumedConnection;
 - (BOOL)_migratePreferencesWithError:(id *)arg1;
@@ -62,12 +55,6 @@
 - (BOOL)_setPreferenceObject:(id)arg1 requiringObjectClass:(Class)arg2 forKey:(id)arg3;
 - (id)_preferenceObjectForKey:(id)arg1 requiringClass:(Class)arg2;
 - (void)dealloc;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

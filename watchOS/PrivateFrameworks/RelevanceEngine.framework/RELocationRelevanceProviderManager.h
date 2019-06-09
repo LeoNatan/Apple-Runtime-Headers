@@ -18,8 +18,8 @@
 + (id)_features;
 + (Class)_relevanceProviderClass;
 - (void)predictorDidUpdate:(id)arg1;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (int)_queryRevokableStatusForProvider:(id)arg1;
 - (id)_valueForProvider:(id)arg1 context:(id)arg2 feature:(id)arg3;
 - (id)_valueForProvider:(id)arg1 feature:(id)arg2;

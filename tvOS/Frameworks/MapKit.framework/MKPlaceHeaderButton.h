@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)_primaryButtonTextColor;
 - (void)buttonSelected:(id)arg1;
 - (void)applyButtonDefaultConfiguration;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_contentSizeDidChange;
 - (id)initWithPrimaryType:(unsigned long long)arg1;
 - (id)init;

@@ -10,7 +10,7 @@
 {
 }
 
-- (_Bool)optOutOfCoordinationWithSubtype:(int)arg1;
+- (unsigned int)coordinationTypeWithSubtype:(int)arg1;
 
 @end
 

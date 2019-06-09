@@ -38,6 +38,8 @@
 - (void).cxx_destruct;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)_handleIconButtonTap:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateBackgroundColorsBasedOnTraitCollection;
 - (void)_updateFullWidthAppearance;
 @property(retain, nonatomic) UIFont *textFieldFont;
 - (void)_setupConstraints;

@@ -18,13 +18,14 @@ __attribute__((visibility("hidden")))
     NSString *_startColorName;
     NSString *_endColorName;
     NSArray *_colors;
-    double _middleLocation;
+    NSArray *_middleLocations;
     double _opacity;
     _Bool _horizontal;
     _Bool _usesRGBColors;
     _Bool _didQueryRGBColors;
 }
 
++ (id)gradientWithColors:(id)arg1 middleLocations:(id)arg2;
 + (id)gradientWith3Colors:(id)arg1 middleLocation:(double)arg2;
 + (id)gradientWithStartColor:(id)arg1 endColor:(id)arg2;
 + (id)gradientWithFlatColor:(id)arg1;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)initWithColors:(id)arg1 middleLocations:(id)arg2;
 - (id)initWith3Colors:(id)arg1 middleLocation:(double)arg2;
 - (id)initWithStartColor:(id)arg1 endColor:(id)arg2;
 - (id)initWithFlatColor:(id)arg1;

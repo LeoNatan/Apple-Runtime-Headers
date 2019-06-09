@@ -25,6 +25,7 @@
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
+- (void)remote_weeklySummaryInfoForDate:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)hideAlertForPredictedActivityEnd:(id)arg1;
 - (void)showAlertForPredictedEndWorkoutActivity:(id)arg1;
 - (void)setMuteForTodayPredictedActivityAlerts:(_Bool)arg1 ompletion:(CDUnknownBlockType)arg2;
@@ -48,8 +49,6 @@
 - (void)remote_didBeginPredictedActivityAtDate:(id)arg1 withIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_didClassifyPredictedActivityWithIdentifier:(id)arg1 asActivityType:(unsigned int)arg2 locationType:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)showTypicalDayWithCompletion:(CDUnknownBlockType)arg1;
-- (void)stopFakingWithCompletion:(CDUnknownBlockType)arg1;
-- (void)fakeFreeCalendarDateIntervals:(id)arg1 motionState:(_Bool)arg2 inCarState:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)forceCoachingWithArguments:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runCoachingManagerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)registerForUpdatesOfTypes:(unsigned int)arg1;

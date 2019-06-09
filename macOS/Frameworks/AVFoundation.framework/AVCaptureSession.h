@@ -11,20 +11,17 @@
 @interface AVCaptureSession : NSObject
 {
     AVCaptureSessionInternal *_internal;
-    BOOL _interrupted;
-    BOOL _usesApplicationAudioSession;
-    BOOL _automaticallyConfiguresApplicationAudioSession;
-    BOOL _automaticallyConfiguresCaptureDeviceForWideColor;
+    BOOL usesApplicationAudioSession;
+    BOOL automaticallyConfiguresApplicationAudioSession;
+    BOOL automaticallyConfiguresCaptureDeviceForWideColor;
 }
 
 + (id)avCaptureSessionPlist;
-+ (BOOL)automaticallyNotifiesObserversOfMasterClock;
 + (void)initialize;
 + (id)allAVCaptureSessionPresets;
-@property(nonatomic) BOOL automaticallyConfiguresCaptureDeviceForWideColor; // @synthesize automaticallyConfiguresCaptureDeviceForWideColor=_automaticallyConfiguresCaptureDeviceForWideColor;
-@property(nonatomic) BOOL automaticallyConfiguresApplicationAudioSession; // @synthesize automaticallyConfiguresApplicationAudioSession=_automaticallyConfiguresApplicationAudioSession;
-@property(nonatomic) BOOL usesApplicationAudioSession; // @synthesize usesApplicationAudioSession=_usesApplicationAudioSession;
-@property(readonly, nonatomic, getter=isInterrupted) BOOL interrupted; // @synthesize interrupted=_interrupted;
+@property(nonatomic) BOOL automaticallyConfiguresCaptureDeviceForWideColor; // @synthesize automaticallyConfiguresCaptureDeviceForWideColor;
+@property(nonatomic) BOOL automaticallyConfiguresApplicationAudioSession; // @synthesize automaticallyConfiguresApplicationAudioSession;
+@property(nonatomic) BOOL usesApplicationAudioSession; // @synthesize usesApplicationAudioSession;
 - (id)defaultConnectionPropertiesForConnection:(id)arg1;
 - (id)defaultOutputSettingsForConnection:(id)arg1 fileType:(id)arg2;
 - (void)decompressionRequirementsDidChangeForConnection:(id)arg1;
@@ -43,13 +40,13 @@
 - (BOOL)_buildGraphUnitsForConnection:(id)arg1 error:(id *)arg2;
 - (BOOL)_buildGraphUnitsForInputPort:(id)arg1 error:(id *)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (struct OpaqueCMIOGraph *)captureGraph;
 - (void)_setRunning:(BOOL)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)_setMasterClock:(struct OpaqueCMClock *)arg1;
 @property(readonly, nonatomic) struct OpaqueCMClock *masterClock;
 - (void)stopRunning;
 - (void)startRunning;
+@property(readonly, nonatomic, getter=isInterrupted) BOOL interrupted;
 @property(readonly, nonatomic, getter=isRunning) BOOL running;
 - (void)_stopAndTearDownGraph;
 - (void)_informActiveInputsAndOutputsThatGraphWillStopWithError:(id)arg1;
@@ -57,16 +54,15 @@
 - (void)_setupMasterClock;
 - (void)_setupMasterSynchronizers;
 - (void)_buildAndRunGraph;
-- (void)_endSessionUpdates;
-- (void)_beginSessionUpdates;
+- (void)_doSessionUpdates;
 - (void)_rebuildGraph;
+- (void)_postNotificationNamed:(id)arg1;
 - (void)_postRuntimeError:(id)arg1;
 - (id)_stopError;
 - (BOOL)_graphIsRunning;
 - (BOOL)_graphIsInitialized;
 - (id)_connectionsForNewVideoPreviewLayer:(id)arg1;
 - (id)_connectionsForNewOutput:(id)arg1;
-- (void)_removeConnectionsForInputPort:(id)arg1;
 - (void)_removeConnection:(id)arg1;
 - (void)removeConnection:(id)arg1;
 - (void)_addConnection:(id)arg1;
@@ -99,7 +95,6 @@
 - (void)applicationWillTerminate:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 @end

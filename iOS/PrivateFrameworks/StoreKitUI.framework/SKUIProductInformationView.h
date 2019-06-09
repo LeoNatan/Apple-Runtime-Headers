@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, NSString, SKUIColorScheme, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductInformationView : UIView
 {
     SKUIColorScheme *_colorScheme;

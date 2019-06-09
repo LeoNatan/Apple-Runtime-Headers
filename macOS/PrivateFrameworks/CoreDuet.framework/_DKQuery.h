@@ -28,6 +28,7 @@
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 andDoubleValueBetween:(double)arg2 andValue:(double)arg3;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 andDoubleValue:(double)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 andIntegerValue:(long long)arg2;
++ (id)predicateForObjectsWithMetadataKey:(id)arg1 likeStringValue:(id)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 andStringValue:(id)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 inValues:(id)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 andValue:(id)arg2;
@@ -51,6 +52,7 @@
 + (id)predicateForEventsWithLocalCreationInDateRangeFromAfter:(id)arg1 to:(id)arg2;
 + (id)predicateForEventsWithLocalCreationInDateRangeFrom:(id)arg1 toBefore:(id)arg2;
 + (id)predicateForEventsWithMinumumDuration:(double)arg1;
++ (id)predicateForEventsWithMinimumDuration:(double)arg1;
 + (id)predicateForEventsBetweenStartSecondOfDay:(unsigned long long)arg1 endSecondOfDay:(unsigned long long)arg2;
 + (id)predicateForEventsWithDayOfWeek:(unsigned long long)arg1;
 + (id)predicateForEventsIntersectingDateRangeFrom:(id)arg1 to:(id)arg2;

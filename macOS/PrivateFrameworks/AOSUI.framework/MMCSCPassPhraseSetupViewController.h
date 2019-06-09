@@ -13,6 +13,11 @@
 
 @interface MMCSCPassPhraseSetupViewController : NSViewController <NSTouchBarProvider>
 {
+    NSString *_initialPassPhrase;
+    NSString *_confirmedPassPhrase;
+    long long _currentState;
+    BOOL _showChangeView;
+    BOOL _showRandomView;
     id <MMCSCPassPhraseSetupViewControllerDelegate> _delegate;
     NSImageView *_passPhraseImageView;
     NSTextField *_passPhraseTitle;
@@ -25,31 +30,27 @@
     NSButton *_passPhraseCancelButton;
     NSButton *_passPhraseAlternateButton;
     NSButton *_passPhraseConfirmButton;
-    NSString *_initialPassPhrase;
-    NSString *_confirmedPassPhrase;
-    long long _currentState;
-    BOOL _showChangeView;
-    BOOL _showRandomView;
     iCloudTouchBarController *_touchBarController;
 }
 
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(copy) NSString *confirmedPassPhrase; // @synthesize confirmedPassPhrase=_confirmedPassPhrase;
 @property(copy) NSString *initialPassPhrase; // @synthesize initialPassPhrase=_initialPassPhrase;
-@property NSButton *passPhraseConfirmButton; // @synthesize passPhraseConfirmButton=_passPhraseConfirmButton;
-@property NSButton *passPhraseAlternateButton; // @synthesize passPhraseAlternateButton=_passPhraseAlternateButton;
-@property NSButton *passPhraseCancelButton; // @synthesize passPhraseCancelButton=_passPhraseCancelButton;
-@property NSButton *passPhraseHelpButton; // @synthesize passPhraseHelpButton=_passPhraseHelpButton;
-@property NSTextField *passPhraseEntryLabel; // @synthesize passPhraseEntryLabel=_passPhraseEntryLabel;
-@property NSTextField *passPhraseRandomCodeLabel; // @synthesize passPhraseRandomCodeLabel=_passPhraseRandomCodeLabel;
-@property NSTextField *passPhraseRandomCodeTextField; // @synthesize passPhraseRandomCodeTextField=_passPhraseRandomCodeTextField;
-@property NSSecureTextField *passPhraseSecurityCodeTextField; // @synthesize passPhraseSecurityCodeTextField=_passPhraseSecurityCodeTextField;
-@property NSTextField *passPhraseMessage; // @synthesize passPhraseMessage=_passPhraseMessage;
-@property NSTextField *passPhraseTitle; // @synthesize passPhraseTitle=_passPhraseTitle;
-@property NSImageView *passPhraseImageView; // @synthesize passPhraseImageView=_passPhraseImageView;
+@property __weak NSButton *passPhraseConfirmButton; // @synthesize passPhraseConfirmButton=_passPhraseConfirmButton;
+@property __weak NSButton *passPhraseAlternateButton; // @synthesize passPhraseAlternateButton=_passPhraseAlternateButton;
+@property __weak NSButton *passPhraseCancelButton; // @synthesize passPhraseCancelButton=_passPhraseCancelButton;
+@property __weak NSButton *passPhraseHelpButton; // @synthesize passPhraseHelpButton=_passPhraseHelpButton;
+@property __weak NSTextField *passPhraseEntryLabel; // @synthesize passPhraseEntryLabel=_passPhraseEntryLabel;
+@property __weak NSTextField *passPhraseRandomCodeLabel; // @synthesize passPhraseRandomCodeLabel=_passPhraseRandomCodeLabel;
+@property __weak NSTextField *passPhraseRandomCodeTextField; // @synthesize passPhraseRandomCodeTextField=_passPhraseRandomCodeTextField;
+@property __weak NSSecureTextField *passPhraseSecurityCodeTextField; // @synthesize passPhraseSecurityCodeTextField=_passPhraseSecurityCodeTextField;
+@property __weak NSTextField *passPhraseMessage; // @synthesize passPhraseMessage=_passPhraseMessage;
+@property __weak NSTextField *passPhraseTitle; // @synthesize passPhraseTitle=_passPhraseTitle;
+@property __weak NSImageView *passPhraseImageView; // @synthesize passPhraseImageView=_passPhraseImageView;
 @property BOOL showRandomView; // @synthesize showRandomView=_showRandomView;
 @property BOOL showChangeView; // @synthesize showChangeView=_showChangeView;
 @property id <MMCSCPassPhraseSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)_showNormalMessage:(id)arg1;
 - (void)_showErrorMessage:(id)arg1;
@@ -67,7 +68,6 @@
 @property(readonly) BOOL isSecurePassphrase; // @dynamic isSecurePassphrase;
 @property(readonly) NSString *passPhrase;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 - (void)setup:(BOOL)arg1;
 
 // Remaining properties

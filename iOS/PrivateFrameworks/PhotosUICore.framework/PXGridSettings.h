@@ -9,10 +9,12 @@
 @interface PXGridSettings : PXSettings
 {
     _Bool _disableSelectionOverlayView;
+    long long _weightingScheme;
 }
 
 + (id)sharedInstance;
 + (id)settingsControllerModule;
+@property(nonatomic) long long weightingScheme; // @synthesize weightingScheme=_weightingScheme;
 @property(nonatomic) _Bool disableSelectionOverlayView; // @synthesize disableSelectionOverlayView=_disableSelectionOverlayView;
 - (void)setDefaultValues;
 - (id)parentSettings;

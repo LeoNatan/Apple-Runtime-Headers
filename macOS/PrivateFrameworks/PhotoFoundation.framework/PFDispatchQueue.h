@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)dispatchApply:(unsigned long long)arg1 withConcurrencyLimit:(unsigned long long)arg2 ofBlock:(CDUnknownBlockType)arg3;
++ (void)dispatchApply:(unsigned long long)arg1 withConcurrencyLimit:(unsigned long long)arg2 canceler:(id)arg3 ofBlock:(CDUnknownBlockType)arg4;
 + (void)dispatchApply:(unsigned long long)arg1 ofBlock:(CDUnknownBlockType)arg2;
 + (id)globalCurrentQOSQueue;
 + (id)globalQOSQueue:(unsigned int)arg1;
@@ -35,6 +35,10 @@
 + (id)_newQueueWithLabel:(id)arg1 qos:(unsigned int)arg2 targetQueue:(id)arg3;
 + (Class)concreteQueueClass;
 + (void)initialize;
+- (void)dispatchBarrierAsyncWithQOS:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
+- (void)dispatchBarrierAsyncWithCurrentQOS:(CDUnknownBlockType)arg1;
+- (void)dispatchAsyncWithQOS:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
+- (void)dispatchAsyncWithCurrentQOS:(CDUnknownBlockType)arg1;
 - (id)_init;
 
 @end

@@ -15,8 +15,10 @@
 @property(readonly, copy, nonatomic, getter=_linearFocusMovementSequences) NSArray *linearFocusMovementSequences;
 @property(readonly, nonatomic, getter=_preferredFocusMovementStyle) long long preferredFocusMovementStyle;
 @property(readonly, nonatomic, getter=_isEligibleForFocusInteraction) _Bool eligibleForFocusInteraction;
+@property(nonatomic) _Bool areChildrenFocused;
 - (_Bool)_reversesLinearFocusWrapping;
 - (void)_setNeedsNonDeferredFocusUpdate;
 - (id <UIFocusEnvironment>)_parentFocusEnvironment;
+- (_Bool)_allowsFocusToLeaveViaHeading:(unsigned long long)arg1;
 @end
 

@@ -15,13 +15,18 @@ __attribute__((visibility("hidden")))
     NSObject<OS_nw_endpoint> *_local_endpoint;
     NSObject<OS_nw_interface> *_interface;
     NSObject<OS_nw_parameters> *_parameters;
+    unsigned int _suspended:1;
 }
 
 @property(readonly, nonatomic) NSObject<OS_nw_interface> *interface; // @synthesize interface=_interface;
 @property(readonly, nonatomic) NSObject<OS_nw_endpoint> *local_endpoint; // @synthesize local_endpoint=_local_endpoint;
 - (void).cxx_destruct;
 - (_Bool)cancel;
+- (_Bool)resume;
+- (_Bool)isSuspended;
+- (_Bool)suspend;
 - (id)initWithDelegate:(id)arg1;
+- (id)start;
 
 @end
 

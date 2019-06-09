@@ -6,10 +6,12 @@
 
 #import <AppKit/NSObject-Protocol.h>
 
-@class NSArray, NSTabBarItem, NSView, NSVisualTabPickerGridView;
+@class NSArray, NSImage, NSTabBarItem, NSView, NSVisualTabPickerGridView;
 
 @protocol NSVisualTabPickerGridViewDataSource <NSObject>
+- (BOOL)visualTabPickerGridView:(NSVisualTabPickerGridView *)arg1 highlightStateForTabItem:(NSTabBarItem *)arg2;
 - (double)tilesHeightToWidthRatioInVisualTabPickerGridView:(NSVisualTabPickerGridView *)arg1;
+- (NSImage *)visualTabPickerGridView:(NSVisualTabPickerGridView *)arg1 imageForTabItem:(NSTabBarItem *)arg2;
 - (NSView *)visualTabPickerGridView:(NSVisualTabPickerGridView *)arg1 thumbnailViewForTabItem:(NSTabBarItem *)arg2;
 - (NSTabBarItem *)selectedTabItemInVisualTabPickerGridView:(NSVisualTabPickerGridView *)arg1;
 - (NSArray *)orderedTabItemsInVisualTabPickerGridView:(NSVisualTabPickerGridView *)arg1;

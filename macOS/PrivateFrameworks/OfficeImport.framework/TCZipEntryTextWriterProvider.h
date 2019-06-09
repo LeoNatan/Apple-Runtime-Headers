@@ -8,6 +8,7 @@
 
 @class NSString, OISFUZipArchiveOutputStream;
 
+__attribute__((visibility("hidden")))
 @interface TCZipEntryTextWriterProvider : TCXmlTextWriterProvider
 {
     BOOL _isCompressed;

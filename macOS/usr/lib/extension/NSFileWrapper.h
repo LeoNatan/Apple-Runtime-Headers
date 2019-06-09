@@ -61,7 +61,7 @@
 - (void)_updateDescendantFileNames;
 - (id)_attributesToWrite;
 - (BOOL)_writeContentsToURL:(id)arg1 path:(id)arg2 originalContentsURL:(id)arg3 tryHardLinking:(BOOL)arg4 didHardLinking:(char *)arg5 error:(id *)arg6;
-- (void)_forWritingToURL:(id)arg1 returnContentsLazyReadingError:(id *)arg2;
+- (BOOL)_forWritingToURL:(id)arg1 returnContentsLazyReadingError:(id *)arg2;
 - (BOOL)readFromURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)_readContentsFromURL:(id)arg1 path:(id)arg2 itemKind:(id)arg3 options:(unsigned long long)arg4 error:(id *)arg5;
 - (BOOL)matchesContentsOfURL:(id)arg1;

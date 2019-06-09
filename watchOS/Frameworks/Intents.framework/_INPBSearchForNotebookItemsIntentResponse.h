@@ -23,6 +23,7 @@
     NSArray *_tasks;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)tasksType;
 + (Class)taskListsType;
 + (Class)notesType;
@@ -35,6 +36,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)tasksAtIndex:(unsigned int)arg1;

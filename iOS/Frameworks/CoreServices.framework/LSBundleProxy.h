@@ -20,9 +20,12 @@
     _Bool _containerized;
     _Bool _profileValidated;
     _Bool _UPPValidated;
+    NSURL *_dataContainerURL;
+    NSString *_bundleIdentifier;
     NSString *_bundleType;
     NSURL *_bundleURL;
     NSString *_bundleExecutable;
+    NSURL *_bundleContainerURL;
     NSString *_bundleVersion;
     NSString *_sdkVersion;
     NSString *_signerIdentity;
@@ -40,8 +43,10 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)canInstantiateFromDatabase;
++ (id)bundleProxyWithAuditToken:(CDStruct_4c969caf)arg1 error:(id *)arg2;
 + (id)bundleProxyForCurrentProcess;
 + (_Bool)bundleProxyForCurrentProcessNeedsUpdate:(id)arg1;
++ (id)bundleProxyForURL:(id)arg1 error:(id *)arg2;
 + (id)bundleProxyForURL:(id)arg1;
 + (id)bundleProxyForIdentifier:(id)arg1;
 @property(retain, nonatomic, setter=_setValidationToken:) _LSBundleIDValidationToken *_validationToken; // @synthesize _validationToken=__validationToken;
@@ -61,9 +66,12 @@
 @property(readonly, nonatomic) NSString *signerIdentity; // @synthesize signerIdentity=_signerIdentity;
 @property(copy, nonatomic, setter=setSDKVersion:) NSString *sdkVersion; // @synthesize sdkVersion=_sdkVersion;
 @property(readonly, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
+@property(readonly, nonatomic) NSURL *bundleContainerURL; // @synthesize bundleContainerURL=_bundleContainerURL;
 @property(readonly, nonatomic) NSString *bundleExecutable; // @synthesize bundleExecutable=_bundleExecutable;
 @property(readonly, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(readonly, nonatomic) NSString *bundleType; // @synthesize bundleType=_bundleType;
+@property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)_valueForEqualityTesting;
@@ -81,21 +89,23 @@
 - (id)_environmentVariablesFromContainerManager;
 @property(readonly, nonatomic) NSURL *appStoreReceiptURL; // @dynamic appStoreReceiptURL;
 - (id)appStoreReceiptName;
-@property(readonly, nonatomic) NSURL *dataContainerURL;
+@property(readonly, nonatomic) NSURL *dataContainerURL; // @synthesize dataContainerURL=_dataContainerURL;
+- (_Bool)_shouldCallThroughToContainerManagerForPersona;
+- (_Bool)_hasAssociatedPersonas;
+- (_Bool)_usesSystemPersona;
+- (id)_managedPersonas;
 - (id)_dataContainerURLFromContainerManager;
 - (unsigned long long)_containerClassForLSBundleType:(id)arg1;
-@property(readonly, nonatomic) NSURL *bundleContainerURL;
 @property(readonly, nonatomic) NSURL *containerURL;
 @property(readonly, nonatomic) NSString *canonicalExecutablePath;
-@property(readonly, nonatomic) NSString *bundleIdentifier;
 - (id)uniqueIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)_initWithBundleUnit:(unsigned int)arg1 context:(struct LSContext *)arg2 bundleType:(unsigned long long)arg3 bundleID:(id)arg4 localizedName:(id)arg5 bundleContainerURL:(id)arg6 dataContainerURL:(id)arg7 resourcesDirectoryURL:(id)arg8 iconsDictionary:(id)arg9 iconFileNames:(id)arg10 version:(id)arg11;
 - (id)localizedName;
 - (id)localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(_Bool)arg2;
 @property(readonly, nonatomic) NSString *localizedShortName;
+- (id)_localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(_Bool)arg2;
 
 @end
 

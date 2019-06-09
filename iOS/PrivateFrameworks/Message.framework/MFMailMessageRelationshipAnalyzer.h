@@ -27,8 +27,8 @@
 + (id)sendersOfMessage:(id)arg1;
 + (id)analyzeMessages:(id)arg1 myEmailAddresses:(id)arg2;
 + (id)analysisOfConversation:(id)arg1;
+- (void).cxx_destruct;
 - (unsigned long long)relationOfMessage:(id)arg1;
-- (void)dealloc;
 - (id)initWithMessages:(id)arg1 relationships:(id)arg2;
 
 @end

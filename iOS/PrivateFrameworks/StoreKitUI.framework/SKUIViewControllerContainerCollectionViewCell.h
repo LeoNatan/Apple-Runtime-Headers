@@ -8,6 +8,7 @@
 
 @class NSIndexPath, SKUIViewControllerContainerView, UIView, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewControllerContainerCollectionViewCell : UICollectionViewCell
 {
     SKUIViewControllerContainerView *_viewControllerContainerView;

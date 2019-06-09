@@ -8,13 +8,14 @@
 
 @interface AFSafetyBlock : NSObject
 {
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _hasInvoked
     CDUnknownBlockType _block;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)invoke;
-- (void)invokeWithSignal:(long long)arg1;
+- (BOOL)invoke;
+- (BOOL)invokeWithSignal:(long long)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 
 @end

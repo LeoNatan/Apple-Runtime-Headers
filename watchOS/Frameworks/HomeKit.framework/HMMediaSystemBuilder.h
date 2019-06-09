@@ -35,14 +35,14 @@
 @property(readonly, nonatomic) NSUUID *mediaSystemUUID; // @synthesize mediaSystemUUID=_mediaSystemUUID;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-@property(retain, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
+@property(copy, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)_callCompletion:(CDUnknownBlockType)arg1 builderSessionID:(id)arg2 error:(id)arg3 response:(id)arg4;
 - (void)_commitWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)commitWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(retain, nonatomic) NSArray *components; // @synthesize components=_components;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy, nonatomic) NSArray *components; // @synthesize components=_components;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (id)_initializeContext;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

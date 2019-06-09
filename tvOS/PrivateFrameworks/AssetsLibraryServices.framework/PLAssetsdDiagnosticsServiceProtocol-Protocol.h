@@ -6,6 +6,14 @@
 
 #import <AssetsLibraryServices/NSObject-Protocol.h>
 
+@class NSXPCListenerEndpoint, PLXPCObject;
+
 @protocol PLAssetsdDiagnosticsServiceProtocol <NSObject>
+- (void)initializeSharedMemoryForDeferredLogs:(PLXPCObject *)arg1;
+- (void)setPhotosXPCEndpoint:(NSXPCListenerEndpoint *)arg1 withReply:(void (^)(_Bool, NSError *))arg2;
+- (void)getPhotosXPCEndpointWithReply:(void (^)(_Bool, NSXPCListenerEndpoint *, NSError *))arg1;
+- (void)incompleteRestoreProcessesWithReply:(void (^)(NSArray *))arg1;
+- (void)dumpPhotoAnalysisStatusWithReply:(void (^)(NSString *, NSError *))arg1;
+- (void)dumpStatusIncludingDaemon:(_Bool)arg1 reply:(void (^)(NSError *))arg2;
 @end
 

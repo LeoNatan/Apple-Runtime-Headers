@@ -19,7 +19,7 @@
 - (void)failedSendingProtobufWithIDSIdentifier:(id)arg1 errorCode:(int)arg2;
 - (void)successfullySentProtobufWithIDSIdentifier:(id)arg1;
 - (id)syncVIPList:(id)arg1;
-- (id)requestWatchAccountsStatus;
+- (id)requestWatchAccountsStatus:(id)arg1;
 - (id)sendStandaloneAccountIdentity:(id)arg1;
 - (id)sendInitialAccountsSync:(id)arg1;
 - (id)deleteAccount:(id)arg1;

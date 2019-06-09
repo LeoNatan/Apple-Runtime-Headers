@@ -30,6 +30,7 @@
     NSURL *url;
 }
 
++ (Class)alternateUniverseClass;
 + (Class)meltedClass;
 @property(readonly, nonatomic) BOOL isTimeToLeaveAlarm; // @synthesize isTimeToLeaveAlarm;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url;

@@ -11,5 +11,6 @@
 
 @protocol TVPlayerBridging <NSObject>
 - (void)dispatchEvent:(NSString *)arg1 userInfo:(id <IKPlayerEventMarshaling>)arg2 completion:(void (^)(_Bool))arg3;
+- (void)presentWithAnimation:(_Bool)arg1;
 @end
 

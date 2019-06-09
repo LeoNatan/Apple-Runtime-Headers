@@ -14,6 +14,9 @@
 
 @interface NSController : NSObject <NSCoding, NSEditor, NSEditorRegistration>
 {
+    id _modelObservingTracker;
+    id _expectedObservingInfo;
+    id _singleValueAccessor;
     int _specialPurposeType;
     id _bindingAdaptor;
     NSMutableArray *_editors;
@@ -28,9 +31,6 @@
         unsigned int _isEditing:1;
         unsigned int _reservedController:28;
     } _bindingsControllerFlags;
-    id _modelObservingTracker;
-    id _expectedObservingInfo;
-    id _singleValueAccessor;
 }
 
 + (BOOL)_shouldAddObservationForwardersForKey:(id)arg1;

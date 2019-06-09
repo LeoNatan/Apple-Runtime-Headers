@@ -29,14 +29,12 @@ __attribute__((visibility("hidden")))
     NSIndexPath *_lastPreviewedIndexPath;
     NSIndexPath *_secondCellIndexPath;
     _Bool _secondIndexPathFocused;
-    _Bool _indexDisplayEnabled;
     _Bool _alwaysSoftFocusEnabled;
     id <_TVListViewControllerDelegate> _delegate;
 }
 
 + (id)_shadowCollectionElementForCollectionElement:(id)arg1;
 @property(nonatomic, getter=isAlwaysSoftFocusEnabled) _Bool alwaysSoftFocusEnabled; // @synthesize alwaysSoftFocusEnabled=_alwaysSoftFocusEnabled;
-@property(nonatomic, getter=isIndexDisplayEnabled) _Bool indexDisplayEnabled; // @synthesize indexDisplayEnabled=_indexDisplayEnabled;
 @property(nonatomic) __weak id <_TVListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (struct UIEdgeInsets)_marginForHeaderCellForElement:(id)arg1 section:(long long)arg2;

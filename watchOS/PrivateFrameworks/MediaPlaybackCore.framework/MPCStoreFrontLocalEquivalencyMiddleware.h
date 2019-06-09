@@ -24,28 +24,7 @@
 - (void).cxx_destruct;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;
-- (id)tracklistUniqueIdentifier:(id)arg1 chain:(id)arg2;
-- (id)playerVideoView:(id)arg1 chain:(id)arg2;
-- (id)playerCommandOptionValue:(id)arg1 forKey:(id)arg2 command:(unsigned int)arg3 chain:(id)arg4;
-- (_Bool)playerCommandEnabled:(_Bool)arg1 command:(unsigned int)arg2 chain:(id)arg3;
-- (_Bool)playerCommandSupported:(_Bool)arg1 command:(unsigned int)arg2 chain:(id)arg3;
-- (id)playerItemCurrentLanguageOptions:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
-- (id)playerItemLanguageOptionGroups:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
-- (int)playerGlobalItemCount:(int)arg1 chain:(id)arg2;
-- (int)playerPlayingItemGlobalIndex:(int)arg1 chain:(id)arg2;
-- (id)playerPlayingItemIndexPath:(id)arg1 chain:(id)arg2;
 - (id)playerModelObject:(id)arg1 propertySet:(id)arg2 atIndexPath:(id)arg3 chain:(id)arg4;
-- (_Bool)playerItemIsPlaceholder:(_Bool)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
-- (int)playerItemEditingStyleFlags:(int)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
-- (CDStruct_fce57115)playerItemDuration:(CDStruct_fce57115)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
-- (unsigned int)playerNumberOfItems:(unsigned int)arg1 inSection:(unsigned int)arg2 chain:(id)arg3;
-- (unsigned int)playerNumberOfSections:(unsigned int)arg1 chain:(id)arg2;
-- (int)playerUpNextItemCount:(int)arg1 chain:(id)arg2;
-- (int)playerLastChangeDirection:(int)arg1 chain:(id)arg2;
-- (int)playerShuffleType:(int)arg1 chain:(id)arg2;
-- (int)playerRepeatType:(int)arg1 chain:(id)arg2;
-- (int)playerState:(int)arg1 chain:(id)arg2;
-- (id)controller:(id)arg1 chain:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

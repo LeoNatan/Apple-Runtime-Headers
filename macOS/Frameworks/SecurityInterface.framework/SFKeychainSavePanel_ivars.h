@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *_kcFullPathName;
     NSString *_startPath;
     NSString *_keychainFileName;
-    struct OpaqueSecKeychainRef *_returnedKeychain;
+    struct __SecKeychain *_returnedKeychain;
     NSWindow *_parentWindowForSheet;
     SEL _clientDidEndSelector;
     id _clientDelegate;

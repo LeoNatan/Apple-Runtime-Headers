@@ -9,6 +9,7 @@
 @class NSDate, NSObject;
 @protocol OS_tcp_connection;
 
+__attribute__((visibility("hidden")))
 @interface TCPConnectionProbe : TestProbe
 {
     NSObject<OS_tcp_connection> *_connection;

@@ -11,6 +11,7 @@
 @protocol AVCSessionParticipantDelegate <NSObject>
 
 @optional
+- (void)participant:(AVCSessionParticipant *)arg1 spatialAudioSourceIDDidChange:(unsigned long long)arg2;
 - (void)participant:(AVCSessionParticipant *)arg1 prominenceDidChange:(NSDictionary *)arg2;
 - (void)participant:(AVCSessionParticipant *)arg1 mediaPrioritiesDidChange:(NSDictionary *)arg2;
 - (void)participant:(AVCSessionParticipant *)arg1 remoteVideoPausedDidChange:(_Bool)arg2;

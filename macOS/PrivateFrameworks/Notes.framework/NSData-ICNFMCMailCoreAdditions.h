@@ -6,19 +6,19 @@
 
 #import <Foundation/NSData.h>
 
-@class NSString;
-
 @interface NSData (ICNFMCMailCoreAdditions)
-@property(readonly, copy, nonatomic) NSString *hexString;
-@property(readonly, copy, nonatomic) NSData *MD5Digest;
-- (struct _NSRange)rangeOfCString:(const char *)arg1 options:(unsigned long long)arg2 range:(struct _NSRange)arg3;
-- (struct _NSRange)rangeOfCString:(const char *)arg1 options:(unsigned long long)arg2;
-- (struct _NSRange)rangeOfCString:(const char *)arg1;
-- (struct _NSRange)rangeOfByteFromSet:(id)arg1;
-@property(readonly, nonatomic) struct _NSRange rangeOfRFC822HeaderData;
-@property(readonly, copy, nonatomic) NSData *quotedFromSpaceDataForMessage;
-- (id)unquotedFromSpaceDataWithRange:(struct _NSRange)arg1;
-- (id)initWithDataConvertingLineEndingsFromNetworkToUnix:(id)arg1;
-- (id)initWithDataConvertingLineEndingsFromUnixToNetwork:(id)arg1;
++ (id)ic_dataByConvertingLineEndingsFromNetworkToUnix:(id)arg1;
++ (id)ic_dataByConvertingLineEndingsFromUnixToNetwork:(id)arg1;
++ (unsigned long long)ic_quotedPrintableLengthOfHeaderBytes:(const char *)arg1 length:(unsigned long long)arg2;
+@property(readonly, copy, nonatomic) NSData *ic_MD5Digest;
+- (struct _NSRange)ic_rangeOfCString:(const char *)arg1 options:(unsigned long long)arg2 range:(struct _NSRange)arg3;
+- (struct _NSRange)ic_rangeOfCString:(const char *)arg1 options:(unsigned long long)arg2;
+- (struct _NSRange)ic_rangeOfCString:(const char *)arg1;
+@property(readonly, nonatomic) struct _NSRange ic_rangeOfRFC822HeaderData;
+- (id)ic_wrapperForBinHex40DataWithFileEncodingHint:(unsigned long long)arg1;
+- (id)ic_wrapperForAppleFileDataWithFileEncodingHint:(unsigned long long)arg1;
+- (id)ic_uudecodedDataIntoFile:(id *)arg1 mode:(unsigned int *)arg2;
+- (id)ic_encodeQuotedPrintableForText:(BOOL)arg1 allowCancel:(BOOL)arg2;
+- (id)ic_decodeQuotedPrintableForText:(BOOL)arg1;
 @end
 

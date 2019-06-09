@@ -6,11 +6,12 @@
 
 #import <UIKitCore/UIControl.h>
 
-@class NSArray, UIColor, UISelectionFeedbackGenerator;
+#import <UIKitCore/UIAccessibilityHUDGestureDelegate-Protocol.h>
+
+@class NSArray, NSString, UIAccessibilityHUDGestureManager, UIColor, UISelectionFeedbackGenerator;
 @protocol UIIndexBarViewDelegate, UIIndexBarVisualStyle;
 
-__attribute__((visibility("hidden")))
-@interface UIIndexBarView : UIControl
+@interface UIIndexBarView : UIControl <UIAccessibilityHUDGestureDelegate>
 {
     UIColor *_indexColor;
     NSArray *_entries;
@@ -22,12 +23,14 @@ __attribute__((visibility("hidden")))
     double _cachedDisplayHighlightedIndex;
     UIColor *_nonTrackingBackgroundColor;
     UISelectionFeedbackGenerator *_selectionFeedbackGenerator;
+    UIAccessibilityHUDGestureManager *_axHUDGestureManager;
     id <UIIndexBarVisualStyle> _visualStyle;
     NSArray *_displayEntries;
 }
 
 @property(retain, nonatomic) NSArray *displayEntries; // @synthesize displayEntries=_displayEntries;
 @property(retain, nonatomic) id <UIIndexBarVisualStyle> visualStyle; // @synthesize visualStyle=_visualStyle;
+@property(retain, nonatomic) UIAccessibilityHUDGestureManager *axHUDGestureManager; // @synthesize axHUDGestureManager=_axHUDGestureManager;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *selectionFeedbackGenerator; // @synthesize selectionFeedbackGenerator=_selectionFeedbackGenerator;
 @property(copy, nonatomic) UIColor *nonTrackingBackgroundColor; // @synthesize nonTrackingBackgroundColor=_nonTrackingBackgroundColor;
 @property(nonatomic) double cachedDisplayHighlightedIndex; // @synthesize cachedDisplayHighlightedIndex=_cachedDisplayHighlightedIndex;
@@ -38,6 +41,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <UIIndexBarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSArray *entries; // @synthesize entries=_entries;
 - (void).cxx_destruct;
+- (_Bool)_accessibilityHUDGestureManagerCancelsTouchesInView:(id)arg1;
+- (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;
+- (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint)arg2;
+- (void)_setupAXHUDGestureIfNecessary;
 - (_Bool)_selectEntry:(id)arg1 atIndex:(long long)arg2;
 - (_Bool)_didSelectEntry:(id)arg1 atIndex:(long long)arg2;
 - (void)_userInteractionStopped;
@@ -53,15 +61,23 @@ __attribute__((visibility("hidden")))
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 @property(readonly, nonatomic) double displayHighlightedIndex;
 - (void)_updateDisplayEntries;
+- (void)didMoveToWindow;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)_canDrawContent;
 - (void)layoutSubviews;
+- (_Bool)_defaultCanBecomeFocused;
 - (_Bool)canBecomeFocused;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)resetDeflection:(_Bool)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

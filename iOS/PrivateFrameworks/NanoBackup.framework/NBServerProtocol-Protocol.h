@@ -9,10 +9,10 @@
 @class NSUUID;
 
 @protocol NBServerProtocol <NSObject>
-- (void)deleteBackupID:(NSUUID *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)createBackupForPairingID:(NSUUID *)arg1 completionHandler:(void (^)(NBBackup *, NSError *))arg2;
+- (void)deleteBackupID:(NSUUID *)arg1 backupType:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)createLocalBackupForPairingID:(NSUUID *)arg1 completionHandler:(void (^)(NBBackup *, NSError *))arg2;
 - (void)restoreFromPairingID:(NSUUID *)arg1 forPairingID:(NSUUID *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)restoreFromBackupID:(NSUUID *)arg1 forPairingID:(NSUUID *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)listBackupsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
+- (void)restoreFromBackupID:(NSUUID *)arg1 backupType:(unsigned long long)arg2 forPairingID:(NSUUID *)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)listBackupsOfType:(unsigned long long)arg1 timeout:(long long)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
 @end
 

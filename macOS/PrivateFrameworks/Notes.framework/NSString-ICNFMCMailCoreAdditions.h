@@ -9,24 +9,26 @@
 @class NSData;
 
 @interface NSString (ICNFMCMailCoreAdditions)
-+ (id)contentIDStringFromCidUrl:(id)arg1;
-+ (id)messageIDStringWithDomainHint:(id)arg1;
-+ (id)newURLForContentID:(id)arg1 percentEscaped:(BOOL)arg2;
-- (id)stringByRemovingCharactersInSet:(id)arg1;
-- (id)stringByReplacingNonBreakingSpacesWithString:(id)arg1;
-@property(readonly, nonatomic) unsigned long long effectivePrefixLength;
-@property(readonly, copy, nonatomic) NSData *MD5Digest;
-@property(readonly, copy, nonatomic) NSString *messageIDSubstring;
-@property(readonly, copy, nonatomic) NSData *encodedMessageID;
-@property(readonly, nonatomic) BOOL isCalendarInvitation;
-- (id)newStringByApplyingBodyClassName:(id)arg1;
-- (id)stringByApplyingBodyClassName:(id)arg1;
-- (id)stringByReplacingString:(id)arg1 withString:(id)arg2;
-- (long long)caseInsensitiveCompareExcludingXDash:(id)arg1;
-- (BOOL)isEqualToStringIgnoringCase:(id)arg1;
-- (BOOL)isEqualToStringIgnoreCaseAndDiacritics:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *stringWithNoExtraSpaces;
-@property(readonly, copy, nonatomic) NSString *stringSuitableForHTML;
-@property(readonly, copy, nonatomic) NSString *stringByLocalizingReOrFwdPrefix;
++ (id)ic_contentIDStringFromCidUrl:(id)arg1;
++ (id)ic_messageIDStringWithDomainHint:(id)arg1;
++ (id)ic_newURLForContentID:(id)arg1 percentEscaped:(BOOL)arg2;
+- (id)ic_stringByRemovingCharactersInSet:(id)arg1;
+- (id)ic_stringByReplacingNonBreakingSpacesWithString:(id)arg1;
+@property(readonly, copy, nonatomic) NSData *ic_MD5Digest;
+@property(readonly, copy, nonatomic) NSString *ic_messageIDSubstring;
+@property(readonly, copy, nonatomic) NSData *ic_encodedMessageID;
+@property(readonly, nonatomic) BOOL ic_isCalendarInvitation;
+- (id)ic_newStringByApplyingBodyClassName:(id)arg1;
+- (id)ic_stringByApplyingBodyClassName:(id)arg1;
+- (id)ic_stringByReplacingString:(id)arg1 withString:(id)arg2;
+- (long long)ic_caseInsensitiveCompareExcludingXDash:(id)arg1;
+- (BOOL)ic_isEqualToStringIgnoringCase:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *ic_stringSuitableForHTML;
+@property(readonly, copy, nonatomic) NSString *ic_stringByLocalizingReOrFwdPrefix;
+@property(readonly, copy, nonatomic) NSString *ic_urlStringByIncrementingCompositeVersionNumber;
+- (id)ic_bestMimeCharsetUsingHint:(unsigned long long)arg1;
+- (id)ic_decodeMimeHeaderValueWithCharsetHint:(id)arg1 detectOtherEncodings:(BOOL)arg2 fromWindows:(BOOL)arg3;
+- (id)ic_encodedHeaderDataWithEncodingHint:(unsigned long long)arg1 encodingUsed:(unsigned long long *)arg2;
+- (id)ic_encodedHeaderDataWithEncodingHint:(unsigned long long)arg1;
 @end
 

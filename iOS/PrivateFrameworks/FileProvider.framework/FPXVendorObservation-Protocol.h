@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSFileProviderEnumerationProperties;
+@class FPExtensionEnumerationSettings, NSFileProviderRequest;
 @protocol FPXEnumeratorObserver;
 
 @protocol FPXVendorObservation
-- (void)_startObservingCollectionWithProperties:(NSFileProviderEnumerationProperties *)arg1 observer:(id <FPXEnumeratorObserver>)arg2 completionHandler:(void (^)(id <FPXEnumerator>, NSError *))arg3;
+- (void)fetchAndStartEnumeratingWithSettings:(FPExtensionEnumerationSettings *)arg1 observer:(id <FPXEnumeratorObserver>)arg2 request:(NSFileProviderRequest *)arg3 completionHandler:(void (^)(id <FPXEnumerator>, NSError *))arg4;
 @end
 

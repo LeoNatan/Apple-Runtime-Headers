@@ -48,8 +48,10 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL providesControlForAllVolumeFeatures;
 - (void)removeOutputDevice:(id)arg1;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1;
 @property(readonly) NSArray *outputDevices;
+@property(readonly) BOOL supportsMultipleBluetoothOutputDevices;
 @property(readonly) BOOL supportsMultipleOutputDevices;
 - (void)setOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) AVOutputDevice *outputDevice;

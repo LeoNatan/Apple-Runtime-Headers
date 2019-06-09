@@ -21,7 +21,6 @@
 @property(readonly, nonatomic) long long requestedLength;
 @property(readonly, nonatomic) long long requestedOffset;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithLoadingRequest:(id)arg1 requestedOffset:(long long)arg2 requestedLength:(long long)arg3 requestsAllDataToEndOfResource:(_Bool)arg4 canSupplyIncrementalDataImmediately:(_Bool)arg5;
 - (id)init;

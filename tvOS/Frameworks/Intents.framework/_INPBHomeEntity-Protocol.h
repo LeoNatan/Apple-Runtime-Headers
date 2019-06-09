@@ -6,17 +6,41 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBString;
+@class NSString, _INPBDataString, _INPBString;
 
 @protocol _INPBHomeEntity <NSObject>
+@property(readonly, nonatomic) _Bool hasZone;
+@property(retain, nonatomic) _INPBDataString *zone;
+@property(nonatomic) _Bool hasSceneType;
+@property(nonatomic) int sceneType;
+@property(readonly, nonatomic) _Bool hasRoom;
+@property(retain, nonatomic) _INPBDataString *room;
 @property(readonly, nonatomic) _Bool hasName;
 @property(retain, nonatomic) _INPBString *name;
+@property(readonly, nonatomic) _Bool hasHome;
+@property(retain, nonatomic) _INPBDataString *home;
+@property(readonly, nonatomic) _Bool hasGroup;
+@property(retain, nonatomic) _INPBDataString *group;
 @property(nonatomic) _Bool hasEntityType;
 @property(nonatomic) int entityType;
+@property(readonly, nonatomic) _Bool hasEntityName;
+@property(retain, nonatomic) _INPBDataString *entityName;
+@property(readonly, nonatomic) _Bool hasEntityIdentifier;
+@property(copy, nonatomic) NSString *entityIdentifier;
+@property(readonly, nonatomic) unsigned long long deviceTypesCount;
+@property(readonly, nonatomic) int *deviceTypes;
 @property(nonatomic) _Bool hasDeviceType;
 @property(nonatomic) int deviceType;
+- (int)StringAsSceneType:(NSString *)arg1;
+- (NSString *)sceneTypeAsString:(int)arg1;
 - (int)StringAsEntityType:(NSString *)arg1;
 - (NSString *)entityTypeAsString:(int)arg1;
+- (int)StringAsDeviceTypes:(NSString *)arg1;
+- (NSString *)deviceTypesAsString:(int)arg1;
+- (void)setDeviceTypes:(int *)arg1 count:(unsigned long long)arg2;
+- (int)deviceTypesAtIndex:(unsigned long long)arg1;
+- (void)addDeviceTypes:(int)arg1;
+- (void)clearDeviceTypes;
 - (int)StringAsDeviceType:(NSString *)arg1;
 - (NSString *)deviceTypeAsString:(int)arg1;
 @end

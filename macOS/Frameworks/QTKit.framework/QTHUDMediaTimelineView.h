@@ -6,51 +6,54 @@
 
 #import <AppKit/NSView.h>
 
-@class NSArray, NSSet, QTHUDMediaTimelineTracksView;
-@protocol QTHUDMediaTimelineViewDelegate;
-
 @interface QTHUDMediaTimelineView : NSView
 {
-    CDStruct_900afa40 _mediaDuration;
-    CDStruct_900afa40 _mediaTimeOffset;
-    double _minimumPointsPerSecond;
-    QTHUDMediaTimelineTracksView *_tracksView;
-    BOOL _hasEnclosingScrollView;
-    BOOL _pinAtMinimumPointsPerSecond;
-    BOOL _mutatingTracksViewTimes;
-    id <QTHUDMediaTimelineViewDelegate> _delegate;
 }
 
-+ (CDStruct_900afa40)mediaTimeForPosition:(double)arg1 outOfMediaDuration:(CDStruct_900afa40)arg2 timeOffset:(CDStruct_900afa40)arg3 inViewWithWidth:(double)arg4;
-+ (double)positionForMediaTime:(CDStruct_900afa40)arg1 outOfMediaDuration:(CDStruct_900afa40)arg2 timeOffset:(CDStruct_900afa40)arg3 inViewWithWidth:(double)arg4;
-@property(nonatomic) id <QTHUDMediaTimelineViewDelegate> delegate; // @synthesize delegate=_delegate;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
++ (CDStruct_2ec95fd7)mediaTimeForPosition:(double)arg1 outOfMediaDuration:(CDStruct_2ec95fd7)arg2 timeOffset:(CDStruct_2ec95fd7)arg3 inViewWithWidth:(double)arg4;
++ (double)positionForMediaTime:(CDStruct_2ec95fd7)arg1 outOfMediaDuration:(CDStruct_2ec95fd7)arg2 timeOffset:(CDStruct_2ec95fd7)arg3 inViewWithWidth:(double)arg4;
+- (void)setSelectionStart:(CDStruct_2ec95fd7)arg1;
+- (CDStruct_2ec95fd7)selectionStart;
+- (void)setSelectionEnd:(CDStruct_2ec95fd7)arg1;
+- (CDStruct_2ec95fd7)selectionEnd;
+- (BOOL)canChangePointsPerSecond;
+- (void)setPointsPerSecond:(double)arg1;
+- (double)pointsPerSecond;
+- (double)maximumPointsPerSecond;
+- (double)minimumPointsPerSecond;
 - (void)rescalePointsPerSecond;
-@property(readonly, nonatomic) BOOL canChangePointsPerSecond; // @dynamic canChangePointsPerSecond;
-@property(readonly, nonatomic) double maximumPointsPerSecond; // @dynamic maximumPointsPerSecond;
-@property(readonly, nonatomic) double minimumPointsPerSecond; // @dynamic minimumPointsPerSecond;
-@property double pointsPerSecond; // @dynamic pointsPerSecond;
-@property(nonatomic) BOOL showsRangeMarkers; // @dynamic showsRangeMarkers;
-@property(copy, nonatomic) NSSet *rangeMarkers; // @dynamic rangeMarkers;
-@property(nonatomic) CDStruct_900afa40 currentMediaTime; // @dynamic currentMediaTime;
-@property(nonatomic) BOOL usesSelectionDetents; // @dynamic usesSelectionDetents;
-@property(copy, nonatomic) NSArray *selectionDetents; // @dynamic selectionDetents;
-@property(nonatomic) CDStruct_900afa40 maximumSelectionDuration; // @dynamic maximumSelectionDuration;
-@property(nonatomic) CDStruct_900afa40 minimumSelectionDuration; // @dynamic minimumSelectionDuration;
-@property(nonatomic) CDStruct_900afa40 selectionEnd; // @dynamic selectionEnd;
-@property(nonatomic) CDStruct_900afa40 selectionStart; // @dynamic selectionStart;
-@property(nonatomic) CDStruct_900afa40 mediaTimeOffset; // @dynamic mediaTimeOffset;
-@property(nonatomic) CDStruct_900afa40 mediaDuration; // @dynamic mediaDuration;
-@property(nonatomic) BOOL showsTrackPreviews; // @dynamic showsTrackPreviews;
+- (void)superviewFrameDidChange:(id)arg1;
+- (void)setSelectionDetents:(id)arg1;
+- (void)setMaximumSelectionDuration:(CDStruct_2ec95fd7)arg1;
+- (void)setMinimumSelectionDuration:(CDStruct_2ec95fd7)arg1;
+- (void)setShowsRangeMarkers:(BOOL)arg1;
+- (void)setRangeMarkers:(id)arg1;
+- (id)rangeMarkers;
+- (void)setUsesSelectionDetents:(BOOL)arg1;
+- (void)setMediaTimeOffset:(CDStruct_2ec95fd7)arg1;
+- (void)setMediaDuration:(CDStruct_2ec95fd7)arg1;
+- (void)setShowsTrackPreviews:(BOOL)arg1;
 - (void)removeObjectFromTimelineTracksAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inTimelineTracksAtIndex:(unsigned long long)arg2;
-- (id)timelineTracks;
 - (unsigned long long)countForTimelineTracks;
-- (void)superviewFrameDidChange:(id)arg1;
-- (void)viewDidMoveToSuperview;
+- (id)selectionDetents;
+- (BOOL)usesSelectionDetents;
+- (BOOL)showsRangeMarkers;
+- (CDStruct_2ec95fd7)currentMediaTime;
+- (CDStruct_2ec95fd7)mediaDuration;
+- (CDStruct_2ec95fd7)maximumSelectionDuration;
+- (void)setCurrentMediaTime:(CDStruct_2ec95fd7)arg1;
+- (CDStruct_2ec95fd7)minimumSelectionDuration;
+- (CDStruct_2ec95fd7)mediaTimeOffset;
+- (id)timelineTracks;
+- (BOOL)showsTrackPreviews;
 - (void)viewWillMoveToSuperview:(id)arg1;
-- (void)dealloc;
+- (void)viewDidMoveToSuperview;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 
 @end
 

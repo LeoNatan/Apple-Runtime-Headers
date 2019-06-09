@@ -8,22 +8,27 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOMapsLaunchFeedbackCollection : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     struct GEOSessionID _sessionId;
     NSString *_sourceAppBundleId;
     NSString *_uriScheme;
     struct {
-        unsigned int sessionId:1;
-    } _has;
+        unsigned int has_sessionId:1;
+        unsigned int read_sourceAppBundleId:1;
+        unsigned int read_uriScheme:1;
+        unsigned int wrote_sessionId:1;
+        unsigned int wrote_sourceAppBundleId:1;
+        unsigned int wrote_uriScheme:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *uriScheme; // @synthesize uriScheme=_uriScheme;
-@property(retain, nonatomic) NSString *sourceAppBundleId; // @synthesize sourceAppBundleId=_sourceAppBundleId;
-@property(nonatomic) struct GEOSessionID sessionId; // @synthesize sessionId=_sessionId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,11 +37,17 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *uriScheme;
 @property(readonly, nonatomic) _Bool hasUriScheme;
+- (void)_readUriScheme;
+@property(retain, nonatomic) NSString *sourceAppBundleId;
 @property(readonly, nonatomic) _Bool hasSourceAppBundleId;
+- (void)_readSourceAppBundleId;
 @property(nonatomic) _Bool hasSessionId;
+@property(nonatomic) struct GEOSessionID sessionId;
 
 @end
 

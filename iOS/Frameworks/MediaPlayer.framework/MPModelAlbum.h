@@ -12,6 +12,7 @@
 {
 }
 
++ (id)__downloadedDate_KEY;
 + (id)__songPopularityBlock_KEY;
 + (id)__shortEditorNotes_KEY;
 + (id)__editorNotes_KEY;
@@ -67,6 +68,7 @@
 @property(nonatomic, getter=isCompilation) _Bool compilation; // @dynamic compilation;
 @property(copy, nonatomic) NSString *copyrightText; // @dynamic copyrightText;
 @property(nonatomic) long long discCount; // @dynamic discCount;
+@property(readonly, copy, nonatomic) NSDate *downloadedDate; // @dynamic downloadedDate;
 @property(copy, nonatomic) NSString *editorNotes; // @dynamic editorNotes;
 @property(retain, nonatomic) MPModelGenre *genre; // @dynamic genre;
 @property(nonatomic) _Bool hasCleanContent; // @dynamic hasCleanContent;

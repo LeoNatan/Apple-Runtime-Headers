@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (struct CGSize)intrinsicContentSize;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)drawRect:(struct CGRect)arg1;
 
 @end

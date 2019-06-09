@@ -19,8 +19,10 @@
     MNTraceEventRecorder *_recorder;
     id <MNLocationProviderDelegate> _delegate;
     NSArray *_traceEvents;
+    double _simulationSpeedOverride;
 }
 
+@property(nonatomic) double simulationSpeedOverride; // @synthesize simulationSpeedOverride=_simulationSpeedOverride;
 @property(readonly, nonatomic) NSArray *traceEvents; // @synthesize traceEvents=_traceEvents;
 @property(nonatomic) __weak id <MNLocationProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -56,9 +58,12 @@
 - (void)startUpdatingHeading;
 - (void)stopUpdatingLocation;
 - (void)startUpdatingLocation;
+- (id)currentDate;
 @property(readonly, nonatomic) double currentTime;
 - (void)insertVoiceEventAtTime:(double)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)generateGuidanceWithRequest:(id)arg1 response:(id)arg2 routeAttributes:(id)arg3 routeIndex:(unsigned int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)generateGuidance;
+- (void)recordLocationsAlongRouteWithRecorder:(id)arg1;
 - (void)_generateEvents;
 - (void)_tearDown;
 - (void)_setup;

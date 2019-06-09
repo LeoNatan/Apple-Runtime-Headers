@@ -26,7 +26,9 @@
 - (void)becomeCurrent;
 @property(readonly, nonatomic) _Bool isCurrent;
 @property(readonly, nonatomic) RERelevanceEngine *relevanceEngine;
-- (void)_trainWithElement:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3;
+- (void)_trainElement:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3;
+- (void)_trainElementWithIdentifier:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3;
+- (void)trainWithUnmanagedElement:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3;
 - (void)trainWithElement:(id)arg1 isPositiveEvent:(_Bool)arg2 interaction:(id)arg3;
 - (void)dealloc;
 - (id)init;

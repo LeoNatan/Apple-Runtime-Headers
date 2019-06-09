@@ -6,10 +6,17 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface AVThemeManager : NSObject
 {
 }
 
++ (id)infoMenuElementSelectedTextColor;
++ (id)infoMenuElementFocusColor;
++ (id)infoMenuElementNormalColor;
++ (id)infoMenuElementSelectedBackgroundColor;
++ (id)infoMenuElementFocusViewColor;
++ (id)infoMenuFont;
 + (id)_darkModeinfoPanelTextColor;
 + (id)_lightModeinfoPanelTextColor;
 + (id)fontForTransportBarTimeLabels;

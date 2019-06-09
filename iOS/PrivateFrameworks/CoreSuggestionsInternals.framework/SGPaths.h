@@ -12,10 +12,10 @@
 
 + (id)suggestionsSubdirectory:(id)arg1;
 + (id)suggestionsSubdirectory:(id)arg1 creatingDirectoriesIfNeeded:(_Bool)arg2;
-+ (id)suggestionsDirectoryFile:(id)arg1;
 + (id)suggestionsDirectoryFile:(id)arg1 creatingSuggestionsDirectoryIfNeeded:(_Bool)arg2;
-+ (id)suggestionsDirectory;
++ (id)suggestionsDirectoryFile:(id)arg1;
 + (id)suggestionsDirectoryAfterCreatingIfNeeded:(_Bool)arg1;
++ (id)suggestionsDirectory;
 
 @end
 

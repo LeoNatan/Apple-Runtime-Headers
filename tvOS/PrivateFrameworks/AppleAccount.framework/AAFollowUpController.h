@@ -15,6 +15,7 @@
 - (void)dismissFollowUpWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pendingFollowUpWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)postFollowUpWithIdentifier:(id)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_followupActionUserInfo:(id)arg1;
 - (id)_followUpItemForRenewCredentials:(id)arg1;
 - (id)_followUpItemForVerifyTerms:(id)arg1;
 - (id)_followUpItemForStartUsing:(id)arg1;

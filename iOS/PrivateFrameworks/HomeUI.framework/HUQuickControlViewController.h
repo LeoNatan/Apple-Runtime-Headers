@@ -27,12 +27,16 @@
     id <HUQuickControlItemUpdating> _itemUpdater;
     id <HUQuickControlViewControllerDelegate> _delegate;
     unsigned long long _controlSize;
+    unsigned long long _controlOrientation;
+    unsigned long long _preferredControl;
     HUQuickControlSimpleItemUpdater *_internalItemUpdater;
 }
 
 + (id)controlItemPredicate;
 @property(nonatomic) _Bool areControlItemsRequestingToBeHidden; // @synthesize areControlItemsRequestingToBeHidden=_areControlItemsRequestingToBeHidden;
 @property(readonly, nonatomic) HUQuickControlSimpleItemUpdater *internalItemUpdater; // @synthesize internalItemUpdater=_internalItemUpdater;
+@property(nonatomic) unsigned long long preferredControl; // @synthesize preferredControl=_preferredControl;
+@property(nonatomic) unsigned long long controlOrientation; // @synthesize controlOrientation=_controlOrientation;
 @property(nonatomic) unsigned long long controlSize; // @synthesize controlSize=_controlSize;
 @property(nonatomic) __weak id <HUQuickControlViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak id <HUQuickControlItemUpdating> itemUpdater; // @synthesize itemUpdater=_itemUpdater;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioMix, AVComposition, AVVideoComposition, CIImage, NSArray, NSError, NUComposition, NUGeometrySpaceMap, NUImageGeometry, NUObservatory, NUPriority, NURenderJobStatistics, NURenderNode, NURenderPipeline, NURenderRequest;
+@class AVAudioMix, AVComposition, AVVideoComposition, CIImage, NSArray, NSError, NSString, NUComposition, NUGeometrySpaceMap, NUImageGeometry, NUObservatory, NUPriority, NURenderJobStatistics, NURenderNode, NURenderPipeline, NURenderRequest;
 @protocol NUDevice, NUExtentPolicy, NURenderStatistics, NURenderer, NUScalePolicy, OS_dispatch_group, OS_dispatch_queue;
 
 @interface NURenderJob : NSObject
@@ -17,6 +17,7 @@
     NSError *_error;
     BOOL _isAborted;
     BOOL _failed;
+    BOOL _replySynchronous;
     BOOL _isExecuting;
     BOOL _isCanceled;
     BOOL _isFinished;
@@ -96,9 +97,13 @@
 - (void)abortRender;
 - (void)abortPrepare;
 - (void)abortStage:(long long)arg1;
-- (CDStruct_7ddbbeae)_atomicCancel;
-- (void)_cancelCoalescedJob;
-- (void)cancelCoalescedJob;
+- (CDStruct_550fdc95)_atomicCancel;
+- (void)_resume;
+- (void)resume;
+- (void)_pause;
+- (void)pause;
+- (BOOL)_cancelCoalescedJob;
+- (BOOL)cancelCoalescedJob;
 - (BOOL)_shouldCancelCoalescedJob;
 - (void)_cancel;
 - (void)cancel;
@@ -124,16 +129,19 @@
 @property(readonly) id <NUExtentPolicy> extentPolicy;
 @property(readonly) id <NUScalePolicy> scalePolicy;
 @property(readonly) NUPriority *priority;
+- (void)_emitSignpostEventType:(unsigned char)arg1 forStage:(long long)arg2 duration:(double)arg3;
 - (void)_run:(long long)arg1;
 - (void)run:(long long)arg1;
 - (id)description;
 @property(readonly) CDStruct_912cb5d2 imageSize;
 - (long long)resolvedSampleMode:(long long)arg1;
 - (id)newRenderPipelineStateForEvaluationMode:(long long)arg1;
+- (void)runSynchronous;
 - (id)initWithRequest:(id)arg1;
 - (id)init;
 - (id)renderImage:(id)arg1 into:(id)arg2 colorSpace:(id)arg3 roi:(id)arg4 imageSize:(CDStruct_912cb5d2)arg5 error:(out id *)arg6;
 - (BOOL)renderVideoFrames:(id)arg1 intoPixelBuffer:(struct __CVBuffer *)arg2 time:(CDStruct_1b6d18a9)arg3 colorSpace:(id)arg4 error:(out id *)arg5;
+@property(readonly, copy, nonatomic) NSString *additionalDebugInfo;
 
 @end
 

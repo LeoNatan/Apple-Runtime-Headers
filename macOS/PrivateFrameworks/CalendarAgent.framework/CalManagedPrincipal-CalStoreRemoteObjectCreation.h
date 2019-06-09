@@ -8,5 +8,6 @@
 
 @interface CalManagedPrincipal (CalStoreRemoteObjectCreation)
 - (id)remoteManagedObject;
+- (void)getUserAvailabilityForEventID:(id)arg1 addresses:(id)arg2 timeRange:(id)arg3 reply:(CDUnknownBlockType)arg4;
 @end
 

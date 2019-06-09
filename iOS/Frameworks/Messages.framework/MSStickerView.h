@@ -42,6 +42,7 @@
 @property(nonatomic) double animationDuration; // @synthesize animationDuration=_animationDuration;
 @property(retain, nonatomic) MSSticker *sticker; // @synthesize sticker=_sticker;
 - (void).cxx_destruct;
+- (id)_stickerSendManager;
 - (void)handleLongPress:(id)arg1;
 - (void)handleTap:(id)arg1;
 - (void)animationTimerFired:(unsigned long long)arg1;

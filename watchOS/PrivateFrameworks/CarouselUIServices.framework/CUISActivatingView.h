@@ -8,13 +8,11 @@
 
 #import <CarouselUIServices/PUICActivityIndicatorViewDelegate-Protocol.h>
 
-@class NSString, PUICActivityIndicatorView, PUICStatusImageView, UIImageView, UILabel;
+@class NSString, PUICStatusImageView, UIImageView, UILabel;
 
 @interface CUISActivatingView : UIView <PUICActivityIndicatorViewDelegate>
 {
-    PUICActivityIndicatorView *_indicatorView;
     UILabel *_loadingView;
-    UILabel *_appNameView;
     UIView *_activateView;
     _Bool _activityIndicatorEnabled;
     _Bool _ignoreLayoutRequests;
@@ -27,14 +25,6 @@
 @property(retain, nonatomic) PUICStatusImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
 @property(nonatomic) _Bool activityIndicatorEnabled; // @synthesize activityIndicatorEnabled=_activityIndicatorEnabled;
 - (void).cxx_destruct;
-- (float)indicatorBaselineFromTop;
-- (void)activityIndicatorViewDidAnimateIn:(id)arg1;
-@property(readonly, nonatomic) UILabel *appNameView;
-@property(readonly, nonatomic) PUICActivityIndicatorView *indicatorView;
-- (void)_destroyAppNameView;
-- (void)_createAppNameViewIfNecessary;
-- (id)_indicatorView;
-- (void)_setIndicatorView:(id)arg1;
 @property(readonly, nonatomic) _Bool isActivateViewLoaded;
 @property(retain, nonatomic) UIView *activateView;
 @property(retain, nonatomic) UIImageView *activateImageView;

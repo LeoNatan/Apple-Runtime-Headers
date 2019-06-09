@@ -19,6 +19,7 @@
     BOOL _voided;
     BOOL _hasStoredValue;
     BOOL _liveRenderedBackground;
+    BOOL _supportsCategoryVisualization;
     BOOL _revoked;
     unsigned long long _passType;
     NSString *_serialNumber;
@@ -55,6 +56,7 @@
 @property(nonatomic, getter=isRevoked) BOOL revoked; // @synthesize revoked=_revoked;
 @property(retain, nonatomic) NSDate *modifiedDate; // @synthesize modifiedDate=_modifiedDate;
 @property(retain, nonatomic) NSDate *ingestedDate; // @synthesize ingestedDate=_ingestedDate;
+@property(nonatomic) BOOL supportsCategoryVisualization; // @synthesize supportsCategoryVisualization=_supportsCategoryVisualization;
 @property(nonatomic) BOOL liveRenderedBackground; // @synthesize liveRenderedBackground=_liveRenderedBackground;
 @property(readonly, nonatomic) PKImage *partialFrontFaceImagePlaceholder; // @synthesize partialFrontFaceImagePlaceholder=_partialFrontFaceImagePlaceholder;
 @property(nonatomic) BOOL hasStoredValue; // @synthesize hasStoredValue=_hasStoredValue;
@@ -103,6 +105,7 @@
 @property(readonly, nonatomic) struct CGRect logoRect;
 @property(readonly, nonatomic) PKLiveRenderedShaderSet *liveRenderedShaderSet;
 @property(readonly, nonatomic) PKPassLiveRenderedImageSet *liveRenderedImageSet;
+@property(readonly, nonatomic) NSString *businessChatIdentifier;
 - (id)thumbnailImage;
 - (id)stripImage;
 - (id)backgroundImage;

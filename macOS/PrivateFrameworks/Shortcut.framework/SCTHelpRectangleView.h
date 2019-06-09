@@ -6,6 +6,7 @@
 
 #import <AppKit/NSView.h>
 
+__attribute__((visibility("hidden")))
 @interface SCTHelpRectangleView : NSView
 {
     struct CGRect mTargetRect;

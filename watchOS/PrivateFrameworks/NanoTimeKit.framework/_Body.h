@@ -23,8 +23,8 @@
     NSMutableArray *_shiftTexs23;
     NSMutableArray *_shiftTexs13;
     float _curBodyX;
-    union _GLKVector2 _bone;
-    union _GLKVector2 _offset;
+    // Error parsing type: , name: _bone
+    // Error parsing type: , name: _offset
 }
 
 @property(nonatomic) unsigned char waitingForFootRaise; // @synthesize waitingForFootRaise=_waitingForFootRaise;
@@ -33,8 +33,12 @@
 @property(nonatomic) BOOL animationFrame; // @synthesize animationFrame=_animationFrame;
 @property(nonatomic) BOOL animationDirection; // @synthesize animationDirection=_animationDirection;
 @property(nonatomic) float curBodyX; // @synthesize curBodyX=_curBodyX;
-@property(nonatomic) union _GLKVector2 offset; // @synthesize offset=_offset;
-@property(nonatomic) union _GLKVector2 bone; // @synthesize bone=_bone;
+// Error parsing type for property offset:
+// Property attributes: T,N,V_offset
+
+// Error parsing type for property bone:
+// Property attributes: T,N,V_bone
+
 @property(retain, nonatomic) NSMutableArray *shiftTexs13; // @synthesize shiftTexs13=_shiftTexs13;
 @property(retain, nonatomic) NSMutableArray *shiftTexs23; // @synthesize shiftTexs23=_shiftTexs23;
 @property(retain, nonatomic) NSMutableArray *shiftTexs14; // @synthesize shiftTexs14=_shiftTexs14;

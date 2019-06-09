@@ -10,13 +10,6 @@
 @class NSArray, NSIndexPath, NSString, UIColor, UITableView, UITableViewCell, UIView, _UITableViewCellActionButton;
 
 @protocol UITableViewDelegatePrivate <UITableViewDelegate, UITableViewFocusDelegateLegacy>
-- (long long)tableView:(UITableView *)arg1 titleAlignmentForFooterInSection:(long long)arg2;
-- (long long)tableView:(UITableView *)arg1 titleAlignmentForHeaderInSection:(long long)arg2;
-- (double)marginForTableView:(UITableView *)arg1;
-- (void)tableView:(UITableView *)arg1 didUpdateTextFieldForRowAtIndexPath:(NSIndexPath *)arg2 withValue:(NSString *)arg3;
-- (struct CGPoint)tableView:(UITableView *)arg1 newContentOffsetAfterUpdate:(struct CGPoint)arg2 context:(id)arg3;
-- (double)tableViewSpacingForExtraSeparators:(UITableView *)arg1;
-- (_Bool)tableView:(UITableView *)arg1 wantsHeaderForSection:(long long)arg2;
 
 @optional
 - (void)tableView:(UITableView *)arg1 didEndSwipingRowAtIndexPath:(NSIndexPath *)arg2;
@@ -47,5 +40,12 @@
 - (struct CGRect)tableView:(UITableView *)arg1 frameForSectionIndexGivenProposedFrame:(struct CGRect)arg2;
 - (double)tableView:(UITableView *)arg1 maxTitleWidthForFooterInSection:(long long)arg2;
 - (double)tableView:(UITableView *)arg1 maxTitleWidthForHeaderInSection:(long long)arg2;
+- (long long)tableView:(UITableView *)arg1 titleAlignmentForFooterInSection:(long long)arg2;
+- (long long)tableView:(UITableView *)arg1 titleAlignmentForHeaderInSection:(long long)arg2;
+- (double)marginForTableView:(UITableView *)arg1;
+- (void)tableView:(UITableView *)arg1 didUpdateTextFieldForRowAtIndexPath:(NSIndexPath *)arg2 withValue:(NSString *)arg3;
+- (struct CGPoint)tableView:(UITableView *)arg1 newContentOffsetAfterUpdate:(struct CGPoint)arg2 context:(id)arg3;
+- (double)tableViewSpacingForExtraSeparators:(UITableView *)arg1;
+- (_Bool)tableView:(UITableView *)arg1 wantsHeaderForSection:(long long)arg2;
 @end
 

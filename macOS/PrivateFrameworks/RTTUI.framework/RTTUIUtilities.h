@@ -46,7 +46,7 @@
 - (id)bubbleColorForMe:(BOOL)arg1;
 - (struct CGSize)bubbleInsetForMe:(BOOL)arg1;
 - (struct CGSize)textInsetForMe:(BOOL)arg1;
-- (unsigned long long)textAlignmentForMe:(BOOL)arg1;
+- (long long)textAlignmentForMe:(BOOL)arg1;
 - (id)ttyMeContact;
 - (id)myPhoneNumber;
 - (id)init;

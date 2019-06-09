@@ -6,6 +6,7 @@
 
 #import <AutoBugCaptureCore/CaseReportOutlet.h>
 
+__attribute__((visibility("hidden")))
 @interface CrashReportOutlet : CaseReportOutlet
 {
 }

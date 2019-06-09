@@ -6,11 +6,12 @@
 
 #import <SafariShared/WBSHistoryLoader-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSSet, WBSHistoryItem, WBSHistoryVisit;
+@class NSArray, NSData, NSDate, NSSet, NSString, WBSHistoryItem, WBSHistoryTag, WBSHistoryVisit;
 @protocol WBSHistoryStoreDelegate;
 
 @protocol WBSHistoryStore <WBSHistoryLoader>
 @property(readonly, nonatomic) _Bool isUsingInMemoryDatabase;
+@property(nonatomic) _Bool syncsWithManateeContainer;
 @property(nonatomic) _Bool pushNotificationsAreInitialized;
 @property(nonatomic) unsigned long long cachedNumberOfDevicesInSyncCircle;
 @property(copy, nonatomic) NSData *longLivedSaveOperationData;
@@ -30,8 +31,14 @@
 - (void)pruneTombstonesWithEndDatePriorToDate:(NSDate *)arg1;
 - (void)replayAndAddTombstones:(NSArray *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)getAllTombstonesWithCompletion:(void (^)(NSSet *))arg1;
+- (void)setTitle:(NSString *)arg1 ofTag:(WBSHistoryTag *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
+- (void)fetchTopicsFromStartDate:(NSDate *)arg1 toEndDate:(NSDate *)arg2 limit:(unsigned long long)arg3 minimumItemCount:(unsigned long long)arg4 sortOrder:(long long)arg5 completionHandler:(void (^)(NSArray *, NSError *))arg6;
+- (void)fetchTopicsFromStartDate:(NSDate *)arg1 toEndDate:(NSDate *)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
+- (void)assignHistoryItem:(WBSHistoryItem *)arg1 toTopicTags:(NSSet *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
+- (void)tagsWithIdentifiers:(NSArray *)arg1 type:(unsigned long long)arg2 level:(long long)arg3 creatingIfNecessary:(_Bool)arg4 withTitles:(NSArray *)arg5 completionHandler:(void (^)(NSArray *, NSArray *, NSError *))arg6;
 - (void)closeWithCompletionHandler:(void (^)(void))arg1;
 - (void)performMaintenance:(void (^)(void))arg1;
+- (void)vacuumHistoryWithCompletionHandler:(void (^)(void))arg1;
 - (void)clearHistoryVisitsAddedAfterDate:(NSDate *)arg1 beforeDate:(NSDate *)arg2 completionHandler:(void (^)(void))arg3;
 - (void)clearHistoryWithCompletionHandler:(void (^)(void))arg1;
 - (void)visitTitleWasUpdated:(WBSHistoryVisit *)arg1;

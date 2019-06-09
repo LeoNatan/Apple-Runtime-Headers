@@ -18,10 +18,12 @@
 - (void)_handleProgressForOperation:(id)arg1 withArguments:(id)arg2;
 - (void)addOperationWithOperationInfo:(id)arg1;
 - (BOOL)hasTCCAuthorization;
-- (BOOL)darkWakeEnabledEntitlement;
 - (id)apsEnvironmentEntitlement;
+- (id)applicationBundleIDForPush;
 - (id)_clientPrefixEntitlement;
-- (id)applicationIdentifier;
+- (id)associatedApplicationBundleID;
+- (id)applicationBundleID;
+- (BOOL)hasAllowUnverifiedAccountEntitlement;
 - (BOOL)hasNonLegacyShareURLEntitlement;
 - (id)serviceNameForContainerMapEntitlement;
 - (BOOL)hasDisplaysSystemAcceptPromptEntitlement;

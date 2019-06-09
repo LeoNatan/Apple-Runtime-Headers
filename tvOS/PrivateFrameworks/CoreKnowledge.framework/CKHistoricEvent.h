@@ -20,7 +20,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)dateFormat;
 - (void).cxx_destruct;
 - (id)init;
 - (id)copyWithZone:(void *)arg1;
@@ -34,7 +33,7 @@
 @property(nonatomic, readonly) long long frequency;
 @property(nonatomic, readonly) NSDate *lastSeen;
 @property(nonatomic, readonly) NSDate *firstSeen;
-@property(nonatomic, readonly) NSString *identifier; // @synthesize identifier;
+@property(nonatomic, readonly) NSString *identifier;
 
 @end
 

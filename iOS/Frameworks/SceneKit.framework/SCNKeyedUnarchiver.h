@@ -6,22 +6,24 @@
 
 #import <Foundation/NSKeyedUnarchiver.h>
 
-@class NSDictionary, NSString, NSURL, SCNAssetCatalog;
+@class NSArray, NSDictionary, NSString, NSURL, SCNAssetCatalog;
 
 @interface SCNKeyedUnarchiver : NSKeyedUnarchiver
 {
+    NSURL *_documentURL;
     NSDictionary *_context;
     SCNAssetCatalog *_assetCatalog;
-    NSURL *_documentURL;
-    NSString *lookUpKey;
-    id lookUpFoundInstance;
+    NSString *_lookUpKey;
+    id _lookUpFoundInstance;
+    NSArray *_currentMorphTargets;
 }
 
-@property(retain, nonatomic) id lookUpFoundInstance; // @synthesize lookUpFoundInstance;
-@property(retain, nonatomic) NSString *lookUpKey; // @synthesize lookUpKey;
-@property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
+@property(retain, nonatomic) NSArray *currentMorphTargets; // @synthesize currentMorphTargets=_currentMorphTargets;
+@property(retain, nonatomic) id lookUpFoundInstance; // @synthesize lookUpFoundInstance=_lookUpFoundInstance;
+@property(retain, nonatomic) NSString *lookUpKey; // @synthesize lookUpKey=_lookUpKey;
 @property(retain, nonatomic) SCNAssetCatalog *assetCatalog; // @synthesize assetCatalog=_assetCatalog;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
+@property(retain, nonatomic) NSURL *documentURL; // @synthesize documentURL=_documentURL;
 @property(readonly, nonatomic) NSURL *documentEnclosingURL;
 - (void)dealloc;
 - (id)initForReadingWithData:(id)arg1 secure:(_Bool)arg2;

@@ -6,26 +6,31 @@
 
 #import <PhotosUI/PUPhotosGridViewController.h>
 
+#import <PhotosUI/PUPhotoPickerFileSizeToolbarProviderDelegate-Protocol.h>
 #import <PhotosUI/PUPhotoPickerSelectionHandler-Protocol.h>
 #import <PhotosUI/PUPhotoPickerServicesConsumer-Protocol.h>
 #import <PhotosUI/PUPhotoPickerTestSupportHandler-Protocol.h>
+#import <PhotosUI/PUPhotosGridViewSupplementalToolbarDataSource-Protocol.h>
 
-@class NSArray, NSString, PUUIImagePickerControllerHelper, UIBarButtonItem;
+@class NSArray, NSString, PUPhotoPickerFileSizeToolbarProvider, PUPhotoPickerResizeTaskDescriptor, PUSessionInfo, PUUIImagePickerControllerHelper, UIBarButtonItem;
 @protocol PUPhotoPicker;
 
 __attribute__((visibility("hidden")))
-@interface PUUIMomentsGridViewController : PUPhotosGridViewController <PUPhotoPickerServicesConsumer, PUPhotoPickerSelectionHandler, PUPhotoPickerTestSupportHandler>
+@interface PUUIMomentsGridViewController : PUPhotosGridViewController <PUPhotoPickerFileSizeToolbarProviderDelegate, PUPhotosGridViewSupplementalToolbarDataSource, PUPhotoPickerServicesConsumer, PUPhotoPickerSelectionHandler, PUPhotoPickerTestSupportHandler>
 {
     UIBarButtonItem *_imagePickerCancelButton;
-    UIBarButtonItem *_imagePickerMultipleSelectionDoneButton;
+    UIBarButtonItem *_imagePickerSelectionDoneButton;
     PUUIImagePickerControllerHelper *__imagePickerControllerHelper;
+    PUPhotoPickerFileSizeToolbarProvider *_fileSizePickerToolbarProvider;
     _Bool _didDisappear;
     id <PUPhotoPicker> _photoPicker;
     NSArray *__imagePickerMediaTypes;
     double _lastKnownWidth;
+    PUPhotoPickerResizeTaskDescriptor *_resizeTaskDescriptor;
     struct UIEdgeInsets _lastKnownSafeAreaInsets;
 }
 
+@property(retain, nonatomic) PUPhotoPickerResizeTaskDescriptor *resizeTaskDescriptor; // @synthesize resizeTaskDescriptor=_resizeTaskDescriptor;
 @property(nonatomic) struct UIEdgeInsets lastKnownSafeAreaInsets; // @synthesize lastKnownSafeAreaInsets=_lastKnownSafeAreaInsets;
 @property(nonatomic) double lastKnownWidth; // @synthesize lastKnownWidth=_lastKnownWidth;
 @property(nonatomic) _Bool didDisappear; // @synthesize didDisappear=_didDisappear;
@@ -34,6 +39,9 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)canDragIn;
 - (_Bool)canDragOut;
+- (void)photoPickerFileSizeToolbarProvider:(id)arg1 didSelectResizeTaskDescriptor:(id)arg2;
+- (void)photoPickerFileSizeToolbarProvider:(id)arg1 presentSizePickerViewController:(id)arg2;
+@property(readonly, nonatomic, getter=isAnyAssetDownloading) _Bool anyAssetDownloading;
 - (void)performPhotoPickerPreviewOfFirstAsset;
 - (void)setPhotoPickerMediaTypes:(id)arg1;
 - (void)performPhotoPickerSelection;
@@ -46,7 +54,9 @@ __attribute__((visibility("hidden")))
 - (void)handleToggleSelectionOfItemAtIndexPath:(id)arg1;
 - (_Bool)canNavigateToPhotoInteractively:(_Bool)arg1;
 - (void)getTitle:(out id *)arg1 prompt:(out id *)arg2 shouldHideBackButton:(out _Bool *)arg3 leftBarButtonItems:(out id *)arg4 rightBarButtonItems:(out id *)arg5;
-- (void)_handleImagePickerMultipleSelectionDone:(id)arg1;
+- (void)_handleImagePickerSingleSelectionDone;
+- (void)_handleImagePickerMultipleSelectionDone;
+- (void)_handleImagePickerSelectionDone:(id)arg1;
 - (void)_handleImagePickerCancel:(id)arg1;
 - (void)configureSupplementaryView:(id)arg1 ofKind:(id)arg2 forIndexPath:(id)arg3;
 - (id)newGridLayout;
@@ -54,6 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)_setTitle;
 @property(readonly, nonatomic) _Bool referenceValuesDidChange;
 - (void)_scrollToBottomIfNeeded;
+- (_Bool)updateSpec;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -62,12 +73,16 @@ __attribute__((visibility("hidden")))
 - (void)loadView;
 - (_Bool)allowsPeeking;
 - (id)initWithSpec:(id)arg1;
+- (id)initWithModalPresentationStyle:(long long)arg1;
 - (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isAnyAssetSelected) _Bool anyAssetSelected; // @dynamic anyAssetSelected;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSArray *selectedAssets; // @dynamic selectedAssets;
+@property(readonly, nonatomic) PUSessionInfo *sessionInfo;
 @property(readonly) Class superclass;
 
 @end

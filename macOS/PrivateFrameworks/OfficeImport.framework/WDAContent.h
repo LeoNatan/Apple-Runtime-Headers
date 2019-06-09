@@ -12,6 +12,7 @@
 
 @class NSString, OADDrawable, WDAAnchor, WDATextBox;
 
+__attribute__((visibility("hidden")))
 @interface WDAContent : NSObject <OADClient, OADTextClient, OADLinkedTextClient>
 {
     WDAAnchor *mAnchor;

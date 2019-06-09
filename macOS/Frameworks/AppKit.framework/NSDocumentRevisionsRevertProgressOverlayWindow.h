@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)_setFrameCommon:(struct CGRect)arg1 display:(BOOL)arg2 stashSize:(BOOL)arg3;
 - (BOOL)canBecomeKeyWindow;
 - (void)_orderOutRelativeToWindow:(id)arg1;
 - (void)_orderFrontRelativeToWindow:(id)arg1;

@@ -16,6 +16,7 @@
 
 + (id)new;
 + (void)initialize;
+- (void)_render:(id)arg1 sampleBuffer:(struct opaqueCMSampleBuffer *)arg2;
 - (BOOL)supportsVideoMaxFrameDurationForConnection:(id)arg1;
 - (BOOL)supportsVideoMinFrameDurationForConnection:(id)arg1;
 - (BOOL)supportsVideoFieldModeForConnection:(id)arg1;
@@ -34,6 +35,12 @@
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (id)connectionMediaTypes;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
+- (id)recommendedVideoSettingsForVideoCodecType:(id)arg1 assetWriterOutputFileType:(id)arg2;
+- (id)availableVideoCodecTypesForAssetWriterWithOutputFileType:(id)arg1;
+- (id)recommendedVideoSettingsForAssetWriterWithOutputFileType:(id)arg1;
+- (id)supportedAssetWriterOutputFileTypes;
 @property(nonatomic) BOOL alwaysDiscardsLateVideoFrames;
 @property(nonatomic) CDStruct_1b6d18a9 minFrameDuration;
 @property(copy, nonatomic) NSDictionary *videoSettings;

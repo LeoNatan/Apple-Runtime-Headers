@@ -27,6 +27,7 @@
     _Bool __enableNestedHysteresis;
 }
 
++ (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
 @property(nonatomic) _Bool _enableNestedHysteresis; // @synthesize _enableNestedHysteresis=__enableNestedHysteresis;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;

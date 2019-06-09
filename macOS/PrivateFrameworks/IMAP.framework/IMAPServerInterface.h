@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <IMAP/ECIMAPServerInterface-Protocol.h>
+
 @class IMAPConnection, IMAPMailbox, IMAPNetworkTaskHandler, NSArray, NSString;
 
-@interface IMAPServerInterface : NSObject
+@interface IMAPServerInterface : NSObject <ECIMAPServerInterface>
 {
     IMAPNetworkTaskHandler *_networkTaskHandler;
     IMAPConnection *_connection;
@@ -26,21 +28,19 @@
 - (unsigned int)searchedUidNextForMessageNumber:(unsigned long long)arg1;
 - (id)searchUidRange:(CDStruct_f792af56)arg1 forNewMessageIDs:(id)arg2;
 - (id)searchUidRange:(CDStruct_f792af56)arg1 forTerms:(id)arg2;
-- (BOOL)appendData:(id)arg1 toMailboxNamed:(id)arg2 flags:(id)arg3 dateReceived:(id)arg4 messageInfo:(id)arg5 error:(id *)arg6;
-- (BOOL)copyUids:(id)arg1 toMailboxNamed:(id)arg2 messageInfo:(id)arg3 error:(id *)arg4;
-- (BOOL)deleteMessagesOlderThanNumberOfDays:(long long)arg1 settingFlags:(id)arg2;
-- (BOOL)_storeGmailLabels:(id)arg1 state:(BOOL)arg2 forUids:(id)arg3 mailboxName:(id)arg4;
-- (BOOL)_storeFlags:(id)arg1 state:(BOOL)arg2 forUids:(id)arg3 mailboxName:(id)arg4;
-- (BOOL)_expunge:(BOOL)arg1 orStoreFlags:(id)arg2 orStoreGmailLabels:(id)arg3 state:(BOOL)arg4 forUids:(id)arg5;
-- (BOOL)storeGmailLabels:(id)arg1 state:(BOOL)arg2 forUids:(id)arg3;
-- (BOOL)storeFlags:(id)arg1 state:(BOOL)arg2 forUids:(id)arg3;
+- (BOOL)appendData:(id)arg1 toMailboxNamed:(id)arg2 flags:(id)arg3 dateReceived:(id)arg4 copyInfo:(id *)arg5 error:(id *)arg6;
+- (BOOL)_transferUIDs:(id)arg1 toMailboxNamed:(id)arg2 isMove:(BOOL)arg3 copyInfo:(id *)arg4 error:(id *)arg5;
+- (BOOL)moveUIDs:(id)arg1 toMailboxNamed:(id)arg2 copyInfo:(id *)arg3 error:(id *)arg4;
+- (BOOL)copyUIDs:(id)arg1 toMailboxNamed:(id)arg2 copyInfo:(id *)arg3 error:(id *)arg4;
+- (BOOL)_batchUIDs:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (BOOL)storeGmailLabels:(id)arg1 state:(BOOL)arg2 forUIDs:(id)arg3;
+- (BOOL)storeFlagChange:(id)arg1 forUIDs:(id)arg2;
 - (void)fetchTotalSizeAndMessageCount;
 - (void)unselect;
 - (void)closeAndLogout;
 - (void)logout;
 - (void)close;
-- (BOOL)_expungeUids:(id)arg1 mailboxName:(id)arg2;
-- (BOOL)expungeUids:(id)arg1;
+- (BOOL)expungeUIDs:(id)arg1;
 - (BOOL)expunge;
 - (BOOL)check:(id *)arg1;
 - (BOOL)getQuotaForRootName:(id)arg1;
@@ -66,6 +66,12 @@
 - (id)init;
 - (id)initWithConnection:(id)arg1 mailboxName:(id)arg2;
 - (id)initWithNetworkTaskHandler:(id)arg1 mailboxName:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

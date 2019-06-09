@@ -8,5 +8,6 @@
 
 @interface NSDictionary (SLFacebookNSDictionaryAdditions)
 + (id)dictionaryWithParametersInURLString:(id)arg1;
++ (id)SLDictionaryWithOAuthAccessTokenResponseData:(id)arg1;
 @end
 

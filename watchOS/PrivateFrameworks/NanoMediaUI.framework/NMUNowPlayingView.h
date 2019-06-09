@@ -6,59 +6,58 @@
 
 #import <UIKit/UIView.h>
 
-#import <NanoMediaUI/UIGestureRecognizerDelegate-Protocol.h>
+@class CAShapeLayer, NMUButton, NMUNowPlayingArtworkView, NMUNowPlayingTitlesView, NMUVolumeIndicatorControl, NSSet, UIControl, UILayoutGuide;
+@protocol NMUNowPlayingViewDataSource, NMUNowPlayingViewDelegate;
 
-@class NMUNowPlayingIndicatorView, NMUNowPlayingTitlesView, NMUSecondaryTransportControlsView, NMUTransportControlsView, NMUVolumeControlsView, NSString, UIControl, UIImageView, _NMUQueuedExtendedTransportControlsRequest;
-@protocol NMUNowPlayingViewDelegate;
-
-@interface NMUNowPlayingView : UIView <UIGestureRecognizerDelegate>
+@interface NMUNowPlayingView : UIView
 {
-    int _style;
     UIView *_containerView;
-    NMUNowPlayingIndicatorView *_playbackIndicatorView;
+    UILayoutGuide *_primaryControlsAreaLayoutGuide;
     UIControl *_titlesControl;
     struct CGRect _cachedTrackTitlesViewRect;
-    _Bool _playbackIndicatorViewNeedsLayout;
-    _Bool _isAnimatingExtendedTransportControls;
-    _NMUQueuedExtendedTransportControlsRequest *_queuedExtendedTransportControlsRequest;
-    _Bool _shouldUseExtendedTransportControls;
     _Bool _trackTitlesInteractionEnabled;
-    _Bool _playing;
     _Bool _alwaysLive;
-    _Bool _showsOriginName;
     _Bool _hidingAllControls;
+    id <NMUNowPlayingViewDataSource> _dataSource;
     id <NMUNowPlayingViewDelegate> _delegate;
-    NMUTransportControlsView *_transportControlsView;
-    NMUSecondaryTransportControlsView *_secondaryTransportControlsView;
+    NMUNowPlayingArtworkView *_artworkView;
     NMUNowPlayingTitlesView *_trackTitlesView;
-    NMUVolumeControlsView *_volumeControlsView;
-    NSString *_originName;
-    UIImageView *_applicationIconImageView;
+    NMUVolumeIndicatorControl *_volumeIndicatorControl;
+    NMUButton *_centerPrimaryButton;
+    NMUButton *_leftPrimaryButton;
+    NMUButton *_rightPrimaryButton;
+    NMUButton *_centerSecondaryButton;
+    NMUButton *_leadingSecondaryButton;
+    NMUButton *_trailingSecondaryButton;
+    NSSet *_defaultActions;
+    float _progress;
+    CAShapeLayer *_progressRingTrackLayer;
+    CAShapeLayer *_progressRingProgressLayer;
     double _elapsedTime;
 }
 
-@property(retain, nonatomic) UIImageView *applicationIconImageView; // @synthesize applicationIconImageView=_applicationIconImageView;
+@property(retain, nonatomic) CAShapeLayer *progressRingProgressLayer; // @synthesize progressRingProgressLayer=_progressRingProgressLayer;
+@property(retain, nonatomic) CAShapeLayer *progressRingTrackLayer; // @synthesize progressRingTrackLayer=_progressRingTrackLayer;
 @property(nonatomic, getter=isHidingAllControls) _Bool hidingAllControls; // @synthesize hidingAllControls=_hidingAllControls;
-@property(nonatomic, getter=shouldShowOriginName) _Bool showsOriginName; // @synthesize showsOriginName=_showsOriginName;
-@property(copy, nonatomic) NSString *originName; // @synthesize originName=_originName;
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(nonatomic, getter=isAlwaysLive) _Bool alwaysLive; // @synthesize alwaysLive=_alwaysLive;
-@property(nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
-@property(readonly, nonatomic) NMUVolumeControlsView *volumeControlsView; // @synthesize volumeControlsView=_volumeControlsView;
 @property(nonatomic, getter=isTrackTitlesInteractionEnabled) _Bool trackTitlesInteractionEnabled; // @synthesize trackTitlesInteractionEnabled=_trackTitlesInteractionEnabled;
-@property(retain, nonatomic) NMUNowPlayingTitlesView *trackTitlesView; // @synthesize trackTitlesView=_trackTitlesView;
-@property(nonatomic) _Bool shouldUseExtendedTransportControls; // @synthesize shouldUseExtendedTransportControls=_shouldUseExtendedTransportControls;
-@property(readonly, nonatomic) NMUSecondaryTransportControlsView *secondaryTransportControlsView; // @synthesize secondaryTransportControlsView=_secondaryTransportControlsView;
-@property(retain, nonatomic) NMUTransportControlsView *transportControlsView; // @synthesize transportControlsView=_transportControlsView;
+@property(nonatomic) float progress; // @synthesize progress=_progress;
+@property(retain, nonatomic) NSSet *defaultActions; // @synthesize defaultActions=_defaultActions;
+@property(readonly, nonatomic) NMUButton *trailingSecondaryButton; // @synthesize trailingSecondaryButton=_trailingSecondaryButton;
+@property(readonly, nonatomic) NMUButton *leadingSecondaryButton; // @synthesize leadingSecondaryButton=_leadingSecondaryButton;
+@property(readonly, nonatomic) NMUButton *centerSecondaryButton; // @synthesize centerSecondaryButton=_centerSecondaryButton;
+@property(readonly, nonatomic) NMUButton *rightPrimaryButton; // @synthesize rightPrimaryButton=_rightPrimaryButton;
+@property(readonly, nonatomic) NMUButton *leftPrimaryButton; // @synthesize leftPrimaryButton=_leftPrimaryButton;
+@property(readonly, nonatomic) NMUButton *centerPrimaryButton; // @synthesize centerPrimaryButton=_centerPrimaryButton;
+@property(readonly, nonatomic) NMUVolumeIndicatorControl *volumeIndicatorControl; // @synthesize volumeIndicatorControl=_volumeIndicatorControl;
+@property(readonly, nonatomic) NMUNowPlayingTitlesView *trackTitlesView; // @synthesize trackTitlesView=_trackTitlesView;
+@property(readonly, nonatomic) NMUNowPlayingArtworkView *artworkView; // @synthesize artworkView=_artworkView;
 @property(nonatomic) __weak id <NMUNowPlayingViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <NMUNowPlayingViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (_Bool)_layoutForWorkoutApp;
-- (struct CGPoint)_positionForVolumeControlWithBounds:(struct CGRect)arg1;
-- (struct CGRect)_boundsForVolumeControl;
-- (struct CGPoint)_positionForCompactVolumeControlWithBounds:(struct CGRect)arg1;
-- (struct CGRect)_boundsForCompactVolumeControl;
-- (struct CGRect)_frameForSecondaryTransportControlsView;
-- (void)_updateLabelTextAttributes;
+- (void)_handleControlEventTouchUpInside:(id)arg1;
+- (id)_buttonForPlacement:(unsigned int)arg1;
 - (float)_lastLineBaseLineOffset;
 - (float)_firstLineBaseLineOffset;
 - (_Bool)_showsTopLabel;
@@ -67,18 +66,13 @@
 - (void)_controlDidReceiveTouchUpInside:(id)arg1;
 - (void)_controlDidReceiveTouchDown:(id)arg1;
 - (void)setHidingAllControls:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)setShouldUseExtendedTransportControls:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
+- (void)setPlaybackRate:(float)arg1 elapsedTime:(double)arg2 duration:(double)arg3;
 - (void)dealloc;
+- (void)setNeedsActionsUpdate;
 - (id)initWithStyle:(int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

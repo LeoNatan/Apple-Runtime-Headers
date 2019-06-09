@@ -6,9 +6,11 @@
 
 #import <AppKit/NSObject-Protocol.h>
 
-@class NSString, NSView, NSVisualTabPickerTileContainerView;
+@class NSImage, NSString, NSView, NSVisualTabPickerTileContainerView;
 
 @protocol NSVisualTabPickerTileContainerDataSource <NSObject>
+- (BOOL)visualTabPickerTileContainerView:(NSVisualTabPickerTileContainerView *)arg1 highlightStateForTileAtIndex:(unsigned long long)arg2;
+- (NSImage *)visualTabPickerTileContainerView:(NSVisualTabPickerTileContainerView *)arg1 imageForTileAtIndex:(unsigned long long)arg2;
 - (NSView *)visualTabPickerTileContainerView:(NSVisualTabPickerTileContainerView *)arg1 viewForTileAtIndex:(unsigned long long)arg2;
 - (NSString *)visualTabPickerTileContainerView:(NSVisualTabPickerTileContainerView *)arg1 titleForTileAtIndex:(unsigned long long)arg2;
 - (NSString *)titleForNSVisualTabPickerTileContainerView:(NSVisualTabPickerTileContainerView *)arg1;

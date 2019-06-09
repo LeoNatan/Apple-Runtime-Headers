@@ -8,21 +8,24 @@
 
 #import <MapsSupport/MSPContainerStateSnapshot-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, NSUUID;
 
 @interface MSPContainerArrayStateSnapshot : NSObject <MSPContainerStateSnapshot>
 {
     NSArray *_contents;
+    NSUUID *_clientIdentifier;
 }
 
+@property(retain, nonatomic) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
+- (id)initWithContents:(id)arg1 clientIdentifier:(id)arg2;
 - (id)initWithContents:(id)arg1;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -29,9 +29,9 @@
     long long _noise;
     double _txRate;
     long long _security;
-    long long _mcsIndex;
-    long long _guardInterval;
-    long long _numberOfSpacialStreams;
+    unsigned long long _mcsIndex;
+    unsigned long long _guardInterval;
+    unsigned long long _numberOfSpacialStreams;
     W5WiFiChannel *_channel;
     NSArray *_linkQualityUpdates;
     NSArray *_supportedChannels;
@@ -80,9 +80,9 @@
 @property(copy, nonatomic) NSArray *supportedChannels; // @synthesize supportedChannels=_supportedChannels;
 @property(copy, nonatomic) NSArray *linkQualityUpdates; // @synthesize linkQualityUpdates=_linkQualityUpdates;
 @property(copy, nonatomic) W5WiFiChannel *channel; // @synthesize channel=_channel;
-@property(nonatomic) long long numberOfSpacialStreams; // @synthesize numberOfSpacialStreams=_numberOfSpacialStreams;
-@property(nonatomic) long long guardInterval; // @synthesize guardInterval=_guardInterval;
-@property(nonatomic) long long mcsIndex; // @synthesize mcsIndex=_mcsIndex;
+@property(nonatomic) unsigned long long numberOfSpacialStreams; // @synthesize numberOfSpacialStreams=_numberOfSpacialStreams;
+@property(nonatomic) unsigned long long guardInterval; // @synthesize guardInterval=_guardInterval;
+@property(nonatomic) unsigned long long mcsIndex; // @synthesize mcsIndex=_mcsIndex;
 @property(nonatomic) int phyMode; // @synthesize phyMode=_phyMode;
 @property(nonatomic) unsigned int eapolSupplicantState; // @synthesize eapolSupplicantState=_eapolSupplicantState;
 @property(nonatomic) unsigned int eapolControlMode; // @synthesize eapolControlMode=_eapolControlMode;

@@ -18,7 +18,7 @@
 #import <PhotosUI/UICollectionViewDelegate-Protocol.h>
 #import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSIndexPath, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSString, PHCachingImageManager, PHFetchResult, PLAvalanche, PLManagedAsset, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUOneUpAssetTransitionInfo, PUPhotoPinchGestureRecognizer, PUPhotosSharingTransitionContext, PUPhotosZoomingSharingGridCell, PUReviewInstructionalView, PUReviewScrubber, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
+@class NSIndexPath, NSMutableDictionary, NSMutableSet, NSOrderedSet, NSString, PHCachingImageManager, PHFetchResult, PLAvalanche, PLManagedAsset, PUAssetTransitionInfo, PUAvalancheReviewCollectionViewLayout, PUAvalancheReviewControllerSpec, PUPhotoPinchGestureRecognizer, PUPhotosSharingTransitionContext, PUPhotosZoomingSharingGridCell, PUReviewInstructionalView, PUReviewScrubber, PUTransitionViewAnimator, UIBarButtonItem, UICollectionView, UICollectionViewLayout, UITapGestureRecognizer;
 @protocol PLAssetContainer, PLAssetContainerList, PUAvalancheReviewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -50,12 +50,12 @@ __attribute__((visibility("hidden")))
     PUPhotosZoomingSharingGridCell *__photoZoomCell;
     UICollectionViewLayout *__transitionLayout;
     PUPhotosSharingTransitionContext *__photosSharingTransitionContext;
-    PUOneUpAssetTransitionInfo *__assetTransitionInfo;
+    PUAssetTransitionInfo *__assetTransitionInfo;
     struct CGRect __previousPreheatRect;
 }
 
 + (id)filteringContext;
-@property(retain, nonatomic) PUOneUpAssetTransitionInfo *_assetTransitionInfo; // @synthesize _assetTransitionInfo=__assetTransitionInfo;
+@property(retain, nonatomic) PUAssetTransitionInfo *_assetTransitionInfo; // @synthesize _assetTransitionInfo=__assetTransitionInfo;
 @property(retain, nonatomic) PUPhotosSharingTransitionContext *_photosSharingTransitionContext; // @synthesize _photosSharingTransitionContext=__photosSharingTransitionContext;
 @property(retain, nonatomic, setter=_setTransitionLayout:) UICollectionViewLayout *_transitionLayout; // @synthesize _transitionLayout=__transitionLayout;
 @property(retain, nonatomic, setter=_setPhotoZoomCell:) PUPhotosZoomingSharingGridCell *_photoZoomCell; // @synthesize _photoZoomCell=__photoZoomCell;
@@ -116,7 +116,7 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)_startPreheatingAllAssets;
 - (void)_stopPreheatingAllAssets;
-- (void)assetContainerDidChange:(id)arg1;
+- (void)pu_assetContainerDidChange:(id)arg1;
 - (void)_cancelReviewModeAction:(id)arg1;
 - (void)_cancelReviewMode;
 - (void)_handleDoneButton:(id)arg1;
@@ -127,7 +127,7 @@ __attribute__((visibility("hidden")))
 - (void)_promoteFavoriteAssetsAndDeleteNonPicks:(_Bool)arg1 withReviewCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_reloadAvalancheDataWithAsset:(id)arg1;
 - (void)_updateReviewScrubberFromContentOffset;
-- (int)reviewScrubberImageFormat;
+- (unsigned short)reviewScrubberImageFormat;
 @property(readonly, nonatomic) PUReviewScrubber *_reviewScrubber;
 - (void)_endZoomingForCell;
 - (void)_beginZoomingForCellAtIndexPath:(id)arg1;

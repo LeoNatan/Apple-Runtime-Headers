@@ -26,11 +26,14 @@
 - (void)_enumerateStatisticsIndexesFromDate:(id)arg1 toDate:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)_timePeriodForStatisticsAtIndex:(long long)arg1 startDate:(id *)arg2 endDate:(id *)arg3;
 - (id)_statisticsForIndex:(long long)arg1;
+- (id)_statisticsForLastIndex;
 - (id)_timePeriodForDate:(id)arg1;
 - (void)_enumerateTimePeriodsFromDate:(id)arg1 toDate:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)_resetStatistics:(id)arg1;
 - (_Bool)_insertStatistics:(id)arg1;
 - (void)_clearSourcesCache;
+- (id)_mostRecentQuantityDateInterval;
+- (id)_mostRecentQuantityStatistics;
 - (id)_minSumQuantityStatistics;
 - (id)_maxSumQuantityStatistics;
 - (id)sources;

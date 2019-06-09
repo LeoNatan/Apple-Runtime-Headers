@@ -17,13 +17,17 @@
     struct {
         unsigned int duration:1;
         unsigned int state:1;
+        unsigned int type:1;
     } _has;
     int _state;
+    int _type;
     double _duration;
     _INPBIntentMetadata *_intentMetadata;
     _INPBDataString *_label;
 }
 
++ (BOOL)supportsSecureCoding;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) _INPBDataString *label; // @synthesize label=_label;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
@@ -33,8 +37,13 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (int)StringAsType:(id)arg1;
+- (id)typeAsString:(int)arg1;
+@property(nonatomic) BOOL hasType;
 - (int)StringAsState:(id)arg1;
 - (id)stateAsString:(int)arg1;
 @property(nonatomic) BOOL hasState;

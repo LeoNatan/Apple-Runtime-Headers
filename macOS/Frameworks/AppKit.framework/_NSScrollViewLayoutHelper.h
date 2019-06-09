@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface _NSScrollViewLayoutHelper : NSObject
 {
     NSScrollView *_scrollView;
-    struct CGSize _contentAreaSize;
     struct CGSize _documentMinimumSize;
     BOOL _hScrollerShown;
     BOOL _vScrollerShown;

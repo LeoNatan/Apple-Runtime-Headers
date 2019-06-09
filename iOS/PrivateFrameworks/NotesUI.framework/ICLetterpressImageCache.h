@@ -15,13 +15,17 @@
 }
 
 + (id)serializedCacheKeyForImageNamed:(id)arg1 tintColor:(id)arg2 scale:(double)arg3;
-+ (id)letterpressedImageForImage:(id)arg1 tintColor:(id)arg2 scale:(double)arg3;
++ (id)letterpressedImageForImage:(id)arg1 tintColor:(id)arg2 scale:(double)arg3 addAlignmentInsets:(_Bool)arg4;
++ (id)imageWithLetterpressAlignmentInsetsForImage:(id)arg1;
++ (double)letterpressImagePadding;
 + (id)sharedCache;
 @property(retain, nonatomic) CPBitmapStore *serializedCache; // @synthesize serializedCache=_serializedCache;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
 - (void)purge;
+- (id)imageWithCacheName:(id)arg1 tintColor:(id)arg2 addAlignmentInsets:(_Bool)arg3 version:(unsigned long long)arg4 imageCreationBlock:(CDUnknownBlockType)arg5;
 - (id)imageNamed:(id)arg1 tintColor:(id)arg2 version:(unsigned long long)arg3;
+- (id)imageNamed:(id)arg1 tintColor:(id)arg2 addAlignmentInsets:(_Bool)arg3 version:(unsigned long long)arg4;
 - (id)init;
 
 @end

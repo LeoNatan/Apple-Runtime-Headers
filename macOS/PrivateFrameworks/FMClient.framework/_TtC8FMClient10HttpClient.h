@@ -14,7 +14,7 @@
     // Error parsing type: , name: endpoint
     // Error parsing type: , name: statusCodeHandlers
     // Error parsing type: , name: statusCodeHandlerQueue
-    // Error parsing type: , name: session.storage
+    // Error parsing type: , name: $__lazy_storage_$_session
 }
 
 - (void).cxx_destruct;

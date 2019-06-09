@@ -17,6 +17,7 @@
     _Bool _forcePayment;
     _Bool _persistentCardEmulation;
     _Bool _wasAutomaticallySelected;
+    _Bool _limitServerLoad;
     NSArray *_additionalPassUniqueIdentifiers;
     id <NSCopying> _userInfo;
 }
@@ -25,6 +26,7 @@
 + (id)contextWithAnimation:(_Bool)arg1 wasAutomaticallySelected:(_Bool)arg2 additionalPassUniqueIdentifiers:(id)arg3;
 + (id)contextWithAnimation:(_Bool)arg1 additionalPassUniqueIdentifiers:(id)arg2;
 + (id)contextWithAnimation:(_Bool)arg1;
+@property(nonatomic) _Bool limitServerLoad; // @synthesize limitServerLoad=_limitServerLoad;
 @property(copy, nonatomic) id <NSCopying> userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) _Bool wasAutomaticallySelected; // @synthesize wasAutomaticallySelected=_wasAutomaticallySelected;
 @property(copy, nonatomic) NSArray *additionalPassUniqueIdentifiers; // @synthesize additionalPassUniqueIdentifiers=_additionalPassUniqueIdentifiers;

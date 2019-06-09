@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSLayoutConstraint, NSString, UIColor, UIImageView, UILabel;
+@class NSArray, NSAttributedString, NSLayoutConstraint, UIColor, UIImageView, UILabel;
 @protocol EKDayOccurrenceTravelTimeViewMetricsDelegate;
 
 @interface EKDayOccurrenceTravelTimeView : UIView
@@ -14,7 +14,6 @@
     _Bool _selected;
     _Bool _animatingAlpha;
     id <EKDayOccurrenceTravelTimeViewMetricsDelegate> _delegate;
-    NSString *_location;
     UIColor *_elementColor;
     UIColor *_lineColor;
     int _occurrenceBackgroundStyle;
@@ -28,10 +27,9 @@
     NSLayoutConstraint *_leadingHorizontalPad;
     NSLayoutConstraint *_trailingHorizontalPad;
     NSArray *_constraints;
-    double _travelTime;
 }
 
-+ (float)minimumNaturalHeightForPrimaryTextUsingSmallText:(_Bool)arg1;
++ (float)minimumNaturalHeightForPrimaryTextUsingSmallText:(_Bool)arg1 sizeClass:(int)arg2;
 + (void)initialize;
 @property _Bool animatingAlpha; // @synthesize animatingAlpha=_animatingAlpha;
 @property(retain) NSArray *constraints; // @synthesize constraints=_constraints;
@@ -43,13 +41,11 @@
 @property(retain) UILabel *travelTimeLabel; // @synthesize travelTimeLabel=_travelTimeLabel;
 @property(retain) UIImageView *travelTimeIcon; // @synthesize travelTimeIcon=_travelTimeIcon;
 @property(nonatomic) float hairlineYPosition; // @synthesize hairlineYPosition=_hairlineYPosition;
-@property(nonatomic) double travelTime; // @synthesize travelTime=_travelTime;
 @property(nonatomic) int routingMode; // @synthesize routingMode=_routingMode;
 @property(nonatomic) int occurrenceBackgroundStyle; // @synthesize occurrenceBackgroundStyle=_occurrenceBackgroundStyle;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain, nonatomic) UIColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(retain, nonatomic) UIColor *elementColor; // @synthesize elementColor=_elementColor;
-@property(copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(nonatomic) __weak id <EKDayOccurrenceTravelTimeViewMetricsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
@@ -58,7 +54,7 @@
 - (float)_iconScale;
 - (id)_travelTimeIconForTravelModeWithColor:(id)arg1;
 - (void)_updateStringsColorsAndConstraintConstants;
-- (void)_setupStringContent;
+@property(copy, nonatomic) NSAttributedString *travelTimeString;
 - (id)_textFont;
 - (id)initWithReusableTravelTimeView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

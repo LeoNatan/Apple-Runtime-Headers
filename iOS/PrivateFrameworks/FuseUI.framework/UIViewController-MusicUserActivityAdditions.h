@@ -6,7 +6,24 @@
 
 #import <UIKit/UIViewController.h>
 
+@class NSData, NSString, UIBarButtonItem;
+
 @interface UIViewController (MusicUserActivityAdditions)
 - (_Bool)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+@property(nonatomic, setter=music_setWantsToOverrideRightBarButtonItem:) _Bool music_wantsToOverrideRightBarButtonItem;
+@property(nonatomic, setter=music_setWantsDefaultIndexBar:) _Bool music_wantsDefaultIndexBar;
+- (void)music_viewInheritedLayoutInsetsDidChange;
+@property(copy, nonatomic, setter=music_setReportingRecommendationData:) NSData *music_reportingRecommendationData;
+@property(copy, nonatomic, setter=music_setReportingFeatureName:) NSString *music_reportingFeatureName;
+@property(readonly, copy, nonatomic) NSData *music_effectiveReportingRecommendationData;
+@property(readonly, copy, nonatomic) NSString *music_effectiveReportingFeatureName;
+- (void)music_configureWithJSReportingInformation:(id)arg1;
+- (void)_music_handleSearchButtonTapped:(id)arg1;
+- (void)music_presentSearchViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+@property(nonatomic, setter=music_setSearchOptions:) unsigned long long music_searchOptions;
+@property(readonly, nonatomic) UIBarButtonItem *music_searchEntryRightBarButtonItem;
+@property(nonatomic, setter=music_setWantsSearchEntryRightBarButtonItem:) _Bool music_wantsSearchEntryRightBarButtonItem;
+- (id)music_furthestPresentingViewController;
+- (void)music_dismissViewController:(id)arg1 animated:(_Bool)arg2;
 @end
 

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)quickLookView;
 - (int)loadWithHints:(id)arg1;
 - (void)dealloc;
-- (id)initWithPreview:(struct __QLPreview *)arg1 owner:(id)arg2;
+- (id)initWithPreview:(id)arg1 owner:(id)arg2;
 
 @end
 

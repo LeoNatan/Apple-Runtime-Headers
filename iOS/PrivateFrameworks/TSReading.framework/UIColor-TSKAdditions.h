@@ -6,8 +6,29 @@
 
 #import <UIKit/UIColor.h>
 
-@interface UIColor (TSKAdditions)
+#import <TSReading/TSDPathPainter-Protocol.h>
+
+@class NSString;
+
+@interface UIColor (TSKAdditions) <TSDPathPainter>
 + (id)tsk_sheetBackgroundColor;
 + (id)tsk_segmentedControlTintColor;
++ (id)randomColor;
++ (id)colorInDeviceRGBColorSpaceWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+- (void)paintPath:(struct CGPath *)arg1 inContext:(struct CGContext *)arg2;
+- (void)drawSwatchInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
+- (id)blendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
+- (_Bool)isOpaque;
+- (double)luminance;
+- (id)invertedColor;
+- (id)grayscaleColor;
+- (void)paintRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
+- (id)initInDeviceRGBColorSpaceWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

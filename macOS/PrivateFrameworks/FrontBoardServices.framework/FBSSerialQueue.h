@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray;
+#import <FrontBoardServices/BSServiceDispatchingQueue-Protocol.h>
+
+@class NSArray, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface FBSSerialQueue : NSObject
+@interface FBSSerialQueue : NSObject <BSServiceDispatchingQueue>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_blocks;
@@ -26,20 +28,26 @@
 + (id)queueWithMainRunLoopModes:(id)arg1;
 + (id)queueWithDispatchQueue:(id)arg1;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (void)_performNextFromRunLoopSource;
 - (void)_setSynchronizingEnqueueSemaphore:(id)arg1 forWorkspaceWithName:(unsigned long long)arg2;
 - (BOOL)_performNext;
 - (BOOL)_hasNext;
 - (void)_queue_performAsync:(CDUnknownBlockType)arg1;
 - (void)performAfter:(double)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)backingQueueIfExists;
+- (void)performAsync:(CDUnknownBlockType)arg1 withHandoff:(id)arg2;
 - (void)performAsync:(CDUnknownBlockType)arg1;
 - (void)assertOnQueue;
 - (void)dealloc;
 - (id)init;
 - (id)_initWithDispatchQueue:(id)arg1 mainRunLoopModes:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,7 +9,7 @@
 @interface NSURL (NSSAdditions)
 + (id)nss_MarketingPageURL;
 + (id)nss_NewsURLWithPathComponents:(id)arg1 internal:(_Bool)arg2;
-+ (id)nss_NewsURLForArticleID:(id)arg1 internal:(_Bool)arg2 targetIsVideo:(_Bool)arg3;
++ (id)nss_NewsURLForArticleID:(id)arg1 internal:(_Bool)arg2 targetIsVideo:(_Bool)arg3 hardPaywall:(_Bool)arg4;
 + (id)nss_NewsURLForManageNotifications;
 + (id)nss_NewsURLForFavoritesPicker;
 + (id)nss_NewsURLForHistory;

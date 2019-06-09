@@ -9,5 +9,6 @@
 @interface NSError (TVSUIViewServiceProxy)
 + (id)tvsui_invalidStateErrorOnEvent:(id)arg1 expectedStates:(id)arg2 currentState:(id)arg3;
 + (id)tvsui_reasonForInvalidStateErrorOnEvent:(id)arg1 expectedStates:(id)arg2 currentState:(id)arg3;
++ (id)tvsui_errorWithCode:(long long)arg1 reason:(id)arg2;
 @end
 

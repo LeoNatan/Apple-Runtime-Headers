@@ -4,15 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreKnowledge/CKAbstractBackingStore.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtC13CoreKnowledge17CKSQLBackingStore : CKAbstractBackingStore
+@interface _TtC13CoreKnowledge17CKSQLBackingStore : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: name
+    // Error parsing type: , name: connection
 }
 
-- (void).cxx_destruct;
-- (id)init;
++ (void)setDirectory:(id)arg1;
++ (id)directory;
 - (id)initWithName:(id)arg1;
 
 @end

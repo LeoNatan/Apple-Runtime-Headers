@@ -8,26 +8,38 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, GEOPDMapsIdentifier, GEOStyleAttributes, NSString, PBUnknownFields;
+@class GEOLatLng, GEOPDMapsIdentifier, GEOStyleAttributes, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDLinkedPlace : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned long long _featureId;
     GEOLatLng *_center;
+    unsigned long long _featureId;
     GEOPDMapsIdentifier *_mapsId;
     NSString *_name;
     GEOStyleAttributes *_styleAttributes;
-    CDStruct_b1448a5c _has;
+    struct {
+        unsigned int has_featureId:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_center:1;
+        unsigned int read_mapsId:1;
+        unsigned int read_name:1;
+        unsigned int read_styleAttributes:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_center:1;
+        unsigned int wrote_featureId:1;
+        unsigned int wrote_mapsId:1;
+        unsigned int wrote_name:1;
+        unsigned int wrote_styleAttributes:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned long long featureId; // @synthesize featureId=_featureId;
-@property(retain, nonatomic) GEOStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
-@property(retain, nonatomic) GEOLatLng *center; // @synthesize center=_center;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId; // @synthesize mapsId=_mapsId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,13 +48,23 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasFeatureId;
+@property(nonatomic) unsigned long long featureId;
+@property(retain, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) _Bool hasStyleAttributes;
+- (void)_readStyleAttributes;
+@property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) _Bool hasCenter;
+- (void)_readCenter;
+@property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
+@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId;
 @property(readonly, nonatomic) _Bool hasMapsId;
+- (void)_readMapsId;
 
 @end
 

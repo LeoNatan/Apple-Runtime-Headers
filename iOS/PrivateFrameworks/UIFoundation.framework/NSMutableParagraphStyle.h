@@ -14,6 +14,8 @@
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setHeaderLevel:(long long)arg1;
+- (void)setCompositionLanguage:(long long)arg1;
+- (void)setUsesDefaultHyphenation:(_Bool)arg1;
 - (void)setTighteningFactorForTruncation:(float)arg1;
 @property(nonatomic) float hyphenationFactor; // @dynamic hyphenationFactor;
 @property(nonatomic) long long baseWritingDirection; // @dynamic baseWritingDirection;

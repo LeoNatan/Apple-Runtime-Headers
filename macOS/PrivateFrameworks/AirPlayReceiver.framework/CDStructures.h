@@ -12,32 +12,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct APReceiverAudioSessionPrivate;
-
-struct AirPlayReceiverSessionPrivate;
-
-struct AudioStreamBasicDescription {
-    double mSampleRate;
-    unsigned int mFormatID;
-    unsigned int mFormatFlags;
-    unsigned int mBytesPerPacket;
-    unsigned int mFramesPerPacket;
-    unsigned int mBytesPerFrame;
-    unsigned int mChannelsPerFrame;
-    unsigned int mBitsPerChannel;
-    unsigned int mReserved;
-};
-
 struct CGPoint {
     double _field1;
     double _field2;
 };
-
-struct ComponentInstanceRecord;
-
-struct OpaqueAUGraph;
-
-struct OpaqueFigValeria;
-
-struct opaqueCMFormatDescription;
 

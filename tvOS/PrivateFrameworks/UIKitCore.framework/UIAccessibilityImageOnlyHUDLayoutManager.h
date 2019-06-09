@@ -11,7 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (struct CGRect)imageViewFrameForHUD:(id)arg1;
+- (struct CGSize)preferredSizeForLabelInHUD:(id)arg1 maximumWidth:(double)arg2;
+- (struct CGRect)imageViewFrameForHUD:(id)arg1 preferredSizeForLabel:(struct CGSize)arg2;
+- (struct CGSize)minimumUnscaledSizeForHUD:(id)arg1 preferredLabelSize:(struct CGSize)arg2;
 
 @end
 

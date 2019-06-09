@@ -6,8 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@class AVDelegateManager, AVKeyValueObserverCollection, AVNavigationMarkersGroup, AVPlayerItem, AVTimeRange, AVTimeRangeCollection, NSArray, NSDate, _AVChapterInfo;
+@class AVDelegateManager, AVInterstitialController, AVKeyValueObserverCollection, AVNavigationMarkersGroup, AVPlayerItem, AVTimeRange, NSArray, NSDate, _AVChapterInfo;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerControllerTVExtras : NSObject
 {
     // Error parsing type: Aq, name: _seekCount
@@ -23,8 +24,7 @@
     AVKeyValueObserverCollection *_kvoPlayer;
     AVKeyValueObserverCollection *_kvoPlayerItem;
     AVDelegateManager *_delegateManager;
-    AVTimeRangeCollection *_interstitialTimeRangeCollection;
-    AVTimeRange *_interstitialTimeRangeInProgress;
+    AVInterstitialController *_interstitialController;
     AVTimeRange *_timeRangeSeekable;
     double _longestSeekableDurationSeenForCurrentItem;
     long long _currentSeekReason;
@@ -32,9 +32,6 @@
     NSDate *_programStartDate;
     NSDate *_programEndDate;
     NSDate *_clientSpecifiedDate;
-    id _interstitialBoundaryTimeObserver;
-    CDUnknownBlockType _didEnterInterstitialTimeRangeBlock;
-    CDUnknownBlockType _didLeaveInterstitialTimeRangeBlock;
     _AVChapterInfo *_chapterInfo;
     NSArray *_filteredNavigationMarkerGroups;
     AVNavigationMarkersGroup *_filteredEmbeddedChaptersNavigationMarkersGroup;
@@ -50,9 +47,6 @@
 @property(getter=isLoadingChapterInfo) _Bool loadingChapterInfo; // @synthesize loadingChapterInfo=_loadingChapterInfo;
 @property(retain, nonatomic) _AVChapterInfo *chapterInfo; // @synthesize chapterInfo=_chapterInfo;
 @property(nonatomic) _Bool liveStreamEventModePossible; // @synthesize liveStreamEventModePossible=_liveStreamEventModePossible;
-@property(copy, nonatomic) CDUnknownBlockType didLeaveInterstitialTimeRangeBlock; // @synthesize didLeaveInterstitialTimeRangeBlock=_didLeaveInterstitialTimeRangeBlock;
-@property(copy, nonatomic) CDUnknownBlockType didEnterInterstitialTimeRangeBlock; // @synthesize didEnterInterstitialTimeRangeBlock=_didEnterInterstitialTimeRangeBlock;
-@property(retain, nonatomic) id interstitialBoundaryTimeObserver; // @synthesize interstitialBoundaryTimeObserver=_interstitialBoundaryTimeObserver;
 @property(nonatomic) _Bool isProgramEndDateExact; // @synthesize isProgramEndDateExact=_isProgramEndDateExact;
 @property(retain, nonatomic) NSDate *clientSpecifiedDate; // @synthesize clientSpecifiedDate=_clientSpecifiedDate;
 @property(retain, nonatomic) NSDate *programEndDate; // @synthesize programEndDate=_programEndDate;
@@ -63,8 +57,7 @@
 @property(nonatomic) long long currentSeekReason; // @synthesize currentSeekReason=_currentSeekReason;
 @property(nonatomic) double longestSeekableDurationSeenForCurrentItem; // @synthesize longestSeekableDurationSeenForCurrentItem=_longestSeekableDurationSeenForCurrentItem;
 @property(retain, nonatomic) AVTimeRange *timeRangeSeekable; // @synthesize timeRangeSeekable=_timeRangeSeekable;
-@property(retain, nonatomic) AVTimeRange *interstitialTimeRangeInProgress; // @synthesize interstitialTimeRangeInProgress=_interstitialTimeRangeInProgress;
-@property(retain, nonatomic) AVTimeRangeCollection *interstitialTimeRangeCollection; // @synthesize interstitialTimeRangeCollection=_interstitialTimeRangeCollection;
+@property(retain, nonatomic) AVInterstitialController *interstitialController; // @synthesize interstitialController=_interstitialController;
 @property(retain, nonatomic) AVDelegateManager *delegateManager; // @synthesize delegateManager=_delegateManager;
 @property(retain, nonatomic) AVKeyValueObserverCollection *kvoPlayerItem; // @synthesize kvoPlayerItem=_kvoPlayerItem;
 @property(retain, nonatomic) AVKeyValueObserverCollection *kvoPlayer; // @synthesize kvoPlayer=_kvoPlayer;

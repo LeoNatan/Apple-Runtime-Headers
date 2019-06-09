@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
+
 __attribute__((visibility("hidden")))
 @interface _UIStateMachine : NSObject
 {
@@ -17,11 +19,18 @@ __attribute__((visibility("hidden")))
         CDUnknownBlockType _field3;
         CDUnknownBlockType _field4;
     } *_transitionTable;
+    NSMutableDictionary *_stateChangeObservers;
     unsigned int _state;
 }
 
++ (void)debugAttemptedInvalidStateTransitionFromState:(unsigned int)arg1 withEvent:(unsigned int)arg2;
++ (void)debugStateTransitionFromState:(unsigned int)arg1 withEvent:(unsigned int)arg2 toState:(unsigned int)arg3;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
+- (void).cxx_destruct;
+- (void)_iterateTransitionTable:(CDUnknownBlockType)arg1;
+- (id)_transitionDescriptions;
 - (void)handleEvent:(unsigned int)arg1 withContext:(id)arg2;
+- (void)setStateChangeObserver:(unsigned int)arg1 observer:(CDUnknownBlockType)arg2;
 - (void)setTransitionHandlerForState:(unsigned int)arg1 withEvent:(unsigned int)arg2 transitionHandler:(CDUnknownBlockType)arg3 postTransitionHandler:(CDUnknownBlockType)arg4;
 - (void)setTransitionHandlerForState:(unsigned int)arg1 withEvent:(unsigned int)arg2 transitionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;

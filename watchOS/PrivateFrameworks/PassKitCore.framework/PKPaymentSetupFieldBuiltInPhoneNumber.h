@@ -6,19 +6,13 @@
 
 #import <PassKitCore/PKPaymentSetupFieldText.h>
 
-@class NSArray, NSMutableCharacterSet;
-
 @interface PKPaymentSetupFieldBuiltInPhoneNumber : PKPaymentSetupFieldText
 {
-    NSArray *_paddingCharacters;
-    NSMutableCharacterSet *_allowedCharacters;
 }
 
-- (void).cxx_destruct;
+- (_Bool)hasDisplayFormat;
 - (id)_submissionStringForValue:(id)arg1;
-- (id)allowedCharacters;
 - (_Bool)isBuiltIn;
-- (id)_fetchDevicePhoneNumber;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;
 
 @end

@@ -6,11 +6,13 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBCallMetrics, _INPBContactValue, _INPBDateTime;
+@class NSString, _INPBCallMetrics, _INPBContactValue, _INPBDateTime, _INPBInteger;
 
 @protocol _INPBCallRecordValue <NSObject>
 @property(nonatomic) _Bool hasUnseen;
 @property(nonatomic) _Bool unseen;
+@property(readonly, nonatomic) _Bool hasNumberOfCalls;
+@property(retain, nonatomic) _INPBInteger *numberOfCalls;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 @property(copy, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) _Bool hasDateCreated;

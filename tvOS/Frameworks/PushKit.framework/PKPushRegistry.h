@@ -8,16 +8,18 @@
 
 #import <PushKit/PKComplicationXPCClient-Protocol.h>
 #import <PushKit/PKFileProviderXPCClient-Protocol.h>
+#import <PushKit/PKUserNotificationsConnectionClient-Protocol.h>
 #import <PushKit/PKVoIPXPCClient-Protocol.h>
 
-@class NSMutableDictionary, NSSet;
+@class NSMutableDictionary, NSSet, NSString;
 @protocol OS_dispatch_queue, PKPushRegistryDelegate;
 
-@interface PKPushRegistry : NSObject <PKVoIPXPCClient, PKComplicationXPCClient, PKFileProviderXPCClient>
+@interface PKPushRegistry : NSObject <PKVoIPXPCClient, PKComplicationXPCClient, PKFileProviderXPCClient, PKUserNotificationsConnectionClient>
 {
     int _voipToken;
     int _complicationToken;
     int _fileProviderToken;
+    int _outstandingVoIPPushes;
     NSSet *_desiredPushTypes;
     id <PKPushRegistryDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
@@ -26,7 +28,9 @@
     NSMutableDictionary *_pushTypeToConnection;
 }
 
++ (void)_checkIfNecessaryVoIPFrameworksAreLinked;
 + (id)_pushTypeToMachServiceName;
+@property(nonatomic) int outstandingVoIPPushes; // @synthesize outstandingVoIPPushes=_outstandingVoIPPushes;
 @property(nonatomic) int fileProviderToken; // @synthesize fileProviderToken=_fileProviderToken;
 @property(nonatomic) int complicationToken; // @synthesize complicationToken=_complicationToken;
 @property(nonatomic) int voipToken; // @synthesize voipToken=_voipToken;
@@ -42,6 +46,10 @@
 - (id)_createConnectionForPushType:(id)arg1;
 - (void)_unregisterForPushType:(id)arg1;
 - (void)_registerForPushType:(id)arg1;
+- (void)_noteIncomingCallReported;
+- (void)_terminateAppIfThereAreUnhandledVoIPPushes;
+- (void)remoteUserNotificationPayloadReceived:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)remoteUserNotificationRegistrationSucceededWithDeviceToken:(id)arg1;
 - (void)fileProviderRegistrationFailed;
 - (void)fileProviderPayloadReceived:(id)arg1;
 - (void)fileProviderRegistrationSucceededWithDeviceToken:(id)arg1;
@@ -49,10 +57,17 @@
 - (void)complicationPayloadReceived:(id)arg1;
 - (void)complicationRegistrationSucceededWithDeviceToken:(id)arg1;
 - (void)voipRegistrationFailed;
+- (void)voipPayloadReceived:(id)arg1 mustPostCall:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)voipPayloadReceived:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)voipRegistrationSucceededWithDeviceToken:(id)arg1;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -24,6 +24,7 @@
 }
 
 + (id)sha256hashString:(id)arg1 withSalt:(id)arg2;
++ (id)supportedCommandIDs;
 @property(retain) SMNNetworkSession *session; // @synthesize session=_session;
 @property(retain) NSObject<OS_dispatch_source> *batteryLogSource; // @synthesize batteryLogSource=_batteryLogSource;
 @property(retain) NSURL *systemPath; // @synthesize systemPath=_systemPath;

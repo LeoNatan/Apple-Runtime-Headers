@@ -92,6 +92,7 @@
 - (_Bool)isEventSourceSenderAppearingForTheFirstTime:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (void)didNavigateInOneUpFromOrigin:(long long)arg1;
 - (void)didPresentOneUpFromOrigin:(long long)arg1;
 - (void)logInterestingMemoryNotificationRespondedCount;
 - (void)logInterestingMemoryNotificationSeenCount;

@@ -6,23 +6,29 @@
 
 #import <RelevanceEngine/REPredictor.h>
 
-@class CMMotionActivityManager;
+#import <RelevanceEngine/REDeviceMotionPredictorProperties-Protocol.h>
 
-@interface REDeviceMotionPredictor : REPredictor
+@class CMMotionActivity, CMMotionActivityManager, REUpNextScheduler;
+
+@interface REDeviceMotionPredictor : REPredictor <REDeviceMotionPredictorProperties>
 {
     CMMotionActivityManager *_activityManager;
-    _Bool _isStationary;
-    unsigned int _type;
+    REUpNextScheduler *_scheduler;
+    CMMotionActivity *_lastActivity;
+    _Bool _stationary;
+    unsigned int _motionType;
 }
 
 + (id)supportedFeatures;
+@property unsigned int motionType; // @synthesize motionType=_motionType;
+@property(getter=isStationary) _Bool stationary; // @synthesize stationary=_stationary;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) CMMotionActivityManager *activityManager;
 - (void)_updateWithActivity:(id)arg1;
 - (void)pause;
 - (void)resume;
 - (id)featureValueForFeature:(id)arg1 element:(id)arg2 engine:(id)arg3 trainingContext:(id)arg4;
-- (id)init;
+- (id)_init;
 
 @end
 

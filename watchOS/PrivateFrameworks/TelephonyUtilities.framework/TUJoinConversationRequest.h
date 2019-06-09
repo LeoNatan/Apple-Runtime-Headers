@@ -8,10 +8,11 @@
 
 #import <TelephonyUtilities/NSCopying-Protocol.h>
 #import <TelephonyUtilities/NSSecureCoding-Protocol.h>
+#import <TelephonyUtilities/TUFilteredRequest-Protocol.h>
 
 @class NSSet, NSString, NSURL, NSUUID, TUHandle;
 
-@interface TUJoinConversationRequest : NSObject <NSCopying, NSSecureCoding>
+@interface TUJoinConversationRequest : NSObject <TUFilteredRequest, NSCopying, NSSecureCoding>
 {
     _Bool _videoEnabled;
     _Bool _shouldSuppressInCallUI;
@@ -57,11 +58,18 @@
 - (id)remoteMembersQueryItem;
 - (id)queryItems;
 @property(readonly, nonatomic) NSURL *URL;
-- (id)description;
+- (id)handles;
+- (id)bundleIdentifier;
+@property(readonly, copy) NSString *description;
 - (id)initWithGroupUUID:(id)arg1 localParticipantHandle:(id)arg2 remoteParticipantHandles:(id)arg3;
 - (id)initWithURL:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (id)initWithRemoteMembers:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

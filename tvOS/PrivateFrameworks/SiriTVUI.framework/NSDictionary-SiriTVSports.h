@@ -8,5 +8,7 @@
 
 @interface NSDictionary (SiriTVSports)
 + (id)siritvsports_liveTuneInButtonBackgroundColorsDictionary;
++ (id)siritvui_imageDictionaryForDynamicImageDataDictionary:(id)arg1;
++ (id)siritvui_imageDictionaryForThemeImages:(id)arg1;
 @end
 

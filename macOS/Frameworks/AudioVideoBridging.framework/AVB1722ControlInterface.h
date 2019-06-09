@@ -36,7 +36,6 @@
 @property(readonly) AVBInterface *interface; // @synthesize interface=_interface;
 @property(readonly, copy) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
 - (void)dealloc;
-- (void)finalize;
 @property(readonly, nonatomic) unsigned int connection; // @dynamic connection;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @dynamic callbackQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *commandsQueue; // @dynamic commandsQueue;

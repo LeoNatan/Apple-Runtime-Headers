@@ -8,7 +8,7 @@
 
 #import <UIKitCore/CAAnimationDelegate-Protocol.h>
 
-@class CAMediaTimingFunction, NSMutableArray, NSString, NSUUID, UIView, UIViewPropertyAnimator;
+@class CAMediaTimingFunction, NSDictionary, NSMapTable, NSMutableArray, NSString, NSUUID, UIView, UIViewPropertyAnimator;
 @protocol _UIBasicAnimationFactory;
 
 __attribute__((visibility("hidden")))
@@ -26,18 +26,17 @@ __attribute__((visibility("hidden")))
     float _repeatCount;
     long long _transition;
     UIView *_transitionView;
+    NSDictionary *_transitionOptions;
     int _filter;
     UIView *_filterView;
     float _filterValue;
     SEL _willStartSelector;
     SEL _didEndSelector;
     int _didEndCount;
-    struct CGPoint _position;
     unsigned int _willStartSent:1;
     unsigned int _useCurrentLayerState:1;
     unsigned int _cacheTransition:1;
     unsigned int _autoreverses:1;
-    unsigned int _roundsToInteger:1;
     unsigned int _layoutSubviews:1;
     unsigned int _hasOuterAnimator:1;
     unsigned int _hasOuterTrackingAnimator:1;
@@ -60,6 +59,7 @@ __attribute__((visibility("hidden")))
     long long _finishedPosition;
     UIViewAnimationState *_retainedSelf;
     NSMutableArray *_viewsPendingConstraintBasedAnimation;
+    NSMapTable *_viewToDeferredAnimationsMap;
     UIViewPropertyAnimator *_propertyAnimator;
 }
 
@@ -90,8 +90,8 @@ __attribute__((visibility("hidden")))
 - (void)sendDelegateDidStopManually:(_Bool)arg1;
 - (void)sendDelegateAnimationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)animationDidStart:(id)arg1;
-- (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(_Bool)arg2 skipDelegateAssignment:(_Bool)arg3 customCurve:(id)arg4;
-- (void)setAnimationAttributes:(id)arg1 correctZeroDuration:(_Bool)arg2 skipDelegateAssignment:(_Bool)arg3;
+- (void)setAnimationAttributes:(id)arg1 skipDelegateAssignment:(_Bool)arg2 customCurve:(id)arg3;
+- (void)setAnimationAttributes:(id)arg1 skipDelegateAssignment:(_Bool)arg2;
 - (void)_removeLastCompletion;
 - (_Bool)_addCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_addCompletionWithPosition:(CDUnknownBlockType)arg1;
@@ -102,7 +102,11 @@ __attribute__((visibility("hidden")))
 - (void)setupCustomTimingCurve;
 - (void)_runConstraintBasedLayoutAnimations;
 - (void)pop;
-- (_Bool)_addPendingKeyframeValue:(id)arg1 forKey:(id)arg2 view:(id)arg3;
+- (void)_finalizeDeferredAnimations;
+- (id)_updateAnimationFrameWithAnimationProperties:(id)arg1;
+- (_Bool)_hasDeferredAnimationForView:(id)arg1 key:(id)arg2;
+- (id)_deferredAnimationForView:(id)arg1 key:(id)arg2;
+- (id)_createDeferredAnimationForKey:(id)arg1;
 - (void)setupWithDuration:(double)arg1 delay:(double)arg2 view:(id)arg3 options:(unsigned long long)arg4 factory:(id)arg5 parentState:(id)arg6 start:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
 - (id)_outerPropertyAnimator:(_Bool)arg1;
 - (double)_elapsedTimeForCanonicallyTrackedAnimation;

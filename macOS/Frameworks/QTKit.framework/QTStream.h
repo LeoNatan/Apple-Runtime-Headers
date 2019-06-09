@@ -6,47 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class QTTrack;
-
 @interface QTStream : NSObject
 {
-    int _proxy;
-    QTTrack *_track;
-    long long _reserved1;
-    long long _reserved2;
 }
 
 + (id)streamWithProxy:(int)arg1;
 + (void)initialize;
-- (void)setTrack:(id)arg1;
-- (id)track;
-- (id)videoFormatString;
-- (unsigned int)pixelDepth;
-- (BOOL)isGrayScale;
-- (id)audioFormatString;
-- (unsigned int)audioSampleSize;
-- (double)audioSampleRate;
-- (unsigned int)audioChannelCount;
-- (id)kind;
-- (int)index;
-- (id)mediaTypeString;
-- (id)type;
-- (unsigned int)queueSize;
-- (unsigned int)queueDuration;
-- (int)packetsLostPercent;
-- (unsigned int)packetsLost;
-- (id)name;
-- (int)expectedFrameRate;
-- (id)dataFormat;
-- (int)chunksSkippedPercent;
-- (unsigned int)chunksSkipped;
-- (unsigned int)chunksReceived;
-- (unsigned int)chunksPlayed;
-- (int)averageFrameRate;
-- (void)invalidate;
-- (void)dealloc;
-- (void)finalize;
-- (int)proxy;
+- (id)init;
 - (id)initWithProxy:(int)arg1;
 
 @end

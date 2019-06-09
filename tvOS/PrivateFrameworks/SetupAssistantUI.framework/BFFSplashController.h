@@ -8,14 +8,12 @@
 
 #import <SetupAssistantUI/UIScrollViewDelegate-Protocol.h>
 
-@class BFFPaneHeaderView, NSMutableArray, NSString, UIColor, UIImage, UIScrollView, UIView, _UIBackdropView;
+@class BFFPaneHeaderView, NSMutableArray, NSString, UIColor, UIImage, UIScrollView, UIView, UIVisualEffectView;
 
 @interface BFFSplashController : UIViewController <UIScrollViewDelegate>
 {
     BFFPaneHeaderView *_headerView;
     UIScrollView *_scrollView;
-    _UIBackdropView *_lightTrayBackdrop;
-    _UIBackdropView *_ultraLightTrayBackdrop;
     NSMutableArray *_buttons;
     UIColor *_tint;
     UIView *_bleedView;
@@ -28,9 +26,11 @@
     long long _contentViewPosition;
     UIView *_buttonTray;
     UIColor *_bleedColor;
+    UIVisualEffectView *_effectView;
     struct UIEdgeInsets _additionalInsets;
 }
 
+@property(retain, nonatomic) UIVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(nonatomic) _Bool usesTwoButtonLayout; // @synthesize usesTwoButtonLayout=_usesTwoButtonLayout;
 @property(retain, nonatomic) UIColor *bleedColor; // @synthesize bleedColor=_bleedColor;
 @property(nonatomic) _Bool fullWidthContent; // @synthesize fullWidthContent=_fullWidthContent;

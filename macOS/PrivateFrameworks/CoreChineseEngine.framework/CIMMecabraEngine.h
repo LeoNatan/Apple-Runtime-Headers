@@ -18,7 +18,6 @@
     BOOL _autocorrectionEnabled;
     int _shuangpinLayout;
     BOOL _fuzzyPinyinEnabled;
-    BOOL _addSpacesForLatinWords;
     BOOL _URLPunctuationEntered;
     unsigned long long _numFullStops;
     NSArray *_fuzzyPinyinPairs;
@@ -98,7 +97,6 @@
 @property(copy, nonatomic) NSArray *additionalDictionaryPaths; // @synthesize additionalDictionaryPaths=_additionalDictionaryPaths;
 @property(nonatomic) BOOL showCompletionCandidates; // @synthesize showCompletionCandidates=_showCompletionCandidates;
 @property(copy, nonatomic) NSArray *fuzzyPinyinPairs; // @synthesize fuzzyPinyinPairs=_fuzzyPinyinPairs;
-@property(nonatomic) BOOL addSpacesForLatinWords; // @synthesize addSpacesForLatinWords=_addSpacesForLatinWords;
 @property(nonatomic) BOOL fuzzyPinyinEnabled; // @synthesize fuzzyPinyinEnabled=_fuzzyPinyinEnabled;
 @property(nonatomic) int shuangpinLayout; // @synthesize shuangpinLayout=_shuangpinLayout;
 @property(nonatomic) BOOL autocorrectionEnabled; // @synthesize autocorrectionEnabled=_autocorrectionEnabled;

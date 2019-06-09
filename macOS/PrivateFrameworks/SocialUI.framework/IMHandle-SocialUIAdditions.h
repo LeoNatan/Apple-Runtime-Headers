@@ -6,7 +6,7 @@
 
 #import <IMCore/IMHandle.h>
 
-@class CNContact;
+@class CNContact, NSImage;
 
 @interface IMHandle (SocialUIAdditions)
 + (void)composeEMailToPeople:(id)arg1;
@@ -18,6 +18,7 @@
 + (id)_cachedContacts;
 + (id)genericPicture;
 + (id)handleAvatarCache;
++ (id)logger;
 - (id)fmfSiblingHandles;
 - (id)fmfHandle;
 - (id)menuItemsForAVOptions:(unsigned long long)arg1 target:(id)arg2 availableAVOptions:(unsigned long long *)arg3 updateBlock:(CDUnknownBlockType)arg4;
@@ -31,6 +32,7 @@
 - (void)_initiateScreenSharingShareMyScreen:(BOOL)arg1;
 - (void)faceTimeCallWithVideo:(_Bool)arg1;
 - (BOOL)showContactInRect:(struct CGRect)arg1 ofWindow:(id)arg2 preferredEdge:(unsigned long long)arg3;
+- (id)contactImageForTranscriptWithDiameter:(double)arg1 style:(long long)arg2;
 - (id)monogramWithDiameter:(double)arg1 style:(long long)arg2;
 - (id)monogramWithDiameter:(double)arg1 style:(long long)arg2 blocking:(BOOL)arg3;
 - (id)customImageDataBlocking:(BOOL)arg1;
@@ -40,5 +42,7 @@
 - (void)setCachedMonograms:(id)arg1;
 - (id)cachedMonograms;
 @property(readonly) CNContact *avatarContact;
+- (id)logger;
+@property(readonly) NSImage *image;
 @end
 

@@ -6,47 +6,27 @@
 
 #import <SearchUI/SearchUICardSectionView.h>
 
-#import <SearchUI/NUIContainerStackViewDelegate-Protocol.h>
-#import <SearchUI/SearchUIFeedbackDelegate-Protocol.h>
-#import <SearchUI/TLKDetailsViewDelegate-Protocol.h>
+#import <SearchUI/SearchUIDetailedViewDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, SearchUIAccessoryViewController, SearchUIImageView, TLKDetailsView, TLKStackView, UIButton;
+@class NSString, SearchUIDetailedRowModel, SearchUIDetailedView;
 
-@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate, TLKDetailsViewDelegate, SearchUIFeedbackDelegate>
+@interface SearchUIDetailedRowCardSectionView : SearchUICardSectionView <SearchUIDetailedViewDelegate>
 {
-    SearchUIImageView *_thumbnailView;
-    UIButton *_buttonView;
-    TLKDetailsView *_detailsView;
-    TLKStackView *_innerStackView;
-    NSMutableDictionary *_accessoryViewControllers;
-    SearchUIAccessoryViewController *_accessoryViewControllerForSection;
 }
 
-+ (id)dragSubtitleForCardSection:(id)arg1;
-+ (id)dragTitleForCardSection:(id)arg1;
-+ (void)addViewIfNecessary:(id)arg1 toStackView:(id)arg2 removeFromStackView:(id)arg3;
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
-@property(retain) SearchUIAccessoryViewController *accessoryViewControllerForSection; // @synthesize accessoryViewControllerForSection=_accessoryViewControllerForSection;
-@property(retain) NSMutableDictionary *accessoryViewControllers; // @synthesize accessoryViewControllers=_accessoryViewControllers;
-@property(retain) TLKStackView *innerStackView; // @synthesize innerStackView=_innerStackView;
-@property(retain) TLKDetailsView *detailsView; // @synthesize detailsView=_detailsView;
-@property(retain) UIButton *buttonView; // @synthesize buttonView=_buttonView;
-@property(retain) SearchUIImageView *thumbnailView; // @synthesize thumbnailView=_thumbnailView;
-- (void).cxx_destruct;
-- (void)didEngageActionItem:(id)arg1 actionPerformed:(_Bool)arg2;
-- (void)buttonPressed;
-- (long long)containerStackView:(id)arg1 alignmentForArrangedSubview:(id)arg2;
-- (_Bool)arrangedViewMustCenter:(id)arg1;
-- (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
-- (void)updateWithRowModel:(id)arg1;
 - (void)footnoteButtonPressed;
+- (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
+- (void)setFeedbackDelegate:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) TLKStackView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) SearchUIDetailedView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(retain, nonatomic) SearchUIDetailedRowModel *rowModel; // @dynamic rowModel;
 @property(readonly) Class superclass;
 
 @end

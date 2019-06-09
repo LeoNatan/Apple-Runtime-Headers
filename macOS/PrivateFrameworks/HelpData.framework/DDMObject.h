@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL;
+#import <HelpData/HPDLoggable-Protocol.h>
 
-@interface DDMObject : NSObject
+@class NSString, NSURL;
+
+@interface DDMObject : NSObject <HPDLoggable>
 {
     NSURL *_originURL;
 }
 
 + (id)newWithDDMDictionary:(id)arg1 originURL:(id)arg2;
++ (id)log;
 @property(readonly) NSURL *originURL; // @synthesize originURL=_originURL;
 - (void).cxx_destruct;
 - (id)_initWithDDMDictionary:(id)arg1 originURL:(id)arg2;
@@ -21,6 +24,12 @@
 - (id)_makeTreeFromArray:(id)arg1 withDescription:(id)arg2 topLevelItemIDs:(id)arg3;
 - (id)jsonModelObjectMap;
 - (id)ddmObjectIdentifier;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

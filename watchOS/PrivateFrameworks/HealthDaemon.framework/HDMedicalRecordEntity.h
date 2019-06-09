@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)columnNameForSortIdentifier:(id)arg1;
++ (id)orderingTermForSortDescriptor:(id)arg1;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (int)preferredEntityType;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;

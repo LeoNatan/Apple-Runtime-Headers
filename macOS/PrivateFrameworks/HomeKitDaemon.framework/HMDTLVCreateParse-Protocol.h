@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class HMUIndent, NSData, NSString;
+@class HMFStringIndentation, NSData, NSString;
 
 @protocol HMDTLVCreateParse
-- (NSString *)descriptionWithIndent:(HMUIndent *)arg1;
+- (NSString *)descriptionWithIndent:(HMFStringIndentation *)arg1;
 - (BOOL)_parseFromTLVData;
 - (NSData *)tlvData;
 @end

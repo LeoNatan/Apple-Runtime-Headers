@@ -7,21 +7,20 @@
 #import <objc/NSObject.h>
 
 @class CMWorkout, CMWorkoutManager;
-@protocol CMWorkoutManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
+@protocol CMWorkoutManagerDelegate, OS_dispatch_queue;
 
 @interface CMWorkoutManagerInternal : NSObject
 {
     struct CLConnectionClient *fLocationdConnection;
     NSObject<OS_dispatch_queue> *fInternalQueue;
-    NSObject<OS_dispatch_source> *fWatchdogTimer;
     id <CMWorkoutManagerDelegate> fDelegate;
     CMWorkoutManager *fSender;
     CMWorkout *fWorkout;
     _Bool fResumeWorkoutOnInterrupt;
 }
 
-- (void)_stopWatchdogCheckins;
-- (void)_startWatchdogCheckins;
+- (void)_getPromptsNeededForWorkoutType:(long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (_Bool)_shouldAllowMotionCalibrationPromptsForWorkoutType:(long long)arg1;
 - (void)_unregisterForWorkoutEvents;
 - (void)_registerForWorkoutEvents;
 - (void)_handleDaemonEvent:(id)arg1;

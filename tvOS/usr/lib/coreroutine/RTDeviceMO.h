@@ -6,27 +6,28 @@
 
 #import <coreroutine/RTCloudManagedObject.h>
 
-@class NSDate, NSSet, NSString;
+@class NSSet, NSString;
 
 @interface RTDeviceMO : RTCloudManagedObject
 {
 }
 
-+ (id)managedObjectWithIdentifier:(id)arg1 deviceName:(id)arg2 deviceClass:(id)arg3 deviceModel:(id)arg4 inManagedObjectContext:(id)arg5;
++ (id)managedObjectWithIdentifier:(id)arg1 deviceName:(id)arg2 deviceClass:(id)arg3 deviceModel:(id)arg4 creationDate:(id)arg5 inManagedObjectContext:(id)arg6;
 + (id)fetchRequest;
-@property(copy, nonatomic) NSDate *expirationDate;
-@property(copy, nonatomic) NSDate *creationDate;
+- (id)cloneInContext:(id)arg1;
 - (void)setDevice:(id)arg1;
 @property(readonly, nonatomic) RTDeviceMO *device;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *addresses; // @dynamic addresses;
+@property(retain, nonatomic) NSSet *deletionRequests; // @dynamic deletionRequests;
 @property(copy, nonatomic) NSString *deviceClass; // @dynamic deviceClass;
 @property(copy, nonatomic) NSString *deviceModel; // @dynamic deviceModel;
 @property(copy, nonatomic) NSString *deviceName; // @dynamic deviceName;
 @property(retain, nonatomic) NSSet *mapItems; // @dynamic mapItems;
 @property(retain, nonatomic) NSSet *places; // @dynamic places;
 @property(retain, nonatomic) NSSet *transitions; // @dynamic transitions;
+@property(retain, nonatomic) NSSet *userCorrections; // @dynamic userCorrections;
 @property(retain, nonatomic) NSSet *visits; // @dynamic visits;
 
 @end

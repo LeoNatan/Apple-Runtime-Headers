@@ -17,11 +17,14 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)accountTypeMap;
++ (id)ABACAccountTypeFromACAccountType:(id)arg1;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)addressBookAccountType;
-- (void)dealloc;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 
 @end

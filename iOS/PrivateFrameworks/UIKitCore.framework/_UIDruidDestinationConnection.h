@@ -10,7 +10,7 @@
 #import <UIKitCore/_DUIClientSessionDestination-Protocol.h>
 #import <UIKitCore/_UIDruidDestinationConnection-Protocol.h>
 
-@class NSXPCConnection;
+@class NSString, NSXPCConnection;
 @protocol _DUIServerSessionDestination;
 
 __attribute__((visibility("hidden")))
@@ -23,18 +23,14 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _dragEndBlock;
     CDUnknownBlockType _dropPerformBlock;
     CDUnknownBlockType _handOffDroppedItemsBlock;
-    CDUnknownBlockType _itemDetailProviderBlock;
-    CDUnknownBlockType _itemImageProviderBlock;
+    CDUnknownBlockType _dragPreviewProviderBlock;
     CDUnknownBlockType _itemsAddedBlock;
-    CDUnknownBlockType _itemUpdateBlock;
     long long _state;
 }
 
 @property(nonatomic) long long state; // @synthesize state=_state;
-@property(copy, nonatomic) CDUnknownBlockType itemUpdateBlock; // @synthesize itemUpdateBlock=_itemUpdateBlock;
 @property(copy, nonatomic) CDUnknownBlockType itemsAddedBlock; // @synthesize itemsAddedBlock=_itemsAddedBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemImageProviderBlock; // @synthesize itemImageProviderBlock=_itemImageProviderBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemDetailProviderBlock; // @synthesize itemDetailProviderBlock=_itemDetailProviderBlock;
+@property(copy, nonatomic) CDUnknownBlockType dragPreviewProviderBlock; // @synthesize dragPreviewProviderBlock=_dragPreviewProviderBlock;
 @property(copy, nonatomic) CDUnknownBlockType handOffDroppedItemsBlock; // @synthesize handOffDroppedItemsBlock=_handOffDroppedItemsBlock;
 @property(copy, nonatomic) CDUnknownBlockType dropPerformBlock; // @synthesize dropPerformBlock=_dropPerformBlock;
 @property(copy, nonatomic) CDUnknownBlockType dragEndBlock; // @synthesize dragEndBlock=_dragEndBlock;
@@ -44,16 +40,20 @@ __attribute__((visibility("hidden")))
 - (oneway void)dragEnded;
 - (oneway void)handOffDroppedItems:(id)arg1 withFence:(id)arg2;
 - (oneway void)performDropWithItemCollection:(id)arg1 dataProviderEndpoint:(id)arg2 visibleDroppedItems:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (oneway void)addedItemsWithDetails:(id)arg1 itemCollection:(id)arg2;
-- (oneway void)updateDetail:(id)arg1 forItemIndex:(unsigned long long)arg2;
-- (oneway void)requestDetailForItemIndex:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
-- (oneway void)requestImageForItemIndex:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (oneway void)addedItemCollection:(id)arg1;
+- (oneway void)requestDragPreviewsForIndexSet:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)enableKeyboardIfNeeded;
 - (void)requestDropWithOperation:(unsigned long long)arg1;
 - (void)takePotentialDrop:(id)arg1;
 - (void)sawDragEndEvent;
 - (void)dirtyItems:(id)arg1;
-- (id)initWithSessionIdentifier:(unsigned int)arg1;
+- (id)initWithSessionIdentifier:(unsigned int)arg1 systemPolicy:(_Bool)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

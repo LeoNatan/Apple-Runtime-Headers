@@ -10,11 +10,7 @@
 {
 }
 
-+ (id)myFullName;
-+ (id)addAddressToAddressBook:(id)arg1;
-+ (id)addEmailAddressToCardMatchingFirstAndLastNameFromFormattedAddress:(id)arg1;
 + (id)_addressBookRecordsForFirstName:(id)arg1 lastName:(id)arg2;
-+ (id)emailAddressesFromGroup:(id)arg1;
 + (void)_addEmailsFromGroup:(id)arg1 toDictionary:(id)arg2;
 + (id)groupsMatchingString:(id)arg1;
 + (id)myEmailAddress;

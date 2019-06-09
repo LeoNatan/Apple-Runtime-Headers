@@ -24,9 +24,9 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
-@property(readonly, nonatomic) NSString *localizedShortMessage;
 @property(readonly, nonatomic) NSString *localizedMessage;
 @property(readonly, nonatomic) NSArray *pdHours;
+- (_Bool)pdHoursAreValid;
 @property(readonly, nonatomic) unsigned int hoursType;
 @property(readonly, nonatomic) unsigned int closingSoonThresdholdInSeconds;
 @property(readonly, nonatomic) unsigned int openingSoonThresholdInSeconds;

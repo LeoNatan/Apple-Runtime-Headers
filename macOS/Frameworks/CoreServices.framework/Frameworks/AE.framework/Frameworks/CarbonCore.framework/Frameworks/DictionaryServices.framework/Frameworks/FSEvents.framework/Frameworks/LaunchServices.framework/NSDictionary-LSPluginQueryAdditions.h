@@ -7,7 +7,12 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (LSPluginQueryAdditions)
-- (unsigned long long)_hashQuery;
-- (id)_parseQueryForIdentifiers:(id)arg1;
+- (unsigned long long)ls_hashQuery;
+- (id)ls_parseQueryForIdentifiers:(id)arg1;
+- (id)ls_resolvePlugInKitInfoPlistWithDictionary:(id)arg1;
+- (id)ls_insertExtensionPointVersion:(id)arg1;
+- (id)ls_updatePlistKeys;
+- (unsigned long long)_LS_integerForKey:(id)arg1;
+- (BOOL)_LS_BoolForKey:(id)arg1;
 @end
 

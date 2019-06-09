@@ -6,7 +6,7 @@
 
 #import <DeviceManagement/DMFInstallAppRequest.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface DMFMDMv1InstallAppRequest : DMFInstallAppRequest
 {
@@ -15,7 +15,9 @@
     NSString *_originator;
     unsigned long long _managementOptions;
     NSString *_VPNUUIDString;
+    NSArray *_associatedDomains;
     NSDictionary *_configuration;
+    NSString *_personaID;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -23,7 +25,9 @@
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
 + (Class)whitelistedClassForResultObject;
+@property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
+@property(copy, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
 @property(copy, nonatomic) NSString *VPNUUIDString; // @synthesize VPNUUIDString=_VPNUUIDString;
 @property(nonatomic) unsigned long long managementOptions; // @synthesize managementOptions=_managementOptions;
 @property(nonatomic) BOOL manage; // @synthesize manage=_manage;

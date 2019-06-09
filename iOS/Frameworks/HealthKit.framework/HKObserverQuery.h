@@ -12,16 +12,20 @@
 
 @interface HKObserverQuery : HKQuery <HKObserverQueryClientInterface>
 {
+    _Bool _observeUnfrozenSeries;
     CDUnknownBlockType _updateHandler;
 }
 
 + (id)clientInterfaceProtocol;
++ (Class)configurationClass;
+@property(nonatomic) _Bool observeUnfrozenSeries; // @synthesize observeUnfrozenSeries=_observeUnfrozenSeries;
 @property(readonly, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 - (void).cxx_destruct;
 - (void)queue_deliverError:(id)arg1;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;
 - (void)queue_validate;
 - (void)queue_queryDidDeactivate:(id)arg1;
+- (void)queue_populateConfiguration:(id)arg1;
 - (void)client_dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (id)initWithSampleType:(id)arg1 predicate:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
 

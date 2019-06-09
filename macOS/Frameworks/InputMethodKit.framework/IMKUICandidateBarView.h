@@ -14,8 +14,10 @@
 @interface IMKUICandidateBarView : NSView <NSAccessibilityList>
 {
     id <IMKUICandidateAccessibilityDelegate> _accessibilityController;
+    double _candidateItemMargin;
     NSArray *_candidateItems;
     id <IMKUICandidateItemViewHandling> _delegate;
+    BOOL _drawsBackground;
     BOOL _highlighted;
     unsigned long long _index;
     IMKUICandidateLayoutTraits *_layoutTraits;
@@ -28,10 +30,13 @@
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 @property(retain, nonatomic) NSMutableDictionary *itemToViewMapping; // @synthesize itemToViewMapping=_itemToViewMapping;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;
+@property(nonatomic) BOOL drawsBackground; // @synthesize drawsBackground=_drawsBackground;
 @property(nonatomic) __weak id <IMKUICandidateItemViewHandling> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *candidateItems; // @synthesize candidateItems=_candidateItems;
+@property(nonatomic) double candidateItemMargin; // @synthesize candidateItemMargin=_candidateItemMargin;
 @property(nonatomic) __weak id <IMKUICandidateAccessibilityDelegate> accessibilityController; // @synthesize accessibilityController=_accessibilityController;
 - (void).cxx_destruct;
+- (long long)accessibilityOrientation;
 - (id)accessibilityRows;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilitySelectedChildren;
@@ -39,6 +44,7 @@
 - (id)accessibilityVisibleChildren;
 - (id)accessibilityChildren;
 - (BOOL)isAccessibilityEnabled;
+- (id)accessibilityIdentifier;
 - (id)accessibilityLabel;
 - (id)accessibilityTitle;
 - (void)drawRect:(struct CGRect)arg1;

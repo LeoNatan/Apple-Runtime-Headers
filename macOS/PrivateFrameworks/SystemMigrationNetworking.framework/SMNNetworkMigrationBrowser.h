@@ -20,7 +20,7 @@
     CDUnknownBlockType _systemAppearedBlock;
     CDUnknownBlockType _systemDisappearedBlock;
     SMNNetworkSession *_session;
-    struct OpaqueSecIdentityRef *_localIdentity;
+    struct __SecIdentity *_localIdentity;
     NSMutableDictionary *_serviceToTxtRecordMap;
     NSObject<OS_dispatch_queue> *_serviceMapQueue;
 }
@@ -28,7 +28,7 @@
 + (void)addLocalInstanceName:(id)arg1;
 @property(retain) NSObject<OS_dispatch_queue> *serviceMapQueue; // @synthesize serviceMapQueue=_serviceMapQueue;
 @property(retain) NSMutableDictionary *serviceToTxtRecordMap; // @synthesize serviceToTxtRecordMap=_serviceToTxtRecordMap;
-@property struct OpaqueSecIdentityRef *localIdentity; // @synthesize localIdentity=_localIdentity;
+@property struct __SecIdentity *localIdentity; // @synthesize localIdentity=_localIdentity;
 @property(retain) SMNNetworkSession *session; // @synthesize session=_session;
 @property(copy) CDUnknownBlockType systemDisappearedBlock; // @synthesize systemDisappearedBlock=_systemDisappearedBlock;
 @property(copy) CDUnknownBlockType systemAppearedBlock; // @synthesize systemAppearedBlock=_systemAppearedBlock;

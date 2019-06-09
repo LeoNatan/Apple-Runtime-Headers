@@ -34,6 +34,7 @@
     NSDate *_lastQueryStartedTime;
 }
 
++ (id)_leafAccountTypesToCheckForEquality;
 + (id)daAccountSubclassWithBackingAccountInfo:(id)arg1;
 + (void)reacquireClientRestrictions:(id)arg1;
 + (id)oneshotListOfAccountIDs;
@@ -70,9 +71,9 @@
 - (_Bool)isGoogleAccount;
 - (_Bool)isHotmailAccount;
 - (_Bool)isCalDAVChildAccount;
+- (_Bool)isDelegateAccount;
 - (_Bool)isCardDAVAccount;
 - (_Bool)isCalDAVAccount;
-- (_Bool)isBookmarkDAVAccount;
 - (_Bool)isLDAPAccount;
 - (_Bool)isActiveSyncAccount;
 - (_Bool)accountHasSignificantPropertyChangesFromOldAccountInfo:(id)arg1;
@@ -88,6 +89,8 @@
 - (_Bool)_isIdentityManagedByProfile;
 - (void)setIdentityCertificatePersistentID:(id)arg1 managedByProfile:(_Bool)arg2;
 @property(readonly, copy, nonatomic) NSData *identityPersist;
+- (_Bool)canSaveWithAccountProvider:(CDUnknownBlockType)arg1;
+- (_Bool)preflightSaveWithAccountProvider:(CDUnknownBlockType)arg1;
 - (id)addUsernameToURL:(id)arg1;
 @property(readonly, nonatomic) int keychainAccessibilityType;
 - (void)updateExistingAccountProperties;
@@ -117,6 +120,7 @@
 - (_Bool)autodiscoverAccountConfigurationWithConsumer:(id)arg1;
 - (void)discoverInitialPropertiesWithConsumer:(id)arg1;
 - (_Bool)saveModifiedPropertiesOnBackingAccount;
+- (void)checkValidityOnAccountStore:(id)arg1 withConsumer:(id)arg2 inQueue:(id)arg3;
 - (void)checkValidityOnAccountStore:(id)arg1 withConsumer:(id)arg2;
 @property(copy, nonatomic) NSURL *principalURL;
 @property(readonly, copy, nonatomic) NSString *scheme;
@@ -131,6 +135,7 @@
 @property(copy, nonatomic) NSString *host;
 - (id)domainOnly;
 - (id)usernameWithoutDomain;
+- (void)handleContactsNotificationNamed:(id)arg1;
 - (int)portFromDataclassPropertiesForDataclass:(id)arg1;
 - (_Bool)useSSLFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)hostFromDataclassPropertiesForDataclass:(id)arg1;
@@ -168,6 +173,7 @@
 @property(copy, nonatomic) NSString *username;
 - (id)displayName;
 @property(copy, nonatomic) NSString *accountDescription;
+@property(readonly, nonatomic) NSString *publicDescription;
 @property(readonly, nonatomic) NSString *changeTrackingID;
 - (void)_setPersistentUUID:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *persistentUUID;
@@ -177,6 +183,8 @@
 - (void)resetAccountID;
 - (_Bool)upgradeAccount;
 @property(nonatomic, setter=setDAAccountVersion:) int daAccountVersion;
+- (id)containerProviderWithDBHelper:(id)arg1;
+- (id)accountsProviderWithDBHelper:(id)arg1;
 - (void)ingestBackingAccountInfoProperties;
 - (id)initWithBackingAccountInfo:(id)arg1;
 - (void)dealloc;
@@ -186,9 +194,9 @@
 - (void)removeFromCoreDAVLoggingDelegates;
 - (void)addToCoreDAVLoggingDelegates;
 - (void)handleValidationError:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)_webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)dropAssertionsAndRenewCredentialsWithHandler:(CDUnknownBlockType)arg1;
+- (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 inQueue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 inQueue:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)dropAssertionsAndRenewCredentialsInQueue:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (id)localizedInvalidPasswordMessage;
 - (id)localizedIdenticalAccountFailureMessage;
 - (void)cancelShareResponseInstance:(id)arg1 error:(id)arg2;
@@ -196,6 +204,10 @@
 - (id)respondToShareRequestForCalendar:(id)arg1 withResponse:(int)arg2 consumer:(id)arg3;
 - (void)cancelCalendarDirectorySearchWithID:(id)arg1;
 - (id)performCalendarDirectorySearchForTerms:(id)arg1 recordTypes:(id)arg2 resultLimit:(unsigned int)arg3 consumer:(id)arg4;
+- (void)cancelUpdateGrantedDelegatePermissionRequestWithID:(id)arg1;
+- (id)updateGrantedDelegatePermission:(id)arg1 consumer:(id)arg2;
+- (void)cancelGrantedDelegatesListRequestWithID:(id)arg1;
+- (id)requestGrantedDelegatesListWithConsumer:(id)arg1;
 - (void)cancelCalendarAvailabilityRequestWithID:(id)arg1;
 - (id)requestCalendarAvailabilityForStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 consumer:(id)arg5;
 - (void)cancelDownloadingInstance:(id)arg1 error:(id)arg2;
@@ -213,6 +225,7 @@
 - (id)inboxFolder;
 - (id)unactionableICSRepresentationForMetaData:(id)arg1 inFolderWithId:(id)arg2 outSummary:(id *)arg3;
 - (_Bool)reattemptInvitationLinkageForMetaData:(id)arg1 inFolderWithId:(id)arg2;
+- (_Bool)isOofSupported;
 - (void)retrieveOofSettingsForConsumer:(id)arg1;
 - (void)updateOofSettingsWithParams:(id)arg1 consumer:(id)arg2;
 - (int)supportsEmailFlagging;
@@ -236,8 +249,6 @@
 - (void)synchronizeNotesFolder:(id)arg1 noteContext:(id)arg2 previousTag:(id)arg3 actions:(id)arg4 changeSet:(id)arg5 notesToDeleteAfterSync:(id)arg6 isInitialUberSync:(_Bool)arg7 isResyncAfterConnectionFailed:(_Bool)arg8 moreLocalChangesAvailable:(_Bool)arg9 consumer:(id)arg10;
 - (id)notesFolders;
 - (id)defaultNotesFolder;
-- (void)synchronizeBookmarkTreeWithConsumer:(id)arg1 hasRemoteChanges:(_Bool)arg2;
-- (void)getRootFolderWithConsumer:(id)arg1;
 
 @end
 

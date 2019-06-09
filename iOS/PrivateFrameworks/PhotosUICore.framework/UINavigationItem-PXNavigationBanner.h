@@ -10,5 +10,8 @@
 
 @interface UINavigationItem (PXNavigationBanner)
 @property(retain, nonatomic, setter=px_setBannerView:) UIView *px_bannerView;
+- (void)_updateFinalLargeTitleDisplayMode;
+@property(nonatomic, setter=px_setPreferredLargeTitleDisplayMode:) long long px_preferredLargeTitleDisplayMode;
+@property(nonatomic, setter=px_setDisableLargeTitle:) _Bool px_disableLargeTitle;
 @end
 

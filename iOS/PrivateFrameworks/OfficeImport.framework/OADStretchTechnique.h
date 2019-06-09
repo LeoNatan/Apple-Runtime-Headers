@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isFillRectOverridden;
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)removeUnnecessaryOverrides;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (_Bool)isAnythingOverridden;
-- (void)dealloc;
 - (id)initWithDefaults;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

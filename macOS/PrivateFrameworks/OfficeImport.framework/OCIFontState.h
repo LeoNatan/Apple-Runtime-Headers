@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OCIFontState : NSObject
 {
     NSMutableDictionary *_replacedFontMap;

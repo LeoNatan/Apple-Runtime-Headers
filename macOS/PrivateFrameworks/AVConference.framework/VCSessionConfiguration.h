@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long sessionMode; // @synthesize sessionMode=_sessionMode;
 @property(nonatomic) unsigned long long maxRemoteParticipants; // @synthesize maxRemoteParticipants=_maxRemoteParticipants;
 - (BOOL)applyConfigurationUsingClientDict:(id)arg1;
-@property(readonly, nonatomic) BOOL isContinuity;
 - (BOOL)updateWithClientDictionary:(id)arg1;
 - (void)dealloc;
 - (id)initWithClientDictionary:(id)arg1;

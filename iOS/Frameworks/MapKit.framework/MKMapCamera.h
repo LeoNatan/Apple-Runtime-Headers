@@ -18,6 +18,7 @@
     double _pitch;
     double _altitude;
     MKMapView *_mapView;
+    _Bool _pitchAdjustsAltitude;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -34,6 +35,7 @@
 - (_Bool)_validate;
 - (id)description;
 - (void)_updateState;
+@property(nonatomic) double centerCoordinateDistance;
 @property(nonatomic) double pitch;
 - (void)_setMapView:(id)arg1;
 - (id)_mapView;

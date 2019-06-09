@@ -33,7 +33,6 @@
     SSScreenInfo *mSelectedScreen;
     double mContentsScale;
     NSArray *mScreensToDraw;
-    void *mReservedForInstanceVariables;
 }
 
 @property(copy) SSScreenInfo *selectedScreen; // @synthesize selectedScreen=mSelectedScreen;

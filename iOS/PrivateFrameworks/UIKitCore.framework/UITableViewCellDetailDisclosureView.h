@@ -6,16 +6,18 @@
 
 #import <UIKitCore/UIControl.h>
 
-@class UIButton, UIImageView;
+@class UIButton, UIImageView, UITableViewCell;
 
 __attribute__((visibility("hidden")))
 @interface UITableViewCellDetailDisclosureView : UIControl
 {
     UIButton *_infoButton;
     UIImageView *_disclosureView;
+    UITableViewCell *_cell;
 }
 
 - (void).cxx_destruct;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned long long)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

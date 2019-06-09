@@ -9,6 +9,7 @@
 @interface NSDate (TMAdditions)
 + (id)tm_dateFromTimestampString:(id)arg1;
 + (id)_tm_dateFormatter;
+- (id)tm_timestampStringWithDelay:(unsigned int)arg1;
 - (id)tm_timestampString;
 @end
 

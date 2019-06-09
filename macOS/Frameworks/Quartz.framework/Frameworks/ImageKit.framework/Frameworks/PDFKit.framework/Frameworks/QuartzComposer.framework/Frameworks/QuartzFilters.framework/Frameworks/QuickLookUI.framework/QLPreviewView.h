@@ -15,12 +15,13 @@
 #import <QuickLookUI/QLScrollable-Protocol.h>
 #import <QuickLookUI/QLSeamlessOpenerDelegate-Protocol.h>
 
-@class CALayer, NSClickGestureRecognizer, NSImage, NSPanGestureRecognizer, NSSet, NSString, QLPreviewDocument, QLPreviewDragController, QLPreviewViewReserved;
+@class CALayer, NSClickGestureRecognizer, NSImage, NSMutableSet, NSPanGestureRecognizer, NSSet, NSString, QLPreviewDocument, QLPreviewDragController, QLPreviewViewReserved;
 @protocol QLPreviewCustomView, QLPreviewItem, QLPreviewViewDelegate;
 
 @interface QLPreviewView : NSView <QLPreviewTextOverlayHostDelegate, QLSeamlessOpenerDelegate, NSDraggingDestination, QLScrollable, QLScrollControllerDelegate, CALayerDelegate, NSGestureRecognizerDelegate, QLPreviewDragDelegate>
 {
     QLPreviewViewReserved *_reserved;
+    NSMutableSet *_savingDocuments;
 }
 
 + (id)_descriptionOfDisplayable:(id)arg1;
@@ -77,6 +78,7 @@
 + (void)setVNodeDelegate:(id)arg1;
 + (BOOL)isVNodeURL:(id)arg1;
 + (id)vNodeURLWithPath:(id)arg1;
+@property(retain) NSMutableSet *savingDocuments; // @synthesize savingDocuments=_savingDocuments;
 - (id)forcedContentTypeUTI;
 - (void)setForcedContentTypeUTI:(id)arg1;
 - (id)mandatoryServer;
@@ -91,6 +93,7 @@
 @property(readonly) CALayer *contentLayer;
 - (BOOL)generateThumbnailForPage:(unsigned long long)arg1 maxSize:(struct CGSize)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (struct CGImage *)copyImageRepresentationWithFrame:(struct CGRect *)arg1;
+- (void)getImageRepresentationWithFrame:(struct CGRect)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly) NSImage *contentImage;
 - (BOOL)_accessibilityIsEmpty;
 - (BOOL)_accessibilityIsLoading;
@@ -151,7 +154,8 @@
 - (id)pasteboardWriter;
 - (BOOL)setupDragPasteboard:(id)arg1;
 - (BOOL)useLegacyDragging;
-- (id)draggingSourceDisplayBundle;
+- (struct CGRect)borderFrame;
+- (struct CGRect)sourceFrame;
 - (id)draggingSourceView;
 - (id)draggedURL;
 - (void)selectAll:(id)arg1;
@@ -266,6 +270,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)windowKeyDidChange:(id)arg1;
 - (void)diskWillEject:(id)arg1;
+- (void)previewStatusDidChange;
+- (int)previewStatus;
 - (void)deactivate;
 - (void)activate;
 - (void)performOpenTransitionWithUpdatedProperties:(CDUnknownBlockType)arg1;
@@ -279,8 +285,8 @@
 - (void)setHideLoadingSpinner:(BOOL)arg1;
 - (BOOL)hideLoadingSpinner;
 - (void)updateLoadingLayerWithTransitionImage:(id)arg1 transitionFrame:(struct CGRect)arg2;
--     // Error parsing type: @32@0:8^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}^v{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLGenerator}^{__QLServer}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCCC^{?}^{__QLPreviewRequest}}16@24, name: loadingLayerForPreview:displayBundle:
--     // Error parsing type: v40@0:8@16^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}^v{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLGenerator}^{__QLServer}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCCC^{?}^{__QLPreviewRequest}}24@32, name: updateLoadingLayerAppearance:forPreview:displayBundle:
+-     // Error parsing type: @32@0:8^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}@{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLServer}^{__QLGenerator}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCC^{__CFString}C@}16@24, name: loadingLayerForPreview:displayBundle:
+-     // Error parsing type: v40@0:8@16^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}@{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLServer}^{__QLGenerator}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCC^{__CFString}C@}24@32, name: updateLoadingLayerAppearance:forPreview:displayBundle:
 - (id)loadingDisplayable;
 - (void)setLoadingDisplayable:(id)arg1;
 - (id)sizingDisplayBundle;
@@ -302,6 +308,7 @@
 - (void)_setDisplayedDocument:(id)arg1 transition:(int)arg2;
 - (BOOL)_canChangeDisplayedDocument;
 @property(retain) QLPreviewDocument *document;
+- (void)previewDocument:(id)arg1 didSaveEdit:(BOOL)arg2 toURL:(id)arg3;
 - (void)_setDocument:(id)arg1 canDelayDisplay:(BOOL)arg2;
 - (void)_setPreviewItem:(id)arg1;
 - (void)viewDidChangeEffectiveAppearance;

@@ -15,11 +15,7 @@
 + (id)unreadCount;
 + (id)search;
 + (id)archiving;
-- (id)recipientsBar;
-- (id)performance;
-- (id)unreadCount;
-- (id)search;
-- (id)archiving;
++ (id)notifications;
 
 @end
 

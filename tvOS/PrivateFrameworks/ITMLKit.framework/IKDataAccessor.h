@@ -6,10 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <ITMLKit/NSCopying-Protocol.h>
+
 __attribute__((visibility("hidden")))
-@interface IKDataAccessor : NSObject
+@interface IKDataAccessor : NSObject <NSCopying>
 {
 }
+
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

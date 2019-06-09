@@ -17,6 +17,8 @@
 + (id)serverRemoteObjectInterface;
 + (id)serverExportedInterface;
 + (id)machServiceName;
+- (void)xpcIsAssertionActive:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)xpcIsPhoneReadyToMigrateDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)xpcGetMigrationCountForPairingID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)xpcGetLastSwitchIndex:(CDUnknownBlockType)arg1;
 - (void)xpcFakePairedSyncIsCompleteWithCompletion:(CDUnknownBlockType)arg1;

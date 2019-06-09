@@ -9,7 +9,7 @@
 #import <InputMethodKit/IMKUICandidateItemViewHandling-Protocol.h>
 #import <InputMethodKit/IMKUICandidateStepperViewDelegate-Protocol.h>
 
-@class IMKUICandidateBarView, IMKUICandidateLineLayout, IMKUICandidateLineLayoutIterator, IMKUICandidateStepperView, NSMutableDictionary, NSVisualEffectView;
+@class IMKUICandidateBarView, IMKUICandidateLineLayout, IMKUICandidateLineLayoutIterator, IMKUICandidateStepperView, NSMutableDictionary;
 
 @interface IMKUICandidateSteppingWindowController : IMKUICandidateWindowController <IMKUICandidateItemViewHandling, IMKUICandidateStepperViewDelegate>
 {
@@ -18,14 +18,12 @@
     long long _lineIndex;
     IMKUICandidateLineLayoutIterator *_lineLayoutIterator;
     IMKUICandidateLineLayout *_lineLayout;
+    BOOL _showsStepper;
     IMKUICandidateStepperView *_stepperView;
-    BOOL _usesAppearanceView;
-    NSVisualEffectView *_appearanceView;
 }
 
-@property(retain, nonatomic) NSVisualEffectView *appearanceView; // @synthesize appearanceView=_appearanceView;
-@property(nonatomic) BOOL usesAppearanceView; // @synthesize usesAppearanceView=_usesAppearanceView;
 @property(retain, nonatomic) IMKUICandidateStepperView *stepperView; // @synthesize stepperView=_stepperView;
+@property(nonatomic) BOOL showsStepper; // @synthesize showsStepper=_showsStepper;
 @property(retain, nonatomic) IMKUICandidateLineLayout *lineLayout; // @synthesize lineLayout=_lineLayout;
 @property(retain, nonatomic) IMKUICandidateLineLayoutIterator *lineLayoutIterator; // @synthesize lineLayoutIterator=_lineLayoutIterator;
 @property(nonatomic) long long lineIndex; // @synthesize lineIndex=_lineIndex;
@@ -44,7 +42,8 @@
 - (void)moveBackwardOneLine;
 - (void)moveForwardOneLine;
 - (struct CGRect)frameForSelectedIndex;
-- (void)selectCandidateIntersectingFrame:(struct CGRect)arg1;
+- (void)selectFirstCandidateInLineIfNecessary;
+- (void)selectCandidateIntersectingFrame:(struct CGRect)arg1 movement:(long long)arg2;
 - (void)moveBackwardOneElement;
 - (void)moveForwardOneElement;
 - (id)candidateAtLocalIndex:(unsigned long long)arg1;
@@ -58,10 +57,10 @@
 @property(readonly, nonatomic) BOOL canMoveDownward;
 @property(readonly, nonatomic) BOOL canMoveUpward;
 - (struct CGSize)recommendedWindowSize;
-- (void)updateWindowFrame;
 - (void)updateLayout;
 - (void)updateVisualElements;
 - (void)updateLayoutTraits;
+- (struct CGRect)stepperViewFrame;
 - (id)candidateItemForCandidate:(id)arg1 layout:(id)arg2;
 - (id)init;
 

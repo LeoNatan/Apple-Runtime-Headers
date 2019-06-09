@@ -14,6 +14,7 @@
 @optional
 - (void)serviceDidUnpairDevice:(SYService *)arg1;
 - (void)serviceDidPairDevice:(SYService *)arg1;
+- (void)service:(SYService *)arg1 targetDeviceConnectionChanged:(_Bool)arg2;
 - (void)service:(SYService *)arg1 targetDeviceProximityChanged:(_Bool)arg2;
 - (void)service:(SYService *)arg1 didSwitchFromPairingID:(NSUUID *)arg2 toPairingID:(NSUUID *)arg3;
 - (void)service:(SYService *)arg1 willSwitchFromPairingID:(NSUUID *)arg2 toPairingID:(NSUUID *)arg3;

@@ -28,7 +28,6 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(readonly, nonatomic) BOOL hasSerializedNameComponents;
-- (id)nameComponentsAcceptUnknownUser:(BOOL)arg1;
 @property(retain, nonatomic) NSPersonNameComponents *nameComponents;
 - (id)initWithCKUserIdentity:(id)arg1;
 

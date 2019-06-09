@@ -9,7 +9,7 @@
 #import <WebKit/NSCopying-Protocol.h>
 #import <WebKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebViewContentProviderRegistry, WKWebsiteDataStore, _WKApplicationManifest, _WKVisitedLinkStore, _WKWebsiteDataStore;
+@class NSArray, NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebViewContentProviderRegistry, WKWebpagePreferences, WKWebsiteDataStore, _WKApplicationManifest, _WKVisitedLinkStore, _WKWebsiteDataStore;
 
 @interface WKWebViewConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
@@ -19,6 +19,7 @@
     struct LazyInitialized<WTF::RetainPtr<WKUserContentController>> _userContentController;
     struct LazyInitialized<WTF::RetainPtr<_WKVisitedLinkStore>> _visitedLinkStore;
     struct LazyInitialized<WTF::RetainPtr<WKWebsiteDataStore>> _websiteDataStore;
+    struct LazyInitialized<WTF::RetainPtr<WKWebpagePreferences>> _defaultWebpagePreferences;
     struct WeakObjCPtr<WKWebView> _relatedWebView;
     struct WeakObjCPtr<WKWebView> _alternateWebViewForNavigationGestures;
     struct RetainPtr<NSString> _groupIdentifier;
@@ -38,6 +39,7 @@
     _Bool _textInteractionGesturesEnabled;
     _Bool _longPressActionsEnabled;
     _Bool _systemPreviewEnabled;
+    _Bool _shouldDecidePolicyBeforeLoadingQuickLookPreview;
     _Bool _invisibleAutoplayNotPermitted;
     _Bool _mediaDataLoadsAutomatically;
     _Bool _attachmentElementEnabled;
@@ -54,6 +56,7 @@
     _Bool _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
     _Bool _drawsBackground;
     _Bool _editableImagesEnabled;
+    _Bool _undoManagerAPIEnabled;
     struct RetainPtr<NSString> _mediaContentTypesRequiringHardwareSupport;
     struct RetainPtr<NSArray<NSString *>> _additionalSupportedImageTypes;
     _Bool _suppressesIncrementalRendering;
@@ -83,6 +86,7 @@
 - (void)setURLSchemeHandler:(id)arg1 forURLScheme:(id)arg2;
 @property(retain, nonatomic, setter=_setVisitedLinkStore:) _WKVisitedLinkStore *_visitedLinkStore;
 @property(copy, nonatomic) NSString *applicationNameForUserAgent;
+@property(copy, nonatomic) WKWebpagePreferences *defaultWebpagePreferences;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(retain, nonatomic) WKUserContentController *userContentController;
 @property(retain, nonatomic) WKPreferences *preferences;
@@ -92,6 +96,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (id)init;
+@property(nonatomic, setter=_setUndoManagerAPIEnabled:) _Bool _undoManagerAPIEnabled;
 @property(nonatomic, setter=_setEditableImagesEnabled:) _Bool _editableImagesEnabled;
 @property(nonatomic, setter=_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:) _Bool _allowMediaContentTypesRequiringHardwareSupportAsFallback;
 @property(nonatomic, setter=_setLegacyEncryptedMediaAPIEnabled:) _Bool _legacyEncryptedMediaAPIEnabled;
@@ -115,6 +120,8 @@
 @property(nonatomic, setter=_setAttachmentElementEnabled:) _Bool _attachmentElementEnabled;
 @property(nonatomic, setter=_setMediaDataLoadsAutomatically:) _Bool _mediaDataLoadsAutomatically;
 @property(nonatomic, setter=_setInvisibleAutoplayNotPermitted:) _Bool _invisibleAutoplayNotPermitted;
+@property(nonatomic, setter=_setCanShowWhileLocked:) _Bool _canShowWhileLocked;
+@property(nonatomic, setter=_setShouldDecidePolicyBeforeLoadingQuickLookPreview:) _Bool _shouldDecidePolicyBeforeLoadingQuickLookPreview;
 @property(nonatomic, setter=_setSystemPreviewEnabled:) _Bool _systemPreviewEnabled;
 @property(nonatomic, setter=_setLongPressActionsEnabled:) _Bool _longPressActionsEnabled;
 @property(nonatomic, setter=_setTextInteractionGesturesEnabled:) _Bool _textInteractionGesturesEnabled;

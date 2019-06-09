@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class PDFPage, PDFPageView, PDFRenderingProperties, PDFView, UIImage, UIScrollView, UIView;
+@class PDFPage, PDFPageView, PDFRenderingProperties, PDFTextInputView, PDFView, UIImage, UIScrollView;
 
 __attribute__((visibility("hidden")))
 @interface PDFPageViewControllerPrivate : NSObject
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     struct UIEdgeInsets pageMargins;
     PDFPage *page;
     UIScrollView *scrollView;
-    UIView *pageViewContainerView;
+    PDFTextInputView *pageViewContainerView;
     PDFPageView *pageView;
     double minScale;
     double maxScale;

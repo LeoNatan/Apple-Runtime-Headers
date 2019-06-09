@@ -8,13 +8,18 @@
 
 #import <IdentityLookup/NSSecureCoding-Protocol.h>
 
+@class NSString;
+
 @interface ILMessageFilterQueryResponse : NSObject <NSSecureCoding>
 {
     int _action;
+    NSString *_version;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *version; // @synthesize version=_version;
 @property(nonatomic) int action; // @synthesize action=_action;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)hash;

@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEOProtobufSessionTaskDelegate-Protocol.h>
 
-@class GEOApplicationAuditToken, GEOMapServiceTraits, GEOProtobufSessionTask, NSString, PBRequest;
+@class GEOApplicationAuditToken, GEODataRequestThrottlerToken, GEOMapServiceTraits, GEOProtobufSessionTask, NSString, PBRequest;
 @protocol GEOServiceRequestConfiguring;
 
 __attribute__((visibility("hidden")))
@@ -23,8 +23,10 @@ __attribute__((visibility("hidden")))
     id <GEOServiceRequestConfiguring> _config;
     NSString *_appIdentifier;
     GEOApplicationAuditToken *_auditToken;
-    int _dataRequestKind;
+    CDStruct_d1a7ebee _dataRequestKind;
     GEOMapServiceTraits *_traits;
+    double _timeout;
+    GEODataRequestThrottlerToken *_throttleToken;
 }
 
 - (void).cxx_destruct;
@@ -36,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (void)_cleanup;
 - (void)dealloc;
-- (id)initWithRequest:(id)arg1 auditToken:(id)arg2 config:(id)arg3 timeout:(double)arg4 dataRequestKind:(int)arg5 traits:(id)arg6;
+- (id)initWithRequest:(id)arg1 auditToken:(id)arg2 config:(id)arg3 timeout:(double)arg4 dataRequestKind:(CDStruct_d1a7ebee)arg5 traits:(id)arg6 throttleToken:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

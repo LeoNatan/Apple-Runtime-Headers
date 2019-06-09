@@ -38,6 +38,7 @@
 - (void)setPlaceholderImage:(id)arg1 offset:(double)arg2;
 @property(readonly, copy, nonatomic) NSString *evOrganizationName;
 - (void)didEndFormControlInteraction;
+- (void)didStartFormControlInteraction;
 - (_Bool)becomeFirstResponder;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutSubviews;

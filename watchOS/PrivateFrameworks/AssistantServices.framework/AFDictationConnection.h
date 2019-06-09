@@ -8,7 +8,7 @@
 
 #import <AssistantServices/AFNetworkAvailabilityObserver-Protocol.h>
 
-@class AFAudioPowerUpdater, AFSpeechRequestOptions, NSMutableData, NSString, NSXPCConnection;
+@class AFAudioPowerUpdater, AFSpeechRequestOptions, NSArray, NSMutableData, NSString, NSXPCConnection;
 @protocol AFDictationDelegate, OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
 
 @interface AFDictationConnection : NSObject <AFNetworkAvailabilityObserver>
@@ -20,6 +20,7 @@
     _Bool _isCapturingSpeech;
     _Bool _hasActiveRequest;
     _Bool _isWaitingForAudioFile;
+    _Bool _recognizingIncrementally;
     NSObject<OS_dispatch_group> *_speechCallbackGroup;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_source> *_timeoutTimer;
@@ -31,6 +32,7 @@
     double _amountDataSent;
     _Bool _narrowband;
     NSString *_requestIdString;
+    NSArray *_previouslyRecognizedPhrases;
     NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
@@ -41,6 +43,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <AFDictationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)reportIssueForError:(id)arg1 eventType:(int)arg2 context:(id)arg3;
 - (void)_cancelTimerClearBuffer;
 - (void)_cancelBufferFlushTimer;
 - (void)_updateBufferFlushTimerWithDelay:(double)arg1;
@@ -50,6 +53,7 @@
 - (void)endSession;
 - (float)peakPower;
 - (float)averagePower;
+- (void)sendUserSelectedAlternativeDictationLanguageCode:(id)arg1;
 - (void)sendSpeechCorrection:(id)arg1 forIdentifier:(id)arg2;
 - (void)updateSpeechOptions:(id)arg1;
 - (void)stopSpeech;
@@ -94,7 +98,9 @@
 - (void)_tellSpeechDelegateDidRecognizeTranscriptionObjects:(id)arg1 languageModel:(id)arg2;
 - (void)_tellSpeechDelegateDidProcessAudioDuration:(double)arg1;
 - (void)_tellSpeechDelegateDidRecognizeSpeechTokens:(id)arg1 languageModel:(id)arg2;
-- (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 languageModel:(id)arg2 correctionIdentifier:(id)arg3;
+- (void)_tellSpeechDelegateDidRecognizePartialResult:(id)arg1 usingSpeechModel:(id)arg2;
+- (void)_delegateDidRecognizeSpeechTokens:(id)arg1 languageModel:(id)arg2 delegate:(id)arg3;
+- (void)_tellSpeechDelegateDidRecognizeSpeechPhrases:(id)arg1 utterances:(id)arg2 languageModel:(id)arg3 correctionIdentifier:(id)arg4 audioAnalytics:(id)arg5;
 - (void)_tellSpeechDelegateDidRecognizePackage:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidFail:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidCancel;

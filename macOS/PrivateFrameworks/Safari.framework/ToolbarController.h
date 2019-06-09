@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 {
     NSWindow *_toolbarWindow;
     BrowserToolbarItem *_backForwardItem;
-    BrowserToolbarItem *_createWebClipItem;
     BrowserToolbarItem *_autoFillItem;
     BrowserToolbarItem *_topSitesItem;
     BrowserToolbarItem *_homeItem;
@@ -101,7 +100,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UnifiedField *unifiedCustomizeField; // @synthesize unifiedCustomizeField=_unifiedCustomizeField;
 @property(readonly, nonatomic) UnifiedField *unifiedField; // @synthesize unifiedField=_unifiedField;
 - (id)_toolbarItemForTabPicker:(BOOL)arg1;
-- (id)_toolbarItemForWebClip:(BOOL)arg1;
 - (id)_toolbarItemForPrint:(BOOL)arg1;
 - (void)_prepareTextSizeSegmentedControl:(id)arg1;
 - (id)_toolbarItemForShare:(BOOL)arg1;
@@ -123,6 +121,7 @@ __attribute__((visibility("hidden")))
 - (id)toolbarAllowedItemIdentifiers:(id)arg1;
 - (id)toolbarDefaultItemIdentifiers:(id)arg1;
 - (void)toolbarDidRemoveItem:(id)arg1;
+- (void)toolbarWillAddItem:(id)arg1;
 - (void)toolbarDidReorderItem:(id)arg1;
 - (void)_saveAppExtensionsToolbarConfiguration;
 - (void)_updateTemporaryDownloadsButtonVisibility;
@@ -136,6 +135,8 @@ __attribute__((visibility("hidden")))
 - (void)_downloadDidStart:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_toolbarItemForCloudTabs:(BOOL)arg1;
+- (void)_updateCenteredItemIdentifierWillAddFlexibleItem:(BOOL)arg1;
+- (BOOL)_toolbarContainsFlexibleSpaceItem;
 @property(readonly, nonatomic) BrowserToolbarItem *firstVisibleItemWithView;
 @property(readonly, nonatomic) BrowserToolbarItem *lastVisibleItemWithView;
 - (void)insertAppExtensionToolbarItem:(id)arg1;

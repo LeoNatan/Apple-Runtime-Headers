@@ -10,7 +10,7 @@
 #import <NanoMediaRemote/NMROriginCommandHandler-Protocol.h>
 #import <NanoMediaRemote/NMROriginObserver-Protocol.h>
 
-@class MPCPlayerPath, MPLibraryAddStatusObserver, MPRequestResponseController, NMRNowPlayingState, NMROrigin, NMRPlaybackQueue, NMRPlayerResponseNowPlayingState, NSString;
+@class MPCPlayerPath, MPRequestResponseController, NMRNowPlayingState, NMROrigin, NMRPlaybackQueue, NMRPlayerResponseNowPlayingState, NSString;
 @protocol NMROriginObserverDelegate, OS_dispatch_queue;
 
 @interface NMROriginMediaPlaybackCoreController : NSObject <MPRequestResponseControllerDelegate, NMROriginObserver, NMROriginCommandHandler>
@@ -23,7 +23,7 @@
     unsigned int _filteringOptions;
     MPRequestResponseController *_requestResponseController;
     NMRPlayerResponseNowPlayingState *_nowPlayingState;
-    MPLibraryAddStatusObserver *_libraryAddStatusObserver;
+    _Bool _shouldObserveLibraryAddStatus;
     _Bool shouldObserveArtwork;
     _Bool shouldObservePlaybackQueue;
     id <NMROriginObserverDelegate> _delegate;
@@ -34,12 +34,12 @@
 @property(nonatomic) _Bool shouldObservePlaybackQueue; // @synthesize shouldObservePlaybackQueue;
 @property(readonly, nonatomic) NMRPlaybackQueue *playbackQueue; // @synthesize playbackQueue;
 @property(nonatomic) _Bool shouldObserveArtwork; // @synthesize shouldObserveArtwork;
+@property(nonatomic) _Bool shouldObserveLibraryAddStatus; // @synthesize shouldObserveLibraryAddStatus=_shouldObserveLibraryAddStatus;
 @property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 @property(nonatomic) __weak id <NMROriginObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_updateAddToLibraryStatusWithModelObject:(id)arg1;
 - (void)_updateIsEnforcingApplicationFilterWithNowPlayingState:(id)arg1;
-- (void)_configurePlayerRequest;
+- (id)_requestResponseController;
 - (void)_notifyObserversOfUpdatedPlaybackQueue;
 - (void)_notifyObserversOfUpdatedTimestamp;
 - (void)_notifyObserverOfUpdatedElapsedTime;
@@ -52,8 +52,7 @@
 - (void)updateNowPlayingStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)endObserving;
 - (void)beginObserving;
-- (void)_handleAddToLibraryMediaRemoteCommandWithOptions:(id)arg1;
-- (void)sendMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 launchApp:(_Bool)arg3;
+- (void)sendMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 launchApp:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)preparePlayerRequestForNewPlaybackIntent;
 @property(readonly, copy) NSString *description;
 - (id)initWithPlayerPath:(id)arg1 options:(unsigned int)arg2;

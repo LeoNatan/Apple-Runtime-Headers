@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, OITSUNoCopyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OITSULRUCache : NSObject
 {
     OITSUNoCopyDictionary *mData;

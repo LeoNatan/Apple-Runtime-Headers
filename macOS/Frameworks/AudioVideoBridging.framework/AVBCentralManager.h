@@ -25,6 +25,7 @@
 + (unsigned long long)nextAvailableDynamicEntityID;
 - (void)dealloc;
 - (id)interfaceWithName:(id)arg1;
+- (id)_interfaceWithName:(id)arg1;
 - (BOOL)streamingEnabledInterfacesOnly;
 - (void)didMatchNetworkInterface:(unsigned int)arg1;
 - (void)didTerminateInterface:(id)arg1;

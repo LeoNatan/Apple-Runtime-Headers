@@ -80,6 +80,7 @@
 - (unsigned long long)_graphemeCount;
 - (id)_lastGrapheme;
 - (id)_firstGrapheme;
+- (BOOL)_endsWithHalfwidth;
 - (BOOL)_isOnlyIdeographs;
 - (BOOL)_isIdeographicGlyphs;
 - (BOOL)_containsCJScripts;

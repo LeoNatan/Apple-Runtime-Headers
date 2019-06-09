@@ -9,15 +9,15 @@
 @class ML3DatabaseImport, NSArray, NSDictionary, NSString, NSUUID;
 
 @protocol MLMediaLibraryServiceProtocol <NSObject>
+- (void)getMediaLibraryResourcesServiceListenerEndpointWithCompletion:(void (^)(NSXPCListenerEndpoint *, NSError *))arg1;
 - (void)performMaintenanceTasksForDatabaseAtPath:(NSString *)arg1 withCompletionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)performRestoreOfLatestBackupForDatabaseAtPath:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)performBackupOfDatabaseAtPath:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(NSArray *)arg1 bundleID:(NSString *)arg2 withCompletion:(void (^)(_Bool, NSError *))arg3;
 - (void)updateSpotlightIndexForBundleID:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
-- (void)getDeviceSharedLibraryPath:(void (^)(NSString *))arg1;
 - (void)getLanguageResourcesWithCompletion:(void (^)(ML3LanguageResources *, NSError *))arg1;
 - (void)unlockDatabaseWithCompletion:(void (^)(_Bool, NSError *))arg1;
-- (void)lockDatabaseForReason:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
+- (void)lockDatabaseForReason:(long long)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)cancelImportOperation:(unsigned long long)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)performImport:(ML3DatabaseImport *)arg1 fromSource:(unsigned long long)arg2 withUUID:(NSUUID *)arg3 completionHandler:(void (^)(_Bool, NSError *, NSData *))arg4;
 - (void)setOptions:(NSDictionary *)arg1 withCompletionHandler:(void (^)(_Bool, NSError *))arg2;
@@ -28,6 +28,7 @@
 - (void)beginTransactionForDatabaseAtPath:(NSString *)arg1 withPriorityLevel:(unsigned long long)arg2 options:(unsigned long long)arg3 completionHandler:(void (^)(NSUUID *, NSError *))arg4;
 - (void)recreateDatabaseAtPath:(NSString *)arg1 withCompletionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)performDiagnosticWithCompletionHandler:(void (^)(NSString *, NSError *))arg1;
+- (void)checkIntegrityOfDatabaseAtPath:(NSString *)arg1 repairFaults:(_Bool)arg2 withCompletionHandler:(void (^)(_Bool, NSError *))arg3;
 - (void)attemptDatabaseFileRecoveryAtPath:(NSString *)arg1 withCompletionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)validateDatabaseAtPath:(NSString *)arg1 withCompletionHandler:(void (^)(_Bool, NSError *))arg2;
 @end

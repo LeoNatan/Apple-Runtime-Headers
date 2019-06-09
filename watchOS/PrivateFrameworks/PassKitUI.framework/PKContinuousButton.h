@@ -6,12 +6,14 @@
 
 #import <UIKit/UIButton.h>
 
-@class CAFilter, CAShapeLayer, UIActivityIndicatorView, UIColor;
+@class CAFilter, CAShapeLayer, NSMutableSet, UIActivityIndicatorView, UIColor, UIImage, _UIBackdropView;
 
 @interface PKContinuousButton : UIButton
 {
     CDStruct_6b96b72e _configuration;
     UIColor *_tintColor;
+    UIImage *_image;
+    NSMutableSet *_disabledImageStates;
     _Bool _titleColorShouldBeTintColor;
     CAFilter *_highlightFilter;
     UIColor *_normalInputColor;
@@ -20,17 +22,22 @@
     UIColor *_disabledInputColor;
     UIColor *_appliedInputColor;
     CAShapeLayer *_layer;
+    _UIBackdropView *_backdropView;
+    int _backdropStyle;
+    _Bool _updatingBackdropSettings;
     _Bool _highlighted;
     _Bool _selected;
     _Bool _enabled;
     struct CGSize _boundsSize;
     UIActivityIndicatorView *_activityIndicatorView;
-    struct UIEdgeInsets _touchMargins;
+    _Bool _showSpinner;
+    _Bool _blurDisabled;
 }
 
 + (id)_filterInputColorForEffect:(int)arg1;
 + (Class)layerClass;
-@property(nonatomic) struct UIEdgeInsets touchMargins; // @synthesize touchMargins=_touchMargins;
+@property(nonatomic) _Bool blurDisabled; // @synthesize blurDisabled=_blurDisabled;
+@property(nonatomic) _Bool showSpinner; // @synthesize showSpinner=_showSpinner;
 - (void).cxx_destruct;
 - (void)showSpinner:(_Bool)arg1;
 - (void)_updateFilter;
@@ -39,12 +46,15 @@
 - (void)setEnabled:(_Bool)arg1;
 - (void)_createHighlightFilterIfNecessary;
 - (void)_updateTintColorWithColor:(id)arg1;
+- (void)_accessibilitySettingsDidChange:(id)arg1;
+- (void)_updateBackdropSettings;
+- (void)updateImageView;
+- (void)setImageEnabled:(_Bool)arg1 forState:(unsigned int)arg2;
 - (void)updateWithImage:(id)arg1;
 - (void)updateTitleColorWithColor:(id)arg1;
 - (void)layoutSubviews;
 - (void)tintColorDidChange;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
-- (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (id)initWithConfiguration:(CDStruct_6b96b72e)arg1;
 - (id)initWithCornerRadius:(float)arg1 effect:(int)arg2;

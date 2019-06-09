@@ -13,6 +13,6 @@
 - (void)dynamicBarAnimatorWillLeaveSteadyState:(_SFDynamicBarAnimator *)arg1;
 - (void)dynamicBarAnimatorWillEnterSteadyState:(_SFDynamicBarAnimator *)arg1;
 - (float)dynamicBarAnimator:(_SFDynamicBarAnimator *)arg1 minimumTopBarHeightForOffset:(float)arg2;
-- (_Bool)dynamicBarAnimator:(_SFDynamicBarAnimator *)arg1 canHideBarsByDraggingWithOffset:(float)arg2;
+- (_Bool)dynamicBarAnimator:(_SFDynamicBarAnimator *)arg1 canTransitionToState:(int)arg2 byDraggingWithOffset:(float)arg3;
 @end
 

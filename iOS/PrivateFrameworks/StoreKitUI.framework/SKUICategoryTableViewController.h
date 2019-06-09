@@ -12,6 +12,7 @@
 @class NSArray, NSString, NSURL, SKUICategory, SKUICategoryArtworkLoader, SKUIClientContext;
 @protocol SKUICategoryTableViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUICategoryTableViewController : UITableViewController <SKUICategoryArtworkLoaderObserver, SKUICategoryTableViewControllerDelegate>
 {
     SKUICategoryArtworkLoader *_artworkLoader;

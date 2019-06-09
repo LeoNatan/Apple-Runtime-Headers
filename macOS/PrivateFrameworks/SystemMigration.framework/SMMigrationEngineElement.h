@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class SMMigrateEngine;
+@class NSProgress, SMMigrateEngine;
 
 @interface SMMigrationEngineElement : NSObject
 {
@@ -14,8 +14,12 @@
     SMMigrateEngine *_engine;
     double _progressPercentage;
     double _initialTimeEstimate;
+    NSProgress *_parentProgress;
+    NSProgress *_progress;
 }
 
+@property(retain) NSProgress *progress; // @synthesize progress=_progress;
+@property(retain) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property double initialTimeEstimate; // @synthesize initialTimeEstimate=_initialTimeEstimate;
 @property double progressPercentage; // @synthesize progressPercentage=_progressPercentage;
 @property BOOL hasRan; // @synthesize hasRan=_hasRan;

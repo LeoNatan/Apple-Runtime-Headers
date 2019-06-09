@@ -6,20 +6,23 @@
 
 #import <PhotoLibraryServices/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSManagedObjectContext, NSSet, NSString, NSURL, PLInternalResource, PLManagedAsset, PLResourceDataStoreOptions, PLResourceLocalAvailabilityRequestOptions, PLValidatedExternalResource;
-@protocol PLAssetID, PLResource, PLResourceDataStoreKey;
+@class NSArray, NSData, NSManagedObjectContext, NSSet, NSString, NSURL, PLManagedAsset, PLPhotoLibraryPathManager, PLResourceDataStoreOptions, PLResourceLocalAvailabilityRequestOptions, PLValidatedExternalResource;
+@protocol PLAssetID, PLResource, PLResourceDataStoreKey, PLUniformTypeIdentifierIdentity;
 
 @protocol PLResourceDataStore <NSObject>
 + (NSArray *)supportedRecipes;
++ (_Bool)keyDataIsValid:(NSData *)arg1;
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
-+ (unsigned int)storeID;
++ (unsigned int)storeClassID;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager;
 - (void)requestStreamingURLForResource:(id <PLResource>)arg1 asset:(PLManagedAsset *)arg2 inContext:(NSManagedObjectContext *)arg3 completion:(void (^)(NSError *, NSURL *, NSDate *))arg4;
-- (_Bool)canStreamResource:(PLInternalResource *)arg1;
-- (_Bool)videoResource:(PLInternalResource *)arg1 matchesOrExceedsQualityLevel:(unsigned int)arg2;
+- (_Bool)canStreamResource:(id <PLResource>)arg1;
+- (_Bool)videoResource:(id <PLResource>)arg1 matchesOrExceedsQualityLevel:(unsigned int)arg2;
 - (void)requestRemoteAvailabilityChange:(short)arg1 forResource:(id <PLResource>)arg2 asset:(PLManagedAsset *)arg3 inContext:(NSManagedObjectContext *)arg4 options:(id)arg5 completion:(void (^)(NSError *, PLInternalResource *))arg6;
 - (void)cancelLocalAvailabilityChangeRequest:(unsigned int)arg1;
 - (unsigned int)requestLocalAvailabilityChange:(short)arg1 forResource:(id <PLResource>)arg2 asset:(PLManagedAsset *)arg3 inContext:(NSManagedObjectContext *)arg4 options:(PLResourceLocalAvailabilityRequestOptions *)arg5 completion:(void (^)(NSError *, long long, PLInternalResource *))arg6;
 - (_Bool)storeExternalResource:(PLValidatedExternalResource *)arg1 forAsset:(PLManagedAsset *)arg2 inContext:(NSManagedObjectContext *)arg3 options:(PLResourceDataStoreOptions *)arg4 error:(id *)arg5 resultingResource:(id *)arg6;
+- (id <PLUniformTypeIdentifierIdentity>)guessUTIForExternalResource:(PLValidatedExternalResource *)arg1 forAssetKind:(short)arg2 managedObjectContext:(NSManagedObjectContext *)arg3;
 - (_Bool)canStoreExternalResource:(PLValidatedExternalResource *)arg1;
 - (NSArray *)virtualResourcesForAsset:(PLManagedAsset *)arg1;
 - (NSSet *)updateDerivativeResourcesForAsset:(PLManagedAsset *)arg1 forLifecycleEvent:(unsigned int)arg2;
@@ -28,5 +31,6 @@
 - (id <PLResourceDataStoreKey>)keyFromKeyStruct:(const void *)arg1;
 - (NSString *)descriptionForSubtype:(long long)arg1;
 - (NSString *)name;
+- (id)initWithPathManager:(PLPhotoLibraryPathManager *)arg1;
 @end
 

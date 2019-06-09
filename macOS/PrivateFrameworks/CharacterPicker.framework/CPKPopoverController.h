@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
     long long _maxSearchCount;
     long long _numberOfRecentsCategories;
     BOOL _searchViewShown;
-    BOOL _searchedInCategory;
+    BOOL _nowSearching;
     BOOL _symbolCategoriesInitialized;
     BOOL _detachedWindow;
     BOOL _enabled;
@@ -33,12 +33,10 @@ __attribute__((visibility("hidden")))
     CPKCategoriesView *_categoriesView;
     CPKCharactersView *_charactersView;
     NSArray *_lastSearchResult;
-    long long _categoryIndexOnSearch;
 }
 
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) BOOL detachedWindow; // @synthesize detachedWindow=_detachedWindow;
-@property long long categoryIndexOnSearch; // @synthesize categoryIndexOnSearch=_categoryIndexOnSearch;
 @property(retain) NSArray *lastSearchResult; // @synthesize lastSearchResult=_lastSearchResult;
 @property(readonly) CPKSearchView *searchView; // @synthesize searchView=_searchView;
 @property(readonly) CPKCharactersView *charactersView; // @synthesize charactersView=_charactersView;
@@ -54,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (long long)_dataSectionFromCategory:(long long)arg1;
 - (long long)_categoryFromDataSection:(long long)arg1;
 - (long long)_dataSectionFromTableSection:(long long)arg1;
-- (id)preferredFontsOfSection:(long long)arg1 allowFallback:(char *)arg2;
+- (id)preferredFontsOfSection:(long long)arg1 fallbackType:(long long *)arg2;
 - (BOOL)hasSkinToneVariantsAtIndex:(long long)arg1 ofSection:(long long)arg2 hasSelected:(char *)arg3;
 - (id)characterAtIndex:(long long)arg1 ofSection:(long long)arg2 withSpecificFont:(id *)arg3;
 - (BOOL)isValidIndex:(long long)arg1 ofSection:(long long)arg2;

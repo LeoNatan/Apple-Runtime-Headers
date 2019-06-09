@@ -9,16 +9,19 @@
 #import <ChatKit/CKBrowserViewControllerSendDelegate-Protocol.h>
 #import <ChatKit/CKNanoRevealBalloonViewControllerDelegate-Protocol.h>
 #import <ChatKit/CKReaderViewControllerDelegate-Protocol.h>
+#import <ChatKit/STLockoutViewControllerDelegate-Protocol.h>
 #import <ChatKit/_MKNanoPlaceCardViewControllerDelegate-Protocol.h>
 
-@class IMBalloonPlugin, NSString, UIViewController;
+@class IMBalloonPlugin, NSString, STConversationContext, UIViewController;
 
-@interface CKNanoChatController : CKCoreChatController <_MKNanoPlaceCardViewControllerDelegate, CKReaderViewControllerDelegate, CKBrowserViewControllerSendDelegate, CKNanoRevealBalloonViewControllerDelegate>
+@interface CKNanoChatController : CKCoreChatController <_MKNanoPlaceCardViewControllerDelegate, CKReaderViewControllerDelegate, CKBrowserViewControllerSendDelegate, CKNanoRevealBalloonViewControllerDelegate, STLockoutViewControllerDelegate>
 {
     IMBalloonPlugin *_currentPlugin;
     UIViewController *_fullScreenPluginViewController;
+    STConversationContext *_currentScreenTimeConversationContext;
 }
 
+@property(retain, nonatomic) STConversationContext *currentScreenTimeConversationContext; // @synthesize currentScreenTimeConversationContext=_currentScreenTimeConversationContext;
 @property(retain, nonatomic) UIViewController *fullScreenPluginViewController; // @synthesize fullScreenPluginViewController=_fullScreenPluginViewController;
 @property(retain, nonatomic) IMBalloonPlugin *currentPlugin; // @synthesize currentPlugin=_currentPlugin;
 - (void).cxx_destruct;
@@ -27,6 +30,7 @@
 - (void)nanoPlaceCardViewControllerDidTapMap:(id)arg1;
 - (void)revealBalloonControllerFinished:(id)arg1;
 - (void)revealBalloonController:(id)arg1 requestsAcknowledgmentForChatItem:(id)arg2;
+- (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (void)showSurfAppForCurrentConversationWithAmount:(double)arg1 currency:(id)arg2;
 - (void)showDigitalTouchCanvasForChatItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)actionController;
@@ -71,8 +75,14 @@
 - (void)sendComposition:(id)arg1;
 - (id)initWithConversation:(id)arg1;
 - (void)viewDidAppearDeferredSetup;
+- (void)_tearDownScreenTimeHandlingIfNeeded;
+- (void)_setupScreenTimeHandling;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
+- (void)_setupLockoutChildViewController;
+- (void)_removeLockoutViewController;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 
 // Remaining properties

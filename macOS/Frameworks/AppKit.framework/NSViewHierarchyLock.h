@@ -8,27 +8,26 @@
 
 #import <AppKit/NSLocking-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface NSViewHierarchyLock : NSObject <NSLocking>
 {
     void *_priv[0];
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (BOOL)_exceptionHandlingEnabled;
-+ (void)initialize;
 - (id)description;
 - (void)unlockTopMostReader;
-- (void)unlockWithExceptionHandler:(BOOL)arg1;
+- (void)_unlockWithExceptionHandler:(BOOL)arg1;
+- (void)unlockWithExceptionHandler;
 - (void)unlock;
-- (void)lock;
-- (BOOL)tryLockForWritingWithExceptionHandler:(BOOL)arg1;
-- (void)lockForWritingWithExceptionHandler:(BOOL)arg1;
-- (void)lockForWriting;
 - (BOOL)tryLockForWriting;
-- (BOOL)tryLock;
+- (void)lockForWritingWithExceptionHandler;
+- (void)lockForWriting;
 - (BOOL)_lockForWriting:(BOOL)arg1 handler:(BOOL)arg2;
+- (void)lock;
+- (void)lockForReadingWithExceptionHandler;
 - (void)lockForReading;
-- (void)lockForReadingWithExceptionHandler:(BOOL)arg1;
+- (void)_lockForReadingWithExceptionHandler:(BOOL)arg1;
 - (oneway void)release;
 - (unsigned long long)retainCount;
 - (id)retain;

@@ -4,15 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <TemplateKit/TLKProminenceView.h>
 
 __attribute__((visibility("hidden")))
-@interface FUSeparator : UIView
+@interface FUSeparator : TLKProminenceView
 {
 }
 
-- (void)setStyleProvider:(id)arg1;
-- (void)setColor:(id)arg1;
 - (void)updateConstraints;
 - (double)onePixelSize;
 - (id)initWithCoder:(id)arg1;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Message/MFSASLAuthenticator.h>
+#import <EmailCore/ECSASLAuthenticator.h>
 
-@interface _MFPlainAuthenticator : MFSASLAuthenticator
+@interface _MFPlainAuthenticator : ECSASLAuthenticator
 {
 }
 

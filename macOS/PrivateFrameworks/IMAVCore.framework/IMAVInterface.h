@@ -11,9 +11,9 @@
     id _delegate;
 }
 
-+ (id)alloc;
 + (id)sharedInstance;
-@property id delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2 isFinalUpdate:(BOOL)arg3;
 - (long long)_runPingTestForChat:(id)arg1;
 - (long long)_checkNetworkForChat:(id)arg1 requiresWifi:(BOOL)arg2;
@@ -50,7 +50,7 @@
 @property(readonly, nonatomic) unsigned long long capabilities;
 @property(readonly, nonatomic) unsigned long long capabilitiesOfCPU;
 @property(readonly, nonatomic) unsigned long long capabilitiesOfNetwork;
-- (void)avChat:(id)arg1 setValidatedIdentity:(struct OpaqueSecIdentityRef *)arg2;
+- (void)avChat:(id)arg1 setValidatedIdentity:(struct __SecIdentity *)arg2;
 - (void)avChat:(id)arg1 setSendingVideo:(BOOL)arg2;
 - (BOOL)isSendingVideoForAVChat:(id)arg1;
 - (void)avChat:(id)arg1 setSendingAudio:(BOOL)arg2;

@@ -11,7 +11,6 @@
 }
 
 + (id)urlMatchesForString:(id)arg1;
-+ (id)urlMatchesForStringsInDictionary:(id)arg1;
 
 @end
 

@@ -14,14 +14,17 @@
 {
     PBUnknownFields *_unknownFields;
     GEOClientNetworkMetrics *_networkMetrics;
+    int _offlineReason;
     int _responseSource;
     struct {
-        unsigned int responseSource:1;
-    } _has;
+        unsigned int has_offlineReason:1;
+        unsigned int has_responseSource:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOClientNetworkMetrics *networkMetrics; // @synthesize networkMetrics=_networkMetrics;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,13 +33,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsOfflineReason:(id)arg1;
+- (id)offlineReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasOfflineReason;
+@property(nonatomic) int offlineReason;
+@property(retain, nonatomic) GEOClientNetworkMetrics *networkMetrics;
 @property(readonly, nonatomic) _Bool hasNetworkMetrics;
 - (int)StringAsResponseSource:(id)arg1;
 - (id)responseSourceAsString:(int)arg1;
 @property(nonatomic) _Bool hasResponseSource;
-@property(nonatomic) int responseSource; // @synthesize responseSource=_responseSource;
+@property(nonatomic) int responseSource;
 
 @end
 

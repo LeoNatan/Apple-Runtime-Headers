@@ -21,9 +21,11 @@
     NSNumber *_responderDSID;
     NSString *_clientIdentifier;
     NSDate *_dateAddedToLocalCache;
+    NSString *_statusDescription;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly) NSString *statusDescription; // @synthesize statusDescription=_statusDescription;
 @property(copy) NSDate *dateAddedToLocalCache; // @synthesize dateAddedToLocalCache=_dateAddedToLocalCache;
 @property _Bool requestedOnThisDevice; // @synthesize requestedOnThisDevice=_requestedOnThisDevice;
 @property(copy) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
@@ -34,12 +36,10 @@
 @property(copy) NSString *ask; // @synthesize ask=_ask;
 @property(copy) NSString *requestID; // @synthesize requestID=_requestID;
 - (void).cxx_destruct;
-- (id)cacheRepresentation;
-- (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
-@property(readonly) NSString *statusDescription;
+- (id)cacheRepresentation;
+- (id)initWithCacheRepresentation:(id)arg1;
 - (id)initWithAsk:(id)arg1 requestInfo:(id)arg2;
 
 @end

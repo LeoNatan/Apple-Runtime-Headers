@@ -22,7 +22,9 @@
 - (BOOL)skipNetworkForKeysWhenPreloading:(id)arg1;
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1 exclusive:(BOOL)arg2;
+- (unsigned long long)shrinkDiskCacheToSizeSync:(unsigned long long)arg1;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1;
+- (unsigned long long)calculateFreeableSizeSync;
 - (void)calculateFreeableSize;
 - (void)flushPendingWrites;
 - (void)open;
@@ -30,12 +32,13 @@
 - (void)reportCorruptTile:(const struct _GEOTileKey *)arg1;
 - (void)cancel:(const struct _GEOTileKey *)arg1;
 - (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2;
-- (void)loadTiles:(id)arg1 priorities:(const unsigned int *)arg2 hasAdditionalInfos:(const _Bool *)arg3 additionalInfos:(const CDStruct_58878026 *)arg4 signpostIDs:(const unsigned long long *)arg5 reason:(unsigned char)arg6 options:(unsigned long long)arg7 client:(id)arg8;
+- (void)loadTiles:(id)arg1 priorities:(const unsigned int *)arg2 hasAdditionalInfos:(const _Bool *)arg3 additionalInfos:(const struct GEOTileLoaderAdditionalInfo *)arg4 signpostIDs:(const unsigned long long *)arg5 reason:(unsigned char)arg6 options:(unsigned long long)arg7 client:(id)arg8;
 - (void)_handleEditionUpgrade:(id)arg1;
 - (void)_handleNetworkBegan:(id)arg1;
 - (void)_handleError:(id)arg1;
 - (void)_handleTile:(id)arg1;
 - (void)_sendMessage:(id)arg1;
+- (id)_sendMessageWithReplySync:(id)arg1;
 - (BOOL)_sendMessage:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)_handleEvent:(id)arg1;
 - (void)dealloc;

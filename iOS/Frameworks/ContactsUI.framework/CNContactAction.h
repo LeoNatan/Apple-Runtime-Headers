@@ -12,6 +12,7 @@
 @interface CNContactAction : NSObject
 {
     _Bool _destructive;
+    _Bool _canPerformAction;
     id <CNContactActionDelegate> _delegate;
     CNContact *_contact;
     NSString *_title;
@@ -23,6 +24,7 @@
 
 + (id)contactActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(_Bool)arg4;
 + (id)contactActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
+@property(readonly, nonatomic) _Bool canPerformAction; // @synthesize canPerformAction=_canPerformAction;
 @property(nonatomic) long long transportType; // @synthesize transportType=_transportType;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic, getter=isDestructive) _Bool destructive; // @synthesize destructive=_destructive;

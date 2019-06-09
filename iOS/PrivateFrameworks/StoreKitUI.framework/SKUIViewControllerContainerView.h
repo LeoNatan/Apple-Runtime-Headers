@@ -8,6 +8,7 @@
 
 @class UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewControllerContainerView : UIView
 {
     UIViewController *_viewController;

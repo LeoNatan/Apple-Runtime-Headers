@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     TCDumpType *mElementType;
 }
 
+- (void).cxx_destruct;
 - (void)fromBinary:(struct __sFILE *)arg1 toXml:(struct _xmlNode *)arg2 state:(id)arg3;
-- (void)dealloc;
 - (id)initWithByteSizeFieldName:(id)arg1 byteSizeCorrection:(int)arg2 elementType:(id)arg3;
 - (id)initWithByteSizeFieldName:(id)arg1 elementType:(id)arg2;
 - (id)initWithByteSizeFieldType:(int)arg1 byteSizeCorrection:(int)arg2 elementType:(id)arg3;

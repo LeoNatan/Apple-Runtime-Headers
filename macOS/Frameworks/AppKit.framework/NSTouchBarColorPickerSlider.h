@@ -25,13 +25,13 @@ __attribute__((visibility("hidden")))
     NSArray *_allowedColorSpaces;
     long long _labelTextEffect;
     id _autounbinder;
-    unsigned int _valueIsFlipped:1;
-    unsigned int _minimized:1;
-    unsigned int _highlighted:1;
-    unsigned int _active:1;
-    unsigned int _labelIsOnLeadingSideOfKnob:1;
-    unsigned int _labelIsVisible:1;
-    unsigned int _relativeTracking:1;
+    BOOL _valueIsFlipped;
+    BOOL _minimized;
+    BOOL _highlighted;
+    BOOL _active;
+    BOOL _labelIsOnLeadingSideOfKnob;
+    BOOL _labelIsVisible;
+    BOOL _relativeTracking;
 }
 
 + (id)keyPathsForValuesInvalidatingConstraints;

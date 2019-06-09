@@ -26,12 +26,12 @@
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-@property(nonatomic) unsigned long long textAlignment;
+@property(nonatomic) long long textAlignment;
 - (double)baselineOffsetFromBottom;
 @property(copy, nonatomic) NSAttributedString *attributedText;
 @property(nonatomic) long long numberOfLines;
 @property(copy, nonatomic) NSString *text;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
@@ -40,7 +40,7 @@
 @property(readonly, copy) NSString *description;
 @property struct CGRect frame;
 @property(readonly) unsigned long long hash;
-@property double preferredMaxLayoutWidth;
+@property(nonatomic) double preferredMaxLayoutWidth;
 @property(readonly) Class superclass;
 
 @end

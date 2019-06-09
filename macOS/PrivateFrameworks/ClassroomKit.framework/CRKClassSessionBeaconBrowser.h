@@ -6,16 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <ClassroomKit/WPDeviceScannerDelegate-Protocol.h>
-#import <ClassroomKit/WPZoneTrackerDelegate-Protocol.h>
+#import <ClassroomKit/CRKWiProxTrackerScannerDelegate-Protocol.h>
 
-@class NSMutableSet, NSSet, NSString, WPDeviceScanner, WPZoneTracker;
+@class CRKWiProxTrackerScanner, NSMutableSet, NSSet, NSString;
 @protocol CRKClassSessionBeaconBrowserDelegate;
 
-@interface CRKClassSessionBeaconBrowser : NSObject <WPZoneTrackerDelegate, WPDeviceScannerDelegate>
+@interface CRKClassSessionBeaconBrowser : NSObject <CRKWiProxTrackerScannerDelegate>
 {
-    WPZoneTracker *mZoneTracker;
-    WPDeviceScanner *mDeviceScanner;
+    long long mZoneTrackerLastState;
     NSMutableSet *mScanningZones;
     long long mIncreasedScanRequestCount;
     BOOL _allowInvitationSessions;
@@ -23,9 +21,14 @@
     BOOL _isScanning;
     id <CRKClassSessionBeaconBrowserDelegate> _delegate;
     NSSet *_organizationUUIDs;
+    CRKWiProxTrackerScanner *_trackerScanner;
+    NSSet *_trackingUUIDs;
 }
 
++ (id)invitationUUID;
 @property(nonatomic) BOOL isScanning; // @synthesize isScanning=_isScanning;
+@property(copy, nonatomic) NSSet *trackingUUIDs; // @synthesize trackingUUIDs=_trackingUUIDs;
+@property(retain, nonatomic) CRKWiProxTrackerScanner *trackerScanner; // @synthesize trackerScanner=_trackerScanner;
 @property(nonatomic) BOOL isBrowsing; // @synthesize isBrowsing=_isBrowsing;
 @property(nonatomic) BOOL allowInvitationSessions; // @synthesize allowInvitationSessions=_allowInvitationSessions;
 @property(copy, nonatomic) NSSet *organizationUUIDs; // @synthesize organizationUUIDs=_organizationUUIDs;
@@ -34,14 +37,14 @@
 - (void)delegateDidFailWithError:(id)arg1;
 - (void)delegateDidFindInvitationSessionWithEndpoint:(id)arg1;
 - (void)delegateDidFindClassSession:(id)arg1 flags:(unsigned short)arg2;
-- (void)scanner:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3;
-- (void)scanner:(id)arg1 foundRequestedDevices:(id)arg2;
-- (void)deviceScannerDidUpdateState:(id)arg1;
-- (void)scanner:(id)arg1 didFailToRegisterDevices:(id)arg2 withError:(id)arg3;
-- (void)zoneTracker:(id)arg1 didFailToRegisterZones:(id)arg2 withError:(id)arg3;
-- (void)zoneTracker:(id)arg1 exitedZone:(id)arg2;
-- (void)zoneTracker:(id)arg1 enteredZone:(id)arg2;
-- (void)zoneTrackerDidUpdateState:(id)arg1;
+- (void)trackerScanner:(id)arg1 scanner:(id)arg2 didFailToRegisterDevices:(id)arg3 withError:(id)arg4;
+- (void)trackerScanner:(id)arg1 scanner:(id)arg2 foundDevice:(id)arg3 withData:(id)arg4;
+- (void)trackerScanner:(id)arg1 scanner:(id)arg2 foundRequestedDevices:(id)arg3;
+- (void)trackerScanner:(id)arg1 didUpdateDeviceScannerState:(id)arg2;
+- (void)trackerScanner:(id)arg1 zoneTracker:(id)arg2 didFailToRegisterZones:(id)arg3 withError:(id)arg4;
+- (void)trackerScanner:(id)arg1 zoneTracker:(id)arg2 exitedZone:(id)arg3;
+- (void)trackerScanner:(id)arg1 zoneTracker:(id)arg2 enteredZone:(id)arg3;
+- (void)trackerScanner:(id)arg1 didUpdateZoneTrackerState:(id)arg2;
 - (void)updateScanner;
 - (void)increasedScanDurationElapsed;
 - (void)stopScanningForDevicesInAllZones;
@@ -56,7 +59,6 @@
 - (void)increaseScanFrequencyForDuration:(double)arg1;
 - (void)stopBrowsing;
 - (void)startBrowsing;
-- (void)setOrganizationUUID:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

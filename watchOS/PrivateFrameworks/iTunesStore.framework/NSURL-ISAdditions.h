@@ -19,5 +19,6 @@
 - (id)urlBySettingQueryStringDictionary:(id)arg1;
 - (id)URLByAppendingQueryParameter:(id)arg1 value:(id)arg2;
 - (id)copyQueryStringDictionaryWithUnescapedValues:(_Bool)arg1;
+- (id)sanitizedURL;
 @end
 

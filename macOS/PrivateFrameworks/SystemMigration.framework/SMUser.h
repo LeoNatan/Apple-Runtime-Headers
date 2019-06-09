@@ -73,6 +73,7 @@
 @property(readonly) BOOL longNameHasConflict;
 @property(readonly) BOOL shortNameHasConflictWithOtherShortName;
 @property(readonly) BOOL shortNameHasConflict;
+- (BOOL)isMigratable;
 - (void)resetNamesForImport;
 @property(retain) NSString *longNameForImport;
 @property(retain) NSString *shortNameForImport;

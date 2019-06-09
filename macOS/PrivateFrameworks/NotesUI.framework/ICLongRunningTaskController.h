@@ -14,6 +14,8 @@
 {
     BOOL _isCancelled;
     BOOL _shouldShowCancelButton;
+    BOOL _allowSingleUnitProgress;
+    NSString *_customCancelButtonTitle;
     NSString *_progressFormatString;
     struct NSWindow *_window;
     double _intervalBeforeOpeningProgressDialog;
@@ -36,7 +38,9 @@
 @property(retain, nonatomic) id keepAlive; // @synthesize keepAlive=_keepAlive;
 @property(nonatomic) double intervalBeforeOpeningProgressDialog; // @synthesize intervalBeforeOpeningProgressDialog=_intervalBeforeOpeningProgressDialog;
 @property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
+@property(nonatomic) BOOL allowSingleUnitProgress; // @synthesize allowSingleUnitProgress=_allowSingleUnitProgress;
 @property(copy, nonatomic) NSString *progressFormatString; // @synthesize progressFormatString=_progressFormatString;
+@property(retain, nonatomic) NSString *customCancelButtonTitle; // @synthesize customCancelButtonTitle=_customCancelButtonTitle;
 @property(nonatomic) BOOL shouldShowCancelButton; // @synthesize shouldShowCancelButton=_shouldShowCancelButton;
 @property(nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 - (void).cxx_destruct;

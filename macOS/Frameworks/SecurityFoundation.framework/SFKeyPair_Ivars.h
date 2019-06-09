@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface SFKeyPair_Ivars : NSObject
 {
-    struct OpaqueSecKeyRef *secKey;
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: secKey
     struct NSString *privateKeyDomain;
 }
 

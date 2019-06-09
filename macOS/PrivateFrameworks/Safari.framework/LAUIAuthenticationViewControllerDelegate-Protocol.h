@@ -11,6 +11,7 @@
 @protocol LAUIAuthenticationViewControllerDelegate <NSObject>
 
 @optional
+- (NSString *)localizedSubTitleForMechanisms:(unsigned long long)arg1;
 - (void)cancelAuthentication;
 - (BOOL)cmdEnterOrReturnPressed;
 - (void)authAttemptFailed;

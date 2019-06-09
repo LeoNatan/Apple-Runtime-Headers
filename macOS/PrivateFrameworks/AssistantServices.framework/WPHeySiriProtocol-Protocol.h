@@ -6,10 +6,9 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSError, NSUUID, WPHeySiri;
+@class NSDictionary, NSError, NSUUID, WPHeySiri;
 
 @protocol WPHeySiriProtocol <NSObject>
-- (void)heySiri:(WPHeySiri *)arg1 foundDevice:(NSUUID *)arg2 withData:(NSData *)arg3;
 - (void)heySiriDidUpdateState:(WPHeySiri *)arg1;
 
 @optional

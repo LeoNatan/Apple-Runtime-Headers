@@ -22,7 +22,7 @@
     NSData *_peerNATIP;
     NSData *_peerBlob;
     NSString *_rid;
-    int _playerGroup;
+    unsigned int _playerGroup;
     unsigned int _playerAttributes;
     int _peerNATType;
     unsigned int _matchType;
@@ -50,7 +50,7 @@
 @property(retain, nonatomic) NSString *inviteID; // @synthesize inviteID=_inviteID;
 @property(retain, nonatomic) NSData *peerBlob; // @synthesize peerBlob=_peerBlob;
 @property(retain, nonatomic) NSString *peerID; // @synthesize peerID=_peerID;
-@property(nonatomic) int playerGroup; // @synthesize playerGroup=_playerGroup;
+@property(nonatomic) unsigned int playerGroup; // @synthesize playerGroup=_playerGroup;
 @property(nonatomic) int peerNATType; // @synthesize peerNATType=_peerNATType;
 - (id)descriptionSubstitutionMap;
 @property(readonly, nonatomic) _Bool isNearby; // @dynamic isNearby;

@@ -8,6 +8,7 @@
 
 @class CAFilter, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface _TPTemplatedColoredImageView : UIImageView
 {
     UIColor *_templateImageColor;

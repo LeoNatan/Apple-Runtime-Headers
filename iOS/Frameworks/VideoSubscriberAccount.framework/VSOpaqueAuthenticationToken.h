@@ -22,6 +22,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) NSData *serializedData;
+- (_Bool)isFromUnsupportedProvider;
 - (_Bool)isOpaque;
 - (_Bool)isValid;
 - (id)initWithSerializedData:(id)arg1;

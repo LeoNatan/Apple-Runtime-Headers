@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface UIPhysicalKeyboardEvent : UIPressesEvent
 {
+    _Bool _canPrivatizeInput;
     _Bool __externalEvent;
     NSString *_modifiedInput;
     NSString *_unmodifiedInput;

@@ -20,6 +20,7 @@
     NSMutableDictionary *_libraryFetchLockMap;
     NSString *_url;
     MFMessageCriterion *_criterion;
+    NSString *_searchPhrase;
 }
 
 + (BOOL)createEmptyStoreForPath:(id)arg1;
@@ -27,6 +28,7 @@
 + (id)sharedInstance;
 + (unsigned int)defaultLoadOptions;
 + (void)initialize;
+@property(copy, nonatomic) NSString *searchPhrase; // @synthesize searchPhrase=_searchPhrase;
 @property(retain) MFMessageCriterion *criterion; // @synthesize criterion=_criterion;
 @property(copy) NSString *url; // @synthesize url=_url;
 - (void).cxx_destruct;
@@ -55,14 +57,14 @@
 - (void)doCompact;
 - (BOOL)shouldCallCompactWhenClosing;
 - (BOOL)canCompact;
-- (long long)undoAppendOfLibraryIDs:(id)arg1;
-- (long long)appendMessages:(id)arg1 missedMessages:(id)arg2 newMessages:(id)arg3 newDocumentIDsByOld:(id)arg4 flagsToSet:(id)arg5 appendReason:(long long)arg6 userInitiated:(BOOL)arg7 error:(id *)arg8;
+- (void)handleMutedMessages:(id)arg1;
 - (long long)updateMessages:(id)arg1 withLibraryIDs:(id)arg2 newMessages:(id)arg3;
+- (id)moveMessages:(id)arg1 destinationMailboxURL:(id)arg2 userInitiated:(BOOL)arg3;
 - (BOOL)allowsOverwrite;
 - (BOOL)allowsAppend;
 - (void)deleteMessagesOlderThanNumberOfDays:(long long)arg1 compact:(BOOL)arg2;
 - (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
-- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(id)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7;
+- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(id)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7 skipSignatureVerification:(BOOL)arg8;
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2 fetchIfNotAvailable:(BOOL)arg3 allowPartial:(BOOL)arg4;
 - (id)_fetchHeaderDataForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
 - (id)messageForMessageID:(id)arg1;
@@ -78,10 +80,8 @@
 - (void)_setFlagsAndColorForMessages:(id)arg1;
 - (void)setFlagsAndColorForMessages:(id)arg1;
 - (id)async_setLocalFlagsForMessages:(id)arg1;
-- (void)updateGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
-- (id)_setGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2 async:(BOOL)arg3;
-- (id)setGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
-- (void)async_setGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (void)unmuteConversationForMessages:(id)arg1;
+- (void)muteConversationForMessages:(id)arg1;
 - (id)_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2 async:(BOOL)arg3;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)async_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;

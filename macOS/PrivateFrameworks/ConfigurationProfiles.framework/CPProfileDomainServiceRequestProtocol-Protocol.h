@@ -19,6 +19,8 @@
 - (_Bool)cpRemovePayload:(NSDictionary *)arg1 profile:(CPProfile *)arg2 actions:(id *)arg3 error:(id *)arg4;
 - (_Bool)cpInstallPayload:(NSDictionary *)arg1 profile:(CPProfile *)arg2 existingProfile:(CPProfile *)arg3 actions:(id *)arg4 error:(id *)arg5;
 - (_Bool)cpValidatePayload:(NSDictionary *)arg1 profile:(CPProfile *)arg2 responseFlags:(unsigned int *)arg3 error:(id *)arg4;
+- (_Bool)cpDetermineUninstallFlagsForPayload:(NSDictionary *)arg1 profile:(CPProfile *)arg2 responseFlags:(unsigned int *)arg3 error:(id *)arg4;
+- (_Bool)cpValidatePayloadForInstall:(NSDictionary *)arg1 profile:(CPProfile *)arg2 existingProfile:(CPProfile *)arg3 responseFlags:(unsigned int *)arg4 error:(id *)arg5;
 - (_Bool)cpBuildAdditionalWarnings:(id *)arg1 phase:(NSString *)arg2 payload:(NSDictionary *)arg3 profile:(CPProfile *)arg4 error:(id *)arg5;
 - (_Bool)cpBuildMissingInfo:(id *)arg1 payload:(NSDictionary *)arg2 profile:(CPProfile *)arg3 error:(id *)arg4;
 - (_Bool)cpBuildDisplayDetails:(id *)arg1 payload:(NSDictionary *)arg2 profile:(CPProfile *)arg3 error:(id *)arg4;

@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AVConference/NSObject-Protocol.h>
+#import <AVConference/VCBasebandCodecNotifications-Protocol.h>
 
 @class VCAudioIOControllerClient;
 
-@protocol VCAudioIOControllerControl <NSObject>
+@protocol VCAudioIOControllerControl <VCBasebandCodecNotifications>
 - (void)updateClient:(VCAudioIOControllerClient *)arg1;
 - (void)stopClient:(VCAudioIOControllerClient *)arg1;
 - (void)startClient:(VCAudioIOControllerClient *)arg1;
 
 @optional
+- (void)refreshRemoteCodecType:(unsigned int)arg1 sampleRate:(double)arg2;
 - (void)refreshOutputMetering;
 - (void)refreshInputMetering;
 @end

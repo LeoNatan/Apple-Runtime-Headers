@@ -6,16 +6,22 @@
 
 #import <GameCenterFoundation/GKInternalRepresentation.h>
 
-@class NSSet, NSString;
+@class NSNumber, NSSet, NSString;
 
 @interface GKCompatibilityEntryInternal : GKInternalRepresentation
 {
     NSString *_bundleID;
+    NSNumber *_adamID;
+    int _platform;
     NSSet *_versions;
+    NSSet *_shortVersions;
 }
 
 + (id)secureCodedPropertyKeys;
+@property(retain, nonatomic) NSSet *shortVersions; // @synthesize shortVersions=_shortVersions;
 @property(retain, nonatomic) NSSet *versions; // @synthesize versions=_versions;
+@property(nonatomic) int platform; // @synthesize platform=_platform;
+@property(retain, nonatomic) NSNumber *adamID; // @synthesize adamID=_adamID;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

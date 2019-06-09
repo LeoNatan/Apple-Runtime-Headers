@@ -11,6 +11,13 @@
 @protocol NSManagedObjectContextFaultingDelegate <NSObject>
 
 @optional
+- (BOOL)isEditing;
+- (void)commitEditingWithDelegate:(id)arg1 didCommitSelector:(SEL)arg2 contextInfo:(void *)arg3;
+- (BOOL)commitEditingAndReturnError:(id *)arg1;
+- (BOOL)commitEditing;
+- (void)discardEditing;
+- (void)objectDidEndEditing:(id)arg1;
+- (void)objectDidBeginEditing:(id)arg1;
 - (long long)context:(NSManagedObjectContext *)arg1 shouldHandleInaccessibleFault:(NSManagedObject *)arg2 forObjectID:(NSManagedObjectID *)arg3 andTrigger:(NSPropertyDescription *)arg4;
 @end
 

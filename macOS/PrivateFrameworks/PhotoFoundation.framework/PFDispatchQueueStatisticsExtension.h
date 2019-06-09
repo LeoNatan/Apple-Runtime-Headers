@@ -22,13 +22,14 @@
     unsigned long long _lastLogTime;
 }
 
-+ (void)initialize;
+- (void)queue:(id)arg1 skippedExecuting:(id)arg2;
 - (void)queue:(id)arg1 didExecute:(id)arg2;
 - (void)queue:(id)arg1 willExecute:(id)arg2;
 - (void)queue:(id)arg1 didDequeue:(id)arg2 skipExecution:(CDUnknownBlockType)arg3;
 - (void)queue:(id)arg1 willEnqueueAsync:(id)arg2 when:(CDUnknownBlockType)arg3;
 - (void)queue:(id)arg1 willEnqueueSync:(id)arg2;
 - (id)newBlockInfo;
+- (Class)blockInfoClass;
 - (id)description;
 - (void)blockCompletedAfterWait:(unsigned long long)arg1 executionTime:(unsigned long long)arg2 queue:(id)arg3;
 - (void)blockEnqueued:(id)arg1;

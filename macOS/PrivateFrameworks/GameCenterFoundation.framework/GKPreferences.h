@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSDate, NSDictionary, NSString;
 @protocol GKPreferencesDelegate;
 
 @interface GKPreferences : NSObject
@@ -18,10 +18,33 @@
 
 + (id)displayNameForEnvironment:(long long)arg1;
 + (id)hostNameForEnvironment:(long long)arg1;
-+ (id)sharedPreferences;
++ (id)shared;
 @property(copy) NSDictionary *overrideValues; // @synthesize overrideValues=_overrideValues;
 @property(nonatomic, getter=isWebKitInspectElementEnabled) BOOL webKitInspectElementEnabled; // @synthesize webKitInspectElementEnabled=_webKitInspectElementEnabled;
 @property(nonatomic) BOOL _shouldSynchronizeOnNextRead; // @synthesize _shouldSynchronizeOnNextRead;
+@property(nonatomic) long long tournamentServer;
+@property(nonatomic) BOOL restrictToTournamentPlayers;
+@property(nonatomic) long long tournamentCreationMethod;
+@property(nonatomic) long long tournamentUIAppearanceStyle;
+@property(nonatomic) long long tournamentCustomDuration;
+@property(nonatomic) long long tournamentCustomMaxReplays;
+@property(nonatomic) long long tournamentCustomMaxPlayers;
+@property(nonatomic) long long tournamentCustomMinPlayers;
+@property(nonatomic) long long tournamentAutoDuration;
+@property(nonatomic) long long tournamentMaxReplays;
+@property(nonatomic) long long tournamentMaxPlayers;
+@property(nonatomic) long long tournamentMinPlayers;
+@property(retain, nonatomic) NSDate *tournamentEndDate;
+@property(retain, nonatomic) NSDate *tournamentStartDate;
+@property(nonatomic) long long tournamentDuration;
+@property(nonatomic) long long tournamentReplays;
+@property(nonatomic) long long tournamentPlayers;
+@property(nonatomic) long long tournamentParticipantState;
+@property(nonatomic) long long tournamentState;
+@property(nonatomic) long long tournamentMaxSimulatedFriends;
+@property(nonatomic) long long tournamentMaxSimulatedPlayers;
+@property(nonatomic) BOOL tournamentDemoModeEnabled;
+@property(nonatomic) BOOL tournamentsDebuggingEnabled;
 @property(nonatomic, getter=isComprehensiveLoggingEnabled) BOOL comprehensiveLoggingEnabled;
 @property(nonatomic, getter=isClipGestureEnabled) BOOL clipGestureEnabled;
 @property(readonly, nonatomic) BOOL HTTPShouldUsePipelining;
@@ -53,6 +76,8 @@
 @property(nonatomic) unsigned long long maxPlayersTurnBased;
 @property(nonatomic) unsigned long long maxPlayersHosted;
 @property(nonatomic) unsigned long long maxPlayersP2P;
+@property(nonatomic) unsigned long long recentNumberOfPlayers;
+@property(nonatomic) BOOL restrictToAutomatch;
 @property(nonatomic) long long pipeliningSetting;
 @property(nonatomic) long long pushEnvironment;
 @property(nonatomic) BOOL preemptiveRelay;
@@ -70,6 +95,7 @@
 @property(nonatomic) double operationTimeout;
 @property(nonatomic) unsigned long long loginDisableThreshold;
 @property(nonatomic) unsigned long long mescalSetupRetries;
+@property(nonatomic) BOOL forceDefaultNickname;
 @property(nonatomic) BOOL useTestProtocols;
 @property(nonatomic) BOOL allowUnsignedBag;
 @property(retain, nonatomic) NSString *storeBagURL;

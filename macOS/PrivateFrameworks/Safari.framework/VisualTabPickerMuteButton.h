@@ -9,10 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface VisualTabPickerMuteButton : NSButton
 {
-    int _muteButtonState;
+    long long _muteButtonState;
 }
 
-@property(nonatomic) int muteButtonState; // @synthesize muteButtonState=_muteButtonState;
+@property(nonatomic) long long muteButtonState; // @synthesize muteButtonState=_muteButtonState;
 - (void)_updateImageAndAccessibilityLabel;
 - (BOOL)allowsVibrancy;
 - (id)init;

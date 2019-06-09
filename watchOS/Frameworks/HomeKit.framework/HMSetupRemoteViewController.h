@@ -10,6 +10,7 @@
 
 @protocol HMSetupRemoteHost;
 
+__attribute__((visibility("hidden")))
 @interface HMSetupRemoteViewController : _UIRemoteViewController <HMSetupRemoteHost>
 {
     id <HMSetupRemoteHost> _delegate;

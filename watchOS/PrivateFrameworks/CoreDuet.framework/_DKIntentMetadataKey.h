@@ -10,12 +10,14 @@
 {
 }
 
++ (id)derivedIntentIdentifier;
 + (id)serializedKeyImage;
 + (id)intentHandlingStatus;
 + (id)donatedBySiri;
 + (id)intentVerb;
 + (id)intentType;
 + (id)intentClass;
++ (id)direction;
 + (id)serializedInteraction;
 
 @end

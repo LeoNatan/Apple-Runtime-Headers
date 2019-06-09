@@ -12,6 +12,7 @@
 
 @class NSString, SKUILayoutCache, SKUIMetricsImpressionSession, SKUIPanelTemplateViewElement, SKUIPanelView, SKUIViewElementLayoutContext, UIImageView, UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPanelDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUILayoutCacheDelegate, SKUIDocumentViewController>
 {
     UIImageView *_backgroundImageView;

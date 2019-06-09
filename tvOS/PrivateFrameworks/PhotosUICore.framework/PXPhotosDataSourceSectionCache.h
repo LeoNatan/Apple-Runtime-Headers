@@ -15,8 +15,10 @@
     long long _estimatedPhotosCount;
     long long _estimatedVideosCount;
     long long _estimatedOtherCount;
+    long long _numberOfEnrichedAssetCollections;
 }
 
+@property(readonly, nonatomic) long long numberOfEnrichedAssetCollections; // @synthesize numberOfEnrichedAssetCollections=_numberOfEnrichedAssetCollections;
 @property(readonly, nonatomic) long long estimatedOtherCount; // @synthesize estimatedOtherCount=_estimatedOtherCount;
 @property(readonly, nonatomic) long long estimatedVideosCount; // @synthesize estimatedVideosCount=_estimatedVideosCount;
 @property(readonly, nonatomic) long long estimatedPhotosCount; // @synthesize estimatedPhotosCount=_estimatedPhotosCount;

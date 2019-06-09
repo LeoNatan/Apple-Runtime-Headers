@@ -7,7 +7,6 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (MCNSObjectAdditions)
-- (void)mc_safeRemoveObserver:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;
-- (void)mc_safeRemoveObserver:(id)arg1 forKeyPath:(id)arg2;
+- (void)ic_safeRemoveObserver:(id)arg1 forKeyPath:(id)arg2;
 @end
 

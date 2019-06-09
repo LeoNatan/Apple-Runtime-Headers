@@ -8,6 +8,7 @@
 
 @class UIButton, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface CKMessageEntryAudioHintView : UIView
 {
     UIButton *_referenceButton;

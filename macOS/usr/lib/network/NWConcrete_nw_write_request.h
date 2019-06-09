@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType completion;
     NSObject<OS_dispatch_data> *data;
     NSObject<OS_nw_content_context> *context;
+    NSObject<OS_nw_content_context> *original_message;
     unsigned long long consumed_bytes;
     double relative_priority;
     unsigned int complete:1;

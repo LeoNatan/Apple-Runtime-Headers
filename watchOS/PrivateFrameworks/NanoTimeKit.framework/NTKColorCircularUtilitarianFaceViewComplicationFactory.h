@@ -23,7 +23,7 @@
 - (void)curvedCircleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)slotUsesCurvedText:(int)arg1;
 - (id)utilityDateComplicationFontForDateStyle:(unsigned int)arg1;
-- (void)applyComplicationContentSpecificAttributesAnimated:(_Bool)arg1 attributes:(unsigned int)arg2 faceView:(id)arg3;
+- (id)createComplicationContentSpecificAttributesAnimationWithAttributes:(unsigned int)arg1 faceView:(id)arg2 forSlots:(id)arg3;
 - (void)applyComplicationContentSpecificAttributesAnimated:(_Bool)arg1 faceView:(id)arg2;
 - (void)cleanupAfterEditingForFaceView:(id)arg1;
 - (void)prepareForEditingForFaceView:(id)arg1;

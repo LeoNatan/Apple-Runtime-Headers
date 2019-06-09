@@ -8,6 +8,7 @@
 
 @class NSDictionary, OAVReadState, OCPPackagePart;
 
+__attribute__((visibility("hidden")))
 @interface OAVShapeManager : NSObject
 {
     struct _xmlNode *mShape;

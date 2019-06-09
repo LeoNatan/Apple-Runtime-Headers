@@ -9,7 +9,7 @@
 #import <AvatarUI/AVTAvatarStoreInternal-Protocol.h>
 
 @class NSString;
-@protocol AVTAvatarStoreDelegate, AVTAvatarStoreInternal, OS_dispatch_queue;
+@protocol AVTAvatarStoreDelegate, AVTAvatarStoreInternal, AVTStickerBackendDelegate, OS_dispatch_queue;
 
 @interface AVTObservableAvatarStore : NSObject <AVTAvatarStoreInternal>
 {
@@ -24,6 +24,10 @@
 @property(readonly, nonatomic) id <AVTAvatarStoreInternal> store; // @synthesize store=_store;
 @property(nonatomic) __weak id <AVTAvatarStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)deleteRecentStickersForChangeTracker:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)recentStickersForFetchRequest:(id)arg1 error:(id *)arg2;
+- (void)didUseStickerWithAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)deleteRecentStickersWithAvatarIdentifier:(id)arg1 stickerIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)duplicateAvatar:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)saveAvatar:(id)arg1 completionBlock:(CDUnknownBlockType)arg2 thumbnailGenerationCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)deleteAvatarWithIdentifier:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
@@ -38,6 +42,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) __weak id <AVTStickerBackendDelegate> stickerBackendDelegate;
 @property(readonly) Class superclass;
 
 @end

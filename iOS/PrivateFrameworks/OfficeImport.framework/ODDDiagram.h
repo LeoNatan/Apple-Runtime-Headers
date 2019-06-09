@@ -6,7 +6,7 @@
 
 #import <OfficeImport/OADDrawable.h>
 
-@class ODDColorTransform, ODDNodePoint, ODDStyleDefinition;
+@class NSArray, ODDColorTransform, ODDNodePoint, ODDStyleDefinition;
 
 __attribute__((visibility("hidden")))
 @interface ODDDiagram : OADDrawable
@@ -14,15 +14,17 @@ __attribute__((visibility("hidden")))
     ODDNodePoint *mDocumentPoint;
     ODDColorTransform *mColorTransform;
     ODDStyleDefinition *mStyleDefinition;
+    NSArray *mEquivalentDrawables;
 }
 
+@property(retain, nonatomic) NSArray *equivalentDrawables; // @synthesize equivalentDrawables=mEquivalentDrawables;
+- (void).cxx_destruct;
 - (id)description;
 - (id)styleDefinition;
 - (id)colorTransform;
 - (void)setDocumentPoint:(id)arg1;
 - (id)documentPoint;
 - (void)setParentTextListStyle:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

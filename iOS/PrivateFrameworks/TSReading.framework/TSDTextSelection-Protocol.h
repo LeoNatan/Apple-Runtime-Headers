@@ -4,6 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@protocol TSDTextSelection
+#import <TSReading/NSObject-Protocol.h>
+
+@protocol TSDTextSelection <NSObject>
+@property(readonly, nonatomic) _Bool isAtEndOfLine;
+@property(readonly, nonatomic) struct _NSRange range;
 @end
 

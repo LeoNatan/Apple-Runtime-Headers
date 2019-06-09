@@ -74,7 +74,6 @@
 @property BOOL success; // @synthesize success=_success;
 @property(retain) SMMigrationRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
-- (void)messageTraceMigratedAtleastOneBrokenSymlink;
 - (void)messageTraceMigrationCancelled;
 - (void)messageTraceMigrationFinished;
 - (BOOL)usedSWAP;

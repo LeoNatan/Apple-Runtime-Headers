@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <ControlCenterUI/_UIPreviewInteractionViewControllerTransition-Protocol.h>
+#import <ControlCenterUI/_UIClickPresentationTransition-Protocol.h>
 
-@class CCUIContentModuleContainerViewController, NSString;
+@class CCUIContentModuleContainerViewController, NSString, UIViewPropertyAnimator, _UITargetedPreview;
 
-@interface CCUIContentModuleContainerTransition : NSObject <_UIPreviewInteractionViewControllerTransition>
+@interface CCUIContentModuleContainerTransition : NSObject <_UIClickPresentationTransition>
 {
     _Bool _appearanceTransition;
     CCUIContentModuleContainerViewController *_viewController;
@@ -26,9 +26,11 @@
 - (void)prepareTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 
 // Remaining properties
+@property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(copy, nonatomic) _UITargetedPreview *sourcePreview;
 @property(readonly) Class superclass;
 
 @end

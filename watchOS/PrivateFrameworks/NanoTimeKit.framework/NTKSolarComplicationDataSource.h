@@ -16,7 +16,6 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-+ (Class)richComplicationDisplayViewClassForType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 - (void).cxx_destruct;
 - (void)_cancelLocationUpdates;
 - (id)_templateFromLocation:(id)arg1 useIdealizedTime:(_Bool)arg2;
@@ -30,6 +29,7 @@
 - (id)currentSwitcherTemplate;
 - (unsigned int)timelineAnimationBehavior;
 - (_Bool)supportsTapAction;
+- (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (_Bool)alwaysShowIdealizedTemplateInSwitcher;
 - (void)dealloc;
 - (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;

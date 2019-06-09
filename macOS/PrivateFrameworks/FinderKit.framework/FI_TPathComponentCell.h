@@ -6,17 +6,20 @@
 
 #import <AppKit/NSPathComponentCell.h>
 
+@class NSObject;
 @protocol TPathControlDelegate;
 
 __attribute__((visibility("hidden")))
 @interface FI_TPathComponentCell : NSPathComponentCell
 {
-    id <TPathControlDelegate> _delegate;
+    struct TNSWeakPtr<NSObject<TPathControlDelegate>, void> _weakDelegate;
 }
 
-@property id <TPathControlDelegate> delegate; // @synthesize delegate=_delegate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)accessibilityActionNames;
 - (id)URL;
+@property __weak NSObject<TPathControlDelegate> *delegate; // @dynamic delegate;
 
 @end
 

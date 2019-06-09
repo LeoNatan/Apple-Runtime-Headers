@@ -8,6 +8,8 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
+@class _UIButtonBarButtonVisualProvider;
+
 @interface UIKBRenderConfig : NSObject <NSCopying>
 {
     _Bool _useEmojiStyles;
@@ -17,6 +19,7 @@
     float _blurSaturation;
     float _keycapOpacity;
     float _lightKeycapOpacity;
+    _UIButtonBarButtonVisualProvider *_buttonBarVisualProvider;
 }
 
 + (int)backdropStyleForStyle:(int)arg1 quality:(int)arg2;
@@ -25,6 +28,7 @@
 + (id)darkConfig;
 + (id)defaultEmojiConfig;
 + (id)defaultConfig;
+@property(readonly, nonatomic) _UIButtonBarButtonVisualProvider *buttonBarVisualProvider; // @synthesize buttonBarVisualProvider=_buttonBarVisualProvider;
 @property(nonatomic) _Bool lightKeyboard; // @synthesize lightKeyboard=_lightKeyboard;
 @property(nonatomic) float lightKeycapOpacity; // @synthesize lightKeycapOpacity=_lightKeycapOpacity;
 @property(nonatomic) float keycapOpacity; // @synthesize keycapOpacity=_keycapOpacity;

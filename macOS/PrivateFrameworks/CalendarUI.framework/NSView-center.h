@@ -9,5 +9,24 @@
 @interface NSView (center)
 - (void)setCenter:(struct CGPoint)arg1;
 - (struct CGPoint)center;
+- (void)CalHorizontallyAlignView:(id)arg1 withView:(id)arg2;
+- (void)CalAlignTrailingEdgeOfView:(id)arg1 withView:(id)arg2;
+- (void)CalAlignLeadingEdgeOfView:(id)arg1 withView:(id)arg2;
+- (void)CalVerticallyAlignView:(id)arg1 withView:(id)arg2;
+- (void)CalAlignBottomOfView:(id)arg1 withView:(id)arg2;
+- (void)CalAlignTopOfView:(id)arg1 withView:(id)arg2;
+- (void)CalHorizontallyAlignView:(id)arg1 withView:(id)arg2 leadingInset:(double)arg3 trailingInset:(double)arg4;
+- (void)CalAlignTrailingEdgeOfView:(id)arg1 withView:(id)arg2 inset:(double)arg3;
+- (void)CalAlignLeadingEdgeOfView:(id)arg1 withView:(id)arg2 inset:(double)arg3;
+- (void)CalVerticallyAlignView:(id)arg1 withView:(id)arg2 topInset:(double)arg3 bottomInset:(double)arg4;
+- (void)CalAlignBottomOfView:(id)arg1 withView:(id)arg2 inset:(double)arg3;
+- (void)CalAlignTopOfView:(id)arg1 withView:(id)arg2 inset:(double)arg3;
+- (struct CGRect)CalAlignmentRect;
+- (double)CalAutoLayoutHeightForDesiredFrameHeight:(double)arg1;
+- (double)CalAutoLayoutWidthForDesiredFrameWidth:(double)arg1;
+- (struct CGSize)CalAutoLayoutSizeForDesiredFrameSize:(struct CGSize)arg1;
+- (void)CalAutoLayoutBeIntrinsicHeight;
+- (void)CalAutoLayoutBeIntrinsicWidth;
+- (void)CalAutoLayoutBeIntrinsicSize;
 @end
 

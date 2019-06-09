@@ -29,7 +29,9 @@
     unsigned long long _linkType;
 }
 
++ (long long)currentDeviceAuthenticationMode;
 + (id)deviceSpecificLocalizedStringWithKey:(id)arg1;
++ (id)personaIDIfCurrentPersonaIsEnterprise;
 + (id)_serverFriendlyDeviceColorForArea:(struct __CFString *)arg1;
 + (id)_buildNumber;
 + (id)_osVersion;
@@ -73,8 +75,9 @@
 @property(readonly) BOOL isInternalBuild;
 @property(readonly) NSString *integratedCircuitCardIdentifier;
 @property(readonly) NSString *mobileEquipmentIdentifier;
-@property(readonly) BOOL isAppleIDLoginEnabled;
 - (BOOL)currentUserIsLocal;
+@property(readonly) BOOL isFaceIDCapable;
+@property(readonly) BOOL isBiometricAuthCapable;
 @property(readonly) BOOL isProtectedWithPasscode;
 @property(readonly) BOOL isInCircle;
 @property(readonly) BOOL isUnlocked;

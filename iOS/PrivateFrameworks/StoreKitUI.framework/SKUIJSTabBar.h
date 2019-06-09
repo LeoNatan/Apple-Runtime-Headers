@@ -10,6 +10,7 @@
 
 @class NSArray, SKUIApplicationController, SKUIJSTabBarItem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSTabBar : IKJSObject <SKUIJSTabBar>
 {
     SKUIApplicationController *_applicationController;

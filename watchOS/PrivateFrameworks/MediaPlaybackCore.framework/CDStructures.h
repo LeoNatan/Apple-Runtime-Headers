@@ -10,7 +10,28 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct AudioBuffer {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+};
+
+struct AudioBufferList {
+    unsigned int _field1;
+    struct AudioBuffer _field2[1];
+};
+
 struct CGSize {
+    float _field1;
+    float _field2;
+};
+
+struct DSPSplitComplex {
+    float *realp;
+    float *imagp;
+};
+
+struct MPCAudioSpectrumAnalyzerBand {
     float _field1;
     float _field2;
 };
@@ -24,6 +45,14 @@ struct NSMapTable {
     Class _field1;
 };
 
+struct _MPCAudioSpectrumAnalyzerBandInternal {
+    struct MPCAudioSpectrumAnalyzerBand _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    unsigned int _field5;
+};
+
 struct _MPCModelStorePlaybackItemEligibility {
     _Bool _field1;
     int _field2;
@@ -35,27 +64,18 @@ struct _MSVSignedRange {
 };
 
 struct _NSRange {
-    unsigned int location;
-    unsigned int length;
-};
-
-struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
-    struct __tree_node_base<void *> *__left_;
-};
-
-struct map<unsigned int, MPIdentifierSet *, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, MPIdentifierSet *>>> {
-    struct __tree<std::__1::__value_type<unsigned int, MPIdentifierSet *>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, MPIdentifierSet *>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, MPIdentifierSet *>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, MPIdentifierSet *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, MPIdentifierSet *>, std::__1::less<unsigned int>, true>> {
-            unsigned long __value_;
-        } __pair3_;
-    } __tree_;
+    unsigned int _field1;
+    unsigned int _field2;
 };
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    _Bool _field1;
+    _Bool _field2;
+    _Bool _field3;
+    _Bool _field4;
+} CDStruct_8024420c;
 
 typedef struct {
     double snapshotTime;
@@ -73,6 +93,18 @@ typedef struct {
     int reverseCount;
     int forwardCount;
 } CDStruct_b9e39389;
+
+typedef struct {
+    long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
+
+typedef struct {
+    CDStruct_198678f7 _field1;
+    CDStruct_198678f7 _field2;
+} CDStruct_3c1748cc;
 
 // Ambiguous groups
 typedef struct {

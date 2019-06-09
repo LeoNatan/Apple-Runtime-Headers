@@ -8,30 +8,41 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, PBUnknownFields;
+@class GEOLatLng, GEOPDMapsIdentifier, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteEntryAddress : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
+    GEOLatLng *_center;
     double _disambiguationRadiusMeters;
     double _distance;
+    GEOPDMapsIdentifier *_mapsId;
     unsigned long long _opaqueGeoId;
-    GEOLatLng *_center;
     int _placeType;
     struct {
-        unsigned int disambiguationRadiusMeters:1;
-        unsigned int distance:1;
-        unsigned int opaqueGeoId:1;
-        unsigned int placeType:1;
-    } _has;
+        unsigned int has_disambiguationRadiusMeters:1;
+        unsigned int has_distance:1;
+        unsigned int has_opaqueGeoId:1;
+        unsigned int has_placeType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_center:1;
+        unsigned int read_mapsId:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_center:1;
+        unsigned int wrote_disambiguationRadiusMeters:1;
+        unsigned int wrote_distance:1;
+        unsigned int wrote_mapsId:1;
+        unsigned int wrote_opaqueGeoId:1;
+        unsigned int wrote_placeType:1;
+    } _flags;
 }
 
-@property(nonatomic) double disambiguationRadiusMeters; // @synthesize disambiguationRadiusMeters=_disambiguationRadiusMeters;
-@property(nonatomic) double distance; // @synthesize distance=_distance;
-@property(nonatomic) unsigned long long opaqueGeoId; // @synthesize opaqueGeoId=_opaqueGeoId;
-@property(retain, nonatomic) GEOLatLng *center; // @synthesize center=_center;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,16 +51,25 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId;
+@property(readonly, nonatomic) BOOL hasMapsId;
+- (void)_readMapsId;
 @property(nonatomic) BOOL hasDisambiguationRadiusMeters;
+@property(nonatomic) double disambiguationRadiusMeters;
 - (int)StringAsPlaceType:(id)arg1;
 - (id)placeTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasPlaceType;
-@property(nonatomic) int placeType; // @synthesize placeType=_placeType;
+@property(nonatomic) int placeType;
 @property(nonatomic) BOOL hasDistance;
+@property(nonatomic) double distance;
 @property(nonatomic) BOOL hasOpaqueGeoId;
+@property(nonatomic) unsigned long long opaqueGeoId;
+@property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) BOOL hasCenter;
+- (void)_readCenter;
 
 @end
 

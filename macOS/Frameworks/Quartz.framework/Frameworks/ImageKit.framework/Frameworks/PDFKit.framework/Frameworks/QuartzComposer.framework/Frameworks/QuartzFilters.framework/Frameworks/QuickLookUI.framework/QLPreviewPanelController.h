@@ -19,7 +19,6 @@
 @class NSDate, NSDictionary, NSImage, NSMutableSet, NSString, NSTimer, NSView, NSWindow, QLFullscreenController, QLIndexSheetController, QLPanelPreviewView, QLPreviewNavigationController, QLPreviewPanel, QLPreviewPanelTouchBarController, QLPreviewScroller, QLPreviewSlideshow, QLPreviewSwipeController, QLPreviewView, QLTimeSlider;
 @protocol QLPreviewItem;
 
-__attribute__((visibility("hidden")))
 @interface QLPreviewPanelController : QLPreviewWindowController <QLPathWatcherClient, NSSharingServicePickerDelegate, NSSharingServiceDelegate, QLPreviewTouchBarDelegate, QLPreviewViewDelegate, QLControlsDelegate, QLIndexSheetDelegate, QLTimeSliderDataSource, QLPreviewSlideshowDelegate>
 {
     BOOL _preservesDisplayStateOnNextReloadData;
@@ -29,7 +28,6 @@ __attribute__((visibility("hidden")))
     long long _currentPreviewItemIndex;
     id _delegate;
     int _features;
-    int _status;
     QLPanelPreviewView *_previewView;
     QLPreviewView *_sharedPreviewView;
     id _displayState;
@@ -64,9 +62,9 @@ __attribute__((visibility("hidden")))
     BOOL _shouldAdjustPanelFrameWhenExitingFullscreen;
     BOOL _fakePlaying;
     BOOL _markupEnabled;
-    BOOL _shouldCloseAfterMarkup;
     BOOL _rotateEnabled;
     BOOL _rotatesRight;
+    BOOL _shouldCloseAfterEditing;
     BOOL _flushing;
     BOOL _ignoreCloseNotification;
     double _totalButtonWidth;
@@ -85,9 +83,8 @@ __attribute__((visibility("hidden")))
     BOOL _automaticallyManageVisibility;
     double _cumulativeMagnification;
     BOOL _sharingInProgress;
-    struct __CFRunLoopSource *_transmogrifySource;
-    struct __CFMachPort *_transmogriphyPort;
     BOOL _openingOperationBeganMeasuring;
+    int _status;
 }
 
 + (id)keyPathsForValuesAffectingCanShowNextItem;
@@ -123,8 +120,9 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingCanAddCurrentItemToiPhoto;
 + (id)keyPathsForValuesAffectingIsCurrentItemIniPhoto;
 + (id)_defaultNoItemsTitle;
+@property(nonatomic) int status; // @synthesize status=_status;
+@property BOOL shouldCloseAfterEditing; // @synthesize shouldCloseAfterEditing=_shouldCloseAfterEditing;
 @property BOOL rotatesRight; // @synthesize rotatesRight=_rotatesRight;
-@property BOOL shouldCloseAfterMarkup; // @synthesize shouldCloseAfterMarkup=_shouldCloseAfterMarkup;
 @property(retain) NSView *editToolbarView; // @synthesize editToolbarView=_editToolbarView;
 @property(retain) QLPreviewPanelTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain) QLPreviewNavigationController *navigationController; // @synthesize navigationController=_navigationController;
@@ -172,6 +170,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL canShowNextItem;
 - (void)showPreviousItem:(id)arg1;
 @property(readonly) BOOL canShowPreviousItem;
+- (void)_didExitTrimming;
 @property(readonly) BOOL isTrimming;
 @property(readonly) BOOL trimmingSupported;
 - (void)beginTrimmingCurrentPreview;
@@ -193,7 +192,9 @@ __attribute__((visibility("hidden")))
 - (id)_sharingPickerForItems:(id)arg1;
 @property(copy) NSString *loadingTitle;
 @property(copy) NSString *noItemsTitle;
+- (int)previewStatusForPreviewView:(id)arg1;
 - (id)previewView:(id)arg1 additionalOptionsForItem:(id)arg2;
+- (void)previewView:(id)arg1 didShowScreentimeLockout:(BOOL)arg2;
 - (BOOL)previewView:(id)arg1 shouldDisableProgressiveLoadingOfPreviewItem:(id)arg2;
 - (void)previewView:(id)arg1 opaqueFrameDidUpdate:(struct CGRect)arg2;
 - (id)previewView:(id)arg1 customViewForPreviewItem:(id)arg2;
@@ -212,10 +213,12 @@ __attribute__((visibility("hidden")))
 - (void)previewViewSizingUpdated:(id)arg1;
 - (void)previewView:(id)arg1 didEditPage:(long long)arg2 ofDisplayBundle:(id)arg3;
 - (void)_resetToolbarFromMarkupToNormal;
+- (void)previewView:(id)arg1 didSaveEdit:(BOOL)arg2 fromDisplayBundle:(id)arg3 toURL:(id)arg4;
 - (void)previewViewDidExitMarkup:(id)arg1 fromDisplayBundle:(id)arg2;
 - (void)previewViewDidEnterMarkup:(id)arg1 fromDisplayBundle:(id)arg2;
 - (void)_addMarkupToolbarIfNecessary:(id)arg1;
 - (double)_minimumPanelWidthForMarkupWithToolbar:(id)arg1;
+- (long long)previewView:(id)arg1 saveModeForItem:(id)arg2;
 - (long long)previewView:(id)arg1 initialEditModeForItem:(id)arg2;
 - (void)previewView:(id)arg1 didShowDisplayable:(id)arg2;
 - (void)previewView:(id)arg1 didShowPreviewItem:(id)arg2;
@@ -234,18 +237,17 @@ __attribute__((visibility("hidden")))
 @property double currentTime;
 @property(readonly) double duration;
 - (void)_updateEventMonitor;
-- (void)_cleanupTransmogrification;
-- (BOOL)_prepareForTransmogrification;
 - (void)magnifyWithEvent:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 - (BOOL)wantsForwardedScrollEventsForAxis:(long long)arg1;
 - (BOOL)wantsScrollEventsForSwipeTrackingOnAxis:(long long)arg1;
 - (void)swipeWithEvent:(id)arg1;
 - (void)trackSwipeWithEvent:(id)arg1;
+- (int)_defaultUserActionForKeyEquivalentEvent:(id)arg1;
+- (BOOL)canPerformKeyEquivalent:(id)arg1;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (BOOL)handleEvent:(id)arg1;
 @property(readonly) BOOL worksWhenModal;
-- (void)_transmogrifyWithEvent:(id)arg1;
 - (int)_defaultUserActionForEvent:(id)arg1;
 - (int)_userActionForEvent:(id)arg1;
 - (BOOL)_canOverrideUserAction:(int)arg1;

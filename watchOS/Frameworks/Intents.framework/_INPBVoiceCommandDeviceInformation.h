@@ -22,12 +22,15 @@
     int _deviceIdiom;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool isHomePodInUltimateMode; // @synthesize isHomePodInUltimateMode=_isHomePodInUltimateMode;
 @property(nonatomic) int deviceIdiom; // @synthesize deviceIdiom=_deviceIdiom;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasIsHomePodInUltimateMode;

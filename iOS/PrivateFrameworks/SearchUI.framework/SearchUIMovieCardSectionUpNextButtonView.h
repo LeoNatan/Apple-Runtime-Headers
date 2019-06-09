@@ -13,7 +13,7 @@
     SearchUIWatchListUtilities *_watchListUtility;
 }
 
-@property(retain) SearchUIWatchListUtilities *watchListUtility; // @synthesize watchListUtility=_watchListUtility;
+@property(retain, nonatomic) SearchUIWatchListUtilities *watchListUtility; // @synthesize watchListUtility=_watchListUtility;
 - (void).cxx_destruct;
 - (void)buttonPressed;
 - (void)updateUpNextStatus;

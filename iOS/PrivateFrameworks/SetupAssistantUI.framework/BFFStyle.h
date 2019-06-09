@@ -22,6 +22,7 @@
 - (struct CGSize)sizeForContinueButtonInAncestor:(id)arg1;
 - (id)continueButtonWithTitle:(id)arg1 inView:(id)arg2;
 - (void)applyThemeToNavigationController:(id)arg1;
+- (void)applyAutomaticScrollToEdgeBehaviorOnNavgationItem:(id)arg1;
 - (void)applyThemeToNavigationController:(id)arg1 allowUnderlap:(_Bool)arg2;
 - (id)backgroundColor;
 - (struct UIEdgeInsets)edgeInsetsForTable:(id)arg1;

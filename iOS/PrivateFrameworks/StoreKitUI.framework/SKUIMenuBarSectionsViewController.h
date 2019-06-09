@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIStorePageSectionsViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuBarSectionsViewController : SKUIStorePageSectionsViewController
 {
     unsigned long long _numberOfIterationsForShelfPageSections;

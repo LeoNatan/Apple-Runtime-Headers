@@ -16,6 +16,7 @@
     UIView *_internalInputAccessoryView;
     _Bool _showsDecimalPointButton;
     _Bool _enabled;
+    _Bool _ignoreIntegralNumber;
     _Bool _clearAmountOnFirstKeyboardInput;
     _Bool _showDecimalPointButton;
     _Bool _isFirstKeyboardInput;
@@ -28,8 +29,8 @@
     id <PKEnterCurrencyAmountViewDelegate> _delegate;
     UILabel *_amountLabel;
     PKNumberPadInputView *_numberPad;
-    NSNumberFormatter *_amountFormatter;
     NSDecimalNumberHandler *_roundingBehavior;
+    NSNumberFormatter *_amountFormatter;
     NSNumberFormatter *_currencySymbolAmountFormatter;
     NSString *_amountString;
     float _labelScaleFactor;
@@ -40,10 +41,10 @@
 @property(nonatomic) struct CGSize lastLayoutBoundsSize; // @synthesize lastLayoutBoundsSize=_lastLayoutBoundsSize;
 @property(nonatomic) _Bool isFirstKeyboardInput; // @synthesize isFirstKeyboardInput=_isFirstKeyboardInput;
 @property(nonatomic) _Bool showDecimalPointButton; // @synthesize showDecimalPointButton=_showDecimalPointButton;
-@property(retain, nonatomic) NSString *amountString; // @synthesize amountString=_amountString;
+@property(copy, nonatomic) NSString *amountString; // @synthesize amountString=_amountString;
 @property(retain, nonatomic) NSNumberFormatter *currencySymbolAmountFormatter; // @synthesize currencySymbolAmountFormatter=_currencySymbolAmountFormatter;
-@property(retain, nonatomic) NSDecimalNumberHandler *roundingBehavior; // @synthesize roundingBehavior=_roundingBehavior;
 @property(retain, nonatomic) NSNumberFormatter *amountFormatter; // @synthesize amountFormatter=_amountFormatter;
+@property(retain, nonatomic) NSDecimalNumberHandler *roundingBehavior; // @synthesize roundingBehavior=_roundingBehavior;
 @property(retain, nonatomic) PKNumberPadInputView *numberPad; // @synthesize numberPad=_numberPad;
 @property(retain, nonatomic) UILabel *amountLabel; // @synthesize amountLabel=_amountLabel;
 @property(nonatomic) __weak id <PKEnterCurrencyAmountViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -54,6 +55,7 @@
 @property(retain, nonatomic) NSString *currency; // @synthesize currency=_currency;
 @property(readonly, nonatomic) UITextField *amountTextField; // @synthesize amountTextField=_amountTextField;
 @property(nonatomic) _Bool clearAmountOnFirstKeyboardInput; // @synthesize clearAmountOnFirstKeyboardInput=_clearAmountOnFirstKeyboardInput;
+@property(nonatomic) _Bool ignoreIntegralNumber; // @synthesize ignoreIntegralNumber=_ignoreIntegralNumber;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool showsDecimalPointButton; // @synthesize showsDecimalPointButton=_showsDecimalPointButton;
 - (void).cxx_destruct;
@@ -69,8 +71,10 @@
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
+@property(copy, nonatomic) UIColor *keyboardColor;
 - (void)showKeyboard;
 - (void)dismissKeyboard;
 @property(retain, nonatomic) UIView *inputAccessoryView;

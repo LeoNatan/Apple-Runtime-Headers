@@ -8,6 +8,7 @@
 
 @class OADShapeProperties, OADTextBody, ODDPointPropertySet;
 
+__attribute__((visibility("hidden")))
 @interface ODDPoint : NSObject
 {
     int mType;

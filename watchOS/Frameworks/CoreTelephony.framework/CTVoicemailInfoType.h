@@ -34,6 +34,7 @@
 - (_Bool)isEqualToCTVoicemailInfoType:(id)arg1;
 - (id)initWithParam:(id)arg1 available:(_Bool)arg2 count:(id)arg3 isNetworkOriginated:(_Bool)arg4;
 - (id)init;
+- (id)description;
 
 @end
 

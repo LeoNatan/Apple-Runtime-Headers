@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)load;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (const char *)name;

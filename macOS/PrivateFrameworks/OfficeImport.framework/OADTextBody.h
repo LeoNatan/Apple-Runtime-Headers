@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OADTextBodyProperties, OADTextListStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADTextBody : NSObject
 {
     OADTextBodyProperties *mProperties;

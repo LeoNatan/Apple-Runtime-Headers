@@ -6,41 +6,45 @@
 
 #import <Accounts/ACAccountStore.h>
 
-#import <AccountsDaemon/ACDAccountStoreProtocol-Protocol.h>
+#import <AccountsDaemon/ACRemoteAccountStoreProtocol-Protocol.h>
 
-@class ACDAccessPluginManager, ACDAccountStoreFilter, ACDAuthenticationDialogManager, ACDAuthenticationPluginManager, ACDClient, ACDClientAuthorizationManager, ACDDatabase, ACDDataclassOwnersManager, ACDFakeRemoteAccountStoreSession, ACRemoteDeviceProxy, NSMutableArray, NSString;
+@class ACDAccessPluginManager, ACDAccountNotifier, ACDAuthenticationDialogManager, ACDAuthenticationPluginManager, ACDClient, ACDClientAuthorizationManager, ACDDatabaseBackupActivity, ACDDatabaseConnection, ACDDataclassOwnersManager, ACDFakeRemoteAccountStoreSession, ACRemoteDeviceProxy, NSMutableArray, NSString;
 @protocol ACDAccountStoreDelegate;
 
-@interface ACDAccountStore : ACAccountStore <ACDAccountStoreProtocol>
+@interface ACDAccountStore : ACAccountStore <ACRemoteAccountStoreProtocol>
 {
     NSMutableArray *_accountChanges;
-    ACDDatabase *_database;
+    ACDDatabaseConnection *_databaseConnection;
     ACDClientAuthorizationManager *_authorizationManager;
     ACDFakeRemoteAccountStoreSession *_fakeRemoteAccountStoreSession;
     BOOL _notificationsEnabled;
     BOOL _migrationInProgress;
     id <ACDAccountStoreDelegate> _delegate;
     ACDClient *_client;
-    ACDAccountStoreFilter *_filter;
     ACRemoteDeviceProxy *_remoteDeviceProxy;
     ACDAuthenticationPluginManager *_authenticationPluginManager;
     ACDAccessPluginManager *_accessPluginManager;
     ACDDataclassOwnersManager *_dataclassOwnersManager;
     ACDAuthenticationDialogManager *_authenticationDialogManager;
+    ACDAccountNotifier *_accountNotifier;
+    ACDDatabaseBackupActivity *_databaseBackupActivity;
 }
 
 @property(getter=isMigrationInProgress) BOOL migrationInProgress; // @synthesize migrationInProgress=_migrationInProgress;
 @property BOOL notificationsEnabled; // @synthesize notificationsEnabled=_notificationsEnabled;
+@property(retain) ACDDatabaseBackupActivity *databaseBackupActivity; // @synthesize databaseBackupActivity=_databaseBackupActivity;
+@property(retain) ACDAccountNotifier *accountNotifier; // @synthesize accountNotifier=_accountNotifier;
 @property(retain) ACDAuthenticationDialogManager *authenticationDialogManager; // @synthesize authenticationDialogManager=_authenticationDialogManager;
 @property(retain) ACDDataclassOwnersManager *dataclassOwnersManager; // @synthesize dataclassOwnersManager=_dataclassOwnersManager;
 @property(retain) ACDAccessPluginManager *accessPluginManager; // @synthesize accessPluginManager=_accessPluginManager;
 @property(retain) ACDAuthenticationPluginManager *authenticationPluginManager; // @synthesize authenticationPluginManager=_authenticationPluginManager;
+@property(readonly, nonatomic) ACDDatabaseConnection *databaseConnection; // @synthesize databaseConnection=_databaseConnection;
 @property(retain) ACRemoteDeviceProxy *remoteDeviceProxy; // @synthesize remoteDeviceProxy=_remoteDeviceProxy;
-@property __weak ACDAccountStoreFilter *filter; // @synthesize filter=_filter;
 @property(readonly) ACDClientAuthorizationManager *authorizationManager; // @synthesize authorizationManager=_authorizationManager;
 @property __weak ACDClient *client; // @synthesize client=_client;
 @property __weak id <ACDAccountStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)scheduleBackupIfNonexistent:(CDUnknownBlockType)arg1;
 - (void)reportTelemetryForLandmarkEvent:(CDUnknownBlockType)arg1;
 - (void)triggerKeychainMigrationIfNecessary:(CDUnknownBlockType)arg1;
 - (void)removeAccountsFromPairedDeviceWithCompletion:(CDUnknownBlockType)arg1;
@@ -51,8 +55,8 @@
 - (void)visibleTopLevelAccountsWithAccountTypeIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)openAuthenticationURLForAccount:(id)arg1 withDelegateClassName:(id)arg2 fromBundleAtPath:(id)arg3 shouldConfirm:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)openAuthenticationURL:(id)arg1 forAccount:(id)arg2 shouldConfirm:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)longLivedRemoteAccountStoreSession;
 - (id)remoteAccountStoreSession;
-- (void)disconnectFromRemoteAccountStore;
 - (void)connectToRemoteAccountStoreUsingEndpoint:(id)arg1;
 - (void)handleURL:(id)arg1;
 - (void)_removeClientTokenForAccountIdentifer:(id)arg1;
@@ -135,7 +139,7 @@
 - (BOOL)_handleAccountMod:(id)arg1 withDataclassActions:(id)arg2 withError:(id *)arg3;
 - (void)_delegate_accountStoreDidSaveAccount:(id)arg1;
 - (void)_setAccountManagedObjectRelationships:(id)arg1 withAccount:(id)arg2 oldAccount:(id)arg3 error:(id *)arg4;
-- (BOOL)_canSaveAccount:(id)arg1;
+- (BOOL)_canSaveAccount:(id)arg1 error:(id *)arg2;
 - (id)_dataclassWithName:(id)arg1 createIfNecessary:(BOOL)arg2;
 - (id)_accountTypeWithIdentifier:(id)arg1;
 - (id)_displayAccountForAccount:(id)arg1;
@@ -154,7 +158,8 @@
 - (void)accountsOnPairedDeviceWithAccountType:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)accountsWithAccountTypeIdentifier:(id)arg1;
 - (id)accountTypeWithIdentifier:(id)arg1;
-- (id)initWithClient:(id)arg1;
+- (id)initWithClient:(id)arg1 databaseConnection:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

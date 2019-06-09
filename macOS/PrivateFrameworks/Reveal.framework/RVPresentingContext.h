@@ -29,6 +29,8 @@
 - (void)completeHighlightingItem:(id)arg1;
 - (void)highlightItem:(id)arg1 withProgress:(double)arg2;
 - (void)startHighlightingItem:(id)arg1;
+- (struct CGRect)highlightRectForAttributedStringItem:(id)arg1 atLocation:(struct CGPoint)arg2 options:(id)arg3;
+- (void)drawAttributedStringItem:(id)arg1 forRect:(struct CGRect)arg2;
 - (void)restoreIndicator:(id)arg1;
 - (id)transferIndicator;
 - (void)removeIndicator;

@@ -8,5 +8,6 @@
 
 @interface UIColor (NTKFaceColorScheme)
 - (id)colorByBoostingSaturation:(double)arg1 lightness:(double)arg2;
+- (id)ntk_adjustedColorForBlackBackground;
 @end
 

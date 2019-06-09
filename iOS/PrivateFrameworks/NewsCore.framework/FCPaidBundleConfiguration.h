@@ -15,6 +15,7 @@
     NSDictionary *_configDict;
     NSString *_storefrontID;
     NSString *_localizedStorefrontID;
+    NSArray *_defaultSupportedStoreFronts;
     NSDictionary *_paywallConfigurationsByType;
     NSDictionary *_magazineGenresByGenre;
     NSDictionary *_subscriptionButtonConfigurationsByType;
@@ -23,12 +24,16 @@
 + (id)defaultPaidFeedIDByLocalizedStorefrontID;
 + (id)defaultVanityURLMappingResourceIDByLocalizedStorefrontID;
 + (id)defaultTagListIDByLocalizedStorefrontID;
++ (id)defaultEndOfPurchaseNoFamilySharingSetupArticleIDByLocalizedStorefrontID;
++ (id)defaultEndOfPurchaseFamilySharingSetupArticleIDByLocalizedStorefrontID;
 + (id)defaultFamilySharingLandingPageByLocalizedStorefrontID;
 + (id)defaultLandingPageByLocalizedStorefrontID;
++ (id)renewalLandingPageByLocalizedStorefrontID;
 + (id)defaultConfigurationForStorefrontID:(id)arg1;
 @property(retain, nonatomic) NSDictionary *subscriptionButtonConfigurationsByType; // @synthesize subscriptionButtonConfigurationsByType=_subscriptionButtonConfigurationsByType;
 @property(retain, nonatomic) NSDictionary *magazineGenresByGenre; // @synthesize magazineGenresByGenre=_magazineGenresByGenre;
 @property(retain, nonatomic) NSDictionary *paywallConfigurationsByType; // @synthesize paywallConfigurationsByType=_paywallConfigurationsByType;
+@property(readonly, copy, nonatomic) NSArray *defaultSupportedStoreFronts; // @synthesize defaultSupportedStoreFronts=_defaultSupportedStoreFronts;
 @property(readonly, copy, nonatomic) NSString *localizedStorefrontID; // @synthesize localizedStorefrontID=_localizedStorefrontID;
 @property(readonly, copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
@@ -36,6 +41,8 @@
 - (id)defaultMagazineGenres;
 - (id)defaultSubscriptionButtonConfigs;
 - (id)defaultPaywallConfigs;
+@property(readonly, nonatomic, getter=isCategoriesDownloadButtonEnabled) _Bool categoriesDownloadButtonEnabled;
+@property(readonly, nonatomic) long long entitlementsGracePeriodInSeconds;
 @property(readonly, nonatomic) NSArray *groupWhitelistedTagIds;
 @property(readonly, nonatomic) long long criticalStorageAutomaticIssueDownloadTTL;
 @property(readonly, nonatomic) long long criticalStorageManualIssueDownloadTTL;
@@ -46,8 +53,10 @@
 @property(readonly, nonatomic) long long feedAutoRefreshMinimumInterval;
 @property(readonly, nonatomic) NSString *paidBadgeTitle;
 @property(readonly, nonatomic) NSString *freeBadgeTitle;
-@property(readonly, nonatomic, getter=isPaidBadgeEnabled) _Bool paidBadgeEnabled;
-@property(readonly, nonatomic, getter=isFreeBadgeEnabled) _Bool freeBadgeEnabled;
+@property(readonly, nonatomic, getter=isPaidBadgeEnabledForSubscribers) _Bool paidBadgeEnabledForSubscribers;
+@property(readonly, nonatomic, getter=isFreeBadgeEnabledForSubscribers) _Bool freeBadgeEnabledForSubscribers;
+@property(readonly, nonatomic, getter=isPaidBadgeEnabledForNonSubscribers) _Bool paidBadgeEnabledForNonSubscribers;
+@property(readonly, nonatomic, getter=isFreeBadgeEnabledForNonSubscribers) _Bool freeBadgeEnabledForNonSubscribers;
 @property(readonly, nonatomic) long long bundleSubscriptionsGlobalMeteredCount;
 @property(readonly, nonatomic) long long forYouMaxMagazineGroupsForPaidUsers;
 @property(readonly, nonatomic) long long forYouMaxMagazineGroupsForTrialUsers;
@@ -64,19 +73,25 @@
 @property(readonly, nonatomic) long long newIssuesCheckLocalTime;
 @property(readonly, nonatomic) NSArray *offeredBundlePurchaseIDs;
 @property(readonly, nonatomic) NSArray *restorableBundlePurchaseIDs;
+@property(readonly, nonatomic) NSString *renewalLandingPageArticleID;
+@property(readonly, nonatomic) NSString *endOfPurchaseNoFamilySharingSetupArticleID;
+@property(readonly, nonatomic) NSString *endOfPurchaseFamilySharingSetupArticleID;
 @property(readonly, nonatomic) NSString *familySharingLandingPageArticleID;
 @property(readonly, nonatomic) NSString *defaultLandingPageArticleID;
 @property(readonly, nonatomic, getter=isSharingIssuesEnabled) _Bool sharingIssuesEnabled;
 @property(readonly, nonatomic, getter=isTemporaryAccessEnabled) _Bool temporaryAccessEnabled;
 @property(readonly, nonatomic, getter=isPaidBundleVisible) _Bool paidBundleVisible;
 @property(readonly, nonatomic, getter=areMagazinesEnabled) _Bool magazinesEnabled;
+@property(readonly, nonatomic) unsigned long long articleHardPaywallType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithConfigDictionary:(id)arg1 storefrontID:(id)arg2 localizedStorefrontID:(id)arg3;
+- (id)initWithConfigDictionary:(id)arg1 storefrontID:(id)arg2 localizedStorefrontID:(id)arg3 defaultSupportedStoreFronts:(id)arg4;
 - (id)initWithConfigDictionary:(id)arg1 storefrontID:(id)arg2;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
+@property(readonly, nonatomic, getter=isPaidBadgeEnabled) _Bool paidBadgeEnabled;
+@property(readonly, nonatomic, getter=isFreeBadgeEnabled) _Bool freeBadgeEnabled;
 
 @end
 

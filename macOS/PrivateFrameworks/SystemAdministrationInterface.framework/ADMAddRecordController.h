@@ -8,7 +8,7 @@
 
 #import <SystemAdministrationInterface/NSWindowDelegate-Protocol.h>
 
-@class ADMLoginPrefs, IndicatorSecureTextField, IndicatorTextField, NSButton, NSDictionary, NSLayoutConstraint, NSMatrix, NSPopUpButton, NSPopover, NSProgressIndicator, NSStackView, NSString, NSTextField, NSTextView, NSView, NSWindow, SFPasswordAssistantInspectorController;
+@class ADMLoginPrefs, IndicatorSecureTextField, IndicatorTextField, NSButton, NSDictionary, NSLayoutConstraint, NSPopUpButton, NSPopover, NSProgressIndicator, NSStackView, NSString, NSTextField, NSTextView, NSView, NSWindow, SFPasswordAssistantInspectorController;
 
 @interface ADMAddRecordController : NSObject <NSWindowDelegate>
 {
@@ -32,15 +32,9 @@
     IndicatorSecureTextField *mNewUserPassword;
     IndicatorSecureTextField *mNewUserPasswordVerify;
     NSTextField *mNewUserHint;
-    NSView *mPasswordTypeView;
-    NSTextField *mPasswordTypeViewLabel;
-    NSMatrix *mChangePassswordType;
     NSView *mICloudIDView;
     NSTextField *mICloudIDField;
     NSTextField *mICloudIDEmptyWarning;
-    NSPopUpButton *mAgePopup;
-    NSLayoutConstraint *mAgePopupViewHeightConstraint;
-    double mAgePopupViewHeight;
     NSProgressIndicator *mNewUserProgressIndicator;
     NSProgressIndicator *mNewUserProgressIndicatorTM;
     NSWindow *mFVTMWarning;
@@ -65,7 +59,7 @@
 - (void)help:(id)arg1;
 - (void)fvtmCancel:(id)arg1;
 - (void)fvtmOk:(id)arg1;
-- (void)changePasswordType:(id)arg1;
+- (void)_updatePasswordUI;
 - (void)accountTypeDidChange:(id)arg1;
 - (void)paswordAssistant:(id)arg1;
 - (void)cancel:(id)arg1;
@@ -79,11 +73,9 @@
 - (void)awakeFromNib;
 - (void)_prepareWithOptions:(id)arg1;
 - (id)_createUserAccountwithOptions:(id)arg1;
-- (id)_createUserAccount:(BOOL)arg1 administrator:(BOOL)arg2 child:(BOOL)arg3 options:(id)arg4;
-- (void)_setAgePopupHidden:(BOOL)arg1;
+- (id)_createUserAccount:(BOOL)arg1 administrator:(BOOL)arg2 options:(id)arg3;
 - (void)_setAccountTypePopupHidden:(BOOL)arg1;
 - (void)_addPasswordView;
-- (void)_addPasswordTypeView;
 - (void)_addAccountNameView;
 - (void)_addICloudIDView;
 - (BOOL)_isStackViewHidden:(id)arg1;
@@ -91,7 +83,6 @@
 - (id)_createGroup;
 - (id)_createIdentity;
 - (void)_warnAboutAutoLogin;
-- (id)_sanitizeAppleID:(id)arg1;
 - (void)_resetWarningSign;
 
 // Remaining properties

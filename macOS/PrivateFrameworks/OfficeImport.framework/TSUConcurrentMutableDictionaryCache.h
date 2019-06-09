@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSString, OITSUReadWriteQueue;
 
+__attribute__((visibility("hidden")))
 @interface TSUConcurrentMutableDictionaryCache : NSObject
 {
     NSMutableDictionary *_cache;

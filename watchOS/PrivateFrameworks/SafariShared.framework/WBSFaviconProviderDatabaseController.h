@@ -34,6 +34,7 @@
 - (id)_fetchIconUUIDsForPageURLStrings:(id)arg1;
 - (id)_fetchIconUUIDForPageURLString:(id)arg1;
 - (void)fetchPageURLStringsWithPrefixesIn:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchAllIconUUIDsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)firstIconInfoMatchingIconURLStringIn:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_firstIconUUIDForPageURLStrings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)firstIconInfoMatchingPageURLStringIn:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

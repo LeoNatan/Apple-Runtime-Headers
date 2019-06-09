@@ -11,12 +11,12 @@
 @interface MSCMSSignerInfo : NSObject
 {
     MSAlgorithmIdentifier *_signatureAlgorithm;
-    struct OpaqueSecCertificateRef *_signerCertificate;
+    struct __SecCertificate *_signerCertificate;
     MSCMSMutableAttributeArray *_protectedAttributes;
     NSData *_signature;
     MSCMSMutableAttributeArray *_unprotectedAttributes;
     NSData *_LAContext;
-    struct OpaqueSecKeyRef *_signerPrivKey;
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: _signerPrivKey
     struct SignerInfo *_encodedSignerInfo;
     NSData *_signerSerialNumber;
     NSData *_signerIssuerSequence;
@@ -36,12 +36,14 @@
 @property(retain) NSData *signerIssuerSequence; // @synthesize signerIssuerSequence=_signerIssuerSequence;
 @property(retain) NSData *signerSerialNumber; // @synthesize signerSerialNumber=_signerSerialNumber;
 @property struct SignerInfo *encodedSignerInfo; // @synthesize encodedSignerInfo=_encodedSignerInfo;
-@property struct OpaqueSecKeyRef *signerPrivKey; // @synthesize signerPrivKey=_signerPrivKey;
+// Error parsing type for property signerPrivKey:
+// Property attributes: T^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v},V_signerPrivKey
+
 @property(retain) NSData *LAContext; // @synthesize LAContext=_LAContext;
 @property(retain) MSCMSMutableAttributeArray *unprotectedAttributes; // @synthesize unprotectedAttributes=_unprotectedAttributes;
 @property(retain) NSData *signature; // @synthesize signature=_signature;
 @property(retain) MSCMSMutableAttributeArray *protectedAttributes; // @synthesize protectedAttributes=_protectedAttributes;
-@property struct OpaqueSecCertificateRef *signerCertificate; // @synthesize signerCertificate=_signerCertificate;
+@property struct __SecCertificate *signerCertificate; // @synthesize signerCertificate=_signerCertificate;
 @property(retain) MSAlgorithmIdentifier *signatureAlgorithm; // @synthesize signatureAlgorithm=_signatureAlgorithm;
 - (void).cxx_destruct;
 - (BOOL)encodeSignerInfo:(struct SignerInfo *)arg1 error:(id *)arg2;
@@ -60,14 +62,14 @@
 - (id)calculateSignedAttributesDigest:(id *)arg1;
 - (void)dealloc;
 - (id)initWithEmail:(id)arg1 recipientsAlgorithmCapabilities:(id)arg2 LAContext:(id)arg3 error:(id *)arg4;
-- (id)initWithIdentity:(struct OpaqueSecIdentityRef *)arg1 recipientsAlgorithmCapabilities:(id)arg2 error:(id *)arg3;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1 recipientsAlgorithmCapabilities:(id)arg2 error:(id *)arg3;
+- (id)initWithIdentity:(struct __SecIdentity *)arg1 recipientsAlgorithmCapabilities:(id)arg2 error:(id *)arg3;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1 recipientsAlgorithmCapabilities:(id)arg2 error:(id *)arg3;
 - (id)initWithEmail:(id)arg1 signatureAlgorithm:(id)arg2 LAContext:(id)arg3 error:(id *)arg4;
-- (id)initWithIdentity:(struct OpaqueSecIdentityRef *)arg1 signatureAlgorithm:(id)arg2 error:(id *)arg3;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1 signatureAlgorithm:(id)arg2 error:(id *)arg3;
+- (id)initWithIdentity:(struct __SecIdentity *)arg1 signatureAlgorithm:(id)arg2 error:(id *)arg3;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1 signatureAlgorithm:(id)arg2 error:(id *)arg3;
 - (id)initWithEmail:(id)arg1 LAContext:(id)arg2 error:(id *)arg3;
-- (id)initWithIdentity:(struct OpaqueSecIdentityRef *)arg1 error:(id *)arg2;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1 error:(id *)arg2;
+- (id)initWithIdentity:(struct __SecIdentity *)arg1 error:(id *)arg2;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1 error:(id *)arg2;
 
 @end
 

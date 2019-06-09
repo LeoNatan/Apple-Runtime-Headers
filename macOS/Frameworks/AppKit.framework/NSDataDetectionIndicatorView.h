@@ -20,9 +20,10 @@ __attribute__((visibility("hidden")))
 
 - (void)copy:(id)arg1;
 - (void)mouseExited:(id)arg1;
-- (void)rightMouseDown:(id)arg1;
-- (void)mouseDown:(id)arg1;
-- (void)_showMenu:(id)arg1;
+- (id)_highlightMenuItemsForEvent:(id)arg1;
+- (BOOL)_isSharing;
+- (BOOL)_performContextualActionWithEvent:(id)arg1;
+- (BOOL)_performDirectActionWithEvent:(id)arg1;
 - (void)_reset;
 - (void)bindToTextView:(id)arg1 forDataResult:(id)arg2 inRange:(struct _NSRange)arg3;
 - (void)dealloc;

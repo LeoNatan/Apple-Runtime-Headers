@@ -10,16 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CGPoint {
-    double _field1;
-    double _field2;
-};
-
-struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
-};
-
 struct CGSize {
     double width;
     double height;
@@ -28,26 +18,6 @@ struct CGSize {
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
-};
-
-struct sasl_callback {
-    unsigned long long _field1;
-    CDUnknownFunctionPointerType _field2;
-    void *_field3;
-};
-
-struct sasl_interact {
-    unsigned long long _field1;
-    char *_field2;
-    char *_field3;
-    char *_field4;
-    void *_field5;
-    unsigned int _field6;
-};
-
-struct sasl_secret {
-    unsigned long long _field1;
-    unsigned char _field2[1];
 };
 
 #pragma mark Typedef'd Structures

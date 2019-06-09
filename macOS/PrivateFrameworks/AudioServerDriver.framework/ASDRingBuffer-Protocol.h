@@ -13,8 +13,8 @@
 @property(readonly, nonatomic) CDUnknownBlockType readWithZerosBlock;
 @property(readonly, nonatomic) CDUnknownBlockType readBlock;
 @property(readonly, nonatomic) CDUnknownBlockType writeBlock;
-@property(retain, nonatomic) ASDStreamFormat *readFormat;
-@property(retain, nonatomic) ASDStreamFormat *writeFormat;
+@property(copy, nonatomic) ASDStreamFormat *readFormat;
+@property(copy, nonatomic) ASDStreamFormat *writeFormat;
 @property(nonatomic) long long frameCapacity;
 - (void)clear;
 - (void)deallocate;

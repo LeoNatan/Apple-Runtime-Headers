@@ -10,10 +10,10 @@
 
 @protocol MTEventRecorderDelegate <NSObject>
 - (MTPromise *)recordEvent:(NSDictionary *)arg1 toTopic:(NSString *)arg2;
-- (NSString *)sendMethod;
 
 @optional
 - (MTPromise *)recordEvent:(NSDictionary *)arg1;
 - (MTPromise *)flushUnreportedEvents;
+- (NSString *)sendMethod;
 @end
 

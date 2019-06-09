@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotoFoundation/PFDispatchQueueExtension.h>
+#import <PhotoFoundation/PFDispatchQueueStatisticsExtension.h>
 
 @class NSMutableDictionary, PFSerialQueue;
 
-@interface PFDispatchQueueDebugExtension : PFDispatchQueueExtension
+@interface PFDispatchQueueDebugExtension : PFDispatchQueueStatisticsExtension
 {
     NSMutableDictionary *_allBlockInfoByCallSite;
     unsigned long long _count;
@@ -16,15 +16,11 @@
 }
 
 - (void).cxx_destruct;
+- (id)description;
 - (void)showQueueUsageByEnqueueSite;
-- (void)_showQueueUsageByEnqueueSite;
+- (id)_queueUsageByEnqueueSiteDescription;
 - (void)showQueueUsageByExecutionTime;
-- (void)_showQueueUsageByExecutionTime;
-- (void)queue:(id)arg1 skippedExecuting:(id)arg2;
-- (void)queue:(id)arg1 didExecute:(id)arg2;
-- (void)queue:(id)arg1 willExecute:(id)arg2;
-- (void)queue:(id)arg1 didDequeue:(id)arg2 skipExecution:(CDUnknownBlockType)arg3;
-- (void)queue:(id)arg1 willEnqueue:(id)arg2;
+- (id)_queueUsageByExecutionTimeDescription;
 - (id)queue:(id)arg1 receivedDispatchGroup:(id)arg2 notify:(CDUnknownBlockType)arg3;
 - (id)queue:(id)arg1 receivedDispatchGroup:(id)arg2 async:(CDUnknownBlockType)arg3;
 - (id)queue:(id)arg1 receivedDispatchAfter:(CDUnknownBlockType)arg2;
@@ -32,6 +28,7 @@
 - (id)queue:(id)arg1 receivedDispatchAsync:(CDUnknownBlockType)arg2;
 - (id)queue:(id)arg1 receivedDispatchBarrierSync:(CDUnknownBlockType)arg2;
 - (id)queue:(id)arg1 receivedDispatchSync:(CDUnknownBlockType)arg2;
+- (Class)blockInfoClass;
 - (id)recordBlockInfo:(id)arg1;
 - (void)installOnQueue:(id)arg1;
 - (id)init;

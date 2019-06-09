@@ -9,7 +9,7 @@
 #import <ProactiveML/PMLPlanProtocol-Protocol.h>
 
 @class NSArray, NSString, PMLSessionDescriptor, PMLTrainingStore;
-@protocol PMLMultiLabelEvaluationTrackerProtocol;
+@protocol PMLMultiLabelEvaluationTrackerProtocol, PMLMultiLabelRegressionModelProtocol;
 
 @interface PMLMultiLabelRegressionEvaluationPlan : NSObject <PMLPlanProtocol>
 {
@@ -18,7 +18,7 @@
     unsigned long long _maxSessionsLimit;
     unsigned long long _sessionsInBatch;
     unsigned long long _supportPerLabel;
-    NSArray *_models;
+    id <PMLMultiLabelRegressionModelProtocol> _multiLabelRegressionModel;
     NSArray *_positiveLabels;
     NSArray *_weightsArray;
     BOOL _intercept;
@@ -35,7 +35,7 @@
 @property(readonly, nonatomic) BOOL intercept; // @synthesize intercept=_intercept;
 @property(readonly, nonatomic) NSArray *weightsArray; // @synthesize weightsArray=_weightsArray;
 @property(readonly, nonatomic) NSArray *positiveLabels; // @synthesize positiveLabels=_positiveLabels;
-@property(readonly, nonatomic) NSArray *models; // @synthesize models=_models;
+@property(readonly, nonatomic) id <PMLMultiLabelRegressionModelProtocol> multiLabelRegressionModel; // @synthesize multiLabelRegressionModel=_multiLabelRegressionModel;
 @property(readonly, nonatomic) unsigned long long supportPerLabel; // @synthesize supportPerLabel=_supportPerLabel;
 @property(readonly, nonatomic) unsigned long long sessionsInBatch; // @synthesize sessionsInBatch=_sessionsInBatch;
 @property(readonly, nonatomic) unsigned long long maxSessionsLimit; // @synthesize maxSessionsLimit=_maxSessionsLimit;
@@ -50,7 +50,7 @@
 - (id)run;
 - (id)_precisionAtEvaluationPointsForSessions:(id)arg1;
 - (id)_rankedLabelsForSession:(id)arg1;
-- (id)initWithPlanId:(struct NSString *)arg1 store:(id)arg2 sessionDescriptor:(id)arg3 maxSessionsLimit:(unsigned long long)arg4 sessionsInBatch:(unsigned long long)arg5 supportPerLabel:(unsigned long long)arg6 labelAndWeights:(id)arg7 intercept:(BOOL)arg8 evaluationPoints:(id)arg9 tracker:(id)arg10 evaluationLevel:(unsigned long long)arg11;
+- (id)initWithPlanId:(struct NSString *)arg1 store:(id)arg2 sessionDescriptor:(id)arg3 maxSessionsLimit:(unsigned long long)arg4 sessionsInBatch:(unsigned long long)arg5 supportPerLabel:(unsigned long long)arg6 labelAndWeights:(id)arg7 modelClassName:(id)arg8 intercept:(BOOL)arg9 evaluationPoints:(id)arg10 tracker:(id)arg11 evaluationLevel:(unsigned long long)arg12;
 - (id)init;
 
 // Remaining properties

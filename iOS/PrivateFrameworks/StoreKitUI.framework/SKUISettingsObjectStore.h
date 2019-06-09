@@ -8,6 +8,7 @@
 
 @class NSMutableOrderedSet;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsObjectStore : NSObject
 {
     NSMutableOrderedSet *_allObjects;

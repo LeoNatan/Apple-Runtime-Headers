@@ -26,11 +26,13 @@
     PKRemotePaymentInstrument *_defaultRemotePaymentInstrument;
     NSString *_uniqueID;
     NSUUID *_bluetoothUUID;
+    NSArray *_supportedSetupFeatures;
 }
 
 + (_Bool)supportsSecureCoding;
 + (CDUnknownBlockType)acceptedComparatorForSupportedNetworks:(id)arg1 merchantCapabilities:(unsigned int)arg2 webService:(id)arg3;
 + (CDUnknownBlockType)preferenceComparator;
+@property(retain, nonatomic) NSArray *supportedSetupFeatures; // @synthesize supportedSetupFeatures=_supportedSetupFeatures;
 @property(nonatomic) _Bool supportsFaceID; // @synthesize supportsFaceID=_supportsFaceID;
 @property(retain, nonatomic) NSUUID *bluetoothUUID; // @synthesize bluetoothUUID=_bluetoothUUID;
 @property(copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;

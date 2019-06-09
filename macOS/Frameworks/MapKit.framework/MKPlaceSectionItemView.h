@@ -15,7 +15,7 @@
 - (void)viewDidMoveToWindow;
 - (void)_updateHairlineInsets;
 - (void)_mapkit_layoutMarginsDidChange;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

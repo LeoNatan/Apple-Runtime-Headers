@@ -71,8 +71,20 @@ typedef struct {
 } CDStruct_85a1ec51;
 
 typedef struct {
+    unsigned int all:1;
+} CDStruct_eff9c538;
+
+typedef struct {
     unsigned int audioRoute:1;
 } CDStruct_fbf2c6cd;
+
+typedef struct {
+    unsigned int category:1;
+} CDStruct_74e42c4c;
+
+typedef struct {
+    unsigned int encodingFormat:1;
+} CDStruct_a8e956ad;
 
 typedef struct {
     unsigned int entityType:1;
@@ -87,8 +99,8 @@ typedef struct {
 } CDStruct_a60b8694;
 
 typedef struct {
-    unsigned int status:1;
-} CDStruct_47fe53f2;
+    unsigned int statusCode:1;
+} CDStruct_bcb1eac0;
 
 typedef struct {
     unsigned int success:1;

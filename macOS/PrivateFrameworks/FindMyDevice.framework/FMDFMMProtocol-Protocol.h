@@ -6,11 +6,18 @@
 
 #import <FindMyDevice/NSObject-Protocol.h>
 
-@class NSData, NSString;
+@class FMDActivationLockContext, NSData, NSString;
 
 @protocol FMDFMMProtocol <NSObject>
+- (oneway void)eraseAllContentAndSettingsUsingCallback:(void (^)(NSError *))arg1;
+- (oneway void)signatureHeadersWithData:(NSData *)arg1 usingCallback:(void (^)(NSDictionary *, NSError *))arg2;
+- (oneway void)performActivationLockOperationWithInfo:(FMDActivationLockContext *)arg1 usingCallback:(void (^)(unsigned long long, NSError *))arg2;
+- (oneway void)activationLockInfoForContext:(FMDActivationLockContext *)arg1 usingCallback:(void (^)(FMDActivationLockInfo *, NSError *))arg2;
+- (oneway void)enableActivationLockUsingCallback:(void (^)(NSError *))arg1;
+- (oneway void)isActivationLockedUsingCallback:(void (^)(BOOL, NSError *))arg1;
+- (oneway void)isActivationLockCapableUsingCallback:(void (^)(BOOL, NSError *))arg1;
 - (oneway void)shouldResumeCardsForUser:(NSString *)arg1 usingCallback:(void (^)(BOOL, NSError *))arg2;
-- (oneway void)disableFMMUsingToken:(NSString *)arg1 tokenIsPET:(BOOL)arg2 inContext:(unsigned long long)arg3 usingCallback:(void (^)(NSError *))arg4;
+- (oneway void)disableFMMUsingToken:(NSString *)arg1 inContext:(unsigned long long)arg2 usingCallback:(void (^)(NSError *))arg3;
 - (oneway void)clearFMMAccountsWithCompletion:(void (^)(NSError *))arg1;
 - (oneway void)retrieveFMMAccountUsingCallback:(void (^)(FMDFMMAccountInfo *, NSError *))arg1;
 - (oneway void)removeFMMAccountWithUsername:(NSString *)arg1 withAuthData:(NSData *)arg2 usingCallback:(void (^)(NSError *))arg3;

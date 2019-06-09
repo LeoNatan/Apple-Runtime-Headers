@@ -13,7 +13,7 @@
 
 - (void)saveTrustValues;
 - (void)saveTrustValuesInDomain:(unsigned int)arg1;
-- (id)dictionaryExists:(id)arg1 policy:(struct OpaqueSecPolicyRef *)arg2 policyString:(id)arg3 allowedError:(id)arg4;
+- (id)dictionaryExists:(id)arg1 policy:(struct __SecPolicy *)arg2 policyString:(id)arg3 allowedError:(id)arg4;
 - (void)dealloc;
 - (id)certificateData;
 - (void)setCertificateData:(id)arg1;

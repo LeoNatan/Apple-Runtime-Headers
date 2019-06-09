@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BU_Button *previousButton; // @synthesize previousButton=_previousButton;
 @property(nonatomic) BU_Button *restoreButton; // @synthesize restoreButton=_restoreButton;
 @property(nonatomic) BU_Button *cancelButton; // @synthesize cancelButton=_cancelButton;
+- (void).cxx_destruct;
 - (void)setDateY:(double)arg1 width:(double)arg2;
 - (void)setRestoreOrigin:(struct CGPoint)arg1;
 - (void)setPreviousOrigin:(struct CGPoint)arg1;

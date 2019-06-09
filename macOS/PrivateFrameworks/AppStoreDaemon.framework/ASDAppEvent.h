@@ -9,7 +9,7 @@
 #import <AppStoreDaemon/NSCopying-Protocol.h>
 #import <AppStoreDaemon/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSNumber, NSString;
+@class NSArray, NSDate, NSNumber, NSString;
 
 @interface ASDAppEvent : NSObject <NSCopying, NSSecureCoding>
 {
@@ -18,30 +18,38 @@
     NSString *_bundleVersion;
     NSString *_cohort;
     NSString *_deviceVendorID;
+    long long _duration;
     long long _foregroundUsage;
+    NSArray *_foregroundUsageEvents;
     long long _count;
     NSDate *_date;
     long long _eventSubtype;
+    NSNumber *_eventTime;
     long long _eventType;
     NSNumber *_evid;
     NSNumber *_itemID;
     NSString *_itemName;
     NSString *_shortVersion;
+    NSNumber *_startTime;
     NSNumber *_storefront;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSNumber *storefront; // @synthesize storefront=_storefront;
+@property(copy, nonatomic) NSNumber *startTime; // @synthesize startTime=_startTime;
 @property(copy, nonatomic) NSString *shortVersion; // @synthesize shortVersion=_shortVersion;
 @property(copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
 @property(copy, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
 @property(nonatomic) BOOL isBeta; // @synthesize isBeta=_isBeta;
 @property(copy, nonatomic) NSNumber *evid; // @synthesize evid=_evid;
 @property(nonatomic) long long eventType; // @synthesize eventType=_eventType;
+@property(copy, nonatomic) NSNumber *eventTime; // @synthesize eventTime=_eventTime;
 @property(nonatomic) long long eventSubtype; // @synthesize eventSubtype=_eventSubtype;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long count; // @synthesize count=_count;
+@property(copy, nonatomic) NSArray *foregroundUsageEvents; // @synthesize foregroundUsageEvents=_foregroundUsageEvents;
 @property(nonatomic) long long foregroundUsage; // @synthesize foregroundUsage=_foregroundUsage;
+@property(nonatomic) long long duration; // @synthesize duration=_duration;
 @property(copy, nonatomic) NSString *deviceVendorID; // @synthesize deviceVendorID=_deviceVendorID;
 @property(copy, nonatomic) NSString *cohort; // @synthesize cohort=_cohort;
 @property(copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
@@ -49,8 +57,8 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)init;
 
 @end
 

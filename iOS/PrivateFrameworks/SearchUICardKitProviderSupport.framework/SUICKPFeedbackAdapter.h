@@ -19,6 +19,7 @@
 
 @property(nonatomic) __weak id <CRKFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 - (void).cxx_destruct;
+- (void)presentViewControllerForCard:(id)arg1 animate:(_Bool)arg2;
 - (void)willDismissViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(_Bool)arg2;

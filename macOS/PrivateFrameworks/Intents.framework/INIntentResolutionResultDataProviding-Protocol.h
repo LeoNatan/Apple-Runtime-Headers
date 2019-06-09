@@ -6,9 +6,12 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class INIntent, INIntentSlotDescription, NSData;
+@class INIntent, INIntentSlotDescription, NSData, NSDictionary, NSString;
+@protocol INIntentParameterOptionsProviding;
 
 @protocol INIntentResolutionResultDataProviding <NSObject>
+- (void)transformResolutionResultForIntent:(INIntent *)arg1 intentSlotDescription:(INIntentSlotDescription *)arg2 withOptionsProvider:(id <INIntentParameterOptionsProviding>)arg3 completion:(void (^)(id <INIntentResolutionResultDataProviding>))arg4;
+- (NSDictionary *)_JSONDictionaryRepresentationForIntent:(INIntent *)arg1 parameterName:(NSString *)arg2;
 - (NSData *)resolutionResultDataForIntent:(INIntent *)arg1 intentSlotDescription:(INIntentSlotDescription *)arg2 error:(id *)arg3;
 @end
 

@@ -27,6 +27,7 @@
     _INPBDataString *_workoutName;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBDataString *workoutName; // @synthesize workoutName=_workoutName;
 @property(nonatomic) int workoutLocationType; // @synthesize workoutLocationType=_workoutLocationType;
 @property(nonatomic) int workoutGoalUnitType; // @synthesize workoutGoalUnitType=_workoutGoalUnitType;
@@ -38,6 +39,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasWorkoutName;

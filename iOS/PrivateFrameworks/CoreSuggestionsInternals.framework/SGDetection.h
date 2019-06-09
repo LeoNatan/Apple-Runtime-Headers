@@ -6,20 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, SGExtractionInfo;
 
 @interface SGDetection : NSObject
 {
     _Bool _hasPhoneLabel;
+    _Bool _isUnlikelyPhone;
     unsigned int _type;
     NSString *_extraction;
     NSString *_context;
     NSString *_label;
+    SGExtractionInfo *_extractionInfo;
     struct _NSRange _contextRangeOfInterest;
     struct _NSRange _match;
 }
 
-+ (id)detectionWithType:(unsigned int)arg1 text:(id)arg2 matchRange:(struct _NSRange)arg3 matchString:(id)arg4 label:(id)arg5 hasPhoneLabel:(_Bool)arg6;
++ (id)detectionWithType:(unsigned int)arg1 text:(id)arg2 matchRange:(struct _NSRange)arg3 matchString:(id)arg4 label:(id)arg5 hasPhoneLabel:(_Bool)arg6 extractionInfo:(id)arg7 isUnlikelyPhone:(_Bool)arg8;
+@property(readonly, nonatomic) _Bool isUnlikelyPhone; // @synthesize isUnlikelyPhone=_isUnlikelyPhone;
+@property(readonly, nonatomic) SGExtractionInfo *extractionInfo; // @synthesize extractionInfo=_extractionInfo;
 @property(readonly, nonatomic) struct _NSRange match; // @synthesize match=_match;
 @property(readonly, nonatomic) _Bool hasPhoneLabel; // @synthesize hasPhoneLabel=_hasPhoneLabel;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
@@ -29,7 +33,7 @@
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithType:(unsigned int)arg1 extraction:(id)arg2 context:(id)arg3 contextRangeOfInterest:(struct _NSRange)arg4 label:(id)arg5 hasPhoneLabel:(_Bool)arg6 match:(struct _NSRange)arg7;
+- (id)initWithType:(unsigned int)arg1 extraction:(id)arg2 context:(id)arg3 contextRangeOfInterest:(struct _NSRange)arg4 label:(id)arg5 hasPhoneLabel:(_Bool)arg6 match:(struct _NSRange)arg7 extractionInfo:(id)arg8 isUnlikelyPhone:(_Bool)arg9;
 
 @end
 

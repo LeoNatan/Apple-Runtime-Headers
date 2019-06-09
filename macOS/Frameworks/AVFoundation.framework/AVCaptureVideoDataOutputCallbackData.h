@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)connection;
 - (id)output;
 - (struct opaqueCMBufferQueue *)bufferQueue;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithOutput:(id)arg1 connection:(id)arg2;
 

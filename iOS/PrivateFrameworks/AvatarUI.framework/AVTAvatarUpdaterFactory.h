@@ -10,8 +10,9 @@
 {
 }
 
-+ (CDUnknownBlockType)updaterForColor:(id)arg1 variationStore:(id)arg2;
-+ (CDUnknownBlockType)updaterForPreset:(id)arg1;
++ (CDUnknownBlockType)updaterForPairingCategory:(id)arg1 variationStore:(id)arg2;
++ (CDUnknownBlockType)updaterForColor:(id)arg1 variationStore:(id)arg2 pairedColor:(id)arg3;
++ (CDUnknownBlockType)updaterForPreset:(id)arg1 pairedPreset:(id)arg2;
 
 @end
 

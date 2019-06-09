@@ -27,9 +27,9 @@
 + (BOOL)_storeInfo:(id)arg1 forDSID:(id)arg2 withKey:(id)arg3;
 + (id)_storedInfoForDSID:(id)arg1 withKey:(id)arg2;
 + (void)_removeKeyForDSID:(id)arg1 andService:(id)arg2;
-+ (int)_updateItem:(struct OpaqueSecKeychainItemRef *)arg1 withNewServiceName:(id)arg2;
-+ (BOOL)_isValidKeychainItem:(struct OpaqueSecKeychainItemRef *)arg1;
-+ (id)_appStringFromSecTrustedApplication:(struct OpaqueSecTrustedApplicationRef *)arg1;
++ (int)_updateItem:(struct __SecKeychainItem *)arg1 withNewServiceName:(id)arg2;
++ (BOOL)_isValidKeychainItem:(struct __SecKeychainItem *)arg1;
++ (id)_appStringFromSecTrustedApplication:(struct __SecTrustedApplication *)arg1;
 + (BOOL)_storeKey:(id)arg1 forDSID:(id)arg2 service:(id)arg3 primaryAppleID:(id)arg4 andAccount:(struct AOSAccount *)arg5;
 + (id)_storedKeyForDSID:(id)arg1 andAccount:(struct AOSAccount *)arg2;
 + (void)removeInfoForAccount:(struct AOSAccount *)arg1;

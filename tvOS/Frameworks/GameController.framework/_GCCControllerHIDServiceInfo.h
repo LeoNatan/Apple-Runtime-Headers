@@ -11,9 +11,11 @@
 @interface _GCCControllerHIDServiceInfo : NSObject
 {
     struct __IOHIDServiceClient *_service;
+    _Bool _isPreallocatedSiriRemote;
     NSData *_inputData;
 }
 
+@property(nonatomic) _Bool isPreallocatedSiriRemote; // @synthesize isPreallocatedSiriRemote=_isPreallocatedSiriRemote;
 @property(retain, nonatomic) NSData *inputData; // @synthesize inputData=_inputData;
 - (void).cxx_destruct;
 - (id)name;

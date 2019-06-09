@@ -8,15 +8,12 @@
 
 @class NSRecursiveLock;
 
-__attribute__((visibility("hidden")))
 @interface NSHTTPCookieStorageInternal : NSObject
 {
     struct OpaqueCFHTTPCookieStorage *storage;
     struct OpaqueCFHTTPCookieStorage *privateStorage;
     NSRecursiveLock *dataLock;
     BOOL privateBrowsing;
-    BOOL _storage_didRegister;
-    BOOL _privateStorage_didRegister;
 }
 
 - (void)dealloc;

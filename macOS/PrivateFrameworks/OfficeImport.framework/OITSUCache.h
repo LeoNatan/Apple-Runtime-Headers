@@ -6,6 +6,7 @@
 
 #import <Foundation/NSCache.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUCache : NSCache
 {
 }

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)prepare;
 - (void)applyChanges:(id)arg1;
 - (void)checkVerticalConstraint;
+@property(readonly) struct CGRect popoverFrame;
 @property(readonly) struct UIEdgeInsets contentInsets;
 - (_Bool)isGesture:(id)arg1 inDraggableView:(struct CGPoint)arg2;
 - (_Bool)preBeginGesture:(id)arg1 shouldBegin:(_Bool *)arg2;

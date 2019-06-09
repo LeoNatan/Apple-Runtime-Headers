@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/CLKMediaAssetViewDelegate-Protocol.h>
 
-@class CLKDevice, CLKMediaAssetView, NSString, NSURL, NTKPhoto;
+@class CLKDevice, CLKMediaAssetView, NSString, NSURL, NTKCachedPhoto, NTKPhoto;
 @protocol NTKPhotoImageViewDelegate;
 
 @interface NTKPhotoImageView : UIView <CLKMediaAssetViewDelegate>
@@ -17,8 +17,10 @@
     CLKMediaAssetView *_mediaAssetView;
     NTKPhoto *_photo;
     id <NTKPhotoImageViewDelegate> _delegate;
+    NTKCachedPhoto *_cachedPhoto;
 }
 
+@property(readonly, nonatomic) NTKCachedPhoto *cachedPhoto; // @synthesize cachedPhoto=_cachedPhoto;
 @property(nonatomic) __weak id <NTKPhotoImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)mediaAssetViewDidEndPlaying:(id)arg1;

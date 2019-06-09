@@ -11,8 +11,10 @@
 @interface ICScannerDevice : ICDevice
 {
     id _scannerProperties;
+    NSString *_buttonPressed;
 }
 
+@property(copy, nonatomic) NSString *buttonPressed; // @synthesize buttonPressed=_buttonPressed;
 - (void)legacySupportMemoryTransferWithURL:(id)arg1;
 - (void)virtualScanStateMachine:(int)arg1 functionalUnit:(unsigned int)arg2 andError:(unsigned int)arg3;
 - (void)saveAsVirtualScanner;
@@ -21,13 +23,14 @@
 - (void)registerForImageCaptureEventNotifications:(id)arg1;
 - (void)requestChangeVendorFeature:(id)arg1;
 - (void)cancelScan;
+- (void)requestScanWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestScan;
+- (void)requestOverviewScanWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestOverviewScan;
 - (void)requestSelectFunctionalUnit:(unsigned long long)arg1;
-- (void)requestEject;
-- (void)requestEjectOrDisconnect;
+- (void)requestCloseSessionWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestCloseSession;
-- (void)openSessionWithCommandParameters:(id)arg1;
+- (void)requestOpenSessionWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestOpenSessionWithCredentials:(id)arg1 password:(id)arg2;
 - (void)requestOpenSession;
 - (void)handleScanParameters:(id)arg1;

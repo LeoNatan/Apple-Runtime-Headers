@@ -8,33 +8,33 @@
 
 #import <DoNotDisturb/DNDRemoteServiceConnectionEventListener-Protocol.h>
 
-@class NSHashTable, NSMutableSet, NSString;
+@class DNDModeAssertion, NSHashTable, NSString;
 @protocol OS_dispatch_queue;
 
 @interface DNDModeAssertionService : NSObject <DNDRemoteServiceConnectionEventListener>
 {
-    NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
     NSString *_clientIdentifier;
     NSHashTable *_assertionUpdateListeners;
-    NSMutableSet *_activeAssertions;
-    _Bool _registeredForUpdates;
+    // Error parsing type: {atomic_flag="_Value"AB}, name: _registeredForUpdates
+    DNDModeAssertion *_activeAssertion;
+    struct os_unfair_lock_s _activeAssertionLock;
 }
 
 + (id)serviceForClientIdentifier:(id)arg1;
 + (void)initialize;
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
-- (void)_handleLostXPCConnectionWithRetry:(_Bool)arg1;
-- (_Bool)_queue_registerForAssertionUpdatesIfRequired;
-- (void)_handleModeAssertionInvalidation:(id)arg1;
-- (void)_invalidateAllAssertionsWithReason:(unsigned long long)arg1;
-- (void)remoteService:(id)arg1 didReceiveModeAssertionInvalidation:(id)arg2;
+- (void)_handleXPCInterruption;
+- (void)_registerForAssertionUpdatesIfRequiredWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_handleChangeActiveModeAssertion:(id)arg1 invalidation:(id)arg2;
+- (void)remoteService:(id)arg1 didChangeActiveModeAssertion:(id)arg2 invalidation:(id)arg3;
 - (void)didReceiveConnectionInvalidatedEventForRemoteService:(id)arg1;
 - (void)didReceiveConnectionInterruptedEventForRemoteService:(id)arg1;
 - (void)removeAssertionUpdateListener:(id)arg1;
 - (void)addAssertionUpdateListener:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)invalidateAllActiveModeAssertionsWithError:(id *)arg1;
+- (id)latestModeAssertionInvalidationWithError:(id *)arg1;
 - (id)activeModeAssertionWithError:(id *)arg1;
 - (id)invalidateActiveModeAssertionWithError:(id *)arg1;
 - (id)takeModeAssertionWithDetails:(id)arg1 error:(id *)arg2;

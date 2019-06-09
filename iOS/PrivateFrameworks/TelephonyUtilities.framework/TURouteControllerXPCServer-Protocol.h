@@ -9,7 +9,9 @@
 @class NSString;
 
 @protocol TURouteControllerXPCServer <NSObject>
-- (oneway void)pickRouteWithUniqueIdentifier:(NSString *)arg1;
-- (oneway void)routesByUniqueIdentifier:(void (^)(NSDictionary *))arg1;
+- (oneway void)pickPairedHostDeviceRouteWithUniqueIdentifier:(NSString *)arg1;
+- (oneway void)pickLocalRouteWithUniqueIdentifier:(NSString *)arg1;
+- (oneway void)pairedHostDeviceRoutesByUniqueIdentifier:(void (^)(NSDictionary *))arg1;
+- (oneway void)localRoutesByUniqueIdentifier:(void (^)(NSDictionary *))arg1;
 @end
 

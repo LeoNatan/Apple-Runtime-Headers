@@ -6,22 +6,19 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class NSArray, NSDictionary;
+@class NSArray;
 
 @interface SMNBundleInfoAction : SMNAction
 {
-    NSDictionary *_result;
     NSArray *_bundlePaths;
 }
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
 @property(retain) NSArray *bundlePaths; // @synthesize bundlePaths=_bundlePaths;
-@property(retain) NSDictionary *result; // @synthesize result=_result;
 - (void).cxx_destruct;
 - (BOOL)success;
 - (BOOL)returnsData;
-- (BOOL)setResultFromData:(id)arg1;
 - (id)resultData;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

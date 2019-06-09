@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <FamilyCircleUI/AAUIAccountManagerDelegate-Protocol.h>
 #import <FamilyCircleUI/AAUIServerHook-Protocol.h>
+#import <FamilyCircleUI/AIDAAccountManagerDelegate-Protocol.h>
 #import <FamilyCircleUI/FAChildAccountCreationDelegate-Protocol.h>
 
 @class AAUIServerHookResponse, FAChildAccountCreationController, NSString, UIViewController;
 @protocol AAUIServerHookDelegate;
 
-@interface FACreateChildAccountHook : NSObject <AAUIAccountManagerDelegate, FAChildAccountCreationDelegate, AAUIServerHook>
+@interface FACreateChildAccountHook : NSObject <AIDAAccountManagerDelegate, FAChildAccountCreationDelegate, AAUIServerHook>
 {
     CDUnknownBlockType _completion;
     FAChildAccountCreationController *_childCreateController;

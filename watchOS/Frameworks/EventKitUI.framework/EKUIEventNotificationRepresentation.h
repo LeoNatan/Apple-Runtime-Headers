@@ -57,6 +57,7 @@
 - (id)dictionaryRepresentationsOfSupplementaryItems;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;
+- (void)updateUpcomingEventNotificationWithHypothesisMessage:(id)arg1;
 
 @end
 

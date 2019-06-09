@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)codeSigningDictionaryForProcessWithIdentifier:(int)arg1;
++ (id)codeSigningDictionaryForProcessWithAuditToken:(CDStruct_6ad76789)arg1;
 
 @end
 

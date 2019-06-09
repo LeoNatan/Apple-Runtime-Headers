@@ -7,6 +7,24 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (Emoji)
++ (void)applyKerning:(float)arg1 whitespaceKerning:(float)arg2 toAttributedString:(id)arg3;
++ (struct CGRect)_integralRectOfAttributedString:(id)arg1;
 - (_Bool)__puic_containsOnlyEmojiAndWhitespace;
+- (float)_adjustedLeadingForScripts:(int)arg1 forLeading:(float)arg2;
+- (id)_adjustedFontForScripts:(int)arg1 forFont:(id)arg2 withPointAdjustment:(float)arg3 ignoringContent:(_Bool)arg4;
+- (_Bool)_arabicEnabled;
+- (_Bool)_isInScript:(int)arg1 useLocaleOnly:(_Bool)arg2;
+- (id)_adjustedFontForScripts:(int)arg1 forFont:(id)arg2 ignoringContent:(_Bool)arg3;
+- (id)_adjustedFontForScripts:(int)arg1 forFont:(id)arg2 withPointAdjustment:(float)arg3;
+- (id)_adjustedFontForScripts:(int)arg1 forFont:(id)arg2;
+- (id)_arabicAdjustedFont:(id)arg1 withPointAdjustment:(float)arg2 ignoringContent:(_Bool)arg3;
+- (id)_arabicAdjustedFont:(id)arg1 ignoringContent:(_Bool)arg2;
+- (id)_arabicAdjustedFont:(id)arg1 withPointAdjustment:(float)arg2;
+- (id)_arabicAdjustedFont:(id)arg1;
+- (_Bool)_isEntirelyCommon;
+- (_Bool)_isEntirelyCharactersInScript:(int)arg1;
+- (_Bool)_isEntirelyArabicCharacters;
+- (_Bool)_isEntirelyCharactersInSet:(struct USet *)arg1;
+- (id)_dynamicallySizeUsingParams:(id)arg1 maximumWidth:(float)arg2;
 @end
 

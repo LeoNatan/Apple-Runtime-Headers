@@ -14,14 +14,19 @@
 {
     PBUnknownFields *_unknownFields;
     NSString *_url;
+    unsigned int _alternativeMultipathTCPPort;
+    _Bool _supportsMultipathTCP;
     _Bool _useAuthProxy;
     struct {
-        unsigned int useAuthProxy:1;
-    } _has;
+        unsigned int has_alternativeMultipathTCPPort:1;
+        unsigned int has_supportsMultipathTCP:1;
+        unsigned int has_useAuthProxy:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *url; // @synthesize url=_url;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,10 +35,16 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasAlternativeMultipathTCPPort;
+@property(nonatomic) unsigned int alternativeMultipathTCPPort;
+@property(nonatomic) _Bool hasSupportsMultipathTCP;
+@property(nonatomic) _Bool supportsMultipathTCP;
 @property(nonatomic) _Bool hasUseAuthProxy;
-@property(nonatomic) _Bool useAuthProxy; // @synthesize useAuthProxy=_useAuthProxy;
+@property(nonatomic) _Bool useAuthProxy;
+@property(retain, nonatomic) NSString *url;
 @property(readonly, nonatomic) _Bool hasUrl;
 @property(readonly, nonatomic) NSURL *nsURL;
 

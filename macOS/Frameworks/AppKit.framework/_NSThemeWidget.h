@@ -16,6 +16,7 @@
 
 + (id)widgetInView:(id)arg1 withButtonID:(long long)arg2 action:(SEL)arg3;
 + (void)initialize;
+- (id)_startingWindowForSendAction:(SEL)arg1;
 - (void)viewDidMoveToWindow;
 - (void)stopMonitoringFlagsChanged;
 - (void)startMonitoringFlagsChanged;

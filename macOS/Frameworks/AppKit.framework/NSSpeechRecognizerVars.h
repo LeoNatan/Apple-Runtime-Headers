@@ -12,13 +12,13 @@
 __attribute__((visibility("hidden")))
 @interface NSSpeechRecognizerVars : NSObject
 {
-    id <NSSpeechRecognizerDelegate> _delegate;
     NSArray *_simpleCommandsArray;
     NSArray *_displayedStringsArray;
     NSString *_displayedStringsTitle;
     struct __RXRecognitionSystem *_recognitionSystem;
     struct __RXRecognizer *_recognizer;
     NSLocale *_locale;
+    id <NSSpeechRecognizerDelegate> _delegate;
 }
 
 @property(retain) NSLocale *locale; // @synthesize locale=_locale;
@@ -27,7 +27,8 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *displayedStringsTitle; // @synthesize displayedStringsTitle=_displayedStringsTitle;
 @property(retain) NSArray *displayedStringsArray; // @synthesize displayedStringsArray=_displayedStringsArray;
 @property(copy) NSArray *simpleCommandsArray; // @synthesize simpleCommandsArray=_simpleCommandsArray;
-@property __weak id <NSSpeechRecognizerDelegate> delegate;
+@property __weak id <NSSpeechRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 

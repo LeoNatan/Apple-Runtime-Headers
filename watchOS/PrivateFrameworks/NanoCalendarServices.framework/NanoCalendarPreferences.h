@@ -16,12 +16,13 @@
 
 + (_Bool)timeToLeaveAlertGenerationEnabledOnWatch;
 + (id)appDefaults;
-+ (id)_calendarIDsForHashes:(id)arg1 inCalendars:(id)arg2;
-+ (id)_selectedCalendarsFromAllCalendars:(id)arg1 deselectedCalendarHashes:(id)arg2;
++ (id)_selectedCalendarsFromAllCalendars:(id)arg1 deselectedCalendarSyncHashes:(id)arg2;
++ (id)_selectedCalendarsFromAllCalendars:(id)arg1 deselectedCalendarSyncIdentifiers:(id)arg2;
 + (id)currentSelectedCalendarsForEventStore:(id)arg1;
 + (id)sharedPreferences;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSArray *customDeselectedCalendarHashes;
+- (id)customDeselectedCalendarSyncIdentifiers;
 - (void)setLastSuspendTime:(id)arg1;
 - (id)lastSuspendTime;
 - (void)setLastViewedDate:(id)arg1;

@@ -6,28 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NSUUID, PBCodable;
+@class NSUUID, NWL2Report, PBCodable;
 
 @interface NWActivityEpilogueStatistics : NSObject
 {
     unsigned int _awdMetricID;
     NSUUID *_externallyVisibleActivityUUID;
     NSUUID *_externallyVisibleParentUUID;
+    NWL2Report *_layer2Report;
     PBCodable *_awdReport;
+    NSUUID *_activityUUID;
+    NSUUID *_parentUUID;
     struct nw_activity_epilogue_report_s _report;
 }
 
+@property(retain, nonatomic) NSUUID *parentUUID; // @synthesize parentUUID=_parentUUID;
+@property(retain, nonatomic) NSUUID *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(nonatomic) unsigned int awdMetricID; // @synthesize awdMetricID=_awdMetricID;
 @property(retain, nonatomic) PBCodable *awdReport; // @synthesize awdReport=_awdReport;
 @property(nonatomic) struct nw_activity_epilogue_report_s report; // @synthesize report=_report;
+@property(retain, nonatomic) NWL2Report *layer2Report; // @synthesize layer2Report=_layer2Report;
 @property(retain, nonatomic) NSUUID *externallyVisibleParentUUID; // @synthesize externallyVisibleParentUUID=_externallyVisibleParentUUID;
 @property(retain, nonatomic) NSUUID *externallyVisibleActivityUUID; // @synthesize externallyVisibleActivityUUID=_externallyVisibleActivityUUID;
 - (void).cxx_destruct;
 - (id)initWithNWActivityEpilogueReport:(struct nw_activity_epilogue_report_s *)arg1 length:(unsigned long long)arg2;
 @property(readonly, nonatomic) unsigned int fragmentsQuenched;
 @property(readonly, nonatomic) unsigned long long durationMsecs;
-@property(readonly, nonatomic) NSUUID *parentUUID;
-@property(readonly, nonatomic) NSUUID *activityUUID;
+@property(readonly, nonatomic) unsigned long long investigation_identifier;
 @property(readonly, nonatomic) int completionReason;
 @property(readonly, nonatomic) _Bool retry;
 @property(readonly, nonatomic) unsigned int label;

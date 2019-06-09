@@ -7,6 +7,13 @@
 #import <GeoServices/GEOComposedWaypoint.h>
 
 @interface GEOComposedWaypoint (MNExtras)
++ (id)appleParkWaypointFromLatLng;
++ (id)appleParkWaypointFromAddress;
++ (id)appleParkWaypointFromMuid;
+- (id)destinationInfo;
+- (id)humanDescriptionWithAddressAndLatLng;
+- (id)humanDescriptionWithLatLng;
+- (id)humanDescription;
 - (id)navAnnouncementAddress;
 - (id)navAnnouncementName;
 - (id)localeIdentifier;

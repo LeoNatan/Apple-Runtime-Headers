@@ -40,7 +40,7 @@
     BOOL _isSearching;
     BOOL _isPublishing;
     BOOL _sessionStarted;
-    int _mode;
+    unsigned int _mode;
     BOOL _isBusy;
     NSString *sessionID;
     double disconnectTimeout;
@@ -58,7 +58,7 @@
 }
 
 @property(readonly, retain) GKConnection *connection; // @synthesize connection=_connection;
-@property(readonly) int sessionMode; // @synthesize sessionMode=_mode;
+@property(readonly) unsigned int sessionMode; // @synthesize sessionMode=_mode;
 @property(readonly) NSString *sessionID; // @synthesize sessionID;
 @property(nonatomic) unsigned long long port; // @synthesize port=_port;
 @property(nonatomic) struct OpaqueAGPSession *agpSessionRef; // @synthesize agpSessionRef;
@@ -87,7 +87,7 @@
 @property(getter=isBusy) BOOL busy;
 - (void)stopOldService;
 @property(readonly) NSString *peerID;
-- (id)peersWithConnectionState:(int)arg1;
+- (id)peersWithConnectionState:(unsigned int)arg1;
 @property(getter=isAvailable) BOOL available;
 - (void)disconnectFromAllPeers;
 - (void)disconnectPeerFromAllPeers:(id)arg1;
@@ -100,16 +100,16 @@
 @property(readonly, nonatomic) id dataReceiveHandler;
 - (void)setDOOBReceiveHandler:(id)arg1 withContext:(void *)arg2 inBand:(unsigned int)arg3;
 - (void)receiveDOOB:(id)arg1 fromPeer:(id)arg2 inSession:(id)arg3 context:(void *)arg4;
-- (BOOL)sendDataToAllPeers:(id)arg1 withDataMode:(int)arg2 error:(id *)arg3;
-- (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 enableOOB:(BOOL)arg4 error:(id *)arg5;
-- (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id *)arg4;
-- (BOOL)passesSendDataSanityCheck:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id *)arg4;
-- (BOOL)sendAudioData:(id)arg1 toPeers:(id)arg2 withDataMode:(int)arg3 error:(id *)arg4;
+- (BOOL)sendDataToAllPeers:(id)arg1 withDataMode:(unsigned int)arg2 error:(id *)arg3;
+- (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(unsigned int)arg3 enableOOB:(BOOL)arg4 error:(id *)arg5;
+- (BOOL)sendData:(id)arg1 toPeers:(id)arg2 withDataMode:(unsigned int)arg3 error:(id *)arg4;
+- (BOOL)passesSendDataSanityCheck:(id)arg1 toPeers:(id)arg2 withDataMode:(unsigned int)arg3 error:(id *)arg4;
+- (BOOL)sendAudioData:(id)arg1 toPeers:(id)arg2 withDataMode:(unsigned int)arg3 error:(id *)arg4;
 - (id)displayNameForPeer:(id)arg1;
 @property(readonly) NSString *displayName;
 - (void)dealloc;
 - (void)reset;
-- (id)initWithSessionID:(id)arg1 displayName:(id)arg2 session:(id)arg3 sessionMode:(int)arg4;
+- (id)initWithSessionID:(id)arg1 displayName:(id)arg2 session:(id)arg3 sessionMode:(unsigned int)arg4;
 - (id)initWithConnection:(id)arg1 session:(id)arg2 delegate:(id)arg3;
 - (id)description;
 @property id <GKSessionPrivateDelegate> privateDelegate;

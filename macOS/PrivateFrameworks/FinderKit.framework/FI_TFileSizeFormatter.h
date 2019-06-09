@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (id)fileSizeFormatter;
 @property(retain) NSString *invalidSizeStr; // @synthesize invalidSizeStr=_invalidSizeStr;
+- (void).cxx_destruct;
 - (id)numberFromString:(id)arg1;
 - (id)stringForObjectValue:(id)arg1;
 @property _Bool specialZeroHandling; // @dynamic specialZeroHandling;

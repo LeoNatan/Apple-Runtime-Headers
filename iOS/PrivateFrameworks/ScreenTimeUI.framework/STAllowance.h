@@ -14,32 +14,33 @@
 {
     _Bool _allowanceEnabled;
     _Bool _shouldAllowEditing;
-    unsigned long long _allowanceType;
+    NSArray *_bundleIdentifiers;
+    NSArray *_webDomains;
+    NSArray *_categoryIdentifiers;
     NSString *_identifier;
-    NSArray *_budgetedIdentifiers;
-    unsigned long long _behaviorOption;
+    unsigned long long _behaviorType;
     NSDateComponents *_time;
     NSDictionary *_timeByDay;
 }
 
-+ (unsigned long long)allowanceTypeForUsageItemType:(unsigned long long)arg1;
-+ (id)usageLimitTypeForAllowanceType:(unsigned long long)arg1;
-+ (unsigned long long)allowanceTypeForUsageLimitType:(id)arg1;
 + (double)timeIntervalForAllowanceDateComponents:(id)arg1;
 + (id)dateComponentsForDuration:(double)arg1;
-+ (id)displayNameForAllowance:(id)arg1;
 @property(copy, nonatomic) NSDictionary *timeByDay; // @synthesize timeByDay=_timeByDay;
 @property(copy, nonatomic) NSDateComponents *time; // @synthesize time=_time;
-@property(nonatomic) unsigned long long behaviorOption; // @synthesize behaviorOption=_behaviorOption;
-@property(copy, nonatomic) NSArray *budgetedIdentifiers; // @synthesize budgetedIdentifiers=_budgetedIdentifiers;
+@property(nonatomic) unsigned long long behaviorType; // @synthesize behaviorType=_behaviorType;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) unsigned long long allowanceType; // @synthesize allowanceType=_allowanceType;
 @property(nonatomic) _Bool shouldAllowEditing; // @synthesize shouldAllowEditing=_shouldAllowEditing;
 @property _Bool allowanceEnabled; // @synthesize allowanceEnabled=_allowanceEnabled;
+@property(copy) NSArray *categoryIdentifiers; // @synthesize categoryIdentifiers=_categoryIdentifiers;
+@property(copy) NSArray *webDomains; // @synthesize webDomains=_webDomains;
+@property(copy) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
 - (void).cxx_destruct;
 - (id)defaultTimeByDay;
 - (id)defaultBudgetTime;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy) NSString *scheduleText;
 @property(readonly, nonatomic) double timeToday;
 - (id)initWithBlueprint:(id)arg1;
 - (id)init;

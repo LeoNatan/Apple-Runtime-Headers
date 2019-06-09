@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

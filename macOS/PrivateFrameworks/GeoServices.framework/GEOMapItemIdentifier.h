@@ -9,7 +9,7 @@
 #import <GeoServices/NSCopying-Protocol.h>
 #import <GeoServices/NSSecureCoding-Protocol.h>
 
-@class GEOPDMapsIdentifier;
+@class GEOPDMapsIdentifier, NSData;
 
 @interface GEOMapItemIdentifier : NSObject <NSCopying, NSSecureCoding>
 {
@@ -19,11 +19,14 @@
 + (BOOL)supportsSecureCoding;
 + (id)mapItemIdentifiersFromMapsIdentifiers:(id)arg1;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *comparableRepresentation;
 - (BOOL)isEqualToGEOMapItemIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)description;
+- (id)shortDebugDescription;
 - (id)debugDescription;
-- (CDStruct_c3b9c2ee)coordinate;
+@property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 @property(readonly, nonatomic, getter=hasCoordinate) BOOL hasCoordinate;
 @property(readonly, nonatomic) int resultProviderID;
 @property(readonly, nonatomic) unsigned long long muid;
@@ -35,6 +38,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPlace:(id)arg1;
 - (id)initWithMapItem:(id)arg1;
+- (id)initWithBasemapId:(unsigned long long)arg1 resultProviderID:(int)arg2 coordinate:(CDStruct_c3b9c2ee)arg3;
 - (id)initWithMUID:(unsigned long long)arg1 resultProviderID:(int)arg2 coordinate:(CDStruct_c3b9c2ee)arg3;
 - (id)initWithMUID:(unsigned long long)arg1 coordinate:(CDStruct_c3b9c2ee)arg2;
 - (id)initWithMUID:(unsigned long long)arg1;

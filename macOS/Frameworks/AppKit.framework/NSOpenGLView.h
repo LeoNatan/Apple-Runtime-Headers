@@ -12,9 +12,6 @@
 {
     NSOpenGLContext *_openGLContext;
     NSOpenGLPixelFormat *_pixelFormat;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
 + (id)defaultPixelFormat;

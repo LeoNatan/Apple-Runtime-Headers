@@ -13,10 +13,12 @@
 
 @interface VCPProtoMovieVoiceResult : PBCodable <VCPProtoResultLegacyConversionProtocol, NSCopying>
 {
+    float _confidence;
     VCPProtoTimeRange *_timeRange;
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+@property(nonatomic) float confidence; // @synthesize confidence=_confidence;
 @property(retain, nonatomic) VCPProtoTimeRange *timeRange; // @synthesize timeRange=_timeRange;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;

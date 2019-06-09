@@ -13,6 +13,7 @@
     NSMutableDictionary *_httpHeaderFields;
     ICStoreRequestContext *_requestContext;
     _Bool _canUseCellularData;
+    _Bool _allowDownloadOnConstrainedNetworks;
     NSString *_clientIdentifier;
     NSString *_secondaryClientIdentifier;
     long long _priority;
@@ -30,6 +31,7 @@
 + (id)_mediaKindFromResponseItemMetadata:(id)arg1;
 + (void)getMediaAVAssetDownloadOptionsWithRequestContext:(id)arg1 storeMediaResponseItem:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)getMediaAVAssetDownloadOptionsWithRequestContext:(id)arg1 redownloadResponse:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(nonatomic) _Bool allowDownloadOnConstrainedNetworks; // @synthesize allowDownloadOnConstrainedNetworks=_allowDownloadOnConstrainedNetworks;
 @property(nonatomic) _Bool canUseCellularData; // @synthesize canUseCellularData=_canUseCellularData;
 @property(copy, nonatomic) NSString *mediaKind; // @synthesize mediaKind=_mediaKind;
 @property(copy, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;

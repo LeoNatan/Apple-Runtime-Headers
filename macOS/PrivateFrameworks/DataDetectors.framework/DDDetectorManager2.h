@@ -30,7 +30,6 @@
 + (void)setPasteboardUrl:(id)arg1;
 + (void)setPasteboardString:(id)arg1;
 + (void)displayUIForContext:(id)arg1 additionalMenuItems:(id)arg2;
-+ (id)sharedManager;
 - (void).cxx_destruct;
 - (id)_highligtsOverlayForController:(id)arg1 highlightRequest:(id)arg2;
 - (id)_highlightsOverlayForIdentifier:(id)arg1;
@@ -60,7 +59,6 @@
 - (void)setDOMModificationMode:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithThreadManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,7 +8,7 @@
 
 #import <AccessibilityFoundation/AXFMouseDelegate-Protocol.h>
 
-@class NSString, _AXFMouseHardware;
+@class AXFMouseCursorImage, NSString, _AXFMouseHardware;
 @protocol AXFMouseDelegate;
 
 @interface AXFMouse : NSObject <AXFMouseDelegate>
@@ -17,8 +17,13 @@
     _AXFMouseHardware *__hardware;
 }
 
++ (id)cursorImageForCursorName:(id)arg1;
++ (id)cursorImageForCurrentCursor;
++ (id)cursorImageForSystemCursorType:(unsigned long long)arg1;
++ (id)cursorImageForCursorType:(int)arg1;
 + (id)mouse;
 + (id)shared;
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 @property(retain, nonatomic) _AXFMouseHardware *_hardware; // @synthesize _hardware=__hardware;
 @property(nonatomic) __weak id <AXFMouseDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -36,13 +41,16 @@
 - (void)moveToLocation:(struct CGPoint)arg1 delta:(struct CGSize)arg2 eventType:(unsigned long long)arg3;
 - (void)moveToLocation:(struct CGPoint)arg1 markupHandler:(CDUnknownBlockType)arg2;
 - (void)moveToLocation:(struct CGPoint)arg1;
+- (void)setSystemCursorType:(unsigned long long)arg1;
 - (void)setCursorType:(int)arg1;
 - (void)hideCursor;
 - (void)showCursor;
 @property(nonatomic) BOOL accumulateClickCount;
 @property(readonly, nonatomic) long long currentDownButton;
 @property(readonly, nonatomic) struct CGSize cursorImageSize;
-@property(readonly, nonatomic) float cursorScale;
+@property(readonly, nonatomic) AXFMouseCursorImage *cursorImage;
+@property(nonatomic) BOOL keepCursorImageSynchronizedWithSystem;
+@property(nonatomic) double cursorScale;
 @property(nonatomic) struct CGPoint currentLocation;
 - (void)moveMouseToElement:(id)arg1 andClickButton:(long long)arg2 count:(unsigned long long)arg3 withModifiers:(unsigned long long)arg4;
 - (void)moveMouseToElement:(id)arg1;

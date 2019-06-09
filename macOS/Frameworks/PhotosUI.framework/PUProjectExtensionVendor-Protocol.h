@@ -4,11 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUExtensionVendor-Protocol.h>
-
 @class NSString, NSURL, PHProjectInfo;
 
-@protocol PUProjectExtensionVendor <PUExtensionVendor>
+@protocol PUProjectExtensionVendor
 - (void)finishProjectWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)resumeProjectEditingWithProjectIdentifier:(NSString *)arg1 libraryURL:(NSURL *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)beginProjectWithProjectIdentifier:(NSString *)arg1 libraryURL:(NSURL *)arg2 projectInfo:(PHProjectInfo *)arg3 completionHandler:(void (^)(NSError *))arg4;

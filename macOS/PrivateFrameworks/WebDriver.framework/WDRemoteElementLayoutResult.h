@@ -11,7 +11,8 @@
 @interface WDRemoteElementLayoutResult : NSObject
 {
     BOOL _obscured;
-    BOOL _interactable;
+    BOOL _pointerInteractable;
+    BOOL _keyboardInteractable;
     WDRemoteElement *_element;
     long long _coordinateSystem;
     struct CGPoint _inViewCenterPoint;
@@ -21,7 +22,8 @@
 @property(nonatomic) long long coordinateSystem; // @synthesize coordinateSystem=_coordinateSystem;
 @property(nonatomic) struct CGPoint inViewCenterPoint; // @synthesize inViewCenterPoint=_inViewCenterPoint;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-@property(nonatomic, getter=isInteractable) BOOL interactable; // @synthesize interactable=_interactable;
+@property(nonatomic, getter=isKeyboardInteractable) BOOL keyboardInteractable; // @synthesize keyboardInteractable=_keyboardInteractable;
+@property(nonatomic, getter=isPointerInteractable) BOOL pointerInteractable; // @synthesize pointerInteractable=_pointerInteractable;
 @property(nonatomic, getter=isObscured) BOOL obscured; // @synthesize obscured=_obscured;
 @property(copy, nonatomic) WDRemoteElement *element; // @synthesize element=_element;
 - (void).cxx_destruct;

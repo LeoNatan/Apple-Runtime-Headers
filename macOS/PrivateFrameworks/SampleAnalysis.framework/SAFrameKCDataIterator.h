@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSArray *userBinaryLoadInfos; // @synthesize userBinaryLoadInfos=_userBinaryLoadInfos;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (BOOL)hasKernelStack;
 - (BOOL)hasUserStack;
 - (BOOL)hasStack;
 - (void)clearTaskData;

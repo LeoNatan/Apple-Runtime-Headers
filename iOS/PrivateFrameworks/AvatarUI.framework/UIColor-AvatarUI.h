@@ -7,6 +7,8 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (AvatarUI)
++ (id)avt_stickerPlaceholderBackgroundColor;
++ (id)avt_simplePickerSelectedBackground;
 + (id)avt_splashScreenButtonHighlightedTextColor;
 + (id)avt_splashScreenButtonNormalTextColor;
 + (id)avt_splashScreenButtonBackgroundColor;

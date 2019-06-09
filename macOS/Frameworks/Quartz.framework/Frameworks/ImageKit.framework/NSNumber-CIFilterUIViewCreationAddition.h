@@ -8,5 +8,6 @@
 
 @interface NSNumber (CIFilterUIViewCreationAddition)
 + (void)insertAttribute:(id)arg1 intoView:(id)arg2 anchorPosition:(struct CGPoint *)arg3 forFilter:(id)arg4 settings:(id)arg5 configuration:(id)arg6 objectController:(id)arg7;
+- (id)fractionString;
 @end
 

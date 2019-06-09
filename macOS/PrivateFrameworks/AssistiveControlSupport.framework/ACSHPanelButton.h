@@ -15,9 +15,7 @@
     BOOL _shouldExecuteSystemFunction;
     BOOL _keyIsDeadKey;
     BOOL _displayImageIdentifierIsTemplate;
-    BOOL _isStickyKey;
-    BOOL _shouldNotLockModifierKey;
-    NSColor *_displayColor;
+    NSArray *_actions;
     NSColor *_fontColor;
     NSString *_localizedDisplayTextKey;
     NSString *_displayText;
@@ -26,7 +24,6 @@
     NSString *_functionSystemActionDisplayText;
     NSString *_displayImageIdentifier;
     NSString *_functionSystemActionDisplayImageIdentifier;
-    NSArray *_actions;
     NSIndexPath *_indexPath;
     unsigned long long _modifierMask;
     unsigned long long _textDisplayLocation;
@@ -49,8 +46,6 @@
 + (id)keysForValuesToObserveForView;
 @property(retain, nonatomic) NSDictionary *noDeadKeyDisplayTextDictionary; // @synthesize noDeadKeyDisplayTextDictionary=_noDeadKeyDisplayTextDictionary;
 @property(retain, nonatomic) NSDictionary *displayTextKeyDictionary; // @synthesize displayTextKeyDictionary=_displayTextKeyDictionary;
-@property(nonatomic) BOOL shouldNotLockModifierKey; // @synthesize shouldNotLockModifierKey=_shouldNotLockModifierKey;
-@property(nonatomic) BOOL isStickyKey; // @synthesize isStickyKey=_isStickyKey;
 @property(nonatomic) unsigned long long buttonType; // @synthesize buttonType=_buttonType;
 @property(nonatomic) struct CGPoint positionIndex; // @synthesize positionIndex=_positionIndex;
 @property(nonatomic) unsigned long long imageDisplayPosition; // @synthesize imageDisplayPosition=_imageDisplayPosition;
@@ -60,12 +55,11 @@
 @property(nonatomic) unsigned long long textDisplayLocation; // @synthesize textDisplayLocation=_textDisplayLocation;
 @property(nonatomic) unsigned long long modifierMask; // @synthesize modifierMask=_modifierMask;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
-@property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) NSString *functionSystemActionDisplayImageIdentifier; // @synthesize functionSystemActionDisplayImageIdentifier=_functionSystemActionDisplayImageIdentifier;
 @property(nonatomic) BOOL displayImageIdentifierIsTemplate; // @synthesize displayImageIdentifierIsTemplate=_displayImageIdentifierIsTemplate;
 @property(retain, nonatomic) NSString *displayImageIdentifier; // @synthesize displayImageIdentifier=_displayImageIdentifier;
 @property(retain, nonatomic) NSString *functionSystemActionDisplayText; // @synthesize functionSystemActionDisplayText=_functionSystemActionDisplayText;
-@property(nonatomic) BOOL keyIsDeadKey; // @synthesize keyIsDeadKey=_keyIsDeadKey;
+@property(readonly, nonatomic) BOOL keyIsDeadKey; // @synthesize keyIsDeadKey=_keyIsDeadKey;
 @property(retain, nonatomic) NSString *secondaryKeyDisplayText; // @synthesize secondaryKeyDisplayText=_secondaryKeyDisplayText;
 @property(retain, nonatomic) NSString *keyDisplayText; // @synthesize keyDisplayText=_keyDisplayText;
 @property(retain, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
@@ -73,12 +67,15 @@
 @property(retain, nonatomic) NSColor *fontColor; // @synthesize fontColor=_fontColor;
 @property(nonatomic) BOOL shouldExecuteSystemFunction; // @synthesize shouldExecuteSystemFunction=_shouldExecuteSystemFunction;
 @property(nonatomic) BOOL isKeyboardKey; // @synthesize isKeyboardKey=_isKeyboardKey;
+@property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
 - (void)toggleStickyKeyRepeatActivated;
 @property(nonatomic) BOOL stickyKeyRepeatActivated;
+@property(readonly, nonatomic) BOOL shouldNotLockModifierKey;
+@property(readonly, nonatomic) BOOL isStickyKey;
 - (void)_updateShouldExecuteSystemFunctionForFnKeyDown:(BOOL)arg1;
 - (struct CGSize)minimumSize;
-@property(retain, nonatomic) NSColor *displayColor; // @synthesize displayColor=_displayColor;
+- (void)setKeyIsDeadKey:(BOOL)arg1;
 - (void)_updateShouldExecuteSystemFunctionForKeyCodeAction;
 @property(readonly, nonatomic) BOOL allowsDisplayTextChange;
 @property(nonatomic) double fontSize;

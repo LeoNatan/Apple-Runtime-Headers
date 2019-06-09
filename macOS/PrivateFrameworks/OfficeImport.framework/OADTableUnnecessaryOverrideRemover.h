@@ -8,6 +8,7 @@
 
 @class OADTextListStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADTableUnnecessaryOverrideRemover : OADTableStyleResolver
 {
     OADTextListStyle *_parentTextListStyle;

@@ -15,10 +15,8 @@
     Class _messageClass;
     NSMutableData *_tailParserData;
     unsigned int _curObjectLength;
-    struct CC_SHA256state_st _mescalSignature;
 }
 
-@property(nonatomic) struct CC_SHA256state_st mescalSignature; // @synthesize mescalSignature=_mescalSignature;
 @property(nonatomic) _Bool isParsing; // @synthesize isParsing=_isParsing;
 @property(nonatomic) unsigned int curObjectLength; // @synthesize curObjectLength=_curObjectLength;
 @property(retain, nonatomic) NSMutableData *tailParserData; // @synthesize tailParserData=_tailParserData;

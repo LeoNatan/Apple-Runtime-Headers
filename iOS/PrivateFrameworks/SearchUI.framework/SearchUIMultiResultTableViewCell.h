@@ -6,7 +6,7 @@
 
 #import <SearchUI/SearchUITableViewCell.h>
 
-@class NSArray, SearchUIAppIconsRowView, TLKAuxilliaryTextView;
+@class NSArray, SearchUIAppIconsRowView, TLKAuxilliaryTextView, UIView;
 
 @interface SearchUIMultiResultTableViewCell : SearchUITableViewCell
 {
@@ -15,10 +15,11 @@
     NSArray *_results;
     long long _indexOfSelectedKeyboardIcon;
     TLKAuxilliaryTextView *_folderLabelView;
+    UIView *_highlightBackgroundView;
 }
 
 + (unsigned long long)numberOfColumnsForCurrentOrientation;
-+ (void)removeDropShadowIconStateForView:(id)arg1;
+@property(retain, nonatomic) UIView *highlightBackgroundView; // @synthesize highlightBackgroundView=_highlightBackgroundView;
 @property(retain, nonatomic) TLKAuxilliaryTextView *folderLabelView; // @synthesize folderLabelView=_folderLabelView;
 @property(nonatomic) long long indexOfSelectedKeyboardIcon; // @synthesize indexOfSelectedKeyboardIcon=_indexOfSelectedKeyboardIcon;
 @property(retain, nonatomic) NSArray *results; // @synthesize results=_results;
@@ -31,6 +32,7 @@
 - (_Bool)navigateKeyboardRight;
 - (void)setupKeyboardHandler;
 - (_Bool)canSetupKeyboardHandler;
+- (void)removeDropShadowIconState;
 - (unsigned long long)numberOfVisibleResults;
 - (id)visibleResults;
 - (void)updateExpanded:(_Bool)arg1;
@@ -40,9 +42,8 @@
 - (double)topAndBottomPadding;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateWithRowModel:(id)arg1;
-- (void)setFeedbackDelegateForRowView:(id)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;
 
 @end
 

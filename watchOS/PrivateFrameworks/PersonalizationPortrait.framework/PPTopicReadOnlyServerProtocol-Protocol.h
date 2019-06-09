@@ -4,15 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDictionary, NSNumber, NSString, PPTopicQuery;
+#import <PersonalizationPortrait/PPFeedbackAccepting-Protocol.h>
 
-@protocol PPTopicReadOnlyServerProtocol
-- (void)feedbackMappedTopicsOverallEngagement:(NSNumber *)arg1 forMapping:(NSString *)arg2;
-- (void)feedbackTopicsOverallEngagement:(NSNumber *)arg1;
-- (void)feedbackEngagedMappedTopics:(NSDictionary *)arg1 forMapping:(NSString *)arg2;
-- (void)feedbackEngagedTopics:(NSDictionary *)arg1;
-- (void)feedbackUsedMappedTopics:(NSArray *)arg1 forMapping:(NSString *)arg2;
-- (void)feedbackUsedTopics:(NSArray *)arg1;
+@class NSString, PPTopicQuery;
+
+@protocol PPTopicReadOnlyServerProtocol <PPFeedbackAccepting>
+- (void)unmapMappedTopicIdentifier:(NSString *)arg1 mappingIdentifier:(NSString *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)scoresForTopicMapping:(NSString *)arg1 query:(PPTopicQuery *)arg2 queryId:(unsigned long long)arg3;
 - (void)topicRecordsWithQuery:(PPTopicQuery *)arg1 queryId:(unsigned long long)arg2;
 - (void)rankedTopicsWithQuery:(PPTopicQuery *)arg1 queryId:(unsigned long long)arg2;

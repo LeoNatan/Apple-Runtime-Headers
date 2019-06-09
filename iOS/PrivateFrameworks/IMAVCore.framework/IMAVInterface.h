@@ -11,9 +11,9 @@
     id _delegate;
 }
 
-+ (id)alloc;
 + (id)sharedInstance;
-@property id delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2 isFinalUpdate:(_Bool)arg3;
 - (long long)_runPingTestForChat:(id)arg1;
 - (long long)_checkNetworkForChat:(id)arg1 requiresWifi:(_Bool)arg2;

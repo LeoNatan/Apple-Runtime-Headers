@@ -6,12 +6,37 @@
 
 #import <Foundation/NSAttributedString.h>
 
-@interface NSAttributedString (UIKitAdditions)
+#import <UIKitCore/UIItemProviderReading-Protocol.h>
+#import <UIKitCore/UIItemProviderWriting-Protocol.h>
+
+@class NSArray, NSString;
+
+@interface NSAttributedString (UIKitAdditions) <UIItemProviderReading, UIItemProviderWriting>
++ (long long)_preferredRepresentationForItemProviderWritableTypeIdentifier:(id)arg1;
++ (id)writableTypeIdentifiersForItemProvider;
++ (id)_objectWithItemProviderFileURL:(id)arg1 typeIdentifier:(id)arg2 isInPlace:(_Bool)arg3 error:(id *)arg4;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
++ (id)_objectWithRTFDAtURL:(id)arg1 error:(id *)arg2;
++ (long long)_preferredRepresentationForItemProviderReadableTypeIdentifier:(id)arg1;
++ (id)readableTypeIdentifiersForItemProvider;
 - (id)_ui_glyphImageViewsScale:(double)arg1 outImageRect:(struct CGRect *)arg2 outLineRect:(struct CGRect *)arg3 outBaselineOffset:(double *)arg4;
 - (id)_ui_attributedStringWithOriginalFontAttributes;
 - (long long)_ui_resolvedWritingDirectionForUserInterfaceLayoutDirection:(long long)arg1;
 - (long long)_ui_resolvedWritingDirection;
 - (long long)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(long long)arg1;
 - (long long)_ui_resolvedTextAlignment;
+- (id)_loadFileRepresentationOfTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
+- (long long)_preferredRepresentationForItemProviderWritableTypeIdentifier:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *writableTypeIdentifiersForItemProvider;
+- (id)initWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
+- (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange)arg1 usingDefaultAttributes:(id)arg2;
+- (id)_ui_fontsInRange:(struct _NSRange)arg1 usingDefaultFont:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

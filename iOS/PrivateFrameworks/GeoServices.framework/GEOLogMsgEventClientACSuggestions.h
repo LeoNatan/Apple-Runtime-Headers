@@ -8,28 +8,55 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 @interface GEOLogMsgEventClientACSuggestions : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_entries;
-    int _keypressStatus;
-    NSString *_query;
+    long long _overallLatencyInMs;
     NSMutableArray *_queryTokens;
+    NSString *_query;
+    int _keypressStatus;
     int _selectedIndex;
+    int _selectedSectionIndex;
     int _trigger;
+    int _withinSectionSelectedIndex;
+    _Bool _isRerankerTriggered;
+    _Bool _isRetainedQuery;
+    _Bool _shouldDifferentiateClientAndServerResults;
     struct {
-        unsigned int keypressStatus:1;
-        unsigned int selectedIndex:1;
-        unsigned int trigger:1;
-    } _has;
+        unsigned int has_overallLatencyInMs:1;
+        unsigned int has_keypressStatus:1;
+        unsigned int has_selectedIndex:1;
+        unsigned int has_selectedSectionIndex:1;
+        unsigned int has_trigger:1;
+        unsigned int has_withinSectionSelectedIndex:1;
+        unsigned int has_isRerankerTriggered:1;
+        unsigned int has_isRetainedQuery:1;
+        unsigned int has_shouldDifferentiateClientAndServerResults:1;
+        unsigned int read_entries:1;
+        unsigned int read_queryTokens:1;
+        unsigned int read_query:1;
+        unsigned int wrote_entries:1;
+        unsigned int wrote_overallLatencyInMs:1;
+        unsigned int wrote_queryTokens:1;
+        unsigned int wrote_query:1;
+        unsigned int wrote_keypressStatus:1;
+        unsigned int wrote_selectedIndex:1;
+        unsigned int wrote_selectedSectionIndex:1;
+        unsigned int wrote_trigger:1;
+        unsigned int wrote_withinSectionSelectedIndex:1;
+        unsigned int wrote_isRerankerTriggered:1;
+        unsigned int wrote_isRetainedQuery:1;
+        unsigned int wrote_shouldDifferentiateClientAndServerResults:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)entriesType;
 + (Class)queryTokensType;
-@property(retain, nonatomic) NSMutableArray *entries; // @synthesize entries=_entries;
-@property(retain, nonatomic) NSMutableArray *queryTokens; // @synthesize queryTokens=_queryTokens;
-@property(retain, nonatomic) NSString *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -38,27 +65,48 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasShouldDifferentiateClientAndServerResults;
+@property(nonatomic) _Bool shouldDifferentiateClientAndServerResults;
+@property(nonatomic) _Bool hasOverallLatencyInMs;
+@property(nonatomic) long long overallLatencyInMs;
+@property(nonatomic) _Bool hasIsRerankerTriggered;
+@property(nonatomic) _Bool isRerankerTriggered;
+@property(nonatomic) _Bool hasIsRetainedQuery;
+@property(nonatomic) _Bool isRetainedQuery;
+@property(nonatomic) _Bool hasSelectedSectionIndex;
+@property(nonatomic) int selectedSectionIndex;
+@property(nonatomic) _Bool hasWithinSectionSelectedIndex;
+@property(nonatomic) int withinSectionSelectedIndex;
 - (int)StringAsKeypressStatus:(id)arg1;
 - (id)keypressStatusAsString:(int)arg1;
 @property(nonatomic) _Bool hasKeypressStatus;
-@property(nonatomic) int keypressStatus; // @synthesize keypressStatus=_keypressStatus;
+@property(nonatomic) int keypressStatus;
 - (int)StringAsTrigger:(id)arg1;
 - (id)triggerAsString:(int)arg1;
 @property(nonatomic) _Bool hasTrigger;
-@property(nonatomic) int trigger; // @synthesize trigger=_trigger;
+@property(nonatomic) int trigger;
 @property(nonatomic) _Bool hasSelectedIndex;
-@property(nonatomic) int selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(nonatomic) int selectedIndex;
 - (id)entriesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)entriesCount;
+- (void)_addNoFlagsEntries:(id)arg1;
 - (void)addEntries:(id)arg1;
 - (void)clearEntries;
+@property(retain, nonatomic) NSMutableArray *entries;
+- (void)_readEntries;
 - (id)queryTokensAtIndex:(unsigned long long)arg1;
 - (unsigned long long)queryTokensCount;
+- (void)_addNoFlagsQueryTokens:(id)arg1;
 - (void)addQueryTokens:(id)arg1;
 - (void)clearQueryTokens;
+@property(retain, nonatomic) NSMutableArray *queryTokens;
+- (void)_readQueryTokens;
+@property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) _Bool hasQuery;
+- (void)_readQuery;
 
 @end
 

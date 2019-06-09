@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)tagExists;
 - (void)updateAttributedStringValueForState;
 - (void)setTitle:(id)arg1;
+- (_Bool)selected;
 - (id)init;
 
 @end

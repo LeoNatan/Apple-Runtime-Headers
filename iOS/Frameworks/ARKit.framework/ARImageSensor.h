@@ -7,71 +7,70 @@
 #import <objc/NSObject.h>
 
 #import <ARKit/ARSensor-Protocol.h>
-#import <ARKit/AVCaptureAudioDataOutputSampleBufferDelegate-Protocol.h>
 #import <ARKit/AVCaptureDataOutputSynchronizerDelegate-Protocol.h>
 #import <ARKit/AVCaptureVideoDataOutputSampleBufferDelegate-Protocol.h>
 
-@class ARImageSensorSettings, AVCaptureAudioDataOutput, AVCaptureDataOutputSynchronizer, AVCaptureDevice, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVisionDataOutput, NSArray, NSString;
-@protocol ARSensorDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, OS_dispatch_queue;
+@class ARImageSensorSettings, AVCaptureConnection, AVCaptureDataOutputSynchronizer, AVCaptureDevice, AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVisionDataOutput, NSArray, NSMutableArray, NSString;
+@protocol ARSensorDelegate, OS_dispatch_queue;
 
-@interface ARImageSensor : NSObject <AVCaptureAudioDataOutputSampleBufferDelegate, AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureDataOutputSynchronizerDelegate, ARSensor>
+@interface ARImageSensor : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureDataOutputSynchronizerDelegate, ARSensor>
 {
-    _Bool _previouslyRunning;
-    id <AVCaptureVideoDataOutputSampleBufferDelegate> _previousOutputDelegate;
-    NSObject<OS_dispatch_queue> *_previousOutputCallbackQueue;
-    NSObject<OS_dispatch_queue> *_captureQueue;
-    NSObject<OS_dispatch_queue> *_outputSynchronizerQueue;
     AVCaptureVisionDataOutput *_visionDataOutput;
-    _Bool _running;
-    _Bool _interrupted;
+    NSArray *_captureDeviceKeysObserved;
     _Bool _runningSingleShotAutoFocus;
     float _defaultLensPosition;
     ARImageSensorSettings *_settings;
     id <ARSensorDelegate> _delegate;
     AVCaptureDevice *_captureDevice;
     AVCaptureSession *_captureSession;
+    AVCaptureDeviceInput *_videoInput;
     AVCaptureVideoDataOutput *_videoOutput;
-    AVCaptureAudioDataOutput *_audioOutput;
+    AVCaptureConnection *_videoConnection;
+    AVCaptureConnection *_visionDataConnection;
     AVCaptureDataOutputSynchronizer *_outputSynchronizer;
+    NSObject<OS_dispatch_queue> *_captureQueue;
     unsigned long long _powerUsage;
     long long _captureFramesPerSecond;
+    NSMutableArray *_connections;
 }
 
 + (float)defaultLensPosition;
 @property _Bool runningSingleShotAutoFocus; // @synthesize runningSingleShotAutoFocus=_runningSingleShotAutoFocus;
-@property _Bool interrupted; // @synthesize interrupted=_interrupted;
-@property _Bool running; // @synthesize running=_running;
 @property float defaultLensPosition; // @synthesize defaultLensPosition=_defaultLensPosition;
+@property(retain) NSMutableArray *connections; // @synthesize connections=_connections;
 @property long long captureFramesPerSecond; // @synthesize captureFramesPerSecond=_captureFramesPerSecond;
 @property(nonatomic) unsigned long long powerUsage; // @synthesize powerUsage=_powerUsage;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *captureQueue; // @synthesize captureQueue=_captureQueue;
 @property(readonly, nonatomic) AVCaptureDataOutputSynchronizer *outputSynchronizer; // @synthesize outputSynchronizer=_outputSynchronizer;
-@property(readonly, nonatomic) AVCaptureAudioDataOutput *audioOutput; // @synthesize audioOutput=_audioOutput;
+@property(readonly, nonatomic) AVCaptureConnection *visionDataConnection; // @synthesize visionDataConnection=_visionDataConnection;
+@property(readonly, nonatomic) AVCaptureConnection *videoConnection; // @synthesize videoConnection=_videoConnection;
 @property(readonly, nonatomic) AVCaptureVideoDataOutput *videoOutput; // @synthesize videoOutput=_videoOutput;
+@property(readonly, nonatomic) AVCaptureDeviceInput *videoInput; // @synthesize videoInput=_videoInput;
 @property(readonly, nonatomic) AVCaptureSession *captureSession; // @synthesize captureSession=_captureSession;
 @property(readonly, nonatomic) AVCaptureDevice *captureDevice; // @synthesize captureDevice=_captureDevice;
 @property(nonatomic) __weak id <ARSensorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)captureSessionStateChanged:(id)arg1;
 - (void)_dispatchImageData:(id)arg1;
 - (void)dataOutputSynchronizer:(id)arg1 didOutputSynchronizedDataCollection:(id)arg2;
 - (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
-- (void)_configureVisionDataOutputForSession:(id)arg1;
+- (id)_configureVisionDataOutputForSession:(id)arg1;
 - (void)enableAutoFocusForDevice:(id)arg1;
 - (void)_configureImageControlModeForDevice:(id)arg1;
 - (void)_configureCameraFocusForDevice:(id)arg1;
 - (void)_configureCameraWhiteBalanceForDevice:(id)arg1;
 - (void)_configureCameraExposureForDevice:(id)arg1;
+- (void)_configureFrameRateForDevice:(id)arg1 frameRate:(double)arg2;
 - (void)_configureFrameRateForDevice:(id)arg1;
-- (void)_configureAudioCapturingForSession:(id)arg1;
 - (id)_setActiveFormat;
-- (_Bool)_validateMicrophoneAuthorization;
-- (_Bool)_validateCameraAuthorization;
+- (void)updateCaptureDeviceFrameRate:(double)arg1;
 - (void)configureCaptureDevice;
 - (id)configureCaptureSession;
+- (void)enableSensor:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)stop;
 - (void)start;
+- (void)stop;
+- (id)prepareToStart;
 - (unsigned long long)providedDataTypes;
 - (void)triggerVisionDataBurst;
 - (void)reconfigure:(id)arg1;
@@ -79,8 +78,8 @@
 @property(readonly, nonatomic) NSArray *outputsForSynchronizer;
 @property(readonly, copy, nonatomic) ARImageSensorSettings *settings; // @synthesize settings=_settings;
 - (void)dealloc;
-- (id)initWithSettings:(id)arg1;
 - (id)init;
+- (id)initWithSettings:(id)arg1 captureSession:(id)arg2 captureQueue:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

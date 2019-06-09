@@ -12,7 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 parentRElement:(struct _xmlNode *)arg2 parentParagraph:(id)arg3 state:(id)arg4 to:(id)arg5;
-+ (void)initialize;
++ (id)textWrappingModeTypeEnumMap;
++ (id)relativeVerticalPositionEnumMap;
++ (id)relativeHorizontalPositionEnumMap;
 + (void)writeWrapPolygonChildren:(id)arg1 to:(id)arg2;
 + (_Bool)writeWrapTightlyWith:(id)arg1 toWriter:(id)arg2;
 + (void)readVml:(struct _xmlNode *)arg1 parentRElement:(struct _xmlNode *)arg2 parentParagraph:(id)arg3 state:(id)arg4 to:(id)arg5;

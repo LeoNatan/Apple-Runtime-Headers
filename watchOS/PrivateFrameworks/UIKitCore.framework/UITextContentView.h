@@ -39,6 +39,7 @@
     int m_textAlignment;
 }
 
++ (id)excludedElementsForHTML;
 @property(nonatomic) __weak id <UITextContentViewDelegate> delegate; // @synthesize delegate=m_delegate;
 @property(nonatomic) _Bool scrollsSelectionOnWebDocumentChanges; // @synthesize scrollsSelectionOnWebDocumentChanges=m_scrollsSelectionOnWebDocumentChanges;
 @property(nonatomic) struct UIEdgeInsets selectionInset; // @synthesize selectionInset=m_selectionInset;
@@ -72,6 +73,8 @@
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (id)textInRange:(id)arg1;
 - (id)metadataDictionariesForDictationResults;
+- (void)removeTextPlaceholder:(id)arg1;
+- (id)insertTextPlaceholderWithSize:(struct CGSize)arg1;
 - (struct CGRect)frameForDictationResultPlaceholder:(id)arg1;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(_Bool)arg2;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;

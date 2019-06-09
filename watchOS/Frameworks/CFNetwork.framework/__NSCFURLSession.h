@@ -6,55 +6,54 @@
 
 #import <CFNetwork/NSURLSession.h>
 
-@class NSDictionary, NSMutableDictionary, NSMutableSet, NSObject, NSOperationQueue, NSString, NSURLSessionConfiguration;
-@protocol NSURLSessionDelegate, OS_dispatch_queue;
+#import <CFNetwork/__NSURLSessionTaskGroupForConfiguration-Protocol.h>
 
-__attribute__((visibility("hidden")))
-@interface __NSCFURLSession : NSURLSession
+@class ConnectionContextManager, NSDictionary, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSURLSessionConfiguration, NSUUID, __CFN_SessionMetrics;
+@protocol OS_dispatch_queue;
+
+@interface __NSCFURLSession : NSURLSession <__NSURLSessionTaskGroupForConfiguration>
 {
-    NSOperationQueue *_delegateQueue;
-    id <NSURLSessionDelegate> _delegate;
-    NSString *_sessionDescription;
     NSObject<OS_dispatch_queue> *_workQueue;
-    NSURLSessionConfiguration *_local_immutable_configuration;
-    _Bool _invalid;
-    _Bool _isSharedSession;
-    NSString *_uuid;
-    CDUnknownBlockType _connBlock;
-    NSDictionary *_atsState;
+    NSUUID *_uuid_ivar;
+    NSString *_tlsSessionCachePrefix;
+    ConnectionContextManager *_nwContextManager;
+    shared_ptr_9ad247fa _nwContext;
     NSMutableDictionary *_altSvc;
     NSMutableSet *_h2BlacklistedHosts;
     NSMutableDictionary *_coalescing;
+    __CFN_SessionMetrics *_metrics;
 }
 
+- (void)set_metrics:(id)arg1;
+- (id)_metrics;
 - (void)set_coalescing:(id)arg1;
 - (id)_coalescing;
 - (void)set_h2BlacklistedHosts:(id)arg1;
 - (id)_h2BlacklistedHosts;
 - (void)set_altSvc:(id)arg1;
 - (id)_altSvc;
-- (void)set_connBlock:(CDUnknownBlockType)arg1;
-- (CDUnknownBlockType)_connBlock;
-- (void)set_atsState:(id)arg1;
-- (id)_atsState;
-- (void)set_uuid:(id)arg1;
-- (id)_uuid;
-- (void)set_isSharedSession:(_Bool)arg1;
-- (_Bool)_isSharedSession;
-- (void)setInvalid:(_Bool)arg1;
-- (_Bool)invalid;
-- (void)set_local_immutable_configuration:(id)arg1;
-- (id)_local_immutable_configuration;
-- (void)setSessionDescription:(id)arg1;
-- (id)sessionDescription;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setDelegateQueue:(id)arg1;
-- (id)delegateQueue;
+- (id)_tlsSessionCachePrefix;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (shared_ptr_9ad247fa)_nwContext;
+- (void)set_tlsSessionCachePrefix:(id)arg1;
+- (void)_useTLSSessionCacheFromSession:(id)arg1;
 @property(readonly, copy) NSDictionary *delegateOptions;
 - (id)workQueue;
+- (id)taskGroupWithConfiguration:(id)arg1;
+- (id)defaultTaskGroup;
+@property(readonly) __weak NSURLSessionConfiguration *_groupConfiguration; // @dynamic _groupConfiguration;
+@property(readonly) __weak NSURLSession *_groupSession; // @dynamic _groupSession;
+- (id)_uuid;
+- (_Bool)invalid;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

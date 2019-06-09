@@ -214,6 +214,17 @@ typedef struct {
     unsigned short _field1;
     unsigned short _field2;
     unsigned short _field3;
+    struct {
+        double _field1;
+        double _field2;
+        double _field3;
+    } _field4[0];
+} CDStruct_13724557;
+
+typedef struct {
+    unsigned short _field1;
+    unsigned short _field2;
+    unsigned short _field3;
     unsigned short _field4;
     unsigned short _field5;
     unsigned int _field6;

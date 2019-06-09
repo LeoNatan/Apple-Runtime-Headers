@@ -7,10 +7,14 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (BRAdditions)
++ (id)brc_errorItemNotShareable;
++ (id)brc_errorFolderHierarchyTooDeep;
++ (id)brc_errorItemIneligibleFromSync;
++ (id)brc_errorItemIsntDirectory;
 + (id)brc_errorItemChanged;
 + (id)brc_addPartialError:(id)arg1 forURL:(id)arg2 toError:(id)arg3;
 + (id)brc_errorItemInTrash;
-+ (id)brc_errorFolderHasSharedSubitems;
++ (id)brc_errorFolderHasSharedSubitemsWithSharedByMeURLs:(id)arg1 sharedToMeURLs:(id)arg2;
 + (id)brc_errorItemAlreadyPartOfAShare;
 + (id)brc_errorSyncBlocked;
 + (id)brc_errorDriveDisabledOrAppLibraryDisabled;

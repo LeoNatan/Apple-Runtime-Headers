@@ -29,6 +29,7 @@
 - (id)_initWithAccount:(id)arg1 serverDictionary:(id)arg2;
 - (id)chooseBuddyStubForConditions:(id)arg1;
 - (id)chooseBuddyStub;
+- (id)chooseFirstStub;
 - (id)chooseStubForConditions:(id)arg1;
 - (id)chooseStub;
 - (id)_chooseStubFromServerStubs:(id)arg1 offerType:(long long)arg2;

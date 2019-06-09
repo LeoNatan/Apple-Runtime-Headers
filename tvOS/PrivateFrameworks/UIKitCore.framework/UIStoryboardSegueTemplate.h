@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *_segueClassName;
     UIViewController *_viewController;
     NSString *_destinationViewControllerIdentifier;
+    SEL _prepareForChildViewControllerSelector;
     _Bool _performOnViewLoad;
     _Bool _animates;
 }
@@ -33,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (id)instantiateOrFindDestinationViewControllerWithSender:(id)arg1;
 - (CDUnknownBlockType)newDefaultPerformHandlerForSegue:(id)arg1;
 - (CDUnknownBlockType)newDefaultPrepareHandlerForSegue:(id)arg1;
+@property(readonly, nonatomic) SEL prepareForChildViewControllerSelector;
+@property(retain, nonatomic) NSString *customPrepareForChildViewControllerSelectorName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

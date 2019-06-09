@@ -9,16 +9,18 @@
 #import <DoNotDisturb/NSCopying-Protocol.h>
 #import <DoNotDisturb/NSSecureCoding-Protocol.h>
 
-@class DNDModeAssertionDetails, NSDate, NSUUID;
+@class DNDModeAssertionDetails, DNDModeAssertionSource, NSDate, NSUUID;
 
 @interface DNDModeAssertion : NSObject <NSCopying, NSSecureCoding>
 {
     NSUUID *_UUID;
     NSDate *_startDate;
     DNDModeAssertionDetails *_details;
+    DNDModeAssertionSource *_source;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, copy, nonatomic) DNDModeAssertionSource *source; // @synthesize source=_source;
 @property(readonly, copy, nonatomic) DNDModeAssertionDetails *details; // @synthesize details=_details;
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, copy, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
@@ -29,7 +31,7 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithUUID:(id)arg1 startDate:(id)arg2 details:(id)arg3;
+- (id)initWithUUID:(id)arg1 startDate:(id)arg2 details:(id)arg3 source:(id)arg4;
 
 @end
 

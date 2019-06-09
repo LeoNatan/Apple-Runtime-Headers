@@ -5,8 +5,11 @@
 //
 
 @protocol LPTextStyleable
+- (void)setOverrideMaximumNumberOfLines:(long long)arg1;
+- (long long)computedNumberOfLines;
 - (double)descender;
 - (double)ascender;
+- (double)lastLineDescent;
 - (double)firstLineLeading;
 @end
 

@@ -20,6 +20,7 @@
     BOOL _isVoiceTrigger;
     BOOL _isDucking;
     BOOL _isTwoShot;
+    unsigned long long _speechEndHostTime;
     struct _mutationFlags {
         unsigned int isDirty:1;
         unsigned int hasStyle:1;
@@ -29,11 +30,13 @@
         unsigned int hasIsVoiceTrigger:1;
         unsigned int hasIsDucking:1;
         unsigned int hasIsTwoShot:1;
+        unsigned int hasSpeechEndHostTime:1;
     } _mutationFlags;
 }
 
 - (void).cxx_destruct;
 - (id)generate;
+- (void)setSpeechEndHostTime:(unsigned long long)arg1;
 - (void)setIsTwoShot:(BOOL)arg1;
 - (void)setIsDucking:(BOOL)arg1;
 - (void)setIsVoiceTrigger:(BOOL)arg1;

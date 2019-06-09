@@ -8,6 +8,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface OITSUDeferredInvocationQueue : NSObject
 {
     NSMutableArray *_invocations;

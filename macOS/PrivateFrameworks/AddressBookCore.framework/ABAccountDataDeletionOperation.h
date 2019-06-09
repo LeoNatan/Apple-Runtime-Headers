@@ -14,10 +14,11 @@
     NSString *_accountIdentifier;
 }
 
++ (id)os_log;
+- (void).cxx_destruct;
 - (void)deleteDataFromAddressBook:(id)arg1;
 - (id)makeAddressBook;
 - (void)main;
-- (void)dealloc;
 - (id)initWithAccountRepository:(id)arg1 accountIdentifier:(id)arg2;
 
 @end

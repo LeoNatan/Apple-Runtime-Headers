@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class KCAESGCMDuplexSession, KCSRPClientContext, NSData, NSString;
+@class KCAESGCMDuplexSession, KCSRPClientContext, NSData, NSMutableDictionary, NSString, OTControl, OTJoiningConfiguration;
 @protocol KCJoiningRequestSecretDelegate;
 
 @interface KCJoiningRequestSecretSession : NSObject
@@ -18,13 +18,21 @@
     unsigned long long _dsid;
     NSString *_piggy_uuid;
     unsigned long long _piggy_version;
+    unsigned long long _epoch;
     NSData *_challenge;
     NSData *_salt;
+    OTJoiningConfiguration *_joiningConfiguration;
+    OTControl *_otControl;
+    NSMutableDictionary *_defaults;
 }
 
 + (id)sessionWithSecretDelegate:(id)arg1 dsid:(unsigned long long)arg2 error:(id *)arg3;
+@property(retain, nonatomic) NSMutableDictionary *defaults; // @synthesize defaults=_defaults;
+@property(retain, nonatomic) OTControl *otControl; // @synthesize otControl=_otControl;
+@property(retain, nonatomic) OTJoiningConfiguration *joiningConfiguration; // @synthesize joiningConfiguration=_joiningConfiguration;
 @property(retain) NSData *salt; // @synthesize salt=_salt;
 @property(retain) NSData *challenge; // @synthesize challenge=_challenge;
+@property unsigned long long epoch; // @synthesize epoch=_epoch;
 @property unsigned long long piggy_version; // @synthesize piggy_version=_piggy_version;
 @property(retain) NSString *piggy_uuid; // @synthesize piggy_uuid=_piggy_uuid;
 @property(readonly) int state; // @synthesize state=_state;
@@ -33,6 +41,8 @@
 @property(readonly) NSObject<KCJoiningRequestSecretDelegate> *secretDelegate; // @synthesize secretDelegate=_secretDelegate;
 @property(readonly) KCAESGCMDuplexSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (void)setConfiguration:(id)arg1;
+- (void)setControlObject:(id)arg1;
 - (id)description;
 - (id)stateString;
 - (id)initWithSecretDelegate:(id)arg1 dsid:(unsigned long long)arg2 rng:(struct ccrng_state *)arg3 error:(id *)arg4;
@@ -47,6 +57,7 @@
 - (_Bool)setupSession:(id *)arg1;
 - (_Bool)isDone;
 - (id)initialMessage:(id *)arg1;
+- (id)createUUID;
 
 @end
 

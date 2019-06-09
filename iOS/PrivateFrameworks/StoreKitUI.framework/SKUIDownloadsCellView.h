@@ -8,6 +8,7 @@
 
 @class NSAttributedString, NSString, UIButton, UIImage, UIImageView, UILabel, UISlider;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDownloadsCellView : UIView
 {
     UILabel *_titleLabel;

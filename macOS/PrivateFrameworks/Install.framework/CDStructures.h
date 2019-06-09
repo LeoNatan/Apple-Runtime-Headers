@@ -63,7 +63,7 @@ struct FSRef {
 struct IFCertificateIdentity_Private {
     struct OpaqueSecManifestRef *_field1;
     struct __SecTrust *_field2;
-    struct OpaqueSecCertificateRef *_field3;
+    struct __SecCertificate *_field3;
     id _field4;
     unsigned int _field5;
     id _field6;
@@ -229,8 +229,6 @@ struct IFInstallAction_Private {
     id _field7;
     id _field8;
 };
-
-struct OpaqueSecCertificateRef;
 
 struct OpaqueSecManifestRef;
 

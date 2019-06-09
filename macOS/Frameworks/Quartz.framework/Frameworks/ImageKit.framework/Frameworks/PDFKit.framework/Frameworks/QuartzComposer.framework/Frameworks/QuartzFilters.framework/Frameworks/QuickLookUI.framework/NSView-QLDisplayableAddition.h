@@ -15,6 +15,11 @@
 @property(readonly) CALayer *quickLookLayer;
 @property(readonly) QLDisplayBundleViewController *quickLookViewController;
 @property(readonly) NSView *quickLookView;
+- (BOOL)_ql_appearanceIsDark;
+- (struct CGRect)_ql_convertViewRectToLayerRect:(struct CGRect)arg1;
+- (struct CGRect)_ql_convertLayerRectToViewRect:(struct CGRect)arg1;
+- (struct CGPoint)_ql_convertViewPointToLayerPoint:(struct CGPoint)arg1;
+- (struct CGPoint)_ql_convertLayerPointToViewPoint:(struct CGPoint)arg1;
 
 // Remaining properties
 @property(readonly) id accessibilityFocusedUIElement;

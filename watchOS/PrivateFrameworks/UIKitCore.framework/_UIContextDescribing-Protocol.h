@@ -9,7 +9,7 @@
 @class NSDictionary;
 
 @protocol _UIContextDescribing <NSObject>
-@property(readonly, nonatomic) CDStruct_3cbf53c3 _bindingDescription;
+@property(readonly, nonatomic) CDStruct_a002d41c _bindingDescription;
 - (NSDictionary *)_contextOptionsWithInitialOptions:(NSDictionary *)arg1;
 @end
 

@@ -8,6 +8,7 @@
 
 @class WDSection;
 
+__attribute__((visibility("hidden")))
 @interface WMSectionMapper : CMMapper
 {
     WDSection *wdSection;

@@ -10,6 +10,7 @@
 
 @class NSMapTable, NSString, UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIHorizontalListScrollView : SKUIViewReuseView <SKUIViewElementView>
 {
     UIScrollView *_scrollView;

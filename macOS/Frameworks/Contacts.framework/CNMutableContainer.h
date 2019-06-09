@@ -6,7 +6,7 @@
 
 #import <Contacts/CNContainer.h>
 
-@class NSString;
+@class NSData, NSString;
 
 @interface CNMutableContainer : CNContainer
 {
@@ -14,10 +14,22 @@
 
 - (id)freezeWithSelfAsSnapshot;
 - (id)freeze;
-@property(copy, nonatomic) CNContainer *snapshot; // @dynamic snapshot;
 - (void)adoptValuesFromAndSetSnapshot:(id)arg1;
+- (void)setSnapshot:(id)arg1;
+- (void)setGuardianRestricted:(BOOL)arg1 shouldPushChangeToServer:(BOOL)arg2;
+@property(getter=isGuardianStateDirty) BOOL guardianStateDirty;
+- (void)setParentallyManaged:(BOOL)arg1;
+@property(getter=isGuardianRestricted) BOOL guardianRestricted;
+@property unsigned long long restrictions; // @dynamic restrictions;
+@property(copy) NSString *meIdentifier; // @dynamic meIdentifier;
+@property(copy) NSString *constraintsPath; // @dynamic constraintsPath;
+@property(copy) NSData *externalSyncData; // @dynamic externalSyncData;
+@property(copy) NSString *externalSyncTag; // @dynamic externalSyncTag;
+@property(copy) NSString *externalModificationTag; // @dynamic externalModificationTag;
+@property(copy) NSString *externalIdentifier; // @dynamic externalIdentifier;
 @property(getter=isEnabled) BOOL enabled; // @dynamic enabled;
-@property long long type;
+@property(copy) NSString *accountIdentifier; // @dynamic accountIdentifier;
+@property long long type; // @dynamic type;
 @property(copy) NSString *name; // @dynamic name;
 @property(copy) NSString *identifier; // @dynamic identifier;
 - (id)copy;

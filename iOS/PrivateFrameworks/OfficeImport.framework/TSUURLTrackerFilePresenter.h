@@ -8,24 +8,40 @@
 
 #import <OfficeImport/NSFilePresenter-Protocol.h>
 
-@class NSOperationQueue, NSSet, NSString, NSURL;
+@class NSData, NSError, NSOperationQueue, NSSet, NSString, NSURL;
+@protocol OS_dispatch_queue, TSUURLTrackerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface TSUURLTrackerFilePresenter : NSObject <NSFilePresenter>
 {
-    NSURL *_URL;
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    _Bool _hasStarted;
+    NSURL *_URLIfAvailable;
+    NSData *_bookmarkDataIfAvailable;
+    NSError *_latestError;
+    id <TSUURLTrackerDelegate> _delegate;
     NSOperationQueue *_presentedItemOperationQueue;
 }
 
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
-@property(copy) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (id)_description;
+- (void)presentedItemDidChangeUbiquityAttributes:(id)arg1;
 - (void)presentedItemDidMoveToURL:(id)arg1;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)relinquishPresentedItemToWriter:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSURL *presentedItemURL;
+- (id)_bookmarkDataAndReturnError:(id *)arg1;
+- (id)bookmarkDataAndReturnError:(id *)arg1;
 - (void)stop;
-- (void)start;
-- (id)initWithURL:(id)arg1;
+- (void)pause;
+- (void)startOrResume;
+- (id)_bookmarkData;
+@property(readonly) NSData *bookmarkData;
+- (id)_URLAndReturnError:(id *)arg1;
+- (id)URLAndReturnError:(id *)arg1;
+- (id)initWithURL:(id)arg1 bookmarkData:(id)arg2 delegate:(id)arg3;
 - (id)init;
 
 // Remaining properties

@@ -23,8 +23,16 @@
     SignpostCAIntervalAggregationStats *_longRenderForTimeStats;
     SignpostCAIntervalAggregationStats *_longFrameLifetimeStats;
     SignpostCAIntervalAggregationStats *_longResponsibleFrameLifetimeStats;
+    SignpostCAIntervalAggregationStats *_glitchStats;
+    SignpostCAIntervalAggregationStats *_responsibleGlitchStats;
+    SignpostCAIntervalAggregationStats *_firstFrameGlitchStats;
+    SignpostCAIntervalAggregationStats *_responsibleFirstFrameGlitchStats;
 }
 
+@property(readonly, nonatomic) SignpostCAIntervalAggregationStats *responsibleFirstFrameGlitchStats; // @synthesize responsibleFirstFrameGlitchStats=_responsibleFirstFrameGlitchStats;
+@property(readonly, nonatomic) SignpostCAIntervalAggregationStats *firstFrameGlitchStats; // @synthesize firstFrameGlitchStats=_firstFrameGlitchStats;
+@property(readonly, nonatomic) SignpostCAIntervalAggregationStats *responsibleGlitchStats; // @synthesize responsibleGlitchStats=_responsibleGlitchStats;
+@property(readonly, nonatomic) SignpostCAIntervalAggregationStats *glitchStats; // @synthesize glitchStats=_glitchStats;
 @property(readonly, nonatomic) SignpostCAIntervalAggregationStats *longResponsibleFrameLifetimeStats; // @synthesize longResponsibleFrameLifetimeStats=_longResponsibleFrameLifetimeStats;
 @property(readonly, nonatomic) SignpostCAIntervalAggregationStats *longFrameLifetimeStats; // @synthesize longFrameLifetimeStats=_longFrameLifetimeStats;
 @property(readonly, nonatomic) SignpostCAIntervalAggregationStats *longRenderForTimeStats; // @synthesize longRenderForTimeStats=_longRenderForTimeStats;

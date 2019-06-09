@@ -14,6 +14,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)scenarioTriggerSettledStateToString:(unsigned long long)arg1;
 + (id)scenarioTriggerTypeToString:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (unsigned long long)hash;

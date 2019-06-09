@@ -6,6 +6,7 @@
 
 #import <UIKit/UITableViewCell.h>
 
+__attribute__((visibility("hidden")))
 @interface MCNearbyPeerTableViewCell : UITableViewCell
 {
 }

@@ -11,9 +11,13 @@ __attribute__((visibility("hidden")))
 {
     _Bool _shouldIncludeActivitySummaryPrivateProperties;
     _Bool _shouldIncludeActivitySummaryStatistics;
+    _Bool _orderByDateAscending;
+    unsigned long long _limit;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
+@property(nonatomic) _Bool orderByDateAscending; // @synthesize orderByDateAscending=_orderByDateAscending;
 @property(nonatomic) _Bool shouldIncludeActivitySummaryStatistics; // @synthesize shouldIncludeActivitySummaryStatistics=_shouldIncludeActivitySummaryStatistics;
 @property(nonatomic) _Bool shouldIncludeActivitySummaryPrivateProperties; // @synthesize shouldIncludeActivitySummaryPrivateProperties=_shouldIncludeActivitySummaryPrivateProperties;
 - (void)encodeWithCoder:(id)arg1;

@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSData, NSDictionary, NSNumber, NSSet, NSString;
+@class NSArray, NSData, NSDictionary, NSNumber, NSSet, NSString, NSUUID;
 
 @protocol VNClusteringReadOnly
++ (NSUUID *)nonGroupedGroupID;
 + (NSArray *)clustererModelFileNamesFromState:(NSData *)arg1 storedInPath:(NSString *)arg2 error:(id *)arg3;
 + (NSDictionary *)getRepresentativenessForFaces:(NSArray *)arg1 error:(id *)arg2;
 - (NSNumber *)maximumFaceIdInModelAndReturnError:(id *)arg1;
 - (NSDictionary *)getDistances:(NSArray *)arg1 to:(NSArray *)arg2 error:(id *)arg3;
 - (NSArray *)getClustersForClusterIds:(NSArray *)arg1 options:(NSDictionary *)arg2 error:(id *)arg3;
+- (NSArray *)getAllClustersFromStateAndReturnError:(id *)arg1;
 - (NSDictionary *)getDistanceBetweenLevel1Clusters:(NSArray *)arg1 error:(id *)arg2;
 - (NSNumber *)getDistanceBetweenLevel0ClustersWithFaceId:(NSNumber *)arg1 andFaceId:(NSNumber *)arg2 error:(id *)arg3;
 - (NSArray *)getLevel1ClusteredIdsGroupedByLevel0ClustersForFaceId:(NSNumber *)arg1 error:(id *)arg2;

@@ -6,14 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CTCallCenter;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface _UIDictationTelephonyMonitor : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    CTCallCenter *_callCentre;
     _Bool _telephonyActivity;
     CDUnknownBlockType _activityChanged;
 }

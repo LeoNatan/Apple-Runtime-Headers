@@ -19,7 +19,7 @@
 - (BOOL)addCell;
 - (BOOL)addIntermediateTuple:(id)arg1;
 - (BOOL)addItermediateTuple:(int)arg1 data:(int)arg2 type:(int)arg3 profile:(long long)arg4 index0:(int)arg5 index1:(int)arg6 index2:(int)arg7;
-- (id)newGrowableItem;
+- (id)createGrowableItem;
 - (id)growableItems;
 - (BOOL)canGrow;
 - (id)profileNamesForDataType:(int)arg1 numToSkip:(long long *)arg2;

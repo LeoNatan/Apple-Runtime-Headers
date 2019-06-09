@@ -8,6 +8,7 @@
 
 @class CKTiledLayoutGeneratorScanState;
 
+__attribute__((visibility("hidden")))
 @interface CKTiledLayoutGenerator : NSObject
 {
     long long _cacheTailLocation;

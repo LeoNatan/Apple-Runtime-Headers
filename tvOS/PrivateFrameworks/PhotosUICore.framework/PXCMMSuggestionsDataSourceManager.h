@@ -21,10 +21,11 @@
     PXCMMSuggestionsDataSourceContext *_context;
 }
 
++ (id)keyPathsAffectingCurrentDataSourceManager;
++ (id)mockDataSourceManagerFromRecentLargeMoments;
 + (id)dataSourceManagerWithParticipants:(id)arg1 fetchLimit:(long long)arg2 shouldShowAccepted:(_Bool)arg3 message:(id)arg4 date:(id)arg5 matchingStrategy:(unsigned long long)arg6;
-+ (id)dataSourceManagerWithParticipants:(id)arg1;
 + (id)dataSourceManager;
-+ (id)mockDataSourceManagerFromRecentLargeMoments:(unsigned long long)arg1;
++ (id)currentDataSourceManager;
 + (id)emptyDataSourceManager;
 + (id)_fetchResultForTypeGraphWithContext:(id)arg1;
 + (id)_fetchResultForMockRecentLargeMomentsDataSourceManager;

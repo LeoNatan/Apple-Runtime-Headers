@@ -13,13 +13,24 @@
 + (void)_setUpdatingOS:(_Bool)arg1;
 + (void)_setThermalState:(unsigned long long)arg1;
 + (void)_setVideoPlaying:(_Bool)arg1 musicPlaying:(_Bool)arg2;
++ (void)_setPresenceDetectionActive:(_Bool)arg1;
++ (void)_setSystemSleepStopping;
++ (void)_setSystemSleepActive;
++ (void)_setSystemSleepStarting;
++ (void)_setScreenSaverActive;
++ (void)_setScreenSaverStarting;
++ (void)_setHiliteModeActive;
++ (void)_setHiliteModeStarting;
++ (void)_setSystemActive;
 + (void)initialize;
 + (void)load;
++ (void)addPermanentObserverForProperty:(id)arg1 notifyInitial:(_Bool)arg2 invokeOnMainThread:(_Bool)arg3 handler:(CDUnknownBlockType)arg4;
 + (_Bool)isSystemUpdating;
 + (unsigned long long)systemThermalState;
 + (unsigned long long)lateNightMode;
 + (unsigned long long)systemDisplayState;
 + (_Bool)isBluetoothKeyboardConnected;
++ (_Bool)isPresenceDetectionActive;
 + (_Bool)isProximityPairingInProgress;
 + (_Bool)isAppleRemoteConnected;
 + (_Bool)isSystemUsingWiFi;
@@ -27,7 +38,7 @@
 + (_Bool)isInternetAvailable;
 + (_Bool)isMusicPlaying;
 + (_Bool)isVideoPlaying;
-+ (unsigned long long)systemWakeState;
++ (unsigned long long)systemAttentionState;
 - (id)init;
 
 @end

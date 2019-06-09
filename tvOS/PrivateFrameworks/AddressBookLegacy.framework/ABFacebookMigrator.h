@@ -12,7 +12,7 @@
 {
     _Bool _mayHaveFacebookSource;
     int _mergeDestinationSourceID;
-    long long _facebookContactsCount;
+    unsigned long long _facebookContactsCount;
     NSString *_destinationDescription;
     void *_addressBook;
     ACAccountStore *_accountStore;
@@ -31,7 +31,7 @@
 @property(retain, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 @property(retain, nonatomic) NSString *destinationDescription; // @synthesize destinationDescription=_destinationDescription;
-@property(nonatomic) long long facebookContactsCount; // @synthesize facebookContactsCount=_facebookContactsCount;
+@property(nonatomic) unsigned long long facebookContactsCount; // @synthesize facebookContactsCount=_facebookContactsCount;
 - (void).cxx_destruct;
 - (_Bool)_removeContactsAccount:(void *)arg1;
 - (_Bool)_mergeContactsFromAccount:(void *)arg1 toDestinationSourceID:(int)arg2;
@@ -44,6 +44,7 @@
 - (_Bool)canMergeFacebookContacts;
 @property(nonatomic, getter=isCheckDone) _Bool checkDone;
 - (void)dealloc;
+- (id)initWithAddressBook:(void *)arg1 accountStore:(id)arg2;
 - (id)initWithAddressBook:(void *)arg1;
 
 @end

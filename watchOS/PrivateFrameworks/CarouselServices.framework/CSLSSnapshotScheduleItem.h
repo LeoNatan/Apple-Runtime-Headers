@@ -16,12 +16,14 @@
     _Bool _systemScheduled;
     _Bool _returnToPrimaryUI;
     _Bool _scheduleFreebee;
+    _Bool _persist;
     unsigned int _reason;
     NSDate *_date;
     NSString *_uuid;
     NSDictionary *_userInfo;
 }
 
++ (id)coalesce:(id)arg1;
 + (id)fromDictionary:(id)arg1;
 + (unsigned int)_reasonFromDictionary:(id)arg1 forKey:(id)arg2;
 + (_Bool)_boolFromDictionary:(id)arg1 forKey:(id)arg2;
@@ -44,6 +46,8 @@
 - (id)_plistClasses;
 - (void)amendWithHigherPriorityFlagsAndReason:(id)arg1;
 - (id)rescheduleWithDate:(id)arg1;
+- (_Bool)persist;
+- (void)setPersist:(_Bool)arg1;
 - (_Bool)scheduleFreebee;
 - (void)setScheduleFreebee:(_Bool)arg1;
 - (unsigned int)reason;
@@ -52,6 +56,7 @@
 - (void)setReturnToPrimaryUI:(_Bool)arg1;
 - (_Bool)systemScheduled;
 - (void)setSystemScheduled:(_Bool)arg1;
+- (_Bool)isEqualToScheduleItem:(id)arg1;
 - (id)initWithDate:(id)arg1 uuid:(id)arg2 userInfo:(id)arg3;
 
 // Remaining properties

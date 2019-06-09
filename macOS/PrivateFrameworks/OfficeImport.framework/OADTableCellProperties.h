@@ -8,6 +8,7 @@
 
 @class OADFill, OADStroke, OADTableCell3DProperties;
 
+__attribute__((visibility("hidden")))
 @interface OADTableCellProperties : NSObject
 {
     OADStroke *mLeftStroke;

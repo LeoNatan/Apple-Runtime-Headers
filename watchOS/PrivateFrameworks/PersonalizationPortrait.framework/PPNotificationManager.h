@@ -6,24 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore, EKEventStore, PPEventKitNotificationHandler, PPNotificationHandler;
-@protocol NSObject;
+@class _PASLock;
 
 @interface PPNotificationManager : NSObject
 {
-    PPNotificationHandler *_contactsHandler;
-    id <NSObject> _contactsToken;
-    CNContactStore *_cnStore;
-    PPNotificationHandler *_meCardHandler;
-    id <NSObject> _meCardToken;
-    id <NSObject> _meCardDonationToken;
-    PPNotificationHandler *_portraitChangeHandler;
-    int _portraitChangeToken;
-    PPNotificationHandler *_portraitInvalidationHandler;
-    int _portraitInvalidationToken;
-    PPEventKitNotificationHandler *_eventKitHandler;
-    id <NSObject> _eventKitToken;
-    EKEventStore *_ekStore;
+    _PASLock *_lockedData;
 }
 
 + (void)addEventKitObserverForLifetimeOfObject:(id)arg1 block:(CDUnknownBlockType)arg2;

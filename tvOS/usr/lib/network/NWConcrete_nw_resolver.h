@@ -9,7 +9,7 @@
 #import <network/OS_nw_resolver-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_group, OS_dispatch_queue, OS_nw_array, OS_nw_context, OS_nw_endpoint, OS_nw_parameters;
+@protocol OS_dispatch_group, OS_dispatch_queue, OS_nw_array, OS_nw_context, OS_nw_endpoint, OS_nw_interface, OS_nw_parameters, OS_nw_path, OS_nw_txt_record;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_resolver : NSObject <OS_nw_resolver>
@@ -32,17 +32,25 @@ __attribute__((visibility("hidden")))
     void *query_timer;
     void *crazy_eyeballs_timer;
     NSObject<OS_nw_array> *endpoint_array;
-    void *internally_retained_object;
+    NSObject<OS_nw_path> *path;
+    NSObject<OS_nw_interface> *path_required_interface;
+    NSObject<OS_nw_txt_record> *esni_record;
+    NWConcrete_nw_resolver *internally_retained_object;
     char log_str[84];
     unsigned int is_custom_resolver:1;
-    unsigned int used_cached_results:1;
+    unsigned int used_local_cache:1;
+    unsigned int ipv4_used_resolver_cache:1;
+    unsigned int ipv6_used_resolver_cache:1;
     unsigned int local_only:1;
     unsigned int suppress_logging:1;
+    unsigned int resolve_esni:1;
+    unsigned int has_ipv4:1;
+    unsigned int has_ipv6:1;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 dns_service_id:(unsigned int)arg3 localOnly:(_Bool)arg4;
+- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 path:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

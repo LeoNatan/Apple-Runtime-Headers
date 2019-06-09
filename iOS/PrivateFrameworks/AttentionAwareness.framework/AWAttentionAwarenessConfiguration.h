@@ -17,10 +17,14 @@
     NSSet *_attentionLostTimeouts;
     NSDictionary *_attentionLostTimeoutDictionary;
     _Bool _samplingDelayExplicitlySet;
+    _Bool _attentionLostEventMaskExplicitlySet;
     unsigned long long _tagIndex;
+    NSSet *_allowedHIDEventsForRemoteEvent;
+    _Bool _sampleWhileAbsent;
     NSString *_identifier;
     id <NSCopying> _tag;
     unsigned long long _eventMask;
+    unsigned long long _attentionLostEventMask;
     double _samplingInterval;
     double _samplingDelay;
 }
@@ -31,12 +35,16 @@
 + (unsigned long long)supportedEvents;
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
+@property(nonatomic) _Bool sampleWhileAbsent; // @synthesize sampleWhileAbsent=_sampleWhileAbsent;
 @property(nonatomic) double samplingDelay; // @synthesize samplingDelay=_samplingDelay;
 @property(nonatomic) double samplingInterval; // @synthesize samplingInterval=_samplingInterval;
+@property(nonatomic) unsigned long long attentionLostEventMask; // @synthesize attentionLostEventMask=_attentionLostEventMask;
 @property(nonatomic) unsigned long long eventMask; // @synthesize eventMask=_eventMask;
 @property(copy, nonatomic) id <NSCopying> tag; // @synthesize tag=_tag;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)setAllowedHIDEventsForRemoteEvent:(id)arg1;
+- (id)allowedHIDEventsForRemoteEvent;
 @property(copy, nonatomic) NSDictionary *attentionLostTimeoutDictionary;
 @property(copy, nonatomic) NSSet *attentionLostTimeouts; // @dynamic attentionLostTimeouts;
 - (void)setAttentionLostTimeout:(double)arg1;

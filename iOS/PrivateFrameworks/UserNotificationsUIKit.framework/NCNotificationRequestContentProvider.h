@@ -33,7 +33,7 @@
 - (CDUnknownBlockType)_actionForNotificationAction:(id)arg1;
 @property(readonly, nonatomic) NSArray *interfaceActions;
 @property(readonly, nonatomic) UIImage *thumbnail;
-@property(readonly, nonatomic) unsigned long long messageNumberOfLines;
+@property(readonly, nonatomic, getter=isNumberOfLinesInfinite) _Bool numberOfLinesInfinite;
 @property(readonly, copy, nonatomic) NSString *summaryText;
 @property(readonly, copy, nonatomic) NSString *secondaryText;
 @property(readonly, copy, nonatomic) NSString *primarySubtitleText;

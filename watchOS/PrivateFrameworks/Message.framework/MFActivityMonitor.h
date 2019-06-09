@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MIME/MFPriorityDesignator.h>
+#import <EmailFoundation/EFPriorityDesignator.h>
 
-#import <Message/MFCancelable-Protocol.h>
+#import <Message/EFCancelable-Protocol.h>
 
 @class MFError, MFInvocationQueue, MFMailboxUid, NSMutableSet, NSString, NSThread;
 
-@interface MFActivityMonitor : MFPriorityDesignator <MFCancelable>
+@interface MFActivityMonitor : EFPriorityDesignator <EFCancelable>
 {
     NSThread *_runningThread;
     NSString *_taskName;
@@ -41,19 +41,22 @@
     NSMutableSet *_reasons;
     NSMutableSet *_associatedCancelables;
     _Bool _isRemoteSearch;
+    CDUnknownBlockType _startedFetch;
 }
 
 + (void)destroyMonitor;
++ (id)pushNewMonitor;
 + (id)currentMonitor;
 @property(nonatomic) _Bool isRemoteSearch; // @synthesize isRemoteSearch=_isRemoteSearch;
+@property(copy) CDUnknownBlockType startedFetch; // @synthesize startedFetch=_startedFetch;
 @property(retain) MFMailboxUid *mailbox; // @synthesize mailbox=_mailbox;
-- (unsigned int)bytesWritten;
-- (unsigned int)bytesRead;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int bytesWritten;
+@property(readonly, nonatomic) unsigned int bytesRead;
 - (void)recordBytesWritten:(unsigned int)arg1;
 - (void)recordBytesRead:(unsigned int)arg1;
 - (void)resetConnectionStats;
-- (void)setError:(id)arg1;
-- (id)error;
+@property(retain, nonatomic) MFError *error;
 - (void)setPercentDone:(double)arg1 withKey:(int)arg2;
 - (void)setStatusMessage:(id)arg1 withKey:(int)arg2;
 - (void)setStatusMessage:(id)arg1 percentDone:(double)arg2 withKey:(int)arg3;
@@ -67,34 +70,26 @@
 @property(nonatomic) _Bool shouldCancel;
 @property(nonatomic) _Bool canBeCancelled;
 - (id)activityTargets;
-- (id)primaryTarget;
-- (void)setPrimaryTarget:(id)arg1;
+@property(retain, nonatomic) id primaryTarget;
 - (void)removeActivityTarget:(id)arg1;
 - (void)addActivityTargets:(id)arg1;
 - (void)addActivityTarget:(id)arg1;
 - (_Bool)_lockedAddActivityTarget:(id)arg1;
-- (id)activityTarget;
-- (void)setActivityTarget:(id)arg1;
-- (void)setDisplayName:(id)arg1;
+@property(retain, nonatomic) id activityTarget;
+@property(copy, nonatomic) NSString *displayName;
 - (void)setDisplayName:(id)arg1 maxCount:(unsigned int)arg2;
-- (id)displayName;
-- (void)setTaskName:(id)arg1;
-- (id)taskName;
+@property(copy, nonatomic) NSString *taskName;
 @property(readonly, copy) NSString *description;
-- (unsigned int)expectedLength;
-- (void)setExpectedLength:(unsigned int)arg1;
-- (double)startTime;
-- (double)percentDone;
-- (void)setPercentDone:(double)arg1;
-- (id)statusMessage;
+@property(nonatomic) unsigned int expectedLength;
+@property(readonly, nonatomic) double startTime;
+@property(nonatomic) double percentDone;
+@property(copy, nonatomic) NSString *statusMessage;
 - (void)setStatusMessage:(id)arg1 percentDone:(double)arg2;
-- (void)setStatusMessage:(id)arg1;
-- (int)changeCount;
+@property(readonly, nonatomic) int changeCount;
 - (id)reasons;
 - (_Bool)hasReason:(id)arg1;
 - (void)addReason:(id)arg1;
-- (unsigned int)gotNewMessagesState;
-- (void)setGotNewMessagesState:(unsigned int)arg1;
+@property(nonatomic) unsigned int gotNewMessagesState;
 - (void)reset;
 - (void)setPercentDoneOfCurrentItem:(double)arg1;
 - (id)_ntsThrottledUserInfoDict;
@@ -112,7 +107,6 @@
 - (void)cancelMessage;
 - (void)setDelegate:(id)arg1;
 - (_Bool)isActive;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

@@ -7,5 +7,8 @@
 #import <PhotoLibraryServices/NSObject-Protocol.h>
 
 @protocol PLAssetsdDemoServiceProtocol <NSObject>
+- (void)hasCompletedMomentAnalysisWithReply:(void (^)(_Bool))arg1;
+- (void)hasCompletedRestorePostProcessingWithReply:(void (^)(_Bool))arg1;
+- (void)cleanupForStoreDemoMode;
 @end
 

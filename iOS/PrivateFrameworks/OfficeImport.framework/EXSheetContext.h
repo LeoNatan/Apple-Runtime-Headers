@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
     NSString *mType;
 }
 
+- (void).cxx_destruct;
 - (_Bool)loadDelayedNode:(id)arg1;
-- (void)dealloc;
 - (id)initWithSheetLocation:(id)arg1 sheetXmlType:(id)arg2 state:(id)arg3;
 
 // Remaining properties

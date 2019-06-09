@@ -73,6 +73,11 @@
     int _currentListLevel;
     NSCalendar *_gregorianCalendar;
     NSMutableDictionary *_fontAttributesTable;
+    int _cocoaTextScaling;
+    int _cocoaPlatform;
+    int _targetTextScaling;
+    int _sourceTextScaling;
+    int _finalTextScaling;
 }
 
 - (void)finalize;
@@ -88,6 +93,9 @@
 - (void)_setCurrentListNumber:(int)arg1;
 - (int)_currentListNumber;
 - (void)_updateAttributes;
+- (float)_updateFontSizeForTextScalingIfNeeded:(float)arg1;
+- (void)_determineFinalTextScalingType;
+- (void)_determineSourceTextScalingType;
 - (id)_documentInfoDictionary;
 - (id)attributesAtEndOfGroup;
 - (id)attributedString;
@@ -119,6 +127,12 @@
 - (id)_currentTable;
 - (void)_beginTableRow;
 - (void)_ensureTableCells;
+- (void)_setSourceTextScaling:(int)arg1;
+- (void)_setTargetTextScaling:(int)arg1;
+- (void)setCocoaTextScaling:(int)arg1;
+- (int)cocoaTextScaling;
+- (void)setCocoaPlatform:(int)arg1;
+- (int)cocoaPlatform;
 - (unsigned int)textFlow;
 - (void)setTextFlow:(unsigned int)arg1;
 - (int)baseWritingDirection;

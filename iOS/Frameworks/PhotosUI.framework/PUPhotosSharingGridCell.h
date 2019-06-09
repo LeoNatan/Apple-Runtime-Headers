@@ -17,10 +17,10 @@ __attribute__((visibility("hidden")))
     struct CGPoint _lastZoomPoint;
     PUPhotosZoomingSharingGridCell *_zoomingCell;
     UIView *_zoomingCellSuperview;
-    int _currentImageRequestID;
+    long long _currentImageRequestID;
 }
 
-@property(nonatomic) int currentImageRequestID; // @synthesize currentImageRequestID=_currentImageRequestID;
+@property(nonatomic) long long currentImageRequestID; // @synthesize currentImageRequestID=_currentImageRequestID;
 @property(readonly, nonatomic) PUPhotoView *photoView; // @synthesize photoView=_photoView;
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;

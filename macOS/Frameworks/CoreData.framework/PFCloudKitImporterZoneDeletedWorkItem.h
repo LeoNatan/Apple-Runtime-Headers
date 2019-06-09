@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)doWorkWithCompletion:(CDUnknownBlockType)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)initWithDeletedRecordZoneID:(id)arg1 options:(id)arg2 metadata:(id)arg3 request:(id)arg4;
+- (id)initWithDeletedRecordZoneID:(id)arg1 options:(id)arg2 request:(id)arg3;
 
 @end
 

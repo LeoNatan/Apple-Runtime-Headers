@@ -8,7 +8,6 @@
 
 @class MNObserverHashTable, MNSettings;
 
-__attribute__((visibility("hidden")))
 @interface MNSettingsManager : NSObject
 {
     MNSettings *_settings;
@@ -18,10 +17,11 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 @property(readonly, nonatomic) MNSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
-- (void)_setVolumeFromDefaults;
+- (void)setVolumeFromDefaults;
 - (void)updateForSettings:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)init;
 
 @end
 

@@ -174,6 +174,7 @@
 - (id)init;
 - (void)requestFocus;
 - (id)imageTileWithIdentifier:(struct PXTileIdentifier)arg1;
+- (id)titleSubtitleTileWithIdentifier:(struct PXTileIdentifier)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

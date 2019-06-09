@@ -6,6 +6,7 @@
 
 #import <ChatKit/_CKExpirableComposition.h>
 
+__attribute__((visibility("hidden")))
 @interface _CKAudioComposition : _CKExpirableComposition
 {
 }

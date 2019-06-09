@@ -13,16 +13,21 @@
 @interface CSLSButtonTapAssertion : NSObject <CSLSButtonTapAssertionClientInterface>
 {
     NSXPCConnection *_connection;
+    struct os_unfair_recursive_lock_s _lock;
     _Bool _active;
     CDUnknownBlockType _completion;
+    unsigned int _buttons;
 }
 
-@property _Bool active; // @synthesize active=_active;
-@property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(nonatomic) _Bool active; // @synthesize active=_active;
+@property(readonly, nonatomic) unsigned int buttons; // @synthesize buttons=_buttons;
+@property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 - (void).cxx_destruct;
 - (void)deactivate:(_Bool)arg1;
 - (void)deactivate;
 - (void)activate;
+- (void)_reinitializeAndActivateIfNecessary;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initWithButtons:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 

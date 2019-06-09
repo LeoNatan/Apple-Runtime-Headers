@@ -9,11 +9,17 @@
 @class NSArray, NSDictionary, NSString, WGWidgetListEditViewController;
 
 @protocol WGWidgetListEditViewControllerDataSource <NSObject>
+- (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 didChangeWidgetsPinning:(_Bool)arg2;
+- (_Bool)areWidgetsPinnedForWidgetListEditViewController:(WGWidgetListEditViewController *)arg1;
+- (_Bool)shouldShowWidgetsPinButtonForWidgetListEditViewController:(WGWidgetListEditViewController *)arg1;
+- (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 updateFavoritesToIdentifiers:(NSArray *)arg2;
+- (_Bool)widgetListEditViewControllerShouldShowFavorites:(WGWidgetListEditViewController *)arg1;
 - (_Bool)widgetListEditViewControllerShouldIncludeInternalWidgets:(WGWidgetListEditViewController *)arg1;
 - (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 requestsIconForItemWithIdentifier:(NSString *)arg2 withHandler:(void (^)(UIImage *))arg3;
 - (NSString *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 displayNameForItemWithIdentifier:(NSString *)arg2;
 - (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 acknowledgeInterfaceItemsWithIdentifiers:(NSArray *)arg2;
 - (void)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 setEnabled:(_Bool)arg2 forItemsWithIdentifiers:(NSArray *)arg3;
+- (_Bool)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 isItemWithIdentifierFavorited:(NSString *)arg2;
 - (_Bool)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 isItemWithIdentifierNew:(NSString *)arg2;
 - (_Bool)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 isItemWithIdentifierEnabled:(NSString *)arg2;
 - (NSString *)widgetListEditViewController:(WGWidgetListEditViewController *)arg1 defaultGroupForItemWithIdentifier:(NSString *)arg2;

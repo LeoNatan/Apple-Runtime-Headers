@@ -15,5 +15,7 @@
 @property(readonly, nonatomic) BOOL brc_signatureIsValid;
 @property(readonly, nonatomic) BOOL brc_signatureIsPackage;
 @property(readonly, nonatomic) BOOL brc_signatureIsPendingPlaceHolder;
+- (id)brc_SHA256WithSalt:(id)arg1;
+@property(readonly, nonatomic) unsigned int br_qtnFlags;
 @end
 

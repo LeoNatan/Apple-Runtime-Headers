@@ -5,9 +5,10 @@
 //
 
 #import <ScreenReader/AXVABrailleWindowInterface-Protocol.h>
+#import <ScreenReader/AXVADisplayHighlightWindowInterface-Protocol.h>
 #import <ScreenReader/AXVAMenuWindowInterface-Protocol.h>
 
-@protocol AXVisualsAgentInterface <AXVABrailleWindowInterface, AXVAMenuWindowInterface>
+@protocol AXVisualsAgentInterface <AXVABrailleWindowInterface, AXVADisplayHighlightWindowInterface, AXVAMenuWindowInterface>
 - (void)hideAllVisuals;
 - (void)visualsAgentShowingUI:(void (^)(BOOL))arg1;
 @end

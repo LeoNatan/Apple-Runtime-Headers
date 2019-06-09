@@ -8,23 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 @interface GEOLogMsgEventRefineSearchSession : PBCodable <NSCopying>
 {
-    int _refineSearchType;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_searchString;
-    int _searchType;
     NSMutableArray *_suggestionItems;
+    int _refineSearchType;
+    int _searchType;
     struct {
-        unsigned int refineSearchType:1;
-        unsigned int searchType:1;
-    } _has;
+        unsigned int has_refineSearchType:1;
+        unsigned int has_searchType:1;
+        unsigned int read_searchString:1;
+        unsigned int read_suggestionItems:1;
+        unsigned int wrote_searchString:1;
+        unsigned int wrote_suggestionItems:1;
+        unsigned int wrote_refineSearchType:1;
+        unsigned int wrote_searchType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)suggestionItemType;
-@property(retain, nonatomic) NSMutableArray *suggestionItems; // @synthesize suggestionItems=_suggestionItems;
-@property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,21 +40,27 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)suggestionItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)suggestionItemsCount;
+- (void)_addNoFlagsSuggestionItem:(id)arg1;
 - (void)addSuggestionItem:(id)arg1;
 - (void)clearSuggestionItems;
+@property(retain, nonatomic) NSMutableArray *suggestionItems;
+- (void)_readSuggestionItems;
+@property(retain, nonatomic) NSString *searchString;
 @property(readonly, nonatomic) _Bool hasSearchString;
+- (void)_readSearchString;
 - (int)StringAsRefineSearchType:(id)arg1;
 - (id)refineSearchTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRefineSearchType;
-@property(nonatomic) int refineSearchType; // @synthesize refineSearchType=_refineSearchType;
+@property(nonatomic) int refineSearchType;
 - (int)StringAsSearchType:(id)arg1;
 - (id)searchTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSearchType;
-@property(nonatomic) int searchType; // @synthesize searchType=_searchType;
+@property(nonatomic) int searchType;
 
 @end
 

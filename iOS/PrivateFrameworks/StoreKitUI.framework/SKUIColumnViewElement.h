@@ -8,6 +8,7 @@
 
 @class SKUIHeaderViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIColumnViewElement : SKUIViewElement
 {
     long long _columnSpan;

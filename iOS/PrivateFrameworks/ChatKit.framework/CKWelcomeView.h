@@ -9,8 +9,10 @@
 @class NSLayoutConstraint, UIButton, UIImageView, UILabel, UIScrollView, UIVisualEffectView;
 @protocol CKWelcomeViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKWelcomeView : UIView
 {
+    _Bool _isForMiC;
     _Bool _constraintsLoaded;
     id <CKWelcomeViewDelegate> _welcomeViewDelegate;
     UIView *_contentView;
@@ -41,17 +43,14 @@
     NSLayoutConstraint *_contentViewTopAnchorLayoutConstraint;
     NSLayoutConstraint *_contentViewTrailingAnchorLayoutConstraint;
     NSLayoutConstraint *_titleLabelFirstBaselineAnchorLayoutConstraint;
-    double _buttonViewBottomAnchorLayoutConstraintConstant;
-    double _buttonViewLeadingAnchorLayoutConstraintConstant;
-    double _buttonViewTrailingAnchorLayoutConstraintConstant;
     double _contentViewBottomAnchorLayoutConstraintConstant;
 }
 
++ (double)welcomeLayoutConstraintFeatureInnerForMiC;
++ (double)welcomeLayoutConstraintFeatureLeadingTrailingForMiC;
++ (double)welcomeLayoutConstraintLeadingTrailingForMiC;
 + (_Bool)requiresConstraintBasedLayout;
 @property(readonly, nonatomic) double contentViewBottomAnchorLayoutConstraintConstant; // @synthesize contentViewBottomAnchorLayoutConstraintConstant=_contentViewBottomAnchorLayoutConstraintConstant;
-@property(readonly, nonatomic) double buttonViewTrailingAnchorLayoutConstraintConstant; // @synthesize buttonViewTrailingAnchorLayoutConstraintConstant=_buttonViewTrailingAnchorLayoutConstraintConstant;
-@property(readonly, nonatomic) double buttonViewLeadingAnchorLayoutConstraintConstant; // @synthesize buttonViewLeadingAnchorLayoutConstraintConstant=_buttonViewLeadingAnchorLayoutConstraintConstant;
-@property(readonly, nonatomic) double buttonViewBottomAnchorLayoutConstraintConstant; // @synthesize buttonViewBottomAnchorLayoutConstraintConstant=_buttonViewBottomAnchorLayoutConstraintConstant;
 @property(nonatomic) NSLayoutConstraint *titleLabelFirstBaselineAnchorLayoutConstraint; // @synthesize titleLabelFirstBaselineAnchorLayoutConstraint=_titleLabelFirstBaselineAnchorLayoutConstraint;
 @property(nonatomic) NSLayoutConstraint *contentViewTrailingAnchorLayoutConstraint; // @synthesize contentViewTrailingAnchorLayoutConstraint=_contentViewTrailingAnchorLayoutConstraint;
 @property(nonatomic) NSLayoutConstraint *contentViewTopAnchorLayoutConstraint; // @synthesize contentViewTopAnchorLayoutConstraint=_contentViewTopAnchorLayoutConstraint;
@@ -74,6 +73,7 @@
 @property(nonatomic) NSLayoutConstraint *buttonViewBottomAnchorLayoutConstraint; // @synthesize buttonViewBottomAnchorLayoutConstraint=_buttonViewBottomAnchorLayoutConstraint;
 @property(nonatomic, getter=isConstraintsLoaded) _Bool constraintsLoaded; // @synthesize constraintsLoaded=_constraintsLoaded;
 @property(readonly, nonatomic) UIVisualEffectView *buttonView; // @synthesize buttonView=_buttonView;
+@property(nonatomic) _Bool isForMiC; // @synthesize isForMiC=_isForMiC;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UIButton *confirmButton; // @synthesize confirmButton=_confirmButton;
@@ -99,6 +99,9 @@
 @property(readonly, nonatomic) double cancelButtonHeightAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) double cancelButtonLastBaselineAnchorLayoutConstraintConstant;
 @property(readonly, nonatomic) double cancelButtonFirstBaselineAnchorLayoutConstraintConstant;
+@property(readonly, nonatomic) double buttonViewBottomAnchorLayoutConstraintConstant;
+@property(readonly, nonatomic) double buttonViewTrailingAnchorLayoutConstraintConstant;
+@property(readonly, nonatomic) double buttonViewLeadingAnchorLayoutConstraintConstant;
 - (void)handleConfirmButtonAction:(id)arg1;
 - (void)handleCancelButtonAction:(id)arg1;
 @property(nonatomic, getter=isCancelButtonHidden) _Bool cancelButtonHidden;
@@ -108,6 +111,7 @@
 - (void)updateConstraints;
 - (void)loadConstraints;
 - (void)commonInit;
+- (void)updateLayoutForMiC;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

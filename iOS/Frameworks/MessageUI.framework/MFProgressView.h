@@ -22,8 +22,9 @@
 }
 
 + (id)progressViewWithDefaultStyleStrokeAndRect;
-@property(nonatomic) id <MFProgressViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <MFProgressViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+- (void).cxx_destruct;
 - (void)_stopSimulationIfCompleted;
 - (void)_drawWedgeWithCenter:(struct CGPoint)arg1 radius:(double)arg2;
 - (void)_drawCircleWithCenter:(struct CGPoint)arg1 radius:(double)arg2;

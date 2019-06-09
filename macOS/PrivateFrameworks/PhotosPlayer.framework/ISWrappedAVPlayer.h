@@ -6,7 +6,7 @@
 
 #import <PhotosPlayer/ISObservable.h>
 
-@class AVPlayer, AVPlayerItem, AVQueuePlayer, AVVideoComposition, ISWrappedAVAudioSession, NSArray, NSError, NSMutableDictionary, NSObject;
+@class AVPlayer, AVPlayerItem, AVVideoComposition, ISWrappedAVAudioSession, NSArray, NSError, NSMutableDictionary, NSObject;
 @protocol ISWrappedAVPlayerDelegate, OS_dispatch_queue;
 
 @interface ISWrappedAVPlayer : ISObservable
@@ -16,13 +16,13 @@
     NSObject<OS_dispatch_queue> *_delegateQueue;
     AVPlayer *_playerQueue_avPlayer;
     ISWrappedAVAudioSession *_playerQueue_wrappedAudioSession;
-    AVQueuePlayer *_playerQueue_avQueuePlayer;
     id _playerQueue_playerItemDidPlayToEndObserver;
     AVPlayerItem *_ivarQueue_currentItem;
     long long _ivarQueue_status;
     NSError *_ivarQueue_error;
     float _ivarQueue_rate;
     float _ivarQueue_volume;
+    CDStruct_e83c9415 _ivarQueue_loopTimeRange;
     BOOL _ivarQueue_loopingEnabled;
     BOOL _ivarQueue_audioEnabled;
     long long _ivarQueue_itemStatus;
@@ -36,6 +36,7 @@
     NSArray *_ivarQueue_currentItemLoadedTimeRanges;
     NSMutableDictionary *_observersByID;
     void *_ivarQueueIdentifier;
+    BOOL _playerQueue_didBeginObservingPlayer;
     id <ISWrappedAVPlayerDelegate> _delegate;
 }
 
@@ -55,8 +56,9 @@
 - (void)setActionAtItemEnd:(long long)arg1;
 - (void)playToTime:(CDStruct_1b6d18a9)arg1 withInitialRate:(float)arg2 overDuration:(double)arg3 progressHandler:(CDUnknownBlockType)arg4;
 - (void)setRate:(float)arg1 time:(CDStruct_1b6d18a9)arg2 atHostTime:(CDStruct_1b6d18a9)arg3;
+- (void)setLoopTimeRange:(CDStruct_e83c9415)arg1;
 - (void)setLoopingEnabled:(BOOL)arg1 withTemplateItem:(id)arg2;
-- (void)setLoopingEnabled:(BOOL)arg1;
+@property(getter=isLoopingEnabled) BOOL loopingEnabled;
 - (BOOL)isAudioEnabled;
 - (void)_playerQueue_updatePlayerItemAudioTracksEnabled;
 - (void)setAudioEnabled:(BOOL)arg1;
@@ -75,7 +77,7 @@
 - (CDStruct_1b6d18a9)currentItemDuration;
 - (long long)currentItemStatus;
 - (long long)status;
-- (BOOL)isLoopingEnabled;
+- (CDStruct_e83c9415)loopTimeRange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_nilOrValue:(id)arg1;
 - (void)_playerItemDidPlayToEnd:(id)arg1;
@@ -85,12 +87,10 @@
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)addPeriodicTimeObserverForInterval:(CDStruct_1b6d18a9)arg1 queue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)_nextObserverUID;
-- (void)prepareForReuseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setItemBlendsVideoFrames:(BOOL)arg1;
 - (void)setItemForwardEndPlaybackTime:(CDStruct_1b6d18a9)arg1;
 - (void)attachToPlayerLayerIfNeeded:(id)arg1;
 - (void)dealloc;
-- (id)_playerQueue_avQueuePlayer;
 - (id)_playerQueue_avPlayer;
 - (id)init;
 - (id)_initWithAVPlayer:(id)arg1;

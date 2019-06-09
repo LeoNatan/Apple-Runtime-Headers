@@ -6,11 +6,16 @@
 
 #import <WatchListKit/WLKCanonicalPlayablesRequestOperation.h>
 
+@class WLKCanonicalContainerResponse;
+
 @interface WLKCanonicalContainerRequestOperation : WLKCanonicalPlayablesRequestOperation
 {
+    WLKCanonicalContainerResponse *_containerResponse;
 }
 
-- (id)responseProcessor;
+@property(readonly, nonatomic) WLKCanonicalContainerResponse *containerResponse; // @synthesize containerResponse=_containerResponse;
+- (void).cxx_destruct;
+- (void)processResponse;
 
 @end
 

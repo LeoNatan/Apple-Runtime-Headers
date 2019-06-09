@@ -20,9 +20,6 @@
 
 @property(nonatomic) __weak id <TCSCallCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)setGreetingRecordingInProgress:(_Bool)arg1;
-- (void)remoteMeterLevelForCall:(id)arg1 result:(CDUnknownBlockType)arg2;
-- (void)localMeterLevelForCall:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)remoteUplinkMuteChanged:(id)arg1;
 - (void)callConnected:(id)arg1;
 - (void)callStatusChanged:(id)arg1;
@@ -34,6 +31,7 @@
 - (id)endingCall;
 - (id)currentCall;
 - (id)activeCall;
+- (id)ringingCall;
 - (void)synchronouslyFetchCall;
 - (id)_callPassingPredicate:(CDUnknownBlockType)arg1;
 - (_Bool)hasValidConnection;

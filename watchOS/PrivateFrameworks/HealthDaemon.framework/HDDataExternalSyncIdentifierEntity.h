@@ -10,7 +10,7 @@
 {
 }
 
-+ (_Bool)insertSyncIdentifierWithProfile:(id)arg1 objectID:(long long)arg2 localSourceID:(long long)arg3 externalSyncObjectCode:(int)arg4 syncIdentifier:(id)arg5 syncVersion:(id)arg6 deleted:(_Bool)arg7 errorOut:(id *)arg8;
++ (_Bool)insertSyncIdentifierWithProfile:(id)arg1 database:(id)arg2 objectID:(long long)arg3 localSourceID:(long long)arg4 externalSyncObjectCode:(int)arg5 syncIdentifier:(id)arg6 syncVersion:(id)arg7 deleted:(_Bool)arg8 errorOut:(id *)arg9;
 + (_Bool)populateSyncInfoForProfile:(id)arg1 objectID:(long long)arg2 localSourceIDOut:(long long *)arg3 externalSyncObjectCodeOut:(int *)arg4 syncIdentifierOut:(id *)arg5 syncVersionOut:(id *)arg6 deletedOut:(_Bool *)arg7 errorOut:(id *)arg8;
 + (_Bool)populateSyncInfoForProfile:(id)arg1 localSourceID:(long long)arg2 externalSyncObjectCode:(int)arg3 syncIdentifier:(id)arg4 deleted:(_Bool)arg5 objectIDOut:(id *)arg6 errorOut:(id *)arg7;
 + (int)protectionClass;

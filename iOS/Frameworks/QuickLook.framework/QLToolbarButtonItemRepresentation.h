@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface QLToolbarButtonItemRepresentation : UIBarButtonItem
 {
+    _Bool _disappearsOnTap;
     NSString *_identifier;
     unsigned long long _placement;
     QLPreviewController *_presentingViewController;
@@ -19,9 +20,11 @@ __attribute__((visibility("hidden")))
 
 @property __weak QLToolbarButton *originalButton; // @synthesize originalButton=_originalButton;
 @property __weak QLPreviewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
+@property _Bool disappearsOnTap; // @synthesize disappearsOnTap=_disappearsOnTap;
 @property unsigned long long placement; // @synthesize placement=_placement;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 
 @end
 

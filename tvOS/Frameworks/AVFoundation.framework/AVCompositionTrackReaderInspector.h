@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isDecodable;
 - (int)playabilityValidationResult;
 - (_Bool)isPlayable;
-- (void)finalize;
 - (void)dealloc;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long long)arg3;
 

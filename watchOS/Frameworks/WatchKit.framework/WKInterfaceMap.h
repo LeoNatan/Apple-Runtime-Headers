@@ -6,16 +6,28 @@
 
 #import <WatchKit/WKInterfaceObject.h>
 
-@interface WKInterfaceMap : WKInterfaceObject
+#import <WatchKit/WKInterfaceObjectDynamicCreatable-Protocol.h>
+
+@class NSString;
+
+@interface WKInterfaceMap : WKInterfaceObject <WKInterfaceObjectDynamicCreatable>
 {
 }
 
+- (id)interfaceDescriptionForDynamicCreation;
 - (void)removeAllAnnotations;
 - (void)addAnnotation:(struct CLLocationCoordinate2D)arg1 withPinColor:(int)arg2;
 - (void)addAnnotation:(struct CLLocationCoordinate2D)arg1 withImageNamed:(id)arg2 centerOffset:(struct CGPoint)arg3;
 - (void)addAnnotation:(struct CLLocationCoordinate2D)arg1 withImage:(id)arg2 centerOffset:(struct CGPoint)arg3;
 - (void)setRegion:(CDStruct_2b0c6e0b)arg1;
 - (void)setVisibleMapRect:(CDStruct_90e2a262)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

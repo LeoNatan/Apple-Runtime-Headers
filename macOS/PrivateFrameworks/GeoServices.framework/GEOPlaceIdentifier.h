@@ -14,14 +14,16 @@ __attribute__((visibility("hidden")))
 @interface GEOPlaceIdentifier : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    unsigned long long _muid;
     GEOLatLng *_center;
-    CDStruct_e99c65f7 _has;
+    unsigned long long _muid;
+    struct {
+        unsigned int has_muid:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOLatLng *center; // @synthesize center=_center;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,10 +32,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) BOOL hasCenter;
 @property(nonatomic) BOOL hasMuid;
+@property(nonatomic) unsigned long long muid;
 
 @end
 

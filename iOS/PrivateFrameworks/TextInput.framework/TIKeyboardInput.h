@@ -24,6 +24,7 @@
             unsigned int gesture:1;
             unsigned int synthesizedByAcceptingCandidate:1;
             unsigned int doubleSpace:1;
+            unsigned int rapidDelete:1;
         } fields;
     } _flags;
     _Bool _backspace;
@@ -45,6 +46,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic, getter=isRapidDelete) _Bool rapidDelete;
 @property(nonatomic, getter=isDoubleSpace) _Bool doubleSpace;
 @property(nonatomic, getter=isSynthesizedByAcceptingCandidate) _Bool synthesizedByAcceptingCandidate;
 @property(nonatomic, getter=isGesture) _Bool gesture;

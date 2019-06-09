@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     CWMutableNetworkProfile *_profile;
     NSString *_ssidStr;
     NSData *_ssidData;
+    BOOL _wasAutoJoined;
 }
 
+@property BOOL wasAutoJoined; // @synthesize wasAutoJoined=_wasAutoJoined;
 @property(readonly) CWMutableNetworkProfile *profile; // @synthesize profile=_profile;
 @property(readonly) CWNetwork *scanResult; // @synthesize scanResult=_scanResult;
 - (void)dealloc;

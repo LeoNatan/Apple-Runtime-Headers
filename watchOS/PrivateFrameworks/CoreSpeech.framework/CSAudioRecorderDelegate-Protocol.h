@@ -6,13 +6,16 @@
 
 #import <CoreSpeech/NSObject-Protocol.h>
 
-@class AVVCAudioBuffer, CSAudioRecorder, NSData, NSDictionary, NSError;
+@class CSAudioChunkForTV, CSAudioRecorder, NSData, NSDictionary, NSError;
 
 @protocol CSAudioRecorderDelegate <NSObject>
-- (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 buffer:(AVVCAudioBuffer *)arg2;
-- (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 buffer:(NSData *)arg2 remoteVAD:(NSData *)arg3 atTime:(unsigned long long)arg4;
+- (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 audioStreamHandleId:(unsigned int)arg2 buffer:(CSAudioChunkForTV *)arg3;
+- (void)audioRecorderBufferAvailable:(CSAudioRecorder *)arg1 audioStreamHandleId:(unsigned int)arg2 buffer:(NSData *)arg3 remoteVAD:(NSData *)arg4 atTime:(unsigned long long)arg5;
 
 @optional
+- (void)audioRecorderStreamHandleIdInvalidated:(unsigned int)arg1;
+- (void)audioRecorderBuiltInAudioStreamInvalidated:(CSAudioRecorder *)arg1 error:(NSError *)arg2;
+- (void)audioRecorderWillBeDestroyed:(CSAudioRecorder *)arg1;
 - (void)audioRecorderLostMediaserverd:(CSAudioRecorder *)arg1;
 - (void)audioRecorderDisconnected:(CSAudioRecorder *)arg1;
 - (void)voiceTriggerDetectedOnAOP:(NSDictionary *)arg1;
@@ -23,7 +26,7 @@
 - (void)audioRecorderBeginRecordInterruption:(CSAudioRecorder *)arg1;
 - (void)audioRecorderDidFinishAlertPlayback:(CSAudioRecorder *)arg1 ofType:(int)arg2 error:(NSError *)arg3;
 - (void)audioRecorderRecordHardwareConfigurationDidChange:(CSAudioRecorder *)arg1 toConfiguration:(int)arg2;
-- (void)audioRecorderDidStopRecording:(CSAudioRecorder *)arg1 forReason:(int)arg2;
-- (void)audioRecorderDidStartRecording:(CSAudioRecorder *)arg1 successfully:(_Bool)arg2 error:(NSError *)arg3;
+- (void)audioRecorderDidStopRecord:(CSAudioRecorder *)arg1 audioStreamHandleId:(unsigned int)arg2 reason:(int)arg3;
+- (void)audioRecorderDidStartRecord:(CSAudioRecorder *)arg1 audioStreamHandleId:(unsigned int)arg2 successfully:(_Bool)arg3 error:(NSError *)arg4;
 @end
 

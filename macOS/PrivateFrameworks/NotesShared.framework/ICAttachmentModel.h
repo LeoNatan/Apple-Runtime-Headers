@@ -83,7 +83,11 @@
 @property(readonly, nonatomic) BOOL hasThumbnailImage;
 @property(readonly, nonatomic) NSString *hardLinkVersion;
 @property(readonly, nonatomic) NSString *previewImageTypeUTI;
+@property(readonly, nonatomic) BOOL supportsImageClassification;
+@property(readonly, nonatomic) BOOL supportsOCR;
+@property(readonly, nonatomic) BOOL requiresPostProcessing;
 @property(readonly, nonatomic) BOOL needsFullSizePreview;
+@property(readonly, nonatomic) BOOL previewsSupportMultipleAppearances;
 @property(readonly, nonatomic) BOOL hasPreviews;
 - (void)writeMergeableData;
 - (BOOL)mergeWithMergeableData:(id)arg1;

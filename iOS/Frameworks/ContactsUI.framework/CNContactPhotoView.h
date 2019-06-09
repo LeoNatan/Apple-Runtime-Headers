@@ -7,52 +7,58 @@
 #import <UIKit/UIControl.h>
 
 #import <ContactsUI/CNAvatarViewDelegate-Protocol.h>
+#import <ContactsUI/CNPhotoPickerViewControllerDelegate-Protocol.h>
+#import <ContactsUI/CNPresenterDelegate-Protocol.h>
 #import <ContactsUI/QLPreviewControllerDataSource-Protocol.h>
 #import <ContactsUI/QLPreviewControllerDelegate-Protocol.h>
 #import <ContactsUI/UIDropInteractionDelegate-Protocol.h>
 #import <ContactsUI/UIImagePickerControllerDelegate-Protocol.h>
 #import <ContactsUI/UINavigationControllerDelegate-Protocol.h>
 
-@class CNAvatarView, CNMutableContact, NSArray, NSString, PRLikeness, UIButton, UIDropInteraction, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class CNAvatarView, CNContactImage, CNMutableContact, CNPhotoPickerViewController, NSArray, NSString, PRLikeness, UIButton, UIDropInteraction, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol CNContactPhotoViewDelegate, CNPresenterDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CNContactPhotoView : UIControl <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIDropInteractionDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource, CNAvatarViewDelegate>
+@interface CNContactPhotoView : UIControl <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIDropInteractionDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource, CNPhotoPickerViewControllerDelegate, CNAvatarViewDelegate, CNPresenterDelegate>
 {
     _Bool _editing;
+    _Bool _showEditingLabel;
     _Bool _modified;
     _Bool _shouldAllowTakePhotoAction;
     _Bool _prohibitsPersonaFetch;
     _Bool _isAnimatingBounce;
     _Bool _acceptsImageDrop;
     NSArray *_contacts;
+    double _labelAlpha;
     CNAvatarView *_avatarView;
     id <CNPresenterDelegate> _presenterDelegate;
     id <CNContactPhotoViewDelegate> _delegate;
     CNMutableContact *_pendingEditContact;
     PRLikeness *_originalLikeness;
     PRLikeness *_currentLikeness;
-    UIButton *_addPhotoButton;
     UIButton *_editPhotoButton;
-    UIImageView *_attributionImageView;
     NSArray *_variableConstraints;
     UITapGestureRecognizer *_tapGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UIDropInteraction *_dropInteraction;
+    CNPhotoPickerViewController *_photoPicker;
+    CNContactImage *_pendingContactImageToSave;
 }
 
 + (id)supportedPasteboardTypes;
 + (_Bool)requiresConstraintBasedLayout;
++ (id)descriptorForRequiredKeysWithThreeDTouchEnabled:(_Bool)arg1;
++ (id)descriptorForRequiredKeys;
 + (struct CGSize)defaultSize;
+@property(retain, nonatomic) CNContactImage *pendingContactImageToSave; // @synthesize pendingContactImageToSave=_pendingContactImageToSave;
+@property(retain, nonatomic) CNPhotoPickerViewController *photoPicker; // @synthesize photoPicker=_photoPicker;
 @property(nonatomic) _Bool acceptsImageDrop; // @synthesize acceptsImageDrop=_acceptsImageDrop;
 @property(retain, nonatomic) UIDropInteraction *dropInteraction; // @synthesize dropInteraction=_dropInteraction;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(retain, nonatomic) NSArray *variableConstraints; // @synthesize variableConstraints=_variableConstraints;
 @property(nonatomic) _Bool isAnimatingBounce; // @synthesize isAnimatingBounce=_isAnimatingBounce;
-@property(retain, nonatomic) UIImageView *attributionImageView; // @synthesize attributionImageView=_attributionImageView;
 @property(retain, nonatomic) UIButton *editPhotoButton; // @synthesize editPhotoButton=_editPhotoButton;
-@property(retain, nonatomic) UIButton *addPhotoButton; // @synthesize addPhotoButton=_addPhotoButton;
 @property(nonatomic) _Bool prohibitsPersonaFetch; // @synthesize prohibitsPersonaFetch=_prohibitsPersonaFetch;
 @property(retain, nonatomic) PRLikeness *currentLikeness; // @synthesize currentLikeness=_currentLikeness;
 @property(retain, nonatomic) PRLikeness *originalLikeness; // @synthesize originalLikeness=_originalLikeness;
@@ -62,11 +68,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
 @property(readonly, nonatomic) _Bool shouldAllowTakePhotoAction; // @synthesize shouldAllowTakePhotoAction=_shouldAllowTakePhotoAction;
 @property(nonatomic) _Bool modified; // @synthesize modified=_modified;
+@property(nonatomic) _Bool showEditingLabel; // @synthesize showEditingLabel=_showEditingLabel;
+@property(nonatomic) double labelAlpha; // @synthesize labelAlpha=_labelAlpha;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
-- (id)_api_dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
+- (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
 - (_Bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;
 - (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
 - (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
@@ -74,23 +82,31 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id *)arg3;
 - (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2;
 - (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
+- (void)didUpdateContentForAvatarView:(id)arg1;
 - (void)willBeginPreviewInteractionForAvatarView:(id)arg1;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)_bounceSmallPhoto;
 - (void)_presentFullScreenPhoto:(id)arg1;
 - (void)_zoomContactPhoto;
 - (id)previewPath;
-- (void)presentImagePicker:(id)arg1 withStyle:(long long)arg2;
 - (id)_createImagePickerForEditingImageData:(id)arg1 withCropRect:(struct CGRect)arg2;
-- (id)_createImagePicker;
 - (void)imagePickerControllerDidCancel:(id)arg1;
-- (void)saveImagePickerMediaFromInfo:(id)arg1 toContact:(id)arg2 saveToCameraRoll:(_Bool)arg3;
+- (void)saveImagePickerMediaFromInfo:(id)arg1 toContact:(id)arg2;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
-- (void)_presentPhotoEditingSheet;
+- (void)photoPicker:(id)arg1 didUpdatePhotoForContact:(id)arg2 withContactImage:(id)arg3;
+- (void)photoPickerDidCancel:(id)arg1;
+@property(readonly) _Bool isPresentingModalViewController;
+- (void)sender:(id)arg1 dismissViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)sender:(id)arg1 dismissViewController:(id)arg2;
+- (void)sender:(id)arg1 presentViewController:(id)arg2;
+- (void)_presentPhotoPicker;
+- (void)presentPhotoPicker;
+- (_Bool)_isUsingSilhouette;
 - (_Bool)_isUsingCuratedPhoto;
-- (id)_localizedStringForProfileAction:(id)arg1 type:(unsigned long long)arg2;
-- (void)updateAttributionBadge;
-- (void)updatePhotoAndNotifyDelegate:(_Bool)arg1;
+- (void)updatePendingContactWithEditedPropertyItem:(id)arg1;
+- (void)updateEditPhotoButton;
+- (void)updateViewsAndNotifyDelegate:(_Bool)arg1;
+- (void)reloadData;
 - (void)updatePhoto;
 - (void)resetPhoto;
 - (void)paste:(id)arg1;
@@ -103,17 +119,17 @@ __attribute__((visibility("hidden")))
 - (void)disablePhotoTapGesture;
 - (void)setHighlightedFrame:(_Bool)arg1;
 - (_Bool)hasPhoto;
+- (void)saveMetadataContactImageToRecentsForContact:(id)arg1;
 - (void)saveEdits;
-- (void)saveEditsWithPendingContact:(id)arg1;
-- (id)currentImageDataAndCropRect:(struct CGRect *)arg1;
+- (void)saveChangesFromPendingContact:(id)arg1 toContact:(id)arg2;
 - (id)currentImageData;
-- (void)updateConstraints;
 - (void)updateFontSizes;
+- (id)newPendingContactPreservingChangesFrom:(id)arg1;
 @property(readonly, nonatomic) CNMutableContact *mutableContact;
 - (id)contact;
 - (_Bool)isMeContact;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 monogrammerStyle:(long long)arg2 shouldAllowTakePhotoAction:(_Bool)arg3 threeDTouchEnabled:(_Bool)arg4 allowsImageDrops:(_Bool)arg5 imageRenderer:(id)arg6;
+- (id)initWithFrame:(struct CGRect)arg1 monogrammerStyle:(long long)arg2 shouldAllowTakePhotoAction:(_Bool)arg3 threeDTouchEnabled:(_Bool)arg4 contactStore:(id)arg5 allowsImageDrops:(_Bool)arg6 imageRenderer:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

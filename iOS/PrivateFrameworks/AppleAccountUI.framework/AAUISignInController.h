@@ -15,12 +15,17 @@
 {
     NSDictionary *_authenticationResults;
     id <AIDAServiceOwnerProtocol> _serviceOwnersManager;
+    long long _currentStyle;
+    _Bool _canEditUsername;
     _Bool __shouldForceOperation;
+    NSString *_username;
     NSString *_serviceType;
 }
 
 @property(nonatomic, setter=_setShouldForceOperation:) _Bool _shouldForceOperation; // @synthesize _shouldForceOperation=__shouldForceOperation;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
+@property(nonatomic) _Bool canEditUsername; // @synthesize canEditUsername=_canEditUsername;
+@property(copy, nonatomic) NSString *username; // @synthesize username=_username;
 - (void).cxx_destruct;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)signInViewControllerDidCancel:(id)arg1;
@@ -46,6 +51,8 @@
 - (id)_spinnerViewController;
 - (id)_signInViewController;
 - (id)_continueUsingControllerForAccount:(id)arg1 serviceType:(id)arg2 inViewController:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_updateStyleIfNeeded;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)_commonInit;
@@ -54,7 +61,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(nonatomic) __weak id <AAUISignInControllerDelegate> delegate; // @dynamic delegate;
+@property(nonatomic) __weak id <AAUISignInControllerDelegate> delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

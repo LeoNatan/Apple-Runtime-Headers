@@ -11,10 +11,13 @@
 @interface XBApplicationController : NSObject
 {
     FBSDisplayConfiguration *_mainDisplayConfiguration;
+    long long _statusBarOrientation;
 }
 
 + (id)sharedInstance;
+@property(getter=_statusBarOrientation, setter=_setStatusBarOrientation:) long long statusBarOrientation; // @synthesize statusBarOrientation=_statusBarOrientation;
 - (void).cxx_destruct;
+- (void)_updateStatusBarOrientation;
 - (id)launchRequestsForApplication:(id)arg1 withCompatibilityInfo:(id)arg2;
 - (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(CDUnknownBlockType)arg2;
@@ -27,7 +30,9 @@
 - (id)allSplashBoardApplications;
 - (id)_allApplications;
 - (id)_allApplicationsFilteredBySystem:(_Bool)arg1 bySplashBoard:(_Bool)arg2;
+- (void)_deleteLegacyCachesSnapshotPathsIfNeeded;
 - (void)_migrateDataIfNeeded;
+- (void)dealloc;
 - (id)init;
 
 @end

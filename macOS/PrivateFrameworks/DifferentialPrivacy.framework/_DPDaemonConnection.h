@@ -15,6 +15,7 @@
     NSXPCConnection *_daemonConnection;
 }
 
++ (id)daemonAgentConnection;
 + (id)daemonConnection;
 @property(readonly, nonatomic) NSXPCConnection *daemonConnection; // @synthesize daemonConnection=_daemonConnection;
 - (void).cxx_destruct;
@@ -25,6 +26,7 @@
 - (void)recordBitValues:(id)arg1 forKey:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)recordNumbers:(id)arg1 forKey:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)dealloc;
+- (id)initWithServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (id)init;
 
 @end

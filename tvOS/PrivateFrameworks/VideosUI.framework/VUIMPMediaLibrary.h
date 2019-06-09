@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 + (unsigned long long)_connectionStateFromMPMediaLibraryStatus:(long long)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (void)initialize;
 @property(retain, nonatomic) NSOperationQueue *serialOperationQueue; // @synthesize serialOperationQueue=_serialOperationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
 @property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;

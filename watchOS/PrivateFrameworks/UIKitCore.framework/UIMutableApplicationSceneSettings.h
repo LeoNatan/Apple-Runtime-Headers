@@ -14,7 +14,6 @@
 {
 }
 
-- (Class)canvasClass;
 - (_Bool)isUISubclass;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
@@ -32,6 +31,9 @@
 @property(nonatomic) float homeAffordanceOverlayAllowance;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsPortrait;
 @property(nonatomic) float systemMinimumMargin;
+- (void)setDefaultStatusBarHeight:(float)arg1 forOrientation:(int)arg2;
+- (float)defaultStatusBarHeightForOrientation:(int)arg1;
+@property(nonatomic) float statusBarHeight;
 @property(nonatomic) struct CGRect statusBarAvoidanceFrame;
 @property(nonatomic) int statusBarParts;
 @property(nonatomic) struct UIEdgeInsets peripheryInsets;
@@ -41,6 +43,7 @@
 @property(nonatomic) unsigned int deactivationReasons;
 @property(nonatomic) int statusBarStyleOverridesToSuppress;
 @property(nonatomic) _Bool underLock;
+@property(retain, nonatomic) NSString *persistenceIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

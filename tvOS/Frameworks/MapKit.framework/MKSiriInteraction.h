@@ -6,38 +6,44 @@
 
 #import <objc/NSObject.h>
 
-@class MKMapItem, NSTimer;
+@class GEOSearchCategory, MKMapItem, NSString;
 
 @interface MKSiriInteraction : NSObject
 {
     int _action;
     int _target;
     int _resultIndex;
-    int _secondsLeftForNavigationContinueSignal;
     MKMapItem *_mapItem;
-    NSTimer *_timer;
+    GEOSearchCategory *_searchCategory;
+    NSString *_searchQueryString;
 }
 
 + (void)setNavigationHash:(id)arg1;
 + (id)navigationHash;
++ (id)_siriIntentMurmurHash:(id)arg1;
 + (void)generateHashForNavigationURL:(id)arg1;
-@property(nonatomic) int secondsLeftForNavigationContinueSignal; // @synthesize secondsLeftForNavigationContinueSignal=_secondsLeftForNavigationContinueSignal;
-@property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
++ (void)removeRecentIntentWithSearchText:(id)arg1;
++ (void)removeRecentIntentWithPlacemark:(id)arg1;
+@property(retain, nonatomic) NSString *searchQueryString; // @synthesize searchQueryString=_searchQueryString;
+@property(retain, nonatomic) GEOSearchCategory *searchCategory; // @synthesize searchCategory=_searchCategory;
 @property(nonatomic) int resultIndex; // @synthesize resultIndex=_resultIndex;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) int target; // @synthesize target=_target;
 @property(nonatomic) int action; // @synthesize action=_action;
 - (void).cxx_destruct;
-- (void)_sendContinueNavigationIntentToSiri;
+- (void)_navTimerFired:(id)arg1;
 - (_Bool)_isStartNavigationAction:(int)arg1;
 - (id)_whiteListedNavigationActionAsString:(int)arg1;
+- (id)_whiteListedSearchActionAsString:(int)arg1;
+- (id)_whiteListedBrowseCategoryActionAsString:(int)arg1;
 - (id)_whiteListedSiriListActionAsString:(int)arg1;
 - (id)_whiteListedPlaceCardActionAsString:(int)arg1;
 - (_Bool)_isValidTargetForNavUI:(int)arg1;
+- (_Bool)_isIntentDeletable;
+- (id)_siriIntentHash:(id)arg1;
 - (void)donateIfWanted;
 - (id)intentIfWanted;
-- (id)initWithGEOUIAction:(int)arg1 target:(int)arg2 mapItem:(id)arg3 resultIndex:(int)arg4;
-- (id)initWithGEOUIAction:(int)arg1 target:(int)arg2 mapItem:(id)arg3;
+- (id)initWithGEOUIAction:(int)arg1 target:(int)arg2 mapItem:(id)arg3 resultIndex:(int)arg4 searchCategory:(id)arg5 searchQueryString:(id)arg6;
 
 @end
 

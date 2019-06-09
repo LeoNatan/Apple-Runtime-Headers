@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (struct CGSize)_sizeWithHairlineThickening:(_Bool)arg1 renderingEffects:(unsigned int)arg2 forTraitCollection:(id)arg3;
-- (id)_imageWithStylePresets:(id)arg1 withTintColor:(id)arg2;
+- (id)_imageWithStylePresets:(id)arg1 tintColor:(id)arg2 traitCollection:(id)arg3;
 - (id)_imageScaledToProportion:(float)arg1 interpolationQuality:(int)arg2;
 - (id)_doubleBezeledImageWithExteriorShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 interiorShadowRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 fillRed:(float)arg9 green:(float)arg10 blue:(float)arg11 alpha:(float)arg12;
 - (id)_bezeledImageWithShadowRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 fillRed:(float)arg5 green:(float)arg6 blue:(float)arg7 alpha:(float)arg8 drawShadow:(_Bool)arg9;
@@ -40,6 +40,8 @@ __attribute__((visibility("hidden")))
 - (id)images;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)_isSVGVector;
+- (_Bool)_isPDFVector;
 - (id)initWithImages:(id)arg1 duration:(double)arg2;
 - (id)_initWithOtherImage:(id)arg1;
 

@@ -9,16 +9,18 @@
 #import <ContactsUI/CNPickerControllerDelegate-Protocol.h>
 #import <ContactsUI/UITextFieldDelegate-Protocol.h>
 
-@class NSString, UIDatePicker, UIViewController;
+@class CNDatePickerContainerView, NSString, UIDatePicker, UIViewController;
 
 __attribute__((visibility("hidden")))
 @interface CNPropertyDateEditingCell : CNPropertySimpleEditingCell <UITextFieldDelegate, CNPickerControllerDelegate>
 {
     UIDatePicker *_datePicker;
+    CNDatePickerContainerView *_datePickerContainerView;
     UIViewController *_contentViewController;
 }
 
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
+@property(retain, nonatomic) CNDatePickerContainerView *datePickerContainerView; // @synthesize datePickerContainerView=_datePickerContainerView;
 @property(retain, nonatomic) UIDatePicker *datePicker; // @synthesize datePicker=_datePicker;
 - (void).cxx_destruct;
 - (void)regainFocus;
@@ -26,6 +28,8 @@ __attribute__((visibility("hidden")))
 - (void)pickerDidCancel:(id)arg1;
 - (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
+- (void)applyCalendarAndDateToDatePicker;
+- (void)updateValueWithPropertyItem:(id)arg1;
 - (_Bool)_shouldUseYearlessPickerForDateComponents:(id)arg1;
 - (void)dateChanged:(id)arg1;
 - (void)labelButtonClicked:(id)arg1;

@@ -18,6 +18,7 @@
 - (id)init;
 - (id)linksTo:(id)arg1 matchType:(int)arg2 error:(id *)arg3;
 - (void)linksTo:(id)arg1 matchType:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)removeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)unlinkTo:(id)arg1 withPredicate:(id)arg2 ignoreWeights:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)linkTo:(id)arg1 withPredicate:(id)arg2 error:(id *)arg3;
 - (void)linkTo:(id)arg1 withPredicate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

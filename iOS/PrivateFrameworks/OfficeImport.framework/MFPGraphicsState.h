@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 - (void)setPageTransform:(struct CGAffineTransform)arg1;
 - (struct CGAffineTransform)pageTransform;
 - (void)removeTransform:(struct CGAffineTransform)arg1;
-- (void)dealloc;
 - (id)initWithGraphicsState:(id)arg1;
 - (id)initWithDefaults;
 

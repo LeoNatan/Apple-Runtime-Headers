@@ -9,20 +9,24 @@
 #import <AssistantServices/NSCopying-Protocol.h>
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
-@class AFSpeechRecognition;
+@class AFSpeechAudioAnalytics, AFSpeechRecognition;
 
 @interface AFSpeechPackage : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _isFinal;
     AFSpeechRecognition *_recognition;
     AFSpeechRecognition *_rawRecognition;
+    AFSpeechAudioAnalytics *_audioAnalytics;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) _Bool isFinal; // @synthesize isFinal=_isFinal;
+@property(readonly, nonatomic) AFSpeechAudioAnalytics *audioAnalytics; // @synthesize audioAnalytics=_audioAnalytics;
 @property(readonly, nonatomic) AFSpeechRecognition *rawRecognition; // @synthesize rawRecognition=_rawRecognition;
 @property(readonly, nonatomic) AFSpeechRecognition *recognition; // @synthesize recognition=_recognition;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithRecognition:(id)arg1 rawRecognition:(id)arg2;
+- (id)initWithRecognition:(id)arg1 rawRecognition:(id)arg2 audioAnalytics:(id)arg3 isFinal:(_Bool)arg4;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

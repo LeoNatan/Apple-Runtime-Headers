@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)identifier;
 - (void)configureUsingCompletionListItem:(struct CompletionListItem *)arg1 session:(id)arg2;
+- (void)_updateImageView:(id)arg1;
+- (void)_updateImageView:(id)arg1 withSize:(struct CGSize)arg2;
 
 @end
 

@@ -25,8 +25,16 @@
     int _titleLocation;
     float _height;
     float _backButtonMaximumWidth;
+    float _backButtonAlpha;
+    float _leadingBarAlpha;
+    float _trailingBarAlpha;
+    int _preferredContentAlignment;
 }
 
+@property(nonatomic) int preferredContentAlignment; // @synthesize preferredContentAlignment=_preferredContentAlignment;
+@property(nonatomic) float trailingBarAlpha; // @synthesize trailingBarAlpha=_trailingBarAlpha;
+@property(nonatomic) float leadingBarAlpha; // @synthesize leadingBarAlpha=_leadingBarAlpha;
+@property(nonatomic) float backButtonAlpha; // @synthesize backButtonAlpha=_backButtonAlpha;
 @property(nonatomic) _Bool hideTrailingBarButtons; // @synthesize hideTrailingBarButtons=_hideTrailingBarButtons;
 @property(nonatomic) _Bool hideStandardTitle; // @synthesize hideStandardTitle=_hideStandardTitle;
 @property(nonatomic) _Bool hideLeadingBarButtons; // @synthesize hideLeadingBarButtons=_hideLeadingBarButtons;
@@ -39,18 +47,25 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)transitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
-- (void)_transitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
+- (void)_navigationBarTransitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)performTransition:(int)arg1 willBeDisplayed:(_Bool)arg2;
-- (void)_performTransition:(int)arg1 willBeDisplayed:(_Bool)arg2;
+- (void)_performNavigationBarTransition:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)transitionWillBegin:(int)arg1 willBeDisplayed:(_Bool)arg2;
-- (void)_transitionWillBegin:(int)arg1 willBeDisplayed:(_Bool)arg2;
+- (void)_navigationBarTransitionWillBegin:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (void)contentDidChange;
 - (void)_contentDidChange;
 - (_Bool)_wantsTwoPartTransition;
 - (void)preferredContentSizeDidChange;
 - (int)preferredContentSizeForSize:(int)arg1;
 - (int)_preferredContentSizeForSize:(int)arg1;
+@property(readonly, nonatomic) float contentBaseHeight;
+@property(readonly, nonatomic) float contentBaselineOffsetFromTop;
+@property(readonly, nonatomic) CDStruct_b2fbf00d largeTitleHeightRange;
+@property(readonly, nonatomic) float largeTitleHeight;
 @property(readonly, copy, nonatomic) NSArray *contentOverlayRects;
+@property(readonly, nonatomic) float _navigationBarTrailingBarButtonsAlpha;
+@property(readonly, nonatomic) float _navigationBarLeadingBarButtonsAlpha;
+@property(readonly, nonatomic) float _navigationBarBackButtonAlpha;
 @property(readonly, nonatomic) _Bool _hideNavigationBarTrailingBarButtons;
 @property(readonly, nonatomic) _Bool _hideNavigationBarStandardTitle;
 @property(readonly, nonatomic) _Bool _hideNavigationBarLeadingBarButtons;

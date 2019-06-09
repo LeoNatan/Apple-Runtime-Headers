@@ -6,17 +6,21 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class NSLayoutConstraint, UIImageView, UILabel, UILayoutGuide;
+@class CNUINavigationListStyleApplier, NSLayoutConstraint, UIImageView, UILabel, UILayoutGuide;
+@protocol CNUINavigationListStyle;
 
 __attribute__((visibility("hidden")))
 @interface CNUINavigationListViewCell : UITableViewCell
 {
     _Bool _accessoryControlExpanded;
     _Bool _contentViewConstraintsLoaded;
+    _Bool _showSeparator;
     UIImageView *_accessoryImageView;
     UILabel *_subtitleLabel;
     UIImageView *_titleImageView;
     UILabel *_titleLabel;
+    id <CNUINavigationListStyle> _navigationListStyle;
+    CNUINavigationListStyleApplier *_styleApplier;
     NSLayoutConstraint *_contentViewBottomAnchorConstraint;
     NSLayoutConstraint *_subtitleLabelFirstBaselineAnchorConstraint;
     NSLayoutConstraint *_subtitleLabelLeadingAnchorConstraint;
@@ -32,19 +36,9 @@ __attribute__((visibility("hidden")))
 + (id)accessoryImageViewAccessibilityLabel;
 + (id)highlightedDisclosureImage;
 + (id)disclosureImage;
-+ (id)templateDisclosureImage;
-+ (id)expandedBackgroundColor;
-+ (double)titleLabelFirstBaselineAnchorConstraintConstant;
-+ (double)subtitleLabelFirstBaselineAnchorConstraintConstant;
-+ (double)contentViewBottomAnchorConstraintConstant;
 + (id)reuseIdentifier;
-+ (double)desiredContentWidthForTitle:(id)arg1 subTitle:(id)arg2;
-+ (double)minimumContentHeight;
-+ (id)titleFont;
-+ (id)subtitleFont;
-+ (id)subtitleColor;
-+ (id)highlightedBackgroundColor;
-+ (id)backgroundColor;
++ (double)desiredContentWidthForTitle:(id)arg1 subTitle:(id)arg2 titleFont:(id)arg3 subtitleFont:(id)arg4 cellUserActionLeftMargin:(double)arg5;
+@property(nonatomic) _Bool showSeparator; // @synthesize showSeparator=_showSeparator;
 @property(readonly, nonatomic) UILayoutGuide *titleImageViewLayoutGuide; // @synthesize titleImageViewLayoutGuide=_titleImageViewLayoutGuide;
 @property(readonly, nonatomic) UILayoutGuide *accessoryImageViewLayoutGuide; // @synthesize accessoryImageViewLayoutGuide=_accessoryImageViewLayoutGuide;
 @property(retain, nonatomic) NSLayoutConstraint *titleLabelTrailingAnchorConstraint; // @synthesize titleLabelTrailingAnchorConstraint=_titleLabelTrailingAnchorConstraint;
@@ -56,24 +50,31 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomAnchorConstraint; // @synthesize contentViewBottomAnchorConstraint=_contentViewBottomAnchorConstraint;
 @property(nonatomic, getter=isContentViewConstraintsLoaded) _Bool contentViewConstraintsLoaded; // @synthesize contentViewConstraintsLoaded=_contentViewConstraintsLoaded;
 @property(nonatomic, getter=isAccessoryControlExpanded) _Bool accessoryControlExpanded; // @synthesize accessoryControlExpanded=_accessoryControlExpanded;
+@property(retain, nonatomic) CNUINavigationListStyleApplier *styleApplier; // @synthesize styleApplier=_styleApplier;
+@property(retain, nonatomic) id <CNUINavigationListStyle> navigationListStyle; // @synthesize navigationListStyle=_navigationListStyle;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) UIImageView *titleImageView; // @synthesize titleImageView=_titleImageView;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UIImageView *accessoryImageView; // @synthesize accessoryImageView=_accessoryImageView;
 - (void).cxx_destruct;
 - (void)updateVisualStateAnimated:(_Bool)arg1;
-- (void)updateFonts;
 - (void)updateConstraintsConstants;
 - (void)updateConstraints;
 - (void)loadContentViewConstraints;
+- (void)setSeparatorStyle:(long long)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setAccessoryControlExpanded:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)prepareForReuse;
 - (void)setupAccessoryImageViewInView:(id)arg1;
 - (void)loadContentView;
-- (void)viewWillMoveToSuperview:(id)arg1;
+- (void)applyStyle;
+- (void)styleUpdated;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)initWithCoder:(id)arg1;
+- (double)titleLabelFirstBaselineAnchorConstraintConstant;
+- (double)subtitleLabelFirstBaselineAnchorConstraintConstant;
+- (double)contentViewBottomAnchorConstraintConstant;
+- (double)minimumContentHeight;
 
 @end
 

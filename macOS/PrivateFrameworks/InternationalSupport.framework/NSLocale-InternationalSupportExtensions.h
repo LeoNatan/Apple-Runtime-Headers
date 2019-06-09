@@ -10,8 +10,9 @@
 
 @interface NSLocale (InternationalSupportExtensions)
 + (id)_parentLocaleIdentifierForIdentifier:(id)arg1;
-+ (id)_filterLanguageList:(id)arg1 forRegion:(id)arg2 fromLanguages:(id)arg3;
-+ (id)_languagesForRegionWithoutFiltering:(id)arg1;
++ (id)_supportedKeyboardLanguages;
++ (id)_regionLanguageDataForRegionCode:(id)arg1 subdivisionCode:(id)arg2;
++ (id)_languagesForRegion:(id)arg1 subdivision:(id)arg2 withThreshold:(long long)arg3;
 + (id)_languageNameOverrides;
 + (id)_languagesToExemplarStrings;
 + (id)_ICUdisplayNameForLanguage:(id)arg1 capitalization:(struct ULocaleDisplayNames *)arg2;
@@ -24,15 +25,18 @@
 + (id)_displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3 short:(BOOL)arg4;
 + (id)_displayNameForLanguage:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3;
 + (id)languageFromLanguage:(id)arg1 byReplacingRegion:(id)arg2;
++ (id)scriptCodeFromLanguage:(id)arg1;
 + (id)baseLanguageFromLanguage:(id)arg1;
-+ (id)systemLanguagesForRegion:(id)arg1;
++ (id)languagesForRegion:(id)arg1 subdivision:(id)arg2 withThreshold:(long long)arg3 filter:(long long)arg4;
 + (id)supportedRegions;
 + (id)exemplarForLanguage:(id)arg1;
 + (id)supportedLanguages;
 + (id)baseSystemLanguages;
++ (id)_globalPreferredLanguages;
 + (id)deviceLanguage;
 - (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3 short:(BOOL)arg4;
 - (id)displayNameForLanguage:(id)arg1 displayLanguage:(id)arg2 context:(long long)arg3;
+- (id)countryCodeTopLevelDomainsUsingPunycode:(BOOL)arg1;
 - (id)localizedStringForNumberingSystem:(id)arg1 short:(BOOL)arg2;
 @property(readonly, copy) NSArray *availableNumberingSystems;
 @property(readonly, copy) NSString *numberingSystem;

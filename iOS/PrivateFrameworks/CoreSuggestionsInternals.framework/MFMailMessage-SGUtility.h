@@ -7,7 +7,7 @@
 #import <Message/MFMailMessage.h>
 
 @interface MFMailMessage (SGUtility)
-+ (void)_loadMailCoreFramework;
++ (void)sg_loadMailCoreFramework;
 + (id)sg_messageWithRFC822Data:(id)arg1;
 - (id)sg_bestAlternativePart;
 @end

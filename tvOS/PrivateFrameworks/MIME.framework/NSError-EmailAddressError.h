@@ -8,5 +8,11 @@
 
 @interface NSError (EmailAddressError)
 + (id)mf_illegalEmailAddressErrorWithAddress:(id)arg1;
++ (id)mf_decodeFailedErrorWithUserInfo:(id)arg1;
++ (id)mf_timeoutError;
++ (id)mf_cancelledError;
+- (CDUnknownBlockType)mf_match;
+- (_Bool)mf_isTimeoutError;
+- (_Bool)mf_isCancelledError;
 @end
 

@@ -16,16 +16,10 @@
     NSManagedObjectID *_managedObjectID;
 }
 
-+ (id)addressFromABPerson:(id)arg1 distributionIdentifier:(id)arg2;
-+ (id)addressFromABPerson:(id)arg1;
 + (id)addressWithAddressServicesUID:(id)arg1;
 + (id)addressWithMailString:(id)arg1;
 + (id)addressWithURL:(id)arg1;
 + (id)addressWithNoMail;
-+ (id)private_localLikenessMeForEmails:(id)arg1;
-+ (id)private_localLikenessMe;
-+ (BOOL)private_hasMe;
-+ (id)private_localEmailMe;
 @property(retain) NSManagedObjectID *managedObjectID; // @synthesize managedObjectID=_managedObjectID;
 @property(retain) id container; // @synthesize container=_container;
 - (void).cxx_destruct;
@@ -73,7 +67,6 @@
 - (id)initWithMailString:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithAddressServicesUID:(id)arg1;
-- (BOOL)private_isOneOfMyEmails;
 
 @end
 

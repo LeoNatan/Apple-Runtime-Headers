@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)_sendAction;
 - (double)doubleValue;
 - (void)setDoubleValue:(double)arg1;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)initImageCell:(id)arg1;
 

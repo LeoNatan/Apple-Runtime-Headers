@@ -18,7 +18,7 @@
 - (NSData *)bodyDataForMessage:(MCMessage *)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2 fetchIfNotAvailable:(BOOL)arg3 allowPartial:(BOOL)arg4;
 - (NSData *)bodyDataForMessage:(MCMessage *)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
 - (NSData *)headerDataForMessage:(MCMessage *)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
-- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(MCMessage *)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7;
+- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(MCMessage *)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7 skipSignatureVerification:(BOOL)arg8;
 - (NSString *)uniquedString:(NSString *)arg1;
 - (void)flushAllCaches;
 - (void)invalidateMessage:(MCMessage *)arg1;
@@ -33,6 +33,9 @@
 - (void)setColor:(NSColor *)arg1 highlightTextOnly:(BOOL)arg2 forMessages:(NSArray *)arg3;
 - (NSArray *)setJunkMailLevel:(long long)arg1 forMessages:(NSArray *)arg2 trainJunkMailDatabase:(BOOL)arg3 userRecorded:(BOOL)arg4;
 - (void)messageFlagsDidChange:(NSArray *)arg1 flags:(NSDictionary *)arg2;
+- (NSArray *)setPersistenceConversationFlags:(unsigned long long)arg1 forMessages:(NSArray *)arg2;
+- (void)unmuteConversationForMessages:(NSArray *)arg1;
+- (void)muteConversationForMessages:(NSArray *)arg1;
 - (void)setFlagWithKey:(NSString *)arg1 state:(BOOL)arg2 forMessages:(NSArray *)arg3;
 - (void)async_setFlagWithKey:(NSString *)arg1 state:(BOOL)arg2 forMessages:(NSArray *)arg3;
 - (NSArray *)setFlagsFromDictionary:(NSDictionary *)arg1 forMessages:(NSArray *)arg2;
@@ -40,8 +43,6 @@
 - (MCMessage *)messageForMessageID:(NSString *)arg1;
 
 @optional
-- (NSArray *)setGmailLabelsFromDictionary:(NSDictionary *)arg1 forMessages:(NSArray *)arg2;
-- (void)async_setGmailLabelsFromDictionary:(NSDictionary *)arg1 forMessages:(NSArray *)arg2;
 - (void)async_deleteMessages:(NSArray *)arg1 moveToTrash:(BOOL)arg2;
 @end
 

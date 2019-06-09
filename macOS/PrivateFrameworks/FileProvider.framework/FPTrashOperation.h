@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FileProvider/FPActionOperation.h>
+#import <FileProvider/FPTransformOperation.h>
 
-@class NSArray;
-
-@interface FPTrashOperation : FPActionOperation
+@interface FPTrashOperation : FPTransformOperation
 {
-    NSArray *_items;
 }
 
-- (void).cxx_destruct;
+- (id)fp_prettyDescription;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (id)finalItemsForStitcherForResult:(id)arg1;
 - (void)presendNotifications;
-- (void)mainWithExtensionProxy:(id)arg1;
+- (unsigned long long)transformItem:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)subclassPreflightWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithItems:(id)arg1;
 - (id)replicateForItems:(id)arg1;
 

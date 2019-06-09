@@ -7,12 +7,13 @@
 @class NSArray, NSDate, NSString, PPSource;
 
 @protocol PPTopicReadWriteServerProtocol
-- (void)clearWithCompletion:(void (^)(_Bool, NSError *))arg1;
-- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 groupId:(NSString *)arg2 olderThan:(NSDate *)arg3 completion:(void (^)(_Bool, NSError *))arg4;
-- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
-- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 groupIds:(NSArray *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 documentIds:(NSArray *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)deleteAllTopicsWithTopicId:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
-- (void)donateTopics:(NSArray *)arg1 source:(PPSource *)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 completion:(void (^)(_Bool, NSError *))arg6;
+- (void)clearWithCompletion:(void (^)(_Bool, unsigned long long, NSError *))arg1;
+- (void)cloudSyncWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 groupId:(NSString *)arg2 olderThanDate:(NSDate *)arg3 completion:(void (^)(_Bool, unsigned long long, NSError *))arg4;
+- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 completion:(void (^)(_Bool, unsigned long long, NSError *))arg2;
+- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 groupIds:(NSArray *)arg2 completion:(void (^)(_Bool, unsigned long long, NSError *))arg3;
+- (void)deleteAllTopicsFromSourcesWithBundleId:(NSString *)arg1 documentIds:(NSArray *)arg2 completion:(void (^)(_Bool, unsigned long long, NSError *))arg3;
+- (void)deleteAllTopicsWithTopicId:(NSString *)arg1 completion:(void (^)(_Bool, unsigned long long, NSError *))arg2;
+- (void)donateTopics:(NSArray *)arg1 source:(PPSource *)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 sentimentScore:(double)arg5 completion:(void (^)(_Bool, NSError *))arg6;
 @end
 

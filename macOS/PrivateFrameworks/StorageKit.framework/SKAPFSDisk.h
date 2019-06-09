@@ -20,10 +20,14 @@
     unsigned long long _usedSpace;
     unsigned long long _reserveSpace;
     unsigned long long _quotaSpace;
+    NSString *_apfsVolumeGroupUUID;
     NSString *_apfsContainerUUID;
+    NSString *_apfsRole;
 }
 
+@property(retain) NSString *apfsRole; // @synthesize apfsRole=_apfsRole;
 @property(retain) NSString *apfsContainerUUID; // @synthesize apfsContainerUUID=_apfsContainerUUID;
+@property(retain) NSString *apfsVolumeGroupUUID; // @synthesize apfsVolumeGroupUUID=_apfsVolumeGroupUUID;
 @property BOOL defaultEffaceable; // @synthesize defaultEffaceable=_defaultEffaceable;
 @property BOOL isConvertingToDecrypted; // @synthesize isConvertingToDecrypted=_isConvertingToDecrypted;
 @property BOOL isConvertingToEncrypted; // @synthesize isConvertingToEncrypted=_isConvertingToEncrypted;
@@ -61,9 +65,12 @@
 - (BOOL)iCloudRecoveryManageFDEUsers:(struct _PCSIdentityData *)arg1 addingUsers:(id)arg2 removingUsers:(id)arg3 handlingProgress:(CDUnknownBlockType)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
 - (BOOL)manageFDEUsersWithPassword:(id)arg1 addingUsers:(id)arg2 removingUsers:(id)arg3 resettingUserPasswords:(id)arg4 handlingProgress:(CDUnknownBlockType)arg5 withCompletionBlock:(CDUnknownBlockType)arg6;
 - (BOOL)manageFDEUsersWithPassword:(id)arg1 addingUsers:(id)arg2 removingUsers:(id)arg3 handlingProgress:(CDUnknownBlockType)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
+- (id)getAPFSVolumeRole;
+- (void)setAPFSVolumeRole:(id)arg1;
 - (id)getFDEUserDictionaries;
 - (id)getFDEUsers;
 @property(readonly, copy) NSString *description;
+- (BOOL)matchesDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)minimalDictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;

@@ -9,6 +9,7 @@
 @class NSObject, NSURLRequest, SKUIClientContext, SSMetricsPageEvent;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface SKUILoadProductPageOperation : NSOperation
 {
     SKUIClientContext *_clientContext;

@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSPersistentHistoryToken, NSPersistentStoreCoordinator;
+@class NSPersistentHistoryToken, NSPersistentStoreCoordinator, PLCoreDataChangeMerger;
 @protocol OS_dispatch_queue;
 
 @interface PLPersistentHistoryChangeDistributor : NSObject
 {
     NSPersistentStoreCoordinator *_persistentStoreCoordinator;
+    PLCoreDataChangeMerger *_changeMerger;
     NSObject<OS_dispatch_queue> *_notifyQueue;
     NSPersistentHistoryToken *_lastToken;
     int _notifyToken;
@@ -29,7 +30,7 @@
 - (void)_inq_startObservingRemoteNotifications;
 - (void)startObservingRemoteNotifications;
 - (void)dealloc;
-- (id)initWithPersistentStoreCoordinator:(id)arg1;
+- (id)initWithPersistentStoreCoordinator:(id)arg1 changeMerger:(id)arg2;
 
 @end
 

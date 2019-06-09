@@ -6,17 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectContext, NSString;
+@class NSManagedObjectContext, NSPersistentStoreCoordinator, NSPersistentStoreDescription, NSString;
 
 @interface NSCoreDataCoreSpotlightDelegate : NSObject
 {
-    NSManagedObjectContext *_context;
+    NSPersistentStoreCoordinator *_coordinator;
+    NSPersistentStoreDescription *_description;
+    NSString *_storeIdentifier;
+    NSManagedObjectContext *_context__;
     NSString *_domainIdentifier;
     NSString *_indexName;
+    NSString *_bundleIdentifier;
+    NSString *_protectionClass;
+    int _enabled;
+    BOOL _supportsPersistentHistory;
+    BOOL _usesSharedCoordinatorStack;
 }
 
 - (id)_lastImportedTransaction;
 - (BOOL)_initialImportCompleted;
+- (void)_initializePersistentStore;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(CDUnknownBlockType)arg3;
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)_catchUpToCurrentTransaction;
@@ -33,9 +42,18 @@
 - (id)_processedOidsForSaveRequest:(id)arg1;
 - (id)_processedOidsForDictionary:(id)arg1;
 - (void)dealloc;
+- (void)_invalidate;
 - (id)initForStoreWithDescription:(id)arg1 model:(id)arg2;
 - (id)indexName;
 - (id)domainIdentifier;
+- (id)_retainedCurrentSearchableIndex;
+- (void)_asyncContextBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSManagedObjectContext *_context;
+- (void)stopSpotlightIndexing;
+- (void)startSpotlightIndexing;
+- (id)protectionClass;
+- (id)bundleIdentifier;
+- (id)initForStoreWithDescription:(id)arg1 coordinator:(id)arg2;
 
 @end
 

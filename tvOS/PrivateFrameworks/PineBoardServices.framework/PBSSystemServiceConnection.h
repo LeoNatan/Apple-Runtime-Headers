@@ -8,12 +8,13 @@
 
 #import <PineBoardServices/PBSystemServiceClientInterface-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSXPCConnection, PBSDisplayManagerServiceProxy, PBSMediaRemoteServiceProxy, PBSSystemServiceProxy, PBSUserPresentationServiceProxy, PBSVideoSubscriberAccountServiceProxy;
+@class NSMutableDictionary, NSString, NSXPCConnection, PBSAppInfoServiceProxy, PBSDisplayManagerServiceProxy, PBSMediaRemoteServiceProxy, PBSPictureInPictureServiceProxy, PBSSystemServiceProxy, PBSUserPresentationServiceProxy, PBSVideoSubscriberAccountServiceProxy;
 @protocol PBSAirPlayServiceInterface, PBSBulletinServiceInterface, PBSDiagnosticLogsServiceInterface, PBSOSUpdateServiceInterface, PBSRestrictionServiceInterface;
 
 @interface PBSSystemServiceConnection : NSObject <PBSystemServiceClientInterface>
 {
     id <PBSAirPlayServiceInterface> _airplayServiceProxy;
+    PBSAppInfoServiceProxy *_appInfoServiceProxy;
     id <PBSBulletinServiceInterface> _bulletinServiceProxy;
     id <PBSDiagnosticLogsServiceInterface> _diagnosticLogsServiceProxy;
     PBSMediaRemoteServiceProxy *_mediaRemoteServiceProxy;
@@ -23,6 +24,7 @@
     PBSUserPresentationServiceProxy *_userPresentationServiceProxy;
     PBSVideoSubscriberAccountServiceProxy *_videoSubscriberAccountServiceProxy;
     PBSDisplayManagerServiceProxy *_displayManagerServiceProxy;
+    PBSPictureInPictureServiceProxy *_pictureInPictureServiceProxy;
     NSMutableDictionary *_proxyAccessGroupsByName;
     _Bool _valid;
     NSXPCConnection *_connection;
@@ -42,13 +44,9 @@
 - (id)_createProxyAccessGroupForServiceName:(id)arg1;
 - (void)_updateServiceProxyHandle:(id *)arg1 forService:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)_setupXPCConnection;
-- (void)prepareForDefaultKioskAppTransitionWithCompletion:(CDUnknownBlockType)arg1;
-- (void)startDefaultKioskAppTransitionForType:(long long)arg1 animationDuration:(double)arg2 animationFence:(id)arg3 delay:(double)arg4;
-- (void)startDefaultKioskAppTransitionWithAnimationFence:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)prepareDefaultKioskAppTransitionForType:(long long)arg1 animationDuration:(double)arg2 delay:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)defaultKioskAppPurgeTopShelfContentForApplicationIdentifiers:(id)arg1;
-- (void)defaultKioskAppHandleHomeButtonWithCompletion:(CDUnknownBlockType)arg1;
 - (void)listen;
+- (id)pictureInPictureServiceProxy;
 - (id)displayManagerServiceProxy;
 - (id)videoSubscriberAccountServiceProxy;
 - (id)userPresentationServiceProxy;
@@ -58,6 +56,7 @@
 - (id)osUpdateServiceProxy;
 - (id)diagnosticLogsServiceProxy;
 - (id)bulletinServiceProxy;
+- (id)appInfoServiceProxy;
 - (id)systemServiceProxy;
 - (id)_init;
 - (id)init;

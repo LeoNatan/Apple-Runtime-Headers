@@ -24,9 +24,7 @@
 - (void)_handleActivityEvents:(id)arg1 usingTimeZone:(id)arg2 fromBackward:(BOOL)arg3;
 - (void)fetchForward;
 - (void)fetchBackward;
-- (void)loadMore;
-- (id)loadRangeValue;
-- (id)loadRangeValueItems;
+- (void)loadMoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fail;
 - (void)finish;
 - (void)stop;

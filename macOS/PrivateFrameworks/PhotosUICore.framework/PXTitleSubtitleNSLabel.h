@@ -37,6 +37,7 @@
 - (void)_invalidateLayerPromise;
 - (BOOL)mouseDownCanMoveWindow;
 - (void)layout;
+- (struct CGRect)contentBounds;
 - (void)forceTextRendering;
 - (void)_configureLayerPromise:(id)arg1;
 - (double)preferredHeightForWidth:(double)arg1;

@@ -8,6 +8,7 @@
 
 @class AVTrimView;
 
+__attribute__((visibility("hidden")))
 @interface AVTrimIndicatorAccessibilityElement : NSObject
 {
     AVTrimView *_trimView;

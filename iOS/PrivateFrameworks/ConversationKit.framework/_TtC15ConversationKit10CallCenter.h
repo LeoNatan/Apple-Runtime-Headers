@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit10CallCenter : NSObject
 {
     // Error parsing type: , name: tuCallCenter

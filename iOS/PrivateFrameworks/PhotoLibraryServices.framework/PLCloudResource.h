@@ -6,17 +6,15 @@
 
 #import <PhotoLibraryServices/PLManagedObject.h>
 
-#import <PhotoLibraryServices/PLCloudResource-Protocol.h>
+#import <PhotoLibraryServices/PLCloudResourceCommon-Protocol.h>
+#import <PhotoLibraryServices/PLResourceAvailabilityMarking-Protocol.h>
 
 @class CPLScopedIdentifier, NSDate, NSManagedObjectID, NSString, PLCloudMaster, PLManagedAsset;
 
-@interface PLCloudResource : PLManagedObject <PLCloudResource>
+@interface PLCloudResource : PLManagedObject <PLCloudResourceCommon, PLResourceAvailabilityMarking>
 {
 }
 
-+ (id)nonOriginalResourceTypes;
-+ (id)originalResourceTypes;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (_Bool)_countOfLocalCloudResourcesOfType:(unsigned long long)arg1 inManagedObjectContext:(id)arg2 forMediumSized:(_Bool)arg3 localCount:(unsigned long long *)arg4 unavailableCount:(unsigned long long *)arg5 error:(id *)arg6;
 + (_Bool)countOfLocalCloudResourcesOfType:(unsigned long long)arg1 inManagedObjectContext:(id)arg2 localCount:(unsigned long long *)arg3 unavailableCount:(unsigned long long *)arg4 error:(id *)arg5;
@@ -24,14 +22,14 @@
 + (id)purgeablePushedCloudResourcePredicateForResourceTypes:(id)arg1 urgency:(long long)arg2;
 + (id)purgeableUploadedCloudResourcePredicateForResourceTypes:(id)arg1 urgency:(long long)arg2;
 + (id)prunePurgeablePredicateForResourceTypes:(id)arg1 urgency:(long long)arg2;
-+ (unsigned long long)bytesNeededToDownloadOriginalResourcesInLibrary:(id)arg1;
++ (unsigned long long)bytesForAllResourcesInLibrary:(id)arg1;
 + (void)resetPrefetchStateForResourcesWithResourceType:(long long)arg1 itemIdentifiers:(id)arg2 inLibrary:(id)arg3;
-+ (void)resetCloudResourcesStateForCloudInManagedObjectContext:(id)arg1 hardReset:(_Bool)arg2;
 + (id)nonLocalResourcesInManagedObjectContext:(id)arg1 forAssetUUIDs:(id)arg2 cplResourceTypes:(id)arg3;
 + (id)duplicateCloudResource:(id)arg1 forAsset:(id)arg2 withFilePath:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)insertIntoPhotoLibrary:(id)arg1 forAsset:(id)arg2 withCPLResource:(id)arg3 adjusted:(_Bool)arg4 withCreationDate:(id)arg5;
 - (void)markAsNotLocallyAvailable;
 - (void)markAsLocallyAvailableWithFilePath:(id)arg1;
+@property(readonly, nonatomic) unsigned int resourceRecipeID;
 @property(readonly, retain, nonatomic) NSString *utiString;
 @property(readonly, nonatomic) unsigned long long sourceCplType;
 @property(readonly, nonatomic) unsigned long long cplType;
@@ -40,9 +38,8 @@
 @property(nonatomic) short prefetchCount; // @dynamic prefetchCount;
 @property(retain, nonatomic) NSDate *lastPrefetchDate; // @dynamic lastPrefetchDate;
 @property(nonatomic) _Bool isLocallyAvailable; // @dynamic isLocallyAvailable;
-- (void)createSidecarFileForMasterAssetIfNeeded:(id)arg1;
 - (id)cplResourceIncludeFile:(_Bool)arg1;
-@property(readonly, retain, nonatomic) CPLScopedIdentifier *scopedIdentifier;
+@property(readonly, nonatomic) CPLScopedIdentifier *scopedIdentifier;
 - (void)_duplicatePropertiesFromCloudResource:(id)arg1 withFilePath:(id)arg2 forAssetUuid:(id)arg3;
 - (void)applyPropertiesFromCloudResource:(id)arg1;
 @property(readonly, copy) NSString *description;

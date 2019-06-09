@@ -56,7 +56,6 @@
 - (id)allPeople;
 @property(retain) ABAddressBook *targetAddressBook;
 - (void)setMeCard:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1;
 

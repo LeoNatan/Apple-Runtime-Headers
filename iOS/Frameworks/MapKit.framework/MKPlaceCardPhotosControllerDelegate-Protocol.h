@@ -6,12 +6,15 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@class MKPlacePhotosViewController, NSString;
+@class MKMapItem, MKMuninView, MKPlacePhotosViewController, NSString;
 
 @protocol MKPlaceCardPhotosControllerDelegate <NSObject>
 
 @optional
+- (void)placeCardPhotosController:(MKPlacePhotosViewController *)arg1 enterMuninForMapItem:(MKMapItem *)arg2 muninView:(MKMuninView *)arg3;
 - (_Bool)shouldUseSmallPhotosWithPhotosController:(MKPlacePhotosViewController *)arg1;
+- (void)placeCardPhotosControllerDidCloseFullscreenPhotos:(MKPlacePhotosViewController *)arg1;
+- (void)placeCardPhotosControllerDidOpenFullscreenPhotos:(MKPlacePhotosViewController *)arg1;
 - (void)placeCardPhotosController:(MKPlacePhotosViewController *)arg1 didSelectViewPhotoWithID:(NSString *)arg2;
 @end
 

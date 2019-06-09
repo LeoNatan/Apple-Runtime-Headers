@@ -14,7 +14,7 @@
 @property(nonatomic) _Bool trackedLocationSensitive; // @synthesize trackedLocationSensitive=_trackedLocationSensitive;
 - (void)refreshLocalLocation;
 - (void)resumeWithCompletionWithTrackedLocationSensitivity:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)initWithObserver:(id)arg1;
+- (id)initWithDelegate:(id)arg1;
 
 @end
 

@@ -11,11 +11,9 @@
 @class ML3MusicLibrary, NSMutableArray, NSMutableOrderedSet, NSString;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface ML3LibraryNotificationManager : NSObject <MSVDistributedNotificationObserverDelegate>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
-    NSString *_libraryPath;
     NSMutableArray *_notificationObservers;
     NSMutableOrderedSet *_queuedLocalNotifications;
     NSMutableOrderedSet *_queuedDistributedNotificationNames;

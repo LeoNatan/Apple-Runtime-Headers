@@ -16,6 +16,13 @@
 {
     unsigned long long _stack;
     NSObject<OS_dispatch_queue> *_queue;
+    struct {
+        long long version;
+        void *info;
+        CDUnknownFunctionPointerType retain;
+        CDUnknownFunctionPointerType release;
+        CDUnknownFunctionPointerType copyDescription;
+    } _networkReachabilityContext;
     struct __SCNetworkReachability *_reachability;
     int _iCloudDriveReachabilityToken;
     unsigned int _reachabilityFlags;

@@ -11,8 +11,8 @@
 #import <ImageKit/NSTableViewDataSource-Protocol.h>
 #import <ImageKit/NSTableViewDelegate-Protocol.h>
 
-@class ICCameraDevice, IKCameraBackgroundView, IKCameraDeviceView, IKCameraResourceHandler, IKCameraTableView, IKNStatusView, IKPathPopupButton, NSArray, NSArrayController, NSCollectionView, NSCollectionViewItem, NSMenu, NSMutableArray, NSMutableIndexSet, NSProgressIndicator, NSString, NSURL, NSView;
-@protocol IKCameraDeviceViewDelegate><ICCameraDeviceDelegate, OS_dispatch_source;
+@class ICCameraDevice, IKCameraBackgroundView, IKCameraDeviceView, IKCameraResourceHandler, IKCameraTableView, IKNStatusView, IKPathPopupButton, NSArray, NSArrayController, NSCollectionView, NSCollectionViewItem, NSMenu, NSMutableArray, NSMutableIndexSet, NSOperationQueue, NSProgressIndicator, NSSet, NSString, NSURL, NSView;
+@protocol IKCameraDeviceViewDelegate><ICCameraDeviceDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface IKCameraDeviceViewHandler : NSObject <ICCameraDeviceDelegate, NSTableViewDelegate, NSTableViewDataSource, NSCollectionViewDelegateFlowLayout>
@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     NSArrayController *_cameraItemsController;
     NSArray *_sortDescriptors;
     IKNStatusView *_tableViewStatus;
+    IKNStatusView *_iconViewStatus;
     id _delegate;
     long long _displayMode;
     BOOL _hasDisplayModeSummary;
@@ -101,8 +102,18 @@ __attribute__((visibility("hidden")))
     struct _opaque_pthread_mutex_t _cameraItemsLock;
     NSObject<OS_dispatch_source> *_arrangeTimer;
     double _timerStart;
+    NSMutableArray *_mediaFiles;
+    NSSet *_indexPathsOfItemsBeingDragged;
+    NSMutableIndexSet *_indexesOfItemsDownloadedDuringDrag;
+    NSOperationQueue *_oQueue;
+    NSObject<OS_dispatch_queue> *_oDispatchQueue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *oDispatchQueue; // @synthesize oDispatchQueue=_oDispatchQueue;
+@property(retain) NSOperationQueue *oQueue; // @synthesize oQueue=_oQueue;
+@property(retain) NSMutableIndexSet *indexesOfItemsDownloadedDuringDrag; // @synthesize indexesOfItemsDownloadedDuringDrag=_indexesOfItemsDownloadedDuringDrag;
+@property(copy) NSSet *indexPathsOfItemsBeingDragged; // @synthesize indexPathsOfItemsBeingDragged=_indexPathsOfItemsBeingDragged;
+@property(retain) NSMutableArray *mediaFiles; // @synthesize mediaFiles=_mediaFiles;
 @property(copy) NSString *deleteButtonToolTip; // @synthesize deleteButtonToolTip=_deleteButtonToolTip;
 @property IKCameraResourceHandler *resourceHandler; // @synthesize resourceHandler=_resourceHandler;
 @property NSArrayController *cameraItemsController; // @synthesize cameraItemsController=_cameraItemsController;
@@ -155,33 +166,6 @@ __attribute__((visibility("hidden")))
 @property BOOL cameraDeviceHasOpenSession; // @synthesize cameraDeviceHasOpenSession=_cameraDeviceHasOpenSession;
 @property(nonatomic) ICCameraDevice *cameraDevice; // @synthesize cameraDevice=_cameraDevice;
 @property id <IKCameraDeviceViewDelegate><ICCameraDeviceDelegate> delegate; // @synthesize delegate=_delegate;
-- (BOOL)shouldDownloadResource:(id)arg1;
-- (void)didReceiveDownloadProgressForFile:(id)arg1 downloadedBytes:(long long)arg2 maxBytes:(long long)arg3;
-- (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void *)arg4;
-- (BOOL)performDragOperation:(id)arg1;
-- (unsigned long long)draggingUpdated:(id)arg1;
-- (unsigned long long)draggingEntered:(id)arg1;
-- (id)tableView:(id)arg1 namesOfPromisedFilesDroppedAtDestination:(id)arg2 forDraggedRowsWithIndexes:(id)arg3;
-- (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
-- (id)dragTypes;
-- (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
-- (id)fileNamesForDropDestination:(id)arg1;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
-- (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
-- (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)collectionView:(id)arg1 pasteboardWriterForItemAtIndexPath:(id)arg2;
-- (void)collectionView:(id)arg1 didDeselectItemsAtIndexPaths:(id)arg2;
-- (void)collectionView:(id)arg1 didSelectItemsAtIndexPaths:(id)arg2;
-- (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
-- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-- (void)tableView:(id)arg1 cellClicked:(id)arg2 row:(long long)arg3;
-- (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
-- (void)tableView:(id)arg1 sortDescriptorsDidChange:(id)arg2;
-- (void)tableViewSelectionDidChange:(id)arg1;
-- (void)tableViewDoubleClicked:(id)arg1;
-- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
-- (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
-- (long long)numberOfRowsInTableView:(id)arg1;
 - (void)windowBackingPropertiesChanged:(id)arg1;
 - (void)windowStateDeactivate:(id)arg1;
 - (void)windowStateActivate:(id)arg1;
@@ -193,8 +177,8 @@ __attribute__((visibility("hidden")))
 - (void)appWillQuit:(id)arg1;
 - (void)forceItemUpdate:(id)arg1;
 - (void)updateAllItems;
+- (void)tagDownloadComplete:(id)arg1;
 - (void)updateItemDisplay:(id)arg1;
-- (void)reloadCellsInIndexSet:(id)arg1;
 - (void)reloadData;
 - (id)finalDownloadsDirectory;
 - (BOOL)allowDeleteAfterDownload;
@@ -205,6 +189,7 @@ __attribute__((visibility("hidden")))
 - (void)subfolderChanged;
 - (void)addTroubleShootingInfo:(id)arg1;
 - (void)doCheckItemsInDownloadDirectory;
+- (void)updateIKCollectionViewItemAtIndex:(unsigned long long)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)checkItemsInDownloadDirectory;
 - (void)fileCheck:(id)arg1 path:(id)arg2;
 - (void)menuNeedsUpdate:(id)arg1;
@@ -245,7 +230,7 @@ __attribute__((visibility("hidden")))
 - (void)setMode:(long long)arg1;
 - (void)didRemoveItems:(id)arg1;
 - (id)addItemsFromArray:(id)arg1;
-- (long long)indexOfICCameraFile:(id)arg1;
+- (unsigned long long)cameraItemIndex:(id)arg1;
 - (void)notifyDelegateAboutAddedItems:(id)arg1;
 - (id)itemCountSelectionString;
 - (id)itemCountString;
@@ -253,6 +238,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) long long itemCount;
 @property(readonly) long long selectionCount;
 - (id)mediaController;
+- (void)setupEmptyView;
 - (void)setupView;
 - (void)setupIconView;
 - (void)setupTableView;
@@ -270,16 +256,50 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)cleanup;
 - (id)initWithIKCameraDeviceView:(id)arg1;
+- (id)dragTypes;
+- (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)operationQueueForFilePromiseProvider:(id)arg1;
+- (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
+- (id)collectionView:(id)arg1 pasteboardWriterForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didDeselectItemsAtIndexPaths:(id)arg2;
+- (void)collectionView:(id)arg1 didSelectItemsAtIndexPaths:(id)arg2;
+- (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 willDisplayItem:(id)arg2 forRepresentedObjectAtIndexPath:(id)arg3;
+- (void)updateIconView:(id)arg1 forIndex:(unsigned long long)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)collectionView:(id)arg1 draggingSession:(id)arg2 endedAtPoint:(struct CGPoint)arg3 dragOperation:(unsigned long long)arg4;
+- (void)collectionView:(id)arg1 draggingSession:(id)arg2 willBeginAtPoint:(struct CGPoint)arg3 forItemsAtIndexPaths:(id)arg4;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (BOOL)shouldDownloadResource:(id)arg1;
+- (void)didReceiveDownloadProgressForFile:(id)arg1 downloadedBytes:(long long)arg2 maxBytes:(long long)arg3;
+- (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void *)arg4;
+- (BOOL)performDragOperation:(id)arg1;
+- (unsigned long long)draggingUpdated:(id)arg1;
+- (unsigned long long)draggingEntered:(id)arg1;
+- (id)tableView:(id)arg1 namesOfPromisedFilesDroppedAtDestination:(id)arg2 forDraggedRowsWithIndexes:(id)arg3;
+- (BOOL)tableView:(id)arg1 writeRowsWithIndexes:(id)arg2 toPasteboard:(id)arg3;
+- (void)tableView:(id)arg1 cellClicked:(id)arg2 row:(long long)arg3;
+- (BOOL)tableView:(id)arg1 shouldTrackCell:(id)arg2 forTableColumn:(id)arg3 row:(long long)arg4;
+- (void)tableView:(id)arg1 sortDescriptorsDidChange:(id)arg2;
+- (BOOL)selectionShouldChangeInTableView:(id)arg1;
+- (void)tableViewSelectionDidChange:(id)arg1;
+- (void)tableViewDoubleClicked:(id)arg1;
+- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
+- (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
+- (long long)numberOfRowsInTableView:(id)arg1;
 - (void)cameraDevice:(id)arg1 didRenameItems:(id)arg2;
 - (void)cameraDevice:(id)arg1 didReceiveMetadataForItem:(id)arg2;
-- (void)cameraDevice:(id)arg1 didReceiveThumbnailForItem:(id)arg2;
-- (void)cameraDeviceDidChangeCapability:(id)arg1;
 - (void)cameraDevice:(id)arg1 didCompleteDeleteFilesWithError:(id)arg2;
-- (void)cameraDevice:(id)arg1 didRemoveItem:(id)arg2;
 - (void)cameraDevice:(id)arg1 didRemoveItems:(id)arg2;
 - (void)updateSelectionIndexes;
-- (void)cameraDevice:(id)arg1 didAddItems:(id)arg2;
+- (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)operationQueueForFilePromiseProvider:(id)arg1;
+- (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
 - (void)cameraDevice:(id)arg1 didAddItem:(id)arg2;
+- (void)cameraDeviceDidChangeCapability:(id)arg1;
+- (void)cameraDevice:(id)arg1 didRemoveItem:(id)arg2;
+- (void)cameraDevice:(id)arg1 didReceiveThumbnailForItem:(id)arg2;
+- (void)cameraDevice:(id)arg1 didAddItems:(id)arg2;
 - (void)deviceWillEjectOrDisconnect:(id)arg1;
 - (void)device:(id)arg1 didEncounterError:(id)arg2;
 - (void)device:(id)arg1 didReceiveNotification:(id)arg2;

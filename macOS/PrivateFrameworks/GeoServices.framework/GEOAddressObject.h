@@ -28,6 +28,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)rawBytes;
 - (id)phoneticLocaleIdentifier;
+@property(readonly, nonatomic) NSString *displayLanguage;
 @property(readonly, nonatomic) int knownAccuracy;
 @property(readonly, nonatomic) BOOL hasKnownAccuracy;
 - (id)titlesForMapRect:(CDStruct_90e2a262)arg1;

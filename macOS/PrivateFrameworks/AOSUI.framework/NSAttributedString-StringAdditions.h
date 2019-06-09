@@ -7,6 +7,10 @@
 #import <Foundation/NSAttributedString.h>
 
 @interface NSAttributedString (StringAdditions)
++ (id)hyperlinkFromString:(id)arg1 withURL:(id)arg2 andAttributesArray:(id)arg3;
++ (id)attributedStringWithString:(id)arg1 enabled:(BOOL)arg2;
++ (id)inlineLinkAttributedString:(id)arg1 target:(id)arg2;
 - (id)attributedStringWithAddedLinks;
+- (id)inlineButtonTitleAttributedString;
 @end
 

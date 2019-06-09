@@ -28,6 +28,7 @@
     NSString *_name;
     double _connectionTimeoutInterval;
     CATRemoteConnectionSocketOptions *_socketOptions;
+    NSArray *_customTrustEvaluationPolicies;
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     unsigned long long _bufferSize;
@@ -38,6 +39,7 @@
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(retain, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(retain, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
+@property(copy, nonatomic) NSArray *customTrustEvaluationPolicies; // @synthesize customTrustEvaluationPolicies=_customTrustEvaluationPolicies;
 @property(copy, nonatomic) CATRemoteConnectionSocketOptions *socketOptions; // @synthesize socketOptions=_socketOptions;
 @property(nonatomic) double connectionTimeoutInterval; // @synthesize connectionTimeoutInterval=_connectionTimeoutInterval;
 @property(nonatomic) BOOL usesSSL; // @synthesize usesSSL=_usesSSL;
@@ -73,14 +75,15 @@
 - (void)connectionTimedOut;
 - (void)configureStreamSocketOptions;
 - (void)trustDecisionDidRespondWithDecisionToAllowUntrustedConnection:(BOOL)arg1;
+- (int)applyCustomEvaluationPoliciesToTrust:(struct __SecTrust *)arg1;
 - (void)tryEvaluatingPeerTrustWithStream:(id)arg1;
-- (BOOL)secureUsingIdentity:(struct OpaqueSecIdentityRef *)arg1 trustedCertificates:(id)arg2 isServer:(BOOL)arg3;
+- (BOOL)secureUsingIdentity:(struct __SecIdentity *)arg1 trustedCertificates:(id)arg2 isServer:(BOOL)arg3;
 - (void)unscheduleStreams;
 - (void)scheduleStreams;
 - (void)close;
 - (void)open;
-- (void)secureUsingServerIdentity:(struct OpaqueSecIdentityRef *)arg1 trustedCertificates:(id)arg2;
-- (void)secureUsingClientIdentity:(struct OpaqueSecIdentityRef *)arg1 trustedCertificates:(id)arg2;
+- (void)secureUsingServerIdentity:(struct __SecIdentity *)arg1 trustedCertificates:(id)arg2;
+- (void)secureUsingClientIdentity:(struct __SecIdentity *)arg1 trustedCertificates:(id)arg2;
 - (void)sendDataWithStream:(id)arg1 length:(unsigned long long)arg2 userInfo:(id)arg3;
 - (void)sendData:(id)arg1 userInfo:(id)arg2;
 @property(readonly, copy) NSString *description;

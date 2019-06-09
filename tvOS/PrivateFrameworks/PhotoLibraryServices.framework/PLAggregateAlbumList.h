@@ -20,6 +20,7 @@
 
 + (struct NSObject *)albumListWithFilter:(int)arg1 inPhotoLibrary:(id)arg2;
 @property(nonatomic) int filter; // @synthesize filter=_filter;
+- (void).cxx_destruct;
 - (id)containersRelationshipName;
 - (_Bool)canEditContainers;
 - (_Bool)isEmpty;

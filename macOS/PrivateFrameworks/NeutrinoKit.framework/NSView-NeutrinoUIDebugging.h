@@ -7,6 +7,7 @@
 #import <AppKit/NSView.h>
 
 @interface NSView (NeutrinoUIDebugging)
++ (void)_recurseView:(id)arg1 filter:(CDUnknownBlockType)arg2;
 - (id)nu_snapshot;
 - (void)nu_debugHighlightView:(id)arg1;
 - (id)nu_viewRecursiveDescription;

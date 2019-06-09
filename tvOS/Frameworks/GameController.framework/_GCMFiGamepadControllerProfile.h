@@ -4,24 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GameController/_GCGamepad.h>
+#import <GameController/GCGamepad.h>
 
 #import <GameController/_GCACHomeButtonDelegate-Protocol.h>
 
-@class GCMotion, NSString, _GCACHomeButton;
+@class NSString, _GCACHomeButton;
 
-@interface _GCMFiGamepadControllerProfile : _GCGamepad <_GCACHomeButtonDelegate>
+@interface _GCMFiGamepadControllerProfile : GCGamepad <_GCACHomeButtonDelegate>
 {
     _GCACHomeButton *_acHome;
-    GCMotion *_motion;
 }
 
 - (void).cxx_destruct;
 - (id)menuButton;
 - (void)toggleSuspendResume;
-- (id)inputForElement:(struct __IOHIDElement *)arg1;
-- (void)set_motion:(id)arg1;
-- (id)motion;
 - (void)setPlayerIndex:(long long)arg1;
 - (id)name;
 - (id)initWithController:(id)arg1;

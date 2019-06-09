@@ -12,6 +12,7 @@
 @class CAEmitterLayer, NSString;
 @protocol CKSendAnimationManager, OS_dispatch_group;
 
+__attribute__((visibility("hidden")))
 @interface CKChatControllerDummyAnimator : NSObject <CAAnimationDelegate, CKImpactEffectAnimationProvider>
 {
     id <CKSendAnimationManager> _animationDelegate;

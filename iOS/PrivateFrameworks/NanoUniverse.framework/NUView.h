@@ -29,14 +29,14 @@
 - (id)provideAtlasBacking:(id)arg1;
 - (void)quadViewWillDisplay:(id)arg1 forTime:(double)arg2;
 @property(retain, nonatomic) NUScene *scene;
-- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)stopAnimation;
 - (void)startAnimation;
 - (void)setAnimationFrameInterval:(int)arg1;
 - (void)layoutSubviews;
 - (void)setOpaque:(_Bool)arg1;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 options:(unsigned long long)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

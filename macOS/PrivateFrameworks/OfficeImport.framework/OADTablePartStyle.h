@@ -8,6 +8,7 @@
 
 @class OADTableCellStyle, OADTableTextStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADTablePartStyle : NSObject
 {
     OADTableTextStyle *mTextStyle;

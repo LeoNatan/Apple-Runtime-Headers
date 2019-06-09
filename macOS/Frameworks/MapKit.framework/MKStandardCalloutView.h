@@ -10,6 +10,7 @@
 
 @class MKCalloutLayer, MKCalloutShadowView, MKSmallCalloutView, NSColor, NSLayoutConstraint, NSString, NSView, NSVisualEffectView, _MKCalloutContentView;
 
+__attribute__((visibility("hidden")))
 @interface MKStandardCalloutView : MKCalloutView <CALayerDelegate>
 {
     struct {

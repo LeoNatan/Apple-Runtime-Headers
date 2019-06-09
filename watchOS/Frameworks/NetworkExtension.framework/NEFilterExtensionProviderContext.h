@@ -21,10 +21,9 @@
 - (void).cxx_destruct;
 - (void)stopWithReason:(int)arg1;
 - (void)startFilterWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)updateConfiguration:(id)arg1;
-- (void)setExtensionIdentifier:(id)arg1 deviceIdentifier:(id)arg2;
+- (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2;
 @property(readonly, copy) NSString *description;
-@property(retain) NSObject<OS_dispatch_queue> *queue;
+@property(readonly) NSObject<OS_dispatch_queue> *queue;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

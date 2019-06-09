@@ -20,6 +20,7 @@
     PKPaymentWebService *_webService;
     NSArray *_reminderIntervals;
     unsigned int _selectedReminderIntervalsIndex;
+    _Bool _shouldLoadReminderInterval;
     PKPaymentPassAction *_action;
     NSDateComponentsFormatter *_timeIntervalFormatter;
     _Bool _canShowReminders;
@@ -28,16 +29,17 @@
 - (void).cxx_destruct;
 - (void)performActionViewControllerDidPerformAction:(id)arg1;
 - (void)performActionViewControllerDidCancel:(id)arg1;
-- (id)pkui_navigationBarTintColor;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)_updateSelectedReminderIntervalsIndexWithInterval:(double)arg1;
 - (void)_handleActionSelected;
 - (void)_handleReminderIntervalChanged:(int)arg1;
+- (void)viewWillLayoutSubviews;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithSuicaFields:(id)arg1 forPass:(id)arg2 associatedAction:(id)arg3 paymentDataProvider:(id)arg4 webService:(id)arg5 style:(int)arg6;

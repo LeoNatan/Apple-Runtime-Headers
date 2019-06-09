@@ -30,10 +30,6 @@ struct CLLocationCoordinate2D {
     double longitude;
 };
 
-struct NSColor {
-    Class _field1;
-};
-
 struct NSEdgeInsets {
     double top;
     double left;

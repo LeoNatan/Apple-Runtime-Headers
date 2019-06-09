@@ -9,7 +9,7 @@
 #import <coreroutine/RTPersistenceContextDelegate-Protocol.h>
 #import <coreroutine/RTPersistenceModelProvider-Protocol.h>
 
-@class NSArray, NSManagedObjectModel, NSString, NSURL, RTPersistenceContainer, RTPersistenceStore;
+@class NSArray, NSManagedObjectModel, NSMutableArray, NSPointerArray, NSRecursiveLock, NSString, NSURL, RTPersistenceContainer, RTPersistenceStore;
 @protocol RTPersistenceDelegate, RTPersistenceMirroringDelegate;
 
 @interface RTPersistenceManager : RTNotifier <RTPersistenceModelProvider, RTPersistenceContextDelegate>
@@ -20,6 +20,10 @@
     NSArray *_sortedModelNames;
     RTPersistenceContainer *_container;
     NSManagedObjectModel *_latestModel;
+    NSRecursiveLock *_pointerArrayLock;
+    NSRecursiveLock *_storesArrayLock;
+    NSPointerArray *_outstandingContexts;
+    NSMutableArray *_remoteServers;
     unsigned long long _availability;
     id <RTPersistenceDelegate> _delegate;
     id <RTPersistenceMirroringDelegate> _mirroringDelegate;
@@ -31,35 +35,46 @@
 @property(nonatomic) __weak id <RTPersistenceDelegate> delegate; // @synthesize delegate=_delegate;
 @property unsigned long long availability; // @synthesize availability=_availability;
 - (void).cxx_destruct;
+- (id)historyTokenForStoreType:(unsigned long long)arg1;
+- (id)outstandingContexts;
 - (void)_onCoreDataResetSync:(id)arg1;
 - (void)onCoreDataResetSync:(id)arg1;
 - (void)performZoneResetMirroringRequestWithQualityOfService:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performExportMirroringRequestWithQualityOfService:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performImportMirroringRequestWithQualityOfService:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performMirroringRequestOfType:(long long)arg1 qualityOfService:(long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (BOOL)persistenceContextShouldExecute:(id)arg1;
 - (void)persistenceContextPerformedSave:(id)arg1;
 - (void)persistenceContext:(id)arg1 encounteredError:(id)arg2;
 - (id)modelNamed:(id)arg1;
+- (id)urlForModelWithName:(id)arg1;
 - (id)sortedModelNames;
 - (id)modelFollowingModel:(id)arg1;
 - (id)latestModel;
 - (void)_updateStoreAvailability:(unsigned long long)arg1;
+- (void)updateStoreAvailability:(unsigned long long)arg1;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
+- (long long)mirroringDelegateStateForStoreType:(unsigned long long)arg1;
 - (id)storeDescriptionForStoreWithType:(unsigned long long)arg1;
 - (id)persistenceStoreConfigurations;
 - (unsigned long long)storeTypeForURL:(id)arg1;
 - (id)URLForStoreType:(unsigned long long)arg1;
+- (void)_setupRemoteStoreServers;
 - (void)tearDownPersistenceStack:(CDUnknownBlockType)arg1;
 - (BOOL)_setupPersistenceContainers;
 - (void)setupPersistenceContainers:(CDUnknownBlockType)arg1;
 - (void)setContainer:(id)arg1;
+- (void)trackContext:(id)arg1;
 - (id)waitForPersistenceContext;
+- (id)persistenceContextWithOptions:(long long)arg1;
 - (id)managedObjectContext;
 - (void)createManagedObjectContext:(CDUnknownBlockType)arg1;
 - (BOOL)initializeContainer;
 - (void)dealloc;
+- (void)initializePersistenceStores;
 - (id)initWithModelsDirectory:(id)arg1 storesDirectory:(id)arg2;
 - (id)init;
+- (void)mirroringDelegateSetupState:(CDUnknownBlockType)arg1;
 - (void)performZoneResetMirroringRequest:(CDUnknownBlockType)arg1;
 - (void)performExportMirroringRequest:(CDUnknownBlockType)arg1;
 - (void)performImportMirroringRequest:(CDUnknownBlockType)arg1;

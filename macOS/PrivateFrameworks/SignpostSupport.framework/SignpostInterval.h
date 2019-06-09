@@ -51,7 +51,7 @@
 - (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSString *_intervalTypeString;
 - (id)humanReadableType;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1 shouldRedact:(BOOL)arg2;
 - (id)initWithDictionary:(id)arg1;
 
 @end

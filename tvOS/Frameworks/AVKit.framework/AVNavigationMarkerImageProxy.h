@@ -10,6 +10,7 @@
 
 @class NSString, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVNavigationMarkerImageProxy : NSObject <AVImageProxyProtocol>
 {
     _Bool _failed;

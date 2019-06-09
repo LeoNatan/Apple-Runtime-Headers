@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSColor, NSString;
+@class NSString, SFColor;
 
 @interface PRSAuxiliaryInfo : NSObject
 {
+    int _align;
     NSString *_top_text;
     NSString *_middle_text;
     NSString *_bottom_text;
-    NSColor *_bottom_text_color;
-    unsigned long long _align;
+    SFColor *_bottom_text_color;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned long long align; // @synthesize align=_align;
-@property(retain, nonatomic) NSColor *bottom_text_color; // @synthesize bottom_text_color=_bottom_text_color;
+@property(nonatomic) int align; // @synthesize align=_align;
+@property(retain, nonatomic) SFColor *bottom_text_color; // @synthesize bottom_text_color=_bottom_text_color;
 @property(retain, nonatomic) NSString *bottom_text; // @synthesize bottom_text=_bottom_text;
 @property(retain, nonatomic) NSString *middle_text; // @synthesize middle_text=_middle_text;
 @property(retain, nonatomic) NSString *top_text; // @synthesize top_text=_top_text;

@@ -9,18 +9,18 @@
 @class CALayer, MSStickerView;
 @protocol MSStickerPrivate;
 
+__attribute__((visibility("hidden")))
 @interface _MSStickerCollectionViewCell : UICollectionViewCell
 {
     MSStickerView *_stickerView;
-    id <MSStickerPrivate> _sticker;
     CALayer *_borderLayer;
 }
 
 @property(retain, nonatomic) CALayer *borderLayer; // @synthesize borderLayer=_borderLayer;
-@property(retain, nonatomic) id <MSStickerPrivate> sticker; // @synthesize sticker=_sticker;
 - (void).cxx_destruct;
 - (void)setAnimating:(_Bool)arg1;
 - (void)showCellBorder:(_Bool)arg1;
+@property(retain, nonatomic) id <MSStickerPrivate> sticker;
 @property(readonly, nonatomic) MSStickerView *stickerView; // @synthesize stickerView=_stickerView;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

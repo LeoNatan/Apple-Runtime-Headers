@@ -16,7 +16,6 @@
 @property(readonly, nonatomic) BOOL isYearlessLeapMonthBirthday;
 @property(readonly, nonatomic) BOOL isYearlessBirthday;
 @property(readonly, nonatomic) NSString *nameForBirthday;
-@property(readonly, copy, nonatomic) NSString *birthdayTitle;
 @property(readonly, nonatomic) NSString *suggestionInfoUniqueKey;
 @property(readonly, nonatomic) NSDate *suggestionInfoTimestamp;
 @property(readonly, nonatomic) NSString *suggestionInfoOpaqueKey;
@@ -40,7 +39,7 @@
 @property(readonly, copy, nonatomic) NSString *privacyLevelString;
 @property(readonly, copy, nonatomic) NSTimeZone *endTimeZoneObject;
 @property(readonly, copy, nonatomic) NSDate *endDateUnadjustedFromUTC;
-@property(readonly, nonatomic) NSString *lunarCalendarString;
+@property(readonly, copy, nonatomic) NSString *lunarCalendarString;
 - (NSDateComponents *)durationComponents;
 - (BOOL)isDetached;
 

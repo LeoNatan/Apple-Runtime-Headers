@@ -11,10 +11,15 @@
     void *_parser;
 }
 
++ (id)availableLanguages;
 + (id)defaultManager;
 - (void)dealloc;
+- (void)enumerateSearchSuggestions:(id)arg1 options:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)tokenizeAndEnumerateAttributedParsesForQuery:(id)arg1 options:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (id)init;
+- (void)enumerateAttributedParsesForQuery:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateDateRangeAttributedParseForOptions:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)initWithLocale:(id)arg1 context:(id)arg2 options:(id)arg3;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

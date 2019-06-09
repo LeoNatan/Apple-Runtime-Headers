@@ -52,13 +52,13 @@
 - (id)tileAtIndex:(unsigned long long)arg1;
 - (id)_tileAtIndex:(unsigned long long)arg1;
 @property(readonly) CDStruct_912cb5d2 size;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithLayout:(id)arg1 format:(id)arg2 colorSpace:(id)arg3 tileFactory:(id)arg4;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

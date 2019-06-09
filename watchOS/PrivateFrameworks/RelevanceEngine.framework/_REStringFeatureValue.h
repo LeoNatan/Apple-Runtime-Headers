@@ -16,6 +16,7 @@
 + (id)featureValueWithString:(id)arg1;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)_integralFeatureValue;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)stringValue;

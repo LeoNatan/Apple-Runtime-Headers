@@ -9,20 +9,24 @@
 #import <AccessibilityPlatformTranslation/NSCopying-Protocol.h>
 #import <AccessibilityPlatformTranslation/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSData, NSString;
 
 @interface AXPTranslationObject : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _isApplicationElement;
+    _Bool _didPopuldateAppInfo;
     int _pid;
     unsigned long long _objectID;
     NSString *_remoteDebugDescription;
     NSString *_bridgeDelegateToken;
+    NSData *_rawElementData;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)allowedDecodableClasses;
 + (void)initialize;
+@property(nonatomic) _Bool didPopuldateAppInfo; // @synthesize didPopuldateAppInfo=_didPopuldateAppInfo;
+@property(copy, nonatomic) NSData *rawElementData; // @synthesize rawElementData=_rawElementData;
 @property(copy, nonatomic) NSString *bridgeDelegateToken; // @synthesize bridgeDelegateToken=_bridgeDelegateToken;
 @property(copy, nonatomic) NSString *remoteDebugDescription; // @synthesize remoteDebugDescription=_remoteDebugDescription;
 @property(nonatomic) _Bool isApplicationElement; // @synthesize isApplicationElement=_isApplicationElement;

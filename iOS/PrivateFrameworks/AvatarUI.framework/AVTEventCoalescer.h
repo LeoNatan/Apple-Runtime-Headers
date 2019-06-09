@@ -28,7 +28,7 @@
 @property(copy, nonatomic) NSString *eventLabel; // @synthesize eventLabel=_eventLabel;
 @property(copy, nonatomic) CDUnknownBlockType eventHandler; // @synthesize eventHandler=_eventHandler;
 - (void).cxx_destruct;
-- (void)eventDidOccur;
+- (void)eventDidOccur:(CDUnknownBlockType)arg1;
 - (void)registerEventForCoalescingWithLabel:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)initWithDelay:(double)arg1 queue:(id)arg2 logger:(id)arg3;
 

@@ -10,6 +10,7 @@
 
 @protocol HKDisplayTypeContextViewDelegate <NSObject>
 - (void)contextView:(HKDisplayTypeContextView *)arg1 didTapOnInfoButtonAtIndex:(int)arg2;
+- (void)contextView:(HKDisplayTypeContextView *)arg1 didDeselectItemAtIndex:(int)arg2;
 - (void)contextView:(HKDisplayTypeContextView *)arg1 didSelectItemAtIndex:(int)arg2;
 @end
 

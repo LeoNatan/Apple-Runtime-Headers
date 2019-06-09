@@ -8,7 +8,7 @@
 
 #import <CoreDuet/NSCopying-Protocol.h>
 
-@class NSDate, NSSet, NSString;
+@class NSDate, NSSet, NSString, _CDInteraction;
 
 @interface _CDPeopleSuggesterContext : NSObject <NSCopying>
 {
@@ -17,17 +17,24 @@
     NSString *_title;
     NSString *_contactPrefix;
     NSSet *_seedContactIdentifiers;
+    NSSet *_nearbyPeople;
     NSString *_consumerIdentifier;
+    NSSet *_contentUTIs;
+    _CDInteraction *_activeInteraction;
 }
 
 + (id)currentContext;
+@property(retain) _CDInteraction *activeInteraction; // @synthesize activeInteraction=_activeInteraction;
+@property(retain) NSSet *contentUTIs; // @synthesize contentUTIs=_contentUTIs;
 @property(retain) NSString *consumerIdentifier; // @synthesize consumerIdentifier=_consumerIdentifier;
+@property(retain) NSSet *nearbyPeople; // @synthesize nearbyPeople=_nearbyPeople;
 @property(retain) NSSet *seedContactIdentifiers; // @synthesize seedContactIdentifiers=_seedContactIdentifiers;
 @property(retain) NSString *contactPrefix; // @synthesize contactPrefix=_contactPrefix;
 @property(retain) NSString *title; // @synthesize title=_title;
 @property(retain) NSString *locationUUID; // @synthesize locationUUID=_locationUUID;
 @property(retain) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

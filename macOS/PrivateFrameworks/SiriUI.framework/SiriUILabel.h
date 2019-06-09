@@ -6,7 +6,6 @@
 
 #import <AppKit/NSTextField.h>
 
-__attribute__((visibility("hidden")))
 @interface SiriUILabel : NSTextField
 {
 }

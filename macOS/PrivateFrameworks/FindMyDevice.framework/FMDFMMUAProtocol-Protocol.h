@@ -9,6 +9,7 @@
 @class FMDFMMAccountInfo, NSData, NSString;
 
 @protocol FMDFMMUAProtocol <NSObject>
+- (oneway void)didChangeFMMAccountInfo:(NSString *)arg1 usingCallback:(void (^)(NSError *))arg2;
 - (oneway void)addFMMAccount:(FMDFMMAccountInfo *)arg1 withAuthData:(NSData *)arg2 usingCallback:(void (^)(NSError *))arg3;
 - (oneway void)initiateLostModeExitAuthForApp:(NSString *)arg1 usingCallback:(void (^)(NSError *))arg2;
 - (oneway void)didReceiveLostModeExitAuthToken:(NSString *)arg1 usingCallback:(void (^)(NSError *))arg2;

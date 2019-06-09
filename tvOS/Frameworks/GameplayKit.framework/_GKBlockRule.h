@@ -6,6 +6,7 @@
 
 #import <GameplayKit/GKRule.h>
 
+__attribute__((visibility("hidden")))
 @interface _GKBlockRule : GKRule
 {
     CDUnknownBlockType _predicate;

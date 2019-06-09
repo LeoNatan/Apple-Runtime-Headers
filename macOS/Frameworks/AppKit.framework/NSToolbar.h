@@ -142,6 +142,8 @@
 - (BOOL)_inGlobalWindow;
 - (void)_setInGlobalWindow:(BOOL)arg1;
 - (id)toolbarDragToken;
+- (BOOL)overflowMenuUsesAllItems;
+- (void)setOverflowMenuUsesAllItems:(BOOL)arg1;
 - (BOOL)isPaletteToolbar;
 - (void)setIsPaletteToolbar:(BOOL)arg1;
 - (id)_currentToolbarItemIdentifiers;

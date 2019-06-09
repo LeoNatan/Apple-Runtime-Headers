@@ -8,13 +8,3 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct TrainingData;
-
-struct unique_ptr<TrainingData, std::__1::default_delete<TrainingData>> {
-    struct __compressed_pair<TrainingData *, std::__1::default_delete<TrainingData>> {
-        struct TrainingData *__value_;
-    } __ptr_;
-};
-

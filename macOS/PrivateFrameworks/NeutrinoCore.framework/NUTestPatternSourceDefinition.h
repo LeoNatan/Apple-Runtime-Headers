@@ -14,6 +14,7 @@
 
 @property(readonly) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly) CDStruct_912cb5d2 size; // @synthesize size=_size;
+- (long long)mediaType;
 - (id)initWithSize:(CDStruct_912cb5d2)arg1 orientation:(long long)arg2;
 - (id)init;
 - (id)generateSourceNodeWithIdentifier:(id)arg1 error:(out id *)arg2;

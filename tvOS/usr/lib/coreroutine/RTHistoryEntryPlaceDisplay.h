@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, RTMapItem;
+@class NSDate, NSUUID, RTLocation, RTMapItem;
 
 @interface RTHistoryEntryPlaceDisplay : NSObject
 {
+    NSUUID *_identifier;
     NSDate *_usageDate;
+    RTLocation *_location;
     RTMapItem *_mapItem;
 }
 
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
+@property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) NSDate *usageDate; // @synthesize usageDate=_usageDate;
+@property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithUsageDate:(id)arg1 mapItem:(id)arg2;
+- (id)initWithIdentifier:(id)arg1 usageDate:(id)arg2 location:(id)arg3 mapItem:(id)arg4;
 - (id)init;
 
 @end

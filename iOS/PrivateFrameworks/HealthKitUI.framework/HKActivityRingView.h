@@ -6,11 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class HKActivitySummary, HKRingsView, _HKShapeView;
+@class ARUIRingsView, HKActivitySummary, _HKShapeView;
 
 @interface HKActivityRingView : UIView
 {
-    HKRingsView *_ringsView;
+    ARUIRingsView *_ringsView;
     _HKShapeView *_maskView;
     _Bool _shouldBypassApplicationStateChecking;
     HKActivitySummary *_activitySummary;

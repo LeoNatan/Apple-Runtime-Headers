@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     id representedObject;
     SGTQueryGenius *genius;
     long long scope;
+    long long type;
     SGTCategory *category;
     NSURL *spotlightScope;
     BOOL additionalRawQueryIsOr;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
     BOOL forceLastPosition;
     BOOL enforceStrictMatch;
     BOOL isTopHitCandidate;
+    BOOL isRecent;
     NSIndexSet *titleHighlights;
     NSIndexSet *uniquifierHighlights;
     NSString *inputString;

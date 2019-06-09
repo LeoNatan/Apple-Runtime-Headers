@@ -18,7 +18,6 @@
 {
     VSSpeechSynthesizer *_synthesizer;
     AFSiriClientStateManager *_siriClientStateManager;
-    _Bool _sessionIDIsValid;
     unsigned int _sessionID;
     AFVoiceInfo *_outputVoice;
     NSMutableDictionary *_availableVoicesForLanguage;
@@ -51,16 +50,14 @@
 - (void)_handleAudioData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)processDelayedItem:(id)arg1;
 - (void)enqueueText:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_enqueueText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 isPhonetic:(_Bool)arg6 provisionally:(_Bool)arg7 eligibleAfterDuration:(double)arg8 delayed:(_Bool)arg9 preparationIdentifier:(id)arg10 shouldCache:(_Bool)arg11 synthesizesWhileRecording:(_Bool)arg12 completion:(CDUnknownBlockType)arg13 animationIdentifier:(id)arg14 analyticsContext:(id)arg15 speakableContextInfo:(id)arg16;
+- (void)_enqueueText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 isPhonetic:(_Bool)arg6 provisionally:(_Bool)arg7 eligibleAfterDuration:(double)arg8 delayed:(_Bool)arg9 canUseServerTTS:(_Bool)arg10 preparationIdentifier:(id)arg11 shouldCache:(_Bool)arg12 synthesizesWhileRecording:(_Bool)arg13 completion:(CDUnknownBlockType)arg14 animationIdentifier:(id)arg15 analyticsContext:(id)arg16 speakableContextInfo:(id)arg17;
 - (void)enqueuePhaticWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enqueueAudioData:(id)arg1 identifier:(id)arg2 provisionally:(_Bool)arg3 eligibleAfterDuration:(double)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)enqueueText:(id)arg1 identifier:(id)arg2 language:(id)arg3 gender:(id)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 preparationIdentifier:(id)arg9 completion:(CDUnknownBlockType)arg10 animationIdentifier:(id)arg11 analyticsContext:(id)arg12 speakableContextInfo:(id)arg13;
-- (_Bool)_startSpeechPreSynthesisOfText:(id)arg1 speakableContext:(id)arg2 error:(id *)arg3;
-- (void)presynthesizeDialogStrings:(id)arg1 speakableContext:(id)arg2;
+- (void)enqueueText:(id)arg1 identifier:(id)arg2 language:(id)arg3 gender:(id)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 canUseServerTTS:(_Bool)arg9 preparationIdentifier:(id)arg10 completion:(CDUnknownBlockType)arg11 animationIdentifier:(id)arg12 analyticsContext:(id)arg13 speakableContextInfo:(id)arg14;
 - (void)setAudioSessionID:(unsigned int)arg1;
 - (void)setOutputVoice:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 withInstrumentMetrics:(id)arg3;
-- (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 withError:(id)arg4;
+- (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 phonemesSpoken:(id)arg4 withError:(id)arg5;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishPresynthesizedAudioRequest:(id)arg2 withInstrumentMetrics:(id)arg3 error:(id)arg4;
 - (void)speechSynthesizer:(id)arg1 didStopPresynthesizedAudioRequest:(id)arg2 atEnd:(_Bool)arg3 error:(id)arg4;
@@ -72,7 +69,8 @@
 - (void)_cancelByCancellingActiveElementsOnly:(_Bool)arg1;
 - (void)skipCurrentSynthesis;
 - (void)cancel;
-- (_Bool)isSynthesisQueueEmpty;
+- (_Bool)_isSynthesisQueueEmpty;
+- (void)isSynthesisQueueEmpty:(CDUnknownBlockType)arg1;
 - (_Bool)isSpeaking;
 - (void)prewarmIfNeeded;
 - (void)_updateSynthesizerWithSessionID:(unsigned int)arg1;

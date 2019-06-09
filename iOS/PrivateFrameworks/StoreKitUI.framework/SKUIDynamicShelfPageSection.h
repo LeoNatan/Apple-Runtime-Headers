@@ -17,6 +17,7 @@
 @class NSString, SKUIDynamicPageSectionIndexMapper, SKUIShelfPageComponent, SKUIShelfPageSectionConfiguration, SKUIShelfViewElement, SKUIViewElementLayoutContext, SKUIViewElementTextLayoutCache;
 @protocol SKUIDynamicShelfViewElement, SKUIEntityProviding, SKUIScrollViewDelegateObserver;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDynamicShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUIObservableScrollViewDelegate, SKUIShelfPageSectionConfigurationDataSource, UICollectionViewDataSource, UICollectionViewDelegate, SKUIShelfPageSection>
 {
     SKUIViewElementLayoutContext *_cellLayoutContext;

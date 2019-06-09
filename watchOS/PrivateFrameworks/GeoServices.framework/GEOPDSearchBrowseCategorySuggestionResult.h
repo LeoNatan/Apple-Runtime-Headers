@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_categorys;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)categoryType;
-@property(retain, nonatomic) NSMutableArray *categorys; // @synthesize categorys=_categorys;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)categoryAtIndex:(unsigned int)arg1;
 - (unsigned int)categorysCount;
 - (void)addCategory:(id)arg1;
 - (void)clearCategorys;
+@property(retain, nonatomic) NSMutableArray *categorys;
 
 @end
 

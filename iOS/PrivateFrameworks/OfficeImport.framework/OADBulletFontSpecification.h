@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     NSString *mFont;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)font;
-- (void)dealloc;
 - (id)initWithFont:(id)arg1;
 
 @end

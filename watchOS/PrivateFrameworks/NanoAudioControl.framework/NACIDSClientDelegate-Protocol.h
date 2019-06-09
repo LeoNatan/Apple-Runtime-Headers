@@ -16,7 +16,7 @@
 - (void)client:(NACIDSClient *)arg1 routeObservationCancelledForCategory:(NSString *)arg2;
 - (void)client:(NACIDSClient *)arg1 audioRoutes:(NSArray *)arg2 didChangeForCategory:(NSString *)arg3;
 - (void)client:(NACIDSClient *)arg1 volumeObservationCancelledForTarget:(NACProxyVolumeControlTarget *)arg2;
-- (void)client:(NACIDSClient *)arg1 volumeWarningEnabled:(_Bool)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;
+- (void)client:(NACIDSClient *)arg1 volumeWarningEnabled:(_Bool)arg2 volumeWarningState:(int)arg3 didChangeForTarget:(NACProxyVolumeControlTarget *)arg4;
 - (void)client:(NACIDSClient *)arg1 EULimit:(float)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;
 - (void)client:(NACIDSClient *)arg1 mutedState:(_Bool)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;
 - (void)client:(NACIDSClient *)arg1 volumeControlAvailable:(_Bool)arg2 didChangeForTarget:(NACProxyVolumeControlTarget *)arg3;

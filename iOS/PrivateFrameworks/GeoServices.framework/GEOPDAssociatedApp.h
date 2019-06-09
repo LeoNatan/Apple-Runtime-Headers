@@ -8,21 +8,31 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAssociatedApp : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_alternateAppAdamIds;
     NSString *_preferredAppAdamId;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_alternateAppAdamIds:1;
+        unsigned int read_preferredAppAdamId:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_alternateAppAdamIds:1;
+        unsigned int wrote_preferredAppAdamId:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)alternateAppAdamIdType;
 + (id)associatedAppForPlaceData:(id)arg1;
-@property(retain, nonatomic) NSMutableArray *alternateAppAdamIds; // @synthesize alternateAppAdamIds=_alternateAppAdamIds;
-@property(retain, nonatomic) NSString *preferredAppAdamId; // @synthesize preferredAppAdamId=_preferredAppAdamId;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,13 +41,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)alternateAppAdamIdAtIndex:(unsigned long long)arg1;
 - (unsigned long long)alternateAppAdamIdsCount;
+- (void)_addNoFlagsAlternateAppAdamId:(id)arg1;
 - (void)addAlternateAppAdamId:(id)arg1;
 - (void)clearAlternateAppAdamIds;
+@property(retain, nonatomic) NSMutableArray *alternateAppAdamIds;
+- (void)_readAlternateAppAdamIds;
+@property(retain, nonatomic) NSString *preferredAppAdamId;
 @property(readonly, nonatomic) _Bool hasPreferredAppAdamId;
+- (void)_readPreferredAppAdamId;
 
 @end
 

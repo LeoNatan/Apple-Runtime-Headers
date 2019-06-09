@@ -17,13 +17,14 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *_applicationAXObservers;
     NSLock *_observerIDToAppLock;
     struct __CFDictionary *_observerIDToApp;
-    long long *_observerID;
     SCRObserverTargetCache *_targetCache;
+    // Error parsing type: AQ, name: _observerID
     NSMutableDictionary *__lastProcessedLayoutChangeNotificationTimestampForObserverIDs;
 }
 
 + (id)sharedManager;
 @property(retain, nonatomic) NSMutableDictionary *_lastProcessedLayoutChangeNotificationTimestampForObserverIDs; // @synthesize _lastProcessedLayoutChangeNotificationTimestampForObserverIDs=__lastProcessedLayoutChangeNotificationTimestampForObserverIDs;
+- (void).cxx_destruct;
 - (id)description;
 - (id)status;
 - (BOOL)setThrottleTime:(int)arg1 forApplication:(id)arg2 name:(struct __CFString *)arg3 uiElement:(id)arg4;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)unregisterSCRApplication:(id)arg1;
 - (BOOL)_removeApplication:(id)arg1;
 - (BOOL)registerSCRApplication:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -12,11 +12,10 @@
 __attribute__((visibility("hidden")))
 @interface NSConcreteFileHandle : NSFileHandle
 {
+    struct os_unfair_lock_s _lock;
     struct __CFRunLoopSource *_source;
-    struct __CFRunLoop *_rl;
-    unsigned short _activity;
-    int _error;
-    int _resultSocket;
+    // Error parsing type: Ai, name: _error
+    // Error parsing type: Ai, name: _resultSocket
     NSObject<OS_dispatch_source> *_dsrc;
     NSObject<OS_dispatch_data> *_resultData;
     NSObject<OS_dispatch_queue> *_fhQueue;
@@ -50,15 +49,24 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)setPort:(id)arg1;
 - (id)port;
+- (BOOL)closeAndReturnError:(out id *)arg1;
 - (void)closeFile;
 - (void)_cancelDispatchSources;
+- (BOOL)synchronizeAndReturnError:(out id *)arg1;
 - (void)synchronizeFile;
+- (BOOL)truncateAtOffset:(unsigned long long)arg1 error:(out id *)arg2;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
+- (BOOL)seekToOffset:(unsigned long long)arg1 error:(out id *)arg2;
 - (void)seekToFileOffset:(unsigned long long)arg1;
+- (BOOL)seekToEndReturningOffset:(out unsigned long long *)arg1 error:(out id *)arg2;
 - (unsigned long long)seekToEndOfFile;
+- (BOOL)getOffset:(out unsigned long long *)arg1 error:(out id *)arg2;
 - (unsigned long long)offsetInFile;
+- (BOOL)writeData:(id)arg1 error:(out id *)arg2;
 - (void)writeData:(id)arg1;
+- (id)readDataToEndOfFileAndReturnError:(out id *)arg1;
 - (id)readDataToEndOfFile;
+- (id)readDataUpToLength:(unsigned long long)arg1 error:(out id *)arg2;
 - (id)readDataOfLength:(unsigned long long)arg1;
 - (unsigned long long)readDataOfLength:(unsigned long long)arg1 buffer:(char *)arg2;
 - (id)availableData;

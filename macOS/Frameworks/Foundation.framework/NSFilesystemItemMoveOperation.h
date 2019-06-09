@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)delegate;
 - (BOOL)filesystemItemCopyOperation:(id)arg1 shouldProceedAfterError:(id)arg2 copyingItemAtPath:(id)arg3 toPath:(id)arg4;
 - (void)dealloc;
-- (void)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 options:(unsigned long long)arg3;
+- (id)initWithSourceURL:(id)arg1 destinationURL:(id)arg2 options:(unsigned long long)arg3;
 
 @end
 

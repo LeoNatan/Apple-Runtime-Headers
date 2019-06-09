@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (int)serverType;
 - (id)additionalHeaderValues;
 - (_Bool)allowsAnonymousAccount;
-- (_Bool)requiresSignature;
 - (_Bool)requiresDeviceID;
 - (_Bool)requiresConfiguration;
 

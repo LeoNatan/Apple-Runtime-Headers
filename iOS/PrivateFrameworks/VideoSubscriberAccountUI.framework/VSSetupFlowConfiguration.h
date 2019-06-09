@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, VSIdentityProvider;
+@class NSArray, NSDictionary, NSString, VSAppDescription, VSIdentityProvider;
 
 __attribute__((visibility("hidden")))
 @interface VSSetupFlowConfiguration : NSObject
@@ -14,8 +14,11 @@ __attribute__((visibility("hidden")))
     _Bool _shouldSkipSetupEntirely;
     _Bool _shouldOfferAuthenticationFlow;
     _Bool _shouldOfferSoleAuthenticationFlow;
+    _Bool _shouldOfferSTBAuthenticationFlow;
     _Bool _canShowSupportedAppsButton;
     VSIdentityProvider *_identityProvider;
+    NSString *_providerAccountUsername;
+    VSAppDescription *_msoAppDescription;
     NSArray *_bundlesIDsToConsent;
     NSDictionary *_vouchersByBundleID;
 }
@@ -24,7 +27,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool canShowSupportedAppsButton; // @synthesize canShowSupportedAppsButton=_canShowSupportedAppsButton;
 @property(copy, nonatomic) NSDictionary *vouchersByBundleID; // @synthesize vouchersByBundleID=_vouchersByBundleID;
 @property(copy, nonatomic) NSArray *bundlesIDsToConsent; // @synthesize bundlesIDsToConsent=_bundlesIDsToConsent;
+@property(retain, nonatomic) VSAppDescription *msoAppDescription; // @synthesize msoAppDescription=_msoAppDescription;
+@property(copy, nonatomic) NSString *providerAccountUsername; // @synthesize providerAccountUsername=_providerAccountUsername;
 @property(retain, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
+@property(nonatomic) _Bool shouldOfferSTBAuthenticationFlow; // @synthesize shouldOfferSTBAuthenticationFlow=_shouldOfferSTBAuthenticationFlow;
 @property(nonatomic) _Bool shouldOfferSoleAuthenticationFlow; // @synthesize shouldOfferSoleAuthenticationFlow=_shouldOfferSoleAuthenticationFlow;
 @property(nonatomic) _Bool shouldOfferAuthenticationFlow; // @synthesize shouldOfferAuthenticationFlow=_shouldOfferAuthenticationFlow;
 @property(nonatomic) _Bool shouldSkipSetupEntirely; // @synthesize shouldSkipSetupEntirely=_shouldSkipSetupEntirely;

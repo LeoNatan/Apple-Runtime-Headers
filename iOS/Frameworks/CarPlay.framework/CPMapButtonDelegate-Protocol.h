@@ -6,11 +6,11 @@
 
 #import <CarPlay/CPControlDelegate-Protocol.h>
 
-@class CPMapButton, UIImage;
+@class CPImageSet, CPMapButton, UIImage;
 
 @protocol CPMapButtonDelegate <CPControlDelegate>
+- (_Bool)mapButton:(CPMapButton *)arg1 setImageSet:(CPImageSet *)arg2;
 - (_Bool)mapButton:(CPMapButton *)arg1 setFocusedImage:(UIImage *)arg2;
-- (_Bool)mapButton:(CPMapButton *)arg1 setImage:(UIImage *)arg2;
 - (_Bool)mapButton:(CPMapButton *)arg1 setHidden:(_Bool)arg2;
 @end
 

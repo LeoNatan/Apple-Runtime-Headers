@@ -11,6 +11,7 @@
 @class MKPlaceAttributionCellButton, NSArray, NSLayoutConstraint, _MKUILabel;
 @protocol MKPlaceAttributionCellDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceAttributionCell : MKPlaceSectionRowView <MKPlaceAttributionCellButtonDelegate>
 {
     NSArray *_visibleConstraints;

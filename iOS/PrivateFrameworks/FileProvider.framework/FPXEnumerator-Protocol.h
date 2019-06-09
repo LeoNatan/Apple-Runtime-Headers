@@ -10,7 +10,9 @@
 
 @protocol FPXEnumerator <NSObject>
 - (void)invalidate;
+- (void)keepAliveConnectionForRegisteredObserver:(void (^)(void))arg1;
 - (void)enumerateChangesFromToken:(NSData *)arg1 reply:(void (^)(NSArray *, NSArray *, _Bool, NSData *, NSError *))arg2;
 - (void)enumerateItemsFromPage:(NSData *)arg1 reply:(void (^)(NSArray *, NSData *, NSData *, NSError *))arg2;
+- (void)currentSyncAnchorWithCompletion:(void (^)(NSData *, NSError *))arg1;
 @end
 

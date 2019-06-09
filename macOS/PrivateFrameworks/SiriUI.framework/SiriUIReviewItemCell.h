@@ -8,7 +8,6 @@
 
 @class NSTextField, NSView;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIReviewItemCell : SiriUIContentCollectionViewCell
 {
     NSTextField *_commentLabel;

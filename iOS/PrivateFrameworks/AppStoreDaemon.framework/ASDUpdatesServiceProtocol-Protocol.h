@@ -9,6 +9,7 @@
 @protocol ASDUpdatesServiceProtocol
 - (void)updateAllWithOrder:(NSArray *)arg1 replyHandler:(void (^)(_Bool, NSArray *, NSError *))arg2;
 - (void)setAutoUpdateEnabled:(_Bool)arg1 withReplyHandler:(void (^)(void))arg2;
+- (void)reloadFromServerInBackgroundWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
 - (void)reloadFromServerWithReplyHandler:(void (^)(NSArray *, NSError *))arg1;
 - (void)refreshUpdateCountWithReplyHandler:(void (^)(long long, NSError *))arg1;
 - (void)getUpdatesWithReplyHandler:(void (^)(NSArray *))arg1;

@@ -20,6 +20,7 @@
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSArray *images; // @synthesize images=_images;
 - (void).cxx_destruct;
+- (id)initWithSFScoreboardCardSection:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

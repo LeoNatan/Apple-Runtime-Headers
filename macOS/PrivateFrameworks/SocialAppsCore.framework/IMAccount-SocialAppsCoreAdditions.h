@@ -13,8 +13,23 @@
 + (id)activeSMSAccount;
 + (id)activeIMessageAccount;
 @property(readonly, getter=isDiscontinued) BOOL discontinued;
-@property(readonly, getter=isChildAccount) BOOL childAccount; // @dynamic childAccount;
 @property(readonly) ACAccount *acAccount; // @dynamic acAccount;
 @property(readonly) NSString *acAccountIdentifier; // @dynamic acAccountIdentifier;
+@property(readonly, getter=isGTalkAccount) BOOL gTalkAccount; // @dynamic gTalkAccount;
+- (id)allAliases;
+- (double)timeIntervalSinceEmailWasSentForAlias:(id)arg1;
+- (void)removeCreationMarker:(id)arg1;
+- (void)setCreationMarker:(id)arg1;
+- (id)placeholderTextFromSource:(long long)arg1;
+- (id)handleMenuPlaceholderText;
+- (id)inputLinePlaceholderText;
+- (BOOL)deactivate;
+- (BOOL)activateAndHandleReconnect;
+- (BOOL)activate;
+- (BOOL)_activateAndHandleReconnect:(BOOL)arg1;
+- (void)forceLogoutAccount;
+- (void)forceLoginAccount;
+- (void)forceReconnectAccount;
+- (unsigned long long)numberOfDevicesRegisteredWithiMessage;
 @end
 

@@ -17,6 +17,7 @@
     NSMutableDictionary *_dispatchQueues;
     NSString *_mainBinaryPath;
     NSString *_name;
+    _Bool _alreadyAttemptedToGetLoadInfoFromLiveProcess;
     BOOL _isUnresponsive;
     BOOL _usesSuddenTermination;
     BOOL _allowsIdleExit;
@@ -35,7 +36,7 @@
     NSArray *_binaryLoadInfos;
     SASharedCache *_sharedCache;
     SAThread *_mainThread;
-    NSMutableSet *_rootUserFrames;
+    NSMutableSet *_rootFrames;
     struct _CSArchitecture _architecture;
 }
 
@@ -47,7 +48,7 @@
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_f669fa55 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
 @property struct _CSArchitecture architecture; // @synthesize architecture=_architecture;
-@property(retain) NSMutableSet *rootUserFrames; // @synthesize rootUserFrames=_rootUserFrames;
+@property(retain) NSMutableSet *rootFrames; // @synthesize rootFrames=_rootFrames;
 @property BOOL alreadyGatheredDataFromLiveProcess; // @synthesize alreadyGatheredDataFromLiveProcess=_alreadyGatheredDataFromLiveProcess;
 @property(retain) SAThread *mainThread; // @synthesize mainThread=_mainThread;
 @property(retain) SASharedCache *sharedCache; // @synthesize sharedCache=_sharedCache;
@@ -63,14 +64,15 @@
 @property(readonly) NSString *bundleName; // @synthesize bundleName=_bundleName;
 @property(readonly) unsigned long long uniquePid; // @synthesize uniquePid=_uniquePid;
 @property(readonly) unsigned int uid; // @synthesize uid=_uid;
-@property(readonly) int rpid; // @synthesize rpid=_rpid;
+@property int rpid; // @synthesize rpid=_rpid;
 @property int ppid; // @synthesize ppid=_ppid;
 @property(readonly) int pid; // @synthesize pid=_pid;
 @property(readonly) NSDictionary *dispatchQueues; // @synthesize dispatchQueues=_dispatchQueues;
 @property(readonly) NSDictionary *threads; // @synthesize threads=_threads;
 @property(readonly) NSArray *taskStates; // @synthesize taskStates=_taskStates;
 - (void).cxx_destruct;
-- (void)enumerateFrameTree:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)fixupFrameInstructions;
+- (void)enumerateFrames:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)cpuTimeNs:(unsigned long long *)arg1 cpuInstructions:(unsigned long long *)arg2 cpuCycles:(unsigned long long *)arg3 betweenStartTime:(id)arg4 endTime:(id)arg5;
@@ -80,15 +82,15 @@
 - (BOOL)isAliveAtTimestamp:(id)arg1;
 - (void)checkForBetterName;
 - (void)forwardFillMonotonicallyIncreasingData;
+- (void)fixupThreadSuspension;
 @property(readonly, copy) NSString *debugDescription;
 - (void)addImageInfos:(id)arg1;
-- (BOOL)correspondsToPid:(int)arg1 name:(const char *)arg2 loadInfos:(const struct dyld_uuid_info_64 *)arg3 numLoadInfos:(unsigned int)arg4 sharedCache:(id)arg5;
-- (BOOL)correspondsToUniquePid:(unsigned long long)arg1 name:(const char *)arg2 loadInfos:(const struct dyld_uuid_info_64 *)arg3 numLoadInfos:(unsigned int)arg4 sharedCache:(id)arg5;
-- (BOOL)correspondsToName:(const char *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 sharedCache:(id)arg4;
-- (void)fixupFrameInstructionsInFrameTree:(id)arg1;
+- (BOOL)correspondsToPid:(int)arg1 name:(const char *)arg2 loadInfos:(const struct dyld_uuid_info_64 *)arg3 numLoadInfos:(unsigned int)arg4 machineArchitecture:(struct _CSArchitecture)arg5 sharedCache:(id)arg6;
+- (BOOL)correspondsToUniquePid:(unsigned long long)arg1 name:(const char *)arg2 loadInfos:(const struct dyld_uuid_info_64 *)arg3 numLoadInfos:(unsigned int)arg4 machineArchitecture:(struct _CSArchitecture)arg5 sharedCache:(id)arg6;
+- (BOOL)correspondsToName:(const char *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 sharedCache:(id)arg5;
 - (BOOL)_matchesName:(const char *)arg1;
 - (id)truncatedUserStackFrame;
-- (id)addUserStack:(id)arg1;
+- (id)addStack:(id)arg1;
 - (void)_gatherDataFromLiveProcessIsLate:(BOOL)arg1;
 - (void)postprocessWithDataGatheringOptions:(unsigned long long)arg1 mightBeAlive:(BOOL)arg2;
 - (BOOL)gatherLoadInfoFromLiveProcessWithDataGatheringOptions:(unsigned long long)arg1;
@@ -96,13 +98,14 @@
 - (id)lastTaskStateOnOrBeforeTime:(id)arg1 withSampleIndex:(BOOL)arg2;
 - (unsigned long long)indexOfLastTaskStateOnOrBeforeTime:(id)arg1 withSampleIndex:(BOOL)arg2;
 - (id)firstTaskStateOnOrAfterTime:(id)arg1 withSampleIndex:(BOOL)arg2;
-- (id)initWithStackshotTaskV1:(const struct task_snapshot *)arg1 withLoadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 andMachineArchitecture:(struct _CSArchitecture)arg4 sharedCache:(id)arg5;
 - (unsigned long long)indexOfFirstTaskStateOnOrAfterTime:(id)arg1 withSampleIndex:(BOOL)arg2;
+- (id)initWithStackshotTaskV1:(const struct task_snapshot *)arg1 withLoadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 andMachineArchitecture:(struct _CSArchitecture)arg4 sharedCache:(id)arg5;
 - (id)initWithKCDataDeltaTask:(const struct task_delta_snapshot_v2 *)arg1 withLoadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 pid:(int)arg4 andMachineArchitecture:(struct _CSArchitecture)arg5 sharedCache:(id)arg6;
 - (id)initWithKCDataTask:(const struct task_snapshot_v2 *)arg1 withLoadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 andMachineArchitecture:(struct _CSArchitecture)arg4 sharedCache:(id)arg5;
 - (id)initWithPid:(int)arg1 andUniquePid:(unsigned long long)arg2 andName:(id)arg3 sharedCache:(id)arg4;
 - (id)architectureString;
-@property(readonly, copy) NSString *name;
+@property(copy) NSString *name;
+- (BOOL)hasExplicitName;
 - (void)setMainBinaryPath:(id)arg1;
 - (id)mainBinaryPath;
 @property(readonly) SABinaryLoadInfo *mainBinaryLoadInfo;

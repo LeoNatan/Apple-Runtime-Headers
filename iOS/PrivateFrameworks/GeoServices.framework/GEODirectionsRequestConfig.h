@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (int)dataRequestKindForRequest:(id)arg1;
+- (unsigned long long)multipathServiceType;
+- (CDStruct_d1a7ebee)dataRequestKindForRequest:(id)arg1 traits:(id)arg2;
 - (unsigned char)requestCounterInfoTypeForRequest:(id)arg1;
-- (long long)experimentType;
 - (id)serviceTypeNumber;
 - (id)additionalHTTPHeaders;
 - (id)additionalURLQueryItems;

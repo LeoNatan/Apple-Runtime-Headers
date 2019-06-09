@@ -8,7 +8,7 @@
 
 #import <CloudDocsDaemon/BRCOperationSubclass-Protocol.h>
 
-@class NSMutableDictionary, NSObject, NSString;
+@class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_entriesByRecordID;
     NSMutableDictionary *_entriesBySecondaryRecordID;
     NSMutableDictionary *_entriesByTransferID;
+    NSMutableArray *_entriesOrderedByPriority;
     unsigned long long _totalSize;
     unsigned long long _doneSize;
     unsigned long long _itemsCount;

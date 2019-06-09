@@ -10,24 +10,22 @@
 
 @interface PLCloudSharingJob : PLDaemonJob
 {
-    PLPhotoLibrary *_photoLibrary;
     NSString *_archiveFilename;
     _Bool _shouldPrioritize;
 }
 
-+ (void)deleteAllRecoveryEvents;
-+ (id)recoveredEventsIgnoringEvent:(id)arg1;
-+ (id)archiveDirectory;
++ (id)recoveredEventsWithPathManager:(id)arg1;
 @property(nonatomic) _Bool shouldPrioritize; // @synthesize shouldPrioritize=_shouldPrioritize;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)runAndWaitForMessageToBeSent;
 - (void)runDaemonSide;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
+- (void)deleteAllRecoveryEvents;
 - (_Bool)shouldArchiveXPCToDisk;
 - (void)archiveXPCToDisk:(id)arg1;
-@property(readonly, retain, nonatomic) PLPhotoLibrary *transientPhotoLibrary;
+@property(readonly, nonatomic) PLPhotoLibrary *transientPhotoLibrary;
 - (id)serialOperationQueue;
-- (id)init;
+- (id)initWithAssetsdClient:(id)arg1;
 
 @end
 

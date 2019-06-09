@@ -12,21 +12,21 @@
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _isFiring
     // Error parsing type: {atomic_flag="_Value"AB}, name: _hasWaiter
-    unsigned int _waitTime;
     NSMapTable *_blockMap;
     NSString *_name;
+    double _waitSeconds;
 }
 
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSMapTable *blockMap; // @synthesize blockMap=_blockMap;
-@property(nonatomic) unsigned int waitTime; // @synthesize waitTime=_waitTime;
+@property(nonatomic) double waitSeconds; // @synthesize waitSeconds=_waitSeconds;
 - (void).cxx_destruct;
 - (id)description;
 - (void)addObserverBlock:(CDUnknownBlockType)arg1 forLifetimeOfObject:(id)arg2;
 - (void)fire;
 - (void)_clearFlags;
 - (void)_executeBlocks;
-- (id)initWithName:(id)arg1 waitTime:(unsigned int)arg2;
+- (id)initWithName:(id)arg1 waitSeconds:(double)arg2;
 
 @end
 

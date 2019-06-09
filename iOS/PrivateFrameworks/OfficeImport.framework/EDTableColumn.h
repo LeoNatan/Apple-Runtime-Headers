@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tableColumnWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setTotalsRowLabel:(id)arg1;
 - (id)totalsRowLabel;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (id)totalsRowDxf;
 - (void)setHeaderRowDxf:(id)arg1;
 - (id)headerRowDxf;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setDataAreaDxfIndex:(unsigned long long)arg1;
 - (unsigned long long)dataAreaDxfIndex;

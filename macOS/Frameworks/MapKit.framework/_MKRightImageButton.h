@@ -8,6 +8,7 @@
 
 @class MKImageView, NSArray, NSImage, NSInvocation, NSString, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface _MKRightImageButton : NSControl
 {
     BOOL _trackingClick;

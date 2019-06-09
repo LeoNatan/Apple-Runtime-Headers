@@ -13,10 +13,12 @@
 
 @interface MPSExternalPluginBase : NSObject <MPSExternalPluginBase>
 {
+    MPSExternalPluginBase *_self;
     id <MTLDevice> _device;
 }
 
 @property(readonly, copy) NSString *debugDescription;
+- (unsigned long long)maxBatchSize;
 - (id)device;
 - (id)initWithDevice:(id)arg1;
 - (id)init;

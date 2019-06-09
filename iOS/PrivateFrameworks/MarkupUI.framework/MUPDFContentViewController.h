@@ -91,13 +91,12 @@
 - (void)controllerWillShowSignatureCaptureView:(id)arg1;
 - (void)penStrokeCompletedForAnnotationController:(id)arg1;
 - (void)editCheckpointReachedForAnnotationController:(id)arg1;
-- (void)editDetectedForAnnotationController:(id)arg1;
+- (void)annotationController:(id)arg1 detectedEditOfType:(unsigned long long)arg2;
 - (id)popoverPresentingViewControllerForAnnotationController:(id)arg1;
 - (void)positionSketchOverlay:(id)arg1 forAnnotationController:(id)arg2;
 - (id)controller:(id)arg1 willSetToolbarItems:(id)arg2;
 - (_Bool)shouldShowAnnotationsOfType:(id)arg1;
 - (_Bool)PDFView:(id)arg1 shouldHandleLink:(id)arg2;
-- (id)menuItems:(id)arg1 forPage:(id)arg2;
 @property(readonly, nonatomic) UIScrollView *contentViewScrollView;
 @property(readonly, nonatomic) long long defaultToolTag;
 - (struct CGSize)idealContentSizeForScreenSize:(struct CGSize)arg1 windowDecorationSize:(struct CGSize)arg2;

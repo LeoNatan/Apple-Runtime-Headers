@@ -4,22 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoardServices/FBSServiceFacilityClient.h>
+#import <objc/NSObject.h>
 
-@class NSString;
+#import <UIKitServices/BSInvalidatable-Protocol.h>
 
-@interface UISApplicationStateClient : FBSServiceFacilityClient
+@class BSServiceConnection, NSString;
+
+@interface UISApplicationStateClient : NSObject <BSInvalidatable>
 {
+    BSServiceConnection *_lazy_connection;
     NSString *_bundleIdentifier;
+    _Bool _invalidated;
 }
 
 - (void).cxx_destruct;
-- (void)configureConnectMessage:(id)arg1;
+- (id)_lazy_connection;
+- (id)_remoteTarget;
 @property(nonatomic) double nextWakeIntervalSinceReferenceDate;
-@property(nonatomic) double minimumBackgroundFetchInterval;
+- (void)setMinimumBackgroundFetchInterval:(double)arg1;
 @property(nonatomic) _Bool usesBackgroundNetwork;
 @property(copy, nonatomic) NSString *badgeValue;
+- (void)invalidate;
+- (void)dealloc;
 - (id)initWithBundleIdentifier:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

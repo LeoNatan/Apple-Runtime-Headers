@@ -10,7 +10,7 @@
 #import <InputMethodKit/IMKUICandidateLayoutDelegate-Protocol.h>
 #import <InputMethodKit/NSScrubberDelegate-Protocol.h>
 
-@class IMKCandidate, IMKCandidateListDictionary, IMKUICandidateItemLayout, IMKUICandidateLayoutTraits, IMKUICandidateLineLayout, IMKUICandidateLineLayoutIterator, IMKUIScrubberView, NSString, NSViewController;
+@class IMKCandidate, IMKCandidateListDictionary, IMKUICandidateItemLayout, IMKUICandidateLayoutTraits, IMKUICandidateLineLayout, IMKUICandidateLineLayoutIterator, IMKUIScrubberView, NSArray, NSString, NSViewController;
 @protocol IMKUICandidateControllerDelegate;
 
 @interface IMKUICandidateTouchBarItemController : NSObject <IMKUIAbstractCandidateController, IMKUICandidateLayoutDelegate, NSScrubberDelegate>
@@ -47,6 +47,7 @@
 - (void).cxx_destruct;
 - (void)addCandidatesToPasteboard;
 - (void)clearPasteboard;
+@property(readonly, nonatomic) NSArray *visibleCandidates;
 - (id)fittingCandidatesForCandidates:(id)arg1;
 - (void)didFinishInteractingWithScrubber:(id)arg1;
 - (void)scrubber:(id)arg1 didSelectCandidate:(id)arg2;

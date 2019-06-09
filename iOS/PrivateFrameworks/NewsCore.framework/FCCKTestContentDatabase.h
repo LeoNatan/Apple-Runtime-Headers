@@ -6,11 +6,12 @@
 
 #import <NewsCore/FCCKContentDatabase.h>
 
-@class FCCKTestFeedQueryEndpoint, FCCKTestMultiFetchQueryEndpoint, FCCKTestOrderFeedQueryEndpoint, NSMutableArray, NSMutableSet;
+@class FCCKTestFeedQueryEndpoint, FCCKTestMultiFetchQueryEndpoint, FCCKTestOrderFeedQueryEndpoint, NSMutableArray, NSMutableSet, NSSet;
 
 @interface FCCKTestContentDatabase : FCCKContentDatabase
 {
     _Bool _simulateNetworkError;
+    NSSet *_fetchedKeys;
     NSMutableArray *_records;
     NSMutableSet *_droppedFeeds;
     FCCKTestFeedQueryEndpoint *_feedQueryEndpoint;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) FCCKTestFeedQueryEndpoint *feedQueryEndpoint; // @synthesize feedQueryEndpoint=_feedQueryEndpoint;
 @property(retain, nonatomic) NSMutableSet *droppedFeeds; // @synthesize droppedFeeds=_droppedFeeds;
 @property(retain, nonatomic) NSMutableArray *records; // @synthesize records=_records;
+@property(copy, nonatomic) NSSet *fetchedKeys; // @synthesize fetchedKeys=_fetchedKeys;
 @property(nonatomic) _Bool simulateNetworkError; // @synthesize simulateNetworkError=_simulateNetworkError;
 - (void).cxx_destruct;
 - (id)records:(id)arg1 withDesiredKeys:(id)arg2;

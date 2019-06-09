@@ -6,7 +6,7 @@
 
 #import <ITMLKit/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSError, NSHTTPURLResponse, NSString, NSURLRequest;
+@class NSData, NSDictionary, NSError, NSHTTPURLResponse, NSString, NSURLRequest, NSURLResponse;
 
 @protocol IKNetworkRequestRecord <NSObject>
 @property(readonly, nonatomic) long long initiatorType;
@@ -14,7 +14,9 @@
 @property(readonly, copy, nonatomic) NSString *identifier;
 - (void)didFailWithError:(NSError *)arg1;
 - (void)didCompleteLoadingWithResponseBody:(NSData *)arg1;
-- (void)didCompleteLoadingFromCache:(long long)arg1 withResponseBody:(NSData *)arg2 mimeType:(NSString *)arg3;
+- (void)didCompleteLoadingFromMemoryWithRequest:(NSURLRequest *)arg1 response:(NSURLResponse *)arg2 withResponseBodyBlock:(void (^)(void (^)(NSData *, NSString *, NSError *)))arg3;
+- (void)didCompleteLoadingFromCache:(long long)arg1 withResponseBodyBlock:(void (^)(void (^)(NSData *, NSString *, NSError *)))arg2;
+- (void)didCompleteLoadingFromCache:(long long)arg1 mimeType:(NSString *)arg2 withResponseBody:(NSData *)arg3;
 - (void)didReceiveData:(NSData *)arg1;
 - (void)didReceiveResponse:(NSHTTPURLResponse *)arg1 timingData:(NSDictionary *)arg2;
 - (void)willSendRequest:(NSURLRequest *)arg1;

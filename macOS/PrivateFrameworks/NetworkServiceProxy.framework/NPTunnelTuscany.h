@@ -6,57 +6,48 @@
 
 #import <NetworkServiceProxy/NPTunnel.h>
 
-@class NPTuscanyOnRamp, NSObject, NSUUID;
+@class NPTuscanyOnRamp, NSDate, NSObject;
 @protocol OS_nw_connection;
 
 @interface NPTunnelTuscany : NPTunnel
 {
-    BOOL _ignoreWaldoTimestamp;
-    BOOL _shouldReportUsage;
-    BOOL _isFirstTunnel;
-    NSUUID *_dayPassUUID;
-    void *_clientRef;
     unsigned long long _nextFlowID;
     NSObject<OS_nw_connection> *_UDPSession;
     void *_connectionTimer;
-    CDUnknownBlockType _pendingPingCompletionHandler;
+    BOOL _shouldReportUsage;
     void *_pingTimer;
     void *_usageReportTimer;
     NPTuscanyOnRamp *_onRamp;
+    unsigned int _waldoTimestamp;
+    BOOL _ignoreWaldoTimestamp;
+    BOOL _isFirstTunnel;
+    void *_clientRef;
+    CDUnknownBlockType _pendingPingCompletionHandler;
 }
 
-@property BOOL isFirstTunnel; // @synthesize isFirstTunnel=_isFirstTunnel;
-@property(retain) NPTuscanyOnRamp *onRamp; // @synthesize onRamp=_onRamp;
-@property void *usageReportTimer; // @synthesize usageReportTimer=_usageReportTimer;
-@property void *pingTimer; // @synthesize pingTimer=_pingTimer;
-@property(copy) CDUnknownBlockType pendingPingCompletionHandler; // @synthesize pendingPingCompletionHandler=_pendingPingCompletionHandler;
-@property BOOL shouldReportUsage; // @synthesize shouldReportUsage=_shouldReportUsage;
-@property void *connectionTimer; // @synthesize connectionTimer=_connectionTimer;
-@property(retain) NSObject<OS_nw_connection> *UDPSession; // @synthesize UDPSession=_UDPSession;
-@property unsigned long long nextFlowID; // @synthesize nextFlowID=_nextFlowID;
-@property BOOL ignoreWaldoTimestamp; // @synthesize ignoreWaldoTimestamp=_ignoreWaldoTimestamp;
-@property void *clientRef; // @synthesize clientRef=_clientRef;
-@property(readonly) NSUUID *dayPassUUID; // @synthesize dayPassUUID=_dayPassUUID;
+@property(nonatomic) BOOL isFirstTunnel; // @synthesize isFirstTunnel=_isFirstTunnel;
+@property(copy, nonatomic) CDUnknownBlockType pendingPingCompletionHandler; // @synthesize pendingPingCompletionHandler=_pendingPingCompletionHandler;
+@property(nonatomic) BOOL ignoreWaldoTimestamp; // @synthesize ignoreWaldoTimestamp=_ignoreWaldoTimestamp;
+@property(nonatomic) void *clientRef; // @synthesize clientRef=_clientRef;
 - (void).cxx_destruct;
 - (BOOL)isTFOProbeSucceeded;
-@property(readonly) unsigned int dayPassSessionCounter;
+@property(readonly, nonatomic) NSDate *dayPassCreationDate;
+@property(readonly, nonatomic) unsigned int dayPassSessionCounter;
 - (BOOL)flowIsFirstFlow:(id)arg1;
-- (double)timeIntervalSinceLastUsage;
 - (void)handlePingResponseRTT:(unsigned long long)arg1 geohash:(id)arg2;
 - (void)pingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (unsigned long long)maxDataSendSizeForFlow:(id)arg1;
 - (void)handleHelloAck:(unsigned int)arg1;
-- (void)checkForStaleWaldo:(unsigned int)arg1;
 - (id)createConnectionInfo;
 - (unsigned long long)initialWindowSize;
 - (BOOL)canHandleMoreData;
 - (unsigned long long)allocateFlowID;
 - (long long)sendData:(id)arg1 forFlow:(id)arg2;
 - (void)closeFlow:(id)arg1;
-- (void)sendUsageReportWithSuccess:(BOOL)arg1 rtt:(unsigned long long)arg2 geohash:(id)arg3 fallbackReason:(long long)arg4;
+- (void)sendUsageReportWithRTT:(unsigned long long)arg1 geohash:(id)arg2 fallbackReason:(long long)arg3;
 - (void)handleFlowUsedTunnel;
-@property(readonly) unsigned long long maxFrameSize;
-@property(readonly) long long currentMTU;
+@property(readonly, nonatomic) unsigned long long maxFrameSize;
+@property(readonly, nonatomic) long long currentMTU;
 - (void)destroyConnection;
 - (void)handleFallbackForFlow:(id)arg1;
 - (void)sendDataOnUDPSession:(id)arg1;
@@ -65,7 +56,7 @@
 - (void)startConnectionTimer;
 - (BOOL)start;
 - (void)dealloc;
-- (id)initWithConfiguration:(id)arg1 endpoint:(id)arg2 parameters:(id)arg3 appRule:(id)arg4 flowProperties:(id)arg5 delegate:(id)arg6;
+- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 appRule:(id)arg3 flowProperties:(id)arg4 onRamp:(id)arg5 delegate:(id)arg6;
 - (void)createTuscanyClient;
 - (void)acknowledgeData:(unsigned long long)arg1 sentToFlow:(id)arg2;
 - (void)writeInitialData;

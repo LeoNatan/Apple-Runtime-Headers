@@ -13,5 +13,7 @@
 - (_Bool)uiipc_useTelephonyUI;
 - (id)uiipc_imagePickerOptions;
 - (id)uiipc_imagePickerController;
+- (_Bool)pl_visitControllerHierarchyWithBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool pl_isInPopover;
 @end
 

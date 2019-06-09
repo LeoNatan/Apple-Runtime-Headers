@@ -29,6 +29,7 @@
 - (id)description;
 -     // Error parsing type: @80@0:8{?=[4]}16, name: pointCloudByApplyingTransform:
 - (id)_hitTestPointFromOrigin:(float)arg1 withDirection:maximumAngle: /* Error: Ran out of types for this method. */;
+- (id)filterPointCloudWithIdentifiers:(set_8479fffa)arg1;
 - (id)filterPointCloudFrom:ellipsoid: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: 16@0:8, name: standardDeviation
 -     // Error parsing type: 16@0:8, name: centroid

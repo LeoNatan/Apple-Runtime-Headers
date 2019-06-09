@@ -42,6 +42,7 @@
 - (float)weight;
 - (id)scene;
 - (struct __C3DScene *)sceneRef;
+- (id)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (void)removeAllBindings;
 - (void)unbindAnimatablePath:(id)arg1;
 - (void)bindAnimatablePath:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;

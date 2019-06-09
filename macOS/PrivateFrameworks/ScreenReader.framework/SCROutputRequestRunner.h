@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _currentRequestID;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)_stopAndSendStopMessageToCurrentComponentForNewQueueIdentifier:(id)arg1;
 - (void)_executeAllNonBlockingActionsForSequentialSteps:(id)arg1;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (void)runSequentialSteps:(id)arg1 requestID:(unsigned long long)arg2 queueIdentifier:(id)arg3 outputIdentifier:(id)arg4 stopExclusions:(id)arg5;
 - (void)_executeSequentialSteps;
 - (void)_resolveTargetComponentsInSequentialSteps:(id)arg1;
-- (void)dealloc;
 - (id)initWithName:(id)arg1;
 
 @end

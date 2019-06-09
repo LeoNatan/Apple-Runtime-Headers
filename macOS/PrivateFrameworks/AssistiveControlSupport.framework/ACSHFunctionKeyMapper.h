@@ -34,6 +34,7 @@
 + (id)_fKeyMacKeyCodeMapByAddingDFRActionIfNeeded:(id)arg1;
 + (id)_fallbackSystemActionTypeByFKeyMacKeyCodeMap;
 + (id)_systemActionTypesByHIDCode;
++ (unsigned long long)_combinedHIDValueForUsagePage:(unsigned long long)arg1 usageCode:(unsigned long long)arg2;
 + (id)orderedFunctionKeyMacKeyCodes;
 + (id)macKeyCodesRequiringSecondaryFN;
 + (id)sharedFunctionKeyMapper;

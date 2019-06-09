@@ -12,5 +12,12 @@
 + (struct USet *)_characterSetWithPattern:(id)arg1;
 - (_Bool)_isJapanesePhrase;
 - (_Bool)_isOnlyIdeographs;
+- (id)axRegionCode;
+- (id)axLanguageCode;
+- (_Bool)axIsRegionalLanguageCode;
+- (_Bool)axIsGenericLanguageCode;
+- (_Bool)axIsLanguageCode;
+- (_Bool)axContainsString:(id)arg1;
+- (_Bool)axContainsString:(id)arg1 options:(long long)arg2;
 @end
 

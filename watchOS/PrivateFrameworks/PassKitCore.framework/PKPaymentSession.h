@@ -13,6 +13,8 @@
     NSObject<OS_dispatch_queue> *_internalSessionSerialQueue;
 }
 
++ (id)startApplePayTrustSessionWithCompletion:(CDUnknownBlockType)arg1 targetQueue:(id)arg2;
++ (id)startApplePayTrustSessionWithCompletion:(CDUnknownBlockType)arg1;
 + (id)startPeerPaymentSessionWithCompletion:(CDUnknownBlockType)arg1 targetQueue:(id)arg2;
 + (id)startPeerPaymentSessionWithCompletion:(CDUnknownBlockType)arg1;
 + (id)startReaderSessionWithCompletion:(CDUnknownBlockType)arg1 targetQueue:(id)arg2;

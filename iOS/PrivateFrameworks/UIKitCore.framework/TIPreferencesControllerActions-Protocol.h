@@ -9,6 +9,8 @@
 @class NSArray, NSDictionary, NSString;
 
 @protocol TIPreferencesControllerActions <NSObject>
+@property(nonatomic) unsigned long long floatingKeyboardDockedEdge;
+@property(nonatomic) struct CGPoint floatingKeyboardPosition;
 @property(nonatomic) struct CGPoint keyboardPosition;
 @property(nonatomic) _Bool keyboardShownByTouch;
 @property(nonatomic) _Bool automaticMinimizationEnabled;
@@ -16,6 +18,7 @@
 @property(copy, nonatomic) NSArray *inputModeSelectionSequence;
 - (void)updateLastUsedDictationLanguages:(NSDictionary *)arg1;
 - (void)updateEnabledDictationLanguages:(NSDictionary *)arg1;
+- (void)updateEnableProKeyboard:(_Bool)arg1;
 - (void)updateDidPerformFirstReachableKeyboardInteraction;
 - (void)updateKeyboardHandBias:(NSString *)arg1;
 - (void)updateKeyboardIsFloating:(_Bool)arg1;

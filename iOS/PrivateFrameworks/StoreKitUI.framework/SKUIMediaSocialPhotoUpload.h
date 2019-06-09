@@ -10,6 +10,7 @@
 
 @class NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaSocialPhotoUpload : NSObject <NSCopying>
 {
     _Bool _hasAlpha;

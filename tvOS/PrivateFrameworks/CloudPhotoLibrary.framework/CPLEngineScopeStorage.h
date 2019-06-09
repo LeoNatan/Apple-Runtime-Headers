@@ -38,6 +38,8 @@
 - (id)filterForIncludedScopeIdentifiers:(id)arg1;
 - (_Bool)storeScopeListSyncAnchor:(struct NSData *)arg1 error:(id *)arg2;
 - (struct NSData *)scopeListSyncAnchor;
+- (_Bool)disablePrimaryScopeWithError:(id *)arg1;
+- (_Bool)enablePrimaryScopeWithError:(id *)arg1;
 - (id)primaryScope;
 - (id)statusDictionaryForScope:(id)arg1;
 - (_Bool)upgradeScopesWithNewLibraryOption:(unsigned long long)arg1 error:(id *)arg2;
@@ -47,6 +49,9 @@
 - (_Bool)supportedFeatureVersionIsMostRecentForScope:(id)arg1;
 - (_Bool)storeSupportedFeatureVersionInLastSync:(unsigned long long)arg1 forScope:(id)arg2 error:(id *)arg3;
 - (unsigned long long)supportedFeatureVersionInLastSyncForScope:(id)arg1;
+- (id)lastDateOfCompletedPullFromTransportForScope:(id)arg1;
+- (_Bool)storeLastDateOfClearedPushRepository:(id)arg1 forScope:(id)arg2 error:(id *)arg3;
+- (id)lastDateOfClearedPushRepositoryForScope:(id)arg1;
 - (_Bool)hasFinishedAFullSyncForScope:(id)arg1;
 - (_Bool)hasFinishedInitialSyncForScope:(id)arg1;
 - (id)remainingClassesForInitialQueryForScope:(id)arg1;

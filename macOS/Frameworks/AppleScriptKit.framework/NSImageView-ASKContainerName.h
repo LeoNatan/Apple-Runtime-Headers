@@ -8,5 +8,19 @@
 
 @interface NSImageView (ASKContainerName)
 + (id)containerName_ask;
+- (void)setImageScaling_ask:(unsigned long long)arg1;
+- (unsigned long long)imageScaling_ask;
+- (void)setImageFrameStyle_ask:(unsigned long long)arg1;
+- (unsigned long long)imageFrameStyle_ask;
+- (void)setImageAlignment_ask:(unsigned long long)arg1;
+- (unsigned long long)imageAlignment_ask;
+- (void)setIsEditable:(BOOL)arg1;
+- (void)draggingEnded_askImageView:(id)arg1;
+- (void)concludeDragOperation_askImageView:(id)arg1;
+- (BOOL)performDragOperation_askImageView:(id)arg1;
+- (BOOL)prepareForDragOperation_askImageView:(id)arg1;
+- (void)draggingExited_askImageView:(id)arg1;
+- (unsigned long long)draggingUpdated_askImageView:(id)arg1;
+- (unsigned long long)draggingEntered_askImageView:(id)arg1;
 @end
 

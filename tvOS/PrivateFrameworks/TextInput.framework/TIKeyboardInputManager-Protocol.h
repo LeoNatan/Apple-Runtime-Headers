@@ -6,17 +6,22 @@
 
 #import <TextInput/NSObject-Protocol.h>
 
-@class NSString, TICandidateRequestToken, TIKeyboardCandidate, TIKeyboardInput, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent;
+@class NSArray, NSDictionary, NSString, TICandidateRequestToken, TIKeyboardCandidate, TIKeyboardInput, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent;
 
 @protocol TIKeyboardInputManager <NSObject>
 - (void)writeTypologyLogWithCompletionHandler:(void (^)(NSURL *))arg1;
+- (void)logDiscoverabilityEvent:(int)arg1 userInfo:(NSDictionary *)arg2;
 - (void)lastAcceptedCandidateCorrected;
 - (void)candidateRejected:(TIKeyboardCandidate *)arg1;
 - (void)textAccepted:(TIKeyboardCandidate *)arg1;
+- (void)textAccepted:(TIKeyboardCandidate *)arg1 completionHandler:(void (^)(TIKeyboardConfiguration *))arg2;
 - (void)setOriginalInput:(NSString *)arg1;
 - (void)adjustPhraseBoundaryInForwardDirection:(_Bool)arg1 granularity:(int)arg2 keyboardState:(TIKeyboardState *)arg3 completionHandler:(void (^)(TIKeyboardConfiguration *))arg4;
 - (void)adjustPhraseBoundaryInForwardDirection:(_Bool)arg1 keyboardState:(TIKeyboardState *)arg2 completionHandler:(void (^)(TIKeyboardConfiguration *))arg3;
+- (void)smartSelectionForTextInDocument:(NSString *)arg1 inRange:(struct _NSRange)arg2 language:(NSString *)arg3 tokenizedRanges:(NSArray *)arg4 options:(unsigned long long)arg5 completion:(void (^)(struct _NSRange))arg6;
+- (void)skipHitTestForTouchEvents:(NSArray *)arg1 keyboardState:(TIKeyboardState *)arg2;
 - (void)skipHitTestForTouchEvent:(TIKeyboardTouchEvent *)arg1 keyboardState:(TIKeyboardState *)arg2;
+- (void)performHitTestForTouchEvents:(NSArray *)arg1 keyboardState:(TIKeyboardState *)arg2 continuation:(void (^)(long long))arg3;
 - (void)performHitTestForTouchEvent:(TIKeyboardTouchEvent *)arg1 keyboardState:(TIKeyboardState *)arg2 continuation:(void (^)(long long))arg3;
 - (void)generateRefinementsForCandidate:(TIKeyboardCandidate *)arg1 keyboardState:(TIKeyboardState *)arg2 completionHandler:(void (^)(TIAutocorrectionList *))arg3;
 - (void)generateReplacementsForString:(NSString *)arg1 keyLayout:(TIKeyboardLayout *)arg2 continuation:(void (^)(NSArray *))arg3;

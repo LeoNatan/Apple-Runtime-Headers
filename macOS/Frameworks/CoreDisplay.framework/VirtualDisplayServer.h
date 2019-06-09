@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface VirtualDisplayServer : NSObject
 {
     unsigned int _serverRPC_port;

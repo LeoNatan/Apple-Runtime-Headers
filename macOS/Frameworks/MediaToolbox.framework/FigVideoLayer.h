@@ -23,7 +23,6 @@
 - (void)layerDidChangeDisplay:(unsigned int)arg1;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
 - (id)actionForKey:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithLayer:(id)arg1;
 - (id)init;

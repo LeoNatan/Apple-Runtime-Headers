@@ -12,6 +12,7 @@
 @class NSArray, NSString;
 @protocol SKUIRedeemResultsViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemResultsView : UITableView <UITableViewDelegate, UITableViewDataSource>
 {
     NSArray *_sections;

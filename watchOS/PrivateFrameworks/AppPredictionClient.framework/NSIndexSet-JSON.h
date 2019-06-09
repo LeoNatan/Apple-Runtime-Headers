@@ -7,6 +7,6 @@
 #import <Foundation/NSIndexSet.h>
 
 @interface NSIndexSet (JSON)
-- (id)asArray;
+- (id)atx_asArray;
 @end
 

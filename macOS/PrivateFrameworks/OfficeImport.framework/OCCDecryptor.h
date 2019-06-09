@@ -8,6 +8,7 @@
 
 @class NSString, OITSUTemporaryDirectory;
 
+__attribute__((visibility("hidden")))
 @interface OCCDecryptor : NSObject
 {
     OITSUTemporaryDirectory *mTempDirectory;

@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) CDStruct_d2b197d1 metrics; // @synthesize metrics=_metrics;
 - (void).cxx_destruct;
+- (void)_didTap:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)tintColorDidChange;
 - (void)didMoveToSuperview;
@@ -43,6 +44,7 @@
 @property(retain, nonatomic) UIFont *buttonFont;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
+- (id)description;
 - (id)initWithBackgroundStyle:(unsigned long long)arg1;
 
 @end

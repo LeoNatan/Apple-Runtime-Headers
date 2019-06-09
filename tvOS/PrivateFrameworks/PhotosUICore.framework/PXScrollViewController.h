@@ -14,6 +14,11 @@
 @interface PXScrollViewController : NSObject <PXTilingScrollController>
 {
     NSHashTable *_didScrollObservers;
+    _Bool _isDecelerating;
+    _Bool _isDragging;
+    _Bool _isTracking;
+    _Bool _isManuallyChanging;
+    _Bool _deferContentOffsetUpdates;
     id <PXTilingScrollControllerUpdateDelegate> _updateDelegate;
     PXTilingScrollInfo *_scrollInfo;
     struct NSObject *_scrollView;
@@ -27,8 +32,13 @@
 @property(readonly, nonatomic) struct CGSize scrollViewContentSize; // @synthesize scrollViewContentSize=_scrollViewContentSize;
 @property(readonly, nonatomic) long long activeScrollAnimations; // @synthesize activeScrollAnimations=_activeScrollAnimations;
 @property(readonly, nonatomic) NSHashTable *_observers; // @synthesize _observers=__observers;
+@property(nonatomic) _Bool deferContentOffsetUpdates; // @synthesize deferContentOffsetUpdates=_deferContentOffsetUpdates;
 @property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 @property(readonly, nonatomic) NSObject<UICoordinateSpace> *contentCoordinateSpace; // @synthesize contentCoordinateSpace=_contentCoordinateSpace;
+@property(readonly, nonatomic) _Bool isManuallyChanging; // @synthesize isManuallyChanging=_isManuallyChanging;
+@property(readonly, nonatomic) _Bool isTracking; // @synthesize isTracking=_isTracking;
+@property(readonly, nonatomic) _Bool isDragging; // @synthesize isDragging=_isDragging;
+@property(readonly, nonatomic) _Bool isDecelerating; // @synthesize isDecelerating=_isDecelerating;
 @property(readonly, nonatomic) NSObject<PXAnonymousScrollView> *scrollView; // @synthesize scrollView=_scrollView;
 @property(copy, nonatomic) PXTilingScrollInfo *scrollInfo; // @synthesize scrollInfo=_scrollInfo;
 @property(nonatomic) __weak id <PXTilingScrollControllerUpdateDelegate> updateDelegate; // @synthesize updateDelegate=_updateDelegate;
@@ -41,6 +51,7 @@
 @property(readonly, nonatomic) struct CGRect visibleRect;
 @property(readonly, nonatomic) struct CGRect activeRect;
 @property(readonly, nonatomic) struct CGSize referenceSize;
+- (void)performManualChange:(CDUnknownBlockType)arg1;
 - (void)applyScrollInfo:(id)arg1;
 @property(nonatomic) struct CGRect scrollViewContentBounds;
 @property(readonly, nonatomic) struct CGRect scrollViewConstrainedVisibleRect;
@@ -51,10 +62,12 @@
 - (void)setScrollViewNeedsLayout;
 - (void)scrollRectToVisible:(struct CGRect)arg1 avoidingContentInsetEdges:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2;
+- (void)scrollToEdge:(unsigned int)arg1;
 - (void)addSubviewToScrollView:(struct NSObject *)arg1;
 - (void)addSubview:(struct NSObject *)arg1;
 - (void)scrollViewDidEndScrollingAnimation;
 - (void)scrollViewWillBeginScrollingAnimationTowardsContentEdges:(unsigned long long)arg1;
+- (_Bool)scrollViewShouldScrollToTop;
 - (void)scrollViewContentBoundsDidChange;
 - (void)scrollViewDidEndScrolling;
 - (void)willEndScrollingWithVelocity:(struct CGPoint)arg1 targetContentOffset:(inout struct CGPoint *)arg2;
@@ -62,6 +75,7 @@
 - (void)scrollViewWillBeginScrolling;
 - (void)scrollViewDidLayout;
 - (void)scrollViewWillLayout;
+@property(readonly, nonatomic) _Bool hasWindow;
 @property(readonly, nonatomic) _Bool isAnimatingScroll;
 - (void)setActiveScrollAnimations:(long long)arg1;
 - (void)unregisterObserver:(id)arg1;

@@ -29,6 +29,7 @@
     CAAxisSettings *yAxisSettings;
 }
 
++ (id)userAccentColor;
 @property(readonly) CAAxisSettings *yAxisSettings; // @synthesize yAxisSettings;
 @property(readonly) CAAxisSettings *xAxisSettings; // @synthesize xAxisSettings;
 @property double labelGap; // @synthesize labelGap;
@@ -39,6 +40,7 @@
 @property(retain) NSColor *guideColor; // @synthesize guideColor;
 @property(retain) NSColor *gridPointHighlightColor; // @synthesize gridPointHighlightColor;
 @property(retain) NSColor *gridPointSelectedColor; // @synthesize gridPointSelectedColor;
+- (void)viewDidChangeEffectiveAppearance;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (float)valueAtYGridIndex:(float)arg1;
 - (float)valueAtXGridIndex:(float)arg1;

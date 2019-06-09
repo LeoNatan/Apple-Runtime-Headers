@@ -8,6 +8,7 @@
 
 @class NSString, SKUIStoreIdentifier;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBuyButtonDescriptor : NSObject
 {
     _Bool _highlighted;

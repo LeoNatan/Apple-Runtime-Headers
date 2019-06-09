@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)_validatePoint:(CDStruct_d6359813 *)arg1 rect:(CDStruct_90e2a262)arg2 localSearch:(Box_3fb92e00)arg3 validPointHandler:(CDUnknownBlockType)arg4;
+- (void)_validatePoint:(CDStruct_d83bb90a *)arg1 rect:(CDStruct_90e2a262)arg2 localSearch:(Box_3fb92e00)arg3 validPointHandler:(CDUnknownBlockType)arg4;
 - (void)findTransitPointsOfType:(unsigned long long)arg1 nodeHandler:(CDUnknownBlockType)arg2 accessPointHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) GEOMapAccess *map;
 - (void)cancel;

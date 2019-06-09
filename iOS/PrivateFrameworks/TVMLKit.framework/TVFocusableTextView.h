@@ -13,18 +13,22 @@
 
 @interface TVFocusableTextView : UIView <_UIFloatingContentViewDelegate, UIGestureRecognizerDelegate>
 {
+    UIColor *_backgroundColor;
     UIVisualEffectView *_vibrantEffectView;
     UITextView *_auxilliaryTextView;
     _Bool _textTruncating;
     _Bool _moreLabelOnNewLine;
     _Bool _trackHorizontal;
+    _Bool _alwaysShowBackground;
     _Bool _alwaysFocusable;
+    _Bool _disableFocus;
     _Bool _needsTextSizeComputation;
     UIColor *_descriptionTextColor;
     UIColor *_descriptionTextHighlightColor;
     UIColor *_highlightBackgroundColor;
     double _moreHighlightPadding;
     UIColor *_moreLabelTextColor;
+    unsigned long long _focusSizeIncrease;
     CDUnknownBlockType _selectionHandler;
     CDUnknownBlockType _playHandler;
     UITextView *_descriptionTextView;
@@ -34,6 +38,7 @@
     UITapGestureRecognizer *_playRecognizer;
     UILabel *_moreLabel;
     UITapGestureRecognizer *_moreLabelTapGestureRecognizer;
+    struct UIEdgeInsets _padding;
 }
 
 + (double)cornerRadius;
@@ -47,7 +52,11 @@
 @property(retain, nonatomic) UITextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(copy, nonatomic) CDUnknownBlockType playHandler; // @synthesize playHandler=_playHandler;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
+@property(nonatomic) _Bool disableFocus; // @synthesize disableFocus=_disableFocus;
 @property(nonatomic, getter=isAlwaysFocusable) _Bool alwaysFocusable; // @synthesize alwaysFocusable=_alwaysFocusable;
+@property(nonatomic) unsigned long long focusSizeIncrease; // @synthesize focusSizeIncrease=_focusSizeIncrease;
+@property(nonatomic) _Bool alwaysShowBackground; // @synthesize alwaysShowBackground=_alwaysShowBackground;
+@property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) _Bool trackHorizontal; // @synthesize trackHorizontal=_trackHorizontal;
 @property(retain, nonatomic) UIColor *moreLabelTextColor; // @synthesize moreLabelTextColor=_moreLabelTextColor;
 @property(nonatomic) _Bool moreLabelOnNewLine; // @synthesize moreLabelOnNewLine=_moreLabelOnNewLine;
@@ -63,7 +72,7 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (struct CGRect)_moreLabelFrame;
-- (id)_moreLabelExclusionPath;
+- (struct CGRect)_moreLabelExclusionPathFrame;
 - (void)_recomputeTextSizeIfNeeded;
 - (void)_setNeedsTextSizeComputation;
 @property(nonatomic) unsigned long long maximumNumberOfLines;
@@ -76,6 +85,10 @@
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)layoutSubviews;
+- (void)_updateTextColorsForFocusState:(_Bool)arg1;
+- (void)_updateTextColorsIfNeeded;
+- (void)_updateBackgroundColors;
+- (void)setBackgroundColor:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

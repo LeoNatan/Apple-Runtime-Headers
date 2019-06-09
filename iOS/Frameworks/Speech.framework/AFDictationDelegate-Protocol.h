@@ -6,7 +6,7 @@
 
 #import <Speech/NSObject-Protocol.h>
 
-@class AFDictationConnection, AFSpeechPackage, NSArray, NSError, NSFileHandle, NSString;
+@class AFDictationConnection, AFSpeechPackage, NSArray, NSDictionary, NSError, NSFileHandle, NSString, SASMultilingualSpeechRecognized, SASSpeechPartialResult;
 
 @protocol AFDictationDelegate <NSObject>
 
@@ -18,8 +18,14 @@
 - (void)dictationConnection:(AFDictationConnection *)arg1 didRecognizeTranscriptionObjects:(NSArray *)arg2 languageModel:(NSString *)arg3;
 - (void)dictationConnectionSpeechRecognitionDidSucceed:(AFDictationConnection *)arg1;
 - (void)dictationConnection:(AFDictationConnection *)arg1 didProcessAudioDuration:(double)arg2;
+- (void)dictationConnection:(AFDictationConnection *)arg1 didRecognizePartialResult:(SASSpeechPartialResult *)arg2;
 - (void)dictationConnection:(AFDictationConnection *)arg1 didRecognizeTokens:(NSArray *)arg2 languageModel:(NSString *)arg3;
+- (void)dictationConnection:(AFDictationConnection *)arg1 didRecognizePhrases:(NSArray *)arg2 languageModel:(NSString *)arg3 correctionIdentifier:(id)arg4 replacingPreviousPhrasesCount:(unsigned long long)arg5;
 - (void)dictationConnection:(AFDictationConnection *)arg1 didRecognizePhrases:(NSArray *)arg2 languageModel:(NSString *)arg3 correctionIdentifier:(id)arg4;
+- (void)dictationConnection:(AFDictationConnection *)arg1 languageDetectorFailedWithError:(NSError *)arg2;
+- (void)dictationConnection:(AFDictationConnection *)arg1 didRecognizeMultilingualSpeech:(SASMultilingualSpeechRecognized *)arg2;
+- (void)dictationConnection:(AFDictationConnection *)arg1 didDetectLanguage:(NSString *)arg2 confidenceScores:(NSDictionary *)arg3 isConfident:(_Bool)arg4;
+- (void)dictationConnection:(AFDictationConnection *)arg1 didDetectLanguage:(NSString *)arg2 confidenceScores:(NSDictionary *)arg3;
 - (void)dictationConnection:(AFDictationConnection *)arg1 speechRecognitionDidFail:(NSError *)arg2;
 - (void)dictationConnection:(AFDictationConnection *)arg1 speechRecordingDidFail:(NSError *)arg2;
 - (void)dictationConnectionSpeechRecordingDidCancel:(AFDictationConnection *)arg1;

@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     NSTextField *applePayLabelTextField;
     NSButton *applePayCapabilityDisclosureAllowedCheckbox;
     NSTextField *_applePaySubtextTextField;
-    NSTextField *_cookiesAndWebsiteDataTextField;
     NSButton *_policyEnabledButton;
     NSButton *_blockStorageAlwaysButton;
     NSButton *_manageWebsiteDataButton;
@@ -67,7 +66,6 @@ __attribute__((visibility("hidden")))
 - (void)moduleWillBeRemoved;
 - (void)moduleWasInstalled;
 - (void)awakeFromNib;
-- (id)preferencesNibName;
 - (id)imageForPreferenceNamed:(id)arg1;
 
 @end

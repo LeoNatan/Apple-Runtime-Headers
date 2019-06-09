@@ -10,7 +10,7 @@
 #import <CompanionSync/NMSMessageCenterDelegate-Protocol.h>
 
 @class NMSMessageCenter, NSError, NSMutableDictionary, NSMutableIndexSet, NSObject, NSString, NSUUID, SYPersistentStore, SYRetryTimer, SYVectorClock;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction;
 
 @interface SYLegacyStore : SYStore <IDSServiceDelegate, NMSMessageCenterDelegate>
 {
@@ -22,6 +22,7 @@
     NSObject<OS_dispatch_source> *_overflowRetryTimer;
     NSError *_overflowRetryError;
     _Bool _deferredFullSync;
+    NSObject<OS_os_transaction> *_transaction;
     _Bool _encryptPayloads;
     _Bool _alwaysWins;
     _Bool _registeredNotificationHandlers;

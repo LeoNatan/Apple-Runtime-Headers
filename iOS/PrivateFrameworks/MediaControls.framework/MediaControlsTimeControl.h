@@ -8,8 +8,9 @@
 
 #import <MediaControls/UIGestureRecognizerDelegate-Protocol.h>
 
-@class AVTimeFormatter, CADisplayLink, MPCPlayerResponse, NSArray, NSLayoutConstraint, NSString, UIImageView, UILabel, UILayoutGuide, UIView;
+@class AVTimeFormatter, CADisplayLink, MPCPlayerResponse, MTVisualStylingProvider, NSArray, NSLayoutConstraint, NSString, UIImageView, UILabel, UILayoutGuide, UIView;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsTimeControl : UIControl <UIGestureRecognizerDelegate>
 {
     NSArray *_defaultConstraints;
@@ -30,6 +31,7 @@
     _Bool _currentlyTracking;
     long long _style;
     MPCPlayerResponse *_response;
+    MTVisualStylingProvider *_visualStylingProvider;
     UIView *_elapsedTrack;
     UIView *_remainingTrack;
     UIView *_knobView;
@@ -52,6 +54,7 @@
 @property(retain, nonatomic) UIView *knobView; // @synthesize knobView=_knobView;
 @property(retain, nonatomic) UIView *remainingTrack; // @synthesize remainingTrack=_remainingTrack;
 @property(retain, nonatomic) UIView *elapsedTrack; // @synthesize elapsedTrack=_elapsedTrack;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(nonatomic, getter=isTimeControlOnScreen) _Bool timeControlOnScreen; // @synthesize timeControlOnScreen=_timeControlOnScreen;
 @property(nonatomic) CDStruct_fce57115 durationSnapshot; // @synthesize durationSnapshot=_durationSnapshot;
 @property(retain, nonatomic) MPCPlayerResponse *response; // @synthesize response=_response;

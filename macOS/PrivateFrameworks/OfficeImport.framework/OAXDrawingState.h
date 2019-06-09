@@ -8,6 +8,7 @@
 
 @class CXNamespace, NSMutableArray, NSMutableDictionary, OADBlipCollection, OADColorMap, OADColorScheme, OADFontScheme, OADStyleMatrix, OAVReadState, OAXClient, OAXTableStyleCache, OCPPackagePart;
 
+__attribute__((visibility("hidden")))
 @interface OAXDrawingState : OCXReadState
 {
     OAXClient *mClient;

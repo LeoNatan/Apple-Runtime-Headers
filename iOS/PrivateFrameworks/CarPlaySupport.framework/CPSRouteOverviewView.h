@@ -33,6 +33,8 @@
 @property(readonly, nonatomic) CPTrip *representedTrip; // @synthesize representedTrip=_representedTrip;
 - (void).cxx_destruct;
 - (void)setRepresentedTrip:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateTripEstimateStyle;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -19,7 +19,7 @@
 - (id)name;
 - (void)endRequest;
 @property(readonly) TKSmartCard *smartCard;
-- (_Bool)beginRequest:(long long)arg1 error:(id *)arg2;
+- (void)beginRequest;
 - (id)initWithToken:(id)arg1;
 
 @end

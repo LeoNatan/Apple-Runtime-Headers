@@ -8,8 +8,8 @@
 
 #import <PhotosUI/PHExtensionRemoteViewControllerProtocol-Protocol.h>
 
-@class NSExtension, NSString, NSUUID, PHExtensionHostViewPreferredSizes, PUExtensionHostContext;
-@protocol PHExtensionRemoteViewControllerDelegate, PUExtensionVendor;
+@class NSExtension, NSExtensionContext, NSString, NSUUID, PHExtensionHostViewPreferredSizes;
+@protocol PHExtensionRemoteViewControllerDelegate;
 
 @interface PHExtensionRemoteViewController : NSRemoteViewController <PHExtensionRemoteViewControllerProtocol>
 {
@@ -21,6 +21,7 @@
 
 + (id)serviceViewControllerClassName;
 + (void)requestViewControllerFromExtension:(id)arg1 sizeHint:(struct CGSize)arg2 connectionHandler:(CDUnknownBlockType)arg3;
++ (void)requestViewControllerFromExtension:(id)arg1 inputItems:(id)arg2 sizeHint:(struct CGSize)arg3 connectionHandler:(CDUnknownBlockType)arg4;
 @property(retain, nonatomic) PHExtensionHostViewPreferredSizes *preferredSizes; // @synthesize preferredSizes=_preferredSizes;
 @property(copy, nonatomic) NSUUID *sessionUUID; // @synthesize sessionUUID=_sessionUUID;
 @property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
@@ -36,8 +37,8 @@
 - (id)serviceViewControllerInterface;
 - (void)disconnect;
 - (id)vendorProxyWithErrorHandler:(CDUnknownBlockType)arg1;
-@property(readonly, nonatomic) id <PUExtensionVendor> vendorProxy;
-@property(readonly, nonatomic) PUExtensionHostContext *hostContext;
+@property(readonly, nonatomic) id vendorProxy;
+@property(readonly, nonatomic) NSExtensionContext *hostContext;
 - (void)connectToExtension:(id)arg1 withSessionID:(id)arg2 sizeHint:(struct CGSize)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties

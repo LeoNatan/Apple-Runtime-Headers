@@ -8,5 +8,8 @@
 
 @interface NSMutableData (MCMimeDataEncoding)
 - (void)appendQuotedPrintableDataForHeaderBytes:(const char *)arg1 length:(unsigned long long)arg2;
+- (void)appendRFC2231CompliantValue:(id)arg1 forKey:(id)arg2 withEncodingHint:(unsigned long long)arg3;
+- (void)convertNetworkLineEndingsToUnix;
+- (void)appendCString:(const char *)arg1;
 @end
 

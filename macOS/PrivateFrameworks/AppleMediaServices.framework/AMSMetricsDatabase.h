@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     long long _keepAliveCount;
 }
 
-+ (id)_keepAliveForContainer:(id)arg1;
 @property long long keepAliveCount; // @synthesize keepAliveCount=_keepAliveCount;
 @property(retain) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain) AMSSQLiteConnection *connection; // @synthesize connection=_connection;
@@ -29,11 +28,13 @@ __attribute__((visibility("hidden")))
 - (void)_performTransaction:(CDUnknownBlockType)arg1;
 - (id)_lockedById;
 - (BOOL)connectionNeedsResetForCorruption:(id)arg1;
+- (void)unlockEvents:(id)arg1 error:(id *)arg2;
 - (void)unlockAllEventsWithKey:(id)arg1 error:(id *)arg2;
 - (id)lockAllEventsWithError:(id *)arg1;
+- (void)interruptKeepAlive;
 - (void)insertEvents:(id)arg1 error:(id *)arg2;
 - (void)enumerateTopicsWithLockKey:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (void)enumerateEventsForTopic:(id)arg1 lockKey:(id)arg2 objectBlock:(CDUnknownBlockType)arg3;
+- (void)enumerateEventsWithTopic:(id)arg1 lockKey:(id)arg2 objectBlock:(CDUnknownBlockType)arg3;
 - (void)dropEvents:(id)arg1 error:(id *)arg2;
 - (void)dropAllEventsWithLockKey:(id)arg1 error:(id *)arg2;
 - (long long)countAllEventsWithLockKey:(id)arg1 error:(id *)arg2;

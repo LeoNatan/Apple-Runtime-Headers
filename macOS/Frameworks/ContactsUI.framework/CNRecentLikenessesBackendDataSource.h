@@ -24,6 +24,7 @@
     id <CNSchedulerProvider> _schedulerProvider;
 }
 
++ (id)os_log;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) id <CNContactLikenessMutatorFactory> likenessMutatorFactory; // @synthesize likenessMutatorFactory=_likenessMutatorFactory;
 @property(retain, nonatomic) id <CNContactLikenessesFetchStrategy> likenessFetchStrategy; // @synthesize likenessFetchStrategy=_likenessFetchStrategy;

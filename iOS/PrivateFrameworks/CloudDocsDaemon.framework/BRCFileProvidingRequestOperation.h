@@ -7,13 +7,14 @@
 #import <CloudDocsDaemon/_BRCFrameworkOperation.h>
 
 #import <CloudDocsDaemon/BRCDownloadTracking-Protocol.h>
+#import <CloudDocsDaemon/BRCListOperationDelegate-Protocol.h>
 #import <CloudDocsDaemon/BRCOperationSubclass-Protocol.h>
 #import <CloudDocsDaemon/BRCReachabilityDelegate-Protocol.h>
 
-@class BRCAccountSession, BRCDirectoryItem, BRCTreeEnumerator, BRCXPCClient, NSError, NSMutableArray, NSMutableSet, NSSet, NSString, NSURL;
+@class BRCAccountSession, BRCDirectoryItem, BRCListDirectoryContentsOperation, BRCRecursiveListDirectoryContentsOperation, BRCTreeEnumerator, BRCXPCClient, NSError, NSMutableArray, NSMutableSet, NSSet, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
-@interface BRCFileProvidingRequestOperation : _BRCFrameworkOperation <BRCDownloadTracking, BRCReachabilityDelegate, BRCOperationSubclass>
+@interface BRCFileProvidingRequestOperation : _BRCFrameworkOperation <BRCDownloadTracking, BRCReachabilityDelegate, BRCListOperationDelegate, BRCOperationSubclass>
 {
     BRCAccountSession *_session;
     BRCXPCClient *_client;
@@ -28,6 +29,8 @@ __attribute__((visibility("hidden")))
     _Bool _isFinished;
     _Bool _isMonitoringReachability;
     NSMutableSet *_appLibrariesMonitored;
+    BRCListDirectoryContentsOperation *_listOp;
+    BRCRecursiveListDirectoryContentsOperation *_recursiveList;
     _Bool _isRecursive;
     _Bool _isForBackup;
     _Bool _wantsCurrentVersion;
@@ -44,7 +47,10 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)_provideItem;
 - (void)_provideURL;
+- (void)listOperation:(id)arg1 wasReplacedByOperation:(id)arg2;
+- (void)_provideFlatDirectoryStructure:(id)arg1;
 - (void)_provideDirectoryRecursively:(id)arg1;
+- (void)_provideDirectoryContents:(id)arg1 appLibrary:(id)arg2;
 - (void)_provideDocument:(id)arg1;
 - (void)downloadTrackedForItemWithDocID:(id)arg1 didFinishWithError:(id)arg2;
 - (void)_detachAllTrackedDocID:(id)arg1 error:(id)arg2;

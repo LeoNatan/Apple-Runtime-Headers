@@ -10,7 +10,8 @@
 
 @interface ACAccount (iCloudAccount)
 + (id)icaAppleAccountWithAppleID:(id)arg1 password:(id)arg2;
-- (id)supportedDataclass:(id)arg1 isPrimary:(BOOL)arg2 isManagedAppleID:(BOOL)arg3;
+- (id)retainPropertiesForDataClass:(id)arg1 oldProperties:(id)arg2 newProperties:(id)arg3;
+- (void)setProvisionedDataclassesAndPropertiesWithMmeResponseDict:(id)arg1;
 - (void)icaClearRawPassword;
 - (void)icaSetRawPassword:(id)arg1;
 - (id)icaRawPassword;
@@ -23,7 +24,11 @@
 @property(readonly, nonatomic) NSString *icaCloudKitToken; // @dynamic icaCloudKitToken;
 @property(readonly, nonatomic) NSString *icaMDMServerToken; // @dynamic icaMDMServerToken;
 - (id)icaMapsToken;
+@property(readonly, nonatomic) NSString *icaKeyTransparencyToken; // @dynamic icaKeyTransparencyToken;
+@property(readonly, nonatomic) NSString *icaSearchPartyToken; // @dynamic icaSearchPartyToken;
+@property(readonly, nonatomic) NSString *icaFmipAppToken;
 @property(readonly, nonatomic) NSString *icaFmipToken; // @dynamic icaFmipToken;
+@property(readonly, nonatomic) NSString *icaFmfAppToken;
 @property(readonly, nonatomic) NSString *icaFmfToken; // @dynamic icaFmfToken;
 @property(readonly, nonatomic) NSString *icaAuthToken; // @dynamic icaAuthToken;
 @property(readonly, nonatomic) NSDictionary *icaTokens; // @dynamic icaTokens;

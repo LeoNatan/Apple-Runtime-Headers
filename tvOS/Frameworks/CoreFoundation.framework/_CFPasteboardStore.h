@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class _CFPasteboardCache, _CFPasteboardClientInstanceID;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface _CFPasteboardStore : NSObject
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned char _ownerHasPendingChanges;
     struct __CFDictionary *_clientInstancesByUUID;
     struct __CFSet *_clientInstancesWithCacheInfoForCurrentGeneration;
+    NSObject<OS_dispatch_source> *_expirationTimer;
 }
 
 + (struct __CFString *)dumpAllClients;
@@ -51,8 +52,11 @@ __attribute__((visibility("hidden")))
 - (void)_onqueue_handleNewEntries:(struct __CFArray *)arg1 forMessage:(id)arg2 shouldInvalidateClientMetadata:(_Bool *)arg3;
 - (void)handleGetCounts:(id)arg1;
 - (void)handleNotifyHasEntries:(id)arg1;
+- (void)handleSetExpirationDate:(id)arg1;
+- (void)_onqueue_handleExpirationTimer;
 - (void)handleMakeGenerationLocal:(id)arg1;
 - (void)handleBeginGeneration:(id)arg1;
+- (void)_onqueue_beginGenerationWithNewOwner:(const struct __CFUUID *)arg1;
 - (void)_onqueue_clearGenerationSpecificData;
 - (id)_onqueue_cacheForGeneration:(long long)arg1;
 - (long long)_onqueue_nextGenerationCount;

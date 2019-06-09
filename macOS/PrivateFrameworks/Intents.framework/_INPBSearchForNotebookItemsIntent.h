@@ -14,31 +14,41 @@
 
 @interface _INPBSearchForNotebookItemsIntent : PBCodable <_INPBSearchForNotebookItemsIntent, NSSecureCoding, NSCopying>
 {
+    CDStruct_95bda58d _temporalEventTriggerTypes;
     struct {
         unsigned int dateSearchType:1;
+        unsigned int includeAllNoteContents:1;
         unsigned int itemType:1;
         unsigned int locationSearchType:1;
         unsigned int status:1;
+        unsigned int taskPriority:1;
     } _has;
+    BOOL _includeAllNoteContents;
     int _dateSearchType;
     int _itemType;
     int _locationSearchType;
     int _status;
+    int _taskPriority;
     NSString *_content;
     _INPBDateTimeRange *_dateTime;
+    _INPBDataString *_groupName;
     _INPBIntentMetadata *_intentMetadata;
     _INPBLocation *_location;
     NSString *_notebookItemIdentifier;
     _INPBDataString *_title;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) _INPBDataString *title; // @synthesize title=_title;
+@property(nonatomic) int taskPriority; // @synthesize taskPriority=_taskPriority;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(copy, nonatomic) NSString *notebookItemIdentifier; // @synthesize notebookItemIdentifier=_notebookItemIdentifier;
 @property(nonatomic) int locationSearchType; // @synthesize locationSearchType=_locationSearchType;
 @property(retain, nonatomic) _INPBLocation *location; // @synthesize location=_location;
 @property(nonatomic) int itemType; // @synthesize itemType=_itemType;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(nonatomic) BOOL includeAllNoteContents; // @synthesize includeAllNoteContents=_includeAllNoteContents;
+@property(retain, nonatomic) _INPBDataString *groupName; // @synthesize groupName=_groupName;
 @property(retain, nonatomic) _INPBDateTimeRange *dateTime; // @synthesize dateTime=_dateTime;
 @property(nonatomic) int dateSearchType; // @synthesize dateSearchType=_dateSearchType;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
@@ -47,9 +57,23 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasTitle;
+- (int)StringAsTemporalEventTriggerTypes:(id)arg1;
+- (id)temporalEventTriggerTypesAsString:(int)arg1;
+- (int)temporalEventTriggerTypeAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long temporalEventTriggerTypesCount;
+- (void)addTemporalEventTriggerType:(int)arg1;
+- (void)clearTemporalEventTriggerTypes;
+@property(readonly, nonatomic) int *temporalEventTriggerTypes;
+- (void)setTemporalEventTriggerTypes:(int *)arg1 count:(unsigned long long)arg2;
+- (int)StringAsTaskPriority:(id)arg1;
+- (id)taskPriorityAsString:(int)arg1;
+@property(nonatomic) BOOL hasTaskPriority;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatus;
@@ -62,6 +86,8 @@
 - (id)itemTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasItemType;
 @property(readonly, nonatomic) BOOL hasIntentMetadata;
+@property(nonatomic) BOOL hasIncludeAllNoteContents;
+@property(readonly, nonatomic) BOOL hasGroupName;
 @property(readonly, nonatomic) BOOL hasDateTime;
 - (int)StringAsDateSearchType:(id)arg1;
 - (id)dateSearchTypeAsString:(int)arg1;

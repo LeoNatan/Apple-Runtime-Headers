@@ -8,7 +8,6 @@
 
 @class NSArray, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIPluginManager : NSObject
 {
     NSString *_path;

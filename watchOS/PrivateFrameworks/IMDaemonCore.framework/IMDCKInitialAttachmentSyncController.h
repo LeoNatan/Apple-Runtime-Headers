@@ -14,8 +14,6 @@
 }
 
 @property(retain, nonatomic) CKServerChangeToken *syncToken; // @synthesize syncToken=_syncToken;
-- (void)syncAttachmentsWithSyncType:(int)arg1 deviceConditionsToCheck:(unsigned int)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (int)_numberOfMetadataBatchesOfAttachmentsToFetchInInitialSync;
 - (id)ckUtilities;
 - (_Bool)_kickOffWriteIfNeededForSyncType:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_deviceConditionsAllowsMessageSyncIgnoreFeatureEnabled:(_Bool)arg1;

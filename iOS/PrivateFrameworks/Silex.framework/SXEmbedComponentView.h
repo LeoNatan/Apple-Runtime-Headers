@@ -99,7 +99,7 @@
 - (void)loadEmbedData;
 - (void)loadEmbedIfNeeded;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
-- (void)willPresentComponent;
+- (void)willPresentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
 - (void)discardContents;
 - (void)renderContents;
 - (void)dealloc;

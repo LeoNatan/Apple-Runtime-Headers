@@ -8,7 +8,7 @@
 
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSString;
+@class NSString, WKContentRuleListStore;
 
 @interface _WKUserContentExtensionStore : NSObject <WKObject>
 {
@@ -23,6 +23,7 @@
 - (void)removeContentExtensionForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)lookupContentExtensionForIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)compileContentExtensionForIdentifier:(id)arg1 encodedContentExtension:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) WKContentRuleListStore *_contentRuleListStore;
 - (id)_initWithWKContentRuleListStore:(id)arg1;
 - (void)_invalidateContentExtensionVersionForIdentifier:(id)arg1;
 - (void)_removeAllContentExtensions;

@@ -8,5 +8,7 @@
 
 @interface MPModelAlbum (MPCModelPlaybackIntentDataSourceAdditions)
 - (id)mpc_protoContainerRepresentation;
+- (id)MPC_modelObjectWithStoreFrontLocalEquivalentModelObject:(id)arg1;
+- (id)mpc_radioContentReference;
 @end
 

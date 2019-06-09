@@ -6,25 +6,29 @@
 
 #import <AppKit/NSPanel.h>
 
-@class NSView;
+@class NSView, NSVisualEffectView;
 
 @interface IMKUIPanel : NSPanel
 {
     NSView *_accessibilityHitTestView;
     NSView *_clipView;
+    NSVisualEffectView *_effectView;
 }
 
+@property(retain, nonatomic) NSVisualEffectView *effectView; // @synthesize effectView=_effectView;
 @property(retain, nonatomic) NSView *clipView; // @synthesize clipView=_clipView;
 @property(nonatomic) __weak NSView *accessibilityHitTestView; // @synthesize accessibilityHitTestView=_accessibilityHitTestView;
 - (void).cxx_destruct;
 - (id)accessibilityTitle;
 - (id)accessibilitySubroleAttribute;
 - (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2;
+- (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2 animate:(BOOL)arg3;
+- (void)updateClipViewWithFrame:(struct CGRect)arg1;
 - (void)setWindowFrame:(struct CGRect)arg1 animation:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)animateWindowFrameForExtension:(struct CGRect)arg1;
 - (id)initWithUpdateLayerUsingFrame:(struct CGRect)arg1;
-- (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4 flipped:(BOOL)arg5;
+- (id)initWithFrame:(struct CGRect)arg1 flipped:(BOOL)arg2;
 
 @end
 

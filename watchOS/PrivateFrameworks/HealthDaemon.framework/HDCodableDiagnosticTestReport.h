@@ -20,12 +20,12 @@
     HDCodableMedicalRecord *_medicalRecord;
     NSString *_panelName;
     HDCodableFHIRIdentifierList *_results;
-    HDCodableMedicalCoding *_status;
+    HDCodableMedicalCoding *_statusCoding;
 }
 
 @property(retain, nonatomic) NSData *issueDate; // @synthesize issueDate=_issueDate;
 @property(retain, nonatomic) NSData *effectiveEndDate; // @synthesize effectiveEndDate=_effectiveEndDate;
-@property(retain, nonatomic) HDCodableMedicalCoding *status; // @synthesize status=_status;
+@property(retain, nonatomic) HDCodableMedicalCoding *statusCoding; // @synthesize statusCoding=_statusCoding;
 @property(retain, nonatomic) NSData *effectiveStartDate; // @synthesize effectiveStartDate=_effectiveStartDate;
 @property(retain, nonatomic) HDCodableFHIRIdentifierList *results; // @synthesize results=_results;
 @property(retain, nonatomic) NSString *panelName; // @synthesize panelName=_panelName;
@@ -43,7 +43,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) _Bool hasIssueDate;
 @property(readonly, nonatomic) _Bool hasEffectiveEndDate;
-@property(readonly, nonatomic) _Bool hasStatus;
+@property(readonly, nonatomic) _Bool hasStatusCoding;
 @property(readonly, nonatomic) _Bool hasEffectiveStartDate;
 @property(readonly, nonatomic) _Bool hasResults;
 @property(readonly, nonatomic) _Bool hasPanelName;

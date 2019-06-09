@@ -15,7 +15,8 @@
     NSObject<CSLSBacklightAssertionProvider> *_assertionProvider;
     NSString *_uuid;
     int _pid;
-    NSObject *_ownedObject;
+    id _ownedObject;
+    unsigned long long _takenMachTime;
     CSLSBacklightAssertionSpecification *_specification;
     CDUnknownBlockType _timeoutBlock;
 }
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) CSLSBacklightAssertionSpecification *specification; // @synthesize specification=_specification;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) double secondsSinceTaken;
 - (void)releaseAssertion;
 - (void)takeAssertion;
 @property(readonly, nonatomic, getter=isAsserted) _Bool asserted;
@@ -33,10 +35,11 @@
 - (id)initWithIdentifier:(id)arg1 reason:(unsigned int)arg2 flags:(unsigned int)arg3 timeoutSeconds:(double)arg4 timeoutBlock:(CDUnknownBlockType)arg5;
 - (void)logAction:(const char *)arg1 ofType:(unsigned char)arg2;
 - (void)performTimeout;
-@property(retain, nonatomic) NSObject *ownedObject;
+@property(retain, nonatomic) id ownedObject;
 @property(nonatomic) int pid;
 @property(retain, nonatomic) NSString *uuid;
 @property(nonatomic) __weak NSObject<CSLSBacklightAssertionProvider> *assertionProvider;
+- (id)initWithIdentifier:(id)arg1 reason:(unsigned int)arg2 flags:(unsigned int)arg3 pid:(int)arg4 timeoutSeconds:(double)arg5 timeoutBlock:(CDUnknownBlockType)arg6;
 
 @end
 

@@ -39,6 +39,12 @@
 @property(readonly) NSString *ssid; // @dynamic ssid;
 @property(readonly) BOOL ibss; // @dynamic ibss;
 - (void)dealloc;
+- (long long)comparePHYMode:(id)arg1;
+- (long long)compareSecurity:(id)arg1;
+- (BOOL)supportsPSK;
+- (BOOL)supportsEAP;
+- (long long)fastestSupportedPHYMode;
+- (long long)strongestSupportedSecurity;
 - (BOOL)isWiFiNetworkMetered;
 - (BOOL)isWiFiNetworkChargeablePublicNetwork;
 - (BOOL)isAppleSWAP;
@@ -64,6 +70,7 @@
 @property(readonly) BOOL isCarPlayNetwork; // @dynamic isCarPlayNetwork;
 @property(readonly) NSData *bssidData; // @dynamic bssidData;
 @property(readonly) unsigned long long physicalLayerMode; // @dynamic physicalLayerMode;
+@property(readonly) BOOL supportsWPA2EnterpriseMFPEnabledAndRequired; // @dynamic supportsWPA2EnterpriseMFPEnabledAndRequired;
 @property(readonly) unsigned long long securityType; // @dynamic securityType;
 @property(readonly) BOOL supportsWPS; // @dynamic supportsWPS;
 @property(readonly) BOOL supportsEasyConnect; // @dynamic supportsEasyConnect;

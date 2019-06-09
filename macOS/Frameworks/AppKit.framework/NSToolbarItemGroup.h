@@ -6,7 +6,7 @@
 
 #import <AppKit/NSToolbarItem.h>
 
-@class NSArray;
+@class NSArray, NSImage, NSString;
 
 @interface NSToolbarItemGroup : NSToolbarItem
 {
@@ -15,10 +15,21 @@
         unsigned int dirtiedLayout:1;
         unsigned int reserved:31;
     } _giFlags;
-    id _giReserved;
+    long long _controlRepresentation;
+    long long _selectionMode;
+    NSString *_title;
+    NSImage *_image;
+    id _target;
+    SEL _action;
 }
 
++ (id)groupWithItemIdentifier:(id)arg1 images:(id)arg2 selectionMode:(long long)arg3 labels:(id)arg4 target:(id)arg5 action:(SEL)arg6;
++ (id)groupWithItemIdentifier:(id)arg1 titles:(id)arg2 selectionMode:(long long)arg3 labels:(id)arg4 target:(id)arg5 action:(SEL)arg6;
+- (void).cxx_destruct;
 - (id)_menuFormRepresentationForOverflowMenu;
+- (id)_menuFormRepresentationForOverflowMenuOfSubitem:(id)arg1;
+- (void)_standardCommonSubitemMenuFormRepresentationClicked:(id)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 - (id)menuFormRepresentation;
 - (id)_selectableToolbarViews;
 - (id)_initialViewToSelectFromDirection:(long long)arg1;
@@ -44,14 +55,31 @@
 - (struct CGRect)_segmentedControlRectForItemAtIndex:(long long)arg1 inBounds:(struct CGRect)arg2 controlBounds:(struct CGRect)arg3;
 - (struct CGRect)_segmentedControlRectForItemAtIndex:(long long)arg1 inBounds:(struct CGRect)arg2;
 - (struct CGRect)_evenlySpacedRectForItemAtIndex:(long long)arg1 inBounds:(struct CGRect)arg2;
+- (BOOL)isSelectedAtIndex:(long long)arg1;
+- (void)setSelected:(BOOL)arg1 atIndex:(long long)arg2;
+@property long long selectedIndex;
+@property long long selectionMode;
+@property long long controlRepresentation;
+- (void)_performActionForPicker:(id)arg1;
+- (void)setImage:(id)arg1;
+- (id)image;
+- (void)setTitle:(id)arg1;
+- (id)title;
+- (void)setAction:(SEL)arg1;
+- (SEL)action;
+- (void)setTarget:(id)arg1;
+- (id)target;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(copy) NSArray *subitems;
 - (void)_forceSetView:(id)arg1;
+- (void)_updateViewRepresentation;
+- (BOOL)_subitemsContainCustomViews;
+@property(copy) NSArray *subitems;
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 stretchesContent:(BOOL)arg3;
 - (BOOL)_mouseDownInSurroundingRegionShouldMoveWindow;
 - (void)dealloc;
 - (id)view;
 - (void)validate;
+- (id)_defaultPickerViewIfUsed;
 - (id)_defaultGroupViewIfUsed;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

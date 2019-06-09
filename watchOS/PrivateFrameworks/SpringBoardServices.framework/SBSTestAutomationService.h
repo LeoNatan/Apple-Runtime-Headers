@@ -10,12 +10,14 @@
 {
 }
 
+- (void)countScenesForBundleIdentifier:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setApplicationBundleIdentifier:(id)arg1 blockedForScreenTime:(_Bool)arg2;
 - (void)resetToHomeScreenAnimated:(_Bool)arg1;
 - (void)setOrientationLockEnabled:(_Bool)arg1;
 - (void)setIdleTimerEnabled:(_Bool)arg1;
 - (void)setAlertsEnabled:(_Bool)arg1;
 - (void)suspendAllDisplays;
+- (void)setTestRunnerRecoveryApplicationBundleIdentifier:(id)arg1;
 
 @end
 

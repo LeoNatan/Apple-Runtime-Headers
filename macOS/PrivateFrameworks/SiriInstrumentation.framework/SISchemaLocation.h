@@ -6,35 +6,34 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaLocation-Protocol.h>
 
-@interface SISchemaLocation : PBCodable <NSCopying>
+@class NSData, NSString;
+
+@interface SISchemaLocation : PBCodable <SISchemaLocation, NSSecureCoding>
 {
-    float _horizontalAccuracyInMeters;
     float _latitude;
     float _longitude;
-    struct {
-        unsigned int horizontalAccuracyInMeters:1;
-        unsigned int latitude:1;
-        unsigned int longitude:1;
-    } _has;
+    float _horizontalAccuracyInMeters;
 }
 
 @property(nonatomic) float horizontalAccuracyInMeters; // @synthesize horizontalAccuracyInMeters=_horizontalAccuracyInMeters;
 @property(nonatomic) float longitude; // @synthesize longitude=_longitude;
 @property(nonatomic) float latitude; // @synthesize latitude=_latitude;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) BOOL hasHorizontalAccuracyInMeters;
-@property(nonatomic) BOOL hasLongitude;
-@property(nonatomic) BOOL hasLatitude;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

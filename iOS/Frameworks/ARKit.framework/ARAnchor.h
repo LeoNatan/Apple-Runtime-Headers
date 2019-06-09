@@ -15,6 +15,7 @@
 {
     NSUUID *_identifier;
     NSString *_name;
+    NSUUID *_sessionIdentifier;
     double _lastUpdateTimestamp;
     // Error parsing type: {?="columns"[4]}, name: _transform
     // Error parsing type: {?="columns"[4]}, name: _referenceTransform
@@ -28,6 +29,7 @@
 // Error parsing type for property transform:
 // Property attributes: T{?=[4]},N,V_transform
 
+@property(retain, nonatomic) NSUUID *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

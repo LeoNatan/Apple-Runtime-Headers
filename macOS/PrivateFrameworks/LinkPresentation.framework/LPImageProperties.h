@@ -13,8 +13,10 @@
 @interface LPImageProperties : NSObject <NSCopying>
 {
     NSString *_accessibilityText;
+    long long _type;
 }
 
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *accessibilityText; // @synthesize accessibilityText=_accessibilityText;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

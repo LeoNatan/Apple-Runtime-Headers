@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface _CUIThemeColorRendition : CUIThemeRendition
 {
+    struct CGColor *_cgColor;
     const struct _csicolor *_csiColor;
     NSString *_colorName;
 }
@@ -19,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)substituteWithSystemColor;
 - (id)systemColorName;
 - (const struct _csicolor *)csiColor;
+- (struct CGColor *)cgColor;
+- (struct CGColorSpace *)_colorSpaceWithID:(long long)arg1;
 - (id)_initWithCSIHeader:(const struct _csiheader *)arg1;
 
 @end

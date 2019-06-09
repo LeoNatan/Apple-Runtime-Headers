@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (struct __CVPixelBufferPool *)pixelBufferPool;
 - (_Bool)appendPixelBuffer:(struct __CVBuffer *)arg1 withPresentationTime:(CDStruct_1b6d18a9)arg2;
 - (int)appendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 error:(id *)arg2;
+- (void)stopRequestingMediaData;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)isReadyForMoreMediaData;
 - (id)currentPassDescription;

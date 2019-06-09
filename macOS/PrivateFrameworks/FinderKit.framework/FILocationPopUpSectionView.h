@@ -4,23 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
-
-@class NSString;
+#import <FinderKit/FI_TUpdateLayerView.h>
 
 __attribute__((visibility("hidden")))
-@interface FILocationPopUpSectionView : NSView
+@interface FILocationPopUpSectionView : FI_TUpdateLayerView
 {
-    NSString *_title;
 }
 
-+ (id)menuItemAttributes;
++ (id)menuTitleAttributes;
 + (id)sectionViewWithTitle:(const struct TString *)arg1;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-- (void)dealloc;
-- (void)drawRect:(struct CGRect)arg1;
-- (void)sizeToFit;
-- (struct CGSize)menuSize;
 
 @end
 

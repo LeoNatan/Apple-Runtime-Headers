@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSString *_title;
     NSString *_roleDescription;
-    int _mask;
+    unsigned long long _mask;
     struct __AXUIElement *_elementRef;
     NSData *_context;
     unsigned long long _childCount;
@@ -25,10 +25,11 @@ __attribute__((visibility("hidden")))
     BOOL _isCompound;
 }
 
+- (void).cxx_destruct;
 - (long long)compareGeometry:(id)arg1;
 - (id)description;
-- (BOOL)hasMask:(int)arg1;
-- (id)attributeForKey:(int)arg1;
+- (BOOL)hasMask:(unsigned long long)arg1;
+- (id)attributeForKey:(long long)arg1;
 - (void)updateMarker;
 - (void)dealloc;
 

@@ -6,7 +6,11 @@
 
 #import <Foundation/NSDate.h>
 
-@interface NSDate (TSCEAdditions)
+#import <iWorkImport/TSCHChartGridValue-Protocol.h>
+
+@class NSString;
+
+@interface NSDate (TSCEAdditions) <TSCHChartGridValue>
 + (id)tsce_dateWithYear:(long long)arg1 month:(long long)arg2 day:(long long)arg3 hour:(long long)arg4 minute:(long long)arg5 second:(long long)arg6;
 + (id)tsce_dateWithSerialNumber:(double)arg1 dateMode:(int)arg2;
 - (double)tsce_mapToDouble;
@@ -18,5 +22,31 @@
 - (long long)tsce_day;
 - (long long)tsce_month;
 - (long long)tsce_year;
+- (_Bool)tsu_isEqualToDate:(id)arg1;
+- (_Bool)p_localeUses24HourTimeCycle;
+- (id)dateFormatterFromTemplate12Hour:(id)arg1 template24Hour:(id)arg2 withDateFormatter:(id)arg3;
+- (id)tsu_shortFormattedDate;
+- (id)tsu_fullFormattedDate;
+- (id)p_ruleForOverAYearAgoForDate:(id)arg1 withDateFormatter:(id)arg2;
+- (id)p_ruleForOverAWeekAgoForDate:(id)arg1 withDateFormatter:(id)arg2;
+- (id)p_ruleForUpToSevenDaysAgoAndNotYesterdayForDate:(id)arg1 withDateFormatter:(id)arg2;
+- (id)p_ruleForYesterday:(id)arg1 withDateFormatter:(id)arg2;
+- (id)p_rule1To23HoursAgo:(long long)arg1;
+- (id)p_rule1To59MinutesAgo:(long long)arg1;
+- (id)tsu_relativeAnnotationStringForEarlierDate:(id)arg1;
+- (id)tsu_relativeAnnotationStringForEarlierDate:(id)arg1 withDateFormatter:(id)arg2;
+- (id)tsu_relativeAnnotationStringForEarlierDate:(id)arg1 withDateFormatter:(id)arg2 shortAsPossible:(_Bool)arg3;
+@property(readonly, nonatomic) CDStruct_d65e47c4 tsu_DOSTime;
+- (id)tsu_initWithDOSTime:(CDStruct_d65e47c4)arg1;
+-     // Error parsing type: v24@0:8^{Date=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16, name: tsp_saveToMessage:
+-     // Error parsing type: @24@0:8r^{Date=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}d}16, name: tsp_initWithMessage:
+- (double)doubleValue;
+@property(readonly, nonatomic) int chartGridValueType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

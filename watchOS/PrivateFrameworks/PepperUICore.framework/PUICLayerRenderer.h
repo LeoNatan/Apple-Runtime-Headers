@@ -6,36 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class CALayer, CARenderer, EAGLContext;
+@class CALayer, CARenderer;
+@protocol MTLTexture;
 
 @interface PUICLayerRenderer : NSObject
 {
-    unsigned int _textureHandle;
-    unsigned int _framebufferHandle;
-    unsigned int _renderBufferHandle;
+    struct __IOSurface *_ioSurface;
     int _drawableWidth;
     int _drawableHeight;
     CALayer *_layer;
     CARenderer *_renderer;
-    EAGLContext *_context;
+    id <MTLTexture> _mtlTexture;
     struct CGRect _bounds;
     struct CGRect _viewPort;
 }
 
 @property(nonatomic) struct CGRect viewPort; // @synthesize viewPort=_viewPort;
 @property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-@property(retain, nonatomic) EAGLContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) id <MTLTexture> mtlTexture; // @synthesize mtlTexture=_mtlTexture;
 @property(retain, nonatomic) CARenderer *renderer; // @synthesize renderer=_renderer;
 @property(retain, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 - (void).cxx_destruct;
-- (struct CGImage *)newImageFromCurrentRender;
-- (void)tearDownRenderingContext;
-- (void)render;
-- (void)prepareRenderTarget;
-- (void)prepareTexture;
-- (id)newLayerImage;
+- (struct __IOSurface *)newSurfaceWithWidth:(float)arg1 height:(float)arg2;
 - (id)renderLayer;
-- (id)init;
 
 @end
 

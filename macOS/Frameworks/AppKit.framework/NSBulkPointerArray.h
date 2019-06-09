@@ -25,8 +25,10 @@ __attribute__((visibility("hidden")))
 + (id)strongObjectsPointerArray;
 + (id)pointerArrayWithOptions:(unsigned long long)arg1;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
+- (id)subarrayWithRange:(struct _NSRange)arg1;
 - (void)removePointersAtIndexes:(id)arg1;
 - (void)insertPointers:(void **)arg1 numberOfItems:(unsigned long long)arg2 atIndexes:(id)arg3;
+- (void)appendBulkPointerArray:(id)arg1;
 - (void)moveItemFromIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)replacePointerAtIndex:(unsigned long long)arg1 withPointer:(void *)arg2;
 - (void)removePointerAtIndex:(unsigned long long)arg1;

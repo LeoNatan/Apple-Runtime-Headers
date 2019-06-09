@@ -10,7 +10,7 @@
 
 @interface KeychainMasterHandler : NSObject
 {
-    struct OpaqueSecKeychainRef *_keychainRef;
+    struct __SecKeychain *_keychainRef;
     long long _moduleHandle;
     int _errorStatus;
     NSString *_errorString;
@@ -23,7 +23,7 @@
 - (id)errorString;
 - (int)errorStatus;
 - (void)dealloc;
-- (id)initWithKeychain:(struct OpaqueSecKeychainRef *)arg1;
+- (id)initWithKeychain:(struct __SecKeychain *)arg1;
 
 @end
 

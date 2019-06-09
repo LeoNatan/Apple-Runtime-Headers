@@ -15,11 +15,11 @@
 }
 
 @property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
-@property(readonly) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
+@property(readonly, nonatomic) __weak MKAnnotationView *annotationView; // @synthesize annotationView=_annotationView;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isLeftAnchored) BOOL leftAnchored;
 @property(readonly, nonatomic) long long anchorPosition;
-@property(readonly, nonatomic, getter=isVisibile) BOOL visible;
+@property(readonly, nonatomic, getter=isVisible) BOOL visible;
 - (void)dismissAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)initWithAnnotationView:(id)arg1;

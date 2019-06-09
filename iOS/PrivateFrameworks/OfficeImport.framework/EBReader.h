@@ -21,13 +21,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isFileStructuredStorage; // @synthesize isFileStructuredStorage=mIsFileStructuredStorage;
 @property(nonatomic) _Bool useStringOptimization; // @synthesize useStringOptimization=mUseStringOptimization;
 @property(retain, nonatomic) NSString *temporaryDirectory; // @synthesize temporaryDirectory=mTemporaryDirectory;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct XlBinaryReader *xlReader;
 - (struct OCCBinaryStreamer *)allocBinaryStreamerWithCryptoKey:(struct OCCCryptoKey *)arg1 baseOutputFilenameInUTF8:(const char *)arg2;
 - (struct OCCEncryptionInfoReader *)encryptionInfoReader;
 - (id)read;
 - (_Bool)start;
 - (void)dealloc;
-- (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (id)initWithCancelDelegate:(id)arg1;
 
 @end
 

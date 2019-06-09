@@ -18,7 +18,7 @@
 @property(nonatomic, getter=isSystemEmoji) _Bool systemEmoji; // @synthesize systemEmoji=_systemEmoji;
 - (id)previewCachesFileURLWithOrientation:(BOOL)arg1 extension:(id)arg2;
 - (id)fileURL;
-- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3;
+- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3 forceInlinePreview:(_Bool)arg4;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)icon;
 - (id)backgroundColorOverride;

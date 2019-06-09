@@ -10,7 +10,7 @@
 #import <CoreDuet/SpotlightReceiver-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, NSString, _DKPrivacyPolicyEnforcer, _DKRateLimitPolicyEnforcer;
-@protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction, _CDInteractionRecording><_CDInteractionDeleting, _DKKnowledgeSaving><_DKKnowledgeEventStreamDeleting;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction, _CDInteractionRecording><_CDInteractionDeleting, _DKKnowledgeQuerying><_DKKnowledgeSaving><_DKKnowledgeEventStreamDeleting;
 
 @interface _CDSpotlightItemRecorder : NSObject <SpotlightReceiver, CSSearchableIndexObserver>
 {
@@ -21,15 +21,15 @@
     NSObject<OS_os_transaction> *_pendingOperationsTransaction;
     NSObject<OS_dispatch_queue> *_activityRateLimiterQueue;
     NSMutableDictionary *_activityPerBundleRateLimit;
-    id <_DKKnowledgeSaving><_DKKnowledgeEventStreamDeleting> _knowledgeStore;
+    id <_DKKnowledgeQuerying><_DKKnowledgeSaving><_DKKnowledgeEventStreamDeleting> _knowledgeStore;
     _DKRateLimitPolicyEnforcer *_rateLimitEnforcer;
     _DKPrivacyPolicyEnforcer *_privacyEnforcer;
     id <_CDInteractionRecording><_CDInteractionDeleting> _recorder;
 }
 
 + (void)recordAggdReceiverAction:(long long)arg1 bundleID:(id)arg2 count:(unsigned long long)arg3;
-+ (id)spotlightItemRecorderWithInteractionRecorder:(id)arg1 knowledgeSaving:(id)arg2;
-+ (id)spotlightItemRecorderWithKnowledgeSaving:(id)arg1;
++ (id)spotlightItemRecorderWithInteractionRecorder:(id)arg1 knowledgeStore:(id)arg2;
++ (id)spotlightItemRecorderWithKnowledgeStore:(id)arg1;
 + (id)spotlightItemRecorderWithInteractionRecorder:(id)arg1;
 + (id)spotlightItemRecorder;
 @property(retain, nonatomic) id <_CDInteractionRecording><_CDInteractionDeleting> recorder; // @synthesize recorder=_recorder;
@@ -70,8 +70,8 @@
 - (void)runOperation:(id)arg1;
 @property(readonly, nonatomic) _Bool canRecordInteractions;
 - (void)registerSpotlightRecorderWithServiceName:(id)arg1;
-- (id)initWithInteractionRecorder:(id)arg1 knowledgeSaving:(id)arg2 rateLimitEnforcer:(id)arg3;
-- (id)initWithInteractionRecorder:(id)arg1 knowledgeSaving:(id)arg2;
+- (id)initWithInteractionRecorder:(id)arg1 knowledgeStore:(id)arg2 rateLimitEnforcer:(id)arg3;
+- (id)initWithInteractionRecorder:(id)arg1 knowledgeStore:(id)arg2;
 - (id)initWithInteractionRecorder:(id)arg1;
 
 // Remaining properties

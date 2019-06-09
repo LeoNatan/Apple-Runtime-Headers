@@ -21,7 +21,6 @@
     NSDictionary *_mailboxFileSystemURLByDatabaseURL;
 }
 
-+ (BOOL)requiredAfterBackbooting;
 + (unsigned long long)targetVersion;
 @property(copy, nonatomic) NSDictionary *mailboxFileSystemURLByDatabaseURL; // @synthesize mailboxFileSystemURLByDatabaseURL=_mailboxFileSystemURLByDatabaseURL;
 @property(copy, nonatomic) NSDictionary *syncableSystemAccountURLByConnectionHostnameAccountURL; // @synthesize syncableSystemAccountURLByConnectionHostnameAccountURL=_syncableSystemAccountURLByConnectionHostnameAccountURL;
@@ -46,7 +45,7 @@
 - (void)_cleanupEMLXFilesAndDatabaseForMailboxURLs:(id)arg1;
 - (void)_migrateAccountsPathsInMailboxesTable;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;
-- (id)initWithSQLHandle:(id)arg1 accounts:(id)arg2;
+- (id)initWithDatabaseConnection:(id)arg1 accounts:(id)arg2;
 
 @end
 

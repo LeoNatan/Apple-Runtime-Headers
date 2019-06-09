@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)_dragDelegateProxy;
 - (id)_dragDelegateActual;
 - (long long)_dataOwnerForDragSession:(id)arg1 atIndexPath:(id)arg2;
+- (_Bool)_dragInteraction:(id)arg1 sessionSupportsSystemDrag:(id)arg2;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForAddingToSession:(id)arg2 withTouchAtPoint:(struct CGPoint)arg3;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (_Bool)dragInteraction:(id)arg1 sessionIsRestrictedToDraggingApplication:(id)arg2;

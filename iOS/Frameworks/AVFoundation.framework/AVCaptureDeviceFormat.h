@@ -20,6 +20,10 @@
 - (_Bool)isVisionDataDeliverySupported;
 - (_Bool)isLowLightVideoCaptureSupported;
 - (unsigned int)supportedRawPixelFormat;
+- (_Bool)isEquivalentToVirtualDeviceFormat:(id)arg1;
+- (int)ispPowerConsumption;
+- (int)sensorPowerConsumption;
+- (float)hardwareCost;
 - (_Bool)isStreamingDepthSupported;
 - (_Bool)isStreamingDisparitySupported;
 - (_Bool)isStillImageDepthSupported;
@@ -59,11 +63,14 @@
 - (long long)videoHDRFlavor;
 - (_Bool)prefersVideoHDREnabledForSessionPreset:(id)arg1;
 - (int)supportedStabilizationMethod;
+- (_Bool)isMultiCamSupported;
+- (id)supportedSemanticSegmentationMatteTypes;
 - (_Bool)isPortraitEffectsMatteStillImageDeliverySupported;
 @property(readonly, nonatomic) NSArray *unsupportedCaptureOutputClasses;
 @property(readonly, nonatomic) NSArray *supportedDepthDataFormats;
 - (_Bool)isWideColorSupported;
 @property(readonly, nonatomic) NSArray *supportedColorSpaces;
+@property(readonly, nonatomic, getter=isHighestPhotoQualitySupported) _Bool highestPhotoQualitySupported;
 - (_Bool)supportsHighResolutionStillImageOutput;
 @property(readonly, nonatomic) CDStruct_79c71658 highResolutionStillImageDimensions;
 - (_Bool)isVideoStabilizationModeSupported:(long long)arg1;

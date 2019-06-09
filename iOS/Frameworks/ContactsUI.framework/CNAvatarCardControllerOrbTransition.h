@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <ContactsUI/_UIPreviewInteractionViewControllerTransition-Protocol.h>
+#import <ContactsUI/_UIClickPresentationTransition-Protocol.h>
 
-@class CNAvatarCardViewController, CNContactOrbHeaderView, NSString, UIView;
+@class CNAvatarCardViewController, CNContactOrbHeaderView, NSString, UIView, UIViewPropertyAnimator, UIVisualEffectView, _UITargetedPreview;
 @protocol CNAvatarCardControllerOrbTransitionDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CNAvatarCardControllerOrbTransition : NSObject <_UIPreviewInteractionViewControllerTransition>
+@interface CNAvatarCardControllerOrbTransition : NSObject <_UIClickPresentationTransition>
 {
     _Bool _isDismissing;
     CNContactOrbHeaderView *_headerView;
@@ -21,11 +21,13 @@ __attribute__((visibility("hidden")))
     UIView *_highlightedView;
     id <CNAvatarCardControllerOrbTransitionDelegate> _delegate;
     double _highlightViewToAlpha;
+    UIVisualEffectView *_visualEffectView;
     struct CGRect _sourceRect;
     struct CGAffineTransform _endHeaderTransform;
     struct CGAffineTransform _endActionListTransform;
 }
 
+@property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(nonatomic) double highlightViewToAlpha; // @synthesize highlightViewToAlpha=_highlightViewToAlpha;
 @property(nonatomic) struct CGAffineTransform endActionListTransform; // @synthesize endActionListTransform=_endActionListTransform;
 @property(nonatomic) struct CGAffineTransform endHeaderTransform; // @synthesize endHeaderTransform=_endHeaderTransform;
@@ -42,12 +44,14 @@ __attribute__((visibility("hidden")))
 - (void)performTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
 - (void)setupTransitionFromView:(id)arg1 toView:(id)arg2 withContainerView:(id)arg3;
 - (void)prepareTransitionFromView:(id)arg1 toView:(id)arg2 containerView:(id)arg3;
-- (id)initWithCardViewController:(id)arg1 headerView:(id)arg2 sourceView:(id)arg3 highlightedView:(id)arg4 sourceRect:(struct CGRect)arg5 isDismissing:(_Bool)arg6;
+- (id)initWithCardViewController:(id)arg1 headerView:(id)arg2 sourceView:(id)arg3 highlightedView:(id)arg4 sourceRect:(struct CGRect)arg5 backgroundVisualEffectView:(id)arg6 isDismissing:(_Bool)arg7;
 
 // Remaining properties
+@property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(copy, nonatomic) _UITargetedPreview *sourcePreview;
 @property(readonly) Class superclass;
 
 @end

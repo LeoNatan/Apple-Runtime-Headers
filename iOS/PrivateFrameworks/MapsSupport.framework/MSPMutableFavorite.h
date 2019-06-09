@@ -28,6 +28,8 @@
 @property(readonly, nonatomic) MSPBookmarkStorage *bookmarkStorage; // @synthesize bookmarkStorage=_bookmarkStorage;
 @property(readonly, nonatomic) NSUUID *storageIdentifier; // @synthesize storageIdentifier=_storageIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
+- (id)debugTitle;
 - (_Bool)isUserVisibleDuplicateOfFavorite:(id)arg1;
 - (void)_noteWillMutate;
 - (void)_markImmutable;
@@ -43,7 +45,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

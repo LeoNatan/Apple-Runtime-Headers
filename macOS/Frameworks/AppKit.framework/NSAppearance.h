@@ -8,15 +8,27 @@
 
 #import <AppKit/NSSecureCoding-Protocol.h>
 
-@class NSBundle, NSString;
+@class CUICatalog, NSBundle, NSColor, NSString;
+@protocol NSObject;
 
 @interface NSAppearance : NSObject <NSSecureCoding>
 {
     NSString *_name;
     NSBundle *_bundle;
-    void *_private;
-    id _reserved;
-    id _auxiliary;
+    struct OpaqueCUIRendererRef *_coreUIRenderer;
+    CUICatalog *_coreUICatalog;
+    BOOL _preventArchiving;
+    BOOL _allowsVibrancy;
+    int _defaultBlendMode;
+    NSColor *_tintColor;
+    BOOL _supportsWhitePointAdjustments;
+    BOOL _supportsBrightnessAdjustments;
+    double _bezelBrightness;
+    double _glyphBrightness;
+    unsigned long long _colorTemperature;
+    BOOL _allowsSystemTintColors;
+    BOOL _allowsCustomTintColors;
+    id <NSObject> _functionRowAppearanceShouldChangeALSAttributesNotificationToken;
 }
 
 + (BOOL)_isLightTintColor:(id)arg1;
@@ -45,6 +57,9 @@
 + (void)setCurrentAppearance:(id)arg1;
 + (id)currentAppearance;
 + (void)_initializeCoreUI;
++ (unsigned long long)_effectiveSystemAppearanceOverrides;
++ (unsigned long long)_systemAppearanceTestingOverrides;
++ (void)_setSystemAppearanceTestingOverrides:(unsigned long long)arg1;
 + (void)_setSystemAppearanceTestingOverride:(long long)arg1;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (BOOL)isEqual:(id)arg1;
@@ -82,6 +97,10 @@
 - (id)resolvedAppearanceForStyleName:(id)arg1 styleConfiguration:(id)arg2;
 - (id)resolvedAppearanceForWidget:(id)arg1 styleConfiguration:(id)arg2;
 - (id)resolvedAppearanceForWidget:(id)arg1;
+- (struct NSEdgeInsets)_contentInsetsForWidget:(id)arg1;
+- (struct NSEdgeInsets)_alignmentRectInsetsForWidget:(id)arg1;
+- (struct CGSize)_intrinsicContentSizeForWidget:(id)arg1;
+- (struct CGSize)_frameSizeForWidget:(id)arg1;
 - (struct CGSize)_intrinsicContentSizeForDrawingInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 options:(id)arg3;
 - (id)_customColor:(id)arg1 withSystemEffectOptions:(id)arg2;
 - (BOOL)_setCustomStrokeColor:(id)arg1;
@@ -99,7 +118,7 @@
 - (id)_copyMeasurements:(struct CGRect)arg1 context:(struct CGContext *)arg2 options:(id)arg3 requestedMeasurements:(id)arg4;
 - (void)_createOrUpdateLayer:(id *)arg1 options:(id)arg2;
 - (void)_drawInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 options:(id)arg3;
-- (int)_callCoreUIWithBlock:(CDUnknownBlockType)arg1 options:(id)arg2;
+- (int)_callCoreUIWithBlock:(CDUnknownBlockType)arg1 options:(id)arg2 requireBezelTintColor:(BOOL)arg3;
 - (id)_flattenedAppearanceNamesList;
 - (double)_defaultBezelBrightness;
 - (BOOL)_optionsMustContainTintColor;
@@ -108,9 +127,7 @@
 - (id)_appearanceForVibrantContent;
 - (id)_coreUICatalog;
 - (struct OpaqueCUIRendererRef *)_coreUIRenderer;
-- (void)_changeALSAttributes:(id)arg1;
-- (id)_appearanceAuxiliary;
-- (void)_setupAuxiliary;
+- (void)_commonInit;
 - (id)_initForArchivingOnlyWithAppearanceNamed:(id)arg1 bundle:(id)arg2;
 - (id)_initWithContentsOfURL:(id)arg1;
 - (id)initWithAppearanceNamed:(id)arg1 bundle:(id)arg2;
@@ -120,7 +137,6 @@
 - (id)systemFontForControlSize:(unsigned long long)arg1 weight:(double)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)_commonInitWithCoreUIRenderer:(struct OpaqueCUIRendererRef *)arg1 name:(id)arg2;
 
 @end
 

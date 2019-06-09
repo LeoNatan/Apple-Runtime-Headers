@@ -8,32 +8,40 @@
 
 #import <Navigation/MNLocationManagerObserver-Protocol.h>
 
-@class GEOComposedRoute, GEOComposedWaypoint, GEOETARoute, GEORouteAttributes, GEORoutePreloader, GEORouteSet, MNActiveRouteDetails, MNActiveRouteInfo, MNRoutePlanningDetails, NSArray, NSMutableArray, NSString;
+@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, GEOETARoute, GEORouteAttributes, GEORoutePreloader, MNActiveRouteInfo, NSArray, NSMutableArray, NSString;
 
 @interface MNRouteManager : NSObject <MNLocationManagerObserver>
 {
-    GEORouteAttributes *_routeAttributes;
-    GEORouteSet *_currentRouteSet;
     MNActiveRouteInfo *_currentRouteInfo;
     NSMutableArray *_alternateRoutes;
     NSArray *_allRoutes;
+    NSArray *_contingencyRouteSegments;
+    NSArray *_previewRoutes;
+    unsigned long long _selectedRouteIndex;
+    GEORouteAttributes *_routeAttributes;
+    GEODirectionsRequest *_directionsRequest;
+    GEODirectionsResponse *_directionsResponse;
+    NSString *_requestingAppIdentifier;
     GEOComposedWaypoint *_originalDestination;
     MNActiveRouteInfo *_originalRouteInfo;
-    MNRoutePlanningDetails *_routePlanningDetails;
-    MNActiveRouteDetails *_activeRouteDetails;
     GEORoutePreloader *_preloader;
     NSString *_tileLoaderClientIdentifier;
+    BOOL _isReconnecting;
     GEOComposedRoute *_originalRoute;
 }
 
-@property(readonly, nonatomic) MNActiveRouteDetails *activeRouteDetails; // @synthesize activeRouteDetails=_activeRouteDetails;
-@property(readonly, nonatomic) MNRoutePlanningDetails *routePlanningDetails; // @synthesize routePlanningDetails=_routePlanningDetails;
 @property(readonly, nonatomic) GEOComposedRoute *originalRoute; // @synthesize originalRoute=_originalRoute;
 @property(readonly, nonatomic) GEOComposedWaypoint *originalDestination; // @synthesize originalDestination=_originalDestination;
+@property(readonly, nonatomic) BOOL isReconnecting; // @synthesize isReconnecting=_isReconnecting;
+@property(readonly, nonatomic) NSString *requestingAppIdentifier; // @synthesize requestingAppIdentifier=_requestingAppIdentifier;
+@property(readonly, nonatomic) GEODirectionsResponse *directionsResponse; // @synthesize directionsResponse=_directionsResponse;
+@property(readonly, nonatomic) GEODirectionsRequest *directionsRequest; // @synthesize directionsRequest=_directionsRequest;
+@property(readonly, nonatomic) GEORouteAttributes *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
+@property(nonatomic) unsigned long long selectedRouteIndex; // @synthesize selectedRouteIndex=_selectedRouteIndex;
+@property(readonly, nonatomic) NSArray *previewRoutes; // @synthesize previewRoutes=_previewRoutes;
+@property(readonly, nonatomic) NSArray *contingencyRouteSegments; // @synthesize contingencyRouteSegments=_contingencyRouteSegments;
 @property(readonly, nonatomic) NSArray *alternateRoutes; // @synthesize alternateRoutes=_alternateRoutes;
 @property(readonly, nonatomic) MNActiveRouteInfo *currentRouteInfo; // @synthesize currentRouteInfo=_currentRouteInfo;
-@property(readonly, nonatomic) GEORouteSet *currentRouteSet; // @synthesize currentRouteSet=_currentRouteSet;
-@property(readonly, nonatomic) GEORouteAttributes *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
 - (void).cxx_destruct;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
 - (void)locationManagerDidPauseLocationUpdates:(id)arg1;
@@ -41,13 +49,16 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)locationManagerUpdatedLocation:(id)arg1;
-- (void)_updatePreloaderForNewRoute;
+- (void)_createContingencyRoutesForResponse:(id)arg1;
+- (void)_updatePreloaderForRoute:(id)arg1;
 - (void)_clearPreloader;
 - (void)clearCurrentRoute;
 - (void)updateWithAlternateRoutes:(id)arg1;
 - (void)updateForLocation:(id)arg1;
 - (void)updateForReroute:(id)arg1 rerouteReason:(unsigned long long)arg2 request:(id)arg3 response:(id)arg4;
-- (BOOL)updateForRoutePlanningDetails:(id)arg1 outError:(out id *)arg2;
+- (void)updateWithStartNavigationDetails:(id)arg1;
+- (void)updateWithPreviewRoutes:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
+- (void)updateWithInitialDirectionsRequest:(id)arg1 directionsResponse:(id)arg2 waypoints:(id)arg3;
 - (void)close;
 - (void)open;
 - (void)dealloc;

@@ -10,6 +10,6 @@
 
 @protocol WBSWebViewMetadataFetchOperationDelegate <NSObject>
 - (void)webViewMetadataFetchOperation:(WBSWebViewMetadataFetchOperation *)arg1 didFinishUsingWebView:(WKWebView *)arg2;
-- (WKWebView *)webViewMetadataFetchOperation:(WBSWebViewMetadataFetchOperation *)arg1 webViewOfSize:(struct CGSize)arg2 withConfiguration:(WKWebViewConfiguration *)arg3;
+- (void)webViewMetadataFetchOperation:(WBSWebViewMetadataFetchOperation *)arg1 getWebViewOfSize:(struct CGSize)arg2 withConfiguration:(WKWebViewConfiguration *)arg3 completionHandler:(void (^)(WKWebView *))arg4;
 @end
 

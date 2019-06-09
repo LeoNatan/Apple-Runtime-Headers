@@ -30,7 +30,6 @@
     double _automaticTouchForceDuration;
 }
 
-+ (_Bool)_supportsTouchContinuation;
 @property(copy, nonatomic) CDUnknownBlockType configurationBlock; // @synthesize configurationBlock=_configurationBlock;
 @property(nonatomic) double automaticTouchForceDuration; // @synthesize automaticTouchForceDuration=_automaticTouchForceDuration;
 @property(nonatomic) float automaticTouchForce; // @synthesize automaticTouchForce=_automaticTouchForce;
@@ -41,6 +40,7 @@
 @property(nonatomic) float minimumRequiredTouchForce; // @synthesize minimumRequiredTouchForce=_minimumRequiredTouchForce;
 @property(nonatomic) float touchForce; // @synthesize touchForce=_touchForce;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double touchDuration;
 - (float)_evaluateAutomaticTouchForceForTimeInterval:(double)arg1 actualTouchForce:(float)arg2;
 - (void)_endContinuousEvaluation;
 - (void)_updateForContinuousEvaluation:(id)arg1;
@@ -52,7 +52,7 @@
 - (void)_endIfNeeded:(_Bool)arg1;
 - (void)_evaluateWithTouchForce:(float)arg1 centroidAtLocation:(struct CGPoint)arg2;
 - (void)_evaluateTouches:(id)arg1 withEvent:(id)arg2;
-- (_Bool)_shouldReceiveTouch:(id)arg1 recognizerView:(id)arg2 touchView:(id)arg3;
+- (_Bool)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;

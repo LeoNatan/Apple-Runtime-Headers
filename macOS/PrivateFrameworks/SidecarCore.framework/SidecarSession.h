@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSError, SidecarDevice, SidecarService;
-@protocol SidecarSessionDelegate;
+@protocol OS_dispatch_queue, SidecarSessionDelegate;
 
 @interface SidecarSession : NSObject
 {
@@ -18,20 +18,26 @@
     NSError *_error;
     unsigned int _remote:1;
     // Error parsing type: AB, name: _invalid
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)timeSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)invalidateWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)connect;
+- (void)connectWithTransport:(long long)arg1;
 - (_Bool)_invalidate;
 - (void)setError:(id)arg1;
-@property(nonatomic) __weak id <SidecarSessionDelegate> delegate;
+@property __weak id <SidecarSessionDelegate> delegate;
 @property(readonly, nonatomic) SidecarService *service;
 @property(readonly, nonatomic) SidecarDevice *device;
+- (id)description;
 - (void)dealloc;
 - (id)initWithService:(id)arg1 device:(id)arg2;
 - (id)initWithRemoteHandle:(long long)arg1;
+- (void)openStreamForType:(long long)arg1 flags:(unsigned long long)arg2 identifier:(id)arg3 processUniqueID:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)listenForStreamType:(long long)arg1 flags:(unsigned long long)arg2 identifier:(id)arg3 processUniqueID:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 
 @end
 

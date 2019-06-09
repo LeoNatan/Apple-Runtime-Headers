@@ -15,6 +15,7 @@
 @class NSArray, NSMutableArray, NSOperationQueue, NSString, SKUIClientContext, SKUIScreenshotDataConsumer, SKUIVideoImageDataConsumer, UICollectionView;
 @protocol SKUIScreenshotsDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIScreenshotsViewController : UIViewController <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate, UIScrollViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 {
     SKUIClientContext *_clientContext;

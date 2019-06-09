@@ -19,6 +19,7 @@
     NSArray *_intentTypePhrases;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)intentTypePhrasesType;
 + (Class)intentSlotVocabularyPoliciesType;
 @property(copy, nonatomic) NSArray *intentTypePhrases; // @synthesize intentTypePhrases=_intentTypePhrases;
@@ -28,6 +29,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)intentTypePhrasesAtIndex:(unsigned int)arg1;

@@ -13,7 +13,7 @@
 #import <HomeKitDaemon/NSCopying-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class CNContact, IDSURI, NSString, NSUUID;
+@class CKUserIdentityLookupInfo, CNContact, IDSURI, NSString, NSUUID;
 
 @interface HMDAccountHandle : HMFObject <HMFLogging, HMDBackingStoreObjectProtocol, HMDBackingStoreModelBackedObjectProtocol, HMDRemoteAddressable, NSCopying, NSSecureCoding>
 {
@@ -32,8 +32,8 @@
 @property(readonly, copy) IDSURI *URI; // @synthesize URI=_URI;
 @property(readonly, getter=isLocal) _Bool local; // @synthesize local=_local;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) NSUUID *modelParentIdentifier; // @synthesize modelParentIdentifier=_modelParentIdentifier;
-@property(readonly, nonatomic) NSUUID *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
+@property(copy, nonatomic) NSUUID *modelParentIdentifier; // @synthesize modelParentIdentifier=_modelParentIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (id)remoteDestinationString;
@@ -41,10 +41,12 @@
 - (id)modelBackedObjects;
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
+@property(readonly) Class modelClass;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, copy) CKUserIdentityLookupInfo *cloudKitLookupInfo;
 @property(readonly, copy) CNContact *contact;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) long long type;
@@ -52,6 +54,7 @@
 - (id)shortDescription;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *value;
 - (id)initWithObjectModel:(id)arg1;
 - (id)initWithURI:(id)arg1 local:(_Bool)arg2;
 - (id)initWithURI:(id)arg1;

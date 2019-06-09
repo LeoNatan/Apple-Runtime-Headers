@@ -11,8 +11,10 @@
 }
 
 - (id)formattedValueStringForChartData:(id)arg1 options:(int)arg2;
+- (id)formattedSelectedRangeLabelDataWithChartData:(id)arg1 context:(int)arg2;
 - (id)formattedSelectedRangeLabelDataWithChartData:(id)arg1;
-- (id)_formattedStringWithValue:(int)arg1;
+- (id)_formattedStringWithCount:(int)arg1;
+- (id)_formattedStringWithValue:(int)arg1 useColorAttributes:(_Bool)arg2;
 
 @end
 

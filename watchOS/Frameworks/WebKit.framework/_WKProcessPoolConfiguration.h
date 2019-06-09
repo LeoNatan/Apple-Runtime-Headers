@@ -24,7 +24,10 @@
 @property(nonatomic) _Bool alwaysRunsAtBackgroundPriority;
 @property(copy, nonatomic) NSString *CTDataConnectionServiceType;
 @property(nonatomic) _Bool suppressesConnectionTerminationOnSystemChange;
+@property(nonatomic) unsigned int downloadMonitorSpeedMultiplierForTesting;
+@property(copy, nonatomic, setter=setHSTSStorageDirectory:) NSURL *hstsStorageDirectory;
 @property(nonatomic, getter=isJITEnabled) _Bool JITEnabled;
+@property(nonatomic) _Bool usesSingleWebProcess;
 @property(nonatomic) _Bool pageCacheEnabled;
 @property(nonatomic) _Bool processSwapsOnWindowOpenWithOpener;
 @property(nonatomic) _Bool alwaysKeepAndReuseSwappedProcesses;

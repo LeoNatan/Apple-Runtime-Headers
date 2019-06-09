@@ -8,24 +8,52 @@
 
 #import <PowerlogLiteOperators/CWEventDelegate-Protocol.h>
 
-@class CWInterface, CWWiFiClient;
+@class CWInterface, CWWiFiClient, NSDate, NSString, PLCFNotificationOperatorComposition, PLEntryNotificationOperatorComposition;
 
 @interface PLWifiAgent : PLAgent <CWEventDelegate>
 {
     _Bool _powerStateLastOn;
     _Bool _powerStateLastOnInit;
+    PLCFNotificationOperatorComposition *_notificationWiFiChanged;
+    void *_wifiManager;
+    void *_wifiDevice;
+    void *_wifiAwdlDevice;
+    void *_wifiHotspotDevice;
+    PLEntryNotificationOperatorComposition *_batteryLevelChanged;
+    PLEntryNotificationOperatorComposition *_sbcLevelChanged;
+    PLEntryNotificationOperatorComposition *_deviceWake;
+    unsigned long long _lastLoggedTimestamp;
+    unsigned long long _locationScanDuration;
+    unsigned long long _pipelineScanDuration;
+    unsigned long long _autoJoinScanDuration;
+    unsigned long long _setupScanDuration;
+    unsigned long long _unknownScanDuration;
+    NSString *_wifiChipset;
+    NSString *_wifiManufacturer;
+    unsigned long long _remainingAllowedRSSIEntryCount;
+    double _wifi_segment_power_data;
+    double _wifi_segment_power_idle;
+    double _wifi_segment_power_location;
+    double _wifi_segment_power_pipeline;
+    NSDate *_wifi_segment_lastWrittenDate;
+    double _wifi_segment_lastWrittenTimestamp;
+    NSDate *_wifi_segment_date;
+    double _wifi_segment_timestamp;
     CWWiFiClient *_client;
     CWInterface *_iface;
 }
 
++ (BOOL)isNonUDMMac;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventBackwardDefinitionDiffBasic;
 + (id)entryEventBackwardDefinitionCumulativeBasic;
 + (id)entryEventBackwardDefinitionUserScan;
 + (id)entryEventBackwardDefinitionBeaconProfile;
++ (id)entryEventBackwardDefinitionHotspotPowerStats;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionPowerState;
 + (id)entryEventForwardDefinitionAWDLState;
++ (id)entryEventForwardDefinitionHotspotState;
 + (id)entryEventForwardDefinitionRSSI;
 + (id)entryEventForwardDefinitionModuleInfo;
 + (id)entryEventForwardDefinitions;
@@ -37,10 +65,36 @@
 @property(nonatomic) _Bool powerStateLastOn; // @synthesize powerStateLastOn=_powerStateLastOn;
 @property(retain, nonatomic) CWInterface *iface; // @synthesize iface=_iface;
 @property(retain, nonatomic) CWWiFiClient *client; // @synthesize client=_client;
+@property double wifi_segment_timestamp; // @synthesize wifi_segment_timestamp=_wifi_segment_timestamp;
+@property(retain) NSDate *wifi_segment_date; // @synthesize wifi_segment_date=_wifi_segment_date;
+@property double wifi_segment_lastWrittenTimestamp; // @synthesize wifi_segment_lastWrittenTimestamp=_wifi_segment_lastWrittenTimestamp;
+@property(retain) NSDate *wifi_segment_lastWrittenDate; // @synthesize wifi_segment_lastWrittenDate=_wifi_segment_lastWrittenDate;
+@property double wifi_segment_power_pipeline; // @synthesize wifi_segment_power_pipeline=_wifi_segment_power_pipeline;
+@property double wifi_segment_power_location; // @synthesize wifi_segment_power_location=_wifi_segment_power_location;
+@property double wifi_segment_power_idle; // @synthesize wifi_segment_power_idle=_wifi_segment_power_idle;
+@property double wifi_segment_power_data; // @synthesize wifi_segment_power_data=_wifi_segment_power_data;
+@property unsigned long long remainingAllowedRSSIEntryCount; // @synthesize remainingAllowedRSSIEntryCount=_remainingAllowedRSSIEntryCount;
+@property(readonly) NSString *wifiManufacturer; // @synthesize wifiManufacturer=_wifiManufacturer;
+@property(readonly) NSString *wifiChipset; // @synthesize wifiChipset=_wifiChipset;
+@property unsigned long long unknownScanDuration; // @synthesize unknownScanDuration=_unknownScanDuration;
+@property unsigned long long setupScanDuration; // @synthesize setupScanDuration=_setupScanDuration;
+@property unsigned long long autoJoinScanDuration; // @synthesize autoJoinScanDuration=_autoJoinScanDuration;
+@property unsigned long long pipelineScanDuration; // @synthesize pipelineScanDuration=_pipelineScanDuration;
+@property unsigned long long locationScanDuration; // @synthesize locationScanDuration=_locationScanDuration;
+@property unsigned long long lastLoggedTimestamp; // @synthesize lastLoggedTimestamp=_lastLoggedTimestamp;
+@property(retain) PLEntryNotificationOperatorComposition *deviceWake; // @synthesize deviceWake=_deviceWake;
+@property(retain) PLEntryNotificationOperatorComposition *sbcLevelChanged; // @synthesize sbcLevelChanged=_sbcLevelChanged;
+@property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
+@property(nonatomic) void *wifiHotspotDevice; // @synthesize wifiHotspotDevice=_wifiHotspotDevice;
+@property(nonatomic) void *wifiAwdlDevice; // @synthesize wifiAwdlDevice=_wifiAwdlDevice;
+@property(nonatomic) void *wifiDevice; // @synthesize wifiDevice=_wifiDevice;
+@property(nonatomic) void *wifiManager; // @synthesize wifiManager=_wifiManager;
+@property(readonly) PLCFNotificationOperatorComposition *notificationWiFiChanged; // @synthesize notificationWiFiChanged=_notificationWiFiChanged;
 - (void).cxx_destruct;
 - (void)powerStateDidChangeForWiFiInterfaceWithName:(id)arg1;
 - (void)modelWiFiPower:(id)arg1;
 - (id)wifiManufacturerQuery;
+- (id)wifiChipsetQuery;
 - (void)logEventBackwardWifiProperties:(id)arg1 withNetworkProperties:(id)arg2 shallModelPower:(BOOL)arg3;
 - (void)logEventBackwardWifiProperties:(BOOL)arg1;
 - (void)updateEventBackwardUserScanDuration:(id)arg1;
@@ -60,8 +114,16 @@
 - (void)logFromAJCallback:(id)arg1 withFlag:(unsigned char)arg2 withStats:(id)arg3;
 - (void)logFromLinkChangeCallback:(id)arg1 withStats:(id)arg2;
 - (void)logFromWiFiNoAvailableCallback:(id)arg1 withAvailability:(BOOL)arg2;
+- (id)decodeWifiEventLinkReason:(unsigned int)arg1;
+- (unsigned long long)getCurrentChannelWidth:(void *)arg1;
+- (BOOL)isWowEnabled;
+- (BOOL)isWowSupported;
+- (BOOL)hasWiFi;
+- (BOOL)isWiFiPowered;
 - (void)initOperatorDependancies;
 - (id)init;
+- (void)findWifiDevice;
+- (void)setWiFiAWDLDevice:(void *)arg1;
 
 @end
 

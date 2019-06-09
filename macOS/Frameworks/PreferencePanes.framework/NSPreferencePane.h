@@ -34,6 +34,9 @@
 - (void)replyToShouldUnselect:(BOOL)arg1;
 @property(readonly) unsigned long long shouldUnselect;
 - (void)didSelect;
+- (void)loadMainViewWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)reloadMainViewWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)willSelectWithReply:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)willSelect;
 - (void)assignMainView;
 @property(readonly) NSString *mainNibName;

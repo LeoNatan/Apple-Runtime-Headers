@@ -36,15 +36,16 @@
     BOOL _everHadDelegate;
     NSMutableArray *_queuedDelegateBlocks;
     NSString *_processName;
-    APSPerAppTokenMap *_perAppTokenMap;
-    void *_dynamicStore;
     double _reconnectDelay;
     BOOL _isReconnectScheduled;
     BOOL _isDisconnected;
-    BOOL _isDeallocing;
     BOOL _isShutdown;
+    BOOL _isDeallocing;
+    APSPerAppTokenMap *_perAppTokenMap;
+    void *_dynamicStore;
     BOOL _enablePushDuringSleep;
     NSArray *_pushWakeTopics;
+    NSArray *_darkWakeTopics;
     NSArray *_criticalWakeTopics;
 }
 
@@ -52,7 +53,7 @@
 + (id)environmentForNamedPort:(id)arg1;
 + (void)finishLogin;
 + (BOOL)sendActivationRecordToMachService:(id)arg1;
-+ (struct OpaqueSecIdentityRef *)copyIdentity;
++ (struct __SecIdentity *)copyIdentity;
 + (void)_nonblockingXPCCallWithArgumentBlock:(CDUnknownBlockType)arg1;
 + (void)_blockingXPCCallWithArgumentBlock:(CDUnknownBlockType)arg1 resultHandler:(CDUnknownBlockType)arg2 timeout:(double)arg3;
 + (void)initialize;
@@ -64,13 +65,15 @@
 + (double)serverTime;
 + (void)_blockingXPCCallWithArgumentBlock:(CDUnknownBlockType)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)_safelyCancelAndReleaseConnection:(id)arg1;
-+ (void)_safelyCancelAndReleaseAfterBarrierConnection:(id)arg1;
 + (BOOL)isValidEnvironment:(id)arg1;
 @property(readonly, nonatomic) BOOL isShutdown; // @synthesize isShutdown=_isShutdown;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
+- (void).cxx_destruct;
 - (void)setCriticalWakeTopics:(id)arg1;
 - (void)_setCriticalWakeTopics:(id)arg1;
+- (void)setDarkWakeTopics:(id)arg1;
+- (void)_setDarkWakeTopics:(id)arg1;
 - (void)setPushWakeTopics:(id)arg1;
 - (void)_setPushWakeTopics:(id)arg1;
 - (void)setEnabledTopicsAreInteractive:(BOOL)arg1;
@@ -90,8 +93,8 @@
 - (void)_sendOutgoingMessage:(id)arg1 fake:(BOOL)arg2;
 - (BOOL)hasIdentity;
 - (void)_deliverToken:(id)arg1 forTopic:(id)arg2 identifier:(id)arg3;
-- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 error:(id)arg2;
-- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 checkpointTraceData:(id)arg2 error:(id)arg3;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 error:(id)arg2 sendRTT:(unsigned long long)arg3;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 checkpointTraceData:(id)arg2 error:(id)arg3 sendRTT:(unsigned long long)arg4 ackTimestamp:(unsigned long long)arg5;
 - (void)_deliverConnectionStatusFromDealloc:(BOOL)arg1;
 - (void)_deliverConnectionStatusChange:(BOOL)arg1;
 - (void)_deliverPublicToken:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
@@ -100,6 +103,7 @@
 - (void)_deliverMessage:(id)arg1;
 - (void)_dispatch_async_to_ivarQueue:(CDUnknownBlockType)arg1;
 - (void)_addCriticalWakeTopicsToXPCMessage:(id)arg1;
+- (void)_addDarkWakeTopicsToXPCMessage:(id)arg1;
 - (void)_addPushWakeTopicsToXPCMessage:(id)arg1;
 - (void)_addEnableStatusNotificationsToXPCMessage:(id)arg1;
 - (void)_addUsesAppLaunchStatsToXPCMessage:(id)arg1;
@@ -130,7 +134,6 @@
 - (void)_disconnectOnIvarQueue;
 - (void)_cancelConnectionOnIvarQueue;
 - (void)_connectIfNecessary;
-- (void)_connectOnIvarQueue;
 - (void)_connectIfNecessaryOnIvarQueue;
 - (void)_reconnectIfNecessaryOnIvarQueueAfterDelay;
 - (void)_handleEvent:(id)arg1 withHandler:(CDUnknownBlockType)arg2;

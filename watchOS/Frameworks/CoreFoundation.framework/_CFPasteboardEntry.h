@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_xpc_object;
+@protocol OS_dispatch_group, OS_xpc_object;
 
 __attribute__((visibility("hidden")))
 @interface _CFPasteboardEntry : NSObject
@@ -20,7 +20,9 @@ __attribute__((visibility("hidden")))
     unsigned char _isHidden;
     CDUnknownBlockType _promisor;
     CDUnknownBlockType _asyncPromisor;
-    int _promiseState;
+    // Error parsing type: Ai, name: _promiseState
+    NSObject<OS_dispatch_group> *_promiseGroup;
+    struct os_unfair_lock_s _lock;
     NSObject<OS_xpc_object> *_promisorConnection;
     int _itemIdentifier;
     unsigned char _isPendingFlush;
@@ -34,9 +36,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) int itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
 @property unsigned long dataFlags; // @synthesize dataFlags=_dataFlags;
 @property(readonly) const struct __CFString *flavorName; // @synthesize flavorName=_flavorName;
-- (void)resolveClientPromisedDataWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)resolveClientPromisedDataWithQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned char)resolveLocalPromisedData;
--     // Error parsing type: v20@0:4@?8^{__CFPasteboard={__CFRuntimeBase=IAI}^{__CFString}@^{__CFUUID}^{__CFArray}C@@CCCC}12l16, name: promiseDataWithBlock:forPasteboard:generation:
+-     // Error parsing type: v20@0:4@?8^{__CFPasteboard={__CFRuntimeBase=IAI}^{__CFString}@^{__CFUUID}^{__CFArray}C@@AQCCCC}12l16, name: promiseDataWithBlock:forPasteboard:generation:
 - (id)createXPCObjectWithMetadataOnly:(unsigned char)arg1;
 - (id)initFromXPCObject:(id)arg1 fromConnection:(id)arg2;
 - (void)_setLocalPromiseState:(int)arg1;

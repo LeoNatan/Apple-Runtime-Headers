@@ -6,10 +6,11 @@
 
 #import <SearchFoundation/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, _SFPBActionItem, _SFPBColor, _SFPBImage, _SFPBMediaOffer, _SFPBPunchout;
+@class NSArray, NSData, NSDictionary, NSString, _SFPBActionItem, _SFPBColor, _SFPBImage, _SFPBMediaOffer, _SFPBPunchout, _SFPBRichText;
 
 @protocol _SFPBRichTitleCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(retain, nonatomic) _SFPBRichText *richSubtitle;
 @property(copy, nonatomic) NSString *footnote;
 @property(copy, nonatomic) NSArray *offers;
 @property(nonatomic) int playActionAlign;

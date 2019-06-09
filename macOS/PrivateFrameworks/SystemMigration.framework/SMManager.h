@@ -31,6 +31,7 @@
     SMPaths *_pathSystem;
     unsigned long long _totalTimeSpentWaitingForSpotlight;
     SMWindowsAnalyzer *_windowsAnalyzer;
+    NSObject<OS_dispatch_queue> *_progressQueue;
     SMMigrateEngine *_engine;
     PKDeferredInstallManager *_deferredInstallManager;
     NSObject<OS_dispatch_queue> *_timemachineSuppressQueue;
@@ -50,6 +51,8 @@
 + (void)systemRetain;
 + (void)releaseSystemAssertions:(BOOL)arg1;
 + (BOOL)enoughfreeSpaceOnSystemVolume;
++ (BOOL)isUpgradeOrSUInProgress;
++ (BOOL)isSoftwareUpdateInProgress;
 + (BOOL)isOSUpgradeInProgress;
 + (id)sharedManager;
 @property(retain) SUSoftwareUpdateController *suController; // @synthesize suController=_suController;
@@ -72,6 +75,7 @@
 @property BOOL throttlingSuspended; // @synthesize throttlingSuspended=_throttlingSuspended;
 @property BOOL timemachineSuspended; // @synthesize timemachineSuspended=_timemachineSuspended;
 @property(retain) SMMigrateEngine *engine; // @synthesize engine=_engine;
+@property(retain) NSObject<OS_dispatch_queue> *progressQueue; // @synthesize progressQueue=_progressQueue;
 @property(retain) SMWindowsAnalyzer *windowsAnalyzer; // @synthesize windowsAnalyzer=_windowsAnalyzer;
 @property unsigned long long totalTimeSpentWaitingForSpotlight; // @synthesize totalTimeSpentWaitingForSpotlight=_totalTimeSpentWaitingForSpotlight;
 @property BOOL allowLocalNetworkServer; // @synthesize allowLocalNetworkServer=_allowLocalNetworkServer;
@@ -87,9 +91,11 @@
 @property(retain) NSObject<OS_dispatch_queue> *spotlightIndexHeartbeatQueue; // @synthesize spotlightIndexHeartbeatQueue=_spotlightIndexHeartbeatQueue;
 @property(retain) NSObject<OS_dispatch_queue> *spotlightIndexQueue; // @synthesize spotlightIndexQueue=_spotlightIndexQueue;
 - (void).cxx_destruct;
-- (BOOL)validateTimeMachineSystemAtPath:(id)arg1 rejectionReason:(id *)arg2;
+- (BOOL)isTimeMachineDataVolume:(id)arg1;
 - (BOOL)validateArchiveInstallSystemAtPath:(id)arg1;
+- (BOOL)validateSystemAtPath:(id)arg1 serverSystemsAllowed:(BOOL)arg2 tmVolumeStoreInfo:(id)arg3 rejectionReason:(id *)arg4;
 - (BOOL)validateSystemAtPath:(id)arg1 serverSystemsAllowed:(BOOL)arg2 rejectionReason:(id *)arg3;
+- (BOOL)validateSystemAtTMVolumeStoreInfo:(id)arg1 rejectionReason:(id *)arg2;
 - (BOOL)validateSystemAtPath:(id)arg1 rejectionReason:(id *)arg2;
 - (BOOL)validateSystemAtPath:(id)arg1 serverSystemsAllowed:(BOOL)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -11,13 +11,14 @@
 @interface PKPaymentRewrapRequest : PKPaymentRewrapRequestBase
 {
     NSString *_merchantIdentifier;
+    NSString *_hostApplicationIdentifier;
 }
 
+@property(copy, nonatomic) NSString *hostApplicationIdentifier; // @synthesize hostApplicationIdentifier=_hostApplicationIdentifier;
 @property(copy, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
 - (void).cxx_destruct;
-- (id)bodyDictionaryWithDeviceData:(id)arg1;
+- (id)bodyDictionary;
 - (id)endpointName;
-- (id)initWithWrappedPayment:(id)arg1 paymentPass:(id)arg2 merchantIdentifier:(id)arg3;
 
 @end
 

@@ -20,7 +20,6 @@
 @property(readonly, nonatomic) _Bool showBatteryPercentage; // @dynamic showBatteryPercentage;
 @property(readonly, nonatomic) _Bool showOptimalCellDataForCarPlay; // @dynamic showOptimalCellDataForCarPlay;
 @property(readonly, nonatomic) _Bool showRSSI; // @dynamic showRSSI;
-@property(readonly, nonatomic) _Bool showTapToRadarForCarPlay; // @dynamic showTapToRadarForCarPlay;
 @property(readonly, nonatomic) _Bool showThermalWarning; // @dynamic showThermalWarning;
 @property(readonly, nonatomic) unsigned long long statusBarLogLevel; // @dynamic statusBarLogLevel;
 @property(readonly, nonatomic) _Bool suppressStatusBarOverrideForScreenSharing; // @dynamic suppressStatusBarOverrideForScreenSharing;

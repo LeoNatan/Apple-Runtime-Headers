@@ -6,15 +6,15 @@
 
 #import <Foundation/NSProgress.h>
 
-@class _FPProgressProxy;
+@class FPProgressProxy;
 
 __attribute__((visibility("hidden")))
 @interface _FPParentProgress : NSProgress
 {
-    _FPProgressProxy *_progressProxy;
+    FPProgressProxy *_progressProxy;
 }
 
-@property(retain) _FPProgressProxy *progressProxy; // @synthesize progressProxy=_progressProxy;
+@property(retain) FPProgressProxy *progressProxy; // @synthesize progressProxy=_progressProxy;
 - (void).cxx_destruct;
 
 @end

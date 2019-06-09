@@ -55,7 +55,6 @@
 - (id)builtInCompositorName;
 - (void)_bumpChangeSeed;
 - (unsigned long long)_changeSeed;
-- (void)finalize;
 - (void)dealloc;
 - (id)_deepCopy;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

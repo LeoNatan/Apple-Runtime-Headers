@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADShape.h>
 
+__attribute__((visibility("hidden")))
 @interface OADConnector : OADShape
 {
 }

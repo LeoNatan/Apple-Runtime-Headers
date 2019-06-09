@@ -8,6 +8,7 @@
 
 @class NSDate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TSUZipEntry : NSObject
 {
     BOOL _compressed;

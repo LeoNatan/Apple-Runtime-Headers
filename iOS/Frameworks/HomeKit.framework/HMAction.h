@@ -7,33 +7,43 @@
 #import <objc/NSObject.h>
 
 #import <HomeKit/HMObjectMerge-Protocol.h>
+#import <HomeKit/NSCopying-Protocol.h>
+#import <HomeKit/NSSecureCoding-Protocol.h>
 
 @class HMActionSet, HMFUnfairLock, NSString, NSUUID, _HMContext;
 
-@interface HMAction : NSObject <HMObjectMerge>
+@interface HMAction : NSObject <HMObjectMerge, NSSecureCoding, NSCopying>
 {
     HMFUnfairLock *_lock;
     NSUUID *_uniqueIdentifier;
     NSUUID *_uuid;
     HMActionSet *_actionSet;
-    unsigned long long _actionType;
     _HMContext *_context;
+    unsigned long long _type;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
-+ (id)_lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
+@property(readonly) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
-@property(nonatomic) unsigned long long actionType; // @synthesize actionType=_actionType;
 - (void).cxx_destruct;
+- (id)encodeAsProtoBuf;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (_Bool)_handleUpdates:(id)arg1;
 - (id)_serializeForAdd;
+@property(readonly) _Bool requiresDeviceUnlock;
+@property(readonly, getter=isValid) _Bool valid;
 @property __weak HMActionSet *actionSet; // @synthesize actionSet=_actionSet;
 @property(copy) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+- (unsigned long long)actionType;
 - (void)_invalidate;
 - (void)__configureWithContext:(id)arg1 actionSet:(id)arg2;
 - (id)init;
+- (id)initWithUUID:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -14,9 +14,11 @@
     FigCaptureMovieFileRecordingSettings *_movieRecordingSettings;
     NSURL *_movieURLForOriginalImage;
     NSArray *_movieLevelMetadataForOriginalImage;
+    struct CGSize _nonDestructiveCropSize;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) struct CGSize nonDestructiveCropSize; // @synthesize nonDestructiveCropSize=_nonDestructiveCropSize;
 @property(copy, nonatomic) NSArray *movieLevelMetadataForOriginalImage; // @synthesize movieLevelMetadataForOriginalImage=_movieLevelMetadataForOriginalImage;
 @property(copy, nonatomic) NSURL *movieURLForOriginalImage; // @synthesize movieURLForOriginalImage=_movieURLForOriginalImage;
 @property(copy, nonatomic) FigCaptureMovieFileRecordingSettings *movieRecordingSettings; // @synthesize movieRecordingSettings=_movieRecordingSettings;

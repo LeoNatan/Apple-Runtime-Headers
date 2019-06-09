@@ -39,8 +39,8 @@
 - (void)setRemoteObject:(NSObject<NSSecureCoding> *)arg1 forKey:(NSString *)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)registerBridgeKey:(NSString *)arg1 defaultObject:(NSObject<NSSecureCoding> *)arg2 owner:(unsigned char)arg3 withReply:(void (^)(NSError *))arg4;
 - (void)beginSheet:(NSString *)arg1 modalForWindow:(NSString *)arg2 size:(struct CGSize)arg3 isCritical:(BOOL)arg4 withReply:(void (^)(NSError *))arg5;
-- (void)endModalSession:(NSString *)arg1;
-- (void)beginModalSession:(NSString *)arg1 title:(NSString *)arg2 size:(struct CGSize)arg3 withReply:(void (^)(NSError *))arg4;
+- (void)endAppModalSession:(NSString *)arg1;
+- (void)beginAppModalSession:(NSString *)arg1 parameters:(CDStruct_9fbe0e86)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)serviceWindowOrderedWithMode:(long long)arg1 relativeTo:(unsigned int)arg2 withReply:(void (^)(void))arg3;
 - (void)hasValidKeyViewInDirection:(unsigned long long)arg1 withReply:(void (^)(BOOL))arg2;
 - (void)dragWindowRelativeToMouseDown:(struct CGPoint)arg1;

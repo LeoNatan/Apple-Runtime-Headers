@@ -6,6 +6,8 @@
 
 #import <Foundation/NSCoder.h>
 
+@class HMFMessage;
+
 @interface NSCoder (RemoteTransport)
 - (id)supportedFeatures;
 @property(readonly, getter=isSharedUser) _Bool sharedUser;
@@ -15,5 +17,17 @@
 - (_Bool)isRemoteGatewayCoder;
 - (_Bool)isRemoteTransportOnSameAccount;
 - (_Bool)isRemoteTransport;
+- (_Bool)isLocalStore;
+- (id)decodeSetOfConditionalObjects:(Class)arg1 forKey:(id)arg2;
+- (void)encodeSetOfConditionalObjects:(id)arg1 forKey:(id)arg2;
+- (id)decodeArrayOfConditionalObjects:(Class)arg1 forKey:(id)arg2;
+- (void)encodeArrayOfConditionalObjects:(id)arg1 forKey:(id)arg2;
+- (_Bool)isEntitledForHomeLocationAccess;
+- (_Bool)isAuthorizedForLocationAccess;
+- (_Bool)isEntitledForSPIAccess;
+- (id)applicationBundleIdentifier;
+@property(readonly) unsigned long long hmd_homeManagerOptions;
+@property(readonly) HMFMessage *hmd_message;
+@property(readonly, getter=isXPCTransport) _Bool xpcTransport;
 @end
 

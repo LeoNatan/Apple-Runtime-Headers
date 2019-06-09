@@ -82,8 +82,6 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 titleForSwipeAccessoryButtonForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 backgroundColorForSwipeAccessoryButtonForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 backgroundColorForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 swipeAccessoryButtonForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 deleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didCancelReorderingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndReorderingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginReorderingRowAtIndexPath:(id)arg2;

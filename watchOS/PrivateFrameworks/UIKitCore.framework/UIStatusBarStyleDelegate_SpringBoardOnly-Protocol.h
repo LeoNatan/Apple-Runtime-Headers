@@ -11,7 +11,7 @@
 @protocol UIStatusBarStyleDelegate_SpringBoardOnly <UIStatusBarStyleDelegate>
 
 @optional
-- (int)overridenRequestedStyleFromStyle:(int)arg1;
+- (int)overriddenRequestedStyleFromStyle:(int)arg1;
 - (int)statusBar:(UIStatusBar_Base *)arg1 effectiveStyleOverridesForRequestedStyle:(int)arg2 overrides:(int)arg3;
 @end
 

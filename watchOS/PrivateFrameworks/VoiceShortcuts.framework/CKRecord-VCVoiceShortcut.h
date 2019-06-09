@@ -10,8 +10,6 @@
 - (id)keysOfEncryptedProperties;
 - (id)voiceShortcutIdentifier;
 - (id)dictionaryRepresentation;
-- (id)initWithDictionary:(id)arg1 zoneID:(id)arg2 systemFieldsData:(id)arg3;
 - (id)systemFieldsData;
-- (id)initWithVoiceShortcut:(id)arg1 zoneID:(id)arg2 systemFieldsData:(id)arg3;
 @end
 

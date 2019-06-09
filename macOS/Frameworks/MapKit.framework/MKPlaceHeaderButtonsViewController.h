@@ -13,13 +13,13 @@
 @class MKPlaceHeaderButton, MKPlaceSectionRowView, NSArray, NSAttributedString, NSString, _MKPlaceActionButtonController;
 @protocol GEOTransitLineItem, MKPlaceHeaderButtonsViewControllerDelegate, _MKPlaceItem;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceHeaderButtonsViewController : MKPlaceSectionViewController <MKModuleViewControllerProtocol, MKStackingViewControllerFixedHeightAware, MKETAProviderObserver>
 {
     MKPlaceSectionRowView *_buttonsContainerView;
     NSArray *_constraints;
     MKPlaceHeaderButton *_primaryButton;
     MKPlaceHeaderButton *_secondaryButton;
-    MKPlaceHeaderButton *_tertiaryButton;
     NSAttributedString *_primaryAttributedString;
     NSString *_currentETAString;
     BOOL _resizableViewsDisabled;
@@ -28,19 +28,16 @@
     id <MKPlaceHeaderButtonsViewControllerDelegate> _delegate;
     unsigned long long _primaryButtonType;
     _MKPlaceActionButtonController *_secondaryButtonController;
-    _MKPlaceActionButtonController *_tertiaryButtonController;
-    double _contentAlpha;
 }
 
-@property(nonatomic) double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
-@property(retain, nonatomic) _MKPlaceActionButtonController *tertiaryButtonController; // @synthesize tertiaryButtonController=_tertiaryButtonController;
 @property(retain, nonatomic) _MKPlaceActionButtonController *secondaryButtonController; // @synthesize secondaryButtonController=_secondaryButtonController;
 @property(nonatomic) unsigned long long primaryButtonType; // @synthesize primaryButtonType=_primaryButtonType;
 @property(nonatomic) __weak id <MKPlaceHeaderButtonsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
-@property(readonly, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
+@property(retain, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
+@property(retain, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
 @property(nonatomic) BOOL resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
 - (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (id)updateButton:(id)arg1 withController:(id)arg2;
 - (void)primaryButtonSelected:(id)arg1;
@@ -56,8 +53,7 @@
 - (id)etaStringFor:(unsigned long long)arg1 travelTime:(double)arg2;
 - (void)viewDidLoad;
 - (void)_commonInit;
-- (id)initWithLineItem:(id)arg1;
-- (id)initWithPlaceItem:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

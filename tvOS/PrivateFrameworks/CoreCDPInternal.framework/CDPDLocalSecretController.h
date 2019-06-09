@@ -39,10 +39,12 @@
 - (void)_createContextForSecret:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_setContextWithAuthResults:(id)arg1;
 - (void)_repairWithStateMachine:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_handleCompletionStatus:(_Bool)arg1;
+- (void)_handleCompletionStatus:(_Bool)arg1 preRecord:(_Bool)arg2;
 - (void)_localSecretChangedTo:(id)arg1 secretType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_attemptToEscrowPreRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)finishOfflineLocalSecretChangeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)localSecretChangedTo:(id)arg1 secretType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)attemptToEscrowPreRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initWithContext:(id)arg1;
 

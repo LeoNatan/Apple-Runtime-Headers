@@ -16,6 +16,7 @@
 @property __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 - (void).cxx_destruct;
 - (id)buttonWithTitle:(id)arg1 subtitle:(id)arg2 punchoutURL:(id)arg3;
+- (id)buttonForChannelOffer:(id)arg1 channel:(id)arg2 episode:(id)arg3;
 - (id)buttonForOffer:(id)arg1 playable:(id)arg2;
 - (id)buttonForChannelDetails:(id)arg1 punchoutURLs:(id)arg2 isEntitled:(_Bool)arg3 isContinuing:(_Bool)arg4 isContainerItem:(_Bool)arg5 seasonNumber:(id)arg6 episodeNumber:(id)arg7;
 - (id)buttonForPlayable:(id)arg1;

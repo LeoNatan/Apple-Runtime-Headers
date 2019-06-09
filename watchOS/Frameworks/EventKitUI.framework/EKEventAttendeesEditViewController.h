@@ -6,10 +6,11 @@
 
 #import <EventKitUI/EKEditItemViewController.h>
 
-@class EKEvent, NSArray;
+@class EKEvent, EKEventAttendeePicker, NSArray;
 
 @interface EKEventAttendeesEditViewController : EKEditItemViewController
 {
+    EKEventAttendeePicker *_picker;
     EKEvent *_event;
     _Bool _cancelTapped;
     _Bool _disableShowingButtons;
@@ -21,6 +22,7 @@
 @property(copy, nonatomic) NSArray *attendees; // @synthesize attendees=_attendees;
 @property(nonatomic) _Bool disableShowingButtons; // @synthesize disableShowingButtons=_disableShowingButtons;
 - (void).cxx_destruct;
+- (_Bool)prefersToBePresentedFromUINavigationController;
 - (void)setSearchAccountID:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 event:(id)arg2 overriddenEventStartDate:(id)arg3 overriddenEventEndDate:(id)arg4;
 

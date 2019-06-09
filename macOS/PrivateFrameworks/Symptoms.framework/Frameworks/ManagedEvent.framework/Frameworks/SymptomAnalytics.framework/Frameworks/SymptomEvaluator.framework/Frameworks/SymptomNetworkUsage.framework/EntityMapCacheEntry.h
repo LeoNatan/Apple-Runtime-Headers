@@ -8,6 +8,7 @@
 
 @class NSDate;
 
+__attribute__((visibility("hidden")))
 @interface EntityMapCacheEntry : NSObject
 {
     NSDate *_expiryTime;

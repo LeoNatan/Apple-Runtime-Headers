@@ -8,6 +8,12 @@
 
 @interface NSValue (MCVectorExtension)
 + (id)valueWithMCVector:(CDStruct_d27e73f0)arg1;
++ (id)valueWithCGPoint:(struct CGPoint)arg1;
++ (id)valueWithCGSize:(struct CGSize)arg1;
++ (id)valueWithCGRect:(struct CGRect)arg1;
 - (CDStruct_d27e73f0)MCVectorValue;
+- (struct CGPoint)CGPointValue;
+- (struct CGSize)CGSizeValue;
+- (struct CGRect)CGRectValue;
 @end
 

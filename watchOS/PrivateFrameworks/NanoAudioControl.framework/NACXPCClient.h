@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)_proxy;
 - (void)_createConnection;
 - (void)playProminentHapticPreview;
+- (void)playDefaultHapticPreview;
 - (void)playAudioAndHapticPreview;
 - (void)pickAudioRouteWithIdentifier:(id)arg1 category:(id)arg2;
 - (void)endObservingAudioRoutesForCategory:(id)arg1;

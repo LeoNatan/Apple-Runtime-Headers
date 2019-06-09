@@ -11,20 +11,28 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (double)condensedPointSizeForCellularType:(long long)arg1 defaultPointSize:(double)arg2 baselineOffset:(double *)arg3;
 + (id)expandedFont;
 + (id)normalFont;
 + (double)baseIconScale;
 + (struct NSDirectionalEdgeInsets)expandedEdgeInsets;
++ (double)bottomLeadingWidth;
 + (double)lowerExpandedBaselineOffset;
 + (double)baselineBottomInset;
++ (id)pillSmallFont;
 + (id)pillFont;
++ (struct CGSize)smallPillSize;
 + (struct CGSize)pillSize;
 + (double)pillCenteringEdgeInset;
++ (struct NSDirectionalEdgeInsets)trailingEdgeInsets;
 + (double)leadingCenteringEdgeInset;
++ (double)leadingSmallPillSpacing;
++ (double)leadingItemSpacing;
 + (double)itemSpacing;
 + (struct CGSize)notchSize;
 + (double)referenceWidth;
-- (id)styleAttributes;
+- (id)stringForCellularType:(long long)arg1 condensed:(_Bool)arg2;
+- (id)styleAttributesForStyle:(long long)arg1;
 
 @end
 

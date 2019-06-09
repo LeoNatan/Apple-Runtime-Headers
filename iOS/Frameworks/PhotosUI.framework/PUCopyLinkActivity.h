@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUActivity.h>
+#import <PhotosUICore/PXActivity.h>
 
-#import <PhotosUI/PUMomentShareActivity-Protocol.h>
+#import <PhotosUI/PXMomentShareActivity-Protocol.h>
 
-@class NSString, PUActivityItemSourceController;
+@class NSString;
+@protocol PXActivityItemSourceController;
 
 __attribute__((visibility("hidden")))
-@interface PUCopyLinkActivity : PUActivity <PUMomentShareActivity>
+@interface PUCopyLinkActivity : PXActivity <PXMomentShareActivity>
 {
 }
 
@@ -19,7 +20,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)wantsMomentShareLinkForAssetCount:(long long)arg1;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_activityBundleImageConfiguration;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 
@@ -27,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(nonatomic) __weak PUActivityItemSourceController *itemSourceController;
+@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController;
 @property(readonly) Class superclass;
 
 @end

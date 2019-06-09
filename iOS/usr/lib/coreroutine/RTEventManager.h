@@ -8,41 +8,27 @@
 
 #import <coreroutine/RTTransientObjectProtocol-Protocol.h>
 
-@class NSString, RTEventModelProvider, RTInvocationDispatcher, RTLearnedLocationManager, RTMapServiceManager;
+@class NSString, RTInvocationDispatcher;
 @protocol OS_dispatch_queue;
 
 @interface RTEventManager : NSObject <RTTransientObjectProtocol>
 {
     _Bool _accessToEventsGranted;
     RTInvocationDispatcher *_invocationDispatcher;
-    RTEventModelProvider *_eventModelProvider;
     id _eventStore;
-    RTLearnedLocationManager *_learnedLocationManager;
-    RTMapServiceManager *_mapServiceManager;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (_Bool)reasonableDistanceBetweenEventLocation:(id)arg1 andLocation:(id)arg2;
 @property(nonatomic) _Bool accessToEventsGranted; // @synthesize accessToEventsGranted=_accessToEventsGranted;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
-@property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
 @property(retain, nonatomic) id eventStore; // @synthesize eventStore=_eventStore;
-@property(retain, nonatomic) RTEventModelProvider *eventModelProvider; // @synthesize eventModelProvider=_eventModelProvider;
 @property(retain, nonatomic) RTInvocationDispatcher *invocationDispatcher; // @synthesize invocationDispatcher=_invocationDispatcher;
 - (void).cxx_destruct;
-- (void)fetchPredictedLocationsOfInterestBetweenStartDate:(id)arg1 endDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)_fetchPredictedLocationsOfInterestBetweenStartDate:(id)arg1 endDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)_fetchPredictedLocationOfInterestAtEvent:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (void)_fetchLocationOfInterestForEvent:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (void)fetchPredictedLocationsOfInterestOnDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (void)_fetchPredictedLocationsOfInterestOnDate:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
-- (void)_fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (void)fetchEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchEventsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchEventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 includeSuggestions:(_Bool)arg3 withHandler:(CDUnknownBlockType)arg4;
+- (void)fetchEventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 includeSuggestions:(_Bool)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (void)fetchEventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)_fetchEventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)fetchFreeDateIntervalsBetweenStartDate:(id)arg1 endDate:(id)arg2 filterAllDayEvents:(_Bool)arg3 filterFreeTimeEvents:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)_fetchFreeDateIntervalsBetweenStartDate:(id)arg1 endDate:(id)arg2 filterAllDayEvents:(_Bool)arg3 filterFreeTimeEvents:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)fetchLastEventEndDateWithHandler:(CDUnknownBlockType)arg1;
@@ -51,7 +37,7 @@
 - (void)_fetchNextFreeStartDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchCurrentlyInEventWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchCurrentlyInEventWithHandler:(CDUnknownBlockType)arg1;
-- (id)nextPredictedLocationsOfInterestCalendars;
+- (id)calendarsExcludingSuggested;
 - (id)calendars;
 - (id)eventsSortedByStartDateBetweenStartDate:(id)arg1 andEndDate:(id)arg2 calendars:(id)arg3;
 - (id)eventsSortedByStartDateBetweenStartDate:(id)arg1 andEndDate:(id)arg2;
@@ -60,8 +46,7 @@
 - (id)eventsBetweenStartDate:(id)arg1 andEndDate:(id)arg2 calendars:(id)arg3;
 - (void)transientObjectDidReleaseBackingObject:(id)arg1;
 - (void)transientObjectDidCreateBackingObject:(id)arg1;
-- (id)initWithEventModelProvider:(id)arg1 eventStore:(id)arg2 learnedLocationManager:(id)arg3 mapServiceManager:(id)arg4 queue:(id)arg5;
-- (id)initWithEventModelProvider:(id)arg1 learnedLocationManager:(id)arg2 mapServiceManager:(id)arg3 queue:(id)arg4;
+- (id)initWithEventStore:(id)arg1;
 - (id)init;
 
 // Remaining properties

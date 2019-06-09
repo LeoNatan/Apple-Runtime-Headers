@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (BOOL)handlesEvents;
-- (BOOL)_handleEvent:(id)arg1 request:(id)arg2;
+- (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 
 @end
 

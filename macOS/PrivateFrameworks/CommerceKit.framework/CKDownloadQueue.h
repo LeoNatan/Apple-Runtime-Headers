@@ -12,6 +12,8 @@
 {
     NSMutableDictionary *_downloadsByItemID;
     NSLock *_downloadsLock;
+    NSLock *_tokenLock;
+    id _observerToken;
     NSMutableDictionary *_downloadQueueObservers;
     CKDownloadQueueClient *_sharedObserver;
 }

@@ -21,7 +21,6 @@
     UIView *_roundedView;
     EKDayView *_dayView;
     NSDate *_date;
-    EKEvent *_event;
     NSDate *_originalEventStartDate;
     NSDate *_originalEventEndDate;
     _Bool _hasOverriddenEventDates;
@@ -29,12 +28,15 @@
     NSDate *_overriddenEventEndDate;
     long long _overriddenParticipantStatus;
     _Bool _hasOverriddenStatus;
+    _Bool _requireScrollPositionCorrection;
     _Bool _hidesAllDayEvents;
     _Bool _respectsSelectedCalendarsFilter;
     unsigned long long _style;
     UIViewController *_hostingViewController;
+    EKEvent *_event;
 }
 
+@property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 @property(nonatomic) _Bool respectsSelectedCalendarsFilter; // @synthesize respectsSelectedCalendarsFilter=_respectsSelectedCalendarsFilter;
 @property(nonatomic) _Bool hidesAllDayEvents; // @synthesize hidesAllDayEvents=_hidesAllDayEvents;
 @property(nonatomic) __weak UIViewController *hostingViewController; // @synthesize hostingViewController=_hostingViewController;
@@ -49,6 +51,7 @@
 - (struct _NSRange)_displayedHoursRange;
 - (id)_hourMaskForEvents:(id)arg1;
 - (id)_dateForFirstHourMarker;
+- (_Bool)_eventOccursOnThisDay:(id)arg1;
 - (void)_scrollDayViewToCorrectOffsetAnimated:(_Bool)arg1;
 - (void)_setNewVisibleHourLabels;
 - (id)_anchorEvent;
@@ -57,11 +60,12 @@
 - (id)_selectedCalendars;
 - (id)dayView:(id)arg1 eventsForStartDate:(id)arg2 endDate:(id)arg3;
 - (void)_setupAutoLayout;
-- (double)topInset;
 - (void)_setupDayView;
 - (void)reload;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;

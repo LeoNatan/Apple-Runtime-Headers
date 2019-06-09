@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_animationIDs;
     _Bool _interruptable;
     _Bool _interactive;
+    _Bool _needsLifetimeExtended;
     _Bool _cancelledTransition;
     _Bool _cancelledCleanUp;
     _Bool _shouldHideBackButtonDuringTransition;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool shouldHideBackButtonDuringTransition; // @synthesize shouldHideBackButtonDuringTransition=_shouldHideBackButtonDuringTransition;
 @property(readonly, nonatomic) _Bool cancelledCleanUp; // @synthesize cancelledCleanUp=_cancelledCleanUp;
 @property(readonly, nonatomic) _Bool cancelledTransition; // @synthesize cancelledTransition=_cancelledTransition;
+@property(nonatomic) _Bool needsLifetimeExtended; // @synthesize needsLifetimeExtended=_needsLifetimeExtended;
 @property(readonly, nonatomic) _Bool interactive; // @synthesize interactive=_interactive;
 @property(readonly, nonatomic) _Bool interruptable; // @synthesize interruptable=_interruptable;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;

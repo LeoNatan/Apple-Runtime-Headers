@@ -25,7 +25,6 @@
 - (id)_writeOptionsFileForPredicate:(id)arg1 confirmComplete:(BOOL)arg2;
 - (BOOL)_isUpdateUIAlreadyRunning;
 - (id)_optionsFilePath;
-- (BOOL)startUpdateUIWithPredicate:(id)arg1 customTitle:(id)arg2 customIconPath:(id)arg3 assumeExist:(BOOL)arg4 confirmComplete:(BOOL)arg5;
 - (BOOL)startUpdateUIWithPredicate:(id)arg1 confirmComplete:(BOOL)arg2;
 - (id)metadataOfCachedProductsMatchingPredicate:(id)arg1;
 - (id)tagsOfCachedProductsMatchingPredicate:(id)arg1;

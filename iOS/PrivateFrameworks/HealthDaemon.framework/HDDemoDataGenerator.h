@@ -6,24 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
+@class HDDemoDataActivitySampleGenerator, HDDemoDataAudioExposureSampleGenerator, HDDemoDataAudiogramSampleGenerator, HDDemoDataBloodSampleGenerator, HDDemoDataBodySampleGenerator, HDDemoDataFoodSampleGenerator, HDDemoDataGeneratorConfiguration, HDDemoDataGeneratorState, HDDemoDataHealthDocumentSampleGenerator, HDDemoDataHeartSampleGenerator, HDDemoDataMindfulnessSampleGenerator, HDDemoDataPathologySampleGenerator, HDDemoDataPerson, HDDemoDataReproductiveHealthSampleGenerator, HDDemoDataSleepSampleGenerator, HDDemoDataStatisticsSampleGenerator, HDDemoDataVitalsSampleGenerator, HDProfile, NSArray, NSCalendar, NSMutableDictionary;
+@protocol OS_dispatch_queue;
 
-@class HDDemoDataActivitySampleGenerator, HDDemoDataBloodSampleGenerator, HDDemoDataBodySampleGenerator, HDDemoDataFoodSampleGenerator, HDDemoDataGeneratorState, HDDemoDataHealthDocumentSampleGenerator, HDDemoDataHeartSampleGenerator, HDDemoDataMindfulnessSampleGenerator, HDDemoDataPathologySampleGenerator, HDDemoDataPerson, HDDemoDataReproductiveHealthSampleGenerator, HDDemoDataSleepSampleGenerator, HDDemoDataStatisticsSampleGenerator, HDDemoDataVitalsSampleGenerator, HDProfile, NSArray, NSCalendar, NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_source;
-
-@interface HDDemoDataGenerator : NSObject <HDHealthDaemonReadyObserver>
+@interface HDDemoDataGenerator : NSObject
 {
+    NSObject<OS_dispatch_queue> *_queue;
     NSArray *_sampleGenerators;
-    HDProfile *_profile;
     NSMutableDictionary *_appProvenances;
     HDDemoDataGeneratorState *_generatorState;
     NSCalendar *_gregorianCalendar;
     long long _numHKSamples;
     _Bool _isGeneratingDemoData;
-    NSObject<OS_dispatch_queue> *_demoDataQueue;
-    NSObject<OS_dispatch_source> *_demoDataTimer;
+    HDProfile *_profile;
     HDDemoDataPerson *_demoPerson;
+    HDDemoDataGeneratorConfiguration *_configuration;
     HDDemoDataActivitySampleGenerator *_activitySampleGenerator;
+    HDDemoDataAudioExposureSampleGenerator *_audioExposureSampleGenerator;
+    HDDemoDataAudiogramSampleGenerator *_audiogramSampleGenerator;
     HDDemoDataBloodSampleGenerator *_bloodSampleGenerator;
     HDDemoDataBodySampleGenerator *_bodySampleGenerator;
     HDDemoDataFoodSampleGenerator *_foodSampleGenerator;
@@ -49,8 +49,12 @@
 @property(retain, nonatomic) HDDemoDataFoodSampleGenerator *foodSampleGenerator; // @synthesize foodSampleGenerator=_foodSampleGenerator;
 @property(retain, nonatomic) HDDemoDataBodySampleGenerator *bodySampleGenerator; // @synthesize bodySampleGenerator=_bodySampleGenerator;
 @property(retain, nonatomic) HDDemoDataBloodSampleGenerator *bloodSampleGenerator; // @synthesize bloodSampleGenerator=_bloodSampleGenerator;
+@property(retain, nonatomic) HDDemoDataAudiogramSampleGenerator *audiogramSampleGenerator; // @synthesize audiogramSampleGenerator=_audiogramSampleGenerator;
+@property(retain, nonatomic) HDDemoDataAudioExposureSampleGenerator *audioExposureSampleGenerator; // @synthesize audioExposureSampleGenerator=_audioExposureSampleGenerator;
 @property(retain, nonatomic) HDDemoDataActivitySampleGenerator *activitySampleGenerator; // @synthesize activitySampleGenerator=_activitySampleGenerator;
+@property(retain, nonatomic) HDDemoDataGeneratorConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain, nonatomic) HDDemoDataPerson *demoPerson; // @synthesize demoPerson=_demoPerson;
+@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (id)currentDateFromCurrentTime:(double)arg1;
 - (long long)firstSampleDayOfYear;
@@ -59,11 +63,11 @@
 - (_Bool)isDifferentDayFromTime:(double)arg1;
 - (double)_initialGenerationTimeWithDate:(id)arg1;
 - (double)_timeIntervalFromInitialGenerationPeriod:(long long)arg1 currentDate:(id)arg2;
-- (_Bool)_queue_unarchiveFromDirectoryPath:(id)arg1;
-- (void)_archiveToDirectoryPath:(id)arg1;
-- (id)_unarchiveDataWithClass:(Class)arg1 atDirectoryPath:(id)arg2;
-- (_Bool)_archiveObject:(id)arg1 toDirectoryPath:(id)arg2;
-- (id)_stateDirectory;
+- (_Bool)_queue_unarchiveState;
+- (void)_archiveCurrentState;
+- (id)_unarchiveDataWithClass:(Class)arg1 error:(id *)arg2;
+- (_Bool)_archiveObject:(id)arg1 error:(id *)arg2;
+- (id)_keyValueDomain;
 - (void)_updateWorkoutConfigurationInGeneratorStateWithSampleDate:(id)arg1;
 - (id)_watchProvenanceWithPerson:(id)arg1;
 - (id)_phoneProveance;
@@ -78,17 +82,11 @@
 - (void)_queue_setupDemoDataSampleGenerators;
 - (_Bool)_queue_loadDemoDataSampleGeneratorState;
 - (void)_queue_initDemoDataSampleGenerators;
-- (void)_queue_runDemoDataGeneratorForDemoPerson:(id)arg1 endDate:(id)arg2;
-- (void)_queue_generateDemoDataIfNeeded;
-- (void)_triggerDemoDataGenerationAfterTimeInterval:(double)arg1;
-- (void)daemonReady:(id)arg1;
-- (id)initWithProfile:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)_queue_runDemoDataGeneratorForDemoPerson:(id)arg1 endDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)generateThroughEndDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)initWithProfile:(id)arg1 configuration:(id)arg2 queue:(id)arg3;
+- (id)initWithProfile:(id)arg1 queue:(id)arg2;
+- (id)init;
 
 @end
 

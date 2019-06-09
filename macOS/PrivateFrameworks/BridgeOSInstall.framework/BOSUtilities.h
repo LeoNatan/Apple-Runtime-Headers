@@ -11,6 +11,7 @@
 }
 
 + (id)weakStringConstant:(id)arg1;
++ (unsigned long long)compareBridgeVersion:(id)arg1 toBridgeVersion:(id)arg2;
 + (unsigned long long)evaluateBridgeVersion:(id)arg1 againstMinimumVersion:(id)arg2;
 + (BOOL)currentHardwareHasBridgeOS;
 + (id)sandboxURLWithLabel:(id)arg1;

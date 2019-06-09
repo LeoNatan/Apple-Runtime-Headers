@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface EKEventAttachmentDetailItem : EKEventDetailItem <EKEventAttachmentCellControllerDelegate>
 {
     NSArray *_cellControllers;
+    _Bool _visibilityChanged;
 }
 
 - (void).cxx_destruct;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)parentViewControllerForAttachmentCellController:(id)arg1;
+- (_Bool)detailItemVisibilityChanged;
 - (void)eventViewController:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (unsigned int)numberOfSubitems;
 - (_Bool)hasDetailViewControllerAtIndex:(unsigned int)arg1;
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)reset;
 - (void)setEvent:(id)arg1 store:(id)arg2;
+- (void)_setUpCellControllers;
 - (void)_cleanUpCellControllers;
 
 // Remaining properties

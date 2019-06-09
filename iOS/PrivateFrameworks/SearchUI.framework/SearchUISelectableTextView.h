@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITextView.h>
+#import <TemplateKit/TLKTextView.h>
 
-@interface SearchUISelectableTextView : UITextView
+@interface SearchUISelectableTextView : TLKTextView
 {
     _Bool _allowsDefine;
 }
 
-@property _Bool allowsDefine; // @synthesize allowsDefine=_allowsDefine;
+@property(nonatomic) _Bool allowsDefine; // @synthesize allowsDefine=_allowsDefine;
 - (void)_define:(id)arg1;
 - (_Bool)_canDefine;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (id)init;
 
 @end
 

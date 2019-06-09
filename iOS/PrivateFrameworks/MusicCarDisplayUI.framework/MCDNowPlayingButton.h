@@ -6,26 +6,34 @@
 
 #import <UIKit/UIButton.h>
 
-@class CALayer;
+#import <MusicCarDisplayUI/MCDNowPlayingObserverDelegate-Protocol.h>
 
-@interface MCDNowPlayingButton : UIButton
+@class MCDNowPlayingButtonView, NSString, UIImageView;
+
+@interface MCDNowPlayingButton : UIButton <MCDNowPlayingObserverDelegate>
 {
-    CALayer *_leadingBorder;
-    CALayer *_focusColorLayer;
-    struct CGSize _layoutFrameSize;
+    MCDNowPlayingButtonView *_nowPlayingView;
+    UIImageView *_focusBackgroundView;
+    NSString *_stateName;
     double _height;
 }
 
 + (id)buttonWithHeight:(double)arg1;
 @property(nonatomic) double height; // @synthesize height=_height;
+@property(copy, nonatomic) NSString *stateName; // @synthesize stateName=_stateName;
 - (void).cxx_destruct;
+- (void)nowPlayingObserver:(id)arg1 stateDidChanged:(_Bool)arg2;
+- (void)setHighlighted:(_Bool)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (void)setFrame:(struct CGRect)arg1;
-- (void)layoutSubviews;
-- (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
-- (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
-- (void)sizeToFit;
+- (struct CGSize)intrinsicContentSize;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)canBecomeFocused;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,41 +6,32 @@
 
 #import <objc/NSObject.h>
 
-#import <AVKit/AVScrollViewObserverDelegate-Protocol.h>
 #import <AVKit/_UIScrollViewScrollObserver-Protocol.h>
 
-@class CADisplayLink, NSString, UIScrollView, UIView;
-@protocol AVScrollViewObserverDelegate;
+@class NSHashTable, NSString, NSTimer, UIView;
+@protocol AVScrollViewObserverContentView;
 
-@interface AVScrollViewObserver : NSObject <AVScrollViewObserverDelegate, _UIScrollViewScrollObserver>
+__attribute__((visibility("hidden")))
+@interface AVScrollViewObserver : NSObject <_UIScrollViewScrollObserver>
 {
-    UIScrollView *_observedScrollView;
-    CADisplayLink *_displayLink;
-    AVScrollViewObserver *_next;
-    AVScrollViewObserver *_previous;
-    id <AVScrollViewObserverDelegate> _delegate;
-    UIView *_contentView;
+    _Bool _scrolling;
+    _Bool _scrollingQuickly;
+    UIView<AVScrollViewObserverContentView> *_observer;
+    NSHashTable *_observedScrollViews;
+    NSTimer *_scrollingDidEndTimer;
 }
 
-+ (id)scrollViewObserverForContentView:(id)arg1 delegate:(id)arg2;
-@property(readonly, nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
-@property(nonatomic) __weak id <AVScrollViewObserverDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) __weak AVScrollViewObserver *previous; // @synthesize previous=_previous;
-@property(readonly, nonatomic) AVScrollViewObserver *next; // @synthesize next=_next;
-@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
-@property(nonatomic) __weak UIScrollView *observedScrollView; // @synthesize observedScrollView=_observedScrollView;
+@property(retain, nonatomic) NSTimer *scrollingDidEndTimer; // @synthesize scrollingDidEndTimer=_scrollingDidEndTimer;
+@property(copy, nonatomic) NSHashTable *observedScrollViews; // @synthesize observedScrollViews=_observedScrollViews;
+@property(nonatomic) __weak UIView<AVScrollViewObserverContentView> *observer; // @synthesize observer=_observer;
+@property(nonatomic, getter=isScrollingQuickly) _Bool scrollingQuickly; // @synthesize scrollingQuickly=_scrollingQuickly;
+@property(nonatomic, getter=isScrolling) _Bool scrolling; // @synthesize scrolling=_scrolling;
 - (void).cxx_destruct;
-- (void)_displayLinkFired:(id)arg1;
-- (void)_startOrPauseDisplayLinkIfNeeded;
-- (void)scrollViewObserverValuesDidChange:(id)arg1;
+- (void)_updateScrollingStatus;
 - (void)_observeScrollViewDidScroll:(id)arg1;
-- (void)invalidate;
-- (void)validateHierarchyAndFindAdditionalScrollViews;
-@property(readonly, nonatomic) double contentViewFractionVisible;
-@property(readonly, nonatomic) _Bool isScrollViewScrolling;
-@property(readonly, nonatomic) _Bool isObservedScrollViewAncestorOfContentView;
+- (void)updateObservedScrollViews;
 - (void)dealloc;
-- (id)initWithView:(id)arg1 observedScrollView:(id)arg2 delegate:(id)arg3;
+- (id)initWithContentView:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

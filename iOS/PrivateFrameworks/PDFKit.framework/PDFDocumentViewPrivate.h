@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *pageFrames;
     PDFPageBackgroundManager *pageBackgroundManager;
     _Bool ignoreChangedBoundsForBoxNotification;
-    _Bool showTextSelectionHandles;
 }
 
 - (void).cxx_destruct;

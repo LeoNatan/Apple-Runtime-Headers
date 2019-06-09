@@ -5,15 +5,15 @@
 //
 
 #import <UIKitCore/UIEditable-Protocol.h>
+#import <UIKitCore/UITableConstantsTableProviding-Protocol.h>
 
 @class UIColor, UIScrollView;
 
-@protocol UITable <UIEditable>
-@property(readonly, nonatomic) UIColor *multiselectCheckmarkColor;
+@protocol UITable <UIEditable, UITableConstantsTableProviding>
+@property(readonly, nonatomic, getter=_multiselectCheckmarkColor) UIColor *multiselectCheckmarkColor;
 @property(readonly, nonatomic, getter=_accessoryBaseColor) UIColor *accessoryBaseColor;
 @property(readonly, nonatomic, getter=_sectionContentInsetFollowsLayoutMargins) _Bool sectionContentInsetFollowsLayoutMargins;
 @property(readonly, nonatomic, getter=_sectionCornerRadius) double sectionCornerRadius;
-@property(readonly, nonatomic, getter=_sectionBorderWidth) double sectionBorderWidth;
 @property(readonly, nonatomic, getter=_rawSectionContentInset) struct UIEdgeInsets rawSectionContentInset;
 @property(readonly, nonatomic, getter=_sectionContentInset) struct UIEdgeInsets sectionContentInset;
 @property(readonly, nonatomic, getter=_indexBarExtentFromEdge) double indexBarExtentFromEdge;
@@ -22,6 +22,7 @@
 @property(readonly, nonatomic, getter=_bottomPadding) double bottomPadding;
 @property(readonly, nonatomic, getter=_topPadding) double topPadding;
 @property(readonly, nonatomic) _Bool cellLayoutMarginsFollowReadableWidth;
+@property(readonly, nonatomic, getter=_cellSafeAreaInsets) struct UIEdgeInsets cellSafeAreaInsets;
 @property(readonly, nonatomic, getter=_backgroundInset) double backgroundInset;
 @property(readonly, nonatomic) _Bool overlapsSectionHeaderViews;
 @property(readonly, nonatomic) _Bool usesVariableMargins;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) _Bool allowsMultipleSelection;
 @property(readonly, nonatomic, getter=_numberOfSections) long long numberOfSections;
 @property(readonly, nonatomic, getter=_scrollView) UIScrollView *scrollView;
-@property(readonly, nonatomic, getter=_style) long long style;
 - (_Bool)_shouldHaveFooterViewForSection:(long long)arg1;
 - (_Bool)_shouldHaveHeaderViewForSection:(long long)arg1;
 - (long long)_numberOfRowsInSection:(long long)arg1;

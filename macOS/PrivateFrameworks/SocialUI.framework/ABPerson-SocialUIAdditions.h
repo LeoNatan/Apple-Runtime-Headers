@@ -10,8 +10,6 @@
 + (id)cardFromVCardData:(id)arg1;
 + (id)cardFromPasteboardContent:(id)arg1;
 - (id)formattedPhoneNumberWithPhoneNumberLike:(id)arg1;
-- (void)setBlockingIMHandlePictures:(BOOL)arg1;
-- (BOOL)blockingIMHandlePictures;
 - (BOOL)openInAddressBookAndEdit:(BOOL)arg1;
 - (id)mergedAddressBookMatch;
 - (BOOL)mergeVCardWithABPerson:(id)arg1;

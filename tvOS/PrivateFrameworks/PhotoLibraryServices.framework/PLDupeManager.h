@@ -28,10 +28,10 @@
 + (void)_setPlaceHolderHashOnAsset:(id)arg1;
 + (id)placeholderHash;
 + (id)_hashForFileAtPath:(id)arg1 utiType:(id)arg2;
-+ (_Bool)resetDupesAnalysisForOfflineStore:(id)arg1;
-+ (_Bool)_resetDupesAnalysisInManagedObjectContext:(id)arg1;
-+ (id)sharedInstance;
++ (_Bool)resetDupesAnalysisForOfflineStore:(id)arg1 pathManager:(id)arg2;
++ (_Bool)_resetDupesAnalysisInManagedObjectContext:(id)arg1 pathManager:(id)arg2;
 @property(readonly, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
+- (void).cxx_destruct;
 - (void)resumeAnalysisWithReason:(id)arg1;
 - (void)pauseAnalysisWithReason:(id)arg1;
 - (void)_resetSoftPauseReasons;
@@ -59,7 +59,7 @@
 - (void)_noteAssetVisibilityDidChange:(id)arg1;
 - (short)_computeCloudAssetHashesForManagedObjectContext:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithPhotoLibrary:(id)arg1;
 
 @end
 

@@ -15,7 +15,6 @@
 
 - (id)q;
 - (id)queue;
-- (void)finalize;
 - (void)dealloc;
 - (void)ABDispatchQueueWrapper_commonDealloc;
 - (id)initWithLabel:(const char *)arg1;

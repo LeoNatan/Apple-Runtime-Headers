@@ -8,6 +8,7 @@
 
 @class NSArray, NSLayoutGuide, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface _MKPlaceBusinessInfoRow : MKPlaceSectionRowView
 {
     BOOL _needToRecalculateWidth;
@@ -25,7 +26,7 @@
 - (void)layout;
 - (void)_createConstraints;
 - (void)_updateFontAndTextColor:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
 

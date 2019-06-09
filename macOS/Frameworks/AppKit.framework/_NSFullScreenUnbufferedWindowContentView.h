@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (void)setBackgroundColor:(id)arg1;
 - (BOOL)isOpaque;
-- (unsigned int)_CAViewFlags;
 
 @end
 

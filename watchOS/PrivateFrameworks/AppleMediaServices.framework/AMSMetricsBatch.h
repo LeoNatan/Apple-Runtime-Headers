@@ -6,22 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class ACAccount, NSArray, NSURL;
+@class ACAccount, NSArray, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface AMSMetricsBatch : NSObject
 {
+    _Bool _containsLoadURL;
     ACAccount *_account;
-    NSURL *_reportURL;
-    NSArray *_events;
+    NSString *_canaryIdentifier;
+    NSArray *_droppedEvents;
     NSArray *_eventDictionaries;
-    NSArray *_blacklistedEvents;
+    NSArray *_events;
+    NSURL *_reportURL;
+    NSArray *_skippedEvents;
 }
 
-@property(retain, nonatomic) NSArray *blacklistedEvents; // @synthesize blacklistedEvents=_blacklistedEvents;
-@property(retain, nonatomic) NSArray *eventDictionaries; // @synthesize eventDictionaries=_eventDictionaries;
-@property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
+@property(retain, nonatomic) NSArray *skippedEvents; // @synthesize skippedEvents=_skippedEvents;
 @property(retain, nonatomic) NSURL *reportURL; // @synthesize reportURL=_reportURL;
+@property(retain, nonatomic) NSArray *events; // @synthesize events=_events;
+@property(retain, nonatomic) NSArray *eventDictionaries; // @synthesize eventDictionaries=_eventDictionaries;
+@property(retain, nonatomic) NSArray *droppedEvents; // @synthesize droppedEvents=_droppedEvents;
+@property(nonatomic) _Bool containsLoadURL; // @synthesize containsLoadURL=_containsLoadURL;
+@property(retain, nonatomic) NSString *canaryIdentifier; // @synthesize canaryIdentifier=_canaryIdentifier;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
 

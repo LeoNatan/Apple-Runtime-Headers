@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType advanceToRunPhaseWaiter;
     CDUnknownBlockType cleanupKVOBlock;
     CDUnknownBlockType invalidationHandler;
-    id mouseDownMonitor;
 }
 
 + (void)warmup;

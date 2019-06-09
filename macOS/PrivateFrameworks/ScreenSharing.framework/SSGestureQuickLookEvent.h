@@ -6,10 +6,8 @@
 
 #import <ScreenSharing/SSGestureEvent.h>
 
-__attribute__((visibility("hidden")))
 @interface SSGestureQuickLookEvent : SSGestureEvent
 {
-    void *mReservedForInstanceVariablesGestureQuickLook;
 }
 
 + (id)gestureQuickLookEventWithCoordinates:(struct SSPoint)arg1 subType:(long long)arg2;

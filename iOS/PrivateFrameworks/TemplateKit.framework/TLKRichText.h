@@ -20,6 +20,7 @@
 - (id)inlineRoundedText;
 - (id)stars;
 - (id)description;
+@property(readonly) _Bool hasOnlyImage;
 @property(readonly) _Bool hasContent;
 - (id)text;
 

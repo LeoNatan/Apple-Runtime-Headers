@@ -31,6 +31,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)quantityRepresentationWithUCUMConverter:(id)arg1 error:(id *)arg2;
 - (id)description;
 @property(readonly, copy, nonatomic) NSNumber *numberValue;
 @property(readonly, copy, nonatomic) NSString *localizedValue;

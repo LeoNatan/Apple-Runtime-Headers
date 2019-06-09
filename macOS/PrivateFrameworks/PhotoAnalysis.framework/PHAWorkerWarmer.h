@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, PHAJobConstraints, PHAWorker;
+@class NSMutableSet, PHAJobConstraints, PHAWorker;
 
 @interface PHAWorkerWarmer : NSObject
 {
-    NSArray *_workers;
+    NSMutableSet *_workers;
     PHAWorker *_lastActiveWorker;
     PHAJobConstraints *_lastConstraints;
 }
@@ -18,14 +18,14 @@
 + (unsigned long long)stateCode;
 @property(retain, nonatomic) PHAJobConstraints *lastConstraints; // @synthesize lastConstraints=_lastConstraints;
 @property(retain, nonatomic) PHAWorker *lastActiveWorker; // @synthesize lastActiveWorker=_lastActiveWorker;
-@property(readonly, nonatomic) NSArray *workers; // @synthesize workers=_workers;
+@property(readonly, nonatomic) NSMutableSet *workers; // @synthesize workers=_workers;
 - (void).cxx_destruct;
 - (void)reportNoMoreJobsExpected;
 - (void)setActiveWorker:(id)arg1 withJob:(id)arg2;
 - (void)recordConstraintChange:(id)arg1;
-- (id)initWithWorkers:(id)arg1;
+- (id)init;
 - (id)statusAsDictionary;
-- (void)_cooldownWorkerIfWarmed:(id)arg1;
+- (BOOL)_cooldownWorkerIfWarmed:(id)arg1;
 - (void)_warmupWorkerIfCooled:(id)arg1;
 
 @end

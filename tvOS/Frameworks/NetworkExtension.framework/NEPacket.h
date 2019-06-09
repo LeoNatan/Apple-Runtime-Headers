@@ -9,17 +9,23 @@
 #import <NetworkExtension/NSCopying-Protocol.h>
 #import <NetworkExtension/NSSecureCoding-Protocol.h>
 
-@class NEFlowMetaData, NSData;
+@class NEFilterPacketInterpose, NEFlowMetaData, NSData;
 
 @interface NEPacket : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned char _protocolFamily;
     NSData *_data;
+    long long _direction;
     NEFlowMetaData *_metadata;
+    void *_context;
+    NEFilterPacketInterpose *_interpose;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain) NEFilterPacketInterpose *interpose; // @synthesize interpose=_interpose;
+@property void *context; // @synthesize context=_context;
 @property(readonly) NEFlowMetaData *metadata; // @synthesize metadata=_metadata;
+@property(readonly) long long direction; // @synthesize direction=_direction;
 @property(readonly) unsigned char protocolFamily; // @synthesize protocolFamily=_protocolFamily;
 @property(readonly, copy) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
@@ -28,7 +34,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 protocolFamily:(unsigned char)arg2;
 - (id)initWithData:(id)arg1 protocolFamily:(unsigned char)arg2 signingIdentifier:(id)arg3 processUUID:(id)arg4;
+- (id)initWithData:(id)arg1 direction:(long long)arg2 context:(void *)arg3 interpose:(id)arg4;
 - (id)initWithData:(id)arg1 protocolFamily:(unsigned char)arg2 metadata:(id)arg3;
+- (void)dealloc;
 
 @end
 

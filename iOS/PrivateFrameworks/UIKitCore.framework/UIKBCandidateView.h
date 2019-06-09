@@ -6,59 +6,26 @@
 
 #import <UIKitCore/UIKBKeyView.h>
 
-#import <UIKitCore/UIKeyboardCandidateGridCollectionViewControllerDelegate-Protocol.h>
-
-@class NSString, TIKeyboardCandidateResultSet, UIKeyboardCandidateGridCollectionViewController, UIKeyboardCandidateSortControl;
+@class UIView;
 
 __attribute__((visibility("hidden")))
-@interface UIKBCandidateView : UIKBKeyView <UIKeyboardCandidateGridCollectionViewControllerDelegate>
+@interface UIKBCandidateView : UIKBKeyView
 {
-    unsigned long long _selectedSortIndex;
-    UIKeyboardCandidateGridCollectionViewController *_collectionViewController;
-    UIKeyboardCandidateSortControl *_scrollViewSortControl;
     CDStruct_227bb23d _visualStyling;
+    UIView *_candidateKey;
 }
 
+@property(retain, nonatomic) UIView *candidateKey; // @synthesize candidateKey=_candidateKey;
 @property(nonatomic) CDStruct_227bb23d visualStyling; // @synthesize visualStyling=_visualStyling;
-@property(retain, nonatomic) UIKeyboardCandidateSortControl *scrollViewSortControl; // @synthesize scrollViewSortControl=_scrollViewSortControl;
-@property(retain, nonatomic) UIKeyboardCandidateGridCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
-@property(nonatomic) unsigned long long selectedSortIndex; // @synthesize selectedSortIndex=_selectedSortIndex;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) TIKeyboardCandidateResultSet *candidateResultSet;
-- (id)headerViewForCandidateSet:(id)arg1;
-- (unsigned long long)gridCollectionViewNumberOfColumns:(id)arg1;
-- (unsigned long long)gridCollectionViewSelectedSortMethodIndex:(id)arg1;
-- (id)groupedCandidatesFromCandidateSet:(id)arg1 forSortIndex:(unsigned long long)arg2;
-- (void)sortSelectionBarAction:(id)arg1;
-- (void)clearCollectionViewController;
-- (void)updateCollectionViewController:(_Bool)arg1;
-- (void)updateCollectionViewController;
-- (id)statisticsIdentifier;
-- (id)keyboardBehaviors;
-- (_Bool)hasCandidates;
-- (void)candidateAcceptedAtIndex:(unsigned long long)arg1;
-- (unsigned long long)currentIndex;
-- (id)currentCandidate;
-- (void)showCandidateInForwardDirection:(_Bool)arg1 granularity:(int)arg2;
-- (_Bool)showCandidate:(id)arg1;
-- (void)showCandidateAtIndex:(unsigned long long)arg1;
-- (void)setUIKeyboardCandidateListDelegate:(id)arg1;
-- (void)setCandidates:(id)arg1 inlineText:(id)arg2 inlineRect:(struct CGRect)arg3 maxX:(double)arg4 layout:(_Bool)arg5;
-- (_Bool)isFloatingList;
-- (_Bool)isExtendedList;
+- (void)clearCandidateKey;
+- (void)updateCandidateKey;
 - (_Bool)isTenKey;
 - (id)candidateList;
-- (void)setRenderConfig:(id)arg1;
 - (void)displayLayer:(id)arg1;
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 keyplane:(id)arg2 key:(id)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

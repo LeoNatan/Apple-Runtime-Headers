@@ -20,6 +20,7 @@
 - (void)deleteRecoveryKeyWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)generateNewRecoveryKeyWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)finishOfflineLocalSecretChangeWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2 completion:(void (^)(_Bool, NSError *))arg3;
+- (void)attemptToEscrowPreRecord:(NSString *)arg1 context:(CDPContext *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)localSecretChangedTo:(NSString *)arg1 secretType:(unsigned long long)arg2 context:(CDPContext *)arg3 uiProvider:(id <CDPStateUIProviderInternal>)arg4 completion:(void (^)(_Bool, NSError *))arg5;
 - (void)recoverSquirrelWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)recoverAndSynchronizeSquirrelWithContext:(CDPContext *)arg1 uiProvider:(id <CDPStateUIProviderInternal>)arg2 completion:(void (^)(_Bool, NSError *))arg3;

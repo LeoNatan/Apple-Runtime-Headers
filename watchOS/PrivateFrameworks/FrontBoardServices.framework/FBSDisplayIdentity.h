@@ -41,6 +41,7 @@
 - (_Bool)isiPodOnlyDisplay;
 - (_Bool)isRestrictedAirPlayDisplay;
 - (_Bool)isAirPlayDisplay;
+- (_Bool)isMainRootDisplay;
 - (unsigned int)connectionSeed;
 - (unsigned int)displayID;
 - (_Bool)expectsSecureRendering;

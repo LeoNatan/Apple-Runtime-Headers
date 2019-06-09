@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (void)setSelected:(BOOL)arg1;
 - (void)setEmphasized:(BOOL)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (BOOL)wantsUpdateLayer;
 - (void)updateLayer;
 - (BOOL)isOpaque;

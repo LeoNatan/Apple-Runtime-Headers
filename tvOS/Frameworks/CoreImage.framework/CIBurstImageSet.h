@@ -27,6 +27,7 @@
 - (id)imageClusterForIdentifier:(id)arg1;
 - (id)coverImageIdentifier;
 - (id)bestImageIdentifiers;
+- (void)addImageFromIOSurface:(struct __IOSurface *)arg1 properties:(id)arg2 identifier:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)burstId;
 - (id)initWithOptions:(id)arg1;
 - (id)init;

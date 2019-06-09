@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIInAppPurchase : NSObject <SKUICacheCoding>
 {
     NSString *_formattedPrice;

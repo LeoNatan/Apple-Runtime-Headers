@@ -59,6 +59,7 @@
 - (id)_tableNameForClass:(Class)arg1;
 - (void)deleteFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)deleteFrom:(id)arg1 matchingValues:(id)arg2;
+- (long long)upsertInto:(id)arg1 values:(id)arg2 onConflict:(id)arg3 doUpdate:(id)arg4 where:(id)arg5;
 - (long long)insertOrReplaceInto:(id)arg1 values:(id)arg2;
 - (unsigned long long)selectCountFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectAllFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
@@ -66,6 +67,7 @@
 - (id)selectFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3 limit:(id)arg4;
 - (void)selectFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3 orderBy:(id)arg4 limit:(id)arg5 block:(CDUnknownBlockType)arg6;
 - (void)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4 orderBy:(id)arg5 limit:(id)arg6 block:(CDUnknownBlockType)arg7;
+- (id)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4 orderBy:(id)arg5;
 - (id)select:(id)arg1 from:(id)arg2 where:(id)arg3 bindings:(id)arg4;
 - (id)select:(id)arg1 from:(id)arg2;
 - (id)columnNamesForTable:(id)arg1;

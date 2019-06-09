@@ -41,6 +41,7 @@
 - (void)siriSnippetViewController:(id)arg1 didPresentViewController:(id)arg2;
 - (void)siriSnippetViewController:(id)arg1 willPresentViewController:(id)arg2;
 - (void)siriViewController:(id)arg1 speakText:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (double)statusBarHeightForSiriViewController:(id)arg1;
 - (id)updatedUserUtteranceForSiriViewController:(id)arg1;
 - (void)siriViewController:(id)arg1 didHideVibrantView:(id)arg2;
 - (void)siriSnippetViewController:(id)arg1 setStatusViewHidden:(_Bool)arg2;
@@ -63,6 +64,7 @@
 - (void)siriViewController:(id)arg1 performAceCommands:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)siriViewController:(id)arg1 performAceCommands:(id)arg2;
 - (double)siriSnippetViewControllerExpectedWidth:(id)arg1;
+- (void)siriSnippetViewController:(id)arg1 setStatusBarHidden:(_Bool)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)siriEnabledAppListForSiriViewController:(id)arg1;
 - (unsigned long long)siriDeviceLockStateForSnippetViewController:(id)arg1;
 - (void)siriSnippetViewControllerWillBecomeFirstResponder:(id)arg1;
@@ -78,7 +80,7 @@
 - (_Bool)_shouldAttemptToConnectToRemoteViewController;
 - (void)viewDidLayoutSubviews;
 - (void)_loadCardSectionView;
-- (id)_initWithCardSection:(id)arg1 dataSource:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (id)_interaction;
 
 // Remaining properties

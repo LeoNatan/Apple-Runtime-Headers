@@ -12,8 +12,10 @@
 - (NSManagedObjectContext *)managedObjectContext;
 - (void)setMimeType:(NSString *)arg1;
 - (_Bool)persistAttachmentData:(NSData *)arg1 error:(id *)arg2;
+- (NSURL *)cidURL;
 - (NSString *)contentID;
 - (NSString *)typeUTI;
+- (NSString *)mimeType;
 - (NSURL *)fileURL;
 - (NSString *)identifier;
 @end

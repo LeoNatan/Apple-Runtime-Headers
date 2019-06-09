@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (void)clear;
-- (void)setAlignment:(unsigned long long)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setText:(id)arg1;

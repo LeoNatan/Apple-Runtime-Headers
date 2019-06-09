@@ -6,6 +6,7 @@
 
 #import <OfficeImport/EDCollection.h>
 
+__attribute__((visibility("hidden")))
 @interface EDStylesCollection : EDCollection
 {
     unsigned long long mDefaultWorkbookStyleIndex;

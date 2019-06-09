@@ -55,6 +55,11 @@ struct __sbuf {
     int _field2;
 };
 
+struct _opaque_pthread_mutex_t {
+    long __sig;
+    char __opaque[40];
+};
+
 struct buffer {
     char *x;
     unsigned int p;

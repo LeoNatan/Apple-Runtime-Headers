@@ -9,12 +9,14 @@
 @class NSArray;
 
 @interface CNMutableContact (UIAdditions)
+- (void)updateImageInfoWithType:(unsigned long long)arg1;
 - (void)removePhoto;
 @property(copy, nonatomic) NSArray *birthdays;
 - (_Bool)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3 request:(id)arg4;
 - (_Bool)saveContactInStore:(id)arg1 group:(id)arg2 container:(id)arg3;
 - (void)updateContactTypeWithPolicy:(id)arg1;
 - (id)addProperties:(id)arg1 excludingProperties:(id)arg2 fromContact:(id)arg3;
+- (id)addAllPropertiesFromContact:(id)arg1;
 - (_Bool)hasNonPersistedData;
 @end
 

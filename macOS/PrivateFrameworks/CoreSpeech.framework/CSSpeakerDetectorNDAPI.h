@@ -34,8 +34,8 @@
 - (BOOL)addLastTriggerToProfileWithSuperVector:(id)arg1;
 - (BOOL)addLastTriggerToProfile;
 - (id)analyzeWavForEnrollment:(id)arg1 numSamples:(unsigned long long)arg2;
-- (float)_computeSATScore:(id)arg1;
-- (void)processSuperVector:(id)arg1 withResult:(id)arg2;
+- (float)computeSATScore:(id)arg1;
+- (float)getSatThreshold;
 - (BOOL)_initializeSAT:(id)arg1;
 - (BOOL)_initializeNDAPI:(id)arg1 resourcePath:(id)arg2;
 - (void)dealloc;

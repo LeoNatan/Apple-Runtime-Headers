@@ -19,15 +19,15 @@
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _colorAndTextureProgram
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _lightProbesProgram
     // Error parsing type: ^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}, name: _wireframeProgram
-    CDStruct_4aabc75a _logsInfo;
-    CDStruct_4aabc75a _boldLogsInfo;
-    CDStruct_4aabc75a _dynamicLinesInfo;
-    CDStruct_4aabc75a _dynamicLinesNoDepthTestInfo;
-    CDStruct_4aabc75a _dynamicTrianglesInfo;
-    CDStruct_4aabc75a _overlayDynamicLinesInfo;
-    CDStruct_4aabc75a _overlayDynamicTriangleInfo;
-    CDStruct_4aabc75a _textInfo;
-    CDStruct_4aabc75a _lightProbesInfo;
+    CDStruct_5d7f1bfa _logsInfo;
+    CDStruct_5d7f1bfa _boldLogsInfo;
+    CDStruct_5d7f1bfa _dynamicLinesInfo;
+    CDStruct_5d7f1bfa _dynamicLinesNoDepthTestInfo;
+    CDStruct_5d7f1bfa _dynamicTrianglesInfo;
+    CDStruct_5d7f1bfa _overlayDynamicLinesInfo;
+    CDStruct_5d7f1bfa _overlayDynamicTriangleInfo;
+    CDStruct_5d7f1bfa _textInfo;
+    CDStruct_5d7f1bfa _lightProbesInfo;
     CDStruct_c23cf450 _normalTextInfo;
     CDStruct_c23cf450 _boldTextInfo;
     struct __C3DRasterizerStates *_depthOnCullOnStates;
@@ -88,7 +88,7 @@
 + (long long)defaultAuthoringDisplayMask;
 @property(nonatomic) BOOL surroundToSelect; // @synthesize surroundToSelect=_surroundToSelect;
 @property(nonatomic) BOOL graphicalSelectionEnabled; // @synthesize graphicalSelectionEnabled=_graphicalSelectionEnabled;
-@property(nonatomic) __weak id <SCNAuthoringEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) id <SCNAuthoringEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long editingSpace; // @synthesize editingSpace=_editingSpace;
 @property(readonly, nonatomic) double gridUnit; // @synthesize gridUnit=_gridUnit;
 @property(nonatomic) BOOL shouldSnapToAlign; // @synthesize shouldSnapToAlign=_shouldSnapToAlign;

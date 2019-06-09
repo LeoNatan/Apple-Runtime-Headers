@@ -16,6 +16,8 @@
     NSString *_model;
     NSString *_name;
     unsigned long long _status;
+    NSString *_version;
+    long long _rapportVersion;
     NSString *_deviceTypeIdentifier;
     unsigned long long _generation;
 }
@@ -28,6 +30,9 @@
 @property(readonly, nonatomic) NSString *localizedDeviceType;
 @property(readonly, nonatomic) NSString *deviceTypeIdentifier;
 @property(nonatomic) unsigned long long status;
+@property(readonly, nonatomic) _Bool hasHomeButton;
+@property(readonly, nonatomic) long long rapportVersion;
+@property(readonly, nonatomic) NSString *version;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) NSString *model;
 @property(readonly, nonatomic) NSUUID *identifier;
@@ -37,6 +42,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)_updateFromDevice:(id)arg1 generation:(unsigned long long)arg2;
 - (id)initWithIdentifier:(id)arg1 model:(id)arg2 name:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 model:(id)arg2 name:(id)arg3 version:(id)arg4;
 
 @end
 

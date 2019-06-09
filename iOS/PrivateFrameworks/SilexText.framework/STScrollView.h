@@ -6,10 +6,12 @@
 
 #import <TSReading/TSDScrollView.h>
 
-@class STAXCustomRotorProvider;
+#import <SilexText/STAXElementOccluder-Protocol.h>
+
+@class NSString, STAXCustomRotorProvider;
 @protocol STScrollViewDelegate;
 
-@interface STScrollView : TSDScrollView
+@interface STScrollView : TSDScrollView <STAXElementOccluder>
 {
     id <STScrollViewDelegate> _scrollViewDelegate;
     STAXCustomRotorProvider *_customRotorProvider;
@@ -18,11 +20,19 @@
 @property(retain, nonatomic) STAXCustomRotorProvider *customRotorProvider; // @synthesize customRotorProvider=_customRotorProvider;
 @property(nonatomic) __weak id <STScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
 - (void).cxx_destruct;
+- (_Bool)_accessibilityScrollingEnabled;
+- (_Bool)shouldOccludeAccessibilityElement:(id)arg1;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)accessibilityCustomRotors;
 @property(readonly, nonatomic) _Bool isBouncing;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

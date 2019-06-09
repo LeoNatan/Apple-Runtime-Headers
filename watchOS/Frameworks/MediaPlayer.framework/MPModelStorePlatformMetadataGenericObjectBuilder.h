@@ -32,7 +32,6 @@
         unsigned int localFileAsset:1;
         unsigned int libraryAdded:1;
         unsigned int libraryAddEligible:1;
-        unsigned int shouldExcludeFromShuffle;
         unsigned int shouldShowComposer:1;
         unsigned int volumeNormalization:1;
         unsigned int year:1;

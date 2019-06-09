@@ -17,6 +17,7 @@
     NSString *_launchNotification;
     struct __CFString *_loggingFacility;
     IDSService *_service;
+    _Bool _resumed;
     NSMutableDictionary *_requestHandlers;
     NSMutableDictionary *_errorHandlers;
     NSMutableDictionary *_responseHandlers;
@@ -55,6 +56,7 @@
 @property(retain, nonatomic) NSObject<OS_os_activity> *transportActivity; // @synthesize transportActivity=_transportActivity;
 @property(nonatomic) __weak id <NMSMessageCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(CDUnknownBlockType)arg3;
 - (void)service:(id)arg1 account:(id)arg2 incomingResourceAtURL:(id)arg3 metadata:(id)arg4 fromID:(id)arg5 context:(id)arg6;

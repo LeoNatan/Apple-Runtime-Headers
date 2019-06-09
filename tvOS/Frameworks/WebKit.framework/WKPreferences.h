@@ -21,7 +21,6 @@
 + (id)_experimentalFeatures;
 + (id)_internalDebugFeatures;
 @property(readonly) struct Object *_apiObject;
-@property(nonatomic, setter=_setStorageAccessPromptsEnabled:) _Bool _storageAccessPromptsEnabled;
 @property(nonatomic) _Bool javaScriptCanOpenWindowsAutomatically;
 @property(nonatomic) _Bool javaScriptEnabled;
 @property(nonatomic) double minimumFontSize;
@@ -37,6 +36,9 @@
 @property(nonatomic, setter=_setShouldEnableTextAutosizingBoost:) _Bool _shouldEnableTextAutosizingBoost;
 @property(nonatomic, setter=_setDOMPasteAllowed:) _Bool _domPasteAllowed;
 @property(nonatomic, setter=_setJavaScriptCanAccessClipboard:) _Bool _javaScriptCanAccessClipboard;
+@property(nonatomic, setter=_setMediaSourceEnabled:) _Bool _mediaSourceEnabled;
+@property(nonatomic, setter=_setItpDebugModeEnabled:) _Bool _itpDebugModeEnabled;
+@property(nonatomic, setter=_setNeedsSiteSpecificQuirks:) _Bool _needsSiteSpecificQuirks;
 @property(nonatomic, setter=_setShouldIgnoreMetaViewport:) _Bool _shouldIgnoreMetaViewport;
 @property(nonatomic, setter=_setLowPowerVideoAudioBufferSizeEnabled:) _Bool _lowPowerVideoAudioBufferSizeEnabled;
 @property(nonatomic, setter=_setPunchOutWhiteBackgroundsInDarkMode:) _Bool _punchOutWhiteBackgroundsInDarkMode;
@@ -79,9 +81,9 @@
 @property(nonatomic, setter=_setTextAutosizingEnabled:) _Bool _textAutosizingEnabled;
 @property(nonatomic, setter=_setAnimatedImageAsyncDecodingEnabled:) _Bool _animatedImageAsyncDecodingEnabled;
 @property(nonatomic, setter=_setLargeImageAsyncDecodingEnabled:) _Bool _largeImageAsyncDecodingEnabled;
-@property(nonatomic, setter=_setVisualViewportEnabled:) _Bool _visualViewportEnabled;
 @property(nonatomic, setter=_setDisplayListDrawingEnabled:) _Bool _displayListDrawingEnabled;
 @property(nonatomic, setter=_setAcceleratedDrawingEnabled:) _Bool _acceleratedDrawingEnabled;
+@property(nonatomic, setter=_setContentChangeObserverEnabled:) _Bool _contentChangeObserverEnabled;
 @property(nonatomic, setter=_setSimpleLineLayoutDebugBordersEnabled:) _Bool _simpleLineLayoutDebugBordersEnabled;
 @property(nonatomic, setter=_setSimpleLineLayoutEnabled:) _Bool _simpleLineLayoutEnabled;
 @property(nonatomic, setter=_setVisibleDebugOverlayRegions:) unsigned long long _visibleDebugOverlayRegions;

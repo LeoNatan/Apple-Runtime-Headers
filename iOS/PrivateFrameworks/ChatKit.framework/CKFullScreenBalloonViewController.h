@@ -13,7 +13,7 @@
 @class CKMessageAcknowledgmentPickerBarViewController, CKMessagePartChatItem, NSString, UIGestureRecognizer, UIView;
 @protocol CKFullScreenBalloonViewControllerDelegate;
 
-@interface CKFullScreenBalloonViewController : UIViewController <CKMessageAcknowledgmentPickerBarDelegate, UIGestureRecognizerDelegate, CKAdaptivePresentedControllerProtocol>
+@interface CKFullScreenBalloonViewController : UIViewController <UIGestureRecognizerDelegate, CKMessageAcknowledgmentPickerBarDelegate, CKAdaptivePresentedControllerProtocol>
 {
     _Bool _isGroupConversation;
     _Bool _showActionMenu;

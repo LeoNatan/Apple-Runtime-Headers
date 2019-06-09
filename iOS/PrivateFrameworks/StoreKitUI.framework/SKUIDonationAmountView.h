@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIGiftAmount, SKUIGiftCharity, UIImage, UIImageView, UILabel, UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDonationAmountView : UIView
 {
     NSArray *_amountButtons;

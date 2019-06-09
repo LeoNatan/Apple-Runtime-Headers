@@ -22,7 +22,9 @@ __attribute__((visibility("hidden")))
 - (id)_initWithAccessorSequence:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)propertyPathByCombiningAccesserSequence:(id)arg1;
+- (id)propertyPathByRemovingFirstAccessor;
+- (id)propertyPathByCombiningAccessorSequence:(id)arg1;
+- (id)initWithAccessorSequence:(id)arg1;
 - (id)initWithString:(id)arg1;
 
 @end

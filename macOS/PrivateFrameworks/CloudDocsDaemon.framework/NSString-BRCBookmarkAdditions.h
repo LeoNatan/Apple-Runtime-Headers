@@ -8,5 +8,15 @@
 
 @interface NSString (BRCBookmarkAdditions)
 + (id)bookmarkDataWithItemResolutionString:(id)arg1 serverZoneName:(id)arg2 ownerName:(id)arg3 accountID:(id)arg4 salted:(BOOL)arg5;
++ (id)brc_hexadecimalStringWithBytes:(const char *)arg1 length:(unsigned long long)arg2;
++ (void)_t_brc_removeForcedPackageExtension:(id)arg1;
++ (void)brc_addForcedPackageExtension:(id)arg1;
++ (void)brc_loadForcedPackageExtensions;
+- (id)brc_SHA1WithSalt:(id)arg1;
+- (id)brc_SHA256;
+- (BOOL)brc_isBlacklistedPackageExtension;
+- (BOOL)brc_isForcedPackageExtension;
+- (id)brc_fixDocumentExtensionIfNeededForShareURL:(id)arg1;
+- (id)brc_mangledNameFromURLFragment:(BOOL)arg1;
 @end
 

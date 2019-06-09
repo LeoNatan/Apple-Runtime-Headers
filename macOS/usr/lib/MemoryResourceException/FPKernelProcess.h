@@ -15,6 +15,7 @@
 
 + (void)_setNameForRegion:(id)arg1 withWiredInfo:(struct mach_memory_info *)arg2 andKexts:(id)arg3 andSymbolicator:(struct _CSTypeRef)arg4 zoneNames:(struct mach_zone_name *)arg5 zoneCount:(unsigned int)arg6;
 + (id)_nameForWiredInfo:(struct mach_memory_info *)arg1 withKexts:(id)arg2 andSymbolicator:(struct _CSTypeRef)arg3 zoneNames:(struct mach_zone_name *)arg4 zoneCount:(unsigned int)arg5;
++ (struct _CSTypeRef)_createSymbolicator;
 + (id)kextTags;
 + (id)_kextTagsWithKextInfo:(id)arg1;
 - (void).cxx_destruct;

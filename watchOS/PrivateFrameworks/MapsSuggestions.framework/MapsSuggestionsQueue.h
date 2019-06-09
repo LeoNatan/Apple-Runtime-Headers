@@ -13,17 +13,17 @@
 
 @interface MapsSuggestionsQueue : NSObject <MapsSuggestionsObject>
 {
-    struct NSString *_name;
-    NSObject<OS_dispatch_queue> *_innerQueue;
+    struct unique_ptr<MSg::Queue, std::__1::default_delete<MSg::Queue>> _cppQueue;
 }
 
 + (id)serialQueueWithName:(struct NSString *)arg1;
-@property(readonly) NSObject<OS_dispatch_queue> *innerQueue; // @synthesize innerQueue=_innerQueue;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)asyncBlock:(CDUnknownBlockType)arg1;
 - (_Bool)syncBOOLReturningBlock:(CDUnknownBlockType)arg1;
 - (id)syncReturningBlock:(CDUnknownBlockType)arg1;
 - (void)syncBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *innerQueue;
 @property(readonly, nonatomic) NSString *uniqueName;
 - (id)initSerialQueueWithName:(struct NSString *)arg1;
 

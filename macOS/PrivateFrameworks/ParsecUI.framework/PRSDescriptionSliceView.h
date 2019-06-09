@@ -10,7 +10,7 @@
 
 @interface PRSDescriptionSliceView : NSView
 {
-    unsigned long long _textAlignment;
+    long long _textAlignment;
     unsigned long long _imageAlignment;
     NSImage *_image;
     NSTextField *_titleTextField;
@@ -50,7 +50,7 @@
 @property(retain) NSAttributedString *descriptionAttributedString;
 @property(retain) NSString *descriptionText;
 @property(retain) NSString *titleText;
-@property unsigned long long textAlignment;
+@property long long textAlignment;
 @property BOOL attributionHidden;
 @property BOOL descriptionTextHidden;
 @property BOOL embeddedImageHidden;

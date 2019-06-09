@@ -22,6 +22,7 @@
     NSDictionary *_headers;
     NSDictionary *_messagePayload;
     CDUnknownBlockType _responseHandler;
+    double _timeout;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
@@ -32,6 +33,7 @@
 @property(nonatomic) __weak HMFMessageTransport *transport; // @synthesize transport=_transport;
 @property(retain, nonatomic) HMFMessageDestination *destination; // @synthesize destination=_destination;
 @property(nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
+@property(nonatomic) double timeout; // @synthesize timeout=_timeout;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

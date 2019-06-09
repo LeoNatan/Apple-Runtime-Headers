@@ -18,18 +18,18 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)notFoundIdentifier;
-@property(readonly) NSString *identifierCode; // @synthesize identifierCode=_identifierCode;
-@property(readonly) NSString *localCloudIdentifier; // @synthesize localCloudIdentifier=_localCloudIdentifier;
+@property(readonly, nonatomic) NSString *identifierCode; // @synthesize identifierCode=_identifierCode;
+@property(readonly, nonatomic) NSString *localCloudIdentifier; // @synthesize localCloudIdentifier=_localCloudIdentifier;
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
+- (id)description;
 - (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)description;
 @property(readonly, nonatomic) NSString *stringValue;
-- (id)initWithStringValue:(id)arg1;
 - (id)initAsNotFoundIdentifier;
-- (id)initWithIdentifierCode:(id)arg1 localCloudIdentifier:(id)arg2;
+- (id)initWithLocalCloudIdentifier:(id)arg1 identifierCode:(id)arg2;
+- (id)initWithStringValue:(id)arg1;
 
 @end
 

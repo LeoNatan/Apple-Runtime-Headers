@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,6 +37,7 @@
 - (_Bool)isEqualToTrackedSet:(id)arg1;
 - (_Bool)containsObject:(id)arg1;
 - (id)anyObject;
+- (id)allModifications;
 - (id)allObjects;
 - (id)objectEnumerator;
 - (id)member:(id)arg1;

@@ -25,6 +25,7 @@
 @property(nonatomic) _Bool curvesAtBottom; // @synthesize curvesAtBottom=_curvesAtBottom;
 @property(nonatomic) _Bool curvesAtTop; // @synthesize curvesAtTop=_curvesAtTop;
 - (void).cxx_destruct;
+- (void)_performScrollTest:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 scrollAxis:(int)arg5 extraResultsBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (void)scrollToRowAtIndex:(int)arg1;
 - (void)performSegueForRow:(int)arg1;
 - (void)resequenceRowControllerPropertyIndexes;

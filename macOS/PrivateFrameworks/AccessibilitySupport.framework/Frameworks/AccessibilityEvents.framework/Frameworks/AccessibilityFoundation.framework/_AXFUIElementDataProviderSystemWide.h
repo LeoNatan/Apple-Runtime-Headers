@@ -10,7 +10,7 @@
 {
 }
 
-- (struct __AXUIElement *)copyAXUIElementRefAtPoint:(struct CGPoint)arg1 includeIgnored:(BOOL)arg2;
+- (const struct __AXUIElement *)copyAXUIElementRefAtPoint:(struct CGPoint)arg1 includeIgnored:(BOOL)arg2;
 - (BOOL)isValid;
 
 @end

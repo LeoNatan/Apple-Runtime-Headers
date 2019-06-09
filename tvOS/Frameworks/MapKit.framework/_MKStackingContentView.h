@@ -6,10 +6,12 @@
 
 #import <MapKit/_MKUIViewControllerRootView.h>
 
-@class NSLayoutConstraint, UIView;
+#import <MapKit/MKVibrantGroup-Protocol.h>
+
+@class NSLayoutConstraint, NSString, UIView;
 
 __attribute__((visibility("hidden")))
-@interface _MKStackingContentView : _MKUIViewControllerRootView
+@interface _MKStackingContentView : _MKUIViewControllerRootView <MKVibrantGroup>
 {
     NSLayoutConstraint *_topConstraint;
     NSLayoutConstraint *_middleConstraint;
@@ -21,10 +23,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) UIView *topView; // @synthesize topView=_topView;
 - (void).cxx_destruct;
+- (id)vibrancyGroupName;
 - (void)updateConstraints;
 @property(readonly, nonatomic) NSLayoutConstraint *bottomConstraint;
-- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithViewController:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

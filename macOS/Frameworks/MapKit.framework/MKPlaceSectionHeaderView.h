@@ -8,6 +8,7 @@
 
 @class NSArray, NSImage, NSLayoutConstraint, NSString, _MKRightImageButton, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceSectionHeaderView : MKPlaceSectionItemView
 {
     NSLayoutConstraint *_baselineToTopConstraint;
@@ -15,8 +16,6 @@
     NSLayoutConstraint *_baselineToBaselineConstraint;
     NSLayoutConstraint *_iconHeightConstraint;
     NSLayoutConstraint *_iconWidthConstraint;
-    NSLayoutConstraint *_seeMoreBaselineConstraint;
-    NSLayoutConstraint *_seeMoreCenterYConstraint;
     BOOL _contentChanged;
     double _width;
     BOOL _showSeeMoreButton;

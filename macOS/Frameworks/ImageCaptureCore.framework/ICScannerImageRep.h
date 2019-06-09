@@ -10,25 +10,30 @@
 
 @interface ICScannerImageRep : NSObject
 {
+    unsigned char _backgroundGrayValue;
+    BOOL _bufferUpdated;
+    BOOL _useOverlay;
+    unsigned int _bitmapInfo;
     unsigned long long _width;
     unsigned long long _height;
     unsigned long long _bitsPerComponent;
     unsigned long long _bitsPerPixel;
     unsigned long long _bytesPerRow;
     struct CGColorSpace *_colorspace;
-    unsigned int _bitmapInfo;
     char *_buffer;
     long long _bufferSize;
     long long _bufferSizeUsed;
     NSLock *_bufferLock;
-    BOOL _bufferUpdated;
-    BOOL _useOverlay;
-    struct CGRect _overlayRect;
     char *_overlayBuffer;
     long long _overlayBufferSize;
-    unsigned char _backgroundGrayValue;
+    struct CGRect _overlayRect;
 }
 
+@property(nonatomic) long long overlayBufferSize; // @synthesize overlayBufferSize=_overlayBufferSize;
+@property(nonatomic) char *overlayBuffer; // @synthesize overlayBuffer=_overlayBuffer;
+@property(nonatomic) BOOL useOverlay; // @synthesize useOverlay=_useOverlay;
+@property(nonatomic) BOOL bufferUpdated; // @synthesize bufferUpdated=_bufferUpdated;
+@property(retain, nonatomic) NSLock *bufferLock; // @synthesize bufferLock=_bufferLock;
 @property unsigned char backgroundGrayValue; // @synthesize backgroundGrayValue=_backgroundGrayValue;
 @property(readonly) long long bufferSizeUsed; // @synthesize bufferSizeUsed=_bufferSizeUsed;
 @property(readonly) long long bufferSize; // @synthesize bufferSize=_bufferSize;
@@ -40,6 +45,7 @@
 @property(readonly) unsigned long long bitsPerComponent; // @synthesize bitsPerComponent=_bitsPerComponent;
 @property(readonly) unsigned long long height; // @synthesize height=_height;
 @property(readonly) unsigned long long width; // @synthesize width=_width;
+@property(nonatomic) struct CGRect overlayRectInternal; // @synthesize overlayRectInternal=_overlayRect;
 - (void)clearOverlay;
 - (struct CGImage *)copyCGImage:(char *)arg1;
 - (BOOL)copyOverlayBuffer:(id)arg1 toRect:(struct CGRect)arg2;

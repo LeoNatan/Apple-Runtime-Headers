@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class NSString, UIColor, UIVisualEffect, _UITableViewCellActionButton;
+@class NSString, UIColor, UIVisualEffect;
 
 @interface UITableViewRowAction : NSObject <NSCopying>
 {
@@ -16,7 +16,6 @@
     NSString *_title;
     UIColor *_backgroundColor;
     CDUnknownBlockType _handler;
-    _UITableViewCellActionButton *_button;
     UIVisualEffect *_backgroundEffect;
 }
 

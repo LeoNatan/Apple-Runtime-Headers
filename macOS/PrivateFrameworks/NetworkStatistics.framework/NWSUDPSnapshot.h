@@ -18,16 +18,19 @@
     NSData *_remoteAddress;
     struct nstat_udp_descriptor _descriptor;
     unsigned int _provider;
+    unsigned long long _eventFlags;
 }
 
 - (void).cxx_destruct;
-- (id)initWithCounts:(const struct nstat_counts *)arg1 UDPDescriptor:(struct nstat_udp_descriptor *)arg2 sourceIdent:(unsigned long long)arg3 seqno:(unsigned long long)arg4 provider:(unsigned int)arg5;
+- (id)initWithCounts:(const struct nstat_counts *)arg1 UDPDescriptor:(struct nstat_udp_descriptor *)arg2 sourceIdent:(unsigned long long)arg3 events:(unsigned long long)arg4 seqno:(unsigned long long)arg5 provider:(unsigned int)arg6;
 - (id)description;
 - (id)traditionalDictionary;
+- (unsigned long long)eventFlags;
 - (unsigned long long)networkActivityMapPart2;
 - (unsigned long long)networkActivityMapPart1;
 - (unsigned long long)networkActivityMapStartTime;
 - (BOOL)countsIncludeHeaderOverhead;
+- (BOOL)interfaceCompanionLink;
 - (BOOL)interfaceExpensive;
 - (BOOL)interfaceAWDL;
 - (BOOL)interfaceWired;

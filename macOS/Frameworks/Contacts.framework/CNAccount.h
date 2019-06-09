@@ -22,6 +22,9 @@
 + (id)makeIdentifierString;
 + (id)identifierProvider;
 + (id)localAccount;
++ (id)predicateForAccountsWithIdentifiers:(id)arg1;
++ (id)predicateForAccountForContainerWithIdentifier:(id)arg1;
++ (id)predicateForAccountWithExternalIdentifier:(id)arg1;
 @property(readonly, copy) NSString *externalIdentifierString; // @synthesize externalIdentifierString=_externalIdentifierString;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

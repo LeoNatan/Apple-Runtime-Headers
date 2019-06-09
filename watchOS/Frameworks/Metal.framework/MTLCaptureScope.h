@@ -4,23 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Metal/_MTLObjectWithLabel.h>
 
 #import <Metal/MTLCaptureScope-Protocol.h>
 
 @class NSString;
 @protocol MTLCommandQueue, MTLDevice;
 
-@interface MTLCaptureScope : NSObject <MTLCaptureScope>
+@interface MTLCaptureScope : _MTLObjectWithLabel <MTLCaptureScope>
 {
-    NSString *_label;
     id <MTLDevice> _device;
     id <MTLCommandQueue> _commandQueue;
 }
 
 @property(readonly, nonatomic) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(readonly, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
-@property(copy) NSString *label; // @synthesize label=_label;
 - (void)endScope;
 - (void)beginScope;
 - (void)dealloc;
@@ -30,6 +28,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(copy) NSString *label; // @dynamic label;
 @property(readonly) Class superclass;
 
 @end

@@ -49,6 +49,7 @@
     _Bool _scrubsLinearly;
     _Bool _starting;
     _Bool _pausedOnCompletion;
+    _Bool _shouldLayoutSubviews;
     _Bool _introspectable;
     UIViewAnimationState *_viewAnimationState;
     NSUUID *_trackingIdentifier;
@@ -101,6 +102,7 @@
 + (id)_currentTrackedAnimationsUUID;
 + (id)runningPropertyAnimatorWithDuration:(double)arg1 delay:(double)arg2 options:(unsigned long long)arg3 animations:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 @property(nonatomic, getter=isIntrospectable) _Bool introspectable; // @synthesize introspectable=_introspectable;
+@property(nonatomic, setter=_setShouldLayoutSubviews:) _Bool shouldLayoutSubviews; // @synthesize shouldLayoutSubviews=_shouldLayoutSubviews;
 @property(nonatomic, getter=_isPausedOnCompletion, setter=_setPausedOnCompletion:) _Bool pausedOnCompletion; // @synthesize pausedOnCompletion=_pausedOnCompletion;
 @property(nonatomic, getter=_isStarting, setter=_setStarting:) _Bool starting; // @synthesize starting=_starting;
 @property(nonatomic, getter=_options, setter=_setOptions:) unsigned long long options; // @synthesize options=_options;

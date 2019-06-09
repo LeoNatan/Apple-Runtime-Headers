@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 - (id)bulkUpdateStatementsForStore:(id)arg1;
 - (id)dropStatementsForStore:(id)arg1;
-- (id)createStatementsForStore:(id)arg1;
+- (id)generateStatementsForStore:(id)arg1;
 - (void)generateSQLStrings;
 - (void)dealloc;
 - (id)initForIndexDescription:(id)arg1 sqlEntity:(id)arg2;

@@ -19,7 +19,10 @@
 - (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
 - (void)didSelectButton:(id)arg1;
-- (void)viewDidLoad;
+- (id)_titleFont;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)_viewDidLoad;
 @property(readonly, nonatomic) CPAlertTemplate *alert;
 - (id)initWithAlert:(id)arg1 alertDelegate:(id)arg2;
 

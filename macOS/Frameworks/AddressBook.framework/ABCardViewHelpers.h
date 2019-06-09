@@ -13,7 +13,9 @@
 + (id)defaultLabelForPropertyWithKey:(id)arg1;
 + (id)dataSourceKeyForProperty:(id)arg1;
 + (id)abPropertyForDataSourceKey:(id)arg1;
++ (id)_propertyToKeyMap;
 + (id)propertyToKeyMap;
++ (id)_keyToPropertyMap;
 + (id)keyToPropertyMap;
 
 @end

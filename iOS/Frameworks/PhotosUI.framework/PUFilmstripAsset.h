@@ -35,9 +35,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isTemporaryPlaceholder;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) double aspectRatio;
+@property(readonly, nonatomic) unsigned long long deferredLogInfo;
 - (unsigned long long)isContentEqualTo:(id)arg1;
 @property(readonly, nonatomic) NSString *uuid;
 @property(readonly, nonatomic) NSDate *modificationDate;
+@property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, nonatomic) _Bool isAnimatedImage;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;

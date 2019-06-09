@@ -14,6 +14,7 @@
 @class CALayer, NSHashTable, NSMapTable, NSString, SKUIBackgroundImageWrapperForHorizontalLockup, SKUICardLayout, SKUICardViewElement, SKUISizeValue, SKUIViewElement, UIView;
 @protocol SKUIPerspectiveView;
 
+__attribute__((visibility("hidden")))
 @interface SKUICardViewElementCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIAdvertisingSelectable, SKUIAdvertisingSelectionForardingTargetAction, SKUIPerspectiveView, SKUIViewElementView>
 {
     NSHashTable *_artworkRelatedChildViewElementViews;

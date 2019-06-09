@@ -20,9 +20,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *postScripts; // @synthesize postScripts=_postScripts;
 @property(retain, nonatomic) SCRCMathExpression *base; // @synthesize base=_base;
 - (void).cxx_destruct;
-- (void)_subSuperScriptsDescriptionFromArray:(id)arg1 withSpeakingStyle:(int)arg2 arePausesAllowed:(BOOL)arg3 outSubscripts:(id *)arg4 outSuperscripts:(id *)arg5;
+- (void)_subSuperScriptsDescriptionFromArray:(id)arg1 withSpeakingStyle:(long long)arg2 arePausesAllowed:(BOOL)arg3 outSubscripts:(id *)arg4 outSuperscripts:(id *)arg5;
 - (id)_appendString:(id)arg1 toDescription:(id)arg2 arePausesAllowed:(BOOL)arg3;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(long long)arg1 arePausesAllowed:(BOOL)arg2;
 - (id)description;
 - (id)_subSuperscriptPairFromDictionary:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

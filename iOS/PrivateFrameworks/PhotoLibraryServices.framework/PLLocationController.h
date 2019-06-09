@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/CLLocationManagerDelegate-Protocol.h>
 
-@class CLLocationManager, NSDictionary, NSMutableArray, NSString;
+@class CLLocationManager, NSDictionary, NSMutableArray, NSString, PLPhotoLibrary;
 
 @interface PLLocationController : NSObject <CLLocationManagerDelegate>
 {
@@ -19,16 +19,19 @@
     _Bool _isEnabled;
     _Bool _isUpdating;
     _Bool _isHeadingEnabled;
+    PLPhotoLibrary *_photoLibrary;
 }
 
 + (id)sharedInstance;
 + (void)setUsesEffectiveBundleIdentifier:(_Bool)arg1;
 + (_Bool)usesEffectiveBundleIdentifier;
+- (void).cxx_destruct;
 - (void)_assetContainerChanged:(id)arg1;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)_updatePendingAssets;
 - (void)addLocationToMediaWithAssetURLWhenAvailable:(id)arg1 deviceOrientation:(int)arg2 cameraWasRearFacing:(_Bool)arg3;
 - (_Bool)_addLocationToAsset:(id)arg1;
+- (id)photoLibrary;
 - (id)locationString;
 - (id)locationDictionaryForImageWithDeviceOrientation:(int)arg1 rearFacingCamera:(_Bool)arg2;
 - (id)location;

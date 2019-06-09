@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleFileModifiedError:(id)arg1 forItem:(id)arg2;
 - (BOOL)_finishPackageUploadWithRecord:(id)arg1 item:(id)arg2 stageID:(id)arg3 error:(id *)arg4;
 - (id)_duplicatePackage:(id)arg1 stageID:(id)arg2 stageName:(id)arg3 error:(id *)arg4;
+- (void)rescheduleJobsPendingFavoritesFetchInZone:(id)arg1;
 - (void)_computeRecordForJobID:(id)arg1 item:(id)arg2 syncContext:(id)arg3;
 - (void)_updateRecord:(id)arg1 jobID:(id)arg2 syncContext:(id)arg3 thumbnailOperation:(id)arg4 stageID:(id)arg5;
 - (void)_updateRecord:(id)arg1 item:(id)arg2 syncContext:(id)arg3 thumbnailOperation:(id)arg4 stageID:(id)arg5;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)canScheduleMoreJobs;
 - (void)performFirstSchedulingAfterStartupInDB:(id)arg1;
 - (void)_scheduleRetries;
-- (void)rescheduleJobsPendingInitialSyncInZone:(id)arg1;
 - (void)removeBoostedDocID:(id)arg1;
 - (void)boostDocID:(id)arg1 item:(id)arg2;
 - (void)uploadItem:(id)arg1;

@@ -12,8 +12,8 @@
 
 @interface CKImageBalloonView : CKBalloonView <CKAnimationTimerObserver>
 {
-    _Bool _isIrisAsset;
     _Bool _suppressMask;
+    _Bool _isIrisAsset;
     CKAnimatedImage *_animatedImage;
     CKBalloonImageView *_tailMask;
     CKBalloonImageView *_outlineMask;
@@ -22,11 +22,11 @@
     unsigned int _animationFrameOffset;
 }
 
-@property(nonatomic) _Bool suppressMask; // @synthesize suppressMask=_suppressMask;
 @property(nonatomic) unsigned int animationFrameOffset; // @synthesize animationFrameOffset=_animationFrameOffset;
 @property(copy, nonatomic) NSArray *frames; // @synthesize frames=_frames;
 @property(retain, nonatomic) UIImageView *irisBadgeView; // @synthesize irisBadgeView=_irisBadgeView;
 @property(nonatomic) _Bool isIrisAsset; // @synthesize isIrisAsset=_isIrisAsset;
+@property(nonatomic) _Bool suppressMask; // @synthesize suppressMask=_suppressMask;
 @property(retain, nonatomic) CKBalloonImageView *outlineMask; // @synthesize outlineMask=_outlineMask;
 @property(retain, nonatomic) CKBalloonImageView *tailMask; // @synthesize tailMask=_tailMask;
 @property(retain, nonatomic) CKAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;

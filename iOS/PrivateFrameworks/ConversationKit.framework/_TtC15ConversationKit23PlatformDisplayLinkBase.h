@@ -9,7 +9,7 @@
 @interface _TtC15ConversationKit23PlatformDisplayLinkBase : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: callbackWrapper
-    // Error parsing type: , name: displayLink.storage
+    // Error parsing type: , name: $__lazy_storage_$_displayLink
 }
 
 @end

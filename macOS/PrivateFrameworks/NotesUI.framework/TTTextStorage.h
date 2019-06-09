@@ -19,6 +19,7 @@
     BOOL _directlyEditing;
     BOOL _previouslyHadMarkedText;
     BOOL _wantsUndoCommands;
+    BOOL _wantsUpdateTrackingForInitialLoading;
     BOOL _convertAttributes;
     BOOL _shouldConvertTablesToTabs;
     BOOL _retainOriginalFormatting;
@@ -32,12 +33,16 @@
     BOOL _isSelectingText;
     BOOL _hasEditedCharactersAfterTextSelection;
     BOOL _isDragging;
+    BOOL _isDropping;
     BOOL _isResettingBaseWritingDirection;
     BOOL _isReadingSelectionFromPasteboard;
     BOOL _mustZoomTextBeforeReplacingCharactersInRange;
     BOOL _isChangingNoteContentFontByFontPanel;
     BOOL _isChangingTypingAttributeFontByFontPanel;
     BOOL _isPastingStyle;
+    BOOL _isDroppingChecklistItem;
+    BOOL _isDroppingChecklistItemInsideChecklist;
+    BOOL _isDroppingLastChecklistItem;
     BOOL _isApplyingUndoCommand;
     BOOL _isEndingEditing;
     BOOL _isFixing;
@@ -78,12 +83,16 @@
 @property(retain, nonatomic) NSMutableArray *undoCommands; // @synthesize undoCommands=_undoCommands;
 @property(nonatomic) BOOL isEndingEditing; // @synthesize isEndingEditing=_isEndingEditing;
 @property(nonatomic) BOOL isApplyingUndoCommand; // @synthesize isApplyingUndoCommand=_isApplyingUndoCommand;
+@property(nonatomic) BOOL isDroppingLastChecklistItem; // @synthesize isDroppingLastChecklistItem=_isDroppingLastChecklistItem;
+@property(nonatomic) BOOL isDroppingChecklistItemInsideChecklist; // @synthesize isDroppingChecklistItemInsideChecklist=_isDroppingChecklistItemInsideChecklist;
+@property(nonatomic) BOOL isDroppingChecklistItem; // @synthesize isDroppingChecklistItem=_isDroppingChecklistItem;
 @property(nonatomic) BOOL isPastingStyle; // @synthesize isPastingStyle=_isPastingStyle;
 @property(nonatomic) BOOL isChangingTypingAttributeFontByFontPanel; // @synthesize isChangingTypingAttributeFontByFontPanel=_isChangingTypingAttributeFontByFontPanel;
 @property(nonatomic) BOOL isChangingNoteContentFontByFontPanel; // @synthesize isChangingNoteContentFontByFontPanel=_isChangingNoteContentFontByFontPanel;
 @property(nonatomic) BOOL mustZoomTextBeforeReplacingCharactersInRange; // @synthesize mustZoomTextBeforeReplacingCharactersInRange=_mustZoomTextBeforeReplacingCharactersInRange;
 @property(nonatomic) BOOL isReadingSelectionFromPasteboard; // @synthesize isReadingSelectionFromPasteboard=_isReadingSelectionFromPasteboard;
 @property(nonatomic) BOOL isResettingBaseWritingDirection; // @synthesize isResettingBaseWritingDirection=_isResettingBaseWritingDirection;
+@property(nonatomic) BOOL isDropping; // @synthesize isDropping=_isDropping;
 @property(nonatomic) BOOL isDragging; // @synthesize isDragging=_isDragging;
 @property(nonatomic) BOOL hasEditedCharactersAfterTextSelection; // @synthesize hasEditedCharactersAfterTextSelection=_hasEditedCharactersAfterTextSelection;
 @property(nonatomic) BOOL isSelectingText; // @synthesize isSelectingText=_isSelectingText;
@@ -103,6 +112,7 @@
 @property(nonatomic) struct _NSRange beforeEndEditedRange; // @synthesize beforeEndEditedRange=_beforeEndEditedRange;
 @property(readonly, nonatomic) NSMutableArray *deletedRanges; // @synthesize deletedRanges=_deletedRanges;
 @property(retain, nonatomic) id <TTTextStorageStyler> styler; // @synthesize styler=_styler;
+@property(nonatomic) BOOL wantsUpdateTrackingForInitialLoading; // @synthesize wantsUpdateTrackingForInitialLoading=_wantsUpdateTrackingForInitialLoading;
 @property(nonatomic) BOOL wantsUndoCommands; // @synthesize wantsUndoCommands=_wantsUndoCommands;
 @property __weak NSObject<TTTextUndoTarget> *overrideUndoTarget; // @synthesize overrideUndoTarget=_overrideUndoTarget;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
@@ -112,6 +122,7 @@
 - (id)attributedSubstringFromRange:(struct _NSRange)arg1;
 - (id)filteredAttributedSubstringFromRange:(struct _NSRange)arg1;
 - (id)dataFromRange:(struct _NSRange)arg1 documentAttributes:(id)arg2 error:(id *)arg3;
+- (id)standardizedAttributedStringFixingTextAttachmentsForRange:(struct _NSRange)arg1;
 - (id)standardizedAttributedStringFixingTextAttachments;
 - (void)styleTextInRange:(struct _NSRange)arg1;
 - (BOOL)isEditing;
@@ -139,6 +150,7 @@
 - (id)savedSelectionWithSelectionAffinity:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSArray *textViews;
 - (void)beginEditing;
+- (id)mergeableStringReplicaUUIDAtIndex:(unsigned long long)arg1;
 - (BOOL)mergeableStringIsEqualAfterSerialization:(id)arg1;
 - (void)endEditing;
 - (void)refreshAllAttributes;
@@ -157,6 +169,7 @@
 @property(readonly, nonatomic) TTMergeableAttributedString *mergeableString;
 - (struct _NSRange)logicalRangeForLocation:(unsigned long long)arg1;
 - (id)string;
+- (unsigned long long)length;
 - (void)editedAttributeRange:(struct _NSRange)arg1;
 - (void)editedRange:(struct _NSRange)arg1 changeInLength:(long long)arg2;
 - (BOOL)_usesSimpleTextEffects;

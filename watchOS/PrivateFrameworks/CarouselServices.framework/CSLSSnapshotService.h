@@ -7,13 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CarouselServices/CSLSBackgroundServiceDelegate-Protocol.h>
-#import <CarouselServices/CSLSSnapshotServiceDeprecatedProtocol-Protocol.h>
 #import <CarouselServices/CSLSSnapshotServiceProtocol-Protocol.h>
 
 @class CSLSPrivilegedBackgroundServiceConnection, NSString, Protocol;
 @protocol CSLSBackgroundServiceAutoConnecting, OS_os_log;
 
-@interface CSLSSnapshotService : NSObject <CSLSSnapshotServiceDeprecatedProtocol, CSLSBackgroundServiceDelegate, CSLSSnapshotServiceProtocol>
+@interface CSLSSnapshotService : NSObject <CSLSBackgroundServiceDelegate, CSLSSnapshotServiceProtocol>
 {
     CSLSPrivilegedBackgroundServiceConnection *_connection;
 }
@@ -24,7 +23,6 @@
 + (unsigned int)getReasonFromAction:(id)arg1;
 + (id)_getSnapshotScheduleItemFromAction:(id)arg1;
 + (id)sharedInstance;
-+ (unsigned int)snapshotScheduleLimit;
 @property(retain, nonatomic) CSLSPrivilegedBackgroundServiceConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (void)registerPrivilegedSnapshotClient:(id)arg1 withPriority:(unsigned int)arg2 leeway:(double)arg3 usesBudget:(_Bool)arg4 returnToPrimaryUIInterval:(double)arg5 completion:(CDUnknownBlockType)arg6;
@@ -39,8 +37,6 @@
 @property(readonly, nonatomic) Protocol<CSLSBackgroundServiceAutoConnecting> *remoteInterface;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log;
 @property(readonly, nonatomic) NSString *serviceName;
-- (void)invalidateSnapshotForBundleId:(id)arg1;
-- (void)setSnapshotRequest:(id)arg1 forBundleID:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

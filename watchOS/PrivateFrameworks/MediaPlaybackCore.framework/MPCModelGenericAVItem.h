@@ -12,7 +12,7 @@
 #import <MediaPlaybackCore/MPMusicSubscriptionLeasePlaybackParticipating-Protocol.h>
 #import <MediaPlaybackCore/MPRTCReportingItemSessionCreating-Protocol.h>
 
-@class ICMusicSubscriptionLeaseSession, ICMusicSubscriptionLeaseStatus, ICStoreRequestContext, MPCModelGenericAVItemTimedMetadataRequest, MPCModelGenericAVItemTimedMetadataResponse, MPCPlaybackRequestEnvironment, MPCSuzeLeaseSession, MPMediaLibrary, MPModelGenericObject, MPPropertySet, MPSubscriptionStatusPlaybackInformation, NSArray, NSData, NSNumber, NSObject, NSOperationQueue, NSString, NSURL;
+@class ICMusicSubscriptionLeaseSession, ICMusicSubscriptionLeaseStatus, ICStoreRequestContext, MPCModelGenericAVItemTimedMetadataRequest, MPCModelGenericAVItemTimedMetadataResponse, MPCModelGenericAVItemUserIdentityPropertySet, MPCPlaybackRequestEnvironment, MPCSuzeLeaseSession, MPMediaLibrary, MPModelGenericObject, MPPropertySet, MPSubscriptionStatusPlaybackInformation, NSArray, NSData, NSNumber, NSObject, NSOperationQueue, NSString, NSURL;
 @protocol MPCModelPlaybackAssetCacheProviding, MPCReportingIdentityPropertiesLoading, OS_dispatch_queue;
 
 @interface MPCModelGenericAVItem : MPAVItem <AVAssetResourceLoaderDelegate, AVPlayerItemMetadataOutputPushDelegate, ICEnvironmentMonitorObserver, MPMusicSubscriptionLeasePlaybackParticipating, MPRTCReportingItemSessionCreating>
@@ -53,6 +53,7 @@
     NSURL *_streamingKeyServerURL;
     id _rtcReportingParentHierarchyToken;
     NSString *_rtcReportingServiceIdentifier;
+    MPCModelGenericAVItemUserIdentityPropertySet *_identityPropertySet;
     _Bool supportsRadioTrackActions;
     _Bool _radioPlayback;
     _Bool _radioStreamPlayback;
@@ -141,7 +142,9 @@
 - (int)_persistedLikedState;
 - (void)_handleUpdatedLikedState:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_currentPlaybackRateDidChange:(float)arg1;
+- (id)useListeningHistory;
 - (id)storeFrontIdentifier;
+- (id)storeAccountID;
 - (_Bool)shouldPreventPlayback;
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setPlaybackFinishedTime:(double)arg1;
@@ -214,7 +217,7 @@
 - (id)album;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)initWithGenericObject:(id)arg1 itemProperties:(id)arg2 playbackRequestEnvironment:(id)arg3;
+- (id)initWithGenericObject:(id)arg1 itemProperties:(id)arg2 playbackRequestEnvironment:(id)arg3 identityPropertySet:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

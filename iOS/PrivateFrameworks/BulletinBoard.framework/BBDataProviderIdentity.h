@@ -12,7 +12,7 @@
 
 @interface BBDataProviderIdentity : NSObject <NSSecureCoding>
 {
-    CDStruct_c9fbfe45 _traits;
+    CDStruct_0e6e99aa _traits;
     NSString *_sectionIdentifier;
     NSString *_universalSectionIdentifier;
     BBSectionInfo *_defaultSectionInfo;
@@ -24,15 +24,15 @@
     NSDictionary *_subsectionDisplayNames;
     NSString *_sortKey;
     NSString *_parentSectionIdentifier;
-    NSDictionary *_filterDisplayNames;
     _Bool _syncsBulletinDismissal;
+    NSDictionary *_filterDisplayNames;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)identityForRemoteDataProvider:(id)arg1;
 + (id)identityForDataProvider:(id)arg1;
-@property(readonly, nonatomic) _Bool syncsBulletinDismissal; // @synthesize syncsBulletinDismissal=_syncsBulletinDismissal;
 @property(copy, nonatomic) NSDictionary *filterDisplayNames; // @synthesize filterDisplayNames=_filterDisplayNames;
+@property(readonly, nonatomic) _Bool syncsBulletinDismissal; // @synthesize syncsBulletinDismissal=_syncsBulletinDismissal;
 @property(copy, nonatomic) NSString *parentSectionIdentifier; // @synthesize parentSectionIdentifier=_parentSectionIdentifier;
 @property(copy, nonatomic) NSDictionary *subsectionDisplayNames; // @synthesize subsectionDisplayNames=_subsectionDisplayNames;
 @property(copy, nonatomic) NSArray *defaultSubsectionInfos; // @synthesize defaultSubsectionInfos=_defaultSubsectionInfos;
@@ -43,7 +43,7 @@
 @property(copy, nonatomic) BBSectionInfo *defaultSectionInfo; // @synthesize defaultSectionInfo=_defaultSectionInfo;
 @property(copy, nonatomic) NSString *universalSectionIdentifier; // @synthesize universalSectionIdentifier=_universalSectionIdentifier;
 @property(copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
-@property(readonly, nonatomic) CDStruct_c9fbfe45 traits; // @synthesize traits=_traits;
+@property(readonly, nonatomic) CDStruct_0e6e99aa traits; // @synthesize traits=_traits;
 @property(copy, nonatomic) NSString *sortKey; // @synthesize sortKey=_sortKey;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

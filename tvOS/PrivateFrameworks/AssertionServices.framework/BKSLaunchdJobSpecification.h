@@ -21,6 +21,7 @@
     NSArray *_arguments;
     NSArray *_machServices;
     NSDictionary *_environment;
+    NSString *_managedPersona;
     NSString *_standardOutput;
     NSString *_standardError;
     unsigned long long _executionOptions;
@@ -31,6 +32,7 @@
 @property(nonatomic) unsigned long long executionOptions; // @synthesize executionOptions=_executionOptions;
 @property(copy, nonatomic) NSString *standardError; // @synthesize standardError=_standardError;
 @property(copy, nonatomic) NSString *standardOutput; // @synthesize standardOutput=_standardOutput;
+@property(copy, nonatomic) NSString *managedPersona; // @synthesize managedPersona=_managedPersona;
 @property(copy, nonatomic) NSDictionary *environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSArray *machServices; // @synthesize machServices=_machServices;
 @property(copy, nonatomic) NSArray *arguments; // @synthesize arguments=_arguments;
@@ -38,12 +40,12 @@
 @property(copy, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy, nonatomic) NSString *labelPrefix; // @synthesize labelPrefix=_labelPrefix;
+- (void).cxx_destruct;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

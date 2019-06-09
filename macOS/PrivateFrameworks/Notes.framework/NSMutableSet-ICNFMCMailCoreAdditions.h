@@ -7,8 +7,7 @@
 #import <Foundation/NSMutableSet.h>
 
 @interface NSMutableSet (ICNFMCMailCoreAdditions)
-- (void)mc_removeNonNilObject:(id)arg1;
-- (void)removeObjectsInArray:(id)arg1;
-- (id)uniquedObject:(id)arg1;
+- (void)ic_removeNonNilObject:(id)arg1;
+- (id)ic_uniquedObject:(id)arg1;
 @end
 

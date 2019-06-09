@@ -23,6 +23,16 @@
     NSString *_accountPersistentUUID;
     NSData *_certificatePersistentID;
     _Bool _syncDefaultFoldersOnly;
+    NSNumber *_enableMailNum;
+    NSNumber *_enableContactsNum;
+    NSNumber *_enableCalendarsNum;
+    NSNumber *_enableRemindersNum;
+    NSNumber *_enableNotesNum;
+    NSNumber *_enableMailUserOverridableNum;
+    NSNumber *_enableContactsUserOverridableNum;
+    NSNumber *_enableCalendarsUserOverridableNum;
+    NSNumber *_enableRemindersUserOverridableNum;
+    NSNumber *_enableNotesUserOverridableNum;
     NSNumber *_useSSL;
     NSNumber *_useOAuth;
     NSDictionary *_communicationServiceRules;
@@ -60,6 +70,16 @@
 - (id)restrictions;
 - (id)stubDictionary;
 - (id)description;
+@property(readonly, nonatomic) _Bool enableNotesUserOverridable;
+@property(readonly, nonatomic) _Bool enableRemindersUserOverridable;
+@property(readonly, nonatomic) _Bool enableCalendarsUserOverridable;
+@property(readonly, nonatomic) _Bool enableContactsUserOverridable;
+@property(readonly, nonatomic) _Bool enableMailUserOverridable;
+@property(readonly, nonatomic) _Bool enableNotes;
+@property(readonly, nonatomic) _Bool enableReminders;
+@property(readonly, nonatomic) _Bool enableCalendars;
+@property(readonly, nonatomic) _Bool enableContacts;
+@property(readonly, nonatomic) _Bool enableMail;
 @property(readonly, nonatomic) _Bool hasCertificate;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id *)arg3;
 

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *direction;
 @property(readonly, nonatomic) id <GEOTransitLine> line;
 @property(readonly, nonatomic) NSArray *frequencies;
+- (unsigned long long)stopId;
 @property(readonly, nonatomic) NSArray *departures;
 - (id)initWithSequence:(id)arg1 line:(id)arg2 pbLine:(id)arg3;
 

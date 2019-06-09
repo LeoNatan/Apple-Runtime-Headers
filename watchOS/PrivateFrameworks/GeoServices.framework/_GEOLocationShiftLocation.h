@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _mustGoToNetworkCallback;
     CDUnknownBlockType _functionHandler;
-    struct __CFRunLoop *_runLoop;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     _Bool _recordCacheInfo;
 }
@@ -32,12 +31,10 @@ __attribute__((visibility("hidden")))
 - (void)performErrorHandler:(id)arg1;
 - (void)performCompletionHandlerWithShiftedCoordinate:(CDStruct_c3b9c2ee)arg1 accuracy:(double)arg2 function:(id)arg3 wasFunctionCached:(_Bool)arg4;
 - (void)_performOnCallbackQueue:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)initWithLatLng:(id)arg1 auditToken:(id)arg2 functionHandler:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4 callbackQueue:(id)arg5;
 - (id)initWithLatLng:(id)arg1 accuracy:(double)arg2 completionHandler:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4 mustGoToNetworkCallback:(CDUnknownBlockType)arg5 callbackQueue:(id)arg6;
 - (id)initWithLatLng:(id)arg1 accuracy:(double)arg2 completionHandler:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4 mustGoToNetworkCallback:(CDUnknownBlockType)arg5 callbackQueue:(id)arg6 auditToken:(id)arg7;
-- (id)initWithLatLng:(id)arg1 accuracy:(double)arg2 completionHandler:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4 mustGoToNetworkCallback:(CDUnknownBlockType)arg5 callbackRunLoop:(struct __CFRunLoop *)arg6;
-- (id)_initWithLatLng:(id)arg1 accuracy:(double)arg2 completionHandler:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4 mustGoToNetworkCallback:(CDUnknownBlockType)arg5;
+- (id)_initWithLatLng:(id)arg1 accuracy:(double)arg2 callbackQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5 mustGoToNetworkCallback:(CDUnknownBlockType)arg6;
 
 @end
 

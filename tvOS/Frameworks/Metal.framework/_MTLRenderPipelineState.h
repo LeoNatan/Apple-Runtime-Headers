@@ -8,7 +8,7 @@
 
 #import <Metal/MTLRenderPipelineState-Protocol.h>
 
-@class MTLIndirectArgumentBufferEmulationData, NSString;
+@class MTLDebugInstrumentationData, MTLIndirectArgumentBufferEmulationData, NSString;
 @protocol MTLDevice;
 
 @interface _MTLRenderPipelineState : NSObject <MTLRenderPipelineState>
@@ -17,10 +17,15 @@
     id <MTLDevice> _device;
     MTLIndirectArgumentBufferEmulationData *_vertexIABEmulationData;
     MTLIndirectArgumentBufferEmulationData *_fragmentIABEmulationData;
+    MTLDebugInstrumentationData *_vertexDebugInstrumentationData;
+    MTLDebugInstrumentationData *_fragmentDebugInstrumentationData;
     _Bool _supportIndirectCommandBuffers;
-    unsigned long long _uniqueIdentifier;
+    unsigned long long _resourceIndex;
 }
 
+@property(nonatomic) unsigned long long resourceIndex; // @synthesize resourceIndex=_resourceIndex;
+@property(retain, nonatomic) MTLDebugInstrumentationData *fragmentDebugInstrumentationData; // @synthesize fragmentDebugInstrumentationData=_fragmentDebugInstrumentationData;
+@property(retain, nonatomic) MTLDebugInstrumentationData *vertexDebugInstrumentationData; // @synthesize vertexDebugInstrumentationData=_vertexDebugInstrumentationData;
 @property(retain, nonatomic) MTLIndirectArgumentBufferEmulationData *fragmentIABEmulationData; // @synthesize fragmentIABEmulationData=_fragmentIABEmulationData;
 @property(retain, nonatomic) MTLIndirectArgumentBufferEmulationData *vertexIABEmulationData; // @synthesize vertexIABEmulationData=_vertexIABEmulationData;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;

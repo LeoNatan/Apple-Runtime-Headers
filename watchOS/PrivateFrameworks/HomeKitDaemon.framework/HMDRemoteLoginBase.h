@@ -24,7 +24,6 @@
 
 + (id)logCategory;
 + (_Bool)hasMessageReceiverChildren;
-+ (_Bool)shouldAcceptMessage:(id)arg1 home:(id)arg2;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSString *logString; // @synthesize logString=_logString;

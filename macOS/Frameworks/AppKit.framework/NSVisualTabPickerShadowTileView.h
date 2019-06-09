@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSView *_sidebarView;
     NSView *_toolbarView;
+    NSView *_borderView;
     NSMutableArray *_sidebarAndToolbarAnimations;
     NSView *_containerView;
     NSView *_headerBackgroundView;
@@ -22,6 +23,10 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
 - (BOOL)accessibilityIsIgnored;
+- (void)startTitleOpacityAnimation:(long long)arg1;
+- (void)selectedTabDidChange;
+- (void)reloadData;
+- (void)willStartExitAnimation;
 - (void)_setUpBorderView;
 - (void)updateLayer;
 - (void)_setUpContentViews;

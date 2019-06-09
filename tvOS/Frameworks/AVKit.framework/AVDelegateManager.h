@@ -9,34 +9,9 @@
 @class AVPlayerViewController;
 @protocol AVPlayerViewControllerDelegate><AVPlayerViewControllerDelegatePrivate, AVPlayerViewControllerPlaybackDelegate><NSObject, AVScanningDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVDelegateManager : NSObject
 {
-    _Bool _hasShouldDismiss;
-    _Bool _hasWillBeginDismissalTransition;
-    _Bool _hasDidEndDismissalTransition;
-    _Bool _hasWillPresentInterstitial;
-    _Bool _hasDidPresentInterstitial;
-    _Bool _hasWillResumePlaybackAfterUserNavigatedFromTimeToTime;
-    _Bool _hasWillResumePlaybackAfterUserNavigatedFromDateToDate;
-    _Bool _hasTimeToSeekAfterUserNavigatedFromTimeToTime;
-    _Bool _hasDidSelectMediaSelectionOptionInMediaSelectionGroup;
-    _Bool _hasDidSelectExternalSubtitleOptionLanguage;
-    _Bool _hasSkipToNextItem;
-    _Bool _hasSkipToPreviousItem;
-    _Bool _hasScanFromElapsedTimeRateImageBlock;
-    _Bool _hasStopScanning;
-    _Bool _hasShouldHandleScanningForPlayerItem_MainDelegate;
-    _Bool _isScanningSupportedByMainDelegate;
-    _Bool _hasShouldPlayFromTime;
-    _Bool _hasShouldSeekToTime;
-    _Bool _hasShouldSeekToDate;
-    _Bool _hasShouldPause;
-    _Bool _hasShouldScanAtRate;
-    _Bool _hasDidFinishScanning;
-    _Bool _hasDidAcceptContentProposal;
-    _Bool _hasDidRejectContentProposal;
-    _Bool _hasShouldPresentContentProposal;
-    _Bool _hasWillUpdateVisibilityOfTransportBar;
     id <AVPlayerViewControllerDelegate><AVPlayerViewControllerDelegatePrivate> _delegate;
     id <AVPlayerViewControllerPlaybackDelegate><NSObject> _privateDelegate;
     id <AVScanningDelegate> _scanningDelegate;
@@ -48,6 +23,8 @@
 @property(nonatomic) __weak id <AVPlayerViewControllerPlaybackDelegate><NSObject> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
 @property(nonatomic) __weak id <AVPlayerViewControllerDelegate><AVPlayerViewControllerDelegatePrivate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_hasStopScanning;
+- (id)delegateIfRespondsTo:(SEL)arg1;
 - (void)willTransitionToVisibilityOfTransportBar:(_Bool)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldPresentContentProposal:(id)arg1;
 - (void)didRejectContentProposal:(id)arg1;
@@ -64,6 +41,11 @@
 - (void)stopScanning;
 - (long long)scanFromElapsedTime:(CDStruct_1b6d18a9)arg1 rate:(double)arg2 imageBlock:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) _Bool hasCustomScanning;
+- (id)previousChannelInterstitialViewController;
+- (id)nextChannelInterstitialViewController;
+@property(readonly, nonatomic) _Bool hasChannelSkipping;
+- (void)skipToPreviousChannel:(CDUnknownBlockType)arg1;
+- (void)skipToNextChannel:(CDUnknownBlockType)arg1;
 - (void)skipToPreviousItem;
 - (void)skipToNextItem;
 - (void)didSelectExternalSubtitleOptionLanguage:(id)arg1;

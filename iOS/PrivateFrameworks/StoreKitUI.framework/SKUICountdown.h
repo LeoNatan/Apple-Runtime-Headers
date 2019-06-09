@@ -9,6 +9,7 @@
 @class NSDate, NSString, NSURL, UIColor;
 @protocol SKUIArtworkProviding;
 
+__attribute__((visibility("hidden")))
 @interface SKUICountdown : NSObject
 {
     _Bool _isLoaded;

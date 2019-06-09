@@ -20,6 +20,7 @@
 @interface HDDatabase : NSObject <HDAssertionObserver, HDContentProtectionObserver, HDDiagnosticObject, HDSQLiteDatabaseDelegate, HDSQLiteDatabasePoolDelegate, HDSQLiteDatabaseProvider, HDHealthDatabase>
 {
     // Error parsing type: AB, name: _invalidated
+    NSObject<OS_dispatch_queue> *_serialAsynchronousQueue;
     NSObject<OS_dispatch_queue> *_hfdQueue;
     shared_ptr_88ae0538 _highFrequencyDataStore;
     NSLock *_writeLock;
@@ -41,7 +42,6 @@
     NSString *_threadLocalTransactionKey;
     NSString *_threadLocalTransactionContextKey;
     NSString *_threadLocalIgnoreTransactionContextKey;
-    HDContentProtectionManager *_contentProtectionManager;
     HDAssertionManager *_assertionManager;
     NSLock *_schemaMigrationLock;
     NSConditionLock *_activeDatabasesLock;
@@ -54,6 +54,7 @@
     NSObject<OS_dispatch_queue> *_secondaryJournalMergeQueue;
     NSMutableDictionary *_extendedTransactions;
     NSDictionary *_databasePoolForType;
+    HDContentProtectionManager *_contentProtectionManager;
     double _offsetTimeInterval;
     double _protectedDataFlushInterval;
     CDUnknownBlockType _unitTest_didWaitForJournalMergeHandler;
@@ -70,6 +71,7 @@
 @property(nonatomic) _Bool didRunPostMigrationUpdates; // @synthesize didRunPostMigrationUpdates=_didRunPostMigrationUpdates;
 @property(nonatomic) double protectedDataFlushInterval; // @synthesize protectedDataFlushInterval=_protectedDataFlushInterval;
 @property(nonatomic) double offsetTimeInterval; // @synthesize offsetTimeInterval=_offsetTimeInterval;
+@property(readonly, nonatomic) HDContentProtectionManager *contentProtectionManager; // @synthesize contentProtectionManager=_contentProtectionManager;
 @property(retain, nonatomic) NSDictionary *databasePoolForType; // @synthesize databasePoolForType=_databasePoolForType;
 @property(retain, nonatomic) NSMutableDictionary *extendedTransactions; // @synthesize extendedTransactions=_extendedTransactions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *secondaryJournalMergeQueue; // @synthesize secondaryJournalMergeQueue=_secondaryJournalMergeQueue;
@@ -82,7 +84,6 @@
 @property(retain, nonatomic) NSConditionLock *activeDatabasesLock; // @synthesize activeDatabasesLock=_activeDatabasesLock;
 @property(retain, nonatomic) NSLock *schemaMigrationLock; // @synthesize schemaMigrationLock=_schemaMigrationLock;
 @property(retain, nonatomic) HDAssertionManager *assertionManager; // @synthesize assertionManager=_assertionManager;
-@property(retain, nonatomic) HDContentProtectionManager *contentProtectionManager; // @synthesize contentProtectionManager=_contentProtectionManager;
 @property(readonly, copy, nonatomic) NSString *threadLocalIgnoreTransactionContextKey; // @synthesize threadLocalIgnoreTransactionContextKey=_threadLocalIgnoreTransactionContextKey;
 @property(readonly, copy, nonatomic) NSString *threadLocalTransactionContextKey; // @synthesize threadLocalTransactionContextKey=_threadLocalTransactionContextKey;
 @property(readonly, copy, nonatomic) NSString *threadLocalTransactionKey; // @synthesize threadLocalTransactionKey=_threadLocalTransactionKey;
@@ -93,6 +94,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)unitTest_currentTransaction;
+- (void)unitTest_setContentProtectionStateAndWait:(long long)arg1;
 - (void)obliterateWithReason:(id)arg1 preserveCopy:(_Bool)arg2;
 - (void)invalidateAndWait;
 @property(readonly) _Bool invalidated;
@@ -107,12 +109,13 @@
 - (id)_currentDatabaseJournal;
 - (_Bool)_waitForMergesWithCurrentJournal:(id)arg1 error:(id *)arg2;
 - (id)_journalForType:(long long)arg1;
+- (id)progressForJournalMergeWithType:(long long)arg1;
 - (_Bool)addJournalEntries:(id)arg1 error:(id *)arg2;
 - (_Bool)addJournalEntry:(id)arg1 error:(id *)arg2;
 - (_Bool)_protectedDataQueue_isProtectedDataFlushDeadlinePassed;
 - (void)_protectedDataQueue_flushProtectedDataIfNecessary;
 - (void)_protectedDataQueue_cancelProtectedDataFlushTimer;
-- (_Bool)_allowProtectedDataAccessWhileLockedWithTransactionContext:(id)arg1;
+- (_Bool)_allowProtectedDataAccessWhileLockedWithTransaction:(id)arg1;
 - (id)cloneAccessibilityAssertion:(id)arg1 ownerIdentifier:(id)arg2 error:(id *)arg3;
 - (id)takeAccessibilityAssertionWithOwnerIdentifier:(id)arg1 shouldPerformTransaction:(_Bool)arg2 timeout:(double)arg3 error:(id *)arg4;
 - (id)takeAccessibilityAssertionWithOwnerIdentifier:(id)arg1 timeout:(double)arg2 error:(id *)arg3;
@@ -130,15 +133,13 @@
 - (id)newDatabaseForDatabasePool:(id)arg1 error:(id *)arg2;
 - (void)_checkInDatabase:(id)arg1 type:(long long)arg2 flushImmediately:(_Bool)arg3;
 - (void)checkInDatabase:(id)arg1 type:(long long)arg2;
-- (id)_checkOutDatabaseForTransaction:(id)arg1 databaseType:(long long)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
-- (id)databaseTransaction:(id)arg1 checkOutDatabaseWithType:(long long)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
-- (_Bool)_enableSecureDeleteForDatabase:(id)arg1 error:(id *)arg2;
+- (id)_checkOutDatabaseForTransaction:(id)arg1 databaseType:(long long)arg2 error:(id *)arg3;
+- (id)databaseTransaction:(id)arg1 checkOutDatabaseWithType:(long long)arg2 error:(id *)arg3;
 - (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
 - (_Bool)_isDatabaseValidWithError:(id *)arg1;
 - (long long)_performMigrationWithUnprotectedDatabase:(id)arg1 protectedDatabase:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (long long)_migrateOrCreateProtectedSchemaInDatabaseIfWritable:(id)arg1 error:(id *)arg2;
-- (_Bool)_migrateOrCreateProtectedSchemaInDatabase:(id)arg1 transactionContext:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
-- (_Bool)performMigrationWithTransactionContext:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (_Bool)_migrateOrCreateProtectedSchemaInDatabase:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
 - (id)_newDatabaseConnectionWithError:(id *)arg1;
 - (id)_createDatabaseConnectionWithURL:(id)arg1;
 - (id)_createDatabaseConnection;
@@ -149,17 +150,18 @@
 - (id)dumpSchemaAndReturnError:(id *)arg1;
 - (void)finalizeExtendedTransactionForIdentifier:(id)arg1;
 - (id)extendedDatabaseTransactionForIdentifier:(id)arg1;
-- (id)beginExtendedTransactionWithOptions:(unsigned long long)arg1 transactionTimeout:(double)arg2 continuationTimeout:(double)arg3 error:(id *)arg4;
+- (id)beginExtendedTransactionWithContext:(id)arg1 transactionTimeout:(double)arg2 continuationTimeout:(double)arg3 error:(id *)arg4;
 - (_Bool)performWithJournalType:(long long)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (void)performAsynchronouslySerial:(CDUnknownBlockType)arg1;
 - (void)performAsynchronously:(CDUnknownBlockType)arg1;
+- (void)_performWhenDataProtectedByFirstUnlockIsAvailableOnQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)performWhenDataProtectedByFirstUnlockIsAvailableOnQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)performWhenDataProtectedByFirstUnlockIsAvailable:(CDUnknownBlockType)arg1;
 - (_Bool)performWithTransactionContext:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (_Bool)performTransactionWithOptions:(unsigned long long)arg1 error:(id *)arg2 usingBlock:(CDUnknownBlockType)arg3 inaccessibilityHandler:(CDUnknownBlockType)arg4;
-- (_Bool)performTransactionWithContext:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4 inaccessibilityHandler:(CDUnknownBlockType)arg5;
-- (_Bool)performTransactionWithOptions:(unsigned long long)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3 inaccessibilityHandler:(CDUnknownBlockType)arg4;
+- (_Bool)performTransactionWithContext:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3 inaccessibilityHandler:(CDUnknownBlockType)arg4;
 - (id)databasePoolForDatabaseType:(long long)arg1;
-- (_Bool)_attachProtectedDatabaseIfNeededToDatabase:(id)arg1 transaction:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
-- (_Bool)_canAttachProtectedDatabaseForTransaction:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (_Bool)_attachProtectedDatabaseIfNeededToDatabase:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
+- (_Bool)_canAttachProtectedDatabaseForTransaction:(id)arg1 error:(id *)arg2;
 - (void)_reportDatabaseSizes;
 - (id)_URLForWALForDatabaseAtURL:(id)arg1;
 - (long long)_fileSizeForURL:(id)arg1 error:(id *)arg2;

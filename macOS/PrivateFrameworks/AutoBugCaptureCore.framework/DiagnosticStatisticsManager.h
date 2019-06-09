@@ -9,6 +9,7 @@
 @class AnalyticsWorkspace, DiagnosticCaseUsageAnalytics;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticStatisticsManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;

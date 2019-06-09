@@ -8,6 +8,7 @@
 
 @class NSNumber, PDTransitionOptions;
 
+__attribute__((visibility("hidden")))
 @interface PDTransition : OADProperties
 {
     BOOL mHasType;

@@ -7,7 +7,7 @@
 #import <PhotosUI/NSObject-Protocol.h>
 
 @class NSArray, NSString, PXGadgetSpec, UIViewController;
-@protocol PXGadgetDelegate;
+@protocol PXGadgetDelegate, UICoordinateSpace;
 
 @protocol PXGadget <NSObject>
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
@@ -18,32 +18,32 @@
 
 @optional
 @property(nonatomic) struct CGRect visibleContentRect;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, nonatomic) _Bool supportsAssetsDrop;
 @property(readonly, nonatomic) _Bool supportsSelection;
 @property(readonly, nonatomic) _Bool supportsHighlighting;
 @property(nonatomic) long long priority;
 @property(readonly, nonatomic) unsigned long long headerStyle;
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
 @property(readonly, nonatomic) NSString *localizedTitle;
 - (void)commitPreviewViewController:(UIViewController *)arg1;
 - (void)didDismissPreviewViewController:(UIViewController *)arg1 committing:(_Bool)arg2;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2 outSourceRect:(out struct CGRect *)arg3;
+- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
+- (struct NSObject *)targetPreviewViewForLocation:(struct CGPoint)arg1 inCoordinateSpace:(id <UICoordinateSpace>)arg2;
+- (struct NSObject *)contentViewController;
+- (struct NSObject *)contentView;
+- (void)prefetchDuringScrollingForWidth:(double)arg1;
 - (void)gadgetControllerHasDisappeared;
 - (void)gadgetControllerHasAppeared;
 - (void)contentHasBeenSeen;
 - (NSString *)uniqueGadgetIdentifier;
 - (NSArray *)debugURLsForDiagnostics;
-- (struct NSObject *)contentViewController;
-- (struct NSObject *)contentView;
+- (void)prepareCollectionViewItem:(struct UICollectionViewCell *)arg1;
 - (void)contentViewDidDisappear;
 - (void)contentViewWillAppear;
-- (void)unloadContentData;
-- (_Bool)hasLoadedContentData;
-- (void)loadContentData;
 - (void)preloadResources;
-- (void)userDidSelectAccessoryButton:(id)arg1;
+- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
 - (void)userDidSelectGadget;
 @end
 

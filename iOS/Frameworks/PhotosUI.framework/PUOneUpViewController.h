@@ -7,7 +7,6 @@
 #import <UIKit/UIViewController.h>
 
 #import <PhotosUI/PHAirPlayControllerContentProvider-Protocol.h>
-#import <PhotosUI/PLDismissableViewController-Protocol.h>
 #import <PhotosUI/PUAccessoryTileViewControllerDelegate-Protocol.h>
 #import <PhotosUI/PUAccessoryVisibilityInteractionControllerDelegate-Protocol.h>
 #import <PhotosUI/PUAssetActionPerformerDelegate-Protocol.h>
@@ -17,6 +16,7 @@
 #import <PhotosUI/PUDoubleTapZoomControllerDelegate-Protocol.h>
 #import <PhotosUI/PUInteractiveDismissalControllerDelegate-Protocol.h>
 #import <PhotosUI/PUIrisImageTileViewControllerDelegate-Protocol.h>
+#import <PhotosUI/PULivePhotoVideoOverlayTileViewControllerDelegate-Protocol.h>
 #import <PhotosUI/PUOneUpAccessoryViewControllersManagerDelegate-Protocol.h>
 #import <PhotosUI/PUOneUpAssetTransitionViewController-Protocol.h>
 #import <PhotosUI/PUOneUpBarsControllerDelegate-Protocol.h>
@@ -26,6 +26,7 @@
 #import <PhotosUI/PUOverOneUpPresentationSessionDelegate-Protocol.h>
 #import <PhotosUI/PUOverOneUpPresentationSessionViewController-Protocol.h>
 #import <PhotosUI/PUPlayButtonTileViewControllerDelegate-Protocol.h>
+#import <PhotosUI/PUPreviewActionControllerDelegate-Protocol.h>
 #import <PhotosUI/PUTilingViewControllerTransitionEndPoint-Protocol.h>
 #import <PhotosUI/PUTilingViewScrollDelegate-Protocol.h>
 #import <PhotosUI/PUTilingViewTileSource-Protocol.h>
@@ -35,14 +36,15 @@
 #import <PhotosUI/PUViewControllerSpecChangeObserver-Protocol.h>
 #import <PhotosUI/PXContextualNotificationDelegate-Protocol.h>
 #import <PhotosUI/PXDiagnosticsEnvironment-Protocol.h>
+#import <PhotosUI/PXForcedDismissableViewController-Protocol.h>
 #import <PhotosUI/PXGestureProviderDelegate-Protocol.h>
 #import <PhotosUI/PXPurgeableController-Protocol.h>
 #import <PhotosUI/PXSettingsKeyObserver-Protocol.h>
 #import <PhotosUI/UIScrollViewDelegate-Protocol.h>
 
-@class CAMBadgeTextView, NSArray, NSString, NSTimer, NSUserActivity, PUAccessoryVisibilityInteractionController, PUAggregateDictionaryTracer, PUAssetDisplayDescriptorNavigationRequest, PUBrowsingBackgroundTileViewController, PUBrowsingSession, PUDoubleTapZoomController, PUInteractivePinchDismissalController, PUInteractiveSwipeDismissalController, PULoadingIndicatorController, PUOneUpAccessoryViewControllersManager, PUOneUpBarsController, PUOneUpGestureRecognizerCoordinator, PUOneUpSuggestionsController, PUOneUpViewControllerSpec, PUOverOneUpPresentationSession, PUParallaxComputer, PUPreviewActionController, PUReviewScreenBarsModel, PUReviewScreenControlBarTileViewController, PUReviewScreenScrubberBarTileViewController, PUReviewScreenTopBarTileViewController, PUTilingView, PXUserEventTracker, UIScrollView;
+@class CEKBadgeTextView, NSArray, NSString, NSTimer, NSUserActivity, PUAccessoryVisibilityInteractionController, PUAggregateDictionaryTracer, PUAssetDisplayDescriptorNavigationRequest, PUBrowsingBackgroundTileViewController, PUBrowsingSession, PUDoubleTapZoomController, PUInteractivePinchDismissalController, PUInteractiveSwipeDismissalController, PULoadingIndicatorController, PUOneUpAccessoryViewControllersManager, PUOneUpBarsController, PUOneUpGestureRecognizerCoordinator, PUOneUpSuggestionsController, PUOneUpViewControllerSpec, PUOverOneUpPresentationSession, PUParallaxComputer, PUPreviewActionController, PUReviewScreenBarsModel, PUReviewScreenControlBarTileViewController, PUReviewScreenScrubberBarTileViewController, PUReviewScreenTopBarTileViewController, PUTilingView, PXUserEventTracker, UIScrollView;
 
-@interface PUOneUpViewController : UIViewController <PUViewControllerSpecChangeObserver, PUBrowsingViewModelChangeObserver, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, PUTilingViewScrollDelegate, UIScrollViewDelegate, PUOneUpTilingLayoutDelegate, PUInteractiveDismissalControllerDelegate, PUBarsControllerDelegate, PUOneUpBarsControllerDelegate, PUUserTransformTileViewControllerDelegate, PUPlayButtonTileViewControllerDelegate, PUDoubleTapZoomControllerDelegate, PUAccessoryVisibilityInteractionControllerDelegate, PHAirPlayControllerContentProvider, PUTilingViewTileUseDelegate, PUAccessoryTileViewControllerDelegate, PUOneUpAccessoryViewControllersManagerDelegate, PUOverOneUpPresentationSessionDelegate, PUOverOneUpPresentationSessionViewController, PUOneUpGestureRecognizerCoordinatorDelegate, PUOneUpAssetTransitionViewController, PUAssetDisplayDescriptorNavigator, PXSettingsKeyObserver, PXDiagnosticsEnvironment, PUIrisImageTileViewControllerDelegate, PXPurgeableController, PXContextualNotificationDelegate, PUOneUpSuggestionsControllerDelegate, PUAssetActionPerformerDelegate, PXGestureProviderDelegate, PLDismissableViewController, PUTilingViewControllerTransitionEndPoint>
+@interface PUOneUpViewController : UIViewController <PUViewControllerSpecChangeObserver, PUBrowsingViewModelChangeObserver, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, PUTilingViewScrollDelegate, UIScrollViewDelegate, PUOneUpTilingLayoutDelegate, PUInteractiveDismissalControllerDelegate, PUBarsControllerDelegate, PUOneUpBarsControllerDelegate, PUUserTransformTileViewControllerDelegate, PUPlayButtonTileViewControllerDelegate, PUDoubleTapZoomControllerDelegate, PUAccessoryVisibilityInteractionControllerDelegate, PHAirPlayControllerContentProvider, PUTilingViewTileUseDelegate, PUAccessoryTileViewControllerDelegate, PUOneUpAccessoryViewControllersManagerDelegate, PUOverOneUpPresentationSessionDelegate, PUOverOneUpPresentationSessionViewController, PUOneUpGestureRecognizerCoordinatorDelegate, PUOneUpAssetTransitionViewController, PUAssetDisplayDescriptorNavigator, PXSettingsKeyObserver, PXDiagnosticsEnvironment, PUIrisImageTileViewControllerDelegate, PXPurgeableController, PXContextualNotificationDelegate, PUOneUpSuggestionsControllerDelegate, PUPreviewActionControllerDelegate, PUAssetActionPerformerDelegate, PXForcedDismissableViewController, PXGestureProviderDelegate, PULivePhotoVideoOverlayTileViewControllerDelegate, PUTilingViewControllerTransitionEndPoint>
 {
     struct {
         _Bool suggestionController;
@@ -102,17 +104,18 @@
     PXUserEventTracker *_userEventTracker;
     PUOneUpSuggestionsController *_suggestionController;
     NSUserActivity *_siriActionActivity;
-    CAMBadgeTextView *_originalBadgeView;
+    CEKBadgeTextView *_originalBadgeView;
     struct CGSize __layoutReferenceSize;
     struct CGSize __pendingViewTransitionSize;
     struct UIEdgeInsets __layoutSafeAreaInsets;
 }
 
+@property(readonly, nonatomic) PUPreviewActionController *previewActionController; // @synthesize previewActionController=_previewActionController;
 @property(nonatomic, setter=setAllowsPreviewActions:) _Bool allowsPreviewActions; // @synthesize allowsPreviewActions=_allowsPreviewActions;
 @property(nonatomic) _Bool appearanceTransitionAnimationsDisabled; // @synthesize appearanceTransitionAnimationsDisabled=_appearanceTransitionAnimationsDisabled;
 @property(nonatomic, setter=setPresentedForPreview:) _Bool isPresentedForPreview; // @synthesize isPresentedForPreview=_isPresentedForPreview;
 @property(nonatomic, setter=_setPrefersHomeIndicatorHidden:) _Bool _prefersHomeIndicatorHidden; // @synthesize _prefersHomeIndicatorHidden=__prefersHomeIndicatorHidden;
-@property(retain, nonatomic) CAMBadgeTextView *originalBadgeView; // @synthesize originalBadgeView=_originalBadgeView;
+@property(retain, nonatomic) CEKBadgeTextView *originalBadgeView; // @synthesize originalBadgeView=_originalBadgeView;
 @property(retain, nonatomic) NSUserActivity *siriActionActivity; // @synthesize siriActionActivity=_siriActionActivity;
 @property(nonatomic, setter=_setDidPlayCurrentLivePhoto:) _Bool _didPlayCurrentLivePhoto; // @synthesize _didPlayCurrentLivePhoto=__didPlayCurrentLivePhoto;
 @property(readonly, nonatomic) PUOneUpSuggestionsController *suggestionController; // @synthesize suggestionController=_suggestionController;
@@ -166,6 +169,11 @@
 @property(copy, nonatomic) CDUnknownBlockType unlockDeviceStatus; // @synthesize unlockDeviceStatus=_unlockDeviceStatus;
 @property(readonly, nonatomic) PUBrowsingSession *browsingSession; // @synthesize browsingSession=_browsingSession;
 - (void).cxx_destruct;
+- (void)livePhotoVideoPlaybackTileViewControllerDidEndPlaying:(id)arg1;
+- (void)livePhotoVideoPlaybackTileViewControllerWillEndPlaying:(id)arg1;
+- (void)livePhotoVideoPlaybackTileViewControllerDidBeginPlaying:(id)arg1;
+- (void)livePhotoVideoPlaybackTileViewControllerWillBeginPlaying:(id)arg1;
+- (id)livePhotoVideoPlaybackTileViewControllerDisplayTileTransform:(id)arg1;
 - (void)gestureProvider:(id)arg1 didTriggerEvent:(long long)arg2;
 - (struct CGRect)gestureProviderCurrentAssetRect:(id)arg1;
 - (_Bool)oneUpSuggestionsController:(id)arg1 canShowSuggestion:(id)arg2 forAssetReference:(id)arg3;
@@ -291,9 +299,10 @@
 - (_Bool)layout:(id)arg1 shouldMoveProgressIndicatorForItemAtIndexPath:(id)arg2;
 - (double)alphaForReviewScreenBarsInLayout:(id)arg1;
 - (_Bool)layoutShouldShowReviewScreenScrubberBar:(id)arg1;
+- (_Bool)layout:(id)arg1 shouldShowMuteButtonForItemAtIndexPath:(id)arg2;
 - (_Bool)layout:(id)arg1 shouldShowPlayButtonForItemAtIndexPath:(id)arg2;
 - (struct CGSize)layout:(id)arg1 assetExplorerReviewScreenBadgeSizeForItemAtIndexPath:(id)arg2;
-- (struct CGSize)layout:(id)arg1 badgeSizeForItemAtIndexPath:(id)arg2;
+- (struct CGSize)layout:(id)arg1 badgeSizeForItemAtIndexPath:(id)arg2 contentWidth:(double)arg3;
 - (_Bool)layout:(id)arg1 shouldScaleToFitSafeInsetsForItemAtIndexPath:(id)arg2;
 - (double)layout:(id)arg1 aspectRatioForItemAtIndexPath:(id)arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -316,9 +325,10 @@
 - (void)tilingViewControllerTransition:(id)arg1 abandonTilingView:(id)arg2 toEndPoint:(id)arg3;
 - (id)tilingViewControllerTransition:(id)arg1 tilingViewToTransferToEndPoint:(id)arg2;
 - (id)tilingViewControllerTransitionTilingViewHostView:(id)arg1;
-- (id)previewActionItems;
-- (void)_updatePreviewActionController;
-@property(readonly, nonatomic) PUPreviewActionController *previewActionController;
+- (void)_arrowKey:(id)arg1;
+- (id)keyCommands;
+- (_Bool)previewActionControllerPreventRevealInMomentAction:(id)arg1;
+- (void)createPreviewActionControllerForManagerIfNeeded:(id)arg1;
 - (long long)pu_preferredBarStyle;
 - (_Bool)pu_wantsTabBarVisible;
 - (_Bool)pu_wantsToolbarVisible;
@@ -354,7 +364,7 @@
 - (void)_browsingVideoPlayerDidPlayToEndTime:(id)arg1;
 - (void)_abandonTileController:(id)arg1;
 - (void)_configureAdoptedTileController:(id)arg1;
-- (void)_hideChromeOnPlayButtonTapWithItemIsNowPlaying:(_Bool)arg1;
+- (void)_hideChromeOnPlayButtonTapWithItemIsNowPlaying:(_Bool)arg1 buttonIsOverlayed:(_Bool)arg2;
 - (void)_chromeAutoHideTimerFired:(id)arg1;
 - (void)_cancelTimedChromeAutoHide;
 - (void)_scheduleTimedChromeAutoHide;
@@ -391,8 +401,10 @@
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (void)_updatePrefersHomeIndicatorHidden;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
+- (_Bool)canBecomeFirstResponder;
 - (id)contentScrollView;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (_Bool)_canShowWhileLocked;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;

@@ -67,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)teardownDecodeSession:(_Bool)arg1;
 - (void)createDecodeSession:(struct opaqueCMFormatDescription *)arg1;
 - (void)updateVideoStallStatus:(_Bool)arg1;
-- (int)scheduleDecodeForFrameWithBuffer:(char *)arg1 size:(unsigned long long)arg2 timestamp:(unsigned int)arg3 hostTime:(double)arg4 showFrame:(_Bool)arg5;
+- (int)scheduleDecodeForFrameWithBuffer:(struct VCVideoReceiverSampleBuffer_t *)arg1 timestamp:(unsigned int)arg2 hostTime:(double)arg3 showFrame:(_Bool)arg4;
 - (int)processVideoRTCP;
 - (void)processReceptionReportBlock:(struct tagRTCP_RRB *)arg1 arrivalNTPTime:(union tagNTP)arg2;
 - (void)rtcpSendIntervalElapsed;
@@ -89,7 +89,7 @@ __attribute__((visibility("hidden")))
 - (void)setEnableRateAdaptation:(_Bool)arg1 maxBitrate:(unsigned int)arg2 minBitrate:(unsigned int)arg3 adaptationInterval:(double)arg4;
 - (void)setEnableCVO:(_Bool)arg1 cvoExtensionID:(unsigned long long)arg2;
 - (void)dealloc;
-- (id)initWithRTP:(struct tagHANDLE *)arg1 delegate:(id)arg2 reportingAgent:(struct opaqueRTCReporting *)arg3 dumpID:(unsigned int)arg4 reportingParentID:(int)arg5;
+- (id)initWithRTP:(struct tagHANDLE *)arg1 delegate:(id)arg2 reportingAgent:(struct opaqueRTCReporting *)arg3 dumpID:(unsigned int)arg4 reportingParentID:(int)arg5 statisticsCollector:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

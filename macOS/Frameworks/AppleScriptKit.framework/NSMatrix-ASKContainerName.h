@@ -8,5 +8,14 @@
 
 @interface NSMatrix (ASKContainerName)
 + (id)containerName_ask;
+- (id)handleSelectCellScriptCommand:(id)arg1;
+- (void)setMode_ask:(unsigned long long)arg1;
+- (unsigned long long)mode_ask;
+- (void)setSelectedRow_ask:(long long)arg1;
+- (long long)selectedRow_ask;
+- (void)setSelectedColumn_ask:(long long)arg1;
+- (long long)selectedColumn_ask;
+- (void)setIsSelectionByRect:(BOOL)arg1;
+- (void)setIsAutoscroll:(BOOL)arg1;
 @end
 

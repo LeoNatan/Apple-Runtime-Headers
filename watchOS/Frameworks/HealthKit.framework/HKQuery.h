@@ -17,17 +17,19 @@
     _Bool _hasBeenExecuted;
     id <HKQueryDelegate> _delegate;
     HKQueryServerProxyProvider *_proxyProvider;
-    // Error parsing type: AB, name: _deactivating
+    // Error parsing type: Ai, name: _activationState
     // Error parsing type: Ai, name: _deactivateCallCount
+    double _activationTime;
     HKHealthStore *_strongHealthStore;
     id <HKQueryServerInterface> _serverProxy;
     _Bool _shouldSuppressDataCollection;
     HKObjectType *_objectType;
     NSPredicate *_predicate;
-    int _activationState;
+    NSUUID *_activationUUID;
+    NSString *_debugIdentifier;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_clientQueue;
-    NSUUID *_activationUUID;
+    unsigned int _applicationSDKVersion;
     _HKFilter *_filter;
 }
 
@@ -53,6 +55,7 @@
 + (id)predicateForQuantitySamplesWithOperatorType:(unsigned int)arg1 quantity:(id)arg2;
 + (id)predicateForCreationDateWithTodayViewRange:(id)arg1;
 + (id)predicateForRecordsWithSortDateFromStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
++ (id)predicateForSamplesWithConceptIdentifier:(id)arg1 keyPath:(id)arg2;
 + (id)predicateForDiagnosticTestResultCategory:(id)arg1;
 + (id)predicateForRecordsFromGatewayWithExternalIdentifier:(id)arg1;
 + (id)predicateForRecordsFromClinicalAccountIdentifier:(id)arg1;
@@ -78,11 +81,12 @@
 + (id)predicateForObjectsWithMetadataKey:(id)arg1;
 + (id)predicateForActivityCachesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
 @property(readonly, nonatomic, getter=_filter) _HKFilter *filter; // @synthesize filter=_filter;
-@property(readonly, nonatomic) NSUUID *activationUUID; // @synthesize activationUUID=_activationUUID;
+@property(readonly, nonatomic) unsigned int applicationSDKVersion; // @synthesize applicationSDKVersion=_applicationSDKVersion;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
 @property(nonatomic) _Bool shouldSuppressDataCollection; // @synthesize shouldSuppressDataCollection=_shouldSuppressDataCollection;
-@property(readonly, nonatomic) int activationState; // @synthesize activationState=_activationState;
+@property(copy) NSUUID *activationUUID; // @synthesize activationUUID=_activationUUID;
 @property(retain) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(retain) HKObjectType *objectType; // @synthesize objectType=_objectType;
 - (void).cxx_destruct;
@@ -101,8 +105,10 @@
 - (void)queue_deactivate;
 - (void)deactivate;
 @property(readonly) _Bool deactivating;
+@property(readonly) int activationState;
 - (void)reactivateWithHealthStore:(id)arg1;
-- (void)activateWithClientQueue:(id)arg1 healthStore:(id)arg2 delegate:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)activateWithClientQueue:(id)arg1 healthStore:(id)arg2 delegate:(id)arg3 time:(double)arg4 completion:(CDUnknownBlockType)arg5;
+- (_Bool)hasQueryUUID:(id)arg1;
 - (void)queue_dispatchToClientForUUID:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_throwInvalidArgumentExceptionIfHasBeenExecuted:(SEL)arg1;
 - (void)queue_populateConfiguration:(id)arg1;

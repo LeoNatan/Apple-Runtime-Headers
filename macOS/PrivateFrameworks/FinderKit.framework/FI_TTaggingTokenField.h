@@ -6,12 +6,14 @@
 
 #import <AppKit/NSTokenField.h>
 
-#import <FinderKit/TDFRTagsViewTagProviding-Protocol.h>
+#import <FinderKit/NSTouchBarDelegate-Protocol.h>
+#import <FinderKit/TMarkTornDown-Protocol.h>
+#import <FinderKit/TTouchBarTagsViewTagProviding-Protocol.h>
 
 @class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TTaggingTokenField : NSTokenField <TDFRTagsViewTagProviding>
+@interface FI_TTaggingTokenField : NSTokenField <TTouchBarTagsViewTagProviding, NSTouchBarDelegate, TMarkTornDown>
 {
     struct TNSRef<FI_TTaggingSuggestionsViewController, void> _suggestionsViewController;
     struct TNSRef<FI_TTagSuggestionsWindowController, void> _suggestionsWindowController;
@@ -32,12 +34,14 @@ __attribute__((visibility("hidden")))
     struct TNotificationCenterObserver _tfWindowDidResignKeyObserver;
     struct TNotificationCenterObserver _sWindowDidHideObserver;
     struct TNSRef<NSTouchBar, void> _editTagsTouchBar;
-    struct TNSRef<FI_TDFRAddTagsViewController, void> _dfrAddTagsViewController;
-    struct TNSRef<NSSet<NSString *>, void> _dfrTagTokens;
+    struct TNSRef<NSCustomTouchBarItem, void> _touchBarAddTagsToolBarItem;
+    struct TNSRef<NSSet<NSString *>, void> _touchBarTagTokens;
     struct vector<CGSize, std::__1::allocator<CGSize>> _lastFourIntrinsicContentSizes;
+    _Bool tornDown;
 }
 
 + (Class)cellClass;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property(nonatomic, getter=isInPopover) _Bool inPopover; // @synthesize inPopover=_isInPopover;
 @property(nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
@@ -49,6 +53,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool autoResizesVertically; // @synthesize autoResizesVertically=_autoResizesVertically;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)touchBarAddTagsViewController;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)makeTouchBar;
 - (id)accessibilityChildrenAttributeValue;
 - (void)firstResponderChanged:(id)arg1;

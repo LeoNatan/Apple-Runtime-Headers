@@ -19,6 +19,9 @@
     float _obstructionScore;
     float _exposureScore;
     float _colorfulnessScore;
+    float _humanPoseScore;
+    float _humanActionScore;
+    float _faceArea;
     NSMutableArray *_detectedFaces;
     VCPVideoActivityDescriptor *_videoActivityDescriptor;
 }
@@ -26,6 +29,9 @@
 @property(retain, nonatomic) VCPVideoActivityDescriptor *videoActivityDescriptor; // @synthesize videoActivityDescriptor=_videoActivityDescriptor;
 @property(retain, nonatomic) NSMutableArray *detectedFaces; // @synthesize detectedFaces=_detectedFaces;
 @property(nonatomic) BOOL frameProcessedByFaceDetector; // @synthesize frameProcessedByFaceDetector=_frameProcessedByFaceDetector;
+@property(nonatomic) float faceArea; // @synthesize faceArea=_faceArea;
+@property(nonatomic) float humanActionScore; // @synthesize humanActionScore=_humanActionScore;
+@property(nonatomic) float humanPoseScore; // @synthesize humanPoseScore=_humanPoseScore;
 @property(nonatomic) BOOL subMbMotionAvailable; // @synthesize subMbMotionAvailable=_subMbMotionAvailable;
 @property(nonatomic) float colorfulnessScore; // @synthesize colorfulnessScore=_colorfulnessScore;
 @property(nonatomic) float exposureScore; // @synthesize exposureScore=_exposureScore;

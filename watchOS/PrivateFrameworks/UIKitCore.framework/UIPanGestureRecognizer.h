@@ -35,6 +35,7 @@
 }
 
 + (void)_setPanGestureRecognizersEnabled:(_Bool)arg1;
++ (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
 + (float)_defaultHysteresis;
 @property(readonly, getter=_previousVelocitySample) UIPanGestureVelocitySample *_previousVelocitySample; // @synthesize _previousVelocitySample;
@@ -64,6 +65,7 @@
 - (_Bool)_shouldTryToBeginWithEvent:(id)arg1;
 - (_Bool)_willScrollY;
 - (_Bool)_willScrollX;
+- (float)_translationDistanceInSceneInSelfAxis:(struct CGPoint)arg1;
 - (void)_centroidMovedTo:(struct CGPoint)arg1 atTime:(double)arg2;
 - (struct CGPoint)_adjustSceneReferenceLocation:(struct CGPoint)arg1;
 - (struct CGPoint)_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint)arg1 lockingToAxis:(int)arg2;

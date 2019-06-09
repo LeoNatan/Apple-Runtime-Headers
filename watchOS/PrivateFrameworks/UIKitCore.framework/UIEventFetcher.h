@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _receiveBlock;
     CDUnknownBlockType _addToFilteredEventsBlock;
     CDUnknownBlockType _gameControllerEventFilterGenerator;
+    CDUnknownBlockType _passiveObservationFilterGenerator;
     CDUnknownBlockType _watchSystemAppFilter;
     NSMutableArray *_eventFilters;
     int _displayLinkIdleTicks;
@@ -48,11 +49,14 @@ __attribute__((visibility("hidden")))
 - (void)_setWatchSystemAppHIDEventFilter:(CDUnknownBlockType)arg1;
 - (void)_removeHIDGameControllerEventObserver;
 - (void)_setHIDGameControllerEventObserver:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
+- (void)_removeHIDEventObserver;
+- (void)_setHIDEventObserver:(CDUnknownBlockType)arg1 onQueue:(id)arg2;
 - (void)signalEventsAvailableWithReason:(unsigned int)arg1 filteredEventCount:(int)arg2;
 - (void)filterEvents;
 - (void)drainEventsIntoEnvironment:(id)arg1;
 - (void)_receiveHIDEventInternal:(struct __IOHIDEvent *)arg1;
 - (void)_receiveHIDEvent:(struct __IOHIDEvent *)arg1;
+@property(readonly, nonatomic) struct __CFRunLoop *_eventFetchRunLoop;
 - (void)setupThreadAndRun;
 - (void)threadMain;
 - (void)displayLinkDidFire:(id)arg1;

@@ -19,6 +19,7 @@
     BOOL _animates;
 }
 
++ (id)_sharedStringDrawingContext;
 @property BOOL animates; // @synthesize animates=_animates;
 @property(nonatomic) struct CGSize textMargins; // @synthesize textMargins=_textMargins;
 @property(retain, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;

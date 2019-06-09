@@ -10,6 +10,7 @@
 
 @class NSString, SKUIActivityIndicatorView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIActivityIndicatorCollectionViewCell : SKUICollectionViewCell <SKUIViewElementView>
 {
     struct UIEdgeInsets _contentInset;

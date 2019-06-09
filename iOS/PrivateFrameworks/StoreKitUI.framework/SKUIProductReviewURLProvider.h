@@ -8,6 +8,7 @@
 
 @class NSString, NSURL, SSURLBag;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductReviewURLProvider : NSObject
 {
     NSURL *_rateURL;

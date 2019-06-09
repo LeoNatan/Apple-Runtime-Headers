@@ -18,10 +18,14 @@
 - (void)dataRecordForUser:(NSString *)arg1 forVolume:(SKDisk *)arg2 completionBlock:(void (^)(NSData *, NSError *))arg3;
 - (void)deleteRAID:(SKRAIDDisk *)arg1 progress:(void (^)(float, NSString *))arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)repairRAID:(SKRAIDDisk *)arg1 spareDisk:(SKDisk *)arg2 progress:(void (^)(float, NSString *))arg3 completionBlock:(void (^)(BOOL, NSError *))arg4;
+- (void)setAPFSRole:(NSString *)arg1 forDisk:(SKAPFSDisk *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)convertToAPFS:(SKDisk *)arg1 isDryRun:(BOOL)arg2 prebootFolderPath:(NSString *)arg3 withProgress:(void (^)(float, NSString *))arg4 andCompletionHandler:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg5;
 - (void)deleteAPFSVolume:(SKAPFSDisk *)arg1 progress:(void (^)(float, NSString *))arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
-- (void)addChildVolumeToAPFSContainer:(SKAPFSContainerDisk *)arg1 name:(NSString *)arg2 caseSensitive:(BOOL)arg3 minSize:(unsigned long long)arg4 maxSize:(unsigned long long)arg5 password:(NSString *)arg6 passwordHint:(NSString *)arg7 progressBlock:(void (^)(float, NSString *))arg8 completetionBlock:(void (^)(BOOL, NSError *))arg9;
+- (void)addSystemVolumeToAPFSContainer:(SKAPFSContainerDisk *)arg1 dataVolume:(SKAPFSDisk *)arg2 name:(NSString *)arg3 caseSensitive:(BOOL)arg4 minSize:(unsigned long long)arg5 maxSize:(unsigned long long)arg6 password:(NSString *)arg7 passwordHint:(NSString *)arg8 progressBlock:(void (^)(float, NSString *))arg9 completetionBlock:(void (^)(BOOL, SKAPFSDisk *, NSError *))arg10;
+- (void)addChildVolumeToAPFSContainer:(SKAPFSContainerDisk *)arg1 name:(NSString *)arg2 caseSensitive:(BOOL)arg3 minSize:(unsigned long long)arg4 maxSize:(unsigned long long)arg5 password:(NSString *)arg6 passwordHint:(NSString *)arg7 apfsRole:(NSString *)arg8 progressBlock:(void (^)(float, NSString *))arg9 completetionBlock:(void (^)(BOOL, SKAPFSDisk *, NSError *))arg10;
 - (void)addChildVolumeToAPFSContainer:(SKAPFSContainerDisk *)arg1 name:(NSString *)arg2 caseSensitive:(BOOL)arg3 minSize:(unsigned long long)arg4 maxSize:(unsigned long long)arg5 password:(NSString *)arg6 progressBlock:(void (^)(float, NSString *))arg7 completetionBlock:(void (^)(BOOL, NSError *))arg8;
+- (void)removeAPFSVolumeGroup:(NSString *)arg1 container:(SKAPFSContainerDisk *)arg2 completetionBlock:(void (^)(BOOL, NSError *))arg3;
+- (void)createAPFSVolumeGroupWithDisks:(NSArray *)arg1 container:(SKAPFSContainerDisk *)arg2 completetionBlock:(void (^)(BOOL, NSError *, NSString *))arg3;
 - (void)deleteAPFSContainer:(SKAPFSContainerDisk *)arg1 progress:(void (^)(float, NSString *))arg2 callbackBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)createAPFSContainerWithDisks:(NSArray *)arg1 progress:(void (^)(float, NSString *))arg2 callbackBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)volumesForAPFSPS:(SKDisk *)arg1 completionBlock:(void (^)(NSArray *))arg2;
@@ -60,6 +64,7 @@
 - (void)ejectDisk:(SKDisk *)arg1 withCompletionBlock:(void (^)(NSError *))arg2;
 - (void)enableJournalingOnDisk:(SKDisk *)arg1 withCompletionBlock:(void (^)(SKDisk *, BOOL))arg2;
 - (void)enablePermissionsOnDisk:(SKDisk *)arg1 withCompletionBlock:(void (^)(SKDisk *, BOOL))arg2;
+- (void)unEnsureRecoveryForDisk:(SKDisk *)arg1 withProgressHandler:(void (^)(float, NSString *))arg2 withCompletionBlock:(void (^)(SKDisk *, NSError *))arg3;
 - (void)ensureRecoveryForDisk:(SKDisk *)arg1 withRecoverySystemPath:(NSString *)arg2 chunkkList:(NSString *)arg3 diagnostics:(NSString *)arg4 ignoreBlacklist:(BOOL)arg5 handlingProgress:(void (^)(float, NSString *))arg6 callbackBlock:(void (^)(SKDisk *, NSError *))arg7;
 - (void)blessDisk:(SKDisk *)arg1 options:(NSDictionary *)arg2 withCallbackBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)compositeDisks:(NSArray *)arg1 volumeName:(NSString *)arg2 handlingProgress:(void (^)(float, NSString *))arg3 callbackBlock:(void (^)(NSError *))arg4;
@@ -67,7 +72,7 @@
 - (void)resize:(SKDisk *)arg1 toSize:(unsigned long long)arg2 handlingProgress:(void (^)(float, NSString *))arg3 withCompletionHandler:(void (^)(NSError *))arg4;
 - (void)splitDisk:(SKDisk *)arg1 toSize:(unsigned long long)arg2 newDiskRole:(NSString *)arg3 name:(NSString *)arg4 caseSensitive:(BOOL)arg5 password:(NSString *)arg6 handlingProgress:(void (^)(float, NSString *))arg7 withCompletionBlock:(void (^)(SKDisk *, SKDisk *, NSError *))arg8;
 - (void)splitDisk:(SKDisk *)arg1 toSize:(unsigned long long)arg2 newDiskType:(NSString *)arg3 name:(NSString *)arg4 caseSensitive:(BOOL)arg5 password:(NSString *)arg6 handlingProgress:(void (^)(float, NSString *))arg7 withCompletionBlock:(void (^)(SKDisk *, SKDisk *, NSError *))arg8;
-- (void)mountDisk:(SKDisk *)arg1 options:(NSArray *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;
+- (void)mountDisk:(SKDisk *)arg1 options:(NSDictionary *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;
 - (void)unmountDisk:(SKDisk *)arg1 options:(NSDictionary *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;
 - (void)unmountDisk:(SKDisk *)arg1 withCompletionBlock:(void (^)(NSError *))arg2;
 - (void)renameDisk:(SKDisk *)arg1 to:(NSString *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;

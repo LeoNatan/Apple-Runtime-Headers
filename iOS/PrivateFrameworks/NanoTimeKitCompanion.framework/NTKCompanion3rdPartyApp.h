@@ -21,9 +21,9 @@
 
 + (id)_urlsToGalleryBundleInApplicationWithContainerBundleId:(id)arg1;
 + (_Bool)_isValidComplicationsInformation:(id)arg1;
-+ (_Bool)_isValidApplicationInformation:(id)arg1;
++ (_Bool)_isValidApplication:(id)arg1;
 + (id)_URLOfFirstItemWithExtension:(id)arg1 inDirectory:(id)arg2;
-+ (id)companion3rdPartyAppWithInfo:(id)arg1 supportedComplicationFamilies:(id)arg2 device:(id)arg3;
++ (id)companion3rdPartyRemoteApp:(id)arg1 device:(id)arg2;
 @property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(retain, nonatomic) NSArray *supportedFamilies; // @synthesize supportedFamilies=_supportedFamilies;
 @property(retain, nonatomic) NRDevice *device; // @synthesize device=_device;
@@ -40,7 +40,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)_initWithWatchAppId:(id)arg1 containerAppId:(id)arg2 complicationClientId:(id)arg3;
-- (id)_initWithDevice:(id)arg1 applicationInfo:(id)arg2 galleryBundles:(id)arg3 watchKitBundle:(id)arg4;
+- (id)_initWithDevice:(id)arg1 remoteApplication:(id)arg2 galleryBundles:(id)arg3 watchKitBundle:(id)arg4;
 
 @end
 

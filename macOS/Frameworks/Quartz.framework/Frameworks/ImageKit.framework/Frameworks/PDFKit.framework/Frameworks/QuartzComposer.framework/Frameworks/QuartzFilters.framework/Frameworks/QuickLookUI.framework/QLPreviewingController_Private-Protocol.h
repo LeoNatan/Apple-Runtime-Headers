@@ -12,5 +12,6 @@
 
 @optional
 - (void)preparePreviewOfSafariSearchableItemWithIdentifier:(NSString *)arg1 title:(NSString *)arg2 url:(NSURL *)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (BOOL)mustHandleDragAtLocation:(struct CGPoint)arg1;
 @end
 

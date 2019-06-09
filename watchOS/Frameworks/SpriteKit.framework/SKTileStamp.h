@@ -8,7 +8,6 @@
 
 #import <SpriteKit/NSSecureCoding-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface SKTileStamp : NSObject <NSSecureCoding>
 {
     unsigned int _columns;

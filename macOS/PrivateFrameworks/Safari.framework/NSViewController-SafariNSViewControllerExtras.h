@@ -8,5 +8,6 @@
 
 @interface NSViewController (SafariNSViewControllerExtras)
 - (id)safari_parentViewControllerOfType:(Class)arg1;
+- (void)safari_loadViewIfNeeded;
 @end
 

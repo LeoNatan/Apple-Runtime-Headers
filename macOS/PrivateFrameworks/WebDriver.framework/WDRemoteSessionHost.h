@@ -9,7 +9,7 @@
 #import <WebDriver/RWIDriverSession-Protocol.h>
 #import <WebDriver/WDSessionHost-Protocol.h>
 
-@class NSBundle, NSDictionary, NSString, NSTimer, RWIApplication, RWIDrivable, RWITarget, WDProtocolBackendProxy;
+@class NSBundle, NSDictionary, NSString, NSTimer, RWIApplication, RWIDrivable, RWITarget, SimDevice, WDProtocolBackendProxy;
 @protocol WDSessionHostDelegate;
 
 @interface WDRemoteSessionHost : NSObject <RWIDriverSession, WDSessionHost>
@@ -26,9 +26,13 @@
     RWIDrivable *_drivable;
     WDProtocolBackendProxy *_backendProxy;
     RWITarget *_hostTarget;
+    SimDevice *_hostSimulator;
 }
 
++ (id)hostForDevice:(id)arg1;
++ (id)hostForSimulator:(id)arg1;
 + (id)hostForMachine:(id)arg1;
+@property(readonly, nonatomic) SimDevice *hostSimulator; // @synthesize hostSimulator=_hostSimulator;
 @property(readonly, nonatomic) RWITarget *hostTarget; // @synthesize hostTarget=_hostTarget;
 - (void).cxx_destruct;
 - (void)_bootstrapFailedWithError:(id)arg1;
@@ -40,15 +44,16 @@
 - (void)drivableDidChange:(id)arg1;
 - (void)application:(id)arg1 didRemoveDrivable:(id)arg2;
 - (void)application:(id)arg1 didAddDrivable:(id)arg2;
-- (void)applicationCapabilitiesChanged:(id)arg1;
 - (void)didRemoveApplication:(id)arg1;
 - (void)didAddApplication:(id)arg1;
-- (void)_checkIfHostApplicationIsReady;
-- (void)_processCandidateApplication:(id)arg1;
+- (void)_waitForApplicationToBecomeUsable:(id)arg1;
+- (BOOL)_bootstrapWithApplicationIfMatching:(id)arg1;
 - (void)_waitForApplicationWithIdentifier:(id)arg1;
+- (void)_bootSimulatorIfNeeded;
 - (void)_transitionStateTo:(long long)arg1;
 - (void)_clearBootstrapTimeout;
 - (void)_startBootstrapTimeoutForAsyncOperation:(id)arg1;
+- (void)findOrLaunchSuitableRemoteApplication;
 - (id)_preferredLocalSafariApplications;
 - (void)findOrLaunchLocalApplication:(id)arg1;
 - (void)findOrLaunchSuitableLocalApplication;
@@ -63,9 +68,10 @@
 @property(readonly, copy, nonatomic) NSString *sessionIdentifier;
 @property(readonly, copy, nonatomic) NSString *hostVersion;
 @property(readonly, copy, nonatomic) NSString *hostName;
+@property(readonly, nonatomic) BOOL supportsFileUploadForLocalPaths;
 @property(readonly, nonatomic) long long hostType;
 @property(nonatomic) __weak id <WDSessionHostDelegate> delegate;
-- (id)initWithType:(long long)arg1 target:(id)arg2;
+- (id)initWithType:(long long)arg1 target:(id)arg2 simulator:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

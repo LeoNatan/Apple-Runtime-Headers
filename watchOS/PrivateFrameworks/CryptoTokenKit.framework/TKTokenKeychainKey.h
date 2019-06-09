@@ -31,9 +31,10 @@
 @property(copy) NSData *applicationTag; // @synthesize applicationTag=_applicationTag;
 @property(copy) NSString *keyType; // @synthesize keyType=_keyType;
 - (void).cxx_destruct;
-- (_Bool)satisfiesKeyUsage:(unsigned long)arg1;
-@property(readonly) unsigned long keyUsage;
+- (_Bool)satisfiesKeyUsage:(unsigned int)arg1;
+@property(readonly) unsigned int keyUsage;
 - (void)createConstraints:(unsigned char)arg1;
+- (id)initWithItemInfo:(id)arg1;
 - (id)keychainAttributes;
 - (id)initWithCertificate:(struct __SecCertificate *)arg1 objectID:(id)arg2;
 

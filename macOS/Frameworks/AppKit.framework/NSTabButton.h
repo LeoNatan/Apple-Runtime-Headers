@@ -9,7 +9,7 @@
 #import <AppKit/NSRolloverButtonDelegate-Protocol.h>
 #import <AppKit/_NSVibrancyTransitioningImageViewDelegate-Protocol.h>
 
-@class CALayer, NSArray, NSAttributedString, NSImage, NSLayoutConstraint, NSMutableArray, NSRolloverButton, NSStackView, NSString, NSTabBarItem, NSTextField, NSView, NSVisualEffectView, _NSKeyLoopSplicingContainerView, _NSTabButtonAccessibilityHelper, _NSVibrancyTransitioningImageView;
+@class CALayer, NSArray, NSAttributedString, NSImage, NSImageView, NSLayoutConstraint, NSMutableArray, NSRolloverButton, NSStackView, NSString, NSTabBarItem, NSTextField, NSView, NSVisualEffectView, _NSVibrancyTransitioningImageView;
 @protocol NSTabButtonDelegate;
 
 __attribute__((visibility("hidden")))
@@ -20,17 +20,16 @@ __attribute__((visibility("hidden")))
     NSArray *_accessoryViewConstraints;
     NSStackView *_titleContainerView;
     NSTextField *_titleTextField;
-    NSView *_focusRingView;
     NSRolloverButton *_closeButton;
-    _NSTabButtonAccessibilityHelper *_accessibilityHelper;
+    NSImageView *_imageView;
     NSView *_pinnedTabFaviconContainerView;
     NSVisualEffectView *_pinnedTabFaviconFullscreenVisualEffectView;
     NSView *_pinnedTabFaviconFullscreenBackgroundView;
     CALayer *_pinnedTabFaviconFullscreenBackgroundHighlightLayer;
     _NSVibrancyTransitioningImageView *_pinnedTabFaviconView;
-    NSView *_mainContentContainer;
+    NSStackView *_mainContentContainer;
     NSView *_mainContentClippingContainer;
-    _NSKeyLoopSplicingContainerView *_accessoryViewsContainer;
+    NSStackView *_accessoryViewsContainer;
     NSLayoutConstraint *_mainContentContainerWidthConstraint;
     NSLayoutConstraint *_mainContentContainerLeftConstraint;
     NSLayoutConstraint *_mainContentContainerRightConstraint;
@@ -41,37 +40,44 @@ __attribute__((visibility("hidden")))
     NSAttributedString *_attributedTitle;
     id <NSTabButtonDelegate> _delegate;
     double _buttonWidthForTitleLayout;
-    unsigned long long _alignment;
+    long long _alignment;
     double _mainContentContainerCenterOffset;
     double _titleTextFieldCenterOffset;
     BOOL _pinned;
     NSImage *_image;
-    NSImage *_alternateImage;
     BOOL _canShowCloseButton;
     BOOL _showingCloseButton;
     BOOL _isDealloced;
+    BOOL _showIcon;
 }
 
 + (id)_titleFont;
 @property(nonatomic, getter=isShowingCloseButton) BOOL showingCloseButton; // @synthesize showingCloseButton=_showingCloseButton;
-@property(retain, nonatomic) NSImage *alternateImage; // @synthesize alternateImage=_alternateImage;
+@property(nonatomic) BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(nonatomic, getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
 @property(readonly) NSTabBarItem *tabBarViewItem; // @synthesize tabBarViewItem=_tabBarViewItem;
 @property(copy, nonatomic) NSArray *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
-@property(readonly, nonatomic) id accessibilityHelper; // @synthesize accessibilityHelper=_accessibilityHelper;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <NSTabButtonDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSTextField *test_titleTextField;
 @property(readonly, nonatomic) NSRolloverButton *test_closeButton;
+- (void)_updateAccessibilityChildren;
+- (void)_updateAccessibilityProperties;
+- (id)accessibilityValue;
+- (id)accessibilityLabel;
 - (BOOL)accessibilityPerformPress;
 - (BOOL)accessibilityPerformShowMenu;
 - (void)rolloverButtonDidResignFirstResponder:(id)arg1;
 - (void)rolloverButtonDidBecomeFirstResponder:(id)arg1;
-- (BOOL)resignFirstResponder;
+- (void)performClick:(id)arg1;
+- (struct CGRect)focusRingMaskBounds;
+- (void)drawFocusRingMask;
 - (BOOL)becomeFirstResponder;
+- (BOOL)needsPanelToBecomeKey;
+- (BOOL)acceptsFirstResponder;
 - (void)updateLayer;
 - (void)springLoadingExited:(id)arg1;
 - (void)springLoadingActivated:(BOOL)arg1 draggingInfo:(id)arg2;
@@ -97,13 +103,15 @@ __attribute__((visibility("hidden")))
 - (id)tabImageOfSize:(struct CGSize)arg1;
 - (long long)vibrancyTransitionForVibrancyTransitioningImageView:(id)arg1 transitioningFromVibrant:(BOOL)arg2 toVibrant:(BOOL)arg3;
 - (id)_titleStringAttributesForMainWindow:(BOOL)arg1 activeTab:(BOOL)arg2 isDragging:(BOOL)arg3;
+- (id)_attributedStringColorMapForMainWindow:(BOOL)arg1 activeTab:(BOOL)arg2 isDragging:(BOOL)arg3;
 - (void)_updateTitleTextFieldAndAccessibilityProperties;
 - (void)setHasPressedHighlight:(BOOL)arg1;
 - (void)setHasMouseOverHighlight:(BOOL)arg1 shouldAnimateCloseButton:(BOOL)arg2;
 @property(nonatomic) BOOL canShowCloseButton;
 - (void)_closeButtonClicked:(id)arg1;
 - (BOOL)_shouldShowCloseButton;
-- (void)_updatePinnedTabImageViewAnimated:(BOOL)arg1;
+- (BOOL)_shouldShowIconView;
+- (void)updateImageVisibility;
 - (void)_reconfigureFullscreenViewsUsingVisualEffectViews:(BOOL)arg1;
 - (void)_removeWebsiteIconVisualEffectViewForFullScreenToolbarWindow;
 - (void)_addWebsiteIconVisualEffectViewForFullScreenToolbarWindow;
@@ -113,14 +121,10 @@ __attribute__((visibility("hidden")))
 - (void)_setUpConstraints;
 - (void)_updateTitleContainerConstraints;
 - (void)setActive:(BOOL)arg1;
-- (void)setTitleTextFieldCenterOffset:(double)arg1 animated:(BOOL)arg2;
 @property(nonatomic) double titleTextFieldCenterOffset; // @dynamic titleTextFieldCenterOffset;
 @property(nonatomic) double mainContentContainerCenterOffset; // @dynamic mainContentContainerCenterOffset;
-- (void)setMainContentContainerCenterOffset:(double)arg1 animated:(BOOL)arg2;
-@property(nonatomic) unsigned long long alignment; // @dynamic alignment;
+@property(nonatomic) long long alignment; // @dynamic alignment;
 @property(nonatomic) double buttonWidthForTitleLayout; // @dynamic buttonWidthForTitleLayout;
-- (void)setButtonWidthForTitleLayout:(double)arg1 animated:(BOOL)arg2;
-- (void)_updateAccessoryViews;
 - (void)dealloc;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)menuForEvent:(id)arg1;

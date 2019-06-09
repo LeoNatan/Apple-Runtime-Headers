@@ -8,5 +8,6 @@
 
 @interface SFCardSection (SearchUIViewClass)
 - (Class)_searchUIViewClass;
+- (Class)_searchUIHorizontallyScrollingButtonControllerClass;
 @end
 

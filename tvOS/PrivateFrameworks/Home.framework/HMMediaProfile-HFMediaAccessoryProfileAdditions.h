@@ -8,15 +8,13 @@
 
 #import <Home/HFMediaProfileContainer-Protocol.h>
 
-@class HFAccessorySettingAdapterManager, HFMediaProfileContainerSettingsValueManager, HFServiceNameComponents, HMAccessory, HMAccessorySettings, HMHome, HMMediaSession, HMRoom, HMSymptomsHandler, NSDate, NSSet, NSString, NSUUID;
+@class HFHomeKitSettingsAdapterManager, HFHomeKitSettingsValueManager, HFServiceNameComponents, HMAccessory, HMAccessorySettings, HMHome, HMMediaSession, HMRoom, HMSymptomsHandler, NSDate, NSSet, NSString, NSUUID;
 @protocol HFHomeKitObject, HFMediaValueSource, HMMediaObjectDelegate;
 
 @interface HMMediaProfile (HFMediaAccessoryProfileAdditions) <HFMediaProfileContainer>
 - (id)hf_updateDateAdded:(id)arg1;
 @property(readonly, copy, nonatomic) NSDate *hf_dateAdded;
 @property(readonly, nonatomic) HFServiceNameComponents *hf_serviceNameComponents;
-@property(readonly, nonatomic) NSString *hf_editingName;
-@property(readonly, nonatomic) NSString *hf_defaultName;
 @property(readonly, copy, nonatomic) NSString *hf_displayName;
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_updateIsFavorite:(_Bool)arg1;
@@ -26,15 +24,19 @@
 - (id)hf_fetchLog:(id)arg1 timeout:(double)arg2;
 - (id)hf_fetchLogListWithTimeout:(double)arg1;
 - (id)hf_idsDeviceIdentifierWithError:(id *)arg1;
-@property(readonly, nonatomic) HFMediaProfileContainerSettingsValueManager *hf_settingsValueManager;
+@property(readonly, nonatomic) HFHomeKitSettingsValueManager *hf_settingsValueManager;
 - (id)hf_appleMusicCurrentLoggedInAccountDSID;
 - (id)hf_appleMusicCurrentLoggedInAccount;
 @property(readonly, nonatomic) unsigned long long numberOfItemsContainedWithinGroup;
 @property(readonly, nonatomic) _Bool isContainedWithinItemGroup;
 @property(readonly, nonatomic) _Bool isItemGroup;
+@property(readonly, nonatomic) _Bool hasValidSettings;
+@property(readonly, copy, nonatomic) NSString *hf_mediaRouteIdentifier;
+@property(readonly, copy, nonatomic) NSSet *hf_deviceIdentifiers;
 @property(readonly, nonatomic) HMAccessory *hf_backingAccessory;
-@property(readonly, nonatomic) NSSet *hf_dependentHomeKitObjects;
-@property(readonly, nonatomic) HFAccessorySettingAdapterManager *hf_settingsAdapterManager;
+@property(readonly, nonatomic) NSSet *hf_dependentHomeKitObjectsForDownstreamItems;
+@property(readonly, copy, nonatomic) NSString *hf_categoryLocalizedDescription;
+@property(readonly, nonatomic) HFHomeKitSettingsAdapterManager *hf_settingsAdapterManager;
 @property(readonly, nonatomic) id <HFMediaValueSource> hf_mediaValueSource;
 @property(readonly, nonatomic) _Bool hf_isAccessorySettingsReachable;
 @property(readonly, nonatomic) _Bool hf_isAppleMusicReachable;

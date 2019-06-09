@@ -19,11 +19,13 @@
 - (id)_volumeCurveAsString;
 - (id)_audioVolumeCurve;
 - (void)_setScheduledAudioParameters:(id)arg1;
+- (_Bool)getVolumeRampForTime:(CDStruct_1b6d18a9)arg1 startVolume:(float *)arg2 endVolume:(float *)arg3 timeRange:(CDStruct_e83c9415 *)arg4 rampMode:(long long *)arg5;
 - (_Bool)getVolumeRampForTime:(CDStruct_1b6d18a9)arg1 startVolume:(float *)arg2 endVolume:(float *)arg3 timeRange:(CDStruct_e83c9415 *)arg4;
 - (void)setVolume:(float)arg1 atTime:(CDStruct_1b6d18a9)arg2;
+- (void)setVolumeRampFromStartVolume:(float)arg1 toEndVolume:(float)arg2 timeRange:(CDStruct_e83c9415)arg3 rampMode:(long long)arg4;
 - (void)setVolumeRampFromStartVolume:(float)arg1 toEndVolume:(float)arg2 timeRange:(CDStruct_e83c9415)arg3;
 - (void)_setVolume:(float)arg1 atTime:(CDStruct_1b6d18a9)arg2;
-- (void)_setVolumeRampFromStartVolume:(float)arg1 toEndVolume:(float)arg2 timeRange:(CDStruct_e83c9415)arg3;
+- (void)_setVolumeRampFromStartVolume:(float)arg1 toEndVolume:(float)arg2 timeRange:(CDStruct_e83c9415)arg3 rampMode:(long long)arg4;
 - (void)setEffectParameters:(id)arg1;
 - (id)effectParameters;
 - (void)setAudioTapProcessor:(struct opaqueMTAudioProcessingTap *)arg1;
@@ -37,7 +39,6 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

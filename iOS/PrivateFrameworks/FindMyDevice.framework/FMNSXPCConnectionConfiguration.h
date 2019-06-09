@@ -19,10 +19,12 @@
     unsigned long long _options;
 }
 
++ (id)eraseDeviceServiceConfiguration;
 + (id)helperConfiguration;
 + (id)fmipConfiguration;
 + (id)btDiscoveryConfiguration;
 + (id)userNotificationConfiguration;
++ (id)emergencyCallInfoPublisherConfiguration;
 + (id)identityConfiguration;
 @property(nonatomic) _Bool machService; // @synthesize machService=_machService;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUExtensionHostContext.h>
+#import <Foundation/NSExtensionContext.h>
 
 #import <PhotosUI/PUProjectExtensionHost-Protocol.h>
 
 @protocol PUProjectExtensionHostContextDelegate;
 
-@interface PUProjectExtensionHostContext : PUExtensionHostContext <PUProjectExtensionHost>
+@interface PUProjectExtensionHostContext : NSExtensionContext <PUProjectExtensionHost>
 {
     id <PUProjectExtensionHostContextDelegate> _projectHostContextDelegate;
 }

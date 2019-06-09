@@ -10,7 +10,9 @@
 @protocol MTLCommandQueue, MTLDevice, MTLRenderCommandEncoder, SCNSceneRendererDelegate;
 
 @protocol SCNSceneRenderer <NSObject>
+@property(nonatomic) BOOL usesReverseZ;
 @property(nonatomic) double currentTime;
+@property(readonly, nonatomic) struct CGRect currentViewport;
 @property(retain, nonatomic) SCNNode *audioListener;
 @property(readonly, nonatomic) AVAudioEnvironmentNode *audioEnvironmentNode;
 @property(readonly, nonatomic) AVAudioEngine *audioEngine;
@@ -25,12 +27,13 @@
 @property(retain, nonatomic) SKScene *overlaySKScene;
 @property(nonatomic) unsigned long long debugOptions;
 @property(nonatomic) BOOL showsStatistics;
+@property(nonatomic, getter=isTemporalAntialiasingEnabled) BOOL temporalAntialiasingEnabled;
 @property(nonatomic, getter=isJitteringEnabled) BOOL jitteringEnabled;
 @property(nonatomic) BOOL autoenablesDefaultLighting;
 @property(retain, nonatomic) SCNNode *pointOfView;
 @property(nonatomic) BOOL loops;
 @property(getter=isPlaying) BOOL playing;
-@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 @property(nonatomic) double sceneTime;
 @property(retain, nonatomic) SCNScene *scene;
 - (void)prepareObjects:(NSArray *)arg1 withCompletionHandler:(void (^)(BOOL))arg2;

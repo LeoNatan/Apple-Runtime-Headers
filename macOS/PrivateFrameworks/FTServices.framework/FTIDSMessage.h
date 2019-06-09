@@ -13,11 +13,11 @@
 @interface FTIDSMessage : IDSBaseMessage <NSCopying>
 {
     NSData *_pushCert;
-    struct OpaqueSecKeyRef *_identityKey;
+    struct __SecKey *_identityKey;
     NSData *_identityCert;
-    struct OpaqueSecKeyRef *_identityPublicKey;
-    struct OpaqueSecKeyRef *_pushKey;
-    struct OpaqueSecKeyRef *_pushPublicKey;
+    struct __SecKey *_identityPublicKey;
+    struct __SecKey *_pushKey;
+    struct __SecKey *_pushPublicKey;
     NSData *_pushToken;
     NSString *_selfURI;
     NSMutableArray *_certDataArray;
@@ -38,11 +38,11 @@
 @property(copy, nonatomic) NSMutableArray *certDataArray; // @synthesize certDataArray=_certDataArray;
 @property(copy, nonatomic) NSString *selfURI; // @synthesize selfURI=_selfURI;
 @property(copy, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
-@property(nonatomic) struct OpaqueSecKeyRef *pushPublicKey; // @synthesize pushPublicKey=_pushPublicKey;
-@property(nonatomic) struct OpaqueSecKeyRef *pushPrivateKey; // @synthesize pushPrivateKey=_pushKey;
-@property(nonatomic) struct OpaqueSecKeyRef *identityPublicKey; // @synthesize identityPublicKey=_identityPublicKey;
+@property(nonatomic) struct __SecKey *pushPublicKey; // @synthesize pushPublicKey=_pushPublicKey;
+@property(nonatomic) struct __SecKey *pushPrivateKey; // @synthesize pushPrivateKey=_pushKey;
+@property(nonatomic) struct __SecKey *identityPublicKey; // @synthesize identityPublicKey=_identityPublicKey;
 @property(copy, nonatomic) NSData *IDCertificate; // @synthesize IDCertificate=_identityCert;
-@property(nonatomic) struct OpaqueSecKeyRef *identityPrivateKey; // @synthesize identityPrivateKey=_identityKey;
+@property(nonatomic) struct __SecKey *identityPrivateKey; // @synthesize identityPrivateKey=_identityKey;
 @property(copy, nonatomic) NSData *pushCertificate; // @synthesize pushCertificate=_pushCert;
 - (void).cxx_destruct;
 - (id)additionalMessageHeadersForOutgoingPush;
@@ -58,7 +58,7 @@
 - (BOOL)wantsCompressedBody;
 - (BOOL)wantsHTTPHeaders;
 - (BOOL)wantsBagKey;
-- (void)addAuthUserID:(id)arg1 certificate:(id)arg2 privateKey:(struct OpaqueSecKeyRef *)arg3 publicKey:(struct OpaqueSecKeyRef *)arg4;
+- (void)addAuthUserID:(id)arg1 certificate:(id)arg2 privateKey:(struct __SecKey *)arg3 publicKey:(struct __SecKey *)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)init;

@@ -7,6 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 @interface UIViewController (PKUIUtilities)
+- (void)pkui_setNeedsNavigationBarUpdate;
+- (_Bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
 - (id)pkui_frontMostViewController;
+- (void)pk_paymentSetupPreflight:(CDUnknownBlockType)arg1;
+- (void)pk_paymentSetupSetHideSetupLaterButton:(_Bool)arg1;
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 @end
 

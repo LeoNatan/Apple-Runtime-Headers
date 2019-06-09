@@ -6,23 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class HDDaemon, NSMapTable, NSMutableDictionary;
-@protocol OS_dispatch_queue;
+@class HDDaemon, NSMapTable, NSMutableDictionary, NSMutableSet;
 
 @interface HDTaskServerRegistry : NSObject
 {
     NSMutableDictionary *_taskServerClassesByTaskIdentifier;
     NSMapTable *_taskServersByUUID;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet *_loadedPluginURLs;
+    struct os_unfair_lock_s _lock;
     HDDaemon *_daemon;
 }
 
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;
-- (id)createTaskServerEndpointForIdentifier:(id)arg1 taskUUID:(id)arg2 configuration:(id)arg3 client:(id)arg4 profile:(id)arg5 delegate:(id)arg6 error:(id *)arg7;
+- (id)createTaskServerEndpointForIdentifier:(id)arg1 taskUUID:(id)arg2 configuration:(id)arg3 client:(id)arg4 connectionQueue:(id)arg5 delegate:(id)arg6 error:(id *)arg7;
 - (void)didCreateTaskServer:(id)arg1;
 - (id)taskServerForTaskUUID:(id)arg1;
-- (_Bool)_queue_registerTaskServerClass:(Class)arg1 error:(id *)arg2;
+- (_Bool)_lock_registerTaskServerClass:(Class)arg1 error:(id *)arg2;
+- (_Bool)_lock_loadTaskServersFromPluginAtURL:(id)arg1 error:(id *)arg2;
+- (_Bool)loadTaskServersFromPluginAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)registerTaskServerClasses:(id)arg1 error:(id *)arg2;
 - (_Bool)registerTaskServerClass:(Class)arg1 error:(id *)arg2;
 - (_Bool)registerTaskServerClassesWithProvider:(id)arg1 error:(id *)arg2;

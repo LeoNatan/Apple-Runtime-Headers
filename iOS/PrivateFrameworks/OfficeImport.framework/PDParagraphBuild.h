@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     int mType;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)setType:(int)arg1;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (id)addTimeNodeData;
 - (id)timeNodeDataAtIndex:(unsigned long long)arg1;
 - (unsigned long long)timeNodeDataListCount;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -17,6 +17,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)_onQueueBannersForBundleIdentifier:(id)arg1 target:(id)arg2 error:(id *)arg3;
+- (_Bool)removeBannersForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)removeAllBannersWithResult:(id *)arg1;
 - (id)bannersForBundleIdentifier:(id)arg1 target:(id)arg2 error:(id *)arg3;
 - (id)allBannersWithResult:(id *)arg1;

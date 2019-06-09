@@ -13,11 +13,12 @@
     NSString *_backupFilename;
 }
 
++ (id)os_log;
+- (void).cxx_destruct;
 @property(readonly) NSArray *files;
 @property(readonly) NSString *backupFilename;
 @property(readonly) NSString *workingDirectory;
 - (void)main;
-- (void)dealloc;
 
 @end
 

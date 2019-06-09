@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 - (BOOL)_providesConcreteBacking;
 - (id)_createDispatchData;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithBytes:(const void *)arg1 length:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)_isCompact;

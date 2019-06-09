@@ -8,7 +8,7 @@
 
 #import <AWDSupportFramework/NSCopying-Protocol.h>
 
-@class AWDNWActivity;
+@class AWDNWActivity, AWDNWL2Report;
 
 @interface AWDNWActivityEpilogue : PBCodable <NSCopying>
 {
@@ -17,6 +17,7 @@
     unsigned long long _timestamp;
     AWDNWActivity *_activity;
     int _completionReason;
+    AWDNWL2Report *_l2Report;
     struct {
         unsigned int durationMsecs:1;
         unsigned int fragmentsQuenched:1;
@@ -25,6 +26,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) AWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
 @property(nonatomic) unsigned long long fragmentsQuenched; // @synthesize fragmentsQuenched=_fragmentsQuenched;
 @property(nonatomic) unsigned long long durationMsecs; // @synthesize durationMsecs=_durationMsecs;
 @property(retain, nonatomic) AWDNWActivity *activity; // @synthesize activity=_activity;
@@ -38,6 +40,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasL2Report;
 - (int)StringAsCompletionReason:(id)arg1;
 - (id)completionReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasCompletionReason;

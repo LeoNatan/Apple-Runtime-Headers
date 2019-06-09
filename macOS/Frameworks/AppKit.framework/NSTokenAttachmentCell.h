@@ -18,7 +18,9 @@
         unsigned int _style:4;
         unsigned int _useTintColor:1;
         unsigned int _needsSeparator:1;
-        unsigned int _reserved:22;
+        unsigned int _subclassOverridesTextAttributes:2;
+        unsigned int _cachedStyleExpectsToDrawToken;
+        unsigned int _reserved:19;
     } _tacFlags;
 }
 
@@ -48,9 +50,12 @@
 @property(readonly) BOOL neverShowSeparator;
 - (BOOL)shouldDrawSeparator;
 - (BOOL)_supportsSeparators;
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (long long)_interiorContentStateInView:(id)arg1;
+- (id)_effectiveContentStyleForImageInView:(id)arg1;
+- (id)_effectiveContentStyleForTextInView:(id)arg1;
 - (void)drawTokenWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (BOOL)_isActiveInView:(id)arg1;
+- (long long)_bezelPresentationStateInView:(id)arg1;
+- (long long)_contentBacking;
 - (BOOL)shouldDrawTokenBackground;
 @property(readonly) BOOL alwaysShowBackground;
 - (void)drawTokenInRect:(struct CGRect)arg1 withOptions:(id)arg2;
@@ -69,6 +74,7 @@
 - (void)setTextColor:(id)arg1;
 - (id)textColor;
 - (id)tokenTintColor;
+- (void)setHighlighted:(BOOL)arg1;
 - (id)tokenBackgroundColor;
 - (id)tokenForegroundColor;
 - (BOOL)_hasMenu;

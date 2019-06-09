@@ -15,9 +15,11 @@ __attribute__((visibility("hidden")))
     _Bool _scrubsLinearly;
     _Bool _userInteractionEnabled;
     _Bool _optimizationsEnabled;
+    _Bool _shouldLayoutSubviews;
     NSUUID *_uuid;
 }
 
+@property(nonatomic) _Bool shouldLayoutSubviews; // @synthesize shouldLayoutSubviews=_shouldLayoutSubviews;
 @property(nonatomic) _Bool optimizationsEnabled; // @synthesize optimizationsEnabled=_optimizationsEnabled;
 @property(nonatomic) _Bool userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(nonatomic) _Bool scrubsLinearly; // @synthesize scrubsLinearly=_scrubsLinearly;

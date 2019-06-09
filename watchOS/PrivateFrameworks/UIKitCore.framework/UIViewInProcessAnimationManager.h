@@ -43,8 +43,6 @@
     _Bool _screenIsOff;
     unsigned int _presentationModifierRequestCount;
     NSHashTable *_presentationGroups;
-    _Bool _performScheduledBlocksManually;
-    _Bool _commitsSynchronously;
     _Bool _usesMainThreadExecution;
     _Bool _advancingOnCommitDisabled;
     unsigned int _executionMode;
@@ -66,8 +64,6 @@
 @property(nonatomic) _Bool advancingOnCommitDisabled; // @synthesize advancingOnCommitDisabled=_advancingOnCommitDisabled;
 @property(nonatomic) unsigned int executionMode; // @synthesize executionMode=_executionMode;
 @property(nonatomic) _Bool usesMainThreadExecution; // @synthesize usesMainThreadExecution=_usesMainThreadExecution;
-@property(nonatomic) _Bool commitsSynchronously; // @synthesize commitsSynchronously=_commitsSynchronously;
-@property(nonatomic, setter=_setPerformScheduledBlocksManually:) _Bool performScheduledBlocksManually; // @synthesize performScheduledBlocksManually=_performScheduledBlocksManually;
 - (void).cxx_destruct;
 - (void)finishAdvancingAnimationManager;
 - (void)startAdvancingAnimationManager:(id)arg1;

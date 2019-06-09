@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)keyboardFocusedUIElementChangeDidCauseVOCursorSynchWithDeepKeyboardChild:(id)arg1 deepFocusedChild:(id)arg2 request:(id)arg3 shouldDisableElementTypeEchoForDeepKeyboardChild:(char *)arg4;
-- (unsigned long long)majorVersionNumberForiWorkApplicationVersion:(int)arg1;
+- (unsigned long long)majorVersionNumberForiWorkApplicationVersion:(long long)arg1;
 - (BOOL)isSageOrEarlieriWorkApplication;
 - (BOOL)isiWorkApplication;
 

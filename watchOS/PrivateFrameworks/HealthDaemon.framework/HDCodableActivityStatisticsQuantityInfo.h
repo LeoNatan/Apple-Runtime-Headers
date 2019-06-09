@@ -16,11 +16,7 @@
     double _startDate;
     double _value;
     NSString *_unit;
-    struct {
-        unsigned int endDate:1;
-        unsigned int startDate:1;
-        unsigned int value:1;
-    } _has;
+    CDStruct_2d5b04fb _has;
 }
 
 @property(nonatomic) double value; // @synthesize value=_value;

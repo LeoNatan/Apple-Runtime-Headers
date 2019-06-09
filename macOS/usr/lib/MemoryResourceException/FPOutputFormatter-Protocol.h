@@ -6,21 +6,21 @@
 
 #import <MemoryResourceException/NSObject-Protocol.h>
 
-@class FPProcess, NSArray, NSDictionary, NSNumber, NSSet;
+@class FPProcess, FPProcessGroup, NSArray, NSDictionary, NSNumber;
 
 @protocol FPOutputFormatter <NSObject>
 - (void)end;
 - (void)printGlobalAuxData:(struct NSDictionary *)arg1;
-- (void)printSummaryCategories:(NSDictionary *)arg1 sortedKeys:(NSArray *)arg2 total:(CDStruct_8346b022 *)arg3 hadErrors:(BOOL)arg4;
+- (void)printSummaryCategories:(NSDictionary *)arg1 total:(CDStruct_8346b022 *)arg2 hadErrors:(BOOL)arg3;
 - (void)printProcessesWithWarnings:(NSArray *)arg1 processesWithErrors:(NSArray *)arg2 globalErrors:(NSArray *)arg3;
 - (void)printProcessAuxData:(struct NSDictionary *)arg1;
-- (void)printProcessCategories:(NSDictionary *)arg1 sortedKeys:(NSArray *)arg2 total:(CDStruct_8346b022 *)arg3;
+- (void)printSharedCategories:(NSDictionary *)arg1 sharedWith:(FPProcessGroup *)arg2 forProcess:(FPProcess *)arg3 hasProcessView:(BOOL)arg4 total:(CDStruct_8346b022 *)arg5;
+- (void)printProcessCategories:(NSDictionary *)arg1 total:(CDStruct_8346b022 *)arg2;
 - (void)printProcessTotal:(NSNumber *)arg1 forProcess:(FPProcess *)arg2;
 - (void)endProcessHeader:(FPProcess *)arg1;
 - (void)printProcessHeader:(FPProcess *)arg1;
 
 @optional
-- (void)printSharedCategories:(NSDictionary *)arg1 sortedKeys:(NSArray *)arg2 sharedWith:(NSSet *)arg3 forProcess:(FPProcess *)arg4 total:(CDStruct_8346b022 *)arg5;
 - (void)printVmmapLikeOutputForProcess:(FPProcess *)arg1 regions:(NSArray *)arg2;
 @end
 

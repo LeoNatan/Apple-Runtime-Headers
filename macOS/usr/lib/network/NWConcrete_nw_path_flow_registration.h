@@ -27,6 +27,11 @@ __attribute__((visibility("hidden")))
     unsigned int registered:1;
     unsigned int partial_checksum_offload:1;
     unsigned int uses_nexus:1;
+    unsigned int override_is_expensive:1;
+    unsigned int override_is_constrained:1;
+    unsigned int override_uses_wifi:1;
+    unsigned int override_uses_cellular:1;
+    unsigned int override_reason:1;
 }
 
 - (void).cxx_destruct;

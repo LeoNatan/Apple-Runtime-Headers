@@ -8,6 +8,7 @@
 
 @interface NSSliderCell : NSActionCell
 {
+    struct CGRect _trackRect;
     id _sliderCellPrivateData;
     double _previousValue;
     double _knobOffset;
@@ -16,7 +17,6 @@
     double _value;
     double _maxValue;
     double _minValue;
-    struct CGRect _trackRect;
     struct __sliderCellFlags {
         unsigned int weAreVertical:1;
         unsigned int weAreVerticalSet:1;
@@ -59,20 +59,20 @@
 - (id)_currentCUICircularSliderDialOptions:(BOOL)arg1;
 - (id)_currentCUISliderKnobOptions:(BOOL)arg1;
 - (id)_currentCUISliderBarOptions:(BOOL)arg1;
-- (CDStruct_5a39c0a2)_currentDrawingState;
+- (CDStruct_c9beae75)_currentDrawingState;
 - (void)invalidateRect:(struct CGRect)arg1 forControlView:(id)arg2;
 - (BOOL)_noteTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 startEvent:(BOOL)arg4 endEvent:(BOOL)arg5;
-- (BOOL)_vetoMouseDragActionDispatch;
+- (BOOL)_shouldSendActionForEventType:(unsigned long long)arg1;
 - (void)_repeatTimerFired:(id)arg1;
 - (void)touchEndedAt:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)stopTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 mouseIsUp:(BOOL)arg4;
+- (BOOL)continueTrackingGesture:(id)arg1 inView:(id)arg2;
 - (BOOL)continueTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3;
 - (BOOL)startTrackingAt:(struct CGPoint)arg1 inView:(id)arg2;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (BOOL)_hasSnappingBehavior;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (int)_vibrancyBlendModeForControlView:(id)arg1;
-- (void)_drawLiveResizeHighlightWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_needRedrawOnWindowChangedKeyState;
 - (void)_drawValueImage:(id)arg1 inRect:(struct CGRect)arg2;
 - (void)_drawMaxValueImage;

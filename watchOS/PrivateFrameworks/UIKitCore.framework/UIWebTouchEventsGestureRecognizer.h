@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIGestureRecognizer.h>
 
-@class NSMutableArray;
+@class NSMapTable, NSMutableArray;
 @protocol UIWebTouchEventsGestureRecognizerDelegate;
 
 @interface UIWebTouchEventsGestureRecognizer : UIGestureRecognizer
@@ -21,10 +21,12 @@
     float _originalGestureDistance;
     float _originalGestureAngle;
     struct _UIWebTouchEvent _lastTouchEvent;
+    NSMapTable *_activeTouchesByIdentifier;
 }
 
 + (_Bool)_shouldDefaultToTouches;
 + (void)initialize;
+@property(readonly, nonatomic) NSMapTable *activeTouchesByIdentifier; // @synthesize activeTouchesByIdentifier=_activeTouchesByIdentifier;
 @property(readonly, nonatomic, getter=isDispatchingTouchEvents) _Bool dispatchingTouchEvents; // @synthesize dispatchingTouchEvents=_dispatchingTouchEvents;
 @property(nonatomic, getter=isDefaultPrevented) _Bool defaultPrevented; // @synthesize defaultPrevented=_defaultPrevented;
 - (void).cxx_destruct;
@@ -42,10 +44,13 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;
+- (void)_resetGestureRecognizer;
 - (void)_processTouches:(id)arg1 withEvent:(id)arg2 type:(int)arg3;
+- (void)performAction;
 - (void)_recordTouches:(id)arg1 type:(int)arg2;
 - (void)_updateTapStateWithTouches:(id)arg1 type:(int)arg2;
 - (void)_updateTapStateWithTouches:(id)arg1;
+- (void)cancel;
 - (void)reset;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 touchDelegate:(id)arg3;

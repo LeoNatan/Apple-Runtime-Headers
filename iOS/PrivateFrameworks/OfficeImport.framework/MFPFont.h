@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *mName;
 }
 
+- (void).cxx_destruct;
 - (struct __CTFont *)createCTFontWithGraphics:(id)arg1;
 - (void)setName:(id)arg1;
 - (id)name;
@@ -26,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (int)unit;
 - (void)setSize:(float)arg1;
 - (float)size;
-- (void)dealloc;
 
 @end
 

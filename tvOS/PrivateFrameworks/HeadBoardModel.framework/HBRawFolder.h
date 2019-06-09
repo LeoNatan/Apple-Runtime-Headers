@@ -19,8 +19,12 @@
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-@property(readonly, copy, nonatomic) NSArray *allFolders;
-@property(readonly, copy, nonatomic) NSArray *allApplications;
+- (void)_removeDuplicateApplicationsWithVisitedBundleIdentifiers:(id)arg1;
+- (void)enumerateRecursiveApplicationsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)removeDuplicateApplications;
+@property(readonly, nonatomic) NSArray *allFolders;
+@property(readonly, nonatomic) NSArray *allApplications;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 
 @end

@@ -17,16 +17,14 @@
     unsigned int _serverSearchCompletionSectionIndex;
     int _type;
     struct {
-        unsigned int serverSearchCompletionEntryIndex:1;
-        unsigned int serverSearchCompletionSectionIndex:1;
-        unsigned int type:1;
-    } _has;
+        unsigned int has_serverSearchCompletionEntryIndex:1;
+        unsigned int has_serverSearchCompletionSectionIndex:1;
+        unsigned int has_type:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)displayLineType;
-@property(nonatomic) unsigned int serverSearchCompletionEntryIndex; // @synthesize serverSearchCompletionEntryIndex=_serverSearchCompletionEntryIndex;
-@property(nonatomic) unsigned int serverSearchCompletionSectionIndex; // @synthesize serverSearchCompletionSectionIndex=_serverSearchCompletionSectionIndex;
-@property(retain, nonatomic) NSMutableArray *displayLines; // @synthesize displayLines=_displayLines;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,18 +33,22 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasServerSearchCompletionEntryIndex;
+@property(nonatomic) unsigned int serverSearchCompletionEntryIndex;
 @property(nonatomic) _Bool hasServerSearchCompletionSectionIndex;
+@property(nonatomic) unsigned int serverSearchCompletionSectionIndex;
 - (id)displayLineAtIndex:(unsigned long long)arg1;
 - (unsigned long long)displayLinesCount;
 - (void)addDisplayLine:(id)arg1;
 - (void)clearDisplayLines;
+@property(retain, nonatomic) NSMutableArray *displayLines;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
 
 @end
 

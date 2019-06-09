@@ -9,6 +9,7 @@
 #import <OfficeImport/NSCopying-Protocol.h>
 #import <OfficeImport/NSMutableCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUFormatObject : NSObject <NSCopying, NSMutableCopying>
 {
     CDStruct_730f14de mFormatStruct;

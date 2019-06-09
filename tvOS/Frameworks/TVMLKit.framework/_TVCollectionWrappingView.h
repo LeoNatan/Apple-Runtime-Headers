@@ -20,15 +20,16 @@ __attribute__((visibility("hidden")))
     struct {
         _Bool respondsToAugmentedSelectionFrameForFrame;
     } _collectionViewFlags;
+    _Bool _centered;
     _Bool _headerCanBecomeFocused;
     _Bool _headerAuxiliarySelecting;
     _Bool _headerFloating;
     _Bool _headerHidden;
     _Bool _headerFocused;
     _TVCollectionView *_collectionView;
-    double _collectionCenteredPadding;
     double _headerSelectionMargin;
     long long _collectionGradientMask;
+    struct TVShowcaseConfig _showcaseConfig;
 }
 
 + (void)gradientConfigForCollection:(id)arg1 gradientMask:(long long)arg2 gradientLengths:(struct UIEdgeInsets *)arg3 gradientInset:(struct UIEdgeInsets *)arg4 gradientBoundsInset:(struct UIEdgeInsets *)arg5;
@@ -37,14 +38,17 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isHeaderHidden) _Bool headerHidden; // @synthesize headerHidden=_headerHidden;
 @property(nonatomic, getter=isHeaderFloating) _Bool headerFloating; // @synthesize headerFloating=_headerFloating;
 @property(nonatomic, getter=isHeaderAuxiliarySelecting) _Bool headerAuxiliarySelecting; // @synthesize headerAuxiliarySelecting=_headerAuxiliarySelecting;
+@property(nonatomic) struct TVShowcaseConfig showcaseConfig; // @synthesize showcaseConfig=_showcaseConfig;
 @property(nonatomic) double headerSelectionMargin; // @synthesize headerSelectionMargin=_headerSelectionMargin;
 @property(nonatomic) _Bool headerCanBecomeFocused; // @synthesize headerCanBecomeFocused=_headerCanBecomeFocused;
-@property(nonatomic) double collectionCenteredPadding; // @synthesize collectionCenteredPadding=_collectionCenteredPadding;
+@property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(retain, nonatomic) _TVCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
 - (void)_updateSubviews;
 - (id)_currentHeaderView;
+- (double)_showcaseContentScaleForExpectedWidth:(double)arg1;
+- (double)_adjustedShowcaseFactor;
 - (struct UIEdgeInsets)_adjustedPadding;
 - (struct CGRect)_adjustedHeaderFrame;
 - (id)_collectionRowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2 forShowcase:(_Bool)arg3;

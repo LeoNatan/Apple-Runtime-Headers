@@ -7,7 +7,7 @@
 #import <CoreUI/CUINamedLayerStack.h>
 
 @interface CUINamedLayerStack (UIKitAdditions)
-- (id)traitCollection;
-- (id)flattenedUIImage;
+- (id)configuration;
+- (id)flattenedUIImageWithAsset:(id)arg1 configuration:(id)arg2;
 @end
 

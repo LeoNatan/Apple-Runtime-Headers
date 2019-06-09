@@ -6,31 +6,33 @@
 
 #import <UIKit/UIView.h>
 
-#import <UserNotificationsUIKit/MTVibrantStylingRequiring-Protocol.h>
+#import <UserNotificationsUIKit/MTVisualStylingRequiring-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
-@class MTVibrantStylingProvider, NSString, UILabel;
+@class MTVisualStylingProvider, NSArray, NSString, UILabel;
 
-@interface NCPreviewInteractionPresentedContentView : UIView <MTVibrantStylingRequiring, PLContentSizeCategoryAdjusting>
+@interface NCPreviewInteractionPresentedContentView : UIView <MTVisualStylingRequiring, PLContentSizeCategoryAdjusting>
 {
     UILabel *_titleLabel;
     struct CGSize _cachedSizeThatFits;
+    MTVisualStylingProvider *_visualStylingProvider;
     _Bool _adjustsFontForContentSizeCategory;
-    MTVibrantStylingProvider *_vibrantStylingProvider;
     NSString *_preferredContentSizeCategory;
 }
 
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-@property(retain, nonatomic) MTVibrantStylingProvider *vibrantStylingProvider; // @synthesize vibrantStylingProvider=_vibrantStylingProvider;
 - (void).cxx_destruct;
 - (void)_reduceTransparencyStatusDidChange:(id)arg1;
 - (void)_darkerSystemColorsStatusDidChange:(id)arg1;
 - (void)_configureTitleLabelIfNecessaryWithTitle:(id)arg1;
 - (void)_updateTitleLabelAnchorPointAndPosition;
 - (void)_updateTitleLabelTextAttributes;
-- (void)_updateTitleLabelVibrantStyling;
+- (void)_updateTitleLabelVisualStyling;
 - (_Bool)adjustForContentSizeCategoryChange;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+@property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
+- (id)visualStylingProviderForCategory:(long long)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)didMoveToSuperview;
@@ -42,6 +44,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

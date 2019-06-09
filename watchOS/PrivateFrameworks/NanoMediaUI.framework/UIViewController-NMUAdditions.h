@@ -8,5 +8,10 @@
 
 @interface UIViewController (NMUAdditions)
 - (id)nmu_userActivityContext;
+- (id)nmu_actionContentController;
+- (void)_presentAgeVerificationRequiredAlert;
+- (void)_insertPlaybackIntent:(id)arg1 intoPlaybackQueueAtInsertionPosition:(unsigned int)arg2 forOrigin:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_pushNowPlayingViewControllerPreparingPlaybackOfIntent:(id)arg1 forOrigin:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_pushNowPlayingViewControllerStartingPlaybackOfIntent:(id)arg1 forOrigin:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @end
 

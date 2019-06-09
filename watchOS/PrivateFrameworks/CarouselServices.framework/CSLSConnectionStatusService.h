@@ -34,8 +34,6 @@
 - (void)simActiveDidChange:(_Bool)arg1;
 - (void)_informObserversOfChangeInSimActive:(_Bool)arg1;
 @property(readonly) _Bool simActive;
-- (void)lastKnownCountryCodeDidChange:(id)arg1;
-- (void)_informObserversOfChangeInLastKnownCountryCode:(id)arg1;
 - (void)registrationStatusDidChange:(int)arg1;
 - (void)_informObserversOfChangeInRegistration:(int)arg1;
 - (void)cellularSignalStrengthBarsDidChange:(long)arg1;

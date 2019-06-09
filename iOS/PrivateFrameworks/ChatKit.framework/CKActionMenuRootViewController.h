@@ -6,6 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface CKActionMenuRootViewController : UIViewController
 {
 }

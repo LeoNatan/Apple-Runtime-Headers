@@ -13,5 +13,6 @@
 + (_Bool)_accessibilityCalHourDesignatorsAreBeforeHour;
 + (_Bool)_accessibilityCalSpaceBetweenDesignatorsAndHour;
 + (void)_accessibilityCalGetHourDesignatorsForAM:(id *)arg1 andPM:(id *)arg2;
++ (void)_accessibilityCalDetailStringForEvent:(id)arg1 inLine1:(id *)arg2 inLine2:(id *)arg3 inLine3:(id *)arg4 inLine4:(id *)arg5;
 @end
 

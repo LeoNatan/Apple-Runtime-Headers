@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface GEOTileEditionUpdate : NSObject
 {
     NSMutableArray *_entries;

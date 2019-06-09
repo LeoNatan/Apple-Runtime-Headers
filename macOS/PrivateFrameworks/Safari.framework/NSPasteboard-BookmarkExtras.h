@@ -25,5 +25,13 @@
 - (BOOL)safari_hasAnyBookmarks;
 - (void)safari_writeBookmarksForInternalUseOnly:(id)arg1 withOwner:(id)arg2;
 - (void)safari_writeBookmarks:(id)arg1 withOwner:(id)arg2;
+- (id)safari_textOnPasteboard;
+- (BOOL)safari_containsAnyText;
+- (BOOL)safari_containsAnyURLsViableForTopSites;
+- (BOOL)safari_containsAnyURLs;
+- (id)safari_URLsFromString;
+- (id)safari_URLs;
+- (void)safari_writeURLs:(id)arg1 andTitles:(id)arg2;
+- (void)safari_replaceContentsWithURL:(id)arg1;
 @end
 

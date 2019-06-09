@@ -12,9 +12,15 @@ __attribute__((visibility("hidden")))
     unsigned char _controlInfoCameraStatus;
     unsigned char _controlInfoLTRBits;
     unsigned int _controlInfoLTRTimestamp;
+    struct {
+        unsigned short totalPacketsPerFrame;
+        unsigned short frameSequenceNumber;
+    } _controlInfoFrameExtensionData;
     unsigned char _controlInfoFEC[36];
     unsigned long _controlInfoFECLength;
     unsigned int _controlInfoProbe;
+    unsigned int _controlInfoReceivedKbits;
+    unsigned int _controlInfoReceivedPackets;
     unsigned int _controlInfoVideoPacketSize;
     unsigned int _controlInfoVideoTimestamp;
     double _controlInfoVideoArrivalTime;
@@ -24,8 +30,8 @@ __attribute__((visibility("hidden")))
 - (long)getInfo:(void *)arg1 bufferLength:(unsigned long)arg2 infoSize:(unsigned int *)arg3 type:(unsigned int)arg4;
 - (_Bool)hasInfoType:(unsigned int)arg1;
 - (long)setInfo:(void *)arg1 size:(unsigned long)arg2 type:(unsigned int)arg3;
-- (long)configureWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_475a354f *)arg3;
-- (long)handleOptionalControlInfo:(CDStruct_475a354f *)arg1;
+- (long)configureWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_39aa150d *)arg3;
+- (long)handleOptionalControlInfo:(CDStruct_39aa150d *)arg1;
 - (id)description;
 - (unsigned long)serializedSize;
 

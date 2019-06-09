@@ -11,17 +11,7 @@
 @protocol _WKAutomationSessionDelegate <NSObject>
 
 @optional
-- (long long)_automationSession:(_WKAutomationSession *)arg1 typeOfCurrentJavaScriptDialogOnPage:(const struct OpaqueWKPage *)arg2;
-- (void)_automationSession:(_WKAutomationSession *)arg1 setUserInput:(NSString *)arg2 forCurrentJavaScriptDialogOnPage:(const struct OpaqueWKPage *)arg3;
-- (NSString *)_automationSession:(_WKAutomationSession *)arg1 messageOfCurrentJavaScriptDialogOnPage:(const struct OpaqueWKPage *)arg2;
-- (void)_automationSession:(_WKAutomationSession *)arg1 acceptCurrentJavaScriptDialogOnPage:(const struct OpaqueWKPage *)arg2;
-- (void)_automationSession:(_WKAutomationSession *)arg1 dismissCurrentJavaScriptDialogOnPage:(const struct OpaqueWKPage *)arg2;
-- (BOOL)_automationSession:(_WKAutomationSession *)arg1 isShowingJavaScriptDialogOnPage:(const struct OpaqueWKPage *)arg2;
-- (void)_automationSession:(_WKAutomationSession *)arg1 requestSwitchToPage:(const struct OpaqueWKPage *)arg2 completionHandler:(void (^)(void))arg3;
-- (void)_automationSession:(_WKAutomationSession *)arg1 requestMaximizeWindowOfPage:(const struct OpaqueWKPage *)arg2 completionHandler:(void (^)(void))arg3;
-- (void)_automationSession:(_WKAutomationSession *)arg1 requestRestoreWindowOfPage:(const struct OpaqueWKPage *)arg2 completionHandler:(void (^)(void))arg3;
-- (void)_automationSession:(_WKAutomationSession *)arg1 requestHideWindowOfPage:(const struct OpaqueWKPage *)arg2 completionHandler:(void (^)(void))arg3;
-- (void)_automationSession:(_WKAutomationSession *)arg1 requestNewPageWithOptions:(unsigned long long)arg2 completionHandler:(void (^)(struct OpaqueWKPage *))arg3;
+- (long long)_automationSession:(_WKAutomationSession *)arg1 currentPresentationForWebView:(WKWebView *)arg2;
 - (long long)_automationSession:(_WKAutomationSession *)arg1 typeOfCurrentJavaScriptDialogForWebView:(WKWebView *)arg2;
 - (void)_automationSession:(_WKAutomationSession *)arg1 setUserInput:(NSString *)arg2 forCurrentJavaScriptDialogForWebView:(WKWebView *)arg3;
 - (NSString *)_automationSession:(_WKAutomationSession *)arg1 messageOfCurrentJavaScriptDialogForWebView:(WKWebView *)arg2;

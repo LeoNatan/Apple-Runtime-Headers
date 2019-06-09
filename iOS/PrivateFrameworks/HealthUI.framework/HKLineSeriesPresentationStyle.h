@@ -6,28 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class HKAxisLabelStyle, HKFillStyle, HKStrokeStyle, UIImage;
+@class HKAxisLabelStyle, HKFillStyle, HKLegendPointAnnotationStyle, HKLineSeriesPointMarkerStyle, HKStrokeStyle;
 
 @interface HKLineSeriesPresentationStyle : NSObject
 {
     _Bool _shouldApplyRollingAverage;
+    _Bool _shouldNegateAnnotationValue;
     int _waveForm;
     HKStrokeStyle *_strokeStyle;
     HKFillStyle *_fillStyle;
-    UIImage *_pointMarkerImage;
-    UIImage *_lineEndCap;
+    HKLineSeriesPointMarkerStyle *_pointMarkerStyle;
+    HKLineSeriesPointMarkerStyle *_endCapStyle;
     HKAxisLabelStyle *_annotationStyle;
+    HKLegendPointAnnotationStyle *_legendAnnotationStyle;
     HKAxisLabelStyle *_axisAnnotationStyle;
     double _sineWaveSmoothingFactor;
 }
 
 @property(nonatomic) double sineWaveSmoothingFactor; // @synthesize sineWaveSmoothingFactor=_sineWaveSmoothingFactor;
+@property(nonatomic) _Bool shouldNegateAnnotationValue; // @synthesize shouldNegateAnnotationValue=_shouldNegateAnnotationValue;
 @property(nonatomic) _Bool shouldApplyRollingAverage; // @synthesize shouldApplyRollingAverage=_shouldApplyRollingAverage;
 @property(retain, nonatomic) HKAxisLabelStyle *axisAnnotationStyle; // @synthesize axisAnnotationStyle=_axisAnnotationStyle;
+@property(retain, nonatomic) HKLegendPointAnnotationStyle *legendAnnotationStyle; // @synthesize legendAnnotationStyle=_legendAnnotationStyle;
 @property(retain, nonatomic) HKAxisLabelStyle *annotationStyle; // @synthesize annotationStyle=_annotationStyle;
-@property(retain, nonatomic) UIImage *lineEndCap; // @synthesize lineEndCap=_lineEndCap;
-@property(retain, nonatomic) UIImage *pointMarkerImage; // @synthesize pointMarkerImage=_pointMarkerImage;
 @property(nonatomic) int waveForm; // @synthesize waveForm=_waveForm;
+@property(retain, nonatomic) HKLineSeriesPointMarkerStyle *endCapStyle; // @synthesize endCapStyle=_endCapStyle;
+@property(retain, nonatomic) HKLineSeriesPointMarkerStyle *pointMarkerStyle; // @synthesize pointMarkerStyle=_pointMarkerStyle;
 @property(retain, nonatomic) HKFillStyle *fillStyle; // @synthesize fillStyle=_fillStyle;
 @property(retain, nonatomic) HKStrokeStyle *strokeStyle; // @synthesize strokeStyle=_strokeStyle;
 - (void).cxx_destruct;

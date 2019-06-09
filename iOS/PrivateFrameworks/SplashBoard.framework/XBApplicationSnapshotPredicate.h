@@ -23,7 +23,9 @@
 - (id)succinctDescription;
 - (id)_clientObjectForKey:(unsigned long long)arg1;
 - (_Bool)_hasClientObjectForKey:(unsigned long long)arg1;
+- (void)_removeClientObjectForKey:(unsigned long long)arg1;
 - (void)_setClientObject:(id)arg1 forKey:(unsigned long long)arg2;
+@property(nonatomic) long long userInterfaceStyle;
 @property(nonatomic) unsigned long long statusBarStateMask;
 @property(nonatomic) unsigned long long statusBarState;
 @property(nonatomic) unsigned long long contentTypeMask;

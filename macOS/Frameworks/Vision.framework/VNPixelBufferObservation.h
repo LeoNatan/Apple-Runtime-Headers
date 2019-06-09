@@ -6,21 +6,26 @@
 
 #import <Vision/VNObservation.h>
 
+@class NSString;
+
 @interface VNPixelBufferObservation : VNObservation
 {
     struct __CVBuffer *_pixelBuffer;
+    NSString *_featureName;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, copy, nonatomic) NSString *featureName; // @synthesize featureName=_featureName;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
+- (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)debugDescription;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithRequestRevision:(unsigned long long)arg1 CVPixelBuffer:(struct __CVBuffer *)arg2;
+- (id)initWithRequestRevision:(unsigned long long)arg1 featureName:(id)arg2 CVPixelBuffer:(struct __CVBuffer *)arg3;
 
 @end
 

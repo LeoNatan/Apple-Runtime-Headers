@@ -8,6 +8,7 @@
 
 @class CKConversation;
 
+__attribute__((visibility("hidden")))
 @interface CKTranscriptHeaderViewController : UIViewController
 {
     _Bool _shouldInvalidateOnAddressBookChange;

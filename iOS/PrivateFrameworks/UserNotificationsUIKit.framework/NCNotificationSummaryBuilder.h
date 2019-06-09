@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NCNotificationRequest, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSString;
+@class NCNotificationRequest, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSString;
 
 @interface NCNotificationSummaryBuilder : NSObject
 {
@@ -21,6 +21,7 @@
     NSString *_summaryText;
 }
 
+@property(readonly, nonatomic) NSArray *notificationRequests; // @synthesize notificationRequests=_notificationRequests;
 @property(readonly, copy, nonatomic) NSString *summaryText; // @synthesize summaryText=_summaryText;
 - (void).cxx_destruct;
 - (void)_insertString:(id)arg1 intoSequence:(id)arg2 withCounters:(id)arg3;

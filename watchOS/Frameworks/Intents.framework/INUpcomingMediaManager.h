@@ -20,7 +20,8 @@
 - (id)keyWithMediaItemTypeName:(id)arg1 bundleId:(id)arg2;
 - (int)_predictionModeForBundleId:(id)arg1 type:(int)arg2 error:(id *)arg3;
 - (void)setPredictionMode:(int)arg1 forType:(int)arg2;
-- (void)_replaceMediaIntents:(id)arg1;
+- (void)_replaceMediaIntents:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)_setSuggestedMediaIntents:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)setSuggestedMediaIntents:(id)arg1;
 - (id)initWithSearchableIndex:(id)arg1;
 

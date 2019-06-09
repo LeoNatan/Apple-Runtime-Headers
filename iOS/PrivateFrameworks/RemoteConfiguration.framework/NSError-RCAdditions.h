@@ -7,6 +7,14 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (RCAdditions)
++ (id)rc_endpointErrorWithUnderlyingEndpointErrors:(id)arg1;
++ (id)rc_parsingError;
++ (id)rc_missingConfigErrorWithUnderlyingError:(id)arg1;
++ (id)rc_offlineErrorWithReason:(long long)arg1;
++ (id)rc_notAvailableError;
++ (id)rc_notCachedError;
++ (id)rc_errorWithCode:(long long)arg1 description:(id)arg2;
++ (id)rc_errorWithCode:(long long)arg1 description:(id)arg2 additionalUserInfo:(id)arg3;
 - (_Bool)rc_isOfflineErrorOfflineReason:(long long *)arg1;
 - (_Bool)rc_isOfflineError;
 - (_Bool)rc_isOperationThrottledError;

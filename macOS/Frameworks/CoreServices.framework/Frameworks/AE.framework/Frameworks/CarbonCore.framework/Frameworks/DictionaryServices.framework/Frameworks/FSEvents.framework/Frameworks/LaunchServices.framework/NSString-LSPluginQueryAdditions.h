@@ -7,8 +7,13 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (LSPluginQueryAdditions)
-- (BOOL)matches:(id)arg1;
-- (BOOL)matchesString:(id)arg1;
-- (id)clean;
++ (id)NSStringFromLSInstallType:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallState:(unsigned long long)arg1;
++ (id)NSStringFromLSInstallPhase:(unsigned long long)arg1;
+- (BOOL)ls_matchesForPluginQuery:(id)arg1;
+- (BOOL)ls_matchesStringForPluginQuery:(id)arg1;
+- (id)ls_cleanForPluginQuery;
+- (id)ls_updatedKey;
+- (BOOL)ls_isRecursiveKey;
 @end
 

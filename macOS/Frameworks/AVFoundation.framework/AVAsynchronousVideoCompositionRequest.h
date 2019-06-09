@@ -26,7 +26,6 @@
 @property(readonly, nonatomic) AVVideoCompositionRenderContext *renderContext;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (void)_willDeallocOrFinalize;
 - (struct OpaqueFigVideoCompositorFrame *)compositionFrame;
 - (id)initUsingSession:(id)arg1 withRenderContext:(id)arg2 compositionFrame:(struct OpaqueFigVideoCompositorFrame *)arg3 atTime:(CDStruct_1b6d18a9)arg4 usingSources:(id)arg5 instruction:(id)arg6;

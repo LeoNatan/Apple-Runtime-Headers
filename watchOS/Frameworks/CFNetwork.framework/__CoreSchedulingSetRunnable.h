@@ -8,7 +8,6 @@
 
 @protocol OS_dispatch_semaphore;
 
-__attribute__((visibility("hidden")))
 @interface __CoreSchedulingSetRunnable : NSObject
 {
     NSObject<OS_dispatch_semaphore> *_sem;

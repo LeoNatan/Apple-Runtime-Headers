@@ -6,20 +6,23 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class GEOClientMetrics, NSData, NSError, NSString;
+@class GEOClientMetrics, NSData, NSError, NSString, NSURL;
 @protocol GEORequestCounterTicket, NSObject;
 
 @protocol GEODataSessionTask <NSObject>
+@property(readonly, nonatomic) _Bool mptcpNegotiated;
+@property(readonly, nonatomic) unsigned int requestedMultipathServiceType;
 @property(readonly, nonatomic) id <NSObject> parsedResponse;
 @property(readonly, nonatomic) GEOClientMetrics *clientMetrics;
 @property(readonly, nonatomic) id <GEORequestCounterTicket> requestCounterTicket;
-@property(readonly) _Bool failedDueToCancel;
+@property(readonly, nonatomic) _Bool failedDueToCancel;
 @property(readonly, nonatomic) unsigned int taskIdentifier;
 @property(readonly, nonatomic) unsigned int incomingPayloadSize;
 @property(readonly, nonatomic) unsigned int outgoingPayloadSize;
 @property(readonly, nonatomic) _Bool protocolBufferHasPreamble;
 @property(readonly, nonatomic) NSString *remoteAddressAndPort;
 @property(readonly, nonatomic) NSError *error;
+@property(readonly, copy, nonatomic) NSURL *downloadedFileURL;
 @property(readonly, nonatomic) NSData *receivedData;
 - (void)cancel;
 - (void)start;

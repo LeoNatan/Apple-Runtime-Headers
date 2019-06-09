@@ -19,9 +19,9 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 - (void).cxx_destruct;
 - (void)removeContainerID:(id)arg1;
-- (void)setContainerInfo:(id)arg1 forContainerID:(id)arg2;
-- (id)containerInfoForContainerID:(id)arg1;
-- (id)inlock_containerInfoForContainerID:(id)arg1;
+- (void)setContainerInfo:(id)arg1 forContainerID:(id)arg2 accountID:(id)arg3;
+- (id)containerInfoForContainerID:(id)arg1 accountID:(id)arg2;
+- (id)inlock_containerInfoForContainerID:(id)arg1 accountID:(id)arg2;
 - (void)setPublicKey:(id)arg1 ofType:(id)arg2 withIdentifier:(id)arg3;
 - (id)publicKeyOfType:(id)arg1 withIdentifier:(id)arg2;
 - (void)setGlobalConfiguration:(id)arg1;
@@ -34,12 +34,14 @@
 - (void)setDateOfLastTokenUpdate:(id)arg1;
 - (void)inlock_setDateOfLastTokenUpdate:(id)arg1;
 - (id)dateOfLastTokenUpdate;
-- (void)setAppContainerIntersectionMetadata:(id)arg1 forAppContainerTuple:(id)arg2;
-- (id)appContainerIntersectionMetadataForAppContainerTuple:(id)arg1;
-- (id)knownAppContainerTuples;
-- (void)setPushToken:(id)arg1 forAppContainerTuple:(id)arg2;
-- (id)pushTokenForAppContainerTuple:(id)arg1;
-- (void)expungeWithCurrentAccountIdentifier:(id)arg1 forceRemove:(_Bool)arg2;
+- (void)setAppContainerIntersectionMetadata:(id)arg1 forAppContainerAccountTuple:(id)arg2;
+- (id)appContainerIntersectionMetadataForAppContainerAccountTuple:(id)arg1;
+- (id)knownAppContainerAccountTuples;
+- (id)knownAppContainerTuplesForAccountID:(id)arg1;
+- (void)setPushToken:(id)arg1 forAppContainerAccountTuple:(id)arg2;
+- (id)pushTokenForAppContainerAccountTuple:(id)arg1 filterOldTokens:(_Bool)arg2;
+- (void)expungeStaleAccountIDs;
+- (void)expungeWithDeletedAccountID:(id)arg1 forceRemove:(_Bool)arg2;
 - (id)init;
 
 @end

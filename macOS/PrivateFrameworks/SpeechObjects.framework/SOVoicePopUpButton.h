@@ -22,6 +22,7 @@
     SODownloadDisplayManager *_downloadDisplayManager;
 }
 
++ (BOOL)isSiriVoiceIdentifier:(id)arg1;
 + (void)setFallbackVoiceIdentifier:(id)arg1;
 + (void)buildSharedVoicesMenuShowingVOVoices:(BOOL)arg1;
 + (BOOL)isRequiredVoiceIdentifier:(id)arg1;

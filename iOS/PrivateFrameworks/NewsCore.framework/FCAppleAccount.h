@@ -8,12 +8,14 @@
 
 #import <NewsCore/FCAppleAccount-Protocol.h>
 
-@class NSArray, NSString;
+@class ACAccount, ACAccountStore, NSArray, NSString;
 
 @interface FCAppleAccount : NSObject <FCAppleAccount>
 {
     _Bool _runningPPT;
-    _Bool _iCloudAccountChanged;
+    ACAccountStore *_accountStore;
+    ACAccount *_primaryAccount;
+    ACAccount *_iTunesAccount;
     NSString *_DSID;
     NSString *_userStoreFrontID;
     NSString *_contentStoreFrontID;
@@ -23,16 +25,20 @@
 + (id)sharedAccount;
 + (void)enableStoreFrontLocking;
 @property(copy, nonatomic) NSString *overrideContentStoreFrontID; // @synthesize overrideContentStoreFrontID=_overrideContentStoreFrontID;
-@property(nonatomic) _Bool iCloudAccountChanged; // @synthesize iCloudAccountChanged=_iCloudAccountChanged;
 @property(copy, nonatomic) NSString *contentStoreFrontID; // @synthesize contentStoreFrontID=_contentStoreFrontID;
 @property(copy, nonatomic) NSString *userStoreFrontID; // @synthesize userStoreFrontID=_userStoreFrontID;
 @property(copy, nonatomic) NSString *DSID; // @synthesize DSID=_DSID;
+@property(retain) ACAccount *iTunesAccount; // @synthesize iTunesAccount=_iTunesAccount;
+@property(retain) ACAccount *primaryAccount; // @synthesize primaryAccount=_primaryAccount;
+@property(readonly, nonatomic) ACAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(getter=isRunningPPT) _Bool runningPPT; // @synthesize runningPPT=_runningPPT;
 - (void).cxx_destruct;
 - (void)t_stopOverridingContentStoreFrontID;
 - (void)t_startOverridingContentStoreFrontID:(id)arg1;
-- (void)_refreshUbiquityIdentityToken;
+- (void)_reloadAccountsFromAccountStore;
+- (void)_accountStoreDidChange;
 - (void)_setStoreFrontDependentPropertiesWithStoreFrontLockingEnabled:(_Bool)arg1;
+- (id)activeiTunesAccount;
 - (void)checkAllDevicesRunningMinimumiOSVersion:(CDStruct_912cb5d2)arg1 macOSVersion:(CDStruct_912cb5d2)arg2 orInactiveForTimeInterval:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)checkAlliOSDevicesRunningMinimumOSVersion:(CDStruct_912cb5d2)arg1 orInactiveForTimeInterval:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)currentStoreFrontID;
@@ -40,6 +46,7 @@
 @property(readonly, nonatomic) NSArray *supportedLanguageCodes;
 @property(readonly, nonatomic) NSString *supportedContentStoreFrontID;
 @property(readonly, nonatomic) _Bool isContentStoreFrontSupported;
+- (void)reloadiTunesAccount;
 - (_Bool)isUserSignedIntoiTunes;
 - (id)iCloudAccountDSID;
 - (id)iTunesAccountDSID;
@@ -48,8 +55,6 @@
 - (_Bool)isPrimaryAccountEmailAddress;
 @property(readonly, nonatomic, getter=isUserSignedInToiCloud) _Bool userSignedInToiCloud;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled;
-- (void)_loadStoreFrontIfNeededWithCallbackAndAccessQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)loadStoreFrontIfNeeded;
 - (id)init;
 
 // Remaining properties

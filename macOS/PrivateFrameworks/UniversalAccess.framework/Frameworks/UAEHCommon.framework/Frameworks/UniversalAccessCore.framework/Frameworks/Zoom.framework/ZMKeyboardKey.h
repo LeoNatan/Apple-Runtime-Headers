@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ZMKeyboardKey : NSObject <NSCopying>
 {
     unsigned long long _keyCode;

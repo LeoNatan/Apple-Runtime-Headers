@@ -13,6 +13,7 @@
     NSString *_actionProperty;
 }
 
+- (void).cxx_destruct;
 - (BOOL)shouldEnableActionForPerson:(id)arg1 identifier:(id)arg2;
 - (void)setActionProperty:(id)arg1;
 - (id)actionProperty;

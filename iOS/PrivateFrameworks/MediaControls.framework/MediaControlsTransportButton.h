@@ -8,6 +8,7 @@
 
 @class MPCPlayerCommandRequest;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsTransportButton : MPButton
 {
     _Bool _shouldPresentActionSheet;
@@ -27,7 +28,7 @@
 @property(retain, nonatomic) MPCPlayerCommandRequest *holdBeginCommandRequest; // @synthesize holdBeginCommandRequest=_holdBeginCommandRequest;
 @property(retain, nonatomic) MPCPlayerCommandRequest *touchUpInsideCommandRequest; // @synthesize touchUpInsideCommandRequest=_touchUpInsideCommandRequest;
 - (void).cxx_destruct;
-- (void)_layoutImageView;
+- (void)_layoutImageAndTitleViews;
 - (void)endHighlight;
 - (void)beginHighlight;
 - (void)setHighlighted:(_Bool)arg1;

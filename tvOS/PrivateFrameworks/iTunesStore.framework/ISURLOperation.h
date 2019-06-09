@@ -30,6 +30,7 @@
     ISURLRequestPerformance *_performanceMetrics;
     _Bool _loadsHTTPFailures;
     _Bool _uploadProgressRequested;
+    NSString *_logKey;
     NSArray *_passThroughErrors;
     NSNumber *__accountDSIDOverride;
 }
@@ -39,6 +40,7 @@
 + (id)copyUserAgent;
 @property(retain, nonatomic, setter=_setAccountDSIDOverride:) NSNumber *_accountDSIDOverride; // @synthesize _accountDSIDOverride=__accountDSIDOverride;
 @property(retain, nonatomic) NSArray *passThroughErrors; // @synthesize passThroughErrors=_passThroughErrors;
+@property(retain) NSString *logKey; // @synthesize logKey=_logKey;
 @property(nonatomic, getter=isUploadProgressRequested) _Bool uploadProgressRequested; // @synthesize uploadProgressRequested=_uploadProgressRequested;
 @property(getter=_usesPrivateCookieStore, setter=_setUsesPrivateCookieStore:) _Bool _usesPrivateCookieStore; // @synthesize _usesPrivateCookieStore;
 @property(getter=_shouldSetCookies, setter=_setShouldSetCookies:) _Bool _shouldSetCookies; // @synthesize _shouldSetCookies;

@@ -15,11 +15,13 @@
     PBUnknownFields *_unknownFields;
     _Bool _showVehicleNumber;
     struct {
-        unsigned int showVehicleNumber:1;
-    } _has;
+        unsigned int has_showVehicleNumber:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,10 +30,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasShowVehicleNumber;
-@property(nonatomic) _Bool showVehicleNumber; // @synthesize showVehicleNumber=_showVehicleNumber;
+@property(nonatomic) _Bool showVehicleNumber;
 
 @end
 

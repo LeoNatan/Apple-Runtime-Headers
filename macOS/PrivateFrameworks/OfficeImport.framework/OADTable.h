@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OADTableGrid;
 
+__attribute__((visibility("hidden")))
 @interface OADTable : OADDrawable
 {
     OADTableGrid *mGrid;

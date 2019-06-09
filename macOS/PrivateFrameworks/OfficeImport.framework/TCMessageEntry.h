@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TCMessageEntry : NSObject
 {
     unsigned long long m_timeStamp;

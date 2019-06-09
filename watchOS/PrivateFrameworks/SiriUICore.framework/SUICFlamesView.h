@@ -131,6 +131,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setHidden:(_Bool)arg1;
 - (void)_updateDisplayLinkPausedState;
+- (int)_preferredFramesPerSecond;
 - (void)_setPreferredFramesPerSecond;
 - (void)fadeOutCurrentAura;
 - (void)didMoveToSuperview;

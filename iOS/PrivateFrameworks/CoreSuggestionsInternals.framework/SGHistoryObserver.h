@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)hashesDidChange;
+- (void)processNewConfirmedOrRejectedReminderHashes:(id)arg1;
 - (void)processNewConfirmOrRejectEventHashes:(id)arg1;
 - (id)initWithStore:(id)arg1;
 

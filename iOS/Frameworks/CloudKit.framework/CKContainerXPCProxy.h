@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;
 - (void).cxx_destruct;
 - (void)consumeSandboxExtensions:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)readBytesOfInMemoryAssetContentWithUUID:(id)arg1 offset:(unsigned long long)arg2 length:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)getFileMetadataWithFileHandle:(id)arg1 openInfo:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)openFileWithOpenInfo:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)handleOperationCheckpoint:(id)arg1 forOperationWithID:(id)arg2;

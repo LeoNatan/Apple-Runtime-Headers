@@ -23,6 +23,9 @@
 + (_Bool)supportsSecureCoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (short)closestVertexIndexToLabeledFacePosition:(id)arg1;
+-     // Error parsing type: 24@0:8@16, name: normalForLabeledFacePosition:
+-     // Error parsing type: 24@0:8@16, name: positionForLabeledFacePosition:
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

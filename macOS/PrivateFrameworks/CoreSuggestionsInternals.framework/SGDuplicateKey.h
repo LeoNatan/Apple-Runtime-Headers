@@ -23,10 +23,13 @@
 + (id)duplicateKeyForSearchableItem:(id)arg1;
 + (id)duplicateKeyForUnrecognizedContactWithIdentity:(id)arg1;
 + (id)duplicateKeyForNaturalLanguageEventWithStartDate:(id)arg1 endDate:(id)arg2 title:(id)arg3 participants:(id)arg4 parentKey:(id)arg5;
++ (id)duplicateKeyForPseudoReminderWithGroupId:(id)arg1 parentKey:(id)arg2;
 + (id)duplicateKeyForPseudoEventWithGroupId:(id)arg1 parentKey:(id)arg2;
 + (id)duplicateKeyForCuratedEventWithExternalID:(id)arg1;
 + (id)duplicateKeyForPseudoContactWithIdentity:(id)arg1 parentKey:(id)arg2;
 + (id)duplicateKeyForCuratedContactWithExternalId:(int)arg1;
++ (id)duplicateKeyForInteractionIdentifier:(id)arg1 fromBundleIdentifier:(id)arg2;
++ (id)duplicateKeyForInteraction:(id)arg1 fromBundleIdentifier:(id)arg2;
 + (id)duplicateKeyForInteractionWithBundleId:(id)arg1 personHandle:(id)arg2;
 + (id)duplicateKeyForTextMessageWithSource:(id)arg1 uniqueIdentifier:(id)arg2;
 + (id)duplicateKeyForEmailWithSource:(id)arg1 messageId:(id)arg2;
@@ -37,6 +40,7 @@
 - (void).cxx_destruct;
 - (id)bundleId;
 @property(readonly, nonatomic) NSData *compositeHash;
+- (id)pseudoReminderKey;
 - (id)pseudoEventKey;
 - (id)interactionKey;
 - (id)webPageKey;

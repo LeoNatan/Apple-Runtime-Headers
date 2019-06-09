@@ -6,10 +6,12 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class GEODirectionIntent, GEOMapItemIdentifier, GEOResolvedItem, GEORetainedSearchMetadata, GEOSearchCategory, NSArray, NSData, NSString;
+@class GEODirectionIntent, GEOMapItemIdentifier, GEOResolvedItem, GEORetainedSearchMetadata, GEOSearchCategory, GEOServerResultScoreMetadata, NSArray, NSData, NSString;
 @protocol GEOMapItem;
 
 @protocol GEOCompletionItem <NSObject>
+@property(readonly, nonatomic) NSString *queryAcceleratorCompletionString;
+@property(readonly, nonatomic) BOOL hasQueryAcceleratorAffordanceEnabled;
 @property(readonly, nonatomic) float disambiguationRadiusMeters;
 @property(readonly, nonatomic) BOOL hasDisambiguationRadiusMeters;
 @property(readonly, nonatomic) int placeType;
@@ -17,6 +19,9 @@
 @property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) NSData *metadata;
 @property(readonly, nonatomic) NSData *entryMetadata;
+@property(readonly, nonatomic) GEOServerResultScoreMetadata *serverResultScoreMetadata;
+@property(readonly, nonatomic) long long autocompleteCellType;
+@property(readonly, nonatomic) long long entryTapBehavior;
 @property(readonly, nonatomic) long long sortPriority;
 @property(readonly, nonatomic) BOOL hasSortPriority;
 @property(readonly, nonatomic) GEORetainedSearchMetadata *retainedSearchMetadata;

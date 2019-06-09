@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)backgroundColor;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 
 @end
 

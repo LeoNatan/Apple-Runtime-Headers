@@ -6,6 +6,7 @@
 
 #import <MapKit/MKPlaceInfoContactRowView.h>
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceInfoEmailRowView : MKPlaceInfoContactRowView
 {
 }

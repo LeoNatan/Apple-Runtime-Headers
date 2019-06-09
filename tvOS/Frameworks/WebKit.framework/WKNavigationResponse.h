@@ -21,6 +21,7 @@
 @property(readonly, nonatomic, getter=isForMainFrame) _Bool forMainFrame;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+@property(readonly, nonatomic) NSString *_downloadAttribute;
 @property(readonly, nonatomic) NSURLRequest *_request;
 @property(readonly, nonatomic) WKFrameInfo *_frame;
 

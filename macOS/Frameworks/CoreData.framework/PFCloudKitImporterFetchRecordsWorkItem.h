@@ -15,11 +15,13 @@ __attribute__((visibility("hidden")))
 {
     NSMutableDictionary *_assetPathToSafeSaveURL;
     NSMutableArray *_updatedRecords;
+    NSMutableArray *_updatedRecordIDs;
     unsigned long long _totalAssetBytes;
     NSMutableArray *_encounteredErrors;
 }
 
 @property(readonly, nonatomic) NSArray *encounteredErrors; // @synthesize encounteredErrors=_encounteredErrors;
+@property(readonly, nonatomic) NSArray *updatedRecordIDs; // @synthesize updatedRecordIDs=_updatedRecordIDs;
 @property(readonly, nonatomic) NSArray *updatedRecords; // @synthesize updatedRecords=_updatedRecords;
 @property(readonly, nonatomic) unsigned long long totalAssetBytes; // @synthesize totalAssetBytes=_totalAssetBytes;
 @property(readonly, nonatomic) NSDictionary *assetPathToSafeSaveURL; // @synthesize assetPathToSafeSaveURL=_assetPathToSafeSaveURL;
@@ -34,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)doWorkWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchRecordsRequest;
 - (void)dealloc;
-- (id)initWithOptions:(id)arg1 metadata:(id)arg2 request:(id)arg3;
+- (id)initWithOptions:(id)arg1 request:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

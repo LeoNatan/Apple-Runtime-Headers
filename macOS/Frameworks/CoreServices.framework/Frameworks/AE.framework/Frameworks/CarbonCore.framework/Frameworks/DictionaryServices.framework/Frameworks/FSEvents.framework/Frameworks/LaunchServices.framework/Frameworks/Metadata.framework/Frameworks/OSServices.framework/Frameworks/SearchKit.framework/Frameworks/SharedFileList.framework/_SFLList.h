@@ -12,10 +12,10 @@
 
 @interface _SFLList : NSObject <NSSecureCoding>
 {
-    id _identifier;
+    NSString *_identifier;
     unsigned long long _seed;
-    id _properties;
-    id _items;
+    NSArray *_items;
+    NSDictionary *_properties;
 }
 
 + (BOOL)supportsSecureCoding;

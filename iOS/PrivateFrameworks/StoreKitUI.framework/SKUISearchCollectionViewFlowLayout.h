@@ -8,6 +8,7 @@
 
 @class UICollectionView;
 
+__attribute__((visibility("hidden")))
 @interface SKUISearchCollectionViewFlowLayout : SKUIItemGridCollectionViewLayout
 {
     UICollectionView *_collectionView;

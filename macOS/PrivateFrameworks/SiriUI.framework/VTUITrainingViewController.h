@@ -10,7 +10,7 @@
 #import <SiriUI/CSVTUITrainingManagerDelegate-Protocol.h>
 #import <SiriUI/SiriUIFlamesAndAuraViewDelegate-Protocol.h>
 
-@class AFMyriadCoordinator, CSVTUITrainingManager, NSArray, NSButton, NSString, NSTextField, SiriUIFlamesAndAuraView, VTUIPagedLabel, VTUITickMarkView;
+@class AFMyriadCoordinator, CSVTUITrainingManager, NSArray, NSButton, NSString, NSTextField, NSTimer, SiriUIFlamesAndAuraView, VTUIPagedLabel, VTUITickMarkView;
 @protocol VTUITrainingViewControllerDelegate;
 
 @interface VTUITrainingViewController : NSViewController <CSVTUITrainingManagerDelegate, SiriUIFlamesAndAuraViewDelegate, AFMyriadDelegate>
@@ -31,16 +31,19 @@
     BOOL _hasCancelledTraining;
     BOOL _waitingForSpeechNotification;
     AFMyriadCoordinator *_myriadCoordinator;
+    double _voiceOverCompletionTimeout;
     BOOL _hasCompletedTraining;
     BOOL _inBuddy;
     NSString *_siriLanguageCode;
     id <VTUITrainingViewControllerDelegate> _delegate;
     long long _currentTrainingState;
     CDUnknownBlockType _voiceOverCompletionBlock;
+    NSTimer *_voiceOverCompletionTimer;
     VTUIPagedLabel *_instructionPagedLabel;
 }
 
 @property(retain) VTUIPagedLabel *instructionPagedLabel; // @synthesize instructionPagedLabel=_instructionPagedLabel;
+@property(retain) NSTimer *voiceOverCompletionTimer; // @synthesize voiceOverCompletionTimer=_voiceOverCompletionTimer;
 @property(copy) CDUnknownBlockType voiceOverCompletionBlock; // @synthesize voiceOverCompletionBlock=_voiceOverCompletionBlock;
 @property(nonatomic, getter=isInBuddy) BOOL inBuddy; // @synthesize inBuddy=_inBuddy;
 @property BOOL hasCompletedTraining; // @synthesize hasCompletedTraining=_hasCompletedTraining;
@@ -76,6 +79,7 @@
 - (void)_setVoiceTriggerUserEnabled:(BOOL)arg1;
 - (void)_setPHSEnrollmentPrefEnabled:(BOOL)arg1;
 - (void)advance;
+- (void)_stopTraining:(CDUnknownBlockType)arg1;
 - (void)cancelTraining;
 - (void)abortTraining;
 - (void)beginTraining;

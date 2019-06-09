@@ -19,9 +19,6 @@ __attribute__((visibility("hidden")))
     int _candidateMasterSynchronizerNode;
 }
 
-- (struct __CFDictionary *)supportUnitsForInputPorts;
-- (struct OpaqueCMIOGraph *)graph;
-- (void)finalize;
 - (void)dealloc;
 - (void)invalidate;
 - (id)init;

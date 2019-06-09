@@ -8,6 +8,7 @@
 
 @class SKUIColorScheme, SKUIEditorialComponent, SKUIEditorialLayout, SKUIViewElementLayoutContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditorialPageSection : SKUIStorePageSection
 {
     SKUIColorScheme *_colorScheme;

@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) INFSentenceToken *originalToken; // @synthesize originalToken=_originalToken;
 @property(retain, nonatomic) INFSentenceContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *placeholderName; // @synthesize placeholderName=_placeholderName;
-@property(getter=isResolved) _Bool resolved; // @synthesize resolved=_resolved;
+@property(nonatomic, getter=isResolved) _Bool resolved; // @synthesize resolved=_resolved;
 - (void).cxx_destruct;
 - (id)initWithToken:(id)arg1 variableName:(id)arg2;
 

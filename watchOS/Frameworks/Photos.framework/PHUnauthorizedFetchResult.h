@@ -21,7 +21,7 @@
 @property(readonly) NSOrderedSet *objectIDs; // @synthesize objectIDs=_objectIDs;
 @property(readonly) NSArray *objects; // @synthesize objects=_objects;
 @property(readonly, copy) PHFetchOptions *options; // @synthesize options=_options;
-@property(readonly) CDUnknownBlockType fetchBlock; // @synthesize fetchBlock=_fetchBlock;
+@property(readonly, copy) CDUnknownBlockType fetchBlock; // @synthesize fetchBlock=_fetchBlock;
 - (void).cxx_destruct;
 - (id)description;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;

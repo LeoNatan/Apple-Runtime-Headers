@@ -29,7 +29,6 @@
 @property(nonatomic) double cameraPixelFocalLength; // @synthesize cameraPixelFocalLength=_cameraPixelFocalLength;
 - (void)evaluate:(id)arg1;
 - (BOOL)validateVisionKitSoftLinkSymbols;
-- (id)_prepareRectangleRequestOptions;
 - (BOOL)requiresVisionFramework;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

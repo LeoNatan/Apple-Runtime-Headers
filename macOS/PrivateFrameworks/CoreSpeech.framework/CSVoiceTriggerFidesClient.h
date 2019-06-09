@@ -26,7 +26,7 @@
 - (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (void)_logDESRecordWithType:(long long)arg1 result:(id)arg2;
 - (id)_lastTriggerDataWithResult:(id)arg1;
-- (id)initWithAudioBuffer:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

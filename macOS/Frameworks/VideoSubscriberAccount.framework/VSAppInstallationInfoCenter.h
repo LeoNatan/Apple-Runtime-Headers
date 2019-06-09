@@ -8,7 +8,6 @@
 
 @class VSOptional;
 
-__attribute__((visibility("hidden")))
 @interface VSAppInstallationInfoCenter : NSObject
 {
 }

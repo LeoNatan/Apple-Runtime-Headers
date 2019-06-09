@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
     _Bool _isTypedString;
     _Bool _isLongCandidate;
     _Bool _isEmoji;
+    _Bool _isTextAlternative;
+    _Bool _isRTL;
     TIKeyboardCandidate *_prediction;
     UIView *_leftSeperatorView;
     UIView *_rightSeperatorView;
@@ -33,6 +35,8 @@ __attribute__((visibility("hidden")))
 + (float)fontSizeForSingleLineLayout;
 + (float)predictionCellTopPadding;
 @property(nonatomic) int state; // @synthesize state=_state;
+@property(nonatomic) _Bool isRTL; // @synthesize isRTL=_isRTL;
+@property(nonatomic) _Bool isTextAlternative; // @synthesize isTextAlternative=_isTextAlternative;
 @property(nonatomic) _Bool isEmoji; // @synthesize isEmoji=_isEmoji;
 @property(nonatomic) int candidateType; // @synthesize candidateType=_candidateType;
 @property(nonatomic) unsigned int slotID; // @synthesize slotID=_slotID;

@@ -8,6 +8,7 @@
 
 @class ISAnimatedImageTimer;
 
+__attribute__((visibility("hidden")))
 @interface _ISAnimatedImageTimerForwardingProxy : NSObject
 {
     ISAnimatedImageTimer *__forwardingTarget;

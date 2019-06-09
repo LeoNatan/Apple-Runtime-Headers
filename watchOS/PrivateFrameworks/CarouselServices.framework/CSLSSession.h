@@ -8,50 +8,55 @@
 
 #import <CarouselServices/NSSecureCoding-Protocol.h>
 
-@class NSString, NSURL, NSUUID;
+@class NSDate, NSString, NSURL, NSUUID, NSXPCConnection;
 @protocol CSLSSessionDelegate;
 
 @interface CSLSSession : NSObject <NSSecureCoding>
 {
     _Bool _running;
-    _Bool _autoEndSession;
-    _Bool _dismissed;
-    _Bool _interruptible;
+    int _errorCode;
+    _Bool _lastStartWasScheduled;
     _Bool _dismissible;
     _Bool _launchable;
     id <CSLSSessionDelegate> _delegate;
     NSString *_bundleID;
     NSURL *_url;
-    unsigned int _type;
+    int _type;
+    NSDate *_expirationDate;
+    NSDate *_startDate;
     NSUUID *_sessionID;
-    int _pid;
-    int _priority;
+    NSXPCConnection *_connection;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)sessionWithSession:(id)arg1;
-+ (id)sessionForBundleID:(id)arg1 withURL:(id)arg2 type:(unsigned int)arg3;
++ (_Bool)sessionTypeIsExtendedRuntime:(int)arg1;
++ (id)sessionForBundleID:(id)arg1 type:(int)arg2;
++ (id)sessionForBundleID:(id)arg1 withURL:(id)arg2 type:(int)arg3;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(getter=isLaunchable) _Bool launchable; // @synthesize launchable=_launchable;
 @property(getter=isDismissible) _Bool dismissible; // @synthesize dismissible=_dismissible;
-@property(getter=isInterruptible) _Bool interruptible; // @synthesize interruptible=_interruptible;
-@property int priority; // @synthesize priority=_priority;
-@property(getter=isDismissed) _Bool dismissed; // @synthesize dismissed=_dismissed;
-@property(nonatomic) _Bool autoEndSession; // @synthesize autoEndSession=_autoEndSession;
-@property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
-@property(nonatomic) unsigned int type; // @synthesize type=_type;
+@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
+@property(nonatomic) _Bool lastStartWasScheduled; // @synthesize lastStartWasScheduled=_lastStartWasScheduled;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic) __weak id <CSLSSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setErrorCode:(int)arg1;
+@property(readonly, nonatomic) int errorCode;
 - (void)setRunning:(_Bool)arg1 error:(id)arg2;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
 - (id)copy;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)coder;
+- (id)initForBundleID:(id)arg1 url:(id)arg2 type:(int)arg3;
 - (id)init;
 
 @end

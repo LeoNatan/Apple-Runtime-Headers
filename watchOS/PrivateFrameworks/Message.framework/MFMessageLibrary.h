@@ -14,6 +14,7 @@
     MFAttachmentLibraryDataProvider *_attachmentDataProvider;
 }
 
+- (void).cxx_destruct;
 - (id)dataProvider;
 - (void)setStoredIntegerPropertyWithName:(id)arg1 value:(id)arg2;
 - (id)storedIntegerPropertyWithName:(id)arg1;
@@ -22,9 +23,8 @@
 - (id)accountForMessage:(id)arg1;
 - (void)postOldFlags:(unsigned long long)arg1 newFlags:(unsigned long long)arg2 forMessage:(id)arg3;
 - (void)postFlagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
-- (void)setFlagsForMessages:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4;
-- (unsigned int)mailboxIDForURLString:(id)arg1;
+- (long long)mailboxIDForURLString:(id)arg1;
 - (id)remoteStoreForMessage:(id)arg1;
 - (void)deleteDataForMessage:(id)arg1;
 - (id)bodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2 isComplete:(_Bool *)arg3;
@@ -35,25 +35,18 @@
 - (id)dataPathForMessage:(id)arg1 part:(id)arg2;
 - (id)dataPathForMessage:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(_Bool)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(_Bool)arg9 addPOPUIDs:(_Bool)arg10 dataSectionsByMessage:(id)arg11;
-- (_Bool)isMessageContentsLocallyAvailable:(id)arg1;
-- (id)urlForMailboxID:(unsigned int)arg1;
+- (_Bool)areMessageContentsLocallyAvailable:(id)arg1 fullContentsAvailble:(_Bool *)arg2;
+- (id)urlForMailboxID:(long long)arg1;
 - (void)updateFlagsForMessagesInPlace:(id)arg1 success:(_Bool *)arg2;
-- (void)setFlagsForMessages:(id)arg1 mask:(unsigned long long)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setFlagsFromDictionary:(id)arg1 forMessagesInMailboxURLString:(id)arg2;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(_Bool)arg2 isEncrypted:(_Bool)arg3 forMessage:(id)arg4;
 - (void)setFlags:(unsigned long long)arg1 forMessage:(id)arg2;
 - (void)setMessage:(id)arg1 isPartial:(_Bool)arg2;
-- (void)deleteOfflineCacheDataForAccount:(int)arg1;
-- (void)consumeOfflineCacheReplayDataForAccount:(int)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)appendOfflineCacheReplayData:(id)arg1 forAccountID:(int)arg2;
-- (id)offlineCacheOperationsForAccount:(int)arg1 lastTemporaryID:(unsigned int *)arg2;
-- (void)markOfflineCacheOperationAsComplete:(id)arg1;
-- (void)appendOfflineCacheOperation:(id)arg1 forAccount:(int)arg2 lastTemporaryID:(unsigned int)arg3;
 - (void)deleteAccount:(id)arg1;
 - (void)invalidateAccount:(id)arg1;
-- (int)libraryIDForAccount:(id)arg1;
-- (int)createLibraryIDForAccount:(id)arg1;
+- (long long)libraryIDForAccount:(id)arg1;
+- (long long)createLibraryIDForAccount:(id)arg1;
 - (id)filterContiguousMessages:(id)arg1 forCriterion:(id)arg2 options:(unsigned int)arg3;
 - (void)lockDBForWriting;
 - (id)hiddenPOPUIDsInMailbox:(id)arg1;
@@ -91,14 +84,14 @@
 - (void)compactMessages:(id)arg1;
 - (void)compactMessages:(id)arg1 permanently:(_Bool)arg2;
 - (_Bool)shouldCancel;
-- (id)messageWithLibraryID:(unsigned int)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
+- (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
 - (id)messagesWithMessageIDHeader:(id)arg1;
 - (id)messageWithMessageID:(id)arg1 options:(unsigned int)arg2 inMailbox:(id)arg3;
 - (id)getDetailsForMessages:(unsigned int)arg1 absoluteBottom:(unsigned int)arg2 topOfDesiredRange:(unsigned int)arg3 range:(struct _NSRange *)arg4 fromMailbox:(id)arg5;
 - (id)getDetailsForAllMessagesFromMailbox:(id)arg1;
 - (id)getDetailsForMessagesWithRemoteIDInRange:(struct _NSRange)arg1 fromMailbox:(id)arg2;
 - (void)setSequenceIdentifier:(id)arg1 forMessagesWithRemoteIDs:(id)arg2 inMailbox:(id)arg3;
-- (void)setSequenceIdentifier:(id)arg1 forMessageWithLibraryID:(unsigned int)arg2;
+- (void)setSequenceIdentifier:(id)arg1 forMessageWithLibraryID:(long long)arg2;
 - (id)sequenceIdentifierForMessagesWithRemoteIDs:(id)arg1 inMailbox:(id)arg2;
 - (void)setSequenceIdentifier:(id)arg1 forMailbox:(id)arg2;
 - (id)sequenceIdentifierForMailbox:(id)arg1;
@@ -110,12 +103,13 @@
 - (id)oldestMessageInMailbox:(id)arg1;
 - (void)setMostRecentStatusCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (unsigned int)mostRecentStatusCountForMailbox:(id)arg1;
-- (void)adjustLastSyncStatusCountBy:(int)arg1 forMailbox:(id)arg2;
+- (void)adjustLastSyncAndMostRecentStatusCount:(int)arg1 forMailbox:(id)arg2;
 - (void)setLastSyncAndMostRecentStatusCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (int)statusCountDeltaForMailbox:(id)arg1;
 - (void)setServerUnreadOnlyOnServerCount:(unsigned int)arg1 forMailbox:(id)arg2;
 - (unsigned int)serverUnreadOnlyOnServerCountForMailbox:(id)arg1;
 - (unsigned int)totalCountForMailbox:(id)arg1;
+- (unsigned int)unseenCountForMailbox:(id)arg1;
 - (unsigned int)nonDeletedCountForMailbox:(id)arg1 includeServerSearchResults:(_Bool)arg2 includeThreadSearchResults:(_Bool)arg3;
 - (unsigned int)nonDeletedCountForMailbox:(id)arg1;
 - (unsigned int)nonDeletedCountForAggregatedMailboxes:(id)arg1 includeServerSearchResults:(_Bool)arg2 includeThreadSearchResults:(_Bool)arg3;
@@ -127,12 +121,11 @@
 - (unsigned int)unreadCountForAggregatedMailboxes:(id)arg1;
 - (unsigned int)unreadCountForMailbox:(id)arg1 matchingCriterion:(id)arg2;
 - (unsigned int)unreadCountForMailbox:(id)arg1;
-- (id)orderedBatchOfMessagesEndingAtRowId:(unsigned int)arg1 limit:(unsigned int)arg2 success:(_Bool *)arg3;
-- (id)messagesWithoutSummariesForMailbox:(id)arg1 fromRowID:(unsigned int)arg2 limit:(unsigned int)arg3;
-- (id)messagesWithSummariesForMailbox:(id)arg1 fromRowID:(unsigned int)arg2 limit:(unsigned int)arg3;
+- (id)orderedBatchOfMessagesEndingAtRowId:(long long)arg1 limit:(unsigned int)arg2 success:(_Bool *)arg3;
+- (id)messagesWithoutSummariesForMailbox:(id)arg1 fromRowID:(long long)arg2 limit:(unsigned int)arg3;
+- (id)messagesWithSummariesForMailbox:(id)arg1 fromRowID:(long long)arg2 limit:(unsigned int)arg3;
 - (id)messagesWithoutSummariesForMailbox:(id)arg1;
 - (id)messagesWithSummariesForMailbox:(id)arg1 range:(struct _NSRange)arg2;
-- (id)dateOfNewestNonSearchResultMessageInMailbox:(id)arg1;
 - (id)dateOfOldestNonIndexedNonSearchResultMessageInMailbox:(id)arg1;
 - (id)dateOfOldestNonSearchResultMessageInMailbox:(id)arg1;
 - (id)messagesNeedingSyncConfirmationForMailbox:(id)arg1;
@@ -143,7 +136,6 @@
 - (id)duplicateMessages:(id)arg1 newRemoteIDs:(id)arg2 forMailbox:(id)arg3 setFlags:(unsigned long long)arg4 clearFlags:(unsigned long long)arg5 messageFlagsForMessages:(id)arg6 createNewCacheFiles:(_Bool)arg7;
 - (void)commit;
 - (void)flagsChangedForMessages:(id)arg1 flags:(id)arg2 oldFlagsByMessage:(id)arg3;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1;
 
 @end

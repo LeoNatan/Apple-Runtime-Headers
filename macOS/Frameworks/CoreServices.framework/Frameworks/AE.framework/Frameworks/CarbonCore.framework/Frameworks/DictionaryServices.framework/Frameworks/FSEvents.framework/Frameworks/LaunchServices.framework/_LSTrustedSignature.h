@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)secret;
 + (unsigned long long)currentFormatVersion;
 @property(readonly, nonatomic) NSString *stringRepresentation; // @synthesize stringRepresentation=_stringRepresentation;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithBundleURL:(id)arg1 secret:(id)arg2 error:(id *)arg3;
 - (id)initWithBundleURL:(id)arg1 error:(id *)arg2;
 - (id)init;

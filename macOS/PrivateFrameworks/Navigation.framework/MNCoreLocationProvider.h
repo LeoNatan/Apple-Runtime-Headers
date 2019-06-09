@@ -9,7 +9,7 @@
 #import <Navigation/CLLocationManagerDelegate-Protocol.h>
 #import <Navigation/MNLocationProvider-Protocol.h>
 
-@class CLLocationManager, NSBundle, NSLock, NSString;
+@class CLLocationManager, NSBundle, NSLock, NSRunLoop, NSString;
 @protocol MNLocationProviderDelegate;
 
 __attribute__((visibility("hidden")))
@@ -26,10 +26,12 @@ __attribute__((visibility("hidden")))
     NSBundle *_effectiveBundle;
     NSString *_effectiveBundleIdentifier;
     CDUnknownBlockType _authorizationRequestBlock;
+    NSRunLoop *_debug_initRunLoop;
+    NSRunLoop *_debug_deinitRunLoop;
     BOOL _updatingLocations;
 }
 
-@property BOOL updatingLocations; // @synthesize updatingLocations=_updatingLocations;
+@property(nonatomic) BOOL updatingLocations; // @synthesize updatingLocations=_updatingLocations;
 @property(nonatomic) __weak id <MNLocationProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)locationManagerDidResumeLocationUpdates:(id)arg1;
@@ -64,7 +66,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL usesCLMapCorrection;
 @property(readonly, nonatomic) CLLocationManager *_clLocationManager;
 - (void)_createCLLocationManager;
+- (void)_sharedInit;
 - (void)dealloc;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1;
+- (id)initWithEffectiveBundle:(id)arg1;
 - (id)init;
 
 // Remaining properties

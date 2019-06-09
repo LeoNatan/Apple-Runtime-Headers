@@ -8,25 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEORPCorrectedField : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_correctedValue;
-    int _field;
     NSString *_fieldName;
     NSString *_originalValue;
+    int _field;
     BOOL _isMarkedIncorrect;
     struct {
-        unsigned int field:1;
-        unsigned int isMarkedIncorrect:1;
-    } _has;
+        unsigned int has_field:1;
+        unsigned int has_isMarkedIncorrect:1;
+        unsigned int read_correctedValue:1;
+        unsigned int read_fieldName:1;
+        unsigned int read_originalValue:1;
+        unsigned int wrote_correctedValue:1;
+        unsigned int wrote_fieldName:1;
+        unsigned int wrote_originalValue:1;
+        unsigned int wrote_field:1;
+        unsigned int wrote_isMarkedIncorrect:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL isMarkedIncorrect; // @synthesize isMarkedIncorrect=_isMarkedIncorrect;
-@property(retain, nonatomic) NSString *correctedValue; // @synthesize correctedValue=_correctedValue;
-@property(retain, nonatomic) NSString *originalValue; // @synthesize originalValue=_originalValue;
-@property(retain, nonatomic) NSString *fieldName; // @synthesize fieldName=_fieldName;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,16 +42,24 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasIsMarkedIncorrect;
+@property(nonatomic) BOOL isMarkedIncorrect;
+@property(retain, nonatomic) NSString *correctedValue;
 @property(readonly, nonatomic) BOOL hasCorrectedValue;
+- (void)_readCorrectedValue;
+@property(retain, nonatomic) NSString *originalValue;
 @property(readonly, nonatomic) BOOL hasOriginalValue;
+- (void)_readOriginalValue;
+@property(retain, nonatomic) NSString *fieldName;
 @property(readonly, nonatomic) BOOL hasFieldName;
+- (void)_readFieldName;
 - (int)StringAsField:(id)arg1;
 - (id)fieldAsString:(int)arg1;
 @property(nonatomic) BOOL hasField;
-@property(nonatomic) int field; // @synthesize field=_field;
+@property(nonatomic) int field;
 
 @end
 

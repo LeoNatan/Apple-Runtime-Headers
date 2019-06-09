@@ -11,6 +11,7 @@
 @class NSString, UIImage, UIImageView, UITapGestureRecognizer;
 @protocol CKSharedContentsCollectionViewCellDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKSharedContentsCollectionViewCell : CKSharedAssetCollectionViewCell <UIGestureRecognizerDelegate>
 {
     _Bool _editing;

@@ -43,6 +43,8 @@
 - (id)identifier;
 - (id)displayNameRoot;
 - (id)displayName;
+- (id)_siriVoiceDisplayNameRoot;
+- (id)_siriVoiceDisplayName;
 - (id)_displayLocalizedVoiceNameForString:(id)arg1;
 - (id)voiceAttributes;
 - (void)dealloc;

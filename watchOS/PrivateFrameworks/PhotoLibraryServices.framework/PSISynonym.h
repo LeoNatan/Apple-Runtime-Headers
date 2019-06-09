@@ -21,12 +21,12 @@
 @property(readonly, nonatomic) unsigned long long owningGroupId; // @synthesize owningGroupId=_owningGroupId;
 @property(readonly, nonatomic) unsigned int category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
+- (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithText:(id)arg1 category:(unsigned int)arg2 owningGroupId:(unsigned long long)arg3;
 
 @end

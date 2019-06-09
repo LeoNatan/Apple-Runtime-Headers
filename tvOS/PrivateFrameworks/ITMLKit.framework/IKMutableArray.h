@@ -20,6 +20,7 @@
 - (void)insertObject:(id)arg1 atIndex:(long long)arg2;
 - (void)removeObject:(id)arg1;
 - (void)addObject:(id)arg1;
+- (void)setObject:(id)arg1 atIndexedSubscript:(long long)arg2;
 - (id)initWithCapacity:(long long)arg1;
 
 @end

@@ -8,24 +8,28 @@
 
 #import <ScreenTimeUI/STAllowanceDetailListControllerDelegate-Protocol.h>
 
-@class NSSet, NSString, STUsageItem;
+@class NSSet, NSString, PSSpecifier, STUsageItem;
 
+__attribute__((visibility("hidden")))
 @interface STAllowanceProgressGroupSpecifierProvider : STUsageGroupSpecifierProvider <STAllowanceDetailListControllerDelegate>
 {
     NSSet *_budgetedIdentifiers;
     STUsageItem *_usageItem;
+    PSSpecifier *_addAllowanceSpecifier;
 }
 
+@property(readonly, copy) PSSpecifier *addAllowanceSpecifier; // @synthesize addAllowanceSpecifier=_addAllowanceSpecifier;
 @property(readonly, nonatomic) STUsageItem *usageItem; // @synthesize usageItem=_usageItem;
 @property(readonly, copy, nonatomic) NSSet *budgetedIdentifiers; // @synthesize budgetedIdentifiers=_budgetedIdentifiers;
 - (void).cxx_destruct;
 - (void)allowanceDetailControllerDidCancel:(id)arg1;
 - (void)allowanceDetailController:(id)arg1 didDeleteAllowance:(id)arg2;
 - (void)allowanceDetailController:(id)arg1 didSaveAllowance:(id)arg2;
-- (void)showBudgetDetailSetupController:(id)arg1;
-- (void)showBudgetDetailController:(id)arg1;
-- (id)budgetDetailText:(id)arg1;
-- (id)allowanceSpecifiers;
+- (void)_showAllowanceSetupListController:(id)arg1;
+- (void)_showAllowanceDetailListController:(id)arg1;
+- (id)_allowanceDetailText:(id)arg1;
+- (id)_specifierForAllowance:(id)arg1;
+- (void)_allowancesByIdentifierDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
 - (id)initWithBudgetedIdentifiers:(id)arg1 usageItem:(id)arg2;

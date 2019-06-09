@@ -8,22 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPlaceActionDetails, NSString;
+@class GEOPlaceActionDetails, NSString, PBDataReader;
 
 @interface GEOLogMsgStatePlaceCard : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _possibleActions;
     CDStruct_95bda58d _unactionableUiElements;
     GEOPlaceActionDetails *_placeActionDetails;
     NSString *_placecardCategory;
     int _placecardType;
+    _Bool _transitAdvisoryBanner;
     struct {
-        unsigned int placecardType:1;
-    } _has;
+        unsigned int has_placecardType:1;
+        unsigned int has_transitAdvisoryBanner:1;
+        unsigned int read_possibleActions:1;
+        unsigned int read_unactionableUiElements:1;
+        unsigned int read_placeActionDetails:1;
+        unsigned int read_placecardCategory:1;
+        unsigned int wrote_possibleActions:1;
+        unsigned int wrote_unactionableUiElements:1;
+        unsigned int wrote_placeActionDetails:1;
+        unsigned int wrote_placecardCategory:1;
+        unsigned int wrote_placecardType:1;
+        unsigned int wrote_transitAdvisoryBanner:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *placecardCategory; // @synthesize placecardCategory=_placecardCategory;
-@property(retain, nonatomic) GEOPlaceActionDetails *placeActionDetails; // @synthesize placeActionDetails=_placeActionDetails;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,30 +45,41 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasTransitAdvisoryBanner;
+@property(nonatomic) _Bool transitAdvisoryBanner;
 - (int)StringAsPlacecardType:(id)arg1;
 - (id)placecardTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPlacecardType;
-@property(nonatomic) int placecardType; // @synthesize placecardType=_placecardType;
+@property(nonatomic) int placecardType;
+@property(retain, nonatomic) NSString *placecardCategory;
 @property(readonly, nonatomic) _Bool hasPlacecardCategory;
+- (void)_readPlacecardCategory;
 - (int)StringAsUnactionableUiElements:(id)arg1;
 - (id)unactionableUiElementsAsString:(int)arg1;
 - (void)setUnactionableUiElements:(int *)arg1 count:(unsigned long long)arg2;
 - (int)unactionableUiElementAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsUnactionableUiElement:(int)arg1;
 - (void)addUnactionableUiElement:(int)arg1;
 - (void)clearUnactionableUiElements;
 @property(readonly, nonatomic) int *unactionableUiElements;
 @property(readonly, nonatomic) unsigned long long unactionableUiElementsCount;
+- (void)_readUnactionableUiElements;
 - (int)StringAsPossibleActions:(id)arg1;
 - (id)possibleActionsAsString:(int)arg1;
 - (void)setPossibleActions:(int *)arg1 count:(unsigned long long)arg2;
 - (int)possibleActionAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsPossibleAction:(int)arg1;
 - (void)addPossibleAction:(int)arg1;
 - (void)clearPossibleActions;
 @property(readonly, nonatomic) int *possibleActions;
 @property(readonly, nonatomic) unsigned long long possibleActionsCount;
+- (void)_readPossibleActions;
+@property(retain, nonatomic) GEOPlaceActionDetails *placeActionDetails;
 @property(readonly, nonatomic) _Bool hasPlaceActionDetails;
+- (void)_readPlaceActionDetails;
 - (void)dealloc;
 
 @end

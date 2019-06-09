@@ -36,9 +36,9 @@
 - (void)_sample;
 - (_Bool)_shouldSampleContinuously;
 - (void)_updateSampleTimer;
-- (id)_newImageFromBlurSurface:(void *)arg1 rect:(struct CGRect)arg2;
+- (id)_newImageFromBlurSurface:(struct __IOSurface *)arg1 rect:(struct CGRect)arg2;
 - (void)wallpaper:(id)arg1 didComputeAverageColor:(id)arg2 forRect:(struct CGRect)arg3;
-- (void)wallpaper:(id)arg1 didGenerateBlur:(void *)arg2 forRect:(struct CGRect)arg3;
+- (void)wallpaper:(id)arg1 didGenerateBlur:(struct __IOSurface *)arg2 forRect:(struct CGRect)arg3;
 - (_Bool)hasContentOutsideVisibleBounds;
 - (_Bool)_needsFallbackImageForBackdropGeneratedImage:(id)arg1;
 - (id)_blurredImage;
@@ -60,7 +60,7 @@
 - (void)invalidate;
 - (long long)wallpaperType;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 proceduralWallpaper:(id)arg2 options:(id)arg3 variant:(long long)arg4 wallpaperSettingsProvider:(id)arg5;
+- (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 variant:(long long)arg3 cacheGroup:(id)arg4 delegate:(id)arg5 options:(unsigned long long)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

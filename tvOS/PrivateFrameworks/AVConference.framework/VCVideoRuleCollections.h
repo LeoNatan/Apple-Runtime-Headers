@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_supportedPayloads;
 }
 
++ (id)newCorrectedVideoRules:(id)arg1 payload:(int)arg2;
 @property(readonly) NSDictionary *rules; // @synthesize rules=_rules;
 @property(readonly) NSArray *supportedPayloads; // @synthesize supportedPayloads=_supportedPayloads;
+- (_Bool)isEqual:(id)arg1;
 - (_Bool)isPayloadSupported:(int)arg1;
 - (void)addSupportedPayload:(int)arg1;
 - (void)removeVideoRulesWithWidth:(int)arg1 height:(int)arg2 transportType:(unsigned char)arg3 encodingType:(unsigned char)arg4;

@@ -6,23 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class ABPersonListSearchController, CNContactListController, CNContactPickerView;
+@class ABPersonListSearchController, CNContactCardViewController, CNContactListController, CNContactPickerView;
 @protocol CNContactPickerInternalResponseDelegate;
 
 @interface CNContactPickerScope : NSObject
 {
+    BOOL _shouldShowSelectedContact;
     CNContactPickerView *_pickerView;
     CNContactListController *_contactListController;
     ABPersonListSearchController *_searchController;
+    CNContactCardViewController *_contactCardViewController;
     id <CNContactPickerInternalResponseDelegate> _delegate;
 }
 
+@property(readonly) BOOL shouldShowSelectedContact; // @synthesize shouldShowSelectedContact=_shouldShowSelectedContact;
 @property(readonly) __weak id <CNContactPickerInternalResponseDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly) __weak CNContactCardViewController *contactCardViewController; // @synthesize contactCardViewController=_contactCardViewController;
 @property(readonly) __weak ABPersonListSearchController *searchController; // @synthesize searchController=_searchController;
 @property(readonly) __weak CNContactListController *contactListController; // @synthesize contactListController=_contactListController;
 @property(readonly) __weak CNContactPickerView *pickerView; // @synthesize pickerView=_pickerView;
 - (void).cxx_destruct;
-- (id)initWithInternalResponseDelegate:(id)arg1 contactListController:(id)arg2 searchController:(id)arg3 pickerView:(id)arg4;
+- (id)initWithInternalResponseDelegate:(id)arg1 contactListController:(id)arg2 searchController:(id)arg3 contactCardViewController:(id)arg4 pickerView:(id)arg5 shouldShowSelectedContact:(BOOL)arg6;
 
 @end
 

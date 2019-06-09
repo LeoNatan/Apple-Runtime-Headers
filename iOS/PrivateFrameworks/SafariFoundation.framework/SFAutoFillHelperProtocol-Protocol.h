@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol SFAutoFillHelperProtocol <NSObject>
+- (void)getRemoteAutoFillAvailabilityWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 - (void)getAutomaticStrongPasswordForAppWithPasswordRules:(NSString *)arg1 confirmPasswordRules:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 @end
 

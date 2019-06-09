@@ -8,5 +8,7 @@
 
 @interface UIView (MoreExtras)
 - (void)npto_setSubviews:(id)arg1;
+- (struct CGRect)_npto_landscapeFrame;
+- (struct CGRect)_npto_portraitFrame;
 @end
 

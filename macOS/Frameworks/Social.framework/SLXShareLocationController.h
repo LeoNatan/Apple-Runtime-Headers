@@ -9,6 +9,7 @@
 @class NSArray, NSButton, NSPopUpButton, NSTrackingArea;
 @protocol SLXShareLocationControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SLXShareLocationController : NSViewController
 {
     NSArray *_locations;

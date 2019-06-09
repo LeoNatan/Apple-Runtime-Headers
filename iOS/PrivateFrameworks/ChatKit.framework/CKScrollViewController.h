@@ -42,6 +42,7 @@
 - (void)keyboardWillHideViaGesture;
 - (void)contentInsetDidChange;
 - (void)contentInsetWillChange:(struct UIEdgeInsets)arg1 animated:(_Bool)arg2 duration:(double)arg3;
+- (void)primeWithKeyboardFrame:(struct CGRect)arg1;
 - (_Bool)isHoldingScrollGeometryUpdates;
 - (void)endHoldingScrollGeometryUpdatesForAllKeys;
 - (void)endHoldingScrollGeometryUpdatesForKey:(id)arg1;

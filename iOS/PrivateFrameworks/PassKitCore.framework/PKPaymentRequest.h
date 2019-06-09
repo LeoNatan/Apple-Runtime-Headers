@@ -8,11 +8,14 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class AKAppleIDAuthenticationContext, NSArray, NSData, NSSet, NSString, NSURL, PKContact, PKPaymentMerchantSession;
+@class AKAppleIDAuthenticationContext, NSArray, NSData, NSDate, NSSet, NSString, NSTimeZone, NSURL, PKApplePayTrustSignatureRequest, PKContact, PKPaymentMerchantSession;
 
 @interface PKPaymentRequest : NSObject <NSSecureCoding>
 {
     _Bool _expectsMerchantSession;
+    _Bool _accountPaymentSupportsPeerPayment;
+    _Bool _accountPaymentUsePeerPaymentBalance;
+    _Bool _deviceSupportsPeerPaymentAccountPayment;
     _Bool _suppressTotal;
     _Bool _shippingEditable;
     _Bool _requiresAddressPrecision;
@@ -38,6 +41,11 @@
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSString *_CTDataConnectionServiceType;
+    PKApplePayTrustSignatureRequest *_applePayTrustSignatureRequest;
+    NSArray *_bankAccounts;
+    long long _paymentFrequency;
+    NSDate *_paymentDate;
+    NSTimeZone *_paymentTimeZone;
     unsigned long long _APIType;
     unsigned long long _requestType;
     unsigned long long _requestor;
@@ -89,6 +97,14 @@
 @property(nonatomic) unsigned long long requestor; // @synthesize requestor=_requestor;
 @property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
 @property(nonatomic) unsigned long long APIType; // @synthesize APIType=_APIType;
+@property(copy, nonatomic) NSTimeZone *paymentTimeZone; // @synthesize paymentTimeZone=_paymentTimeZone;
+@property(copy, nonatomic) NSDate *paymentDate; // @synthesize paymentDate=_paymentDate;
+@property(nonatomic) long long paymentFrequency; // @synthesize paymentFrequency=_paymentFrequency;
+@property(nonatomic) _Bool deviceSupportsPeerPaymentAccountPayment; // @synthesize deviceSupportsPeerPaymentAccountPayment=_deviceSupportsPeerPaymentAccountPayment;
+@property(nonatomic) _Bool accountPaymentUsePeerPaymentBalance; // @synthesize accountPaymentUsePeerPaymentBalance=_accountPaymentUsePeerPaymentBalance;
+@property(nonatomic) _Bool accountPaymentSupportsPeerPayment; // @synthesize accountPaymentSupportsPeerPayment=_accountPaymentSupportsPeerPayment;
+@property(retain, nonatomic) NSArray *bankAccounts; // @synthesize bankAccounts=_bankAccounts;
+@property(retain, nonatomic) PKApplePayTrustSignatureRequest *applePayTrustSignatureRequest; // @synthesize applePayTrustSignatureRequest=_applePayTrustSignatureRequest;
 @property(retain, nonatomic) NSString *CTDataConnectionServiceType; // @synthesize CTDataConnectionServiceType=_CTDataConnectionServiceType;
 @property(retain, nonatomic) NSString *sourceApplicationSecondaryIdentifier; // @synthesize sourceApplicationSecondaryIdentifier=_sourceApplicationSecondaryIdentifier;
 @property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;

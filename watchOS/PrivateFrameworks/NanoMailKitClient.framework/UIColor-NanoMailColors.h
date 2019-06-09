@@ -18,5 +18,9 @@
 + (id)nnmlSeparatorColor;
 + (id)nnmlAppBackgroundColor;
 + (id)nnmlAppPrimaryColor;
++ (id)colorWithWebHexTriplet:(id)arg1;
++ (id)colorWithWebRgb:(id)arg1;
++ (id)colorWithWebColorName:(id)arg1;
++ (id)colorWithWebColor:(id)arg1;
 @end
 

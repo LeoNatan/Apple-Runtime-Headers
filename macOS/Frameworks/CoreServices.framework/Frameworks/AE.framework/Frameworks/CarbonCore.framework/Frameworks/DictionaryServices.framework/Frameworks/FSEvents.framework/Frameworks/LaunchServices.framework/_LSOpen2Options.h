@@ -9,22 +9,42 @@
 #import <LaunchServices/NSCopying-Protocol.h>
 #import <LaunchServices/NSSecureCoding-Protocol.h>
 
+@class NSDictionary, NSNumber, NSString, NSURL;
+
 __attribute__((visibility("hidden")))
 @interface _LSOpen2Options : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _preferRunningInstance;
     BOOL _captureDiagnostics;
+    BOOL _allowErrorUI;
+    BOOL _requiresUniversalLinks;
+    NSString *_launchReason;
+    NSDictionary *_launchInfo;
+    NSURL *_referrerURL;
     id _userInfo;
+    NSString *_overrideBackgroundPriorityName;
+    NSNumber *_launchUID;
+    NSNumber *_launchSessionID;
+    NSString *_overrideApplicationType;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSString *overrideApplicationType; // @synthesize overrideApplicationType=_overrideApplicationType;
+@property(copy, nonatomic) NSNumber *launchSessionID; // @synthesize launchSessionID=_launchSessionID;
+@property(copy, nonatomic) NSNumber *launchUID; // @synthesize launchUID=_launchUID;
+@property(copy, nonatomic) NSString *overrideBackgroundPriorityName; // @synthesize overrideBackgroundPriorityName=_overrideBackgroundPriorityName;
 @property(copy, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
+@property(nonatomic) BOOL requiresUniversalLinks; // @synthesize requiresUniversalLinks=_requiresUniversalLinks;
+@property(copy, nonatomic) NSURL *referrerURL; // @synthesize referrerURL=_referrerURL;
+@property(copy, nonatomic) NSDictionary *launchInfo; // @synthesize launchInfo=_launchInfo;
+@property(copy, nonatomic) NSString *launchReason; // @synthesize launchReason=_launchReason;
+@property(nonatomic) BOOL allowErrorUI; // @synthesize allowErrorUI=_allowErrorUI;
 @property(nonatomic) BOOL captureDiagnostics; // @synthesize captureDiagnostics=_captureDiagnostics;
 @property(nonatomic) BOOL preferRunningInstance; // @synthesize preferRunningInstance=_preferRunningInstance;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 
 @end
 

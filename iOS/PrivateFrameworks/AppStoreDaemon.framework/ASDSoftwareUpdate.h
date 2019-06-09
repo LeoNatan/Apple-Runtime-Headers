@@ -13,16 +13,16 @@
 
 @interface ASDSoftwareUpdate : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _downloaded;
-    _Bool _perDevice;
-    _Bool _profileValidated;
     NSArray *_blockedBy;
     NSDate *_installDate;
+    NSDictionary *_metrics;
+    _Bool _perDevice;
+    _Bool _profileValidated;
     NSDictionary *_rawUpdateDictionary;
+    long long _rawUpdateState;
     NSDate *_timestamp;
     long long _updateState;
-    NSDictionary *_metrics;
-    long long _rawUpdateState;
+    _Bool _downloaded;
 }
 
 + (_Bool)supportsSecureCoding;

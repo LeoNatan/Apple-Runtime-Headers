@@ -19,6 +19,7 @@
     NSArray *_dataStrings;
 }
 
++ (BOOL)supportsSecureCoding;
 + (Class)dataStringType;
 @property(copy, nonatomic) NSArray *dataStrings; // @synthesize dataStrings=_dataStrings;
 @property(retain, nonatomic) _INPBCondition *conditionType; // @synthesize conditionType=_conditionType;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)dataStringAtIndex:(unsigned long long)arg1;

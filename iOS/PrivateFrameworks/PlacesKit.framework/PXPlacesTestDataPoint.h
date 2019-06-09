@@ -8,11 +8,10 @@
 
 #import <PlacesKit/PXPlacesGeotaggable-Protocol.h>
 
-@class NSString, PXImage;
+@class NSString;
 
 @interface PXPlacesTestDataPoint : NSObject <PXPlacesGeotaggable>
 {
-    PXImage *_image;
     struct CLLocationCoordinate2D _coordinate;
     NSString *_name;
 }

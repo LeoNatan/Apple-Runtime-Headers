@@ -11,7 +11,6 @@
 @class NSString;
 @protocol MTLDevice;
 
-__attribute__((visibility("hidden")))
 @interface MTKTextureIOBufferAllocator : NSObject <TXRBufferAllocator>
 {
     id <MTLDevice> _device;

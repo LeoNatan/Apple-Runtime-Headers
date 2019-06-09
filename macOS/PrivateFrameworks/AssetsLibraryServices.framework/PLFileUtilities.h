@@ -30,7 +30,9 @@
 + (BOOL)cloneFileAtPath:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
 + (BOOL)secureMoveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (id)fileManager;
++ (BOOL)isAPFSForFileSystemAtURL:(id)arg1;
 + (BOOL)canEnableCloudPhotoLibraryForFileSystemAtURL:(id)arg1 isLocal:(out char *)arg2;
++ (BOOL)isExternalVolumeAtURL:(id)arg1;
 + (BOOL)isLocalFileSystemAtURL:(id)arg1;
 + (BOOL)_getFileSystemType:(unsigned int *)arg1 subType:(unsigned int *)arg2 typeName:(id *)arg3 forURL:(id)arg4;
 + (BOOL)supportsClone;

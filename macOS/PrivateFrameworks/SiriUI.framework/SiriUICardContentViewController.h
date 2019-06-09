@@ -8,7 +8,6 @@
 
 @class SiriUISnippetControllerCell;
 
-__attribute__((visibility("hidden")))
 @interface SiriUICardContentViewController : NSViewController
 {
     SiriUISnippetControllerCell *_cellView;

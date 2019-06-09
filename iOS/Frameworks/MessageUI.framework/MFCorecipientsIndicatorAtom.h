@@ -17,14 +17,14 @@
 }
 
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
-@property(nonatomic) id <MFCorecipientsIndicatorAtomDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <MFCorecipientsIndicatorAtomDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)initWithRecipients:(id)arg1;
 - (id)init;
-- (void)dealloc;
 
 @end
 

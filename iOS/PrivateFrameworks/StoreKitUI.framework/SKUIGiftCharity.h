@@ -8,6 +8,7 @@
 
 @class NSArray, NSString, SKUIArtwork;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftCharity : NSObject
 {
     NSString *_amountDisclaimer;

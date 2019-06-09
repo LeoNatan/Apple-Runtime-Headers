@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)forecastRequestForLocation:(id)arg1 date:(id)arg2;
++ (id)forecastRequest:(unsigned long long)arg1 forLocation:(id)arg2 locale:(id)arg3 date:(id)arg4;
 + (id)hostURLForService;
 
 // Remaining properties

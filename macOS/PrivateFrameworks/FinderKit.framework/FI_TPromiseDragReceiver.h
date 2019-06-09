@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface FI_TPromiseDragReceiver : NSObject <TCoalescingNodeObserverProtocol>
 {
     function_0beffb83 _promiseDragNodeAddedCallback;
-    struct function<void (const TFENodeVector &, const TError &)> _promiseDragCompletionCallback;
+    function_cbb14aa3 _promiseDragCompletionCallback;
     struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _nodeObserver;
     struct TFENode _dropTargetNode;
     vector_757c8b87 _rawNamesOfPendingPromisedNodes;
@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesAdded:(const struct TFENodeVector *)arg2 toObservedNode:(const struct TFENode *)arg3;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 openSyncCompleted:(const struct TFENode *)arg2;
 - (void)waitForPromisedNodesAsync;
-- (void)receivePromiseDrag:(struct TDropOperation *)arg1 nodeAddedCallback:(CDUnknownBlockType)arg2 completionCallback:(CDUnknownBlockType)arg3;
+- (void)receivePromiseDrag:(struct TDropOperation *)arg1 nodeAddedCallback:(const function_0beffb83 *)arg2 completionCallback:(const function_cbb14aa3 *)arg3;
 - (void)aboutToTearDown;
 - (id)initWithDropTargetNode:(const struct TFENode *)arg1;
 - (id)init;

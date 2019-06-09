@@ -26,6 +26,7 @@
 @property(readonly, copy) NSDictionary *dictionary;
 - (void)setVariableSubstitution:(id)arg1;
 - (void)setStaticValue:(id)arg1;
+- (void)dealloc;
 
 @end
 

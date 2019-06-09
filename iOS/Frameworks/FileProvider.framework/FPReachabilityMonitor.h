@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (_Bool)isNetworkReachableForBundle:(id)arg1;
-- (_Bool)isCellularAllowedForBR;
+- (_Bool)_isCellularAllowedForBR;
 - (void)_accountDidChange;
 - (void)dealloc;
 - (id)init;

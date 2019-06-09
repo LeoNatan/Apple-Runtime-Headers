@@ -11,16 +11,19 @@
 #import <HealthKit/_HKDeepBreathingSessionLifecycleDelegate-Protocol.h>
 #import <HealthKit/_HKXPCExportable-Protocol.h>
 
-@class HKHealthServicesManager, HKProfileIdentifier, NSHashTable, NSMutableDictionary, NSMutableSet, NSSet, NSString, _HKXPCConnection;
+@class HKHealthServicesManager, HKProfileIdentifier, NSBundle, NSHashTable, NSMutableDictionary, NSMutableSet, NSSet, NSString, _HKXPCConnection;
 @protocol HDHealthStoreServerInterface, OS_dispatch_queue, _HKAuthorizationPresentationController, _HKDocumentPickerPresentationController;
 
 @interface HKHealthStore : NSObject <HKHealthStoreClientInterface, _HKDeepBreathingSessionLifecycleDelegate, _HKXPCExportable, HKQueryDelegate>
 {
-    NSObject<OS_dispatch_queue> *_resourceQueue;
-    NSObject<OS_dispatch_queue> *_proxyQueue;
+    struct os_unfair_lock_s _lock;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
     _HKXPCConnection *_healthdConnection;
+    NSBundle *_sourceBundle;
+    NSString *_sourceBundleIdentifier;
+    NSString *_debugIdentifier;
     HKProfileIdentifier *_profileIdentifier;
-    NSString *_debuggingIdentifier;
+    unsigned int _applicationSDKVersion;
     id <HDHealthStoreServerInterface> _serverProxy;
     NSMutableDictionary *_subserverProxiesBySelector;
     id <_HKAuthorizationPresentationController> _authorizationPresentationController;
@@ -31,17 +34,21 @@
     NSHashTable *_fitnessMachineConnections;
     NSHashTable *_fitnessMachineConnectionInitiators;
     NSMutableSet *_deepBreathingSessions;
-    NSMutableDictionary *_waitForSyncStartHandlersByUUID;
-    unsigned int _applicationSDKVersion;
+    _Bool _resumeRequired;
+    _Bool _resumed;
+    NSString *_writeAuthorizationUsageDescriptionOverride;
+    NSString *_readAuthorizationUsageDescriptionOverride;
+    NSString *_clinicalReadAuthorizationUsageDescriptionOverride;
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
 + (_Bool)_applicationHasRunningWorkout;
 + (_Bool)isHealthDataAvailable;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(readonly, nonatomic, getter=_queries) NSSet *queries; // @synthesize queries=_queries;
+@property(copy, nonatomic) NSString *clinicalReadAuthorizationUsageDescriptionOverride; // @synthesize clinicalReadAuthorizationUsageDescriptionOverride=_clinicalReadAuthorizationUsageDescriptionOverride;
+@property(copy, nonatomic) NSString *readAuthorizationUsageDescriptionOverride; // @synthesize readAuthorizationUsageDescriptionOverride=_readAuthorizationUsageDescriptionOverride;
+@property(copy, nonatomic) NSString *writeAuthorizationUsageDescriptionOverride; // @synthesize writeAuthorizationUsageDescriptionOverride=_writeAuthorizationUsageDescriptionOverride;
 - (void).cxx_destruct;
-- (void)unitTest_setApplicationSDKVersion:(unsigned int)arg1;
 - (void)containerAppExtensionEntitlementsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)generateFakeDataForActivityType:(long long)arg1 minutes:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidateActivityAlertSuppressionForIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -54,11 +61,10 @@
 - (void)fetchMedicalIDEmergencyContactsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchMedicalIDDataCreateIfNecessary:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchMedicalIDDataWithCompletion:(CDUnknownBlockType)arg1;
-- (void)submitMetricsIgnoringAnchor:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performMigrationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)obliterateHealthDataWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHealthDirectorySizeInBytesWithCompletion:(CDUnknownBlockType)arg1;
-- (void)clientRemote_waitOnHealthCloudSyncWithProgressDidStartWithUUID:(id)arg1;
+- (void)clientRemote_conceptIndexManagerDidBecomeQuiescentWithSamplesProcessedCount:(long long)arg1;
 - (void)clientRemote_unitPreferencesDidUpdate;
 - (void)setServerURL:(id)arg1 forAssetType:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchServerURLForAssetType:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -67,10 +73,8 @@
 - (void)removeDefaultForKey:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)getDefaultValueForKey:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)setDefaultValue:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_removeWaitForSyncStartHandlerWithUUID:(id)arg1;
-- (void)_addWaitForSyncStartHandlerWithUUID:(id)arg1 waitForSyncSyncStartHandler:(CDUnknownBlockType)arg2;
-- (CDUnknownBlockType)_objectHandlerOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_selectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)_progressHandlerOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_objectCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_actionCompletionOnClientQueue:(CDUnknownBlockType)arg1;
 - (void)_applicationDidBecomeActive:(id)arg1;
@@ -79,7 +83,6 @@
 - (void)connectionInvalidated;
 - (id)exportedInterface;
 - (id)remoteInterface;
-- (void)_weeklySummaryInfoForDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)splitTotalEnergy:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 resultsHandler:(CDUnknownBlockType)arg4;
 - (void)_mostRecentQuantityOfType:(id)arg1 beforeDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_currentValueForQuantityTypeCode:(long long)arg1 characteristicTypeCode:(long long)arg2 beforeDate:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -95,10 +98,7 @@
 - (void)_createDeepBreathingSessionWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)closeTransactionForType:(id)arg1 anchor:(id)arg2 ackTime:(id)arg3 query:(id)arg4;
 - (void)queryDidFinishExecuting:(id)arg1;
-- (void)_resourceQueue_addFitnessMachineConnectionInitiator:(id)arg1;
 - (id)_createFitnessMachineConnectionInitiator;
-- (id)_resourceQueue_fitnessMachineConnectionForUUID:(id)arg1;
-- (void)_resourceQueue_addFitnessMachineConnection:(id)arg1;
 - (id)_createFitnessMachineConnection;
 - (void)recoverActiveWorkoutSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)startWatchAppWithWorkoutConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -111,11 +111,12 @@
 - (_Bool)supportsHealthRecords;
 - (void)_generatePauseOrResumeRequest:(CDUnknownBlockType)arg1;
 - (void)_generateWorkoutMarkerWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_currentWorkoutSnapshotWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_firstPartyWorkoutSnapshotWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_activeWorkoutApplicationIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_setCharacteristic:(id)arg1 forDataType:(id)arg2 error:(id *)arg3;
 - (id)_characteristicForDataType:(id)arg1 error:(id *)arg2;
+- (_Bool)_setUserEnteredMenstrualPeriodLengthCharacteristicQuantity:(id)arg1 error:(id *)arg2;
+- (id)_userEnteredMenstrualPeriodLengthCharacteristicQuantityWithError:(id *)arg1;
+- (_Bool)_setUserEnteredMenstrualCycleLengthCharacteristicQuantity:(id)arg1 error:(id *)arg2;
+- (id)_userEnteredMenstrualCycleLengthCharacteristicQuantityWithError:(id *)arg1;
 - (_Bool)_setHeightCharacteristicQuantity:(id)arg1 error:(id *)arg2;
 - (id)_heightCharacteristicQuantityWithError:(id *)arg1;
 - (_Bool)_setLeanBodyMassCharacteristicQuantity:(id)arg1 error:(id *)arg2;
@@ -133,9 +134,12 @@
 - (_Bool)_setDateOfBirthComponents:(id)arg1 error:(id *)arg2;
 - (id)dateOfBirthComponentsWithError:(id *)arg1;
 - (id)dateOfBirthWithError:(id *)arg1;
+@property(readonly, copy, getter=_queries) NSSet *queries;
 - (void)stopQuery:(id)arg1;
 - (void)executeQuery:(id)arg1 activationHandler:(CDUnknownBlockType)arg2;
 - (void)executeQuery:(id)arg1;
+- (void)_removeQuery:(id)arg1;
+- (void)_addQuery:(id)arg1;
 - (void)deleteObjectsOfType:(id)arg1 predicate:(id)arg2 options:(unsigned long long)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)deleteObjects:(id)arg1 options:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)deleteObject:(id)arg1 options:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
@@ -153,6 +157,8 @@
 - (void)setObjectAuthorizationStatuses:(id)arg1 forBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)clientRemote_presentAuthorizationWithSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clientRemote_presentAuthorizationWithRequestRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_healthDataAuthorizationPresentationRequestForRecord:(id)arg1;
+- (id)_clinicalAuthorizationPresentationRequestForRecord:(id)arg1;
 - (void)_clientQueue_invokeAuthorizationDelegateTransactionErrorHandlerWithError:(id)arg1;
 - (void)endAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 error:(id)arg2;
 - (void)beginAuthorizationDelegateTransactionWithSessionIdentifier:(id)arg1 sourceHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
@@ -160,7 +166,7 @@
 - (void)setRequestedAuthorizationForBundleIdentifier:(id)arg1 shareTypes:(id)arg2 readTypes:(id)arg3 prompt:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)setAuthorizationStatuses:(id)arg1 authorizationModes:(id)arg2 forBundleIdentifier:(id)arg3 options:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)retrieveAllAuthorizationRecordsForSample:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)allSourcesRequestingTypes:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)allSourcesRequestingAuthorizationForTypes:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)allAuthorizationRecordsForType:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)retrieveAllAuthorizationRecordsForDocumentType:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)allAuthorizationRecordsForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -168,10 +174,11 @@
 - (void)_throwIfClinicalTypesRequestedToShare:(id)arg1;
 - (void)_throwIfAuthorizationDisallowedForSharing:(_Bool)arg1 types:(id)arg2;
 - (void)handleAuthorizationForExtensionWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)_shouldIncorporateHealthDataRequestFlowForSharingTypes:(id)arg1 readingTypes:(id)arg2;
-- (_Bool)_shouldIncorporateClinicalHealthRecordsRequestFlowForSharingTypes:(id)arg1 readingTypes:(id)arg2;
 - (void)_validateHealthDataPurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
 - (void)_validateClinicalHealthRecordsPurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
+- (id)_clientClinicalReadAuthorizationUsageDescription;
+- (id)_clientReadAuthorizationUsageDescription;
+- (id)_clientWriteAuthorizationUsageDescription;
 - (void)_validatePurposeStringsForSharingTypes:(id)arg1 readingTypes:(id)arg2;
 - (void)_validateAuthorizationInfoPlist;
 - (void)requestAuthorizationToShareTypes:(id)arg1 readTypes:(id)arg2 shouldPrompt:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
@@ -180,6 +187,7 @@
 - (void)getRequestStatusForAuthorizationToShareTypes:(id)arg1 readTypes:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (long long)authorizationStatusForType:(id)arg1;
 - (void)associateSampleUUIDs:(id)arg1 withSampleUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)deleteClientSourceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)deleteObjectsWithUUIDs:(id)arg1 options:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deleteSourceWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deleteAllSamplesWithTypes:(id)arg1 sourceBundleIdentifier:(id)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
@@ -190,7 +198,7 @@
 - (void)addSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)hasSourceWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hasSampleWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchTaskServerEndpointForIdentifier:(id)arg1 taskUUID:(id)arg2 configuration:(id)arg3 endpointHandler:(CDUnknownBlockType)arg4 errorHandler:(CDUnknownBlockType)arg5;
+- (void)fetchTaskServerEndpointForIdentifier:(id)arg1 pluginURL:(id)arg2 taskUUID:(id)arg3 configuration:(id)arg4 endpointHandler:(CDUnknownBlockType)arg5 errorHandler:(CDUnknownBlockType)arg6;
 - (void)fetchPluginServiceEndpointForIdentifier:(id)arg1 endpointHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)_profileServerProxyWithCompletion:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)_workoutServerProxyWithCompletion:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
@@ -204,14 +212,22 @@
 - (void)_healthServicesServerProxyWithCompletion:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)_subserverProxyForSelector:(SEL)arg1 completion:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;
 - (void)_serverProxyWithCompletion:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (void)_resourceQueue_discardServerProxies;
+- (void)_discardServerProxies;
+- (void)resume;
 @property(readonly, nonatomic) HKHealthServicesManager *healthServicesManager;
-@property(readonly, copy, nonatomic) HKProfileIdentifier *profileIdentifier; // @dynamic profileIdentifier;
+@property(copy) NSString *debugIdentifier;
+- (id)_sourceBundleOrDefaultBundle;
+@property(retain) NSBundle *sourceBundle;
+@property(copy) NSString *sourceBundleIdentifier;
+@property(copy) HKProfileIdentifier *profileIdentifier;
+@property(readonly, nonatomic) unsigned int applicationSDKVersion;
+- (void)unitTest_setApplicationSDKVersion:(unsigned int)arg1;
+- (void)_setConfigurationPropertyUsingBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)unitTest_replaceListenerEndpoint:(id)arg1;
-- (void)_resourceQueue_setUpWithEndpoint:(id)arg1;
-- (id)initWithListenerEndpoint:(id)arg1 profileIdentifier:(id)arg2 identifier:(id)arg3;
-- (id)initWithListenerEndpoint:(id)arg1 profileIdentifier:(id)arg2;
+- (void)_connectionQueue_setUpWithEndpoint:(id)arg1;
+- (void)_faultIfInnappropriateHost;
+- (id)initWithListenerEndpoint:(id)arg1 identifier:(id)arg2;
 - (id)initWithListenerEndpoint:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
@@ -225,11 +241,17 @@
 - (void)startHealthServiceSession:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)endHealthServiceDiscovery:(id)arg1;
 - (void)startHealthServiceDiscovery:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)_currentWorkoutSnapshotWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_firstPartyWorkoutSnapshotWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_activeWorkoutApplicationIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (void)finishAllWorkoutsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)postCompanionUserNotificationOfType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)postNotificationWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setBadge:(id)arg1 forDomain:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)badgeForDomain:(long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)waitOnHealthCloudSyncWithProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)oldestSampleStartDateInHealthDatabaseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)enableCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
+- (void)disableCloudSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disableCloudSyncAndDeleteAllCloudDataWithProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchCloudDescriptionWithProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceCloudResetWithProgress:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
@@ -240,15 +262,14 @@
 - (void)fetchCloudSyncRequiredWithCompletion:(CDUnknownBlockType)arg1;
 - (void)forceCloudSyncWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceCloudSyncWithOptions:(unsigned long long)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)createCloudShareWithRecipient:(id)arg1 sampleTypes:(id)arg2 maxSampleAge:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)runStaticSyncImportWithOptions:(unsigned long long)arg1 storeIdentifier:(id)arg2 URL:(id)arg3 progressHandler:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)runStaticSyncExportWithOptions:(unsigned long long)arg1 storeIdentifier:(id)arg2 URL:(id)arg3 batchSize:(unsigned long long)arg4 progressHandler:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)profileIdentifierForNRDeviceUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getAllProfilesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)deleteProfile:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)createProfileOfType:(long long)arg1 displayName:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)setDisplayName:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setDisplayFirstName:(id)arg1 lastName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchDisplayName:(CDUnknownBlockType)arg1;
-- (id)initWithProfileIdentifier:(id)arg1;
 - (void)waitForLastChanceSyncWithDevicePairingID:(id)arg1 timeout:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)resetNanoSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)forceLastChanceNanoSyncWithCompletion:(CDUnknownBlockType)arg1;

@@ -8,6 +8,7 @@
 
 @class CHHandle, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CHManagedHandle : NSManagedObject
 {
 }

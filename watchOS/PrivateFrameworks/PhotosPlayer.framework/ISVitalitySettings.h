@@ -35,11 +35,8 @@
 - (double)minimumVisibilityFactor;
 - (double)endTimeOffset;
 - (double)playbackRate;
-- (int)maximumNumberOfFrames;
-- (double)relativeEnd;
-- (double)relativeStart;
-- (double)maximumDeceleration;
-- (double)maximumRate;
+- (double)minimumColorAdjustedPhotoTransitionDuration;
+- (double)minimumPhotoTransitionDuration;
 - (double)postDuration;
 - (double)preDuration;
 - (int)behavior;

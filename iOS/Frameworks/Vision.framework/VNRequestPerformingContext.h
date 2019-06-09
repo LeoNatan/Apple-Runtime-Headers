@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)previousSequencedObservationsForRequest:(id)arg1;
 - (void)recordSequencedObservationsForRequest:(id)arg1;
 - (id)cachedObservationsForRequest:(id)arg1;
-- (void)cacheObservationsForRequest:(id)arg1;
+- (_Bool)cacheObservationsForRequest:(id)arg1;
 - (id)imageBufferAndReturnError:(id *)arg1;
 - (unsigned int)qosClass;
 - (id)requestForensics;

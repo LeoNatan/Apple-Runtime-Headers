@@ -12,7 +12,7 @@
 #import <CarPlay/CPTemplateDelegate-Protocol.h>
 #import <CarPlay/NSSecureCoding-Protocol.h>
 
-@class CPBarButton, NSArray, NSOperationQueue, NSString, NSUUID;
+@class CPBarButton, NAFuture, NSArray, NSString, NSUUID;
 @protocol CPBaseTemplateProviding, CPTemplateDelegate;
 
 @interface CPTemplate : NSObject <CPBarButtonDelegate, CPBarButtonProviding, CPControlDelegate, CPTemplateDelegate, NSSecureCoding>
@@ -20,19 +20,19 @@
     CPBarButton *_backButton;
     id _userInfo;
     id <CPBaseTemplateProviding> _templateProvider;
+    NAFuture *_templateProviderFuture;
     NSUUID *_identifier;
     id <CPTemplateDelegate> _templateDelegate;
     NSArray *_internalLeadingBarButtons;
     NSArray *_internalTrailingBarButtons;
-    NSOperationQueue *_deferredOperationQueue;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSOperationQueue *deferredOperationQueue; // @synthesize deferredOperationQueue=_deferredOperationQueue;
 @property(retain, nonatomic) NSArray *internalTrailingBarButtons; // @synthesize internalTrailingBarButtons=_internalTrailingBarButtons;
 @property(retain, nonatomic) NSArray *internalLeadingBarButtons; // @synthesize internalLeadingBarButtons=_internalLeadingBarButtons;
 @property(nonatomic) __weak id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) NAFuture *templateProviderFuture; // @synthesize templateProviderFuture=_templateProviderFuture;
 @property(retain, nonatomic) id <CPBaseTemplateProviding> templateProvider; // @synthesize templateProvider=_templateProvider;
 @property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(retain, nonatomic) CPBarButton *backButton; // @synthesize backButton=_backButton;
@@ -47,7 +47,8 @@
 - (void)handleActionForControlIdentifier:(id)arg1;
 @property(retain, nonatomic) NSArray *trailingNavigationBarButtons;
 @property(retain, nonatomic) NSArray *leadingNavigationBarButtons;
-- (void)dealloc;
+- (void)invalidateTemplateProvider;
+- (void)connectTemplateProvider:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

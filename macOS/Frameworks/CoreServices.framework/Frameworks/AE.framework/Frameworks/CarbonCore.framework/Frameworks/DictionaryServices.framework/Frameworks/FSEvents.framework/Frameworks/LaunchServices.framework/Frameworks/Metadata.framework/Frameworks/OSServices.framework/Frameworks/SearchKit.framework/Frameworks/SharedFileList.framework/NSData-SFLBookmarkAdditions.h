@@ -9,14 +9,14 @@
 @interface NSData (SFLBookmarkAdditions)
 + (id)__sfl_bookmarkDataWithURLString:(id)arg1;
 + (id)__sfl_bookmarkDataWithURL:(id)arg1;
-- (id)__sfl_resolveBookmarkWithOptions:(unsigned long long)arg1 relativeToURL:(id)arg2 bookmarkDataIsStale:(char *)arg3 error:(id *)arg4;
-- (id)__sfl_resolveBookmarkDataIsStale:(char *)arg1;
+- (id)__sfl_resolveBookmarkWithOptions:(unsigned long long)arg1 relativeToURL:(id)arg2;
 - (id)__sfl_resolveBookmark;
 - (BOOL)__sfl_matchBookmark:(id)arg1 requiredMatchResult:(long long)arg2;
 - (BOOL)__sfl_matchBookmark:(id)arg1 allowWeakMatch:(BOOL)arg2;
 - (id)__sfl_resourcePropertiesForKeys:(id)arg1;
 - (id)__sfl_resourcePropertyForKey:(id)arg1;
-- (id)__sfl_urlWithoutResolveing;
+- (id)__sfl_urlWithoutResolving;
+- (BOOL)__sfl_isDirectoryBookmark;
 - (BOOL)__sfl_isFileBookmark;
 @end
 

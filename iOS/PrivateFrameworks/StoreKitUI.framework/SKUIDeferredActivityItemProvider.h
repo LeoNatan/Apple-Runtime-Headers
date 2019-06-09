@@ -8,6 +8,7 @@
 
 @class SKUIClientContext, SKUIProductPageItem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDeferredActivityItemProvider : UIActivityItemProvider
 {
     SKUIProductPageItem *_productPageItem;

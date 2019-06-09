@@ -18,9 +18,13 @@
     _Bool _usesAppAudioSession;
     _Bool _configuresAppAudioSession;
     _Bool _allowedToRunInWindowedLayout;
+    _Bool _isMultiCamSession;
+    _Bool _xctestAuthorizedToStealDevice;
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool xctestAuthorizedToStealDevice; // @synthesize xctestAuthorizedToStealDevice=_xctestAuthorizedToStealDevice;
+@property(nonatomic, getter=isMultiCamSession) _Bool multiCamSession; // @synthesize multiCamSession=_isMultiCamSession;
 @property(nonatomic) _Bool allowedToRunInWindowedLayout; // @synthesize allowedToRunInWindowedLayout=_allowedToRunInWindowedLayout;
 @property(nonatomic) _Bool configuresAppAudioSession; // @synthesize configuresAppAudioSession=_configuresAppAudioSession;
 @property(nonatomic) _Bool usesAppAudioSession; // @synthesize usesAppAudioSession=_usesAppAudioSession;

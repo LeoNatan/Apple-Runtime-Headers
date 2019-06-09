@@ -6,15 +6,15 @@
 
 #import <AppPredictionUI/NSObject-Protocol.h>
 
-@class NSArray, NSError, WFLAction, WFLWorkflowController;
+@class NSArray, NSError, WFAction, WFLWorkflowController;
 @protocol WFLActionUserInterface;
 
 @protocol WFLWorkflowControllerDelegate <NSObject>
 
 @optional
-- (id <WFLActionUserInterface>)workflowController:(WFLWorkflowController *)arg1 userInterfaceForRunningAction:(WFLAction *)arg2;
-- (void)workflowController:(WFLWorkflowController *)arg1 didRunAction:(WFLAction *)arg2;
-- (void)workflowController:(WFLWorkflowController *)arg1 willRunAction:(WFLAction *)arg2 withInput:(NSArray *)arg3 proceedHandler:(void (^)(void))arg4;
+- (id <WFLActionUserInterface>)workflowController:(WFLWorkflowController *)arg1 userInterfaceForRunningAction:(WFAction *)arg2;
+- (void)workflowController:(WFLWorkflowController *)arg1 didRunAction:(WFAction *)arg2;
+- (void)workflowController:(WFLWorkflowController *)arg1 willRunAction:(WFAction *)arg2 withInput:(NSArray *)arg3 proceedHandler:(void (^)(void))arg4;
 - (void)workflowControllerDidStop:(WFLWorkflowController *)arg1 withError:(NSError *)arg2;
 - (void)workflowControllerDidFinishRunning:(WFLWorkflowController *)arg1 withOutput:(NSArray *)arg2;
 - (void)workflowControllerWillRun:(WFLWorkflowController *)arg1;

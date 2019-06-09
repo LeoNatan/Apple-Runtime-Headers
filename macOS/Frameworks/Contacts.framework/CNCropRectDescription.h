@@ -23,7 +23,7 @@
 - (BOOL)isEqualForContact:(id)arg1 other:(id)arg2;
 - (id)init;
 - (void)copyFromCoreDataContact:(id)arg1 toContact:(id)arg2;
-- (void)setValue:(id)arg1 onCoreDataContact:(id)arg2;
+- (id)coreDataKey;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -26,12 +26,9 @@
 - (void)synchronize;
 - (void)replayCommands:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)getSysdiagnoseStringsIncludingPrivateData:(BOOL)arg1;
-- (void)getCurrentPeersAndClear:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)stopAdvertisingPing;
-- (void)startAdvertisingPingWithTimeInterval:(double)arg1;
+- (void)peerDevices:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)rendevous:(id)arg1 domain:(id)arg2 active:(BOOL)arg3;
 - (void)connectToRemote:(id)arg1 port:(long long)arg2;
-- (void)broadcastPing:(CDUnknownBlockType)arg1;
 - (void)callDidSaveDelegate:(id)arg1;
 - (void)callWillSaveDelegate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)callWillSaveDelegate:(id)arg1;
@@ -41,6 +38,7 @@
 - (void)restartServer;
 - (void)setDefault:(id)arg1 value:(id)arg2;
 - (id)defaults:(BOOL)arg1;
+- (void)fetchMoreAppSuggestions;
 - (id)status:(id)arg1 options:(id)arg2;
 - (id)simulatorStatus;
 - (id)recentActions:(BOOL)arg1;

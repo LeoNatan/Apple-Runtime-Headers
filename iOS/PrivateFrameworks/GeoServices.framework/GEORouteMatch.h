@@ -22,7 +22,7 @@
     unsigned long long _consecutiveProgressionsOffRoute;
     double _distanceTraveledOffRoute;
     _Bool _isGoodMatch;
-    CDStruct_a2ef2718 *_road;
+    CDStruct_c8b5ad3f *_road;
     double _roadWidth;
     GEORouteMatch *_projectedFrom;
     NSDate *_timestamp;
@@ -43,7 +43,7 @@
 @property(nonatomic) double modifiedHorizontalAccuracy; // @synthesize modifiedHorizontalAccuracy=_modifiedHorizontalAccuracy;
 @property(nonatomic) double distanceFromRoute; // @synthesize distanceFromRoute=_distanceFromRoute;
 @property(readonly, nonatomic) double roadWidth; // @synthesize roadWidth=_roadWidth;
-@property(nonatomic) CDStruct_a2ef2718 *road; // @synthesize road=_road;
+@property(nonatomic) CDStruct_c8b5ad3f *road; // @synthesize road=_road;
 @property(readonly, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
 @property(readonly, nonatomic) double matchedCourse; // @synthesize matchedCourse=_matchedCourse;
 @property(retain, nonatomic) NSArray *candidateSteps; // @synthesize candidateSteps=_candidateSteps;

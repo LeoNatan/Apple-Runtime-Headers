@@ -10,7 +10,7 @@
 
 @protocol SPActivatingViewDelegate <NSObject>
 - (int)disconnectedModeForActivatingView:(SPActivatingView *)arg1;
-- (int)loadingModeForActivatingView:(SPActivatingView *)arg1;
+- (int)activatingViewLoadingMode;
 - (struct CGRect)frameForActivatingView:(SPActivatingView *)arg1;
 - (UIView *)parentViewForActivatingView:(SPActivatingView *)arg1;
 

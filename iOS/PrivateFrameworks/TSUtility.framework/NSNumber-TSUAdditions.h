@@ -10,5 +10,6 @@
 + (id)tsu_numberWithCGFloat:(double)arg1;
 - (_Bool)tsu_isFloatingPointType;
 - (double)tsu_CGFloatValue;
+- (void)appendJsonStringToString:(id)arg1;
 @end
 

@@ -6,6 +6,7 @@
 
 #import <SymptomEvaluator/TrackedFlowCounts.h>
 
+__attribute__((visibility("hidden")))
 @interface IntervalTrackedFlowCounts : TrackedFlowCounts
 {
     unsigned long long _timestampSeconds;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class UITableViewCell, UITableViewCellDeleteConfirmationControl_Legacy, UITableViewCellEditControl, UITableViewCellReorderControl, UIView;
+@class UITableViewCell, UITableViewCellEditControl, UITableViewCellReorderControl, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UITableViewCellEditingData : NSObject
@@ -15,13 +15,11 @@ __attribute__((visibility("hidden")))
     long long _editingStyle;
     UITableViewCellEditControl *_editControl;
     UITableViewCellReorderControl *_reorderControl;
-    UITableViewCellDeleteConfirmationControl_Legacy *_deleteConfirmationControl;
     UIView *_reorderSeparatorView;
 }
 
 - (void).cxx_destruct;
 - (id)reorderSeparatorView:(_Bool)arg1;
-- (id)deleteConfirmationControl:(_Bool)arg1;
 - (id)reorderControl:(_Bool)arg1;
 - (id)editControl:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool wantsMaskingWhileAnimatingDisabled;

@@ -7,6 +7,7 @@
 @class LSRegistrationInfo, NSData, NSDictionary, NSString, NSURL;
 
 @protocol _LSDModifyProtocol
+- (void)setPreferenceValue:(id)arg1 forKey:(NSString *)arg2 forApplicationAtURL:(NSURL *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)garbageCollectDatabaseWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 - (void)uninstallApplication:(NSString *)arg1 withOptions:(NSDictionary *)arg2 uninstallType:(unsigned long long)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
 - (void)installApplication:(NSString *)arg1 atURL:(NSURL *)arg2 withOptions:(NSDictionary *)arg3 installType:(unsigned long long)arg4 reply:(void (^)(NSArray *, NSError *))arg5;
@@ -15,12 +16,11 @@
 - (void)rebuildApplicationDatabasesForSystem:(_Bool)arg1 internal:(_Bool)arg2 user:(_Bool)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)resetServerStoreWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 - (void)removeHandlerForURLScheme:(NSString *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
-- (void)setHandler:(NSString *)arg1 version:(unsigned long long)arg2 forURLScheme:(NSString *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
+- (void)setHandler:(NSString *)arg1 version:(struct LSVersionNumber)arg2 forURLScheme:(NSString *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)removeHandlerForContentType:(NSString *)arg1 roles:(unsigned int)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
-- (void)setHandlerOptions:(unsigned int)arg1 forContentType:(NSString *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
-- (void)setHandler:(NSString *)arg1 version:(unsigned long long)arg2 roles:(unsigned int)arg3 forContentType:(NSString *)arg4 completionHandler:(void (^)(_Bool, NSError *))arg5;
-- (void)unregisterExtensionPoint:(NSString *)arg1 withVersion:(NSString *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
-- (void)registerExtensionPoint:(NSString *)arg1 withInfo:(NSDictionary *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
+- (void)setHandler:(NSString *)arg1 version:(struct LSVersionNumber)arg2 roles:(unsigned int)arg3 forContentType:(NSString *)arg4 completionHandler:(void (^)(_Bool, NSError *))arg5;
+- (void)unregisterExtensionPoint:(NSString *)arg1 platform:(unsigned int)arg2 withVersion:(NSString *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
+- (void)registerExtensionPoint:(NSString *)arg1 platform:(unsigned int)arg2 withInfo:(NSDictionary *)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)updateContainerUnit:(unsigned int)arg1 completionHandler:(void (^)(NSData *, NSError *))arg2;
 - (void)registerContainerURL:(NSURL *)arg1 completionHandler:(void (^)(unsigned int, NSError *))arg2;
 - (void)unregisterBundleUnit:(unsigned int)arg1 options:(unsigned int)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;

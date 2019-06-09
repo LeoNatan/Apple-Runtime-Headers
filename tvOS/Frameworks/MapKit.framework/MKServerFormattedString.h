@@ -19,6 +19,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)attributesForServerFormatStyle:(long long)arg1;
 @property(readonly, copy, nonatomic) MKServerFormattedStringParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) id <GEOServerFormattedString> geoServerString; // @synthesize geoServerString=_geoServerString;
 - (void).cxx_destruct;
@@ -26,6 +27,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqualToServerFormattedString:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (id)_attributesByTokenForFormatStyles:(id)arg1;
 - (id)multiPartAttributedStringWithAttributes:(id)arg1;
 - (id)_parametersByScrubbingUnusedOverrideVariablesFromParameters:(id)arg1 geoServerString:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;

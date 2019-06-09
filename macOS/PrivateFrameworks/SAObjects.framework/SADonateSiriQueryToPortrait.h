@@ -15,8 +15,11 @@
 + (id)donateSiriQueryToPortraitWithDictionary:(id)arg1 context:(id)arg2;
 + (id)donateSiriQueryToPortrait;
 - (BOOL)requiresResponse;
+@property(nonatomic) double rankerConfidence;
+@property(nonatomic) long long rank;
 @property(copy, nonatomic) NSString *qid;
 @property(copy, nonatomic) NSString *originalQuery;
+@property(copy, nonatomic) NSString *domain;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

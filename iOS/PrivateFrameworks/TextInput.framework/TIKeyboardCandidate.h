@@ -14,28 +14,33 @@
 
 @interface TIKeyboardCandidate : NSObject <NSCopying, NSSecureCoding, TIKeyboardCandidateCoding>
 {
-    _Bool _responseCandidate;
+    _Bool _responseKitCandidate;
     _Bool _isSendCurrentLocation;
     unsigned int _slotID;
+    int _confidence;
     NSString *_alternativeText;
     NSString *_annotationText;
     unsigned long long _customInfoType;
     unsigned long long _indexForMetrics;
+    NSString *_responseKitCategory;
 }
 
 + (int)type;
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic, getter=confidence) int confidence; // @synthesize confidence=_confidence;
 @property(nonatomic) _Bool isSendCurrentLocation; // @synthesize isSendCurrentLocation=_isSendCurrentLocation;
-@property(readonly, nonatomic, getter=isResponseCandidate) _Bool responseCandidate; // @synthesize responseCandidate=_responseCandidate;
 @property(nonatomic) unsigned long long indexForMetrics; // @synthesize indexForMetrics=_indexForMetrics;
 @property(nonatomic) unsigned long long customInfoType; // @synthesize customInfoType=_customInfoType;
 @property(nonatomic) unsigned int slotID; // @synthesize slotID=_slotID;
 @property(copy, nonatomic) NSString *annotationText; // @synthesize annotationText=_annotationText;
 @property(copy, nonatomic) NSString *alternativeText; // @synthesize alternativeText=_alternativeText;
 - (void).cxx_destruct;
+- (id)candidateByReplacingWithCandidate:(id)arg1 input:(id)arg2;
+- (id)candidateByReplacingWithCandidate:(id)arg1;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 @property(readonly, nonatomic, getter=isSecureContentCandidate) _Bool secureContentCandidate;
+@property(readonly, nonatomic, getter=isResponseKitCandidate) _Bool responseKitCandidate; // @synthesize responseKitCandidate=_responseKitCandidate;
 @property(readonly, nonatomic, getter=isRegionalCandidate) _Bool regionalCandidate;
 @property(readonly, nonatomic, getter=isOTAWordListCandidate) _Bool OTAWordListCandidate;
 @property(readonly, nonatomic, getter=isPunctuationCompletionCandidate) _Bool punctuationCompletionCandidate;
@@ -48,6 +53,9 @@
 @property(readonly, nonatomic, getter=isCompletionCandidate) _Bool completionCandidate;
 @property(readonly, nonatomic, getter=isEmojiCandidate) _Bool emojiCandidate;
 @property(readonly, nonatomic, getter=isExtensionCandidate) _Bool extensionCandidate;
+@property(readonly, nonatomic) _Bool shouldInsertSpaceAfterSelection;
+@property(readonly, nonatomic) _Bool shouldAccept;
+@property(readonly, nonatomic, getter=isContinuousPathConversion) _Bool continuousPathConversion;
 @property(readonly, nonatomic) _Bool isAutocorrection;
 @property(readonly, nonatomic) _Bool isForShortcutConversion;
 @property(readonly) unsigned long long hash;
@@ -58,7 +66,7 @@
 @property(copy, nonatomic) NSString *label;
 @property(readonly, nonatomic) NSString *input;
 @property(readonly, nonatomic) _Bool isAddress;
-@property(readonly, nonatomic) NSString *responseKitCategory;
+@property(readonly, copy, nonatomic) NSString *responseKitCategory; // @synthesize responseKitCategory=_responseKitCategory;
 @property(readonly, nonatomic) TIProactiveTrigger *proactiveTrigger;
 @property(readonly, nonatomic) NSString *candidate;
 @property(readonly, copy) NSString *description;

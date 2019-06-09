@@ -15,8 +15,10 @@
 {
 }
 
++ (id)ACRequirementString;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+@property(readonly) BOOL extensionHasACRequirement;
 - (void)requestSocket:(BOOL)arg1 interface:(id)arg2 local:(id)arg3 remote:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchVirtualInterfaceTypeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setVirtualInterfaceSocket:(id)arg1;

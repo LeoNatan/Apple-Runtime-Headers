@@ -28,6 +28,7 @@
     NSString *_actionTitle;
     NSString *_actionUrlString;
     FCColorGradient *_backgroundColorGradient;
+    FCColorGradient *_darkStyleBackgroundColorGradient;
     NSArray *_groupFonts;
     NSArray *_specialEventItems;
     NSDictionary *_specialEventHeadlinesByArticleID;
@@ -38,6 +39,7 @@
 @property(retain, nonatomic) NSDictionary *specialEventHeadlinesByArticleID; // @synthesize specialEventHeadlinesByArticleID=_specialEventHeadlinesByArticleID;
 @property(retain, nonatomic) NSArray *specialEventItems; // @synthesize specialEventItems=_specialEventItems;
 @property(retain, nonatomic) NSArray *groupFonts; // @synthesize groupFonts=_groupFonts;
+@property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundColorGradient; // @synthesize darkStyleBackgroundColorGradient=_darkStyleBackgroundColorGradient;
 @property(copy, nonatomic) FCColorGradient *backgroundColorGradient; // @synthesize backgroundColorGradient=_backgroundColorGradient;
 @property(copy, nonatomic) NSString *actionUrlString; // @synthesize actionUrlString=_actionUrlString;
 @property(copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;

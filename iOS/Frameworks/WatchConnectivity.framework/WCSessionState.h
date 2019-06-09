@@ -16,6 +16,8 @@
     _Bool _paired;
     _Bool _appInstalled;
     _Bool _complicationEnabled;
+    _Bool _standalone;
+    _Bool _companionAppInstalled;
     _Bool _iOSDeviceNeedsFirstUnlock;
     unsigned long long _remainingComplicationUserInfoTransfers;
     NSString *_pairingID;
@@ -29,6 +31,8 @@
 @property(readonly, copy) NSString *pairingID; // @synthesize pairingID=_pairingID;
 @property(readonly) _Bool iOSDeviceNeedsFirstUnlock; // @synthesize iOSDeviceNeedsFirstUnlock=_iOSDeviceNeedsFirstUnlock;
 @property(readonly) unsigned long long remainingComplicationUserInfoTransfers; // @synthesize remainingComplicationUserInfoTransfers=_remainingComplicationUserInfoTransfers;
+@property(readonly, getter=isCompanionAppInstalled) _Bool companionAppInstalled; // @synthesize companionAppInstalled=_companionAppInstalled;
+@property(readonly, getter=isStandaloneApp) _Bool standalone; // @synthesize standalone=_standalone;
 @property(readonly, getter=isComplicationEnabled) _Bool complicationEnabled; // @synthesize complicationEnabled=_complicationEnabled;
 @property(readonly, getter=isAppInstalled) _Bool appInstalled; // @synthesize appInstalled=_appInstalled;
 @property(readonly, getter=isPaired) _Bool paired; // @synthesize paired=_paired;
@@ -38,9 +42,9 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSURL *watchDirectoryURL;
 - (id)description;
-- (id)initWithReachable:(_Bool)arg1 paired:(_Bool)arg2 appInstalled:(_Bool)arg3 complicationEnabled:(_Bool)arg4 remainingComplicationUserInfoTransfers:(unsigned long long)arg5 iOSDeviceNeedsFirstUnlock:(_Bool)arg6 pairingID:(id)arg7 pairedDevicesPairingIDs:(id)arg8 appInstallationID:(id)arg9;
+- (id)initWithReachable:(_Bool)arg1 paired:(_Bool)arg2 appInstalled:(_Bool)arg3 complicationEnabled:(_Bool)arg4 remainingComplicationUserInfoTransfers:(unsigned long long)arg5 iOSDeviceNeedsFirstUnlock:(_Bool)arg6 pairingID:(id)arg7 pairedDevicesPairingIDs:(id)arg8 appInstallationID:(id)arg9 standaloneApp:(_Bool)arg10 companionAppInstalled:(_Bool)arg11;
 - (id)initWithReachable:(_Bool)arg1 paired:(_Bool)arg2 appInstalled:(_Bool)arg3 complicationEnabled:(_Bool)arg4 remainingComplicationUserInfoTransfers:(unsigned long long)arg5 activePairingID:(id)arg6 pairedDevicesPairingIDs:(id)arg7 appInstallationID:(id)arg8;
-- (id)initWithReachable:(_Bool)arg1 iOSDeviceNeedsFirstUnlock:(_Bool)arg2 activePairingID:(id)arg3;
+- (id)initWithReachable:(_Bool)arg1 iOSDeviceNeedsFirstUnlock:(_Bool)arg2 activePairingID:(id)arg3 standaloneApp:(_Bool)arg4 companionAppInstalled:(_Bool)arg5;
 
 @end
 

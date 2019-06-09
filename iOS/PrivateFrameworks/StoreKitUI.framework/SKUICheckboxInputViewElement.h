@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIInputViewElement.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUICheckboxInputViewElement : SKUIInputViewElement
 {
     BOOL _disabled;

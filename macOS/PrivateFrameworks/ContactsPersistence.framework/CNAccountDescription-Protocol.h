@@ -6,14 +6,16 @@
 
 #import <ContactsPersistence/NSObject-Protocol.h>
 
-@class ABCDContainer, NSString, NSURL;
+@class ABCDContainer, NSArray, NSNumber, NSString, NSURL;
 
 @protocol CNAccountDescription <NSObject>
+@property(readonly, copy) NSArray *childAccounts;
 @property(readonly) ABCDContainer *containerRepresentation;
 @property(readonly) NSURL *persistentStoreURL;
 @property(readonly, copy) NSURL *baseURL;
 @property(readonly) BOOL isPersistent;
 @property(readonly) BOOL isEnabled;
+@property(readonly) NSNumber *dsid;
 @property(readonly, copy) NSString *identifier;
 @end
 

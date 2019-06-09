@@ -13,6 +13,7 @@
 @interface TIWordSearch : NSObject <TIKeyboardActivityObserving>
 {
     id _userDictionaryObserver;
+    id _dictionaryUpdateObserver;
     _Bool _autoCorrects;
     _Bool _shouldLearnAcceptedCandidate;
     TIInputMode *_inputMode;
@@ -33,6 +34,8 @@
 @property(retain, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
 @property(readonly) TIInputMode *inputMode; // @synthesize inputMode=_inputMode;
 - (void).cxx_destruct;
+- (void)revertInlineCandidate;
+- (void)setMecabraTextContentType:(int)arg1;
 - (void)resetMecabraEnvironment;
 - (void)commitPunctuationSurface:(id)arg1;
 - (void)commitSurface:(id)arg1;
@@ -42,6 +45,7 @@
 - (void)setLeftDocumentContext:(id)arg1 rightDocumentContext:(id)arg2;
 - (void)flushDynamicData;
 - (void)adaptOfflineToParagraph:(id)arg1 adaptationContext:(id)arg2 timeStamp:(double)arg3;
+- (void)updateDictionaryPaths;
 - (void)updateUserWordEntries;
 - (void)setLanguageModelAdaptationContext:(id)arg1;
 - (void)setLanguageModelAdaptationContextWithClientIdentifier:(id)arg1 recipientIdentifier:(id)arg2;

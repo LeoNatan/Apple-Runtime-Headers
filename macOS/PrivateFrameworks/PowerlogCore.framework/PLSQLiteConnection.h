@@ -86,6 +86,7 @@
 - (void)dropTable:(id)arg1;
 - (void)removeEmptyOldTables;
 - (void)removeIDIndexes;
+- (BOOL)checkEmptyMasterTable:(id)arg1;
 - (void)trimTable:(id)arg1 fromDate:(id)arg2 withFilter:(id)arg3 withTrimLimit:(long long)arg4;
 - (void)runTrimQuery:(id)arg1;
 - (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2 withTableFilters:(id)arg3;
@@ -104,6 +105,7 @@
 - (BOOL)openCurrentFile;
 - (void)dealloc;
 - (void)scheduleIntegrityCheck;
+- (id)getIntegrityCheckCriteria;
 - (id)initWithFilePath:(id)arg1 withCacheSize:(long long)arg2 withFlags:(id)arg3;
 - (id)initWithFilePath:(id)arg1 withCacheSize:(long long)arg2;
 - (BOOL)commonInitProcessWithFilePath:(id)arg1 withCacheSize:(long long)arg2;

@@ -27,6 +27,7 @@
 @property(readonly) _Bool usesEndDate; // @synthesize usesEndDate=_usesEndDate;
 @property(readonly, nonatomic) _Bool shouldPinMonthDays; // @synthesize shouldPinMonthDays=_shouldPinMonthDays;
 - (void).cxx_destruct;
+- (_Bool)isEqualToRecurrenceRule:(id)arg1;
 - (id)stringValueAsDateOnly:(_Bool)arg1 isFloating:(_Bool)arg2;
 - (_Bool)isSimpleRule;
 - (_Bool)isAnyDayRule;

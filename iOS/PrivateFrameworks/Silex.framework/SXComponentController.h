@@ -44,7 +44,6 @@
 @property(readonly, nonatomic) SXLayoutBlueprint *presentedBlueprint; // @synthesize presentedBlueprint=_presentedBlueprint;
 - (void).cxx_destruct;
 - (void)assistiveTechnologyStatusDidChange;
-- (struct CGSize)viewportSize;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1 parentComponent:(id)arg2 withOffset:(struct CGPoint)arg3;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1;
 - (void)updateVisibilityStatesForComponentViews:(id)arg1 toState:(long long)arg2;

@@ -17,12 +17,15 @@
 + (_Bool)canHandleURL:(id)arg1;
 @property(nonatomic) __weak id <_MKURLHandlerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)_handleMapItems:(id)arg1 withOptions:(id)arg2 url:(id)arg3 sourceApplication:(id)arg4 originIsActiveWatch:(_Bool)arg5;
-- (_Bool)_handleMapItemHandlesURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(_Bool)arg3;
+- (_Bool)_handleMapItems:(id)arg1 withOptions:(id)arg2 url:(id)arg3 sourceApplication:(id)arg4 context:(id)arg5;
+- (_Bool)_handleMapItemHandlesURL:(id)arg1 sourceApplication:(id)arg2 context:(id)arg3;
 - (void)adjustOptionsForRAP:(id)arg1 options:(id *)arg2;
-- (_Bool)_handleMapItemURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(_Bool)arg3;
-- (_Bool)_handleSharedMapURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(_Bool)arg3;
-- (_Bool)_handleMapsURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(_Bool)arg3;
+- (_Bool)_handleMapItemURL:(id)arg1 sourceApplication:(id)arg2 context:(id)arg3;
+- (_Bool)_handleSharedMapURL:(id)arg1 sourceApplication:(id)arg2 context:(id)arg3;
+- (_Bool)_handleMapsURL:(id)arg1 sourceApplication:(id)arg2 context:(id)arg3;
+- (_Bool)_treatCarDestinationsFrom:(id)arg1;
+- (_Bool)_treatCollectionFrom:(id)arg1;
+- (_Bool)_treatMuninViewStateFrom:(id)arg1;
 - (_Bool)_treatTesterFrom:(id)arg1;
 - (_Bool)_treatTransitLineFrom:(id)arg1;
 - (_Bool)_treatFavoritesFrom:(id)arg1;
@@ -35,7 +38,7 @@
 - (void)_treatTrackingModeFrom:(id)arg1;
 - (_Bool)_treatPinPositionFrom:(id)arg1;
 - (void)_treatMapTypeFrom:(id)arg1;
-- (_Bool)handleURL:(id)arg1 sourceApplication:(id)arg2 originIsActiveWatch:(_Bool)arg3;
+- (_Bool)handleURL:(id)arg1 sourceApplication:(id)arg2 context:(id)arg3;
 
 @end
 

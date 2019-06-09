@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ADMUser, IndicatorSecureTextField, MMPasswordChangeWebKitViewController, NSButton, NSImageView, NSLayoutConstraint, NSPopover, NSSecureTextField, NSTextField, NSView, NSWindow, ODRecord, SFPasswordAssistantInspectorController;
+@class ADMUser, IndicatorSecureTextField, MMPasswordChangeWebKitViewController, NSButton, NSLayoutConstraint, NSPopover, NSSecureTextField, NSTextField, NSView, NSWindow, ODRecord, SFPasswordAssistantInspectorController;
 
 @interface ADMChangePasswordController : NSObject
 {
@@ -17,18 +17,6 @@
     NSTextField *_changeLocalPassswordHint;
     NSTextField *_changeLocalPassswordHintCaption;
     NSTextField *_changeLocalPassswordHintCaption1;
-    NSWindow *_optinAppleIDSheet;
-    NSTextField *_optinAppleIDSheetLabel;
-    IndicatorSecureTextField *_optinAppleIDLocalPasssword;
-    IndicatorSecureTextField *_optinAppleIDPasssword;
-    NSTextField *_optinAppleIDAccount;
-    NSImageView *_optinAppleIDSheetImage;
-    NSWindow *_optoutAppleIDSheet;
-    NSTextField *_optoutAppleIDSheetLabel;
-    IndicatorSecureTextField *_optoutAppleIDPasssword;
-    IndicatorSecureTextField *_optoutAppleIDLocalPasssword;
-    NSSecureTextField *_optoutAppleIDLocalPassswordVerify;
-    NSTextField *_optoutAppleIDPassswordHint;
     NSWindow *_resetPasswordSheet;
     NSView *_resetPassswordWarningView;
     NSLayoutConstraint *_resetPassswordWarningViewHeightConstraint;
@@ -73,18 +61,6 @@
 @property(retain) NSLayoutConstraint *resetPassswordWarningViewHeightConstraint; // @synthesize resetPassswordWarningViewHeightConstraint=_resetPassswordWarningViewHeightConstraint;
 @property(retain) NSView *resetPassswordWarningView; // @synthesize resetPassswordWarningView=_resetPassswordWarningView;
 @property(retain) NSWindow *resetPasswordSheet; // @synthesize resetPasswordSheet=_resetPasswordSheet;
-@property(retain) NSTextField *optoutAppleIDPassswordHint; // @synthesize optoutAppleIDPassswordHint=_optoutAppleIDPassswordHint;
-@property(retain) NSSecureTextField *optoutAppleIDLocalPassswordVerify; // @synthesize optoutAppleIDLocalPassswordVerify=_optoutAppleIDLocalPassswordVerify;
-@property(retain) IndicatorSecureTextField *optoutAppleIDLocalPasssword; // @synthesize optoutAppleIDLocalPasssword=_optoutAppleIDLocalPasssword;
-@property(retain) IndicatorSecureTextField *optoutAppleIDPasssword; // @synthesize optoutAppleIDPasssword=_optoutAppleIDPasssword;
-@property(retain) NSTextField *optoutAppleIDSheetLabel; // @synthesize optoutAppleIDSheetLabel=_optoutAppleIDSheetLabel;
-@property(retain) NSWindow *optoutAppleIDSheet; // @synthesize optoutAppleIDSheet=_optoutAppleIDSheet;
-@property(retain) NSImageView *optinAppleIDSheetImage; // @synthesize optinAppleIDSheetImage=_optinAppleIDSheetImage;
-@property(retain) NSTextField *optinAppleIDAccount; // @synthesize optinAppleIDAccount=_optinAppleIDAccount;
-@property(retain) IndicatorSecureTextField *optinAppleIDPasssword; // @synthesize optinAppleIDPasssword=_optinAppleIDPasssword;
-@property(retain) IndicatorSecureTextField *optinAppleIDLocalPasssword; // @synthesize optinAppleIDLocalPasssword=_optinAppleIDLocalPasssword;
-@property(retain) NSTextField *optinAppleIDSheetLabel; // @synthesize optinAppleIDSheetLabel=_optinAppleIDSheetLabel;
-@property(retain) NSWindow *optinAppleIDSheet; // @synthesize optinAppleIDSheet=_optinAppleIDSheet;
 @property(retain) NSTextField *changeLocalPassswordHintCaption1; // @synthesize changeLocalPassswordHintCaption1=_changeLocalPassswordHintCaption1;
 @property(retain) NSTextField *changeLocalPassswordHintCaption; // @synthesize changeLocalPassswordHintCaption=_changeLocalPassswordHintCaption;
 @property(retain) NSTextField *changeLocalPassswordHint; // @synthesize changeLocalPassswordHint=_changeLocalPassswordHint;
@@ -94,8 +70,6 @@
 @property(retain) NSWindow *changeLocalPassswordSheet; // @synthesize changeLocalPassswordSheet=_changeLocalPassswordSheet;
 - (void).cxx_destruct;
 - (void)resetPasswordSheetOK:(id)arg1;
-- (void)appleIDOptOutSheetOK:(id)arg1;
-- (void)appleIDOptInSheetOK:(id)arg1;
 - (void)changeLocalPassswordSheetOK:(id)arg1;
 - (void)cancel:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
@@ -112,7 +86,6 @@
 - (void)_changeLocalPassword:(id)arg1 oldPassword:(id)arg2 hint:(id)arg3 cdpCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_validateNewPassword:(id)arg1 andVerifyPassword:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_verifyLocalPassword:(id)arg1;
-- (BOOL)_verifyAppleIDPassword:(id)arg1 forAppleID:(id)arg2;
 - (BOOL)_verifyPassword:(id)arg1;
 - (void)_checkAndWarnAboutHomeOnEncryptedVolume;
 - (void)_runChangeICloudPasswordForWindow:(id)arg1 user:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

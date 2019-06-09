@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initialize;
-- (void)appResignedActive;
 - (void)searchFieldCancel;
 - (void)configureAccessoryViews:(id)arg1;
 - (void)saveShowSidebarStateToPrefs;
@@ -22,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (unsigned int)defaultSearchScope;
 - (id)nodeViewSettings;
 - (_Bool)isAppCentric;
-- (id)containingOpenPanel;
 - (id)acGutsController;
 
 @end

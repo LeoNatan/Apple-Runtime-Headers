@@ -57,7 +57,9 @@
         unsigned int limitsLayoutForSuspiciousContents:1;
         unsigned int delegateRespondsToRenderingColor:1;
         unsigned int firstTextViewRespondsToRenderingColor:1;
-        unsigned int reserved:3;
+        unsigned int usesCustomBackgroundRectArray:1;
+        unsigned int usesDefaultHyphenation:1;
+        unsigned int reserved:1;
     } _lmFlags2;
     struct _NSGlyphIndexForPointCache _glyphIndexForPointCache;
     long long _currentChangeInLength;

@@ -6,8 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <WebCore/AVContentKeySessionDelegate-Protocol.h>
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface WebCDMSessionAVContentKeySessionDelegate : NSObject
+@interface WebCDMSessionAVContentKeySessionDelegate : NSObject <AVContentKeySessionDelegate>
 {
     struct CDMSessionAVContentKeySession *m_parent;
 }
@@ -16,6 +20,12 @@ __attribute__((visibility("hidden")))
 - (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;
 - (void)invalidate;
 - (id)initWithParent:(struct CDMSessionAVContentKeySession *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

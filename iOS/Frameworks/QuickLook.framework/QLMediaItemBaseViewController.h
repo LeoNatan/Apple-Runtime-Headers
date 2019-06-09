@@ -34,9 +34,6 @@ __attribute__((visibility("hidden")))
     double _mediaDuration;
 }
 
-+ (_Bool)shouldBeRemoteForContentType:(id)arg1;
-+ (id)supportedContentTypes;
-+ (Class)transformerClass;
 @property(nonatomic) double mediaDuration; // @synthesize mediaDuration=_mediaDuration;
 @property(readonly, nonatomic) _Bool isVisible; // @synthesize isVisible=_isVisible;
 @property(readonly, nonatomic) _Bool isFullScreen; // @synthesize isFullScreen=_isFullScreen;
@@ -52,8 +49,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *playerView; // @synthesize playerView=_playerView;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
+- (_Bool)_assetIsDecodable:(id)arg1;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)registeredKeyCommands;
 - (void)setupPlayerWithMediaAsset:(id)arg1;
 - (void)setAppearance:(id)arg1 animated:(_Bool)arg2;
 - (void)didChangePlayingStatus;
@@ -66,8 +63,9 @@ __attribute__((visibility("hidden")))
 - (void)resetToBeginning;
 - (void)togglePlayback;
 - (void)stop;
-- (void)pause;
-- (void)play;
+- (_Bool)pause;
+- (_Bool)play;
+- (_Bool)shouldDisplayPlayButtonInNavigationBar;
 @property(readonly, nonatomic) _Bool endOfMediaReached;
 - (struct CGSize)imageSize;
 - (id)toolbarButtonsForTraitCollection:(id)arg1;
@@ -80,6 +78,7 @@ __attribute__((visibility("hidden")))
 - (void)previewDidDisappear:(_Bool)arg1;
 - (void)previewDidAppear:(_Bool)arg1;
 - (void)previewIsAppearingWithProgress:(double)arg1;
+- (id)setupPlayerViewWithPlayer:(id)arg1;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties

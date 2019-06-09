@@ -22,9 +22,11 @@ __attribute__((visibility("hidden")))
     _TVSearchBarWrapper *_searchBarWrapper;
     NSArray *_keyboardConstraints;
     id <UIFocusEnvironment> _preferredFocusEnvironment;
+    UIView *_templateContainerView;
     UIFocusGuide *_keyboardProxy;
     NSArray *_keyboardProxyConstraints;
     UITapGestureRecognizer *_menuRecognizer;
+    double _fieldOriginY;
     int _keyboardState;
     int _targetKeyboardState;
     struct {
@@ -36,6 +38,7 @@ __attribute__((visibility("hidden")))
     } _delegateFlags;
     _Bool _spinning;
     id <_TVSearchTemplateViewDelegate> _delegate;
+    UIView *_bannerView;
     UIImageView *_bgImageView;
     struct UIEdgeInsets _collectionMargin;
 }
@@ -45,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPartialViewEnabled) _Bool partialViewEnabled; // @synthesize partialViewEnabled=_partialViewEnabled;
 @property(nonatomic, getter=isFocusHidden) _Bool focusHidden; // @synthesize focusHidden=_focusHidden;
 @property(nonatomic) struct UIEdgeInsets collectionMargin; // @synthesize collectionMargin=_collectionMargin;
+@property(retain, nonatomic) UIView *bannerView; // @synthesize bannerView=_bannerView;
 @property(nonatomic) __weak id <_TVSearchTemplateViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool isTouchEnabled; // @synthesize isTouchEnabled=_isTouchEnabled;
 @property(readonly, retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;

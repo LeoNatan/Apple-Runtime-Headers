@@ -6,7 +6,7 @@
 
 #import <Radio/NSObject-Protocol.h>
 
-@class NSFetchedResultsController, NSIndexPath, NSString;
+@class NSDiffableDataSourceSnapshot, NSFetchedResultsController, NSIndexPath, NSOrderedCollectionDifference, NSString;
 @protocol NSFetchedResultsSectionInfo;
 
 @protocol NSFetchedResultsControllerDelegate <NSObject>
@@ -17,5 +17,7 @@
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)arg1;
 - (void)controller:(NSFetchedResultsController *)arg1 didChangeSection:(id <NSFetchedResultsSectionInfo>)arg2 atIndex:(unsigned long long)arg3 forChangeType:(unsigned long long)arg4;
 - (void)controller:(NSFetchedResultsController *)arg1 didChangeObject:(id)arg2 atIndexPath:(NSIndexPath *)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(NSIndexPath *)arg5;
+- (void)controller:(NSFetchedResultsController *)arg1 didChangeContentWithDifference:(NSOrderedCollectionDifference *)arg2;
+- (void)controller:(NSFetchedResultsController *)arg1 didChangeContentWithSnapshot:(NSDiffableDataSourceSnapshot *)arg2;
 @end
 

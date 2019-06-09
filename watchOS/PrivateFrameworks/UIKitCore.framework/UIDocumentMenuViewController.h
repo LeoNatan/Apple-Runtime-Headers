@@ -17,7 +17,7 @@
     id <UIDocumentMenuDelegate> _weak_delegate;
     _Bool _ignoreApplicationEntitlementForImport;
     _Bool _dismissDelegateCalled;
-    _Bool _sourceIsManaged;
+    _Bool _isContentManaged;
     id <UIDocumentMenuDelegate> _delegate;
     NSMutableArray *_auxiliaryOptions;
     _UIResilientRemoteViewContainerViewController *_childViewController;
@@ -26,7 +26,7 @@
     NSArray *_allowedUTIs;
 }
 
-@property(nonatomic, getter=_sourceIsManaged, setter=_setSourceIsManaged:) _Bool sourceIsManaged; // @synthesize sourceIsManaged=_sourceIsManaged;
+@property(nonatomic, getter=_isContentManaged, setter=_setIsContentManaged:) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(copy, nonatomic) NSArray *allowedUTIs; // @synthesize allowedUTIs=_allowedUTIs;
 @property(copy, nonatomic) NSURL *uploadURL; // @synthesize uploadURL=_uploadURL;
 @property(nonatomic) unsigned int documentPickerMode; // @synthesize documentPickerMode=_documentPickerMode;
@@ -44,6 +44,7 @@
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (void)_didSelectURL:(id)arg1;
 - (void)_didSelectPicker;
+@property(nonatomic, getter=_sourceIsManaged, setter=_setSourceIsManaged:) _Bool sourceIsManaged; // @dynamic sourceIsManaged;
 @property(readonly, retain, nonatomic, getter=_remoteViewController) _UIDocumentPickerRemoteViewController *remoteViewController;
 - (void)addOptionWithTitle:(id)arg1 image:(id)arg2 order:(unsigned int)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;

@@ -18,14 +18,14 @@ __attribute__((visibility("hidden")))
     unsigned int _dayOfWeek;
     unsigned int _hourOfDay;
     struct {
-        unsigned int dayOfWeek:1;
-        unsigned int hourOfDay:1;
-    } _has;
+        unsigned int has_dayOfWeek:1;
+        unsigned int has_hourOfDay:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int hourOfDay; // @synthesize hourOfDay=_hourOfDay;
-@property(nonatomic) unsigned int dayOfWeek; // @synthesize dayOfWeek=_dayOfWeek;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setCategoryIndexs:(unsigned int *)arg1 count:(unsigned long long)arg2;
@@ -43,7 +44,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int *categoryIndexs;
 @property(readonly, nonatomic) unsigned long long categoryIndexsCount;
 @property(nonatomic) _Bool hasHourOfDay;
+@property(nonatomic) unsigned int hourOfDay;
 @property(nonatomic) _Bool hasDayOfWeek;
+@property(nonatomic) unsigned int dayOfWeek;
 - (void)dealloc;
 
 @end

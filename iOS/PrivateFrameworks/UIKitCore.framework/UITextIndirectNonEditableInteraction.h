@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UIKeyboardTextSelectionController *textSelectionController;
 @property(readonly, nonatomic) UIKeyboardTaskQueue *taskQueue;
 - (void)dealloc;
+- (void)_setupControllersIfNecessaryWithView:(id)arg1;
+- (void)finishSetup;
 - (id)initWithView:(id)arg1;
 
 // Remaining properties

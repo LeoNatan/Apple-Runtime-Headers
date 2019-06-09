@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIPageComponent.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIBrowseHeaderPageComponent : SKUIPageComponent
 {
 }

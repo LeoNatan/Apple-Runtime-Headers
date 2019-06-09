@@ -8,6 +8,7 @@
 
 @class OADStroke;
 
+__attribute__((visibility("hidden")))
 @interface OADTableCellBorderStyle : NSObject
 {
     OADStroke *mLeftStroke;

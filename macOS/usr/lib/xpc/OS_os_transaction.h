@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)description;
-- (void)_dispose;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,9 +6,10 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class NSDictionary, NSString;
+@class IDSBatchIDQueryController, NSDictionary, NSError, NSString;
 
 @protocol IDSBatchIDQueryControllerDelegate <NSObject>
+- (void)batchQueryController:(IDSBatchIDQueryController *)arg1 updatedDestinationsStatus:(NSDictionary *)arg2 onService:(NSString *)arg3 error:(NSError *)arg4;
 
 @optional
 - (void)idStatusUpdatedForDestinations:(NSDictionary *)arg1 service:(NSString *)arg2;

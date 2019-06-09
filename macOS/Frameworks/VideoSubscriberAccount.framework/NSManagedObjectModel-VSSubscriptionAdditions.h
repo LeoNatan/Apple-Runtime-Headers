@@ -8,5 +8,7 @@
 
 @interface NSManagedObjectModel (VSSubscriptionAdditions)
 + (id)vs_subscriptionModelForVersion:(long long)arg1;
++ (id)vs_identityProviderEntityForVersion:(long long)arg1;
++ (id)vs_developerModeModelForVersion:(long long)arg1;
 @end
 

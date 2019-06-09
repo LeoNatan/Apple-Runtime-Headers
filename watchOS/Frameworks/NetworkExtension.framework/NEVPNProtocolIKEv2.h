@@ -16,7 +16,10 @@
     _Bool _enablePFS;
     _Bool _enableRevocationCheck;
     _Bool _strictRevocationCheck;
+    _Bool _enableFallback;
     _Bool _wakeForRekey;
+    _Bool _opportunisticPFS;
+    _Bool _disableInitialContact;
     int _deadPeerDetectionRate;
     NSString *_serverCertificateIssuerCommonName;
     NSString *_serverCertificateCommonName;
@@ -32,9 +35,13 @@
     int _natKeepAliveOffloadEnable;
     int _natKeepAliveOffloadInterval;
     int _disableMOBIKERetryOnWake;
+    int _tunnelKind;
 }
 
 + (_Bool)supportsSecureCoding;
+@property _Bool disableInitialContact; // @synthesize disableInitialContact=_disableInitialContact;
+@property int tunnelKind; // @synthesize tunnelKind=_tunnelKind;
+@property _Bool opportunisticPFS; // @synthesize opportunisticPFS=_opportunisticPFS;
 @property int disableMOBIKERetryOnWake; // @synthesize disableMOBIKERetryOnWake=_disableMOBIKERetryOnWake;
 @property int natKeepAliveOffloadInterval; // @synthesize natKeepAliveOffloadInterval=_natKeepAliveOffloadInterval;
 @property int natKeepAliveOffloadEnable; // @synthesize natKeepAliveOffloadEnable=_natKeepAliveOffloadEnable;
@@ -43,6 +50,7 @@
 @property(retain) NSArray *IKESecurityAssociationParametersArray; // @synthesize IKESecurityAssociationParametersArray=_IKESecurityAssociationParametersArray;
 @property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
 @property _Bool wakeForRekey; // @synthesize wakeForRekey=_wakeForRekey;
+@property _Bool enableFallback; // @synthesize enableFallback=_enableFallback;
 @property int maximumTLSVersion; // @synthesize maximumTLSVersion=_maximumTLSVersion;
 @property int minimumTLSVersion; // @synthesize minimumTLSVersion=_minimumTLSVersion;
 @property _Bool strictRevocationCheck; // @synthesize strictRevocationCheck=_strictRevocationCheck;

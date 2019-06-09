@@ -15,13 +15,19 @@
 {
     NEFilterFlow *_flow;
     int _action;
+    int _event;
+    unsigned int _bytesInboundCount;
+    unsigned int _bytesOutboundCount;
 }
 
 + (_Bool)supportsSecureCoding;
+@property unsigned int bytesOutboundCount; // @synthesize bytesOutboundCount=_bytesOutboundCount;
+@property unsigned int bytesInboundCount; // @synthesize bytesInboundCount=_bytesInboundCount;
+@property(readonly) int event; // @synthesize event=_event;
 @property int action; // @synthesize action=_action;
 @property(copy) NEFilterFlow *flow; // @synthesize flow=_flow;
 - (void).cxx_destruct;
-- (id)initWithFlow:(id)arg1 action:(int)arg2;
+- (id)initWithFlow:(id)arg1 action:(int)arg2 event:(int)arg3;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

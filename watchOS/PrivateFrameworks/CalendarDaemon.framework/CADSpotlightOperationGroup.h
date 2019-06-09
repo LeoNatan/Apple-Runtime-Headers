@@ -15,9 +15,6 @@ __attribute__((visibility("hidden")))
 + (_Bool)requiresEventOrReminderAccess;
 + (_Bool)requiresReminderAccess;
 + (_Bool)requiresEventAccess;
-- (void)_resetDatabase;
-- (void)_pushUpdatesForCalendarItemsWithUUIDs:(id)arg1;
-- (void)_pushUpdatesForCalendarItemsWithUUIDs:(id)arg1 inBatchesOf:(unsigned int)arg2;
 - (id)_gatherAllCalendarItemUUIDs;
 - (void)CADPushItemsToSpotlight:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)accessGrantedToPerformSelector:(SEL)arg1;

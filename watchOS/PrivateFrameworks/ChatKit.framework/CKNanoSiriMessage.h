@@ -8,6 +8,7 @@
 
 @class NSArray, NSDate, NSMutableArray, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoSiriMessage : CKNanoSiriObject
 {
     NSMutableArray *_recipientAddresses;

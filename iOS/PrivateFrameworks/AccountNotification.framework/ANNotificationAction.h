@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <AccountNotification/ANCachedDictionaryRepresentationProtocol-Protocol.h>
 #import <AccountNotification/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSURL;
+@class NSDictionary, NSString, NSURL;
 
-@interface ANNotificationAction : NSObject <NSSecureCoding>
+@interface ANNotificationAction : NSObject <NSSecureCoding, ANCachedDictionaryRepresentationProtocol>
 {
     _Bool _isInternalURL;
     NSURL *_url;
@@ -26,9 +27,17 @@
 @property(copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 - (void)perform;
+- (id)dictionaryRepresentation;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithManagedObject:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

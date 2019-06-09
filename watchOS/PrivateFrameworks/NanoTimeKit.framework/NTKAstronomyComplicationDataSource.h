@@ -18,7 +18,6 @@
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-+ (Class)richComplicationDisplayViewClassForType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 - (void).cxx_destruct;
 - (void)_invalidate;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
@@ -33,6 +32,7 @@
 - (void)becomeActive;
 - (void)_handleLocationUpdate:(id)arg1 anyLocation:(id)arg2;
 - (_Bool)supportsTapAction;
+- (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (_Bool)alwaysShowIdealizedTemplateInSwitcher;
 - (void)_stopObserving;
 - (void)_startObserving;

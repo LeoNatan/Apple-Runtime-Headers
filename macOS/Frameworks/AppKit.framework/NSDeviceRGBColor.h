@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)_cachedLookupWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (id)newWithCoder:(id)arg1 zone:(struct _NSZone *)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)colorSpace;
 - (id)colorSpaceName;

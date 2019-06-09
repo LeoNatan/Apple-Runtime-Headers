@@ -76,9 +76,11 @@
 - (void)smartMailbox:(id)arg1 didInitializeWithDictionaryRepresentation:(id)arg2;
 - (void)setSmartMailboxes:(id)arg1;
 - (void)updateMailboxesUnreadCountUsingSpotlight:(id)arg1 cancelExistingQuery:(BOOL)arg2;
+- (void)updateUnreadCountsUsingSpotlightForAllSmartMailboxes;
 - (void)_libraryMessagesFlagsChanged:(id)arg1;
 - (void)_updateSmartMailboxUnreadCountUsingSpotlight:(id)arg1;
 - (BOOL)_canCreateQuery;
+- (void)_updateSmartMailboxUnreadCountUsingSearchableIndexForMailbox:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

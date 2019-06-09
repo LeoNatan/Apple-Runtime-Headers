@@ -4,42 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <BackBoardServices/BKSHIDEventDescriptor.h>
+#import <BackBoardServices/BKSHIDEventKeyCommand.h>
 
-@class NSString;
-
-@interface BKSHIDEventKeyCommandDescriptor : BKSHIDEventDescriptor
+@interface BKSHIDEventKeyCommandDescriptor : BKSHIDEventKeyCommand
 {
-    NSString *_input;
-    long _keyCode;
-    int _modifierFlags;
-    NSString *_unmodifiedInput;
-    NSString *_shiftModifiedInput;
-    NSString *_commandModifiedInput;
 }
-
-+ (_Bool)_shouldMatchKeyCommandsWithKeyCode:(long)arg1 gsKeyboard:(struct __GSKeyboard *)arg2;
-+ (_Bool)_keyCodeIsModifierKey:(long)arg1;
-+ (id)keyCommandDescriptorForEvent:(struct __IOHIDEvent *)arg1 gsKeyboard:(struct __GSKeyboard *)arg2;
-+ (id)descriptorWithKeyCode:(long)arg1 modifierFlags:(int)arg2;
-+ (id)descriptorWithInput:(id)arg1 modifierFlags:(int)arg2;
-+ (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *commandModifiedInput; // @synthesize commandModifiedInput=_commandModifiedInput;
-@property(retain, nonatomic) NSString *shiftModifiedInput; // @synthesize shiftModifiedInput=_shiftModifiedInput;
-@property(retain, nonatomic) NSString *unmodifiedInput; // @synthesize unmodifiedInput=_unmodifiedInput;
-@property(readonly, nonatomic) int modifierFlags; // @synthesize modifierFlags=_modifierFlags;
-@property(readonly, nonatomic) long keyCode; // @synthesize keyCode=_keyCode;
-@property(readonly, nonatomic) NSString *input; // @synthesize input=_input;
-- (void).cxx_destruct;
-- (int)describes:(id)arg1;
-@property(readonly, nonatomic) _Bool isTextualDescriptor;
-- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
-- (unsigned int)hash;
-- (_Bool)isEqual:(id)arg1;
-- (id)initWithKeyCode:(long)arg1 modifierFlags:(int)arg2;
-- (id)initWithInput:(id)arg1 modifierFlags:(int)arg2;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 
 @end
 

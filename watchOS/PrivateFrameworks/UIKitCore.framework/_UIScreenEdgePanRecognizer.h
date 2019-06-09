@@ -6,18 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/_UISettingsKeyObserver-Protocol.h>
-
-@class NSString, UIDelayedAction, _UIScreenEdgePanRecognizerSettings;
+@class UIDelayedAction, _UIScreenEdgePanRecognizerSettings;
 @protocol _UIScreenEdgePanRecognizerDelegate;
 
-@interface _UIScreenEdgePanRecognizer : NSObject <_UISettingsKeyObserver>
+@interface _UIScreenEdgePanRecognizer : NSObject
 {
     struct CGRect _screenBounds;
     _Bool _shouldUseGrapeFlags;
     _Bool _hasRecordedData;
     _Bool _hasDoneInitialBackProjectionTest;
-    float _gestureRestrictionFactor;
     struct CGPoint _initialTouchLocation;
     double _initialTouchTimestamp;
     int _initialInterfaceOrientation;
@@ -27,11 +24,9 @@
     double _lastTouchTimestamp;
     int _lastTouchModifier;
     int _type;
-    _Bool _requiresLongPress;
     int _notifyToken;
     _Bool _simulatorWantsEdgeSwipes;
     _Bool _requiresFlatThumb;
-    _Bool _recognizeImmediatelyFromEdgeLocked;
     _Bool _recognizeAlongEdge;
     unsigned int _targetEdges;
     int _state;
@@ -40,14 +35,12 @@
     _UIScreenEdgePanRecognizerSettings *_settings;
 }
 
-+ (_Bool)_edgeSwipeNavigationGestureEnabled;
 @property(retain, nonatomic) _UIScreenEdgePanRecognizerSettings *settings; // @synthesize settings=_settings;
 @property(nonatomic) _Bool simulatorWantsEdgeSwipes; // @synthesize simulatorWantsEdgeSwipes=_simulatorWantsEdgeSwipes;
 @property id <_UIScreenEdgePanRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned int recognizedRegion; // @synthesize recognizedRegion=_recognizedRegion;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) _Bool recognizeAlongEdge; // @synthesize recognizeAlongEdge=_recognizeAlongEdge;
-@property(nonatomic) _Bool recognizeImmediatelyFromEdgeLocked; // @synthesize recognizeImmediatelyFromEdgeLocked=_recognizeImmediatelyFromEdgeLocked;
 @property(nonatomic) _Bool requiresFlatThumb; // @synthesize requiresFlatThumb=_requiresFlatThumb;
 @property(nonatomic) unsigned int targetEdges; // @synthesize targetEdges=_targetEdges;
 @property(nonatomic) struct CGRect screenBounds; // @synthesize screenBounds=_screenBounds;
@@ -56,16 +49,12 @@
 @property(nonatomic) _Bool shouldUseGrapeFlags; // @synthesize shouldUseGrapeFlags=_shouldUseGrapeFlags;
 - (void).cxx_destruct;
 - (unsigned int)_targetEdges;
-- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
-- (void)_createOrDestoryAnalysisWindowIfNeeded;
 - (void)_idleTimerElapsed:(id)arg1;
 - (void)_longPressTimerElapsed:(id)arg1;
 - (void)_incorporateIncrementalSampleAtLocation:(struct CGPoint)arg1 timestamp:(double)arg2 modifier:(int)arg3 region:(unsigned int)arg4 interfaceOrientation:(int)arg5 forceState:(int)arg6;
 - (void)_incorporateInitialTouchAtLocation:(struct CGPoint)arg1 timestamp:(double)arg2 modifier:(int)arg3 region:(unsigned int)arg4 interfaceOrientation:(int)arg5 forceState:(int)arg6;
 - (void)incorporateTouchSampleAtLocation:(struct CGPoint)arg1 timestamp:(double)arg2 modifier:(int)arg3 region:(unsigned int)arg4 interfaceOrientation:(int)arg5 forceState:(int)arg6;
-- (void)incorporateTouchSampleAtLocation:(struct CGPoint)arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4 forceState:(int)arg5;
 - (unsigned int)touchedEdgesForInterfaceOrientation:(int)arg1;
-@property(readonly, nonatomic, getter=isRequiringLongPress) _Bool requiringLongPress;
 - (int)_type;
 - (void)_setState:(int)arg1;
 @property(readonly, nonatomic) _Bool useGrapeFlags;
@@ -73,12 +62,6 @@
 - (void)dealloc;
 - (id)initWithType:(int)arg1;
 - (id)initWithType:(int)arg1 settings:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

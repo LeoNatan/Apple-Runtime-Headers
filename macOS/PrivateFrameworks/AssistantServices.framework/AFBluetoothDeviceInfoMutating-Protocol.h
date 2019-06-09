@@ -9,6 +9,7 @@
 @class NSString, NSUUID;
 
 @protocol AFBluetoothDeviceInfoMutating <NSObject>
+- (void)setSupportsSpokenNotification:(BOOL)arg1;
 - (void)setSupportsVoiceTrigger:(BOOL)arg1;
 - (void)setSupportsInEarDetection:(BOOL)arg1;
 - (void)setIsAdvancedAppleAudioDevice:(BOOL)arg1;

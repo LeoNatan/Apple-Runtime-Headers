@@ -32,8 +32,6 @@
     struct CGRect _cellFrame;
     id _aux;
     id _core;
-    int _reserved1;
-    int _reserved2;
 }
 
 + (BOOL)prefersTrackingUntilMouseUp;

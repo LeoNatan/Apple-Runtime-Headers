@@ -14,6 +14,7 @@
 - (id)getCharacterCodeForCharacter:(id)arg1;
 - (id)wildcardCharacterSet;
 - (id)candidatesForInput:(id)arg1;
+- (BOOL)handlePunctuationAndSymbolsAndUppercaseLetters:(unsigned short)arg1;
 - (BOOL)handleNumberKey:(unsigned short)arg1;
 - (BOOL)canTypeNonMappedCharacters;
 - (BOOL)shouldFadeLongReadings;

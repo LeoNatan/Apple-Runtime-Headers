@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL colorSupport; // @synthesize colorSupport=_colorSupport;
 @property(readonly) double lux; // @synthesize lux=_lux;
 @property(readonly) BOOL validData; // @synthesize validData=_validData;
+- (BOOL)updateEventData;
 - (id)copyDataInDictionary;
 - (id)description;
 - (void)setEvent:(struct __IOHIDEvent *)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)_wantsSeperateRelevanceQueue;
 + (Class)_relevanceProviderClass;
 + (id)_features;
 - (id)_valueForProvider:(id)arg1 feature:(id)arg2;

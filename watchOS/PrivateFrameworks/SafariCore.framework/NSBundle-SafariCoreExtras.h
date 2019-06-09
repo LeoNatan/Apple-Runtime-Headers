@@ -9,6 +9,7 @@
 @class NSString;
 
 @interface NSBundle (SafariCoreExtras)
++ (id)safari_safariApplicationPlatformBundleIdentifier;
 + (id)safari_safariCoreBundle;
 @property(readonly, copy, nonatomic) NSString *safari_normalizedVersion;
 @end

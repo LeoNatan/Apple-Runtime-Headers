@@ -8,5 +8,7 @@
 
 @interface NSClipView (ASKContainerName)
 + (id)containerName_ask;
+- (id)documentVisibleRect_ask;
+- (id)documentRect_ask;
 @end
 

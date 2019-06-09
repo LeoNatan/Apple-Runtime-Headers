@@ -16,7 +16,12 @@
 - (void)initialSyncCredentials:(unsigned int)arg1 complete:(void (^)(NSArray *, NSError *))arg2;
 - (void)joinCircleWithBlob:(NSData *)arg1 version:(int)arg2 complete:(void (^)(_Bool, NSError *))arg3;
 - (void)circleJoiningBlob:(NSData *)arg1 complete:(void (^)(NSData *, NSError *))arg2;
+- (void)circleHash:(void (^)(NSString *, NSError *))arg1;
 - (void)myPeerInfo:(void (^)(NSData *, NSError *))arg1;
+- (void)ghostBustInfo:(void (^)(NSData *, NSError *))arg1;
+- (void)ghostBustTriggerTimed:(unsigned int)arg1 complete:(void (^)(_Bool, NSError *))arg2;
+- (void)ghostBustPeriodic:(unsigned int)arg1 complete:(void (^)(_Bool, NSError *))arg2;
+- (void)ghostBust:(unsigned int)arg1 complete:(void (^)(_Bool, NSError *))arg2;
 - (void)stashAccountCredential:(NSData *)arg1 complete:(void (^)(_Bool, NSError *))arg2;
 - (void)validatedStashedAccountCredential:(void (^)(NSData *, NSError *))arg1;
 - (void)assertStashedAccountCredential:(void (^)(_Bool, NSError *))arg1;

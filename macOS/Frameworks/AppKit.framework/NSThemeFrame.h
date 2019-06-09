@@ -45,6 +45,8 @@
     NSButton *lockButton;
     double topBorderThickness;
     double bottomBorderThickness;
+    double _customTitlebarHeight;
+    double _customTitlebarHeightPriorToFSMode;
 }
 
 + (void)_prepareRenameField:(id)arg1 forEditingMode:(unsigned long long)arg2;
@@ -78,6 +80,9 @@
 + (void)drawBevel:(struct CGRect)arg1 inFrame:(struct CGRect)arg2 topCornerRounded:(BOOL)arg3 bottomCornerRounded:(BOOL)arg4 isHUD:(BOOL)arg5 isDarkWindow:(BOOL)arg6;
 + (id)_renameFieldForWindowWithStyleMask:(unsigned long long)arg1;
 + (id)containingThemeFrameFromView:(id)arg1;
+@property double customTitlebarHeightPriorToFSMode; // @synthesize customTitlebarHeightPriorToFSMode=_customTitlebarHeightPriorToFSMode;
+- (void)_windowWillExitFullscreen:(id)arg1;
+- (void)_windowWillEnterFullscreen:(id)arg1;
 @property double titlebarAlphaValue;
 - (void)animationDidStop:(id)arg1;
 - (void)animationDidEnd:(id)arg1;
@@ -122,6 +127,7 @@
 - (BOOL)_hidingTitlebar;
 - (BOOL)_hidingTitlebarOrInAnotherWindow;
 - (BOOL)alwaysShowTitlebar;
+- (BOOL)_hasCustomTitlebarHeight;
 - (BOOL)_isFullScreen;
 - (BOOL)_isMiniaturizable;
 - (BOOL)_isClosable;
@@ -186,6 +192,7 @@
 - (BOOL)_shouldFlipTrafficLightsForRTL;
 - (struct CGRect)_maxTitlebarTitleRect;
 - (double)_titlebarHeight;
+@property double customTitlebarHeight; // @synthesize customTitlebarHeight=_customTitlebarHeight;
 - (double)_titlebarHeight2;
 - (double)_sideTitlebarWidth;
 - (double)_minYTitlebarTitleOffset;
@@ -230,11 +237,9 @@
 - (void)_drawTexturedBackground;
 - (double)_topHeightForTexturedBackground;
 - (double)_additionalTopHeightForFloatingToolbar;
-- (void)_drawBackgroundForCellWithRect:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_drawNormalBackgroundRegion:(struct CGSRegionObject *)arg1;
 - (void)_drawNormalThemeBackgroundRect:(struct CGRect)arg1;
 - (void)_commonBackgroundAlphaDrawHandler:(CDUnknownBlockType)arg1;
-- (id)_backgroundColorForFontSmoothing;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_drawTexturedWindowWithClipRect:(struct CGRect)arg1;
 - (void)_drawTexturedWindowWithClipRect:(struct CGRect)arg1 inView:(id)arg2;
@@ -430,15 +435,13 @@
 - (unsigned long long)_currentThemeStyle;
 - (void)_updateTitleTextField;
 - (long long)_backgroundStyleForTitleTextField;
-- (void)_updateTitleTextFieldView;
 - (BOOL)_shouldHideTitleView;
 - (BOOL)_hasTopAlignedAccessoryView;
 - (id)_currentTitleTextFieldAttributedString;
 - (struct CGRect)_titleTextFieldFrame;
-- (void)_removeTitleTextFieldView;
+- (void)_removeTitleTextField;
+- (void)_setTitleTextField:(id)arg1;
 - (id)_titleTextField;
-- (void)_setTitleTextFieldView:(id)arg1;
-- (id)_titleTextFieldView;
 - (void)_removeBackgroundLayer;
 - (BOOL)layer:(id)arg1 shouldInheritContentsScale:(double)arg2 fromWindow:(id)arg3;
 - (void)_updateBackgroundLayer;
@@ -482,8 +485,6 @@
 - (BOOL)_wantsUnifiedToolbar;
 - (BOOL)_isOnePieceTitleAndToolbarWithToolbarNotHidden;
 - (BOOL)_wantsSideUtilityTitleBar;
-- (BOOL)shouldUseStyledTextInTitleCell:(id)arg1;
-- (struct __CFString *)customizedBackgroundTypeForTitleCell:(id)arg1;
 - (void)_drawTitleStringInClip:(struct CGRect)arg1;
 - (id)_currentTitleColor;
 - (void)_drawNormalTitleBar;
@@ -499,7 +500,6 @@
 - (void)_drawUnifiedToolbarBackgroundInRect:(struct CGRect)arg1 withState:(long long)arg2;
 - (void)_setFrameNeedsDisplay:(BOOL)arg1;
 - (void)setNeedsDisplay:(BOOL)arg1;
-- (BOOL)_useRegularTextFieldForTheTitleBar;
 - (void)_invalidateAllButtons;
 - (void)_drawRectFrameNeedsDisplay:(BOOL)arg1;
 - (struct CGRect)_separatorRectForInactiveWindow;
@@ -512,8 +512,6 @@
 - (struct CGSRegionObject *)_opaqueFullSizeContentViewRegionWithClipRect:(struct CGRect)arg1;
 - (void)drawOverlayRect:(struct CGRect)arg1;
 - (struct CGRect)overlayBounds;
-- (void)_recursiveDisplayRectIfNeededIgnoringOpacity:(struct CGRect)arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3 topView:(BOOL)arg4;
-- (id)fontSmoothingBackgroundColor;
 - (void)_setContentView:(id)arg1;
 - (void)setAssociatedViewsToUnderTitlebarViews:(id)arg1;
 - (id)associatedViewsToUnderTitlebarViews;
@@ -548,7 +546,6 @@
 - (BOOL)_movableByBottomBar;
 - (struct CGRect)activationRect;
 - (BOOL)_isDarkWindow;
-- (BOOL)canSmoothFontsInLayer;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

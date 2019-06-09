@@ -8,7 +8,7 @@
 
 #import <Home/LSApplicationWorkspaceObserverProtocol-Protocol.h>
 
-@class NAFuture, NSHashTable, NSString;
+@class NAFuture, NSHashTable, NSString, NSURL;
 
 @interface HFHomeAppInstallStateArbiter : NSObject <LSApplicationWorkspaceObserverProtocol>
 {
@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)applicationsDidInstall:(id)arg1;
 - (void)applicationsWillUninstall:(id)arg1;
+@property(readonly, copy, nonatomic) NSURL *homeAppBundleURL;
 - (_Bool)_fastPath_isHomeAppInstalled;
 - (void)_applications:(id)arg1 didInstall:(_Bool)arg2;
 - (void)removeObserver:(id)arg1;

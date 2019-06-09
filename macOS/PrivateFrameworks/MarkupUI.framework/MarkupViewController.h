@@ -6,6 +6,7 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <MarkupUI/AKSidecarControllerDelegate-Protocol.h>
 #import <MarkupUI/MUContentViewControllerDelegate-Protocol.h>
 #import <MarkupUI/NSTouchBarDelegate-Protocol.h>
 #import <MarkupUI/NSWindowDelegate-Protocol.h>
@@ -13,7 +14,7 @@
 @class AKController, MUCGPDFReader, MUContentBorderView, NSData, NSStackView, NSString, NSUndoManager, NSView;
 @protocol MUContentViewControllerProtocol;
 
-@interface MarkupViewController : NSViewController <MUContentViewControllerDelegate, NSTouchBarDelegate, NSWindowDelegate>
+@interface MarkupViewController : NSViewController <MUContentViewControllerDelegate, AKSidecarControllerDelegate, NSTouchBarDelegate, NSWindowDelegate>
 {
     BOOL _wantsToolbarAndPadding;
     BOOL _sourceContentIsLoaded;
@@ -68,6 +69,7 @@
 - (BOOL)_writeToDataConsumer:(struct CGDataConsumer *)arg1 embedSourceImageAndEditModel:(BOOL)arg2 error:(id *)arg3;
 - (id)_outputContentType;
 - (id)_sourceContentType;
+- (id)applicationDataForSidecarController:(id)arg1;
 - (void)finalizeCrop;
 - (void)editDetectedForAnnotationController:(id)arg1;
 - (id)annotationControllerOfContentViewController:(id)arg1 willSetToolbarItems:(id)arg2;

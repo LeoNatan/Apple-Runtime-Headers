@@ -6,13 +6,13 @@
 
 #import <PhotosUICore/PXNavigationListController.h>
 
-#import <PhotosUICore/PLNavigableCollectionContainer-Protocol.h>
 #import <PhotosUICore/PXGadget-Protocol.h>
+#import <PhotosUICore/PXNavigableCollectionContainer-Protocol.h>
 
 @class NSString, PXGadgetSpec;
 @protocol PXGadgetDelegate;
 
-@interface PXNavigationListGadget : PXNavigationListController <PXGadget, PLNavigableCollectionContainer>
+@interface PXNavigationListGadget : PXNavigationListController <PXGadget, PXNavigableCollectionContainer>
 {
     _Bool _visibleContentRectIsStale;
     PXGadgetSpec *_gadgetSpec;
@@ -37,12 +37,13 @@
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)tableViewContentSizeDidChange;
 - (void)viewWillLayoutSubviews;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

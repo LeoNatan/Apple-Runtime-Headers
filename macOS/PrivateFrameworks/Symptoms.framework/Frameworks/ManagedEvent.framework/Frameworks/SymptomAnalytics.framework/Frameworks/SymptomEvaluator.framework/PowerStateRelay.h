@@ -6,18 +6,25 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface PowerStateRelay : NSObject
 {
     int powerStateToken;
     int screenStateToken;
+    unsigned int _batteryService;
+    unsigned int _batteryNotification;
+    struct IONotificationPort *_batteryPort;
     BOOL _pluggedIn;
     BOOL _screenNotDark;
+    double _batteryPercentage;
 }
 
 + (id)defaultRelay;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property double batteryPercentage; // @synthesize batteryPercentage=_batteryPercentage;
 @property BOOL screenNotDark; // @synthesize screenNotDark=_screenNotDark;
 @property BOOL pluggedIn; // @synthesize pluggedIn=_pluggedIn;
+- (void)dealloc;
 - (id)init;
 
 @end

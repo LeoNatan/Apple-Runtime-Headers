@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class LAContext, NSArray, NSDate, NSString, NSTimer, TIKeyboardCandidate, UIKBBackgroundView, UITouch;
+@class LAContext, NSArray, NSDate, NSString, NSTimer, TIKeyboardCandidate, UIKBBackgroundView, UITextRange, UITouch;
 
 __attribute__((visibility("hidden")))
 @interface UIKeyboardPredictionView : UIView
@@ -27,8 +27,12 @@ __attribute__((visibility("hidden")))
     unsigned int m_autocorrectionCell;
     _Bool m_delayActive;
     _Bool m_isMinimized;
+    _Bool m_isRTL;
     int _notifyBatterySaverToken;
     LAContext *m_myContext;
+    _Bool _onDictationKeyboard;
+    _Bool _isTextAlternative;
+    _Bool _dontHidePredictionView;
     UITouch *_activeTouch;
     int _state;
     TIKeyboardCandidate *_currentFirstTextSuggestion;
@@ -39,6 +43,7 @@ __attribute__((visibility("hidden")))
     NSDate *_lastUpdateDate;
     NSDate *_lastTextSuggestionUpdateDate;
     int _lastTextSuggestionUpdateOrientation;
+    UITextRange *_replacementRange;
 }
 
 + (id)cellWidthOptions;
@@ -55,6 +60,8 @@ __attribute__((visibility("hidden")))
 + (float)predictionViewHeightForState:(int)arg1 orientation:(int)arg2;
 + (float)predictionCellHeightForOrientation:(int)arg1;
 + (unsigned int)numberOfCandidates;
++ (_Bool)_preventsAppearanceProxyCustomization;
+@property(retain, nonatomic) UITextRange *replacementRange; // @synthesize replacementRange=_replacementRange;
 @property(nonatomic) int lastTextSuggestionUpdateOrientation; // @synthesize lastTextSuggestionUpdateOrientation=_lastTextSuggestionUpdateOrientation;
 @property(retain, nonatomic) NSDate *lastTextSuggestionUpdateDate; // @synthesize lastTextSuggestionUpdateDate=_lastTextSuggestionUpdateDate;
 @property(retain, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
@@ -64,25 +71,27 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(retain, nonatomic) TIKeyboardCandidate *currentFirstTextSuggestion; // @synthesize currentFirstTextSuggestion=_currentFirstTextSuggestion;
 @property(nonatomic) int state; // @synthesize state=_state;
+@property(nonatomic) _Bool dontHidePredictionView; // @synthesize dontHidePredictionView=_dontHidePredictionView;
+@property(nonatomic) _Bool isTextAlternative; // @synthesize isTextAlternative=_isTextAlternative;
+@property(nonatomic) _Bool onDictationKeyboard; // @synthesize onDictationKeyboard=_onDictationKeyboard;
 @property(retain, nonatomic) UITouch *activeTouch; // @synthesize activeTouch=_activeTouch;
+- (id)_displayedCandidates;
 - (id)description;
+- (void)hidePredictionViewIfNeeded;
+- (void)showReplacements:(id)arg1;
 - (_Bool)setOriginalUserInput:(id)arg1 asTypedText:(id)arg2;
 - (_Bool)hasPredictions;
 - (_Bool)isTextSuggestion;
 - (float)heightBeforeStateChangeForInterfaceOrientation:(int)arg1;
 - (float)heightForInterfaceOrientation:(int)arg1;
 - (float)heightForInterfaceOrientation:(int)arg1 state:(int)arg2;
-- (void)setPredictionViewState:(int)arg1 animate:(_Bool)arg2 notify:(_Bool)arg3 hostView:(id)arg4;
 - (void)setPredictionViewState:(int)arg1 animate:(_Bool)arg2 notify:(_Bool)arg3;
 - (void)setPredictionViewState:(int)arg1 animate:(_Bool)arg2;
-- (_Bool)_hostViewAlreadyContainsPredictionView:(id)arg1;
-- (id)_designatedHostView;
 - (void)_updateAssistantBarForPredictionViewState:(int)arg1;
-- (_Bool)_predictionViewHostedByAssistantBar;
 - (void)suppressLayoutSubviewsForCellLabels:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool show;
 - (void)setPredictions:(id)arg1 autocorrection:(id)arg2 emojiList:(id)arg3;
-- (void)touchUpdateTimer;
+- (void)touchUpdateTimerWithInterval:(double)arg1;
 - (void)updateTimerFired:(id)arg1;
 - (void)invalidateUpdateTimer;
 - (void)_setPredictions:(id)arg1 autocorrection:(id)arg2 emojiList:(id)arg3;
@@ -98,7 +107,7 @@ __attribute__((visibility("hidden")))
 - (void)delayActivateCellForPrediction:(id)arg1;
 - (void)commitPrediction:(id)arg1;
 - (void)_commitPrediction:(id)arg1;
-- (void)acceptPredictiveInput:(id)arg1;
+- (void)acceptPredictiveInput:(id)arg1 isTextAlternative:(_Bool)arg2;
 - (id)autocorrection;
 - (unsigned int)indexForPoint:(struct CGPoint)arg1;
 - (void)setActiveCellWithIndex:(unsigned int)arg1;
@@ -107,6 +116,7 @@ __attribute__((visibility("hidden")))
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setFrameForCells;
 - (void)setFrameForCells:(id)arg1 start:(float)arg2 width:(float)arg3 cellCount:(unsigned int)arg4;
+- (void)didMoveToWindow;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)initCells;

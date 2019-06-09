@@ -18,9 +18,11 @@
     double _longitude;
     double _uncertainty;
     NSDate *_date;
+    double _speed;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) double speed; // @synthesize speed=_speed;
 @property(readonly, nonatomic) int referenceFrame; // @synthesize referenceFrame=_referenceFrame;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) double uncertainty; // @synthesize uncertainty=_uncertainty;
@@ -35,9 +37,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCLLocation:(id)arg1;
+- (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 date:(id)arg4 referenceFrame:(int)arg5 speed:(double)arg6;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 date:(id)arg4 referenceFrame:(int)arg5;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 uncertainty:(double)arg3 date:(id)arg4;
+- (id)init;
 
 @end
 

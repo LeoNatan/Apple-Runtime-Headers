@@ -8,10 +8,10 @@
 
 @interface _AXFTextPositionIndexBased : AXFTextPosition
 {
-    unsigned long long __index;
+    long long __index;
 }
 
-@property(readonly, nonatomic) unsigned long long _index; // @synthesize _index=__index;
+@property(readonly, nonatomic) long long _index; // @synthesize _index=__index;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -19,12 +19,12 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)positionOffsetBy:(long long)arg1 withinLimit:(id)arg2;
 - (long long)offsetFromPosition:(id)arg1;
-- (unsigned long long)indexValue;
+- (long long)indexValue;
 - (BOOL)isValid;
 - (long long)type;
 - (id)descriptionWithoutType;
 - (id)description;
-- (id)_initWithIndex:(unsigned long long)arg1;
+- (id)_initWithIndex:(long long)arg1;
 
 @end
 

@@ -12,6 +12,8 @@
 
 - (void)setBackgroundView:(id)arg1;
 - (id)backgroundView;
+- (void)setBackgroundColor:(id)arg1;
+- (id)backgroundColor;
 - (int)selectionStyle;
 - (void)setInteractive:(_Bool)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

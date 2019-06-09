@@ -7,12 +7,13 @@
 #import <AppKit/NSAccessibilityElement.h>
 
 #import <AccessibilityPlatformTranslation/AXPTranslationElementProtocol-Protocol.h>
+#import <AccessibilityPlatformTranslation/NSAccessibilityCustomElementDataProvider-Protocol.h>
 #import <AccessibilityPlatformTranslation/NSAccessibilityCustomRotorItemSearchDelegate-Protocol.h>
 #import <AccessibilityPlatformTranslation/NSAccessibilityElement-Protocol.h>
 
 @class AXPTranslationObject, NSArray, NSMutableDictionary, NSString;
 
-@interface AXPMacPlatformElement : NSAccessibilityElement <NSAccessibilityCustomRotorItemSearchDelegate, AXPTranslationElementProtocol, NSAccessibilityElement>
+@interface AXPMacPlatformElement : NSAccessibilityElement <NSAccessibilityCustomRotorItemSearchDelegate, NSAccessibilityCustomElementDataProvider, AXPTranslationElementProtocol, NSAccessibilityElement>
 {
     NSMutableDictionary *_selectiveCache;
     AXPTranslationObject *translation;
@@ -21,6 +22,8 @@
     NSArray *_cachedCustomRotors;
 }
 
++ (id)elementWithAccessibilityCustomElementData:(id)arg1;
++ (id)applicationElement;
 + (void)initialize;
 + (id)platformElementWithTranslationObject:(id)arg1;
 @property(retain, nonatomic) NSArray *cachedCustomRotors; // @synthesize cachedCustomRotors=_cachedCustomRotors;
@@ -36,7 +39,7 @@
 - (void)performIncrementAction;
 - (BOOL)performEscapeAction;
 - (void)performScrollToVisible;
-- (void)_synthesizeMouseClickAtElementCenter;
+- (BOOL)_synthesizeMouseClick:(unsigned int)arg1;
 - (id)_convertTranslatorResponse:(id)arg1 forAttribute:(unsigned long long)arg2;
 - (id)_convertTranslatorResponseForSubrole:(id)arg1;
 - (id)_convertTranslatorResponseForRole:(id)arg1;
@@ -46,6 +49,10 @@
 - (id)_accessibilityProcessAttribute:(id)arg1;
 - (id)_accessibilityProcessImmediateAttributeResult:(id)arg1;
 - (id)_accessibilityTranslationRootParent;
+- (BOOL)accessibilitySupportsCustomElementData;
+- (id)accessibilityCustomElementData;
+- (BOOL)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)setAccessibilityValue:(id)arg1;
 - (id)accessibilityValue;
@@ -79,7 +86,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

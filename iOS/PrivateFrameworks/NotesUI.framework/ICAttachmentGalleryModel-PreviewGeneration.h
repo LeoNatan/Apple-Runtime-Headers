@@ -7,7 +7,14 @@
 #import <NotesShared/ICAttachmentGalleryModel.h>
 
 @interface ICAttachmentGalleryModel (PreviewGeneration)
-- (void)generatePreviewsInOperation:(id)arg1;
+- (_Bool)generatePreviewsInOperation:(id)arg1;
 - (_Bool)needToGeneratePreviews;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
+- (id)fileURLForTypeIdentifier:(id)arg1;
+- (id)providerFileTypes;
+- (id)activityItems;
+- (id)quicklookPreviewItems;
+- (CDUnknownBlockType)genericBrickThumbnailCreator;
+- (CDUnknownBlockType)genericListThumbnailCreator;
 @end
 

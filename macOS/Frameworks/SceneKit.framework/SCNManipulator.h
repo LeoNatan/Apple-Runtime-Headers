@@ -65,6 +65,7 @@
     NSOrderedSet *_cloneSet;
     BOOL _cloning;
     unsigned long long _features;
+    BOOL _alternateMode;
 }
 
 @property(nonatomic) long long zAlignment; // @synthesize zAlignment=_zAlignment;
@@ -100,6 +101,8 @@
 - (void)unlockLayout;
 - (void)lockLayout;
 @property(nonatomic) unsigned long long features;
+- (void)setAlternateMode:(BOOL)arg1;
+- (unsigned long long)_effectiveFeatures;
 - (void)updateManipulatorComponents;
 - (void)editingSpaceChanged;
 - (void)updateManipulatorNode;

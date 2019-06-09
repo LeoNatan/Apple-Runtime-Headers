@@ -17,7 +17,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAccessory, HMDCameraResidentMessageHandler, HMDCameraSnapshotMonitorEvents, HMDCameraStreamSnapshotHandler, HMDNotificationRegistration, HMDSnapshotCacheRequestHandler, HMDSnapshotLocalSession, HMDSnapshotRequestHandler, HMDSnapshotSlotManager, HMFMessageDispatcher, HMFNetMonitor, NSMutableArray, NSMutableDictionary, NSObject, NSSet, NSString, NSUUID;
+@class HMDCameraResidentMessageHandler, HMDCameraSnapshotMonitorEvents, HMDCameraStreamSnapshotHandler, HMDHAPAccessory, HMDNotificationRegistration, HMDSnapshotCacheRequestHandler, HMDSnapshotLocalSession, HMDSnapshotRequestHandler, HMDSnapshotSlotManager, HMFMessageDispatcher, HMFNetMonitor, NSMutableArray, NSMutableDictionary, NSObject, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDCameraSnapshotManager : HMFObject <HMDCameraSnapshotLocalDelegate, HMDCameraSnapshotRemoteRelaySenderDelegate, HMDCameraSnapshotRemoteRelayReceiverDelegate, HMDCameraSnapshotRemoteStreamSenderDelegate, HMDCameraSnapshotRemoteStreamReceiverDelegate, HMDCameraSnapshotRemoteRelayStreamDelegate, HMFTimerDelegate, HMFLogging, HMDCameraStreamSnapshotHandlerDelegate, HMDHomeMessageReceiver>
@@ -26,7 +26,7 @@
     HMFMessageDispatcher *_msgDispatcher;
     HMDSnapshotLocalSession *_currentLocalSession;
     NSMutableDictionary *_currentRemoteSessions;
-    HMDAccessory *_accessory;
+    HMDHAPAccessory *_accessory;
     NSUUID *_uniqueIdentifier;
     NSString *_imageCacheDirectory;
     NSString *_logID;
@@ -58,7 +58,7 @@
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(readonly, nonatomic) NSString *imageCacheDirectory; // @synthesize imageCacheDirectory=_imageCacheDirectory;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
-@property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
+@property(readonly, nonatomic) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSMutableDictionary *currentRemoteSessions; // @synthesize currentRemoteSessions=_currentRemoteSessions;
 @property(retain, nonatomic) HMDSnapshotLocalSession *currentLocalSession; // @synthesize currentLocalSession=_currentLocalSession;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
@@ -96,13 +96,11 @@
 - (void)_sendSnapshotRequestRelayReceiver:(id)arg1;
 - (void)_sendSnapshotRequestLocal:(id)arg1;
 - (void)_sendStreamSnapshotRequest:(id)arg1;
-- (void)_message:(id)arg1 errored:(int)arg2;
 - (void)_handleSnapshotRemoteRequest:(id)arg1;
 - (void)_handleSnapshotRequest:(id)arg1;
 - (id)getMostRecentSnapshotRequest;
 - (void)_handleCreateSnapshotFromBulletinContext:(id)arg1;
 - (void)_handleReleaseSnapshot:(id)arg1;
-- (void)monitorForEventsForServices:(id)arg1;
 - (void)_removeAllPendingRequests:(id)arg1;
 - (void)handleAccessoryIsNotReachable:(id)arg1;
 - (void)releaseSnapshot:(id)arg1;

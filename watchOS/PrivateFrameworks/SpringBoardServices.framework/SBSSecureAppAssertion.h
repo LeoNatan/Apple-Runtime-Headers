@@ -11,6 +11,7 @@
     SBSLockScreenContentAssertion *_actualAssertion;
 }
 
++ (id)acquireSecureAppAssertionWithType:(unsigned int)arg1 supportedOrientations:(unsigned int)arg2 errorHandler:(CDUnknownBlockType)arg3;
 + (id)acquireSecureAppAssertionWithType:(unsigned int)arg1 errorHandler:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) SBSLockScreenContentAssertion *actualAssertion; // @synthesize actualAssertion=_actualAssertion;
 - (void).cxx_destruct;

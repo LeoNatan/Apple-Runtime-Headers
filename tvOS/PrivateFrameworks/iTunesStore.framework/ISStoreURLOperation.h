@@ -78,6 +78,7 @@
 - (void).cxx_destruct;
 - (id)_urlBagForContext:(id)arg1;
 - (_Bool)_shouldRetryForTouchIDChallengeWithError:(id)arg1;
+- (_Bool)_shouldRetryForAbsintheWithResponse:(id)arg1;
 - (void)_runURLOperation;
 - (id)_resolvedURLInBagContext:(id)arg1 bagTrusted:(_Bool *)arg2;
 - (_Bool)_performMachineDataRequest:(id)arg1;
@@ -85,10 +86,12 @@
 - (_Bool)_isErrorTokenError:(id)arg1;
 - (id)_copyAuthenticationContextForAttemptNumber:(long long)arg1;
 - (void)_continueTouchIDSession;
+- (id)_buyParams;
 - (_Bool)_canSendTokenToURL:(id)arg1;
 - (_Bool)_authenticateWithContext:(id)arg1 error:(id *)arg2;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
 - (id)_account;
+- (id)_absintheHeaders;
 - (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(_Bool)arg2;
 - (_Bool)_ssBag_shouldSendGUIDForURL:(id)arg1 withBag:(id)arg2;
 - (id)_ssBag_copyGUIDPatternsFromBag:(id)arg1;
@@ -109,6 +112,7 @@
 @property _Bool performsMachineDataActions;
 @property(nonatomic) _Bool ignorePreexistingSecureToken;
 @property _Bool canSendGUIDParameter;
+- (id)logKey;
 - (id)init;
 
 // Remaining properties

@@ -8,17 +8,17 @@
 
 #import <GameCenterUI/GKExtensionHostProtocol-Protocol.h>
 
-@class GKGame, GKUIRemoteViewController, NSString;
+@class GKExtensionRemoteViewController, GKGame, NSString;
 
 @interface GKExtensionHostContext : NSExtensionContext <GKExtensionHostProtocol>
 {
     GKGame *_game;
-    GKUIRemoteViewController *_remoteViewControllerWeak;
+    GKExtensionRemoteViewController *_remoteViewControllerWeak;
 }
 
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
 - (void)messageFromExtension:(id)arg1;
-@property(nonatomic) GKUIRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewControllerWeak;
+@property(nonatomic) GKExtensionRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewControllerWeak;
 - (void)dealloc;
 
 // Remaining properties

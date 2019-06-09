@@ -8,6 +8,7 @@
 
 @class UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemResultSimpleTableViewCell : UITableViewCell
 {
     struct UIEdgeInsets _childContentInsets;

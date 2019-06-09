@@ -8,7 +8,7 @@
 
 @protocol _DUIServerSessionSource
 - (oneway void)cancelDrag;
-- (oneway void)addItemsWithDetails:(NSArray *)arg1 itemCollection:(PBItemCollection *)arg2 dataProviderEndpoint:(NSXPCListenerEndpoint *)arg3;
+- (oneway void)addItemCollection:(PBItemCollection *)arg1 dataProviderEndpoint:(NSXPCListenerEndpoint *)arg2;
 - (oneway void)dragDidExitSourceApp;
 - (oneway void)dirtySourceItems:(NSArray *)arg1;
 - (oneway void)takeOutsideAppSourceOperationMask:(unsigned long long)arg1 prefersFullSizePreview:(_Bool)arg2;

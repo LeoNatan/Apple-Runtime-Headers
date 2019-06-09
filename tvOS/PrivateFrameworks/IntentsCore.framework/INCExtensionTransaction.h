@@ -11,6 +11,7 @@
 @interface INCExtensionTransaction : NSObject
 {
     NSMutableDictionary *_userActivitiesByIdentifier;
+    _Bool _shouldResetRequestAfterHandle;
     INCExtensionRequest *_request;
     INIntent *_currentIntent;
     NSUserActivity *_currentUserActivity;
@@ -18,6 +19,7 @@
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool shouldResetRequestAfterHandle; // @synthesize shouldResetRequestAfterHandle=_shouldResetRequestAfterHandle;
 @property(retain, nonatomic) INCExtensionTransactionState *state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSUserActivity *currentUserActivity; // @synthesize currentUserActivity=_currentUserActivity;
 @property(readonly, nonatomic) INIntent *currentIntent; // @synthesize currentIntent=_currentIntent;

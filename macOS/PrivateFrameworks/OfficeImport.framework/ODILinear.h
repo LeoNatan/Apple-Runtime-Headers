@@ -8,6 +8,7 @@
 
 @class ODIState;
 
+__attribute__((visibility("hidden")))
 @interface ODILinear : NSObject
 {
     BOOL mIsHorizontal;

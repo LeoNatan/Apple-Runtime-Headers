@@ -53,7 +53,7 @@
 - (id)videoDeviceForMode:(long long)arg1 desiredDevice:(long long)arg2 videoConfiguration:(long long)arg3 resolvedDevice:(long long *)arg4;
 - (id)_captureEngineDeviceForMode:(long long)arg1 desiredDevice:(long long)arg2 videoConfiguration:(long long)arg3 resolvedDevice:(long long *)arg4;
 - (void)clear;
-- (void)stopPanoramaCapture;
+- (void)stopPanoramaCaptureInterrupted:(_Bool)arg1;
 - (void)startPanoramaCaptureWithRequest:(id)arg1;
 @property(readonly, nonatomic) CAMPanoramaConfiguration *currentPanoramaConfiguration;
 @property(readonly, nonatomic) __weak id <AVCaptureFileOutputRecordingDelegate> currentRecordingDelegate;

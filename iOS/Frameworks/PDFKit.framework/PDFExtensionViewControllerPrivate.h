@@ -18,10 +18,8 @@ __attribute__((visibility("hidden")))
     NSString *searchString;
     PDFSelection *searchSelection;
     NSMutableArray *searchResults;
+    _Bool didCancelActiveSearch;
     long long currentGestureState;
-    NSMutableArray *selectionRects;
-    struct CGPoint topLeftSelectionPoint;
-    struct CGPoint bottomRightSelectionPoint;
     _Bool hasSelection;
 }
 

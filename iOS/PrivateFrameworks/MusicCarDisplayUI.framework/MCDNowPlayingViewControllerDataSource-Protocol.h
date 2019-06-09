@@ -6,20 +6,20 @@
 
 #import <MusicCarDisplayUI/NSObject-Protocol.h>
 
-@class MCDNowPlayingViewController, NSString, UIImage;
+@class NSString, UIImage, _MCDNowPlayingViewController;
 
 @protocol MCDNowPlayingViewControllerDataSource <NSObject>
-- (_Bool)nowPlayingViewControllerIsPlaying:(MCDNowPlayingViewController *)arg1;
-- (CDStruct_fce57115)durationSnapshotForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
-- (_Bool)nowPlayingViewControllerIsShowingExplicitTrack:(MCDNowPlayingViewController *)arg1;
-- (UIImage *)backgroundArtForNowPlayingController:(MCDNowPlayingViewController *)arg1;
-- (NSString *)titleForNowPlayingController:(MCDNowPlayingViewController *)arg1;
-- (NSString *)albumTextForNowPlayingController:(MCDNowPlayingViewController *)arg1;
-- (NSString *)artistTextForNowPlayingController:(MCDNowPlayingViewController *)arg1;
+- (_Bool)nowPlayingViewControllerIsPlaying:(_MCDNowPlayingViewController *)arg1;
+- (CDStruct_fce57115)durationSnapshotForNowPlayingViewController:(_MCDNowPlayingViewController *)arg1;
+- (_Bool)nowPlayingViewControllerIsShowingExplicitTrack:(_MCDNowPlayingViewController *)arg1;
+- (UIImage *)backgroundArtForNowPlayingController:(_MCDNowPlayingViewController *)arg1;
+- (NSString *)titleForNowPlayingController:(_MCDNowPlayingViewController *)arg1;
+- (NSString *)albumTextForNowPlayingController:(_MCDNowPlayingViewController *)arg1;
+- (NSString *)artistTextForNowPlayingController:(_MCDNowPlayingViewController *)arg1;
 
 @optional
-- (_Bool)likedForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
-- (long long)repeatTypeForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
-- (long long)shuffleTypeForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
+- (_Bool)likedForNowPlayingViewController:(_MCDNowPlayingViewController *)arg1;
+- (long long)repeatTypeForNowPlayingViewController:(_MCDNowPlayingViewController *)arg1;
+- (long long)shuffleTypeForNowPlayingViewController:(_MCDNowPlayingViewController *)arg1;
 @end
 

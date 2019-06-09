@@ -10,7 +10,6 @@
 
 @class CKRecord, NSDate, NSString;
 
-__attribute__((visibility("hidden")))
 @interface MSPEncryptedCloudRecord : NSObject <MSPCloudRecord>
 {
     _Bool _compressNewData;

@@ -6,9 +6,11 @@
 
 #import <AssetsLibraryServices/NSObject-Protocol.h>
 
-@class IOSurface, NSMutableDictionary;
+@class IOSurface, NSData, NSMutableDictionary, NSString;
 
 @protocol PLAssetsdResourceWriteOnlyServiceProtocol <NSObject>
+- (void)removeAssetWithHash:(NSData *)arg1 orPublicGlobalUUID:(NSString *)arg2 fromStreamID:(NSString *)arg3 reply:(void (^)(BOOL, NSString *, NSError *))arg4;
+- (void)addAssetWithHash:(NSData *)arg1 orPublicGlobalUUID:(NSString *)arg2 toStreamID:(NSString *)arg3 reply:(void (^)(BOOL, NSString *, NSError *))arg4;
 - (void)saveAssetWithDataAndPorts:(NSMutableDictionary *)arg1 imageSurface:(IOSurface *)arg2 previewImageSurface:(IOSurface *)arg3 reply:(void (^)(BOOL, NSDictionary *, BOOL, BOOL, NSError *))arg4;
 @end
 

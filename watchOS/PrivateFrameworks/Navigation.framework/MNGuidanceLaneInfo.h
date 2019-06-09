@@ -17,6 +17,7 @@
     NSArray *_lanes;
     NSDictionary *_variableOverrides;
     int _distanceDetailLevel;
+    int _composedGuidanceEventIndex;
     NSArray *_titles;
     NSArray *_instructions;
 }
@@ -24,6 +25,7 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSArray *instructions; // @synthesize instructions=_instructions;
 @property(readonly, nonatomic) NSArray *titles; // @synthesize titles=_titles;
+@property(readonly, nonatomic) int composedGuidanceEventIndex; // @synthesize composedGuidanceEventIndex=_composedGuidanceEventIndex;
 @property(readonly, nonatomic) int distanceDetailLevel; // @synthesize distanceDetailLevel=_distanceDetailLevel;
 @property(readonly, nonatomic) NSDictionary *variableOverrides; // @synthesize variableOverrides=_variableOverrides;
 @property(readonly, nonatomic) NSArray *lanes; // @synthesize lanes=_lanes;
@@ -33,7 +35,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithID:(id)arg1 isForManeuver:(_Bool)arg2 lanes:(id)arg3 titles:(id)arg4 instructions:(id)arg5 variableOverrides:(id)arg6 distanceDetailLevel:(int)arg7;
+- (id)initWithID:(id)arg1 isForManeuver:(_Bool)arg2 lanes:(id)arg3 titles:(id)arg4 instructions:(id)arg5 variableOverrides:(id)arg6 distanceDetailLevel:(int)arg7 composedGuidanceEventIndex:(int)arg8;
 
 @end
 

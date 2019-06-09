@@ -11,5 +11,8 @@
 - (void)selectCancelled:(SSSessionSelectViewController *)arg1;
 - (void)selectVirtualDisplay:(SSSessionSelectViewController *)arg1;
 - (void)selectMainDisplay:(SSSessionSelectViewController *)arg1;
+
+@optional
+- (void)reshowConnectionAuthenticationWindow;
 @end
 

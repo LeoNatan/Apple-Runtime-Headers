@@ -31,7 +31,6 @@
 + (id)array;
 + (id)arrayWithObjects:(const id *)arg1 count:(unsigned long long)arg2;
 + (id)arrayWithObject:(id)arg1;
-+ (id)_alloc;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -8,7 +8,6 @@
 
 @protocol MSPReplicaRecord;
 
-__attribute__((visibility("hidden")))
 @interface _MSPReplicaTombstoneRecord : NSProxy
 {
     id <MSPReplicaRecord> _record;

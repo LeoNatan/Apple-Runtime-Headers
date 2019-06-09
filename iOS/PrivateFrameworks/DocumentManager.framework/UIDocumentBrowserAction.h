@@ -9,18 +9,20 @@
 #import <DocumentManager/NSCopying-Protocol.h>
 #import <DocumentManager/NSSecureCoding-Protocol.h>
 
-@class FPUIAction, NSArray, NSPredicate, NSString, UIImage;
+@class NSArray, NSPredicate, NSString, UIDocumentBrowserActionDescriptor, UIImage;
 
 @interface UIDocumentBrowserAction : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _supportsMultipleItems;
     _Bool _requiresResolvedItems;
     _Bool _requiresVersioning;
+    _Bool _performActionExitsEditMode;
     NSString *_identifier;
     NSString *_localizedTitle;
     long long _availability;
     UIImage *_image;
     NSArray *_supportedContentTypes;
+    CDUnknownBlockType _handler;
     CDUnknownBlockType _resolvedHandler;
     CDUnknownBlockType _unresolvedHandler;
     NSString *_uiActionProviderIdentifier;
@@ -28,11 +30,14 @@
     long long _navigationSide;
     unsigned long long _menuSortOrder;
     NSPredicate *_filteringPredicate;
-    FPUIAction *_uiAction;
+    long long _actionStyle;
+    UIDocumentBrowserActionDescriptor *_uiActionDescriptor;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) FPUIAction *uiAction; // @synthesize uiAction=_uiAction;
+@property(retain, nonatomic) UIDocumentBrowserActionDescriptor *uiActionDescriptor; // @synthesize uiActionDescriptor=_uiActionDescriptor;
+@property(nonatomic) long long actionStyle; // @synthesize actionStyle=_actionStyle;
+@property(nonatomic) _Bool performActionExitsEditMode; // @synthesize performActionExitsEditMode=_performActionExitsEditMode;
 @property(retain, nonatomic) NSPredicate *filteringPredicate; // @synthesize filteringPredicate=_filteringPredicate;
 @property(nonatomic) unsigned long long menuSortOrder; // @synthesize menuSortOrder=_menuSortOrder;
 @property(nonatomic) _Bool requiresVersioning; // @synthesize requiresVersioning=_requiresVersioning;
@@ -41,6 +46,7 @@
 @property(copy, nonatomic) NSString *uiActionProviderIdentifier; // @synthesize uiActionProviderIdentifier=_uiActionProviderIdentifier;
 @property(copy, nonatomic) CDUnknownBlockType unresolvedHandler; // @synthesize unresolvedHandler=_unresolvedHandler;
 @property(copy, nonatomic) CDUnknownBlockType resolvedHandler; // @synthesize resolvedHandler=_resolvedHandler;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(nonatomic) _Bool requiresResolvedItems; // @synthesize requiresResolvedItems=_requiresResolvedItems;
 @property(nonatomic) _Bool supportsMultipleItems; // @synthesize supportsMultipleItems=_supportsMultipleItems;
 @property(copy, nonatomic) NSArray *supportedContentTypes; // @synthesize supportedContentTypes=_supportedContentTypes;
@@ -52,10 +58,11 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)commonInit;
 - (id)initWithIdentifier:(id)arg1 localizedTitle:(id)arg2 unresolvedHandler:(CDUnknownBlockType)arg3;
-- (id)initWithUIAction:(id)arg1;
+- (id)initWithUIActionDescriptor:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 localizedTitle:(id)arg2 resolvedHandler:(CDUnknownBlockType)arg3;
 - (id)initWithIdentifier:(id)arg1 localizedTitle:(id)arg2 availability:(long long)arg3 handler:(CDUnknownBlockType)arg4;
 

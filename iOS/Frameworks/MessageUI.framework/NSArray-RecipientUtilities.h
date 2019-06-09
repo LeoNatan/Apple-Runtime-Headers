@@ -8,7 +8,7 @@
 
 @interface NSArray (RecipientUtilities)
 - (unsigned long long)mf_indexOfRecipientWithEmailAddress:(id)arg1;
-- (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2 usingSelector:(SEL)arg3;
+- (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)mf_commaSeparatedRecipientListWithWidth:(double)arg1 forFont:(id)arg2;
 @end
 

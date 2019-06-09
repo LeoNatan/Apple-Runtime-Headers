@@ -23,6 +23,7 @@
     _Bool _dislikesSaveSentMbox;
 }
 
+- (void).cxx_destruct;
 - (void)setUseSaveSent:(_Bool)arg1 toFolder:(id)arg2;
 - (_Bool)_supportsSaveSentExtension;
 - (id)lastResponseLine;
@@ -65,7 +66,6 @@
 - (id)domainName;
 - (id)lastResponse;
 - (int)state;
-- (void)dealloc;
 - (void)setDelegate:(id)arg1;
 - (id)init;
 

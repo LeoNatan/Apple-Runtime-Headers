@@ -9,5 +9,9 @@
 @interface SASSpeechRecognized (AFUserUtteranceAdditions)
 - (id)af_bestTextInterpretation;
 - (id)af_userUtteranceValue;
+- (id)af_correctionContext;
+- (_Bool)af_waitsForConfirmation;
+- (_Bool)af_isUserUtterance;
+- (_Bool)af_isUtterance;
 @end
 

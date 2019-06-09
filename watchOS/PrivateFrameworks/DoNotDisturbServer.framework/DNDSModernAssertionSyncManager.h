@@ -7,19 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <DoNotDisturbServer/DNDSAssertionSyncManager-Protocol.h>
-#import <DoNotDisturbServer/DNDSSyncServiceUpdateListener-Protocol.h>
+#import <DoNotDisturbServer/DNDSIDSSyncServiceDelegate-Protocol.h>
+#import <DoNotDisturbServer/DNDSModeAssertionStoreMigrationDelegate-Protocol.h>
 
-@class NSDate, NSDictionary, NSHashTable, NSString;
-@protocol DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, DNDSSyncService, OS_dispatch_queue;
+@class DNDSClientDetailsProvider, DNDSIDSSyncService, DNDSModeAssertionStore, NSString;
+@protocol DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate, OS_dispatch_queue;
 
-@interface DNDSModernAssertionSyncManager : NSObject <DNDSSyncServiceUpdateListener, DNDSAssertionSyncManager>
+@interface DNDSModernAssertionSyncManager : NSObject <DNDSIDSSyncServiceDelegate, DNDSModeAssertionStoreMigrationDelegate, DNDSAssertionSyncManager>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    NSHashTable *_observers;
-    id <DNDSSyncService> _syncService;
-    NSDate *_invalidateAllModeAssertionsDate;
-    unsigned int _invalidateAllModeAssertionsReason;
-    NSDictionary *_assertionsByUUID;
+    DNDSIDSSyncService *_syncService;
+    DNDSClientDetailsProvider *_clientDetailsProvider;
+    DNDSModeAssertionStore *_latestSentOrReceivedStore;
     id <DNDSAssertionSyncManagerDataSource> _dataSource;
     id <DNDSAssertionSyncManagerDelegate> _delegate;
 }
@@ -27,21 +26,18 @@
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (void)_queue_invalidateAllLocalModeAssertionsTakenBeforeDate:(id)arg1 forReason:(unsigned int)arg2;
-- (id)_queue_allModeAssertionsWithError:(id *)arg1;
-- (id)_queue_assertionWithUUID:(id)arg1 error:(id *)arg2;
-- (void)_queue_receivedRemoteSyncRecord:(id)arg1 remoteDeviceIdentifier:(id)arg2;
-- (void)_queue_sendStateSnapshotToAllRemotes;
-- (void)_queue_invalidateAllRemoteModeAssertionsTakenBeforeDate:(id)arg1 forReason:(unsigned int)arg2;
-- (void)syncService:(id)arg1 didReceiveRecord:(id)arg2 sourceIdentifier:(id)arg3;
-- (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1;
-- (id)allModeAssertionsWithError:(id *)arg1;
-- (id)assertionWithUUID:(id)arg1 error:(id *)arg2;
-- (void)invalidateAllModeAssertionsTakenBeforeDate:(id)arg1 forReason:(unsigned int)arg2;
-- (void)updateForReason:(unsigned int)arg1;
+- (_Bool)isAssertionUserRequestedForClientIdentifier:(id)arg1;
+- (_Bool)isAssertionSyncSuppressedForClientIdentifier:(id)arg1;
+- (id)_resolvedSyncAssertionStore:(id)arg1 pairedDevice:(id)arg2;
+- (id)_unresolvedSyncAssertionStore:(id)arg1 pairedDevice:(id)arg2;
+- (id)_syncAssertionStoreForAssertionStore:(id)arg1 pairedDevice:(id)arg2;
+- (void)_queue_handleMessage:(id)arg1 withVersionNumber:(unsigned int)arg2;
+- (void)_queue_sendStateSnapshotToPairedDevice:(id)arg1;
+- (void)idsSyncService:(id)arg1 didReceiveMessage:(id)arg2 withVersionNumber:(unsigned int)arg3 fromDeviceIdentifier:(id)arg4;
+- (_Bool)idsSyncService:(id)arg1 shouldAcceptIncomingMessage:(id)arg2 withVersionNumber:(unsigned int)arg3 fromDeviceIdentifier:(id)arg4;
+- (void)updateForModeAssertionUpdateResult:(id)arg1;
 - (void)resume;
-- (id)init;
+- (id)initWithClientDetailsProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -57,7 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)updateControls;
 - (BOOL)hasControls;
 - (id)accessibilityTitleUIElement;
-@property unsigned long long titleAlignment;
+@property long long titleAlignment;
 - (id)_titleField;
 @property(retain) NSString *title;
 - (void)_setupTitleField;

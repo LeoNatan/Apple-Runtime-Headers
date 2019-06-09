@@ -8,7 +8,7 @@
 
 #import <Intents/INControlHomeIntentExport-Protocol.h>
 
-@class NSArray, NSString;
+@class INDateComponentsRange, INHomeUserTask, NSArray, NSString;
 
 @interface INControlHomeIntent : INIntent <INControlHomeIntentExport>
 {
@@ -22,9 +22,18 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+- (id)_initWithIdentifier:(id)arg1 backingStore:(id)arg2 schema:(id)arg3 error:(id *)arg4;
 - (void)setContents:(id)arg1;
 @property(readonly, copy) NSArray *contents;
 - (id)initWithContents:(id)arg1;
+- (void)setTime:(id)arg1;
+@property(readonly, copy) INDateComponentsRange *time;
+- (void)setFilters:(id)arg1;
+@property(readonly, copy) NSArray *filters;
+- (void)setUserTask:(id)arg1;
+@property(readonly, copy) INHomeUserTask *userTask;
+- (id)initWithUserTask:(id)arg1 filters:(id)arg2;
+- (id)initWithUserTask:(id)arg1 filters:(id)arg2 time:(id)arg3;
 - (id)_categoryVerb;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;

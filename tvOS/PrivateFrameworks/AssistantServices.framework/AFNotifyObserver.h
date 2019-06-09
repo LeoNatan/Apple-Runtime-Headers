@@ -31,6 +31,7 @@
 - (void)_updateStateWithToken:(int)arg1;
 - (void)_handleNotificationWithToken:(int)arg1;
 - (void)invalidate;
+- (void)getStateWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long state;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 options:(unsigned long long)arg2 queue:(id)arg3 delegate:(id)arg4;

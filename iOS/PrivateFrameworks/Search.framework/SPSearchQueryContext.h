@@ -16,11 +16,14 @@
     _Bool _promoteLocalResults;
     _Bool _promoteParsecResults;
     _Bool _noTokenize;
+    _Bool _internalDebug;
+    _Bool _internalValidation;
     NSString *_searchString;
     SFSearchSuggestion *_engagedSuggestion;
     NSArray *_markedTextArray;
     NSString *_keyboardLanguage;
     NSString *_keyboardPrimaryLanguage;
+    double _scaleFactor;
     NSArray *_searchDomains;
     NSArray *_disabledDomains;
     NSArray *_disabledBundles;
@@ -34,6 +37,8 @@
 
 + (id)queryContextWithSearchString:(id)arg1;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
+@property(nonatomic) _Bool internalValidation; // @synthesize internalValidation=_internalValidation;
+@property(nonatomic) _Bool internalDebug; // @synthesize internalDebug=_internalDebug;
 @property(nonatomic) _Bool noTokenize; // @synthesize noTokenize=_noTokenize;
 @property(nonatomic) _Bool promoteParsecResults; // @synthesize promoteParsecResults=_promoteParsecResults;
 @property(nonatomic) _Bool promoteLocalResults; // @synthesize promoteLocalResults=_promoteLocalResults;
@@ -46,6 +51,7 @@
 @property(retain, nonatomic) NSArray *disabledBundles; // @synthesize disabledBundles=_disabledBundles;
 @property(retain, nonatomic) NSArray *disabledDomains; // @synthesize disabledDomains=_disabledDomains;
 @property(retain, nonatomic) NSArray *searchDomains; // @synthesize searchDomains=_searchDomains;
+@property(nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(retain, nonatomic) NSString *keyboardPrimaryLanguage; // @synthesize keyboardPrimaryLanguage=_keyboardPrimaryLanguage;
 @property(retain, nonatomic) NSString *keyboardLanguage; // @synthesize keyboardLanguage=_keyboardLanguage;
 @property(retain, nonatomic) NSArray *markedTextArray; // @synthesize markedTextArray=_markedTextArray;

@@ -9,19 +9,23 @@
 #import <GeoServices/GEORequestCounterTicket-Protocol.h>
 
 @class GEORequestCounterPersistence, NSString;
+@protocol OS_nw_activity;
 
 __attribute__((visibility("hidden")))
 @interface _GEOLocalRequestCounterTicket : NSObject <GEORequestCounterTicket>
 {
     unsigned char _type;
     NSString *_appId;
-    long long _requestId;
+    NSString *_requestId;
     GEORequestCounterPersistence *_persistence;
+    NSObject<OS_nw_activity> *_nwActivity;
 }
 
 + (id)requestCounterTicketForType:(unsigned char)arg1 appId:(id)arg2 persistence:(id)arg3;
++ (id)requestCounterTicketForType:(unsigned char)arg1;
 - (void).cxx_destruct;
-- (void)requestCompletedWithResult:(unsigned char)arg1 mode:(unsigned char)arg2 xmitBytes:(long long)arg3 recvBytes:(long long)arg4;
+- (void)requestCompletedWithResult:(unsigned char)arg1 xmitBytes:(long long)arg2 recvBytes:(long long)arg3;
+- (void)startingRequestWithTask:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

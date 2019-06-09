@@ -6,29 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class VKIconManager, VKShieldManager;
+@class VKIconManager;
 
 @interface MKTransitArtworkManager : NSObject
 {
     VKIconManager *_iconManager;
-    VKShieldManager *_shieldManager;
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) VKShieldManager *shieldManager; // @synthesize shieldManager=_shieldManager;
 @property(readonly, nonatomic) VKIconManager *iconManager; // @synthesize iconManager=_iconManager;
 - (void).cxx_destruct;
 - (id)_imageFroMVKImage:(id)arg1;
 - (id)_createImageWithBlockInAutoreleasePoolIfNeeded:(CDUnknownBlockType)arg1;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5 fullBleedColor:(id *)arg6;
-- (id)_imageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5 fullBleedColor:(id *)arg6;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5;
-- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5 fullBleedColor:(id *)arg6 coordinate:(struct CLLocationCoordinate2D)arg7;
+- (id)_imageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5 fullBleedColor:(id *)arg6 coordinate:(struct CLLocationCoordinate2D)arg7;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 withWidthPaddingMultiple:(float)arg5 coordinate:(struct CLLocationCoordinate2D)arg6;
+- (id)transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 coordinate:(struct CLLocationCoordinate2D)arg5;
 - (id)transitArtworkImageWithShieldDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4;
 - (id)_vkImageWithShieldDataSource:(id)arg1 size:(int)arg2 featureType:(unsigned int)arg3 scale:(float)arg4 widthPaddingMultiple:(float)arg5;
 - (_Bool)_isMemoryConstrained;
 - (void)purge;
-- (id)initWithShieldManager:(id)arg1 iconManager:(id)arg2;
+- (id)initWithIconManager:(id)arg1;
 
 @end
 

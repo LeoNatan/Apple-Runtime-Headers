@@ -11,6 +11,7 @@
 }
 
 + (id)defaultStore;
+- (_Bool)registerFeedback:(id)arg1 error:(id *)arg2;
 - (id)recentLocationDonationsSinceDate:(id)arg1 error:(id *)arg2;
 - (id)recentLocationsForConsumer:(unsigned int)arg1 criteria:(id)arg2 limit:(unsigned int)arg3 explanationSet:(id)arg4 timeout:(unsigned int)arg5 error:(id *)arg6;
 

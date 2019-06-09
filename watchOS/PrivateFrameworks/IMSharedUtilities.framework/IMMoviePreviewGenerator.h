@@ -10,7 +10,6 @@
 {
 }
 
-+ (struct CGSize)thumbnailFillSizeForWidth:(float)arg1 imageSize:(struct CGSize)arg2;
 + (id)_avAssetForURL:(id)arg1;
 + (Class)__AVAssetImageGeneratorClass;
 + (Class)__AVURLAssetClass;

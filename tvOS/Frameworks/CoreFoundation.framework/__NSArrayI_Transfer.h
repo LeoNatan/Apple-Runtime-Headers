@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
     id *_list;
 }
 
-+ (id)__transferNew:(id *)arg1:(unsigned long long)arg2:(unsigned long long)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

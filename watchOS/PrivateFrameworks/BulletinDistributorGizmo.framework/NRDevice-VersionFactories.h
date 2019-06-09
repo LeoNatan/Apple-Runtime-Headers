@@ -7,6 +7,9 @@
 #import <NanoRegistry/NRDevice.h>
 
 @interface NRDevice (VersionFactories)
++ (_Bool)activePairedDeviceSupportsNoLocalRemoteNotificationInBulletinContext;
++ (_Bool)activePairedDeviceSupportsEmergencyAlerts;
++ (_Bool)activePairedDeviceSupportsSpokenNotificationSettings;
 + (_Bool)activePairedDeviceSupportsUserNotificationListDestination;
 + (_Bool)activePairedDeviceSupportsAuthorizationStatusLockScreenAndNCSettings;
 + (_Bool)activePairedDeviceSupportsDisplayingSubtitle;

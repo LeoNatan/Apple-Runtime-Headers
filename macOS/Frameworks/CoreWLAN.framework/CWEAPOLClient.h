@@ -28,13 +28,12 @@
 @property(readonly) long long eapolClientControlState; // @dynamic eapolClientControlState;
 - (void)stopEAPOL;
 - (BOOL)startEAPOLForSSID:(id)arg1 authenticationInfo:(id)arg2 error:(out id *)arg3;
-- (BOOL)startEAPOLForSSID:(id)arg1 username:(id)arg2 password:(id)arg3 identity:(struct OpaqueSecIdentityRef *)arg4 remember:(BOOL)arg5 error:(out id *)arg6;
+- (BOOL)startEAPOLForSSID:(id)arg1 username:(id)arg2 password:(id)arg3 identity:(struct __SecIdentity *)arg4 remember:(BOOL)arg5 error:(out id *)arg6;
 - (BOOL)startEAPOLWithClientItemID:(struct __EAPOLClientItemID *)arg1 authenticationInfo:(id)arg2 error:(out id *)arg3;
 - (BOOL)startSystemModeEAPOLForSSID:(id)arg1 error:(out id *)arg2;
-- (BOOL)startEAPOLWithClientItemID:(struct __EAPOLClientItemID *)arg1 username:(id)arg2 password:(id)arg3 identity:(struct OpaqueSecIdentityRef *)arg4 remember:(BOOL)arg5 error:(out id *)arg6;
+- (BOOL)startEAPOLWithClientItemID:(struct __EAPOLClientItemID *)arg1 username:(id)arg2 password:(id)arg3 identity:(struct __SecIdentity *)arg4 remember:(BOOL)arg5 error:(out id *)arg6;
 - (id)initForInterfaceWithName:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 
 @end
 

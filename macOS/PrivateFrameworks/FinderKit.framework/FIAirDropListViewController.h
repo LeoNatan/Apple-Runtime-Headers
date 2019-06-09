@@ -6,10 +6,12 @@
 
 #import <FinderKit/FI_TTableViewController.h>
 
-@class FI_TDFRScrollingStackViewController;
+#import <FinderKit/TMarkTornDown-Protocol.h>
+
+@class FI_TTouchBarScrollingStackViewController, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FIAirDropListViewController : FI_TTableViewController
+@interface FIAirDropListViewController : FI_TTableViewController <TMarkTornDown>
 {
     function_0beffb83 _clickHandler;
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationObservers;
@@ -19,15 +21,18 @@ __attribute__((visibility("hidden")))
     struct TNSRef<CNAvatarCache, void> _avatarCache;
     struct TNSRef<NSTrackingArea, void> _trackingArea;
     _Bool _repopulating;
-    struct TNSRef<FI_TDFRScrollingStackViewController, void> _dfrAirDropParticipantsViewController;
+    FI_TTouchBarScrollingStackViewController *_weakTouchBarAirDropParticipantsViewController;
     struct TNSRef<NSImage, void> _closeImage;
     struct TNSRef<NSImage, void> _blankImage;
+    _Bool tornDown;
 }
 
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)updateDFRAirDropParticipantsStackView;
-@property(readonly, retain, nonatomic) FI_TDFRScrollingStackViewController *airDropParticipantsViewController;
+- (void)updateTouchBarAirDropParticipantsStackView;
+- (id)_airDropParticipantsViewControllerNoLoad;
+@property(readonly, nonatomic) __weak FI_TTouchBarScrollingStackViewController *airDropParticipantsViewController; // @synthesize airDropParticipantsViewController=_weakTouchBarAirDropParticipantsViewController;
 - (void)clipViewBoundsDidChange;
 - (void)scrollHoverOverRowToCorrectOffset;
 - (void)resetContentInsetsIfNeeded;
@@ -51,9 +56,14 @@ __attribute__((visibility("hidden")))
 - (function_0beffb83)clickHandler;
 - (Class)dataSourceClass;
 - (void)aboutToTearDown;
-- (void)dealloc;
 - (void)viewLoaded;
 - (void)initCommon;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

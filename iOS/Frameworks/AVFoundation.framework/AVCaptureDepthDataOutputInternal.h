@@ -6,20 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage;
-@protocol OS_dispatch_queue;
+@class AVCaptureDataOutputDelegateCallbackHelper, AVWeakReference;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDepthDataOutputInternal : NSObject
 {
+    AVCaptureDataOutputDelegateCallbackHelper *delegateCallbackHelper;
     AVWeakReference *weakReference;
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    AVWeakReferencingDelegateStorage *delegateOverrideStorage;
     _Bool alwaysDiscardsLateDepthData;
     _Bool filteringEnabled;
-    NSObject<OS_dispatch_queue> *depthDataQueue;
-    struct OpaqueFigSimpleMutex *queueMutex;
-    void *remoteQueueReceiver;
-    void *localQueue;
 }
 
 - (void)dealloc;

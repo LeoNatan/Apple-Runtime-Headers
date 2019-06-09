@@ -16,8 +16,9 @@
 {
 }
 
+@property(readonly, nonatomic) unsigned long long pixelFormat;
 @property(readonly) unsigned long long uniqueIdentifier;
-- (unsigned long long)resourceIndex;
+@property(nonatomic) unsigned long long resourceIndex;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) NSString *label;
 - (void)dealloc;

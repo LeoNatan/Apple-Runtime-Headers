@@ -6,12 +6,13 @@
 
 #import <FinderKit/FI_TListTextField.h>
 
-@class FI_TListViewController;
+@class NSObject;
+@protocol TListNameFieldDelegate;
 
 __attribute__((visibility("hidden")))
 @interface FI_TListNameField : FI_TListTextField
 {
-    FI_TListViewController *_controller;
+    struct TNSWeakPtr<NSObject<TListNameFieldDelegate>, void> _weakLNFDelegate;
     _Bool _becomingFirstResponder;
     _Bool _shouldEdit;
     double _maxWidthAvailable;
@@ -21,13 +22,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double maxWidthAvailable; // @synthesize maxWidthAvailable=_maxWidthAvailable;
 @property(nonatomic) _Bool shouldEdit; // @synthesize shouldEdit=_shouldEdit;
 @property(nonatomic) _Bool becomingFirstResponder; // @synthesize becomingFirstResponder=_becomingFirstResponder;
-@property(nonatomic) FI_TListViewController *controller; // @synthesize controller=_controller;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)isLTRLocalization;
 - (struct CGRect)editorViewMaxFrame;
 - (void)updateTextColor;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
+@property(nonatomic) __weak NSObject<TListNameFieldDelegate> *lnfDelegate; // @dynamic lnfDelegate;
 - (void)initCommon;
 
 @end

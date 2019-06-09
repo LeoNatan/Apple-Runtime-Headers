@@ -11,6 +11,7 @@
 @protocol MFMessageCriterionConverterDelegate <NSObject>
 
 @optional
+- (NSString *)messageCriterionConverter:(MFMessageCriterionConverter *)arg1 expressionForConstantValue:(id)arg2 withCriterionType:(int)arg3;
 - (int)messageCriterionConverter:(MFMessageCriterionConverter *)arg1 criterionTypeForKey:(NSString *)arg2;
 - (unsigned int)messageCriterionConverter:(MFMessageCriterionConverter *)arg1 willUsePredicateOperatorType:(unsigned int)arg2 forKey:(NSString *)arg3;
 - (NSArray *)messageCriterionConverter:(MFMessageCriterionConverter *)arg1 predicateKeysForCriterionType:(int)arg2;

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     struct opaqueCMFormatDescription *formatDescription;
     NSArray *videoSupportedFrameRateRanges;
+    long long autoFocusSystem;
 }
 
 @end

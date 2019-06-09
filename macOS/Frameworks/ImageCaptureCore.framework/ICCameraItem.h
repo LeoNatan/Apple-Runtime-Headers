@@ -6,53 +6,73 @@
 
 #import <objc/NSObject.h>
 
-@class ICCameraDevice, ICCameraFolder, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
+@class ICCameraDevice, ICCameraFolder, NSDate, NSDictionary, NSMutableDictionary, NSString;
 
 @interface ICCameraItem : NSObject
 {
-    id _itemProperties;
+    BOOL _locked;
+    BOOL _raw;
+    BOOL _inTemporaryStore;
+    BOOL _addedAfterContentCatalogCompleted;
+    unsigned int _ptpObjectHandle;
+    ICCameraDevice *_device;
+    ICCameraFolder *_parentFolder;
+    NSString *_name;
+    NSString *_UTI;
+    NSDate *_creationDate;
+    NSDate *_modificationDate;
+    struct CGImage *_thumbnail;
+    NSDictionary *_metadata;
+    NSMutableDictionary *_userData;
+    unsigned long long _parentID;
+    unsigned long long _ownerID;
+    unsigned long long _twinID;
+    unsigned long long _objectID;
+    id _userObject;
 }
 
+@property(retain) id userObject; // @synthesize userObject=_userObject;
+@property(readonly) unsigned long long objectID; // @synthesize objectID=_objectID;
+@property(readonly) unsigned long long twinID; // @synthesize twinID=_twinID;
+@property(readonly) unsigned long long ownerID; // @synthesize ownerID=_ownerID;
+@property(readonly) unsigned long long parentID; // @synthesize parentID=_parentID;
+@property(nonatomic, getter=wasAddedAfterContentCatalogCompleted) BOOL addedAfterContentCatalogCompleted; // @synthesize addedAfterContentCatalogCompleted=_addedAfterContentCatalogCompleted;
+@property(nonatomic) unsigned int ptpObjectHandle; // @synthesize ptpObjectHandle=_ptpObjectHandle;
+@property(retain, nonatomic) NSMutableDictionary *userData; // @synthesize userData=_userData;
+@property(readonly, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(readonly, nonatomic) struct CGImage *thumbnail; // @synthesize thumbnail=_thumbnail;
+@property(copy, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
+@property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property(nonatomic, getter=isInTemporaryStore) BOOL inTemporaryStore; // @synthesize inTemporaryStore=_inTemporaryStore;
+@property(nonatomic, getter=isRaw) BOOL raw; // @synthesize raw=_raw;
+@property(nonatomic, getter=isLocked) BOOL locked; // @synthesize locked=_locked;
+@property(nonatomic) NSString *UTI; // @synthesize UTI=_UTI;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) ICCameraFolder *parentFolder; // @synthesize parentFolder=_parentFolder;
+@property(nonatomic) ICCameraDevice *device; // @synthesize device=_device;
 @property(readonly) NSString *relativeFileSystemPath;
-@property(readonly) NSString *fileSystemPath;
-- (void)appendPath:(id)arg1 andMountPoint:(BOOL)arg2;
+@property(readonly, nonatomic) NSString *fileSystemPath;
+- (void)setObjectID:(unsigned long long)arg1;
 - (void)setTwinID:(unsigned long long)arg1;
 - (void)setOwnerID:(unsigned long long)arg1;
 - (void)setParentID:(unsigned long long)arg1;
-@property(retain) id userObject;
-@property(readonly, getter=isRaw) BOOL raw;
-@property(readonly, getter=wasAddedAfterContentCatalogCompleted) BOOL addedAfterContentCatalogCompleted;
-- (void)setName:(id)arg1;
-- (void)setUTI:(id)arg1;
-@property(readonly) unsigned int ptpObjectHandle;
-@property(readonly) NSMutableDictionary *userData;
+- (void)appendPath:(id)arg1 andMountPoint:(BOOL)arg2;
 @property(readonly) BOOL hasMetadata;
 @property(readonly) BOOL hasThumbnail;
 @property(readonly) NSDictionary *metadataIfAvailable;
-@property(readonly) NSData *thumbnailData;
 @property(readonly) struct CGImage *largeThumbnailIfAvailable;
 @property(readonly) struct CGImage *thumbnailIfAvailable;
-@property(readonly) NSDate *modificationDate;
-@property(readonly) NSDate *creationDate;
-@property(readonly) NSString *UTI;
-@property(readonly, getter=isInTemporaryStore) BOOL inTemporaryStore;
-@property(readonly, getter=isLocked) BOOL locked;
-@property(readonly) NSString *name;
-@property(readonly) unsigned long long twinID;
-@property(readonly) unsigned long long ownerID;
-@property(readonly) unsigned long long parentID;
-@property(readonly) unsigned long long objectID;
-@property ICCameraFolder *parentFolder;
-@property(readonly) ICCameraDevice *device;
-- (void)requestMetadataWithOptions:(id)arg1;
-- (void)requestThumbnailWithOptions:(id)arg1;
+- (void)flushMetadataCache;
+- (void)flushThumbnailCache;
+- (void)requestMetadata;
+- (void)requestThumbnail;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)dealloc;
 - (void)removeDeviceAssignment;
 - (void)removeParentAssignment;
 - (id)description;
 - (unsigned long long)unsignedIntegerValue;
-- (long long)compareObjectID:(id)arg1;
+- (long long)compareCameraItem:(id)arg1;
 - (id)initWithDictionary:(id)arg1 parentFolder:(id)arg2 device:(id)arg3;
 
 @end

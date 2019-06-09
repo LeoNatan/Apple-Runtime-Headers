@@ -11,6 +11,7 @@
 
 @class NSConditionLock, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SCTGRLIndex : NSObject <NSCoding, HPDQueryDelegate>
 {
     NSMutableArray *mGRLs;

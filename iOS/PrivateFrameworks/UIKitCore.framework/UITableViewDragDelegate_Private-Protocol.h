@@ -12,6 +12,7 @@
 @protocol UITableViewDragDelegate_Private <UITableViewDragDelegate>
 
 @optional
+- (_Bool)_tableView:(UITableView *)arg1 dragSessionSupportsSystemDrag:(id <UIDragSession>)arg2;
 - (long long)_tableView:(UITableView *)arg1 dataOwnerForDragSession:(id <UIDragSession>)arg2 atIndexPath:(NSIndexPath *)arg3;
 @end
 

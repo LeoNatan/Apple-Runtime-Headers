@@ -8,8 +8,19 @@
 
 @interface ICAttachmentImageModel (UI)
 - (id)pasteboardPropertyListForType:(id)arg1;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
 - (id)activityItems;
 - (CDUnknownBlockType)genericBrickThumbnailCreator;
 - (CDUnknownBlockType)genericListThumbnailCreator;
+- (id)labelsForClassificationObservations:(id)arg1;
+- (id)classificationsForImage:(struct NSImage *)arg1;
+- (void)classifyImageInOperation:(id)arg1;
+- (id)ocrStringFromImage:(struct NSImage *)arg1 title:(id *)arg2;
+- (void)generateOCRInOperation:(id)arg1;
+- (BOOL)generatePreviewsInOperation:(id)arg1;
+- (id)generateFullSizePreviewWithAttachmentIdentifier:(id)arg1 existingPreviewImage:(id)arg2 markupModelData:(id)arg3 imageOrientation:(long long)arg4 imageFilterType:(short)arg5 mediaDecryptedData:(id)arg6 mediaURL:(id)arg7 mediaSize:(struct CGSize)arg8 croppingQuad:(id)arg9;
+- (BOOL)needToPostProcessAttachment;
+- (BOOL)needToGeneratePreviews;
+- (BOOL)generatePreviewsDuringCloudActivity;
 @end
 

@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GameCenterUI/GKUIRemoteViewController.h>
+#import <GameCenterUI/GKExtensionRemoteViewController.h>
 
 #import <GameCenterUI/GKMatchmakerHostProtocol-Protocol.h>
 #import <GameCenterUI/GKMatchmakerServiceProtocol-Protocol.h>
 
 @class GKGame, GKMatchmakerViewController, NSString;
 
-@interface GKMatchmakerHostViewController : GKUIRemoteViewController <GKMatchmakerHostProtocol, GKMatchmakerServiceProtocol>
+@interface GKMatchmakerHostViewController : GKExtensionRemoteViewController <GKMatchmakerHostProtocol, GKMatchmakerServiceProtocol>
 {
     GKMatchmakerViewController *_delegateWeak;
 }

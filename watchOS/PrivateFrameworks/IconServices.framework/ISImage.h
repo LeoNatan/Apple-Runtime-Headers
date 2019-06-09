@@ -6,9 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSUUID;
+@class NSData, NSUUID;
 
-__attribute__((visibility("hidden")))
 @interface ISImage : NSObject
 {
     struct CGImage *_CGImage;
@@ -16,8 +15,11 @@ __attribute__((visibility("hidden")))
     struct CGSize _size;
     float _scale;
     _Bool _placeholder;
+    NSData *_bitmapData;
 }
 
++ (struct CGColorSpace *)srgbColorSpace;
+@property(readonly) NSData *bitmapData; // @synthesize bitmapData=_bitmapData;
 @property(readonly) _Bool placeholder; // @synthesize placeholder=_placeholder;
 @property(readonly) float scale; // @synthesize scale=_scale;
 @property(readonly) struct CGSize size; // @synthesize size=_size;
@@ -25,7 +27,13 @@ __attribute__((visibility("hidden")))
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)initWithContentsOfURL:(id)arg1 scale:(float)arg2;
+- (id)initWithCGImage:(struct CGImage *)arg1 scale:(float)arg2;
+- (id)initWithCGImage:(struct CGImage *)arg1 scale:(float)arg2 placeholder:(_Bool)arg3;
 - (id)initWithData:(id)arg1 scale:(float)arg2;
+@property(readonly) struct CGSize pixelSize;
+@property(readonly) NSUUID *digest;
+- (_Bool)writeToURL:(id)arg1;
 
 @end
 

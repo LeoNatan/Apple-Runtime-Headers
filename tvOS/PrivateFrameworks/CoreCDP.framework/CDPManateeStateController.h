@@ -17,8 +17,10 @@
     id <CDPDCircleProxy> _circleProxy;
 }
 
+@property(retain, nonatomic) id <CDPDCircleProxy> circleProxy; // @synthesize circleProxy=_circleProxy;
 - (void).cxx_destruct;
 - (void)_sendNotification:(const char *)arg1 withValue:(unsigned long long)arg2;
+- (void)_didCreateCircleProxy;
 - (void)reportManateeUnavailable;
 - (void)reportManateeAvailable;
 - (void)circleViewStatusChanged;
@@ -27,7 +29,6 @@
 - (_Bool)isPrimaryAccountHSA2;
 - (_Bool)_checkSecurityEligibility:(id *)arg1;
 - (_Bool)isManateeAvailable:(id *)arg1;
-- (id)initWithCircleProxy:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -12,22 +12,24 @@
 @interface AVCMomentsRequest : NSObject
 {
     NSString *_transactionID;
-    NSString *_initiatorID;
     unsigned char _mediaType;
     id _delegate;
     unsigned char _mode;
+    NSString *_requesterID;
+    NSString *_requesteeID;
 }
 
+@property(readonly, nonatomic) NSString *requesteeID; // @synthesize requesteeID=_requesteeID;
+@property(readonly, nonatomic) NSString *requesterID; // @synthesize requesterID=_requesterID;
 @property(nonatomic) NSObject<AVCMomentsRequestDelegate> *delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) NSString *initiatorID; // @synthesize initiatorID=_initiatorID;
 @property(nonatomic) unsigned char mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) unsigned char mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly, nonatomic) NSString *transactionID; // @synthesize transactionID=_transactionID;
 - (_Bool)validateWithError:(id *)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)initWithMediaType:(unsigned char)arg1 initiatorID:(id)arg2 transactionID:(id)arg3;
-- (id)initWithMediaType:(unsigned char)arg1 initiatorID:(id)arg2;
+- (id)initWithMediaType:(unsigned char)arg1 requesterID:(id)arg2 requesteeID:(id)arg3 transactionID:(id)arg4;
+- (id)initWithMediaType:(unsigned char)arg1 requesterID:(id)arg2 requesteeID:(id)arg3;
 - (_Bool)rejectWithError:(id *)arg1;
 - (_Bool)endWithError:(id *)arg1;
 - (_Bool)startWithError:(id *)arg1;

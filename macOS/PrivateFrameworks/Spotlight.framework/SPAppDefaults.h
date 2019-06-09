@@ -25,6 +25,7 @@
 + (id)groupIdToNameDictionary;
 + (id)disabledGroups;
 + (void)resetDisabledGroups;
++ (BOOL)isAppleInternalInstall;
 + (void)initialize;
 + (id)defaultList;
 - (void)reloadPrefs;

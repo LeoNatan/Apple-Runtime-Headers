@@ -27,6 +27,7 @@
 }
 
 + (id)defaultMonitor;
++ (BOOL)syncServicesAvailable;
 @property(readonly) NSURL *calendarCacheURL; // @synthesize calendarCacheURL=_calendarCacheURL;
 @property(retain) NSTask *syncTask; // @synthesize syncTask=_syncTask;
 - (void)managedObjectContextDidSave:(id)arg1;

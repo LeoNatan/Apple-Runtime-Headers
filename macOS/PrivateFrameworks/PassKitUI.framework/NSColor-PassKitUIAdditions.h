@@ -16,6 +16,8 @@
 + (id)barcodeBackgroundColor;
 + (id)defaultPassButtonTextColor;
 + (id)defaultPassBackgroundColor;
++ (id)pkui_errorColor;
++ (id)colorWithRGBString:(id)arg1;
 - (BOOL)isLighterThan:(id)arg1;
 - (BOOL)isDark;
 - (BOOL)isLight;

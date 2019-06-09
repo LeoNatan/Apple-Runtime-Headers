@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, NSUUID, PBCodable;
+@class NSArray, NSString, NSUUID, NWL2Report, PBCodable;
 
 @interface NWConnectionStatistics : NSObject
 {
@@ -15,13 +15,17 @@
     NSString *_sourceIdentifier;
     NSUUID *_externallyVisibleConnectionUUID;
     NSArray *_externallyVisibleActivityUUIDs;
+    NWL2Report *_layer2Report;
     PBCodable *_awdReport;
+    NSArray *_activities;
     struct netcore_stats_tcp_report _report;
 }
 
+@property(retain, nonatomic) NSArray *activities; // @synthesize activities=_activities;
 @property(nonatomic) unsigned int awdMetricID; // @synthesize awdMetricID=_awdMetricID;
 @property(retain, nonatomic) PBCodable *awdReport; // @synthesize awdReport=_awdReport;
 @property(nonatomic) struct netcore_stats_tcp_report report; // @synthesize report=_report;
+@property(retain, nonatomic) NWL2Report *layer2Report; // @synthesize layer2Report=_layer2Report;
 @property(retain, nonatomic) NSArray *externallyVisibleActivityUUIDs; // @synthesize externallyVisibleActivityUUIDs=_externallyVisibleActivityUUIDs;
 @property(retain, nonatomic) NSUUID *externallyVisibleConnectionUUID; // @synthesize externallyVisibleConnectionUUID=_externallyVisibleConnectionUUID;
 @property(retain, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
@@ -31,7 +35,6 @@
 - (id)_createStatisticsReportFromStruct:(const struct netcore_stats_tcp_statistics_report *)arg1;
 - (id)_createFallbackReportFromStruct:(const struct netcore_stats_tcp_cell_fallback_report *)arg1;
 - (id)_createDataUsageSnapshotFromStruct:(const struct netcore_stats_data_usage_snapshot *)arg1;
-@property(readonly, nonatomic) NSArray *activities;
 - (BOOL)tlsHandshakeTimedOut;
 @property(readonly, nonatomic) NSUUID *connectionUUID;
 @property(readonly, nonatomic) BOOL kernelReportingWriteStalled;

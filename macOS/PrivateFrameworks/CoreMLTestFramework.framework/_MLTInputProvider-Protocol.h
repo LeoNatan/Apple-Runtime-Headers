@@ -13,6 +13,6 @@
 @property(copy, nonatomic) NSString *vecDataKey;
 @property(copy, nonatomic) NSString *inputDataKey;
 @property(readonly) BOOL dataAvailable;
-- (NSDictionary *)getNextDataSet;
+- (NSDictionary *)nextDataSet:(id *)arg1;
 @end
 

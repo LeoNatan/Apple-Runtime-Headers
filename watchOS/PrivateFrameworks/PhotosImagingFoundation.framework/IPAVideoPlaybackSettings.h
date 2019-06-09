@@ -13,7 +13,7 @@
 
 + (id)presetifyAdjustmentStack:(id)arg1;
 + (Class)operationClassForIdentifier:(id)arg1;
-+ (id)playbackSettingsForAdjustments:(id)arg1 editSource:(int)arg2;
++ (id)playbackSettingsForAdjustments:(id)arg1;
 + (Class)expectedOperationClass;
 + (void)initialize;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 naturalDuration; // @synthesize naturalDuration=_naturalDuration;
@@ -29,8 +29,8 @@
 - (id)descriptionWithOperations:(id)arg1;
 - (unsigned int)sortOrderForOperationWithIdentifier:(id)arg1;
 - (_Bool)isEqualToDescription:(id)arg1;
-- (id)initWithOperations:(id)arg1 editSource:(int)arg2 naturalDuration:(CDStruct_1b6d18a9)arg3;
-- (id)initWithOperations:(id)arg1 editSource:(int)arg2;
+- (id)initWithOperations:(id)arg1 naturalDuration:(CDStruct_1b6d18a9)arg2;
+- (id)initWithOperations:(id)arg1;
 - (CDStruct_1b6d18a9)naturalTimeForPosterFrame;
 - (CDStruct_1b6d18a9)naturalTimeFromScaledTime:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)scaledTimeFromNaturalTime:(CDStruct_1b6d18a9)arg1;

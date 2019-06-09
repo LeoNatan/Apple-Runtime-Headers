@@ -8,21 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDWarsawMerchantIdentifier : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_merchantDomain;
     NSString *_merchantId;
     NSString *_merchantName;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_merchantDomain:1;
+        unsigned int read_merchantId:1;
+        unsigned int read_merchantName:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_merchantDomain:1;
+        unsigned int wrote_merchantId:1;
+        unsigned int wrote_merchantName:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *merchantId; // @synthesize merchantId=_merchantId;
-@property(retain, nonatomic) NSString *merchantName; // @synthesize merchantName=_merchantName;
-@property(retain, nonatomic) NSString *merchantDomain; // @synthesize merchantDomain=_merchantDomain;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,11 +42,18 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *merchantId;
 @property(readonly, nonatomic) BOOL hasMerchantId;
+- (void)_readMerchantId;
+@property(retain, nonatomic) NSString *merchantName;
 @property(readonly, nonatomic) BOOL hasMerchantName;
+- (void)_readMerchantName;
+@property(retain, nonatomic) NSString *merchantDomain;
 @property(readonly, nonatomic) BOOL hasMerchantDomain;
+- (void)_readMerchantDomain;
 
 @end
 

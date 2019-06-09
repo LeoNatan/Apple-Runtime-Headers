@@ -14,7 +14,7 @@
     CDStruct_db34bedf _textures[128];
     CDStruct_db34bedf _samplers[16];
     CDStruct_db34bedf _threadgroupMemoryLengths[31];
-    const CDStruct_df0ba0f9 *_limits;
+    const CDStruct_ba442ac5 *_limits;
     BOOL canDealloc;
     BOOL canEndEncoding;
     BOOL canSetComputePipelineState;
@@ -30,6 +30,7 @@
 @property(readonly, nonatomic) id <MTLComputePipelineState> computePipelineState; // @synthesize computePipelineState=_computePipelineState;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)sampleCountersInBuffer:(id)arg1 atSampleIndex:(unsigned long long)arg2 withBarrier:(BOOL)arg3;
 - (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned long long)arg2;
 - (void)memoryBarrierWithScope:(unsigned long long)arg1;
 - (void)useHeaps:(const id *)arg1 count:(unsigned long long)arg2;

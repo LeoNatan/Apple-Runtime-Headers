@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BRCClientZone, BRCDocumentItem, BRCLocalItem, BRCPQLConnection, BRCPackageItem, BRCRelativePath, BRCServerItem;
+@class BRCClientZone, BRCDocumentItem, BRCLocalItem, BRCPQLConnection, BRCPackageItem, BRCRelativePath, BRCServerItem, NSURL;
 
 @interface BRCPathToItemLookup : NSObject
 {
@@ -34,12 +34,14 @@
     BRCPQLConnection *_db;
 }
 
++ (id)lookupForRelativePath:(id)arg1 db:(id)arg2;
 + (id)lookupForRelativePath:(id)arg1;
 @property(readonly, nonatomic) BRCPQLConnection *db; // @synthesize db=_db;
 @property(readonly, nonatomic) BRCRelativePath *relpathOfFSEvent; // @synthesize relpathOfFSEvent=_relpathOfFSEvent;
 @property(readonly, nonatomic) BRCRelativePath *relpathOfItem; // @synthesize relpathOfItem=_pathOfItem;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) NSURL *topLevelSharedFolderURLOrNil;
 - (_Bool)_fetchClientZone;
 - (_Bool)_shareIDMatchesParent:(id)arg1;
 - (id)_resolveClientZoneWhileFetchingFileID:(_Bool)arg1 fetchindDocID:(_Bool)arg2;

@@ -22,6 +22,7 @@
 @property(nonatomic) _Bool blockOutgoingInvitationsDuringCall; // @synthesize blockOutgoingInvitationsDuringCall=_blockOutgoingInvitationsDuringCall;
 @property(nonatomic) _Bool blockMultipleIncomingInvitations; // @synthesize blockMultipleIncomingInvitations=_blockMultipleIncomingInvitations;
 @property(retain, nonatomic) NSMutableArray *_delegates; // @synthesize _delegates;
+- (void).cxx_destruct;
 - (void)blockOnPendingVCInvitationsWithCapabilities:(long long)arg1;
 - (void)_receivedPendingVCRequests;
 - (void)_receivedPendingACRequests;
@@ -46,12 +47,11 @@
 @property(nonatomic) id <IMAVControllerDelegate> delegate;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
-@property(readonly, retain, nonatomic) NSArray *delegates;
+@property(readonly, nonatomic) NSArray *delegates;
 - (void)cancelVCRequestWithBuddy:(id)arg1 vcProps:(id)arg2 forAccount:(id)arg3 conferenceID:(id)arg4 reason:(id)arg5;
 - (void)declineVCRequestWithBuddy:(id)arg1 response:(unsigned int)arg2 vcProps:(id)arg3 forAccount:(id)arg4 conferenceID:(id)arg5;
 - (id)vcResponseInfoWithSessionID:(unsigned int)arg1;
 - (void)declineVCRequestWithBuddy:(id)arg1 response:(unsigned int)arg2 vcProps:(id)arg3 conferenceID:(id)arg4;
-- (void)dealloc;
 - (id)init;
 - (void)setupIMAVController;
 - (_Bool)_shouldRunACConferences;

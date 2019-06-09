@@ -8,6 +8,7 @@
 
 @class NSTextField, NSTextView;
 
+__attribute__((visibility("hidden")))
 @interface SLXShareWindowBackgroundView : NSView
 {
     NSTextView *_messageTextView;

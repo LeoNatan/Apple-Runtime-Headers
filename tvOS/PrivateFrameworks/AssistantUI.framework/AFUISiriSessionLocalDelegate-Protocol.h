@@ -6,14 +6,13 @@
 
 #import <AssistantUI/AFUISiriSessionListener-Protocol.h>
 
-@class AFDialogPhase, AFUISiriSession, NSString, SAUIDelayedActionCancelCommand, SAUIDelayedActionCommand;
+@class AFUISiriSession, NSString, SAUIDelayedActionCancelCommand, SAUIDelayedActionCommand;
 
 @protocol AFUISiriSessionLocalDelegate <AFUISiriSessionListener>
 - (void)siriSession:(AFUISiriSession *)arg1 speechRecordingDidBeginOnAVRecordRoute:(NSString *)arg2;
 - (void)siriSessionDidEnd:(AFUISiriSession *)arg1;
 - (void)siriSessionWillEnd:(AFUISiriSession *)arg1;
 - (void)siriSessionDidResetContext:(AFUISiriSession *)arg1;
-- (void)siriSession:(AFUISiriSession *)arg1 didChangeDialogPhase:(AFDialogPhase *)arg2;
 - (void)siriSessionDidReceiveDelayedActionCancelCommand:(SAUIDelayedActionCancelCommand *)arg1 completion:(void (^)(AceObject<SAAceCommand> *))arg2;
 - (void)siriSessionDidReceiveDelayedActionCommand:(SAUIDelayedActionCommand *)arg1 completion:(void (^)(AceObject<SAAceCommand> *))arg2;
 - (void)siriSessionRecordingPreparationHasFinished:(AFUISiriSession *)arg1;

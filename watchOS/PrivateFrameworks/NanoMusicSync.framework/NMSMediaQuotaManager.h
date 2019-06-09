@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary;
+@class NMSMediaDownloadInfo, NSDictionary;
 
 @interface NMSMediaQuotaManager : NSObject
 {
     NSDictionary *_groupIterators;
     unsigned long long _quota;
-    NSArray *_itemListWithinQuota;
-    NSArray *_offPowerItemListWithinQuota;
+    NMSMediaDownloadInfo *_downloadInfoWithinQuota;
+    NMSMediaDownloadInfo *_downloadInfoOverQuota;
     unsigned long long _quotaUsage;
     _Bool _hasEvaluated;
 }
@@ -23,12 +23,16 @@
 - (id)_containerListForIdentifier:(id)arg1;
 - (_Bool)isItemGroupWithinQuota:(id)arg1;
 - (unsigned long long)sizeOfNominatedItemsForIdentifier:(id)arg1;
-- (id)offPowerItemsWithinQuotaForIdentifier:(id)arg1;
-- (id)offPowerItemsWithinQuota;
+- (id)itemsOverQuotaForBundleIdentifier:(id)arg1;
+- (id)itemsOverQuota;
+- (id)downloadInfoOverQuotaForBundleIdentifier:(id)arg1;
+- (id)downloadInfoOverQuota;
 - (unsigned long long)sizeOfItemsWithinQuotaForIdentifier:(id)arg1;
 - (unsigned long long)sizeOfItemsWithinQuota;
 - (id)itemsWithinQuotaForIdentifier:(id)arg1;
 - (id)itemsWithinQuota;
+- (id)downloadInfoWithinQuotaForBundleIdentifier:(id)arg1;
+- (id)downloadInfoWithinQuota;
 - (id)groupIteratorForIdentifier:(id)arg1;
 - (id)initWithGroupIterators:(id)arg1 quota:(unsigned long long)arg2;
 

@@ -6,6 +6,7 @@
 
 #import <Foundation/NSMutableDictionary.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUNoCopyDictionary : NSMutableDictionary
 {
     struct __CFDictionary *mDictionary;

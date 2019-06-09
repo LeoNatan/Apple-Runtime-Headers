@@ -6,12 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <StoreKit/PSStateRestoration-Protocol.h>
 #import <StoreKit/SKUIRedeemViewCameraOverrideDelegate-Protocol.h>
 
 @class ACAccount, NSString, NSURL, SKInvocationQueueProxy, SKRemoteAccountPageViewController, _UIAsyncInvocation;
 @protocol SKAccountPageViewControllerDelegate, SKUIServiceAccountPageViewController;
 
-@interface SKAccountPageViewController : UIViewController <SKUIRedeemViewCameraOverrideDelegate>
+@interface SKAccountPageViewController : UIViewController <SKUIRedeemViewCameraOverrideDelegate, PSStateRestoration>
 {
     NSURL *_accountURL;
     _UIAsyncInvocation *_cancelRequest;
@@ -32,6 +33,7 @@
     SKAccountPageViewController *_presentingAccountPageViewController;
 }
 
++ (void)isCommerceUIURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic) __weak SKAccountPageViewController *presentingAccountPageViewController; // @synthesize presentingAccountPageViewController=_presentingAccountPageViewController;
 @property(retain, nonatomic) SKAccountPageViewController *preWarmedViewController; // @synthesize preWarmedViewController=_preWarmedViewController;
 @property(nonatomic) int type; // @synthesize type=_type;
@@ -44,6 +46,7 @@
 - (void)_addRemoteView;
 - (unsigned int)_indexForFirstBridgedNavigationViewController;
 - (void)_popAllBridgedNavigationViewControllers;
+- (_Bool)canBeShownFromSuspendedState;
 - (void)overrideRedeemOperationWithCode:(id)arg1 cameraRecognized:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)redeemCameraViewController:(id)arg1 didFinishWithRedeem:(id)arg2;
 - (void)_bridgedRightButtonPressed:(id)arg1;

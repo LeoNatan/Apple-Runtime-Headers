@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)_updateState:(unsigned int)arg1;
 @property(readonly, copy, nonatomic) NSArray *replies; // @synthesize replies=_replies;
-- (void)repliesForMessage:(id)arg1 recipients:(id)arg2 languageCode:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)repliesForMessage:(id)arg1 recipients:(id)arg2 time:(id)arg3 languageCode:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)init;
 - (float)repliesHeightForWidth:(float)arg1;
 

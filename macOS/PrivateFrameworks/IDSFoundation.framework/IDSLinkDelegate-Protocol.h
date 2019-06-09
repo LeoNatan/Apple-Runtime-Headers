@@ -9,7 +9,7 @@
 @class NSData, NSDictionary, NSString, NSUUID;
 
 @protocol IDSLinkDelegate <NSObject>
-- (BOOL)link:(id)arg1 didReceivePacket:(CDStruct_18fdc6f4 *)arg2 fromDeviceUniqueID:(NSString *)arg3 cbuuid:(NSString *)arg4;
+- (BOOL)link:(id)arg1 didReceivePacket:(CDStruct_4c86a2e2 *)arg2 fromDeviceUniqueID:(NSString *)arg3 cbuuid:(NSString *)arg4;
 - (void)link:(id)arg1 didDisconnectForDeviceUniqueID:(NSString *)arg2 cbuuid:(NSString *)arg3;
 - (void)link:(id)arg1 didConnectForDeviceUniqueID:(NSString *)arg2 cbuuid:(NSString *)arg3;
 

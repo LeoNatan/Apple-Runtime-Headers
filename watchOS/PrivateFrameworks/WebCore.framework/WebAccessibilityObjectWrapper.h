@@ -91,9 +91,9 @@ __attribute__((visibility("hidden")))
 - (void)accessibilityIncrement;
 - (void)accessibilityMoveSelectionToMarker:(id)arg1;
 - (void)accessibilityDecreaseSelection:(int)arg1;
+- (void)_accessibilitySetFocus:(_Bool)arg1;
 - (void)accessibilityIncreaseSelection:(int)arg1;
 - (void)accessibilityModifySelection:(int)arg1 increase:(_Bool)arg2;
-- (void)accessibilityElementDidBecomeFocused;
 - (id)accessibilityFindMatchingObjects:(id)arg1;
 - (struct AccessibilityObject *)treeItemParentForObject:(struct AccessibilityObject *)arg1;
 - (struct AccessibilityObject *)detailParentForObject:(struct AccessibilityObject *)arg1;
@@ -114,7 +114,7 @@ __attribute__((visibility("hidden")))
 - (void)postFocusChangeNotification;
 - (id)_accessibilityParentForSubview:(id)arg1;
 - (id)attachmentView;
-- (void)_accessibilityActivate;
+- (_Bool)_accessibilityActivate;
 - (id)accessibilityTextualContext;
 - (_Bool)isAttachment;
 - (id)accessibilityLinkedElement;
@@ -132,11 +132,9 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)accessibilityActivationPoint;
 - (struct CGRect)accessibilityVisibleContentRect;
 - (struct CGRect)accessibilityElementRect;
-- (struct CGRect)convertRectToScreenSpace:(struct IntRect *)arg1;
-- (struct CGPoint)convertPointToScreenSpace:(struct FloatPoint *)arg1;
+- (struct CGRect)_accessibilityRelativeFrame;
 - (_Bool)accessibilityScroll:(int)arg1;
 - (_Bool)_accessibilityScrollToVisible;
-- (_Bool)accessibilityPerformEscape;
 - (struct CGPoint)_accessibilityConvertPointToViewSpace:(struct CGPoint)arg1;
 - (id)accessibilityURL;
 - (id)accessibilityHint;
@@ -167,7 +165,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_accessibilityIsStrongPasswordField;
 - (_Bool)_accessibilityValueIsAutofilled;
 - (_Bool)_accessibilityHasTouchEventListener;
-- (_Bool)fileUploadButtonReturnsValueInTitle;
 - (_Bool)stringValueShouldBeUsedInLabel;
 - (_Bool)isAccessibilityElement;
 - (_Bool)determineIsAccessibilityElement;

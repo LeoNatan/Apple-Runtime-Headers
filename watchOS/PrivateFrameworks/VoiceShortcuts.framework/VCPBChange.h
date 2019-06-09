@@ -7,11 +7,10 @@
 #import <ProtocolBuffer/PBCodable.h>
 
 #import <VoiceShortcuts/NSCopying-Protocol.h>
-#import <VoiceShortcuts/SYChange-Protocol.h>
 
 @class NSData, NSString;
 
-@interface VCPBChange : PBCodable <SYChange, NSCopying>
+@interface VCPBChange : PBCodable <NSCopying>
 {
     int _changeType;
     NSData *_message;
@@ -25,25 +24,18 @@
 @property(nonatomic) int messageType; // @synthesize messageType=_messageType;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
-@property(readonly) unsigned int hash;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (int)StringAsChangeType:(id)arg1;
 - (id)changeTypeAsString:(int)arg1;
 - (int)StringAsMessageType:(id)arg1;
 - (id)messageTypeAsString:(int)arg1;
-- (id)initWithVoiceShortcutChange:(id)arg1;
-@property(readonly, nonatomic) NSString *sequencer;
-@property(readonly, nonatomic) NSString *objectIdentifier;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

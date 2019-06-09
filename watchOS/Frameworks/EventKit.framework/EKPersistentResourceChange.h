@@ -6,11 +6,11 @@
 
 #import <EventKit/EKPersistentObject.h>
 
-__attribute__((visibility("hidden")))
 @interface EKPersistentResourceChange : EKPersistentObject
 {
 }
 
++ (Class)meltedClass;
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 - (unsigned int)publicStatus;
@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)changedByFirstName;
 - (id)changedByAddress;
 - (id)changedByDisplayName;
+- (id)notification;
 - (id)calendarItem;
 - (id)calendar;
 - (int)entityType;

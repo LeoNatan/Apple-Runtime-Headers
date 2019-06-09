@@ -20,11 +20,18 @@
     NSDictionary *_entryTransformation;
     PLIOKitOperatorComposition *_iokitAging;
     PLIOKitOperatorComposition *_iokitAudio;
+    long long _AOPTotalThreadTime;
 }
 
 + (BOOL)hasAOPSupport;
 + (BOOL)hasLisaCapability;
 + (BOOL)hasPlatinumCapability;
++ (id)entryEventBackwardDefinitionAOPpressurepower;
++ (id)entryEventBackwardDefinitionAOPaccelpower;
++ (id)entryEventBackwardDefinitionAOPcompasspower;
++ (id)entryEventBackwardDefinitionAOPgyropower;
++ (id)entryEventBackwardDefinitionAOPPerformance;
++ (id)entryEventBackwardDefinitionAOPPowerState;
 + (id)entryEventBackwardDefinitionSpeakerSpeakerEvents;
 + (BOOL)shouldLogAudioEvent;
 + (id)entryEventBackwardDefinitionMTRAging;
@@ -87,6 +94,7 @@
 + (id)entryEventBackwardDefinitionWifiChipHSICActivity;
 + (id)entryEventBackwardDefinitionAppleEmbeddedPCIELinkStates;
 + (id)entryEventBackwardDefinitionAMCStatsPerfCounters;
++ (id)entryEventBackwardDefinitionSoCStatsH7PMGRCountersDebug;
 + (id)entryEventBackwardDefinitionSoCStatsH7PMGRCounters;
 + (id)entryEventBackwardDefinitionSocStatsDvdStats;
 + (id)entryEventBackwardDefinitionCpuStatsCpuFeatures;
@@ -156,9 +164,11 @@
 + (id)entryEventBackwardDefinitionIOReport;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventPointDefinitionPmtelemetry_Flex;
 + (id)entryEventPointDefinitions;
 + (id)defaults;
 + (void)load;
+@property long long AOPTotalThreadTime; // @synthesize AOPTotalThreadTime=_AOPTotalThreadTime;
 @property(readonly) PLIOKitOperatorComposition *iokitAudio; // @synthesize iokitAudio=_iokitAudio;
 @property(readonly) PLIOKitOperatorComposition *iokitAging; // @synthesize iokitAging=_iokitAging;
 @property(retain, nonatomic) NSDictionary *entryTransformation; // @synthesize entryTransformation=_entryTransformation;
@@ -177,6 +187,9 @@
 - (void)incrementAggdKeyForGroup:(id)arg1 withChannel:(id)arg2 withDelta:(unsigned long long)arg3;
 - (void)logEventBackwardMTRAging;
 - (void)logEventBackwardIOReportWithDelta:(id)arg1 forChannelGroup:(id)arg2;
+- (void)logEventBackwardAOPPowerState:(id)arg1 withChannels:(id)arg2;
+- (void)logEventBackwardSoCStatsH7PMGRCountersDebug:(id)arg1 withChannels:(id)arg2;
+- (void)logEventBackwardAOPPerformance:(id)arg1 withChannels:(id)arg2;
 - (void)logEventBackwardComplexThermalUPOLimiting:(id)arg1 withChannels:(id)arg2;
 - (id)getBucketName:(int)arg1;
 - (void)logEventBackwardCorePerformanceStates:(id)arg1 withChannels:(id)arg2;
@@ -188,6 +201,7 @@
 - (void)logEventBackwardIOReportAtScreenStateChange;
 - (void)logEventBackwardIOReportAtAudioEvent;
 - (void)logEventBackwardIOReport;
+- (void)logEventPointIOReport;
 - (void)log;
 - (id)entryForReportingGroup:(id)arg1 withKey:(id)arg2 withChannelGroup:(id)arg3 withEntryDate:(id)arg4;
 - (int)addReportSample:(struct __CFDictionary *)arg1 toEntry:(id)arg2;

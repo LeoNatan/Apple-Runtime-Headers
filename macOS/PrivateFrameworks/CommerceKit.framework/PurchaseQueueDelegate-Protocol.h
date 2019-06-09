@@ -9,6 +9,7 @@
 @class CKAuthenticationSettings, CKDialog, CKPurchaseTransaction, NSString;
 
 @protocol PurchaseQueueDelegate <NSObject>
+- (void)shouldContinueTransaction:(CKPurchaseTransaction *)arg1 withNewStorefront:(NSString *)arg2 reply:(void (^)(BOOL))arg3;
 - (void)promptTouchIDEnableForTransaction:(CKPurchaseTransaction *)arg1 reply:(void (^)(BOOL, NSError *))arg2;
 - (void)signChallenge:(NSString *)arg1 forTransaction:(CKPurchaseTransaction *)arg2 reply:(void (^)(BOOL, NSData *, NSData *, NSError *))arg3;
 - (void)authenticateWithDialog:(CKDialog *)arg1 settings:(CKAuthenticationSettings *)arg2 forTransaction:(CKPurchaseTransaction *)arg3 reply:(void (^)(BOOL, BOOL, CKStoreAccount *, NSError *))arg4;

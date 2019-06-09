@@ -13,11 +13,11 @@
 - (void)setRoutingNumber:(id)arg1;
 - (void)setAccountNumber:(id)arg1;
 - (void)setBankName:(id)arg1;
-- (void)_deleteBankAccountKeychainData;
 - (id)_bankAccountInformationInKeychain;
 - (void)_writeBankAccountInformationToKeychain;
 - (id)_wrapperWithType:(unsigned long long)arg1;
 - (void)updateToLatestKeychainData;
+- (void)deleteAllLocalBankInformation;
 - (void)deleteAllBankInformation;
 - (id)init;
 

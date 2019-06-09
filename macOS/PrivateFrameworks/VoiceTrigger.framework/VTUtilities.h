@@ -18,10 +18,11 @@
 + (id)deviceProductVersion;
 + (BOOL)isInternalInstall;
 + (BOOL)supportPremiumAssets;
++ (BOOL)supportBargeIn;
 + (BOOL)isAlwaysOn;
 + (BOOL)supportExternalPhraseSpotter;
 + (BOOL)supportTTS;
-+ (BOOL)VTIsHorseman;
++ (BOOL)VTRunsPremium;
 + (BOOL)isNano;
 + (double)systemUpTime;
 + (double)_round:(double)arg1 withPlaces:(int)arg2;

@@ -6,9 +6,10 @@
 
 #import <UIKit/UIWindow.h>
 
-@class PXImageModulationManager;
+@class PXContextualNotificationCenter, PXImageModulationManager;
 
 @interface UIWindow (PXImageModulationManager)
 @property(readonly, nonatomic) PXImageModulationManager *px_imageModulationManager;
+@property(readonly, nonatomic) PXContextualNotificationCenter *px_contextualNotificationCenter;
 @end
 

@@ -55,6 +55,8 @@
 - (void)makeAliasable;
 - (BOOL)doesAliasResource:(id)arg1;
 - (id)heap;
+- (unsigned long long)resourceIndex;
+- (void)setResourceIndex:(unsigned long long)arg1;
 - (void)dealloc;
 - (void)_initResourceTrackingWithDevice:(id)arg1;
 - (id)initWithIndirectCommandBuffer:(id)arg1 descriptor:(id)arg2 maxCount:(unsigned long long)arg3 device:(id)arg4 options:(unsigned long long)arg5;

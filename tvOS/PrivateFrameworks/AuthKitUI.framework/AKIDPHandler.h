@@ -30,7 +30,6 @@
 - (id)_samlJavaScriptQuery;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (id)_safeAcsDictionaryFromResult:(id)arg1;
-- (void)webView:(id)arg1 didStartProvisionalNavigation:(id)arg2;
 - (void)cancel;
 - (id)initWithConfiguration:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 

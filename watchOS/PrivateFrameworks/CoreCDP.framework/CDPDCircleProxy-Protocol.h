@@ -6,30 +6,35 @@
 
 #import <CoreCDP/NSObject-Protocol.h>
 
-@class CDPContext, NSDictionary, NSSet, NSString;
+@class CDPContext, KCPairingChannel, NSDictionary, NSSet, NSString, OTClique;
 
 @protocol CDPDCircleProxy <NSObject>
-+ (_Bool)canAuthenticate;
-@property(retain, nonatomic) CDPContext *cdpContext;
+@property(readonly, nonatomic) CDPContext *cdpContext;
+- (KCPairingChannel *)pairingChannelAcceptor:(id *)arg1;
+- (KCPairingChannel *)pairingChannelInitiator:(id *)arg1;
+- (_Bool)tryRegisteringCredentials;
+- (_Bool)registerCredentialsIfMissing;
+- (_Bool)registerCredentials;
+- (_Bool)canAuthenticate;
 - (_Bool)isLastBackupMakingPeer:(id *)arg1;
 - (_Bool)removeNonViewAwarePeers:(id *)arg1;
 - (_Bool)hasNonViewAwarePeers;
 - (_Bool)setViewsWithEnableSet:(NSSet *)arg1 disableSet:(NSSet *)arg2;
 - (_Bool)anyPeerHasEnabledViewsInSet:(NSSet *)arg1 error:(id *)arg2;
 - (_Bool)viewMemberForAutofillPasswords:(id *)arg1;
-- (_Bool)viewMemberForPCSMaster:(id *)arg1;
 - (_Bool)requestToResetCloudKitDataForReason:(NSString *)arg1 error:(id *)arg2;
 - (_Bool)requestToResetCircle:(id *)arg1;
 - (_Bool)requestToJoinCircleAfterRestore:(id *)arg1;
 - (_Bool)requestToJoinCircle:(id *)arg1;
 - (_Bool)removeThisDeviceFromCircle:(id *)arg1;
 - (_Bool)synchronizeCircleViews;
-- (NSDictionary *)generateVerifierWithRcoveryKey:(NSString *)arg1 error:(id *)arg2;
+- (NSDictionary *)generateVerifierWithRecoveryKey:(NSString *)arg1 error:(id *)arg2;
 - (NSString *)generateRecoveryKeyWithInfo:(NSDictionary *)arg1 error:(id *)arg2;
+- (void)didJoinCircleAfterRecovery:(OTClique *)arg1;
 - (NSDictionary *)peerDeviceNamesByPeerID;
 - (unsigned int)peerCount;
 - (NSString *)peerId;
-- (int)circleStatus:(id *)arg1;
-- (id)initWithContext:(CDPContext *)arg1;
+- (unsigned int)cachedCircleStatus:(id *)arg1;
+- (unsigned int)circleStatus:(id *)arg1;
 @end
 

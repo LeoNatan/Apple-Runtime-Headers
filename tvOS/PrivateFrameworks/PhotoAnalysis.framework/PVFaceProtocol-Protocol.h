@@ -9,6 +9,7 @@
 @class NSData, NSString;
 
 @protocol PVFaceProtocol <NSObject>
+@property(readonly, nonatomic) unsigned short ageType;
 @property(nonatomic) long long qualityMeasure;
 @property(readonly, nonatomic) NSData *faceprintData;
 @property(readonly, nonatomic) long long clusterSequenceNumber;

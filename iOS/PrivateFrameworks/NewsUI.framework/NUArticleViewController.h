@@ -38,6 +38,7 @@
     unsigned long long _presentationMode;
 }
 
++ (id)_parentOrPresentingViewControllerFor:(id)arg1;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
 @property(nonatomic) _Bool articleIsPresentingFullscreen; // @synthesize articleIsPresentingFullscreen=_articleIsPresentingFullscreen;
 @property(readonly, nonatomic) id <NUANFDebugSettingsProvider> debugSettingsProvider; // @synthesize debugSettingsProvider=_debugSettingsProvider;
@@ -57,9 +58,12 @@
 @property(nonatomic) __weak id <SXAnalyticsReporting> analyticsReporting; // @synthesize analyticsReporting=_analyticsReporting;
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 - (void).cxx_destruct;
+- (_Bool)accessibilityShouldScrollForScrollViewController:(id)arg1 defaultValue:(_Bool)arg2;
+- (_Bool)scrollViewController:(id)arg1 shouldOccludeAccessibilityElement:(id)arg2;
 - (id)currentPresentationAttributes;
 - (void)updatePresentationAttributes;
 - (void)updateScrollViewControllerWithFooterBlueprint:(id)arg1;
+- (void)updateScrollViewControllerWithContentOverlayBlueprint:(id)arg1 topOffset:(double)arg2;
 - (void)updateScrollViewControllerWithHeaderBlueprint:(id)arg1;
 - (void)scrollToTopAnimated:(_Bool)arg1;
 - (void)restoreScrollPositionIfNeeded;
@@ -79,6 +83,7 @@
 - (void)viewDidLayoutSubviews;
 - (_Bool)canBecomeFirstResponder;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithArticleDataProvider:(id)arg1 scrollViewController:(id)arg2 articleAdManager:(id)arg3 dynamicTypeProviding:(id)arg4 appStateMonitor:(id)arg5 keyCommandManager:(id)arg6 loadingListeners:(id)arg7 headerBlueprintProvider:(id)arg8 debugSettingsProvider:(id)arg9;

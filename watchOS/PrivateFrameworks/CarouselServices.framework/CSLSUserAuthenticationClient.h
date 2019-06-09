@@ -6,38 +6,35 @@
 
 #import <objc/NSObject.h>
 
-#import <CarouselServices/CSLSUserAuthenticationClientProtocol-Protocol.h>
+#import <CarouselServices/CSLSMobileKeyBagObserver-Protocol.h>
+#import <CarouselServices/CSLSUserAuthenticationModelDelegate-Protocol.h>
 
-@class NSString, NSXPCConnection;
+@class CSLSSecureBackupHelper, CSLSSoftwareUpdateStashHelper, CSLSUserAuthenticationModel, NSString;
 
-@interface CSLSUserAuthenticationClient : NSObject <CSLSUserAuthenticationClientProtocol>
+@interface CSLSUserAuthenticationClient : NSObject <CSLSUserAuthenticationModelDelegate, CSLSMobileKeyBagObserver>
 {
-    struct _opaque_pthread_mutex_t _connectionLock;
-    _Bool _permanentlyBlocked;
-    _Bool _temporarilyBlocked;
-    NSXPCConnection *_connection;
-    double _timeUntilUnblockedSinceReferenceDate;
+    CSLSUserAuthenticationModel *_model;
+    CSLSSecureBackupHelper *_secureBackupHelper;
+    CSLSSoftwareUpdateStashHelper *_suStashHelper;
 }
 
 + (id)sharedInstance;
-@property(nonatomic, getter=isTemporarilyBlocked) _Bool temporarilyBlocked; // @synthesize temporarilyBlocked=_temporarilyBlocked;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(nonatomic) double timeUntilUnblockedSinceReferenceDate; // @synthesize timeUntilUnblockedSinceReferenceDate=_timeUntilUnblockedSinceReferenceDate;
-@property(nonatomic, getter=isPermanentlyBlocked) _Bool permanentlyBlocked; // @synthesize permanentlyBlocked=_permanentlyBlocked;
+@property(retain, nonatomic) CSLSSoftwareUpdateStashHelper *suStashHelper; // @synthesize suStashHelper=_suStashHelper;
+@property(retain, nonatomic) CSLSSecureBackupHelper *secureBackupHelper; // @synthesize secureBackupHelper=_secureBackupHelper;
+@property(retain, nonatomic) CSLSUserAuthenticationModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
-- (void)blockStateMayHaveChangedToTemporarilyBlocked:(_Bool)arg1 permanentlyBlocked:(_Bool)arg2 timeUntilUnblockedSinceReferenceDate:(double)arg3;
+- (void)keybag:(id)arg1 extendedStateDidChange:(id)arg2;
+- (void)deviceLockStateMayHaveChangedForModel:(id)arg1;
+- (void)deviceLockModelRequestsDeviceWipe:(id)arg1;
 - (_Bool)isBlocked;
+@property(readonly, nonatomic) double timeUntilUnblockedSinceReferenceDate;
+@property(readonly, nonatomic, getter=isPermanentlyBlocked) _Bool permanentlyBlocked;
+@property(readonly, nonatomic, getter=isTemporarilyBlocked) _Bool temporarilyBlocked;
 - (void)requestClearBlockedState;
 - (void)notePasscodeUnlockDidFailWithError:(id)arg1;
-- (void)notePasscodeUnlockDidSucceed;
+- (void)notePasscodeUnlockDidSucceedWithPasscode:(id)arg1;
 - (void)notePasscodeEntryForUnlockDidCancel;
 - (void)notePasscodeEntryForUnlockDidBegin;
-- (id)_serverWithErrorHandler:(CDUnknownBlockType)arg1;
-- (void)_getBlockState;
-- (void)_observePairingState;
-- (void)_clearConnection;
-- (void)_attemptConnection;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

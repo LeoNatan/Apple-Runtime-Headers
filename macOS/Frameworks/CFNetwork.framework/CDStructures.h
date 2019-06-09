@@ -14,19 +14,15 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AutoRetainReleaseTypePtr<const __CFData *, CFObject> {
+struct AuthBrokerAuthenticator {
     CDUnknownFunctionPointerType *_field1;
-    struct __CFData *_field2;
-};
-
-struct AutoRetainReleaseTypePtr<const __CFDictionary *, CFObject> {
-    CDUnknownFunctionPointerType *_field1;
-    struct __CFDictionary *_field2;
-};
-
-struct AutoRetainReleaseTypePtr<const __CFString *, CFObject> {
-    CDUnknownFunctionPointerType *_field1;
-    struct __CFString *_field2;
+    CDUnknownFunctionPointerType *_field2;
+    struct _opaque_pthread_mutex_t _field3;
+    CDUnknownFunctionPointerType *_field4;
+    struct _CFURLCredentialStorage *_field5;
+    struct __CFSet *_field6;
+    struct RetainableTypedDict<_CFURLProtectionSpace *const, NetworkProxyCredential *> _field7;
+    struct unique_ptr<NSObject<OS_dispatch_queue>, Deleter_DispatchRelease<NSObject<OS_dispatch_queue>*>> _field8;
 };
 
 struct BackgroundTaskServerTrustTestResult {
@@ -106,8 +102,22 @@ struct CoalescingDomain {
     struct map<std::__1::shared_ptr<__CoalescingConnectionKey>, std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>>, CoalescingConnectionKeyComparator, std::__1::allocator<std::__1::pair<const std::__1::shared_ptr<__CoalescingConnectionKey>, std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>>>>> _connectionKeyToAllRequestHosts;
 };
 
+struct CompactCookieArray;
+
+struct CompactCookieHeader;
+
+struct CompactHTTPCookieReference {
+    CDUnknownFunctionPointerType *_field1;
+    struct CompactCookieArray *_field2;
+    struct CompactCookieHeader *_field3;
+};
+
+struct CompactHTTPCookieWithData {
+    CDUnknownFunctionPointerType *_field1;
+    char *_field2;
+};
+
 struct ConfigFlags {
-    unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
@@ -131,6 +141,27 @@ struct CoreSchedulingSet {
     struct __CFRunLoop *_field11;
     struct __CFString *_field12;
     int _field13;
+};
+
+struct Flags {
+    unsigned int _flag_SHOULD_HANDLE_HTTP_COOKIES:1;
+    unsigned int _flag_IS_MUTABLE:1;
+    unsigned int _flag_SHOULD_START_SYNCHRONOUSLY:1;
+    unsigned int _flag_ALLOW_CELLULAR:1;
+    unsigned int _flag_PREVENTSIDLESYSTEMSLEEP:1;
+    unsigned int _flag_SET_EXPLICIT_COOKIE_ACCEPTANCE_POLICY:1;
+    unsigned int _flag_SET_EXPLICIT_SHOULD_HANDLE_COOKIES:1;
+    unsigned int _flag_SET_EXPLICIT_NETWORK_SERVICE_TYPE:1;
+    unsigned int _flag_SET_EXPLICIT_ALLOWS_CELLULAR:1;
+    unsigned int _flag_SET_EXPLICIT_PREVENTS_IDLE_SYSTEM_SLEEP:1;
+    unsigned int _flag_SET_EXPLICIT_BOUND_INTERFACE_IDENTIFIER:1;
+    unsigned int _flag_SET_EXPLICIT_SHOULD_PIPELINE:1;
+    unsigned int _flag_SET_EXPLICIT_CACHE_POLICY:1;
+    unsigned int _flag_SET_EXPLICIT_TIMEOUT:1;
+    unsigned int _flag_SET_EXPLICIT_PROXY_DICT:1;
+    unsigned int _flag_SET_EXPLICIT_SSL_PROPERTIES:1;
+    unsigned int _flag_SET_EXPLICIT_CONTENT_DISPOSITION_HEADER_ENCODING_FALLBACK_ARRAY:1;
+    unsigned int _flag_SET_EXPLICIT_SHOULD_START_SYNCHRONOUSLY:1;
 };
 
 struct GlueTube {
@@ -173,6 +204,14 @@ struct HTTPConnectionCacheLimits {
     int _field10;
 };
 
+struct HTTPConnectionInfo {
+    CDUnknownFunctionPointerType *_field1;
+};
+
+struct HTTPCookie {
+    CDUnknownFunctionPointerType *_field1;
+};
+
 struct HTTPHeaderDict;
 
 struct HTTPMethodMixedValue {
@@ -183,6 +222,8 @@ struct HTTPMethodMixedValue {
 struct HTTPParser;
 
 struct HTTPProtocol;
+
+struct HTTPRequest;
 
 struct HTTPRequestMessage {
     CDUnknownFunctionPointerType *_field1;
@@ -206,6 +247,8 @@ struct HTTPRequestMessage {
     struct __CFURL *_field19;
     char *_field20;
 };
+
+struct HTTPResponse;
 
 struct HTTPVersionMixedValue {
     CDUnknownFunctionPointerType *_field1;
@@ -233,6 +276,7 @@ struct InternalProtocolImplementation {
     CDUnknownFunctionPointerType _field7;
     CDUnknownFunctionPointerType _field8;
     CDUnknownFunctionPointerType _field9;
+    CDUnknownFunctionPointerType _field10;
 };
 
 struct MetaConnectionCacheClient {
@@ -255,104 +299,16 @@ struct NSCFURLProtocolClient {
     id _field4;
 };
 
+struct NSObject;
+
 struct NetworkProxy;
 
-struct PerformanceTiming {
-    CDUnknownFunctionPointerType *_field1;
-    CDUnknownFunctionPointerType *_field2;
-    int _field3;
-    _Bool _field4;
-    _Bool _field5;
-    _Bool _field6;
-    _Bool _field7;
-    double _field8;
-    struct __CFString *_field9;
-    double _field10;
-    struct __CFString *_field11;
-    double _field12;
-    struct __CFString *_field13;
-    double _field14;
-    struct __CFString *_field15;
-    double _field16;
-    struct __CFString *_field17;
-    double _field18;
-    struct __CFString *_field19;
-    double _field20;
-    struct __CFString *_field21;
-    double _field22;
-    struct __CFString *_field23;
-    double _field24;
-    double _field25;
-    struct __CFString *_field26;
-    double _field27;
-    struct __CFString *_field28;
-    double _field29;
-    struct __CFString *_field30;
-    double _field31;
-    struct __CFString *_field32;
-    int _field33;
-    struct __CFString *_field34;
-    int _field35;
-    struct __CFString *_field36;
-    double _field37;
-    struct __CFString *_field38;
-    double _field39;
-    struct __CFString *_field40;
-    double _field41;
-    struct __CFString *_field42;
-    double _field43;
-    struct __CFString *_field44;
-    double _field45;
-    struct __CFString *_field46;
-    double _field47;
-    struct __CFString *_field48;
-    double _field49;
-    struct __CFString *_field50;
-    _Bool _field51;
-    _Bool _field52;
-    struct AutoRetainReleaseTypePtr<const __CFData *, CFObject> _field53;
-    struct AutoRetainReleaseTypePtr<const __CFString *, CFObject> _field54;
-    struct unique_ptr<const __CFUUID, Deleter_CFRelease> _field55;
-    struct shared_ptr<__CFDictionary> _field56;
-    _Bool _field57;
-    _Bool _field58;
-    _Bool _field59;
-    _Bool _field60;
-    struct AutoRetainReleaseTypePtr<const __CFDictionary *, CFObject> _field61;
-    struct AutoRetainReleaseTypePtr<const __CFDictionary *, CFObject> _field62;
-    struct unique_ptr<const __CFDictionary, Deleter_CFRelease> _field63;
-    struct unique_ptr<const __CFDictionary, Deleter_CFRelease> _field64;
-    double _field65;
-    struct __CFString *_field66;
-    _Bool _field67;
-    _Bool _field68;
-    long long _field69;
-    _Bool _field70;
-    _Bool _field71;
-    struct unique_ptr<const __CFString, Deleter_CFRelease> _field72;
-    struct unique_ptr<const __CFString, Deleter_CFRelease> _field73;
-    struct unique_ptr<const __CFString, Deleter_CFRelease> _field74;
-    struct unique_ptr<__CFDictionary, Deleter_CFRelease> _field75;
-    _Bool _field76;
-    struct _CFURLRequest *_field77;
-    struct unique_ptr<const void, Deleter_CFRelease> _field78;
-    _Bool _field79;
-    _Bool _field80;
-    _Bool _field81;
-    _Bool _field82;
-    unsigned long long _field83;
-    long long _field84;
-    long long _field85;
-    unsigned long long _field86;
-    _Bool _field87;
-    long long _field88;
-    long long _field89;
-    _Bool _field90;
-    _Bool _field91;
-    _Bool _field92;
-};
-
 struct RedirectionRecorder;
+
+struct RetainableTypedDict<_CFURLProtectionSpace *const, NetworkProxyCredential *> {
+    CDUnknownFunctionPointerType *_field1;
+    struct __CFDictionary *_field2;
+};
 
 struct RetainableTypedDict<const CoreSchedulingSet *, GlueTubeManager *>;
 
@@ -388,12 +344,7 @@ struct StreamTaskTestConfig {
     NSDictionary *proxyConfig;
     int connectionType;
     _Bool allowTimeout;
-    _Bool allowTCPIOConnectionStreamTask;
 };
-
-struct TCPIOConnection;
-
-struct TCPIOConnectionObjCPP;
 
 struct TCPIO_BlockCallbacks_Listener {
     CDUnknownFunctionPointerType *_field1;
@@ -408,6 +359,10 @@ struct TLSServer;
 
 struct Throttler;
 
+struct TransportConnection;
+
+struct TransportConnectionObjCPP;
+
 struct URLConnectionLoader {
     CDUnknownFunctionPointerType *_field1;
     struct __CFAllocator *_field2;
@@ -419,29 +374,30 @@ struct URLConnectionLoader {
     CDUnknownFunctionPointerType *_field8;
     CDUnknownFunctionPointerType *_field9;
     id _field10;
-    long long _field11;
-    struct RedirectionRecorder *_field12;
-    unsigned char _field13;
+    id _field11;
+    long long _field12;
+    struct RedirectionRecorder *_field13;
     unsigned char _field14;
     unsigned char _field15;
-    id _field16;
-    unsigned char _field17;
-    double _field18;
-    struct URLProtocol *_field19;
-    id _field20;
-    unsigned char _field21;
-    struct CoreSchedulingSet *_field22;
-    double _field23;
+    unsigned char _field16;
+    id _field17;
+    unsigned char _field18;
+    double _field19;
+    struct URLProtocol *_field20;
+    id _field21;
+    unsigned char _field22;
+    struct CoreSchedulingSet *_field23;
     double _field24;
-    unsigned long long _field25;
-    struct ConfigFlags _field26;
-    unsigned char _field27;
+    double _field25;
+    unsigned long long _field26;
+    struct ConfigFlags _field27;
     unsigned char _field28;
     unsigned char _field29;
     unsigned char _field30;
-    unsigned long long _field31;
-    unsigned int _field32;
-    unsigned char _field33;
+    unsigned char _field31;
+    unsigned long long _field32;
+    unsigned int _field33;
+    unsigned char _field34;
 };
 
 struct URLProtocol {
@@ -457,19 +413,64 @@ struct URLProtocol {
     unsigned char _field10;
     unsigned char _field11;
     unsigned char _field12;
-    unsigned char _field13;
+    long long _field13;
     long long _field14;
-    long long _field15;
-    struct Throttler *_field16;
-    _Bool _field17;
+    struct Throttler *_field15;
+    _Bool _field16;
+    id _field17;
     id _field18;
-    struct _CFURLRequest *_field19;
-    struct URLProtocolClient *_field20;
-    struct _CFCachedURLResponse *_field21;
+    struct URLProtocolClient *_field19;
+    struct _CFCachedURLResponse *_field20;
 };
 
 struct URLProtocolClient {
     CDUnknownFunctionPointerType *_field1;
+};
+
+struct URLRequest {
+    CDUnknownFunctionPointerType *_vptr$CoreLoggable;
+    struct __CFURL *fURL;
+    unsigned long long fCachePolicy;
+    double fTimeout;
+    struct __CFURL *fMainDocumentURL;
+    struct __CFDictionary *fProtocolProperties;
+    struct __CFDictionary *fProxyDict;
+    struct HTTPRequest *fHTTPRequest;
+    struct Flags fFlags;
+    struct __CFDictionary *fSSLProps;
+    struct __CFArray *fContentDispositionHeaderEncodingFallbackArray;
+    long long fRequestPriority;
+    unsigned long long fAllowedProtocolTypes;
+    int fNetworkServiceType;
+    struct __CFString *fBoundInterfaceIdentifier;
+    unsigned long long fExpectedWorkload;
+    double fTimeWindowDelay;
+    double fTimeWindowDuration;
+    double fStartTimeoutTime;
+    unsigned char fRequiresShortConnectionTimeout;
+    unsigned char fPreventHSTSStorage;
+    unsigned char fIgnoreHSTS;
+    unsigned char fSchemeWasUpgradedDueToDynamicHSTS;
+    double fPayloadTransmissionTimeout;
+    struct __CFDictionary *fATSOverrides;
+    struct unique_ptr<_CFHSTSPolicy, Deleter_CFRelease> fHSTSPolicy;
+    int fAllowsExpensiveNetworkAccess;
+    int fAllowsConstrainedNetworkAccess;
+    struct __CFURLStorageSession *_explicitStorageSession;
+};
+
+struct URLResponse {
+    CDUnknownFunctionPointerType *_vptr$CoreLoggable;
+    struct __CFURL *fURL;
+    struct __CFString *fMIMEType;
+    struct __CFString *fTextEncodingName;
+    long long fExpectedContentLength;
+    double fExpiration;
+    double fCreationTime;
+    struct __CFDictionary *fSSLCertContext;
+    int fRecommendedPolicy;
+    struct __CFData *fPeerAddress;
+    struct HTTPResponse *fHTTP;
 };
 
 struct UploadProgressInfo {
@@ -497,19 +498,26 @@ struct XTubeManager {
     struct RetainableTypedDict<const CoreSchedulingSet *, GlueTubeManager *> *_field4;
     struct _opaque_pthread_mutex_t _field5;
     struct HTTPConnectionCacheLimits _field6;
+    shared_ptr_9ad247fa _field7;
 };
 
 struct _CFCachedURLResponse;
 
+struct _CFHSTSPolicy;
+
 struct _CFHTTPAuthentication;
 
-struct _CFURLRequest;
+struct _CFURLCredentialStorage;
 
 struct __CFAllocator;
 
 struct __CFDictionary;
 
+struct __CFSet;
+
 struct __CFString;
+
+struct __CFURL;
 
 struct __CFURLCache;
 
@@ -593,19 +601,14 @@ struct shared_ptr<HTTPProtocol> {
     struct __shared_weak_count *__cntrl_;
 };
 
+struct shared_ptr<NSObject<OS_nw_context>> {
+    struct NSObject *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 struct shared_ptr<NetworkProxy> {
     struct NetworkProxy *_field1;
     struct __shared_weak_count *_field2;
-};
-
-struct shared_ptr<TCPIOConnection> {
-    struct TCPIOConnection *__ptr_;
-    struct __shared_weak_count *__cntrl_;
-};
-
-struct shared_ptr<TCPIOConnectionObjCPP> {
-    struct TCPIOConnectionObjCPP *__ptr_;
-    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<TCPIO_EstablishBase> {
@@ -618,9 +621,14 @@ struct shared_ptr<TLSServer> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<__CFDictionary> {
-    struct __CFDictionary *_field1;
-    struct __shared_weak_count *_field2;
+struct shared_ptr<TransportConnection> {
+    struct TransportConnection *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<TransportConnectionObjCPP> {
+    struct TransportConnectionObjCPP *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<__CFURLCache> {
@@ -669,10 +677,16 @@ struct timespec {
     long long tv_nsec;
 };
 
-struct unique_ptr<__CFDictionary, Deleter_CFRelease> {
-    struct __compressed_pair<__CFDictionary *, Deleter_CFRelease> {
-        struct __CFDictionary *_field1;
+struct unique_ptr<NSObject<OS_dispatch_queue>, Deleter_DispatchRelease<NSObject<OS_dispatch_queue>*>> {
+    struct __compressed_pair<NSObject<OS_dispatch_queue>*, Deleter_DispatchRelease<NSObject<OS_dispatch_queue>*>> {
+        id _field1;
     } _field1;
+};
+
+struct unique_ptr<_CFHSTSPolicy, Deleter_CFRelease> {
+    struct __compressed_pair<_CFHSTSPolicy *, Deleter_CFRelease> {
+        struct _CFHSTSPolicy *__value_;
+    } __ptr_;
 };
 
 struct unique_ptr<const __CFDictionary, Deleter_CFRelease> {
@@ -687,16 +701,9 @@ struct unique_ptr<const __CFString, Deleter_CFRelease> {
     } _field1;
 };
 
-struct unique_ptr<const __CFUUID, Deleter_CFRelease> {
-    struct __compressed_pair<const __CFUUID *, Deleter_CFRelease> {
-        struct __CFUUID *_field1;
-    } _field1;
-};
-
-struct unique_ptr<const void, Deleter_CFRelease> {
-    struct __compressed_pair<const void *, Deleter_CFRelease> {
-        void *_field1;
-    } _field1;
+struct weak_ptr<TransportConnection> {
+    struct TransportConnection *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct weak_ptr<__CFURLCache> {
@@ -724,22 +731,40 @@ struct z_stream_s {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    unsigned long long _field6;
+    unsigned char _field7[16];
+    long long _field8;
+    long long _field9;
+    int _field10;
+    _Bool _field11;
+    _Bool _field12;
+    _Bool _field13;
+    _Bool _field14;
+} CDStruct_46ef296f;
+
+typedef struct {
     unsigned int _field1[8];
 } CDStruct_6ad76789;
 
 typedef struct {
-    int _field1;
-    long long _field2;
-    _Bool _field3;
-    _Bool _field4;
-    unsigned long long _field5;
-    unsigned long long _field6;
-    unsigned long long _field7;
-    unsigned long long _field8;
-    unsigned long long _field9;
-    unsigned long long _field10;
-    unsigned char _field11[16];
-} CDStruct_a2c7495a;
+    double domainLookupBeginTime;
+    double domainLookupEndTime;
+    double connectBeginTime;
+    double secureConnectionBeginTime;
+    double connectEndTime;
+} CDStruct_2e8cb519;
+
+typedef struct {
+    long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
 
 typedef struct {
     long long domain;
@@ -754,14 +779,18 @@ typedef struct {
     long long _field5;
     long long _field6;
     unsigned long long _field7;
-    unsigned char _field8[16];
-    int _field9;
-    _Bool _field10;
-    unsigned long long _field11;
+    unsigned long long _field8;
+    unsigned char _field9[16];
+    unsigned char _field10[16];
+    int _field11;
     _Bool _field12;
-    long long _field13;
-    CDStruct_a2c7495a _field14[0];
-} CDStruct_2615cf90;
+    CDStruct_46ef296f _field13[0];
+} CDStruct_61067874;
+
+typedef struct {
+    CDStruct_198678f7 _field1;
+    CDStruct_198678f7 _field2;
+} CDStruct_3c1748cc;
 
 // Template types
 typedef struct SmartBlockWithArgs<NSURLSessionTaskMetrics *> {
@@ -779,20 +808,25 @@ typedef struct SmartBlockWithArgs<signed char> {
     struct __shared_weak_count *__cntrl_;
 } SmartBlockWithArgs_e26c205b;
 
-typedef struct shared_ptr<TCPIOConnection> {
-    struct TCPIOConnection *__ptr_;
+typedef struct shared_ptr<NSObject<OS_nw_context>> {
+    struct NSObject *__ptr_;
     struct __shared_weak_count *__cntrl_;
-} shared_ptr_f0c1381f;
-
-typedef struct shared_ptr<TCPIOConnectionObjCPP> {
-    struct TCPIOConnectionObjCPP *__ptr_;
-    struct __shared_weak_count *__cntrl_;
-} shared_ptr_54ecd472;
+} shared_ptr_9ad247fa;
 
 typedef struct shared_ptr<TLSServer> {
     struct TLSServer *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_a7890e8d;
+
+typedef struct shared_ptr<TransportConnection> {
+    struct TransportConnection *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_8da4e70b;
+
+typedef struct shared_ptr<TransportConnectionObjCPP> {
+    struct TransportConnectionObjCPP *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_ced42cc3;
 
 typedef struct shared_ptr<__CFURLCache> {
     struct __CFURLCache *_field1;
@@ -808,4 +842,9 @@ typedef struct shared_ptr<__SecTrust> {
     struct __SecTrust *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_3ed6bb45;
+
+typedef struct weak_ptr<TransportConnection> {
+    struct TransportConnection *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} weak_ptr_905febf0;
 

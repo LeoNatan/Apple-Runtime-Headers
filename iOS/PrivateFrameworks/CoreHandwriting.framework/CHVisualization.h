@@ -19,7 +19,6 @@
 @property(readonly, retain, nonatomic) CHRecognitionSession *recognitionSession; // @synthesize recognitionSession=_recognitionSession;
 - (void)dealloc;
 - (id)initWithRecognitionSession:(id)arg1;
-- (struct CGColor *)newColorForVisualizedItemAtIndex:(long long)arg1;
 - (void)toggleVisualizationRegionAtPoint:(struct CGPoint)arg1;
 - (void)drawVisualizationInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2 viewBounds:(struct CGRect)arg3;
 - (void)recognitionSessionDidUpdateRecognitionResult;

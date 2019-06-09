@@ -8,6 +8,7 @@
 
 @class NSCache;
 
+__attribute__((visibility("hidden")))
 @interface MKResizedArtworkDataSourceCache : MKArtworkDataSourceCache
 {
     CDUnknownBlockType _resizingBlock;

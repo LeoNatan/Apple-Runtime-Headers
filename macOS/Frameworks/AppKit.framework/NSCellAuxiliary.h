@@ -6,19 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSAttributedString, NSControl, NSDragEventTracker, NSFont, NSFormatter, NSImage, NSMenu, NSMutableDictionary, NSString, NSTimer, NSTouch;
+@class NSAppearanceContentStyle, NSAttributedString, NSControl, NSFont, NSFormatter, NSImage, NSMenu, NSMutableDictionary, NSString, NSTimer, NSTouch;
 
 __attribute__((visibility("hidden")))
 @interface NSCellAuxiliary : NSObject
 {
-    NSControl *controlView;
-    NSImage *image;
-    NSFont *font;
-    NSMutableDictionary *textAttributes;
-    NSFormatter *formatter;
-    id representedObject;
-    NSString *userInterfaceItemIdentifier;
-    NSMenu *menu;
     struct {
         unsigned int writingDirection:2;
         unsigned int backgroundStyleIsSet:1;
@@ -27,12 +19,36 @@ __attribute__((visibility("hidden")))
         unsigned int okToTrack:1;
         unsigned int reserved:24;
     } auxCFlags;
-    NSDragEventTracker *_currentDragEventTracker;
-    long long cachedAttributedStringGeneration;
-    NSAttributedString *cachedAttributedStringValue;
-    NSTouch *trackingTouch;
-    NSTimer *touchContinuousTimer;
+    NSControl *_controlView;
+    NSImage *_image;
+    NSFont *_font;
+    NSMutableDictionary *_textAttributes;
+    NSFormatter *_formatter;
+    id _representedObject;
+    NSString *_userInterfaceItemIdentifier;
+    NSMenu *_menu;
+    long long _cachedAttributedStringGeneration;
+    NSAttributedString *_cachedAttributedStringValue;
+    NSTouch *_trackingTouch;
+    NSTimer *_touchContinuousTimer;
+    NSAppearanceContentStyle *_cachedContentStyle;
 }
+
+@property(retain) NSAppearanceContentStyle *cachedContentStyle; // @synthesize cachedContentStyle=_cachedContentStyle;
+@property(retain) NSTimer *touchContinuousTimer; // @synthesize touchContinuousTimer=_touchContinuousTimer;
+@property(retain) NSTouch *trackingTouch; // @synthesize trackingTouch=_trackingTouch;
+@property(retain) NSAttributedString *cachedAttributedStringValue; // @synthesize cachedAttributedStringValue=_cachedAttributedStringValue;
+@property long long cachedAttributedStringGeneration; // @synthesize cachedAttributedStringGeneration=_cachedAttributedStringGeneration;
+@property(retain) NSMenu *menu; // @synthesize menu=_menu;
+@property(copy) NSString *userInterfaceItemIdentifier; // @synthesize userInterfaceItemIdentifier=_userInterfaceItemIdentifier;
+@property(retain) id representedObject; // @synthesize representedObject=_representedObject;
+@property(retain) NSFormatter *formatter; // @synthesize formatter=_formatter;
+@property(retain) NSMutableDictionary *textAttributes; // @synthesize textAttributes=_textAttributes;
+@property(retain) NSFont *font; // @synthesize font=_font;
+@property(retain) NSImage *image; // @synthesize image=_image;
+@property NSControl *controlView; // @synthesize controlView=_controlView;
+- (id)cachedAttributedStringWithGeneration:(long long)arg1;
+- (void)dealloc;
 
 @end
 

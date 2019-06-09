@@ -31,7 +31,7 @@
 // Error parsing type for property visionCameraTransform:
 // Property attributes: T{?=[4]},N,V_visionCameraTransform
 
-@property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

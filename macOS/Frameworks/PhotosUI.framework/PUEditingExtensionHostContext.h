@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUExtensionHostContext.h>
+#import <Foundation/NSExtensionContext.h>
 
 #import <PhotosUI/PUEditingExtensionHost-Protocol.h>
 
-@interface PUEditingExtensionHostContext : PUExtensionHostContext <PUEditingExtensionHost>
+@interface PUEditingExtensionHostContext : NSExtensionContext <PUEditingExtensionHost>
 {
     CDUnknownBlockType _contentEditingOutputCommitHandler;
 }

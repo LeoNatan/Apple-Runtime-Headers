@@ -11,7 +11,11 @@
 @class NSString;
 
 @interface NSURL (AFSecurityDigestibleChunksProvider) <AFSecurityDigestibleChunksProviding>
++ (id)_af_URLWithMessageIdentifier:(id)arg1;
 - (void)af_enumerateDigestibleChunksWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)_af_messageIdentifierValue;
+- (_Bool)isAMOSCommittedIdentifier;
+- (_Bool)isAMOSIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

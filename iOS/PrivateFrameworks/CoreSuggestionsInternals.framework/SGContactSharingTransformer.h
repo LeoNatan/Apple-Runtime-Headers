@@ -15,17 +15,25 @@
     struct {
         unsigned long long s[2];
     } _rng;
-    _Bool _isNegative;
     NSString *_targetMapping;
     NSString *_language;
 }
 
-@property _Bool isNegative; // @synthesize isNegative=_isNegative;
 @property(retain) NSString *language; // @synthesize language=_language;
 @property(retain) NSString *targetMapping; // @synthesize targetMapping=_targetMapping;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToContactSharingTransformer:(id)arg1;
+- (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (id)toPlistWithChunks:(id)arg1;
 - (id)transform:(id)arg1;
 - (id)initWithTargetMapping:(id)arg1 language:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

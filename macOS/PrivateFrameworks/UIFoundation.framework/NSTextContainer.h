@@ -6,13 +6,25 @@
 
 #import <objc/NSObject.h>
 
-#import <UIFoundation/NSCoding-Protocol.h>
+#import <UIFoundation/NSSecureCoding-Protocol.h>
 #import <UIFoundation/NSTextLayoutOrientationProvider-Protocol.h>
 
-@class NSArray, NSDictionary, NSLayoutManager, NSTextView;
+@class NSArray, NSDictionary, NSLayoutManager, NSTextLayoutManager, NSTextView;
 
-@interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider>
+@interface NSTextContainer : NSObject <NSSecureCoding, NSTextLayoutOrientationProvider>
 {
+    unsigned long long _maximumLines;
+    NSTextLayoutManager *_textLayoutManager;
+    NSArray *_exclusionPaths;
+    struct CGPath *_cachedBoundingPath;
+    struct __CFArray *_cachedClippingAttributes;
+    struct __CFArray *_cachedBounds;
+    double _cacheBoundsMinY;
+    double _cacheBoundsMaxY;
+    double _minimumWidth;
+    long long _layoutOrientation;
+    NSDictionary *_attributesForExtraLineFragment;
+    long long _applicationFrameworkContext;
     NSLayoutManager *_layoutManager;
     NSTextView *_textView;
     struct CGSize _size;
@@ -25,19 +37,9 @@
         unsigned int oldAPI:1;
         unsigned int _reserved:8;
     } _tcFlags;
-    unsigned long long _maximumLines;
-    NSArray *_exclusionPaths;
-    struct CGPath *_cachedBoundingPath;
-    struct __CFArray *_cachedClippingAttributes;
-    struct __CFArray *_cachedBounds;
-    double _cacheBoundsMinY;
-    double _cacheBoundsMaxY;
-    double _minimumWidth;
-    long long _layoutOrientation;
-    NSDictionary *_attributesForExtraLineFragment;
-    long long _applicationFrameworkContext;
 }
 
++ (BOOL)supportsSecureCoding;
 + (void)initialize;
 - (id)description;
 - (void)setLayoutOrientation:(long long)arg1;
@@ -46,6 +48,7 @@
 @property(readonly, getter=isSimpleRectangularTextContainer) BOOL simpleRectangularTextContainer;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 remainingRect:(struct CGRect *)arg2;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 sweepDirection:(unsigned long long)arg2 movementDirection:(unsigned long long)arg3 remainingRect:(struct CGRect *)arg4;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 atIndex:(unsigned long long)arg2 writingDirection:(long long)arg3 remainingRect:(struct CGRect *)arg4;
 @property unsigned long long maximumNumberOfLines;
 @property(copy) NSArray *exclusionPaths;
@@ -62,6 +65,8 @@
 - (struct CGPoint)textContainerOrigin;
 - (void)replaceLayoutManager:(id)arg1;
 @property NSLayoutManager *layoutManager;
+- (void)setTextLayoutManager:(id)arg1;
+- (id)textLayoutManager;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

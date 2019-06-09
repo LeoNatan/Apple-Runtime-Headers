@@ -9,7 +9,7 @@
 #import <TVPlayback/TVConstantRatePlaybackProgressAnimationDelegate-Protocol.h>
 #import <TVPlayback/TVDragPlaybackProgressAnimationDelegate-Protocol.h>
 
-@class CADisplayLink, NSString, TVPTransportBarView, TVPlaybackProgressAnimation, TVSStateMachine;
+@class CADisplayLink, NSString, TVPStateMachine, TVPTransportBarView, TVPlaybackProgressAnimation;
 @protocol TVPPlaybackProgressAnimatorDelegate;
 
 __attribute__((visibility("hidden")))
@@ -23,10 +23,10 @@ __attribute__((visibility("hidden")))
     id <TVPPlaybackProgressAnimatorDelegate> _delegate;
     CADisplayLink *_displayLink;
     TVPlaybackProgressAnimation *_animation;
-    TVSStateMachine *_stateMachine;
+    TVPStateMachine *_stateMachine;
 }
 
-@property(retain, nonatomic) TVSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) TVPlaybackProgressAnimation *animation; // @synthesize animation=_animation;
 @property(nonatomic) __weak CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic, getter=isDragging) _Bool dragging; // @synthesize dragging=_dragging;

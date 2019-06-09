@@ -15,6 +15,7 @@
     _Bool _isWriteOperation;
     _Bool _isTimedWrite;
     _Bool _isLocal;
+    _Bool _isCached;
     NSArray *_characteristicsToRead;
     HAPAccessory *_hapAccessory;
     HMDAccessory *_hmdAccessory;
@@ -23,18 +24,20 @@
 }
 
 + (id)characteristicWriteLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned int)arg4 isTimedWrite:(_Bool)arg5 isLocal:(_Bool)arg6 transactionId:(id)arg7;
-+ (id)characteristicReadLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned int)arg4 isLocal:(_Bool)arg5 transactionId:(id)arg6;
++ (id)characteristicReadLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned int)arg4 isLocal:(_Bool)arg5 transactionId:(id)arg6 isCached:(_Bool)arg7;
 + (id)uuid;
+@property(readonly, nonatomic) _Bool isCached; // @synthesize isCached=_isCached;
 @property(readonly, nonatomic) unsigned int triggerSource; // @synthesize triggerSource=_triggerSource;
 @property(readonly, nonatomic) NSUUID *transactionId; // @synthesize transactionId=_transactionId;
-@property(readonly, nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;
+@property(nonatomic) _Bool isLocal; // @synthesize isLocal=_isLocal;
 @property(readonly, nonatomic) _Bool isTimedWrite; // @synthesize isTimedWrite=_isTimedWrite;
 @property(readonly, nonatomic) _Bool isWriteOperation; // @synthesize isWriteOperation=_isWriteOperation;
 @property(readonly, nonatomic) __weak HMDAccessory *hmdAccessory; // @synthesize hmdAccessory=_hmdAccessory;
 @property(readonly, nonatomic) __weak HAPAccessory *hapAccessory; // @synthesize hapAccessory=_hapAccessory;
 @property(readonly, nonatomic) NSArray *characteristicsToRead; // @synthesize characteristicsToRead=_characteristicsToRead;
 - (void).cxx_destruct;
-- (id)initReadWriteLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned int)arg4 isWriteOperation:(_Bool)arg5 isTimedWrite:(_Bool)arg6 isLocal:(_Bool)arg7 transactionId:(id)arg8;
+- (void)setLocal:(_Bool)arg1;
+- (id)initReadWriteLogEvent:(id)arg1 hmdAccessory:(id)arg2 hapAccessory:(id)arg3 source:(unsigned int)arg4 isWriteOperation:(_Bool)arg5 isTimedWrite:(_Bool)arg6 isLocal:(_Bool)arg7 transactionId:(id)arg8 isCached:(_Bool)arg9;
 - (id)metricForAWD;
 - (unsigned int)AWDMessageType;
 

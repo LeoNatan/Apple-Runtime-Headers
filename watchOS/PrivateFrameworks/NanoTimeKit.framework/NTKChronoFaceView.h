@@ -30,6 +30,7 @@
 
 + (Class)_timeViewClass;
 - (void).cxx_destruct;
+- (void)_removeModeRelatedUIs;
 - (void)_updateComplicationFactoryWithDateComplicationView:(id)arg1;
 - (void)_updateDateComplicationPositionIfNecessary;
 - (struct CGPoint)_dateComplicationCenterOffset;

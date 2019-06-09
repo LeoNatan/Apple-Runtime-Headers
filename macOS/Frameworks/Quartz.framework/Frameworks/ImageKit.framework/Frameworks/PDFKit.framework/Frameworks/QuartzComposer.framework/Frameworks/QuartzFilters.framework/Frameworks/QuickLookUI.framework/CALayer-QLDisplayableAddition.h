@@ -16,6 +16,8 @@
 @property(readonly) QLDisplayBundleViewController *quickLookViewController;
 @property(readonly) CALayer *quickLookLayer;
 @property(readonly) NSView *quickLookView;
+- (BOOL)_ql_renderIntoPixelBuffer:(struct __CVBuffer *)arg1 forTime:(CDStruct_e50ab651 *)arg2;
+- (void)_ql_getPixelBufferPixelFormat:(unsigned int *)arg1;
 
 // Remaining properties
 @property(readonly) id accessibilityFocusedUIElement;

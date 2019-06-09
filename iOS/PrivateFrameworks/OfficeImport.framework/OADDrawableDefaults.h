@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) OADDrawableCategoryDefaults *textDefaults; // @synthesize textDefaults=mTextDefaults;
 @property(retain, nonatomic) OADDrawableCategoryDefaults *lineDefaults; // @synthesize lineDefaults=mLineDefaults;
 @property(retain, nonatomic) OADDrawableCategoryDefaults *shapeDefaults; // @synthesize shapeDefaults=mShapeDefaults;
+- (void).cxx_destruct;
 - (id)description;
 - (id)addTextDefaults;
 - (id)addLineDefaults;
 - (id)addShapeDefaults;
 - (void)addDefaults;
 - (_Bool)isEmpty;
-- (void)dealloc;
 
 @end
 

@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)formattedDescription:(unsigned long long)arg1;
+- (unsigned long long)bufferALUType;
+- (unsigned long long)bufferPixelFormat;
 - (unsigned long long)indirectConstantDataSize;
 - (unsigned long long)indirectConstantDataType;
 - (unsigned long long)indirectConstantAlignment;

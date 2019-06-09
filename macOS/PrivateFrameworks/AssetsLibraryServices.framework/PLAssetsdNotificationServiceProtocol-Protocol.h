@@ -14,7 +14,6 @@
 - (void)noteSuggestedCMMAlertWithCMMUUID:(NSString *)arg1 notificationDeliveryDate:(NSDate *)arg2;
 - (void)reportAsJunkPhotoStreamInvitationForAlbumWithCloudGUID:(NSString *)arg1;
 - (void)respondToPhotoStreamInvitationWithAlbumCloudGUID:(NSString *)arg1 acceptInvitation:(BOOL)arg2;
-- (void)noteUserRespondedToMemoriesNotification;
 - (void)noteInterestingMemoryAlertViewedWithUUID:(NSString *)arg1;
 - (void)noteInterestingMemoryAlertWithMemoryUUID:(NSString *)arg1 keyAssetUUID:(NSString *)arg2 notificationTitle:(NSString *)arg3 notificationSubtitle:(NSString *)arg4 notificationDeliveryDate:(NSDate *)arg5;
 - (void)userViewedNotificationWithAlbumCloudGUID:(NSString *)arg1;

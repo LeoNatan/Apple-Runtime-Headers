@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType cancellationTest; // @synthesize cancellationTest=_cancellationTest;
 @property(retain, nonatomic) AVAsynchronousVideoCompositionRequest *compositingRequest; // @synthesize compositingRequest=_compositingRequest;
 - (void)dealloc;
-- (void)finalize;
 - (void)_willDeallocOrFinalize;
 
 @end

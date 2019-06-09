@@ -6,7 +6,6 @@
 
 #import <SiriUI/SiriUIButton.h>
 
-__attribute__((visibility("hidden")))
 @interface SiriUIHelpButton : SiriUIButton
 {
     BOOL _animatingEmphasis;

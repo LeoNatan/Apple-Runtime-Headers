@@ -11,6 +11,8 @@
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) BOOL transitListInstructionTimeText;
+@property(readonly, nonatomic) BOOL transitTextInPlanningArtwork;
 @property(readonly, nonatomic) unsigned long long maxRandomJitterForHypothesisWakeup;
 @property(readonly, nonatomic) unsigned long long minRandomJitterForHypothesisWakeup;
 @property(readonly, nonatomic) double fastWalkingSpeed;
@@ -54,8 +56,10 @@
 @property(readonly, nonatomic) double extraLocationWaitTimeInterval;
 @property(readonly, nonatomic) double staleLocationUseTimerInterval;
 @property(readonly, nonatomic) double locationUpdateTimerInterval;
+@property(readonly, nonatomic) double locationUpdatesDesiredAccuracyForTransit;
 @property(readonly, nonatomic) double locationUpdatesDesiredAccuracyForDriving;
 @property(readonly, nonatomic) double locationUpdatesDesiredAccuracyForWalking;
+@property(readonly, nonatomic) double locationUpdatesDesiredAccuracyWhileStationaryForTransit;
 @property(readonly, nonatomic) double locationUpdatesDesiredAccuracyWhileStationaryForWalking;
 @property(readonly, nonatomic) double locationUpdatesDesiredAccuracyWhileStationaryForDriving;
 @property(readonly, nonatomic) double minimumTimeIntervalToConsiderLeechedLocationInSeconds;
@@ -64,9 +68,10 @@
 @property(readonly, nonatomic) BOOL shouldSnapToParkingLotSegments;
 @property(readonly, nonatomic) BOOL shouldMatchToLAR;
 @property(readonly, nonatomic) double maxDistanceFromOriginToSuppressReroute;
-@property(readonly, nonatomic) BOOL shouldPreloadSubscriptions;
 @property(readonly, nonatomic) double automaticTrafficIncidentRerouteDelay;
 @property(readonly, nonatomic) BOOL shouldAutomaticallyRerouteTrafficIncidents;
+@property(readonly, nonatomic) int endValidDistanceOffset;
+@property(readonly, nonatomic) int startValidDistanceOffset;
 @property(readonly, nonatomic) BOOL shouldRequestInlineShields;
 @property(readonly, nonatomic) BOOL shouldRequestLaneGuidance;
 @property(readonly, nonatomic) BOOL shouldUseGuidanceEventManager;

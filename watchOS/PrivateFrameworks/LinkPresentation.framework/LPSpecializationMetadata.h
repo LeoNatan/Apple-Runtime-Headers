@@ -11,10 +11,13 @@
 
 @interface LPSpecializationMetadata : NSObject <NSSecureCoding, NSCopying>
 {
+    _Bool __dummyPropertyForObservation;
 }
 
++ (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (_Bool)supportsSecureCoding;
-- (void)populateLinkMetadataForBackwardCompatibility:(id)arg1;
+@property(readonly, nonatomic) _Bool _dummyPropertyForObservation; // @synthesize _dummyPropertyForObservation=__dummyPropertyForObservation;
+- (void)_enumerateAsynchronousFields:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -28,7 +28,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (BOOL)allowsVibrancy;
 - (id)declaredLayoutConstraints;
-- (id)initWithFrame:(struct CGRect)arg1 alignment:(unsigned long long)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 alignment:(long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 
 + (id)keyPathsForValuesAffectingIsLoaded;
 + (id)qlMultiPreviewView:(const struct CGRect *)arg1;
-@property(readonly, getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)didHide;

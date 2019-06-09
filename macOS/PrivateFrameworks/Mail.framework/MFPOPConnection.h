@@ -75,7 +75,7 @@
 - (BOOL)supportsPlainTextSchemes;
 - (id)_authenticateWithPlainTextSchemes;
 - (id)_authenticateWithNonPlainTextSchemes;
-- (BOOL)_authenticateWithSaslClient:(id)arg1;
+- (BOOL)_authenticateWithSASLClient:(id)arg1;
 - (BOOL)authenticate;
 - (id)authenticationMechanisms;
 - (BOOL)_completeConnectionWithResult:(BOOL)arg1;

@@ -15,7 +15,6 @@
     PKInstallRequest *_request;
     NSMutableArray *_atomicUpdateProducts;
     BOOL _clientBlocksRestart;
-    BOOL _allowOnlyAppleSignedFlatPackages;
     BOOL _holdBoostDuringInstall;
     BOOL _isStaging;
     unsigned int _packageScriptUserID;
@@ -41,6 +40,7 @@
     CDUnknownBlockType _progressBlock;
     NSObject<OS_os_activity> *_activity;
     PKInstallClient *_installClient;
+    CDUnknownBlockType _bundleRegistrationBlock;
     double _estimatedTimeForPostLogoutCommit;
 }
 
@@ -53,12 +53,13 @@
 @property double estimatedTimeForPostLogoutCommit; // @synthesize estimatedTimeForPostLogoutCommit=_estimatedTimeForPostLogoutCommit;
 @property unsigned int packageScriptUserID; // @synthesize packageScriptUserID=_packageScriptUserID;
 @property BOOL holdBoostDuringInstall; // @synthesize holdBoostDuringInstall=_holdBoostDuringInstall;
-@property BOOL allowOnlyAppleSignedFlatPackages; // @synthesize allowOnlyAppleSignedFlatPackages=_allowOnlyAppleSignedFlatPackages;
 @property BOOL clientBlocksRestart; // @synthesize clientBlocksRestart=_clientBlocksRestart;
 @property id <SUInstallOperationDelegate><NSObject> delegate; // @synthesize delegate;
 - (void)installClientDidFinish:(id)arg1;
 - (void)installClient:(id)arg1 didFailWithError:(id)arg2;
 - (void)installClient:(id)arg1 currentState:(int)arg2 package:(id)arg3 progress:(double)arg4 timeRemaining:(double)arg5;
+- (BOOL)installClient:(id)arg1 registerBundlesWithLaunchServices:(id)arg2;
+- (void)setBundleRegistrationBlock:(CDUnknownBlockType)arg1;
 - (void)setProgressBlock:(CDUnknownBlockType)arg1 andFinishBlock:(CDUnknownBlockType)arg2;
 - (id)errorForProductKey:(id)arg1;
 - (id)errorProductKeys;

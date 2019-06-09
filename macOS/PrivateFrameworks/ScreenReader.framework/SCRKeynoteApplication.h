@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (unsigned long long)majorVersionNumberForiWorkApplicationVersion:(int)arg1;
+- (unsigned long long)majorVersionNumberForiWorkApplicationVersion:(long long)arg1;
 - (BOOL)isKeynoteApplication;
 
 @end

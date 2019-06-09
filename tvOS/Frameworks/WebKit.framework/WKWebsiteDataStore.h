@@ -9,11 +9,13 @@
 #import <WebKit/NSSecureCoding-Protocol.h>
 #import <WebKit/WKObject-Protocol.h>
 
-@class NSDictionary, NSString, WKHTTPCookieStore;
+@class NSDictionary, NSString, NSURL, WKHTTPCookieStore;
+@protocol _WKWebsiteDataStoreDelegate;
 
 @interface WKWebsiteDataStore : NSObject <WKObject, NSSecureCoding>
 {
     struct ObjectStorage<API::WebsiteDataStore> _websiteDataStore;
+    struct RetainPtr<id<_WKWebsiteDataStoreDelegate>> _delegate;
 }
 
 + (id)allWebsiteDataTypes;
@@ -24,6 +26,8 @@
 + (void)_deleteDefaultDataStoreForTesting;
 + (_Bool)_defaultDataStoreExists;
 + (id)_allWebsiteDataTypesIncludingPrivate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly) struct Object *_apiObject;
 - (void)removeDataOfTypes:(id)arg1 forDataRecords:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)removeDataOfTypes:(id)arg1 modifiedSince:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -33,16 +37,21 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+@property(nonatomic) __weak id <_WKWebsiteDataStoreDelegate> _delegate;
 - (_Bool)_hasRegisteredServiceWorker;
 - (void)_getAllStorageAccessEntriesFor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_setResourceLoadStatisticsTestingCallback:(CDUnknownBlockType)arg1;
 - (void)_resourceLoadStatisticsSetShouldSubmitTelemetry:(_Bool)arg1;
+@property(readonly, nonatomic) NSURL *_indexedDBDatabaseDirectory;
 @property(nonatomic, setter=_setProxyConfiguration:) NSDictionary *_proxyConfiguration;
+@property(nonatomic, setter=_setAllowsTLSFallback:) _Bool _allowsTLSFallback;
+@property(copy, nonatomic, setter=_setSourceApplicationSecondaryIdentifier:) NSString *_sourceApplicationSecondaryIdentifier;
+@property(copy, nonatomic, setter=_setSourceApplicationBundleIdentifier:) NSString *_sourceApplicationBundleIdentifier;
 @property(nonatomic, setter=_setAllowsCellularAccess:) _Bool _allowsCellularAccess;
 @property(nonatomic, setter=_setBoundInterfaceIdentifier:) NSString *_boundInterfaceIdentifier;
 @property(nonatomic, setter=_setServiceWorkerRegistrationDirectory:) NSString *_serviceWorkerRegistrationDirectory;
 @property(nonatomic, setter=_setCacheStorageDirectory:) NSString *_cacheStorageDirectory;
-@property(nonatomic, setter=_setCacheStoragePerOriginQuota:) unsigned long long _cacheStoragePerOriginQuota;
+@property(nonatomic, setter=_setPerOriginStorageQuota:) unsigned long long _perOriginStorageQuota;
 @property(nonatomic, setter=_setResourceLoadStatisticsDebugMode:) _Bool _resourceLoadStatisticsDebugMode;
 @property(nonatomic, setter=_setResourceLoadStatisticsEnabled:) _Bool _resourceLoadStatisticsEnabled;
 - (void)_fetchDataRecordsOfTypes:(id)arg1 withOptions:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;

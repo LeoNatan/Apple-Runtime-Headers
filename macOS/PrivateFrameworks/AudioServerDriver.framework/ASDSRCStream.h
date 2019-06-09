@@ -21,7 +21,7 @@
     NSArray *_underlyingStreams;
 }
 
-@property(retain, nonatomic) NSArray *underlyingStreams; // @synthesize underlyingStreams=_underlyingStreams;
+@property(copy, nonatomic) NSArray *underlyingStreams; // @synthesize underlyingStreams=_underlyingStreams;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (CDUnknownBlockType)writeMixBlock;

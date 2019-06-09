@@ -7,12 +7,13 @@
 #import <PhotoLibraryServices/PLPhotoAnalysisGraphServiceProtocol-Protocol.h>
 #import <PhotoLibraryServices/PLPhotoAnalysisJobServiceProtocol-Protocol.h>
 #import <PhotoLibraryServices/PLPhotoAnalysisVisionServiceFaceProcessingProtocol-Protocol.h>
-#import <PhotoLibraryServices/PLPhotoAnalysisVisionServiceSceneClassificationProtocol-Protocol.h>
 #import <PhotoLibraryServices/PLPhotoAnalysisVisionServiceTaxonomyProtocol-Protocol.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, NSString, NSURL;
 
-@protocol PLPhotoAnalysisServiceProtocol <PLPhotoAnalysisJobServiceProtocol, PLPhotoAnalysisGraphServiceProtocol, PLPhotoAnalysisVisionServiceTaxonomyProtocol, PLPhotoAnalysisVisionServiceSceneClassificationProtocol, PLPhotoAnalysisVisionServiceFaceProcessingProtocol>
+@protocol PLPhotoAnalysisServiceProtocol <PLPhotoAnalysisJobServiceProtocol, PLPhotoAnalysisGraphServiceProtocol, PLPhotoAnalysisVisionServiceTaxonomyProtocol, PLPhotoAnalysisVisionServiceFaceProcessingProtocol>
+- (void)writeQALog:(NSString *)arg1;
+- (void)notifyLibraryAvailableAtURL:(NSURL *)arg1;
 - (void)cancelOperationsWithIdentifiers:(NSArray *)arg1 context:(NSDictionary *)arg2 reply:(void (^)(NSDictionary *))arg3;
 - (void)dumpAnalysisStatusWithContext:(NSDictionary *)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;
 @end

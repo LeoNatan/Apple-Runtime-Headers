@@ -8,6 +8,7 @@
 
 @class CKBrowserFullscreenRevealDimmingView, UIStatusBar, UIStatusBarWindow, UIView;
 
+__attribute__((visibility("hidden")))
 @interface CKBrowserFullscreenRevealPresentationController : UIPresentationController
 {
     _Bool _presenting;

@@ -8,6 +8,7 @@
 
 @class ESDContainer;
 
+__attribute__((visibility("hidden")))
 @interface ESDObject : NSObject
 {
     struct EshObject *mEshObject;

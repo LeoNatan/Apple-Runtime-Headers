@@ -6,24 +6,25 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface USSRemoteNotificationRequest : NSObject <USSXPCEncodable>
+@interface USSRemoteNotificationRequest : NSObject <NSSecureCoding>
 {
     int _targetPid;
     NSString *_targetBundleID;
     NSDictionary *_notificationPayload;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)requestForTargetBundleID:(id)arg1 targetPid:(int)arg2 notificationPayload:(id)arg3;
 @property(copy, nonatomic) NSDictionary *notificationPayload; // @synthesize notificationPayload=_notificationPayload;
 @property(nonatomic) int targetPid; // @synthesize targetPid=_targetPid;
 @property(copy, nonatomic) NSString *targetBundleID; // @synthesize targetBundleID=_targetBundleID;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithTargetBundleID:(id)arg1 targetPid:(int)arg2 notificationPayload:(id)arg3;
 
 @end

@@ -40,13 +40,13 @@
 @property(readonly, nonatomic) __weak HDDatabase *database; // @synthesize database=_database;
 @property(readonly, copy, nonatomic) NSUUID *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
 - (void).cxx_destruct;
-- (void)_transaction_runTransactionWithOptions:(unsigned long long)arg1;
+- (void)_transaction_runTransactionWithContext:(id)arg1;
 - (void)_enableAutomaticRollbackTimer;
 - (_Bool)rollbackDueToError:(id)arg1 errorOut:(id *)arg2;
 - (_Bool)commitWithErrorOut:(id *)arg1;
 - (_Bool)performInTransactionWithErrorOut:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (void)dealloc;
-- (id)initWithDatabase:(id)arg1 options:(unsigned long long)arg2 transactionTimeout:(double)arg3 continuationTimeout:(double)arg4 error:(id *)arg5;
+- (id)initWithDatabase:(id)arg1 context:(id)arg2 transactionTimeout:(double)arg3 continuationTimeout:(double)arg4 error:(id *)arg5;
 
 @end
 

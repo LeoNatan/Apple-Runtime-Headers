@@ -21,6 +21,7 @@
 
 @optional
 @property(readonly, nonatomic) id <FCNewsAppConfiguration><FCJSONEncodableObjectProviding> jsonEncodableAppConfiguration;
+@property(readonly, nonatomic) id <FCNewsAppConfiguration> fetchedAppConfiguration;
 @property(readonly, copy, nonatomic) NSString *feldsparID;
 @property(readonly, nonatomic) NSArray *segmentSetIDs;
 @property(readonly, nonatomic) NSArray *treatmentIDs;

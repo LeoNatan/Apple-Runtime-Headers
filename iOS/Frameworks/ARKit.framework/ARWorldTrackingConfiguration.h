@@ -10,9 +10,14 @@
 
 @interface ARWorldTrackingConfiguration : ARConfiguration
 {
+    _Bool _wantsHDREnvironmentTextures;
+    _Bool _automaticImageScaleEstimationEnabled;
+    _Bool _collaborationEnabled;
+    _Bool _userFaceTrackingEnabled;
     _Bool _relocalizationEnabled;
     _Bool _mlModelEnabled;
     _Bool _deliverRawSceneUnderstandingResults;
+    _Bool _skeletonDetectionEnabled;
     long long _environmentTexturing;
     unsigned long long _planeDetection;
     ARWorldMap *_initialWorldMap;
@@ -23,27 +28,42 @@
     double _minVergenceAngle;
 }
 
++ (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
++ (_Bool)supportsFrontCameraFaceAnchors;
++ (_Bool)supportsUserFaceTracking;
++ (id)supportedVideoFormatsForUserFaceTracking;
 + (id)supportedVideoFormats;
 + (id)new;
 + (_Bool)isSupported;
+@property(nonatomic, getter=isSkeletonDetectionEnabled) _Bool skeletonDetectionEnabled; // @synthesize skeletonDetectionEnabled=_skeletonDetectionEnabled;
 @property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;
 @property(nonatomic, getter=isMLModelEnabled) _Bool mlModelEnabled; // @synthesize mlModelEnabled=_mlModelEnabled;
 @property(nonatomic) double minVergenceAngle; // @synthesize minVergenceAngle=_minVergenceAngle;
 @property(copy, nonatomic) NSString *slamConfiguration; // @synthesize slamConfiguration=_slamConfiguration;
 @property(nonatomic) _Bool relocalizationEnabled; // @synthesize relocalizationEnabled=_relocalizationEnabled;
+@property(nonatomic, getter=userFaceTrackingEnabled) _Bool userFaceTrackingEnabled; // @synthesize userFaceTrackingEnabled=_userFaceTrackingEnabled;
+@property(nonatomic, getter=isCollaborationEnabled) _Bool collaborationEnabled; // @synthesize collaborationEnabled=_collaborationEnabled;
 @property(copy, nonatomic) NSSet *detectionObjects; // @synthesize detectionObjects=_detectionObjects;
 @property(nonatomic) long long maximumNumberOfTrackedImages; // @synthesize maximumNumberOfTrackedImages=_maximumNumberOfTrackedImages;
+@property(nonatomic) _Bool automaticImageScaleEstimationEnabled; // @synthesize automaticImageScaleEstimationEnabled=_automaticImageScaleEstimationEnabled;
 @property(copy, nonatomic) NSSet *detectionImages; // @synthesize detectionImages=_detectionImages;
 @property(retain, nonatomic) ARWorldMap *initialWorldMap; // @synthesize initialWorldMap=_initialWorldMap;
 @property(nonatomic) unsigned long long planeDetection; // @synthesize planeDetection=_planeDetection;
+@property(nonatomic) _Bool wantsHDREnvironmentTextures; // @synthesize wantsHDREnvironmentTextures=_wantsHDREnvironmentTextures;
 @property(nonatomic) long long environmentTexturing; // @synthesize environmentTexturing=_environmentTexturing;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (void)setFrontCameraFaceAnchorsEnabled:(_Bool)arg1;
 - (id)_trackingOptions;
+- (id)secondaryTechniques;
 - (void)createTechniquesWithParallelTechniques:(id)arg1 serialTechniques:(id)arg2;
+- (_Bool)shouldEnableVisionDataForImageSensorSettings:(id)arg1;
+- (id)visionDataParametersForWorldTrackingOptions:(id)arg1;
+- (id)imageSensorSettingsForUserFaceTracking;
 - (id)imageSensorSettings;
+- (id)parentImageSensorSettings;
 - (id)init;
 
 // Remaining properties

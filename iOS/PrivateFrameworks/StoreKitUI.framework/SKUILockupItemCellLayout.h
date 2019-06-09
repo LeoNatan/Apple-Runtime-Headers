@@ -8,6 +8,7 @@
 
 @class NSString, SKUIEmbeddedMediaView, SKUILockupMetadataView, UIImage, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUILockupItemCellLayout : SKUIItemCellLayout
 {
     struct UIEdgeInsets _contentInsets;

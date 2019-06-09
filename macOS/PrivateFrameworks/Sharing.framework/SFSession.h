@@ -9,7 +9,7 @@
 #import <Sharing/NSSecureCoding-Protocol.h>
 #import <Sharing/SFXPCInterface-Protocol.h>
 
-@class CUAppleIDClient, CUMessageSession, CUMessageSessionServer, NSDate, NSDictionary, NSMutableData, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint, SFAppleIDContactInfo, SFDevice, TRSession;
+@class CUAppleIDClient, CUMessageSession, CUMessageSessionServer, NSDictionary, NSMutableData, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint, SFAppleIDContactInfo, SFDevice, TRSession;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction;
 
 @interface SFSession : NSObject <NSSecureCoding, SFXPCInterface>
@@ -53,15 +53,6 @@
     unsigned int _pairSetupFlags;
     struct PairingSessionPrivate *_pairSetupSession;
     unsigned int _pairSetupXID;
-    NSMutableData *_pairTLSBuffer;
-    BOOL _pairTLSSuccess;
-    NSDate *_pairTLSStart;
-    CDUnknownBlockType _pairTLSCompletion;
-    BOOL _pairTLSConfigured;
-    struct OpaqueSecIdentityRef *_pairTLSIdentity;
-    BOOL _pairTLSClient;
-    NSObject<OS_dispatch_queue> *_pairTLSQueue;
-    struct SSLContext *_pairTLSSession;
     CDUnknownBlockType _pairVerifyCompletion;
     BOOL _pairVerifyEnded;
     unsigned int _pairVerifyFlags;
@@ -165,8 +156,6 @@
 - (void)deregisterRequestID:(id)arg1;
 - (void)_registerRequestID:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_sendTLSEncryptedObject:(id)arg1;
-- (void)sendTLSEncryptedObject:(id)arg1;
 - (void)_sendEncryptedObject:(id)arg1;
 - (void)sendWithFlags:(unsigned int)arg1 object:(id)arg2;
 - (void)_sendRequestWithFlags:(unsigned int)arg1 object:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
@@ -181,16 +170,6 @@
 - (void)_pairVerify:(id)arg1 start:(BOOL)arg2;
 - (void)_pairVerifyWithFlags:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pairVerifyWithFlags:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_tlsCertificateChainFromTrust:(struct __SecTrust *)arg1;
-- (void)_tlsReceivedValidationRecordData:(id)arg1;
-- (void)_tlsReceivedObjectWithLength:(unsigned long long)arg1;
-- (void)_pairTLSReceivedData:(id)arg1 type:(unsigned char)arg2;
-- (void)pairTLSReceivedData:(id)arg1 type:(unsigned char)arg2;
-- (void)_pairTLSCompleted:(int)arg1;
-- (int)_pairTLSStart;
-- (int)_pairTLSEnsureConfigured;
-- (void)pairTLSWithIdentity:(struct OpaqueSecIdentityRef *)arg1 asClient:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)pairTLSClient:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_pairSetupCompleted:(int)arg1;
 - (void)_pairSetupTryPIN:(id)arg1;
 - (void)pairSetupTryPIN:(id)arg1;

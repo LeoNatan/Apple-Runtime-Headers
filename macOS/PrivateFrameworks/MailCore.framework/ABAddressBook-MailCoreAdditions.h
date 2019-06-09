@@ -7,6 +7,7 @@
 #import <AddressBook/ABAddressBook.h>
 
 @interface ABAddressBook (MailCoreAdditions)
++ (BOOL)_firstNameShouldBeFirstForRecord:(id)arg1;
 - (id)bestRecordMatchingFormattedAddress:(id)arg1;
 @end
 

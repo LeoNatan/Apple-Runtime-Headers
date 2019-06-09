@@ -13,6 +13,7 @@
 - (void)_bindAndRegisterDefaults;
 
 // Remaining properties
+@property(nonatomic) _Bool allowLocketGesture; // @dynamic allowLocketGesture;
 @property(nonatomic) _Bool forceWakeToMaps; // @dynamic forceWakeToMaps;
 @property(nonatomic) _Bool limitFeaturesForRemoteLock; // @dynamic limitFeaturesForRemoteLock;
 @property(nonatomic) double nowPlayingTimeout; // @dynamic nowPlayingTimeout;

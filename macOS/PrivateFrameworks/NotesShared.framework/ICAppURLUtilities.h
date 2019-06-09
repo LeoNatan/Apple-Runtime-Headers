@@ -20,6 +20,7 @@
 + (BOOL)isQuickNoteModeURL:(id)arg1;
 + (id)urlForQuickNoteWithOptions:(id)arg1;
 + (BOOL)isShowHTMLNoteURL:(id)arg1;
++ (BOOL)isShowLegacyNoteURL:(id)arg1;
 + (BOOL)isShowNoteURL:(id)arg1;
 + (BOOL)isShowFolderListURL:(id)arg1;
 + (id)appURLForFolderList;

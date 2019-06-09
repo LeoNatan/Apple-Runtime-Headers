@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INBillPayee, INCurrencyAmount, NSDateComponents;
+@class INBillPayee, INCurrencyAmount, NSDateComponents, NSString;
 
-@interface INBillDetails : NSObject <NSCopying, NSSecureCoding>
+@interface INBillDetails : NSObject <INJSONSerializable, NSCopying, NSSecureCoding>
 {
     INBillPayee *_billPayee;
     INCurrencyAmount *_amountDue;
@@ -23,6 +24,7 @@
     int _paymentStatus;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) int paymentStatus; // @synthesize paymentStatus=_paymentStatus;
 @property(nonatomic) int billType; // @synthesize billType=_billType;
@@ -35,13 +37,18 @@
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (id)initWithBillType:(int)arg1 paymentStatus:(int)arg2 billPayee:(id)arg3 amountDue:(id)arg4 minimumDue:(id)arg5 lateFee:(id)arg6 dueDate:(id)arg7 paymentDate:(id)arg8;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

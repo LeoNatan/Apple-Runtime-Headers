@@ -7,6 +7,11 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (GKSetupAssistantSupport)
++ (id)_gkNibWithPlatformName:(id)arg1;
++ (id)_gkNibWithBaseName:(id)arg1;
++ (id)_gkNib;
++ (id)_gkPlatformNibNameForBaseName:(id)arg1;
++ (id)_gkPlatformNibName;
 - (void)_gkSetupAccountWithParamaters:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_gkAuthenticatedPlayerID;
 @end

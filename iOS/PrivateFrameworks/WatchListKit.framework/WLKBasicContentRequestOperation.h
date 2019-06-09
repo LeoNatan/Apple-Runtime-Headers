@@ -4,21 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WatchListKit/WLKNetworkRequestOperation.h>
+#import <WatchListKit/WLKUTSNetworkRequestOperation.h>
 
-@class NSArray, WLKBasicContentMetadata;
+@class NSArray, WLKBasicContentMetadata, WLKBasicContentRequestResponse;
 
-@interface WLKBasicContentRequestOperation : WLKNetworkRequestOperation
+@interface WLKBasicContentRequestOperation : WLKUTSNetworkRequestOperation
 {
     NSArray *_contentIDs;
+    WLKBasicContentRequestResponse *_response;
 }
 
+@property(readonly, nonatomic) WLKBasicContentRequestResponse *response; // @synthesize response=_response;
 @property(readonly, copy, nonatomic) NSArray *contentIDs; // @synthesize contentIDs=_contentIDs;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) WLKBasicContentMetadata *basicContentMetadata;
-- (id)responseProcessor;
-- (id)initWithContentIDs:(id)arg1;
-- (id)initWithContentID:(id)arg1;
+- (void)processResponse;
+- (id)initWithContentIDs:(id)arg1 caller:(id)arg2;
+- (id)initWithContentID:(id)arg1 caller:(id)arg2;
 
 @end
 

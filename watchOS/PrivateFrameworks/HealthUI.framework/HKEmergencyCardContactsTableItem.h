@@ -6,36 +6,37 @@
 
 #import <HealthUI/HKEmergencyCardTableItem.h>
 
-#import <HealthUI/CNContactPickerDelegate-Protocol.h>
 #import <HealthUI/HKMedicalIDEditorCellEditDelegate-Protocol.h>
+#import <HealthUI/_HKEmergencyContactPickerDelegate-Protocol.h>
 #import <HealthUI/_HKEmergencyContactRelationshipPickerDelegate-Protocol.h>
 
-@class HKCoreTelephonyUtilities, NSString, UITableViewCell, _HKEmergencyContact;
+@class HKCoreTelephonyUtilities, UITableViewCell, _HKEmergencyContact, _HKEmergencyContactPicker;
+@protocol HKEmergencyCardContactUpdateDelegate;
 
-@interface HKEmergencyCardContactsTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, _HKEmergencyContactRelationshipPickerDelegate, CNContactPickerDelegate>
+@interface HKEmergencyCardContactsTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, _HKEmergencyContactPickerDelegate, _HKEmergencyContactRelationshipPickerDelegate>
 {
     UITableViewCell *_lastDequeuedAddContactCell;
     _HKEmergencyContact *_selectedContact;
+    _HKEmergencyContactPicker *_contactPicker;
     _Bool _selectedContactIsBeingAdded;
+    id <HKEmergencyCardContactUpdateDelegate> _delegate;
     HKCoreTelephonyUtilities *_coreTelephonyUtilities;
 }
 
 @property(retain, nonatomic) HKCoreTelephonyUtilities *coreTelephonyUtilities; // @synthesize coreTelephonyUtilities=_coreTelephonyUtilities;
+@property(nonatomic) __weak id <HKEmergencyCardContactUpdateDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)titleForHeader;
 - (id)viewOnlyTitle;
 - (id)titleForFooter;
-- (id)_emergencyContactWithContact:(id)arg1 property:(id)arg2;
 - (void)_didSelectContact:(id)arg1 property:(id)arg2;
-- (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
-- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
+- (void)emergencyContactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
+- (void)emergencyContactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)_addEmergencyContactToData:(id)arg1;
 - (void)emergencyContactRelationshipPickerDidCancel:(id)arg1;
 - (void)emergencyContactRelationshipPicker:(id)arg1 didChooseRelationshipNamed:(id)arg2;
 - (void)medicalIDEditorCellDidTapLabel:(id)arg1;
 - (void)medicalIDEditorCellDidChangeValue:(id)arg1;
-- (id)meContactIdentifier;
-- (void)_presentEmergencyContactDeletionAlertIfNecessary;
 - (int)commitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
 - (int)editingStyleForRowAtIndex:(int)arg1;
 - (_Bool)canEditRowAtIndex:(int)arg1;
@@ -53,12 +54,7 @@
 - (int)contactIndexForRowIndex:(int)arg1;
 - (int)itemTypeForRowIndex:(int)arg1;
 - (_Bool)hasPresentableData;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (id)initInEditMode:(_Bool)arg1;
 
 @end
 

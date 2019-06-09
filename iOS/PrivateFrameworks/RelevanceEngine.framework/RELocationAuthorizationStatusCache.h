@@ -26,7 +26,7 @@
 - (void)_s_queue_addCallbackInfo:(id)arg1 forBundleIdentifier:(id)arg2;
 - (int)_cachedStatusForBundleIdentifier:(id)arg1;
 - (int)cachedAuthorizationStatusForBundleIdentifier:(id)arg1 invalidationUpdateQueue:(id)arg2 withCallback:(CDUnknownBlockType)arg3;
-- (id)init;
+- (id)_init;
 
 @end
 

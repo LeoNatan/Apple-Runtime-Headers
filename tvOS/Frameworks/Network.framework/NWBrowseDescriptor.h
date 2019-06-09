@@ -8,7 +8,7 @@
 
 #import <Network/NWPrettyDescription-Protocol.h>
 
-@class NSString, NWInterface;
+@class NSString;
 @protocol OS_nw_browse_descriptor;
 
 @interface NWBrowseDescriptor : NSObject <NWPrettyDescription>
@@ -27,12 +27,13 @@
 - (id)encodedData;
 - (id)initWithEncodedData:(id)arg1;
 - (void)browseWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(retain, nonatomic) NWInterface *interface;
 @property(readonly, copy, nonatomic) NSString *privateDescription;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDescriptor:(id)arg1;
+@property(readonly, nonatomic) NSString *bonjourServiceType;
+@property(readonly, nonatomic) NSString *bonjourServiceDomain;
 
 @end
 

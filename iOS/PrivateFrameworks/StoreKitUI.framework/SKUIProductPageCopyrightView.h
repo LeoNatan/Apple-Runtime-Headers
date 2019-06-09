@@ -8,6 +8,7 @@
 
 @class NSString, SKUIColorScheme, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageCopyrightView : UIView
 {
     UILabel *_copyrightLabel;

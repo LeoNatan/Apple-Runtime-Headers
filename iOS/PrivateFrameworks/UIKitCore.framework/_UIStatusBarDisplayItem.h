@@ -9,12 +9,13 @@
 #import <UIKitCore/_UIStatusBarActionable-Protocol.h>
 #import <UIKitCore/_UIStatusBarPrioritized-Protocol.h>
 
-@class NSString, UIView, _UIStatusBarAction, _UIStatusBarDisplayItemPlacement, _UIStatusBarIdentifier, _UIStatusBarItem, _UIStatusBarRegion;
+@class NSString, UIView, _UIStatusBarAction, _UIStatusBarDisplayItemPlacement, _UIStatusBarIdentifier, _UIStatusBarItem, _UIStatusBarRegion, _UIStatusBarStyleAttributes;
 @protocol UILayoutItem, _UIStatusBarDisplayable;
 
 @interface _UIStatusBarDisplayItem : NSObject <_UIStatusBarPrioritized, _UIStatusBarActionable>
 {
     _Bool _enabled;
+    _Bool _background;
     _Bool _floating;
     _Bool _needsAddingToLayout;
     UIView<_UIStatusBarDisplayable> *_view;
@@ -25,6 +26,7 @@
     double _alpha;
     double _viewAlpha;
     double _baselineOffset;
+    _UIStatusBarStyleAttributes *_overriddenStyleAttributes;
     long long _overriddenVerticalAlignment;
     _UIStatusBarRegion *_region;
     UIView *_containerView;
@@ -42,11 +44,13 @@
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) __weak _UIStatusBarRegion *region; // @synthesize region=_region;
 @property(nonatomic) long long overriddenVerticalAlignment; // @synthesize overriddenVerticalAlignment=_overriddenVerticalAlignment;
+@property(retain, nonatomic) _UIStatusBarStyleAttributes *overriddenStyleAttributes; // @synthesize overriddenStyleAttributes=_overriddenStyleAttributes;
 @property(nonatomic) double baselineOffset; // @synthesize baselineOffset=_baselineOffset;
 @property(nonatomic) struct CGAffineTransform viewTransform; // @synthesize viewTransform=_viewTransform;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(nonatomic) double viewAlpha; // @synthesize viewAlpha=_viewAlpha;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
+@property(nonatomic, getter=isBackground) _Bool background; // @synthesize background=_background;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(readonly, nonatomic) __weak _UIStatusBarItem *item; // @synthesize item=_item;

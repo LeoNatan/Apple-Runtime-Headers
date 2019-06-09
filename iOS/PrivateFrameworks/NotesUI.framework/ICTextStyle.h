@@ -17,6 +17,7 @@
 
 + (_Bool)autoListInsertionEnabled;
 + (void)setAutoListInsertionEnabled:(_Bool)arg1;
++ (id)styleForNamedStyle:(unsigned int)arg1;
 + (id)settingsDescriptionForNamedStyle:(unsigned int)arg1;
 + (id)icaxStyleDescriptionForNamedStyle:(unsigned int)arg1;
 + (id)titleForNamedStyle:(unsigned int)arg1;
@@ -28,6 +29,7 @@
 + (id)bulletStyle;
 + (id)fixedWidthStyle;
 + (id)bodyStyle;
++ (id)subheadingStyle;
 + (id)headingStyle;
 + (id)titleStyle;
 + (id)defaultTextStyles;
@@ -36,6 +38,7 @@
 @property(retain) NSDictionary *attributes; // @synthesize attributes=_attributes;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *icaxStyleDescription;
+@property(readonly) _Bool isTextList;
 
 @end
 

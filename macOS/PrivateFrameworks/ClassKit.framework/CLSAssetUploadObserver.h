@@ -47,6 +47,7 @@
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -19,6 +19,7 @@
     _INPBString *_eventType;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)eventDescriptorsType;
 @property(retain, nonatomic) _INPBString *eventType; // @synthesize eventType=_eventType;
 @property(copy, nonatomic) NSArray *eventDescriptors; // @synthesize eventDescriptors=_eventDescriptors;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasEventType;

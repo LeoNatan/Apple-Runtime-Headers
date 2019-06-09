@@ -27,7 +27,7 @@
 - (void)setSchedule:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)scheduleForBundleIdentifier:(id)arg1;
 - (id)allBundleIdentifiers;
-- (id)initWithDirectory:(id)arg1;
+- (id)initWithDirectory:(id)arg1 librarian:(id)arg2;
 - (id)_dateFormatter;
 
 @end

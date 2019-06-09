@@ -6,7 +6,11 @@
 
 #import <MapKit/MKShape.h>
 
-@interface MKMultiPoint : MKShape
+#import <MapKit/MKGeoJSONObject-Protocol.h>
+
+@class NSString;
+
+@interface MKMultiPoint : MKShape <MKGeoJSONObject>
 {
     CDStruct_c3b9c2ee *_points;
     unsigned int _pointCount;
@@ -14,6 +18,8 @@
 }
 
 @property(readonly, nonatomic) unsigned int pointCount; // @synthesize pointCount=_pointCount;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (_Bool)intersectsMapRect:(CDStruct_02837cd9)arg1;
 - (struct CLLocationCoordinate2D)coordinate;
 - (void)getCoordinates:(struct CLLocationCoordinate2D *)arg1 range:(struct _NSRange)arg2;
@@ -21,11 +27,19 @@
 - (void)_setPoints:(const CDStruct_c3b9c2ee *)arg1 count:(unsigned int)arg2;
 - (void)_setCoordinates:(const struct CLLocationCoordinate2D *)arg1 count:(unsigned int)arg2;
 - (void)_wrapAroundTheDateline:(const struct CLLocationCoordinate2D *)arg1 count:(unsigned int)arg2;
+- (void)_pointsDidChange;
 - (void)_calculateBounds;
 - (void)_setBounds:(CDStruct_02837cd9)arg1;
 - (CDStruct_02837cd9)boundingMapRect;
 - (CDStruct_c3b9c2ee *)points;
 - (void)dealloc;
+- (id)_initWithGeoJSONObject:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

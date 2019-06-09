@@ -9,6 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface CAIOSurfaceCodingProxy : CACodingProxy
 {
+    struct __IOSurface *_surface;
 }
 
 + (_Bool)supportsSecureCoding;

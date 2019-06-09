@@ -6,6 +6,7 @@
 
 #import <OfficeImport/CHDAxis.h>
 
+__attribute__((visibility("hidden")))
 @interface CHDSeriesAxis : CHDAxis
 {
     int mLabelFrequency;

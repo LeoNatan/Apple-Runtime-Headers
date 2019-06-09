@@ -30,7 +30,6 @@
 - (unsigned long long)hash;
 - (id)description;
 - (struct __CFNetService *)_internalNetService;
-- (void)finalize;
 - (void)dealloc;
 - (void)_dispatchCallBackWithError:(CDStruct_59046461)arg1;
 - (void)stop;
@@ -55,8 +54,7 @@
 - (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3;
 - (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(int)arg4;
 - (id)initWithCFNetService:(struct __CFNetService *)arg1;
-- (void)setProtocolSpecificInformation:(id)arg1;
-- (id)protocolSpecificInformation;
+- (id)init;
 
 @end
 

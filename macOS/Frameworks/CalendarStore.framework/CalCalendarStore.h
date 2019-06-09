@@ -24,6 +24,7 @@
 + (id)eventPredicateWithStartDate:(id)arg1 endDate:(id)arg2 UID:(id)arg3 calendars:(id)arg4;
 + (id)eventPredicateWithStartDate:(id)arg1 endDate:(id)arg2 calendars:(id)arg3;
 + (id)_dateFromPotentialNSCalendarDate:(id)arg1;
++ (int)_calStoreSpanWithCalSpan:(int)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)defaultCalendarStore;
 + (BOOL)requestAccessForServiceName:(struct __CFString *)arg1;

@@ -8,6 +8,7 @@
 
 @class NSView;
 
+__attribute__((visibility("hidden")))
 @interface AVFloatingCaptureControlsViewController : AVCaptureControlsRecordingViewController
 {
     NSView *_initialFirstResponder;

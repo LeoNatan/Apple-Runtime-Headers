@@ -18,7 +18,6 @@
 + (id)sharedAVAssetCollectionFactory;
 - (void)forgetCollectionWithURL:(id)arg1;
 - (id)collectionWithURL:(id)arg1 options:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (void)_cleanUpUncollectables;
 - (id)init;

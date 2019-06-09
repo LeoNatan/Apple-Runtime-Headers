@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSString, TCDumpNumeric;
 
+__attribute__((visibility("hidden")))
 @interface TCDumpUnion : TCDumpType
 {
     NSString *mSelectorFieldName;

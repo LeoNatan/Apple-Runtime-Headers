@@ -21,6 +21,7 @@
     NSArray *_nowPlayingOrigins;
     _Bool _shouldObserveArtwork;
     _Bool _shouldObservePlaybackQueue;
+    _Bool _shouldObserveLibraryAddStatus;
     id <NMRNowPlayingControllerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
     struct os_unfair_lock_s _observerLock;
@@ -29,6 +30,7 @@
 
 @property(readonly, nonatomic) unsigned int filteringOptions; // @synthesize filteringOptions=_filteringOptions;
 - (void).cxx_destruct;
+- (void)sendMediaRemoteCommand:(unsigned int)arg1 toOrigin:(id)arg2 options:(id)arg3 launchApp:(_Bool)arg4;
 - (id)_evaluateNowPlayingOriginsFromOrigins:(id)arg1;
 - (id)_evaluateActiveNowPlayingOriginForOrderedOrigins:(id)arg1;
 - (id)_originControllerForOrigin:(id)arg1;
@@ -37,7 +39,7 @@
 @property(nonatomic) __weak id <NMRNowPlayingControllerDelegate> delegate;
 - (void)_removeOriginControllerWithOrigin:(id)arg1;
 - (void)_addOriginControllerWithOrigin:(id)arg1;
-- (void)_updateOriginControllers:(id)arg1;
+- (void)_handleAvailableOriginsDidChangeNotification:(id)arg1;
 - (void)_setupOriginControllers;
 - (void)originObserver:(id)arg1 didUpdatePlaybackQueueForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateTimestampForOrigin:(id)arg2;
@@ -49,13 +51,14 @@
 - (void)prepareLocalOriginObserverForNewPlaybackIntent;
 - (void)setOriginCommandHandler:(id)arg1 forOrigin:(id)arg2;
 - (void)setOriginObserver:(id)arg1 forOrigin:(id)arg2;
+@property(nonatomic) _Bool shouldObserveLibraryAddStatus;
 @property(nonatomic) _Bool shouldObservePlaybackQueue;
 @property(nonatomic) _Bool shouldObserveArtwork;
 - (void)endObservingOrigins;
 - (void)beginObservingOrigins;
 - (void)removeObserverDelegate:(id)arg1;
 - (void)addObserverDelegate:(id)arg1;
-- (void)sendMediaRemoteCommand:(unsigned int)arg1 toOrigin:(id)arg2 options:(id)arg3 launchApp:(_Bool)arg4;
+- (void)sendMediaRemoteCommand:(unsigned int)arg1 toOrigin:(id)arg2 options:(id)arg3 launchApp:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)launchNowPlayingURLForOrigin:(id)arg1;
 - (void)updateNowPlayingStateForAllOriginsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateNowPlayingStateForOrigin:(id)arg1 completion:(CDUnknownBlockType)arg2;

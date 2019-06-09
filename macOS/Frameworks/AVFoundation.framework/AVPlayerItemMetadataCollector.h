@@ -17,7 +17,6 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue;
 @property(readonly, nonatomic) __weak id <AVPlayerItemMetadataCollectorPushDelegate> delegate;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithIdentifiers:(id)arg1 classifyingLabels:(id)arg2;
 - (id)init;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (float)firstTabPosPastPos:(float)arg1 stringFormat:(id)arg2 isExplicit:(_Bool *)arg3;
 + (int)serializableObjectTypeForGUID:(id)arg1;
+- (void).cxx_destruct;
 - (int)play:(const char *)arg1 in_size:(unsigned int)arg2;
 - (void)resetLargeRecord;
 - (int)playRecord:(int)arg1 pData:(const char *)arg2 dataSize:(unsigned int)arg3 flags:(unsigned short)arg4;
@@ -106,7 +107,6 @@ __attribute__((visibility("hidden")))
 - (int)playUnknown:(const char *)arg1 in_size:(unsigned int)arg2 in_type:(int)arg3 in_flags:(unsigned short)arg4;
 - (void)setEffect:(id)arg1;
 - (id)effect;
-- (void)dealloc;
 - (id)initWithOwner:(id)arg1 canvas:(struct CGRect)arg2;
 
 @end

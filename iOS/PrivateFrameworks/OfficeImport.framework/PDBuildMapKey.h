@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *mGroupId;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
@@ -25,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (id)groupId;
 - (void)setDrawable:(id)arg1;
 - (id)drawable;
-- (void)dealloc;
 - (id)initWithDrawable:(id)arg1 groupId:(id)arg2;
 - (id)init;
 

@@ -9,6 +9,7 @@
 @interface NSURL (FCAdditions)
 + (id)fc_fileURLForWidgetReferralItemWithName:(id)arg1;
 + (id)fc_safeURLWithString:(id)arg1;
++ (id)fc_URLWithResourceID:(id)arg1;
 - (id)fc_URLByAddingQueryItem:(id)arg1;
 - (id)fc_URLByDeletingFragment;
 - (id)fc_URLByDeletingQuery;
@@ -25,5 +26,7 @@
 - (_Bool)fc_isHardPaywallNewsArticleURL:(out id *)arg1;
 - (_Bool)fc_isNewsIssueURL;
 - (_Bool)fc_isNewsArticleURL;
+- (id)fc_resourceID;
+- (_Bool)fc_isResourceURL;
 @end
 

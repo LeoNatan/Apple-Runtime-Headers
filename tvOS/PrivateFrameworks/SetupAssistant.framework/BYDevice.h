@@ -6,7 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@interface BYDevice : NSObject
+#import <SetupAssistant/BYDeviceProvider-Protocol.h>
+
+@class NSString;
+
+@interface BYDevice : NSObject <BYDeviceProvider>
 {
     _Bool _hasHomeButton;
     long long _type;
@@ -18,6 +22,13 @@
 @property(readonly, nonatomic) long long size; // @synthesize size=_size;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (id)init;
+- (id)currentDevice;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

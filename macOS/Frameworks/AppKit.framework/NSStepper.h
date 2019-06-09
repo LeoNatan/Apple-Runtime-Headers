@@ -7,18 +7,30 @@
 #import <AppKit/NSControl.h>
 
 #import <AppKit/NSAccessibilityStepper-Protocol.h>
+#import <AppKit/_NSStepperTrackable-Protocol.h>
 
-@class NSString;
+@class NSString, NSTrackingArea, _NSStepperModel;
 
-@interface NSStepper : NSControl <NSAccessibilityStepper>
+@interface NSStepper : NSControl <_NSStepperTrackable, NSAccessibilityStepper>
 {
-    unsigned int _reserved1;
-    unsigned int _reserved2;
-    unsigned int _reserved3;
-    unsigned int _reserved4;
+    NSTrackingArea *_pressureTrackingArea;
+    double _increment;
+    BOOL _valueWraps;
+    BOOL _autorepeat;
+    struct {
+        struct CGRect trackingRect;
+        double lastActionTimestamp;
+        char isTrackingUp;
+        char isTrackingWithPressure;
+    } _trackingState;
 }
 
++ (Class)_controlModelClass;
++ (Class)_defaultCellClass;
++ (BOOL)_controlClassSupportsNoCell;
++ (Class)_controlClassSupportingNoCell;
 + (void)initialize;
+@property(retain, setter=_setPressureTrackingArea:) NSTrackingArea *_pressureTrackingArea; // @synthesize _pressureTrackingArea;
 - (BOOL)accessibilityPerformDecrement;
 - (BOOL)accessibilityPerformIncrement;
 - (id)accessibilityValue;
@@ -26,23 +38,44 @@
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (struct NSEdgeInsets)alignmentRectInsets;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (struct CGSize)intrinsicContentSize;
+- (void)layout;
+- (BOOL)_sendActionFrom:(id)arg1;
+- (void)_doSingleStep:(BOOL)arg1;
 - (void)moveDown:(id)arg1;
 - (void)moveUp:(id)arg1;
+- (void)performClick:(id)arg1;
+- (BOOL)_continueTrackingWithPressureEvent:(id)arg1;
+- (void)_continueTrackingWithPeriodicEvent:(id)arg1;
+- (void)_stopTrackingFromPoint:(struct CGPoint)arg1 endingAtPoint:(struct CGPoint)arg2;
+- (BOOL)_continueTrackingFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2;
+- (BOOL)_startTrackingAt:(struct CGPoint)arg1;
+- (void)mouseDown:(id)arg1;
+- (void)updateTrackingAreas;
 - (BOOL)acceptsFirstMouse:(id)arg1;
+- (void)drawFocusRingMask;
+- (struct CGRect)focusRingMaskBounds;
+- (void)updateLayer;
+- (void)drawRect:(struct CGRect)arg1;
+- (Class)_classToCheckForWantsUpdateLayer;
+@property(readonly) _NSStepperModel *_controlModel;
 @property BOOL autorepeat;
 @property BOOL valueWraps;
 @property double increment;
 @property double maxValue;
 @property double minValue;
-- (BOOL)_shouldRerouteCellAPIs;
+- (void)_transferStateToCell:(id)arg1;
+- (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 - (id)ns_widgetType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(getter=isHighlighted) BOOL highlighted;
 @property(readonly) Class superclass;
 
 @end

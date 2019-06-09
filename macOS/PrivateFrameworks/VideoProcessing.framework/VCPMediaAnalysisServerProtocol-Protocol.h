@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray;
+@class NSArray, NSDictionary, NSURL;
 
 @protocol VCPMediaAnalysisServerProtocol
 - (void)cancelAllRequests;
 - (void)cancelRequest:(int)arg1;
-- (void)requestAnalysis:(int)arg1 forAssets:(NSArray *)arg2 realTime:(BOOL)arg3 withReply:(void (^)(NSDictionary *, NSError *))arg4;
+- (void)requestAssetProcessing:(int)arg1 withTaskID:(unsigned long long)arg2 forLocalIdentifiers:(NSArray *)arg3 fromPhotoLibraryWithURL:(NSURL *)arg4 withOptions:(NSDictionary *)arg5 andReply:(void (^)(NSDictionary *, NSError *))arg6;
+- (void)requestLibraryProcessing:(int)arg1 withTaskID:(unsigned long long)arg2 forPhotoLibraryURL:(NSURL *)arg3 withOptions:(NSDictionary *)arg4 andReply:(void (^)(NSError *))arg5;
+- (void)requestAssetAnalysis:(int)arg1 forPhotoLibraryURL:(NSURL *)arg2 withLocalIdentifiers:(NSArray *)arg3 realTime:(BOOL)arg4 withReply:(void (^)(NSDictionary *, NSError *))arg5;
 @end
 

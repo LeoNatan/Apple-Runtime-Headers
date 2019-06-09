@@ -24,6 +24,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)new;
 @property(copy, nonatomic) NSOrderedSet *relatedItems; // @synthesize relatedItems=_relatedItems;
 @property(copy, nonatomic) NSString *debug; // @synthesize debug=_debug;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
@@ -40,6 +41,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 query:(id)arg2 url:(id)arg3 category:(id)arg4;
+- (id)init;
 
 @end
 

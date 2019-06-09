@@ -13,10 +13,13 @@
     long long _renderer;
 }
 
++ (void)setCurrentCapabilitiesOverride:(id)arg1;
++ (id)currentCapabilitiesOverride;
 + (id)currentCapabilities;
 @property(readonly, nonatomic) long long renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) long long device; // @synthesize device=_device;
 @property(readonly, nonatomic) long long platform; // @synthesize platform=_platform;
+- (struct CGSize)maximumHardcodedTextureSize;
 @property(readonly, nonatomic) struct CGSize maximumTextureSize;
 @property(readonly, nonatomic) _Bool hasLightningPort;
 @property(readonly, nonatomic) _Bool isRendererH5OrBelow;

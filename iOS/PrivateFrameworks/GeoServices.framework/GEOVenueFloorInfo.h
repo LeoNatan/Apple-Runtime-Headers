@@ -18,11 +18,11 @@
 
 + (_Bool)isIntegerValidOrdinal:(long long)arg1;
 + (id)floorInfosFromLevels:(id)arg1;
-+ (id)fakeFloorWithOrdinal:(short)arg1;
 @property(readonly, nonatomic) unsigned long long levelID; // @synthesize levelID=_levelID;
 @property(readonly, nonatomic) short ordinal; // @synthesize ordinal=_ordinal;
 - (id)initWithLevel:(id)arg1;
 - (id)initWithOrdinal:(short)arg1 levelID:(unsigned long long)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

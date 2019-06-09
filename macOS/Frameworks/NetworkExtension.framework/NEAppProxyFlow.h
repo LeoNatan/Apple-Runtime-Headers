@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
++ (id)copyRemoteEndpointFromFlow:(struct _NEFlow *)arg1;
 + (struct __CFError *)copyVPNFlowErrorFromFlowError:(id)arg1;
 + (id)flowErrorForVPNFlowError:(long long)arg1;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -27,6 +28,7 @@
 - (void)closeReadWithError:(id)arg1;
 - (void)openWithLocalEndpoint:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearEventHandlers;
+- (id)description;
 - (unsigned long long)hash;
 - (void)dealloc;
 - (id)initWithNEFlow:(struct _NEFlow *)arg1 queue:(id)arg2;

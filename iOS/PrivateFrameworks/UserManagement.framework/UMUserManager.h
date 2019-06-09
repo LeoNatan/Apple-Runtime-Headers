@@ -7,22 +7,51 @@
 #import <objc/NSObject.h>
 
 #import <UserManagement/UMUserManagement-Protocol.h>
+#import <UserManagement/UMUserPersonaAttributesList-Protocol.h>
+#import <UserManagement/UMUserPersonaLoginSessionManagement-Protocol.h>
+#import <UserManagement/UMUserPersonaManagement-Protocol.h>
 #import <UserManagement/UMUserSwitchManagement-Protocol.h>
 
-@class NSArray, NSString, UMUser;
-@protocol UMUserListUpdateObserver;
+@class NSArray, NSString, UMUser, UMUserPersona;
+@protocol UMUserListUpdateObserver, UMUserPersonaUpdateObserver;
 
-@interface UMUserManager : NSObject <UMUserManagement, UMUserSwitchManagement>
+@interface UMUserManager : NSObject <UMUserManagement, UMUserSwitchManagement, UMUserPersonaManagement, UMUserPersonaAttributesList, UMUserPersonaLoginSessionManagement>
 {
     NSArray *_allUsers;
     _Bool _switchIsOccurring;
     id <UMUserListUpdateObserver> _userListUpdateObserver;
+    id <UMUserPersonaUpdateObserver> _userPersonaUpdateObserver;
 }
 
 + (id)sharedManager;
+@property(nonatomic) __weak id <UMUserPersonaUpdateObserver> userPersonaUpdateObserver; // @synthesize userPersonaUpdateObserver=_userPersonaUpdateObserver;
 @property(nonatomic) _Bool switchIsOccurring; // @synthesize switchIsOccurring=_switchIsOccurring;
 @property(nonatomic) __weak id <UMUserListUpdateObserver> userListUpdateObserver; // @synthesize userListUpdateObserver=_userListUpdateObserver;
 - (void).cxx_destruct;
+- (void)registerPersonaListUpdateObserver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)personaLogoutWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 WithError:(id *)arg3;
+- (_Bool)personaLoginWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 WithError:(id *)arg3;
+- (_Bool)haveValidPersonaContextForPersonaUniqueString:(id)arg1;
+- (_Bool)haveValidPersonaContextForIDString:(id)arg1;
+- (id)listAllPersonaWithAttributes;
+- (void)fetchMultiPersonaBundleIdentifierWithcompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchBundleIdentifierForType:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchBundleIdentifierForPersonaWithPersonaUniqueString:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchBundleIdentifierForPersonaWithIDString:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setMultiPersonaBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setBundlesIdentifiers:(id)arg1 forUniquePersonaType:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setBundlesIdentifiers:(id)arg1 forPersonaWithPersonaUniqueString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setBundlesIdentifiers:(id)arg1 forUniquePersonaWithIDString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchAllPersonasWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchPersonaWithType:(int)arg1 CompletionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchPersonaWithPersonaUniqueString:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchPersonaWithIDString:(id)arg1 CompletionHandler:(CDUnknownBlockType)arg2;
+- (void)deleteUserPersonaWithProfileInfo:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)deleteUserPersonaWithType:(int)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)deleteUserPersonaWithPersonaUniqueString:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)deleteUserPersonaWithIDString:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)createUserPersona:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly, copy, nonatomic) UMUserPersona *currentPersona;
 - (void)userInteractionIsEnabled;
 - (void)resumeSync;
 - (void)terminateSyncWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -18,6 +18,7 @@
 - (id)additionalIndexableTextContentInNote;
 - (id)standaloneTitleForNote;
 - (_Bool)providesStandaloneTitleForNote;
+- (_Bool)showThumbnailInNoteList;
 - (_Bool)hasPreviews;
 - (_Bool)shouldShowInContentInfoText;
 

@@ -25,6 +25,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)currentContext;
 @property(retain, nonatomic) NSString *lunarCalendarLocaleID; // @synthesize lunarCalendarLocaleID=_lunarCalendarLocaleID;
 @property(retain, nonatomic) NSNumber *enhanceTextLegibilityEnabled; // @synthesize enhanceTextLegibilityEnabled=_enhanceTextLegibilityEnabled;
 @property(retain, nonatomic) NSString *tzVersion; // @synthesize tzVersion=_tzVersion;

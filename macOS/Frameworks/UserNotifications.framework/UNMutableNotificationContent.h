@@ -14,6 +14,7 @@
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy) NSDictionary *userInfo; // @dynamic userInfo;
+@property(copy) NSString *targetContentIdentifier; // @dynamic targetContentIdentifier;
 @property unsigned long long summaryArgumentCount; // @dynamic summaryArgumentCount;
 @property(copy) NSString *summaryArgument; // @dynamic summaryArgument;
 @property(copy) NSSet *topicIdentifiers; // @dynamic topicIdentifiers;
@@ -21,6 +22,8 @@
 @property(copy) NSString *threadIdentifier; // @dynamic threadIdentifier;
 @property(copy) NSString *subtitle; // @dynamic subtitle;
 @property(copy) UNNotificationSound *sound; // @dynamic sound;
+@property BOOL shouldPreemptSTAR; // @dynamic shouldPreemptSTAR;
+@property BOOL shouldPreemptPresentedNotification; // @dynamic shouldPreemptPresentedNotification;
 @property BOOL shouldUseRequestIdentifierForDismissalSync; // @dynamic shouldUseRequestIdentifierForDismissalSync;
 @property BOOL shouldSuppressSyncDismissalWhenRemoved; // @dynamic shouldSuppressSyncDismissalWhenRemoved;
 @property BOOL shouldSuppressScreenLightUp; // @dynamic shouldSuppressScreenLightUp;
@@ -45,6 +48,7 @@
 @property(copy) NSString *body; // @dynamic body;
 @property(copy) NSNumber *badge; // @dynamic badge;
 @property(copy) NSArray *attachments; // @dynamic attachments;
+@property(copy) NSString *accessoryImageName; // @dynamic accessoryImageName;
 
 @end
 

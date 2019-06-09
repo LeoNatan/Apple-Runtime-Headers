@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <CryptoTokenKit/TKProtocolTokenWatcher-Protocol.h>
+#import <CryptoTokenKit/TKProtocolTokenWatcherHost-Protocol.h>
 
 @class TKTokenWatcher;
 
 __attribute__((visibility("hidden")))
-@interface TKTokenWatcherProxy : NSObject <TKProtocolTokenWatcher>
+@interface TKTokenWatcherProxy : NSObject <TKProtocolTokenWatcherHost>
 {
     TKTokenWatcher *_watcher;
 }
 
 - (void).cxx_destruct;
-- (void)removedToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)insertedToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)removedToken:(id)arg1;
+- (void)insertedToken:(id)arg1;
 - (id)initWithWatcher:(id)arg1;
 
 @end

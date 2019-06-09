@@ -21,11 +21,12 @@
 @property __weak id <QLMarkupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (void)saveEditing;
+- (BOOL)saveEditingToURL:(id)arg1;
 - (void)applyCropIfNecessary;
 - (void)setFileURL:(id)arg1 withArchivedModelData:(id)arg2 preloadedView:(id)arg3;
 - (struct CGRect)positioningRectForCandidatePickerForContentViewController:(id)arg1;
 - (void)editDetectedForAnnotationController:(id)arg1;
+- (void)clearUndoStack;
 
 @end
 

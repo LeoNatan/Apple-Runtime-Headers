@@ -24,6 +24,7 @@
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToMatchedDetails:(id)arg1;
 - (id)_contactDetailFromContact:(id)arg1 column:(unsigned int)arg2 detailEntityId:(id)arg3;
 - (void)_processRawData:(id)arg1 tokens:(id)arg2 contact:(id)arg3;

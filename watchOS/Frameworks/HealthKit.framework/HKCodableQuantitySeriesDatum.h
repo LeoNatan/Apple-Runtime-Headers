@@ -12,12 +12,15 @@
 {
     double _timeInterval;
     double _value;
+    float _duration;
     struct {
         unsigned int timeInterval:1;
         unsigned int value:1;
+        unsigned int duration:1;
     } _has;
 }
 
+@property(nonatomic) float duration; // @synthesize duration=_duration;
 @property(nonatomic) double value; // @synthesize value=_value;
 @property(nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 - (void)mergeFrom:(id)arg1;
@@ -29,6 +32,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasDuration;
 @property(nonatomic) _Bool hasValue;
 @property(nonatomic) _Bool hasTimeInterval;
 

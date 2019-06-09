@@ -10,6 +10,7 @@
 
 @class CALayer, CAShapeLayer, NSArray, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarTrackView : NSView <CALayerDelegate>
 {
     BOOL _hasRoundedCorners;

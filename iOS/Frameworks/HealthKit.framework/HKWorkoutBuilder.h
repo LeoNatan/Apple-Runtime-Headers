@@ -10,7 +10,7 @@
 #import <HealthKit/HKWorkoutBuilderClientInterface-Protocol.h>
 #import <HealthKit/_HKXPCExportable-Protocol.h>
 
-@class HKDevice, HKHealthStore, HKStateMachine, HKTaskServerProxyProvider, HKWorkoutBuilderConfiguration, HKWorkoutConfiguration, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString, NSUUID;
+@class HKDevice, HKHealthStore, HKRetryableOperation, HKStateMachine, HKTaskServerProxyProvider, HKWorkoutBuilderConfiguration, HKWorkoutConfiguration, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HKWorkoutBuilder : NSObject <_HKXPCExportable, HKWorkoutBuilderClientInterface, HKStateMachineDelegate>
@@ -25,10 +25,13 @@
     _Bool _currentlyRunning;
     long long _serverConstructionState;
     HKStateMachine *_constructionStateMachine;
+    HKRetryableOperation *_retryableOperation;
     CDUnknownBlockType _beginCollectionCompletionHandler;
     CDUnknownBlockType _endCollectionCompletionHandler;
     CDUnknownBlockType _finishWorkoutCompletionHandler;
     CDUnknownBlockType _unitTest_serverStateChangedHandler;
+    CDUnknownBlockType _unitTest_recoveryFinishedHandler;
+    CDUnknownBlockType _unitTest_failureHandler;
     HKWorkoutConfiguration *_workoutConfiguration;
     NSMutableDictionary *_seriesBuilders;
     NSMutableDictionary *_statisticsByType;
@@ -51,6 +54,8 @@
 @property(retain, nonatomic) NSMutableDictionary *seriesBuilders; // @synthesize seriesBuilders=_seriesBuilders;
 @property(readonly, copy) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
 - (void).cxx_destruct;
+- (void)unitTest_setFailureHandler:(CDUnknownBlockType)arg1;
+- (void)unitTest_setRecoveryFinishedHandler:(CDUnknownBlockType)arg1;
 - (void)unitTest_setServerStateChangeHandler:(CDUnknownBlockType)arg1;
 - (void)_restoreRecoveredSeriesBuildersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_recoverWithCompletion:(CDUnknownBlockType)arg1;
@@ -65,6 +70,7 @@
 - (void)clientRemote_finishedWorkout:(id)arg1;
 - (void)clientRemote_stateDidChange:(long long)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void)clientRemote_synchronizeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)clientRemote_didFinishRecovery;
 - (void)clientRemote_didRecoverSeriesBuilders:(id)arg1;
 - (void)clientRemote_didChangeElapsedTimeBasisWithStartDate:(id)arg1 endDate:(id)arg2;
 - (void)clientRemote_didUpdateEvents:(id)arg1;
@@ -74,6 +80,7 @@
 - (void)_resourceQueue_setStatisticsMergeStrategy:(unsigned long long)arg1 forType:(id)arg2;
 - (void)_resourceQueue_updateDevice:(id)arg1;
 - (void)_resourceQueue_freezeSeriesBuilders;
+- (void)_resourceQueue_updateEvents:(id)arg1;
 - (void)_resourceQueue_updateElapsedTimeCache;
 - (id)_resourceQueue_seriesBuilderWithIdentifier:(id)arg1 type:(id)arg2;
 - (void)_resourceQueue_addMetadata:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -92,7 +99,7 @@
 - (unsigned long long)goalType;
 - (id)_currentSnapshot;
 - (id)_resourceQueue_eventsBetweenStartDate:(id)arg1 endDate:(id)arg2;
-- (id)_resourceQueue_endDateForSnapshot;
+- (id)_resourceQueue_endDateForSnapshotWithStartDate:(id)arg1;
 - (id)_resourceQueue_startDateForSnapshot;
 - (id)seriesBuilderForType:(id)arg1;
 - (id)statisticsForType:(id)arg1;

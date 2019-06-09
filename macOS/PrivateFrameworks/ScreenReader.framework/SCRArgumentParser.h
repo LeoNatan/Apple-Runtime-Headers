@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 + (id)versionString;
 + (id)processIdentifier;
+- (void).cxx_destruct;
 - (BOOL)_checkAndRunSplash;
 - (BOOL)_shouldStartVoiceOver;
 - (BOOL)_isRunningAsRoot;
@@ -34,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)startedByLaunchd;
 - (id)_setTestTargetApplicationPIDs:(id)arg1;
 - (id)_setTargetApplications:(id)arg1;
-- (id)_setShortCircuitSpeechSynthesizer:(id)arg1;
 - (id)_setQuickStart:(id)arg1;
 - (id)_setAutomaticStartAfterLogin:(id)arg1;
 - (id)_setKeyboardHelp:(id)arg1;

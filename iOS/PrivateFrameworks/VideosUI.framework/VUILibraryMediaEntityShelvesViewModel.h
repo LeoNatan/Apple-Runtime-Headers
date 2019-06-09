@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSArray *_shelfTypes;
     NSDictionary *_shelfViewControllerByShelfType;
+    NSDictionary *_mediaEntitiesByShelfType;
     CDUnknownBlockType _configureShelfViewControllerBlock;
     CDUnknownBlockType _shelfTypeComparator;
 }
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)_shelfTypesWithMediaEntitiesMap:(id)arg1 shelfTypeComparator:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) CDUnknownBlockType shelfTypeComparator; // @synthesize shelfTypeComparator=_shelfTypeComparator;
 @property(copy, nonatomic) CDUnknownBlockType configureShelfViewControllerBlock; // @synthesize configureShelfViewControllerBlock=_configureShelfViewControllerBlock;
+@property(readonly, nonatomic) NSDictionary *mediaEntitiesByShelfType; // @synthesize mediaEntitiesByShelfType=_mediaEntitiesByShelfType;
 @property(retain, nonatomic) NSDictionary *shelfViewControllerByShelfType; // @synthesize shelfViewControllerByShelfType=_shelfViewControllerByShelfType;
 @property(retain, nonatomic) NSArray *shelfTypes; // @synthesize shelfTypes=_shelfTypes;
 - (void).cxx_destruct;

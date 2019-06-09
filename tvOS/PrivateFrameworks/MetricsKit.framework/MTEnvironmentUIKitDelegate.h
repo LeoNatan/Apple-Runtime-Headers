@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <MetricsKit/MTObject.h>
 
 #import <MetricsKit/MTEnvironmentDelegate-Protocol.h>
 
 @class NSString;
 
-@interface MTEnvironmentUIKitDelegate : NSObject <MTEnvironmentDelegate>
+@interface MTEnvironmentUIKitDelegate : MTObject <MTEnvironmentDelegate>
 {
 }
 
+- (id)primaryWindow;
 - (id)userType;
 - (id)userAgent;
 - (id)storeFrontHeader;

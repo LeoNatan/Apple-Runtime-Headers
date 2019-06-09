@@ -20,6 +20,7 @@
 
 + (id)_explanationLabelDefaultAttributes;
 @property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
+- (void).cxx_destruct;
 - (id)_warningLabel;
 - (id)_secureLabel;
 - (id)_signedLabel;
@@ -40,7 +41,6 @@
 @property(copy, nonatomic) NSString *warningLabelText;
 @property(copy, nonatomic) NSString *secureLabelText;
 @property(copy, nonatomic) NSString *signedLabelText;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

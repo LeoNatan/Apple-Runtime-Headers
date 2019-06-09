@@ -33,9 +33,10 @@
 @property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
 @property(retain) CNContactCardViewController *contactCardViewController; // @synthesize contactCardViewController=_contactCardViewController;
 @property(retain) ABPersonViewNotificationWatcher *watcher; // @synthesize watcher=_watcher;
-@property id <ABPersonViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <ABPersonViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) ABPerson *person; // @synthesize person=_person;
 @property(retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
+- (void).cxx_destruct;
 - (id)hostWindowForShareSheet;
 - (id)profilePhotoImage;
 - (struct CGRect)profilePhotoScreenRect;

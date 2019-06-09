@@ -8,21 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEOTransitDepartureSequenceUsage : PBCodable <NSCopying>
 {
-    unsigned long long _lineId;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_direction;
     NSString *_headsign;
+    unsigned long long _lineId;
     struct {
-        unsigned int lineId:1;
-    } _has;
+        unsigned int has_lineId:1;
+        unsigned int read_direction:1;
+        unsigned int read_headsign:1;
+        unsigned int wrote_direction:1;
+        unsigned int wrote_headsign:1;
+        unsigned int wrote_lineId:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *headsign; // @synthesize headsign=_headsign;
-@property(retain, nonatomic) NSString *direction; // @synthesize direction=_direction;
-@property(nonatomic) unsigned long long lineId; // @synthesize lineId=_lineId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,11 +36,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *headsign;
 @property(readonly, nonatomic) _Bool hasHeadsign;
+- (void)_readHeadsign;
+@property(retain, nonatomic) NSString *direction;
 @property(readonly, nonatomic) _Bool hasDirection;
+- (void)_readDirection;
 @property(nonatomic) _Bool hasLineId;
+@property(nonatomic) unsigned long long lineId;
 
 @end
 

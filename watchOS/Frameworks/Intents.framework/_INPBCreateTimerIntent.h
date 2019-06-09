@@ -16,12 +16,16 @@
 {
     struct {
         unsigned int duration:1;
+        unsigned int type:1;
     } _has;
     _INPBIntentMetadata *_intentMetadata;
     _INPBDataString *_label;
+    int _type;
     double _duration;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBDataString *label; // @synthesize label=_label;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
@@ -30,8 +34,13 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (int)StringAsType:(id)arg1;
+- (id)typeAsString:(int)arg1;
+@property(nonatomic) _Bool hasType;
 @property(readonly, nonatomic) _Bool hasLabel;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 @property(nonatomic) _Bool hasDuration;

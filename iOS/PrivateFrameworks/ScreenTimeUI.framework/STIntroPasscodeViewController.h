@@ -7,16 +7,16 @@
 #import <UIKit/UIViewController.h>
 
 #import <ScreenTimeUI/BFFPasscodeInputViewDelegate-Protocol.h>
-#import <ScreenTimeUI/STIntroViewController-Protocol.h>
 
 @class NSString, STIntroductionModel;
 
-@interface STIntroPasscodeViewController : UIViewController <BFFPasscodeInputViewDelegate, STIntroViewController>
+__attribute__((visibility("hidden")))
+@interface STIntroPasscodeViewController : UIViewController <BFFPasscodeInputViewDelegate>
 {
     _Bool _numeric;
-    CDUnknownBlockType completionBlock;
     STIntroductionModel *_model;
-    unsigned long long _passcodeState;
+    CDUnknownBlockType _continueHandler;
+    long long _passcodeState;
     NSString *_initialPasscode;
     unsigned long long _numericLength;
 }
@@ -24,9 +24,9 @@
 @property unsigned long long numericLength; // @synthesize numericLength=_numericLength;
 @property(getter=isNumeric) _Bool numeric; // @synthesize numeric=_numeric;
 @property(retain) NSString *initialPasscode; // @synthesize initialPasscode=_initialPasscode;
-@property unsigned long long passcodeState; // @synthesize passcodeState=_passcodeState;
-@property(retain) STIntroductionModel *model; // @synthesize model=_model;
-@property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock;
+@property long long passcodeState; // @synthesize passcodeState=_passcodeState;
+@property(readonly, copy) CDUnknownBlockType continueHandler; // @synthesize continueHandler=_continueHandler;
+@property(readonly) STIntroductionModel *model; // @synthesize model=_model;
 - (void).cxx_destruct;
 - (void)passcodeInput:(id)arg1 enteredPasscode:(id)arg2;
 - (void)updatePasscodeType;
@@ -36,9 +36,9 @@
 - (void)passcodeTypeChanged:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)passcodeView;
+- (id)_passcodeView;
 - (void)loadView;
-- (id)initWithIntroductionModel:(id)arg1;
+- (id)initWithIntroductionModel:(id)arg1 continueHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

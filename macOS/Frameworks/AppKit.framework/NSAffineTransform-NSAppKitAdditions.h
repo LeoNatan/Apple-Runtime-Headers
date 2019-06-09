@@ -7,8 +7,10 @@
 #import <Foundation/NSAffineTransform.h>
 
 @interface NSAffineTransform (NSAppKitAdditions)
++ (id)transformWithCGAffineTransform:(struct CGAffineTransform)arg1;
 - (void)concat;
 - (void)set;
 - (id)transformBezierPath:(id)arg1;
+@property struct CGAffineTransform CGAffineTransform;
 @end
 

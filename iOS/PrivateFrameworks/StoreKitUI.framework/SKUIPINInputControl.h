@@ -11,6 +11,7 @@
 
 @class NSMutableArray, NSMutableString, NSString, SKUIViewElement, UIColor, UIFont, UITextInputPasswordRules;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPINInputControl : UIControl <SKUIViewElementView, UIKeyInput>
 {
     UIColor *_boxBackgroundColor;

@@ -8,6 +8,7 @@
 
 @class NSData, NSString, NSURL, OCDReader, OITSUProgressContext;
 
+__attribute__((visibility("hidden")))
 @interface OCImporter : OCMapper
 {
     NSURL *mURL;

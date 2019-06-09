@@ -15,10 +15,9 @@
 + (id)unpackBasicPoints:(id)arg1;
 + (id)unpackZilchPoints:(id)arg1;
 + (id)unpackPoints:(id)arg1 usesZilch:(_Bool)arg2;
-+ (CDStruct_c3b9c2ee)pointAt:(unsigned long long)arg1 pointData:(id)arg2 usesZilch:(_Bool)arg3;
++ (CDStruct_39925896)pointAt:(unsigned long long)arg1 pointData:(id)arg2 usesZilch:(_Bool)arg3;
 + (unsigned long long)pointCount:(id)arg1 usesZilch:(_Bool)arg2;
 + (void *)controlPoints:(id)arg1 usesZilch:(_Bool)arg2;
-+ (_Bool)zilchPointsSupported;
 
 @end
 

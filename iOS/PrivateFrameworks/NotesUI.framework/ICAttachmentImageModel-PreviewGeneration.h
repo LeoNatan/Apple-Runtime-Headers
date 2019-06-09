@@ -7,9 +7,19 @@
 #import <NotesShared/ICAttachmentImageModel.h>
 
 @interface ICAttachmentImageModel (PreviewGeneration)
-- (void)generatePreviewsInOperation:(id)arg1;
+- (id)labelsForClassificationObservations:(id)arg1;
+- (id)classificationsForImage:(struct UIImage *)arg1;
+- (void)classifyImageInOperation:(id)arg1;
+- (id)ocrStringFromImage:(struct UIImage *)arg1 title:(id *)arg2;
+- (void)generateOCRInOperation:(id)arg1;
+- (_Bool)generatePreviewsInOperation:(id)arg1;
 - (id)generateFullSizePreviewWithAttachmentIdentifier:(id)arg1 existingPreviewImage:(id)arg2 markupModelData:(id)arg3 imageOrientation:(long long)arg4 imageFilterType:(short)arg5 mediaDecryptedData:(id)arg6 mediaURL:(id)arg7 mediaSize:(struct CGSize)arg8 croppingQuad:(id)arg9;
+- (_Bool)needToPostProcessAttachment;
 - (_Bool)needToGeneratePreviews;
 - (_Bool)generatePreviewsDuringCloudActivity;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
+- (id)activityItems;
+- (CDUnknownBlockType)genericBrickThumbnailCreator;
+- (CDUnknownBlockType)genericListThumbnailCreator;
 @end
 

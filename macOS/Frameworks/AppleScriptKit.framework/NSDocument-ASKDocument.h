@@ -14,5 +14,13 @@
 - (void)makeWindowControllers_askDocument;
 - (id)windowNibName_askDocument;
 - (void)close_askDocument;
+- (void)setFileKind:(id)arg1;
+- (id)fileKind;
+- (id)windows_ask;
+- (void)setIsDocumentEdited:(BOOL)arg1;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
+- (void)setFileName_ask:(id)arg1;
+- (id)fileName_ask;
 @end
 

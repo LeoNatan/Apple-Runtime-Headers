@@ -6,6 +6,7 @@
 
 #import <UIKit/UIView.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingDescriptionView : UIView
 {
     struct UIEdgeInsets _contentInset;

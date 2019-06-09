@@ -8,6 +8,7 @@
 
 @class AVPlayerController, AVPlayerLayer, AVTrackView;
 
+__attribute__((visibility("hidden")))
 @interface AVTrackViewController : NSViewController
 {
     AVPlayerController *_playerController;

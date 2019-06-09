@@ -24,7 +24,13 @@
 }
 
 + (id)responseScheduler;
+@property(readonly, nonatomic) CNAutocompleteFetchRequest *fetchRequest; // @synthesize fetchRequest=_fetchRequest;
+@property(readonly, nonatomic) CNAutocompleteUserSession *userSession; // @synthesize userSession=_userSession;
+@property(readonly, nonatomic) CNCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;
 @property(nonatomic) unsigned long long openNetworkActivityCalls; // @synthesize openNetworkActivityCalls=_openNetworkActivityCalls;
+@property(readonly, nonatomic) CNAutocompleteQueryResponsePreparer *responsePreparer; // @synthesize responsePreparer=_responsePreparer;
+@property(readonly, nonatomic) id <CNScheduler> scheduler; // @synthesize scheduler=_scheduler;
+@property(readonly, nonatomic) id <CNAutocompleteFetchDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)setDuetResultsFuture:(id)arg1;
 - (void)cancel;

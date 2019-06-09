@@ -18,6 +18,7 @@
 @property(retain, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
 - (void).cxx_destruct;
 - (id)description;
+- (id)initWithRequestContext:(id)arg1;
 
 @end
 

@@ -12,6 +12,7 @@
 @class NSMutableDictionary, NSString, NSXPCConnection;
 @protocol MBAppConnectionProtocol;
 
+__attribute__((visibility("hidden")))
 @interface MBSAConnection : NSObject <MBSAProtocol, MBAppConnectionProtocol>
 {
     id <MBAppConnectionProtocol> _hostingApp;
@@ -28,7 +29,6 @@
 - (void)exitBuddyApp:(CDUnknownBlockType)arg1;
 - (void)getBuddyWindowRepresentationFromApp:(CDUnknownBlockType)arg1;
 - (void)requestConfigurationFinalizationForUserUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)requestBridgedProfileWithAuthorization:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestCachedActivationRecordWithReply:(CDUnknownBlockType)arg1;
 - (void)abortActivationStatusRequest;
 - (void)requestBridgedActivationRecordWithReply:(CDUnknownBlockType)arg1;
@@ -48,6 +48,7 @@
 - (void)removeMigrationCookie:(CDUnknownBlockType)arg1;
 - (void)setMigrationCookie:(CDUnknownBlockType)arg1;
 - (void)setMacBuddyDoneCookie:(CDUnknownBlockType)arg1;
+- (void)healEOSHandlingProgressForUUID:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)fmmIsEnabled:(CDUnknownBlockType)arg1;
 - (void)setOSVersioniCloudCreatedForUser:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)saveDocumentationData:(id)arg1 withLocalizedName:(id)arg2 forLocale:(id)arg3 toFileNamed:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
@@ -59,6 +60,7 @@
 - (void)createTeslaUsersWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)createUserWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)writeMachineDefaults:(id)arg1 toApplicationID:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)setPasswordPolicy:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)removeBuddyUserHome:(CDUnknownBlockType)arg1;
 - (void)terminateBuddySessionTransitioningToUID:(unsigned int)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)tellBuddyAppToQuit:(CDUnknownBlockType)arg1;
@@ -71,6 +73,7 @@
 - (void)postMacBuddyTasks:(CDUnknownBlockType)arg1;
 - (void)preMacBuddyTasks:(CDUnknownBlockType)arg1;
 - (void)establishConnection:(CDUnknownBlockType)arg1;
+- (void)healEOSHandlingProgress:(CDUnknownBlockType)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)connectionWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 

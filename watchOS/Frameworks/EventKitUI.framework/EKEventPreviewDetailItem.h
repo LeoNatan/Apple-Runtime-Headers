@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (_Bool)configureWithCalendar:(id)arg1 preview:(_Bool)arg2;
+- (void)setEvent:(id)arg1 store:(id)arg2;
 - (void)reset;
 
 @end

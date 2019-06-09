@@ -11,6 +11,7 @@
 @class NSMapTable, NSMutableArray, NSMutableDictionary, NSPersistentUICrashHandler, NSPersistentUIEncodingQueue, NSPersistentUIFileManager, NSPersistentUIFlushScheduler, NSPersistentUIRestorer, NSPersistentUIWindowSnapshotter, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface NSPersistentUIManager : NSObject <NSPersistentUIFlushHandler>
 {
     NSPersistentUIEncodingQueue *_encodingQueue;

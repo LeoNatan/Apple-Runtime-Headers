@@ -24,6 +24,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)getNewIndexCount:(long long *)arg1 newIndexMap:(long long **)arg2;
 - (void)finishModifications;
 - (void)_flushPendingInserts;
 - (void)insertItemAtIndex:(long long)arg1;

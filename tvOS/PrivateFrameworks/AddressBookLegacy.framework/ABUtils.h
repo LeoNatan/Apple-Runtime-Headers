@@ -10,6 +10,7 @@
 {
 }
 
++ (id)processName;
 + (id)mainBundleID;
 
 @end

@@ -8,26 +8,34 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOCategory : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    long long _geoOntologyId;
     NSString *_alias;
-    int _level;
+    long long _geoOntologyId;
     NSMutableArray *_localizedNames;
+    int _level;
     struct {
-        unsigned int geoOntologyId:1;
-    } _has;
+        unsigned int has_geoOntologyId:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_alias:1;
+        unsigned int read_localizedNames:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_alias:1;
+        unsigned int wrote_geoOntologyId:1;
+        unsigned int wrote_localizedNames:1;
+        unsigned int wrote_level:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)localizedNamesType;
-@property(retain, nonatomic) NSMutableArray *localizedNames; // @synthesize localizedNames=_localizedNames;
-@property(nonatomic) long long geoOntologyId; // @synthesize geoOntologyId=_geoOntologyId;
-@property(nonatomic) int level; // @synthesize level=_level;
-@property(retain, nonatomic) NSString *alias; // @synthesize alias=_alias;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,13 +44,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)localizedNamesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)localizedNamesCount;
+- (void)_addNoFlagsLocalizedNames:(id)arg1;
 - (void)addLocalizedNames:(id)arg1;
 - (void)clearLocalizedNames;
+@property(retain, nonatomic) NSMutableArray *localizedNames;
+- (void)_readLocalizedNames;
 @property(nonatomic) _Bool hasGeoOntologyId;
+@property(nonatomic) long long geoOntologyId;
+@property(nonatomic) int level;
+@property(retain, nonatomic) NSString *alias;
+- (void)_readAlias;
 - (id)initWithPlaceDataCategory:(id)arg1;
 
 @end

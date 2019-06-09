@@ -12,18 +12,18 @@
 {
     BOOL _alignmentRequired;
     int _title_weight;
+    int _data_alignment;
     NSArray *_columns;
-    unsigned long long _data_alignment;
 }
 
 + (BOOL)supportsSecureCoding;
 @property BOOL alignmentRequired; // @synthesize alignmentRequired=_alignmentRequired;
-@property(readonly, nonatomic) unsigned long long data_alignment; // @synthesize data_alignment=_data_alignment;
+@property(readonly, nonatomic) int data_alignment; // @synthesize data_alignment=_data_alignment;
 @property(readonly, nonatomic) NSArray *columns; // @synthesize columns=_columns;
 @property(readonly, nonatomic) int title_weight; // @synthesize title_weight=_title_weight;
 - (void).cxx_destruct;
 - (long long)type;
-- (id)initWithColumns:(id)arg1 data_alignment:(unsigned long long)arg2;
+- (id)initWithColumns:(id)arg1 data_alignment:(long long)arg2;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
 - (id)initWithTitle:(id)arg1 weight:(int)arg2 columns:(id)arg3;
 

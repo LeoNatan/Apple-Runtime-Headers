@@ -18,18 +18,18 @@
 + (_Bool)getGlowAnimationStateForStyle:(long long)arg1;
 + (double)getGlowAnimationEndTimeForStyle:(long long)arg1;
 + (int)getStyleOverrides;
-+ (CDStruct_308dc736 *)getStatusBarOverrideData;
-+ (const CDStruct_1916f467 *)getStatusBarData;
-+ (id)_cachedTimeStringFromData:(CDStruct_1916f467 *)arg1;
++ (CDStruct_f9a79af9 *)getStatusBarOverrideData;
++ (const CDStruct_0942cde0 *)getStatusBarData;
++ (id)_cachedTimeStringFromData:(CDStruct_0942cde0 *)arg1;
 + (void)permanentizeStatusBarOverrideData;
-+ (void)postStatusBarOverrideData:(CDStruct_308dc736 *)arg1;
++ (void)postStatusBarOverrideData:(CDStruct_f9a79af9 *)arg1;
 + (void)removeStatusBarItem:(int)arg1;
 + (void)addStatusBarItem:(int)arg1;
 + (void)postDoubleHeightStatusString:(id)arg1 forStyle:(long long)arg2;
 + (void)postGlowAnimationState:(_Bool)arg1 forStyle:(long long)arg2;
 + (void)removeStyleOverrides:(int)arg1;
 + (void)addStyleOverrides:(int)arg1;
-+ (void)postStatusBarData:(const CDStruct_1916f467 *)arg1 withActions:(int)arg2;
++ (void)postStatusBarData:(const CDStruct_0942cde0 *)arg1 withActions:(int)arg2;
 + (unsigned int)_publisherPort;
 + (unsigned int)_serverPort;
 + (const char *)serviceName;
@@ -39,7 +39,7 @@
 - (void)_receivedDoubleHeightStatus:(const char *)arg1 forStyle:(long long)arg2;
 - (void)_receivedGlowAnimationState:(_Bool)arg1 forStyle:(long long)arg2;
 - (void)_receivedStyleOverrides:(int)arg1;
-- (void)_receivedStatusBarData:(CDStruct_1916f467 *)arg1 actions:(int)arg2 animated:(_Bool)arg3;
+- (void)_receivedStatusBarData:(CDStruct_0942cde0 *)arg1 actions:(int)arg2 animated:(_Bool)arg3;
 - (void)dealloc;
 - (id)initWithStatusBar:(id)arg1;
 

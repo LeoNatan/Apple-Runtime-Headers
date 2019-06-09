@@ -6,22 +6,40 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, _INPBDataString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTaskList, _INPBTemporalEventTrigger;
+@class NSArray, NSString, _INPBContact, _INPBContactEventTrigger, _INPBDataString, _INPBIntent, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTaskList, _INPBTemporalEventTrigger;
 
 @protocol _INPBAddTasksIntent <NSObject>
 + (Class)taskTitlesType;
++ (Class)targetTaskListMembersType;
 @property(readonly, nonatomic) _Bool hasTemporalEventTrigger;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger;
 @property(readonly, nonatomic) unsigned long long taskTitlesCount;
 @property(copy, nonatomic) NSArray *taskTitles;
+@property(nonatomic) _Bool hasTaskReference;
+@property(nonatomic) int taskReference;
+@property(readonly, nonatomic) unsigned long long targetTaskListMembersCount;
+@property(copy, nonatomic) NSArray *targetTaskListMembers;
 @property(readonly, nonatomic) _Bool hasTargetTaskList;
 @property(retain, nonatomic) _INPBTaskList *targetTaskList;
 @property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
 @property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger;
+@property(nonatomic) _Bool hasPriority;
+@property(nonatomic) int priority;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata;
+@property(readonly, nonatomic) _Bool hasIntent;
+@property(retain, nonatomic) _INPBIntent *intent;
+@property(readonly, nonatomic) _Bool hasContactEventTrigger;
+@property(retain, nonatomic) _INPBContactEventTrigger *contactEventTrigger;
 - (_INPBDataString *)taskTitlesAtIndex:(unsigned long long)arg1;
 - (void)addTaskTitles:(_INPBDataString *)arg1;
 - (void)clearTaskTitles;
+- (int)StringAsTaskReference:(NSString *)arg1;
+- (NSString *)taskReferenceAsString:(int)arg1;
+- (_INPBContact *)targetTaskListMembersAtIndex:(unsigned long long)arg1;
+- (void)addTargetTaskListMembers:(_INPBContact *)arg1;
+- (void)clearTargetTaskListMembers;
+- (int)StringAsPriority:(NSString *)arg1;
+- (NSString *)priorityAsString:(int)arg1;
 @end
 

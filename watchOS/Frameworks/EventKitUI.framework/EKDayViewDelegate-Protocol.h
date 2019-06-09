@@ -12,6 +12,7 @@
 
 @optional
 - (void)dayView:(EKDayView *)arg1 scrollViewWillBeginDragging:(UIScrollView *)arg2;
+- (void)dayViewDidCompleteAsyncLoadAndLayout:(EKDayView *)arg1;
 - (void)dayView:(EKDayView *)arg1 didUpdateScrollPosition:(struct CGPoint)arg2;
 - (void)dayView:(EKDayView *)arg1 isPinchingDayViewWithScale:(float)arg2;
 - (void)dayView:(EKDayView *)arg1 didScaleDayViewWithScale:(float)arg2;

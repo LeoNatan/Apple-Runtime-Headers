@@ -12,5 +12,6 @@
 - (void)ccui_safelyBeginAppearanceTransitionForChildViewControllers:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)ccui_safelyEndAppearanceTransition;
 - (void)ccui_safelyBeginAppearanceTransition:(_Bool)arg1 animated:(_Bool)arg2;
+- (id)ccui_overrideTraitCollectionFromAncestors;
 @end
 

@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface CKActionMenuGestureVelocitySample : NSObject
 {
     struct CGPoint start;

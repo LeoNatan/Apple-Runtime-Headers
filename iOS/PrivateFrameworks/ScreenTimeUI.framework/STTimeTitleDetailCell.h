@@ -6,6 +6,7 @@
 
 #import <Preferences/PSTableCell.h>
 
+__attribute__((visibility("hidden")))
 @interface STTimeTitleDetailCell : PSTableCell
 {
 }

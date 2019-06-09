@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)_showProgressIndicator;
 - (void)handleProfilesInfoResponse:(id)arg1 error:(id)arg2;
 - (void)fetchRemoteProfileList;
+- (_Bool)_showProfileDetailPageForUserEnrollmentProfile:(id)arg1;
 - (void)_handleProfileCellSelectionAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -7,9 +7,35 @@
 #import <CoreServices/LSApplicationProxy.h>
 
 @interface LSApplicationProxy (TVApplicationProxyLifetimeCacheKeyAdditions)
++ (id)_tv_placeholderIconImage;
++ (id)tv_placeholderLayeredIcon;
++ (void)tv_disableLSWorkspaceInstallHandling;
++ (void)tv_initializeFlatIconCache;
 - (id)tv_bundlePathHash;
 - (double)tv_lastModifiedDate;
 - (id)tv_iconCacheKey;
 - (id)tv_cacheKey;
+- (id)_tv_assetManager;
+- (id)_tv_uncachedAssetManager;
+- (id)_tv_cachedSmallFlatApplicationIcon;
+- (id)_tv_cachedFlatApplicationIcon;
+- (id)_tv_applicationIconName;
+- (id)tv_displayNameForAppState:(id)arg1 withLocalizedAppName:(id)arg2;
+- (id)tv_displayNameForAppState:(id)arg1;
+@property(readonly, nonatomic, getter=isInstallPaused) _Bool installPaused;
+@property(readonly, nonatomic) long long installProgressState;
+@property(readonly, nonatomic) double installPercentage;
+- (long long)tv_preferredUserInterfaceStyle;
+- (id)tv_supportedUserInterfaceStyles;
+- (_Bool)tv_applicationLaunchImageIsTemplate;
+- (id)tv_applicationLaunchImageName;
+- (id)tv_volatileTopShelfImage;
+- (id)tv_volatileApplicationLayeredIcon;
+- (id)tv_smallApplicationFlatIcon;
+- (id)tv_applicationFlatIcon;
+- (void)tv_flushApplicationCachedImages;
+- (void)tv_preheatApplicationName;
+- (void)tv_preheatSmallApplicationIcon;
+- (void)tv_preheatApplicationIcon;
 @end
 

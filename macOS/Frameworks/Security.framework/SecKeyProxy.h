@@ -18,17 +18,17 @@
 }
 
 + (struct __SecIdentity *)createIdentityFromEndpoint:(id)arg1 error:(id *)arg2;
-+     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^{__SecKey}^v}32@0:8@16^@24, name: createKeyFromEndpoint:error:
-+     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^{__SecKey}^v}40@0:8@16^@24^@32, name: createItemFromEndpoint:certificate:error:
-+     // Error parsing type: @32@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^{__SecKey}^v}16^^{__CFError}24, name: targetForKey:error:
++     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}32@0:8@16^@24, name: createKeyFromEndpoint:error:
++     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}40@0:8@16^@24^@32, name: createItemFromEndpoint:certificate:error:
++     // Error parsing type: @32@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16^^{__CFError}24, name: targetForKey:error:
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *endpoint;
 - (void)dealloc;
 - (void)invalidate;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)initWithIdentity:(struct __SecIdentity *)arg1;
--     // Error parsing type: @24@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^{__SecKey}^v}16, name: initWithKey:
--     // Error parsing type: @32@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^{__SecKey}^v}16@24, name: initWithKey:certificate:
+-     // Error parsing type: @24@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16, name: initWithKey:
+-     // Error parsing type: @32@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@24, name: initWithKey:certificate:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

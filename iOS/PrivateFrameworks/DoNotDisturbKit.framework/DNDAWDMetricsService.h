@@ -16,12 +16,14 @@
     NSObject<OS_dispatch_queue> *_queue;
     DNDStateService *_notificationsStateService;
     DNDState *_currentState;
+    unsigned long long _lockState;
 }
 
 - (void).cxx_destruct;
 - (void)_queue_postAWDMetric;
 - (unsigned long long)_queue_currentAWDMetricState;
 - (void)stateService:(id)arg1 didReceiveDoNotDisturbStateUpdate:(id)arg2;
+- (void)handleTransitionToUILocked:(_Bool)arg1;
 - (void)resume;
 - (id)initWithClientIdentifier:(id)arg1;
 

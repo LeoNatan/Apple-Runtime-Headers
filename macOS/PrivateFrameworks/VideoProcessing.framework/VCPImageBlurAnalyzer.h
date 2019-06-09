@@ -6,7 +6,7 @@
 
 #import <VideoProcessing/VCPBlurAnalyzer.h>
 
-@class NSArray, VCPCNNData, VCPCNNModel;
+@class NSArray, VCPCNNBlurAnalyzer, VCPCNNData, VCPCNNModel;
 
 @interface VCPImageBlurAnalyzer : VCPBlurAnalyzer
 {
@@ -15,17 +15,17 @@
     VCPCNNModel *_faceModel;
     VCPCNNData *_faceInput;
     BOOL _useGPU;
-    BOOL _useCNN;
     BOOL _sdof;
     float _contrast;
+    VCPCNNBlurAnalyzer *_blurAnalyzer;
     float _sharpness;
+    float _textureScore;
 }
 
+@property(readonly) float textureScore; // @synthesize textureScore=_textureScore;
 @property(readonly) float sharpness; // @synthesize sharpness=_sharpness;
 - (void).cxx_destruct;
 - (int)analyzePixelBuffer:(struct __CVBuffer *)arg1 flags:(unsigned long long *)arg2 results:(id *)arg3 cancel:(CDUnknownBlockType)arg4;
-- (void)computeLocalSharpness:(struct __CVBuffer *)arg1;
-- (void)spatialPooling;
 - (float)computeFaceSharpness:(struct __CVBuffer *)arg1;
 - (void)setFaceResults:(id)arg1;
 - (id)initWithFaceResults:(id)arg1 sdof:(BOOL)arg2;

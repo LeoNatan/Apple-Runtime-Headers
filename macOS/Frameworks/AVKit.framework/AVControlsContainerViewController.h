@@ -29,8 +29,8 @@
 - (void)updatePreferredIndicatorAreaLayoutContraintsForNewControlsContentViewController:(id)arg1;
 - (void)removeControlsContentView:(id)arg1;
 - (void)addControlsContentView:(id)arg1 initiallyHidden:(BOOL)arg2;
-- (void)removeBackgroundView;
-- (void)addBackgroundViewForControlsContentViewController:(id)arg1;
+- (void)updateBackgroundViewForControlsContentViewController:(id)arg1;
+- (void)initializeBackgroundViewIfNeeded;
 - (void)loadView;
 - (void)updateViewHidden;
 - (void)viewDidLayout;

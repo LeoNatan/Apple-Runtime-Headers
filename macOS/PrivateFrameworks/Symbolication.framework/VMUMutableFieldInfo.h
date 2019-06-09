@@ -12,6 +12,7 @@
 {
 }
 
+- (void)addSubField:(id)arg1;
 - (BOOL)replaceFieldRecursively:(id)arg1 withField:(id)arg2;
 - (void)mutateTypeFieldsRecursivelyWithBlock:(CDUnknownBlockType)arg1 parentOffset:(unsigned int)arg2;
 @property(retain, nonatomic) VMUClassInfo *destinationLayout; // @dynamic destinationLayout;

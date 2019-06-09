@@ -70,6 +70,7 @@
 - (void)addConnection:(id)arg1;
 - (_Bool)canAddConnection:(id)arg1;
 - (_Bool)_canAddConnection:(id)arg1 failureReason:(id *)arg2;
+@property(readonly, nonatomic) NSArray *connections;
 - (void)_removeVideoPreviewLayer:(id)arg1;
 - (void)_removeAllPreviewLayers;
 - (_Bool)_addVideoPreviewLayerWithNoConnection:(id)arg1 exceptionReason:(id *)arg2;
@@ -91,6 +92,7 @@
 - (_Bool)_canAddInput:(id)arg1 failureReason:(id *)arg2;
 @property(readonly, nonatomic) NSArray *inputs;
 - (void)_determineMasterClock;
+- (_Bool)isOverCost:(id *)arg1;
 - (_Bool)isBeingConfigured;
 - (void)_commitConfiguration;
 - (void)_beginConfiguration;

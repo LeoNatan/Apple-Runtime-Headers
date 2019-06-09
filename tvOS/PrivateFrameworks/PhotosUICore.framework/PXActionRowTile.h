@@ -10,7 +10,7 @@
 #import <PhotosUICore/PXUIViewBasicTile-Protocol.h>
 #import <PhotosUICore/PXUIWidgetFooterViewDelegate-Protocol.h>
 
-@class NSString, PXUIWidgetFooterView, UIButton, UIColor;
+@class NSString, PXUIWidgetFooterView, UIButton;
 @protocol PXActionRowTileDelegate;
 
 @interface PXActionRowTile : UIView <PXUIViewBasicTile, PXReusableObject, PXUIWidgetFooterViewDelegate>
@@ -18,16 +18,12 @@
     NSString *_title;
     long long _idiom;
     id <PXActionRowTileDelegate> _delegate;
-    UIColor *__normalBackgroundColor;
-    UIColor *__highlightedBackgroundColor;
     UIButton *__button;
     PXUIWidgetFooterView *__footer;
 }
 
 @property(readonly, nonatomic) PXUIWidgetFooterView *_footer; // @synthesize _footer=__footer;
 @property(readonly, nonatomic) UIButton *_button; // @synthesize _button=__button;
-@property(readonly, nonatomic) UIColor *_highlightedBackgroundColor; // @synthesize _highlightedBackgroundColor=__highlightedBackgroundColor;
-@property(readonly, nonatomic) UIColor *_normalBackgroundColor; // @synthesize _normalBackgroundColor=__normalBackgroundColor;
 @property(nonatomic) __weak id <PXActionRowTileDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long idiom; // @synthesize idiom=_idiom;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

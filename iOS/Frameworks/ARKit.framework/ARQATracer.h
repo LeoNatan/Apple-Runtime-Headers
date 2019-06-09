@@ -43,13 +43,14 @@
 - (void)replaySensorDidFinishReplayingData;
 - (void)addFrameLabel:(id)arg1;
 - (id)createTraceOutputDirectory;
-- (void)update:(id)arg1;
+- (void)update:(id)arg1 session:(id)arg2;
 - (void)stop;
 - (void)start:(id)arg1;
 - (void)flushDataBufferToFile;
 - (void)writeStringToOutputStream:(id)arg1;
 - (void)writeJSONObjectToStream:(id)arg1 prefix:(id)arg2;
 - (void)receiveDefaults;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

@@ -6,25 +6,10 @@
 
 #import <SafariServices/_SFToolbar.h>
 
-@protocol _SFBrowserToolbarDataSource;
-
 __attribute__((visibility("hidden")))
 @interface _SFBrowserToolbar : _SFToolbar
 {
-    id <_SFBrowserToolbarDataSource> _dataSource;
 }
-
-@property(nonatomic) __weak id <_SFBrowserToolbarDataSource> dataSource; // @synthesize dataSource=_dataSource;
-- (void).cxx_destruct;
-- (void)didCompleteBarRegistrationWithToken:(id)arg1;
-- (double)_contentMargin;
-- (double)URLFieldHorizontalMargin;
-@property(readonly, nonatomic) double differenceBetweenWidthsOfLeadingAndTrailingItems;
-- (double)_totalWidthOfLeadingItems;
-- (double)_totalWidthOfTrailingItems;
-- (void)layoutSubviews;
-- (_Bool)isMinibar;
-- (id)_toolbarItems;
 
 @end
 

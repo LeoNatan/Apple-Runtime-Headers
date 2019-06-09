@@ -11,6 +11,8 @@
 @protocol NTKRichComplicationBezelViewDelegate <NSObject>
 
 @optional
+- (void)bezelViewDidEndInteractive:(NTKRichComplicationBezelView *)arg1;
+- (void)bezelViewDidBecomeInteractive:(NTKRichComplicationBezelView *)arg1;
 - (void)didUpdateBezelTextForRichComplicationBezelView:(NTKRichComplicationBezelView *)arg1;
 @end
 

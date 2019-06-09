@@ -9,13 +9,14 @@
 __attribute__((visibility("hidden")))
 @interface FI_TShrinkToFitScrollView : FI_TScrollView
 {
+    struct TNotificationCenterObserver _stfTextViewFrameChangedObvserver;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)sizeToFit;
 - (void)viewDidMoveToWindow;
-- (void)stfTextViewFrameChanged:(id)arg1;
 - (BOOL)accessibilityIsIgnored;
-- (void)dealloc;
 - (void)initCommon;
 - (id)initWithSTFTextView:(id)arg1;
 

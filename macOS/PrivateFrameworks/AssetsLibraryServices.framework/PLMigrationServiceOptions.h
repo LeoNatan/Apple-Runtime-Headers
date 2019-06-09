@@ -13,19 +13,19 @@
 
 @interface PLMigrationServiceOptions : NSObject <NSCopying, NSSecureCoding>
 {
-    unsigned char _option;
     unsigned char _taskToInterrupt;
+    unsigned short _option;
     NSString *_clientBundleId;
     NSString *_suggestedDestinationName;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) unsigned char taskToInterrupt; // @synthesize taskToInterrupt=_taskToInterrupt;
-@property unsigned char option; // @synthesize option=_option;
+@property unsigned short option; // @synthesize option=_option;
 @property(copy) NSString *suggestedDestinationName; // @synthesize suggestedDestinationName=_suggestedDestinationName;
 @property(readonly) NSString *clientBundleId; // @synthesize clientBundleId=_clientBundleId;
 - (void).cxx_destruct;
-- (BOOL)isPMSOption:(unsigned char)arg1;
+- (BOOL)isPMSOption:(unsigned short)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

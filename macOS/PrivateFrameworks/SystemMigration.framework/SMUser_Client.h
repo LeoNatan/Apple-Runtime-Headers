@@ -22,6 +22,7 @@
 + (id)keyPathsForValuesAffectingExtraInfoColor;
 + (id)keyPathsForValuesAffectingDisplayExtraInfo;
 + (id)keyPathsForValuesAffectingDisplayName;
++ (id)interestedDaemonKeysLimitedToMigratableUsers;
 + (id)interestedDaemonKeys;
 @property BOOL allowFileVaultUnlock; // @synthesize allowFileVaultUnlock=_allowFileVaultUnlock;
 @property BOOL passwordIsTemporary; // @synthesize passwordIsTemporary=_passwordIsTemporary;

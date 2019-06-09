@@ -1085,5 +1085,6 @@ struct __GLIFunctionDispatchRec {
     CDUnknownFunctionPointerType _field1033;
     CDUnknownFunctionPointerType _field1034;
     CDUnknownFunctionPointerType _field1035;
+    CDUnknownFunctionPointerType _field1036;
 };
 

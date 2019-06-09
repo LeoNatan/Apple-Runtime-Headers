@@ -17,8 +17,8 @@
 }
 
 + (double)idealHorizontalSpacingBetweenIcons;
-@property double compressionResistance; // @synthesize compressionResistance=_compressionResistance;
-@property struct CGRect frame; // @synthesize frame=_frame;
+@property(nonatomic) double compressionResistance; // @synthesize compressionResistance=_compressionResistance;
+@property(nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(readonly, copy) NSString *description;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (float)contentHuggingPriorityForAxis:(long long)arg1;

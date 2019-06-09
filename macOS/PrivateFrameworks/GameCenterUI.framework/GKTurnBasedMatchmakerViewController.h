@@ -8,25 +8,27 @@
 
 #import <GameCenterUI/GKDialogControllerSizing-Protocol.h>
 #import <GameCenterUI/GKRemoteViewControllerDelegate-Protocol.h>
-#import <GameCenterUI/GKRestrictedViewController-Protocol.h>
 #import <GameCenterUI/GKViewController-Protocol.h>
 
-@class GKMatchRequest, GKRemoteViewController, NSString;
-@protocol GKTurnBasedMatchmakerViewControllerDelegate;
+@class GKMatchRequest, NSString;
+@protocol GKRemoteViewController, GKTurnBasedMatchmakerViewControllerDelegate;
 
-@interface GKTurnBasedMatchmakerViewController : NSViewController <GKRemoteViewControllerDelegate, GKDialogControllerSizing, GKRestrictedViewController, GKViewController>
+@interface GKTurnBasedMatchmakerViewController : NSViewController <GKRemoteViewControllerDelegate, GKDialogControllerSizing, GKViewController>
 {
     id _remoteViewController;
-    id <GKTurnBasedMatchmakerViewControllerDelegate> _turnBasedMatchmakerDelegateWeak;
+    id <GKTurnBasedMatchmakerViewControllerDelegate> _turnBasedMatchmakerDelegate;
     GKMatchRequest *_matchRequest;
     BOOL _showExistingMatches;
     BOOL _internalFlag;
+    id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate;
 }
 
+@property(nonatomic) __weak id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate; // @synthesize turnBasedMatchmakerDelegate;
 @property BOOL didRequestRemoteViewController; // @synthesize didRequestRemoteViewController=_internalFlag;
-@property(retain, nonatomic) GKRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+@property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) BOOL showExistingMatches; // @synthesize showExistingMatches=_showExistingMatches;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
+- (void).cxx_destruct;
 - (id)_gkInGameUIUnavailableAlertWithDismissHandler:(CDUnknownBlockType)arg1;
 - (void)authenticationChanged:(id)arg1;
 - (void)playerQuitMatch:(id)arg1;
@@ -35,11 +37,10 @@
 - (void)cancel;
 - (BOOL)remoteViewControllerRequestingDismiss:(id)arg1;
 - (void)remoteViewController:(id)arg1 receivedMessageFromService:(id)arg2;
-@property(nonatomic) id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate; // @dynamic turnBasedMatchmakerDelegate;
 - (struct CGSize)_gkSizeForDialogController;
-- (void)viewDidDisappear;
 - (BOOL)shouldShowQuitForTurnBasedMatch;
 - (BOOL)shouldShowPlayForTurnBasedMatch;
+- (void)viewDidDisappear;
 - (void)requestRemoteViewController;
 - (void)loadView;
 - (id)view;

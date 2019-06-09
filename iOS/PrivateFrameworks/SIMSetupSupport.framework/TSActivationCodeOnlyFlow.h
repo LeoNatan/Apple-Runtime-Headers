@@ -15,6 +15,7 @@
 @interface TSActivationCodeOnlyFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSCellularPlanManagerCacheDelegate>
 {
     _Bool _isPreinstallingViewControllerActive;
+    _Bool _confirmationCodeRequired;
     NSError *_planInstallError;
     NSString *_carrierName;
     unsigned long long _userConsentType;
@@ -28,7 +29,6 @@
 - (void)setDefaultNavigationItems:(id)arg1;
 - (void)viewControllerDidComplete:(id)arg1;
 - (long long)signupUserConsentResponse;
-- (_Bool)isPhoneFlow;
 - (id)nextViewControllerFrom:(id)arg1;
 - (void)firstViewController:(CDUnknownBlockType)arg1;
 - (id)firstViewController;

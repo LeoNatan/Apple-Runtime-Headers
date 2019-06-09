@@ -10,7 +10,6 @@
 
 @interface NSRunningApplication : NSObject
 {
-    id _superReserved;
     void *_asn;
     void **_helpers;
     id _obsInfo;
@@ -38,7 +37,6 @@
         unsigned int activationPolicy:3;
         unsigned int reserved1:19;
     } _aflags;
-    id _appReserved;
 }
 
 + (void)terminateAutomaticallyTerminableApplications;

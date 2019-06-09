@@ -8,6 +8,7 @@
 
 @class NSString, UIImage, UIImageView, UILabel, _Badge;
 
+__attribute__((visibility("hidden")))
 @interface SKUICrossFadingTabBarButton : UIControl
 {
     UILabel *_selectedTitleLabel;

@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateConstraintValues;
 - (void)updateConstraints;
 - (void)_setConstraints;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (id)initWithReuseIdentifier:(id)arg1;
 
 // Remaining properties

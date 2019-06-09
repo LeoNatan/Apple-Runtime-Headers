@@ -35,6 +35,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 @property(copy) NSString *title; // @synthesize title=_title;
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 - (void)endAppearanceTransition;
@@ -176,6 +177,7 @@
 - (id)_persistentUIWindow;
 
 // Remaining properties
+@property struct NSEdgeInsets additionalSafeAreaInsets; // @dynamic additionalSafeAreaInsets;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

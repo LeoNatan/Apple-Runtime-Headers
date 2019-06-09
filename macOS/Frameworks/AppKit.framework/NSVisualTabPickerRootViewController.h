@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldStackThumbnails; // @synthesize shouldStackThumbnails=_shouldStackThumbnails;
 @property(nonatomic) __weak id <NSVisualTabPickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_tabPickerThumbnailViews;
 - (void)_updateTabsShouldBeClosable;
 - (void)tabPickerItemsDidChange;
 - (id)_tabFilterInfoForOrderedTabs;
@@ -62,9 +63,12 @@ __attribute__((visibility("hidden")))
 - (void)_resetSearch;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (void)visualTabPickerGridViewCloseTabViewItem:(id)arg1;
+- (void)visualTabPickerGridView:(id)arg1 highlightTab:(id)arg2;
 - (void)visualTabPickerGridView:(id)arg1 selectTab:(id)arg2;
 - (void)createNewTabForVisualTabPickerGridView:(id)arg1;
 - (BOOL)canCloseTabsInVisualTabPickerGridView:(id)arg1;
+- (BOOL)visualTabPickerGridView:(id)arg1 highlightStateForTabItem:(id)arg2;
+- (id)visualTabPickerGridView:(id)arg1 imageForTabItem:(id)arg2;
 - (id)visualTabPickerGridView:(id)arg1 thumbnailViewForTabItem:(id)arg2;
 - (double)tilesHeightToWidthRatioInVisualTabPickerGridView:(id)arg1;
 - (id)selectedTabItemInVisualTabPickerGridView:(id)arg1;
@@ -72,6 +76,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isSearching;
 - (void)focusSearchField;
 - (struct CGRect)contentLayoutRect;
+- (void)selectedTabDidChange;
 - (void)selectTabBarItem:(id)arg1;
 - (void)reloadTabBarItem:(id)arg1;
 - (void)didInsertTabBarItem:(id)arg1;

@@ -7,7 +7,6 @@
 @class FAFamilyNotification;
 
 @protocol FAFamilyNotifierRemoteObjectProtocol
-- (void)didClearNotification:(FAFamilyNotification *)arg1;
 - (void)didDismissNotification:(FAFamilyNotification *)arg1;
 - (void)didActivateNotification:(FAFamilyNotification *)arg1;
 @end

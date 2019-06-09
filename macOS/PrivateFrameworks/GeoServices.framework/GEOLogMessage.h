@@ -12,27 +12,25 @@
 
 @interface GEOLogMessage : PBCodable <NSCopying>
 {
+    NSMutableArray *_logMsgEvents;
     unsigned int _groupRetryCount;
     int _logMessageType;
-    NSMutableArray *_logMsgEvents;
     struct {
-        unsigned int groupRetryCount:1;
-        unsigned int logMessageType:1;
-    } _has;
+        unsigned int has_groupRetryCount:1;
+        unsigned int has_logMessageType:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)logMsgEventType;
-+ (id)allowedSessionTypes;
-+ (id)disallowedStatesForLogMsgEvent:(id)arg1 logMessage:(id)arg2;
-+ (BOOL)disallowedStateWithStateType:(int)arg1 logMsgEvent:(id)arg2 logMessage:(id)arg3;
-+ (BOOL)allowApplicationStatesForLogMsgEvent:(id)arg1;
-+ (BOOL)supportsCohortSessionForLogMsgEvent:(id)arg1;
++ (id)logMsgSettings;
 + (id)logMessagesForEvent:(id)arg1;
 + (BOOL)logMessageType:(int)arg1 acceptsLogMsgEventType:(int)arg2;
 + (id)acceptedLogMsgEventsForLogMessageType:(int)arg1;
 + (id)acceptedLogMsgEvents;
-@property(retain, nonatomic) NSMutableArray *logMsgEvents; // @synthesize logMsgEvents=_logMsgEvents;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hasGroupRetryCount;
+@property(nonatomic) unsigned int groupRetryCount;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -40,23 +38,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsLogMessageType:(id)arg1;
 - (id)logMessageTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasLogMessageType;
-@property(nonatomic) int logMessageType; // @synthesize logMessageType=_logMessageType;
+@property(nonatomic) int logMessageType;
 - (id)logMsgEventAtIndex:(unsigned long long)arg1;
 - (unsigned long long)logMsgEventsCount;
 - (void)addLogMsgEvent:(id)arg1;
 - (void)clearLogMsgEvents;
-@property(nonatomic) BOOL hasGroupRetryCount;
-@property(nonatomic) unsigned int groupRetryCount;
+@property(retain, nonatomic) NSMutableArray *logMsgEvents;
 - (void)removeUnsupportedStatesFromEvent;
-- (BOOL)isFullExperimentsStateAllowed;
-- (BOOL)isFullCarPlayStateAllowed;
-- (BOOL)isNavigationSessionAllowed;
-- (BOOL)isStateAllowed:(id)arg1;
 - (unsigned long long)allowedSessionType;
 - (unsigned int)groupItemIdHash;
 - (long long)groupItemQueuedTime;

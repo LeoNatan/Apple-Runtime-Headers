@@ -15,13 +15,14 @@
 __attribute__((visibility("hidden")))
 @interface VCNetworkFeedbackController : NSObject <WCMClientDelegate, WRMClientDelegate>
 {
+    id <VCNetworkFeedbackControllerDelegate> _weakDelegate;
     VCWCMClient *_WCMClient;
     WRMClient *_WRMClient;
     VCConnectionManager *_connectionManager;
     VCRecommendedNetworkSettings *_recommendedSettings;
     unsigned int _clientTargetBitrate;
     unsigned int _clientTargetBitrateCap;
-    id <VCNetworkFeedbackControllerDelegate> _weakDelegate;
+    double _wrmReportingInterval;
 }
 
 @property unsigned int clientTargetBitrateCap; // @synthesize clientTargetBitrateCap=_clientTargetBitrateCap;
@@ -32,9 +33,12 @@ __attribute__((visibility("hidden")))
 - (void)setupWCMClient;
 - (void)wcmGetCallConfig:(unsigned int *)arg1 targetBitrate:(unsigned int *)arg2;
 - (void)wcmSetCallConfig:(unsigned int)arg1 interferenceLevel:(unsigned int)arg2;
+- (void)setPreWarmState:(_Bool)arg1;
 - (void)setWRMNotification:(CDStruct_d2860d30 *)arg1;
 - (void)setWRMMetricConfig:(CDStruct_69d7cc99 *)arg1;
 - (void)requestWRMNotification;
+- (void)sendStatusUpdate:(const CDStruct_8aeecdac *)arg1;
+- (void)sendFeedbackControllerReport:(CDStruct_4b4d87a1)arg1;
 @property(readonly) unsigned int recommendedTargetBitrateCap;
 - (id)strongDelegate;
 - (void)stop;

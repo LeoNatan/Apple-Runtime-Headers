@@ -13,9 +13,9 @@
 
 @interface HDContentProtectionManager : NSObject <HDDiagnosticObject>
 {
-    int _contentProtectionState;
-    int _shouldIgnoreUnlockedState;
-    int _unlockedSinceBoot;
+    // Error parsing type: Ai, name: _contentProtectionState
+    // Error parsing type: AB, name: _shouldIgnoreUnlockedState
+    // Error parsing type: AB, name: _unlockedSinceBoot
     int _notifyToken;
     NSObject<OS_dispatch_queue> *_observationQueue;
     NSMapTable *_observers;

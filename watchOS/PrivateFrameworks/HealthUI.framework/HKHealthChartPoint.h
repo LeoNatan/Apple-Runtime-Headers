@@ -18,6 +18,7 @@
     NSNumber *_min;
     NSNumber *_max;
     NSNumber *_avg;
+    NSNumber *_mostRecent;
     id <HKGraphSeriesBlockCoordinateInfo> _userInfo;
 }
 

@@ -49,6 +49,8 @@ __attribute__((visibility("hidden")))
 - (void)didCloseVisualTabPickerThumbnailView:(id)arg1;
 - (void)didSelectVisualTabPickerThumbnailView:(id)arg1;
 - (BOOL)canCloseTabInNSVisualTabPickerThumbnailView:(id)arg1;
+- (BOOL)highlightStateForVisualTabPickerTileThumbnailView:(id)arg1;
+- (id)imageForVisualTabPickerTileThumbnailView:(id)arg1;
 - (id)viewForVisualTabPickerTileThumbnailView:(id)arg1;
 - (id)titleForNSVisualTabPickerThumbnailView:(id)arg1;
 - (void)cleanupAnimationsForThumbnailAtIndex:(unsigned long long)arg1;
@@ -66,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)reloadTileAtIndex:(unsigned long long)arg1;
 - (void)removeTileAtIndex:(unsigned long long)arg1;
 - (void)addTileAtIndex:(unsigned long long)arg1;
+- (void)selectedTabDidChange;
 - (void)setHidden:(BOOL)arg1;
 - (id)makeBackingLayer;
 - (void)setFrame:(struct CGRect)arg1;

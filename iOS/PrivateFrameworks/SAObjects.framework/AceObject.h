@@ -13,7 +13,7 @@
 @interface AceObject : NSObject <AceObject>
 {
     NSNumber *_deserializationDuration;
-    _Bool _mutatingCommand;
+    NSNumber *_mutatingCommand;
     NSString *_aceId;
     NSString *_refId;
     NSNumber *_usefulnessScore;
@@ -38,7 +38,6 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSMutableDictionary *dict; // @synthesize dict=_dict;
 @property(readonly, nonatomic) NSData *plistData; // @synthesize plistData=_plistData;
-@property(nonatomic) _Bool mutatingCommand; // @synthesize mutatingCommand=_mutatingCommand;
 @property(copy, nonatomic) NSNumber *usefulnessScore; // @synthesize usefulnessScore=_usefulnessScore;
 @property(copy, nonatomic) NSString *refId; // @synthesize refId=_refId;
 @property(copy, nonatomic) NSString *aceId; // @synthesize aceId=_aceId;
@@ -52,6 +51,7 @@
 @property(readonly, copy) NSString *description;
 - (id)fullDescription;
 - (id)_descriptionHint;
+- (_Bool)_isDeserialized;
 - (id)_serializedData;
 - (id)forceEagerDeserialization;
 - (_Bool)hasArrayForPropertyForKey:(id)arg1;
@@ -59,6 +59,7 @@
 - (id)propertyForKeyWithoutDeserializing:(id)arg1;
 - (id)propertyForKey:(id)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
+@property(nonatomic) _Bool mutatingCommand;
 - (void)setTopLevelProperty:(id)arg1 forKey:(id)arg2;
 - (id)properties;
 - (id)dictionary;
@@ -70,7 +71,6 @@
 - (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (id)_initWithPlistData:(id)arg1 aceId:(id)arg2 refId:(id)arg3 usefulnessScore:(id)arg4 mutatingCommand:(id)arg5;
-- (id)_initWithPlistData:(id)arg1 aceId:(id)arg2 refId:(id)arg3;
 - (void)dealloc;
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;

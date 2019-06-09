@@ -10,9 +10,17 @@
 {
 }
 
++ (unsigned long long)advancedStatusVerifiedPersonLimit;
++ (unsigned long long)advancedStatusMergeCandidateLimit;
++ (BOOL)isBlacklistDisabled;
++ (unsigned long long)faceIDModelRebuildPeriod;
++ (BOOL)faceIDModelAlwaysRebuild;
++ (unsigned int)sceneAlgorithmUmbrellaVersion;
++ (unsigned int)faceAlgorithmUmbrellaVersion;
 + (unsigned long long)minimumFaceGroupSizeForCreatingMergeCandidates;
 + (BOOL)personBuilderMergeCandidatesDisabled;
 + (BOOL)personBuildingDisabled;
++ (BOOL)faceClusteringDisabled;
 + (BOOL)suggestionsLogEnabled;
 + (unsigned long long)maxFaceCountForClustering;
 + (unsigned long long)minFaceCountToTriggerClustering;
@@ -20,6 +28,8 @@
 + (unsigned long long)minimumSuggestionSize;
 + (float)facePrimarySuggestionsThreshold;
 + (float)faceMergeFaceprintDistanceThreshold;
++ (float)faceClusteringAgeThreshold;
++ (float)faceClusteringJunkThreshold;
 + (float)faceClusteringThreshold;
 + (double)_doubleValueForKey:(id)arg1 defaultValue:(double)arg2;
 + (float)_floatValueForKey:(id)arg1 defaultValue:(float)arg2;

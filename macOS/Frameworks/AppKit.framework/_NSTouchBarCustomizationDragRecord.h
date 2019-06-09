@@ -21,13 +21,13 @@ __attribute__((visibility("hidden")))
     NSArray *_replacedItems;
     NSDate *_startTime;
     NSIndexPath *_postReplacementInsertionIndexPath;
-    unsigned int _pending:1;
+    BOOL _pending;
 }
 
 @property(copy) NSIndexPath *postReplacementInsertionIndexPath; // @synthesize postReplacementInsertionIndexPath=_postReplacementInsertionIndexPath;
 @property struct CGSize backupDragSize; // @synthesize backupDragSize=_backupDragSize;
 @property(readonly, copy) NSDate *startTime; // @synthesize startTime=_startTime;
-@property BOOL pending; // @synthesize pending=_pending;
+@property(getter=isPending) BOOL pending; // @synthesize pending=_pending;
 @property(copy) NSArray *replacedItems; // @synthesize replacedItems=_replacedItems;
 @property(readonly) struct CGPoint anchorPoint; // @synthesize anchorPoint=_anchorPoint;
 @property(readonly) long long dragType; // @synthesize dragType=_dragType;

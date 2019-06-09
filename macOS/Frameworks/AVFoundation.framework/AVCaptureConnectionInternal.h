@@ -34,11 +34,16 @@ __attribute__((visibility("hidden")))
     int node;
     unsigned int element;
     unsigned int scope;
-    CDStruct_da23731b *extendedNodeInfo;
+    struct {
+        int _field1;
+        int _field2;
+        void *_field3;
+    } *extendedNodeInfo;
     unsigned int writerElement;
-    long long _clientSequenceID;
-    struct __CFString *_clientSequenceIDCF;
-    void *_mostRecentlySeenClientSequenceID;
+    long long clientSequenceID;
+    struct __CFString *clientSequenceIDCF;
+    void *mostRecentlySeenClientSequenceID;
+    long long preferredVideoStabilizationMode;
 }
 
 @end

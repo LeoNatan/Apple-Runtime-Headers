@@ -14,18 +14,16 @@
     long long _reserved;
 }
 
-+ (id)compressionOptionsWithDescription:(id)arg1;
 + (id)compressionOptionsWithIdentifier:(id)arg1;
 + (id)compressionOptionsIdentifiersForMediaType:(id)arg1;
 + (BOOL)_canUseCompressionOptionsWithDescription:(id)arg1 forVisibility:(unsigned long long)arg2;
 + (id)_compressionOptionsPropertyList;
-- (BOOL)isRecommendedOnCurrentHardware;
-- (BOOL)isEqualToCompressionOptions:(id)arg1;
++ (id)compressionOptionsWithDescription:(id)arg1;
+- (void).cxx_destruct;
 - (id)localizedCompressionOptionsSummary;
 - (id)localizedDisplayName;
 - (id)mediaType;
-- (void)dealloc;
-- (void)_setIdentifier:(id)arg1;
+- (BOOL)isEqualToCompressionOptions:(id)arg1;
 - (id)init;
 
 @end

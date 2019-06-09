@@ -6,30 +6,31 @@
 
 #import <Message/MailAccount.h>
 
-@class DeliveryAccount, MFIMAPConnection, NSRecursiveLock, NSURL;
+@class DeliveryAccount, MFIMAPConnection, NSMutableDictionary, NSURL;
 
 @interface MFFakeMailAccount : MailAccount
 {
     NSURL *_URL;
     MFIMAPConnection *_cachedConnection;
-    NSRecursiveLock *_flagChangesLock;
-    _Bool managed;
+    NSMutableDictionary *_mailboxes;
+    _Bool _managed;
     DeliveryAccount *_deliveryAccount;
 }
 
 @property(retain, nonatomic) DeliveryAccount *deliveryAccount; // @synthesize deliveryAccount=_deliveryAccount;
-@property(nonatomic, getter=isManaged) _Bool managed; // @synthesize managed;
+@property(nonatomic, getter=isManaged) _Bool managed; // @synthesize managed=_managed;
 - (void).cxx_destruct;
+- (Class)storeClass;
 - (_Bool)_shouldConfigureMailboxCache;
 - (_Bool)shouldFetchAgainWithError:(id)arg1 foregroundRequest:(_Bool)arg2;
-- (id)flagChangesLock;
 - (id)flagChangesForMailboxPath:(id)arg1 UID:(unsigned int)arg2 connectTime:(double)arg3;
+- (void)invalidate;
 - (id)connectionForStore:(id)arg1 delegate:(id)arg2 options:(int)arg3;
 - (void)setCachedConnection:(id)arg1;
 - (int)cachePolicy;
 - (unsigned int)minID;
 - (id)powerAssertionIdentifierWithPrefix:(id)arg1;
-- (id)uniqueId;
+- (id)uniqueID;
 - (id)_nameForMailboxUid:(id)arg1;
 - (id)description;
 - (id)debugDescription;
@@ -41,7 +42,6 @@
 - (void)didFinishActionForChokePoint:(id)arg1 coalescePoint:(id)arg2 withResult:(id)arg3;
 - (_Bool)willPerformActionForChokePoint:(id)arg1 coalescePoint:(id)arg2 result:(id *)arg3;
 - (void)setUnreadCount:(unsigned int)arg1 forMailbox:(id)arg2;
-- (id)URLString;
 - (_Bool)supportsFastRemoteBodySearch;
 - (_Bool)supportsRemoteAppend;
 - (_Bool)isActive;

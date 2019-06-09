@@ -32,6 +32,7 @@
     HDFitnessMachineCharacteristicUInt16Field *_powerOutputField;
 }
 
++ (id)unitTest_fakeTreadmillDataForDistance:(unsigned int)arg1 energy:(unsigned short)arg2 elapsedTime:(unsigned short)arg3;
 + (unsigned char)flagFieldLength;
 + (id)uuid;
 - (void).cxx_destruct;

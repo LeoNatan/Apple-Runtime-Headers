@@ -9,6 +9,7 @@
 @class NSArray;
 
 @protocol CLSUtilityServerInterface <NSObject>
+- (oneway void)remote_featureIsEnabled:(int)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (oneway void)remote_statusWithCompletion:(void (^)(id, NSError *))arg1;
 - (oneway void)remote_getDevModeWithCompletion:(void (^)(int, NSError *))arg1;
 - (oneway void)remote_setDevMode:(int)arg1 completion:(void (^)(NSError *))arg2;

@@ -8,6 +8,7 @@
 
 @class IMManualUpdater;
 
+__attribute__((visibility("hidden")))
 @interface CKAudioProgressView : CKBalloonImageView
 {
     _Bool _playing;

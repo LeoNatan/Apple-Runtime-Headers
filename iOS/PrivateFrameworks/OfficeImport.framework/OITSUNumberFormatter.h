@@ -6,53 +6,54 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, NSString, OITSULocaleStructuredDictionary;
+@class NSArray, NSDictionary, NSLocale, NSMutableArray, NSMutableDictionary, NSString, OITSULocaleStructuredDictionary;
 
 __attribute__((visibility("hidden")))
 @interface OITSUNumberFormatter : NSObject
 {
-    struct __CFLocale *mLocale;
-    struct __CFArray *mDecimalFormatters;
-    NSDictionary *mCurrencyFormatters;
-    struct __CFArray *mPercentageFormatters;
-    struct __CFArray *mScientificFormatters;
-    struct __CFNumberFormatter *mFractionFormatter;
-    NSString *mCurrencyString;
-    NSString *mPercentageString;
-    NSString *mScientificString;
-    NSString *mDecimalString;
-    NSString *mDecimalSeparator;
-    NSString *mCurrencyDecimalSeparator;
-    NSString *mGroupingSeparator;
-    NSString *mCurrencyGroupingSeparator;
-    NSString *mPercentSymbol;
-    unsigned long long mGroupingSize;
-    NSMutableArray *mTransformedDecimalStrings;
-    NSMutableArray *mTransformedCurrencyStrings;
-    NSMutableArray *mTransformedPercentageStrings;
-    NSMutableArray *mTransformedScientificStrings;
-    OITSULocaleStructuredDictionary *mHarmonizedNumberFormatterSymbols;
-    NSMutableDictionary *mCurrencyCodeToHalfWidthSymbolMap;
-    struct __CFString *mAdditionalCurrencyCode;
-    NSDictionary *mAdditionalCurrencyCodeFormatters;
+    NSLocale *_locale;
+    NSArray *_decimalFormatters;
+    NSDictionary *_currencyFormatters;
+    NSArray *_percentageFormatters;
+    NSArray *_scientificFormatters;
+    struct __CFNumberFormatter *_fractionFormatter;
+    NSString *_currencyString;
+    NSString *_percentageString;
+    NSString *_scientificString;
+    NSString *_decimalString;
+    NSString *_decimalSeparator;
+    NSString *_currencyDecimalSeparator;
+    NSString *_groupingSeparator;
+    NSString *_currencyGroupingSeparator;
+    NSString *_percentSymbol;
+    unsigned long long _groupingSize;
+    NSMutableArray *_transformedDecimalStrings;
+    NSMutableArray *_transformedCurrencyStrings;
+    NSMutableArray *_transformedPercentageStrings;
+    NSMutableArray *_transformedScientificStrings;
+    OITSULocaleStructuredDictionary *_harmonizedNumberFormatterSymbols;
+    NSMutableDictionary *_currencyCodeToSymbolMap;
+    NSMutableDictionary *_currencyCodeToHalfWidthSymbolMap;
+    NSString *_additionalCurrencyCode;
+    NSDictionary *_additionalCurrencyCodeFormatters;
 }
 
 + (id)userVisibleCurrencyCodes;
-+ (unsigned long long)groupingSizeForLocale:(struct __CFLocale *)arg1;
-+ (id)percentSymbolForLocale:(struct __CFLocale *)arg1;
-+ (id)currencyGroupingSeparatorForLocale:(struct __CFLocale *)arg1;
-+ (id)currencyDecimalSeparatorForLocale:(struct __CFLocale *)arg1;
-+ (id)groupingSeparatorForLocale:(struct __CFLocale *)arg1;
-+ (id)decimalSeparatorForLocale:(struct __CFLocale *)arg1;
++ (unsigned long long)groupingSizeForLocale:(id)arg1;
++ (id)percentSymbolForLocale:(id)arg1;
++ (id)currencyGroupingSeparatorForLocale:(id)arg1;
++ (id)currencyDecimalSeparatorForLocale:(id)arg1;
++ (id)groupingSeparatorForLocale:(id)arg1;
++ (id)decimalSeparatorForLocale:(id)arg1;
 + (id)defaultFormatStringForValueType:(int)arg1;
 + (id)defaultFormatStringForValueType:(int)arg1 negativeStyle:(int)arg2;
 + (id)numberFormatStringSpecialSymbols;
 + (id)currentLocaleCurrencyDecimalSeparator;
 + (id)currentLocaleDecimalSeparator;
 + (id)currentLocaleCurrencyCode;
-+ (id)defaultCurrencyCodeForLocale:(struct __CFLocale *)arg1;
++ (id)defaultCurrencyCodeForLocale:(id)arg1;
 + (unsigned short)defaultDecimalPlacesForCurrencyCode:(id)arg1;
-+ (id)currencySymbolForCurrencyCode:(id)arg1 locale:(struct __CFLocale *)arg2;
++ (id)currencySymbolForCurrencyCode:(id)arg1 locale:(id)arg2;
 + (id)currencySymbolForCurrencyCode:(id)arg1;
 + (id)displayNameForCurrencyCode:(id)arg1;
 + (id)availableCurrencyCodes;
@@ -63,13 +64,14 @@ __attribute__((visibility("hidden")))
 + (int)positionOfSymbol:(id)arg1 inNumberFormatSubpattern:(id)arg2;
 + (id)stringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand:(id)arg1;
 + (void)initialize;
-+ (id)formatterForLocale:(struct __CFLocale *)arg1;
-+ (struct __CFNumberFormatter *)createHarmonizedCFNumberFormatterWithLocale:(struct __CFLocale *)arg1 style:(long long)arg2;
-- (struct __CFArray *)p_scientificFormatters;
-- (struct __CFArray *)p_percentageFormatters;
++ (id)formatterForLocale:(id)arg1;
++ (struct __CFNumberFormatter *)createHarmonizedCFNumberFormatterWithLocale:(id)arg1 style:(long long)arg2;
+- (void).cxx_destruct;
+- (id)p_scientificFormatters;
+- (id)p_percentageFormatters;
 - (id)p_currencyFormatters;
-- (struct __CFArray *)p_decimalFormatters;
-- (id)p_createDictionaryOfCurrencyFormattersForCurrencies:(struct __CFArray *)arg1;
+- (id)p_decimalFormatters;
+- (id)p_createDictionaryOfCurrencyFormattersForCurrencies:(id)arg1;
 - (unsigned long long)groupingSize;
 - (id)percentSymbol;
 - (id)currencyGroupingSeparator;
@@ -83,19 +85,17 @@ __attribute__((visibility("hidden")))
 - (id)currencySymbolForCurrencyCode:(id)arg1;
 - (void)p_loadHarmonizedNumberFormatterSymbols;
 - (id)displayNameForCurrencyCode:(id)arg1;
-- (id)findCurrencySymbolInString:(struct __CFString *)arg1 additionalCurrencyCode:(struct __CFString *)arg2 successfullString:(const struct __CFString **)arg3;
-- (_Bool)p_valueFromString:(struct __CFString *)arg1 formatters:(struct __CFArray *)arg2 formatterCurrencyKeys:(struct __CFArray *)arg3 value:(double *)arg4 formatString:(const struct __CFString **)arg5 currencyCode:(const struct __CFString **)arg6;
-- (_Bool)p_valueFromString:(struct __CFString *)arg1 formatters:(struct __CFArray *)arg2 value:(double *)arg3 formatString:(const struct __CFString **)arg4;
-- (_Bool)fractionFromString:(struct __CFString *)arg1 value:(double *)arg2;
-- (_Bool)scientificFromString:(struct __CFString *)arg1 value:(double *)arg2 formatString:(const struct __CFString **)arg3;
-- (_Bool)percentageFromString:(struct __CFString *)arg1 value:(double *)arg2 formatString:(const struct __CFString **)arg3;
-- (id)p_arrayOfString:(id)arg1 ofCount:(unsigned long long)arg2;
-- (_Bool)currencyFromString:(struct __CFString *)arg1 additionalCurrencyCode:(struct __CFString *)arg2 value:(double *)arg3 formatString:(const struct __CFString **)arg4 currencyCode:(const struct __CFString **)arg5;
-- (_Bool)decimalFromString:(struct __CFString *)arg1 value:(double *)arg2 formatString:(const struct __CFString **)arg3;
-- (void)numberPreferencesChanged:(id)arg1;
+- (id)p_findCurrencySymbolInString:(id)arg1 additionalCurrencyCode:(id)arg2 successfullString:(id *)arg3 currencyCode:(id *)arg4;
+- (_Bool)p_valueFromString:(id)arg1 formatters:(id)arg2 value:(double *)arg3 formatString:(id *)arg4;
+- (_Bool)fractionFromString:(id)arg1 value:(double *)arg2;
+- (_Bool)scientificFromString:(id)arg1 value:(double *)arg2 formatString:(id *)arg3;
+- (_Bool)percentageFromString:(id)arg1 value:(double *)arg2 formatString:(id *)arg3;
+- (_Bool)currencyFromString:(id)arg1 additionalCurrencyCode:(id)arg2 value:(double *)arg3 formatString:(id *)arg4 currencyCode:(id *)arg5;
+- (_Bool)decimalFromString:(id)arg1 value:(double *)arg2 formatString:(id *)arg3;
+- (void)p_numberPreferencesChanged:(id)arg1;
 - (struct __CFNumberFormatter *)p_createHarmonizedCFNumberFormatterOfStyle:(long long)arg1;
 - (void)dealloc;
-- (id)initWithLocale:(const struct __CFLocale *)arg1;
+- (id)initWithLocale:(id)arg1;
 
 @end
 

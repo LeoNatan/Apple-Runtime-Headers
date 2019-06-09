@@ -8,5 +8,8 @@
 
 @interface NSButton (MapKitAccessoryButtonAdditions)
 - (id)_mapkit_accessoryControlToExtendWithCallout;
+- (void)_mapkit_setImage:(id)arg1;
+- (void)_mapkit_setAttributedTitle:(id)arg1;
+- (id)_mapkit_title;
 @end
 

@@ -6,20 +6,20 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class CKNanoReplyListButton, NSString;
+@class CKNanoReplyListButton;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoReplyListCollectionViewCell : UICollectionViewCell
 {
     CKNanoReplyListButton *_button;
     CDUnknownBlockType _replyButtonTapped;
-    NSString *_reply;
 }
 
-@property(copy, nonatomic) NSString *reply; // @synthesize reply=_reply;
 @property(copy, nonatomic) CDUnknownBlockType replyButtonTapped; // @synthesize replyButtonTapped=_replyButtonTapped;
 @property(retain, nonatomic) CKNanoReplyListButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
 - (void)buttonTapped:(id)arg1;
+- (void)setReply:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

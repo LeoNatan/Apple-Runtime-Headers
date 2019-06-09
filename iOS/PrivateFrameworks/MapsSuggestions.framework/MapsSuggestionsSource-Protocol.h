@@ -6,13 +6,16 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class MapsSuggestionsEntry;
+@class CNContact, GEOMapItemStorage, MapsSuggestionsEntry;
 @protocol MapsSuggestionsSourceDelegate;
 
 @protocol MapsSuggestionsSource <MapsSuggestionsObject>
 + (unsigned long long)disposition;
 + (_Bool)isEnabled;
 @property(nonatomic) __weak id <MapsSuggestionsSourceDelegate> delegate;
+- (void)feedbackForContact:(CNContact *)arg1 action:(long long)arg2;
+- (void)feedbackForMapItem:(GEOMapItemStorage *)arg1 action:(long long)arg2;
+- (void)feedbackForEntry:(MapsSuggestionsEntry *)arg1 action:(long long)arg2;
 - (_Bool)removeEntry:(MapsSuggestionsEntry *)arg1 behavior:(long long)arg2 handler:(void (^)(void))arg3;
 - (_Bool)canProduceEntriesOfType:(long long)arg1;
 - (double)updateSuggestionEntriesOfType:(long long)arg1;

@@ -8,15 +8,11 @@
 
 #import <ScreenTimeUI/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSCache, NSDate, NSDateInterval, NSDictionary, NSString, STUsageInsights, STUsageReportGraphDataSet;
+@class NSArray, NSCache, NSDate, NSDateInterval, NSDictionary, NSString, STUsageReportGraphDataSet;
 
 @interface STUsageReport : NSObject <NSSecureCoding>
 {
     NSDateInterval *_maxPickupsDateInterval;
-    STUsageReportGraphDataSet *_notificationsDataSet;
-    STUsageReportGraphDataSet *_pickupsDataSet;
-    STUsageReportGraphDataSet *_appAndWebUsageDataSet;
-    STUsageReportGraphDataSet *_categoryUsageDataSet;
     NSString *_displayName;
     unsigned long long _type;
     NSDateInterval *_reportDateInterval;
@@ -33,16 +29,17 @@
     unsigned long long _maxPickups;
     unsigned long long _maxPickupDateIntervalIndex;
     NSDate *_firstPickup;
+    double _pickupDeltaFromHistoricalAverage;
     unsigned long long _totalNotifications;
     NSDictionary *_notificationsByBundleIdentifier;
     NSArray *_notifications;
     double _notificationRate;
+    double _notificationDeltaFromHistoricalAverage;
     NSDictionary *_appUsageByBundleIdentifier;
     NSDictionary *_webUsageByDomain;
     NSArray *_appAndWebUsages;
     NSDictionary *_categoryUsageByCategorydentifier;
     NSArray *_categoryUsages;
-    STUsageInsights *_insights;
     double _maxScreenTime;
     NSDictionary *_screenTimeByStartOfDateInterval;
     NSDictionary *_pickupsByStartOfDateInterval;
@@ -82,16 +79,17 @@
 @property(readonly, copy, nonatomic) NSDictionary *pickupsByStartOfDateInterval; // @synthesize pickupsByStartOfDateInterval=_pickupsByStartOfDateInterval;
 @property(readonly, copy, nonatomic) NSDictionary *screenTimeByStartOfDateInterval; // @synthesize screenTimeByStartOfDateInterval=_screenTimeByStartOfDateInterval;
 @property(readonly, nonatomic) double maxScreenTime; // @synthesize maxScreenTime=_maxScreenTime;
-@property(readonly, nonatomic) STUsageInsights *insights; // @synthesize insights=_insights;
 @property(readonly, copy, nonatomic) NSArray *categoryUsages; // @synthesize categoryUsages=_categoryUsages;
 @property(readonly, copy, nonatomic) NSDictionary *categoryUsageByCategorydentifier; // @synthesize categoryUsageByCategorydentifier=_categoryUsageByCategorydentifier;
 @property(readonly, copy, nonatomic) NSArray *appAndWebUsages; // @synthesize appAndWebUsages=_appAndWebUsages;
 @property(readonly, copy, nonatomic) NSDictionary *webUsageByDomain; // @synthesize webUsageByDomain=_webUsageByDomain;
 @property(readonly, copy, nonatomic) NSDictionary *appUsageByBundleIdentifier; // @synthesize appUsageByBundleIdentifier=_appUsageByBundleIdentifier;
+@property(readonly) double notificationDeltaFromHistoricalAverage; // @synthesize notificationDeltaFromHistoricalAverage=_notificationDeltaFromHistoricalAverage;
 @property(readonly, nonatomic) double notificationRate; // @synthesize notificationRate=_notificationRate;
 @property(readonly, copy, nonatomic) NSArray *notifications; // @synthesize notifications=_notifications;
 @property(readonly, copy, nonatomic) NSDictionary *notificationsByBundleIdentifier; // @synthesize notificationsByBundleIdentifier=_notificationsByBundleIdentifier;
 @property(readonly, nonatomic) unsigned long long totalNotifications; // @synthesize totalNotifications=_totalNotifications;
+@property(readonly) double pickupDeltaFromHistoricalAverage; // @synthesize pickupDeltaFromHistoricalAverage=_pickupDeltaFromHistoricalAverage;
 @property(readonly, nonatomic) NSDate *firstPickup; // @synthesize firstPickup=_firstPickup;
 @property(readonly, nonatomic) unsigned long long maxPickupDateIntervalIndex; // @synthesize maxPickupDateIntervalIndex=_maxPickupDateIntervalIndex;
 @property(readonly, nonatomic) unsigned long long maxPickups; // @synthesize maxPickups=_maxPickups;
@@ -110,19 +108,21 @@
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
 - (id)_timedDataSetForItemType:(unsigned long long)arg1 budgetItemIdentifier:(id)arg2;
-- (id)_timedDataSetForItemType:(unsigned long long)arg1;
+- (id)_timedDataSetForItemType:(unsigned long long)arg1 useDarkColors:(_Bool)arg2;
 - (id)_countedDataSetForItemType:(unsigned long long)arg1 budgetItemIdentifier:(id)arg2 includeIndicatorImageName:(_Bool)arg3;
-- (id)_dataSetForItemType:(unsigned long long)arg1 budgetItemIdentifier:(id)arg2 includeIndicatorImageName:(_Bool)arg3;
+- (id)_dataSetForItemType:(unsigned long long)arg1 budgetItemIdentifier:(id)arg2 includeIndicatorImageName:(_Bool)arg3 useDarkColors:(_Bool)arg4;
 - (id)dataSetWithUsageItem:(id)arg1;
-@property(readonly, nonatomic) STUsageReportGraphDataSet *categoryUsageDataSet; // @synthesize categoryUsageDataSet=_categoryUsageDataSet;
-@property(readonly, nonatomic) STUsageReportGraphDataSet *appAndWebUsageDataSet; // @synthesize appAndWebUsageDataSet=_appAndWebUsageDataSet;
-@property(readonly, nonatomic) STUsageReportGraphDataSet *pickupsDataSet; // @synthesize pickupsDataSet=_pickupsDataSet;
-@property(readonly, nonatomic) STUsageReportGraphDataSet *notificationsDataSet; // @synthesize notificationsDataSet=_notificationsDataSet;
+@property(readonly, nonatomic) STUsageReportGraphDataSet *categoryUsageDataSet;
+- (id)appAndWebUsageDataSetWithDarkColors:(_Bool)arg1;
+@property(readonly, nonatomic) STUsageReportGraphDataSet *pickupsDataSet;
+@property(readonly, nonatomic) STUsageReportGraphDataSet *notificationsDataSet;
+@property(readonly, nonatomic) STUsageReportGraphDataSet *screenTimeDataSet;
 - (id)topUsageItemsWithMaxCount:(unsigned long long)arg1 type:(unsigned long long)arg2 includeAggregateItem:(_Bool)arg3 nonAggregateItems:(id *)arg4 darkColors:(_Bool)arg5;
 @property(readonly, copy, nonatomic) NSDateInterval *maxPickupsDateInterval; // @synthesize maxPickupsDateInterval=_maxPickupsDateInterval;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithReportType:(unsigned long long)arg1 startDate:(id)arg2 lastUpdatedDate:(id)arg3 firstPickup:(id)arg4 usageItems:(id)arg5;
 
 @end

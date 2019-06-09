@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) int listDefinitionId; // @synthesize listDefinitionId=mListDefinitionId;
 @property(readonly, nonatomic) int listId; // @synthesize listId=mListId;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithDocument:(id)arg1 listId:(int)arg2 listDefinitionId:(int)arg3;
 - (_Bool)isAnyListLevelOverridden;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (id)levelOverrideForLevel:(unsigned char)arg1;
 - (id)levelOverrideAt:(unsigned long long)arg1;
 - (unsigned long long)levelOverrideCount;
-- (void)dealloc;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSArray, NSString, SKUIColorScheme, SKUISegmentedControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPillsControl : UIControl
 {
     SKUIColorScheme *_colorScheme;

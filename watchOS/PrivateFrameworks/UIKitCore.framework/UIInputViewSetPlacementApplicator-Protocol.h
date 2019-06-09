@@ -11,6 +11,7 @@
 
 @protocol UIInputViewSetPlacementApplicator <NSObject>
 + (id <UIInputViewSetPlacementApplicator>)applicatorForOwner:(id <UIInputViewSetPlacementOwner>)arg1 withPlacement:(UIInputViewSetPlacement *)arg2;
+@property(readonly) struct CGRect popoverFrame;
 @property(readonly) struct UIEdgeInsets contentInsets;
 @property(readonly, retain) UIView *draggableView;
 @property(readonly, retain) NSArray *constraints;

@@ -50,8 +50,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <UIMovieScrubberTrackViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <UIMovieScrubberTrackViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (void)_unzoomAnimation:(id)arg1 didFinish:(id)arg2 context:(id)arg3;
-- (void)_zoomAnimation:(id)arg1 didFinish:(id)arg2 context:(id)arg3;
+- (void)_unzoomAnimationDidFinish;
+- (void)_zoomAnimationDidFinish;
 - (void)unzoom;
 - (void)_setOverlayViewIsZoomed:(_Bool)arg1 minValue:(float)arg2 maxValue:(float)arg3;
 - (_Bool)zoomAtPoint:(struct CGPoint)arg1;

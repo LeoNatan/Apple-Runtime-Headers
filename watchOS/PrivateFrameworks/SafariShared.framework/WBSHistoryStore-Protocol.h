@@ -11,6 +11,7 @@
 
 @protocol WBSHistoryStore <WBSHistoryLoader>
 @property(readonly, nonatomic) _Bool isUsingInMemoryDatabase;
+@property(nonatomic) _Bool syncsWithManateeContainer;
 @property(nonatomic) _Bool pushNotificationsAreInitialized;
 @property(nonatomic) unsigned int cachedNumberOfDevicesInSyncCircle;
 @property(copy, nonatomic) NSData *longLivedSaveOperationData;
@@ -32,6 +33,7 @@
 - (void)getAllTombstonesWithCompletion:(void (^)(NSSet *))arg1;
 - (void)closeWithCompletionHandler:(void (^)(void))arg1;
 - (void)performMaintenance:(void (^)(void))arg1;
+- (void)vacuumHistoryWithCompletionHandler:(void (^)(void))arg1;
 - (void)clearHistoryVisitsAddedAfterDate:(NSDate *)arg1 beforeDate:(NSDate *)arg2 completionHandler:(void (^)(void))arg3;
 - (void)clearHistoryWithCompletionHandler:(void (^)(void))arg1;
 - (void)visitTitleWasUpdated:(WBSHistoryVisit *)arg1;

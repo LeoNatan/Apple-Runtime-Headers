@@ -13,7 +13,6 @@
     _Bool _simulateSavingFailure;
     _Bool _useNeutrinoRendering;
     _Bool _showStatusInDisclosureLabel;
-    _Bool _allowOrbPreview;
     _Bool _showLoopBadges;
     _Bool _invalidateCachedPreviews;
     _Bool _useLiveRenderedPreviews;
@@ -28,7 +27,6 @@
 @property(nonatomic) _Bool useLiveRenderedPreviews; // @synthesize useLiveRenderedPreviews=_useLiveRenderedPreviews;
 @property(nonatomic) _Bool invalidateCachedPreviews; // @synthesize invalidateCachedPreviews=_invalidateCachedPreviews;
 @property(nonatomic) _Bool showLoopBadges; // @synthesize showLoopBadges=_showLoopBadges;
-@property(nonatomic) _Bool allowOrbPreview; // @synthesize allowOrbPreview=_allowOrbPreview;
 @property(nonatomic) _Bool showStatusInDisclosureLabel; // @synthesize showStatusInDisclosureLabel=_showStatusInDisclosureLabel;
 @property(nonatomic) _Bool useNeutrinoRendering; // @synthesize useNeutrinoRendering=_useNeutrinoRendering;
 @property(nonatomic) _Bool simulateSavingFailure; // @synthesize simulateSavingFailure=_simulateSavingFailure;

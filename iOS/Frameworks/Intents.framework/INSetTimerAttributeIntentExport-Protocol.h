@@ -7,9 +7,10 @@
 #import <Intents/JSExport-Protocol.h>
 #import <Intents/NSObject-Protocol.h>
 
-@class INTimer;
+@class INSpeakableString, INTimer;
 
 @protocol INSetTimerAttributeIntentExport <NSObject, JSExport>
+@property(copy, nonatomic) INSpeakableString *toLabel;
 @property(nonatomic) double toDuration;
 @property(copy, nonatomic) INTimer *targetTimer;
 - (id)init;

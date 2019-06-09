@@ -8,8 +8,8 @@
 
 #import <TVMLKit/_TVMLKitApplication-Protocol.h>
 
-@class IKAppDataStorage, NSDictionary, NSString, TVApplicationControllerContext, UIWindow, _TVAppNavigationController, _TVRootMenuBarController;
-@protocol UITraitEnvironment;
+@class IKAppDataStorage, NSDictionary, NSString, TVApplicationControllerContext, UIViewController, UIWindow;
+@protocol TVAppRootViewController, UITraitEnvironment;
 
 __attribute__((visibility("hidden")))
 @interface _TVMLKitApplication : NSObject <_TVMLKitApplication>
@@ -17,8 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool _headless;
     TVApplicationControllerContext *_launchContext;
     IKAppDataStorage *_localDataStorage;
-    _TVAppNavigationController *_navigationController;
-    _TVRootMenuBarController *_menuBarController;
+    UIViewController<TVAppRootViewController> *_appRootViewController;
     UIWindow *_keyWindow;
     id <UITraitEnvironment> _keyTraitEnvironment;
     NSDictionary *_javaScriptLaunchOptions;
@@ -28,8 +27,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSDictionary *javaScriptLaunchOptions; // @synthesize javaScriptLaunchOptions=_javaScriptLaunchOptions;
 @property(nonatomic) __weak id <UITraitEnvironment> keyTraitEnvironment; // @synthesize keyTraitEnvironment=_keyTraitEnvironment;
 @property(nonatomic) __weak UIWindow *keyWindow; // @synthesize keyWindow=_keyWindow;
-@property(nonatomic) __weak _TVRootMenuBarController *menuBarController; // @synthesize menuBarController=_menuBarController;
-@property(nonatomic) __weak _TVAppNavigationController *navigationController; // @synthesize navigationController=_navigationController;
+@property(nonatomic) __weak UIViewController<TVAppRootViewController> *appRootViewController; // @synthesize appRootViewController=_appRootViewController;
 @property(nonatomic) __weak IKAppDataStorage *localDataStorage; // @synthesize localDataStorage=_localDataStorage;
 @property(nonatomic) __weak TVApplicationControllerContext *launchContext; // @synthesize launchContext=_launchContext;
 - (void).cxx_destruct;

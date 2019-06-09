@@ -9,9 +9,12 @@
 @class NSArray, NSDictionary, SDRDiagnosticReporter;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface SystemSettingsRelay : NSObject
 {
     BOOL _autoBugCaptureEnabled;
+    BOOL _autoFeedbackAssistantEnable;
+    BOOL _autoBugCaptureAvailable;
     BOOL _registeredForAutoBugCaptureChangeNotifications;
     NSArray *_wifiKnownNetworkSSIDs;
     NSDictionary *_autoBugCaptureConfiguration;
@@ -25,10 +28,14 @@
 @property(nonatomic) BOOL registeredForAutoBugCaptureChangeNotifications; // @synthesize registeredForAutoBugCaptureChangeNotifications=_registeredForAutoBugCaptureChangeNotifications;
 @property(retain, nonatomic) SDRDiagnosticReporter *collectorClient; // @synthesize collectorClient=_collectorClient;
 @property(retain, nonatomic) NSDictionary *autoBugCaptureConfiguration; // @synthesize autoBugCaptureConfiguration=_autoBugCaptureConfiguration;
+@property(readonly) BOOL autoBugCaptureAvailable; // @synthesize autoBugCaptureAvailable=_autoBugCaptureAvailable;
+@property(readonly) BOOL autoFeedbackAssistantEnable; // @synthesize autoFeedbackAssistantEnable=_autoFeedbackAssistantEnable;
 @property(readonly) BOOL autoBugCaptureEnabled; // @synthesize autoBugCaptureEnabled=_autoBugCaptureEnabled;
 @property(readonly) NSArray *wifiKnownNetworkSSIDs; // @synthesize wifiKnownNetworkSSIDs=_wifiKnownNetworkSSIDs;
 - (void).cxx_destruct;
 - (void)grabKnownWiFiNetworks;
+- (void)_setAutoFeedbackAssistantEnable:(BOOL)arg1;
+- (void)_setAutoBugCaptureAvailable:(BOOL)arg1;
 - (void)_setAutoBugCaptureEnabled:(BOOL)arg1;
 - (void)registerForAutoBugCaptureChangeNotifications;
 - (void)dealloc;

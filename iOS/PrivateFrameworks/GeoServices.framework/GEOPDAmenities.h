@@ -18,8 +18,10 @@
     unsigned long long _amenitysSpace;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)amentiesForPlaceData:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,6 +30,7 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setAmenitys:(struct GEOPDAmenityValue *)arg1 count:(unsigned long long)arg2;

@@ -20,9 +20,6 @@
 + (BOOL)auditToken:(CDStruct_6ad76789)arg1 hasEntitlement:(id)arg2;
 + (BOOL)secTask:(struct __SecTask *)arg1 hasEntitlement:(id)arg2;
 + (id)_secTask:(struct __SecTask *)arg1 grantedEntitlements:(id)arg2;
-+ (unsigned long long)assetsdEntitlementTypesForConnection:(id)arg1;
-+ (unsigned long long)assetsdEntitlementTypesForCurrentProcess;
-+ (unsigned long long)assetsdEntitlementTypesFromSecTask:(struct __SecTask *)arg1;
 
 @end
 

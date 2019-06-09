@@ -11,6 +11,7 @@
 @class CKNanoReplyListView, NSNumber, NSString;
 @protocol CKNanoReplyListCellDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoReplyListCell : CKTranscriptCell <CKNanoReplyListViewDelegate>
 {
     NSNumber *_messageItemListNumber;

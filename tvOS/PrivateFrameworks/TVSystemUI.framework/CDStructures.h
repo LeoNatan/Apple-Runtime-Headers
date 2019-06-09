@@ -37,3 +37,10 @@ struct _NSRange {
     unsigned long long _field2;
 };
 
+struct _TVSUIOuterShadowViewAttributes {
+    _Bool continousCorners;
+    double cornerRadius;
+    struct CGSize shadowOffset;
+    double shadowRadius;
+};
+

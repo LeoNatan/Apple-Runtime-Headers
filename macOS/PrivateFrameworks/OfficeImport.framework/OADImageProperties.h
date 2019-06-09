@@ -8,6 +8,7 @@
 
 @class OADImageFill;
 
+__attribute__((visibility("hidden")))
 @interface OADImageProperties : OADGraphicProperties
 {
     OADImageFill *mImageFill;

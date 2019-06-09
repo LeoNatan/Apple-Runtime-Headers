@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)_updateIsActive;
 - (void)_runLoopWillStartWaiting;
+- (_Bool)_shouldExecutePendingBlock;
 - (void)_displayLinkTick:(id)arg1;
 - (void)scheduleBackgroundTask:(CDUnknownBlockType)arg1;
 - (void)scheduleMainQueueTaskAndWait:(CDUnknownBlockType)arg1;

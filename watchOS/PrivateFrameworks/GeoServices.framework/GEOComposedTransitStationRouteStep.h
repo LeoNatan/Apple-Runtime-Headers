@@ -17,13 +17,16 @@
     GEOPBTransitAccessPoint *_accessPoint;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned int expectedTime; // @synthesize expectedTime=_expectedTime;
 @property(readonly, nonatomic) _Bool isArrivalUncertain; // @synthesize isArrivalUncertain=_isArrivalUncertain;
 @property(readonly, nonatomic) GEOTransitTransferInfo *transitTransfer; // @synthesize transitTransfer=_transitTransfer;
 @property(readonly, nonatomic) GEOPBTransitAccessPoint *accessPoint; // @synthesize accessPoint=_accessPoint;
 - (void).cxx_destruct;
-- (CDStruct_c3b9c2ee)endGeoCoordinate;
-- (CDStruct_c3b9c2ee)startGeoCoordinate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (CDStruct_39925896)endGeoCoordinate;
+- (CDStruct_39925896)startGeoCoordinate;
 @property(readonly, nonatomic) _Bool hasDisplayStop;
 @property(readonly, nonatomic) _Bool displayStop;
 @property(readonly, nonatomic) NSString *exitSign;

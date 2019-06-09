@@ -8,13 +8,15 @@
 
 #import <ScreenshotServices/BSXPCCoding-Protocol.h>
 
-@class NSString, SSUIRunPPTServiceRequest;
+@class NSString, RCPMovie, SSUIRunPPTServiceRequest;
 
 @interface SSEnvironmentDescriptionAppleInternalOptions : NSObject <BSXPCCoding>
 {
     SSUIRunPPTServiceRequest *_runPPTServiceRequest;
+    RCPMovie *_recapMovie;
 }
 
+@property(retain, nonatomic) RCPMovie *recapMovie; // @synthesize recapMovie=_recapMovie;
 @property(retain, nonatomic) SSUIRunPPTServiceRequest *runPPTServiceRequest; // @synthesize runPPTServiceRequest=_runPPTServiceRequest;
 - (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;

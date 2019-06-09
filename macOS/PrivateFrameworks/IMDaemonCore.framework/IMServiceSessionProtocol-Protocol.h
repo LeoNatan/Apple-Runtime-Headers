@@ -9,6 +9,7 @@
 @protocol IMServiceSessionProtocol
 
 @optional
+- (void)sendNicknameUpdatesToPeerDevices:(NSDictionary *)arg1;
 - (void)closeSessionChatID:(NSString *)arg1 identifier:(NSString *)arg2 style:(unsigned char)arg3;
 - (void)enrollSelfDeviceInSMSRelay;
 - (void)unEnrollDeviceInSMSRelay:(NSString *)arg1;

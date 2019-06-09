@@ -8,5 +8,6 @@
 
 @interface NSBezierPath (Extension)
 - (struct CGPath *)newCGPathFromAXVisuals;
+- (const struct CGPath *)axv_newCGPath;
 @end
 

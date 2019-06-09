@@ -19,6 +19,7 @@
     _INPBCondition *_condition;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)activityType;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
 @property(copy, nonatomic) NSArray *activities; // @synthesize activities=_activities;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasCondition;

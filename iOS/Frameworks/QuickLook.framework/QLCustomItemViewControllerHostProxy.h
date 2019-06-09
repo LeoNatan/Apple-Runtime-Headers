@@ -19,9 +19,10 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id <QLCustomItemViewControllerHost> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)forwardMessageToHostOfCustomViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dismissQuickLook;
 - (void)setFullScreen:(_Bool)arg1;
-- (void)presentShareSheetWithPopoverTracker:(id)arg1 dismissCompletion:(CDUnknownBlockType)arg2;
+- (void)presentShareSheetWithPopoverTracker:(id)arg1 customSharedURL:(id)arg2 dismissCompletion:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

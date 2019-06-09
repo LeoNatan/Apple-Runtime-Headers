@@ -59,8 +59,8 @@ __attribute__((visibility("hidden")))
 - (void)_reorderBookmarksAsMovesWithSortedBookmarks:(id)arg1;
 - (id)_cleanUpBookmarksByAddressForBookmarks:(id)arg1;
 - (id)_cleanUpBookmarksByNameForBookmarks:(id)arg1;
-- (void)cleanUpBookmarksByAddressForFolder:(id)arg1;
-- (void)cleanUpBookmarksByNameForFolder:(id)arg1;
+- (void)cleanUpBookmarksByAddressForFolder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)cleanUpBookmarksByNameForFolder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)addNewContentsFolderTo:(id)arg1 withTitle:(id)arg2 insertionIndex:(unsigned long long)arg3 undoTarget:(id)arg4 selector:(SEL)arg5;
 - (void)finishMovingBookmarks:(id)arg1 originalBookmarks:(id)arg2 undoTarget:(id)arg3 selector:(SEL)arg4;
 - (id)copyBookmarksFromPasteboard:(id)arg1 toFolder:(id)arg2 startingIndex:(unsigned long long)arg3 undoTarget:(id)arg4 selector:(SEL)arg5;

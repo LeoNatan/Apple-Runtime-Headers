@@ -20,6 +20,7 @@
     int _searchResultsCount;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) int searchResultsCount; // @synthesize searchResultsCount=_searchResultsCount;
 @property(retain, nonatomic) _INPBLocation *locationCreated; // @synthesize locationCreated=_locationCreated;
 @property(copy, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
@@ -28,6 +29,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasSearchResultsCount;

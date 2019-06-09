@@ -31,7 +31,6 @@
 - (id)_complicationsCompanionForegroundColor;
 - (void)_customizeVideoPlayerOnSetup;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
-- (id)_editOptionThatHidesAllComplications;
 
 @end
 

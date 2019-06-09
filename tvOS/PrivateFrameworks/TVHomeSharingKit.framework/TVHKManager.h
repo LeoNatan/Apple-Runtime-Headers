@@ -54,6 +54,7 @@
 - (void)_synchronizeKeybagForMediaServerWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_playbackDidTimeoutForMediaServerWithIdentifier:(id)arg1;
 - (void)_playbackURLForMediaServerWithIdentifier:(id)arg1 itemID:(id)arg2 protocol:(unsigned long long)arg3 itemFormat:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_URLsForRequests:(id)arg1 toMediaServerWithIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_cancelRequest:(id)arg1;
 - (void)_submitRequest:(id)arg1 toMediaServerWithIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_disconnectMediaServerWithIdentifier:(id)arg1;

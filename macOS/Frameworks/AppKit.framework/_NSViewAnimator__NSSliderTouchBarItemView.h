@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
     NSLayoutConstraint *_collapseAnimationConstraint;
     long long _animationDepth;
-    unsigned int _animatingCollapse:1;
+    BOOL _animatingCollapse;
 }
 
 - (void)stopAndCleanupCollapseAnimation;

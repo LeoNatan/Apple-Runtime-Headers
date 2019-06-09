@@ -19,10 +19,11 @@ __attribute__((visibility("hidden")))
 
 + (id)queryForApplicationsAvailableForOpeningURL:(id)arg1;
 + (id)sharedManager;
++ (struct BindingEvaluator)bindingEvaluatorForScheme:(id)arg1;
+- (void).cxx_destruct;
 - (void)resetSchemeQueryLimitForApplicationWithIdentifier:(id)arg1;
 - (long long)schemeTypeOfScheme:(id)arg1;
 - (_Bool)canOpenURL:(id)arg1 publicSchemes:(_Bool)arg2 privateSchemes:(_Bool)arg3 XPCConnection:(id)arg4 error:(id *)arg5;
-- (void)dealloc;
 - (id)init;
 - (_Bool)legacy_isBundleID:(unsigned int)arg1 bundleData:(const struct LSBundleData *)arg2 context:(struct LSContext *)arg3 allowedToCheckScheme:(id)arg4 error:(id *)arg5;
 - (_Bool)isBundleID:(unsigned int)arg1 bundleData:(const struct LSBundleData *)arg2 context:(struct LSContext *)arg3 allowedToCheckScheme:(id)arg4 error:(id *)arg5;

@@ -10,6 +10,7 @@
 + (id)tsu_intersectionOfSets:(id)arg1;
 + (_Bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;
++ (id)tsp_consolidateFeatureInfos:(id)arg1 andReturnReadVersion:(out unsigned long long *)arg2 writeVersion:(out unsigned long long *)arg3;
 - (id)tsu_setBySubtractingSet:(id)arg1;
 - (id)tsu_setByIntersectingSet:(id)arg1;
 - (id)tsu_onlyObject;
@@ -17,5 +18,9 @@
 - (id)tsu_setByMappingObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)tsu_sortedArray;
 - (_Bool)tsu_containsObjectIdenticalTo:(id)arg1;
+- (id)tsp_initWithProtobufStringArray:(const RepeatedPtrField_fe7cf120 *)arg1;
+- (void)tsp_saveToProtobufStringArray:(RepeatedPtrField_fe7cf120 *)arg1;
+- (_Bool)tss_containsStyleOrVariationOfStyle:(id)arg1;
+- (_Bool)tss_hasVariations;
 @end
 

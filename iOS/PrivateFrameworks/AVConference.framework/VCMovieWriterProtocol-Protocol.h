@@ -13,12 +13,12 @@
 @property unsigned int startRTPTimeStamp;
 - (void)setupWriterWithMode:(unsigned char)arg1;
 - (void)setEndRTPTimestampWithTimestamp:(unsigned int)arg1;
-- (_Bool)shouldFinishWritingSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2;
-- (_Bool)shouldAppendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2;
+- (_Bool)shouldFinishWritingSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2 mediaType:(unsigned char)arg3;
+- (_Bool)shouldAppendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2 mediaType:(unsigned char)arg3;
 - (void)finishWritingWithHandler:(void (^)(NSURL *, NSError *))arg1;
 - (void)setStillImageTime:(CDStruct_1b6d18a9)arg1;
 - (void)appendAudioSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 mediaType:(unsigned char)arg2;
 - (void)appendVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 cameraStatus:(unsigned char)arg2 mediaType:(unsigned char)arg3;
-- (id)initWithOutputURL:(NSURL *)arg1 transactionID:(NSString *)arg2;
+- (id)initWithOutputURL:(NSURL *)arg1 transactionID:(NSString *)arg2 videoCodec:(unsigned int)arg3;
 @end
 

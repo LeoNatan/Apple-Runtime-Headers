@@ -25,7 +25,6 @@
 @property(readonly, copy, nonatomic) NSString *organizerEmail;
 @property(readonly, copy, nonatomic) NSURL *organizerURL;
 @property(readonly, copy, nonatomic) NSString *organizerName;
-@property(readonly, retain, nonatomic) id <EKProtocolParticipant> organizer;
 @property(readonly, copy, nonatomic) id <EKProtocolParticipant> participantForMe;
 @property(readonly, nonatomic) BOOL cachedIsCurrentUserInvitedAttendee;
 @property(readonly, nonatomic) BOOL cachedIsCalendarOwnerInvitedAttendee;
@@ -46,9 +45,11 @@
 - (NSSet *)attachmentSet;
 - (NSSet *)attendeeSet;
 - (NSSet *)alarmSet;
+- (NSNumber *)sequence;
 - (NSNumber *)priorityNumber;
 - (NSURL *)URL;
 - (NSString *)notes;
+- (NSString *)rawTitle;
 - (NSString *)title;
 - (NSString *)itemID;
 - (NSString *)sharedUID;

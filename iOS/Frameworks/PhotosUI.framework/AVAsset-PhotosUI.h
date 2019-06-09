@@ -13,5 +13,9 @@
 - (CDStruct_1b6d18a9)pu_duration;
 @property(readonly, nonatomic) NSValue *pu_cachedDuration;
 - (void)_pu_setCachedDuration:(id)arg1;
+- (id)pu_vitalityVideoComposition;
+-     // Error parsing type: {?=[3]}24@0:8@16, name: pu_perspectiveTransformForMetadata:
+- (id)pu_stillAssetTransformMetadata;
+- (id)pu_stillImageTransformAssetTrack;
 @end
 

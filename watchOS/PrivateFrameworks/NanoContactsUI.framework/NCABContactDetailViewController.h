@@ -9,27 +9,37 @@
 #import <NanoContactsUI/CNContactChangesObserver-Protocol.h>
 #import <NanoContactsUI/NCABAvatarDetailTransitioning-Protocol.h>
 #import <NanoContactsUI/NCABContactActionDelegate-Protocol.h>
+#import <NanoContactsUI/NCABContactDetailFMFSessionObserver-Protocol.h>
 #import <NanoContactsUI/NCABContactQuickCellDelegate-Protocol.h>
+#import <NanoContactsUI/TCSAppMonitorObserver-Protocol.h>
 #import <NanoContactsUI/UINavigationControllerDelegate-Protocol.h>
 
-@class CNContact, CNContactStore, CNPostalAddressFormatter, NCABContactAction, NCABContactAvatarDetailViewController, NSArray, NSString, TUSenderIdentity, UIImageView;
+@class CNContact, CNContactStore, CNContainer, CNDowntimeWhitelist, CNPostalAddressFormatter, HKHealthStore, NCABContactAction, NCABContactAvatarDetailViewController, NSArray, NSString, TUSenderIdentity, UIImageView;
 @protocol NCABContactDetailViewControllerDelegate;
 
-@interface NCABContactDetailViewController : PUICTableViewController <UINavigationControllerDelegate, CNContactChangesObserver, NCABContactQuickCellDelegate, NCABContactActionDelegate, NCABAvatarDetailTransitioning>
+@interface NCABContactDetailViewController : PUICTableViewController <UINavigationControllerDelegate, CNContactChangesObserver, NCABContactQuickCellDelegate, NCABContactActionDelegate, NCABAvatarDetailTransitioning, NCABContactDetailFMFSessionObserver, TCSAppMonitorObserver>
 {
     CNPostalAddressFormatter *_postalAddressFormatter;
     int _mode;
     UIImageView *_identityCellImageView;
     NCABContactAvatarDetailViewController *_avatarDetailViewController;
+    _Bool _isMeContact;
+    _Bool _isEmergencyContact;
+    _Bool _isDownTimeContact;
     _Bool _canCallContact;
-    _Bool _showCompactIdentity;
+    _Bool _canWalkieTalkieContact;
+    _Bool _isFollowingContactLocation;
     _Bool _showQuickActions;
+    _Bool _showCompactIdentity;
     CNContact *_contact;
     NSArray *_displayedPropertyKeys;
-    id <NCABContactDetailViewControllerDelegate> _delegate;
     TUSenderIdentity *_senderIdentity;
+    id <NCABContactDetailViewControllerDelegate> _delegate;
     CNContactStore *_contactStore;
+    CNDowntimeWhitelist *_downtimeWhitelist;
+    CNContainer *_containerOfContact;
     NCABContactAction *_contactAction;
+    HKHealthStore *_healthStore;
 }
 
 + (id)createOrGetContactStore;
@@ -38,21 +48,29 @@
 + (id)viewControllerForContact:(id)arg1;
 + (id)defaultDisplayedPropertyKeys;
 + (id)descriptorForRequiredKeys;
+@property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) NCABContactAction *contactAction; // @synthesize contactAction=_contactAction;
+@property(retain, nonatomic) CNContainer *containerOfContact; // @synthesize containerOfContact=_containerOfContact;
+@property(retain, nonatomic) CNDowntimeWhitelist *downtimeWhitelist; // @synthesize downtimeWhitelist=_downtimeWhitelist;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-@property(retain, nonatomic) TUSenderIdentity *senderIdentity; // @synthesize senderIdentity=_senderIdentity;
-@property(nonatomic) __weak id <NCABContactDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) _Bool showQuickActions; // @synthesize showQuickActions=_showQuickActions;
 @property(nonatomic) _Bool showCompactIdentity; // @synthesize showCompactIdentity=_showCompactIdentity;
+@property(nonatomic) __weak id <NCABContactDetailViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) TUSenderIdentity *senderIdentity; // @synthesize senderIdentity=_senderIdentity;
+@property(nonatomic) _Bool showQuickActions; // @synthesize showQuickActions=_showQuickActions;
 @property(copy, nonatomic) NSArray *displayedPropertyKeys; // @synthesize displayedPropertyKeys=_displayedPropertyKeys;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
 - (id)initWithPerson:(void *)arg1 withFilter:(unsigned int)arg2;
 - (id)initWithPerson:(void *)arg1;
-- (struct CGSize)_sizeForContactTextCellContent;
-- (_Bool)_shouldUseCompactOffsetForIndexPath:(id)arg1;
+- (void)_checkIfFollowingFriendAndBecomeObserver:(_Bool)arg1;
+- (void)_handleEmergencyContactResult:(_Bool)arg1;
+- (void)_checkForEmergencyContact;
+- (void)_checkForDowntimeContact;
 - (id)_senderIdentity;
+- (_Bool)_isEnableCallIconSetForDemo;
+- (void)canWalkieTalkieChanged:(id)arg1;
 - (void)canCallPossiblyChanged:(id)arg1;
+- (void)quickCellDidSelectWalkieTalkie:(id)arg1;
 - (void)quickCellDidSelectMail:(id)arg1;
 - (void)quickCellDidSelectMessage:(id)arg1;
 - (void)quickCellDidSelectCall:(id)arg1;
@@ -61,7 +79,12 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (unsigned int)tableView:(id)arg1 notchBehaviorForCellAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
+- (void)appDidUninstall;
+- (void)appDidInstall;
+- (void)contactDetailFMFSession:(id)arg1 receivedUpdatedMapImageData:(id)arg2 forContactWithIdentifier:(id)arg3;
+- (void)contactDetailFMFSession:(id)arg1 receivedLocationUpdate:(id)arg2 forContactWithIdentifier:(id)arg3;
+- (void)contactDetailFMFSession:(id)arg1 hasGridImageData:(id)arg2;
+- (void)contactDetailFMFSessionDidReceiveUpdatedHandles:(id)arg1;
 - (id)transitionAvatarView;
 - (void)contactDidChange:(id)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;

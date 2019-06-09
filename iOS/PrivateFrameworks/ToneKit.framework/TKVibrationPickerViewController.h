@@ -133,6 +133,7 @@
 - (id)_sanitizedDefaultVibrationIdentifier;
 - (id)_sanitizedCorrespondingToneIdentifier;
 - (CDStruct_3d581f42)_cellAccessoriesDescriptorForRowAtIndexPath:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)applicationWillSuspend;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidDisappear:(_Bool)arg1;

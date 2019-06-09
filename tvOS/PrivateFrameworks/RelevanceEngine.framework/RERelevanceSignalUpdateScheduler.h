@@ -25,7 +25,7 @@
 - (void)unscheduleEventWithIdentifier:(id)arg1;
 - (void)scheduleEventWithIdentifier:(id)arg1 updateFrequency:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 
 @end
 

@@ -10,17 +10,16 @@
 
 @protocol _CPSpotlightUsagePropensity <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(nonatomic) int totalSessions;
+@property(nonatomic) float siriSuggestions;
 @property(nonatomic) int totalEngagements;
 @property(nonatomic) float other;
+@property(nonatomic) float querySuggestion;
+@property(nonatomic) float parsec;
 @property(nonatomic) float thirdPartyInAppContent;
 @property(nonatomic) float punchout;
-@property(nonatomic) float parsec;
-@property(nonatomic) float onDevicePersonalData;
+@property(nonatomic) float onDeviceOtherPersonalData;
+@property(nonatomic) float onDeviceAddressBookData;
 @property(nonatomic) float appLaunch;
-@property(nonatomic) int configuredLookbackTimeInDays;
-@property(nonatomic) long long collectionEndTimestamp;
-@property(nonatomic) long long collectionStartTimestamp;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 @end

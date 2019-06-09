@@ -9,6 +9,7 @@
 @class BiometricKitXPCClientConnection;
 @protocol BiometricKitDelegateXpcProtocol;
 
+__attribute__((visibility("hidden")))
 @interface BiometricKitXPCClient : NSObject
 {
     unsigned long long _clientID;

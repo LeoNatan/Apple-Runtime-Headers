@@ -12,7 +12,7 @@
     _Bool _isForcedToBeVertical;
 }
 
-@property _Bool isForcedToBeVertical; // @synthesize isForcedToBeVertical=_isForcedToBeVertical;
+@property(nonatomic) _Bool isForcedToBeVertical; // @synthesize isForcedToBeVertical=_isForcedToBeVertical;
 @property(nonatomic) _Bool flipsToVerticalAxisForAccessibilityContentSizes; // @synthesize flipsToVerticalAxisForAccessibilityContentSizes=_flipsToVerticalAxisForAccessibilityContentSizes;
 - (void)setAlignment:(long long)arg1;
 - (void)setAxis:(long long)arg1;

@@ -4,26 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <EmailCore/ECAuthenticationScheme.h>
 
-@interface MFAuthScheme : NSObject
+@interface MFAuthScheme : ECAuthenticationScheme
 {
 }
 
-+ (id)authSchemesForAccount:(id)arg1 connection:(id)arg2;
 + (id)schemeWithName:(id)arg1;
-+ (void)registerSchemeClass:(Class)arg1;
-+ (id)knownSchemes;
-+ (void)initialize;
-- (id)humanReadableName;
-- (id)name;
-- (_Bool)requiresPassword;
-- (id)authenticatorForAccount:(id)arg1 connection:(id)arg2;
-- (_Bool)canAuthenticateAccountClass:(Class)arg1 connection:(id)arg2;
-- (_Bool)hasEncryption;
-- (unsigned int)defaultPortForAccount:(id)arg1;
-- (Class)authenticatorClass;
-- (Class)connectionClassForAccountClass:(Class)arg1;
 
 @end
 

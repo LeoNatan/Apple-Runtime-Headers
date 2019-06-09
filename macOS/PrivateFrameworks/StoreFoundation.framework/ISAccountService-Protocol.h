@@ -6,7 +6,7 @@
 
 #import <StoreFoundation/ISServiceRemoteObject-Protocol.h>
 
-@class ISAuthenticationResponse, ISStoreAccount, NSDictionary, NSNumber, NSString, NSURL, NSURLRequest, NSURLResponse;
+@class ISStoreAccount, NSNumber, NSString, NSURL, NSURLRequest, NSURLResponse;
 @protocol ISAccountStoreObserver, ISURLBagObserver;
 
 @protocol ISAccountService <ISServiceRemoteObject>
@@ -34,10 +34,8 @@
 - (void)retailStoreDemoModeReplyBlock:(void (^)(BOOL, NSString *, NSString *, BOOL))arg1;
 - (void)removeAccountStoreObserver:(id <ISAccountStoreObserver>)arg1;
 - (void)addAccountStoreObserver:(id <ISAccountStoreObserver>)arg1;
-- (void)parseCreditStringForProtocol:(NSDictionary *)arg1;
 - (void)signOut;
 - (void)addAccount:(ISStoreAccount *)arg1;
-- (void)addAccountWithAuthenticationResponse:(ISAuthenticationResponse *)arg1 makePrimary:(BOOL)arg2 replyBlock:(void (^)(ISStoreAccount *))arg3;
 - (void)accountWithAppleID:(NSString *)arg1 replyBlock:(void (^)(ISStoreAccount *))arg2;
 - (void)accountWithDSID:(NSNumber *)arg1 replyBlock:(void (^)(ISStoreAccount *))arg2;
 - (void)primaryAccountWithReplyBlock:(void (^)(ISStoreAccount *))arg1;

@@ -22,7 +22,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(nonatomic) float volume;
+@property(nonatomic) float volume; // @dynamic volume;
 
 @end
 

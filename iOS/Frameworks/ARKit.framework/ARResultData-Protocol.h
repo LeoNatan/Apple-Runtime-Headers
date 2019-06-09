@@ -12,6 +12,7 @@
 
 @optional
 -     // Error parsing type: @"NSArray"160@0:8{?=[4]}16{?=[4]}80@"NSArray"144@"NSMutableArray"152, name: anchorsForCameraWithTransform:referenceOriginTransform:existingAnchors:anchorsToRemove:
+- (struct __CVBuffer *)segmentationBuffer;
 - (ARPointCloud *)featurePoints;
 - (ARLightEstimate *)lightEstimate;
 - (unsigned long long)worldAlignmentModifiers;

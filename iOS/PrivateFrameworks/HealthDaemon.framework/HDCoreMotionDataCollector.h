@@ -30,16 +30,16 @@
 - (Class)sensorDatumClassForAggregator:(id)arg1;
 - (id)identifierForDataAggregator:(id)arg1;
 - (id)sourceForDataAggregator:(id)arg1;
-- (id)deviceForDataAggregator:(id)arg1;
 - (void)dataAggregator:(id)arg1 wantsCollectionWithConfiguration:(id)arg2;
 - (void)beginCollectionForDataAggregator:(id)arg1 lastPersistedSensorDatum:(id)arg2;
+- (unsigned long long)queue_targetCollectionTypeForRequestedCollectionType:(unsigned long long)arg1;
 - (id)persistentIdentifier;
 - (double)queue_differenceFromDatum:(id)arg1 toDatum:(id)arg2 type:(id)arg3;
 - (id)queue_newDataSource;
 - (id)collectedTypes;
 - (Class)coreMotionDatumClass;
 - (void)_accessToFitnessDataDidChange:(id)arg1;
-- (void)_queue_beginUpdates;
+- (void)_queue_beginUpdatesWithTargetCollectionType:(unsigned long long)arg1;
 - (void)_queue_populateLastDatumDictionary;
 - (id)_queue_lastPersistedSensorDatumForType:(id)arg1;
 - (void)_queue_updateCollectionType:(unsigned long long)arg1;
@@ -48,8 +48,9 @@
 - (void)_queue_forwardCoreMotionData:(id)arg1;
 - (void)_queue_forwardCoreMotionData:(id)arg1 forType:(id)arg2;
 - (id)coreMotionDatumFromSensorDatum:(id)arg1;
-- (_Bool)queue_canBeginStreaming;
 - (void)queue_recomputeCurrentState;
+- (void)registerWithAggregators;
+- (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 
 // Remaining properties

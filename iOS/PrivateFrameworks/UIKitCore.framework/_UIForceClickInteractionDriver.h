@@ -9,7 +9,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegatePrivate-Protocol.h>
 #import <UIKitCore/_UIClickInteractionDriving-Protocol.h>
 
-@class NSString, UITouchForceGestureRecognizer, UIView, _UIStateMachine;
+@class NSString, UIGestureRecognizer, UITouchForceGestureRecognizer, UIView, _UIStateMachine;
 @protocol _UIClickInteractionDriverDelegate;
 
 __attribute__((visibility("hidden")))
@@ -23,13 +23,16 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) UITouchForceGestureRecognizer *gestureRecognizer; // @synthesize gestureRecognizer=_gestureRecognizer;
 @property(retain, nonatomic) _UIStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-@property(retain, nonatomic) UIView *view; // @synthesize view=_view;
+@property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 @property(nonatomic) __weak id <_UIClickInteractionDriverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_gestureRecognizerFailed:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_handleGestureRecognizer:(id)arg1;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
+@property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;
+@property(readonly, nonatomic) double touchDuration;
 - (void)_prepareStateMachine;
 @property(nonatomic) double allowableMovement;
 @property(readonly, nonatomic) double touchForce;

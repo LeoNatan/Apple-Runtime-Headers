@@ -10,6 +10,7 @@
 
 @class CHDChart, CHDChartType, CHDData, CHDDataLabel, CHDDataValue, CHDErrorBar, CHDFormula, EDCollection, EDKeyedCollection, NSString, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDSeries : NSObject <EDKeyedObject>
 {
     CHDChart *mChart;

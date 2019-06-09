@@ -17,6 +17,7 @@
     NSString *_challenge;
     NSString *_signature;
     NSString *_publicKey;
+    NSString *_originatingStorefront;
     BOOL _authedToBuy;
     unsigned char _state;
     id _transactionIdentifier;
@@ -48,6 +49,7 @@
 - (id)description;
 - (id)_initWithGroupIdentifier:(id)arg1;
 - (id)_initWithPurchase:(id)arg1 groupIdentifier:(id)arg2;
+@property(copy) NSString *originatingStorefront;
 @property(retain) NSString *publicKey;
 @property(retain) NSString *signature;
 @property(retain) NSString *challenge;

@@ -8,6 +8,7 @@
 
 @class NSArray, NSMapTable, NSMutableArray, SKUIViewReusePool;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewModification : NSObject
 {
     SKUIViewReusePool *_viewPool;

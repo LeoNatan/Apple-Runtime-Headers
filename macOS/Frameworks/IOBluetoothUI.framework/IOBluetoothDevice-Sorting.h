@@ -7,6 +7,20 @@
 #import <IOBluetooth/IOBluetoothDevice.h>
 
 @interface IOBluetoothDevice (Sorting)
++ (id)imageForSystemIconType:(unsigned int)arg1 ofSize:(struct CGSize)arg2;
 - (long long)compare:(id)arg1;
+- (id)findAppleDefaultNameByPIDVID;
+- (id)image;
+- (id)findDefaultImage;
+- (id)findLEImage;
+- (id)findNonAppleImage;
+- (id)findApplePIDVIDImage;
+- (id)findiPhoneImage;
+- (id)findiPadImage;
+- (id)findMacImage;
+- (void)logImageFinding:(id)arg1 ofType:(id)arg2;
+- (id)findApplePIDVIDImageInPlist;
+- (id)loadImageFromBundle:(id)arg1 withResourceNamed:(id)arg2;
+- (id)loadImageFromBundleID:(id)arg1 withResourceNamed:(id)arg2;
 @end
 

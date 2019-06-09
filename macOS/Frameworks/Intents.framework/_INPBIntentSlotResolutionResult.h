@@ -10,7 +10,7 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBIntentSlotResolutionResult-Protocol.h>
 
-@class NSString, _INPBPayloadConfirmation, _INPBPayloadNeedsDisambiguation, _INPBPayloadNeedsValue, _INPBPayloadSuccess, _INPBPayloadUnsupported;
+@class NSString, _INPBPayloadConfirmation, _INPBPayloadNeedsDisambiguation, _INPBPayloadNeedsExecuteIntent, _INPBPayloadNeedsValue, _INPBPayloadSuccess, _INPBPayloadUnsupported;
 
 @interface _INPBIntentSlotResolutionResult : PBCodable <_INPBIntentSlotResolutionResult, NSSecureCoding, NSCopying>
 {
@@ -18,15 +18,18 @@
     int _type;
     _INPBPayloadConfirmation *_payloadConfirmation;
     _INPBPayloadNeedsDisambiguation *_payloadNeedsDisambiguation;
+    _INPBPayloadNeedsExecuteIntent *_payloadNeedsExecuteIntent;
     _INPBPayloadNeedsValue *_payloadNeedsValue;
     _INPBPayloadSuccess *_payloadSuccess;
     _INPBPayloadUnsupported *_payloadUnsupported;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBPayloadUnsupported *payloadUnsupported; // @synthesize payloadUnsupported=_payloadUnsupported;
 @property(retain, nonatomic) _INPBPayloadSuccess *payloadSuccess; // @synthesize payloadSuccess=_payloadSuccess;
 @property(retain, nonatomic) _INPBPayloadNeedsValue *payloadNeedsValue; // @synthesize payloadNeedsValue=_payloadNeedsValue;
+@property(retain, nonatomic) _INPBPayloadNeedsExecuteIntent *payloadNeedsExecuteIntent; // @synthesize payloadNeedsExecuteIntent=_payloadNeedsExecuteIntent;
 @property(retain, nonatomic) _INPBPayloadNeedsDisambiguation *payloadNeedsDisambiguation; // @synthesize payloadNeedsDisambiguation=_payloadNeedsDisambiguation;
 @property(retain, nonatomic) _INPBPayloadConfirmation *payloadConfirmation; // @synthesize payloadConfirmation=_payloadConfirmation;
 - (void).cxx_destruct;
@@ -34,6 +37,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)StringAsType:(id)arg1;
@@ -42,6 +47,7 @@
 @property(readonly, nonatomic) BOOL hasPayloadUnsupported;
 @property(readonly, nonatomic) BOOL hasPayloadSuccess;
 @property(readonly, nonatomic) BOOL hasPayloadNeedsValue;
+@property(readonly, nonatomic) BOOL hasPayloadNeedsExecuteIntent;
 @property(readonly, nonatomic) BOOL hasPayloadNeedsDisambiguation;
 @property(readonly, nonatomic) BOOL hasPayloadConfirmation;
 

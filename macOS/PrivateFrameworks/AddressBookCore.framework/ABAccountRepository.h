@@ -22,7 +22,9 @@
 + (id)dictionaryByObscuringPassword:(id)arg1;
 + (void)prepareLocalCacheForAccountWithIdentifier:(id)arg1 factory:(id)arg2;
 + (id)sharedRepository;
++ (id)os_log;
 @property(readonly, retain) ABDefaultAccountPreference *defaultAccountPreference; // @synthesize defaultAccountPreference=_defaultAccountPreference;
+- (void).cxx_destruct;
 @property(copy) NSString *tag;
 - (BOOL)mergeDataFromAccount:(id)arg1 toAccount:(id)arg2 withOptions:(int)arg3 error:(id *)arg4;
 - (BOOL)mergeDataFromAccount:(id)arg1 toAccount:(id)arg2 error:(id *)arg3;
@@ -48,10 +50,13 @@
 - (id)defaultableAccounts;
 - (id)accountComparerForExistingAccounts;
 - (id)existingAccountIdentifierEquivalentToProposedConfig:(id)arg1;
+@property(readonly, copy) NSArray *hiddenAccounts;
 @property(readonly, copy) NSArray *allAccounts;
 - (id)accounts;
 @property(readonly, copy) NSArray *enabledAccounts;
 @property(readonly, copy) NSArray *persistentAccounts;
+- (id)uncachedAccountWithIdentifier:(id)arg1;
+- (id)memoizedAccountWithIdentifier:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1;
 - (id)sourceWithUID:(id)arg1;
 - (id)setEnabled:(BOOL)arg1 forAccountWithIdentifier:(id)arg2;

@@ -20,20 +20,16 @@
 }
 
 + (id)compressionOptionsWithDescription:(id)arg1;
-- (BOOL)isRecommendedOnCurrentHardware;
-- (BOOL)isEqualToCompressionOptions:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)localizedCompressionOptionsSummary;
-- (id)mediaType;
-- (id)_preferredInputPixelBufferAttributes;
-- (id)vtCompressionProperties;
-- (struct CGSize)compressedSizeForOriginalSize:(struct CGSize)arg1;
+- (void).cxx_destruct;
 - (long long)height;
 - (long long)width;
 - (long long)sizeMode;
 - (unsigned int)codecType;
-- (void)dealloc;
+- (id)vtCompressionProperties;
+- (id)_preferredInputPixelBufferAttributes;
 - (id)initWithCodecType:(unsigned int)arg1 sizeMode:(long long)arg2 width:(long long)arg3 height:(long long)arg4 vtCompressionProperties:(id)arg5;
+- (struct CGSize)compressedSizeForOriginalSize:(struct CGSize)arg1;
+- (id)localizedCompressionOptionsSummary;
 
 @end
 

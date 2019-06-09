@@ -8,13 +8,12 @@
 
 #import <MapKit/MKETAProviderObserver-Protocol.h>
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
-#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 #import <MapKit/_MKStackViewDelegate-Protocol.h>
 
 @class MKImageView, MKPlaceSectionRowView, MKVibrancyAwareLabelView, NSArray, NSLayoutConstraint, NSLayoutGuide, NSString, NSURL, NSView, _MKDataHeaderModel, _MKLocalizedHoursBuilder, _MKTokenAttributedString, _MKUILabel;
 @protocol GEOTransitLineItem, MKPlaceCardHeaderViewControllerDelegate, _MKPlaceItem;
 
-@interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <_MKStackViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKETAProviderObserver>
+@interface MKPlaceCardHeaderViewController : MKPlaceSectionViewController <_MKStackViewDelegate, MKModuleViewControllerProtocol, MKETAProviderObserver>
 {
     unsigned long long _layout;
     MKPlaceSectionRowView *_titleSectionView;
@@ -60,9 +59,10 @@
 @property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
 @property(readonly, nonatomic) id <_MKPlaceItem> placeItem; // @synthesize placeItem=_placeItem;
 - (void).cxx_destruct;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)updateContent;
 - (void)_contentSizeDidChange;
+- (void)_contentSizeDidChangeNotificationHandler;
 - (void)setConstraints;
 - (void)updateViews;
 - (void)_createViews;
@@ -83,7 +83,6 @@
 - (void)animateSecondLabelWithPercentage:(double)arg1;
 @property(nonatomic) double contentAlpha;
 - (void)updateHeaderTitle;
-- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)_commonInit;
 - (id)initWithLineItem:(id)arg1 layout:(unsigned long long)arg2;

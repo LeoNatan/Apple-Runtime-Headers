@@ -6,7 +6,7 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBPayloadConfirmation, _INPBPayloadNeedsDisambiguation, _INPBPayloadNeedsValue, _INPBPayloadSuccess, _INPBPayloadUnsupported;
+@class NSString, _INPBPayloadConfirmation, _INPBPayloadNeedsDisambiguation, _INPBPayloadNeedsExecuteIntent, _INPBPayloadNeedsValue, _INPBPayloadSuccess, _INPBPayloadUnsupported;
 
 @protocol _INPBIntentSlotResolutionResult <NSObject>
 @property(nonatomic) BOOL hasType;
@@ -17,6 +17,8 @@
 @property(retain, nonatomic) _INPBPayloadSuccess *payloadSuccess;
 @property(readonly, nonatomic) BOOL hasPayloadNeedsValue;
 @property(retain, nonatomic) _INPBPayloadNeedsValue *payloadNeedsValue;
+@property(readonly, nonatomic) BOOL hasPayloadNeedsExecuteIntent;
+@property(retain, nonatomic) _INPBPayloadNeedsExecuteIntent *payloadNeedsExecuteIntent;
 @property(readonly, nonatomic) BOOL hasPayloadNeedsDisambiguation;
 @property(retain, nonatomic) _INPBPayloadNeedsDisambiguation *payloadNeedsDisambiguation;
 @property(readonly, nonatomic) BOOL hasPayloadConfirmation;

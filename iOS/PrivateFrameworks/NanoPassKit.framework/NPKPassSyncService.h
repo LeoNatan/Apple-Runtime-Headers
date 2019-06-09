@@ -10,7 +10,7 @@
 #import <NanoPassKit/NPKPassSyncEngineDataSource-Protocol.h>
 #import <NanoPassKit/NPKPassSyncEngineDelegate-Protocol.h>
 
-@class IDSService, NPKPassSyncChange, NPKPassSyncEngine, NSString;
+@class IDSService, NPKPassSyncEngine, NPKPassSyncServiceSyncStatus, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface NPKPassSyncService : NSObject <IDSServiceDelegate, NPKPassSyncEngineDelegate, NPKPassSyncEngineDataSource>
@@ -21,12 +21,10 @@
     NSObject<OS_dispatch_queue> *_passSyncQueue;
     NSObject<OS_dispatch_source> *_passSyncEngineArchiveTimer;
     NSObject<OS_dispatch_source> *_passSyncEngineSyncTimer;
-    NPKPassSyncChange *_passSyncEngineSyncTimerCandidateChange;
-    NPKPassSyncChange *_passSyncEngineSyncTimerProcessingChange;
+    NPKPassSyncServiceSyncStatus *_passSyncStatus;
 }
 
-@property(retain, nonatomic) NPKPassSyncChange *passSyncEngineSyncTimerProcessingChange; // @synthesize passSyncEngineSyncTimerProcessingChange=_passSyncEngineSyncTimerProcessingChange;
-@property(retain, nonatomic) NPKPassSyncChange *passSyncEngineSyncTimerCandidateChange; // @synthesize passSyncEngineSyncTimerCandidateChange=_passSyncEngineSyncTimerCandidateChange;
+@property(retain, nonatomic) NPKPassSyncServiceSyncStatus *passSyncStatus; // @synthesize passSyncStatus=_passSyncStatus;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *passSyncEngineSyncTimer; // @synthesize passSyncEngineSyncTimer=_passSyncEngineSyncTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *passSyncEngineArchiveTimer; // @synthesize passSyncEngineArchiveTimer=_passSyncEngineArchiveTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *passSyncQueue; // @synthesize passSyncQueue=_passSyncQueue;
@@ -36,14 +34,15 @@
 - (void).cxx_destruct;
 - (id)_archivedPassSyncEngine;
 - (void)_syncTimerFired;
-- (void)_setSyncTimerWithCandidateChange:(id)arg1 processingChange:(id)arg2;
+- (void)_ensureSyncTimerIsSet;
 - (void)_syncNow;
-- (void)_syncSubjectToSyncTimer;
+- (void)_syncWhenAppropriate;
 - (void)_archiveTimerFired;
 - (void)_provideUpdatedLibraryStateToSyncEngineAndSyncIfNecessary:(_Bool)arg1;
 - (id)passSyncEngine:(id)arg1 dataForPassWithUniqueID:(id)arg2;
+- (id)passSyncEngine:(id)arg1 partialDataForPassWithUniqueID:(id)arg2 baseManifest:(id)arg3 outRemoteAssets:(id *)arg4;
 - (void)passSyncEngine:(id)arg1 requestsRemovePassWithUniqueID:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)passSyncEngine:(id)arg1 requestsUpdatePassData:(id)arg2 forSyncStateItem:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)passSyncEngine:(id)arg1 requestsUpdatePassData:(id)arg2 forSyncStateItem:(id)arg3 baseManifestHashForPartialUpdate:(id)arg4 remoteAssetsForPartialUpdate:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)passSyncEngine:(id)arg1 requestsAddPassData:(id)arg2 forSyncStateItem:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)passSyncEngine:(id)arg1 finishedProcessingChange:(id)arg2;
 - (void)passSyncEngine:(id)arg1 receivedStateChangeProcessed:(id)arg2 changeAccepted:(_Bool)arg3;
@@ -51,7 +50,7 @@
 - (void)passSyncEngine:(id)arg1 sendReconciledStateAcceptedWithHash:(id)arg2;
 - (void)passSyncEngine:(id)arg1 sendProposedReconciledState:(id)arg2;
 - (void)passSyncEngine:(id)arg1 sendReconciledStateUnrecognizedWithHash:(id)arg2 currentPassSyncState:(id)arg3;
-- (void)passSyncEngine:(id)arg1 sendStateChangeProcessedWithUUID:(id)arg2 changeAccepted:(_Bool)arg3;
+- (void)passSyncEngine:(id)arg1 sendStateChangeProcessedWithUUID:(id)arg2 changeAccepted:(_Bool)arg3 fullPassRequired:(_Bool)arg4;
 - (void)passSyncEngine:(id)arg1 sendStateChange:(id)arg2;
 - (void)catalogChanged:(id)arg1;
 - (void)passSettingsChanged:(id)arg1;

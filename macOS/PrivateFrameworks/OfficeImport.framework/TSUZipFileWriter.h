@@ -8,6 +8,7 @@
 
 @protocol TSURandomWriteChannel;
 
+__attribute__((visibility("hidden")))
 @interface TSUZipFileWriter : TSUZipWriter
 {
     id <TSURandomWriteChannel> _writeChannel;

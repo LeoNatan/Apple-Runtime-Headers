@@ -6,7 +6,7 @@
 
 #import <MapKit/MKCustomSeparatorTableViewCell.h>
 
-@class MKButtonWithTargetArgument, NSLayoutConstraint, NSString, _MKUILabel;
+@class MKButtonWithTargetArgument, NSLayoutConstraint, NSString, NSTimer, UIActivityIndicatorView, UIStackView, _MKUILabel;
 
 __attribute__((visibility("hidden")))
 @interface MKTransitDeparturesSectionHeaderView : MKCustomSeparatorTableViewCell
@@ -14,6 +14,11 @@ __attribute__((visibility("hidden")))
     unsigned int _type;
     _Bool _extraSpacing;
     _MKUILabel *_label;
+    UIStackView *_updatingView;
+    _MKUILabel *_updatingLabel;
+    NSTimer *_updatingLabelTimestampRefreshTimer;
+    NSTimer *_updatingViewRefreshTimer;
+    UIActivityIndicatorView *_updatingSpinner;
     NSLayoutConstraint *_topConstraint;
     NSLayoutConstraint *_bottomConstraint;
     MKButtonWithTargetArgument *_button;

@@ -28,6 +28,7 @@
 @property(nonatomic) BOOL multideviceAudioEnabled;
 @property(nonatomic) BOOL multideviceSettingsEnabled;
 @property(nonatomic) BOOL exportsLiveListenToFile;
+@property(nonatomic) long long inputRoutingOption;
 @property(nonatomic) long long mediaAudioRoute;
 @property(nonatomic) long long callAudioRoute;
 @property(nonatomic) BOOL shouldStreamToRightAid;

@@ -15,12 +15,12 @@
 {
     _Bool _shouldHideTableCellsUnderKeyboard;
     UIControl<UITextInput> *_textField;
-    double _keyboardHeight;
+    double _currentKeyboardHeight;
     id <SearchUIKeyboardableTableViewScrollDelegate> _scrollDelegate;
 }
 
 @property __weak id <SearchUIKeyboardableTableViewScrollDelegate> scrollDelegate; // @synthesize scrollDelegate=_scrollDelegate;
-@property double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
+@property(nonatomic) double currentKeyboardHeight; // @synthesize currentKeyboardHeight=_currentKeyboardHeight;
 @property(nonatomic) _Bool shouldHideTableCellsUnderKeyboard; // @synthesize shouldHideTableCellsUnderKeyboard=_shouldHideTableCellsUnderKeyboard;
 @property __weak UIControl<UITextInput> *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
@@ -33,7 +33,6 @@
 - (void)hideCellsBelowKeyboardIfNecessary;
 - (void)viewDidLayoutSubviews;
 - (void)scrollIndexPathToVisible:(id)arg1;
-- (void)viewDidDisappear:(_Bool)arg1;
 - (void)moveCursorToPosition:(id)arg1;
 - (void)moveCursorToEnd;
 - (void)moveCursorToBeginning;
@@ -44,7 +43,7 @@
 - (void)downArrowPressed:(id)arg1;
 - (void)upArrowPressed:(id)arg1;
 - (id)indexPathToSelectForKeyboardOnQuickReturn;
-- (void)returnPressed;
+- (void)returnKeyPressed;
 - (void)goBack;
 - (void)deletePressed;
 - (void)leftArrowPressed;

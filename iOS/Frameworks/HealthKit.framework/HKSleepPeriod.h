@@ -55,9 +55,9 @@
 @property(readonly, nonatomic) double inBedDuration; // @synthesize inBedDuration=_inBedDuration;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
-@property(readonly, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
-@property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
-@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(readonly, copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
+@property(readonly, copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
+@property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
 - (id)_firstBedtimeAlarmWithCalendar:(id)arg1;
 - (void)enumerateDateIntervalsForCategoryValue:(long long)arg1 intersectedWithDateInterval:(id)arg2 block:(CDUnknownBlockType)arg3;

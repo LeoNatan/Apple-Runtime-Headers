@@ -16,6 +16,7 @@
 {
     _Bool _ignoreKeyboardNotifications;
     _Bool _newComposeCancelled;
+    _Bool _sendingViaCardUI;
     CKComposeRecipientSelectionController *_composeRecipientSelectionController;
     NSArray *_prepopulatedRecipients;
     CKComposition *_prepopulatedComposition;
@@ -27,6 +28,7 @@
 }
 
 @property(copy, nonatomic) CDUnknownBlockType deferredSendAnimationBlock; // @synthesize deferredSendAnimationBlock=_deferredSendAnimationBlock;
+@property(nonatomic) _Bool sendingViaCardUI; // @synthesize sendingViaCardUI=_sendingViaCardUI;
 @property(retain, nonatomic) CKBusinessInfoView *businessInfoView; // @synthesize businessInfoView=_businessInfoView;
 @property(retain, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(retain, nonatomic) CKComposeNavbarManager *navbarManager; // @synthesize navbarManager=_navbarManager;
@@ -43,6 +45,7 @@
 - (void)setBusinessInfoViewInfoIfNecessary;
 - (void)_triggerRecipientFinalization;
 - (void)chatInputWillUpdateInputViewShowingBrowser;
+- (void)_showNicknameBannerIfNeeded;
 - (_Bool)_chatShowsUnexpectedlyLoggedOutNotification;
 - (void)_saveDraftState;
 - (_Bool)hasFailedRecipients;
@@ -69,7 +72,11 @@
 - (void)reloadEntryViewIfNeeded;
 - (double)_entryViewTopInsetPadding;
 - (id)inputAccessoryView;
+- (id)inputAccessoryViewController;
+- (_Bool)shouldShowEntryView;
+- (void)cancelCompose;
 - (void)cancelButtonTapped:(id)arg1;
+- (void)keyCommandCancel:(id)arg1;
 - (void)_updateNavigationButtons;
 - (_Bool)shouldUseNavigationBarCanvasView;
 - (_Bool)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(id)arg1;
@@ -80,12 +87,15 @@
 - (_Bool)isSafeToMarkAsRead;
 - (id)outgoingComposeViewForSendAnimation;
 - (void)addBizIntentToConversation:(id)arg1;
+- (void)_prepareForSendFromCardIfNecessaryAndSend:(CDUnknownBlockType)arg1;
+- (id)_currentPresentationController;
 - (void)sendComposition:(id)arg1;
 - (_Bool)_shouldSetToFieldAsFirstResponder;
 - (void)_setConversationDeferredSetup;
 - (void)conversationLeft;
 @property(readonly, nonatomic) NSString *unatomizedRecipientText;
 @property(readonly, nonatomic) NSArray *proposedRecipients;
+- (void)viewLayoutMarginsDidChange;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;

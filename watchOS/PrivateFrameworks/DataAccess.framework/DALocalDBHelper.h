@@ -6,22 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NoteContext;
+@class CNContactStore, DALocalDBWatcher, NSMutableArray, NSString, NoteContext;
 @protocol OS_dispatch_queue;
 
 @interface DALocalDBHelper : NSObject
 {
     NSObject<OS_dispatch_queue> *_abDBQueue;
     NSObject<OS_dispatch_queue> *_calDBQueue;
-    NSObject<OS_dispatch_queue> *_bookmarkDBQueue;
     NSObject<OS_dispatch_queue> *_noteDBQueue;
     void *_abDB;
+    CNContactStore *_contactStore;
+    NSString *_familyDelegateAltDSID;
+    NSMutableArray *_saveRequests;
     int _abConnectionCount;
-    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}B@B}, name: _calDB
+    DALocalDBWatcher *_localDBWatcher;
+    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _calDB
     int _calConnectionCount;
     NSString *_clientIdentifier;
-    void *_bookmarkDB;
-    int _bookmarkConnectionCount;
     NoteContext *_noteDB;
     int _noteConnectionCount;
     CDUnknownBlockType _calUnitTestCallbackBlock;
@@ -32,17 +33,20 @@
 + (id)abTestABDBDir;
 + (void)abSetTestABDBDir:(id)arg1;
 + (id)sharedInstanceForAccountType:(id)arg1 creatingClass:(Class)arg2;
++ (id)os_log;
 @property(copy, nonatomic) CDUnknownBlockType calUnitTestCallbackBlock; // @synthesize calUnitTestCallbackBlock=_calUnitTestCallbackBlock;
 @property(nonatomic) int noteConnectionCount; // @synthesize noteConnectionCount=_noteConnectionCount;
 @property(retain, nonatomic) NoteContext *noteDB; // @synthesize noteDB=_noteDB;
-@property(nonatomic) int bookmarkConnectionCount; // @synthesize bookmarkConnectionCount=_bookmarkConnectionCount;
-@property(nonatomic) void *bookmarkDB; // @synthesize bookmarkDB=_bookmarkDB;
 @property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(nonatomic) int calConnectionCount; // @synthesize calConnectionCount=_calConnectionCount;
 // Error parsing type for property calDB:
-// Property attributes: T^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}B@B},N,V_calDB
+// Property attributes: T^{CalDatabase={__CFRuntimeBase=IAI}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=l[40c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=l[40c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B},N,V_calDB
 
+@property(retain, nonatomic) DALocalDBWatcher *localDBWatcher; // @synthesize localDBWatcher=_localDBWatcher;
 @property(nonatomic) int abConnectionCount; // @synthesize abConnectionCount=_abConnectionCount;
+@property(retain, nonatomic) NSMutableArray *saveRequests; // @synthesize saveRequests=_saveRequests;
+@property(retain, nonatomic) NSString *familyDelegateAltDSID; // @synthesize familyDelegateAltDSID=_familyDelegateAltDSID;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) void *abDB; // @synthesize abDB=_abDB;
 - (void).cxx_destruct;
 - (void)calUnitTestsSetCallbackBlockForSave:(CDUnknownBlockType)arg1;
@@ -57,18 +61,23 @@
 - (void)calOpenDBWithClientIdentifier:(id)arg1;
 - (_Bool)_calOpenDBWithClientIdentifier:(id)arg1;
 - (void)_registerForCalendarYieldNotifications;
+- (id)abDefaultAccountInfoSuitableForLogging;
 - (id)abConstraintPlistPath;
 - (_Bool)abCloseDBAndSave:(_Bool)arg1;
 - (_Bool)abSaveDB;
 - (void)abProcessAddedImages;
 - (void)abProcessAddedRecords;
-- (void)abClearSuperfluousChanges;
 - (void)abOpenDBAsGenericClient;
 - (void)abOpenDBWithClientIdentifier:(id)arg1;
 - (_Bool)_abOpenDBWithClientIdentifier:(id)arg1;
 - (void)_registerForAddressBookYieldNotifications;
+- (_Bool)useContacts;
+- (void)executeAllSaveRequests;
+- (void)addSaveRequest:(id)arg1;
 - (void *)abDBThrowOnNil:(_Bool)arg1;
 - (id)changeTrackingID;
+- (void)dealloc;
+- (id)initWithContactsFamilyDelegateAltDSID:(id)arg1;
 - (id)init;
 
 @end

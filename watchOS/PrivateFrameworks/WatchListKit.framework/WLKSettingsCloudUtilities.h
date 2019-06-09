@@ -16,7 +16,8 @@
 + (void)_fetchSyncDictionary:(CDUnknownBlockType)arg1;
 + (id)_syncDictionaryForAppSettings:(id)arg1;
 + (id)_syncDictionaryForLocalStore;
-+ (_Bool)synchronizeSettingsFromCloudIfNeeded;
++ (void)synchronizeSettingsFromCloudIfNeededWithCompletion:(CDUnknownBlockType)arg1;
++ (_Bool)synchronizeSettingsFromCloudIfNeeded:(id *)arg1;
 + (void)updateLocalStoreWithCompletion:(CDUnknownBlockType)arg1;
 + (_Bool)cloudSyncEnabled;
 + (void)resetAccountWithCompletion:(CDUnknownBlockType)arg1;

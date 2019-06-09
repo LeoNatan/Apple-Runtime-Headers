@@ -7,6 +7,8 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (_NSKindOfAdditions_)
++ (id)am_numberWithCGFloat:(double)arg1;
 - (BOOL)isNSNumber__;
+@property(readonly) double am_cgFloatValue;
 @end
 

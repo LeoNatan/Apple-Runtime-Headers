@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (Class)cellClass;
 - (void)awakeCommon;
 
 @end

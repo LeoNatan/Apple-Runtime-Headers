@@ -14,6 +14,6 @@
 - (void)stopMonitoringAllBudgetsWithReplyHandler:(void (^)(NSError *))arg1;
 - (void)stopMonitoringBudgets:(NSArray *)arg1 clientIdentifier:(NSString *)arg2 replyHandler:(void (^)(NSError *))arg3;
 - (void)startMonitoringBudgets:(NSArray *)arg1 darwinNotificationName:(NSString *)arg2 notificationTimes:(NSSet *)arg3 clientIdentifier:(NSString *)arg4 replyHandler:(void (^)(NSError *))arg5;
-- (void)fetchReportsDuringInterval:(NSDateInterval *)arg1 partitionInterval:(double)arg2 forceImmediateSync:(_Bool)arg3 replyHandler:(void (^)(NSArray *, NSDictionary *, NSArray *, NSError *))arg4;
+- (void)fetchReportsDuringInterval:(NSDateInterval *)arg1 partitionInterval:(double)arg2 replyHandler:(void (^)(NSArray *, NSDictionary *, NSArray *, NSError *))arg3;
 @end
 

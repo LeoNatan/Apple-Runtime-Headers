@@ -44,6 +44,7 @@
 @property(readonly, nonatomic) NSString *commenterLastName;
 @property(readonly, nonatomic) NSString *commenterFirstName;
 @property(readonly, nonatomic) NSString *commenterEmail;
+- (id)personInfoManager;
 @property(readonly, nonatomic) NSString *commenterDisplayName;
 @property(readonly, nonatomic) _Bool isInterestingForAlbumsSorting;
 - (_Bool)shouldNotifyAsNotificationWithMediaStreamInfo:(id)arg1 asCaptionOnly:(_Bool *)arg2;

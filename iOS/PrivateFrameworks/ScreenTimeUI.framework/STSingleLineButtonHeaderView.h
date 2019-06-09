@@ -8,16 +8,13 @@
 
 @class UIButton;
 
+__attribute__((visibility("hidden")))
 @interface STSingleLineButtonHeaderView : STSingleLineHeaderView
 {
-    UIButton *_selectedButton;
-    UIButton *_button1;
-    UIButton *_button2;
+    UIButton *_button;
 }
 
-@property(readonly, nonatomic) UIButton *button2; // @synthesize button2=_button2;
-@property(readonly, nonatomic) UIButton *button1; // @synthesize button1=_button1;
-@property(retain, nonatomic) UIButton *selectedButton; // @synthesize selectedButton=_selectedButton;
+@property(readonly, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
 - (double)preferredHeightForWidth:(double)arg1;
 - (void)setSpecifier:(id)arg1;

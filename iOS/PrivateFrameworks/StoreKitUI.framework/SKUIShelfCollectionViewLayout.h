@@ -10,6 +10,7 @@
 
 @class NSString, SKUIShelfLayoutData;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShelfCollectionViewLayout : UICollectionViewLayout <SKUIShelfCollectionViewLayout>
 {
     SKUIShelfLayoutData *_layoutData;

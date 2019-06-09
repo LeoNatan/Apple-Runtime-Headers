@@ -8,23 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEORouteTrafficDetail : PBCodable <NSCopying>
 {
-    int _routeTrafficCondition;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSString *_spokenRouteName;
     NSString *_unabbreviatedRouteName;
     NSString *_writtenRouteName;
+    int _routeTrafficCondition;
     struct {
-        unsigned int routeTrafficCondition:1;
-    } _has;
+        unsigned int has_routeTrafficCondition:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_spokenRouteName:1;
+        unsigned int read_unabbreviatedRouteName:1;
+        unsigned int read_writtenRouteName:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_spokenRouteName:1;
+        unsigned int wrote_unabbreviatedRouteName:1;
+        unsigned int wrote_writtenRouteName:1;
+        unsigned int wrote_routeTrafficCondition:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *unabbreviatedRouteName; // @synthesize unabbreviatedRouteName=_unabbreviatedRouteName;
-@property(retain, nonatomic) NSString *spokenRouteName; // @synthesize spokenRouteName=_spokenRouteName;
-@property(retain, nonatomic) NSString *writtenRouteName; // @synthesize writtenRouteName=_writtenRouteName;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -32,15 +44,22 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *unabbreviatedRouteName;
 @property(readonly, nonatomic) _Bool hasUnabbreviatedRouteName;
+- (void)_readUnabbreviatedRouteName;
+@property(retain, nonatomic) NSString *spokenRouteName;
 @property(readonly, nonatomic) _Bool hasSpokenRouteName;
+- (void)_readSpokenRouteName;
+@property(retain, nonatomic) NSString *writtenRouteName;
 @property(readonly, nonatomic) _Bool hasWrittenRouteName;
+- (void)_readWrittenRouteName;
 - (int)StringAsRouteTrafficCondition:(id)arg1;
 - (id)routeTrafficConditionAsString:(int)arg1;
 @property(nonatomic) _Bool hasRouteTrafficCondition;
-@property(nonatomic) int routeTrafficCondition; // @synthesize routeTrafficCondition=_routeTrafficCondition;
+@property(nonatomic) int routeTrafficCondition;
 
 @end
 

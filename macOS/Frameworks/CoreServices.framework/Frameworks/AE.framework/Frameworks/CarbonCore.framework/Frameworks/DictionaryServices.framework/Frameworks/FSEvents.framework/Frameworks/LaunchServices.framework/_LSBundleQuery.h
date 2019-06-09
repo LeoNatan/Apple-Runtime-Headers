@@ -11,7 +11,5 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)_shouldCacheResolvedResults;
-
 @end
 

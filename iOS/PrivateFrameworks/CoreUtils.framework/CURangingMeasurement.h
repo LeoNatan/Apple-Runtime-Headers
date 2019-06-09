@@ -19,11 +19,13 @@
     double _horizontalError;
     double _verticalAngle;
     double _verticalError;
+    double _ptsScore;
     unsigned long long _timestampTicks;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned long long timestampTicks; // @synthesize timestampTicks=_timestampTicks;
+@property(nonatomic) double ptsScore; // @synthesize ptsScore=_ptsScore;
 @property(nonatomic) double verticalError; // @synthesize verticalError=_verticalError;
 @property(nonatomic) double verticalAngle; // @synthesize verticalAngle=_verticalAngle;
 @property(nonatomic) double horizontalError; // @synthesize horizontalError=_horizontalError;

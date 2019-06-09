@@ -9,8 +9,8 @@
 #import <NeutrinoKit/NUAVPlayerControllerDelegate-Protocol.h>
 #import <NeutrinoKit/NUAVPlayerViewDelegate-Protocol.h>
 
-@class NSArray, NSString, NUAVPlayerController, NUAVPlayerView, NUComposition, NUMediaViewRenderer, NURenderView, NUScrollView;
-@protocol NUMediaViewDelegate;
+@class NSArray, NSString, NUAVPlayerController, NUAVPlayerView, NUCoalescer, NUComposition, NUMediaViewRenderer, NURenderView, NUScrollView;
+@protocol NUMediaPlayer, NUMediaViewDelegate;
 
 @interface NUMediaView : UIView <NUAVPlayerControllerDelegate, NUAVPlayerViewDelegate>
 {
@@ -31,11 +31,14 @@
         _Bool hasIsReadyForVideoPlayback;
         _Bool hasDidStartPreparingVideo;
         _Bool hasDidFinishPreparingVideo;
+        _Bool hasWillBeginLivePhotoPlayback;
+        _Bool hasDidEndLivePhotoPlayback;
     } _delegateFlags;
+    NUCoalescer *_renderCoalescer;
     _Bool _loopsVideo;
     long long _transitionCount;
+    struct CGSize _transitionTargetSize;
     _Bool _centerContent;
-    _Bool _muted;
     _Bool _videoPlayerVisible;
     _Bool _debugEnabled;
     _Bool _scrollUpdatesSuppressed;
@@ -49,7 +52,6 @@
 @property(nonatomic) _Bool scrollUpdatesSuppressed; // @synthesize scrollUpdatesSuppressed=_scrollUpdatesSuppressed;
 @property(nonatomic, getter=isDebugEnabled) _Bool debugEnabled; // @synthesize debugEnabled=_debugEnabled;
 @property(nonatomic, getter=isVideoPlayerVisible) _Bool videoPlayerVisible; // @synthesize videoPlayerVisible=_videoPlayerVisible;
-@property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(nonatomic) _Bool centerContent; // @synthesize centerContent=_centerContent;
 @property(nonatomic) double angle; // @synthesize angle=_angle;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
@@ -61,6 +63,7 @@
 - (void)playerController:(id)arg1 didUpdateElapsedTime:(double)arg2 duration:(double)arg3;
 - (void)playerControllerDidFinishPlaying:(id)arg1 duration:(double)arg2;
 - (void)playerViewReadyForDisplayDidChange:(id)arg1;
+- (id)snapshotImage;
 - (id)_viewRecursiveDescription;
 - (id)_layerRecursiveDescription;
 - (void)_updateVideoPlayerAlpha;
@@ -73,15 +76,19 @@
 - (id)_geometry;
 - (id)_renderView;
 - (id)_scrollView;
-- (void)_stopLoopPlayback;
-- (void)_startLoopPlayback;
+- (void)_stopVideoPlayback;
+- (void)_startVideoPlayback;
+@property(nonatomic, getter=isMuted) _Bool muted;
 @property(nonatomic) _Bool loopsVideoPlayback;
+- (void)_livephotoPlaybackDidEnd;
+- (void)_livephotoPlaybackWillBegin;
 - (void)_rendererDidFinishPreparingVideo;
 - (void)_rendererDidStartPreparingVideo;
 - (void)_rendererDidUpdateLivePhoto;
 - (void)_rendererDidFinishWithStatistics:(id)arg1;
 - (void)_rendererDidCreateAVPlayerController:(id)arg1;
 - (id)_livePhotoView;
+- (id)_videoPlayerController;
 - (id)_videoPlayerViewWithoutControls;
 - (id)_videoPlayerView;
 - (void)_transitionToInsets:(struct UIEdgeInsets)arg1;
@@ -89,6 +96,7 @@
 - (void)_beginTransition;
 - (void)waitForRender;
 - (void)_updateRenderContent;
+- (void)_updateRenderContentCoalesced:(_Bool)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -114,6 +122,7 @@
 @property(nonatomic) double zoomScale;
 - (void)setZoomScaleToFit;
 - (void)didMoveToWindow;
+@property(readonly) id <NUMediaPlayer> player;
 @property(copy, nonatomic) NUComposition *composition;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

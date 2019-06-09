@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSButton *_okButton;
 }
 
+- (void).cxx_destruct;
 - (void)cancel:(id)arg1;
 - (void)ok:(id)arg1;
 - (_Bool)legalNameCheck:(const struct TString *)arg1;

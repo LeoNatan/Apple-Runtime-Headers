@@ -7,7 +7,7 @@
 #import <Foundation/NSSet.h>
 
 @interface NSSet (NCSLogging)
-- (id)nanoDescriptionForCalendars;
-- (id)nanoDescriptionForEvents;
+- (id)nanoPrivacyAwareDescriptionForCalendars;
+- (id)nanoPrivacyAwareDescriptionForEvents;
 @end
 

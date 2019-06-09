@@ -26,9 +26,9 @@
     NSColorList *_colorList;
     id _autounbinder;
     NSArray *_allowedColorSpaces;
-    unsigned int _showsAlpha:1;
-    unsigned int _supportsPressAndHoldVariants:1;
-    unsigned int _enabled:1;
+    BOOL _showsAlpha;
+    BOOL _supportsPressAndHoldVariants;
+    BOOL _enabled;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfColor;

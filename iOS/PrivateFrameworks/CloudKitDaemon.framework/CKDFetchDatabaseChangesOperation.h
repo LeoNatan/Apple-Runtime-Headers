@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType recordZoneWithIDWasDeletedBlock; // @synthesize recordZoneWithIDWasDeletedBlock=_recordZoneWithIDWasDeletedBlock;
 @property(copy, nonatomic) CDUnknownBlockType recordZoneWithIDChangedBlock; // @synthesize recordZoneWithIDChangedBlock=_recordZoneWithIDChangedBlock;
 - (void).cxx_destruct;
+- (id)analyticsPayload;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)fillOutOperationResult:(id)arg1;
 - (Class)operationResultClass;

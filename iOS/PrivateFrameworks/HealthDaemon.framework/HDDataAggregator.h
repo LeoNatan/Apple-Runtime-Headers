@@ -32,16 +32,15 @@
 - (void)_startCollector:(id)arg1;
 - (void)_considerStartingCollectors;
 - (_Bool)didPersistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 error:(id *)arg4;
-- (_Bool)persistObjects:(id)arg1 lastDatum:(id)arg2 collector:(id)arg3 source:(id)arg4 device:(id)arg5 error:(id *)arg6;
+- (_Bool)persistForCollector:(id)arg1 usedDatums:(id)arg2 source:(id)arg3 device:(id)arg4 error:(id *)arg5 persistenceHandler:(CDUnknownBlockType)arg6;
+- (_Bool)persistObjects:(id)arg1 usedDatums:(id)arg2 collector:(id)arg3 source:(id)arg4 device:(id)arg5 error:(id *)arg6;
 - (void)dataCollector:(id)arg1 didCollectSensorDatum:(id)arg2 device:(id)arg3;
-- (void)dataCollector:(id)arg1 didCollectSensorDatum:(id)arg2;
 - (void)dataCollector:(id)arg1 didChangeState:(id)arg2;
 - (id)allCollectors;
 - (void)unregisterDataCollector:(id)arg1;
 - (void)registerDataCollector:(id)arg1 state:(id)arg2;
 @property(copy) HDDataAggregatorConfiguration *configuration;
-- (void)requestAggregationThroughDate:(id)arg1 mode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (double)defaultDataCollectionInterval;
+- (void)requestAggregationThroughDate:(id)arg1 mode:(long long)arg2 freezeSeries:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)resume;
 - (id)initWithDataCollectionManager:(id)arg1;
 

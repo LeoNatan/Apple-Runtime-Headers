@@ -6,9 +6,10 @@
 
 #import <AuthKit/NSObject-Protocol.h>
 
-@class AKDevice, NSData, NSString;
+@class AKDevice, NSData, NSString, NSURLRequest;
 
 @protocol AKAnisetteProvisioningDaemonProtocol <NSObject>
+- (void)attestationDataForDevice:(AKDevice *)arg1 withRequest:(NSURLRequest *)arg2 completion:(void (^)(AKAttestationData *, NSError *))arg3;
 - (void)legacyAnisetteDataForDSID:(NSString *)arg1 device:(AKDevice *)arg2 completion:(void (^)(AKAnisetteData *, NSError *))arg3;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(_Bool)arg1 device:(AKDevice *)arg2 completion:(void (^)(AKAnisetteData *, NSError *))arg3;
 - (void)eraseAnisetteForDevice:(AKDevice *)arg1 completion:(void (^)(_Bool, NSError *))arg2;

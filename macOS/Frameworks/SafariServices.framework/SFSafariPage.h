@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <SafariServices/NSCopying-Protocol.h>
 #import <SafariServices/NSSecureCoding-Protocol.h>
 
 @class NSExtensionContext, NSUUID;
 
-@interface SFSafariPage : NSObject <NSSecureCoding>
+@interface SFSafariPage : NSObject <NSCopying, NSSecureCoding>
 {
     NSUUID *_uuid;
     NSExtensionContext *__extensionContext;
@@ -31,6 +32,7 @@
 - (id)_remoteObjectProxy;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSUUID *_uuid;

@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)mouseDown:(id)arg1;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)startObserving:(id)arg1;

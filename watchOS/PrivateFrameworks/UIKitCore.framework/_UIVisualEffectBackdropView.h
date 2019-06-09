@@ -24,7 +24,6 @@
 @property(nonatomic) int renderMode;
 @property(readonly, nonatomic) CABackdropLayer *backdropLayer;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
-- (id)asBackdropView;
 
 @end
 

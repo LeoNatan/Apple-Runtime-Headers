@@ -17,7 +17,6 @@
 @property(nonatomic) long long inputMode;
 @property(readonly, nonatomic) NSString *UUID;
 @property(readonly, nonatomic) NSString *screenID;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithExternalDeviceAndHIDDictionary:(id)arg1 hidDictionary:(id)arg2;
 - (id)_figEndpointHIDInputMode;

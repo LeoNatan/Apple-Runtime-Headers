@@ -23,7 +23,7 @@
 @property(copy, nonatomic) CDUnknownBlockType deallocHandler; // @synthesize deallocHandler=_deallocHandler;
 - (void).cxx_destruct;
 - (id)_authenticationServiceConnection;
-- (id)urlBagWithError:(id *)arg1;
+- (id)_urlBagFromCache:(_Bool)arg1 withError:(id *)arg2;
 - (void)fetchURLBagWithCompletion:(CDUnknownBlockType)arg1;
 - (id)accountNamesForAltDSID:(id)arg1;
 - (void)validateVettingToken:(id)arg1 forAltDSID:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -48,10 +48,15 @@
 - (void)checkSecurityUpgradeEligibilityForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)configurationInfoWithIdentifiers:(id)arg1 forAltDSID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setConfigurationInfo:(id)arg1 forIdentifier:(id)arg2 forAltDSID:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)warmUpVerificationSessionWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)revokeAuthorizationForTeamWithTeamID:(id)arg1 error:(id *)arg2;
+- (_Bool)deleteAuthorizationDatabase:(id *)arg1;
+- (id)fetchAuthorizedAppListWithContext:(id)arg1 error:(id *)arg2;
 - (id)fetchDeviceListWithContext:(id)arg1 error:(id *)arg2;
 - (void)fetchDeviceMapWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchDeviceListWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAuthModeWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getUserInformationForAltDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchUserInformationForAltDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setAppleIDWithDSID:(id)arg1 inUse:(_Bool)arg2 forService:(long long)arg3;
 - (void)setAppleIDWithAltDSID:(id)arg1 inUse:(_Bool)arg2 forService:(long long)arg3;

@@ -19,6 +19,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)new;
 @property(readonly, copy) NSString *symbol; // @synthesize symbol=_symbol;
+@property(readonly) Class _effectiveUnitClass;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

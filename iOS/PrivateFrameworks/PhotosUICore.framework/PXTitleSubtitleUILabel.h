@@ -39,6 +39,7 @@
 - (void)_updateLayerPromiseIfNeeded;
 - (void)_invalidateLayerPromise;
 - (void)layoutSubviews;
+- (struct CGRect)contentBounds;
 @property(readonly, nonatomic) NSArray *diagnosticsRenderedLines;
 @property(readonly, nonatomic) double lastBaseline;
 - (void)_handleChangeFromBounds:(struct CGRect)arg1;

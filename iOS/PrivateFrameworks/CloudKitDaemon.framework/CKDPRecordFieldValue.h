@@ -8,7 +8,7 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPAsset, CKDPDate, CKDPLocationCoordinate, CKDPPackage, CKDPRecordReference, NSData, NSMutableArray, NSString;
+@class CKDPAsset, CKDPDate, CKDPLocationCoordinate, CKDPPackage, CKDPRecordReference, CKDPStreamingAsset, NSData, NSMutableArray, NSString;
 
 @interface CKDPRecordFieldValue : PBCodable <NSCopying>
 {
@@ -21,6 +21,7 @@
     CKDPLocationCoordinate *_locationValue;
     CKDPPackage *_packageValue;
     CKDPRecordReference *_referenceValue;
+    CKDPStreamingAsset *_streamingAssetValue;
     NSString *_stringValue;
     int _type;
     _Bool _isEncrypted;
@@ -34,6 +35,7 @@
 
 + (Class)listValueType;
 @property(nonatomic) _Bool isEncrypted; // @synthesize isEncrypted=_isEncrypted;
+@property(retain, nonatomic) CKDPStreamingAsset *streamingAssetValue; // @synthesize streamingAssetValue=_streamingAssetValue;
 @property(retain, nonatomic) CKDPPackage *packageValue; // @synthesize packageValue=_packageValue;
 @property(retain, nonatomic) NSMutableArray *listValues; // @synthesize listValues=_listValues;
 @property(retain, nonatomic) CKDPAsset *assetValue; // @synthesize assetValue=_assetValue;
@@ -55,6 +57,7 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasIsEncrypted;
+@property(readonly, nonatomic) _Bool hasStreamingAssetValue;
 @property(readonly, nonatomic) _Bool hasPackageValue;
 - (id)listValueAtIndex:(unsigned long long)arg1;
 - (unsigned long long)listValuesCount;

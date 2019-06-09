@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 
 + (id)customAttributes;
 - (id)outputImage;
-- (id)_CIParallelogramTile;
 
 @end
 

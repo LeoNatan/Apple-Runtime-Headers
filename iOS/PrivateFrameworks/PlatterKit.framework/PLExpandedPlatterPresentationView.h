@@ -10,18 +10,18 @@
 #import <PlatterKit/UIScrollViewDelegate-Protocol.h>
 
 @class NSString, UIScrollView, UIViewController;
-@protocol PLExpandedPlatter><PLContentSizeCategoryAdjusting, PLExpandedPlatterPresentationViewDelegate, PLPreviewInteractionPresentable;
+@protocol PLClickPresentationInteractionPresentable, PLExpandedPlatter><PLContentSizeCategoryAdjusting, PLExpandedPlatterPresentationViewDelegate;
 
 @interface PLExpandedPlatterPresentationView : UIView <UIScrollViewDelegate, PLContentSizeManaging>
 {
     UIView<PLExpandedPlatter><PLContentSizeCategoryAdjusting> *_expandedPlatterView;
     UIScrollView *_scrollView;
-    UIViewController<PLPreviewInteractionPresentable> *_presentableViewController;
+    UIViewController<PLClickPresentationInteractionPresentable> *_presentableViewController;
     id <PLExpandedPlatterPresentationViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <PLExpandedPlatterPresentationViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak UIViewController<PLPreviewInteractionPresentable> *presentableViewController; // @synthesize presentableViewController=_presentableViewController;
+@property(nonatomic) __weak UIViewController<PLClickPresentationInteractionPresentable> *presentableViewController; // @synthesize presentableViewController=_presentableViewController;
 - (void).cxx_destruct;
 - (void)_handleDismissButton:(id)arg1;
 - (void)_configureExpandedPlatterViewIfNecessary;

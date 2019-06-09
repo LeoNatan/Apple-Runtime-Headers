@@ -8,7 +8,7 @@
 
 #import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CNLabeledValue, MKPlaceSectionHeaderView, MKPlatterView, NSArray, NSLayoutConstraint, NSString, UIColor, UITapGestureRecognizer, _MKUILabel;
+@class CNLabeledValue, MKPlaceSectionHeaderView, MKVibrantLabel, NSArray, NSLayoutConstraint, NSString, UIColor, _MKUILabel;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceInfoContactRowView : MKPlaceSectionRowView <UIGestureRecognizerDelegate>
@@ -20,12 +20,11 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_valueToTrailingViewConstraint;
     NSArray *_iconConstraints;
     NSArray *_titleConstraints;
-    UITapGestureRecognizer *_tapRecognizer;
-    _Bool _bottomHairlineFullWidth;
+    _Bool _isInRightMouseDownEvent;
+    _Bool _textIsSelectable;
     CNLabeledValue *_labeledValue;
-    _MKUILabel *_titleLabel;
+    MKVibrantLabel *_titleLabel;
     _MKUILabel *_valueLabel;
-    MKPlatterView *_iconView;
     CDUnknownBlockType _iconSelectedBlock;
     NSLayoutConstraint *_valueToBottomConstraint;
     UIColor *_labelColor;
@@ -34,19 +33,12 @@ __attribute__((visibility("hidden")))
 + (id)icon;
 @property(retain, nonatomic) UIColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(retain, nonatomic) NSLayoutConstraint *valueToBottomConstraint; // @synthesize valueToBottomConstraint=_valueToBottomConstraint;
-@property(nonatomic, getter=isBottomHairlineFullWidth) _Bool bottomHairlineFullWidth; // @synthesize bottomHairlineFullWidth=_bottomHairlineFullWidth;
 @property(copy, nonatomic) CDUnknownBlockType iconSelectedBlock; // @synthesize iconSelectedBlock=_iconSelectedBlock;
-@property(readonly, nonatomic) MKPlatterView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
-@property(readonly, nonatomic) _MKUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(readonly, nonatomic) MKVibrantLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) int analyticsTarget;
-- (_Bool)_iconTapped:(id)arg1;
-- (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)_updateGestureRecognizer;
-- (_Bool)_pointIsInIcon:(struct CGPoint)arg1;
-@property(nonatomic, getter=isIconVisible) _Bool iconVisible;
 - (void)_contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (Class)_labeledValueExpectedValueType;

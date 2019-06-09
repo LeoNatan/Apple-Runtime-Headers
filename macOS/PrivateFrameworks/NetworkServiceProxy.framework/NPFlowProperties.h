@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NPTunnelTuscanyEndpoint, NSData, NSDictionary, NSUUID, NWEndpoint;
+@class NPTunnelTuscanyEndpoint, NSData, NSDictionary, NWEndpoint;
 
 @interface NPFlowProperties : NSObject
 {
@@ -18,25 +18,24 @@
     NSData *_requestData;
     NPTunnelTuscanyEndpoint *_replacementEndpoint;
     NSDictionary *_replacementAddressMap;
-    NSUUID *_dayPassUUID;
     NWEndpoint *_directEndpoint;
     unsigned long long *_timestamps;
 }
 
-@property unsigned int flags; // @synthesize flags=_flags;
-@property unsigned long long *timestamps; // @synthesize timestamps=_timestamps;
-@property(retain) NWEndpoint *directEndpoint; // @synthesize directEndpoint=_directEndpoint;
-@property int dataMode; // @synthesize dataMode=_dataMode;
-@property(retain) NSUUID *dayPassUUID; // @synthesize dayPassUUID=_dayPassUUID;
-@property(retain) NSDictionary *replacementAddressMap; // @synthesize replacementAddressMap=_replacementAddressMap;
-@property(retain) NPTunnelTuscanyEndpoint *replacementEndpoint; // @synthesize replacementEndpoint=_replacementEndpoint;
-@property(retain) NSData *requestData; // @synthesize requestData=_requestData;
-@property double fallbackTimeout; // @synthesize fallbackTimeout=_fallbackTimeout;
-@property unsigned int flowIdentifier; // @synthesize flowIdentifier=_flowIdentifier;
-@property unsigned long long serviceID; // @synthesize serviceID=_serviceID;
+@property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
+@property(nonatomic) unsigned long long *timestamps; // @synthesize timestamps=_timestamps;
+@property(retain, nonatomic) NWEndpoint *directEndpoint; // @synthesize directEndpoint=_directEndpoint;
+@property(nonatomic) int dataMode; // @synthesize dataMode=_dataMode;
+@property(retain, nonatomic) NSDictionary *replacementAddressMap; // @synthesize replacementAddressMap=_replacementAddressMap;
+@property(retain, nonatomic) NPTunnelTuscanyEndpoint *replacementEndpoint; // @synthesize replacementEndpoint=_replacementEndpoint;
+@property(retain, nonatomic) NSData *requestData; // @synthesize requestData=_requestData;
+@property(nonatomic) double fallbackTimeout; // @synthesize fallbackTimeout=_fallbackTimeout;
+@property(nonatomic) unsigned int flowIdentifier; // @synthesize flowIdentifier=_flowIdentifier;
+@property(nonatomic) unsigned long long serviceID; // @synthesize serviceID=_serviceID;
 - (void).cxx_destruct;
-@property BOOL isLoopback;
-@property BOOL enableNSP;
+@property(nonatomic) BOOL disableIdleTimeout;
+@property(nonatomic) BOOL isLoopback;
+@property(nonatomic) BOOL enableNSP;
 - (id)copyTLVData;
 - (void)dealloc;
 - (id)initWithTLVData:(id)arg1;

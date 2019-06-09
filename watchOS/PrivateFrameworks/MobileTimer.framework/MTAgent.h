@@ -9,68 +9,65 @@
 #import <MobileTimer/MTAgentDiagnosticDelegate-Protocol.h>
 #import <MobileTimer/MTSystemStateDelegate-Protocol.h>
 
-@class MTAgentDiagnosticListener, MTAgentNotificationManager, MTAlarmIntentDonor, MTAlarmScheduler, MTAlarmServer, MTAlarmSnapshot, MTAlarmStorage, MTLanguageChangeListener, MTPairedDeviceListener, MTSyncCommandListener, MTSystemStateListener, MTTimeListener, MTTimerIntentDonor, MTTimerScheduler, MTTimerServer, MTTimerSnapshot, MTTimerStorage, NSDate, NSString;
-@protocol MTNotificationCenter, MTNotificationResponseDelegate;
+@class MTAgentDiagnosticListener, MTAgentNotificationManager, MTAlarmIntentDonor, MTAlarmScheduler, MTAlarmServer, MTAlarmSnapshot, MTAlarmStorage, MTCoreDuetMonitor, MTLanguageChangeListener, MTSystemStateListener, MTTimeListener, MTTimerIntentDonor, MTTimerScheduler, MTTimerServer, MTTimerSnapshot, MTTimerStorage, NSDate, NSString;
+@protocol MTNotificationCenter, NAScheduler;
 
 @interface MTAgent : NSObject <MTAgentDiagnosticDelegate, MTSystemStateDelegate>
 {
+    _Bool _systemReady;
     NSDate *_launchDate;
-    int _mode;
+    id <NAScheduler> _serializer;
     MTAgentNotificationManager *_notificationManager;
     MTSystemStateListener *_systemStateListener;
     MTLanguageChangeListener *_languageChangeListener;
-    MTPairedDeviceListener *_pairedDeviceListener;
-    MTSyncCommandListener *_syncCommandListener;
     MTAgentDiagnosticListener *_diagnostics;
     MTTimeListener *_timeListener;
     MTAlarmServer *_alarmServer;
     MTAlarmScheduler *_alarmScheduler;
     MTAlarmSnapshot *_alarmSnapshot;
     MTAlarmStorage *_alarmStorage;
-    MTAlarmIntentDonor *_alarmIntentDonor;
     MTTimerServer *_timerServer;
     MTTimerScheduler *_timerScheduler;
     MTTimerSnapshot *_timerSnapshot;
     MTTimerStorage *_timerStorage;
-    MTTimerIntentDonor *_timerIntentDonor;
     id <MTNotificationCenter> _notificationCenter;
-    id <MTNotificationResponseDelegate> _notificationResponseDelegate;
+    MTAlarmIntentDonor *_alarmIntentDonor;
+    MTTimerIntentDonor *_timerIntentDonor;
+    MTCoreDuetMonitor *_coreDuetMonitor;
 }
 
 + (id)agent;
-@property(retain, nonatomic) id <MTNotificationResponseDelegate> notificationResponseDelegate; // @synthesize notificationResponseDelegate=_notificationResponseDelegate;
-@property(retain, nonatomic) id <MTNotificationCenter> notificationCenter; // @synthesize notificationCenter=_notificationCenter;
+@property(retain, nonatomic) MTCoreDuetMonitor *coreDuetMonitor; // @synthesize coreDuetMonitor=_coreDuetMonitor;
 @property(retain, nonatomic) MTTimerIntentDonor *timerIntentDonor; // @synthesize timerIntentDonor=_timerIntentDonor;
+@property(retain, nonatomic) MTAlarmIntentDonor *alarmIntentDonor; // @synthesize alarmIntentDonor=_alarmIntentDonor;
+@property(retain, nonatomic) id <MTNotificationCenter> notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) MTTimerStorage *timerStorage; // @synthesize timerStorage=_timerStorage;
 @property(retain, nonatomic) MTTimerSnapshot *timerSnapshot; // @synthesize timerSnapshot=_timerSnapshot;
 @property(retain, nonatomic) MTTimerScheduler *timerScheduler; // @synthesize timerScheduler=_timerScheduler;
 @property(retain, nonatomic) MTTimerServer *timerServer; // @synthesize timerServer=_timerServer;
-@property(retain, nonatomic) MTAlarmIntentDonor *alarmIntentDonor; // @synthesize alarmIntentDonor=_alarmIntentDonor;
 @property(retain, nonatomic) MTAlarmStorage *alarmStorage; // @synthesize alarmStorage=_alarmStorage;
 @property(retain, nonatomic) MTAlarmSnapshot *alarmSnapshot; // @synthesize alarmSnapshot=_alarmSnapshot;
 @property(retain, nonatomic) MTAlarmScheduler *alarmScheduler; // @synthesize alarmScheduler=_alarmScheduler;
 @property(retain, nonatomic) MTAlarmServer *alarmServer; // @synthesize alarmServer=_alarmServer;
 @property(retain, nonatomic) MTTimeListener *timeListener; // @synthesize timeListener=_timeListener;
 @property(retain, nonatomic) MTAgentDiagnosticListener *diagnostics; // @synthesize diagnostics=_diagnostics;
-@property(retain, nonatomic) MTSyncCommandListener *syncCommandListener; // @synthesize syncCommandListener=_syncCommandListener;
-@property(retain, nonatomic) MTPairedDeviceListener *pairedDeviceListener; // @synthesize pairedDeviceListener=_pairedDeviceListener;
 @property(retain, nonatomic) MTLanguageChangeListener *languageChangeListener; // @synthesize languageChangeListener=_languageChangeListener;
 @property(retain, nonatomic) MTSystemStateListener *systemStateListener; // @synthesize systemStateListener=_systemStateListener;
 @property(retain, nonatomic) MTAgentNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
-@property(nonatomic) int mode; // @synthesize mode=_mode;
+@property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
+@property(nonatomic) _Bool systemReady; // @synthesize systemReady=_systemReady;
 @property(retain, nonatomic) NSDate *launchDate; // @synthesize launchDate=_launchDate;
 - (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (id)_diagnosticProviders;
 - (void)handleF5Reset;
-- (void)restoreDidFinish;
-- (void)_setupSyncMonitor;
 - (void)_setupSecondaryListeners;
+- (void)restoreDidFinish;
 - (void)_setupInitialListeners;
-- (void)_setupSync;
 - (void)_setupTimers;
 - (void)_setupAlarms;
+- (void)_setupNotificationCenter;
 - (id)init;
 
 // Remaining properties

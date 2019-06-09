@@ -31,6 +31,8 @@
 @property(readonly, nonatomic) UILabel *dailyHighLabel; // @synthesize dailyHighLabel=_dailyHighLabel;
 @property(readonly, nonatomic) NTKColoringLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 @property(readonly, nonatomic) double timeMarkerPadding;
 - (struct CGRect)drawableGraphRect;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;

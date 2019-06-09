@@ -6,7 +6,7 @@
 
 #import <AppKit/NSObject-Protocol.h>
 
-@class NSArray, NSTabBarItem, NSView, NSVisualTabPickerRootViewController;
+@class NSArray, NSImage, NSTabBarItem, NSView, NSVisualTabPickerRootViewController;
 
 @protocol NSVisualTabPickerDelegate <NSObject>
 - (void)visualTabPickerControllerDidEndHiding:(NSVisualTabPickerRootViewController *)arg1;
@@ -16,9 +16,12 @@
 - (void)visualTabPickerController:(NSVisualTabPickerRootViewController *)arg1 selectTab:(NSTabBarItem *)arg2;
 - (void)createNewTabForVisualTabPickerController:(NSVisualTabPickerRootViewController *)arg1;
 - (BOOL)creatingNewTabWillCloseVisualTabPickerController:(NSVisualTabPickerRootViewController *)arg1;
+- (struct CGRect)frameForWindowContentAnimation;
 - (NSArray *)tabBarItemsForVisualTabPickerController:(NSVisualTabPickerRootViewController *)arg1;
 - (NSTabBarItem *)selectedTabViewItemForVisualTabPickerController:(NSVisualTabPickerRootViewController *)arg1;
 - (struct CGRect)frameForVisualTabPickerController:(NSVisualTabPickerRootViewController *)arg1;
+- (BOOL)visualTabPicker:(NSVisualTabPickerRootViewController *)arg1 highlightStateForTabItem:(NSTabBarItem *)arg2;
+- (NSImage *)visualTabPicker:(NSVisualTabPickerRootViewController *)arg1 imageForTabItem:(NSTabBarItem *)arg2;
 - (NSView *)visualTabPicker:(NSVisualTabPickerRootViewController *)arg1 thumbnailViewForTabItem:(NSTabBarItem *)arg2;
 @end
 

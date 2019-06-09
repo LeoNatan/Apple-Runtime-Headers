@@ -21,8 +21,8 @@
 + (id)decodeAttribute:(struct Attribute *)arg1 error:(id *)arg2;
 @property struct Attribute *encodedAttribute; // @synthesize encodedAttribute=_encodedAttribute;
 @property(retain) NSData *attributeDERData; // @synthesize attributeDERData=_attributeDERData;
-@property(readonly) NSArray *attributeValues; // @synthesize attributeValues=_attributeValues;
-@property(readonly) MSOID *attributeType; // @synthesize attributeType=_attributeType;
+@property(readonly, retain) NSArray *attributeValues; // @synthesize attributeValues=_attributeValues;
+@property(readonly, retain) MSOID *attributeType; // @synthesize attributeType=_attributeType;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (struct Attribute *)generateAttributeStruct;

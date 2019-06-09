@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long mPageFieldsCount;
 }
 
+- (void).cxx_destruct;
 - (void)clearCache;
 - (void)cacheSizes:(id)arg1 inObject:(id)arg2;
 - (int)borderFlagsForStyleType:(int)arg1 row:(int)arg2 column:(int)arg3;

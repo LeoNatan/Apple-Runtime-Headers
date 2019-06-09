@@ -31,6 +31,7 @@
 - (id)newSharedEventWithMachPort:(unsigned int)arg1;
 - (id)newSharedEvent;
 - (id)newEvent;
+- (id)newCounterSampleBufferWithDescriptor:(id)arg1 error:(id *)arg2;
 - (id)newMotionEstimationPipelineWithDescriptor:(id)arg1;
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 deallocator:(CDUnknownBlockType)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6;
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 descriptor:(id)arg3 offset:(unsigned long long)arg4 bytesPerRow:(unsigned long long)arg5;
@@ -42,13 +43,16 @@
 - (BOOL)restoreResourceTrackingEnabled;
 - (BOOL)overrideResourceTrackingEnabled:(BOOL)arg1;
 - (void)resourceTrackingEndOfFrame;
+- (id)newBufferWithIOSurface:(struct __IOSurface *)arg1;
 - (id)newTextureWithDescriptor:(id)arg1 iosurface:(struct __IOSurface *)arg2 plane:(unsigned long long)arg3;
+- (id)newPipelineLibraryWithFilePath:(id)arg1 error:(id *)arg2;
 - (id)newLibraryWithData:(id)arg1 error:(id *)arg2;
 - (void)newLibraryWithSource:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)newLibraryWithSource:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)newLibraryWithURL:(id)arg1 error:(id *)arg2;
 - (id)newLibraryWithFile:(id)arg1 error:(id *)arg2;
 - (id)newComputePipelineStateWithImageFilterFunctionsSPI:(id)arg1 imageFilterFunctionInfo:(const CDStruct_dbc1e4aa *)arg2 error:(id *)arg3;
+- (id)newLibraryWithImageFilterFunctionsSPI:(id)arg1 imageFilterFunctionInfo:(const CDStruct_dbc1e4aa *)arg2 error:(id *)arg3;
 - (void)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)newComputePipelineStateWithFunction:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -75,6 +79,7 @@
 - (id)newTextureWithSurface:(unsigned long long)arg1 buffer:(unsigned long long)arg2;
 - (id)newTextureWithDescriptor:(id)arg1;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
+- (id)newArgumentEncoderWithLayout:(id)arg1;
 - (id)newArgumentEncoderWithArguments:(id)arg1;
 - (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newBufferWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3 deallocator:(CDUnknownBlockType)arg4;

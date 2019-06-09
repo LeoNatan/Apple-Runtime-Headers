@@ -7,6 +7,9 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (MKLaneDrawingUtilities)
++ (id)numberWithCGFloat:(double)arg1;
 - (int)_mk_laneDirectionValue;
+- (double)cgFloatValue;
+- (id)initWithCGFloat:(double)arg1;
 @end
 

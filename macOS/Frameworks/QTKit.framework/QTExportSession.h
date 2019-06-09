@@ -6,33 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class QTExportOptions, QTExportSessionInternal;
-@protocol QTExportSessionDelegate;
-
 @interface QTExportSession : NSObject
 {
-    QTExportSessionInternal *_internal;
 }
 
-- (BOOL)validateDestinationFileType:(id *)arg1;
-- (id)errorForRainForestError:(int)arg1;
-- (void)setExportCompleted:(int)arg1;
-- (id)localizedExportSessionOutputSummary;
-- (BOOL)waitUntilFinished:(id *)arg1;
-@property(readonly, getter=isCancelled) BOOL cancelled; // @dynamic cancelled;
-@property(readonly, getter=isFinished) BOOL finished; // @dynamic finished;
-@property(readonly, getter=isRunning) BOOL running; // @dynamic running;
-- (void)setRunState:(int)arg1;
-- (int)runState;
-- (void)setProgress:(double)arg1;
-@property(readonly) double progress;
-- (void)cancel;
-- (void)run;
-- (void)dealloc;
-- (id)initWithOptions:(id)arg1 outputURL:(id)arg2 error:(id *)arg3;
+- (id)init;
 - (id)initWithMovie:(id)arg1 exportOptions:(id)arg2 outputURL:(id)arg3 error:(id *)arg4;
-@property id <QTExportSessionDelegate> delegate;
-@property(readonly, copy) QTExportOptions *exportOptions;
+- (id)initWithOptions:(id)arg1 outputURL:(id)arg2 error:(id *)arg3;
 
 @end
 

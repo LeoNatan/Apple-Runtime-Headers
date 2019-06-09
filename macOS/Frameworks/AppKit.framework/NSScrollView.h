@@ -10,14 +10,13 @@
 #import <AppKit/NSScrollerImpPairDelegate-Protocol.h>
 #import <AppKit/NSTextFinderBarContainer-Protocol.h>
 
-@class NSClipView, NSColor, NSCursor, NSRulerView, NSScroller, NSString;
+@class NSArray, NSClipView, NSColor, NSCursor, NSGestureRecognizer, NSRulerView, NSScroller, NSScrollerImpPair, NSScrollingBehavior, NSString, _NSScrollViewContentBackgroundView, _NSScrollViewFloatingDebugView, _NSScrollViewFloatingSubviewsContainerView, _NSScrollViewLayoutHelper;
+@protocol NSScrollViewDelegate;
 
 @interface NSScrollView : NSView <NSScrollerImpPairDelegate, NSGestureRecognizerDelegate, NSTextFinderBarContainer>
 {
     NSScroller *_vScroller;
     NSScroller *_hScroller;
-    NSClipView *_contentView;
-    NSClipView *_headerClipView;
     NSView *_cornerView;
     id _ruler;
     struct {
@@ -51,6 +50,63 @@
     id _extraIvars;
     NSRulerView *_horizontalRuler;
     NSRulerView *_verticalRuler;
+    NSClipView *_contentView;
+    NSClipView *_headerClipView;
+    double _hPageAmt;
+    double _vPageAmt;
+    double _hLineAmt;
+    double _vLineAmt;
+    double _hThumbDestination;
+    double _vThumbDestination;
+    struct NSEdgeInsets _contentInsets;
+    struct NSEdgeInsets _scrollerInsets;
+    _NSScrollViewLayoutHelper *_baseContentAreaLayout;
+    NSView *_findBarView;
+    NSScrollingBehavior *_scrollingBehavior;
+    NSScrollerImpPair *_scrollerImpPair;
+    double _effectiveMagnification;
+    double _magnification;
+    double _minMagnification;
+    double _maxMagnification;
+    double _magnificationLock;
+    struct CGPoint _lastSmartMagnificationLocation;
+    struct CGRect _lastSmartMagnificationRect;
+    struct CGPoint _magnificationAnchorPoint;
+    NSScrollView *_synchronizedSiblingHorizontal;
+    NSScrollView *_synchronizedSiblingVertical;
+    id <NSScrollViewDelegate> _delegate;
+    NSArray *_pageAlignmentsHorizontal;
+    NSArray *_pageAlignmentsVertical;
+    _NSScrollViewFloatingSubviewsContainerView *_floatingSubviewsHorizontalContainer;
+    _NSScrollViewFloatingSubviewsContainerView *_floatingSubviewsVerticalContainer;
+    _NSScrollViewFloatingDebugView *_floatingDebugView;
+    NSView *_currentRulerLineView;
+    id _mouseDownMonitor;
+    struct CGSize _decelerationRate;
+    NSView *_moreLeftContentIndicator;
+    NSView *_moreRightContentIndicator;
+    NSGestureRecognizer *_panGestureRecognizer;
+    unsigned char _inMagnificationAnimationCount;
+    _NSScrollViewContentBackgroundView *_contentBackgroundView;
+    unsigned int _tilingContentView:1;
+    unsigned int _inScrollGesture:1;
+    unsigned int _hasAccessoryViewsInScrollerAreas:1;
+    unsigned int _hasScrollOccurred:1;
+    unsigned int _allowMagnification:1;
+    unsigned int _supressMagnificationUpdateFromBoundsChange:1;
+    unsigned int _inMagnificationGesture:1;
+    unsigned int _hasMsgTracedFutureResponsiveOptInOut:1;
+    unsigned int _ignoreClippedSiblings:1;
+    unsigned int _delegateImplementsDidScroll:1;
+    unsigned int _horizontalAxisScrollingMode:2;
+    unsigned int _verticalAxisScrollingMode:2;
+    unsigned int _stuntedForIB:1;
+    unsigned int _forceContentsInseStyleLayout:1;
+    unsigned int _automaticallyAdjustsContentInsets:1;
+    unsigned int _haveCheckedForScrollerSizeMethodOverrides:1;
+    unsigned int _useCompatibiltyScrollerWidthMethods:1;
+    unsigned int _hasHorizontalMoreContentIndicators:2;
+    unsigned int _updateAutomaticContentInsetsInProgress:1;
 }
 
 + (void)_drawCornerWidgetInRect:(struct CGRect)arg1 withSmallSize:(BOOL)arg2;

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface UIInterpolatedFloat : NSObject <UIVectorOperatable>
 {
     double _number;

@@ -12,12 +12,14 @@
 {
     UXBarButtonItem *_confirmButton;
     UXBarButtonItem *_denyButton;
+    UXBarButtonItem *_doneButtonItem;
     NSArray *_cachedConfirmationToolbarItems;
     NSArray *_cachedLoadingToolbarItems;
 }
 
 @property(retain) NSArray *cachedLoadingToolbarItems; // @synthesize cachedLoadingToolbarItems=_cachedLoadingToolbarItems;
 @property(retain) NSArray *cachedConfirmationToolbarItems; // @synthesize cachedConfirmationToolbarItems=_cachedConfirmationToolbarItems;
+@property(retain) UXBarButtonItem *doneButtonItem; // @synthesize doneButtonItem=_doneButtonItem;
 @property(retain) UXBarButtonItem *denyButton; // @synthesize denyButton=_denyButton;
 @property(retain) UXBarButtonItem *confirmButton; // @synthesize confirmButton=_confirmButton;
 - (void).cxx_destruct;

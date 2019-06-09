@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 - (id)type;
 - (unsigned long long)count;
+- (struct CGSize)size;
 - (long long)orientation;
 - (id)durations;
 - (id)imageAtIndex:(unsigned long long)arg1;

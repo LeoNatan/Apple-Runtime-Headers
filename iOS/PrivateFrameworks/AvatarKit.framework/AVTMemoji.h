@@ -6,7 +6,7 @@
 
 #import <AvatarKit/AVTAvatar.h>
 
-@class AVTColorPreset, AVTComponent, AVTComponentInstance, AVTMemojiSkeleton, AVTPreset, AVTRig, NSDictionary, NSString, SCNMaterial, SCNNode;
+@class AVTColorPreset, AVTComponent, AVTComponentInstance, AVTCompositor, AVTMemojiSkeleton, AVTPreset, AVTRig, NSDictionary, NSString, SCNMaterial, SCNNode;
 
 @interface AVTMemoji : AVTAvatar
 {
@@ -15,19 +15,18 @@
     _Bool _ignoreRigsDidChange;
     _Bool _needsUpdate;
     SCNNode *_componentContainer;
-    unsigned int _componentDirtyMask;
+    long long _componentDirtyMask;
     SCNNode *_eyelashes;
     SCNNode *_eyesAndMouth;
     SCNMaterial *_eyeMaterial;
     NSDictionary *_eyesAndMouthSpecializationSettings;
-    AVTComponent *_components[13];
+    AVTComponent *_components[27];
     AVTRig *_rigs[15];
     NSString *_faceMorphVariants[7];
-    AVTPreset *_presets[17];
-    AVTPreset *_resolvedPresets[17];
-    _Bool _overrideFlags[17];
-    AVTColorPreset *_colorPresets[17];
-    AVTColorPreset *_secondaryColorPresets[17];
+    AVTPreset *_presets[31];
+    AVTPreset *_resolvedPresets[31];
+    _Bool _hasPresetDependency[31];
+    AVTColorPreset *_colorPresets[31][3];
     double _browsThickness;
     double _upperLipThickness;
     double _lowerLipThickness;
@@ -37,19 +36,17 @@
     double _hairOrientation;
     double _hairSideLength;
     double _hairTopLength;
-    struct CGImage *_combinedSkinImage;
-    struct CGImage *_combinedHairImage;
     struct CGImage *_combinedAOImage;
     _Bool _aoValid;
+    AVTCompositor *_compositor;
     _Bool _hairPhysicsDisabled;
     NSString *_currentHatVariant;
-    struct CGImage *_lipsMaskImage;
-    struct CGImage *_mouthInsideImage;
     AVTMemojiSkeleton *_skeleton;
-    AVTComponentInstance *_componentInstances[13];
+    AVTComponentInstance *_componentInstances[27];
     NSDictionary *_specializationSettings;
 }
 
++ (double)skinTextureSize;
 + (struct UIColor *)rndColor;
 + (float)rndRange:(float)arg1:(float)arg2;
 + (unsigned long long)rndIndex:(unsigned long long)arg1;
@@ -71,20 +68,16 @@
 - (void)updateBonesFromRigs;
 - (void)updateBoneForRig:(id)arg1;
 - (void)updateHeadMorphVariant;
-- (_Bool)_headMayContainsMorphTargetNamed:(id)arg1;
 - (void)_update;
 - (void)applyVariantDependencies;
+- (void)_setWeight:(float)arg1 forDependencyVariant:(id)arg2 ofType:(long long)arg3;
 - (void)setInstance:(id)arg1 forComponentType:(long long)arg2;
 - (void)update;
 - (void)_updateAO;
-- (void)udpateHighlights;
-- (void)updateHighlightsForCategory:(long long)arg1;
+- (void)updateHighlightsForComponentType:(long long)arg1;
 - (void)updateEyeLashes;
 - (void)updateSkinMaterial:(id)arg1;
 - (struct CGImage *)createSkinAO;
-- (struct CGImage *)createSkinImage;
-- (struct CGImage *)createCombinedHairImage;
-- (double)skinTextureSize;
 - (void)removeComponentAssetNodeFromParentNode:(id)arg1;
 - (void)addComponentAssetNode:(id)arg1 toNode:(id)arg2;
 - (void)avatarRigsDidChange:(id)arg1;
@@ -127,9 +120,12 @@
 - (void)addComponent:(id)arg1;
 - (id)componentWithType:(long long)arg1;
 - (id)components;
+- (void)setColorPreset:(id)arg1 forCategory:(long long)arg2 colorIndex:(unsigned long long)arg3;
+- (id)colorPresetForCategory:(long long)arg1 colorIndex:(unsigned long long)arg2;
 - (id)secondaryColorPresetForCategory:(long long)arg1;
 - (void)setSecondaryColorPreset:(id)arg1 forCategory:(long long)arg2;
-- (void)_applySecondaryColorPreset:(long long)arg1;
+- (void)_applySecondaryColorPreset:(long long)arg1 colorIndex:(unsigned long long)arg2;
+- (void)_applyAllColorPresets:(long long)arg1;
 - (id)colorPresetForCategory:(long long)arg1;
 - (void)setColorPreset:(id)arg1 forCategory:(long long)arg2;
 - (void)_applyColorPreset:(long long)arg1;
@@ -138,17 +134,18 @@
 - (void)setLipsColor:(struct UIColor *)arg1;
 - (struct UIColor *)lipsColor;
 - (void)_invalidateAOImage;
-- (void)_invalidateHairImage;
-- (void)_invalidateSkin;
 - (struct UIColor *)facialhairColor;
 - (struct UIColor *)eyebrowsColor;
 - (struct UIColor *)hairColor;
 - (struct UIColor *)skinColor;
 - (void)morphVariantForComponentType:(long long)arg1 facialFeature:(long long)arg2 didChangeWithVariantName:(id)arg3;
+- (void)updateNodeHierarchyMorphVariantWithType:(long long)arg1 variant:(id)arg2 node:(id)arg3;
 - (void)updateHeadMorphVariantWithType:(long long)arg1 variant:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_encode:(id)arg1;
 - (_Bool)_decode:(id)arg1 error:(id *)arg2;
+- (void)__decode:(id)arg1 isResettingToDefault:(_Bool)arg2;
+- (id)componentInstances:(long long)arg1;
 - (float)arScale;
 -     // Error parsing type: 16@0:8, name: arOffset
 - (id)initWithData:(id)arg1 error:(id *)arg2;
@@ -157,7 +154,6 @@
 - (void)resetToDefault;
 - (void)removeAllComponents;
 - (void)dealloc;
-- (void)releaseCaches;
 
 @end
 

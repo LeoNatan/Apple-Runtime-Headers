@@ -25,6 +25,8 @@
     NSArray *_bcc;
     NSDate *_date;
     NSString *_title;
+    NSString *_operatingSystemVersion;
+    _Bool _shouldShowOperatingSystemVersion;
     _Bool _fromForwardedMessage;
     NSString *_localizedApplicationName;
     NSString *_teamId;
@@ -33,7 +35,7 @@
 + (id)originWithType:(unsigned long long)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(_Bool)arg4;
 + (id)originWithType:(unsigned long long)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 bundleId:(id)arg4 fromForwardedMessage:(_Bool)arg5;
 + (_Bool)supportsSecureCoding;
-@property(readonly, getter=isFromForwardedMessage) _Bool fromForwardedMessage; // @synthesize fromForwardedMessage=_fromForwardedMessage;
+@property(readonly, nonatomic, getter=isFromForwardedMessage) _Bool fromForwardedMessage; // @synthesize fromForwardedMessage=_fromForwardedMessage;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSArray *bcc; // @synthesize bcc=_bcc;
@@ -43,12 +45,12 @@
 @property(readonly, nonatomic) NSString *localizedApplicationName; // @synthesize localizedApplicationName=_localizedApplicationName;
 @property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(readonly, nonatomic) CSPerson *fromPerson; // @synthesize fromPerson=_fromPerson;
-@property(readonly, nonatomic) struct _NSRange contextSnippetRange; // @synthesize contextSnippetRange=_contextSnippetRange;
-@property(readonly, nonatomic) NSString *contextSnippet; // @synthesize contextSnippet=_contextSnippet;
 @property(readonly, nonatomic) NSString *externalKey; // @synthesize externalKey=_externalKey;
 @property(readonly, nonatomic) NSString *sourceKey; // @synthesize sourceKey=_sourceKey;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct _NSRange contextSnippetRange;
+@property(readonly, nonatomic) NSString *contextSnippet;
 @property(readonly, nonatomic) SGSimpleNamedEmailAddress *from;
 - (unsigned long long)hash;
 - (_Bool)isEqualToOrigin:(id)arg1;

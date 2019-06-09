@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)_paragraphStyleWithMultiple:(double)arg1 textAlignment:(unsigned long long)arg2;
-+ (id)tallParagraphStyleForCurrentScaleWithTextAlignment:(unsigned long long)arg1;
-+ (id)paragraphStyleForCurrentScaleWithTextAlignment:(unsigned long long)arg1;
++ (id)_paragraphStyleWithMultiple:(double)arg1 textAlignment:(long long)arg2;
++ (id)tallParagraphStyleForCurrentScaleWithTextAlignment:(long long)arg1;
++ (id)paragraphStyleForCurrentScaleWithTextAlignment:(long long)arg1;
 + (double)labelLeadingForCurrentScale;
 
 @end

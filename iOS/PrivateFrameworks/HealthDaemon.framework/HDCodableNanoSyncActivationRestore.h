@@ -10,12 +10,13 @@
 #import <HealthDaemon/HDNanoSyncPersistentUserInfoCopying-Protocol.h>
 #import <HealthDaemon/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSMutableArray, NSString;
 
 @interface HDCodableNanoSyncActivationRestore : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying>
 {
     long long _sequenceNumber;
     NSString *_defaultSourceBundleIdentifier;
+    NSMutableArray *_obliteratedHealthPairingUUIDs;
     NSData *_restoreIdentifier;
     int _statusCode;
     struct {
@@ -24,9 +25,11 @@
     } _has;
 }
 
++ (Class)obliteratedHealthPairingUUIDsType;
 + (id)activationRestoreWithRestoreUUID:(id)arg1 sequenceNumber:(long long)arg2 statusCode:(int)arg3;
 + (id)persistentUserInfoKey;
 + (id)retreiveFromPersistentUserInfo:(id)arg1;
+@property(retain, nonatomic) NSMutableArray *obliteratedHealthPairingUUIDs; // @synthesize obliteratedHealthPairingUUIDs=_obliteratedHealthPairingUUIDs;
 @property(retain, nonatomic) NSString *defaultSourceBundleIdentifier; // @synthesize defaultSourceBundleIdentifier=_defaultSourceBundleIdentifier;
 @property(nonatomic) long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(retain, nonatomic) NSData *restoreIdentifier; // @synthesize restoreIdentifier=_restoreIdentifier;
@@ -40,6 +43,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+- (id)obliteratedHealthPairingUUIDsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)obliteratedHealthPairingUUIDsCount;
+- (void)addObliteratedHealthPairingUUIDs:(id)arg1;
+- (void)clearObliteratedHealthPairingUUIDs;
 @property(readonly, nonatomic) _Bool hasDefaultSourceBundleIdentifier;
 - (int)StringAsStatusCode:(id)arg1;
 - (id)statusCodeAsString:(int)arg1;
@@ -48,6 +55,8 @@
 @property(nonatomic) _Bool hasSequenceNumber;
 @property(readonly, nonatomic) _Bool hasRestoreIdentifier;
 - (id)nanoSyncDescription;
+- (id)decodedObliteratedHealthPairingUUIDs;
+- (void)encodeObliteratedHealthPairingUUIDs:(id)arg1;
 - (id)decodedRestoreUUID;
 - (_Bool)hasRequiredFields;
 - (id)copyForPersistentUserInfo;

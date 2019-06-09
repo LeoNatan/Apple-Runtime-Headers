@@ -20,7 +20,7 @@
     NSObject<OS_dispatch_queue> *_batchQueue;
     NSMutableArray *_addedSamplesPendingResume;
     NSMutableArray *_deletedSamplesPendingResume;
-    _Bool _shouldResetAnchor;
+    _Bool _includeAutomaticTimeZones;
     HKQueryAnchor *_anchor;
     unsigned long long _limit;
 }
@@ -28,6 +28,7 @@
 + (_Bool)supportsAnchorBasedAuthorization;
 + (id)requiredEntitlements;
 + (Class)queryClass;
+@property(readonly, nonatomic) _Bool includeAutomaticTimeZones; // @synthesize includeAutomaticTimeZones=_includeAutomaticTimeZones;
 @property(readonly, nonatomic) unsigned long long limit; // @synthesize limit=_limit;
 @property(readonly, copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 - (void).cxx_destruct;
@@ -42,11 +43,15 @@
 - (id)_queue_configuredEntityEnumerator;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
+- (void)_queue_didChangeStateFromPreviousState:(long long)arg1 state:(long long)arg2;
+- (void)_queue_didDeactivate;
 - (void)_queue_start;
 - (_Bool)_shouldObserveOnPause;
 - (_Bool)_shouldListenForUpdates;
+- (_Bool)validateConfiguration:(id *)arg1;
 - (id)anchoredObjectQueryClient;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)description;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 @end
 

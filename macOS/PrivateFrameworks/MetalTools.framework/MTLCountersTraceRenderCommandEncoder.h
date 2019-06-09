@@ -14,9 +14,13 @@ __attribute__((visibility("hidden")))
 - (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
 - (void)memoryBarrierWithScope:(unsigned long long)arg1 afterStages:(unsigned long long)arg2 beforeStages:(unsigned long long)arg3;
 - (void)textureBarrier;
+- (void)useResources:(const id *)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3 stages:(unsigned long long)arg4;
 - (void)useResources:(const id *)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3;
+- (void)useResource:(id)arg1 usage:(unsigned long long)arg2 stages:(unsigned long long)arg3;
 - (void)useResource:(id)arg1 usage:(unsigned long long)arg2;
+- (void)useHeaps:(const id *)arg1 count:(unsigned long long)arg2 stages:(unsigned long long)arg3;
 - (void)useHeaps:(const id *)arg1 count:(unsigned long long)arg2;
+- (void)useHeap:(id)arg1 stages:(unsigned long long)arg2;
 - (void)useHeap:(id)arg1;
 - (void)waitForFence:(id)arg1 beforeStages:(unsigned long long)arg2;
 - (void)updateFence:(id)arg1 afterStages:(unsigned long long)arg2;

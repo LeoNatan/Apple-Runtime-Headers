@@ -9,6 +9,7 @@
 @class NSStackView, NSTextField;
 @protocol AVFunctionBarMediaSelectionControlling, AVFunctionBarMediaSelectionViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarMediaSelectionViewController : NSViewController
 {
     NSTextField *_audioLabel;

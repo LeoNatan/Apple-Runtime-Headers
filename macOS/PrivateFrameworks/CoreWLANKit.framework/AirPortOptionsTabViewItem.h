@@ -6,23 +6,28 @@
 
 #import <AppKit/NSTabViewItem.h>
 
-@class AirPortOptionsTabView, CWInterface, CWScanManager, CWWiFiClient, NSString;
+#import <CoreWLANKit/CWWiFiUIProxyClientDelegate-Protocol.h>
 
-@interface AirPortOptionsTabViewItem : NSTabViewItem
+@class AirPortOptionsTabView, CWInterface, CWWiFiClient, CWWiFiUIProxyClient, NSString;
+
+@interface AirPortOptionsTabViewItem : NSTabViewItem <CWWiFiUIProxyClientDelegate>
 {
     AirPortOptionsTabView *_AirPortOptionsTabView;
     id _owner;
     CWWiFiClient *_wifiClient;
+    CWWiFiUIProxyClient *_wifiUIClient;
     NSString *_interfaceName;
-    CWScanManager *_scanManager;
     BOOL _isWiFiNetworkSyncEnabled;
     unsigned long long _modifierFlags;
 }
 
 @property(readonly) unsigned long long modifierFlags; // @synthesize modifierFlags=_modifierFlags;
+@property(readonly) CWWiFiUIProxyClient *wifiUIClient; // @synthesize wifiUIClient=_wifiUIClient;
+@property(readonly) CWWiFiClient *wifiClient; // @synthesize wifiClient=_wifiClient;
 @property(readonly) BOOL isWiFiNetworkSyncEnabled; // @synthesize isWiFiNetworkSyncEnabled=_isWiFiNetworkSyncEnabled;
-@property(readonly) CWScanManager *scanManager; // @synthesize scanManager=_scanManager;
 @property(copy) NSString *interfaceName; // @synthesize interfaceName=_interfaceName;
+- (void)updateScanUI:(BOOL)arg1;
+- (void)clientConnectionInterrupted;
 - (void)refreshForService:(struct __SCNetworkService *)arg1;
 - (void)__asyncQueryWiFiNetworkSyncStatus;
 - (BOOL)applyForService:(struct __SCNetworkService *)arg1 withAuthorization:(id)arg2;
@@ -33,6 +38,12 @@
 @property(readonly) CWInterface *interface; // @dynamic interface;
 - (void)dealloc;
 - (id)initForOwner:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

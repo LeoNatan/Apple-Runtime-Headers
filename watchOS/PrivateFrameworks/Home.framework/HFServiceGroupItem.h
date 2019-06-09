@@ -6,15 +6,15 @@
 
 #import <Home/HFItem.h>
 
-#import <Home/HFCharacteristicWriteActionBuilderFactory-Protocol.h>
+#import <Home/HFActionBuilderFactory-Protocol.h>
 #import <Home/HFGroupableItemProtocol-Protocol.h>
 #import <Home/HFServiceLikeBuilderCreating-Protocol.h>
 #import <Home/HFServiceLikeItem-Protocol.h>
 
-@class HMServiceGroup, NSString;
+@class HMServiceGroup, NSSet, NSString;
 @protocol HFCharacteristicValueSource, HFHomeKitObject;
 
-@interface HFServiceGroupItem : HFItem <HFServiceLikeItem, HFCharacteristicWriteActionBuilderFactory, HFServiceLikeBuilderCreating, HFGroupableItemProtocol>
+@interface HFServiceGroupItem : HFItem <HFServiceLikeItem, HFActionBuilderFactory, HFServiceLikeBuilderCreating, HFGroupableItemProtocol>
 {
     id <HFCharacteristicValueSource> _valueSource;
     HMServiceGroup *_serviceGroup;
@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) HMServiceGroup *serviceGroup; // @synthesize serviceGroup=_serviceGroup;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 - (void).cxx_destruct;
+- (id)namingComponentForHomeKitObject;
 - (id)_sortDescriptorsForServiceItems;
 - (id)_mostCommonValueInServiceItems:(id)arg1 valueProvider:(CDUnknownBlockType)arg2;
 - (id)_mergedIconDescriptorForServiceItems:(id)arg1;
@@ -35,10 +36,10 @@
 - (id)_unanimousValueForResultsKey:(id)arg1 inServiceItems:(id)arg2;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)accessories;
-- (id)services;
+@property(readonly, nonatomic) NSSet *services;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (_Bool)actionsMayRequireDeviceUnlock;
-- (_Bool)containsActionableCharacteristics;
+- (_Bool)containsActions;
 - (id)controlPanelItems;
 - (id)allControlItems;
 - (id)incrementalStateControlItem;

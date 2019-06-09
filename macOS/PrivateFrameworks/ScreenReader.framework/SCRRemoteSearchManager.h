@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface SCRRemoteSearchManager : NSObject
 {
     SCRElement *_containerElement;
-    unsigned long long _searchKey;
+    long long _searchKey;
     NSString *_searchText;
     SCRChooserItemResult *_nextStartResult;
     SCRChooserItemResult *_prevStartResult;
@@ -23,30 +23,31 @@ __attribute__((visibility("hidden")))
 + (id)navigableElementForElement:(id)arg1 containerElement:(id)arg2;
 + (id)unpromotableUIDescendantElementForUIElement:(id)arg1;
 + (id)uiContainerElementForUIElement:(id)arg1;
-+ (id)uiChildElementForSearchDirection:(unsigned long long)arg1 containerElement:(id)arg2 uiStartElement:(id)arg3;
-+ (id)resultsWithSearchKeys:(id)arg1 containerElement:(id)arg2 searchDirection:(unsigned long long)arg3 limit:(unsigned long long)arg4 startResult:(id)arg5 searchText:(id)arg6 immediateDescendantsOnly:(BOOL)arg7;
-+ (id)allResultsWithSearchKey:(unsigned long long)arg1 containerElement:(id)arg2;
++ (id)uiChildElementForSearchDirection:(long long)arg1 containerElement:(id)arg2 uiStartElement:(id)arg3;
++ (id)uiChildElementsForSearchDirection:(long long)arg1 containerElement:(id)arg2 uiStartElement:(id)arg3 limit:(long long)arg4;
++ (id)resultsWithSearchKeys:(id)arg1 containerElement:(id)arg2 searchDirection:(long long)arg3 limit:(unsigned long long)arg4 startResult:(id)arg5 searchText:(id)arg6 immediateDescendantsOnly:(BOOL)arg7;
++ (id)allResultsWithSearchKey:(long long)arg1 containerElement:(id)arg2;
 @property(retain, nonatomic) SCRChooserItemResult *prevStartResult; // @synthesize prevStartResult=_prevStartResult;
 @property(retain, nonatomic) SCRChooserItemResult *nextStartResult; // @synthesize nextStartResult=_nextStartResult;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
-@property(nonatomic) unsigned long long searchKey; // @synthesize searchKey=_searchKey;
+@property(nonatomic) long long searchKey; // @synthesize searchKey=_searchKey;
 @property(retain, nonatomic) SCRElement *containerElement; // @synthesize containerElement=_containerElement;
+- (void).cxx_destruct;
 - (id)prevNavigableResult;
 - (id)nextNavigableResult;
 - (id)prevResultsWithLimit:(unsigned long long)arg1;
 - (id)nextResultsWithLimit:(unsigned long long)arg1;
 - (id)prevResult;
 - (id)nextResult;
-- (id)initWithSearchKey:(unsigned long long)arg1 containerElement:(id)arg2 startResult:(id)arg3 searchText:(id)arg4;
-- (void)dealloc;
+- (id)initWithSearchKey:(long long)arg1 containerElement:(id)arg2 startResult:(id)arg3 searchText:(id)arg4;
 - (void)_updateStartElementsWithResults:(id)arg1;
 - (id)_uiElementsForAXElements:(id)arg1;
 - (id)_resultsWithSearchKeys:(id)arg1 containerElement:(id)arg2 searchDirection:(id)arg3 limit:(id)arg4 startResult:(id)arg5 searchText:(id)arg6 immediateDescendantsOnly:(id)arg7;
-- (id)_resultsWithSearchDirection:(unsigned long long)arg1 limit:(unsigned long long)arg2;
-- (id)_navigableElementForSearchDirection:(unsigned long long)arg1;
-- (id)_startResultForSearchDirection:(unsigned long long)arg1;
+- (id)_resultsWithSearchDirection:(long long)arg1 limit:(unsigned long long)arg2;
+- (id)_navigableElementForSearchDirection:(long long)arg1;
+- (id)_startResultForSearchDirection:(long long)arg1;
 - (id)_axSearchKeysForSCRSearchKeys:(id)arg1;
-- (struct __CFString *)_axSearchKeyForSCRSearchKey:(unsigned long long)arg1;
+- (struct __CFString *)_axSearchKeyForSCRSearchKey:(long long)arg1;
 
 @end
 

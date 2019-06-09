@@ -16,6 +16,7 @@
 @property(retain, nonatomic) NCAudioPlayerControlsViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 - (void).cxx_destruct;
 - (unsigned long long)customContentLocation;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (struct CGSize)contentSize;
 - (void)dealloc;

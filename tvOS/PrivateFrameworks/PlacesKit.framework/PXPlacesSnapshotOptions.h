@@ -32,6 +32,7 @@
 @property(retain, nonatomic) id <PXPlacesMapGeotaggableInfoDelegate> geotaggableInformationDelegate; // @synthesize geotaggableInformationDelegate=_geotaggableInformationDelegate;
 @property(retain, nonatomic) PKExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 - (void).cxx_destruct;
+- (id)description;
 - (id)init;
 
 @end

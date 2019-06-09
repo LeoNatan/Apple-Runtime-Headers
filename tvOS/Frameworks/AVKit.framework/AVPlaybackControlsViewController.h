@@ -8,6 +8,7 @@
 
 @class AVDelegateManager, AVKeyValueObserverCollection, AVPlayerController;
 
+__attribute__((visibility("hidden")))
 @interface AVPlaybackControlsViewController : UIViewController
 {
     _Bool _playing;

@@ -7,6 +7,11 @@
 #import <UIKit/UIApplication.h>
 
 @interface UIApplication (PhotosUI)
++ (id)_pu_debugSearchViewController:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (id)_pu_debugSearchViewControllerHierarchyUsingBlock:(CDUnknownBlockType)arg1;
++ (id)pu_firstViewControllerPassingTest:(CDUnknownBlockType)arg1;
++ (id)pu_debugCurrentViewModel;
++ (id)pu_debugCurrentAsset;
 - (void)pu_finishedAnimationSubTest:(id)arg1 forTest:(id)arg2;
 - (void)pu_startedAnimationSubTest:(id)arg1 forTest:(id)arg2;
 - (id)ppt_testDefinitions;

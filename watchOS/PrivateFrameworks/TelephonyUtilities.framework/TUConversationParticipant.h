@@ -9,29 +9,35 @@
 #import <TelephonyUtilities/NSCopying-Protocol.h>
 #import <TelephonyUtilities/NSSecureCoding-Protocol.h>
 
-@class TUHandle;
+@class NSString, TUHandle;
 
 @interface TUConversationParticipant : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _muted;
     _Bool _audioEnabled;
     _Bool _videoEnabled;
-    unsigned int _identifier;
+    _Bool _momentsAvailable;
+    unsigned long _identifier;
     TUHandle *_handle;
     int _streamToken;
     int _audioPriority;
     int _videoPriority;
+    NSString *_avcIdentifier;
+    NSString *_activeIDSDestination;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *activeIDSDestination; // @synthesize activeIDSDestination=_activeIDSDestination;
+@property(copy, nonatomic) NSString *avcIdentifier; // @synthesize avcIdentifier=_avcIdentifier;
 @property(nonatomic) int videoPriority; // @synthesize videoPriority=_videoPriority;
 @property(nonatomic) int audioPriority; // @synthesize audioPriority=_audioPriority;
 @property(nonatomic) int streamToken; // @synthesize streamToken=_streamToken;
+@property(nonatomic, getter=isMomentsAvailable) _Bool momentsAvailable; // @synthesize momentsAvailable=_momentsAvailable;
 @property(nonatomic, getter=isVideoEnabled) _Bool videoEnabled; // @synthesize videoEnabled=_videoEnabled;
 @property(nonatomic, getter=isAudioEnabled) _Bool audioEnabled; // @synthesize audioEnabled=_audioEnabled;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 @property(readonly, copy, nonatomic) TUHandle *handle; // @synthesize handle=_handle;
-@property(readonly, nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) unsigned long identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -40,7 +46,7 @@
 - (_Bool)isEqualToParticipant:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithIdentifier:(unsigned int)arg1 handle:(id)arg2;
+- (id)initWithIdentifier:(unsigned long)arg1 handle:(id)arg2;
 
 @end
 

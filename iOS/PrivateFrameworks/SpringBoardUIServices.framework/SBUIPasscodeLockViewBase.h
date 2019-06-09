@@ -92,7 +92,6 @@
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(nonatomic) double backgroundAlpha; // @synthesize backgroundAlpha=_backgroundAlpha;
 @property(retain, nonatomic) SBUIProudLockContainerViewController *overrideProudLockContainerViewController; // @synthesize overrideProudLockContainerViewController=_overrideProudLockContainerViewController;
-@property(nonatomic) _Bool proudLockShowsBiometricStates; // @synthesize proudLockShowsBiometricStates=_proudLockShowsBiometricStates;
 @property(nonatomic) _Bool showsProudLock; // @synthesize showsProudLock=_showsProudLock;
 @property(nonatomic) _Bool allowsAutomaticBiometricPresentationTransition; // @synthesize allowsAutomaticBiometricPresentationTransition=_allowsAutomaticBiometricPresentationTransition;
 @property(nonatomic) _Bool usesBiometricPresentation; // @synthesize usesBiometricPresentation=_usesBiometricPresentation;

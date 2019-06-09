@@ -12,7 +12,6 @@
 
 + (id)stringWithCapacity:(unsigned long long)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (void)initialize;
 - (id)initWithCapacity:(unsigned long long)arg1;
 - (Class)classForCoder;
 - (_Bool)applyTransform:(id)arg1 reverse:(_Bool)arg2 range:(struct _NSRange)arg3 updatedRange:(struct _NSRange *)arg4;

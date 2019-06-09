@@ -39,6 +39,7 @@
 @property(retain) NSDictionary *imageURLDictionary; // @synthesize imageURLDictionary=_imageURLDictionary;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain) NSString *type; // @synthesize type=_type;
+- (id)shortcutItem;
 - (void)processAction;
 - (void)loadImageDataForDesiredSize:(long long)arg1 scale:(double)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)description;

@@ -21,7 +21,11 @@
 + (id)serverInterface;
 + (id)clientInterface;
 - (void).cxx_destruct;
+- (void)getEffectiveGlobalSpokenNotificationSettingWithCompletion:(CDUnknownBlockType)arg1;
+- (long long)effectiveGlobalSpokenNotificationSetting;
+- (void)setEffectiveGlobalSpokenNotificationSetting:(long long)arg1;
 - (void)getEffectiveGlobalContentPreviewsSettingWithCompletion:(CDUnknownBlockType)arg1;
+- (long long)effectiveGlobalContentPreviewsSetting;
 - (void)setEffectiveGlobalContentPreviewsSetting:(long long)arg1;
 - (void)updateSectionInfoForSectionID:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
@@ -32,11 +36,13 @@
 - (void)getSectionInfoForSectionID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)sectionInfoForSectionID:(id)arg1;
 - (void)getEffectiveSectionInfoForSectionIDs:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)effectiveSectionInfoForSectionIDs:(id)arg1;
 - (id)effectiveSectionInfoForSectionID:(id)arg1;
 - (void)getSectionInfoForSectionIDs:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)sectionInfoForSectionIDs:(id)arg1;
 - (void)getSectionInfoWithCompletion:(CDUnknownBlockType)arg1;
 - (id)allSectionInfo;
+- (id)allEffectiveSectionInfo;
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;

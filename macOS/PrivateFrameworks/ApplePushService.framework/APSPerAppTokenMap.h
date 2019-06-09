@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     BOOL _enumerating;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)debugDescription;
 - (void)enumerateTokensUsingBlock:(CDUnknownBlockType)arg1;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 - (void)setToken:(id)arg1 forTopic:(id)arg2 identifier:(id)arg3;
 - (void)removeIdentifier:(id)arg1 forTopic:(id)arg2;
 - (void)addIdentifier:(id)arg1 forTopic:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

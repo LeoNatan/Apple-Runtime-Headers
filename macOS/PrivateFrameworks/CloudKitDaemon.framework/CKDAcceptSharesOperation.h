@@ -36,8 +36,8 @@ __attribute__((visibility("hidden")))
 - (id)_addSelfIdentityToShareMetadataPublicPCS:(id)arg1 forShareWithURL:(id)arg2 error:(id *)arg3;
 - (void)_fetchAcceptedShares;
 - (void)_decryptShareMetadata;
+- (unsigned long long)sharingServiceTypeForShareMetadata:(id)arg1;
 - (BOOL)_acceptShares;
-- (BOOL)_fillInPublicKeyIntoAcceptMetadata:(id)arg1 serviceType:(unsigned long long)arg2 keyVersion:(unsigned long long)arg3 error:(id *)arg4;
 - (void)_handleShareURLAccepted:(id)arg1 forShare:(id)arg2 responseCode:(id)arg3;
 - (void)_performCallbackForURL:(id)arg1 withShare:(id)arg2 error:(id)arg3;
 - (id)nameForState:(unsigned long long)arg1;

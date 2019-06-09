@@ -21,6 +21,7 @@
     NSString *_verb;
 }
 
++ (BOOL)supportsSecureCoding;
 + (Class)parametersType;
 @property(copy, nonatomic) NSString *verb; // @synthesize verb=_verb;
 @property(copy, nonatomic) NSArray *parameters; // @synthesize parameters=_parameters;
@@ -31,6 +32,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasVerb;

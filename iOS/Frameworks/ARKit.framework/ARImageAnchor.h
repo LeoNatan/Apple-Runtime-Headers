@@ -15,13 +15,16 @@
     _Bool _detectionOnly;
     _Bool _isTracked;
     ARReferenceImage *_referenceImage;
+    double _estimatedScaleFactor;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool isTracked; // @synthesize isTracked=_isTracked;
 @property(nonatomic, getter=isDetectionOnly) _Bool detectionOnly; // @synthesize detectionOnly=_detectionOnly;
+@property(readonly, nonatomic) double estimatedScaleFactor; // @synthesize estimatedScaleFactor=_estimatedScaleFactor;
 @property(readonly, nonatomic) ARReferenceImage *referenceImage; // @synthesize referenceImage=_referenceImage;
 - (void).cxx_destruct;
+- (void)setEstimatedScaleFactor:(double)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAnchor:(id)arg1;

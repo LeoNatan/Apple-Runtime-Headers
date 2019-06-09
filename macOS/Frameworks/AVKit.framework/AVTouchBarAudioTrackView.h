@@ -6,29 +6,30 @@
 
 #import <AVKit/AVTouchBarTrackView.h>
 
-@class NSArray, NSColor;
+@class AVWaveform, NSColor;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarAudioTrackView : AVTouchBarTrackView
 {
-    double _normalizedCurrentValue;
+    AVWaveform *_waveform;
     NSColor *_waveformColor;
-    NSArray *_amplitudeSamples;
-    float _maximumAmplitudeSample;
+    NSColor *_backgroundColor;
 }
 
 + (id)defaultWaveformColor;
 - (void).cxx_destruct;
-- (void)_updateWaveformColor;
-- (BOOL)_showsWaveform;
+- (id)_waveformLayer;
+- (CDStruct_e83c9415)_displayTimeRange;
 - (void)updatePreviewLayerContent;
 - (struct CGPoint)positionForPreviewLayerWithIndex:(long long)arg1;
 - (long long)numberOfPreviewLayersForWidth:(double)arg1;
 - (BOOL)allPreviewLayersHaveContent;
+- (id)makePreviewLayer;
 - (struct CGSize)previewLayerSize;
-@property(retain) NSArray *amplitudeSamples;
-@property(retain) NSColor *waveformColor;
-- (void)setNormalizedCurrentValue:(double)arg1;
-- (double)normalizedCurrentValue;
+@property(retain, nonatomic) NSColor *waveformColor;
+@property(retain, nonatomic) AVWaveform *waveform;
+- (void)setMinTime:(double)arg1;
+- (void)setContentDurationWithinEndTimes:(double)arg1;
 - (id)init;
 
 @end

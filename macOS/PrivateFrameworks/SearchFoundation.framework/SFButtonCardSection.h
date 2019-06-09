@@ -10,7 +10,7 @@
 #import <SearchFoundation/NSSecureCoding-Protocol.h>
 #import <SearchFoundation/SFButtonCardSection-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, SFCard, SFColor, SFRichText, SFUserReportRequest;
+@class NSArray, NSData, NSDictionary, NSString, SFCard, SFColor, SFImage, SFRichText, SFUserReportRequest;
 
 @interface SFButtonCardSection : SFCardSection <SFButtonCardSection, NSSecureCoding, NSCopying>
 {
@@ -25,9 +25,11 @@
     NSString *_type;
     SFColor *_backgroundColor;
     SFRichText *_title;
+    SFImage *_thumbnail;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) SFImage *thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(retain, nonatomic) SFRichText *title; // @synthesize title=_title;
 @property(retain, nonatomic) SFColor *backgroundColor;
 @property(nonatomic) int separatorStyle;

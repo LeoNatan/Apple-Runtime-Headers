@@ -6,37 +6,39 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, NSURL, WBSCloudTab, WebBookmark;
+@class NSArray, NSDictionary, NSString, NSURL, NSUUID, WBSCloudTab, WebBookmark, _WKActivatedElementInfo;
 
 @interface _SFNavigationIntent : NSObject
 {
-    int _preferredTabOrder;
     id _value;
-    _Bool _opensInNewTab;
+    _Bool _shouldRelateToSourceTab;
     unsigned int _type;
+    int _policy;
+    NSUUID *_sourceTabUUID;
+    NSUUID *_sourceWindowUUID;
+    _WKActivatedElementInfo *_sourceElementInfo;
 }
 
-+ (id)_navigationIntentForMKMapItem:(id)arg1;
-+ (id)_navigationIntentWithItems:(id)arg1;
-+ (void)navigationIntentForItemProviders:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (id)navigationIntentWithMultipleIntents:(id)arg1;
-+ (id)navigationIntentWithText:(id)arg1;
-+ (id)navigationIntentWithHistoryURL:(id)arg1;
-+ (id)navigationIntentWithCloudTab:(id)arg1;
-+ (id)navigationIntentWithBookmark:(id)arg1;
-@property(nonatomic) _Bool opensInNewTab; // @synthesize opensInNewTab=_opensInNewTab;
+@property(nonatomic) _Bool shouldRelateToSourceTab; // @synthesize shouldRelateToSourceTab=_shouldRelateToSourceTab;
+@property(retain, nonatomic) _WKActivatedElementInfo *sourceElementInfo; // @synthesize sourceElementInfo=_sourceElementInfo;
+@property(retain, nonatomic) NSUUID *sourceWindowUUID; // @synthesize sourceWindowUUID=_sourceWindowUUID;
+@property(retain, nonatomic) NSUUID *sourceTabUUID; // @synthesize sourceTabUUID=_sourceTabUUID;
+@property(nonatomic) int policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *privacyPreservingDescription;
+@property(readonly, nonatomic) _Bool canUseExistingBlankTab;
+@property(readonly, nonatomic) _Bool opensInNewWindow;
+@property(readonly, nonatomic) _Bool opensInNewTab;
 @property(readonly, nonatomic) _Bool shouldOrderToForeground;
-- (void)setPreferredTabOrder:(int)arg1;
 @property(readonly, copy, nonatomic) NSArray *navigationIntents;
+@property(readonly, copy, nonatomic) NSDictionary *externalOptions;
 @property(readonly, copy, nonatomic) NSString *text;
 @property(readonly, copy, nonatomic) NSURL *URL;
 @property(readonly, nonatomic) WBSCloudTab *cloudTab;
 @property(readonly, nonatomic) WebBookmark *bookmark;
 - (id)description;
-- (id)_initWithType:(unsigned int)arg1 value:(id)arg2;
+- (id)_initWithType:(unsigned int)arg1 value:(id)arg2 policy:(int)arg3;
 
 @end
 

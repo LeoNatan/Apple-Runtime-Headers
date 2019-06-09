@@ -20,6 +20,8 @@
 + (id)lastUsedSkinToneEmojiForEmoji:(id)arg1;
 + (id)setSkinTone:(long long)arg1 toString:(id)arg2;
 + (long long)hasSkinTone:(id)arg1;
++ (void)emojiTokensForSearchString:(id)arg1 inLanguages:(id)arg2 maxResults:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
++ (id)preferredLanguagesForSearch;
 + (id)localizedCharacterName:(id)arg1;
 + (const struct __EmojiLocaleDataWrapper *)preferredEmojiLocale;
 + (long long)indexInArray:(id)arg1 fromStandardItemIndex:(long long)arg2;

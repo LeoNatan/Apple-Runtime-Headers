@@ -27,7 +27,7 @@
 - (id)firstEngine;
 - (id)engineWithName:(id)arg1;
 @property(readonly, nonatomic) NSArray *availableEngines;
-- (id)init;
+- (id)_init;
 
 @end
 

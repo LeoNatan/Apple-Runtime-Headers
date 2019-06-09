@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)URLForEKEventFromTextMessageWithUniqueIdentifier:(id)arg1;
-+ (id)URLForEKEventFromMailMessageWithId:(id)arg1 sentAt:(id)arg2 opaqueKey:(id)arg3;
++ (id)urlForEKEventFromTextMessageWithUniqueIdentifier:(id)arg1;
++ (id)urlForEKEventFromMailMessageWithId:(id)arg1 sentAt:(id)arg2 opaqueKey:(id)arg3;
 
 @end
 

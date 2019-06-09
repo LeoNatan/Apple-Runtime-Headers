@@ -44,6 +44,7 @@
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didCommitLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 globalObjectIsAvailableForFrame:(id)arg2 inScriptWorld:(id)arg3;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
+- (void)collectArticleContent;
 - (void)prepareReaderContentForPrinting;
 - (void)collectReaderContentForMail;
 - (void)readerContentDidBecomeReadyWithDetectedLanguage:(id)arg1;
@@ -52,8 +53,10 @@
 - (void)loadNewReaderArticle;
 - (void)didCreateReaderPageContextHandle:(id)arg1;
 - (void)prepareToTransitionToReader;
-- (void)willHideReader;
+- (void)checkReaderAvailability;
 - (void)didFinishPresentationUpdateAfterTransitioningToReader;
+- (void)setReaderIsActive:(_Bool)arg1;
+- (void)activateFont:(id)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)setReaderInitialTopScrollOffset:(int)arg1 configuration:(id)arg2 isViewingArchive:(_Bool)arg3;
 - (struct OpaqueJSValue *)originalArticleFinder;

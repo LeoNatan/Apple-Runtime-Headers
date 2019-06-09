@@ -9,7 +9,7 @@
 @interface NSTextField (OFNSTextFieldExtensions)
 - (id)text;
 - (void)setText:(id)arg1;
-- (unsigned long long)textAlignment;
-- (void)setTextAlignment:(unsigned long long)arg1;
+- (long long)textAlignment;
+- (void)setTextAlignment:(long long)arg1;
 @end
 

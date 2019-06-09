@@ -8,5 +8,6 @@
 
 @interface HKSeparatorLineView (HRAtrialFibrillationGateAddition)
 + (id)_hrafibgate_separatorView;
++ (id)_hragegate_separatorView;
 @end
 

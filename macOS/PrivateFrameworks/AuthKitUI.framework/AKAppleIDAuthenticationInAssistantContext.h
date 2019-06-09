@@ -174,6 +174,7 @@
 - (void)loadFailed:(id)arg1 withError:(id)arg2;
 - (void)_tearDownWebViewIfNecessaryWithError:(id)arg1;
 - (void)endWebView:(id)arg1;
+- (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentServerUIErrorAlertWithTitle:(id)arg1 message:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentIDPProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;

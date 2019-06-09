@@ -11,6 +11,7 @@
 @interface AXKStringTokenizer : NSObject
 {
     struct __CFStringTokenizer *_tokenizer;
+    BOOL _shouldTrimWhitespaceAndNewLine;
     NSLocale *_locale;
     NSString *_currentToken;
     NSString *_currentTokenLanguageID;
@@ -31,6 +32,7 @@
 @property(copy, nonatomic) NSString *currentToken; // @synthesize currentToken=_currentToken;
 @property(nonatomic) struct _NSRange currentTokenRange; // @synthesize currentTokenRange=_currentTokenRange;
 @property(readonly, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
+@property(nonatomic) BOOL shouldTrimWhitespaceAndNewLine; // @synthesize shouldTrimWhitespaceAndNewLine=_shouldTrimWhitespaceAndNewLine;
 - (void).cxx_destruct;
 - (struct __CFStringTokenizer *)_tokenizer;
 - (BOOL)moveToTokenAtIndex:(long long)arg1;

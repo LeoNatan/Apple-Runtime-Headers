@@ -6,22 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
+@class NSDictionary, NSString;
 
 @interface DataClassMigrator : NSObject
 {
     NSDictionary *_context;
     _Bool _didUpgrade;
+    unsigned int _userDataDisposition;
+    NSString *_restoredBackupBuildVersion;
+    NSString *_restoredBackupProductType;
 }
 
 + (id)dataClassMigratorForBundleAtPath:(id)arg1;
 @property(nonatomic) _Bool didUpgrade; // @synthesize didUpgrade=_didUpgrade;
+@property(retain, nonatomic) NSString *restoredBackupProductType; // @synthesize restoredBackupProductType=_restoredBackupProductType;
+@property(retain, nonatomic) NSString *restoredBackupBuildVersion; // @synthesize restoredBackupBuildVersion=_restoredBackupBuildVersion;
+@property(nonatomic) unsigned int userDataDisposition; // @synthesize userDataDisposition=_userDataDisposition;
 @property(retain, nonatomic) NSDictionary *context; // @synthesize context=_context;
 - (void).cxx_destruct;
-- (float)migrationProgress;
-- (float)estimatedDuration;
 - (_Bool)performMigration;
-- (id)dataClassName;
 @property(readonly, nonatomic) _Bool wasPasscodeSetInBackup;
 @property(readonly, nonatomic) _Bool shouldPreserveSettingsAfterRestore;
 @property(readonly, nonatomic) _Bool didRestoreFromCloudBackup;

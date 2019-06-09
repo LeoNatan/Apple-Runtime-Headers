@@ -8,7 +8,6 @@
 
 @class AVAsset, AVAssetTrack, AVSampleBufferGenerator, AVSampleCursor, VideoDecompressor;
 
-__attribute__((visibility("hidden")))
 @interface VideoAccessRand : NSObject
 {
     unsigned int _recurs;

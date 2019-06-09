@@ -8,6 +8,7 @@
 
 @protocol STRestrictionsPINControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface STRestrictionsPINController : PSRestrictionsPINController
 {
 }

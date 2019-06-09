@@ -12,6 +12,10 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct AXBColorFilterDescription {
+    double _field1[3][3];
+};
+
 struct AXLogColorTheme {
     long long errorColor;
     long long warningColor;

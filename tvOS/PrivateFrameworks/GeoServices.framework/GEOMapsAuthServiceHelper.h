@@ -11,6 +11,9 @@
 }
 
 + (id)sharedAuthHelper;
+- (id)dictionaryForAuthTokenState;
+- (_Bool)_hasMRT;
+- (_Bool)_hasMAT;
 - (void)handleSecureProxyChallenge:(id)arg1;
 - (void)addProxyAuthHeaderOrReAuth:(id)arg1 authProxyURL:(id)arg2;
 - (void)setConnectionProxyDictionary:(id)arg1 url:(id)arg2 proxyURL:(id)arg3;

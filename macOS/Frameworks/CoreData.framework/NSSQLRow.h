@@ -20,12 +20,14 @@ __attribute__((visibility("hidden")))
 + (void)initialize;
 - (id)_snapshot_;
 - (const id *)knownKeyValuesPointer;
+- (BOOL)hasUniqueConstraintDiffFrom:(id)arg1;
+- (struct __CFBitVector *)newUpdateMaskWithChangedConstraintsFrom:(id)arg1;
 - (struct __CFBitVector *)newUpdateMaskForConstrainedValues;
 - (struct __CFBitVector *)newUpdateMaskFrom:(id)arg1;
 - (struct __CFBitVector *)newColumnMaskFrom:(id)arg1 columnInclusionOptions:(unsigned long long)arg2;
 - (unsigned int)_versionNumber;
 - (void)setOptLock:(long long)arg1;
-- (long long)version;
+- (unsigned long long)version;
 - (long long)optLock;
 - (id)attributeValueForSlot:(unsigned int)arg1;
 - (id)valueForKey:(id)arg1;

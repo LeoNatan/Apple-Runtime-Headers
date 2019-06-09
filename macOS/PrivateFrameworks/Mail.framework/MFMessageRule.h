@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <Mail/EFPubliclyDescribable-Protocol.h>
 #import <Mail/NSCopying-Protocol.h>
 
 @class MFMailbox, NSArray, NSColor, NSDictionary, NSMutableArray, NSString;
 
-@interface MFMessageRule : NSObject <NSCopying>
+@interface MFMessageRule : NSObject <NSCopying, EFPubliclyDescribable>
 {
     MFMailbox *_copyDestinationMailbox;
     NSString *_copyDestinationMailboxURL;
@@ -33,11 +34,11 @@
     unsigned int _shouldStopEvaluatingRules:1;
     unsigned int _highlightTextUsingColor:1;
     unsigned int _shouldNotifyUser:1;
-    unsigned int _addInvitationAttachmentToCalendar:1;
     unsigned int _shouldSendNotification:1;
     BOOL _isJunkMailRule;
     BOOL _isSafeToMarkAsNotJunkRule;
-    BOOL _isCalendarRule;
+    BOOL _isDefaultRule;
+    BOOL _addInvitationAttachmentToCalendar;
     BOOL _didChange;
     NSString *_uniqueId;
     NSDictionary *_otherInfo;
@@ -45,15 +46,16 @@
 
 @property(nonatomic) BOOL didChange; // @synthesize didChange=_didChange;
 @property(readonly, copy, nonatomic) NSDictionary *otherInfo; // @synthesize otherInfo=_otherInfo;
+@property(nonatomic) BOOL addInvitationAttachmentToCalendar; // @synthesize addInvitationAttachmentToCalendar=_addInvitationAttachmentToCalendar;
 @property(copy, nonatomic) NSString *uniqueId; // @synthesize uniqueId=_uniqueId;
-@property(nonatomic) BOOL isCalendarRule; // @synthesize isCalendarRule=_isCalendarRule;
+@property(nonatomic) BOOL isDefaultRule; // @synthesize isDefaultRule=_isDefaultRule;
 @property(nonatomic) BOOL isSafeToMarkAsNotJunkRule; // @synthesize isSafeToMarkAsNotJunkRule=_isSafeToMarkAsNotJunkRule;
 @property(nonatomic) BOOL isJunkMailRule; // @synthesize isJunkMailRule=_isJunkMailRule;
 - (void).cxx_destruct;
 - (id)objectSpecifier;
+- (void)performCustomRuleActionOnMessages:(id)arg1;
 - (BOOL)isEqualToRule:(id)arg1;
 @property(nonatomic) BOOL shouldSendNotification;
-@property(nonatomic) BOOL addInvitationAttachmentToCalendar;
 @property(nonatomic) BOOL shouldNotifyUser;
 @property(nonatomic) BOOL shouldStopEvaluatingRules;
 @property(copy, nonatomic) NSString *playSound;
@@ -78,8 +80,9 @@
 @property(retain, nonatomic) MFMailbox *copyDestinationMailbox;
 - (id)_copyDestinationMailboxCreateIfNeeded:(BOOL)arg1;
 @property(retain, nonatomic) MFMailbox *destinationMailbox;
+- (void)initializeDestinationMailbox:(id)arg1;
 - (id)_destinationMailboxCreateIfNeeded:(BOOL)arg1;
-- (void)_setDestinationIvar:(id *)arg1 toDestinationMailbox:(id)arg2 destinationURLIvar:(id *)arg3;
+- (void)_setDestinationIvar:(id *)arg1 toDestinationMailbox:(id)arg2 destinationURLIvar:(id *)arg3 handleChange:(BOOL)arg4;
 - (id)_destinationMailbox:(id)arg1 withURL:(id)arg2 createIfNeeded:(BOOL)arg3 setUsingBlock:(CDUnknownBlockType)arg4;
 @property(nonatomic) BOOL shouldCopyMessage;
 @property(nonatomic) BOOL shouldTransferMessage;
@@ -93,13 +96,12 @@
 - (BOOL)isValid:(id *)arg1 options:(unsigned int)arg2;
 - (BOOL)doesMessageSatisfyCriteria:(id)arg1 fetchBody:(BOOL)arg2 needsBody:(char *)arg3 successfullyEvaluated:(char *)arg4;
 - (void)addHeadersRequiredForRoutingToArray:(id)arg1;
-- (void)_performAddInvitationAttachmentToCalendarActionOnMessages:(id)arg1;
 - (void)_performAppleScriptActionWithMessages:(id)arg1;
 - (void)_performAutoResponseActionOnMessages:(id)arg1;
 - (id)_performAutoResponseActionOnMessage:(id)arg1 encrypt:(BOOL)arg2 includeOrignalMessageText:(BOOL)arg3;
 - (void)_performUserNotificationAction:(id)arg1;
+- (id)_specialMailboxURLForAccount:(id)arg1 mailboxType:(long long)arg2;
 - (void)performActionsOnMessages:(id)arg1 sourceStores:(id)arg2 destinationStores:(id)arg3 transferredOrDeleted:(id)arg4 rejectedMessages:(id)arg5 messagesToBeDeleted:(id)arg6;
-- (void)_appendMessages:(id)arg1 fromSourceMailbox:(id)arg2 toDestinationMailbox:(id)arg3 destinationStores:(id)arg4 rejectedMessages:(id)arg5 messagesToBeDeleted:(id)arg6;
 - (void)_updateDefaultAppleEmailAddressRule;
 - (id)dictionaryRepresentationIncludePII:(BOOL)arg1;
 - (id)dictionaryRepresentation;
@@ -109,10 +111,11 @@
 - (id)initWithRule:(id)arg1;
 - (id)init;
 - (BOOL)isEquivalentExceptForTitleAndIDs:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)debugDescription;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setAddress:(id)arg1 forResponseType:(int)arg2;
 - (void)removeFromCriteriaAtIndex:(unsigned long long)arg1;
@@ -142,6 +145,9 @@
 - (void)setActionColorMessage:(unsigned int)arg1;
 - (unsigned int)actionColorMessage;
 - (void)updateIsActive;
+
+// Remaining properties
+@property(readonly) Class superclass;
 
 @end
 

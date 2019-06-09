@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     CDStruct_214f2dba m_clsid;
 }
 
+- (void).cxx_destruct;
 - (void)setCLSID:(CDStruct_214f2dba)arg1;
 - (CDStruct_214f2dba)getCLSID;
 - (void)setAccessMode:(int)arg1;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (int)getType;
 - (void)setName:(id)arg1;
 - (id)getName;
-- (void)dealloc;
 - (id)initWithStgInfo:(const struct _StgInfo *)arg1;
 - (id)init;
 

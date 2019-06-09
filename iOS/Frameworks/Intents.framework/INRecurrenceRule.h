@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) long long frequency; // @synthesize frequency=_frequency;
-@property(readonly) unsigned long long interval; // @synthesize interval=_interval;
+@property(readonly, nonatomic) long long frequency; // @synthesize frequency=_frequency;
+@property(readonly, nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 - (id)description;

@@ -15,7 +15,9 @@
 - (BOOL)hasBytesAvailable;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned long long *)arg2;
 - (long long)read:(char *)arg1 maxLength:(unsigned long long)arg2;
+- (void)dealloc;
 - (id)initWithURL:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (CDStruct_87dc826d)_cfStreamError;
 @end
 

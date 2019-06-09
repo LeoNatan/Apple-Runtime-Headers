@@ -31,12 +31,12 @@
 
 - (void).cxx_destruct;
 - (void)_submitSettingsAnalytics;
-- (void)workoutManagerSuggestedStop:(id)arg1 workout:(id)arg2 stopDate:(id)arg3;
-- (void)workoutManagerDidFail:(id)arg1 workout:(id)arg2 error:(id)arg3;
-- (void)workoutManagerWillResumeWorkout:(id)arg1 workout:(id)arg2 resumeDate:(id)arg3;
-- (void)workoutManagerWillPauseWorkout:(id)arg1 workout:(id)arg2 pauseDate:(id)arg3;
-- (void)workoutManagerDidStopWorkout:(id)arg1 workout:(id)arg2 stopDate:(id)arg3;
-- (void)workoutManagerDidStartWorkout:(id)arg1 workout:(id)arg2 startDate:(id)arg3;
+- (void)workoutManager:(id)arg1 suggestedStopWorkout:(id)arg2 atDate:(id)arg3;
+- (void)workoutManager:(id)arg1 didFailWorkout:(id)arg2 withError:(id)arg3;
+- (void)workoutManager:(id)arg1 willResumeWorkout:(id)arg2 atDate:(id)arg3;
+- (void)workoutManager:(id)arg1 willPauseWorkout:(id)arg2 atDate:(id)arg3;
+- (void)workoutManager:(id)arg1 didStopWorkout:(id)arg2 atDate:(id)arg3;
+- (void)workoutManager:(id)arg1 didStartWorkout:(id)arg2 atDate:(id)arg3;
 - (_Bool)_isWorkout:(id)arg1 equalToPredictedActivity:(id)arg2;
 - (_Bool)_isUserInitiatedWorkout:(id)arg1;
 - (void)_disallowRestoreStateFromClassification;

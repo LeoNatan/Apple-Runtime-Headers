@@ -7,6 +7,28 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (AMAction_NSKindOfAdditions_)
++ (id)am_mostRecentlyOverriddenOfSelectorStrings:(id)arg1;
++ (BOOL)am_hasOverrideForSelector:(SEL)arg1;
++ (id)am_validClassesForXPC;
 @property(readonly, nonatomic) BOOL isAMAction__;
+@property(readonly, nonatomic) BOOL isAMBundleAction__;
+- (BOOL)_isEqualToObject:(id)arg1;
+- (id)_replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
+- (id)tokensBetweenBeginningDelimiter:(id)arg1 endDelimiter:(id)arg2;
+- (BOOL)isEmpty;
+- (BOOL)performConditional:(SEL)arg1 withObjects:(id)arg2 returningWhenFound:(BOOL)arg3;
+@property(readonly) BOOL isNSAppleEventDescriptor__;
+@property(readonly) BOOL isNSValue__;
+@property(readonly) BOOL isNSString__;
+@property(readonly) BOOL isNSDate__;
+@property(readonly) BOOL isNSData__;
+@property(readonly) BOOL isNSNumber__;
+@property(readonly) BOOL isNSSet__;
+@property(readonly) BOOL isNSDictionary__;
+@property(readonly) BOOL isNSArray__;
+@property(readonly) BOOL isAMVariable__;
+- (id)_am_convertFromXPCWithWorkflow:(id)arg1;
+- (id)_am_convertForSendingOverXPCWithWorkflow:(id)arg1;
+@property(readonly, nonatomic) BOOL isAMProxyAction__;
 @end
 

@@ -17,8 +17,10 @@
     int _rowID;
     NSString *_storeName;
     NSString *_accountIdentifier;
+    NSString *_delegatedAccountOwnerAccountIdentifier;
 }
 
+@property(copy, nonatomic) NSString *delegatedAccountOwnerAccountIdentifier; // @synthesize delegatedAccountOwnerAccountIdentifier=_delegatedAccountOwnerAccountIdentifier;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *storeName; // @synthesize storeName=_storeName;
 @property(nonatomic) _Bool isEnabled; // @synthesize isEnabled=_isEnabled;

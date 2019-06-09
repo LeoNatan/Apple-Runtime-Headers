@@ -6,38 +6,28 @@
 
 #import <UIKitCore/_UIStatusBarIndicatorItem.h>
 
-@class _UIStatusBarBackgroundActivityView;
+@class _UIStatusBarPillView;
 
 __attribute__((visibility("hidden")))
 @interface _UIStatusBarBackgroundActivityItem : _UIStatusBarIndicatorItem
 {
-    int _previousType;
-    _UIStatusBarBackgroundActivityView *_backgroundView;
-    _UIStatusBarBackgroundActivityView *_combinedView;
+    _UIStatusBarPillView *_backgroundView;
 }
 
-+ (_Bool)shouldKeepIconVisibleForActivityType:(int)arg1;
-+ (id)combinedDisplayIdentifier;
 + (id)backgroundDisplayIdentifier;
-@property(retain, nonatomic) _UIStatusBarBackgroundActivityView *combinedView; // @synthesize combinedView=_combinedView;
-@property(retain, nonatomic) _UIStatusBarBackgroundActivityView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(nonatomic) int previousType; // @synthesize previousType=_previousType;
+@property(retain, nonatomic) _UIStatusBarPillView *backgroundView; // @synthesize backgroundView=_backgroundView;
 - (void).cxx_destruct;
-- (_Bool)shouldUpdateIndicatorForIdentifier:(id)arg1;
 - (id)viewForIdentifier:(id)arg1;
-- (_Bool)_shouldBounceWhenTransitioningFromType:(int)arg1 toType:(int)arg2;
-- (_Bool)_shouldPulseForActivityType:(int)arg1;
-- (id)_customTintColorForActivityType:(int)arg1;
+- (void)_create_backgroundView;
+- (_Bool)_shouldPulseForActivityType:(int)arg1 traitCollection:(id)arg2;
 - (id)_backgroundColorForActivityType:(int)arg1;
 - (id)_imageNameForActivityType:(int)arg1;
+- (id)_systemImageNameForActivityType:(int)arg1;
 - (id)imageNameForUpdate:(id)arg1;
-- (id)imageForUpdate:(id)arg1;
-- (struct CGSize)_pillSizeAndBaselineOffset:(float *)arg1;
-- (void)updatedDisplayItemsWithData:(id)arg1;
+- (id)systemImageNameForUpdate:(id)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)_backgroundActivityViewForIdentifier:(id)arg1;
 - (id)createDisplayItemForIdentifier:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 statusBar:(id)arg2;
 - (id)indicatorEntryKey;
 
 @end

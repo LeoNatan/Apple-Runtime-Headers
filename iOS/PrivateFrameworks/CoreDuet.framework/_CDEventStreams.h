@@ -22,11 +22,13 @@
 + (id)eventStreamPropertiesForKBName:(id)arg1;
 + (id)eventStreamPropertiesForName:(id)arg1;
 + (id)eventStreamForName:(id)arg1;
++ (id)contentProviderPlistEventStreamsForPath:(id)arg1;
 + (void)loadAllEventStreams;
 + (id)sharedInstance;
 @property(nonatomic) _Bool allStreamsLoaded; // @synthesize allStreamsLoaded=_allStreamsLoaded;
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSDictionary *allKBEventStreams; // @synthesize allKBEventStreams=_allKBEventStreams;
+@property(readonly, nonatomic) NSDictionary *allKBEventStreams; // @synthesize allKBEventStreams=_allKBEventStreams;
+- (void)setAllKBEventStreams:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *allEventStreams; // @synthesize allEventStreams=_allEventStreams;
 - (void)setAllEventStreams:(id)arg1;
 - (id)_eventStreamForName:(id)arg1 orKBName:(id)arg2;

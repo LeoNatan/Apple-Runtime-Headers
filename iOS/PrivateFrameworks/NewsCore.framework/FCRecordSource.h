@@ -11,8 +11,7 @@
 #import <NewsCore/FCFetchCoordinatorDelegate-Protocol.h>
 #import <NewsCore/FCJSONEncodableObjectProviding-Protocol.h>
 
-@class FCCKContentDatabase, FCCacheCoordinator, FCFetchCoordinator, FCKeyValueStore, FCThreadSafeMutableDictionary, NSArray, NSDictionary, NSString;
-@protocol OS_dispatch_queue;
+@class FCCKContentDatabase, FCCacheCoordinator, FCFetchCoordinator, FCKeyValueStore, FCThreadSafeMutableDictionary, NFUnfairLock, NSArray, NSDictionary, NSString;
 
 @interface FCRecordSource : NSObject <FCCacheCoordinatorDelegate, FCFetchCoordinatorDelegate, FCCacheFlushing, FCJSONEncodableObjectProviding>
 {
@@ -22,7 +21,7 @@
     NSDictionary *_experimentalizedKeysByOriginalKey;
     NSDictionary *_localizedExperimentalizedKeysByOriginalKey;
     NSDictionary *_localizedLanguageSpecificKeysByOriginalKey;
-    NSObject<OS_dispatch_queue> *_initQueue;
+    NFUnfairLock *_initializationLock;
     FCCKContentDatabase *_contentDatabase;
     NSString *_contentDirectory;
     FCKeyValueStore *_localStore;
@@ -48,7 +47,7 @@
 @property(readonly, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
 @property(readonly, nonatomic) NSString *contentDirectory; // @synthesize contentDirectory=_contentDirectory;
 @property(readonly, nonatomic) FCCKContentDatabase *contentDatabase; // @synthesize contentDatabase=_contentDatabase;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *initQueue; // @synthesize initQueue=_initQueue;
+@property(retain, nonatomic) NFUnfairLock *initializationLock; // @synthesize initializationLock=_initializationLock;
 - (void).cxx_destruct;
 - (id)jsonEncodableObject;
 - (void)t_stopOverridingExperimentalizableFieldsPostfixAndTreatmentID;
@@ -62,7 +61,7 @@
 - (id)_recordBaseFromCKRecord:(id)arg1;
 - (void)_deriveDesiredKeys;
 - (void)_deriveDesiredKeysIfNeeded;
-- (void)_initStore;
+- (void)_initializeStore;
 - (void)_prepareForUse;
 - (void)fetchCoordinator:(id)arg1 addFetchOperation:(id)arg2 context:(id)arg3;
 - (id)fetchCoordinator:(id)arg1 fetchOperationForKeys:(id)arg2 context:(id)arg3 qualityOfService:(long long)arg4 relativePriority:(long long)arg5;

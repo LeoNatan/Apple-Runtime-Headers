@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, WDDocument;
 
+__attribute__((visibility("hidden")))
 @interface WDCitationTable : NSObject
 {
     NSMutableDictionary *mCitations;

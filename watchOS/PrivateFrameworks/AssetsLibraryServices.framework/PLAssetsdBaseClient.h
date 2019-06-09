@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@protocol PLXPCProxyCreating;
+@protocol PLXPCProxyCreating><PLXPCAsyncProxyCreating;
 
 @interface PLAssetsdBaseClient : NSObject
 {
-    id <PLXPCProxyCreating> _proxyFactory;
+    id <PLXPCProxyCreating><PLXPCAsyncProxyCreating> _proxyFactory;
 }
 
-@property(readonly) id <PLXPCProxyCreating> proxyFactory; // @synthesize proxyFactory=_proxyFactory;
+@property(readonly) id <PLXPCProxyCreating><PLXPCAsyncProxyCreating> proxyFactory; // @synthesize proxyFactory=_proxyFactory;
 - (void).cxx_destruct;
 - (id)initWithQueue:(id)arg1 proxyCreating:(id)arg2 proxyGetter:(SEL)arg3;
 

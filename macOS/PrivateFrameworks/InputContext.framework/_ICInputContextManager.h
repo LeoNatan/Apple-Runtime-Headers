@@ -6,22 +6,25 @@
 
 #import <objc/NSObject.h>
 
+#import <InputContext/_ICFeedbackManaging-Protocol.h>
 #import <InputContext/_ICLexiconManaging-Protocol.h>
 #import <InputContext/_ICPredictionManaging-Protocol.h>
 
 @class NSString, _ICPredictionManager;
 @protocol _ICLexiconManaging;
 
-@interface _ICInputContextManager : NSObject <_ICPredictionManaging, _ICLexiconManaging>
+@interface _ICInputContextManager : NSObject <_ICPredictionManaging, _ICLexiconManaging, _ICFeedbackManaging>
 {
     struct _LXLexicon *_durableNamedEntityLexicon;
     struct _LXLexicon *_recentNamedEntityLexicon;
-    id <_ICLexiconManaging> _lexiconManager;
+    NSObject<_ICLexiconManaging> *_lexiconManager;
     _ICPredictionManager *_predictionManager;
 }
 
 + (id)sharedManager;
 - (void).cxx_destruct;
+- (void)providePredictionFeedbackForString:(id)arg1 type:(unsigned char)arg2 style:(unsigned char)arg3;
+- (void)provideLexiconFeedbackForString:(id)arg1 type:(unsigned char)arg2 style:(unsigned char)arg3;
 - (id)initForIntegrationTesting;
 - (id)initWithPredictionSource:(id)arg1;
 - (void)hibernate;

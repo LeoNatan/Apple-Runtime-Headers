@@ -8,8 +8,9 @@
 
 #import <MapKit/NSGestureRecognizerDelegate-Protocol.h>
 
-@class CNLabeledValue, MKAccessiblePlatterView, MKPlaceSectionHeaderView, NSArray, NSColor, NSLayoutConstraint, NSString, _MKUILabel;
+@class CNLabeledValue, MKPlaceSectionHeaderView, NSArray, NSColor, NSLayoutConstraint, NSString, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceInfoContactRowView : MKPlaceSectionRowView <NSGestureRecognizerDelegate>
 {
     MKPlaceSectionHeaderView *_headerView;
@@ -19,14 +20,11 @@
     NSLayoutConstraint *_valueToTrailingViewConstraint;
     NSArray *_iconConstraints;
     NSArray *_titleConstraints;
-    BOOL _trackingIconClick;
     BOOL _isInRightMouseDownEvent;
     BOOL _textIsSelectable;
-    BOOL _bottomHairlineFullWidth;
     CNLabeledValue *_labeledValue;
     _MKUILabel *_titleLabel;
     _MKUILabel *_valueLabel;
-    MKAccessiblePlatterView *_iconView;
     CDUnknownBlockType _iconSelectedBlock;
     NSLayoutConstraint *_valueToBottomConstraint;
     NSColor *_labelColor;
@@ -35,23 +33,15 @@
 + (id)icon;
 @property(retain, nonatomic) NSColor *labelColor; // @synthesize labelColor=_labelColor;
 @property(retain, nonatomic) NSLayoutConstraint *valueToBottomConstraint; // @synthesize valueToBottomConstraint=_valueToBottomConstraint;
-@property(nonatomic, getter=isBottomHairlineFullWidth) BOOL bottomHairlineFullWidth; // @synthesize bottomHairlineFullWidth=_bottomHairlineFullWidth;
 @property(copy, nonatomic) CDUnknownBlockType iconSelectedBlock; // @synthesize iconSelectedBlock=_iconSelectedBlock;
-@property(readonly, nonatomic) MKAccessiblePlatterView *iconView; // @synthesize iconView=_iconView;
 @property(readonly, nonatomic) _MKUILabel *valueLabel; // @synthesize valueLabel=_valueLabel;
 @property(readonly, nonatomic) _MKUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) CNLabeledValue *labeledValue; // @synthesize labeledValue=_labeledValue;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) int analyticsTarget;
-- (BOOL)_iconTapped:(id)arg1;
 - (void)_menuDone;
 - (void)rightMouseDown:(id)arg1;
-- (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
-- (BOOL)_eventIsInIcon:(id)arg1;
-- (void)_updateGestureRecognizer;
-- (BOOL)_pointIsInIcon:(struct CGPoint)arg1;
-@property(nonatomic, getter=isIconVisible) BOOL iconVisible;
 @property(nonatomic, getter=isTextSelectable) BOOL textIsSelectable;
 - (void)_contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;

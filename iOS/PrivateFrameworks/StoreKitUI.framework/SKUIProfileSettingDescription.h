@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, NSString, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProfileSettingDescription : SKUISettingDescription
 {
     NSString *_handle;

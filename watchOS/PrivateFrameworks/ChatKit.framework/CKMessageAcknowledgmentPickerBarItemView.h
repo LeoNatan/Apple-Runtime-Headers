@@ -9,6 +9,7 @@
 @class CKAcknowledgmentGlyphView, CKMessageAcknowledgmentDraftDescriptor, UIButton;
 @protocol CKMessageAcknowledgmentPickerBarItemViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKMessageAcknowledgmentPickerBarItemView : UIView
 {
     _Bool _selected;

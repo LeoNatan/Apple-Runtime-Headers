@@ -8,5 +8,11 @@
 
 @interface SAUIAssistantUtteranceView (ClientFeedbackPresented)
 - (id)_af_dialogIdentifier;
+- (id)af_dialogIdentifiersForAnalyticsContext;
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
+- (id)af_speakableText;
+- (id)af_text;
+- (id)af_dialogIdentifier;
+- (_Bool)af_isUtterance;
 @end
 

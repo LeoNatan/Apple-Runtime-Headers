@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class AMPathPopUpButton, AMTokenField, AMVariablesEditorController, AMVariablesEditorDateFormatDelegate, CIColor, NSBox, NSButton, NSColor, NSObjectController, NSPopUpButton, NSTabView, NSTextField, NSTextView, NSTokenField, OSAScriptView;
+@class AMPathPopUpButton, AMTokenField, AMVariablesEditorController, AMVariablesEditorDateFormatDelegate, CIColor, NSArray, NSBox, NSButton, NSColor, NSObjectController, NSPopUpButton, NSTabView, NSTextField, NSTextView, NSTokenField, OSAScriptView;
 
 @interface AMVariablesEditorView : NSView
 {
@@ -65,8 +65,24 @@
     struct CGRect titlebarFrame;
     struct CGPath *_windowClipPath;
     struct CGPath *_borderClipPath;
+    NSTextField *__nameLabelTextField;
+    NSTextField *__valueLabelTextField;
+    NSTextField *__pathLabelTextField;
+    NSTextField *__formatDateLabelTextField;
+    NSTextField *__formatTimeLabelTextField;
+    NSTextField *__appleScriptLabelTextField;
+    NSTextField *__shellScriptLabelTextField;
+    NSArray *__crossTabViewConstraints;
 }
 
+@property(retain) NSArray *_crossTabViewConstraints; // @synthesize _crossTabViewConstraints=__crossTabViewConstraints;
+@property __weak NSTextField *_shellScriptLabelTextField; // @synthesize _shellScriptLabelTextField=__shellScriptLabelTextField;
+@property __weak NSTextField *_appleScriptLabelTextField; // @synthesize _appleScriptLabelTextField=__appleScriptLabelTextField;
+@property __weak NSTextField *_formatTimeLabelTextField; // @synthesize _formatTimeLabelTextField=__formatTimeLabelTextField;
+@property __weak NSTextField *_formatDateLabelTextField; // @synthesize _formatDateLabelTextField=__formatDateLabelTextField;
+@property __weak NSTextField *_pathLabelTextField; // @synthesize _pathLabelTextField=__pathLabelTextField;
+@property __weak NSTextField *_valueLabelTextField; // @synthesize _valueLabelTextField=__valueLabelTextField;
+@property __weak NSTextField *_nameLabelTextField; // @synthesize _nameLabelTextField=__nameLabelTextField;
 @property(retain) CIColor *windowBorderColor; // @synthesize windowBorderColor;
 @property(retain) CIColor *viewAreaBottomGradientColor; // @synthesize viewAreaBottomGradientColor;
 @property(retain) CIColor *viewAreaTopGradientColor; // @synthesize viewAreaTopGradientColor;
@@ -122,7 +138,6 @@
 @property(nonatomic) __weak AMVariablesEditorController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
 - (void)reLayout;
-- (void)sizeToFit;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setFrame:(struct CGRect)arg1;
@@ -130,8 +145,9 @@
 - (void)setFrameOrigin:(struct CGPoint)arg1;
 - (void)updateWindowClipPath;
 - (struct CGPath *)newTodoRoundedWindowPathForRect:(struct CGRect)arg1;
+- (void)_reconfigureCrossTabViewConstraints;
 - (void)awakeFromNib;
-- (void)updateLayout;
+- (void)updateControls;
 - (void)setupShellScriptControls;
 - (void)setCustomTimeFormatControlsAreHidden:(BOOL)arg1;
 - (void)useCustomTimeFormat:(id)arg1;
@@ -149,7 +165,6 @@
 - (void)setupDateTimeControlTokenField:(id)arg1;
 - (void)setupButton:(id)arg1;
 - (BOOL)isFlipped;
-- (void)finishInitialLayout;
 - (void)ok:(id)arg1;
 - (void)cancel:(id)arg1;
 - (id)tokenField:(id)arg1 readFromPasteboard:(id)arg2;

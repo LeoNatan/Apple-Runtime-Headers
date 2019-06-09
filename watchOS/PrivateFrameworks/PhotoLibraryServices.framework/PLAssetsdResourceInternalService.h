@@ -4,21 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoLibraryServices/PLAbstractLibraryServicesManagerService.h>
 
 #import <PhotoLibraryServices/PLAssetsdResourceInternalServiceProtocol-Protocol.h>
 
 @class NSString;
 
-@interface PLAssetsdResourceInternalService : NSObject <PLAssetsdResourceInternalServiceProtocol>
+@interface PLAssetsdResourceInternalService : PLAbstractLibraryServicesManagerService <PLAssetsdResourceInternalServiceProtocol>
 {
+    NSString *_trustedCallerBundleID;
 }
 
+- (void).cxx_destruct;
+- (void)purgeExpiredOutboundSharingAssetsWithReply:(CDUnknownBlockType)arg1;
+- (void)asynchronousMasterThumbnailForAssetUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)prepareRevertToOriginalWithObjectURI:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)batchSaveAssetJobs:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)initWithLibraryServicesManager:(id)arg1 trustedCallerBundleID:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
+
 @end
 

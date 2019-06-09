@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)secondDelayElapsed:(id)arg1;
 - (void)setState:(long long)arg1;
 - (void)_resetGestureRecognizer;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end
 

@@ -14,6 +14,7 @@
 {
 }
 
+- (void)installedBundlesToRegisterWithLaunchServices:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updatesQueuedForLaterDidChange;
 - (void)hiddenUpdatesDidChange;
 - (void)catalogURLDidChange;

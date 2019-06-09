@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
 - (id)initWithCandidateResultSetCoder:(id)arg1;
+- (id)candidateByReplacingWithCandidate:(id)arg1 input:(id)arg2;
 - (id)candidateByReplacingWithCandidate:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

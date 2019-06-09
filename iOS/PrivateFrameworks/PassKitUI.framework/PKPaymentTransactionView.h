@@ -6,37 +6,36 @@
 
 #import <UIKit/UIView.h>
 
-@class CNAvatarView, NSAttributedString, NSString, PKTransactionMapView, UIColor, UIImage, UIImageView, UILabel;
+@class CNAvatarView, NSAttributedString, NSString, UIColor, UIImage, UIImageView, UILabel;
 
 @interface PKPaymentTransactionView : UIView
 {
     UILabel *_primaryLabel;
     UILabel *_secondaryLabel;
     UILabel *_tertiaryLabel;
+    UILabel *_rewardsAmountLabel;
     UILabel *_transactionValueLabel;
     UIImageView *_primaryImageView;
     UIImageView *_disclosureView;
     _Bool _isTemplateLayout;
+    _Bool _hideRewardsBackground;
     _Bool _showsAvatarView;
     _Bool _showsDisclosureView;
-    _Bool _showsMap;
     UIColor *_primaryColor;
     UIColor *_secondaryColor;
     NSString *_primaryString;
     NSString *_secondaryString;
     NSString *_tertiaryString;
     UIImage *_primaryImage;
-    PKTransactionMapView *_mapView;
     CNAvatarView *_avatarView;
 }
 
 + (id)defaultTertiaryLabelFont;
 @property(readonly, nonatomic) CNAvatarView *avatarView; // @synthesize avatarView=_avatarView;
-@property(readonly, nonatomic) PKTransactionMapView *mapView; // @synthesize mapView=_mapView;
-@property(nonatomic) _Bool showsMap; // @synthesize showsMap=_showsMap;
 @property(retain, nonatomic) UIImage *primaryImage; // @synthesize primaryImage=_primaryImage;
 @property(nonatomic) _Bool showsDisclosureView; // @synthesize showsDisclosureView=_showsDisclosureView;
 @property(nonatomic) _Bool showsAvatarView; // @synthesize showsAvatarView=_showsAvatarView;
+@property(nonatomic) _Bool hideRewardsBackground; // @synthesize hideRewardsBackground=_hideRewardsBackground;
 @property(retain, nonatomic) NSString *tertiaryString; // @synthesize tertiaryString=_tertiaryString;
 @property(retain, nonatomic) NSString *secondaryString; // @synthesize secondaryString=_secondaryString;
 @property(retain, nonatomic) NSString *primaryString; // @synthesize primaryString=_primaryString;
@@ -50,7 +49,9 @@
 - (id)_disclosureView;
 - (_Bool)shouldShowTransactionPreviewForTouchAtPoint:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)_updateAvatarView;
+- (void)setPrimaryImage:(id)arg1 strokeImage:(_Bool)arg2 animated:(_Bool)arg3;
 @property(retain, nonatomic) NSAttributedString *transactionValueAttributedText; // @dynamic transactionValueAttributedText;
+@property(retain, nonatomic) NSString *rewardsValueString;
 - (id)defaultSecondaryColor;
 - (id)defaultPrimaryColor;
 - (_Bool)_shouldUseStackedLayout;

@@ -8,7 +8,7 @@
 
 #import <AnnotationKit/PKCanvasViewDelegate-Protocol.h>
 
-@class NSColor, NSString, NSTrackingArea, PKCanvasView, PKDrawing, PKInk;
+@class NSColor, NSTrackingArea, PKCanvasView, PKDrawing, PKInk;
 
 @interface AKInkSignatureView : NSView <PKCanvasViewDelegate>
 {
@@ -36,12 +36,6 @@
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

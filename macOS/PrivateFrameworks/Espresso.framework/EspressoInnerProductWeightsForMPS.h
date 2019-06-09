@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)ready;
 - (void)purge;
 - (float *)biasTerms;

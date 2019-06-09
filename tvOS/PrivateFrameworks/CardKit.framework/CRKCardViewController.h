@@ -6,7 +6,6 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <CardKit/CRKCardSectionViewControllerDataSource-Protocol.h>
 #import <CardKit/CRKCardSectionViewControllerDelegate-Protocol.h>
 #import <CardKit/CRKCardSectionViewProviderDelegate-Protocol.h>
 #import <CardKit/CRKCardViewControlling-Protocol.h>
@@ -14,14 +13,14 @@
 @class CRKComposedStackView, NSMapTable, NSMutableArray, NSString;
 @protocol CRCard, CRKCardSectionViewSourcing, CRKCardViewControllerDelegate;
 
-@interface CRKCardViewController : UIViewController <CRKCardSectionViewControllerDelegate, CRKCardSectionViewProviderDelegate, CRKCardSectionViewControllerDataSource, CRKCardViewControlling>
+@interface CRKCardViewController : UIViewController <CRKCardSectionViewControllerDelegate, CRKCardSectionViewProviderDelegate, CRKCardViewControlling>
 {
     NSMutableArray *_cardSectionViewControllers;
     NSMapTable *_cardSectionsToCardSectionViewControllersMapTable;
     NSMapTable *_handledParametersForInteraction;
     NSMutableArray *_pendingDismissalCommands;
     _Bool _loaded;
-    id <CRKCardSectionViewSourcing> _builtInCardSectionViewProviderManager;
+    id <CRKCardSectionViewSourcing> _builtInCardSectionViewSource;
     NSMutableArray *_loadingCardSections;
     _Bool _indicatingActivity;
     _Bool _loadBundles;
@@ -52,7 +51,6 @@
 - (void)willDismissViewController:(id)arg1;
 - (void)presentViewController:(id)arg1;
 - (void)didEngageCardSection:(id)arg1;
-- (id)cardSectionViewController:(id)arg1 interactionWithIdentifier:(id)arg2;
 - (long long)preferredPunchoutIndexForCardSectionViewController:(id)arg1;
 - (void)cardSectionViewController:(id)arg1 didSelectPreferredPunchoutIndex:(long long)arg2;
 - (void)presentViewController:(id)arg1 forCardSectionViewController:(id)arg2;

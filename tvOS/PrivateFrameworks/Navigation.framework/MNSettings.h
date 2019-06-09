@@ -18,7 +18,6 @@
     _Bool _muteSpeechOverride;
     _Bool _speechEnabled;
     unsigned long long _maxAlternateRoutesCount;
-    _Bool _isConnectedToCarplay;
     _Bool _drivingVoiceGuidance;
     _Bool _walkingVoiceGuidance;
     _Bool _beepBeforeInstruction;
@@ -27,32 +26,32 @@
     double _initialRequestDelay;
     double _backgroundTimeWindow;
     long long _fakeTrafficIncidentAlert;
-    double _alightSignalTimeBuffer;
     double _initialTraceSpeedMultiplier;
-    _Bool _shouldLoadInitialRouteFromTrace;
     _Bool _shouldLoadReroutesFromTrace;
     _Bool _shouldLoadETAUpdatesFromTrace;
     _Bool _isTracePlaybackCameraTestMode;
+    _Bool _shouldRecordTrace;
+    double _simulationSpeed;
+    double _simulationGPSError;
     _Bool _shouldUseGuidanceEventManager;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) _Bool shouldUseGuidanceEventManager; // @synthesize shouldUseGuidanceEventManager=_shouldUseGuidanceEventManager;
+@property(readonly, nonatomic) double simulationGPSError; // @synthesize simulationGPSError=_simulationGPSError;
+@property(readonly, nonatomic) double simulationSpeed; // @synthesize simulationSpeed=_simulationSpeed;
+@property(readonly, nonatomic) _Bool shouldRecordTrace; // @synthesize shouldRecordTrace=_shouldRecordTrace;
 @property(readonly, nonatomic) _Bool isTracePlaybackCameraTestMode; // @synthesize isTracePlaybackCameraTestMode=_isTracePlaybackCameraTestMode;
 @property(readonly, nonatomic) _Bool shouldLoadETAUpdatesFromTrace; // @synthesize shouldLoadETAUpdatesFromTrace=_shouldLoadETAUpdatesFromTrace;
 @property(readonly, nonatomic) _Bool shouldLoadReroutesFromTrace; // @synthesize shouldLoadReroutesFromTrace=_shouldLoadReroutesFromTrace;
-@property(readonly, nonatomic) _Bool shouldLoadInitialRouteFromTrace; // @synthesize shouldLoadInitialRouteFromTrace=_shouldLoadInitialRouteFromTrace;
 @property(readonly, nonatomic) double initialTraceSpeedMultiplier; // @synthesize initialTraceSpeedMultiplier=_initialTraceSpeedMultiplier;
-@property(readonly, nonatomic) double alightSignalTimeBuffer; // @synthesize alightSignalTimeBuffer=_alightSignalTimeBuffer;
 @property(readonly, nonatomic) long long fakeTrafficIncidentAlert; // @synthesize fakeTrafficIncidentAlert=_fakeTrafficIncidentAlert;
 @property(readonly, nonatomic) double backgroundTimeWindow; // @synthesize backgroundTimeWindow=_backgroundTimeWindow;
 @property(readonly, nonatomic) double initialRequestDelay; // @synthesize initialRequestDelay=_initialRequestDelay;
 @property(readonly, nonatomic) double etaRequestInterval; // @synthesize etaRequestInterval=_etaRequestInterval;
-@property(readonly, nonatomic) NSString *voiceLanguage; // @synthesize voiceLanguage=_voiceLanguage;
 @property(readonly, nonatomic) _Bool beepBeforeInstruction; // @synthesize beepBeforeInstruction=_beepBeforeInstruction;
 @property(readonly, nonatomic) _Bool walkingVoiceGuidance; // @synthesize walkingVoiceGuidance=_walkingVoiceGuidance;
 @property(readonly, nonatomic) _Bool drivingVoiceGuidance; // @synthesize drivingVoiceGuidance=_drivingVoiceGuidance;
-@property(readonly, nonatomic) _Bool isConnectedToCarplay; // @synthesize isConnectedToCarplay=_isConnectedToCarplay;
 @property(readonly, nonatomic) unsigned long long maxAlternateRoutesCount; // @synthesize maxAlternateRoutesCount=_maxAlternateRoutesCount;
 @property(readonly, nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
 @property(readonly, nonatomic) _Bool muteSpeechOverride; // @synthesize muteSpeechOverride=_muteSpeechOverride;
@@ -63,6 +62,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+@property(readonly, nonatomic) NSString *voiceLanguage;
+- (void)setVoiceLanguage:(id)arg1;
 - (id)init;
 
 @end

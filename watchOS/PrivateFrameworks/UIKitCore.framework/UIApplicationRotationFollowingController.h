@@ -18,6 +18,7 @@
 - (_Bool)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (_Bool)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;
+- (id)_topMostWindow;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end

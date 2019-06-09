@@ -8,6 +8,7 @@
 
 @class TSPData;
 
+__attribute__((visibility("hidden")))
 @interface OADExportedEmbeddedMediaFile : OADEmbeddedMediaFile
 {
     BOOL isAudioOnly;

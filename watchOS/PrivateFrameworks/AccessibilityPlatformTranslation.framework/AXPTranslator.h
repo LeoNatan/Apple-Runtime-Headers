@@ -48,7 +48,9 @@
 - (void)_resetBridgeTokensForResponse:(id)arg1 bridgeDelegateToken:(id)arg2;
 - (void)handleNotification:(unsigned int)arg1 data:(id)arg2 associatedObject:(id)arg3;
 - (id)frontmostApplicationWithDisplayId:(unsigned int)arg1 bridgeDelegateToken:(id)arg2;
+- (id)_translationApplicationObjectForPidNumber:(id)arg1;
 - (id)translationApplicationObjectForPid:(int)arg1;
+- (id)translationApplicationObject;
 - (id)init;
 
 @end

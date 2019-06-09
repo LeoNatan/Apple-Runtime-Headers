@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsContext : NSObject
 {
     NSMutableDictionary *_elementTypeClass;

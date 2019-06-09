@@ -11,17 +11,19 @@
 #import <CloudPhotoLibrary/CPLEngineForceSyncTaskDelegate-Protocol.h>
 #import <CloudPhotoLibrary/CPLEngineSyncTaskDelegate-Protocol.h>
 
-@class CPLBackgroundDownloadsTask, CPLCleanupTask, CPLEngineForceSyncTask, CPLEngineLibrary, CPLMinglePulledChangesTask, CPLPlatformObject, CPLPullFromTransportTask, CPLPullScopesTask, CPLPushToTransportTask, CPLScopeUpdateTask, CPLTransportUpdateTask, NSError, NSMutableArray, NSString;
+@class CPLBackgroundDownloadsTask, CPLCleanupTask, CPLDerivativesFilter, CPLEngineForceSyncTask, CPLEngineLibrary, CPLMinglePulledChangesTask, CPLPlatformObject, CPLPullFromTransportTask, CPLPullScopesTask, CPLPushToTransportTask, CPLScopeUpdateTask, CPLSyncSession, CPLTransportUpdateTask, NSError, NSMutableArray, NSString;
 @protocol CPLEngineStoreUserIdentifier, CPLEngineTransportSetupTask, OS_dispatch_queue;
 
 @interface CPLEngineSyncManager : NSObject <CPLEngineSyncTaskDelegate, CPLAbstractObject, CPLEngineComponent, CPLEngineForceSyncTaskDelegate>
 {
     id <CPLEngineStoreUserIdentifier> _transportUserIdentifier;
+    CPLDerivativesFilter *_derivativesFilter;
     _Bool _setupIsDone;
     _Bool _shouldUpdateDisabledFeatures;
     _Bool _closed;
     id <CPLEngineTransportSetupTask> _setupTask;
     CDUnknownBlockType _closingCompletionHandler;
+    CPLSyncSession *_session;
     NSObject<OS_dispatch_queue> *_lock;
     NSError *_lastError;
     CPLCleanupTask *_cleanupTask;
@@ -41,7 +43,6 @@
     _Bool _boostPriority;
     _Bool _hasOverridenBudgets;
     _Bool _disabledSchedulerForForceSyncTask;
-    _Bool _hasTransactionForSyncSession;
     _Bool _shouldTryToMingleImmediately;
     CPLPlatformObject *_platformObject;
     CPLEngineLibrary *_engineLibrary;
@@ -126,11 +127,10 @@
 - (void)setSyncSessionShouldBeForeground:(_Bool)arg1;
 - (void)requestDisabledFeaturesUpdate;
 - (void)discardTransportUserIdentifier;
-- (void)resetTransportUserIdentifierAndRestartSync:(_Bool)arg1;
+- (void)resetTransportUserIdentifier;
 - (void)cancelCurrentSyncSession;
-- (void)kickOffSyncSession;
-- (void)startSyncSessionWithMinimalPhase:(unsigned long long)arg1;
-- (void)_restartSyncSessionFromStateLocked:(unsigned long long)arg1 cancelIfNecessary:(_Bool)arg2;
+- (void)startSyncSession:(id)arg1 withMinimalPhase:(unsigned long long)arg2 rewind:(_Bool)arg3;
+- (void)_restartSyncSessionFromStateLocked:(unsigned long long)arg1 session:(id)arg2 cancelIfNecessary:(_Bool)arg3;
 - (void)_advanceToNextStateLockedMinimalState:(unsigned long long)arg1;
 - (void)_advanceToNextStateLocked;
 - (void)_notifyEndOfSyncSession;

@@ -11,6 +11,7 @@
 @class NSString;
 @protocol SKStoreRemoteViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKStoreRemoteViewController : _UIRemoteViewController <SKStoreExtensionClientInterface>
 {
     id <SKStoreRemoteViewControllerDelegate> _delegate;
@@ -20,6 +21,7 @@
 + (id)exportedInterface;
 @property(nonatomic) __weak id <SKStoreRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentRequestedViewControllerWithIdentifier:(id)arg1;
 - (void)setNeedsTabSelection;
 - (void)viewServiceDidTerminateWithError:(id)arg1;

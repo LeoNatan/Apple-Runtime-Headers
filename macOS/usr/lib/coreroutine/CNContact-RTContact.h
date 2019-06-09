@@ -7,6 +7,6 @@
 #import <Contacts/CNContact.h>
 
 @interface CNContact (RTContact)
-- (id)description;
+- (id)_rt_toString;
 @end
 

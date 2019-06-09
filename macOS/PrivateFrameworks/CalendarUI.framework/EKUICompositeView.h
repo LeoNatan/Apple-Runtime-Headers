@@ -4,17 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <CalendarUI/EKUIGadgetView.h>
 
-@class EKUICompositeGadget;
-
-@interface EKUICompositeView : NSView
+@interface EKUICompositeView : EKUIGadgetView
 {
-    EKUICompositeGadget *_gadget;
 }
 
-@property __weak EKUICompositeGadget *gadget; // @synthesize gadget=_gadget;
-- (void).cxx_destruct;
 - (void)layout;
 - (void)updateConstraints;
 

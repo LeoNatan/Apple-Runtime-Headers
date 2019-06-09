@@ -10,6 +10,7 @@
 
 @class NSString, NSURL, OCPPackage;
 
+__attribute__((visibility("hidden")))
 @interface OCXDelayedMediaContext : NSObject <OCDDelayedMediaContext>
 {
     OCPPackage *mPackage;

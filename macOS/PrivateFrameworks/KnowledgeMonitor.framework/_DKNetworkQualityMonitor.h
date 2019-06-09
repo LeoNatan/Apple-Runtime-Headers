@@ -46,6 +46,7 @@
 - (id)loadState;
 - (void)saveState;
 - (void)synchronouslyReflectCurrentValue;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -58,6 +59,7 @@
 - (void)updateInstantQuality;
 - (void)updatePredictionAsync;
 - (id)predictionTimelineFromNOIPredictions:(id)arg1;
+- (void)dealloc;
 - (id)initForInterfaceType:(long long)arg1 connectionStatusKeyPath:(id)arg2 qualityKeyPath:(id)arg3 predictedQualityKeyPath:(id)arg4 discretionaryInvitedPath:(id)arg5;
 
 @end

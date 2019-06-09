@@ -35,8 +35,8 @@
 - (void).cxx_destruct;
 - (void)_dumpIndentificationLogs;
 - (void)_updateDisplayLinkFrameIntervalAccuracyIfNecessaryForTimePastMinuteInSeconds:(double)arg1;
-- (void)_backgrounded:(id)arg1;
-- (void)_foregrounded:(id)arg1;
+- (void)pause;
+- (void)unpause;
 - (void)_onNativeDisplayLink:(id)arg1;
 - (void)_on30fpsDisplayLink:(id)arg1;
 - (void)_handleTimePassed;

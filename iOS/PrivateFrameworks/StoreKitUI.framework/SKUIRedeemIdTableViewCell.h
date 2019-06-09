@@ -11,6 +11,7 @@
 @class NSString, UITextField;
 @protocol SKUIRedeemIdTableViewCellDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemIdTableViewCell : UITableViewCell <UITextFieldDelegate>
 {
     id <SKUIRedeemIdTableViewCellDelegate> _delegate;

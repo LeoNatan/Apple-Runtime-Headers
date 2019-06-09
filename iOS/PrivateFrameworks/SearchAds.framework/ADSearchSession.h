@@ -19,8 +19,10 @@
     ADCapData *_capData;
     NSString *_campaignNamespace;
     NSObject *_notificationObserver;
+    NSString *_clientRequestID;
 }
 
+@property(retain, nonatomic) NSString *clientRequestID; // @synthesize clientRequestID=_clientRequestID;
 @property(nonatomic) _Bool notificationReceivedAndWaiting; // @synthesize notificationReceivedAndWaiting=_notificationReceivedAndWaiting;
 @property(retain, nonatomic) NSObject *notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 @property(retain, nonatomic) NSString *campaignNamespace; // @synthesize campaignNamespace=_campaignNamespace;
@@ -32,13 +34,13 @@
 - (void)requestSponsoredSearchURL:(CDUnknownBlockType)arg1;
 - (void)updateToroDownloadData:(id)arg1 forType:(long long)arg2;
 - (void)updateClickDataWith:(id)arg1;
+- (void)updateFrequencyCapData:(id)arg1;
 - (void)updateSponsoredFrequencyCapData:(id)arg1;
 - (void)requestUserTargetingIdentifier:(CDUnknownBlockType)arg1;
-- (void)refreshTargetingData:(CDUnknownBlockType)arg1;
-- (id)populateStoreFrontLanguageLocale:(id)arg1;
 - (id)sponsoredSearchRequestForLanguageLocale:(id)arg1;
 - (void)requestSponsoredSearchDataRoutingInfoAndRequestIDForLocality:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestSearchObjectForLocality:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)populateStoreFrontLanguageLocale:(id)arg1;
 - (id)userTargetingProperties;
 - (id)adParameters;
 - (id)requestedTemplateTypeParameter;

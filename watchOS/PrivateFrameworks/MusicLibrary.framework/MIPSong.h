@@ -19,6 +19,7 @@
     MIPArtist *_composer;
     int _discNumber;
     MIPGenre *_genre;
+    NSString *_hlsPlaylistURL;
     NSString *_lyrics;
     int _lyricsChecksum;
     MIPPlaybackInfo *_playbackInfo;
@@ -38,6 +39,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *hlsPlaylistURL; // @synthesize hlsPlaylistURL=_hlsPlaylistURL;
 @property(nonatomic) int lyricsChecksum; // @synthesize lyricsChecksum=_lyricsChecksum;
 @property(retain, nonatomic) MIPPlaybackInfo *playbackInfo; // @synthesize playbackInfo=_playbackInfo;
 @property(retain, nonatomic) NSString *lyrics; // @synthesize lyrics=_lyrics;
@@ -62,6 +64,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasHlsPlaylistURL;
 @property(nonatomic) _Bool hasLyricsChecksum;
 @property(readonly, nonatomic) _Bool hasPlaybackInfo;
 @property(readonly, nonatomic) _Bool hasLyrics;

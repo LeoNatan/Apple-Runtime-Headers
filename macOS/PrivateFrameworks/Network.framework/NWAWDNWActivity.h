@@ -8,7 +8,7 @@
 
 #import <Network/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, NWAWDNWL2Report;
 
 __attribute__((visibility("hidden")))
 @interface NWAWDNWActivity : PBCodable <NSCopying>
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _activityLabel;
     unsigned long long _timestamp;
     NSString *_activityUUID;
+    NWAWDNWL2Report *_l2Report;
     NSString *_parentActivityUUID;
     BOOL _isRetry;
     struct {
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+@property(retain, nonatomic) NWAWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
 @property(nonatomic) BOOL isRetry; // @synthesize isRetry=_isRetry;
 @property(retain, nonatomic) NSString *parentActivityUUID; // @synthesize parentActivityUUID=_parentActivityUUID;
 @property(retain, nonatomic) NSString *activityUUID; // @synthesize activityUUID=_activityUUID;
@@ -43,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasL2Report;
 @property(nonatomic) BOOL hasIsRetry;
 @property(readonly, nonatomic) BOOL hasParentActivityUUID;
 @property(readonly, nonatomic) BOOL hasActivityUUID;

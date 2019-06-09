@@ -6,22 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage, NSArray;
-@protocol OS_dispatch_queue;
+@class AVCaptureDataOutputDelegateCallbackHelper, AVWeakReference, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureMetadataOutputInternal : NSObject
 {
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    AVWeakReferencingDelegateStorage *delegateOverrideStorage;
+    AVCaptureDataOutputDelegateCallbackHelper *delegateCallbackHelper;
+    AVWeakReference *weakReference;
     NSArray *metadataObjectTypes;
     struct CGRect rectOfInterest;
     _Bool faceTrackingMetadataObjectTypesAvailable;
     _Bool offlineVideoStabilizationMotionMetadataObjectTypesAvailable;
-    AVWeakReference *weakReference;
-    struct OpaqueFigSimpleMutex *queueMutex;
-    void *remoteQueueReceiver;
-    void *localQueue;
-    NSObject<OS_dispatch_queue> *objectQueue;
 }
 
 - (void)dealloc;

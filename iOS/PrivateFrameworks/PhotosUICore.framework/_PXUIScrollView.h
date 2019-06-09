@@ -10,10 +10,12 @@
 
 @interface _PXUIScrollView : UIScrollView
 {
+    _Bool _deferContentOffsetUpdates;
     id <PXUIScrollViewDelegate> _px_delegate;
     struct CGPoint _pagingOriginOffset;
 }
 
+@property(nonatomic) _Bool deferContentOffsetUpdates; // @synthesize deferContentOffsetUpdates=_deferContentOffsetUpdates;
 @property(nonatomic) struct CGPoint pagingOriginOffset; // @synthesize pagingOriginOffset=_pagingOriginOffset;
 @property(nonatomic, setter=px_setDelegate:) __weak id <PXUIScrollViewDelegate> px_delegate; // @synthesize px_delegate=_px_delegate;
 - (void).cxx_destruct;
@@ -21,7 +23,6 @@
 - (void)_updatePagingOrigin;
 - (void)scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
-- (void)addSubview:(id)arg1;
 - (void)px_addSubview:(id)arg1;
 
 @end

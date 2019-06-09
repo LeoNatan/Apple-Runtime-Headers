@@ -8,33 +8,53 @@
 
 #import <coreroutine/RTMapItemProvider-Protocol.h>
 
-@class NSString, RTFingerprintManager, RTLocationManager, RTMapServiceManager, RTMotionActivityManager;
+@class NSString, RTFingerprintManager, RTInferredMapItemDeduper, RTLocationManager, RTMapItemProviderBluePOIParameters, RTMapServiceManager, RTMotionActivityManager, RTPlatform;
 
 @interface RTMapItemProviderBluePOI : RTMapItemProviderBase <RTMapItemProvider>
 {
+    RTInferredMapItemDeduper *_inferredMapItemDeduper;
     RTFingerprintManager *_fingerprintManager;
     RTLocationManager *_locationManager;
     RTMotionActivityManager *_motionActivityManager;
     RTMapServiceManager *_mapServiceManager;
+    RTPlatform *_platform;
+    RTMapItemProviderBluePOIParameters *_parameters;
 }
 
+@property(readonly, copy, nonatomic) RTMapItemProviderBluePOIParameters *parameters; // @synthesize parameters=_parameters;
+@property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(retain, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
+@property(readonly, nonatomic) RTInferredMapItemDeduper *inferredMapItemDeduper; // @synthesize inferredMapItemDeduper=_inferredMapItemDeduper;
 - (void).cxx_destruct;
 - (BOOL)harvestVisits:(id)arg1 mapItem:(id)arg2 error:(id *)arg3;
 - (BOOL)submitHarvest:(id)arg1 error:(id *)arg2;
 - (id)poiHarvestForFingerprint:(id)arg1 mapItem:(id)arg2 referenceLocation:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
 - (id)filterByDistance:(id)arg1 location:(id)arg2 thresholdForUnknownLabel:(double)arg3 error:(id *)arg4;
-- (id)mapItemsWithinDistance:(double)arg1 location:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
-- (id)mapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
+- (id)_mapItemsWithinDistance:(double)arg1 location:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 error:(id *)arg5;
+- (id)_mapItemsWithFidelityPolicy:(unsigned long long)arg1 locations:(id)arg2 accessPoints:(id)arg3 referenceLocation:(id)arg4 options:(id)arg5 error:(id *)arg6;
+- (id)mapItemsWithOptions:(id)arg1 error:(id *)arg2;
+- (id)inferredMapItemsFromPlist:(id)arg1 error:(id *)arg2;
+- (id)mapItemFromPlistDictionary:(id)arg1;
+- (id)mapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 options:(id)arg5 error:(id *)arg6;
+- (id)bestQueryFromAggregatedQueries:(id)arg1 error:(id *)arg2;
+- (id)bestQueryFromSortedQueryResults:(id)arg1 bestAoiInferredMapItem:(id)arg2 bestPoiInferredMapItem:(id)arg3 error:(id *)arg4;
+- (BOOL)sortedQueryResult:(struct RTPair *)arg1 correspondsToAoi:(id)arg2 poi:(id)arg3;
+- (id)bestQueryFromSortedQueryResults:(id)arg1 bestInferredMapItem:(id)arg2 error:(id *)arg3;
+- (id)sortQueryResults:(id)arg1 error:(id *)arg2;
+- (BOOL)chooseBestAoiInferredMapItem:(id *)arg1 PoiInferredMapItem:(id *)arg2 fromSortedAveragedResults:(id)arg3 error:(id *)arg4;
+- (id)sortedAveragedQueryResults:(id)arg1 baseDuration:(double)arg2 error:(id *)arg3;
+- (id)collapseDedupedInferredMapItems:(id)arg1 inferredMapItemDeduperState:(id)arg2 error:(id *)arg3;
+- (id)dedupeQueryResults:(id)arg1 error:(id *)arg2;
 - (id)motionActivitesFrom:(id)arg1 to:(id)arg2 error:(id *)arg3;
-- (id)locationsFrom:(id)arg1 to:(id)arg2 error:(id *)arg3;
+- (id)locationsInDateInterval:(id)arg1 error:(id *)arg2;
 - (id)locationsForAccessPoints:(id)arg1 error:(id *)arg2;
 - (id)accessPointsForFingerprint:(id)arg1 endDate:(id)arg2 error:(id *)arg3;
 - (id)fingerprintsBetweenStartDate:(id)arg1 endDate:(id)arg2 error:(id *)arg3;
-- (id)initWithDistanceCalculator:(id)arg1 fingerprintManager:(id)arg2 locationManager:(id)arg3 mapServiceManager:(id)arg4 motionActivityManager:(id)arg5;
+- (id)initWithDistanceCalculator:(id)arg1 fingerprintManager:(id)arg2 locationManager:(id)arg3 mapServiceManager:(id)arg4 motionActivityManager:(id)arg5 parameters:(id)arg6 platform:(id)arg7;
+- (id)initWithDefaultsManager:(id)arg1 distanceCalculator:(id)arg2 fingerprintManager:(id)arg3 locationManager:(id)arg4 mapServiceManager:(id)arg5 motionActivityManager:(id)arg6 platform:(id)arg7;
 - (id)init;
 
 // Remaining properties

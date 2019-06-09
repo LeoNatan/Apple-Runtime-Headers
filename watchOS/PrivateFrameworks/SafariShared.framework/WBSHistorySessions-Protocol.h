@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, WBSHistoryItem, WBSHistorySession;
+@class NSArray, NSDate, WBSHistoryItem, WBSHistorySession;
 
 @protocol WBSHistorySessions
 @property(readonly, nonatomic) unsigned int numberOfSessions;
 @property(readonly, copy, nonatomic) NSArray *orderedSessions;
+- (void)orderedItemsNewerThanDate:(NSDate *)arg1 maxCount:(unsigned int)arg2 completionHandler:(void (^)(NSArray *))arg3;
 - (void)enumerateOrderedItemsLastVisitedInSession:(WBSHistorySession *)arg1 usingBlock:(void (^)(WBSHistoryItem *))arg2;
 - (NSArray *)itemsLastVisitedInSession:(WBSHistorySession *)arg1;
 - (WBSHistoryItem *)itemLastVisitedInSession:(WBSHistorySession *)arg1 atIndex:(unsigned int)arg2;

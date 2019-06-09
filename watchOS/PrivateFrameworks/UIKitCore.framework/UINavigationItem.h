@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSCoding-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, UIBarButtonItem, UIImageView, UINavigationBar, UISearchController, UIView;
+@class NSArray, NSMutableDictionary, NSString, UIBarButtonItem, UIImageView, UINavigationBar, UINavigationBarAppearance, UISearchController, UIView, _UINavigationBarItemStackEntry, _UINavigationBarPalette;
 @protocol _UINavigationItemChangeObserver;
 
 @interface UINavigationItem : NSObject <NSCoding>
@@ -35,23 +35,32 @@
     UIImageView *_frozenTitleView;
     NSArray *_abbreviatedBackButtonTitles;
     NSMutableDictionary *_minimumDesiredHeights;
+    _Bool _manualScrollEdgeAppearanceEnabled;
     _Bool __alignLargeTitleAccessoryViewToBaseline;
-    _Bool __supportsTwoLineLargeTitles;
     _Bool __backgroundHidden;
     _Bool _useRelativeLargeTitleInsets;
+    _Bool __preserveSearchBarAcrossTransitions;
     float _fontScaleAdjustment;
+    _UINavigationBarPalette *_bottomPalette;
     NSString *_pendingTitle;
+    float _manualScrollEdgeAppearanceProgress;
+    float _autoScrollEdgeTransitionDistance;
     NSArray *_leftItemSpaceList;
     NSArray *_rightItemSpaceList;
     unsigned int _leftFlexibleSpaceCount;
     unsigned int _rightFlexibleSpaceCount;
     int _largeTitleDisplayMode;
+    UINavigationBarAppearance *_standardAppearance;
+    UINavigationBarAppearance *_compactAppearance;
+    UINavigationBarAppearance *_scrollEdgeAppearance;
     id <_UINavigationItemChangeObserver> __changeObserver;
+    _UINavigationBarItemStackEntry *__stackEntry;
     float __titleViewWidthForAnimations;
     float __idealCustomTitleWidth;
     unsigned int __largeTitleAccessoryViewHorizontalAlignment;
     UINavigationBar *__owningNavigationBar;
     UIView *__largeTitleAccessoryView;
+    unsigned int __largeTitleTwoLineMode;
     NSString *__weeTitle;
     UIView *__canvasView;
     NSArray *__alternateLargeTitles;
@@ -59,6 +68,7 @@
 }
 
 + (id)defaultFont;
+@property(nonatomic, setter=_setPreserveSearchBarAcrossTransitions:) _Bool _preserveSearchBarAcrossTransitions; // @synthesize _preserveSearchBarAcrossTransitions=__preserveSearchBarAcrossTransitions;
 @property(retain, nonatomic) NSArray *_alternateLargeTitles; // @synthesize _alternateLargeTitles=__alternateLargeTitles;
 @property(nonatomic) _Bool useRelativeLargeTitleInsets; // @synthesize useRelativeLargeTitleInsets=_useRelativeLargeTitleInsets;
 @property(nonatomic) struct NSDirectionalEdgeInsets largeTitleInsets; // @synthesize largeTitleInsets=_largeTitleInsets;
@@ -66,7 +76,7 @@
 @property(nonatomic) __weak UINavigationBar *navigationBar; // @synthesize navigationBar=_navigationBar;
 @property(nonatomic, setter=_setBackgroundHidden:) _Bool _backgroundHidden; // @synthesize _backgroundHidden=__backgroundHidden;
 @property(copy, nonatomic, setter=_setWeeTitle:) NSString *_weeTitle; // @synthesize _weeTitle=__weeTitle;
-@property(nonatomic, setter=_setSupportsTwoLineLargeTitles:) _Bool _supportsTwoLineLargeTitles; // @synthesize _supportsTwoLineLargeTitles=__supportsTwoLineLargeTitles;
+@property(nonatomic, setter=_setLargeTitleTwoLineMode:) unsigned int _largeTitleTwoLineMode; // @synthesize _largeTitleTwoLineMode=__largeTitleTwoLineMode;
 @property(retain, nonatomic, setter=_setLargeTitleAccessoryView:) UIView *_largeTitleAccessoryView; // @synthesize _largeTitleAccessoryView=__largeTitleAccessoryView;
 @property(nonatomic) int tag; // @synthesize tag=_tag;
 @property(retain, nonatomic) id context; // @synthesize context=_context;
@@ -75,13 +85,21 @@
 @property(readonly, nonatomic) _Bool _alignLargeTitleAccessoryViewToBaseline; // @synthesize _alignLargeTitleAccessoryViewToBaseline=__alignLargeTitleAccessoryViewToBaseline;
 @property(nonatomic, setter=_setIdealCustomTitleWidth:) float _idealCustomTitleWidth; // @synthesize _idealCustomTitleWidth=__idealCustomTitleWidth;
 @property(nonatomic) float _titleViewWidthForAnimations; // @synthesize _titleViewWidthForAnimations=__titleViewWidthForAnimations;
+@property(nonatomic, setter=_setStackEntry:) _UINavigationBarItemStackEntry *_stackEntry; // @synthesize _stackEntry=__stackEntry;
 @property(nonatomic, setter=_setChangeObserver:) __weak id <_UINavigationItemChangeObserver> _changeObserver; // @synthesize _changeObserver=__changeObserver;
+@property(copy, nonatomic) UINavigationBarAppearance *scrollEdgeAppearance; // @synthesize scrollEdgeAppearance=_scrollEdgeAppearance;
+@property(copy, nonatomic) UINavigationBarAppearance *compactAppearance; // @synthesize compactAppearance=_compactAppearance;
+@property(copy, nonatomic) UINavigationBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
 @property(nonatomic) int largeTitleDisplayMode; // @synthesize largeTitleDisplayMode=_largeTitleDisplayMode;
 @property(nonatomic, setter=_setRightFlexibleSpaceCount:) unsigned int _rightFlexibleSpaceCount; // @synthesize _rightFlexibleSpaceCount;
 @property(nonatomic, setter=_setLeftFlexibleSpaceCount:) unsigned int _leftFlexibleSpaceCount; // @synthesize _leftFlexibleSpaceCount;
 @property(copy, nonatomic, setter=_setRightItemSpaceList:) NSArray *_rightItemSpaceList; // @synthesize _rightItemSpaceList;
 @property(copy, nonatomic, setter=_setLeftItemSpaceList:) NSArray *_leftItemSpaceList; // @synthesize _leftItemSpaceList;
+@property(nonatomic, setter=_setAutoScrollEdgeTransitionDistance:) float _autoScrollEdgeTransitionDistance; // @synthesize _autoScrollEdgeTransitionDistance;
+@property(nonatomic, setter=_setManualScrollEdgeAppearanceProgress:) float _manualScrollEdgeAppearanceProgress; // @synthesize _manualScrollEdgeAppearanceProgress;
+@property(nonatomic, getter=_isManualScrollEdgeAppearanceEnabled, setter=_setManualScrollEdgeAppearanceEnabled:) _Bool _manualScrollEdgeAppearanceEnabled; // @synthesize _manualScrollEdgeAppearanceEnabled;
 @property(copy, nonatomic, setter=_setPendingTitle:) NSString *_pendingTitle; // @synthesize _pendingTitle;
+@property(retain, nonatomic, setter=_setBottomPalette:) _UINavigationBarPalette *_bottomPalette; // @synthesize _bottomPalette;
 @property(nonatomic, setter=_setFontScaleAdjustment:) float _fontScaleAdjustment; // @synthesize _fontScaleAdjustment;
 - (void).cxx_destruct;
 - (id)_independentShadowImage;
@@ -108,6 +126,8 @@
 - (void)_updateViewsForBarSizeChangeAndApply:(_Bool)arg1;
 - (void)_removeContentInView:(id)arg1;
 - (_Bool)_accumulateViewsFromItems:(id)arg1 isLeft:(_Bool)arg2 refreshViews:(_Bool)arg3;
+- (void)_setBottomPaletteNeedsUpdate;
+- (void)_setBottomPaletteNeedsUpdate:(id)arg1;
 - (void)_setCustomRightViews:(id)arg1;
 - (void)_setCustomLeftViews:(id)arg1;
 - (void)setLeftBarButtonItems:(id)arg1 animated:(_Bool)arg2;
@@ -133,8 +153,15 @@
 - (id)_customLeftViewCreating:(_Bool)arg1;
 - (id)_customLeftViews;
 - (id)_customLeftViewsCreating:(_Bool)arg1;
+- (void)_movedFromTopOfStack:(_Bool)arg1;
+- (void)_movedToTopOfStack:(_Bool)arg1;
+- (void)_movingFromTopOfStack;
+- (void)_movingToTopOfStack;
 @property(nonatomic) _Bool hidesSearchBarWhenScrolling;
+@property(readonly, nonatomic) _Bool _hidesSearchBarWhenScrollingIfAllowed;
 @property(retain, nonatomic) UISearchController *searchController;
+- (void)_messageChangeObserver:(id)arg1 forTransitionFromSearchController:(id)arg2;
+@property(readonly, nonatomic) UISearchController *_searchControllerIfAllowed;
 - (void)setRightBarButtonItem:(id)arg1 animated:(_Bool)arg2;
 @property(retain, nonatomic) UIBarButtonItem *rightBarButtonItem;
 - (void)_setRightBarButtonItem:(id)arg1;
@@ -177,9 +204,10 @@
 @property(copy, nonatomic) NSString *backButtonTitle;
 @property(copy, nonatomic) NSString *title;
 - (void)_setBackButtonTitle:(id)arg1 lineBreakMode:(int)arg2;
+@property(copy, nonatomic) UINavigationBarAppearance *scrollToTopAppearance;
+@property(nonatomic, setter=_setSupportsTwoLineLargeTitles:) _Bool _supportsTwoLineLargeTitles;
 - (void)_setLargeTitleAccessoryView:(id)arg1 alignToBaseline:(_Bool)arg2 horizontalAlignment:(unsigned int)arg3;
 - (void)_setLargeTitleAccessoryView:(id)arg1 alignToBaseline:(_Bool)arg2;
-- (_Bool)_notifyObserver_navigationItemUpdatedTitleContentAnimated:(_Bool)arg1;
 - (void)_setTitle:(id)arg1 animated:(_Bool)arg2;
 - (void)_setTitle:(id)arg1 animated:(_Bool)arg2 matchBarButtonItemAnimationDuration:(_Bool)arg3;
 - (id)_addDefaultTitleViewToNavigationBarIfNecessary:(id)arg1;

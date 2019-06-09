@@ -15,6 +15,7 @@
 - (_Bool)valid:(id *)arg1;
 - (id)_init;
 - (long long)metricId;
+- (id)initWithLearnedLocationEngineMetrics:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

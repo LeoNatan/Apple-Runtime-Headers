@@ -46,6 +46,7 @@
 - (void)touchInactivityTimer;
 - (void)backgroundActivityAssertionsDidChange;
 - (void)keyboardAssertionsDidChange;
+- (_Bool)atexitHandler;
 - (void)releaseInputManagers;
 - (void)updateActivityState;
 @property(readonly, nonatomic) unsigned long long activityState;

@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/CLLocationManagerDelegate-Protocol.h>
 #import <PassKitCore/PKPaymentWebServiceDelegate-Protocol.h>
 
-@class NSArray, NSHashTable, NSLock, NSMutableArray, NSMutableSet, NSSet, NSString, NSTimer, PKPaymentCredential, PKPaymentEligibilityResponse, PKPaymentPass, PKPaymentProvisioningControllerCredentialQueue, PKPaymentProvisioningResponse, PKPaymentRequirementsResponse, PKPaymentSetupProductModel, PKPaymentWebService;
+@class CLLocationManager, NSArray, NSHashTable, NSLock, NSMutableArray, NSMutableSet, NSSet, NSString, NSTimer, PKPaymentCredential, PKPaymentEligibilityResponse, PKPaymentPass, PKPaymentProvisioningControllerCredentialQueue, PKPaymentProvisioningResponse, PKPaymentRequirementsResponse, PKPaymentSetupMoreInfoItem, PKPaymentSetupProductModel, PKPaymentWebService;
+@protocol OS_dispatch_source;
 
-@interface PKPaymentProvisioningController : NSObject <PKPaymentWebServiceDelegate>
+@interface PKPaymentProvisioningController : NSObject <CLLocationManagerDelegate, PKPaymentWebServiceDelegate>
 {
     NSMutableSet *_tasks;
     NSTimer *_descriptionTimer;
@@ -21,6 +23,12 @@
     PKPaymentCredential *_currentCredential;
     NSHashTable *_delegates;
     NSLock *_delegateLock;
+    NSSet *_supportedFeatureIdentifierStrings;
+    unsigned long long _targetDeviceSupportsTypeF;
+    PKPaymentSetupMoreInfoItem *_marketExpressInfoItem;
+    CLLocationManager *_locationManager;
+    NSObject<OS_dispatch_source> *_locationTimer;
+    CDUnknownBlockType _locationCompletion;
     NSString *_productIdentifier;
     NSString *_referrerIdentifier;
     PKPaymentWebService *_webService;
@@ -37,8 +45,10 @@
     NSSet *_automaticExpressModes;
     NSArray *_allowedPaymentNetworks;
     NSSet *_requiredTransitNetworkIdentifiers;
+    NSSet *_allowedFeatureIdentifiers;
 }
 
+@property(retain, nonatomic) NSSet *allowedFeatureIdentifiers; // @synthesize allowedFeatureIdentifiers=_allowedFeatureIdentifiers;
 @property(retain, nonatomic) NSSet *requiredTransitNetworkIdentifiers; // @synthesize requiredTransitNetworkIdentifiers=_requiredTransitNetworkIdentifiers;
 @property(retain, nonatomic) NSArray *allowedPaymentNetworks; // @synthesize allowedPaymentNetworks=_allowedPaymentNetworks;
 @property(readonly, nonatomic) NSSet *automaticExpressModes; // @synthesize automaticExpressModes=_automaticExpressModes;
@@ -81,9 +91,19 @@
 - (void)_passAlreadyProvisioned;
 - (void)_provisioningNonceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeProvisionedPass;
+- (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
+- (BOOL)_isValidLocation:(id)arg1;
+- (void)_loadMoreInfoItemForMarket:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_startLocationSearchWithTimeout:(double)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_verifyPassIsSupportedForExpressInLocalMarket:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_ingestPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)ingestPaymentPassForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_noteProvisioningDidEndWithTaskIdentifier:(unsigned long long)arg1;
+- (unsigned long long)_noteProvisioningDidBegin;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveProvisioningForCredential:(id)arg1;
+- (void)declineTerms;
 - (void)acceptTerms;
 - (void)_requestEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)requestEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -97,6 +117,7 @@
 - (void)_queryEligibilityForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queryRequirementsForCredential:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_filterPaymentSetupProducts:(id)arg1;
+- (void)setupAccountCredentialForProvisioning:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setupProductForProvisioning:(id)arg1 includePurchases:(BOOL)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestPurchasesForProduct:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestProvisioningMethodMetadataForProduct:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -104,8 +125,9 @@
 - (void)browsableBankAppsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updatePaymentSetupProductModelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_informDelegatesOfPaymentPassUpdateOnCredential:(id)arg1;
-- (void)_downloadRemoteAssetsForPaymentPass:(id)arg1 paymentCredential:(id)arg2;
-- (void)_downloadPassForPaymentCredential:(id)arg1;
+- (void)_downloadRemoteAssetsForPaymentPass:(id)arg1 paymentCredential:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_updateCredentialWithPaymentPassAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateCredentialWithPaymentPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_associateCredential:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_credentialIsValidForSetupConfiguration:(id)arg1;
 - (BOOL)_hasSetupConfiguration;
@@ -113,6 +135,11 @@
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)updateRemoteCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)retrieveAllAvaialbleCredentials:(CDUnknownBlockType)arg1;
+- (id)_newSetupProductForFeatureIdentifier:(unsigned long long)arg1;
+- (void)setupFeatures:(CDUnknownBlockType)arg1;
+- (void)_addAccountToProductMatchingFeatureIdentifier:(unsigned long long)arg1;
+- (void)retrieveAccountCredentials:(CDUnknownBlockType)arg1;
+- (id)supportedFeatureIdentifierStrings;
 - (void)retrieveRemoteCredentials:(CDUnknownBlockType)arg1;
 - (id)_doesDisplayableErrorConstitutePreflightFailure:(id)arg1;
 - (void)preflightWithCompletion:(CDUnknownBlockType)arg1;
@@ -125,6 +152,7 @@
 - (void)reset;
 - (long long)_defaultResetState;
 - (void)dealloc;
+- (id)initWithWebService:(id)arg1 paymentSetupRequest:(id)arg2;
 - (id)initWithWebService:(id)arg1;
 @property(readonly, nonatomic) BOOL suppressDefaultCardholderNameField;
 

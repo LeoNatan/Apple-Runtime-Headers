@@ -8,6 +8,7 @@
 
 @class NSAttributedString, NSString, NSURL, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBadgeViewElement : SKUIViewElement
 {
     UIImage *_fallbackImage;

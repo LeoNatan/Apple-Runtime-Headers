@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADBlipEffect.h>
 
+__attribute__((visibility("hidden")))
 @interface OADLuminanceEffect : OADBlipEffect
 {
     float mBrightness;

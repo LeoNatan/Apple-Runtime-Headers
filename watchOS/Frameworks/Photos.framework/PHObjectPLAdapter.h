@@ -9,10 +9,11 @@
 #import <Photos/PHFetchDictionaryAccessing-Protocol.h>
 #import <Photos/PHMutableFetchDictionaryAccessing-Protocol.h>
 
-@class NSMutableDictionary, NSMutableOrderedSet, NSString, PLManagedObject;
+@class NSMutableDictionary, NSMutableOrderedSet, NSString, PHPhotoLibrary, PLManagedObject;
 
 @interface PHObjectPLAdapter : NSObject <PHFetchDictionaryAccessing, PHMutableFetchDictionaryAccessing>
 {
+    PHPhotoLibrary *_photoLibrary;
     PLManagedObject *_backingManagedObject;
     NSMutableOrderedSet *_ignoredKeys;
     NSMutableDictionary *_modifiedKeyValues;
@@ -21,6 +22,7 @@
 @property(retain, nonatomic) NSMutableDictionary *modifiedKeyValues; // @synthesize modifiedKeyValues=_modifiedKeyValues;
 @property(retain, nonatomic) NSMutableOrderedSet *ignoredKeys; // @synthesize ignoredKeys=_ignoredKeys;
 @property(readonly, nonatomic) PLManagedObject *backingManagedObject; // @synthesize backingManagedObject=_backingManagedObject;
+@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
@@ -29,7 +31,7 @@
 - (id)objectForKey:(id)arg1;
 - (id)mutableAccessingCopy;
 - (id)objectWithPropertySets:(id)arg1;
-- (id)initWithPLManagedObject:(id)arg1;
+- (id)initWithPLManagedObject:(id)arg1 photoLibrary:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

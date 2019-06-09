@@ -6,21 +6,24 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class FI_TTableViewController, FI_TTableViewDataSource;
+#import <FinderKit/TMarkTornDown-Protocol.h>
+
+@class FI_TTableViewController, FI_TTableViewDataSource, NSObject, NSString;
 @protocol TSearchCriteriaSheetDelegate;
 
 __attribute__((visibility("hidden")))
-@interface FI_TSearchCriteriaSheetController : NSWindowController
+@interface FI_TSearchCriteriaSheetController : NSWindowController <TMarkTornDown>
 {
     FI_TTableViewController *_tableViewController;
     FI_TTableViewDataSource *_tableViewDataSource;
-    id <TSearchCriteriaSheetDelegate> _delegate;
+    struct TNSWeakPtr<NSObject<TSearchCriteriaSheetDelegate>, void> _weakDelegate;
     struct TNSRef<NSWindow, void> _parentWindow;
     struct TNSRef<NSArray, void> _attributeNamesInMenu;
     _Bool _isBackupBrowserWindow;
+    _Bool tornDown;
 }
 
-@property id <TSearchCriteriaSheetDelegate> delegate; // @synthesize delegate=_delegate;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)sheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
@@ -30,8 +33,15 @@ __attribute__((visibility("hidden")))
 - (void)showWindow:(id)arg1;
 - (void)showSheet:(void *)arg1;
 - (void)windowDidLoad;
+@property __weak NSObject<TSearchCriteriaSheetDelegate> *delegate; // @dynamic delegate;
 - (void)aboutToTearDown;
 - (id)initWithParentWindow:(id)arg1 attributeNamesInMenu:(id)arg2 isBackupBrowserWindow:(_Bool)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

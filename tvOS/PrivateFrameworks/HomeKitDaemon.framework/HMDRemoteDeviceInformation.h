@@ -6,34 +6,42 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMDDevice, HMFTimer, NSMutableArray, NSMutableSet;
+#import <HomeKitDaemon/HMFObject-Protocol.h>
 
-@interface HMDRemoteDeviceInformation : HMFObject
+@class HMDDevice, HMFTimer, NSArray, NSMutableArray, NSString;
+@protocol HMFLocking;
+
+@interface HMDRemoteDeviceInformation : HMFObject <HMFObject>
 {
-    _Bool _pinging;
-    _Bool _pingConfirmed;
-    _Bool _shouldConfirm;
-    _Bool _reachable;
-    HMDDevice *_device;
-    NSMutableSet *_pendingPingIdentifiers;
-    HMFTimer *_retryTimer;
+    id <HMFLocking> _lock;
     NSMutableArray *_confirmationHandlers;
+    _Bool _reachable;
+    long long _state;
+    HMDDevice *_device;
+    HMFTimer *_retryTimer;
 }
 
-@property(readonly, nonatomic) NSMutableArray *confirmationHandlers; // @synthesize confirmationHandlers=_confirmationHandlers;
 @property(retain, nonatomic) HMFTimer *retryTimer; // @synthesize retryTimer=_retryTimer;
-@property(nonatomic, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
-@property(readonly, nonatomic) NSMutableSet *pendingPingIdentifiers; // @synthesize pendingPingIdentifiers=_pendingPingIdentifiers;
-@property(nonatomic) _Bool shouldConfirm; // @synthesize shouldConfirm=_shouldConfirm;
-@property(nonatomic, getter=isPingConfirmed) _Bool pingConfirmed; // @synthesize pingConfirmed=_pingConfirmed;
-@property(nonatomic, getter=isPinging) _Bool pinging; // @synthesize pinging=_pinging;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
 - (void)completeConfirmationsWithError:(id)arg1;
 - (void)queueConfirmationHandler:(CDUnknownBlockType)arg1 timeout:(double)arg2;
-- (id)description;
+@property(getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
+- (void)clearState:(long long)arg1;
+- (void)setState:(long long)arg1;
+@property(readonly) long long state; // @synthesize state=_state;
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
 - (id)initWithDevice:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *propertyDescription;
+@property(readonly, copy) NSString *shortDescription;
+@property(readonly) Class superclass;
 
 @end
 

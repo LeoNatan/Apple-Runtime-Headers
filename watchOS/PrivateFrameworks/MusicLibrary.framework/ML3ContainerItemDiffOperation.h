@@ -8,7 +8,6 @@
 
 @class ML3DatabaseConnection, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ML3ContainerItemDiffOperation : NSOperation
 {
     long long _containerPersistentID;

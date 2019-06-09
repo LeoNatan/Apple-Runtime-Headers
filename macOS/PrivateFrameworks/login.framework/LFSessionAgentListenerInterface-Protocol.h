@@ -32,8 +32,6 @@
 - (void)SACSwitchToUser:(NSDictionary *)arg1 reply:(void (^)(int))arg2;
 - (void)SACSetKeyboardType:(int)arg1 productID:(int)arg2 vendorID:(int)arg3 countryCode:(int)arg4 reply:(void (^)(int))arg5;
 - (void)SACSetAutologinPassword:(NSString *)arg1 reply:(void (^)(int))arg2;
-- (void)SACSetAppleIDForUser:(NSString *)arg1 verified:(BOOL)arg2 reply:(void (^)(int))arg3;
-- (void)SACUpdateAppleIDUserLogin:(NSString *)arg1 reply:(void (^)(int))arg2;
 - (void)SACRestartForUser:(NSString *)arg1 reply:(void (^)(int))arg2;
 - (void)SACScreenSaverDidFadeInBackground:(BOOL)arg1 psnHi:(unsigned int)arg2 psnLow:(unsigned int)arg3 reply:(void (^)(int))arg4;
 - (void)SACScreenSaverIsRunningInBackground:(void (^)(int, BOOL))arg1;

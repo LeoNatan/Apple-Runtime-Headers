@@ -5,6 +5,7 @@
 //
 
 @class NSArray, NSString;
+@protocol INIntentResponseObserver;
 
 @protocol INCExtensionProxy
 - (void)resolveIntentSlotKeyPaths:(NSArray *)arg1 completionHandler:(void (^)(_Bool, INIntent *, NSDictionary *))arg2;
@@ -14,5 +15,9 @@
 
 @optional
 @property(copy, nonatomic) CDUnknownBlockType backgroundAppHandler;
+- (void)getDefaultValueForParameterNamed:(NSString *)arg1 completionHandler:(void (^)(id, NSError *))arg2;
+- (void)getOptionsForParameterNamed:(NSString *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
+- (void)stopSendingUpdates;
+- (void)startSendingUpdatesToObserver:(id <INIntentResponseObserver>)arg1;
 @end
 

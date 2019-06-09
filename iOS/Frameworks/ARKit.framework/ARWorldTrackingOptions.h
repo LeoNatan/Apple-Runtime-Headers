@@ -16,6 +16,7 @@
     _Bool _deterministicMode;
     _Bool _mlModelEnabled;
     _Bool _deliverRawSceneUnderstandingResults;
+    _Bool _collaborationEnabled;
     ARImageSensorSettings *_imageSensorSettings;
     NSString *_deviceModel;
     ARWorldMap *_initialWorldMap;
@@ -24,6 +25,7 @@
     double _minVergenceAngle;
 }
 
+@property(nonatomic, getter=isCollaborationEnabled) _Bool collaborationEnabled; // @synthesize collaborationEnabled=_collaborationEnabled;
 @property(nonatomic) _Bool deliverRawSceneUnderstandingResults; // @synthesize deliverRawSceneUnderstandingResults=_deliverRawSceneUnderstandingResults;
 @property(nonatomic) _Bool mlModelEnabled; // @synthesize mlModelEnabled=_mlModelEnabled;
 @property(nonatomic) double minVergenceAngle; // @synthesize minVergenceAngle=_minVergenceAngle;
@@ -38,6 +40,8 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSDictionary *dictionary;
+- (unsigned int)cameraIdForCaptureDeviceType:(id)arg1;
+- (id)initWithImageSensorSettings:(id)arg1;
 - (id)init;
 
 @end

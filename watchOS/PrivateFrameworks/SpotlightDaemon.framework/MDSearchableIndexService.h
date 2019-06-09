@@ -22,6 +22,7 @@
     NSObject<OS_xpc_object> *_clientConnection;
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSString *_clientBundleID;
+    NSString *_clientPersonaID;
     unsigned int _clientUID;
     NSString *_protectionClass;
 }
@@ -31,6 +32,7 @@
 @property(nonatomic) _Bool isInternal; // @synthesize isInternal=_isInternal;
 @property(copy, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
 @property(nonatomic) unsigned int clientUID; // @synthesize clientUID=_clientUID;
+@property(copy, nonatomic) NSString *clientPersonaID; // @synthesize clientPersonaID=_clientPersonaID;
 @property(copy, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *clientConnection; // @synthesize clientConnection=_clientConnection;
@@ -66,14 +68,12 @@
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)addInteraction:(id)arg1 intentClassName:(id)arg2 bundleID:(id)arg3 protectionClass:(id)arg4 options:(int)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)performDataMigrationWithTimeout:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)performIndexJob:(id)arg1;
-- (void)performIndexJob:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)_forceAppWithBundleID:(id)arg1 toPerformJob:(id)arg2;
 - (void)deleteActionsWithIdentifiers:(id)arg1 options:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteActionsBeforeTime:(double)arg1 options:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2 options:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteAllUserActivities:(id)arg1 options:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_performIndexJob:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
+- (void)performIndexJob:(id)arg1 protectionClass:(id)arg2 acknowledgementHandler:(CDUnknownBlockType)arg3;
 - (void)checkInWithProtectionClass:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)flushUserActivities;
 - (void)_dispatchActivities:(id)arg1;
@@ -83,7 +83,7 @@
 - (void)deleteAllSearchableItemsWithProtectionClass:(id)arg1 forBundleID:(id)arg2 options:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteAllSearchableItemsWithBundleID:(id)arg1 protectionClass:(id)arg2 shouldGC:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_deleteAllSearchableItemsWithBundleID:(id)arg1 protectionClass:(id)arg2 shouldGC:(_Bool)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)_issueCommand:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_issueCommand:(id)arg1 searchContext:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)provideFileURLForBundle:(id)arg1 identifier:(id)arg2 type:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)provideDataForBundle:(id)arg1 identifier:(id)arg2 type:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -92,7 +92,7 @@
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_dispatchToReceiversWithBundleID:(id)arg1 protectionClass:(id)arg2 options:(int)arg3 items:(id)arg4 itemsText:(id)arg5 itemsHTML:(id)arg6 deletes:(id)arg7;
-- (void)_processIndexDataForBundle:(id)arg1 protectionClass:(id)arg2 options:(int)arg3 items:(id)arg4 itemsText:(id)arg5 clientState:(id)arg6 clientStateName:(id)arg7 deletes:(id)arg8 completionHandler:(CDUnknownBlockType)arg9;
+- (void)_processIndexDataForBundle:(id)arg1 protectionClass:(id)arg2 personaID:(id)arg3 options:(int)arg4 items:(id)arg5 itemsText:(id)arg6 clientState:(id)arg7 clientStateName:(id)arg8 deletes:(id)arg9 completionHandler:(CDUnknownBlockType)arg10;
 - (_Bool)_canProcessIndexDataForBundle:(id)arg1 itemsDecoder:(id)arg2 deletesDecoder:(id)arg3 clientState:(id)arg4 clientStateName:(id)arg5 outError:(id *)arg6;
 - (_Bool)_jobForIndex:(int)arg1;
 - (id)_checkBundleIDHelper:(id)arg1;

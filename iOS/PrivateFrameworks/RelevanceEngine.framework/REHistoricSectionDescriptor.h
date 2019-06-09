@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <RelevanceEngine/NSCopying-Protocol.h>
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/REHistoricSectionDescriptorProperties-Protocol.h>
 
 @class NSArray, NSOrderedSet, NSSet, NSString, RESectionDescriptor;
 
-@interface REHistoricSectionDescriptor : NSObject <REIndentedDescription, NSCopying>
+@interface REHistoricSectionDescriptor : NSObject <REHistoricSectionDescriptorProperties, NSCopying>
 {
     NSOrderedSet *_rules;
     _Bool _invertsRanking;
@@ -23,19 +23,14 @@
 @property(nonatomic) long long maxElementCount; // @synthesize maxElementCount=_maxElementCount;
 @property(nonatomic) _Bool invertsRanking; // @synthesize invertsRanking=_invertsRanking;
 - (void).cxx_destruct;
-- (id)descriptionWithIndent:(unsigned long long)arg1;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSSet *rules;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSString *name;
 - (id)init;
 @property(retain, nonatomic) NSArray *orderedRules;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

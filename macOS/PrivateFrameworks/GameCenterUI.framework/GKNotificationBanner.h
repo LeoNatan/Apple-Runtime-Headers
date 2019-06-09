@@ -13,7 +13,8 @@
 + (void)showBannerWithTitle:(id)arg1 player:(id)arg2 message:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)showBannerWithTitle:(id)arg1 message:(id)arg2 duration:(double)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)showBannerWithTitle:(id)arg1 message:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (void)showBannerWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)showWelcomeBannerWithTitle:(id)arg1 message:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)showBannerWithTitle:(id)arg1 player:(id)arg2 image:(id)arg3 message:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 
 @end
 

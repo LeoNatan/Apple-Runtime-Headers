@@ -13,11 +13,11 @@
     MFSMTPConnection *_connection;
 }
 
+- (void).cxx_destruct;
 - (id)deliverMessageData:(id)arg1 toRecipients:(id)arg2;
 - (void)setAccount:(id)arg1;
 - (void)_openConnection;
 - (Class)deliveryClass;
-- (void)dealloc;
 
 @end
 

@@ -6,12 +6,12 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UIColor, UIImageView;
+@class UIColor, UIVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface _UIParallaxDimmingView : UIView
 {
-    UIImageView *leftEdgeFade;
+    UIVisualEffectView *leftEdgeFade;
     _Bool _backgroundIsDimmed;
     UIColor *_dimmingColor;
     UIView *_addingSubview;

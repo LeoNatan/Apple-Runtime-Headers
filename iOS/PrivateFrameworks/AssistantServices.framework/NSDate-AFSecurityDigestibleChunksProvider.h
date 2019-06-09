@@ -12,6 +12,9 @@
 
 @interface NSDate (AFSecurityDigestibleChunksProvider) <AFSecurityDigestibleChunksProviding>
 - (void)af_enumerateDigestibleChunksWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (_Bool)af_isTomorrow;
+- (_Bool)af_isToday;
+- (_Bool)_af_isSameDayAsDate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

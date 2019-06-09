@@ -16,6 +16,8 @@
     _Bool _personBuildingDisabled;
     _Bool _personBuilderMergeCandidatesDisabled;
     float _faceClusteringThreshold;
+    float _faceClusteringJunkThreshold;
+    float _faceClusteringAgeThreshold;
     float _faceMergeFaceprintDistanceThreshold;
     float _facePrimarySuggestionsThreshold;
     unsigned int _faceAlgorithmUmbrellaVersion;
@@ -39,6 +41,8 @@
 @property(nonatomic) unsigned long long minimumSuggestionSize; // @synthesize minimumSuggestionSize=_minimumSuggestionSize;
 @property(nonatomic) float facePrimarySuggestionsThreshold; // @synthesize facePrimarySuggestionsThreshold=_facePrimarySuggestionsThreshold;
 @property(nonatomic) float faceMergeFaceprintDistanceThreshold; // @synthesize faceMergeFaceprintDistanceThreshold=_faceMergeFaceprintDistanceThreshold;
+@property(nonatomic) float faceClusteringAgeThreshold; // @synthesize faceClusteringAgeThreshold=_faceClusteringAgeThreshold;
+@property(nonatomic) float faceClusteringJunkThreshold; // @synthesize faceClusteringJunkThreshold=_faceClusteringJunkThreshold;
 @property(nonatomic) float faceClusteringThreshold; // @synthesize faceClusteringThreshold=_faceClusteringThreshold;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

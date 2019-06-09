@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldDisplayBadges;
     _Bool _shouldDisplayAssetExplorerReviewScreenBadges;
     _Bool _shouldDisplayPlayButtons;
+    _Bool _shouldDisplayMuteButtons;
     _Bool _shouldDisplayProgressIndicators;
     _Bool _shouldAutoplayOnAppear;
     _Bool _shouldDisplayBufferingIndicators;
@@ -54,6 +55,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setShouldDisplayBufferingIndicators:) _Bool shouldDisplayBufferingIndicators; // @synthesize shouldDisplayBufferingIndicators=_shouldDisplayBufferingIndicators;
 @property(nonatomic, setter=_setShouldAutoplayOnAppear:) _Bool shouldAutoplayOnAppear; // @synthesize shouldAutoplayOnAppear=_shouldAutoplayOnAppear;
 @property(nonatomic, setter=_setShouldDisplayProgressIndicators:) _Bool shouldDisplayProgressIndicators; // @synthesize shouldDisplayProgressIndicators=_shouldDisplayProgressIndicators;
+@property(readonly, nonatomic) _Bool shouldDisplayMuteButtons; // @synthesize shouldDisplayMuteButtons=_shouldDisplayMuteButtons;
 @property(nonatomic, setter=_setShouldDisplayPlayButtons:) _Bool shouldDisplayPlayButtons; // @synthesize shouldDisplayPlayButtons=_shouldDisplayPlayButtons;
 @property(nonatomic, setter=_setShouldDisplayAssetExplorerReviewScreenBadges:) _Bool shouldDisplayAssetExplorerReviewScreenBadges; // @synthesize shouldDisplayAssetExplorerReviewScreenBadges=_shouldDisplayAssetExplorerReviewScreenBadges;
 @property(nonatomic, setter=_setShouldDisplayBadges:) _Bool shouldDisplayBadges; // @synthesize shouldDisplayBadges=_shouldDisplayBadges;
@@ -68,6 +70,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=setPresentedForPreview:) _Bool isPresentedForPreview; // @synthesize isPresentedForPreview=_isPresentedForPreview;
 @property(nonatomic, setter=setChromeVisible:) _Bool isChromeVisible; // @synthesize isChromeVisible=_isChromeVisible;
 - (void).cxx_destruct;
+- (void)_setShouldDisplayMuteButtons:(_Bool)arg1;
+@property(readonly, nonatomic) struct CGSize muteButtonSize;
 @property(readonly, nonatomic) struct CGSize playButtonSize;
 - (void)updateIfNeeded;
 @property(readonly, nonatomic) _Bool shouldDisableNavigationBarsVisibility;

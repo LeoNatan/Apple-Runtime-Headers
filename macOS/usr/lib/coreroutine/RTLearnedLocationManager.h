@@ -10,7 +10,7 @@
 #import <coreroutine/RTLearnedLocationEngineProtocol-Protocol.h>
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSString, RTAccountManager, RTContactsManager, RTDefaultsManager, RTDiagnostics, RTDistanceCalculator, RTEventManager, RTFingerprintManager, RTLearnedLocationAlgorithmMetricCalculator, RTLearnedLocationEngine, RTLearnedLocationStore, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPersonalizationPortraitManager, RTVisitManager, RTXPCActivityManager;
+@class NSString, RTAccountManager, RTContactsManager, RTDefaultsManager, RTDiagnostics, RTDistanceCalculator, RTEventManager, RTFingerprintManager, RTLearnedLocationAlgorithmMetricCalculator, RTLearnedLocationEngine, RTLearnedLocationStore, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMapsSupportManager, RTMetricManager, RTMotionActivityManager, RTPersonalizationPortraitManager, RTPlatform, RTVisitManager, RTXPCActivityManager;
 
 @interface RTLearnedLocationManager : RTService <RTLearnedLocationEngineProtocol, RTPurgable, RTDiagnosticProvider>
 {
@@ -34,6 +34,7 @@
     RTLearnedLocationStore *_learnedLocationStore;
     RTDistanceCalculator *_distanceCalculator;
     RTMapServiceManager *_mapServiceManager;
+    RTPlatform *_platform;
 }
 
 + (double)maxDistanceFromInterval:(double)arg1 velocity:(double)arg2;
@@ -41,6 +42,7 @@
 + (id)migrateLegacyMapItemWithGeoMapItem:(id)arg1 geoMapItemHandle:(id)arg2 source:(unsigned long long)arg3 mapServiceManager:(id)arg4 error:(id *)arg5;
 + (id)modeToString:(long long)arg1;
 @property(nonatomic) BOOL available; // @synthesize available=_available;
+@property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 @property(readonly, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
@@ -62,9 +64,11 @@
 @property(readonly, nonatomic) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 - (void).cxx_destruct;
 - (void)sendDiagnosticsToURL:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)reconstructTransitionsWithHandler:(CDUnknownBlockType)arg1;
+- (void)_reconstructTransitionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)updateTransitionWithIdentifier:(id)arg1 motionActivityType:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)logLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
-- (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)onLearnedLocationStoreNotification:(id)arg1;
 - (void)_onLearnedLocationStoreNotification:(id)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
@@ -84,6 +88,14 @@
 - (void)removeLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)addLocationOfInterest:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_addLocationOfInterest:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)classifyPlaceTypesWithHandler:(CDUnknownBlockType)arg1;
+- (void)_classifyPlaceTypesWithHandler:(CDUnknownBlockType)arg1;
+- (void)reconcileLearnedLocationsWithHandler:(CDUnknownBlockType)arg1;
+- (void)_reconcileLearnedLocationsWithHandler:(CDUnknownBlockType)arg1;
+- (void)trainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
+- (void)_trainLocationsOfInterestModelWithHandler:(CDUnknownBlockType)arg1;
+- (void)forceRelabeling:(CDUnknownBlockType)arg1;
+- (void)_forceRelabeling:(CDUnknownBlockType)arg1;
 - (void)trainWithHandler:(CDUnknownBlockType)arg1;
 - (void)_trainWithHandler:(CDUnknownBlockType)arg1;
 - (void)updateLocationOfInterestWithIdentifier:(id)arg1 type:(unsigned long long)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
@@ -101,6 +113,8 @@
 - (void)_addLocationOfInterestWithType:(unsigned long long)arg1 mapItem:(id)arg2 customLabel:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)fetchTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchVisitIdentifiersIn:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchVisitIdentifiersIn:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_fetchLocationOfInterestWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchModeAtLocation:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -117,21 +131,28 @@
 - (void)_fetchLocationsOfInterestVisitedSinceDate:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchLocationsOfInterestWithPlaceType:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_fetchLocationsOfInterestWithPlaceType:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_queryProvider:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)queryProvider:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchInferredMapItemForVisitIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchInferredMapItemForVisitIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchFusionCandidatesForVisitIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchFusionCandidatesForVisitIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)_getLocationsOfInterestVisitedBeforeDate:(id)arg1 fromLocationsOfInterest:(id)arg2 error:(id *)arg3;
 - (id)_getLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 fromLocationsOfInterest:(id)arg3 error:(id *)arg4;
 - (void)fetchRecentLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
 - (void)_fetchRecentLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
-- (void)clearWithHandler:(CDUnknownBlockType)arg1;
-- (void)_clearWithHandler:(CDUnknownBlockType)arg1;
+- (BOOL)validateUpdatedMapItem:(id)arg1 locationOfInterest:(id)arg2 error:(id *)arg3;
+- (id)createAndStoreNewPlaceWithMapItem:(id)arg1 customLabel:(id)arg2 mapItemSource:(unsigned long long)arg3 outError:(id *)arg4;
+- (BOOL)userCorrectionForMapItem:(id)arg1 type:(unsigned long long)arg2 outError:(id *)arg3;
 - (void)_shutdown;
 - (void)_setup;
 - (void)_migrateStateModelLegacy:(CDUnknownBlockType)arg1;
 - (void)_migrateLegacyMapItems:(CDUnknownBlockType)arg1;
 - (void)_performLegacyMigrations:(CDUnknownBlockType)arg1;
 - (void)_logLearnedState;
-- (id)initWithQueue:(id)arg1 accountManager:(id)arg2 algorithmMetricCalculator:(id)arg3 contactsManager:(id)arg4 defaultsManager:(id)arg5 diagnostics:(id)arg6 distanceCalculator:(id)arg7 eventManager:(id)arg8 fingerprintManager:(id)arg9 learnedLocationStore:(id)arg10 locationManager:(id)arg11 locationStore:(id)arg12 mapServiceManager:(id)arg13 mapsSupportManager:(id)arg14 metricManager:(id)arg15 motionActivityManager:(id)arg16 portraitManager:(id)arg17 visitManager:(id)arg18 xpcActivityManager:(id)arg19;
+- (id)initWithQueue:(id)arg1 accountManager:(id)arg2 algorithmMetricCalculator:(id)arg3 contactsManager:(id)arg4 defaultsManager:(id)arg5 diagnostics:(id)arg6 distanceCalculator:(id)arg7 eventManager:(id)arg8 fingerprintManager:(id)arg9 learnedLocationStore:(id)arg10 locationManager:(id)arg11 locationStore:(id)arg12 mapServiceManager:(id)arg13 mapsSupportManager:(id)arg14 metricManager:(id)arg15 motionActivityManager:(id)arg16 platform:(id)arg17 portraitManager:(id)arg18 visitManager:(id)arg19 xpcActivityManager:(id)arg20;
 - (id)initWithQueue:(id)arg1 distanceCalculator:(id)arg2 learnedLocationEngine:(id)arg3 learnedLocationStore:(id)arg4 mapServiceManager:(id)arg5;
 - (id)init;
 

@@ -6,6 +6,7 @@
 
 #import <UIKit/UITextField.h>
 
+__attribute__((visibility("hidden")))
 @interface CKDetailsViewAddGroupNameViewUITextField : UITextField
 {
     _Bool _canResignFirstResponderInternal;

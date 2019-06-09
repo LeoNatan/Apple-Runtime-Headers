@@ -37,6 +37,7 @@
 - (double)_maxWidthOfItems:(id)arg1 sharesLeftEdge:(BOOL)arg2 sharesRightEdge:(BOOL)arg3 containsFlexibleSpaceItems:(char *)arg4;
 - (double)_minWidthOfItems:(id)arg1 sharesLeftEdge:(BOOL)arg2 sharesRightEdge:(BOOL)arg3;
 - (double)_aggregateWidthOfItems:(id)arg1 sharesLeftEdge:(BOOL)arg2 sharesRightEdge:(BOOL)arg3 widthMeasurement:(CDUnknownBlockType)arg4;
+- (id)_overflowMenuParticipatingItems:(id)arg1;
 - (id)_prioritizedItems:(id)arg1;
 - (struct CGRect)_centerRectGivenItems:(id)arg1 remainingLeftWidth:(double)arg2 remainingRightWidth:(double)arg3 sharesLeftEdge:(BOOL)arg4 sharesRightEdge:(BOOL)arg5;
 - (struct CGRect)_centerRectGivenItems:(id)arg1 leftItems:(id)arg2 rightItems:(id)arg3 totalWidth:(double)arg4 xOrigin:(double)arg5;

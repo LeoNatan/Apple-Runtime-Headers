@@ -21,7 +21,6 @@
     BOOL isYearlessLeapMonthBirthday;
     BOOL suggestionInfoAcknowledged;
     int availabilityEnum;
-    NSString *birthdayTitle;
     id <EKProtocolStructuredLocation> ekStructuredStartLocation;
     id <EKProtocolStructuredLocation> ekStructuredEndLocation;
     NSDate *endDateUnadjustedFromUTC;
@@ -72,7 +71,7 @@
 @property(readonly, copy, nonatomic) NSString *responseComment; // @synthesize responseComment;
 @property(readonly, copy, nonatomic) NSString *privacyLevelString; // @synthesize privacyLevelString;
 @property(readonly, nonatomic) unsigned long long participantsStatus; // @synthesize participantsStatus;
-@property(readonly, nonatomic) NSString *lunarCalendarString; // @synthesize lunarCalendarString;
+@property(readonly, copy, nonatomic) NSString *lunarCalendarString; // @synthesize lunarCalendarString;
 @property(readonly, nonatomic) NSString *nameForBirthday; // @synthesize nameForBirthday;
 @property(readonly, nonatomic) BOOL isYearlessLeapMonthBirthday; // @synthesize isYearlessLeapMonthBirthday;
 @property(readonly, nonatomic) BOOL isYearlessBirthday; // @synthesize isYearlessBirthday;
@@ -84,7 +83,6 @@
 @property(readonly, copy, nonatomic) id <EKProtocolStructuredLocation> ekStructuredEndLocation; // @synthesize ekStructuredEndLocation;
 @property(readonly, copy, nonatomic) id <EKProtocolStructuredLocation> ekStructuredStartLocation; // @synthesize ekStructuredStartLocation;
 @property(readonly, nonatomic) BOOL dontSendNotificationForChanges; // @synthesize dontSendNotificationForChanges;
-@property(readonly, copy, nonatomic) NSString *birthdayTitle; // @synthesize birthdayTitle;
 @property(readonly, nonatomic) int availabilityEnum; // @synthesize availabilityEnum;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long status;

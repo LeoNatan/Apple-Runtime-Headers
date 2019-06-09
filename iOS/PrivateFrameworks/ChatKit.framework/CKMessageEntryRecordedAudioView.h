@@ -11,6 +11,7 @@
 @class CKAudioController, CKAudioMediaObject, NSString, UIButton, UIImage, UIImageView, UILabel, UIVisualEffectView;
 @protocol CKMessageEntryRecordedAudioViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKMessageEntryRecordedAudioView : UIView <CKAudioControllerDelegate>
 {
     CKAudioMediaObject *_audioMediaObject;

@@ -43,6 +43,8 @@
     _Bool contentsIsSingleValue;
     _Bool acceptsEmoji;
     _Bool acceptsDictationSearchResults;
+    _Bool useAutomaticEndpointing;
+    _Bool showDictationButton;
     _Bool forceEnableDictation;
     _Bool forceDisableDictation;
     _Bool forceDefaultDictationInfo;
@@ -115,6 +117,8 @@
 @property(nonatomic) _Bool forceDefaultDictationInfo; // @synthesize forceDefaultDictationInfo;
 @property(nonatomic) _Bool forceDisableDictation; // @synthesize forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation; // @synthesize forceEnableDictation;
+@property(nonatomic) _Bool showDictationButton; // @synthesize showDictationButton;
+@property(nonatomic) _Bool useAutomaticEndpointing; // @synthesize useAutomaticEndpointing;
 @property(nonatomic) _Bool acceptsDictationSearchResults; // @synthesize acceptsDictationSearchResults;
 @property(nonatomic) _Bool acceptsEmoji; // @synthesize acceptsEmoji;
 @property(nonatomic) _Bool acceptsPayloads; // @synthesize acceptsPayloads;

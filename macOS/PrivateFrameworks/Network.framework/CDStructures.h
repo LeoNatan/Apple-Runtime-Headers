@@ -122,17 +122,18 @@ struct nw_activity_epilogue_report_s {
     struct nw_activity_report_s activity;
     unsigned int fragments_quenched;
     int completion_reason;
-    unsigned char __pad[4];
+    unsigned char __pad[0];
 };
 
 struct nw_activity_report_s {
+    unsigned long long investigation_identifier;
     unsigned int domain;
     unsigned int label;
     unsigned char activity_uuid[16];
     unsigned char parent_activity_uuid[16];
     unsigned int retry:1;
     unsigned int __pad_bits:7;
-    unsigned char __pad[3];
+    unsigned char __pad[7];
 };
 
 struct nw_connection_report_s {
@@ -204,8 +205,12 @@ struct nw_connection_report_s {
     unsigned int first_party:1;
     unsigned int is_daemon:1;
     unsigned int tls_handshake_timed_out:1;
-    unsigned int __pad_bits:2;
-    unsigned char __pad[7];
+    unsigned int is_path_expensive:1;
+    unsigned int is_path_constrained:1;
+    unsigned int prohibits_expensive:1;
+    unsigned int prohibits_constrained:1;
+    unsigned int __pad_bits:6;
+    unsigned char __pad[6];
 };
 
 struct nw_protocol {

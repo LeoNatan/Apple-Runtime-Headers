@@ -6,23 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class IDSAuthenticationCertificate, NSData, NSString;
+@class NSArray, NSData, NSString;
 
 @interface IDSAuthenticationSigningResult : NSObject
 {
-    IDSAuthenticationCertificate *_authenticationCertificate;
+    NSArray *_authenticationCertificateSignatures;
     NSData *_inputData;
     NSData *_nonce;
-    NSData *_signature;
 }
 
-@property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;
 @property(readonly, nonatomic) NSData *nonce; // @synthesize nonce=_nonce;
 @property(readonly, nonatomic) NSData *inputData; // @synthesize inputData=_inputData;
-@property(readonly, nonatomic) IDSAuthenticationCertificate *authenticationCertificate; // @synthesize authenticationCertificate=_authenticationCertificate;
+@property(readonly, nonatomic) NSArray *authenticationCertificateSignatures; // @synthesize authenticationCertificateSignatures=_authenticationCertificateSignatures;
 - (void).cxx_destruct;
+- (id)description;
+- (id)initWithSubscriptionIdentifiers:(id)arg1 authenticationCertificates:(id)arg2 inputData:(id)arg3 nonce:(id)arg4 signature:(id)arg5;
 @property(readonly, nonatomic) NSString *serverVerifiableEncoding;
-- (id)initWithAuthenticationCertificate:(id)arg1 inputData:(id)arg2 nonce:(id)arg3 signature:(id)arg4;
 
 @end
 

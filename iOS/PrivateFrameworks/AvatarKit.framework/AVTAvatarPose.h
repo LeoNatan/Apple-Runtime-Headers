@@ -6,12 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <AvatarKit/NSCopying-Protocol.h>
+
 @class NSMutableDictionary;
 
-@interface AVTAvatarPose : NSObject
+@interface AVTAvatarPose : NSObject <NSCopying>
 {
-    NSMutableDictionary *_weights;
+    _Bool _hasNeckPosition;
+    _Bool _hasNeckOrientation;
     double _bakedAnimationBlendFactor;
+    NSMutableDictionary *_weights;
     struct SCNVector3 _neckPosition;
     struct SCNVector4 _neckOrientation;
 }
@@ -22,10 +26,15 @@
 @property(nonatomic) struct SCNVector4 neckOrientation; // @synthesize neckOrientation=_neckOrientation;
 @property(nonatomic) struct SCNVector3 neckPosition; // @synthesize neckPosition=_neckPosition;
 - (void).cxx_destruct;
+- (id)description;
+- (id)poseByMergingPose:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)initWithWeights:(id)arg1 neckPosition:(struct SCNVector3 *)arg2 neckOrientation:(struct SCNVector4 *)arg3 bakedAnimationBlendFactor:(double)arg4;
 - (id)dictionaryRepresentation;
 - (void)setWeight:(double)arg1 forBlendShapeNamed:(id)arg2;
 - (double)weightForBlendShapeNamed:(id)arg1;
+- (void)setWeights:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

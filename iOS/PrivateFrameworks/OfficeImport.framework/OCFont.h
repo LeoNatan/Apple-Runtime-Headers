@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool italic; // @synthesize italic=_italic;
 @property(nonatomic) _Bool bold; // @synthesize bold=_bold;
 @property(readonly, nonatomic) OCFontSubfamily *subfamily; // @synthesize subfamily=_subfamily;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSubfamily:(id)arg1 bold:(_Bool)arg2 italic:(_Bool)arg3;
 
 @end

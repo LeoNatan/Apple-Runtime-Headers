@@ -14,7 +14,6 @@
 @optional
 - (NSSet *)bulletinsFilteredBy:(unsigned int)arg1 enabledSectionIDs:(NSSet *)arg2 count:(unsigned int)arg3 lastCleared:(id)arg4;
 - (NSSet *)bulletinsFilteredBy:(unsigned int)arg1 count:(unsigned int)arg2 lastCleared:(id)arg3;
-- (NSString *)displayNameForFilterID:(NSString *)arg1;
 - (_Bool)syncsBulletinDismissal;
 - (void)handleBulletinActionResponse:(BBActionResponse *)arg1 withCompletion:(void (^)(_Bool))arg2;
 - (void)handleBulletinActionResponse:(BBActionResponse *)arg1;

@@ -6,28 +6,45 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, UICollectionView, UIImage, UIImageView;
+@class NSArray, UICollectionView, UIImage, UIImageView, _TVStackBackdropMaskingView, _TVStackBackdropView;
 
 __attribute__((visibility("hidden")))
 @interface _TVStackWrappingView : UIView
 {
-    UIImageView *_bgImageView;
-    UIImage *_backgroundImage;
-    NSArray *_headerSupplementaryViews;
+    UIImageView *_backgroundImageView;
+    _TVStackBackdropView *_backdropView;
+    _TVStackBackdropMaskingView *_maskedBackdropView;
+    _Bool _shouldAdjustForTabBarSafeAreaInsets;
+    _Bool _usesBackgroundImage;
+    _Bool _usesBackdropImage;
     UICollectionView *_stackView;
-    UIView *_backgroundView;
+    NSArray *_headerSupplementaryViews;
+    UIImage *_backgroundImage;
+    UIImage *_backdropImage;
+    long long _backdropBlurEffectStyle;
+    double _backdropInitialPeek;
+    double _backdropPeekGradient;
+    double _backdropMaskFactor;
     NSArray *_supplementaryCellLayoutAttributes;
 }
 
 @property(readonly, copy, nonatomic) NSArray *supplementaryCellLayoutAttributes; // @synthesize supplementaryCellLayoutAttributes=_supplementaryCellLayoutAttributes;
-@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(retain, nonatomic) UICollectionView *stackView; // @synthesize stackView=_stackView;
-@property(copy, nonatomic) NSArray *headerSupplementaryViews; // @synthesize headerSupplementaryViews=_headerSupplementaryViews;
+@property(nonatomic) double backdropMaskFactor; // @synthesize backdropMaskFactor=_backdropMaskFactor;
+@property(nonatomic) double backdropPeekGradient; // @synthesize backdropPeekGradient=_backdropPeekGradient;
+@property(nonatomic) double backdropInitialPeek; // @synthesize backdropInitialPeek=_backdropInitialPeek;
+@property(nonatomic) long long backdropBlurEffectStyle; // @synthesize backdropBlurEffectStyle=_backdropBlurEffectStyle;
+@property(nonatomic) _Bool usesBackdropImage; // @synthesize usesBackdropImage=_usesBackdropImage;
+@property(retain, nonatomic) UIImage *backdropImage; // @synthesize backdropImage=_backdropImage;
+@property(nonatomic) _Bool usesBackgroundImage; // @synthesize usesBackgroundImage=_usesBackgroundImage;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
+@property(nonatomic) _Bool shouldAdjustForTabBarSafeAreaInsets; // @synthesize shouldAdjustForTabBarSafeAreaInsets=_shouldAdjustForTabBarSafeAreaInsets;
+@property(copy, nonatomic) NSArray *headerSupplementaryViews; // @synthesize headerSupplementaryViews=_headerSupplementaryViews;
+@property(retain, nonatomic) UICollectionView *stackView; // @synthesize stackView=_stackView;
 - (void).cxx_destruct;
 - (id)preferredFocusEnvironments;
-- (void)configureSupplementaryCellLayoutAttributesWithAutomaticInsets:(struct UIEdgeInsets)arg1;
-- (void)safeAreaInsetsDidChange;
+- (void)configureSupplementaryCellLayoutAttributesWithAutomaticInsets:(struct UIEdgeInsets)arg1 sectionIndex:(long long)arg2;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

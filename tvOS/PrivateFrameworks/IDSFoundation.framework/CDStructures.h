@@ -63,9 +63,10 @@ struct IDSTCPConnection_ {
     CDStruct_183601bc *_field8;
     CDStruct_183601bc *_field9;
     struct IDSTCPLinkCounter_ *_field10;
-    struct IDSTCPConnection_ *_field11;
-    id _field12;
-    CDUnknownBlockType _field13;
+    int _field11;
+    struct IDSTCPConnection_ *_field12;
+    id _field13;
+    CDUnknownBlockType _field14;
 };
 
 struct IDSTCPLinkCounter_ {
@@ -160,7 +161,9 @@ typedef struct {
     char *_field1;
     char *_field2;
     char *_field3;
-} CDStruct_32bf18e6;
+    char *_field4;
+    _Bool _field5;
+} CDStruct_457e09f6;
 
 typedef struct {
     int length;
@@ -212,6 +215,7 @@ typedef struct {
     char _field19;
     int _field20;
     double _field21;
-    unsigned char _field22[0];
-} CDStruct_c4cff10b;
+    unsigned long long _field22;
+    unsigned char _field23[0];
+} CDStruct_12676517;
 

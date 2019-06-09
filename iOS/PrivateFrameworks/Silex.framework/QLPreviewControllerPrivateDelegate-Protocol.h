@@ -21,10 +21,12 @@
 - (void)previewController:(QLPreviewController *)arg1 willPresentPreviewItemAtIndex:(unsigned long long)arg2;
 - (void)previewController:(QLPreviewController *)arg1 didLoadPreviewItemAtIndex:(unsigned long long)arg2 withError:(NSError *)arg3;
 - (void)previewController:(QLPreviewController *)arg1 willLoadPreviewItemAtIndex:(unsigned long long)arg2;
+- (NSArray *)additionalActivitiesTypesForPreviewController:(QLPreviewController *)arg1;
 - (NSArray *)excludedActivityTypesForPreviewController:(QLPreviewController *)arg1;
 - (_Bool)shouldPresentDismissActionsWithoutEditedItemsForPreviewController:(QLPreviewController *)arg1;
 - (_Bool)shouldAppendDefaultDismissActionsForPreviewController:(QLPreviewController *)arg1;
 - (NSArray *)dismissActionsForPreviewController:(QLPreviewController *)arg1;
+- (_Bool)previewController:(QLPreviewController *)arg1 shouldAllowKeyCommandWithIdentifier:(unsigned long long)arg2;
 - (void)previewController:(QLPreviewController *)arg1 updatedContentsURL:(NSURL *)arg2 forEditedItem:(id <QLPreviewItem>)arg3;
 - (void)previewController:(QLPreviewController *)arg1 didFailToSaveEditedItem:(id <QLPreviewItem>)arg2 withError:(NSError *)arg3;
 - (void)previewController:(QLPreviewController *)arg1 willSaveEditedItem:(id <QLPreviewItem>)arg2;

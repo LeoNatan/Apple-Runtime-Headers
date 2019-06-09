@@ -13,6 +13,7 @@
 - (void)clientRemote_finishedWorkout:(HKWorkout *)arg1;
 - (void)clientRemote_stateDidChange:(long long)arg1 startDate:(NSDate *)arg2 endDate:(NSDate *)arg3;
 - (void)clientRemote_synchronizeWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)clientRemote_didFinishRecovery;
 - (void)clientRemote_didRecoverSeriesBuilders:(NSDictionary *)arg1;
 - (void)clientRemote_didChangeElapsedTimeBasisWithStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2;
 - (void)clientRemote_didUpdateEvents:(NSArray *)arg1;

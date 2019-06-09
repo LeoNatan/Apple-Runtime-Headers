@@ -12,6 +12,7 @@
 - (id)_briefDescriptionWithoutPII;
 - (id)_subtreeDescriptionWithoutPIIWithDepth:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *subtreeDescriptionWithoutPII;
+- (BOOL)mui_centeredScrollRectToVisible:(struct CGRect)arg1;
 - (void)mui_cancelSynchronousLayout;
 - (void)mui_performLayoutSynchronously;
 - (void)mui_prepareToLayoutSynchronously:(CDUnknownBlockType)arg1;

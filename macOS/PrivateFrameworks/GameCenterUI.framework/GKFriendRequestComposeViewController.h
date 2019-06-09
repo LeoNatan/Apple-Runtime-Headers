@@ -7,13 +7,12 @@
 #import <AppKit/NSViewController.h>
 
 #import <GameCenterUI/GKDialogControllerSizing-Protocol.h>
-#import <GameCenterUI/GKRestrictedViewController-Protocol.h>
 #import <GameCenterUI/GKViewController-Protocol.h>
 
 @class NSMutableDictionary, NSString;
 @protocol GKFriendRequestComposeViewControllerDelegate;
 
-@interface GKFriendRequestComposeViewController : NSViewController <GKDialogControllerSizing, GKRestrictedViewController, GKViewController>
+@interface GKFriendRequestComposeViewController : NSViewController <GKDialogControllerSizing, GKViewController>
 {
     id _remoteViewController;
     id <GKFriendRequestComposeViewControllerDelegate> _composeViewDelegateWeak;

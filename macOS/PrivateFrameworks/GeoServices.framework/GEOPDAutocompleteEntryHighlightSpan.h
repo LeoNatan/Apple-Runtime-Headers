@@ -17,14 +17,14 @@ __attribute__((visibility("hidden")))
     unsigned int _length;
     unsigned int _startIndex;
     struct {
-        unsigned int length:1;
-        unsigned int startIndex:1;
-    } _has;
+        unsigned int has_length:1;
+        unsigned int has_startIndex:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int length; // @synthesize length=_length;
-@property(nonatomic) unsigned int startIndex; // @synthesize startIndex=_startIndex;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,10 +33,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasLength;
+@property(nonatomic) unsigned int length;
 @property(nonatomic) BOOL hasStartIndex;
+@property(nonatomic) unsigned int startIndex;
 
 @end
 

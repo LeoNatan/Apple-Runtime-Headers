@@ -8,6 +8,7 @@
 
 @class NSString, UIColor, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUICountdownFlapView : UIImageView
 {
     UIView *_backgroundViewBot;

@@ -22,8 +22,10 @@
     NSArray *_keysToFetch;
     NSMapTable *_identifiersToIndexes;
     NSArray *_filteredContacts;
+    CNContactFormatter *_contactFormatterImpl;
 }
 
+@property(retain, nonatomic) CNContactFormatter *contactFormatterImpl; // @synthesize contactFormatterImpl=_contactFormatterImpl;
 @property(nonatomic) _Bool observingContacts; // @synthesize observingContacts=_observingContacts;
 @property(retain, nonatomic) NSArray *filteredContacts; // @synthesize filteredContacts=_filteredContacts;
 @property(retain, nonatomic) NSMapTable *identifiersToIndexes; // @synthesize identifiersToIndexes=_identifiersToIndexes;
@@ -48,6 +50,7 @@
 @property(readonly, nonatomic) NSArray *sections;
 - (id)preferredForNameMeContactIdentifier;
 @property(readonly, nonatomic) NSArray *contacts;
+@property(retain, nonatomic) CNContactFormatter *contactFormatter;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithContacts:(id)arg1 keysToFetch:(id)arg2 filter:(id)arg3;
@@ -55,7 +58,6 @@
 - (id)initWithContacts:(id)arg1;
 
 // Remaining properties
-@property(retain, nonatomic) CNContactFormatter *contactFormatter;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *displayName;

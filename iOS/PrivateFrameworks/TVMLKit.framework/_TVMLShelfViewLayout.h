@@ -9,13 +9,19 @@
 __attribute__((visibility("hidden")))
 @interface _TVMLShelfViewLayout : _TVShelfViewLayout
 {
+    double _showcaseFactor;
     struct TVCellMetrics _cellMetrics;
 }
 
+@property(nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
 @property(nonatomic) struct TVCellMetrics cellMetrics; // @synthesize cellMetrics=_cellMetrics;
 - (CDUnknownBlockType)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;
-- (id)contentRowMetrics;
+- (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
+- (void)invalidateLayoutWithContext:(id)arg1;
+- (id)contentRowMetricsForShowcase:(_Bool)arg1;
+- (double)headerAllowance;
 - (double)expectedLineSpacing;
 
 @end

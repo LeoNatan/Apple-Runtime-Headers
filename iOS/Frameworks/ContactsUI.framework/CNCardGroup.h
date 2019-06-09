@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (id)_loadActionItems;
 - (id)description;
+- (void)removeAllActions;
 - (void)removeActionWithTitle:(id)arg1;
 - (SEL)unwrappedSelectorForAction:(id)arg1;
 - (id)unwrappedTargetForAction:(id)arg1;

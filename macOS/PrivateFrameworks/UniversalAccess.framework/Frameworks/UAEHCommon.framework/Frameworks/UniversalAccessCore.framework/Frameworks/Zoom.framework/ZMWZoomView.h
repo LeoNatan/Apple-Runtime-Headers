@@ -8,6 +8,7 @@
 
 @class CALayer, ZMWBorderView, ZMWResizeView;
 
+__attribute__((visibility("hidden")))
 @interface ZMWZoomView : ZMWSnapshotView
 {
     ZMWResizeView *_resizeHandleLayer;
@@ -17,7 +18,7 @@
     CALayer *_contentLayer;
     BOOL _isInResizeMode;
     int _adjustmentType;
-    int _windowStyle;
+    long long _windowStyle;
     struct CGSize _mouseDownViewSize;
     struct CGPoint _mouseDownViewPosition;
     struct CGPoint _mouseDownPosition;

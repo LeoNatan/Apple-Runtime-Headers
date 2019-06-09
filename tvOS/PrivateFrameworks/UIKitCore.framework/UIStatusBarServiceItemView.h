@@ -29,8 +29,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_loopingNecessary;
 - (void)_crossfadeStepAnimation;
 - (_Bool)_crossfaded;
-- (void)_finalAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (void)_loopAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)_loopAnimationDidStopInDirection:(_Bool)arg1;
 - (void)performPendedActions;
 - (double)extraRightPadding;
 - (_Bool)animatesDataChange;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UILabel;
+@class GKDashboardPlayerPhotoView, UIImageView, UILabel;
 
 @interface GKNotificationBannerView : UIView
 {
@@ -16,23 +16,26 @@
     double _duration;
     CDUnknownBlockType _completionHandler;
     CDUnknownBlockType _touchHandler;
+    GKDashboardPlayerPhotoView *_playerAvatarView;
     UILabel *_messageLabel2;
     UILabel *_actionLabel;
     UIView *_centeringView;
-    double _preferredWidthPad;
+    double _preferredBannerWidth;
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
-@property(readonly, nonatomic) double preferredWidthPad; // @synthesize preferredWidthPad=_preferredWidthPad;
+@property(readonly, nonatomic) double preferredBannerWidth; // @synthesize preferredBannerWidth=_preferredBannerWidth;
 @property(retain, nonatomic) UIView *centeringView; // @synthesize centeringView=_centeringView;
 @property(retain, nonatomic) UILabel *actionLabel; // @synthesize actionLabel=_actionLabel;
 @property(retain, nonatomic) UILabel *messageLabel2; // @synthesize messageLabel2=_messageLabel2;
+@property(retain, nonatomic) GKDashboardPlayerPhotoView *playerAvatarView; // @synthesize playerAvatarView=_playerAvatarView;
 @property(copy, nonatomic) CDUnknownBlockType touchHandler; // @synthesize touchHandler=_touchHandler;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) UILabel *messageLabel; // @synthesize messageLabel=_messageLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+- (void).cxx_destruct;
 - (void)fadeOutQuickly:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fadeInWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)callCompletionHandler;
@@ -40,12 +43,16 @@
 - (void)hideBanner;
 - (void)showWithTouchHandler:(CDUnknownBlockType)arg1;
 - (void)showWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)showPlayerAvatarAnimationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
-- (id)initWithTitle:(id)arg1 player:(id)arg2 message:(id)arg3;
-- (id)initWithTitle:(id)arg1 message:(id)arg2;
+- (void)transitionToPlayerAvatar;
+- (void)startLoadingPlayerAvatar;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 message:(id)arg3;
-- (id)initWithTitle:(id)arg1 imageView:(id)arg2 message:(id)arg3;
+- (id)initWithTitle:(id)arg1 player:(id)arg2 imageView:(id)arg3 message:(id)arg4;
+- (void)createMessageLabel:(id)arg1 withTextStyle:(id)arg2;
+- (void)createTitleLabel:(id)arg1 withTextStyle:(id)arg2;
+- (void)createBackdropView;
 - (void)awakeFromNib;
 
 @end

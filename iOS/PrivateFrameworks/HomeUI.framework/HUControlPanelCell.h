@@ -8,16 +8,19 @@
 
 #import <HomeUI/HUCellProtocol-Protocol.h>
 
-@class HFItem, NSSet, NSString;
+@class HFItem, NSLayoutConstraint, NSSet, NSString;
 @protocol HUResizableCellDelegate;
 
 @interface HUControlPanelCell : UITableViewCell <HUCellProtocol>
 {
     HFItem *_item;
+    NSLayoutConstraint *_minHeightConstraint;
 }
 
+@property(retain, nonatomic) NSLayoutConstraint *minHeightConstraint; // @synthesize minHeightConstraint=_minHeightConstraint;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+- (void)updateConstraints;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 @property(readonly, nonatomic) NSSet *allControlViews;
 

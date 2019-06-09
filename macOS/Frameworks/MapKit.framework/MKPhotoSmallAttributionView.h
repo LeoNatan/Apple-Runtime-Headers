@@ -8,6 +8,7 @@
 
 @class _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKPhotoSmallAttributionView : NSView
 {
     _MKUILabel *_label;

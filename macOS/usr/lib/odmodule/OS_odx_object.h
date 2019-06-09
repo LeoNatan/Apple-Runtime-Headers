@@ -14,9 +14,7 @@
 {
 }
 
-- (void)_dispose;
-- (void)_xref_dispose;
-- (id)init;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,15 +15,15 @@
 }
 
 + (id)activeManagedConfigurationRestrictionUUIDs;
-+ (id)workspaceObserverProxy;
 + (id)_remoteObserver;
 + (id)defaultWorkspace;
-+ (id)progressQueue;
 + (id)callbackQueue;
++ (id)progressQueue;
 @property(readonly) LSInstallProgressList *observedInstallProgresses; // @synthesize observedInstallProgresses=_observedInstallProgresses;
 @property(readonly) NSMutableDictionary *createdInstallProgresses; // @synthesize createdInstallProgresses=_createdInstallProgresses;
+- (void).cxx_destruct;
 - (void)ls_resetTestingDatabase;
-- (_Bool)ls_injectUTTypeWithDeclaration:(id)arg1 inDatabase:(void *)arg2 error:(id *)arg3;
+- (_Bool)ls_injectUTTypeWithDeclaration:(id)arg1 inDatabase:(id)arg2 error:(id *)arg3;
 - (void *)ls_testWithCleanDatabaseWithError:(id *)arg1;
 - (void)_LSClearSchemaCaches;
 - (void)_LSFailedToOpenURL:(id)arg1 withBundle:(id)arg2;
@@ -41,15 +41,16 @@
 - (id)deviceIdentifierForAdvertising;
 - (void)clearAdvertisingIdentifier;
 - (_Bool)invalidateIconCache:(id)arg1;
+- (_Bool)isVersion:(id)arg1 greaterThanOrEqualToVersion:(id)arg2;
 - (_Bool)garbageCollectDatabaseWithError:(id *)arg1;
 - (_Bool)allowsAlternateIcons;
+- (_Bool)unregisterPlugin:(id)arg1;
+- (_Bool)registerPlugin:(id)arg1;
 - (_Bool)initiateProgressForApp:(id)arg1 withType:(unsigned long long)arg2;
 - (_Bool)updatePlaceholderMetadataForApp:(id)arg1 installType:(unsigned long long)arg2 failure:(unsigned long long)arg3 underlyingError:(id)arg4 source:(unsigned long long)arg5 outError:(id *)arg6;
 - (_Bool)updateiTunesMetadataWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (_Bool)updateSINFWithData:(id)arg1 forApplication:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (_Bool)updateRecordForApp:(id)arg1 withSINF:(id)arg2 iTunesMetadata:(id)arg3 placeholderMetadata:(id)arg4 sendNotification:(int)arg5 error:(id *)arg6;
-- (_Bool)unregisterPlugin:(id)arg1;
-- (_Bool)registerPlugin:(id)arg1;
 - (_Bool)unregisterApplication:(id)arg1;
 - (_Bool)registerApplication:(id)arg1;
 - (_Bool)registerApplicationDictionary:(id)arg1;
@@ -60,7 +61,6 @@
 - (_Bool)uninstallApplication:(id)arg1 withOptions:(id)arg2;
 - (_Bool)downgradeApplicationToPlaceholder:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
 - (_Bool)installApplication:(id)arg1 withOptions:(id)arg2 error:(id *)arg3 usingBlock:(CDUnknownBlockType)arg4;
-- (_Bool)registerBundleWithInfo:(id)arg1 options:(id)arg2 type:(unsigned long long)arg3 progress:(id)arg4;
 - (void)placeholderInstalledForIdentifier:(id)arg1 filterDowngrades:(_Bool)arg2;
 - (_Bool)installApplication:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
 - (_Bool)installApplication:(id)arg1 withOptions:(id)arg2;
@@ -69,7 +69,6 @@
 - (id)bundleIdentifiersForMachOUUIDs:(id)arg1 error:(id *)arg2;
 - (id)removedSystemApplications;
 - (_Bool)applicationIsInstalled:(id)arg1;
-- (void)enumerateApplicationsForSiriWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateApplicationsOfType:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)enumerateApplicationsOfType:(unsigned long long)arg1 legacySPI:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
 - (void)enumerateBundlesOfType:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
@@ -78,6 +77,9 @@
 - (void)enumeratePluginsMatchingQuery:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3 applyFilter:(CDUnknownBlockType)arg4;
 - (id)installedPlugins;
+- (void)openApplicationWithBundleIdentifier:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)openURL:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)optionsFromOpenConfiguration:(id)arg1;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 userInfo:(id)arg3;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4;
 - (id)operationToOpenResource:(id)arg1 usingApplication:(id)arg2 uniqueDocumentIdentifier:(id)arg3 userInfo:(id)arg4 delegate:(id)arg5;
@@ -103,12 +105,11 @@
 - (id)applicationProxiesWithPlistFlags:(unsigned int)arg1 bundleFlags:(unsigned long long)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)remoteObserver;
 - (id)syncObserverProxy;
 - (id)observerProxy;
-- (id)remoteObserver;
 - (_Bool)establishConnection;
 - (void)getKnowledgeUUID:(id *)arg1 andSequenceNumber:(id *)arg2;
-- (void)dealloc;
 - (id)applicationsAvailableForOpeningDocument:(id)arg1;
 - (id)allApplications;
 - (id)unrestrictedApplications;
@@ -119,8 +120,6 @@
 - (void)enumerateBundlesOfType:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3;
 - (id)pluginsWithIdentifiers:(id)arg1 protocols:(id)arg2 version:(id)arg3 withFilter:(CDUnknownBlockType)arg4;
-- (id)URLOverrideForNewsURL:(id)arg1;
-- (id)URLOverrideForURL:(id)arg1;
 - (_Bool)isApplicationAvailableToOpenURLCommon:(id)arg1 includePrivateURLSchemes:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)isApplicationAvailableToOpenURL:(id)arg1 includePrivateURLSchemes:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)isApplicationAvailableToOpenURL:(id)arg1 error:(id *)arg2;
@@ -130,6 +129,8 @@
 - (id)publicURLSchemes;
 - (id)applicationsAvailableForHandlingURLScheme:(id)arg1;
 - (id)applicationForOpeningResource:(id)arg1;
+- (id)URLOverrideForNewsURL:(id)arg1;
+- (id)URLOverrideForURL:(id)arg1;
 
 @end
 

@@ -11,7 +11,7 @@
 #import <AvatarUI/AVTCoreDataCloudKitMirroringHandlerDelegate-Protocol.h>
 #import <AvatarUI/AVTPushNotificationsSupportDelegate-Protocol.h>
 
-@class AVTAvatarRecordImageGenerator, AVTCoreEnvironment, NSXPCStoreServer;
+@class AVTAvatarRecordImageGenerator, AVTCoreEnvironment, AVTStickerChangeObserver, NSXPCStoreServer;
 @protocol AVTAvatarRecordChangeTracker, AVTAvatarsDaemonServer, AVTBlockScheduler, AVTCoreDataCloudKitMirroringHandler, AVTCoreDataPersistentStoreLocalConfiguration, AVTCoreDataRemoteChangesObserver, AVTCoreDataStoreMaintenance, AVTPushNotificationsSupport, AVTStoreBackend, AVTSyncSchedulingAuthority, AVTUILogger, OS_dispatch_queue;
 
 @interface AVTCoreDataStoreServer : NSObject <AVTPushNotificationsSupportDelegate, AVTCoreDataCloudKitMirroringHandlerDelegate, AVTAvatarsDaemonServerDelegate, AVTAvatarStoreServer>
@@ -30,6 +30,7 @@
     id <AVTSyncSchedulingAuthority> _schedulingAuthority;
     id <AVTCoreDataRemoteChangesObserver> _remoteChangesObserver;
     AVTAvatarRecordImageGenerator *_imageGenerator;
+    AVTStickerChangeObserver *_stickerChangeObserver;
     id <AVTAvatarRecordChangeTracker> _changeTracker;
     id <AVTAvatarsDaemonServer> _daemonServer;
     id <AVTCoreDataStoreMaintenance> _storeMaintenance;
@@ -43,6 +44,7 @@
 @property(readonly, nonatomic) id <AVTCoreDataStoreMaintenance> storeMaintenance; // @synthesize storeMaintenance=_storeMaintenance;
 @property(readonly, nonatomic) id <AVTAvatarsDaemonServer> daemonServer; // @synthesize daemonServer=_daemonServer;
 @property(readonly, nonatomic) id <AVTAvatarRecordChangeTracker> changeTracker; // @synthesize changeTracker=_changeTracker;
+@property(readonly, nonatomic) AVTStickerChangeObserver *stickerChangeObserver; // @synthesize stickerChangeObserver=_stickerChangeObserver;
 @property(readonly, nonatomic) AVTAvatarRecordImageGenerator *imageGenerator; // @synthesize imageGenerator=_imageGenerator;
 @property(readonly, nonatomic) id <AVTCoreDataRemoteChangesObserver> remoteChangesObserver; // @synthesize remoteChangesObserver=_remoteChangesObserver;
 @property(readonly, nonatomic) id <AVTSyncSchedulingAuthority> schedulingAuthority; // @synthesize schedulingAuthority=_schedulingAuthority;
@@ -61,6 +63,7 @@
 - (void)mirroringHandler:(id)arg1 didResetSyncWithReason:(unsigned long long)arg2;
 - (void)mirroringHandler:(id)arg1 willResetSyncWithReason:(unsigned long long)arg2;
 - (void)didReceivePushNotification:(id)arg1;
+- (void)deleteStickerRecents;
 - (void)scheduleUpdateThumbnails;
 - (void)updateThumbnails;
 - (void)scheduleExportWithManagedObjectContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -73,7 +76,7 @@
 - (void)scheduleSetupThen:(CDUnknownBlockType)arg1;
 - (void)completeMigrationActivityIfNeeded;
 - (void)startListening;
-- (id)initWithLocalBackend:(id)arg1 configuration:(id)arg2 migratorProvider:(CDUnknownBlockType)arg3 pushSupport:(id)arg4 mirroringHandler:(id)arg5 schedulingAuthority:(id)arg6 remoteChangesObserver:(id)arg7 imageGenerator:(id)arg8 changeTracker:(id)arg9 daemonServer:(id)arg10 storeMaintenance:(id)arg11 backgroundQueue:(id)arg12 environment:(id)arg13;
+- (id)initWithLocalBackend:(id)arg1 configuration:(id)arg2 migratorProvider:(CDUnknownBlockType)arg3 pushSupport:(id)arg4 mirroringHandler:(id)arg5 schedulingAuthority:(id)arg6 remoteChangesObserver:(id)arg7 imageGenerator:(id)arg8 stickerChangeObserver:(id)arg9 changeTracker:(id)arg10 daemonServer:(id)arg11 storeMaintenance:(id)arg12 backgroundQueue:(id)arg13 environment:(id)arg14;
 - (id)initWithEnvironment:(id)arg1;
 
 @end

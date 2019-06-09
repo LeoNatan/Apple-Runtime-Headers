@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_configurationIdentifierForElement:(id)arg1;
-+ (void)_configureStackingPoster:(id)arg1 withElement:(id)arg2 forMetrics:(_Bool)arg3;
-+ (void)_configureCell:(id)arg1 withElement:(id)arg2;
++ (void)_configureStackingPoster:(id)arg1 layout:(id)arg2 element:(id)arg3 forMetrics:(_Bool)arg4;
++ (void)_configureCell:(id)arg1 layout:(id)arg2 element:(id)arg3;
 + (struct UIEdgeInsets)_customCellPaddingForCellMetrics:(struct TVCellMetrics)arg1 withCollectionCellMetrics:(struct TVCellMetrics)arg2 contentAlignment:(long long)arg3;
 + (void)updateViewLayoutForCell:(id)arg1 forSize:(struct CGSize)arg2;
 + (struct TVCellMetrics)cellMetricsForCollectionElement:(id)arg1;

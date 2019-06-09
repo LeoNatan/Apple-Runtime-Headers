@@ -13,14 +13,15 @@ __attribute__((visibility("hidden")))
 {
     int _validationCount;
     struct TKeyValueBinder _hoveredPartBinder;
-    FI_TFakeTagsMenuItemView *_fakeTagsMenuItem;
     struct TNSRef<NSTrackingArea, void> _trackingArea;
     long long _hoveredPart;
+    FI_TFakeTagsMenuItemView *_fakeTagsMenuItem;
 }
 
 + (id)titleFieldFromMenuItem:(id)arg1;
 + (id)labelViewFromMenuItem:(id)arg1;
 + (id)labelViewForMenu:(id)arg1;
+@property(nonatomic) __weak FI_TFakeTagsMenuItemView *fakeTagsMenuItem; // @synthesize fakeTagsMenuItem=_fakeTagsMenuItem;
 @property(nonatomic) long long hoveredPart; // @synthesize hoveredPart=_hoveredPart;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)gumdropFavoriteTagChosenInMenu:(id)arg1;
 - (_Bool)favoriteTagWillRemove:(short)arg1;
 - (void)setForApplyingFavoriteTags:(_Bool)arg1;
+- (void)dealloc;
 - (int)validationCount;
 - (void)bumpValidationCount;
 - (void)mouseExited:(id)arg1;

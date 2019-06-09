@@ -10,7 +10,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface QLImageItemDataContents : QLImageItemContents <NSSecureCoding>
 {
     NSData *_imageData;

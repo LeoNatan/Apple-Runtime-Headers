@@ -12,28 +12,38 @@
 
 @interface PUEditingInitialPayload : NSObject <NSSecureCoding>
 {
+    int _fullSizeImageExifOrientation;
     long long _mediaType;
     unsigned long long _mediaSubtypes;
     long long _playbackStyle;
     NSDate *_creationDate;
     CLLocation *_location;
     PHAdjustmentData *_adjustmentData;
+    long long _adjustmentBaseVersion;
     NSData *_placeholderImageData;
     NSData *_displaySizeImageData;
     NSURL *_videoURL;
     NSString *_videoPathSandboxExtensionToken;
+    NSURL *_fullSizeImageURL;
+    NSString *_fullSizeImageURLSandboxExtensionToken;
+    NSString *_uniformTypeIdentifier;
     CDStruct_1b6d18a9 _livePhotoStillDisplayTime;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
+@property(nonatomic) int fullSizeImageExifOrientation; // @synthesize fullSizeImageExifOrientation=_fullSizeImageExifOrientation;
+@property(copy, nonatomic) NSString *fullSizeImageURLSandboxExtensionToken; // @synthesize fullSizeImageURLSandboxExtensionToken=_fullSizeImageURLSandboxExtensionToken;
+@property(retain, nonatomic) NSURL *fullSizeImageURL; // @synthesize fullSizeImageURL=_fullSizeImageURL;
 @property(nonatomic) CDStruct_1b6d18a9 livePhotoStillDisplayTime; // @synthesize livePhotoStillDisplayTime=_livePhotoStillDisplayTime;
-@property(retain, nonatomic) NSString *videoPathSandboxExtensionToken; // @synthesize videoPathSandboxExtensionToken=_videoPathSandboxExtensionToken;
+@property(copy, nonatomic) NSString *videoPathSandboxExtensionToken; // @synthesize videoPathSandboxExtensionToken=_videoPathSandboxExtensionToken;
 @property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
-@property(retain, nonatomic) NSData *displaySizeImageData; // @synthesize displaySizeImageData=_displaySizeImageData;
-@property(retain, nonatomic) NSData *placeholderImageData; // @synthesize placeholderImageData=_placeholderImageData;
+@property(copy, nonatomic) NSData *displaySizeImageData; // @synthesize displaySizeImageData=_displaySizeImageData;
+@property(copy, nonatomic) NSData *placeholderImageData; // @synthesize placeholderImageData=_placeholderImageData;
+@property(nonatomic) long long adjustmentBaseVersion; // @synthesize adjustmentBaseVersion=_adjustmentBaseVersion;
 @property(retain, nonatomic) PHAdjustmentData *adjustmentData; // @synthesize adjustmentData=_adjustmentData;
-@property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
-@property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
+@property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) long long playbackStyle; // @synthesize playbackStyle=_playbackStyle;
 @property(nonatomic) unsigned long long mediaSubtypes; // @synthesize mediaSubtypes=_mediaSubtypes;
 @property(nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;

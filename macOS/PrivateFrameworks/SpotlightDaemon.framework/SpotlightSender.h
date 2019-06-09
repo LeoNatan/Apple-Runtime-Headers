@@ -26,9 +26,9 @@
 + (void)deleteSearchableItemsWithEncodedIdentifiers:(id)arg1 bundleID:(id)arg2 client:(long long)arg3;
 + (void)addOrUpdateSearchableItems:(id)arg1 itemsContent:(id)arg2 bundleID:(id)arg3 protectionClass:(id)arg4 client:(long long)arg5;
 + (void)dispatchWithOptions:(long long)arg1 block:(CDUnknownBlockType)arg2;
-+ (BOOL)jobForDuetExpertCenter:(long long)arg1;
 + (BOOL)jobForSuggestions:(long long)arg1;
 + (BOOL)jobForDuet:(long long)arg1;
++ (BOOL)jobForImages:(long long)arg1;
 + (BOOL)jobForTest:(long long)arg1;
 + (BOOL)enabledForClient:(long long)arg1;
 + (id)clientConnection:(long long)arg1;

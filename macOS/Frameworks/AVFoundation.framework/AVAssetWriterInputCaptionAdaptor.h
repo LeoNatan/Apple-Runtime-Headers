@@ -17,7 +17,6 @@
 - (BOOL)appendCaptionGroup:(id)arg1;
 - (BOOL)appendCaption:(id)arg1;
 @property(readonly, nonatomic) AVAssetWriterInput *assetWriterInput;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAssetWriterInput:(id)arg1;
 - (id)init;

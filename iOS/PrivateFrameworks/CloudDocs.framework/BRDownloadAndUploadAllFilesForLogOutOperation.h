@@ -19,6 +19,7 @@
     BRUploadAllFilesForLogOutOperation *_uploadOp;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(retain) BRGlobalProgressProxy *progress; // @synthesize progress=_progress;
 @property(copy) CDUnknownBlockType downloadAllFilesCompletionBlock; // @synthesize downloadAllFilesCompletionBlock=_downloadAllFilesCompletionBlock;
 - (void).cxx_destruct;

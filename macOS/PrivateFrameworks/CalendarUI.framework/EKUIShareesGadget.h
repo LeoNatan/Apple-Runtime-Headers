@@ -103,6 +103,7 @@
 - (BOOL)updateShareesFromPasteboard:(id)arg1;
 - (BOOL)readPasteboard:(id)arg1;
 - (id)representedObjectsFromPasteboard:(id)arg1;
+- (void)addContactsFromVCardData:(id)arg1 toSet:(id)arg2;
 - (id)claimedPboardTypes;
 - (void)updateIntrinsicContentSizeForTokenField;
 - (id)control;

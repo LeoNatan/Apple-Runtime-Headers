@@ -6,13 +6,22 @@
 
 #import <objc/NSObject.h>
 
+@class NSDateFormatter;
+
 @interface RCRecorderStyleProvider : NSObject
 {
+    NSDateFormatter *_dateFormatter;
     long long _currentUserInterfaceStyle;
+    long long __horizontalSizeClassFromSplitView;
 }
 
 + (id)sharedStyleProvider;
+@property(nonatomic) long long _horizontalSizeClassFromSplitView; // @synthesize _horizontalSizeClassFromSplitView=__horizontalSizeClassFromSplitView;
 @property long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
+- (void).cxx_destruct;
+- (_Bool)needsTouchDownWorkaround;
+- (_Bool)usesVectorGlyph;
+- (_Bool)usesTitleLabelPerfOptimization;
 - (_Bool)shouldTintNavBar;
 - (_Bool)toolbarButtonsShouldHaveNonDefaultColor;
 - (_Bool)toolbarShouldBeTransparent;
@@ -22,12 +31,15 @@
 - (_Bool)shouldAskForDeletionConfirmation;
 - (_Bool)usesLargeTitles;
 - (_Bool)pinsSearchBarInLibrary;
+- (_Bool)hasTwoLinesInRecentlyDeleted;
 - (_Bool)useDefaultTableViewSeparators;
 - (_Bool)useVibrancyStyleInRecordingsTableView;
 - (_Bool)presentsRecoverConfirmationAsAlert;
 - (_Bool)presentsDeleteConfirmationAsAlert;
-- (_Bool)_usesRemindersUI;
+- (_Bool)_usesVibrantUI;
+- (_Bool)_isCompactWidth;
 - (_Bool)_isIOSMac;
+- (_Bool)_isVibrantUIOrIOSMac;
 - (_Bool)_isIpadOrIOSMac;
 - (_Bool)recordingViewHidesBlurEffectsWhenInactive;
 - (_Bool)showsEmptyLibraryMessageInLibrary;
@@ -57,15 +69,26 @@
 - (_Bool)supportsRotationButNotOtherResizing;
 - (_Bool)shouldAnimateLibraryToCardTransition;
 - (double)animationDurationBetweenLibraryAndCard;
-- (_Bool)presentsCardModallyInRootViewController;
 - (_Bool)expandsTableViewRowOnSelection;
+- (_Bool)hasPlaybackCard;
 - (_Bool)isAccessibilityLargerTextSizeEnabled;
 - (id)accessibilityLargeSizes;
+- (_Bool)_isWatch;
 - (_Bool)_isIphone;
 - (_Bool)_isIpad;
 - (id)welcomeBulletBlurbTextAttributes;
 - (id)welcomeBulletTitleTextAttributes;
-- (id)welcomeTitleTextAttributesForFontSizePhone:(double)arg1 pad:(double)arg2;
+- (id)welcomeTitleTextAttributes;
+- (_Bool)showsProgressInTableViewCell;
+- (double)progressTextYSpacing;
+- (double)progressTextFontSize;
+- (double)editingProgressOuterRingThicknessPlayback;
+- (double)editingProgressOuterRingThicknessCell;
+- (double)editingProgressIndicatorDiameterPlayback;
+- (double)editingProgressIndicatorDiameterCell;
+- (id)progressViewBackgroundColorTableViewCell:(_Bool)arg1;
+- (id)progressViewBackgroundColorEditingCard:(_Bool)arg1;
+- (double)progressViewDisplayDismissTime;
 - (id)beginEndLabelsFont;
 - (id)timeLineLabelFont;
 - (id)durationLabelFontForCompactRecordingView;
@@ -81,12 +104,13 @@
 - (id)descriptionViewScalableSecondaryFont;
 - (id)descriptionViewScalableTitleFontForCardView;
 - (id)descriptionViewScalableTitleFontForTableViewCell;
+- (id)trimButtonTintColor;
 - (id)navBarTintColor;
 - (id)recentlyDeleteToolBarDividerColor;
 - (id)recentlyDeleteNonDefaultButtonTextColor;
-- (id)sliderThumbTintColor;
-- (id)maxTrackTintColor;
-- (id)minTrackTintColor;
+- (id)sliderThumbTintColor:(_Bool)arg1;
+- (id)maxTrackTintColor:(_Bool)arg1;
+- (id)minTrackTintColor:(_Bool)arg1;
 - (id)replaceSelectionOverlayColor;
 - (id)selectionOverlayEndpointTimeColor;
 - (id)selectionOverlayEndpointBarColor;
@@ -94,24 +118,24 @@
 - (id)playbackPositionTimeColor;
 - (id)recordPositionBarColor;
 - (id)playbackPositionBarColor;
-- (id)timeLineMajorPlaybackMarkerColor;
-- (id)timeLineMinorPlaybackMarkerColor;
+- (id)timeLineMajorPlaybackMarkerColor:(_Bool)arg1;
+- (id)timeLineMinorPlaybackMarkerColor:(_Bool)arg1;
 - (id)timeLineMinorMarkerColor;
 - (id)timeLineMajorMarkerColor;
-- (id)timelinePlaybackBackgroundColor;
-- (id)timelinePlaybackTimeColor;
+- (id)timelinePlaybackBackgroundColor:(_Bool)arg1;
+- (id)timelinePlaybackTimeColor:(_Bool)arg1;
 - (id)timeLineBackgroundColor;
 - (id)timeLineTimeColor;
 - (id)waveformHighlightedBackgroundColor;
 - (id)waveformCompactHighlightedBackgroundColor;
 - (id)waveformOverviewHighlightedBackgroundColor;
 - (id)waveformOverviewBackgroundColor;
-- (id)beginEndLabelsPlaybackColor;
+- (id)beginEndLabelsPlaybackColor:(_Bool)arg1;
 - (id)beginEndLabelsColor;
 - (id)overviewWaveformPlaybackColor;
-- (id)waveformPlaybackColor;
-- (id)waveformPlaybackHighlightedBackgroundColor;
-- (id)waveformPlaybackBackgroundColor;
+- (id)waveformPlaybackColor:(_Bool)arg1;
+- (id)waveformPlaybackHighlightedBackgroundColor:(_Bool)arg1;
+- (id)waveformPlaybackBackgroundColor:(_Bool)arg1;
 - (id)waveformDimmedColor;
 - (id)overviewWaveformHighlightColor;
 - (id)waveformHighlightColor;
@@ -130,8 +154,8 @@
 - (id)tableViewSelectionCellBackgroundColor;
 - (id)tableViewCellBackgroundColor;
 - (id)tableViewBackgroundColor;
-- (id)emptyLibraryBackgroundColor;
-- (id)emptyLibraryMessageTextColor;
+- (id)emptyLibraryBackgroundColor:(_Bool)arg1;
+- (id)emptyLibraryMessageTextColor:(_Bool)arg1;
 - (id)footerViewBackgroundColor;
 - (id)recordingViewEffectsInactiveBackgroundColor;
 - (id)recordingViewEffectsActiveBackgroundColor;
@@ -146,6 +170,9 @@
 - (id)recordingControlFontColor;
 - (id)playbackCardSecondaryLabelFontColor;
 - (id)playbackCardPrimaryLabelFontColor;
+- (id)watchAppTintColor;
+- (id)tableViewEditButtonDimmedColor;
+- (id)cardDimmingViewBackgroundColor;
 - (id)editingToolbarTitleTextColor;
 - (id)editingToolbarButtonDisabledTextColor;
 - (id)editingToolbarButtonTextColor;
@@ -157,21 +184,32 @@
 - (id)recordingCardBottomAccessoryBackgroundColor;
 - (id)recordingCardDefaultBackgroundColor;
 - (id)recordingCardTimeLabelFontColor;
-- (id)playbackCardTimeLabelFontColor;
-- (id)playbackCardTopBorderColor2;
-- (id)playbackCardTopBorderColor1;
-- (id)playbackCardBottomGradientColor;
-- (id)playbackCardTopGradientColor;
+- (id)playbackCardTimeLabelFontColor:(_Bool)arg1;
+- (id)playbackCardTopBorderColor2:(_Bool)arg1;
+- (id)playbackCardTopBorderColor1:(_Bool)arg1;
+- (id)playbackCardBottomGradientColor:(_Bool)arg1;
+- (id)playbackCardTopGradientColor:(_Bool)arg1;
 - (id)actionControlsColorForPlaybackCard;
-- (id)transportControlsColorForPlaybackCard;
+- (id)transportControlsColorForPlaybackCard:(_Bool)arg1;
 - (id)transportControlsColorForRecordingCard;
 - (id)secondaryTransportControlsColorForLibrary;
 - (id)transportControlsColorForLibrary;
 - (id)_roundedThemePrimaryBackgroundColor;
-- (id)navigationBarTintColor;
-- (id)windowHeaderSpacerViewBackgroundColor;
-- (id)playbackViewBackgroundColor;
+- (id)windowHeaderSpacerViewBackgroundColor:(_Bool)arg1;
+- (id)playbackViewBackgroundColor:(_Bool)arg1;
 - (id)mainViewBackgroundColor;
+- (id)mainLabelColor;
+- (id)trimImage;
+- (id)trashImage;
+- (id)ellipsisImage;
+- (id)cardGoForwardImage;
+- (id)libraryGoForwardImage;
+- (id)cardGoBackwardImage;
+- (id)libraryGoBackwardImage;
+- (id)cardPauseImage;
+- (id)libraryPauseImage;
+- (id)cardPlayImage;
+- (id)libraryPlayImage;
 - (double)titleLabelLockScreenTopPaddingMultiplier;
 - (double)durationLabelLockScreenHorizontalPadding;
 - (double)dateLabelLockScreenHorizontalPadding;
@@ -251,6 +289,15 @@
 - (double)transportButtonAnimationPlayCircleRadius;
 - (double)transportButtonAnimationJumpCircleRadius;
 - (_Bool)transportButtonsAnimateWithCircle;
+- (double)welcomeScreenTitleFontSize;
+- (double)welcomeScreenBulletsGroupTopMargin;
+- (double)welcomeScreenBulletTextHorizontalSpacing;
+- (double)welcomeScreenBulletIconHorizontalSpacing;
+- (double)welcomeScreenBulletSpacing;
+- (double)welcomeScreenContinueButtonFontSize;
+- (double)welcomeScreenContinueButtonHeight;
+- (double)welcomeScreenContinueButtonWidth;
+- (double)welcomeScreenContainerWidth;
 - (struct UIEdgeInsets)playbackViewFullScreenEdgeInsets;
 - (struct UIEdgeInsets)playbackViewEdgeInsets;
 - (_Bool)_isLandscape;
@@ -266,7 +313,10 @@
 - (double)playbackViewTimeSectionHeight;
 - (id)playbackViewTimeLabelFont;
 - (double)jumpBackwardForwardButtonSpacing;
-- (double)trimDeleteButtonSpacing;
+- (double)grabberHeight;
+- (double)grabberWidth;
+- (double)grabberTopPadding;
+- (double)recordingNameLabelPadding;
 - (double)recentlyDeletedToolbarDivdiderHeight;
 - (double)recentlyDeletedToolbarDivdiderInset;
 - (double)dragToCompactTransitionEpsilon;
@@ -322,7 +372,10 @@
 - (double)centerClusterWidthLibrary;
 - (double)centerClusterWidthJumpButton;
 - (double)centerClusterWidthCard;
+- (double)animationDragCoefficient;
 - (double)emptyLibraryLabelXInset;
+- (double)maximumColumnWidth;
+- (double)minimumColumnWidth;
 - (double)primaryColumnWidth;
 - (double)descriptionViewSecondaryLabelAlpha;
 - (double)recordingControlExtraHitOutset;
@@ -332,8 +385,10 @@
 - (double)tableViewAlphaWhenDisabled;
 - (long long)tableViewAnimationCurve;
 - (double)tableViewAnimationDuration;
-- (_Bool)isDarkMode;
 - (unsigned long long)supportedInterfaceOrientations;
+- (_Bool)setSplitViewHorizontalSizeClass:(long long)arg1;
+- (id)formattedDateStringFromDate:(id)arg1;
+@property(readonly, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 
 @end
 

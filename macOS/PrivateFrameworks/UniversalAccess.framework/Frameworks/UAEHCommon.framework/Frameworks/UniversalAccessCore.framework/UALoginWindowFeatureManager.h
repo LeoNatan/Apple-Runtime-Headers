@@ -12,6 +12,7 @@
 {
 }
 
++ (id)_orderedAvailableFeatureTypes;
 + (id)sharedManager;
 - (id)_enabledKeysForFeature:(long long)arg1;
 - (id)_preferenceKeysForFeature:(long long)arg1;
@@ -29,7 +30,6 @@
 - (void)_setLoginWindowFeatureType:(long long)arg1 isEnabled:(BOOL)arg2;
 @property(readonly, nonatomic) NSArray *allAvailableFeatures;
 - (id)_allFeatures;
-- (id)_allFeatureTypes;
 
 @end
 

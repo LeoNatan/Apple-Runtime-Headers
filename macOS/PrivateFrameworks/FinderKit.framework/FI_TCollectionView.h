@@ -6,16 +6,21 @@
 
 #import <AppKit/NSCollectionView.h>
 
-@class NSObject;
+#import <FinderKit/TMarkTornDown-Protocol.h>
+
+@class NSObject, NSString;
 @protocol TCollectionViewDelegateProtocol;
 
 __attribute__((visibility("hidden")))
-@interface FI_TCollectionView : NSCollectionView
+@interface FI_TCollectionView : NSCollectionView <TMarkTornDown>
 {
-    NSObject<TCollectionViewDelegateProtocol> *_collectionViewDelegate;
-    long long _retainCount;
+    struct TNSWeakPtr<NSObject<TCollectionViewDelegateProtocol>, void> _weakCollectionViewDelegate;
+    _Bool tornDown;
 }
 
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)draggingEnded:(id)arg1 dropTargetView:(id)arg2;
 - (void)draggingExited:(id)arg1 dropTargetView:(id)arg2;
 - (void)concludeDragOperation:(id)arg1 dropTargetView:(id)arg2;
@@ -58,19 +63,19 @@ __attribute__((visibility("hidden")))
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
-- (void)setCollectionViewDelegate:(id)arg1;
-- (id)collectionViewDelegate;
+@property(nonatomic) __weak NSObject<TCollectionViewDelegateProtocol> *collectionViewDelegate;
 - (BOOL)_allowsDropOnBackground;
 - (BOOL)_collectionViewSupports10_11Features;
 - (void)aboutToTearDown;
 - (void)initCommon;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

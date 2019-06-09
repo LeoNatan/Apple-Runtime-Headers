@@ -9,6 +9,7 @@
 @class EDResources, EDWorkbook;
 @protocol TCCancelDelegate;
 
+__attribute__((visibility("hidden")))
 @interface EBState : NSObject
 {
     struct XlLinkTable *mXlLinkTable;

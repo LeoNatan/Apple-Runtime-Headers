@@ -11,7 +11,7 @@
 #import <CalendarUI/CalUISuggestionsFieldDelegate-Protocol.h>
 #import <CalendarUI/EKUIAttendeesTokenFieldDelegate-Protocol.h>
 
-@class CalAutoCompleteOperation, CalUISuggestionsField, EKUITokenField, NSArray, NSMutableDictionary, NSStackView, NSString, NSView;
+@class CalAutoCompleteOperation, CalUISuggestionsField, EKUITokenField, NSArray, NSMutableDictionary, NSOperationQueue, NSStackView, NSString, NSView;
 
 @interface EKUILocationGadget : EKUISingleViewGadget <CalAutoCompleteDelegate, CalUISuggestionsFieldDelegate, CalUIAutocompleteFieldDelegate, EKUIAttendeesTokenFieldDelegate>
 {
@@ -30,9 +30,11 @@
     NSArray *_locationResults;
     NSArray *_roomResults;
     NSString *_currentEditingString;
+    NSOperationQueue *_availabilityRequestQueue;
 }
 
 + (id)interestedChangeKeys;
+@property(retain) NSOperationQueue *availabilityRequestQueue; // @synthesize availabilityRequestQueue=_availabilityRequestQueue;
 @property(retain) NSString *currentEditingString; // @synthesize currentEditingString=_currentEditingString;
 @property BOOL ignoreNextEmptySuggestion; // @synthesize ignoreNextEmptySuggestion=_ignoreNextEmptySuggestion;
 @property(retain) NSArray *roomResults; // @synthesize roomResults=_roomResults;
@@ -82,7 +84,6 @@
 - (void)_recordSuggestionAndSaveChangesIfNeededForStructuredLocation:(id)arg1 currentEvent:(id)arg2 suggestion:(id)arg3;
 - (void)addLocationForString:(id)arg1;
 - (void)_updateFreeBusyWithArray:(id)arg1 forCUAddress:(id)arg2;
-- (void)_freeBusyResponse:(id)arg1;
 - (void)updateFreeBusyForAddresses:(id)arg1;
 - (void)updateFreeBusyForAttendees:(id)arg1;
 - (BOOL)isFreeBusySupported;

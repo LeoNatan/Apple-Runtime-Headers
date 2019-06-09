@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DOMRange, NSString, WKDOMRange;
+@class NSString, WKDOMRange;
 
 __attribute__((visibility("hidden")))
 @interface DDHighlightObject : NSObject
@@ -15,14 +15,12 @@ __attribute__((visibility("hidden")))
     NSString *_targetURL;
     NSString *_webViewIdentifier;
     BOOL _followedByBlank;
-    DOMRange *_DOMRange;
     WKDOMRange *_WKDOMRange;
 }
 
 @property BOOL followedByBlank; // @synthesize followedByBlank=_followedByBlank;
-@property(retain) WKDOMRange *range2; // @synthesize range2=_WKDOMRange;
+@property(retain) WKDOMRange *range; // @synthesize range=_WKDOMRange;
 @property(retain) NSString *targetURL; // @synthesize targetURL=_targetURL;
-@property(retain) DOMRange *range; // @synthesize range=_DOMRange;
 @property(copy) NSString *webViewIdentifier; // @synthesize webViewIdentifier=_webViewIdentifier;
 - (void).cxx_destruct;
 - (id)localizedTypeForAccessibility;

@@ -20,6 +20,7 @@
 @property(retain) MMWebKitViewController *purchaseWebKitViewController; // @synthesize purchaseWebKitViewController=_purchaseWebKitViewController;
 @property(retain) NSString *accountID; // @synthesize accountID=_accountID;
 @property(retain) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
+- (void).cxx_destruct;
 - (void)_closeWebviewWindow:(BOOL)arg1;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;
@@ -27,7 +28,6 @@
 - (void)mmWebKitViewControllerDidSucceed:(id)arg1;
 - (void)mmWebKitViewControllerDidCancel:(id)arg1;
 - (void)openPurchaseStorageForAccountID:(id)arg1 withWindow:(id)arg2 andWithQueryParams:(id)arg3 andStorageContext:(id)arg4;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

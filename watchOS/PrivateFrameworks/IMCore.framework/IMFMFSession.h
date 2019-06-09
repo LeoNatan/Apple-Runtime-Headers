@@ -11,9 +11,11 @@
 @interface IMFMFSession : NSObject
 {
     NSString *_establishingAccountID;
+    unsigned int _fmfProvisionedState;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) unsigned int fmfProvisionedState; // @synthesize fmfProvisionedState=_fmfProvisionedState;
 @property(retain, nonatomic) NSString *establishingAccountID; // @synthesize establishingAccountID=_establishingAccountID;
 - (void).cxx_destruct;
 - (void)_postNotification:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
@@ -42,6 +44,7 @@
 - (void)startTrackingLocationForHandle:(id)arg1;
 - (id)allSiblingFMFHandlesForChat:(id)arg1;
 - (id)fmfHandlesForChat:(id)arg1;
+- (void)_accountStoreDidChangeNotification:(id)arg1;
 @property(readonly, nonatomic) _Bool disableLocationSharing;
 @property(readonly, nonatomic) _Bool restrictLocationSharing;
 - (id)init;

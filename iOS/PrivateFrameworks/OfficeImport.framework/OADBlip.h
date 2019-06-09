@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pathExtensionForBlipType:(int)arg1;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (unsigned int *)referenceCount;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)altSubBlip;
 - (void)setMainSubBlip:(id)arg1;
 - (id)mainSubBlip;
-- (void)dealloc;
 
 @end
 

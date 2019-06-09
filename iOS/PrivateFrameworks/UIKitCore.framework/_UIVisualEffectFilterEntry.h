@@ -14,19 +14,26 @@ __attribute__((visibility("hidden")))
 @interface _UIVisualEffectFilterEntry : NSObject <_UIVisualEffectDiffable>
 {
     CAFilter *_filter;
+    NSString *_filterType;
+    NSDictionary *_configurationValues;
     NSDictionary *_requestedValues;
     NSDictionary *_identityValues;
     double _requestedScaleHint;
     double _identityScaleHint;
+    NSString *_filterName;
 }
 
+@property(readonly, copy, nonatomic) NSString *filterName; // @synthesize filterName=_filterName;
 @property(nonatomic) double identityScaleHint; // @synthesize identityScaleHint=_identityScaleHint;
 @property(nonatomic) double requestedScaleHint; // @synthesize requestedScaleHint=_requestedScaleHint;
 @property(copy, nonatomic) NSDictionary *identityValues; // @synthesize identityValues=_identityValues;
 @property(copy, nonatomic) NSDictionary *requestedValues; // @synthesize requestedValues=_requestedValues;
-@property(retain, nonatomic) CAFilter *filter; // @synthesize filter=_filter;
+@property(copy, nonatomic) NSDictionary *configurationValues; // @synthesize configurationValues=_configurationValues;
+@property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (void)forceUniqueName;
+- (void)convertToIdentity;
 - (id)copyForTransitionOut;
 - (id)copyForTransitionToEffect:(id)arg1;
 - (_Bool)canTransitionToEffect:(id)arg1;
@@ -34,7 +41,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (double)scaleHintAsRequested:(_Bool)arg1;
 - (id)valueAsRequested:(_Bool)arg1;
-- (id)initWithFilter:(id)arg1 requestedValues:(id)arg2 identityValues:(id)arg3;
+@property(readonly, nonatomic) CAFilter *filter;
+- (id)initWithFilterType:(id)arg1 configurationValues:(id)arg2 requestedValues:(id)arg3 identityValues:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -50,13 +50,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)shouldArchiveValueForKey:(id)arg1;
-- (void)_setCARenderBehavior:(struct Behavior *)arg1;
-- (void)dealloc;
-- (BOOL)allowsWeakReference;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (BOOL)retainWeakReference;
-- (id)retain;
 - (id)init;
 
 @end

@@ -11,6 +11,7 @@
 }
 
 + (void)_configureCardInfo:(id)arg1 forVoiceShortcutWithPhrase:(id)arg2 name:(id)arg3 description:(id)arg4 keyImage:(id)arg5 applicationBundleIdentifier:(id)arg6 config:(id)arg7;
++ (id)_subtitleForAction:(id)arg1;
 + (void)_configureCardInfo:(id)arg1 forATXAction:(id)arg2 withConfig:(id)arg3;
 + (void)_configureCardInfo:(id)arg1 forNSString:(id)arg2 withConfig:(id)arg3;
 + (void)_configureCardInfo:(id)arg1 forNSUserActivity:(id)arg2 withConfig:(id)arg3;

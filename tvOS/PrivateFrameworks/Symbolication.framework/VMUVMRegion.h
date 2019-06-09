@@ -27,12 +27,14 @@
     unsigned long long ref_count;
     unsigned int user_tag;
     unsigned long long object_id;
+    unsigned long long offset;
     unsigned int nesting_depth;
     unsigned int is_submap:1;
     unsigned int is_macho_region:1;
     unsigned int is_unused_data_region:1;
     unsigned int is_unused_data_page_shared_with_active_content:1;
-    unsigned int reserved_flags:28;
+    unsigned int is_wired:1;
+    unsigned int reserved_flags:27;
     unsigned long long mallocBlockCount;
     unsigned int mallocTypeFlag;
     unsigned int zone_index;
@@ -44,6 +46,7 @@
     unsigned long long purgable_vol_size;
     unsigned long long purgable_non_vol_size;
     unsigned long long purgable_empty_size;
+    unsigned long long reusable_size;
 }
 
 + (id)columnHeadersWithOptions:(unsigned long long)arg1 maximumLength:(unsigned long long)arg2 memorySizeDivisor:(unsigned int)arg3 hasFractionalPageSizes:(_Bool)arg4;
@@ -54,6 +57,7 @@
 - (void)addInfoFromRegion:(id)arg1;
 - (_Bool)hasSameInfoAsRegion:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (_Bool)isWired;
 - (_Bool)isSubmap;
 - (unsigned int)maxProtection;
 - (unsigned int)protection;
@@ -65,7 +69,9 @@
 - (id)description;
 - (id)descriptionWithOptions:(unsigned long long)arg1 maximumLength:(unsigned long long)arg2 memorySizeDivisor:(unsigned int)arg3 hasFractionalPageSizes:(_Bool)arg4;
 - (id)descriptionWithOptions:(unsigned long long)arg1 maximumLength:(unsigned long long)arg2;
+- (void)getVMRegionDataExtra:(struct _VMUVMRegionDataExtra *)arg1;
 - (void)getVMRegionData:(struct _VMUVMRegionData *)arg1 withSimpleSerializer:(id)arg2;
+- (void)setVMRegionDataExtra:(struct _VMUVMRegionDataExtra *)arg1;
 - (id)initWithVMRegionData:(struct _VMUVMRegionData *)arg1 encodedVersion:(long long)arg2 simpleSerializer:(id)arg3;
 - (id)init;
 

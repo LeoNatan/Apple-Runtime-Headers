@@ -11,9 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (struct vImage_Buffer)newVImageBufferFromCIImage:(id)arg1 error:(id *)arg2;
-+ (struct CGImage *)newCGImageFromCIImage:(id)arg1 error:(id *)arg2;
-+ (id)newCIImageFromVImage:(struct vImage_Buffer *)arg1 withType:(int)arg2 error:(id *)arg3;
++ (struct vImage_Buffer)createVImageBufferFromCIImage:(id)arg1 error:(id *)arg2;
++ (struct CGImage *)createCGImageFromCIImage:(id)arg1 error:(id *)arg2;
++ (id)createFromImage:(struct vImage_Buffer *)arg1 withType:(int)arg2 error:(id *)arg3;
 
 @end
 

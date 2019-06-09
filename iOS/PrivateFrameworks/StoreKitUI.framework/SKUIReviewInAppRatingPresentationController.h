@@ -10,6 +10,7 @@
 
 @class NSString, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewInAppRatingPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate>
 {
     _Bool _constraintsPrepared;

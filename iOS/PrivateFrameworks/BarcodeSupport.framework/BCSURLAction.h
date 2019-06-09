@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) _Bool hasPreferredAppLink; // @synthesize hasPreferredAppLink=_hasPreferredAppLink;
 - (void).cxx_destruct;
-- (_Bool)_isCodeFromQRScannerInCamera;
+- (_Bool)_isCodeFromQRScanner;
 - (_Bool)_shouldBlockHandlingURL:(id)arg1;
 - (_Bool)_shouldOpenInAppForAppLink:(id)arg1;
 - (id)_actionDescriptionWithoutTargetApplicationForURL:(id)arg1;
@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) LSApplicationProxy *targetApplication;
 - (void)_resolveTargetApplicationForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) unsigned long long appLinkCount;
+- (id)appLinks;
 @property(readonly, nonatomic) _Bool mustOpenAppLinkInApp;
 - (void)determineActionabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performAction;

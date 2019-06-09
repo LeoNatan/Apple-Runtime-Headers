@@ -38,9 +38,9 @@
 - (oneway void)release;
 - (void)dealloc;
 @property(readonly) NSDictionary *options;
-@property(readonly) unsigned long long alignment;
+@property(readonly) long long alignment;
 - (id)init;
-- (id)initWithTextAlignment:(unsigned long long)arg1 location:(double)arg2 options:(id)arg3;
+- (id)initWithTextAlignment:(long long)arg1 location:(double)arg2 options:(id)arg3;
 - (id)initWithType:(unsigned long long)arg1 location:(double)arg2;
 
 @end

@@ -16,12 +16,14 @@
     _Bool _itunes;
     _Bool _firstParty;
     _Bool _watchListEnabled;
-    _Bool _requiresSubscriptionForConsent;
-    _Bool _requiresAccountLevelConsent;
-    _Bool _shouldPromptForConsentOnSubscriptionChange;
+    _Bool _consented;
+    _Bool _apSubscription;
     _Bool _shouldTrackPlayActivity;
-    _Bool _shouldIncludeInConsent;
     _Bool _appInstalled;
+    _Bool _requiresAccountLevelConsent;
+    _Bool _requiresSubscriptionForConsent;
+    _Bool _shouldPromptForConsentOnSubscriptionChange;
+    _Bool _shouldIncludeInConsent;
     NSString *_channelID;
     NSString *_name;
     NSArray *_appAdamIDs;
@@ -29,17 +31,23 @@
     NSString *_appName;
     WLKArtworkVariantListing *_images;
     NSDictionary *_rateLimit;
+    unsigned long long _channelType;
+    NSString *_minRequiredAppVersion;
     NSString *_appStoreURLString;
 }
 
 @property(copy, nonatomic) NSString *appStoreURLString; // @synthesize appStoreURLString=_appStoreURLString;
-@property(readonly, nonatomic, getter=isAppInstalled) _Bool appInstalled; // @synthesize appInstalled=_appInstalled;
 @property(readonly, nonatomic) _Bool shouldIncludeInConsent; // @synthesize shouldIncludeInConsent=_shouldIncludeInConsent;
+@property(readonly, nonatomic) _Bool shouldPromptForConsentOnSubscriptionChange; // @synthesize shouldPromptForConsentOnSubscriptionChange=_shouldPromptForConsentOnSubscriptionChange;
+@property(readonly, nonatomic) _Bool requiresSubscriptionForConsent; // @synthesize requiresSubscriptionForConsent=_requiresSubscriptionForConsent;
+@property(readonly, nonatomic) _Bool requiresAccountLevelConsent; // @synthesize requiresAccountLevelConsent=_requiresAccountLevelConsent;
+@property(readonly, nonatomic, getter=isAppInstalled) _Bool appInstalled; // @synthesize appInstalled=_appInstalled;
+@property(readonly, nonatomic) NSString *minRequiredAppVersion; // @synthesize minRequiredAppVersion=_minRequiredAppVersion;
+@property(readonly, nonatomic) unsigned long long channelType; // @synthesize channelType=_channelType;
 @property(readonly, nonatomic) _Bool shouldTrackPlayActivity; // @synthesize shouldTrackPlayActivity=_shouldTrackPlayActivity;
 @property(readonly, nonatomic) NSDictionary *rateLimit; // @synthesize rateLimit=_rateLimit;
-@property(readonly, nonatomic) _Bool shouldPromptForConsentOnSubscriptionChange; // @synthesize shouldPromptForConsentOnSubscriptionChange=_shouldPromptForConsentOnSubscriptionChange;
-@property(readonly, nonatomic) _Bool requiresAccountLevelConsent; // @synthesize requiresAccountLevelConsent=_requiresAccountLevelConsent;
-@property(readonly, nonatomic) _Bool requiresSubscriptionForConsent; // @synthesize requiresSubscriptionForConsent=_requiresSubscriptionForConsent;
+@property(readonly, nonatomic, getter=isApSubscription) _Bool apSubscription; // @synthesize apSubscription=_apSubscription;
+@property(readonly, nonatomic, getter=isConsented) _Bool consented; // @synthesize consented=_consented;
 @property(readonly, nonatomic, getter=isWatchListEnabled) _Bool watchListEnabled; // @synthesize watchListEnabled=_watchListEnabled;
 @property(readonly, nonatomic, getter=isFirstParty) _Bool firstParty; // @synthesize firstParty=_firstParty;
 @property(readonly, nonatomic, getter=isiTunes) _Bool itunes; // @synthesize itunes=_itunes;
@@ -55,6 +63,7 @@
 @property(readonly, copy, nonatomic) NSURL *appStoreURL;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
+- (id)sui_channelName;
 - (id)appIconURLForSize:(struct CGSize)arg1;
 
 // Remaining properties

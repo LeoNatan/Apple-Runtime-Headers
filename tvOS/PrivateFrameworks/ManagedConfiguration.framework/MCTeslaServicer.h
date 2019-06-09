@@ -6,24 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class NSXPCConnection;
+@class MCDeviceUploadCredentials, MCDeviceUploadOrganization, MCDeviceUploadSubmitDeviceRequestPayload, NSString, NSXPCConnection;
 
 @interface MCTeslaServicer : NSObject
 {
-    _Bool _isBusy;
     CDUnknownBlockType _callback;
     NSXPCConnection *_connection;
+    NSString *_nonce;
+    MCDeviceUploadCredentials *_userCredentials;
+    MCDeviceUploadOrganization *_organization;
+    MCDeviceUploadSubmitDeviceRequestPayload *_deviceUploadRequest;
 }
 
-@property(nonatomic) _Bool isBusy; // @synthesize isBusy=_isBusy;
+@property(retain, nonatomic) MCDeviceUploadSubmitDeviceRequestPayload *deviceUploadRequest; // @synthesize deviceUploadRequest=_deviceUploadRequest;
+@property(retain, nonatomic) MCDeviceUploadOrganization *organization; // @synthesize organization=_organization;
+@property(retain, nonatomic) MCDeviceUploadCredentials *userCredentials; // @synthesize userCredentials=_userCredentials;
+@property(retain, nonatomic) NSString *nonce; // @synthesize nonce=_nonce;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
 - (void).cxx_destruct;
+- (void)submitDeviceUploadRequest:(id)arg1 credentials:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)retrieveDeviceUploadSoldToIdsForOrganization:(id)arg1 credentials:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)retrieveDeviceUploadRequestTypesWithCredentials:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)retrieveDeviceUploadOrganizationsWithCredentials:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)unenrollWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)fetchConfigurationWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)provisionallyEnrollWithNonce:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)requestDidFailWithError:(id)arg1;
-- (id)connectionError;
+- (void)_retrieveProxyObjectAndRunServiceType:(long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_callServiceByType:(long long)arg1 onProxy:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)_completeServiceWithSuccess:(_Bool)arg1 response:(id)arg2 error:(id)arg3;
+- (id)_connectionError;
 - (void)dealloc;
 - (id)init;
 

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)applicatorInfoForOwner:(id)arg1;
 - (Class)applicatorClassForKeyboard:(_Bool)arg1;
+- (struct CGAffineTransform)transform;
 - (double)alpha;
 - (struct CGRect)remoteIntrinsicContentSizeForInputViewInSet:(id)arg1 includingIAV:(_Bool)arg2;
 - (_Bool)accessoryViewWillAppear;

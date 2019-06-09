@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) NSString *watchKitAppBundleID; // @synthesize watchKitAppBundleID=_watchKitAppBundleID;
 @property(readonly, nonatomic) NSString *containerBundleID; // @synthesize containerBundleID=_containerBundleID;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasPhoneAppInstalled;
 - (id)initWithContainerBundleID:(id)arg1 watchKitAppBundleID:(id)arg2 runsOnWatch:(_Bool)arg3;
 
 @end

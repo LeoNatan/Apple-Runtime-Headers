@@ -6,24 +6,23 @@
 
 #import <Photos/PHAssetPropertySet.h>
 
-#import <Photos/PHAssetPropertySet-Protocol.h>
+@class NSMutableDictionary;
 
-@class NSMutableDictionary, PHAsset;
-
-@interface PHAssetAnalysisStateProperties : PHAssetPropertySet <PHAssetPropertySet>
+@interface PHAssetAnalysisStateProperties : PHAssetPropertySet
 {
-    NSMutableDictionary *_analysisStates;
+    NSMutableDictionary *_fetchDictionariesByWorkerType;
 }
 
-+ (void)fetchPropertiesForObjects:(id)arg1 photoLibrary:(id)arg2;
++ (id)propertiesToFetch;
++ (BOOL)isToMany;
++ (id)keyPathToPrimaryObject;
++ (id)keyPathFromPrimaryObject;
++ (id)entityName;
++ (id)propertySetName;
+@property(readonly, nonatomic) NSMutableDictionary *fetchDictionariesByWorkerType; // @synthesize fetchDictionariesByWorkerType=_fetchDictionariesByWorkerType;
 - (void).cxx_destruct;
-- (void)addAnalysisState:(id)arg1;
 - (int)analysisStateForWorkerType:(short)arg1 outLastIgnoreDate:(id *)arg2 outIgnoreUntilDate:(id *)arg3;
-- (id)initWithAsset:(id)arg1 analysisStates:(id)arg2;
-- (id)initWithAsset:(id)arg1;
-
-// Remaining properties
-@property(readonly, nonatomic) __weak PHAsset *asset;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end
 

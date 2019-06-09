@@ -11,7 +11,7 @@
 #import <FamilyCircleUI/FASetupDelegate-Protocol.h>
 #import <FamilyCircleUI/RemoteUIControllerDelegate-Protocol.h>
 
-@class AAFamilyDetailsResponse, AAFamilyEligibilityResponse, AAGrandSlamSigner, AAUIAccountManager, FACircleContext, FAFamilyMemberDetailsPageSurrogate, FAFamilyNotificationObserver, FARequestConfigurator, NSArray, NSMutableArray, NSOperationQueue, NSString, PSListController, PSSpecifier;
+@class AAFamilyDetailsResponse, AAFamilyEligibilityResponse, AAGrandSlamSigner, AIDAAccountManager, FACircleContext, FAFamilyMemberDetailsPageSurrogate, FAFamilyNotificationObserver, FARequestConfigurator, NSArray, NSMutableArray, NSOperationQueue, NSString, PSListController, PSSpecifier;
 @protocol AAUISpecifierProviderDelegate;
 
 @interface FASettingsSpecifierProvider : NSObject <FASetupDelegate, FAFamilySettingsViewControllerDelegate, RemoteUIControllerDelegate, AAUISpecifierProvider>
@@ -32,7 +32,7 @@
     long long _familyEligibilityStatus;
     _Bool _isHandlingURLForInvite;
     NSOperationQueue *_networkActivityQueue;
-    AAUIAccountManager *_accountManager;
+    AIDAAccountManager *_accountManager;
     AAGrandSlamSigner *_grandSlamSigner;
     FARequestConfigurator *_requestConfigurator;
     FACircleContext *_context;

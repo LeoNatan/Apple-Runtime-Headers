@@ -12,12 +12,15 @@ __attribute__((visibility("hidden")))
     struct MTLComputePipelineDescriptorPrivate _private;
 }
 
+- (id)newSerializedComputeDataWithFlags:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)newSerializedComputeData;
 - (void)validateWithDevice:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)buffers;
 - (const struct MTLComputePipelineDescriptorPrivate *)_descriptorPrivate;
+- (void)setNeedsCustomBorderColorSamplers:(BOOL)arg1;
+- (BOOL)needsCustomBorderColorSamplers;
 - (void)setResourceIndex:(unsigned long long)arg1;
 - (unsigned long long)resourceIndex;
 - (void)setForceResourceIndex:(BOOL)arg1;
@@ -26,6 +29,8 @@ __attribute__((visibility("hidden")))
 - (void)setMaxTotalThreadsPerThreadgroup:(unsigned long long)arg1;
 - (BOOL)threadGroupSizeIsMultipleOfThreadExecutionWidth;
 - (void)setThreadGroupSizeIsMultipleOfThreadExecutionWidth:(BOOL)arg1;
+- (id)pipelineLibrary;
+- (void)setPipelineLibrary:(id)arg1;
 - (id)driverCompilerOptions;
 - (void)setDriverCompilerOptions:(id)arg1;
 - (id)stageInputDescriptor;

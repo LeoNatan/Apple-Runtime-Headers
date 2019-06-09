@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSNumber, NSString, NSURL;
+@class NSArray, NSDictionary, NSNumber, NSString, NSURL, _TVSecureKeyLoader;
 
 @interface TVMediaItem : NSObject
 {
     _Bool _containsExplicitContent;
+    _TVSecureKeyLoader *secureKeyLoader;
     NSString *_type;
     NSURL *_url;
     NSString *_title;
@@ -54,6 +55,7 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *type; // @synthesize type=_type;
+@property(retain, nonatomic) _TVSecureKeyLoader *secureKeyLoader; // @synthesize secureKeyLoader;
 - (void).cxx_destruct;
 - (void)updatePlayerItem:(id)arg1;
 

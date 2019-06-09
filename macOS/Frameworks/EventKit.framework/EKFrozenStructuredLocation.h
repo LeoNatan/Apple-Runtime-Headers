@@ -22,6 +22,7 @@
     NSString *uuid;
 }
 
++ (Class)alternateUniverseClass;
 + (Class)meltedClass;
 @property(readonly, retain) NSString *uuid; // @synthesize uuid;
 @property(readonly, copy, nonatomic) NSData *mapKitHandle; // @synthesize mapKitHandle;

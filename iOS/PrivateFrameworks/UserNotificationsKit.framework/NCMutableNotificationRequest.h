@@ -33,6 +33,7 @@
 @property(nonatomic, getter=isUniqueThreadIdentifier) _Bool uniqueThreadIdentifier; // @dynamic uniqueThreadIdentifier;
 @property(copy, nonatomic) NSString *parentSectionIdentifier; // @dynamic parentSectionIdentifier;
 @property(copy, nonatomic) NSArray *peopleIdentifiers; // @dynamic peopleIdentifiers;
+@property(copy, nonatomic) NSArray *intentIdentifiers; // @dynamic intentIdentifiers;
 @property(copy, nonatomic) NSString *highestPrioritySubSectionIdentifier; // @dynamic highestPrioritySubSectionIdentifier;
 @property(copy, nonatomic) NSSet *subSectionIdentifiers; // @dynamic subSectionIdentifiers;
 @property(copy, nonatomic) NSString *categoryIdentifier; // @dynamic categoryIdentifier;

@@ -211,14 +211,8 @@
 - (struct CGRect)targetViewRect;
 - (struct CGSize)collectionView:(id)arg1 imageSizeAtIndex:(long long)arg2;
 @property(readonly, nonatomic) ICDocCamReorderingThumbnailCollectionViewLayout *thumbnailCollectionViewLayout;
-- (void)promptToChangeCollectionName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)collectionNameTapped:(id)arg1;
 - (void)showPrimaryControllerForNotes:(id)arg1 animated:(_Bool)arg2;
-- (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
-- (void)editTitleTextFieldChanged:(id)arg1;
-- (id)stringByScrubbingStringForCollectionName:(id)arg1;
-- (void)showSingleButtonAlertWithTitle:(id)arg1 message:(id)arg2;
-- (_Bool)isTitleValid:(id)arg1 error:(out id *)arg2;
 - (_Bool)filterViewControllerApplyToAll:(short)arg1;
 - (_Bool)filterViewControllerCanApplyToAll:(short)arg1;
 - (_Bool)filterViewControllerDidSelectFilter:(short)arg1;
@@ -230,6 +224,7 @@
 - (void)pageViewController:(id)arg1 willTransitionToViewControllers:(id)arg2;
 - (id)viewControllerAtIndex:(unsigned long long)arg1;
 - (double)normalizedPageViewControllerScrollPosition;
+@property(readonly, nonatomic) _Bool shouldDisableSharrow;
 @property(readonly, nonatomic) _Bool shouldDisableActions;
 @property(readonly, nonatomic) _Bool isPageViewControllerScrolled;
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;
@@ -285,6 +280,7 @@
 - (void)updateFilterViewLayoutIfNeeded;
 - (void)updateStatusBarFromWindowLevel;
 - (void)updateLayout;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)prepareForDismissal;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (long long)preferredStatusBarUpdateAnimation;
@@ -295,6 +291,7 @@
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (_Bool)cameraDisabled;
 - (void)defaultsChanged;
 - (_Bool)canBecomeFirstResponder;
 - (id)undoManager;

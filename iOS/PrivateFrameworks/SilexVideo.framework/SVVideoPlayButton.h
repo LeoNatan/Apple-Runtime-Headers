@@ -8,15 +8,13 @@
 
 @interface SVVideoPlayButton : SVButton
 {
-    _Bool _paused;
 }
 
-@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
++ (id)playImage;
+- (void)displayAsPaused;
 - (id)accessibilityHint;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;
-- (void)displayAsPlaying;
-- (void)displayAsPaused;
 - (void)layoutSubviews;
 - (void)updateBackgroundColor;
 - (id)initWithFrame:(struct CGRect)arg1;

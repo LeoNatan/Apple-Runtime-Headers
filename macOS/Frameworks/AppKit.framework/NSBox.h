@@ -10,10 +10,11 @@
 
 @interface NSBox : NSView
 {
-    id _titleCell;
     id _contentView;
     struct CGSize _offsets;
     struct CGRect _borderRect;
+    id _unused;
+    id _titleCell;
     struct CGRect _titleRect;
     struct __bFlags {
         unsigned int borderType:2;
@@ -22,19 +23,15 @@
         unsigned int orientation:2;
         unsigned int needsTile:1;
         unsigned int transparent:1;
-        unsigned int colorAltInterpretation:1;
         unsigned int boxType:3;
         unsigned int useSuperAddSubview:1;
-        unsigned int _RESERVED:17;
+        unsigned int _RESERVED:18;
     } _bFlags;
-    id _unused;
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
-+ (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (void)initialize;
-- (id)_lineColor;
-- (void)_setLineColor:(id)arg1;
 - (void)setTitleWithMnemonic:(id)arg1;
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
@@ -58,7 +55,6 @@
 - (void)_updateBackgroundView;
 - (struct CGRect)_backgroundViewFrame;
 - (void)_invalidateSubviewsForStateChange;
-- (id)fontSmoothingBackgroundColor;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateLayer;
 - (void)viewWillDraw;

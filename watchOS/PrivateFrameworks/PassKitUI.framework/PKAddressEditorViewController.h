@@ -22,6 +22,7 @@
     _Bool _displayGivenNameFirst;
     _Bool _displayPhoneticName;
     _Bool _readOnly;
+    _Bool _countryIsEditable;
     _Bool _requirementsMet;
     id <PKAddressEditorViewControllerDelegate> _delegate;
     NSString *_givenName;
@@ -77,6 +78,7 @@
 @property(retain, nonatomic) NSString *phoneticGivenName; // @synthesize phoneticGivenName=_phoneticGivenName;
 @property(retain, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 @property(retain, nonatomic) NSString *givenName; // @synthesize givenName=_givenName;
+@property(nonatomic) _Bool countryIsEditable; // @synthesize countryIsEditable=_countryIsEditable;
 @property(nonatomic) _Bool readOnly; // @synthesize readOnly=_readOnly;
 @property(nonatomic) id <PKAddressEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -88,6 +90,7 @@
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (void)textDidChange:(id)arg1;
 - (_Bool)textFieldShouldBeginEditing:(id)arg1;
+- (_Bool)canChangeCountry;
 - (struct CGSize)preferredContentSize;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;

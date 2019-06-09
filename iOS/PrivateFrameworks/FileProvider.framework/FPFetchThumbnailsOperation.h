@@ -6,38 +6,38 @@
 
 #import <FileProvider/FPOperation.h>
 
-#import <FileProvider/NSSecureCoding-Protocol.h>
+#import <FileProvider/FPOperationProgressDelegate-Protocol.h>
 
-@class FPItemManager, NSArray, NSString;
+@class FPItemManager, NSArray, NSMutableArray, NSOperationQueue, NSString;
 
-@interface FPFetchThumbnailsOperation : FPOperation <NSSecureCoding>
+@interface FPFetchThumbnailsOperation : FPOperation <FPOperationProgressDelegate>
 {
-    NSArray *_itemIdentifiers;
-    struct CGSize _size;
-    double _scale;
+    NSArray *_items;
+    struct CGSize _desiredSize;
+    double _screenScale;
     FPItemManager *_itemManager;
-    NSString *_providerIdentifier;
+    NSOperationQueue *_subOperationQueue;
+    NSMutableArray *_subOperations;
     CDUnknownBlockType _perThumbnailCompletionBlock;
     CDUnknownBlockType _thumbnailsFetchCompletionBlock;
-    CDUnknownBlockType _perThumbnailCompletionBlock_v2;
-    CDUnknownBlockType _thumbnailsFetchCompletionBlock_v2;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) CDUnknownBlockType thumbnailsFetchCompletionBlock_v2; // @synthesize thumbnailsFetchCompletionBlock_v2=_thumbnailsFetchCompletionBlock_v2;
-@property(copy, nonatomic) CDUnknownBlockType perThumbnailCompletionBlock_v2; // @synthesize perThumbnailCompletionBlock_v2=_perThumbnailCompletionBlock_v2;
 @property(copy, nonatomic) CDUnknownBlockType thumbnailsFetchCompletionBlock; // @synthesize thumbnailsFetchCompletionBlock=_thumbnailsFetchCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType perThumbnailCompletionBlock; // @synthesize perThumbnailCompletionBlock=_perThumbnailCompletionBlock;
 - (void).cxx_destruct;
+- (void)_perItemCompletionBlockFor:(id)arg1 thumbnail:(id)arg2 contentType:(id)arg3 error:(id)arg4;
+- (void)operation:(id)arg1 didReceiveProgressInfo:(id)arg2 error:(id)arg3;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (void)operationDidProgressWithInfo:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)transformData:(id)arg1 forLegacyCompletionBlockWithType:(id)arg2;
+- (void)cancel;
 - (void)main;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithItems:(id)arg1 desiredSize:(struct CGSize)arg2 screenScale:(double)arg3 itemManager:(id)arg4;
 - (id)init;
-- (id)initWithItemManager:(id)arg1 providerIdentifier:(id)arg2 itemThumbnailIdentifiers:(id)arg3 size:(struct CGSize)arg4 scale:(double)arg5;
-- (id)_initWithItemIdentifiers:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

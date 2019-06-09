@@ -79,6 +79,7 @@
 - (void)cleanupAfterStyleTransition;
 - (void)setStyleTransitionFraction:(float)arg1;
 - (void)prepareToTransitionToStyle:(id)arg1;
+- (id)labelManagerContentView;
 - (void)setThreeDigitFont:(id)arg1 fourDigitFont:(id)arg2 designatorFont:(id)arg3;
 - (void)setTimeFont:(id)arg1 designatorFont:(id)arg2;
 - (void)setBlinkingPaused:(_Bool)arg1;

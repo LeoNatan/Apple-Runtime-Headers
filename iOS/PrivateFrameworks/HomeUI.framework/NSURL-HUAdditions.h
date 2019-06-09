@@ -10,11 +10,15 @@
 + (id)hu_openiCloudKeychainPreferences;
 + (id)hu_openiCloudPreferencesURL;
 + (id)hu_applePrivacyURL;
++ (id)hu_learnAboutNetworksRequiringProfilesURL;
++ (id)hu_learnAboutUnshareableNetworksURL;
 + (id)hu_learnToAddAccessoriesURL;
 + (id)hu_locationServicesSettingsURL;
 + (id)hu_locationDeviceSettingsURL;
 + (id)hu_allowAccessWhileLockedSettingsURL;
 + (id)hu_wifiSettingsURL;
 + (id)hu_notificationSettingsURL;
++ (id)_localeString;
+@property(readonly, nonatomic) _Bool hu_isHomeKnowledgeBasedArticleURL;
 @end
 

@@ -15,13 +15,13 @@
     NSObject<OS_dispatch_queue> *_requestIsolationQueue;
     struct os_unfair_lock_s _lock;
     NSMutableDictionary *_requestById;
-    int _currentRequestId;
+    // Error parsing type: Ai, name: _currentRequestId
 }
 
 + (id)defaultManager;
 - (void).cxx_destruct;
 - (void)cancelRequest:(int)arg1;
-- (int)requestCloudResourceType:(unsigned int)arg1 assetObjectID:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (int)requestCloudResourceType:(unsigned int)arg1 assetObjectID:(id)arg2 library:(id)arg3 progressHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_setRequest:(id)arg1 forRequestID:(int)arg2;
 - (id)_requestWithID:(int)arg1;
 - (id)init;

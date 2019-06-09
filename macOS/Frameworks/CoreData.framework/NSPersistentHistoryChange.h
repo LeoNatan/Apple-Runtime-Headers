@@ -16,6 +16,9 @@
 
 + (id)stringForChangeType:(long long)arg1;
 + (id)shortStringForChangeType:(long long)arg1;
++ (id)entityDescriptionWithContext:(id)arg1;
++ (id)entityDescription;
++ (id)fetchRequest;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy) NSSet *updatedProperties;
 @property(readonly) long long changeID;

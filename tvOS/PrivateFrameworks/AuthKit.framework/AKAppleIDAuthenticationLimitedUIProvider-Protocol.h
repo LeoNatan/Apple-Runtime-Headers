@@ -17,6 +17,6 @@
 - (void)presentBasicLoginUIWithCompletion:(void (^)(NSString *, NSString *, NSDictionary *, NSError *))arg1;
 
 @optional
-- (void)registerSurrogateWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)presentBiometricOrPasscodeValidationForAppleID:(NSString *)arg1 completion:(void (^)(unsigned long long, NSError *))arg2;
 @end
 

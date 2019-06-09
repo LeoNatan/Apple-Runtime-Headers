@@ -18,7 +18,7 @@
         _Bool shouldUpdate;
     } _observerRespondsTo;
     _Bool _shouldUpdateInfo;
-    _Bool _updatingInfo;
+    _Bool _isUpdatingInfo;
     id _info;
     id <PXInfoProvider> _infoProvider;
     NSString *_infoKind;
@@ -31,12 +31,13 @@
 @property(retain, nonatomic) NSProgress *currentUpdateProgress; // @synthesize currentUpdateProgress=_currentUpdateProgress;
 @property(nonatomic) long long currentUpdatePriority; // @synthesize currentUpdatePriority=_currentUpdatePriority;
 @property(nonatomic) long long currentUpdateGeneration; // @synthesize currentUpdateGeneration=_currentUpdateGeneration;
-@property(nonatomic, getter=isUpdatingInfo) _Bool updatingInfo; // @synthesize updatingInfo=_updatingInfo;
+@property(nonatomic) _Bool isUpdatingInfo; // @synthesize isUpdatingInfo=_isUpdatingInfo;
 @property(nonatomic) _Bool shouldUpdateInfo; // @synthesize shouldUpdateInfo=_shouldUpdateInfo;
 @property(nonatomic) __weak id <PXInfoUpdaterObserver> observer; // @synthesize observer=_observer;
 @property(readonly, copy, nonatomic) NSString *infoKind; // @synthesize infoKind=_infoKind;
 @property(readonly, nonatomic) __weak id <PXInfoProvider> infoProvider; // @synthesize infoProvider=_infoProvider;
 - (void).cxx_destruct;
+- (void)performBlockWhenDoneUpdating:(CDUnknownBlockType)arg1;
 - (void)_handleCurrentUpdateWithInfo:(id)arg1 generation:(long long)arg2;
 - (void)_updateInfo;
 - (void)_updateInfoIfNeeded;

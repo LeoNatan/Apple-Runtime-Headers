@@ -7,6 +7,8 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (MTUtilities)
++ (id)mtEarliest:(id)arg1;
++ (id)mtLatest:(id)arg1;
 + (id)mtNow;
 - (id)mtDateNearestMatchingComponents:(id)arg1;
 - (_Bool)mtIsAfterOrSameAsDate:(id)arg1;

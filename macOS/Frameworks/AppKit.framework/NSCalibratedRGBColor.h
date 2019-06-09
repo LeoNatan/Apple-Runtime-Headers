@@ -15,10 +15,8 @@
     struct CGColor *_cachedCGColor;
 }
 
-+ (id)_cachedLookupWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)newWithCoder:(id)arg1 zone:(struct _NSZone *)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1 colorSpaceCode:(BOOL)arg2;
 - (Class)classForCoder;
 - (BOOL)isUniform;
 - (unsigned long long)hash;

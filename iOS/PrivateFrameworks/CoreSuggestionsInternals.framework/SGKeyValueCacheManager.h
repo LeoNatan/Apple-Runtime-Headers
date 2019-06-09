@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)deleteValueByRecordIdSet:(id)arg1;
 - (void)replaceCacheOfType:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (id)cacheOfType:(unsigned long long)arg1;
 - (id)cacheOfType:(unsigned long long)arg1 forceReadFromDisk:(_Bool)arg2;

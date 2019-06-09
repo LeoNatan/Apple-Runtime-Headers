@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
 - (void)addItemDescriptionForFallbackToRequest:(id)arg1;
 - (id)typeDescription;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)captionDescriptionContainsUserLabel:(char *)arg1 containsAncestorLabel:(char *)arg2;
 
 @end

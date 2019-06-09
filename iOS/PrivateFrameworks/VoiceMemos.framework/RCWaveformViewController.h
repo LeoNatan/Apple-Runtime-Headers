@@ -10,8 +10,8 @@
 #import <VoiceMemos/RCWaveformSelectionOverlayDelegate-Protocol.h>
 #import <VoiceMemos/UIScrollViewDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSMutableArray, NSString, NSTimer, RCLayoutMetrics, RCUIConfiguration, RCWaveformDataSource, RCWaveformRenderer, RCWaveformScrollView, RCWaveformSelectionOverlay, UIView;
-@protocol RCWaveformViewDelegate;
+@class NSLayoutConstraint, NSMutableArray, NSString, NSTimer, RCLayoutMetrics, RCUIConfiguration, RCWaveformDataSource, RCWaveformRenderer, RCWaveformScrollView, RCWaveformSelectionOverlay, UIPinchGestureRecognizer, UIView;
+@protocol RCTimeController, RCWaveformViewDelegate;
 
 @interface RCWaveformViewController : UIViewController <UIScrollViewDelegate, RCWaveformRendererDelegate, RCWaveformSelectionOverlayDelegate>
 {
@@ -27,22 +27,19 @@
     _Bool _timeMarkerViewsNeedInitialLayout;
     _Bool _timeMarkerViewsUpdatesDisabled;
     _Bool _scrubbing;
-    _Bool _dragEnding;
-    _Bool _shouldUpdateInDisplayLink;
     float _resumingToForegroundAutoscrollRate;
     _Bool _isCompactView;
     double _layoutWidth;
     double _layoutHeight;
     double _desiredTimeDeltaForVisibleTimeRange;
-    double _timeBeganAutoscrolling;
-    _Bool _isScrollViewAutoScrolling;
-    _Bool _isScrollViewAutoScrollingPaused;
-    _Bool _isScrollViewAutoScrollingBeginning;
     double _overlayAutoscrollRateForSelectionTracking;
     double _overlayAutoscrollBaseDuration;
     NSLayoutConstraint *_backgroundWaveFormHighlightViewLeftAlignment;
     NSLayoutConstraint *_backgroundWaveFormHighlightViewRightAlignment;
     NSLayoutConstraint *_renderViewBottomInsetConstraint;
+    double _pointsPerSecond;
+    double _pointsPerSecondScale;
+    UIPinchGestureRecognizer *_pinchGesture;
     _Bool _isPlayback;
     _Bool _scrubbingEnabled;
     _Bool _playing;
@@ -87,9 +84,6 @@
 @property(nonatomic) _Bool isPlayback; // @synthesize isPlayback=_isPlayback;
 @property(nonatomic) __weak id <RCWaveformViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_displayLinkDidUpdate:(id)arg1;
-- (void)_stopDisplayLink;
-- (void)_startDisplayLink;
 - (void)_scrollViewPanGestureRecognized:(id)arg1;
 - (void)_layoutTimeMarkerViewsForCurrentlyVisibleTimeRange;
 - (void)_setTimeMarkerViewsNeedInitialLayout:(_Bool)arg1;
@@ -98,7 +92,6 @@
 - (void)_updateSelectionOverlayWithAnimationDuration:(double)arg1;
 - (void)_updateVisibleAreaWithAnimationDuration:(double)arg1;
 - (void)fixupScrollPositionToMatchIndicatorPositionTime;
-- (_Bool)_shouldAutoAnimateScrollChanges;
 - (void)_updateAnnotationViews;
 - (void)_updateWaveformViewContentSizeAndOffset;
 - (void)_updateWaveformViewContentSizeAndOffsetToSize:(double)arg1;
@@ -109,19 +102,20 @@
 - (void)_setVisibleTimeRange:(CDStruct_73a5d3ca)arg1 animationDuration:(double)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (CDStruct_73a5d3ca)_visibleTimeRangeForCurrentSelectionTimeRange;
 - (void)updateBackgroundColor;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateColors;
-- (void)waveformRendererDidSynchronizeToDisplayLink:(id)arg1;
-- (void)waveformRendererContentDidFinishLoading:(id)arg1;
+@property(nonatomic) double desiredTimeDeltaForVisibleTimeRange;
+@property(readonly, nonatomic) id <RCTimeController> activeTimeController;
 - (void)waveformRenderer:(id)arg1 contentWidthDidChange:(double)arg2;
+- (_Bool)isZooming;
 - (double)waveformSelectionOverlayGetCurrentTime:(id)arg1;
 - (double)waveformSelectionOverlay:(id)arg1 timeForOffset:(double)arg2;
 - (double)waveformSelectionOverlay:(id)arg1 offsetForTime:(double)arg2;
 - (double)waveformSelectionOverlay:(id)arg1 willChangeAssetCurrentTime:(double)arg2 isTracking:(_Bool)arg3;
-- (CDStruct_73a5d3ca)waveformSelectionOverlay:(id)arg1 willChangeSelectedTimeRange:(CDStruct_73a5d3ca)arg2 isTracking:(_Bool)arg3;
+- (CDStruct_73a5d3ca)waveformSelectionOverlay:(id)arg1 willChangeSelectedTimeRange:(CDStruct_73a5d3ca)arg2 isTrackingMin:(_Bool)arg3 isTrackingMax:(_Bool)arg4;
 - (void)waveformSelectionOverlay:(id)arg1 didFinishTrackingSelectionBeginTime:(_Bool)arg2 endTime:(_Bool)arg3 assetCurrentTime:(_Bool)arg4;
 - (void)waveformSelectionOverlay:(id)arg1 willBeginTrackingSelectionBeginTime:(_Bool)arg2 endTime:(_Bool)arg3 assetCurrentTime:(_Bool)arg4;
-- (void)scrollView:(id)arg1 didChangeContentOffsetToOffset:(struct CGPoint)arg2;
-- (void)scrollView:(id)arg1 willChangeContentOffsetToOffset:(struct CGPoint)arg2;
+- (void)stopScrolling;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)_scrubbingDidFinish;
@@ -129,19 +123,16 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)_isScrubbing;
 - (_Bool)_isScrubbingSelectionTimeRange;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 @property(nonatomic) _Bool isCompactView;
 - (void)reloadOverlayOffsets;
 - (void)viewDidLayoutSubviews;
-- (_Bool)isScrollViewAutoScrolling;
-@property(readonly, nonatomic, getter=isAutoscrolling) _Bool autoscrolling; // @synthesize autoscrolling=_isScrollViewAutoScrolling;
-- (void)setAutoscrolling:(_Bool)arg1;
-- (void)endAutoscrolling;
-- (void)pauseAutoscrolling;
-- (void)resumeAutoscrollingIfPaused;
-- (void)beginAutoscrollingAtTime:(double)arg1 atRate:(float)arg2;
+- (void)enableZooming:(_Bool)arg1;
+- (void)scaleWaveform:(id)arg1;
+- (double)pointsPerSecond;
+- (void)resetZoomScale;
+- (_Bool)isSelectionOverlayCurrentlyTracking;
 @property(nonatomic, getter=isSelectedTimeRangeEditingEnabled) _Bool selectedTimeRangeEditingEnabled; // @synthesize selectedTimeRangeEditingEnabled=_selectedTimeRangeEditingEnabled;
 - (void)setSelectedTimeRange:(CDStruct_73a5d3ca)arg1 animationDuration:(double)arg2;
 - (CDStruct_73a5d3ca)timeRangeByInsettingVisibleTimeRange:(CDStruct_73a5d3ca)arg1 inset:(double)arg2;

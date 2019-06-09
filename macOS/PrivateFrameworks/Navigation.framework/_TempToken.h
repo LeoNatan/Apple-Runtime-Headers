@@ -9,7 +9,7 @@
 #import <Navigation/GEOServerFormatToken-Protocol.h>
 
 @class NSArray, NSString;
-@protocol GEOServerFormatTokenPriceValue, GEOTransitArtworkDataSource;
+@protocol GEOServerFormatTokenCountdownValue, GEOServerFormatTokenPriceValue, GEOTransitArtworkDataSource;
 
 __attribute__((visibility("hidden")))
 @interface _TempToken : NSObject <GEOServerFormatToken>
@@ -23,8 +23,10 @@ __attribute__((visibility("hidden")))
     id <GEOServerFormatTokenPriceValue> _priceValue;
     id <GEOTransitArtworkDataSource> _artworkValue;
     NSArray *_timeStampValues;
+    id <GEOServerFormatTokenCountdownValue> _countdownValue;
 }
 
+@property(retain, nonatomic) id <GEOServerFormatTokenCountdownValue> countdownValue; // @synthesize countdownValue=_countdownValue;
 @property(retain, nonatomic) NSArray *timeStampValues; // @synthesize timeStampValues=_timeStampValues;
 @property(retain, nonatomic) id <GEOTransitArtworkDataSource> artworkValue; // @synthesize artworkValue=_artworkValue;
 @property(retain, nonatomic) id <GEOServerFormatTokenPriceValue> priceValue; // @synthesize priceValue=_priceValue;
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *token; // @synthesize token=_token;
 @property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (id)initWithToken:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

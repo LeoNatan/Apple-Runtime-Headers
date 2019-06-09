@@ -8,6 +8,7 @@
 
 @class NSResponder;
 
+__attribute__((visibility("hidden")))
 @interface SHKViewServiceWindow : NSWindow
 {
     BOOL _canSetFirstResponder;

@@ -6,12 +6,13 @@
 
 #import <UIKitCore/UIView.h>
 
+#import <UIKitCore/UIBarPositioning-Protocol.h>
 #import <UIKitCore/_UIShadowedView-Protocol.h>
 
-@class NSArray, NSString, UIColor, UIImage, UITabBarCustomizeView, UITabBarItem, _UITabBarAppearanceStorage, _UITabBarVisualProvider;
+@class NSArray, NSString, UIColor, UIImage, UITabBarAppearance, UITabBarCustomizeView, UITabBarItem, _UITabBarAccessoryView, _UITabBarAppearanceStorage, _UITabBarVisualProvider;
 @protocol UITabBarDelegate;
 
-@interface UITabBar : UIView <_UIShadowedView>
+@interface UITabBar : UIView <_UIShadowedView, UIBarPositioning>
 {
     UITabBarCustomizeView *_customizeView;
     id <UITabBarDelegate> _delegate;
@@ -30,22 +31,25 @@
         unsigned int hiddenAwaitingFocus:1;
         unsigned int focusedItemHighlightShouldBeVisible:1;
         unsigned int hasVibrantLabels:1;
-        unsigned int blurDisabled:1;
         unsigned int disableBlurTinting:1;
         unsigned int pendingFocusAction:1;
         unsigned int springLoaded:1;
     } _tabBarFlags;
     _UITabBarAppearanceStorage *_appearanceStorage;
     _UITabBarVisualProvider *_visualProvider;
+    _UITabBarAccessoryView *_leadingBarAccessoryView;
+    _UITabBarAccessoryView *_trailingBarAccessoryView;
     _Bool _hidesShadow;
     _Bool _showsHighlightedState;
     _Bool _scrollsItems;
+    _Bool _shouldForceFocusedState;
     long long _itemPositioning;
     double _itemDimension;
     double _itemSpacing;
     long long _barMetrics;
     long long _imageStyle;
     long long _tabBarSizing;
+    UITabBarAppearance *_standardAppearance;
     unsigned long long _preferredFocusHeading;
     long long _displayStyle;
     NSArray *_backgroundEffects;
@@ -57,6 +61,7 @@
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
 @property(nonatomic, getter=_displayStyle, setter=_setDisplayStyle:) long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic, getter=_preferredFocusHeading, setter=_setPreferredFocusHeading:) unsigned long long preferredFocusHeading; // @synthesize preferredFocusHeading=_preferredFocusHeading;
+@property(nonatomic, setter=_setFocusedItemShouldAppearFocused:) _Bool shouldForceFocusedState; // @synthesize shouldForceFocusedState=_shouldForceFocusedState;
 @property(nonatomic) __weak UITabBarItem *selectedItem; // @synthesize selectedItem=_selectedItem;
 @property(nonatomic) __weak id <UITabBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setScrollsItems:) _Bool _scrollsItems; // @synthesize _scrollsItems;
@@ -68,6 +73,11 @@
 @property(nonatomic) double itemWidth; // @synthesize itemWidth=_itemDimension;
 @property(nonatomic) long long itemPositioning; // @synthesize itemPositioning=_itemPositioning;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIView *trailingAccessoryView;
+@property(readonly, nonatomic) UIView *leadingAccessoryView;
+@property(readonly, nonatomic) _UITabBarAccessoryView *_trailingBarAccessoryView;
+@property(readonly, nonatomic) _UITabBarAccessoryView *_leadingBarAccessoryView;
+@property(readonly, nonatomic) long long barPosition;
 - (id)hitTest:(struct CGPoint)arg1 forEvent:(struct __GSEvent *)arg2;
 - (void)_updateTabBarItemView:(id)arg1;
 - (void)_positionAllItems;
@@ -83,10 +93,7 @@
 - (void)_buttonUp:(id)arg1;
 - (void)_buttonDownDelayed:(id)arg1;
 - (void)_buttonDown:(id)arg1;
-- (void)_setVisualAltitudeBias:(struct CGSize)arg1;
-- (void)_setVisualAltitude:(double)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (void)drawRect:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
@@ -96,6 +103,7 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)dismissCustomizeSheet:(_Bool)arg1;
 - (void)_tabBarFinishedAnimating;
+@property(readonly, nonatomic, getter=_focusedIndex) long long focusedIndex;
 @property(readonly, nonatomic, getter=_focusedTabBarItem) UITabBarItem *focusedTabBarItem;
 @property(nonatomic, getter=_pendingFocusAction, setter=_setPendingFocusAction:) _Bool pendingFocusAction;
 @property(nonatomic, getter=_focusedItemHighlightShouldBeVisible, setter=_setFocusedItemHightlightShouldBeVisible:) _Bool focusedItemHighlightShouldBeVisible;
@@ -109,16 +117,18 @@
 - (id)_shadowView;
 @property(retain, nonatomic) UIColor *selectedImageTintColor;
 @property(copy, nonatomic) UIColor *unselectedItemTintColor;
+- (id)_defaultUnselectedTintColorForFloating;
 - (id)_effectiveUnselectedLabelTintColor;
 - (id)_effectiveUnselectedTintColor;
 @property(retain, nonatomic) UIColor *barTintColor;
 @property(retain, nonatomic) UIColor *tintColor; // @dynamic tintColor;
 - (void)_effectiveBarTintColorDidChange;
 - (id)_effectiveBarTintColor;
-- (void)_updateTintedImages:(id)arg1 selected:(_Bool)arg2;
 @property(retain, nonatomic) UIImage *selectionIndicatorImage;
 @property(retain, nonatomic) UIImage *shadowImage;
 @property(retain, nonatomic) UIImage *backgroundImage;
+@property(copy, nonatomic) UITabBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
+- (void)_installDefaultAppearance;
 - (_Bool)isSpringLoaded;
 - (void)setSpringLoaded:(_Bool)arg1;
 - (id)preferredFocusedView;
@@ -128,6 +138,7 @@
 - (_Bool)endCustomizingAnimated:(_Bool)arg1;
 - (void)beginCustomizingItems:(id)arg1;
 - (void)setSemanticContentAttribute:(long long)arg1;
+- (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -152,6 +163,7 @@
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_doCommonTabBarInit;
+- (void)_doCommonTabBarPreInit;
 - (_Bool)_subclassImplementsDrawRect;
 @property(nonatomic, setter=_setInterTabButtonSpacing:) double _interTabButtonSpacing;
 @property(nonatomic, setter=_setTabButtonWidth:) double _tabButtonWidth;
@@ -163,11 +175,13 @@
 @property(nonatomic, setter=_setBackgroundNeedsUpdate:) _Bool _backgroundNeedsUpdate;
 - (void)_setShadowAlpha:(double)arg1;
 - (double)_shadowAlpha;
+@property(nonatomic, setter=_setMinimumWidthForHorizontalLayout:) double _minimumWidthForHorizontalLayout;
 @property(retain, nonatomic, setter=_setAccessoryView:) UIView *_accessoryView;
 @property(nonatomic, setter=_setNextSelectionSlideDuration:) double _nextSelectionSlideDuration;
 @property(nonatomic, setter=_setDisableBlurTinting:) _Bool _disableBlurTinting;
 @property(nonatomic, setter=_setBlurEnabled:) _Bool _blurEnabled;
 @property(nonatomic, setter=_setVibrantLabels:) _Bool _vibrantLabels;
+@property(readonly, nonatomic, getter=_useVibrantItems) _Bool useVibrantItems;
 - (void)_setLabelShadowOffset:(struct CGSize)arg1;
 - (void)_setLabelShadowColor:(id)arg1;
 - (void)_setLabelTextColor:(id)arg1 selectedTextColor:(id)arg2;

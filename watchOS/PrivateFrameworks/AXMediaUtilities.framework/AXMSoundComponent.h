@@ -6,26 +6,27 @@
 
 #import <AXMediaUtilities/AXMOutputComponent.h>
 
-@class AVAudioEngine, AVAudioPlayerNode;
+@class AVAudioEngine, AVAudioPlayerNode, NSMutableArray;
 
 @interface AXMSoundComponent : AXMOutputComponent
 {
     AVAudioEngine *_engine;
-    AVAudioPlayerNode *_soundPlayer;
+    AVAudioPlayerNode *_oneShotSoundPlayer;
+    NSMutableArray *_activeSounds;
     id _configChangedObserverToken;
 }
 
 + (_Bool)isSupported;
 @property(retain, nonatomic) id configChangedObserverToken; // @synthesize configChangedObserverToken=_configChangedObserverToken;
-@property(retain, nonatomic) AVAudioPlayerNode *soundPlayer; // @synthesize soundPlayer=_soundPlayer;
-@property(retain, nonatomic) AVAudioEngine *engine; // @synthesize engine=_engine;
 - (void).cxx_destruct;
 - (void)_logAudioFileInfo:(id)arg1;
+- (void)_stopActiveSound:(id)arg1;
 - (_Bool)_startEngineIfNeeded:(id *)arg1;
-- (void)_wireEngineConnections;
-- (void)_buildEngine;
-- (void)handleRequest:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)canHandleRequest:(id)arg1 options:(id)arg2;
+- (void)_scheduleOneShotSound:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_scheduleActiveSound:(id)arg1;
+- (void)handleRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)canHandleRequest:(id)arg1;
+- (void)transitionToState:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)init;
 

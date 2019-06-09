@@ -25,16 +25,16 @@
     NSMapTable *_localBridge;
     DDActionContext *_actionContext;
     DDButtonBar *_buttonBar;
-    BOOL _editedContent;
-    BOOL _editionMode;
     id <DDActionViewPresenter> _presenter;
+    BOOL _editionMode;
+    BOOL _editedContent;
 }
 
 + (unsigned long long)typeForUrl:(id)arg1;
 + (unsigned long long)typeForResult:(struct __DDResult *)arg1;
-@property BOOL editionMode; // @synthesize editionMode=_editionMode;
 @property BOOL editedContent; // @synthesize editedContent=_editedContent;
 @property __weak id <DDActionViewPresenter> presenter; // @synthesize presenter=_presenter;
+@property BOOL editionMode; // @synthesize editionMode=_editionMode;
 @property(retain) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
 - (void).cxx_destruct;
 - (BOOL)viewShouldDragOldestAncestorWindow:(id)arg1;

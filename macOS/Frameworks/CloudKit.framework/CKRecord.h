@@ -61,6 +61,10 @@
     NSData *_pcsKeyID;
 }
 
++ (id)keyForFetchingItems:(unsigned long long)arg1 atEndOfListField:(id)arg2;
++ (id)keyForAppendingToListField:(id)arg1;
++ (id)keyForInsertingIntoListField:(id)arg1 atIndex:(long long)arg2;
++ (id)keyForListField:(id)arg1 withIndexRange:(struct _NSRange)arg2;
 + (BOOL)supportsSecureCoding;
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)shareURLWithShortToken:(id)arg1 shareTitle:(id)arg2 shareType:(id)arg3 containerID:(id)arg4 displayedHostname:(id)arg5;
@@ -155,12 +159,14 @@
 @property(retain, nonatomic) NSSet *changedKeysSet;
 @property(readonly, nonatomic) NSDictionary *originalValues;
 @property(readonly, nonatomic) NSDictionary *values;
+@property(readonly, nonatomic) BOOL hasChainPCS;
 @property(readonly, nonatomic) unsigned long long size;
 - (unsigned long long)_sizeOfRecordValue:(id)arg1 forKey:(id)arg2;
 - (unsigned long long)_sizeOfRecordID:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 @property(readonly, copy) NSString *debugDescription;
+- (BOOL)canHostServerURLInfo;
 @property(readonly, copy, nonatomic) NSURL *URL;
 @property(readonly, nonatomic) NSURL *uncachedURL;
 @property(readonly, nonatomic) NSString *shortToken;

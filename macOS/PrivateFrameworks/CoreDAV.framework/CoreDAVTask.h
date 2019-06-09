@@ -8,7 +8,7 @@
 
 #import <CoreDAV/CoreDAVSubmittable-Protocol.h>
 
-@class CoreDAVErrorItem, CoreDAVRequestLogger, NSData, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableDictionary, NSString, NSURL, NSURLConnection, NSURLRequest;
+@class CoreDAVErrorItem, CoreDAVRequestLogger, NSData, NSDate, NSDictionary, NSError, NSHTTPURLResponse, NSMutableArray, NSMutableDictionary, NSRunLoop, NSString, NSURL, NSURLConnection, NSURLRequest;
 @protocol CoreDAVAccountInfoProvider, CoreDAVResponseBodyParser, CoreDAVTaskDelegate, CoreDAVTaskManager;
 
 @interface CoreDAVTask : NSObject <CoreDAVSubmittable>
@@ -129,7 +129,8 @@
 - (id)requestBodyStream;
 - (BOOL)_includeGeneralHeaders;
 - (id)httpMethod;
-- (id)_osLogDescription;
+@property(readonly, nonatomic) NSRunLoop *workRunLoop;
+- (id)redactedDescription;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1;

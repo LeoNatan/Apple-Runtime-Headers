@@ -8,6 +8,7 @@
 
 @class NSData, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ConnectionFailureTracker : NSObject
 {
     _Bool _isIPv6;

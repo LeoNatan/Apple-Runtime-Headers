@@ -24,6 +24,7 @@
 - (void)getAutoBugCaptureConfiguration:(CDUnknownBlockType)arg1;
 - (void)purgeAutoBugCaptureFilesWithSubPaths:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getAllDiagnosticCasesWithReply:(CDUnknownBlockType)arg1;
+- (void)casesListCallbackWithResult:(id)arg1 service:(id)arg2 identifier:(id)arg3 count:(unsigned long long)arg4 container:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (BOOL)triggerRemoteSessionForSignature:(id)arg1 caseGroupID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (BOOL)getDiagnosticPayloadsForSignatures:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (BOOL)addSignatureContentForSession:(id)arg1 key:(id)arg2 content:(id)arg3 reply:(CDUnknownBlockType)arg4;

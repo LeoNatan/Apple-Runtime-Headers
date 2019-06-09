@@ -8,36 +8,44 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapsDestinationsWidget, GEOMapsNearbyWidget, GEOMapsTransitWidget;
+@class GEOMapsDestinationsWidget, GEOMapsNearbyWidget, GEOMapsTransitWidget, PBDataReader;
 
 @interface GEOLogMsgEventMapsWidgetsInteractionSession : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    GEOMapsDestinationsWidget *_mapsDestinationsWidget;
+    GEOMapsNearbyWidget *_mapsNearbyWidget;
+    GEOMapsTransitWidget *_mapsTransitWidget;
     int _duration;
     int _endState;
     int _localDayOfWeek;
     int _localHour;
-    GEOMapsDestinationsWidget *_mapsDestinationsWidget;
-    GEOMapsNearbyWidget *_mapsNearbyWidget;
-    GEOMapsTransitWidget *_mapsTransitWidget;
     int _mapsWidgetType;
     BOOL _lockedMode;
     struct {
-        unsigned int duration:1;
-        unsigned int endState:1;
-        unsigned int localDayOfWeek:1;
-        unsigned int localHour:1;
-        unsigned int mapsWidgetType:1;
-        unsigned int lockedMode:1;
-    } _has;
+        unsigned int has_duration:1;
+        unsigned int has_endState:1;
+        unsigned int has_localDayOfWeek:1;
+        unsigned int has_localHour:1;
+        unsigned int has_mapsWidgetType:1;
+        unsigned int has_lockedMode:1;
+        unsigned int read_mapsDestinationsWidget:1;
+        unsigned int read_mapsNearbyWidget:1;
+        unsigned int read_mapsTransitWidget:1;
+        unsigned int wrote_mapsDestinationsWidget:1;
+        unsigned int wrote_mapsNearbyWidget:1;
+        unsigned int wrote_mapsTransitWidget:1;
+        unsigned int wrote_duration:1;
+        unsigned int wrote_endState:1;
+        unsigned int wrote_localDayOfWeek:1;
+        unsigned int wrote_localHour:1;
+        unsigned int wrote_mapsWidgetType:1;
+        unsigned int wrote_lockedMode:1;
+    } _flags;
 }
 
-@property(nonatomic) int duration; // @synthesize duration=_duration;
-@property(nonatomic) int localDayOfWeek; // @synthesize localDayOfWeek=_localDayOfWeek;
-@property(nonatomic) int localHour; // @synthesize localHour=_localHour;
-@property(nonatomic) BOOL lockedMode; // @synthesize lockedMode=_lockedMode;
-@property(retain, nonatomic) GEOMapsNearbyWidget *mapsNearbyWidget; // @synthesize mapsNearbyWidget=_mapsNearbyWidget;
-@property(retain, nonatomic) GEOMapsTransitWidget *mapsTransitWidget; // @synthesize mapsTransitWidget=_mapsTransitWidget;
-@property(retain, nonatomic) GEOMapsDestinationsWidget *mapsDestinationsWidget; // @synthesize mapsDestinationsWidget=_mapsDestinationsWidget;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -46,23 +54,34 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasDuration;
+@property(nonatomic) int duration;
 @property(nonatomic) BOOL hasLocalDayOfWeek;
+@property(nonatomic) int localDayOfWeek;
 @property(nonatomic) BOOL hasLocalHour;
+@property(nonatomic) int localHour;
 @property(nonatomic) BOOL hasLockedMode;
+@property(nonatomic) BOOL lockedMode;
+@property(retain, nonatomic) GEOMapsNearbyWidget *mapsNearbyWidget;
 @property(readonly, nonatomic) BOOL hasMapsNearbyWidget;
+- (void)_readMapsNearbyWidget;
+@property(retain, nonatomic) GEOMapsTransitWidget *mapsTransitWidget;
 @property(readonly, nonatomic) BOOL hasMapsTransitWidget;
+- (void)_readMapsTransitWidget;
+@property(retain, nonatomic) GEOMapsDestinationsWidget *mapsDestinationsWidget;
 @property(readonly, nonatomic) BOOL hasMapsDestinationsWidget;
+- (void)_readMapsDestinationsWidget;
 - (int)StringAsEndState:(id)arg1;
 - (id)endStateAsString:(int)arg1;
 @property(nonatomic) BOOL hasEndState;
-@property(nonatomic) int endState; // @synthesize endState=_endState;
+@property(nonatomic) int endState;
 - (int)StringAsMapsWidgetType:(id)arg1;
 - (id)mapsWidgetTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasMapsWidgetType;
-@property(nonatomic) int mapsWidgetType; // @synthesize mapsWidgetType=_mapsWidgetType;
+@property(nonatomic) int mapsWidgetType;
 
 @end
 

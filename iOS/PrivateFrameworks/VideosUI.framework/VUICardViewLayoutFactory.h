@@ -17,21 +17,22 @@ __attribute__((visibility("hidden")))
     long long _cardLayoutType;
     long long _gridStyle;
     long long _gridType;
-    long long _overlayType;
 }
 
-+ (id)cardViewFactoryForType:(long long)arg1 gridStyle:(long long)arg2 gridType:(long long)arg3 overlayType:(long long)arg4;
-@property(readonly, nonatomic) long long overlayType; // @synthesize overlayType=_overlayType;
++ (id)cardViewFactoryForType:(long long)arg1 gridStyle:(long long)arg2 gridType:(long long)arg3;
 @property(readonly, nonatomic) long long gridType; // @synthesize gridType=_gridType;
 @property(readonly, nonatomic) long long gridStyle; // @synthesize gridStyle=_gridStyle;
 @property(readonly, nonatomic) long long cardLayoutType; // @synthesize cardLayoutType=_cardLayoutType;
 - (void).cxx_destruct;
+- (id)videoLockupCardViewLayout;
+- (id)editorialCardViewLayout;
 - (id)upnextCardViewLayoutForIdiom:(long long)arg1;
 - (id)standardCardViewLayoutForIdiom:(long long)arg1;
 - (id)featuredCardViewLayoutForIdiom:(long long)arg1;
+- (id)shadowForCardImageLayout;
 - (id)_layoutForCardLayoutType:(long long)arg1 interfaceIdiom:(long long)arg2;
 - (id)activeLayout;
-- (id)initWithCardLayoutType:(long long)arg1 gridStyle:(long long)arg2 gridType:(long long)arg3 overlayType:(long long)arg4;
+- (id)initWithCardLayoutType:(long long)arg1 gridStyle:(long long)arg2 gridType:(long long)arg3;
 
 @end
 

@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (void)_reloadOutputDevicesFromContext;
-- (void)_localizeOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_ouputDevicesForOutputDeviceUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_outputContextDevicesDidChangeNotification:(id)arg1;
 - (void)outputContextDataSource:(id)arg1 outputDevice:(id)arg2 didChangeVolumeControlCapabilities:(unsigned int)arg3;
 - (void)outputContextDataSource:(id)arg1 outputDevice:(id)arg2 didChangeVolume:(float)arg3;
@@ -35,14 +35,19 @@ __attribute__((visibility("hidden")))
 - (void)volumeControlCapabilitiesForOutputDevice:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)outputDeviceVolume:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setOutputDeviceVolume:(float)arg1 outputDevice:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)migrateToDestination:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_addOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addOutputDevices:(id)arg1 withReplyQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)connectToExternalDeviceWithCompletion:(CDUnknownBlockType)arg1;
+- (struct _MROriginProtobuf *)origin;
 - (_Bool)canModifyGroupMembership;
 - (_Bool)isProxyGroupPlayer;
 - (long)connectionType;
 - (id)uniqueIdentifier;
 @property(copy, nonatomic) NSArray *outputDevices;
+- (id)personalOutputDevices;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

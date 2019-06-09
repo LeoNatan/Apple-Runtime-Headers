@@ -27,6 +27,8 @@
 @property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) __weak id <BCSActionPickerItemDelegate> actionPickerItemDelegate; // @synthesize actionPickerItemDelegate=_actionPickerItemDelegate;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *localizedDefaultActionDescription;
+@property(readonly, nonatomic) long long dataType;
 @property(readonly, nonatomic) _Bool shouldDismissAlertWhenActionIsTaken;
 - (void)didPerformAction;
 - (void)performAction;

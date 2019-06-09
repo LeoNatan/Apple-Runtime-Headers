@@ -7,6 +7,7 @@
 #import <ClassroomKit/NSObject-Protocol.h>
 
 @class CATTransport, CRKSession, NSArray;
+@protocol CRKIdentity;
 
 @protocol CRKSessionDelegate <NSObject>
 - (void)sessionDidInvalidate:(CRKSession *)arg1;
@@ -15,7 +16,7 @@
 - (void)session:(CRKSession *)arg1 willLoseBeaconAfterTimeInterval:(double)arg2;
 - (void)session:(CRKSession *)arg1 didConnectWithTransport:(CATTransport *)arg2;
 - (NSArray *)trustedAnchorCertificatesForSession:(CRKSession *)arg1;
-- (id)clientIdentityForSession:(CRKSession *)arg1;
+- (id <CRKIdentity>)clientIdentityForSession:(CRKSession *)arg1;
 - (void)sessionDidBecomeNotConnectable:(CRKSession *)arg1;
 - (void)sessionDidBecomeConnectable:(CRKSession *)arg1;
 @end

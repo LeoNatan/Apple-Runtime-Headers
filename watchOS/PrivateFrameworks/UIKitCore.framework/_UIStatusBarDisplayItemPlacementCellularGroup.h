@@ -17,10 +17,12 @@ __attribute__((visibility("hidden")))
     _UIStatusBarDisplayItemPlacement *_namePlacement;
     _UIStatusBarDisplayItemPlacement *_callForwardingPlacement;
     _UIStatusBarDisplayItemPlacement *_badgePlacement;
+    _UIStatusBarDisplayItemPlacement *_rawPlacement;
     NSArray *_placementsAffectedByAirplaneMode;
 }
 
 @property(retain, nonatomic) NSArray *placementsAffectedByAirplaneMode; // @synthesize placementsAffectedByAirplaneMode=_placementsAffectedByAirplaneMode;
+@property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *rawPlacement; // @synthesize rawPlacement=_rawPlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *badgePlacement; // @synthesize badgePlacement=_badgePlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *callForwardingPlacement; // @synthesize callForwardingPlacement=_callForwardingPlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *namePlacement; // @synthesize namePlacement=_namePlacement;

@@ -6,14 +6,26 @@
 
 #import <WatchKit/WKInterfaceObject.h>
 
-@interface WKInterfaceMovie : WKInterfaceObject
+#import <WatchKit/WKInterfaceObjectDynamicCreatable-Protocol.h>
+
+@class NSString;
+
+@interface WKInterfaceMovie : WKInterfaceObject <WKInterfaceObjectDynamicCreatable>
 {
 }
 
+- (id)interfaceDescriptionForDynamicCreation;
 - (void)setPosterImage:(id)arg1;
 - (void)setLoops:(_Bool)arg1;
 - (void)setVideoGravity:(int)arg1;
 - (void)setMovieURL:(id)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

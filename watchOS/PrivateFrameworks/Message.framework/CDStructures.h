@@ -12,6 +12,11 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGSize {
+    float width;
+    float height;
+};
+
 struct CentralDirectory {
     unsigned char _field1[4];
     unsigned short _field2;
@@ -45,6 +50,10 @@ struct CentralHeader {
     char *_field19;
 };
 
+struct EFPair {
+    Class _field1;
+};
+
 struct _CommandStackEntry {
     struct *_field1;
     id _field2;
@@ -67,6 +76,8 @@ struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
 
+struct sqlite3;
+
 struct z_stream_s {
     char *_field1;
     unsigned int _field2;
@@ -88,19 +99,25 @@ struct z_stream_s {
 
 typedef struct {
     id _field1;
-    id _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    _Bool _field5;
-    _Bool _field6;
-    _Bool _field7;
-} CDStruct_f28f5ac0;
-
-typedef struct {
-    id _field1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;
     unsigned int :2;
 } CDStruct_3441fd00;
+
+typedef struct {
+    id _field1;
+    id _field2;
+    id _field3;
+    unsigned int _field4;
+    float _field5;
+    unsigned long long _field6;
+    double _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    struct sqlite3 *_field10;
+    _Bool _field11;
+    id _field12;
+    _Bool _field13;
+} CDStruct_6c71af79;
 

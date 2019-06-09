@@ -7,13 +7,12 @@
 #import <Notes/ICNFMCRemoteStoreAccount-Protocol.h>
 
 @class ICNFIMAPGateway, ICNFIMAPMailbox, ICNFIMAPQuotaRoot, ICNFIMAPResponse, NSArray, NSDictionary, NSMutableDictionary, NSString;
-@protocol ICNFIMAPOfflineCache, ICNFMCGmailLabel;
+@protocol ICNFMCGmailLabel;
 
 @protocol ICNFIMAPAccount <ICNFMCRemoteStoreAccount>
 @property(readonly) BOOL shouldMoveDeletedMessagesToTrash;
 @property(readonly) BOOL allowsPartialDownloads;
 @property unsigned int readBufferSize;
-@property(readonly) id <ICNFIMAPOfflineCache> offlineCache;
 @property(copy) NSDictionary *serverID;
 @property long long gmailCapabilitiesSupport;
 @property BOOL useIDLEIfAvailable;

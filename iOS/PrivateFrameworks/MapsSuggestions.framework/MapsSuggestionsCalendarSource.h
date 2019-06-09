@@ -6,15 +6,16 @@
 
 #import <MapsSuggestions/MapsSuggestionsBaseSource.h>
 
-#import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
+#import <MapsSuggestions/MapsSuggestionsPreloadableSource-Protocol.h>
 
-@class EKEventStore, MapsSuggestionsCanKicker, MapsSuggestionsNetworkRequester, NSMutableDictionary, NSObject, NSSet, NSString;
+@class EKCalendarVisibilityManager, EKEventStore, MapsSuggestionsCanKicker, MapsSuggestionsNetworkRequester, NSMutableDictionary, NSObject, NSSet, NSString;
 @protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue;
 
-@interface MapsSuggestionsCalendarSource : MapsSuggestionsBaseSource <MapsSuggestionsSource>
+@interface MapsSuggestionsCalendarSource : MapsSuggestionsBaseSource <MapsSuggestionsPreloadableSource>
 {
     _Bool _suspended;
     EKEventStore *_eventStore;
+    EKCalendarVisibilityManager *_calVisibilityManager;
     NSObject<OS_dispatch_queue> *_fimQueue;
     NSMutableDictionary *_handleToGEOMapItemMapping;
     NSString *_siriFoundThisString;
@@ -31,23 +32,24 @@
 @property(retain, nonatomic) NSString *siriFoundThisString; // @synthesize siriFoundThisString=_siriFoundThisString;
 @property(retain, nonatomic) NSMutableDictionary *handleToGEOMapItemMapping; // @synthesize handleToGEOMapItemMapping=_handleToGEOMapItemMapping;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *fimQueue; // @synthesize fimQueue=_fimQueue;
+@property(retain, nonatomic) EKCalendarVisibilityManager *calVisibilityManager; // @synthesize calVisibilityManager=_calVisibilityManager;
 @property(retain, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property _Bool suspended; // @synthesize suspended=_suspended;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)canProduceEntriesOfType:(long long)arg1;
-- (id)_predicate;
+- (id)_predicateForPeriod:(struct NSDateInterval *)arg1;
 - (long long)_entryTypeFromSchema:(id)arg1;
-- (id)suggestionSubtitleForReservationStatus:(id)arg1 name:(id)arg2 event:(id)arg3;
-- (id)suggestionTitleForReservationStatus:(id)arg1 name:(id)arg2;
+- (id)_suggestionSubtitleForReservationStatus:(id)arg1 event:(id)arg2;
 - (_Bool)_addRestaurantReservationFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
 - (_Bool)_addCalendarEventFieldsToEntry:(id)arg1 event:(id)arg2;
 - (_Bool)_addTicketedEventFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
 - (_Bool)_addCarRentalFieldsToEntry:(id)arg1 event:(id)arg2;
 - (_Bool)_addHotelFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
 - (_Bool)_addTravelFlightFieldsToEntry:(id)arg1 fromSchemaOrgDictionary:(id)arg2 event:(id)arg3;
-- (void)_createEntriesFromEventsAndUpdateSuggestions:(id)arg1 currentLocation:(id)arg2;
+- (_Bool)_createEntriesWithinPeriod:(struct NSDateInterval *)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)suggestionsEntriesAtLocation:(id)arg1 period:(struct NSDateInterval *)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)_callUpdateSuggestionEntries;

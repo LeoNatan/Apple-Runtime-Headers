@@ -8,6 +8,7 @@
 
 @class SKUICardViewElement, SKUIViewElementLayoutContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUICardLayout : NSObject
 {
     SKUICardViewElement *_cardViewElement;

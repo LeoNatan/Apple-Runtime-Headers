@@ -22,7 +22,7 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSMutableDictionary *appDataDictionary; // @synthesize appDataDictionary=_appDataDictionary;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-@property(retain, nonatomic) NSUUID *parentUUID; // @synthesize parentUUID=_parentUUID;
+@property(copy, nonatomic) NSUUID *parentUUID; // @synthesize parentUUID=_parentUUID;
 - (void).cxx_destruct;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;

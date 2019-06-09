@@ -24,6 +24,8 @@
 }
 
 + (id)calendarFromRemoteManagedObject:(id)arg1;
++ (id)_colorStringRepresentation:(id)arg1;
++ (id)_colorFromString:(id)arg1;
 + (id)calendar;
 @property(readonly) NSString *uid; // @synthesize uid=_uid;
 @property(readonly) NSString *type; // @synthesize type=_type;

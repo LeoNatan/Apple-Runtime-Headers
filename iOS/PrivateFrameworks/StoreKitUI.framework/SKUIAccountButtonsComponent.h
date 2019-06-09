@@ -8,6 +8,7 @@
 
 @class SKUIAccountButtonsViewElement, SKUILink;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAccountButtonsComponent : SKUIPageComponent
 {
     SKUILink *_ecommerceLink;

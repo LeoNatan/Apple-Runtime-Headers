@@ -13,15 +13,14 @@
 @interface NTKHeartRateComplicationDataSource : NTKComplicationDataSource <NTKHeartRateModelDelegate>
 {
     _Bool _showingNowForRelativeTime;
-    NTKHeartRateModel *_dataModel;
     NSTimer *_invalidationTimer;
+    NTKHeartRateModel *_dataModel;
 }
 
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-+ (Class)richComplicationDisplayViewClassForType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
-@property(retain, nonatomic) NSTimer *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
 @property(retain, nonatomic) NTKHeartRateModel *dataModel; // @synthesize dataModel=_dataModel;
+@property(retain, nonatomic) NSTimer *invalidationTimer; // @synthesize invalidationTimer=_invalidationTimer;
 - (void).cxx_destruct;
 - (void)_timeChanged:(id)arg1;
 - (void)_localeChanged:(id)arg1;
@@ -32,13 +31,16 @@
 - (void)_invalidate;
 - (id)_currentEntryModel;
 - (id)_currentTimelineEntry;
-- (id)lockedTemplate;
+- (id)privacyTemplate;
 - (id)currentSwitcherTemplate;
+- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
 - (void)resume;
+- (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (void)dealloc;
 - (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 

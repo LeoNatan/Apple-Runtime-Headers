@@ -12,6 +12,6 @@
 - (void)speechSynthesisDidStopSpeakingWithIdentifier:(NSString *)arg1 queueIsEmpty:(_Bool)arg2;
 - (void)speechSynthesisDidStartSpeakingWithIdentifier:(NSString *)arg1;
 - (void)speechSynthesisExecuteAnimationForIdentifier:(NSString *)arg1;
-- (void)speechSynthesisGetPreparedTextForIdentifier:(NSString *)arg1 completion:(void (^)(NSString *))arg2;
+- (void)speechSynthesisGetPreparedTextForIdentifier:(NSString *)arg1 completion:(void (^)(NSString *, _Bool))arg2;
 @end
 

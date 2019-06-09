@@ -6,15 +6,12 @@
 
 #import <UIKit/UIImageView.h>
 
-__attribute__((visibility("hidden")))
 @interface SFPersonImageView : UIImageView
 {
-    _Bool _overlay;
     _Bool _darkStyle;
 }
 
 @property(nonatomic) _Bool darkStyle; // @synthesize darkStyle=_darkStyle;
-@property(nonatomic) _Bool overlay; // @synthesize overlay=_overlay;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setImage:(id)arg1;
 - (void)layoutSubviews;

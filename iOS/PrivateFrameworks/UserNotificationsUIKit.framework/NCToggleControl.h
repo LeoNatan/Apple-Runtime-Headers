@@ -32,8 +32,8 @@
 + (id)_labelFont:(_Bool)arg1;
 + (double)effectiveHeight:(_Bool)arg1;
 + (void)performWithDefaultExpansionAnimation:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
-+ (id)showLessControlWithMaterialRecipe:(long long)arg1 backgroundMaterialOptions:(unsigned long long)arg2 overlayMaterialOptions:(unsigned long long)arg3;
-+ (id)dismissControlWithMaterialRecipe:(long long)arg1 backgroundMaterialOptions:(unsigned long long)arg2 overlayMaterialOptions:(unsigned long long)arg3;
++ (id)showLessControlWithMaterialRecipe:(long long)arg1;
++ (id)dismissControlWithMaterialRecipe:(long long)arg1;
 @property(nonatomic, getter=_wasExpandedPriorToControlEvent) _Bool expandedPriorToControlEvent; // @synthesize expandedPriorToControlEvent=_expandedPriorToControlEvent;
 @property(retain, nonatomic, getter=_previewInteractionPlatterPresenter) NCPreviewInteractionPresenter *previewInteractionPlatterPresenter; // @synthesize previewInteractionPlatterPresenter=_previewInteractionPlatterPresenter;
 @property(nonatomic, getter=_managingPair, setter=_setManagingPair:) __weak NCToggleControlPair *managingPair; // @synthesize managingPair=_managingPair;
@@ -59,10 +59,9 @@
 - (double)_effectiveHeight;
 - (double)_effectiveValueForMinValue:(double)arg1 withFont:(id)arg2;
 - (void)_configureTitleLabelIfNecessaryWithTitle:(id)arg1;
-- (void)_updateTitleLabelVibrantStyling;
+- (void)_updateTitleLabelVisualStyling;
 - (void)_updateTitleLabelTextAttributes;
 - (id)_labelFont;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)previewInteractionPresenterDidDismiss:(id)arg1;
 - (void)previewInteractionPresenterDidPresent:(id)arg1;
@@ -70,8 +69,7 @@
 - (void)previewInteractionPresenterDidCommitToPresentation:(id)arg1;
 - (_Bool)previewInteractionPresenterShouldBegin:(id)arg1;
 - (id)containerViewForPreviewInteractionPresenter:(id)arg1;
-- (void)_reduceTransparencyStatusDidChange:(id)arg1;
-- (void)_darkerSystemColorsStatusDidChange:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_handleTouchUpInsideWithEvent:(id)arg1;
 - (void)_sendActionsForEvents:(unsigned long long)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;

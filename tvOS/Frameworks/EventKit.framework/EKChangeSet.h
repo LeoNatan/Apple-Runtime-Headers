@@ -10,9 +10,9 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface EKChangeSet : NSObject <NSCopying>
 {
+    _Bool _skipsPersistentObjectCopy;
     _Bool _isNew;
     _Bool _isModified;
     _Bool _isSaved;
@@ -34,12 +34,19 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)summary;
 - (id)description;
+- (void)setSkipsPersistentObjectCopy:(_Bool)arg1;
+- (_Bool)skipsPersistentObjectCopy;
 - (void)forceChangeValue:(id)arg1 forKey:(id)arg2;
 - (id)_semanticIdentifierToObjectMapForObjects:(id)arg1;
 - (void)_cleanupEmptySetsForMultiValueKey:(id)arg1;
+- (void)addChangesAndUpdateUniqueMultiValueObjects:(id)arg1;
+- (void)replaceUniqueMultiValueObjectsWithUpdatedObjects:(id)arg1;
 - (void)removeFromChanges:(id)arg1 forMultiValueKey:(id)arg2 basedOn:(id)arg3;
 - (void)addToChanges:(id)arg1 forMultiValueKey:(id)arg2 basedOn:(id)arg3;
 - (void)addChanges:(id)arg1;
+- (void)replaceMultiChangeAddedObject:(id)arg1 withObject:(id)arg2 forKey:(id)arg3;
+- (_Bool)isUniqueAddedObject:(id)arg1 forKey:(id)arg2;
+- (id)valuesForMultiValueKey:(id)arg1 basedOnSet:(id)arg2;
 - (id)valuesForMultiValueKey:(id)arg1 basedOn:(id)arg2;
 - (void)changeSingleValue:(id)arg1 forKey:(id)arg2 basedOn:(id)arg3 and:(id)arg4;
 - (void)changeSingleValue:(id)arg1 forKey:(id)arg2 basedOn:(id)arg3;

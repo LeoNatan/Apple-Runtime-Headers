@@ -6,11 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UILabel, UIVisualEffectView;
+@class TVSUIOuterShadowView, UIImageView, UILabel, UIVisualEffectView;
 
 @interface TVSUIBulletinView : UIView
 {
     UIVisualEffectView *_backgroundView;
+    TVSUIOuterShadowView *_shadowView;
     long long _bulletinPosition;
     long long _style;
     UILabel *_titleLabel;

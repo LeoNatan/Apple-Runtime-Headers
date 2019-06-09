@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)secondaryRecord;
 - (id)secondaryRecordID;
 - (void).cxx_destruct;
-- (id)_stageWithSession:(id)arg1 creationInfo:(id *)arg2 error:(id *)arg3;
+- (id)_stageWithSession:(id)arg1 statInfo:(id)arg2 creationInfo:(id *)arg3 error:(id *)arg4;
 - (id)_stageContentWithSession:(id)arg1 error:(id *)arg2;
 - (id)description;
 - (id)initWithDocument:(id)arg1 stageID:(id)arg2 etag:(id)arg3 isLoser:(BOOL)arg4;

@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)addEntryToPreviousEntries:(id)arg1;
 - (void)_quietlyMoveEntryToPreviousEntries:(id)arg1;
 - (void)coordinatorWillRemoveStore:(id)arg1;
-- (void)unregisterPersistentStore:(id)arg1;
+- (void)unregisterPersistentStore:(id)arg1 inCoordinator:(id)arg2;
 - (id)createSetOfCoordinatorsForPersistentStoreName:(id)arg1 andLocalPeerID:(id)arg2 atUbiquityRootLocation:(id)arg3;
 - (void)unregisterCoordinator:(id)arg1;
 - (BOOL)registerUbiquitizedPersistentStore:(id)arg1 withURL:(id)arg2 forLocalPeerID:(id)arg3 withLocalRootLocation:(id)arg4 andUbiquityRootLocation:(id)arg5 error:(id *)arg6;

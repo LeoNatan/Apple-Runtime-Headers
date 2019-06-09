@@ -21,7 +21,6 @@
 + (void)preloadTexturesForDevice:(id)arg1;
 + (_Bool)shouldPreloadTextures;
 + (id)circularMaskShader;
-+ (id)artShader;
 
 @end
 

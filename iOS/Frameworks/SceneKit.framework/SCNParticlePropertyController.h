@@ -30,7 +30,7 @@
 - (void)_customDecodingOfSCNParticlePropertyController:(id)arg1;
 - (void)_customEncodingOfSCNParticlePropertyController:(id)arg1;
 @property(copy, nonatomic) NSString *inputProperty;
-@property(nonatomic) __weak SCNNode *inputOrigin;
+@property(nonatomic) SCNNode *inputOrigin;
 @property(nonatomic) double inputBias;
 @property(nonatomic) double inputScale;
 @property(nonatomic) long long inputMode;

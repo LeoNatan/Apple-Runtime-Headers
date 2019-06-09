@@ -9,17 +9,19 @@
 #import <VideoProcessing/NSCopying-Protocol.h>
 #import <VideoProcessing/VCPProtoResultLegacyConversionProtocol-Protocol.h>
 
-@class VCPProtoTimeRange, VCPProtoVideoKeyFrame;
+@class VCPProtoBounds, VCPProtoTimeRange, VCPProtoVideoKeyFrame;
 
 @interface VCPProtoMovieSummaryResult : PBCodable <VCPProtoResultLegacyConversionProtocol, NSCopying>
 {
     float _curationScore;
     VCPProtoVideoKeyFrame *_keyFrame;
+    VCPProtoBounds *_playbackCrop;
     VCPProtoTimeRange *_timeRange;
     BOOL _autoPlayable;
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+@property(retain, nonatomic) VCPProtoBounds *playbackCrop; // @synthesize playbackCrop=_playbackCrop;
 @property(nonatomic) BOOL autoPlayable; // @synthesize autoPlayable=_autoPlayable;
 @property(retain, nonatomic) VCPProtoVideoKeyFrame *keyFrame; // @synthesize keyFrame=_keyFrame;
 @property(nonatomic) float curationScore; // @synthesize curationScore=_curationScore;
@@ -34,6 +36,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasPlaybackCrop;
+@property(readonly, nonatomic) BOOL hasKeyFrame;
 - (id)exportToLegacyDictionary;
 
 @end

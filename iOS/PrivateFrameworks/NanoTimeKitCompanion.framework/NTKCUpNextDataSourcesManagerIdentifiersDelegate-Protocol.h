@@ -6,9 +6,9 @@
 
 #import <NanoTimeKitCompanion/NSObject-Protocol.h>
 
-@class NSSet, NTKCUpNextDataSourcesManager;
+@class NSArray, NTKCUpNextDataSourcesManager;
 
 @protocol NTKCUpNextDataSourcesManagerIdentifiersDelegate <NSObject>
-- (void)manager:(NTKCUpNextDataSourcesManager *)arg1 didUpdateDataSourceIdentifiers:(NSSet *)arg2 donatedIdentifiers:(NSSet *)arg3;
+- (void)manager:(NTKCUpNextDataSourcesManager *)arg1 didUpdateDataSourceEntries:(NSArray *)arg2;
 @end
 

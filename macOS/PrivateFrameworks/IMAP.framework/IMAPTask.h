@@ -15,7 +15,7 @@
 }
 
 @property(nonatomic) long long reservedNetworkPriority; // @synthesize reservedNetworkPriority=_reservedNetworkPriority;
-@property(readonly, copy, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
+@property(copy, nonatomic) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 - (void).cxx_destruct;
 - (void)operationFinished:(id)arg1;
 - (void)trackOperation:(id)arg1;

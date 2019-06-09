@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class MFSqliteHandle, NSProgress;
+@class EDPersistenceDatabaseConnection, NSProgress;
 
 @interface MFLibraryUpgradeStep : NSObject
 {
     NSProgress *_progress;
-    MFSqliteHandle *_handle;
+    EDPersistenceDatabaseConnection *_connection;
 }
 
-+ (BOOL)needToPerformFromMinorVersion:(unsigned long long)arg1 initialLastWriteMinorVersion:(unsigned long long)arg2 fromBackBooting:(char *)arg3;
-+ (BOOL)requiredAfterBackbooting;
-@property(readonly, nonatomic) MFSqliteHandle *handle; // @synthesize handle=_handle;
++ (BOOL)needToPerformFromMinorVersion:(unsigned long long)arg1 initialLastWriteMinorVersion:(unsigned long long)arg2;
++ (BOOL)recalculateAllConversations;
+@property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
 - (id)adjustSmartMailboxCriterion:(id)arg1 adjustmentBlock:(CDUnknownBlockType)arg2;
@@ -25,7 +25,7 @@
 @property(readonly, nonatomic) BOOL shouldRecalculateMessageCounts;
 - (void)dealloc;
 - (id)init;
-- (id)initWithSQLHandle:(id)arg1;
+- (id)initWithDatabaseConnection:(id)arg1;
 
 @end
 

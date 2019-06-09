@@ -8,6 +8,7 @@
 
 @class AVPlayerLayer, AVSecondScreenPlayerLayerView, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface AVSecondScreenViewController : UIViewController
 {
     _Bool _playingOnSecondScreen;
@@ -30,6 +31,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+@property(readonly, nonatomic) struct CGSize videoDisplaySize;
 - (void)loadPlayerLayerViewIfNeeded;
 - (void)dealloc;
 

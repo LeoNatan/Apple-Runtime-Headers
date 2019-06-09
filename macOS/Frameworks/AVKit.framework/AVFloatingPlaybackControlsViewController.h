@@ -10,6 +10,7 @@
 
 @class NSLayoutConstraint, NSStackView, NSString, NSView;
 
+__attribute__((visibility("hidden")))
 @interface AVFloatingPlaybackControlsViewController : AVPlayerControlsViewController <NSStackViewDelegate>
 {
     BOOL _viewDidLoad;

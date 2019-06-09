@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class UNNotificationResponse;
 @protocol BCSCodePayload, BCSParsedData;
 
 @protocol BCSNotificationServiceProtocol
+- (void)didReceiveNotificationResponse:(UNNotificationResponse *)arg1;
 - (void)cancelNotificationsForCodeType:(long long)arg1;
 - (void)notifyParsedCodeWithData:(id <BCSParsedData>)arg1 codePayload:(id <BCSCodePayload>)arg2 shouldReplacePreviousNotifications:(_Bool)arg3 reply:(void (^)(NSError *, AWDBarcodeSupportCodeDetectedEvent *))arg4;
 @end

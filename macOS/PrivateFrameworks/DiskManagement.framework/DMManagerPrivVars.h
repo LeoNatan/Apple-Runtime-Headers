@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned int _clientThread;
     unsigned int _bootstrap_MachPort;
     char _sessionUUID[40];
+    unsigned long long _dmManagerHash;
     unsigned int _f2t_MachPort;
     unsigned int _t2f_MachPort;
     struct {

@@ -31,6 +31,7 @@
 @property(readonly, nonatomic) HDPrimaryProfile *primaryProfile; // @synthesize primaryProfile;
 - (void)unregisterForLaunchNotification:(const char *)arg1;
 - (void)registerForLaunchNotification:(const char *)arg1;
+- (void)registerDaemonReadyObserver:(id)arg1 queue:(id)arg2;
 - (void)registerForDaemonReady:(id)arg1;
 @property(readonly, nonatomic) _HKBehavior *behavior;
 - (id)init;

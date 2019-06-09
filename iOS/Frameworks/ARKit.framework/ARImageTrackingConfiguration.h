@@ -15,6 +15,7 @@
 }
 
 + (id)supportedVideoFormats;
++ (_Bool)supportsFrameSemantics:(unsigned long long)arg1;
 + (_Bool)isSupported;
 + (id)new;
 @property(nonatomic) long long maximumNumberOfTrackedImages; // @synthesize maximumNumberOfTrackedImages=_maximumNumberOfTrackedImages;

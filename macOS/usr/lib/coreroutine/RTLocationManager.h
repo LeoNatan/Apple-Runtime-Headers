@@ -6,13 +6,13 @@
 
 #import <coreroutine/RTService.h>
 
-#import <coreroutine/CLLocationManagerRoutineDelegate-Protocol.h>
+#import <coreroutine/CLLocationManagerDelegate-Protocol.h>
 #import <coreroutine/RTPurgable-Protocol.h>
 
-@class CLLocation, CLLocationManager, CLLocationManagerRoutine, NSMutableArray, NSObject, NSString, RTAuthorizationManager, RTInvocationDispatcher, RTLocationStore, RTPlatform, RTPowerAssertion;
+@class CLLocation, CLLocationManager, CLLocationManagerRoutine, NSMutableArray, NSObject, NSString, RTAuthorizationManager, RTDefaultsManager, RTInvocationDispatcher, RTLocationStore, RTPlatform, RTPowerAssertion;
 @protocol OS_dispatch_source;
 
-@interface RTLocationManager : RTService <CLLocationManagerRoutineDelegate, RTPurgable>
+@interface RTLocationManager : RTService <CLLocationManagerDelegate, RTPurgable>
 {
     BOOL _updating;
     BOOL _leechingLocations;
@@ -31,10 +31,11 @@
     RTAuthorizationManager *_authorizationManager;
     RTLocationStore *_locationStore;
     RTPlatform *_platform;
+    RTDefaultsManager *_defaultsManager;
 }
 
 + (BOOL)supportsNotificationName:(id)arg1;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTLocationStore *locationStore; // @synthesize locationStore=_locationStore;
 @property(retain, nonatomic) RTAuthorizationManager *authorizationManager; // @synthesize authorizationManager=_authorizationManager;
@@ -54,22 +55,20 @@
 @property(retain, nonatomic) CLLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
 - (void).cxx_destruct;
 - (void)submitHarvestSample:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_stopUpdatingMicroLocation;
-- (void)stopUpdatingMicroLocation;
-- (void)_startUpdatingMicroLocationForLocationOfInterestWithIdentifier:(id)arg1;
-- (void)startUpdatingMicroLocationForLocationOfInterestWithIdentifier:(id)arg1;
-- (void)_requestCurrentMicroLocation;
-- (void)requestCurrentMicroLocation;
 - (void)onAuthorizationNotification:(id)arg1;
-- (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)onUserSessionChangeNotification:(id)arg1;
 - (void)onLocationStoreNotification:(id)arg1;
 - (void)_removeLocationsPredating:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (void)onStopUpdatingLocationTimerExpiry;
-- (void)fetchStoredLocationsFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)_fetchStoredLocationsFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
+- (void)fetchStoredLocationsWithContext:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchStoredLocationsWithContext:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchStoredLocationsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchStoredLocationsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchStoredLocationsCountFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
+- (void)_fetchStoredLocationsCountFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)fetchCachedLocationWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchCurrentLocationWithHandler:(CDUnknownBlockType)arg1;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
@@ -86,8 +85,7 @@
 - (void)_createLocationManager;
 - (void)_unregisterNotifications;
 - (void)_registerNotifications;
-- (void)performBlockOnMainThreadAndWait:(CDUnknownBlockType)arg1;
-- (id)initWithAuthorizationManager:(id)arg1 locationStore:(id)arg2 platform:(id)arg3 routineLocationManager:(id)arg4;
+- (id)initWithAuthorizationManager:(id)arg1 defaultsManager:(id)arg2 locationStore:(id)arg3 platform:(id)arg4 routineLocationManager:(id)arg5;
 - (id)init;
 - (void)injectLocations:(id)arg1 handler:(CDUnknownBlockType)arg2;
 

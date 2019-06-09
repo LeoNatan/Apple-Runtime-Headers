@@ -6,7 +6,51 @@
 
 #import <HMFoundation/HMFMessage.h>
 
+@class HAPPairingIdentity, HMDDevice, HMDXPCClientConnection, NSString;
+
 @interface HMFMessage (ResponseHandler)
++ (id)nonSPIEntitledMessageWithName:(id)arg1 messagePayload:(id)arg2;
++ (id)entitledMessageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3;
++ (id)entitledMessageWithName:(id)arg1 messagePayload:(id)arg2;
++ (id)internalMessageWithName:(id)arg1 destination:(id)arg2 messagePayload:(id)arg3;
++ (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
++ (id)internalMessageWithName:(id)arg1 messagePayload:(id)arg2;
++ (id)homeLocationAuthorizedAndEntitledMessageWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3;
++ (id)locationAuthorizedMessageWithName:(id)arg1 messagePayload:(id)arg2;
 - (void)sendResponseWithError:(id)arg1 payload:(id)arg2;
+@property(readonly, copy, nonatomic) NSString *teamIdentifier;
+@property(readonly, copy, nonatomic) NSString *companionAppBundleIdentifier;
+@property(readonly, copy, nonatomic) NSString *applicationBundleIdentifier;
+@property(readonly, nonatomic) int sourcePid;
+@property(readonly, nonatomic, getter=isBackground) _Bool background;
+@property(readonly, nonatomic, getter=isEntitledToProvideAccessorySetupPayload) _Bool entitledToProvideAccessorySetupPayload;
+@property(readonly, nonatomic, getter=isEntitledForHomeLocationAccess) _Bool entitledForHomeLocationAccess;
+@property(readonly, nonatomic, getter=isAuthorizedForLocationAccess) _Bool authorizedForLocationAccess;
+@property(readonly, nonatomic, getter=isEntitledForBackgroundMode) _Bool entitledForBackgroundMode;
+@property(readonly, nonatomic, getter=isAuthorizedForMicrophoneAccess) _Bool authorizedForMicrophoneAccess;
+@property(readonly, nonatomic, getter=isAuthorizedForHomeDataAccess) _Bool authorizedForHomeDataAccess;
+@property(readonly, nonatomic, getter=isEntitledForSPIAccess) _Bool entitledForSPIAccess;
+@property(readonly, nonatomic, getter=isEntitledForAPIAccess) _Bool entitledForAPIAccess;
+@property(readonly) HMDXPCClientConnection *proxyConnection;
+@property(readonly, nonatomic) _Bool requiresCameraClipsEntitlement;
+- (_Bool)requiresSetupPayloadEntitlement;
+@property(readonly, nonatomic) _Bool requiresNoSPIEntitlement;
+@property(readonly, nonatomic) _Bool requiresSPIEntitlement;
+@property(readonly) NSString *clientName;
+- (id)transactionResult;
+- (_Bool)_supportsFeature:(unsigned int)arg1 forCapabilitiesKey:(id)arg2;
+- (_Bool)supportsRequestedFeature:(unsigned int)arg1;
+- (_Bool)supportsRequiredFeature:(unsigned int)arg1;
+@property(readonly, nonatomic, getter=isInternal) _Bool internal;
+@property(readonly, nonatomic, getter=requiresHomeLocationEntitlement) _Bool homeLocationEntitlementRequired;
+@property(readonly, nonatomic, getter=isLocationAuthorized) _Bool locationAuthorized;
+- (id)userForHome:(id)arg1;
+@property(readonly, nonatomic) unsigned int remoteRestriction;
+@property(readonly, nonatomic) HAPPairingIdentity *remoteUserPairingIdentity;
+@property(readonly, nonatomic) HMDDevice *remoteSourceDevice;
+@property(readonly, nonatomic) NSString *remoteSourceID;
+@property(readonly, nonatomic, getter=isSecureRemote) _Bool secureRemote;
+@property(readonly, nonatomic, getter=isRemote) _Bool remote;
+- (id)hmd_safeUserInfo;
 @end
 

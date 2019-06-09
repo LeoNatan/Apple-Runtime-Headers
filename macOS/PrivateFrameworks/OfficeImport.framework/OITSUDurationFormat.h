@@ -11,6 +11,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface OITSUDurationFormat : NSObject <NSCopying, TSUDataFormat>
 {
     NSString *mFormat;

@@ -8,6 +8,6 @@
 
 @interface TTParagraphStyle (UI)
 @property(readonly, nonatomic) long long layoutWritingDirection;
-@property(readonly, nonatomic) unsigned long long alignmentAdjustedForLists;
+@property(readonly, nonatomic) long long alignmentAdjustedForLists;
 @end
 

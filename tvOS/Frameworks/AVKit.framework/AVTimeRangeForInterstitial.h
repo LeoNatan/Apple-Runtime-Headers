@@ -8,6 +8,7 @@
 
 @class AVInterstitialTimeRange;
 
+__attribute__((visibility("hidden")))
 @interface AVTimeRangeForInterstitial : AVTimeRange
 {
     AVInterstitialTimeRange *_interstice;

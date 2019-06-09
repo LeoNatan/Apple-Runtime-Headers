@@ -10,12 +10,14 @@
 
 @interface PVDataAccessor : NSObject
 {
-    unsigned int _activeFaceAlgorithmVersion;
+    unsigned int _faceAlgorithmUmbrellaVersion;
+    unsigned int _sceneAlgorithmUmbrellaVersion;
     id <PVPersistenceDelegate> _persistenceDelegate;
 }
 
-@property unsigned int activeFaceAlgorithmVersion; // @synthesize activeFaceAlgorithmVersion=_activeFaceAlgorithmVersion;
-@property(retain) id <PVPersistenceDelegate> persistenceDelegate; // @synthesize persistenceDelegate=_persistenceDelegate;
+@property(nonatomic) unsigned int sceneAlgorithmUmbrellaVersion; // @synthesize sceneAlgorithmUmbrellaVersion=_sceneAlgorithmUmbrellaVersion;
+@property(nonatomic) unsigned int faceAlgorithmUmbrellaVersion; // @synthesize faceAlgorithmUmbrellaVersion=_faceAlgorithmUmbrellaVersion;
+@property(retain, nonatomic) id <PVPersistenceDelegate> persistenceDelegate; // @synthesize persistenceDelegate=_persistenceDelegate;
 - (void).cxx_destruct;
 - (BOOL)deleteEmptyGroupsAndReturnError:(id *)arg1;
 - (BOOL)resetLibraryClustersWithCanceler:(id)arg1 error:(id *)arg2;
@@ -40,7 +42,7 @@
 - (BOOL)resetClusterSequenceNumberOfFacesWithLocalIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)unverifiedVisibleFacesFromFaceGroupContainingFacesWithClusterSequenceNumbers:(id)arg1 withFaceprintVersion:(unsigned int)arg2;
 - (id)deterministicallyOrderedFaceIdentifiersWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2;
-- (id)facesForClusteringWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(BOOL)arg3;
+- (id)facesForClusteringWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(BOOL)arg3 groupingIdentifiers:(id)arg4;
 - (id)unclusteredClusteringEligibleFaceLocalIdentifiers:(id *)arg1;
 - (unsigned long long)countOfClusteredFacesWithClusterSequenceNumbersInRange:(struct _NSRange)arg1;
 - (unsigned long long)countOfClusteredFaces;

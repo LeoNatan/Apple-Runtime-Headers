@@ -6,26 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class UIInputViewAnimationStyle;
-
 __attribute__((visibility("hidden")))
 @interface UIKeyboardRotationState : NSObject
 {
-    int _state;
-    _Bool _requiresNewState;
-    int _postRotationState;
-    UIInputViewAnimationStyle *_animationStyle;
-    long long _targetOrientation;
 }
-
-+ (id)stateWithState:(int)arg1 targetOrientation:(long long)arg2;
-@property(nonatomic) long long targetOrientation; // @synthesize targetOrientation=_targetOrientation;
-@property(retain, nonatomic) UIInputViewAnimationStyle *animationStyle; // @synthesize animationStyle=_animationStyle;
-@property(nonatomic) int postRotationState; // @synthesize postRotationState=_postRotationState;
-@property(nonatomic) _Bool requiresNewState; // @synthesize requiresNewState=_requiresNewState;
-@property(nonatomic) int state; // @synthesize state=_state;
-- (void)setPostRotationState:(int)arg1 animationStyle:(id)arg2;
-- (void)dealloc;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSArray, NSDictionary, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMetricsPageRenderEvent : SSMetricsBaseEvent <SKUIInspectableObject>
 {
     NSMutableArray *_domChanges;

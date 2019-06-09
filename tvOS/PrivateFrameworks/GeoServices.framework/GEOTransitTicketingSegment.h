@@ -8,20 +8,33 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOTransitTicketingSegment : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSMutableArray *_paths;
     NSString *_segmentName;
     NSString *_ticketingUrl;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_paths:1;
+        unsigned int read_segmentName:1;
+        unsigned int read_ticketingUrl:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_paths:1;
+        unsigned int wrote_segmentName:1;
+        unsigned int wrote_ticketingUrl:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)pathType;
-@property(retain, nonatomic) NSMutableArray *paths; // @synthesize paths=_paths;
-@property(retain, nonatomic) NSString *segmentName; // @synthesize segmentName=_segmentName;
-@property(retain, nonatomic) NSString *ticketingUrl; // @synthesize ticketingUrl=_ticketingUrl;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -29,14 +42,22 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)pathAtIndex:(unsigned long long)arg1;
 - (unsigned long long)pathsCount;
+- (void)_addNoFlagsPath:(id)arg1;
 - (void)addPath:(id)arg1;
 - (void)clearPaths;
+@property(retain, nonatomic) NSMutableArray *paths;
+- (void)_readPaths;
+@property(retain, nonatomic) NSString *segmentName;
 @property(readonly, nonatomic) _Bool hasSegmentName;
+- (void)_readSegmentName;
+@property(retain, nonatomic) NSString *ticketingUrl;
 @property(readonly, nonatomic) _Bool hasTicketingUrl;
+- (void)_readTicketingUrl;
 
 @end
 

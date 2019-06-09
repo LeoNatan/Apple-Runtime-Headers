@@ -8,6 +8,7 @@
 
 @class UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDividerView : UIView
 {
     long long _dividerOrientation;

@@ -10,11 +10,9 @@
 {
     BOOL _shouldHideIfTruncated;
     BOOL _hiddenDueToTruncation;
-    unsigned long long _verticalTextPlacement;
 }
 
 + (Class)cellClass;
-@property(nonatomic) unsigned long long verticalTextPlacement; // @synthesize verticalTextPlacement=_verticalTextPlacement;
 @property BOOL hiddenDueToTruncation; // @synthesize hiddenDueToTruncation=_hiddenDueToTruncation;
 @property BOOL shouldHideIfTruncated; // @synthesize shouldHideIfTruncated=_shouldHideIfTruncated;
 - (void)setStringValue:(id)arg1;
@@ -23,6 +21,7 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_updateHideShowForTruncation;
 - (BOOL)_isTruncated;
+@property(nonatomic) unsigned long long verticalTextPlacement;
 - (void)initView;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

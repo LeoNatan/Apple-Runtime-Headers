@@ -11,6 +11,8 @@
 - (void)externalizedContextInReply:(void (^)(NSData *))arg1;
 
 @optional
+- (void)didShowAccountUnblocked;
+- (void)didShowAccountBackoffBlocked;
 - (void)didSubmitUnverifiedData:(unsigned int)arg1 completion:(void (^)(BOOL))arg2;
 - (void)requestCancelAuthentication;
 - (void)passwordFieldDidResignFirstResponder;

@@ -9,6 +9,7 @@
 @class NSObject;
 @protocol SCTAnimatable;
 
+__attribute__((visibility("hidden")))
 @interface SCTInfiniteAnimation : NSAnimation
 {
     NSObject<SCTAnimatable> *mAnimateObject;

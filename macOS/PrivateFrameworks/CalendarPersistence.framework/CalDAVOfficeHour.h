@@ -23,7 +23,7 @@
 + (id)officeHoursFromICS:(id)arg1;
 + (id)officeHoursFromData:(id)arg1;
 + (void)_updatePrincipal:(id)arg1 withOfficeHours:(id)arg2 fromTaskGroup:(id)arg3;
-+ (void)setOfficeHoursForPrincipalObjectIDString:(id)arg1 officeHours:(id)arg2;
++ (void)setOfficeHoursForPrincipalObjectIDString:(id)arg1 officeHours:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)getOfficeHoursForAccountInfoProvider:(id)arg1 principal:(id)arg2 inboxURL:(id)arg3 taskManager:(id)arg4 andCompletionBlock:(CDUnknownBlockType)arg5;
 + (void)getOfficeHoursForPrincipalObjectIDString:(id)arg1 andCompletionBlock:(CDUnknownBlockType)arg2;
 + (BOOL)supportsSecureCoding;

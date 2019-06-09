@@ -19,10 +19,13 @@
     NSDate *fEndDate;
     unsigned int fElevationAscended;
     unsigned int fElevationDescended;
+    int fSource;
 }
 
++ (id)sourceName:(int)arg1;
 + (_Bool)supportsSecureCoding;
 - (id)description;
+@property(readonly, nonatomic) int source;
 @property(readonly, nonatomic) unsigned int elevationDescended;
 @property(readonly, nonatomic) unsigned int elevationAscended;
 @property(readonly, nonatomic) NSDate *endDate;
@@ -33,7 +36,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithRecordId:(unsigned int)arg1 sourceId:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 elevationAscended:(unsigned int)arg5 elevationDescended:(unsigned int)arg6;
+- (id)initWithStartDate:(id)arg1 endDate:(id)arg2 elevationAscended:(unsigned int)arg3 elevationDescended:(unsigned int)arg4 source:(int)arg5 recordId:(unsigned int)arg6 sourceId:(id)arg7;
 - (id)initWithSignificantElevationSample:(id)arg1;
 
 @end

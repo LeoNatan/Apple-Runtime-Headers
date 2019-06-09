@@ -12,15 +12,22 @@
 
 @interface NoBackhaulHandler : ExpertSystemHandlerCore <ManagedEventInfoProtocol>
 {
+    BOOL _systemForeground;
+    BOOL _callInForeground;
+    unsigned long long _stepper;
 }
 
 + (id)internalStateDictionary;
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long stepper; // @synthesize stepper=_stepper;
+@property(nonatomic) BOOL callInForeground; // @synthesize callInForeground=_callInForeground;
+@property(nonatomic) BOOL systemForeground; // @synthesize systemForeground=_systemForeground;
 - (_Bool)noteSymptom:(id)arg1;
 - (void)generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (int)configureInstance:(id)arg1;
+- (id)internalStateDictionary;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class CAAnimationGroup, CALayer, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface AVSpinnerView : UIView
 {
     struct CGSize _size;

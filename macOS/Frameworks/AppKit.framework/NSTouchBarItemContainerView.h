@@ -55,6 +55,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly) BOOL participatesInOverflow;
 @property(readonly) double preferredTrailingPosition;
 @property(readonly) Class superclass;
 

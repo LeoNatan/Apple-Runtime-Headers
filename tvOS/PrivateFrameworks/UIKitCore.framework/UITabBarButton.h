@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIControl.h>
 
-@class NSMutableDictionary, UIColor, UIImage, UIImageView, UITabBar, UITabBarButtonLabel, UITabBarSwappableImageView, UIView, UIVisualEffectView, _UIBadgeView;
+@class NSArray, NSMutableDictionary, UIColor, UIImage, UIImageView, UITabBar, UITabBarButtonLabel, UITabBarSwappableImageView, UIView, UIVisualEffectView, _UIBadgeView, _UITabBarItemData;
 
 __attribute__((visibility("hidden")))
 @interface UITabBarButton : UIControl
@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     UITabBarButtonLabel *_label;
     _UIBadgeView *_badge;
     UIImageView *_selectedIndicator;
-    _Bool _selected;
     struct UIEdgeInsets _infoInsets;
     struct UIEdgeInsets _infoLandscapeInsets;
     struct UIOffset _selectedInfoOffset;
@@ -29,21 +28,28 @@ __attribute__((visibility("hidden")))
     UIColor *_defaultUnselectedLabelTintColor;
     UIColor *_badgeColor;
     NSMutableDictionary *_badgeTextAttributesForState;
-    _Bool _horizontalLayout;
+    struct UIOffset _badgeOffset;
+    struct UIOffset _landscapePhoneBadgeOffset;
     UIView *_highContrastFocusIndicator;
+    _Bool _selected;
     _Bool _showsHighlightedState;
-    _Bool _centerAllContents;
+    long long _iOSLayoutStyle;
+    UIView *_focusView;
     Class _appearanceGuideClass;
+    _UITabBarItemData *__itemAppearanceData;
     UITabBar *_tabBar;
+    NSArray *_carplayConstraints;
 }
 
 + (id)_defaultLabelColor;
+@property(retain, nonatomic) NSArray *carplayConstraints; // @synthesize carplayConstraints=_carplayConstraints;
 @property(readonly, nonatomic) __weak UITabBar *tabBar; // @synthesize tabBar=_tabBar;
+@property(retain, nonatomic, setter=_setItemAppearanceData:) _UITabBarItemData *_itemAppearanceData; // @synthesize _itemAppearanceData=__itemAppearanceData;
 @property(retain, nonatomic, setter=_setAppearanceGuideClass:) Class _appearanceGuideClass; // @synthesize _appearanceGuideClass;
-@property(nonatomic, setter=_setCenterAllContents:) _Bool _centerAllContents; // @synthesize _centerAllContents;
-@property(nonatomic, setter=_setHorizontalLayout:) _Bool _horizontalLayout; // @synthesize _horizontalLayout;
+@property(nonatomic, setter=_setiOSLayoutStyle:) long long _iOSLayoutStyle; // @synthesize _iOSLayoutStyle;
 @property(nonatomic, setter=_setShowsHighlightedState:) _Bool _showsHighlightedState; // @synthesize _showsHighlightedState;
 - (void).cxx_destruct;
+- (void)_setLabelCompositingMode:(long long)arg1;
 @property(readonly, nonatomic) UIColor *_defaultUnselectedLabelTintColor;
 - (id)_contentTintColorForState:(unsigned long long)arg1;
 - (void)_setContentTintColor:(id)arg1 forState:(unsigned long long)arg2;
@@ -72,17 +78,23 @@ __attribute__((visibility("hidden")))
 - (void)_setLabelHidden:(_Bool)arg1;
 - (void)_setCustomSelectedIndicatorImage:(id)arg1;
 - (void)layoutSubviews;
+- (void)_ios_layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_horizontalLayout_sizeThatFits:(struct CGSize)arg1;
 - (void)_appleTV_layoutSubviews;
+@property(readonly, nonatomic) UIView *focusView; // @synthesize focusView=_focusView;
+- (void)_removeCarplayConstraints;
+- (void)_setupCarplayConstraints;
 - (struct CGSize)_appleTV_sizeThatFits:(struct CGSize)arg1;
+- (void)_setupSymbolConfigurationsForIdiom:(long long)arg1;
+- (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 forEvent:(struct __GSEvent *)arg2;
 - (void)setEnabled:(_Bool)arg1;
 - (void)_updateBadgeAppearanceAndLayoutNow:(_Bool)arg1;
 - (void)_setBadgeValue:(id)arg1;
+- (void)_setBadgeOffset:(struct UIOffset)arg1 landscapeBadgeOffset:(struct UIOffset)arg2;
 - (void)_positionBadgeAfterChangesIfNecessary:(CDUnknownBlockType)arg1;
-- (void)setFrame:(struct CGRect)arg1;
 - (void)_positionBadge;
 - (void)_setImage:(id)arg1 selected:(_Bool)arg2 offset:(struct UIOffset)arg3;
 - (void)_setInfoOffset:(struct UIOffset)arg1;
@@ -91,7 +103,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, getter=_unselectedTintColor, setter=_setUnselectedTintColor:) UIColor *unselectedTintColor;
 - (void)_updateToMatchCurrentState;
 - (void)setHighlighted:(_Bool)arg1;
-- (void)_updateInfoFrame;
+- (struct CGRect)_offsetImageFrame:(struct CGRect)arg1;
 - (void)_showSelectedIndicator:(_Bool)arg1 changeSelection:(_Bool)arg2;
 - (void)_updateSelectedIndicatorFrame;
 - (void)_updateSelectedIndicatorView;

@@ -31,6 +31,7 @@
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 - (void).cxx_destruct;
+- (struct UIEdgeInsets)_effectiveLayoutMargins;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

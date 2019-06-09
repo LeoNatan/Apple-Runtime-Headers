@@ -9,7 +9,7 @@
 #import <CloudDocsDaemon/BRCReachabilityDelegate-Protocol.h>
 #import <CloudDocsDaemon/BRCZone-Protocol.h>
 
-@class BRCAccountSession, BRCCreateZoneAndSubscribeOperation, BRCDeadlineSource, BRCItemID, BRCPQLConnection, BRCServerZone, BRCSyncBudgetThrottle, BRCSyncDownOperation, BRCSyncOperationThrottle, BRCSyncUpOperation, BRCThrottleBase, BRCZoneRowID, BRMangledID, CKOperationGroup, NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, brc_task_tracker;
+@class BRCAccountSession, BRCCreateZoneAndSubscribeOperation, BRCDeadlineSource, BRCFetchRecentAndFavoriteDocumentsOperation, BRCItemID, BRCPQLConnection, BRCServerZone, BRCSyncBudgetThrottle, BRCSyncDownOperation, BRCSyncOperationThrottle, BRCSyncUpOperation, BRCThrottleBase, BRCZoneRowID, BRMangledID, CKOperationGroup, NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, brc_task_tracker;
 @protocol BRCClientZoneDelegate, NSObject, OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -55,11 +55,19 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_currentSyncDownBarriers;
     id <NSObject> _hasWorkDidUpdateObserver;
     NSMutableArray *_nextIdleHandlers;
+    NSMutableArray *_directoriesCreatedLastSyncUp;
     CKOperationGroup *_syncDownGroup;
     NSMutableArray *_syncDownDependencies;
     NSMutableArray *_allItemsDidUploadTrackers;
     float _syncUpBatchSizeMultiplier;
     brc_task_tracker *_taskTracker;
+    NSMutableArray *_blockedOperationsOnInitialSync;
+    NSMutableDictionary *_runningListOperations;
+    NSMutableDictionary *_recursiveListOperations;
+    NSMutableDictionary *_fetchParentOperations;
+    NSMutableDictionary *_fetchShareAliasOperations;
+    BRCFetchRecentAndFavoriteDocumentsOperation *_fetchRecentsOperation;
+    unsigned long long _operationCountPendingSchedule;
     BOOL _needsSave;
     BOOL _t_syncDownBlocked;
     BOOL _t_syncUpBlocked;
@@ -88,6 +96,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <BRCClientZoneDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) BOOL activated; // @synthesize activated=_activated;
 - (void).cxx_destruct;
+- (id)itemIDForTopLevelSharedItemGivenItem:(id)arg1;
 - (BOOL)shouldSyncMangledID:(id)arg1;
 - (void)setupOperationForTestsIfNeeded:(id)arg1 recordsToSave:(id)arg2;
 - (void)_t_flushIdleBlocksIfNeeded;
@@ -135,29 +144,47 @@ __attribute__((visibility("hidden")))
 - (id)documentItemByItemID:(id)arg1;
 - (id)itemByItemID:(id)arg1 db:(id)arg2;
 - (id)itemByItemID:(id)arg1;
+- (id)clientChildCountWithParentID:(id)arg1 db:(id)arg2;
+- (id)serverChildCountWithParentID:(id)arg1 db:(id)arg2;
 - (id)serverItemByRowID:(unsigned long long)arg1 db:(id)arg2;
 - (id)serverItemByRowID:(unsigned long long)arg1;
 - (id)serverItemByItemID:(id)arg1 db:(id)arg2;
 - (id)serverItemByItemID:(id)arg1;
 - (long long)serverRankByItemID:(id)arg1 db:(id)arg2;
 - (id)serverItemByRank:(long long)arg1;
+- (id)serverStructuralEtagByItemID:(id)arg1;
+- (id)serverShareEtagByItemID:(id)arg1;
 - (long long)serverRankByItemID:(id)arg1;
+- (struct PQLResultSet *)ineligibleFromSyncItemsUnderParent:(id)arg1;
 - (struct PQLResultSet *)itemsParentedToThisZoneButLivingInAnOtherZone;
 - (struct PQLResultSet *)allItems;
 - (BOOL)_resetItemsTable;
 - (BOOL)dumpTablesToContext:(id)arg1 includeAllItems:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)dumpStatusToContext:(id)arg1 error:(id *)arg2;
+- (void)fetchRecentAndFavoriteDocuments;
+- (id)fetchShareAliasIfNecessaryForTarget:(id)arg1 isUserWaiting:(BOOL)arg2;
+- (id)fetchParentChainIfNecessaryWithParentItemID:(id)arg1 isUserWaiting:(BOOL)arg2;
+- (id)fetchRecursiveDirectoryContentsIfNecessary:(id)arg1 appLibraryRowID:(id)arg2 isUserWaiting:(BOOL)arg3;
+- (id)fetchDirectoryContentsIfNecessary:(id)arg1 isUserWaiting:(BOOL)arg2 rescheduleApplyScheduler:(BOOL)arg3;
+- (id)cancelFetchAliasOperationAndReschedule:(id)arg1;
+- (void)_registerFetchAliasOperation:(id)arg1;
+- (id)cancelFetchParentChainOperationAndReschedule:(id)arg1;
+- (void)_registerFetchParentChainOperation:(id)arg1;
+- (void)_blockLowPriorityStitchingOperationsForOperation:(struct _BRCOperation *)arg1;
+- (id)cancelListOperationAndReschedule:(id)arg1;
+- (void)_registerListOperation:(id)arg1;
+- (void)_registerServerStitchingOperation:(struct _BRCOperation *)arg1;
 - (BOOL)hasCompletedInitialSyncDownOnce;
 - (void)flushAppliedTombstones;
 - (void)didApplyTombstoneForRank:(long long)arg1;
 - (void)didGCTombstoneRanks:(id)arg1;
-- (void)signalFaultingWatchersWithError:(id)arg1;
 - (void)handleRootRecordDeletion;
 - (void)recomputeAllItemsDidUploadState;
 - (void)_allItemsDidUploadWithError:(id)arg1;
 - (BOOL)_hasAllItemsDidUploadHandlers;
 - (BOOL)_crossZoneMoveDocumentsToZone:(id)arg1;
-- (void)didSyncDownRequestID:(unsigned long long)arg1 maxApplyRank:(long long)arg2 caughtUpWithServer:(BOOL)arg3 syncDownDate:(id)arg4;
+- (void)didSyncDownRequestID:(unsigned long long)arg1 maxApplyRank:(long long)arg2 caughtUpWithServer:(BOOL)arg3 fullSync:(BOOL)arg4 syncDownDate:(id)arg5;
+- (void)listedUpToRank:(long long)arg1;
 - (void)_fixupMissingCrossMovedItems;
 - (void)syncDownOperation:(id)arg1 didFinishWithError:(id)arg2 status:(long long)arg3;
 - (void)_t_notifyClient:(id)arg1 whenIdle:(CDUnknownBlockType)arg2;
@@ -168,6 +195,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)nextSyncUpRequestID;
 - (void)_markRequestIDAcked;
 - (void)_markLatestSyncRequestFailed;
+- (id)directoryItemIDsCreatedLastSyncUp;
+- (void)prepareDirectoryForSyncUp:(id)arg1;
 - (void)clearSyncUpError;
 - (void)resetSyncBudgetAndThrottle;
 - (void)scheduleSyncDownForOOBModifyRecordsAck;
@@ -177,10 +206,9 @@ __attribute__((visibility("hidden")))
 - (void)scheduleSyncUp;
 - (void)_startSync;
 - (id)syncDownImmediately;
+- (void)_blockSyncDownOnStitchingOperations;
 - (void)removeSyncDownDependency:(id)arg1;
 - (void)addSyncDownDependency:(id)arg1;
-- (void)_createCloudKitZoneWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)createCloudKitZoneWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearSyncStateBits:(unsigned int)arg1;
 - (void)setSyncStateBits:(unsigned int)arg1;
 @property(readonly) unsigned int syncState;
@@ -190,7 +218,10 @@ __attribute__((visibility("hidden")))
 - (void)enumerateFaultsAsyncWithBlock:(CDUnknownBlockType)arg1 batchSize:(unsigned long long)arg2;
 - (struct PQLResultSet *)documentsNotIdleEnumeratorWithDB:(id)arg1;
 - (struct PQLResultSet *)itemsWithInFlightDiffsEnumerator;
+- (BOOL)hasItems;
+- (BOOL)hasItemsWithInFlightDiffs;
 - (struct PQLResultSet *)itemsEnumeratorWithDB:(id)arg1;
+- (BOOL)serverItemTypeByItemID:(id)arg1 db:(id)arg2;
 - (BOOL)existsByParentID:(id)arg1 andLogicalName:(id)arg2 db:(id)arg3;
 - (BOOL)existsByParentID:(id)arg1 andLogicalName:(id)arg2;
 - (id)faultByParentID:(id)arg1 andPhysicalName:(id)arg2 db:(id)arg3;
@@ -216,8 +247,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToClientZone:(id)arg1;
-- (BOOL)hasInitialFaultsEverLive;
-- (BOOL)hasInitialFaultsLive;
 - (BOOL)isSyncBlockedBecauseOSNeedsUpgrade;
 - (BOOL)isSyncBlockedBecauseAppNotInstalled;
 - (BOOL)isSyncBlockedOrBrokenStructure;

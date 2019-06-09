@@ -12,7 +12,7 @@
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 #import <ContactsUI/UITextFieldDelegate-Protocol.h>
 
-@class CNMutablePostalAddress, CNPostalAddress, CNPostalAddressEditorTableView, NSArray, NSDictionary, NSMutableDictionary, NSString, UIColor;
+@class CNMutablePostalAddress, CNPostalAddress, CNPostalAddressEditorTableView, CNPostalAddressFormattingSpecification, NSArray, NSDictionary, NSMutableDictionary, NSString, UIColor;
 @protocol CNPresenterDelegate;
 
 __attribute__((visibility("hidden")))
@@ -22,21 +22,21 @@ __attribute__((visibility("hidden")))
     NSDictionary *_valueTextAttributes;
     id <CNPresenterDelegate> _delegate;
     CNPostalAddressEditorTableView *_tableView;
-    NSDictionary *_addressFormats;
     NSArray *_cellsLayout;
+    CNPostalAddressFormattingSpecification *_formatSpecification;
     NSMutableDictionary *_textFields;
 }
 
-@property(copy, nonatomic) NSMutableDictionary *textFields; // @synthesize textFields=_textFields;
+@property(readonly, nonatomic) NSMutableDictionary *textFields; // @synthesize textFields=_textFields;
+@property(retain, nonatomic) CNPostalAddressFormattingSpecification *formatSpecification; // @synthesize formatSpecification=_formatSpecification;
 @property(copy, nonatomic) NSArray *cellsLayout; // @synthesize cellsLayout=_cellsLayout;
-@property(copy, nonatomic) NSDictionary *addressFormats; // @synthesize addressFormats=_addressFormats;
 @property(retain, nonatomic) CNPostalAddressEditorTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) __weak id <CNPresenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)keyboardSettingsForAddress:(id)arg1 component:(id)arg2;
 - (id)_cellsLayoutForCountryCode:(id)arg1;
 - (id)_normalizeCountryCodeToISO:(id)arg1;
 - (id)_countryCode;
-- (id)_addressPlaceholderForKey:(id)arg1;
 - (id)_addressValueForKey:(id)arg1;
 - (void)_setAddressValue:(id)arg1 forKey:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;

@@ -9,6 +9,8 @@
 @interface _UTTypeQuery : _LSQuery
 {
     unsigned long long _flags;
+    void *_context;
+    unsigned long long _propertyFlags;
 }
 
 + (id)typeQueryWithDescendantsOfIdentifier:(id)arg1 searchDepthLimit:(unsigned int)arg2;
@@ -16,10 +18,14 @@
 + (id)typeQueryWithTag:(id)arg1 ofClass:(id)arg2 conformsTo:(id)arg3;
 + (id)typeQueryWithIdentifier:(id)arg1;
 + (id)typeQueryForAllDeclaredIdentifiers;
++ (void)_precacheTypesForIdentifiers:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(nonatomic, setter=_setResolveInactiveDeclarations:) _Bool _resolveInactiveDeclarations; // @dynamic _resolveInactiveDeclarations;
 - (id)resolve;
+- (id)_init;
+@property(nonatomic, setter=_setPropertiesToResolve:) unsigned long long _propertiesToResolve;
+@property(nonatomic, setter=_setContext:) struct LSContext *_context;
 
 @end
 

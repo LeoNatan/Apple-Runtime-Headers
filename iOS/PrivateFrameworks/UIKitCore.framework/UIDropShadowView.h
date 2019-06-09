@@ -6,28 +6,35 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSDictionary;
+@class NSArray;
 
 __attribute__((visibility("hidden")))
 @interface UIDropShadowView : UIView
 {
-    UIView *_backgroundImage;
-    NSDictionary *_preservedLayerValues;
     _Bool _masksTopCornersOnly;
-    double _cornerRadius;
+    _Bool _supportsShadow;
     UIView *_contentView;
+    UIView *_overlayView;
+    long long _independentCorners;
+    UIView *_firstCornerClippingDescendant;
+    NSArray *_cornerClippingDescendants;
+    struct UIRectCornerRadii _environmentMatchingCornerRadii;
 }
 
-@property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
+@property(readonly, nonatomic) NSArray *cornerClippingDescendants; // @synthesize cornerClippingDescendants=_cornerClippingDescendants;
+@property(readonly, nonatomic) __weak UIView *firstCornerClippingDescendant; // @synthesize firstCornerClippingDescendant=_firstCornerClippingDescendant;
+@property(readonly, nonatomic) long long independentCorners; // @synthesize independentCorners=_independentCorners;
+@property(readonly, nonatomic) _Bool supportsShadow; // @synthesize supportsShadow=_supportsShadow;
 @property(nonatomic) _Bool masksTopCornersOnly; // @synthesize masksTopCornersOnly=_masksTopCornersOnly;
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
+@property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
+@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) struct UIRectCornerRadii environmentMatchingCornerRadii; // @synthesize environmentMatchingCornerRadii=_environmentMatchingCornerRadii;
 - (void).cxx_destruct;
 - (void)didFinishRotation;
 - (void)willBeginRotationWithOriginalBounds:(struct CGRect)arg1 newBounds:(struct CGRect)arg2;
-- (void)setBounds:(struct CGRect)arg1;
-- (void)setFrame:(struct CGRect)arg1;
-- (void)updateShadowPath;
-- (id)init;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+@property(readonly, nonatomic) UIView *deepestClippingView;
+- (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadow:(_Bool)arg3;
 
 @end
 

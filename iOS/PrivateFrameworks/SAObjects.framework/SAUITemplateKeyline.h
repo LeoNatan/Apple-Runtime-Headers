@@ -6,12 +6,15 @@
 
 #import <SAObjects/SAUITemplateBaseItem.h>
 
+@class NSNumber;
+
 @interface SAUITemplateKeyline : SAUITemplateBaseItem
 {
 }
 
 + (id)keylineWithDictionary:(id)arg1 context:(id)arg2;
 + (id)keyline;
+@property(copy, nonatomic) NSNumber *width;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

@@ -6,20 +6,35 @@
 
 #import <UIKit/UIView.h>
 
-@protocol PXDisplayAsset, PXUIImageProvider;
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@interface PXCMMImageView : UIView
+@class NSString, PXCMMImageViewModel, PXImageRequesterHelper, UIImageView;
+
+@interface PXCMMImageView : UIView <PXChangeObserver>
 {
-    _Bool _highlighted;
-    id <PXDisplayAsset> _asset;
-    id <PXUIImageProvider> _mediaProvider;
+    UIImageView *_imageView;
+    UIView *_highlightView;
+    PXImageRequesterHelper *_imageRequesterHelper;
+    PXCMMImageViewModel *_viewModel;
 }
 
-@property(readonly, nonatomic) id <PXUIImageProvider> mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-@property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
+@property(retain, nonatomic) PXCMMImageViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
-- (void)setAsset:(id)arg1 mediaProvider:(id)arg2;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (_Bool)test_highlighted;
+- (void)_updateContentsRect;
+- (void)_updateImage;
+- (void)_updateHighlighted;
+- (void)_updateImageRequestHelper;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)setFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

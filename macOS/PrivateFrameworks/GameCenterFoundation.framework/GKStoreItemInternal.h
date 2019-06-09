@@ -33,8 +33,8 @@
 @property(retain, nonatomic) NSString *priceDisplay; // @synthesize priceDisplay=_priceDisplay;
 @property(retain, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(retain, nonatomic) NSNumber *adamID; // @synthesize adamID=_adamID;
-- (void)storeItemURLForGamePlatform:(unsigned char)arg1 withContext:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (id)storeItemURLForURL:(id)arg1 gamePlatform:(unsigned char)arg2 extraQueryParams:(id)arg3;
+- (void)storeItemURLForGamePlatform:(long long)arg1 withContext:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (id)storeItemURLForURL:(id)arg1 gamePlatform:(long long)arg2 extraQueryParams:(id)arg3;
 - (BOOL)isValid;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;

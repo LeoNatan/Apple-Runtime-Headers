@@ -8,23 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPBTransitRoutingIncidentMessage : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_9f2792e4 _transitIncidentIndexs;
-    unsigned int _routingIncidentMessageIndex;
     NSString *_routingMessage;
+    unsigned int _routingIncidentMessageIndex;
     struct {
-        unsigned int routingIncidentMessageIndex:1;
-    } _has;
+        unsigned int has_routingIncidentMessageIndex:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_transitIncidentIndexs:1;
+        unsigned int read_routingMessage:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_transitIncidentIndexs:1;
+        unsigned int wrote_routingMessage:1;
+        unsigned int wrote_routingIncidentMessageIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *routingMessage; // @synthesize routingMessage=_routingMessage;
-@property(nonatomic) unsigned int routingIncidentMessageIndex; // @synthesize routingIncidentMessageIndex=_routingIncidentMessageIndex;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,16 +42,22 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setTransitIncidentIndexs:(unsigned int *)arg1 count:(unsigned long long)arg2;
 - (unsigned int)transitIncidentIndexAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsTransitIncidentIndex:(unsigned int)arg1;
 - (void)addTransitIncidentIndex:(unsigned int)arg1;
 - (void)clearTransitIncidentIndexs;
 @property(readonly, nonatomic) unsigned int *transitIncidentIndexs;
 @property(readonly, nonatomic) unsigned long long transitIncidentIndexsCount;
+- (void)_readTransitIncidentIndexs;
+@property(retain, nonatomic) NSString *routingMessage;
 @property(readonly, nonatomic) _Bool hasRoutingMessage;
+- (void)_readRoutingMessage;
 @property(nonatomic) _Bool hasRoutingIncidentMessageIndex;
+@property(nonatomic) unsigned int routingIncidentMessageIndex;
 - (void)dealloc;
 
 @end

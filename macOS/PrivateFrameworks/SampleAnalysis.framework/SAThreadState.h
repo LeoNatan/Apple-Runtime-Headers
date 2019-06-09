@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <SampleAnalysis/NSCopying-Protocol.h>
 #import <SampleAnalysis/SASerializable-Protocol.h>
 
 @class NSString, SADispatchQueue, SAFrame, SATimestamp, SAWaitInfo;
 
-@interface SAThreadState : NSObject <SASerializable>
+@interface SAThreadState : NSObject <SASerializable, NSCopying>
 {
     unsigned char _threadQos;
     unsigned char _threadRequestedQos;
@@ -92,6 +93,7 @@
 - (id)stackIgnoringKernelStackWithLeafFrame:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStackshotThreadV1:(const struct thread_snapshot *)arg1 startTimestamp:(id)arg2 endTimestamp:(id)arg3 startSampleIndex:(unsigned long long)arg4 endSampleIndex:(unsigned long long)arg5 leafUserFrame:(id)arg6 leafKernelFrame:(id)arg7 machTimebase:(struct mach_timebase_info)arg8;
 - (id)initWithKCDataDeltaThreadV3:(const struct thread_delta_snapshot_v3 *)arg1 startTimestamp:(id)arg2 endTimestamp:(id)arg3 startSampleIndex:(unsigned long long)arg4 endSampleIndex:(unsigned long long)arg5 name:(id)arg6 leafUserFrame:(id)arg7 leafKernelFrame:(id)arg8 oldThreadState:(id)arg9 waitInfo:(id)arg10 threadPolicyVersion:(unsigned int)arg11;
 - (id)initWithKCDataDeltaThreadV2:(const struct thread_delta_snapshot_v2 *)arg1 startTimestamp:(id)arg2 endTimestamp:(id)arg3 startSampleIndex:(unsigned long long)arg4 endSampleIndex:(unsigned long long)arg5 name:(id)arg6 leafUserFrame:(id)arg7 leafKernelFrame:(id)arg8 oldThreadState:(id)arg9 waitInfo:(id)arg10;
@@ -100,6 +102,8 @@
 - (id)initWithStartTimestamp:(id)arg1 endTimestamp:(id)arg2 startSampleIndex:(unsigned long long)arg3 endSampleIndex:(unsigned long long)arg4;
 - (unsigned long long)sampleCountInSampleIndexRangeStart:(unsigned long long)arg1 end:(unsigned long long)arg2;
 @property(readonly) unsigned char microstackshotFlags;
+@property(readonly) unsigned int cpuNum;
+@property(readonly) unsigned int cpuSpeedMhz;
 @property(readonly) BOOL isOnBattery;
 @property(readonly) BOOL isUserActive;
 @property(readonly) BOOL isBatteryAndUserActivityValid;

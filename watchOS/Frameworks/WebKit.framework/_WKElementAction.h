@@ -17,11 +17,13 @@
     int _type;
 }
 
++ (id)imageForElementActionType:(int)arg1;
 + (id)elementActionWithType:(int)arg1;
 + (id)elementActionWithType:(int)arg1 customTitle:(id)arg2;
 + (id)_elementActionWithType:(int)arg1 assistant:(id)arg2;
 + (id)_elementActionWithType:(int)arg1 customTitle:(id)arg2 assistant:(id)arg3;
 + (id)_elementActionWithType:(int)arg1 title:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
++ (id)elementActionWithType:(int)arg1 title:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
 + (id)elementActionWithTitle:(id)arg1 actionHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;

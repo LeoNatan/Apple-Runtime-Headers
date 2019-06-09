@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)detachHandle;
 -     // Error parsing type: @16@0:4^{ResourceHandle=^^?I{unique_ptr<WebCore::ResourceHandleInternal, std::__1::default_delete<WebCore::ResourceHandleInternal> >={__compressed_pair<WebCore::ResourceHandleInternal *, std::__1::default_delete<WebCore::ResourceHandleInternal> >=^{ResourceHandleInternal}}}}8^{MessageQueue<WTF::Function<void ()> >={Lock={Atomic<unsigned char>={atomic<unsigned char>=AC}}}{Condition={Atomic<bool>={atomic<bool>=AB}}}{Deque<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=II{VectorBuffer<std::__1::unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >, 0>=^{unique_ptr<WTF::Function<void ()>, std::__1::default_delete<WTF::Function<void ()> > >}II}}B}12, name: initWithHandle:messageQueue:
-- (void)callFunctionOnMainThread:(Function_89d21b48 *)arg1;
+- (void)callFunctionOnMainThread:(Function_15535652 *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

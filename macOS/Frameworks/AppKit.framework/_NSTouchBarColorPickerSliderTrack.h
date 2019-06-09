@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     NSArray *_allowedColorSpaces;
     NSColor *_displayedColor;
     id _autounbinder;
-    unsigned int _valueIsFlipped:1;
+    BOOL _valueIsFlipped;
 }
 
 + (id)keyPathsForValuesInvalidatingDisplay;

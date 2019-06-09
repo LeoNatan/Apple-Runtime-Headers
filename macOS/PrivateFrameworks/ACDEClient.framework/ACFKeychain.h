@@ -11,15 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface ACFKeychain : NSObject
 {
-    struct OpaqueSecKeychainRef *_keychain;
+    struct __SecKeychain *_keychain;
     NSString *_path;
 }
 
 + (id)defaultKeychain;
-+ (id)keychainWithRef:(struct OpaqueSecKeychainRef *)arg1;
++ (id)keychainWithRef:(struct __SecKeychain *)arg1;
 + (id)keychainWithPath:(id)arg1;
-@property(readonly) struct OpaqueSecKeychainRef *keychainRef; // @synthesize keychainRef=_keychain;
-- (struct OpaqueSecAccessRef *)createKeychainItemAccess:(const char *)arg1 error:(struct __CFError **)arg2;
+@property(readonly) struct __SecKeychain *keychainRef; // @synthesize keychainRef=_keychain;
+- (struct __SecAccess *)createKeychainItemAccess:(const char *)arg1 error:(struct __CFError **)arg2;
 - (BOOL)deletePasswordDataForService:(id)arg1 account:(id)arg2;
 - (BOOL)setPasswordData:(id)arg1 forService:(id)arg2 account:(id)arg3 allowAppAccess:(BOOL)arg4 userInteractionAllowed:(BOOL)arg5;
 - (BOOL)setPasswordData:(id)arg1 forService:(id)arg2 account:(id)arg3;
@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (long long)cryptographicServiceProvider;
 - (id)keychainPath;
 - (void)dealloc;
-- (id)initWithRef:(struct OpaqueSecKeychainRef *)arg1;
+- (id)initWithRef:(struct __SecKeychain *)arg1;
 
 @end
 

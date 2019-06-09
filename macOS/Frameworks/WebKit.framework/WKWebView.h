@@ -31,7 +31,7 @@
     struct RetainPtr<WKSafeBrowsingWarning> _safeBrowsingWarning;
     struct unique_ptr<WebKit::WebViewImpl, std::__1::default_delete<WebKit::WebViewImpl>> _impl;
     struct RetainPtr<WKTextFinderClient> _textFinderClient;
-    double _minimumEffectiveDeviceWidth;
+    unsigned long long _selectionAttributes;
 }
 
 + (BOOL)handlesURLScheme:(id)arg1;
@@ -102,6 +102,8 @@
 - (void)quickLookWithEvent:(id)arg1;
 - (long long)conversationIdentifier;
 - (id)hitTest:(struct CGPoint)arg1;
+- (id)accessibilityParameterizedAttributeNames;
+- (id)accessibilityAttributeValue:(id)arg1 forParameter:(id)arg2;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;
@@ -309,13 +311,13 @@
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
-- (void)_updateAccessibilityEventsEnabled;
 - (void)_didInvalidateDataForAttachment:(struct Attachment *)arg1;
 - (void)_didRemoveAttachment:(struct Attachment *)arg1;
 - (void)_didInsertAttachment:(struct Attachment *)arg1 withSource:(id)arg2;
 - (void)_clearSafeBrowsingWarningIfForMainFrameNavigation;
 - (void)_clearSafeBrowsingWarning;
-- (void)_showSafeBrowsingWarning:(const struct SafeBrowsingWarning *)arg1 completionHandler:(CompletionHandler_0810ae1c *)arg2;
+- (void)_showSafeBrowsingWarning:(const struct SafeBrowsingWarning *)arg1 completionHandler:(CompletionHandler_2c34b13f *)arg2;
+@property(readonly, nonatomic) unsigned long long _selectionAttributes;
 - (void)_didChangeEditorState;
 @property(nonatomic, setter=_setViewportSizeForCSSViewportUnits:) struct CGSize _viewportSizeForCSSViewportUnits;
 @property(nonatomic) BOOL allowsLinkPreview;
@@ -388,9 +390,8 @@
 @property(nonatomic, setter=_setDrawsBackground:) BOOL _drawsBackground;
 - (void)_removeDataDetectedLinks:(CDUnknownBlockType)arg1;
 - (void)_setPageMuted:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long _mediaCaptureState;
 @property(nonatomic, setter=_setMediaCaptureEnabled:) BOOL _mediaCaptureEnabled;
-- (void)_muteMediaCapture;
+@property(readonly, nonatomic) unsigned long long _mediaCaptureState;
 @property(readonly, nonatomic) BOOL _isInFullscreen;
 @property(nonatomic, setter=_setFullscreenDelegate:) id <_WKFullscreenDelegate> _fullscreenDelegate;
 @property(readonly, nonatomic) BOOL _webProcessIsResponsive;
@@ -423,6 +424,7 @@
 @property(nonatomic, setter=_setPaginationBehavesLikeColumns:) BOOL _paginationBehavesLikeColumns;
 @property(nonatomic, setter=_setPaginationMode:) long long _paginationMode;
 - (void)_getApplicationManifestWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_getContentsAsAttributedStringWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_getContentsAsStringWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_getWebArchiveDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_getMainResourceDataWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -448,6 +450,10 @@
 @property(readonly, nonatomic) _WKSessionState *_sessionState;
 @property(readonly, nonatomic) NSData *_sessionStateData;
 - (void)_setShouldSuppressFirstResponderChanges:(BOOL)arg1;
+- (void)_focusTextInputContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_requestTextInputContextsInRect:(struct CGRect)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (struct CGRect)_convertRectToRootViewCoordinates:(struct CGRect)arg1;
+- (struct CGRect)_convertRectFromRootViewCoordinates:(struct CGRect)arg1;
 - (void)_killWebContentProcessAndResetState;
 - (id)_reloadExpiredOnly;
 - (id)_reloadWithoutContentBlockers;
@@ -465,6 +471,7 @@
 - (id)_loadRequest:(id)arg1 shouldOpenExternalURLs:(BOOL)arg2;
 - (id)_loadData:(id)arg1 MIMEType:(id)arg2 characterEncodingName:(id)arg3 baseURL:(id)arg4 userData:(id)arg5;
 - (void)_loadAlternateHTMLString:(id)arg1 baseURL:(id)arg2 forUnreachableURL:(id)arg3;
+@property(readonly, nonatomic) NSURL *_mainFrameURL;
 @property(readonly, nonatomic) NSURL *_unreachableURL;
 - (void)_resumeAllMediaPlayback;
 - (void)_suspendAllMediaPlayback;
@@ -495,6 +502,8 @@
 - (void)_alignJustified:(id)arg1;
 - (void)_alignCenter:(id)arg1;
 - (void)_denyNextUserMediaRequest;
+- (void)_processDidResumeForTesting;
+- (void)_processWillSuspendImminentlyForTesting;
 @property(readonly, nonatomic) _WKFrameHandle *_mainFrame;
 @property(readonly, nonatomic) _WKInspector *_inspector;
 @property(readonly, nonatomic) BOOL _hasInspectorFrontend;
@@ -508,6 +517,7 @@
 - (void)_doAfterNextPresentationUpdateWithoutWaitingForPainting:(CDUnknownBlockType)arg1;
 - (void)_doAfterNextPresentationUpdateWithoutWaitingForAnimatedResizeForTesting:(CDUnknownBlockType)arg1;
 - (void)_doAfterNextPresentationUpdate:(CDUnknownBlockType)arg1;
+@property(nonatomic, setter=_setScrollingUpdatesDisabledForTesting:) BOOL _scrollingUpdatesDisabledForTesting;
 - (void)_internalDoAfterNextPresentationUpdate:(CDUnknownBlockType)arg1 withoutWaitingForPainting:(BOOL)arg2 withoutWaitingForAnimatedResize:(BOOL)arg3;
 - (double)_pageScale;
 - (void)_setPageScale:(double)arg1 withOrigin:(struct CGPoint)arg2;

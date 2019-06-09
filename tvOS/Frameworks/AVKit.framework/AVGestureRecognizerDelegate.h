@@ -10,6 +10,7 @@
 
 @class NSSet, NSString, UITapGestureRecognizer;
 
+__attribute__((visibility("hidden")))
 @interface AVGestureRecognizerDelegate : NSObject <UIGestureRecognizerDelegate>
 {
     NSSet *_exclusiveGestureRecognizers;

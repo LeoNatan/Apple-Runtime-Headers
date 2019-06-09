@@ -8,11 +8,11 @@
 
 #import <SymptomEvaluator/ManagedEventInfoProtocol-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ConfigurationHandler : NSObject <ManagedEventInfoProtocol>
 {
-    NSDictionary *_buildInfo;
 }
 
 + (int)read:(id)arg1 returnedValues:(id)arg2;
@@ -23,7 +23,6 @@
 + (id)objectForName:(id)arg1;
 + (id)sharedInstance;
 + (void)initialize;
-- (void).cxx_destruct;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (int)configure:(id)arg1;
 - (void)generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

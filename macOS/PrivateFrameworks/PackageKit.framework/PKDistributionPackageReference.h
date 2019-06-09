@@ -8,7 +8,7 @@
 
 #import <PackageKit/PKPackageReferable-Protocol.h>
 
-@class NSMutableArray, NSString, NSURL, PKDistribution;
+@class NSDictionary, NSMutableArray, NSString, NSURL, PKDistribution;
 
 @interface PKDistributionPackageReference : NSObject <PKPackageReferable>
 {
@@ -58,8 +58,11 @@
 
 // Remaining properties
 @property(readonly) NSString *MD5;
+@property(readonly) NSDictionary *additionalInfo;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) NSString *digest;
+@property(readonly) NSString *fileDigest;
+@property(readonly) long long fileDigestType;
 @property(readonly) unsigned long long fileSize;
 @property(readonly) Class superclass;
 

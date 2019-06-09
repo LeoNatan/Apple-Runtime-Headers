@@ -6,6 +6,7 @@
 
 #import <OfficeImport/PDTransitionOptions.h>
 
+__attribute__((visibility("hidden")))
 @interface PDSplitDirectionOptions : PDTransitionOptions
 {
     int mOrientation;

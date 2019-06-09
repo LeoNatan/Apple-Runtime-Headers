@@ -57,6 +57,7 @@
 - (_Bool)hasEmailAddress;
 - (id)initWithPhoneNumber:(id)arg1;
 - (id)initWithEmailAddress:(id)arg1;
+- (id)sanitizeAddressString:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (void)fixAddress;
 - (void)setURL:(id)arg1;

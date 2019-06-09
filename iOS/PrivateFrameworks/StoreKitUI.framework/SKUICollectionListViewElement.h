@@ -8,6 +8,7 @@
 
 @class SKUISearchBarViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUICollectionListViewElement : SKUIViewElement
 {
     SKUISearchBarViewElement *_searchHeader;

@@ -13,6 +13,7 @@
 @class MFContactsSearchManager, NSArray, NSMutableArray, NSNumber, NSString, UITableView, UIView;
 @protocol SKUIGiftContactSearchDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftContactSearchController : NSObject <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate>
 {
     NSMutableArray *_autocompleteSearchResults;

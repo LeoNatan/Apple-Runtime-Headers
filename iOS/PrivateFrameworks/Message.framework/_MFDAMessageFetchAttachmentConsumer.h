@@ -24,7 +24,7 @@
 @property(readonly) _Bool dataWasBase64; // @synthesize dataWasBase64=_dataWasBase64;
 @property(nonatomic) unsigned long long expectedLength; // @synthesize expectedLength=_expectedLength;
 @property(retain, nonatomic) MFProgressFilterDataConsumer *progressFilter; // @synthesize progressFilter=_progressFilter;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithActivityMonitor:(id)arg1;
 - (void)attachmentFetchCompletedWithStatus:(long long)arg1 forAttachmentNamed:(id)arg2 ofMessageWithServerID:(id)arg3 dataWasBase64:(_Bool)arg4 sentBytesCount:(unsigned long long)arg5 receivedBytesCount:(unsigned long long)arg6;
 - (void)consumeData:(id)arg1 ofContentType:(id)arg2 forAttachmentNamed:(id)arg3 ofMessageWithServerID:(id)arg4;

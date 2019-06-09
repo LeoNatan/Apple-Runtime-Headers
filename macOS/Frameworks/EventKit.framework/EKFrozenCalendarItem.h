@@ -41,6 +41,7 @@
     NSTimeZone *_timeZoneObject;
     NSData *_structuredData;
     NSData *_localStructuredData;
+    NSNumber *_sequence;
     NSString *_localUID;
     NSString *_sharedUID;
     NSString *_itemID;
@@ -79,6 +80,7 @@
 @property(readonly, nonatomic) NSString *itemID; // @synthesize itemID=_itemID;
 @property(readonly, nonatomic) NSString *sharedUID; // @synthesize sharedUID=_sharedUID;
 @property(readonly, nonatomic) NSString *localUID; // @synthesize localUID=_localUID;
+@property(readonly, nonatomic) NSNumber *sequence; // @synthesize sequence=_sequence;
 @property(readonly, copy, nonatomic) NSData *localStructuredData; // @synthesize localStructuredData=_localStructuredData;
 @property(readonly, copy, nonatomic) NSData *structuredData; // @synthesize structuredData=_structuredData;
 @property(readonly, copy, nonatomic) NSTimeZone *timeZoneObject; // @synthesize timeZoneObject=_timeZoneObject;
@@ -95,7 +97,7 @@
 @property(readonly, copy, nonatomic) NSURL *organizerURL; // @synthesize organizerURL=_organizerURL;
 @property(readonly, copy, nonatomic) NSString *organizerName; // @synthesize organizerName=_organizerName;
 @property(readonly, nonatomic) BOOL organizedByMe; // @synthesize organizedByMe=_organizedByMe;
-@property(readonly, retain, nonatomic) id <EKProtocolParticipant> organizer;
+@property(readonly, retain, nonatomic) id <EKProtocolParticipant> organizer; // @synthesize organizer=_organizer;
 @property(readonly, copy, nonatomic) id <EKProtocolStructuredLocation> ekStructuredLocation; // @synthesize ekStructuredLocation=_ekStructuredLocation;
 @property(readonly, nonatomic) BOOL defaultAlarmWasDeleted; // @synthesize defaultAlarmWasDeleted=_defaultAlarmWasDeleted;
 @property(readonly, copy, nonatomic) NSString *contactIdentifiersString; // @synthesize contactIdentifiersString=_contactIdentifiersString;
@@ -121,6 +123,7 @@
 @property(readonly, nonatomic) BOOL hasAttendees;
 @property(readonly, retain, nonatomic) id <CalendarModelProtocol> container;
 @property(readonly, nonatomic) BOOL allowsParticipantStatusModifications;
+- (id)rawTitle;
 @property(readonly, nonatomic) NSDictionary *preFrozenRelationshipObjects;
 - (void)_handlePreFrozenRelationshipObjects:(id)arg1 forOccurrence:(id)arg2;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;

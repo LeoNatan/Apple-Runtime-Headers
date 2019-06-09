@@ -62,6 +62,7 @@
 - (id)_activityNameForSubscription:(id)arg1 anchor:(id)arg2;
 - (id)_queue_subscriptionForActivityName:(id)arg1 anchor:(id *)arg2;
 - (void)_queue_launchSubscription:(id)arg1 anchor:(id)arg2;
+- (void)_backgroundTaskFiredWithName:(id)arg1;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 - (id)init;

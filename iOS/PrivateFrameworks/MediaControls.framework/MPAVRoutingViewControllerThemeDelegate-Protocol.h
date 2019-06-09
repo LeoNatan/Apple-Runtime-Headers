@@ -6,13 +6,14 @@
 
 #import <MediaControls/NSObject-Protocol.h>
 
-@class MPAVRoutingViewController, UITableViewCell;
+@class MPAVRoutingTableViewHeaderView, MPAVRoutingViewController, UITableViewCell;
 @protocol MPAVRoutingThemeableCellView;
 
 @protocol MPAVRoutingViewControllerThemeDelegate <NSObject>
 
 @optional
 - (struct UIEdgeInsets)contentInsetsForRoutingViewController:(MPAVRoutingViewController *)arg1;
+- (void)routingViewController:(MPAVRoutingViewController *)arg1 willDisplayHeaderView:(MPAVRoutingTableViewHeaderView *)arg2;
 - (void)routingViewController:(MPAVRoutingViewController *)arg1 willDisplayCell:(UITableViewCell<MPAVRoutingThemeableCellView> *)arg2;
 @end
 

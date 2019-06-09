@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)URL;
+- (long long)fragmentCount;
+- (long long)firstFragmentSequenceNumber;
 - (BOOL)_isStreaming;
 - (BOOL)hasProtectedContent;
 - (BOOL)isComposable;
@@ -52,7 +54,6 @@ __attribute__((visibility("hidden")))
 - (void)cancelLoading;
 - (id)assetInspector;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1;
 

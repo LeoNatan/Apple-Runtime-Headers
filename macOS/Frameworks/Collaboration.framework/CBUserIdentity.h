@@ -16,7 +16,7 @@
 + (id)userIdentityWithPosixUID:(unsigned int)arg1 authority:(id)arg2;
 - (BOOL)authenticateWithPassword:(id)arg1;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled;
-@property(readonly, nonatomic) struct OpaqueSecCertificateRef *certificate;
+@property(readonly, nonatomic) struct __SecCertificate *certificate;
 @property(readonly, nonatomic) unsigned int posixUID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

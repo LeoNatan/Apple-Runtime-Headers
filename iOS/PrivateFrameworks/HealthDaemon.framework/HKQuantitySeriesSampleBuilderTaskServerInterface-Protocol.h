@@ -6,11 +6,11 @@
 
 #import <HealthDaemon/HKUnitTestingTaskServerInterface-Protocol.h>
 
-@class HKCodableQuantitySeries, NSDictionary;
+@class HKCodableQuantitySeries, NSDate, NSDictionary;
 
 @protocol HKQuantitySeriesSampleBuilderTaskServerInterface <HKUnitTestingTaskServerInterface>
 - (void)remote_discardWithCompletion:(void (^)(_Bool, NSError *))arg1;
-- (void)remote_finishSeriesWithMetadata:(NSDictionary *)arg1 finalSeries:(HKCodableQuantitySeries *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
+- (void)remote_finishSeriesWithMetadata:(NSDictionary *)arg1 endDate:(NSDate *)arg2 finalSeries:(HKCodableQuantitySeries *)arg3 completion:(void (^)(NSArray *, NSError *))arg4;
 - (void)remote_insertQuantitySeries:(HKCodableQuantitySeries *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 @end
 

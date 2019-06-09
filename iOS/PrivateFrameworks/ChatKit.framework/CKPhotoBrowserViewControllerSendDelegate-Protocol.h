@@ -15,6 +15,7 @@
 - (NSURL *)workingDirForDraft;
 - (void)showPhotosBrowser;
 - (void)dismissEntryViewShelf;
+- (void)showModalViewController:(UIViewController *)arg1 animated:(_Bool)arg2 completion:(void (^)(void))arg3;
 - (void)showEntryViewShelf:(UIViewController<CKPluginEntryViewController> *)arg1 forPlugin:(NSString *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)showEntryViewShelf:(UIViewController<CKPluginEntryViewController> *)arg1;
 @end

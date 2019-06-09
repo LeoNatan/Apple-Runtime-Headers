@@ -9,13 +9,14 @@
 @class NSData, NSDictionary, NSString;
 
 @protocol OSASyncProxyServices <NSObject>
+- (void)request:(NSString *)arg1 transferLog:(NSString *)arg2 onComplete:(void (^)(id, NSError *))arg3;
+- (void)request:(NSString *)arg1 logList:(void (^)(id, NSError *))arg2;
 - (void)listDevices:(void (^)(id, NSError *))arg1;
 - (void)synchronize:(NSString *)arg1 withOptions:(NSDictionary *)arg2 onComplete:(void (^)(id, NSError *))arg3;
 - (void)deliver:(NSString *)arg1 tasking:(NSString *)arg2 taskId:(NSString *)arg3 fromBlob:(NSData *)arg4;
 - (void)requestProxyMetadata:(NSString *)arg1 onComplete:(void (^)(id, NSError *))arg2;
-- (void)request:(NSString *)arg1 transferLog:(NSString *)arg2 onComplete:(void (^)(id, NSError *))arg3;
+- (void)request:(NSString *)arg1 transferLog:(NSString *)arg2 withOptions:(NSDictionary *)arg3 onComplete:(void (^)(id, NSError *))arg4;
 - (void)request:(NSString *)arg1 logListWithOptions:(NSDictionary *)arg2 onComplete:(void (^)(id, NSError *))arg3;
-- (void)request:(NSString *)arg1 logList:(void (^)(id, NSError *))arg2;
 - (void)request:(NSString *)arg1 transferGroupWithOptions:(NSDictionary *)arg2 onComplete:(void (^)(id, NSError *))arg3;
 @end
 

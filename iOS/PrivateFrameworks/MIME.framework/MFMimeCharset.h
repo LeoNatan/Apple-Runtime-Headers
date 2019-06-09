@@ -6,9 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MIME/ECMIMECharset-Protocol.h>
+#import <MIME/NSSecureCoding-Protocol.h>
+
 @class NSString;
 
-@interface MFMimeCharset : NSObject
+@interface MFMimeCharset : NSObject <NSSecureCoding, ECMIMECharset>
 {
     unsigned int _encoding;
     NSString *_primaryLanguage;
@@ -22,17 +25,26 @@
 + (id)charsetForEncoding:(unsigned int)arg1;
 + (id)allMimeCharsets;
 + (id)allMimeCharsets:(_Bool)arg1;
-- (id)description;
++ (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (id)primaryLanguage;
-- (id)displayName;
-- (_Bool)useBase64InHeaders;
+@property(readonly, copy, nonatomic) NSString *displayName;
+@property(readonly, nonatomic) _Bool useBase64InHeaders;
 - (_Bool)coversLargeUnicodeSubset;
-- (_Bool)canBeUsedForOutgoingMessages;
-- (id)charsetName;
-- (unsigned int)encoding;
-- (void)dealloc;
+@property(readonly, nonatomic) _Bool canBeUsedForOutgoingMessages;
+@property(readonly, copy, nonatomic) NSString *charsetName;
+@property(readonly) unsigned long long encoding;
+@property(readonly, nonatomic) unsigned int cfStringEncoding;
 - (void)_setPrimaryLanguage:(id)arg1;
 - (id)initWithEncoding:(unsigned int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

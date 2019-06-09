@@ -6,14 +6,15 @@
 
 #import <UIKitCore/UILayoutGuide.h>
 
+#import <UIKitCore/UIFocusItem-Protocol.h>
 #import <UIKitCore/_UIFocusGuideRegionDelegate-Protocol.h>
 #import <UIKitCore/_UIFocusRegionContainer-Protocol.h>
 #import <UIKitCore/_UILegacyFocusRegion-Protocol.h>
 
 @class NSArray, NSString, UIView;
-@protocol UIFocusEnvironment, UIFocusItemContainer;
+@protocol UIFocusEnvironment, UIFocusItem, UIFocusItemContainer;
 
-@interface UIFocusGuide : UILayoutGuide <_UILegacyFocusRegion, _UIFocusRegionContainer, _UIFocusGuideRegionDelegate>
+@interface UIFocusGuide : UILayoutGuide <UIFocusItem, _UILegacyFocusRegion, _UIFocusRegionContainer, _UIFocusGuideRegionDelegate>
 {
     _Bool _didSetPreferredFocusedEnvironments;
     _Bool _enabled;
@@ -29,6 +30,7 @@
 - (_Bool)_uili_isFocusGuide;
 - (void)focusGuideRegion:(id)arg1 willParticipateAsDestinationRegionInFocusUpdate:(id)arg2;
 - (id)focusGuideRegion:(id)arg1 preferredFocusEnvironmentsForMovementRequest:(id)arg2;
+@property(readonly, nonatomic) id <UIFocusItem> focusItemForSorting;
 - (id)_regionForFocusedItem:(id)arg1 inCoordinateSpace:(id)arg2;
 - (void)_searchForFocusRegionsInContext:(id)arg1;
 - (id)_preferredFocusRegionCoordinateSpace;
@@ -46,7 +48,8 @@
 - (_Bool)_isPromiseFocusRegion;
 - (id)_childFocusRegionsInRect:(struct CGRect)arg1 inCoordinateSpace:(id)arg2;
 @property(readonly, nonatomic) id <UIFocusItemContainer> focusItemContainer;
-- (_Bool)canBecomeFocused;
+@property(readonly, nonatomic) _Bool canBecomeFocused;
+@property(readonly, nonatomic) struct CGRect frame;
 - (_Bool)_legacy_isEligibleForFocusInteraction;
 - (struct CGRect)_focusRegionFrame;
 - (id)_focusRegionFocusSystem;
@@ -59,6 +62,7 @@
 - (id)init;
 
 // Remaining properties
+@property(nonatomic) _Bool areChildrenFocused;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

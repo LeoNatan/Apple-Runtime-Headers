@@ -9,7 +9,7 @@
 #import <QuickLookUI/QLMarkupControllerDelegate-Protocol.h>
 #import <QuickLookUI/QLPreviewOverlayDataSource-Protocol.h>
 
-@class CALayer, NSArray, NSString, NSURL, NSView, QLDisplayBundle, QLMarkupController, QLOverlayBorderView, QLPreviewNavigationController, QLPreviewOverlayController;
+@class CALayer, LOViewController, NSArray, NSString, NSURL, NSView, QLDisplayBundle, QLMarkupController, QLOverlayBorderView, QLPreviewNavigationController, QLPreviewOverlayController;
 
 @interface QLDisplayBundleViewController : NSViewController <QLPreviewOverlayDataSource, QLMarkupControllerDelegate>
 {
@@ -24,6 +24,7 @@
     struct CGRect _customRolloverFrame;
     NSArray *_contentViewSizingConstraints;
     QLMarkupController *_markupController;
+    LOViewController *_lockoutViewController;
 }
 
 + (id)keyPathsForValuesAffectingPlaying;
@@ -32,6 +33,7 @@
 + (id)keyPathsForValuesAffectingProgress;
 + (id)keyPathsForValuesAffectingCurrentPage;
 + (id)keyPathsForValuesAffectingOverlayFrame;
+@property(retain) LOViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
 @property(retain) QLMarkupController *markupController; // @synthesize markupController=_markupController;
 @property struct CGRect customRolloverFrame; // @synthesize customRolloverFrame=_customRolloverFrame;
 @property struct CGRect customOverlayFrame; // @synthesize customOverlayFrame=_customOverlayFrame;
@@ -42,14 +44,17 @@
 @property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak QLDisplayBundle *displayBundle; // @synthesize displayBundle=_displayBundle;
 - (void).cxx_destruct;
+- (void)didSave:(BOOL)arg1 toURL:(id)arg2;
 - (void)editOccuredOnPage:(long long)arg1;
 - (void)markupBecameDirty:(BOOL)arg1;
 - (id)replaceContentWithMarkupViewController:(id)arg1;
+@property(readonly) NSURL *savedCopyURL;
 @property(readonly) NSURL *urlForMarkup;
 - (void)revertMarkup;
-- (void)exitMarkup:(long long)arg1;
-- (void)enterMarkup;
+- (void)exitMarkup:(long long)arg1 needsSave:(char *)arg2;
+- (void)enterMarkupWithSaveInPlace:(BOOL)arg1;
 - (void)promptSaveForCloseWithCloseHandler:(CDUnknownBlockType)arg1;
+- (void)presentScreenTimeLockout:(BOOL)arg1 withBundleID:(id)arg2;
 - (void)_updateOverlayControls;
 @property(readonly) double backingScaleFactor;
 @property BOOL playing;

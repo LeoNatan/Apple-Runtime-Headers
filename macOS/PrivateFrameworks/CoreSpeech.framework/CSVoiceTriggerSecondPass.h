@@ -6,31 +6,33 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreSpeech/CSAudioServerCrashMonitorGibraltarDelegate-Protocol.h>
+#import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSAudioStreamProvidingDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDEAPIScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerQuasarScoreDelegate-Protocol.h>
 #import <CoreSpeech/CSMediaPlayingMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSSelfTriggerDetectorDelegate-Protocol.h>
+#import <CoreSpeech/CSSpIdVTTextDependentSpeakerRecognizerDelegate-Protocol.h>
 #import <CoreSpeech/CSSpeakerDetectorNDAPIDelegate-Protocol.h>
-#import <CoreSpeech/CSSpeechManagerDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerEnabledMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSVoiceTriggerFirstPassDelegate-Protocol.h>
-#import <CoreSpeech/CSVoiceTriggerFirstPassJarvisDelegate-Protocol.h>
 #import <CoreSpeech/CSVolumeMonitorDelegate-Protocol.h>
 
-@class CSAsset, CSAudioCircularBuffer, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpeakerDetectorNDAPI, CSSpeakerModel, CSSpeechManager, NSData, NSDictionary, NSString;
+@class CSAsset, CSAudioCircularBuffer, CSAudioStream, CSKeywordAnalyzerNDAPI, CSKeywordAnalyzerNDEAPI, CSKeywordAnalyzerQuasar, CSPlainAudioFileWriter, CSSpIdVTTextDependentSpeakerRecognizer, CSSpeakerDetectorNDAPI, CSSpeakerModel, NSData, NSDictionary, NSMutableDictionary, NSString;
 @protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpeechManagerDelegate, CSVoiceTriggerFirstPassDelegate, CSVoiceTriggerFirstPassJarvisDelegate>
+@interface CSVoiceTriggerSecondPass : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSKeywordAnalyzerNDEAPIScoreDelegate, CSSpeakerDetectorNDAPIDelegate, CSKeywordAnalyzerQuasarScoreDelegate, CSVoiceTriggerEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSAudioStreamProvidingDelegate, CSMediaPlayingMonitorDelegate, CSVolumeMonitorDelegate, CSSpIdVTTextDependentSpeakerRecognizerDelegate, CSSelfTriggerDetectorDelegate>
 {
     BOOL _hasReceivedNDEAPIResult;
-    BOOL _useSAT;
+    BOOL _isSATDetectionRunning;
+    BOOL _shouldUsePHS;
     BOOL _hasPendingNearMiss;
     BOOL _isRunningRecognizer;
     BOOL _recognizerResultPending;
     BOOL _hasTriggerCandidate;
     BOOL _isStartSampleCountMarked;
     BOOL _secondPassHasMadeDecision;
+    BOOL _skipTdsrProc;
     float _referenceKeywordThreshold;
     float _keywordThreshold;
     float _keywordLoggingThreshold;
@@ -42,20 +44,22 @@
     float _firstPassMasterChannelScoreBoost;
     float _firstPassOnsetScore;
     float _twoShotFeedbackDelay;
-    float _remoteMicVADScore;
-    float _remoteMicVADThreshold;
-    float _remoteMicVADMyriadThreshold;
-    float _minimumPhraseLengthForVADGating;
     float _mediaVolume;
-    CSSpeechManager *_speechManager;
+    NSString *_UUID;
     id <CSVoiceTriggerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
     CSAsset *_currentAsset;
+    CSAudioStream *_audioStream;
+    NSString *_audioProviderUUID;
     CSKeywordAnalyzerNDAPI *_keywordAnalyzerNDAPI;
     CSKeywordAnalyzerNDEAPI *_keywordAnalyzerNDEAPI;
     CSKeywordAnalyzerQuasar *_keywordAnalyzerQuasar;
     CSSpeakerDetectorNDAPI *_speakerDetector;
     CSSpeakerModel *_speakerModel;
+    CDUnknownBlockType _resultCompletion;
+    CSSpIdVTTextDependentSpeakerRecognizer *_tdsrAnalyzer;
+    double _tdSpeakerRecognizerCombinationWeight;
+    double _tdSpeakerRecognizerSATThreshold;
     unsigned long long _secondPassTimeout;
     unsigned long long _numProcessedSamples;
     unsigned long long _numAnalyzedSamples;
@@ -86,19 +90,18 @@
     NSString *_firstPassDeviceID;
     CSPlainAudioFileWriter *_audioFileWriter;
     long long _mediaPlayingState;
+    NSMutableDictionary *_lastVoiceTriggerEventInfo;
 }
 
 + (id)timeStampString;
 + (id)secondPassAudioLogDirectory;
 + (id)secondPassAudioLoggingFilePath;
+@property(nonatomic) BOOL skipTdsrProc; // @synthesize skipTdsrProc=_skipTdsrProc;
+@property(retain, nonatomic) NSMutableDictionary *lastVoiceTriggerEventInfo; // @synthesize lastVoiceTriggerEventInfo=_lastVoiceTriggerEventInfo;
 @property(nonatomic) float mediaVolume; // @synthesize mediaVolume=_mediaVolume;
 @property(nonatomic) long long mediaPlayingState; // @synthesize mediaPlayingState=_mediaPlayingState;
 @property(nonatomic) BOOL secondPassHasMadeDecision; // @synthesize secondPassHasMadeDecision=_secondPassHasMadeDecision;
 @property(retain, nonatomic) CSPlainAudioFileWriter *audioFileWriter; // @synthesize audioFileWriter=_audioFileWriter;
-@property(nonatomic) float minimumPhraseLengthForVADGating; // @synthesize minimumPhraseLengthForVADGating=_minimumPhraseLengthForVADGating;
-@property(nonatomic) float remoteMicVADMyriadThreshold; // @synthesize remoteMicVADMyriadThreshold=_remoteMicVADMyriadThreshold;
-@property(nonatomic) float remoteMicVADThreshold; // @synthesize remoteMicVADThreshold=_remoteMicVADThreshold;
-@property(nonatomic) float remoteMicVADScore; // @synthesize remoteMicVADScore=_remoteMicVADScore;
 @property(nonatomic) float twoShotFeedbackDelay; // @synthesize twoShotFeedbackDelay=_twoShotFeedbackDelay;
 @property(retain, nonatomic) NSString *firstPassDeviceID; // @synthesize firstPassDeviceID=_firstPassDeviceID;
 @property(nonatomic) unsigned long long firstPassSource; // @synthesize firstPassSource=_firstPassSource;
@@ -133,7 +136,8 @@
 @property(nonatomic) BOOL hasPendingNearMiss; // @synthesize hasPendingNearMiss=_hasPendingNearMiss;
 @property(nonatomic) unsigned long long nearMissCandidateDetectedSamples; // @synthesize nearMissCandidateDetectedSamples=_nearMissCandidateDetectedSamples;
 @property(nonatomic) unsigned long long nearMissDelayTimeout; // @synthesize nearMissDelayTimeout=_nearMissDelayTimeout;
-@property(nonatomic) BOOL useSAT; // @synthesize useSAT=_useSAT;
+@property(nonatomic) BOOL shouldUsePHS; // @synthesize shouldUsePHS=_shouldUsePHS;
+@property(nonatomic) BOOL isSATDetectionRunning; // @synthesize isSATDetectionRunning=_isSATDetectionRunning;
 @property(nonatomic) unsigned long long analyzerTrailingSamples; // @synthesize analyzerTrailingSamples=_analyzerTrailingSamples;
 @property(nonatomic) unsigned long long analyzerPrependingSamples; // @synthesize analyzerPrependingSamples=_analyzerPrependingSamples;
 @property(nonatomic) unsigned long long extraSamplesAtStart; // @synthesize extraSamplesAtStart=_extraSamplesAtStart;
@@ -145,45 +149,60 @@
 @property(nonatomic) unsigned long long numProcessedSamples; // @synthesize numProcessedSamples=_numProcessedSamples;
 @property(nonatomic) unsigned long long secondPassTimeout; // @synthesize secondPassTimeout=_secondPassTimeout;
 @property(nonatomic) BOOL hasReceivedNDEAPIResult; // @synthesize hasReceivedNDEAPIResult=_hasReceivedNDEAPIResult;
+@property(nonatomic) double tdSpeakerRecognizerSATThreshold; // @synthesize tdSpeakerRecognizerSATThreshold=_tdSpeakerRecognizerSATThreshold;
+@property(nonatomic) double tdSpeakerRecognizerCombinationWeight; // @synthesize tdSpeakerRecognizerCombinationWeight=_tdSpeakerRecognizerCombinationWeight;
+@property(retain, nonatomic) CSSpIdVTTextDependentSpeakerRecognizer *tdsrAnalyzer; // @synthesize tdsrAnalyzer=_tdsrAnalyzer;
+@property(copy, nonatomic) CDUnknownBlockType resultCompletion; // @synthesize resultCompletion=_resultCompletion;
 @property(retain, nonatomic) CSSpeakerModel *speakerModel; // @synthesize speakerModel=_speakerModel;
 @property(retain, nonatomic) CSSpeakerDetectorNDAPI *speakerDetector; // @synthesize speakerDetector=_speakerDetector;
 @property(retain, nonatomic) CSKeywordAnalyzerQuasar *keywordAnalyzerQuasar; // @synthesize keywordAnalyzerQuasar=_keywordAnalyzerQuasar;
 @property(retain, nonatomic) CSKeywordAnalyzerNDEAPI *keywordAnalyzerNDEAPI; // @synthesize keywordAnalyzerNDEAPI=_keywordAnalyzerNDEAPI;
 @property(retain, nonatomic) CSKeywordAnalyzerNDAPI *keywordAnalyzerNDAPI; // @synthesize keywordAnalyzerNDAPI=_keywordAnalyzerNDAPI;
+@property(retain, nonatomic) NSString *audioProviderUUID; // @synthesize audioProviderUUID=_audioProviderUUID;
+@property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(retain, nonatomic) CSAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) __weak CSSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
+@property(readonly, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 - (void).cxx_destruct;
+- (void)textDependentSpeakerRecognizer:(id)arg1 failedWithError:(id)arg2;
+- (void)textDependentSpeakerRecognizer:(id)arg1 hasSatScore:(float)arg2;
+- (void)_handleResultCompletion:(unsigned long long)arg1 voiceTriggerInfo:(id)arg2 error:(id)arg3;
 - (void)_setStartAnalyzeTime:(unsigned long long)arg1;
 - (void)_resetStartAnalyzeTime;
 - (void)CSVolumeMonitor:(id)arg1 didReceiveMusicVolumeChanged:(float)arg2;
 - (void)CSMediaPlayingMonitor:(id)arg1 didReceiveMediaPlayingChanged:(long long)arg2;
-- (void)handleServerDidRestart;
-- (void)mediaserverdDidRestart;
-- (void)activationEventNotifier:(id)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)selfTriggerDetector:(id)arg1 didDetectSelfTrigger:(id)arg2;
+- (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
+- (void)_addTdsrInfoToDict:(id)arg1 combinedScore:(float)arg2;
+- (void)_addSatAnalyzerInfoToDict:(id)arg1 satScore:(float)arg2 satThreshold:(float)arg3;
 - (void)_implicitTrainingIfNeeded:(id)arg1;
 - (void)CSVoiceTriggerEnabledMonitor:(id)arg1 didReceiveEnabled:(BOOL)arg2;
 - (void)_resetUpTime;
 - (void)_logUptimeWithVTSwitchChanged:(BOOL)arg1 VTEnabled:(BOOL)arg2;
-- (void)speakerDetector:(id)arg1 didDetectSpeakerReject:(id)arg2;
-- (void)speakerDetector:(id)arg1 didDetectSpeaker:(id)arg2;
+- (BOOL)_supportTwoShotFeedbackDelay;
+- (void)_handleSecondPassSuccess:(id)arg1;
 - (void)_markSecondPassTriggerMachAbsoluteTime:(unsigned long long)arg1;
 - (void)keywordAnalyzerQuasar:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDEAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
+- (void)handleSATOnlyScore;
+- (void)handleTDSRCombinedScore;
 - (void)_analyzeForKeywordDetection:(id)arg1 result:(id)arg2 forChannel:(unsigned long long)arg3 forceMaximized:(BOOL)arg4;
-- (void)speechManagerDidStopForwarding:(id)arg1 forReason:(long long)arg2;
-- (void)speechManagerDidStartForwarding:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;
-- (void)speechManagerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
-- (void)_notifySecondPassReject;
-- (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
-- (void)voiceTriggerFristPassJarvis:(id)arg1 didDetectKeyword:(id)arg2 deviceId:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)voiceTriggerFirstPass:(id)arg1 from:(unsigned long long)arg2 didDetectKeyword:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;
+- (BOOL)_isTDSRProcessingAllowed;
+- (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectly:(long long)arg2;
+- (void)_didStopAudioStream;
+- (void)_didStartAudioStream;
+- (void)_notifySecondPassReject:(id)arg1 result:(unsigned long long)arg2;
 - (void)_voiceTriggerFirstPassDidDetectKeywordFrom:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)cancelCurrentRequest;
+- (void)handleVoiceTriggerSecondPassFrom:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleVoiceTriggerFirstPassFromJarvis:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleVoiceTriggerFirstPassFromHearst:(unsigned long long)arg1 deviceId:(id)arg2 firstPassInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_handleVoiceTriggerFirstPassFromAP:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_requestStartAudioStreamWitContext:(id)arg1 startStreamOption:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_clearTriggerCandidate;
 - (void)_initializeMediaPlayingState;
 - (void)_setAsset:(id)arg1;
@@ -191,7 +210,8 @@
 - (void)_reset;
 - (void)reset;
 - (void)start;
-- (id)initWithManager:(id)arg1 asset:(id)arg2 audioBuffer:(id)arg3;
+- (void)dealloc;
+- (id)initWithPHSEnabled:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

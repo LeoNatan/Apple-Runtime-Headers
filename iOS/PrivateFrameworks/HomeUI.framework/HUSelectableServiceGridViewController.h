@@ -19,6 +19,7 @@
 }
 
 + (CDUnknownBlockType)defaultItemProviderCreatorWithOptions:(unsigned long long)arg1;
++ (CDUnknownBlockType)transformationBlockWithOptions:(unsigned long long)arg1;
 + (id)itemServiceTypesToHide;
 @property(retain, nonatomic) HFMutableSetDiff *mutableSelectedItems; // @synthesize mutableSelectedItems=_mutableSelectedItems;
 @property(nonatomic) __weak HUServiceGridItemManager *serviceGridItemManager; // @synthesize serviceGridItemManager=_serviceGridItemManager;

@@ -28,11 +28,13 @@ __attribute__((visibility("hidden")))
     _Bool _loading;
     _Bool _didFirstVisuallyNonEmptyLayout;
     _Bool _hasFocusedInputFieldOnCurrentPage;
+    _Bool _hasFormControlInteraction;
     id <SFWebViewControllerDelegate> _delegate;
     WKWebViewConfiguration *_webViewConfiguration;
     _SFDialogController *_dialogController;
 }
 
+@property(readonly, nonatomic) _Bool hasFormControlInteraction; // @synthesize hasFormControlInteraction=_hasFormControlInteraction;
 @property(readonly, nonatomic) _Bool hasFocusedInputFieldOnCurrentPage; // @synthesize hasFocusedInputFieldOnCurrentPage=_hasFocusedInputFieldOnCurrentPage;
 @property(readonly, nonatomic) _SFDialogController *dialogController; // @synthesize dialogController=_dialogController;
 @property(readonly, nonatomic) WKWebViewConfiguration *webViewConfiguration; // @synthesize webViewConfiguration=_webViewConfiguration;
@@ -41,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <SFWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)sfWebViewDidEndFormControlInteraction:(id)arg1;
+- (void)sfWebViewDidStartFormControlInteraction:(id)arg1;
 - (void)sfWebViewDidBecomeFirstResponder:(id)arg1;
 - (void)sfWebViewDidChangeSafeAreaInsets:(id)arg1;
 - (void)dialogController:(id)arg1 dismissViewController:(id)arg2 withAdditionalAnimations:(CDUnknownBlockType)arg3;
@@ -48,6 +51,9 @@ __attribute__((visibility("hidden")))
 - (void)presentDialog:(id)arg1 sender:(id)arg2;
 - (void)dialogController:(id)arg1 willPresentDialog:(id)arg2;
 - (int)dialogController:(id)arg1 presentationPolicyForDialog:(id)arg2;
+- (void)_webView:(id)arg1 mediaCaptureStateDidChange:(unsigned int)arg2;
+- (void)_webView:(id)arg1 checkUserMediaPermissionForURL:(id)arg2 mainFrameURL:(id)arg3 frameIdentifier:(unsigned int)arg4 decisionHandler:(CDUnknownBlockType)arg5;
+- (void)_webView:(id)arg1 requestUserMediaAuthorizationForDevices:(unsigned int)arg2 url:(id)arg3 mainFrameURL:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_webView:(id)arg1 didChangeSafeAreaShouldAffectObscuredInsets:(_Bool)arg2;
 - (void)_webViewDidExitFullscreen:(id)arg1;
 - (void)_webViewDidEnterFullscreen:(id)arg1;
@@ -87,7 +93,7 @@ __attribute__((visibility("hidden")))
 - (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationResponse:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)_webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 userInfo:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4;
+- (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 preferences:(id)arg3 decisionHandler:(CDUnknownBlockType)arg4;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)_webViewDidEndNavigationGesture:(id)arg1 withNavigationToBackForwardListItem:(id)arg2;
 - (void)_webView:(id)arg1 navigation:(id)arg2 didSameDocumentNavigation:(int)arg3;

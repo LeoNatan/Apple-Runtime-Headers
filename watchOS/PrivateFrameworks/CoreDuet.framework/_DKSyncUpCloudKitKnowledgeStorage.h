@@ -29,7 +29,7 @@
 - (void)fetchDeletionsHighWaterMarkWithPeer:(id)arg1 highPriority:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchDeletedEventIDsFromPeer:(id)arg1 sinceDate:(id)arg2 streamNames:(id)arg3 limit:(unsigned int)arg4 highPriority:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)fetchAdditionsHighWaterMarkWithPeer:(id)arg1 highPriority:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)fetchEventsFromPeer:(id)arg1 creationDateBetweenDate:(id)arg2 andDate:(id)arg3 streamNames:(id)arg4 limit:(unsigned int)arg5 fetchOrder:(int)arg6 highPriority:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)fetchEventsFromPeer:(id)arg1 windows:(id)arg2 streamNames:(id)arg3 limit:(unsigned int)arg4 fetchOrder:(int)arg5 highPriority:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)clearPrewarmedFlag;
 - (void)setHasDeletionsFlag:(_Bool)arg1 forPeer:(id)arg2;
 - (_Bool)hasDeletionsFlagForPeer:(id)arg1;
@@ -39,7 +39,6 @@
 - (void)cancelOutstandingOperations;
 - (void)start;
 @property(getter=isAvailable) _Bool available;
-@property(readonly) _Bool isAvailable;
 - (id)init;
 
 @end

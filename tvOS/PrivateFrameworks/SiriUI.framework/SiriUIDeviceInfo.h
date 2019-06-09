@@ -26,9 +26,7 @@
 @property(readonly, nonatomic, getter=isLargeFormatPhone) _Bool largeFormatPhone; // @synthesize largeFormatPhone=_largeFormatPhone;
 @property(readonly, nonatomic, getter=isDeviceZoomed) _Bool deviceZoomed; // @synthesize deviceZoomed=_deviceZoomed;
 - (void)_updateProductTypeDerivedProperties;
-- (void)_updateDeviceZoomed;
-- (void)_updateLargeFormatPhone;
-- (id)init;
+- (id)initWithLargeFormatPhone:(_Bool)arg1 gestaltModes:(id)arg2 screenSize:(struct CGSize)arg3;
 
 @end
 

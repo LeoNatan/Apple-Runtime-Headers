@@ -7,6 +7,17 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (_QLUtilities)
++ (void)_qlpu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 withInitialVelocity:(struct QLPUDisplayVelocity)arg5 usingSpringAnimation:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
++ (void)qlpu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 usingSpringWithDuration:(double)arg5 delay:(double)arg6 options:(unsigned long long)arg7 mass:(double)arg8 stiffness:(double)arg9 damping:(double)arg10 initialVelocity:(struct QLPUDisplayVelocity)arg11 completion:(CDUnknownBlockType)arg12;
++ (void)qlpu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 usingDefaultDampedSpringWithDelay:(double)arg5 initialVelocity:(struct QLPUDisplayVelocity)arg6 options:(unsigned long long)arg7 completion:(CDUnknownBlockType)arg8;
++ (void)qlpu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 withDuration:(double)arg5 delay:(double)arg6 usingSpringWithDamping:(double)arg7 initialVelocity:(struct QLPUDisplayVelocity)arg8 options:(unsigned long long)arg9 completion:(CDUnknownBlockType)arg10;
++ (void)_qlpu_animateViews:(id)arg1 withAnimationBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)qlpu_animateViews:(id)arg1 usingSpringWithDuration:(double)arg2 delay:(double)arg3 options:(unsigned long long)arg4 mass:(double)arg5 stiffness:(double)arg6 damping:(double)arg7 initialVelocity:(double)arg8 animations:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10;
++ (void)qlpu_animateViews:(id)arg1 usingDefaultDampedSpringWithDelay:(double)arg2 initialSpringVelocity:(double)arg3 options:(unsigned long long)arg4 animations:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)qlpu_animateViews:(id)arg1 withDuration:(double)arg2 delay:(double)arg3 usingSpringWithDamping:(double)arg4 initialSpringVelocity:(double)arg5 options:(unsigned long long)arg6 animations:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
++ (void)qlpu_animateViews:(id)arg1 withDuration:(double)arg2 delay:(double)arg3 options:(unsigned long long)arg4 animations:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)qlph_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 withDuration:(double)arg5 delay:(double)arg6 usingSpringWithDamping:(double)arg7 initialVelocity:(struct QLPHDisplayVelocity)arg8 options:(unsigned long long)arg9 completion:(CDUnknownBlockType)arg10;
 - (void)QL_setAnchorPointAndUpdatePosition:(struct CGPoint)arg1;
+- (id)_qlpu_animationDictionary;
 @end
 

@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSObject<InlineAuthorizationViewControllerDelegate> *_delegate;
 }
 
++ (id)viewControllerForCreditCardsAuthorization;
 + (id)viewControllerForPasswordsAuthorization;
 @property(nonatomic) __weak NSObject<InlineAuthorizationViewControllerDelegate> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

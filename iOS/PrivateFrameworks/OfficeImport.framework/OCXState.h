@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CXNamespace *OCXDrawingNamespace; // @synthesize OCXDrawingNamespace=mOCXDrawingNamespace;
 @property(retain, nonatomic) CXNamespace *OCXRelationshipsNamespace; // @synthesize OCXRelationshipsNamespace=mOCXRelationshipsNamespace;
 @property(readonly, nonatomic) int xmlFormat; // @synthesize xmlFormat=mXMLFormat;
+- (void).cxx_destruct;
 - (id)OCXSettingsRelationshipType;
 - (id)OCXTableStylesRelationshipType;
 - (id)OCXPackageViewPropsRelationshipType;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)OCXSlideMasterRelationshipType;
 - (id)OCXTableRelationshipType;
 - (id)OCXPivotTableRelationshipType;
+- (id)OCXCommentsExtendedRelationshipType;
 - (id)OCXCommentsRelationshipType;
 - (id)OCXFootnotesRelationshipType;
 - (id)OCXFontTableRelationshipType;
@@ -45,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (id)OCXSharedStringsRelationshipType;
 - (id)OCXStylesRelationshipType;
 - (void)setupNSForXMLFormat:(int)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)setXmlFormat:(int)arg1;
 

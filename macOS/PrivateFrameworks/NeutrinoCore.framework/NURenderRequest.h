@@ -16,7 +16,6 @@
     long long _requestNumber;
     long long _copiedFromRequestNumber;
     long long _parentRequestNumber;
-    BOOL _shouldCoalesceUpdates;
     long long _sampleMode;
     NSArray *_pipelineFilters;
     id <NUDevice> _device;
@@ -28,13 +27,14 @@
     double _submitTime;
     CDUnknownBlockType _completionBlock;
     id _voucher;
+    CDStruct_1b6d18a9 _time;
 }
 
 @property(retain) id voucher; // @synthesize voucher=_voucher;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property double submitTime; // @synthesize submitTime=_submitTime;
+@property(nonatomic) CDStruct_1b6d18a9 time; // @synthesize time=_time;
 @property(copy) NUComposition *internalComposition; // @synthesize internalComposition=_internalComposition;
-@property BOOL shouldCoalesceUpdates; // @synthesize shouldCoalesceUpdates=_shouldCoalesceUpdates;
 @property(retain, nonatomic) NURenderContext *renderContext; // @synthesize renderContext=_renderContext;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(retain, nonatomic) NUPriority *priority; // @synthesize priority=_priority;
@@ -43,16 +43,20 @@
 @property(copy, nonatomic) NSArray *pipelineFilters; // @synthesize pipelineFilters=_pipelineFilters;
 @property(nonatomic) long long sampleMode; // @synthesize sampleMode=_sampleMode;
 - (void).cxx_destruct;
+- (id)submitGenericSynchronous:(out id *)arg1;
+- (void)submitGenericConfiguringRequest:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)submitGeneric:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;
 - (id)newRenderJob;
 - (id)description;
 @property(copy, nonatomic) NUComposition *composition;
+@property BOOL shouldCoalesceUpdates;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)takePropertiesFromRequest:(id)arg1;
 - (id)initWithRequest:(id)arg1;
 - (id)initWithComposition:(id)arg1;
 - (id)init;
+@property(readonly, copy, nonatomic) NSString *additionalDebugInfo;
 
 @end
 

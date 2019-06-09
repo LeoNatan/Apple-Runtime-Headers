@@ -8,13 +8,7 @@
 
 @interface IDSMPConversationKey : NSObject
 {
-    void *_backingStore;
 }
-
-@property(nonatomic) void *backingStore; // @synthesize backingStore=_backingStore;
-- (void)dealloc;
-- (id)initWithConversationKey:(void *)arg1;
-- (void *)conversationKey;
 
 @end
 

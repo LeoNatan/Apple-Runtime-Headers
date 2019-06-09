@@ -8,7 +8,7 @@
 
 #import <PhotoFoundation/PFMemoryInfo-Protocol.h>
 
-@class NSObject, NSString, PFTraceBuffer;
+@class NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface PFPurgeableData : NSMutableData <PFMemoryInfo>
@@ -22,7 +22,6 @@
     BOOL _canCacheOnDisk;
     int _purgeLevel;
     NSObject<OS_dispatch_queue> *_queue;
-    PFTraceBuffer *_trace;
     BOOL _recycle;
     NSString *_memoryNote;
 }
@@ -31,8 +30,6 @@
 + (id)purgeLevelToString:(int)arg1;
 + (void)_checkVMError:(int)arg1 function:(const char *)arg2;
 + (id)allInstances;
-+ (BOOL)debugAccessCounts;
-+ (void)setDebugAccessCounts:(BOOL)arg1;
 @property BOOL recycle; // @synthesize recycle=_recycle;
 @property(retain) NSString *memoryNote; // @synthesize memoryNote=_memoryNote;
 - (void).cxx_destruct;

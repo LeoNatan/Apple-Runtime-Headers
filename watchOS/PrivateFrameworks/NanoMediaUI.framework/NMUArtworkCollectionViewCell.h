@@ -6,7 +6,7 @@
 
 #import <NanoMediaUI/NMUCollectionViewCell.h>
 
-@class UIImageView;
+@class NMUArtworkFormat, UIImageView;
 
 @interface NMUArtworkCollectionViewCell : NMUCollectionViewCell
 {
@@ -14,7 +14,7 @@
 }
 
 - (void).cxx_destruct;
-- (float)_preferredContinuousCornerRadius;
+@property(readonly, nonatomic) NMUArtworkFormat *artworkImageViewFormat;
 @property(readonly, nonatomic) UIImageView *artworkImageView;
 
 @end

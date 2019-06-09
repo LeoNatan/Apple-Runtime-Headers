@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface AMSBagFrozenDataSource : NSObject <AMSBagDataSourceProtocol>
 {
     NSDate *_expirationDate;
-    NSString *_logKey;
     NSString *_profile;
     NSString *_profileVersion;
     AMSBagKeySet *_bagKeySet;
@@ -27,14 +26,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) AMSBagKeySet *bagKeySet; // @synthesize bagKeySet=_bagKeySet;
 @property(readonly, copy, nonatomic) NSString *profileVersion; // @synthesize profileVersion=_profileVersion;
 @property(readonly, copy, nonatomic) NSString *profile; // @synthesize profile=_profile;
-@property(readonly, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void).cxx_destruct;
 - (id)valueForURLVariable:(id)arg1;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
 - (id)bagKeyInfoForKey:(id)arg1;
 @property(readonly, nonatomic, getter=isLoaded) _Bool loaded;
-- (id)_initWithProfile:(id)arg1 profileVersion:(id)arg2 data:(id)arg3 expirationDate:(id)arg4 bagKeySet:(id)arg5 cookies:(id)arg6 logKey:(id)arg7;
+- (id)_initWithProfile:(id)arg1 profileVersion:(id)arg2 data:(id)arg3 expirationDate:(id)arg4 bagKeySet:(id)arg5 cookies:(id)arg6;
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType dataSourceChangedHandler;

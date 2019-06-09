@@ -23,7 +23,6 @@
     BOOL _allowReminders;
     BOOL _isDefaultSchedulingCalendar;
     BOOL _isDistinguishedExchangeCalendar;
-    BOOL _isAffectingAvailability;
     BOOL _isFamilyCalendar;
     BOOL _isFacebookBirthdayCalendar;
     BOOL _isRenameable;
@@ -37,6 +36,7 @@
     NSString *defaultOrganizerEncodedLikenessDataForNewItems;
     NSString *defaultOrganizerEmailForNewItems;
     NSString *defaultOrganizerPhoneNumberForNewItems;
+    long long maxAttendees;
     NSString *path;
     NSURL *prePublishURL;
     NSURL *subscriptionURL;
@@ -67,8 +67,6 @@
 + (Class)frozenClass;
 + (id)calendarForEntityType:(unsigned long long)arg1 eventStore:(id)arg2;
 + (id)calendarWithCalendar:(id)arg1 eventStore:(id)arg2;
-+ (id)actionStringsPluralDisplayName;
-+ (id)actionStringsDisplayName;
 @property(nonatomic) BOOL isNaturalLanguageSuggestedEventCalendar; // @synthesize isNaturalLanguageSuggestedEventCalendar=_isNaturalLanguageSuggestedEventCalendar;
 @property(nonatomic) BOOL isSuggestedEventCalendar; // @synthesize isSuggestedEventCalendar=_isSuggestedEventCalendar;
 @property(nonatomic) BOOL isSubscribedHolidayCalendar; // @synthesize isSubscribedHolidayCalendar=_isSubscribedHolidayCalendar;
@@ -76,7 +74,6 @@
 @property(nonatomic) BOOL isRenameable; // @synthesize isRenameable=_isRenameable;
 @property(nonatomic) BOOL isFacebookBirthdayCalendar; // @synthesize isFacebookBirthdayCalendar=_isFacebookBirthdayCalendar;
 @property(nonatomic) BOOL isFamilyCalendar; // @synthesize isFamilyCalendar=_isFamilyCalendar;
-@property(nonatomic) BOOL isAffectingAvailability; // @synthesize isAffectingAvailability=_isAffectingAvailability;
 @property(nonatomic) BOOL isDistinguishedExchangeCalendar; // @synthesize isDistinguishedExchangeCalendar=_isDistinguishedExchangeCalendar;
 @property(nonatomic) BOOL isDefaultSchedulingCalendar; // @synthesize isDefaultSchedulingCalendar=_isDefaultSchedulingCalendar;
 @property(nonatomic) BOOL allowReminders; // @synthesize allowReminders=_allowReminders;
@@ -92,6 +89,7 @@
 - (id)prePublishURL;
 - (id)path;
 - (BOOL)isShareable;
+- (long long)maxAttendees;
 - (BOOL)isMarkedImmutableSharees;
 - (BOOL)isMarkedUndeletable;
 - (id)defaultOrganizerPhoneNumberForNewItems;
@@ -103,11 +101,13 @@
 @property(readonly, nonatomic) NSString *calendarIdentifier; // @synthesize calendarIdentifier;
 - (BOOL)cachedHasSharees;
 - (void).cxx_destruct;
+- (id)frozenObject;
 - (id)coreDataEntityName;
 - (BOOL)revert;
 - (void)refetch;
 - (id)_updatedBackingCalendar;
 - (BOOL)_refreshable;
+- (void)_clearCGColorCache;
 - (BOOL)_reset;
 - (void)mergeWithCalendarAndSave:(id)arg1 synchronous:(BOOL)arg2 progressBlock:(CDUnknownBlockType)arg3 finishBlock:(CDUnknownBlockType)arg4;
 - (BOOL)mergeWithCalendarAndSave:(id)arg1 progressBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
@@ -146,7 +146,11 @@
 @property(readonly, nonatomic) unsigned long long allowedEntityTypes;
 - (void)setSymbolicColor:(id)arg1;
 - (id)symbolicColor;
+@property(nonatomic) struct CGColor *CGColor;
+- (BOOL)getColorRed:(int *)arg1 green:(int *)arg2 blue:(int *)arg3;
 @property(copy, nonatomic) NSColor *color;
+- (id)_colorStringRepresentation:(id)arg1;
+- (id)_colorFromString:(id)arg1;
 @property(readonly, nonatomic) long long type;
 - (void)setTypeString:(id)arg1;
 - (id)typeString;
@@ -178,6 +182,7 @@
 - (void)setPublishURL:(id)arg1;
 - (id)publishURL;
 - (id)sharedOwnerURL;
+@property(nonatomic) BOOL isAffectingAvailability;
 - (void)setIgnoreAlarms:(BOOL)arg1;
 - (BOOL)ignoreAlarms;
 - (id)defaultOrganizerForNewItems;
@@ -200,9 +205,17 @@
 @property(readonly, nonatomic) BOOL allowsContentModifications; // @synthesize allowsContentModifications;
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;
 - (id)initWithAllowEvents:(BOOL)arg1 allowReminders:(BOOL)arg2;
-- (id)actionStringsDisplayTitle;
-- (BOOL)removeWithSpan:(long long)arg1 error:(id *)arg2;
-- (BOOL)saveWithSpan:(long long)arg1 error:(id *)arg2;
+@property(nonatomic) BOOL isPublished;
+@property(readonly, nonatomic, getter=isHidden) BOOL hidden;
+@property(copy, nonatomic) NSString *selfIdentityEmail;
+@property(nonatomic, getter=isSharingInvitation) BOOL sharingInvitation;
+- (BOOL)isManaged;
+@property(readonly, nonatomic) BOOL hasEvents;
+@property(nonatomic) BOOL canBeShared;
+@property(nonatomic) BOOL canBePublished;
+@property(readonly, nonatomic) BOOL allowsIgnoringSharedEventChangeNotifications;
+@property(nonatomic) BOOL isIgnoringSharedCalendarNotifications;
+@property(nonatomic) BOOL isIgnoringEventAlerts;
 
 @end
 

@@ -18,6 +18,7 @@
     NSArray *_deletedTimers;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)deletedTimersType;
 @property(copy, nonatomic) NSArray *deletedTimers; // @synthesize deletedTimers=_deletedTimers;
 - (void).cxx_destruct;
@@ -25,6 +26,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)deletedTimersAtIndex:(unsigned int)arg1;

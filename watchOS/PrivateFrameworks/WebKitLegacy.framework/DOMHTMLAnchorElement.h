@@ -34,6 +34,8 @@
 - (id)ping;
 @property(copy) NSString *name;
 @property(copy) NSString *hreflang;
+- (void)setDownload:(id)arg1;
+- (id)download;
 @property(copy) NSString *coords;
 @property(copy) NSString *charset;
 

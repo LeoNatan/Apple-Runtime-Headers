@@ -18,6 +18,7 @@
     NSDate *_snapshotUploadedDate;
     NSNumber *_timeZoneOffsetFromUTCForNoon;
     int _wheelchairUse;
+    int _amm;
     long long _snapshotIndex;
     double _activeHours;
     double _activeHoursGoal;
@@ -25,6 +26,8 @@
     double _briskMinutesGoal;
     double _energyBurned;
     double _energyBurnedGoal;
+    double _mmv;
+    double _mmg;
     double _stepCount;
     double _pushCount;
     double _walkingAndRunningDistance;
@@ -36,10 +39,13 @@
 + (id)_fitnessFriendActivitySnapshotWithSnapshotIndex:(long long)arg1 startDate:(id)arg2 endDate:(id)arg3 sourceUUID:(id)arg4;
 + (id)_fitnessFriendActivitySnapshotWithFriendUUID:(id)arg1 sourceUUID:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 snapshotIndex:(long long)arg5 snapshotUploadedDate:(id)arg6;
 @property(nonatomic) _Bool hasCarriedForwardGoals; // @synthesize hasCarriedForwardGoals=_hasCarriedForwardGoals;
+@property(nonatomic) int amm; // @synthesize amm=_amm;
 @property(nonatomic) double walkingAndRunningDistance; // @synthesize walkingAndRunningDistance=_walkingAndRunningDistance;
 @property(nonatomic) int wheelchairUse; // @synthesize wheelchairUse=_wheelchairUse;
 @property(nonatomic) double pushCount; // @synthesize pushCount=_pushCount;
 @property(nonatomic) double stepCount; // @synthesize stepCount=_stepCount;
+@property(nonatomic) double mmg; // @synthesize mmg=_mmg;
+@property(nonatomic) double mmv; // @synthesize mmv=_mmv;
 @property(nonatomic) double energyBurnedGoal; // @synthesize energyBurnedGoal=_energyBurnedGoal;
 @property(nonatomic) double energyBurned; // @synthesize energyBurned=_energyBurned;
 @property(nonatomic) double briskMinutesGoal; // @synthesize briskMinutesGoal=_briskMinutesGoal;
@@ -57,6 +63,7 @@
 @property(readonly, nonatomic) NSTimeZone *timeZone;
 @property(readonly, nonatomic) double activeHoursGoalPercentage;
 @property(readonly, nonatomic) double briskMinutesGoalPercentage;
+@property(readonly, nonatomic) double mmgp;
 @property(readonly, nonatomic) double energyBurnedGoalPercentage;
 - (id)activitySummary;
 - (id)description;

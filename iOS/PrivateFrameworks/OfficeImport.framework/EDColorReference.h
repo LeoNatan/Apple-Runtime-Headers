@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 + (id)colorReferenceWithThemeIndex:(unsigned long long)arg1 tint:(double)arg2 resources:(id)arg3;
 + (id)colorReferenceWithColorIndex:(unsigned long long)arg1 resources:(id)arg2;
 + (id)colorReferenceWithSystemColorID:(int)arg1 resources:(id)arg2;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isValid;
 - (id)color;

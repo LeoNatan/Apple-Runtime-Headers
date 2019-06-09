@@ -6,12 +6,13 @@
 
 #import <ControlCenterUI/NSObject-Protocol.h>
 
-@class CCUIContentModuleContainerViewController, CCUIExpandedModuleBackgroundView;
+@class CCUIContentModuleContainerViewController, UIViewController;
 @protocol CCUIContentModule;
 
 @protocol CCUIContentModuleContainerViewControllerDelegate <NSObject>
-- (CCUIExpandedModuleBackgroundView *)backgroundViewForContentModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg1;
-- (_Bool)shouldApplyBackgroundEffectsForContentModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg1;
+- (void)contentModuleContainerViewControllerDismissPresentedContent:(CCUIContentModuleContainerViewController *)arg1;
+- (void)contentModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg1 willDismissViewController:(UIViewController *)arg2;
+- (void)contentModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg1 willPresentViewController:(UIViewController *)arg2;
 - (void)contentModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg1 didCloseExpandedModule:(id <CCUIContentModule>)arg2;
 - (void)contentModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg1 willCloseExpandedModule:(id <CCUIContentModule>)arg2;
 - (void)contentModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg1 didOpenExpandedModule:(id <CCUIContentModule>)arg2;

@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)shouldProceedAfterError:(id)arg1 copyingItemAtPath:(id)arg2 toPath:(id)arg3;
 - (_Bool)_shouldCopyItemAtPath:(const char *)arg1 toPath:(const char *)arg2;
 - (_Bool)shouldCopyItemAtPath:(id)arg1 toPath:(id)arg2;
-- (void)initWithSourcePath:(id)arg1 destinationPath:(id)arg2 options:(unsigned long long)arg3;
+- (id)initWithSourcePath:(id)arg1 destinationPath:(id)arg2 options:(unsigned long long)arg3;
 
 @end
 

@@ -24,6 +24,7 @@
 @property(readonly) NSArray *passes; // @synthesize passes=_passes;
 - (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
+@property(readonly) BOOL didAddPass;
 - (void)showPass;
 - (void)showPassWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithPass:(id)arg1 hostWindow:(id)arg2;

@@ -18,6 +18,7 @@
 @property(nonatomic) unsigned long long destinationMatrixBatchIndex; // @synthesize destinationMatrixBatchIndex=_destinationMatrixBatchIndex;
 @property(nonatomic) CDStruct_14f26992 destinationMatrixOrigin; // @synthesize destinationMatrixOrigin=_destinationMatrixOrigin;
 - (void)encodeBatchToCommandBuffer:(id)arg1 sourceImages:(struct NSArray *)arg2 destinationMatrix:(id)arg3;
+- (void)encodeBatchToCommandBuffer:(id)arg1 encoder:(id)arg2 sourceImages:(struct NSArray *)arg3 destinationMatrix:(id)arg4;
 - (void)encodeToCommandBuffer:(id)arg1 sourceImage:(id)arg2 destinationMatrix:(id)arg3;
 - (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1 device:(id)arg2;

@@ -4,47 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Photos/PHChangeRequest.h>
 
 #import <Photos/PHInsertChangeRequest-Protocol.h>
 #import <Photos/PHUpdateChangeRequest-Protocol.h>
 
-@class NSManagedObjectID, NSString, PHChangeRequestHelper, PHCollectionList, PHObjectPlaceholder, PHRelationshipChangeRequestHelper;
+@class NSManagedObjectID, NSString, PHCollectionList, PHObjectPlaceholder, PHRelationshipChangeRequestHelper;
 
-@interface PHCollectionListChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest>
+@interface PHCollectionListChangeRequest : PHChangeRequest <PHInsertChangeRequest, PHUpdateChangeRequest>
 {
     PHCollectionList *_originalCollectionList;
-    _Bool _clientEntitled;
-    NSString *_clientName;
-    int _clientProcessID;
-    PHChangeRequestHelper *_helper;
     PHRelationshipChangeRequestHelper *_collectionsHelper;
 }
 
-+ (_Bool)canGenerateUUIDWithoutEntitlements;
++ (void)_deleteCollectionLists:(id)arg1 withOperation:(long long)arg2 topLevelSelector:(SEL)arg3;
++ (void)undeleteCollectionLists:(id)arg1;
++ (void)expungeCollectionLists:(id)arg1;
 + (void)deleteCollectionLists:(id)arg1;
 + (id)creationRequestForCollectionListWithTitle:(id)arg1;
 + (id)changeRequestForCollectionList:(id)arg1 childCollections:(id)arg2;
 + (id)changeRequestForCollectionList:(id)arg1;
 + (id)_changeRequestForCollectionList:(id)arg1 optionalChildCollections:(id)arg2;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *collectionsHelper; // @synthesize collectionsHelper=_collectionsHelper;
-@property(readonly, nonatomic) PHChangeRequestHelper *helper; // @synthesize helper=_helper;
-@property(readonly, nonatomic) int clientProcessID; // @synthesize clientProcessID=_clientProcessID;
-@property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
-@property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled; // @synthesize clientEntitled=_clientEntitled;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (void)didMutate;
-@property(readonly, nonatomic) NSManagedObjectID *objectID;
-@property(readonly, nonatomic) NSString *uuid;
-@property(readonly, getter=isMutated) _Bool mutated;
-@property(readonly, getter=isNew) _Bool new;
-- (_Bool)applyMutationsToManagedObject:(id)arg1 error:(id *)arg2;
+- (_Bool)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
 - (_Bool)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;
 - (_Bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id *)arg3;
-- (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
-- (_Bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (void)removeChildCollections:(id)arg1;
 - (void)addChildCollections:(id)arg1;
 - (void)removeChildCollection:(id)arg1;
@@ -61,18 +48,25 @@
 - (void)_prepareWithFetchResult:(id)arg1;
 - (void)_setOriginalCollectionList:(id)arg1;
 @property(retain, nonatomic) NSString *title;
+@property(nonatomic) _Bool customSortAscending;
+@property(nonatomic) unsigned int customSortKey;
 @property(readonly, nonatomic) PHObjectPlaceholder *placeholderForCreatedCollectionList;
 @property(readonly, nonatomic) NSString *managedEntityName;
 - (_Bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareForServicePreflightCheck:(id *)arg1;
 - (void)encodeToXPCDict:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initForNewObject;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled;
+@property(readonly, nonatomic) NSString *clientName;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
+@property(readonly) _Bool isNewRequest;
+@property(readonly, getter=isMutated) _Bool mutated;
+@property(readonly, nonatomic) NSManagedObjectID *objectID;
 @property(readonly) Class superclass;
 
 @end

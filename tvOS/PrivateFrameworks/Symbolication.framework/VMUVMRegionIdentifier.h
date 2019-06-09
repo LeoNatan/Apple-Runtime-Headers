@@ -28,6 +28,7 @@
 - (id)descriptionForRange:(struct _VMURange)arg1;
 - (int)_recordRegionsAroundAddress:(unsigned long long)arg1 regionDescriptionOptions:(unsigned long long)arg2;
 - (_Bool)hasFractionalPageSizes;
+- (id)nonSubmapRegionContainingAddress:(unsigned long long)arg1;
 - (id)regions;
 - (id)initWithGraph:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithTask:(unsigned int)arg1;

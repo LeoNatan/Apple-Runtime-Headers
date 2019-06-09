@@ -9,20 +9,26 @@
 #import <ContactsUI/CNContactPhotoViewDelegate-Protocol.h>
 #import <ContactsUI/CNUIReusableView-Protocol.h>
 
-@class CNContactPhotoView, NSArray, NSDictionary, NSString, UILabel;
+@class CNContactHeaderViewSizeAttributes, CNContactPhotoView, NSArray, NSDictionary, NSLayoutConstraint, NSString, UILabel;
 @protocol CNContactHeaderViewDelegate, CNPresenterDelegate;
 
 @interface CNContactHeaderView : UIView <CNContactPhotoViewDelegate, CNUIReusableView>
 {
     _Bool _needsReload;
+    _Bool _needsLabelSizeCalculation;
     _Bool _alwaysShowsMonogram;
     _Bool _visibleToScrollViews;
+    _Bool _shouldShowBelowNavigationTitle;
     NSDictionary *_nameTextAttributes;
     id <CNPresenterDelegate> _presenterDelegate;
     id <CNContactHeaderViewDelegate> _delegate;
     UILabel *_nameLabel;
     NSArray *_activatedConstraints;
     NSArray *_contacts;
+    NSLayoutConstraint *_photoTopConstraint;
+    NSLayoutConstraint *_photoHeightConstraint;
+    CNContactHeaderViewSizeAttributes *_sizeAttributes;
+    double _lastViewWidth;
     CNContactPhotoView *_photoView;
 }
 
@@ -31,9 +37,15 @@
 + (_Bool)requiresConstraintBasedLayout;
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(_Bool)arg1;
 + (id)descriptorForRequiredKeys;
+@property(nonatomic) _Bool shouldShowBelowNavigationTitle; // @synthesize shouldShowBelowNavigationTitle=_shouldShowBelowNavigationTitle;
 @property(nonatomic) _Bool visibleToScrollViews; // @synthesize visibleToScrollViews=_visibleToScrollViews;
 @property(nonatomic) _Bool alwaysShowsMonogram; // @synthesize alwaysShowsMonogram=_alwaysShowsMonogram;
 @property(readonly, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;
+@property(nonatomic) double lastViewWidth; // @synthesize lastViewWidth=_lastViewWidth;
+@property(nonatomic) _Bool needsLabelSizeCalculation; // @synthesize needsLabelSizeCalculation=_needsLabelSizeCalculation;
+@property(retain, nonatomic) CNContactHeaderViewSizeAttributes *sizeAttributes; // @synthesize sizeAttributes=_sizeAttributes;
+@property(retain) NSLayoutConstraint *photoHeightConstraint; // @synthesize photoHeightConstraint=_photoHeightConstraint;
+@property(retain) NSLayoutConstraint *photoTopConstraint; // @synthesize photoTopConstraint=_photoTopConstraint;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(retain, nonatomic) NSArray *activatedConstraints; // @synthesize activatedConstraints=_activatedConstraints;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
@@ -44,16 +56,25 @@
 - (void)prepareForReuse;
 - (id)contactViewCache;
 - (id)viewControllerForPhotoView:(id)arg1;
-- (void)photoViewDidSaveEditsForImageDrop:(id)arg1;
+- (void)photoView:(id)arg1 didSaveImageDropToContact:(id)arg2;
 - (void)photoViewDidUpdate:(id)arg1;
+- (void)updateSizeDependentAttributes;
+- (void)layoutSubviews;
+- (double)currentHeightPercentMaximized;
 - (_Bool)canBecomeFirstResponder;
 - (void)reloadDataPreservingChanges:(_Bool)arg1;
 - (void)reloadDataIfNeeded;
 - (void)setNeedsReload;
 - (void)updateFontSizes;
+- (void)calculateLabelSizesIfNeeded;
 - (void)updateWithContacts:(id)arg1;
 - (void)updateWithNewContact:(id)arg1;
 - (void)updateConstraints;
+@property(readonly, nonatomic) double maxHeight;
+@property(readonly, nonatomic) double minHeight;
+- (double)safeAreaPhotoOffset;
+- (double)safeAreaTop;
+- (id)contactStyle;
 - (void)dealloc;
 - (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 monogrammerStyle:(long long)arg3 shouldAllowTakePhotoAction:(_Bool)arg4 shouldAllowImageDrops:(_Bool)arg5 delegate:(id)arg6;
 - (id)descriptorForRequiredKeys;

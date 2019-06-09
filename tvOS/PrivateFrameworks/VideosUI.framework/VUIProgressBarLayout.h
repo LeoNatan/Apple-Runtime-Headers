@@ -6,21 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class UIColor;
+@class UIColor, UIVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface VUIProgressBarLayout : NSObject
 {
+    _Bool _shouldProgressBarUseRoundCorner;
+    _Bool _useMaterial;
     UIColor *_fillColor;
     UIColor *_tintColor;
+    UIColor *_gradientStartColor;
+    UIColor *_gradientEndColor;
     double _height;
+    double _cornerRadius;
+    UIVisualEffectView *_materialView;
     struct UIEdgeInsets _margin;
     struct UIEdgeInsets _padding;
 }
 
++ (id)defaultProgressBarLayout;
+@property(retain, nonatomic) UIVisualEffectView *materialView; // @synthesize materialView=_materialView;
+@property(nonatomic) _Bool useMaterial; // @synthesize useMaterial=_useMaterial;
+@property(nonatomic) _Bool shouldProgressBarUseRoundCorner; // @synthesize shouldProgressBarUseRoundCorner=_shouldProgressBarUseRoundCorner;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) struct UIEdgeInsets margin; // @synthesize margin=_margin;
 @property(nonatomic) double height; // @synthesize height=_height;
+@property(retain, nonatomic) UIColor *gradientEndColor; // @synthesize gradientEndColor=_gradientEndColor;
+@property(retain, nonatomic) UIColor *gradientStartColor; // @synthesize gradientStartColor=_gradientStartColor;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void).cxx_destruct;

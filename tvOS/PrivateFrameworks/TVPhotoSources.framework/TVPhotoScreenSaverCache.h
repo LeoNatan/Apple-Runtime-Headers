@@ -9,7 +9,7 @@
 #import <TVPhotoSources/TVPhotoSourceServiceDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableArray, NSString, TVPhotoSourceService, TVSPreferences;
-@protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source, OS_xpc_object;
+@protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source, OS_os_transaction, OS_xpc_object;
 
 @interface TVPhotoScreenSaverCache : NSObject <TVPhotoSourceServiceDelegate>
 {
@@ -29,6 +29,7 @@
     NSString *_screenSaverPhotoSource;
     NSString *_screenSaverCollection;
     NSObject<OS_xpc_object> *_xpcActivity;
+    NSObject<OS_os_transaction> *_transaction;
     _Bool _cachingEnabled;
     TVPhotoSourceService *_photoSourceService;
     CDUnknownBlockType _photoCacheCompletionBlock;

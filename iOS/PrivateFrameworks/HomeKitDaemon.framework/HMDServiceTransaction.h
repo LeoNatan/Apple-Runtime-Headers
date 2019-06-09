@@ -6,14 +6,17 @@
 
 #import <HomeKitDaemon/HMDBackingStoreModelObject.h>
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSNumber, NSObject, NSString;
+@protocol OS_dispatch_group;
 
 @interface HMDServiceTransaction : HMDBackingStoreModelObject
 {
     NSString *_lastSeenConfiguredNameLocal;
+    NSObject<OS_dispatch_group> *_configurationTracker;
 }
 
 + (id)properties;
+@property(retain, nonatomic) NSObject<OS_dispatch_group> *configurationTracker; // @synthesize configurationTracker=_configurationTracker;
 @property(retain, nonatomic) NSString *lastSeenConfiguredNameLocal; // @synthesize lastSeenConfiguredNameLocal=_lastSeenConfiguredNameLocal;
 - (void).cxx_destruct;
 

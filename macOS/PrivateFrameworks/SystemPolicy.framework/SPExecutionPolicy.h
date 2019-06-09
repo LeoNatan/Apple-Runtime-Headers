@@ -15,7 +15,8 @@
 }
 
 - (void).cxx_destruct;
-- (BOOL)logLegacyQTKit;
+- (BOOL)addGatekeeperUserIntent:(id)arg1 error:(id *)arg2;
+- (id)blockedExecutionPolicyItems;
 - (id)legacyExecutionHistory;
 - (void)dealloc;
 - (id)init;

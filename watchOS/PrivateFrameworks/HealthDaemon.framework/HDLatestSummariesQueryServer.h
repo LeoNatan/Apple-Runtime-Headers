@@ -31,7 +31,7 @@
 - (_Bool)_shouldListenForUpdates;
 - (_Bool)_shouldAcceptSample:(id)arg1;
 - (id)latestSummariesClient;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 @end
 

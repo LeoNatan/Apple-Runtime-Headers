@@ -242,11 +242,11 @@
 @property(nonatomic) struct SCNVector3 eulerAngles;
 -     // Error parsing type: 8@0:4, name: _euler
 @property(nonatomic) struct SCNVector4 orientation;
-- (void)_setQuaternion:(struct)arg1;
+- (void)_setQuaternion:(CDStruct_183601bc)arg1;
 - (void)setQuaternion:(struct SCNVector4)arg1;
 - (struct SCNVector4)quaternion;
 @property(nonatomic) struct SCNVector4 worldOrientation;
-- (struct)_quaternion;
+- (CDStruct_183601bc)_quaternion;
 - (int)rotationRepresentation;
 - (void)_updateAffine;
 - (void)_updateTransform;
@@ -310,8 +310,8 @@
 @property(readonly, nonatomic) struct SCNVector3 worldFront;
 @property(readonly, nonatomic) struct SCNVector3 worldRight;
 @property(readonly, nonatomic) struct SCNVector3 worldUp;
-- (void)simdRotateBy:(struct)arg1 aroundTarget: /* Error: Ran out of types for this method. */;
-- (void)simdLocalRotateBy:(struct)arg1;
+- (void)simdRotateBy:(CDStruct_183601bc)arg1 aroundTarget: /* Error: Ran out of types for this method. */;
+- (void)simdLocalRotateBy:(CDStruct_183601bc)arg1;
 - (void)simdLocalTranslateBy: /* Error: Ran out of types for this method. */;
 - (void)simdLookAt:up:localFront: /* Error: Ran out of types for this method. */;
 - (void)simdLookAt: /* Error: Ran out of types for this method. */;
@@ -333,7 +333,7 @@
 // Error parsing type for property simdWorldTransform:
 // Property attributes: T{?=[4]},N
 
-@property(nonatomic) struct simdWorldOrientation;
+@property(nonatomic) CDStruct_183601bc simdWorldOrientation;
 // Error parsing type for property simdWorldPosition:
 // Property attributes: T,N
 
@@ -343,7 +343,7 @@
 // Error parsing type for property simdEulerAngles:
 // Property attributes: T,N
 
-@property(nonatomic) struct simdOrientation;
+@property(nonatomic) CDStruct_183601bc simdOrientation;
 // Error parsing type for property simdRotation:
 // Property attributes: T,N
 

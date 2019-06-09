@@ -8,14 +8,15 @@
 
 #import <HealthDaemon/HDXPCListenerDelegate-Protocol.h>
 
-@class HDProfile, HDXPCListener, HKTaskConfiguration, NSString, NSUUID, NSXPCListenerEndpoint;
+@class HDProfile, HDXPCListener, HKHealthStoreConfiguration, HKTaskConfiguration, NSString, NSUUID, NSXPCListenerEndpoint;
 @protocol HDTaskServer, HDTaskServerDelegate;
 
 @interface HDTaskServerEndpoint : NSObject <HDXPCListenerDelegate>
 {
     Class _taskServerClass;
     NSUUID *_taskUUID;
-    HKTaskConfiguration *_configuration;
+    HKTaskConfiguration *_taskConfiguration;
+    HKHealthStoreConfiguration *_healthStoreConfiguration;
     HDProfile *_profile;
     id <HDTaskServerDelegate> _delegate;
     id <HDTaskServer> _taskServer;
@@ -26,14 +27,16 @@
 @property(readonly, nonatomic) __weak id <HDTaskServer> taskServer; // @synthesize taskServer=_taskServer;
 @property(readonly, nonatomic) __weak id <HDTaskServerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-@property(readonly, copy, nonatomic) HKTaskConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(readonly, copy, nonatomic) HKHealthStoreConfiguration *healthStoreConfiguration; // @synthesize healthStoreConfiguration=_healthStoreConfiguration;
+@property(readonly, copy, nonatomic) HKTaskConfiguration *taskConfiguration; // @synthesize taskConfiguration=_taskConfiguration;
 @property(readonly, copy, nonatomic) NSUUID *taskUUID; // @synthesize taskUUID=_taskUUID;
 @property(readonly, nonatomic) Class taskServerClass; // @synthesize taskServerClass=_taskServerClass;
 - (void).cxx_destruct;
+- (void)connectionConfiguredForListener:(id)arg1 client:(id)arg2 exportedObject:(id)arg3;
 - (id)exportObjectForListener:(id)arg1 client:(id)arg2 error:(id *)arg3;
 - (void)invalidate;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *listenerEndpoint;
-- (id)initWithTaskServerClass:(Class)arg1 taskUUID:(id)arg2 configuration:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)initWithTaskServerClass:(Class)arg1 taskConfiguration:(id)arg2 healthStoreConfiguration:(id)arg3 taskUUID:(id)arg4 profile:(id)arg5 connectionQueue:(id)arg6 delegate:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

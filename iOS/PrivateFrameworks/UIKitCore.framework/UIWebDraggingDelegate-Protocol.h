@@ -12,6 +12,7 @@
 @protocol UIWebDraggingDelegate <NSObject>
 
 @optional
+- (_Bool)_webView:(UIWebDocumentView *)arg1 dragSessionSupportsSystemDrag:(id <UIDragSession>)arg2;
 - (long long)_webView:(UIWebDocumentView *)arg1 dataOwnerForDropSession:(id <UIDropSession>)arg2;
 - (long long)_webView:(UIWebDocumentView *)arg1 dataOwnerForAddingToSession:(id <UIDragSession>)arg2 withTouchAtPoint:(struct CGPoint)arg3;
 - (long long)_webView:(UIWebDocumentView *)arg1 dataOwnerForDragSession:(id <UIDragSession>)arg2;

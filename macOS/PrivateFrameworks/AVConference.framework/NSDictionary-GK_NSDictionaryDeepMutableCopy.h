@@ -8,5 +8,6 @@
 
 @interface NSDictionary (GK_NSDictionaryDeepMutableCopy)
 - (id)copyGKSDeepMutable;
+- (id)copyGKSDeep;
 @end
 

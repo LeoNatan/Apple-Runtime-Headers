@@ -11,6 +11,7 @@
 @class NSString, SKUICommentPostBarTextField, UIButton, UILabel;
 @protocol SKUICommentDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUICommentPostBarView : UIView <UITextFieldDelegate>
 {
     UIButton *_postButton;

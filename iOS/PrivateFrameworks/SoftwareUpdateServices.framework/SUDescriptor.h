@@ -19,6 +19,8 @@
     NSString *_productSystemName;
     NSString *_productVersion;
     NSString *_productBuildVersion;
+    NSString *_prerequisiteBuild;
+    NSString *_prerequisiteOS;
     NSString *_releaseType;
     unsigned long long _downloadSize;
     unsigned long long _unarchiveSize;
@@ -76,6 +78,8 @@
 @property(nonatomic) unsigned long long installationSize; // @synthesize installationSize=_installationSize;
 @property(nonatomic) unsigned long long downloadSize; // @synthesize downloadSize=_downloadSize;
 @property(retain, nonatomic) NSString *releaseType; // @synthesize releaseType=_releaseType;
+@property(retain, nonatomic) NSString *prerequisiteOS; // @synthesize prerequisiteOS=_prerequisiteOS;
+@property(retain, nonatomic) NSString *prerequisiteBuild; // @synthesize prerequisiteBuild=_prerequisiteBuild;
 @property(retain, nonatomic) NSString *productBuildVersion; // @synthesize productBuildVersion=_productBuildVersion;
 @property(retain, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
 @property(retain, nonatomic) NSString *productSystemName; // @synthesize productSystemName=_productSystemName;

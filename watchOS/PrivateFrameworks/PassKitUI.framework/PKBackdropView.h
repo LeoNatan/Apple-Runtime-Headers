@@ -11,6 +11,7 @@
 }
 
 + (Class)layerClass;
+- (id)backdropLayer;
 
 @end
 

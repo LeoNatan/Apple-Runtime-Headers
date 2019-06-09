@@ -14,6 +14,7 @@
     NSMutableIndexSet *_updatedSectionMoveFromIndexes;
     NSMutableDictionary *_itemMoves;
     NSMutableSet *_updatedItemMoveFromIndexPaths;
+    _Bool _isFlatCollection;
     NSIndexSet *_insertedSections;
     NSIndexSet *_deletedSections;
     NSIndexSet *_updatedSections;

@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+#import <BulletinBoard/AFSiriUserNotificationRequestCapabilityObserving-Protocol.h>
 #import <BulletinBoard/BBDataProviderManagerDelegate-Protocol.h>
 #import <BulletinBoard/BBServerConduitServerInterface-Protocol.h>
 #import <BulletinBoard/BBSettingsGatewayServerInterface-Protocol.h>
@@ -15,7 +16,7 @@
 @class BBBiometricResource, BBDataProviderManager, BBDismissalSyncCache, BBMaskedSet, BBSyncService, NSDate, NSDateComponents, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSXPCListener;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface BBServer : NSObject <BBDataProviderManagerDelegate, BBServerConduitServerInterface, BBSettingsGatewayServerInterface, NSXPCListenerDelegate, BBSyncServiceDelegate>
+@interface BBServer : NSObject <BBDataProviderManagerDelegate, BBServerConduitServerInterface, BBSettingsGatewayServerInterface, NSXPCListenerDelegate, AFSiriUserNotificationRequestCapabilityObserving, BBSyncServiceDelegate>
 {
     NSMutableDictionary *_bulletinRequestsByID;
     NSMutableDictionary *_sectionInfoByID;
@@ -47,8 +48,6 @@
     BBSyncService *_syncService;
     NSXPCListener *_observerListener;
     NSXPCListener *_conduitListener;
-    NSMutableSet *_systemStateConnections;
-    NSXPCListener *_systemStateListener;
     NSXPCListener *_settingsListener;
     NSMutableSet *_suspendedConnections;
     BBDismissalSyncCache *_dismissalSyncCache;
@@ -123,6 +122,7 @@
 - (_Bool)_verifyBulletinRequest:(id)arg1 forDataProvider:(id)arg2;
 - (void)_publishBulletinsForAllDataProviders;
 - (void)_loadDataProvidersAndSettings;
+- (void)_loadSystemCapabilities;
 - (void)_migrateSectionInfoIfNeeded;
 - (void)loadDataProvidersAndSettings;
 - (void)_migrateContentPreviewSettings:(id)arg1;
@@ -143,12 +143,23 @@
 - (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (id)sectionIDForUniversalSectionID:(id)arg1;
 - (id)universalSectionIDForSectionID:(id)arg1;
-- (void)setEffectiveGlobalContentPreviewsSetting:(int)arg1;
+- (void)setEffectiveGlobalSpokenNotificationSetting:(int)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)getEffectiveGlobalSpokenNotificationSettingWithHandler:(CDUnknownBlockType)arg1;
+- (int)_effectiveGlobalSpokenNotificationSetting;
+- (void)_setGlobalSpokenNotificationSetting:(int)arg1;
+- (int)_globalSpokenNotificationSetting;
+- (void)_setSpokenNotificationsSupported:(_Bool)arg1;
+- (_Bool)_isSpokenNotificationsSupported;
+- (void)_updateSpokenNotificationControlCenterModuleAvailability;
+- (void)requestCanBeHandledChanged:(_Bool)arg1;
+- (void)hasEligibleSetupChanged:(_Bool)arg1;
+- (void)setEffectiveGlobalContentPreviewsSetting:(int)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getEffectiveGlobalContentPreviewsSettingWithHandler:(CDUnknownBlockType)arg1;
 - (int)_effectiveGlobalContentPreviewsSetting;
 - (void)_setGlobalContentPreviewsSetting:(int)arg1;
 - (int)_globalContentPreviewsSetting;
 - (void)_biometricResourceStateChanged;
+- (void)_updateGlobalSettings;
 - (void)_updateAllSectionInfos;
 - (int)_defaultGlobalContentPreviewSetting;
 - (void)getEffectiveSectionInfoForSectionIDs:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
@@ -157,6 +168,7 @@
 - (void)getSectionInfoForSectionID:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)getSectionInfoForActiveSectionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSectionInfoWithHandler:(CDUnknownBlockType)arg1;
+- (void)getEffectiveSectionInfoWithHandler:(CDUnknownBlockType)arg1;
 - (void)_sendObserver:(id)arg1 noticesBulletinsForSectionID:(id)arg2;
 - (void)requestNoticesBulletinsForAllSections:(id)arg1;
 - (void)observer:(id)arg1 requestNoticesBulletinsForSectionID:(id)arg2;
@@ -250,21 +262,17 @@
 - (id)_mapForFeed:(unsigned int)arg1;
 - (void)withdrawBulletinID:(id)arg1;
 - (void)publishBulletin:(id)arg1 destinations:(unsigned int)arg2;
-- (void)_removeSystemStateConnection:(id)arg1;
-- (void)_addSystemStateConnection:(id)arg1;
 - (void)_removeSettingsGatewayConnection:(id)arg1;
 - (void)_addSettingsGatewayConnection:(id)arg1;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (_Bool)isRunning;
 - (void)dealloc;
-- (id)initWithQueue:(id)arg1 dataProviderManager:(id)arg2 syncService:(id)arg3 dismissalSyncCache:(id)arg4 observerListener:(id)arg5 conduitListener:(id)arg6 systemStateListener:(id)arg7 settingsListener:(id)arg8;
+- (id)initWithQueue:(id)arg1 dataProviderManager:(id)arg2 syncService:(id)arg3 dismissalSyncCache:(id)arg4 observerListener:(id)arg5 conduitListener:(id)arg6 settingsListener:(id)arg7;
 - (id)initWithQueue:(id)arg1;
 - (void)withdrawBulletinRequestsWithPublisherBulletinID:(id)arg1 forSectionID:(id)arg2;
 - (void)withdrawBulletinRequestsWithRecordID:(id)arg1 forSectionID:(id)arg2;
 - (void)updateSection:(id)arg1 inFeed:(unsigned int)arg2 withBulletinRequests:(id)arg3;
 - (void)publishBulletinRequest:(id)arg1 destinations:(unsigned int)arg2;
-- (_Bool)_sectionFiltersAllowBulletin:(id)arg1;
-- (id)_effectiveSectionFiltersForBulletin:(id)arg1;
 - (void)_updateShowsMessagePreviewForBulletin:(id)arg1;
 - (void)deliverResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)noteFinishedWithBulletinID:(id)arg1;

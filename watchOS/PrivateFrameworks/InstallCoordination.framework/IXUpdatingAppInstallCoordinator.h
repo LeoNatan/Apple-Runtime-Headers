@@ -7,42 +7,31 @@
 #import <InstallCoordination/IXAppInstallCoordinator.h>
 
 #import <InstallCoordination/IXCoordinatorWithAppAssetPromise-Protocol.h>
-#import <InstallCoordination/IXCoordinatorWithAutoEnablingExtensionTypes-Protocol.h>
+#import <InstallCoordination/IXCoordinatorWithDeviceSecurityPromise-Protocol.h>
 #import <InstallCoordination/IXCoordinatorWithImportance-Protocol.h>
 #import <InstallCoordination/IXCoordinatorWithInitialODRAssetPromises-Protocol.h>
 #import <InstallCoordination/IXCoordinatorWithInstallOptions-Protocol.h>
-#import <InstallCoordination/IXUserInitiatedCoordinator-Protocol.h>
 
 @class NSString;
 
-@interface IXUpdatingAppInstallCoordinator : IXAppInstallCoordinator <IXCoordinatorWithAppAssetPromise, IXCoordinatorWithInstallOptions, IXCoordinatorWithAutoEnablingExtensionTypes, IXCoordinatorWithInitialODRAssetPromises, IXUserInitiatedCoordinator, IXCoordinatorWithImportance>
+@interface IXUpdatingAppInstallCoordinator : IXAppInstallCoordinator <IXCoordinatorWithAppAssetPromise, IXCoordinatorWithInstallOptions, IXCoordinatorWithInitialODRAssetPromises, IXCoordinatorWithDeviceSecurityPromise, IXCoordinatorWithImportance>
 {
 }
 
 + (void)enumerateCoordinatorsUsingBlock:(CDUnknownBlockType)arg1;
 + (_Bool)enumerateCoordinatorsWithError:(id *)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (id)existingCoordinatorForAppWithBundleID:(id)arg1 error:(id *)arg2;
 + (id)coordinatorForAppWithBundleID:(id)arg1 withClientID:(unsigned int)arg2 createIfNotExisting:(_Bool)arg3 created:(_Bool *)arg4 error:(id *)arg5;
 - (id)validInstallTypes;
-@property(readonly, nonatomic) _Bool hasInitialODRAssetPromises;
-- (id)initialODRAssetPromisesWithError:(id *)arg1;
-- (_Bool)setInitialODRAssetPromises:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) _Bool hasAutoEnabledExtensionTypes;
-- (_Bool)setAutoEnabledExtensionTypes:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) _Bool hasInstallOptions;
-- (_Bool)setInstallOptions:(id)arg1 error:(id *)arg2;
-- (unsigned int)appAssetPromiseResponsibleClientWithError:(id *)arg1;
-- (_Bool)setAppAssetPromiseResponsibleClient:(unsigned int)arg1 error:(id *)arg2;
-- (_Bool)appAssetPromiseHasBegunFulfillment:(_Bool *)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) _Bool hasAppAssetPromise;
-- (id)appAssetPromiseWithError:(id *)arg1;
-- (_Bool)setAppAssetPromise:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool hasAppAssetPromise;
+@property(readonly, nonatomic) _Bool hasInitialODRAssetPromises;
+@property(readonly, nonatomic) _Bool hasInstallOptions;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property(nonatomic, getter=isUserInitiated) _Bool userInitiated;
 
 @end
 

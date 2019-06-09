@@ -21,6 +21,5 @@
 @property(readonly) AVAssetTrack *mainVideoTrack;
 @property(readonly) NSString *localizedDisplayName;
 - (_Bool)canPassthroughExport;
-@property(readonly, nonatomic) _Bool isDecodableMovie;
 @end
 

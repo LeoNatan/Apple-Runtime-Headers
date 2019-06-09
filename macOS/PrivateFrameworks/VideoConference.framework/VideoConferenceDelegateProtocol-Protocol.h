@@ -12,7 +12,7 @@
 - (void)vccRemoteCertNotAccepted:(VideoConferenceController *)arg1 forParty:(NSString *)arg2;
 - (void)vccLocalCertNotAccepted:(VideoConferenceController *)arg1;
 - (void)vcc:(VideoConferenceController *)arg1 securityChangedForUser:(NSString *)arg2;
-- (BOOL)vcc:(VideoConferenceController *)arg1 isRemoteCertificateValid:(struct OpaqueSecCertificateRef *)arg2 forUser:(NSString *)arg3;
+- (BOOL)vcc:(VideoConferenceController *)arg1 isRemoteCertificateValid:(struct __SecCertificate *)arg2 forUser:(NSString *)arg3;
 - (BOOL)shouldAcceptIncomingVideoConferenceRequestFromUser:(NSString *)arg1;
 - (BOOL)shouldAcceptIncomingVideoConferenceRequestFromUser:(NSString *)arg1 callbackInfo:(NSMutableDictionary *)arg2;
 - (void)vcc:(VideoConferenceController *)arg1 party:(NSString *)arg2 didStall:(BOOL)arg3;

@@ -20,6 +20,7 @@
     id <PKPaymentAuthorizationControllerPrivateDelegate> _privateDelegate;
 }
 
++ (void)paymentServicesMerchantURLForAPIType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 + (_Bool)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned int)arg2;
 + (_Bool)canMakePaymentsUsingNetworks:(id)arg1;
 + (_Bool)canMakePayments;

@@ -7,6 +7,7 @@
 #import <Accounts/ACAccountStore.h>
 
 @interface ACAccountStore (iCloudAccount)
++ (id)sharedStore;
 - (id)icaRecommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1;
 - (id)collectAppleAccounts:(id)arg1;
 - (id)icaAppleAccountWithPersonID:(id)arg1;
@@ -15,5 +16,11 @@
 - (id)icaAppleAccounts;
 - (id)icaAppleAccountType;
 - (id)icaiCloudAccountType;
+- (id)accountWithAccountType:(id)arg1 userName:(id)arg2;
+- (id)filterAccounts:(id)arg1 withAccountType:(id)arg2;
+- (id)icaRecommendedAppleIDForAccountSignInWithTypeIdentifier:(id)arg1 appleAccounts:(id)arg2 otherAccounts:(id)arg3;
+- (id)collectOtherAccounts:(id)arg1 andDelegateParameters:(id)arg2;
+- (id)collectOtherAccountTypes:(id)arg1 andDelegateParameters:(id)arg2 error:(id *)arg3;
+- (id)collectAppleAccounts:(id)arg1 aosAccounts:(id)arg2;
 @end
 

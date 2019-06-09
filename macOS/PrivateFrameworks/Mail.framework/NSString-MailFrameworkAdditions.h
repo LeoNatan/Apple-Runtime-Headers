@@ -8,11 +8,11 @@
 
 @interface NSString (MailFrameworkAdditions)
 + (id)validURLCharacterSet;
++ (void)resetBetterStringByResolvingSymlinksInPath;
 - (BOOL)isEqualExceptForFinalSlash:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *validURLString;
 - (BOOL)hasPrefixIgnoreCaseAndDiacritics:(id)arg1;
 - (id)uniqueFilenameWithRespectToFilenames:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *encodedMessageIDString;
 @property(readonly, copy, nonatomic) NSString *foldedStringForSuggestionsOriginatedExactMatchSearches;
 @property(readonly, copy, nonatomic) NSString *fileSystemString;
 @property(readonly, nonatomic) BOOL containsOnlyWhitespace;
@@ -21,5 +21,8 @@
 @property(readonly, copy, nonatomic) NSString *stringByReplacingSlashesWithSpecialSlashes;
 - (id)specialSlash;
 @property(readonly, copy, nonatomic) NSString *stringByChangingBodyTagToDiv;
+@property(readonly, copy) NSString *betterStringByResolvingSymlinksInPath;
+@property(readonly, copy, nonatomic) NSString *stringByReallyAbbreviatingWithTildeInPath;
+- (BOOL)isSubdirectoryOfPath:(id)arg1;
 @end
 

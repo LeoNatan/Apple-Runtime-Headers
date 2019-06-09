@@ -7,6 +7,10 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (SFUJsonAdditions)
++ (id)numberWithCGFloat:(double)arg1;
 - (void)sfu_appendJsonStringToString:(id)arg1;
+- (BOOL)tsu_isAlmostEqual:(id)arg1;
+- (BOOL)isFloatingPointType;
+- (double)CGFloatValue;
 @end
 

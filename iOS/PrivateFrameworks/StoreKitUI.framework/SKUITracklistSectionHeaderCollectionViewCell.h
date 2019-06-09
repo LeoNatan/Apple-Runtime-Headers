@@ -11,6 +11,7 @@
 
 @class NSMutableArray, NSString, SKUIButtonViewElement, SKUIBuyButtonDescriptor, SKUITracklistColumnData, UIControl, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUITracklistSectionHeaderCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIItemOfferButtonDelegate, SKUIViewElementView>
 {
     UIControl *_button;

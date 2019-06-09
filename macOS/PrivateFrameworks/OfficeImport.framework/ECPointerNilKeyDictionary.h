@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSUPointerKeyDictionary.h>
 
+__attribute__((visibility("hidden")))
 @interface ECPointerNilKeyDictionary : OITSUPointerKeyDictionary
 {
     id mNilKeyObject;

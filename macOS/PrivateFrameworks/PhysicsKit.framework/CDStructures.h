@@ -772,7 +772,7 @@ typedef struct vector<PKPhysicsShape *, std::__1::allocator<PKPhysicsShape *>> {
 
 #pragma mark Named Unions
 
-union _GLSKMatrix4 {
+union _GLKMatrix4 {
     struct {
         float _field1;
         float _field2;

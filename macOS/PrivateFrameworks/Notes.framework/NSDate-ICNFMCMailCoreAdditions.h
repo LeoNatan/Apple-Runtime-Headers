@@ -9,8 +9,6 @@
 @class NSString;
 
 @interface NSDate (ICNFMCMailCoreAdditions)
-+ (id)startOfDayWithDaysSinceToday:(long long)arg1;
-- (id)replyPrefixForSender:(id)arg1 withSpacer:(BOOL)arg2;
-@property(readonly, copy, nonatomic) NSString *descriptionInBSDMailboxFormat;
+@property(readonly, copy, nonatomic) NSString *ic_descriptionInBSDMailboxFormat;
 @end
 

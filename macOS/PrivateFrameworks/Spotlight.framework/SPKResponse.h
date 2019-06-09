@@ -14,12 +14,13 @@
     BOOL _noChangeInResultsSinceLastResponse;
     BOOL _parsecFinished;
     BOOL _metadataFinished;
+    BOOL _corespotlightFinished;
     BOOL _isRewrite;
     int _kind;
     PRSRankingConfiguration *_rankingConfiguration;
     unsigned long long _queryId;
     NSError *_error;
-    NSArray *_results;
+    NSArray *_sections;
     NSDictionary *_groupedResults;
     NSString *_fbq;
     NSString *_userQueryString;
@@ -38,12 +39,13 @@
 @property BOOL isRewrite; // @synthesize isRewrite=_isRewrite;
 @property(retain) NSString *userQueryString; // @synthesize userQueryString=_userQueryString;
 @property(retain) NSString *fbq; // @synthesize fbq=_fbq;
+@property BOOL corespotlightFinished; // @synthesize corespotlightFinished=_corespotlightFinished;
 @property BOOL metadataFinished; // @synthesize metadataFinished=_metadataFinished;
 @property BOOL parsecFinished; // @synthesize parsecFinished=_parsecFinished;
 @property BOOL noChangeInResultsSinceLastResponse; // @synthesize noChangeInResultsSinceLastResponse=_noChangeInResultsSinceLastResponse;
 @property BOOL topHitIsIn; // @synthesize topHitIsIn=_topHitIsIn;
 @property(readonly) NSDictionary *groupedResults; // @synthesize groupedResults=_groupedResults;
-@property(readonly) NSArray *results; // @synthesize results=_results;
+@property(readonly) NSArray *sections; // @synthesize sections=_sections;
 @property(readonly) NSError *error; // @synthesize error=_error;
 @property(readonly) unsigned long long queryId; // @synthesize queryId=_queryId;
 @property(readonly) int kind; // @synthesize kind=_kind;
@@ -51,10 +53,10 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithQueryID:(unsigned long long)arg1 error:(id)arg2;
-- (id)initWithQueryID:(unsigned long long)arg1 results:(id)arg2;
-- (id)initWithQueryID:(unsigned long long)arg1 kind:(int)arg2 results:(id)arg3;
-- (id)initWithQueryID:(unsigned long long)arg1 kind:(int)arg2 results:(id)arg3 groupedResults:(id)arg4;
-- (id)initWithQueryID:(unsigned long long)arg1 kind:(int)arg2 results:(id)arg3 groupedResults:(id)arg4 error:(id)arg5;
+- (id)initWithQueryID:(unsigned long long)arg1 sections:(id)arg2;
+- (id)initWithQueryID:(unsigned long long)arg1 kind:(int)arg2 sections:(id)arg3;
+- (id)initWithQueryID:(unsigned long long)arg1 kind:(int)arg2 sections:(id)arg3 groupedResults:(id)arg4;
+- (id)initWithQueryID:(unsigned long long)arg1 kind:(int)arg2 sections:(id)arg3 groupedResults:(id)arg4 error:(id)arg5;
 
 @end
 

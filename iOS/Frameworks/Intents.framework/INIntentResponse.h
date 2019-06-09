@@ -16,7 +16,7 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INIntentResponseCodableCode, INIntentResponseDescription, NSDictionary, NSString, NSUserActivity, PBCodable, _INPBIntentResponse;
+@class INCodableDescription, INIntentResponseCodableCode, INIntentResponseDescription, NSDictionary, NSString, NSUserActivity, PBCodable, _INPBIntentResponse;
 
 @interface INIntentResponse : NSObject <INImageProxyInjecting, INIntentSlotComposing, INFileURLEnumerable, INCacheableContainer, INIntentResponseExport, INGenericIntentResponse, INRuntimeObject, NSCopying, NSSecureCoding>
 {
@@ -24,7 +24,9 @@
     long long _code;
     _INPBIntentResponse *_backingStore;
     PBCodable *_responseMessagePBRepresentation;
+    INCodableDescription *_codableDescription;
     NSUserActivity *_userActivity;
+    long long __stage;
 }
 
 + (_Bool)resolveInstanceMethod:(SEL)arg1;
@@ -39,6 +41,7 @@
 + (_Bool)supportsSecureCoding;
 + (void)initialize;
 @property(readonly, nonatomic) _Bool _userConfirmationRequired; // @synthesize _userConfirmationRequired=__userConfirmationRequired;
+@property(nonatomic, setter=_setStage:) long long _stage; // @synthesize _stage=__stage;
 @property(copy, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 - (void).cxx_destruct;
 - (_Bool)setValue:(id)arg1 forProperty:(id)arg2;
@@ -47,14 +50,19 @@
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (id)_inCodable;
+- (id)_querySchemaWithBlock:(CDUnknownBlockType)arg1;
+- (_Bool)_isValidKey:(id)arg1;
 @property(retain, nonatomic, setter=_setResponseMessagePBRepresentation:) PBCodable *_responseMessagePBRepresentation; // @synthesize _responseMessagePBRepresentation;
+- (long long)_codeWithName:(id)arg1;
+- (long long)_stageWithName:(id)arg1;
 @property(copy, nonatomic) NSDictionary *propertiesByName;
 - (id)initWithPropertiesByName:(id)arg1;
-- (id)protoData;
-- (id)_impl;
+@property(readonly, nonatomic) INCodableDescription *_codableDescription; // @synthesize _codableDescription;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
+- (void)_updateWithJSONDictionary:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *_JSONDictionaryRepresentation;
 @property(nonatomic, setter=_setRequiresProtectedData:) _Bool _requiresProtectedData;
 @property(nonatomic, setter=_setRequiresAuthentication:) _Bool _requiresAuthentication;
 @property(readonly, nonatomic) long long _type;
@@ -70,7 +78,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(nonatomic) _Bool shouldOpenContainingApplication;
 @property(nonatomic) long long code; // @synthesize code=_code;
 @property(readonly, copy, nonatomic) _INPBIntentResponse *backingStore; // @synthesize backingStore=_backingStore;
 - (long long)_code;

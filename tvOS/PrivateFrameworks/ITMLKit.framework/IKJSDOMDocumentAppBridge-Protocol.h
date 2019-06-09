@@ -9,6 +9,9 @@
 @class IKDOMDocument, NSArray, NSDictionary, NSString;
 
 @protocol IKJSDOMDocumentAppBridge <NSObject>
+- (void)updateForDocument:(IKDOMDocument *)arg1;
+
+@optional
 - (void)runTestWithName:(NSString *)arg1 options:(NSDictionary *)arg2;
 - (void)scrollToTop;
 - (NSArray *)impressionsMatching:(NSString *)arg1 reset:(_Bool)arg2;
@@ -16,6 +19,5 @@
 - (NSArray *)recordedImpressions;
 - (NSArray *)snapshotImpressions;
 - (void)setNeedsUpdateForDocument:(IKDOMDocument *)arg1;
-- (void)updateForDocument:(IKDOMDocument *)arg1;
 @end
 

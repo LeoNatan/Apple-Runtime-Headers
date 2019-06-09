@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (struct Context *)renderContext;
+- (void)setAnnotation:(id)arg1;
+- (id)annotation;
 - (unsigned int)hitTestContext:(struct CGPoint)arg1;
 - (void)setObject:(id)arg1 forSlot:(unsigned int)arg2;
 - (void)deleteSlot:(unsigned int)arg1;
@@ -26,6 +28,11 @@ __attribute__((visibility("hidden")))
 - (unsigned int)createFencePort;
 - (BOOL)valid;
 - (id)options;
+- (float)desiredDynamicRange;
+- (void)setDesiredDynamicRange:(float)arg1;
+- (BOOL)isSecure;
+- (void)setSecure:(BOOL)arg1;
+- (unsigned int)displayId;
 - (float)level;
 - (void)setLevel:(float)arg1;
 - (void)orderBelow:(unsigned int)arg1;

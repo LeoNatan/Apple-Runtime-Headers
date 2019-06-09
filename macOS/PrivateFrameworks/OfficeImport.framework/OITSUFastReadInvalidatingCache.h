@@ -8,6 +8,7 @@
 
 @class NSCondition;
 
+__attribute__((visibility("hidden")))
 @interface OITSUFastReadInvalidatingCache : NSObject
 {
     CDUnknownBlockType mGenerator;

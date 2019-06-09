@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <NeutrinoCore/NUBuffer-Protocol.h>
+#import <NeutrinoCore/NUBufferProvider-Protocol.h>
 
 @class NSString, NUPixelFormat;
 
-@interface NUBufferAdapter : NSObject <NUBuffer>
+@interface NUBufferAdapter : NSObject <NUBuffer, NUBufferProvider>
 {
     CDStruct_d58201db _size;
     NUPixelFormat *_format;
@@ -23,6 +24,8 @@
 @property(readonly, nonatomic) NUPixelFormat *format; // @synthesize format=_format;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
+- (void)provideBuffer:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 - (const void *)bytesAtPoint:(CDStruct_912cb5d2)arg1;
 @property(readonly, nonatomic) const void *bytes;
@@ -32,7 +35,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

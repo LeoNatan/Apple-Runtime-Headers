@@ -8,20 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapRegion, NSMutableArray, PBUnknownFields;
+@class GEOMapRegion, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDLocationDirectedSearchResult : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_disambiguationLabels;
     GEOMapRegion *_displayMapRegion;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_disambiguationLabels:1;
+        unsigned int read_displayMapRegion:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_disambiguationLabels:1;
+        unsigned int wrote_displayMapRegion:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)disambiguationLabelType;
-@property(retain, nonatomic) NSMutableArray *disambiguationLabels; // @synthesize disambiguationLabels=_disambiguationLabels;
-@property(retain, nonatomic) GEOMapRegion *displayMapRegion; // @synthesize displayMapRegion=_displayMapRegion;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,13 +40,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)disambiguationLabelAtIndex:(unsigned long long)arg1;
 - (unsigned long long)disambiguationLabelsCount;
+- (void)_addNoFlagsDisambiguationLabel:(id)arg1;
 - (void)addDisambiguationLabel:(id)arg1;
 - (void)clearDisambiguationLabels;
+@property(retain, nonatomic) NSMutableArray *disambiguationLabels;
+- (void)_readDisambiguationLabels;
+@property(retain, nonatomic) GEOMapRegion *displayMapRegion;
 @property(readonly, nonatomic) _Bool hasDisplayMapRegion;
+- (void)_readDisplayMapRegion;
 
 @end
 

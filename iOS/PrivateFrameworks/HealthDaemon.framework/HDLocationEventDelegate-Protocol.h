@@ -7,6 +7,7 @@
 @class HKWorkoutRoute;
 
 @protocol HDLocationEventDelegate
+- (void)altitudeUpdated:(double)arg1;
 - (void)workoutRouteUpdated:(HKWorkoutRoute *)arg1;
 - (void)elevationUpdated:(unsigned long long)arg1;
 @end

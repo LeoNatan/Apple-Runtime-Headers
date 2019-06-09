@@ -6,11 +6,11 @@
 
 #import <NanoTimeKit/NTKRichComplicationRectangularBaseView.h>
 
-@class NTKColoringLabel, UIImageView;
+@class NTKColoringLabel, NTKRichComplicationImageView;
 
 @interface NTKRichComplicationRectangularStandardBodyView : NTKRichComplicationRectangularBaseView
 {
-    UIImageView *_headerImageView;
+    NTKRichComplicationImageView *_headerImageView;
     NTKColoringLabel *_headerLabel;
     NTKColoringLabel *_line1Label;
     NTKColoringLabel *_line2Label;
@@ -18,8 +18,12 @@
 
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)_editingDidEnd;
+- (void)_enumerateLabelsWithBlock:(CDUnknownBlockType)arg1;
+- (void)setPaused:(_Bool)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)layoutSubviews;
 - (id)init;

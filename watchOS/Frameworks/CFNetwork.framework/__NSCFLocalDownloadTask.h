@@ -12,7 +12,6 @@
 @class NSDictionary, NSObject, NSString, __NSCFLocalDownloadFile;
 @protocol OS_dispatch_data;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFLocalDownloadTask : __NSCFLocalSessionTask <NSURLSessionDownloadTaskSubclass, __NSCFLocalDownloadFileOpener>
 {
     CDUnknownBlockType _fileCompletion;
@@ -61,11 +60,11 @@ __attribute__((visibility("hidden")))
 - (void)_onqueue_completeInitialization;
 - (int)openItemForPath:(id)arg1 mode:(int)arg2;
 - (void)dealloc;
-- (id)initWithTask:(id)arg1;
-- (id)initWithSession:(id)arg1 resumeData:(id)arg2 ident:(unsigned int)arg3;
-- (struct __CFDictionary *)_copySocketStreamProperties;
-- (id)initWithSession:(id)arg1 request:(id)arg2 filePath:(id)arg3 ident:(unsigned int)arg4;
-- (id)initWithSession:(id)arg1 request:(id)arg2 ident:(unsigned int)arg3;
+- (id)initWithLocalSessionTask:(id)arg1 connection:(id)arg2;
+- (id)initWithTaskGroup:(id)arg1 resumeData:(id)arg2 ident:(unsigned int)arg3;
+- (const struct __CFDictionary *)_copySocketStreamProperties;
+- (id)initWithTaskGroup:(id)arg1 request:(id)arg2 filePath:(id)arg3 ident:(unsigned int)arg4;
+- (id)initWithTaskGroup:(id)arg1 request:(id)arg2 ident:(unsigned int)arg3;
 - (_Bool)setupForNewDownload:(id)arg1;
 - (id)explicitDownloadDirectory;
 

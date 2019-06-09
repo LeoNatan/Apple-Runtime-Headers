@@ -38,6 +38,7 @@
 - (id)sf_asRichTitleCardSection:(id)arg1;
 - (id)sf_asRowCardSection:(id)arg1;
 - (void)sf_baseCardSection:(id)arg1 reply:(id)arg2;
+- (id)sf_asSuggestion:(id)arg1;
 - (id)sf_asFlight;
 - (id)sf_asAirport;
 - (id)sf_asActionItem:(id)arg1;
@@ -49,5 +50,15 @@
 - (id)sf_imageForKey:(id)arg1 reply:(id)arg2;
 - (id)sf_asImage:(id)arg1;
 - (id)sf_asSearchResult:(id)arg1 factory:(id)arg2;
+- (id)parsec_dictionaryByMappingKeysUsingBlock:(CDUnknownBlockType)arg1;
+- (id)parsec_UUIDForKey:(id)arg1;
+- (id)parsec_URLForKey:(id)arg1;
+- (id)parsec_dictionaryForKey:(id)arg1;
+- (id)parsec_arrayForKey:(id)arg1;
+- (id)parsec_dateForKey:(id)arg1;
+- (id)parsec_dataForKey:(id)arg1;
+- (id)parsec_numberForKey:(id)arg1;
+- (id)parsec_stringForKey:(id)arg1;
+- (_Bool)parsec_boolForKey:(id)arg1;
 @end
 

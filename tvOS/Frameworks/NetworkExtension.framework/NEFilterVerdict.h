@@ -18,6 +18,7 @@
     _Bool _drop;
     _Bool _remediate;
     _Bool _urlAppendString;
+    _Bool _pause;
     NSString *_remediationURLMapKey;
     NSString *_remediationButtonTextMapKey;
     NSString *_urlAppendStringMapKey;
@@ -27,12 +28,14 @@
 @property(retain) NSString *urlAppendStringMapKey; // @synthesize urlAppendStringMapKey=_urlAppendStringMapKey;
 @property(retain) NSString *remediationButtonTextMapKey; // @synthesize remediationButtonTextMapKey=_remediationButtonTextMapKey;
 @property(retain) NSString *remediationURLMapKey; // @synthesize remediationURLMapKey=_remediationURLMapKey;
+@property _Bool pause; // @synthesize pause=_pause;
 @property _Bool urlAppendString; // @synthesize urlAppendString=_urlAppendString;
 @property _Bool remediate; // @synthesize remediate=_remediate;
 @property _Bool drop; // @synthesize drop=_drop;
 @property _Bool needRules; // @synthesize needRules=_needRules;
 @property _Bool shouldReport; // @synthesize shouldReport=_shouldReport;
 - (void).cxx_destruct;
+- (id)initWithPause:(_Bool)arg1;
 - (id)initWithDrop:(_Bool)arg1 remediate:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;

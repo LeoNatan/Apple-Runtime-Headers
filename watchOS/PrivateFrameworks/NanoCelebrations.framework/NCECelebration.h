@@ -16,6 +16,7 @@
     NSDate *_onOrAfter;
 }
 
++ (id)availableCelebrationNames;
 + (id)celebrationByName:(id)arg1;
 @property(nonatomic) _Bool didCallWarmup; // @synthesize didCallWarmup=_didCallWarmup;
 @property(nonatomic) _Bool highPriority; // @synthesize highPriority=_highPriority;

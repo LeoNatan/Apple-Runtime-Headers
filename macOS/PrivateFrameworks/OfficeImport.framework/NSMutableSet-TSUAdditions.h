@@ -12,5 +12,6 @@
 - (void)tsu_addObjectsFromNonNilArray:(id)arg1;
 - (void)tsu_addNonNilObject:(id)arg1;
 - (void)tsu_xorSet:(id)arg1;
+- (void)tc_addMessageEntry:(id)arg1;
 @end
 

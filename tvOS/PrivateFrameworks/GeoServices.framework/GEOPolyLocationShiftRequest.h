@@ -15,7 +15,7 @@
     GEOLatLng *_location;
 }
 
-@property(retain, nonatomic) GEOLatLng *location; // @synthesize location=_location;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,8 +26,10 @@
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLatLng *location;
 
 @end
 

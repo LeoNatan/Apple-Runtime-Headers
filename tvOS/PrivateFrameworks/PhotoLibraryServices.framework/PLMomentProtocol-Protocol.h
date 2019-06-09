@@ -9,6 +9,7 @@
 @class CLLocation, NSDate;
 
 @protocol PLMomentProtocol <NSObject>
+@property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 @property(readonly, nonatomic) CLLocation *pl_location;
 @property(readonly, nonatomic) unsigned long long pl_numberOfAssets;
 @property(readonly, nonatomic) NSDate *pl_endDate;

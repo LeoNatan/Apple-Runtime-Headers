@@ -33,6 +33,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)getNewSectionCount:(long long *)arg1 newSectionSourceIndexes:(long long **)arg2 newSectionItemCounts:(long long **)arg3 newGlobalItemCount:(long long *)arg4 newGlobalItemSourceIndexes:(long long **)arg5;
 - (id)oldIndexPathForSupplementaryElementOfKind:(id)arg1 newIndexPath:(id)arg2;
 - (id)newIndexPathForSupplementaryElementOfKind:(id)arg1 oldIndexPath:(id)arg2;
 - (void)_computeSupplementaryUpdates;

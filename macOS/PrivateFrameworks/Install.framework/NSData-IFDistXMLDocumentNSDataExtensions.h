@@ -8,5 +8,6 @@
 
 @interface NSData (IFDistXMLDocumentNSDataExtensions)
 + (id)compressedDataAtPath:(id)arg1;
++ (id)dataWithUU64EncodedString:(id)arg1;
 @end
 

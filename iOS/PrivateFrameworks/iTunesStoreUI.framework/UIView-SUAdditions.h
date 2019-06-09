@@ -9,5 +9,7 @@
 @interface UIView (SUAdditions)
 - (id)superviewOfClass:(Class)arg1;
 - (void)centerSubviewInBounds:(id)arg1;
+- (id)firstScrollViewDescendant;
+- (id)_firstDescendantOfKind:(Class)arg1;
 @end
 

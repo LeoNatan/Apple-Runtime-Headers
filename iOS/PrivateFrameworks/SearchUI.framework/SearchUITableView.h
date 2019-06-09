@@ -8,11 +8,12 @@
 
 @interface SearchUITableView : UITableView
 {
-    unsigned long long _searchUIStyle;
 }
 
-@property(nonatomic) unsigned long long searchUIStyle; // @synthesize searchUIStyle=_searchUIStyle;
 - (void)_setSeparatorBackdropOverlayBlendMode:(long long)arg1;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (_Bool)allowsHeaderViewsToFloat;
 - (void)safeAreaInsetsDidChange;
 - (id)init;

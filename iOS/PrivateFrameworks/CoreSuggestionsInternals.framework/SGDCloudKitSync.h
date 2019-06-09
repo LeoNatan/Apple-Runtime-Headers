@@ -7,16 +7,16 @@
 #import <objc/NSObject.h>
 
 #import <CoreSuggestionsInternals/APSConnectionDelegate-Protocol.h>
-#import <CoreSuggestionsInternals/SGJournalCalendarObserver-Protocol.h>
 
 @class APSConnection, CKContainer, CKDatabase, NSError, NSMutableArray, NSOperation, NSOperationQueue, NSString, SGFuture, _SGDCloudKitSyncPersistedState;
 @protocol OS_dispatch_queue;
 
-@interface SGDCloudKitSync : NSObject <APSConnectionDelegate, SGJournalCalendarObserver>
+@interface SGDCloudKitSync : NSObject <APSConnectionDelegate>
 {
     CKDatabase *_database;
     CDUnknownBlockType _callback;
     CDUnknownBlockType _deleteAllSyncedItemsCallback;
+    _Bool _readyForNewEntities;
     APSConnection *_apsConnection;
     NSObject<OS_dispatch_queue> *_queue;
     NSOperationQueue *_opQueue;
@@ -40,7 +40,10 @@
     struct ct_green_tea_logger_s *_greenTeaLogger;
 }
 
++ (id)apsEnvironmentStringForContainer:(id)arg1;
++ (void)setSharedInstanceConfigurationBlock:(CDUnknownBlockType)arg1;
 + (id)sharedInstance;
++ (id)_sharedInstanceConfigurationQueue;
 - (void).cxx_destruct;
 - (void)connectionDidReconnect:(id)arg1;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(_Bool)arg2;
@@ -49,27 +52,18 @@
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
 - (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
-- (void)cancelEvents:(id)arg1;
-- (void)addEvents:(id)arg1;
-- (void)calendarDeleted;
-- (void)orphanEvent:(id)arg1;
-- (void)rejectEventFromOtherDevice:(id)arg1;
-- (void)rejectEventFromThisDevice:(id)arg1;
-- (void)confirmEventFromOtherDevice:(id)arg1;
-- (void)confirmEventFromThisDevice:(id)arg1;
-- (void)cancelEvent:(id)arg1;
-- (void)addEvent:(id)arg1;
+- (id)privacySalt;
 - (void)deleteZoneWithCompletion:(CDUnknownBlockType)arg1;
 - (void)deleteStorageEvent:(id)arg1;
 - (id)recordZoneId;
-- (void)invokeNewEntitiesCallbackWithEntity:(id)arg1;
+- (id)invokeNewEntitiesCallbackWithEntity:(id)arg1;
 - (void)setDeleteAllSyncedItemsCallback:(CDUnknownBlockType)arg1;
 - (void)setNewEntitiesCallback:(CDUnknownBlockType)arg1;
+- (void)setReadyForNewEntities:(_Bool)arg1;
 - (void)deleteGroupId:(id)arg1;
-- (void)addEntity:(id)arg1;
+- (void)addEntity:(id)arg1 withParentEntity:(id)arg2;
 - (void)setDatabase:(id)arg1;
 - (void)createSubscriptionWithRetries:(unsigned long long)arg1;
-- (id)apsEnvironmentStringForContainer:(id)arg1;
 - (id)shouldRemoveEventsFromEventKit;
 - (id)accountInfo;
 - (void)accountChanged:(id)arg1;

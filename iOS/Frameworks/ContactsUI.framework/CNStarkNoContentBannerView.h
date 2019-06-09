@@ -6,20 +6,44 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UILabel;
+@class NSMutableArray, NSString, UIButton, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface CNStarkNoContentBannerView : UIView
 {
+    _Bool _siriButtonEnabled;
+    _Bool _siriButtonSelected;
     UILabel *_titleLabel;
-    UILabel *_subtitleLabel;
+    UIButton *_siriButton;
+    NSMutableArray *_constraintsForTitleLabel;
+    NSMutableArray *_constraintsForTitleLabelAndSiriButton;
 }
 
-@property(retain) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
+@property(nonatomic) _Bool siriButtonSelected; // @synthesize siriButtonSelected=_siriButtonSelected;
+@property(retain) NSMutableArray *constraintsForTitleLabelAndSiriButton; // @synthesize constraintsForTitleLabelAndSiriButton=_constraintsForTitleLabelAndSiriButton;
+@property(retain) NSMutableArray *constraintsForTitleLabel; // @synthesize constraintsForTitleLabel=_constraintsForTitleLabel;
+@property(retain) UIButton *siriButton; // @synthesize siriButton=_siriButton;
 @property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(nonatomic) _Bool siriButtonEnabled; // @synthesize siriButtonEnabled=_siriButtonEnabled;
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSString *subtitleString;
+- (void)stateUpdated;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)choose;
+- (void)deselect;
+- (void)select;
+- (void)clickGestureDidUpdate:(id)arg1;
+- (void)siriButtonTouchUp:(id)arg1;
+- (void)siriButtonTouchDown:(id)arg1;
+- (void)siriButtonTapped:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (_Bool)canBecomeFocused;
 @property(retain, nonatomic) NSString *titleString;
+- (void)setupClickGestureRecognizer;
+- (void)updateConstraints;
+- (void)setupConstraintsForTitleLabelAndSiriButton;
+- (void)setupConstraintsforTitleLabel;
+- (void)setupSiriButton;
+- (void)setupTitleLabel;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

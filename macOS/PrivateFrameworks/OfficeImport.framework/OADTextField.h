@@ -8,6 +8,7 @@
 
 @class NSString, OADParagraphProperties;
 
+__attribute__((visibility("hidden")))
 @interface OADTextField : OADTextRun
 {
     NSString *mText;

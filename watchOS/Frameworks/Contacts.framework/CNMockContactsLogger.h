@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void)XPCConnectionWasInterrupted;
 - (void)XPCConnectionWasInvalidated;
+- (void)errorWhenQueryingTetheredSyncData:(id)arg1;
 - (void)internalError:(id)arg1;
 - (void)SPIUsageLackingEntitlementRejectedForPID:(int)arg1;
 - (void)SPIUsageLackingEntitlementGrantedForPID:(int)arg1;
@@ -37,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)tccAccessRequestWasDenied;
 - (void)tccAccessPreflightWasDenied;
 - (void)servicingContactsRequest:(CDUnknownBlockType)arg1;
+- (void)settingDefaultAccount:(CDUnknownBlockType)arg1;
+- (void)resettingSortDataIfNeeded:(CDUnknownBlockType)arg1;
 - (void)clearingChangeHistory:(CDUnknownBlockType)arg1;
 - (void)fetchingChangeHistory:(CDUnknownBlockType)arg1;
 - (void)unregisteringForChangeHistory:(CDUnknownBlockType)arg1;
@@ -49,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)fetchingContactIdentifierWithMatchingDictionary:(CDUnknownBlockType)arg1;
 - (void)fetchingContactWithUserActivity:(CDUnknownBlockType)arg1;
 - (void)fetchingContacts:(CDUnknownBlockType)arg1;
+- (void)fetchingContactSectionCounts:(CDUnknownBlockType)arg1;
 - (void)fetchingContactCount:(CDUnknownBlockType)arg1;
 - (void)changingMeContact:(CDUnknownBlockType)arg1;
 - (void)fetchingMeContactIdentifier:(CDUnknownBlockType)arg1;

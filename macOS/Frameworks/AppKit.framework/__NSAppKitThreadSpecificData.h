@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable;
+@class NSKeyValueDependencyContext, NSMapTable, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface __NSAppKitThreadSpecificData : NSObject
@@ -22,12 +22,9 @@ __attribute__((visibility("hidden")))
     id NSActionCellReplacementString;
     struct _NSRange NSActionCellSelectionRange;
     id NSAlertCache;
-    id reserved2;
-    id reserved3;
     id NSCurrentDisplayCycle;
     unsigned int NSCurrentDisplayCycleTransactionSeed;
     id NSDisplayOperationStack;
-    id NSColorPickerWheelImageCache;
     id NSPeriodicEventSource;
     id NSOriginalVersionDocument;
     id NSCurrentDocumentVersion;
@@ -39,12 +36,13 @@ __attribute__((visibility("hidden")))
     struct CGSize NSCachedTitleCellSize;
     id NSCurrentNibLoadingBundles;
     id NSCurrentNibPaths;
-    struct __CFRunLoopObserver *NSCarbonAppRunLoopEnterObserverRef;
-    struct __CFRunLoopObserver *NSCarbonAppRunLoopExitObserverRef;
     void *NSStringDrawingTextStorageSettings;
     NSMapTable *NSWindowDisableFlushCounts;
     NSMapTable *NSWindowDisablePostingCounts;
     long long NSThreadSequenceNumber;
+    NSKeyValueDependencyContext *NSCurrentKeyValueDependencyContext;
+    NSMutableArray *NSKeyValueDependencyContextStack;
+    unsigned int NSCriticalWaitTimer;
 }
 
 - (id)init;

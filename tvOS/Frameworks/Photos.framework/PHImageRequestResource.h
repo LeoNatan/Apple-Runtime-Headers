@@ -8,13 +8,14 @@
 
 #import <Photos/PLResourceIdentity-Protocol.h>
 
-@class NSString;
+@class NSString, PLPhotoLibrary;
 @protocol PLUniformTypeIdentifierIdentity;
 
 @interface PHImageRequestResource : NSObject <PLResourceIdentity>
 {
-    short _resourceType;
-    short _version;
+    PLPhotoLibrary *_photoLibrary;
+    unsigned int _resourceType;
+    unsigned int _version;
     unsigned int _recipeID;
     unsigned int _orientation;
     id <PLUniformTypeIdentifierIdentity> _uniformTypeIdentifierID;
@@ -22,16 +23,17 @@
     long long _unorientedHeight;
 }
 
++ (id)imageRequestResourceForDataStoreKey:(id)arg1 store:(id)arg2 assetObjectID:(id)arg3 context:(id)arg4;
 @property(readonly, nonatomic) long long unorientedHeight; // @synthesize unorientedHeight=_unorientedHeight;
 @property(readonly, nonatomic) long long unorientedWidth; // @synthesize unorientedWidth=_unorientedWidth;
 @property(readonly, nonatomic) unsigned int orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) id <PLUniformTypeIdentifierIdentity> uniformTypeIdentifierID; // @synthesize uniformTypeIdentifierID=_uniformTypeIdentifierID;
 @property(readonly, nonatomic) unsigned int recipeID; // @synthesize recipeID=_recipeID;
-@property(readonly, nonatomic) short version; // @synthesize version=_version;
-@property(readonly, nonatomic) short resourceType; // @synthesize resourceType=_resourceType;
+@property(readonly, nonatomic) unsigned int version; // @synthesize version=_version;
+@property(readonly, nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (id)initWithPlistDictionary:(id)arg1;
+- (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
 - (id)initWithResource:(id)arg1;
 
 // Remaining properties

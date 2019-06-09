@@ -12,7 +12,7 @@
 }
 
 + (CDStruct_996ac03c)calcReefSearchExtentForImageExtent:(CDStruct_996ac03c)arg1 andMaskExtent:(CDStruct_996ac03c)arg2;
-- (void)calculate:(CDUnknownBlockType)arg1;
+- (void)submit:(CDUnknownBlockType)arg1;
 - (id)initWithComposition:(id)arg1 strokeExtent:(struct CGRect)arg2;
 
 @end

@@ -6,37 +6,59 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSArray, UIBarButtonItem, UIImage, UIView;
+#import <PhotosUI/UISearchResultsUpdating-Protocol.h>
+
+@class NSArray, NSDictionary, NSString, UIBarButtonItem, UIView;
 
 __attribute__((visibility("hidden")))
-@interface PUSceneDebugInspectorViewController : UITableViewController
+@interface PUSceneDebugInspectorViewController : UITableViewController <UISearchResultsUpdating>
 {
-    NSArray *_sceneViewModels;
-    UIImage *_sortBarButtonImage;
     UIView *_loadingContentView;
     UIBarButtonItem *_sortButton;
     UIBarButtonItem *_shareButton;
+    NSArray *_sceneViewModelsAll;
+    NSArray *_sceneViewModelsSearched;
+    NSDictionary *_groupedSceneViewModels;
+    NSArray *_groupedSceneViewModelTitles;
 }
 
-@property(retain, nonatomic) UIBarButtonItem *shareButton; // @synthesize shareButton=_shareButton;
-@property(retain, nonatomic) UIBarButtonItem *sortButton; // @synthesize sortButton=_sortButton;
-@property(retain, nonatomic) UIView *loadingContentView; // @synthesize loadingContentView=_loadingContentView;
-@property(retain, nonatomic) UIImage *sortBarButtonImage; // @synthesize sortBarButtonImage=_sortBarButtonImage;
-@property(copy, nonatomic) NSArray *sceneViewModels; // @synthesize sceneViewModels=_sceneViewModels;
++ (id)highestConfidenceForAsset:(id)arg1 sceneIdentifier:(id)arg2;
++ (id)_assetGridViewControllerForViewModel:(id)arg1 interfaceIdiom:(long long)arg2;
++ (id)_commaSeparatedValueRepresentation:(id)arg1;
++ (id)_titleForSortOrder:(unsigned long long)arg1;
++ (_Bool)_isAscendingForSortOrder:(unsigned long long)arg1;
++ (id)_keyForSortOrder:(unsigned long long)arg1;
++ (id)_shortTitlesForSectionTitles:(id)arg1 SortOrder:(unsigned long long)arg2;
++ (id)_sectionTitleForSceneViewModel:(id)arg1 sortOrder:(unsigned long long)arg2;
++ (id)_sortedSceneViewModels:(id)arg1 sortOrder:(unsigned long long)arg2;
+@property(copy, nonatomic) NSArray *groupedSceneViewModelTitles; // @synthesize groupedSceneViewModelTitles=_groupedSceneViewModelTitles;
+@property(copy, nonatomic) NSDictionary *groupedSceneViewModels; // @synthesize groupedSceneViewModels=_groupedSceneViewModels;
+@property(copy, nonatomic) NSArray *sceneViewModelsSearched; // @synthesize sceneViewModelsSearched=_sceneViewModelsSearched;
+@property(copy, nonatomic) NSArray *sceneViewModelsAll; // @synthesize sceneViewModelsAll=_sceneViewModelsAll;
 - (void).cxx_destruct;
-- (id)_assetGridViewControllerForViewModel:(id)arg1;
-- (id)_commaSeparatedValueRepresentation;
 - (void)didSelectShareButton:(id)arg1;
-- (id)_titleForSortOrder:(unsigned long long)arg1;
-- (id)_sortViewModels:(id)arg1 sortOrder:(unsigned long long)arg2;
+@property(readonly, nonatomic) UIBarButtonItem *shareButton; // @synthesize shareButton=_shareButton;
+@property(readonly, nonatomic) NSArray *currentSceneViewModels;
+- (void)_reloadTableViewByGroupingViewModels:(id)arg1 sortOrder:(unsigned long long)arg2;
 - (void)didSelectSortButton:(id)arg1;
+@property(readonly, nonatomic) UIBarButtonItem *sortButton; // @synthesize sortButton=_sortButton;
+- (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)sectionIndexTitlesForTableView:(id)arg1;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)didSelectDoneButton:(id)arg1;
-- (void)updateToolbarButtons;
+@property(readonly, nonatomic) UIView *loadingContentView; // @synthesize loadingContentView=_loadingContentView;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

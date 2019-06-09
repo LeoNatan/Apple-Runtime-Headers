@@ -17,6 +17,7 @@
 }
 
 + (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (id)defaultAnimationForKey:(id)arg1;
 + (void)initialize;
 + (id)_autosaveDefaultsKeyForName:(id)arg1;
@@ -93,7 +94,6 @@
 - (BOOL)_liveCollapseIsCanned;
 - (BOOL)_canLiveCollapseArrangedViews;
 - (void)viewWillDraw;
-- (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2;
 - (void)_adjustArrangedViewsIfNecessary;
 - (BOOL)shouldBeTreatedAsInkEvent:(id)arg1;
 - (void)setAutoresizesSubviews:(BOOL)arg1;

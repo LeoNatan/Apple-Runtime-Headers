@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
+@class SCRCUserDefaults;
+
 __attribute__((visibility("hidden")))
 @interface SCRVisualsPreferences : NSObject
 {
-    double _visualsFontSize;
+    SCRCUserDefaults *__userDefaults;
+    double __visualsFontSize;
+    id __fontSizeObserver;
 }
 
-+ (id)sharedVisualsPreferences;
-@property(nonatomic) double visualsFontSize; // @synthesize visualsFontSize=_visualsFontSize;
-- (BOOL)_float:(double)arg1 isAboutEqualToFloat:(double)arg2;
-- (void)_preferencesChangedForKeyPath:(id)arg1 value:(id)arg2;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)dealloc;
-- (id)init;
+@property(retain, nonatomic, setter=_setFontSizeObserver:) id _fontSizeObserver; // @synthesize _fontSizeObserver=__fontSizeObserver;
+@property(nonatomic, setter=_setVisualsFontSize:) double _visualsFontSize; // @synthesize _visualsFontSize=__visualsFontSize;
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
+- (void).cxx_destruct;
+- (void)setVisualsFontSizeValue:(id)arg1;
+@property(nonatomic) double visualsFontSize;
+- (id)initWithUserDefaults:(id)arg1;
 
 @end
 

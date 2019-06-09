@@ -11,5 +11,12 @@
 - (id)MSDeepCopyWithZone:(struct _NSZone *)arg1;
 - (id)MSMutableDeepCopy;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone *)arg1;
+- (BOOL)MSASIsErrorRecovery;
+- (BOOL)MSASIsNotInteresting;
+- (id)MSASEventIsDueToAssetCollectionDeletionAssetCollectionGUID;
+- (id)MSASEventIsDueToAlbumDeletionAlbumGUID;
+- (BOOL)MSASIsLocalChange;
+- (id)MSASAlbumResetSyncAlbumGUID;
+- (BOOL)MSASIsGlobalResetSync;
 @end
 

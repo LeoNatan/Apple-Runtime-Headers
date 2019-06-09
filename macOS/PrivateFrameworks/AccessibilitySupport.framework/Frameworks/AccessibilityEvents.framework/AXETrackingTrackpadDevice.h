@@ -6,30 +6,33 @@
 
 #import <objc/NSObject.h>
 
+#import <AccessibilityEvents/AXEEventTapListener-Protocol.h>
 #import <AccessibilityEvents/AXETrackingTouchInputDevice-Protocol.h>
 
-@class AXEThrottler, AXETrackingGestureEvent, NSString;
+@class AXEThrottler, AXETrackingGestureEvent, NSArray, NSString;
 @protocol AXETrackingTouchInputDeviceDelegate;
 
-@interface AXETrackingTrackpadDevice : NSObject <AXETrackingTouchInputDevice>
+@interface AXETrackingTrackpadDevice : NSObject <AXEEventTapListener, AXETrackingTouchInputDevice>
 {
-    struct __CFMachPort *__eventTap;
-    struct __CFRunLoopSource *__runLoopSource;
+    BOOL _swallowAllGestureEvents;
     BOOL __eventCaptureStarted;
     id <AXETrackingTouchInputDeviceDelegate> _delegate;
     AXEThrottler *__throttler;
     AXETrackingGestureEvent *__previousGestureEvent;
+    NSArray *__availableTrackpadInfos;
 }
 
+@property(copy, nonatomic) NSArray *_availableTrackpadInfos; // @synthesize _availableTrackpadInfos=__availableTrackpadInfos;
 @property(retain, nonatomic) AXETrackingGestureEvent *_previousGestureEvent; // @synthesize _previousGestureEvent=__previousGestureEvent;
 @property(retain, nonatomic) AXEThrottler *_throttler; // @synthesize _throttler=__throttler;
 @property(nonatomic) BOOL _eventCaptureStarted; // @synthesize _eventCaptureStarted=__eventCaptureStarted;
+@property(nonatomic) BOOL swallowAllGestureEvents; // @synthesize swallowAllGestureEvents=_swallowAllGestureEvents;
 @property(nonatomic) __weak id <AXETrackingTouchInputDeviceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (struct __CFMachPort *)_eventTap;
 - (void)_processNonSyntheticGestureEvent:(id)arg1;
 - (id)_nonSyntheticGestureEventFromCGEvent:(struct __CGEvent *)arg1;
-- (struct __CGEvent *)_handleEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (struct __CGEvent *)eventTapManager:(id)arg1 activelyTappedMouseEvent:(id)arg2 cgEvent:(struct __CGEvent *)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (struct __CGEvent *)eventTapManager:(id)arg1 activelyTappedGestureEvent:(id)arg2 cgEvent:(struct __CGEvent *)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
 - (void)stopEventCapture;
 - (void)startEventCapture;
 - (void)dealloc;

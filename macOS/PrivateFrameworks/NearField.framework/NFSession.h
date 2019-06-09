@@ -23,6 +23,7 @@
 }
 
 @property(readonly) unsigned long long state; // @synthesize state=_state;
+- (void)prioritizeSession;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)_didEndSession;
@@ -30,6 +31,7 @@
 - (void)_endProxySession;
 - (void)didEndUnexpectedly;
 - (void)endSessionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)endSessionAndStartNextSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)endSession;
 - (void)didStartSession:(id)arg1;
 - (void)didStartSessionWithoutQueue:(id)arg1;

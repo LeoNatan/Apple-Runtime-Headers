@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)needsUpdateForProperty:(unsigned int)arg1;
 - (id)extractValueFromNodes:(const struct TFENodeVector *)arg1;
 - (id)defaultValue;
+- (_Bool)isApplicableToNodes:(const struct TFENodeVector *)arg1;
 
 @end
 

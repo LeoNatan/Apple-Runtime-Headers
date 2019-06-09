@@ -7,17 +7,16 @@
 #import <EventKitUI/EKEventDetailCell.h>
 
 #import <EventKitUI/EKEventDetailPredictedLocationCellDelegate-Protocol.h>
+#import <EventKitUI/UITextViewDelegate-Protocol.h>
 
-@class EKEventDetailPredictedLocationCell, EKTextViewWithLabelTextMetrics, NSMutableArray, NSObject, UIButton, UIImage, UIImageView, UILabel;
+@class EKEventDetailPredictedLocationCell, NSMutableArray, NSObject, NSString, UIButton, UILabel;
 @protocol EKEventDetailTitleCellDelegate;
 
-@interface EKEventDetailTitleCell : EKEventDetailCell <EKEventDetailPredictedLocationCellDelegate>
+@interface EKEventDetailTitleCell : EKEventDetailCell <UITextViewDelegate, EKEventDetailPredictedLocationCellDelegate>
 {
     UILabel *_titleView;
-    EKTextViewWithLabelTextMetrics *_locationView;
+    NSMutableArray *_locationItems;
     EKEventDetailPredictedLocationCell *_predictedLocationView;
-    UIImage *_locationStatusImage;
-    UIImageView *_locationStatusView;
     UILabel *_travelTimeView;
     NSMutableArray *_dateTimeViews;
     UILabel *_recurrenceView;
@@ -25,22 +24,20 @@
     UIButton *_editButton;
     unsigned int _visibleItems;
     _Bool _observingLocaleChanges;
-    _Bool _hasLocationStatus;
-    long long _locationStatus;
     _Bool _rejectionReasonCell;
     _Bool _hasMapItemLaunchOptionFromTimeToLeaveNotification;
     _Bool _showingInlineDayView;
     NSObject<EKEventDetailTitleCellDelegate> *_delegate;
+    unsigned long long _numberOfTitleLines;
 }
 
-+ (id)_locationStringForStructuredLocation:(id)arg1;
 + (void)_geocodeEventIfNeeded:(id)arg1;
 + (id)_locationFont;
 + (id)_largeTitleFont;
 + (id)_titleFont;
 + (void)_invalidateCachedFonts;
-+ (id)_mapsURLForLocationOnEvent:(id)arg1 hasMapItemLaunchOptionFromTimeToLeaveNotification:(_Bool)arg2;
 + (void)_registerForInvalidation;
+@property(nonatomic) unsigned long long numberOfTitleLines; // @synthesize numberOfTitleLines=_numberOfTitleLines;
 @property(nonatomic) _Bool showingInlineDayView; // @synthesize showingInlineDayView=_showingInlineDayView;
 @property(nonatomic) _Bool hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 @property(nonatomic) __weak NSObject<EKEventDetailTitleCellDelegate> *delegate; // @synthesize delegate=_delegate;
@@ -59,22 +56,28 @@
 - (id)_recurrenceView;
 - (id)_travelTimeView;
 - (id)_dateTimeViewForLine:(unsigned long long)arg1;
-- (id)_locationView;
 - (id)_titleView;
 - (void)editButtonTapped;
 - (_Bool)update;
+- (void)addLocation:(id)arg1;
+- (void)setLocation:(id)arg1;
 - (void)setPrimaryTextColor:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setStatusString:(id)arg1;
 - (void)setRecurrenceString:(id)arg1;
 - (void)setTravelTimeString:(id)arg1;
 - (void)_setDateTimeString:(id)arg1 line:(unsigned long long)arg2;
-- (void)setLocation:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (_Bool)_useLargeFonts;
 - (id)initAsRejectionReasonCellWithEvent:(id)arg1;
 - (id)initWithEvent:(id)arg1 editable:(_Bool)arg2 style:(long long)arg3;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

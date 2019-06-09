@@ -90,7 +90,7 @@
 - (void)removePersistedData;
 - (void)writePersistedData;
 - (id)initWithPersistedDataAtURL:(id)arg1;
-- (id)initWithPLMemory:(id)arg1;
+- (id)initWithPLMemory:(id)arg1 pathManager:(id)arg2;
 - (id)initWithPLMemory:(id)arg1 metadataURL:(id)arg2;
 - (id)init;
 

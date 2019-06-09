@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Vision/VNFaceLandmarkDetector.h>
+#import <Vision/VNFaceLandmarkDetectorDNN.h>
 
 __attribute__((visibility("hidden")))
-@interface VNFaceLandmarkDetectorRevision2 : VNFaceLandmarkDetector
+@interface VNFaceLandmarkDetectorRevision2 : VNFaceLandmarkDetectorDNN
 {
 }
 
-- (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
++ (unsigned char)landmarkDetectorDNNVersion;
 - (id)espressoModelInputImageDimensionsBlobNameForConfigurationOptions:(id)arg1;
 - (id)espressoModelFileNameForConfigurationOptions:(id)arg1;
 

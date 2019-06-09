@@ -10,8 +10,6 @@
 {
 }
 
-- (void)_updateBackgroundColor;
-- (void)tintColorDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

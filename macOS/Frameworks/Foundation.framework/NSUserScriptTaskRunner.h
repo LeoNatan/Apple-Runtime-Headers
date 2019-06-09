@@ -10,6 +10,7 @@
 
 @class NSProgress, NSTask, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface NSUserScriptTaskRunner : NSObject <NSUserScriptTaskRunner>
 {
     NSXPCConnection *_connection;

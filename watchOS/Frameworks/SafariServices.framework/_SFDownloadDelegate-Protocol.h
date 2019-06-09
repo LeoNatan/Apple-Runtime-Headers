@@ -9,7 +9,18 @@
 @class _SFDownload;
 
 @protocol _SFDownloadDelegate <NSObject>
+- (void)downloadDidStart:(_SFDownload *)arg1;
 - (void)downloadDidFail:(_SFDownload *)arg1;
 - (void)downloadDidFinish:(_SFDownload *)arg1;
+
+@optional
+- (void)downloadWillBeDeleted:(_SFDownload *)arg1;
+- (void)downloadContentsDidChange:(_SFDownload *)arg1;
+- (void)downloadShouldContinueAfterReceivingResponse:(_SFDownload *)arg1 decisionHandler:(void (^)(_Bool))arg2;
+- (void)createDirectoryForDownload:(_SFDownload *)arg1 completionHandler:(void (^)(NSString *))arg2;
+- (void)downloadDidResume:(_SFDownload *)arg1;
+- (void)downloadDidReceiveResponse:(_SFDownload *)arg1;
+- (void)downloadDidImportFileToDownloadsFolder:(_SFDownload *)arg1;
+- (_Bool)downloadShouldImportPlaceholderToDownloadsFolder:(_SFDownload *)arg1;
 @end
 

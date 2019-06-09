@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UITabBarControllerInterruptibleTransitioning-Protocol.h>
 
-@class NSString, UISpringTimingParameters;
+@class NSString, UISpringTimingParameters, UIView;
 @protocol UIViewControllerContextTransitioning;
 
 __attribute__((visibility("hidden")))
@@ -18,8 +18,14 @@ __attribute__((visibility("hidden")))
     long long _transitionStyle;
     id <UIViewControllerContextTransitioning> _transitionContext;
     UISpringTimingParameters *_slideTimingParameters;
+    double _fromViewLayerOriginalRasterizationScale;
+    double _toViewLayerOriginalRasterizationScale;
+    UIView *_toViewXFlippedScreenShot;
 }
 
+@property(retain, nonatomic) UIView *toViewXFlippedScreenShot; // @synthesize toViewXFlippedScreenShot=_toViewXFlippedScreenShot;
+@property(nonatomic) double toViewLayerOriginalRasterizationScale; // @synthesize toViewLayerOriginalRasterizationScale=_toViewLayerOriginalRasterizationScale;
+@property(nonatomic) double fromViewLayerOriginalRasterizationScale; // @synthesize fromViewLayerOriginalRasterizationScale=_fromViewLayerOriginalRasterizationScale;
 @property(retain, nonatomic) UISpringTimingParameters *slideTimingParameters; // @synthesize slideTimingParameters=_slideTimingParameters;
 @property(retain, nonatomic) id <UIViewControllerContextTransitioning> transitionContext; // @synthesize transitionContext=_transitionContext;
 @property(nonatomic) _Bool transitionFromRight; // @synthesize transitionFromRight=_transitionFromRight;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface VCPVideoKeyFrame : NSObject
 {
@@ -15,23 +15,44 @@
     float _interestingness;
     float _obstruction;
     float _colorfulness;
+    BOOL _isLivePhoto;
     BOOL _subMb;
     BOOL _isHeadingFrame;
     float _score;
+    float _semanticScore;
     float _sharpness;
     float _faceSharpness;
     float _exposureScore;
+    float _textureScore;
+    float _overallFaceQualityScore;
+    float _qualityScoreForLivePhoto;
+    float _visualPleasingScore;
+    float _penaltyScore;
+    float _humanPoseScore;
+    float _humanActionScore;
     unsigned long long _statsFlags;
     NSMutableArray *_detectedFaces;
+    NSMutableArray *_faceQualityScores;
+    NSMutableDictionary *_frameResults;
     CDStruct_1b6d18a9 _timestamp;
 }
 
+@property(nonatomic) float humanActionScore; // @synthesize humanActionScore=_humanActionScore;
+@property(nonatomic) float humanPoseScore; // @synthesize humanPoseScore=_humanPoseScore;
+@property(nonatomic) float penaltyScore; // @synthesize penaltyScore=_penaltyScore;
+@property(nonatomic) float visualPleasingScore; // @synthesize visualPleasingScore=_visualPleasingScore;
+@property(nonatomic) float qualityScoreForLivePhoto; // @synthesize qualityScoreForLivePhoto=_qualityScoreForLivePhoto;
+@property(nonatomic) float overallFaceQualityScore; // @synthesize overallFaceQualityScore=_overallFaceQualityScore;
+@property(retain, nonatomic) NSMutableDictionary *frameResults; // @synthesize frameResults=_frameResults;
+@property(retain, nonatomic) NSMutableArray *faceQualityScores; // @synthesize faceQualityScores=_faceQualityScores;
 @property(retain, nonatomic) NSMutableArray *detectedFaces; // @synthesize detectedFaces=_detectedFaces;
 @property(nonatomic) unsigned long long statsFlags; // @synthesize statsFlags=_statsFlags;
+@property(nonatomic) float textureScore; // @synthesize textureScore=_textureScore;
 @property(nonatomic) BOOL isHeadingFrame; // @synthesize isHeadingFrame=_isHeadingFrame;
 @property(nonatomic) float exposureScore; // @synthesize exposureScore=_exposureScore;
 @property(nonatomic) float faceSharpness; // @synthesize faceSharpness=_faceSharpness;
 @property(nonatomic) float sharpness; // @synthesize sharpness=_sharpness;
+@property(nonatomic) float semanticScore; // @synthesize semanticScore=_semanticScore;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(nonatomic) CDStruct_1b6d18a9 timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
@@ -42,15 +63,17 @@
 - (float)computeExpressionScore;
 - (float)computeScoreFromAction;
 - (void)computeCurationScore;
+- (void)storeFrameResults;
 - (float)computePenaltyScore;
 - (float)computeContentScore;
 - (float)computeVisualPleasingScore;
 - (float)computeGlobalQuality;
+- (void)computeGlobalQualityForLivePhoto;
 - (void)setExposure:(float)arg1;
-- (void)setMotionStatsFlag:(BOOL)arg1 cameraMotion:(float)arg2 subjectAction:(float)arg3 interestingness:(float)arg4 obstruction:(float)arg5 colorfulness:(float)arg6 subMb:(BOOL)arg7;
+- (void)setMotionStatsFlag:(BOOL)arg1 cameraMotion:(float)arg2 subjectAction:(float)arg3 interestingness:(float)arg4 obstruction:(float)arg5 colorfulness:(float)arg6 humanPoseScore:(float)arg7 humanActionScore:(float)arg8 subMb:(BOOL)arg9;
 - (void)setFaceStatsFlag:(BOOL)arg1 detectedFaces:(id)arg2;
 - (void)resetStatsFlag;
-- (id)init;
+- (id)initWithLivePhoto:(BOOL)arg1;
 
 @end
 

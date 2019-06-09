@@ -27,6 +27,8 @@
 - (id)_queue_region:(id)arg1;
 - (id)_queue_regions;
 - (BOOL)_queue_supportedForOSVersion:(id)arg1 inRegion:(id)arg2 deviceClass:(id)arg3 platform:(id)arg4;
+- (BOOL)deviceCheckInDisabledForRegion:(id)arg1;
+- (double)deviceCheckInIntervalForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationNetworkThresholdsForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationTimeRangeForRegion:(id)arg1;
 - (BOOL)browseProvisioningBankAppsManualEntryDisabledForRegion:(id)arg1;
@@ -34,6 +36,11 @@
 - (id)marketGeoRegionNotificationHourForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationSendLimitForRegion:(id)arg1;
 - (id)marketGeoRegionNotificationDisabledNetworksForRegion:(id)arg1;
+- (id)numberOfDaysBetweenMapsReprocessingForRegion:(id)arg1;
+- (BOOL)AMPNonDefaultBehaviourDisabledForRegion:(id)arg1;
+- (id)applyServiceFeaturesForRegion:(id)arg1;
+- (BOOL)applyServiceEnabledForRegion:(id)arg1;
+- (BOOL)accountServiceEnabledForRegion:(id)arg1;
 - (BOOL)remotePaymentsRequiredForVoiceover;
 - (id)unsupportedWebPaymentConfigurations;
 - (id)supportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2 platform:(id)arg3;
@@ -49,6 +56,7 @@
 - (id)paymentSetupBrowsableProductTypesForRegion:(id)arg1;
 - (BOOL)suppressCardholderNameFieldForRegion:(id)arg1;
 - (id)marketsURL;
+- (id)discoveryManifestURLForRegion:(id)arg1;
 - (id)heroImageManifestURLForRegion:(id)arg1;
 - (id)primaryFeaturedNetworkForRegion:(id)arg1;
 - (id)paymentSetupFeaturedNetworksForRegion:(id)arg1;

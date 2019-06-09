@@ -10,7 +10,6 @@
 
 @protocol PFURLHandlingSubsystem <NSObject>
 - (void)handleURL:(NSURL *)arg1;
-- (BOOL)urlRequiresSystemLibrary:(NSURL *)arg1;
 - (BOOL)willHandleURL:(NSURL *)arg1;
 @end
 

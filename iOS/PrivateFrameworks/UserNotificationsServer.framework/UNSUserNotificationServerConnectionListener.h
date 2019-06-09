@@ -9,30 +9,30 @@
 #import <UserNotificationsServer/NSXPCListenerDelegate-Protocol.h>
 #import <UserNotificationsServer/UNUserNotificationServerProtocol-Protocol.h>
 
-@class NSMapTable, NSMutableDictionary, NSString, NSXPCListener, UNSApplicationLauncher, UNSAttachmentsService, UNSLocationMonitor, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationSchedulingService, UNSNotificationSettingsService, UNSNotificationTopicRepository, UNSRemoteNotificationServer;
+@class NSMapTable, NSMutableDictionary, NSString, NSXPCListener, UNSApplicationLauncher, UNSAttachmentsService, UNSLocalizationService, UNSLocationMonitor, UNSNotificationAuthorizationService, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationSchedulingService, UNSNotificationSettingsService, UNSNotificationTopicRepository, UNSRemoteNotificationServer, UNSUserNotificationServerRemoteNotificationConnectionListener;
 @protocol OS_dispatch_queue;
 
 @interface UNSUserNotificationServerConnectionListener : NSObject <NSXPCListenerDelegate, UNUserNotificationServerProtocol>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCListener *_listener;
-    NSMutableDictionary *_bundleIdentifierToSourceDescription;
     NSMutableDictionary *_connectionsByBundleIdentifier;
     NSMapTable *_bundleIdentifiersByConnection;
     UNSApplicationLauncher *_applicationLauncher;
+    UNSLocalizationService *_localizationService;
     UNSNotificationCategoryRepository *_categoryRepository;
     UNSNotificationSchedulingService *_notificationSchedulingService;
+    UNSNotificationAuthorizationService *_notificationsAuthorizationService;
     UNSNotificationSettingsService *_notificationSettingsService;
     UNSNotificationRepository *_notificationRepository;
     UNSNotificationTopicRepository *_topicRepository;
+    UNSUserNotificationServerRemoteNotificationConnectionListener *_remoteNotificationConnectionListener;
     UNSRemoteNotificationServer *_remoteNotificationService;
     UNSAttachmentsService *_attachmentsService;
     UNSLocationMonitor *_locationMonitor;
 }
 
 - (void).cxx_destruct;
-- (void)_queue_notificationSourcesDidUninstall:(id)arg1;
-- (void)_queue_notificationSourcesDidInstall:(id)arg1;
 - (void)_queue_didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)_queue_delegateConnectionForBundleIdentifier:(id)arg1;
 - (id)_queue_observerConnectionsForBundleIdentifier:(id)arg1;
@@ -44,8 +44,9 @@
 - (void)_removeConnectionForAllBundleIdentifiers:(id)arg1;
 - (id)_currentConnection;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
-- (void)notificationSourcesDidUninstall:(id)arg1;
-- (void)notificationSourcesDidInstall:(id)arg1;
+- (void)getNotificationSettingsForTopicsWithBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)getNotificationTopicsForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)setNotificationTopics:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setBadgeString:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setBadgeNumber:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)getBadgeNumberForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -67,13 +68,12 @@
 - (void)setNotificationCategories:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)getNotificationCategoriesForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)getNotificationSettingsForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)requestAuthorizationWithTopics:(id)arg1 forBundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)requestAuthorizationWithOptions:(unsigned long long)arg1 forBundleIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setObservingUserNotifications:(_Bool)arg1 forBundleIdentifier:(id)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)resume;
 - (void)dealloc;
-- (id)initWithCategoryRepository:(id)arg1 notificationSchedulingService:(id)arg2 notificationSettingsService:(id)arg3 notificationRepository:(id)arg4 remoteNotificationService:(id)arg5 applicationLauncher:(id)arg6 attachmentsService:(id)arg7 locationMonitor:(id)arg8 topicRepository:(id)arg9;
+- (id)initWithCategoryRepository:(id)arg1 notificationSchedulingService:(id)arg2 notificationAuthorizationService:(id)arg3 notificationSettingsService:(id)arg4 notificationRepository:(id)arg5 remoteNotificationConnectionListener:(id)arg6 remoteNotificationService:(id)arg7 applicationLauncher:(id)arg8 attachmentsService:(id)arg9 locationMonitor:(id)arg10 topicRepository:(id)arg11 localizationService:(id)arg12;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

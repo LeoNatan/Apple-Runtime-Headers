@@ -8,33 +8,53 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOTransitPlaceCard, NSString;
+@class GEOTransitPlaceCard, NSString, PBDataReader;
 
 @interface GEOPlaceActionDetails : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    NSString *_actionUrl;
     unsigned long long _animationID;
     unsigned long long _businessID;
+    NSString *_destinationApp;
+    NSString *_photoId;
     long long _placeID;
+    NSString *_richProviderId;
     double _searchResponseRelativeTimestamp;
     unsigned long long _targetID;
-    NSString *_actionUrl;
-    NSString *_destinationApp;
-    int _localSearchProviderID;
-    NSString *_photoId;
-    int _resultIndex;
-    NSString *_richProviderId;
     GEOTransitPlaceCard *_transitPlaceCard;
+    int _localSearchProviderID;
+    int _resultIndex;
     struct {
-        unsigned int animationID:1;
-        unsigned int businessID:1;
-        unsigned int placeID:1;
-        unsigned int searchResponseRelativeTimestamp:1;
-        unsigned int targetID:1;
-        unsigned int localSearchProviderID:1;
-        unsigned int resultIndex:1;
-    } _has;
+        unsigned int has_animationID:1;
+        unsigned int has_businessID:1;
+        unsigned int has_placeID:1;
+        unsigned int has_searchResponseRelativeTimestamp:1;
+        unsigned int has_targetID:1;
+        unsigned int has_localSearchProviderID:1;
+        unsigned int has_resultIndex:1;
+        unsigned int read_actionUrl:1;
+        unsigned int read_destinationApp:1;
+        unsigned int read_photoId:1;
+        unsigned int read_richProviderId:1;
+        unsigned int read_transitPlaceCard:1;
+        unsigned int wrote_actionUrl:1;
+        unsigned int wrote_animationID:1;
+        unsigned int wrote_businessID:1;
+        unsigned int wrote_destinationApp:1;
+        unsigned int wrote_photoId:1;
+        unsigned int wrote_placeID:1;
+        unsigned int wrote_richProviderId:1;
+        unsigned int wrote_searchResponseRelativeTimestamp:1;
+        unsigned int wrote_targetID:1;
+        unsigned int wrote_transitPlaceCard:1;
+        unsigned int wrote_localSearchProviderID:1;
+        unsigned int wrote_resultIndex:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)actionDetailsWithDetails:(id)arg1 timestamp:(double)arg2;
 + (id)actionDetailsWithMapItem:(id)arg1 childPlace:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitDepartureSequence:(id)arg8 transitIncident:(id)arg9;
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4 transitCardCategory:(int)arg5 transitSystem:(id)arg6 transitDepartureSequence:(id)arg7 transitIncident:(id)arg8;
@@ -42,17 +62,6 @@
 + (id)actionDetailsWithChildPlace:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
 + (id)actionDetailsWithTargetID:(unsigned long long)arg1;
-@property(retain, nonatomic) NSString *destinationApp; // @synthesize destinationApp=_destinationApp;
-@property(retain, nonatomic) NSString *richProviderId; // @synthesize richProviderId=_richProviderId;
-@property(retain, nonatomic) GEOTransitPlaceCard *transitPlaceCard; // @synthesize transitPlaceCard=_transitPlaceCard;
-@property(retain, nonatomic) NSString *actionUrl; // @synthesize actionUrl=_actionUrl;
-@property(retain, nonatomic) NSString *photoId; // @synthesize photoId=_photoId;
-@property(nonatomic) unsigned long long targetID; // @synthesize targetID=_targetID;
-@property(nonatomic) unsigned long long animationID; // @synthesize animationID=_animationID;
-@property(nonatomic) double searchResponseRelativeTimestamp; // @synthesize searchResponseRelativeTimestamp=_searchResponseRelativeTimestamp;
-@property(nonatomic) int localSearchProviderID; // @synthesize localSearchProviderID=_localSearchProviderID;
-@property(nonatomic) long long placeID; // @synthesize placeID=_placeID;
-@property(nonatomic) unsigned long long businessID; // @synthesize businessID=_businessID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -61,21 +70,38 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *destinationApp;
 @property(readonly, nonatomic) _Bool hasDestinationApp;
+- (void)_readDestinationApp;
+@property(retain, nonatomic) NSString *richProviderId;
 @property(readonly, nonatomic) _Bool hasRichProviderId;
+- (void)_readRichProviderId;
+@property(retain, nonatomic) GEOTransitPlaceCard *transitPlaceCard;
 @property(readonly, nonatomic) _Bool hasTransitPlaceCard;
+- (void)_readTransitPlaceCard;
+@property(retain, nonatomic) NSString *actionUrl;
 @property(readonly, nonatomic) _Bool hasActionUrl;
+- (void)_readActionUrl;
+@property(retain, nonatomic) NSString *photoId;
 @property(readonly, nonatomic) _Bool hasPhotoId;
+- (void)_readPhotoId;
 @property(nonatomic) _Bool hasTargetID;
+@property(nonatomic) unsigned long long targetID;
 @property(nonatomic) _Bool hasAnimationID;
+@property(nonatomic) unsigned long long animationID;
 @property(nonatomic) _Bool hasResultIndex;
-@property(nonatomic) int resultIndex; // @synthesize resultIndex=_resultIndex;
+@property(nonatomic) int resultIndex;
 @property(nonatomic) _Bool hasSearchResponseRelativeTimestamp;
+@property(nonatomic) double searchResponseRelativeTimestamp;
 @property(nonatomic) _Bool hasLocalSearchProviderID;
+@property(nonatomic) int localSearchProviderID;
 @property(nonatomic) _Bool hasPlaceID;
+@property(nonatomic) long long placeID;
 @property(nonatomic) _Bool hasBusinessID;
+@property(nonatomic) unsigned long long businessID;
 - (id)initWithMapItem:(id)arg1 childPlace:(id)arg2 relativeTimestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitDepartureSequence:(id)arg8 transitIncident:(id)arg9;
 - (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3 targetID:(unsigned long long)arg4;
 - (id)initWithMapItem:(id)arg1 relativeTimestamp:(double)arg2 resultIndex:(int)arg3;

@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)isFlipped;
-- (BOOL)_findNewFontsForCells:(id)arg1 inOutFonts:(id)arg2;
+- (id)_findNewFontsForCells:(id)arg1 baseFont:(id)arg2 fallbackType:(long long)arg3;
 - (void)_startFontFallbackTask:(id)arg1;
 - (struct CGPoint)_drawingPosOfGlyph:(unsigned short)arg1 inFrame:(struct CGRect)arg2 font:(id)arg3 newFontSize:(double *)arg4;
 - (void)_drawCells:(id)arg1;

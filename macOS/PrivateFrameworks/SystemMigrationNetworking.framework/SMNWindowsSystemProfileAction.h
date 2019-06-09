@@ -6,22 +6,15 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class NSDictionary;
-
 @interface SMNWindowsSystemProfileAction : SMNAction
 {
-    NSDictionary *_profileDictionary;
 }
 
 + (int)actionID;
 + (id)actionWithPayload:(id)arg1;
-@property(retain) NSDictionary *profileDictionary; // @synthesize profileDictionary=_profileDictionary;
-- (void).cxx_destruct;
 - (id)description;
 - (BOOL)success;
-- (id)result;
 - (BOOL)expectsAResult;
-- (BOOL)setResultFromData:(id)arg1;
 - (id)requestPayload;
 - (id)initWithProfile:(id)arg1;
 

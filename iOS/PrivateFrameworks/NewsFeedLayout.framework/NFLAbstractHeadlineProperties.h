@@ -17,9 +17,8 @@
 - (id)bylineFontWithTemplate:(id)arg1;
 - (id)excerptFontWithTemplate:(id)arg1;
 - (id)titleFontWithTemplate:(id)arg1;
-- (double)bylineLineHeight;
-- (double)excerptLineHeightWithTemplate:(id)arg1;
-- (double)titleLineHeightWithTemplate:(id)arg1;
+- (double)excerptLineHeightWithTemplate:(id)arg1 font:(id)arg2;
+- (double)titleLineHeightWithTemplate:(id)arg1 font:(id)arg2;
 - (double)_bylineFontSize;
 - (double)_excerptFontSizeWithTemplate:(id)arg1;
 - (double)_titleFontSizeWithTemplate:(id)arg1;

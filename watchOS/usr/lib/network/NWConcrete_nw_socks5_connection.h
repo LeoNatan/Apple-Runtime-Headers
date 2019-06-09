@@ -35,6 +35,8 @@ __attribute__((visibility("hidden")))
     unsigned int sc_in_connection_failed_or_sent_write_close:1;
     unsigned int sc_out_disable_proxy:1;
     unsigned int sc_sent_reply:1;
+    unsigned int sc_has_read_from_in_connection:1;
+    unsigned int sc_out_udp:1;
     unsigned long long sc_out_connection_bytes_read;
     unsigned long long sc_out_connection_bytes_written;
     unsigned long long sc_in_connection_bytes_read;

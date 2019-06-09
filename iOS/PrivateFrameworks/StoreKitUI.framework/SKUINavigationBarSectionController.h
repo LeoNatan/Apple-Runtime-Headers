@@ -10,6 +10,7 @@
 
 @class NSString, SKUINavigationBarContext, SKUIViewElementLayoutContext, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUINavigationBarSectionController : NSObject <SKUIArtworkRequestDelegate>
 {
     SKUINavigationBarContext *_navigationBarContext;

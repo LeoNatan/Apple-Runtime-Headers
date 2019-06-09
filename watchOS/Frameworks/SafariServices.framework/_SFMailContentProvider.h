@@ -17,9 +17,6 @@
 - (void).cxx_destruct;
 - (void)getMailComposeViewControllerWithMailToURL:(id)arg1 contentURL:(id)arg2 preferredContentType:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)prepareMailComposeViewController:(id)arg1 withMailToURL:(id)arg2 contentURL:(id)arg3 preferredContentType:(int)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (int)_bestContentTypeForPreferredContentType:(int)arg1;
-- (id)_preferentiallyOrderedAvailableContentTypes;
-- (id)_preferentiallyOrderedContentTypes;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPArchiveRecordsRequest, CKDPAssetUploadTokenRetrieveRequest, CKDPBundlesForContainerRequest, CKDPCodeFunctionInvokeRequest, CKDPDeleteCommentRequest, CKDPDeleteContainerRequest, CKDPFetchArchivedRecordsRequest, CKDPGetCommentRequest, CKDPGetCommentsRequest, CKDPGetLikesRequest, CKDPLikeRequest, CKDPMescalCertificateRequest, CKDPMescalSessionInfoRequest, CKDPMescalSignatureRequest, CKDPNotificationMarkReadRequest, CKDPNotificationSyncRequest, CKDPOperation, CKDPPostCommentRequest, CKDPPulseRequest, CKDPQueryRetrieveRequest, CKDPRecordDeleteRequest, CKDPRecordResolveTokenRequest, CKDPRecordRetrieveAncestorsRequest, CKDPRecordRetrieveChangesRequest, CKDPRecordRetrieveRequest, CKDPRecordRetrieveVersionsRequest, CKDPRecordSaveRequest, CKDPRequestOperationHeader, CKDPSetBadgeCountRequest, CKDPShareAcceptRequest, CKDPShareDeleteRequest, CKDPShareRetrieveRequest, CKDPShareSaveRequest, CKDPShareTokenDeleteRequest, CKDPShareTokenRetrieveRequest, CKDPShareTokenSaveRequest, CKDPShareVettingInitiateRequest, CKDPSubscriptionCreateRequest, CKDPSubscriptionDeleteRequest, CKDPSubscriptionRetrieveRequest, CKDPTokenRegistrationRequest, CKDPTokenUnregistrationRequest, CKDPUnlikeRequest, CKDPUserAvailableQuotaRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPUserPrivacySettingsResetRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPUserQueryRequest, CKDPUserRetrieveRequest, CKDPWebAuthTokenRetrieveRequest, CKDPZoneDeleteRequest, CKDPZoneRetrieveChangesRequest, CKDPZoneRetrieveRequest, CKDPZoneSaveRequest;
+@class CKDPArchiveRecordsRequest, CKDPAssetUploadTokenRetrieveRequest, CKDPBundlesForContainerRequest, CKDPCodeFunctionInvokeRequest, CKDPDeleteCommentRequest, CKDPDeleteContainerRequest, CKDPFetchArchivedRecordsRequest, CKDPGetCommentRequest, CKDPGetCommentsRequest, CKDPGetLikesRequest, CKDPLikeRequest, CKDPMarkAssetBrokenRequest, CKDPMescalCertificateRequest, CKDPMescalSessionInfoRequest, CKDPMescalSignatureRequest, CKDPNotificationMarkReadRequest, CKDPNotificationSyncRequest, CKDPOperation, CKDPPostCommentRequest, CKDPPulseRequest, CKDPQueryRetrieveRequest, CKDPRecordDeleteRequest, CKDPRecordResolveTokenRequest, CKDPRecordRetrieveAncestorsRequest, CKDPRecordRetrieveChangesRequest, CKDPRecordRetrieveRequest, CKDPRecordRetrieveVersionsRequest, CKDPRecordSaveRequest, CKDPRequestOperationHeader, CKDPSetBadgeCountRequest, CKDPShareAcceptRequest, CKDPShareDeleteRequest, CKDPShareRetrieveRequest, CKDPShareSaveRequest, CKDPShareTokenDeleteRequest, CKDPShareTokenRetrieveRequest, CKDPShareTokenSaveRequest, CKDPShareVettingInitiateRequest, CKDPSubscriptionCreateRequest, CKDPSubscriptionDeleteRequest, CKDPSubscriptionRetrieveRequest, CKDPTokenRegistrationRequest, CKDPTokenUnregistrationRequest, CKDPUnlikeRequest, CKDPUpdateMissingAssetStatusRequest, CKDPUserAvailableQuotaRequest, CKDPUserPrivacySettingsBatchLookupRequest, CKDPUserPrivacySettingsResetRequest, CKDPUserPrivacySettingsRetrieveRequest, CKDPUserPrivacySettingsUpdateRequest, CKDPUserQueryRequest, CKDPUserRetrieveRequest, CKDPWebAuthTokenRetrieveRequest, CKDPZoneDeleteRequest, CKDPZoneRetrieveChangesRequest, CKDPZoneRetrieveRequest, CKDPZoneSaveRequest;
 
 @interface CKDPRequestOperation : PBCodable <NSCopying>
 {
@@ -24,6 +24,7 @@
     CKDPGetLikesRequest *_getLikesRequest;
     CKDPRequestOperationHeader *_header;
     CKDPLikeRequest *_likeRequest;
+    CKDPMarkAssetBrokenRequest *_markAssetBrokenRequest;
     CKDPMescalCertificateRequest *_mescalCertificateRequest;
     CKDPMescalSessionInfoRequest *_mescalSessionInfoRequest;
     CKDPMescalSignatureRequest *_mescalSignatureRequest;
@@ -55,6 +56,7 @@
     CKDPTokenRegistrationRequest *_tokenRegistrationRequest;
     CKDPTokenUnregistrationRequest *_tokenUnregistrationRequest;
     CKDPUnlikeRequest *_unlikeRequest;
+    CKDPUpdateMissingAssetStatusRequest *_updateMissingAssetStatusRequest;
     CKDPUserAvailableQuotaRequest *_userAvailableQuotaRequest;
     CKDPUserPrivacySettingsBatchLookupRequest *_userPrivacySettingsBatchLookupRequest;
     CKDPUserPrivacySettingsResetRequest *_userPrivacySettingsResetRequest;
@@ -137,6 +139,8 @@
 @property(readonly, nonatomic) BOOL hasBundlesForContainerRequest;
 @property(retain, nonatomic) CKDPWebAuthTokenRetrieveRequest *webAuthTokenRetrieveRequest;
 @property(readonly, nonatomic) BOOL hasWebAuthTokenRetrieveRequest;
+@property(retain, nonatomic) CKDPUpdateMissingAssetStatusRequest *updateMissingAssetStatusRequest;
+@property(readonly, nonatomic) BOOL hasUpdateMissingAssetStatusRequest;
 @property(retain, nonatomic) CKDPCodeFunctionInvokeRequest *functionInvokeRequest;
 @property(readonly, nonatomic) BOOL hasFunctionInvokeRequest;
 @property(retain, nonatomic) CKDPPostCommentRequest *postCommentRequest;
@@ -163,6 +167,8 @@
 @property(readonly, nonatomic) BOOL hasSubscriptionDeleteRequest;
 @property(retain, nonatomic) CKDPArchiveRecordsRequest *archiveRecordsRequest;
 @property(readonly, nonatomic) BOOL hasArchiveRecordsRequest;
+@property(retain, nonatomic) CKDPMarkAssetBrokenRequest *markAssetBrokenRequest;
+@property(readonly, nonatomic) BOOL hasMarkAssetBrokenRequest;
 @property(retain, nonatomic) CKDPUserQueryRequest *userQueryRequest;
 @property(readonly, nonatomic) BOOL hasUserQueryRequest;
 @property(retain, nonatomic) CKDPUserPrivacySettingsUpdateRequest *userPrivacySettingsUpdateRequest;

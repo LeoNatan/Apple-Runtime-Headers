@@ -6,30 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, PLRevGeoPlaceAnnotation;
+#import <PhotoLibraryServices/NSSecureCoding-Protocol.h>
 
-@interface PLRevGeoPlace : NSObject
+@class NSDictionary;
+
+@interface PLRevGeoPlace : NSObject <NSSecureCoding>
 {
-    NSMutableArray *_placeTypeInfoMap[15];
-    PLRevGeoPlaceAnnotation *_placeAnnotation;
-    _Bool _isHome;
+    NSDictionary *_placeInfosForOrderType;
 }
 
-+ (CDUnknownBlockType)sortedAdditionalPlaceInfoComparator;
-@property(nonatomic) _Bool isHome; // @synthesize isHome=_isHome;
-- (unsigned long long)_dominantOrderTypeForPlaceType:(int)arg1 lastOrderType:(unsigned long long)arg2;
-- (id)description;
++ (unsigned long long)_dominantOrderTypeForPlaceType:(id)arg1 lastOrderType:(unsigned long long)arg2;
++ (_Bool)supportsSecureCoding;
++ (id)placeWithMapItem:(id)arg1 placeAnnotation:(id)arg2;
++ (id)_newFilterSortedPlaceInfos:(id)arg1 usingPlaceAnnotation:(id)arg2 outFoundOrderType:(unsigned long long *)arg3 outPreviousOrderType:(unsigned long long *)arg4;
+@property(readonly, nonatomic) NSDictionary *placeInfosForOrderType; // @synthesize placeInfosForOrderType=_placeInfosForOrderType;
+- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)bestPlaceInfoForOrderType:(unsigned long long)arg1;
-- (id)placeInfosForOrderType:(unsigned long long)arg1;
-- (void)_removePlacesInPlaceInfos:(id)arg1 fromOrderType:(unsigned long long)arg2;
-- (void)_addPlaceName:(id)arg1 placeInfo:(id)arg2 forOrderType:(unsigned long long)arg3;
-- (void)_mergeGEOMapItem:(id)arg1;
-- (id)_newFilterSortedPlaceInfos:(id)arg1 usingPlaceAnnotation:(id)arg2 outFoundOrderType:(unsigned long long *)arg3 outPreviousOrderType:(unsigned long long *)arg4;
-- (id)_placeInfosForOrderType:(unsigned long long)arg1 createIfNeeded:(_Bool)arg2;
-- (id)minimumAreaForOrderType:(unsigned long long)arg1 name:(id)arg2;
-- (id)initWithGEOMapItem:(id)arg1 placeAnnotationData:(id)arg2;
-- (void)dealloc;
-- (id)init;
+- (id)initWithPlaceInfosForOrderType:(id)arg1;
 
 @end
 

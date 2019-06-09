@@ -8,28 +8,34 @@
 
 #import <MediaPlayer/MPSectionedIdentifierListEnumerationTrackingEntry-Protocol.h>
 
-@class MPSectionedIdentifierListItemEntry, NSMutableDictionary, NSString;
+@class MPSectionedIdentifierListItemEntry, MPSectionedIdentifierListTailEntry, NSMutableDictionary, NSString;
 @protocol MPSectionedIdentifierListDataSource;
 
 @interface MPSectionedIdentifierListHeadEntry : MPSectionedIdentifierListEntry <MPSectionedIdentifierListEnumerationTrackingEntry>
 {
+    _Bool _shuffledHead;
     NSMutableDictionary *_identifiersItemEntryMap;
+    MPSectionedIdentifierListTailEntry *_tailEntry;
     MPSectionedIdentifierListItemEntry *_lastItemEntry;
     id <MPSectionedIdentifierListDataSource> _dataSource;
 }
 
 + (id)headEntryWithSectionIdentifier:(id)arg1;
+@property(nonatomic, getter=isShuffledHead) _Bool shuffledHead; // @synthesize shuffledHead=_shuffledHead;
 @property(retain, nonatomic) id <MPSectionedIdentifierListDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) MPSectionedIdentifierListItemEntry *lastItemEntry; // @synthesize lastItemEntry=_lastItemEntry;
+@property(retain, nonatomic) MPSectionedIdentifierListTailEntry *tailEntry; // @synthesize tailEntry=_tailEntry;
 @property(readonly, nonatomic) NSMutableDictionary *identifiersItemEntryMap; // @synthesize identifiersItemEntryMap=_identifiersItemEntryMap;
 - (void).cxx_destruct;
+- (void)setBranchDepth:(int)arg1;
+- (id)nextEntries;
 @property(readonly, nonatomic) int entryType;
+@property(readonly, copy) NSString *description;
 - (id)initWithPositionKey:(id)arg1 sectionIdentifier:(id)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) int branchDepth;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) NSString *sectionIdentifier;
 @property(readonly) Class superclass;

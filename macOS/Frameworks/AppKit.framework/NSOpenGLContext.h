@@ -16,9 +16,9 @@
     struct _CGLContextObject *_CGLContext;
 }
 
++ (void)clearCurrentContext;
 + (void)setCurrentContext:(id)arg1;
 + (id)currentContext;
-+ (void)clearCurrentContext;
 + (void)initialize;
 + (id)openGLContextWithCGLContextObj:(struct _CGLContextObject *)arg1;
 - (void).cxx_destruct;

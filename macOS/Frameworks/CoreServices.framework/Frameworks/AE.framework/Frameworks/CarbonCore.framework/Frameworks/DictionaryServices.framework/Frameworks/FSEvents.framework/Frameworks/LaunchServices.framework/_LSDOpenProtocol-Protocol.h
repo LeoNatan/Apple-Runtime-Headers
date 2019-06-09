@@ -8,7 +8,7 @@
 
 @protocol _LSDOpenProtocol
 - (void)getiCloudHostNamesWithCompletionHandler:(void (^)(NSSet *))arg1;
-- (void)getURLOverrideForURL:(NSURL *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
+- (void)getURLOverrideForURL:(NSURL *)arg1 newsOnly:(BOOL)arg2 completionHandler:(void (^)(NSURL *, NSError *))arg3;
 - (void)openUserActivityWithUniqueIdentifier:(NSUUID *)arg1 activityData:(NSData *)arg2 activityType:(NSString *)arg3 bundleIdentifier:(NSString *)arg4 options:(NSDictionary *)arg5 completionHandler:(void (^)(BOOL, NSError *))arg6;
 @end
 

@@ -28,7 +28,7 @@
 - (float)peakPowerForChannel:(unsigned long long)arg1;
 - (void)updateMeters;
 @property(getter=isMeteringEnabled) _Bool meteringEnabled;
-@property id <AVAudioRecorderDelegate> delegate;
+@property __weak id <AVAudioRecorderDelegate> delegate;
 @property(readonly) double deviceCurrentTime;
 @property(readonly) double currentTime;
 - (_Bool)deleteRecording;

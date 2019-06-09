@@ -100,6 +100,8 @@
 @property(copy, nonatomic) NSDate *lastTurnDate; // @dynamic lastTurnDate;
 @property(readonly, retain, nonatomic) NSData *matchData; // @dynamic matchData;
 @property(readonly, retain, nonatomic) NSString *matchID; // @dynamic matchID;
+@property(readonly, nonatomic) long long platform; // @dynamic platform;
+@property(retain, nonatomic) NSString *shortBundleVersion; // @dynamic shortBundleVersion;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) long long turnNumber; // @dynamic turnNumber;
 

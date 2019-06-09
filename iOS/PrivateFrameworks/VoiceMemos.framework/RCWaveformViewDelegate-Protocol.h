@@ -7,8 +7,10 @@
 #import <VoiceMemos/NSObject-Protocol.h>
 
 @class RCWaveformViewController;
+@protocol RCTimeController;
 
 @protocol RCWaveformViewDelegate <NSObject>
+@property(readonly, retain, nonatomic) id <RCTimeController> activeTimeController;
 - (void)waveformViewController:(RCWaveformViewController *)arg1 didChangeToSelectedTimeRange:(CDStruct_73a5d3ca)arg2;
 - (void)waveformViewControllerDidEndEditingSelectedTimeRange:(RCWaveformViewController *)arg1;
 - (void)waveformViewControllerWillBeginEditingSelectedTimeRange:(RCWaveformViewController *)arg1;

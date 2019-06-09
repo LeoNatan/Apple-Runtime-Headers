@@ -21,10 +21,9 @@
 @property(copy) NSError *error; // @synthesize error=_error;
 @property BOOL success; // @synthesize success=_success;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)init;
 
 @end
 

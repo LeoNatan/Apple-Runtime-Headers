@@ -11,6 +11,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface SCTGRL : NSObject <NSCoding, NSCopying>
 {
     id mTitleComponent;

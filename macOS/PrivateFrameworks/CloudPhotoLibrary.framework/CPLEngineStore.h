@@ -9,7 +9,7 @@
 #import <CloudPhotoLibrary/CPLAbstractObject-Protocol.h>
 #import <CloudPhotoLibrary/CPLEngineComponent-Protocol.h>
 
-@class CPLChangeBatch, CPLEngineChangePipe, CPLEngineClientCache, CPLEngineCloudCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineOutgoingResources, CPLEnginePushRepository, CPLEngineQuarantinedRecords, CPLEngineRemappedDeletes, CPLEngineResourceDownloadQueue, CPLEngineResourceStorage, CPLEngineScopeCleanupTasks, CPLEngineScopeStorage, CPLEngineStatusCenter, CPLEngineTransientRepository, CPLPlatformObject, CPLResetTracker, NSArray, NSDate, NSHashTable, NSMutableArray, NSSet, NSString, NSURL;
+@class CPLChangeBatch, CPLEngineChangePipe, CPLEngineClientCache, CPLEngineCloudCache, CPLEngineDerivativesCache, CPLEngineIDMapping, CPLEngineLibrary, CPLEngineOutgoingResources, CPLEnginePushRepository, CPLEngineQuarantinedRecords, CPLEngineRemappedDeletes, CPLEngineResourceDownloadQueue, CPLEngineResourceStorage, CPLEngineScopeCleanupTasks, CPLEngineScopeStorage, CPLEngineStatusCenter, CPLEngineTransientRepository, CPLPlatformObject, CPLResetTracker, NSArray, NSDate, NSHashTable, NSMutableArray, NSSet, NSString, NSURL;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CPLEngineStore : NSObject <CPLAbstractObject, CPLEngineComponent>
@@ -58,6 +58,7 @@
     CPLEngineRemappedDeletes *_remappedDeletes;
     CPLEngineQuarantinedRecords *_quarantinedRecords;
     CPLEngineStatusCenter *_statusCenter;
+    CPLEngineDerivativesCache *_derivativesCache;
     unsigned long long _state;
 }
 
@@ -65,6 +66,7 @@
 + (id)stateDescriptionForState:(unsigned long long)arg1;
 + (id)storageNames;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
+@property(readonly, nonatomic) CPLEngineDerivativesCache *derivativesCache; // @synthesize derivativesCache=_derivativesCache;
 @property(readonly, nonatomic) CPLEngineStatusCenter *statusCenter; // @synthesize statusCenter=_statusCenter;
 @property(readonly, nonatomic) CPLEngineQuarantinedRecords *quarantinedRecords; // @synthesize quarantinedRecords=_quarantinedRecords;
 @property(readonly, nonatomic) CPLEngineRemappedDeletes *remappedDeletes; // @synthesize remappedDeletes=_remappedDeletes;
@@ -93,6 +95,10 @@
 - (void)_setTransactionOnCurrentThread:(id)arg1;
 - (id)_currentTransaction;
 @property(readonly, copy) NSString *description;
+- (void)wipeStoreAtNextOpeningWithReason:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (BOOL)storeDerivativesFilter:(id)arg1 error:(id *)arg2;
+- (id)derivativesFilter;
+- (id)localResourceForCloudResource:(id)arg1 recordClass:(Class *)arg2;
 - (BOOL)setShouldUpdateDisabledFeaturesWithError:(id *)arg1;
 @property(readonly, nonatomic) BOOL shouldUpdateDisabledFeatures;
 @property(readonly, nonatomic) NSArray *disabledFeatures;
@@ -103,6 +109,7 @@
 - (void)dropUnacknowledgedBatch;
 - (void)keepUnacknowledgedBatch:(id)arg1;
 - (BOOL)checkExpectedLibraryVersion:(id)arg1 error:(id *)arg2;
+- (BOOL)hasPendingChangeSessionUpdate;
 - (BOOL)forceApplyPendingChangeSessionUpdateWithError:(id *)arg1;
 - (BOOL)applyPreviousChangeSessionUpdateWithExpectedLibraryVersion:(id)arg1 error:(id *)arg2;
 - (BOOL)beginChangeSession:(id)arg1 withLibraryVersion:(id)arg2 resetTracker:(id)arg3 error:(id *)arg4;
@@ -112,6 +119,7 @@
 - (void)_reallyUnschedulePendingUpdateApply;
 - (void)_reallySchedulePendingUpdateApply;
 - (BOOL)_applyPendingUpdate:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) BOOL shouldGenerateDerivatives;
 @property(readonly, nonatomic) id corruptionInfo;
 @property(readonly) NSDate *libraryCreationDate;
 - (BOOL)isClientInSyncWithClientCache;
@@ -155,6 +163,7 @@
 - (BOOL)_resetCompleteSyncStateWithCause:(id)arg1 scope:(id)arg2 error:(id *)arg3;
 - (BOOL)_resetLocalSyncStateWithCause:(id)arg1 scope:(id)arg2 date:(id)arg3 error:(id *)arg4;
 - (BOOL)_resetGlobalStateWithError:(id *)arg1;
+- (id)_resetEventsJSON;
 - (id)_resetEventsDescriptions;
 @property(readonly, nonatomic) BOOL hasPendingResetSync;
 - (void)noteResetSyncFinished;

@@ -9,17 +9,20 @@
 #import <HomeUI/HUWallpaperPhotoCellDelegate-Protocol.h>
 #import <HomeUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <HomeUI/UIDropInteractionDelegate-Protocol.h>
+#import <HomeUI/UIImagePickerControllerDelegate-Protocol.h>
+#import <HomeUI/UINavigationControllerDelegate-Protocol.h>
 
-@class HFWallpaper, HUWallpaperPhotoCell, NSArray, NSIndexPath, NSMutableDictionary, NSString, UICollectionViewFlowLayout, UIDropInteraction, UIImage;
+@class HFWallpaper, HUWallpaperPhotoCell, NSArray, NSIndexPath, NSMutableDictionary, NSString, UICollectionViewFlowLayout, UIDropInteraction, UIImage, UIImagePickerController;
 @protocol HUWallpaperPickerInlineViewControllerDelegate;
 
-@interface HUWallpaperPickerInlineViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, HUWallpaperPhotoCellDelegate, UIDropInteractionDelegate>
+@interface HUWallpaperPickerInlineViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout, HUWallpaperPhotoCellDelegate, UIDropInteractionDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     NSArray *_namedWallpapers;
     double _preferedHeight;
     UIImage *_originalCustomImage;
     id <HUWallpaperPickerInlineViewControllerDelegate> _delegate;
     NSMutableDictionary *_imageCache;
+    UIImagePickerController *_imagePicker;
     HUWallpaperPhotoCell *_customWallpaperCell;
     UICollectionViewFlowLayout *_flowLayout;
     HFWallpaper *_customWallpaper;
@@ -36,6 +39,7 @@
 @property(retain, nonatomic) HFWallpaper *customWallpaper; // @synthesize customWallpaper=_customWallpaper;
 @property(retain, nonatomic) UICollectionViewFlowLayout *flowLayout; // @synthesize flowLayout=_flowLayout;
 @property(retain, nonatomic) HUWallpaperPhotoCell *customWallpaperCell; // @synthesize customWallpaperCell=_customWallpaperCell;
+@property(retain, nonatomic) UIImagePickerController *imagePicker; // @synthesize imagePicker=_imagePicker;
 @property(retain, nonatomic) NSMutableDictionary *imageCache; // @synthesize imageCache=_imageCache;
 @property(nonatomic) __weak id <HUWallpaperPickerInlineViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) UIImage *originalCustomImage; // @synthesize originalCustomImage=_originalCustomImage;
@@ -47,6 +51,7 @@
 - (id)wallpaperForIndexPath:(id)arg1;
 @property(readonly) HFWallpaper *selectedWallpaper;
 @property(readonly) unsigned long long numberOfWallpapers;
+- (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
 - (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
 - (_Bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;

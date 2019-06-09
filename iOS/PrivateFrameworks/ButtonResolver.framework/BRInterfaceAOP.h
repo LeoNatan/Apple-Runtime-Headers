@@ -26,7 +26,6 @@
 }
 
 + (int)_convertClickState:(unsigned long long)arg1;
-+ (int)_convertAssertion:(unsigned long long)arg1;
 + (int)_convertForceFeel:(unsigned long long)arg1;
 + (id)interface;
 @property(readonly, nonatomic) _Bool fastHaptics; // @synthesize fastHaptics=_fastHaptics;

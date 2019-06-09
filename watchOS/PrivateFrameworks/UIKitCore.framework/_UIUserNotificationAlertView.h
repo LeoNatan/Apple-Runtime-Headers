@@ -11,8 +11,6 @@ __attribute__((visibility("hidden")))
 {
     struct __CFUserNotification *_userNotification;
     struct __CFRunLoopSource *_userNotificationRunLoopSource;
-    _Bool _runsModal;
-    _Bool _runningModal;
     id _strongDelegate;
     id _retainedSelf;
 }
@@ -30,8 +28,6 @@ __attribute__((visibility("hidden")))
 - (id)textFieldAtIndex:(int)arg1;
 - (_Bool)isVisible;
 - (void)show;
-- (void)setRunsModal:(_Bool)arg1;
-- (_Bool)runsModal;
 
 @end
 

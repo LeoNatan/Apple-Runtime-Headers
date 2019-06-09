@@ -16,25 +16,27 @@
 __attribute__((visibility("hidden")))
 @interface SFLGenericList : NSObject <SFLList, SFLOrderedSet, SFLInsertOrderedSet>
 {
-    id _internalList;
-    id _internalItems;
-    id _itemsByIdentifier;
-    id _internalObservers;
-    id _notifyToken;
-    unsigned long long _seed;
-    NSString *_identifier;
-    NSObject<OS_dispatch_queue> *_internalQueue;
     struct os_unfair_lock_s _internalObserverLock;
+    NSString *_identifier;
+    _SFLList *_internalList;
+    id _notifyToken;
+    NSHashTable *_internalObservers;
+    NSArray *_internalItems;
+    NSMutableDictionary *_itemsByIdentifier;
+    NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_group> *_internalInitializeGroup;
 }
 
-@property(copy, nonatomic) NSArray *items; // @synthesize items=_internalItems;
-@property(readonly, retain) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain) NSObject<OS_dispatch_group> *internalInitializeGroup; // @synthesize internalInitializeGroup=_internalInitializeGroup;
+@property(retain) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
+@property(retain) NSMutableDictionary *itemsByIdentifier; // @synthesize itemsByIdentifier=_itemsByIdentifier;
+@property(copy, nonatomic) NSArray *internalItems; // @synthesize internalItems=_internalItems;
+@property(readonly) NSHashTable *internalObservers; // @synthesize internalObservers=_internalObservers;
 @property(retain) id notifyToken; // @synthesize notifyToken=_notifyToken;
 @property(retain) _SFLList *internalList; // @synthesize internalList=_internalList;
-@property(readonly) NSHashTable *observers; // @synthesize observers=_internalObservers;
-@property(retain) NSMutableDictionary *itemsByIdentifier; // @synthesize itemsByIdentifier=_itemsByIdentifier;
+@property(readonly, retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)resolveItemWithIdentifier:(id)arg1 options:(unsigned long long)arg2 relativeToURL:(id)arg3;
 - (void)resolveItemWithIdentifier:(id)arg1 options:(unsigned long long)arg2 relativeToURL:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_notifyObserversListDidChange;
 - (void)_notifyObserverListInitialize:(id)arg1;

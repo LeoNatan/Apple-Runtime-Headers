@@ -22,8 +22,8 @@ __attribute__((visibility("hidden")))
 - (void)stopObservingItem;
 - (void)startObservingItem;
 - (void)setupPlayerWithMediaAsset:(id)arg1;
-- (void)pause;
-- (void)play;
+- (_Bool)pause;
+- (_Bool)play;
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)previewDidAppear:(_Bool)arg1;

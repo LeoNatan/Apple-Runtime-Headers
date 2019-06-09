@@ -34,6 +34,10 @@
 @property(retain) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property __weak DEDBugSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (void)didFinishAllCollections;
+- (void)didCollectAttachmentGroup:(id)arg1;
+- (void)didCancelCollectionOnExtension:(id)arg1;
+- (void)didStartCollectingDiagnosticExtensionWithIdentifier:(id)arg1;
 - (void)localCleanup;
 - (id)flattenDirectories:(id)arg1;
 - (void)finishSession:(id)arg1 withConfiguration:(id)arg2;

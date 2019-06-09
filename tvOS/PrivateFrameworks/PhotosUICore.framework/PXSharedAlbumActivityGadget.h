@@ -75,8 +75,6 @@
 - (long long)oneUpPresentationOrigin:(id)arg1;
 - (id)uniqueGadgetIdentifier;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (_Bool)hasLoadedContentData;
-- (void)loadContentData;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)contentViewDidDisappear;
@@ -86,9 +84,9 @@
 - (id)init;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)hardwareModel;
 + (id)MavRevStringQuery;
 + (void)refreshBUI;
 + (BOOL)isValidString:(id)arg1;
@@ -24,6 +25,7 @@
 + (BOOL)shouldLogForEntryKey:(id)arg1;
 + (id)getWhiteblacklist;
 + (id)hashString:(id)arg1;
++ (BOOL)isUDMDevice;
 + (BOOL)isALSCurveHigherThanDefault;
 + (BOOL)isEduMode;
 + (BOOL)isAppAnalyticsEnabled;
@@ -31,6 +33,7 @@
 + (BOOL)isHeySiriEnabled;
 + (double)defaultBatteryEnergyCapacity;
 + (BOOL)hasBatteryUI;
++ (BOOL)hasBattery;
 + (BOOL)hasGasGauge;
 + (BOOL)gasGaugeEnabled;
 + (id)runningAsUser;
@@ -53,6 +56,7 @@
 + (id)dateFromTimevalSystemTime:(struct timeval)arg1;
 + (id)dateFromTimeval:(struct timeval)arg1;
 + (double)secondsFromMachTime:(unsigned long long)arg1;
++ (double)getMachbaseTimeRatio;
 + (void)postNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 + (void)dispatchSyncWithoutDeadlockOnQueue:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (unsigned long long)dispatchTimeInSeconds:(double)arg1;

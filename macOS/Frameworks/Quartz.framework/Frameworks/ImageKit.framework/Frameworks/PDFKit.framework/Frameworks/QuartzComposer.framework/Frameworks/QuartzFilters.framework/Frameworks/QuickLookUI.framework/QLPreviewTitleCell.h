@@ -9,10 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface QLPreviewTitleCell : NSTextFieldCell
 {
-    unsigned long long _textAlignment;
+    long long _textAlignment;
 }
 
-@property unsigned long long textAlignment; // @synthesize textAlignment=_textAlignment;
+@property long long textAlignment; // @synthesize textAlignment=_textAlignment;
 - (id)_textAttributes;
 
 @end

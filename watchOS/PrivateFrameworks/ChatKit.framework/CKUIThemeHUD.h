@@ -11,7 +11,6 @@
 }
 
 - (id)entryFieldAudioRecordingBalloonColor;
-- (id)entryFieldBackgroundColor;
 - (id)entryFieldTextColor;
 - (id)entryFieldCoverBorderColor;
 - (id)entryFieldCoverFillColor;

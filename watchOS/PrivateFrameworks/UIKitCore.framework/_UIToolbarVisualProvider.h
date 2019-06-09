@@ -6,29 +6,37 @@
 
 #import <objc/NSObject.h>
 
-@class UIToolbar, UIView;
+@class NSString, UIToolbar, UIView;
 
 __attribute__((visibility("hidden")))
 @interface _UIToolbarVisualProvider : NSObject
 {
     UIToolbar *_toolbar;
+    NSString *_backdropGroupName;
     UIView *_customBackgroundView;
     UIView *_currentBackgroundView;
 }
 
+@property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(readonly, nonatomic) UIView *currentBackgroundView; // @synthesize currentBackgroundView=_currentBackgroundView;
 @property(retain, nonatomic) UIView *customBackgroundView; // @synthesize customBackgroundView=_customBackgroundView;
 @property(readonly, nonatomic) UIToolbar *toolbar; // @synthesize toolbar=_toolbar;
 - (void).cxx_destruct;
 - (void)updateArchivedSubviews:(id)arg1;
+@property(nonatomic) int itemDistribution;
 @property(readonly, nonatomic) _Bool toolbarIsSmall;
 - (struct CGSize)defaultSizeForOrientation:(int)arg1;
+- (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
 - (void)customViewChangedForButtonItem:(id)arg1;
 - (void)updateWithItems:(id)arg1 fromOldItems:(id)arg2 animate:(_Bool)arg3;
 - (void)updateItemsForNewFrame:(id)arg1;
 - (void)positionToolbarButtonsAndResetFontScaleAdjustment:(_Bool)arg1;
+- (void)layoutSubviews;
 - (void)updateBarBackgroundSize;
 - (void)updateBarBackground;
+- (void)updateAppearance;
+@property(nonatomic) _Bool useModernAppearance;
+- (void)updateBackgroundGroupName;
 - (void)updateBarForStyle:(int)arg1;
 - (void)drawBackgroundViewInRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect backgroundFrame;

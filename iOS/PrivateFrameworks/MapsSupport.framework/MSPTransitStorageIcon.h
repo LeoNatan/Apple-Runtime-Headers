@@ -18,7 +18,7 @@
     unsigned int _defaultTransitType;
     unsigned int _iconAttributeKey;
     unsigned int _iconAttributeValue;
-    long long _iconType;
+    int _iconType;
     struct {
         unsigned int cartoID:1;
         unsigned int defaultTransitType:1;
@@ -32,7 +32,7 @@
 @property(nonatomic) unsigned int iconAttributeKey; // @synthesize iconAttributeKey=_iconAttributeKey;
 @property(nonatomic) unsigned int defaultTransitType; // @synthesize defaultTransitType=_defaultTransitType;
 @property(nonatomic) unsigned int cartoID; // @synthesize cartoID=_cartoID;
-@property(nonatomic) long long iconType; // @synthesize iconType=_iconType;
+@property(nonatomic) int iconType; // @synthesize iconType=_iconType;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
@@ -48,8 +48,8 @@
 @property(nonatomic) _Bool hasIconAttributeKey;
 @property(nonatomic) _Bool hasDefaultTransitType;
 @property(nonatomic) _Bool hasCartoID;
-- (long long)StringAsIconType:(id)arg1;
-- (id)iconTypeAsString:(long long)arg1;
+- (int)StringAsIconType:(id)arg1;
+- (id)iconTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasIconType;
 - (id)initWithIcon:(id)arg1;
 

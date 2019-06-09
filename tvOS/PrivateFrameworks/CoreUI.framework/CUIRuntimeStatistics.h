@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface CUIRuntimeStatistics : NSObject
 {
-    long long _wasted_size;
-    long long _total_size;
-    long long _shortCircuitImageLookup;
-    long long _total_lookup;
+    // Error parsing type: Aq, name: _wasted_size
+    // Error parsing type: Aq, name: _total_size
+    // Error parsing type: Aq, name: _shortCircuitImageLookup
+    // Error parsing type: Aq, name: _total_lookup
     NSObject<OS_dispatch_queue> *_queue;
     int _notify_token;
 }

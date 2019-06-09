@@ -8,16 +8,24 @@
 
 #import <InputMethodKit/IMKCandidate-Protocol.h>
 
-@class NSString;
+@class IMKDocumentContent, NSString;
 
 @interface IMKCandidate : NSObject <IMKCandidate>
 {
     NSString *_annotation;
     NSString *_text;
+    IMKDocumentContent *_documentContentToReplace;
+    unsigned long long _type;
 }
 
++ (id)candidateWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3 type:(unsigned long long)arg4;
++ (id)candidateWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3;
++ (id)candidateWithText:(id)arg1 annotation:(id)arg2 type:(unsigned long long)arg3;
 + (id)candidateWithText:(id)arg1 annotation:(id)arg2;
++ (id)candidateWithText:(id)arg1 type:(unsigned long long)arg2;
 + (id)candidateWithText:(id)arg1;
+@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(readonly, copy, nonatomic) IMKDocumentContent *documentContentToReplace; // @synthesize documentContentToReplace=_documentContentToReplace;
 @property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(copy, nonatomic) NSString *annotation; // @synthesize annotation=_annotation;
 - (void).cxx_destruct;
@@ -25,7 +33,11 @@
 @property(readonly, nonatomic) NSString *axValueString;
 - (BOOL)isEqual:(id)arg1;
 - (id)stringIdentifier;
+- (id)initWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3 type:(unsigned long long)arg4;
+- (id)initWithText:(id)arg1 annotation:(id)arg2 replacing:(id)arg3;
+- (id)initWithText:(id)arg1 annotation:(id)arg2 type:(unsigned long long)arg3;
 - (id)initWithText:(id)arg1 annotation:(id)arg2;
+- (id)initWithText:(id)arg1 type:(unsigned long long)arg2;
 - (id)initWithText:(id)arg1;
 - (id)init;
 

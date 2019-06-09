@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy, nonatomic) PFCloudKitExporterOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
-- (void)updateSystemFieldsForExportedRecords:(id)arg1 inManagedObjectContext:(id)arg2;
+- (void)updateMetadataForSavedRecords:(id)arg1 deletedRecordIDs:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4;
 - (void)exportOperationFinished:(id)arg1 withSavedRecords:(id)arg2 deletedRecordIDs:(id)arg3 operationError:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)executeOperationsInContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)exportIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;

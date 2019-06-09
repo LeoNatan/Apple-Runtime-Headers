@@ -15,13 +15,12 @@
     BKSTerminationContext *_context;
 }
 
-- (id)_clientQueue_updateEvent;
-- (id)_clientQueue_destroyEvent;
-- (id)_clientQueue_createEvent;
-@property(readonly, copy, nonatomic) BKSTerminationContext *context;
-@property(readonly, copy, nonatomic) NSString *targetBundleIdentifier;
-@property(readonly, nonatomic) unsigned int efficacy;
-- (void)dealloc;
+@property(readonly, copy, nonatomic) BKSTerminationContext *context; // @synthesize context=_context;
+@property(readonly, copy, nonatomic) NSString *targetBundleIdentifier; // @synthesize targetBundleIdentifier=_bundleIdentifier;
+@property(readonly, nonatomic) unsigned int efficacy; // @synthesize efficacy=_efficacy;
+- (void).cxx_destruct;
+- (void)invalidate;
+- (_Bool)acquire;
 - (id)initWithBundleIdentifier:(id)arg1 efficacy:(unsigned int)arg2 name:(id)arg3 context:(id)arg4 withHandler:(CDUnknownBlockType)arg5;
 - (id)initWithBundleIdentifier:(id)arg1 efficacy:(unsigned int)arg2 name:(id)arg3 withHandler:(CDUnknownBlockType)arg4;
 

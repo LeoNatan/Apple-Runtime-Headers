@@ -12,8 +12,10 @@
 {
     PKPass *_pass;
     PKBarcodeStickerView *_barcodeStickerView;
+    struct CGSize _maximumBarcodeSize;
 }
 
+@property(nonatomic) struct CGSize maximumBarcodeSize; // @synthesize maximumBarcodeSize=_maximumBarcodeSize;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

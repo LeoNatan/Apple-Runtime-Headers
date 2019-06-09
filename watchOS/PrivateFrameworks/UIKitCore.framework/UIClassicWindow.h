@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (float)_adjustedWindowLevelFromLevel:(float)arg1;
 - (_Bool)_shouldZoom;
-- (_Bool)_isConstrainedByScreenJail;
 - (void)_updateTransformLayerForClassicPresentation;
 
 @end

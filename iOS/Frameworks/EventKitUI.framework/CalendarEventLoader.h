@@ -58,7 +58,7 @@
 - (void)_eventStoreChanged:(id)arg1;
 - (void)timeZoneChanged;
 - (_Bool)loadIsComplete;
-- (void)setSelectedCalendars:(id)arg1;
+- (_Bool)setSelectedCalendars:(id)arg1;
 - (void)setPreferredReloadStartDate:(id)arg1 endDate:(id)arg2;
 - (void)setComponentForExpandingPadding:(unsigned long long)arg1;
 - (void)setComponentForExpandingRequests:(unsigned long long)arg1;

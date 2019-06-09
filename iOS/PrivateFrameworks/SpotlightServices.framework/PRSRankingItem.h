@@ -8,23 +8,25 @@
 
 #import <SpotlightServices/SSDataCollectible-Protocol.h>
 
-@class NSArray, NSData, NSMapTable, NSMutableArray, NSString, PRSL2FeatureVector, PRSRankingSpanCalculator;
+@class NSArray, NSData, NSMutableArray, NSString, PRSL2FeatureVector, PRSRankingSpanCalculator;
 
 @interface PRSRankingItem : NSObject <SSDataCollectible>
 {
     _Bool _eligibleForDemotion;
     _Bool _needsDemotion;
+    _Bool _matchedQueryTerms;
     _Bool _isPrepared;
     float _rawScore;
     float _feedbackScore;
     float _score;
+    float _withinBundleScore;
     NSString *_identifier;
     NSString *_sectionBundleIdentifier;
     PRSL2FeatureVector *_L2FeatureVector;
     NSData *_serverFeaturesJSON;
     double _mostRecentUsedDate;
     double _closestUpComingDate;
-    NSMapTable *_attributes;
+    // Error parsing type: ^{?=[2Q]TT[0^v]}, name: _attributes
     PRSRankingSpanCalculator *_spanCalculator;
     NSMutableArray *_matchedSenders;
     NSMutableArray *_matchedVipSenders;
@@ -33,16 +35,18 @@
     unsigned long long _importantPropertiesPrefixMatched;
     unsigned long long _importantPropertiesWordMatched;
     unsigned long long _playCount;
-    struct ranking_index_score_t _indexScore;
+    // Error parsing type: T, name: _indexScore
     // Error parsing type: T, name: _inputToModelScore
 }
 
 + (unsigned short)featureFromVirtualIdx:(unsigned long long)arg1;
 + (id)rankingDescriptorForBundleFeature:(unsigned long long)arg1;
 + (id)deviceClass;
++ (int *)requiredContactAttributesIndexes;
 + (id)requiredContactAttributes;
 + (id)requiredMailAttributes;
 + (id)requiredOtherAttributes;
++ (int *)requiredTextFeatureAttributesIndexes;
 + (id)requiredTextFeatureAttributes;
 + (id)requiredAttributes;
 + (void)initialize;
@@ -58,21 +62,27 @@
 // Property attributes: TT,N,V_inputToModelScore
 
 @property(retain, nonatomic) PRSRankingSpanCalculator *spanCalculator; // @synthesize spanCalculator=_spanCalculator;
-@property(nonatomic) struct ranking_index_score_t indexScore; // @synthesize indexScore=_indexScore;
-@property(retain, nonatomic) NSMapTable *attributes; // @synthesize attributes=_attributes;
+// Error parsing type for property indexScore:
+// Property attributes: TT,N,V_indexScore
+
+// Error parsing type for property attributes:
+// Property attributes: T^{?=[2Q]TT[0^v]},N,V_attributes
+
 @property(nonatomic) double closestUpComingDate; // @synthesize closestUpComingDate=_closestUpComingDate;
 @property(nonatomic) double mostRecentUsedDate; // @synthesize mostRecentUsedDate=_mostRecentUsedDate;
+@property(nonatomic) _Bool matchedQueryTerms; // @synthesize matchedQueryTerms=_matchedQueryTerms;
 @property(nonatomic) _Bool needsDemotion; // @synthesize needsDemotion=_needsDemotion;
 @property(nonatomic) _Bool eligibleForDemotion; // @synthesize eligibleForDemotion=_eligibleForDemotion;
 @property(retain, nonatomic) NSData *serverFeaturesJSON; // @synthesize serverFeaturesJSON=_serverFeaturesJSON;
 @property(retain, nonatomic) PRSL2FeatureVector *L2FeatureVector; // @synthesize L2FeatureVector=_L2FeatureVector;
 @property(retain, nonatomic) NSString *sectionBundleIdentifier; // @synthesize sectionBundleIdentifier=_sectionBundleIdentifier;
+@property(nonatomic) float withinBundleScore; // @synthesize withinBundleScore=_withinBundleScore;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(nonatomic) float feedbackScore; // @synthesize feedbackScore=_feedbackScore;
 @property(nonatomic) float rawScore; // @synthesize rawScore=_rawScore;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (long long)passesRecencyTest;
+- (long long)passesRecencyTestWithCurrentTime:(double)arg1;
 - (_Bool)serializeToJSON:(void *)arg1 valuesOnly:(_Bool)arg2;
 - (id)dataCollectionBundle;
 @property(readonly, copy) NSString *description;
@@ -83,20 +93,20 @@
 - (id)interestingDate;
 - (id)dedupeIdentifier;
 - (void)populateTextFeatureValuesForProperty:(id)arg1 updatingBundleFeatureValues:(float (*)[0])arg2 propertyIndex:(unsigned long long)arg3 withEvaluator:(id)arg4 withContext:(struct prs_feature_population_ctx_t *)arg5 featureScoreInfo:(struct PRSL2FeatureScoreInfo *)arg6 propertyCanFuzzyMatch:(_Bool)arg7 keyboardLanguage:(id)arg8 isCJK:(_Bool)arg9;
-- (void)populateFeaturesWithEvaluator:(id)arg1 updatingBundleFeatures:(float *)arg2 withContext:(struct prs_feature_population_ctx_t *)arg3 keyboardLanguage:(id)arg4 isCJK:(_Bool)arg5;
+- (void)populateFeaturesWithEvaluator:(id)arg1 updatingBundleFeatures:(float *)arg2 withContext:(struct prs_feature_population_ctx_t *)arg3 keyboardLanguage:(id)arg4 isCJK:(_Bool)arg5 currentTime:(double)arg6;
 - (void)populateOtherFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
 - (void)inferDateBinsFromDates:(id)arg1 intoBins:(int *)arg2;
 - (void)populateMailFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
-- (void)populateBundleSpecificFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
+- (void)populateBundleSpecificFeatures:(struct PRSL2FeatureScoreInfo *)arg1 currentTime:(double)arg2;
 - (void)populateCrossAttributeDerivedFeaturesWithContext:(struct prs_feature_population_ctx_t *)arg1 featureScoreInfo:(struct PRSL2FeatureScoreInfo *)arg2;
 - (void)updateBundleFeatures:(float *)arg1 withArrValues:(float (*)[0])arg2 featureScoreInfo:(struct PRSL2FeatureScoreInfo *)arg3;
 - (void)updateAccumulatedBundleFeatures:(float *)arg1 values:(float *)arg2 feature:(unsigned long long)arg3;
 - (void)updateScoreDescriptorBundleFeatures:(float *)arg1 feature:(unsigned long long)arg2;
 - (void)updateNumScoreDescriptorBundleFeatures:(float *)arg1 feature:(unsigned long long)arg2 featureScoreInfo:(struct PRSL2FeatureScoreInfo *)arg3;
-- (void)populateContactFeatures:(struct PRSL2FeatureScoreInfo *)arg1;
+- (void)populateContactFeatures:(struct PRSL2FeatureScoreInfo *)arg1 currentTime:(double)arg2;
 - (_Bool)didMatchRankingDescriptor:(id)arg1;
 - (void)dealloc;
-- (id)initWithAttributes:(id)arg1;
+-     // Error parsing type: @24@0:8^{?=[2Q]TT[0^v]}16, name: initWithAttrs:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

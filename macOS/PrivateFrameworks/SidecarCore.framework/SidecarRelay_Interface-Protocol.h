@@ -10,10 +10,15 @@
 
 @protocol SidecarRelay_Interface <SidecarCore_Interface>
 - (void)relayDiagnose:(void (^)(NSData *, NSError *))arg1;
+- (void)relaySession:(long long)arg1 timeSyncWithCompletion:(void (^)(unsigned long long, NSError *))arg2;
+- (void)relaySession:(long long)arg1 closeStream:(NSString *)arg2;
+- (void)relaySession:(long long)arg1 listenStreamType:(long long)arg2 flags:(unsigned long long)arg3 identifier:(NSString *)arg4 processUniqueID:(unsigned long long)arg5 completion:(void (^)(SidecarStream *, NSError *))arg6;
+- (void)relaySession:(long long)arg1 connectStreamType:(long long)arg2 flags:(unsigned long long)arg3 identifier:(NSString *)arg4 processUniqueID:(unsigned long long)arg5 completion:(void (^)(SidecarStream *, NSError *))arg6;
 - (void)relaySession:(long long)arg1 invalidate:(NSError *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)relaySession:(long long)arg1 sendOPACKData:(NSData *)arg2 completion:(void (^)(NSError *))arg3;
-- (void)relaySession:(long long)arg1 serviceIdentifier:(NSString *)arg2 destination:(NSUUID *)arg3 completion:(void (^)(NSError *))arg4;
+- (void)relaySession:(long long)arg1 serviceIdentifier:(NSString *)arg2 destination:(NSUUID *)arg3 transport:(long long)arg4 completion:(void (^)(NSError *))arg5;
 - (void)relayDevicesForServiceIdentifier:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
+- (void)relayRegisterServicePresenter:(void (^)(NSError *))arg1;
 - (void)relayRegisterServiceProvider:(void (^)(NSError *))arg1;
 @end
 

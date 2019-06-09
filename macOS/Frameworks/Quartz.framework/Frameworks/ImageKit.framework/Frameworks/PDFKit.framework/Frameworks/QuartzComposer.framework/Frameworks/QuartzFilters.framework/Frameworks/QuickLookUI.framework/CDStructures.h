@@ -93,13 +93,17 @@ struct _NSRange {
 struct __CFArray;
 
 struct function<void (QLSplineInspectorView *, CGPoint)> {
-    struct type __buf_;
-    struct __base<void (QLSplineInspectorView *, CGPoint)> *__f_;
+    struct __value_func<void (QLSplineInspectorView *, CGPoint)> {
+        struct type __buf_;
+        struct __base<void (QLSplineInspectorView *, CGPoint)> *__f_;
+    } __f_;
 };
 
 struct function<void (QLSplineInspectorView *, CGRect)> {
-    struct type __buf_;
-    struct __base<void (QLSplineInspectorView *, CGRect)> *__f_;
+    struct __value_func<void (QLSplineInspectorView *, CGRect)> {
+        struct type __buf_;
+        struct __base<void (QLSplineInspectorView *, CGRect)> *__f_;
+    } __f_;
 };
 
 struct type {

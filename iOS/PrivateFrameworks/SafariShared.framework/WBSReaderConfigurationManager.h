@@ -12,14 +12,17 @@
 {
     long long _textZoomIndex;
     long long _theme;
+    long long _darkModeTheme;
     NSMutableDictionary *_fontFamilyNameForLanguageTag;
     WBSReaderFontManager *_fontManager;
     _Bool _prefersLargerDefaultFontSize;
     _Bool _javaScriptEnabled;
+    _Bool _darkModeEnabled;
     _Bool _isOLEDDisplay;
 }
 
 @property(nonatomic) _Bool isOLEDDisplay; // @synthesize isOLEDDisplay=_isOLEDDisplay;
+@property(nonatomic) _Bool darkModeEnabled; // @synthesize darkModeEnabled=_darkModeEnabled;
 @property(nonatomic) _Bool javaScriptEnabled; // @synthesize javaScriptEnabled=_javaScriptEnabled;
 - (void).cxx_destruct;
 - (void)_migrateToVersion5IfNecessary;

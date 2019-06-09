@@ -6,24 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class DOCTag, UIFont, UILabel, UIVisualEffectView;
+@class DOCTag, UIFont, UILabel;
 @protocol DOCTagViewDelegate;
 
 @interface DOCTagView : UIView
 {
     DOCTag *_tagValue;
+    double _maxWidth;
     id <DOCTagViewDelegate> _delegate;
     UILabel *_tagNameLabel;
-    UIVisualEffectView *_tagNameLabelWrapper;
 }
 
-@property(readonly, nonatomic) UIVisualEffectView *tagNameLabelWrapper; // @synthesize tagNameLabelWrapper=_tagNameLabelWrapper;
 @property(readonly, nonatomic) UILabel *tagNameLabel; // @synthesize tagNameLabel=_tagNameLabel;
 @property(nonatomic) __weak id <DOCTagViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) DOCTag *tagValue; // @synthesize tagValue=_tagValue;
+@property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
+@property(copy, nonatomic) DOCTag *tagValue; // @synthesize tagValue=_tagValue;
 - (void).cxx_destruct;
 - (_Bool)canBecomeFirstResponder;
 - (id)viewForLastBaselineLayout;
+- (void)updateColors;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
+- (struct CGSize)intrinsicContentSize;
+- (void)layoutSubviews;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 @property(retain, nonatomic) UIFont *font;
 - (void)removeTag:(id)arg1;

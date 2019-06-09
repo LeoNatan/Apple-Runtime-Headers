@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNContactPickerContentDelegate-Protocol.h>
 
-@class CNContact, NSArray, NSPredicate, NSString, UINavigationController;
+@class CNContact, FAFamilyMember, NSArray, NSPredicate, NSString, UINavigationController;
 @protocol CNContactPickerContentViewController, CNContactPickerDelegate;
 
 @interface CNContactPickerViewController : UIViewController <CNContactPickerContentDelegate>
@@ -16,8 +16,10 @@
     _Bool _ignoreViewWillBePresented;
     _Bool _hidesSearchableSources;
     _Bool _onlyRealContacts;
+    _Bool _ignoresParentalRestrictions;
     _Bool _allowsEditing;
     _Bool _allowsCancel;
+    _Bool _allowsDeletion;
     _Bool _hidesPromptInLandscape;
     _Bool _defaultViewControllerVisible;
     _Bool _autocloses;
@@ -28,6 +30,7 @@
     NSPredicate *_predicateForSelectionOfProperty;
     UIViewController<CNContactPickerContentViewController> *_viewController;
     CNContact *_scrollContact;
+    FAFamilyMember *_familyMember;
     long long _mode;
     long long _behavior;
     long long _cardActions;
@@ -42,13 +45,16 @@
 @property(copy, nonatomic) NSString *bannerTitle; // @synthesize bannerTitle=_bannerTitle;
 @property(nonatomic) _Bool hidesPromptInLandscape; // @synthesize hidesPromptInLandscape=_hidesPromptInLandscape;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
+@property(nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;
 @property(nonatomic) _Bool allowsCancel; // @synthesize allowsCancel=_allowsCancel;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
+@property(nonatomic) _Bool ignoresParentalRestrictions; // @synthesize ignoresParentalRestrictions=_ignoresParentalRestrictions;
 @property(nonatomic) _Bool onlyRealContacts; // @synthesize onlyRealContacts=_onlyRealContacts;
 @property(nonatomic) _Bool hidesSearchableSources; // @synthesize hidesSearchableSources=_hidesSearchableSources;
 @property(nonatomic) long long cardActions; // @synthesize cardActions=_cardActions;
 @property(nonatomic) long long behavior; // @synthesize behavior=_behavior;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
+@property(retain, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 @property(retain, nonatomic) CNContact *scrollContact; // @synthesize scrollContact=_scrollContact;
 @property(retain, nonatomic) UIViewController<CNContactPickerContentViewController> *viewController; // @synthesize viewController=_viewController;
 @property(copy, nonatomic) NSPredicate *predicateForSelectionOfProperty; // @synthesize predicateForSelectionOfProperty=_predicateForSelectionOfProperty;

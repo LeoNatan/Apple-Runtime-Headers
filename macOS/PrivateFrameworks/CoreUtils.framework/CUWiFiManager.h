@@ -22,21 +22,25 @@
     BOOL _updating;
     CWWiFiClient *_wifiMacClient;
     NSArray *_trafficPeersCurrent;
+    BOOL _wifiAutoJoinDisabled;
     void *_wifiManager;
     BOOL _wifiManagerSetup;
     void *_wifiDevice;
     BOOL _wifiDeviceSetup;
+    void *_wifiNetworkDisabled;
     CURetrier *_wifiRetrier;
     BOOL _wifiStateMonitorSetup;
+    BOOL _infraDisabledChanged;
     BOOL _trafficPeerChanged;
     BOOL _wakeOnWirelessEnabledChanged;
+    BOOL _infraDisabled;
     BOOL _wakeOnWirelessEnabled;
     unsigned int _wifiFlags;
     int _wifiState;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSString *_label;
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
+    NSString *_label;
     NSArray *_trafficPeers;
     CDUnknownBlockType _wifiStateChangedHandler;
 }
@@ -46,9 +50,10 @@
 @property(readonly, nonatomic) unsigned int wifiFlags; // @synthesize wifiFlags=_wifiFlags;
 @property(nonatomic) BOOL wakeOnWirelessEnabled; // @synthesize wakeOnWirelessEnabled=_wakeOnWirelessEnabled;
 @property(copy, nonatomic) NSArray *trafficPeers; // @synthesize trafficPeers=_trafficPeers;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
-@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(nonatomic) BOOL infraDisabled; // @synthesize infraDisabled=_infraDisabled;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (void)_wifiStateChanged;
@@ -66,6 +71,7 @@
 - (void)_updateWakeOnWireless;
 - (void)_updateTrafficPeersWithService:(unsigned int)arg1;
 - (void)_updateTrafficPeers;
+- (void)_updateInfraDisabled;
 - (void)_update;
 - (void)performUpdate:(CDUnknownBlockType)arg1;
 - (void)_invalidated;

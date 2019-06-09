@@ -6,15 +6,20 @@
 
 #import <StoreJavaScript/FRJSObject.h>
 
-@class CKAccountStore, FRJSAccount, NSArray;
+#import <StoreUI/CKAccountObserver-Protocol.h>
 
-@interface FRJSAppleAccountStore : FRJSObject
+@class CKAccountStore, CKStoreAccount, FRJSAccount, NSArray, NSString;
+
+@interface FRJSAppleAccountStore : FRJSObject <CKAccountObserver>
 {
     CKAccountStore *_accountStore;
+    CKStoreAccount *_primaryStoreAccount;
 }
 
-@property(retain, nonatomic) CKAccountStore *accountStore; // @synthesize accountStore=_accountStore;
+@property(readonly) CKStoreAccount *primaryStoreAccount; // @synthesize primaryStoreAccount=_primaryStoreAccount;
+@property(readonly) CKAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 - (void).cxx_destruct;
+- (void)accountStore:(id)arg1 primaryAccountChanged:(id)arg2;
 - (id)_accountForDSID:(id)arg1;
 - (id)_getAccounts;
 - (id)_getPrimaryAppleAccount;
@@ -24,6 +29,12 @@
 @property(readonly, nonatomic) NSArray *accounts;
 @property(readonly, nonatomic) FRJSAccount *primaryAccount;
 - (id)initWithAccountStore:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -18,18 +18,23 @@
     PXSectionedDataSourceManager *_dataSourceManager;
     PXSelectionSnapshot *_selectionSnapshot;
     PXSectionedDataSource *_dataSource;
-    PXMutableIndexPathSet *__selectedIndexPaths;
+    PXMutableIndexPathSet *_selectedIndexPaths;
+    struct PXSimpleIndexPath _cursorIndexPath;
 }
 
-@property(retain, nonatomic, setter=_setSelectedIndexPaths:) PXMutableIndexPathSet *_selectedIndexPaths; // @synthesize _selectedIndexPaths=__selectedIndexPaths;
+@property(nonatomic, setter=_setCursorIndexPath:) struct PXSimpleIndexPath cursorIndexPath; // @synthesize cursorIndexPath=_cursorIndexPath;
+@property(retain, nonatomic, setter=_setSelectedIndexPaths:) PXMutableIndexPathSet *selectedIndexPaths; // @synthesize selectedIndexPaths=_selectedIndexPaths;
 @property(retain, nonatomic, setter=_setDataSource:) PXSectionedDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic, setter=_setSelectionSnapshot:) PXSelectionSnapshot *selectionSnapshot; // @synthesize selectionSnapshot=_selectionSnapshot;
 @property(readonly, nonatomic) PXSectionedDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;
+- (void)setCursorIndexPath:(struct PXSimpleIndexPath)arg1;
+- (void)setSelectedIndexPath:(struct PXSimpleIndexPath)arg1;
 - (void)setSelectedIndexPaths:(id)arg1;
 - (void)deselectAll;
+- (void)selectAllItems;
 - (void)setSelectedState:(BOOL)arg1 forIndexPathSet:(id)arg2;
 - (void)setSelectedState:(BOOL)arg1 forIndexPath:(struct PXSimpleIndexPath)arg2;
 - (void)_updateSelectionSnapshotIfNeeded;
@@ -42,6 +47,7 @@
 - (id)mutableChangeObject;
 - (id)init;
 - (id)initWithDataSourceManager:(id)arg1;
+- (void)selectNonCopiedAssetsWithImportStatusManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_propagateBackgroundToContents;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (_Bool)_shouldHideWhenScrolling;
 @property(nonatomic, setter=_setShadowAlpha:) float _shadowAlpha;
 - (void)setCenter:(struct CGPoint)arg1;
 - (void)setBounds:(struct CGRect)arg1;

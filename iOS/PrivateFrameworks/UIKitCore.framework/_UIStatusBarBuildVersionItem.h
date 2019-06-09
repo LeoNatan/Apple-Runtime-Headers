@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIStatusBarStringView *buildVersionView; // @synthesize buildVersionView=_buildVersionView;
 - (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
+- (void)_create_buildVersionView;
 - (_Bool)needsUpdate;
 - (_Bool)canEnableDisplayItem:(id)arg1 fromData:(id)arg2;
 

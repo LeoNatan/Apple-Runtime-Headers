@@ -26,6 +26,7 @@
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 + (id)readableTypesForPasteboard:(id)arg1;
 + (BOOL)supportsSecureCoding;
++ (id)filterWithType:(long long)arg1 value:(id)arg2 comparisonType:(long long)arg3;
 + (id)filterWithType:(long long)arg1 value:(id)arg2;
 @property(nonatomic) long long comparisonType; // @synthesize comparisonType=_comparisonType;
 @property(retain, nonatomic) NSString *value; // @synthesize value=_value;
@@ -44,6 +45,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithType:(long long)arg1 value:(id)arg2;
+- (id)initWithType:(long long)arg1 value:(id)arg2 comparisonType:(long long)arg3;
 - (id)init;
 
 // Remaining properties

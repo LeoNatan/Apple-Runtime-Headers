@@ -19,6 +19,7 @@
     NSString *_title;
     int _state;
     double _duration;
+    int _type;
     double _fireTimeInterval;
     NSDate *_fireDate;
     NSDate *_firedDate;
@@ -32,6 +33,7 @@
         unsigned int hasTitle:1;
         unsigned int hasState:1;
         unsigned int hasDuration:1;
+        unsigned int hasType:1;
         unsigned int hasFireTimeInterval:1;
         unsigned int hasFireDate:1;
         unsigned int hasFiredDate:1;
@@ -47,6 +49,7 @@
 - (void)setFiredDate:(id)arg1;
 - (void)setFireDate:(id)arg1;
 - (void)setFireTimeInterval:(double)arg1;
+- (void)setType:(int)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setState:(int)arg1;
 - (void)setTitle:(id)arg1;

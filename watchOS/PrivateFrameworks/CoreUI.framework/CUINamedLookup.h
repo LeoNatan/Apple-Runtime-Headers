@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUIRenditionKey, NSString;
+@class CUIRenditionKey, CUIThemeRendition, NSString;
 
 @interface CUINamedLookup : NSObject
 {
@@ -21,6 +21,7 @@
 @property(nonatomic) unsigned int storageRef; // @synthesize storageRef=_storageRef;
 @property(copy, nonatomic) CUIRenditionKey *key; // @synthesize key=_key;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) int appearanceIdentifier;
 @property(readonly, nonatomic) NSString *appearance;
 @property(readonly, nonatomic) int layoutDirection;
 @property(readonly, nonatomic) int displayGamut;
@@ -30,18 +31,19 @@
 @property(readonly, nonatomic) int sizeClassHorizontal;
 @property(readonly, nonatomic) unsigned int subtype;
 @property(readonly, nonatomic) int idiom;
-- (unsigned int)_distilledInVersion;
+@property(readonly, nonatomic) unsigned int _distilledInVersion;
 - (_Bool)isTintable;
 - (void)setRepresentsOnDemandContent:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool representsOnDemandContent;
-- (id)renditionKey;
-- (id)renditionName;
-- (id)_rendition;
+@property(readonly, nonatomic) CUIRenditionKey *renditionKey;
+@property(readonly, nonatomic) NSString *renditionName;
+@property(readonly, nonatomic) CUIThemeRendition *_rendition;
+@property(readonly, nonatomic) NSString *keySignature;
 - (id)_renditionForSpecificKey:(id)arg1;
 - (void)dealloc;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (_Bool)_cacheRenditionProperties;
+@property(readonly, nonatomic) _Bool _cacheRenditionProperties;
 - (id)initWithName:(id)arg1 usingRenditionKey:(id)arg2 fromTheme:(unsigned int)arg3;
 
 @end

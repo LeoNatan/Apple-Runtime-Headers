@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
     unsigned int mSheetIndex;
 }
 
+- (void).cxx_destruct;
 - (_Bool)loadDelayedNode:(id)arg1;
-- (void)dealloc;
 - (id)initWithSheetIndex:(unsigned int)arg1 state:(id)arg2;
 
 // Remaining properties

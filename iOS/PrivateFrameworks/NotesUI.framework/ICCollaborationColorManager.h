@@ -6,17 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSMutableArray, NSMutableDictionary;
 
 @interface ICCollaborationColorManager : NSObject
 {
     NSMutableDictionary *_userIDToColorsDict;
+    NSMutableArray *_colorUsageCounts;
+    unsigned long long _colorUsageCountMinimum;
 }
 
++ (id)participantColors;
+@property(nonatomic) unsigned long long colorUsageCountMinimum; // @synthesize colorUsageCountMinimum=_colorUsageCountMinimum;
+@property(retain, nonatomic) NSMutableArray *colorUsageCounts; // @synthesize colorUsageCounts=_colorUsageCounts;
 @property(retain, nonatomic) NSMutableDictionary *userIDToColorsDict; // @synthesize userIDToColorsDict=_userIDToColorsDict;
 - (void).cxx_destruct;
 - (id)participantAXDisplayNameForUserID:(id)arg1 forNote:(id)arg2;
-- (id)containerScopedUserRecordName;
+- (id)containerScopedUserRecordNameForAccount:(id)arg1;
 - (id)baseColorValuesForUserID:(id)arg1;
 - (struct UIColor *)highlightColorForUserID:(id)arg1 withPercentage:(double)arg2 forNote:(id)arg3 darkAppearance:(_Bool)arg4;
 - (id)init;

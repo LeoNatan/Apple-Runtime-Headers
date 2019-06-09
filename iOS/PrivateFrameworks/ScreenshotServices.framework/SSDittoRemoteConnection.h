@@ -14,9 +14,13 @@
 }
 
 - (void).cxx_destruct;
+- (void)sendDittoProcessPreheatRequestWithPresentationMode:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)sendDittoProcessDocumentUpdate:(id)arg1;
+- (void)sendDittoProcessMetadataUpdate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendDittoProcessImageIdentifierUpdate:(id)arg1;
 - (void)sendDittoProcessEnvironmentDescription:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)preheatDittoProcess;
+- (void)_sendAction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_sendAction:(id)arg1;
 - (id)init;
 

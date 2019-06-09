@@ -25,7 +25,6 @@
 - (BOOL)isNetworkUp;
 - (id)init;
 - (void)listenForNetworkChanges;
-- (void)finalize;
 - (void)dealloc;
 - (void)_triggerDialForHostname:(id)arg1;
 - (void)_postNetworkChangeNotification:(id)arg1;

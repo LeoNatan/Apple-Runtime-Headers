@@ -36,5 +36,6 @@
 + (id)_cnui_faceTimeVideoURLFutureWithHandle:(id)arg1 contact:(id)arg2;
 + (id)_cnui_faceTimeAudioURLFutureWithHandle:(id)arg1 contact:(id)arg2;
 + (id)_cnui_telephonyURLFutureWithHandle:(id)arg1 contact:(id)arg2;
++ (id)log;
 @end
 

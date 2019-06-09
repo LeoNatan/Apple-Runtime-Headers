@@ -18,6 +18,7 @@
 
 @property(readonly, nonatomic) __weak IKViewElementStyle *style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (id)darkTintColor;
 @property(readonly, nonatomic) TVColor *tintColor;
 @property(readonly, nonatomic) NSString *textStyle;
 @property(readonly, nonatomic) unsigned long long maxTextLines;

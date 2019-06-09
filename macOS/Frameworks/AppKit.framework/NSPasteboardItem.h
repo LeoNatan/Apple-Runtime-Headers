@@ -18,7 +18,6 @@
     unsigned long long _index;
     long long _gen;
     id _auxObject;
-    void *_reserved;
 }
 
 + (id)readableTypesForPasteboard:(id)arg1;

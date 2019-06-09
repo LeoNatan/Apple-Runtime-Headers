@@ -10,6 +10,12 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CSDBLookAsideBufferConfig {
+    int _field1;
+    int _field2;
+    unsigned int :1;
+};
+
 struct CSDBSqliteConnection {
     struct CSDBSqliteDatabase *_field1;
     struct sqlite3 *_field2;
@@ -45,6 +51,7 @@ struct CSDBSqliteDatabase {
     void *_field16;
     struct __CFString *_field17;
     unsigned int _field18;
+    struct CSDBLookAsideBufferConfig _field19;
 };
 
 struct IMDSqlOperation {

@@ -6,30 +6,37 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INHomeFilter, NSArray;
+@class INHomeFilter, NSArray, NSString;
 
-@interface INHomeContent : NSObject <NSCopying, NSSecureCoding>
+@interface INHomeContent : NSObject <INJSONSerializable, NSCopying, NSSecureCoding>
 {
     INHomeFilter *_filter;
     NSArray *_actions;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy) NSArray *actions; // @synthesize actions=_actions;
 @property(readonly, copy) INHomeFilter *filter; // @synthesize filter=_filter;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (id)initWithFilter:(id)arg1 actions:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -21,9 +21,11 @@
     PKPassPersonalization *_personalization;
     NSDictionary *_semantics;
     NSDictionary *_allSemantics;
+    NSString *_businessChatIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *businessChatIdentifier; // @synthesize businessChatIdentifier=_businessChatIdentifier;
 @property(copy, nonatomic) NSDictionary *allSemantics; // @synthesize allSemantics=_allSemantics;
 @property(copy, nonatomic) NSDictionary *semantics; // @synthesize semantics=_semantics;
 @property(copy, nonatomic) PKPassPersonalization *personalization; // @synthesize personalization=_personalization;

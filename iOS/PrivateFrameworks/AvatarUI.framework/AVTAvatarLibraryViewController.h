@@ -32,7 +32,7 @@
 - (void).cxx_destruct;
 - (void)insertItemsAtIndexes:(id)arg1 deleteItemsAtIndexes:(id)arg2 reloadItemsAtIndexes:(id)arg3;
 - (void)dismissController:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)presentUIViewController:(id)arg1;
+- (void)presentUIViewController:(id)arg1 forItem:(id)arg2;
 - (void)presetEditorViewController:(id)arg1;
 - (void)didUpdateLibraryItems:(id)arg1;
 - (void)didEditRecord:(id)arg1;

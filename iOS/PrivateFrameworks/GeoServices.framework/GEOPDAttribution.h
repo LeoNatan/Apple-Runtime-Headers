@@ -8,19 +8,36 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAttribution : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_actionUrlComponent;
     NSMutableArray *_attributionUrls;
     NSString *_externalComponentId;
     NSString *_externalItemId;
     NSString *_vendorId;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_actionUrlComponent:1;
+        unsigned int read_attributionUrls:1;
+        unsigned int read_externalComponentId:1;
+        unsigned int read_externalItemId:1;
+        unsigned int read_vendorId:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_actionUrlComponent:1;
+        unsigned int wrote_attributionUrls:1;
+        unsigned int wrote_externalComponentId:1;
+        unsigned int wrote_externalItemId:1;
+        unsigned int wrote_vendorId:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)attributionUrlType;
 + (id)attributionForAnnotatedItemList:(id)arg1 placeData:(id)arg2;
 + (id)attributionForPlaceDataRestaurantReservationLink:(id)arg1;
@@ -28,12 +45,8 @@ __attribute__((visibility("hidden")))
 + (id)attributionForPlaceDataEntity:(id)arg1;
 + (id)attributionForPlaceDataPhotos:(id)arg1;
 + (id)attributionForPlaceDataReview:(id)arg1;
-@property(retain, nonatomic) NSString *actionUrlComponent; // @synthesize actionUrlComponent=_actionUrlComponent;
-@property(retain, nonatomic) NSMutableArray *attributionUrls; // @synthesize attributionUrls=_attributionUrls;
-@property(retain, nonatomic) NSString *externalComponentId; // @synthesize externalComponentId=_externalComponentId;
-@property(retain, nonatomic) NSString *externalItemId; // @synthesize externalItemId=_externalItemId;
-@property(retain, nonatomic) NSString *vendorId; // @synthesize vendorId=_vendorId;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -42,16 +55,28 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *actionUrlComponent;
 @property(readonly, nonatomic) _Bool hasActionUrlComponent;
+- (void)_readActionUrlComponent;
 - (id)attributionUrlAtIndex:(unsigned long long)arg1;
 - (unsigned long long)attributionUrlsCount;
+- (void)_addNoFlagsAttributionUrl:(id)arg1;
 - (void)addAttributionUrl:(id)arg1;
 - (void)clearAttributionUrls;
+@property(retain, nonatomic) NSMutableArray *attributionUrls;
+- (void)_readAttributionUrls;
+@property(retain, nonatomic) NSString *externalComponentId;
 @property(readonly, nonatomic) _Bool hasExternalComponentId;
+- (void)_readExternalComponentId;
+@property(retain, nonatomic) NSString *externalItemId;
 @property(readonly, nonatomic) _Bool hasExternalItemId;
+- (void)_readExternalItemId;
+@property(retain, nonatomic) NSString *vendorId;
 @property(readonly, nonatomic) _Bool hasVendorId;
+- (void)_readVendorId;
 - (_Bool)_isYelp;
 
 @end

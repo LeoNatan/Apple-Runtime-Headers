@@ -59,9 +59,11 @@ __attribute__((visibility("hidden")))
     NSNumber *inputHueMagCB;
     NSNumber *inputHueMagBM;
     CIFilter *inputLinearSpaceFilter;
+    NSNumber *inputEnableEDRMode;
 }
 
 + (id)customAttributes;
++ (id)supportedRawCameraModels;
 + (id)filterWithCVPixelBuffer:(struct __CVBuffer *)arg1 properties:(id)arg2 options:(id)arg3;
 + (id)filterWithImageURL:(id)arg1 options:(id)arg2;
 + (id)filterWithImageData:(id)arg1 options:(id)arg2;
@@ -128,6 +130,7 @@ __attribute__((visibility("hidden")))
 - (void)setInputBias:(id)arg1;
 - (id)supportedDecoderVersions;
 - (id)supportedSushiModes;
+- (id)defaultInputEnableEDRMode;
 - (id)defaultDecoderVersion;
 - (id)defaultInputEnableVendorLensCorrection;
 - (id)defaultInputMoireAmount;
@@ -136,6 +139,7 @@ __attribute__((visibility("hidden")))
 - (id)defaultInputNoiseReductionContrastAmount;
 - (id)defaultInputColorNoiseReductionAmount;
 - (id)defaultInputLuminanceNoiseReductionAmount;
+- (void)setInputEnableEDRMode:(id)arg1;
 - (void)setInputIgnoreOrientation:(id)arg1;
 - (void)setInputImageOrientation:(id)arg1;
 - (void)setInputDecoderVersion:(id)arg1;

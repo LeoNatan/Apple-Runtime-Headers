@@ -13,13 +13,13 @@
     _Bool _isMutable;
 }
 
+- (void).cxx_destruct;
 - (unsigned int)findIndexForObjectID:(id)arg1 newOrderValue:(long long)arg2 hasOrderValueConflictWithObjectID:(id *)arg3;
 - (id)objectIDs;
 - (id)orderKeys;
 - (_Bool)setOrderValue:(long long)arg1 forObjectID:(id)arg2 atIndex:(unsigned int)arg3;
 - (unsigned int)indexForObjectID:(id)arg1;
 - (id)description;
-- (void)dealloc;
 - (id)initWithObjectIDs:(id)arg1 orderValues:(id)arg2;
 
 @end

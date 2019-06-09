@@ -16,12 +16,10 @@
     GEOPDBrowseCategory *_browseCategory;
     GEOPDAutocompleteEntry *_autocompleteEntry;
     NSArray *_subcategories;
-    NSURL *_mapsURL;
 }
 
 + (BOOL)supportsSecureCoding;
 + (void)sendFeedbackForVisibleCategories:(id)arg1;
-@property(readonly, nonatomic) NSURL *mapsURL; // @synthesize mapsURL=_mapsURL;
 @property(readonly, nonatomic) NSArray *subcategories; // @synthesize subcategories=_subcategories;
 @property(readonly, nonatomic, getter=_autocompleteEntry) GEOPDAutocompleteEntry *autocompleteEntry; // @synthesize autocompleteEntry=_autocompleteEntry;
 - (void).cxx_destruct;
@@ -30,6 +28,7 @@
 @property(readonly, nonatomic) int sortOrder;
 @property(readonly, nonatomic) int displayMode;
 - (id)_browseCategory;
+@property(readonly, nonatomic) NSURL *mapsURL;
 @property(readonly, nonatomic) id <GEOVenueIdentifier> venueIdentifier;
 @property(readonly, nonatomic) GEOFeatureStyleAttributes *styleAttributes;
 @property(readonly, nonatomic, getter=_suggestionEntryMetadata) NSData *suggestionEntryMetadata;

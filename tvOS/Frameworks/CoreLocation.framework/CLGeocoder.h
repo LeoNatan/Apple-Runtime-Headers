@@ -13,6 +13,7 @@
     CLGeocoderInternal *_internal;
 }
 
++ (id)_timeZoneAtLocation:(id)arg1;
 - (void)_notifyError:(id)arg1;
 - (void)_notifyCancel;
 - (void)_notifyNoResult;

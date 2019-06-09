@@ -8,11 +8,12 @@
 
 #import <PepperUICore/PUICTableViewDataSource-Protocol.h>
 #import <PepperUICore/PUICTableViewDelegate-Protocol.h>
+#import <PepperUICore/PUICTextFieldDelegate-Protocol.h>
 
 @class NSArray, NSIndexPath, NSString, PUICStatusBarOccludedAssertion, PUICTableView;
 @protocol PUICActionSheetControllerDelegate;
 
-@interface PUICActionSheetController : PUICActionContentController <PUICTableViewDataSource, PUICTableViewDelegate>
+@interface PUICActionSheetController : PUICActionContentController <PUICTableViewDataSource, PUICTableViewDelegate, PUICTextFieldDelegate>
 {
     PUICStatusBarOccludedAssertion *_statusBarOccludedAssertion;
     _Bool _allowsMultipleSelection;
@@ -32,6 +33,8 @@
 @property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(nonatomic) _Bool allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 - (void).cxx_destruct;
+- (void)textInputValueCancelled:(id)arg1;
+- (void)textField:(id)arg1 textInputValueDidChange:(id)arg2;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

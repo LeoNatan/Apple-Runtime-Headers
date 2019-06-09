@@ -6,76 +6,99 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotoLibraryServices/PLMomentGenerationDataManagement_Private-Protocol.h>
+#import <PhotoLibraryServices/PLHighlightItemModelReader-Protocol.h>
+#import <PhotoLibraryServices/PLMomentGenerationDataManagement-Protocol.h>
 
-@class NSArray, NSDictionary, NSManagedObjectContext, NSString, PLMomentAnalyzer, PLMomentGeneration, PLPhotoLibrary, PLXPCTransaction;
+@class CNContactStore, NSDictionary, NSManagedObjectContext, NSString, PLLibraryServicesManager, PLMomentGeneration, PLPhotoLibrary, PLPhotoLibraryPathManager, PLRoutineService, PLXPCTransaction;
 
-@interface PLMomentGenerationDataManager : NSObject <PLMomentGenerationDataManagement_Private>
+@interface PLMomentGenerationDataManager : NSObject <PLMomentGenerationDataManagement, PLHighlightItemModelReader>
 {
     PLXPCTransaction *_keepAliveTransaction;
     CDUnknownBlockType _reachabilityBlock;
-    void *_addressBook;
+    CNContactStore *_contactStore;
     PLMomentGeneration *_generator;
-    PLMomentAnalyzer *_analyzer;
-    NSArray *_locationsOfInterest;
     NSDictionary *_generationOptions;
     _Bool _observingReachability;
     _Bool _isLightweightMigrationManager;
-    _Bool _simulatesTimeout;
+    PLPhotoLibraryPathManager *_lightWeightMigrationPathManager;
+    PLLibraryServicesManager *_libraryServicesManager;
+    PLRoutineService *_routineManager;
+    _Bool _shouldPerformLightweightValidation;
+    _Bool _previousValidationSucceeded;
+    int _previousValidatedModelVersion;
     NSManagedObjectContext *_managedObjectContext;
     PLPhotoLibrary *_momentGenerationLibrary;
 }
 
 + (_Bool)isManagedObjectContextMomentarilyBlessed:(id)arg1;
-+ (_Bool)isManagerMomentarilyBlessed:(id)arg1;
 + (void)_setManagedObjectContextMomentarilyBlessed:(id)arg1;
 + (void)setManagerMomentarilyBlessed:(id)arg1;
-+ (id)sharedMomentGenerationDataManager;
++ (void)initialize;
 @property(retain, nonatomic) PLPhotoLibrary *momentGenerationLibrary; // @synthesize momentGenerationLibrary=_momentGenerationLibrary;
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
-@property(nonatomic) _Bool simulatesTimeout; // @synthesize simulatesTimeout=_simulatesTimeout;
+@property(nonatomic) _Bool previousValidationSucceeded; // @synthesize previousValidationSucceeded=_previousValidationSucceeded;
+@property(nonatomic) int previousValidatedModelVersion; // @synthesize previousValidatedModelVersion=_previousValidatedModelVersion;
+@property(nonatomic) _Bool shouldPerformLightweightValidation; // @synthesize shouldPerformLightweightValidation=_shouldPerformLightweightValidation;
+- (void).cxx_destruct;
 - (void)runPeriodicMaintenanceTasks:(unsigned int)arg1 withTransaction:(id)arg2;
-- (id)_locationsOfInterest;
 - (id)locationsOfInterest;
-- (_Bool)needsLocationsOfInterestProcessing;
-- (_Bool)hasLocationsOfInterestInformation;
-- (void)invalidateLocationsOfInterest;
+- (_Bool)routineIsAvailable;
+- (void)logRoutineInformation;
 - (id)replayLogPath;
 - (_Bool)wantsMomentReplayLogging;
-- (void)verifyAndRepairOrphanedAssets:(id)arg1;
+- (void)verifyAndRepairOrphanedAssets:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)orphanedAssetIDsWithError:(id *)arg1;
 - (void)enumerateAssetsWithIDs:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)allAssetIDsNeedingLocationShiftWithError:(id *)arg1;
 - (void)invalidateShiftedLocationForAllAssetsInMoments;
 - (id)locationCoordinatesForAssetIDs:(id)arg1;
+- (id)insertNewPhotosHighlight;
 - (id)insertNewMoment;
 - (id)insertNewMomentListForGranularityLevel:(short)arg1;
+- (_Bool)deleteAllMomentListsWithError:(id *)arg1;
+- (_Bool)deleteAllHighlightsWithError:(id *)arg1;
+- (_Bool)deleteAllMomentsWithError:(id *)arg1;
+- (_Bool)_batchDeleteForEntityName:(id)arg1 error:(id *)arg2;
 - (id)allAssetIDsToBeIncludedInMomentsWithError:(id *)arg1;
+- (id)allInvalidAssetsWithError:(id *)arg1;
+- (id)invalidAssetsIgnoringAssetIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)allAssetsToBeIncludedInMomentsWithError:(id *)arg1;
-- (id)allMomentListsWithInvalidReverseLocationDataForLevel:(short)arg1;
+- (id)allMomentLists;
 - (id)allMomentListsForLevel:(short)arg1;
 - (id)allMomentsWithInvalidReverseLocationData;
+- (id)allInvalidMomentIDsWithError:(id *)arg1;
+- (id)allMomentIDsWithError:(id *)arg1;
+- (id)momentsRequiringLocationProcessingWhenFrequentLocationsChangedWithError:(id *)arg1;
+- (id)momentsWithLocationTypeUnprocessedWithError:(id *)arg1;
+- (id)allInvalidMomentsWithError:(id *)arg1;
 - (id)allMomentsWithError:(id *)arg1;
-- (id)findOrCreateYearMomentListForYear:(int)arg1;
-- (id)yearMomentListForYear:(int)arg1 wantsEarliest:(_Bool)arg2;
-- (id)momentListContainingDate:(id)arg1 forLevel:(short)arg2 wantsEarliest:(_Bool)arg3;
+- (id)allPhotosHighlightsWithPredicate:(id)arg1 error:(id *)arg2;
+- (id)allEmptyPhotosHighlightsOfKind:(unsigned short)arg1 error:(id *)arg2;
+- (id)allInvalidPhotosHighlightsOfAllKindsWithError:(id *)arg1;
+- (id)allPhotosHighlightsOfAllKindsWithError:(id *)arg1;
+- (id)allPhotosHighlightsOfKind:(unsigned short)arg1 error:(id *)arg2;
+- (id)yearMomentListForYear:(int)arg1;
+- (id)monthMomentListForMonth:(int)arg1 year:(int)arg2;
 - (id)momentsBetweenDate:(id)arg1 andDate:(id)arg2 sorted:(_Bool)arg3;
 - (id)momentsSinceDate:(id)arg1;
-- (id)momentsWithinDateInterval:(id)arg1;
+- (id)momentsIntersectingDateInterval:(id)arg1;
+- (id)highlightsIntersectingDateInterval:(id)arg1 ofKind:(unsigned short)arg2;
 - (void)_removeKeepAlive;
 - (void)_updateKeepAlive;
 - (id)homeAddressDictionary;
 - (id)_currentHomeAddressDictionary;
-- (id)_addressDictionaryForABRecord:(void *)arg1 identifier:(int)arg2;
-@property(readonly, nonatomic) void *_addressBook;
+@property(readonly, nonatomic) __weak CNContactStore *_contactStore;
 - (_Bool)isNetworkReachable;
 - (void)stopObservingNetworkReachabilityChanges;
 - (void)beginObservingNetworkReachabilityChangesWithBlock:(CDUnknownBlockType)arg1;
 - (void)_networkReachabilityDidChange:(id)arg1;
+- (id)fetchParentHighlightItemsForHighlightItems:(id)arg1;
+- (id)fetchChildHighlightItemsForHighlightItem:(id)arg1;
+- (id)fetchNeighborHighlightItemsForHighlightItems:(id)arg1;
 - (id)momentAnalysisTransactionWithName:(const char *)arg1;
 - (void)invalidateLocationDataForAssetsInMoment:(id)arg1;
 - (void)invalidateLocationDataForAssetsWithOIDs:(id)arg1;
-- (id)generationOptions;
+@property(readonly, nonatomic) NSDictionary *generationOptions;
 - (unsigned int)hardGenerationBatchSizeLimit;
 - (void)pendingChangesUpdated:(unsigned int)arg1;
 - (void)resetOnFailure;
@@ -87,18 +110,11 @@
 - (void)refreshAllObjects;
 - (void)refreshObject:(id)arg1 mergeChanges:(_Bool)arg2;
 - (id)momentsForAssetsWithUniqueIDs:(id)arg1 error:(id *)arg2;
+- (id)momentsWithUniqueIDs:(id)arg1 error:(id *)arg2;
 - (id)momentListWithUniqueID:(id)arg1 forLevel:(short)arg2 error:(id *)arg3;
 - (id)momentWithUniqueID:(id)arg1 error:(id *)arg2;
 - (id)assetsWithUniqueIDs:(id)arg1 error:(id *)arg2;
 - (id)assetWithUniqueID:(id)arg1 error:(id *)arg2;
-- (id)analysisMetadata;
-- (_Bool)saveAnalysisMetadata:(id)arg1;
-- (id)serverVersionInfo;
-- (_Bool)saveServerVersionInfo:(id)arg1;
-- (id)_serverVersionInfoFilePath;
-- (id)_metadataPath;
-- (void)setMomentAnalysisNeeded:(_Bool)arg1;
-- (_Bool)isMomentAnalysisNeeded;
 - (id)deletedObjects;
 - (id)updatedObjects;
 - (id)insertedObjects;
@@ -106,14 +122,13 @@
 - (void)performDataTransaction:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performBlock:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2 priority:(int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)performBlock:(CDUnknownBlockType)arg1 synchronously:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)isMomentsSupportedOnPlatform;
-- (void)setupPhotoLibrary;
-- (id)analyzer;
+- (void)invalidateAllHighlightSubtitles;
 - (id)generator;
 - (void)reloadGenerationOptions;
 - (void)_finalizeInit;
 - (void)dealloc;
-- (id)initWithManagedObjectContextForLightweightMigration:(id)arg1;
+- (id)initWithLibraryServicesManager:(id)arg1;
+- (id)initWithManagedObjectContext:(id)arg1 pathManagerForLightweightMigration:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

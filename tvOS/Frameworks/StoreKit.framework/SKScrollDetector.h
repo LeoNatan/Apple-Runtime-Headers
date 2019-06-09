@@ -9,6 +9,7 @@
 @class NSMutableArray;
 @protocol SKScreenTrackingDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKScrollDetector : NSObject
 {
     id <SKScreenTrackingDelegate> _screenTrakingDelegate;

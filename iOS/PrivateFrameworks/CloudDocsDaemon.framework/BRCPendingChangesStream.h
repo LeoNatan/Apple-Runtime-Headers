@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BRCClientZone, BRCPQLConnection, CKServerChangeToken, NSError, NSURL;
+@class BRCClientZone, BRCPQLConnection, CKServerChangeToken, NSError, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface BRCPendingChangesStream : NSObject
@@ -16,22 +16,33 @@ __attribute__((visibility("hidden")))
     BRCPQLConnection *_db;
     CKServerChangeToken *_startingChangeToken;
     BRCClientZone *_clientZone;
+    NSString *_label;
 }
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)saveError;
+- (id)lastError;
+- (void)resetDatabase;
 - (void)destroyDatabaseOnQueue:(_Bool)arg1;
 - (void)destroyDatabase;
 - (void)_destroyDatabase;
+- (_Bool)saveEditedRecords:(id)arg1 queryCursor:(id)arg2;
 - (_Bool)saveEditedRecords:(id)arg1 deletedRecordIDs:(id)arg2 deletedShareIDs:(id)arg3 serverChangeToken:(id)arg4 clientChangeToken:(long long)arg5 syncStatus:(long long)arg6;
 - (long long)_recordTypeFromRecordID:(id)arg1 isShare:(_Bool)arg2 isDelete:(_Bool)arg3;
 - (_Bool)enumerateRecordsOfType:(long long)arg1 block:(CDUnknownBlockType)arg2;
+- (void)fetchQueryCursor:(CDUnknownBlockType)arg1;
 - (void)fetchTokenState:(CDUnknownBlockType)arg1;
+- (void)_closeDB;
 - (void)_openDB;
 - (void)_createSchemaIfNecessary;
+- (_Bool)_dropExistingTablesWithDB:(id)arg1;
+- (id)initForListingWithParent:(id)arg1 serverZone:(id)arg2;
+- (id)initFullZoneSyncWithServerZone:(id)arg1;
 - (id)initWithServerZone:(id)arg1;
+- (id)_initDeltaSyncWithChangeToken:(id)arg1 serverZone:(id)arg2;
 - (void)_dbBecameCorrupted;
+- (void)_wasClosed;
+- (void)_wasAccessed;
 
 @end
 

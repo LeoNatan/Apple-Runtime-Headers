@@ -9,16 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface NSSegmentItemImageCell : NSImageCell
 {
-    unsigned long long _imageState;
-    int _backgroundStyle;
 }
 
-@property(nonatomic) int backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-@property(nonatomic) unsigned long long imageState; // @synthesize imageState=_imageState;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;
-- (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
-- (unsigned long long)_currentImageStateForView:(id)arg1;
 
 @end
 

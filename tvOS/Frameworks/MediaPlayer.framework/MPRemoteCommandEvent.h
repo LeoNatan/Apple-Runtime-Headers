@@ -26,6 +26,7 @@
 - (id)commandID;
 - (id)contextID;
 - (id)mediaRemoteOptions;
+- (id)description;
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (id)init;
 

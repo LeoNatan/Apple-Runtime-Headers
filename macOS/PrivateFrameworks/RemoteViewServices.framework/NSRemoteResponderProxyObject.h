@@ -24,7 +24,7 @@
 @property BOOL respondsToValidateMenuItem; // @synthesize respondsToValidateMenuItem=_respondsToValidateMenuItem;
 @property(retain) NSLocalWindowWrappingRemoteWindow *remoteWindow; // @synthesize remoteWindow=_remoteWindow;
 @property SEL action; // @synthesize action=_action;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)_validateUserInterfaceItem:(id)arg1 type:(unsigned long long)arg2;

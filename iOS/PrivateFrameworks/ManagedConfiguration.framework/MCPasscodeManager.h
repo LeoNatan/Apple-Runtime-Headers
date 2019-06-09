@@ -29,6 +29,7 @@
 - (void)passcodeExpiryDateCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)passcodeExpiryDateOutError:(id *)arg1;
 - (_Bool)_checkPasscode:(id)arg1 againstHistoryWithRestrictions:(id)arg2 outError:(id *)arg3;
+- (_Bool)isPasscodeCompliantWithNamedPolicy:(id)arg1 outError:(id *)arg2;
 - (_Bool)isCurrentPasscodeCompliantOutError:(id *)arg1;
 - (_Bool)currentPasscodeCompliesWithPolicyFromRestrictions:(id)arg1 outError:(id *)arg2;
 - (_Bool)passcode:(id)arg1 compliesWithPolicyCheckHistory:(_Bool)arg2 outError:(id *)arg3;

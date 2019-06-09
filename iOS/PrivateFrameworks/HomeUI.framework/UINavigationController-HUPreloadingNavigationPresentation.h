@@ -7,12 +7,15 @@
 #import <UIKit/UINavigationController.h>
 
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
+#import <HomeUI/HUPresentationDelegate-Protocol.h>
 
 @class NSString;
 
-@interface UINavigationController (HUPreloadingNavigationPresentation) <HUPreloadableViewController>
+@interface UINavigationController (HUPreloadingNavigationPresentation) <HUPreloadableViewController, HUPresentationDelegate>
 - (id)hu_preloadContent;
 - (id)hu_pushPreloadableViewController:(id)arg1 animated:(_Bool)arg2;
+- (id)hu_presentedItem;
+- (id)finishPresentation:(id)arg1 animated:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

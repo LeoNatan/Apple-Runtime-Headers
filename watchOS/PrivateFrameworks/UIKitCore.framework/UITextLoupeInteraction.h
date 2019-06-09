@@ -6,19 +6,45 @@
 
 #import <UIKitCore/UITextInteraction.h>
 
+#import <UIKitCore/_UITextLoupeResponderProxyDelegate-Protocol.h>
+
+@class UIDelayedAction, UIResponder, UITextGestureTuning, _UITextLoupeResponderProxy;
+
 __attribute__((visibility("hidden")))
-@interface UITextLoupeInteraction : UITextInteraction
+@interface UITextLoupeInteraction : UITextInteraction <_UITextLoupeResponderProxyDelegate>
 {
     Class _configuratorClass;
+    UIDelayedAction *_delayedLoupeAction;
+    _Bool _isShiftKeyBeingHeld;
+    UITextGestureTuning *_gestureTuning;
+    _Bool _hasPerformedInteraction;
+    struct CGPoint _initialPointFromPreviousInteraction;
+    _UITextLoupeResponderProxy *_responderProxy;
 }
 
+@property(retain, nonatomic) _UITextLoupeResponderProxy *responderProxy; // @synthesize responderProxy=_responderProxy;
+- (void).cxx_destruct;
+- (void)_performGestureType:(int)arg1 state:(int)arg2 location:(struct CGPoint)arg3;
 - (void)canBeginDragCursor:(id)arg1;
-- (void)loupeGestureWithState:(int)arg1 atGesturePoint:(CDUnknownBlockType)arg2 modifierFlags:(int)arg3 shouldCancel:(_Bool *)arg4;
-- (void)loupeGestureWithState:(int)arg1 atGesturePoint:(CDUnknownBlockType)arg2 shouldCancel:(_Bool *)arg3;
+- (void)delayedDisplayLoupe:(id)arg1;
+- (void)delayedLoupeAction:(id)arg1;
+- (void)updateOrCancelDelayedLoupeActionWithPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
+- (void)setupDelayedLoupeActionWithInitialPoint:(struct CGPoint)arg1;
+- (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
+- (void)updateVisibilityOffsetForGesture:(id)arg1;
+@property(nonatomic) _Bool shouldUseLineThreshold;
+- (void)assertInitialVerticalOffset:(float)arg1;
+- (void)_createGestureTuningIfNecessary;
+- (struct CGPoint)pointIfPlacedCarefully:(struct CGPoint)arg1;
+- (void)loupeGestureWithState:(int)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(int)arg5 shouldCancel:(_Bool *)arg6;
+- (void)_processGestureForCustomHighlighter:(id)arg1;
 - (void)loupeGesture:(id)arg1;
-- (_Bool)_isShiftKeyBeingHeldForGesture:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)finishSetup;
+- (void)selectToHere:(id)arg1;
+- (void)updateInitialPoint:(struct CGPoint)arg1;
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+@property(readonly, nonatomic) UIResponder *responder;
 - (id)initWithConfigurator:(Class)arg1;
 
 @end

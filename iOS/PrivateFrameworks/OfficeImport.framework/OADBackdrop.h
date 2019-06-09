@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     OADVector3D *mUp;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (void)setAnchor:(id)arg1;
 - (id)anchor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

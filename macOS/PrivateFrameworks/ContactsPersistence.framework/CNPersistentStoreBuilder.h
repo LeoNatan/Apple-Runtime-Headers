@@ -28,12 +28,13 @@ __attribute__((visibility("hidden")))
 
 + (id)mergeDictionary:(id)arg1 withDictionary:(id)arg2;
 + (id)proxyLockStoreOptionsForDatabaseAtUrl:(id)arg1 isReadOnly:(BOOL)arg2;
-+ (id)readOnlyStoreOptionsWithBoolValue:(BOOL)arg1;
++ (id)optionsForStoreWithReadOnly:(BOOL)arg1;
 + (id)tracerMessageWithMessage:(id)arg1 error:(id)arg2;
 @property(retain) CNPersistentStoreBuilderEnvironment *environment; // @synthesize environment=_environment;
 @property(copy) NSError *error; // @synthesize error=_error;
 @property(retain) NSPersistentStore *store; // @synthesize store=_store;
-@property(readonly, retain) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
+@property(readonly) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
+- (void).cxx_destruct;
 - (void)logFailureMessage;
 - (void)removePersistentStoreAtURL:(id)arg1;
 - (void)emptySaveIfNeeded;
@@ -51,13 +52,11 @@ __attribute__((visibility("hidden")))
 - (id)optionsWithMigrationForStoreAtUrl:(id)arg1;
 - (id)optionsWithoutMigrationForStoreAtUrl:(id)arg1;
 - (void)addSqlitePersistentStoreWithUrl:(id)arg1;
-- (void)migrateMailRecentsToInMemoryIfNeeded;
 - (void)migrateContactIndex;
 - (void)migrateOrphanProperties;
 - (void)migratePhoneNumbers;
 - (void)migrateLabels;
 - (BOOL)databaseMigrationNeeded;
-- (void)migrateMailRecentsToInMemory;
 - (void)logPersistentStoreTracerFailureWithMessage:(id)arg1 error:(id)arg2;
 - (id)urlByCopyingToTemporaryUrl:(id)arg1;
 - (void)tryToAddPersistentStore;
@@ -70,7 +69,6 @@ __attribute__((visibility("hidden")))
 - (void)setupInitialStateWithDatabaseURL:(id)arg1;
 - (void)doInitialImportsIfNeeded;
 - (id)addPersistentStoreAtURL:(id)arg1;
-- (void)dealloc;
 - (id)initWithStoreDescription:(id)arg1 readOnly:(BOOL)arg2 coordinator:(id)arg3 environment:(id)arg4;
 - (id)initWithStoreDescription:(id)arg1 readOnly:(BOOL)arg2 coordinator:(id)arg3;
 - (id)initWithStoreDescription:(id)arg1 readOnly:(BOOL)arg2;

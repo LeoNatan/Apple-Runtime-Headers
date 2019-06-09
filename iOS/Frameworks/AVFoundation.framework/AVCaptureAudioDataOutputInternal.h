@@ -6,17 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage;
-@protocol OS_dispatch_queue;
+@class AVCaptureDataOutputDelegateCallbackHelper, AVWeakReference;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureAudioDataOutputInternal : NSObject
 {
+    AVCaptureDataOutputDelegateCallbackHelper *delegateCallbackHelper;
     AVWeakReference *weakReference;
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    AVWeakReferencingDelegateStorage *delegateOverrideStorage;
-    NSObject<OS_dispatch_queue> *bufferQueue;
-    struct OpaqueFigSimpleMutex *remoteQueueMutex;
-    void *remoteQueueReceiver;
 }
 
 - (void)dealloc;

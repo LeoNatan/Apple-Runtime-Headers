@@ -9,21 +9,24 @@
 #import <DocumentManager/UIViewControllerAnimatedTransitioning-Protocol.h>
 
 @class FPItem, NSOperationQueue, NSProgress, NSString, NSURL, UIView;
-@protocol DOCServiceBrowserViewControllerProxy, DOCServiceTransitionProtocol;
+@protocol DOCServiceDocumentBrowserViewControllerInterface, DOCServiceTransitionProtocol;
 
 @interface UIDocumentBrowserTransitionController : NSObject <UIViewControllerAnimatedTransitioning>
 {
     NSURL *_itemURL;
     FPItem *_item;
-    id <DOCServiceBrowserViewControllerProxy> _serviceBrowserProxy;
+    id <DOCServiceDocumentBrowserViewControllerInterface> _serviceDocumentBrowserProxy;
     UIView *_referenceView;
     _Bool _transitionDidFinish;
-    id <DOCServiceTransitionProtocol> _transitionController;
-    NSOperationQueue *_transitionControllerQueue;
     NSProgress *_loadingProgress;
     UIView *_targetView;
+    id <DOCServiceTransitionProtocol> _transitionController;
+    NSOperationQueue *_transitionControllerQueue;
 }
 
+@property(retain, nonatomic) NSOperationQueue *transitionControllerQueue; // @synthesize transitionControllerQueue=_transitionControllerQueue;
+@property(retain, nonatomic) id <DOCServiceTransitionProtocol> transitionController; // @synthesize transitionController=_transitionController;
+@property _Bool transitionDidFinish; // @synthesize transitionDidFinish=_transitionDidFinish;
 @property(nonatomic) __weak UIView *targetView; // @synthesize targetView=_targetView;
 @property(retain, nonatomic) NSProgress *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
 - (void).cxx_destruct;
@@ -32,8 +35,8 @@
 - (void)dealloc;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_commonInit;
-- (id)initWithItemURL:(id)arg1 browserProxy:(id)arg2 referenceView:(id)arg3;
-- (id)initWithItem:(id)arg1 browserProxy:(id)arg2 referenceView:(id)arg3;
+- (id)initWithItemURL:(id)arg1 documentBrowserProxy:(id)arg2 referenceView:(id)arg3;
+- (id)initWithItem:(id)arg1 documentBrowserProxy:(id)arg2 referenceView:(id)arg3;
 - (id)init;
 
 // Remaining properties

@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <Intents/NSCopying-Protocol.h>
-#import <Intents/NSObject-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class NSMutableDictionary, NSString;
 
-@interface INParameter : NSObject <NSObject, NSSecureCoding, NSCopying>
+@interface INParameter : NSObject <NSSecureCoding, NSCopying>
 {
     NSMutableDictionary *_indexesForSubKeyPaths;
     Class _parameterClass;
@@ -29,9 +28,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned int hash;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;
 - (id)parameterizedObject;
@@ -44,10 +43,6 @@
 - (unsigned int)indexForSubKeyPath:(id)arg1;
 - (void)setIndex:(unsigned int)arg1 forSubKeyPath:(id)arg2;
 - (_Bool)isEqualToParameter:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

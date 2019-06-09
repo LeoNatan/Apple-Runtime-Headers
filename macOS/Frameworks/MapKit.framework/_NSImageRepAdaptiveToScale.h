@@ -6,12 +6,13 @@
 
 #import <AppKit/NSCustomImageRep.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSImageRepAdaptiveToScale : NSCustomImageRep
 {
     id _drawTarget;
 }
 
-@property __weak id drawTarget; // @synthesize drawTarget=_drawTarget;
+@property(nonatomic) __weak id drawTarget; // @synthesize drawTarget=_drawTarget;
 - (void).cxx_destruct;
 - (BOOL)draw;
 - (id)initWithDrawSelector:(SEL)arg1 delegate:(id)arg2;

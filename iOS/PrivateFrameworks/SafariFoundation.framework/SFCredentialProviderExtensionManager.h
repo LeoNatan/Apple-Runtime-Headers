@@ -16,9 +16,11 @@
     NSSet *_extensions;
     NSMutableOrderedSet *_observers;
     _Bool _errorEncounteredDuringLastExtensionDiscovery;
+    NSSet *_extensionsSync;
 }
 
 + (id)sharedManager;
+@property(readonly, nonatomic) NSSet *extensionsSync; // @synthesize extensionsSync=_extensionsSync;
 - (void).cxx_destruct;
 - (_Bool)shouldShowConfigurationUIForEnablingExtension:(id)arg1;
 - (id)displayNameForExtension:(id)arg1;

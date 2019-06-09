@@ -29,6 +29,7 @@
 - (void)_removeControlEventsForVolumeSlider:(id)arg1;
 - (void)_addControlEventsForVolumeSliders:(id)arg1;
 - (void)_addControlEventsForVolumeSlider:(id)arg1;
+- (id)_findExistingVolumeSlider:(id)arg1;
 - (void)syncSliders:(_Bool)arg1;
 - (void)_resetMasterVolumeSlider;
 - (void)_updateOptimisticValueCache;

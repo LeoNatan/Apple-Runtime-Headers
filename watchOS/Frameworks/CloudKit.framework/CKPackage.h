@@ -116,6 +116,8 @@
 - (id)initUnreachablePackageWithUUID:(id)arg1;
 - (id)_initWithBasePath:(id)arg1 UUID:(id)arg2;
 - (id)init;
+- (_Bool)removeDBAndDeleteFilesWithError:(id *)arg1;
+- (id)clonedPackageWithFilesDuplicatedIntoDirectory:(id)arg1 withError:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

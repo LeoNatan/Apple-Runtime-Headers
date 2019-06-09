@@ -8,5 +8,10 @@
 
 @interface NSExtension (MapsMacExtension)
 - (void)instantiateViewControllerWithInputItems:(id)arg1 connectionHandler:(CDUnknownBlockType)arg2;
+- (unsigned long long)_mapExtensionType;
+- (id)_extensionVendorContextForUUID:(id)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
+- (id)_containingAppIdentifer;
+- (id)_containingAppDisplayName;
+- (id)_displayName;
 @end
 

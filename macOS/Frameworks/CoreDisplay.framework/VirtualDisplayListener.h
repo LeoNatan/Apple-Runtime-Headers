@@ -9,6 +9,7 @@
 @class NSLock, NSMapTable;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface VirtualDisplayListener : NSObject
 {
     NSMapTable *_database;

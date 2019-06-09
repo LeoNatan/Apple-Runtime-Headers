@@ -14,20 +14,20 @@ __attribute__((visibility("hidden")))
 @interface GEOPDCategory : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    int _level;
     NSMutableArray *_localizedNames;
+    int _level;
     struct {
-        unsigned int level:1;
-    } _has;
+        unsigned int has_level:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)localizedNameType;
 + (BOOL)hasCategoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 + (id)categoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 + (id)_allCategoriesForPlaceData:(id)arg1 type:(unsigned int)arg2;
-@property(retain, nonatomic) NSMutableArray *localizedNames; // @synthesize localizedNames=_localizedNames;
-@property(nonatomic) int level; // @synthesize level=_level;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,13 +36,16 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)localizedNameAtIndex:(unsigned long long)arg1;
 - (unsigned long long)localizedNamesCount;
 - (void)addLocalizedName:(id)arg1;
 - (void)clearLocalizedNames;
+@property(retain, nonatomic) NSMutableArray *localizedNames;
 @property(nonatomic) BOOL hasLevel;
+@property(nonatomic) int level;
 
 @end
 

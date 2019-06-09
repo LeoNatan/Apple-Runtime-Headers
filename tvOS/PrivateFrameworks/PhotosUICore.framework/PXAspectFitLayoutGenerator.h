@@ -30,10 +30,9 @@
 - (void)invalidate;
 - (void)dealloc;
 - (id)initWithMetrics:(id)arg1;
-- (id)init;
 
 // Remaining properties
-@property(readonly, copy, nonatomic) PXAspectFitLayoutMetrics *metrics; // @dynamic metrics;
+@property(copy, nonatomic) PXAspectFitLayoutMetrics *metrics; // @dynamic metrics;
 
 @end
 

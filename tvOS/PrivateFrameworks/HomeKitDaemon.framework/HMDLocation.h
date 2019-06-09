@@ -6,20 +6,20 @@
 
 #import <HMFoundation/HMFObject.h>
 
-#import <HomeKitDaemon/CLLocationManagerDelegate-Protocol.h>
+#import <HomeKitDaemon/HMDCLLocationManagerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class CLLocationManager, HMFMessageDispatcher, HMFTimer, NSDate, NSHashTable, NSMapTable, NSMutableArray, NSObject, NSString;
-@protocol OS_dispatch_queue;
+@class HMFMessageDispatcher, HMFTimer, NSDate, NSHashTable, NSMapTable, NSMutableArray, NSObject, NSString;
+@protocol HMDCLLocationManager, OS_dispatch_queue;
 
-@interface HMDLocation : HMFObject <HMFTimerDelegate, CLLocationManagerDelegate>
+@interface HMDLocation : HMFObject <HMFTimerDelegate, HMDCLLocationManagerDelegate>
 {
     _Bool _beingConfigured;
     int _locationAuthorized;
     int _authStatus;
     HMFMessageDispatcher *_msgDispatcher;
     NSObject<OS_dispatch_queue> *_handlerQueue;
-    CLLocationManager *_locationManager;
+    id <HMDCLLocationManager> _locationManager;
     NSHashTable *_singleLocationDelegates;
     NSHashTable *_batchLocationDelegates;
     NSMapTable *_regionStateDelegatesByRegionIdentifier;
@@ -31,7 +31,7 @@
     double _batchLocationsFetchInterval;
 }
 
-+ (void)timeZoneForCLLocationAsync:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
++ (void)timeZoneISOCountryCodeForCLLocationAsync:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 + (_Bool)isValidLocation:(id)arg1;
 + (id)nextSunsetTimeForLocation:(id)arg1 date:(id)arg2;
 + (id)sunsetTimeForLocation:(id)arg1;
@@ -53,7 +53,7 @@
 @property(readonly, nonatomic) NSHashTable *batchLocationDelegates; // @synthesize batchLocationDelegates=_batchLocationDelegates;
 @property(readonly, nonatomic) NSHashTable *singleLocationDelegates; // @synthesize singleLocationDelegates=_singleLocationDelegates;
 @property(nonatomic) int authStatus; // @synthesize authStatus=_authStatus;
-@property(readonly, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
+@property(readonly, nonatomic) id <HMDCLLocationManager> locationManager; // @synthesize locationManager=_locationManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
 @property(nonatomic) int locationAuthorized; // @synthesize locationAuthorized=_locationAuthorized;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;

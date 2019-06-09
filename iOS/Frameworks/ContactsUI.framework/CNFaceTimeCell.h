@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CNUIUserActionListDataSource *actionsDataSource; // @synthesize actionsDataSource=_actionsDataSource;
 - (void).cxx_destruct;
 - (void)didPressActionView:(id)arg1 longPress:(_Bool)arg2;
+- (void)updateHorizontalTouchAreas;
 - (void)tintColorDidChange;
 - (id)variableConstraints;
 - (id)constantConstraints;

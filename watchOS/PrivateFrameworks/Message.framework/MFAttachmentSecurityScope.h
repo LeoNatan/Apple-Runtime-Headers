@@ -21,6 +21,7 @@
 
 + (id)securityScopedURL:(id)arg1 withToken:(id)arg2;
 + (id)securityScopedURL:(id)arg1;
+- (void).cxx_destruct;
 - (_Bool)isBundle;
 - (_Bool)isReadable;
 - (id)data;

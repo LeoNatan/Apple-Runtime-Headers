@@ -6,7 +6,7 @@
 
 #import <PackageKit/PKProduct.h>
 
-@class NSError, NSString, PKStreamingXARArchive;
+@class NSString, PKStreamingXARArchive;
 
 @interface PKStreamingProduct : PKProduct
 {
@@ -14,11 +14,9 @@
     PKStreamingXARArchive *_archive;
     unsigned long long _state;
     NSString *_path;
-    NSError *_currentError;
 }
 
 + (BOOL)canInitWithURL:(id)arg1;
-@property(readonly, copy) NSError *currentError; // @synthesize currentError=_currentError;
 @property unsigned long long state; // @synthesize state=_state;
 - (id)_archiveForTrustEvaluation;
 - (id)initByLoadingProductAtURL:(id)arg1 error:(id *)arg2;

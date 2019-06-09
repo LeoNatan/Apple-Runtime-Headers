@@ -18,7 +18,7 @@
 
 @property(retain, nonatomic) MFMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) MFMessageLibrary *library; // @synthesize library=_library;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)dataConsumerForPart:(id)arg1;
 
 // Remaining properties

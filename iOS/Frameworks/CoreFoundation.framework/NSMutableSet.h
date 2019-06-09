@@ -11,6 +11,8 @@
 }
 
 + (id)setWithCapacity:(unsigned long long)arg1;
+- (id)setByAddingObjectsFromSet:(id)arg1;
+- (id)setByAddingObjectsFromArray:(id)arg1;
 - (id)initWithObjects:(const id *)arg1 count:(unsigned long long)arg2;
 - (id)initWithCapacity:(unsigned long long)arg1;
 - (void)unionSet:(id)arg1;

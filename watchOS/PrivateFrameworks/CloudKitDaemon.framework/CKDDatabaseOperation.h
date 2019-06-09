@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) int databaseScope; // @synthesize databaseScope=_databaseScope;
+- (id)analyticsPayload;
 - (id)CKStatusReportProperties;
 - (void)spawnAndRunOperationOfClass:(Class)arg1 operationInfo:(id)arg2 spawnQueue:(id)arg3 operationConfigurationBlock:(CDUnknownBlockType)arg4;
 - (id)flowControlKey;

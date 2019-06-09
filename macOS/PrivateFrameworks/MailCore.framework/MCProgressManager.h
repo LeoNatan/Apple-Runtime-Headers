@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MailCore/EFLoggable-Protocol.h>
 #import <MailCore/MCProgressEntryDelegate-Protocol.h>
 
 @class MCProgressEntry, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
-@interface MCProgressManager : NSObject <MCProgressEntryDelegate>
+@interface MCProgressManager : NSObject <EFLoggable, MCProgressEntryDelegate>
 {
     NSMutableDictionary *_entriesBySlice;
     NSMutableArray *_orderedEntries;
@@ -20,6 +21,7 @@
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (id)log;
 @property(copy, nonatomic) NSArray *trackedAccountNames; // @synthesize trackedAccountNames=_trackedAccountNames;
 @property(retain, nonatomic) MCProgressEntry *activeEntry; // @synthesize activeEntry=_activeEntry;
 - (void).cxx_destruct;

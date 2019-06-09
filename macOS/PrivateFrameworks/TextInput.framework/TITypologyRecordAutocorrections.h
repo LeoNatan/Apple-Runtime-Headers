@@ -22,7 +22,10 @@
 @property(retain, nonatomic) TICandidateRequestToken *requestToken; // @synthesize requestToken=_requestToken;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 - (void).cxx_destruct;
+- (void)replaceDocumentState:(id)arg1;
 - (id)shortDescription;
+- (void)removeContextFromKeyboardState;
+- (id)currentKeyboardState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)applyToStatistic:(id)arg1;

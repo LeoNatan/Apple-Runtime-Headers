@@ -27,8 +27,6 @@
 - (BOOL)emptyCache;
 - (BOOL)fileManager:(id)arg1 shouldProceedAfterError:(id)arg2 movingItemAtURL:(id)arg3 toURL:(id)arg4;
 - (id)moveFromDownloadLocation:(id)arg1 toCacheForURL:(id)arg2 error:(id *)arg3;
-- (void)setResumeData:(id)arg1 forURL:(id)arg2;
-- (id)resumeDataForURL:(id)arg1;
 - (unsigned long long)downloadedSizeForPackageReference:(id)arg1 withProductKey:(id)arg2;
 - (unsigned long long)downloadedSizeForProduct:(id)arg1;
 - (void)dealloc;

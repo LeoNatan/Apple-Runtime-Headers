@@ -14,6 +14,7 @@
 - (void)clearAllAnnouncements;
 - (void)stop;
 - (BOOL)vibrateForPrompt:(unsigned long long)arg1;
+- (BOOL)isSpeaking;
 - (void)speak:(NSString *)arg1 shortPromptType:(unsigned long long)arg2 ignorePromptStyle:(BOOL)arg3 minimumRequiredLevel:(unsigned long long)arg4 completionBlock:(void (^)(int))arg5;
 - (void)speak:(NSString *)arg1 shortPromptType:(unsigned long long)arg2 ignorePromptStyle:(BOOL)arg3 completionBlock:(void (^)(int))arg4;
 - (void)prepareToAnnounce;

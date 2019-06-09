@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSCFTCPIO_BlockCallbacks_Referent : NSObject
 {
     struct TCPIO_BlockCallbacks_Listener *_readListener;

@@ -8,12 +8,13 @@
 
 #import <ScreenTimeUI/STUIDateTimePickerCellDelegate-Protocol.h>
 
-@class NSDateComponents, NSString, PSSpecifier, RMBlueprintScheduleCustomDayItem;
+@class NSDateComponents, NSString, PSSpecifier, STBlueprintScheduleCustomDayItem;
 
+__attribute__((visibility("hidden")))
 @interface STCustomizeDailyScheduleListController : PSListController <STUIDateTimePickerCellDelegate>
 {
     _Bool _weekdayEnabled;
-    RMBlueprintScheduleCustomDayItem *_dailySchedule;
+    STBlueprintScheduleCustomDayItem *_dailySchedule;
     unsigned long long _weekdayIndex;
     NSDateComponents *_minimumStartTime;
     PSSpecifier *_dailyScheduleGroupSpecifier;
@@ -30,7 +31,7 @@
 @property(readonly) PSSpecifier *dailyScheduleGroupSpecifier; // @synthesize dailyScheduleGroupSpecifier=_dailyScheduleGroupSpecifier;
 @property(readonly, copy) NSDateComponents *minimumStartTime; // @synthesize minimumStartTime=_minimumStartTime;
 @property(readonly) unsigned long long weekdayIndex; // @synthesize weekdayIndex=_weekdayIndex;
-@property(copy) RMBlueprintScheduleCustomDayItem *dailySchedule; // @synthesize dailySchedule=_dailySchedule;
+@property(copy) STBlueprintScheduleCustomDayItem *dailySchedule; // @synthesize dailySchedule=_dailySchedule;
 @property(getter=isWeekdayEnabled) _Bool weekdayEnabled; // @synthesize weekdayEnabled=_weekdayEnabled;
 - (void).cxx_destruct;
 - (id)datePickerForSpecifier:(id)arg1;

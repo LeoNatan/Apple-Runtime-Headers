@@ -6,7 +6,7 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class NSArray, SCRBrailleLineManager;
+@class NSArray;
 
 __attribute__((visibility("hidden")))
 @interface SCRList : SCRElement
@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
         unsigned int supportsAXVisibleChildrenAttribute:1;
     } _srlFlags;
     SCRElement *_readContentsElement;
-    SCRBrailleLineManager *_brailleLineManager;
     NSArray *_previousSelectionUIElements;
 }
 
@@ -34,10 +33,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)indexOfElement:(id)arg1 visibleOnly:(BOOL)arg2;
 - (BOOL)tabOrDrillInShouldTempDisableQuickNav;
 - (BOOL)isContainerElement;
-- (id)brailleLineElementForUIElement:(id)arg1;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (id)brailleLineManager;
+- (void)setBrailleLineWithFocusedElement:(id)arg1 forceRebuild:(BOOL)arg2;
 - (BOOL)isControlElement;
 - (BOOL)childrenShouldAddIndexToDescription;
 - (BOOL)addTitlePhoneticSpellingToRequest:(id)arg1;
@@ -47,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)addSelectionDescriptionToRequest:(id)arg1;
 - (BOOL)addKeyboardSelectionSummaryToRequest:(id)arg1;
 - (void)addItemDescriptionToRequest:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)typeDescription;
 - (id)childrenInReadContentsOrder;
 - (id)readContentsElement;
@@ -73,8 +69,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_moveToPreviousContentSibling;
 - (BOOL)_moveToNextContentSibling;
 - (BOOL)isSectionView;
-- (BOOL)jumpBottomEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpTopEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
 - (BOOL)_moveLastWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
 - (BOOL)_moveFirstWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
 - (id)elementToSpeakAfterMove;
@@ -92,7 +86,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)isInteractive;
 @property(nonatomic, getter=isVertical) BOOL vertical;
 @property(readonly, nonatomic) long long orientation;

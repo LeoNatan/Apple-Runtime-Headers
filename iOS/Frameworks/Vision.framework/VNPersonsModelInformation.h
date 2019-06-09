@@ -7,20 +7,24 @@
 #import <objc/NSObject.h>
 
 #import <Vision/NSCopying-Protocol.h>
+#import <Vision/NSSecureCoding-Protocol.h>
 
 @class NSDate;
 
-@interface VNPersonsModelInformation : NSObject <NSCopying>
+@interface VNPersonsModelInformation : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned long long _version;
     NSDate *_lastModificationDate;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(readonly, nonatomic) unsigned long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithVersion:(unsigned long long)arg1 lastModificationDate:(id)arg2;
 

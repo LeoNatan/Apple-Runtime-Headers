@@ -6,24 +6,36 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL, TSUURLTrackerFilePresenter;
+#import <OfficeImport/TSUURLWrapper-Protocol.h>
+
+@class NSData, NSString, NSURL, TSUURLTrackerFilePresenter;
 
 __attribute__((visibility("hidden")))
-@interface TSUURLTracker : NSObject
+@interface TSUURLTracker : NSObject <TSUURLWrapper>
 {
     TSUURLTrackerFilePresenter *_filePresenter;
 }
 
 - (void).cxx_destruct;
-- (id)description;
-- (void)applicationDidEnterBackground:(id)arg1;
-- (void)applicationWillEnterForeground:(id)arg1;
-@property(readonly, copy) NSURL *URL;
+@property(readonly, copy) NSString *description;
 - (void)stop;
-- (void)start;
+- (void)resume;
+- (void)pause;
+@property(readonly) NSData *bookmarkData;
+- (id)URLAndReturnError:(id *)arg1;
+@property(readonly) NSURL *URL;
 - (void)dealloc;
+- (id)initWithBookmarkData:(id)arg1 delegate:(id)arg2;
+- (id)initWithBookmarkData:(id)arg1;
+- (id)initWithURL:(id)arg1 delegate:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 bookmarkData:(id)arg2 delegate:(id)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

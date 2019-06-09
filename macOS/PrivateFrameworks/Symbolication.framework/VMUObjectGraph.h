@@ -52,7 +52,7 @@
 - (void)internalizeNodes;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned long long)arg2;
-- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3;
+- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3 diskLogs:(id)arg4;
 - (void)dealloc;
 - (id)initWithNodesNoCopy:(struct _VMUBlockNode *)arg1 nodeCount:(unsigned int)arg2;
 - (id)initWithNodeCount:(unsigned int)arg1 nodeProvider:(CDUnknownBlockType)arg2;

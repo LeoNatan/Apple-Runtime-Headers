@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)load;
++ (void)initialize;
 + (void)setSharedEnvironment:(id)arg1;
 + (id)sharedEnvironment;
 + (void)withEnvironment:(id)arg1 execute:(CDUnknownBlockType)arg2;

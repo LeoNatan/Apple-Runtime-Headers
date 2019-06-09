@@ -11,6 +11,10 @@
 
 @protocol INSearchForNotebookItemsIntentExport <NSObject, JSExport>
 @property(copy, nonatomic) NSString *notebookItemIdentifier;
+@property(nonatomic) _Bool includeAllNoteContents;
+@property(copy, nonatomic) INSpeakableString *groupName;
+@property(nonatomic) long long taskPriority;
+@property(nonatomic) unsigned long long temporalEventTriggerTypes;
 @property(nonatomic) long long dateSearchType;
 @property(copy, nonatomic) INDateComponentsRange *dateTime;
 @property(nonatomic) long long locationSearchType;

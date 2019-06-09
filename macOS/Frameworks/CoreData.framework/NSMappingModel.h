@@ -25,12 +25,12 @@
 
 + (id)inferredMappingModelForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id *)arg3;
 + (id)mappingModelFromBundles:(id)arg1 forSourceModel:(id)arg2 destinationModel:(id)arg3;
-+ (id)_newMappingModelFromPaths:(id)arg1 forSourceHashes:(id)arg2 destinationHashes:(id)arg3;
++ (id)_newMappingModelFromBundles:(id)arg1 forSourceHashes:(id)arg2 destinationHashes:(id)arg3;
 + (void)initialize;
-+ (id)_modelPathsFromBundles:(id)arg1;
 + (void)setMigrationDebugLevel:(int)arg1;
 + (int)migrationDebugLevel;
 + (BOOL)supportsSecureCoding;
++ (id)_mappingModelFromBundles:(id)arg1 forSourceModel:(id)arg2 destinationModel:(id)arg3;
 @property(readonly, copy) NSDictionary *entityMappingsByName;
 @property(retain) NSArray *entityMappings;
 - (id)description;

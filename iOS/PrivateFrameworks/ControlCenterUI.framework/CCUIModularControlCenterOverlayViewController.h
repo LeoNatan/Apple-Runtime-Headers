@@ -8,6 +8,7 @@
 
 #import <ControlCenterUI/CCUIOverlayMetricsProvider-Protocol.h>
 #import <ControlCenterUI/CCUIOverlayViewProvider-Protocol.h>
+#import <ControlCenterUI/CCUIPPTSignpostListener-Protocol.h>
 #import <ControlCenterUI/CCUIScrollViewDelegate-Protocol.h>
 #import <ControlCenterUI/CCUIStatusBarDelegate-Protocol.h>
 #import <ControlCenterUI/CCUIStatusLabelViewControllerDelegate-Protocol.h>
@@ -16,7 +17,7 @@
 @class CCUIAnimationRunner, CCUIFlickGestureRecognizer, CCUIHeaderPocketView, CCUIModuleCollectionView, CCUIOverlayTransitionState, CCUIScrollView, CCUIStatusBarStyleSnapshot, CCUIStatusLabelViewController, MTMaterialView, NSHashTable, NSString, NSUUID, UIPanGestureRecognizer, UIScrollView, UIStatusBar, UIStatusBar_Modern, UITapGestureRecognizer, UIView;
 @protocol CCUIHostStatusBarStyleProvider, CCUIModularControlCenterOverlayViewControllerDelegate, CCUIOverlayPresentationProvider;
 
-@interface CCUIModularControlCenterOverlayViewController : CCUIModularControlCenterViewController <UIGestureRecognizerDelegate, CCUIScrollViewDelegate, CCUIStatusLabelViewControllerDelegate, CCUIOverlayViewProvider, CCUIOverlayMetricsProvider, CCUIStatusBarDelegate>
+@interface CCUIModularControlCenterOverlayViewController : CCUIModularControlCenterViewController <CCUIPPTSignpostListener, UIGestureRecognizerDelegate, CCUIScrollViewDelegate, CCUIStatusLabelViewControllerDelegate, CCUIOverlayViewProvider, CCUIOverlayMetricsProvider, CCUIStatusBarDelegate>
 {
     id <CCUIOverlayPresentationProvider> _presentationProvider;
     CCUIAnimationRunner *_primaryAnimationRunner;
@@ -44,6 +45,12 @@
 }
 
 + (id)_presentationProviderForDevice;
++ (id)_controlCenterDismissEventStream;
++ (id)_controlCenterBringupEventStream;
++ (void)_executeBlocksForSignpost:(unsigned long long)arg1;
++ (void)_executeAndCleanupBlocksForAllSignposts;
++ (void)_addBlockForSignpost:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
++ (id)_blocksBySignpost;
 @property(nonatomic, getter=isReachabilityActive) _Bool reachabilityActive; // @synthesize reachabilityActive=_reachabilityActive;
 @property(nonatomic) __weak id <CCUIHostStatusBarStyleProvider> hostStatusBarStyleProvider; // @synthesize hostStatusBarStyleProvider=_hostStatusBarStyleProvider;
 @property(readonly, nonatomic) unsigned long long transitionState; // @synthesize transitionState=_transitionState;
@@ -96,6 +103,10 @@
 - (void)moduleInstancesChangedForModuleInstanceManager:(id)arg1;
 - (void)statusLabelViewControllerDidFinishStatusUpdates:(id)arg1;
 - (void)statusLabelViewControllerWillBeginStatusUpdates:(id)arg1;
+- (void)_willDismissView;
+- (void)_willPresentView;
+- (void)moduleCollectionViewController:(id)arg1 willDismissViewController:(id)arg2;
+- (void)moduleCollectionViewController:(id)arg1 willPresentViewController:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 didAddModuleContainerViewController:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willCloseExpandedModule:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willOpenExpandedModule:(id)arg2;
@@ -104,6 +115,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (unsigned long long)__supportedInterfaceOrientations;
 - (unsigned long long)supportedInterfaceOrientations;
 - (unsigned long long)preferredScreenEdgesDeferringSystemGestures;
@@ -123,6 +135,9 @@
 - (void)presentAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)_initWithSystemAgent:(id)arg1 presentationProvider:(id)arg2;
 - (id)initWithSystemAgent:(id)arg1;
+- (_Bool)runTest:(id)arg1 options:(id)arg2 delegate:(id)arg3;
+- (void)didReceiveSignpost:(unsigned long long)arg1;
+- (void)runTest:(id)arg1 subtests:(id)arg2 eventStream:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

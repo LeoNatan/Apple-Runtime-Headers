@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
 
 + (id)operatorWithScale:(double)arg1;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
+- (id)shapesByInsettingShapes:(id)arg1 withInsets:(struct UIEdgeInsets)arg2;
+- (id)shapesByResizingShapes:(id)arg1 withOffset:(struct CGPoint)arg2;
 - (id)shapesByRepositioningShapes:(id)arg1 withOffset:(struct CGPoint)arg2;
 - (id)shapesByCenteringShapes:(id)arg1 insideRect:(struct CGRect)arg2;
 - (id)shapesByElaboratingShapes:(id)arg1 insideShape:(id)arg2 count:(long long)arg3;

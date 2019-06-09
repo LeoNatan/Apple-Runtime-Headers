@@ -8,7 +8,7 @@
 
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
-@class AFSpeechSynthesisRecord, CLLocation, NSDictionary, NSFileHandle, NSNumber, NSString, NSURL, NSUUID, NSXPCListenerEndpoint;
+@class AFLanguageDetectionUserContext, AFMyriadContext, AFSpeechSynthesisRecord, CLLocation, NSDictionary, NSFileHandle, NSNumber, NSString, NSURL, NSUUID, NSXPCListenerEndpoint;
 
 @interface AFSpeechRequestOptions : NSObject <NSSecureCoding>
 {
@@ -22,6 +22,7 @@
     BOOL _pendCallbacksUntilAfterContinuation;
     BOOL _useBorealisBuffer;
     BOOL _fetchSmartSiriVolume;
+    BOOL _suppressStartAlert;
     BOOL _suppressStopAlert;
     BOOL _hasPlayedStartAlert;
     BOOL _isOnPhoneCall;
@@ -37,6 +38,7 @@
     long long _audioFileType;
     NSFileHandle *_audioFileHandle;
     NSDictionary *_voiceTriggerEventInfo;
+    AFMyriadContext *_myriadContext;
     NSString *_recordDeviceIdentifier;
     NSXPCListenerEndpoint *_speechRecordingEventListeningEndpoint;
     NSNumber *_notifyState;
@@ -48,11 +50,13 @@
     NSDictionary *_clientAnalyticsContext;
     NSDictionary *_startContext;
     NSDictionary *_stopContext;
+    AFLanguageDetectionUserContext *_languageDetectionUserContext;
     struct NSUUID *_turnIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSUUID *turnIdentifier; // @synthesize turnIdentifier=_turnIdentifier;
+@property(copy, nonatomic) AFLanguageDetectionUserContext *languageDetectionUserContext; // @synthesize languageDetectionUserContext=_languageDetectionUserContext;
 @property(nonatomic) BOOL isOnPhoneCall; // @synthesize isOnPhoneCall=_isOnPhoneCall;
 @property(copy, nonatomic) NSDictionary *stopContext; // @synthesize stopContext=_stopContext;
 @property(copy, nonatomic) NSDictionary *startContext; // @synthesize startContext=_startContext;
@@ -63,6 +67,7 @@
 @property(nonatomic) unsigned long long bargeInOptions; // @synthesize bargeInOptions=_bargeInOptions;
 @property(nonatomic) BOOL hasPlayedStartAlert; // @synthesize hasPlayedStartAlert=_hasPlayedStartAlert;
 @property(nonatomic) BOOL suppressStopAlert; // @synthesize suppressStopAlert=_suppressStopAlert;
+@property(nonatomic) BOOL suppressStartAlert; // @synthesize suppressStartAlert=_suppressStartAlert;
 @property(copy, nonatomic) NSURL *audioFileURL; // @synthesize audioFileURL=_audioFileURL;
 @property(copy, nonatomic) NSNumber *notifyState; // @synthesize notifyState=_notifyState;
 @property(nonatomic) BOOL fetchSmartSiriVolume; // @synthesize fetchSmartSiriVolume=_fetchSmartSiriVolume;
@@ -72,6 +77,7 @@
 @property(retain, nonatomic) NSXPCListenerEndpoint *speechRecordingEventListeningEndpoint; // @synthesize speechRecordingEventListeningEndpoint=_speechRecordingEventListeningEndpoint;
 @property(copy, nonatomic) NSString *recordDeviceIdentifier; // @synthesize recordDeviceIdentifier=_recordDeviceIdentifier;
 @property(nonatomic) BOOL releaseAudioSessionOnRecordingCompletion; // @synthesize releaseAudioSessionOnRecordingCompletion=_releaseAudioSessionOnRecordingCompletion;
+@property(copy, nonatomic) AFMyriadContext *myriadContext; // @synthesize myriadContext=_myriadContext;
 @property(copy, nonatomic) NSDictionary *voiceTriggerEventInfo; // @synthesize voiceTriggerEventInfo=_voiceTriggerEventInfo;
 @property(retain, nonatomic) NSFileHandle *audioFileHandle; // @synthesize audioFileHandle=_audioFileHandle;
 @property(nonatomic) long long audioFileType; // @synthesize audioFileType=_audioFileType;

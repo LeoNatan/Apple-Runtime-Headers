@@ -73,7 +73,7 @@
 @property(readonly) unsigned long long fileSize;
 @property(readonly) NSString *fileName;
 @property(readonly) NSString *path;
-@property(readonly) NSString *uti;
+@property(readonly) NSString *UTI;
 - (void)logFileAccess;
 - (_Bool)isFile;
 - (_Bool)isSymLink;

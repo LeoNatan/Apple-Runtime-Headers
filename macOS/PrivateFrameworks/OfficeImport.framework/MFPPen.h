@@ -8,6 +8,7 @@
 
 @class MFPBrush, MFPCustomLineCap;
 
+__attribute__((visibility("hidden")))
 @interface MFPPen : NSObject
 {
     MFPBrush *mBrush;

@@ -13,12 +13,12 @@
     double _duration;
     int _type;
     struct {
-        unsigned int duration:1;
-        unsigned int type:1;
-    } _has;
+        unsigned int has_duration:1;
+        unsigned int has_type:1;
+    } _flags;
 }
 
-@property(nonatomic) double duration; // @synthesize duration=_duration;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -26,13 +26,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasDuration;
+@property(nonatomic) double duration;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
 
 @end
 

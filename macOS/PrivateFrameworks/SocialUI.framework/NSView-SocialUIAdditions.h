@@ -7,6 +7,7 @@
 #import <AppKit/NSView.h>
 
 @interface NSView (SocialUIAdditions)
+- (void)performBlockHidingScrollers_so:(CDUnknownBlockType)arg1;
 - (void)relayoutForRTL;
 - (void)addFillingSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 @end

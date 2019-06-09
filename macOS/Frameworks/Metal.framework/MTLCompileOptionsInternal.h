@@ -14,17 +14,17 @@ __attribute__((visibility("hidden")))
     BOOL _userSetLanguageVersion;
     NSDictionary *_preprocessorMacros;
     BOOL _fastMathEnabled;
-    BOOL _denormsEnabled;
-    BOOL _nativeDoubleEnabled;
-    BOOL _cubemapArrayEnabled;
     BOOL _framebufferReadEnabled;
     BOOL _tracingEnabled;
     BOOL _debuggingEnabled;
     unsigned long long _languageVersion;
     BOOL _compileTimeStatisticsEnabled;
     NSString *_additionalCompilerArguments;
+    unsigned char _sourceLanguage;
 }
 
+- (void)setSourceLanguage:(unsigned char)arg1;
+- (unsigned char)sourceLanguage;
 - (void)setCompileTimeStatisticsEnabled:(BOOL)arg1;
 - (BOOL)compileTimeStatisticsEnabled;
 - (void)setTracingEnabled:(BOOL)arg1;
@@ -32,16 +32,12 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)languageVersion;
 - (void)setFramebufferReadEnabled:(BOOL)arg1;
 - (BOOL)framebufferReadEnabled;
-- (void)setCubemapArrayEnabled:(BOOL)arg1;
-- (BOOL)cubemapArrayEnabled;
-- (void)setNativeDoubleEnabled:(BOOL)arg1;
-- (BOOL)nativeDoubleEnabled;
-- (void)setDenormsEnabled:(BOOL)arg1;
-- (BOOL)denormsEnabled;
 - (void)setDebuggingEnabled:(BOOL)arg1;
 - (BOOL)debuggingEnabled;
 - (void)setFastMathEnabled:(BOOL)arg1;
 - (BOOL)fastMathEnabled;
+- (void)importDictionary:(id)arg1;
+- (id)exportDictionary;
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (void)setLanguageVersion:(unsigned long long)arg1;

@@ -12,6 +12,7 @@
 
 @interface ASCodableCloudKitWorkout : PBCodable <NSCopying>
 {
+    long long _amm;
     double _duration;
     double _goalInCanonicalUnit;
     long long _goalType;
@@ -26,6 +27,7 @@
     _Bool _isIndoorWorkout;
     _Bool _isWatchWorkout;
     struct {
+        unsigned int amm:1;
         unsigned int duration:1;
         unsigned int goalInCanonicalUnit:1;
         unsigned int goalType:1;
@@ -38,6 +40,7 @@
     } _has;
 }
 
+@property(nonatomic) long long amm; // @synthesize amm=_amm;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(retain, nonatomic) NSString *deviceManufacturer; // @synthesize deviceManufacturer=_deviceManufacturer;
 @property(nonatomic) _Bool isIndoorWorkout; // @synthesize isIndoorWorkout=_isIndoorWorkout;
@@ -61,6 +64,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasAmm;
 @property(readonly, nonatomic) _Bool hasDeviceModel;
 @property(readonly, nonatomic) _Bool hasDeviceManufacturer;
 @property(nonatomic) _Bool hasIsIndoorWorkout;

@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)sideCarZoneWasReset;
 - (_Bool)allocateRanks;
 - (_Bool)_propagateFolderDeletesToTheirChildren;
 - (long long)_propagateDeleteToChildrenOfItemID:(id)arg1;

@@ -27,7 +27,7 @@
 - (void)eraseAnisetteForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)syncAnisetteForContext:(id)arg1 withSIMData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)provisionAnisetteForContext:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)registerSurrogateForContext:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentBiometricOrPasscodeValidationForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissNativeRecoveryUIForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentNativeRecoveryUIForContext:(id)arg1 recoveryContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dismissServerProvidedUIForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -12,6 +12,7 @@
 @protocol TVPVideoPlayerViewControllerDelegate <NSObject>
 
 @optional
+- (void)userDidFinishInteractionAfterErrorWasPresented:(TVPVideoPlayerViewController *)arg1;
 - (_Bool)videoPlayerViewController:(TVPVideoPlayerViewController *)arg1 shouldAllowVideoPlaybackWithoutVisualsForMediaItem:(NSObject<TVPMediaItem> *)arg2;
 - (void)videoPlayerViewController:(TVPVideoPlayerViewController *)arg1 loadRelatedContentForMediaItem:(NSObject<TVPMediaItem> *)arg2 withCompletionHandler:(void (^)(TVPRelatedContent *))arg3;
 @end

@@ -21,9 +21,13 @@
 }
 
 + (id)_chevronImageForTraitCollection:(id)arg1;
++ (id)_chevronImageForTraitCollection:(id)arg1 selected:(_Bool)arg2;
 + (id)highlightColorForNightTime:(_Bool)arg1;
++ (id)buttonWithChevronImageForTraitCollection:(id)arg1;
 + (id)buttonWithChevronImageForTraitCollection:(id)arg1 highlightColor:(id)arg2;
++ (id)buttonWithText:(id)arg1;
 + (id)buttonWithText:(id)arg1 highlightColor:(id)arg2;
++ (id)buttonWithOK;
 + (id)buttonWithOKAndHighlightColor:(id)arg1;
 @property(retain, nonatomic) UIImage *selectedImage; // @synthesize selectedImage=_selectedImage;
 @property(retain, nonatomic) UIImage *unselectedImage; // @synthesize unselectedImage=_unselectedImage;
@@ -33,6 +37,7 @@
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 @property(retain, nonatomic) UIColor *highlightColor; // @synthesize highlightColor=_highlightColor;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

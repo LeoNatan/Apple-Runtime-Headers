@@ -16,13 +16,14 @@
     _Bool _deleted;
     NSString *_uuid;
     NSManagedObjectID *_objectID;
-    PHPhotoLibrary *_photoLibrary;
     unsigned int _propertyHint;
+    PHPhotoLibrary *_photoLibrary;
 }
 
 + (id)authorizationAwareFetchResultWithOptions:(id)arg1 fetchBlock:(CDUnknownBlockType)arg2;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)localIdentifierExpressionForFetchRequests;
++ (void)assertAllObjects:(id)arg1 forSelector:(SEL)arg2 areOfType:(Class)arg3;
 + (id)identifierCodeFromLocalIdentifier:(id)arg1;
 + (id)uuidFromLocalIdentifier:(id)arg1;
 + (id)localIdentifierWithUUID:(id)arg1;
@@ -54,8 +55,8 @@
 + (id)propertySetAccessorsByPropertySet;
 + (id)propertySetsForPropertyFetchHints:(unsigned int)arg1;
 + (unsigned int)propertyFetchHintsForPropertySets:(id)arg1;
-@property unsigned int propertyHint; // @synthesize propertyHint=_propertyHint;
 @property(readonly) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
+@property unsigned int propertyHint; // @synthesize propertyHint=_propertyHint;
 @property(readonly) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
 @property(readonly, getter=isDeleted) _Bool deleted; // @synthesize deleted=_deleted;

@@ -19,20 +19,21 @@
     BOOL _sessionUnlocked;
     BOOL _serviceActive;
     id <AuthenticationHintsDelegate> _hintsDelegate;
+    long long _mode;
 }
 
-@property BOOL serviceActive; // @synthesize serviceActive=_serviceActive;
-@property id <AuthenticationHintsDelegate> hintsDelegate; // @synthesize hintsDelegate=_hintsDelegate;
+@property long long mode; // @synthesize mode=_mode;
+@property(copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property BOOL sessionUnlocked; // @synthesize sessionUnlocked=_sessionUnlocked;
-@property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
+@property BOOL serviceActive; // @synthesize serviceActive=_serviceActive;
 @property(copy) NSError *error; // @synthesize error=_error;
 @property(copy) NSString *userName; // @synthesize userName=_userName;
-@property(copy) NSString *serviceName; // @synthesize serviceName=_serviceName;
+@property id <AuthenticationHintsDelegate> hintsDelegate; // @synthesize hintsDelegate=_hintsDelegate;
+@property(retain) NSXPCConnection *serviceConnection; // @synthesize serviceConnection=_serviceConnection;
 - (void)dealloc;
 - (void)deactivateWithContext:(id)arg1;
-- (void)activateMode:(long long)arg1 withOptions:(id)arg2;
-- (void)activate;
-- (void)activateWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void)activateWithUserName:(id)arg1 mode:(long long)arg2 withOptions:(id)arg3;
+- (void)activateWithUserName:(id)arg1 sessionUnlocked:(BOOL)arg2;
 - (id)connectionWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)initWithServiceName:(id)arg1;
 

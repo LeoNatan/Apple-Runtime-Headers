@@ -49,6 +49,8 @@ __attribute__((visibility("hidden")))
 - (void)setIsBeingDismissed;
 - (void)updateProxiesSelection;
 - (void)tintTabBarItemsForEdit:(_Bool)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)titleLabelFont;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

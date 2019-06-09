@@ -8,18 +8,11 @@
 
 #import <Foundation/NSISVariableDelegate-Protocol.h>
 
-@class NSHashTable, NSISVariable, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, NSThread, _NSISVariableObservable;
+@class NSHashTable, NSISObjectiveLinearExpression, NSISVariable, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, NSThread, _NSISVariableObservable;
 @protocol NSISEngineDelegate, NSObservable;
 
 @interface NSISEngine : NSObject <NSISVariableDelegate>
 {
-    NSMapTable *_rows;
-    CDStruct_fb1e53bb _engineVarTable;
-    CDStruct_fb1e53bb _rowTables[2];
-    CDStruct_fb1e53bb _colTables[2];
-    NSISVariable *_headForObjectiveRow;
-    CDStruct_a8d20eab _objectiveRow;
-    NSISVariable *_placeholderHeadForExpressionBeingAdded;
     NSMutableArray *_variablesWithValueRestrictionViolations;
     NSMutableArray *_pendingRemovals;
     NSHashTable *_pendingMarkerDelegates;
@@ -48,18 +41,32 @@
     _Bool _accessedFromMainThread;
     _Bool _engineNeedsRebuildFromConstraints;
     _Bool _changeNotificationsDirty;
+    NSMapTable *_rows;
+    CDStruct_52118125 _engineVarTable;
+    CDStruct_52118125 _rowTables[2];
+    CDStruct_52118125 _colTables[2];
+    NSISVariable *_headForObjectiveRow;
+    CDStruct_a8d20eab _objectiveRow;
+    NSISVariable *_placeholderHeadForExpressionBeingAdded;
+    NSISVariable *_artificialRowHead;
+    NSISVariable *_artificialObjectiveRowHead;
+    NSISObjectiveLinearExpression *_artificialObjectiveRowBody;
 }
 
 + (void)setLogOnInvalidUseFromBGThread:(_Bool)arg1;
-+ (_Bool)_dbg_anyEngineContainsVariable:(id)arg1;
 + (void)setTraceFileSuffix:(id)arg1;
 + (id)traceFileSuffix;
 + (_Bool)enableEngineTrace;
 + (void)setEnableEngineTrace:(_Bool)arg1;
++ (_Bool)_dbg_anyEngineContainsVariable:(id)arg1;
+@property(retain) NSISObjectiveLinearExpression *artificialObjectiveRowBody; // @synthesize artificialObjectiveRowBody=_artificialObjectiveRowBody;
+@property(retain) NSISVariable *artificialObjectiveRowHead; // @synthesize artificialObjectiveRowHead=_artificialObjectiveRowHead;
+@property(retain) NSISVariable *artificialRowHead; // @synthesize artificialRowHead=_artificialRowHead;
 @property(nonatomic) struct CGSize engineScalingCoefficients; // @synthesize engineScalingCoefficients=_engineScalingCoefficients;
 @property _Bool revertsAfterUnsatisfiabilityHandler; // @synthesize revertsAfterUnsatisfiabilityHandler=_revertsAfterUnsatisfiabilityHandler;
 @property id <NSISEngineDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSMutableArray *variablesWithValueRestrictionViolations; // @synthesize variablesWithValueRestrictionViolations=_variablesWithValueRestrictionViolations;
+- (id)allVariableValues;
 - (_Bool)exerciseAmbiguityInVariable:(id)arg1;
 - (_Bool)valueOfVariableIsAmbiguous:(id)arg1;
 - (_Bool)incoming:(CDStruct_a8d20eab *)arg1 andOutgoing:(CDStruct_a8d20eab *)arg2 foundOutgoing:(_Bool *)arg3 rowHeadsThatMakeValueAmbiguousForVariable:(CDStruct_a8d20eab)arg4;
@@ -68,12 +75,14 @@
 - (id)constraintsAffectingValueOfVariable:(id)arg1;
 - (void)verifyInternalIntegrity;
 @property(readonly, copy) NSString *description;
+- (id)allRowHeads;
 @property(readonly) unsigned long long variableChangeCount;
 - (unsigned long long)pivotCount;
 - (unsigned long long)colCount;
 - (unsigned long long)rowCount;
 - (id)constraints;
 - (void)enumerateOriginalConstraints:(CDUnknownBlockType)arg1;
+- (CDStruct_fee1177a *)traceState;
 - (id)variableChangeTransactionSignal;
 - (_Bool)hasObservableForVariable:(id)arg1;
 - (void)removeObservableForVariable:(id)arg1;
@@ -87,11 +96,14 @@
 - (void)changeVariableToBeOptimized:(id)arg1 fromPriority:(double)arg2 toPriority:(double)arg3;
 - (void)removeVariableToBeOptimized:(id)arg1 priority:(double)arg2;
 - (void)addVariableToBeOptimized:(id)arg1 priority:(double)arg2;
-- (_Bool)tryToAddConstraintWithMarkerEngineVar:(CDStruct_a8d20eab)arg1 row:(CDStruct_a8d20eab)arg2 mutuallyExclusiveConstraints:(id *)arg3;
+- (_Bool)_tryToAddConstraintWithMarkerEngineVar:(CDStruct_a8d20eab)arg1 row:(CDStruct_a8d20eab)arg2 mutuallyExclusiveConstraints:(id *)arg3;
 - (_Bool)tryToAddConstraintWithMarker:(id)arg1 expression:(id)arg2 mutuallyExclusiveConstraints:(id *)arg3;
 - (_Bool)tryToAddConstraintWithMarker:(id)arg1 expression:(id)arg2 integralizationAdjustment:(double)arg3 mutuallyExclusiveConstraints:(id *)arg4;
 - (void)endBookkeepingForVariableIfUnused:(id)arg1;
 - (void)beginBookkeepingForVariableIfNeeded:(id)arg1;
+- (void)enumerateRows:(CDUnknownBlockType)arg1;
+- (void)enumerateCols:(CDUnknownBlockType)arg1;
+- (void)enumerateEngineVars:(CDUnknownBlockType)arg1;
 - (_Bool)containsVariable:(id)arg1;
 - (_Bool)hasValue:(double *)arg1 forExpression:(id)arg2;
 - (double)valueForExpression:(id)arg1;
@@ -106,18 +118,17 @@
 - (_Bool)_optimizeIfNotDisabled;
 - (void)withBehaviors:(unsigned long long)arg1 performModifications:(CDUnknownBlockType)arg2;
 - (void)_flushPendingRemovals;
-- (void)_addObjectiveRow;
 - (void)rebuildFromConstraints;
 - (id)tryToOptimizeReturningMutuallyExclusiveConstraints;
 - (unsigned long long)_optimizeWithoutRebuilding;
 - (unsigned long long)optimize;
-@property _Bool shouldIntegralize;
 - (unsigned long long)replayCommandsData:(id)arg1 verifyingIntegrity:(_Bool)arg2;
 - (id)recordedCommandsData;
 - (void)beginRecording;
 - (int)valueRestrictionForEngineVarIndex:(CDStruct_fcd6c539)arg1;
 - (id)variableForEngineVarIndex:(CDStruct_fcd6c539)arg1;
 - (CDStruct_fcd6c539)engineVarIndexForVariable:(id)arg1;
+- (void)_addObjectiveRow;
 - (void)dealloc;
 - (id)init;
 - (_Bool)tryUsingArtificialVariableToAddConstraintWithMarker:(CDStruct_a8d20eab)arg1 row:(CDStruct_a8d20eab)arg2 usingInfeasibilityHandlingBehavior:(long long)arg3 mutuallyExclusiveConstraints:(id *)arg4;
@@ -135,12 +146,8 @@
 - (void)_dirtyListRemoveObservable:(id)arg1;
 - (void)_dirtyListPrependObservable:(id)arg1;
 - (_Bool)_dirtyListContainsObservable:(id)arg1;
-- (void)addRowBody:(CDStruct_a8d20eab)arg1 times:(double)arg2 toRow:(CDStruct_a8d20eab)arg3;
-- (void)addRowBody:(CDStruct_a8d20eab)arg1 priority:(double)arg2 times:(double)arg3 toObjectiveRow:(CDStruct_a8d20eab)arg4;
 - (void)_removeAllVariables;
-- (void)addCol:(CDStruct_a8d20eab)arg1 coefficient:(double)arg2 toRow:(CDStruct_a8d20eab)arg3;
-- (void)addCol:(CDStruct_a8d20eab)arg1 priority:(double)arg2 times:(double)arg3 toObjectiveRow:(CDStruct_a8d20eab)arg4;
-- (void)removeColFromAllRows:(CDStruct_a8d20eab)arg1;
+@property _Bool shouldIntegralize;
 - (double)integralizationAdjustmentForMarker:(id)arg1;
 - (int)nsis_orientationHintForVariable:(id)arg1;
 - (id)nsis_descriptionOfVariable:(id)arg1;
@@ -157,11 +164,6 @@
 - (_Bool)positiveErrorVarForBrokenConstraintWithMarker:(id)arg1 errorVar:(CDStruct_a8d20eab *)arg2;
 - (id)_brokenConstraintPositiveErrorsIfAvailable;
 - (id)_brokenConstraintPositiveErrors;
-- (void)enumerateCols:(CDUnknownBlockType)arg1;
-- (id)allRowHeads;
-- (void)enumerateRows:(CDUnknownBlockType)arg1;
-- (void)enumerateEngineVars:(CDUnknownBlockType)arg1;
-- (CDStruct_fee1177a *)traceState;
 - (_Bool)_disambiguateFrame:(struct CGRect *)arg1 forAmbiguousItem:(id)arg2 withOldFrame:(struct CGRect)arg3;
 
 // Remaining properties

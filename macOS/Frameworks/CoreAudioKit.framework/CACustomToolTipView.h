@@ -8,7 +8,6 @@
 
 @class NSBezierPath, NSColor, NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface CACustomToolTipView : NSView
 {
     NSColor *backgroundColor;

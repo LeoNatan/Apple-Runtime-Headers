@@ -6,13 +6,12 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UIImageView, UITouch, UIWebSelectionView;
+@class UITouch, UIWebSelectionView;
 
 __attribute__((visibility("hidden")))
 @interface UIWebSelectionHandle : UIView
 {
     UITouch *_touch;
-    UIImageView *_dragDotView;
     int _position;
     int _textPosition;
     UIWebSelectionView *_selectionView;

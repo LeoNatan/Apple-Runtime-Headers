@@ -65,7 +65,6 @@
 - (void)_retrieveAssets;
 - (void)checkForOutstandingActivities;
 - (void)retrieveAssets:(id)arg1;
-- (void)subscribeStreamsProtocol:(id)arg1 didFindShareState:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didFindTemporarilyUnavailableSubscriptionForPersonID:(id)arg2;
 - (void)subscribeStreamsProtocol:(id)arg1 didReceiveAuthenticationError:(id)arg2;
 - (void)_didReceiveAuthenticationError:(id)arg1;

@@ -9,7 +9,7 @@
 #import <NetworkExtension/NEExtensionProviderHostProtocol-Protocol.h>
 #import <NetworkExtension/NEExtensionProviderProtocol-Protocol.h>
 
-@class NEUserNotification, NSString;
+@class NEUserNotification, NSString, NSUUID, NSXPCConnection;
 @protocol NEExtensionProviderHostDelegate, NEExtensionProviderProtocol;
 
 @interface NEExtensionProviderHostContext : NSExtensionContext <NEExtensionProviderProtocol, NEExtensionProviderHostProtocol>
@@ -17,11 +17,15 @@
     id <NEExtensionProviderProtocol> _vendorContext;
     NSString *_description;
     NEUserNotification *_notification;
+    _Bool _stopped;
     id <NEExtensionProviderHostDelegate> _delegate;
+    NSXPCConnection *_vendorConnection;
 }
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+@property(readonly, nonatomic) NSXPCConnection *vendorConnection; // @synthesize vendorConnection=_vendorConnection;
+@property(nonatomic) _Bool stopped; // @synthesize stopped=_stopped;
 @property __weak id <NEExtensionProviderHostDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)copyValueForEntitlement:(id)arg1;
@@ -30,13 +34,16 @@
 - (void)displayMessage:(id)arg1 message:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)startedWithError:(id)arg1;
 - (void)dispose;
+- (void)createWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)wake;
 - (void)sleepWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2 deviceIdentifier:(id)arg3;
+- (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2;
+@property(readonly) NSUUID *uuid;
 @property(readonly) int pid;
 - (id)vendorContext;
 - (void)setDescription:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (id)initWithVendorEndpoint:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

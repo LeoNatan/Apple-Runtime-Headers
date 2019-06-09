@@ -26,7 +26,6 @@
         unsigned int registered:1;
         unsigned int reserved:30;
     } _flags;
-    id _private;
 }
 
 + (unsigned long long)readingOptionsForType:(id)arg1 pasteboard:(id)arg2;

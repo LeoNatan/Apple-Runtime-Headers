@@ -18,5 +18,9 @@
 - (id)wf_dictionaryForKeyPath:(id)arg1;
 - (id)wf_objectForKeyPath:(id)arg1;
 - (id)wf_objectOfKind:(Class)arg1 forKeyPath:(id)arg2;
+- (id)stringForKey:(id)arg1;
+- (id)numberForKey:(id)arg1;
+- (id)arrayForKey:(id)arg1;
+- (id)dictionaryForKey:(id)arg1;
 @end
 

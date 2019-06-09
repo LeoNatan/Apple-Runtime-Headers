@@ -45,7 +45,8 @@
 - (void)_handleTriggerActivatedNotification:(id)arg1;
 - (void)_handleTriggerRenamedNotification:(id)arg1;
 - (id)_serializeForAdd;
-- (void)_addActionSetWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_addActionSetOfType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)addActionSetOfType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addActionSetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_enable:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)enable:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -58,8 +59,8 @@
 - (void)_updateActionSet:(id)arg1 add:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(nonatomic) __weak HMUser *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) HMDevice *ownerDevice; // @synthesize ownerDevice=_ownerDevice;
-- (id)creator;
-- (id)creatorDevice;
+@property(readonly, nonatomic) __weak HMUser *creator;
+@property(readonly, nonatomic) HMDevice *creatorDevice;
 @property(nonatomic) __weak HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;

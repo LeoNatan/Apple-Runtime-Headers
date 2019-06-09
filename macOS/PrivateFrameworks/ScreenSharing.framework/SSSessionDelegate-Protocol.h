@@ -12,8 +12,12 @@
 @property(readonly) BOOL useAVConference;
 
 @optional
+- (void)ssSession:(SSSession *)arg1 touchEvent:(NSArray *)arg2;
 - (int)orientationForCurrentAngle;
 - (unsigned int)currentViewRotation;
+- (void)setSwitchedDisplayWithNumber:(NSNumber *)arg1;
+- (void)cursorUpdateCore;
+- (void)saveCredentialsToKeychain;
 - (BOOL)ssSessionIsRedwood;
 - (BOOL)handleSSInputEvent:(SSInputEvent *)arg1;
 - (void)ssSessionRequestToAddTextToPasteboard:(SSSession *)arg1 result:(int)arg2;

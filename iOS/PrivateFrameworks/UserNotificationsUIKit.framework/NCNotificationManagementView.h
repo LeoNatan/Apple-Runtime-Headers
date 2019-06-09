@@ -6,38 +6,52 @@
 
 #import <UIKit/UIView.h>
 
-@class NCNotificationManagementBlueButton, UIImageView, UILabel;
+#import <UserNotificationsUIKit/MTVisualStylingProviding-Protocol.h>
 
-@interface NCNotificationManagementView : UIView
+@class MTVisualStylingProvider, NCNotificationManagementBlueButton, NSMutableDictionary, NSString, UIImageView, UILabel;
+
+@interface NCNotificationManagementView : UIView <MTVisualStylingProviding>
 {
     UIImageView *_icon;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UIView *_topSeparator;
-    NCNotificationManagementBlueButton *_offButton;
+    NCNotificationManagementBlueButton *_onOffToggleButton;
     NCNotificationManagementBlueButton *_deliveryButton;
     UILabel *_explanation;
     UIView *_bottomSeparator;
+    NSMutableDictionary *_categoriesToProviders;
     _Bool _isCriticalAlert;
 }
 
+@property(readonly, nonatomic) NCNotificationManagementBlueButton *onOffToggleButton; // @synthesize onOffToggleButton=_onOffToggleButton;
 @property(readonly, nonatomic) NCNotificationManagementBlueButton *deliveryButton; // @synthesize deliveryButton=_deliveryButton;
 - (void).cxx_destruct;
+- (id)visualStylingProviderForCategory:(long long)arg1;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)_explanationSizeForPlatterWidth:(double)arg1;
 - (struct CGSize)_titleSizeForPlatterWidth:(double)arg1;
 - (id)_newSeparatorView;
+- (void)_updateTopSeparatorVisualStyling;
 - (double)_separatorHeight;
 - (void)_configureExplanationIfNeccessary:(id)arg1;
-- (void)_configureOffButtonIfNeccessary;
+- (void)_updateExplanationVisualStyling;
+- (void)_configureOnOffToggleButtonIfNeccessary:(id)arg1;
 - (void)_configureDeliveryButtonIfNeccessary:(id)arg1;
 - (void)_configureTopSeparatorIfNeccessary;
 - (void)_configureSubtitleIfNeccessary:(id)arg1;
 - (void)_configureTitleIfNeccessary:(id)arg1;
 - (void)_configureIconIfNeccessary:(id)arg1;
-@property(readonly, nonatomic) NCNotificationManagementBlueButton *offButton; // @synthesize offButton=_offButton;
 - (id)initWithIcon:(id)arg1 title:(id)arg2 subtitle:(id)arg3 sectionSettings:(id)arg4 criticalAlert:(_Bool)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (double)_derivedTrailingControlKeyWidthForRow:(unsigned long long)arg1 orientation:(long long)arg2;
 + (double)_derivedLeadingControlKeyWidthForRow:(unsigned long long)arg1 keysForRow:(id)arg2 context:(id)arg3;
 + (unsigned long long)_numberOfKeysInRow:(id)arg1 firstKey:(id *)arg2 lastKey:(id *)arg3;
++ (double)_keyplanePaddingForOrientation:(long long)arg1 row:(unsigned long long)arg2;
 + (double)_keyplanePaddingForOrientation:(long long)arg1;
 + (double)_totalKeyPaddingForOrientation:(long long)arg1;
 

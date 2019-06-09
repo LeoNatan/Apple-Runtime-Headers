@@ -8,7 +8,7 @@
 
 @interface _TtC13CoreKnowledge8CKLogger : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: category
+    // Error parsing type: , name: osLog
 }
 
 @end

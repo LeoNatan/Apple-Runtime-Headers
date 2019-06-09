@@ -10,6 +10,6 @@
 
 @protocol PasswordsAuditingHandler <NSObject>
 - (void)changePasswordForSavedPassword:(WBSSavedPassword *)arg1;
-- (NSAttributedString *)passwordsReusedWarningStringForSavedPassword:(WBSSavedPassword *)arg1;
+- (NSAttributedString *)warningStringForSavedPassword:(WBSSavedPassword *)arg1;
 @end
 

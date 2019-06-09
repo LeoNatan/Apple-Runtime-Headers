@@ -6,6 +6,7 @@
 
 #import <UIKit/UIDateLabel.h>
 
+__attribute__((visibility("hidden")))
 @interface CKNanoDateLabel : UIDateLabel
 {
 }

@@ -8,15 +8,21 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOTransitVehicleTime : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     unsigned int _absTime;
     struct {
-        unsigned int absTime:1;
-    } _has;
+        unsigned int has_absTime:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int absTime; // @synthesize absTime=_absTime;
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -24,9 +30,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasAbsTime;
+@property(nonatomic) unsigned int absTime;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/WDOfficeArt.h>
 
+__attribute__((visibility("hidden")))
 @interface WDPicture : WDOfficeArt
 {
 }

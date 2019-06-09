@@ -16,6 +16,7 @@
     NSString *_poiID;
 }
 
++ (id)attributionWithDataAttribution:(id)arg1 searchInfo:(id)arg2 class:(Class)arg3;
 @property(readonly, nonatomic) NSArray *attributionURLs; // @synthesize attributionURLs=_attributionURLs;
 - (void).cxx_destruct;
 - (id)_yelpHTTPURLForRequirement:(int)arg1 withUID:(id)arg2 writeAReview:(_Bool)arg3;

@@ -9,6 +9,7 @@
 @class MKMapView, NSArray, NSMapTable, NSMutableArray, NSMutableOrderedSet;
 @protocol MKOverlayContainerViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKOverlayContainerView : NSView
 {
     NSMutableOrderedSet *_overlays[2];

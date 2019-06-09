@@ -22,6 +22,7 @@
 - (void)postAWDHCEStateChangeEvent:(unsigned int)arg1;
 - (void)postAWDHCEStartEvent:(id)arg1;
 - (void)postAWDHCIActivityTimeout:(id)arg1;
+- (void)postAWDPurpleTrustOperationWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentRequestWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentEnrollmentWithParameters:(id)arg1;
 - (void)postAWDReaderSessionEventWithParameters:(id)arg1;
@@ -44,10 +45,10 @@
 - (void)postAWDAPNReceived;
 - (void)postAWDTransactionEndOfOperation;
 - (void)postAWDTransactionLastRAPDU;
-- (void)postAWDHCIEndOfTransactionV2EventWithParameters:(id)arg1;
-- (void)postAWDHCIStartOfTransactionV2EventWithParameters:(id)arg1;
 - (void)postAWDHCIEndOfTransactionEventWithParameters:(id)arg1;
-- (void)postAWDHCIStartOfTransactionEventWithVersion:(unsigned int)arg1 withStatus:(unsigned int)arg2;
+- (void)_postAWDHCIEndOfTransactionEventWithParametersLegacy:(id)arg1 currentTimestamp:(unsigned long long)arg2;
+- (void)postAWDHCIStartOfTransactionEventWithParameters:(id)arg1;
+- (void)_postAWDHCIStartOfTransactionEventWithParametersLegacy:(id)arg1 currentTimestamp:(unsigned long long)arg2;
 - (void)postAWDCardIngestionReaderStateChangeWithType:(unsigned int)arg1 errorCode:(unsigned int)arg2;
 - (void)postAWDCardIngestionSessionStateChange:(id)arg1;
 - (void)postAWDExpressTransactionEvent:(id)arg1;

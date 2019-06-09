@@ -6,11 +6,11 @@
 
 #import <CameraUI/NSObject-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSSet;
 
 @protocol CAMMetadataDelegate <NSObject>
 
 @optional
-- (void)metadataWasRecognized:(NSArray *)arg1;
+- (void)metadataWasRecognized:(NSArray *)arg1 forMetadataObjectTypes:(NSSet *)arg2;
 @end
 

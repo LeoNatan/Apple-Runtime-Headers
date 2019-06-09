@@ -9,7 +9,7 @@
 #import <CoreRoutine/NSCopying-Protocol.h>
 #import <CoreRoutine/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSUUID, RTLocation;
+@class NSDate, RTLocation;
 
 @interface RTVisit : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,16 +18,15 @@
     RTLocation *_location;
     NSDate *_entry;
     NSDate *_exit;
-    NSUUID *_locationOfInterestIdentifier;
     int _dataPointCount;
+    double _confidence;
 }
 
 + (_Bool)supportsSecureCoding;
 + (int)visitIncidentTypeFromString:(id)arg1;
 + (id)stringFromVisitIncidentType:(int)arg1;
-+ (id)visitIncidentFromDefaultsDictionary:(id)arg1;
 @property(readonly, nonatomic) int dataPointCount; // @synthesize dataPointCount=_dataPointCount;
-@property(readonly, copy, nonatomic) NSUUID *locationOfInterestIdentifier; // @synthesize locationOfInterestIdentifier=_locationOfInterestIdentifier;
+@property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, copy, nonatomic) NSDate *exit; // @synthesize exit=_exit;
 @property(readonly, copy, nonatomic) NSDate *entry; // @synthesize entry=_entry;
 @property(readonly, copy, nonatomic) RTLocation *location; // @synthesize location=_location;
@@ -41,9 +40,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)initWithDate:(id)arg1 type:(int)arg2 location:(id)arg3 entry:(id)arg4 exit:(id)arg5 locationOfInterestIdentifier:(id)arg6 dataPointCount:(int)arg7;
-- (id)initWithDate:(id)arg1 type:(int)arg2 location:(id)arg3 entry:(id)arg4 exit:(id)arg5 locationOfInterestIdentifier:(id)arg6;
-- (id)initWithType:(int)arg1 location:(id)arg2 entry:(id)arg3 exit:(id)arg4 locationOfInterestIdentifier:(id)arg5;
+- (id)initWithDate:(id)arg1 type:(int)arg2 location:(id)arg3 entry:(id)arg4 exit:(id)arg5 dataPointCount:(int)arg6 confidence:(double)arg7;
+- (id)init;
 
 @end
 

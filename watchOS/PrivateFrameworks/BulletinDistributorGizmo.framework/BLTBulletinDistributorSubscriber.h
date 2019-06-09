@@ -36,7 +36,7 @@
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2;
 - (void)pingWithBulletin:(id)arg1 ack:(CDUnknownBlockType)arg2;
 - (void)unsubscribeFromSectionID:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(_Bool)arg2 withAck:(_Bool)arg3;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(_Bool)arg2 withAck:(_Bool)arg3 ackAllowedOnLocalConnection:(_Bool)arg4;
 @property(readonly, nonatomic) NSSet *sectionIDs;
 - (id)initWithClient:(id)arg1;
 - (id)init;

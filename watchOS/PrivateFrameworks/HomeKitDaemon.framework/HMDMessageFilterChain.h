@@ -6,24 +6,21 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class NSArray, NSMutableArray, NSObject;
-@protocol OS_dispatch_queue;
+@class NSArray, NSMutableArray;
+@protocol HMFLocking;
 
 @interface HMDMessageFilterChain : HMFObject
 {
-    NSObject<OS_dispatch_queue> *_workQueue;
-    NSMutableArray *_messageFilters;
+    id <HMFLocking> _lock;
+    NSMutableArray *_filters;
 }
 
-@property(retain, nonatomic) NSMutableArray *messageFilters; // @synthesize messageFilters=_messageFilters;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
-- (void)_executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)resetConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)shouldCloudSyncData;
+- (_Bool)acceptMessage:(id)arg1 error:(id *)arg2;
 - (void)removeMessageFilter:(id)arg1;
 - (void)addMessageFilter:(id)arg1;
-- (_Bool)shouldCloudSyncData;
-- (void)executeChainForMessage:(id)arg1 queue:(id)arg2 target:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(readonly, copy, nonatomic) NSArray *filters;
 - (id)init;
 

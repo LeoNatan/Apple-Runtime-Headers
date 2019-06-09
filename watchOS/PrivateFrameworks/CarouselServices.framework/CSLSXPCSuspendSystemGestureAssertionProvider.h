@@ -8,16 +8,21 @@
 
 #import <CarouselServices/CSLSSuspendSystemGestureAssertionProvider-Protocol.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 
 @interface CSLSXPCSuspendSystemGestureAssertionProvider : BSBaseXPCClient <CSLSSuspendSystemGestureAssertionProvider>
 {
+    struct os_unfair_recursive_lock_s _lock;
+    NSMutableDictionary *_activeAssertions;
 }
 
 + (id)sharedInstance;
-- (void)releaseSuspendSystemGestureAssertion:(id)arg1 pid:(int)arg2;
-- (void)takeSuspendSystemGestureAssertion:(id)arg1 withEdges:(unsigned int)arg2 pid:(int)arg3;
-- (id)init;
+- (void).cxx_destruct;
+- (void)releaseSuspendSystemGestureAssertionWithConfiguration:(id)arg1;
+- (void)takeSuspendSystemGestureAssertionWithConfiguration:(id)arg1;
+- (void)queue_connectionWasInterrupted;
+- (void)_withLock:(CDUnknownBlockType)arg1;
+- (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

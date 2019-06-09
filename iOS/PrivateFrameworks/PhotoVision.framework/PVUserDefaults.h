@@ -28,6 +28,8 @@
 + (unsigned long long)minimumSuggestionSize;
 + (float)facePrimarySuggestionsThreshold;
 + (float)faceMergeFaceprintDistanceThreshold;
++ (float)faceClusteringAgeThreshold;
++ (float)faceClusteringJunkThreshold;
 + (float)faceClusteringThreshold;
 + (double)_doubleValueForKey:(id)arg1 defaultValue:(double)arg2;
 + (float)_floatValueForKey:(id)arg1 defaultValue:(float)arg2;

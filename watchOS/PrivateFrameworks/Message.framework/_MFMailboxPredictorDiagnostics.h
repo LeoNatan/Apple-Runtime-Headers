@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <Message/MFMailboxPredictorDiagnostics-Protocol.h>
+#import <Message/EDMailboxPredictorDiagnostics-Protocol.h>
 
 @class NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
-@interface _MFMailboxPredictorDiagnostics : NSObject <MFMailboxPredictorDiagnostics>
+@interface _MFMailboxPredictorDiagnostics : NSObject <EDMailboxPredictorDiagnostics>
 {
     NSString *_debugOutput;
     NSDictionary *_modelInfo;
@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) NSDictionary *modelInfo; // @synthesize modelInfo=_modelInfo;
 @property(retain, nonatomic) NSString *debugOutput; // @synthesize debugOutput=_debugOutput;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithDebugOutput:(id)arg1 modelInfo:(id)arg2;
 - (id)initWithDebugOutput:(id)arg1;
 

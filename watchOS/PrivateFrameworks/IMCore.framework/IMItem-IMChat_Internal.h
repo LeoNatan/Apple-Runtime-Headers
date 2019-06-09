@@ -15,5 +15,12 @@
 - (id)_senderHandle;
 - (void)_updateContextWithSenderHandle:(id)arg1 otherHandle:(id)arg2;
 - (id)message;
+- (_Bool)shouldGenerateTopLevelChatItem;
+- (id)_serviceHandle;
+- (id)_service;
+- (id)_newChatItems;
+- (_Bool)_hasMessageChatItem;
+- (_Bool)isIncomingTypingOrCancelTypingMessage;
+- (_Bool)isTypingOrCancelTypingMessage;
 @end
 

@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class AFAnalyticsTurnBasedInstrumentationContext;
+@class AFAnalyticsTurnBasedInstrumentationContext, NSString;
 
 @interface SiriUIInstrumentationManager : NSObject
 {
     int _currentSiriUIState;
     AFAnalyticsTurnBasedInstrumentationContext *_currentInstrumentationTurnContext;
+    NSString *_clientGeneratedDialogIdentifier;
 }
 
 + (id)sharedManager;
+@property(copy, nonatomic) NSString *clientGeneratedDialogIdentifier; // @synthesize clientGeneratedDialogIdentifier=_clientGeneratedDialogIdentifier;
 @property int currentSiriUIState; // @synthesize currentSiriUIState=_currentSiriUIState;
 @property(retain) AFAnalyticsTurnBasedInstrumentationContext *currentInstrumentationTurnContext; // @synthesize currentInstrumentationTurnContext=_currentInstrumentationTurnContext;
 - (void).cxx_destruct;
@@ -26,6 +28,7 @@
 - (void)emitPartialSpeechTranscriptionEventWith:(id)arg1;
 - (void)emitUIStateTransitionForSiriDismissal:(int)arg1;
 - (void)emitUIStateTransitionEventWithFromState:(int)arg1 toState:(int)arg2 withPresentationType:(int)arg3;
+- (void)storeClientGeneratedDUC:(id)arg1;
 - (void)emitInstrumentation:(id)arg1;
 - (void)storeCurrentInstrumentationTurnContext:(id)arg1;
 - (id)init;

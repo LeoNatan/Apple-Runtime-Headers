@@ -30,7 +30,6 @@
 - (id)basebandFirmware;
 - (id)baseband;
 - (id)deviceName;
-- (id)hardwareModel;
 - (id)deviceShutdownReasons;
 - (id)seedGroup;
 - (id)logLastBackupTime;

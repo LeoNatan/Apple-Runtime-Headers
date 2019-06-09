@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEORegionalResourceTileData, GEOResourceLoader, GEOResourceManifestConfiguration, NSLock;
+@class GEORegionalResourceTileData, GEOResourceLoader, GEOResourceManifestConfiguration;
 
 __attribute__((visibility("hidden")))
 @interface _GEORegionalResourcesTileLoader : NSObject
@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
     GEORegionalResourceTileData *_tile;
     GEOResourceManifestConfiguration *_manifestConfiguration;
     GEOResourceLoader *_resourceLoader;
-    NSLock *_lock;
+    struct os_unfair_lock_s _lock;
+    struct _GEOTileKey _tileKey;
 }
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)loadResourcesForTileKey:(const struct _GEOTileKey *)arg1 manifestConfiguration:(id)arg2 auditToken:(id)arg3 finished:(CDUnknownBlockType)arg4 error:(CDUnknownBlockType)arg5;
+@property(readonly, nonatomic) struct _GEOTileKey *tileKeyPtr;
 - (void)dealloc;
 - (id)init;
 

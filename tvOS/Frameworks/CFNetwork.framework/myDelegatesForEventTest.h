@@ -11,7 +11,6 @@
 
 @class NSError, NSInputStream, NSOutputStream, NSString;
 
-__attribute__((visibility("hidden")))
 @interface myDelegatesForEventTest : NSObject <NSURLSessionTaskDelegate, NSStreamDelegate>
 {
     NSInputStream *_inStream;

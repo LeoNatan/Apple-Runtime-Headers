@@ -8,7 +8,7 @@
 
 #import <MusicLibrary/NSCopying-Protocol.h>
 
-@class MIPMovie, MIPPodcast, MIPSong, MIPTVShow, NSMutableArray, NSString;
+@class MIPMovie, MIPPodcast, MIPSong, MIPTVShow, NSData, NSMutableArray, NSString;
 
 @interface MIPMediaItem : PBCodable <NSCopying>
 {
@@ -45,6 +45,7 @@
     int _drmVersionsCode;
     NSString *_extrasUrl;
     int _fileKind;
+    NSData *_flattenedChapterData;
     NSString *_grouping;
     NSMutableArray *_libraryIdentifiers;
     int _likedState;
@@ -73,6 +74,7 @@
     int _year;
     _Bool _cloudAssetAvailable;
     _Bool _explicitContent;
+    _Bool _hasChapterData;
     _Bool _hasLocalAsset;
     _Bool _hidden;
     _Bool _inUsersCloudLibrary;
@@ -122,6 +124,7 @@
         unsigned int year:1;
         unsigned int cloudAssetAvailable:1;
         unsigned int explicitContent:1;
+        unsigned int hasChapterData:1;
         unsigned int hasLocalAsset:1;
         unsigned int hidden:1;
         unsigned int inUsersCloudLibrary:1;
@@ -150,6 +153,8 @@
 @property(nonatomic) long long storefrontId; // @synthesize storefrontId=_storefrontId;
 @property(nonatomic) long long storeId; // @synthesize storeId=_storeId;
 @property(retain, nonatomic) NSMutableArray *libraryIdentifiers; // @synthesize libraryIdentifiers=_libraryIdentifiers;
+@property(retain, nonatomic) NSData *flattenedChapterData; // @synthesize flattenedChapterData=_flattenedChapterData;
+@property(nonatomic) _Bool hasChapterData; // @synthesize hasChapterData=_hasChapterData;
 @property(retain, nonatomic) NSString *secondaryArtworkId; // @synthesize secondaryArtworkId=_secondaryArtworkId;
 @property(nonatomic) int secondaryArtworkSourceType; // @synthesize secondaryArtworkSourceType=_secondaryArtworkSourceType;
 @property(nonatomic) _Bool inUsersCloudLibrary; // @synthesize inUsersCloudLibrary=_inUsersCloudLibrary;
@@ -231,6 +236,8 @@
 - (unsigned long long)libraryIdentifiersCount;
 - (void)addLibraryIdentifiers:(id)arg1;
 - (void)clearLibraryIdentifiers;
+@property(readonly, nonatomic) _Bool hasFlattenedChapterData;
+@property(nonatomic) _Bool hasHasChapterData;
 @property(readonly, nonatomic) _Bool hasSecondaryArtworkId;
 @property(nonatomic) _Bool hasSecondaryArtworkSourceType;
 @property(nonatomic) _Bool hasInUsersCloudLibrary;

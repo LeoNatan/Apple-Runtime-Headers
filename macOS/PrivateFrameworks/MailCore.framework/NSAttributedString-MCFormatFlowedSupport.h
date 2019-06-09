@@ -6,8 +6,18 @@
 
 #import <Foundation/NSAttributedString.h>
 
+@class NSString;
+
 @interface NSAttributedString (MCFormatFlowedSupport)
++ (double)_headerFontSize;
++ (id)headerAttributes;
++ (id)boldGrayHeaderAttributes;
++ (void)resetMimeHeaderAttributes;
 - (void)getQuotedString:(id *)arg1 encoding:(unsigned long long)arg2;
 - (void)getFormatFlowedString:(id *)arg1 insertedTrailingSpaces:(char *)arg2 encoding:(unsigned long long)arg3;
+@property(readonly, copy, nonatomic) NSString *enrichedString;
+@property(readonly, nonatomic) BOOL containsRichText;
+- (BOOL)containsRichTextInRange:(struct _NSRange)arg1;
+- (id)messageDataForRange:(struct _NSRange)arg1;
 @end
 

@@ -16,7 +16,6 @@
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 @property(nonatomic) BOOL returnAllResults;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 
 @end

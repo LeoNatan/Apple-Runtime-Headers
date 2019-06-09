@@ -6,6 +6,7 @@
 
 #import <Foundation/NSProxy.h>
 
+__attribute__((visibility("hidden")))
 @interface MKBlurBackedControlProxy : NSProxy
 {
     id _control;

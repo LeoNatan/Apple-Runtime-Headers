@@ -18,6 +18,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
+- (id)transformByRotateZ:(double)arg1;
+- (id)transformByTranslateX:(double)arg1 translateY:(double)arg2;
+- (id)transformByScaleX:(double)arg1 scaleY:(double)arg2;
 - (struct CGPoint)transformPoint:(struct CGPoint)arg1;
 - (id)inverseTransform;
 - (id)init;

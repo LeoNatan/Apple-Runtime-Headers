@@ -28,7 +28,6 @@
 @property(readonly, nonatomic) _Bool isMusicCellularStreamingAllowed;
 - (void)endUsingNetwork;
 - (void)beginUsingNetwork;
-- (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)_init;
 - (id)init;

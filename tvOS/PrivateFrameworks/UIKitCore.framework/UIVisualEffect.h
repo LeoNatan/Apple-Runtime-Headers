@@ -13,7 +13,6 @@
 
 @interface UIVisualEffect : NSObject <NSCopying, NSSecureCoding>
 {
-    _UIVisualEffectConfig *_effectConfig;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -23,19 +22,15 @@
 + (id)effectCompositingImage:(id)arg1;
 + (id)effectCombiningEffects:(id)arg1;
 + (id)emptyEffect;
-@property(readonly, nonatomic) _UIVisualEffectConfig *effectConfig; // @synthesize effectConfig=_effectConfig;
-- (void).cxx_destruct;
 - (long long)_expectedUsage;
-- (_Bool)_needsUpdateForMovingToWindow:(id)arg1 fromWindow:(id)arg2 inEffectView:(id)arg3;
-- (_Bool)_needsUpdateForMovingToSuperview:(id)arg1 fromSuperview:(id)arg2 inEffectView:(id)arg3;
-- (_Bool)_needsUpdateForOption:(id)arg1;
-- (_Bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
-- (_Bool)_selectorOverriden:(SEL)arg1;
+- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
+- (_Bool)_selectorOverridden:(SEL)arg1;
 - (void)_enumerateEffects:(CDUnknownBlockType)arg1;
+- (id)_allEffects;
 - (id)effectForUserInterfaceStyle:(long long)arg1;
-- (id)effectConfigForOptions:(id)arg1;
 - (id)effectConfigForQuality:(long long)arg1;
+@property(readonly, nonatomic) _UIVisualEffectConfig *effectConfig;
 @property(readonly, nonatomic) _Bool _isAutomaticStyle;
 @property(readonly, nonatomic) _Bool _isATVStyle;
 @property(readonly, nonatomic) _UIBackdropViewSettings *effectSettings;

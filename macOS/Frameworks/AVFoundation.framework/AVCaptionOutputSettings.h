@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsEmptyOutputSettingsDictionary;
 + (id)_outputSettingsWithOutputSettingsDictionary:(id)arg1 mediaType:(id)arg2 exceptionReason:(id *)arg3;
 + (id)eligibleOutputSettingsDictionaryKeys;
+@property(readonly, nonatomic) BOOL useDropFrameTimeCode;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 captionTimeCodeFrameDuration;
 - (BOOL)encoderIsAvailableOnCurrentSystemReturningError:(id *)arg1;
 - (BOOL)validateUsingOutputSettingsValidator:(id)arg1 reason:(id *)arg2;

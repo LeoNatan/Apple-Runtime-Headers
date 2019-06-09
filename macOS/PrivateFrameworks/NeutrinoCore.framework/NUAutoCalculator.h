@@ -11,7 +11,6 @@
 }
 
 - (void)submit:(CDUnknownBlockType)arg1;
-- (void)calculate:(CDUnknownBlockType)arg1;
 
 @end
 

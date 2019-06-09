@@ -7,10 +7,10 @@
 #import <GeoServices/NSObject-Protocol.h>
 
 @class GEODataRequest, NSObject;
-@protocol GEODataSessionTask, GEODataSessionTaskDelegate, GEODataSessionTaskRules, OS_dispatch_queue;
+@protocol GEODataSessionTask, GEODataSessionTaskDelegate, OS_dispatch_queue;
 
 @protocol GEODataSession <NSObject>
-- (id <GEODataSessionTask>)taskWithRequest:(GEODataRequest *)arg1 rules:(id <GEODataSessionTaskRules>)arg2 priority:(float)arg3 delegate:(id <GEODataSessionTaskDelegate>)arg4 delegateQueue:(NSObject<OS_dispatch_queue> *)arg5;
-- (id <GEODataSessionTask>)taskWithRequest:(GEODataRequest *)arg1 rules:(id <GEODataSessionTaskRules>)arg2 delegate:(id <GEODataSessionTaskDelegate>)arg3 delegateQueue:(NSObject<OS_dispatch_queue> *)arg4;
+- (id <GEODataSessionTask>)taskWithRequest:(GEODataRequest *)arg1 priority:(float)arg2 delegate:(id <GEODataSessionTaskDelegate>)arg3 delegateQueue:(NSObject<OS_dispatch_queue> *)arg4;
+- (id <GEODataSessionTask>)taskWithRequest:(GEODataRequest *)arg1 delegate:(id <GEODataSessionTaskDelegate>)arg2 delegateQueue:(NSObject<OS_dispatch_queue> *)arg3;
 @end
 

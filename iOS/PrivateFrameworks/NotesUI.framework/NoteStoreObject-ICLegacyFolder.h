@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface NoteStoreObject (ICLegacyFolder) <ICLegacyFolder>
+- (_Bool)isDeletedOrInTrash;
 - (void)addNotesObject:(id)arg1;
 - (id)newNoteInContext:(struct NoteContext *)arg1;
 - (id)parentFolder;

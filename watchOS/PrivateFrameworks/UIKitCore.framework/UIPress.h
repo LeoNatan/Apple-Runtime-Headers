@@ -25,6 +25,7 @@
     float _force;
     unsigned int _source;
     unsigned int _gameControllerComponent;
+    unsigned int _contextID;
     unsigned int _clickCount;
     double _timestamp;
 }
@@ -33,6 +34,7 @@
 @property(nonatomic) unsigned int clickCount; // @synthesize clickCount=_clickCount;
 @property(nonatomic) _Bool sentPressesEnded; // @synthesize sentPressesEnded=_sentPressesEnded;
 @property(nonatomic) _Bool isDelayed; // @synthesize isDelayed=_isDelayed;
+@property(readonly, nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(nonatomic, getter=_gameControllerComponent, setter=_setGameControllerComponent:) unsigned int gameControllerComponent; // @synthesize gameControllerComponent=_gameControllerComponent;
 @property(nonatomic, getter=_source, setter=_setSource:) unsigned int source; // @synthesize source=_source;
 @property(nonatomic) float force; // @synthesize force=_force;

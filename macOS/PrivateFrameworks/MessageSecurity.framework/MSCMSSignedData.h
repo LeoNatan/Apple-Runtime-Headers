@@ -44,10 +44,10 @@
 - (BOOL)checkSignedPerRFC5652:(id *)arg1;
 - (BOOL)verifySignaturesAndSignersWithPolicies:(id)arg1 verifyTime:(id)arg2 error:(id *)arg3;
 - (BOOL)verifySignatures:(id *)arg1;
-- (struct OpaqueSecCertificateRef *)getSignerCertificate:(unsigned long long)arg1 error:(id *)arg2;
-- (void)removeSignersWithIdentity:(struct OpaqueSecIdentityRef *)arg1 error:(id *)arg2;
+- (struct __SecCertificate *)getSignerCertificate:(unsigned long long)arg1 error:(id *)arg2;
+- (void)removeSignersWithIdentity:(struct __SecIdentity *)arg1 error:(id *)arg2;
 - (void)removeSignersWithEmailAddress:(id)arg1 error:(id *)arg2;
-- (void)removeSignersWithCertificate:(struct OpaqueSecCertificateRef *)arg1 error:(id *)arg2;
+- (void)removeSignersWithCertificate:(struct __SecCertificate *)arg1 error:(id *)arg2;
 - (void)removeSignersWithIndexes:(id)arg1 error:(id *)arg2;
 - (void)removeSignerCertificatesWithIndexes:(id)arg1;
 - (BOOL)addSigner:(id)arg1 withChainMode:(unsigned long long)arg2 error:(id *)arg3;

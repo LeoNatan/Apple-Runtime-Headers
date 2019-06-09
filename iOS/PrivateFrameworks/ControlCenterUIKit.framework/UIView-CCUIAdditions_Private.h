@@ -8,5 +8,6 @@
 
 @interface UIView (CCUIAdditions_Private)
 - (void)_controlCenterApplyPrimaryContentShadow;
+- (void)controlCenterApplyPrimaryContentShadow;
 @end
 

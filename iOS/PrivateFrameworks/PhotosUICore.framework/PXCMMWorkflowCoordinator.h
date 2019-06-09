@@ -9,11 +9,12 @@
 #import <PhotosUICore/PXCMMActionControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXCMMActionPerformerDelegate-Protocol.h>
 #import <PhotosUICore/PXCMMViewControllerDelegate-Protocol.h>
+#import <PhotosUICore/PXCMMWorkflowPresenting-Protocol.h>
 
 @class NSString, PXCMMViewController, UINavigationController;
 @protocol PXCMMWorkflowCoordinatorDelegate;
 
-@interface PXCMMWorkflowCoordinator : NSObject <PXCMMViewControllerDelegate, PXCMMActionPerformerDelegate, PXCMMActionControllerDelegate>
+@interface PXCMMWorkflowCoordinator : NSObject <PXCMMViewControllerDelegate, PXCMMActionPerformerDelegate, PXCMMActionControllerDelegate, PXCMMWorkflowPresenting>
 {
     UINavigationController *_navigationController;
     PXCMMViewController *_rootWorkflowViewController;
@@ -54,6 +55,7 @@
 - (id)_performActionWithType:(id)arg1 forSession:(id)arg2;
 - (void)cancelWorkflow;
 - (id)workflowViewControllerWithContext:(id)arg1 embedInNavigationControllerOfClass:(Class)arg2;
+- (struct NSObject *)workflowViewControllerWithContext:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

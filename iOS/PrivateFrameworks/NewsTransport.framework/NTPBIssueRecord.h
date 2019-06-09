@@ -30,6 +30,7 @@
     NSString *_layeredCoverPrimaryColor;
     NSString *_metadataURL;
     NSString *_notificationDescription;
+    NSString *_pdfResourceArchiveURL;
     NTPBDate *_publishDate;
     COMAPPLEFELDSPARPROTOCOLLIVERPOOLArticleScores *_scores;
     NSString *_title;
@@ -52,6 +53,7 @@
 + (Class)blockedStorefrontIDsType;
 + (Class)allowedStorefrontIDsType;
 + (Class)allArticleIDsType;
+@property(retain, nonatomic) NSString *pdfResourceArchiveURL; // @synthesize pdfResourceArchiveURL=_pdfResourceArchiveURL;
 @property(nonatomic) long long minimumNewsVersion; // @synthesize minimumNewsVersion=_minimumNewsVersion;
 @property(retain, nonatomic) NSMutableArray *topicTagIDs; // @synthesize topicTagIDs=_topicTagIDs;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
@@ -84,6 +86,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPdfResourceArchiveURL;
 @property(nonatomic) _Bool hasMinimumNewsVersion;
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type; // @synthesize type=_type;

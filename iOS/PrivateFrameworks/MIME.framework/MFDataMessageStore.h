@@ -15,6 +15,7 @@
     NSString *_storagePath;
 }
 
+- (void).cxx_destruct;
 - (_Bool)messageCanBeTriaged:(id)arg1;
 - (id)mailboxUid;
 - (void)deleteBodyDataForMessage:(id)arg1;
@@ -33,7 +34,6 @@
 - (void)setStoragePath:(id)arg1;
 - (id)storagePath;
 - (id)storePath;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 
 @end

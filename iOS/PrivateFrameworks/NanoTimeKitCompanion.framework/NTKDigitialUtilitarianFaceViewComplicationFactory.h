@@ -28,7 +28,7 @@
 - (void)setUsesLegibility:(_Bool)arg1 faceView:(id)arg2;
 - (void)setShadowColor:(id)arg1 faceView:(id)arg2;
 - (void)setForegroundColor:(id)arg1 faceView:(id)arg2;
-- (void)applyComplicationContentSpecificAttributesAnimated:(_Bool)arg1 attributes:(unsigned long long)arg2 faceView:(id)arg3;
+- (id)createComplicationContentSpecificAttributesAnimationWithAttributes:(unsigned long long)arg1 faceView:(id)arg2 forSlots:(id)arg3;
 - (void)applyComplicationContentSpecificAttributesAnimated:(_Bool)arg1 faceView:(id)arg2;
 - (void)cleanupAfterEditingForFaceView:(id)arg1;
 - (void)prepareForEditingForFaceView:(id)arg1;

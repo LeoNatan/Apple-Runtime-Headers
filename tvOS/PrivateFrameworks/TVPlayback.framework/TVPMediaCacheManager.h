@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAssetCache, AVAssetDownloadSession, AVQueuePlayer, NSArray, NSDate, NSMutableArray, NSNumber, NSString, NSTimer, TVPMediaItemLoader, TVPPlayerItem, TVPTimeRange, TVSStateMachine;
+@class AVAssetCache, AVAssetDownloadSession, AVQueuePlayer, NSArray, NSDate, NSMutableArray, NSNumber, NSString, NSTimer, TVPMediaItemLoader, TVPPlayerItem, TVPStateMachine, TVPTimeRange;
 @protocol TVPMediaItem;
 
 @interface TVPMediaCacheManager : NSObject
@@ -24,7 +24,7 @@
     NSDate *_dateCachingWasStarted;
     TVPMediaItemLoader *_mediaItemLoader;
     AVQueuePlayer *_AVQueuePlayer;
-    TVSStateMachine *_stateMachine;
+    TVPStateMachine *_stateMachine;
     AVAssetDownloadSession *_downloadSession;
     TVPPlayerItem *_playerItem;
     double _videoStartTime;
@@ -52,7 +52,7 @@
 @property(nonatomic) double videoStartTime; // @synthesize videoStartTime=_videoStartTime;
 @property(retain, nonatomic) TVPPlayerItem *playerItem; // @synthesize playerItem=_playerItem;
 @property(retain, nonatomic) AVAssetDownloadSession *downloadSession; // @synthesize downloadSession=_downloadSession;
-@property(retain, nonatomic) TVSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) AVQueuePlayer *AVQueuePlayer; // @synthesize AVQueuePlayer=_AVQueuePlayer;
 @property(retain, nonatomic) TVPMediaItemLoader *mediaItemLoader; // @synthesize mediaItemLoader=_mediaItemLoader;
 @property(retain, nonatomic) NSDate *dateCachingWasStarted; // @synthesize dateCachingWasStarted=_dateCachingWasStarted;

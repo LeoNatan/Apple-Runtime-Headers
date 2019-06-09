@@ -23,10 +23,9 @@
 + (id)sharedAdminInstallController;
 - (id)deferredInstallDescription;
 - (BOOL)isInstallDeferredForProduct:(id)arg1 deferredUntilDate:(id *)arg2;
-- (void)overrideDeferralForMajorOS;
 - (void)overrideDeferralForProducts:(id)arg1;
-- (BOOL)isMajorOSNotificationDeferredReturningDeferralDate:(id *)arg1;
-- (void)newMajorOSBundleInstalledWithPostDate:(id)arg1;
+- (void)installerNotificationBundleDeferralDateForMajorOSBundleTag:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)deferralDateForMajorProductTag:(id)arg1 orProductKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_shouldDeferFromDate:(id)arg1;
 - (id)_deferralDateFromDate:(id)arg1;
 - (id)existingDeferralDateForProductTag:(id)arg1;
@@ -37,7 +36,7 @@
 - (void)_setDeferralDateForMajorOSFromPostDate:(id)arg1;
 - (void)setDeferralDate:(id)arg1 forProduct:(id)arg2;
 - (void)_managedPreferencesDidChange:(id)arg1;
-- (void)startInstallingAdminUpdates:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 allowOnlyAppleSigned:(BOOL)arg3 replyWhenDone:(CDUnknownBlockType)arg4;
+- (void)startInstallingAdminUpdates:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 replyWhenDone:(CDUnknownBlockType)arg3;
 - (void)_dumpAuthForDebugging:(struct AuthorizationOpaqueRef *)arg1;
 - (void)_doPostDownloadActionsForAdminInitiatedUpdateForProduct:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 withAction:(long long)arg3 replyWhenDone:(CDUnknownBlockType)arg4;
 - (void)resetState;

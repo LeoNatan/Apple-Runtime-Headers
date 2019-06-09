@@ -12,6 +12,9 @@
 
 + (id)createServerConnectionWithPort:(const char *)arg1 queue:(id)arg2 debugIdentifier:(id)arg3 eventHandler:(CDUnknownBlockType)arg4;
 + (id)createServerConnectionWithQueue:(id)arg1 debugIdentifier:(id)arg2 eventHandler:(CDUnknownBlockType)arg3;
++ (id)createServerConnectionWithDebugIdentifier:(id)arg1 eventHandler:(CDUnknownBlockType)arg2;
++ (void)setDefaultXPCServerConnectionQueue:(id)arg1;
++ (id)defaultXPCServerConnectionQueue;
 + (void)setDaemonXPCConnectionCreationBlock:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)daemonXPCConnectionCreationBlock;
 

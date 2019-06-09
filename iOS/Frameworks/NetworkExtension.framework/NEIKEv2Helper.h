@@ -10,18 +10,17 @@
 {
 }
 
-+ (id)createChildConfigFromProtocol:(id)arg1;
-+ (id)createIKEConfigFromProtocol:(id)arg1 ifIndex:(unsigned int)arg2 options:(id)arg3 serverAddress:(id)arg4 enableBlackHoleDetection:(_Bool)arg5;
-+ (id)createIPv6SettingsFromTunnelConfig:(id)arg1 childConfig:(id)arg2;
-+ (id)createIPv4SettingsFromTunnelConfig:(id)arg1 childConfig:(id)arg2;
-+ (id)createRouteArrayFromTunnelConfig:(id)arg1 childConfig:(id)arg2 gatewayAddress:(id)arg3 isIPv4:(_Bool)arg4;
++ (id)createIKEv2SessionConfigFromProtocol:(id)arg1 options:(id)arg2 onDemandEnabled:(_Bool)arg3;
++ (id)createIKEv2ChildSAConfigFromProtocol:(id)arg1;
++ (id)createIKEv2ChildSAProposalFromProtocol:(id)arg1 saParameters:(id)arg2;
++ (id)createIKESAConfigFromProtocol:(id)arg1 path:(id)arg2 ifIndex:(unsigned int)arg3 options:(id)arg4 serverAddress:(id)arg5;
++ (id)createIKESAProposalFromProtocol:(id)arg1 saParameters:(id)arg2 options:(id)arg3 nonceSize:(unsigned int *)arg4;
++ (id)createIPv6SettingsFromTunnelConfig:(id)arg1 localTS:(id)arg2 remoteTS:(id)arg3;
++ (id)createIPv4SettingsFromTunnelConfig:(id)arg1 localTS:(id)arg2 remoteTS:(id)arg3;
++ (id)createRouteArrayFromTunnelConfig:(id)arg1 localTS:(id)arg2 remoteTS:(id)arg3 gatewayAddress:(id)arg4 isIPv4:(_Bool)arg5;
 + (id)createDNSSettingsFromTunnelConfig:(id)arg1;
-+ (id)getDNSDomainsFromTunnelConfig:(id)arg1;
-+ (_Bool)getBoolFromTunnelConfig:(id)arg1 key:(id)arg2;
-+ (id)getAddressFromTunnelConfig:(id)arg1 key:(id)arg2 valueType:(id)arg3 outputArray:(id)arg4;
-+ (_Bool)getStatusFromNotification:(unsigned int)arg1 status:(int *)arg2 isConfig:(_Bool *)arg3 isRedirected:(_Bool *)arg4 isSocketError:(_Bool *)arg5 isAdditionalServerAddresses:(_Bool *)arg6;
 + (_Bool)getDPDAttributesForMode:(long long)arg1 isWakeUp:(_Bool)arg2 isNAT:(_Bool)arg3 retry:(unsigned int *)arg4 timeout:(unsigned long long *)arg5 frequency:(unsigned int *)arg6;
-+ (id)getIdentifierType:(id)arg1;
++ (unsigned long long)getIdentifierType:(id)arg1;
 
 @end
 

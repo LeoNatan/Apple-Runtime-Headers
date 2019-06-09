@@ -16,7 +16,7 @@
 
 @interface ACAccount : NSObject <ACProtobufCoding, NSCoding, NSCopying, NSSecureCoding>
 {
-    ACAccountStore *_store;
+    ACAccountStore *_accountStore;
     NSString *_identifier;
     NSString *_accountDescription;
     NSString *_owningBundleID;
@@ -24,42 +24,37 @@
     NSString *_authenticationType;
     NSString *_credentialType;
     NSString *_clientToken;
-    _Bool _haveCheckedForClientToken;
     ACAccountType *_accountType;
     ACAccountCredential *_credential;
     NSMutableDictionary *_properties;
     NSMutableDictionary *_dataclassProperties;
-    _Bool _accountAccessAvailable;
-    _Bool _authenticated;
-    _Bool _active;
-    _Bool _supportsAuthentication;
-    _Bool _visible;
     NSURL *_objectID;
     NSDate *_date;
     NSDate *_lastCredentialRenewalRejectionDate;
     NSString *_parentAccountIdentifier;
     ACAccount *_parentAccount;
-    _Bool _haveCheckedForParentAccount;
-    _Bool _haveCheckedForChildAccounts;
     NSArray *_childAccounts;
     ACMutableTrackedSet *_trackedProvisionedDataclasses;
-    _Bool _wasProvisionedDataclassesReset;
     ACMutableTrackedSet *_trackedEnabledDataclasses;
-    _Bool _wasEnabledDataclassesReset;
     NSMutableSet *_dirtyProperties;
     NSMutableSet *_dirtyAccountProperties;
     NSMutableSet *_dirtyDataclassProperties;
     id <NSObject> _credentialsDidChangeObserver;
     CDUnknownBlockType _accountPropertiesTransformer;
-    _Bool _creatingFromManagedObject;
+    _Bool _haveCheckedForClientToken;
+    _Bool _accountAccessAvailable;
+    _Bool _authenticated;
+    _Bool _active;
+    _Bool _supportsAuthentication;
+    _Bool _visible;
+    _Bool _haveCheckedForParentAccount;
+    _Bool _haveCheckedForChildAccounts;
+    _Bool _wasProvisionedDataclassesReset;
+    _Bool _wasEnabledDataclassesReset;
 }
 
-+ (id)_createNewAccountUID;
 + (_Bool)supportsSecureCoding;
 @property(copy) CDUnknownBlockType accountPropertiesTransformer; // @synthesize accountPropertiesTransformer=_accountPropertiesTransformer;
-@property(readonly, nonatomic) NSSet *dirtyDataclassProperties; // @synthesize dirtyDataclassProperties=_dirtyDataclassProperties;
-@property(readonly, nonatomic) NSSet *dirtyAccountProperties; // @synthesize dirtyAccountProperties=_dirtyAccountProperties;
-@property(readonly, nonatomic) NSSet *dirtyProperties; // @synthesize dirtyProperties=_dirtyProperties;
 @property(readonly, nonatomic) _Bool wasEnabledDataclassesReset; // @synthesize wasEnabledDataclassesReset=_wasEnabledDataclassesReset;
 @property(copy, nonatomic) ACTrackedSet *trackedEnabledDataclasses; // @synthesize trackedEnabledDataclasses=_trackedEnabledDataclasses;
 @property(readonly, nonatomic) _Bool wasProvisionedDataclassesReset; // @synthesize wasProvisionedDataclassesReset=_wasProvisionedDataclassesReset;
@@ -69,9 +64,12 @@
 - (void)setSecCertificates:(id)arg1;
 - (struct __SecIdentity *)copySecIdentity;
 - (void)setSecIdentity:(struct __SecIdentity *)arg1;
-- (id)diffAccount:(id)arg1;
+- (_Bool)_isDifferentFrom:(id)arg1;
+- (void)_applyDirtyStateFromAccount:(id)arg1;
 @property(readonly, nonatomic) NSString *shortDebugName;
-- (void)setCreatingFromManagedObject:(_Bool)arg1;
+@property(readonly, nonatomic) NSSet *dirtyDataclassProperties;
+@property(readonly, nonatomic) NSSet *dirtyAccountProperties;
+@property(readonly, nonatomic) NSSet *dirtyProperties;
 - (id)defaultAutodiscoverDomainForChildType:(id)arg1;
 - (id)qualifiedUsername;
 - (_Bool)addClientToken:(id)arg1;
@@ -160,7 +158,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)_installCredentialsChangedObserver;
 - (id)initWithCoder:(id)arg1;
-- (id)_initWithManagedAccount:(id)arg1 accountStore:(id)arg2 withDirtyStateFromAccount:(id)arg3;
 - (id)initWithManagedAccount:(id)arg1;
 - (id)initWithManagedAccount:(id)arg1 accountStore:(id)arg2;
 - (id)initWithAccountType:(id)arg1;

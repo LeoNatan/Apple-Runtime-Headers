@@ -28,10 +28,10 @@
 - (void)_handleActionPerformerComplete:(id)arg1 success:(_Bool)arg2 error:(id)arg3;
 - (void)_handleActionType:(id)arg1;
 - (void)_handleBarButtonItem:(id)arg1;
-- (void)_handlePreviewAction:(id)arg1 previewViewController:(id)arg2 actionType:(id)arg3;
+- (void)_handlePreviewAction:(id)arg1 actionType:(id)arg2;
 - (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)alertActionForActionType:(id)arg1;
-- (id)previewActionForActionType:(id)arg1;
+- (id)previewActionGroupableForActionType:(id)arg1 image:(id)arg2;
 - (id)barButtonItemForActionType:(id)arg1;
 - (id)actionPerformerForActionType:(id)arg1;
 - (_Bool)canPerformAssetVariationActions;

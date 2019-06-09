@@ -8,8 +8,8 @@
 
 #import <CloudDocsDaemon/BRCModule-Protocol.h>
 
-@class BRCAccountSession, BRCClientRanksPersistedState, BRCXPCClient, BRNotificationQueue, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSString;
-@protocol OS_dispatch_queue;
+@class BRCAccountSession, BRCClientRanksPersistedState, BRCXPCClient, BRNotificationQueue, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@protocol OS_dispatch_source, OS_dispatch_workloop;
 
 __attribute__((visibility("hidden")))
 @interface BRCNotificationManager : NSObject <BRCModule>
@@ -17,8 +17,9 @@ __attribute__((visibility("hidden")))
     BRCAccountSession *_session;
     BRCClientRanksPersistedState *_state;
     NSHashTable *_pipes;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_cacheQueue;
+    NSObject<OS_dispatch_workloop> *_queue;
+    NSObject<OS_dispatch_source> *_enqueueUpdatesSource;
+    NSMutableArray *_updatesToEnqueue;
     BRNotificationQueue *_notifs;
     NSMutableDictionary *_transferCache;
     BRCXPCClient *_client;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(readonly, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
+- (_Bool)hasWatcherMatchingGlobalItemID:(id)arg1;
 - (void)invalidatePipeReceiversWatchingAppLibraryIDs:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)pipeDelegateInvalidated:(id)arg1;
 - (void)invalidatePipesWatchingAppLibraryIDs:(id)arg1;

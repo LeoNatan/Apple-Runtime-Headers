@@ -15,10 +15,6 @@ struct CGSize {
     double _field2;
 };
 
-struct UIImage {
-    Class _field1;
-};
-
 struct UIViewController {
     Class _field1;
 };

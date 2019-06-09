@@ -15,6 +15,8 @@
 @interface NSUUID (CRDT_Additions) <CRDataType, CREquatable, CRCoding>
 + (id)CR_zero;
 + (id)CR_repeatedCharUUID:(unsigned char)arg1;
++ (id)TTZero;
++ (id)CR_UUIDFromStdString:(const basic_string_a1f69cfb *)arg1;
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)initWithCRCoder:(id)arg1;
 - (id)CR_shortDescription;
@@ -25,6 +27,9 @@
 - (void)walkGraph:(CDUnknownBlockType)arg1;
 - (id)deltaSince:(id)arg1 in:(id)arg2;
 - (void)mergeWith:(id)arg1;
+- (id)TTShortDescription;
+- (long long)TTCompare:(id)arg1;
+- (basic_string_a1f69cfb)CR_toStdString;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -17,13 +17,11 @@
     unsigned int _threadgroupMemoryLength;
     unsigned int _tileWidth;
     unsigned int _tileHeight;
-    unsigned int _defaultRasterSampleCount;
 }
 
 + (id)renderPassDescriptor;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
-@property(nonatomic) unsigned int defaultRasterSampleCount; // @synthesize defaultRasterSampleCount=_defaultRasterSampleCount;
 @property(nonatomic) unsigned int tileHeight; // @synthesize tileHeight=_tileHeight;
 @property(nonatomic) unsigned int tileWidth; // @synthesize tileWidth=_tileWidth;
 @property(nonatomic) unsigned int threadgroupMemoryLength; // @synthesize threadgroupMemoryLength=_threadgroupMemoryLength;
@@ -34,6 +32,7 @@
 
 // Remaining properties
 @property(readonly) MTLRenderPassColorAttachmentDescriptorArray *colorAttachments; // @dynamic colorAttachments;
+@property(nonatomic) unsigned int defaultRasterSampleCount; // @dynamic defaultRasterSampleCount;
 @property(copy, nonatomic) MTLRenderPassDepthAttachmentDescriptor *depthAttachment; // @dynamic depthAttachment;
 @property(nonatomic) unsigned int renderTargetArrayLength; // @dynamic renderTargetArrayLength;
 @property(nonatomic) unsigned int renderTargetHeight; // @dynamic renderTargetHeight;

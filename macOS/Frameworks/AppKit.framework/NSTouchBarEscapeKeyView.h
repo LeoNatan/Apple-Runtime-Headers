@@ -6,33 +6,18 @@
 
 #import <AppKit/NSView.h>
 
-#import <AppKit/NSISEngineDelegate-Protocol.h>
-
-@class NSObject, NSString, NSTouchBarEscapeKeyViewController;
-@protocol NSISEngineDelegate;
-
 __attribute__((visibility("hidden")))
-@interface NSTouchBarEscapeKeyView : NSView <NSISEngineDelegate>
+@interface NSTouchBarEscapeKeyView : NSView
 {
-    NSObject<NSISEngineDelegate> *_oldDelegate;
-    NSTouchBarEscapeKeyViewController *_preferredDelegate;
+    NSView *_itemView;
+    struct CGSize _preferredSize;
 }
 
-@property __weak NSTouchBarEscapeKeyViewController *preferredDelegate; // @synthesize preferredDelegate=_preferredDelegate;
-@property(readonly) __weak NSObject<NSISEngineDelegate> *oldDelegate; // @synthesize oldDelegate=_oldDelegate;
-- (void).cxx_destruct;
+@property(readonly) struct CGSize preferredSize; // @synthesize preferredSize=_preferredSize;
 - (void)dealloc;
-- (void)solutionDidChangeInEngine:(id)arg1;
-- (void)engine:(id)arg1 willBreakConstraint:(id)arg2 dueToMutuallyExclusiveConstraints:(id)arg3;
-- (id)engine:(id)arg1 markerForConstraintToBreakAmongConstraints:(id)arg2;
-- (void)constraintsDidChangeInEngine:(id)arg1;
-- (void)_setLayoutEngine:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)_subview:(id)arg1 valueOfVariable:(id)arg2 didChangeInEngine:(id)arg3;
+@property(retain) NSView *itemView;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

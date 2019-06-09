@@ -8,13 +8,12 @@
 
 #import <TextInputCore/TILanguageModelOfflineLearningStrategy-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSURL, RKMessageResponseManager, TILanguageModelOfflineLearningTask;
+@class NSMutableDictionary, NSString, NSURL, TILanguageModelOfflineLearningTask;
 
 @interface TILanguageModelOfflineLearningStrategyResponseKit : NSObject <TILanguageModelOfflineLearningStrategy>
 {
     NSMutableDictionary *_recipientModels;
     NSURL *_directory;
-    RKMessageResponseManager *_trainer;
     TILanguageModelOfflineLearningTask *_learningTask;
 }
 

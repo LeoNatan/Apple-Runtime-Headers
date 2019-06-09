@@ -6,40 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableArray;
+@class VCPAudioClassifier, VCPLoudnessAnalyzer, VCPVoiceDetector;
 
 @interface VCPAudioAnalyzer : NSObject
 {
-    NSDictionary *_model;
     void *_inputBuffer;
-    struct ComponentInstanceRecord *_audioUnit;
     struct AudioTimeStamp _audioTimestamp;
-    struct AudioStreamBasicDescription _audioStream;
     struct AudioBufferList _audioBufferList;
     int _sampleBatchSize;
-    CDStruct_1b6d18a9 _trackStart;
-    BOOL _voiceActivity;
-    CDStruct_1b6d18a9 _voiceStart;
-    NSMutableArray *_voiceDetections;
-    NSMutableArray *_utteranceDetections;
-    NSMutableArray *_musicDetections;
+    VCPVoiceDetector *_voiceDetector;
+    VCPAudioClassifier *_audioClassifier;
+    VCPLoudnessAnalyzer *_loudnessAnalyzer;
     int _bufferedSamples;
+    BOOL _initialized;
 }
 
-+ (id)voiceDetector;
 - (void).cxx_destruct;
+- (id)voiceDetections;
+- (int)analyzeSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (int)analyzeAsset:(id)arg1 cancel:(CDUnknownBlockType)arg2 results:(id *)arg3;
 - (int)processSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (int)finalizeAnalysisAtTime:(const CDStruct_1b6d18a9 *)arg1;
-- (int)processAudioSamples;
-- (void)addDetectionFromTime:(const CDStruct_1b6d18a9 *)arg1 toTime:(const CDStruct_1b6d18a9 *)arg2 result:(id)arg3;
+- (int)processAudioSamples:(struct AudioBufferList *)arg1 timestamp:(struct AudioTimeStamp)arg2;
 - (int)initialize:(struct opaqueCMSampleBuffer *)arg1;
-- (int)loadModel;
-- (int)initializeAudioUnit:(const struct AudioStreamBasicDescription *)arg1;
 - (id)audioFormatRequirements;
-- (int)sampleBatchSize:(double)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithAnalysisTypes:(unsigned long long)arg1 forStreaming:(BOOL)arg2;
 
 @end
 

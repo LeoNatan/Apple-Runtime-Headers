@@ -8,6 +8,7 @@
 
 @class UIImage, UINavigationButton;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAddToWishlistAnimation : NSObject
 {
     CDUnknownBlockType _completionBlock;

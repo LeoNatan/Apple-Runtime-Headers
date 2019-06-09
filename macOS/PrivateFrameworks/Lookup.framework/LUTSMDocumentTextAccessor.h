@@ -6,6 +6,7 @@
 
 #import <Lookup/LUTextAccessor.h>
 
+__attribute__((visibility("hidden")))
 @interface LUTSMDocumentTextAccessor : LUTextAccessor
 {
 }

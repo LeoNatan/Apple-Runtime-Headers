@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 + (void)_cleanStaleAssetsInCacheDirectory:(id)arg1 withInstalledCacheKeys:(id)arg2;
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)_flushApplicationCachedImages:(id)arg1;
 - (_Bool)_createApplicationIcon:(id)arg1 size:(struct CGSize)arg2 cornerRadius:(double)arg3 destination:(id)arg4;
 - (_Bool)_createSmallApplicationIcon:(id)arg1;
 - (_Bool)_createApplicationIcon:(id)arg1;

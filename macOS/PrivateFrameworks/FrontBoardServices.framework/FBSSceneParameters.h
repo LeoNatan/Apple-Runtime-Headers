@@ -15,9 +15,9 @@
 
 @interface FBSSceneParameters : NSObject <BSXPCCoding, NSCopying, NSMutableCopying, BSDescriptionProviding>
 {
-    FBSSceneSpecification *_specification;
     FBSSceneSettings *_settings;
     FBSSceneClientSettings *_clientSettings;
+    FBSSceneSpecification *_specification;
 }
 
 + (id)parametersForSpecification:(id)arg1;

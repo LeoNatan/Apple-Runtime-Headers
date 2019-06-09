@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKStampChatItem.h>
 
+__attribute__((visibility("hidden")))
 @interface CKNumberChangedChatItem : CKStampChatItem
 {
 }

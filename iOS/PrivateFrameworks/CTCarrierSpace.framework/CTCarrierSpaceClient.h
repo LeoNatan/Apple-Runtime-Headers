@@ -23,6 +23,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)fetchDataPlanMetrics:(CDUnknownBlockType)arg1;
+- (void)purchasePlan:(id)arg1 authInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)purchasePlan:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)refreshAllInfo:(CDUnknownBlockType)arg1;
 - (void)fetchAppsInfo:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
@@ -34,6 +35,7 @@
 - (void)setUserConsent:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getUserConsentFlowInfo:(CDUnknownBlockType)arg1;
 - (void)getCapabilities:(CDUnknownBlockType)arg1;
+- (void)getAuthenticationContext:(CDUnknownBlockType)arg1;
 - (void)userDidAcceptPlanTerms:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)authenticationDidFail:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)authenticationDidComplete:(id)arg1 completion:(CDUnknownBlockType)arg2;

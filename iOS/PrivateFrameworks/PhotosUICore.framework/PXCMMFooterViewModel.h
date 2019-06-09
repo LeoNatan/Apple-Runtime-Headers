@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUICore/PXPhotosGlobalFooterViewModel.h>
+#import <PhotosUICore/PXFooterViewModel.h>
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSString, PXCMMAssetsProgressListener;
+@class NSString, PXMomentShareStatusPresentation;
 @protocol PXCMMFooterViewModelActionDelegate;
 
-@interface PXCMMFooterViewModel : PXPhotosGlobalFooterViewModel <PXChangeObserver>
+@interface PXCMMFooterViewModel : PXFooterViewModel <PXChangeObserver>
 {
-    PXCMMAssetsProgressListener *_assetsProgressListener;
+    PXMomentShareStatusPresentation *_momentShareStatusPresentation;
     id <PXCMMFooterViewModelActionDelegate> _actionDelegate;
 }
 
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateAllProperties;
-- (id)initWithProgressListener:(id)arg1;
+- (id)initWithMomentShareStatusPresentation:(id)arg1;
 - (id)init;
 
 // Remaining properties

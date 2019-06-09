@@ -11,10 +11,10 @@
 
 @interface ADPrerollBottomBar : UIView
 {
-    id <ADPrerollBottomBarDelegate> _delegate;
     _Bool _layoutForExpandedSize;
     _Bool _isFullscreen;
     _Bool _skipButtonCountingDown;
+    id <ADPrerollBottomBarDelegate> _delegate;
     ADPrerollButton *_actionButton;
     UILabel *_skipLabel;
     UILabel *_shortSkipLabel;
@@ -44,6 +44,8 @@
 @property(retain, nonatomic) ADPrerollButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(nonatomic) _Bool layoutForExpandedSize; // @synthesize layoutForExpandedSize=_layoutForExpandedSize;
+@property(nonatomic) __weak id <ADPrerollBottomBarDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)_playButtonTapped:(id)arg1;
 - (void)_pauseButtonTapped:(id)arg1;
 - (void)_skipButtonTapped:(id)arg1;
@@ -56,7 +58,6 @@
 - (void)displayAsPaused:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)showActionButton:(_Bool)arg1;
-@property(nonatomic) __weak id <ADPrerollBottomBarDelegate> delegate;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;
 

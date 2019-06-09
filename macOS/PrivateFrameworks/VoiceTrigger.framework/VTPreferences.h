@@ -12,6 +12,7 @@
 
 + (id)deviceCategoryStringRepresentationForCategoryType:(unsigned long long)arg1;
 + (id)sharedPreferences;
+- (BOOL)corespeechDaemonEnabled;
 - (BOOL)useSiriActivationSPIForwatchOS;
 - (BOOL)useSiriActivationSPIForiOS;
 - (id)audioInjectionFilePath;

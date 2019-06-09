@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, NightModeControl;
+@class HIDManager, NSMutableArray, NSMutableDictionary, NightModeControl;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_os_log;
 
 __attribute__((visibility("hidden")))
@@ -26,8 +26,15 @@ __attribute__((visibility("hidden")))
     unsigned int _clamshellNotification;
     struct IONotificationPort *_clamshellNotifyPort;
     _Bool _clamshellOpened;
+    NSMutableDictionary *_keyboardContainers;
+    HIDManager *_keyboardBacklightHIDManager;
+    BOOL _userActive;
 }
 
+- (void)keyboardBacklightHIDDeviceRemoved:(id)arg1;
+- (void)keyboardBacklightHIDDeviceArrived:(id)arg1;
+- (_Bool)initKeyboardBacklightHIDManager;
+- (void)handleUserIsActiveStateChange:(_Bool)arg1;
 - (void)stopClamshellMonitoring;
 - (void)startClamshellMonitoring;
 - (void)updateClamshellState:(_Bool)arg1;

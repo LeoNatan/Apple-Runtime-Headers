@@ -26,8 +26,8 @@
 - (BOOL)canSetAttributeValue:(id)arg1;
 - (id)copyArrayForAttribute:(id)arg1 range:(struct _NSRange)arg2;
 - (unsigned long long)countForAttribute:(id)arg1;
-- (void *)copyParameterizedAttributeValue:(id)arg1 parameter:(void *)arg2;
-- (void *)copyAttributeValue:(id)arg1;
+- (const void *)copyParameterizedAttributeValue:(id)arg1 parameter:(void *)arg2;
+- (const void *)copyAttributeValue:(id)arg1;
 - (BOOL)supportsAttribute:(id)arg1;
 - (id)copyParameterizedAttributeNames;
 - (id)copyAttributeNames;

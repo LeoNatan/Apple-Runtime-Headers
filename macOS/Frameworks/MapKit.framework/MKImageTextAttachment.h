@@ -8,6 +8,7 @@
 
 @class MKImageAttachmentCell;
 
+__attribute__((visibility("hidden")))
 @interface MKImageTextAttachment : NSTextAttachment
 {
     double _verticalOffset;

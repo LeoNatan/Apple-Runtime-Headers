@@ -10,8 +10,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AlignedBuffer<408, 8> {
-    char _field1[408];
+struct AlignedBuffer<432, 8> {
+    char _field1[432];
 };
 
 struct ByteString {
@@ -28,29 +28,26 @@ struct ByteString {
 };
 
 struct CGPoint {
-    double _field1;
-    double _field2;
+    double x;
+    double y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
-    double _field1;
-    double _field2;
+    double width;
+    double height;
 };
+
+struct CMTouchHistory;
 
 struct Candidate {
     struct Vector<KB::Word, 3> _field1;
     float _field2;
-    struct {
-        float _field1;
-        float _field2;
-        float _field3;
-        float _field4;
-    } _field3;
+    struct CandidateScoreFactors _field3;
     unsigned int _field4;
     unsigned int _field5;
     struct LanguageModelContext _field6;
@@ -58,12 +55,32 @@ struct Candidate {
     struct ByteString _field8;
     _Bool _field9;
     _Bool _field10;
-    struct retain_ptr<const __CFDictionary *> _field11;
+    unsigned long long _field11;
+    struct retain_ptr<const __CFDictionary *> _field12;
+    struct retain_ptr<__CFDictionary *> _field13;
 };
 
 struct CandidateCollection {
     struct vector<KB::Candidate, std::__1::allocator<KB::Candidate>> _field1;
     struct vector<KB::Candidate, std::__1::allocator<KB::Candidate>> _field2;
+    int _field3;
+};
+
+struct CandidateScoreFactors {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+};
+
+struct ContinuousPathDetector {
+    struct map<int, KB::ContinuousPathDetector::AnnotatedPath, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, KB::ContinuousPathDetector::AnnotatedPath>>> _field1;
+    struct Parameters _field2;
+    double _field3;
+    float _field4;
+    float _field5;
 };
 
 struct DictionaryContainer;
@@ -93,15 +110,59 @@ struct LockedInput {
     unsigned int _field2;
 };
 
+struct NSDictionary {
+    Class _field1;
+};
+
+struct Parameters {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+};
+
+struct Path {
+    struct vector<TI::CP::PathSample, std::__1::allocator<TI::CP::PathSample>> m_samples;
+    struct vector<unsigned int, std::__1::allocator<unsigned int>> m_inflection_points;
+};
+
+struct PathResampler {
+    struct PathResamplerParams m_params;
+    struct Path m_resampled_path;
+    struct Path m_raw_path;
+    _Bool m_is_final;
+    unsigned int m_processed_sample_count;
+    unsigned int m_retroactively_processed_sample_count;
+};
+
+struct PathResamplerParams {
+    double segment_length;
+    int inflection_point_detection_mode;
+    int inflection_point_type;
+    _Bool should_downsample;
+    double minimum_pause_length;
+    _Bool should_flush_on_pause;
+};
+
+struct PathSample;
+
 struct RefPtr<KB::DictionaryContainer> {
     struct DictionaryContainer *m_ptr;
 };
 
+struct RefPtr<TI::Favonius::CMTouchHistory> {
+    struct CMTouchHistory *m_ptr;
+};
+
 struct RefPtr<TI::Favonius::KeyboardLayout> {
-    struct KeyboardLayout *_field1;
+    struct KeyboardLayout *m_ptr;
 };
 
 struct RefPtr<TI::Favonius::LayoutKey>;
+
+struct StaticDictionary;
 
 struct String {
     unsigned short _field1;
@@ -123,28 +184,32 @@ struct TIInputManager {
     struct String _field6;
     struct retain_ptr<const __CFLocale *> _field7;
     struct LockedInput _field8;
-    struct StrokeBuildManager *_field9;
+    struct unique_ptr<TI::Favonius::StrokeBuildManager, std::__1::default_delete<TI::Favonius::StrokeBuildManager>> _field9;
     struct String _field10;
     RefPtr_9bddf3b2 _field11;
     shared_ptr_e9f752ce _field12;
     unsigned int _field13;
     struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> _field14;
     _Bool _field15;
-    struct RefPtr<TI::Favonius::KeyboardLayout> _field16;
-    struct String _field17;
-    struct LanguageModelContext _field18;
-    struct shared_ptr<KB::InputManagerSpecialization> _field19;
-    CDUnknownBlockType _field20;
-    struct shared_ptr<KB::TypologyLogger> _field21;
-    _Bool _field22;
-    _Bool _field23;
-    _Bool _field24;
-    _Bool _field25;
+    struct String _field16;
+    RefPtr_54d74a7c _field17;
+    struct ContinuousPathDetector _field18;
+    int _field19;
+    _Bool _field20;
+    struct String _field21;
+    struct LanguageModelContext _field22;
+    struct shared_ptr<KB::InputManagerSpecialization> _field23;
+    CDUnknownBlockType _field24;
+    struct shared_ptr<KB::TypologyLogger> _field25;
     _Bool _field26;
     _Bool _field27;
     _Bool _field28;
     _Bool _field29;
     _Bool _field30;
+    _Bool _field31;
+    _Bool _field32;
+    _Bool _field33;
+    _Bool _field34;
 };
 
 struct TITokenID {
@@ -167,7 +232,7 @@ struct Vector<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> {
 struct VectorBuffer<KB::Word, 3> {
     struct Word *_field1;
     unsigned long long _field2;
-    struct AlignedBuffer<408, 8> _field3;
+    struct AlignedBuffer<432, 8> _field3;
 };
 
 struct VectorBuffer<WTF::RefPtr<TI::Favonius::LayoutKey>, 0> {
@@ -187,7 +252,29 @@ struct _TIRevisionHistoryTokenIterator {
     unsigned long long documentLocation;
 };
 
+struct __CFDictionary;
+
 struct __shared_weak_count;
+
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *_field1;
+};
+
+struct map<int, KB::ContinuousPathDetector::AnnotatedPath, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, KB::ContinuousPathDetector::AnnotatedPath>>> {
+    struct __tree<std::__1::__value_type<int, KB::ContinuousPathDetector::AnnotatedPath>, std::__1::__map_value_compare<int, std::__1::__value_type<int, KB::ContinuousPathDetector::AnnotatedPath>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, KB::ContinuousPathDetector::AnnotatedPath>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, KB::ContinuousPathDetector::AnnotatedPath>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, KB::ContinuousPathDetector::AnnotatedPath>, std::__1::less<int>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+};
+
+struct retain_ptr<__CFDictionary *> {
+    struct __CFDictionary *_field1;
+};
 
 struct retain_ptr<const __CFDictionary *> {
     struct __CFDictionary *_field1;
@@ -210,6 +297,18 @@ struct shared_ptr<KB::LanguageModel> {
 struct shared_ptr<KB::TypologyLogger> {
     struct TypologyLogger *__ptr_;
     struct __shared_weak_count *__cntrl_;
+};
+
+struct unique_ptr<KB::StaticDictionary, std::__1::default_delete<KB::StaticDictionary>> {
+    struct __compressed_pair<KB::StaticDictionary *, std::__1::default_delete<KB::StaticDictionary>> {
+        struct StaticDictionary *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<TI::Favonius::StrokeBuildManager, std::__1::default_delete<TI::Favonius::StrokeBuildManager>> {
+    struct __compressed_pair<TI::Favonius::StrokeBuildManager *, std::__1::default_delete<TI::Favonius::StrokeBuildManager>> {
+        struct StrokeBuildManager *_field1;
+    } _field1;
 };
 
 struct vector<KB::Candidate, std::__1::allocator<KB::Candidate>> {
@@ -236,6 +335,14 @@ struct vector<KB::LexiconInfo, std::__1::allocator<KB::LexiconInfo>> {
     } _field3;
 };
 
+struct vector<TI::CP::PathSample, std::__1::allocator<TI::CP::PathSample>> {
+    struct PathSample *__begin_;
+    struct PathSample *__end_;
+    struct __compressed_pair<TI::CP::PathSample *, std::__1::allocator<TI::CP::PathSample>> {
+        struct PathSample *__value_;
+    } __end_cap_;
+};
+
 struct vector<TITokenID, std::__1::allocator<TITokenID>> {
     struct TITokenID *__begin_;
     struct TITokenID *__end_;
@@ -260,7 +367,21 @@ struct vector<std::__1::shared_ptr<KB::LanguageModel>, std::__1::allocator<std::
     } _field3;
 };
 
+struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *__begin_;
+    unsigned int *__end_;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *__value_;
+    } __end_cap_;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    float _field1;
+    unsigned long long _field2;
+    float _field3;
+} CDStruct_cd80b3f2;
 
 typedef struct CDStruct_183601bc;
 
@@ -278,6 +399,14 @@ typedef struct {
 typedef struct RefPtr<KB::DictionaryContainer> {
     struct DictionaryContainer *m_ptr;
 } RefPtr_9bddf3b2;
+
+typedef struct RefPtr<TI::Favonius::CMTouchHistory> {
+    struct CMTouchHistory *m_ptr;
+} RefPtr_48eecea7;
+
+typedef struct RefPtr<TI::Favonius::KeyboardLayout> {
+    struct KeyboardLayout *m_ptr;
+} RefPtr_54d74a7c;
 
 typedef struct shared_ptr<KB::LanguageModel> {
     struct LanguageModel *__ptr_;

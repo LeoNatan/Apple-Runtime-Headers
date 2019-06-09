@@ -6,15 +6,13 @@
 
 #import <Navigation/MNNavigationStateGuidance.h>
 
-__attribute__((visibility("hidden")))
 @interface MNNavigationStateGuidanceTurnByTurn : MNNavigationStateGuidance
 {
 }
 
 - (void)enterState;
 - (void)setFullGuidanceMode:(BOOL)arg1;
-- (unsigned long long)desiredResourcePolicy;
-- (long long)type;
+- (unsigned long long)type;
 
 @end
 

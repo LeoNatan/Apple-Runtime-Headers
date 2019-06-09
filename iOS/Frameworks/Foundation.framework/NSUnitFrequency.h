@@ -13,6 +13,7 @@
 }
 
 + (id)_measurementWithNaturalScale:(id)arg1 system:(unsigned long long)arg2;
++ (id)framesPerSecond;
 + (id)nanohertz;
 + (id)microhertz;
 + (id)millihertz;

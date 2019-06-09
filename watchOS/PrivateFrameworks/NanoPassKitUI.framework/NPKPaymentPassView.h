@@ -6,7 +6,7 @@
 
 #import <NanoPassKitUI/NPKPassView.h>
 
-@class UIImageView, UILabel, UIView;
+@class PKTransactionDataOverlayCardFaceView, UIImageView, UILabel, UIView;
 
 @interface NPKPaymentPassView : NPKPassView
 {
@@ -18,11 +18,14 @@
     UIView *_cardView;
     UIImageView *_backgroundCardArtView;
     UILabel *_fpanLabel;
+    PKTransactionDataOverlayCardFaceView *_dynamicFaceView;
 }
 
++ (void)clearCache;
 + (struct CGSize)_sizePreservingAspectRatioForCardArt:(id)arg1 givenMaxConstraints:(struct CGSize)arg2;
 + (float)shrunkenCardHeight;
 + (float)cardHeight;
+@property(retain, nonatomic) PKTransactionDataOverlayCardFaceView *dynamicFaceView; // @synthesize dynamicFaceView=_dynamicFaceView;
 @property(nonatomic) _Bool canUseDynamicView; // @synthesize canUseDynamicView=_canUseDynamicView;
 @property(retain, nonatomic) UILabel *fpanLabel; // @synthesize fpanLabel=_fpanLabel;
 @property(retain, nonatomic) UIImageView *backgroundCardArtView; // @synthesize backgroundCardArtView=_backgroundCardArtView;
@@ -32,7 +35,6 @@
 @property(nonatomic) _Bool useDemoArt; // @synthesize useDemoArt=_useDemoArt;
 @property(nonatomic) _Bool shrink; // @synthesize shrink=_shrink;
 - (void).cxx_destruct;
-- (void)_handlePreferencesChanged:(id)arg1;
 - (void)_setupDynamicViewForPassIfNecessary:(id)arg1;
 - (void)setShowFullPass:(_Bool)arg1;
 - (void)_setPass:(id)arg1;

@@ -18,8 +18,10 @@
     NSString *_genreTitle;
     NSString *_contentDescription;
     NSURL *_coverArtURL;
+    NSString *_canonicalID;
 }
 
+@property(copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(copy, nonatomic) NSURL *coverArtURL; // @synthesize coverArtURL=_coverArtURL;
 @property(copy, nonatomic) NSString *contentDescription; // @synthesize contentDescription=_contentDescription;
 @property(copy, nonatomic) NSString *genreTitle; // @synthesize genreTitle=_genreTitle;
@@ -27,6 +29,7 @@
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)_mediaEntityPropertyDidChange:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -35,6 +38,7 @@
 @property(readonly, copy, nonatomic, getter=isLocal) NSNumber *local;
 - (id)init;
 - (id)initWithDictionary:(id)arg1;
+- (void)dealloc;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
 
 @end

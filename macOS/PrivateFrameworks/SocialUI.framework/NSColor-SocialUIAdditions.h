@@ -22,5 +22,7 @@
 - (BOOL)isDarkColor;
 - (id)webStringValue;
 - (BOOL)isEqualToColor:(id)arg1;
+- (id)hexColor;
+- (void)_getSRGBComponentValueRed:(unsigned long long *)arg1 green:(unsigned long long *)arg2 blue:(unsigned long long *)arg3;
 @end
 

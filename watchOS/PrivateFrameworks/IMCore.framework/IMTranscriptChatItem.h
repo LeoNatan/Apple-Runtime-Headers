@@ -6,9 +6,11 @@
 
 #import <IMCore/IMChatItem.h>
 
-@class NSString;
+#import <IMCore/IMChatTranscriptItem-Protocol.h>
 
-@interface IMTranscriptChatItem : IMChatItem
+@class IMHandle, IMServiceImpl, NSAttributedString, NSDate, NSString;
+
+@interface IMTranscriptChatItem : IMChatItem <IMChatTranscriptItem>
 {
     NSString *_guid;
     unsigned char _contiguousType;
@@ -22,6 +24,12 @@
 - (void)_setContiguousType:(unsigned char)arg1;
 - (void)_setContiguousLoaded:(_Bool)arg1;
 - (_Bool)_isContiguousLoaded;
+@property(readonly, nonatomic) IMHandle *handle;
+@property(readonly, nonatomic) IMServiceImpl *service;
+@property(readonly, nonatomic) NSDate *transcriptDate;
+@property(readonly, copy, nonatomic) NSAttributedString *transcriptText;
+@property(readonly, nonatomic) _Bool wantsTail;
+@property(readonly, nonatomic, getter=isFromMe) _Bool fromMe;
 @property(readonly, nonatomic, getter=isContiguous) _Bool contiguous;
 @property(readonly, nonatomic) unsigned char attachmentContiguousType;
 @property(readonly, nonatomic) unsigned char contiguousType;
@@ -29,8 +37,12 @@
 - (_Bool)isContiguousWithChatItem:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
-- (id)description;
+@property(readonly) unsigned int hash;
+@property(readonly, copy) NSString *description;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

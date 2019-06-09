@@ -12,5 +12,7 @@
 - (id)tv_SHA256String;
 - (id)tv_MD5String;
 - (id)tv_filenameSafeString;
+- (long long)textAlignmentValueWithDefault:(long long)arg1;
+- (id)attributedStringByParsingTypographicMarkupUsingFont:(id)arg1 italicFont:(id)arg2;
 @end
 

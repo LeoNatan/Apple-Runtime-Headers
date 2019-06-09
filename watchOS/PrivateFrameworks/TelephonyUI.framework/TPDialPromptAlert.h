@@ -19,10 +19,12 @@
 @property(readonly, copy, nonatomic) NSString *buttonTitle; // @synthesize buttonTitle=_buttonTitle;
 @property(copy, nonatomic) CDUnknownBlockType dialAction; // @synthesize dialAction=_dialAction;
 - (void).cxx_destruct;
+- (id)phoneNumberHandle;
 - (void)otherResponse;
 - (void)defaultResponse;
 - (id)otherButtonTitle;
 - (id)defaultButtonTitle;
+- (void)show;
 - (id)title;
 - (id)initWithButtonTitle:(id)arg1 handles:(id)arg2 dialAction:(CDUnknownBlockType)arg3;
 - (id)initWithJoinRequest:(id)arg1 dialAction:(CDUnknownBlockType)arg2;

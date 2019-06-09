@@ -6,36 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSHashTable, NSURL;
+@class NSArray, NSDate, NSHashTable, NSMutableArray;
 
 @interface PFURLEventHandler : NSObject
 {
-    BOOL _isListeningToURLAppleEvents;
+    NSMutableArray *_pendingURLs;
     NSDate *_applicationLaunchDate;
     NSHashTable *_urlHandlingSubsystems;
-    NSURL *_pendingURL;
     long long _suspendCount;
 }
 
 @property long long suspendCount; // @synthesize suspendCount=_suspendCount;
-@property(retain) NSURL *pendingURL; // @synthesize pendingURL=_pendingURL;
-@property BOOL isListeningToURLAppleEvents; // @synthesize isListeningToURLAppleEvents=_isListeningToURLAppleEvents;
 @property(retain) NSHashTable *urlHandlingSubsystems; // @synthesize urlHandlingSubsystems=_urlHandlingSubsystems;
 @property(retain) NSDate *applicationLaunchDate; // @synthesize applicationLaunchDate=_applicationLaunchDate;
 - (void).cxx_destruct;
 - (BOOL)didLaunchRecently;
 - (double)timeIntervalSinceLaunch;
-- (void)retryPendingURL;
-- (id)pendingURLIfAvailable;
-- (BOOL)hasPendingURL;
+- (void)retryPendingURLs;
+@property(readonly, copy, nonatomic) NSArray *pendingURLs;
+- (BOOL)hasPendingURLs;
 - (BOOL)handleURL:(id)arg1;
-- (void)handleGetURLEvent:(id)arg1 withReplyEvent:(id)arg2;
-- (void)stopListeningForURLEvents;
-- (void)startListeningForURLEvents;
+- (void)tryToHandleURLs:(id)arg1;
 - (void)addURLHandlingSubsystem:(id)arg1;
 - (void)resumeHandlerInvocations;
 - (void)suspendHandlerInvocations;
-- (void)dealloc;
 - (id)initWithApplicationLaunchDate:(id)arg1;
 - (id)init;
 

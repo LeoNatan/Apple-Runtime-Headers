@@ -31,7 +31,6 @@
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)clear;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
 - (id)actionForKey:(id)arg1;

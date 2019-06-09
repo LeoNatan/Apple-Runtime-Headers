@@ -6,9 +6,27 @@
 
 #import <WatchKit/WKInterfaceObject.h>
 
-@interface WKInterfacePaymentButton : WKInterfaceObject
+#import <WatchKit/WKInterfaceObjectDynamicCreatable-Protocol.h>
+
+@class NSString;
+
+@interface WKInterfacePaymentButton : WKInterfaceObject <WKInterfaceObjectDynamicCreatable>
 {
+    SEL _actionSelector;
+    id _actionTarget;
 }
+
+@property(nonatomic) __weak id actionTarget; // @synthesize actionTarget=_actionTarget;
+@property(nonatomic) SEL actionSelector; // @synthesize actionSelector=_actionSelector;
+- (void).cxx_destruct;
+- (id)interfaceDescriptionForDynamicCreation;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

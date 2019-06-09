@@ -12,6 +12,7 @@
 }
 
 @property(readonly, nonatomic) _Bool hasChanges; // @synthesize hasChanges=_hasChanges;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_updateHasChanges;
 - (void)updateObject:(id)arg1;

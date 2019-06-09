@@ -6,9 +6,11 @@
 
 #import <IMCore/IMTranscriptChatItem.h>
 
-@class NSDate, NSString;
+#import <IMCore/IMChatTranscriptStatusItem-Protocol.h>
 
-@interface IMMessageStatusChatItem : IMTranscriptChatItem
+@class IMHandle, IMServiceImpl, NSAttributedString, NSDate, NSString;
+
+@interface IMMessageStatusChatItem : IMTranscriptChatItem <IMChatTranscriptStatusItem>
 {
     int _statusType;
     NSDate *_time;
@@ -28,12 +30,24 @@
 - (id)_initWithItem:(id)arg1 statusType:(int)arg2 time:(id)arg3 count:(unsigned int)arg4;
 @property(readonly, nonatomic) int messageStatusType;
 @property(readonly, nonatomic) NSString *errorText;
-@property(readonly, nonatomic) _Bool isFromMe;
+@property(readonly, nonatomic, getter=isFromMe) _Bool fromMe;
 - (void)_setTimeAdded:(id)arg1;
 - (id)_timeAdded;
 - (id)_timeStale;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)description;
+@property(readonly, nonatomic) NSDate *dateOfStatus;
+@property(readonly, copy) NSString *description;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) IMHandle *handle;
+@property(readonly) unsigned int hash;
+@property(readonly, nonatomic) _Bool isFromMe;
+@property(readonly, nonatomic) IMServiceImpl *service;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) NSDate *transcriptDate;
+@property(readonly, copy, nonatomic) NSAttributedString *transcriptText;
+@property(readonly, nonatomic) _Bool wantsTail;
 
 @end
 

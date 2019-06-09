@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, _UIAppearanceCustomizableClassInfo;
+@class NSArray, NSMapTable, NSMutableArray, _UIAppearanceCustomizableClassInfo;
 
 __attribute__((visibility("hidden")))
 @interface _UIAppearance : NSObject
@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     NSArray *_containerList;
     NSMutableArray *_appearanceInvocations;
     NSMapTable *_invocationSources;
-    NSMutableDictionary *_resettableInvocations;
     _UIAppearanceCustomizableClassInfo *_customizableClassInfo;
 }
 
@@ -42,7 +41,6 @@ __attribute__((visibility("hidden")))
 + (void)_setCurrentAppearanceSource:(id)arg1;
 + (id)_currentAppearanceSource;
 @property(readonly, nonatomic) _UIAppearanceCustomizableClassInfo *_customizableClassInfo; // @synthesize _customizableClassInfo;
-@property(retain, nonatomic, setter=_setResettableInvocations:) NSMutableDictionary *_resettableInvocations; // @synthesize _resettableInvocations;
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(unsigned long long)arg2;
 - (id)description;
 - (void)_invalidateAppearanceInWindow:(id)arg1;
@@ -57,8 +55,6 @@ __attribute__((visibility("hidden")))
 - (void)_removeInvocationsForSource:(id)arg1;
 - (_Bool)_isValidAppearanceForCustomizableObject:(id)arg1;
 - (id)_appearanceInvocations;
-- (void)updateResettableSelectorsWithInvocation:(id)arg1 removeSelector:(_Bool)arg2;
-- (id)_resettableInvocationsCreateIfNecessary;
 
 @end
 

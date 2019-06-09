@@ -8,6 +8,7 @@
 
 @class NSString, UIButton, UIControl, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemITunesPassLearnMoreView : UIView
 {
     UIButton *_button;

@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) WDIterator *childIterator; // @synthesize childIterator=mChildIterator;
+- (void).cxx_destruct;
 - (id)next;
 - (_Bool)hasNext;
 - (id)newChildIteratorFrom:(id)arg1;
 - (id)childIteratorFrom:(id)arg1;
-- (void)dealloc;
 - (id)initWithParentIterator:(id)arg1;
 - (void)incrementChildIterator;
 

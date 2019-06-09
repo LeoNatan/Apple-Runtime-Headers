@@ -8,6 +8,7 @@
 
 @class EDFormula, EDName, EDRowBlocks, EDSheet, NSMutableDictionary, OITSUPointerKeyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface EPFormulaCleaner : EDProcessor
 {
     EDSheet *mCurrentSheet;

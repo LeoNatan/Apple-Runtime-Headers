@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <UIFoundation/NSCoding-Protocol.h>
+#import <UIFoundation/_NSCollectionViewLayoutOrthogonalScrolling-Protocol.h>
 
-@class NSArray, NSCollectionView, NSCollectionViewLayoutInvalidationContext, NSDynamicAnimator, NSIndexSet, NSMutableDictionary, NSMutableIndexSet, _NSCollectionViewCore;
+@class NSArray, NSCollectionView, NSCollectionViewLayoutInvalidationContext, NSDynamicAnimator, NSIndexSet, NSMutableDictionary, NSMutableIndexSet, NSString, _NSCollectionViewCore;
 
-@interface NSCollectionViewLayout : NSObject <NSCoding>
+@interface NSCollectionViewLayout : NSObject <_NSCollectionViewLayoutOrthogonalScrolling, NSCoding>
 {
     _NSCollectionViewCore *_collectionViewCore;
     struct CGSize _collectionViewBoundsSize;
@@ -47,7 +48,26 @@
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 - (void).cxx_destruct;
+- (BOOL)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
+- (BOOL)_shouldOrthogonalScrollingSectionDecorationScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
+- (BOOL)_shouldOrthogonalScrollingSectionSupplementaryScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
+- (int)_orthogonalScrollingAxis;
+- (struct CGPoint)_orthogonalScrollingTargetContentOffsetForOffset:(struct CGPoint)arg1 section:(long long)arg2;
+- (BOOL)_orthogonalScrollingUsesTargetContentOffsetForSection:(long long)arg1;
+- (BOOL)_orthogonalScrollingShouldCenterCustomPagingSizeForSection:(long long)arg1;
+- (double)_orthogonalScrollingPagingDimensionForSection:(long long)arg1;
+- (id)_extendedAttributesQueryIncludingOrthogonalScrollingRegions:(struct CGRect)arg1;
+- (struct CGRect)_orthogonalScrollingContentRectForSection:(long long)arg1;
+- (struct CGRect)_orthogonalScrollingLayoutRectForSection:(long long)arg1;
+- (BOOL)_shouldConfigureForPagingForOrthogonalScrollingSection:(long long)arg1;
+- (struct CGVector)_scrollingUnitVectorForOrthogonalScrollingSection:(long long)arg1;
+- (struct CGPoint)_offsetForOrthogonalScrollingSection:(long long)arg1;
+- (void)_setOffset:(struct CGPoint)arg1 forOrthogonalScrollingSection:(long long)arg2;
+- (id)_orthogonalScrollingSections;
+- (BOOL)_hasOrthogonalScrollingSections;
 - (BOOL)_shouldRelayoutImmediatelyForNewCollectionViewSize;
+- (void)_didPerformUpdateVisibleCellsPass;
+- (void)_willPerformUpdateVisibleCellsPass;
 - (BOOL)_cellsShouldConferWithAutolayoutEngineForSizingInfo;
 - (BOOL)_estimatesSizes;
 @property(nonatomic, getter=_isPrepared, setter=_setPrepared:) BOOL prepared;
@@ -102,6 +122,7 @@
 - (CDUnknownBlockType)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned long long)arg3;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
+- (id)_invalidationContextForUpdatedLayoutMargins:(struct NSEdgeInsets)arg1;
 - (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
@@ -119,6 +140,13 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+- (struct NSDirectionalEdgeInsets)_orthogonalScrollingContentInsetsForSection:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

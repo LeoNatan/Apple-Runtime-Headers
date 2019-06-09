@@ -8,7 +8,7 @@
 
 #import <Intents/INPlayMediaIntentExport-Protocol.h>
 
-@class INMediaItem, NSArray, NSDate, NSNumber, NSString;
+@class INMediaItem, INMediaSearch, NSArray, NSDate, NSNumber, NSString;
 
 @interface INPlayMediaIntent : INIntent <INPlayMediaIntentExport>
 {
@@ -23,8 +23,17 @@
 - (void)setDomain:(id)arg1;
 - (id)domain;
 - (id)_validParameterCombinationsWithSchema:(id)arg1;
+- (id)_keyCodableAttributes;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+@property(copy, nonatomic) NSString *proxiedBundleIdentifier;
+@property(copy, nonatomic) NSArray *hashedRouteUIDs;
+- (void)setMediaSearch:(id)arg1;
+@property(readonly, copy, nonatomic) INMediaSearch *mediaSearch;
+- (void)setPlaybackSpeed:(id)arg1;
+@property(readonly, copy, nonatomic) NSNumber *playbackSpeed;
+- (void)setPlaybackQueueLocation:(long long)arg1;
+@property(readonly, nonatomic) long long playbackQueueLocation;
 @property(copy, nonatomic) NSString *recoID;
 @property(copy, nonatomic) NSArray *buckets;
 @property(copy, nonatomic) NSDate *expirationDate;
@@ -38,12 +47,13 @@
 @property(readonly, copy, nonatomic) INMediaItem *mediaContainer;
 - (void)setMediaItems:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *mediaItems;
-- (id)initWithMediaItems:(id)arg1 mediaContainer:(id)arg2 playShuffled:(id)arg3 playbackRepeatMode:(long long)arg4 resumePlayback:(id)arg5;
+- (id)initWithMediaItems:(id)arg1 mediaContainer:(id)arg2 playShuffled:(id)arg3 playbackRepeatMode:(long long)arg4 resumePlayback:(id)arg5 playbackQueueLocation:(long long)arg6 playbackSpeed:(id)arg7 mediaSearch:(id)arg8;
 - (id)_categoryVerb;
 - (long long)_intentCategory;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)initWithMediaItems:(id)arg1 mediaContainer:(id)arg2 playShuffled:(id)arg3 playbackRepeatMode:(long long)arg4 resumePlayback:(id)arg5;
 - (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 - (id)_titleForLanguage:(id)arg1 fromBundleURL:(id)arg2;
 

@@ -6,6 +6,7 @@
 
 #import <UIKit/UIAlertAction.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUICommenterAction : UIAlertAction
 {
     long long _index;

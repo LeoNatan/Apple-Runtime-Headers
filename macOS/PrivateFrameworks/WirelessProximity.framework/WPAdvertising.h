@@ -20,7 +20,7 @@
 - (id)parseCompanyData:(id)arg1;
 - (void)advertisingPendingOfType:(unsigned char)arg1;
 - (void)advertisingFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
-- (void)advertisingStoppedOfType:(unsigned char)arg1;
+- (void)advertisingStoppedOfType:(unsigned char)arg1 withError:(id)arg2;
 - (void)advertisingStartedOfType:(unsigned char)arg1;
 - (void)stateDidChange:(long long)arg1;
 - (void)deregisterService:(id)arg1;

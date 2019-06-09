@@ -6,33 +6,29 @@
 
 #import <objc/NSObject.h>
 
-#import <WebKit/WKObject-Protocol.h>
+@class NSDictionary, NSString, WKWebpagePreferences, WKWebsiteDataStore;
 
-@class NSDictionary, NSString, WKWebsiteDataStore;
-
-@interface _WKWebsitePolicies : NSObject <WKObject>
+@interface _WKWebsitePolicies : NSObject
 {
-    struct ObjectStorage<API::WebsitePolicies> _websitePolicies;
+    struct RetainPtr<WKWebpagePreferences> _webpagePreferences;
 }
 
-@property(readonly) struct Object *_apiObject;
-@property(readonly, copy) NSString *description;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (struct Object *)_apiObject;
+- (id)description;
 @property(copy, nonatomic) NSString *customNavigatorPlatform;
+@property(copy, nonatomic) NSString *customJavaScriptUserAgentAsSiteSpecificQuirks;
 @property(copy, nonatomic) NSString *customUserAgent;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(copy, nonatomic) NSDictionary *customHeaderFields;
 @property(nonatomic) unsigned int popUpPolicy;
+@property(nonatomic) unsigned int deviceOrientationAndMotionAccessPolicy;
 @property(nonatomic) int autoplayPolicy;
 @property(nonatomic) unsigned int allowedAutoplayQuirks;
-@property(nonatomic) _Bool deviceOrientationEventEnabled;
 @property(nonatomic) _Bool contentBlockersEnabled;
+@property(readonly, nonatomic) WKWebpagePreferences *webpagePreferences;
 - (id)init;
-- (void)dealloc;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -13,6 +13,7 @@
 @optional
 - (void)focusContainerViewDidMoveToWindow:(_AVFocusContainerView *)arg1;
 - (void)focusContainerView:(_AVFocusContainerView *)arg1 willMoveToWindow:(UIWindow *)arg2;
+- (_Bool)shouldUpdateFocusToFocusContainerView:(_AVFocusContainerView *)arg1;
 - (void)didUpdateFocusFromFocusContainerView:(_AVFocusContainerView *)arg1;
 - (void)didUpdateFocusToFocusContainerView:(_AVFocusContainerView *)arg1;
 @end

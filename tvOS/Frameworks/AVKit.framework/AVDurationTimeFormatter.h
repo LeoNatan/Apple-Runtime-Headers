@@ -8,6 +8,7 @@
 
 @class NSDateComponentsFormatter;
 
+__attribute__((visibility("hidden")))
 @interface AVDurationTimeFormatter : NSFormatter
 {
     NSDateComponentsFormatter *_longerFormatter;

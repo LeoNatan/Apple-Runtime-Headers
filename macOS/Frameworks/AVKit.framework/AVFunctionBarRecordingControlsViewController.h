@@ -9,6 +9,7 @@
 @class NSButton, NSMutableArray;
 @protocol AVFunctionBarRecordingControlsControllingInternal;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarRecordingControlsViewController : NSViewController
 {
     id <AVFunctionBarRecordingControlsControllingInternal> _captureController;

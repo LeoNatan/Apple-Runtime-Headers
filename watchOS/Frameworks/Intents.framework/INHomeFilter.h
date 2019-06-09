@@ -6,49 +6,65 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INSpeakableString, NSArray;
+@class INSpeakableString, NSArray, NSString;
 
-@interface INHomeFilter : NSObject <NSCopying, NSSecureCoding>
+@interface INHomeFilter : NSObject <INJSONSerializable, NSCopying, NSSecureCoding>
 {
+    _Bool _isExcludeFilter;
     NSArray *_entityIdentifiers;
+    INSpeakableString *_entityName;
+    int _entityType;
+    int _outerDeviceType;
+    INSpeakableString *_outerDeviceName;
+    int _deviceType;
     INSpeakableString *_home;
-    INSpeakableString *_scene;
-    INSpeakableString *_homeZone;
+    INSpeakableString *_zone;
     INSpeakableString *_group;
     INSpeakableString *_room;
-    INSpeakableString *_accessory;
-    INSpeakableString *_service;
-    int _entityType;
-    int _serviceType;
-    int _subServiceType;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) int subServiceType; // @synthesize subServiceType=_subServiceType;
-@property(readonly, nonatomic) int serviceType; // @synthesize serviceType=_serviceType;
-@property(readonly, nonatomic) int entityType; // @synthesize entityType=_entityType;
-@property(readonly, copy, nonatomic) INSpeakableString *service; // @synthesize service=_service;
-@property(readonly, copy, nonatomic) INSpeakableString *accessory; // @synthesize accessory=_accessory;
+@property(readonly, nonatomic) _Bool isExcludeFilter; // @synthesize isExcludeFilter=_isExcludeFilter;
 @property(readonly, copy, nonatomic) INSpeakableString *room; // @synthesize room=_room;
 @property(readonly, copy, nonatomic) INSpeakableString *group; // @synthesize group=_group;
-@property(readonly, copy, nonatomic) INSpeakableString *homeZone; // @synthesize homeZone=_homeZone;
-@property(readonly, copy, nonatomic) INSpeakableString *scene; // @synthesize scene=_scene;
+@property(readonly, copy, nonatomic) INSpeakableString *zone; // @synthesize zone=_zone;
 @property(readonly, copy, nonatomic) INSpeakableString *home; // @synthesize home=_home;
+@property(readonly, nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
+@property(readonly, copy, nonatomic) INSpeakableString *outerDeviceName; // @synthesize outerDeviceName=_outerDeviceName;
+@property(readonly, nonatomic) int outerDeviceType; // @synthesize outerDeviceType=_outerDeviceType;
+@property(readonly, nonatomic) int entityType; // @synthesize entityType=_entityType;
+@property(readonly, copy, nonatomic) INSpeakableString *entityName; // @synthesize entityName=_entityName;
 @property(readonly, copy, nonatomic) NSArray *entityIdentifiers; // @synthesize entityIdentifiers=_entityIdentifiers;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
+@property(readonly, nonatomic) int deviceProfileType;
+@property(readonly, nonatomic) int serviceType;
+@property(readonly, copy, nonatomic) INSpeakableString *service;
+@property(readonly, copy, nonatomic) INSpeakableString *scene;
+- (id)initWithEntityIdentifiers:(id)arg1 entityName:(id)arg2 entityType:(int)arg3 outerDeviceType:(int)arg4 innerDeviceName:(id)arg5 innerDeviceType:(int)arg6 home:(id)arg7 zone:(id)arg8 group:(id)arg9 room:(id)arg10 isExcludeFilter:(_Bool)arg11;
+- (id)initWithEntityIdentifiers:(id)arg1 entityName:(id)arg2 entityType:(int)arg3 deviceProfileType:(int)arg4 capabilityName:(id)arg5 capabilityProfileType:(int)arg6 home:(id)arg7 zone:(id)arg8 group:(id)arg9 room:(id)arg10 isExcludeFilter:(_Bool)arg11;
+- (id)initWithEntityIdentifiers:(id)arg1 home:(id)arg2 scene:(id)arg3 homeZone:(id)arg4 group:(id)arg5 room:(id)arg6 accessory:(id)arg7 entityType:(int)arg8 serviceType:(int)arg9 subServiceType:(int)arg10 isExcludeFilter:(_Bool)arg11 entityName:(id)arg12;
+- (id)initWithEntityIdentifiers:(id)arg1 home:(id)arg2 scene:(id)arg3 homeZone:(id)arg4 group:(id)arg5 room:(id)arg6 accessory:(id)arg7 service:(id)arg8 entityType:(int)arg9 serviceType:(int)arg10 subServiceType:(int)arg11 isExcludeFilter:(_Bool)arg12;
 - (id)initWithEntityIdentifiers:(id)arg1 home:(id)arg2 scene:(id)arg3 homeZone:(id)arg4 group:(id)arg5 room:(id)arg6 accessory:(id)arg7 service:(id)arg8 entityType:(int)arg9 serviceType:(int)arg10 subServiceType:(int)arg11;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (id)initWithEntityIdentifiers:(id)arg1 entityName:(id)arg2 entityType:(int)arg3 outerDeviceType:(int)arg4 outerDeviceName:(id)arg5 deviceType:(int)arg6 home:(id)arg7 zone:(id)arg8 group:(id)arg9 room:(id)arg10 isExcludeFilter:(_Bool)arg11;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

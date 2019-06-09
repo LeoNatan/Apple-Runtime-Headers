@@ -9,37 +9,49 @@
 #import <AppleMediaServices/NSCopying-Protocol.h>
 #import <AppleMediaServices/NSMutableCopying-Protocol.h>
 
-@class ACAccount, AMSProcessInfo, NSDictionary, NSString;
-@protocol AMSResponseDecoding, AMSURLBagContract;
+@class ACAccount, AMSKeychainOptions, AMSProcessInfo, AMSPurchaseContext, NSDictionary, NSMutableDictionary, NSString;
+@protocol AMSBagProtocol, AMSResponseDecoding;
 
 __attribute__((visibility("hidden")))
 @interface AMSURLRequestProperties : NSObject <NSCopying, NSMutableCopying>
 {
     BOOL _disableLoadURLMetrics;
     BOOL _knownToBeTrusted;
+    BOOL _disableResponseDecoding;
     BOOL _shouldSetCookiesFromResponse;
+    BOOL _shouldSetStorefrontFromResponse;
     ACAccount *_account;
     NSDictionary *_additionalMetrics;
     long long _anisetteType;
-    id <AMSURLBagContract> _bagContract;
+    id <AMSBagProtocol> _bag;
     AMSProcessInfo *_clientInfo;
     long long _dialogOptions;
+    AMSKeychainOptions *_keychainOptions;
     NSString *_logUUID;
+    long long _maxRetryCount;
     long long _mescalType;
+    AMSPurchaseContext *_purchaseContext;
     id <AMSResponseDecoding> _responseDecoder;
     long long _reversePushType;
+    NSMutableDictionary *_userInfo;
 }
 
+@property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property BOOL shouldSetStorefrontFromResponse; // @synthesize shouldSetStorefrontFromResponse=_shouldSetStorefrontFromResponse;
 @property BOOL shouldSetCookiesFromResponse; // @synthesize shouldSetCookiesFromResponse=_shouldSetCookiesFromResponse;
 @property long long reversePushType; // @synthesize reversePushType=_reversePushType;
+@property BOOL disableResponseDecoding; // @synthesize disableResponseDecoding=_disableResponseDecoding;
 @property(retain) id <AMSResponseDecoding> responseDecoder; // @synthesize responseDecoder=_responseDecoder;
+@property(retain) AMSPurchaseContext *purchaseContext; // @synthesize purchaseContext=_purchaseContext;
 @property long long mescalType; // @synthesize mescalType=_mescalType;
+@property long long maxRetryCount; // @synthesize maxRetryCount=_maxRetryCount;
 @property(retain) NSString *logUUID; // @synthesize logUUID=_logUUID;
 @property BOOL knownToBeTrusted; // @synthesize knownToBeTrusted=_knownToBeTrusted;
+@property(retain) AMSKeychainOptions *keychainOptions; // @synthesize keychainOptions=_keychainOptions;
 @property BOOL disableLoadURLMetrics; // @synthesize disableLoadURLMetrics=_disableLoadURLMetrics;
 @property long long dialogOptions; // @synthesize dialogOptions=_dialogOptions;
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
-@property(retain) id <AMSURLBagContract> bagContract; // @synthesize bagContract=_bagContract;
+@property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property long long anisetteType; // @synthesize anisetteType=_anisetteType;
 @property(retain) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
 @property(retain) ACAccount *account; // @synthesize account=_account;

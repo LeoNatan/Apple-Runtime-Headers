@@ -6,13 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class AVDurationTimeFormatter, AVFrameSet, AVGradientView, AVPlayer, AVPlayerItem, AVSpinnerView, AVTransportBarMask, NSArray, NSDate, NSDateFormatter, NSLayoutConstraint, NSString, UIAttachmentBehavior, UIDynamicAnimator, UIDynamicItemBehavior, UIImage, UIImageView, UILabel, UIPushBehavior, UIVisualEffectView, _AVBlockedView, _AVPlayerLayerThumbnailView, _UIVisualEffectBackdropView;
+@class AVAnimatingLabel, AVDurationTimeFormatter, AVFrameSet, AVGradientView, AVPlayer, AVPlayerItem, AVSpinnerView, AVTransportBarMask, NSArray, NSDate, NSDateFormatter, NSLayoutConstraint, NSString, UIAttachmentBehavior, UIDynamicAnimator, UIDynamicItemBehavior, UIImage, UIImageView, UILabel, UIPushBehavior, UIVisualEffectView, _AVBlockedView, _AVPlayerLayerThumbnailView, _UIVisualEffectBackdropView;
 @protocol AVNowPlayingFrameSource, AVThumbLayerController;
 
+__attribute__((visibility("hidden")))
 @interface AVNowPlayingTransportBar : UIView
 {
     UIView *_barView;
     UIVisualEffectView *_barVisualEffectView;
+    UIView *_barBorderView;
+    UIImageView *_barFillImageView;
+    UIView *_visualEffectMaskView;
     UIView *_visibleScrubNeedle;
     NSLayoutConstraint *_scrubNeedleHeight;
     UIView *_animatedScrubNeedle;
@@ -34,11 +38,11 @@
     _Bool _isClonedPlayerViewActive;
     _Bool _shouldFadeTimeLabels;
     UILabel *_scrubNeedleTimeLabel;
-    UILabel *_elapsedTimeLabel;
-    UILabel *_currentClockTimeLabel;
+    AVAnimatingLabel *_elapsedTimeLabel;
+    AVAnimatingLabel *_currentClockTimeLabel;
     UILabel *_startTimeLabel;
-    UILabel *_remainingTimeLabel;
-    UILabel *_endingClockTimeLabel;
+    AVAnimatingLabel *_remainingTimeLabel;
+    AVAnimatingLabel *_endingClockTimeLabel;
     UILabel *_interstitialTimeLabel;
     UIImageView *_hintIconLeft;
     UIImageView *_hintIconRight;
@@ -138,6 +142,7 @@
 - (void)scrubEndedWithTranslation:(double)arg1 velocity:(double)arg2;
 - (void)scrubMovedWithTranslation:(double)arg1 velocity:(double)arg2;
 - (void)scrubBegan;
+- (void)maskCornersForNeedlePosition:(double)arg1;
 - (void)_updateNeedlePositionsShouldUpdateElapsedTimeMarker:(_Bool)arg1;
 - (void)_updateNeedlePositions;
 - (void)updateNeedlePositionToReflectThumbnailTime;
@@ -151,6 +156,7 @@
 - (void)_updateRemainingTimeText;
 - (void)_updateStartTimeText;
 - (void)setDisplaysClockTimes:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_updateTransportBarMaskIfNeeded;
 - (void)layoutSubviews;
 - (void)stopScrubbingWithResetToPauseMarker:(_Bool)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) double currentTimeIntervalForThumbnailOrNeedle;

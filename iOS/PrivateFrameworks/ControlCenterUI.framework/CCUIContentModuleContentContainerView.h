@@ -15,8 +15,12 @@
     _Bool _clipsContentInCompactMode;
     MTMaterialView *_moduleMaterialView;
     NSString *_materialViewGroupName;
+    double _compactContinuousCornerRadius;
+    double _expandedContinuousCornerRadius;
 }
 
+@property(nonatomic) double expandedContinuousCornerRadius; // @synthesize expandedContinuousCornerRadius=_expandedContinuousCornerRadius;
+@property(nonatomic) double compactContinuousCornerRadius; // @synthesize compactContinuousCornerRadius=_compactContinuousCornerRadius;
 @property(nonatomic) _Bool clipsContentInCompactMode; // @synthesize clipsContentInCompactMode=_clipsContentInCompactMode;
 @property(copy, nonatomic) NSString *materialViewGroupName; // @synthesize materialViewGroupName=_materialViewGroupName;
 @property(nonatomic) _Bool moduleProvidesOwnPlatter; // @synthesize moduleProvidesOwnPlatter=_moduleProvidesOwnPlatter;

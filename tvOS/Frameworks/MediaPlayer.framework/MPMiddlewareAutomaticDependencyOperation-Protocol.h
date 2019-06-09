@@ -11,6 +11,6 @@
 @protocol MPMiddlewareAutomaticDependencyOperation <MPMiddlewareOperation>
 @property(retain, nonatomic) NSMapTable *inputOperations;
 @property(readonly, nonatomic) NSArray *outputProtocols;
-@property(readonly, nonatomic) NSArray *inputsProtocols;
+@property(readonly, nonatomic) NSArray *inputProtocols;
 @end
 

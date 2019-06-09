@@ -29,6 +29,7 @@
 - (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize)arg2 suppressedContent:(unsigned int)arg3 cacheKey:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_snapshotWithPass:(id)arg1 size:(struct CGSize)arg2 suppressedContent:(unsigned int)arg3 withCache:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize)arg2 suppressedContent:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)snapshotWithUniqueID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)snapshotWithPass:(id)arg1 size:(struct CGSize)arg2 suppressedContent:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;

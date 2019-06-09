@@ -15,9 +15,11 @@ __attribute__((visibility("hidden")))
 - (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(_Bool)arg3 inContainerView:(id)arg4 descendantOfContainerView:(id)arg5 duration:(double)arg6 completionBlock:(CDUnknownBlockType)arg7;
 - (double)transitionDurationForPresentation:(_Bool)arg1 ofAlertController:(id)arg2;
 - (int)permittedActionLayoutDirection;
-- (id)textFieldContainingViewWithTextField:(id)arg1;
+- (id)textFieldContainingViewWithTextField:(id)arg1 position:(int)arg2;
+- (float)textFieldHorizontalMargin;
 - (struct UIEdgeInsets)contentInsetsForContainerView:(id)arg1;
 - (float)maximumWidth;
+- (float)_marginAroundActionGroup;
 - (float)marginBelowLastLabelLastBaseline;
 - (float)marginBelowMessageLabelLastBaseline;
 - (float)marginAboveMessageLabelFirstBaseline;

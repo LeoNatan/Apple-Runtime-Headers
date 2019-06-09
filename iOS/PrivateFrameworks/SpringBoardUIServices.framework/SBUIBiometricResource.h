@@ -26,7 +26,8 @@
     _Bool _isMatchingAllowed;
     _Bool _isMatchingEnabled;
     _Bool _isPresenceDetectionAllowed;
-    _Bool _isFingerDetectionEnabled;
+    _Bool _isForegroundFingerDetectionEnabled;
+    _Bool _isBackgroundFingerDetectionEnabled;
     _Bool _isFingerDetectionEnabledThroughHIDChannel;
     _Bool _isFaceDetectionEnabled;
     _Bool _screenIsOn;
@@ -36,7 +37,8 @@
     SBFCredentialSet *_unlockCredentialSet;
     NSHashTable *_observers;
     NSMutableOrderedSet *_matchAssertions;
-    NSMutableOrderedSet *_fingerDetectAssertions;
+    NSMutableOrderedSet *_normalFingerDetectAssertions;
+    NSMutableOrderedSet *_HIDEventsOnlyFingerDetectAssertions;
     NSMutableOrderedSet *_faceDetectAssertions;
     NSMutableOrderedSet *_simulatedLockoutAssertions;
     Class _bkMatchPearlOperationClass;
@@ -63,8 +65,8 @@
 - (void)_addSimulatedLockoutAssertion:(id)arg1;
 - (void)_removeFaceDetectionWantedAssertion:(id)arg1;
 - (void)_addFaceDetectionWantedAssertion:(id)arg1;
-- (void)_removeFingerDetectionWantedAssertion:(id)arg1;
-- (void)_addFingerDetectionWantedAssertion:(id)arg1;
+- (void)_removeFingerDetectionWantedAssertion:(id)arg1 HIDEventsOnly:(_Bool)arg2;
+- (void)_addFingerDetectionWantedAssertion:(id)arg1 HIDEventsOnly:(_Bool)arg2;
 - (void)_removeMatchingAssertion:(id)arg1;
 - (void)_addMatchingAssertion:(id)arg1;
 - (void)_deactivateAllPearlAssertions;
@@ -86,10 +88,12 @@
 - (void)noteScreenWillTurnOn;
 - (void)noteScreenDidTurnOff;
 - (void)noteScreenWillTurnOff;
+- (void)_forceBioLockout;
 - (void)_setAuthenticated:(_Bool)arg1;
 - (id)acquireSimulatedLockoutAssertionWithLockoutState:(unsigned long long)arg1 forReason:(id)arg2;
 - (void)refreshMatchMode;
 - (id)acquireFaceDetectionWantedAssertionForReason:(id)arg1;
+- (id)acquireFingerDetectionWantedAssertionForReason:(id)arg1 HIDEventsOnly:(_Bool)arg2;
 - (id)acquireFingerDetectionWantedAssertionForReason:(id)arg1;
 - (void)resumeMatchingAdvisory:(_Bool)arg1;
 - (void)resumeMatchingForAssertion:(id)arg1 advisory:(_Bool)arg2;

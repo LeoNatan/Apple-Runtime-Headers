@@ -18,14 +18,13 @@
     id <MTLumaDodgePillBackgroundLuminanceObserver> _backgroundLumninanceObserver;
     long long _backgroundLuminance;
     long long _backgroundLuminanceBias;
+    long long _graphicsQuality;
     double _luma;
     _Bool _lumaIsValid;
     unsigned int _bounceAnimationsInFlight;
     NSMutableArray *_bounceAnimationKeys;
 }
 
-+ (struct CGSize)suggestedSizeForContentWidth:(double)arg1;
-+ (double)suggestedEdgeSpacing;
 + (_Bool)supportsBackgroundLuminanceObserving;
 + (Class)layerClass;
 + (void)initialize;
@@ -34,6 +33,8 @@
 @property(nonatomic) __weak id <MTLumaDodgePillBackgroundLuminanceObserver> backgroundLumninanceObserver; // @synthesize backgroundLumninanceObserver=_backgroundLumninanceObserver;
 @property(nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (struct CGSize)suggestedSizeForContentWidth:(double)arg1;
+@property(readonly, nonatomic) double suggestedEdgeSpacing;
 - (void)bounce;
 - (void)resetBackgroundLuminanceHysteresis;
 - (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
@@ -42,9 +43,9 @@
 - (_Bool)_shouldAnimatePropertyAdditivelyWithKey:(id)arg1;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateStyle;
-- (id)_styleSettings;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 settings:(id)arg2 graphicsQuality:(long long)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 settings:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

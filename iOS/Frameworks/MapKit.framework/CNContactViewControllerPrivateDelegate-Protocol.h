@@ -11,6 +11,7 @@
 @protocol CNContactViewControllerPrivateDelegate <CNContactViewControllerDelegate>
 
 @optional
+- (void)contactViewControllerDidExecuteClearRecentsDataAction:(CNContactViewController *)arg1;
 - (void)contactViewControllerForUnknownContactDidEndAddingToContacts:(CNContactViewController *)arg1;
 - (void)contactViewControllerForUnknownContactDidBeginAddingToContacts:(CNContactViewController *)arg1;
 - (void)contactViewController:(CNContactViewController *)arg1 didChangeToEditMode:(_Bool)arg2;

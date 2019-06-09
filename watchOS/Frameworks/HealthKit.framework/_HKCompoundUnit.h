@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)_computeBaseUnitReductionAndProportionalSize:(out double *)arg1 withCycleSet:(id)arg2;
+- (id)_computeBaseUnitReductionAndProportionalSize:(double *)arg1 withCycleSet:(id)arg2;
 - (id)_baseUnits;
 - (id)dimension;
 - (id)unitString;

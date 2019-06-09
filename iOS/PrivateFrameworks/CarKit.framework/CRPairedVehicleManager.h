@@ -15,13 +15,19 @@
 
 @property(retain, nonatomic) CRCarKitServiceClient *serviceClient; // @synthesize serviceClient=_serviceClient;
 - (void).cxx_destruct;
-- (id)vehicleForCertificateSerial:(id)arg1;
-- (id)vehicleNameForWiFiUUID:(id)arg1;
-- (id)vehicleForBluetoothAddress:(id)arg1;
 - (id)pairedVehicles;
 - (id)allVehicles;
 - (_Bool)removeVehicle:(id)arg1;
 - (id)saveVehicle:(id)arg1;
+- (id)vehicleForCertificateSerial:(id)arg1;
+- (id)vehicleNameForWiFiUUID:(id)arg1;
+- (id)vehicleForBluetoothAddress:(id)arg1;
+- (id)_firstVehicleMatchingTest:(CDUnknownBlockType)arg1;
+- (void)removeVehicle:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)saveVehicle:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchPairedVehiclesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchAllVehiclesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)syncFetchAllVehiclesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;
 
 @end

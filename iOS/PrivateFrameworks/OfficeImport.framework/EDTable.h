@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tableWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (void)setTableRange:(id)arg1;
 - (void)setShowColumnStripes:(_Bool)arg1;
 - (_Bool)showColumnStripes;
@@ -73,7 +74,6 @@ __attribute__((visibility("hidden")))
 - (id)headerRowDxf;
 - (void)setStyle:(id)arg1;
 - (id)style;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (id)description;
 - (void)setTableBorderDxfIndex:(unsigned long long)arg1;

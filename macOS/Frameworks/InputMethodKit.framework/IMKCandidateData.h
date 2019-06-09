@@ -21,6 +21,7 @@
 @property(retain, nonatomic) NSMutableDictionary *keysToCandidates; // @synthesize keysToCandidates=_keysToCandidates;
 @property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
 - (unsigned long long)positionOfCandidateForKey:(id)arg1;
+@property(readonly, nonatomic) BOOL isShowingEmptyCandidate;
 @property(readonly, nonatomic) BOOL hasGroups;
 @property(readonly, nonatomic) NSArray *candidates;
 - (unsigned long long)keyCount;

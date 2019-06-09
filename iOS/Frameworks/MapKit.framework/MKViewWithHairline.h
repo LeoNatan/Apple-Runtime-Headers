@@ -6,12 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class UIColor;
+@class MKVibrantView, UIColor;
 
 @interface MKViewWithHairline : UIView
 {
-    UIView *_bottomHairline;
-    UIView *_topHairline;
+    MKVibrantView *_bottomHairline;
+    MKVibrantView *_topHairline;
     UIColor *_hairlineColor;
     double _leftHairlineInset;
     double _rightHairlineInset;

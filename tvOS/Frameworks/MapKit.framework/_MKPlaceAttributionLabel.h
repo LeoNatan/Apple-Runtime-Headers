@@ -16,10 +16,10 @@
     NSString *imagePlaceholder;
 }
 
-@property(retain) NSString *imagePlaceholder; // @synthesize imagePlaceholder;
-@property double imageBaselineOffset; // @synthesize imageBaselineOffset;
-@property double textBaselineOffset; // @synthesize textBaselineOffset;
-@property(retain) UIImage *image; // @synthesize image;
+@property(retain, nonatomic) NSString *imagePlaceholder; // @synthesize imagePlaceholder;
+@property(nonatomic) double imageBaselineOffset; // @synthesize imageBaselineOffset;
+@property(nonatomic) double textBaselineOffset; // @synthesize textBaselineOffset;
+@property(retain, nonatomic) UIImage *image; // @synthesize image;
 - (void).cxx_destruct;
 - (id)attributionWithString:(id)arg1;
 

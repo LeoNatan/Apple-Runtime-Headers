@@ -7,6 +7,9 @@
 #import <Foundation/NSStream.h>
 
 @interface NSStream (NSStream)
++ (void)getStreamsToHost:(id)arg1 port:(long long)arg2 inputStream:(id *)arg3 outputStream:(id *)arg4;
++ (void)getStreamsToHostWithName:(id)arg1 port:(long long)arg2 inputStream:(id *)arg3 outputStream:(id *)arg4;
++ (void)getBoundStreamsWithBufferSize:(unsigned long long)arg1 inputStream:(id *)arg2 outputStream:(id *)arg3;
 - (id)streamError;
 - (unsigned long long)streamStatus;
 - (void)removeFromRunLoop:(id)arg1 forMode:(id)arg2;
@@ -17,5 +20,6 @@
 - (id)delegate;
 - (void)close;
 - (void)open;
+- (id)init;
 @end
 

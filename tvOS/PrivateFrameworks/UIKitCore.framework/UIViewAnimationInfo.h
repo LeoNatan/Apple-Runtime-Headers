@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 {
     UIView *_owningView;
     CDUnknownBlockType _invalidationBlock;
-    NSMutableDictionary *_animatablePropertyStates;
+    NSMutableDictionary *_animatableProperties;
     NSMutableDictionary *_presentationModifiers;
     NSMutableDictionary *_modifierGroupRequestHandlers;
     NSMutableDictionary *_isPartOfHigherOrderProperty;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *isPartOfHigherOrderProperty; // @synthesize isPartOfHigherOrderProperty=_isPartOfHigherOrderProperty;
 @property(retain, nonatomic) NSMutableDictionary *modifierGroupRequestHandlers; // @synthesize modifierGroupRequestHandlers=_modifierGroupRequestHandlers;
 @property(retain, nonatomic) NSMutableDictionary *presentationModifiers; // @synthesize presentationModifiers=_presentationModifiers;
-@property(retain, nonatomic) NSMutableDictionary *animatablePropertyStates; // @synthesize animatablePropertyStates=_animatablePropertyStates;
+@property(retain, nonatomic) NSMutableDictionary *animatableProperties; // @synthesize animatableProperties=_animatableProperties;
 @property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
 @property __weak UIView *owningView; // @synthesize owningView=_owningView;
 - (void).cxx_destruct;
@@ -34,9 +34,9 @@ __attribute__((visibility("hidden")))
 - (id)modifierGroupRequestHandlerForKey:(id)arg1;
 - (void)setPresentationModifier:(id)arg1 forKey:(id)arg2;
 - (id)presentationModifierForKey:(id)arg1;
-- (void)setAnimatablePropertyState:(id)arg1 forKey:(id)arg2;
-- (id)animatablePropertyStateForKey:(id)arg1 createIfNecessary:(_Bool)arg2;
-- (id)animatablePropertyStateKeys;
+- (void)setAnimatableProperty:(id)arg1 forKey:(id)arg2;
+- (id)animatablePropertyForKey:(id)arg1 createIfNecessary:(_Bool)arg2;
+- (id)animatablePropertyKeys;
 - (void)_invalidateIfPossible;
 - (_Bool)_canInvalidate;
 - (id)initWithView:(id)arg1;

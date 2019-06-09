@@ -84,12 +84,14 @@
 @property(readonly, nonatomic, getter=_currentFocusAnimationCoordinator) UIFocusAnimationCoordinator *currentFocusAnimationCoordinator;
 @property(readonly, nonatomic, getter=_focusedView) __weak UIView *focusedView;
 @property(readonly, nonatomic) __weak id <UIFocusItem> focusedItem; // @synthesize focusedItem=_focusedItem;
+- (void)_enableWithoutFocusRestoration;
 - (void)_setEnabled:(_Bool)arg1 withAnimationCoordinator:(id)arg2;
 - (id)_initWithFocusEnabled:(_Bool)arg1;
 - (id)_init;
 - (id)init;
 
 // Remaining properties
+@property(nonatomic) _Bool areChildrenFocused;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

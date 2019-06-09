@@ -10,8 +10,10 @@
 {
 }
 
++ (unsigned int)vehicularOperatorState;
 + (unsigned int)vehicularHints;
 + (unsigned int)vehicularState;
++ (unsigned int)isVehicleBasedOnDeviceId:(id)arg1 deviceType:(int)arg2;
 + (id)mostRecentInVehicle;
 + (id)mostRecentVehicleConnection;
 + (_Bool)isAvailable;

@@ -8,9 +8,10 @@
 
 #import <AVKit/AVScrubberDelegate-Protocol.h>
 
-@class AVBackdropView, AVButton, AVLabel, AVPlaybackControlsRoutePickerView, AVScrubber, AVStyleSheet, AVTouchIgnoringView, NSArray, NSLayoutConstraint, NSString, NSTimer, UILabel, UIView, _UIVisualEffectBackdropView;
+@class AVBackdropView, AVButton, AVLabel, AVPlaybackControlsRoutePickerView, AVScrubber, AVStyleSheet, AVTouchIgnoringView, NSArray, NSLayoutConstraint, NSString, NSTimer, UILabel, UIView;
 @protocol AVTransportControlsViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVTransportControlsView : AVView <AVScrubberDelegate>
 {
     _Bool _doubleRowLayoutEnabled;
@@ -19,6 +20,7 @@
     _Bool _liveStreamingControlsIncludeScrubber;
     _Bool _collapsed;
     _Bool _included;
+    _Bool _removed;
     _Bool _hasAlternateAppearance;
     _Bool _hasFullScreenAppearance;
     _Bool _backdropViewNeedsLayout;
@@ -36,7 +38,7 @@
     AVButton *_startRightwardContentTransitionButton;
     AVPlaybackControlsRoutePickerView *_routePickerView;
     AVButton *_mediaSelectionButton;
-    NSArray *_customButtons;
+    NSArray *_customItems;
     UIView *_customContentTransitioningInfoPanel;
     AVBackdropView *_backdropView;
     AVBackdropView *_detachedExtraContentBackdropView;
@@ -48,15 +50,14 @@
     UILabel *_scrubInstructionsLabel;
     UILabel *_scrubInstructionsBackdropLabel;
     NSTimer *_scrubInstructionsTimer;
-    _UIVisualEffectBackdropView *_captureView;
     struct CGSize _extrinsicContentSize;
 }
 
 + (_Bool)requiresConstraintBasedLayout;
-@property(readonly, nonatomic) _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
 @property(nonatomic) _Bool backdropViewNeedsLayout; // @synthesize backdropViewNeedsLayout=_backdropViewNeedsLayout;
 @property(nonatomic) _Bool hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) _Bool hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
+@property(nonatomic, getter=isRemoved) _Bool removed; // @synthesize removed=_removed;
 @property(nonatomic, getter=isIncluded) _Bool included; // @synthesize included=_included;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
@@ -72,7 +73,7 @@
 @property(retain, nonatomic) AVBackdropView *detachedExtraContentBackdropView; // @synthesize detachedExtraContentBackdropView=_detachedExtraContentBackdropView;
 @property(readonly, nonatomic) AVBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIView *customContentTransitioningInfoPanel; // @synthesize customContentTransitioningInfoPanel=_customContentTransitioningInfoPanel;
-@property(copy, nonatomic) NSArray *customButtons; // @synthesize customButtons=_customButtons;
+@property(copy, nonatomic) NSArray *customItems; // @synthesize customItems=_customItems;
 @property(readonly, nonatomic) AVButton *mediaSelectionButton; // @synthesize mediaSelectionButton=_mediaSelectionButton;
 @property(readonly, nonatomic) AVPlaybackControlsRoutePickerView *routePickerView; // @synthesize routePickerView=_routePickerView;
 @property(readonly, nonatomic) AVButton *startRightwardContentTransitionButton; // @synthesize startRightwardContentTransitionButton=_startRightwardContentTransitionButton;
@@ -91,6 +92,7 @@
 @property(retain, nonatomic) AVStyleSheet *styleSheet; // @synthesize styleSheet=_styleSheet;
 @property(nonatomic) __weak id <AVTransportControlsViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool canShowScrubInstructions;
 @property(readonly, nonatomic) NSArray *singleRowViews;
 - (void)_updateCustomContentTransitioningInfoPanelLayout;
 - (id)_scrubInstructionsAttributedText;
@@ -107,7 +109,7 @@
 - (void)updateConstraints;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2 captureView:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

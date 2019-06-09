@@ -7,11 +7,14 @@
 #import <EventKit/EKEvent.h>
 
 @interface EKEvent (RTExtensions)
++ (id)participationStatusToString:(long long)arg1;
 - (BOOL)hasTTLBeenTriggered;
 - (BOOL)hasUserSpecifiedLocation;
 - (BOOL)hasRejectedSuggestion;
 - (BOOL)hasConfirmedSuggestedLocation;
 - (BOOL)hasSuggestedLocation;
 - (BOOL)needsSuggestedLocation;
+- (id)description;
+- (unsigned long long)participantStatus;
 @end
 

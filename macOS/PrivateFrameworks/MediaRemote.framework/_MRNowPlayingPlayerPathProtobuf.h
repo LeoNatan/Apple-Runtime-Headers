@@ -36,6 +36,7 @@
 @property(readonly, nonatomic) BOOL hasOrigin;
 - (id)customDescription;
 - (id)customDictionaryRepresentation;
+@property(readonly, nonatomic) BOOL isResolved;
 @property(readonly, nonatomic) BOOL isLocal;
 
 @end

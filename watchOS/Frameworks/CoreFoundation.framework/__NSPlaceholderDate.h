@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)immutablePlaceholder;
 + (void)initialize;
 - (double)timeIntervalSinceReferenceDate;
 - (void)dealloc;

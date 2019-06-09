@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)outputSequenceWasFlushed:(struct AVPlayerItemVideoOutput *)arg1;
-- (void)outputMediaDataWillChange:(struct AVPlayerItemVideoOutput *)arg1;
+- (void)outputSequenceWasFlushed:(id)arg1;
+- (void)outputMediaDataWillChange:(id)arg1;
 - (id)initWithPlayer:(WeakPtr_db8b46a6 *)arg1;
 
 // Remaining properties

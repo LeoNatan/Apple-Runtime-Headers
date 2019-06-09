@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (void)_collectionView:(id)arg1 willPerformUpdates:(id)arg2;
 - (id)_collectionView:(id)arg1 indexPathForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
 - (id)_collectionView:(id)arg1 sectionIndexTitlesTrimmedToCount:(unsigned long long)arg2;
 - (id)_sectionIndexTitlesForCollectionView:(id)arg1;

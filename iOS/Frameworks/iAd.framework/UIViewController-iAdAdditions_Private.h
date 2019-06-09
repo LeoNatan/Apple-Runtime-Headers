@@ -6,10 +6,18 @@
 
 #import <UIKit/UIViewController.h>
 
-@class _ADUIViewControllerAdController;
+@class UIView, _ADUIViewControllerAdController;
 
 @interface UIViewController (iAdAdditions_Private)
++ (void)prepareInterstitialAds;
 - (void)_iAd_requestForInterstitialAdDidSucceed:(_Bool)arg1 resultMessage:(id)arg2;
 @property(readonly, nonatomic) _ADUIViewControllerAdController *_iAd_advertisingController;
+@property(readonly, nonatomic) _Bool shouldPresentInterstitialAd;
+- (_Bool)requestInterstitialAdPresentation;
+@property(readonly, nonatomic, getter=isDisplayingBannerAd) _Bool displayingBannerAd;
+@property(readonly, nonatomic, getter=isPresentingFullScreenAd) _Bool presentingFullScreenAd;
+@property(readonly, nonatomic) UIView *originalContentView;
+@property(nonatomic) _Bool canDisplayBannerAds;
+@property(nonatomic) long long interstitialPresentationPolicy;
 @end
 

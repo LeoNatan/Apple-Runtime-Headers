@@ -11,14 +11,11 @@
 
 @interface PFCoalescer : NSObject
 {
-    long long _sequenceNumber;
-    long long _fireSequenceNumber;
     long long _resetSequenceNumber;
     long long _lastUpdateResetSequenceNumber;
     _Bool _usesTarget;
     _Bool _initialDelayTimerIsArmed;
     double _initialDelay;
-    long long _mode;
     NSString *_label;
     id _target;
     id _buffer;
@@ -63,16 +60,17 @@
 @property _Bool usesTarget; // @synthesize usesTarget=_usesTarget;
 @property __weak id target; // @synthesize target=_target;
 @property(retain) NSString *label; // @synthesize label=_label;
-@property long long mode; // @synthesize mode=_mode;
 @property double initialDelay; // @synthesize initialDelay=_initialDelay;
 - (void).cxx_destruct;
 - (void)setupStateCaptureHandler;
 - (id)stateInformation;
+- (void)_resetWhileLocked;
+- (void)resetAndShutDown;
 - (void)reset;
 - (void)update;
 - (void)update:(CDUnknownBlockType)arg1;
+- (void)performEventActionWithTarget:(id)arg1;
 - (id)initWithLabel:(id)arg1 target:(id)arg2 buffer:(id)arg3 queue:(id)arg4 bufferDrainer:(CDUnknownBlockType)arg5 action:(CDUnknownBlockType)arg6;
-- (void)dispatch_after:(unsigned long long)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)init;
 

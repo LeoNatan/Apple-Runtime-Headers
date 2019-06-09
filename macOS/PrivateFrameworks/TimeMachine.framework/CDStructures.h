@@ -10,6 +10,17 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct NodeCacheEntry {
+    unsigned int :60;
+    unsigned int :60;
+    unsigned int :16;
+};
+
+struct _NSRange {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
 struct _TMRulesEngineStatistics {
     unsigned long long urlQueryCount;
     unsigned long long pathQueryCount;
@@ -34,6 +45,13 @@ struct _TMRulesQueryHints {
     unsigned short _field1;
     int _field2;
     char _field3;
+};
+
+struct __va_list_tag {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+    void *_field4;
 };
 
 struct fsid {
@@ -63,12 +81,33 @@ struct statfs {
     unsigned int f_reserved[8];
 };
 
+struct vector<NodeCacheEntry, std::__1::allocator<NodeCacheEntry>> {
+    struct NodeCacheEntry *__begin_;
+    struct NodeCacheEntry *__end_;
+    struct __compressed_pair<NodeCacheEntry *, std::__1::allocator<NodeCacheEntry>> {
+        struct NodeCacheEntry *__value_;
+    } __end_cap_;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
     unsigned int _field1;
     unsigned char _field2;
 } CDStruct_51293ebd;
+
+typedef struct {
+    unsigned int _field1;
+    CDUnknownFunctionPointerType _field2;
+    CDUnknownFunctionPointerType _field3;
+    CDUnknownFunctionPointerType _field4;
+    CDUnknownFunctionPointerType _field5;
+    CDUnknownFunctionPointerType _field6;
+    CDUnknownFunctionPointerType _field7;
+    CDUnknownFunctionPointerType _field8;
+    CDUnknownFunctionPointerType _field9;
+    CDUnknownFunctionPointerType _field10;
+} CDStruct_db293311;
 
 typedef struct {
     unsigned long long _field1;
@@ -85,4 +124,13 @@ typedef struct {
     unsigned long long _field1[32];
     id _field2;
 } CDStruct_bcaf8faf;
+
+// Template types
+typedef struct vector<NodeCacheEntry, std::__1::allocator<NodeCacheEntry>> {
+    struct NodeCacheEntry *__begin_;
+    struct NodeCacheEntry *__end_;
+    struct __compressed_pair<NodeCacheEntry *, std::__1::allocator<NodeCacheEntry>> {
+        struct NodeCacheEntry *__value_;
+    } __end_cap_;
+} vector_55152583;
 

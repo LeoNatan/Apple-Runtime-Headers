@@ -32,6 +32,8 @@
 - (id)stringForEntitlement:(id)arg1;
 - (_Bool)hasPrivateAccessEntitlementWithIdentifer:(id)arg1;
 - (_Bool)hasAccessEntitlementWithIdentifer:(id)arg1;
+- (_Bool)arrayEntitlement:(id)arg1 containsString:(id)arg2;
+- (_Bool)hasPrivateMetadataAccess;
 - (_Bool)hasEntitlement:(id)arg1;
 - (id)applicationIdentifier;
 - (id)_initWithEntitlementValues:(id)arg1;

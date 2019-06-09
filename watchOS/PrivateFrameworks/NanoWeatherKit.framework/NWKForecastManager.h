@@ -7,13 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <NanoWeatherKit/NWKForecastConnectionDelegate-Protocol.h>
-#import <NanoWeatherKit/NWKLocationObservable-Protocol.h>
+#import <NanoWeatherKit/NWKLocationConnectionDelegate-Protocol.h>
 #import <NanoWeatherKit/NWKRoutineForecastObservable-Protocol.h>
 
 @class NSArray, NSDictionary, NSHashTable, NSMutableDictionary, NSString, NSTimer, NWKLocationConnection, NWKRoutineForecastConnection, WFLocation;
 @protocol OS_dispatch_queue;
 
-@interface NWKForecastManager : NSObject <NWKForecastConnectionDelegate, NWKLocationObservable, NWKRoutineForecastObservable>
+@interface NWKForecastManager : NSObject <NWKForecastConnectionDelegate, NWKLocationConnectionDelegate, NWKRoutineForecastObservable>
 {
     NSMutableDictionary *_forecastConnections;
     NSMutableDictionary *_forecasts;
@@ -47,17 +47,19 @@
 @property(retain, nonatomic) NSArray *staticLocations; // @synthesize staticLocations=_staticLocations;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *forecastConnections;
-- (void)routineForecastServerUpdatedRoutineForecast:(id)arg1;
-- (void)routineForecastMonitoringStartedForStartDate:(id)arg1 endDate:(id)arg2;
-- (void)routineForecastMonitoringFailedToStartForStartDate:(id)arg1 endDate:(id)arg2;
-- (void)routineForecastFailedNotFound;
-- (void)locationServerUpdatedStaticLocations:(id)arg1;
-- (void)locationServerUpdatedSelectedLocation:(id)arg1;
-- (void)locationServerUpdatedLocalLocation:(id)arg1;
-- (void)locationServerUpdatedLocation:(id)arg1 updatedTimeZone:(id)arg2;
-- (void)locationServerUpdatedLocation:(id)arg1 updatedDisplayName:(id)arg2;
+- (void)_updateLocationInCachedForecast:(id)arg1;
+- (void)_removeForecastContainerForLocation:(id)arg1;
+- (void)_cacheForecast:(unsigned int)arg1 updatedAt:(id)arg2 currentConditions:(id)arg3 currentAirQualityConditions:(id)arg4 hourlyForecastConditions:(id)arg5 dailyForecastConditions:(id)arg6 forLocation:(id)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)routineForecast:(id)arg1;
+- (void)locationConnectionInterrupted:(id)arg1;
+- (void)connection:(id)arg1 updateStaticLocationsWithLocations:(id)arg2;
+- (void)connection:(id)arg1 updateSelectedLocationWithLocation:(id)arg2;
+- (void)connection:(id)arg1 updateLocalLocationWithLocation:(id)arg2;
+- (void)connection:(id)arg1 updateLocation:(id)arg2 withTimeZone:(id)arg3;
+- (void)connection:(id)arg1 updateLocation:(id)arg2 withDisplayName:(id)arg3;
+- (void)forecastConnectionInterrupted:(id)arg1;
 - (void)connection:(id)arg1 isUpdatingForecast:(_Bool)arg2 forLocation:(id)arg3 error:(id)arg4;
-- (void)connection:(id)arg1 updateForecastWithToken:(unsigned int)arg2 currentConditions:(id)arg3 hourlyForecasts:(id)arg4 dailyForecasts:(id)arg5 airQuality:(id)arg6 forLocation:(id)arg7;
+- (void)connection:(id)arg1 forecastUpdatedAt:(id)arg2 token:(unsigned int)arg3 currentConditions:(id)arg4 hourlyForecasts:(id)arg5 dailyForecasts:(id)arg6 airQuality:(id)arg7 forLocation:(id)arg8;
 - (void)_notifyObserversOfUpdatedRoutineForecast:(id)arg1 previousRoutineForecast:(id)arg2;
 - (void)_notifyObserversOfUpdatedStaticLocations:(id)arg1 previousStaticLocations:(id)arg2;
 - (void)_notifyObserversOfUpdatedSelectedLocation:(id)arg1 previousSelectedLocation:(id)arg2;
@@ -66,16 +68,16 @@
 - (void)_notifyObserversOfUpdatedDisplayName:(id)arg1 forLocation:(id)arg2;
 - (void)_notifyObserversOfUpdatedForecast:(unsigned int)arg1 currentConditions:(id)arg2 currentAirQualityConditions:(id)arg3 hourlyForecasts:(id)arg4 dailyForecasts:(id)arg5 forLocation:(id)arg6;
 - (void)_notifyObserver:(id)arg1 ofUpdatedStaticLocations:(id)arg2 previousStaticLocations:(id)arg3;
-- (void)startMonitoringRoutineForecastWithStartDate:(id)arg1 endDate:(id)arg2;
-- (void)observeMonitoredRoutineForecast;
-- (void)stopMonitoringRoutineForecast;
-- (void)pauseRoutineForecastConnection;
+- (void)_enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
+- (void)resumeRoutineForecastConnectionForInterval:(id)arg1 lastUpdateToken:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)pauseRoutineForecastConnectionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resumeLocationConnectionWithTrackedLocationSensitivity:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resumeLocationConnectionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resumeLocationConnection;
 - (void)resumeLocationConnectionWithTrackedLocationSensitivity:(_Bool)arg1;
 - (void)pauseLocationConnectionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)pauseLocationConnection;
+- (void)resumeForecastConnectionForLocation:(id)arg1 forecastTypesFlags:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)resumeForecastConnectionForLocation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resumeForecastConnectionForLocation:(id)arg1;
 - (void)resumeForecastConnectionForCoreLocation:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -96,20 +98,9 @@
 - (unsigned int)indexOfLocationInStaticLocations:(id)arg1;
 - (id)locationWithLocationKey:(id)arg1;
 - (id)locationWithLocationID:(id)arg1;
-- (id)forecastForLocation:(id)arg1;
-- (id)weatherForecastsGroupForLocation:(id)arg1;
 - (id)validConditionsForLocation:(id)arg1 forDate:(id)arg2;
 - (void)validConditionsForLocation:(id)arg1 forDate:(id)arg2 fetchHandler:(CDUnknownBlockType)arg3;
-- (id)forecastDailyForecastsForLocation:(id)arg1;
-- (id)forecastHourlyForecastsForLocation:(id)arg1;
-- (id)forecastCurrentAirQualityConditionsForLocation:(id)arg1;
-- (id)forecastCurrentConditionsForLocation:(id)arg1;
-- (unsigned int)forecastTokenForLocation:(id)arg1;
-- (void)forecastTokenAndHourlyForecastsForLocation:(id)arg1 fetchBlock:(CDUnknownBlockType)arg2;
-- (void)forecastTokenAndCurrentConditionsForLocation:(id)arg1 fetchBlock:(CDUnknownBlockType)arg2;
-- (void)_removeForecastContainerForLocation:(id)arg1;
-- (id)_forecastContainerForLocation:(id)arg1;
-- (void)_cacheForecast:(unsigned int)arg1 currentConditions:(id)arg2 currentAirQualityConditions:(id)arg3 hourlyForecastConditions:(id)arg4 dailyForecastConditions:(id)arg5 forLocation:(id)arg6 completion:(CDUnknownBlockType)arg7;
+- (id)forecastForLocation:(id)arg1;
 - (void)_removeForecastConnectionForLocation:(id)arg1;
 - (id)_forecastConnectionForLocation:(id)arg1;
 - (void)_enumerateForecastConnectionsWithBlock:(CDUnknownBlockType)arg1;

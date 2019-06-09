@@ -58,6 +58,18 @@ struct unique_ptr<SafariServices::WebProcessPlugInReaderJSController, std::__1::
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    id foregroundNotificationObserver;
+    id backgroundNotificationObserver;
+    _Bool needsDeferredContentUpdate;
+    _Bool sceneIsForeground;
+} CDStruct_4e0a34f2;
+
+typedef struct {
+    float _field1;
+    float _field2;
+} CDStruct_b2fbf00d;
+
+typedef struct {
     int _field1;
     unsigned int _field2;
 } CDStruct_f1d50d6b;

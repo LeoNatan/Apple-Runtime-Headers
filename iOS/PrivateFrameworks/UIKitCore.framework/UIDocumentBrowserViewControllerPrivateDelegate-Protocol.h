@@ -7,7 +7,7 @@
 #import <UIKitCore/UIDocumentBrowserViewControllerDelegate-Protocol.h>
 
 @class DOCConcreteLocation, NSArray, NSURL, UIBarButtonItem, UIDocumentBrowserViewController;
-@protocol DOCServicePopoverTrackerProtocol;
+@protocol DOCItemActivityPerformer, DOCServicePopoverTrackerProtocol;
 
 @protocol UIDocumentBrowserViewControllerPrivateDelegate <UIDocumentBrowserViewControllerDelegate>
 
@@ -19,7 +19,7 @@
 - (void)didDismissDocumentManager:(UIDocumentBrowserViewController *)arg1;
 - (void)willDismissDocumentManager:(UIDocumentBrowserViewController *)arg1;
 - (_Bool)documentBrowser:(UIDocumentBrowserViewController *)arg1 shouldHandleLocation:(DOCConcreteLocation *)arg2;
-- (_Bool)documentBrowser:(UIDocumentBrowserViewController *)arg1 shouldShowActivityViewControllerForDocumentURLs:(NSArray *)arg2 barButtonItem:(UIBarButtonItem *)arg3 popoverTracker:(id <DOCServicePopoverTrackerProtocol>)arg4 sourceIsManaged:(_Bool)arg5;
+- (_Bool)documentBrowser:(UIDocumentBrowserViewController *)arg1 shouldShowActivityViewControllerForDocumentURLs:(NSArray *)arg2 popoverTracker:(id <DOCServicePopoverTrackerProtocol>)arg3 isContentManaged:(_Bool)arg4 additionalActivities:(NSArray *)arg5 activityProxy:(id <DOCItemActivityPerformer>)arg6;
 - (_Bool)documentBrowser:(UIDocumentBrowserViewController *)arg1 shouldShowActivityViewControllerForDocumentURLs:(NSArray *)arg2 barButtonItem:(UIBarButtonItem *)arg3 popoverTracker:(id <DOCServicePopoverTrackerProtocol>)arg4;
 @end
 

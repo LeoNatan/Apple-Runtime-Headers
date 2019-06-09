@@ -15,6 +15,7 @@
 {
     NSString *_connectionID;
     unsigned int _mediaType;
+    int _underlyingDeviceType;
     FigCaptureSourceConfiguration *_sourceConfiguration;
     FigCaptureSinkConfiguration *_sinkConfiguration;
     _Bool _enabled;
@@ -23,6 +24,7 @@
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) FigCaptureSinkConfiguration *sinkConfiguration; // @synthesize sinkConfiguration=_sinkConfiguration;
 @property(retain, nonatomic) FigCaptureSourceConfiguration *sourceConfiguration; // @synthesize sourceConfiguration=_sourceConfiguration;
+@property(nonatomic) int underlyingDeviceType; // @synthesize underlyingDeviceType=_underlyingDeviceType;
 @property(nonatomic) unsigned int mediaType; // @synthesize mediaType=_mediaType;
 @property(copy, nonatomic) NSString *connectionID; // @synthesize connectionID=_connectionID;
 @property(readonly) FigCaptureVideoThumbnailSinkConfiguration *thumbnailSinkConfiguration;

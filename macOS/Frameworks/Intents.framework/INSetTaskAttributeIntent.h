@@ -8,7 +8,7 @@
 
 #import <Intents/INSetTaskAttributeIntentExport-Protocol.h>
 
-@class INSpatialEventTrigger, INTask, INTemporalEventTrigger, NSString;
+@class INContactEventTrigger, INSpatialEventTrigger, INSpeakableString, INTask, INTemporalEventTrigger, NSString;
 
 @interface INSetTaskAttributeIntent : INIntent <INSetTaskAttributeIntentExport>
 {
@@ -22,20 +22,26 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+@property(copy) INContactEventTrigger *contactEventTrigger;
 - (void)setTemporalEventTrigger:(id)arg1;
 @property(readonly, copy) INTemporalEventTrigger *temporalEventTrigger;
 - (void)setSpatialEventTrigger:(id)arg1;
 @property(readonly, copy) INSpatialEventTrigger *spatialEventTrigger;
+- (void)setPriority:(long long)arg1;
+@property(readonly) long long priority;
 - (void)setStatus:(long long)arg1;
 @property(readonly) long long status;
+- (void)setTaskTitle:(id)arg1;
+@property(readonly, copy) INSpeakableString *taskTitle;
 - (void)setTargetTask:(id)arg1;
 @property(readonly, copy) INTask *targetTask;
-- (id)initWithTargetTask:(id)arg1 status:(long long)arg2 spatialEventTrigger:(id)arg3 temporalEventTrigger:(id)arg4;
+- (id)initWithTargetTask:(id)arg1 taskTitle:(id)arg2 status:(long long)arg3 priority:(long long)arg4 spatialEventTrigger:(id)arg5 temporalEventTrigger:(id)arg6;
 - (id)_categoryVerb;
 - (long long)_intentCategory;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)initWithTargetTask:(id)arg1 status:(long long)arg2 spatialEventTrigger:(id)arg3 temporalEventTrigger:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

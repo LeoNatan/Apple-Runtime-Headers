@@ -8,5 +8,7 @@
 
 @interface UINavigationBar (CNContactStyle)
 - (void)_cnui_applyContactStyle;
+- (void)_cnui_setHasInvisibleBackground:(_Bool)arg1;
+- (_Bool)_cnui_hasInvisibleBackground;
 @end
 

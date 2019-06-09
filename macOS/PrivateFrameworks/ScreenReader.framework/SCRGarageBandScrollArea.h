@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     SCRUIElement *_currentTimeLineGroup;
     struct {
         unsigned int containsTimeLineGroups:1;
-        unsigned int reserved:31;
     } _flags;
 }
 

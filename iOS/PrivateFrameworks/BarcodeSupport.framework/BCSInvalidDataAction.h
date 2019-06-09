@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (_Bool)isInvalidDataAction;
 - (id)actionPickerItems;
 - (void)performDefaultAction;
 - (id)localizedDefaultActionDescription;

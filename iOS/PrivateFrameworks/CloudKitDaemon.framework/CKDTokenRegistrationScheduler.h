@@ -22,7 +22,7 @@
     NSMutableDictionary *_unitTestingPushTokens;
 }
 
-+ (id)sharedSchedulerWithUnitTestingAccountInfoProvider:(id)arg1;
++ (id)sharedSchedulerWithUnitTestingContextInfoProvider:(id)arg1 accountInfoProvider:(id)arg2;
 + (id)sharedScheduler;
 @property(retain, nonatomic) NSMutableDictionary *unitTestingPushTokens; // @synthesize unitTestingPushTokens=_unitTestingPushTokens;
 @property(retain, nonatomic) id <CKDAccountInfoProvider> unitTestingAccountInfoProvider; // @synthesize unitTestingAccountInfoProvider=_unitTestingAccountInfoProvider;
@@ -32,15 +32,15 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) _Bool schedulerIsAvailable; // @synthesize schedulerIsAvailable=_schedulerIsAvailable;
 - (void).cxx_destruct;
-- (void)ensureTokenRefreshForAppContainerTuple:(id)arg1 apsEnvironmentString:(id)arg2 darkWakeEnabled:(_Bool)arg3 isCKSystemService:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (void)forceTokenRefreshForAllClients;
-- (void)unregisterAllTokensWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)unregisterTokenForAppContainerTuple:(id)arg1;
-- (void)handlePushTokenDidUpdate:(id)arg1;
+- (void)ensureTokenRefreshForAppContainerAccountTuple:(id)arg1 contextInfoProvider:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)handlePublicPushTokenDidUpdate:(id)arg1;
-- (void)refreshAllClientsNow;
-- (void)_removeApsToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 darkWakeEnabled:(_Bool)arg4 isCKSystemService:(_Bool)arg5 completionBlock:(CDUnknownBlockType)arg6;
-- (void)_refreshApsToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 darkWakeEnabled:(_Bool)arg4 isCKSystemService:(_Bool)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (void)forceTokenRefreshForAllClients;
+- (void)unregisterAllTokensForAccountID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)unregisterTokenForAppContainerAccountTuple:(id)arg1;
+- (void)_handlePushToken:(id)arg1 forAppContainerAccountTuple:(id)arg2 applicationMetadata:(id)arg3 appContainerIntersectionMetadata:(id)arg4;
+- (void)refreshAllClientsNow:(_Bool)arg1;
+- (void)_removeApsToken:(id)arg1 appContainerAccountTuple:(id)arg2 apsEnvironmentString:(id)arg3 pushBundleIdentifier:(id)arg4 isCKSystemService:(_Bool)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (void)_refreshApsToken:(id)arg1 appContainerAccountTuple:(id)arg2 apsEnvironmentString:(id)arg3 pushBundleIdentifier:(id)arg4 isCKSystemService:(_Bool)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)tokenRefreshChanged;
 - (void)registerTokenRefreshActivity;
 - (void)setSchedulerAvailable:(_Bool)arg1;

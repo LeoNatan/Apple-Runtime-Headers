@@ -8,6 +8,7 @@
 
 @class MCPeerID, NSData, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface MCSessionPeerState : NSObject
 {
     _Bool _connectPeerCalled;

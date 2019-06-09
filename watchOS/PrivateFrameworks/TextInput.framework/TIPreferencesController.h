@@ -16,12 +16,12 @@
     NSMutableDictionary *_configuredPreferences;
     NSMutableDictionary *_cachedMCRestrictedValue;
     NSTimer *_synchronizePreferencesTimer;
-    double _lastSynchronizePreferencesTime[5];
     _Bool isInternalInstall;
     _Bool _inhibitGlobalNotification;
     _Bool _ignoreNextSyncNotification;
 }
 
++ (id)inputModesByFilteringOutMultilingualOnlyInputModes:(id)arg1;
 + (void)registerPreferredLanguagesForInputModes:(id)arg1 replacingInputModes:(id)arg2;
 + (id)sharedPreferencesController;
 @property(nonatomic) _Bool ignoreNextSyncNotification; // @synthesize ignoreNextSyncNotification=_ignoreNextSyncNotification;
@@ -30,10 +30,13 @@
 - (void).cxx_destruct;
 - (void)updateLastUsedDictationLanguages:(id)arg1;
 - (void)updateEnabledDictationLanguages:(id)arg1;
+- (void)updateEnableProKeyboard:(_Bool)arg1;
 - (void)updateDidPerformFirstReachableKeyboardInteraction;
 - (void)updateKeyboardHandBias:(id)arg1;
 - (void)updateKeyboardIsFloating:(_Bool)arg1;
 - (void)updateKeyboardIsSplit:(_Bool)arg1 locked:(_Bool)arg2;
+@property(nonatomic) unsigned int floatingKeyboardDockedEdge;
+@property(nonatomic) struct CGPoint floatingKeyboardPosition;
 @property(nonatomic) struct CGPoint keyboardPosition;
 - (void)didUnseeHardwareKeyboard:(id)arg1;
 - (void)didSeeHardwareKeyboard:(id)arg1;

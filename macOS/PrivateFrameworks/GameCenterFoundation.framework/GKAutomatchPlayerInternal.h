@@ -15,6 +15,8 @@
 @property(nonatomic) long long automatchPosition; // @synthesize automatchPosition=_automatchPosition;
 - (BOOL)isAutomatchPlayer;
 - (id)alias;
+- (id)teamPlayerID;
+- (id)gamePlayerID;
 - (id)playerID;
 
 @end

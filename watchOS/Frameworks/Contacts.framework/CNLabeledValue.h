@@ -14,12 +14,13 @@
 
 @interface CNLabeledValue : NSObject <NSCopying, NSSecureCoding>
 {
+    CNLabelValuePair *_labelValuePair;
     NSString *_identifier;
     int _iOSLegacyIdentifier;
-    CNLabelValuePair *_labelValuePair;
     NSString *_storeIdentifier;
     NSDictionary *_storeInfo;
     NSSet *_linkedIdentifiers;
+    _Bool _isValueMutable;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -34,6 +35,7 @@
 + (id)valueForIdentifier:(id)arg1 inArray:(id)arg2;
 + (id)labelForIdentifier:(id)arg1 inArray:(id)arg2;
 + (id)localizedStringForLabel:(id)arg1;
++ (id)propertyDescriptionOwnersByLabel;
 + (id)entryForIdentifier:(id)arg1 inArray:(id)arg2;
 + (CDUnknownBlockType)testMatchingIdentifier:(id)arg1;
 + (id)makeIdentifier;
@@ -60,8 +62,10 @@
 @property(readonly, copy, nonatomic) id <NSCopying><NSSecureCoding> value;
 @property(readonly, copy, nonatomic) NSString *label;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)primitiveInitWithIdentifier:(id)arg1 label:(id)arg2 value:(id)arg3;
 - (id)initWithIdentifier:(id)arg1 label:(id)arg2 value:(id)arg3;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
+- (id)init;
 
 @end
 

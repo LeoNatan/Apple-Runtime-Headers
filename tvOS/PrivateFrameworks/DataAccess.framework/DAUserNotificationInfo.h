@@ -7,17 +7,19 @@
 #import <objc/NSObject.h>
 
 @class NSString;
+@protocol OS_dispatch_queue;
 
 @interface DAUserNotificationInfo : NSObject
 {
-    CDUnknownBlockType _handler;
     NSString *_groupIdentifier;
+    CDUnknownBlockType _handler;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+@property(nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(copy, nonatomic) NSString *groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
 - (void).cxx_destruct;
-- (CDUnknownBlockType)handler;
-- (void)setHandler:(CDUnknownBlockType)arg1;
 
 @end
 

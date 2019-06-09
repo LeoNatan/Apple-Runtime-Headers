@@ -6,36 +6,31 @@
 
 #import <RelevanceEngine/RECondition.h>
 
-@class NSString, REFeature;
+#import <RelevanceEngine/REAutomaticExportedInterface-Protocol.h>
 
-@interface _REValueRuleCondition : RECondition
+@class REFeature;
+
+@interface _REValueRuleCondition : RECondition <REAutomaticExportedInterface>
 {
     _Bool _allowsEmptyValueForFeature;
     REFeature *_feature;
     long long _relation;
-    id _value;
-    unsigned long long _type;
+    unsigned long long _value;
 }
 
-@property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-@property(readonly, nonatomic) id value; // @synthesize value=_value;
+@property(readonly, nonatomic) unsigned long long value; // @synthesize value=_value;
 @property(readonly, nonatomic) long long relation; // @synthesize relation=_relation;
 @property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)descriptionWithIndent:(unsigned long long)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)_inflectionFeatureValuePairs;
-- (_Bool)_acceptsFeatureMap:(id)arg1;
-- (id)_featureValue;
+- (_Bool)_acceptsFeatureMap:(id)arg1 predictionSet:(id)arg2 explanation:(id *)arg3;
 - (id)_notCondition;
 - (id)_dependentFeatures;
-@property(readonly, nonatomic) _Bool boolValue;
-@property(readonly, nonatomic) long long integerValue;
-@property(readonly, nonatomic) float floatValue;
-@property(readonly, nonatomic) NSString *stringValue;
-- (id)initWithFeature:(id)arg1 relation:(long long)arg2 value:(id)arg3 type:(unsigned long long)arg4;
+- (void)dealloc;
+- (id)initWithFeature:(id)arg1 relation:(long long)arg2 value:(unsigned long long)arg3;
 
 @end
 

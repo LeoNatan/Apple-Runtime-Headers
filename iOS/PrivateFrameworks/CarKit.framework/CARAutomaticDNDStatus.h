@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue;
+@class NSXPCConnection;
 
 @interface CARAutomaticDNDStatus : NSObject
 {
     unsigned long long _cachedAutomaticDNDActiveState;
     CDUnknownBlockType _statusChangeObserver;
     CDUnknownBlockType _exitConfirmationChangeObserver;
-    NSObject<OS_dispatch_queue> *_automaticDNDQueue;
+    NSXPCConnection *_connection;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *automaticDNDQueue; // @synthesize automaticDNDQueue=_automaticDNDQueue;
++ (id)automaticDNDQueue;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType exitConfirmationChangeObserver; // @synthesize exitConfirmationChangeObserver=_exitConfirmationChangeObserver;
 @property(copy, nonatomic) CDUnknownBlockType statusChangeObserver; // @synthesize statusChangeObserver=_statusChangeObserver;
 @property(readonly, nonatomic) unsigned long long cachedAutomaticDNDActiveState; // @synthesize cachedAutomaticDNDActiveState=_cachedAutomaticDNDActiveState;
@@ -31,6 +32,8 @@
 - (void)setFirstBuddyPresentationFirstMoment:(id)arg1;
 - (void)setMostRecentTriggerMethodChange:(double)arg1;
 - (double)mostRecentTriggerMethodChange;
+- (_Bool)shouldActivateWithCarPlay;
+- (void)setActivateWithCarPlay:(_Bool)arg1;
 - (_Bool)hasAdjustedTriggerMethod;
 - (void)setHasAdjustedTriggerMethod:(_Bool)arg1;
 - (_Bool)hasOptedOutOfAutomaticDND;
@@ -50,6 +53,7 @@
 - (_Bool)isAutomaticDNDInternalExitConfirmationOverrideEnabledPreference;
 - (void)setAutomaticDNDInternalExitConfirmationOverrideEnabledPreference:(_Bool)arg1;
 - (void)disableDNDUntilEndOfDriveWithReply:(CDUnknownBlockType)arg1;
+- (void)disableDNDUntilEndOfDriveWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setAutomaticDNDTriggerPreference:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchAutomaticDNDTriggerPreferenceWithReply:(CDUnknownBlockType)arg1;
 - (id)automaticDNDInternalAutoReplyWhitelist;
@@ -69,6 +73,7 @@
 - (void)_xpcFetchWithServiceBlock:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (void)fetchAutomaticDNDAssertionWithReply:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (void)_setupConnection;
 - (id)init;
 
 @end

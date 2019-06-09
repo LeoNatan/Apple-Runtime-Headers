@@ -20,5 +20,13 @@
 - (void)fetchLastKnownFavoritesOperationIdentifier:(void (^)(NSUUID *))arg1;
 - (void)commitFavoritesSerializedRepresentation:(NSData *)arg1 operationIdentifier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)fetchFavoritesSerializedRepresentationWithCompletion:(void (^)(NSData *, NSError *))arg1;
+- (void)eraseCollectionsSerializedRepresentationWithCompletion:(void (^)(NSError *))arg1;
+- (void)fetchLastKnownCollectionsOperationIdentifier:(void (^)(NSUUID *))arg1;
+- (void)commitCollectionsSerializedRepresentation:(NSData *)arg1 operationIdentifier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)fetchCollectionsSerializedRepresentationWithCompletion:(void (^)(NSData *, NSError *))arg1;
+- (void)erasePinnedPlacesSerializedRepresentationWithCompletion:(void (^)(NSError *))arg1;
+- (void)fetchLastKnownPinnedPlacesOperationIdentifier:(void (^)(NSUUID *))arg1;
+- (void)commitPinnedPlacesSerializedRepresentation:(NSData *)arg1 operationIdentifier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)fetchPinnedPlacesSerializedRepresentationWithCompletion:(void (^)(NSData *, NSError *))arg1;
 @end
 

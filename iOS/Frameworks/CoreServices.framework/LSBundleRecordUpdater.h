@@ -19,7 +19,8 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-- (int)updateBundleRecord;
+- (void).cxx_destruct;
+- (_Bool)updateBundleRecord:(id *)arg1;
 - (void)parsePlaceholderMetadata:(id)arg1;
 - (void)parseSINFDictionary:(id)arg1;
 - (void)parseiTunesMetadata:(id)arg1;

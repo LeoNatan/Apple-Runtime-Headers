@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)initWithTextItemContainer:(id)arg1;
 - (id)initWithDisplayConfig:(id)arg1 textItems:(id)arg2;
+- (id)init;
 
 @end
 

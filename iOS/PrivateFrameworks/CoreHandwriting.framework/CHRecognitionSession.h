@@ -16,9 +16,14 @@
     CHRecognitionSessionResult *_lastRecognitionResult;
     long long _status;
     id <CHStrokeProvider> _latestStrokeProvider;
+    _Bool _strokeGroupingOnly;
     _Bool __hasUnprocessedChanges;
+    unsigned int __taskQueueQoSClass;
+    long long _mode;
     NSArray *_preferredLocales;
     id <CHRecognitionSessionDataSource> _dataSource;
+    long long _recognitionEnvironment;
+    long long _priority;
     NSArray *__effectiveLocales;
     NSMutableDictionary *__recognizersByLocaleID;
     unsigned long long __changeCoalescingIndex;
@@ -30,8 +35,10 @@
 }
 
 + (_Bool)_isLocaleSupported:(id)arg1;
++ (id)createRecognizerForLocale:(id)arg1 remote:(_Bool)arg2 priority:(long long)arg3;
 + (id)effectiveLocalesFromLocales:(id)arg1;
 @property(readonly, retain, nonatomic) NSMutableArray *_activeTasks; // @synthesize _activeTasks=__activeTasks;
+@property(readonly, nonatomic) unsigned int _taskQueueQoSClass; // @synthesize _taskQueueQoSClass=__taskQueueQoSClass;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *_sessionQueue; // @synthesize _sessionQueue=__sessionQueue;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *_tasksWorkQueue; // @synthesize _tasksWorkQueue=__tasksWorkQueue;
 @property(readonly, retain, nonatomic) NSMutableArray *_inputDrawingClients; // @synthesize _inputDrawingClients=__inputDrawingClients;
@@ -40,12 +47,17 @@
 @property(readonly, retain, nonatomic) NSMutableDictionary *_recognizersByLocaleID; // @synthesize _recognizersByLocaleID=__recognizersByLocaleID;
 @property(nonatomic, setter=_setHasUnprocessedChanges:) _Bool _hasUnprocessedChanges; // @synthesize _hasUnprocessedChanges=__hasUnprocessedChanges;
 @property(copy, nonatomic, setter=_setEffectiveLocales:) NSArray *_effectiveLocales; // @synthesize _effectiveLocales=__effectiveLocales;
+@property(nonatomic) long long priority; // @synthesize priority=_priority;
+@property(nonatomic) long long recognitionEnvironment; // @synthesize recognitionEnvironment=_recognitionEnvironment;
 @property(nonatomic) id <CHRecognitionSessionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(copy, nonatomic) NSArray *preferredLocales; // @synthesize preferredLocales=_preferredLocales;
+@property(readonly, nonatomic) long long mode; // @synthesize mode=_mode;
+- (_Bool)_shouldRunRecognitionLocally;
 - (_Bool)loadSessionData:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSData *sessionData;
 - (void)_cleanupCachedRecognizers;
 - (id)recognizerForLocale:(id)arg1;
+- (id)_newRecognitionSessionTask;
 - (void)_processPendingStrokeChangesIfAvailable;
 - (void)_scheduleProcessStrokeProviderChangesImmediately:(_Bool)arg1;
 - (double)_preferredCoalescingInterval;
@@ -63,7 +75,11 @@
 @property(retain, setter=_setLastRecognitionResult:) CHRecognitionSessionResult *lastRecognitionResult;
 @property(copy, nonatomic) NSArray *locales;
 - (void)dealloc;
+- (void)_setupExecutionQueuesForMode:(long long)arg1;
 - (id)init;
+- (id)initWithMode:(long long)arg1;
+- (id)recognizableDrawingForStrokeGroupQueryItem:(id)arg1;
+@property(nonatomic) _Bool strokeGroupingOnly;
 - (void)unregisterInputDrawingClient:(id)arg1;
 - (void)registerInputDrawingClient:(id)arg1;
 - (void)unregisterChangeObserver:(id)arg1;

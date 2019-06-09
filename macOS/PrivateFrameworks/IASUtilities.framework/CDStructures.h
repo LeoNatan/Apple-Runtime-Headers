@@ -116,9 +116,23 @@ typedef struct {
 } CDStruct_69a1f978;
 
 typedef struct {
+    unsigned long long inSize;
+    unsigned long long outSize;
+} CDStruct_e37f3d4a;
+
+typedef struct {
     unsigned long long _field1;
     void *_field2;
 } CDStruct_7a75b897;
+
+typedef struct {
+    CDUnknownFunctionPointerType inSeqProc;
+    CDUnknownFunctionPointerType inAbortProc;
+    void *inUserData;
+    CDUnknownFunctionPointerType outSeqProc;
+    CDUnknownFunctionPointerType outAbortProc;
+    void *outUserData;
+} CDStruct_02dd2c37;
 
 typedef struct {
     char *_field1;
@@ -134,6 +148,14 @@ typedef struct {
     CDUnknownFunctionPointerType _field11;
     void *_field12;
 } CDStruct_14ac1504;
+
+typedef struct {
+    int algorithm;
+    int direction;
+    int nWorkerThreads;
+    unsigned long long blockSize;
+    int verbosity;
+} CDStruct_24cabc6e;
 
 typedef struct {
     char *_field1;

@@ -13,23 +13,24 @@
 
 @interface UAModifiersController : NSObject <NSComboBoxDelegate, NSComboBoxDataSource>
 {
-    UAModifiersEditor *_modifiersEditor;
-    NSComboBox *_modifiersComboBox;
+    UAModifiersEditor *_modifiersFieldEditor;
+    NSComboBox *__modifiersComboBox;
 }
 
+@property(retain, nonatomic) NSComboBox *_modifiersComboBox; // @synthesize _modifiersComboBox=__modifiersComboBox;
 - (void).cxx_destruct;
-- (void)dealloc;
-- (id)initWithComboBox:(id)arg1;
-- (id)init;
-- (void)setEnabled:(BOOL)arg1;
+- (void)_setComboBox:(id)arg1 stringValue:(id)arg2;
 - (void)controlTextDidChange:(id)arg1;
-- (void)update;
-- (id)modifiersFieldEditor;
 - (void)comboBoxSelectionDidChange:(id)arg1;
 - (unsigned long long)comboBox:(id)arg1 indexOfItemWithStringValue:(id)arg2;
 - (id)comboBox:(id)arg1 objectValueForItemAtIndex:(long long)arg2;
 - (long long)numberOfItemsInComboBox:(id)arg1;
-- (void)_setComboBox:(id)arg1 stringValue:(id)arg2;
+- (void)update;
+@property(readonly, nonatomic) UAModifiersEditor *modifiersFieldEditor; // @synthesize modifiersFieldEditor=_modifiersFieldEditor;
+@property(nonatomic) BOOL enabled;
+- (void)dealloc;
+- (id)initWithComboBox:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

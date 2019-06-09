@@ -16,6 +16,7 @@
 }
 
 + (id)availableDataRepresentationTypes;
++ (id)os_log;
 @property(retain, nonatomic) NSURL *cachedFileURLRepresentation; // @synthesize cachedFileURLRepresentation=_cachedFileURLRepresentation;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;

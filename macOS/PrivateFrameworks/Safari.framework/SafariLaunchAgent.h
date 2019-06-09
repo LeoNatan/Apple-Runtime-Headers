@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 - (void)authenticationSessionRequestServerNeedsClientToReconnect:(id)arg1;
 - (void)didFulfillAuthenticationSessionRequest:(id)arg1 withCallbackURL:(id)arg2 error:(id)arg3;
 - (void)connectToAuthenticationSessionRequestClientWithEndpoint:(id)arg1;
-- (void)askSafariToCancelAuthenticationSessionWithUUID:(id)arg1;
-- (void)askSafariToBeginAuthenticationSessionWithUUID:(id)arg1 url:(id)arg2 callbackURLScheme:(id)arg3 usingEphemeralSession:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)askDefaultBrowserToCancelAuthenticationSessionWithUUID:(id)arg1;
+- (void)askDefaultBrowserToBeginAuthenticationSessionWithUUID:(id)arg1 url:(id)arg2 callbackURLScheme:(id)arg3 usingEphemeralSession:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)launchSafariToURL:(id)arg1;
 
 // Remaining properties

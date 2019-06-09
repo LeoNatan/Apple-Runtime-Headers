@@ -6,6 +6,7 @@
 
 #import <FinderKit/FI_TViewController.h>
 
+@class NSObject;
 @protocol TSearchScopeSliceControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -20,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)scopeSelection;
 - (void)setScopeSelection:(unsigned long long)arg1;
 - (void)setButtonTitles:(const vector_757c8b87 *)arg1 andToolTips:(const vector_757c8b87 *)arg2;
-@property id <TSearchScopeSliceControllerDelegate> scopeSliceDelegate; // @dynamic scopeSliceDelegate;
+@property __weak NSObject<TSearchScopeSliceControllerDelegate> *scopeSliceDelegate; // @dynamic scopeSliceDelegate;
 - (id)scopeSlice;
 - (id)nibName;
 

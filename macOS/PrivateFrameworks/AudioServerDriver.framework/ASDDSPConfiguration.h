@@ -13,7 +13,7 @@
     NSArray *_dspItems;
 }
 
-@property(retain, nonatomic) NSArray *dspItems; // @synthesize dspItems=_dspItems;
+@property(copy, nonatomic) NSArray *dspItems; // @synthesize dspItems=_dspItems;
 - (void).cxx_destruct;
 - (id)initWithArray:(id)arg1 resourcePath:(id)arg2;
 

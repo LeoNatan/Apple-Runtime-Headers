@@ -7,14 +7,13 @@
 #import <objc/NSObject.h>
 
 @class CMExerciseMinuteData;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue;
 
 @interface CMExerciseMinuteInternal : NSObject
 {
     struct CLConnectionClient *fLocationdConnection;
     NSObject<OS_dispatch_queue> *fInternalQueue;
     NSObject<OS_dispatch_queue> *fAppQueue;
-    NSObject<OS_dispatch_source> *fWatchdogTimer;
     _Bool fStartedUpdates;
     CMExerciseMinuteData *fMostRecentRecord;
     CDUnknownBlockType fHandler;
@@ -24,8 +23,6 @@
 - (void)_startUpdatesWithHandler:(CDUnknownBlockType)arg1;
 - (void)_stopUpdates;
 - (void)_startUpdatesFromRecord:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_stopWatchdogCheckins;
-- (void)_startWatchdogCheckins;
 - (void)_teardown;
 - (void)dealloc;
 - (id)init;

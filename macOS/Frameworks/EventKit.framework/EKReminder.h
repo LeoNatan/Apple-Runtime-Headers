@@ -33,11 +33,10 @@
 + (Class)frozenClass;
 + (id)itemWithIdentifier:(id)arg1 inStore:(id)arg2;
 + (id)reminderWithEventStore:(id)arg1;
-+ (id)actionStringsPluralDisplayName;
-+ (id)actionStringsDisplayName;
 @property(readonly, nonatomic) BOOL cachedHasLocationAlarm; // @synthesize cachedHasLocationAlarm;
 - (BOOL)_validateEntityTypeIsSupported:(id *)arg1;
 - (id)humanReadableRecurrenceDescription;
+- (id)prepareReminderKitObjectForSaveWithUpdatedBackingObjectProvider:(id)arg1;
 - (BOOL)validate:(id *)arg1;
 - (void)reorderBetweenEarlier:(id)arg1 later:(id)arg2;
 - (void)_adjustOrderOnReminders:(id)arg1 reverse:(BOOL)arg2 saveBlock:(CDUnknownBlockType)arg3;
@@ -75,9 +74,7 @@
 - (unsigned long long)entityType;
 - (BOOL)canMoveOrCopyFromCalendar:(id)arg1 toCalendar:(id)arg2 error:(id *)arg3;
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id *)arg3;
-- (id)actionStringsDisplayTitle;
-- (BOOL)removeWithSpan:(long long)arg1 error:(id *)arg2;
-- (BOOL)saveWithSpan:(long long)arg1 error:(id *)arg2;
+- (void)forceUpdateFrozenCalendar:(id)arg1;
 
 // Remaining properties
 @property(copy, nonatomic) NSURL *URL;
@@ -100,7 +97,6 @@
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
 @property(copy, nonatomic) NSString *notes;
 @property(readonly, nonatomic) BOOL organizedByMe; // @dynamic organizedByMe;
-@property(readonly, retain, nonatomic) id <EKProtocolParticipant> organizer; // @dynamic organizer;
 @property(readonly, copy, nonatomic) NSString *organizerEmail; // @dynamic organizerEmail;
 @property(readonly, copy, nonatomic) NSString *organizerEncodedLikenessData; // @dynamic organizerEncodedLikenessData;
 @property(readonly, copy, nonatomic) NSString *organizerName; // @dynamic organizerName;

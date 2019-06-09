@@ -6,7 +6,6 @@
 
 #import <ScreenSharing/SSGestureEvent.h>
 
-__attribute__((visibility("hidden")))
 @interface SSGestureScrollEvent : SSGestureEvent
 {
     double mDeltaX;

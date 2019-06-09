@@ -11,6 +11,7 @@
 @class NSDictionary, NSMutableArray, NSOperationQueue, NSString, SKUIBannerView, SKUIClientContext, SKUIItemArtworkContext, SKUIItemStateCenter, SSLookupItem, UIImage;
 @protocol SKUIBannerViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBannerViewController : UIViewController <SKUIItemStateCenterObserver>
 {
     SKUIBannerView *_bannerView;

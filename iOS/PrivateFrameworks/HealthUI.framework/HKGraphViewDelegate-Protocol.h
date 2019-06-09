@@ -23,5 +23,8 @@
 - (void)graphViewDidEndSelection:(HKGraphView *)arg1;
 - (void)graphView:(HKGraphView *)arg1 didUpdateSelectedPoint:(NSArray *)arg2;
 - (void)graphViewDidBeginSelection:(HKGraphView *)arg1;
+
+@optional
+- (void)graphView:(HKGraphView *)arg1 startupTime:(long long)arg2;
 @end
 

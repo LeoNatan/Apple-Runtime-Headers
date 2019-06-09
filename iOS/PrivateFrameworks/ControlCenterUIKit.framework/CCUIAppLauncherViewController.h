@@ -18,11 +18,13 @@
 @property(nonatomic) __weak CCUIAppLauncherModule *module; // @synthesize module=_module;
 - (void).cxx_destruct;
 - (void)_activateApplicationForShortcutItem:(id)arg1;
-- (void)_addActionForShortcutItem:(id)arg1;
+- (id)_menuItemForShortcutItem:(id)arg1;
 - (void)_updateApplicationShortcutsActions;
 - (_Bool)shouldBeginTransitionToExpandedContentModule;
 - (void)didBeginInteraction;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
+- (id)leadingImageForMenuItem:(id)arg1;
 - (void)buttonTapped:(id)arg1 forEvent:(id)arg2;
 
 @end

@@ -9,14 +9,18 @@
 #import <NotesUI/ICScrollViewKeyboardResizerDelegate-Protocol.h>
 #import <NotesUI/UITextFieldDelegate-Protocol.h>
 
-@class ICLearnMoreTextView, ICPasswordUtilities, ICScrollViewKeyboardResizer, NSArray, NSLayoutConstraint, NSString, UIBarButtonItem, UILabel, UIScrollView, UISwitch, UITextField, UIView;
+@class ICAccount, ICLearnMoreTextView, ICPasswordUtilities, ICScrollViewKeyboardResizer, NSArray, NSLayoutConstraint, NSString, UIBarButtonItem, UILabel, UIScrollView, UISwitch, UITextField, UIView;
 
 @interface ICPasswordChangeViewController : UIViewController <ICScrollViewKeyboardResizerDelegate, UITextFieldDelegate>
 {
     _Bool _isSetupForChangePassword;
     _Bool _isInSettings;
-    _Bool _isSetupForInitialPassword;
+    _Bool _isSettingInitialPassword;
+    _Bool _didAttemptToSubmitWithoutHint;
     _Bool _usingLargerAXSizes;
+    ICAccount *_account;
+    NSArray *_textBackgroundViews;
+    UIView *_headerBackground;
     ICScrollViewKeyboardResizer *_scrollViewResizer;
     UIScrollView *_scrollView;
     ICPasswordUtilities *_passwordUtilities;
@@ -25,6 +29,7 @@
     UILabel *_passwordLabel;
     UILabel *_verifyLabel;
     UILabel *_hintLabel;
+    UILabel *_warningLabel;
     ICLearnMoreTextView *_disclaimerLabel;
     UITextField *_oldPasswordTextField;
     UITextField *_passwordTextField;
@@ -50,9 +55,9 @@
 @property(retain, nonatomic) NSArray *defaultConstraints; // @synthesize defaultConstraints=_defaultConstraints;
 @property(nonatomic) _Bool usingLargerAXSizes; // @synthesize usingLargerAXSizes=_usingLargerAXSizes;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(nonatomic) _Bool didAttemptToSubmitWithoutHint; // @synthesize didAttemptToSubmitWithoutHint=_didAttemptToSubmitWithoutHint;
 @property(nonatomic) __weak UIView *biometricIDContainer; // @synthesize biometricIDContainer=_biometricIDContainer;
 @property(nonatomic) long long incorrectPasswordAttempts; // @synthesize incorrectPasswordAttempts=_incorrectPasswordAttempts;
-@property(readonly, nonatomic) _Bool isSetupForInitialPassword; // @synthesize isSetupForInitialPassword=_isSetupForInitialPassword;
 @property(nonatomic) __weak NSLayoutConstraint *biometricIDTopConstraint; // @synthesize biometricIDTopConstraint=_biometricIDTopConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *biometricIDZeroHeightConstraint; // @synthesize biometricIDZeroHeightConstraint=_biometricIDZeroHeightConstraint;
 @property(nonatomic) __weak NSLayoutConstraint *disclaimerHeightConstraint; // @synthesize disclaimerHeightConstraint=_disclaimerHeightConstraint;
@@ -67,6 +72,7 @@
 @property(nonatomic) __weak UITextField *passwordTextField; // @synthesize passwordTextField=_passwordTextField;
 @property(nonatomic) __weak UITextField *oldPasswordTextField; // @synthesize oldPasswordTextField=_oldPasswordTextField;
 @property(nonatomic) __weak ICLearnMoreTextView *disclaimerLabel; // @synthesize disclaimerLabel=_disclaimerLabel;
+@property(nonatomic) __weak UILabel *warningLabel; // @synthesize warningLabel=_warningLabel;
 @property(nonatomic) __weak UILabel *hintLabel; // @synthesize hintLabel=_hintLabel;
 @property(nonatomic) __weak UILabel *verifyLabel; // @synthesize verifyLabel=_verifyLabel;
 @property(nonatomic) __weak UILabel *passwordLabel; // @synthesize passwordLabel=_passwordLabel;
@@ -75,6 +81,10 @@
 @property(retain, nonatomic) ICPasswordUtilities *passwordUtilities; // @synthesize passwordUtilities=_passwordUtilities;
 @property(nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) ICScrollViewKeyboardResizer *scrollViewResizer; // @synthesize scrollViewResizer=_scrollViewResizer;
+@property(nonatomic) __weak UIView *headerBackground; // @synthesize headerBackground=_headerBackground;
+@property(retain, nonatomic) NSArray *textBackgroundViews; // @synthesize textBackgroundViews=_textBackgroundViews;
+@property(retain, nonatomic) ICAccount *account; // @synthesize account=_account;
+@property(nonatomic) _Bool isSettingInitialPassword; // @synthesize isSettingInitialPassword=_isSettingInitialPassword;
 @property(nonatomic) _Bool isInSettings; // @synthesize isInSettings=_isInSettings;
 @property(nonatomic) _Bool isSetupForChangePassword; // @synthesize isSetupForChangePassword=_isSetupForChangePassword;
 - (void).cxx_destruct;
@@ -86,10 +96,11 @@
 - (double)topInsetForResizer:(id)arg1;
 - (double)consumedBottomAreaForResizer:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
+- (void)dismissKeyboardIfNeeded;
 - (id)disclaimerAttributedString;
 - (void)resetTextFields;
-- (void)setUpForChangePassword;
-- (void)setUpForInitialPassword;
+- (void)setUpForChangePasswordWithAccount:(id)arg1;
+- (void)setUpForInitialPasswordWithAccount:(id)arg1;
 @property(readonly, nonatomic) _Bool passwordAndVerifyTextFieldsMatch;
 - (void)showSimpleAlertWithTitle:(id)arg1 message:(id)arg2;
 - (void)showUnableToSetPasswordAlert;

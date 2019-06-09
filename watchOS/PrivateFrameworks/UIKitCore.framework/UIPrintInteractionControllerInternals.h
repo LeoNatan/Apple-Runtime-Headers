@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     _Bool _manualPrintPageEnabled;
     NSURL *_saveFileURL;
     NSURL *_tempPreviewFileURL;
+    _Bool _showPrintingProgress;
     NSMutableSet *_previewStates;
     PKPrinter *_printer;
     UIPrintPaper *_paper;

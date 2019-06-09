@@ -7,6 +7,7 @@
 #import <Foundation/NSSet.h>
 
 @interface NSSet (FezAdditions)
+- (id)__imDeepCopy;
 - (id)__imSetByApplyingBlock:(CDUnknownBlockType)arg1;
 - (void)__imForEach:(CDUnknownBlockType)arg1;
 @end

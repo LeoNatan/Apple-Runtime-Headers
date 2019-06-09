@@ -40,6 +40,7 @@
 - (void)operation:(id)arg1 finishedWithReason:(long long)arg2;
 - (id)_trackerForOperation:(id)arg1;
 - (void)_setTracker:(id)arg1 forOperation:(id)arg2;
+- (void)forceBioLockout;
 - (_Bool)isFingerOn;
 - (_Bool)hasEnrolledIdentities;
 - (unsigned long long)lockoutState;

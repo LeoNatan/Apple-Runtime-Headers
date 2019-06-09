@@ -6,18 +6,18 @@
 
 #import <QuartzCore/CATransformLayer.h>
 
-@class CAGradientLayer, CALayer;
+@class CALayer;
 
 @interface _ExplorerDotLayer : CATransformLayer
 {
-    CALayer *_contentLayer;
-    CALayer *_lidLayer;
-    CAGradientLayer *_overlayLayer;
+    CALayer *_noServicePillLayer;
+    CALayer *_connectivityDotBackingLayer;
+    CALayer *_connectivityDotLayer;
 }
 
-@property(readonly, nonatomic) CAGradientLayer *overlayLayer; // @synthesize overlayLayer=_overlayLayer;
-@property(readonly, nonatomic) CALayer *lidLayer; // @synthesize lidLayer=_lidLayer;
-@property(readonly, nonatomic) CALayer *contentLayer; // @synthesize contentLayer=_contentLayer;
+@property(readonly, nonatomic) CALayer *connectivityDotLayer; // @synthesize connectivityDotLayer=_connectivityDotLayer;
+@property(readonly, nonatomic) CALayer *connectivityDotBackingLayer; // @synthesize connectivityDotBackingLayer=_connectivityDotBackingLayer;
+@property(readonly, nonatomic) CALayer *noServicePillLayer; // @synthesize noServicePillLayer=_noServicePillLayer;
 - (void).cxx_destruct;
 - (void)layoutSublayers;
 - (id)init;

@@ -10,15 +10,14 @@
 
 @interface ICCollapsibleImageView : ICCollapsibleBaseView
 {
-    BOOL _shouldEnableLetterpressIfSupported;
     struct NSImage *_image;
     struct NSImageView *_imageView;
 }
 
-@property(nonatomic) BOOL shouldEnableLetterpressIfSupported; // @synthesize shouldEnableLetterpressIfSupported=_shouldEnableLetterpressIfSupported;
 @property(retain, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+- (void)setAccessibilityElement:(BOOL)arg1;
 - (void)performSetup;
 
 @end

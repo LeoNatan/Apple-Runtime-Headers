@@ -9,8 +9,6 @@
 @class MPPlaybackContext, MPQueueFeeder, NSError;
 
 @protocol MPQueueFeederDelegate <NSObject>
-- (void)queueFeederDidInvalidateRealShuffleType:(MPQueueFeeder *)arg1;
-- (void)queueFeederDidInvalidateRealRepeatType:(MPQueueFeeder *)arg1;
 - (void)queueFeederDidInvalidateAssets:(MPQueueFeeder *)arg1;
 - (void)queueFeederDidReplaceItem:(MPQueueFeeder *)arg1;
 - (void)queueFeeder:(MPQueueFeeder *)arg1 didChangeContentsWithReplacementPlaybackContext:(MPPlaybackContext *)arg2;

@@ -9,6 +9,9 @@
 @class NSString;
 
 @interface NSDateComponents (SearchHelpers)
++ (id)dateComponentsFromDictionary:(id)arg1;
 @property(readonly) NSString *calendarIdentifier;
+- (id)dictionaryRepresentation;
+- (BOOL)abIsEmpty;
 @end
 

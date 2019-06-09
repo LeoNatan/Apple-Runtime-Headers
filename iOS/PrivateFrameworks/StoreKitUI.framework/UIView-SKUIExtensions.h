@@ -8,5 +8,7 @@
 
 @interface UIView (SKUIExtensions)
 - (id)_SKUIView;
+- (id)skui_apparentBackgroundColor;
+- (struct CGRect)defaultPresentationPosition;
 @end
 

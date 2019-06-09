@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_useLeopardStyleHashing;
 - (void)_addIndexedEntity:(id)arg1;
 - (id)entityForID:(unsigned long long)arg1;
+- (unsigned int)_lastEntityID;
 - (unsigned int)_entityOffset;
 - (id)entitiesByName;
 - (id)entities;

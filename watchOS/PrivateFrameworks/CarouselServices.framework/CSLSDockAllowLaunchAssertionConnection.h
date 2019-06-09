@@ -8,11 +8,13 @@
 
 #import <CarouselServices/CSLSDockAllowLaunchAssertionService-Protocol.h>
 
-@class NSString, NSXPCConnection;
+@class CSLSDockAllowLaunchAssertion, NSString, NSXPCConnection;
 
 @interface CSLSDockAllowLaunchAssertionConnection : NSObject <CSLSDockAllowLaunchAssertionService>
 {
     NSXPCConnection *_connection;
+    CSLSDockAllowLaunchAssertion *_currentAssertion;
+    struct os_unfair_recursive_lock_s _lock;
 }
 
 + (id)log;
@@ -22,8 +24,9 @@
 - (void)connect:(CDUnknownBlockType)arg1;
 - (void)releaseDockLaunchAssertion:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)takeDockLaunchAssertion:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_synchronousRemoteObjectProxy;
-- (id)_remoteObjectProxy;
+- (void)_retakeAssertionIfNecessary;
+- (id)_remoteObjectProxy:(CDUnknownBlockType)arg1;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (id)_init;
 
 // Remaining properties

@@ -18,6 +18,7 @@
 @property(nonatomic) struct CGRect currentKeyboardFrame; // @synthesize currentKeyboardFrame=_currentKeyboardFrame;
 @property(nonatomic) __weak UIViewController *passcodeViewController; // @synthesize passcodeViewController=_passcodeViewController;
 - (void).cxx_destruct;
+- (_Bool)alwaysBounceVertical;
 - (void)layoutSubviews;
 - (void)keyboardWillShow:(id)arg1;
 - (void)animateTransitionToPasscodeInput:(id)arg1 animation:(unsigned long long)arg2;

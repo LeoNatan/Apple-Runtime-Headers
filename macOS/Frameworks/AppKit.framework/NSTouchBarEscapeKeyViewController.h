@@ -6,29 +6,27 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSTouchBarItem, NSView;
+@class NSTouchBarEscapeKeyView, NSTouchBarItem;
 
 __attribute__((visibility("hidden")))
 @interface NSTouchBarEscapeKeyViewController : NSViewController
 {
     NSTouchBarItem *_touchBarItem;
-    NSView *_currentItemView;
-    struct CGSize _preferredSize;
-    BOOL _measuring;
-    BOOL _finishedUpdatingView;
 }
 
++ (id)keyPathsForValuesAffectingPreferredSize;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)dealloc;
 - (void)refreshSubviews;
-- (void)constraintsDidChangeInEngine:(id)arg1;
+- (void)dealloc;
 - (void)_noteTouchBarItemViewChanged;
-- (struct CGSize)_measuredPreferredSize;
-@property(readonly) struct CGSize preferredSize;
 @property(retain) NSTouchBarItem *touchBarItem;
+@property(readonly) struct CGSize preferredSize;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)_viewControllerSupports10_10Features;
+
+// Remaining properties
+@property(retain) NSTouchBarEscapeKeyView *view; // @dynamic view;
 
 @end
 

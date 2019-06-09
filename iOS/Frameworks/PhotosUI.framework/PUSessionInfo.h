@@ -16,6 +16,8 @@
     NSPointerArray *_observers;
     _Bool _selectingAssets;
     _Bool _selectingTargetAlbum;
+    _Bool _enforcesSelectionLimitByDelesectingOtherAssets;
+    _Bool _showsFileSizePicker;
     long long _status;
     PUPhotoSelectionManager *_photoSelectionManager;
     PHAssetCollection *_sourceAlbum;
@@ -28,6 +30,8 @@
     unsigned long long _selectionLimit;
 }
 
+@property(nonatomic) _Bool showsFileSizePicker; // @synthesize showsFileSizePicker=_showsFileSizePicker;
+@property(nonatomic) _Bool enforcesSelectionLimitByDelesectingOtherAssets; // @synthesize enforcesSelectionLimitByDelesectingOtherAssets=_enforcesSelectionLimitByDelesectingOtherAssets;
 @property(nonatomic) unsigned long long selectionLimit; // @synthesize selectionLimit=_selectionLimit;
 @property(copy, nonatomic) CDUnknownBlockType bannerGenerator; // @synthesize bannerGenerator=_bannerGenerator;
 @property(nonatomic) long long promptLocation; // @synthesize promptLocation=_promptLocation;

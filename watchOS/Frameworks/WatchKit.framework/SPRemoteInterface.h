@@ -10,7 +10,7 @@
 #import <WatchKit/SPRemoteInterfaceProtocol-Protocol.h>
 
 @class CLKComplicationServer, NSBundle, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_source, SPApplicationRemoteProtocol, SPRemoteInterfaceDataDelegateProtocol, WKExtensionDelegate;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction, SPApplicationRemoteProtocol, SPRemoteInterfaceDataDelegateProtocol, WKExtensionDelegate;
 
 @interface SPRemoteInterface : NSObject <SPRemoteInterfaceProtocol, SPExtensionRemoteProtocol>
 {
@@ -50,15 +50,21 @@
     NSObject<OS_dispatch_queue> *_timingTest_queue;
     NSBundle *_extensionBundle;
     unsigned int _hostAccessibilityServerPort;
+    NSMutableDictionary *_activeViewControllerTransactions;
+    NSObject<OS_os_transaction> *_appActiveTransaction;
     CDUnknownBlockType _addPassesCompletion;
     double _timingTest_ExtensionReceiveTime;
     double _timingTest_ExtensionSendTime;
 }
 
++ (void)controller:(id)arg1 setupDynamicWKInterfaceObject:(id)arg2;
 + (id)controller:(id)arg1 setupProperties:(id)arg2 viewControllerID:(id)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5 classForType:(CDUnknownFunctionPointerType)arg6;
 + (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
 + (void)finishedTest:(id)arg1 extraResults:(id)arg2;
-+ (void)startTest:(id)arg1;
++ (void)finishedExtendedLaunchTest;
++ (void)startedTest:(id)arg1;
++ (void)showSystemAlertForBARDisabledWithReply:(CDUnknownBlockType)arg1;
++ (void)hapticPlayed;
 + (void)scheduleBackgroundRefreshTask:(id)arg1 preferredDate:(id)arg2 userInfo:(id)arg3 trackingUUID:(id)arg4 scheduledCompletion:(CDUnknownBlockType)arg5;
 + (void)interfaceViewController:(id)arg1 sendCrownReplyData:(id)arg2;
 + (void)interfaceViewController:(id)arg1 sendGestureReplyData:(id)arg2;
@@ -87,9 +93,11 @@
 + (void)controller:(id)arg1 presentMediaPlayerControllerWithURL:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)controllerDismissTextInputController:(id)arg1;
 + (void)controller:(id)arg1 presentTextInputControllerWithSuggestionsForLanguage:(CDUnknownBlockType)arg2 allowedInputMode:(id)arg3 completion:(CDUnknownBlockType)arg4;
-+ (void)controller:(id)arg1 presentTextInputControllerWithSuggestions:(id)arg2 allowedInputMode:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (void)controller:(id)arg1 presentTextInputControllerWithSuggestions:(id)arg2 allowedInputMode:(id)arg3 tintColor:(id)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)controller:(id)arg1 setTimerSupportVC:(id)arg2;
 + (void)controllerDismiss:(id)arg1;
 + (void)controller:(id)arg1 presentInterfaceControllers:(id)arg2 contexts:(id)arg3;
++ (void)controller:(id)arg1 presentTimerSupportInterfaceWithControllerClass:(Class)arg2 presentCompletion:(CDUnknownBlockType)arg3 dismissCompletion:(CDUnknownBlockType)arg4;
 + (void)controller:(id)arg1 presentInterfaceController:(id)arg2 context:(id)arg3;
 + (void)controllerBecomeCurrentPage:(id)arg1;
 + (void)removePageControllerAtIndexes:(id)arg1;
@@ -101,6 +109,8 @@
 + (void)controllerPopToRoot:(id)arg1;
 + (void)controllerPop:(id)arg1;
 + (void)controller:(id)arg1 pushPagingScrollTableRow:(int)arg2 seguesByRowName:(id)arg3 rowNamesAndContexts:(id)arg4;
++ (void)controller:(id)arg1 pushTimerSupportInterfaceWithControllerClass:(Class)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)controller:(id)arg1 pushTimerSupportInterfaceControllerWithName:(id)arg2 context:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)controller:(id)arg1 pushInterfaceController:(id)arg2 context:(id)arg3;
 + (void)_logDuplicate:(id)arg1 controller:(id)arg2 key:(id)arg3 property:(id)arg4 value:(id)arg5;
 + (void)setController:(id)arg1 key:(id)arg2 property:(id)arg3 value:(id)arg4;
@@ -119,6 +129,8 @@
 + (id)startRemoteInterface;
 + (id)sharedRemoteInterface;
 @property(copy, nonatomic) CDUnknownBlockType addPassesCompletion; // @synthesize addPassesCompletion=_addPassesCompletion;
+@property(retain, nonatomic) NSObject<OS_os_transaction> *appActiveTransaction; // @synthesize appActiveTransaction=_appActiveTransaction;
+@property(retain, nonatomic) NSMutableDictionary *activeViewControllerTransactions; // @synthesize activeViewControllerTransactions=_activeViewControllerTransactions;
 @property(nonatomic) unsigned int hostAccessibilityServerPort; // @synthesize hostAccessibilityServerPort=_hostAccessibilityServerPort;
 @property(nonatomic) _Bool extensionLaunchedForRemoteExtensionConnection; // @synthesize extensionLaunchedForRemoteExtensionConnection=_extensionLaunchedForRemoteExtensionConnection;
 @property(retain, nonatomic) NSBundle *extensionBundle; // @synthesize extensionBundle=_extensionBundle;
@@ -160,14 +172,21 @@
 - (void).cxx_destruct;
 - (id)_currentFrameCountForTestDisplay;
 - (void)invokeRecapTest:(id)arg1 withFile:(id)arg2;
+- (id)extendLaunchTest;
 - (void)runTest:(id)arg1 options:(id)arg2 clientIdentifier:(id)arg3;
+- (void)_releaseActiveViewControllerTransaction:(id)arg1 transactionExpected:(_Bool)arg2;
+- (void)_createActiveViewControllerTransaction:(id)arg1;
 - (void)interfaceDidEndScrollingAnimation:(id)arg1 clientIdentifier:(id)arg2;
 - (void)interfaceContentSystemMinimumLayoutMargins:(id)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;
 - (void)interfaceContentSafeAreaInsets:(id)arg1 withValue:(struct UIEdgeInsets)arg2;
 - (void)interfaceOffsetDidScrollToBottom:(id)arg1 clientIdentifier:(id)arg2;
 - (void)interfaceOffsetDidScrollToTop:(id)arg1 clientIdentifier:(id)arg2;
 - (void)interfaceDidScrollToTop:(id)arg1 clientIdentifier:(id)arg2;
-- (void)interfaceViewController:(id)arg1 setProperties:(id)arg2 forInterfaceObjectNamed:(id)arg3;
+- (id)interfaceControllerForIdentifier:(id)arg1;
+- (_Bool)isTimerSupportHostingControllerClassForClass:(Class)arg1;
+- (_Bool)isTimerSupportHostingControllerClass:(id)arg1;
+- (id)timerSupportViewControllerForInterfaceController:(id)arg1;
+- (id)timerSupportActionItemsForInterfaceViewController:(id)arg1;
 - (void)interfaceViewController:(id)arg1 crownData:(id)arg2;
 - (void)interfaceViewController:(id)arg1 gestureData:(id)arg2;
 - (void)willDeactivateDataConnection:(id)arg1;
@@ -177,8 +196,13 @@
 - (void)tearDownAccessibilityPortIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)exchangeAccessibilityPortInformation:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)requestNotificationViewServiceForHost:(id)arg1 hostID:(id)arg2 clientIdentifier:(id)arg3 bulletinUniqueID:(id)arg4 classicMode:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)didReceiveRemoteNotification:(id)arg1 clientIdentifier:(id)arg2 fetchCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)didFailToRegisterForRemoteNotificationsWithError:(id)arg1 clientIdentifier:(id)arg2;
+- (void)didRegisterForRemoteNotificationsWithDeviceToken:(id)arg1 clientIdentifier:(id)arg2;
 - (void)appDidReceiveNotification:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)appHandleWatchTasks:(id)arg1 reasonForSnapshot:(unsigned int)arg2 visibleVCID:(id)arg3 barTaskUUID:(id)arg4 clientIdentifier:(id)arg5;
+- (void)_appRecoverAnyExtendedRuntimeSession:(_Bool)arg1;
+- (void)appRecoverAnyExtendedRuntimeSession:(_Bool)arg1;
 - (void)appHandleIntent:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)appReceiveContextData:(id)arg1 clientIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)appHandleNSUserActivity:(id)arg1 clientIdentifier:(id)arg2;
@@ -189,6 +213,8 @@
 - (void)appDidFinishConnecting:(id)arg1;
 - (void)appWillResignActive:(id)arg1;
 - (void)appDidBecomeActive:(id)arg1;
+- (void)showSystemAlertForBARDisabledWithReply:(CDUnknownBlockType)arg1;
+- (void)hapticPlayed;
 - (void)didFinishHandlingBackgroundSnapshotTask:(_Bool)arg1 glanceableUI:(_Bool)arg2 staleDate:(id)arg3 userInfoUUID:(id)arg4 barTaskUUID:(id)arg5;
 - (void)failedToHandleBackgroundTasks:(id)arg1 error:(id)arg2 barTaskUUID:(id)arg3;
 - (void)didFinishHandlingBackgroundTask:(id)arg1 refreshSnapshot:(_Bool)arg2 barTaskUUID:(id)arg3;
@@ -248,12 +274,13 @@
 - (void)_activateViewController:(id)arg1 clientIdentifier:(id)arg2;
 - (void)activateViewController:(id)arg1 clientIdentifier:(id)arg2;
 - (void)releaseViewController:(id)arg1 clientIdentifier:(id)arg2;
-- (void)createViewController:(id)arg1 className:(id)arg2 properties:(id)arg3 contextID:(id)arg4 info:(id)arg5 gestureDescriptions:(id)arg6 clientIdentifier:(id)arg7;
+- (void)createViewController:(id)arg1 className:(id)arg2 properties:(id)arg3 contextID:(id)arg4 info:(id)arg5 gestureDescriptions:(id)arg6 clientIdentifier:(id)arg7 interfaceControllerCreationCompletion:(CDUnknownBlockType)arg8;
 - (void)handlePlistDictionary:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receivePlist:(id)arg1 fromIdentifier:(id)arg2;
 - (void)handleProtoPlist:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveData:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveDataFromApplication:(id)arg1 fromIdentifier:(id)arg2;
+- (void)controller:(id)arg1 setupDynamicWKInterfaceObject:(id)arg2;
 - (void)removeInterfaceControllersForClient:(id)arg1;
 - (void)_dumpInterfaceDictionary;
 - (id)_allInterfaceControllers;
@@ -280,9 +307,11 @@
 - (void)controllerDismissMediaPlayerController:(id)arg1;
 - (void)controllerPresentMediaPlayerController:(id)arg1 URL:(id)arg2 options:(id)arg3;
 - (void)controllerDismissTextInputController:(id)arg1;
-- (void)controllerPresentTextInputController:(id)arg1 allowedInputMode:(id)arg2 suggestions:(id)arg3;
+- (void)controllerPresentTextInputController:(id)arg1 allowedInputMode:(id)arg2 suggestions:(id)arg3 tintColor:(id)arg4;
+- (void)controller:(id)arg1 setTimerSupportVC:(id)arg2;
 - (void)controllerDismiss:(id)arg1;
 - (void)controller:(id)arg1 presentInterfaceControllers:(id)arg2 initializationContextIDs:(id)arg3;
+- (void)controller:(id)arg1 presentTimerSupportInterfaceWithControllerClass:(Class)arg2 presentCompletion:(CDUnknownBlockType)arg3 dismissCompletion:(CDUnknownBlockType)arg4;
 - (void)controller:(id)arg1 presentInterfaceController:(id)arg2 initializationContextID:(id)arg3;
 - (void)controllerBecomeCurrentPage:(id)arg1;
 - (void)removePageControllerAtIndexes:(id)arg1;
@@ -293,11 +322,12 @@
 - (void)controllerPopToRoot:(id)arg1;
 - (void)controllerPop:(id)arg1;
 - (void)controller:(id)arg1 pushPagingScrollTableRow:(int)arg2 seguesByRowName:(id)arg3 rowNamesAndContextIDs:(id)arg4;
+- (void)controller:(id)arg1 pushTimerSupportInterfaceWithControllerClass:(Class)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)controller:(id)arg1 pushTimerSupportInterfaceControllerWithName:(id)arg2 initializationContextID:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)controller:(id)arg1 pushInterfaceController:(id)arg2 initializationContextID:(id)arg3;
 - (void)removePageInterfaceCreationContextsForIDs:(id)arg1;
 - (id)pageInterfaceCreationContextForID:(id)arg1;
 - (id)storePageInterfaceCreationContext:(id)arg1;
-- (void)removeInterfaceCreationContextsForIDs:(id)arg1;
 - (id)interfaceCreationContextForID:(id)arg1;
 - (id)storeInterfaceCreationContext:(id)arg1;
 - (id)visibleInterfaceController;
@@ -305,7 +335,8 @@
 - (id)_interfaceDelegate;
 - (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
-- (void)startTest:(id)arg1;
+- (void)finishedExtendedLaunchTest;
+- (void)startedTest:(id)arg1;
 - (void)controller:(id)arg1 presentAlertControllerWithTitle:(id)arg2 message:(id)arg3 preferredStyle:(int)arg4 actions:(id)arg5;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3 controller:(id)arg4;
 - (void)updateUserActivity:(id)arg1 controller:(id)arg2;

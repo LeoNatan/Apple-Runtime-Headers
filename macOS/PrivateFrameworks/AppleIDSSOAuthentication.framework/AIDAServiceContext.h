@@ -10,16 +10,19 @@
 #import <AppleIDSSOAuthentication/NSMutableCopying-Protocol.h>
 
 @class NSDictionary, NSWindow;
+@protocol CDPStateUIProvider;
 
 @interface AIDAServiceContext : NSObject <NSMutableCopying, NSCopying>
 {
     NSDictionary *_authenticationResults;
     BOOL _shouldForceOperation;
     NSWindow *_hostWindow;
+    id <CDPStateUIProvider> _cdpUiProvider;
 }
 
 + (id)contextWithContext:(id)arg1;
 + (BOOL)accessInstanceVariablesDirectly;
+@property(readonly, nonatomic) __weak id <CDPStateUIProvider> cdpUiProvider; // @synthesize cdpUiProvider=_cdpUiProvider;
 @property(readonly, nonatomic) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property(readonly, nonatomic) BOOL shouldForceOperation; // @synthesize shouldForceOperation=_shouldForceOperation;
 @property(readonly, copy, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;

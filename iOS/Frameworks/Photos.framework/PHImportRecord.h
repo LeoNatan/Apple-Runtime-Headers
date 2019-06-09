@@ -12,39 +12,33 @@
 {
     NSString *_rawAssetIdentifier;
     _Bool _referencedImport;
-    _Bool _isDownloaded;
     unsigned char _importType;
-    unsigned char _importFileOperation;
     NSString *_assetIdentifier;
     PHImportAsset *_importAsset;
     NSMutableArray *_relatedRecords;
-    NSString *_sourcePath;
-    NSString *_destinationPath;
+    NSString *_downloadedPath;
     PHImportTimerCollection *_timers;
 }
 
-@property(nonatomic) unsigned char importFileOperation; // @synthesize importFileOperation=_importFileOperation;
 @property(nonatomic) unsigned char importType; // @synthesize importType=_importType;
 @property(retain, nonatomic) PHImportTimerCollection *timers; // @synthesize timers=_timers;
-@property(retain, nonatomic) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
-@property(retain, nonatomic) NSString *sourcePath; // @synthesize sourcePath=_sourcePath;
-@property(nonatomic) _Bool isDownloaded; // @synthesize isDownloaded=_isDownloaded;
+@property(retain, nonatomic) NSString *downloadedPath; // @synthesize downloadedPath=_downloadedPath;
 @property(nonatomic) _Bool referencedImport; // @synthesize referencedImport=_referencedImport;
 @property(retain, nonatomic) NSMutableArray *relatedRecords; // @synthesize relatedRecords=_relatedRecords;
 @property(retain, nonatomic) PHImportAsset *importAsset; // @synthesize importAsset=_importAsset;
 @property(retain, nonatomic) NSString *assetIdentifier; // @synthesize assetIdentifier=_assetIdentifier;
 - (void).cxx_destruct;
-- (void)setDownloadedAtPath:(id)arg1;
+@property(readonly) _Bool canReference;
 - (_Bool)needsDownload;
 - (id)allImportRecords;
 - (id)allImportAssets;
 - (id)recordForAsset:(id)arg1;
 - (void)addRelatedRecord:(id)arg1;
 @property(readonly, nonatomic) NSString *rawAssetIdentifier;
-@property(readonly, nonatomic) _Bool isReferenced;
 - (id)allAssetIdentifiers;
 - (void)cleanupAfterFailure;
 - (void)updateImportType;
+- (id)descriptionWithPrefix:(id)arg1;
 - (id)description;
 - (id)initWithImportAsset:(id)arg1;
 

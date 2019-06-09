@@ -9,32 +9,32 @@
 #import <AvatarUI/AVTAvatarAttributeEditorColorSectionProtocol-Protocol.h>
 
 @class AVTAvatarColorVariationStore, NSArray, NSString;
-@protocol AVTAvatarAttributeEditorColorSectionProtocol;
+@protocol AVTAvatarAttributeEditorHeaderPicker;
 
 @interface AVTAvatarAttributeEditorColorSection : NSObject <AVTAvatarAttributeEditorColorSectionProtocol>
 {
     _Bool _alwaysShowExtended;
     NSString *_localizedName;
     NSString *_identifier;
+    id <AVTAvatarAttributeEditorHeaderPicker> _headerAccessory;
     NSArray *_primaryItems;
     NSArray *_extendedItems;
     AVTAvatarColorVariationStore *_colorVariationStore;
-    id <AVTAvatarAttributeEditorColorSectionProtocol> _subSection;
 }
 
-@property(readonly, nonatomic) id <AVTAvatarAttributeEditorColorSectionProtocol> subSection; // @synthesize subSection=_subSection;
 @property(readonly, nonatomic) _Bool alwaysShowExtended; // @synthesize alwaysShowExtended=_alwaysShowExtended;
 @property(readonly, nonatomic) AVTAvatarColorVariationStore *colorVariationStore; // @synthesize colorVariationStore=_colorVariationStore;
 @property(readonly, copy, nonatomic) NSArray *extendedItems; // @synthesize extendedItems=_extendedItems;
 @property(readonly, copy, nonatomic) NSArray *primaryItems; // @synthesize primaryItems=_primaryItems;
+@property(retain, nonatomic) id <AVTAvatarAttributeEditorHeaderPicker> headerAccessory; // @synthesize headerAccessory=_headerAccessory;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
+@property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (void).cxx_destruct;
 - (_Bool)shouldDisplaySeparatorBeforeSection:(id)arg1;
 - (_Bool)shouldDisplayTitle;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSArray *sectionItems;
-- (id)initWithPrimaryItems:(id)arg1 extendedItems:(id)arg2 colorVariationStore:(id)arg3 localizedName:(id)arg4 identifier:(id)arg5 alwaysShowExtended:(_Bool)arg6 subSection:(id)arg7;
+- (id)initWithPrimaryItems:(id)arg1 extendedItems:(id)arg2 colorVariationStore:(id)arg3 localizedName:(id)arg4 identifier:(id)arg5 alwaysShowExtended:(_Bool)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

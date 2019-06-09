@@ -6,7 +6,7 @@
 
 #import <CoreData/NSStoreMapping.h>
 
-@class NSArray, NSDictionary, NSEntityDescription, NSKnownKeysMappingStrategy, NSMutableArray, NSMutableDictionary, NSSQLEntityKey, NSSQLModel, NSSQLOptLockKey, NSSQLPrimaryKey, NSSQLStoreMappingGenerator, NSString;
+@class NSArray, NSDictionary, NSEntityDescription, NSKnownKeysMappingStrategy, NSMutableArray, NSMutableDictionary, NSSQLEntityKey, NSSQLEntity_DerivedAttributesExtension, NSSQLModel, NSSQLOptLockKey, NSSQLPrimaryKey, NSSQLStoreMappingGenerator, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSSQLEntity : NSStoreMapping
@@ -34,12 +34,14 @@ __attribute__((visibility("hidden")))
     unsigned int _entityID;
     unsigned int _subentityMaxID;
     struct _NSRange _toOneRange;
-    NSMutableArray *_uniqueAttributes;
+    NSMutableArray *_uniqueProperties;
     NSMutableArray *_multicolumnUniquenessConstraints;
     void *_fetch_entity_plan;
     NSMutableDictionary *_rtreeIndices;
     NSKnownKeysMappingStrategy *_propertyMapping;
     void *_odiousHashHackStorage;
+    NSMutableArray *_derivedAttributes;
+    NSSQLEntity_DerivedAttributesExtension *_derivedAttributeExtension;
     struct __sqlentityFlags {
         unsigned int _hasAttributesWithExternalDataReferences:1;
         unsigned int _hasAttributesWithFileBackedFutures:1;
@@ -60,14 +62,20 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (id)rootEntity;
 - (id)model;
+- (void)addDerivationKeypath:(id)arg1 forAttribute:(id)arg2;
+- (BOOL)_generateAttributeDerivations:(id *)arg1;
+- (BOOL)_isValidFunctionForDerivations:(id)arg1;
+- (id)derivedAttributesExtension;
+- (id)derivedAttributes;
+- (void)addDerivedAttribute:(id)arg1;
 - (BOOL)hasAttributesWithFileBackedFutures;
 - (BOOL)hasAttributesWithExternalDataReferences;
 - (BOOL)_entityIsBroken:(id *)arg1;
 - (BOOL)_collectFKSlots:(id)arg1 error:(id *)arg2;
 - (void *)_odiousHashHack;
 - (void)_doPostModelGenerationCleanup;
-- (void)addUniqueAttribute:(id)arg1;
-- (id)uniqueAttributes;
+- (void)addUniquedProperty:(id)arg1;
+- (id)uniqueProperties;
 - (void)_generateMulticolumnUniquenessConstraints;
 - (id)multicolumnUniquenessConstraints;
 - (void)_organizeConstraints;
@@ -107,6 +115,11 @@ __attribute__((visibility("hidden")))
 - (id)entityDescription;
 - (id)subentityKey;
 - (id)propertiesByName;
+- (id)subhierarchyColumnMatching:(id)arg1;
+- (id)entitySpecificAttributes;
+- (id)entitySpecificRelationships;
+- (id)entitySpecificProperties;
+- (id)entitySpecificPropertiesPassing:(CDUnknownBlockType)arg1;
 - (id)manyToManyRelationships;
 - (id)toManyRelationships;
 - (id)properties;

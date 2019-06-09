@@ -6,62 +6,37 @@
 
 #import <StoreFoundation/ISServiceRemoteObject-Protocol.h>
 
-@class CKSoftwareProduct, NSArray, NSDictionary, NSNumber, NSString, NSURL, SSDownload, SSPurchase;
+@class CKSoftwareProduct, NSArray, NSDictionary, NSNumber, NSString, NSURL, SSDownload;
 @protocol ISAvailableUpdatesObserver, ISOSUpdateProgressObserver, ISOSUpdateScanObserver, ISSoftwareMapObserver, ISUpdateDelegate;
 
 @protocol ISAssetService <ISServiceRemoteObject>
 - (void)localBookWithIdentifier:(NSNumber *)arg1 reply:(void (^)(CKBook *))arg2;
 - (void)localBooksWithReply:(void (^)(NSArray *))arg1;
 - (void)hasSampleWithItemIdentifier:(NSNumber *)arg1 replyBlock:(void (^)(BOOL, NSDictionary *))arg2;
-- (void)softwareUpdateDidFinishBackgroundScanWithInfo:(NSDictionary *)arg1;
 - (void)adoptableBundleIdentifiersWithReplyBlock:(void (^)(NSArray *))arg1;
 - (void)adoptionCompletedForBundleIDWithInfo:(NSDictionary *)arg1 replyBlock:(void (^)(NSDictionary *))arg2;
 - (void)adoptionEligibilityResponseWithReplyBlock:(void (^)(NSDictionary *))arg1;
 - (void)adoptBundleIDsWithInfo:(NSDictionary *)arg1 replyBlock:(void (^)(BOOL, NSDictionary *, NSError *))arg2;
 - (void)startAdoptionEligibilityCheckWithReplyBlock:(void (^)(BOOL, NSDictionary *))arg1;
-- (void)checkIADownloadStatus:(void (^)(NSDictionary *))arg1;
-- (void)downloadInstallAssistantForTags:(NSArray *)arg1 bundleIdentifier:(NSString *)arg2;
-- (void)dsidLessDownloadHeartbeat;
-- (void)dsidLessDownloadWithItemIdentifier:(unsigned long long)arg1 bundleIdentifier:(NSString *)arg2 externalVersionIdentifier:(long long)arg3 options:(NSDictionary *)arg4 replyBlock:(void (^)(BOOL, long long, NSString *, NSError *))arg5;
 - (void)processMDMManifest:(NSDictionary *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(BOOL, NSArray *, NSError *))arg3;
 - (void)processMDMManifestAtURL:(NSURL *)arg1 options:(NSDictionary *)arg2 replyBlock:(void (^)(BOOL, NSArray *, NSError *))arg3;
 - (void)vppManagedAppsWithReplyBlock:(void (^)(NSArray *))arg1;
 - (void)reloadAvailableVPPUpdatesWithReplyBlock:(void (^)(NSArray *, BOOL))arg1;
 - (void)availableVPPUpdatesWithReplyBlock:(void (^)(NSArray *))arg1;
-- (void)redownloadWithItemIdentifier:(long long)arg1 bundleIdentifier:(NSString *)arg2 storeClientType:(long long)arg3 replyBlock:(void (^)(BOOL, long long, NSString *, NSError *))arg4;
+- (void)redownloadWithItemIdentifier:(long long)arg1 bundleIdentifier:(NSString *)arg2 managedAppUUIDString:(NSString *)arg3 accountIdentifier:(NSNumber *)arg4 storeClientType:(long long)arg5 replyBlock:(void (^)(BOOL, long long, NSString *, NSError *))arg6;
 - (void)showInvite:(NSURL *)arg1 organizationName:(NSString *)arg2 storeClientType:(long long)arg3;
-- (void)laterDidNotOccurWithDueToACPower:(BOOL)arg1;
-- (void)nowIsLaterWithMode:(long long)arg1 countdownDeferred:(BOOL)arg2 replyBlock:(void (^)(BOOL))arg3;
-- (void)updatesForTags:(NSArray *)arg1 replyBlock:(void (^)(NSArray *))arg2;
-- (void)didInteractivelyPurchaseItemIdentifier:(unsigned long long)arg1 success:(BOOL)arg2;
-- (void)willInteractivelyPurchaseItemIdentifier:(unsigned long long)arg1 replyBlock:(void (^)(BOOL))arg2;
-- (void)managedOSInstallWakeUpReceived;
-- (void)majorOSUpdateHasDownloadedToPath:(NSString *)arg1 replyBlock:(void (^)(BOOL))arg2;
 - (void)updateAutoInfoWithToken:(NSString *)arg1 replyBlock:(void (^)(NSDictionary *))arg2;
-- (void)promptUserToOptInForAutoUpdateWithShowNotification:(BOOL)arg1;
-- (void)shouldPromptForAutoUpdateOptInWithReplyBlock:(void (^)(BOOL))arg1;
 - (void)isAutoUpdateEnabledWithReplyBlock:(void (^)(BOOL))arg1;
-- (void)installedUpdatesJournalWithReplyBlock:(void (^)(NSArray *))arg1;
-- (void)cancelUpdatesToBeInstalledLater;
 - (void)appUpdatesToInstallLaterWithReplyBlock:(void (^)(NSArray *))arg1;
-- (void)queueOSUpdatesForLaterInstall:(NSArray *)arg1 withMode:(long long)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)installAvailableUpdatesLaterWithMode:(long long)arg1;
-- (void)shouldOfferDoItLaterForAvailableUpdatesWithReplyBlock:(void (^)(BOOL))arg1;
 - (void)removeUpdateFromInstallLaterWithBundleID:(NSString *)arg1;
 - (void)didFinishDownloadForUpdateWithItemIdentifier:(unsigned long long)arg1 didInstall:(BOOL)arg2;
 - (void)willStartDownloadForUpdateWithIdentifier:(unsigned long long)arg1;
 - (void)removeOSUpdateScanObserver:(id <ISOSUpdateScanObserver>)arg1;
 - (void)addOSUpdateScanObserver:(id <ISOSUpdateScanObserver>)arg1;
-- (void)startOSUpdateScanWithForceFullScan:(BOOL)arg1 reportProgressImmediately:(BOOL)arg2 launchedFromNotification:(BOOL)arg3 userHasSeenAllUpdates:(BOOL)arg4 checkForOtherUpdates:(BOOL)arg5;
-- (void)unhideAllOSUpdatesWithReplyBlock:(void (^)(BOOL))arg1;
-- (void)hideOSUpdatesWithProductKeys:(NSArray *)arg1 withReplyBlock:(void (^)(BOOL))arg2;
 - (void)osUpdateScanInProgressWithReplyBlock:(void (^)(BOOL))arg1;
 - (void)checkForUpdatesWithUserHasSeenUpdates:(BOOL)arg1 replyBlock:(void (^)(BOOL, NSArray *, NSError *))arg2;
-- (void)cancelOSUpdatesWithProductKeys:(NSArray *)arg1;
-- (void)cancelOSUpdates:(NSArray *)arg1;
 - (void)removeOSUpdateProgressObserver:(id <ISOSUpdateProgressObserver>)arg1;
 - (void)addOSUpdateProgressObserver:(id <ISOSUpdateProgressObserver>)arg1;
-- (void)startAppInstallWithTags:(NSArray *)arg1 fallbackPurchase:(SSPurchase *)arg2 reply:(void (^)(BOOL, NSString *, SSPurchaseResponse *, NSError *))arg3;
 - (void)startAppUpdates:(NSArray *)arg1 andOSUpdates:(NSArray *)arg2 withDelegate:(id <ISUpdateDelegate>)arg3 replyBlock:(void (^)(BOOL, NSError *))arg4;
 - (void)removeAvailableUpdatesObserver:(id <ISAvailableUpdatesObserver>)arg1;
 - (void)addAvailableUpdatesObserver:(id <ISAvailableUpdatesObserver>)arg1;

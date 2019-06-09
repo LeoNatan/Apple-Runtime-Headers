@@ -12,6 +12,7 @@
 
 @interface NSArray (AFSecurityDigestibleChunksProvider) <AFSecurityDigestibleChunksProviding>
 - (void)af_enumerateDigestibleChunksWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)af_arrayByMappingWithBlock:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

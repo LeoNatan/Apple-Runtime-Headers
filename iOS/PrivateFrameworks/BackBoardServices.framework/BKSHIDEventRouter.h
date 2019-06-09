@@ -6,37 +6,45 @@
 
 #import <objc/NSObject.h>
 
-#import <BackBoardServices/NSSecureCoding-Protocol.h>
+#import <BackBoardServices/BSDescriptionProviding-Protocol.h>
 
-@class NSSet;
+@class NSMutableSet, NSSet, NSString;
+@protocol OS_dispatch_queue, _BKSHIDEventRouterDelegate;
 
-@interface BKSHIDEventRouter : NSObject <NSSecureCoding>
+@interface BKSHIDEventRouter : NSObject <BSDescriptionProviding>
 {
     long long _destination;
-    NSSet *_hidEventDescriptors;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableSet *_queue_hidEventDescriptors;
+    id <_BKSHIDEventRouterDelegate> _queue_delegate;
+    NSSet *_queue_cachedHidEventDescriptors;
 }
 
-+ (_Bool)supportsSecureCoding;
 + (id)defaultFocusedAppEventRouter;
 + (id)defaultSystemAppEventRouter;
 + (id)defaultEventRouters;
 + (id)routerWithDestination:(long long)arg1;
-@property(readonly) NSSet *hidEventDescriptors; // @synthesize hidEventDescriptors=_hidEventDescriptors;
 @property(readonly) long long destination; // @synthesize destination=_destination;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)stringForDestination:(long long)arg1;
-- (id)dumpContents;
-- (id)description;
-- (unsigned long long)hash;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (void)_setDelegate:(id)arg1;
 - (_Bool)containsDescriptor:(id)arg1;
 - (_Bool)specifiesDescriptor:(id)arg1;
 - (void)removeHIDEventDescriptors:(id)arg1;
 - (void)addHIDEventDescriptors:(id)arg1;
-- (id)initWithDestination:(long long)arg1 hidEventDescriptors:(id)arg2;
-- (id)initWithDestination:(long long)arg1;
+@property(readonly, copy) NSSet *hidEventDescriptors; // @dynamic hidEventDescriptors;
+- (id)_initWithDestination:(long long)arg1 hidEventDescriptors:(id)arg2;
+- (id)init;
+
+// Remaining properties
+@property(readonly) Class superclass;
 
 @end
 

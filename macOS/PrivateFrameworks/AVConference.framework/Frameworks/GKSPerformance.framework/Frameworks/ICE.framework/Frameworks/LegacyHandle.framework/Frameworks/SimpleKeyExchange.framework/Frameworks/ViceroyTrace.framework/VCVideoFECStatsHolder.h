@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
     unsigned int _totalFECFrameCount;
     unsigned int _completeFECFrameCount;
     unsigned int _failedFECFrameCount;
+    unsigned int _unfixableFECFrameCount;
 }
 
+@property unsigned int unfixableFECFrameCount; // @synthesize unfixableFECFrameCount=_unfixableFECFrameCount;
 @property unsigned int failedFECFrameCount; // @synthesize failedFECFrameCount=_failedFECFrameCount;
 @property unsigned int completeFECFrameCount; // @synthesize completeFECFrameCount=_completeFECFrameCount;
 @property unsigned int totalFECFrameCount; // @synthesize totalFECFrameCount=_totalFECFrameCount;

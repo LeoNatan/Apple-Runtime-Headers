@@ -18,6 +18,7 @@
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(nonatomic) __weak id <MKPlaceActivityProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)mapMetadataSpecialization;
 - (id)activityAnnotationView;
 - (id)webPlaceCardURL;
 - (_Bool)shouldUseWebPlaceCardForActivityType:(id)arg1;

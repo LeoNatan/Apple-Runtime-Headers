@@ -17,6 +17,8 @@
 + (id)temporaryImageWithCommandBuffer:(id)arg1 imageDescriptor:(id)arg2;
 + (id)defaultAllocator;
 @property(nonatomic) unsigned long long readCount; // @synthesize readCount=_readCount;
+- (void)writeBytes:(const void *)arg1 dataLayout:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 bytesPerImage:(unsigned long long)arg4 region:(CDStruct_4c83c94d)arg5 featureChannelInfo:(CDStruct_4bcfbbae)arg6 imageIndex:(unsigned long long)arg7;
+- (void)readBytes:(void *)arg1 dataLayout:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 bytesPerImage:(unsigned long long)arg4 region:(CDStruct_4c83c94d)arg5 featureChannelInfo:(CDStruct_4bcfbbae)arg6 imageIndex:(unsigned long long)arg7;
 - (void)synchronizeOnCommandBuffer:(id)arg1;
 - (id)debugDescription;
 - (void)dealloc;

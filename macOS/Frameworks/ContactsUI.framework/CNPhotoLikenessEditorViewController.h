@@ -36,6 +36,7 @@
 + (struct CGRect)squareRectForCropRect:(struct CGRect)arg1;
 + (void)applyConfiguration:(unsigned long long)arg1 toEditor:(id)arg2;
 + (unsigned long long)configurationOfEditorGivenImage:(id)arg1 editorHost:(id)arg2 isMeContact:(BOOL)arg3;
++ (id)os_log;
 @property(retain) id <CNCancelable> imageRepresentationOfItemChangedToken; // @synthesize imageRepresentationOfItemChangedToken=_imageRepresentationOfItemChangedToken;
 @property(retain) NSMutableDictionary *rootGroupIDToObjectMap; // @synthesize rootGroupIDToObjectMap=_rootGroupIDToObjectMap;
 @property BOOL userSetup; // @synthesize userSetup=_userSetup;

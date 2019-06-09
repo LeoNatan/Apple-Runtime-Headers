@@ -9,10 +9,10 @@
 @class NSString, NSUUID;
 
 @protocol VMAccountManagerXPCServer <NSObject>
-- (oneway void)setPasscode:(NSString *)arg1 forAccountUUID:(NSUUID *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
-- (oneway void)maximumPasscodeLengthForAccountUUID:(NSUUID *)arg1 reply:(void (^)(int))arg2;
-- (oneway void)minimumPasscodeLengthForAccountUUID:(NSUUID *)arg1 reply:(void (^)(int))arg2;
-- (oneway void)isPasscodeChangeSupportedForAccountUUID:(NSUUID *)arg1 reply:(void (^)(_Bool))arg2;
-- (oneway void)accounts:(void (^)(NSArray *))arg1;
+- (void)setPasscode:(NSString *)arg1 forAccountUUID:(NSUUID *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
+- (void)maximumPasscodeLengthForAccountUUID:(NSUUID *)arg1 reply:(void (^)(int))arg2;
+- (void)minimumPasscodeLengthForAccountUUID:(NSUUID *)arg1 reply:(void (^)(int))arg2;
+- (void)isPasscodeChangeSupportedForAccountUUID:(NSUUID *)arg1 reply:(void (^)(_Bool))arg2;
+- (void)accounts:(void (^)(NSArray *))arg1;
 @end
 

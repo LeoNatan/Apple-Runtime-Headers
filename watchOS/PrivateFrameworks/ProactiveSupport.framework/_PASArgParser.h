@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSMutableSet;
 
 @interface _PASArgParser : NSObject
 {
     NSMutableArray *_registeredSubcommands;
     NSMutableArray *_registeredOptions;
+    NSMutableSet *_requiredOptions;
     CDUnknownBlockType _handler;
 }
 
@@ -21,6 +22,7 @@
 + (id)numberValueForArgument:(id)arg1 error:(id *)arg2;
 + (id)boolValueForArgument:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
+@property(retain, nonatomic) NSMutableSet *requiredOptions; // @synthesize requiredOptions=_requiredOptions;
 @property(readonly, nonatomic) NSMutableArray *registeredOptions; // @synthesize registeredOptions=_registeredOptions;
 @property(readonly, nonatomic) NSMutableArray *registeredSubcommands; // @synthesize registeredSubcommands=_registeredSubcommands;
 - (void).cxx_destruct;

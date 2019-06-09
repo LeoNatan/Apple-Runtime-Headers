@@ -31,7 +31,9 @@
         unsigned int shouldFadeCaughtScroller:1;
         unsigned int reserved:20;
     } flags;
-    CDStruct_9fab449c flags2;
+    struct {
+        unsigned int reserved:32;
+    } flags2;
     NSTrackingArea *contentViewTrackingArea;
     struct CGPoint lastMouseInContentPoint;
     id reserved2;

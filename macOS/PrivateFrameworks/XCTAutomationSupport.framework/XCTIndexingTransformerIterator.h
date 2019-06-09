@@ -11,6 +11,7 @@
 @class NSSet, NSString, XCElementSnapshot, XCTElementIndexingTransformer;
 @protocol XCTElementSetTransformer;
 
+__attribute__((visibility("hidden")))
 @interface XCTIndexingTransformerIterator : NSObject <XCTMatchingElementIterator>
 {
     BOOL _hasMatched;

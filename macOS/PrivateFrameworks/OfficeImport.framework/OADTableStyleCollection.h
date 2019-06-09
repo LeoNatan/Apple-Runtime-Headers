@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OADTableStyleCollection : NSObject
 {
     NSMutableArray *_styles;

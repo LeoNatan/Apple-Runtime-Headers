@@ -50,7 +50,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) NSData *configurationData;
-- (_Bool)isExpiredWithFallbackMaxAge:(double)arg1 allowedToReachEndpoint:(_Bool)arg2;
+- (_Bool)isExpiredWithMaxTTL:(double)arg1 allowedToReachEndpoint:(_Bool)arg2;
 
 @end
 

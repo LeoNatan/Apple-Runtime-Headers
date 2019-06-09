@@ -9,8 +9,11 @@
 @class NSString;
 
 @interface NSManagedObjectContext (IC)
+- (void)ic_performBlockAndWait:(CDUnknownBlockType)arg1 andPerformBlockAndWaitOnMainThread:(CDUnknownBlockType)arg2;
+- (void)ic_performBlock:(CDUnknownBlockType)arg1 andPerformBlockOnMainThread:(CDUnknownBlockType)arg2;
 - (BOOL)ic_saveWithLogDescription:(id)arg1;
 - (BOOL)ic_save;
-@property(retain, nonatomic) NSString *debugName;
+@property(readonly, nonatomic) BOOL ic_isMainThreadContext;
+@property(retain, nonatomic) NSString *ic_debugName;
 @end
 

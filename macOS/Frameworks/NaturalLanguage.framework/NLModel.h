@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 
++ (id)modelWithData:(id)arg1 error:(id *)arg2;
 + (id)modelWithMLModel:(id)arg1 error:(id *)arg2;
 + (id)modelWithContentsOfURL:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
@@ -29,6 +30,9 @@
 - (id)classifierTestResultsWithDataProvider:(id)arg1;
 - (id)predictedLabelsForTokens:(id)arg1;
 - (id)predictedLabelForString:(id)arg1;
+- (id)embeddingData;
+- (id)embedding;
+- (id)gazetteer;
 - (id)documentFrequencyMap;
 - (id)vocabularyMap;
 - (id)labelMap;

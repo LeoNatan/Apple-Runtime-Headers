@@ -44,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_presentedView:(id)arg1 enableFormSheetAccoutrements:(_Bool)arg2;
 - (_Bool)_shouldKeepCurrentFirstResponder;
-- (_Bool)shouldRemovePresentersView;
 - (_Bool)_shouldSubscribeToKeyboardNotifications;
 - (_Bool)_shouldRespectDefinesPresentationContext;
 - (struct CGRect)_frameOfPresentedViewControllerViewInSuperview;

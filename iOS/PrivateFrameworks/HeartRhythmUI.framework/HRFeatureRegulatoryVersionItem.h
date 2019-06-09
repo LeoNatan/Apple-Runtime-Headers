@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long cellAccessoryType;
 @property(readonly, nonatomic) _Bool isInteractive;
+- (id)shortVersionNumberFromString:(id)arg1;
 @property(readonly, copy, nonatomic) NSAttributedString *valueString;
 @property(readonly, copy, nonatomic) NSAttributedString *titleString;
 - (id)initWithProductName:(id)arg1 deviceType:(long long)arg2;

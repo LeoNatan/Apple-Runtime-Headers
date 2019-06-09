@@ -19,11 +19,11 @@
 }
 
 @property(copy, nonatomic) CDUnknownBlockType transmogrifier; // @synthesize transmogrifier=_transmogrifier;
+- (void).cxx_destruct;
 - (_Bool)shouldCancel;
 - (void)newMessagesAvailable:(id)arg1;
 - (id)copyMessages;
 - (id)messages;
-- (void)dealloc;
 - (id)init;
 
 @end

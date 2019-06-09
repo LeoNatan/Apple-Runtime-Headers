@@ -14,9 +14,10 @@
 
 @interface HDHealthStoreEndpoint : NSObject <HDHealthStoreEndpointInterface, _HKXPCExportable>
 {
+    struct os_unfair_lock_s _lock;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
     HDDaemon *_daemon;
     HDXPCClient *_client;
-    NSObject<OS_dispatch_queue> *_queue;
     HDHealthStoreServer *_server;
 }
 
@@ -24,14 +25,15 @@
 + (_Bool)_isClientEntitled:(id)arg1 error:(id *)arg2;
 + (_Bool)_isDeviceSupportedWithBehavior:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) HDHealthStoreServer *server; // @synthesize server=_server;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) HDXPCClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;
 - (void)connectionInvalidated;
+- (void)connectionConfigured;
 - (id)remoteInterface;
 - (id)exportedInterface;
 - (void)invalidate;
+- (_Bool)_validateSourceBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (void)remote_serverForConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithClient:(id)arg1 daemon:(id)arg2;
 

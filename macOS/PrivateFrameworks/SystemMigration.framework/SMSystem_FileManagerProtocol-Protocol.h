@@ -4,9 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDictionary, NSURL;
+@class NSArray, NSDictionary, NSString, NSURL;
 
 @protocol SMSystem_FileManagerProtocol
+@property(readonly) NSString *productVersion;
+@property(readonly) NSURL *userHomeRoot;
+@property(readonly) NSURL *userContentRoot;
 @property(readonly) NSURL *slash;
 @property(readonly, getter=isFileSystemReady) BOOL fileSystemReady;
 - (NSDictionary *)bundleInformationAtPaths:(NSArray *)arg1;

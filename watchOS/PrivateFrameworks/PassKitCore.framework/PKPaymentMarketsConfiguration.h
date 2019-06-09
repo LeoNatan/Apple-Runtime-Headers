@@ -28,6 +28,7 @@
 - (id)expressCredentialTypesForLocation:(id)arg1;
 - (id)supportedCredentialTypesForLocation:(id)arg1;
 - (id)marketsForRegions:(id)arg1;
+- (id)closestMarketForLocation:(id)arg1;
 - (id)marketsForLocation:(id)arg1 ofType:(int)arg2;
 - (id)marketsForLocation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

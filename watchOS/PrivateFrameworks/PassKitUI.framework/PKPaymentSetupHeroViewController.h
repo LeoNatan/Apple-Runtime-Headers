@@ -8,13 +8,14 @@
 
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 
-@class ACAccountStore, NSArray, NSString, PKPaymentHeroImageController, PKPaymentProvisioningController, PKPaymentSetupHeroView, PKPaymentWebService;
+@class ACAccountStore, NSArray, NSString, PKPaymentHeroImageController, PKPaymentProvisioningController, PKPaymentSetupHeroView, PKPaymentWebService, UIView;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentSetupHeroViewController : PKExplanationViewController <PKExplanationViewDelegate>
 {
     ACAccountStore *_accountStore;
     _Bool _nextButtonPushed;
+    UIView *_topBackgroundView;
     PKPaymentSetupHeroView *_splashView;
     _Bool _hideSetupLater;
     _Bool _hasFelicaSecureElement;

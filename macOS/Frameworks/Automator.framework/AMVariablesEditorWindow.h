@@ -15,7 +15,6 @@
 @property BOOL canBecomeMainWindow; // @synthesize canBecomeMainWindow;
 @property BOOL canBecomeKeyWindow; // @synthesize canBecomeKeyWindow;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
-- (void)finishInitialLayout;
 
 @end
 

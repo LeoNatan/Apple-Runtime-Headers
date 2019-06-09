@@ -16,15 +16,18 @@
     SFImage *_sfImage;
 }
 
-+ (id)templatifiedImage:(id)arg1;
-+ (id)imageFromData:(id)arg1;
-+ (id)cachedImageFromSFImage:(id)arg1;
++ (id)imageForSuggestionCardSectionType:(int)arg1;
++ (id)imageWithSFImage:(id)arg1 variantForAppIcon:(unsigned long long)arg2;
 + (id)imageWithSFImage:(id)arg1;
-@property _Bool needsTinting; // @synthesize needsTinting=_needsTinting;
-@property _Bool useFastPathShadow; // @synthesize useFastPathShadow=_useFastPathShadow;
-@property(retain) SFImage *sfImage; // @synthesize sfImage=_sfImage;
-@property(retain) UIImage *uiImage; // @synthesize uiImage=_uiImage;
+@property(nonatomic) _Bool needsTinting; // @synthesize needsTinting=_needsTinting;
+@property(nonatomic) _Bool useFastPathShadow; // @synthesize useFastPathShadow=_useFastPathShadow;
+@property(retain, nonatomic) SFImage *sfImage; // @synthesize sfImage=_sfImage;
+@property(retain, nonatomic) UIImage *uiImage; // @synthesize uiImage=_uiImage;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)imageData;
+- (double)scale;
 - (_Bool)isTemplate;
 - (_Bool)shouldCropToCircle;
 - (double)cornerRadius;

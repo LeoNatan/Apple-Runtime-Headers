@@ -19,12 +19,13 @@
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)unknownRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 displayName:(id)arg10;
++ (id)_newUnknownRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 displayName:(id)arg11 config:(CDUnknownBlockType)arg12;
++ (id)unknownRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 displayName:(id)arg11;
 + (id)defaultDisplayString;
-+ (id)unknownRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 displayName:(id)arg9;
++ (id)unknownRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 displayName:(id)arg10;
 - (void).cxx_destruct;
 @property(readonly, copy) HKUnknownRecordType *unknownRecordType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
 - (void)_setDisplayName:(id)arg1;
 @property(readonly, copy) NSString *displayName;
 - (id)copyWithZone:(struct _NSZone *)arg1;

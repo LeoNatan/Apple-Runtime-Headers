@@ -7,6 +7,16 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (ISyncSummaryDescriptions)
++ (id)isd_propertyValueWithType:(int)arg1 bytesEncodedForSqlite:(const void *)arg2;
++ (id)isd_dataWithDataWrapper:(id)arg1;
 - (id)isd_summaryWithIndent:(long long)arg1;
+- (int)isd_sqlitePropertyValueType;
+- (void *)isd_bytesEncodedForSqlite;
+- (id)isd_initWithBytesEncodedForSqlite:(const void *)arg1;
+- (BOOL)isd_isEqual:(id)arg1;
+- (int)isd_quickDirtyCoderType;
+- (id)isd_data;
+- (id)dataReference;
+- (id)dataWrapper;
 @end
 

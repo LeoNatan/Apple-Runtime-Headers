@@ -17,6 +17,6 @@
 - (void)discoverPropertiesForAccount:(ABACAccount *)arg1 withCompletionHandler:(void (^)(ABACAccount *, NSError *))arg2;
 - (NSString *)passwordForAccount:(ABACAccount *)arg1;
 - (ABACAccount *)accountWithABAccountIdentifier:(NSString *)arg1;
-- (NSArray *)allContactsAccounts;
+- (NSArray *)contactsAccountsWithFetchOptions:(unsigned long long)arg1;
 @end
 

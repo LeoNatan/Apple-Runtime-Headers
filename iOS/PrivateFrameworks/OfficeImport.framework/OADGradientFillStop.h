@@ -18,13 +18,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)addStopWithColor:(id)arg1 position:(float)arg2 toArray:(id)arg3;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)usesPlaceholderColor;
 - (void)setStyleColor:(id)arg1;
 - (float)position;
 - (id)color;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithColor:(id)arg1 position:(float)arg2;
 

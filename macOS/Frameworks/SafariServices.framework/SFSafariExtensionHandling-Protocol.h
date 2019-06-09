@@ -6,11 +6,13 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class NSDictionary, NSString, NSURL, SFSafariExtensionViewController, SFSafariPage, SFSafariWindow;
+@class NSArray, NSDictionary, NSString, NSURL, SFSafariExtensionViewController, SFSafariPage, SFSafariWindow;
 
 @protocol SFSafariExtensionHandling <NSObject>
 
 @optional
+- (void)page:(SFSafariPage *)arg1 willNavigateToURL:(NSURL *)arg2;
+- (void)contentBlockerWithIdentifier:(NSString *)arg1 blockedResourcesWithURLs:(NSArray *)arg2 onPage:(SFSafariPage *)arg3;
 - (void)additionalRequestHeadersForURL:(NSURL *)arg1 completionHandler:(void (^)(NSDictionary *))arg2;
 - (SFSafariExtensionViewController *)popoverViewController;
 - (void)popoverDidCloseInWindow:(SFSafariWindow *)arg1;

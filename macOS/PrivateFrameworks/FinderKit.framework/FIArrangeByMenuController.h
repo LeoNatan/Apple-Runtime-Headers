@@ -13,14 +13,17 @@ __attribute__((visibility("hidden")))
 {
     _Bool _configuredArrangeByMenu;
     _Bool _configuredSortByMenu;
-    FI_TBrowserContainerController *_containerController;
+    struct TNSWeakPtr<FI_TBrowserContainerController, void> _weakContainerController;
     _Bool _inSavePanel;
 }
 
 @property(nonatomic) _Bool inSavePanel; // @synthesize inSavePanel=_inSavePanel;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)sortByMenu;
 - (id)arrangeByMenu;
 - (void)configureMenu:(id)arg1 forArrange:(_Bool)arg2;
+@property __weak FI_TBrowserContainerController *containerController; // @dynamic containerController;
 - (id)initWithViewSettings:(id)arg1 containerController:(id)arg2;
 
 @end

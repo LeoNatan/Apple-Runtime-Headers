@@ -19,6 +19,7 @@
     NSMutableArray *_pendingEvents;
     NSString *_queueKey;
     NSMutableArray *_transitionalEvents;
+    NSMutableSet *_parentStates;
     NSString *_label;
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _diagnosticHandler;
@@ -32,6 +33,7 @@
 @property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+- (void)addChildStates:(id)arg1 toState:(id)arg2 withEntryState:(id)arg3;
 - (id)graphDescription;
 - (id)description;
 - (void)addStates:(id)arg1;

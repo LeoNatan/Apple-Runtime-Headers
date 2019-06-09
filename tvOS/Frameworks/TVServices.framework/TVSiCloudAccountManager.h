@@ -32,7 +32,6 @@
 - (void)_renewCredentialsForAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_saveAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_authenticateAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)fetchFamilyDetailsForActiveAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)signOutActiveAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)reauthenticateActiveAccountWithAuthenticationContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

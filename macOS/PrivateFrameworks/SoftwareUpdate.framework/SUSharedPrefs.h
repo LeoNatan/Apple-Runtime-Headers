@@ -25,11 +25,12 @@
 }
 
 + (id)currentSystemVersion;
++ (BOOL)isCustomBaseSystemAllowed;
++ (BOOL)isAppleInternal;
 + (id)sharedPrefManager;
 + (BOOL)isAdminUser:(unsigned int)arg1;
 - (id)init;
 - (id)majorOSVariant;
-- (BOOL)shouldEvaluateCriticalIfUnchanged;
 - (void)clearCriticalUpdateNotificationDate;
 - (BOOL)shouldAutoInstallCriticalUpdatesNowForDelay:(long long)arg1;
 - (BOOL)shouldInvertStagedAndActiveStatesForTestingOnProduction;
@@ -46,12 +47,13 @@
 - (id)inactiveProductLabels;
 - (BOOL)shouldPeriodicCheckFireNow;
 - (BOOL)_shouldCheckUnderCurrentConditionsWithInterval:(double)arg1 sinceLastCheck:(id)arg2;
-- (void)collectStatisticsAppStorePrefs;
-- (void)messageTraceAppStorePrefs;
 - (BOOL)shouldScanAfterSystemVersionChanged;
+- (BOOL)isMacOSAutoUpdateManaged;
 - (void)setMacOSAutoUpdate:(BOOL)arg1;
 - (BOOL)doesMacOSAutoUpdate;
+- (BOOL)managedAppStorePrefForKey:(id)arg1;
 - (BOOL)migratePreferenceFromCommerceWithKey:(id)arg1 toSUKey:(id)arg2;
+- (BOOL)isAppStoreAutoUpdatesManaged;
 - (void)setAppStoreAutoUpdates:(BOOL)arg1;
 - (BOOL)doesAppStoreAutoUpdates;
 - (void)setAutomaticCriticalUpdateInstall:(BOOL)arg1;
@@ -65,6 +67,8 @@
 - (BOOL)ignoreMinimumBridgeVersionCheck;
 - (id)bridgeVersionOverride;
 - (id)baseSystemSUDmgOverridePath;
+- (BOOL)verboseDownloaderLogging;
+- (BOOL)disableSoftwareUpdateNotifications;
 - (id)customPersonalizationSigningServerURLString;
 - (BOOL)personalizationEnabled;
 - (BOOL)bridgeOSUpdatesEnabled;
@@ -108,8 +112,6 @@
 - (id)lastCheckSuccessfulDate;
 - (void)setDidSkipBackgroundDownloadLackingDiskSpace:(BOOL)arg1;
 - (BOOL)didSkipBackgroundDownloadLackingDiskSpace;
-- (void)setShouldSkipContentLocator:(BOOL)arg1;
-- (BOOL)shouldSkipContentLocator;
 - (void)setLastSessionCompletedSuccessfully:(BOOL)arg1;
 - (BOOL)lastSessionCompletedSuccessfully;
 - (void)updatePrefsIfNeeded;

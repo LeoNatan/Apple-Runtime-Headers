@@ -67,6 +67,7 @@
     double __additionalNonCollapsingHeightAboveSearchBar;
 }
 
++ (void)_uiibSetRequiresSearchDisplayControllerSupport;
 @property(nonatomic) double _additionalNonCollapsingHeightAboveSearchBar; // @synthesize _additionalNonCollapsingHeightAboveSearchBar=__additionalNonCollapsingHeightAboveSearchBar;
 @property(nonatomic) double _activationGapHeight; // @synthesize _activationGapHeight=__activationGapHeight;
 @property(nonatomic) unsigned long long navigationBarSearchFieldSizing; // @synthesize navigationBarSearchFieldSizing=_navigationBarSearchFieldSizing;
@@ -137,7 +138,6 @@
 - (void)_hideVisibleRefreshControl;
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarSuperviewWillChange;
-- (void)_indexBarFrameChanged:(id)arg1;
 - (void)_setTableViewVisible:(_Bool)arg1 inView:(id)arg2;
 - (void)_hoistSearchBar;
 - (void)_adjustTableViewContentInsetsAndOffsetsIgnoringCurrent:(_Bool)arg1;

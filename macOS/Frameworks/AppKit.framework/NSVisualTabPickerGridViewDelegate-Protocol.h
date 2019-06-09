@@ -12,6 +12,7 @@
 
 @optional
 - (void)visualTabPickerGridViewCloseTabViewItem:(NSTabBarItem *)arg1;
+- (void)visualTabPickerGridView:(NSVisualTabPickerGridView *)arg1 highlightTab:(NSTabBarItem *)arg2;
 - (void)visualTabPickerGridView:(NSVisualTabPickerGridView *)arg1 selectTab:(NSTabBarItem *)arg2;
 - (void)createNewTabForVisualTabPickerGridView:(NSVisualTabPickerGridView *)arg1;
 - (BOOL)canCloseTabsInVisualTabPickerGridView:(NSVisualTabPickerGridView *)arg1;

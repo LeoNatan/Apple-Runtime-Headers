@@ -20,7 +20,6 @@
     BOOL ___available_for_whatever;
     unsigned char __unused_wasTabViewCount;
     struct CGSize resizeParameter;
-    int __unusedShadowState;
     NSMutableArray *edgeResizingTrackingAreas;
 }
 
@@ -32,8 +31,6 @@
 + (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
 + (id)_defaultTitleFontForWindowWithStyleMask:(unsigned long long)arg1;
 + (void)initTitleCell:(id)arg1 styleMask:(unsigned long long)arg2;
-- (BOOL)shouldUseStyledTextInTitleCell:(id)arg1;
-- (struct __CFString *)customizedBackgroundTypeForTitleCell:(id)arg1;
 - (id)_edgeResizingTrackingAreas;
 - (void)updateTrackingAreas;
 - (struct CGSize)minFrameSize;

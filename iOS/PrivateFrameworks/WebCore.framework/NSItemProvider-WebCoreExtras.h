@@ -6,8 +6,10 @@
 
 #import <Foundation/NSItemProvider.h>
 
+@class NSArray;
+
 @interface NSItemProvider (WebCoreExtras)
-- (id)web_fileUploadContentTypes;
+@property(readonly, nonatomic) NSArray *web_fileUploadContentTypes;
 @property(readonly, nonatomic) _Bool web_containsFileURLAndFileUploadContent;
 @end
 

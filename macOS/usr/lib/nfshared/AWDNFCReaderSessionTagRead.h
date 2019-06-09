@@ -16,6 +16,7 @@
     unsigned long long _timeDeltaFromReference;
     unsigned long long _timestamp;
     unsigned int _payloadSize;
+    unsigned int _rawCommandCount;
     unsigned int _resultCode;
     unsigned int _tagType;
     unsigned int _type;
@@ -25,12 +26,14 @@
         unsigned int timeDeltaFromReference:1;
         unsigned int timestamp:1;
         unsigned int payloadSize:1;
+        unsigned int rawCommandCount:1;
         unsigned int resultCode:1;
         unsigned int tagType:1;
         unsigned int type:1;
     } _has;
 }
 
+@property(nonatomic) unsigned int rawCommandCount; // @synthesize rawCommandCount=_rawCommandCount;
 @property(nonatomic) unsigned int resultCode; // @synthesize resultCode=_resultCode;
 @property(nonatomic) unsigned long long duration; // @synthesize duration=_duration;
 @property(nonatomic) unsigned int payloadSize; // @synthesize payloadSize=_payloadSize;
@@ -48,6 +51,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasRawCommandCount;
 @property(nonatomic) BOOL hasResultCode;
 @property(nonatomic) BOOL hasDuration;
 @property(nonatomic) BOOL hasPayloadSize;

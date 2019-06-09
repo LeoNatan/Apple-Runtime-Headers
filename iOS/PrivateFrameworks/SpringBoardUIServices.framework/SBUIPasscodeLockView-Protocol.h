@@ -10,7 +10,6 @@
 @protocol SBFLegibilitySettingsProvider, SBUIPasscodeLockViewDelegate;
 
 @protocol SBUIPasscodeLockView <NSObject>
-@property(nonatomic) _Bool proudLockShowsBiometricStates;
 @property(nonatomic) double backgroundAlpha;
 @property(copy, nonatomic) NSString *unlockDestination;
 @property(nonatomic, getter=isScreenOn) _Bool screenOn;

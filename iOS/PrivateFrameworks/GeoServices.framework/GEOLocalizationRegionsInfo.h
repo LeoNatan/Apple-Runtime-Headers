@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSLock;
+@class NSDictionary;
 
 @interface GEOLocalizationRegionsInfo : NSObject
 {
     NSDictionary *_regions;
-    NSLock *_regionsLock;
+    struct os_unfair_lock_s _regionsLock;
 }
 
 - (void).cxx_destruct;

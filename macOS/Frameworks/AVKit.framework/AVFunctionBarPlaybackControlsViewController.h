@@ -9,6 +9,7 @@
 @class AVFunctionBarScrubberController, AVPlayerControllerTimeResolver, AVPlayerView, NSMutableArray, NSView;
 @protocol AVFunctionBarPlaybackControlsControllingInternal><AVFunctionBarTrackControlling><AVTimeControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarPlaybackControlsViewController : NSViewController
 {
     AVPlayerControllerTimeResolver *_intervalTimeResolver;

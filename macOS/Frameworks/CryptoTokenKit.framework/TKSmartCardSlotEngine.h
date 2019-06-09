@@ -9,8 +9,8 @@
 #import <CryptoTokenKit/NSXPCListenerDelegate-Protocol.h>
 #import <CryptoTokenKit/TKProtocolSmartCardSlot-Protocol.h>
 
-@class NSArray, NSHashTable, NSMapTable, NSMutableArray, NSString, NSXPCConnection, NSXPCListener, TKPowerMonitor, TKSmartCardATR, TKSmartCardSessionEngine;
-@protocol OS_dispatch_queue, OS_os_log, TKSmartCardSlotDelegate;
+@class NSHashTable, NSMapTable, NSMutableArray, NSString, NSXPCConnection, NSXPCListener, NSXPCListenerEndpoint, TKPowerMonitor, TKSmartCardATR, TKSmartCardSessionEngine;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_os_log, TKSmartCardSlotDelegate;
 
 @interface TKSmartCardSlotEngine : NSObject <TKProtocolSmartCardSlot, NSXPCListenerDelegate>
 {
@@ -20,7 +20,7 @@
     long long _previousState;
     TKSmartCardATR *_atr;
     unsigned long long _protocol;
-    BOOL _idlePowerDownPending;
+    NSObject<OS_dispatch_source> *_idlePowerDownSource;
     NSXPCConnection *_registrationConnection;
     NSXPCListener *_listener;
     NSHashTable *_clients;
@@ -31,10 +31,11 @@
     NSObject<OS_os_log> *_log;
     BOOL _securePINVerificationSupported;
     BOOL _securePINChangeSupported;
+    BOOL _synchronousSetup;
     BOOL _apduSentSinceLastReset;
     long long _maxInputLength;
     long long _maxOutputLength;
-    NSArray *_forProcesses;
+    NSXPCListenerEndpoint *_serverEndpoint;
     id <TKSmartCardSlotDelegate> _delegate;
     NSString *_name;
     NSObject<OS_dispatch_queue> *_queue;
@@ -46,7 +47,8 @@
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property __weak id <TKSmartCardSlotDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) NSArray *forProcesses; // @synthesize forProcesses=_forProcesses;
+@property BOOL synchronousSetup; // @synthesize synchronousSetup=_synchronousSetup;
+@property(retain) NSXPCListenerEndpoint *serverEndpoint; // @synthesize serverEndpoint=_serverEndpoint;
 @property BOOL securePINChangeSupported; // @synthesize securePINChangeSupported=_securePINChangeSupported;
 @property BOOL securePINVerificationSupported; // @synthesize securePINVerificationSupported=_securePINVerificationSupported;
 @property long long maxOutputLength; // @synthesize maxOutputLength=_maxOutputLength;
@@ -77,6 +79,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_setupWithName:(id)arg1 delegate:(id)arg2 firstPass:(_Bool)arg3 reply:(CDUnknownBlockType)arg4;
+- (id)slotRegistryWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)setupWithName:(id)arg1 delegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)logWithBytes:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)init;

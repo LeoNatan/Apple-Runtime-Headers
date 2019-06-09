@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSMutableSet, OAXDrawingState, OCPPackagePart;
 
+__attribute__((visibility("hidden")))
 @interface OAVReadState : OCXReadState
 {
     Class mClient;

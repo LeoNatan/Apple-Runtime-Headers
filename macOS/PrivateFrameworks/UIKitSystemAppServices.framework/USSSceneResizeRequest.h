@@ -6,28 +6,30 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class BKSAnimationFenceHandle, NSString;
 
-@interface USSSceneResizeRequest : NSObject <USSXPCEncodable>
+@interface USSSceneResizeRequest : NSObject <NSSecureCoding>
 {
-    BOOL _shouldFence;
     NSString *_identifier;
     double _scale;
+    BKSAnimationFenceHandle *_fence;
     struct CGSize _size;
     struct NSEdgeInsets _insets;
 }
 
++ (BOOL)supportsSecureCoding;
++ (id)sceneResizeRequestForScene:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 insets:(struct NSEdgeInsets)arg4 fence:(id)arg5;
 + (id)sceneResizeRequestForScene:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 insets:(struct NSEdgeInsets)arg4 shouldFence:(BOOL)arg5;
-@property(nonatomic) BOOL shouldFence; // @synthesize shouldFence=_shouldFence;
+@property(retain, nonatomic) BKSAnimationFenceHandle *fence; // @synthesize fence=_fence;
 @property(nonatomic) struct NSEdgeInsets insets; // @synthesize insets=_insets;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initCommon;
 
 @end

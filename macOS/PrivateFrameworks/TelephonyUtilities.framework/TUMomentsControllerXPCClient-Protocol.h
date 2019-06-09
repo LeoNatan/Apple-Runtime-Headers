@@ -6,11 +6,11 @@
 
 #import <TelephonyUtilities/NSObject-Protocol.h>
 
-@class TUMomentDescriptor, TUMomentsCapabilities;
+@class NSString, TUMomentDescriptor, TUMomentsCapabilities;
 
 @protocol TUMomentsControllerXPCClient <NSObject>
 - (oneway void)didReceiveLocallyRequestedMomentDescriptor:(TUMomentDescriptor *)arg1;
-- (oneway void)willCaptureRemoteRequest;
+- (oneway void)willCaptureRemoteRequestFromRequesterID:(NSString *)arg1;
 - (oneway void)didUpdateCapabilities:(TUMomentsCapabilities *)arg1 forVideoStreamToken:(long long)arg2;
 @end
 

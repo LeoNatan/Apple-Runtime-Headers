@@ -71,7 +71,6 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)_initWithFigMetadataDictionary:(id)arg1;
 - (id)_initWithReader:(struct OpaqueFigMetadataReader *)arg1 itemIndex:(long long)arg2;

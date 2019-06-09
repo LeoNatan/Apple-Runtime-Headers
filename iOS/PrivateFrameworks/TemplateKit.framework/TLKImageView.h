@@ -9,11 +9,14 @@
 #import <TemplateKit/NUIArrangementContainer-Protocol.h>
 #import <TemplateKit/NUIBoxArrangementDataSource-Protocol.h>
 
-@class NSString, NUIBoxArrangement, TLKArrangementItem, TLKImage, UIImageView;
+@class NSString, NUIBoxArrangement, TLKAppearance, TLKArrangementItem, TLKImage, UIImageView;
 
 @interface TLKImageView : TLKView <NUIBoxArrangementDataSource, NUIArrangementContainer>
 {
+    _Bool _useButtonColoring;
     TLKImage *_tlkImage;
+    unsigned long long _prominence;
+    TLKAppearance *_appearanceOverride;
     long long _verticalAlignment;
     long long _horizontalAlignment;
     UIImageView *_imageView;
@@ -28,14 +31,17 @@
 + (_Bool)imageIsEligibleForShadow:(id)arg1 isTemplate:(_Bool)arg2;
 + (struct CGSize)roundedSizeForSize:(struct CGSize)arg1;
 + (Class)layerClass;
-@property struct CGRect rectOfShadow; // @synthesize rectOfShadow=_rectOfShadow;
-@property(retain) NUIBoxArrangement *boxArrangement; // @synthesize boxArrangement=_boxArrangement;
-@property(retain) TLKArrangementItem *sizingHelper; // @synthesize sizingHelper=_sizingHelper;
-@property(retain) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(nonatomic) struct CGRect rectOfShadow; // @synthesize rectOfShadow=_rectOfShadow;
+@property(retain, nonatomic) NUIBoxArrangement *boxArrangement; // @synthesize boxArrangement=_boxArrangement;
+@property(retain, nonatomic) TLKArrangementItem *sizingHelper; // @synthesize sizingHelper=_sizingHelper;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
 @property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) struct CGSize maximumSize; // @synthesize maximumSize=_maximumSize;
 @property(nonatomic) struct CGSize minimumSize; // @synthesize minimumSize=_minimumSize;
+@property(retain, nonatomic) TLKAppearance *appearanceOverride; // @synthesize appearanceOverride=_appearanceOverride;
+@property(nonatomic) _Bool useButtonColoring; // @synthesize useButtonColoring=_useButtonColoring;
+@property(nonatomic) unsigned long long prominence; // @synthesize prominence=_prominence;
 @property(retain, nonatomic) TLKImage *tlkImage; // @synthesize tlkImage=_tlkImage;
 - (void).cxx_destruct;
 - (id)actualImageView;
@@ -43,13 +49,14 @@
 - (id)viewForFirstBaselineLayout;
 - (struct CGRect)layoutFrameForArrangedSubview:(id)arg1 withProposedContentFrame:(struct CGRect)arg2;
 - (struct CGSize)contentLayoutSizeFittingSize:(struct CGSize)arg1 forArrangedSubview:(id)arg2;
-- (struct CGSize)naturalImageSize;
-- (_Bool)supportsAsynchronousMeasurement;
 - (void)invalidateIntrinsicContentSizeIfNecessary;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)constrainedSizeForImageSize:(struct CGSize)arg1;
 - (void)observedPropertiesChanged;
 - (id)boxArrangement:(id)arg1 itemAtIndex:(long long)arg2 horizontalAlignment:(long long *)arg3 verticalAlignment:(long long *)arg4;

@@ -14,11 +14,11 @@
 
 @interface DMFConnection : NSObject <CATTaskClientDelegate, DMFTransportProvider>
 {
-    _Bool _isConnected;
     _Bool _isSystemConnection;
     id <DMFTransportProvider> _transportProvider;
     CATTaskClient *_taskClient;
     CATOperationQueue *_operationQueue;
+    unsigned long long _connectionState;
 }
 
 + (id)connectionForAppleID:(id)arg1;
@@ -27,11 +27,12 @@
 + (id)systemConnection;
 + (id)sharedConnection;
 @property(nonatomic) _Bool isSystemConnection; // @synthesize isSystemConnection=_isSystemConnection;
-@property(nonatomic) _Bool isConnected; // @synthesize isConnected=_isConnected;
+@property(nonatomic) unsigned long long connectionState; // @synthesize connectionState=_connectionState;
 @property(readonly, nonatomic) CATOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) CATTaskClient *taskClient; // @synthesize taskClient=_taskClient;
 @property(readonly, nonatomic) __weak id <DMFTransportProvider> transportProvider; // @synthesize transportProvider=_transportProvider;
 - (void).cxx_destruct;
+- (void)_reconnectTaskClient;
 - (void)_operationDidFinish:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)client:(id)arg1 didInterruptWithError:(id)arg2;
 - (void)clientDidInvalidate:(id)arg1;

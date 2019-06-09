@@ -66,6 +66,8 @@
     CDUnknownBlockType _sessionGoAwayBlock;
     _Bool _pendingRealloc;
     NSObject<OS_dispatch_source> *_reallocTimer;
+    _Bool _pendingNoSessionStateAllocbind;
+    NSObject<OS_dispatch_source> *_noSessionStateTimer;
     _Bool _recvDisconnected;
     _Bool _recvDisconnectedAck;
     NSData *_encKey;
@@ -104,6 +106,8 @@
 @property(readonly, nonatomic) unsigned char statsIntervalInSeconds; // @synthesize statsIntervalInSeconds=_statsIntervalInSeconds;
 @property(nonatomic) double lastOutgoingPacketTime; // @synthesize lastOutgoingPacketTime=_lastOutgoingPacketTime;
 @property(nonatomic) double lastIncomingPacketTime; // @synthesize lastIncomingPacketTime=_lastIncomingPacketTime;
+@property(readonly, nonatomic) unsigned int testOptions; // @synthesize testOptions=_testOptions;
+@property(nonatomic) _Bool pendingNoSessionStateAllocbind; // @synthesize pendingNoSessionStateAllocbind=_pendingNoSessionStateAllocbind;
 @property(nonatomic) _Bool isDisconnecting; // @synthesize isDisconnecting=_isDisconnecting;
 @property(readonly, nonatomic) double testStartTime; // @synthesize testStartTime=_testStartTime;
 @property(copy) NSData *skeData; // @synthesize skeData=_skeData;
@@ -134,12 +138,13 @@
 - (void)_notifyQREventAdded:(id)arg1;
 - (void)_notifySessionStreamInfoReceived:(id)arg1 withParticipants:(id)arg2 sentBytes:(unsigned long)arg3 receivedBytes:(unsigned long)arg4 offlineRequest:(_Bool)arg5 streamInfoRequest:(_Bool)arg6 success:(_Bool)arg7;
 - (void)processSessionInfoRequestTimeout:(id)arg1;
-- (_Bool)processStunErrorResponse:(id)arg1 packetBuffer:(CDStruct_0cd1559e *)arg2 headerOverhead:(unsigned long)arg3;
+- (_Bool)processStunErrorResponse:(id)arg1 packetBuffer:(CDStruct_05c4e9ef *)arg2 headerOverhead:(unsigned long)arg3;
+- (_Bool)processDataMessageErrorIndication:(id)arg1;
 - (_Bool)processSessionInfoIndication:(id)arg1 arrivalTime:(double)arg2;
 - (_Bool)processInfoIndication:(id)arg1 arrivalTime:(double)arg2;
 - (_Bool)processTestResponse:(id)arg1 arrivalTime:(double)arg2;
-- (_Bool)processSessionInfoResponse:(id)arg1 packetBuffer:(CDStruct_0cd1559e *)arg2 headerOverhead:(unsigned long)arg3;
-- (_Bool)processInfoResponse:(id)arg1 packetBuffer:(CDStruct_0cd1559e *)arg2 headerOverhead:(unsigned long)arg3;
+- (_Bool)processSessionInfoResponse:(id)arg1 packetBuffer:(CDStruct_05c4e9ef *)arg2 headerOverhead:(unsigned long)arg3;
+- (_Bool)processInfoResponse:(id)arg1 packetBuffer:(CDStruct_05c4e9ef *)arg2 headerOverhead:(unsigned long)arg3;
 - (_Bool)_optionallyCheckEncMarker:(id)arg1;
 - (_Bool)processStatsResponse:(id)arg1 arrivalTime:(double)arg2;
 - (void)sendTestRequest:(id)arg1;
@@ -175,6 +180,10 @@
 - (void)_stopReallocTimer;
 - (void)_startReallocTimer;
 - (void)_handleReallocTimer;
+- (void)_stopNoSessionStateTimer;
+- (void)_startNoSessionStateTimer;
+- (void)_handleNoSessionStateTimer;
+- (void)setPendingNoSessionState:(_Bool)arg1;
 - (void)synthesizeNat64WithPrefix;
 - (unsigned int)nextSessionInfoReqID;
 - (void)setPropertiesWithReallocCandidatePair:(id)arg1 reallocToken:(id)arg2;

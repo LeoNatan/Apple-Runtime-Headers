@@ -6,36 +6,58 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INCodableCoding-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INSchema, NSDictionary, NSMutableDictionary, NSOrderedSet, NSString;
+@class INCodableLocalizationTable, INSchema, NSArray, NSDictionary, NSMutableDictionary, NSOrderedSet, NSString;
 
-@interface INCodableDescription : NSObject <NSSecureCoding>
+@interface INCodableDescription : NSObject <NSSecureCoding, INCodableCoding>
 {
     NSMutableDictionary *_attributesByName;
+    INCodableLocalizationTable *_localizationTable;
+    INCodableLocalizationTable *_customLocalizationTable;
     INSchema *_schema;
+    NSString *_intentDefinitionNamespace;
     NSString *_className;
     NSString *_typeName;
     NSDictionary *_attributes;
     NSOrderedSet *_displayOrderedAttributes;
-    NSString *_localizationTable;
+    NSArray *_referencedCodableDescriptions;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *localizationTable; // @synthesize localizationTable=_localizationTable;
+@property(retain, nonatomic, setter=_setReferencedCodableDescriptions:) NSArray *referencedCodableDescriptions; // @synthesize referencedCodableDescriptions=_referencedCodableDescriptions;
 @property(copy, nonatomic) NSOrderedSet *displayOrderedAttributes; // @synthesize displayOrderedAttributes=_displayOrderedAttributes;
 @property(copy, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 @property(copy, nonatomic) NSString *className; // @synthesize className=_className;
+@property(copy, nonatomic) NSString *intentDefinitionNamespace; // @synthesize intentDefinitionNamespace=_intentDefinitionNamespace;
 @property(nonatomic) __weak INSchema *schema; // @synthesize schema=_schema;
+@property(copy, nonatomic, setter=_setCustomLocalizationTable:) INCodableLocalizationTable *_customLocalizationTable; // @synthesize _customLocalizationTable;
+@property(copy, nonatomic, setter=_setLocalizationTable:) INCodableLocalizationTable *_localizationTable; // @synthesize _localizationTable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSArray *referencedCodableEnums;
 - (unsigned long long)highestAttributeTag;
 - (id)attributeByName:(id)arg1;
+- (id)attributeByKeyPath:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_dictionaryRepresentation;
+- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)updateWithDictionary:(id)arg1;
+- (id)dictionaryKeyForKeyPath:(id)arg1;
+- (id)_attributesKeyPrefix;
+- (id)_attributeKeyPrefix;
+- (id)keyPrefix;
+- (id)_ignoredAttributeTags;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

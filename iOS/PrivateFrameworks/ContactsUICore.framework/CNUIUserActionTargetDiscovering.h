@@ -9,18 +9,29 @@
 #import <ContactsUICore/CNUIUserActionTargetDiscovering-Protocol.h>
 
 @class CNUIUserActionTargetDiscoveryCache, NSString;
-@protocol CNUIUserActionDiscoveringEnvironment;
+@protocol CNCapabilities, CNLSApplicationWorkspace, CNMCProfileConnection, CNSchedulerProvider, CNTUCallProviderManager;
 
 @interface CNUIUserActionTargetDiscovering : NSObject <CNUIUserActionTargetDiscovering>
 {
-    id <CNUIUserActionDiscoveringEnvironment> _discoveringEnvironment;
+    id <CNLSApplicationWorkspace> _applicationWorkspace;
+    id <CNTUCallProviderManager> _callProviderManager;
+    id <CNMCProfileConnection> _profileConnection;
+    id <CNCapabilities> _capabilities;
+    id <CNSchedulerProvider> _schedulerProvider;
+    id <CNSchedulerProvider> _highLatencySchedulerProvider;
     CNUIUserActionTargetDiscoveryCache *_cache;
 }
 
 + (_Bool)isSkypeAvailableWithEnvironment:(id)arg1;
++ (id)applicationProxiesForIntent:(id)arg1 applicationWorkspace:(id)arg2;
 + (id)os_log;
 @property(readonly, nonatomic) CNUIUserActionTargetDiscoveryCache *cache; // @synthesize cache=_cache;
-@property(readonly, nonatomic) id <CNUIUserActionDiscoveringEnvironment> discoveringEnvironment; // @synthesize discoveringEnvironment=_discoveringEnvironment;
+@property(readonly, nonatomic) id <CNSchedulerProvider> highLatencySchedulerProvider; // @synthesize highLatencySchedulerProvider=_highLatencySchedulerProvider;
+@property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
+@property(readonly, nonatomic) id <CNCapabilities> capabilities; // @synthesize capabilities=_capabilities;
+@property(readonly, nonatomic) id <CNMCProfileConnection> profileConnection; // @synthesize profileConnection=_profileConnection;
+@property(readonly, nonatomic) id <CNTUCallProviderManager> callProviderManager; // @synthesize callProviderManager=_callProviderManager;
+@property(readonly, nonatomic) id <CNLSApplicationWorkspace> applicationWorkspace; // @synthesize applicationWorkspace=_applicationWorkspace;
 - (void).cxx_destruct;
 - (id)thirdPartyTargetsForBundleIdentifier:(id)arg1;
 - (id)thirdPartyTargetsForActionTypes:(id)arg1;
@@ -39,14 +50,15 @@
 - (id)targetsForText;
 - (id)targetsForVideo;
 - (id)targetsForVoice;
-- (id)targetsForEmail;
+- (id)targetsForDirections;
 - (id)targetsForPay;
+- (id)targetsForEmail;
 - (id)_targetsForActionType:(id)arg1;
 - (void)resetTargetsForActionType:(id)arg1;
 - (id)observableForTargetsChangedForActionType:(id)arg1 schedulerProvider:(id)arg2;
 - (id)targetsForActionType:(id)arg1;
 - (void)dealloc;
-- (id)initWithDiscoveringEnvironment:(id)arg1;
+- (id)initWithApplicationWorkspace:(id)arg1 callProviderManager:(id)arg2 profileConnection:(id)arg3 schedulerProvider:(id)arg4 highLatencySchedulerProvider:(id)arg5 capabilities:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

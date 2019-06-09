@@ -8,6 +8,7 @@
 
 @class AVFrameRateRange;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureSystemPressureStateInternal : NSObject
 {
     int _figLevel;

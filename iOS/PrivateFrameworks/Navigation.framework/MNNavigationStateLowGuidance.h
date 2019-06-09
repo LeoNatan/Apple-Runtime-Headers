@@ -12,10 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)setFullGuidanceMode:(_Bool)arg1;
-- (void)leaveState;
 - (void)enterState;
-- (unsigned long long)desiredResourcePolicy;
-- (long long)type;
+- (unsigned long long)type;
 
 @end
 

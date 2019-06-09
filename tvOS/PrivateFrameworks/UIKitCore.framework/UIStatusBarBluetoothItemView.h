@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 - (double)alphaForConnected:(_Bool)arg1;
 - (void)setVisible:(_Bool)arg1;
 - (id)contentsImage;
-- (void)_blinkAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)performPendedActions;
 - (_Bool)updateForNewData:(id)arg1 actions:(int)arg2;
 

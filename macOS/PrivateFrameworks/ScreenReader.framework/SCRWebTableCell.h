@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     long long _cachedChildIndex;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)columnSpanCount;
 - (unsigned long long)rowSpanCount;
 - (unsigned long long)columnIndex;
@@ -27,10 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)parentTable;
 - (id)spanInfo;
 - (id)coordinatesInfo;
-- (void)sendBrailleLineWithElement:(id)arg1 focusThrough:(BOOL)arg2 forceRebuild:(BOOL)arg3;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (void)_buildBrailleLineWithFocusedElement:(id)arg1;
+- (long long)brailleLineType;
 - (BOOL)moveToLastElementWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)moveToFirstElementWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpShiftWithEvent:(id)arg1 request:(id)arg2;
@@ -40,8 +38,6 @@ __attribute__((visibility("hidden")))
 - (void)recordStateDueToInvalidFocusedChild;
 - (void)_setChildIndex:(long long)arg1;
 - (long long)_childIndex;
-- (id)stitchedTextElements;
-- (BOOL)containsStitchedText;
 - (id)childInAXOrderForward:(BOOL)arg1 horizontal:(BOOL)arg2 visibleOnly:(BOOL)arg3 wrapped:(char *)arg4 didHitBoundary:(char *)arg5 startElement:(id)arg6;
 - (BOOL)canWrapWhileNavigating;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
@@ -71,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)beginFocusFromElement:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_isInTable;
 - (BOOL)allowInteractableElementFeedback;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)shouldInterceptUpShiftEvent;
 - (id)typeDescription;
 - (id)emptyCellDescription;
@@ -83,7 +79,8 @@ __attribute__((visibility("hidden")))
 - (id)focusOntoUIElement:(id)arg1 withScrolling:(BOOL)arg2 withSelection:(BOOL)arg3;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
-- (void)dealloc;
+- (BOOL)containsStitchedText;
+- (id)stitchedTextElements;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 
 @end

@@ -8,6 +8,7 @@
 
 @class NSURL;
 
+__attribute__((visibility("hidden")))
 @interface CallDBMetaInfo : NSObject
 {
     NSURL *_dbInfoPrefFile;

@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     VNFaceBBoxAligner *_faceBBoxAligner;
 }
 
-+ (void)_printDebugInfo:(id)arg1 facesDataRaw:(vector_41a7cb1a *)arg2 faceDetectorBGRAImage:(struct __CVBuffer *)arg3 tempImage:(struct vImage_Buffer)arg4;
 + (id)configurationOptionKeysForDetectorKey;
 - (id).cxx_construct;
 - (void).cxx_destruct;

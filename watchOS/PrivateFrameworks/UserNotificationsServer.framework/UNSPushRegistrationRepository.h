@@ -27,7 +27,7 @@
 - (void)setRegistration:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)registrationForBundleIdentifier:(id)arg1;
 - (id)allBundleIdentifiers;
-- (id)initWithDirectory:(id)arg1;
+- (id)initWithDirectory:(id)arg1 librarian:(id)arg2;
 
 @end
 

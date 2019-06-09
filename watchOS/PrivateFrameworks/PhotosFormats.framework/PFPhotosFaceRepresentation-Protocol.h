@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol PFPhotosFaceRepresentation
+- (double)photosFaceRepresentationRoll;
 - (NSString *)photosFaceRepresentationLocalIdentifier;
 - (int)photosFaceRepresentationClusterSequenceNumber;
 - (int)photosFaceRepresentationQualityMeasure;

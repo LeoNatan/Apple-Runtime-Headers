@@ -46,6 +46,8 @@
 - (BOOL)isFindable;
 - (void)setUnderage:(BOOL)arg1;
 - (BOOL)isUnderage;
+- (void)setDefaultNickname:(BOOL)arg1;
+- (BOOL)isDefaultNickname;
 - (void)setPurpleBuddyAccount:(BOOL)arg1;
 - (BOOL)isPurpleBuddyAccount;
 - (id)minimalInternal;

@@ -10,6 +10,7 @@
 {
 }
 
++ (Class)meltedClass;
 + (id)reminderWithRandomUUID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

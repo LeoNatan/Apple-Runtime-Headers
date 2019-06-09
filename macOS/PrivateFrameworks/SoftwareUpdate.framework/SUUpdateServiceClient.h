@@ -33,6 +33,7 @@
 + (void)authorizeForDaemonManagement:(struct AuthorizationOpaqueRef *)arg1 overConnection:(id)arg2 reply:(CDUnknownBlockType)arg3;
 + (void)authorizeForUpdating:(struct AuthorizationOpaqueRef *)arg1 overConnection:(id)arg2 reply:(CDUnknownBlockType)arg3;
 @property(readonly, retain) NSXPCConnection *connection; // @synthesize connection=_connection;
+- (void)installedBundlesToRegisterWithLaunchServices:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updatesQueuedForLaterDidChange;
 - (void)hiddenUpdatesDidChange;
 - (void)catalogURLDidChange;
@@ -55,6 +56,7 @@
 - (void)combinedStatusForUpdatesWithProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)conditionsMetForNonUserInitiatedUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)statusForUpdateWithProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)rebootForPostLogoutUpdatesAfterSuccess:(BOOL)arg1 nightInstall:(BOOL)arg2 shouldShutDown:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)takeRequestsToInstallAfterPostLogoutUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)registerRequestsToInstallAfterPostLogoutUpdates:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)productKeysToAutomaticallyInstallLaterWithReply:(CDUnknownBlockType)arg1;
@@ -97,8 +99,6 @@
 - (void)currentDevKeyModeWithReply:(CDUnknownBlockType)arg1;
 - (void)clearInvalidationForIdentifier:(id)arg1 version:(id)arg2 forReason:(int)arg3;
 - (void)fetchMajorOSInfoForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)remainingPackageIdentifiersToInstallForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)packageReferenceForMatchingIdentifier:(id)arg1 productKey:(id)arg2 invalidatingPrevious:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)availableUpdatesOfType:(long long)arg1 withState:(long long)arg2 filteredByState:(unsigned long long)arg3 filterDeferred:(BOOL)arg4 filterDuplicates:(BOOL)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)authorizeForManagingDaemonWithExternalFormData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)authorizeForUpdatingWithExternalFormData:(id)arg1 additionalTransactions:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;

@@ -11,6 +11,7 @@
 @class CADisplayLink, CKInternalAudioPlayer, CKMediaObject, NSString;
 @protocol CKAudioPlayerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKAudioPlayer : NSObject <CKInternalAudioPlayerDelegate>
 {
     CKMediaObject *_mediaObject;

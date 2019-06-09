@@ -8,23 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, GEOPDViewportInfo, NSData;
+@class GEOLatLng, GEOPDViewportInfo, NSData, NSString, PBDataReader;
 
 @interface GEORPMapLocation : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOLatLng *_coordinate;
     NSData *_image;
+    NSString *_mapScreenshotId;
     GEOPDViewportInfo *_viewportInfo;
     float _zoomLevel;
     struct {
-        unsigned int zoomLevel:1;
-    } _has;
+        unsigned int has_zoomLevel:1;
+        unsigned int read_coordinate:1;
+        unsigned int read_image:1;
+        unsigned int read_mapScreenshotId:1;
+        unsigned int read_viewportInfo:1;
+        unsigned int wrote_coordinate:1;
+        unsigned int wrote_image:1;
+        unsigned int wrote_mapScreenshotId:1;
+        unsigned int wrote_viewportInfo:1;
+        unsigned int wrote_zoomLevel:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo; // @synthesize viewportInfo=_viewportInfo;
-@property(nonatomic) float zoomLevel; // @synthesize zoomLevel=_zoomLevel;
-@property(retain, nonatomic) GEOLatLng *coordinate; // @synthesize coordinate=_coordinate;
-@property(retain, nonatomic) NSData *image; // @synthesize image=_image;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,12 +42,23 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *mapScreenshotId;
+@property(readonly, nonatomic) BOOL hasMapScreenshotId;
+- (void)_readMapScreenshotId;
+@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo;
 @property(readonly, nonatomic) BOOL hasViewportInfo;
+- (void)_readViewportInfo;
 @property(nonatomic) BOOL hasZoomLevel;
+@property(nonatomic) float zoomLevel;
+@property(retain, nonatomic) GEOLatLng *coordinate;
 @property(readonly, nonatomic) BOOL hasCoordinate;
+- (void)_readCoordinate;
+@property(retain, nonatomic) NSData *image;
 @property(readonly, nonatomic) BOOL hasImage;
+- (void)_readImage;
 - (void)_setMapMode:(int)arg1 region:(id)arg2;
 
 @end

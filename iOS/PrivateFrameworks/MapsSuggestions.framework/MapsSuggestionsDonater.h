@@ -25,6 +25,7 @@
 - (void)_closeConnection;
 - (_Bool)_openConnectionIfNecessary;
 @property(readonly, nonatomic) NSString *uniqueName;
+- (_Bool)donateSignalPack:(id)arg1;
 - (_Bool)donateETA:(id)arg1 entry:(id)arg2;
 - (void)dealloc;
 - (id)init;

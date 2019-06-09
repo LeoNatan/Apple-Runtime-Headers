@@ -10,6 +10,7 @@
 
 @class AVPlayer, AVPlayerItem, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerThumbLayerController : NSObject <AVThumbLayerController>
 {
     double _lastSeekTime;

@@ -24,9 +24,15 @@ __attribute__((visibility("hidden")))
     unsigned int _maxAllowedAudioOnlyBitrate3G;
     unsigned int _maxAllowedAudioOnlyBitrateLTE;
     unsigned int _maxAllowedAudioOnlyBitrateWifi;
+    unsigned int _maxiBitrateIPadCompanionP2P;
+    unsigned int _maxAllowedBitrateIPadCompanionUSB;
     NSMutableArray *supportedBitrateRules;
+    unsigned int _maxAllowedBitrateP2P;
+    unsigned int _maxAllowedBitrateUSB;
 }
 
+@property(readonly) unsigned int maxAllowedBitrateUSB; // @synthesize maxAllowedBitrateUSB=_maxAllowedBitrateUSB;
+@property(readonly) unsigned int maxAllowedBitrateP2P; // @synthesize maxAllowedBitrateP2P=_maxAllowedBitrateP2P;
 @property(readonly) unsigned int maxAllowedBitrateWifi; // @synthesize maxAllowedBitrateWifi=_maxAllowedBitrateWifi;
 @property(readonly) unsigned int maxAllowedBitrateLTE; // @synthesize maxAllowedBitrateLTE=_maxAllowedBitrateLTE;
 @property(readonly) unsigned int maxAllowedBitrate3G; // @synthesize maxAllowedBitrate3G=_maxAllowedBitrate3G;

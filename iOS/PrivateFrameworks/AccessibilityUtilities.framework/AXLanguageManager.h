@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class AXDialectMap, NSArray, NSCharacterSet, NSLocale, NSString;
+@class AXDialectMap, NSArray, NSCharacterSet, NSLocale, NSSet, NSString;
 
 @interface AXLanguageManager : NSObject
 {
     AXDialectMap *_dialectForSystemLanguage;
     AXDialectMap *_dialectForCurrentLocale;
     AXDialectMap *_dialectForCurrentRegion;
+    _Bool __unitTest_didUpdateForLocaleChange;
     NSArray *_langMaps;
     NSCharacterSet *_commonCharacters;
     NSLocale *_userLocale;
@@ -25,21 +26,25 @@
 + (id)doNotTranslateWords;
 + (id)commonPunctuationCharacters;
 + (id)nonlocalizedNameForLanguage:(id)arg1;
++ (_Bool)voiceOverSupportedInCurrentLanguage;
 + (id)sharedInstance;
+@property(nonatomic) _Bool _unitTest_didUpdateForLocaleChange; // @synthesize _unitTest_didUpdateForLocaleChange=__unitTest_didUpdateForLocaleChange;
 @property(copy, nonatomic) NSLocale *userLocale; // @synthesize userLocale=_userLocale;
 @property(retain, nonatomic) NSCharacterSet *commonCharacters; // @synthesize commonCharacters=_commonCharacters;
 @property(retain, nonatomic) NSArray *langMaps; // @synthesize langMaps=_langMaps;
 - (void).cxx_destruct;
+- (_Bool)didUpdateForLocaleChange;
 - (void)_handleUserLocaleDidChange:(id)arg1;
 - (id)_loadLangMaps;
 - (id)characterSetForRanges:(id)arg1;
-- (id)_preferredLanguageIDsFromUserSelectedKeyboards;
+@property(readonly, nonatomic) NSSet *preferredLanguageIDsFromUserSelectedKeyboards;
 - (id)descriptionOfWord:(id)arg1 forLanguage:(id)arg2;
 - (void)updateCachedDialects;
 - (_Bool)isStringComposedByCommonCharacters:(id)arg1;
 - (_Bool)isCharacterCommon:(unsigned short)arg1;
 - (id)ambiguousDialectsFromUserKeyboardPreferences;
 - (id)dialectThatCanSpeakCharacter:(unsigned short)arg1;
+- (id)dialectsThatCanSpeakString:(id)arg1;
 - (id)dialectsThatCanSpeakCharacter:(unsigned short)arg1;
 - (id)dialectForLanguageID:(id)arg1;
 @property(nonatomic) __weak AXDialectMap *dialectForCurrentRegion;

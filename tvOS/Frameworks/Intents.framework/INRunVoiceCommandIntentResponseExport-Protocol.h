@@ -10,6 +10,7 @@
 @class INArchivedObject, NSArray, NSDictionary, NSNumber, NSString;
 
 @protocol INRunVoiceCommandIntentResponseExport <NSObject, JSExport>
+@property(copy, nonatomic) NSNumber *prefersExecutionOnCompanion;
 @property(copy, nonatomic) NSArray *steps;
 @property(copy, nonatomic) NSString *underlyingIntentTitle;
 @property(copy, nonatomic) NSNumber *interstitialDisabled;

@@ -15,9 +15,11 @@
     NSArray *_flatCandidateArray;
     NSMutableDictionary *_indexToCandidateMapping;
     IMKUICandidateLayoutTraits *_layoutTraits;
+    BOOL _showsGroups;
     double _length;
 }
 
+@property(nonatomic) BOOL showsGroups; // @synthesize showsGroups=_showsGroups;
 @property(nonatomic) double length; // @synthesize length=_length;
 @property(retain, nonatomic) IMKUICandidateLayoutTraits *layoutTraits; // @synthesize layoutTraits=_layoutTraits;
 @property(retain, nonatomic) NSMutableDictionary *indexToCandidateMapping; // @synthesize indexToCandidateMapping=_indexToCandidateMapping;

@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)viewForIdentifier:(id)arg1;
+- (void)_create_syncStartView;
+- (void)_create_activityView;
 - (struct UIEdgeInsets)activityIndicatorAlignmentRectInsets;
 
 @end

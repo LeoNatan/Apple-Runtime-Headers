@@ -6,24 +6,30 @@
 
 #import <objc/NSObject.h>
 
+#import <BulletinDistributorCompanion/BBObserverDelegate-Protocol.h>
 #import <BulletinDistributorCompanion/BLTSettingSyncingClient-Protocol.h>
 
-@class BBSettingsGateway, BLTMuteSync, BLTSectionConfiguration, BLTSettingSyncServer, BLTWristStateObserver, NSString;
+@class BBObserver, BBSettingsGateway, BLTMuteSync, BLTSectionConfiguration, BLTSettingSyncServer, BLTSpokenSettingSync, BLTWristStateObserver, NSString;
 
-@interface BLTSettingSyncInternal : NSObject <BLTSettingSyncingClient>
+@interface BLTSettingSyncInternal : NSObject <BBObserverDelegate, BLTSettingSyncingClient>
 {
     BLTWristStateObserver *_wristStateObserver;
     BBSettingsGateway *_settingsGateway;
     BLTMuteSync *_muteSync;
     BLTSettingSyncServer *_connection;
     BLTSectionConfiguration *_sectionConfiguration;
+    BLTSpokenSettingSync *_spokenSettingSync;
+    BBObserver *_observer;
 }
 
+@property(retain, nonatomic) BBObserver *observer; // @synthesize observer=_observer;
+@property(retain, nonatomic) BLTSpokenSettingSync *spokenSettingSync; // @synthesize spokenSettingSync=_spokenSettingSync;
 @property(readonly, nonatomic) BLTSectionConfiguration *sectionConfiguration; // @synthesize sectionConfiguration=_sectionConfiguration;
 @property(retain, nonatomic) BLTSettingSyncServer *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BLTMuteSync *muteSync; // @synthesize muteSync=_muteSync;
 @property(retain, nonatomic) BBSettingsGateway *settingsGateway; // @synthesize settingsGateway=_settingsGateway;
 - (void).cxx_destruct;
+- (void)observer:(id)arg1 updateGlobalSettings:(id)arg2;
 - (unsigned long long)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(long long)arg3 category:(id)arg4;
 - (unsigned long long)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(long long)arg3;
 @property(readonly, nonatomic) _Bool isWristDetectDisabled;
@@ -32,6 +38,9 @@
 - (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned long long)arg1 maximumSendDelay:(unsigned long long)arg2 minimumResponseDelay:(unsigned long long)arg3 maximumResponseDelay:(unsigned long long)arg4;
 - (void)enableNotifications:(_Bool)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3;
 - (void)setNotificationsLevel:(unsigned long long)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3;
+- (void)transportUpdateRemoteGlobalSpokenSettingEnabled:(_Bool)arg1 date:(id)arg2;
+- (void)setNotificationsCriticalAlertEnabled:(int)arg1 sectionID:(id)arg2;
+- (void)setNotificationsSoundEnabled:(int)arg1 sectionID:(id)arg2;
 - (void)setNotificationsGrouping:(int)arg1 sectionID:(id)arg2;
 - (void)setNotificationsLevel:(unsigned long long)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 fromRemote:(_Bool)arg4;
 - (void)removeSectionWithSectionID:(id)arg1;

@@ -10,6 +10,7 @@
 
 @class NSError, NSString;
 
+__attribute__((visibility("hidden")))
 @interface HMRemoteLoginMessage : HMFObject <NSSecureCoding>
 {
     NSString *_sessionID;

@@ -12,8 +12,8 @@
 #import <CarPlay/CPMapClientTemplateDelegate-Protocol.h>
 #import <CarPlay/CPNavigationAlertUpdating-Protocol.h>
 
-@class CPBarButton, CPNavigationAlert, NSArray, NSMutableArray, NSMutableDictionary, NSString, UIColor;
-@protocol CPBannerProviding, CPMapTemplateDelegate, CPMapTemplateProviding;
+@class CPBarButton, CPNavigationAlert, NAFuture, NSArray, NSMutableDictionary, NSString, UIColor;
+@protocol CPBannerProviding, CPMapTemplateDelegate;
 
 @interface CPMapTemplate : CPTemplate <CPMapButtonDelegate, CPMapClientTemplateDelegate, CPBannerDelegate, CPNavigationAlertUpdating, CPBarButtonProviding>
 {
@@ -21,23 +21,23 @@
     _Bool _hidesButtonsWithNavigationBar;
     UIColor *_guidanceBackgroundColor;
     unsigned long long _tripEstimateStyle;
+    NSArray *_mapButtons;
     id <CPMapTemplateDelegate> _mapDelegate;
     CPNavigationAlert *_currentNavigationAlert;
     NSMutableDictionary *_postedBannerObjects;
     id <CPBannerProviding> _bannerProvider;
-    NSMutableArray *_internalMapButtons;
     NSArray *_tripPreviews;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSArray *tripPreviews; // @synthesize tripPreviews=_tripPreviews;
-@property(retain, nonatomic) NSMutableArray *internalMapButtons; // @synthesize internalMapButtons=_internalMapButtons;
 @property(retain, nonatomic) id <CPBannerProviding> bannerProvider; // @synthesize bannerProvider=_bannerProvider;
 @property(retain, nonatomic) NSMutableDictionary *postedBannerObjects; // @synthesize postedBannerObjects=_postedBannerObjects;
 @property(readonly, nonatomic) CPNavigationAlert *currentNavigationAlert; // @synthesize currentNavigationAlert=_currentNavigationAlert;
 @property(nonatomic) __weak id <CPMapTemplateDelegate> mapDelegate; // @synthesize mapDelegate=_mapDelegate;
 @property(nonatomic) _Bool hidesButtonsWithNavigationBar; // @synthesize hidesButtonsWithNavigationBar=_hidesButtonsWithNavigationBar;
 @property(nonatomic) _Bool automaticallyHidesNavigationBar; // @synthesize automaticallyHidesNavigationBar=_automaticallyHidesNavigationBar;
+@property(retain, nonatomic) NSArray *mapButtons; // @synthesize mapButtons=_mapButtons;
 @property(nonatomic) unsigned long long tripEstimateStyle; // @synthesize tripEstimateStyle=_tripEstimateStyle;
 @property(retain, nonatomic) UIColor *guidanceBackgroundColor; // @synthesize guidanceBackgroundColor=_guidanceBackgroundColor;
 - (void).cxx_destruct;
@@ -70,12 +70,11 @@
 - (void)previewTripIdentifier:(id)arg1 usingRouteIdentifier:(id)arg2;
 - (void)_resolveTrip:(id)arg1 routeChoice:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleActionForControlIdentifier:(id)arg1;
-@property(retain, nonatomic) NSArray *mapButtons;
 - (void)_updateNavigationAlert:(id)arg1;
 - (void)dismissNavigationAlertAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentNavigationAlert:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)mapButton:(id)arg1 setFocusedImage:(id)arg2;
-- (_Bool)mapButton:(id)arg1 setImage:(id)arg2;
+- (_Bool)mapButton:(id)arg1 setImageSet:(id)arg2;
 - (_Bool)mapButton:(id)arg1 setHidden:(_Bool)arg2;
 - (id)startNavigationSessionForTrip:(id)arg1;
 - (void)updateTravelEstimates:(id)arg1 forTrip:(id)arg2 withTimeRemainingColor:(unsigned long long)arg3;
@@ -94,7 +93,7 @@
 @property(readonly) unsigned long long hash;
 @property(retain, nonatomic) NSArray *leadingNavigationBarButtons;
 @property(readonly) Class superclass;
-@property(retain, nonatomic) id <CPMapTemplateProviding> templateProvider; // @dynamic templateProvider;
+@property(retain, nonatomic) NAFuture *templateProviderFuture; // @dynamic templateProviderFuture;
 @property(retain, nonatomic) NSArray *trailingNavigationBarButtons;
 
 @end

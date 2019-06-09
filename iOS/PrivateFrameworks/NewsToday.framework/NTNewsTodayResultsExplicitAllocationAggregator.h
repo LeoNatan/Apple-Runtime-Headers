@@ -9,13 +9,14 @@
 #import <NewsToday/NTTodayResultsAggregator-Protocol.h>
 
 @class NSDate, NSString, NTPBSectionSlotCostInfo;
-@protocol FCFeedPersonalizing, FCTodayPrivateData;
+@protocol FCCoreConfigurationManager, FCFeedPersonalizing, FCTodayPrivateData;
 
 @interface NTNewsTodayResultsExplicitAllocationAggregator : NSObject <NTTodayResultsAggregator>
 {
     _Bool _allowLeadingCell;
     _Bool _allowSectionTitles;
     _Bool _respectMinMaxLimit;
+    id <FCCoreConfigurationManager> _configurationManager;
     id <FCFeedPersonalizing> _feedPersonalizer;
     NTPBSectionSlotCostInfo *_nonVideoSectionSlotCostInfo;
     NTPBSectionSlotCostInfo *_videoSectionSlotCostInfo;
@@ -35,11 +36,12 @@
 @property(copy, nonatomic) NTPBSectionSlotCostInfo *videoSectionSlotCostInfo; // @synthesize videoSectionSlotCostInfo=_videoSectionSlotCostInfo;
 @property(copy, nonatomic) NTPBSectionSlotCostInfo *nonVideoSectionSlotCostInfo; // @synthesize nonVideoSectionSlotCostInfo=_nonVideoSectionSlotCostInfo;
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
+@property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
 - (void).cxx_destruct;
 - (id)_sectionFilterTransformationWithDescriptor:(id)arg1 priorClusterIDsInOtherSections:(id)arg2 priorClusterIDsInSection:(id)arg3 otherArticleIDs:(id)arg4 embedsLimit:(unsigned long long)arg5;
 - (id)_itemsForSection:(id)arg1 items:(id)arg2 previouslyChosenItems:(id)arg3 allowLeadingCell:(_Bool)arg4 leadingCellItemID:(id *)arg5 priorClusterIDsInOtherSections:(id)arg6 sectionItemsLimit:(unsigned long long)arg7 otherArticleIDs:(id)arg8 embedsLimit:(unsigned long long)arg9 remainingSlots:(double)arg10 slotsUsed:(double *)arg11 noMoreItemsToGive:(_Bool *)arg12 noRoomForMoreItems:(_Bool *)arg13 slotAllocationByDynamicSlotItemID:(id)arg14;
 - (id)aggregateSections:(id)arg1 itemsBySectionDescriptor:(id)arg2;
-- (id)initWithFeedPersonalizer:(id)arg1 nonVideoSectionSlotCostInfo:(id)arg2 videoSectionSlotCostInfo:(id)arg3 embedsLimit:(unsigned long long)arg4 allowLeadingCell:(_Bool)arg5 allowSectionTitles:(_Bool)arg6 respectMinMaxLimit:(_Bool)arg7 filterDate:(id)arg8 todayData:(id)arg9 slotsLimit:(double)arg10;
+- (id)initWithConfigurationManager:(id)arg1 feedPersonalizer:(id)arg2 nonVideoSectionSlotCostInfo:(id)arg3 videoSectionSlotCostInfo:(id)arg4 embedsLimit:(unsigned long long)arg5 allowLeadingCell:(_Bool)arg6 allowSectionTitles:(_Bool)arg7 respectMinMaxLimit:(_Bool)arg8 filterDate:(id)arg9 todayData:(id)arg10 slotsLimit:(double)arg11;
 - (id)init;
 
 // Remaining properties

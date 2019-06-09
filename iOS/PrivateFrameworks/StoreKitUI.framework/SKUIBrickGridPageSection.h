@@ -11,6 +11,7 @@
 
 @class NSMapTable, NSString, SKUIGridComponent, SKUIMissingItemLoader, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBrickGridPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate>
 {
     NSMapTable *_artworkRequests;

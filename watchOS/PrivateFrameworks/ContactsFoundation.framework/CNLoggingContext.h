@@ -20,11 +20,11 @@
 + (id)loggingContextWithSubsystem:(id)arg1 category:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *subsystem; // @synthesize subsystem=_subsystem;
 @property(readonly, copy, nonatomic) NSString *category; // @synthesize category=_category;
+- (void).cxx_destruct;
 - (void)setupASL;
 - (id)loggingName;
 - (id)aslQueue;
 - (struct __asl_object_s *)aslClient;
-- (void)dealloc;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2;
 
 @end

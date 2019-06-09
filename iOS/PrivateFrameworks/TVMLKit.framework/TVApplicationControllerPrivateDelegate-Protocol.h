@@ -7,6 +7,7 @@
 #import <TVMLKit/TVApplicationControllerDelegate-Protocol.h>
 
 @class IKAppDocument, NSDictionary, NSURL, TVApplicationController, UIViewController;
+@protocol TVAppRootViewController;
 
 @protocol TVApplicationControllerPrivateDelegate <TVApplicationControllerDelegate>
 
@@ -15,5 +16,6 @@
 - (_Bool)appController:(TVApplicationController *)arg1 shouldOverrideModalBehaviorForDocument:(IKAppDocument *)arg2 andExistingModalDocument:(IKAppDocument *)arg3;
 - (_Bool)appController:(TVApplicationController *)arg1 shouldDisplayShroudForURL:(NSURL *)arg2 withOptions:(NSDictionary *)arg3;
 - (_Bool)appController:(TVApplicationController *)arg1 shouldDismissShroudForDocument:(IKAppDocument *)arg2;
+- (UIViewController<TVAppRootViewController> *)rootViewControllerForAppController:(TVApplicationController *)arg1;
 @end
 

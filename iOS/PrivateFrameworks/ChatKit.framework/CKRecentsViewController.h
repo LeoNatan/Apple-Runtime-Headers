@@ -62,6 +62,7 @@
 - (void)forceTearDownRemoteView;
 - (void)didTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)prepareForDisplay;
+- (void)_loadRecentHandwritingsAndStickersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)loadRecents;
 - (void)recentsUpdated;
 - (void)dealloc;

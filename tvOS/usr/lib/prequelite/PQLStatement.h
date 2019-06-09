@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface PQLStatement : NSObject
 {
     struct sqlite3_stmt *_stmt;
@@ -36,6 +35,9 @@ __attribute__((visibility("hidden")))
 - (id)translate:(id)arg1 hasInjections:(_Bool *)arg2 arguments:(struct __va_list_tag [1])arg3;
 - (void)keepBindAlive:(id)arg1;
 @property(readonly, nonatomic) _Bool isTraced;
+- (void)bindFromArray:(id)arg1 db:(id)arg2;
+- (id)initWithQueryBuilder:(CDUnknownBlockType)arg1 db:(id)arg2 cache:(struct cache_s *)arg3;
+- (id)translate:(id)arg1 withBuilder:(id)arg2;
 
 @end
 

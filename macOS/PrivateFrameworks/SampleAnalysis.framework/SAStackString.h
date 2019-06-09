@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class SAMutableDataOutputStream;
+@class NSMutableArray, SAMutableDataOutputStream;
 
 __attribute__((visibility("hidden")))
 @interface SAStackString : NSObject
@@ -14,16 +14,16 @@ __attribute__((visibility("hidden")))
     BOOL _isMainThread;
     BOOL _isTargetThread;
     unsigned long long _count;
-    unsigned long long _dispatchQueueId;
-    unsigned long long _threadId;
+    NSMutableArray *_dispatchQueueIds;
+    NSMutableArray *_threadIds;
     SAMutableDataOutputStream *_stream;
 }
 
 @property(retain) SAMutableDataOutputStream *stream; // @synthesize stream=_stream;
 @property BOOL isTargetThread; // @synthesize isTargetThread=_isTargetThread;
 @property BOOL isMainThread; // @synthesize isMainThread=_isMainThread;
-@property unsigned long long threadId; // @synthesize threadId=_threadId;
-@property unsigned long long dispatchQueueId; // @synthesize dispatchQueueId=_dispatchQueueId;
+@property(retain) NSMutableArray *threadIds; // @synthesize threadIds=_threadIds;
+@property(retain) NSMutableArray *dispatchQueueIds; // @synthesize dispatchQueueIds=_dispatchQueueIds;
 @property unsigned long long count; // @synthesize count=_count;
 - (void).cxx_destruct;
 

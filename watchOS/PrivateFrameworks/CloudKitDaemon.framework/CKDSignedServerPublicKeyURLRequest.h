@@ -35,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (int)serverType;
 - (_Bool)allowsAnonymousAccount;
 - (_Bool)requiresTokenRegistration;
-- (_Bool)requiresSignature;
 - (_Bool)requiresDeviceID;
 - (_Bool)requiresConfiguration;
 - (void)dealloc;

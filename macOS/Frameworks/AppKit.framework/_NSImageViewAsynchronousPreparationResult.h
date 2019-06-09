@@ -14,12 +14,14 @@ __attribute__((visibility("hidden")))
     struct CGImage *_CGImage;
     struct CGRect _contentsCenter;
     NSString *_contentsScaling;
+    struct CGColor *_multiplyColor;
     struct CGSize _alignmentRectSize;
     struct CGSize _imageSize;
 }
 
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(nonatomic) struct CGSize alignmentRectSize; // @synthesize alignmentRectSize=_alignmentRectSize;
+@property(retain, nonatomic) struct CGColor *multiplyColor; // @synthesize multiplyColor=_multiplyColor;
 @property(copy, nonatomic) NSString *contentsScaling; // @synthesize contentsScaling=_contentsScaling;
 @property(nonatomic) struct CGRect contentsCenter; // @synthesize contentsCenter=_contentsCenter;
 @property(retain, nonatomic) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;

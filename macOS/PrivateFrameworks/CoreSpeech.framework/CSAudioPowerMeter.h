@@ -27,7 +27,7 @@
 - (double)getAveragePowerDB;
 - (double)getPeakPowerDB;
 - (void)_savePeaks:(int)arg1 averagePower:(int)arg2 maxSample:(int)arg3;
-- (void)process:(const short *)arg1 stride:(int)arg2 inFrameToProcess:(int)arg3 boost:(float)arg4;
+- (void)process:(const short *)arg1 stride:(int)arg2 inFrameToProcess:(int)arg3;
 - (void)_scaleDecayConstants:(int)arg1;
 - (void)_reset;
 - (void)reset;

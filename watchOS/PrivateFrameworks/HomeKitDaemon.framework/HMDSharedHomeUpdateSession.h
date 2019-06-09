@@ -10,7 +10,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDCentralMessageDispatcher, HMDRemoteDeviceMessageDestination, HMDResidentDevice, HMFTimer, NSDictionary, NSString, NSUUID;
+@class HMDMessageDispatcher, HMDRemoteDeviceMessageDestination, HMDResidentDevice, HMFTimer, NSDictionary, NSString, NSUUID;
 @protocol HMDSharedHomeUpdateSessionDelegate, OS_dispatch_queue;
 
 @interface HMDSharedHomeUpdateSession : NSObject <HMFLogging, HMFTimerDelegate, HMFDumpState>
@@ -18,7 +18,7 @@
     NSString *_homeIdentifier;
     NSUUID *_sessionID;
     NSDictionary *_messagePayload;
-    HMDCentralMessageDispatcher *_remoteMessageDispatcher;
+    HMDMessageDispatcher *_remoteMessageDispatcher;
     HMDRemoteDeviceMessageDestination *_destination;
     HMDResidentDevice *_residentDevice;
     HMFTimer *_timer;
@@ -36,7 +36,7 @@
 @property(retain, nonatomic) HMFTimer *timer; // @synthesize timer=_timer;
 @property(readonly, nonatomic) HMDResidentDevice *residentDevice; // @synthesize residentDevice=_residentDevice;
 @property(readonly, nonatomic) HMDRemoteDeviceMessageDestination *destination; // @synthesize destination=_destination;
-@property(readonly, nonatomic) HMDCentralMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
+@property(readonly, nonatomic) HMDMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
 @property(readonly, nonatomic) NSDictionary *messagePayload; // @synthesize messagePayload=_messagePayload;
 @property(readonly, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly, nonatomic) NSString *homeIdentifier; // @synthesize homeIdentifier=_homeIdentifier;

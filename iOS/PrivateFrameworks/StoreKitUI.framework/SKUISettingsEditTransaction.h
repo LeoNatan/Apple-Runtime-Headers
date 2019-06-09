@@ -9,6 +9,7 @@
 @class NSLock, NSMutableSet, NSSet;
 @protocol SKUISettingsEditTransactionDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsEditTransaction : NSObject
 {
     NSSet *_all;

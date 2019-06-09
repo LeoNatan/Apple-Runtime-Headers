@@ -9,14 +9,13 @@
 #import <CoreCDPInternal/CDPDXPCEventListener-Protocol.h>
 
 @class NSMutableArray, NSString;
-@protocol CDPDCircleProxy, OS_dispatch_queue;
+@protocol OS_dispatch_queue;
 
 @interface CDPDCircleStateObserver : NSObject <CDPDXPCEventListener>
 {
     int _circleChangeToken;
     _Bool _isObserving;
     NSObject<OS_dispatch_queue> *_eventQueue;
-    id <CDPDCircleProxy> _circleProxy;
     NSMutableArray *_circleObservers;
 }
 
@@ -24,11 +23,11 @@
 - (void)eventReceived:(const char *)arg1 eventValue:(unsigned long long)arg2;
 - (void)registerListener:(id)arg1;
 - (void)stopObservingCircleStatusChange;
-- (void)observeChangeToState:(int)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)observeCircleStateWithChangeHandler:(CDUnknownBlockType)arg1;
+- (void)observeChangeToState:(unsigned long long)arg1 circleProxy:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)observeCircleStateWithCircleProxy:(id)arg1 changeHandler:(CDUnknownBlockType)arg2;
 - (const char *)_notificationName;
 - (void)dealloc;
-- (id)initWithProxy:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

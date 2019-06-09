@@ -10,6 +10,7 @@
 
 @class NSDate, NSDictionary, NSMutableDictionary, NSString, NetDiagnosticsShim;
 
+__attribute__((visibility("hidden")))
 @interface NetworkDiagnosticsReportGenerator : DiagnosticReportGenerator <NetDiagnosticsShimDelegate>
 {
     NetDiagnosticsShim *_netDiags;

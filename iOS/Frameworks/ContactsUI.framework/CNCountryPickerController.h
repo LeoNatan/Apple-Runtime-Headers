@@ -9,7 +9,7 @@
 #import <ContactsUI/UITableViewDataSource-Protocol.h>
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSString, UILocalizedIndexedCollation, UITableViewController;
+@class NSArray, NSIndexPath, NSString, UILocalizedIndexedCollation, UITableViewController;
 @protocol CNCountryPickerControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -20,8 +20,10 @@ __attribute__((visibility("hidden")))
     UILocalizedIndexedCollation *_collation;
     NSArray *_countries;
     NSArray *_sections;
+    NSIndexPath *_selectedIndexPath;
 }
 
+@property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(copy, nonatomic) NSArray *countries; // @synthesize countries=_countries;
 @property(retain, nonatomic) UILocalizedIndexedCollation *collation; // @synthesize collation=_collation;
@@ -39,6 +41,8 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)dealloc;
+- (void)windowDidRotate:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)cancelPicker:(id)arg1;

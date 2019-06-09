@@ -53,7 +53,8 @@
 - (void)beginSendingTransactions;
 - (void)restoreNowPlayingClientState;
 @property(readonly, nonatomic) _Bool hasReceivedCommandRecently;
-- (void)preProcessCommand:(unsigned int)arg1 options:(id)arg2;
+- (id)resolveCommandOptions:(unsigned int)arg1 options:(id)arg2;
+- (unsigned int)resolveCommand:(unsigned int)arg1;
 - (void)preProcessChangePlaybackRateCommandWithOptions:(id)arg1;
 - (void)updateCacheWithContentItems:(id)arg1;
 - (void)updateCacheWithItem:(id)arg1;

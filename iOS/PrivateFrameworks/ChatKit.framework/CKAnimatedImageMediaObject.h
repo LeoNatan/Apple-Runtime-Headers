@@ -22,7 +22,6 @@
 - (id)scaledThumbnailFromThumbnail:(id)arg1 forWidth:(double)arg2 isSticker:(_Bool)arg3;
 - (id)savedAnimatedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (id)notificationCenter;
-- (_Bool)generatePreviewOutOfProcess;
 - (id)generateAndPersistAnimatedPreviewFromImageData:(id)arg1 forWidth:(double)arg2 withTransferGUID:(id)arg3 isSticker:(_Bool)arg4;
 - (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
 - (id)animatedImageForWidth:(double)arg1;

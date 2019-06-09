@@ -10,10 +10,14 @@
 
 @interface UIImpactFeedbackGenerator : UIFeedbackGenerator
 {
+    long long _style;
 }
 
 + (Class)_configurationClass;
 - (id)_stats_key;
+- (id)_styleString;
+- (id)_ui_descriptionBuilder;
+- (void)impactOccurredWithIntensity:(double)arg1;
 - (void)impactOccurred;
 - (void)_impactOccurredWithIntensity:(double)arg1;
 @property(readonly, nonatomic, getter=_impactConfiguration) _UIImpactFeedbackGeneratorConfiguration *impactConfiguration;

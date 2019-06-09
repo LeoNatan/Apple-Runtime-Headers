@@ -8,6 +8,7 @@
 
 @class ISNSVisibilityOffsetHelper, NSScrollView;
 
+__attribute__((visibility("hidden")))
 @interface ISNSScrollViewVitalityController : ISScrollViewVitalityController
 {
     BOOL _isListeningToScrollViewNotifications;

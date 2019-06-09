@@ -22,7 +22,7 @@
 @property BOOL packageSourceIsValid; // @synthesize packageSourceIsValid=_packageSourceIsValid;
 @property(readonly) NSArray *allPackageReferences;
 - (id)digestForPackageAtURLPath:(id)arg1;
-- (void)registerProduct:(id)arg1;
+- (BOOL)registerProduct:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

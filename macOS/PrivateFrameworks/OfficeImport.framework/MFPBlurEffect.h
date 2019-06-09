@@ -6,6 +6,7 @@
 
 #import <OfficeImport/MFPEffect.h>
 
+__attribute__((visibility("hidden")))
 @interface MFPBlurEffect : MFPEffect
 {
     float mRadius;

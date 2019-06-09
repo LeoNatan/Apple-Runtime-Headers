@@ -9,6 +9,7 @@
 @class NSString, NTKFaceEditView;
 
 @protocol NTKFaceEditViewDelegate <NSObject>
+- (_Bool)editViewShouldShowPageDotsOnBottom:(NTKFaceEditView *)arg1;
 - (void)editView:(NTKFaceEditView *)arg1 didTapKeylineForKey:(NSString *)arg2 editMode:(int)arg3;
 - (void)editView:(NTKFaceEditView *)arg1 keylineDidRubberBand:(float)arg2 forKey:(NSString *)arg3 editMode:(int)arg4;
 - (void)editView:(NTKFaceEditView *)arg1 keylineDidBreathe:(float)arg2 forKey:(NSString *)arg3 editMode:(int)arg4;

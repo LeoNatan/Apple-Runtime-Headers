@@ -15,7 +15,6 @@
     NSProgress *_progress;
 }
 
-+ (id)actionPerformerLog;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) PXCMMSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;

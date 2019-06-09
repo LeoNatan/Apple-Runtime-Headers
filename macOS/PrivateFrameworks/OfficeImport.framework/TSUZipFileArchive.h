@@ -9,6 +9,7 @@
 @class NSObject, NSURL, TSUZipFileDescriptorWrapper;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface TSUZipFileArchive : TSUZipArchive
 {
     NSObject<OS_dispatch_queue> *_accessQueue;

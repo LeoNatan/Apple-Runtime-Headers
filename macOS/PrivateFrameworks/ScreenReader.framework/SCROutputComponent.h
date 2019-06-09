@@ -6,17 +6,20 @@
 
 #import <ScreenReader/SCROutputThreadedObject.h>
 
-@class NSString;
+@class NSString, SCRCUserDefaults;
 
 __attribute__((visibility("hidden")))
 @interface SCROutputComponent : SCROutputThreadedObject
 {
     NSString *_name;
+    SCRCUserDefaults *__userDefaults;
 }
 
 + (BOOL)isRunningUnitTests;
 + (void)setIsRunningUnitTests:(BOOL)arg1;
 + (void)initialize;
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
+- (void).cxx_destruct;
 - (void)processEmbeddedVOCommandsInAction:(id)arg1;
 - (void)replaceVOEmbeddedCommand:(id)arg1 inAction:(id)arg2;
 - (void)replaceVOEmbeddedCommand:(id)arg1 withRange:(struct _NSRange)arg2 inAction:(id)arg3;
@@ -30,8 +33,9 @@ __attribute__((visibility("hidden")))
 - (void)nonBlockingActionsAreComplete;
 - (void)dispatchNonBlockingActionsAreComplete;
 - (int)preflightSequentialSteps:(id)arg1 runnerName:(id)arg2;
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
+@property(readonly, nonatomic) SCRCUserDefaults *userDefaults;
+- (void)setupObservers;
+- (id)initWithName:(id)arg1 userDefaults:(id)arg2;
 
 @end
 

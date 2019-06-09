@@ -5,7 +5,13 @@
 //
 
 @protocol GGLLayerDelegate
+- (void)didUpdateFrameTexture;
+- (void)willUpdateFrameTexture;
 - (void)didPresent;
-- (void)drawToTexture:(struct Texture *)arg1 withTimestamp:(double)arg2;
+- (void)willPresent;
+- (void)drawToTexture:(struct Texture *)arg1 withRenderQueue:(struct RenderQueue *)arg2;
+- (struct RenderQueue *)renderQueueForTimestamp:(double)arg1;
+- (void)prepareTexture:(struct Texture *)arg1;
+- (_Bool)isDelayedRenderQueueConsumptionSupported;
 @end
 

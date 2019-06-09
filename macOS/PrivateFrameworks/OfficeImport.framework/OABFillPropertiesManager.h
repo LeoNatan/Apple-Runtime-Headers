@@ -11,6 +11,7 @@
 @class NSString;
 @protocol OABPropertiesManager;
 
+__attribute__((visibility("hidden")))
 @interface OABFillPropertiesManager : NSObject <OABFillPropertiesManager>
 {
     const struct EshFill *mFill;

@@ -15,6 +15,7 @@
     _Bool _disabledAppearance;
     _Bool _flattenImage;
     _Bool _scaleImage;
+    int _customUserInterfaceStyle;
     NSString *_title;
     UIImage *_image;
     UIView *_customView;
@@ -27,6 +28,7 @@
 @property(nonatomic) struct UIEdgeInsets imageInsets; // @synthesize imageInsets=_imageInsets;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(nonatomic) int customUserInterfaceStyle; // @synthesize customUserInterfaceStyle=_customUserInterfaceStyle;
 @property(nonatomic) _Bool scaleImage; // @synthesize scaleImage=_scaleImage;
 @property(nonatomic) _Bool flattenImage; // @synthesize flattenImage=_flattenImage;
 @property(nonatomic) _Bool disabledAppearance; // @synthesize disabledAppearance=_disabledAppearance;

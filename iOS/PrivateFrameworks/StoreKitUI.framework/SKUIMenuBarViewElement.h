@@ -11,6 +11,7 @@
 
 @class NSArray, NSString, SKUIMenuBarViewElementConfiguration;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuBarViewElement : SKUIViewElement <_SKUIMenuBarViewElementConfigurationReloadDelegate, SKUIMenuBarViewElement>
 {
     NSArray *_titleViewElements;

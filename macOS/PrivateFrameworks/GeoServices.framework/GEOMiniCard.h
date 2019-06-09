@@ -8,24 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOFormattedString, NSString;
+@class GEOFormattedString, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOMiniCard : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSString *_buttonText;
     GEOFormattedString *_detail;
     GEOFormattedString *_title;
     BOOL _shouldEmphasize;
     struct {
-        unsigned int shouldEmphasize:1;
-    } _has;
+        unsigned int has_shouldEmphasize:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_buttonText:1;
+        unsigned int read_detail:1;
+        unsigned int read_title:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_buttonText:1;
+        unsigned int wrote_detail:1;
+        unsigned int wrote_title:1;
+        unsigned int wrote_shouldEmphasize:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL shouldEmphasize; // @synthesize shouldEmphasize=_shouldEmphasize;
-@property(retain, nonatomic) NSString *buttonText; // @synthesize buttonText=_buttonText;
-@property(retain, nonatomic) GEOFormattedString *detail; // @synthesize detail=_detail;
-@property(retain, nonatomic) GEOFormattedString *title; // @synthesize title=_title;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -33,12 +44,20 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasShouldEmphasize;
+@property(nonatomic) BOOL shouldEmphasize;
+@property(retain, nonatomic) NSString *buttonText;
 @property(readonly, nonatomic) BOOL hasButtonText;
+- (void)_readButtonText;
+@property(retain, nonatomic) GEOFormattedString *detail;
 @property(readonly, nonatomic) BOOL hasDetail;
+- (void)_readDetail;
+@property(retain, nonatomic) GEOFormattedString *title;
 @property(readonly, nonatomic) BOOL hasTitle;
+- (void)_readTitle;
 
 @end
 

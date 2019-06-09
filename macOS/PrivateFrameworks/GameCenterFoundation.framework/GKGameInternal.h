@@ -16,7 +16,7 @@
     GKStoreItemInternal *_storeItem;
     union {
         struct {
-            unsigned int _platform:8;
+            unsigned int _platform_unused:8;
             unsigned int _prerendered:1;
             unsigned int _supportsLeaderboards:1;
             unsigned int _supportsLeaderboardSets:1;
@@ -26,7 +26,7 @@
             unsigned int _valid:1;
             unsigned int _unused:1;
             unsigned int _supportsTurnBasedMultiplayer:1;
-            unsigned int _reserved:13;
+            unsigned int _reserved:15;
         } ;
         unsigned int _value;
     } _flags;
@@ -45,16 +45,17 @@
 @property(retain, nonatomic) NSString *defaultLeaderboardIdentifier; // @synthesize defaultLeaderboardIdentifier=_defaultLeaderboardIdentifier;
 @property(retain, nonatomic) NSDictionary *icons; // @synthesize icons=_icons;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) GKGameDescriptor *gameDescriptor;
 @property(nonatomic) unsigned int flags; // @dynamic flags;
 @property(nonatomic) BOOL supportsTurnBasedMultiplayer; // @dynamic supportsTurnBasedMultiplayer;
 @property(nonatomic, getter=isValid) BOOL valid; // @dynamic valid;
+@property(readonly, nonatomic) BOOL canBeIndexed;
 @property(nonatomic) BOOL supportsMultiplayer; // @dynamic supportsMultiplayer;
 @property(nonatomic) BOOL supportsAchievements; // @dynamic supportsAchievements;
 @property(nonatomic) BOOL hasAggregateLeaderboard;
 @property(nonatomic) BOOL supportsLeaderboardSets; // @dynamic supportsLeaderboardSets;
 @property(nonatomic) BOOL supportsLeaderboards; // @dynamic supportsLeaderboards;
 @property(nonatomic, getter=isPrerendered) BOOL prerendered; // @dynamic prerendered;
-@property(nonatomic) unsigned char platform; // @dynamic platform;
 - (id)description;
 - (id)serverRepresentation;
 - (void)dealloc;

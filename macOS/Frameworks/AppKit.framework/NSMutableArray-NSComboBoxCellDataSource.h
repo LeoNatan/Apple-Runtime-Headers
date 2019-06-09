@@ -10,5 +10,10 @@
 - (unsigned long long)comboBoxCell:(id)arg1 indexOfItemWithStringValue:(id)arg2;
 - (id)comboBoxCell:(id)arg1 objectValueForItemAtIndex:(long long)arg2;
 - (long long)numberOfItemsInComboBoxCell:(id)arg1;
+- (void)replaceRangeAtIndex:(unsigned long long)arg1 withRange:(struct _NSRange)arg2;
+- (void)removeLastRange;
+- (void)addRange:(struct _NSRange)arg1;
+- (void)removeRangeAtIndex:(unsigned long long)arg1;
+- (void)insertRange:(struct _NSRange)arg1 atIndex:(unsigned long long)arg2;
 @end
 

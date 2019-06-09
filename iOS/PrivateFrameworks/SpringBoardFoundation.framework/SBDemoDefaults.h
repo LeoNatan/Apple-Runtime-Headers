@@ -14,7 +14,6 @@
 
 // Remaining properties
 @property(readonly, nonatomic, getter=isStoreDemoApplicationLockEnabled) _Bool storeDemoApplicationLockEnabled; // @dynamic storeDemoApplicationLockEnabled;
-@property(readonly, nonatomic) _Bool usesStoreDemoPlugin; // @dynamic usesStoreDemoPlugin;
 
 @end
 

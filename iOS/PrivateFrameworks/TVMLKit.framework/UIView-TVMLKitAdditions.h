@@ -8,14 +8,17 @@
 
 @interface UIView (TVMLKitAdditions)
 + (void)tv_performByPreventingAdditiveAnimations:(CDUnknownBlockType)arg1;
+- (void)_transferAttributesFromElement:(id)arg1;
 - (_Bool)tv_shouldAnimatePropertyWithKey:(id)arg1;
+- (id)tv_layout;
+- (void)tv_setLayout:(id)arg1;
 - (id)tv_AccessibilityText;
 - (void)tv_setAccessibilityText:(id)arg1;
 - (void)tv_setSiriData:(id)arg1;
 - (id)tv_siriData;
 - (_Bool)tv_marqueeOnHighlight;
 - (_Bool)tv_showOnHighlight;
-- (_Bool)tv_isProxyView;
+- (_Bool)tv_isPrototypeView;
 - (id)tv_elementName;
 - (unsigned long long)tv_elementType;
 - (id)tv_highlightColor;
@@ -46,9 +49,11 @@
 - (void)tv_setValue:(id)arg1 forTVViewTag:(id)arg2;
 - (id)valueForTVViewStyle:(id)arg1;
 - (void)setValue:(id)arg1 forTVViewStyle:(id)arg2;
+- (void)tv_setShowcaseFactor:(double)arg1;
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)didSelect;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 @end

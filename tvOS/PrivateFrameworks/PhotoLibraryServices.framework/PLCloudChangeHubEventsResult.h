@@ -20,10 +20,10 @@
 
 @property(readonly) unsigned long long changeHubEventIndex; // @synthesize changeHubEventIndex=_changeHubEventIndex;
 @property(readonly) long long resultType; // @synthesize resultType=_resultType;
+- (void).cxx_destruct;
 - (id)localEventFromEvent:(id)arg1;
 - (void)enumerateLocalEventsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *currentTokenDescription;
-- (void)dealloc;
 - (id)initWithResultType:(long long)arg1 events:(id)arg2 changeHubEventIndex:(unsigned long long)arg3;
 - (id)initWithUnsuccessfulResultType:(long long)arg1;
 - (id)initWithSuccesfulEvents:(id)arg1 changeHubEventIndex:(unsigned long long)arg2;

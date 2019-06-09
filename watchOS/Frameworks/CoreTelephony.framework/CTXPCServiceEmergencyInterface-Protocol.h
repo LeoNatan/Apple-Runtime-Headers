@@ -5,6 +5,7 @@
 //
 
 @protocol CTXPCServiceEmergencyInterface
+- (void)copyNormalEmergencyMode:(void (^)(CTXPCServiceSubscriptionContext *, CTEmergencyMode *, NSError *))arg1;
 - (void)copyEmergencyMode:(void (^)(CTXPCServiceSubscriptionContext *, CTEmergencyMode *, NSError *))arg1;
 @end
 

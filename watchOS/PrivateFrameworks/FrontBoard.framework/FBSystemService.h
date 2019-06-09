@@ -6,13 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class FBSSerialQueue, FBServiceFacilityServer;
-@protocol FBSystemServiceDelegate;
+#import <FrontBoard/BSServiceConnectionListenerDelegate-Protocol.h>
+#import <FrontBoard/FBSOpenApplicationServiceServerInterface-Protocol.h>
 
-@interface FBSystemService : NSObject
+@class BSServiceConnectionListener, FBSSerialQueue, FBServiceFacilityServer, NSString;
+@protocol FBSApplicationInfoProvider, FBSystemServiceDelegate;
+
+@interface FBSystemService : NSObject <BSServiceConnectionListenerDelegate, FBSOpenApplicationServiceServerInterface>
 {
     FBSSerialQueue *_queue;
+    BSServiceConnectionListener *_legacyOpenServiceListener;
     int _pendingExit;
+    id <FBSApplicationInfoProvider> _lock_defaultInfoProvider;
+    struct os_unfair_lock_s _defaultInfoProviderLock;
     id <FBSystemServiceDelegate> _delegate;
     FBServiceFacilityServer *_server;
 }
@@ -27,31 +33,41 @@
 - (_Bool)_requireEntitlementToOpenURL:(id)arg1 options:(id)arg2;
 - (_Bool)_isTrustedRequestToOpenApplication:(id)arg1 options:(id)arg2 source:(id)arg3 originalSource:(id)arg4;
 - (void)_performExitTasksForRelaunch:(_Bool)arg1;
+- (void)_setInfoProvider;
+- (oneway void)openApplication:(id)arg1 withOptions:(id)arg2 originator:(id)arg3 requestID:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)canOpenApplication:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
 - (void)handleActions:(id)arg1 source:(id)arg2 withResult:(CDUnknownBlockType)arg3;
 - (void)isPasscodeLockedOrBlockedWithResult:(CDUnknownBlockType)arg1;
-- (void)_reallyActivateApplication:(id)arg1 requestID:(unsigned int)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 isTrusted:(_Bool)arg6 sequenceNumber:(unsigned int)arg7 cacheGUID:(id)arg8 ourSequenceNumber:(unsigned int)arg9 ourCacheGUID:(id)arg10 withResult:(CDUnknownBlockType)arg11;
+- (void)_reallyActivateApplication:(id)arg1 requestID:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 isTrusted:(_Bool)arg6 sequenceNumber:(unsigned int)arg7 cacheGUID:(id)arg8 ourSequenceNumber:(unsigned int)arg9 ourCacheGUID:(id)arg10 withResult:(CDUnknownBlockType)arg11;
 - (_Bool)_shouldPendRequestForClientSequenceNumber:(unsigned int)arg1 clientCacheGUID:(id)arg2 ourSequenceNumber:(unsigned int)arg3 ourCacheGUID:(id)arg4;
-- (void)_activateApplication:(id)arg1 requestID:(unsigned int)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(CDUnknownBlockType)arg6;
-- (void)activateApplication:(id)arg1 requestID:(unsigned int)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(CDUnknownBlockType)arg6;
-- (void)canActivateApplication:(id)arg1 source:(id)arg2 withResult:(CDUnknownBlockType)arg3;
+- (void)_activateApplication:(id)arg1 requestID:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(CDUnknownBlockType)arg6;
+- (void)activateApplication:(id)arg1 requestID:(id)arg2 options:(id)arg3 source:(id)arg4 originalSource:(id)arg5 withResult:(CDUnknownBlockType)arg6;
 - (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(_Bool)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)terminateApplicationGroup:(int)arg1 forReason:(int)arg2 andReport:(_Bool)arg3 withDescription:(id)arg4 source:(id)arg5;
 - (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(_Bool)arg3 withDescription:(id)arg4 source:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_terminateProcess:(id)arg1 forReason:(int)arg2 andReport:(_Bool)arg3 withDescription:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)exitAndRelaunch:(_Bool)arg1 withOptions:(unsigned int)arg2;
-- (void)dataReset:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_shutdownWithFBSOptions:(id)arg1;
 - (void)setPendingExit:(_Bool)arg1;
 @property(readonly, getter=isPendingExit) _Bool pendingExit;
+@property(readonly, nonatomic) id <FBSApplicationInfoProvider> _applicationInfoProvider;
 - (void)prepareDisplaysForExit;
 - (void)setSystemIdleSleepDisabled:(_Bool)arg1 forReason:(id)arg2;
 - (void)prepareForExitAndRelaunch:(_Bool)arg1;
 - (void)exitAndRelaunch:(_Bool)arg1;
 - (void)shutdownWithOptions:(unsigned int)arg1;
+- (void)shutdownWithOptions:(id)arg1 origin:(id)arg2;
+- (void)shutdownUsingOptions:(id)arg1;
 - (void)shutdownWithOptions:(unsigned int)arg1 forSource:(int)arg2;
 - (void)shutdownAndReboot:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

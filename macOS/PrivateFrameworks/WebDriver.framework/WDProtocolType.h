@@ -11,12 +11,14 @@
 @interface WDProtocolType : NSObject
 {
     long long _baseType;
+    BOOL _isEnum;
     NSString *_name;
     SEL _factoryMethod;
     long long _platform;
 }
 
 + (id)typeFromPayload:(id)arg1;
+@property(readonly, nonatomic) BOOL isEnum; // @synthesize isEnum=_isEnum;
 @property(readonly, nonatomic) long long platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) SEL factoryMethod; // @synthesize factoryMethod=_factoryMethod;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
@@ -27,7 +29,7 @@
 - (id)decodedInstanceFromPayload:(id)arg1;
 - (RefPtr_12c52547)encodedValueForInstance:(id)arg1;
 - (BOOL)instanceIsValid:(id)arg1;
-- (id)initWithName:(id)arg1 factoryMethod:(SEL)arg2 baseType:(long long)arg3 platform:(long long)arg4;
+- (id)initWithName:(id)arg1 factoryMethod:(SEL)arg2 baseType:(long long)arg3 platform:(long long)arg4 isEnum:(BOOL)arg5;
 - (id)initWithName:(id)arg1 factoryMethod:(SEL)arg2 baseType:(long long)arg3;
 
 @end

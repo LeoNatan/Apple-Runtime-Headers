@@ -7,7 +7,6 @@
 @class NSString;
 
 @protocol _SFFindOnPageToolbarDelegate
-- (NSString *)longMatchLabelText;
 - (NSString *)matchLabelText;
 - (_Bool)hasMatches;
 - (void)updateSearchText:(NSString *)arg1;

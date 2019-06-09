@@ -19,6 +19,7 @@
     long long _status;
 }
 
++ (id)_resultWithPersistentID:(long long)arg1 bundleID:(id)arg2 status:(long long)arg3 error:(id)arg4;
 + (BOOL)supportsSecureCoding;
 + (id)resultWithValidActivity:(long long)arg1 bundleID:(id)arg2;
 + (id)resultWithRestrictedActivity:(long long)arg1 bundleID:(id)arg2;
@@ -29,8 +30,9 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

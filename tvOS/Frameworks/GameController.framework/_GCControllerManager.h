@@ -8,7 +8,7 @@
 
 #import <GameController/GameControllerClientProtocol-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString, NSThread, NSTimer, NSXPCConnection, _GCController;
+@class GCController, NSMutableArray, NSMutableDictionary, NSString, NSThread, NSTimer, NSXPCConnection;
 @protocol GameControllerDaemon, OS_dispatch_queue;
 
 @interface _GCControllerManager : NSObject <GameControllerClientProtocol>
@@ -31,14 +31,14 @@
     struct __IOHIDEventSystemClient *_hidSystemClient;
     NSObject<OS_dispatch_queue> *_hidSystemClientQueue;
     _Bool _isAppInBackground;
+    GCController *_firstMicroGamepad;
     NSThread *_hidInputThread;
     struct __CFRunLoop *_hidInputThreadRunLoop;
     struct __CFRunLoopSource *_hidThreadRunLoopSource;
     NSMutableArray *_hidThreadExecutionBlocks;
-    _GCController *_firstMicroGamepad;
 }
 
-@property(nonatomic) __weak _GCController *firstMicroGamepad; // @synthesize firstMicroGamepad=_firstMicroGamepad;
++ (id)sharedInstance;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *controllersQueue; // @synthesize controllersQueue=_controllersQueue;
 @property(readonly, nonatomic) NSMutableArray *hidThreadExecutionBlocks; // @synthesize hidThreadExecutionBlocks=_hidThreadExecutionBlocks;
 @property(readonly, nonatomic) struct __CFRunLoopSource *hidThreadRunLoopSource; // @synthesize hidThreadRunLoopSource=_hidThreadRunLoopSource;
@@ -46,17 +46,18 @@
 @property(readonly, retain, nonatomic) NSThread *hidInputThread; // @synthesize hidInputThread=_hidInputThread;
 @property(nonatomic) _Bool idleTimerNeedsReset; // @synthesize idleTimerNeedsReset=_idleTimerNeedsReset;
 @property(retain, nonatomic) id <GameControllerDaemon> remote; // @synthesize remote=_remote;
+@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(copy, nonatomic) CDUnknownBlockType logger; // @synthesize logger=_logger;
 @property(nonatomic) struct __IOHIDManager *hidManager; // @synthesize hidManager=_hidManager;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly, nonatomic) _Bool isAppInBackground; // @synthesize isAppInBackground=_isAppInBackground;
+@property(nonatomic) __weak GCController *firstMicroGamepad; // @synthesize firstMicroGamepad=_firstMicroGamepad;
 - (void).cxx_destruct;
 - (void)open;
 - (id)controllers;
+- (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(_Bool)arg4;
+- (void)removeController:(id)arg1 registryID:(id)arg2;
 - (void)removeController:(id)arg1;
 - (void)removeCoalescedControllerComponent:(id)arg1;
-- (void)publishDisconnectControllerNotification:(id)arg1;
-- (void)publishConnectControllerNotification:(id)arg1;
 - (void)controllerWithUDID:(unsigned long long)arg1 setValue0:(float)arg2 setValue1:(float)arg3 setValue2:(float)arg4 setValue3:(float)arg5 forElement:(int)arg6;
 - (void)controllerWithUDID:(unsigned long long)arg1 setValue:(float)arg2 forElement:(int)arg3;
 - (_Bool)isPhysicalB239:(id)arg1;
@@ -69,12 +70,12 @@
 - (_Bool)detectAndSetIfFirstMicroGamepad:(id)arg1;
 - (_Bool)coalesceController:(id)arg1;
 - (void)logController:(id)arg1;
+- (void)unpublishController:(id)arg1;
+- (void)publishController:(id)arg1;
 - (_Bool)isExistingController:(id)arg1;
 - (void)replyConnectedHosts:(id)arg1;
 - (void)requestConnectedHostsWithHandler:(CDUnknownBlockType)arg1;
 - (void)startIdleWatchTimer;
-- (_Bool)microControllerWithDigitizerX:(float)arg1 digitizerY:(float)arg2 timestamp:(unsigned long long)arg3 touchDown:(_Bool)arg4 controller:(id)arg5;
-- (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(_Bool)arg4;
 - (void)microControllerWithUDID:(unsigned long long)arg1 setDigitizerX:(float)arg2 digitizerY:(float)arg3 withTimeStamp:(unsigned long long)arg4 touchDown:(_Bool)arg5;
 - (void)setMediaRemoteEnabled:(_Bool)arg1;
 - (void)CBApplicationDidBecomeActive;
@@ -84,7 +85,7 @@
 - (void)launchHIDInputThread;
 - (void)threadHIDInputOnMain:(id)arg1;
 - (void)threadHIDInputOffMain:(id)arg1;
--     // Error parsing type: v24@0:8^{__IOHIDEvent={__CFRuntimeBase=QAQ}QQQI*^v^v^{__CFArray}^{__IOHIDEvent}qq[0{IOHIDEventData=IIIC[3C]}]}16, name: updateControllerWithEvent:
+- (void)updateControllerWithEvent:(struct __IOHIDEvent *)arg1;
 - (void)removeControllerWithServiceRef:(struct __IOHIDServiceClient *)arg1;
 - (void)addControllerWithServiceRef:(struct __IOHIDServiceClient *)arg1;
 - (void)stopHIDEventMonitor;
@@ -92,6 +93,8 @@
 - (void)addConnectedDevices;
 - (void)stopHIDDeviceMonitor;
 - (void)startHIDDeviceMonitor;
+- (void)starSessionDidEnd;
+- (void)starSessionWillBegin;
 - (void)dealloc;
 - (id)init;
 

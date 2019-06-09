@@ -6,9 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class GEOCountryConfiguration, GEOResourceManifestManager, NSDictionary, NSLock, NSMutableArray, NSMutableSet, NSString;
+@class GEOCountryConfiguration, GEOResourceManifestManager, NSDictionary, NSMutableArray, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface GEODBWriter : NSObject
 {
     NSString *_path;
@@ -33,7 +34,7 @@
     NSMutableArray *_writeList;
     NSMutableSet *_uncommitedWriteSet;
     unsigned long long _pendingWriteBytes;
-    NSLock *_writeListLock;
+    struct os_unfair_lock_s _writeListLock;
     NSObject<OS_dispatch_queue> *_writeQueue;
     void *_editionMap;
     long long _evictionRowsThreshold;

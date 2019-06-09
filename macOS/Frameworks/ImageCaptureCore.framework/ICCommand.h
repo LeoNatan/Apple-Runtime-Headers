@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(retain) id delegate; // @synthesize delegate=_delegate;
 @property(retain) NSMutableDictionary *dict; // @synthesize dict=_dict;
 @property(copy) NSString *type; // @synthesize type=_type;
-@property(retain) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
+@property(copy) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
 - (void)dealloc;
 
 @end

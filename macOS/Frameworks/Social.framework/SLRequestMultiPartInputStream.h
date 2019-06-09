@@ -8,6 +8,7 @@
 
 @class NSData, SLRequestMultiPart;
 
+__attribute__((visibility("hidden")))
 @interface SLRequestMultiPartInputStream : NSInputStream
 {
     SLRequestMultiPart *_multiPart;

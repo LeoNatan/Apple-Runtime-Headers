@@ -24,10 +24,8 @@
     NSObject<OS_dispatch_queue> *_reloadQueue;
     PHFetchResult *_objects;
     CDUnknownBlockType _reloadBlock;
-    NSArray *_originalMembers;
 }
 
-@property(copy, nonatomic) NSArray *originalMembers; // @synthesize originalMembers=_originalMembers;
 @property(copy, nonatomic) CDUnknownBlockType reloadBlock; // @synthesize reloadBlock=_reloadBlock;
 @property(retain, nonatomic) PHFetchResult *objects; // @synthesize objects=_objects;
 @property(readonly, nonatomic) _Bool useAsynchronousLoad; // @synthesize useAsynchronousLoad=_useAsynchronousLoad;
@@ -55,9 +53,10 @@
 - (void)imageAtIndex:(unsigned long long)arg1 targetSize:(struct CGSize)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)imageAtIndex:(unsigned long long)arg1 targetSize:(struct CGSize)arg2 withCompletionBlock:(CDUnknownBlockType)arg3 fastDisplayBlock:(CDUnknownBlockType)arg4;
 - (id)titleAtIndex:(unsigned long long)arg1;
-- (unsigned long long)indexOfMember:(id)arg1;
+- (id)personAtIndex:(unsigned long long)arg1;
 - (id)memberAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfMembers;
+@property(readonly, nonatomic) NSArray *persons;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 objects:(id)arg2;
 - (id)initWithName:(id)arg1 objectsReloadBlock:(CDUnknownBlockType)arg2 asynchronousLoad:(_Bool)arg3 callbackDelegate:(id)arg4;

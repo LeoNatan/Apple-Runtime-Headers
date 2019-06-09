@@ -26,7 +26,7 @@
 @property(readonly, nonatomic) long long statusCode; // @synthesize statusCode=_statusCode;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
-- (id)_stringWithDescriptionForResponseError:(id)arg1;
+- (void).cxx_destruct;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2 bodyIsPlist:(BOOL)arg3;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;
 - (void)_parsePlistResponse:(id)arg1;

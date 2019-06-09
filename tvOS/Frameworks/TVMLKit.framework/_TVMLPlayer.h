@@ -9,7 +9,7 @@
 #import <TVMLKit/TVPASyncPlaybackDelegate-Protocol.h>
 #import <TVMLKit/TVPlayingInternal-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSString, TVMediaItem, TVPPlayer, TVPlaylist;
+@class AVPlayer, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString, TVMediaItem, TVPPlayer, TVPlaylist;
 @protocol TVPlayerBridging;
 
 @interface _TVMLPlayer : NSObject <TVPASyncPlaybackDelegate, TVPlayingInternal>
@@ -25,11 +25,13 @@
     _Bool _currentMediaItemHasVideoContent;
     TVPlaylist *_playlist;
     id <TVPlayerBridging> _bridge;
+    long long resumeMenuBehavior;
 }
 
 + (long long)_ikMediaItemChangeReasonFromReason:(id)arg1;
 + (long long)_ikStateFromTVSState:(id)arg1;
 @property(nonatomic) _Bool currentMediaItemHasVideoContent; // @synthesize currentMediaItemHasVideoContent=_currentMediaItemHasVideoContent;
+@property(nonatomic) long long resumeMenuBehavior; // @synthesize resumeMenuBehavior;
 @property(nonatomic) __weak id <TVPlayerBridging> bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) TVPlaylist *playlist; // @synthesize playlist=_playlist;
 - (void).cxx_destruct;
@@ -61,6 +63,7 @@
 @property(nonatomic) _Bool preventsSleepDuringVideoPlayback;
 - (void)stopObservingEvent:(id)arg1;
 - (void)startObservingEvent:(id)arg1 extraInfo:(id)arg2;
+@property(retain, nonatomic) NSDate *elapsedDate;
 @property(nonatomic) double elapsedTime;
 @property(nonatomic, getter=isMuted) _Bool muted;
 @property(nonatomic) double scanRate;
@@ -75,6 +78,7 @@
 @property(readonly, nonatomic) TVMediaItem *previousMediaItem;
 @property(readonly, nonatomic) TVMediaItem *nextMediaItem;
 @property(readonly, nonatomic) TVMediaItem *currentMediaItem;
+@property(readonly, nonatomic) AVPlayer *avPlayer;
 @property(readonly, nonatomic) TVPPlayer *player;
 - (void)dealloc;
 - (id)init;

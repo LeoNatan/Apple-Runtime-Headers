@@ -8,6 +8,7 @@
 
 @class OADBlipRef, OADImageFillTechnique, OADRelativeRect;
 
+__attribute__((visibility("hidden")))
 @interface OADImageFill : OADFill
 {
     OADBlipRef *mBlipRef;

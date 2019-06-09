@@ -8,10 +8,12 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEORPDetails, GEORPNotification, GEORPResolution, NSString;
+@class GEORPDetails, GEORPNotification, GEORPResolution, NSString, PBDataReader;
 
 @interface GEORPProblemStatus : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     double _creationDate;
     GEORPDetails *_details;
     GEORPNotification *_notification;
@@ -19,16 +21,22 @@
     GEORPResolution *_problemResolution;
     int _problemState;
     struct {
-        unsigned int creationDate:1;
-        unsigned int problemState:1;
-    } _has;
+        unsigned int has_creationDate:1;
+        unsigned int has_problemState:1;
+        unsigned int read_details:1;
+        unsigned int read_notification:1;
+        unsigned int read_problemId:1;
+        unsigned int read_problemResolution:1;
+        unsigned int wrote_creationDate:1;
+        unsigned int wrote_details:1;
+        unsigned int wrote_notification:1;
+        unsigned int wrote_problemId:1;
+        unsigned int wrote_problemResolution:1;
+        unsigned int wrote_problemState:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEORPDetails *details; // @synthesize details=_details;
-@property(retain, nonatomic) GEORPNotification *notification; // @synthesize notification=_notification;
-@property(retain, nonatomic) GEORPResolution *problemResolution; // @synthesize problemResolution=_problemResolution;
-@property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
-@property(retain, nonatomic) NSString *problemId; // @synthesize problemId=_problemId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,17 +45,27 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEORPDetails *details;
 @property(readonly, nonatomic) _Bool hasDetails;
+- (void)_readDetails;
+@property(retain, nonatomic) GEORPNotification *notification;
 @property(readonly, nonatomic) _Bool hasNotification;
+- (void)_readNotification;
+@property(retain, nonatomic) GEORPResolution *problemResolution;
 @property(readonly, nonatomic) _Bool hasProblemResolution;
+- (void)_readProblemResolution;
 - (int)StringAsProblemState:(id)arg1;
 - (id)problemStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasProblemState;
-@property(nonatomic) int problemState; // @synthesize problemState=_problemState;
+@property(nonatomic) int problemState;
 @property(nonatomic) _Bool hasCreationDate;
+@property(nonatomic) double creationDate;
+@property(retain, nonatomic) NSString *problemId;
 @property(readonly, nonatomic) _Bool hasProblemId;
+- (void)_readProblemId;
 
 @end
 

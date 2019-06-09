@@ -23,6 +23,12 @@
 + (unsigned long long)photosGridLayoutColumnsForWidth:(double)arg1;
 + (long long)photosGridSizeSubclassForScreenSize:(struct CGSize)arg1;
 + (id)allLayoutMetricConfigurationSizes;
++ (id)gadgetColumnWidthSpanDoubleSetBInterpolator;
++ (id)gadgetColumnSpacingSpanDoubleSetBInterpolator;
++ (id)gadgetColumnWidthSpanDoubleSetAInterpolator;
++ (id)gadgetColumnSpacingSpanDoubleSetAInterpolator;
++ (id)gadgetColumnWidthSpanSingleSetAInterpolator;
++ (id)gadgetColumnSpacingSpanSingleSetAInterpolator;
 + (id)layoutMarginWidthInterpolator;
 + (id)legacyLayoutMarginWidthInterpolator;
 + (id)albumsGridItemWidthInterpolator;

@@ -17,20 +17,16 @@
     unsigned int _metricItemRetryCount;
     int _metricItemType;
     struct {
-        unsigned int metricItemSize:1;
-        unsigned int metricItemCount:1;
-        unsigned int metricItemIdHash:1;
-        unsigned int metricItemQueueTime:1;
-        unsigned int metricItemRetryCount:1;
-        unsigned int metricItemType:1;
-    } _has;
+        unsigned int has_metricItemSize:1;
+        unsigned int has_metricItemCount:1;
+        unsigned int has_metricItemIdHash:1;
+        unsigned int has_metricItemQueueTime:1;
+        unsigned int has_metricItemRetryCount:1;
+        unsigned int has_metricItemType:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int metricItemIdHash; // @synthesize metricItemIdHash=_metricItemIdHash;
-@property(nonatomic) unsigned int metricItemQueueTime; // @synthesize metricItemQueueTime=_metricItemQueueTime;
-@property(nonatomic) unsigned long long metricItemSize; // @synthesize metricItemSize=_metricItemSize;
-@property(nonatomic) unsigned int metricItemRetryCount; // @synthesize metricItemRetryCount=_metricItemRetryCount;
-@property(nonatomic) unsigned int metricItemCount; // @synthesize metricItemCount=_metricItemCount;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -38,17 +34,23 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasMetricItemIdHash;
+@property(nonatomic) unsigned int metricItemIdHash;
 @property(nonatomic) _Bool hasMetricItemQueueTime;
+@property(nonatomic) unsigned int metricItemQueueTime;
 @property(nonatomic) _Bool hasMetricItemSize;
+@property(nonatomic) unsigned long long metricItemSize;
 @property(nonatomic) _Bool hasMetricItemRetryCount;
+@property(nonatomic) unsigned int metricItemRetryCount;
 @property(nonatomic) _Bool hasMetricItemCount;
+@property(nonatomic) unsigned int metricItemCount;
 - (int)StringAsMetricItemType:(id)arg1;
 - (id)metricItemTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasMetricItemType;
-@property(nonatomic) int metricItemType; // @synthesize metricItemType=_metricItemType;
+@property(nonatomic) int metricItemType;
 
 @end
 

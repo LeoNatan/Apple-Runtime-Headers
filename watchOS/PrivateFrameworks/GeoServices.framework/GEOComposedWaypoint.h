@@ -8,15 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, GEOMapItemStorage, GEOWaypointTyped;
+@class GEOLatLng, GEOMapItemStorage, GEOWaypointTyped, PBDataReader;
 
 @interface GEOComposedWaypoint : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     GEOLatLng *_latLng;
     GEOMapItemStorage *_mapItemStorage;
     GEOWaypointTyped *_waypoint;
+    struct {
+        unsigned int read_latLng:1;
+        unsigned int read_mapItemStorage:1;
+        unsigned int read_waypoint:1;
+        unsigned int wrote_latLng:1;
+        unsigned int wrote_mapItemStorage:1;
+        unsigned int wrote_waypoint:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (void)composedWaypointForMapServiceResponse:(id)arg1 clientAttributes:(id)arg2 error:(id)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)composedWaypointForWaypointTyped:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 networkActivityHandler:(CDUnknownBlockType)arg3;
 + (id)composedWaypointForTransitID:(unsigned long long)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 isCurrentLocation:(_Bool)arg3 traits:(id)arg4 clientAttributes:(id)arg5 completionHandler:(CDUnknownBlockType)arg6 networkActivityHandler:(CDUnknownBlockType)arg7;
@@ -33,10 +44,7 @@
 + (id)composedWaypointForLocation:(id)arg1 mapItem:(id)arg2 traits:(id)arg3 auditToken:(id)arg4 completionHandler:(CDUnknownBlockType)arg5 networkActivityHandler:(CDUnknownBlockType)arg6;
 + (id)composedWaypointForLocation:(id)arg1 mapItem:(id)arg2 traits:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 networkActivityHandler:(CDUnknownBlockType)arg5;
 + (id)composedWaypointForID:(unsigned long long)arg1 resultsProviderID:(int)arg2 contentProvider:(id)arg3 traits:(id)arg4 clientAttributes:(id)arg5 completionHandler:(CDUnknownBlockType)arg6 networkActivityHandler:(CDUnknownBlockType)arg7;
-+ (id)composedWaypointForID:(unsigned long long)arg1 traits:(id)arg2 clientAttributes:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 networkActivityHandler:(CDUnknownBlockType)arg5;
-@property(retain, nonatomic) GEOLatLng *latLng; // @synthesize latLng=_latLng;
-@property(retain, nonatomic) GEOMapItemStorage *mapItemStorage; // @synthesize mapItemStorage=_mapItemStorage;
-@property(retain, nonatomic) GEOWaypointTyped *waypoint; // @synthesize waypoint=_waypoint;
++ (id)composedWaypointForIdentifier:(id)arg1 traits:(id)arg2 clientAttributes:(id)arg3 completionHandler:(CDUnknownBlockType)arg4 networkActivityHandler:(CDUnknownBlockType)arg5;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -45,17 +53,25 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLatLng *latLng;
 @property(readonly, nonatomic) _Bool hasLatLng;
+- (void)_readLatLng;
+@property(retain, nonatomic) GEOMapItemStorage *mapItemStorage;
 @property(readonly, nonatomic) _Bool hasMapItemStorage;
+- (void)_readMapItemStorage;
+@property(retain, nonatomic) GEOWaypointTyped *waypoint;
 @property(readonly, nonatomic) _Bool hasWaypoint;
+- (void)_readWaypoint;
 - (id)_regionCandidatesForContainment;
 - (id)_addressCandidatesForComparison;
 - (id)_locationCandidatesForComparison;
 - (id)_muidCandidatesForComparison;
 - (_Bool)isSameAs:(id)arg1 comparisonCriteria:(unsigned int)arg2;
 - (_Bool)isSameAs:(id)arg1;
+- (id)bestLatLng;
 - (_Bool)isLocationWaypointType;
 - (id)timezone;
 - (id)geoMapItem;

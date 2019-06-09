@@ -9,7 +9,6 @@
 @class AVRoutePickerRemoteViewController, NSError;
 
 @protocol AVRoutePickerViewRemoteViewControllerDelegate <NSObject>
-- (void)routePickerRemoteViewControllerDidBecomeReadyForDisplay:(AVRoutePickerRemoteViewController *)arg1;
 - (void)routePickerRemoteViewController:(AVRoutePickerRemoteViewController *)arg1 viewBridgeConnectionDidFailWithError:(NSError *)arg2;
 @end
 

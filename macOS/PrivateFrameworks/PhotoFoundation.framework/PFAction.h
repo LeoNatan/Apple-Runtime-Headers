@@ -12,11 +12,11 @@
 {
     int _status;
     BOOL _interrupted;
-    unsigned long long _completedWorkUnits;
+    // Error parsing type: AQ, name: _completedWorkUnits
     unsigned long long _totalWorkUnits;
     BOOL _undoChainedCorrectly;
     BOOL _redoChainedCorrectly;
-    unsigned long long _actionId;
+    // Error parsing type: AQ, name: _actionId
     PFBlockControl *_progressNotice;
     BOOL _executed;
     BOOL _isUndoable;
@@ -36,7 +36,6 @@
 @property(readonly) BOOL executed; // @synthesize executed=_executed;
 @property(retain) NSError *failureAlertError; // @synthesize failureAlertError=_failureAlertError;
 @property(readonly) int status; // @synthesize status=_status;
-@property(readonly) unsigned long long actionId; // @synthesize actionId=_actionId;
 @property(readonly) BOOL wasInterrupted; // @synthesize wasInterrupted=_interrupted;
 - (void).cxx_destruct;
 - (int)executeRedo:(CDUnknownBlockType)arg1;
@@ -84,6 +83,7 @@
 - (int)___performUndo;
 - (void)___performAction:(CDUnknownBlockType)arg1;
 - (int)___performAction;
+@property(readonly) unsigned long long actionId;
 
 @end
 

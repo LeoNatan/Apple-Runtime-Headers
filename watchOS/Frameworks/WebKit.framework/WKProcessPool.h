@@ -45,12 +45,15 @@
 - (id)_downloadURLRequest:(id)arg1 originatingWebView:(id)arg2;
 @property(nonatomic, setter=_setCoreLocationProvider:) id <_WKGeolocationCoreLocationProvider> _coreLocationProvider;
 - (void)_setAllowsAnySSLCertificateForServiceWorker:(_Bool)arg1;
+- (void)_synthesizeAppIsBackground:(_Bool)arg1;
 @property(nonatomic, getter=_isStorageAccessAPIEnabled, setter=_setStorageAccessAPIEnabled:) _Bool _storageAccessAPIEnabled;
 @property(nonatomic, getter=_isCookieStoragePartitioningEnabled, setter=_setCookieStoragePartitioningEnabled:) _Bool _cookieStoragePartitioningEnabled;
 - (unsigned long)_serviceWorkerProcessCount;
+- (unsigned int)_processCacheSize;
 - (unsigned int)_processCacheCapacity;
 - (unsigned int)_maximumSuspendedPageCount;
 - (unsigned long)_pluginProcessCount;
+- (void)_removeCredential:(id)arg1 forProtectionSpace:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_preconnectToServer:(id)arg1;
 - (unsigned long)_webPageContentProcessCount;
 - (unsigned long)_webProcessCountIgnoringPrewarmedAndCached;
@@ -60,9 +63,12 @@
 - (void)_makeNextWebProcessLaunchFailForTesting;
 - (unsigned long)_webProcessCount;
 - (void)_syncNetworkProcessCookies;
+- (int)_prewarmedProcessIdentifier;
 - (int)_networkProcessIdentifier;
 - (void)_disableServiceWorkerProcessTerminationDelay;
 - (void)_terminateServiceWorkerProcesses;
+- (void)_sendNetworkProcessDidResume;
+- (void)_sendNetworkProcessWillSuspendImminently;
 - (void)_terminateNetworkProcess;
 - (void)_clearSupportedPlugins;
 - (void)_addSupportedPlugin:(id)arg1 named:(id)arg2 withMimeTypes:(id)arg3 withExtensions:(id)arg4;
@@ -76,7 +82,6 @@
 - (id)_objectForBundleParameter:(id)arg1;
 - (void)_setCookieAcceptPolicy:(unsigned int)arg1;
 - (void)_setCanHandleHTTPSServerTrustEvaluation:(_Bool)arg1;
-- (void)_setMaximumNumberOfProcesses:(unsigned int)arg1;
 - (void)_registerURLSchemeAsCanDisplayOnlyIfCanRequest:(id)arg1;
 - (void)_registerURLSchemeServiceWorkersCanHandle:(id)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;

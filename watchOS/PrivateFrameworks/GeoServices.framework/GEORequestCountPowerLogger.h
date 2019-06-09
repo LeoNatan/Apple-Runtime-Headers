@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableDictionary, NSString;
+@class GEOXPCActivity, NSDate, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface GEORequestCountPowerLogger : NSObject
@@ -15,6 +15,7 @@
     NSString *_eventName;
     NSDate *_startDate;
     NSMutableDictionary *_clientInfo;
+    GEOXPCActivity *_activity;
 }
 
 + (_Bool)shouldIgnoreRequestType:(unsigned char)arg1 fromClientWithId:(id)arg2;
@@ -24,9 +25,9 @@
 - (void)_cancelXpcActivity;
 - (void)_scheduleXpcActivity;
 - (void)_flushToPowerLog;
+- (void)dealloc;
 - (void)startNewSessionWithName:(id)arg1;
 - (void)incrementCountForClient:(id)arg1 requestType:(unsigned char)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

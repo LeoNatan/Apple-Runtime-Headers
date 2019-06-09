@@ -6,7 +6,7 @@
 
 #import <CoreData/PFMirroredRelationship.h>
 
-@class NSRelationshipDescription, NSString;
+@class CKRecordID, NSRelationshipDescription, NSString;
 
 __attribute__((visibility("hidden")))
 @interface PFMirroredManyToManyRelationship : PFMirroredRelationship
@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     unsigned long long _type;
     NSRelationshipDescription *_relationshipDescription;
     NSRelationshipDescription *_inverseRelationshipDescription;
-    NSString *_manyToManyRecordName;
+    CKRecordID *_manyToManyRecordID;
     NSString *_manyToManyRecordType;
-    NSString *_ckRecordName;
-    NSString *_relatedCKRecordName;
+    CKRecordID *_ckRecordID;
+    CKRecordID *_relatedCKRecordID;
 }
 
 + (id)ckRecordNameForOrderedRecordNames:(id)arg1;
@@ -25,18 +25,19 @@ __attribute__((visibility("hidden")))
 + (id)orderedRelationshipsForRecordType:(id)arg1 andManagedObjectModel:(id)arg2;
 + (id)ckRecordTypeForOrderedRelationships:(id)arg1;
 + (id)orderRelationships:(id)arg1;
-@property(readonly, nonatomic) NSString *relatedCKRecordName; // @synthesize relatedCKRecordName=_relatedCKRecordName;
-@property(readonly, nonatomic) NSString *ckRecordName; // @synthesize ckRecordName=_ckRecordName;
+@property(readonly, nonatomic) CKRecordID *relatedCKRecordID; // @synthesize relatedCKRecordID=_relatedCKRecordID;
+@property(readonly, nonatomic) CKRecordID *ckRecordID; // @synthesize ckRecordID=_ckRecordID;
 @property(readonly, nonatomic) NSString *manyToManyRecordType; // @synthesize manyToManyRecordType=_manyToManyRecordType;
-@property(readonly, nonatomic) NSString *manyToManyRecordName; // @synthesize manyToManyRecordName=_manyToManyRecordName;
+@property(readonly, nonatomic) CKRecordID *manyToManyRecordID; // @synthesize manyToManyRecordID=_manyToManyRecordID;
 @property(readonly, nonatomic) NSRelationshipDescription *inverseRelationshipDescription; // @synthesize inverseRelationshipDescription=_inverseRelationshipDescription;
 @property(readonly, nonatomic) NSRelationshipDescription *relationshipDescription; // @synthesize relationshipDescription=_relationshipDescription;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
-- (id)recordTypesToRecordNames;
+- (id)recordTypeToRecordID;
 - (BOOL)updateRelationshipValueUsingImportContext:(id)arg1 andManagedObjectContext:(id)arg2 error:(id *)arg3;
-- (void)_setManyToManyRecordName:(id)arg1 manyToManyRecordType:(id)arg2 ckRecordName:(id)arg3 relatedCKRecordName:(id)arg4 relationshipDescription:(id)arg5 inverseRelationshipDescription:(id)arg6;
+- (void)_setManyToManyRecordID:(id)arg1 manyToManyRecordType:(id)arg2 ckRecordID:(id)arg3 relatedCKRecordID:(id)arg4 relationshipDescription:(id)arg5 inverseRelationshipDescription:(id)arg6 type:(unsigned long long)arg7;
+- (id)description;
 - (void)dealloc;
-- (id)initWithRecordName:(id)arg1 recordType:(id)arg2 managedObjectModel:(id)arg3 andType:(unsigned long long)arg4;
+- (id)initWithRecordID:(id)arg1 recordType:(id)arg2 managedObjectModel:(id)arg3 andType:(unsigned long long)arg4;
 
 @end
 

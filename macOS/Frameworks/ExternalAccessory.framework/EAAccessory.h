@@ -93,8 +93,10 @@
 - (unsigned int)accessoryCapabilities;
 - (id)coreAccessoriesPrimaryUUID;
 - (BOOL)createdByCoreAccessories;
+- (BOOL)supportsCarPlayAppLinks;
 - (BOOL)supportsWirelessCarPlay;
 - (BOOL)supportsUSBCarPlay;
+- (BOOL)supportsOOBBTPairing2;
 - (BOOL)supportsOOBBTPairing;
 - (BOOL)supportsCarPlay;
 - (BOOL)isAvailableOverBonjour;

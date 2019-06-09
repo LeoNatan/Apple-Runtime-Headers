@@ -10,6 +10,8 @@
 @protocol NSSecureCoding;
 
 @protocol AKAppleIDAuthenticationDaemonProtocol <NSObject>
+- (void)fetchUserInformationForAltDSID:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)fetchURLBagFromCache:(_Bool)arg1 withCompletion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)fetchURLBagWithCompletion:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)accountNamesForAltDSID:(NSString *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 - (void)activeLoginCode:(void (^)(NSString *, NSError *))arg1;
@@ -26,9 +28,12 @@
 - (void)checkInWithAuthenticationServerForAppleID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)configurationInfoWithIdentifiers:(NSArray *)arg1 forAltDSID:(NSString *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)setConfigurationInfo:(id <NSSecureCoding>)arg1 forIdentifier:(NSString *)arg2 forAltDSID:(NSString *)arg3 completion:(void (^)(_Bool, NSError *))arg4;
+- (void)revokeAuthorizationForTeamWithTeamID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)deleteAuthorizationDatabaseWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)fetchAppListWithAltDSID:(NSString *)arg1 completion:(void (^)(AKApplicationMetadataInfo *, NSError *))arg2;
 - (void)fetchDeviceMapWithContext:(AKDeviceListRequestContext *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)fetchAuthModeWithContext:(AKAppleIDAuthenticationContext *)arg1 completion:(void (^)(unsigned int, NSError *))arg2;
-- (void)fetchUserInformationForAltDSID:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)getUserInformationForAltDSID:(NSString *)arg1 completion:(void (^)(AKUserInformation *, NSError *))arg2;
 - (void)setAppleIDWithDSID:(NSNumber *)arg1 inUse:(_Bool)arg2 forService:(int)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)setAppleIDWithAltDSID:(NSString *)arg1 inUse:(_Bool)arg2 forService:(int)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)getServerUILoadDelegateWithContext:(AKAppleIDAuthenticationContext *)arg1 completion:(void (^)(AKAppleIDServerResourceLoadDelegate *, NSError *))arg2;

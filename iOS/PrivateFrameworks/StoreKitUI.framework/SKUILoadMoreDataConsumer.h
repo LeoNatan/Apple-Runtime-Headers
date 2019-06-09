@@ -8,6 +8,7 @@
 
 @class NSSet;
 
+__attribute__((visibility("hidden")))
 @interface SKUILoadMoreDataConsumer : SSVURLDataConsumer
 {
     NSSet *_unavailableItemIdentifiers;

@@ -16,7 +16,6 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
-- (void)calMeCardChanged;
 - (void)calPersistanceNotification:(id)arg1 userInfo:(id)arg2;
 - (void)calDavSharedUIDChanged:(id)arg1;
 - (void)agentUpdatedCache:(id)arg1;

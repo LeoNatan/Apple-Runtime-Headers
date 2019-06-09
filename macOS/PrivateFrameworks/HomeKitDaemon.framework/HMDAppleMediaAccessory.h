@@ -10,9 +10,11 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class HMDAccessorySettingGroup, HMDAccessorySymptomHandler, HMDDevice, HMDRemoteLoginHandler, HMDSoftwareUpdate, HMDTargetControlManager, HMFPairingIdentity, HMFSoftwareVersion, HMFWiFiNetworkInfo, NSString;
+@protocol HMFLocking;
 
 @interface HMDAppleMediaAccessory : HMDMediaAccessory <HMDAccessoryUserManagement, HMFLogging>
 {
+    id <HMFLocking> _lock;
     BOOL _deviceReachable;
     BOOL _fixedPairingIdentityInCloud;
     HMDDevice *_device;
@@ -76,7 +78,6 @@
 - (void)createPairingIdentity;
 - (void)setPairingIdentity:(id)arg1;
 @property(readonly, copy) HMFPairingIdentity *pairingIdentity; // @synthesize pairingIdentity=_pairingIdentity;
-- (void)notifyClientsOfUpdatedRootSettings:(id)arg1;
 - (void)setRootSettings:(id)arg1;
 @property(readonly) HMDAccessorySettingGroup *rootSettings; // @synthesize rootSettings=_rootSettings;
 - (id)runtimeState;
@@ -87,23 +88,23 @@
 - (void)handleDeviceIsReachable:(id)arg1;
 - (void)startMonitoringReachability;
 - (id)deviceMonitor;
-- (void)handleDeviceReachabilityChange:(BOOL)arg1;
 @property(nonatomic, getter=isDeviceReachable) BOOL deviceReachable; // @synthesize deviceReachable=_deviceReachable;
 - (void)handleCurrentDeviceUpdated:(id)arg1;
 - (void)handleCurrentDeviceChanged:(id)arg1;
 - (BOOL)shouldUpdateWithDevice:(id)arg1;
 - (void)__updateDeviceWithDeviceIdentifier:(id)arg1;
 - (void)updateWithDevice:(id)arg1;
-- (void)handleDeviceUpdated;
 - (void)setDevice:(id)arg1;
 @property(readonly) HMDDevice *device; // @synthesize device=_device;
+- (BOOL)supportsMediaContentProfile;
 - (BOOL)requiresHomeAppForManagement;
+- (BOOL)supportsMultiUser;
 - (BOOL)supportsTargetControl;
 - (BOOL)isCurrentAccessory;
 - (void)reconfigureOnMediaSystemDisolve;
 - (void)autoConfigureTargetControllers;
 - (void)_fixCloudKeyIfNeeded;
-- (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryConfigureGroup:(id)arg3;
+- (void)configureWithHome:(id)arg1 msgDispatcher:(id)arg2 configurationTracker:(id)arg3;
 - (void)_registerForMessages;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;

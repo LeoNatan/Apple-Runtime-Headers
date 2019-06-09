@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     int mDirection;
 }
 
+- (void).cxx_destruct;
 - (void)setDirection:(int)arg1;
 - (int)direction;
 - (_Bool)hasColorDirection;

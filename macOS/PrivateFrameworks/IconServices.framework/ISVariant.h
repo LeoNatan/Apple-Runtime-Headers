@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _type;
     int _sizeSet;
+    NSDictionary *_assetCatalogReference;
     ISIconset *_iconset;
     NSString *_name;
-    NSDictionary *_compositionInfo;
     NSMutableDictionary *_resources;
     ISVariant *_selectedVariant;
 }
@@ -26,10 +26,10 @@ __attribute__((visibility("hidden")))
 @property int sizeSet; // @synthesize sizeSet=_sizeSet;
 @property(retain) ISVariant *selectedVariant; // @synthesize selectedVariant=_selectedVariant;
 @property(readonly) NSMutableDictionary *resources; // @synthesize resources=_resources;
-@property(retain) NSDictionary *compositionInfo; // @synthesize compositionInfo=_compositionInfo;
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property(readonly) __weak ISIconset *iconset; // @synthesize iconset=_iconset;
 @property unsigned int type; // @synthesize type=_type;
+@property(retain) NSDictionary *assetCatalogReference; // @synthesize assetCatalogReference=_assetCatalogReference;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)icnsWithFlags:(long long)arg1;

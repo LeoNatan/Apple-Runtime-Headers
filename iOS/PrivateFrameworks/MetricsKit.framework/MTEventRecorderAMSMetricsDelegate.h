@@ -9,20 +9,32 @@
 #import <MetricsKit/AMSMetricsBagContract-Protocol.h>
 #import <MetricsKit/MTEventRecorderDelegate-Protocol.h>
 
-@class AMSBagValue, MTPromise, NSDictionary, NSString;
+@class AMSBag, AMSBagValue, AMSMetrics, NSDictionary, NSString;
 @protocol AMSMescalBagContract, AMSMetricsBagContract;
 
 @interface MTEventRecorderAMSMetricsDelegate : MTObject <AMSMetricsBagContract, MTEventRecorderDelegate>
 {
+    _Bool _monitorsLifecycleEvents;
     NSString *_containerId;
     NSDictionary *_lastMetricsDictionary;
-    MTPromise *_metricsPromise;
+    AMSBag *_amsBag;
+    AMSMetrics *_bagBasedAMSMetrics;
+    AMSMetrics *_contractBasedAMSMetrics;
+    AMSMetrics *_backgroundAMSMetrics;
 }
 
-@property(retain, nonatomic) MTPromise *metricsPromise; // @synthesize metricsPromise=_metricsPromise;
++ (id)bundleIdentifier;
+@property(retain, nonatomic) AMSMetrics *backgroundAMSMetrics; // @synthesize backgroundAMSMetrics=_backgroundAMSMetrics;
+@property(retain, nonatomic) AMSMetrics *contractBasedAMSMetrics; // @synthesize contractBasedAMSMetrics=_contractBasedAMSMetrics;
+@property(retain, nonatomic) AMSMetrics *bagBasedAMSMetrics; // @synthesize bagBasedAMSMetrics=_bagBasedAMSMetrics;
+@property(retain, nonatomic) AMSBag *amsBag; // @synthesize amsBag=_amsBag;
 @property(retain, nonatomic) NSDictionary *lastMetricsDictionary; // @synthesize lastMetricsDictionary=_lastMetricsDictionary;
 @property(retain, nonatomic) NSString *containerId; // @synthesize containerId=_containerId;
+@property(nonatomic) _Bool monitorsLifecycleEvents; // @synthesize monitorsLifecycleEvents=_monitorsLifecycleEvents;
 - (void).cxx_destruct;
+- (_Bool)shouldFlushBackgroundMetrics;
+@property(readonly, nonatomic) id <AMSMescalBagContract> mescalContract;
+@property(readonly, nonatomic) AMSBagValue *trustedDomains;
 @property(readonly, nonatomic) AMSBagValue *metricsDictionary;
 - (id)flushUnreportedEvents;
 - (id)sendMethod;
@@ -45,13 +57,11 @@
 @property(readonly, nonatomic) AMSBagValue *guidRegexes;
 @property(readonly, nonatomic) AMSBagValue *guidSchemes;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) id <AMSMescalBagContract> mescalContract;
 @property(readonly, nonatomic) id <AMSMetricsBagContract> metricsContract;
 @property(readonly, nonatomic) AMSBagValue *metricsURL;
 @property(readonly, nonatomic) AMSBagValue *metricsUrl;
 @property(readonly, nonatomic) AMSBagValue *storefrontSuffix;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) AMSBagValue *trustedDomains;
 
 @end
 

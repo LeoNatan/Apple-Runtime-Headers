@@ -6,13 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <InputMethodKit/IMKCandidateControllerDelegate-Protocol.h>
-#import <InputMethodKit/IMKCandidateSelectionViewDelegate-Protocol.h>
-
 @class IMKCandidate, IMKCandidateListDictionary, IMKCandidates, IMKServer, IMKUICandidateTouchBarItemController, IMKUICandidateWindowController, IMKUICandidateWindowPositionController, NSArray, NSDictionary, NSString, NSValue, NSView;
 @protocol IMKCandidatesDelegate, IMKCandidatesSimulatorDelegate;
 
-@interface IMKCandidatesPrivate : NSObject <IMKCandidateControllerDelegate, IMKCandidateSelectionViewDelegate>
+@interface IMKCandidatesPrivate : NSObject
 {
     long long _alignment;
     NSDictionary *_attributes;
@@ -62,12 +59,15 @@
 @property(retain, nonatomic) IMKUICandidateTouchBarItemController *candidateTouchBarController; // @synthesize candidateTouchBarController=_candidateTouchBarController;
 @property(retain, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
+- (void)radarButtonPressed;
+- (id)visibleCandidates;
 - (BOOL)isExpanded;
 - (id)selectedCandidateForSender:(id)arg1 proposedCandidate:(id)arg2;
 - (unsigned long long)firstVisibleLineForSender:(id)arg1;
 - (struct CGRect)contentFrameForWindowWithSize:(struct CGSize)arg1;
 - (struct CGPoint)positionForWindowWithSize:(struct CGSize)arg1 sender:(id)arg2;
 - (struct CGSize)preferredWindowSize:(struct CGSize)arg1;
+- (void)didHideCandidates:(id)arg1;
 - (void)didFinishInteracting:(id)arg1;
 - (void)didUpdateVisibleCandidates:(id)arg1;
 - (void)didSelectSortingMode:(id)arg1 sender:(id)arg2;
@@ -85,14 +85,9 @@
 - (id)IMKCandidates;
 - (id)layoutTraitsForFontSize:(double)arg1 alignment:(long long)arg2;
 - (id)itemLayoutForFontSize:(double)arg1;
+- (void)createInternalCandidateController;
 - (void)dealloc;
 - (id)initWithServer:(id)arg1 panelType:(unsigned long long)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

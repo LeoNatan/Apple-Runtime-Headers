@@ -14,15 +14,27 @@
     NSString *_languageCode;
     NSString *_productCategory;
     NSNumber *_version;
+    unsigned long long _onboardType;
+    NSString *_homeId;
+    NSString *_userName;
+    NSNumber *_baseVersion;
+    NSNumber *_implicitVersion;
+    NSString *_siriDebugProfileId;
 }
 
+@property(retain, nonatomic) NSString *siriDebugProfileId; // @synthesize siriDebugProfileId=_siriDebugProfileId;
+@property(retain, nonatomic) NSNumber *implicitVersion; // @synthesize implicitVersion=_implicitVersion;
+@property(retain, nonatomic) NSNumber *baseVersion; // @synthesize baseVersion=_baseVersion;
+@property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
+@property(retain, nonatomic) NSString *homeId; // @synthesize homeId=_homeId;
+@property(nonatomic) unsigned long long onboardType; // @synthesize onboardType=_onboardType;
 @property(retain, nonatomic) NSNumber *version; // @synthesize version=_version;
 @property(retain, nonatomic) NSString *productCategory; // @synthesize productCategory=_productCategory;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(retain, nonatomic) NSString *profileId; // @synthesize profileId=_profileId;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithProfileId:(id)arg1 languageCode:(id)arg2 productCategory:(id)arg3 version:(id)arg4;
+- (id)initWithSharedSiriId:(id)arg1 languageCode:(id)arg2 productCategory:(id)arg3 version:(id)arg4 sharedHomeId:(id)arg5 userName:(id)arg6;
 
 @end
 

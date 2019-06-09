@@ -8,13 +8,18 @@
 
 @class NSDate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TimedEndpoint : NSObject
 {
     NSString *_trigger;
     NSString *_name;
     NSDate *_time;
+    long long _interfaceType;
+    unsigned long long _stallType;
 }
 
+@property(readonly, nonatomic) unsigned long long stallType; // @synthesize stallType=_stallType;
+@property(readonly, nonatomic) long long interfaceType; // @synthesize interfaceType=_interfaceType;
 @property(readonly, nonatomic) NSDate *time; // @synthesize time=_time;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
@@ -22,7 +27,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithEndpoint:(id)arg1 trigger:(id)arg2;
+- (id)initWithEndpoint:(id)arg1 trigger:(id)arg2 interfaceType:(long long)arg3 stallType:(unsigned long long)arg4;
 
 @end
 

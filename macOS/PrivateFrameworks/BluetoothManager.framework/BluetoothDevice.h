@@ -16,6 +16,7 @@
     unsigned int _connectingServiceMask;
 }
 
+- (int)getLowSecurityStatus;
 - (unsigned int)getConnectingServiceMask;
 - (void)setConnectingServicemask:(unsigned int)arg1;
 - (BOOL)setUserName:(id)arg1;
@@ -55,6 +56,7 @@
 - (BOOL)supportsBatteryLevel;
 - (unsigned long long)connectedServicesCount;
 - (unsigned long long)connectedServices;
+- (BOOL)isTemporaryPaired;
 - (BOOL)connected;
 - (BOOL)magicPaired;
 - (BOOL)cloudPaired;

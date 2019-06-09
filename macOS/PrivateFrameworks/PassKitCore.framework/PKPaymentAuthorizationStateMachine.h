@@ -81,6 +81,7 @@
 - (void)_performNonceRequestWithParam:(id)arg1;
 - (id)_pendingTransactionOnAlternateFundingSourceForAutorizedPeerPaymentQuote:(id)arg1;
 - (id)_pendingTransactionOnPeerPaymentPassForAuthorizedPeerPaymentQuote:(id)arg1;
+- (void)_enqueueDidAuthorizeAccountServicePaymentRequestWithApplePayTrustSignature:(id)arg1;
 - (void)_enqueueDidAuthorizeDisbursementWithVoucher:(id)arg1;
 - (void)_enqueueDidAuthorizePeerPaymentQuoteWithAuthorizedQuote:(id)arg1;
 - (void)_enqeueDidAuthorizePurchaseWithParam:(id)arg1;
@@ -88,6 +89,7 @@
 - (void)_enqueueDidAuthorizePaymentWithRemotePayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithByPassPayment:(id)arg1;
 - (void)_enqueueDidAuthorizePaymentWithToken:(id)arg1;
+- (void)_enqueueDidUpdateAccountServicePaymentMethod:(id)arg1;
 - (void)_enqueueDidSelectRemotePaymentInstrument:(id)arg1 paymentApplication:(id)arg2;
 - (void)_enqueueDidSelectRemotePaymentInstrument:(id)arg1;
 - (void)_enqueueDidSelectPaymentPass:(id)arg1 paymentApplication:(id)arg2;
@@ -138,10 +140,13 @@
 - (void)didSelectPaymentPass:(id)arg1 paymentApplication:(id)arg2;
 - (void)didSelectPaymentPass:(id)arg1;
 - (void)didReceiveShippingMethodCompleteWithStatus:(long long)arg1 paymentSummaryItems:(id)arg2;
+- (void)didReceiveUpdateAccountServicePaymentMethodCompleteWithUpdate:(id)arg1 signatureRequest:(id)arg2;
 - (void)didReceiveShippingMethodCompleteWithUpdate:(id)arg1;
 - (void)didSelectShippingMethod:(id)arg1;
 - (void)didReceiveShippingContactCompleteWithStatus:(long long)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
 - (void)didReceiveShippingContactCompleteWithUpdate:(id)arg1;
+- (void)didSelectBankAccount:(id)arg1;
+- (void)didUpdatePeerPaymentBalance:(id)arg1;
 - (void)didSelectShippingContact:(id)arg1;
 - (void)_processErrorsForDataType:(long long)arg1;
 - (void)didSelectBillingAddress:(id)arg1;

@@ -10,6 +10,7 @@
 + (id)contactKeysToLoadForMedicalID;
 - (id)_contactKeysToFetch;
 - (_Bool)_updateIdentifierByPhoneNumberForEmergencyContact:(id)arg1 contactStore:(id)arg2;
+- (_Bool)_updateExistingEmergencyContacts;
 - (_Bool)updateEmergencyContacts;
 - (void)loadDataFromCNContact:(id)arg1;
 @end

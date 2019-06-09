@@ -26,7 +26,6 @@
 - (void)_initializeWithType:(int)arg1 tasteType:(int)arg2;
 - (id)initWithStoreAdamID:(long long)arg1 tasteType:(int)arg2;
 - (id)initWithPlaylistGlobalID:(id)arg1 tasteType:(int)arg2;
-- (id)init;
 
 @end
 

@@ -8,5 +8,12 @@
 
 @interface AXRemoteElement (UIAccessibilityElementTraversal)
 - (_Bool)_accessibilityEnumerateSiblingsWithParent:(id *)arg1 options:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (id)_ancestorElementThatSupportsActivationAction;
+- (_Bool)accessibilityActivate;
+- (id)_iosAccessibilityAttributeValue:(long long)arg1;
+- (id)_iosAccessibilityAttributeValue:(long long)arg1 forParameter:(id)arg2;
+- (_Bool)_accessibilityIsRemoteElement;
+- (_Bool)accessibilityViewIsModal;
+- (void)platformCleanup;
 @end
 

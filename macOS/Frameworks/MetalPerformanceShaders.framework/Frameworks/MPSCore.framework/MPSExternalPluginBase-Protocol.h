@@ -9,6 +9,7 @@
 @protocol MTLDevice;
 
 @protocol MPSExternalPluginBase <NSObject>
+- (unsigned long long)maxBatchSize;
 - (id <MTLDevice>)device;
 - (id)initWithDevice:(id <MTLDevice>)arg1;
 @end

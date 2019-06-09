@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class AVNowPlayingInfoController, AVPlayer, AVPlayerController, AVRemoteCommandController, AVUnsupportedContentIndicatorView, AVWatchPlaybackControlsViewController, NSString, NSTimer, __AVPlayerLayerView;
+@class AVBehaviorStorage, AVNowPlayingInfoController, AVPlayer, AVPlayerController, AVRemoteCommandController, AVUnsupportedContentIndicatorView, AVWatchPlaybackControlsViewController, NSArray, NSString, NSTimer, __AVPlayerLayerView;
 @protocol AVPlayerViewControllerDelegate;
 
 @interface AVPlayerViewController : UIViewController
@@ -31,11 +31,13 @@
     struct {
         _Bool playerViewControllerShouldHandleDoneButtonTap;
     } _delegateRespondsTo;
+    AVBehaviorStorage *__behaviorStorage;
 }
 
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoGravity;
 + (id)keyPathsForValuesAffectingPlayer;
+@property(readonly, nonatomic) AVBehaviorStorage *_behaviorStorage; // @synthesize _behaviorStorage=__behaviorStorage;
 - (void).cxx_destruct;
 - (_Bool)_showsPlaybackControlsView;
 - (void)_showOrHidePlaybackControlsView;
@@ -63,6 +65,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
+- (void)_ensureBehaviorStorage;
 @property(nonatomic) __weak id <AVPlayerViewControllerDelegate> delegate;
 @property(readonly, nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay;
 @property(retain, nonatomic) AVPlayerController *playerController;
@@ -72,6 +75,9 @@
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+@property(readonly, nonatomic) NSArray *behaviors;
+- (void)removeBehavior:(id)arg1;
+- (void)addBehavior:(id)arg1;
 - (void)showPlaybackControlsViewForVolumeChange;
 - (void)hidePlaybackControlsViewForTouchUp;
 - (void)showPlaybackControlsViewForTouchDown;

@@ -38,9 +38,9 @@
 - (void)queryCounts;
 - (id)initWithManager:(id)arg1 source:(unsigned long long)arg2 provider:(unsigned int)arg3;
 - (BOOL)handleMessage:(struct nstat_msg_hdr *)arg1 length:(long long)arg2;
-- (BOOL)_handleDescriptor:(void *)arg1 length:(unsigned long long)arg2;
+- (BOOL)_handleDescriptor:(void *)arg1 length:(unsigned long long)arg2 events:(unsigned long long)arg3;
 - (BOOL)handleCounts:(const struct nstat_counts *)arg1;
-- (int)handleDescriptor:(void *)arg1 length:(unsigned long long)arg2;
+- (int)handleDescriptor:(void *)arg1 length:(unsigned long long)arg2 events:(unsigned long long)arg3;
 @property(readonly) const struct nstat_counts *_nstat_counts;
 @property(readonly) unsigned long long snapshotRevision;
 @property(readonly) unsigned long long sourceIdentifier;

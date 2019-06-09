@@ -15,8 +15,10 @@
 {
     id <MTLDevice> _device;
     NSString *_label;
+    unsigned long long _resourceIndex;
 }
 
+@property(nonatomic) unsigned long long resourceIndex; // @synthesize resourceIndex=_resourceIndex;
 @property(readonly) NSString *label; // @synthesize label=_label;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly, copy) NSString *description;

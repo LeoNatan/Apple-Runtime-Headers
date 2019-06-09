@@ -33,6 +33,8 @@
     UIImageView *_compactAccessoryGlowView;
     UIImage *_minimumValueImage;
     UIImage *_maximumValueImage;
+    UIView *_minimumValueView;
+    UIView *_maximumValueView;
     UIColor *_fillColor;
     UIColor *_gutterColor;
     NSObject<OS_dispatch_source> *_crownGlowDismissTimer;
@@ -53,6 +55,8 @@
 
 + (void)initialize;
 @property(nonatomic) _Bool hapticFeedbackEnabled; // @synthesize hapticFeedbackEnabled=_hapticFeedbackEnabled;
+@property(retain, nonatomic) UIView *maximumValueView; // @synthesize maximumValueView=_maximumValueView;
+@property(retain, nonatomic) UIView *minimumValueView; // @synthesize minimumValueView=_minimumValueView;
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(nonatomic) float pillHighlightedGlowOpacity; // @synthesize pillHighlightedGlowOpacity=_pillHighlightedGlowOpacity;
 @property(nonatomic) _Bool shouldFadeAccessoryImages; // @synthesize shouldFadeAccessoryImages=_shouldFadeAccessoryImages;
@@ -73,6 +77,7 @@
 - (int)_touchTargetFromTouches:(id)arg1;
 - (float)_percentFillForValue:(float)arg1;
 - (struct CGRect)_fillBoundsForValue:(float)arg1;
+- (void)_updateValueViews;
 - (void)_updateCrownGlowLayer;
 - (void)_updateTrackViews;
 - (id)_continousFillViewWithTrackRect:(struct CGRect)arg1;
@@ -84,6 +89,8 @@
 - (void)_setStyle:(int)arg1;
 - (void)_temporarilySwapToStyle:(int)arg1 bounds:(struct CGRect)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_animateTransitionToCompactStyleWithDuration:(double)arg1 bounds:(struct CGRect)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_maxValueView;
+- (id)_minValueView;
 - (void)_animateTransitionFromCompactStyleToStyle:(int)arg1 duration:(double)arg2 bounds:(struct CGRect)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)animateTransitionToStyle:(int)arg1 duration:(double)arg2 bounds:(struct CGRect)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_animatePressView:(id)arg1 state:(id)arg2;

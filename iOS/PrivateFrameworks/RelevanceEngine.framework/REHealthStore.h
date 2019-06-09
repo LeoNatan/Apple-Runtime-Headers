@@ -17,9 +17,9 @@
 
 - (void).cxx_destruct;
 - (void)accessHealthStore:(CDUnknownBlockType)arg1;
-- (_Bool)_isCarousel;
+- (_Bool)_isClockHostApp;
 - (id)_createStore;
-- (id)init;
+- (id)_init;
 
 @end
 

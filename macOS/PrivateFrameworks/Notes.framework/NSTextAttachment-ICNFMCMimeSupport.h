@@ -6,14 +6,11 @@
 
 #import <AppKit/NSTextAttachment.h>
 
-@class ICNFMCMimePart, NSData;
+@class ICNFMCMimePart;
 
 @interface NSTextAttachment (ICNFMCMimeSupport)
-@property(readonly, copy, nonatomic) NSData *internalAppleAttachmentData;
-@property(readonly, nonatomic) BOOL shouldDownloadAttachmentOnDisplay;
-@property(readonly, nonatomic) BOOL isPlaceholder;
-@property(readonly, nonatomic) BOOL hasBeenDownloaded;
-@property(readonly, nonatomic) ICNFMCMimePart *mimePart;
-@property(readonly, nonatomic) unsigned long long approximateSize;
+@property(readonly, nonatomic) BOOL ic_isPlaceholder;
+@property(readonly, nonatomic) ICNFMCMimePart *ic_mimePart;
+@property(readonly, nonatomic) unsigned long long ic_approximateSize;
 @end
 

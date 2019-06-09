@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedCache;
 - (void).cxx_destruct;
-- (id)buttonImageWithSize:(struct CGSize)arg1 type:(long long)arg2 color:(id)arg3;
+- (id)buttonImageWithSize:(struct CGSize)arg1 state:(long long)arg2 color:(id)arg3;
 
 @end
 

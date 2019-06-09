@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     int m_state;
 }
 
+- (void).cxx_destruct;
 - (void)appendBezierPath:(id)arg1 dc:(id)arg2;
 - (id)getBezierPath;
 - (int)fill:(id)arg1;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isOpen;
 - (int)state;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithPath:(id)arg1 state:(int)arg2;
 - (id)init;
 

@@ -6,25 +6,28 @@
 
 #import <objc/NSObject.h>
 
-#import <VectorKit/VKOverlay-Protocol.h>
+#import <VectorKit/VKRouteOverlay-Protocol.h>
 
 @class GEOMapRegion, NSMutableSet, NSSet, NSString, VKPolylineOverlay;
 
-@interface VKPolylineGroupOverlay : NSObject <VKOverlay>
+@interface VKPolylineGroupOverlay : NSObject <VKRouteOverlay>
 {
     NSMutableSet *_polylines;
     GEOMapRegion *_boundingMapRegion;
     struct __CFSet *_observers;
     VKPolylineOverlay *_selectedPolyline;
+    VKPolylineOverlay *_focusedPolyline;
     BOOL _containsTransit;
     BOOL _showTraffic;
 }
 
 @property(nonatomic) BOOL showTraffic; // @synthesize showTraffic=_showTraffic;
 @property(readonly, nonatomic) BOOL containsTransit; // @synthesize containsTransit=_containsTransit;
+@property(retain, nonatomic) VKPolylineOverlay *focusedPolyline; // @synthesize focusedPolyline=_focusedPolyline;
 @property(retain, nonatomic) VKPolylineOverlay *selectedPolyline; // @synthesize selectedPolyline=_selectedPolyline;
 @property(readonly, nonatomic) GEOMapRegion *boundingMapRegion; // @synthesize boundingMapRegion=_boundingMapRegion;
 @property(readonly, nonatomic) NSSet *polylines; // @synthesize polylines=_polylines;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 - (void)_updateContainsTransit;
 - (void)_updateBoundingMapRegion;
@@ -36,7 +39,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

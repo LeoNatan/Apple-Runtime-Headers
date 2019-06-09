@@ -6,6 +6,7 @@
 
 #import <UIKit/UISplitViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface _SKUISplitViewDocumentSplitViewController : UISplitViewController
 {
 }

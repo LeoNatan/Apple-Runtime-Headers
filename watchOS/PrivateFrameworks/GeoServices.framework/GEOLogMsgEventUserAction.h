@@ -8,20 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEOLogMsgEventUserAction : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     NSString *_userActionEventKey;
-    int _userActionEventTarget;
     NSString *_userActionEventValue;
+    int _userActionEventTarget;
     struct {
-        unsigned int userActionEventTarget:1;
-    } _has;
+        unsigned int has_userActionEventTarget:1;
+        unsigned int read_userActionEventKey:1;
+        unsigned int read_userActionEventValue:1;
+        unsigned int wrote_userActionEventKey:1;
+        unsigned int wrote_userActionEventValue:1;
+        unsigned int wrote_userActionEventTarget:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *userActionEventValue; // @synthesize userActionEventValue=_userActionEventValue;
-@property(retain, nonatomic) NSString *userActionEventKey; // @synthesize userActionEventKey=_userActionEventKey;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -30,14 +36,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsUserActionEventTarget:(id)arg1;
 - (id)userActionEventTargetAsString:(int)arg1;
 @property(nonatomic) _Bool hasUserActionEventTarget;
-@property(nonatomic) int userActionEventTarget; // @synthesize userActionEventTarget=_userActionEventTarget;
+@property(nonatomic) int userActionEventTarget;
+@property(retain, nonatomic) NSString *userActionEventValue;
 @property(readonly, nonatomic) _Bool hasUserActionEventValue;
+- (void)_readUserActionEventValue;
+@property(retain, nonatomic) NSString *userActionEventKey;
 @property(readonly, nonatomic) _Bool hasUserActionEventKey;
+- (void)_readUserActionEventKey;
 
 @end
 

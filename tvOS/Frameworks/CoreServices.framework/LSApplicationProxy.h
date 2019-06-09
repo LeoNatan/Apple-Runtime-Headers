@@ -8,13 +8,17 @@
 
 #import <CoreServices/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSNumber, NSProgress, NSString, NSUUID, _LSApplicationState, _LSDiskUsage;
+@class NSArray, NSDate, NSDictionary, NSNumber, NSProgress, NSSet, NSString, NSUUID, _LSApplicationState, _LSDiskUsage;
 
 @interface LSApplicationProxy : LSBundleProxy <NSSecureCoding>
 {
     NSString *_deviceIdentifierVendorName;
     NSArray *_pluginUUIDs;
     NSNumber *_versionID;
+    NSDictionary *_claimHandlerRanks;
+    unsigned int _platform;
+    _Bool _standaloneWatchApp;
+    _Bool _runsIndependentlyOfCompanionApp;
     _Bool _userInitiatedUninstall;
     int _bundleModTime;
     NSArray *_plugInKitPlugins;
@@ -46,11 +50,15 @@
     NSString *_ratingLabel;
     NSString *_sourceAppIdentifier;
     NSString *_applicationVariant;
+    NSArray *_managedPersonas;
     NSString *_watchKitVersion;
     NSString *_complicationPrincipalClass;
     NSArray *_supportedComplicationFamilies;
     NSNumber *_installFailureReason;
     NSString *_appStoreToolsBuildVersion;
+    NSSet *_claimedDocumentContentTypes;
+    NSSet *_claimedURLSchemes;
+    NSArray *_backgroundTaskSchedulerPermittedIdentifiers;
 }
 
 + (id)iconQueue;
@@ -66,11 +74,17 @@
 + (id)applicationProxyWithBundleUnitID:(unsigned int)arg1 withContext:(struct LSContext *)arg2;
 @property(readonly, nonatomic) int bundleModTime; // @synthesize bundleModTime=_bundleModTime;
 @property(nonatomic) _Bool userInitiatedUninstall; // @synthesize userInitiatedUninstall=_userInitiatedUninstall;
+@property(readonly, nonatomic) _Bool runsIndependentlyOfCompanionApp; // @synthesize runsIndependentlyOfCompanionApp=_runsIndependentlyOfCompanionApp;
+@property(readonly, nonatomic, getter=isStandaloneWatchApp) _Bool standaloneWatchApp; // @synthesize standaloneWatchApp=_standaloneWatchApp;
+@property(readonly, nonatomic) NSArray *backgroundTaskSchedulerPermittedIdentifiers; // @synthesize backgroundTaskSchedulerPermittedIdentifiers=_backgroundTaskSchedulerPermittedIdentifiers;
+@property(readonly, nonatomic) NSSet *claimedURLSchemes; // @synthesize claimedURLSchemes=_claimedURLSchemes;
+@property(readonly, nonatomic) NSSet *claimedDocumentContentTypes; // @synthesize claimedDocumentContentTypes=_claimedDocumentContentTypes;
 @property(readonly, nonatomic) NSString *appStoreToolsBuildVersion; // @synthesize appStoreToolsBuildVersion=_appStoreToolsBuildVersion;
 @property(readonly, nonatomic) NSNumber *installFailureReason; // @synthesize installFailureReason=_installFailureReason;
-@property(readonly) NSArray *supportedComplicationFamilies; // @synthesize supportedComplicationFamilies=_supportedComplicationFamilies;
-@property(readonly) NSString *complicationPrincipalClass; // @synthesize complicationPrincipalClass=_complicationPrincipalClass;
+@property(readonly, nonatomic) NSArray *supportedComplicationFamilies; // @synthesize supportedComplicationFamilies=_supportedComplicationFamilies;
+@property(readonly, nonatomic) NSString *complicationPrincipalClass; // @synthesize complicationPrincipalClass=_complicationPrincipalClass;
 @property(readonly, nonatomic) NSString *watchKitVersion; // @synthesize watchKitVersion=_watchKitVersion;
+@property(readonly, nonatomic) NSArray *managedPersonas; // @synthesize managedPersonas=_managedPersonas;
 @property(readonly, nonatomic) NSString *applicationVariant; // @synthesize applicationVariant=_applicationVariant;
 @property(readonly, nonatomic) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
 @property(readonly, nonatomic) NSString *ratingLabel; // @synthesize ratingLabel=_ratingLabel;
@@ -99,13 +113,20 @@
 @property(readonly, nonatomic) NSArray *counterpartIdentifiers; // @synthesize counterpartIdentifiers=_counterpartIdentifiers;
 @property(readonly, nonatomic) NSString *companionApplicationIdentifier; // @synthesize companionApplicationIdentifier=_companionApplicationIdentifier;
 - (id)signerOrganization;
+- (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic, getter=isArcadeApp) _Bool arcadeApp;
+@property(readonly, nonatomic) NSNumber *platform;
+@property(readonly, nonatomic) _Bool supportsMultiwindow;
+@property(readonly, nonatomic) _Bool canHandleWebAuthentication;
+- (id)handlerRankOfClaimForContentType:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *siriActionDefinitionURLs;
 - (void)getDeviceManagementPolicyWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) long long deviceManagementPolicy;
 @property(readonly, nonatomic, getter=isRemovedSystemApp) _Bool removedSystemApp;
 @property(readonly, nonatomic, getter=isRemoveableSystemApp) _Bool removeableSystemApp;
 @property(readonly, nonatomic, getter=isDeletable) _Bool deletable;
+- (_Bool)isDeletableIgnoringRestrictions;
 @property(readonly, nonatomic) _Bool gameCenterEverEnabled;
 @property(readonly, nonatomic, getter=isGameCenterEnabled) _Bool gameCenterEnabled;
 @property(readonly, nonatomic) _Bool supportsPurgeableLocalStorage;
@@ -113,7 +134,7 @@
 @property(readonly, nonatomic) _Bool hasMIDBasedSINF;
 @property(readonly, nonatomic) _Bool shouldSkipWatchAppInstall;
 @property(readonly, nonatomic) _Bool hasGlance;
-@property(readonly) _Bool hasComplication;
+@property(readonly, nonatomic) _Bool hasComplication;
 @property(readonly, nonatomic) _Bool hasCustomNotification;
 @property(readonly, nonatomic, getter=isWatchKitApp) _Bool watchKitApp;
 @property(readonly, nonatomic, getter=isPurchasedReDownload) _Bool purchasedReDownload;
@@ -143,8 +164,6 @@
 - (id)primaryIconDataForVariant:(int)arg1;
 - (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (id)iconDataForVariant:(int)arg1;
-- (id)iconDataForVariant:(int)arg1 preferredIconName:(id)arg2 withOptions:(int)arg3;
-- (id)resourcesDirectoryURL;
 - (id)installProgressSync;
 @property(readonly, nonatomic) NSProgress *installProgress;
 @property(readonly, nonatomic) NSNumber *betaExternalVersionIdentifier; // @dynamic betaExternalVersionIdentifier;
@@ -162,6 +181,7 @@
 @property(readonly, nonatomic) NSNumber *ODRDiskUsage;
 @property(readonly, nonatomic) NSNumber *dynamicDiskUsage;
 @property(readonly, nonatomic) NSNumber *staticDiskUsage;
+@property(readonly, nonatomic) NSString *appIDPrefix;
 @property(readonly, nonatomic) NSArray *externalAccessoryProtocols;
 @property(readonly, nonatomic) NSArray *audioComponents;
 @property(readonly, nonatomic) NSArray *UIBackgroundModes;
@@ -175,9 +195,8 @@
 - (id)uniqueIdentifier;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)_initWithBundleUnit:(unsigned int)arg1 context:(struct LSContext *)arg2 applicationIdentifier:(id)arg3;
-- (id)localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(_Bool)arg2;
+- (id)_localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(_Bool)arg2;
 - (id)localizedNameForContext:(id)arg1 preferredLocalizations:(id)arg2;
 - (id)localizedNameForContext:(id)arg1;
 - (id)localizedNameForContext:(id)arg1 preferredLocalizations:(id)arg2 useShortNameOnly:(_Bool)arg3;

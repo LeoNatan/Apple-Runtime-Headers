@@ -22,7 +22,7 @@
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 - (id)_debugDictionary;
-- (void)_playAtTime:(double)arg1 engine:(id)arg2;
+- (void)_playedAtTime:(double)arg1 engine:(id)arg2;
 - (unsigned long long)_effectiveEventType;
 - (id)_playableProtocol;
 - (id)dictionaryRepresentation;

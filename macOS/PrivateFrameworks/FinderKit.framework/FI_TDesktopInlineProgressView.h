@@ -45,8 +45,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double percentComplete; // @dynamic percentComplete;
 - (void)initCommon;
 - (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(const struct CGRect *)arg1 canCancel:(_Bool)arg2 initialPercentComplete:(double)arg3;
 
 // Remaining properties

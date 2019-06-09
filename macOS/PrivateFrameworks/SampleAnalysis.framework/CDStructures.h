@@ -478,7 +478,15 @@ typedef struct {
     unsigned char _field2;
     unsigned long long _field3;
     unsigned char _field4[16];
-} CDStruct_e7a0f457;
+    unsigned long long _field5;
+    unsigned long long _field6;
+    unsigned long long _field7;
+    unsigned long long _field8;
+    unsigned long long _field9;
+    unsigned long long _field10;
+    unsigned int _field11;
+    unsigned int _field12;
+} CDStruct_0ce2a4d3;
 
 typedef struct {
     unsigned char _field1;

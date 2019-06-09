@@ -16,12 +16,54 @@ struct CC_SHA256state_st {
     unsigned int wbuf[16];
 };
 
+struct Script;
+
 struct _CircularBuffer {
     char *_field1;
     char *_field2;
     char *_field3;
     unsigned long long _field4;
     unsigned char _field5[0];
+};
+
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *_field1;
+};
+
+struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned long long _field1;
+                    unsigned long long _field2;
+                    char *_field3;
+                } _field1;
+                struct __short {
+                    union {
+                        unsigned char _field1;
+                        char _field2;
+                    } _field1;
+                    char _field2[23];
+                } _field2;
+                struct __raw {
+                    unsigned long long _field1[3];
+                } _field3;
+            } _field1;
+        } _field1;
+    } _field1;
+};
+
+struct map<std::__1::basic_string<char>, OVM::Var, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, OVM::Var>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
 };
 
 struct os_state_data_decoder_s {
@@ -40,10 +82,98 @@ struct os_state_data_s {
     unsigned char _field5[0];
 };
 
+struct shared_ptr<const OVM::Script> {
+    struct Script *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned short _field4;
+    unsigned char _field5[32];
+    unsigned short _field6;
+    unsigned short _field7;
+    unsigned short _field8;
+    unsigned char _field9[3];
+    unsigned char _field10[0];
+} CDStruct_43f4e2d7;
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned short _field3;
+    unsigned int _field4;
+    unsigned char _field5[32];
+    unsigned short _field6;
+    unsigned short _field7;
+    unsigned short _field8;
+    unsigned char _field9[3];
+    unsigned char _field10[0];
+} CDStruct_c69d63d6;
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+} CDStruct_5c52f79b;
+
+typedef struct {
+    unsigned char _field1;
+    unsigned int _field2;
+} CDStruct_95d471ab;
+
+typedef struct {
+    unsigned short _field1;
+    unsigned char _field2;
+} CDStruct_d6b2615c;
 
 typedef struct {
     char *_field1;
     unsigned long long _field2;
 } CDStruct_b9c9288f;
+
+typedef struct {
+    CDStruct_d6b2615c _field1;
+    CDStruct_d6b2615c _field2;
+} CDStruct_1fdc8922;
+
+// Template types
+typedef struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned long long _field1;
+                    unsigned long long _field2;
+                    char *_field3;
+                } _field1;
+                struct __short {
+                    union {
+                        unsigned char _field1;
+                        char _field2;
+                    } _field1;
+                    char _field2[23];
+                } _field2;
+                struct __raw {
+                    unsigned long long _field1[3];
+                } _field3;
+            } _field1;
+        } _field1;
+    } _field1;
+} basic_string_a1f69cfb;
+
+typedef struct map<std::__1::basic_string<char>, OVM::Var, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, OVM::Var>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, OVM::Var>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+} map_99c78d5b;
 

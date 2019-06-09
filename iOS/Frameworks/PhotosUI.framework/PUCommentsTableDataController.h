@@ -64,7 +64,6 @@ __attribute__((visibility("hidden")))
 - (long long)_postCommentSection;
 - (long long)_assetOwnerCommentSection;
 - (long long)_smileCommentSection;
-- (_Bool)_isEditingAllowed;
 - (_Bool)_isAssetOwnerSectionVisible;
 - (void)_updateFirstResponder;
 @property(readonly, nonatomic) double minimumHeight;

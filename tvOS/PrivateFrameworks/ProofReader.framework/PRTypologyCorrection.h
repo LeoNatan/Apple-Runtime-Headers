@@ -8,6 +8,7 @@
 
 @class NSMutableString, NSString, NSTextCheckingResult;
 
+__attribute__((visibility("hidden")))
 @interface PRTypologyCorrection : NSObject
 {
     NSString *_misspelling;

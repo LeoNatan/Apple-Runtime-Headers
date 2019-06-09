@@ -7,15 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <SampleAnalysis/SAJSONSerialization-Protocol.h>
+#import <SampleAnalysis/SALibraryCache-Protocol.h>
 #import <SampleAnalysis/SASerializable-Protocol.h>
 
 @class NSArray, NSString, NSUUID;
 
-@interface SASharedCache : NSObject <SAJSONSerialization, SASerializable>
+@interface SASharedCache : NSObject <SAJSONSerialization, SASerializable, SALibraryCache>
 {
     NSUUID *_uuid;
-    unsigned long long _slide;
     NSArray *_binaryLoadInfos;
+    unsigned long long _textSegmentsStartAddress;
+    unsigned long long _textSegmentsEndAddress;
+    unsigned long long _slide;
 }
 
 + (void)applyBinaryLoadInfos:(id)arg1 sharedCacheUUID:(id)arg2 slide:(unsigned long long)arg3;
@@ -31,13 +34,13 @@
 + (void)_doDscSymDirsWork:(CDUnknownBlockType)arg1;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_0b74e904 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
-@property(retain) NSArray *binaryLoadInfos; // @synthesize binaryLoadInfos=_binaryLoadInfos;
 @property(readonly) unsigned long long slide; // @synthesize slide=_slide;
+@property(retain) NSArray *binaryLoadInfos; // @synthesize binaryLoadInfos=_binaryLoadInfos;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long textSegmentsEndAddress;
-@property(readonly) unsigned long long textSegmentsStartAddress;
+@property(readonly) unsigned long long textSegmentsEndAddress; // @synthesize textSegmentsEndAddress=_textSegmentsEndAddress;
+@property(readonly) unsigned long long textSegmentsStartAddress; // @synthesize textSegmentsStartAddress=_textSegmentsStartAddress;
 - (void)_findSharedCacheMappings;
 - (BOOL)matchesUUID:(unsigned char [16])arg1 slide:(unsigned long long)arg2;
 - (id)initWithUUID:(id)arg1 slide:(unsigned long long)arg2;

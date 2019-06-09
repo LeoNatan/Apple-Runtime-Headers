@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <EmailCore/EFLoggable-Protocol.h>
+
 @class NSError, NSString;
 
-@interface ECSecureMIMETrustEvaluation : NSObject
+@interface ECSecureMIMETrustEvaluation : NSObject <EFLoggable>
 {
     unsigned int _trustResult;
     struct __SecTrust *_trust;
@@ -30,9 +32,14 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool requiresReevaluationWithNetworkAccess;
 - (void)_evaluate;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)_initWithTrust:(struct __SecTrust *)arg1 options:(unsigned long long)arg2 signerEmailAddress:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

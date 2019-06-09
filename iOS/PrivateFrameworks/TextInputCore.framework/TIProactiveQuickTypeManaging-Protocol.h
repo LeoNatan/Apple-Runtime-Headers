@@ -6,11 +6,9 @@
 
 #import <TextInputCore/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, NSSet, NSString, TIKeyboardSecureCandidateRenderTraits, TIKeyboardSecureCandidateRenderer;
+@class NSArray, NSSet, NSString, TIKeyboardSecureCandidateRenderTraits, TIKeyboardSecureCandidateRenderer;
 
 @protocol TIProactiveQuickTypeManaging <NSObject>
-- (void)setCachedRecipientInfo:(NSDictionary *)arg1 forEmailOrPhone:(NSString *)arg2;
-- (NSDictionary *)getCachedRecipientInfoForEmailOrPhone:(NSString *)arg1;
 - (NSArray *)getMeCardEmailAddresses;
 - (void)suggestionNotAccepted:(NSArray *)arg1;
 - (void)suggestionAccepted:(NSString *)arg1 fieldType:(NSString *)arg2;

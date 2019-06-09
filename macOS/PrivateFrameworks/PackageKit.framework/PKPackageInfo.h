@@ -68,6 +68,8 @@
 - (BOOL)requiresDistributionCheck;
 - (void)setUpdatePackage:(BOOL)arg1;
 - (BOOL)updatePackage;
+- (void)setSystemVolumeGroupInstallLocation:(id)arg1;
+- (id)systemVolumeGroupInstallLocation;
 - (void)setInstallLocation:(id)arg1;
 - (id)installLocation;
 - (void)setRestartAction:(int)arg1;

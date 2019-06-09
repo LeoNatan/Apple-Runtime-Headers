@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <UIFoundation/NSCoding-Protocol.h>
 #import <UIFoundation/NSCopying-Protocol.h>
 #import <UIFoundation/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface NSTextList : NSObject <NSSecureCoding, NSCoding, NSCopying>
+@interface NSTextList : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_markerFormat;
     unsigned long long _listFlags;

@@ -6,7 +6,7 @@
 
 #import <Foundation/NSOperation.h>
 
-@class CKEventMetric, CKOperationConfiguration, CKOperationGroup, CKOperationInfo, CKOperationMMCSRequestOptions, CKOperationMetrics, CKPlaceholderOperation, CKTimeLogger, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject, NSString;
+@class CKDiscretionaryOptions, CKEventMetric, CKOperationConfiguration, CKOperationGroup, CKOperationInfo, CKOperationMMCSRequestOptions, CKOperationMetrics, CKPlaceholderOperation, NSArray, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source, OS_os_activity, OS_os_transaction, OS_voucher;
 
 @interface CKOperation : NSOperation
@@ -16,6 +16,7 @@
     NSObject<OS_os_activity> *_osActivity;
     _Bool _isOutstandingOperation;
     _Bool _usesBackgroundSession;
+    _Bool _runningDiscretionaryOperation;
     _Bool _isFinished;
     _Bool _isFinishingOnCallbackQueue;
     _Bool _clouddConnectionInterrupted;
@@ -33,12 +34,15 @@
     NSMutableDictionary *_savedResponseHTTPHeadersByRequestUUID;
     NSMutableDictionary *_savedW3CNavigationTimingByRequestUUID;
     CKEventMetric *_operationMetric;
+    struct _xpc_activity_eligibility_changed_handler_s *_xpcActivityEligibilityChangedHandler;
+    unsigned int _duetPreClearedMode;
+    unsigned int _discretionaryWhenBackgroundedState;
+    unsigned int _systemScheduler;
     CKPlaceholderOperation *_placeholderOperation;
     NSError *_error;
     NSString *_sectionID;
     NSString *_parentSectionID;
     id _context;
-    CKTimeLogger *_timeLogger;
     CKOperationMetrics *_metrics;
     NSString *_deviceIdentifier;
     CKOperationMMCSRequestOptions *_MMCSRequestOptions;
@@ -50,7 +54,6 @@
 @property(retain, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property _Bool queueHasStarted; // @synthesize queueHasStarted=_queueHasStarted;
 @property(retain, nonatomic) CKOperationMetrics *metrics; // @synthesize metrics=_metrics;
-@property(retain, nonatomic) CKTimeLogger *timeLogger; // @synthesize timeLogger=_timeLogger;
 @property(readonly, nonatomic) id context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSString *parentSectionID; // @synthesize parentSectionID=_parentSectionID;
 @property(retain, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
@@ -59,6 +62,11 @@
 @property(readonly, nonatomic) _Bool isFinishingOnCallbackQueue; // @synthesize isFinishingOnCallbackQueue=_isFinishingOnCallbackQueue;
 @property(nonatomic) _Bool isFinished; // @synthesize isFinished=_isFinished;
 @property(retain) CKPlaceholderOperation *placeholderOperation; // @synthesize placeholderOperation=_placeholderOperation;
+@property(nonatomic) unsigned int systemScheduler; // @synthesize systemScheduler=_systemScheduler;
+@property(nonatomic) unsigned int discretionaryWhenBackgroundedState; // @synthesize discretionaryWhenBackgroundedState=_discretionaryWhenBackgroundedState;
+@property(nonatomic) unsigned int duetPreClearedMode; // @synthesize duetPreClearedMode=_duetPreClearedMode;
+@property(nonatomic) struct _xpc_activity_eligibility_changed_handler_s *xpcActivityEligibilityChangedHandler; // @synthesize xpcActivityEligibilityChangedHandler=_xpcActivityEligibilityChangedHandler;
+@property(nonatomic) _Bool runningDiscretionaryOperation; // @synthesize runningDiscretionaryOperation=_runningDiscretionaryOperation;
 @property(readonly, nonatomic) CKEventMetric *operationMetric; // @synthesize operationMetric=_operationMetric;
 @property(retain, nonatomic) NSMutableDictionary *savedW3CNavigationTimingByRequestUUID; // @synthesize savedW3CNavigationTimingByRequestUUID=_savedW3CNavigationTimingByRequestUUID;
 @property(retain, nonatomic) NSMutableDictionary *savedResponseHTTPHeadersByRequestUUID; // @synthesize savedResponseHTTPHeadersByRequestUUID=_savedResponseHTTPHeadersByRequestUUID;
@@ -89,6 +97,7 @@
 - (_Bool)allowsCellularAccess;
 - (void)setContainer:(id)arg1;
 - (id)container;
+@property(readonly, nonatomic) CKDiscretionaryOptions *discretionaryOptions;
 @property(readonly, nonatomic) NSString *flowControlKey;
 - (_Bool)_wantsFlowControl;
 - (int)qualityOfService;
@@ -114,6 +123,7 @@
 - (void)_installTimeoutSource;
 - (void)_uninstallTimeoutSource;
 - (void)cancel;
+- (void)cancelWithError:(id)arg1;
 - (void)cancelWithUnderlyingError:(id)arg1;
 @property(readonly, nonatomic) CKOperationInfo *operationInfo;
 - (Class)operationClass;

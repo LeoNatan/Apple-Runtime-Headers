@@ -6,19 +6,22 @@
 
 #import <UIKit/UIView.h>
 
-@class CAMFilterScrubberView, PUApertureSlider;
+@class CEKApertureSlider, CEKSlider, CEKWheelScrubberView;
 
 @interface CAMUtilityBar : UIView
 {
-    CAMFilterScrubberView *_filterScrubberView;
-    PUApertureSlider *_apertureSlider;
+    CEKWheelScrubberView *_filterScrubberView;
+    CEKApertureSlider *_apertureSlider;
+    CEKSlider *_intensitySlider;
     unsigned long long _visibleContent;
 }
 
 @property(nonatomic) unsigned long long visibleContent; // @synthesize visibleContent=_visibleContent;
-@property(retain, nonatomic) PUApertureSlider *apertureSlider; // @synthesize apertureSlider=_apertureSlider;
-@property(retain, nonatomic) CAMFilterScrubberView *filterScrubberView; // @synthesize filterScrubberView=_filterScrubberView;
+@property(retain, nonatomic) CEKSlider *intensitySlider; // @synthesize intensitySlider=_intensitySlider;
+@property(retain, nonatomic) CEKApertureSlider *apertureSlider; // @synthesize apertureSlider=_apertureSlider;
+@property(retain, nonatomic) CEKWheelScrubberView *filterScrubberView; // @synthesize filterScrubberView=_filterScrubberView;
 - (void).cxx_destruct;
+- (void)_layoutSliderView:(id)arg1;
 - (void)_layoutPortraitApertureSlider;
 - (void)_layoutFilterScrubberView;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;

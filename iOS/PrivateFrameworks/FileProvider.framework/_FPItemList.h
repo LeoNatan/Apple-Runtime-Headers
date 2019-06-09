@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableOrderedSet;
+@class NSMutableDictionary, NSMutableOrderedSet, NSMutableSet;
 
 __attribute__((visibility("hidden")))
 @interface _FPItemList : NSObject
 {
     NSMutableOrderedSet *_orderedSet;
     NSMutableDictionary *_itemsByIDs;
+    NSMutableSet *_formerIDs;
 }
 
 - (void).cxx_destruct;
 - (void)sortUsingDescriptors:(id)arg1;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (id)allObjects;
+- (_Bool)isObsoleteID:(id)arg1;
 - (void)removeLastObject;
 - (void)addObject:(id)arg1;
 - (void)removeObjectAtIndex:(unsigned long long)arg1;

@@ -13,13 +13,13 @@
 
 @interface HKObjectType : NSObject <NSSecureCoding, NSCopying>
 {
-    NSString *_identifier;
-    int _code;
-    Class _dataObjectClass;
+    short _code;
     HKObjectType *_parentType;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)activityMoveModeChangeType;
++ (id)audioExposureEventType;
 + (id)fitnessFriendWorkoutType;
 + (id)fitnessFriendAchievementType;
 + (id)fitnessFriendActivitySnapshotType;
@@ -29,14 +29,20 @@
 + (id)bradycardiaType;
 + (id)tachycardiaType;
 + (id)heartRateType;
++ (id)menstrualFlowType;
 + (id)watchActivationType;
 + (id)deepBreathingSessionType;
 + (id)coachingEventType;
 + (id)activityCacheType;
 + (id)briskMinuteDataType;
++ (id)standGoal;
++ (id)exerciseGoal;
 + (id)calorieGoal;
++ (id)_nonClinicalTypesFromTypes:(id)arg1;
++ (id)_clinicalTypesFromTypes:(id)arg1;
 + (id)_objectTypesFromIdentifierArray:(id)arg1 error:(id *)arg2;
 + (id)_typeWithIdentifier:(id)arg1;
++ (id)audiogramSampleType;
 + (id)activitySummaryType;
 + (id)workoutType;
 + (id)_objectTypeWithIdentifier:(id)arg1 class:(Class)arg2 lookupTable:(id)arg3;
@@ -46,10 +52,12 @@
 + (id)characteristicTypeForIdentifier:(id)arg1;
 + (id)categoryTypeForIdentifier:(id)arg1;
 + (id)quantityTypeForIdentifier:(id)arg1;
++ (id)dataTypeWithNumber:(id)arg1;
 + (id)dataTypeWithCode:(int)arg1;
 + (id)_allTypesWithIdentifierTable:(id)arg1;
 + (id)_allQuantityTypes;
 + (id)_allCorrelationTypes;
++ (id)_allCharacteristicTypes;
 + (id)_allCategoryTypes;
 + (id)_typesIncludingParentTypes:(id)arg1;
 + (id)_allTypesOfClass:(Class)arg1;
@@ -65,6 +73,7 @@
 + (id)conditionRecordTypeForIdentifier:(id)arg1;
 + (id)medicationDispenseRecordTypeForIdentifier:(id)arg1;
 + (id)diagnosticTestReportTypeForIdentifier:(id)arg1;
++ (id)medicalTypeForIdentifier:(id)arg1;
 + (_Bool)_allowAuthorizationForSharing:(_Bool)arg1 types:(id)arg2 entitlements:(id)arg3 disallowedTypes:(id)arg4;
 + (_Bool)_allowAuthorizationForReadingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
 + (_Bool)_allowAuthorizationForSharingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
@@ -82,18 +91,17 @@
 @property(readonly, nonatomic) Class dataObjectClass;
 @property(readonly, nonatomic) int code;
 @property(readonly) NSString *identifier;
+@property(readonly, nonatomic, getter=_definition) CDStruct_0970132e *definition;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_initWithDefinition:(CDStruct_fdd59570 *)arg1;
+- (id)_initWithCode:(int)arg1;
 - (id)init;
 - (id)hk_localizedNameForAuthSheet;
 - (id)hk_localizedNameForLocale:(id)arg1;
 - (id)hk_localizedName;
 - (id)_hk_localizedNameKey;
-- (_Bool)_allowAuthorizationForReadingWithEntitlements:(id)arg1;
-- (_Bool)_allowAuthorizationForSharingWithEntitlements:(id)arg1;
 
 @end
 

@@ -6,15 +6,16 @@
 
 #import <Zoom/ZMWView.h>
 
+__attribute__((visibility("hidden")))
 @interface ZMWCursorView : ZMWView
 {
     unsigned int _currentSeed;
-    int _cursorType;
+    long long _cursorType;
     double _cursorZoomFactor;
 }
 
 @property(nonatomic) double cursorZoomFactor; // @synthesize cursorZoomFactor=_cursorZoomFactor;
-@property(nonatomic) int cursorType; // @synthesize cursorType=_cursorType;
+@property(nonatomic) long long cursorType; // @synthesize cursorType=_cursorType;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)redrawCursorArt:(BOOL)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;

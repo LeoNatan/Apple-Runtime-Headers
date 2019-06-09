@@ -19,6 +19,7 @@
     NSArray *_searchResults;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)searchResultsType;
 + (Class)messagesType;
 @property(copy, nonatomic) NSArray *searchResults; // @synthesize searchResults=_searchResults;
@@ -28,6 +29,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)searchResultsAtIndex:(unsigned int)arg1;

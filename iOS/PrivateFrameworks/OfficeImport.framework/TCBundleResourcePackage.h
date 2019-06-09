@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mEntryMap;
 }
 
+- (void).cxx_destruct;
 - (id)entryWithName:(id)arg1 cacheResult:(_Bool)arg2;
-- (void)dealloc;
 - (id)initWithZipArchive:(id)arg1;
 
 @end

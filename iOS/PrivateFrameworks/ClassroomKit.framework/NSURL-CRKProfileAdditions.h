@@ -9,5 +9,12 @@
 @interface NSURL (CRKProfileAdditions)
 + (id)crk_iOSPlaceholderProfileURL;
 + (id)crk_macOSProfileURL;
++ (id)crk_overriddenDescriptionForItems:(id)arg1 originalDescription:(id)arg2;
++ (id)crk_uniqueTemporaryFileURL;
++ (id)crk_uniqueTemporaryDirectoryURL;
+- (id)crk_stringByRemovingWWWPrefixFromString:(id)arg1;
+- (id)crk_sharingDescription;
+- (_Bool)crk_isBundle;
+- (id)crk_escapedPath;
 @end
 

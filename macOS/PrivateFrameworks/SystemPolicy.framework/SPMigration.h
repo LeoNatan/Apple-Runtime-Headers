@@ -10,10 +10,14 @@
 {
 }
 
-+ (id)readMigrationPolicy:(id)arg1;
++ (id)createGatekeeperMigrationData:(id)arg1;
++ (id)createKernelExtensionMigrationData:(id)arg1;
++ (id)readKernelExtensionMigrationPolicy:(id)arg1;
 + (void)createMigrationPolicy:(id)arg1 forTarget:(id)arg2;
-+ (BOOL)volumeRequiresMigration:(id)arg1;
-+ (id)migrationDataPath:(id)arg1;
++ (BOOL)volumeRequiresGatekeeperMigration:(id)arg1;
++ (BOOL)volumeRequiresKernelExtensionMigration:(id)arg1;
++ (id)gatekeeperMigrationDataPath:(id)arg1;
++ (id)kernelExtensionMigrationDataPath:(id)arg1;
 
 @end
 

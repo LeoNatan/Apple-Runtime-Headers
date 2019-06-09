@@ -6,11 +6,12 @@
 
 #import <CryptoTokenKit/NSObject-Protocol.h>
 
-@class TKToken, TKTokenDriver;
+@class TKToken, TKTokenConfiguration, TKTokenDriver;
 
 @protocol TKTokenDriverDelegate <NSObject>
 
 @optional
 - (void)tokenDriver:(TKTokenDriver *)arg1 terminateToken:(TKToken *)arg2;
+- (TKToken *)tokenDriver:(TKTokenDriver *)arg1 tokenForConfiguration:(TKTokenConfiguration *)arg2 error:(id *)arg3;
 @end
 

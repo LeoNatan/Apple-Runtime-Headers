@@ -15,9 +15,9 @@
 
 + (id)sharedLoader;
 + (BOOL)useBlankDisplayBundleForPerformanceTesting;
-- (id)newPreviewDocumentDisplayBundleForPreview:(struct __QLPreview *)arg1;
-- (id)displayBundleForPreview:(struct __QLPreview *)arg1 owner:(id)arg2 forcedDisplayBundleID:(id)arg3;
-- (id)displayBundleForPreview:(struct __QLPreview *)arg1 owner:(id)arg2;
+- (id)newPreviewDocumentDisplayBundleForPreview:(id)arg1;
+- (id)displayBundleForPreview:(id)arg1 owner:(id)arg2 forcedDisplayBundleID:(id)arg3;
+- (id)displayBundleForPreview:(id)arg1 owner:(id)arg2;
 - (Class)displayBundleClassForDisplayBundleID:(id)arg1;
 - (Class)loadDisplayBundle:(id)arg1;
 - (void)registerDisplayBundle:(id)arg1 withBundleIdentifier:(id)arg2;

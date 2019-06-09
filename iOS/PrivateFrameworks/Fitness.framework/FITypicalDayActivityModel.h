@@ -13,7 +13,7 @@
 {
     NSDateInterval *_interval;
     HKActivitySummary *_queue_currentActivitySummary;
-    FISimpleHistogram *_queue_energyHistogram;
+    FISimpleHistogram *_queue_moveHistogram;
     FISimpleHistogram *_queue_exerciseHistogram;
     NSMutableArray *_queue_bucketDates;
     _Bool _activitySummaryLoaded;
@@ -36,8 +36,8 @@
 - (void)_waitUntilActivitySummaryLoaded;
 - (void)handleUpdatedCurrentActivitySummary:(id)arg1;
 - (double)projectedDayDuration;
-- (id)firstOnWristDateToday;
-- (id)projectedOffWristDateToday;
+- (id)userStartOfDay;
+- (id)userEndOfDay;
 - (double)_queue_briskWalkTimeToCompleteMoveGoalWithDateOfBirth:(id)arg1 biologicalSex:(long long)arg2 height:(id)arg3 weight:(id)arg4 wheelchairUse:(long long)arg5;
 - (double)briskWalkTimeToCompleteMoveGoalWithAcitivitySettingsController:(id)arg1;
 - (_Bool)shouldSuggestWalkWithActivitySettingsController:(id)arg1;
@@ -50,7 +50,7 @@
 - (double)currentMoveGoalPercentage;
 - (_Bool)willCompleteStandGoalOrItIsTooLateWithBufferPercentage:(double)arg1;
 - (_Bool)willCompleteExerciseGoalWithBufferPercentage:(double)arg1;
-- (_Bool)willCompleteEnergyBurnedGoalWithBufferPercentage:(double)arg1;
+- (_Bool)willCompleteMoveGoalWithBufferPercentage:(double)arg1;
 - (_Bool)_willCompleteGoalWithType:(long long)arg1 bufferPercentage:(double)arg2;
 - (double)valueOfTypicalDayMoveEarnedByNow;
 - (double)valueOfTypicalDayBriskMinutesEarnedByNow;

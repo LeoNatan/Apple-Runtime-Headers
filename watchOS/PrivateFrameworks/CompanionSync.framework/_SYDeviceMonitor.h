@@ -24,8 +24,8 @@
 - (id)deviceForNRDevice:(id)arg1;
 - (void)removeNRDevice:(id)arg1;
 - (void)addNRDevice:(id)arg1;
-- (void)_deviceDidUnpair:(id)arg1;
-- (void)_deviceDidPair:(id)arg1;
+- (void)_deviceDidBecomeInactive:(id)arg1;
+- (void)_deviceDidBecomeActive:(id)arg1;
 - (void)deviceBecameTargetable:(id)arg1;
 - (void)_clearDeviceList;
 - (void)_rebuildDeviceList;

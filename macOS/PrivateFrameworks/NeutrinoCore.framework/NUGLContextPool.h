@@ -20,6 +20,7 @@
 - (void)_returnContext:(id)arg1;
 - (id)_newContext;
 - (void)returnContext:(id)arg1;
+- (id)newContextForDevice:(id)arg1;
 - (id)newContext;
 - (id)init;
 

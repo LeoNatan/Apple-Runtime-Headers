@@ -4,23 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <OnBoardingKit/OBTableWelcomeController.h>
 
 @class NSString;
 
-@interface OBPrivacyCombinedController : UIViewController
+@interface OBPrivacyCombinedController : OBTableWelcomeController
 {
-    _Bool _darkMode;
     _Bool _allowsOpeningSafari;
     _Bool _presentedFromPrivacyPane;
     NSString *_displayLanguage;
 }
 
 + (void)presentPrivacyCombinedControllerOverController:(id)arg1 dismissHandler:(CDUnknownBlockType)arg2;
-@property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
++ (id)new;
 @property _Bool presentedFromPrivacyPane; // @synthesize presentedFromPrivacyPane=_presentedFromPrivacyPane;
+@property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property _Bool allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
-@property(nonatomic, getter=isDarkMode) _Bool darkMode; // @synthesize darkMode=_darkMode;
 - (void).cxx_destruct;
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)initWithIdentifiers:(id)arg1;

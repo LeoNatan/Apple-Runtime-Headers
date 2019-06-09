@@ -24,6 +24,7 @@
     _INPBString *_scopeEntityName;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)propertiesType;
 @property(retain, nonatomic) _INPBString *scopeEntityName; // @synthesize scopeEntityName=_scopeEntityName;
 @property(nonatomic) int scope; // @synthesize scope=_scope;
@@ -37,6 +38,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasScopeEntityName;

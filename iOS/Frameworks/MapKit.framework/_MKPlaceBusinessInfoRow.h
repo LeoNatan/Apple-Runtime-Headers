@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (void)_createConstraints;
 - (void)_updateFontAndTextColor:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
 

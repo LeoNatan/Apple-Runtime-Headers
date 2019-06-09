@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIRowViewElement, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRowComponent : SKUIPageComponent
 {
     UIColor *_backgroundColor;

@@ -9,7 +9,7 @@
 #import <CalendarPersistence/CNAutocompleteFetchDelegate-Protocol.h>
 #import <CalendarPersistence/CalDAVAutocompleOperationDelegate-Protocol.h>
 
-@class ABAddressBook, ACAccount, CNAutocompleteStore, CalDAVAutocompleteOperation, NSMutableArray, NSSet, NSString;
+@class ACAccount, CNAutocompleteStore, CalDAVAutocompleteOperation, NSCache, NSMutableArray, NSSet, NSString;
 @protocol CNCancelable, CalAutoCompleteDelegate;
 
 @interface CalAutoCompleteOperation : NSObject <CNAutocompleteFetchDelegate, CalDAVAutocompleOperationDelegate>
@@ -26,7 +26,7 @@
     NSString *_prefix;
     NSString *_lastSearchedSourceID;
     NSSet *_addressesToIgnore;
-    ABAddressBook *_addressBook;
+    NSCache *_participantAddressCache;
     NSMutableArray *_contactResults;
     id <CNCancelable> _autocompletionSearchRequest;
     CNAutocompleteStore *_autocompleteStore;
@@ -42,7 +42,7 @@
 @property BOOL autocompleteRunning; // @synthesize autocompleteRunning=_autocompleteRunning;
 @property(retain) id <CNCancelable> autocompletionSearchRequest; // @synthesize autocompletionSearchRequest=_autocompletionSearchRequest;
 @property(retain) NSMutableArray *contactResults; // @synthesize contactResults=_contactResults;
-@property(retain) ABAddressBook *addressBook; // @synthesize addressBook=_addressBook;
+@property(retain) NSCache *participantAddressCache; // @synthesize participantAddressCache=_participantAddressCache;
 @property(retain) NSSet *addressesToIgnore; // @synthesize addressesToIgnore=_addressesToIgnore;
 @property(retain) NSString *lastSearchedSourceID; // @synthesize lastSearchedSourceID=_lastSearchedSourceID;
 @property(copy) NSString *prefix; // @synthesize prefix=_prefix;

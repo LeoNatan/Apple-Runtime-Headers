@@ -9,26 +9,32 @@
 #import <HomeUI/UIPickerViewDataSource-Protocol.h>
 #import <HomeUI/UIPickerViewDelegate-Protocol.h>
 
-@class NSArray, NSString, UIPickerView;
+@class HFItem, NSIndexPath, NSString, UIPickerView;
+@protocol HUPickerCellDelegate;
 
 @interface HUPickerViewCell : UITableViewCell <UIPickerViewDelegate, UIPickerViewDataSource>
 {
-    _Bool _shouldPostNotifications;
-    NSArray *_data;
+    NSIndexPath *_selectedIndexPath;
+    HFItem *_item;
+    id <HUPickerCellDelegate> _delegate;
     UIPickerView *_pickerView;
+    long long _numberOfValues;
 }
 
-@property(nonatomic) _Bool shouldPostNotifications; // @synthesize shouldPostNotifications=_shouldPostNotifications;
+@property(nonatomic) long long numberOfValues; // @synthesize numberOfValues=_numberOfValues;
 @property(retain, nonatomic) UIPickerView *pickerView; // @synthesize pickerView=_pickerView;
-@property(retain, nonatomic) NSArray *data; // @synthesize data=_data;
+@property(nonatomic) __weak id <HUPickerCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
+@property(readonly, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
 - (void).cxx_destruct;
+- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
+- (id)pickerView:(id)arg1 attributedTitleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (id)pickerView:(id)arg1 titleForRow:(long long)arg2 forComponent:(long long)arg3;
 - (long long)pickerView:(id)arg1 numberOfRowsInComponent:(long long)arg2;
 - (long long)numberOfComponentsInPickerView:(id)arg1;
-- (void)pickerView:(id)arg1 didSelectRow:(long long)arg2 inComponent:(long long)arg3;
-@property(readonly, nonatomic) id selectedValue;
-- (id)_setupPickerView;
-- (void)_resizeCellForPickerView;
+- (_Bool)_canSelectValueAtIndex:(long long)arg1;
+- (void)setSelectedIndex:(long long)arg1 animated:(_Bool)arg2;
+- (void)reloadPickerView;
 - (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

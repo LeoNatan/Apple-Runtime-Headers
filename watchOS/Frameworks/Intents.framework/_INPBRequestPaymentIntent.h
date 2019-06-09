@@ -21,6 +21,7 @@
     _INPBContact *_payer;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBContact *payer; // @synthesize payer=_payer;
 @property(retain, nonatomic) _INPBString *note; // @synthesize note=_note;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
@@ -30,6 +31,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasPayer;

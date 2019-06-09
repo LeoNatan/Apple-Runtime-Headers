@@ -9,7 +9,7 @@
 #import <ScreenReader/AXVCaptionWindowActionDelegate-Protocol.h>
 #import <ScreenReader/NSWindowDelegate-Protocol.h>
 
-@class AXVCaptionWindow, NSString;
+@class AXVCaptionWindow, NSString, SCRCUserDefaults;
 
 __attribute__((visibility("hidden")))
 @interface SCRVisualsCaptionWindow : NSObject <AXVCaptionWindowActionDelegate, NSWindowDelegate>
@@ -17,9 +17,17 @@ __attribute__((visibility("hidden")))
     BOOL _temporarilyHidden;
     BOOL _temporarilyCenteredAtBottomOfScreen;
     BOOL __enabled;
+    BOOL __captionWindowNeedsDisplay;
     AXVCaptionWindow *__captionWindow;
+    id __enabledObserverRead;
+    id __enabledObserverWrite;
+    SCRCUserDefaults *__userDefaults;
 }
 
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
+@property(retain, nonatomic, setter=_setEnabledObserver:) id _enabledObserverWrite; // @synthesize _enabledObserverWrite=__enabledObserverWrite;
+@property(retain, nonatomic, setter=_setEnabledObserver:) id _enabledObserverRead; // @synthesize _enabledObserverRead=__enabledObserverRead;
+@property(nonatomic, setter=_setCaptionWindowNeedsDisplay:) BOOL _captionWindowNeedsDisplay; // @synthesize _captionWindowNeedsDisplay=__captionWindowNeedsDisplay;
 @property(nonatomic, setter=_setEnabled:) BOOL _enabled; // @synthesize _enabled=__enabled;
 @property(retain, nonatomic, setter=_setCaptionWindow:) AXVCaptionWindow *_captionWindow; // @synthesize _captionWindow=__captionWindow;
 @property(nonatomic) BOOL temporarilyCenteredAtBottomOfScreen; // @synthesize temporarilyCenteredAtBottomOfScreen=_temporarilyCenteredAtBottomOfScreen;
@@ -31,17 +39,16 @@ __attribute__((visibility("hidden")))
 - (void)windowDidEndLiveResize:(id)arg1;
 - (void)windowDidMove:(id)arg1;
 - (void)closeButtonPressedForCaptionWindow:(id)arg1;
-- (void)_preferencesChangedForKeyPath:(id)arg1 value:(id)arg2;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setEnabledAndAnnounceChange:(BOOL)arg1;
 - (struct CGPoint)_originToCenterRectInMainWindow:(struct CGRect)arg1;
 - (void)showCaptionWindow;
-- (void)_captionWindowNeedsDisplay;
+- (void)_displayCaptionWindowIfNeeded;
+- (void)_setCaptionWindowNeedsDisplay;
 - (void)setCaptionFontSize:(double)arg1;
 @property(copy, nonatomic) NSString *captionText;
+- (void)setEnabledValue:(id)arg1;
 @property(nonatomic) BOOL enabled;
-- (void)dealloc;
-- (id)init;
+- (id)initWithUserDefaults:(id)arg1 captionWindow:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

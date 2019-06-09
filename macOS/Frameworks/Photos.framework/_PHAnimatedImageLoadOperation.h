@@ -10,6 +10,8 @@
 
 @interface _PHAnimatedImageLoadOperation : NSOperation
 {
+    long long _cacheStrategy;
+    BOOL _useSharedImageDecoding;
     NSURL *_animatedImageURL;
     PHAnimatedImage *_animatedImage;
 }
@@ -23,7 +25,7 @@
 @property(retain) PHAnimatedImage *animatedImage; // @synthesize animatedImage=_animatedImage;
 - (void).cxx_destruct;
 - (void)main;
-- (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 cachingStrategy:(long long)arg2 useSharedDecoding:(BOOL)arg3;
 
 @end
 

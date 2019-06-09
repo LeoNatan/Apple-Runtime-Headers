@@ -23,6 +23,7 @@
 @property(nonatomic) double destinationBeginTime; // @synthesize destinationBeginTime=_destinationBeginTime;
 @property(readonly, copy, nonatomic) NSURL *AVFileURL; // @synthesize AVFileURL=_AVFileURL;
 - (void).cxx_destruct;
+- (_Bool)shouldMergeLiveWaveform;
 - (double)duration;
 - (void)saveGeneratedWaveformIfNecessary;
 - (id)synchronouslyApproximateWaveformSegmentsByReadingCurrentFileAheadTimeRange:(CDStruct_73a5d3ca)arg1;

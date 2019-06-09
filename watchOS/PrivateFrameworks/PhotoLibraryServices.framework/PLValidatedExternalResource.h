@@ -7,88 +7,59 @@
 #import <objc/NSObject.h>
 
 #import <PhotoLibraryServices/NSCopying-Protocol.h>
-#import <PhotoLibraryServices/PLWriteableResource-Protocol.h>
+#import <PhotoLibraryServices/PLResourceIdentity-Protocol.h>
 
-@class NSData, NSString, NSURL;
-@protocol PLAssetID, PLCodecIdentity, PLColorSpaceIdentity, PLResourceDataStore, PLResourceDataStoreKey, PLUniformTypeIdentifierIdentity;
+@class NSDate, NSNumber, NSString, NSURL;
+@protocol PLCodecIdentity, PLUniformTypeIdentifierIdentity;
 
-@interface PLValidatedExternalResource : NSObject <PLWriteableResource, NSCopying>
+@interface PLValidatedExternalResource : NSObject <PLResourceIdentity, NSCopying>
 {
-    short _version;
-    short _resourceType;
-    short _localAvailability;
-    short _localAvailabilityTarget;
-    short _remoteAvailability;
-    short _remoteAvailabilityTarget;
-    id <PLAssetID> _assetID;
+    short _trashedState;
+    unsigned int _version;
+    unsigned int _resourceType;
     unsigned int _recipeID;
-    id <PLResourceDataStore> _dataStore;
-    id <PLResourceDataStoreKey> _dataStoreKey;
     unsigned int _orientation;
     id <PLCodecIdentity> _codecID;
-    id <PLColorSpaceIdentity> _colorSpaceID;
     id <PLUniformTypeIdentifierIdentity> _uniformTypeIdentifierID;
     int _qualitySortValue;
-    NSString *_fingerprint;
-    NSData *_data;
+    NSNumber *_sidecarIndex;
     NSURL *_fileURL;
-    unsigned int _cplType;
-    long long _dataStoreSubtype;
+    NSDate *_trashedDate;
     long long _unorientedWidth;
     long long _unorientedHeight;
     long long _dataLength;
+    long long _ptpTrashedState;
 }
 
-@property(nonatomic) unsigned int cplType; // @synthesize cplType=_cplType;
+@property(nonatomic) long long ptpTrashedState; // @synthesize ptpTrashedState=_ptpTrashedState;
+@property(retain, nonatomic) NSDate *trashedDate; // @synthesize trashedDate=_trashedDate;
+@property(nonatomic) short trashedState; // @synthesize trashedState=_trashedState;
 @property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-@property(copy, nonatomic) NSData *data; // @synthesize data=_data;
+@property(retain, nonatomic) NSNumber *sidecarIndex; // @synthesize sidecarIndex=_sidecarIndex;
 @property(nonatomic) long long dataLength; // @synthesize dataLength=_dataLength;
-@property(retain, nonatomic) NSString *fingerprint; // @synthesize fingerprint=_fingerprint;
-- (void)setQualitySortValue:(int)arg1;
-@property(readonly, nonatomic) int qualitySortValue;
-- (void)setUniformTypeIdentifierID:(id)arg1;
-@property(readonly, nonatomic) id <PLUniformTypeIdentifierIdentity> uniformTypeIdentifierID;
-- (void)setColorSpaceID:(id)arg1;
-@property(readonly, nonatomic) id <PLColorSpaceIdentity> colorSpaceID;
-- (void)setCodecID:(id)arg1;
-@property(readonly, nonatomic) id <PLCodecIdentity> codecID;
-- (void)setUnorientedHeight:(long long)arg1;
-@property(readonly, nonatomic) long long unorientedHeight;
-- (void)setUnorientedWidth:(long long)arg1;
-@property(readonly, nonatomic) long long unorientedWidth;
-- (void)setOrientation:(unsigned int)arg1;
-@property(readonly, nonatomic) unsigned int orientation;
-@property(readonly, nonatomic) short remoteAvailabilityTarget; // @synthesize remoteAvailabilityTarget=_remoteAvailabilityTarget;
-- (void)setRemoteAvailability:(short)arg1;
-@property(readonly, nonatomic) short remoteAvailability;
-@property(readonly, nonatomic) short localAvailabilityTarget; // @synthesize localAvailabilityTarget=_localAvailabilityTarget;
-@property(readonly, nonatomic) short localAvailability; // @synthesize localAvailability=_localAvailability;
-- (void)setDataStoreKey:(id)arg1;
-@property(readonly, nonatomic) id <PLResourceDataStoreKey> dataStoreKey;
-- (void)setDataStoreSubtype:(long long)arg1;
-@property(readonly, nonatomic) long long dataStoreSubtype;
-- (void)setDataStore:(id)arg1;
-@property(readonly, nonatomic) id <PLResourceDataStore> dataStore;
-- (void)setRecipeID:(unsigned int)arg1;
-@property(readonly, nonatomic) unsigned int recipeID;
-- (void)setResourceType:(short)arg1;
-@property(readonly, nonatomic) short resourceType;
-- (void)setVersion:(short)arg1;
-@property(readonly, nonatomic) short version;
-@property(readonly, copy, nonatomic) id <PLAssetID> assetID; // @synthesize assetID=_assetID;
+@property(nonatomic) int qualitySortValue; // @synthesize qualitySortValue=_qualitySortValue;
+@property(retain, nonatomic) id <PLUniformTypeIdentifierIdentity> uniformTypeIdentifierID; // @synthesize uniformTypeIdentifierID=_uniformTypeIdentifierID;
+@property(retain, nonatomic) id <PLCodecIdentity> codecID; // @synthesize codecID=_codecID;
+@property(nonatomic) long long unorientedHeight; // @synthesize unorientedHeight=_unorientedHeight;
+@property(nonatomic) long long unorientedWidth; // @synthesize unorientedWidth=_unorientedWidth;
+@property(nonatomic) unsigned int orientation; // @synthesize orientation=_orientation;
+@property(nonatomic) unsigned int recipeID; // @synthesize recipeID=_recipeID;
+@property(nonatomic) unsigned int resourceType; // @synthesize resourceType=_resourceType;
+@property(nonatomic) unsigned int version; // @synthesize version=_version;
 - (void).cxx_destruct;
-- (void)setQualitySortValueBasedOnAssetWidth:(long long)arg1 height:(long long)arg2 isNativeColorSpace:(_Bool)arg3;
-- (_Bool)isPrimaryUTI;
+@property(readonly, copy) NSString *description;
+- (_Bool)isEqualToValidatedExternalResource:(id)arg1;
+- (void)setQualitySortValueBasedOnAssetWidth:(long long)arg1 height:(long long)arg2 isNativeColorSpace:(_Bool)arg3 isLosslessEncoding:(_Bool)arg4 isCuratedPreview:(_Bool)arg5;
+- (unsigned int)cplTypeWithAssetID:(id)arg1;
+- (_Bool)isPlayableVideo;
 - (_Bool)isDefaultOrientation;
-- (_Bool)isDerivative;
-@property(readonly, nonatomic) long long orientedHeight; // @dynamic orientedHeight;
-@property(readonly, nonatomic) long long orientedWidth; // @dynamic orientedWidth;
+@property(readonly, nonatomic) _Bool hasRecipe;
+@property(readonly, nonatomic) _Bool isDerivative;
 - (id)init;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

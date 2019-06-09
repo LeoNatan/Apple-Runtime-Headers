@@ -8,6 +8,7 @@
 
 @protocol SHKClientWindowSyncDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SHKDraggableContainerView : NSView
 {
     id <SHKClientWindowSyncDelegate> _delegate;

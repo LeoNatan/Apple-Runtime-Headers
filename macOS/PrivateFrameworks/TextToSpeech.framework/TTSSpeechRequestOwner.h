@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) TTSSpeechRequest *request; // @synthesize request=_request;
 @property(nonatomic) __weak id <TTSSpeechConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (oneway void)speechRequest:(id)arg1 didSynthesizeSilentlyToURL:(id)arg2;
 - (oneway void)speechRequest:(id)arg1 didStopWithSuccess:(BOOL)arg2 phonemesSpoken:(id)arg3 forService:(id)arg4 error:(id)arg5;
 - (oneway void)speechRequest:(id)arg1 withMark:(long long)arg2 didStartForRange:(struct _NSRange)arg3 forService:(id)arg4;
 - (oneway void)speechRequestDidContinue:(id)arg1 forService:(id)arg2;
@@ -32,7 +33,6 @@
 - (void)stopCurrentSpeechRequestAtMark:(long long)arg1 waitUntilStopped:(BOOL)arg2;
 - (void)startSpeechRequest:(id)arg1;
 - (BOOL)isSystemSpeakingOnBehalfOfCurrentConnection;
-- (BOOL)isSystemSpeaking;
 - (id)availableVoicesForLanguageCode:(id)arg1;
 - (void)_setRequest:(id)arg1;
 - (void)dealloc;

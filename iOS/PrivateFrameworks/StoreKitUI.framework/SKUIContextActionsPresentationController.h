@@ -8,6 +8,7 @@
 
 @class UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIContextActionsPresentationController : UIPresentationController
 {
     UIVisualEffectView *_backgroundView;

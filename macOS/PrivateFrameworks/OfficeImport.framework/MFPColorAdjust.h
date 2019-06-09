@@ -8,6 +8,7 @@
 
 @class NSDictionary, OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface MFPColorAdjust : NSObject
 {
     struct MFPColorMatrix *mColorMatrix;

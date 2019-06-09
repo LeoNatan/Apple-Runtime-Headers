@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSString *_trackTitle;
     NSString *_artistName;
     NSString *_albumTitle;
+    NSString *_radioStationAttribution;
     NSString *_radioStationName;
     NSString *_artworkIdentifier;
     TVImageProxy *_artworkProxy;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TVImageProxy *artworkProxy; // @synthesize artworkProxy=_artworkProxy;
 @property(copy, nonatomic) NSString *artworkIdentifier; // @synthesize artworkIdentifier=_artworkIdentifier;
 @property(copy, nonatomic) NSString *radioStationName; // @synthesize radioStationName=_radioStationName;
+@property(copy, nonatomic) NSString *radioStationAttribution; // @synthesize radioStationAttribution=_radioStationAttribution;
 @property(copy, nonatomic) NSString *albumTitle; // @synthesize albumTitle=_albumTitle;
 @property(copy, nonatomic) NSString *artistName; // @synthesize artistName=_artistName;
 @property(copy, nonatomic) NSString *trackTitle; // @synthesize trackTitle=_trackTitle;

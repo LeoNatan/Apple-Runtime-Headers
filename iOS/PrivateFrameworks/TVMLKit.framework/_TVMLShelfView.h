@@ -13,13 +13,19 @@
 __attribute__((visibility("hidden")))
 @interface _TVMLShelfView : _TVShelfView <TVRowHosting_Collection>
 {
+    double _showcaseFactor;
 }
 
 - (_Bool)_shouldFadeCellsForBoundChangeWhileRotating;
 - (struct UIEdgeInsets)_selectionMarginsForCell:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldBindRowsTogether;
+- (id)_rowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets)arg2 firstItemRowIndex:(long long *)arg3 forShowcase:(_Bool)arg4;
+- (id)showcaseRowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets)arg2;
+- (id)showcaseRowMetricsForExpectedWidth:(double)arg1;
 - (id)rowMetricsForExpectedWidth:(double)arg1 withContentInset:(struct UIEdgeInsets)arg2 firstItemRowIndex:(long long *)arg3;
 - (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2;
+- (void)layoutSubviews;
+- (void)tv_setShowcaseFactor:(double)arg1;
 - (id)init;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

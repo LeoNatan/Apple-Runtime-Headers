@@ -8,7 +8,7 @@
 
 #import <ContactsUI/CNUIUserActionContext-Protocol.h>
 
-@class NSString;
+@class BSServiceConnectionEndpoint, NSString;
 @protocol CNUIUserActionCurator, CNUIUserActionDialRequestOpener, CNUIUserActionRecorder, CNUIUserActionURLOpener, CNUIUserActionUserActivityOpener;
 
 __attribute__((visibility("hidden")))
@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)nilValue;
 
 // Remaining properties
+@property(copy, nonatomic) BSServiceConnectionEndpoint *connectionEndpoint;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

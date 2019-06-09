@@ -17,6 +17,10 @@ __attribute__((visibility("hidden")))
 + (int)formatForInputAtIndex:(int)arg1;
 + (struct CGRect)roiForInput:(int)arg1 arguments:(id)arg2 outputRect:(struct CGRect)arg3;
 + (_Bool)processWithInputs:(id)arg1 arguments:(id)arg2 output:(id)arg3 error:(id *)arg4;
++ (void)compilePipelinesIfNeeded:(id)arg1;
++ (void)releasePipelines;
++ (void)compilePipelines:(id)arg1;
++ (_Bool)hasValidPipelines;
 
 @end
 

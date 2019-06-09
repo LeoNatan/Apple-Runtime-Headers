@@ -6,18 +6,21 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <PDFKit/PDFTextInputDelegate-Protocol.h>
 #import <PDFKit/UIScrollViewDelegate-Protocol.h>
 
 @class NSString, PDFPageViewControllerPrivate;
 
 __attribute__((visibility("hidden")))
-@interface PDFPageViewController : UIViewController <UIScrollViewDelegate>
+@interface PDFPageViewController : UIViewController <UIScrollViewDelegate, PDFTextInputDelegate>
 {
     PDFPageViewControllerPrivate *_private;
 }
 
 - (void).cxx_destruct;
 - (void)_centerAlign;
+- (void)didRotatePageNotification:(id)arg1;
+- (void)changedBoundsForBoxNotification:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
@@ -26,8 +29,10 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewDidZoom:(id)arg1;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
+- (id)pdfView;
 - (void)_updateAnnotations;
 - (void)_removePDFView;
+- (void)_setupGestureRecognizerDependencies;
 - (void)_buildPDFPageView;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
@@ -38,6 +43,8 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)setBackgroundImage:(id)arg1 atBackgroundQuality:(int)arg2;
+- (id)selection;
+- (void)setSelection:(id)arg1;
 - (double)autoScaleFactor;
 - (double)scaleFactor;
 - (void)setScaleFactor:(double)arg1;

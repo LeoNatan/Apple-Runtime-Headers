@@ -9,12 +9,9 @@
 __attribute__((visibility("hidden")))
 @interface _NSBackingLayer : CALayer
 {
-    void *_observationInfo;
 }
 
 + (void)initialize;
-- (void)setObservationInfo:(void *)arg1;
-- (void *)observationInfo;
 - (void)NS_setPreparedContentRect:(struct CGRect)arg1;
 - (void)NS_setPresentationRect:(struct CGRect)arg1;
 - (void)NS_setIsScrolling:(BOOL)arg1;
@@ -34,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)layoutSublayers;
 - (void)didChangeValueForKey:(id)arg1;
-- (id)init;
 
 @end
 

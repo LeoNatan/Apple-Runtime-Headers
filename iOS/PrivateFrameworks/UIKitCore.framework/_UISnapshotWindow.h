@@ -13,9 +13,6 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)_isSystemWindow;
 - (_Bool)_alwaysGetsContexts;
-- (_Bool)_shouldZoom;
-- (_Bool)_isConstrainedByScreenJail;
-- (void)_updateTransformLayerForClassicPresentation;
 - (_Bool)_canActAsKeyWindowForScreen:(id)arg1;
 - (_Bool)_canBecomeKeyWindow;
 - (void)_setFirstResponder:(id)arg1;

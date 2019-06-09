@@ -10,6 +10,8 @@
 {
 }
 
++ (id)copyNetworkDescription:(id)arg1;
++ (id)copyDataHexString:(id)arg1;
 + (id)getHashForObject:(id)arg1;
 + (id)timestampIdentifierToName:(unsigned long long)arg1;
 + (BOOL)rollDiceWithSuccessRatio:(id)arg1;
@@ -27,6 +29,7 @@
 + (BOOL)hasPacketDrop:(id)arg1;
 + (void)fillOutConnectionInfo:(id)arg1 withPath:(id)arg2 interface:(id)arg3 remoteEndpoint:(id)arg4 parameters:(id)arg5 outputHandler:(struct nw_protocol *)arg6;
 + (long long)protocolTypeFromPath:(id)arg1 endpoint:(id)arg2;
++ (id)getInterfaceName:(long long)arg1;
 + (long long)interfaceTypeOfNWInterface:(id)arg1;
 + (long long)interfaceTypeOfInterface:(id)arg1;
 + (id)copyItemIdentifiersFromKeychainWithAccountName:(id)arg1;

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     _TVShadowViewElement *_shadowViewElement;
     NSDictionary *_indexPathsByIndexTitle;
     NSArray *_sortedIndexTitles;
+    struct TVShowcaseConfig _showcaseConfig;
     struct TVCellMetrics _cellMetrics;
 }
 
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 + (id)headerElementFromCollectionElement:(id)arg1;
 @property(copy, nonatomic) NSArray *sortedIndexTitles; // @synthesize sortedIndexTitles=_sortedIndexTitles;
 @property(copy, nonatomic) NSDictionary *indexPathsByIndexTitle; // @synthesize indexPathsByIndexTitle=_indexPathsByIndexTitle;
+@property(nonatomic) struct TVShowcaseConfig showcaseConfig; // @synthesize showcaseConfig=_showcaseConfig;
 @property(retain, nonatomic) _TVShadowViewElement *shadowViewElement; // @synthesize shadowViewElement=_shadowViewElement;
 @property(nonatomic, getter=isIndexDisplayEnabled) _Bool indexDisplayEnabled; // @synthesize indexDisplayEnabled=_indexDisplayEnabled;
 @property(copy, nonatomic) NSIndexPath *lastFocusedIndexPath; // @synthesize lastFocusedIndexPath=_lastFocusedIndexPath;
@@ -47,11 +49,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
 - (id)_closestIndexPathToIndexPath:(id)arg1;
-- (void)_ascertainLastFocusedIndexPathInView;
 - (void)_registerCellClassesInCollectionView:(id)arg1;
 - (void)_updateIndexDisplay;
 - (void)_updateHeaderView;
 - (void)_doUpdateViewLayoutAnimated:(_Bool)arg1 relayout:(_Bool)arg2;
+- (void)adjustContentOffsetToDisplayIndexPath:(id)arg1;
+- (void)_applicationWillResignActive:(id)arg1;
+- (void)_applicationDidBecomeActive:(id)arg1;
 - (void)preloadSubviewsInRect:(struct CGRect)arg1;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_recordImpressionsForVisibleView;
@@ -59,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateImpressions;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)_collectionView:(id)arg1 horizontalIndexTitleBar:(id)arg2 selectedEntry:(id)arg3;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
 - (_Bool)collectionView:(id)arg1 shouldHandleLongPressForItemAtIndexPath:(id)arg2;
@@ -77,7 +82,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
-- (void)dispatchEventOfType:(unsigned long long)arg1 forItemAtIndexPath:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)dispatchEvent:(id)arg1 forItemAtIndexPath:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)updateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)didUpdateCollectionViewByNeedingReload:(_Bool)arg1 focusUpdate:(_Bool)arg2;
 - (void)updateSupplementaryViewsForSectionAtOldIndex:(long long)arg1 oldElement:(id)arg2 withNewIndex:(long long)arg3 newElement:(id)arg4 requiresReload:(_Bool *)arg5 requiresRelayout:(_Bool *)arg6;
@@ -85,6 +90,8 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)expectedCellSizeForElement:(id)arg1 atIndexPath:(id)arg2;
 - (Class)cellClassForElement:(id)arg1;
 - (_Bool)shouldHeaderFloatByDefault;
+- (unsigned long long)preferredScrollPosition;
+- (void)tv_setShowcaseConfig:(struct TVShowcaseConfig)arg1;
 @property(readonly, retain, nonatomic) _TVCollectionWrappingView *collectionWrappingView;
 - (void)updateWithViewElement:(id)arg1 cellMetrics:(struct TVCellMetrics)arg2;
 - (void)viewDidLayoutSubviews;

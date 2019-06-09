@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AKActionController, AKAttributeController, AKCursorController_Mac, AKDFRController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSMutableArray, NSString, NSView, NSWindow;
+@class AKActionController, AKAttributeController, AKCursorController_Mac, AKDFRController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKSidecarController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSMutableArray, NSString, NSView, NSWindow;
 @protocol AKControllerDelegateProtocol;
 
 @interface AKController : NSObject
@@ -34,6 +34,7 @@
     AKToolbarViewController *_toolbarViewController;
     AKAttributeController *_attributeController;
     AKUndoController *_undoController;
+    AKSidecarController *_sidecarController;
     AKMainEventHandler *_mainEventHandler;
     AKTextEditorController *_textEditorController;
     AKLegacyDoodleController *_legacyDoodleController;
@@ -85,6 +86,7 @@
 @property(retain) AKLegacyDoodleController *legacyDoodleController; // @synthesize legacyDoodleController=_legacyDoodleController;
 @property(retain) AKTextEditorController *textEditorController; // @synthesize textEditorController=_textEditorController;
 @property(retain) AKMainEventHandler *mainEventHandler; // @synthesize mainEventHandler=_mainEventHandler;
+@property(retain) AKSidecarController *sidecarController; // @synthesize sidecarController=_sidecarController;
 @property(retain) AKUndoController *undoController; // @synthesize undoController=_undoController;
 @property(retain) AKAttributeController *attributeController; // @synthesize attributeController=_attributeController;
 @property(retain) AKToolbarViewController *toolbarViewController; // @synthesize toolbarViewController=_toolbarViewController;
@@ -107,6 +109,7 @@
 - (void)endLogging;
 - (void)beginLogging:(id)arg1 documentType:(id)arg2;
 - (void)strokeAddedNotification:(id)arg1;
+- (BOOL)_isInDFRAction;
 - (BOOL)isInDFRAction;
 - (id)akTouchBar;
 - (id)groupTouchBarItemWithIdentifier:(id)arg1;
@@ -120,6 +123,7 @@
 - (BOOL)shouldDrawVariableStrokeDoodles;
 - (BOOL)_validateCutCopyDelete;
 - (BOOL)isDFRInitialized;
+@property(readonly, nonatomic) BOOL onlyDrawWithApplePencil;
 - (void)removeNoteFromAnnotation:(id)arg1;
 - (void)addPopupToAnnotation:(id)arg1 openPopup:(BOOL)arg2;
 - (void)highlightableSelectionDidEndChanging;

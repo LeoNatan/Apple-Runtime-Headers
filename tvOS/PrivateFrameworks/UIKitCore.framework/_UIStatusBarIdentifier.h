@@ -23,8 +23,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) id object; // @synthesize object=_object;
 - (void).cxx_destruct;
 - (id)description;
-- (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSString *stringRepresentation;
 

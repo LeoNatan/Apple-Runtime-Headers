@@ -34,11 +34,11 @@
 @property(nonatomic) long long frameCapacity;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) CDUnknownBlockType readBlock;
-@property(retain, nonatomic) ASDStreamFormat *readFormat;
+@property(copy, nonatomic) ASDStreamFormat *readFormat;
 @property(readonly, nonatomic) CDUnknownBlockType readWithZerosBlock;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) CDUnknownBlockType writeBlock;
-@property(retain, nonatomic) ASDStreamFormat *writeFormat;
+@property(copy, nonatomic) ASDStreamFormat *writeFormat;
 
 @end
 

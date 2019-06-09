@@ -8,32 +8,33 @@
 
 #import <Accounts/NSXPCProxyCreating-Protocol.h>
 
-@class NSString, NSXPCConnection;
+@class NSString, NSXPCConnection, NSXPCListenerEndpoint;
 
 @interface ACRemoteAccountStoreSession : NSObject <NSXPCProxyCreating>
 {
     NSXPCConnection *_connection;
     struct os_unfair_lock_s _connectionLock;
-    _Bool _hasConfiguredRemoteAccountStore;
-    _Bool _xpcConnectionHasBeenInvalidated;
     _Bool _notificationsEnabled;
-    NSString *_spoofedBundleID;
+    NSXPCListenerEndpoint *_listenerEndpoint;
+    NSString *_effectiveBundleID;
 }
 
 @property(nonatomic) _Bool notificationsEnabled; // @synthesize notificationsEnabled=_notificationsEnabled;
-@property(copy, nonatomic) NSString *spoofedBundleID; // @synthesize spoofedBundleID=_spoofedBundleID;
+@property(copy, nonatomic) NSString *effectiveBundleID; // @synthesize effectiveBundleID=_effectiveBundleID;
+@property(readonly, nonatomic) NSXPCListenerEndpoint *listenerEndpoint; // @synthesize listenerEndpoint=_listenerEndpoint;
 - (void).cxx_destruct;
-- (void)disconnect;
-- (void)connect;
-- (void)_configureRemoteAccountStoreIfNecessary;
 - (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxy;
+- (void)_locked_connection:(id)arg1 setNotificationsEnabled:(_Bool)arg2;
+- (void)_locked_connection:(id)arg1 setEffectiveBundleID:(id)arg2;
 - (void)_setConnectionInvalidated;
 - (void)_setConnectionInterrupted;
+- (void)_locked_configureRemoteAccountStoreWithConnection:(id)arg1;
 - (id)_connection;
-- (void)_configureConnection;
-- (id)initWithXPCConnection:(id)arg1;
+- (void)dealloc;
+- (id)initWithListenerEndpoint:(id)arg1;
+- (id)init;
 
 @end
 

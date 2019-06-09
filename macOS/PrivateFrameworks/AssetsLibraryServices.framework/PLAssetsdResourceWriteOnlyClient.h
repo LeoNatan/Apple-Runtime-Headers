@@ -10,6 +10,8 @@
 {
 }
 
+- (void)removeAssetWithHash:(id)arg1 orPublicGlobalUUID:(id)arg2 fromStreamID:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)addAssetWithHash:(id)arg1 orPublicGlobalUUID:(id)arg2 toStreamID:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)saveAssetWithJobDictionary:(id)arg1 imageSurface:(struct __IOSurface *)arg2 previewImageSurface:(struct __IOSurface *)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 @end

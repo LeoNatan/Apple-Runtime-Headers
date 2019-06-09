@@ -23,6 +23,8 @@
 
 + (unsigned long long)countOfResourceTypes;
 + (void)enumerateResourceTypesWithBlock:(CDUnknownBlockType)arg1;
++ (_Bool)resourceTypeSupportsResourceExpunge:(unsigned long long)arg1;
++ (_Bool)resourceTypeTrackedForUpload:(unsigned long long)arg1;
 + (_Bool)cplShouldGenerateDerivatives;
 + (float)derivativeGenerationThreshold;
 + (unsigned long long)maxPixelSizeForResourceType:(unsigned long long)arg1;

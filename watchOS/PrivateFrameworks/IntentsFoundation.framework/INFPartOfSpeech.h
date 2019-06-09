@@ -21,7 +21,7 @@
 + (id)nounWithGender:(unsigned int)arg1 identifier:(id)arg2 language:(id)arg3;
 + (id)nounWithIdentifier:(id)arg1 language:(id)arg2;
 @property(retain, nonatomic) NSMutableDictionary *variants; // @synthesize variants=_variants;
-@property unsigned int partOfSpeechType; // @synthesize partOfSpeechType=_partOfSpeechType;
+@property(nonatomic) unsigned int partOfSpeechType; // @synthesize partOfSpeechType=_partOfSpeechType;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 - (id)identifier;
 - (void).cxx_destruct;
@@ -33,7 +33,7 @@
 - (id)stringForVariants:(unsigned int)arg1;
 - (void)setString:(id)arg1 forVariants:(unsigned int)arg2;
 - (void)validateSelf;
-@property unsigned int gender; // @synthesize gender=_gender;
+@property(nonatomic) unsigned int gender; // @synthesize gender=_gender;
 - (id)initWithDictionary:(id)arg1 identifier:(id)arg2;
 - (id)initWithPartOfSpeechType:(unsigned int)arg1 identifier:(id)arg2 language:(id)arg3;
 - (id)init;

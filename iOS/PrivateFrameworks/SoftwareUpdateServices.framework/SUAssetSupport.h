@@ -17,6 +17,8 @@
 + (id)getLocalDefaultSoftwareUpdateAssetIfExistsWithReleaseDate:(id *)arg1;
 + (id)getLocalDefaultSoftwareUpdateAssetIfExists;
 + (void)purgeMSUUpdate:(CDUnknownBlockType)arg1;
++ (id)queryMetaDataOfType:(id)arg1 WithFilter:(id)arg2 installedOnly:(_Bool)arg3 error:(id *)arg4;
++ (id)copySuAssetInCatalogMatchingDescriptor:(id)arg1;
 + (id)findAssetWithMatcher:(id)arg1 localSearch:(_Bool)arg2 releaseDate:(id *)arg3 error:(id *)arg4;
 + (id)copyInstalledAssets;
 + (id)copySUAssetForAssetID:(id)arg1;

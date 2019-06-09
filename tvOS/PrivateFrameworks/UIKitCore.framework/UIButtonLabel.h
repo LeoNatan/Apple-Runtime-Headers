@@ -14,9 +14,11 @@ __attribute__((visibility("hidden")))
     _Bool _reverseShadow;
     UIButton *_button;
     NSDictionary *_cachedDefaultAttributes;
+    _Bool _fontIsDefaultForIdiom;
 }
 
 + (id)_defaultAttributes;
+@property(readonly, nonatomic) _Bool _fontIsDefaultForIdiom; // @synthesize _fontIsDefaultForIdiom;
 - (void).cxx_destruct;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)tintColorDidChange;
@@ -33,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)setShadowOffset:(struct CGSize)arg1;
 - (void)setLineBreakMode:(long long)arg1;
 - (void)setFont:(id)arg1;
+- (void)_setFont:(id)arg1 isDefaultForIdiom:(_Bool)arg2;
 - (id)_initWithFrame:(struct CGRect)arg1 button:(id)arg2;
 - (void)_setWantsAutolayout;
 - (void)_updateTextColorWithFallbackColorIfNeeded;

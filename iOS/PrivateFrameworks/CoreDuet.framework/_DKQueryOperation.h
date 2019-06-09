@@ -11,7 +11,6 @@
 }
 
 + (_Bool)_removesDependenciesAfterFinish;
-- (void)main;
 
 @end
 

@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+#import <CoreUtils/WiFiAwareSubscriberDelegate-Protocol.h>
+
+@class NSArray, NSString, WiFiAwareSubscriber;
 @protocol OS_dispatch_queue;
 
-@interface CUNANSubscriber : NSObject
+@interface CUNANSubscriber : NSObject <WiFiAwareSubscriberDelegate>
 {
     CDUnknownBlockType _activateCompletion;
     BOOL _invalidateCalled;
     BOOL _invalidateDone;
-    struct _opaque_pthread_mutex_t {
-        long long __sig;
-        char __opaque[56];
-    } _mutex;
+    struct _opaque_pthread_mutex_t _mutex;
     struct LogCategory *_ucat;
+    struct NSMutableDictionary *_wfaEndpoints;
+    WiFiAwareSubscriber *_wfaSubscriber;
     unsigned int _changeFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_label;
@@ -40,16 +41,30 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
 - (void).cxx_destruct;
+- (void)subscriber:(id)arg1 receivedMessage:(id)arg2 fromPublishID:(unsigned char)arg3 address:(id)arg4;
+- (void)_subscriber:(id)arg1 lostDiscoveryResultForPublishID:(unsigned char)arg2 address:(id)arg3;
+- (void)subscriber:(id)arg1 lostDiscoveryResultForPublishID:(unsigned char)arg2 address:(id)arg3;
+- (void)_subscriber:(id)arg1 receivedDiscoveyResult:(id)arg2;
+- (void)subscriber:(id)arg1 receivedDiscoveyResult:(id)arg2;
+- (void)subscriber:(id)arg1 terminatedWithReason:(long long)arg2;
+- (void)subscriber:(id)arg1 failedToStartWithError:(long long)arg2;
+- (void)subscriberStarted:(id)arg1;
 - (void)_lostAllEndpoints;
 - (void)_invalidated;
 - (void)_invalidate;
 - (void)invalidate;
+- (void)_activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSArray *discoveredEndpoints;
 - (id)descriptionWithLevel:(int)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -12,6 +12,8 @@
 
 + (id)_extensionAuxiliaryVendorProtocol;
 + (id)_extensionAuxiliaryHostProtocol;
+- (void)requestAccessToAdditionalResources:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_derivedExtensionAuxiliaryHostProtocol;
 
 @end
 

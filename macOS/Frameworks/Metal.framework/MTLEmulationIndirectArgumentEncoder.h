@@ -6,13 +6,13 @@
 
 #import <Metal/_MTLIndirectArgumentEncoder.h>
 
-#import <Metal/MTLIndirectArgumentEncoderSPI-Protocol.h>
+#import <Metal/MTLArgumentEncoderSPI-Protocol.h>
 
 @class MTLEmulationIndirectArgumentBufferLayout, NSString, _MTLIndirectArgumentBufferLayout;
 @protocol MTLDevice;
 
 __attribute__((visibility("hidden")))
-@interface MTLEmulationIndirectArgumentEncoder : _MTLIndirectArgumentEncoder <MTLIndirectArgumentEncoderSPI>
+@interface MTLEmulationIndirectArgumentEncoder : _MTLIndirectArgumentEncoder <MTLArgumentEncoderSPI>
 {
     char *_destination;
     MTLEmulationIndirectArgumentBufferLayout *_emulationLayout;
@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 - (void)setTexture:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)setBuffers:(const id *)arg1 offsets:(const unsigned long long *)arg2 withRange:(struct _NSRange)arg3;
 - (void)setBuffer:(id)arg1 offset:(unsigned long long)arg2 atIndex:(unsigned long long)arg3;
-- (void)setIndirectArgumentBuffer:(id)arg1 offset:(unsigned long long)arg2;
-- (id)newIndirectArgumentEncoderForBufferAtIndex:(unsigned long long)arg1;
+- (void)setArgumentBuffer:(id)arg1 offset:(unsigned long long)arg2;
+- (id)newArgumentEncoderForBufferAtIndex:(unsigned long long)arg1;
 @property(readonly) unsigned long long alignment;
 @property(readonly) unsigned long long encodedLength;
 - (void)dealloc;

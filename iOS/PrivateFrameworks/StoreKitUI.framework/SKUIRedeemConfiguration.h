@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, SKUIClientContext, SKUIITunesPassConfiguration, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemConfiguration : NSObject
 {
     long long _category;

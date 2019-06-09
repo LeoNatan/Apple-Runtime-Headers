@@ -17,7 +17,6 @@
 __attribute__((visibility("hidden")))
 @interface SVSSirilandViewController : NSViewController <SVSPagerViewControllerDelegate, SVSTranscriptStackViewControllerDataSource, SVSTranscriptStackViewControllerDelegate, SiriUIPresentation>
 {
-    BOOL _needsUpdatedUtterances;
     AFUIStateMachine *_stateMachine;
     BOOL _userInteractionDidOccurSinceActivation;
     long long _currentRequestSource;
@@ -58,7 +57,6 @@ __attribute__((visibility("hidden")))
 - (void)siriSessionAvailabilityStateDidChange;
 - (void)_updateSiriAvailabilityAnimated:(BOOL)arg1;
 - (void)_updateConversationAvailability;
-- (void)_requestUpdatedSuggestionsIfNecessary;
 - (id)requestContext;
 - (BOOL)shouldDeepFreezeSpeechForIdling;
 - (BOOL)shouldDismissForIdling;
@@ -111,6 +109,8 @@ __attribute__((visibility("hidden")))
 - (double)contentHeight;
 - (void)didReceiveDismissalAction:(CDUnknownBlockType)arg1;
 - (void)checkForNoSound;
+- (void)siriDidStopSpeakingWithIdentifier:(id)arg1 speechQueueIsEmpty:(BOOL)arg2;
+- (void)siriDidStartSpeakingWithIdentifier:(id)arg1;
 - (void)speechRecordingDidDetectSpeechStartpoint;
 - (void)speechRecordingDidFailForRequest:(id)arg1 onAVRecordRoute:(id)arg2 withError:(id)arg3;
 - (void)speechRecordingDidCancelForRequest:(id)arg1 onAVRecordRoute:(id)arg2;

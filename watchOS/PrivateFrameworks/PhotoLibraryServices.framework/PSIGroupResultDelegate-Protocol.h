@@ -9,6 +9,6 @@
 @class PSIGroupResult;
 
 @protocol PSIGroupResultDelegate <NSObject>
-- (void)group:(PSIGroupResult *)arg1 fetchOwningContentString:(_Bool)arg2 assetIdRange:(struct _NSRange)arg3 collectionIdRange:(struct _NSRange)arg4 tripIdRange:(struct _NSRange)arg5 completionHandler:(void (^)(NSString *, NSArray *, NSArray *, NSArray *))arg6;
+- (void)group:(PSIGroupResult *)arg1 fetchOwningContentString:(_Bool)arg2 assetIdRange:(struct _NSRange)arg3 collectionIdRange:(struct _NSRange)arg4 completionHandler:(void (^)(NSString *, NSArray *, NSArray *))arg5;
 @end
 

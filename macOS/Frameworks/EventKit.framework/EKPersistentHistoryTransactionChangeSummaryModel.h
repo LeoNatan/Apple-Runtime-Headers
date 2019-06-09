@@ -14,12 +14,14 @@
     EKObjectPersistentChangesModel *_calendars;
     EKObjectPersistentChangesModel *_accounts;
     EKObjectPersistentChangesModel *_notifications;
+    EKObjectPersistentChangesModel *_attendees;
     NSArray *_otherModifiedObjects;
     NSMutableArray *_updatedProperties;
 }
 
 @property(retain, nonatomic) NSMutableArray *updatedProperties; // @synthesize updatedProperties=_updatedProperties;
 @property(readonly, nonatomic) NSArray *otherModifiedObjects; // @synthesize otherModifiedObjects=_otherModifiedObjects;
+@property(readonly, nonatomic) EKObjectPersistentChangesModel *attendees; // @synthesize attendees=_attendees;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *notifications; // @synthesize notifications=_notifications;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *accounts; // @synthesize accounts=_accounts;
 @property(readonly, nonatomic) EKObjectPersistentChangesModel *calendars; // @synthesize calendars=_calendars;

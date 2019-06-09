@@ -14,6 +14,7 @@
 }
 
 + (_Bool)expectsPropertyRevisedNotifications;
+- (void)replaceFormatDescription:(struct opaqueCMFormatDescription *)arg1 withFormatDescription:(struct opaqueCMFormatDescription *)arg2;
 - (void)setMetadata:(id)arg1;
 - (void)removeTrackAssociationToTrack:(id)arg1 type:(id)arg2;
 - (void)addTrackAssociationToTrack:(id)arg1 type:(id)arg2;

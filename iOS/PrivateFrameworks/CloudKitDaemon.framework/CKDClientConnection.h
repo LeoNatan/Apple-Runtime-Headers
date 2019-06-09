@@ -18,11 +18,12 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) CKDClientProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+- (void)requestClientSyncWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)tossConfigWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)repairZonePCSWithOperationInfo:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)getRecordPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)submitClientEventMetric:(id)arg1 withSetupInfo:(id)arg2;
+- (void)submitClientEventMetric:(id)arg1 withSetupInfo:(id)arg2 completeWhenQueued:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)triggerAutoBugCaptureSnapshot;
 - (void)flushOperationMetricsToPowerLog;
 - (void)dataclassEnabled:(id)arg1 withSetupInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -33,9 +34,9 @@ __attribute__((visibility("hidden")))
 - (void)statusGroupsForApplicationPermission:(unsigned long long)arg1 setupInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)resetAllApplicationPermissionsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setApplicationPermission:(unsigned long long)arg1 enabled:(_Bool)arg2 setupInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)accountChangedWithID:(id)arg1;
+- (void)accountWithID:(id)arg1 changedWithChangeType:(long long)arg2;
 - (void)accountsWillDeleteAccount:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)accountsDidRevokeAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
+- (void)accountsDidRevokeAccessToBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2 containerIdentifiers:(id)arg3;
 - (void)accountsDidGrantAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
 - (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)clearPCSCachesForKnownContextsWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -47,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)clearRecordCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2;
 - (void)showAssetCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2;
 - (void)clearAssetCacheWithSetupInfo:(id)arg1 databaseScope:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)countAssetCacheItemsWithSetupInfo:(id)arg1 databaseScope:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 withLifetime:(int)arg4 setupInfo:(id)arg5;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2 setupInfo:(id)arg3;
 - (void)dumpAllClientsStatusReportToFileHandle:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -79,9 +81,13 @@ __attribute__((visibility("hidden")))
 - (void)performModifySubscriptionsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performQueryOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performModifyRecordAccessOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)deviceCountWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchXPCCriteriaWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getNewWebSharingIdentityDataWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getNewWebSharingIdentityWithSetupInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performModifyWebSharingOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)performMarkAssetBrokenOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)performRepairAssetsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performPublishAssetsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performArchiveRecordsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)performFetchArchivedRecordsOperation:(id)arg1 withBlock:(CDUnknownBlockType)arg2;

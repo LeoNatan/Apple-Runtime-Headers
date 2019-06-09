@@ -6,15 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class ACAccount;
+#import <AppleMediaServices/NSSecureCoding-Protocol.h>
 
-@interface AMSAuthenticateResult : NSObject
+@class ACAccount, NSDictionary;
+
+@interface AMSAuthenticateResult : NSObject <NSSecureCoding>
 {
     ACAccount *_account;
+    NSDictionary *_serverResponse;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) NSDictionary *serverResponse; // @synthesize serverResponse=_serverResponse;
 @property(readonly, nonatomic) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithAccount:(id)arg1;
 
 @end

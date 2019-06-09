@@ -6,6 +6,7 @@
 
 #import <OfficeImport/CHDChartTypeWithGrouping.h>
 
+__attribute__((visibility("hidden")))
 @interface CHDLineType : CHDChartTypeWithGrouping
 {
 }

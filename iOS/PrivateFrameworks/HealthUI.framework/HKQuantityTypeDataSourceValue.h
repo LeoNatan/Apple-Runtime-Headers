@@ -14,6 +14,8 @@
     HKQuantity *_minQuantity;
     HKQuantity *_maxQuantity;
     HKQuantity *_averageQuantity;
+    HKQuantity *_durationQuantity;
+    HKQuantity *_mostRecentQuantity;
     HKQuantityType *_quantityType;
     long long _recordCount;
     NSDateComponents *_statisticsInterval;
@@ -26,6 +28,8 @@
 @property(retain, nonatomic) NSDateComponents *statisticsInterval; // @synthesize statisticsInterval=_statisticsInterval;
 @property(nonatomic) long long recordCount; // @synthesize recordCount=_recordCount;
 @property(retain, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
+@property(retain, nonatomic) HKQuantity *mostRecentQuantity; // @synthesize mostRecentQuantity=_mostRecentQuantity;
+@property(retain, nonatomic) HKQuantity *durationQuantity; // @synthesize durationQuantity=_durationQuantity;
 @property(retain, nonatomic) HKQuantity *averageQuantity; // @synthesize averageQuantity=_averageQuantity;
 @property(retain, nonatomic) HKQuantity *maxQuantity; // @synthesize maxQuantity=_maxQuantity;
 @property(retain, nonatomic) HKQuantity *minQuantity; // @synthesize minQuantity=_minQuantity;

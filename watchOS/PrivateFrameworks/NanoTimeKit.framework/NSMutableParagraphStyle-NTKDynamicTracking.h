@@ -8,6 +8,8 @@
 
 @interface NSMutableParagraphStyle (NTKDynamicTracking)
 + (id)NTKMutableParagraphStyleWithDynamicTrackingFactor:(float)arg1;
++ (id)NTKHyphenationParagraphStyleWithFactor:(float)arg1;
++ (id)NTKHyphenationParagraphStyle;
 - (void)NTKAddDynamicTrackingFactor:(float)arg1;
 
 // Remaining properties

@@ -8,5 +8,6 @@
 
 @interface NSLayoutManager (SiriUIUtilities)
 - (struct CGRect)languageAwareBoundingRectForGlyphRange:(struct _NSRange)arg1 typographicBounds:(struct CGRect)arg2 inTextContainer:(id)arg3;
+- (id)siriui_copy;
 @end
 

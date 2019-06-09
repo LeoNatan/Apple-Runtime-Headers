@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, PXNavigationListDataSource, PXSectionedDataSource;
+@class NSMutableDictionary, PXDataSection, PXNavigationListDataSection;
 
 @interface PXNavigationListDataSubsection : NSObject
 {
     NSMutableDictionary *_listItemsCache;
-    PXSectionedDataSource *_dataSource;
-    PXNavigationListDataSource *_listDataSource;
+    PXDataSection *_dataSection;
+    PXNavigationListDataSection *_listDataSection;
     long long _indentationLevel;
     long long _indexDelta;
     long long _expandedIndex;
@@ -23,12 +23,12 @@
 @property(readonly, nonatomic) long long expandedIndex; // @synthesize expandedIndex=_expandedIndex;
 @property(readonly, nonatomic) long long indexDelta; // @synthesize indexDelta=_indexDelta;
 @property(readonly, nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
-@property(readonly, nonatomic) PXNavigationListDataSource *listDataSource; // @synthesize listDataSource=_listDataSource;
-@property(readonly, nonatomic) PXSectionedDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly, nonatomic) PXNavigationListDataSection *listDataSection; // @synthesize listDataSection=_listDataSection;
+@property(readonly, nonatomic) PXDataSection *dataSection; // @synthesize dataSection=_dataSection;
 - (void).cxx_destruct;
 - (id)description;
 - (id)listItemAtExternalIndex:(long long)arg1;
-- (id)initWithDataSource:(id)arg1 indexDelta:(long long)arg2 expandedIndex:(long long)arg3 indentationLevel:(long long)arg4 externalStartIndex:(long long)arg5;
+- (id)initWithDataSection:(id)arg1 indexDelta:(long long)arg2 expandedIndex:(long long)arg3 indentationLevel:(long long)arg4 externalStartIndex:(long long)arg5;
 
 @end
 

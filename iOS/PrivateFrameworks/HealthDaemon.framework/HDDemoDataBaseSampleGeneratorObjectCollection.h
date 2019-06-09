@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary;
+@class NSMutableDictionary, NSMutableSet;
 
 @interface HDDemoDataBaseSampleGeneratorObjectCollection : NSObject
 {
-    NSMutableArray *_objectsFromPhone;
-    NSMutableArray *_objectsFromWatch;
+    NSMutableSet *_objectsFromPhone;
+    NSMutableSet *_objectsFromWatch;
     NSMutableDictionary *_objectsFromPhoneApps;
     NSMutableDictionary *_workoutUUIDToAssocatedObjectUUIDs;
 }

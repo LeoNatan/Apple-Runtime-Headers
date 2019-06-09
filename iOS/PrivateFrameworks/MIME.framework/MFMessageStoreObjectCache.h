@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock;
+@class NSLock, NSMutableDictionary;
 
 @interface MFMessageStoreObjectCache : NSObject
 {
     NSLock *_lock;
-    long long _capacity;
-    struct __CFDictionary *_cache;
+    unsigned long long _capacity;
+    NSMutableDictionary *_cache;
     CDUnknownBlockType _keyGenerator;
     CDUnknownBlockType _comparator;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(copy, nonatomic) CDUnknownBlockType keyGenerator; // @synthesize keyGenerator=_keyGenerator;
+- (void).cxx_destruct;
 - (void)flush;
 - (id)objectForMessage:(id)arg1 kind:(long long)arg2;
 - (void)removeObjectForMessage:(id)arg1 kind:(long long)arg2;
@@ -28,7 +29,6 @@
 - (void)_nts_evictObject;
 - (id)debugDescription;
 - (id)description;
-- (void)dealloc;
 - (id)initWithCapacity:(unsigned long long)arg1;
 
 @end

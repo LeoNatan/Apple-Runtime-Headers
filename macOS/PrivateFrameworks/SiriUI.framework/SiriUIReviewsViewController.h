@@ -12,7 +12,6 @@
 @class NSCollectionView, NSMutableArray, NSString, NSView, SALocalSearchReviewList, SiriUIScrollView;
 @protocol SiriUIReviewsViewControllerDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIReviewsViewController : SiriUISnippetViewController <NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout>
 {
     SALocalSearchReviewList *_reviewList;

@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)__transferNew:(id *)arg1:(unsigned int)arg2:(unsigned long)arg3;
-+ (id)__new:(const id *)arg1:(unsigned int)arg2:(_Bool)arg3;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 - (void)setObject:(id)arg1 atIndex:(unsigned int)arg2;

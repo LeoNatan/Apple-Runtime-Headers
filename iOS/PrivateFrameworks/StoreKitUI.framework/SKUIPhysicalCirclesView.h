@@ -11,6 +11,7 @@
 @class CADisplayLink, NSMutableArray, NSObject, NSString, PKPhysicsBody, PKPhysicsWorld, UILongPressGestureRecognizer, UIPanGestureRecognizer, UITapGestureRecognizer;
 @protocol OS_dispatch_source, SKUIPhysicalCirclesDataSource, SKUIPhysicalCirclesDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPhysicalCirclesView : UIView <PKPhysicsContactDelegate>
 {
     NSObject<OS_dispatch_source> *_circleLoadStepTimer;

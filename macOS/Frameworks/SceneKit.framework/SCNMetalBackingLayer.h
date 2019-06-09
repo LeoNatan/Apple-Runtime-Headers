@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) SCNView *parentView; // @synthesize parentView=_parentView;
-- (void)display;
 
 @end
 

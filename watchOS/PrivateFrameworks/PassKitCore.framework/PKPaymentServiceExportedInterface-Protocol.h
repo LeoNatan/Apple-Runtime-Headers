@@ -4,9 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSSet, NSString, PKFieldProperties, PKPaymentMessage, PKPaymentTransaction, PKTransitPassProperties, PKValueAddedServiceTransaction;
+@class NSSet, NSString, PKFeatureApplication, PKFieldProperties, PKPaymentMessage, PKPaymentTransaction, PKTransitPassProperties, PKValueAddedServiceTransaction;
 
 @protocol PKPaymentServiceExportedInterface
+- (void)featureApplicationChanged:(PKFeatureApplication *)arg1;
+- (void)featureApplicationRemoved:(PKFeatureApplication *)arg1;
+- (void)featureApplicationAdded:(PKFeatureApplication *)arg1;
+- (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didUpdateCategoryVisualizationWithStyle:(int)arg2;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didUpdateWithTransitPassProperties:(PKTransitPassProperties *)arg2;
 - (void)passWithUniqueIdentifier:(NSString *)arg1 didReceiveValueAddedServiceTransaction:(PKValueAddedServiceTransaction *)arg2;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didEnableTransactionService:(_Bool)arg2;

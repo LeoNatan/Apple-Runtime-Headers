@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)viewForIdentifier:(id)arg1;
+- (void)_create_personNameView;
 - (id)dependentEntryKeys;
 
 @end

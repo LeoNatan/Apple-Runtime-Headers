@@ -17,7 +17,7 @@
 @property(readonly, copy) NSData *sharedInfo; // @synthesize sharedInfo=_sharedInfo;
 @property(readonly) long long requestedSize; // @synthesize requestedSize=_requestedSize;
 - (void).cxx_destruct;
-- (id)initWithXpcDictionary:(id)arg1;
+- (id)initWithParameters:(id)arg1;
 
 @end
 

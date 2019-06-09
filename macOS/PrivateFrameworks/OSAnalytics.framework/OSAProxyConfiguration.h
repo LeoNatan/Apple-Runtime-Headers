@@ -48,6 +48,7 @@
 @property(readonly) NSString *uiCountryCode; // @synthesize uiCountryCode=_uiCountryCode;
 @property(readonly) NSString *targetAudience; // @synthesize targetAudience=_targetAudience;
 @property(readonly) NSString *productNameVersionBuildString; // @synthesize productNameVersionBuildString=_productNameVersionBuildString;
+@property(readonly) NSString *productName; // @synthesize productName=_productName;
 @property(readonly) NSString *osTrain; // @synthesize osTrain=_osTrain;
 @property(readonly) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(readonly) NSString *productVersion; // @synthesize productVersion=_productVersion;
@@ -55,12 +56,16 @@
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly) NSString *logPath; // @synthesize logPath=_logPath;
 - (void).cxx_destruct;
+- (BOOL)isFile:(id)arg1 validForSubmission:(id)arg2 reasonableSize:(long long)arg3 to:(id)arg4 internalTypes:(id)arg5 result:(const char **)arg6;
+- (BOOL)isConfigEnabled:(id)arg1;
+- (BOOL)usesLegacySubmission:(id)arg1;
 - (id)description;
 - (id)metadata;
 - (id)assembleMetadataAt:(double)arg1 withOptions:(unsigned int)arg2;
 @property(readonly) BOOL isInternalBridge;
 @property(readonly) BOOL isProxy;
 - (id)initFromPath:(id)arg1;
+- (id)init:(id)arg1 fromMetadata:(id)arg2;
 
 @end
 

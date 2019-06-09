@@ -6,28 +6,39 @@
 
 #import <HealthDaemon/HDQueryServer.h>
 
-@class NSNumber;
+#import <HealthDaemon/HDQuantitySeriesObserver-Protocol.h>
 
-@interface HDObserverQueryServer : HDQueryServer
+@class NSNumber, NSString;
+
+@interface HDObserverQueryServer : HDQueryServer <HDQuantitySeriesObserver>
 {
     _Bool _deliverOnUnlock;
+    _Bool _observeUnfrozenSeries;
     NSNumber *_anchor;
 }
 
 + (_Bool)supportsAnchorBasedAuthorization;
 + (id)requiredEntitlements;
 + (Class)queryClass;
-@property(readonly, copy, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
-@property(readonly, nonatomic) _Bool deliverOnUnlock; // @synthesize deliverOnUnlock=_deliverOnUnlock;
 - (void).cxx_destruct;
 - (void)_deliverDataWasUpdatedWithAnchor:(id)arg1;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (_Bool)_shouldListenForUpdates;
+- (void)profile:(id)arg1 didJournalInsertOfQuantity:(id)arg2 type:(id)arg3 dateInterval:(id)arg4 series:(id)arg5;
+- (void)profile:(id)arg1 didDiscardSeriesOfType:(id)arg2;
+- (void)profile:(id)arg1 didInsertQuantity:(id)arg2 type:(id)arg3 dateInterval:(id)arg4 series:(id)arg5 anchor:(id)arg6;
 - (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)_queue_stop;
 - (void)_queue_start;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

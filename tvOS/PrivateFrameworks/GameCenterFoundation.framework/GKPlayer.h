@@ -9,7 +9,7 @@
 #import <GameCenterFoundation/NSCoding-Protocol.h>
 #import <GameCenterFoundation/NSSecureCoding-Protocol.h>
 
-@class GKGame, GKPlayerInternal, NSArray, NSAttributedString, NSDate, NSString;
+@class GKGame, GKPlayerInternal, NSArray, NSAttributedString, NSDate, NSNumber, NSString;
 
 @interface GKPlayer : GKBasePlayer <NSCoding, NSSecureCoding>
 {
@@ -62,9 +62,18 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
+- (void)setFriendPlayedNearby:(id)arg1;
+- (void)setFriendPlayedWith:(id)arg1;
+- (void)setFriendBiDirectional:(id)arg1;
 - (void)setFriendLevel:(id)arg1;
+@property(readonly, nonatomic) long long avatarType; // @dynamic avatarType;
 @property(copy, nonatomic) NSString *alias; // @dynamic alias;
-@property(readonly, nonatomic) NSString *friendLevel; // @dynamic friendLevel;
+@property(readonly, nonatomic) NSNumber *friendPlayedNearby; // @dynamic friendPlayedNearby;
+@property(readonly, nonatomic) NSNumber *friendPlayedWith; // @dynamic friendPlayedWith;
+@property(readonly, nonatomic) NSNumber *friendBiDirectional; // @dynamic friendBiDirectional;
+@property(readonly, nonatomic) NSNumber *friendLevel; // @dynamic friendLevel;
+@property(readonly, retain, nonatomic) NSString *teamPlayerID; // @dynamic teamPlayerID;
+@property(readonly, retain, nonatomic) NSString *gamePlayerID; // @dynamic gamePlayerID;
 @property(retain, nonatomic) NSString *playerID; // @dynamic playerID;
 @property(readonly, nonatomic) CDStruct_c6d350ec stats;
 @property(readonly, nonatomic) GKGame *lastPlayedGame;

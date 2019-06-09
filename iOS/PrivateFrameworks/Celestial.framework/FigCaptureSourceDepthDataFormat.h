@@ -6,11 +6,14 @@
 
 #import <Celestial/FigCaptureSourceFormat.h>
 
+@class NSArray;
+
 @interface FigCaptureSourceDepthDataFormat : FigCaptureSourceFormat
 {
 }
 
 @property(readonly) _Bool RGBIRStereoFusionSupported;
+@property(readonly) NSArray *supportedSemanticSegmentationMatteURNs;
 @property(readonly) float portraitEffectsMatteMainImageDownscalingFactor;
 - (CDStruct_79c71658)depthEngineOutputDimensions;
 @property(readonly, getter=isStillImageOnlyDepthData) _Bool stillImageOnlyDepthData;

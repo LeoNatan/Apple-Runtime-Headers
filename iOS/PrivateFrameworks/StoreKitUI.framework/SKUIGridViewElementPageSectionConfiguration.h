@@ -9,6 +9,7 @@
 @class NSArray, SKUIStorePageSectionContext, SKUIViewElementLayoutContext, UIColor;
 @protocol SKUIGridViewElementPageSectionConfigurationDataSource;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGridViewElementPageSectionConfiguration : NSObject
 {
     long long _cardVerticalSpacingStyle;

@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *complexScriptFont; // @synthesize complexScriptFont=_complexScriptFont;
 @property(copy, nonatomic) NSString *eastAsianFont; // @synthesize eastAsianFont=_eastAsianFont;
 @property(copy, nonatomic) NSString *latinFont; // @synthesize latinFont=_latinFont;
+- (void).cxx_destruct;
 - (_Bool)isEmpty;
 - (_Bool)isEqualToBaseFontCollection:(id)arg1;
 - (void)setBaseFont:(id)arg1 forId:(int)arg2;
 - (id)baseFontForId:(int)arg1;
-- (void)dealloc;
 
 @end
 

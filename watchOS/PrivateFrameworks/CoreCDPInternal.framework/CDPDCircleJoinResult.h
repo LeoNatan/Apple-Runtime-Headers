@@ -15,10 +15,10 @@
     _Bool _requiresEscrowRecordsFetch;
     _Bool _requiresInitialSync;
     unsigned int _remotePeeriCKState;
-    int _circleStatus;
+    unsigned int _circleStatus;
 }
 
-@property int circleStatus; // @synthesize circleStatus=_circleStatus;
+@property unsigned int circleStatus; // @synthesize circleStatus=_circleStatus;
 @property unsigned int remotePeeriCKState; // @synthesize remotePeeriCKState=_remotePeeriCKState;
 @property _Bool requiresInitialSync; // @synthesize requiresInitialSync=_requiresInitialSync;
 @property _Bool requiresEscrowRecordsFetch; // @synthesize requiresEscrowRecordsFetch=_requiresEscrowRecordsFetch;

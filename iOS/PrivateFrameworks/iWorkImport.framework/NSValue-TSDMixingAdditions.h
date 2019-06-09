@@ -9,7 +9,9 @@
 #import <iWorkImport/TSDMixing-Protocol.h>
 
 @interface NSValue (TSDMixingAdditions) <TSDMixing>
++ (id)valueWithContentBlend:(struct _TSDContentBlend)arg1;
 - (id)mixedObjectWithFraction:(double)arg1 ofObject:(id)arg2;
 - (long long)mixingTypeWithObject:(id)arg1 context:(id)arg2;
+- (struct _TSDContentBlend)TSDContentBlendValue;
 @end
 

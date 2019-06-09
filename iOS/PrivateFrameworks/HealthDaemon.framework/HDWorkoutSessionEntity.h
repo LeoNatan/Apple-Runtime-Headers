@@ -20,6 +20,9 @@
 + (id)sessionsForSource:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)createSessionWithIdentifier:(id)arg1 source:(id)arg2 configuration:(id)arg3 state:(long long)arg4 profile:(id)arg5 error:(id *)arg6;
 + (id)lookupSessionWithIdentifier:(id)arg1 profile:(id)arg2 error:(id *)arg3;
+- (_Bool)updateLatestActivityDate:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
+- (_Bool)updateLatestActivityDateWithTransaction:(id)arg1 error:(id *)arg2;
+- (id)latestActivityDateInTransaction:(id)arg1 error:(id *)arg2;
 - (_Bool)finishWithTransaction:(id)arg1 error:(id *)arg2;
 - (id)workoutEventsInTransaction:(id)arg1 error:(id *)arg2;
 - (_Bool)insertWorkoutEvent:(id)arg1 transaction:(id)arg2 error:(id *)arg3;

@@ -69,8 +69,6 @@
 @property(nonatomic) _Bool hasFeature;
 @property(nonatomic) int feature; // @synthesize feature=_feature;
 @property(nonatomic) _Bool hasTimestamp;
-- (void)_setFromSwipeMenu:(_Bool)arg1;
-- (void)_setInteractionGesture:(int)arg1;
 
 @end
 

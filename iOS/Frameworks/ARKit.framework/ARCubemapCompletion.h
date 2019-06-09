@@ -6,49 +6,48 @@
 
 #import <objc/NSObject.h>
 
-@class ARGPUCubemapConverter, CIContext;
-@protocol MTLCommandQueue, MTLDevice;
+@class ARGPUCubemapConverter, ARGPUSphericalBlur;
+@protocol MTLCommandQueue, MTLComputePipelineState, MTLDevice, MTLTexture;
 
 @interface ARCubemapCompletion : NSObject
 {
     void *_espresso_ctx;
     void *_espresso_plan;
-    struct {
-        void *plan;
-        int network_index;
-    } _espresso_net;
-    struct {
-        float bias_r;
-        float bias_g;
-        float bias_b;
-        float scale;
-        _Bool network_wants_bgr;
-    } _espresso_processing_params;
+    CDStruct_2bc666a5 _espresso_net;
+    CDStruct_b527887c _espresso_processing_params;
     _Bool _espressoInitialized;
-    struct vector<unsigned char, std::__1::allocator<unsigned char>> _randomNumbers;
+    vector_aab22ae2 _randomNumbers;
+    vector_aab22ae2 _srgbToLogLUT;
     struct vImage_Buffer _vImageBuffer;
     ARGPUCubemapConverter *_cubemapConverter;
+    ARGPUSphericalBlur *_sphericalBlur;
+    id <MTLTexture> _roughness;
     double _bias_exposure_threshold;
     unsigned long long _bias_height;
     float _r_bias;
     float _g_bias;
     float _b_bias;
     int _bias_mask;
+    float _r_avg;
+    float _g_avg;
+    float _b_avg;
     float _alpha_threshold;
     unsigned long long _gan_size;
     id <MTLDevice> _device;
     id <MTLCommandQueue> _queue;
-    CIContext *_contextWithMTLDevice;
-    CIContext *_defaultContext;
+    id <MTLComputePipelineState> _combineBuffersToHDR;
+    _Bool _generateHDROutput;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) _Bool generateHDROutput; // @synthesize generateHDROutput=_generateHDROutput;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)blendSeam:(id)arg1;
-- (id)toMTLTexture:(id)arg1;
-- (id)toCIImage:(CDStruct_cf098810)arg1;
+- (id)generateSeamSmoothingTexture;
+- (id)grayCubemapOfSize:(unsigned long long)arg1;
+- (id)toTexture:(CDStruct_cf098810)arg1;
 - (struct vImage_Buffer)toVImageBuffer:(id)arg1;
+- (unsigned char)srgbToLog:(unsigned char)arg1;
 - (id)completeLatLongImage:(id)arg1;
 -     // Error parsing type: @80@0:8@16d24{?=[3]}32, name: completeCubemap:cameraExposure:rotationWorldFromCube:
 - (void)dealloc;

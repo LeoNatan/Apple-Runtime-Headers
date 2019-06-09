@@ -29,8 +29,10 @@
     int _rscp;
     int _rssi;
     int _serverHash;
+    NSString *_serviceProviderName;
     int _tac;
     int _uarfcn;
+    _Bool _isLimitedService;
     struct {
         unsigned int cellLatitude:1;
         unsigned int cellLongitude:1;
@@ -42,10 +44,13 @@
         unsigned int rssi:1;
         unsigned int serverHash:1;
         unsigned int uarfcn:1;
+        unsigned int isLimitedService:1;
     } _has;
 }
 
 + (Class)neighborType;
+@property(retain, nonatomic) NSString *serviceProviderName; // @synthesize serviceProviderName=_serviceProviderName;
+@property(nonatomic) _Bool isLimitedService; // @synthesize isLimitedService=_isLimitedService;
 @property(nonatomic) int bandwidth; // @synthesize bandwidth=_bandwidth;
 @property(retain, nonatomic) CLPCellNeighborsGroup *neighborGroup; // @synthesize neighborGroup=_neighborGroup;
 @property(retain, nonatomic) NSMutableArray *neighbors; // @synthesize neighbors=_neighbors;
@@ -75,6 +80,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasServiceProviderName;
+@property(nonatomic) _Bool hasIsLimitedService;
 @property(nonatomic) _Bool hasBandwidth;
 @property(readonly, nonatomic) _Bool hasNeighborGroup;
 - (id)neighborAtIndex:(unsigned long long)arg1;

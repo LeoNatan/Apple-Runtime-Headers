@@ -8,7 +8,8 @@
 
 #import <HearingUI/CCUIContentModuleContentViewController-Protocol.h>
 
-@class NSMutableArray, NSString, UILabel, UIScrollView, UIStackView, UIView;
+@class CCUIContentModuleDetailTransitioningDelegate, NSMutableArray, NSString, UILabel, UIScrollView, UIStackView, UIView, UIViewPropertyAnimator;
+@protocol HACCListViewControllerDelegate;
 
 @interface HACCListViewController : CCUIButtonModuleViewController <CCUIContentModuleContentViewController>
 {
@@ -18,12 +19,16 @@
     UIScrollView *_scrollView;
     UIStackView *_menuItemsContainer;
     NSMutableArray *_menuItemsViews;
+    CCUIContentModuleDetailTransitioningDelegate *_detailTransitioningDelegate;
+    id <HACCListViewControllerDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <HACCListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (double)_menuItemsContainerHeight;
 - (void)_layoutMenuItemsForSize:(struct CGSize)arg1;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
 - (void)setTitle:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -35,10 +40,12 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) double preferredExpandedContentWidth;
+@property(readonly, nonatomic) double preferredExpandedContinuousCornerRadius;
 @property(readonly, nonatomic) _Bool providesOwnPlatter;
 @property(readonly) Class superclass;
 

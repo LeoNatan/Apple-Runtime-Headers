@@ -7,11 +7,10 @@
 #import <BridgePreferences/BPSSetupPageViewController.h>
 
 #import <BridgePreferences/BPSBuddyController-Protocol.h>
-#import <BridgePreferences/PBAutomationDocumentation-Protocol.h>
 
-@class BPSWatchView, NSMutableDictionary, NSString, UIButton, UILabel, UIScrollView;
+@class BPSWatchView, NSString, UIButton, UILabel, UIScrollView;
 
-@interface BPSSetupOptinViewController : BPSSetupPageViewController <PBAutomationDocumentation, BPSBuddyController>
+@interface BPSSetupOptinViewController : BPSSetupPageViewController <BPSBuddyController>
 {
     unsigned long long _style;
     BPSWatchView *_watchView;
@@ -22,10 +21,8 @@
     UIButton *_alternateChoiceButton;
     UIButton *_learnMoreButton;
     UIButton *_okayButton;
-    NSMutableDictionary *_automationBlocks;
 }
 
-@property(retain, nonatomic) NSMutableDictionary *automationBlocks; // @synthesize automationBlocks=_automationBlocks;
 @property(retain, nonatomic) UIButton *okayButton; // @synthesize okayButton=_okayButton;
 @property(retain, nonatomic) UIButton *learnMoreButton; // @synthesize learnMoreButton=_learnMoreButton;
 @property(retain, nonatomic) UIButton *alternateChoiceButton; // @synthesize alternateChoiceButton=_alternateChoiceButton;
@@ -49,7 +46,6 @@
 - (id)optinLocalizationStringsFile;
 - (void)viewDidLayoutSubviews;
 - (double)suggestedChoicePillDetailTextLabelVerticalOffset;
-- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (double)noHWDetailOffset;
 - (double)noHWImageOffset;

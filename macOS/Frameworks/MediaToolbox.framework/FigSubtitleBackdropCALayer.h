@@ -25,7 +25,6 @@
 - (void)setCornerRadius:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

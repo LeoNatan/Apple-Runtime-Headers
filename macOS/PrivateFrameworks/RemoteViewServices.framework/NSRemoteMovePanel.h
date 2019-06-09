@@ -19,7 +19,8 @@
 + (id)keyPathsForPanelSettings;
 @property(copy) NSString *movePopupFieldLabel; // @synthesize movePopupFieldLabel=_movePopupFieldLabel;
 @property(readonly) NSURL *finalURL; // @synthesize finalURL=_finalURL;
-@property(copy) NSURL *initialURL; // @synthesize initialURL=_initialURL;
+@property(copy, nonatomic) NSURL *initialURL; // @synthesize initialURL=_initialURL;
+- (void).cxx_destruct;
 - (void)connection:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)panelCompletedWithNewDocumentRequest;
 - (void)panelCompletedWithRequest:(id)arg1;
@@ -28,7 +29,6 @@
 - (void)_handleDidChangeToDirectoryURLDelegate:(id)arg1;
 @property(copy) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 @property(copy) NSURL *URL;
-- (void)dealloc;
 - (unsigned long long)_panelType;
 
 @end

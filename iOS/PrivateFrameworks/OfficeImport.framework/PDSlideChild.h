@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     OADColorMap *mColorMapOverride;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)drawingTheme;
 - (void)doneWithContent;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)showMasterShapes;
 - (void)setShowMasterPlaceholderAnimations:(_Bool)arg1;
 - (_Bool)showMasterPlaceholderAnimations;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -13,6 +13,7 @@
 @interface SFSearchResult_SpotlightExtras : SFSearchResult <NSSecureCoding>
 {
     SFPunchout *_cachedPunchout;
+    _Bool _hasCommunicationContent;
     float _l2score;
     unsigned int _feedbackBlockId;
     NSString *_protectionClass;
@@ -27,11 +28,14 @@
     NSString *_contentURL;
     PRSRankingItem *_rankingItem;
     NSData *_suggestionsFeedbackData;
-    struct ranking_index_score_t _score;
+    unsigned long long _predictionsFeedbackActionType;
+    // Error parsing type: T, name: _score
 }
 
 + (void)initialize;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long predictionsFeedbackActionType; // @synthesize predictionsFeedbackActionType=_predictionsFeedbackActionType;
+@property(nonatomic) _Bool hasCommunicationContent; // @synthesize hasCommunicationContent=_hasCommunicationContent;
 @property(nonatomic) unsigned int feedbackBlockId; // @synthesize feedbackBlockId=_feedbackBlockId;
 @property(retain, nonatomic) NSData *suggestionsFeedbackData; // @synthesize suggestionsFeedbackData=_suggestionsFeedbackData;
 @property(retain) PRSRankingItem *rankingItem; // @synthesize rankingItem=_rankingItem;
@@ -41,7 +45,9 @@
 @property(retain, nonatomic) NSDate *lastUsedDate; // @synthesize lastUsedDate=_lastUsedDate;
 @property(retain, nonatomic) NSString *launchString; // @synthesize launchString=_launchString;
 @property(nonatomic) float l2score; // @synthesize l2score=_l2score;
-@property(nonatomic) struct ranking_index_score_t score; // @synthesize score=_score;
+// Error parsing type for property score:
+// Property attributes: TT,N,V_score
+
 @property(retain, nonatomic) NSNumber *documentIdentifier; // @synthesize documentIdentifier=_documentIdentifier;
 @property(retain, nonatomic) NSString *filename; // @synthesize filename=_filename;
 @property(retain, nonatomic) NSNumber *parentFileIdentifier; // @synthesize parentFileIdentifier=_parentFileIdentifier;
@@ -51,7 +57,6 @@
 - (id)punchout;
 - (id)debugDescription;
 - (void)setUrl:(id)arg1;
-- (long long)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

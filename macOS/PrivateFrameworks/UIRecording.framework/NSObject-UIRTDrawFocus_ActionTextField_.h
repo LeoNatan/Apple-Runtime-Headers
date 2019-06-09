@@ -8,5 +8,15 @@
 
 @interface NSObject (UIRTDrawFocus_ActionTextField_)
 - (BOOL)isActionTextField__;
+- (BOOL)isUIREvent__;
+- (BOOL)isNSNotification__;
+- (BOOL)isNSValue__;
+- (BOOL)isNSString__;
+- (BOOL)isNSDate__;
+- (BOOL)isNSData__;
+- (BOOL)isNSNumber__;
+- (BOOL)isNSSet__;
+- (BOOL)isNSDictionary__;
+- (BOOL)isNSArray__;
 @end
 

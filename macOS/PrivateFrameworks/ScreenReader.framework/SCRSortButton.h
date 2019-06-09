@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (BOOL)ignoreDragNotifications;
 - (BOOL)alwaysAllowDrag;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (void)appendSortOrderStatusDescription:(id)arg1;
 - (BOOL)isSelected;
 

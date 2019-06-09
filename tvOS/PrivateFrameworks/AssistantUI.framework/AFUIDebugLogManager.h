@@ -24,23 +24,15 @@
 - (id)_contentsOfDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 includingPropertiesForKeys:(id)arg3 error:(id *)arg4;
 - (id)_captureLogsInDirectoryAtURL:(id)arg1 matchingPattern:(id)arg2 withMimeType:(id)arg3 attemptCompression:(_Bool)arg4 limit:(long long)arg5 error:(id *)arg6;
 @property(readonly, copy, nonatomic, getter=_baseLogDirectoryURL) NSURL *baseLogDirectoryURL;
-- (id)_archiveLogsInDirectoryAtURL:(id)arg1 matchingPatterns:(id)arg2 archiveName:(id)arg3 error:(id *)arg4;
 - (id)_archiveLogDirectoryAtURL:(id)arg1 name:(id)arg2 error:(id *)arg3;
+- (void)_captureFileAtURL:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 pattern:(id)arg4 mimeType:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)_captureLogsAtURL:(id)arg1 logName:(id)arg2 sinceTime:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)capturePreviousConversationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)captureWiFiLogWithCompletion:(CDUnknownBlockType)arg1;
-- (void)captureSystemLogSinceTime:(double)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)captureAVVoiceControllerLogsSinceTime:(double)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)captureVoiceServicesLogsSinceTime:(double)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)captureSiriRemembersLogWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriVoiceTriggerLogsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureSiriSpeechLogsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureCardLogsSinceTime:(double)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)captureSiriLogsSinceTime:(double)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)captureSiriCrashLogsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)captureSiriCFNetworkLogsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)captureLocationLogWithCompletion:(CDUnknownBlockType)arg1;
-- (void)captureBasebandLogWithCompletion:(CDUnknownBlockType)arg1;
 - (void)captureViewHierarchyLogWithDefaultViewHierarchy:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
 

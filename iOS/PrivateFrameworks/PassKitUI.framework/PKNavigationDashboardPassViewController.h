@@ -16,13 +16,14 @@
 #import <PassKitUI/PKPassGroupViewDelegate-Protocol.h>
 #import <PassKitUI/PKPassGroupViewReceiver-Protocol.h>
 #import <PassKitUI/PKSecureElementObserver-Protocol.h>
+#import <PassKitUI/PKSpendingSummaryViewControllerDelegate-Protocol.h>
 #import <PassKitUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PassKitUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSString, PKAnimatedNavigationBarTitleView, PKDashboardPassFlowLayout, PKDashboardPassGroupItemPresenter, PKDashboardPassViewController, PKDashboardPaymentTransactionItemPresenter, PKGroup, PKNavigationDashboardAnimatedTransitioningHandler, PKPGSVTransitionInterstitialView, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKSecureElement, UIPanGestureRecognizer, UIView, _UIDynamicValueAnimation;
+@class NSString, PKAnimatedNavigationBarTitleView, PKDashboardPassFlowLayout, PKDashboardPassGroupItemPresenter, PKDashboardPassViewController, PKDashboardPaymentTransactionItemPresenter, PKGroup, PKNavigationDashboardAnimatedTransitioningHandler, PKPGSVTransitionInterstitialView, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassPresentationContext, PKPassthroughView, PKSecureElement, UIPanGestureRecognizer, UIView, _UIDynamicValueAnimation;
 @protocol PKDashboardPassDataSource, PKDashboardPassViewControllerDelegate, PKPassGroupViewDelegate, PKPassGroupViewReceiver;
 
-@interface PKNavigationDashboardPassViewController : PKNavigationController <PKPassGroupViewDelegate, PKPassFooterViewDelegate, PKSecureElementObserver, UIViewControllerTransitioningDelegate, PKPassDeleteHandler, PKPassDeleteAnimationControllerDelegate, UIGestureRecognizerDelegate, CNAvatarViewDelegate, PKDashboardPassViewControllerDelegate, PKDashboardDelegate, PKForegroundActiveArbiterObserver, PKPassGroupViewReceiver>
+@interface PKNavigationDashboardPassViewController : PKNavigationController <PKPassGroupViewDelegate, PKPassFooterViewDelegate, PKSecureElementObserver, UIViewControllerTransitioningDelegate, PKPassDeleteHandler, PKPassDeleteAnimationControllerDelegate, UIGestureRecognizerDelegate, CNAvatarViewDelegate, PKSpendingSummaryViewControllerDelegate, PKDashboardPassViewControllerDelegate, PKDashboardDelegate, PKForegroundActiveArbiterObserver, PKPassGroupViewReceiver>
 {
     PKNavigationDashboardAnimatedTransitioningHandler *_transitioningHandler;
     PKGroup *_group;
@@ -32,7 +33,6 @@
     PKAnimatedNavigationBarTitleView *_titleView;
     PKPGSVTransitionInterstitialView *_leadingInterstitialItemView;
     PKPGSVTransitionInterstitialView *_trailingInterstitialItemView;
-    _Bool _pendingSnapshotPresentationInNavigationBar;
     PKPassDeleteAnimationController *_deleteAnimationController;
     PKPass *_passBeingDeleted;
     _Bool _passDeletionInitiated;
@@ -56,8 +56,11 @@
     _Bool _showingFooter;
     _Bool _shouldPauseDynamicCard;
     _Bool _dashboardIsVisible;
+    _Bool _shouldUpdateSnapshotView;
+    _Bool _snapshotViewIsHidden;
     unsigned char _visibilityState;
     CDStruct_973bafd3 _activeState;
+    PKPassPresentationContext *_context;
     _Bool _footerSuppressed;
     _Bool _passGroupViewIsInCollectionView;
     _Bool _invalidated;
@@ -69,8 +72,10 @@
     UIView *_leadingItemView;
     UIView *_trailingItemView;
     PKPassGroupView *_passGroupView;
+    double _topMargin;
 }
 
+@property(nonatomic) double topMargin; // @synthesize topMargin=_topMargin;
 @property(nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
 @property(readonly, nonatomic) _UIDynamicValueAnimation *offsetAnimation; // @synthesize offsetAnimation=_offsetAnimation;
 @property(nonatomic) _Bool passGroupViewIsInCollectionView; // @synthesize passGroupViewIsInCollectionView=_passGroupViewIsInCollectionView;
@@ -93,7 +98,11 @@
 - (void)presentTransaction:(id)arg1 forPaymentPass:(id)arg2;
 - (id)_barcodePassDetailsViewControllerForBarcodePass:(id)arg1;
 - (id)_paymentPassDetailsViewControllerForPaymentPass:(id)arg1;
-- (void)presentPassDetailsAnimated:(_Bool)arg1;
+- (void)_canPresentCreditDetailsViewControllerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)presentBalanceDetailsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)summaryTypeDidChange;
+- (void)presentSpendingSummaryWithType:(unsigned long long)arg1 unit:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentPassDetailsAnimated:(_Bool)arg1 action:(unsigned long long)arg2;
 - (void)infoTapped:(id)arg1;
 - (void)doneTapped:(id)arg1;
 - (id)transactionItemPresenter;
@@ -118,6 +127,7 @@
 - (struct CGPoint)preferredContentOffset;
 - (_Bool)shouldOverrideContentOffset;
 - (void)noteTransitionCompleted;
+- (void)insertGroupView;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)interactionControllerForPresentation:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
@@ -144,6 +154,7 @@
 - (void)relinquishGroupView;
 - (void)acquireGroupView:(id)arg1;
 - (void)_updateNavigationBarWithPassAppeared:(_Bool)arg1;
+- (void)_updateSnapshotView;
 - (void)_updatePausedState;
 - (void)_updateTopViewController:(id)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
@@ -157,7 +168,8 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
-- (id)initWithPassGroupView:(id)arg1 groupViewReceiver:(id)arg2;
+- (id)initWithPassGroupView:(id)arg1 groupViewReceiver:(id)arg2 context:(id)arg3;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

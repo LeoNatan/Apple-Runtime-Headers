@@ -16,6 +16,9 @@
 }
 
 @property struct netagent *internalNetagent; // @synthesize internalNetagent=_internalNetagent;
+- (_Bool)supportsResolve;
+- (_Bool)requiresAssert;
+- (_Bool)supportsBrowse;
 - (_Bool)isNexusProvider;
 @property(readonly, nonatomic, getter=isNetworkProvider) _Bool networkProvider;
 @property(readonly, nonatomic, getter=isSpecificUseOnly) _Bool specificUseOnly;

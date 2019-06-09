@@ -8,7 +8,7 @@
 
 #import <TelephonyUtilities/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, TUHandle;
 
 @interface TUMetadataDestinationID : NSObject <NSCopying>
 {
@@ -16,11 +16,10 @@
     NSString *_countryCode;
     struct __CFPhoneNumber *_phoneNumber;
     NSString *_cacheKey;
+    TUHandle *_normalizedHandle;
 }
 
-+ (id)destinationIDWithRecentCall:(id)arg1;
-+ (id)destinationIDWithCall:(id)arg1;
-+ (id)destinationIDWithDestinationID:(id)arg1 countryCode:(id)arg2;
+@property(readonly, nonatomic) TUHandle *normalizedHandle; // @synthesize normalizedHandle=_normalizedHandle;
 @property(readonly, copy, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 @property(readonly, nonatomic) struct __CFPhoneNumber *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(readonly, copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
@@ -32,7 +31,6 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)initWithRecentCall:(id)arg1;
 - (id)initWithCall:(id)arg1;
 - (id)initWithDestinationID:(id)arg1 countryCode:(id)arg2;
 

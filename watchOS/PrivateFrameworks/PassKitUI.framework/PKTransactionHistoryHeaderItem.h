@@ -17,8 +17,10 @@
     NSString *_peerPaymentCounterpartHandle;
     CNContact *_contact;
     PKPaymentTransactionGroup *_transactionGroup;
+    int _transactionType;
 }
 
+@property(nonatomic) int transactionType; // @synthesize transactionType=_transactionType;
 @property(retain, nonatomic) PKPaymentTransactionGroup *transactionGroup; // @synthesize transactionGroup=_transactionGroup;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(copy, nonatomic) NSString *peerPaymentCounterpartHandle; // @synthesize peerPaymentCounterpartHandle=_peerPaymentCounterpartHandle;

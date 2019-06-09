@@ -6,29 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class BBBulletin, CNContact, IMTranscriptChatItem, NSAttributedString, NSString;
+@class CNContact, IMTranscriptChatItem, NSAttributedString, NSString, UITraitCollection, UNNotification;
 
 @interface CKChatItem : NSObject
 {
     _Bool _zOrder;
     _Bool _sizeLoaded;
     IMTranscriptChatItem *_imChatItem;
-    BBBulletin *_bulletin;
+    UNNotification *_notification;
     double _maxWidth;
+    UITraitCollection *_transcriptTraitCollection;
     NSAttributedString *_transcriptText;
     NSAttributedString *_transcriptDrawerText;
     struct CGSize _size;
     struct UIEdgeInsets _textAlignmentInsets;
 }
 
-+ (id)chatItemWithBulletin:(id)arg1 balloonMaxWidth:(double)arg2 otherMaxWidth:(double)arg3;
-+ (id)chatItemWithIMChatItem:(id)arg1 balloonMaxWidth:(double)arg2 otherMaxWidth:(double)arg3;
++ (id)chatItemWithNotification:(id)arg1 balloonMaxWidth:(double)arg2 otherMaxWidth:(double)arg3;
++ (id)chatItemWithIMChatItem:(id)arg1 balloonMaxWidth:(double)arg2 otherMaxWidth:(double)arg3 transcriptTraitCollection:(id)arg4;
 @property(nonatomic, getter=isSizeLoaded) _Bool sizeLoaded; // @synthesize sizeLoaded=_sizeLoaded;
 @property(copy, nonatomic) NSAttributedString *transcriptDrawerText; // @synthesize transcriptDrawerText=_transcriptDrawerText;
 @property(copy, nonatomic) NSAttributedString *transcriptText; // @synthesize transcriptText=_transcriptText;
+@property(retain, nonatomic) UITraitCollection *transcriptTraitCollection; // @synthesize transcriptTraitCollection=_transcriptTraitCollection;
 @property(nonatomic) double maxWidth; // @synthesize maxWidth=_maxWidth;
 @property(readonly, nonatomic) _Bool zOrder; // @synthesize zOrder=_zOrder;
-@property(retain, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
+@property(retain, nonatomic) UNNotification *notification; // @synthesize notification=_notification;
 @property(retain, nonatomic) IMTranscriptChatItem *IMChatItem; // @synthesize IMChatItem=_imChatItem;
 - (void).cxx_destruct;
 - (void)_setSizeForTesting:(struct CGSize)arg1;
@@ -36,7 +38,7 @@
 - (id)loadTranscriptDrawerText;
 - (struct CGSize)loadSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;
 - (id)loadTranscriptText;
-- (id)initWithBulletin:(id)arg1 maxWidth:(double)arg2;
+- (id)initWithNotification:(id)arg1 maxWidth:(double)arg2;
 - (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
 @property(readonly, nonatomic) _Bool stickersSnapToPoint;
 @property(readonly, nonatomic) _Bool canAttachStickers;

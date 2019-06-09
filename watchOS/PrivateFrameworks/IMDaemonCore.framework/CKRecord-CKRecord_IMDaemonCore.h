@@ -8,5 +8,20 @@
 
 @interface CKRecord (CKRecord_IMDaemonCore)
 - (id)copyEncodedSystemFields;
+- (id)_assetForKey:(id)arg1;
+- (id)_arrayForKey:(id)arg1;
+- (id)_dataForKey:(id)arg1;
+- (id)_numberForKey:(id)arg1;
+- (id)_stringForKey:(id)arg1;
+- (id)_valueForKey:(id)arg1;
+- (id)_dateForKey:(id)arg1;
+- (void)_setCKRecordDate:(id)arg1 forKey:(id)arg2;
+- (void)_setCKRecordAsset:(id)arg1 forKey:(id)arg2;
+- (void)_setCKRecordArray:(id)arg1 forKey:(id)arg2;
+- (void)_setCKRecordData:(id)arg1 forKey:(id)arg2;
+- (void)_setUnencryptedCKRecordNumber:(id)arg1 forKey:(id)arg2;
+- (void)_setCKRecordNumber:(id)arg1 forKey:(id)arg2;
+- (void)_setCKRecordString:(id)arg1 forKey:(id)arg2;
+- (void)_setValue:(id)arg1 forKey:(id)arg2;
 @end
 

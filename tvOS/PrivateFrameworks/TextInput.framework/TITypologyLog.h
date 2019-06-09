@@ -8,7 +8,7 @@
 
 #import <TextInput/NSCopying-Protocol.h>
 
-@class NSDate, NSDictionary, NSString, NSUUID, TIRollingLog;
+@class NSDate, NSDictionary, NSMutableSet, NSString, NSUUID, TIKeyboardState, TIRollingLog;
 
 @interface TITypologyLog : NSObject <NSCopying>
 {
@@ -18,12 +18,18 @@
     NSString *_buildVersion;
     NSString *_clientIdentifier;
     NSDictionary *_config;
+    NSUUID *_lastRecordUUID;
     TIRollingLog *_records;
     TIRollingLog *_traceLog;
+    NSMutableSet *_loggedRecordClasses;
+    TIKeyboardState *_lastKeyboardState;
 }
 
+@property(retain, nonatomic) TIKeyboardState *lastKeyboardState; // @synthesize lastKeyboardState=_lastKeyboardState;
+@property(retain, nonatomic) NSMutableSet *loggedRecordClasses; // @synthesize loggedRecordClasses=_loggedRecordClasses;
 @property(readonly, nonatomic) TIRollingLog *traceLog; // @synthesize traceLog=_traceLog;
 @property(readonly, nonatomic) TIRollingLog *records; // @synthesize records=_records;
+@property(copy, nonatomic) NSUUID *lastRecordUUID; // @synthesize lastRecordUUID=_lastRecordUUID;
 @property(retain, nonatomic) NSDictionary *config; // @synthesize config=_config;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
@@ -31,6 +37,7 @@
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+- (_Bool)loggedRecordOfClass:(Class)arg1;
 - (void)enumerateHumanReadableTraceEntriesWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateRecordsWithBlock:(CDUnknownBlockType)arg1;
 - (void)logToHumanReadableTrace:(id)arg1;

@@ -6,11 +6,12 @@
 
 #import <TVMLKit/NSObject-Protocol.h>
 
-@class NSString, NSURL, TVViewElement, UIImage, UIView, UIViewController;
+@class NSString, NSURL, TVPlayer, TVViewElement, UIImage, UIView, UIViewController;
 
 @protocol TVInterfaceCreating <NSObject>
 
 @optional
+- (UIViewController *)playerViewControllerForPlayer:(TVPlayer *)arg1;
 - (Class)collectionViewCellClassForElement:(TVViewElement *)arg1;
 - (UIImage *)imageForResource:(NSString *)arg1;
 - (NSURL *)URLForResource:(NSString *)arg1;

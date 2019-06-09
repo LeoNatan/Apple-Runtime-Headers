@@ -6,9 +6,11 @@
 
 #import <NanoMailKitClient/NNMKNanoMailServiceXPCMessageUpdatesBasedClientInterface-Protocol.h>
 
-@class NSArray;
+@class NNMKMessageContent, NSArray, NSString;
 
 @protocol NNMKNanoMailServiceXPCAdHocClientInterface <NNMKNanoMailServiceXPCMessageUpdatesBasedClientInterface>
+- (oneway void)receiverXPCServerDidReplyWithAddedSubsectionId:(NSString *)arg1 inParentSectionId:(NSString *)arg2;
+- (oneway void)receiverXPCServerDidReplyWithMessageContent:(NNMKMessageContent *)arg1;
 - (oneway void)receiverXPCServerDidReplyWithAllMessages:(NSArray *)arg1;
 - (oneway void)receiverXPCServerDidReplyWithMessagesCount:(unsigned int)arg1;
 @end

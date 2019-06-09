@@ -13,10 +13,12 @@
     NSArray *_recordZonesToSave;
     NSArray *_recordZoneIDsToDelete;
     CDUnknownBlockType _modifyRecordZonesCompletionBlock;
+    long long _qualityOfService;
 }
 
 + (id)alloc;
 + (Class)__class;
+@property long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(copy, nonatomic) CDUnknownBlockType modifyRecordZonesCompletionBlock; // @synthesize modifyRecordZonesCompletionBlock=_modifyRecordZonesCompletionBlock;
 @property(copy, nonatomic) NSArray *recordZoneIDsToDelete; // @synthesize recordZoneIDsToDelete=_recordZoneIDsToDelete;
 @property(copy, nonatomic) NSArray *recordZonesToSave; // @synthesize recordZonesToSave=_recordZonesToSave;

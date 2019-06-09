@@ -11,13 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface EBOfficeArtReaderState : OABReaderState
 {
-    EBReaderState *mReaderState;
     EXReadState *mXmlDocumentState;
+    EBReaderState *mReaderState;
 }
 
+- (void).cxx_destruct;
 - (id)xmlDrawingState;
-- (id)readerState;
-- (void)dealloc;
+@property(readonly) __weak EBReaderState *readerState; // @synthesize readerState=mReaderState;
 - (id)initWithReaderState:(id)arg1;
 
 @end

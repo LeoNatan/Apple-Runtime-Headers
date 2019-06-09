@@ -19,7 +19,7 @@
 - (BOOL)foundCharacter:(NSString *)arg1 atIndex:(long long *)arg2 ofSection:(long long *)arg3;
 - (NSString *)labelAtColumn:(long long)arg1;
 - (NSString *)labelAtRow:(long long)arg1 ofSection:(long long)arg2;
-- (NSArray *)preferredFontsOfSection:(long long)arg1 allowFallback:(char *)arg2;
+- (NSArray *)preferredFontsOfSection:(long long)arg1 fallbackType:(long long *)arg2;
 - (BOOL)isEditableSection:(long long)arg1;
 - (NSString *)languageOfSection:(long long)arg1;
 - (BOOL)hasSkinToneVariantsAtIndex:(long long)arg1 ofSection:(long long)arg2 hasSelected:(char *)arg3;

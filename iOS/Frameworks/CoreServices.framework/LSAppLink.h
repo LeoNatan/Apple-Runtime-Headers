@@ -8,7 +8,7 @@
 
 #import <CoreServices/NSSecureCoding-Protocol.h>
 
-@class LSApplicationProxy, NSURL, _LSValidationToken;
+@class LSApplicationProxy, NSDictionary, NSURL, _LSValidationToken;
 
 @interface LSAppLink : NSObject <NSSecureCoding>
 {
@@ -18,38 +18,45 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (void)openWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (_Bool)areEnabledByDefault;
 + (void)getAppLinksWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)getAppLinkWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (void)getAppLinksWithURL:(id)arg1 limit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (id)appLinksWithURL:(id)arg1 limit:(unsigned long long)arg2 error:(id *)arg3;
 + (void)openWithURL:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (void)_openWithAppLink:(id)arg1 state:(id)arg2 XPCConnection:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)openWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (_Bool)removeAllSettingsReturningError:(id *)arg1;
++ (void)_openAppLink:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)_openWithAppLink:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (id)_appLinkWithURL:(id)arg1 applicationProxy:(id)arg2 plugIn:(id)arg3;
-+ (void)_getAppLinksWithURL:(id)arg1 limit:(unsigned long long)arg2 requireEntitlement:(_Bool)arg3 XPCConnection:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-+ (_Bool)_shouldAppLinkOpenWithStrategy:(long long)arg1 state:(id)arg2 XPCConnection:(id)arg3;
-+ (void)_setOpenStrategy:(long long)arg1 forBundleIdentifier:(id)arg2 XPCConnection:(id)arg3;
-+ (long long)_openStrategyForBundleIdentifier:(id)arg1;
-+ (_Bool)_XPCConnectionIsBrowser:(id)arg1;
-+ (void)_getAppLinksFromPlugInAtIndex:(unsigned long long)arg1 forURLComponents:(id)arg2 limit:(unsigned long long)arg3 XPCConnection:(id)arg4 results:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
++ (id)_appLinkWithURL:(id)arg1 applicationProxy:(id)arg2 plugInClass:(Class)arg3;
++ (id)_appLinksWithState:(id)arg1 context:(struct LSContext *)arg2 limit:(unsigned long long)arg3 requireEntitlement:(_Bool)arg4 error:(id *)arg5;
++ (id)_appLinksWithState:(id)arg1 limit:(unsigned long long)arg2 requireEntitlement:(_Bool)arg3 error:(id *)arg4;
++ (_Bool)_URLIsValidForAppLinks:(id)arg1 error:(id *)arg2;
++ (id)_dispatchQueue;
++ (id)_appLinksWithState:(id)arg1 context:(struct LSContext *)arg2 limit:(unsigned long long)arg3 URLComponents:(id)arg4 error:(id *)arg5;
 + (_Bool)URLComponentsAreValidForAppLinks:(id)arg1 error:(id *)arg2;
-+ (id)dispatchQueue;
 @property(retain) _LSValidationToken *_validationToken; // @synthesize _validationToken=__validationToken;
 @property(retain) LSApplicationProxy *targetApplicationProxy; // @synthesize targetApplicationProxy=_targetApplicationProxy;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
+- (void).cxx_destruct;
 - (id)_validationTokenPayload;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (_Bool)setEnabled:(_Bool)arg1 error:(id *)arg2;
+@property(nonatomic, getter=isEnabled) _Bool enabled; // @dynamic enabled;
+- (void)openWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)openWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)dealloc;
+- (_Bool)removeSettingsReturningError:(id *)arg1;
+- (_Bool)setBrowserSettings:(id)arg1 error:(id *)arg2;
+@property(retain, nonatomic) NSDictionary *browserSettings;
 - (void)openInWebBrowser:(_Bool)arg1 setOpenStrategy:(long long)arg2 webBrowserState:(id)arg3 configuration:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)openInWebBrowser:(_Bool)arg1 setOpenStrategy:(long long)arg2 webBrowserState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)openInWebBrowser:(_Bool)arg1 setAppropriateOpenStrategyAndWebBrowserState:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property long long openStrategy; // @dynamic openStrategy;
-- (void)openWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)_validateReturningError:(id *)arg1;
+- (id)_userActivityWithState:(id)arg1 error:(id *)arg2;
 
 @end
 

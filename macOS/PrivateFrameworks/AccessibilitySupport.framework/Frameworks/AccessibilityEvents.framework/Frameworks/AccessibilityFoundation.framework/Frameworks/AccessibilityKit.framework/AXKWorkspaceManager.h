@@ -8,11 +8,12 @@
 
 #import <AccessibilityKit/AXFApplicationManagerDelegate-Protocol.h>
 
-@class AXFApplicationManager, AXKApplicationController, NSArray, NSMutableDictionary, NSObservation, NSRunningApplication, NSString;
-@protocol AXFScreen, AXKWorkspaceManagerDelegate, NSObservable><NSObserver, OS_dispatch_queue;
+@class AXFApplicationManager, AXFScreen, AXKApplicationController, NSArray, NSMutableDictionary, NSObservation, NSRunningApplication, NSString;
+@protocol AXKWorkspaceManagerDelegate, NSObservable><NSObserver, OS_dispatch_queue;
 
 @interface AXKWorkspaceManager : NSObject <AXFApplicationManagerDelegate>
 {
+    BOOL _enableThreadingAssertions;
     unsigned char __state;
     NSArray *__menuExtras;
     id <AXKWorkspaceManagerDelegate> _delegate;
@@ -44,6 +45,7 @@
 @property(retain, nonatomic, setter=_setApplicationManager:) AXFApplicationManager *_applicationManager; // @synthesize _applicationManager=__applicationManager;
 @property(retain, nonatomic, setter=_setStateQueue:) NSObject<OS_dispatch_queue> *_stateQueue; // @synthesize _stateQueue=__stateQueue;
 @property(nonatomic, setter=_setState:) unsigned char _state; // @synthesize _state=__state;
+@property(nonatomic) BOOL enableThreadingAssertions; // @synthesize enableThreadingAssertions=_enableThreadingAssertions;
 @property __weak id <AXKWorkspaceManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, setter=_setMenuExtrasBounds:) struct CGRect _menuExtrasBounds; // @synthesize _menuExtrasBounds=__menuExtrasBounds;
 @property(retain, nonatomic, setter=_setMenuExtras:) NSArray *_menuExtras; // @synthesize _menuExtras=__menuExtras;
@@ -53,7 +55,7 @@
 - (void)_updateMenuExtraInformationWithApplications:(id)arg1 systemUIServer:(id)arg2 menuBarApplicationController:(id)arg3 counter:(unsigned long long)arg4;
 - (void)_updateMenuExtraInformation:(id)arg1;
 - (void)_updateMenuExtraInformation;
-@property(retain, nonatomic) id <AXFScreen> mainScreen;
+@property(retain, nonatomic) AXFScreen *mainScreen;
 @property(retain, nonatomic) NSRunningApplication *menuBarOwningApplication;
 - (void)updateMenuExtraInformation;
 @property(readonly) struct CGRect menuExtrasBounds;
@@ -67,15 +69,23 @@
 - (id)applicationControllerForProcessSerialNumber:(struct ProcessSerialNumber)arg1;
 - (id)applicationControllerForProcessIdentifier:(int)arg1;
 - (id)applicationControllerForElement:(id)arg1;
+- (id)elementControllerForElementAtPoint:(struct CGPoint)arg1;
+- (id)elementControllerForElement:(id)arg1;
 - (void)_performBlockOnApplicationCacheQueueAndWait:(CDUnknownBlockType)arg1;
 - (void)_performBlockOnApplicationCacheQueue:(CDUnknownBlockType)arg1;
 - (void)_runningApplicationsDidChange:(id)arg1;
+- (void)_focusedApplicationDidChange:(id)arg1;
+- (void)focusedApplicationControllerDidChange:(id)arg1;
+- (void)_frontmostApplicationDidChange:(id)arg1;
+- (void)frontmostApplicationControllerDidChange:(id)arg1;
 - (void)frontmostApplicationDidChange:(id)arg1;
+- (void)makeApplicationControllerFrontmost:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)makeApplicationFrontmost:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly) AXKApplicationController *focusedApplicationController;
 @property(readonly) AXKApplicationController *frontmostApplicationController;
 @property(readonly, copy) NSArray *runningApplications;
 - (void)_elementDidInvalidate:(id)arg1;
+- (void)applicationManager:(id)arg1 didUpdateFocusedApplication:(id)arg2;
 - (void)applicationManager:(id)arg1 didUpdateFrontmostApplication:(id)arg2;
 - (void)applicationManager:(id)arg1 didUpdateRunningApplications:(id)arg2;
 - (void)stop;

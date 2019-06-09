@@ -6,11 +6,29 @@
 
 #import <Foundation/NSError.h>
 
-@interface NSError (HMFError)
+#import <HMFoundation/HMFObject-Protocol.h>
+
+@class NSArray, NSString;
+
+@interface NSError (HMFError) <HMFObject>
 + (id)hmfErrorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)hmfErrorWithCode:(long long)arg1;
 + (id)hmfErrorWithCode:(long long)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
 + (id)hmfErrorWithCode:(long long)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
++ (id)hmfErrorWithCode:(long long)arg1 reason:(id)arg2 suggestion:(id)arg3 underlyingError:(id)arg4;
++ (id)hmfErrorWithCode:(long long)arg1 reason:(id)arg2 suggestion:(id)arg3;
++ (id)shortDescription;
++ (id)hmf_unarchiveFromData:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic, getter=isHMFError) _Bool hmfError;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
+
+// Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *propertyDescription;
+@property(readonly) Class superclass;
 @end
 

@@ -54,6 +54,7 @@
 - (void)removeVisits:(id)arg1 candidateLastVisit:(id)arg2;
 - (void)wasRedirectedFrom:(id)arg1 to:(id)arg2;
 - (void)_addExistingVisit:(id)arg1;
+- (void)addExistingVisit:(id)arg1;
 - (void)_addVisit:(id)arg1;
 - (void)_wasVisitedOnSynchronizationQueue:(id)arg1;
 - (void)wasVisited:(id)arg1;

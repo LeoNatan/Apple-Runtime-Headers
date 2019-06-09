@@ -4,30 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <AXHearingCoreSupport/AXHeardServer.h>
 
 #import <AXHearingSupport/AXHARemoteUpdateProtocol-Protocol.h>
-#import <AXHearingSupport/AXHeardServerMessageDelegate-Protocol.h>
 
-@class HCServer, NSArray, NSMutableDictionary, NSString;
+@class NSArray, NSMutableDictionary, NSString;
 @protocol AXHAServerDelegate;
 
-@interface AXHAServer : NSObject <AXHeardServerMessageDelegate, AXHARemoteUpdateProtocol>
+@interface AXHAServer : AXHeardServer <AXHARemoteUpdateProtocol>
 {
     NSMutableDictionary *_responseBlocks;
-    HCServer *_server;
     BOOL _hearingAidReachableForAudioTransfer;
     BOOL _hearingAidConnectedOrReachable;
     NSArray *_availableHearingAids;
     NSArray *_availableControllers;
-    id <AXHAServerDelegate> _delegate;
     NSMutableDictionary *_updates;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *updates; // @synthesize updates=_updates;
 @property(nonatomic) BOOL hearingAidConnectedOrReachable; // @synthesize hearingAidConnectedOrReachable=_hearingAidConnectedOrReachable;
-@property(nonatomic) __weak id <AXHAServerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL hearingAidReachableForAudioTransfer; // @synthesize hearingAidReachableForAudioTransfer=_hearingAidReachableForAudioTransfer;
 @property(retain, nonatomic) NSArray *availableControllers; // @synthesize availableControllers=_availableControllers;
 @property(retain, nonatomic) NSArray *availableHearingAids; // @synthesize availableHearingAids=_availableHearingAids;
@@ -50,7 +46,6 @@
 - (void)liveListenDidUpdate:(id)arg1;
 - (void)availableDevicesDidUpdate:(id)arg1;
 - (void)deviceDidUpdateProperty:(id)arg1;
-- (void)handleMessageError:(id)arg1 destructive:(BOOL)arg2;
 - (void)handleMessageWithPayload:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)resetConnection;
 - (void)startServerWithDelegate:(id)arg1;
@@ -59,6 +54,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <AXHAServerDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

@@ -6,7 +6,7 @@
 
 #import <VideoProcessing/VCPVideoAnalyzer.h>
 
-@class NSMutableDictionary, VCPFrameAnalysisStats;
+@class NSMutableDictionary, VCPFrameAnalysisStats, VCPFrameScoreFilter;
 
 @interface VCPFullVideoAnalyzer : VCPVideoAnalyzer
 {
@@ -28,10 +28,20 @@
     BOOL _isCaptureAnalysis;
     NSMutableDictionary *_privateResults;
     VCPFrameAnalysisStats *_videoFrameAnalysis;
+    VCPFrameScoreFilter *_trackScoreFilter;
+    float _qualityScore;
     float _actionScore;
+    float _interestingnessScore;
+    float _obstructionScore;
+    float _trackingScore;
 }
 
++ (BOOL)useSceneprintInSceneAnalysis;
+@property float trackingScore; // @synthesize trackingScore=_trackingScore;
+@property float obstructionScore; // @synthesize obstructionScore=_obstructionScore;
+@property float interestingnessScore; // @synthesize interestingnessScore=_interestingnessScore;
 @property float actionScore; // @synthesize actionScore=_actionScore;
+@property float qualityScore; // @synthesize qualityScore=_qualityScore;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)computeExposureScoreOfFrame:(struct Frame *)arg1;
@@ -42,6 +52,8 @@
 - (int)addSceneAnalysisResult:(id)arg1 to:(id)arg2 optional:(BOOL)arg3;
 - (id)privateResults;
 - (id)results;
+- (float)estimateQualityScore:(struct Frame *)arg1;
+- (void)processAndEstimateQualityScore:(struct Frame *)arg1;
 - (int)process:(int)arg1;
 - (int)finishAnalysisPass:(CDStruct_e83c9415)arg1;
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 flags:(unsigned long long *)arg4;

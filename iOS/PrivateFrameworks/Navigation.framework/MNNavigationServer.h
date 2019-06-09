@@ -9,17 +9,22 @@
 #import <Navigation/MNNavigationServiceClientInterface-Protocol.h>
 #import <Navigation/NSXPCListenerDelegate-Protocol.h>
 
-@class MNNavigationDetails, NSMapTable, NSString, NSXPCListener;
+@class MNNavigationDetails, MNNavigationServiceLocalProxy, NSMutableSet, NSString, NSXPCListener;
 
 @interface MNNavigationServer : NSObject <NSXPCListenerDelegate, MNNavigationServiceClientInterface>
 {
     NSXPCListener *_listener;
-    NSMapTable *_peers;
+    NSMutableSet *_peers;
     MNNavigationDetails *_details;
+    MNNavigationServiceLocalProxy *_localProxy;
 }
 
 + (id)sharedServer;
 - (void).cxx_destruct;
+- (void)navigationServiceProxy:(id)arg1 didReceiveRealtimeUpdates:(id)arg2;
+- (void)navigationServiceProxy:(id)arg1 willRequestRealtimeUpdatesForRouteIDs:(id)arg2;
+- (void)navigationServiceProxy:(id)arg1 triggerHaptics:(int)arg2;
+- (void)navigationServiceProxy:(id)arg1 didChangeVolume:(unsigned long long)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAudioOutputRouteSelection:(unsigned long long)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAudioOutputCurrentSettingForVoicePrompt:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAudioOutputCurrentSetting:(id)arg2;
@@ -27,22 +32,21 @@
 - (void)navigationServiceProxy:(id)arg1 didStartUsingVoiceLanguage:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didStartSpeakingPrompt:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didActivateAudioSession:(_Bool)arg2;
-- (void)navigationServiceProxy:(id)arg1 didUpdateFeedback:(id)arg2 forAlightingStepAtIndex:(unsigned long long)arg3;
-- (void)navigationServiceProxy:(id)arg1 didSignalAlightForStepAtIndex:(unsigned long long)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateTracePlaybackDetails:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdatePossibleCommuteDestinations:(id)arg2;
-- (void)navigationServiceProxy:(id)arg1 didUpdateIsInVehicle:(_Bool)arg2;
 - (void)navigationServiceProxy:(id)arg1 didInvalidateTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didReceiveTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAlternateRoutes:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 failedRerouteWithErrorCode:(long long)arg2;
 - (void)navigationServiceProxy:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3;
+- (void)navigationServiceProxy:(id)arg1 didUpdateRouteWithNewRideSelection:(id)arg2;
 - (void)navigationServiceProxyDidCancelReroute:(id)arg1;
-- (void)navigationServiceProxy:(id)arg1 didRerouteWithDetails:(id)arg2 withLocationDetails:(id)arg3 withAlternateRoutes:(id)arg4;
+- (void)navigationServiceProxy:(id)arg1 didRerouteWithRoute:(id)arg2 withLocationDetails:(id)arg3 withAlternateRoutes:(id)arg4;
 - (void)navigationServiceProxyWillReroute:(id)arg1;
+- (void)navigationServiceProxy:(id)arg1 didUpdatePreviewRoutes:(id)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationServiceProxy:(id)arg1 didUpdateTrafficForETARoute:(id)arg2 from:(unsigned int)arg3 to:(unsigned int)arg4 forRoute:(id)arg5;
+- (void)navigationServiceProxy:(id)arg1 didUpdateTraffic:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateETAResponseForRoute:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(id)arg4;
@@ -51,6 +55,9 @@
 - (void)navigationServiceProxy:(id)arg1 didEnableGuidancePrompts:(_Bool)arg2;
 - (void)navigationServiceProxyPredictingDidArrive:(id)arg1;
 - (void)navigationServiceProxyDidArrive:(id)arg1;
+- (void)navigationServiceProxyDidEnterPreArrivalState:(id)arg1;
+- (void)navigationServiceProxy:(id)arg1 hideJunctionViewForId:(id)arg2;
+- (void)navigationServiceProxy:(id)arg1 showJunctionView:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 hideLaneDirectionsForId:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 showLaneDirections:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 usePersistentDisplay:(_Bool)arg2;
@@ -72,17 +79,15 @@
 - (void)navigationServiceProxyWillResumeFromPauseNavigation:(id)arg1;
 - (void)navigationServiceProxyWillPauseNavigation:(id)arg1;
 - (void)navigationServiceProxy:(id)arg1 didUpdateNavigationDetails:(id)arg2;
-- (void)navigationServiceProxy:(id)arg1 didUpdateActiveRouteDetails:(id)arg2;
+- (void)navigationServiceProxy:(id)arg1 willStartNavigationWithRoute:(id)arg2 navigationType:(int)arg3 request:(id)arg4 response:(id)arg5;
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)_peerDidDisconnect:(id)arg1;
-- (void)_remoteObjectForProxy:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-- (id)_newPeerForConnection:(id)arg1;
-- (void)_resetDetails;
+- (void)_enumerateRemoteObjectsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_defaultsDidChange;
+- (void)_resetDetails;
 - (void)dealloc;
-- (id)navSessionDestination;
 - (id)init;
 
 // Remaining properties

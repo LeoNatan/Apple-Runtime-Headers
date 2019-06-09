@@ -18,8 +18,8 @@
 }
 
 - (void).cxx_destruct;
-- (CDStruct_a157df34)donatableSpaceAllowRemeasure:(_Bool)arg1;
-- (CDStruct_a157df34)donatableSpace;
+- (CDStruct_c3b9c2ee)donatableSpaceAllowRemeasure:(_Bool)arg1;
+- (CDStruct_c3b9c2ee)donatableSpace;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (id)initWithWidgetGridView:(id)arg1 item:(id)arg2 index:(unsigned long long)arg3;
 @property(readonly, nonatomic) unsigned long long index;

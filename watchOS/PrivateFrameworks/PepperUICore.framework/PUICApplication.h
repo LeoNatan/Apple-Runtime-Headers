@@ -30,6 +30,7 @@
 + (_Bool)supportsOrb;
 + (_Bool)runningInDock;
 + (id)_defaultContentSizeCategory;
++ (Class)_statusBarManagerClass;
 + (Class)_statusBarClass;
 + (id)sharedPUICApplication;
 + (id)_puicFrameworkBundle;
@@ -56,6 +57,7 @@
 - (void)_configureSnapshotContext:(id)arg1 forScreen:(id)arg2 sceneSettings:(id)arg3;
 @property(readonly, nonatomic) UIColor *primaryApplicationColor;
 - (void)dealloc;
+- (id)_appScene;
 - (_Bool)_shouldDelayTouchesForControlCenter;
 @property(readonly, nonatomic) _Bool uiIsInverted;
 - (_Bool)isStatusBarDisconnectedIndicatorSuppressed;
@@ -93,7 +95,6 @@
 - (void)_setStatusBarTimeHidden:(_Bool)arg1 animation:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setStatusBarTimeHidden:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_puicStatusBar;
-- (void)_updateCurrentStatusBarViewControllerAppearance;
 - (struct CGAffineTransform)_rotationTransformForOrientation:(int)arg1;
 - (void)_orientationChanged:(id)arg1;
 - (void)_setupUnblankingSynchronization;

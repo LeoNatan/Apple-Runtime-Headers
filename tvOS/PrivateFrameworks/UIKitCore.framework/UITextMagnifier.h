@@ -22,24 +22,27 @@ __attribute__((visibility("hidden")))
     UIView *_magnifierRenderer;
     UIView *_autoscrollRenderer;
     int _autoscrollDirections;
+    _Bool _isAnimating;
+    long long _delayedAnimationType;
 }
 
-+ (id)getLoupeBackgroundColor:(id)arg1;
++ (Class)renderClass;
 @property(retain, nonatomic) UIResponder<UITextInput> *text; // @synthesize text=_text;
 @property(retain, nonatomic) UIView *target; // @synthesize target=_target;
 @property(nonatomic) struct CGPoint animationPoint; // @synthesize animationPoint=_animationPoint;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double offsetFromMagnificationPoint;
 @property(readonly, nonatomic) _Bool isHorizontal;
+- (void)updateFrameAndOffset;
+- (void)zoomDownAnimation;
+- (void)zoomUpAnimation;
 - (void)stopMagnifying:(_Bool)arg1;
 - (void)beginMagnifyingTarget:(id)arg1 text:(id)arg2 magnificationPoint:(struct CGPoint)arg3 offset:(struct CGPoint)arg4 animated:(_Bool)arg5;
 - (void)windowWillRotate:(id)arg1;
 - (void)detectLostTouches:(id)arg1;
 - (void)remove;
-- (void)zoomDownAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (void)zoomDownAnimation;
-- (void)zoomUpAnimationDidStop:(id)arg1 finished:(id)arg2;
-- (void)zoomUpAnimation;
+- (void)beginZoomDownAnimation:(CDUnknownBlockType)arg1 withDuration:(double)arg2 postponeHandler:(CDUnknownBlockType)arg3;
+- (void)beginZoomUpAnimation:(CDUnknownBlockType)arg1 withDuration:(double)arg2;
 - (void)setNeedsDisplay;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)autoscrollWillNotStart;
@@ -51,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool terminalPointPlacedCarefully; // @synthesize terminalPointPlacedCarefully=_terminalPointPlacedCarefully;
 @property(readonly, nonatomic) struct CGPoint terminalPoint; // @synthesize terminalPoint=_terminalPoint;
 @property(nonatomic) struct CGPoint magnificationPoint; // @synthesize magnificationPoint=_magnificationPoint;
+- (struct CGPoint)adjustMagnificationPoint:(struct CGPoint)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

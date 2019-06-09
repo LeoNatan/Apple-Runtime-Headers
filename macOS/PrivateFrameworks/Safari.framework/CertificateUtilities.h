@@ -13,16 +13,16 @@ __attribute__((visibility("hidden")))
 
 + (id)extendedValidationOrganizationNameForServerTrust:(struct __SecTrust *)arg1;
 + (BOOL)isRevocationServerMetaError:(int)arg1;
-+ (RetainPtr_3b882a02)ocspPolicyWithOptions:(unsigned int)arg1;
++ (RetainPtr_9f6ce05b)ocspPolicyWithOptions:(unsigned int)arg1;
 + (BOOL)hasClientCertificateIdentityForProtectionSpace:(id)arg1;
 + (_Bool)trustIncludesRevokedCertificate:(struct __SecTrust *)arg1;
 + (BOOL)isCertificateChain:(id)arg1 trustedForHost:(id)arg2;
-+ (RetainPtr_b11cdf8e)trustReferenceWithCertificates:(id)arg1 forPolicy:(struct OpaqueSecPolicyRef *)arg2;
-+ (RetainPtr_3b882a02)sslPolicyForHost:(id)arg1 client:(BOOL)arg2;
++ (RetainPtr_b11cdf8e)trustReferenceWithCertificates:(id)arg1 forPolicy:(struct __SecPolicy *)arg2;
++ (RetainPtr_9f6ce05b)sslPolicyForHost:(id)arg1 client:(BOOL)arg2;
 + (id)labelForCertificates:(id)arg1;
-+ (id)subjectFullLocationForCertificate:(struct OpaqueSecCertificateRef *)arg1;
-+ (id)subjectNameForCertificate:(struct OpaqueSecCertificateRef *)arg1;
-+ (id)issuerOrganizationNameForCertificate:(struct OpaqueSecCertificateRef *)arg1;
++ (id)subjectFullLocationForCertificate:(struct __SecCertificate *)arg1;
++ (id)subjectNameForCertificate:(struct __SecCertificate *)arg1;
++ (id)issuerOrganizationNameForCertificate:(struct __SecCertificate *)arg1;
 + (id)identitiesWithProtectionSpace:(id)arg1;
 
 @end

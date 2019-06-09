@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, PPConnectionsCalendarSource, PPConnectionsDuetSource, PPConnectionsMetricsTracker, PPConnectionsNamedEntitySource, PPConnectionsParameters, PPConnectionsPasteboardSource;
+@class NSString, PPConnectionsCalendarSource, PPConnectionsDuetSource, PPConnectionsFoundInAppsSource, PPConnectionsMetricsTracker, PPConnectionsNamedEntitySource, PPConnectionsParameters, PPConnectionsPasteboardSource;
 
 @interface PPConnectionsPredictionStore : NSObject
 {
@@ -15,6 +15,7 @@
     PPConnectionsCalendarSource *_calendarSource;
     PPConnectionsDuetSource *_duetSource;
     PPConnectionsNamedEntitySource *_namedEntitySource;
+    PPConnectionsFoundInAppsSource *_fiaSource;
     PPConnectionsMetricsTracker *_metricsTracker;
     NSString *_identifier;
 }

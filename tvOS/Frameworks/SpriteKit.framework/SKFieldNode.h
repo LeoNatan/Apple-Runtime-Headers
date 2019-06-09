@@ -11,11 +11,11 @@
 @interface SKFieldNode : SKNode
 {
     PKPhysicsField *_field;
-    SKRegion *_region;
-    float _smoothness;
-    float _animationSpeed;
-    SKTexture *_texture;
     _Bool _exclusive;
+    float _animationSpeed;
+    float _smoothness;
+    SKTexture *_texture;
+    SKRegion *_region;
 }
 
 + (id)customFieldWithEvaluationBlock:(CDUnknownBlockType)arg1;
@@ -34,7 +34,7 @@
 @property(nonatomic, getter=isExclusive) _Bool exclusive; // @synthesize exclusive=_exclusive;
 - (void).cxx_destruct;
 - (_Bool)isEqualToNode:(id)arg1;
-@property(retain, nonatomic) SKRegion *region;
+@property(retain, nonatomic) SKRegion *region; // @synthesize region=_region;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
 @property(nonatomic) float falloff;
 @property(nonatomic) float minimumRadius;
@@ -45,9 +45,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)_descriptionClassName;
 - (id)init;
-@property(retain, nonatomic) SKTexture *texture;
-@property(nonatomic) float animationSpeed;
-@property(nonatomic) float smoothness;
+@property(retain, nonatomic) SKTexture *texture; // @synthesize texture=_texture;
+@property(nonatomic) float animationSpeed; // @synthesize animationSpeed=_animationSpeed;
+@property(nonatomic) float smoothness; // @synthesize smoothness=_smoothness;
 // Error parsing type for property direction:
 // Property attributes: T,N
 

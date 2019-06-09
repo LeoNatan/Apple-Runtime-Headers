@@ -19,6 +19,7 @@
 
 @property(retain) CDPStateUIController *cdpStateUIController; // @synthesize cdpStateUIController=_cdpStateUIController;
 @property(retain) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
+- (void).cxx_destruct;
 - (void)showCDPRepairFlow;
 - (void)_closeWebViewWindow;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
@@ -30,7 +31,6 @@
 - (void)showUpsellStorageWebView:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (id)icon;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -9,22 +9,6 @@
 @class CPLMomentShare, CPLResource, CPLScopedIdentifier, NSArray, NSDictionary, NSString, NSURL;
 
 @protocol CPLLibraryManagerImplementation <CPLPlatformImplementation>
-- (void)unblockEngineElementOnce:(NSString *)arg1;
-- (void)unblockEngineElement:(NSString *)arg1;
-- (void)blockEngineElement:(NSString *)arg1;
-- (void)reportMiscInformation:(NSDictionary *)arg1;
-- (void)reportSetting:(NSString *)arg1 hasBeenSetToValue:(NSString *)arg2;
-- (void)addInfoToLog:(NSString *)arg1;
-- (void)compactFileCacheWithCompletionHandler:(void (^)(NSError *))arg1;
-- (void)cloudCacheGetDescriptionForRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 related:(BOOL)arg2 completionHandler:(void (^)(id, id, NSError *))arg3;
-- (void)getCloudCacheForRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 completionHandler:(void (^)(CPLRecordChange *, NSError *))arg2;
-- (void)getStatusesForScopesWithIdentifiers:(NSArray *)arg1 includeStorages:(BOOL)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
-- (void)getStatusArrayForComponents:(NSArray *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
-- (void)getStatusForComponents:(NSArray *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;
-- (void)getListOfComponentsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
-- (void)resetCacheWithOption:(unsigned long long)arg1 reason:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
-- (void)getResourcesForItemWithScopedIdentifier:(CPLScopedIdentifier *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
-- (void)deleteResources:(NSArray *)arg1 checkServerIfNecessary:(BOOL)arg2 completionHandler:(void (^)(NSArray *, NSDictionary *))arg3;
 - (void)setDiagnosticsEnabled:(BOOL)arg1;
 - (BOOL)diagnosticsEnabled;
 - (void)forceSynchronizingScopeWithIdentifiers:(NSArray *)arg1 completionHandler:(void (^)(CPLForceSyncTask *))arg2;
@@ -61,5 +45,28 @@
 - (void)deactivateWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)closeWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)openWithCompletionHandler:(void (^)(NSError *, NSString *, NSString *, NSURL *))arg1;
+
+@optional
+- (void)provideCloudResource:(CPLResource *)arg1 completionHandler:(void (^)(CPLResource *, unsigned long long))arg2;
+- (void)provideRecordWithCloudScopeIdentifier:(CPLScopedIdentifier *)arg1 completionHandler:(void (^)(CPLRecordChange *, unsigned long long))arg2;
+- (void)provideLibraryInfoForScopeWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(CPLLibraryInfo *, unsigned long long))arg2;
+- (void)unblockEngineElementOnce:(NSString *)arg1;
+- (void)unblockEngineElement:(NSString *)arg1;
+- (void)blockEngineElement:(NSString *)arg1;
+- (void)reportMiscInformation:(NSDictionary *)arg1;
+- (void)reportSetting:(NSString *)arg1 hasBeenSetToValue:(NSString *)arg2;
+- (void)addInfoToLog:(NSString *)arg1;
+- (void)compactFileCacheWithCompletionHandler:(void (^)(NSError *))arg1;
+- (void)cloudCacheGetDescriptionForRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 related:(BOOL)arg2 completionHandler:(void (^)(id, id, NSError *))arg3;
+- (void)getCloudCacheForRecordWithScopedIdentifier:(CPLScopedIdentifier *)arg1 completionHandler:(void (^)(CPLRecordChange *, NSError *))arg2;
+- (void)getStatusesForScopesWithIdentifiers:(NSArray *)arg1 includeStorages:(BOOL)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)getStatusArrayForComponents:(NSArray *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
+- (void)getStatusForComponents:(NSArray *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;
+- (void)getListOfComponentsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
+- (void)resetCacheWithOption:(unsigned long long)arg1 reason:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)getResourcesForItemWithScopedIdentifier:(CPLScopedIdentifier *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
+- (void)checkResourcesAreSafeToPrune:(NSArray *)arg1 checkServerIfNecessary:(BOOL)arg2 completionHandler:(void (^)(NSArray *, NSDictionary *))arg3;
+- (void)deleteResources:(NSArray *)arg1 checkServerIfNecessary:(BOOL)arg2 completionHandler:(void (^)(NSArray *, NSDictionary *))arg3;
+- (void)barrier;
 @end
 

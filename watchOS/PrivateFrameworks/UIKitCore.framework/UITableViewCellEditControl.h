@@ -6,14 +6,13 @@
 
 #import <UIKitCore/UIControl.h>
 
-@class UIImageView, UITableViewCell, _UITableViewCellEditControlMinusView;
+@class UIImageView, UITableViewCell;
 
 __attribute__((visibility("hidden")))
 @interface UITableViewCellEditControl : UIControl
 {
     UITableViewCell *_cell;
     UIImageView *_imageView;
-    _UITableViewCellEditControlMinusView *_minusView;
     UIImageView *_shadowView;
     float _focalY;
     float _focalHeight;
@@ -24,32 +23,33 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)_createImageViewIfNeccessary;
+- (id)viewForLastBaselineLayout;
+- (id)viewForFirstBaselineLayout;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_multiselectColorChanged;
 @property(readonly, nonatomic) _Bool wantsImageShadow;
 @property(readonly, nonatomic) _Bool wantsMaskingWhileAnimatingDisabled;
-- (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(_Bool)arg2;
+- (void)_toggleRotateAnimationDidStop;
 - (_Bool)isRotating;
 @property(nonatomic, getter=isRotated) _Bool rotated;
 - (void)setRotated:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
-- (void)setFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (id)_shadowImage;
 - (unsigned int)_controlEventsForActionTriggered;
 - (void)adjustLayoutForFocalRect:(struct CGRect)arg1;
 - (id)initWithTableViewCell:(id)arg1 editingStyle:(int)arg2;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)defaultSize;
 - (id)_currentImage;
 - (void)_updateImageView;
-- (id)_multiSelectHighlightedImage;
 - (id)_multiSelectSelectedImage;
 - (id)_multiSelectNotSelectedImage;
-- (id)_insertImage:(float)arg1;
-- (id)_deleteImage:(float)arg1;
+- (id)_insertImage;
+- (id)_deleteImage;
 - (void)_toggleRotate;
-- (struct CGRect)_minusRect;
-- (id)_minusView;
 - (id)_imageView;
 
 @end

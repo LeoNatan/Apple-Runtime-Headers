@@ -6,32 +6,43 @@
 
 #import <ContactsUI/CNContactCell.h>
 
-@class CNTransportButton, NSDictionary, UILabel;
+#import <ContactsUI/CNStarkActionViewDelegate-Protocol.h>
+
+@class CNStarkActionView, NSDictionary, NSString, UILabel;
 @protocol CNPropertyCellDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CNStarkFaceTimeCell : CNContactCell
+@interface CNStarkFaceTimeCell : CNContactCell <CNStarkActionViewDelegate>
 {
     id <CNPropertyCellDelegate> _delegate;
     NSDictionary *_labelTextAttributes;
     UILabel *_faceTimeLabel;
-    CNTransportButton *_transportIcon;
+    CNStarkActionView *_actionView;
 }
 
 + (_Bool)requiresConstraintBasedLayout;
-@property(readonly, nonatomic) CNTransportButton *transportIcon; // @synthesize transportIcon=_transportIcon;
+@property(readonly, nonatomic) CNStarkActionView *actionView; // @synthesize actionView=_actionView;
 @property(retain, nonatomic) UILabel *faceTimeLabel; // @synthesize faceTimeLabel=_faceTimeLabel;
 @property(copy, nonatomic) NSDictionary *labelTextAttributes; // @synthesize labelTextAttributes=_labelTextAttributes;
 @property(nonatomic) __weak id <CNPropertyCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_cnui_applyContactStyle;
-- (void)transportButtonClicked:(id)arg1;
+- (void)actionViewTapped:(id)arg1;
+- (void)updateTransportButtons;
+- (_Bool)shouldShowStar;
+- (_Bool)supportsTintColorValue;
 - (void)performDefaultAction;
+- (void)setSeparatorStyle:(long long)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)constantConstraints;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)tintColorDidChange;
+- (id)variableConstraints;
+- (void)_cnui_applyContactStyle;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

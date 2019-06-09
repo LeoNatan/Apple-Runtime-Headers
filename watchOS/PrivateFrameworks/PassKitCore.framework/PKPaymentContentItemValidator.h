@@ -19,6 +19,7 @@
 + (id)validatorWithObject:(id)arg1;
 @property(readonly, nonatomic) PKPaymentContentItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+- (_Bool)isValidWithAPIType:(unsigned int)arg1 withError:(id *)arg2;
 - (_Bool)isValidWithError:(id *)arg1;
 - (id)initWithContentItem:(id)arg1;
 

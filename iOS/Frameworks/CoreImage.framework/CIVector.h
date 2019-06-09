@@ -58,10 +58,10 @@
 - (id)initWithX:(double)arg1 Y:(double)arg2;
 - (id)initWithX:(double)arg1;
 - (id)init;
-@property(readonly) double *_values;
 - (float)_dot:(id)arg1;
 - (id)_orthonormalizeTo:(id)arg1;
 - (float)_norm;
+@property(readonly) double *_values;
 
 @end
 

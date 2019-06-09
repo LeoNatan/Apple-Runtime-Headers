@@ -11,14 +11,14 @@
 
 @interface BTMBackgroundItemController : NSObject
 {
-    id _internalItems;
-    id _internalQueue;
-    id _delegate;
+    id <BTMBackgroundItemControllerDelegate> _delegate;
+    NSSet *_internalItems;
+    NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
-@property __weak id <BTMBackgroundItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-@property(retain) NSSet *_items; // @synthesize _items=_internalItems;
+@property(retain) NSSet *internalItems; // @synthesize internalItems=_internalItems;
+@property __weak id <BTMBackgroundItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_notifyDidChangeItems;
 - (void)_setBackgroundItems:(id)arg1;
@@ -26,7 +26,7 @@
 - (void)handleBackgroundItemsChangeNotification:(id)arg1;
 - (void)setUserElection:(long long)arg1 forURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setUserElection:(long long)arg1 forBackgroundItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
-@property(readonly) NSSet *items; // @dynamic items;
+@property(readonly) NSSet *items;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 

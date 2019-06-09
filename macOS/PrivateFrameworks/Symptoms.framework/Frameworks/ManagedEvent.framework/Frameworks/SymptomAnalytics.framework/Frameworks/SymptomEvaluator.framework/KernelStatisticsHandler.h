@@ -12,6 +12,7 @@
 @class AWDLibnetcoreStatsReport, NSString, NWStatisticsManager, mbufRecord;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface KernelStatisticsHandler : NSObject <NWStatisticsManagerDelegate, ConfigurableObjectProtocol>
 {
     unsigned int _coalescedReportPending;

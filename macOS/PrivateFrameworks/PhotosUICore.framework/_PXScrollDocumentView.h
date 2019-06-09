@@ -8,12 +8,13 @@
 
 @interface _PXScrollDocumentView : NSView
 {
+    BOOL _acceptsFirstResponder;
 }
 
+@property(nonatomic) BOOL acceptsFirstResponder; // @synthesize acceptsFirstResponder=_acceptsFirstResponder;
 - (id)description;
 - (BOOL)clipsToBounds;
 - (BOOL)isFlipped;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

@@ -65,6 +65,7 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
+- (void)showStatusBarAnimated:(_Bool)arg1;
 - (void)didSelectPass;
 - (void)didScrollToPass;
 - (void)didScrollAwayFromPass;

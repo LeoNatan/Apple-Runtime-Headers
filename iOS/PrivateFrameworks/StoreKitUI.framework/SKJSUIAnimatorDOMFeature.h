@@ -10,6 +10,7 @@
 
 @class SKUIAnimatorDOMFeature;
 
+__attribute__((visibility("hidden")))
 @interface SKJSUIAnimatorDOMFeature : IKJSObject <SKJSUIAnimatorDOMFeature>
 {
     SKUIAnimatorDOMFeature *_feature;

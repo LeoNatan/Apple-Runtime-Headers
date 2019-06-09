@@ -8,5 +8,10 @@
 
 @interface SAUIAppPunchOut (AFUISiriSession)
 - (long long)_afui_usefulUserResultType;
+- (id)_afui_installAppPunchout;
+- (void)afui_getInstallAppPunchoutWithCompletion:(CDUnknownBlockType)arg1;
+- (id)afui_punchOutAppNotAvailableViews;
+- (id)afui_punchOutFailureViews;
+- (void)afui_populateStoreServicesData:(CDUnknownBlockType)arg1;
 @end
 

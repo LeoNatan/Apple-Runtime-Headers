@@ -51,6 +51,7 @@
 @property(retain, nonatomic) SFSafariViewController *safariViewController; // @synthesize safariViewController=_safariViewController;
 @property(copy) NSNumber *safariDismissButtonStyle; // @synthesize safariDismissButtonStyle=_safariDismissButtonStyle;
 @property(retain, nonatomic) NSString *safariViewControllerIdentifier; // @synthesize safariViewControllerIdentifier=_safariViewControllerIdentifier;
+- (void).cxx_destruct;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 - (_Bool)scriptXMLHTTPStoreRequest:(id)arg1 requiresCellularForURL:(id)arg2;
@@ -79,6 +80,7 @@
 - (void)handleRootObjectWithPropertyListString:(id)arg1;
 - (_Bool)checkCapabilitiesPropertyListString:(id)arg1 showFailureDialog:(_Bool)arg2;
 - (id)systemVersion;
+- (void)signupInWallet:(id)arg1 callback:(id)arg2;
 - (_Bool)shouldShowAddToWalletLink:(id)arg1;
 - (_Bool)shouldRestrictContentOfSystem:(id)arg1 level:(id)arg2;
 - (_Bool)haveAccount;
@@ -155,6 +157,7 @@
 - (id)presentPrivacyViewControllerWithIdentifier:(id)arg1;
 - (void)performPurchaseAnimationForIdentifier:(id)arg1 style:(id)arg2;
 - (void)perfLog:(id)arg1;
+- (void)paymentSetupFeatureSupported:(id)arg1 callback:(id)arg2;
 - (void)openWallet;
 - (id)machineGUID;
 - (void)log:(id)arg1;

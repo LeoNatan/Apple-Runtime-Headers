@@ -7,6 +7,11 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (Authentication)
++ (id)tooBigForDiskErrorWithCount:(long long)arg1;
 - (BOOL)shouldOfferRetryForAuthentication;
+- (BOOL)isFatalError;
+- (BOOL)isEqual:(id)arg1 compareUserInfo:(BOOL)arg2;
+- (id)errorBySettingValue:(id)arg1 forUserInfoKey:(id)arg2;
+- (id)errorBySettingFatalError:(BOOL)arg1;
 @end
 

@@ -8,6 +8,7 @@
 
 @protocol IKEntityValueProviding;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIDynamicGridEntityValueProviderValue : NSObject
 {
     id <IKEntityValueProviding> _entityValueProvider;

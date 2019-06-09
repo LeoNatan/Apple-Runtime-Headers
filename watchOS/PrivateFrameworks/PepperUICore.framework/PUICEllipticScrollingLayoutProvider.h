@@ -19,11 +19,13 @@
     } _delegateFlags;
     _Bool _flattenExtremesTop;
     _Bool _flattenExtremesBottom;
+    _Bool _adjustsInterCellSpacing;
     _Bool _curvesTop;
     _Bool _forceCurvesTop;
     _Bool _curvesBottom;
     _Bool _forceCurvesBottom;
     id <PUICEllipticScrollingLayoutProviderDelegate> _delegate;
+    float _intraCellPadding;
     float _threshold;
     float _scaleExponent;
     float _scaleAccentuate;
@@ -40,6 +42,8 @@
 @property(nonatomic) float scaleAccentuate; // @synthesize scaleAccentuate=_scaleAccentuate;
 @property(nonatomic) float scaleExponent; // @synthesize scaleExponent=_scaleExponent;
 @property(nonatomic) float threshold; // @synthesize threshold=_threshold;
+@property(nonatomic) float intraCellPadding; // @synthesize intraCellPadding=_intraCellPadding;
+@property(nonatomic) _Bool adjustsInterCellSpacing; // @synthesize adjustsInterCellSpacing=_adjustsInterCellSpacing;
 @property(nonatomic) _Bool flattenExtremesBottom; // @synthesize flattenExtremesBottom=_flattenExtremesBottom;
 @property(nonatomic) _Bool flattenExtremesTop; // @synthesize flattenExtremesTop=_flattenExtremesTop;
 @property(nonatomic) __weak id <PUICEllipticScrollingLayoutProviderDelegate> delegate; // @synthesize delegate=_delegate;

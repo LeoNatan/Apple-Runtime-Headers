@@ -15,6 +15,7 @@
 
 @property(retain) NUSourceDefinition *resolvedSourceDefinition; // @synthesize resolvedSourceDefinition=_resolvedSourceDefinition;
 - (void).cxx_destruct;
+- (id)description;
 - (id)sourceDefinition:(out id *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

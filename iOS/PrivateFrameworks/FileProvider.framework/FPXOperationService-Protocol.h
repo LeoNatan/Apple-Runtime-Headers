@@ -4,23 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class FPItemID, NSArray, NSDate, NSString;
+@class FPItem, FPItemID, FPSandboxingURLWrapper, NSArray, NSError, NSProgress, NSString;
 @protocol FPOperationClient;
 
 @protocol FPXOperationService
-- (void)setFavoriteRanks:(NSArray *)arg1 forItemIdentifiers:(NSArray *)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
-- (void)setTagsData:(NSArray *)arg1 forItemIdentifiers:(NSArray *)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
-- (void)setLastUsedDate:(NSDate *)arg1 forItemIDs:(NSArray *)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
-- (void)untrashItemsWithIdentifiers:(NSArray *)arg1 toDirectoryWithIdentifier:(FPItemID *)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
-- (void)trashItemsWithIdentifiers:(NSArray *)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
-- (void)startOperation:(id <FPOperationClient>)arg1 toFetchItemID:(FPItemID *)arg2 reply:(void (^)(FPItem *, NSError *))arg3;
-- (void)startOperation:(id <FPOperationClient>)arg1 toFetchDefaultContainerForBundleIdentifier:(NSString *)arg2 englishName:(NSString *)arg3 inDomainIdentifier:(NSString *)arg4 reply:(void (^)(FPItem *, NSError *))arg5;
-- (void)startOperation:(id <FPOperationClient>)arg1 toFetchParentForItem:(FPItemID *)arg2 recursively:(_Bool)arg3 reply:(void (^)(NSArray *, NSError *))arg4;
-- (void)startOperation:(id <FPOperationClient>)arg1 toCreateFolderWithName:(NSString *)arg2 underParent:(FPItemID *)arg3 bounceOnCollision:(_Bool)arg4 reply:(void (^)(FPItem *, NSError *))arg5;
-- (void)startOperation:(id <FPOperationClient>)arg1 toDeleteItems:(NSArray *)arg2 reply:(void (^)(NSError *))arg3;
-- (void)startOperation:(id <FPOperationClient>)arg1 toRenameItem:(FPItemID *)arg2 toNewName:(NSString *)arg3 reply:(void (^)(FPItem *, NSError *))arg4;
-- (void)startOperation:(id <FPOperationClient>)arg1 toReparentItems:(NSArray *)arg2 underParent:(FPItemID *)arg3 shouldBounce:(_Bool)arg4 reply:(void (^)(NSDictionary *, NSError *))arg5;
-- (void)startOperation:(id <FPOperationClient>)arg1 toImportDocumentsAtURLs:(NSArray *)arg2 withSandboxExtensions:(NSArray *)arg3 lastUsedDates:(NSArray *)arg4 intoFolderWithIdentifier:(FPItemID *)arg5 bounceOnCollision:(_Bool)arg6 reply:(void (^)(NSDictionary *, NSError *))arg7;
+- (void)fetchTrashIdentifiersWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
+- (void)userInteractionErrorsForPerformingAction:(NSString *)arg1 sourceItems:(NSArray *)arg2 destinationItem:(FPItem *)arg3 completionHandler:(void (^)(NSArray *))arg4;
+- (void)attemptRecoveryFromError:(NSError *)arg1 optionIndex:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)wakeForSessionIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (NSProgress *)disconnectDomainID:(NSString *)arg1 options:(unsigned long long)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (NSProgress *)fetchPublishingURLForItemID:(FPItemID *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
+- (void)preflightTrashItemIDs:(NSArray *)arg1 completionHandler:(void (^)(NSArray *))arg2;
+- (void)fetchItemID:(FPItemID *)arg1 reply:(void (^)(FPItem *, NSError *))arg2;
+- (void)fetchDefaultContainerForBundleIdentifier:(NSString *)arg1 defaultName:(NSString *)arg2 inDomainIdentifier:(NSString *)arg3 reply:(void (^)(FPItem *, NSError *))arg4;
+- (void)fetchHierarchyForItemID:(FPItemID *)arg1 recursively:(_Bool)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
+- (void)createItemBasedOnTemplate:(FPItem *)arg1 fields:(unsigned long long)arg2 contents:(FPSandboxingURLWrapper *)arg3 options:(unsigned long long)arg4 bounce:(_Bool)arg5 completionHandler:(void (^)(FPItem *, NSError *))arg6;
+- (void)bulkItemChanges:(NSArray *)arg1 changedFields:(unsigned long long)arg2 completionHandler:(void (^)(NSDictionary *, NSDictionary *))arg3;
+- (void)singleItemChange:(FPItem *)arg1 changedFields:(unsigned long long)arg2 bounce:(_Bool)arg3 completionHandler:(void (^)(FPItem *, NSError *))arg4;
+- (void)deleteItemsWithIDs:(NSArray *)arg1 baseVersions:(NSArray *)arg2 options:(unsigned long long)arg3 reply:(void (^)(NSError *))arg4;
+- (void)preflightReparentItemID:(FPItemID *)arg1 underParentID:(FPItemID *)arg2 reply:(void (^)(NSArray *))arg3;
 - (void)startOperation:(id <FPOperationClient>)arg1 toFetchThumbnailsForItemIdentifiers:(NSArray *)arg2 size:(struct CGSize)arg3 completionHandler:(void (^)(NSError *))arg4;
 @end
 

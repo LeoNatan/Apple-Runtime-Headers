@@ -6,13 +6,13 @@
 
 #import <AppKit/NSViewController.h>
 
-#import <CalendarUI/EKCommitDelegate-Protocol.h>
-#import <CalendarUI/EKEditingContextObserver-Protocol.h>
+#import <CalendarUI/CUIKCommitDelegate-Protocol.h>
+#import <CalendarUI/CUIKEditingContextObserver-Protocol.h>
 
-@class EKEditingContext, EKEventStore, EKObject, EKUIGadget, EKUIGadgetContainer, EKView, EKViewControllerSettings, EKViewScrollView, NSArray, NSAttributedString, NSDictionary, NSFont, NSLayoutConstraint, NSResponder, NSString;
-@protocol EKViewApplicationDelegate, EKViewWindowControllerPrivate;
+@class CUIKEditingContext, CUIKEditingManager, EKEventStore, EKObject, EKUIGadget, EKUIGadgetContainer, EKView, EKViewControllerSettings, EKViewScrollView, NSArray, NSAttributedString, NSDictionary, NSFont, NSLayoutConstraint, NSResponder, NSString;
+@protocol EKHidePopover, EKViewApplicationDelegate, EKViewWindowControllerPrivate;
 
-@interface EKViewController : NSViewController <EKCommitDelegate, EKEditingContextObserver>
+@interface EKViewController : NSViewController <CUIKCommitDelegate, CUIKEditingContextObserver>
 {
     BOOL _isReadOnly;
     BOOL _useDynamicSpacing;
@@ -22,11 +22,13 @@
     BOOL _skipUpdatingUIBecauseWeAreAttemptingToClose;
     EKObject *_object;
     EKEventStore *_eventStore;
+    id <EKHidePopover> _presentingPopoverController;
     EKViewControllerSettings *_settings;
     EKView *_viewContainer;
     EKViewScrollView *_scrollView;
     id <EKViewWindowControllerPrivate> _windowController;
     id <EKViewApplicationDelegate> _applicationDelegate;
+    CUIKEditingManager *_editingManager;
     EKObject *_lastSnapshottedObject;
     EKUIGadgetContainer *_headerContainer;
     EKUIGadgetContainer *_bodyContainer;
@@ -34,7 +36,7 @@
     EKUIGadget *_lastVisibleGadget;
     NSLayoutConstraint *_bottomConstraint;
     NSLayoutConstraint *_maxHeightConstraint;
-    EKEditingContext *_editingContext;
+    CUIKEditingContext *_editingContext;
     NSResponder *_lastResponder;
     NSDictionary *_gadgetContentTextAttributes;
     NSDictionary *_expandedGadgetContentTextAttributes;
@@ -71,7 +73,7 @@
 @property BOOL isAwaitingSaveResponseFromEditingContext; // @synthesize isAwaitingSaveResponseFromEditingContext=_isAwaitingSaveResponseFromEditingContext;
 @property BOOL isClosing; // @synthesize isClosing=_isClosing;
 @property(retain) NSResponder *lastResponder; // @synthesize lastResponder=_lastResponder;
-@property(retain) EKEditingContext *editingContext; // @synthesize editingContext=_editingContext;
+@property(retain) CUIKEditingContext *editingContext; // @synthesize editingContext=_editingContext;
 @property(retain) NSLayoutConstraint *maxHeightConstraint; // @synthesize maxHeightConstraint=_maxHeightConstraint;
 @property(retain) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain) EKUIGadget *lastVisibleGadget; // @synthesize lastVisibleGadget=_lastVisibleGadget;
@@ -79,6 +81,7 @@
 @property(retain) EKUIGadgetContainer *bodyContainer; // @synthesize bodyContainer=_bodyContainer;
 @property(retain) EKUIGadgetContainer *headerContainer; // @synthesize headerContainer=_headerContainer;
 @property(retain) EKObject *lastSnapshottedObject; // @synthesize lastSnapshottedObject=_lastSnapshottedObject;
+@property(retain, nonatomic) CUIKEditingManager *editingManager; // @synthesize editingManager=_editingManager;
 @property __weak id <EKViewApplicationDelegate> applicationDelegate; // @synthesize applicationDelegate=_applicationDelegate;
 @property(nonatomic) __weak id <EKViewWindowControllerPrivate> windowController; // @synthesize windowController=_windowController;
 @property(retain) EKViewScrollView *scrollView; // @synthesize scrollView=_scrollView;
@@ -86,6 +89,7 @@
 @property(retain) EKViewControllerSettings *settings; // @synthesize settings=_settings;
 @property BOOL useDynamicSpacing; // @synthesize useDynamicSpacing=_useDynamicSpacing;
 @property BOOL isReadOnly; // @synthesize isReadOnly=_isReadOnly;
+@property __weak id <EKHidePopover> presentingPopoverController; // @synthesize presentingPopoverController=_presentingPopoverController;
 @property(nonatomic) __weak EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 @property(retain, nonatomic) EKObject *object; // @synthesize object=_object;
 - (void).cxx_destruct;
@@ -101,7 +105,8 @@
 - (void)deleteObject;
 - (void)revert;
 - (BOOL)isObjectDifferentFromCommitted;
-- (BOOL)commitFromCommitButton:(BOOL)arg1;
+- (void)hidePopover;
+- (BOOL)commitFromCommitButton:(BOOL)arg1 shouldClose:(char *)arg2;
 - (void)savePendingChanges;
 - (BOOL)commitButtonPressed;
 - (void)commitObject;
@@ -133,6 +138,7 @@
 - (id)item;
 - (BOOL)isSameObject:(id)arg1 asObject:(id)arg2;
 - (id)editingContextForObject:(id)arg1;
+- (void)setupEditingManagerWithObject:(id)arg1;
 - (void)dateTimeFormatChanged;
 - (void)firstResponderChanged:(id)arg1;
 - (void)windowDidUpdate:(id)arg1;

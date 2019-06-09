@@ -14,6 +14,7 @@
 @property(readonly, nonatomic, getter=isCurrentMachine) BOOL currentMachine; // @synthesize currentMachine=_currentMachine;
 - (void)setMachineName:(id)arg1 buildVersion:(id)arg2 productVersion:(id)arg3;
 - (BOOL)isMachine;
+- (BOOL)supportsWebDriver;
 - (BOOL)supportsAutomaticInspection;
 - (BOOL)isReady;
 - (BOOL)hadConnectionError;

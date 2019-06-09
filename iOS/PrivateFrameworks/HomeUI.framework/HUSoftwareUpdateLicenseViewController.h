@@ -39,7 +39,6 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) WKWebView *webView;
 - (id)_evaluateHeight:(id)arg1;
-- (void)_saveToDesktop:(id)arg1;
 - (void)_emailTermsAndConditions:(id)arg1;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (id)viewForZoomingInScrollView:(id)arg1;

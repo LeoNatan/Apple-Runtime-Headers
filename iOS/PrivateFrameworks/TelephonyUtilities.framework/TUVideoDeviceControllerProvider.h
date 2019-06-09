@@ -28,12 +28,15 @@ __attribute__((visibility("hidden")))
 - (void)captureDevicesChanged:(id)arg1;
 - (id)thumbnailImageForVideoEffectName:(id)arg1;
 @property(readonly, nonatomic) NSArray *availableVideoEffects;
+- (void)cameraZoomAvailabilityDidChange:(_Bool)arg1;
 - (void)didStopPreview;
 - (void)didChangeLocalVideoAttributes:(id)arg1;
 - (void)didReceiveFirstPreviewFrameFromCameraUniqueID:(id)arg1;
 - (void)didStartPreview;
 - (void)cameraDidBecomeAvailableForUniqueID:(id)arg1;
 - (void)didReceiveErrorFromCameraUniqueID:(id)arg1 error:(id)arg2;
+- (void)setCameraZoomFactor:(double)arg1;
+- (void)rampCameraZoomFactor:(double)arg1 withRate:(double)arg2;
 - (void)endPIPToPreviewAnimation;
 - (void)beginPIPToPreviewAnimation;
 - (void)endPreviewToPIPAnimation;

@@ -10,6 +10,7 @@
 
 @class NSString, SKUIAttributedStringView, UIActivityIndicatorView, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIActivityIndicatorView : SKUIViewReuseView <SKUIViewElementView>
 {
     unsigned long long _alignment;

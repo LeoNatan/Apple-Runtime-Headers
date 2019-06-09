@@ -8,6 +8,7 @@
 
 @class NSButton, NSTextField, SHKProgressIndicator;
 
+__attribute__((visibility("hidden")))
 @interface SHKProgressItemView : NSTableCellView
 {
     BOOL _awake;

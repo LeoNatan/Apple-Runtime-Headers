@@ -19,10 +19,11 @@
 }
 
 + (BOOL)isDirectoryServicesConfigured;
-+ (id)accountComponentsWithAccountStore:(id)arg1 basePath:(id)arg2;
++ (id)accountComponentsWithAccountStore:(id)arg1 basePath:(id)arg2 fetchOptions:(unsigned long long)arg3;
 + (Class)sourceClassForClassName:(id)arg1;
 + (id)factoryWithBaseDirectory:(id)arg1;
 + (id)sharedFactory;
++ (id)os_log;
 @property __weak id <ABAccountFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSString *basePath; // @synthesize basePath=_basePath;
 @property(copy) NSString *tag; // @synthesize tag=_tag;
@@ -37,13 +38,13 @@
 - (id)accountComponentsWithBasePath:(id)arg1;
 - (id)accountComponentsAtPath:(id)arg1;
 - (BOOL)shouldUseACAccountPersistence;
-- (id)accountComponents;
+- (id)accountComponentsWithFetchOptions:(unsigned long long)arg1;
 - (id)migrationAccountWithComponents:(id)arg1;
 - (id)migrationAccountsFromComponents:(id)arg1;
 - (id)accountsFromComponents:(id)arg1;
 - (id)uncachedPersistentMigrationAccounts;
 - (id)uncachedLDAPMigrationAccounts;
-- (id)uncachedPersistentAccounts;
+- (id)uncachedPersistentAccountsWithFetchOptions:(unsigned long long)arg1;
 - (id)uncachedLdapAccounts;
 - (id)uncachedAccountWithIdentifier:(id)arg1;
 - (id)ldapAccountWithIdentifier:(id)arg1;

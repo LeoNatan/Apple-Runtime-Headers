@@ -12,7 +12,7 @@
 
 + (int)bindInsertEventStatement:(id)arg1 withEvent:(id)arg2 messageID:(long long)arg3;
 + (id)checkOutStatementToInsertEvent:(id)arg1;
-+ (id)checkOutStatementForEventWithMessageID:(long long)arg1 usingDB:(id)arg2;
++ (id)checkOutStatementForEventWithMessageID:(long long)arg1 connection:(id)arg2;
 + (id)fromClauseForTables:(unsigned long long)arg1 startingFromTableExpression:(id)arg2;
 + (id)checkOutStatementToCompletelyUpdateMessage:(id)arg1;
 + (id)checkOutStatementToInsertMessage:(id)arg1;

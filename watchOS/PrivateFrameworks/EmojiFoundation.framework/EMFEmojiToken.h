@@ -50,6 +50,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 - (void)dealloc;
 - (id)initWithString:(id)arg1 localeIdentifier:(id)arg2;
 - (id)initWithCEMEmojiToken:(struct __EmojiTokenWrapper *)arg1;

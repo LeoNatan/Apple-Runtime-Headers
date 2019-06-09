@@ -6,7 +6,7 @@
 
 #import <Metal/MTLArgument.h>
 
-@class MTLType, NSString;
+@class MTLStructType, MTLType, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MTLArgumentInternal : MTLArgument
@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)bufferDataSize;
 - (unsigned long long)bufferAlignment;
 - (void)dealloc;
+@property(readonly) MTLStructType *structType; // @dynamic structType;
 - (id)initWithName:(id)arg1 type:(unsigned long long)arg2 access:(unsigned long long)arg3 index:(unsigned long long)arg4 active:(BOOL)arg5 arrayLength:(unsigned long long)arg6 typeDescription:(id)arg7;
 - (id)initWithName:(id)arg1 type:(unsigned long long)arg2 access:(unsigned long long)arg3 index:(unsigned long long)arg4 active:(BOOL)arg5 arrayLength:(unsigned long long)arg6;
 

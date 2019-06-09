@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pivotField;
+- (void).cxx_destruct;
 - (id)description;
 - (id)pivotFieldItems;
 - (void)setAxis:(int)arg1;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)dataField;
 - (void)setCompact:(_Bool)arg1;
 - (_Bool)compact;
-- (void)dealloc;
 - (id)init;
 
 @end

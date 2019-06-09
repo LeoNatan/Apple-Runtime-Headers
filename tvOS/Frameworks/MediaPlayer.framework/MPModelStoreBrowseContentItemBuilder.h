@@ -50,6 +50,7 @@
 @property(nonatomic) _Bool allowsRadioStations; // @synthesize allowsRadioStations=_allowsRadioStations;
 - (void).cxx_destruct;
 - (id)modelObjectWithStoreItemMetadata:(id)arg1 sourceModelObject:(id)arg2;
+- (long long)contentItemTypeForMusicAPIType:(id)arg1;
 - (long long)contentItemTypeForStoreItemMetadata:(id)arg1;
 - (long long)contentItemTypeForRawResponseKindIdentifiers:(id)arg1;
 - (long long)contentItemTypeForRawResponseKindIdentifierValue:(long long)arg1;

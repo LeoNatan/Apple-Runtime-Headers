@@ -6,7 +6,10 @@
 
 #import <Foundation/NSProgress.h>
 
-@interface NSProgress (FPAdditions)
+#import <FileProvider/FPCancellable-Protocol.h>
+
+@interface NSProgress (FPAdditions) <FPCancellable>
+- (void)fp_addChildProgress:(id)arg1;
 - (_Bool)fp_isOfFileOperationKind:(id)arg1;
 - (void)fp_setFileOperationKind:(id)arg1;
 - (id)fp_fileOperationKind;

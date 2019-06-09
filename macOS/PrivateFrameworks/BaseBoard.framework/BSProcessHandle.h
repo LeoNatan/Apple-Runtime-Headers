@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <BaseBoard/BSDescriptionProviding-Protocol.h>
 #import <BaseBoard/BSXPCCoding-Protocol.h>
 #import <BaseBoard/NSSecureCoding-Protocol.h>
 
 @class BSAuditToken, BSMachPortTaskNameRight, NSString;
 
-@interface BSProcessHandle : NSObject <BSXPCCoding, NSSecureCoding>
+@interface BSProcessHandle : NSObject <BSDescriptionProviding, BSXPCCoding, NSSecureCoding>
 {
     int _pid;
     NSString *_name;

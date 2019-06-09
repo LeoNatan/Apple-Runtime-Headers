@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, UIKeyboardInputMode;
+@class NSArray, NSString, UIKeyboardInputMode, UITextInputMode;
 @protocol UIKeyboardInputModeControllerDelegate;
 
 @interface UIKeyboardInputModeController : NSObject
@@ -27,6 +27,7 @@
     _Bool _needsUpdateExtensions;
     _Bool _suppressCurrentPublicInputMode;
     _Bool _shouldRunContinuousDiscovery;
+    UITextInputMode *_documentInputMode;
     NSArray *keyboardInputModes;
     NSArray *keyboardInputModeIdentifiers;
     NSArray *enabledInputModes;
@@ -64,6 +65,7 @@
 @property(retain) NSArray *enabledInputModes; // @synthesize enabledInputModes;
 @property(retain) NSArray *keyboardInputModeIdentifiers; // @synthesize keyboardInputModeIdentifiers;
 @property(retain) NSArray *keyboardInputModes; // @synthesize keyboardInputModes;
+@property(retain, nonatomic) UITextInputMode *documentInputMode; // @synthesize documentInputMode=_documentInputMode;
 - (void)handleSpecificHardwareKeyboard;
 - (void)getHardwareKeyboardLanguage:(id *)arg1 countryCode:(id *)arg2;
 - (void)releaseAddKeyboardNotification;
@@ -88,6 +90,7 @@
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1 updatePreference:(_Bool)arg2;
 - (id)nextInputModeToUseForTraits:(id)arg1;
+- (void)clearNextInputModeToUse;
 - (id)nextInputModeToUseForTraits:(id)arg1 updatePreference:(_Bool)arg2;
 - (void)_setCurrentAndNextInputModePreference;
 - (id)nextInputModeFromList:(id)arg1 withFilter:(unsigned int)arg2 withTraits:(id)arg3;
@@ -134,6 +137,9 @@
 @property(readonly, nonatomic) UIKeyboardInputMode *currentLinguisticInputMode;
 @property(readonly, nonatomic) UIKeyboardInputMode *currentPublicInputMode;
 - (id)textInputModeForResponder:(id)arg1;
+- (void)_inputModeChangedWhileContextTracked;
+- (void)_trackInputModeIfNecessary:(id)arg1;
+- (id)lastUsedInputModeForTextInputMode:(id)arg1;
 @property(readonly, nonatomic) UIKeyboardInputMode *currentSystemInputMode;
 @property(readonly, nonatomic) UIKeyboardInputMode *hardwareInputMode;
 - (id)_systemInputModePassingLanguageTest:(CDUnknownBlockType)arg1;

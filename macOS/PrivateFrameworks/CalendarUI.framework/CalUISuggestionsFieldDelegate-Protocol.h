@@ -15,6 +15,7 @@
 @optional
 - (double)suggestionsWindowWidth;
 - (struct CGPoint)suggestionsWindowOffset;
+- (void)insertNewline;
 - (void)suggestionSelected:(id)arg1;
 - (void)controlTextDidChange:(NSNotification *)arg1;
 - (NSView *)viewForSuggestion:(id)arg1;

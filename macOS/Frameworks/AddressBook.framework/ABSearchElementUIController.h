@@ -63,7 +63,6 @@
 - (id)name;
 - (void)setName:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (void)awakeFromNib;
 

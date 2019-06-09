@@ -8,16 +8,17 @@
 
 #import <LoggingSupport/NSPredicateVisitor-Protocol.h>
 
-@class NSData, NSMutableArray, NSMutableDictionary;
+@class NSData, NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
 @interface _OSLogStreamFilter : NSObject <NSPredicateVisitor>
 {
     NSMutableDictionary *_filter;
-    NSMutableArray *_pidArray;
-    NSMutableArray *_processArray;
-    NSMutableArray *_subsystemArray;
-    NSMutableArray *_categoryArray;
+    NSMutableDictionary *_pids;
+    NSMutableDictionary *_processes;
+    NSMutableDictionary *_processImagePaths;
+    NSMutableDictionary *_subsystems;
+    NSMutableDictionary *_categories;
 }
 
 - (void).cxx_destruct;
@@ -25,11 +26,13 @@ __attribute__((visibility("hidden")))
 - (void)visitPredicateExpression:(id)arg1;
 - (void)visitPredicate:(id)arg1;
 - (void)processComparisonPredicate:(id)arg1;
-- (void)processLeftExpression:(id *)arg1 andRightExpression:(id *)arg2;
-- (void)addCategory:(id)arg1;
-- (void)addSubsystem:(id)arg1;
-- (void)addProcess:(id)arg1;
-- (void)addProcessID:(id)arg1;
+- (unsigned long long)flagsForPredicate:(id)arg1;
+- (void)processLeftExpression:(id)arg1 andRightExpression:(id)arg2 flags:(unsigned long long)arg3;
+- (void)addCategory:(id)arg1 flags:(unsigned long long)arg2;
+- (void)addSubsystem:(id)arg1 flags:(unsigned long long)arg2;
+- (void)addProcessImagePath:(id)arg1 flags:(unsigned long long)arg2;
+- (void)addProcess:(id)arg1 flags:(unsigned long long)arg2;
+- (void)addProcessID:(id)arg1 flags:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSData *data;
 - (id)initWithPredicate:(id)arg1;
 

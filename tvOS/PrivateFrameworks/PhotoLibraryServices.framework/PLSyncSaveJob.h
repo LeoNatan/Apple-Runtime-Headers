@@ -44,11 +44,11 @@
 @property(retain, nonatomic) NSURL *videoComplementURL; // @synthesize videoComplementURL;
 @property(retain, nonatomic) NSURL *originalAssetURL; // @synthesize originalAssetURL;
 @property(retain, nonatomic) NSArray *facesInfo; // @synthesize facesInfo;
+- (void).cxx_destruct;
 - (id)description;
 - (void)processFacesWithBlock:(CDUnknownBlockType)arg1;
 - (id)serializedData;
 - (id)initFromSerializedData:(id)arg1;
-- (void)dealloc;
 
 @end
 

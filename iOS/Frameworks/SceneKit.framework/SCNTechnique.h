@@ -11,19 +11,21 @@
 #import <SceneKit/SCNAnimatable-Protocol.h>
 
 @class NSArray, NSDictionary, NSMutableDictionary, NSString, SCNOrderedDictionary;
+@protocol MTLLibrary;
 
 @interface SCNTechnique : NSObject <SCNAnimatable, NSCopying, NSSecureCoding>
 {
     unsigned int _isPresentationInstance:1;
-    struct __C3DFXTechnique *_technique;
+    // Error parsing type: ^{__C3DFXTechnique={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}qq^^{__C3DFXPass}b1b1b1b1b1I^{?}^{__CFDictionary}^{__C3DNode}^{__CFArray}^{__C3DFXTechnique}^v^{__CFString}^{__CFString}}, name: _technique
     NSMutableDictionary *_valueForSymbol;
     SCNOrderedDictionary *_animations;
     NSMutableDictionary *_bindings;
+    id <MTLLibrary> _library;
     NSArray *_passes;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)techniqueWithTechniqueRef:(struct __C3DFXTechnique *)arg1;
++     // Error parsing type: @24@0:8^{__C3DFXTechnique={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}qq^^{__C3DFXPass}b1b1b1b1b1I^{?}^{__CFDictionary}^{__C3DNode}^{__CFArray}^{__C3DFXTechnique}^v^{__CFString}^{__CFString}}16, name: techniqueWithTechniqueRef:
 + (id)techniqueBySequencingTechniques:(id)arg1;
 + (id)techniqueWithDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -63,21 +65,22 @@
 - (const void *)__CFObject;
 - (id)scene;
 - (struct __C3DScene *)sceneRef;
+@property(retain, nonatomic) id <MTLLibrary> library;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)valueForSymbolNamed:(id)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forSymbolNamed:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
-- (struct __C3DFXTechnique *)techniqueRef;
+-     // Error parsing type: ^{__C3DFXTechnique={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}qq^^{__C3DFXPass}b1b1b1b1b1I^{?}^{__CFDictionary}^{__C3DNode}^{__CFArray}^{__C3DFXTechnique}^v^{__CFString}^{__CFString}}16@0:8, name: techniqueRef
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 - (void)handleBindingOfSymbol:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)_symbolsAssignedValues;
 - (void)dealloc;
-- (id)initWithTechniqueRef:(struct __C3DFXTechnique *)arg1;
-- (id)initPresentationTechniqueWithTechniqueRef:(struct __C3DFXTechnique *)arg1;
+-     // Error parsing type: @24@0:8^{__C3DFXTechnique={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}qq^^{__C3DFXPass}b1b1b1b1b1I^{?}^{__CFDictionary}^{__C3DNode}^{__CFArray}^{__C3DFXTechnique}^v^{__CFString}^{__CFString}}16, name: initWithTechniqueRef:
+-     // Error parsing type: @24@0:8^{__C3DFXTechnique={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}qq^^{__C3DFXPass}b1b1b1b1b1I^{?}^{__CFDictionary}^{__C3DNode}^{__CFArray}^{__C3DFXTechnique}^v^{__CFString}^{__CFString}}16, name: initPresentationTechniqueWithTechniqueRef:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

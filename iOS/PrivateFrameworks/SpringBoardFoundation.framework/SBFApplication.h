@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSNumber, NSString, NSURL, SBSApplicationShortcutService, SBSApplicationShortcutServiceFetchResult;
+@class BSMonotonicReferenceTime, NSArray, NSNumber, NSString, NSURL, SBSApplicationShortcutService, SBSApplicationShortcutServiceFetchResult;
 
 @interface SBFApplication : NSObject
 {
     SBSApplicationShortcutService *_applicationShortcutService;
     SBSApplicationShortcutServiceFetchResult *_applicationShortcutServiceFetchResult;
-    double _applicationShortcutServiceFetchResultExpirationTimeInterval;
+    BSMonotonicReferenceTime *_applicationShortcutServiceFetchResultExpirationReferenceTime;
     _Bool _systemOrInternalApplication;
     NSString *_applicationBundleIdentifier;
     NSString *_displayName;

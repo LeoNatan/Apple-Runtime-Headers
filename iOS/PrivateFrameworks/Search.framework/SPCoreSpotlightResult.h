@@ -18,14 +18,14 @@
     NSString *_itemIdentifier;
     NSDate *_interestingDate;
     NSString *_domainIdentifier;
-    long long _incomingCount;
-    long long _outgoingCount;
+    long long *_incomingCount;
+    long long *_outgoingCount;
     NSString *_relatedBundleID;
     NSString *_mailConversationIdentifier;
     NSArray *_launchDates;
     NSDate *_contentCreationDate;
     NSString *_bundleID;
-    struct ranking_index_score_t _buddyScore;
+    // Error parsing type: T, name: _buddyScore
 }
 
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
@@ -34,13 +34,15 @@
 @property(nonatomic) _Bool hasAssociatedUserActivity; // @synthesize hasAssociatedUserActivity=_hasAssociatedUserActivity;
 @property(retain) NSString *mailConversationIdentifier; // @synthesize mailConversationIdentifier=_mailConversationIdentifier;
 @property(retain) NSString *relatedBundleID; // @synthesize relatedBundleID=_relatedBundleID;
-@property long long outgoingCount; // @synthesize outgoingCount=_outgoingCount;
-@property long long incomingCount; // @synthesize incomingCount=_incomingCount;
+@property long long *outgoingCount; // @synthesize outgoingCount=_outgoingCount;
+@property long long *incomingCount; // @synthesize incomingCount=_incomingCount;
 @property(retain) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
 @property _Bool completed; // @synthesize completed=_completed;
 @property(retain) NSDate *interestingDate; // @synthesize interestingDate=_interestingDate;
 @property(retain) NSString *itemIdentifier; // @synthesize itemIdentifier=_itemIdentifier;
-@property struct ranking_index_score_t buddyScore; // @synthesize buddyScore=_buddyScore;
+// Error parsing type for property buddyScore:
+// Property attributes: TT,V_buddyScore
+
 @property(retain) NSString *relatedUniqueIdentifier; // @synthesize relatedUniqueIdentifier=_relatedUniqueIdentifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

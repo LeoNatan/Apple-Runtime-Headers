@@ -33,6 +33,8 @@
     NSMutableSet *_children;
 }
 
++ (id)_addSubscriberForFileURL:(id)arg1 withPublishingHandler:(CDUnknownBlockType)arg2;
++ (void)_removeSubscriber:(id)arg1;
 + (id)_serverConnection;
 + (id)_registrarInterface;
 + (id)_subscriberInterface;
@@ -40,9 +42,7 @@
 + (id)_addSubscriberForFileURL:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)addSubscriberForFileURL:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (id)_addSubscriberForCategory:(id)arg1 usingPublishingHandler:(CDUnknownBlockType)arg2;
-+ (void)_removeSubscriber:(id)arg1;
 + (void)removeSubscriber:(id)arg1;
-+ (id)_addSubscriberForFileURL:(id)arg1 withPublishingHandler:(CDUnknownBlockType)arg2;
 + (id)addSubscriberForFileURL:(id)arg1 withPublishingHandler:(CDUnknownBlockType)arg2;
 + (id)keyPathsForValuesAffectingLocalizedAdditionalDescription;
 + (id)keyPathsForValuesAffectingLocalizedDescription;
@@ -52,6 +52,10 @@
 + (id)progressWithTotalUnitCount:(long long)arg1;
 + (id)currentProgress;
 - (void).cxx_destruct;
+- (void)_setAcknowledgementHandler:(CDUnknownBlockType)arg1 forAppBundleIdentifier:(id)arg2;
+- (void)_unpublish;
+- (void)_publish;
+- (CDUnknownBlockType)_acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
 - (double)_remoteFractionCompleted;
 - (void)_setRemoteValues:(id)arg1 forKeys:(id)arg2;
 - (void)_setRemoteUserInfoValue:(id)arg1 forKey:(id)arg2;
@@ -66,13 +70,9 @@
 @property(readonly, getter=isOld) BOOL old;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;
 - (oneway void)appWithBundleID:(id)arg1 didAcknowledgeWithSuccess:(BOOL)arg2;
-- (CDUnknownBlockType)_acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
 - (CDUnknownBlockType)acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
-- (void)_setAcknowledgementHandler:(CDUnknownBlockType)arg1 forAppBundleIdentifier:(id)arg2;
 - (void)setAcknowledgementHandler:(CDUnknownBlockType)arg1 forAppBundleIdentifier:(id)arg2;
-- (void)_unpublish;
 - (void)unpublish;
-- (void)_publish;
 - (void)publish;
 @property(copy) NSString *kind;
 - (void)setByteCompletedCount:(id)arg1;
@@ -109,12 +109,12 @@
 @property(copy) NSString *localizedAdditionalDescription;
 @property(copy) NSString *localizedDescription;
 @property long long completedUnitCount;
-- (void)_updateChild:(id)arg1 fraction:(id)arg2 portion:(long long)arg3;
+- (void)_updateChild:(id)arg1 fraction:(struct _NSProgressFractionTuple)arg2 portion:(long long)arg3;
 - (void)_setCompletedUnitCount:(long long)arg1 totalUnitCount:(long long)arg2;
 - (void)_addCompletedUnitCount:(long long)arg1;
 @property long long totalUnitCount;
-- (void)_updateFractionCompleted:(id)arg1;
-- (id)_setValueForKeys:(CDUnknownBlockType)arg1 settingBlock:(CDUnknownBlockType)arg2;
+- (void)_updateFractionCompleted:(struct _NSProgressFractionTuple)arg1;
+- (void)_setValueForKeys:(CDUnknownBlockType)arg1 settingBlock:(CDUnknownBlockType)arg2;
 - (void)_notifyRemoteObserversOfValueForKeys:(id)arg1;
 - (void)_notifyRemoteObserversOfUserInfoValueForKey:(id)arg1;
 - (void)set_adoptChildUserInfo:(BOOL)arg1;

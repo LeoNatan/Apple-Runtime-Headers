@@ -8,28 +8,32 @@
 
 #import <CoreWLANKit/NSTextFieldDelegate-Protocol.h>
 
-@class CWInterface, CWNetwork, CWProxyClient, NSButton, NSError, NSImageView, NSLayoutConstraint, NSPopUpButton, NSProgressIndicator, NSScrollView, NSSecureTextField, NSString, NSTextField, NSTextView, NSView, SFCertificateView;
+@class CWDisplayedScanResult, NSButton, NSData, NSError, NSImageView, NSLayoutConstraint, NSPopUpButton, NSProgressIndicator, NSScrollView, NSSecureTextField, NSString, NSTextField, NSTextView, NSView, SFCertificateView;
 
 @interface CWJoinDialog_SL : NSWindowController <NSTextFieldDelegate>
 {
-    CWInterface *interface_;
-    CWNetwork *network_;
-    BOOL remember_;
-    SFCertificateView *certificateView;
-    id delegate_;
-    BOOL shouldShowCertificate_;
+    CWDisplayedScanResult *_scanResult;
+    NSString *_username;
+    NSString *_password;
+    NSData *_identityData;
+    BOOL _remember;
+    id _delegate;
     NSError *_previousError;
     NSString *_previousPassword;
+    BOOL _supportsWiFiPasswordSharing;
     BOOL installerContext_;
     BOOL _showingOpen;
     BOOL _showingPassword;
     BOOL _showingPSK;
     BOOL _showingEnterprise;
-    BOOL showingCertificateSelector_;
+    BOOL _showingCertificateSelector;
     BOOL _showingCertificate;
+    BOOL _shouldShowCertificate;
     BOOL _showingAutomaticEAP;
     BOOL _showingEAPTLS;
     BOOL _certificatesAvailable;
+    BOOL _joinInProgress;
+    SFCertificateView *certificateView;
     NSTextField *windowTitleLabel;
     NSScrollView *windowDescScrollView;
     NSTextView *windowDescTextView;
@@ -60,19 +64,20 @@
     NSButton *helpButton;
     NSImageView *imageView;
     NSTextField *pskHintText;
-    BOOL _joinInProgress;
-    CWProxyClient *_proxy;
 }
 
-+ (id)joinDialogWithInterface:(id)arg1 network:(id)arg2;
++ (id)joinDialogWithScanResult:(id)arg1 remember:(BOOL)arg2;
+@property BOOL supportsWiFiPasswordSharing; // @synthesize supportsWiFiPasswordSharing=_supportsWiFiPasswordSharing;
 @property(copy) NSString *previousPassword; // @synthesize previousPassword=_previousPassword;
 @property(copy) NSError *previousError; // @synthesize previousError=_previousError;
-@property BOOL remember; // @synthesize remember=remember_;
-@property(copy) CWNetwork *network; // @synthesize network=network_;
-@property id delegate; // @synthesize delegate=delegate_;
-@property(retain) CWInterface *interface; // @synthesize interface=interface_;
+@property(copy) NSData *identityData; // @synthesize identityData=_identityData;
+@property(copy) NSString *password; // @synthesize password=_password;
+@property(copy) NSString *username; // @synthesize username=_username;
+@property BOOL remember; // @synthesize remember=_remember;
+@property(copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
+@property id delegate; // @synthesize delegate=_delegate;
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
-- (void)receivedSharedWiFiNetworkWithName:(id)arg1 password:(id)arg2 channel:(id)arg3;
+- (void)enterPasswordAndJoin:(id)arg1;
 - (BOOL)eapCertificatesAvailable;
 - (void)populateEAPModes;
 - (long long)securityTagForNetwork:(id)arg1;
@@ -111,7 +116,7 @@
 - (void)insertOpenView;
 - (void)removeOpenView:(struct CGRect *)arg1;
 - (void)expandFrameForOpenView:(struct CGRect *)arg1;
-- (id)initWithInterface:(id)arg1 network:(id)arg2;
+- (id)initWithScanResult:(id)arg1 remember:(BOOL)arg2;
 - (void)dealloc;
 
 // Remaining properties

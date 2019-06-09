@@ -7,13 +7,19 @@
 #import <objc/NSObject.h>
 
 @class IMDCKSyncState;
+@protocol IMDCKAbstractSyncControllerDelegate;
 
 @interface IMDCKAbstractSyncController : NSObject
 {
     _Bool _isSyncing;
+    id <IMDCKAbstractSyncControllerDelegate> _delegate;
 }
 
+@property __weak id <IMDCKAbstractSyncControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isSyncing; // @synthesize isSyncing=_isSyncing;
+- (void).cxx_destruct;
+- (_Bool)_fetchedAllChangesFromCloudKit;
+- (void)syncBatchCompleted:(unsigned long long)arg1;
 - (void)addSyncDebuggingInfoToDictionary:(id)arg1;
 - (id)syncStateDebuggingInfo:(id)arg1;
 - (void)setBroadcastedSyncStateToStartingInitialSync;

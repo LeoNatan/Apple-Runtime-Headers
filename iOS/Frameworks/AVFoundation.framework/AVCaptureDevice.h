@@ -16,9 +16,9 @@
     NSString *_manufacturer;
     NSArray *_linkedDevices;
     NSArray *_inputSources;
-    AVCaptureDeviceInputSource *_activeInputSource;
 }
 
++ (id)extrinsicMatrixFromDevice:(id)arg1 toDevice:(id)arg2;
 + (void)initialize;
 + (void)requestAccessForMediaType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (long long)authorizationStatusForMediaType:(id)arg1;
@@ -33,7 +33,6 @@
 + (id)devicesWithMediaType:(id)arg1;
 + (void)_filterConnectedDevices:(id)arg1 withDeviceTypes:(id)arg2 mediaType:(id)arg3 position:(long long)arg4;
 + (void)_filterConnectedLegacyDevices:(id)arg1;
-@property(retain, nonatomic) AVCaptureDeviceInputSource *activeInputSource; // @synthesize activeInputSource=_activeInputSource;
 @property(readonly, nonatomic) NSArray *inputSources; // @synthesize inputSources=_inputSources;
 @property(readonly, nonatomic) NSArray *linkedDevices; // @synthesize linkedDevices=_linkedDevices;
 @property(readonly, nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
@@ -79,6 +78,7 @@
 - (_Bool)isVideoStabilizationSupported;
 - (_Bool)isAutoRedEyeReductionSupported;
 - (_Bool)isHDRSupported;
+- (id)cameraPoseMatrix;
 - (double)maxAvailableVideoZoomFactor;
 - (double)minAvailableVideoZoomFactor;
 - (double)dualCameraSwitchOverVideoZoomFactor;
@@ -90,6 +90,8 @@
 - (double)videoZoomFactor;
 - (_Bool)isWideColorSupported;
 - (void)setActiveColorSpace:(long long)arg1;
+- (id)constituentDevices;
+- (_Bool)isVirtualDevice;
 - (long long)activeColorSpace;
 - (void)setVideoHDRSuspended:(_Bool)arg1;
 - (_Bool)isVideoHDRSuspended;
@@ -182,6 +184,8 @@
 - (void)_setActiveVideoMaxFrameDuration:(CDStruct_1b6d18a9)arg1;
 - (_Bool)appliesSessionPresetMaxIntegrationTimeOverrideToActiveFormat;
 - (CDStruct_1b6d18a9)activeMaxExposureDurationClientOverride;
+- (void)setVideoMinFrameDurationOverride:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)videoMinFrameDurationOverride;
 - (_Bool)isActiveVideoMaxFrameDurationSet;
 - (_Bool)isActiveVideoMinFrameDurationSet;
 @property(nonatomic) CDStruct_1b6d18a9 activeVideoMaxFrameDuration;
@@ -191,6 +195,7 @@
 - (CDStruct_1b6d18a9)activeDepthDataMinFrameDuration;
 - (void)setActiveDepthDataFormat:(id)arg1;
 - (id)activeDepthDataFormat;
+@property(retain, nonatomic) AVCaptureDeviceInputSource *activeInputSource;
 @property(retain, nonatomic) AVCaptureDeviceFormat *activeFormat;
 @property(readonly, nonatomic) NSArray *formats;
 @property(readonly, nonatomic, getter=isConnected) _Bool connected;
@@ -209,7 +214,9 @@
 - (_Bool)isHighDynamicRangeSceneDetectionSupported;
 - (void)setLowLightVideoCaptureEnabled:(_Bool)arg1;
 - (_Bool)isLowLightVideoCaptureEnabled;
-- (long long)deviceSourceOrigin;
+- (int)powerConsumptionAt30FPSForOISMode:(int)arg1;
+- (id)constituentDeviceWithDeviceType:(id)arg1;
+- (_Bool)supportsMultiCamCaptureWithDevice:(id)arg1;
 - (void)setProvidesStortorgetMetadata:(_Bool)arg1;
 - (_Bool)providesStortorgetMetadata;
 - (int)faceRectangleAngle;
@@ -227,6 +234,7 @@
 @property(readonly, nonatomic) NSString *modelID;
 @property(readonly, nonatomic) NSString *uniqueID;
 - (id)description;
+- (id)debugDescription;
 - (void)dealloc;
 - (id)initSubclass;
 

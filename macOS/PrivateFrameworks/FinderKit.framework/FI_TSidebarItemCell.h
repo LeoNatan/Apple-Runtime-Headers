@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)drawSidebarIcon:(id)arg1 inRect:(struct CGRect)arg2 inContext:(struct CGContext *)arg3 highlighted:(_Bool)arg4;
-+ (struct TString)imageName:(const struct TString *)arg1 forSize:(struct CGSize)arg2;
 + (const struct TFENode *)nodeForItem:(id)arg1;
 + (struct CGRect)roughActionButtonRectForCell:(const struct CGRect *)arg1;
 + (unsigned long long)frameRateMicroseconds;
@@ -63,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)dataForIdentifier:(id)arg1;
 - (void)dealloc;
 - (void)finishMakingWithNode:(const struct TFENode *)arg1 actionKind:(int)arg2 iconGetter:(function_3343ca80)arg3;
+- (void)setRowSizeStyle:(long long)arg1;
 - (void)updateAction:(int)arg1;
 - (void)setAction:(int)arg1;
 - (void)removeProgressViewIfNeeded;

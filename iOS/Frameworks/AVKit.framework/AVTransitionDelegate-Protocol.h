@@ -6,9 +6,11 @@
 
 #import <AVKit/NSObject-Protocol.h>
 
-@class AVTransition;
+@class AVTransition, UIColor;
 
 @protocol AVTransitionDelegate <NSObject>
+- (UIColor *)transitionBackgroundViewBackgroundColor:(AVTransition *)arg1;
+- (UIColor *)transitionPresentedViewBackgroundColor:(AVTransition *)arg1;
 - (void)transitionWillComplete:(AVTransition *)arg1 success:(_Bool)arg2;
 @end
 

@@ -11,10 +11,9 @@
 }
 
 + (id)sharedController;
-- (BOOL)showCertificatePanelForError:(id)arg1 andRefreshNodeIfUserAcceptsCert:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)showCertificatePanelForError:(id)arg1 andRefreshNodeIfUserAcceptsCert:(id)arg2;
-- (BOOL)showCertificatePanelForError:(id)arg1;
+- (BOOL)showCertificatePanelForError:(id)arg1 andRefreshSourceIfUserAcceptsCert:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)showCertificatePanelForError:(id)arg1 andRefreshSourceIfUserAcceptsCert:(id)arg2;
+- (BOOL)showCertificatePanelForError:(id)arg1;
 
 @end
 

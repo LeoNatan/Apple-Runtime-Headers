@@ -6,67 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <coreroutine/NSCopying-Protocol.h>
-#import <coreroutine/NSSecureCoding-Protocol.h>
+@class RTVisit;
 
-@class NSMutableArray, RTVisit;
-
-@interface RTVisitMonitorState : NSObject <NSSecureCoding, NSCopying>
+@interface RTVisitMonitorState : NSObject
 {
-    _Bool _insideAnLoi;
-    _Bool _insideAnLoiButStatTimeNotMet;
-    _Bool _entryEdgeDetected;
-    _Bool _checkedForHintNearEntryLocation;
-    double _lastProcessedSample_s;
-    double _potentialEntry_s;
-    double _potentialExit_s;
-    double _sumLat_deg;
-    double _sumLon_deg;
-    double _sumLat2_deg;
-    double _sumLon2_deg;
-    double _entrySampleLat_deg;
-    double _entrySampleLon_deg;
-    long long _dataPointCnt;
-    long long _adaptionSampleCnt;
-    double _lastProcessedSampleForAdaption_s;
-    long long _outlierCnt;
-    NSMutableArray *_tempOutliers;
     RTVisit *_lastVisitIncident;
     RTVisit *_lastLowConfidenceVisitIncident;
-    long long _pendingReprocessRequestCount;
-    long long _visitCallCnt;
-    long long _lowConfidenceVisitStatus;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(nonatomic) long long lowConfidenceVisitStatus; // @synthesize lowConfidenceVisitStatus=_lowConfidenceVisitStatus;
-@property(nonatomic) _Bool checkedForHintNearEntryLocation; // @synthesize checkedForHintNearEntryLocation=_checkedForHintNearEntryLocation;
-@property(nonatomic) long long visitCallCnt; // @synthesize visitCallCnt=_visitCallCnt;
-@property(nonatomic) long long pendingReprocessRequestCount; // @synthesize pendingReprocessRequestCount=_pendingReprocessRequestCount;
 @property(retain, nonatomic) RTVisit *lastLowConfidenceVisitIncident; // @synthesize lastLowConfidenceVisitIncident=_lastLowConfidenceVisitIncident;
 @property(retain, nonatomic) RTVisit *lastVisitIncident; // @synthesize lastVisitIncident=_lastVisitIncident;
-@property(nonatomic) _Bool entryEdgeDetected; // @synthesize entryEdgeDetected=_entryEdgeDetected;
-@property(retain, nonatomic) NSMutableArray *tempOutliers; // @synthesize tempOutliers=_tempOutliers;
-@property(nonatomic) long long outlierCnt; // @synthesize outlierCnt=_outlierCnt;
-@property(nonatomic) double lastProcessedSampleForAdaption_s; // @synthesize lastProcessedSampleForAdaption_s=_lastProcessedSampleForAdaption_s;
-@property(nonatomic) long long adaptionSampleCnt; // @synthesize adaptionSampleCnt=_adaptionSampleCnt;
-@property(nonatomic) long long dataPointCnt; // @synthesize dataPointCnt=_dataPointCnt;
-@property(nonatomic) double entrySampleLon_deg; // @synthesize entrySampleLon_deg=_entrySampleLon_deg;
-@property(nonatomic) double entrySampleLat_deg; // @synthesize entrySampleLat_deg=_entrySampleLat_deg;
-@property(nonatomic) double sumLon2_deg; // @synthesize sumLon2_deg=_sumLon2_deg;
-@property(nonatomic) double sumLat2_deg; // @synthesize sumLat2_deg=_sumLat2_deg;
-@property(nonatomic) double sumLon_deg; // @synthesize sumLon_deg=_sumLon_deg;
-@property(nonatomic) double sumLat_deg; // @synthesize sumLat_deg=_sumLat_deg;
-@property(nonatomic) double potentialExit_s; // @synthesize potentialExit_s=_potentialExit_s;
-@property(nonatomic) double potentialEntry_s; // @synthesize potentialEntry_s=_potentialEntry_s;
-@property(nonatomic) double lastProcessedSample_s; // @synthesize lastProcessedSample_s=_lastProcessedSample_s;
-@property(nonatomic) _Bool insideAnLoiButStatTimeNotMet; // @synthesize insideAnLoiButStatTimeNotMet=_insideAnLoiButStatTimeNotMet;
-@property(nonatomic) _Bool insideAnLoi; // @synthesize insideAnLoi=_insideAnLoi;
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dump;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
+- (id)initWithLastVisit:(id)arg1 lastLowConfidenceVisit:(id)arg2;
 - (id)init;
 
 @end

@@ -25,8 +25,7 @@ struct CGSize {
     float _field2;
 };
 
-struct SBSHardwareButtonServiceButtonConfiguration {
-    unsigned int eventMask;
-    int maximumPriority;
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 

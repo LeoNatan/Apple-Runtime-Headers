@@ -9,17 +9,19 @@
 #import <UIKitCore/UIAccessibilityHUDGestureDelegate-Protocol.h>
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSString, UIAccessibilityHUDGestureManager, UIColor, UIGestureRecognizer, _UIStatusBarAction, _UIStatusBarData, _UIStatusBarDataAggregator, _UIStatusBarStyleAttributes;
+@class NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, UIAccessibilityHUDGestureManager, UIColor, UIGestureRecognizer, UIScreen, _UIStatusBarAction, _UIStatusBarData, _UIStatusBarDataAggregator, _UIStatusBarStyleAttributes;
 @protocol _UIStatusBarActionable, _UIStatusBarVisualProvider;
 
 @interface _UIStatusBar : UIView <UIGestureRecognizerDelegate, UIAccessibilityHUDGestureDelegate>
 {
     id <_UIStatusBarVisualProvider> _visualProvider;
+    UIScreen *_targetScreen;
     int _style;
     UIColor *_foregroundColor;
     int _mode;
     int _orientation;
     _UIStatusBarData *_currentData;
+    UIGestureRecognizer *_actionGestureRecognizer;
     NSArray *_enabledPartIdentifiers;
     NSMutableDictionary *_items;
     NSMutableDictionary *_displayItemStates;
@@ -27,26 +29,23 @@
     UIView *_foregroundView;
     id <_UIStatusBarActionable> _targetActionable;
     UIAccessibilityHUDGestureManager *_accessibilityHUDGestureManager;
+    Class _visualProviderClass;
     NSDictionary *_regions;
     _UIStatusBarDataAggregator *_dataAggregator;
     _UIStatusBarData *_currentAggregatedData;
     _UIStatusBarStyleAttributes *_styleAttributes;
     _UIStatusBarAction *_action;
-    UIGestureRecognizer *_actionGestureRecognizer;
     struct CGRect _avoidanceFrame;
 }
 
-+ (float)heightForOrientation:(int)arg1;
-+ (void)_setVisualProviderClass:(Class)arg1;
-+ (id)_visualProviderClassName;
-+ (void)_setVisualProviderClassName:(id)arg1;
-+ (Class)_visualProviderClass;
-@property(readonly, nonatomic) UIGestureRecognizer *actionGestureRecognizer; // @synthesize actionGestureRecognizer=_actionGestureRecognizer;
++ (struct CGSize)intrinsicContentSizeForTargetScreen:(id)arg1 orientation:(int)arg2;
++ (id)stringForStatusBarStyle:(int)arg1;
 @property(retain, nonatomic) _UIStatusBarAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) _UIStatusBarStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
 @property(readonly, nonatomic) _UIStatusBarData *currentAggregatedData; // @synthesize currentAggregatedData=_currentAggregatedData;
 @property(readonly, nonatomic) _UIStatusBarDataAggregator *dataAggregator; // @synthesize dataAggregator=_dataAggregator;
 @property(readonly, nonatomic) NSDictionary *regions; // @synthesize regions=_regions;
+@property(retain, nonatomic, getter=_visualProviderClass, setter=_setVisualProviderClass:) Class visualProviderClass; // @synthesize visualProviderClass=_visualProviderClass;
 @property(retain, nonatomic) UIAccessibilityHUDGestureManager *accessibilityHUDGestureManager; // @synthesize accessibilityHUDGestureManager=_accessibilityHUDGestureManager;
 @property(nonatomic) __weak id <_UIStatusBarActionable> targetActionable; // @synthesize targetActionable=_targetActionable;
 @property(retain, nonatomic) UIView *foregroundView; // @synthesize foregroundView=_foregroundView;
@@ -55,11 +54,13 @@
 @property(retain, nonatomic) NSMutableDictionary *items; // @synthesize items=_items;
 @property(nonatomic) struct CGRect avoidanceFrame; // @synthesize avoidanceFrame=_avoidanceFrame;
 @property(copy, nonatomic) NSArray *enabledPartIdentifiers; // @synthesize enabledPartIdentifiers=_enabledPartIdentifiers;
+@property(readonly, nonatomic) UIGestureRecognizer *actionGestureRecognizer; // @synthesize actionGestureRecognizer=_actionGestureRecognizer;
 @property(readonly, nonatomic) _UIStatusBarData *currentData; // @synthesize currentData=_currentData;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(copy, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) int style; // @synthesize style=_style;
+@property(retain, nonatomic) UIScreen *targetScreen; // @synthesize targetScreen=_targetScreen;
 - (void).cxx_destruct;
 - (void)_dismissAccessibilityHUDForGestureManager:(id)arg1;
 - (void)_accessibilityHUDGestureManager:(id)arg1 showHUDItem:(id)arg2;
@@ -82,8 +83,11 @@
 @property(readonly, nonatomic, getter=areAnimationsEnabled) _Bool animationsEnabled;
 @property(readonly, nonatomic) unsigned int animationContextId;
 @property(readonly, nonatomic) UIView *containerView;
+@property(readonly, nonatomic) NSSet *dependentDataEntryKeys;
 - (struct CGRect)frameForPartWithIdentifier:(id)arg1;
 - (struct CGRect)frameForPartWithIdentifier:(id)arg1 includeInternalItems:(_Bool)arg2;
+- (int)styleForPartWithIdentifier:(id)arg1;
+- (void)setStyle:(int)arg1 forPartWithIdentifier:(id)arg2;
 - (float)alphaForPartWithIdentifier:(id)arg1;
 - (void)setAlpha:(float)arg1 forPartWithIdentifier:(id)arg2;
 - (struct UIOffset)offsetForPartWithIdentifier:(id)arg1;
@@ -91,10 +95,14 @@
 - (id)actionForPartWithIdentifier:(id)arg1;
 - (void)setAction:(id)arg1 forPartWithIdentifier:(id)arg2;
 - (id)_regionsForPartWithIdentifier:(id)arg1 includeInternalItems:(_Bool)arg2;
-- (id)_actionablesForPartWithIdentifier:(id)arg1 includeInternalItems:(_Bool)arg2;
+- (id)_actionablesForPartWithIdentifier:(id)arg1 includeInternalItems:(_Bool)arg2 onlyVisible:(_Bool)arg3;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)statusBarGesture:(id)arg1;
+- (_Bool)_gestureRecognizer:(id)arg1 pressInsideActionable:(id)arg2;
+- (_Bool)_gestureRecognizer:(id)arg1 touchInsideActionable:(id)arg2;
 - (_Bool)_gestureRecognizer:(id)arg1 isInsideActionable:(id)arg2;
+- (struct CGRect)_frameForActionable:(id)arg1 actionInsets:(struct UIEdgeInsets)arg2;
+- (struct CGRect)_pressFrameForActionable:(id)arg1;
 - (struct CGRect)_frameForActionable:(id)arg1;
 - (void)_rearrangeOverflowedItems;
 - (void)_updateRegionItems;
@@ -109,14 +117,20 @@
 - (void)_updateDisplayedItemsWithData:(id)arg1 styleAttributes:(id)arg2 extraAnimations:(id)arg3;
 - (void)_updateWithAggregatedData:(id)arg1;
 - (void)_updateWithData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(copy, nonatomic) _UIStatusBarData *overlayData;
 - (void)updateWithData:(id)arg1;
+- (void)_updateStyleAttributes;
+- (id)styleAttributesForStyle:(int)arg1;
+- (int)_effectiveStyleFromStyle:(int)arg1;
 - (void)_performWithMatchingCAAnimations:(CDUnknownBlockType)arg1;
 - (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (void)setSemanticContentAttribute:(int)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)resetVisualProvider;
 - (void)_prepareVisualProviderIfNeeded;
+- (id)_effectiveTargetScreen;
 @property(readonly, nonatomic) id <_UIStatusBarVisualProvider> visualProvider;
+@property(retain, nonatomic, getter=_visualProviderClassName, setter=_setVisualProviderClassName:) NSString *visualProviderClassName;
 @property(readonly, copy) NSString *description;
 - (id)initWithStyle:(int)arg1;
 - (_Bool)_forceLayoutEngineSolutionInRationalEdges;

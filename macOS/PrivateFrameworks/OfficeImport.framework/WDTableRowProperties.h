@@ -10,6 +10,7 @@
 
 @class WDCharacterProperties, WDTableProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDTableRowProperties : NSObject <NSCopying>
 {
     WDTableProperties *mTableProperties;

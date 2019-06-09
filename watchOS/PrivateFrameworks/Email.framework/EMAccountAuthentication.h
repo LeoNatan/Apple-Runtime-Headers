@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@protocol EMAccountFactory;
+@protocol EDAccountFactory;
 
 @interface EMAccountAuthentication : NSObject
 {
-    id <EMAccountFactory> _accountFactory;
+    id <EDAccountFactory> _accountFactory;
 }
 
 + (id)log;
-@property(readonly, nonatomic) id <EMAccountFactory> accountFactory; // @synthesize accountFactory=_accountFactory;
+@property(readonly, nonatomic) id <EDAccountFactory> accountFactory; // @synthesize accountFactory=_accountFactory;
 - (void).cxx_destruct;
 - (_Bool)_hostnamesHaveSameTopLevelDomain:(id)arg1 deliveryAccount:(id)arg2;
 - (_Bool)_shouldAutoUpdateDeliveryAccount:(id)arg1 forChangedReceivingAccount:(id)arg2;

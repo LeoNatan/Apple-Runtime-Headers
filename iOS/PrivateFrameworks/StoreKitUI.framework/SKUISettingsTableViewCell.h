@@ -8,6 +8,7 @@
 
 @class SKUISettingDescriptionView, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsTableViewCell : UITableViewCell
 {
     struct UIEdgeInsets _contentInset;

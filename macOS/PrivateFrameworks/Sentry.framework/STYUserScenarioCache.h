@@ -43,6 +43,8 @@
 - (void).cxx_destruct;
 - (id)lifecyleScenarioWithScenarioId:(id)arg1 error:(id *)arg2;
 - (id)wakeScenario:(id)arg1 subType:(id)arg2 error:(id *)arg3;
+- (id)scenarioFromSignpostEvent:(id)arg1 error:(id *)arg2;
+- (id)scenarioForFrontboardLaunchWatchdog:(id)arg1;
 - (id)scenarioFromSignpostInterval:(id)arg1 error:(id *)arg2;
 - (BOOL)kpiIsLatency:(id)arg1;
 - (id)scenarioGroupForSignpostInterval:(id)arg1;
@@ -63,6 +65,7 @@
 - (BOOL)setupWhitelistedScenarios:(id)arg1 bundles:(id)arg2;
 - (BOOL)setupScenarioTitles:(id)arg1 bundles:(id)arg2;
 - (id)initWithPlatform:(id)arg1;
+- (id)scenarioIdForSignpostEmittedEvent:(id)arg1;
 - (id)scenarioIdForSignpostInterval:(id)arg1;
 - (id)bundleIdForProcessName:(id)arg1;
 

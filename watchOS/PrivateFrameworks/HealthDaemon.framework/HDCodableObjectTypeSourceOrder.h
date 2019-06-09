@@ -12,6 +12,11 @@
 
 @interface HDCodableObjectTypeSourceOrder : PBCodable <NSCopying>
 {
+    struct {
+        double *list;
+        unsigned int count;
+        unsigned int size;
+    } _modificationDates;
     long long _objectType;
     NSData *_sourceUUIDs;
     _Bool _userOrdered;
@@ -34,9 +39,16 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (void)setModificationDates:(double *)arg1 count:(unsigned int)arg2;
+- (double)modificationDatesAtIndex:(unsigned int)arg1;
+- (void)addModificationDates:(double)arg1;
+- (void)clearModificationDates;
+@property(readonly, nonatomic) double *modificationDates;
+@property(readonly, nonatomic) unsigned int modificationDatesCount;
 @property(readonly, nonatomic) _Bool hasSourceUUIDs;
 @property(nonatomic) _Bool hasUserOrdered;
 @property(nonatomic) _Bool hasObjectType;
+- (void)dealloc;
 - (int)decodedDataTypeCode;
 
 @end

@@ -10,12 +10,13 @@
 @protocol MTLTextureSPI <MTLTexture, MTLResourceSPI>
 @property(readonly) BOOL isDrawable;
 @property(readonly) unsigned long long numFaces;
+@property(readonly) unsigned int swizzleKey;
 @property(readonly) unsigned long long iosurfacePlane;
 @property(readonly) struct __IOSurface *iosurface;
 - (void)didModifyData;
 
 @optional
-@property(readonly) unsigned long long resourceIndex;
+@property(nonatomic) unsigned long long resourceIndex;
 @property(readonly) unsigned long long uniqueIdentifier;
 @end
 

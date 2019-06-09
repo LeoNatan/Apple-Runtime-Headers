@@ -17,7 +17,6 @@
 @property(readonly, nonatomic) NSUUID *policyMonitorIdentifier; // @synthesize policyMonitorIdentifier=_policyMonitorIdentifier;
 @property(copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
 - (void).cxx_destruct;
-- (_Bool)askPermissionForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (void)_fetchCategoriesIfNeededForBundleIdentifiers:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)requestPoliciesForBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, getter=isEnabled) _Bool enabled;

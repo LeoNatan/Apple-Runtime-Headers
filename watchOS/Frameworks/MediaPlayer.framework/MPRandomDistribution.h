@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlayer/MPRandom-Protocol.h>
+#import <MediaPlayer/NSSecureCoding-Protocol.h>
 
 @protocol MPRandom;
 
-@interface MPRandomDistribution : NSObject <MPRandom>
+@interface MPRandomDistribution : NSObject <MPRandom, NSSecureCoding>
 {
     id <MPRandom> _source;
     int _lowestValue;
@@ -18,11 +19,14 @@
     unsigned int _numberOfPossibleOutcomes;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned int numberOfPossibleOutcomes; // @synthesize numberOfPossibleOutcomes=_numberOfPossibleOutcomes;
 @property(readonly, nonatomic) int highestValue; // @synthesize highestValue=_highestValue;
 @property(readonly, nonatomic) int lowestValue; // @synthesize lowestValue=_lowestValue;
 - (void).cxx_destruct;
 - (unsigned int)nextIntWithUpperBound:(unsigned int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithRandomSource:(id)arg1 lowestValue:(int)arg2 highestValue:(int)arg3;
 - (id)init;
 

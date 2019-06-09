@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSNumber *duration; // @synthesize duration;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setOptions:(id)arg1;
 - (id)options;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (void)setType:(int)arg1;
 - (int)type;
 - (_Bool)hasType;
-- (void)dealloc;
 - (id)init;
 
 @end

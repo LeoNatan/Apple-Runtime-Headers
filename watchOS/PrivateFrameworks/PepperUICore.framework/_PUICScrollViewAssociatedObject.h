@@ -14,6 +14,7 @@
     _Bool _onlyGenerateMinorDetents;
     _Bool _suppressDetents;
     _Bool _suppressMinorDetents;
+    _Bool _minorDetentsRegionDisabled;
     int _crownInputScrollDirection;
     PUICCrownInputSequencer *_crownInputSequencer;
     NSTimer *_suspendSystemGestureReleaseTimer;
@@ -31,6 +32,7 @@
 
 @property(retain, nonatomic) PUICScrollViewInertialAnimator *pageAnimator; // @synthesize pageAnimator=_pageAnimator;
 @property(nonatomic) CDStruct_a12fb154 delegateRespondsTo; // @synthesize delegateRespondsTo=_delegateRespondsTo;
+@property(nonatomic) _Bool minorDetentsRegionDisabled; // @synthesize minorDetentsRegionDisabled=_minorDetentsRegionDisabled;
 @property(nonatomic) _Bool suppressMinorDetents; // @synthesize suppressMinorDetents=_suppressMinorDetents;
 @property(nonatomic) _Bool suppressDetents; // @synthesize suppressDetents=_suppressDetents;
 @property(nonatomic) float minorDetentsTopEdge; // @synthesize minorDetentsTopEdge=_minorDetentsTopEdge;

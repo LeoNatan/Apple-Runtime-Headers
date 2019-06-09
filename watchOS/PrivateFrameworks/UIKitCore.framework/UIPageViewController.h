@@ -61,7 +61,6 @@
 + (id)_incomingViewControllerKeys;
 + (id)_outgoingViewControllerKeys;
 + (id)stringForSpineLocation:(int)arg1;
-+ (_Bool)doesOverrideSupportedInterfaceOrientations;
 + (_Bool)doesOverridePreferredInterfaceOrientationForPresentation;
 + (_Bool)_isSpineLocation:(int)arg1 supportedForTransitionStyle:(int)arg2;
 + (_Bool)_isNavigationOrientation:(int)arg1 supportedForTransitionStyle:(int)arg2;
@@ -122,7 +121,6 @@
 - (id)_viewControllersForPendingSpineLocation:(int)arg1;
 - (id)_validatedViewControllersForPresentationOfViewControllers:(id)arg1 validRange:(struct _NSRange)arg2;
 - (struct _NSRange)_validRangeForPresentationOfViewControllersWithSpineLocation:(int)arg1;
-- (_Bool)_shouldSynthesizeSupportedOrientations;
 - (int)preferredInterfaceOrientationForPresentation;
 - (_Bool)_hasPreferredInterfaceOrientationForPresentation;
 - (unsigned int)supportedInterfaceOrientations;

@@ -6,6 +6,7 @@
 
 #import <GameplayKit/GKNoiseModifier.h>
 
+__attribute__((visibility("hidden")))
 @interface GKRotateNoiseModifier : GKNoiseModifier
 {
     // Error parsing type: , name: _radians

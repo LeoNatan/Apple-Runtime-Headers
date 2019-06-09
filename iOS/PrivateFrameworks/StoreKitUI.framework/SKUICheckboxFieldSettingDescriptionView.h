@@ -10,6 +10,7 @@
 
 @class NSString, SKUIFieldSettingDescription, SKUIInputViewElement, UILabel, UISwitch;
 
+__attribute__((visibility("hidden")))
 @interface SKUICheckboxFieldSettingDescriptionView : SKUIFieldSettingDescriptionView <UITextFieldDelegate>
 {
     double _aggregateLabelWidth;

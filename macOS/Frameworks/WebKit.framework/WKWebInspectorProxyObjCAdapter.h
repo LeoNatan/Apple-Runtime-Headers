@@ -27,6 +27,7 @@
 - (void)windowWillClose:(id)arg1;
 - (void)windowDidResize:(id)arg1;
 - (void)windowDidMove:(id)arg1;
+- (struct CGRect)window:(id)arg1 willPositionSheet:(id)arg2 usingRect:(struct CGRect)arg3;
 - (void)invalidate;
 - (id)initWithWebInspectorProxy:(struct WebInspectorProxy *)arg1;
 @property(readonly) _WKInspector *inspector;

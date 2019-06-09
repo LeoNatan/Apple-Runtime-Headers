@@ -4,49 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FileProvider/FPActionOperation.h>
+#import <FileProvider/FPMoveOperation.h>
 
-#import <FileProvider/NSProgressReporting-Protocol.h>
-
-@class FPAggregateProgress, FPItem, NSArray, NSDictionary, NSMutableDictionary, NSOperationQueue, NSProgress, NSString;
-
-@interface FPTransferOperation : FPActionOperation <NSProgressReporting>
+@interface FPTransferOperation : FPMoveOperation
 {
-    NSArray *_nameURLList;
-    NSArray *_items;
-    FPItem *_destinationFolder;
-    FPAggregateProgress *_progress;
-    NSOperationQueue *_operationQueue;
-    NSMutableDictionary *_placeholderIDsByURLOrItemID;
-    NSMutableDictionary *_errorsByItem;
-    NSMutableDictionary *_transferResults;
-    unsigned long long _lastUsageUpdatePolicy;
-    _Bool _isCopyOperation;
-    _Bool _shouldBounceOnCollision;
 }
-
-@property(nonatomic) _Bool shouldBounceOnCollision; // @synthesize shouldBounceOnCollision=_shouldBounceOnCollision;
-@property(nonatomic) unsigned long long lastUsageUpdatePolicy; // @synthesize lastUsageUpdatePolicy=_lastUsageUpdatePolicy;
-@property(readonly, nonatomic) NSDictionary *transferResults; // @synthesize transferResults=_transferResults;
-@property(readonly, nonatomic) NSDictionary *errorsByItem; // @synthesize errorsByItem=_errorsByItem;
-@property(readonly) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
-- (void)presendNotifications;
-- (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (void)mainWithExtensionProxy:(id)arg1;
-- (_Bool)preflightOperation;
-- (id)operationDescription;
-- (id)initWithItems:(id)arg1 destinationFolder:(id)arg2 copyItems:(_Bool)arg3;
-- (id)initWithSourceURLs:(id)arg1 destinationFolder:(id)arg2 copyItems:(_Bool)arg3;
-- (id)initWithSourceURLsAndNames:(id)arg1 destinationFolder:(id)arg2 copyItems:(_Bool)arg3;
-- (id)initWithNamesAndSourceURLs:(id)arg1 destinationFolder:(id)arg2 copyItems:(_Bool)arg3;
-- (id)_initWithNamesAndURLsList:(id)arg1 destinationFolder:(id)arg2 copyItems:(_Bool)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -11,6 +11,7 @@
 @interface CDPDSecureBackupContext : NSObject
 {
     BOOL _silentRecovery;
+    BOOL _usePreviouslyCachedRecoveryKey;
     BOOL _usePreviouslyCachedSecret;
     NSString *_localSecret;
     unsigned long long _localSecretType;
@@ -18,10 +19,13 @@
     NSString *_recoverySecret;
     NSString *_recoveryKey;
     CDPDCircleJoinResult *_circleJoinResult;
+    NSString *_preRecordUUID;
 }
 
+@property(retain, nonatomic) NSString *preRecordUUID; // @synthesize preRecordUUID=_preRecordUUID;
 @property(retain, nonatomic) CDPDCircleJoinResult *circleJoinResult; // @synthesize circleJoinResult=_circleJoinResult;
 @property(nonatomic) BOOL usePreviouslyCachedSecret; // @synthesize usePreviouslyCachedSecret=_usePreviouslyCachedSecret;
+@property(nonatomic) BOOL usePreviouslyCachedRecoveryKey; // @synthesize usePreviouslyCachedRecoveryKey=_usePreviouslyCachedRecoveryKey;
 @property(copy, nonatomic) NSString *recoveryKey; // @synthesize recoveryKey=_recoveryKey;
 @property(nonatomic) BOOL silentRecovery; // @synthesize silentRecovery=_silentRecovery;
 @property(copy, nonatomic) NSString *recoverySecret; // @synthesize recoverySecret=_recoverySecret;
@@ -29,6 +33,7 @@
 @property(nonatomic) unsigned long long localSecretType; // @synthesize localSecretType=_localSecretType;
 @property(copy, nonatomic) NSString *localSecret; // @synthesize localSecret=_localSecret;
 - (void).cxx_destruct;
+- (id)description;
 
 @end
 

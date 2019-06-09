@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 + (id)createFontCacheKeyForName:(id)arg1 size:(int)arg2;
 @property(nonatomic) int size; // @synthesize size=_size;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (void)dealloc;
 
 @end
 

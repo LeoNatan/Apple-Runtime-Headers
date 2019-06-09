@@ -13,12 +13,14 @@
     NSString *_title;
     NSString *_subtitle;
     UIImage *_image;
+    NSString *_systemImageName;
     UIView *_badgeView;
     CDUnknownBlockType _handler;
 }
 
 @property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
+@property(readonly, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -27,6 +29,7 @@
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 image:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)init;
+- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 systemImageName:(id)arg3 badgeView:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)initWithTitle:(id)arg1 subtitle:(id)arg2 image:(id)arg3 badgeView:(id)arg4 handler:(CDUnknownBlockType)arg5;
 
 @end

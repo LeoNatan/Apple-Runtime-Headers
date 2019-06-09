@@ -12,26 +12,28 @@
 
 @interface UISlidingBarState : NSObject <NSCopying>
 {
-    _Bool _trailingOverlapsMain;
     _Bool __treatLeadingHiddenAsOverlaps;
+    _Bool __treatTrailingHiddenAsOverlaps;
     double _leadingWidth;
     double _trailingWidth;
     double _leadingDragOffset;
     double _trailingDragOffset;
     UISlidingBarConfiguration *_configuration;
     double __leadingOverlayWidth;
+    double __trailingOverlayWidth;
     double __keyboardAdjustment;
     long long __collapsedState;
 }
 
 @property(nonatomic, setter=_setCollapsedState:) long long _collapsedState; // @synthesize _collapsedState=__collapsedState;
 @property(nonatomic) double _keyboardAdjustment; // @synthesize _keyboardAdjustment=__keyboardAdjustment;
+@property(nonatomic, setter=_setTreatTrailingHiddenAsOverlaps:) _Bool _treatTrailingHiddenAsOverlaps; // @synthesize _treatTrailingHiddenAsOverlaps=__treatTrailingHiddenAsOverlaps;
+@property(nonatomic, setter=_setTrailingOverlayWidth:) double _trailingOverlayWidth; // @synthesize _trailingOverlayWidth=__trailingOverlayWidth;
 @property(nonatomic, setter=_setTreatLeadingHiddenAsOverlaps:) _Bool _treatLeadingHiddenAsOverlaps; // @synthesize _treatLeadingHiddenAsOverlaps=__treatLeadingHiddenAsOverlaps;
 @property(nonatomic, setter=_setLeadingOverlayWidth:) double _leadingOverlayWidth; // @synthesize _leadingOverlayWidth=__leadingOverlayWidth;
 @property(retain, nonatomic) UISlidingBarConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) double trailingDragOffset; // @synthesize trailingDragOffset=_trailingDragOffset;
 @property(nonatomic) double leadingDragOffset; // @synthesize leadingDragOffset=_leadingDragOffset;
-@property(nonatomic) _Bool trailingOverlapsMain; // @synthesize trailingOverlapsMain=_trailingOverlapsMain;
 @property(nonatomic) double trailingWidth; // @synthesize trailingWidth=_trailingWidth;
 @property(nonatomic) double leadingWidth; // @synthesize leadingWidth=_leadingWidth;
 - (void).cxx_destruct;
@@ -43,7 +45,9 @@
 - (double)_distanceFromRequest:(id)arg1;
 - (_Bool)matchesRequest:(id)arg1;
 @property(readonly, nonatomic, getter=isCollapsed) _Bool collapsed;
-- (_Bool)_leadingShouldUseSlidingBars;
+- (_Bool)_shouldUseSlidingBars;
+- (_Bool)_trailingEntirelyOverlapsMain;
+@property(readonly, nonatomic) _Bool trailingOverlapsMain;
 - (_Bool)_leadingEntirelyOverlapsMain;
 @property(readonly, nonatomic) _Bool leadingOverlapsMain;
 - (unsigned long long)hash;

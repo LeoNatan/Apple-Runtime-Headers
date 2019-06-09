@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, SKUIHeaderViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUITracklistViewElement : SKUIViewElement
 {
     NSMutableArray *_sections;

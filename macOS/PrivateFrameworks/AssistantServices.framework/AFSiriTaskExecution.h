@@ -22,6 +22,7 @@
     CDUnknownBlockType _deliveryHandler;
     CDUnknownBlockType _completionHandler;
     long long _state;
+    id _keepAliveCycle;
     AFWatchdogTimer *_taskResponseWatchdogTimer;
     NSXPCListener *_taskResponseListener;
 }

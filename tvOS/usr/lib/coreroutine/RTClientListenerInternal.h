@@ -8,12 +8,11 @@
 
 #import <coreroutine/NSXPCListenerDelegate-Protocol.h>
 
-@class NSString, RTAccountManager, RTActionManager, RTAssetManager, RTAuthorizationManager, RTDeviceLocationPredictor, RTDiagnostics, RTEventAgentManager, RTEventModelProvider, RTFingerprintManager, RTLearnedLocationManager, RTLocationManager, RTLocationStore, RTMotionActivityManager, RTPersistenceManager, RTPlatform, RTPredictedApplicationManager, RTPurgeManager, RTRouteManager, RTScenarioTriggerManager, RTVehicleLocationProvider, RTVisitManager, RTWiFiManager;
+@class NSString, RTAccountManager, RTAssetManager, RTAuthorizationManager, RTDeviceLocationPredictor, RTDiagnostics, RTEventAgentManager, RTEventModelProvider, RTFingerprintManager, RTHintManager, RTLearnedLocationManager, RTLearnedLocationStore, RTLocationManager, RTLocationStore, RTMotionActivityManager, RTPersistenceManager, RTPlatform, RTPurgeManager, RTScenarioTriggerManager, RTVehicleLocationProvider, RTVisitManager, RTWiFiManager;
 
 @interface RTClientListenerInternal : RTXPCListener <NSXPCListenerDelegate>
 {
     RTAccountManager *_accountManager;
-    RTActionManager *_actionManager;
     RTAssetManager *_assetManager;
     RTAuthorizationManager *_authorizationManager;
     RTDeviceLocationPredictor *_deviceLocationPredictor;
@@ -21,15 +20,15 @@
     RTEventAgentManager *_eventAgentManager;
     RTEventModelProvider *_eventModelProvider;
     RTFingerprintManager *_fingerprintManager;
+    RTHintManager *_hintManager;
     RTLearnedLocationManager *_learnedLocationManager;
+    RTLearnedLocationStore *_learnedLocationStore;
     RTLocationManager *_locationManager;
     RTLocationStore *_locationStore;
     RTMotionActivityManager *_motionActivityManager;
     RTPersistenceManager *_persistenceManager;
     RTPlatform *_platform;
-    RTPredictedApplicationManager *_predictedApplicationManager;
     RTPurgeManager *_purgeManager;
-    RTRouteManager *_routeManager;
     RTScenarioTriggerManager *_scenarioTriggerManager;
     RTVehicleLocationProvider *_vehicleLocationProvider;
     RTVisitManager *_visitManager;
@@ -40,15 +39,15 @@
 @property(retain, nonatomic) RTVisitManager *visitManager; // @synthesize visitManager=_visitManager;
 @property(retain, nonatomic) RTVehicleLocationProvider *vehicleLocationProvider; // @synthesize vehicleLocationProvider=_vehicleLocationProvider;
 @property(retain, nonatomic) RTScenarioTriggerManager *scenarioTriggerManager; // @synthesize scenarioTriggerManager=_scenarioTriggerManager;
-@property(retain, nonatomic) RTRouteManager *routeManager; // @synthesize routeManager=_routeManager;
 @property(retain, nonatomic) RTPurgeManager *purgeManager; // @synthesize purgeManager=_purgeManager;
-@property(retain, nonatomic) RTPredictedApplicationManager *predictedApplicationManager; // @synthesize predictedApplicationManager=_predictedApplicationManager;
 @property(retain, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 @property(retain, nonatomic) RTMotionActivityManager *motionActivityManager; // @synthesize motionActivityManager=_motionActivityManager;
 @property(retain, nonatomic) RTLocationStore *locationStore; // @synthesize locationStore=_locationStore;
 @property(retain, nonatomic) RTLocationManager *locationManager; // @synthesize locationManager=_locationManager;
+@property(retain, nonatomic) RTLearnedLocationStore *learnedLocationStore; // @synthesize learnedLocationStore=_learnedLocationStore;
 @property(retain, nonatomic) RTLearnedLocationManager *learnedLocationManager; // @synthesize learnedLocationManager=_learnedLocationManager;
+@property(retain, nonatomic) RTHintManager *hintManager; // @synthesize hintManager=_hintManager;
 @property(retain, nonatomic) RTFingerprintManager *fingerprintManager; // @synthesize fingerprintManager=_fingerprintManager;
 @property(retain, nonatomic) RTEventModelProvider *eventModelProvider; // @synthesize eventModelProvider=_eventModelProvider;
 @property(retain, nonatomic) RTEventAgentManager *eventAgentManager; // @synthesize eventAgentManager=_eventAgentManager;
@@ -56,12 +55,11 @@
 @property(retain, nonatomic) RTDeviceLocationPredictor *deviceLocationPredictor; // @synthesize deviceLocationPredictor=_deviceLocationPredictor;
 @property(retain, nonatomic) RTAuthorizationManager *authorizationManager; // @synthesize authorizationManager=_authorizationManager;
 @property(retain, nonatomic) RTAssetManager *assetManager; // @synthesize assetManager=_assetManager;
-@property(retain, nonatomic) RTActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(retain, nonatomic) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)handleClientConnection:(id)arg1;
-- (id)initWithAccountManager:(id)arg1 actionManager:(id)arg2 assetManager:(id)arg3 authorizationManager:(id)arg4 deviceLocationPredictor:(id)arg5 diagnostics:(id)arg6 eventAgentManager:(id)arg7 eventModelProvider:(id)arg8 fingerprintManager:(id)arg9 learnedLocationManager:(id)arg10 locationManager:(id)arg11 locationStore:(id)arg12 motionActivityManager:(id)arg13 persistenceManager:(id)arg14 platform:(id)arg15 predictedApplicationManager:(id)arg16 purgeManager:(id)arg17 routeManager:(id)arg18 scenarioTriggerManager:(id)arg19 vehicleLocationProvider:(id)arg20 visitManager:(id)arg21;
+- (id)initWithAccountManager:(id)arg1 assetManager:(id)arg2 authorizationManager:(id)arg3 deviceLocationPredictor:(id)arg4 diagnostics:(id)arg5 eventAgentManager:(id)arg6 eventModelProvider:(id)arg7 fingerprintManager:(id)arg8 hintManager:(id)arg9 learnedLocationManager:(id)arg10 learnedLocationStore:(id)arg11 locationManager:(id)arg12 locationStore:(id)arg13 motionActivityManager:(id)arg14 persistenceManager:(id)arg15 platform:(id)arg16 purgeManager:(id)arg17 scenarioTriggerManager:(id)arg18 vehicleLocationProvider:(id)arg19 visitManager:(id)arg20;
 - (id)init;
 
 // Remaining properties

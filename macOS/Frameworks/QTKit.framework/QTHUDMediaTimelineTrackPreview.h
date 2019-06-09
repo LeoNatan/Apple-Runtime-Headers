@@ -6,16 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class QTHUDMediaTimelineTrack;
-
 @interface QTHUDMediaTimelineTrackPreview : NSObject
 {
-    QTHUDMediaTimelineTrack *_timelineTrack;
 }
 
-- (id)previewLayer;
-- (void)setTimelineTrack:(id)arg1;
-- (id)timelineTrack;
+- (id)init;
 
 @end
 

@@ -36,6 +36,7 @@
 
 + (id)replaceHandleWithContactNameInString:(id)arg1 forAccount:(id)arg2 additionalHandles:(id)arg3;
 + (_Bool)supportsIndividualPreviewSummaries;
++ (id)individualPreviewSummaryForPluginPayload:(id)arg1;
 + (id)previewSummary;
 + (id)previewSummaryForPluginPayload:(id)arg1 withBundleID:(id)arg2 previewAttachmentURL:(id *)arg3 previewAttachmentUTI:(id *)arg4;
 + (id)previewSummaryForPluginBundle:(id)arg1;

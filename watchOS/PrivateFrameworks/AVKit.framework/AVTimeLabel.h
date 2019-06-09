@@ -6,6 +6,7 @@
 
 #import <AVKit/AVLabel.h>
 
+__attribute__((visibility("hidden")))
 @interface AVTimeLabel : AVLabel
 {
 }

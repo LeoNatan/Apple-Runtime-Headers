@@ -6,17 +6,16 @@
 
 #import <Intents/INRelevantShortcut.h>
 
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/RERelevantShortcutProperties-Protocol.h>
 
-@class NSString;
+@class INDefaultCardTemplate, INShortcut, NSArray;
 
-@interface INRelevantShortcut (RELogging) <REIndentedDescription>
-- (id)descriptionWithIndent:(unsigned int)arg1;
+@interface INRelevantShortcut (RELogging) <RERelevantShortcutProperties>
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property(readonly, nonatomic) NSArray *relevanceProviders;
+@property(readonly, nonatomic) INShortcut *shortcut;
+@property(readonly, nonatomic) int shortcutRole;
+@property(readonly, nonatomic) INDefaultCardTemplate *watchTemplate;
 @end
 

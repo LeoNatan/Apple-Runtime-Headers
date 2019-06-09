@@ -7,18 +7,15 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (NNMKAddressUtils)
-+ (id)mf_partialSurnames;
-+ (id)mf_nameExtensions;
-- (id)mf_addressComment;
-- (id)mf_uncommentedAddress;
-- (id)copyUncommentedAddress;
-- (id)mf_trimCommasSpacesQuotes;
-- (_Bool)mf_appearsToBeAnInitial;
-- (void)mf_firstName:(id *)arg1 middleName:(id *)arg2 lastName:(id *)arg3 extension:(id *)arg4;
-- (void *)person;
+- (id)contactWithKeysToFetch:(id)arg1;
 - (id)addressComment;
 - (id)emailAddress;
 - (id)preferredCompositeName;
 - (id)preferredAbbreviatedName;
+- (id)nnmk_sanitizedFileNameString;
+- (id)nnmk_base64String;
+- (unsigned int)_mf_subjectPrefixLength;
+- (id)_subjectWithPrefix:(id)arg1;
+- (id)subjectForSendingType:(unsigned int)arg1;
 @end
 

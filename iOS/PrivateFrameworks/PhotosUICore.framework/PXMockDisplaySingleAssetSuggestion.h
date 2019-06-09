@@ -17,12 +17,10 @@
     unsigned short _state;
     NSString *_title;
     NSDictionary *_actionProperties;
-    NSDate *_creationDate;
     PHAsset *_asset;
 }
 
 @property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-@property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) unsigned short state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSDictionary *actionProperties; // @synthesize actionProperties=_actionProperties;
 @property(readonly, nonatomic) unsigned short subtype; // @synthesize subtype=_subtype;

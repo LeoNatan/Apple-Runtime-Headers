@@ -10,41 +10,28 @@
 
 @interface NSPICTImageRep : NSImageRep
 {
+    struct CGImage *_img;
     struct CGPoint _pictOrigin;
     NSData *_pictData;
-    id _imageRep;
+    NSImageRep *_imageRep;
     unsigned long long _pictOffset;
 }
 
-+ (id)_imageDataFromPICTData:(id)arg1 toType:(id)arg2;
-+ (id)_PICTDataFromImageData:(id)arg1 ofType:(id)arg2;
 + (id)imageUnfilteredPasteboardTypes;
 + (id)imageUnfilteredFileTypes;
 + (id)imageUnfilteredTypes;
 + (BOOL)canInitWithData:(id)arg1;
-+ (BOOL)_verifyDataIsPICT:(id)arg1;
 + (id)imageRepWithData:(id)arg1;
 + (void)initialize;
 @property(readonly, copy) NSData *PICTRepresentation;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (long long)bitsPerSample;
-- (void)setBitsPerSample:(long long)arg1;
-- (BOOL)isOpaque;
-- (void)setOpaque:(BOOL)arg1;
-- (BOOL)hasAlpha;
-- (void)setAlpha:(BOOL)arg1;
-- (long long)_uncachedSize;
 - (BOOL)_isValid;
-- (BOOL)drawInRect:(struct CGRect)arg1;
-- (BOOL)drawAtPoint:(struct CGPoint)arg1;
+- (struct CGImage *)CGImageForProposedRect:(struct CGRect *)arg1 context:(id)arg2 hints:(id)arg3;
 - (BOOL)draw;
 @property(readonly) struct CGRect boundingBox;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithData:(id)arg1;
-- (BOOL)_common64BitInit;
-- (id)newBitmapImageRepForHeight:(long long)arg1 width:(long long)arg2 data:(id)arg3;
-- (id)bitmapImageRecordForPICTData:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

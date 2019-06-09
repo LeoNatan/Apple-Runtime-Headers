@@ -26,10 +26,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isInBatchUpdate) _Bool inBatchUpdate; // @synthesize inBatchUpdate=_inBatchUpdate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)accessibilityLabel;
 - (BOOL)acceptsFirstResponder;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)updateBadgeImage;
-- (void)effectiveAppearanceDidChange;
+- (void)viewDidChangeEffectiveAppearance;
 - (void)setToolTip:(id)arg1;
 - (void)SetBladeRunnerBadge:(int)arg1;
 - (void)setSelected:(_Bool)arg1;

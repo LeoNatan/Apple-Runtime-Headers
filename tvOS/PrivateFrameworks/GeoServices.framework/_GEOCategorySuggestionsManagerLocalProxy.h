@@ -7,17 +7,20 @@
 #import <objc/NSObject.h>
 
 #import <GeoServices/GEOCategorySuggestionsManagerServerProxy-Protocol.h>
+#import <GeoServices/GEOResourceManifestTileGroupObserver-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface _GEOCategorySuggestionsManagerLocalProxy : NSObject <GEOCategorySuggestionsManagerServerProxy>
+@interface _GEOCategorySuggestionsManagerLocalProxy : NSObject <GEOCategorySuggestionsManagerServerProxy, GEOResourceManifestTileGroupObserver>
 {
-    int _urlsChangedToken;
+    id _urlsChangedListener;
 }
 
+- (void).cxx_destruct;
 - (void)updateCachedSpotlightCategorySuggestions:(CDUnknownBlockType)arg1;
 - (void)_updateIfNecessary;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

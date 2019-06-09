@@ -9,10 +9,12 @@
 #import <PhotosUICore/PXFeedbackFormDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSString, PXFeedbackLikeItOrNotComboUIViewController, UINavigationController;
+@protocol PXFeedbackImageQualityUIViewControllerDelegate;
 
 @interface PXFeedbackImageQualityUIViewController : UIViewController <PXFeedbackFormDelegate>
 {
     NSArray *_assets;
+    id <PXFeedbackImageQualityUIViewControllerDelegate> _delegate;
     NSDictionary *_negativeFeedback;
     UINavigationController *_navigationController;
     PXFeedbackLikeItOrNotComboUIViewController *_feedbackController;
@@ -23,9 +25,9 @@
 @property(retain, nonatomic) PXFeedbackLikeItOrNotComboUIViewController *feedbackController; // @synthesize feedbackController=_feedbackController;
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) NSDictionary *negativeFeedback; // @synthesize negativeFeedback=_negativeFeedback;
+@property(readonly, nonatomic) __weak id <PXFeedbackImageQualityUIViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *assets; // @synthesize assets=_assets;
 - (void).cxx_destruct;
-- (id)_generateURLForAssetDBGFiles:(id)arg1;
 - (id)_generateURLsForAssetsDBGFiles:(id)arg1;
 - (id)_componentNameForComponent:(long long)arg1;
 - (id)_componentIDForComponent:(long long)arg1;
@@ -33,6 +35,7 @@
 - (id)_generateTitleForFeedback:(id)arg1;
 - (void)_generateResourceFilesForAssets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_fileRadarWithAssets:(id)arg1 positiveFeedback:(id)arg2 negativeFeedback:(id)arg3 customFeedback:(id)arg4;
+- (void)userDidFinish:(_Bool)arg1;
 - (void)userIndicatedLike;
 - (void)userIndicatedDislike;
 - (_Bool)wantsCustomFeedbackSection;
@@ -45,7 +48,7 @@
 - (id)viewTitleForRadar;
 - (id)longTitleText;
 - (void)viewDidLoad;
-- (id)initWithAssets:(id)arg1;
+- (id)initWithAssets:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

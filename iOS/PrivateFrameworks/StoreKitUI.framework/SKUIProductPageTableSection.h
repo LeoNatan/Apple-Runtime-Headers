@@ -8,6 +8,7 @@
 
 @class SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageTableSection : SKUITableViewSection
 {
     SKUIClientContext *_clientContext;

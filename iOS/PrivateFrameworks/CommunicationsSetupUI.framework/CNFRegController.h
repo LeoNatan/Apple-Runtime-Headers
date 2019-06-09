@@ -8,7 +8,7 @@
 
 #import <CommunicationsSetupUI/IMSystemMonitorListener-Protocol.h>
 
-@class IMAccount, IMServiceImpl, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimer;
+@class IDSPhoneSubscriptionSelector, IMAccount, IMServiceImpl, NSArray, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimer;
 @protocol OS_dispatch_queue;
 
 @interface CNFRegController : NSObject <IMSystemMonitorListener>
@@ -52,11 +52,13 @@
         unsigned int ignoringAccountChanges:1;
         unsigned int activatingAccounts:1;
     } _controllerFlags;
+    IDSPhoneSubscriptionSelector *_phoneSubscriptionSelector;
     NSDictionary *_cachedCallerIDMap;
 }
 
 + (id)controllerForServiceType:(long long)arg1;
 @property(readonly, copy, nonatomic) NSDictionary *cachedCallerIDMap; // @synthesize cachedCallerIDMap=_cachedCallerIDMap;
+@property(retain, nonatomic) IDSPhoneSubscriptionSelector *phoneSubscriptionSelector; // @synthesize phoneSubscriptionSelector=_phoneSubscriptionSelector;
 @property(copy, nonatomic) CDUnknownBlockType willLaunchURLBlock; // @synthesize willLaunchURLBlock=_willLaunchURLBlock;
 @property(copy, nonatomic) CDUnknownBlockType accountActivationChangedBlock; // @synthesize accountActivationChangedBlock=_accountActivationChangedBlock;
 @property(nonatomic) long long serviceType; // @synthesize serviceType=_serviceType;
@@ -95,6 +97,7 @@
 - (void)connect;
 - (void)connect:(_Bool)arg1;
 - (_Bool)isConnected;
+@property(readonly, nonatomic) _Bool serviceSupportsDeviceAliasEnablement;
 @property(readonly, nonatomic, getter=isServiceSupported) _Bool serviceSupported;
 @property(nonatomic, getter=isServiceEnabled) _Bool serviceEnabled;
 - (void)removeAllHandlers;
@@ -124,6 +127,8 @@
 - (_Bool)_accountHasValidatedLocale:(id)arg1;
 - (_Bool)_accountIsAuthenticated:(id)arg1;
 - (id)aliasSummaryString:(_Bool *)arg1;
+- (void)removeDeviceAlias:(id)arg1;
+- (void)addDeviceAlias:(id)arg1;
 - (_Bool)unvalidateAlias:(id)arg1;
 - (_Bool)validateAlias:(id)arg1;
 - (_Bool)setAliases:(id)arg1 onAccount:(id)arg2;
@@ -140,6 +145,7 @@
 @property(readonly, retain, nonatomic) NSArray *allAvailableAliases;
 @property(readonly, retain, nonatomic) NSArray *vettedAliases;
 @property(readonly, retain, nonatomic) NSArray *aliases;
+- (id)usableDeviceAliases;
 - (id)useableAliasesForAccounts:(id)arg1;
 - (id)allAvailableAliasesForAccounts:(id)arg1;
 - (id)vettedAliasesForAccounts:(id)arg1;

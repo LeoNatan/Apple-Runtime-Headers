@@ -18,6 +18,7 @@
 
 @property(readonly, nonatomic) NSSet *allKeys; // @synthesize allKeys=_keys;
 @property(readonly, nonatomic) NSDictionary *rawValues; // @synthesize rawValues=_values;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)dictionaryForKey:(id)arg1;
 - (id)arrayForKey:(id)arg1 withValuesOfClass:(Class)arg2;
@@ -28,7 +29,6 @@
 - (_Bool)boolForKey:(id)arg1;
 - (id)objectForKey:(id)arg1 ofType:(Class)arg2;
 - (id)objectForKey:(id)arg1;
-- (void)dealloc;
 - (id)_initWithKeys:(id)arg1 forDictionary:(id)arg2;
 - (id)init;
 

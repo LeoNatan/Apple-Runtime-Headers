@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)spaceWithSpaceID:(unsigned long long)arg1;
++ (id)allUnmanagedSpaces;
 + (id)currentManagedSpaces;
 + (id)allManagedSpaces;
 - (void)setMenuBarCompanionWindow:(unsigned int)arg1 offset:(double)arg2;

@@ -30,13 +30,15 @@
 + (_Bool)_markCompositionAVURLsBeingModified:(id)arg1;
 + (_Bool)_isSessionWithModificationAccessActiveForComposedAVURL:(id)arg1;
 + (id)_compositionFragmentsFolderForComposedAVURL:(id)arg1;
-+ (id)_compositionMetadataURLForComposedAVURL:(id)arg1;
++ (id)compositionMetadataURLForComposedAVURL:(id)arg1;
 + (id)_compositionMetadataURLForCompositionBundleURL:(id)arg1;
 + (id)compositionBundleURLForComposedAVURL:(id)arg1;
++ (_Bool)migrateBackupExclusionFlag:(id)arg1;
 + (_Bool)includeInBackup:(id)arg1 error:(id *)arg2;
 + (_Bool)excludeFromBackup:(id)arg1 error:(id *)arg2;
 + (void)deleteFromFilesystem:(id)arg1;
 + (id)compositionWithComposedAVURL:(id)arg1;
++ (id)compositionLoadedForEditingSavedRecording:(id)arg1 error:(id *)arg2;
 + (id)compositionLoadedForSavedRecordingUUID:(id)arg1;
 + (id)compositionLoadedForSavedRecording:(id)arg1;
 + (id)compositionLoadedForComposedAVURL:(id)arg1 createIfNeeded:(_Bool)arg2;
@@ -55,6 +57,11 @@
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) NSString *savedRecordingUUID; // @synthesize savedRecordingUUID=_savedRecordingUUID;
 - (void).cxx_destruct;
+- (id)rcs_repairDecomposedFragmentMetadataIfNecessary;
+- (void)rcs_composeToFinalDestinationAndDeleteDecomposedFragments:(_Bool)arg1 composeWaveform:(_Bool)arg2 canGenerateWaveformByProcessingAVURL:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (id)_eaccess_repairDecomposedFragmentMetadataIfNecessaryAndSave:(_Bool)arg1;
+- (id)_compositionByReplacingDecomposedFragments:(id)arg1;
+- (void)_eaccess_saveCompositionAndRecordingDuration:(_Bool)arg1;
 - (id)_calculateComposedFragments;
 - (double)_composedDuration;
 - (void)recacheComposedDuration;
@@ -64,6 +71,8 @@
 - (void)deleteFromFilesystem;
 - (void)enumerateOrphanedFragmentsWithBlock:(CDUnknownBlockType)arg1;
 - (id)newRandomFragmentWithInsertionTimeRangeInComposition:(CDStruct_73a5d3ca)arg1 pathExtension:(id)arg2;
+- (id)compositionByOverdubbingWithFragment:(id)arg1;
+- (id)compositionByAppendingFragment:(id)arg1;
 - (id)compositionByClippingToComposedTimeRange:(CDStruct_73a5d3ca)arg1;
 - (id)compositionByDeletingAndSplittingAtComposedTimeRange:(CDStruct_73a5d3ca)arg1;
 - (id)composedFragmentsIntersectingTimeRange:(CDStruct_73a5d3ca)arg1;

@@ -16,8 +16,11 @@
 - (void)getEffectiveSectionInfoForSectionID:(NSString *)arg1 withHandler:(void (^)(BBSectionInfo *))arg2;
 - (void)getSectionInfoForSectionID:(NSString *)arg1 withHandler:(void (^)(BBSectionInfo *))arg2;
 - (void)getSectionInfoForActiveSectionsWithHandler:(void (^)(NSArray *, NSError *))arg1;
+- (void)getEffectiveSectionInfoWithHandler:(void (^)(NSArray *, NSError *))arg1;
 - (void)getSectionInfoWithHandler:(void (^)(NSArray *, NSError *))arg1;
-- (void)setEffectiveGlobalContentPreviewsSetting:(long long)arg1;
+- (void)setEffectiveGlobalSpokenNotificationSetting:(long long)arg1 withHandler:(void (^)(void))arg2;
+- (void)getEffectiveGlobalSpokenNotificationSettingWithHandler:(void (^)(long long, NSError *))arg1;
+- (void)setEffectiveGlobalContentPreviewsSetting:(long long)arg1 withHandler:(void (^)(void))arg2;
 - (void)getEffectiveGlobalContentPreviewsSettingWithHandler:(void (^)(long long, NSError *))arg1;
 @end
 

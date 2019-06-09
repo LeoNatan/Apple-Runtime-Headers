@@ -39,8 +39,9 @@
 - (id)locallyTrackedAccountHandleModelsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
-@property(readonly, nonatomic) NSUUID *modelParentIdentifier;
-@property(readonly, nonatomic) NSUUID *modelIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelParentIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelIdentifier;
+@property(readonly) Class modelClass;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

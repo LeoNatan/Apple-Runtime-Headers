@@ -6,15 +6,22 @@
 
 #import <UIKit/UIAlertController.h>
 
+@class UIAlertAction;
+
 @interface ICAlertController : UIAlertController
 {
     _Bool _didPerformAction;
+    _Bool _didDismissWithDissmissWithoutActionBlock;
     CDUnknownBlockType _dissmissWithoutActionBlock;
+    UIAlertAction *_dismissAction;
 }
 
+@property(nonatomic) _Bool didDismissWithDissmissWithoutActionBlock; // @synthesize didDismissWithDissmissWithoutActionBlock=_didDismissWithDissmissWithoutActionBlock;
+@property(retain, nonatomic) UIAlertAction *dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(copy, nonatomic) CDUnknownBlockType dissmissWithoutActionBlock; // @synthesize dissmissWithoutActionBlock=_dissmissWithoutActionBlock;
 @property(nonatomic) _Bool didPerformAction; // @synthesize didPerformAction=_didPerformAction;
 - (void).cxx_destruct;
+- (void)dismissWhenPossible;
 - (void)dealloc;
 
 @end

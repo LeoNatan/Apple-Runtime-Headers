@@ -20,9 +20,10 @@
 + (id)accountIdentifierForManagedObject:(id)arg1;
 + (id)defaultAccountCollection;
 + (id)persistenceStackWithAccountCollection:(id)arg1;
++ (id)os_log_t;
 @property id notificationSource; // @synthesize notificationSource=_notificationSource;
+- (void).cxx_destruct;
 - (id)makePersistenceContext;
-- (void)dealloc;
 - (id)initWithBackendProvider:(CDUnknownBlockType)arg1;
 
 @end

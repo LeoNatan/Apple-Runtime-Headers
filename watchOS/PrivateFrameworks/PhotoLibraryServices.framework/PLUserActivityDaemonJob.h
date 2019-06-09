@@ -29,18 +29,20 @@
 + (void)userDidNavigateIntoImagePickerSharedAlbum:(id)arg1;
 + (void)userDidNavigateIntoSharedAlbum:(id)arg1;
 + (void)userDidViewCloudFeedContent:(int)arg1;
++ (id)newUserActivityDaemonJob;
 @property(copy, nonatomic) NSString *momentShareUUID; // @synthesize momentShareUUID=_momentShareUUID;
 @property(copy, nonatomic) NSString *suggestedCMMUUID; // @synthesize suggestedCMMUUID=_suggestedCMMUUID;
 @property(nonatomic) int cloudFeedContent; // @synthesize cloudFeedContent=_cloudFeedContent;
 @property(retain, nonatomic) NSArray *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(copy, nonatomic) NSString *albumUUID; // @synthesize albumUUID=_albumUUID;
 @property long long actionType; // @synthesize actionType=_actionType;
+- (void).cxx_destruct;
 - (void)runDaemonSide;
 - (void)run;
 - (long long)daemonOperation;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
-- (void)dealloc;
+- (id)initWithAssetsdClient:(id)arg1;
 
 @end
 

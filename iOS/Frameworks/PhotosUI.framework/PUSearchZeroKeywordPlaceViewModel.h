@@ -6,7 +6,6 @@
 
 #import <PhotosUI/PUSearchZeroKeywordBaseViewModel.h>
 
-__attribute__((visibility("hidden")))
 @interface PUSearchZeroKeywordPlaceViewModel : PUSearchZeroKeywordBaseViewModel
 {
 }

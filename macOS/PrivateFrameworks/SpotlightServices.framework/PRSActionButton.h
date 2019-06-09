@@ -37,7 +37,7 @@
 @property(retain, nonatomic) NSString *offer_type; // @synthesize offer_type=_offer_type;
 @property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 @property BOOL streaming; // @synthesize streaming=_streaming;
-@property(retain) NSArray *adam_ids; // @synthesize adam_ids=_adam_ids;
+@property(retain, nonatomic) NSArray *adam_ids; // @synthesize adam_ids=_adam_ids;
 - (void).cxx_destruct;
 - (id)initWithActionItem:(id)arg1;
 

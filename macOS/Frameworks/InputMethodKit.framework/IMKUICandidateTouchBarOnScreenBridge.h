@@ -30,6 +30,9 @@
 @property(retain, nonatomic) IMKUIWindowBasedCandidateController *auxiliaryOnscreenController; // @synthesize auxiliaryOnscreenController=_auxiliaryOnscreenController;
 - (void)handleCandidateSelected:(id)arg1 candidateController:(id)arg2;
 - (void)handleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
+- (long long)windowType;
+- (id)textClient;
+- (id)candidatesForSortingMethod:(id)arg1;
 - (id)selectedCandidateKey:(id)arg1;
 - (id)displayMethod;
 - (id)sortingMethods;

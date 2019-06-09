@@ -6,11 +6,18 @@
 
 #import <AVKit/AVTrimControlsViewController.h>
 
+@class NSResponder;
+
+__attribute__((visibility("hidden")))
 @interface AVFloatingTrimControlsViewController : AVTrimControlsViewController
 {
+    NSResponder *_previousFirstResponder;
     BOOL _prefersReducedUserInterface;
 }
 
+- (void).cxx_destruct;
+- (void)_restorePreviousFirstResponderIfNeeded;
+- (void)_updateFirstResponderIfNeeded;
 - (CDStruct_83cd8af5)controlsContentViewMargin;
 - (struct CGSize)intrinsicControlsContentViewSize;
 - (long long)layoutStyle;

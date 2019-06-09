@@ -6,29 +6,45 @@
 
 #import <objc/NSObject.h>
 
-@class UNSCriticalAlertAuthorizationAlertController, UNSDefaultDataProviderFactory, UNSNotificationAuthorizationAlertController;
+#import <UserNotificationsServer/UNSNotificationRepositorySettingsProvider-Protocol.h>
+#import <UserNotificationsServer/UNSSettingsGatewayObserver-Protocol.h>
+
+@class NSMutableArray, NSString, UNSCriticalAlertAuthorizationAlertController, UNSNotificationAuthorizationAlertController, UNSSettingsGateway;
 @protocol OS_dispatch_queue;
 
-@interface UNSNotificationSettingsService : NSObject
+@interface UNSNotificationSettingsService : NSObject <UNSSettingsGatewayObserver, UNSNotificationRepositorySettingsProvider>
 {
-    UNSDefaultDataProviderFactory *_dataProviderFactory;
+    NSMutableArray *_observers;
+    UNSSettingsGateway *_settingsGateway;
     UNSCriticalAlertAuthorizationAlertController *_criticalAlertAuthorizationAlertController;
     UNSNotificationAuthorizationAlertController *_notificationAuthorizationAlertController;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
-- (_Bool)_queue_isCarPlayAvailableForApplication:(id)arg1;
-- (void)_queue_requestCriticalAlertAuthorizationForNotificationSourceDescription:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_queue_requestAuthorizationWithOptions:(unsigned long long)arg1 topics:(id)arg2 forNotificationSourceDescription:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)_queue_requestAuthorizationWithTopics:(id)arg1 forNotificationSourceDescription:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_queue_requestAuthorizationWithOptions:(unsigned long long)arg1 forNotificationSourceDescription:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)authorizedBundleIdentifiersForBundleIdentifiers:(id)arg1;
+- (void)settingsGateway:(id)arg1 didUpdateGlobalSettings:(id)arg2;
+- (void)settingsGateway:(id)arg1 didUpdateSectionInfoForSectionIDs:(id)arg2;
+- (void)_queue_removeObserver:(id)arg1;
+- (void)_queue_addObserver:(id)arg1;
+- (void)setNotificationSystemSettings:(id)arg1;
+- (id)notificationSystemSettings;
+- (void)replaceNotificationTopicSettings:(id)arg1 forNotificationSourceIdentifier:(id)arg2 topicIdentifier:(id)arg3;
+- (void)replaceNotificationSettings:(id)arg1 forNotificationSourceIdentifier:(id)arg2;
+- (id)allNotificationSources;
+- (id)notificationSourcesForBundleIdentifiers:(id)arg1;
+- (id)notificationSourceForBundleIdentifier:(id)arg1;
+- (id)notificationSettingsForTopicsWithBundleIdentifier:(id)arg1;
 - (id)notificationSettingsForBundleIdentifier:(id)arg1;
-- (void)requestCriticalAlertAuthorizationForNotificationSourceDescription:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)requestAuthorizationWithTopics:(id)arg1 forNotificationSourceDescription:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)requestAuthorizationWithOptions:(unsigned long long)arg1 forNotificationSourceDescription:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)initWithDataProviderFactory:(id)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (void)dealloc;
+- (id)initWithSettingsGateway:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

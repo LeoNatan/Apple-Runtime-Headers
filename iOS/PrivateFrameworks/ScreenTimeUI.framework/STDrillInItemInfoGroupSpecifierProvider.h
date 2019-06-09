@@ -8,6 +8,7 @@
 
 @class PSSpecifier, STUsageItem;
 
+__attribute__((visibility("hidden")))
 @interface STDrillInItemInfoGroupSpecifierProvider : STGroupSpecifierProvider
 {
     STUsageItem *_usageItem;

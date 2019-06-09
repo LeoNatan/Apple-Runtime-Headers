@@ -9,5 +9,7 @@
 @interface NSString (CPLArchiver)
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+- (id)cpl_redactedShareURL;
+- (id)cplStringByAppendingPathExtension:(id)arg1 fallbackExtension:(id)arg2;
 @end
 

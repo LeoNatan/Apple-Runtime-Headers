@@ -14,10 +14,8 @@
 - (void)remote_setDaemonPreferenceValue:(id)arg1 forKey:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)remote_fetchDaemonPreferenceForKey:(NSString *)arg1 completion:(void (^)(id, NSError *))arg2;
 - (void)remote_splitTotalCalories:(double)arg1 timeInterval:(double)arg2 withCompletion:(void (^)(double, NSError *))arg3;
-- (void)remote_weeklySummaryInfoForDate:(NSDate *)arg1 withCompletion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_fetchUnitPreferencesForTypes:(NSSet *)arg1 withCompletion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_setPreferredUnit:(HKUnit *)arg1 forType:(HKQuantityType *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)remote_submitMetricsIgnoringAnchor:(_Bool)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_performMigrationWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_obliterateHealthDataWithOptions:(unsigned long long)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_getHealthDirectorySizeInBytesWithCompletion:(void (^)(NSNumber *, NSError *))arg1;
@@ -33,6 +31,7 @@
 - (void)remote_invalidateActivityAlertSuppressionForIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_suppressActivityAlertsForIdentifier:(NSString *)arg1 suppressionReason:(long long)arg2 timeoutUntilDate:(NSDate *)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)remote_deleteObjectsWithUUIDs:(NSArray *)arg1 options:(unsigned long long)arg2 completion:(void (^)(_Bool, NSError *))arg3;
+- (void)remote_deleteClientSourceWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_deleteSourceWithBundleIdentifier:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_deleteAllSamplesWithTypes:(NSArray *)arg1 sourceBundleIdentifier:(NSString *)arg2 options:(unsigned long long)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)remote_fetchDevicesMatchingProperty:(NSString *)arg1 values:(NSSet *)arg2 completion:(void (^)(NSSet *, NSError *))arg3;
@@ -62,7 +61,7 @@
 - (void)remote_setAuthorizationStatuses:(NSDictionary *)arg1 authorizationModes:(NSDictionary *)arg2 forBundleIdentifier:(NSString *)arg3 options:(unsigned long long)arg4 completion:(void (^)(_Bool, NSError *))arg5;
 - (void)remote_allObjectAuthorizationRecordsForSampleWithUUID:(NSUUID *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_retrieveAllAuthorizationRecordsForDocumentType:(HKDocumentType *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
-- (void)remote_allSourcesRequestingTypes:(NSSet *)arg1 completion:(void (^)(NSSet *, NSError *))arg2;
+- (void)remote_allSourcesRequestingAuthorizationForTypes:(NSSet *)arg1 completion:(void (^)(NSSet *, NSError *))arg2;
 - (void)remote_allAuthorizationRecordsForType:(HKObjectType *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_allAuthorizationRecordsForBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)remote_handleAuthorizationForExtensionWithCompletion:(void (^)(_Bool, NSError *))arg1;
@@ -70,9 +69,9 @@
 - (void)remote_getRequestStatusForAuthorizationToShareTypes:(NSSet *)arg1 readTypes:(NSSet *)arg2 completion:(void (^)(long long, NSError *))arg3;
 - (void)remote_authorizationStatusForType:(HKObjectType *)arg1 completion:(void (^)(NSNumber *, NSError *))arg2;
 - (void)remote_getIsFeatureSetAvailable:(unsigned long long)arg1 completion:(void (^)(_Bool, NSError *))arg2;
-- (void)remote_fetchDisplayNameWithCompletion:(void (^)(NSString *, NSError *))arg1;
+- (void)remote_fetchDisplayNameWithCompletion:(void (^)(NSString *, NSString *, NSError *))arg1;
 - (void)remote_fetchPluginServiceEndpointWithIdentifier:(NSString *)arg1 completion:(void (^)(NSXPCListenerEndpoint *, NSError *))arg2;
-- (void)remote_createTaskServerForIdentifier:(NSString *)arg1 taskUUID:(NSUUID *)arg2 configuration:(HKTaskConfiguration *)arg3 completion:(void (^)(NSXPCListenerEndpoint *, NSError *))arg4;
+- (void)remote_createTaskServerEndpointForIdentifier:(NSString *)arg1 pluginURL:(NSURL *)arg2 taskUUID:(NSUUID *)arg3 configuration:(HKTaskConfiguration *)arg4 completion:(void (^)(NSXPCListenerEndpoint *, NSError *))arg5;
 - (void)remote_proxyForWorkoutServerWithCompletion:(void (^)(HDWorkoutServer *, NSError *))arg1;
 - (void)remote_proxyForUtilityServerWithCompletion:(void (^)(HDUtilityServer *, NSError *))arg1;
 - (void)remote_proxyForStaticSyncServerWithCompletion:(void (^)(HDStaticSyncServer *, NSError *))arg1;

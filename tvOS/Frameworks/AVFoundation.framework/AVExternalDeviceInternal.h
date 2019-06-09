@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, NSArray, NSData, NSMutableDictionary;
+@class AVDispatchOnce, AVWeakReference, NSArray, NSData, NSMutableDictionary;
 @protocol AVExternalDeviceDelegate, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -16,14 +16,14 @@ __attribute__((visibility("hidden")))
     id <AVExternalDeviceDelegate> _delegate;
     AVWeakReference *_weakReference;
     NSArray *_HIDs;
-    long long _makeHIDsOnlyOnce;
+    AVDispatchOnce *_makeHIDsOnlyOnce;
     NSData *_MFiCertSerial;
     NSObject<OS_dispatch_queue> *_queue;
     NSArray *_oemIcons;
     NSArray *_screenInfo;
     NSObject<OS_dispatch_queue> *_viewAreasQueue;
     NSMutableDictionary *_currentViewAreas;
-    long long _makeIconsOnlyOnce;
+    AVDispatchOnce *_makeIconsOnlyOnce;
 }
 
 @end

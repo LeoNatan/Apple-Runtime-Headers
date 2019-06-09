@@ -13,6 +13,9 @@
     NSDictionary *_dissectorsAndDependencies;
 }
 
++ (id)remindersTestingPipelineWithCustomReminderDissector:(id)arg1;
++ (id)remindersTestingPipeline;
++ (id)portraitTestingPipeline;
 + (id)retrainingPipeline;
 + (id)quotedRegionPipelineForIpsosTesting;
 + (id)quotedRegionPipeline;
@@ -23,7 +26,11 @@
 + (id)dependencyClassesForDissectorClass:(Class)arg1;
 + (id)sharedBackgroundStorageQueue;
 + (id)sharedBackgroundProcessingQueue;
++ (void)_delayedResetCachesAndModels;
++ (void)_resetCachesAndModels;
++ (void)initialize;
 - (void).cxx_destruct;
+- (id)dissectors;
 - (void)dissectAndStoreSpotlightEntity:(id)arg1 bundleIdentifier:(id)arg2 uniqueIdentifier:(id)arg3 domainIdentifier:(id)arg4 inContext:(id)arg5;
 - (void)dissectAndStoreEntity:(id)arg1 inContext:(id)arg2;
 - (void)dissectAndStoreEntity:(id)arg1 inContext:(id)arg2 destinationStore:(id)arg3;

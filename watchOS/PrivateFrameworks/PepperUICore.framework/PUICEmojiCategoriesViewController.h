@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (void)handleModalCancel:(id)arg1;
 - (id)modalNavigationLeadingBarButton;
+- (id)categoryIdentifiers;
 - (void)activate;
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;

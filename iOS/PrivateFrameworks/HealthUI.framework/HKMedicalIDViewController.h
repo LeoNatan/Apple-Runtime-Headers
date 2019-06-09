@@ -6,6 +6,7 @@
 
 #import <UIKit/UITableViewController.h>
 
+#import <HealthUI/HKEmergencyCardContactUpdateDelegate-Protocol.h>
 #import <HealthUI/HKEmergencyCardDeletionDelegate-Protocol.h>
 #import <HealthUI/HKEmergencyCardRowHeightChangeDelegate-Protocol.h>
 #import <HealthUI/HKMedicalIDViewControllerDelegate-Protocol.h>
@@ -15,7 +16,7 @@
 @class HKEmergencyCardContactsTableItem, HKEmergencyCardGroupTableItem, HKEmergencyCardNameAndPictureTableItem, HKHealthStore, HKNavigationController, NSArray, NSString, _HKMedicalIDData;
 @protocol HKMedicalIDViewControllerDelegate;
 
-@interface HKMedicalIDViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HKMedicalIDViewControllerDelegate, HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate>
+@interface HKMedicalIDViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, HKMedicalIDViewControllerDelegate, HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate, HKEmergencyCardContactUpdateDelegate>
 {
     NSArray *_presentableTableItems;
     NSArray *_footers;
@@ -67,6 +68,7 @@
 - (long long)_rowIndexForTableItem:(id)arg1 atIndexPath:(id)arg2;
 - (id)_tableItemForIndexPath:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldDrawBottomSeparatorForSection:(long long)arg2;
+- (void)updateEmergencyContactTableItem;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
@@ -84,7 +86,6 @@
 - (_Bool)_editable;
 - (_Bool)_shouldShowOrganDonation;
 - (void)_dismissMedicalIDEditor;
-- (id)_fetchMedicalIDDataSynchronously:(_Bool *)arg1;
 - (id)_newViewForFooterInSection:(long long)arg1;
 - (void)_buildPresentableTableItems;
 - (long long)_preferredOrganDonationOrganization;
@@ -102,7 +103,7 @@
 - (void)_contactStoreDidChange:(id)arg1;
 - (void)_reloadTableWithMedicalIDData:(id)arg1;
 - (void)_updateMedicalIDNameWithDemographicsInformation:(id)arg1;
-- (void)_fetchName;
+- (void)_fetchDemographicInformation;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
@@ -118,6 +119,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initInEditMode:(_Bool)arg1;
 - (id)initInEditMode:(_Bool)arg1 inBuddy:(_Bool)arg2 organDonationSignupAvailable:(_Bool)arg3;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

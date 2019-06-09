@@ -12,6 +12,7 @@
 {
     CDStruct_1b6d18a9 _targetFrameDuration;
     int _metadataPrimingCount;
+    float _lookAheadTime;
     AVWeakReference *_dataProviderWeakReference;
     struct __CVPixelBufferPool *_pixelBufferPool;
     _Bool _clientMarkedEndOfVideoData;
@@ -26,6 +27,7 @@
     NSSet *_optionalMetadataKeys;
     struct OpaqueFigSampleBufferProcessor *_gvsProcessor;
     _Bool _stabilizationEnabled;
+    _Bool _isFirstFrame;
 }
 
 + (id)offlineVideoStabilizerWithTargetFrameDuration:(CDStruct_1b6d18a9)arg1 dataProvider:(id)arg2 destinationBufferPool:(struct __CVPixelBufferPool *)arg3 stabilizationEnabled:(_Bool)arg4;
@@ -35,7 +37,8 @@
 - (long)_validateSourcePixelBuffer:(struct __CVBuffer *)arg1 withSampleTime:(CDStruct_1b6d18a9)arg2 metadata:(id)arg3 isEndOfData:(_Bool *)arg4;
 - (long)_validateStabilizationMetadata:(id)arg1 withSampleTime:(CDStruct_1b6d18a9)arg2 isEndOfData:(_Bool *)arg3;
 - (void)_teardownVISProcessor;
-- (long)_setupGVSProcessorWithMetadataArray:(id)arg1;
+- (long)_setupGVSProcessor;
+- (unsigned int)_extendedRowsOfOutputBuffer;
 - (struct opaqueCMSampleBuffer *)_copyStabilizedSampleBuffer:(id *)arg1;
 @property(readonly, nonatomic) int preferredSourceStabilizationMetadataPrimingCount;
 @property(readonly, nonatomic) int preferredSourcePixelBufferPrimingFrameCount;

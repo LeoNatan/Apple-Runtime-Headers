@@ -10,7 +10,7 @@
 {
 }
 
-- (id)_activeServicesForMultiValue:(id)arg1;
++ (id)servicesPresentInMultiValue:(id)arg1;
 - (id)nextServiceForMultiValue:(id)arg1;
 
 @end

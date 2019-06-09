@@ -7,15 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <AdID/APSConnectionDelegate-Protocol.h>
-#import <AdID/CKAccountObserver-Protocol.h>
 
-@class APSConnection, CKAccountStore, NSString;
+@class APSConnection, NSString;
 @protocol NSObject;
 
-@interface ADAdTrackingSchedulingManager : NSObject <CKAccountObserver, APSConnectionDelegate>
+@interface ADAdTrackingSchedulingManager : NSObject <APSConnectionDelegate>
 {
-    CKAccountStore *_accountStore;
-    id _accountStoreToken;
     BOOL _isConfigRequestInFlight;
     id <NSObject> _storeFrontNotifyToken;
     id <NSObject> _accountChangedNotifyToken;
@@ -28,7 +25,6 @@
 @property(retain, nonatomic) id <NSObject> accountChangedNotifyToken; // @synthesize accountChangedNotifyToken=_accountChangedNotifyToken;
 @property(retain, nonatomic) id <NSObject> storeFrontNotifyToken; // @synthesize storeFrontNotifyToken=_storeFrontNotifyToken;
 - (void).cxx_destruct;
-- (void)accountStore:(id)arg1 primaryAccountChanged:(id)arg2;
 - (void)runOnFirstUnlock:(CDUnknownBlockType)arg1;
 - (void)handleAccountChange;
 - (void)pushDisable;

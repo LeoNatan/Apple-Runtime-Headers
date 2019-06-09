@@ -13,7 +13,7 @@
 #import <CarPlaySupport/NSXPCListenerDelegate-Protocol.h>
 #import <CarPlaySupport/UINavigationControllerDelegate-Protocol.h>
 
-@class CPSApplicationStateMonitor, CPSBannerSource, CPSMapTemplateViewController, CPSOverlayViewController, FBScene, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListener;
+@class CPSApplicationStateMonitor, CPSBannerSourceProxy, CPSMapTemplateViewController, CPSOverlayViewController, FBScene, NSMutableDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListener;
 @protocol CPSTemplateInstanceDelegate, CPTemplateServiceClientInterface;
 
 @interface CPSTemplateInstance : NSObject <NSXPCListenerDelegate, CPTemplateProviding, UINavigationControllerDelegate, CPSTemplateViewControllerDelegate, CPSSafeAreaDelegate, CPBannerDelegate>
@@ -24,7 +24,7 @@
     FBScene *_scene;
     NSXPCListener *_listener;
     NSMutableDictionary *_identifierToViewControllerDictionary;
-    CPSBannerSource *_bannerSource;
+    CPSBannerSourceProxy *_bannerSourceProxy;
     CPSMapTemplateViewController *_rootMapController;
     id <CPTemplateServiceClientInterface> _remoteObjectProxy;
     CPSApplicationStateMonitor *_applicationStateMonitor;
@@ -37,7 +37,7 @@
 @property(retain, nonatomic) CPSApplicationStateMonitor *applicationStateMonitor; // @synthesize applicationStateMonitor=_applicationStateMonitor;
 @property(retain, nonatomic) id <CPTemplateServiceClientInterface> remoteObjectProxy; // @synthesize remoteObjectProxy=_remoteObjectProxy;
 @property(retain, nonatomic) CPSMapTemplateViewController *rootMapController; // @synthesize rootMapController=_rootMapController;
-@property(retain, nonatomic) CPSBannerSource *bannerSource; // @synthesize bannerSource=_bannerSource;
+@property(retain, nonatomic) CPSBannerSourceProxy *bannerSourceProxy; // @synthesize bannerSourceProxy=_bannerSourceProxy;
 @property(retain, nonatomic) NSMutableDictionary *identifierToViewControllerDictionary; // @synthesize identifierToViewControllerDictionary=_identifierToViewControllerDictionary;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(nonatomic) __weak FBScene *scene; // @synthesize scene=_scene;
@@ -60,26 +60,23 @@
 - (void)popToRootTemplateAnimated:(id)arg1;
 - (void)popToTemplate:(id)arg1 animated:(id)arg2;
 - (void)containsTemplate:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)presentVoiceTemplate:(id)arg1 animated:(id)arg2;
-- (void)requestVoiceControlProviderForTemplate:(id)arg1 withProxyDelegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)pushSearchTemplate:(id)arg1 animated:(id)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestSearchTemplateProviderForTemplate:(id)arg1 withProxyDelegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)pushListTemplate:(id)arg1 animated:(id)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestListTemplateProviderForTemplate:(id)arg1 withProxyDelegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)pushMapTemplate:(id)arg1 animated:(id)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestMapTemplateProviderForTemplate:(id)arg1 withProxyDelegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)pushGridTemplate:(id)arg1 animated:(id)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestGridTemplateProviderForInterface:(id)arg1 withProxyDelegate:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)presentVoiceTemplate:(id)arg1 withProxyDelegate:(id)arg2 animated:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)pushSearchTemplate:(id)arg1 withProxyDelegate:(id)arg2 animated:(id)arg3 presentationStyle:(unsigned long long)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)pushListTemplate:(id)arg1 withProxyDelegate:(id)arg2 animated:(id)arg3 presentationStyle:(unsigned long long)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)pushMapTemplate:(id)arg1 withProxyDelegate:(id)arg2 animated:(id)arg3 presentationStyle:(unsigned long long)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)pushGridTemplate:(id)arg1 withProxyDelegate:(id)arg2 animated:(id)arg3 presentationStyle:(unsigned long long)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)dismissAlertAnimated:(_Bool)arg1;
 - (void)requestBannerProviderWithReply:(CDUnknownBlockType)arg1;
 - (void)presentAlertTemplate:(id)arg1 withProxyDelegate:(id)arg2;
 - (void)presentActionSheetTemplate:(id)arg1 withProxyDelegate:(id)arg2 animated:(id)arg3;
+- (void)setHostPrefersDarkUserInterfaceStyle:(_Bool)arg1;
 - (void)bannerDidDisappearWithIdentifier:(id)arg1;
 - (void)bannerDidAppearWithIdentifier:(id)arg1;
 - (void)bannerTappedWithIdentifier:(id)arg1;
 - (id)endpoint;
 - (void)dealloc;
 - (id)initWithSceneIdentifier:(id)arg1 delegate:(id)arg2;
+- (id)initWithWindowScene:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

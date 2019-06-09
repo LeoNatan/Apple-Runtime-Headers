@@ -13,11 +13,9 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)allowSRGBTranferFuntionOnInputAtIndex:(int)arg1;
 + (BOOL)allowSRGBTranferFuntionOnOutput;
++ (_Bool)canReduceOutputChannels;
 + (BOOL)allowPartialOutputRegion;
-+ (_Bool)skipFormatChecks;
 + (_Bool)synchronizeInputs;
-+ (int)outputFormat;
-+ (int)formatForInputAtIndex:(int)arg1;
 + (struct CGRect)roiForInput:(int)arg1 arguments:(id)arg2 outputRect:(struct CGRect)arg3;
 + (BOOL)processWithInputs:(id)arg1 arguments:(id)arg2 output:(id)arg3 error:(id *)arg4;
 

@@ -6,27 +6,36 @@
 
 #import <RelevanceEngine/RERelevanceProviderManager.h>
 
-@class NSDate;
+#import <RelevanceEngine/RESessionRelevanceProviderManagerProperties-Protocol.h>
 
-@interface RESessionRelevanceProviderManager : RERelevanceProviderManager
+@class NSDate, NSString;
+
+@interface RESessionRelevanceProviderManager : RERelevanceProviderManager <RESessionRelevanceProviderManagerProperties>
 {
     NSDate *_lastDateUpdate;
 }
 
 + (_Bool)_supportsHistoricProviders;
++ (_Bool)_wantsSeperateRelevanceQueue;
 + (id)_features;
 + (Class)_relevanceProviderClass;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSDate *lastUpdateDate;
 - (void)_handleSignificantTimeChange;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (void)_prepareForUpdate;
 - (void)_scheduleUpdatesForSessionProvider:(id)arg1;
 - (void)_addedProvider:(id)arg1;
 - (float)_relevanceForHistoricProvider:(id)arg1;
 - (_Bool)_isHistoricProvider:(id)arg1;
 - (float)_relevanceForProvider:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

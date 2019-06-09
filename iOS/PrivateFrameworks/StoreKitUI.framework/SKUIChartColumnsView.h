@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, SKUIFlexibleSegmentedControl, _UIBackdropView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIChartColumnsView : UIView <SKUIFlexibleSegmentedControlDelegate>
 {
     NSArray *_allViewControllers;

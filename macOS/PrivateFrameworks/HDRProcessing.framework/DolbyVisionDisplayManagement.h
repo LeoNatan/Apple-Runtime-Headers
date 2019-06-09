@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)setupTexturesWithInput:(struct __IOSurface *)arg1 Output:(struct __IOSurface *)arg2;
-- (void)encodeToCommandBuffer:(id)arg1 Input:(struct __IOSurface *)arg2 Output:(struct __IOSurface *)arg3 MetaData:(CDStruct_f4857302 *)arg4 tcControl:(struct ToneCurve_Control *)arg5 hdrControl:(CDStruct_d4eae393 *)arg6;
+- (void)encodeToCommandBuffer:(id)arg1 Input:(struct __IOSurface *)arg2 Output:(struct __IOSurface *)arg3 MetaData:(CDStruct_f4857302 *)arg4 tcControl:(struct ToneCurve_Control *)arg5 hdrControl:(CDStruct_d76a58a8 *)arg6;
 - (void)setupMetal;
 - (id)initWithDevice:(id)arg1;
 

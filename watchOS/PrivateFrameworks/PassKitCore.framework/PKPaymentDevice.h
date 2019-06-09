@@ -8,7 +8,7 @@
 
 #import <PassKitCore/CLLocationManagerDelegate-Protocol.h>
 
-@class CLLocationManager, NSMutableArray, NSString, NSTimer, PKPaymentDeviceConfigurationData, PKPaymentDeviceProvisioningData, PKSecureElement;
+@class CLLocationManager, NSMutableArray, NSString, NSTimer, PKPaymentDeviceConfigurationData, PKSecureElement;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface PKPaymentDevice : NSObject <CLLocationManagerDelegate>
@@ -17,9 +17,8 @@
     NSTimer *_timer;
     NSObject<OS_dispatch_source> *_locationFixTimeout;
     PKSecureElement *_secureElement;
-    PKPaymentDeviceProvisioningData *_provisioningData;
     PKPaymentDeviceConfigurationData *_configurationData;
-    NSMutableArray *_provisioningCompletions;
+    NSMutableArray *_metdataFetchTasks;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_queue> *_internalQueue;
     _Bool _skipLocationCheck;
@@ -31,7 +30,7 @@
 - (void).cxx_destruct;
 - (void)configurationDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)queueConnectionToTrustedServiceManagerWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_executeProvisioningCompletionHandlers;
+- (void)_executeDeviceMetadataFetchTasksCompletionHandlers;
 - (void)_finishLocationFixWithLocation:(id)arg1;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
@@ -40,6 +39,8 @@
 - (void)deleteApplicationWithAID:(id)arg1;
 - (void)setRegistrationRegionMap:(id)arg1 primaryRegionTopic:(id)arg2;
 - (_Bool)hasRegistrationRegionMap;
+- (void)_populateDeviceMetdata:(id)arg1 withFields:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)paymentDeviceMetadataFields:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)provisioningDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)trustedDeviceEnrollmentInfo;
 - (id)configurationData;

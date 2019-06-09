@@ -6,18 +6,21 @@
 
 #import <Photos/PHAssetCollection.h>
 
-@class NSData, NSDate;
+@class NSDate, NSString;
 
 @interface PHMoment : PHAssetCollection
 {
-    NSData *_reverseLocationData;
-    _Bool _reverseLocationDataIsValid;
-    _Bool _reverseLocationDataContainsLocation;
-    short _generationType;
+    unsigned short _processedLocation;
+    int _timeZoneOffset;
+    float _aggregationScore;
     NSDate *_representativeDate;
     NSDate *_modificationDate;
+    NSString *_subtitle;
+    double _approximateLatitude;
+    double _approximateLongitude;
 }
 
++ (id)fetchMomentUUIDGroupedByAssetUUIDForAssets:(id)arg1 options:(id)arg2;
 + (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyMap;
 + (id)identifierCode;
@@ -25,21 +28,27 @@
 + (id)fetchType;
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned long long)arg1;
-@property(readonly, nonatomic) short generationType; // @synthesize generationType=_generationType;
+@property(readonly, nonatomic) double approximateLongitude; // @synthesize approximateLongitude=_approximateLongitude;
+@property(readonly, nonatomic) double approximateLatitude; // @synthesize approximateLatitude=_approximateLatitude;
+@property(nonatomic) unsigned short processedLocation; // @synthesize processedLocation=_processedLocation;
+@property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(readonly, nonatomic) float aggregationScore; // @synthesize aggregationScore=_aggregationScore;
 @property(readonly, nonatomic) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, nonatomic) NSDate *representativeDate; // @synthesize representativeDate=_representativeDate;
+@property(readonly, nonatomic) int timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
 - (void).cxx_destruct;
 - (id)description;
 - (void)_cacheLocationWithCoordinate:(struct CLLocationCoordinate2D)arg1;
+@property(readonly, nonatomic) NSString *processedLocationTypeString;
+@property(readonly, nonatomic) NSDate *localEndDate;
+@property(readonly, nonatomic) NSDate *localStartDate;
 - (_Bool)collectionHasFixedOrder;
 - (_Bool)hasLocationInfo;
-- (_Bool)hasLocalizedTitle;
+- (id)localizedSubtitle;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
-- (void)_decodeTitlesIfNeeded;
 - (_Bool)canShowAvalancheStacks;
 - (_Bool)canPerformEditOperation:(long long)arg1;
-- (_Bool)isMeaningful;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;
 

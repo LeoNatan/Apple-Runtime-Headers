@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     struct CGColor *_activeBackgroundColor;
     id _activeCompositingFilter;
     _Bool _singleRerender;
-    float _cachedOpacity;
+    float _cachedBackgroundOpacity;
     _Bool _cachedControlKeyRenderingPreference;
     _Bool _renderAsMask;
-    int _cachedAnchorCorner;
+    unsigned int _cachedAnchorCorner;
     unsigned int _cachedShiftState;
     int _cachedSelector;
     UIKeyboardMenuView *_popupMenu;
@@ -41,7 +41,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool cachedControlKeyRenderingPreference; // @synthesize cachedControlKeyRenderingPreference=_cachedControlKeyRenderingPreference;
 @property(nonatomic) int cachedSelector; // @synthesize cachedSelector=_cachedSelector;
 @property(nonatomic) unsigned int cachedShiftState; // @synthesize cachedShiftState=_cachedShiftState;
-@property(nonatomic) int cachedAnchorCorner; // @synthesize cachedAnchorCorner=_cachedAnchorCorner;
+@property(nonatomic) unsigned int cachedAnchorCorner; // @synthesize cachedAnchorCorner=_cachedAnchorCorner;
 @property(retain, nonatomic) NSString *cachedTraitsHashString; // @synthesize cachedTraitsHashString=_cachedTraitsHashString;
 @property(retain, nonatomic) UIKBRenderFactory *factory; // @synthesize factory=m_factory;
 @property(retain, nonatomic) UIKBRenderConfig *renderConfig; // @synthesize renderConfig=m_renderConfig;
@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (id)cacheKeysForRenderFlags:(id)arg1;
 @property(readonly, nonatomic) NSString *cacheKey;
 @property(readonly, nonatomic) struct UIEdgeInsets displayInsets;
+- (void)hideKeyCap:(_Bool)arg1;
 - (void)dimKeys:(id)arg1;
 - (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)didInputSubTree:(id)arg1;

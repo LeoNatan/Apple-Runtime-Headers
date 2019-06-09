@@ -9,6 +9,7 @@
 @class NSArray, NSError, NSString;
 
 @protocol CKSMSComposeRemoteViewControllerDelegate <NSObject>
+- (void)smsComposeControllerEntryViewContentInserted;
 - (void)smsComposeControllerCancelled;
 - (void)smsComposeControllerSendStartedWithText:(NSString *)arg1;
 - (void)smsComposeControllerShouldSendMessageWithText:(NSString *)arg1 toRecipients:(NSArray *)arg2 completion:(void (^)(_Bool))arg3;

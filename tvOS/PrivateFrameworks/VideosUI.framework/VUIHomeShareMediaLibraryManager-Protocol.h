@@ -12,6 +12,8 @@
 @protocol VUIHomeShareMediaLibraryManager <NSObject>
 @property(readonly, copy, nonatomic) NSArray *homeShareMediaLibraries;
 @property(nonatomic) __weak id <VUIHomeShareMediaLibraryManagerDelegate> delegate;
+- (void)endDiscoveringMediaLibraries;
+- (void)beginDiscoveringMediaLibraries;
 - (id)initWithManager:(VUIMediaLibraryManager *)arg1;
 @end
 

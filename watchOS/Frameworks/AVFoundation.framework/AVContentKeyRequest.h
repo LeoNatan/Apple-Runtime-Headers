@@ -20,17 +20,16 @@
 + (void)_validateProtocolVersionList:(id)arg1;
 + (id)_mergePreloadingRequestOptions:(id)arg1 withCreateKeyRequestOptions:(id)arg2;
 + (long)_prepareCryptor:(struct OpaqueFigCPECryptor *)arg1 forRenewal:(_Bool)arg2 andReturnKeyRequestID:(unsigned long long *)arg3;
-- (void)_sendFinishLoadingToCustomURLHandlerWithError:(id)arg1;
-- (void)_sendFinishLoadingToCustomURLHandler;
-- (void)_sendDataToCustomURLHandler:(id)arg1;
-- (void)_ensureResponseInfoSentToCustomURLHandler;
-- (void)_sendResponseInfoToCustomURLHandler;
+- (void)_finishLoadingCustomURLRequestWithError:(id)arg1;
+- (void)_finishLoadingCustomURLRequestWithResponseData:(id)arg1 renewalDate:(id)arg2;
+- (void)_sendResponseInfoToCustomURLHandlerWithRenewalDate:(id)arg1;
 - (void)respondByRequestingPersistableContentKeyRequest;
 - (_Bool)respondByRequestingPersistableContentKeyRequestAndReturnError:(id *)arg1;
 - (_Bool)_canRespondByRequestingPersistableContentKeyRequest;
 - (void)renewExpiringContentKeyResponseData;
 - (void)processContentKeyResponseError:(id)arg1;
 - (void)processContentKeyResponse:(id)arg1;
+- (void)processContentKeyResponseData:(id)arg1 renewalDate:(id)arg2;
 - (void)processContentKeyResponseData:(id)arg1;
 - (void)makeStreamingContentKeyRequestDataForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)contentKeyRequestDataForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
@@ -41,8 +40,8 @@
 - (struct OpaqueFigCPECryptor *)figCryptor;
 @property(readonly) _Bool canProvidePersistableContentKey;
 - (void)_setError:(id)arg1;
-- (void)_sendDictionaryForURLRequest:(id)arg1;
 @property(readonly) NSError *error;
+- (_Bool)renewsExpiringResponseData;
 - (long)_prepareForKeyRenewal;
 - (void)_clearContext;
 - (void)_setStatus:(int)arg1;
@@ -51,12 +50,12 @@
 @property(readonly, nonatomic) NSData *initializationData;
 @property(readonly) id identifier;
 - (id)_keySystem;
+- (id)description;
 - (void)dealloc;
-- (id)initWithContentKeySession:(id)arg1 customURLHandler:(struct OpaqueFigCustomURLHandler *)arg2 identifier:(id)arg3 requestInfo:(struct __CFDictionary *)arg4 requestID:(unsigned long long)arg5 providesPersistableKey:(_Bool)arg6;
-- (id)initWithContentKeySession:(id)arg1 customURLProviderContext:(id)arg2 identifier:(id)arg3 initializationData:(id)arg4 providesPersistableKey:(_Bool)arg5;
+- (id)initWithContentKeySession:(id)arg1 customURLHandler:(struct OpaqueFigCustomURLHandler *)arg2 identifier:(id)arg3 requestInfo:(struct __CFDictionary *)arg4 requestID:(unsigned long long)arg5 providesPersistableKey:(_Bool)arg6 isRenewalRequest:(_Bool)arg7;
 - (void)_copyAndStoreCryptorUUID;
 - (id)initWithContentKeySession:(id)arg1 identifier:(id)arg2 initializationData:(id)arg3 preloadingRequestOptions:(id)arg4 providesPersistableKey:(_Bool)arg5;
-- (long)_extractAndStoreDefualtKeyIDFromInitializationData:(id)arg1;
+- (long)_extractAndStoreKeyIDFromInitializationData:(id)arg1;
 
 @end
 

@@ -8,7 +8,6 @@
 
 @class NSProgress;
 
-__attribute__((visibility("hidden")))
 @interface MyProgressReporter : NSObject
 {
     NSProgress *_progress;

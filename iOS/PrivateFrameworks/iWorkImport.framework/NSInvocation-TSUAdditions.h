@@ -8,5 +8,6 @@
 
 @interface NSInvocation (TSUAdditions)
 + (id)tsu_invocationWithBlock:(CDUnknownBlockType)arg1;
++ (void)tsu_executeBlock:(CDUnknownBlockType)arg1;
 @end
 

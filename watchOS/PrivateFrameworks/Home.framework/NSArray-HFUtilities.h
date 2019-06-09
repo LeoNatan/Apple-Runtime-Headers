@@ -6,7 +6,18 @@
 
 #import <Foundation/NSArray.h>
 
-@interface NSArray (HFUtilities)
+#import <Home/HFPropertyListConvertible-Protocol.h>
+
+@class NSString;
+
+@interface NSArray (HFUtilities) <HFPropertyListConvertible>
 + (id)hf_arrayWithNumbersInRange:(struct _NSRange)arg1 stride:(unsigned int)arg2;
+- (id)hf_prettyDescription;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 @end
 

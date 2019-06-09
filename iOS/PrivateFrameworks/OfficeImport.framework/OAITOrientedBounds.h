@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (struct CGRect)axisParallelBoundsOfOrientedBounds:(id)arg1;
 + (id)relativeOrientedBoundsOfDrawable:(id)arg1;
++ (id)relativeOrientedBoundsWithAbsoluteOrientedBounds:(id)arg1 parentOrientedBounds:(id)arg2 parentLogicalBounds:(struct CGRect)arg3;
 + (id)absoluteOrientedBoundsWithRelativeOrientedBounds:(id)arg1 parentOrientedBounds:(id)arg2 parentLogicalBounds:(struct CGRect)arg3;
 + (struct CGAffineTransform)transformFromBounds:(struct CGRect)arg1 toOrientedBounds:(id)arg2;
 + (id)adjustedOrientedBoundsWithOrientedBounds:(id)arg1;

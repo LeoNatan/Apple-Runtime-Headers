@@ -9,8 +9,10 @@
 @interface UICollectionViewTableLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext
 {
     _Bool _invalidateTableLayoutDelegateMetrics;
+    _Bool _skipSectionInvalidation;
 }
 
+@property(nonatomic) _Bool skipSectionInvalidation; // @synthesize skipSectionInvalidation=_skipSectionInvalidation;
 @property(nonatomic) _Bool invalidateTableLayoutDelegateMetrics; // @synthesize invalidateTableLayoutDelegateMetrics=_invalidateTableLayoutDelegateMetrics;
 
 @end

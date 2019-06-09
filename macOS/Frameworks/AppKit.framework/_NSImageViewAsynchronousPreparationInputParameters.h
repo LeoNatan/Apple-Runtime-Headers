@@ -8,7 +8,8 @@
 
 #import <AppKit/_NSAsynchronousPreparationInputParameters-Protocol.h>
 
-@class NSAppearance, NSColor, NSColorSpace, NSImage, NSString;
+@class NSAppearance, NSColorSpace, NSImage, NSString;
+@protocol NSContentStyle;
 
 __attribute__((visibility("hidden")))
 @interface _NSImageViewAsynchronousPreparationInputParameters : NSObject <_NSAsynchronousPreparationInputParameters>
@@ -18,9 +19,7 @@ __attribute__((visibility("hidden")))
     struct CGRect _bounds;
     struct CGAffineTransform _transform;
     NSAppearance *_appearance;
-    int _backgroundStyle;
-    unsigned long long _imageState;
-    NSColor *_tintColor;
+    id <NSContentStyle> _contentStyle;
     unsigned long long _frameStyle;
     unsigned long long _imageScaling;
     unsigned long long _imageAlignment;
@@ -33,9 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long imageAlignment; // @synthesize imageAlignment=_imageAlignment;
 @property(nonatomic) unsigned long long imageScaling; // @synthesize imageScaling=_imageScaling;
 @property(nonatomic) unsigned long long frameStyle; // @synthesize frameStyle=_frameStyle;
-@property(retain, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
-@property(nonatomic) unsigned long long imageState; // @synthesize imageState=_imageState;
-@property(nonatomic) int backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
+@property(copy, nonatomic) id <NSContentStyle> contentStyle; // @synthesize contentStyle=_contentStyle;
 @property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
 @property(retain, nonatomic) NSColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;

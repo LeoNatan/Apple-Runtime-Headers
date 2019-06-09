@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSVisualTabPickerSearchField *searchField; // @synthesize searchField=_searchField;
 @property(readonly, nonatomic) NSVisualTabPickerGridView *gridView; // @synthesize gridView=_gridView;
 - (void).cxx_destruct;
+- (id)_tabPickerThumbnailViews;
 - (void)setUpSubviewsShowingNewTabButton:(BOOL)arg1 highlightingTiles:(BOOL)arg2 showingCloseButtons:(BOOL)arg3;
 - (void)_startTopBarAndCloudViewAnimation:(long long)arg1;
 - (void)_startPerspectiveAnimation:(long long)arg1;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)startGridAnimation:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelOperation:(id)arg1;
-- (BOOL)mouseDownCanMoveWindow;
 - (BOOL)acceptsFirstResponder;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;

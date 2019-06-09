@@ -6,20 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class LPCaptionPresentationProperties;
+@class LPCaptionButtonPresentationProperties, LPCaptionPresentationProperties;
 
 @interface LPCaptionRowPresentationProperties : NSObject
 {
     LPCaptionPresentationProperties *_leading;
     LPCaptionPresentationProperties *_trailing;
+    LPCaptionButtonPresentationProperties *_button;
 }
 
-@property(readonly, retain, nonatomic) LPCaptionPresentationProperties *trailing; // @synthesize trailing=_trailing;
-@property(readonly, retain, nonatomic) LPCaptionPresentationProperties *leading; // @synthesize leading=_leading;
+@property(retain, nonatomic) LPCaptionButtonPresentationProperties *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+- (void)applyToAllCaptions:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool hasAnyContent;
 - (id)right;
 - (id)left;
+@property(readonly, retain, nonatomic) LPCaptionPresentationProperties *trailing;
+@property(readonly, retain, nonatomic) LPCaptionPresentationProperties *leading;
 - (id)init;
 
 @end

@@ -6,17 +6,17 @@
 
 #import <SearchUI/SearchUICardSectionView.h>
 
-@class NUIContainerBoxView, UILabel;
+@class NUIContainerBoxView, TLKLabel;
 
 @interface SearchUITitleCardSectionView : SearchUICardSectionView
 {
-    UILabel *_label;
+    TLKLabel *_label;
     NUIContainerBoxView *_containerView;
 }
 
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
-@property(retain) NUIContainerBoxView *containerView; // @synthesize containerView=_containerView;
-@property(retain) UILabel *label; // @synthesize label=_label;
+@property(retain, nonatomic) NUIContainerBoxView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) TLKLabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;

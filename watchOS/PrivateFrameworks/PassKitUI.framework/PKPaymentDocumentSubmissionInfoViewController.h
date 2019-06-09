@@ -29,11 +29,11 @@
 - (void)captureController:(id)arg1 requestsPushViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)captureController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)captureController:(id)arg1 didChangeStateTo:(int)arg2;
+- (void)captureController:(id)arg1 showLoading:(_Bool)arg2;
 - (void)didSelectSetupLater;
 - (void)explanationViewDidSelectSetupLater:(id)arg1;
 - (void)explanationViewDidSelectContinue:(id)arg1;
 - (void)updateUIWithState:(int)arg1;
-- (void)_addVerifyLaterButtonToFooterView:(id)arg1;
 - (id)_secondaryButton;
 - (void)_cancelPressed;
 - (void)viewWillAppear:(_Bool)arg1;

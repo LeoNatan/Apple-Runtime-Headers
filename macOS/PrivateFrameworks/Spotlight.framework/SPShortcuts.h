@@ -15,17 +15,25 @@
         long long __sig;
         char __opaque[192];
     } _userShortcutsLock;
+    BOOL _isShortcutDictChanged;
 }
 
 + (id)defaultShortcuts;
-+ (void)initialize;
++ (id)pathToShortcuts;
++ (id)pathWithComponent:(id)arg1;
 - (void).cxx_destruct;
-- (void)rememberResult:(id)arg1 forUserShortcut:(id)arg2;
+- (void)dumpShortcuts;
+- (void)removeShortcutsResultForShortcutString:(id)arg1;
+- (void)rememberResult:(id)arg1 forUserShortcut:(id)arg2 isAdvancedQuery:(BOOL)arg3;
+- (void)rememberForUniqueIdentifier:(id)arg1 forUserShortcut:(id)arg2 date:(id)arg3;
 - (id)resultForUserShortcut:(id)arg1;
 - (id)URLStringForUserShortcut:(id)arg1;
 - (id)dictionaryForUserShortcut:(id)arg1;
 - (id)getShortcutsDictionary;
 - (void)setShortcuts:(id)arg1;
+- (void)migrateShortcuts;
+- (void)deleteMigrationFile;
+- (BOOL)needsShortcutsMigration;
 - (id)init;
 
 @end

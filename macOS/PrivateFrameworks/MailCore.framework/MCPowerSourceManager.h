@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class EFObservable;
+
 @interface MCPowerSourceManager : NSObject
 {
     struct __CFRunLoopSource *_runLoopSource;
@@ -15,7 +17,8 @@
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)log;
-@property BOOL powerSourceIsLimited; // @synthesize powerSourceIsLimited=_powerSourceIsLimited;
+@property(nonatomic) BOOL powerSourceIsLimited; // @synthesize powerSourceIsLimited=_powerSourceIsLimited;
+@property(readonly, nonatomic) EFObservable *powerSourceIsLimitedObservable;
 - (id)init;
 - (void)dealloc;
 

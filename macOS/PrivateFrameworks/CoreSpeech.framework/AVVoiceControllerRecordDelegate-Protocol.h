@@ -6,11 +6,16 @@
 
 #import <CoreSpeech/NSObject-Protocol.h>
 
-@class AVVCAudioBuffer, AVVoiceController, NSError;
+@class AVVCAudioBuffer, AVVoiceController, NSArray, NSError;
 
 @protocol AVVoiceControllerRecordDelegate <NSObject>
 
 @optional
+- (void)voiceControllerStreamInvalidated:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2;
+- (void)voiceControllerAudioCallback:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2 buffer:(AVVCAudioBuffer *)arg3;
+- (void)voiceControllerDidStopRecording:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2 forReason:(long long)arg3;
+- (void)voiceControllerDidStartRecording:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2 successfully:(BOOL)arg3 error:(NSError *)arg4;
+- (void)voiceControllerWirelessSplitterRouteAvailable:(BOOL)arg1 devices:(NSArray *)arg2;
 - (void)voiceControllerLPCMRecordBufferAvailable:(AVVoiceController *)arg1 buffer:(AVVCAudioBuffer *)arg2;
 - (void)voiceControllerRecordBufferAvailable:(AVVoiceController *)arg1 buffer:(AVVCAudioBuffer *)arg2;
 - (void)voiceControllerDidFinishAlertPlayback:(AVVoiceController *)arg1 ofType:(int)arg2 error:(NSError *)arg3;

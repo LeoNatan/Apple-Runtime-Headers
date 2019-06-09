@@ -6,32 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSString;
+#import <MemoryResourceException/NSCopying-Protocol.h>
 
-@interface FPMemoryObject : NSObject
+@class FPRangeList, NSMutableDictionary, NSMutableSet, NSString;
+
+@interface FPMemoryObject : NSObject <NSCopying>
 {
     unsigned long long _totalDirtySize;
     unsigned long long _totalCleanSize;
     unsigned long long _totalSwappedSize;
     unsigned long long _totalReclaimableSize;
-    struct FPRangeListNode *_rangeListHead;
     BOOL _accurateSizes;
+    int _ownerPid;
     unsigned long long _totalWiredSize;
-    NSString *_name;
     NSMutableSet *_memoryRegions;
+    NSMutableDictionary *_processMemoryRegions;
+    FPRangeList *_rangeList;
 }
 
-@property(retain) NSMutableSet *memoryRegions; // @synthesize memoryRegions=_memoryRegions;
-@property(copy) NSString *name; // @synthesize name=_name;
-@property(readonly) unsigned long long totalWiredSize; // @synthesize totalWiredSize=_totalWiredSize;
-@property(readonly) unsigned long long totalSwappedSize; // @synthesize totalSwappedSize=_totalSwappedSize;
-@property(readonly) unsigned long long totalReclaimableSize; // @synthesize totalReclaimableSize=_totalReclaimableSize;
-@property(readonly) unsigned long long totalCleanSize; // @synthesize totalCleanSize=_totalCleanSize;
-@property(readonly) unsigned long long totalDirtySize; // @synthesize totalDirtySize=_totalDirtySize;
+@property(retain, nonatomic) FPRangeList *rangeList; // @synthesize rangeList=_rangeList;
+@property(retain, nonatomic) NSMutableDictionary *processMemoryRegions; // @synthesize processMemoryRegions=_processMemoryRegions;
+@property(nonatomic) int ownerPid; // @synthesize ownerPid=_ownerPid;
+@property(retain, nonatomic) NSMutableSet *memoryRegions; // @synthesize memoryRegions=_memoryRegions;
+@property(readonly, nonatomic) unsigned long long totalWiredSize; // @synthesize totalWiredSize=_totalWiredSize;
+@property(readonly, nonatomic) unsigned long long totalSwappedSize; // @synthesize totalSwappedSize=_totalSwappedSize;
+@property(readonly, nonatomic) unsigned long long totalReclaimableSize; // @synthesize totalReclaimableSize=_totalReclaimableSize;
+@property(readonly, nonatomic) unsigned long long totalCleanSize; // @synthesize totalCleanSize=_totalCleanSize;
+@property(readonly, nonatomic) unsigned long long totalDirtySize; // @synthesize totalDirtySize=_totalDirtySize;
 - (void).cxx_destruct;
-- (void)dealloc;
+@property(readonly, nonatomic) NSString *fullName;
+@property(readonly, nonatomic) NSString *detailedName;
+@property(readonly, nonatomic) NSString *name;
+- (id)viewForProcess:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)calculateSizes;
+- (void)_addRegion:(id)arg1 pageSize:(unsigned long long)arg2 forProcess:(id)arg3;
 - (void)addRegion:(id)arg1 pageSize:(unsigned long long)arg2;
+- (void)addRegion:(id)arg1 forProcess:(id)arg2;
 - (id)init;
 
 @end

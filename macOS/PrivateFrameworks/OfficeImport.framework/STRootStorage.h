@@ -8,6 +8,7 @@
 
 @class NSMutableData;
 
+__attribute__((visibility("hidden")))
 @interface STRootStorage : STStorage
 {
     struct _RootStorage *m_pCRoot;

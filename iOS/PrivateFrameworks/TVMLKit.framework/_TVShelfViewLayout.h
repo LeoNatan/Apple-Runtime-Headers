@@ -13,6 +13,7 @@
     double _minimumInteritemSpacing;
     double _minimumLineSpacing;
     long long _rowCount;
+    long long _prominentSectionIndex;
     double _headerSelectionMargin;
     double _headerBottomMargin;
     _TVShelfLayoutHelper *_layoutHelper;
@@ -29,6 +30,7 @@
 @property(nonatomic) double headerBottomMargin; // @synthesize headerBottomMargin=_headerBottomMargin;
 @property(nonatomic) double headerSelectionMargin; // @synthesize headerSelectionMargin=_headerSelectionMargin;
 @property(nonatomic) struct CGSize headerReferenceSize; // @synthesize headerReferenceSize=_headerReferenceSize;
+@property(nonatomic) long long prominentSectionIndex; // @synthesize prominentSectionIndex=_prominentSectionIndex;
 @property(nonatomic) long long rowCount; // @synthesize rowCount=_rowCount;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
 @property(nonatomic) double minimumLineSpacing; // @synthesize minimumLineSpacing=_minimumLineSpacing;

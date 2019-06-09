@@ -15,12 +15,14 @@
     BOOL _smile;
     int _trackID;
     float _confidence;
+    float _faceQuality;
     long long _yaw;
     VNFaceObservation *_observation;
     struct CGRect _bounds;
 }
 
 @property(retain) VNFaceObservation *observation; // @synthesize observation=_observation;
+@property float faceQuality; // @synthesize faceQuality=_faceQuality;
 @property float confidence; // @synthesize confidence=_confidence;
 @property int trackID; // @synthesize trackID=_trackID;
 @property long long yaw; // @synthesize yaw=_yaw;

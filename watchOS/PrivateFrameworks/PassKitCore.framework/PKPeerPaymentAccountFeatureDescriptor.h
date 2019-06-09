@@ -4,21 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PassKitCore/PKAccountFeatureDescriptor.h>
 
-#import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDecimalNumber, NSString;
+@class NSDecimalNumber;
 
-@interface PKPeerPaymentAccountFeatureDescriptor : NSObject <NSSecureCoding, NSCopying>
+@interface PKPeerPaymentAccountFeatureDescriptor : PKAccountFeatureDescriptor <NSSecureCoding>
 {
-    NSString *_identifier;
-    NSDecimalNumber *_minimumAmount;
-    NSDecimalNumber *_maximumAmount;
-    NSString *_merchantIdentifier;
-    NSArray *_supportedNetworks;
-    unsigned int _merchantCapabilities;
     NSDecimalNumber *_feePercentage;
     NSDecimalNumber *_minimumFee;
     NSDecimalNumber *_maximumFee;
@@ -28,14 +21,7 @@
 @property(copy, nonatomic) NSDecimalNumber *maximumFee; // @synthesize maximumFee=_maximumFee;
 @property(copy, nonatomic) NSDecimalNumber *minimumFee; // @synthesize minimumFee=_minimumFee;
 @property(copy, nonatomic) NSDecimalNumber *feePercentage; // @synthesize feePercentage=_feePercentage;
-@property(nonatomic) unsigned int merchantCapabilities; // @synthesize merchantCapabilities=_merchantCapabilities;
-@property(copy, nonatomic) NSArray *supportedNetworks; // @synthesize supportedNetworks=_supportedNetworks;
-@property(copy, nonatomic) NSString *merchantIdentifier; // @synthesize merchantIdentifier=_merchantIdentifier;
-@property(copy, nonatomic) NSDecimalNumber *maximumAmount; // @synthesize maximumAmount=_maximumAmount;
-@property(copy, nonatomic) NSDecimalNumber *minimumAmount; // @synthesize minimumAmount=_minimumAmount;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToPeerPaymentAccountFeatureDescriptor:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;

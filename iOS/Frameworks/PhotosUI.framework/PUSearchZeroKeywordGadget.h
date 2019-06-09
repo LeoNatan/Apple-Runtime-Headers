@@ -6,14 +6,14 @@
 
 #import <UIKit/UICollectionViewController.h>
 
+#import <PhotosUI/PXDiagnosticsEnvironment-Protocol.h>
 #import <PhotosUI/PXGadget-Protocol.h>
 #import <PhotosUI/UICollectionViewDataSourcePrefetching-Protocol.h>
 
-@class NSObject, NSString, PUSearchHomeThumbnailManager, PUSearchZeroKeywordDataSource, PUSearchZeroKeywordGadgetLayout, PXGadgetSpec;
+@class NSObject, NSString, PHCachingImageManager, PUSearchHomeThumbnailManager, PUSearchZeroKeywordDataSource, PUSearchZeroKeywordGadgetLayout, PXGadgetSpec;
 @protocol OS_dispatch_queue, PXGadgetDelegate;
 
-__attribute__((visibility("hidden")))
-@interface PUSearchZeroKeywordGadget : UICollectionViewController <UICollectionViewDataSourcePrefetching, PXGadget>
+@interface PUSearchZeroKeywordGadget : UICollectionViewController <UICollectionViewDataSourcePrefetching, PXDiagnosticsEnvironment, PXGadget>
 {
     long long _priority;
     id <PXGadgetDelegate> _delegate;
@@ -25,8 +25,10 @@ __attribute__((visibility("hidden")))
     PUSearchHomeThumbnailManager *_thumbnailManager;
     unsigned long long _cellLabelNumberOfLinesPermitted;
     NSObject<OS_dispatch_queue> *_placeTileFetchCounterQueue;
+    PHCachingImageManager *_imageManager;
 }
 
+@property(retain, nonatomic) PHCachingImageManager *imageManager; // @synthesize imageManager=_imageManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *placeTileFetchCounterQueue; // @synthesize placeTileFetchCounterQueue=_placeTileFetchCounterQueue;
 @property(nonatomic) unsigned long long cellLabelNumberOfLinesPermitted; // @synthesize cellLabelNumberOfLinesPermitted=_cellLabelNumberOfLinesPermitted;
 @property(retain, nonatomic) PUSearchHomeThumbnailManager *thumbnailManager; // @synthesize thumbnailManager=_thumbnailManager;
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)updateCellLabelNumberOfLinesWithScreenSize:(struct CGSize)arg1;
 - (void)layoutPeopleViews;
@@ -64,14 +67,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 @property(readonly, nonatomic) NSString *localizedTitle;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)reloadData;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithDataSource:(id)arg1 dataSourceSection:(unsigned long long)arg2 sectionType:(long long)arg3;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

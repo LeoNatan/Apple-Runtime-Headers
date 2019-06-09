@@ -32,7 +32,10 @@
 + (id)statusAttributeDotText;
 + (void)logBrailleRequests:(BOOL)arg1;
 - (void).cxx_destruct;
-- (void)setKeyboardHelpIsOn:(BOOL)arg1;
+- (void)translateBrailleToClipboard;
+- (void)setBrailleChordDebounceTimeout:(double)arg1;
+- (void)setTextSearchModeIsOn:(BOOL)arg1;
+- (void)setSingleLetterInputIsOn:(BOOL)arg1;
 - (BOOL)isConnected;
 - (void)_refreshAfterReconnect;
 - (void)handleCallback:(id)arg1;
@@ -89,7 +92,6 @@
 - (BOOL)isConfigured;
 - (BOOL)alwaysUsesNemethCodeForTechnicalText;
 - (void)setAlwaysUsesNemethCodeForTechnicalText:(BOOL)arg1;
-- (id)tableIdentifier;
 - (void)setTableIdentifier:(id)arg1;
 - (void)removeDisplayWithBluetoothDeviceAddress:(id)arg1;
 - (void)loadDisplayWithBluetoothDeviceAddress:(id)arg1;
@@ -97,6 +99,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)_registerDelegate;
 - (id)_lazyConnection;
+- (Class)connectionClass;
 - (void)_deathTimerHandler;
 - (BOOL)keepConnectionAlive;
 - (void)setKeepConnectionAlive:(BOOL)arg1;

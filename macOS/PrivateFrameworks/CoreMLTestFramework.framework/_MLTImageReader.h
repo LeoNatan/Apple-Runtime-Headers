@@ -17,13 +17,13 @@
 @property(copy) NSImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *imagePath; // @synthesize imagePath=_imagePath;
 - (void).cxx_destruct;
-- (id)initWithData:(id)arg1;
-- (id)initWithImageAtPath:(id)arg1;
-- (struct __CVBuffer *)createGrayscalePixelBuffer;
-- (struct __CVBuffer *)createImagePixelBuffer;
+- (id)initWithData:(id)arg1 error:(id *)arg2;
+- (id)initWithImageAtPath:(id)arg1 error:(id *)arg2;
+- (struct __CVBuffer *)createGrayscalePixelBuffer:(id *)arg1;
+- (struct __CVBuffer *)createImagePixelBuffer:(id *)arg1;
 - (void)resizeImageToWidth:(long long)arg1 andHeight:(long long)arg2;
 - (id)scaleImage:(id)arg1 toSize:(struct CGSize)arg2;
-- (struct __CVBuffer *)pixelBufferFromCGImage:(struct CGImage *)arg1;
+- (struct __CVBuffer *)pixelBufferFromCGImage:(struct CGImage *)arg1 error:(id *)arg2;
 - (BOOL)isImageGrayScale:(struct CGImage *)arg1;
 
 @end

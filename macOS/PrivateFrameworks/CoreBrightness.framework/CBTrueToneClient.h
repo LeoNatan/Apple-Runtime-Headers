@@ -21,6 +21,7 @@
 - (BOOL)setMode:(unsigned long long)arg1 withPeriod:(float)arg2;
 - (unsigned long long)mode;
 - (BOOL)available;
+- (BOOL)supportIntegrated;
 - (BOOL)supported;
 - (BOOL)setEnabled:(BOOL)arg1;
 - (BOOL)enabled;

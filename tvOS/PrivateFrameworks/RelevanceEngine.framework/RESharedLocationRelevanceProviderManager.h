@@ -7,21 +7,22 @@
 #import <RelevanceEngine/RERelevanceProviderManager.h>
 
 #import <RelevanceEngine/REEngineLocationManagerObserver-Protocol.h>
+#import <RelevanceEngine/RESharedLocationRelevanceProviderManagerProperties-Protocol.h>
 
 @class CLLocation, NSString;
 
-@interface RESharedLocationRelevanceProviderManager : RERelevanceProviderManager <REEngineLocationManagerObserver>
+@interface RESharedLocationRelevanceProviderManager : RERelevanceProviderManager <REEngineLocationManagerObserver, RESharedLocationRelevanceProviderManagerProperties>
 {
     CLLocation *_lastLocationUpdate;
 }
 
++ (_Bool)_wantsSeperateRelevanceQueue;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (void)locationManagerDidUpdateLocation:(id)arg1;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (void)_queue_loadLocation:(id)arg1;
-- (id)currentLocation;
+@property(readonly, nonatomic) CLLocation *currentLocation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

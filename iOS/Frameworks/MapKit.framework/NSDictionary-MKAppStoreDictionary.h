@@ -24,5 +24,6 @@
 @property(readonly, nonatomic) NSString *creator;
 @property(readonly, nonatomic) NSString *bundleId;
 @property(readonly, nonatomic) NSString *title;
+- (_Bool)_mapkit_writeBinaryPlist:(id)arg1 atomically:(_Bool)arg2;
 @end
 

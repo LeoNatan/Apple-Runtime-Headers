@@ -11,6 +11,7 @@
 
 @class EDCollection, EDResources, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDPhoneticInfo : NSObject <NSCopying, EDImmutableObject>
 {
     EDResources *mResources;

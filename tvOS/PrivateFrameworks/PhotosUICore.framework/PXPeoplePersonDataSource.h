@@ -22,9 +22,8 @@
 - (void).cxx_destruct;
 - (id)_assetForFace:(id)arg1;
 - (id)_faceForPerson:(id)arg1;
+- (id)faceTileAtIndex:(long long)arg1;
 - (void)updateKeyFace:(id)arg1 forPerson:(id)arg2;
-- (void)removeVisiblePerson:(id)arg1;
-- (void)addVisiblePerson:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;
 @property(readonly, nonatomic) PXPeopleFaceTileImageManager *imageManager;
 - (id)generateFetchResult;

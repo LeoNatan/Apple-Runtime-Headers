@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 #import <Intents/INCacheableContainer-Protocol.h>
+#import <Intents/INCodableAttributeRelationComparing-Protocol.h>
 #import <Intents/INImageProxyInjecting-Protocol.h>
 #import <Intents/INKeyImageProducing-Protocol.h>
 #import <Intents/INPersonExport-Protocol.h>
@@ -17,7 +18,7 @@
 
 @class INImage, INPersonHandle, NSArray, NSPersonNameComponents, NSString;
 
-@interface INPerson : NSObject <INCacheableContainer, INKeyImageProducing, INImageProxyInjecting, INSpeakable, INPersonExport, NSMutableCopying, NSCopying, NSSecureCoding>
+@interface INPerson : NSObject <INCacheableContainer, INCodableAttributeRelationComparing, INKeyImageProducing, INImageProxyInjecting, INSpeakable, INPersonExport, NSMutableCopying, NSCopying, NSSecureCoding>
 {
     NSString *_displayName;
     NSPersonNameComponents *_nameComponents;
@@ -76,10 +77,11 @@
 @property(readonly, copy, nonatomic) NSString *firstName;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
 - (id)initWithPersonHandle:(id)arg1 nameComponents:(id)arg2 displayName:(id)arg3 image:(id)arg4 contactIdentifier:(id)arg5 customIdentifier:(id)arg6 aliases:(id)arg7 suggestionType:(int)arg8;
+- (_Bool)_intents_compareValue:(id)arg1 relation:(unsigned int)arg2;
 - (int)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 @property(readonly) INImage *_keyImage;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;

@@ -37,6 +37,7 @@
 @property(nonatomic) TSPObject<TSDOwningAttachment> *owningAttachment; // @synthesize owningAttachment;
 @property(copy, nonatomic) TSDInfoGeometry *geometry; // @synthesize geometry;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasSpeakableContent;
 - (id)copyWithContext:(id)arg1;
 - (id)childInfos;
 - (_Bool)isThemeContent;

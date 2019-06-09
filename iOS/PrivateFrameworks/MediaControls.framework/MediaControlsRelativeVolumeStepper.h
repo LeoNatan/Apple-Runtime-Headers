@@ -6,26 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class MPButton, MPVolumeController, MTMaterialView, NSBundle;
+@class MPButton, MPVolumeController, MTMaterialView, MTVisualStylingProvider, NSBundle;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsRelativeVolumeStepper : UIView
 {
     MPVolumeController *_volumeController;
-    MPButton *_increaseButton;
-    MPButton *_decreaseButton;
+    MTVisualStylingProvider *_visualStylingProvider;
     MTMaterialView *_increaseBackground;
     MTMaterialView *_decreaseBackground;
+    MPButton *_increaseButton;
+    MPButton *_decreaseButton;
     NSBundle *_mediaControlsBundle;
 }
 
 @property(retain, nonatomic) NSBundle *mediaControlsBundle; // @synthesize mediaControlsBundle=_mediaControlsBundle;
-@property(retain, nonatomic) MTMaterialView *decreaseBackground; // @synthesize decreaseBackground=_decreaseBackground;
-@property(retain, nonatomic) MTMaterialView *increaseBackground; // @synthesize increaseBackground=_increaseBackground;
 @property(retain, nonatomic) MPButton *decreaseButton; // @synthesize decreaseButton=_decreaseButton;
 @property(retain, nonatomic) MPButton *increaseButton; // @synthesize increaseButton=_increaseButton;
+@property(retain, nonatomic) MTMaterialView *decreaseBackground; // @synthesize decreaseBackground=_decreaseBackground;
+@property(retain, nonatomic) MTMaterialView *increaseBackground; // @synthesize increaseBackground=_increaseBackground;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(retain, nonatomic) MPVolumeController *volumeController; // @synthesize volumeController=_volumeController;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)increaseButtonHoldReleased:(id)arg1;
 - (void)increaseButtonHoldBegan:(id)arg1;
 - (void)increaseTouchUpInside:(id)arg1;

@@ -11,16 +11,16 @@
 #import <PhotosUICore/UICollectionViewDelegate-Protocol.h>
 #import <PhotosUICore/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class NSString, PXPeoplePersonDataSource, PXUIPeopleSuggestionDataSource, UICollectionView;
+@class NSString, PXPeoplePersonDataSource, PXPeopleSuggestionDataSource, UICollectionView;
 
 @interface PXPeopleDetailSettingsViewController : UIViewController <PXPeopleDataSourceDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     PXPeoplePersonDataSource *_dataSource;
     UICollectionView *_collectionView;
-    PXUIPeopleSuggestionDataSource *_suggestionDataSource;
+    PXPeopleSuggestionDataSource *_suggestionDataSource;
 }
 
-@property(retain, nonatomic) PXUIPeopleSuggestionDataSource *suggestionDataSource; // @synthesize suggestionDataSource=_suggestionDataSource;
+@property(retain, nonatomic) PXPeopleSuggestionDataSource *suggestionDataSource; // @synthesize suggestionDataSource=_suggestionDataSource;
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain) PXPeoplePersonDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;

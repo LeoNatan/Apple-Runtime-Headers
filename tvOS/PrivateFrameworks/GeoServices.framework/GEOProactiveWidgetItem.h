@@ -12,11 +12,11 @@
 {
     int _timeSinceStart;
     struct {
-        unsigned int timeSinceStart:1;
-    } _has;
+        unsigned int has_timeSinceStart:1;
+    } _flags;
 }
 
-@property(nonatomic) int timeSinceStart; // @synthesize timeSinceStart=_timeSinceStart;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -24,9 +24,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasTimeSinceStart;
+@property(nonatomic) int timeSinceStart;
 
 @end
 

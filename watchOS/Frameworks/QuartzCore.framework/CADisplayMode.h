@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) float pixelAspectRatio;
 @property(readonly, nonatomic) unsigned long height;
 @property(readonly, nonatomic) unsigned long width;
+- (void)_setPreferredUIScale:(unsigned int)arg1;
 - (void)_setWidth:(unsigned long)arg1 height:(unsigned long)arg2;
 - (struct Mode)_mode;
 - (id)_display;

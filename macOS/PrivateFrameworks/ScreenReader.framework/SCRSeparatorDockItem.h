@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)isInteractive;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)incrementWithPercentage:(double)arg1;
 - (BOOL)decrementWithPercentage:(double)arg1;
 - (BOOL)incrementLarge;

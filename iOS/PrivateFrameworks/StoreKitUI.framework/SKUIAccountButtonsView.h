@@ -8,6 +8,7 @@
 
 @class NSString, SKUIClientContext, SKUILinkButton, SKUIRoundedRectButton, UIButton, UIControl, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAccountButtonsView : UIView
 {
     UILabel *_accountCreditsLabel;

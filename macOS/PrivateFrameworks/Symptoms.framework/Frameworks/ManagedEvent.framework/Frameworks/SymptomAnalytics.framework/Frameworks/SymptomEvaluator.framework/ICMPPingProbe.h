@@ -9,13 +9,13 @@
 @class NSData, NSMutableArray, NSObject, NSString;
 @protocol ICMPPingProbeDelegate, OS_dispatch_semaphore, OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface ICMPPingProbe : TestProbe
 {
     BOOL stopTestOnFirstSuccess;
     NSObject<OS_dispatch_source> *timeoutTimer;
     NSObject<OS_dispatch_source> *pingTimer;
     NSObject<OS_dispatch_source> *burstTimer;
-    struct mach_timebase_info timebase_info;
     NSString *_hostName;
     NSData *_hostAddressData;
     struct __CFHost *_host;

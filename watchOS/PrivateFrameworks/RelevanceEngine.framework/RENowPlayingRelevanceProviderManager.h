@@ -8,10 +8,11 @@
 
 #import <RelevanceEngine/NMRNowPlayingControllerDelegate-Protocol.h>
 #import <RelevanceEngine/NMROriginObserverDelegate-Protocol.h>
+#import <RelevanceEngine/RENowPlayingRelevanceProviderManagerProperties-Protocol.h>
 
 @class NMRNowPlayingController, NMRNowPlayingState, NSString;
 
-@interface RENowPlayingRelevanceProviderManager : RERelevanceProviderManager <NMROriginObserverDelegate, NMRNowPlayingControllerDelegate>
+@interface RENowPlayingRelevanceProviderManager : RERelevanceProviderManager <RENowPlayingRelevanceProviderManagerProperties, NMROriginObserverDelegate, NMRNowPlayingControllerDelegate>
 {
     unsigned int _state;
     NMRNowPlayingState *_playbackState;
@@ -21,7 +22,9 @@
 + (Class)_relevanceProviderClass;
 + (id)_features;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NMRNowPlayingController *controller;
+@property(readonly, nonatomic) NMRNowPlayingState *playbackState;
+@property(readonly, nonatomic) unsigned int state;
 - (void)activeNowPlayingOriginDidUpdateForController:(id)arg1;
 - (void)_updatePlaybackState;
 - (void)pause;

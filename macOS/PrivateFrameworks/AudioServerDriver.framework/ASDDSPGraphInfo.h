@@ -16,10 +16,10 @@
     NSDictionary *_substitutions;
 }
 
-@property(retain, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;
-@property(retain, nonatomic) NSArray *includePaths; // @synthesize includePaths=_includePaths;
-@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-@property(retain, nonatomic) NSString *path; // @synthesize path=_path;
+@property(copy, nonatomic) NSDictionary *substitutions; // @synthesize substitutions=_substitutions;
+@property(copy, nonatomic) NSArray *includePaths; // @synthesize includePaths=_includePaths;
+@property(copy, nonatomic) NSString *text; // @synthesize text=_text;
+@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

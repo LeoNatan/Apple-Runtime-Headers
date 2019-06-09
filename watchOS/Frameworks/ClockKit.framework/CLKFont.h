@@ -10,6 +10,7 @@
 {
 }
 
++ (id)compactSoftFontOfSize:(float)arg1 weight:(float)arg2;
 + (id)fontWithDescriptor:(id)arg1 size:(float)arg2;
 + (id)systemFontOfSize:(float)arg1 weight:(float)arg2 design:(id)arg3;
 + (id)systemFontOfSize:(float)arg1 weight:(float)arg2;

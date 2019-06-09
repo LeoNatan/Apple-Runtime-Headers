@@ -13,7 +13,6 @@
 {
     NSArray *_topLevelNodes;
     CalLogNode *_oslogNode;
-    CalLogNode *_aslNode;
     CalLogNode *_rootConfigurationNode;
     CalLogNode *_standardOutNode;
     CalLogNode *_userNotificationNode;
@@ -31,7 +30,6 @@
 @property(retain, nonatomic) CalLogNode *userNotificationNode; // @synthesize userNotificationNode=_userNotificationNode;
 @property(retain, nonatomic) CalLogNode *rootConfigurationNode; // @synthesize rootConfigurationNode=_rootConfigurationNode;
 @property(retain, nonatomic) CalLogNode *standardOutNode; // @synthesize standardOutNode=_standardOutNode;
-@property(retain, nonatomic) CalLogNode *aslNode; // @synthesize aslNode=_aslNode;
 @property(retain, nonatomic) CalLogNode *oslogNode; // @synthesize oslogNode=_oslogNode;
 @property(retain, nonatomic) NSArray *topLevelNodes; // @synthesize topLevelNodes=_topLevelNodes;
 - (void).cxx_destruct;
@@ -46,7 +44,6 @@
 - (void)configureRootConfigurationNode;
 - (void)configureUserNotificationNode;
 - (void)configureStandardOutNode;
-- (void)configureASLNode;
 - (void)configureOSLogNode;
 - (void)loadPreferredConfiguration;
 - (id)copyWithZone:(struct _NSZone *)arg1;

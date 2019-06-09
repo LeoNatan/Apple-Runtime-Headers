@@ -7,9 +7,7 @@
 @class NSArray, NSDictionary, NSPredicate, NSSet, NSSortDescriptor, NSString, NSUUID, NWNetworkOfInterest;
 
 @protocol ServiceInterface
-- (void)postAWDEvent:(NSDictionary *)arg1 reply:(void (^)(NSDictionary *))arg2;
-- (void)assertFactString:(NSString *)arg1 module:(NSString *)arg2 asSymptom:(BOOL)arg3 reply:(void (^)(NSDictionary *))arg4;
-- (void)waitForOSLogErrorSymptomWithReply:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)getNetworkBitmapsWithNames:(NSSet *)arg1 startTime:(unsigned long long)arg2 endTime:(unsigned long long)arg3 Reply:(void (^)(NSDictionary *, NSError *))arg4;
 - (void)resetUsageFor:(NSArray *)arg1 nameKind:(NSString *)arg2 reply:(void (^)(_Bool))arg3;
 - (void)setUsageOption:(NSDictionary *)arg1 reply:(void (^)(NSDictionary *))arg2;
 - (void)performPersistentStoreHealthCheckWithReply:(void (^)(NSDictionary *, NSError *))arg1;

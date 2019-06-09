@@ -11,7 +11,7 @@
     UIView *_hostedView;
 }
 
-+ (id)whiteBackgroundViewHostingView:(id)arg1;
++ (id)colorBackgroundViewHostingView:(id)arg1;
 + (id)viewHostingView:(id)arg1;
 @property(retain, nonatomic) UIView *hostedView; // @synthesize hostedView=_hostedView;
 - (void).cxx_destruct;

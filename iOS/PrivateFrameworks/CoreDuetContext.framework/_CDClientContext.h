@@ -10,7 +10,7 @@
 #import <CoreDuetContext/_CDUserContextServerMonitoring-Protocol.h>
 
 @class NSCountedSet, NSMutableDictionary, NSString, NSXPCConnection, NSXPCListenerEndpoint;
-@protocol OS_dispatch_queue, OS_os_log;
+@protocol OS_dispatch_queue, OS_os_log, _CDRemoteUserContextServer;
 
 @interface _CDClientContext : NSObject <_CDUserContext, _CDUserContextServerMonitoring>
 {
@@ -25,11 +25,14 @@
     NSObject<OS_dispatch_queue> *_registrationCallbackQueue;
     NSMutableDictionary *_openRegistrationTokens;
     NSObject<OS_os_log> *_log;
+    id <_CDRemoteUserContextServer> _remoteUserContextProxy;
 }
 
++ (id)userContextWithEndpoint:(id)arg1;
 + (id)userContext;
 + (id)clientInterface;
 + (id)serverInterface;
+@property(retain, nonatomic) id <_CDRemoteUserContextServer> remoteUserContextProxy; // @synthesize remoteUserContextProxy=_remoteUserContextProxy;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 @property(retain, nonatomic) NSMutableDictionary *openRegistrationTokens; // @synthesize openRegistrationTokens=_openRegistrationTokens;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *registrationCallbackQueue; // @synthesize registrationCallbackQueue=_registrationCallbackQueue;
@@ -42,6 +45,10 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)deactivateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
+- (void)activateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
+- (_Bool)setObject:(id)arg1 lastModifiedDate:(id)arg2 forContextualKeyPath:(id)arg3;
+- (struct NSDictionary *)valuesForKeyPaths:(id)arg1;
 - (id)valuesForKeyPaths:(id)arg1 inContextsMatchingPredicate:(id)arg2;
 - (id)localContext;
 - (_Bool)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
@@ -50,7 +57,7 @@
 - (_Bool)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (_Bool)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
 - (void)handleRegistrationCompleted:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)handleContextualChange:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)handleContextualChange:(id)arg1 info:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)evaluatePredicate:(id)arg1;
 - (void)deregisterCallback:(id)arg1;
 - (void)cleanupInternalReferencesToRegistration:(id)arg1;
@@ -65,6 +72,14 @@
 - (void)setCachedValueIfClientHasRegistrations:(id)arg1 forKeyPath:(id)arg2;
 - (id)cachedValueIfClientHasRegistrationsForKeyPath:(id)arg1;
 - (_Bool)hasKnowledgeOfContextualKeyPath:(id)arg1;
+- (void)handleNotificationEvent:(id)arg1;
+- (void)handleFetchProxySourceDeviceUUIDEvent:(id)arg1;
+- (void)handleKeepAliveEvent:(id)arg1;
+- (void)handleUnsubscribeFromContextValueNotificationsEvent:(id)arg1;
+- (void)handleSubscribeToContextValueNotificationsEvent:(id)arg1;
+- (void)handleFetchPropertiesEvent:(id)arg1;
+- (void)handleMDCSEvent:(id)arg1;
+- (void)subscribeToEventStreams;
 - (void)dealloc;
 - (id)initWithEndpoint:(id)arg1;
 - (id)currentConnection;

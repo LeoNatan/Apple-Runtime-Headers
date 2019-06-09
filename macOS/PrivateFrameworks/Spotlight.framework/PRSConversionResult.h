@@ -27,8 +27,8 @@
 @property(readonly) NSNumber *inputValue; // @synthesize inputValue=_inputValue;
 @property(readonly) NSString *inputUnit; // @synthesize inputUnit=_inputUnit;
 - (void).cxx_destruct;
-- (unsigned long long)rank;
-- (unsigned long long)score;
+-     // Error parsing type: T16@0:8, name: rank
+-     // Error parsing type: T16@0:8, name: score
 - (BOOL)shouldNotBeTopHit;
 - (BOOL)isConversion;
 - (id)initWithConverter:(id)arg1;

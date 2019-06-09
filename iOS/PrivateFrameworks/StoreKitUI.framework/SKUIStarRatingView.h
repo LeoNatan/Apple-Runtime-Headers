@@ -8,6 +8,7 @@
 
 @class UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStarRatingView : UIView
 {
     double _elementSpacing;

@@ -7,10 +7,12 @@
 #import <PhotosUICore/PXObservable.h>
 
 #import <PhotosUICore/PXMutableNumberAnimator-Protocol.h>
+#import <PhotosUICore/PXNumberAnimatorDisplayLinkTarget-Protocol.h>
 
-@class CADisplayLink, NSMutableArray;
+@class NSMutableArray, NSString, PXDisplayLink;
+@protocol PXNumberAnimatorDisplayLinkTarget;
 
-@interface PXNumberAnimator : PXObservable <PXMutableNumberAnimator>
+@interface PXNumberAnimator : PXObservable <PXMutableNumberAnimator, PXNumberAnimatorDisplayLinkTarget>
 {
     _Bool _isPerformingChanges;
     struct {
@@ -18,12 +20,18 @@
     } _needsUpdateFlags;
     struct _PXValueAnimationSpec _currentAnimationSpec;
     NSMutableArray *_animations;
-    CADisplayLink *_displayLink;
+    PXDisplayLink *_displayLink;
+    _Bool _isBeingMutated;
     double _value;
     double _presentationValue;
     double _epsilon;
+    NSString *_label;
+    id <PXNumberAnimatorDisplayLinkTarget> _displayLinkTarget;
 }
 
+@property(nonatomic) __weak id <PXNumberAnimatorDisplayLinkTarget> displayLinkTarget; // @synthesize displayLinkTarget=_displayLinkTarget;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) _Bool isBeingMutated; // @synthesize isBeingMutated=_isBeingMutated;
 @property(readonly, nonatomic) double epsilon; // @synthesize epsilon=_epsilon;
 @property(nonatomic, setter=_setPresentationValue:) double presentationValue; // @synthesize presentationValue=_presentationValue;
 @property(readonly, nonatomic) double value; // @synthesize value=_value;
@@ -39,12 +47,21 @@
 - (void)performChanges:(CDUnknownBlockType)arg1;
 - (void)_handleDisplayLink:(id)arg1;
 - (void)_setAnimating:(_Bool)arg1;
+@property(readonly, nonatomic) double approximateVelocity;
+@property(readonly, nonatomic) _Bool isAnimating;
 - (void)performChangesUsingSpringAnimationWithStiffness:(double)arg1 dampingRatio:(double)arg2 initialVelocity:(double)arg3 changes:(CDUnknownBlockType)arg4;
 - (void)performChangesUsingDefaultSpringAnimationWithInitialVelocity:(double)arg1 changes:(CDUnknownBlockType)arg2;
+- (void)performChangesWithDuration:(double)arg1 curve:(long long)arg2 changes:(CDUnknownBlockType)arg3;
 - (void)performChangesWithoutAnimation:(CDUnknownBlockType)arg1;
-- (void)dealloc;
+@property(readonly, copy) NSString *description;
+- (id)initWithValue:(double)arg1 epsilon:(double)arg2;
 - (id)initWithValue:(double)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

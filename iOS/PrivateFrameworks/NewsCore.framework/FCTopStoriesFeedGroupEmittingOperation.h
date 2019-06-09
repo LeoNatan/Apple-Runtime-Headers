@@ -10,6 +10,7 @@
 {
 }
 
+- (id)_defaultDarkStyleBackgroundGradient;
 - (id)_defaultBackgroundGradient;
 - (_Bool)hasSeenAllPreviousArticleIDs:(id)arg1;
 - (id)headlinesLogFromHeadlines:(id)arg1 includeScore:(_Bool)arg2;

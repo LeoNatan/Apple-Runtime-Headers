@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)certificateChainUsesInsecureSignatureAlgorithms:(id)arg1;
-+ (BOOL)certificateUsesInsecureSignatureAlgorithm:(struct OpaqueSecCertificateRef *)arg1;
++ (BOOL)certificateUsesInsecureSignatureAlgorithm:(struct __SecCertificate *)arg1;
 
 @end
 

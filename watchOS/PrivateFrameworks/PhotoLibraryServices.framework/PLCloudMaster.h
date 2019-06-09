@@ -14,7 +14,6 @@
 {
 }
 
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)listOfSyncedProperties;
 + (id)_originalTypes;
@@ -24,8 +23,10 @@
 + (id)cloudMasterWithGUID:(id)arg1 inMomentShare:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2 inMomentShare:(id)arg3;
 - (_Bool)isSyncableChange;
+- (id)originalFilenameForResourceType:(unsigned int)arg1 filePath:(id)arg2;
 - (void)_promptForNilScopeIdentifierRadar;
 - (id)scopedIdentifier;
+- (id)cplMasterPropertyChangeForAsset:(id)arg1;
 - (id)cplPropertyRecord;
 - (id)cplFullRecord;
 @property(readonly, retain, nonatomic) id localID;
@@ -33,21 +34,20 @@
 - (_Bool)allOriginalsAreUploaded;
 - (unsigned long long)sizeOfOriginal;
 @property(readonly, copy) NSString *description;
-- (void)applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
 - (void)applyPropertiesFromCPLMasterChange:(id)arg1;
 - (id)cloudResourcesForResourceType:(unsigned int)arg1;
 - (id)assetUUIDToCloudResources;
 - (id)cloudResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (void)awakeFromInsert;
-- (void)deleteAllResourcesForAssetUuid:(id)arg1;
-- (id)cplResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (_Bool)supportsCloudUpload;
-- (void)nrm_applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
+- (void)rm_applyExpungeableResourceStatesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
+- (id)rm_applyResourcesFromCPLMasterChange:(id)arg1 inPhotoLibrary:(id)arg2;
 - (_Bool)hasResourcesOtherThanForAssetUuid:(id)arg1;
 - (id)allMasterResources;
-- (id)nrm_assetUUIDToCloudResources;
-- (id)nrm_cloudResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
-- (id)nrm_cloudResourcesForResourceType:(unsigned int)arg1;
+- (id)rm_assetUUIDToCloudResources;
+- (id)rm_cloudResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
+- (id)rm_cloudResourcesForResourceType:(unsigned int)arg1;
+- (id)payloadsForChangedKeys:(id)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *assets; // @dynamic assets;
@@ -63,7 +63,6 @@
 @property(nonatomic) short importedBy; // @dynamic importedBy;
 @property(retain, nonatomic) NSManagedObject *mediaMetadata; // @dynamic mediaMetadata;
 @property(retain, nonatomic) NSString *mediaMetadataType; // @dynamic mediaMetadataType;
-@property(retain, nonatomic) NSSet *modernResources; // @dynamic modernResources;
 @property(retain, nonatomic) PLMomentShare *momentShare; // @dynamic momentShare;
 @property(retain, nonatomic) NSString *originalFilename; // @dynamic originalFilename;
 @property(nonatomic) short originalOrientation; // @dynamic originalOrientation;
@@ -71,6 +70,7 @@
 @property(nonatomic) short placeholderState; // @dynamic placeholderState;
 @property(retain, nonatomic) NSSet *resources; // @dynamic resources;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) NSSet *transientModernResources; // @dynamic transientModernResources;
 @property(retain, nonatomic) NSString *uniformTypeIdentifier; // @dynamic uniformTypeIdentifier;
 @property(nonatomic) short videoFrameRate; // @dynamic videoFrameRate;
 

@@ -20,6 +20,7 @@
 
 + (id)deleteAccountRequestWithAccount:(id)arg1 storage:(id)arg2;
 + (id)accountMetadataRequestWithAccount:(id)arg1 storage:(id)arg2 accountMetadataRequest:(id)arg3 requestingAppDisplayName:(id)arg4 requestingAppAdamID:(id)arg5;
++ (id)silentMakeAccountRequestWithStorage:(id)arg1;
 + (id)makeAccountRequestWithStorage:(id)arg1;
 @property(retain, nonatomic) VSOptional *accountMetadataRequest; // @synthesize accountMetadataRequest=_accountMetadataRequest;
 @property(retain, nonatomic) VSPersistentStorage *storage; // @synthesize storage=_storage;

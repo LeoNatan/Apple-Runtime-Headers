@@ -36,7 +36,11 @@
     _Bool _everHadDelegate;
     NSMutableArray *_queuedDelegateBlocks;
     NSString *_processName;
+    double _reconnectDelay;
+    _Bool _isReconnectScheduled;
+    _Bool _isDisconnected;
     _Bool _isShutdown;
+    _Bool _isDeallocing;
 }
 
 + (void)notifySafeToSendFilter;
@@ -51,11 +55,11 @@
 + (void)_flushIdentityCache;
 + (struct __SecIdentity *)copyIdentity;
 + (void)_safelyCancelAndReleaseConnection:(id)arg1;
-+ (void)_safelyCancelAndReleaseAfterBarrierConnection:(id)arg1;
 + (_Bool)isValidEnvironment:(id)arg1;
 @property(readonly, nonatomic) _Bool isShutdown; // @synthesize isShutdown=_isShutdown;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ivarQueue; // @synthesize ivarQueue=_ivarQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
+- (void).cxx_destruct;
 - (void)confirmReceiptForMessage:(id)arg1;
 - (void)requestKeepAlive;
 - (void)invalidateTokenForTopic:(id)arg1 identifier:(id)arg2;
@@ -66,8 +70,8 @@
 - (void)_sendOutgoingMessage:(id)arg1 fake:(_Bool)arg2;
 - (_Bool)hasIdentity;
 - (void)_deliverToken:(id)arg1 forTopic:(id)arg2 identifier:(id)arg3;
-- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 error:(id)arg2;
-- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 checkpointTraceData:(id)arg2 error:(id)arg3;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 error:(id)arg2 sendRTT:(unsigned long long)arg3;
+- (void)_deliverOutgoingMessageResultWithID:(unsigned long long)arg1 checkpointTraceData:(id)arg2 error:(id)arg3 sendRTT:(unsigned long long)arg4 ackTimestamp:(unsigned long long)arg5;
 - (void)_deliverConnectionStatusFromDealloc:(_Bool)arg1;
 - (void)_deliverConnectionStatusChange:(_Bool)arg1;
 - (void)_deliverPublicToken:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
@@ -109,6 +113,7 @@
 - (void)_cancelConnectionOnIvarQueue;
 - (void)_connectIfNecessary;
 - (void)_connectIfNecessaryOnIvarQueue;
+- (void)_reconnectIfNecessaryOnIvarQueueAfterDelay;
 - (void)_handleEvent:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_noteDisconnectedFromDaemonOnIvarQueue;
 - (void)_callDelegateOnIvarQueueWithBlock:(CDUnknownBlockType)arg1;

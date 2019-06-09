@@ -23,7 +23,6 @@
 - (void)invalidate;
 - (id)description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithName:(id)arg1 parent:(id)arg2;
 
 @end

@@ -8,13 +8,13 @@
 
 #import <ScreenSharing/NSTextFieldDelegate-Protocol.h>
 
-@class NSButton, NSObject, NSProgressIndicator, NSString, NSTextField, SSContactsTokenField;
+@class NSButton, NSProgressIndicator, NSString, NSTextField, SSContactsTokenField;
 @protocol SSConnectionPromptObserver;
 
 @interface SSConnectionAddressViewController : NSViewController <NSTextFieldDelegate>
 {
-    NSObject<SSConnectionPromptObserver> *mPromptObserver;
     BOOL mIsConnecting;
+    id <SSConnectionPromptObserver> promptObserver;
     SSContactsTokenField *_mAddressField;
     NSButton *_mConnectButton;
     NSProgressIndicator *_mConnectingProgressSpinner;
@@ -25,7 +25,7 @@
 @property(retain) NSProgressIndicator *mConnectingProgressSpinner; // @synthesize mConnectingProgressSpinner=_mConnectingProgressSpinner;
 @property(retain) NSButton *mConnectButton; // @synthesize mConnectButton=_mConnectButton;
 @property(retain) SSContactsTokenField *mAddressField; // @synthesize mAddressField=_mAddressField;
-@property id <SSConnectionPromptObserver> promptObserver; // @synthesize promptObserver=mPromptObserver;
+@property id <SSConnectionPromptObserver> promptObserver; // @synthesize promptObserver;
 - (void)adjustViewHeightBy:(double)arg1;
 - (void)cancelClicked:(id)arg1;
 - (void)connectClicked:(id)arg1;

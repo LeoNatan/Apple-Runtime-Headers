@@ -10,5 +10,8 @@
 + (id)NSStringFromLSInstallType:(unsigned int)arg1;
 + (id)NSStringFromLSInstallState:(unsigned int)arg1;
 + (id)NSStringFromLSInstallPhase:(unsigned int)arg1;
+- (_Bool)ls_matchesForPluginQuery:(id)arg1;
+- (_Bool)ls_matchesStringForPluginQuery:(id)arg1;
+- (id)ls_cleanForPluginQuery;
 @end
 

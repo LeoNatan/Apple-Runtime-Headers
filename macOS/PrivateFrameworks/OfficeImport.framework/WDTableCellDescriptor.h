@@ -8,6 +8,7 @@
 
 @class WDBorder, WDShading;
 
+__attribute__((visibility("hidden")))
 @interface WDTableCellDescriptor : NSObject
 {
     WDShading *mShading;

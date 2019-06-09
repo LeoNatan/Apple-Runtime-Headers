@@ -19,11 +19,18 @@ __attribute__((visibility("hidden")))
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 - (void).cxx_destruct;
+- (id)debugQuickLookObject;
+- (id)_imageRepresentation;
+- (struct CGRect)_rectTuckedAgainstEdge:(unsigned int)arg1 ofBoundingRect:(struct CGRect)arg2 withSize:(float)arg3 minimumPadding:(float)arg4;
+- (struct CGRect)_rectTuckedInCorner:(unsigned int)arg1 ofBoundingRect:(struct CGRect)arg2 withSize:(struct CGSize)arg3 minimumPadding:(float)arg4;
 - (struct CGRect)_largestInscribedRectInBoundingRect:(struct CGRect)arg1 withCenter:(struct CGPoint)arg2 aspectRatio:(float)arg3;
 - (struct CGRect)_inscribedRectInBoundingRect:(struct CGRect)arg1 byInsettingRect:(struct CGRect)arg2 onEdges:(unsigned int)arg3;
+- (struct CGRect)_rectTuckedAgainstEdge:(unsigned int)arg1 ofBoundingPathAndRect:(struct CGRect)arg2 withSize:(float)arg3 cornerRadii:(struct UIRectCornerRadii)arg4 minimumPadding:(float)arg5;
+- (struct CGRect)_rectTuckedInCorner:(unsigned int)arg1 ofBoundingPathAndRect:(struct CGRect)arg2 withSize:(struct CGSize)arg3 cornerRadii:(struct UIRectCornerRadii)arg4 minimumPadding:(float)arg5;
 - (struct CGRect)_largestInscribedRectInBoundingPathAndRect:(struct CGRect)arg1 withCenter:(struct CGPoint)arg2 aspectRatio:(float)arg3;
 - (struct CGRect)_inscribedRectInBoundingPathAndRect:(struct CGRect)arg1 byInsettingRect:(struct CGRect)arg2 onEdges:(unsigned int)arg3 withOptions:(unsigned int)arg4;
 @property(readonly, nonatomic) _Bool isNonRectangular;
+- (id)boundingPathForCoordinateSpace:(id)arg1 withCornerRadii:(struct UIRectCornerRadii)arg2 orientation:(int)arg3 scale:(float)arg4;
 - (id)boundingPathForCoordinateSpace:(id)arg1;
 - (_Bool)validateForCoordinateSpace;
 - (id)initWithCoordinateSpace:(id)arg1;

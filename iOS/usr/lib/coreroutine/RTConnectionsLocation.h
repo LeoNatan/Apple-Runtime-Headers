@@ -29,9 +29,9 @@
 - (id)initWithLocation:(id)arg1 name:(id)arg2 originatingBundleID:(id)arg3 fullFormattedAddress:(id)arg4 mapItemURL:(id)arg5 createdAt:(id)arg6;
 - (id)init;
 - (id)_addProactiveExpertSourceTo:(id)arg1;
-- (id)_mapItemFromForwardGeocode:(id)arg1;
-- (id)_mapItemFromLocalSearch:(id)arg1;
-- (id)mapItemUsingMapServiceManager:(id)arg1;
+- (id)_mapItemFromForwardGeocode:(id)arg1 options:(id)arg2;
+- (id)_mapItemFromLocalSearch:(id)arg1 options:(id)arg2;
+- (id)mapItemUsingMapServiceManager:(id)arg1 options:(id)arg2;
 
 @end
 

@@ -7,11 +7,12 @@
 #import <UIKit/_UIRemoteViewController.h>
 
 #import <DataDetectorsUI/DDRemoteActionPresenter-Protocol.h>
+#import <DataDetectorsUI/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class DDAction, DDActionController;
+@class DDAction, DDActionController, NSString;
 
 __attribute__((visibility("hidden")))
-@interface DDRemoteActionViewController : _UIRemoteViewController <DDRemoteActionPresenter>
+@interface DDRemoteActionViewController : _UIRemoteViewController <DDRemoteActionPresenter, _UIRemoteViewControllerContaining>
 {
     _Bool _proxyConfigured;
     _Bool _waitingForRemoteConfiguration;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak DDActionController *actionController; // @synthesize actionController=_actionController;
 @property(nonatomic) __weak DDAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)getIsBeingPresentedInPopover:(CDUnknownBlockType)arg1;
 - (void)actionDidFinish;
 - (void)actionBecameCancellable:(_Bool)arg1;
@@ -33,6 +35,12 @@ __attribute__((visibility("hidden")))
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewControllerReady;
 - (void)_prepareForAction:(id)arg1 inActionController:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

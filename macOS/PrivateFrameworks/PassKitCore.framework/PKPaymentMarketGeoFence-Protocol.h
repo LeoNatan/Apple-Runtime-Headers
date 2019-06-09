@@ -10,6 +10,7 @@
 @class CLLocation, NSDictionary;
 
 @protocol PKPaymentMarketGeoFence <NSObject, NSSecureCoding>
+- (double)distanceFromLocation:(CLLocation *)arg1;
 - (BOOL)containsLocation:(CLLocation *)arg1;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 @end

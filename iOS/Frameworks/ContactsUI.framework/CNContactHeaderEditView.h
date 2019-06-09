@@ -6,57 +6,38 @@
 
 #import <ContactsUI/CNContactHeaderView.h>
 
-#import <ContactsUI/CNPropertyGroupItemDelegate-Protocol.h>
-#import <ContactsUI/UITableViewDataSource-Protocol.h>
-#import <ContactsUI/UITableViewDelegate-Protocol.h>
+@class NSLayoutConstraint, UIButton;
 
-@class NSArray, NSLayoutConstraint, NSString, UITableView;
-@protocol CNPropertyCellDelegate;
-
-@interface CNContactHeaderEditView : CNContactHeaderView <UITableViewDelegate, UITableViewDataSource, CNPropertyGroupItemDelegate>
+@interface CNContactHeaderEditView : CNContactHeaderView
 {
-    UITableView *_editingTable;
-    _Bool _pinToReadableContentGuide;
     _Bool _allowsEditPhoto;
-    NSArray *_editingGroups;
-    id <CNPropertyCellDelegate> _namePropertyDelegate;
-    NSLayoutConstraint *_tableToTrailingEdgeConstraint;
-    NSLayoutConstraint *_tableToTrailingReadableGuideConstraint;
+    UIButton *_editButton;
+    NSLayoutConstraint *_editButtonHeightConstraint;
+    struct CGSize _maxButtonSize;
 }
 
 + (id)makePhotoViewWithMonogrammerStyle:(long long)arg1 shouldAllowTakePhotoAction:(_Bool)arg2 shouldAllowImageDrops:(_Bool)arg3;
-+ (id)contactHeaderViewWithContact:(id)arg1 editingGroups:(id)arg2 shouldAllowTakePhotoAction:(_Bool)arg3 delegate:(id)arg4;
-@property(retain, nonatomic) NSLayoutConstraint *tableToTrailingReadableGuideConstraint; // @synthesize tableToTrailingReadableGuideConstraint=_tableToTrailingReadableGuideConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *tableToTrailingEdgeConstraint; // @synthesize tableToTrailingEdgeConstraint=_tableToTrailingEdgeConstraint;
++ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(_Bool)arg2 showingNavBar:(_Bool)arg3 delegate:(id)arg4;
++ (id)contactHeaderViewWithContact:(id)arg1 shouldAllowTakePhotoAction:(_Bool)arg2 delegate:(id)arg3;
+@property(retain, nonatomic) NSLayoutConstraint *editButtonHeightConstraint; // @synthesize editButtonHeightConstraint=_editButtonHeightConstraint;
+@property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
+@property(nonatomic) struct CGSize maxButtonSize; // @synthesize maxButtonSize=_maxButtonSize;
 @property(nonatomic) _Bool allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
-@property(nonatomic) _Bool pinToReadableContentGuide; // @synthesize pinToReadableContentGuide=_pinToReadableContentGuide;
-@property(nonatomic) __weak id <CNPropertyCellDelegate> namePropertyDelegate; // @synthesize namePropertyDelegate=_namePropertyDelegate;
-@property(retain, nonatomic) NSArray *editingGroups; // @synthesize editingGroups=_editingGroups;
 - (void).cxx_destruct;
-- (id)_phoneticNameForValue:(id)arg1 property:(id)arg2;
-- (void)propertyItem:(id)arg1 willChangeValue:(id)arg2;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (_Bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
-- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
-- (_Bool)becomeFirstResponder;
-- (void)setBackgroundColor:(id)arg1;
-- (id)selectEditingGroupAtIndex:(unsigned long long)arg1;
+- (void)updateContactWithEditedPropertyItem:(id)arg1;
+- (void)editButtonPressed;
 - (void)saveContactPhoto;
 - (_Bool)photoIsModified;
 - (_Bool)hasPhoto;
-- (void)reloadDataPreservingChanges:(_Bool)arg1;
+- (void)updateEditButtonTitle;
+- (void)updateWithContacts:(id)arg1;
+- (void)updateSizeDependentAttributes;
 - (void)updateConstraints;
 - (void)updateFontSizes;
-- (void)setEditingGroups:(id)arg1 withUpdate:(_Bool)arg2;
-- (id)initWithContact:(id)arg1 editingGroups:(id)arg2 frame:(struct CGRect)arg3 shouldAllowTakePhotoAction:(_Bool)arg4 delegate:(id)arg5;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)calculateLabelSizesIfNeeded;
+- (double)maxHeight;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 shouldAllowTakePhotoAction:(_Bool)arg3 delegate:(id)arg4;
+- (id)initWithContact:(id)arg1 frame:(struct CGRect)arg2 shouldAllowTakePhotoAction:(_Bool)arg3 delegate:(id)arg4 showingNavBar:(_Bool)arg5;
 
 @end
 

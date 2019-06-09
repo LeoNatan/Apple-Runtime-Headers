@@ -9,9 +9,9 @@
 #import <MemoryResourceException/FPAuxDataType-Protocol.h>
 
 @interface NSDictionary (FPAuxData) <FPAuxDataType>
-@property(readonly) id jsonRepresentation;
+@property(readonly, nonatomic) id jsonRepresentation;
 - (struct NSDictionary *)mergeWithData:(struct NSDictionary *)arg1;
 - (id)mergeAuxDatum:(id)arg1 withDatum:(id)arg2;
-@property(readonly) BOOL isContainer;
+@property(readonly, nonatomic) BOOL isContainer;
 @end
 

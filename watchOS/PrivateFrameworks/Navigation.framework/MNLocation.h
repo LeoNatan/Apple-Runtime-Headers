@@ -27,6 +27,7 @@
     _Bool _locationUnreliable;
     NSDate *_expirationDate;
     NSDate *_originalDate;
+    unsigned int _traceIndex;
     _Bool _isLeeched;
     int _rampType;
 }
@@ -51,13 +52,14 @@
 @property(retain, nonatomic) GEORouteMatch *routeMatch; // @synthesize routeMatch=_routeMatch;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (id)_referenceFrameAsString:(int)arg1;
 - (id)description;
 - (id)_navigation_detailedMatchInfo;
 - (struct CLLocationCoordinate2D)_navigation_rawShiftedCoordinate;
 - (id)_navigation_routeMatch;
 - (_Bool)_navigation_hasValidCourse;
 - (_Bool)_navigation_isStale;
-- (CDStruct_3da87dc5 *)_roadFeature;
+- (CDStruct_4e2e1dc0 *)_roadFeature;
 - (id)matchInfo;
 @property(readonly, nonatomic) _Bool isProjected;
 @property(readonly, nonatomic) unsigned int stepIndex;
@@ -65,11 +67,12 @@
 - (id)initWithLocationDetails:(id)arg1;
 - (id)initWithLocationDetails:(id)arg1 route:(id)arg2;
 - (id)initWithRawLocation:(id)arg1;
-- (id)initWithRawLocation:(id)arg1 useMatchLocation:(_Bool)arg2;
-- (id)initWithRoadMatch:(id)arg1 rawLocation:(id)arg2 useMatchLocation:(_Bool)arg3;
-- (id)initWithRouteMatch:(id)arg1 rawLocation:(id)arg2 useMatchLocation:(_Bool)arg3;
-- (id)initWithClientLocation:(CDStruct_0e8fe709)arg1;
+- (id)initWithRawLocation:(id)arg1 locationMatchType:(unsigned int)arg2;
+- (id)initWithRoadMatch:(id)arg1 rawLocation:(id)arg2 locationMatchType:(unsigned int)arg3;
+- (id)initWithRouteMatch:(id)arg1 rawLocation:(id)arg2 locationMatchType:(unsigned int)arg3;
+- (id)initWithClientLocation:(CDStruct_b79ad89f)arg1;
 @property(readonly, nonatomic) int _nav_source;
+@property(nonatomic) unsigned int traceIndex;
 - (id)initWithGEOLocation:(id)arg1;
 
 @end

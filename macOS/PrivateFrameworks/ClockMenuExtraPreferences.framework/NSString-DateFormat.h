@@ -15,5 +15,7 @@
 - (BOOL)dateFormatHasAMPM;
 - (BOOL)dateFormatHasSeconds;
 - (BOOL)containsString:(id)arg1;
+- (BOOL)containsUnquotedString:(id)arg1;
+- (id)stringByReplacingOccurrencesOfUnquotedString:(id)arg1 withString:(id)arg2;
 @end
 

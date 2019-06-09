@@ -11,21 +11,24 @@
 __attribute__((visibility("hidden")))
 @interface FI_TShrinkToFitWindow : NSPanel
 {
-    FI_TShrinkToFitScrollView *_stfScrollView;
-    FI_TShrinkToFitTextView *_stfTextView;
+    struct TNSWeakPtr<FI_TShrinkToFitScrollView, void> _weakStfScrollView;
+    struct TNSWeakPtr<FI_TShrinkToFitTextView, void> _weakStfTextView;
+    struct TNotificationCenterObserver _stfScrollViewFrameChangedObserver;
+    struct TNotificationCenterObserver _stfScrollViewPreferredScrollerStyleDidChangeObserver;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)undo:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (struct CGRect)calcGlobalFrame;
 - (void)sizeToFit;
-- (void)stfScrollViewScrollerStyleChanged:(id)arg1;
-- (void)stfScrollViewFrameChanged:(id)arg1;
 - (BOOL)accessibilityIsIgnored;
 - (void)_resignKeyFocus;
 - (BOOL)_canBecomeSecondaryKeyWindow;
 - (BOOL)canBecomeKeyWindow;
-- (void)dealloc;
+@property(nonatomic) __weak FI_TShrinkToFitTextView *stfTextView; // @dynamic stfTextView;
+@property(nonatomic) __weak FI_TShrinkToFitScrollView *stfScrollView; // @dynamic stfScrollView;
 - (id)initWithSTFTextView:(id)arg1;
 - (double)_focusRingThickness;
 

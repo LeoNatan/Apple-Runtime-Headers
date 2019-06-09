@@ -8,6 +8,7 @@
 
 @class NSMutableSet, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface Client : NSObject
 {
     long long _activeMessageCount;

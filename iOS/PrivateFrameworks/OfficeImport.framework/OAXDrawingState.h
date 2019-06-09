@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     OAXTableStyleCache *mTableStyleCache;
     NSMutableDictionary *mShapeIdMap;
     NSMutableDictionary *mDrawableIdToVmlShapeIdMap;
-    id mDocumentState;
     OADBlipCollection *mTgtBlipCollection;
     NSMutableDictionary *mSrcURLToTgtBlipIndexMap;
     NSMutableArray *mTgtBulletBlips;
@@ -37,12 +36,15 @@ __attribute__((visibility("hidden")))
     CXNamespace *mOAXWordProcessingMLNamespace;
     CXNamespace *mOAXDrawing2010Namespace;
     CXNamespace *mOAXChart2012Namespace;
+    CXNamespace *mOAXMathNamespace;
+    id mDocumentState;
     CDUnknownBlockType _clientChartGraphicPropertyDefaultsBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType clientChartGraphicPropertyDefaultsBlock; // @synthesize clientChartGraphicPropertyDefaultsBlock=_clientChartGraphicPropertyDefaultsBlock;
 @property(retain, nonatomic) NSMutableDictionary *sourceURLToTargetBulletBlipIndexMap; // @synthesize sourceURLToTargetBulletBlipIndexMap=mSrcURLToTgtBulletBlipIndexMap;
 @property(retain, nonatomic) NSMutableDictionary *sourceURLToTargetBlipIndexMap; // @synthesize sourceURLToTargetBlipIndexMap=mSrcURLToTgtBlipIndexMap;
+@property(retain, nonatomic) CXNamespace *OAXMathNamespace; // @synthesize OAXMathNamespace=mOAXMathNamespace;
 @property(retain, nonatomic) CXNamespace *OAXChart2012Namespace; // @synthesize OAXChart2012Namespace=mOAXChart2012Namespace;
 @property(retain, nonatomic) CXNamespace *OAXDrawing2010Namespace; // @synthesize OAXDrawing2010Namespace=mOAXDrawing2010Namespace;
 @property(retain, nonatomic) CXNamespace *OAXWordProcessingMLNamespace; // @synthesize OAXWordProcessingMLNamespace=mOAXWordProcessingMLNamespace;
@@ -53,6 +55,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CXNamespace *OAXChartDrawingNamespace; // @synthesize OAXChartDrawingNamespace=mOAXChartDrawingNamespace;
 @property(retain, nonatomic) CXNamespace *OAXChartNamespace; // @synthesize OAXChartNamespace=mOAXChartNamespace;
 @property(retain, nonatomic) CXNamespace *OAXMainNamespace; // @synthesize OAXMainNamespace=mOAXMainNamespace;
+- (void).cxx_destruct;
 - (void)setupNSForXMLFormat:(int)arg1;
 - (void)replaceGroupStack:(id)arg1;
 - (_Bool)isInsideGroup;
@@ -74,8 +77,7 @@ __attribute__((visibility("hidden")))
 - (id)colorScheme;
 - (void)setOavState:(id)arg1;
 - (id)oavState;
-- (void)setDocumentState:(id)arg1;
-- (id)documentState;
+@property __weak id documentState; // @synthesize documentState=mDocumentState;
 - (void)resetForNewDrawing;
 - (void)setVmlShapeId:(id)arg1 forDrawableId:(unsigned int)arg2;
 - (id)vmlShapeIdForDrawableId:(unsigned int)arg1;
@@ -89,7 +91,6 @@ __attribute__((visibility("hidden")))
 - (void)setPackagePart:(id)arg1;
 - (id)packagePart;
 - (id)client;
-- (void)dealloc;
 - (id)init;
 - (id)initWithClient:(id)arg1;
 

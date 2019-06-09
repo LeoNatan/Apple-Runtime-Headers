@@ -6,9 +6,11 @@
 
 #import <InputMethodKit/NSObject-Protocol.h>
 
-@class NSString;
+@class IMKDocumentContent, NSString;
 
 @protocol IMKCandidate <NSObject>
+@property(readonly, nonatomic) unsigned long long type;
+@property(readonly, copy, nonatomic) IMKDocumentContent *documentContentToReplace;
 @property(copy, nonatomic) NSString *annotation;
 @property(readonly, copy, nonatomic) NSString *text;
 @end

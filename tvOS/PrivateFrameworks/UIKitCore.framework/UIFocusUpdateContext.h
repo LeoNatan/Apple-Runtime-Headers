@@ -52,6 +52,7 @@
 @property(readonly, nonatomic, getter=_regionMapSnapshotsVisualRepresentation) UIImage *regionMapSnapshotsVisualRepresentation; // @synthesize regionMapSnapshotsVisualRepresentation=_regionMapSnapshotsVisualRepresentation;
 - (id)_focusMapSnapshotDebugInfoArray;
 - (id)_publicRegionMapSnapshots;
+- (void)_restoreRestrictedFocusMovementWithMovement:(id)arg1;
 - (void)_didUpdateFocus;
 - (void)_willUpdateFocusFromFocusedItem:(id)arg1;
 - (void)_setFocusedGuide:(id)arg1;

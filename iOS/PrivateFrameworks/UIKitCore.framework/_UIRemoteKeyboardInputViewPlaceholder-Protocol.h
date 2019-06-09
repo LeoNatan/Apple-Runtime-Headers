@@ -11,6 +11,7 @@
 @property(retain, nonatomic) UIView *fallbackView;
 @property(readonly, retain) UIView *placeheldView;
 @property(nonatomic) struct CGSize fixedSize;
+- (void)_isPlaceholderViewSelector;
 - (_Bool)refreshPlaceholder;
 @end
 

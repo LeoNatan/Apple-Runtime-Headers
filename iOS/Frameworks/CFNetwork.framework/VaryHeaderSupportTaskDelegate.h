@@ -10,7 +10,6 @@
 
 @class NSString, NSURLSessionTaskMetrics;
 
-__attribute__((visibility("hidden")))
 @interface VaryHeaderSupportTaskDelegate : NSObject <NSURLSessionTaskDelegate>
 {
     NSURLSessionTaskMetrics *_metrics;

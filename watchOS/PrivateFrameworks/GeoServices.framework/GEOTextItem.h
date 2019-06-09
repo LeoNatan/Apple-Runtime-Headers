@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)initWithTextItem:(id)arg1;
 - (id)initWithPrimaryText:(id)arg1;
+- (id)init;
 
 @end
 

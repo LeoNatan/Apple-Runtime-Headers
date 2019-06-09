@@ -9,11 +9,13 @@
 @class NSString;
 
 @interface NSDate (IC)
-- (_Bool)isLaterThanDate:(id)arg1;
-- (_Bool)isEarlierThanDate:(id)arg1;
-@property(readonly, nonatomic) NSString *briefFormattedDate;
-@property(readonly, nonatomic) NSString *shortFormattedDate;
-@property(readonly, nonatomic) _Bool isYesterday;
-@property(readonly, nonatomic) _Bool isToday;
++ (id)ic_modificationDateForNoteBeingEdited;
+- (_Bool)ic_isLaterThanDate:(id)arg1;
+- (_Bool)ic_isEarlierThanDate:(id)arg1;
+@property(readonly, nonatomic) NSString *ic_briefFormattedDate;
+@property(readonly, nonatomic) NSString *ic_shortFormattedDate;
+@property(readonly, nonatomic) NSString *ic_localDateWithSeconds;
+@property(readonly, nonatomic) _Bool ic_isYesterday;
+@property(readonly, nonatomic) _Bool ic_isToday;
 @end
 

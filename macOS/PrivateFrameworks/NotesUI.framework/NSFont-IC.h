@@ -7,31 +7,29 @@
 #import <AppKit/NSFont.h>
 
 @interface NSFont (IC)
-+ (struct NSFont *)preferredFontForStyle:(unsigned int)arg1 contentSizeCategory:(id)arg2;
-+ (double)fontSizeForSubheaderImport;
-+ (double)fontSizeForHeaderImport;
-+ (double)lineHeightForAttachmentTitleText:(long long)arg1 zoomController:(id)arg2;
-+ (double)spacingForAttachmentTitleText:(long long)arg1 zoomController:(id)arg2;
-+ (id)preferredFontForAttachmentText:(long long)arg1 zoomController:(id)arg2;
-+ (id)preferredFontAndLineHeight:(double *)arg1 forAttachmentBoldTextWithZoomController:(id)arg2;
-+ (id)preferredFontAndLineHeight:(double *)arg1 forAttachmentRegularTextWithZoomController:(id)arg2;
-+ (id)preferredFontForFixedWidthTextWithContentSizeCategory:(id)arg1;
-+ (id)preferredFontForFixedWidthText;
-+ (id)preferredFontForDateTextWithZoomFactor:(double)arg1;
-+ (id)preferredFontForDateText;
-+ (struct NSFont *)preferredFontForBodyTextWithContentSizeCategory:(id)arg1;
-+ (id)preferredFontForBodyText;
-+ (id)preferredFontForSubheadingTextWithContentSizeCategory:(id)arg1;
-+ (id)preferredFontForSubheadingText;
-+ (id)preferredFontForHeadingTextWithContentSizeCategory:(id)arg1;
-+ (id)preferredFontForHeadingText;
-+ (id)preferredFontForTitleTextWithContentSizeCategory:(id)arg1;
-+ (id)preferredFontForTitleText;
-- (id)fontConvertedToSize:(double)arg1;
++ (struct NSFont *)ic_preferredFontForStyle:(unsigned int)arg1 contentSizeCategory:(id)arg2;
++ (double)ic_fontSizeForSubheaderImport;
++ (double)ic_fontSizeForHeaderImport;
++ (id)ic_preferredFontAndLineHeight:(double *)arg1 forAttachmentBoldTextWithZoomController:(id)arg2;
++ (id)ic_preferredFontAndLineHeight:(double *)arg1 forAttachmentRegularTextWithZoomController:(id)arg2;
++ (id)ic_preferredFontForFixedWidthTextWithContentSizeCategory:(id)arg1;
++ (id)ic_preferredFontForFixedWidthText;
++ (id)ic_preferredFontForDateTextWithZoomFactor:(double)arg1;
++ (id)ic_preferredFontForDateText;
++ (struct NSFont *)ic_preferredFontForBodyTextWithContentSizeCategory:(id)arg1;
++ (id)ic_preferredFontForBodyText;
++ (id)ic_preferredFontForSubheadingTextWithContentSizeCategory:(id)arg1;
++ (id)ic_preferredFontForSubheadingText;
++ (id)ic_preferredFontForHeadingTextWithContentSizeCategory:(id)arg1;
++ (id)ic_preferredFontForHeadingText;
++ (id)ic_preferredFontForTitleTextWithContentSizeCategory:(id)arg1;
++ (id)ic_preferredFontForTitleText;
+- (id)ic_fontWithSize:(double)arg1;
+- (id)ic_fontConvertedToSize:(double)arg1;
 - (id)ic_fontScaledByFactor:(double)arg1;
-- (id)fontWithTabularNumbers;
-- (BOOL)fontHasSingleLineA;
+- (id)ic_fontWithTabularNumbers;
+- (BOOL)ic_fontHasSingleLineA;
 - (id)ic_fontWithoutSingleLineA;
-- (id)fontWithSingleLineA;
+- (id)ic_fontWithSingleLineA;
 @end
 

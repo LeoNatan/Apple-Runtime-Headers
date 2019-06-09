@@ -8,6 +8,7 @@
 
 @class SKUIGift, SKUIGiftConfiguration, SKUIGiftItemView, SKUIGiftTheme, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftThemeCollectionViewCell : UICollectionViewCell
 {
     SKUIGiftConfiguration *_giftConfiguration;

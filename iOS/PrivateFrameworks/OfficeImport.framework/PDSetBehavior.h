@@ -12,9 +12,9 @@ __attribute__((visibility("hidden")))
     id mValue;
 }
 
+- (void).cxx_destruct;
 - (void)setValue:(id)arg1;
 - (id)value;
-- (void)dealloc;
 - (id)init;
 
 @end

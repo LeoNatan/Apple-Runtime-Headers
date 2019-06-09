@@ -14,13 +14,14 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)clearAllIdentifiersOfType:(int)arg1;
+- (void)getIdentifierOfType:(int)arg1 vendorName:(id)arg2 bundleIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)clearIdentifiersForUninstallationWithVendorName:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)generateIdentifiersWithVendorName:(id)arg1 bundleIdentifier:(id)arg2;
-- (void)getIdentifierOfType:(int)arg1 vendorName:(id)arg2 bundleIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)getIdentifierOfType:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getClientProcessVendorNameBundleIdentifierAndRestrictedIDAccessWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)hasEntitlementToClearAllIdentifiersOfType:(int)arg1;
 - (_Bool)hasUninstallEntitlement;
-- (void)getClientProcessVendorNameAndBundleIdentifierWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (unsigned int)findAppBundleForExecutableURL:(id)arg1 withContext:(struct LSContext *)arg2;
 
 @end
 

@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
     EDResources *mResources;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setEntryIndex:(unsigned int)arg1;
 - (unsigned int)entryIndex;
 - (void)setFont:(id)arg1;
 - (id)font;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setFontIndex:(unsigned long long)arg1;
 - (unsigned long long)fontIndex;

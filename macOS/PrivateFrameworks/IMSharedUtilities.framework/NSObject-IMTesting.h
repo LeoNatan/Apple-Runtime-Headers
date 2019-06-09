@@ -7,6 +7,17 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (IMTesting)
++ (BOOL)isSingleton;
++ (BOOL)replaceSingletonWithSubclass:(id)arg1;
++ (BOOL)isSingletonOverridden;
++ (id)overriddenSingleton;
++ (void)replaceSingletonWithObject:(id)arg1;
++ (void)removeSingletonOverride;
++ (void)overrideSingletonWithObject:(id)arg1;
++ (id)singletonOverride;
++ (id)_createSingleton__im;
 - (void)__im_performAsynchronousTest:(CDUnknownBlockType)arg1 name:(id)arg2 timeout:(double)arg3 finalizer:(CDUnknownBlockType)arg4;
+- (BOOL)__isSingletonProxy__im;
+- (BOOL)isArchivable_im;
 @end
 

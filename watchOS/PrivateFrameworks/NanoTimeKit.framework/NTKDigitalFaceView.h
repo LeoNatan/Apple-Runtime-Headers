@@ -6,12 +6,29 @@
 
 #import <NanoTimeKit/NTKFaceView.h>
 
+@class NTKDigitalTimeLabel;
+
 @interface NTKDigitalFaceView : NTKFaceView
 {
     int _viewMode;
 }
 
 @property(nonatomic) int viewMode; // @synthesize viewMode=_viewMode;
+- (void)_createTimeViewIfNecessary;
+- (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
+- (void)_cleanupAfterZoom;
+- (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
+- (_Bool)_timeLabelUsesLegibility;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
+- (unsigned int)_timeLabelOptions;
+- (void)invalidateDigitalTimeLabelStyle;
+- (void)setViewMode:(int)arg1 updateTimeViewStyle:(_Bool)arg2;
+- (void)layoutSubviews;
+- (void)_unloadSnapshotContentViews;
+- (void)_loadSnapshotContentViews;
+
+// Remaining properties
+@property(readonly, nonatomic) NTKDigitalTimeLabel *timeView; // @dynamic timeView;
 
 @end
 

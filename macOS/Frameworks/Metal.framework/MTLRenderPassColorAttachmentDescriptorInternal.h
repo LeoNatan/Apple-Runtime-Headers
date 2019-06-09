@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)storeAction;
 - (void)setLoadAction:(unsigned long long)arg1;
 - (unsigned long long)loadAction;
+- (BOOL)yInvert;
+- (void)setYInvert:(BOOL)arg1;
 - (unsigned long long)resolveDepthPlane;
 - (void)setResolveDepthPlane:(unsigned long long)arg1;
 - (unsigned long long)resolveSlice;

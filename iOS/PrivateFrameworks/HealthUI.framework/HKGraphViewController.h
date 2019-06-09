@@ -24,6 +24,7 @@
 @property(nonatomic) __weak id <HKGraphViewDelegate> graphViewDelegateProxy; // @synthesize graphViewDelegateProxy=_graphViewDelegateProxy;
 @property(readonly, nonatomic) HKGraphView *graphView; // @synthesize graphView=_graphView;
 - (void).cxx_destruct;
+- (void)graphView:(id)arg1 startupTime:(long long)arg2;
 - (void)graphViewDidTapYAxis:(id)arg1;
 - (void)graphView:(id)arg1 didUpdateLegendViewsWithTopLegendFrame:(struct CGRect)arg2;
 - (id)seriesSelectionLineColorForGraphView:(id)arg1;

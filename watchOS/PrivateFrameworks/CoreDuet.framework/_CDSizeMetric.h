@@ -6,11 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSDictionary, NSString, _CDSizeMetricFamily;
+@class NSDate, NSString, _CDSizeMetricFamily;
 
 @interface _CDSizeMetric : NSObject
 {
-    NSDictionary *_dictionary;
+    struct os_unfair_lock_s _lock;
+    unsigned int _scale;
+    unsigned int _count;
+    unsigned int _firstSize;
+    unsigned int _lastSize;
+    unsigned int _minimumSize;
+    unsigned int _maximumSize;
+    unsigned int _totalSizes;
+    NSDate *_firstUpdate;
+    NSDate *_lastUpdate;
     NSString *_name;
     NSString *_string;
     _CDSizeMetricFamily *_family;
@@ -20,20 +29,15 @@
 @property(readonly) NSString *string; // @synthesize string=_string;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)sizeHistogram;
 @property(readonly) NSDate *lastUpdate;
 @property(readonly) NSDate *firstUpdate;
-- (id)_dateFromCounter:(unsigned long long)arg1;
 @property(readonly) double averageSize;
-@property(readonly) unsigned long long maximumSize;
-@property(readonly) unsigned long long minimumSize;
-@property(readonly) unsigned long long lastSize;
-@property(readonly) unsigned long long firstSize;
-@property(readonly) unsigned long long count;
-- (id)_stringWithIndex:(unsigned int)arg1;
-- (id)_histogramWithIndex:(unsigned int)arg1;
-- (unsigned long long)_uint64CounterWithIndex:(unsigned int)arg1;
-- (id)initWithName:(id)arg1 string:(id)arg2 family:(id)arg3 dictionary:(id)arg4;
+@property(readonly) unsigned int maximumSize;
+@property(readonly) unsigned int minimumSize;
+@property(readonly) unsigned int lastSize;
+@property(readonly) unsigned int firstSize;
+@property(readonly) unsigned int count;
+- (id)initWithName:(id)arg1 string:(id)arg2 scale:(unsigned int)arg3 family:(id)arg4;
 
 @end
 

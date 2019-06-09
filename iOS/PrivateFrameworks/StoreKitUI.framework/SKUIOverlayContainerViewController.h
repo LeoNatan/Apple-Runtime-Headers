@@ -11,6 +11,7 @@
 @class NSArray, NSMutableArray, NSString, UIColor, UIControl, UITapGestureRecognizer;
 @protocol SKUIOverlayContainerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIOverlayContainerViewController : UIViewController <UIGestureRecognizerDelegate>
 {
     UIControl *_backstopView;

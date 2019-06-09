@@ -22,10 +22,8 @@
 + (id)keyVector;
 + (id)freezeIfClassIsImmutable:(id)arg1;
 + (_Bool)supportsSecureCoding;
-+ (unsigned long long)indexOfKey:(id)arg1;
-+ (struct __CFDictionary *)propertyKeysToIndicesByValue;
-+ (struct __CFDictionary *)propertyKeysToIndicesByPointer;
 @property(readonly, copy) NSString *description;
+- (id)_cn_ignorableKeys;
 - (id)_cn_optionalKeys;
 - (id)_cn_requiredKeys;
 - (void)_cn_executeGetterForRepresentedKeys:(CDUnknownBlockType)arg1;
@@ -45,6 +43,7 @@
 - (id)init;
 - (void)_checkStorageSize;
 - (id)initWithKeys:(id)arg1;
+- (id)keyVectorByRemovingKeysFromKeyVector:(id)arg1;
 - (id)keyVectorByAddingKeysFromKeyVector:(id)arg1;
 - (id)keyVectorByAddingKeys:(id)arg1;
 - (id)keyVectorByAddingKey:(id)arg1;

@@ -8,33 +8,48 @@
 
 @class _AVDetachedSwipeGestureRecognizer, _AVPermissiveSwipeGestureDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVPermissiveSwipeGestureRecognizer : UIGestureRecognizer
 {
     unsigned int _numberOfTouchMovedEventsReceived;
+    _Bool _transportBarVisible;
+    _Bool _transportBarVisibleAtTouchesBegan;
     _Bool _swipeGestureActive;
     _Bool _swipeGestureRecognizedOrFailed;
+    double _minimumRestTimeBeforeSwipe;
+    double _timeSinceTouchesBegan;
     _AVDetachedSwipeGestureRecognizer *_swipeGestureRecognizer;
     _AVPermissiveSwipeGestureDelegate *_permissiveDelegate;
+    double _timeTouchesBegan;
     struct CGPoint _currentTouchLocation;
+    struct CGPoint _currentDigitizerLocation;
 }
 
+@property(nonatomic) double timeTouchesBegan; // @synthesize timeTouchesBegan=_timeTouchesBegan;
 @property(retain, nonatomic) _AVPermissiveSwipeGestureDelegate *permissiveDelegate; // @synthesize permissiveDelegate=_permissiveDelegate;
+@property(nonatomic) struct CGPoint currentDigitizerLocation; // @synthesize currentDigitizerLocation=_currentDigitizerLocation;
 @property(nonatomic) struct CGPoint currentTouchLocation; // @synthesize currentTouchLocation=_currentTouchLocation;
 @property(nonatomic, getter=isSwipeGestureRecognizedOrFailed) _Bool swipeGestureRecognizedOrFailed; // @synthesize swipeGestureRecognizedOrFailed=_swipeGestureRecognizedOrFailed;
 @property(nonatomic, getter=isSwipeGestureActive) _Bool swipeGestureActive; // @synthesize swipeGestureActive=_swipeGestureActive;
 @property(readonly, nonatomic) _AVDetachedSwipeGestureRecognizer *swipeGestureRecognizer; // @synthesize swipeGestureRecognizer=_swipeGestureRecognizer;
+@property(readonly, nonatomic) double timeSinceTouchesBegan; // @synthesize timeSinceTouchesBegan=_timeSinceTouchesBegan;
+@property(readonly, nonatomic) _Bool transportBarVisibleAtTouchesBegan; // @synthesize transportBarVisibleAtTouchesBegan=_transportBarVisibleAtTouchesBegan;
+@property(nonatomic, getter=isTransportBarVisible) _Bool transportBarVisible; // @synthesize transportBarVisible=_transportBarVisible;
+@property(nonatomic) double minimumRestTimeBeforeSwipe; // @synthesize minimumRestTimeBeforeSwipe=_minimumRestTimeBeforeSwipe;
 - (void).cxx_destruct;
 - (void)_scheduleTouchRestTimeout;
 - (void)_fireTouchRestTimeout;
 - (void)_cancelTouchRestTimeout;
 @property(nonatomic) unsigned long long direction;
 - (void)swipeGestureWasRecognized:(id)arg1;
+- (void)setState:(long long)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)reset;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+@property(readonly, nonatomic) long long avTouchPosition;
 
 @end
 

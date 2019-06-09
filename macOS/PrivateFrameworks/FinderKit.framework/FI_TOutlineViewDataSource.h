@@ -13,16 +13,19 @@
 __attribute__((visibility("hidden")))
 @interface FI_TOutlineViewDataSource : NSTreeController <NSOutlineViewDataSource>
 {
-    FI_TOutlineView *_outlineView;
+    struct TNSWeakPtr<FI_TOutlineView, void> _weakOutlineView;
+    struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _keyValueBinders;
 }
 
-@property(nonatomic) FI_TOutlineView *outlineView; // @synthesize outlineView=_outlineView;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (BOOL)outlineView:(id)arg1 acceptDrop:(id)arg2 item:(id)arg3 childIndex:(long long)arg4;
 - (unsigned long long)outlineView:(id)arg1 validateDrop:(id)arg2 proposedItem:(id)arg3 proposedChildIndex:(long long)arg4;
 - (id)flattenedContent;
 - (void)clear;
 - (void)unbindFromTableColumn:(id)arg1;
 - (void)bindToTableColumn:(id)arg1;
+@property(nonatomic) __weak FI_TOutlineView *outlineView; // @dynamic outlineView;
 - (void)dealloc;
 - (void)awakeCommon;
 - (void)initCommon;

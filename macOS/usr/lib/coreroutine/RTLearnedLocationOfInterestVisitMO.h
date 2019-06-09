@@ -12,6 +12,7 @@
 {
 }
 
++ (id)managedObjectWithVisit:(id)arg1 managedObject:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)managedObjectWithVisit:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchRequest;
 

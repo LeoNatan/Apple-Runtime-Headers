@@ -16,11 +16,11 @@
 + (id)schemaHashRoot;
 
 // Remaining properties
-@property(retain, nonatomic) NSNumber *configurationVersion; // @dynamic configurationVersion;
-@property(retain, nonatomic) NSString *name; // @dynamic name;
-@property(retain, nonatomic) NSNumber *properties; // @dynamic properties;
-@property(retain, nonatomic) NSNumber *type; // @dynamic type;
-@property(retain, nonatomic) NSData *value; // @dynamic value;
+@property(copy, nonatomic) NSNumber *configurationVersion; // @dynamic configurationVersion;
+@property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) NSNumber *properties; // @dynamic properties;
+@property(copy, nonatomic) NSNumber *type; // @dynamic type;
+@property(copy, nonatomic) NSData *value; // @dynamic value;
 
 @end
 

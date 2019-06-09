@@ -8,7 +8,7 @@
 
 #import <FMFUI/FMFSessionDelegateInternal-Protocol.h>
 
-@class FMFHandle, NSArray, NSMutableDictionary, NSObject, NSString, UIAlertController;
+@class FMFHandle, NSArray, NSMutableDictionary, NSObject, NSSet, NSString, UIAlertController;
 @protocol OS_dispatch_queue;
 
 @interface FMFLocationSharingViewController : PSListController <FMFSessionDelegateInternal>
@@ -17,6 +17,9 @@
     _Bool _useFamilyCirclePhotos;
     _Bool _useFamilyCirclePhotosLoaded;
     _Bool _areSpecifiersLoaded;
+    _Bool _areMeDeviceInfoLoaded;
+    _Bool _isFindMyDeviceOn;
+    _Bool _meDeviceChangePending;
     NSArray *_followersSpecifiers;
     NSArray *_familySpecifiers;
     NSArray *_deviceSpecifiers;
@@ -28,9 +31,14 @@
     NSArray *_familyMembers;
     UIAlertController *_genericErrorAlert;
     NSObject<OS_dispatch_queue> *_specifiersQueue;
+    NSSet *_meDevices;
 }
 
+@property(retain, nonatomic) NSSet *meDevices; // @synthesize meDevices=_meDevices;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *specifiersQueue; // @synthesize specifiersQueue=_specifiersQueue;
+@property(nonatomic) _Bool meDeviceChangePending; // @synthesize meDeviceChangePending=_meDeviceChangePending;
+@property(nonatomic) _Bool isFindMyDeviceOn; // @synthesize isFindMyDeviceOn=_isFindMyDeviceOn;
+@property(nonatomic) _Bool areMeDeviceInfoLoaded; // @synthesize areMeDeviceInfoLoaded=_areMeDeviceInfoLoaded;
 @property(nonatomic) _Bool areSpecifiersLoaded; // @synthesize areSpecifiersLoaded=_areSpecifiersLoaded;
 @property(nonatomic) _Bool useFamilyCirclePhotosLoaded; // @synthesize useFamilyCirclePhotosLoaded=_useFamilyCirclePhotosLoaded;
 @property(nonatomic) _Bool useFamilyCirclePhotos; // @synthesize useFamilyCirclePhotos=_useFamilyCirclePhotos;
@@ -46,6 +54,8 @@
 @property(retain, nonatomic) NSArray *familySpecifiers; // @synthesize familySpecifiers=_familySpecifiers;
 @property(retain, nonatomic) NSArray *followersSpecifiers; // @synthesize followersSpecifiers=_followersSpecifiers;
 - (void).cxx_destruct;
+- (void)updateFindMyDeviceStatus;
+- (void)saveActiveDeviceSelection;
 - (void)networkReachabilityUpdated:(_Bool)arg1;
 - (void)didReceiveServerError:(id)arg1;
 - (void)didUpdateActiveDeviceList:(id)arg1;
@@ -54,6 +64,7 @@
 - (void)didStartSharingMyLocationWithHandle:(id)arg1;
 - (void)didUpdateHidingStatus:(_Bool)arg1;
 - (void)reloadSpecifiersOnMainQueue;
+- (void)_findMyDeviceSpecifierWasTapped:(id)arg1;
 - (void)_meDeviceSpecifierWasTapped:(id)arg1;
 - (id)allHandlesMatchingABCardForSelectedHandle:(id)arg1;
 - (void)shareMyLocation:(id)arg1;
@@ -80,6 +91,8 @@
 - (id)_specifierForHandle:(id)arg1;
 - (_Bool)noMeDeviceSelected:(id)arg1;
 - (id)sortedFollowersWithCombinedRecords:(id)arg1;
+- (id)_findMyDeviceStatus:(id)arg1;
+- (id)_findMyDeviceSpecifiers;
 - (id)_defaultSpecifiers;
 - (void)_loadSpecifiers;
 - (void)_loadFamilyMemberPhotos;

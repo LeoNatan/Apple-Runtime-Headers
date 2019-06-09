@@ -8,20 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOABClientConfig, GEOABExperimentAssignment, GEOAbAssignInfo, GEOPDDatasetABStatus;
+@class GEOABClientConfig, GEOABExperimentAssignment, GEOAbAssignInfo, GEOPDDatasetABStatus, PBDataReader;
 
 @interface GEOLogMsgStateExperiments : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOAbAssignInfo *_abAssignInfo;
     GEOABClientConfig *_clientAbExperimentAssignment;
     GEOPDDatasetABStatus *_datasetAbStatus;
     GEOABExperimentAssignment *_tilesAbExperimentAssignment;
+    struct {
+        unsigned int read_abAssignInfo:1;
+        unsigned int read_clientAbExperimentAssignment:1;
+        unsigned int read_datasetAbStatus:1;
+        unsigned int read_tilesAbExperimentAssignment:1;
+        unsigned int wrote_abAssignInfo:1;
+        unsigned int wrote_clientAbExperimentAssignment:1;
+        unsigned int wrote_datasetAbStatus:1;
+        unsigned int wrote_tilesAbExperimentAssignment:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOAbAssignInfo *abAssignInfo; // @synthesize abAssignInfo=_abAssignInfo;
-@property(retain, nonatomic) GEOPDDatasetABStatus *datasetAbStatus; // @synthesize datasetAbStatus=_datasetAbStatus;
-@property(retain, nonatomic) GEOABClientConfig *clientAbExperimentAssignment; // @synthesize clientAbExperimentAssignment=_clientAbExperimentAssignment;
-@property(retain, nonatomic) GEOABExperimentAssignment *tilesAbExperimentAssignment; // @synthesize tilesAbExperimentAssignment=_tilesAbExperimentAssignment;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,12 +39,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOAbAssignInfo *abAssignInfo;
 @property(readonly, nonatomic) _Bool hasAbAssignInfo;
+- (void)_readAbAssignInfo;
+@property(retain, nonatomic) GEOPDDatasetABStatus *datasetAbStatus;
 @property(readonly, nonatomic) _Bool hasDatasetAbStatus;
+- (void)_readDatasetAbStatus;
+@property(retain, nonatomic) GEOABClientConfig *clientAbExperimentAssignment;
 @property(readonly, nonatomic) _Bool hasClientAbExperimentAssignment;
+- (void)_readClientAbExperimentAssignment;
+@property(retain, nonatomic) GEOABExperimentAssignment *tilesAbExperimentAssignment;
 @property(readonly, nonatomic) _Bool hasTilesAbExperimentAssignment;
+- (void)_readTilesAbExperimentAssignment;
 
 @end
 

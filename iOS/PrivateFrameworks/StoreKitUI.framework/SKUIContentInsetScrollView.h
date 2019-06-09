@@ -6,6 +6,7 @@
 
 #import <UIKit/UIScrollView.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIContentInsetScrollView : UIScrollView
 {
 }

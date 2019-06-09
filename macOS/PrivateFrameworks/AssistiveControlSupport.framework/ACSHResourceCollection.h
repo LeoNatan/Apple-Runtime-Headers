@@ -6,40 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableDictionary;
+@class NSArray, NSLock, NSMutableDictionary;
 
 @interface ACSHResourceCollection : NSObject
 {
-    NSMutableDictionary *_assetDictionaryByAssetIdentifier;
-    NSMutableDictionary *_directoryFileWrapperByAssetIdentifier;
-    NSMutableDictionary *_unsavedAssets;
-    NSMutableDictionary *_images;
-    NSLock *_lock;
+    NSMutableDictionary *__assetDictionaryByAssetIdentifier;
+    NSMutableDictionary *__directoryFileWrapperByAssetIdentifier;
+    NSMutableDictionary *__unsavedAssets;
+    NSMutableDictionary *__images;
+    NSLock *__lock;
 }
 
 + (BOOL)isUserResource:(id)arg1;
+@property(retain, nonatomic) NSLock *_lock; // @synthesize _lock=__lock;
+@property(retain, nonatomic) NSMutableDictionary *_images; // @synthesize _images=__images;
+@property(retain, nonatomic) NSMutableDictionary *_unsavedAssets; // @synthesize _unsavedAssets=__unsavedAssets;
+@property(retain, nonatomic) NSMutableDictionary *_directoryFileWrapperByAssetIdentifier; // @synthesize _directoryFileWrapperByAssetIdentifier=__directoryFileWrapperByAssetIdentifier;
+@property(retain, nonatomic) NSMutableDictionary *_assetDictionaryByAssetIdentifier; // @synthesize _assetDictionaryByAssetIdentifier=__assetDictionaryByAssetIdentifier;
 - (void).cxx_destruct;
 - (id)description;
 - (id)dictionaryForSaving;
 - (id)assetsMatchingType:(unsigned long long)arg1;
 - (unsigned long long)propertiesForAssetWithIdentifier:(id)arg1;
 - (unsigned long long)typeForAssetWithIdentifier:(id)arg1;
-- (id)nameForAssetWithIdentifier:(id)arg1;
+- (id)nameForAssetWithIdentifier:(id)arg1 isSystemImage:(char *)arg2;
 - (id)infoForAssetWithIdentifier:(id)arg1;
 - (id)fileWrapperForAssetWithIdentifier:(id)arg1;
 - (id)soundWithIdentifier:(id)arg1;
 - (id)imageWithIdentifier:(id)arg1;
-- (id)assetWithIdentifier:(id)arg1;
-- (id)addAssetImage:(id)arg1 name:(id)arg2 mask:(BOOL)arg3;
+- (id)dataForAssetWithIdentifier:(id)arg1;
+- (id)addAssetImage:(id)arg1 name:(id)arg2 systemImageName:(id)arg3 mask:(BOOL)arg4;
 - (id)_createDataFromImage:(id)arg1;
-- (id)addAsset:(id)arg1 withIdentifier:(id)arg2 type:(unsigned long long)arg3 name:(id)arg4;
+- (id)addAsset:(id)arg1 withIdentifier:(id)arg2 type:(unsigned long long)arg3 name:(id)arg4 systemImageName:(id)arg5;
 - (void)unregisterAssets:(id)arg1;
 - (BOOL)registerAssets:(id)arg1 withDirectoryFileWrapper:(id)arg2;
 - (void)registerAssetsFromResourceCollection:(id)arg1;
 - (void)copyAssetsFromResourceCollection:(id)arg1;
-- (id)registeredAssetIdentifiers;
-- (id)_directoryFileWrapperByAssetIdentifier;
-- (id)_assetDictionaryByAssetIdentifier;
+@property(readonly, copy, nonatomic) NSArray *registeredAssetIdentifiers;
 - (id)init;
 
 @end

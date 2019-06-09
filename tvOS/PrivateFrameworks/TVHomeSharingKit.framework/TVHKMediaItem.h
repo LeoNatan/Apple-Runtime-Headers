@@ -6,7 +6,7 @@
 
 #import <TVHomeSharingKit/TVHKMediaEntity.h>
 
-@class NSDate, NSNumber, NSString, NSValue, TVHKGaplessConfiguration, TVHKMediaEntityIdentifier, TVHKVideoCredits, TVPContentRating;
+@class NSDate, NSNumber, NSString, NSValue, TVHKGaplessConfiguration, TVHKMediaEntityIdentifier, TVHKVideoCredits, _TVContentRating;
 
 @interface TVHKMediaItem : TVHKMediaEntity
 {
@@ -41,7 +41,7 @@
 @property(readonly, copy, nonatomic) NSNumber *storeID;
 @property(readonly, copy, nonatomic) NSValue *dimensions;
 @property(readonly, copy, nonatomic) NSString *format;
-@property(readonly, nonatomic) TVPContentRating *contentRating;
+@property(readonly, nonatomic) _TVContentRating *contentRating;
 @property(readonly, copy, nonatomic) NSNumber *videoQuality;
 @property(readonly, copy, nonatomic) NSNumber *discNumber;
 @property(readonly, copy, nonatomic) NSNumber *trackNumber;

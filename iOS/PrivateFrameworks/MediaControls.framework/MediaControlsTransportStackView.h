@@ -6,14 +6,16 @@
 
 #import <UIKit/UIView.h>
 
-@class MPCPlayerResponse, MediaControlsTransportButton, NSArray, NSBundle, UIColor;
+@class MPCPlayerResponse, MTVisualStylingProvider, MediaControlsTransportButton, NSArray, NSBundle, UIColor;
 @protocol MediaControlsActionsDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsTransportStackView : UIView
 {
     _Bool _empty;
     long long _style;
     MPCPlayerResponse *_response;
+    MTVisualStylingProvider *_visualStylingProvider;
     id <MediaControlsActionsDelegate> _actionsDelegate;
     MediaControlsTransportButton *_tvRemoteButton;
     MediaControlsTransportButton *_leftButton;
@@ -36,16 +38,16 @@
 @property(retain, nonatomic) MediaControlsTransportButton *leftButton; // @synthesize leftButton=_leftButton;
 @property(retain, nonatomic) MediaControlsTransportButton *tvRemoteButton; // @synthesize tvRemoteButton=_tvRemoteButton;
 @property(nonatomic) __weak id <MediaControlsActionsDelegate> actionsDelegate; // @synthesize actionsDelegate=_actionsDelegate;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(retain, nonatomic) MPCPlayerResponse *response; // @synthesize response=_response;
 @property(nonatomic) long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateButtonLayout;
 - (void)_resetTransportButton:(id)arg1;
 - (id)_createTransportButtonWithImageNamed:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)_updateButtonBlendMode:(id)arg1;
+- (void)_updateButtonBlendMode:(id)arg1 visualStylingProvider:(id)arg2;
 - (void)_updateButtonImage:(id)arg1 button:(id)arg2;
 - (void)updateOnRouteChange;
 - (void)buttonHoldReleased:(id)arg1;

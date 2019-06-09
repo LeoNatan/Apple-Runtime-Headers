@@ -11,11 +11,9 @@
 @interface _DUIDirtyItem : NSObject <NSSecureCoding>
 {
     unsigned long long _index;
-    unsigned long long _reasons;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) unsigned long long reasons; // @synthesize reasons=_reasons;
 @property(nonatomic) unsigned long long index; // @synthesize index=_index;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

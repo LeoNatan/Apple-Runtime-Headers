@@ -8,6 +8,7 @@
 
 @class SKUIItemResourceRequest, SSVPlatformRequestOperation;
 
+__attribute__((visibility("hidden")))
 @interface SKUILoadItemResourceOperation : SKUILoadResourceOperation
 {
     SSVPlatformRequestOperation *_underlyingOperation;

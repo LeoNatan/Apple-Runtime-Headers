@@ -11,10 +11,10 @@
 }
 
 + (BOOL)isCloudKeychainSyncEnabled;
-+ (id)displayNameForKeychainRef:(struct OpaqueSecKeychainRef *)arg1;
++ (id)displayNameForKeychainRef:(struct __SecKeychain *)arg1;
 + (id)displayNameForKeychainAtPath:(id)arg1;
-+ (id)displayNameForKeychainAtPath:(id)arg1 keychainRef:(struct OpaqueSecKeychainRef *)arg2;
-+ (id)remoteStoreNameForKeychainRef:(struct OpaqueSecKeychainRef *)arg1;
++ (id)displayNameForKeychainAtPath:(id)arg1 keychainRef:(struct __SecKeychain *)arg2;
++ (id)remoteStoreNameForKeychainRef:(struct __SecKeychain *)arg1;
 
 @end
 

@@ -8,16 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOStyleAttributes, NSString;
+@class GEOStyleAttributes, NSString, PBDataReader;
 
 @interface GEOWalletCategoryMapping : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     GEOStyleAttributes *_stylesAttributes;
     NSString *_walletCategory;
+    struct {
+        unsigned int read_stylesAttributes:1;
+        unsigned int read_walletCategory:1;
+        unsigned int wrote_stylesAttributes:1;
+        unsigned int wrote_walletCategory:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOStyleAttributes *stylesAttributes; // @synthesize stylesAttributes=_stylesAttributes;
-@property(retain, nonatomic) NSString *walletCategory; // @synthesize walletCategory=_walletCategory;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -26,10 +33,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOStyleAttributes *stylesAttributes;
 @property(readonly, nonatomic) _Bool hasStylesAttributes;
+- (void)_readStylesAttributes;
+@property(retain, nonatomic) NSString *walletCategory;
 @property(readonly, nonatomic) _Bool hasWalletCategory;
+- (void)_readWalletCategory;
 
 @end
 

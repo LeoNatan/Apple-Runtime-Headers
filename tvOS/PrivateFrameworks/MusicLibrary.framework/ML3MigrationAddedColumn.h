@@ -8,7 +8,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface ML3MigrationAddedColumn : NSObject
 {
     NSString *_columnName;

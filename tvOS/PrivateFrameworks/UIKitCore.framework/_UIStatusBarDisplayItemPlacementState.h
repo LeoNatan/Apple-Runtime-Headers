@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled;
+@property(readonly, nonatomic) _Bool canBeEnabled;
 @property(readonly, nonatomic, getter=areRelationsFulfilled) _Bool relationsFulfilled;
 @property(readonly, nonatomic) long long priority;
 

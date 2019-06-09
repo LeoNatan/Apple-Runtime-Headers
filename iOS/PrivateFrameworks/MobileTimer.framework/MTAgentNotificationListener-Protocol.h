@@ -6,13 +6,14 @@
 
 #import <MobileTimer/NSObject-Protocol.h>
 
-@class MTAgentNotification, NSArray;
+@class NSArray, NSString;
 
 @protocol MTAgentNotificationListener <NSObject>
-- (void)handleNotification:(MTAgentNotification *)arg1;
-- (_Bool)handlesNotification:(MTAgentNotification *)arg1;
+- (void)handleNotification:(NSString *)arg1 ofType:(long long)arg2 completion:(void (^)(void))arg3;
+- (_Bool)handlesNotification:(NSString *)arg1 ofType:(long long)arg2;
 
 @optional
-- (NSArray *)handledLiveDarwinNotifications;
+- (NSArray *)liveDarwinNotifications;
+- (double)assertionTimeOutForNotification:(NSString *)arg1 ofType:(long long)arg2;
 @end
 

@@ -6,20 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@interface PUICEllipticScrollingParameters : NSObject
+#import <PepperUICore/NSCopying-Protocol.h>
+
+@interface PUICEllipticScrollingParameters : NSObject <NSCopying>
 {
+    _Bool _calculateTransform;
     float _alpha;
     float _scale;
+    float _delta;
     struct CATransform3D _transform;
 }
 
 + (id)identityParameters;
-+ (id)parametersWithAlpha:(float)arg1 andTransform:(struct CATransform3D)arg2 andScale:(float)arg3;
++ (id)parametersWithAlpha:(float)arg1 scale:(float)arg2 delta:(float)arg3;
 + (id)parametersWithAlpha:(float)arg1 andTransform:(struct CATransform3D)arg2;
+@property(nonatomic) _Bool calculateTransform; // @synthesize calculateTransform=_calculateTransform;
+@property(nonatomic) float delta; // @synthesize delta=_delta;
 @property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CATransform3D transform; // @synthesize transform=_transform;
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
+- (id)init;
 
 @end
 

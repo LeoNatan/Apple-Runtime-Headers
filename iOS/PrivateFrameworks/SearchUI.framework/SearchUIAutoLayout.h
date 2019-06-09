@@ -31,6 +31,9 @@
 + (void)spanContainerHeightForView:(id)arg1;
 + (void)spanContainerWidthForView:(id)arg1;
 + (void)fillContainerWithView:(id)arg1;
++ (void)constrainViewHeightContainer:(id)arg1;
++ (void)constrainViewWidthToContainer:(id)arg1;
++ (void)constrainViewToContainer:(id)arg1;
 + (void)alignViews:(id)arg1 withAttribute:(long long)arg2;
 + (void)enableAutoLayoutForItems:(id)arg1;
 + (id)alignView:(id)arg1 attribute:(long long)arg2 relatedBy:(long long)arg3 toView:(id)arg4 attribute:(long long)arg5 constant:(double)arg6 priority:(float)arg7;

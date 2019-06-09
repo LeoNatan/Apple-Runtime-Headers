@@ -8,6 +8,6 @@
 
 @protocol DDRemoteActionViewServiceProtocol <NSObject>
 - (void)enableUserInteraction:(_Bool)arg1;
-- (void)prepareViewControllerWithCompletionHandler:(void (^)(_Bool))arg1;
+- (void)prepareViewControllerWithCompletionHandler:(void (^)(struct CGSize, _Bool))arg1;
 @end
 

@@ -6,10 +6,20 @@
 
 #import <AppKit/NSView.h>
 
+@class NSColor;
+
 @interface NSView (OFNSViewExtensions)
 - (id)layerFromSnapshot;
 - (id)layerFromSnapshot:(BOOL)arg1;
 - (struct CGImage *)snapshot;
 - (struct CGImage *)snapshot:(BOOL)arg1;
+- (void)setNeedsDisplay;
+- (void)setNeedsLayout;
+@property(nonatomic) long long contentMode;
+@property(nonatomic) double alpha;
+@property(nonatomic) struct CGPoint center;
+
+// Remaining properties
+@property(copy, nonatomic) NSColor *backgroundColor; // @dynamic backgroundColor;
 @end
 

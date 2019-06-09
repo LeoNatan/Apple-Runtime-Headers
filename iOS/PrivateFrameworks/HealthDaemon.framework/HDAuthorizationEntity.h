@@ -25,8 +25,9 @@
 + (id)_propertiesForCodableAuthorization;
 + (_Bool)_resetAuthorizationStatusesWithPredicate:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (_Bool)_setAuthorizationStatuses:(id)arg1 authorizationRequests:(id)arg2 authorizationModes:(id)arg3 sourceEntity:(id)arg4 dateModified:(id)arg5 syncProvenance:(long long)arg6 objectAnchor:(long long)arg7 options:(unsigned long long)arg8 profile:(id)arg9 database:(id)arg10 error:(id *)arg11;
-+ (_Bool)_insertAuthorizationWithSourceIdentifier:(long long)arg1 dataTypeCode:(long long)arg2 authorizationStatus:(long long)arg3 authorizationRequest:(long long)arg4 authorizationMode:(long long)arg5 modificationDate:(id)arg6 currentDate:(id)arg7 syncProvenance:(long long)arg8 objectAnchor:(long long)arg9 modificationEpoch:(id)arg10 options:(unsigned long long)arg11 database:(id)arg12 error:(id *)arg13;
-+ (_Bool)_insertCodableAuthorizations:(id)arg1 sourceEntity:(id)arg2 syncProvenance:(long long)arg3 objectAnchor:(long long)arg4 currentDate:(id)arg5 options:(unsigned long long)arg6 database:(id)arg7 error:(id *)arg8;
++ (id)_nextModificationEpochForSourceIdentifier:(long long)arg1 type:(long long)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
++ (_Bool)_insertAuthorizationWithSourceIdentifier:(long long)arg1 dataTypeCode:(long long)arg2 authorizationStatus:(long long)arg3 authorizationRequest:(long long)arg4 authorizationMode:(long long)arg5 modificationDate:(id)arg6 currentDate:(id)arg7 syncProvenance:(long long)arg8 objectAnchor:(long long)arg9 modificationEpoch:(id)arg10 options:(unsigned long long)arg11 profile:(id)arg12 database:(id)arg13 error:(id *)arg14;
++ (_Bool)_insertCodableAuthorizations:(id)arg1 sourceEntity:(id)arg2 syncProvenance:(long long)arg3 objectAnchor:(long long)arg4 currentDate:(id)arg5 options:(unsigned long long)arg6 profile:(id)arg7 database:(id)arg8 error:(id *)arg9;
 + (id)_sourceEntityForCodableSourceAuthorization:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5;
 + (_Bool)_insertCodableSourceAuthorizations:(id)arg1 overwriteExisting:(_Bool)arg2 syncStore:(id)arg3 profile:(id)arg4 error:(id *)arg5;
 + (_Bool)resetAllAuthorizationStatusesWithProfile:(id)arg1 error:(id *)arg2;

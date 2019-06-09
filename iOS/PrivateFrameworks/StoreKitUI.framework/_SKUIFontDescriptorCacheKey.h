@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIFontDescriptorCacheKey : NSObject
 {
     const struct __CFString *_textStyle;

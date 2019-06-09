@@ -8,7 +8,7 @@
 
 #import <ControlCenterUIKit/CCUIContentModuleContentViewController-Protocol.h>
 
-@class CCUIButtonModuleView, CCUICAPackageDescription, NSString, UIColor, UIImage;
+@class CCUIButtonModuleView, CCUICAPackageDescription, NSString, UIColor, UIImage, UIViewPropertyAnimator;
 
 @interface CCUIButtonModuleViewController : UIViewController <CCUIContentModuleContentViewController>
 {
@@ -16,11 +16,12 @@
     _Bool _expanded;
 }
 
-@property(readonly, nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
+@property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
 - (void).cxx_destruct;
 - (void)didTransitionToExpandedContentMode:(_Bool)arg1;
 - (void)willTransitionToExpandedContentMode:(_Bool)arg1;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)_buttonTapped:(id)arg1 forEvent:(id)arg2;
 - (void)buttonTapped:(id)arg1 forEvent:(id)arg2;
@@ -34,10 +35,12 @@
 @property(retain, nonatomic) UIImage *glyphImage;
 
 // Remaining properties
+@property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) double preferredExpandedContentWidth;
+@property(readonly, nonatomic) double preferredExpandedContinuousCornerRadius;
 @property(readonly, nonatomic) _Bool providesOwnPlatter;
 @property(readonly) Class superclass;
 

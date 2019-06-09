@@ -8,6 +8,7 @@
 @protocol NMROriginObserverDelegate;
 
 @protocol NMROriginObserver
+@property(nonatomic) _Bool shouldObserveLibraryAddStatus;
 @property(nonatomic) _Bool shouldObserveArtwork;
 @property(nonatomic) _Bool shouldObservePlaybackQueue;
 @property(nonatomic) __weak id <NMROriginObserverDelegate> delegate;

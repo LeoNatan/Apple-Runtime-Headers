@@ -9,7 +9,7 @@
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
 #import <CoreSpeech/CSVTUIAudioSession-Protocol.h>
 
-@class CSAudioRecorder, NSString;
+@class CSAudioPowerMeter, CSAudioRecorder, NSString;
 @protocol CSVTUIAudioSessionDelegate, OS_dispatch_queue;
 
 @interface CSVTUIAudioSessionRemote : NSObject <CSAudioRecorderDelegate, CSVTUIAudioSession>
@@ -17,23 +17,19 @@
     CSAudioRecorder *_audioRecorder;
     NSObject<OS_dispatch_queue> *_queue;
     id <CSVTUIAudioSessionDelegate> _delegate;
+    CSAudioPowerMeter *_powerMeter;
+    unsigned long long _audioStreamHandleId;
 }
 
+@property(nonatomic) unsigned long long audioStreamHandleId; // @synthesize audioStreamHandleId=_audioStreamHandleId;
+@property(retain, nonatomic) CSAudioPowerMeter *powerMeter; // @synthesize powerMeter=_powerMeter;
 @property(nonatomic) __weak id <CSVTUIAudioSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)audioRecorderDisconnected:(id)arg1;
-- (void)voiceTriggerDetectedOnAOP:(id)arg1;
-- (void)audioRecorder:(id)arg1 didSetAudioSessionActive:(_Bool)arg2;
-- (void)audioRecorder:(id)arg1 willSetAudioSessionActive:(_Bool)arg2;
-- (void)audioRecorderEndRecordInterruption:(id)arg1;
-- (void)audioRecorderBeginRecordInterruption:(id)arg1 withContext:(id)arg2;
-- (void)audioRecorderBeginRecordInterruption:(id)arg1;
-- (void)audioRecorderDidFinishAlertPlayback:(id)arg1 ofType:(long long)arg2 error:(id)arg3;
-- (void)audioRecorderRecordHardwareConfigurationDidChange:(id)arg1 toConfiguration:(long long)arg2;
-- (void)audioRecorderDidStopRecording:(id)arg1 forReason:(long long)arg2;
-- (void)audioRecorderDidStartRecording:(id)arg1 successfully:(_Bool)arg2 error:(id)arg3;
-- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2;
-- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 remoteVAD:(id)arg3 atTime:(unsigned long long)arg4;
+- (void)audioRecorderDidStopRecord:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 reason:(long long)arg3;
+- (void)audioRecorderDidStartRecord:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 successfully:(_Bool)arg3 error:(id)arg4;
+- (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
+- (void)_handleDidStopWithReason:(long long)arg1;
 - (unsigned long long)audioSource;
 - (long long)convertStopReason:(long long)arg1;
 - (_Bool)hasCorrectAudioRoute;

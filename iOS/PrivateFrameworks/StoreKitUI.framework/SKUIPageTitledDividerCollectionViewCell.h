@@ -10,6 +10,7 @@
 
 @class NSNumber, NSString, SKUIButtonViewElement, UIButton, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPageTitledDividerCollectionViewCell : UICollectionViewCell <SKUIViewElementView>
 {
     double _buttonContentHorizontalPadding;

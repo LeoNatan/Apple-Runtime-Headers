@@ -33,8 +33,8 @@
 - (void)didFindSearchURLTemplateString:(id)arg1 inFrame:(id)arg2 pageController:(id)arg3;
 - (_Bool)shouldIncludeNonEmptyFields;
 - (void)didSameDocumentNavigation:(long long)arg1 inFrame:(id)arg2;
-- (_Bool)didStartProvisionalLoadForFrame:(id)arg1;
-- (_Bool)_willNavigateFrameWithUnsubmittedForm:(id)arg1 loadingWillBeDeferred:(_Bool)arg2;
+- (void)didStartProvisionalLoadForFrame:(id)arg1;
+- (void)_willNavigateFrameWithUnsubmittedForm:(id)arg1;
 - (void)focusFormForStreamlinedLogin:(double)arg1 inFrame:(id)arg2;
 - (void)finishedAutoFillingForm:(id)arg1 inFrame:(id)arg2 shouldSubmit:(_Bool)arg3;
 - (void)clearField:(id)arg1 inFrame:(id)arg2;

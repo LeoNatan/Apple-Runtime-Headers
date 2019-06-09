@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface MNVoiceEvent : NSObject
 {
+    _Bool _isPrivate;
     unsigned int _options;
     NSString *_textToSpeak;
     unsigned int _shortPromptType;
@@ -19,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)isValidShortPromptType:(unsigned int)arg1;
 + (id)eventWithText:(id)arg1 fallbackPrompt:(unsigned int)arg2 options:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(readonly, nonatomic) unsigned int shortPromptType; // @synthesize shortPromptType=_shortPromptType;
 @property(readonly, copy, nonatomic) NSString *textToSpeak; // @synthesize textToSpeak=_textToSpeak;
@@ -26,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)isEqualToEvent:(id)arg1;
 - (id)description;
-- (id)initWithPrompt:(unsigned int)arg1 options:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)initWithText:(id)arg1 fallbackPrompt:(unsigned int)arg2 options:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end

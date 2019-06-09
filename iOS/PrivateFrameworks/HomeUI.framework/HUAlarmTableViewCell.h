@@ -24,13 +24,13 @@
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) __weak id <HUAlarmTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)setupAsTemplateLayoutCell:(_Bool)arg1;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)willTransitionToState:(unsigned long long)arg1;
 - (void)_alarmActiveChanged:(id)arg1;
 - (void)setAlarmActiveDelegate:(id)arg1;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)refreshUI:(id)arg1 animated:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 - (id)init;

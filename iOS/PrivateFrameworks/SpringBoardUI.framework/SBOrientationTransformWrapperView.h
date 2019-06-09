@@ -6,13 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, _SBOrientationTransformedContentView;
+@class NSArray, NSMutableArray, _SBOrientationTransformedContentView;
 
 @interface SBOrientationTransformWrapperView : UIView
 {
     _SBOrientationTransformedContentView *_transformedView;
     long long _contentOrientation;
     long long _containerOrientation;
+    NSMutableArray *_hitTestViews;
 }
 
 @property(nonatomic) long long containerOrientation; // @synthesize containerOrientation=_containerOrientation;
@@ -23,6 +24,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_updateGeometry;
 - (struct CGAffineTransform)convertTransformFromContentInterfaceOrientationToContainerInterfaceOrientation:(struct CGAffineTransform)arg1;
 - (struct CGRect)convertRectFromContentInterfaceOrientationToContainerInterfaceOrientation:(struct CGRect)arg1;
@@ -30,7 +32,11 @@
 - (struct CGAffineTransform)convertTransformFromContainerInterfaceOrientationToContentInterfaceOrientation:(struct CGAffineTransform)arg1;
 - (struct CGRect)convertRectFromContainerInterfaceOrientationToContentInterfaceOrientation:(struct CGRect)arg1;
 - (struct CGPoint)convertPointFromContainerInterfaceOrientationToContentInterfaceOrientation:(struct CGPoint)arg1;
+- (struct CGSize)_referenceContainerSize;
 - (void)bringContentSubviewToFront:(id)arg1;
+- (void)removeGestureRecognizerFromTransformedView:(id)arg1;
+- (void)addGestureRecognizerToTransformedView:(id)arg1;
+- (void)addHitTestView:(id)arg1;
 - (void)addContentView:(id)arg1;
 @property(readonly, nonatomic) NSArray *contentViews;
 - (id)description;

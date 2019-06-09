@@ -16,6 +16,7 @@
     id <IMKCandidateMenuDelegate> _delegate;
     IMKCandidates *_candidateController;
     IMKCandidateList *_candidateList;
+    unsigned long long _candidateStyle;
     id <IMKTextInput> _textInput;
 }
 
@@ -44,6 +45,10 @@
 - (void)hide;
 - (void)showCandidates:(id)arg1;
 @property(readonly, nonatomic) BOOL isShown;
+@property(nonatomic) unsigned long long candidateStyle;
+- (unsigned long long)panelTypeForCandidateStyle:(unsigned long long)arg1 isTouchBar:(BOOL)arg2;
+- (unsigned long long)onScreenPanelTypeForCandidateStyle:(unsigned long long)arg1;
+- (unsigned long long)touchBarPanelTypeForCandidateStyle:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)initWithCandidateController:(id)arg1 textInput:(id)arg2;
 - (id)initWithCandidateController:(id)arg1;

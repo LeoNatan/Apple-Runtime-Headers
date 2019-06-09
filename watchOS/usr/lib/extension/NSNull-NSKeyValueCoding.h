@@ -8,5 +8,8 @@
 
 @interface NSNull (NSKeyValueCoding)
 - (id)valueForKey:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 @end
 

@@ -11,20 +11,37 @@
 @class NSData, NSString;
 @protocol NFCReaderSession;
 
+__attribute__((visibility("hidden")))
 @interface NFCISO15693Tag : NFCTag <NFCISO15693Tag>
 {
 }
 
-+ (_Bool)supportsSecureCoding;
-- (void)readMultipleBlocksWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)extendedReadMultipleBlocksWithRequestFlags:(unsigned char)arg1 blockRange:(struct _NSRange)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)extendedLockBlockWithRequestFlags:(unsigned char)arg1 blockNumber:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)extendedWriteSingleBlockWithRequestFlags:(unsigned char)arg1 blockNumber:(long long)arg2 dataBlock:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)extendedReadSingleBlockWithRequestFlags:(unsigned char)arg1 blockNumber:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)customCommandWithRequestFlag:(unsigned char)arg1 customCommandCode:(long long)arg2 customRequestParameters:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)getMultipleBlockSecurityStatusWithRequestFlag:(unsigned char)arg1 blockRange:(struct _NSRange)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getSystemInfoWithRequestFlag:(unsigned char)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)lockDFSIDWithRequestFlag:(unsigned char)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)writeDSFIDWithRequestFlag:(unsigned char)arg1 dsfid:(unsigned char)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)lockAFIWithRequestFlag:(unsigned char)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)writeAFIWithRequestFlag:(unsigned char)arg1 afi:(unsigned char)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)resetToReadyWithRequestFlags:(unsigned char)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)selectWithRequestFlags:(unsigned char)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)writeMultipleBlocksWithRequestFlags:(unsigned char)arg1 blockRange:(struct _NSRange)arg2 dataBlocks:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)readMultipleBlocksWithRequestFlags:(unsigned char)arg1 blockRange:(struct _NSRange)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)lockBlockWithRequestFlags:(unsigned char)arg1 blockNumber:(unsigned char)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)writeSingleBlockWithRequestFlags:(unsigned char)arg1 blockNumber:(unsigned char)arg2 dataBlock:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)readSingleBlockWithRequestFlags:(unsigned char)arg1 blockNumber:(unsigned char)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)stayQuietWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)sendCustomCommandWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)_parseResponseData:(id)arg1 outError:(id *)arg2;
+- (void)readMultipleBlocksWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_parseResponseErrorWithData:(id)arg1;
 @property(readonly, copy, nonatomic) NSData *icSerialNumber;
 @property(readonly, nonatomic) unsigned long long icManufacturerCode;
 @property(readonly, copy, nonatomic) NSData *identifier;
-- (id)initWithSession:(id)arg1 tag:(id)arg2;
-- (unsigned long long)_parseResponseErrorWithData:(id)arg1;
-- (_Bool)_transceiveWithData:(id)arg1 receivedData:(id *)arg2 commandConfig:(id)arg3 error:(id *)arg4;
+- (id)_generateRequestHeader:(unsigned char)arg1 flags:(unsigned char)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

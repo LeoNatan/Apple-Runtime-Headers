@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/PLResourceDataStore-Protocol.h>
 
-@class NSString;
+@class NSString, PLPhotoLibraryPathManager;
 
 @interface PLSharedStreamsDataStore : PLResourceDataStore <PLResourceDataStore>
 {
@@ -16,7 +16,7 @@
 
 + (id)supportedRecipes;
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
-+ (unsigned int)storeID;
++ (unsigned int)storeClassID;
 + (unsigned int)_masterThumbRecipeID;
 - (id)requiredExternalResourcesForMigratingOrImportingAsset:(id)arg1;
 - (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 inContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -38,7 +38,6 @@
 - (short)_localAvailabilityForAsset:(id)arg1 album:(id)arg2 type:(unsigned int)arg3;
 - (id)_sharedStreamsExternalResourceForAsset:(id)arg1 album:(id)arg2 type:(unsigned int)arg3;
 - (_Bool)_isDerivativeForSharedStreamsType:(unsigned int)arg1;
-- (short)_resourceTypeForSharedStreamsType:(unsigned int)arg1;
 - (id)_utiStringForAsset:(id)arg1 type:(unsigned int)arg2;
 - (void)_prepareForDownloadNotification:(id)arg1 atFileURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (short)_cloudSharedAssetPlaceholderKindFromSharedStreamsResourceType:(unsigned int)arg1;
@@ -47,6 +46,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager;
 @property(readonly) Class superclass;
 
 @end

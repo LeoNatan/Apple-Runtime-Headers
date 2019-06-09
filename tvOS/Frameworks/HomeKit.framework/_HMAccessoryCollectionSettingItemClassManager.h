@@ -8,6 +8,7 @@
 
 @class HMFUnfairLock, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface _HMAccessoryCollectionSettingItemClassManager : NSObject
 {
     HMFUnfairLock *_lock;

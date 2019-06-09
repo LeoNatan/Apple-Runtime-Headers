@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, NSURL, SKUIClientContext, SSVLoadURLOperation;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftValidator : NSObject
 {
     SKUIClientContext *_clientContext;

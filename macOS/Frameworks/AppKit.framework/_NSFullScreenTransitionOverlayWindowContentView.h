@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (void)mouseDown:(id)arg1;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
-- (unsigned int)_CAViewFlags;
 
 @end
 

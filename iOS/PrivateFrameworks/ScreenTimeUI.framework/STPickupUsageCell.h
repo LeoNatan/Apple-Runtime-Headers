@@ -6,6 +6,7 @@
 
 #import <ScreenTimeUI/STUsageCell.h>
 
+__attribute__((visibility("hidden")))
 @interface STPickupUsageCell : STUsageCell
 {
 }

@@ -10,12 +10,12 @@
 
 @interface IDSMPFullAccountIdentityCluster : IDSMPIdentity
 {
-    struct OpaqueSecKeyRef *_publicKey;
+    struct __SecKey *_publicKey;
 }
 
 + (id)clusterWithDataRepresentation:(id)arg1 error:(id *)arg2;
 + (id)clusterWithFullAccountIdentity:(id)arg1 fullAdminServiceIdentities:(id)arg2 fullSigningServiceIdentities:(id)arg3 error:(id *)arg4;
-@property(readonly, nonatomic) struct OpaqueSecKeyRef *publicKey; // @synthesize publicKey=_publicKey;
+@property(readonly, nonatomic) struct __SecKey *publicKey; // @synthesize publicKey=_publicKey;
 - (id)signData:(id)arg1 withError:(id *)arg2;
 - (id)signingServiceIdentityWithType:(long long)arg1;
 - (id)adminServiceIdentityWithType:(long long)arg1;

@@ -10,13 +10,14 @@
 #import <ScreenTimeUI/STContentPrivacyViewModelCoordinator-Protocol.h>
 
 @class NSArray, NSManagedObjectID, NSMutableDictionary, NSNumber, NSString, STContentPrivacyViewModel;
-@protocol RMPersistenceControllerProtocol;
+@protocol STPersistenceControllerProtocol;
 
+__attribute__((visibility("hidden")))
 @interface STContentPrivacyViewModelCoordinator : NSObject <NSFetchedResultsControllerDelegate, STContentPrivacyViewModelCoordinator>
 {
     _Bool _isLocalDevice;
     STContentPrivacyViewModel *_viewModel;
-    id <RMPersistenceControllerProtocol> _persistenceController;
+    id <STPersistenceControllerProtocol> _persistenceController;
     NSString *_organizationIdentifier;
     NSNumber *_userDSID;
     NSString *_userName;
@@ -34,15 +35,13 @@
 @property(copy, nonatomic) NSString *userName; // @synthesize userName=_userName;
 @property(copy, nonatomic) NSNumber *userDSID; // @synthesize userDSID=_userDSID;
 @property(copy, nonatomic) NSString *organizationIdentifier; // @synthesize organizationIdentifier=_organizationIdentifier;
-@property(readonly, nonatomic) id <RMPersistenceControllerProtocol> persistenceController; // @synthesize persistenceController=_persistenceController;
+@property(readonly, nonatomic) id <STPersistenceControllerProtocol> persistenceController; // @synthesize persistenceController=_persistenceController;
 @property(retain, nonatomic) STContentPrivacyViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
 - (void)saveRestrictionValue:(id)arg1 forItem:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)saveValuesForRestrictions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)saveCommunicationLimits:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveContentPrivacyEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)_rebuildActivationInContext:(id)arg1 withNewConfigurations:(id)arg2 error:(id *)arg3;
-- (_Bool)_setSettingsRestrictionsEnabled:(_Bool)arg1 error:(id *)arg2;
-- (id)_getSettingsRestrictionsEnabledWithContext:(id)arg1 error:(id *)arg2;
 - (void)loadViewModelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_updateConfiguration:(id)arg1 keyPath:(id)arg2 value:(id)arg3;
 - (id)_valueInConfiguration:(id)arg1 keyPath:(id)arg2;
@@ -51,7 +50,7 @@
 - (id)_activationIdentifier;
 - (void)reloadViewModelForRemoteChanges;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(id)arg5;
-- (void)_registerForPersistenceStoreNotifications;
+- (void)_registerForPersistentStoreNotifications;
 - (id)_valuesByRestriction;
 - (id)valueForRestriction:(id)arg1;
 - (id)_restrictionsForWebFilterState:(unsigned long long)arg1;

@@ -31,6 +31,8 @@
 @property(nonatomic) _Bool lightenGrayscaleWithSourceOver;
 @property(nonatomic) double grayscaleTintAlpha;
 @property(nonatomic) double grayscaleTintLevel;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

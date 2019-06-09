@@ -11,6 +11,7 @@
 
 @class NSArray, NSString, NSUUID;
 
+__attribute__((visibility("hidden")))
 @interface TSUUUIDPath : NSObject <NSCopying, NSFastEnumeration>
 {
     NSArray *_uuids;

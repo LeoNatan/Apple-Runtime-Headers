@@ -9,18 +9,19 @@
 __attribute__((visibility("hidden")))
 @interface __NSDictionaryM : NSMutableDictionary
 {
-    CDStruct_2af495fa storage;
+    CDStruct_bc24fd1e storage;
     // Error parsing type: A^{__cow_state_t}, name: cow
 }
 
-+ (void)initialize;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)__new:(const id *)arg1:(const id *)arg2:(unsigned long long)arg3:(_Bool)arg4:(_Bool)arg5;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (double)_clumpingInterestingThreshold;
 - (double)_clumpingFactor;
+- (id)_cfMutableCopy;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (void)removeAllObjects;
 - (void)removeEntriesWithOptions:(unsigned long long)arg1 passingTest:(CDUnknownBlockType)arg2;

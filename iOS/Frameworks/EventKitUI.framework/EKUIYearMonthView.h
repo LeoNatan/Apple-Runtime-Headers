@@ -25,7 +25,7 @@
 }
 
 + (id)_defaultTextColor;
-+ (double)heightForInterfaceOrientation:(long long)arg1;
++ (double)heightForInterfaceOrientation:(long long)arg1 windowSize:(struct CGSize)arg2 heightSizeClass:(long long)arg3;
 @property(readonly, nonatomic) _Bool computeCircleFrameWithoutAdjustments; // @synthesize computeCircleFrameWithoutAdjustments=_computeCircleFrameWithoutAdjustments;
 @property(readonly, nonatomic) double circleSizeForDoubleDigit; // @synthesize circleSizeForDoubleDigit=_circleSizeForDoubleDigit;
 @property(retain, nonatomic) EKUIOverlayCalendarSignificantDatesProvider *overlaySignificantDatesProvider; // @synthesize overlaySignificantDatesProvider=_overlaySignificantDatesProvider;

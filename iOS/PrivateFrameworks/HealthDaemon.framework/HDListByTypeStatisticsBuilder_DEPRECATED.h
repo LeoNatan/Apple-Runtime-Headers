@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HealthDaemon/HDStatisticsBuilder_DEPRECATED.h>
+#import <objc/NSObject.h>
 
-@class NSCalendar, NSDateInterval, NSMutableArray, NSMutableDictionary, NSNumber;
+@class HDProfile, NSCalendar, NSDateInterval, NSMutableArray, NSMutableDictionary, NSNumber;
 
-@interface HDListByTypeStatisticsBuilder_DEPRECATED : HDStatisticsBuilder_DEPRECATED
+@interface HDListByTypeStatisticsBuilder_DEPRECATED : NSObject
 {
+    HDProfile *_profile;
     NSDateInterval *_baseInterval;
     NSDateInterval *_sleepInterval;
     NSMutableArray *_lastUpdatedDataTypes;
@@ -37,14 +38,14 @@
 - (_Bool)_setIfLatestTimestamp:(double)arg1 forObjectType:(id)arg2;
 - (_Bool)_setIfLatestDate:(id)arg1 forObjectType:(id)arg2;
 - (_Bool)_enumerateSamplesWithDatabase:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (_Bool)_enumerateSamplesOfType:(long long)arg1 interval:(id)arg2 database:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (_Bool)_enumerateSamplesOfType:(id)arg1 interval:(id)arg2 database:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)_dateIntervalForType:(long long)arg1;
 - (unsigned long long)mergeStrategyForType:(id)arg1;
 - (id)collectionCalculatorForType:(id)arg1 from:(double)arg2 to:(double)arg3;
 - (id)_sourceOrderProviderForQuantityType:(id)arg1;
 - (id)_dataSourceForQuantityType:(id)arg1;
 - (id)timeIntervalCalculatorForType:(id)arg1;
-- (id)discreteCollectionCalculatorForType:(id)arg1;
+- (id)countingCalculatorForType:(id)arg1;
 - (void)_updateStatisticsForDataType:(id)arg1;
 - (void)_updateStatisticsForAllCalculators;
 - (_Bool)addQuantitySamplesForType:(long long)arg1 value:(double)arg2 bucketStartTime:(double)arg3 bucketEndTime:(double)arg4 startTime:(double)arg5 endTime:(double)arg6 sourceId:(long long)arg7 enforceLatest:(_Bool)arg8;
@@ -58,6 +59,7 @@
 - (void)updateValuesWithAddedSamples:(id)arg1 typeCode:(long long)arg2 anchor:(id)arg3;
 - (id)_calculatedQuantityForDataTypeCode:(id)arg1;
 - (id)calculatedQuantitiesByDataType;
+- (id)_datePredicateForInterval:(id)arg1 sampleType:(id)arg2;
 - (_Bool)_queryForSleepSamplesWithDatabase:(id)arg1 error:(id *)arg2;
 - (_Bool)_queryForWorkoutSamplesWithDatabase:(id)arg1 error:(id *)arg2;
 - (id)_sleepQueryResultBuilder;

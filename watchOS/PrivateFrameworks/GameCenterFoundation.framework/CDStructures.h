@@ -25,6 +25,10 @@ struct GKGameInfo {
     unsigned int _field10;
 };
 
+struct NSDictionary {
+    Class _field1;
+};
+
 struct _NSRange {
     unsigned int location;
     unsigned int length;

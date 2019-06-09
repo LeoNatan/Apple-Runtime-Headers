@@ -8,7 +8,7 @@
 
 #import <VideosUI/VUILibraryEpisodeFrameViewDelegate-Protocol.h>
 
-@class NSString, TVFocusableTextView, UIFont, UIImageView, VUILabel, VUILibraryEpisodeFrameView, VUIMediaItem;
+@class NSString, UIFont, VUIFocusableTextView, VUILabel, VUILibraryEpisodeFrameView, VUIMediaItem, VUIMediaTagsView;
 @protocol VUIEpisodeDetailViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -21,18 +21,18 @@ __attribute__((visibility("hidden")))
     VUILabel *_episodeNumberLabel;
     VUILabel *_releaseDateLabel;
     VUILabel *_dotSeparatorLabel;
-    TVFocusableTextView *_contentDescriptionView;
+    VUIFocusableTextView *_contentDescriptionView;
     UIFont *_contentDescriptionFont;
     VUIMediaItem *_mediaItem;
-    UIImageView *_contentRatingImageView;
+    VUIMediaTagsView *_mediaBadgeTagsView;
 }
 
 + (void)configureEpisodeDetailView:(id)arg1 withMedia:(id)arg2 viewSize:(struct CGSize)arg3;
 + (struct CGSize)_episodeFrameImageSizeWithViewSize:(struct CGSize)arg1;
-@property(retain, nonatomic) UIImageView *contentRatingImageView; // @synthesize contentRatingImageView=_contentRatingImageView;
+@property(retain, nonatomic) VUIMediaTagsView *mediaBadgeTagsView; // @synthesize mediaBadgeTagsView=_mediaBadgeTagsView;
 @property(retain, nonatomic) VUIMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
 @property(retain, nonatomic) UIFont *contentDescriptionFont; // @synthesize contentDescriptionFont=_contentDescriptionFont;
-@property(retain, nonatomic) TVFocusableTextView *contentDescriptionView; // @synthesize contentDescriptionView=_contentDescriptionView;
+@property(retain, nonatomic) VUIFocusableTextView *contentDescriptionView; // @synthesize contentDescriptionView=_contentDescriptionView;
 @property(retain, nonatomic) VUILabel *dotSeparatorLabel; // @synthesize dotSeparatorLabel=_dotSeparatorLabel;
 @property(retain, nonatomic) VUILabel *releaseDateLabel; // @synthesize releaseDateLabel=_releaseDateLabel;
 @property(retain, nonatomic) VUILabel *episodeNumberLabel; // @synthesize episodeNumberLabel=_episodeNumberLabel;

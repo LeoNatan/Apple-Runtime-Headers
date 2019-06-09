@@ -9,12 +9,12 @@
 @class NSNumber;
 
 @interface NSInvocation (ICNFMCMailCoreAdditions)
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 object3:(id)arg5 object4:(id)arg6;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 object3:(id)arg5;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
-+ (id)invocationWithSelector:(SEL)arg1 target:(id)arg2;
-@property(readonly) NSNumber *requestedQualityOfService;
-@property(readonly) unsigned char priority;
++ (id)ic_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 object3:(id)arg5 object4:(id)arg6;
++ (id)ic_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4 object3:(id)arg5;
++ (id)ic_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
++ (id)ic_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
++ (id)ic_invocationWithSelector:(SEL)arg1 target:(id)arg2;
+@property(readonly) NSNumber *ic_requestedQualityOfService;
+@property(readonly) unsigned char ic_priority;
 @end
 

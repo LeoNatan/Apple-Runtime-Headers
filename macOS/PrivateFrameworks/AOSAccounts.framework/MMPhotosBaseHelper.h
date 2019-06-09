@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     struct PhotosBaseProvider *_photosBaseProvider;
 }
 
+- (void).cxx_destruct;
 - (void)configurationClient:(id)arg1 didChangeStateForServiceIdentifiers:(id)arg2;
 - (id)cpsStatusInformation;
 - (id)cpsConfigClient;

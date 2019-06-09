@@ -39,13 +39,14 @@
 
 + (BOOL)supportsSecureCoding;
 + (long long)defaultWritingDirectionForLanguage:(id)arg1;
++ (float)_defaultHyphenationFactor;
 + (long long)_defaultWritingDirection;
 + (id)defaultParagraphStyle;
 + (void)initialize;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)_isSuitableForFastStringDrawingWithAlignment:(unsigned long long *)arg1 mirrorsTextAlignment:(BOOL)arg2 lineBreakMode:(unsigned long long *)arg3 tighteningFactorForTruncation:(double *)arg4;
+- (BOOL)_isSuitableForFastStringDrawingWithAlignment:(long long *)arg1 mirrorsTextAlignment:(BOOL)arg2 lineBreakMode:(unsigned long long *)arg3 tighteningFactorForTruncation:(double *)arg4;
 @property(readonly) BOOL allowsDefaultTighteningForTruncation;
 @property(readonly) long long headerLevel;
 @property(readonly) float tighteningFactorForTruncation;
@@ -64,10 +65,12 @@
 - (BOOL)usesOpticalAlignment;
 - (BOOL)allowsHangingPunctuation;
 - (unsigned long long)_lineBoundsOptions;
+- (long long)compositionLanguage;
+- (BOOL)usesDefaultHyphenation;
 @property(readonly, copy) NSArray *tabStops;
 @property(readonly) double tailIndent;
 @property(readonly) double headIndent;
-@property(readonly) unsigned long long alignment;
+@property(readonly) long long alignment;
 @property(readonly) double paragraphSpacing;
 @property(readonly) double lineSpacing;
 - (BOOL)isEqual:(id)arg1;

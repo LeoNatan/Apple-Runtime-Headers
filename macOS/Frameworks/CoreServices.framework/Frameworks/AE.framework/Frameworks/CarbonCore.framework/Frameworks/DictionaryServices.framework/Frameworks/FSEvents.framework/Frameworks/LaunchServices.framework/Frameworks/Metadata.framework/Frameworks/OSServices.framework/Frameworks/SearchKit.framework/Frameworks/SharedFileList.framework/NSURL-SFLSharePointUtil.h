@@ -10,5 +10,23 @@
 - (BOOL)__sfl_supportsPermissions;
 - (BOOL)__sfl_isWriteable;
 - (id)__sfl_fileSecurity;
+- (id)__sfl_securityScope;
+- (void)__sfl_setSecurityScope:(id)arg1;
+- (BOOL)__sfl_isInTrash;
+- (BOOL)__sfl__isHFSStandard;
+- (id)__sfl__volumeURL;
+- (BOOL)__sfl__isIPodVolume;
+- (BOOL)__sfl__isCDVolume;
+- (BOOL)__sfl__isDVDVolume;
+- (BOOL)__sfl__isBrowsableVolume;
+- (BOOL)__sfl__isLocalVolume;
+- (BOOL)__sfl__isInternalVolume;
+- (BOOL)__sfl__isRemovableVolume;
+- (BOOL)__sfl__isEjectableVolume;
+- (BOOL)__sfl__isBootVolume;
+- (BOOL)__sfl__isVolumeMounted;
+- (BOOL)__sfl__isVolume;
+- (id)__sfl__displayName;
+- (id)__sfl_cachedResourcePropertyForKey:(id)arg1;
 @end
 

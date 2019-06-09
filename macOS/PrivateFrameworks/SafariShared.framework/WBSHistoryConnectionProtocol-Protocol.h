@@ -8,6 +8,8 @@
 @protocol WBSHistoryServiceDatabaseDelegate;
 
 @protocol WBSHistoryConnectionProtocol
+- (void)releaseCloudHistory:(void (^)(NSError *))arg1;
+- (void)initializeCloudHistoryWithConfiguration:(NSDictionary *)arg1 completionHandler:(void (^)(id <WBSCloudHistoryServiceProtocol>, NSError *))arg2;
 - (void)finishClearingHistoryIfNecessaryWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)disconnectWithCompletionHandler:(void (^)(void))arg1;
 - (void)connectWithOptions:(NSDictionary *)arg1 delegate:(id <WBSHistoryServiceDatabaseDelegate>)arg2 completionHandler:(void (^)(id <WBSHistoryServiceDatabaseProtocol>, long long, long long, NSError *))arg3;

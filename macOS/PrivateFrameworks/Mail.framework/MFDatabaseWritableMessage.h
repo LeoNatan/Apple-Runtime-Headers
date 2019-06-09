@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MCMessageHeaders, MFMessageWritePreparedStatements, NSArray, NSData, NSString, NSUUID;
+@class ECAngleBracketIDHash, ECSubject, MCMessageHeaders, MFMessageWritePreparedStatements, NSArray, NSString, NSUUID;
 
 @interface MFDatabaseWritableMessage : NSObject
 {
@@ -23,31 +23,30 @@
     long long _conversationID;
     long long _mailboxID;
     long long _fuzzyAncestor;
+    unsigned long long _conversationFlags;
     unsigned long long _size;
     long long _flags;
     NSString *_sender;
-    NSString *_subjectPrefixString;
-    NSString *_subject;
-    NSData *_messageIDHeaderDigest;
+    ECSubject *_subject;
+    ECAngleBracketIDHash *_messageIDHeaderHash;
     NSString *_remoteMailboxIDString;
     NSArray *_toRecipients;
     NSUUID *_documentID;
     MCMessageHeaders *_headers;
-    NSArray *_references;
+    NSArray *_referencesHashes;
+    ECAngleBracketIDHash *_listIDHash;
     MFMessageWritePreparedStatements *_preparedStatements;
-    NSData *_inReplyToHeaderDigest;
 }
 
-@property(copy, nonatomic) NSData *inReplyToHeaderDigest; // @synthesize inReplyToHeaderDigest=_inReplyToHeaderDigest;
 @property(readonly, nonatomic) MFMessageWritePreparedStatements *preparedStatements; // @synthesize preparedStatements=_preparedStatements;
-@property(copy, nonatomic) NSArray *references; // @synthesize references=_references;
+@property(retain, nonatomic) ECAngleBracketIDHash *listIDHash; // @synthesize listIDHash=_listIDHash;
+@property(copy, nonatomic) NSArray *referencesHashes; // @synthesize referencesHashes=_referencesHashes;
 @property(retain, nonatomic) MCMessageHeaders *headers; // @synthesize headers=_headers;
 @property(retain, nonatomic) NSUUID *documentID; // @synthesize documentID=_documentID;
 @property(copy, nonatomic) NSArray *toRecipients; // @synthesize toRecipients=_toRecipients;
 @property(copy, nonatomic) NSString *remoteMailboxIDString; // @synthesize remoteMailboxIDString=_remoteMailboxIDString;
-@property(copy, nonatomic) NSData *messageIDHeaderDigest; // @synthesize messageIDHeaderDigest=_messageIDHeaderDigest;
-@property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
-@property(copy, nonatomic) NSString *subjectPrefixString; // @synthesize subjectPrefixString=_subjectPrefixString;
+@property(copy, nonatomic) ECAngleBracketIDHash *messageIDHeaderHash; // @synthesize messageIDHeaderHash=_messageIDHeaderHash;
+@property(copy, nonatomic) ECSubject *subject; // @synthesize subject=_subject;
 @property(copy, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(nonatomic) long long flags; // @synthesize flags=_flags;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
@@ -55,6 +54,7 @@
 @property(nonatomic) int dateViewed; // @synthesize dateViewed=_dateViewed;
 @property(nonatomic) int dateSent; // @synthesize dateSent=_dateSent;
 @property(nonatomic) int dateReceived; // @synthesize dateReceived=_dateReceived;
+@property(nonatomic) unsigned long long conversationFlags; // @synthesize conversationFlags=_conversationFlags;
 @property(nonatomic) int conversationPosition; // @synthesize conversationPosition=_conversationPosition;
 @property(nonatomic) int rootStatus; // @synthesize rootStatus=_rootStatus;
 @property(nonatomic) int automatedConversationType; // @synthesize automatedConversationType=_automatedConversationType;

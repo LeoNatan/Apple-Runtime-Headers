@@ -33,5 +33,6 @@ typedef struct {
     int _field4;
     CDStruct_19009447 _field5;
     unsigned long _field6;
-} CDStruct_adf0e7b7;
+    _Bool _field7;
+} CDStruct_7308a351;
 

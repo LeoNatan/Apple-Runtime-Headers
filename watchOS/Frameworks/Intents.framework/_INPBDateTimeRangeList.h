@@ -19,6 +19,7 @@
     NSArray *_dateRanges;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)dateRangeType;
 @property(copy, nonatomic) NSArray *dateRanges; // @synthesize dateRanges=_dateRanges;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)dateRangeAtIndex:(unsigned int)arg1;

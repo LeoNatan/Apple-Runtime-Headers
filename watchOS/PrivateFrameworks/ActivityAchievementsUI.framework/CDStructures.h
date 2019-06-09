@@ -10,19 +10,28 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGAffineTransform {
+    float a;
+    float b;
+    float c;
+    float d;
+    float tx;
+    float ty;
+};
+
 struct CGPoint {
     float x;
     float y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
-    float _field1;
-    float _field2;
+    float width;
+    float height;
 };
 
 struct __UniformBinding {
@@ -46,6 +55,10 @@ struct __UniformBindings {
     struct __UniformBinding triColor1;
     struct __UniformBinding triColor2;
     struct __UniformBinding triColor3;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 #pragma mark Named Unions

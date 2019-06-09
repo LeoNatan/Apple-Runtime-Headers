@@ -4,21 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/HMDMessageFilter.h>
+#import <HMFoundation/HMFMessageFilter.h>
 
-@interface HMDEducationModeMessageFilter : HMDMessageFilter
+@interface HMDEducationModeMessageFilter : HMFMessageFilter
 {
-    _Bool _ephemeralMultiUser;
-    _Bool _managedAppleID;
 }
 
-@property(nonatomic, getter=isManagedAppleID) _Bool managedAppleID; // @synthesize managedAppleID=_managedAppleID;
-@property(nonatomic, getter=isEphemeralMultiUser) _Bool ephemeralMultiUser; // @synthesize ephemeralMultiUser=_ephemeralMultiUser;
-- (_Bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id *)arg3;
-- (void)handleActiveAccountChanged:(id)arg1;
-- (void)_update;
-- (void)dealloc;
-- (id)initWithName:(id)arg1;
++ (_Bool)canInitWithMessage:(id)arg1;
++ (id)policyClasses;
+- (_Bool)acceptWithPolicies:(id)arg1 error:(id *)arg2;
 
 @end
 

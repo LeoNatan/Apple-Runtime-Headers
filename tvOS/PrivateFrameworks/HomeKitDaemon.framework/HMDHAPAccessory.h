@@ -14,11 +14,12 @@
 #import <HomeKitDaemon/HMDTimeInformationMonitorDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAccessorySymptomHandler, HMDCharacteristic, HMDDataStreamController, HMDTargetControllerManager, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSMapTable, NSMutableArray, NSMutableSet, NSNumber, NSSet, NSString;
+@class HMDAccessorySymptomHandler, HMDCameraUserSettings, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDService, HMDTargetControllerManager, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
 
 @interface HMDHAPAccessory : HMDAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMDServiceOwner, HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate, HMDAccessoryIdentify, HMDAccessoryUserManagement>
 {
     NSMutableArray *_transportInformationInstances;
+    NSMutableArray *_services;
     _Bool _relayEnabled;
     _Bool _timeInformationServiceExists;
     _Bool _supportsTargetController;
@@ -40,6 +41,9 @@
     NSArray *_targetUUIDs;
     HMDTargetControllerManager *_targetControllerManager;
     HMDAccessorySymptomHandler *_symptomsHandler;
+    NSSet *_identifiersForBridgedAccessories;
+    HMDService *_primaryService;
+    HMDNetworkRouterController *_networkRouterController;
     NSString *_uniqueIdentifier;
     long long _certificationStatus;
     unsigned long long _activationAttempts;
@@ -47,9 +51,9 @@
     NSNumber *_backedOffStateNumber;
     HMFTimer *_accessoryDiscoveryBackoffTimer;
     HMFTimer *_accessoryKeyRefreshTimer;
+    NSDictionary *_cameraClipCloudZoneUUIDByRecordingServiceUUID;
     NSMutableArray *_discoveredServices;
     HMDHAPAccessory *_bridge;
-    NSMutableSet *_identifiersForBridgedAccessories;
     NSData *_publicKey;
     NSString *_pairingUsername;
     HMFTimer *_timeInformationTimer;
@@ -57,12 +61,14 @@
     NSSet *_cameraProfiles;
     HMDDataStreamController *_dataStreamController;
     NSMapTable *_serverIDToHAPAccessoryTable;
+    HMDCameraUserSettings *_cameraUserSettings;
 }
 
 + (_Bool)hasMessageReceiverChildren;
 + (_Bool)supportsSecureCoding;
 + (unsigned long long)getAWDTransportTypeWithLinkType:(long long)arg1;
 + (Class)transactionClass;
+@property(retain, nonatomic) HMDCameraUserSettings *cameraUserSettings; // @synthesize cameraUserSettings=_cameraUserSettings;
 @property(retain, nonatomic) NSMapTable *serverIDToHAPAccessoryTable; // @synthesize serverIDToHAPAccessoryTable=_serverIDToHAPAccessoryTable;
 @property(retain, nonatomic) HMDDataStreamController *dataStreamController; // @synthesize dataStreamController=_dataStreamController;
 @property(retain, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
@@ -71,9 +77,9 @@
 @property(retain, nonatomic) HMFTimer *timeInformationTimer; // @synthesize timeInformationTimer=_timeInformationTimer;
 @property(retain, nonatomic) NSString *pairingUsername; // @synthesize pairingUsername=_pairingUsername;
 @property(retain, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
-@property(retain, nonatomic) NSMutableSet *identifiersForBridgedAccessories; // @synthesize identifiersForBridgedAccessories=_identifiersForBridgedAccessories;
 @property(nonatomic) __weak HMDHAPAccessory *bridge; // @synthesize bridge=_bridge;
 @property(retain, nonatomic) NSMutableArray *discoveredServices; // @synthesize discoveredServices=_discoveredServices;
+@property(retain, nonatomic) NSDictionary *cameraClipCloudZoneUUIDByRecordingServiceUUID; // @synthesize cameraClipCloudZoneUUIDByRecordingServiceUUID=_cameraClipCloudZoneUUIDByRecordingServiceUUID;
 @property unsigned char keyGenerationType; // @synthesize keyGenerationType=_keyGenerationType;
 @property(retain, nonatomic) HMFTimer *accessoryKeyRefreshTimer; // @synthesize accessoryKeyRefreshTimer=_accessoryKeyRefreshTimer;
 @property(retain, nonatomic) HMFTimer *accessoryDiscoveryBackoffTimer; // @synthesize accessoryDiscoveryBackoffTimer=_accessoryDiscoveryBackoffTimer;
@@ -89,6 +95,7 @@
 @property(copy, nonatomic) NSData *broadcastKey; // @synthesize broadcastKey=_broadcastKey;
 @property(retain, nonatomic) NSString *relayIdentifier; // @synthesize relayIdentifier=_relayIdentifier;
 - (void).cxx_destruct;
+- (id)cameraClipCloudZoneUUIDForRecordingService:(id)arg1;
 @property(readonly, copy, nonatomic) NSNumber *hapInstanceId;
 - (id)backingStoreTransactionWithName:(id)arg1;
 - (id)createUpdateServiceTransationWithServiceUUID:(id)arg1;
@@ -137,6 +144,7 @@
 - (void)_handleUpdateAuthorizationData:(id)arg1;
 - (void)_handleUpdateAssociatedServiceType:(id)arg1;
 - (void)_handleRenameService:(id)arg1;
+- (id)runtimeState;
 - (long long)reachableTransports;
 - (void)setReachability:(_Bool)arg1 serverIdentifier:(id)arg2 linkType:(long long)arg3;
 - (void)_updateReachability;
@@ -173,11 +181,13 @@
 - (void)updateNotificationEnabled:(_Bool)arg1 forCharacteristics:(id)arg2 onBehalfOf:(id)arg3;
 - (void)_readValueForCharacteristic:(id)arg1 hapAccessory:(id)arg2 requestMessage:(id)arg3;
 - (void)_handleCharacteristicRead:(id)arg1;
+- (void)submitCharacteristicReadErrorLogEvent:(id)arg1 message:(id)arg2 error:(id)arg3;
 - (void)_parseResponseFromRemotePeer:(id)arg1 message:(id)arg2 forCharacteristic:(id)arg3;
 - (void)_relayReadFromCharacteristic:(id)arg1 toResidentForMessage:(id)arg2 viaDevice:(id)arg3;
 - (void)_relayWriteToCharacteristic:(id)arg1 toResidentForMessage:(id)arg2 viaDevice:(id)arg3;
 - (void)_handleCharacteristicWrite:(id)arg1;
-- (void)_handleCharacteristicError:(id)arg1 characteristic:(id)arg2 message:(id)arg3 read:(_Bool)arg4;
+- (void)submitCharacteristicWriteErrorLogEvent:(id)arg1 message:(id)arg2 error:(id)arg3;
+- (_Bool)_handleCharacteristicError:(id)arg1 read:(_Bool)arg2 characteristic:(id)arg3 didRelayMessage:(id)arg4;
 - (void)logDuetEventIfNeeded:(id)arg1 clientName:(id)arg2;
 - (void)_logDuetEventIfNeeded:(id)arg1 clientName:(id)arg2;
 - (id)_prepareMessagePayloadForCharacteristicRemoteWrite:(id)arg1;
@@ -188,6 +198,7 @@
 - (id)hapCharacteristicWriteRequests:(id)arg1 hapAccessory:(id)arg2 hmdResponses:(id *)arg3 mapping:(id *)arg4;
 - (void)notifyValue:(id)arg1 previousValue:(id)arg2 error:(id)arg3 forCharacteristic:(id)arg4 requestMessage:(id)arg5;
 - (void)encodeWithCoder:(id)arg1;
+- (_Bool)_shouldFilterAccessoryProfile:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_getSymptomHandler;
 - (_Bool)shouldConfigureTargetController;
@@ -209,9 +220,8 @@
 - (id)matchingHAPAccessoryWithServerIdentifier:(id)arg1 linkType:(long long)arg2;
 - (id)matchingTransportInformationWithServerIdentifier:(id)arg1;
 - (id)matchingTransportInformationWithServerIdentifier:(id)arg1 linkType:(long long)arg2;
-- (_Bool)matchesHMDAccessoryTransportInformationWithServerIdentifier:(id)arg1 instanceID:(id)arg2;
+- (_Bool)matchesHAPAccessoryWithServerIdentifier:(id)arg1 instanceID:(id)arg2;
 - (id)matchingTransportInformation:(id)arg1;
-- (void)mergeTransportInformationInstances:(id)arg1;
 - (void)unconfigureAccessoryWithServerIdentifier:(id)arg1 linkType:(long long)arg2 updateReachability:(_Bool)arg3;
 - (void)unconfigure;
 - (void)configureWithAccessory:(id)arg1 homeNotificationsEnabled:(_Bool)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -239,6 +249,9 @@
 @property(nonatomic, getter=isRelayEnabled) _Bool relayEnabled; // @synthesize relayEnabled=_relayEnabled;
 - (void)_setRelayIdentifier:(id)arg1;
 - (void)_setSupportsRelay:(_Bool)arg1;
+@property(retain, nonatomic) HMDNetworkRouterController *networkRouterController; // @synthesize networkRouterController=_networkRouterController;
+@property(readonly, getter=isCameraRecordingFeatureSupported) _Bool supportsCameraRecordingFeature;
+- (id)_getCameraProfiles;
 - (_Bool)containsCameraService;
 - (void)removeTransportInformationInstance:(id)arg1;
 - (void)addTransportInformationInstances:(id)arg1;
@@ -246,6 +259,7 @@
 - (id)transportInformationInstances;
 - (void)removeBridgedAccessory:(id)arg1;
 - (void)addBridgedAccessory:(id)arg1;
+@property(copy, nonatomic) NSSet *identifiersForBridgedAccessories; // @synthesize identifiersForBridgedAccessories=_identifiersForBridgedAccessories;
 - (void)updateButtonConfigurationForTarget:(id)arg1;
 - (void)acknowledgeTargetControlService:(id)arg1 active:(_Bool)arg2;
 - (void)autoConfigureTargetController;
@@ -263,8 +277,15 @@
 - (_Bool)_supportsMediaAccessControl;
 - (void)_handleServiceRemovedTransaction:(id)arg1 message:(id)arg2;
 - (void)_handleAddServiceTransaction:(id)arg1 message:(id)arg2;
+- (void)_handleUpdatedServicesForProfilesAndControllers:(id)arg1;
 - (id)serviceWithUUID:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *services;
+- (void)_removeService:(id)arg1;
+- (void)_addService:(id)arg1;
+- (void)_updatePrimaryServiceIfNeededWithService:(id)arg1;
+- (void)_updatePrimaryServiceIfNeeded;
+- (void)updatePrimaryServiceIfNeeded;
+@property(readonly, nonatomic) HMDService *primaryService; // @synthesize primaryService=_primaryService;
+@property(readonly, copy) NSArray *services;
 @property(readonly, copy) HMFPairingIdentity *pairingIdentity;
 - (void)pairingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeUser:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -318,6 +339,8 @@
 - (void)handleUpdatedPassword:(id)arg1;
 - (void)handleUpdatedMinimumUserPrivilege:(long long)arg1;
 - (_Bool)supportsMinimumUserPrivilege;
+- (void)_handleWiFiReconfiguration:(id)arg1;
+- (_Bool)supportsNetworkProtection;
 @property(retain, nonatomic) HMDAccessorySymptomHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
 - (_Bool)providesHashRouteID;
 - (void)_reconcileAccessControlSetting;
@@ -335,8 +358,8 @@
 - (void)_updateBroadcastKey:(id)arg1 keyUpdatedStateNumber:(id)arg2 keyUpdatedTime:(double)arg3;
 @property(copy, nonatomic) NSNumber *accessoryFlags; // @synthesize accessoryFlags=_accessoryFlags;
 - (void)updateAccessoryFlags:(id)arg1;
-- (void)configureBulletinNotification:(CDUnknownBlockType)arg1;
-- (void)configure:(id)arg1 msgDispatcher:(id)arg2 accessoryConfigureGroup:(id)arg3;
+- (void)configureBulletinNotification;
+- (void)configureWithHome:(id)arg1 msgDispatcher:(id)arg2 configurationTracker:(id)arg3;
 - (_Bool)shouldEnableDaemonRelaunch;
 - (void)takeOwnershipOfAppData:(id)arg1;
 - (void)_registerForMessages;
@@ -347,7 +370,19 @@
 - (void)dealloc;
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
 - (id)init;
+- (_Bool)_handleUpdatedServicesForNetworkRouterProfileAndController:(id)arg1;
+- (_Bool)__removeNetworkRouterProfile;
+- (_Bool)__createNetworkRouterProfileAndController:(id)arg1;
+- (void)postNetworkRouterProfileNotification:(id)arg1;
+- (_Bool)__removeNetworkRouterController;
+- (void)__createNetworkRouterController:(id)arg1;
+@property(readonly, nonatomic) HMDNetworkRouterProfile *networkRouterProfile;
 - (void)writeValue:(id)arg1 toCharacteristic:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)assistantObject;
+- (id)url;
+- (void)_configureCameraUserSettings;
+- (void)_initCameraUserSettings;
+- (_Bool)_handleUpdatedServicesForCameraProfiles:(id)arg1;
 - (void)_updateSiriAudioFormat:(id)arg1;
 - (void)setSelectedSiriAudioConfiguration:(id)arg1;
 - (_Bool)_resolveSupportedSiriInputType:(id)arg1;
@@ -356,12 +391,12 @@
 @property(readonly, nonatomic) _Bool supportsSiri;
 - (void)_handleUpdateMediaSourceDisplayOrder:(id)arg1;
 @property(readonly) _Bool hasTelevisionService;
+- (void)startBulkSendSessionForFileType:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)sendTargetControlWhoAmIWithIdentifier:(unsigned int)arg1;
 - (_Bool)canAcceptBulkSendListeners;
 - (void)removeDataStreamBulkSendListener:(id)arg1;
 - (void)addDataStreamBulkSendListener:(id)arg1 fileType:(id)arg2;
-- (void)_removeDataStreamController:(id)arg1;
-- (void)_createDataStreamController:(id)arg1;
+- (void)_handleUpdatedServicesForDataStreamController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

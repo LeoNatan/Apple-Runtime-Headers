@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)enumerateCoreDataGroupsMatchingGroups:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateCoreDataContactsMatchingContacts:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (id)fetchRecordsWithLinkIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)fetchRecordsWithIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)fetchIndexedRecordsWithIdentifiers:(id)arg1 error:(id *)arg2;
 - (BOOL)fetchAllIdentifiers:(id)arg1 error:(id *)arg2;

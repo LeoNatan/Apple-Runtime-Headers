@@ -43,7 +43,6 @@
 - (_Bool)shouldBeForcedLeftToRight;
 - (void)updateIdleModeVisualEffectsStatus:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool supportsIdleModeVisualEffects;
-- (_Bool)shouldUseTabBarAsRootViewController;
 - (void)reload;
 - (void)didShowViewController;
 - (void)setupWithBootURL:(id)arg1;

@@ -15,8 +15,8 @@
     NSMutableArray *_localizedStrings;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)localizedStringType;
-@property(retain, nonatomic) NSMutableArray *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,12 +25,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)localizedStringAtIndex:(unsigned long long)arg1;
 - (unsigned long long)localizedStringsCount;
 - (void)addLocalizedString:(id)arg1;
 - (void)clearLocalizedStrings;
+@property(retain, nonatomic) NSMutableArray *localizedStrings;
 - (id)bestLocalizedName;
 
 @end

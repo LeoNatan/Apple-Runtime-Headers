@@ -6,22 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class CHDFormula, EDResources, OADGraphicProperties;
+@class CHDFormula, EDResources, EDString, OADGraphicProperties;
 
 __attribute__((visibility("hidden")))
 @interface CHDTrendlineLabel : NSObject
 {
     EDResources *mResources;
     CHDFormula *mName;
-    unsigned long long mLastCachedNameStringIndex;
     unsigned long long mContentFormatId;
     _Bool mContentFormatDerived;
     _Bool mGeneratedText;
     _Bool mAutomaticLabelDeleted;
     OADGraphicProperties *mGraphicProperties;
+    EDString *mLastCachedName;
 }
 
 + (id)trendlineLabelWithResources:(id)arg1;
+@property(retain, nonatomic) EDString *lastCachedName; // @synthesize lastCachedName=mLastCachedName;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
@@ -35,14 +37,9 @@ __attribute__((visibility("hidden")))
 - (id)contentFormat;
 - (void)setName:(id)arg1 chart:(id)arg2;
 - (id)name;
-- (void)setLastCachedName:(id)arg1;
-- (id)lastCachedName;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setContentFormatId:(unsigned long long)arg1;
 - (unsigned long long)contentFormatId;
-- (void)setStringIndex:(unsigned long long)arg1;
-- (unsigned long long)stringIndex;
 
 @end
 

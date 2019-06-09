@@ -11,13 +11,14 @@
 #import <CarPlaySupport/CPSButtonDelegate-Protocol.h>
 #import <CarPlaySupport/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CPTemplate, NSString, UITapGestureRecognizer;
+@class CPTemplate, NAFuture, NSString, UITapGestureRecognizer;
 @protocol CPSTemplateViewControllerDelegate, CPTemplateDelegate;
 
 @interface CPSBaseTemplateViewController : UIViewController <CPSButtonDelegate, UIGestureRecognizerDelegate, CPBaseTemplateProviding, CPSBaseTemplateViewController>
 {
     _Bool _isPopping;
     _Bool _didDisappear;
+    NAFuture *_templateProviderFuture;
     CPTemplate *_associatedTemplate;
     id <CPTemplateDelegate> _templateDelegate;
     id <CPSTemplateViewControllerDelegate> _viewControllerDelegate;
@@ -30,6 +31,7 @@
 @property(nonatomic) __weak id <CPSTemplateViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
 @property(retain, nonatomic) id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(retain, nonatomic) CPTemplate *associatedTemplate; // @synthesize associatedTemplate=_associatedTemplate;
+@property(readonly, nonatomic) NAFuture *templateProviderFuture; // @synthesize templateProviderFuture=_templateProviderFuture;
 - (void).cxx_destruct;
 - (void)setBarButton:(id)arg1 title:(id)arg2;
 - (void)setBarButton:(id)arg1 image:(id)arg2;
@@ -48,6 +50,8 @@
 - (void)_addGestureRecognizerIfNecessary;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)_cleanup;
+- (void)_viewDidLoad;
 - (void)viewDidLoad;
 - (void)_cps_viewControllerWasPopped;
 - (void)_dismissTemplateViewController;

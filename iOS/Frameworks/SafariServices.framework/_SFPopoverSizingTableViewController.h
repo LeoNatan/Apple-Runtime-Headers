@@ -13,13 +13,17 @@
     UIBlurEffect *_backgroundBlurEffect;
     _Bool _didUpdateTranslucentAppearanceAtLeastOnce;
     _Bool _didHaveTranslucentAppearance;
+    double _preferredContentWidth;
 }
 
 + (id)tableViewCellForSizeEstimation;
 + (void)initialize;
+@property(nonatomic) double preferredContentWidth; // @synthesize preferredContentWidth=_preferredContentWidth;
 - (void).cxx_destruct;
+- (void)cancelPopoverKeyPressed;
+- (id)keyCommands;
 - (id)backgroundColorUsingTranslucentAppearance:(_Bool)arg1;
-@property(readonly, nonatomic) UIBlurEffect *backgroundBlurEffect;
+- (id)_backgroundBlurEffect;
 - (void)updateTranslucentAppearance;
 @property(readonly, nonatomic) _Bool hasTranslucentAppearance;
 - (_Bool)_needsTranslucentAppearanceUpdate;
@@ -33,6 +37,8 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)updatePreferredContentSize;
 - (struct CGSize)preferredContentSize;
+@property(readonly, nonatomic) long long maximumNumberOfRows;
+@property(readonly, nonatomic) long long minimumNumberOfRows;
 
 @end
 

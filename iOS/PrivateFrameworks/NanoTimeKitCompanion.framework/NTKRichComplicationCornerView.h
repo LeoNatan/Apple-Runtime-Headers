@@ -18,13 +18,13 @@
 }
 
 + (id)_createHitTestPathWithViewBounds:(struct CGRect)arg1 position:(long long)arg2 forDevice:(id)arg3;
-+ (struct UIEdgeInsets)_keylinePaddingForPosition:(long long)arg1 conentSize:(struct CGSize)arg2 forDevice:(id)arg3;
++ (struct UIEdgeInsets)_keylinePaddingForPosition:(long long)arg1 conentSize:(struct CGSize)arg2 forDevice:(id)arg3 narrowTopSlots:(_Bool)arg4;
 + (id)viewWithLegacyComplicationType:(unsigned long long)arg1;
-+ (void)startDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
-+ (id)keylineViewForPosition:(long long)arg1 forDevice:(id)arg2;
-+ (id)keylineImageForPosition:(long long)arg1 filled:(_Bool)arg2 forDevice:(id)arg3;
++ (void)updateCustomDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 animationType:(unsigned long long)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6;
++ (id)keylineViewForPosition:(long long)arg1 forDevice:(id)arg2 narrowTopSlots:(_Bool)arg3;
++ (id)keylineImageForPosition:(long long)arg1 filled:(_Bool)arg2 forDevice:(id)arg3 narrowTopSlots:(_Bool)arg4;
 + (struct CGAffineTransform)transformForState:(long long)arg1 position:(long long)arg2 device:(id)arg3;
-+ (id)layoutRuleForState:(long long)arg1 position:(long long)arg2 faceBounds:(struct CGRect)arg3 forDevice:(id)arg4;
++ (id)layoutRuleForState:(long long)arg1 position:(long long)arg2 faceBounds:(struct CGRect)arg3 forDevice:(id)arg4 narrowTopSlots:(_Bool)arg5;
 + (struct CGSize)viewSizeForDevice:(id)arg1;
 @property(nonatomic) double outerComponentRotationInDegree; // @synthesize outerComponentRotationInDegree=_outerComponentRotationInDegree;
 @property(nonatomic) double innerComponentRotationInDegree; // @synthesize innerComponentRotationInDegree=_innerComponentRotationInDegree;

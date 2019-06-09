@@ -28,6 +28,7 @@
 @property(readonly, retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSData *contents; // @synthesize contents=_contents;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
+- (void).cxx_destruct;
 - (_Bool)setArchiveEntry:(id)arg1;
 - (id)scrubbedArchiveEntries;
 - (void)_scrubContentDirectory;
@@ -37,7 +38,6 @@
 - (_Bool)inputWithURL:(id)arg1;
 - (id)archiveEntries;
 - (id)description;
-- (void)dealloc;
 
 @end
 

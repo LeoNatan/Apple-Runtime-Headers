@@ -7,6 +7,9 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (CBPropertyKeyExtension)
+- (id)getKeyKeyboardIDRef;
+- (unsigned long long)getKeyKeyboardID;
+- (id)initWithPropertyKey:(id)arg1 keyboardID:(unsigned long long)arg2;
 - (id)getKeyPropertyParameter;
 - (id)getKeyCategoryRef;
 - (unsigned long long)getKeyCategory;

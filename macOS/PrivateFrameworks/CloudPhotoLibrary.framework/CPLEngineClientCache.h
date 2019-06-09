@@ -20,6 +20,7 @@
 - (void)fillRelatedIdentifiersInChange:(id)arg1;
 - (id)statusDictionary;
 - (id)status;
+- (id)resourceOfType:(unsigned long long)arg1 forRecordWithScopedIdentifier:(id)arg2 recordClass:(Class *)arg3 error:(id *)arg4;
 - (id)resourceOfType:(unsigned long long)arg1 forRecordWithScopedIdentifier:(id)arg2 error:(id *)arg3;
 - (BOOL)applyBatch:(id)arg1 direction:(unsigned long long)arg2 withError:(id *)arg3;
 - (id)localChangeBatchFromCloudBatch:(id)arg1 usingMapping:(id)arg2 withError:(id *)arg3;

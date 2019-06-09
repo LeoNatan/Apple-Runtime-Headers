@@ -7,13 +7,14 @@
 #import <UIKit/UIViewController.h>
 
 #import <MarkupUI/MUContentViewControllerDelegate-Protocol.h>
+#import <MarkupUI/PKRulerHostingDelegate-Protocol.h>
 #import <MarkupUI/UINavigationBarDelegate-Protocol.h>
 #import <MarkupUI/UIToolbarDelegate-Protocol.h>
 
 @class AKController, AKToolbarView, NSData, NSLayoutConstraint, NSString, NSUndoManager, PDFDocument, PDFView, UIBarButtonItem, UIColor, UIImage, UIImageView, UINavigationBar, UINavigationItem, UIScrollView, UIView;
 @protocol MUContentViewControllerProtocol, MarkupViewControllerDelegate;
 
-@interface MarkupViewController : UIViewController <MUContentViewControllerDelegate, UINavigationBarDelegate, UIToolbarDelegate>
+@interface MarkupViewController : UIViewController <MUContentViewControllerDelegate, UINavigationBarDelegate, UIToolbarDelegate, PKRulerHostingDelegate>
 {
     UIColor *_backgroundColor;
     UIColor *_toolbarItemTintColor;
@@ -120,12 +121,14 @@
 - (long long)toolbarController:(id)arg1 positionForBar:(id)arg2;
 - (void)_toolbarShareButtonTapped:(id)arg1;
 - (long long)positionForBar:(id)arg1;
+@property(readonly) struct CGSize adjustedSourceImageSize;
 - (id)popoverPresentingViewControllerForAnnotationController:(id)arg1;
 - (void)controllerWillDismissSignatureManagerView:(id)arg1;
 - (void)controllerWillShowSignatureManagerView:(id)arg1;
 - (void)controllerWillDismissSignatureCaptureView:(id)arg1;
 - (void)controllerWillShowSignatureCaptureView:(id)arg1;
 - (void)penStrokeCompletedForAnnotationController:(id)arg1;
+- (void)annotationController:(id)arg1 detectedEditOfType:(unsigned long long)arg2;
 - (void)editDetectedForAnnotationController:(id)arg1;
 - (void)editCheckpointReachedForAnnotationController:(id)arg1;
 - (_Bool)contentViewController:(id)arg1 shouldHandleURL:(id)arg2;
@@ -152,6 +155,8 @@
 - (void)_updateConstraintsForBarPosition:(long long)arg1;
 - (void)adjustContentInsetsForBars;
 - (void)_createCancelDoneNavBar;
+- (_Bool)rulerHostWantsSharedRuler;
+- (id)rulerHostingView;
 - (void)_setupAnnotationController;
 - (void)_installContentViewControllerForUTI:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

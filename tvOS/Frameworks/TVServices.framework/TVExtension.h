@@ -25,13 +25,13 @@
 + (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 + (_Bool)appHasBinaryExtension:(id)arg1;
 + (id)extensionForContentIdentifier:(id)arg1;
++ (_Bool)pluginHasTopShelfExtension:(id)arg1;
 + (id)topShelfProviderExtensionForAppIdentifier:(id)arg1;
 + (id)bestExtensionWithAppIdentifier:(id)arg1 protocol:(id)arg2;
 + (id)allInstalledExtensionsOfType:(id)arg1 forAppIdentifier:(id)arg2;
 + (id)extensionWithPluginProxy:(id)arg1 appProxy:(id)arg2 isLegacy:(_Bool)arg3 protocol:(id)arg4;
 + (id)serviceExtension;
 + (void)setPrincipalObjectClass:(Class)arg1;
-+ (void)initialize;
 + (void)load;
 @property(retain) BKSProcessAssertion *_procAssertion; // @synthesize _procAssertion=__procAssertion;
 @property(retain) NSXPCConnection *_connection; // @synthesize _connection=__connection;

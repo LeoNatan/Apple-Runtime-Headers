@@ -16,7 +16,6 @@
 
 - (BOOL)hasDataToMerge;
 - (id)icon;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

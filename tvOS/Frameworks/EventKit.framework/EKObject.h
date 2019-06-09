@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (void)rebaseSkippingRelationProperties:(id)arg1;
 - (void)rebase;
 @property(readonly, nonatomic) _Bool isPartialObject;
+- (Class)frozenClass;
 - (_Bool)isPropertyUnavailable:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *preFrozenRelationshipObjects;
 @property(readonly, nonatomic) _Bool canBeConvertedToFullObject;
@@ -86,16 +87,20 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *semanticIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (_Bool)_isPropertyUnavailable:(id)arg1 convertToFullObjectIfUnavailable:(_Bool)arg2;
+@property(retain, nonatomic) EKPersistentObject *backingObject;
 - (void)setPersistentObject:(id)arg1;
 - (id)persistentObject;
 - (void)dealloc;
 - (id)initWithPersistentObject:(id)arg1;
 - (id)init;
+- (void)_cachedMeltedChildIdentifierToParentMap:(id)arg1;
+- (id)cachedMeltedChildIdentifierToParentMap;
 - (id)privacyDescription;
 - (void)emptyMeltedCacheForKeys:(id)arg1;
 - (void)_emptyMeltedCacheForKey:(id)arg1;
 - (void)emptyMeltedCache;
 - (void)_resetMeltedCache;
+- (void)updateMultiValueCacheForChangeSet:(id)arg1 preservingExistingAdds:(_Bool)arg2;
 - (void)updatedMeltedCacheForChangeSet:(id)arg1;
 - (unsigned long long)meltedAndCachedMultiRelationCountForKey:(id)arg1;
 - (void)updateMeltedAndCachedMultiRelationObjects:(id)arg1 forKey:(id)arg2;
@@ -173,8 +178,6 @@ __attribute__((visibility("hidden")))
 - (void)_performWithReadLock:(CDUnknownBlockType)arg1;
 - (id)_readWriteLock;
 - (void)_sharedInit;
-- (void)setBackingObject:(id)arg1;
-- (id)backingObject;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

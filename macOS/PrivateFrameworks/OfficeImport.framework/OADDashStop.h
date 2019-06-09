@@ -8,6 +8,7 @@
 
 #import <OfficeImport/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface OADDashStop : NSObject <NSCopying>
 {
     float mDash;

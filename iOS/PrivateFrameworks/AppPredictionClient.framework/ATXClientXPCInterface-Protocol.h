@@ -7,6 +7,7 @@
 @class APRAppPreferenceResponse, ATXResponse, INIntent, NSArray, NSString;
 
 @protocol ATXClientXPCInterface
+- (void)sortAppsByLaunches:(NSArray *)arg1 reply:(void (^)(NSArray *))arg2;
 - (void)getAppPredictorAssetMappingDescriptionWithReply:(void (^)(NSString *, _Bool))arg1;
 - (void)generateNewAppPredictionsForConsumerSubType:(unsigned char)arg1 intent:(INIntent *)arg2 candidateBundleIdentifiers:(NSArray *)arg3 candidateIntentTypeIdentifiers:(NSArray *)arg4 reply:(void (^)(_Bool))arg5;
 - (void)sendFeedbackForConsumerType:(unsigned long long)arg1 consumerSubType:(unsigned char)arg2 atxResponse:(ATXResponse *)arg3 aprResponse:(APRAppPreferenceResponse *)arg4 engagementType:(unsigned long long)arg5 engagedBundleId:(NSString *)arg6 bundleIdsShown:(NSArray *)arg7 reply:(void (^)(_Bool))arg8;

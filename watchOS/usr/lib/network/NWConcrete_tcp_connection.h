@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType tc_event;
     CDUnknownBlockType tc_cancel_handler;
     NSObject<OS_dispatch_source> *tc_connection_attempt_timer;
-    void *tc_internally_retained_object;
+    NWConcrete_tcp_connection *tc_internally_retained_object;
     unsigned long long tc_id;
     unsigned long long tc_attempt_timeout_nanos;
     int tc_error;

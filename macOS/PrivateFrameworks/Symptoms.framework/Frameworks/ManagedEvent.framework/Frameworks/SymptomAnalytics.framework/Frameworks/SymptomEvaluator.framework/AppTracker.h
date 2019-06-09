@@ -6,18 +6,23 @@
 
 #import <objc/NSObject.h>
 
+#import <SymptomEvaluator/ConfigurableObjectProtocol-Protocol.h>
 #import <SymptomEvaluator/ManagedEventInfoProtocol-Protocol.h>
 
 @class NSDate, NSString, TrackerPolicy;
 
-@interface AppTracker : NSObject <ManagedEventInfoProtocol>
+__attribute__((visibility("hidden")))
+@interface AppTracker : NSObject <ManagedEventInfoProtocol, ConfigurableObjectProtocol>
 {
     BOOL _isADaemon;
     BOOL _sentFlowCountExceededPolicySymptom;
+    BOOL _sentThunderingHerdFlowCountExceededPolicySymptom;
     int _prevFlows;
+    int _prevFlowsForOthers;
     int _flowsForSelf;
     int _flowsForOthers;
     int _flowsPerPeriod;
+    int _flowsPerPeriodAfterMadePrimary;
     unsigned int _eversetClassFlags;
     NSString *_userName;
     double _prevFlowDurations;
@@ -34,12 +39,14 @@
 + (void)dumpState;
 + (void)noteForegroundState:(_Bool)arg1 forApp:(id)arg2 hasForegroundApps:(_Bool)arg3;
 + (void)getWifiNetworkActivity:(CDUnknownBlockType)arg1;
-+ (void)noteFlow:(id)arg1 withOwner:(id)arg2 isADaemon:(BOOL)arg3;
-+ (void)noteFlow:(id)arg1 withDelegatee:(id)arg2;
++ (void)noteFlow:(id)arg1 withOwner:(id)arg2 snapshot:(id)arg3;
++ (void)noteFlow:(id)arg1 withDelegatee:(id)arg2 snapshot:(id)arg3;
 + (void)pruneCache:(id)arg1;
++ (id)ifTrackerForFlow:(id)arg1;
 + (id)ifTrackerForInterfaceType:(long long)arg1;
 + (void)noteFlowEnding:(id)arg1;
 + (void)setAppTrackerVerbose:(unsigned int)arg1;
++ (void)configureCompanionLinkPolicies:(id)arg1;
 + (void)configureCellPolicies:(id)arg1;
 + (void)configureWifiPolicies:(id)arg1;
 + (void)setWifiDaemonCheckList:(id)arg1;
@@ -47,10 +54,12 @@
 + (void)setWifiAlwaysNoteList:(id)arg1;
 + (void)initialize;
 @property long long interfaceType; // @synthesize interfaceType=_interfaceType;
+@property BOOL sentThunderingHerdFlowCountExceededPolicySymptom; // @synthesize sentThunderingHerdFlowCountExceededPolicySymptom=_sentThunderingHerdFlowCountExceededPolicySymptom;
 @property BOOL sentFlowCountExceededPolicySymptom; // @synthesize sentFlowCountExceededPolicySymptom=_sentFlowCountExceededPolicySymptom;
 @property BOOL isADaemon; // @synthesize isADaemon=_isADaemon;
 @property unsigned int eversetClassFlags; // @synthesize eversetClassFlags=_eversetClassFlags;
 @property(retain) TrackerPolicy *specificPolicy; // @synthesize specificPolicy=_specificPolicy;
+@property int flowsPerPeriodAfterMadePrimary; // @synthesize flowsPerPeriodAfterMadePrimary=_flowsPerPeriodAfterMadePrimary;
 @property int flowsPerPeriod; // @synthesize flowsPerPeriod=_flowsPerPeriod;
 @property int flowsForOthers; // @synthesize flowsForOthers=_flowsForOthers;
 @property int flowsForSelf; // @synthesize flowsForSelf=_flowsForSelf;
@@ -58,12 +67,14 @@
 @property unsigned long long prevFlowTxBytes; // @synthesize prevFlowTxBytes=_prevFlowTxBytes;
 @property unsigned long long prevFlowRxBytes; // @synthesize prevFlowRxBytes=_prevFlowRxBytes;
 @property double prevFlowDurations; // @synthesize prevFlowDurations=_prevFlowDurations;
+@property int prevFlowsForOthers; // @synthesize prevFlowsForOthers=_prevFlowsForOthers;
 @property int prevFlows; // @synthesize prevFlows=_prevFlows;
-@property(retain) NSString *userName; // @synthesize userName=_userName;
+@property(readonly) NSString *userName; // @synthesize userName=_userName;
 - (void).cxx_destruct;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (int)configureInstance:(id)arg1;
 - (void)generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)adjustImmediateFlowLinkages:(id)arg1;
 - (void)removeImmediateFlow:(id)arg1;
 - (void)addImmediateFlow:(id)arg1;
@@ -71,8 +82,9 @@
 - (void)removeFlow:(id)arg1;
 - (void)addFlow:(id)arg1;
 - (void)checkForFlowCountPolicyViolation;
-- (void)sendFlowCount:(unsigned long long)arg1 exceededPolicyThreshold:(unsigned long long)arg2;
+- (void)sendFlowCount:(unsigned long long)arg1 exceededPolicyThreshold:(unsigned long long)arg2 isLikelyThunderingHerd:(BOOL)arg3;
 @property(readonly, copy) NSString *description;
+- (void)resetFlowCountAfterMadePrimary;
 - (void)resetFlowCountPolicyInfo;
 - (id)initWithUserName:(id)arg1 interfaceType:(long long)arg2;
 

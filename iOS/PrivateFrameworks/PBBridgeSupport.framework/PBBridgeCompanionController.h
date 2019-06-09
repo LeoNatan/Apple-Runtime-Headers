@@ -44,6 +44,7 @@
     CDUnknownBlockType _initialSyncPrepCompletion;
     CDUnknownBlockType _languageLocaleCompletion;
     CDUnknownBlockType _prepareWatchForForcedSUCompletion;
+    CDUnknownBlockType _buysOnWatchCredentialsIngestedCompletion;
     NSMutableDictionary *_reportMapping;
 }
 
@@ -56,6 +57,7 @@
 @property(retain, nonatomic) NSMutableDictionary *reportMapping; // @synthesize reportMapping=_reportMapping;
 @property(nonatomic) _Bool sentActivationRequest; // @synthesize sentActivationRequest=_sentActivationRequest;
 @property(nonatomic) _Bool sentSessionRequest; // @synthesize sentSessionRequest=_sentSessionRequest;
+@property(copy, nonatomic) CDUnknownBlockType buysOnWatchCredentialsIngestedCompletion; // @synthesize buysOnWatchCredentialsIngestedCompletion=_buysOnWatchCredentialsIngestedCompletion;
 @property(copy, nonatomic) CDUnknownBlockType prepareWatchForForcedSUCompletion; // @synthesize prepareWatchForForcedSUCompletion=_prepareWatchForForcedSUCompletion;
 @property(copy, nonatomic) CDUnknownBlockType languageLocaleCompletion; // @synthesize languageLocaleCompletion=_languageLocaleCompletion;
 @property(copy, nonatomic) CDUnknownBlockType initialSyncPrepCompletion; // @synthesize initialSyncPrepCompletion=_initialSyncPrepCompletion;
@@ -80,11 +82,14 @@
 @property(nonatomic) __weak id <RUILoaderDelegate> ruiDelegate; // @synthesize ruiDelegate=_ruiDelegate;
 @property(retain, nonatomic) RUIStyle *remoteUIStyle; // @synthesize remoteUIStyle=_remoteUIStyle;
 - (void).cxx_destruct;
+- (void)acknowledgeBuysOnWatchCredentialIngestion:(id)arg1;
+- (void)sendBuysOnWatchUsername:(id)arg1 andPassword:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)reporterForConnection:(id)arg1;
 - (void)setReporter:(id)arg1 forConnection:(id)arg2;
 - (void)watchDidPrepareForForcedSU:(id)arg1;
 - (void)tellWatchToPrepareForForcedSUWithCompletion:(CDUnknownBlockType)arg1;
 - (void)watchDidIngestWirelessCredentials:(id)arg1;
+- (id)currentWiFiNetworkName;
 - (void)sendDemoWatchWirelessCredentials;
 - (void)transportBecameUnreachable;
 - (void)transportBecameReachable;
@@ -108,11 +113,13 @@
 - (void)tellGizmoToShowLockedOnAnimationTimeToFlash:(double)arg1 animationCompletion:(CDUnknownBlockType)arg2;
 - (void)tellGizmoToPopToControllerType:(unsigned long long)arg1;
 - (void)tellGizmoToPushControllerType:(unsigned long long)arg1;
+- (void)tellWatchToSetSiriEnabled:(_Bool)arg1;
 - (void)tellGizmoToSetLocationEnabled:(_Bool)arg1;
 - (void)tellGizmoToSetDiagnosticsEnabled:(_Bool)arg1;
 - (void)sendGizmoPasscodeRestrictions;
 - (void)gizmoDidEndUnlockPairing:(id)arg1;
 - (void)gizmoDidBeginUnlockPairing:(id)arg1;
+- (void)gizmoDidEndPasscodeChange:(id)arg1;
 - (void)gizmoFailedToCreatePasscode:(id)arg1;
 - (void)gizmoDidEndPasscodeCreation:(id)arg1;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;

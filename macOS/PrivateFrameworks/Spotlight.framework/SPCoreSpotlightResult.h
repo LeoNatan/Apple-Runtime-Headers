@@ -4,33 +4,36 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Spotlight/PRSResult.h>
+#import <SpotlightServices/SFSearchResult_SpotlightExtras.h>
 
 #import <Spotlight/NSPasteboardWriting-Protocol.h>
 
 @class CSSearchableItem, NSArray, NSNumber, NSString;
 
-@interface SPCoreSpotlightResult : PRSResult <NSPasteboardWriting>
+@interface SPCoreSpotlightResult : SFSearchResult_SpotlightExtras <NSPasteboardWriting>
 {
-    unsigned long long _score;
+    // Error parsing type: T, name: _score
     NSString *_section_header;
     NSNumber *_groupNumber;
-    NSString *_userActivityRequiredString;
+    NSArray *_rankingPatterns;
+    NSArray *_rankingTerms;
     CSSearchableItem *_item;
 }
 
 @property(readonly, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
-@property(readonly, nonatomic) NSString *userActivityRequiredString; // @synthesize userActivityRequiredString=_userActivityRequiredString;
+@property(retain) NSArray *rankingTerms; // @synthesize rankingTerms=_rankingTerms;
 - (void).cxx_destruct;
 - (id)quickLookItemForQueryString:(id)arg1;
-@property(readonly, nonatomic) NSArray *providerDataTypes;
-@property(readonly, nonatomic) NSArray *providerFileTypes;
-@property(readonly, nonatomic) NSString *uniqueIdentifier;
+- (id)providerDataTypes;
+- (id)providerFileTypes;
+- (id)documentIdentifier;
+- (id)uniqueIdentifier;
 - (id)valueForAttribute:(id)arg1;
 @property(readonly, nonatomic) NSArray *contentTypeTree;
 - (id)contentType;
-- (id)initWithSearchableItem:(id)arg1;
-- (id)icon;
+- (id)initWithSearchableItem:(id)arg1 attributeDictionary:(id)arg2 fetchedAttributes:(id)arg3 ranker:(id)arg4 queryString:(id)arg5;
+- (void)setRankingQueries:(id)arg1;
+- (void)calculateScoreForResult;
 - (id)previewItemURL;
 - (id)completion;
 - (BOOL)isFile;
@@ -39,17 +42,17 @@
 - (id)url;
 - (id)bundleID;
 - (id)category;
-- (id)iconImageForApplication;
-- (id)largeIconImage;
-- (id)iconImage;
+- (id)pathForApplicationToOpen;
+- (BOOL)isLocalApplicationResult;
 - (id)relatedIdentifier;
 - (id)section_header;
 @property(readonly, nonatomic) NSString *groupName;
 @property(readonly, nonatomic) NSNumber *groupNumber;
 @property(readonly, copy) NSString *description;
-- (BOOL)isDocumentQuery;
-- (unsigned long long)score;
-- (void)setScore:(unsigned long long)arg1;
+-     // Error parsing type: T16@0:8, name: score
+- (void)setScore: /* Error: Ran out of types for this method. */;
+- (id)subjectForEmailAttachment;
+- (BOOL)isBoundEmailAttachment;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

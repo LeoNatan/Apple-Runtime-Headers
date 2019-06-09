@@ -19,7 +19,6 @@
 - (NSString *)OSString;
 - (NSString *)hardwareString;
 - (NSString *)UDID;
-- (Class)sharingPluginClass;
 - (Class)subscriberPluginClass;
 - (Class)publisherPluginClass;
 - (NSString *)pathMediaStreamDir;

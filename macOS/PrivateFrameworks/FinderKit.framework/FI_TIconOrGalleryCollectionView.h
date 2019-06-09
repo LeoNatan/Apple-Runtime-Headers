@@ -8,6 +8,8 @@
 
 #import <FinderKit/TShrinkToFitDelegateProtocol-Protocol.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface FI_TIconOrGalleryCollectionView : FI_TCollectionView <TShrinkToFitDelegateProtocol>
 {
@@ -29,6 +31,12 @@ __attribute__((visibility("hidden")))
 - (void)updateSTFEditorLocation;
 - (void)stopEditing:(_Bool)arg1;
 - (_Bool)startEditingWithNode:(const struct TFENode *)arg1 renameOp:(id)arg2 afterDelay:(_Bool)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

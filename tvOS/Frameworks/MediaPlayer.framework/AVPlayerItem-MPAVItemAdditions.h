@@ -6,9 +6,12 @@
 
 #import <AVFoundation/AVPlayerItem.h>
 
-@class MPAVItem;
+@class MPAVItem, MPQueuePlayer;
 
 @interface AVPlayerItem (MPAVItemAdditions)
 @property(retain, nonatomic) MPAVItem *MPAVItem;
+- (id)MP_shortDescription;
+@property(nonatomic) __weak MPQueuePlayer *MP_associatedQueuePlayer;
+- (id)createLanguageOptions;
 @end
 

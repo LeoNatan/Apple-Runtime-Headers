@@ -6,10 +6,14 @@
 
 #import <EventKit/EKCalendarItemChange.h>
 
-__attribute__((visibility("hidden")))
 @interface EKReminderChange : EKCalendarItemChange
 {
 }
+
++ (void)fetchReminderChangesInCalendar:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (void)fetchReminderChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (void)fetchReminderChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (int)entityType;
 
 @end
 

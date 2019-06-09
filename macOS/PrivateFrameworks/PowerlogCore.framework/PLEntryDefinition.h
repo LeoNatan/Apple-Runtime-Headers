@@ -66,6 +66,7 @@
 + (id)entryDefinitionsForOperator:(id)arg1;
 + (id)pruneEmptyValueEntryFromDict:(id)arg1;
 + (id)entryDefinitionsForOperatorClass:(Class)arg1;
+- (id)commonTypeDict_RawDataFormat;
 - (id)commonTypeDict_DateFormat_isCFAbsoluteTime;
 - (id)commonTypeDict_DateFormat;
 - (id)commonTypeDict_StringFormat;

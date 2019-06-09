@@ -19,7 +19,6 @@
 + (id)sharedManager;
 - (void).cxx_destruct;
 - (void)saveAllAccounts;
-- (void)_removeAppleIDCertsForUsername:(id)arg1;
 - (void)removeAccount:(id)arg1;
 - (void)updateAccount:(id)arg1;
 - (void)addAccount:(id)arg1;

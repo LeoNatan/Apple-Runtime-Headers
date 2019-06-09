@@ -18,7 +18,6 @@
 - (void)didDuplicateAvatar:(id <AVTAvatarRecord>)arg1;
 - (void)didEditAvatar:(id <AVTAvatarRecord>)arg1;
 - (void)didCreateAvatar:(id <AVTAvatarRecord>)arg1;
-- (void)didTriggerHoldPose;
 - (void)didShowExpandedMode;
 - (void)didSendStickerWithAvatar:(id <AVTAvatarRecord>)arg1;
 - (void)didSendImageWithAvatar:(id <AVTAvatarRecord>)arg1;

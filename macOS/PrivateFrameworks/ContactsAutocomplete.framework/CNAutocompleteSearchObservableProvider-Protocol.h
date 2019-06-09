@@ -6,12 +6,13 @@
 
 #import <ContactsAutocomplete/NSObject-Protocol.h>
 
-@class CNObservable;
+@class CNObservable, NSArray;
 @protocol CNPromise;
 
 @protocol CNAutocompleteSearchObservableProvider <NSObject>
 - (CNObservable *)calendarServersSearchObservable;
 - (CNObservable *)directoryServersSearchObservable;
+- (NSArray *)localExtensionSearchObservables;
 - (CNObservable *)predictionsSearchObservableWithUnfilteredResultPromise:(id <CNPromise>)arg1;
 - (CNObservable *)suggestionsSearchObservable;
 - (CNObservable *)recentsSearchObservable;

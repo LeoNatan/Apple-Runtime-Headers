@@ -34,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (void)_applyVisualStyleToLabels;
 - (void)_applyVisualStyle;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
+- (id)viewForLastBaselineLayout;
+- (id)viewForFirstBaselineLayout;
 - (void)tintColorDidChange;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)interfaceAction:(id)arg1 reloadDisplayedContentVisualStyle:(id)arg2;

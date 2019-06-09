@@ -8,7 +8,7 @@
 
 #import <AddressBook/CNFoundationUserDefaults-Protocol.h>
 
-@class ABUserDefaults, NSString;
+@class ABUserDefaults, NSDictionary, NSString;
 
 @interface ABUserDefaultsCNAdapter : NSObject <CNFoundationUserDefaults>
 {
@@ -16,6 +16,7 @@
 }
 
 + (id)adapterWithUserDefaults:(id)arg1;
+@property(nonatomic) NSDictionary *filteredAccountsAndContainers;
 - (id)countryCode;
 - (unsigned long long)sortOrder;
 @property(nonatomic, getter=isShortNameFormatEnabled) BOOL shortNameFormatEnabled;

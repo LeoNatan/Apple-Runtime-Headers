@@ -8,7 +8,6 @@
 
 @class NSError, NSString, VSStoreURLBag;
 
-__attribute__((visibility("hidden")))
 @interface VSStoreURLBagLoadOperation : VSAsyncOperation
 {
     VSStoreURLBag *_bag;

@@ -91,7 +91,7 @@
     struct MonotonicTime _timeOfLastVisibleContentRectUpdate;
     unsigned long long _focusPreservationCount;
     unsigned long long _activeFocusedStateRetainCount;
-    double _minimumEffectiveDeviceWidth;
+    unsigned long long _selectionAttributes;
 }
 
 + (_Bool)handlesURLScheme:(id)arg1;
@@ -172,10 +172,11 @@
 - (void)didMoveToWindow;
 - (_Bool)_zoomToRect:(struct FloatRect)arg1 withOrigin:(struct FloatPoint)arg2 fitEntireRect:(_Bool)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
 - (double)_targetContentZoomScaleForRect:(const struct FloatRect *)arg1 currentScale:(double)arg2 fitEntireRect:(_Bool)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;
+- (double)_contentZoomScale;
+- (double)_initialScaleFactor;
 - (void)_zoomToFocusRect:(const struct FloatRect *)arg1 selectionRect:(const struct FloatRect *)arg2 insideFixed:(_Bool)arg3 fontSize:(float)arg4 minimumScale:(double)arg5 maximumScale:(double)arg6 allowScaling:(_Bool)arg7 forceScroll:(_Bool)arg8;
 - (void)_zoomToInitialScaleWithOrigin:(struct FloatPoint)arg1 animated:(_Bool)arg2;
 - (void)_zoomOutWithOrigin:(struct FloatPoint)arg1 animated:(_Bool)arg2;
-- (void)_scrollByContentOffset:(struct FloatPoint)arg1;
 - (_Bool)_scrollToRect:(struct FloatRect)arg1 origin:(struct FloatPoint)arg2 minimumScrollDistance:(float)arg3;
 - (void)_scrollToContentScrollPosition:(struct FloatPoint)arg1 scrollOrigin:(struct IntPoint)arg2;
 - (void)_zoomToRect:(struct FloatRect)arg1 atScale:(double)arg2 origin:(struct FloatPoint)arg3 animated:(_Bool)arg4;
@@ -209,8 +210,11 @@
 @property(readonly, nonatomic) long long _selectionGranularity;
 @property(readonly, nonatomic) WKWebViewContentProviderRegistry *_contentProviderRegistry;
 - (id)_currentContentView;
+- (void)willFinishIgnoringCalloutBarFadeAfterPerformingAction;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)makeTextWritingDirectionRightToLeft:(id)arg1;
+- (void)makeTextWritingDirectionLeftToRight:(id)arg1;
 - (void)makeTextWritingDirectionNatural:(id)arg1;
 - (void)pasteAndMatchStyle:(id)arg1;
 - (void)decreaseSize:(id)arg1;
@@ -232,7 +236,6 @@
 - (void)_promptForReplace:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
-- (void)_arrowKey:(id)arg1;
 - (void)_addShortcut:(id)arg1;
 - (_Bool)resignFirstResponder;
 - (_Bool)canBecomeFirstResponder;
@@ -251,7 +254,8 @@
 - (void)_didInsertAttachment:(struct Attachment *)arg1 withSource:(id)arg2;
 - (void)_clearSafeBrowsingWarningIfForMainFrameNavigation;
 - (void)_clearSafeBrowsingWarning;
-- (void)_showSafeBrowsingWarning:(const struct SafeBrowsingWarning *)arg1 completionHandler:(CompletionHandler_0810ae1c *)arg2;
+- (void)_showSafeBrowsingWarning:(const struct SafeBrowsingWarning *)arg1 completionHandler:(CompletionHandler_2c34b13f *)arg2;
+@property(readonly, nonatomic) unsigned long long _selectionAttributes;
 - (void)_didChangeEditorState;
 @property(nonatomic, setter=_setViewportSizeForCSSViewportUnits:) struct CGSize _viewportSizeForCSSViewportUnits;
 @property(nonatomic) _Bool allowsLinkPreview;
@@ -291,6 +295,8 @@
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2;
 - (void)_setUpSQLiteDatabaseTrackerClient;
 - (void)_initializeWithConfiguration:(id)arg1;
+- (_Bool)_effectiveAppearanceIsInactive;
+- (_Bool)_effectiveAppearanceIsDark;
 @property(readonly, nonatomic, getter=_isRetainingActiveFocusedState) _Bool _retainingActiveFocusedState;
 - (void)_resetFocusPreservationCount;
 - (void)_decrementFocusPreservationCount;
@@ -305,6 +311,7 @@
 @property(readonly, nonatomic) NSData *_dataForDisplayedPDF;
 @property(readonly, nonatomic, getter=_isDisplayingPDF) _Bool _displayingPDF;
 - (id)_viewForFindUI;
+- (void)_overrideViewportWithArguments:(id)arg1;
 - (void)_clearOverrideLayoutParameters;
 - (void)_overrideLayoutParametersWithMinimumLayoutSize:(struct CGSize)arg1 maximumUnobscuredSizeOverride:(struct CGSize)arg2;
 - (void)_snapshotRect:(struct CGRect)arg1 intoImageOfWidth:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -329,9 +336,8 @@
 - (void)_detectDataWithTypes:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_removeDataDetectedLinks:(CDUnknownBlockType)arg1;
 - (void)_setPageMuted:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long _mediaCaptureState;
 @property(nonatomic, setter=_setMediaCaptureEnabled:) _Bool _mediaCaptureEnabled;
-- (void)_muteMediaCapture;
+@property(readonly, nonatomic) unsigned long long _mediaCaptureState;
 @property(readonly, nonatomic) _Bool _isInFullscreen;
 @property(nonatomic, setter=_setFullscreenDelegate:) id <_WKFullscreenDelegate> _fullscreenDelegate;
 @property(readonly, nonatomic) _Bool _webProcessIsResponsive;
@@ -364,6 +370,7 @@
 @property(nonatomic, setter=_setPaginationBehavesLikeColumns:) _Bool _paginationBehavesLikeColumns;
 @property(nonatomic, setter=_setPaginationMode:) long long _paginationMode;
 - (void)_getApplicationManifestWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_getContentsAsAttributedStringWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_getContentsAsStringWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_getWebArchiveDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_getMainResourceDataWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -395,6 +402,10 @@
 - (id)_snapshotLayerContentsForBackForwardListItem:(id)arg1;
 - (void)_becomeFirstResponderWithSelectionMovingForward:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)_retainActiveFocusedState;
+- (void)_focusTextInputContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_requestTextInputContextsInRect:(struct CGRect)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (struct CGRect)_convertRectToRootViewCoordinates:(struct CGRect)arg1;
+- (struct CGRect)_convertRectFromRootViewCoordinates:(struct CGRect)arg1;
 - (void)_killWebContentProcessAndResetState;
 - (id)_reloadExpiredOnly;
 - (id)_reloadWithoutContentBlockers;
@@ -412,6 +423,7 @@
 - (id)_loadRequest:(id)arg1 shouldOpenExternalURLs:(_Bool)arg2;
 - (id)_loadData:(id)arg1 MIMEType:(id)arg2 characterEncodingName:(id)arg3 baseURL:(id)arg4 userData:(id)arg5;
 - (void)_loadAlternateHTMLString:(id)arg1 baseURL:(id)arg2 forUnreachableURL:(id)arg3;
+@property(readonly, nonatomic) NSURL *_mainFrameURL;
 @property(readonly, nonatomic) NSURL *_unreachableURL;
 - (void)_resumeAllMediaPlayback;
 - (void)_suspendAllMediaPlayback;
@@ -445,6 +457,8 @@
 - (void)_alignJustified:(id)arg1;
 - (void)_alignCenter:(id)arg1;
 - (void)_denyNextUserMediaRequest;
+- (void)_processDidResumeForTesting;
+- (void)_processWillSuspendImminentlyForTesting;
 @property(readonly, nonatomic) _WKFrameHandle *_mainFrame;
 @property(readonly, nonatomic) _WKInspector *_inspector;
 @property(readonly, nonatomic) _Bool _hasInspectorFrontend;
@@ -452,6 +466,7 @@
 - (void)_setDefersLoadingForTesting:(_Bool)arg1;
 - (_Bool)_completeBackSwipeForTesting;
 - (_Bool)_beginBackSwipeForTesting;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_simulateTextEntered:(id)arg1;
 - (void)_simulateLongPressActionAtLocation:(struct CGPoint)arg1;
 @property(readonly, nonatomic) struct CGRect _dragCaretRect;
@@ -461,6 +476,7 @@
 - (void)_doAfterNextPresentationUpdateWithoutWaitingForPainting:(CDUnknownBlockType)arg1;
 - (void)_doAfterNextPresentationUpdateWithoutWaitingForAnimatedResizeForTesting:(CDUnknownBlockType)arg1;
 - (void)_doAfterNextPresentationUpdate:(CDUnknownBlockType)arg1;
+@property(nonatomic, setter=_setScrollingUpdatesDisabledForTesting:) _Bool _scrollingUpdatesDisabledForTesting;
 - (void)_internalDoAfterNextPresentationUpdate:(CDUnknownBlockType)arg1 withoutWaitingForPainting:(_Bool)arg2 withoutWaitingForAnimatedResize:(_Bool)arg3;
 - (double)_pageScale;
 - (void)_setPageScale:(double)arg1 withOrigin:(struct CGPoint)arg2;
@@ -482,6 +498,7 @@
 @property(readonly, nonatomic) NSString *selectFormPopoverTitle;
 - (void)selectFormAccessoryPickerRow:(int)arg1;
 - (void)setTimePickerValueToHour:(long long)arg1 minute:(long long)arg2;
+- (void)_dismissFilePicker;
 - (void)dismissFormAccessoryView;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)keyboardAccessoryBarPrevious;

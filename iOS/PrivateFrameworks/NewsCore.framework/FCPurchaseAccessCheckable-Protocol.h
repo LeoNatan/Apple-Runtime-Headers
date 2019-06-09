@@ -6,11 +6,13 @@
 
 #import <NewsCore/NFCopying-Protocol.h>
 
+@class NSString;
 @protocol FCChannelProviding;
 
 @protocol FCPurchaseAccessCheckable <NFCopying>
 @property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel;
 @property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
 @property(readonly, nonatomic, getter=isPaid) _Bool paid;
+@property(readonly, copy, nonatomic) NSString *identifier;
 @end
 

@@ -20,6 +20,7 @@
     PLEntryNotificationOperatorComposition *_wakeNotification;
     PLEntryNotificationOperatorComposition *_canSleepNotification;
     PLNSNotificationOperatorComposition *_dailyTaskNotification;
+    PLCFNotificationOperatorComposition *_flushAssertionBufferCFNotification;
     PLTimer *_runQueryTimer;
     PLTimer *_assertionSnapShotTimer;
     long long _aggregateMaxPIDCount;
@@ -52,6 +53,7 @@
 @property BOOL firstBufferDrain; // @synthesize firstBufferDrain=_firstBufferDrain;
 @property(retain) PLTimer *assertionSnapShotTimer; // @synthesize assertionSnapShotTimer=_assertionSnapShotTimer;
 @property(retain) PLTimer *runQueryTimer; // @synthesize runQueryTimer=_runQueryTimer;
+@property(retain) PLCFNotificationOperatorComposition *flushAssertionBufferCFNotification; // @synthesize flushAssertionBufferCFNotification=_flushAssertionBufferCFNotification;
 @property(retain) PLNSNotificationOperatorComposition *dailyTaskNotification; // @synthesize dailyTaskNotification=_dailyTaskNotification;
 @property(retain) PLEntryNotificationOperatorComposition *canSleepNotification; // @synthesize canSleepNotification=_canSleepNotification;
 @property(retain) PLEntryNotificationOperatorComposition *wakeNotification; // @synthesize wakeNotification=_wakeNotification;

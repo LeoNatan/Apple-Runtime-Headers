@@ -18,6 +18,7 @@
 - (void)dayViewControllerDidEndScrolling:(EKDayViewController *)arg1;
 - (void)dayViewControllerDidUpdateScrollPosition:(EKDayViewController *)arg1;
 - (void)dayViewControllerDidRespondToApplicationDidBecomeActiveStateChange:(EKDayViewController *)arg1;
+- (void)dayViewControllerCurrentDayDidCompleteAsyncLoadAndLayout:(EKDayViewController *)arg1;
 - (void)dayViewController:(EKDayViewController *)arg1 requestsShowEvent:(EKEvent *)arg2 showDetails:(_Bool)arg3;
 - (void)dayViewController:(EKDayViewController *)arg1 requestsPresentationOfViewControllerForGestures:(UIViewController *)arg2;
 - (void)updateSelectedOccurrenceView;

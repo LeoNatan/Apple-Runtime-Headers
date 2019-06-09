@@ -6,9 +6,11 @@
 
 #import <MediaPlayer/MPRequest.h>
 
-@class MPCPlayerPath, MPPropertySet;
+#import <MediaPlaybackCore/MPCMediaRemoteMiddlewareMetadataOperationConfiguration-Protocol.h>
 
-@interface MPCPlayerRequest : MPRequest
+@class MPCPlayerPath, MPPropertySet, NSString;
+
+@interface MPCPlayerRequest : MPRequest <MPCMediaRemoteMiddlewareMetadataOperationConfiguration>
 {
     _Bool _disablePlaybackStateValidation;
     _Bool _disablePlaybackRateValidation;
@@ -16,22 +18,29 @@
     MPPropertySet *_playingItemProperties;
     MPPropertySet *_queueSectionProperties;
     MPPropertySet *_queueItemProperties;
+    NSString *_preferredFallbackItemRelationship;
     CDStruct_339ad95e _tracklistRange;
 }
 
 + (Class)responseClass;
+@property(copy, nonatomic) NSString *preferredFallbackItemRelationship; // @synthesize preferredFallbackItemRelationship=_preferredFallbackItemRelationship;
 @property(nonatomic) _Bool disablePlaybackRateValidation; // @synthesize disablePlaybackRateValidation=_disablePlaybackRateValidation;
 @property(nonatomic) _Bool disablePlaybackStateValidation; // @synthesize disablePlaybackStateValidation=_disablePlaybackStateValidation;
 @property(copy, nonatomic) MPPropertySet *queueItemProperties; // @synthesize queueItemProperties=_queueItemProperties;
 @property(copy, nonatomic) MPPropertySet *queueSectionProperties; // @synthesize queueSectionProperties=_queueSectionProperties;
 @property(copy, nonatomic) MPPropertySet *playingItemProperties; // @synthesize playingItemProperties=_playingItemProperties;
-@property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 @property(nonatomic) CDStruct_339ad95e tracklistRange; // @synthesize tracklistRange=_tracklistRange;
+@property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)middlewareClasses;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

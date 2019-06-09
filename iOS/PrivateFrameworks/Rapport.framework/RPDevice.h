@@ -26,6 +26,7 @@
     NSString *_contactID;
     NSString *_identifier;
     NSString *_idsDeviceIdentifier;
+    NSString *_model;
     NSString *_name;
     CURangingMeasurement *_relativeLocation;
     CUMobileDevice *_mobileDevice;
@@ -33,7 +34,6 @@
     NSData *_bleAdvertisementData;
     NSData *_bleDeviceAddress;
     NSUUID *_identifierUUID;
-    NSString *_model;
     CUPairedPeer *_pairedPeer;
     NSUUID *_pairingIdentifier;
     NSData *_txtData;
@@ -66,7 +66,6 @@
 @property(copy, nonatomic) NSUUID *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(retain, nonatomic) CUPairedPeer *pairedPeer; // @synthesize pairedPeer=_pairedPeer;
 @property(readonly, nonatomic) _Bool needsSetup; // @synthesize needsSetup=_needsSetup;
-@property(readonly, copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSUUID *identifierUUID; // @synthesize identifierUUID=_identifierUUID;
 @property(readonly, nonatomic) unsigned char deviceActionType; // @synthesize deviceActionType=_deviceActionType;
 @property(readonly, nonatomic) unsigned int blePairState; // @synthesize blePairState=_blePairState;
@@ -74,9 +73,10 @@
 @property(readonly, copy, nonatomic) NSData *bleAdvertisementData; // @synthesize bleAdvertisementData=_bleAdvertisementData;
 @property(readonly, copy, nonatomic) NSData *authTag; // @synthesize authTag=_authTag;
 @property(retain, nonatomic) CUMobileDevice *mobileDevice; // @synthesize mobileDevice=_mobileDevice;
-@property(readonly) CURangingMeasurement *relativeLocation; // @synthesize relativeLocation=_relativeLocation;
+@property(retain) CURangingMeasurement *relativeLocation; // @synthesize relativeLocation=_relativeLocation;
 @property(readonly, nonatomic) int proximity; // @synthesize proximity=_proximity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(readonly, copy, nonatomic) NSString *idsDeviceIdentifier; // @synthesize idsDeviceIdentifier=_idsDeviceIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;

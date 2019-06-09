@@ -6,11 +6,13 @@
 
 #import <QuickLook/NSObject-Protocol.h>
 
+@class NSDictionary, NSURL;
 @protocol QLRemotePopoverTracker;
 
 @protocol QLCustomItemViewControllerHost <NSObject>
+- (void)forwardMessageToHostOfCustomViewController:(NSDictionary *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)setFullScreen:(_Bool)arg1;
-- (void)presentShareSheetWithPopoverTracker:(id <QLRemotePopoverTracker>)arg1 dismissCompletion:(void (^)(void))arg2;
+- (void)presentShareSheetWithPopoverTracker:(id <QLRemotePopoverTracker>)arg1 customSharedURL:(NSURL *)arg2 dismissCompletion:(void (^)(void))arg3;
 - (void)dismissQuickLook;
 @end
 

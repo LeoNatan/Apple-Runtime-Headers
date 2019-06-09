@@ -6,10 +6,13 @@
 
 #import <UIKit/UICollectionViewController.h>
 
-@class NSArray, NSIndexSet;
+#import <AVKit/UICollectionViewDelegateFlowLayout-Protocol.h>
+
+@class NSArray, NSIndexSet, NSString;
 @protocol AVInfoPanelMediaOptionSelectionDelegate;
 
-@interface AVInfoPanelMediaOptionCollectionViewController : UICollectionViewController
+__attribute__((visibility("hidden")))
+@interface AVInfoPanelMediaOptionCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 {
     NSArray *_mediaOptions;
     long long _selectedMediaOptionIndex;
@@ -28,6 +31,12 @@
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)viewDidLoad;
 @property(nonatomic) _Bool allowsMultipleSelection;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -21,8 +21,8 @@
 @property(nonatomic) __weak id <AXMTaskDispatcherDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_queue_dequeueTask;
-- (void)_queue_unscheduleAllTasks;
-- (void)unscheduleAllTasks;
+- (id)_queue_unscheduleAllTasks;
+- (id)unscheduleAllTasks;
 - (void)_queue_scheduleTask:(id)arg1;
 - (void)scheduleTask:(id)arg1;
 - (void)_queue_processNextTask;

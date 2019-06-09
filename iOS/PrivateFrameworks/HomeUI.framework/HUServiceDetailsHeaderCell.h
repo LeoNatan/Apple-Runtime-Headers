@@ -8,7 +8,7 @@
 
 #import <HomeUI/HUCellProtocol-Protocol.h>
 
-@class HFItem, HUGridServiceCell, NSArray, NSLayoutConstraint, NSString, UIActivityIndicatorView, UIButton, UILabel, UIStackView, UITextView;
+@class HFItem, NSArray, NSLayoutConstraint, NSString, UIActivityIndicatorView, UIButton, UILabel, UIStackView, UITextView;
 @protocol HUResizableCellDelegate;
 
 @interface HUServiceDetailsHeaderCell : UITableViewCell <HUCellProtocol>
@@ -17,7 +17,6 @@
     id <HUResizableCellDelegate> _resizingDelegate;
     UIButton *_actionButton;
     UITextView *_messageTextView;
-    HUGridServiceCell *_serviceCell;
     NSArray *_hiddenMessageTextViewConstraints;
     NSArray *_visibleMessageTextViewConstraints;
     UIStackView *_titleSpinnerStackView;
@@ -37,7 +36,6 @@
 @property(retain, nonatomic) UIStackView *titleSpinnerStackView; // @synthesize titleSpinnerStackView=_titleSpinnerStackView;
 @property(retain, nonatomic) NSArray *visibleMessageTextViewConstraints; // @synthesize visibleMessageTextViewConstraints=_visibleMessageTextViewConstraints;
 @property(retain, nonatomic) NSArray *hiddenMessageTextViewConstraints; // @synthesize hiddenMessageTextViewConstraints=_hiddenMessageTextViewConstraints;
-@property(retain, nonatomic) HUGridServiceCell *serviceCell; // @synthesize serviceCell=_serviceCell;
 @property(retain, nonatomic) UITextView *messageTextView; // @synthesize messageTextView=_messageTextView;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(nonatomic) __weak id <HUResizableCellDelegate> resizingDelegate; // @synthesize resizingDelegate=_resizingDelegate;
@@ -48,7 +46,6 @@
 - (void)_updateRequiredHeightIfNeeded;
 - (void)_updateErrorLabelConstraints;
 - (void)_configureConstraints;
-- (_Bool)_shouldShowServiceCell;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)layoutSubviews;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

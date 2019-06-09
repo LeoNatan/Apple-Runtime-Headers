@@ -25,6 +25,7 @@
 @property(readonly) float volume;
 @property(readonly) _Bool providesControlForAllVolumeFeatures;
 @property(readonly) NSArray *outputDevices;
+@property(readonly) _Bool supportsMultipleBluetoothOutputDevices;
 @property(readonly) _Bool supportsMultipleOutputDevices;
 @property(readonly, copy, nonatomic) NSString *associatedAudioDeviceID;
 @property(readonly, nonatomic) AVOutputDevice *outputDevice;
@@ -37,6 +38,7 @@
 - (void)setVolume:(float)arg1;
 - (void)removeOutputDevice:(AVOutputDevice *)arg1;
 - (void)addOutputDevice:(AVOutputDevice *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(AVOutputContextDestinationChange *))arg3;
+- (void)setOutputDevices:(NSArray *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(AVOutputContextDestinationChange *))arg3;
 - (void)setOutputDevices:(NSArray *)arg1;
 - (void)outputContextDidChangeApplicationProcessID:(AVOutputContext *)arg1;
 - (void)setOutputDevice:(AVOutputDevice *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(AVOutputContextDestinationChange *))arg3;

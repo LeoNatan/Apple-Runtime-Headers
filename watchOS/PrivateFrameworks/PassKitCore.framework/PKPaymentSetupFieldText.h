@@ -6,10 +6,12 @@
 
 #import <PassKitCore/PKPaymentSetupField.h>
 
-@class NSString;
+@class NSArray, NSMutableCharacterSet, NSNumberFormatter, NSString;
 
 @interface PKPaymentSetupFieldText : PKPaymentSetupField
 {
+    NSNumberFormatter *_currencyFormatter;
+    NSNumberFormatter *_amountFormatter;
     _Bool _secureText;
     _Bool _secureVisibleText;
     _Bool _numeric;
@@ -19,8 +21,12 @@
     unsigned int _maxLength;
     NSString *_currencyCode;
     NSString *_displayFormatPlaceholder;
+    NSMutableCharacterSet *_allowedCharacters;
+    NSArray *_paddingCharacters;
 }
 
+@property(retain, nonatomic) NSArray *paddingCharacters; // @synthesize paddingCharacters=_paddingCharacters;
+@property(retain, nonatomic) NSMutableCharacterSet *allowedCharacters; // @synthesize allowedCharacters=_allowedCharacters;
 @property(copy, nonatomic) NSString *displayFormatPlaceholder; // @synthesize displayFormatPlaceholder=_displayFormatPlaceholder;
 @property(nonatomic) _Bool keepPaddingCharactersForSubmission; // @synthesize keepPaddingCharactersForSubmission=_keepPaddingCharactersForSubmission;
 @property(copy, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
@@ -33,7 +39,6 @@
 - (void).cxx_destruct;
 - (unsigned int)fieldType;
 - (void)updateWithConfiguration:(id)arg1;
-- (id)allowedCharacters;
 - (id)displayFormatPaddingPrefix;
 - (void)updateDisplayFormat:(id)arg1;
 - (id)displayFormatPaddingCharacters;

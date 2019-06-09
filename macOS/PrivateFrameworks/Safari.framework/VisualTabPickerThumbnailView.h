@@ -6,7 +6,7 @@
 
 #import <Safari/VisualTabPickerShadowTileView.h>
 
-@class NSButton, NSImageView, NSLayoutConstraint, NSStackView, NSTextField, NSView, VisualTabPickerMuteButton;
+@class NSImageView, NSLayoutConstraint, NSStackView, NSTextField, NSView, RolloverImageButton, VisualTabPickerMuteButton;
 @protocol VisualTabPickerThumbnailDataSource, VisualTabPickerThumbnailDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,19 +16,19 @@ __attribute__((visibility("hidden")))
     NSImageView *_siteIconImageView;
     NSStackView *_headerContentStackView;
     NSView *_thumbnailView;
-    NSButton *_closeButton;
+    RolloverImageButton *_closeButton;
     VisualTabPickerMuteButton *_muteButton;
     NSLayoutConstraint *_muteButtonWidthConstraint;
     NSLayoutConstraint *_muteButtonHeightConstraint;
     BOOL _closeButtonVisible;
     BOOL _visibleToUser;
     BOOL _muteButtonVisible;
-    int _muteButtonState;
     id <VisualTabPickerThumbnailDataSource> _dataSource;
     id <VisualTabPickerThumbnailDelegate> _delegate;
+    long long _muteButtonState;
 }
 
-@property(nonatomic) int muteButtonState; // @synthesize muteButtonState=_muteButtonState;
+@property(nonatomic) long long muteButtonState; // @synthesize muteButtonState=_muteButtonState;
 @property(nonatomic, getter=isMuteButtonVisible) BOOL muteButtonVisible; // @synthesize muteButtonVisible=_muteButtonVisible;
 @property(nonatomic) BOOL visibleToUser; // @synthesize visibleToUser=_visibleToUser;
 @property(nonatomic, getter=isCloseButtonVisible) BOOL closeButtonVisible; // @synthesize closeButtonVisible=_closeButtonVisible;
@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)_createMuteButtonIfNecessary;
 - (void)_closeButtonPressed:(id)arg1;
 - (void)_updateCloseButtonImages;
-- (void)_createCloseButtonIfNecessary;
+- (void)_createCloseButton;
 - (void)updateIcon;
 - (void)reloadData;
 - (id)_createTitleTextField;

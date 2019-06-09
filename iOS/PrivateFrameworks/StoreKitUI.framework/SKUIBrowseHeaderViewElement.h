@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIHeaderViewElement.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIBrowseHeaderViewElement : SKUIHeaderViewElement
 {
 }

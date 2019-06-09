@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class UIFont, UITraitCollection;
+@class UIFont, UIImageSymbolConfiguration, UITraitCollection;
 
 __attribute__((visibility("hidden")))
 @interface SFNavigationBarMetrics : NSObject
@@ -22,7 +22,9 @@ __attribute__((visibility("hidden")))
     float _safariViewControllerBarHeight;
     float _safariSquishHeightQuantizationOffset;
     float _safariViewControllerSquishHeightQuantizationOffset;
-    _Bool _usesLargerBarMetrics;
+    float _statusBarHeight;
+    UIImageSymbolConfiguration *_accessoryImageSymbolConfiguration;
+    UIImageSymbolConfiguration *_squishedAccessoryImageSymbolConfiguration;
     float _accessibilityImageScale;
     float _urlOutlineCornerRadius;
     float _defaultBarHeight;
@@ -44,8 +46,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) float defaultBarHeight; // @synthesize defaultBarHeight=_defaultBarHeight;
 @property(readonly, nonatomic) float urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(readonly, nonatomic) float accessibilityImageScale; // @synthesize accessibilityImageScale=_accessibilityImageScale;
-@property(readonly, nonatomic) _Bool usesLargerBarMetrics; // @synthesize usesLargerBarMetrics=_usesLargerBarMetrics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageSymbolConfiguration *squishedAccessoryImageSymbolConfiguration;
+@property(readonly, nonatomic) UIImageSymbolConfiguration *accessoryImageSymbolConfiguration;
 @property(readonly, nonatomic) float narrowEditingScaleFactor;
 @property(readonly, nonatomic) UIFont *narrowEditingLabelFont;
 @property(readonly, nonatomic) UIFont *defaultBoldFont;
@@ -53,8 +56,8 @@ __attribute__((visibility("hidden")))
 - (float)squishHeightQuantizationOffsetWithBarMetricsCategory:(int)arg1;
 - (float)barHeightWithBarMetricsCategory:(int)arg1;
 - (void)_updateMetrics;
+- (_Bool)updateForStatusBarHeight:(float)arg1;
 - (_Bool)updateForContentSizeCategory:(id)arg1;
-- (void)forceUpdate;
 - (id)init;
 - (id)_contentSizeCategoryWithPreferredCategory:(id)arg1;
 

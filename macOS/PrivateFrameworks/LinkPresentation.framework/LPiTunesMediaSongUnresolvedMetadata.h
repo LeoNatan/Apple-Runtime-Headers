@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
 - (void).cxx_destruct;
-- (id)assetsToResolve;
+- (id)assetsToFetch;
 - (id)resolve;
 
 // Remaining properties

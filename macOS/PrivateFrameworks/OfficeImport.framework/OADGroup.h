@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OADGroup : OADDrawable <OADDrawableContainer>
 {
     struct CGRect mLogicalBounds;

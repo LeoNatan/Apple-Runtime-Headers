@@ -6,8 +6,11 @@
 
 #import <Foundation/NSURLRequest.h>
 
+@class NSDictionary;
+
 @interface NSURLRequest (AppleMediaServices)
 - (id)ams_valueForHTTPHeader:(id)arg1;
 @property(readonly) BOOL ams_requestIsBagLoad;
+@property(readonly) NSDictionary *ams_cookies;
 @end
 

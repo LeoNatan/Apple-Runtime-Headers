@@ -6,6 +6,7 @@
 
 #import <AVKit/AVTrimControlsViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface AVInlineTrimControlsViewController : AVTrimControlsViewController
 {
     double _layoutWidth;

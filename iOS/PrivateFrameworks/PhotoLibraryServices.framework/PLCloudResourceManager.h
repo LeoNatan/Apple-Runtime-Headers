@@ -18,13 +18,13 @@
     _Bool _enqueuedOperation;
 }
 
+- (void).cxx_destruct;
 - (id)statusForDebug:(_Bool)arg1;
 - (void)stop;
 - (void)updateCacheDeletePurgeableAmount;
 - (void)startAutomaticPrefetchAndPruneWithTimeout:(_Bool)arg1;
 - (void)_runOnWorkQueueWithTransaction:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (void)dealloc;
-- (id)initWithCPLManager:(id)arg1;
+- (id)initWithCPLManager:(id)arg1 library:(id)arg2;
 - (id)init;
 
 @end

@@ -16,6 +16,7 @@
 + (id)_realtimeContactFromPseudoContact:(id)arg1 andFeatures:(CDStruct_df2c591a *)arg2 assimilatingMatchingCuratedContacts:(id)arg3;
 + (id)_findContactsMatchingPseudoContact:(id)arg1 withName:(id)arg2 andFeatures:(CDStruct_df2c591a *)arg3 fromContactStore:(id)arg4 withKeysToFetch:(id)arg5;
 + (id)_filterCandidates:(id)arg1 similarToName:(id)arg2 exceedingThreshold:(double)arg3;
++ (id)filterCandidates:(id)arg1 withDetailSubsetOfCNContact:(id)arg2;
 + (id)_filterCandidates:(id)arg1 withUniqueDetailMatchesToContact:(id)arg2 andFeatures:(CDStruct_df2c591a *)arg3;
 + (id)_findFuzzyNameCandidatesMatchingPseudoContact:(id)arg1 withName:(id)arg2 andFeatures:(CDStruct_df2c591a *)arg3 fromContactStore:(id)arg4 withKeysToFetch:(id)arg5;
 + (id)_getPeopleWithNameToken:(id)arg1 fromContactStore:(id)arg2 withKeysToFetch:(id)arg3 ifMatchingPredicate:(CDUnknownBlockType)arg4;

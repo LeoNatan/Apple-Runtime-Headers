@@ -15,6 +15,7 @@
     long long _direction;
     unsigned long long _txPayloadType;
     unsigned long long _rxPayloadType;
+    unsigned int _localSSRC;
     unsigned int _remoteSSRC;
     NSString *_cName;
     _Bool _rateAdaptationEnabled;
@@ -58,6 +59,7 @@
 @property(nonatomic, getter=isRTCPXREnabled) _Bool rtcpXREnabled; // @synthesize rtcpXREnabled=_rtcpXREnabled;
 @property(nonatomic, getter=isRTCPEnabled) _Bool rtcpEnabled; // @synthesize rtcpEnabled=_rtcpEnabled;
 @property(nonatomic, getter=isRateAdaptationEnabled) _Bool rateAdaptationEnabled; // @synthesize rateAdaptationEnabled=_rateAdaptationEnabled;
+@property(nonatomic) unsigned int localSSRC; // @synthesize localSSRC=_localSSRC;
 @property(nonatomic) unsigned int remoteSSRC; // @synthesize remoteSSRC=_remoteSSRC;
 @property(nonatomic) unsigned long long rxPayloadType; // @synthesize rxPayloadType=_rxPayloadType;
 @property(nonatomic) unsigned long long txPayloadType; // @synthesize txPayloadType=_txPayloadType;

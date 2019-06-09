@@ -6,15 +6,17 @@
 
 #import <TVMLKit/TVMediaItem.h>
 
-@class TVPSecureKeyLoader;
+@class _TVSecureKeyLoader;
 @protocol TVPMediaItem;
 
 @interface _TVMLMediaItem : TVMediaItem
 {
+    _TVSecureKeyLoader *_secureKeyLoader;
     id <TVPMediaItem> _tvpObject;
 }
 
 @property(readonly, nonatomic) id <TVPMediaItem> tvpObject; // @synthesize tvpObject=_tvpObject;
+- (id)secureKeyLoader;
 - (void).cxx_destruct;
 - (id)_tvpObject;
 - (void)setExternalServiceIdentifier:(id)arg1;
@@ -35,7 +37,7 @@
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;
-@property(retain, nonatomic) TVPSecureKeyLoader *secureKeyLoader;
+- (void)setSecureKeyLoader:(id)arg1;
 - (id)init;
 
 @end

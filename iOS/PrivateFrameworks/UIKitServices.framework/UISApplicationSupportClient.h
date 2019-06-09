@@ -4,16 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoardServices/FBSServiceFacilityClient.h>
+#import <objc/NSObject.h>
 
-@interface UISApplicationSupportClient : FBSServiceFacilityClient
+#import <UIKitServices/BSInvalidatable-Protocol.h>
+
+@class BSServiceConnection, NSString;
+
+@interface UISApplicationSupportClient : NSObject <BSInvalidatable>
 {
+    BSServiceConnection *_lazy_connection;
+    _Bool _invalidated;
 }
 
-- (id)edgeInfoForDisplayConfiguration:(id)arg1;
-- (id)initialDisplayContext;
+- (void).cxx_destruct;
+- (id)_lazy_connection;
+- (void)destroyScenesWithPersistentIdentifiers:(id)arg1 animationType:(unsigned long long)arg2 destroySessions:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)applicationInitializationContext;
 - (void)requestPasscodeUnlockUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)invalidate;
+- (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

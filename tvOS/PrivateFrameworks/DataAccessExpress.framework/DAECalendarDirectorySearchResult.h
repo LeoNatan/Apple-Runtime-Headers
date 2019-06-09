@@ -14,9 +14,11 @@
 {
     NSString *_displayName;
     NSString *_preferredAddress;
+    NSString *_principalPath;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *principalPath; // @synthesize principalPath=_principalPath;
 @property(retain, nonatomic) NSString *preferredAddress; // @synthesize preferredAddress=_preferredAddress;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;

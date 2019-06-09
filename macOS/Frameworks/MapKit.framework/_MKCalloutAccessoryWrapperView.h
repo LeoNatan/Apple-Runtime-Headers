@@ -11,6 +11,7 @@
 @class NSString;
 @protocol _MKCalloutAccessoryView;
 
+__attribute__((visibility("hidden")))
 @interface _MKCalloutAccessoryWrapperView : NSView <_MKCalloutAccessoryView>
 {
     NSView<_MKCalloutAccessoryView> *_view;

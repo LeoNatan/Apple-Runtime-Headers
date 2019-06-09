@@ -8,10 +8,11 @@
 
 #import <SiriUI/UICollectionViewDataSource-Protocol.h>
 #import <SiriUI/UICollectionViewDelegate-Protocol.h>
+#import <SiriUI/UICollectionViewDragDelegate-Protocol.h>
 
 @class NSString, UICollectionView, UICollectionViewLayout;
 
-@interface SiriUISnippetCollectionViewController : SiriUISnippetViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface SiriUISnippetCollectionViewController : SiriUISnippetViewController <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDragDelegate>
 {
     struct CGRect _previousBounds;
     _Bool _needsToInvalidateCollectionViewLayoutOnViewWillLayoutSubviews;
@@ -21,6 +22,7 @@
 
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+- (id)collectionView:(id)arg1 itemsForBeginningDragSession:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 @property(readonly, nonatomic) UICollectionViewLayout *collectionViewLayout;

@@ -17,15 +17,13 @@
     BOOL _eventuallyVisible;
     BOOL _initiallyVisible;
     struct {
-        unsigned int tappingCount:1;
-        unsigned int eventuallyVisible:1;
-        unsigned int initiallyVisible:1;
-    } _has;
+        unsigned int has_tappingCount:1;
+        unsigned int has_eventuallyVisible:1;
+        unsigned int has_initiallyVisible:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL eventuallyVisible; // @synthesize eventuallyVisible=_eventuallyVisible;
-@property(nonatomic) BOOL initiallyVisible; // @synthesize initiallyVisible=_initiallyVisible;
-@property(retain, nonatomic) NSString *suggestionString; // @synthesize suggestionString=_suggestionString;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,12 +32,16 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasTappingCount;
-@property(nonatomic) int tappingCount; // @synthesize tappingCount=_tappingCount;
+@property(nonatomic) int tappingCount;
 @property(nonatomic) BOOL hasEventuallyVisible;
+@property(nonatomic) BOOL eventuallyVisible;
 @property(nonatomic) BOOL hasInitiallyVisible;
+@property(nonatomic) BOOL initiallyVisible;
+@property(retain, nonatomic) NSString *suggestionString;
 @property(readonly, nonatomic) BOOL hasSuggestionString;
 
 @end

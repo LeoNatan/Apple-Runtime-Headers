@@ -13,13 +13,12 @@ __attribute__((visibility("hidden")))
 {
     NSString *_localization;
     NSString *_unigramsPath;
-    NSString *_converterPath;
     const void *_lexicon;
-    void *_converter;
 }
 
 + (id)lexiconWithLexicon:(const void *)arg1;
-+ (id)lexiconWithLocalization:(id)arg1 unigramsPath:(id)arg2 converterPath:(id)arg3;
++ (id)lexiconWithLocalization:(id)arg1 unigramsPath:(id)arg2;
+- (void)enumerateCorrectionEntriesForWord:(id)arg1 maxCorrections:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateCompletionEntriesForPrefix:(id)arg1 maxCompletions:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateCompletionsForPrefix:(id)arg1 maxCompletions:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (BOOL)getProbabilityForTokenID:(unsigned int)arg1 probability:(double *)arg2;
@@ -28,12 +27,11 @@ __attribute__((visibility("hidden")))
 - (unsigned int)tokenIDForString:(id)arg1;
 - (void)enumerateEntriesForString:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)createCursor;
-- (void *)converter;
 - (struct _LXLexicon *)lexicon;
 - (void)dealloc;
 - (id)description;
 - (id)initWithLexicon:(const void *)arg1;
-- (id)initWithLocalization:(id)arg1 unigramsPath:(id)arg2 converterPath:(id)arg3;
+- (id)initWithLocalization:(id)arg1 unigramsPath:(id)arg2;
 
 @end
 

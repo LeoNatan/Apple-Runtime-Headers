@@ -35,12 +35,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *summary;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) unsigned long long muid;
+@property(readonly, copy) NSString *debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIncident:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 

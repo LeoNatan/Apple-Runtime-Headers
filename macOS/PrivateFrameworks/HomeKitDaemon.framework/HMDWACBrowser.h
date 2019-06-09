@@ -36,6 +36,7 @@
 - (void)clearBackoff;
 - (void)requestBackoff;
 - (void)stopBrowsingForAccessories;
+- (void)startBrowsingForAirPlayWACAccessoriesWithBrowser:(id)arg1;
 - (void)startBrowsingForAccessories;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (id)initWithWACScanner:(id)arg1 messageDispatcher:(id)arg2;

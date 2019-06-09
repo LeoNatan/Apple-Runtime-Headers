@@ -8,6 +8,7 @@
 
 @class NSMutableArray, WDDocument;
 
+__attribute__((visibility("hidden")))
 @interface WDRevisionAuthorTable : NSObject
 {
     NSMutableArray *mAuthors;

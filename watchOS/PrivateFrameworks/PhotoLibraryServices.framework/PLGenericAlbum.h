@@ -9,21 +9,22 @@
 #import <PhotoLibraryServices/PLAlbumProtocol-Protocol.h>
 #import <PhotoLibraryServices/PLDerivedAlbumOrigin-Protocol.h>
 #import <PhotoLibraryServices/PLIndexMappersDataOrigin-Protocol.h>
+#import <PhotoLibraryServices/PLSearchableAssetCollection-Protocol.h>
 #import <PhotoLibraryServices/PLSyncableObject-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSObject, NSOrderedSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary, UIImage;
+@class NSArray, NSData, NSDate, NSMutableOrderedSet, NSNumber, NSObject, NSOrderedSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
 @protocol PLIndexMappingCache;
 
-@interface PLGenericAlbum : _PLGenericAlbum <PLSyncableObject, PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappersDataOrigin>
+@interface PLGenericAlbum : _PLGenericAlbum <PLSearchableAssetCollection, PLSyncableObject, PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappersDataOrigin>
 {
-    NSObject<PLIndexMappingCache> *_derivededAlbums[5];
+    NSObject<PLIndexMappingCache> *_derivedAlbums[5];
     _Bool isRegisteredForChanges;
     _Bool didRegisteredWithUserInterfaceContext;
 }
 
 + (_Bool)is1WaySyncKind:(int)arg1;
 + (void)addSingletonObjectsToContext:(id)arg1;
-+ (id)albumsMatchingPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)_albumsMatchingPredicate:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)albumWithKind:(int)arg1 inManagedObjectContext:(id)arg2;
 + (id)insertAlbumWithKind:(int)arg1 title:(id)arg2 uuid:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)eventsWithName:(id)arg1 andImportSessionIdentifier:(id)arg2 inManagedObjectContext:(id)arg3;
@@ -40,6 +41,7 @@
 + (id)insertNewSyncedEventIntoLibrary:(id)arg1;
 + (id)insertNewSyncedEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewAlbumIntoLibrary:(id)arg1;
++ (id)insertNewSmartAlbumIntoLibrary:(id)arg1;
 + (id)insertNewAlbumWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewAlbumWithKind:(int)arg1 title:(id)arg2 intoLibrary:(id)arg3;
 + (id)_insertNewAlbumWithKind:(int)arg1 title:(id)arg2 lastInterestingDate:(id)arg3 intoLibrary:(id)arg4;
@@ -61,10 +63,10 @@
 + (id)filesystemImportProgressAlbumInLibrary:(id)arg1;
 + (id)otaRestoreProgressAlbumInLibrary:(id)arg1;
 + (id)syncProgressAlbumInLibrary:(id)arg1;
++ (id)unableToUploadAlbumInLibrary:(id)arg1;
 + (id)trashBinAlbumInLibrary:(id)arg1;
 + (id)iTunesLibraryAlbumInLibrary:(id)arg1;
 + (id)allPhotoStreamAssetsAlbumInLibrary:(id)arg1;
-+ (id)allNonPhotoStreamAssetsAlbumInLibrary:(id)arg1;
 + (id)allFavoritesAlbumInLibrary:(id)arg1;
 + (id)allVideosAlbumInLibrary:(id)arg1;
 + (id)allHorizontalPanoramasAlbumInLibrary:(id)arg1;
@@ -72,23 +74,29 @@
 + (id)allPanoramasAlbumInLibrary:(id)arg1;
 + (id)allAssetsAlbumInLibrary:(id)arg1;
 + (id)userLibraryAlbumInLibrary:(id)arg1;
++ (id)projectAlbumRootFolderInLibrary:(id)arg1;
 + (id)rootFolderInLibrary:(id)arg1;
 + (id)_singletonManagedAlbumWithKind:(int)arg1 library:(id)arg2;
 + (id)_singletonFetchingAlbumWithKind:(int)arg1 library:(id)arg2;
 + (id)uuidFromGroupURL:(id)arg1;
 + (_Bool)isFolder:(int)arg1;
++ (_Bool)isUserCreatedForKind:(int)arg1;
 + (_Bool)isSmartAlbumForKind:(int)arg1;
 + (id)keyPathsForValuesAffectingKindValue;
-+ (id)localizedTitleForAlbumKind:(int)arg1;
++ (id)localizedTitleForAlbumKind:(int)arg1 cplEnabled:(_Bool)arg2;
 + (id)keyPathsForValuesAffectingName;
 + (id)localizedRecoveredTitle;
++ (id)defaultAlbumKindsForFetchingWithCPLEnabled:(_Bool)arg1;
 + (id)childKeyForOrdering;
++ (id)searchIndexAllowedPredicate;
++ (id)baseSearchIndexPredicate;
 + (id)albumsWithCloudGUIDs:(id)arg1 inLibrary:(id)arg2;
 + (id)albumsWithCloudGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)albumWithCloudGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)_predicateForSupportedAlbumTypes;
 @property(nonatomic) _Bool didRegisteredWithUserInterfaceContext; // @synthesize didRegisteredWithUserInterfaceContext;
 @property(nonatomic) _Bool isRegisteredForChanges; // @synthesize isRegisteredForChanges;
+- (void).cxx_destruct;
 - (void)enumerateDerivedIndexMappers:(CDUnknownBlockType)arg1;
 - (_Bool)hasDerivedIndexMappers;
 - (void)enumerateDerivedAlbums:(CDUnknownBlockType)arg1;
@@ -125,12 +133,13 @@
 @property(readonly, nonatomic) _Bool isCloudSharedAlbum;
 @property(readonly, nonatomic) _Bool isPhotoStreamAlbum;
 @property(readonly, nonatomic) _Bool isOwnPhotoStreamAlbum;
+@property(readonly, nonatomic) _Bool isUserCreated;
 @property(readonly, nonatomic) _Bool isSmartAlbum;
 @property(readonly, nonatomic) _Bool isPanoramasAlbum;
 @property(readonly, nonatomic) _Bool isCameraAlbum;
 @property(readonly, nonatomic) _Bool isLibrary;
 @property(nonatomic) int kindValue;
-@property(readonly, retain, nonatomic) UIImage *posterImage;
+@property(readonly, retain, nonatomic) NSObject *posterImage;
 @property(readonly, copy, nonatomic) NSString *name;
 @property(readonly, copy, nonatomic) NSString *localizedTitle;
 @property(nonatomic) _Bool hasUnseenContentBoolValue;
@@ -146,7 +155,7 @@
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
-@property(readonly, retain, nonatomic) PLPhotoLibrary *photoLibrary;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (_Bool)isSyncableChange;
 - (_Bool)supportsCloudUpload;
 - (void)applyTrashedState:(short)arg1 cascade:(_Bool)arg2;
@@ -157,6 +166,20 @@
 - (id)childKeyForOrdering;
 - (id)childManagedObject;
 - (void)dealloc;
+- (id)assetUUIDsForPreviewWithCount:(unsigned int)arg1;
+- (unsigned int)searchIndexCategory;
+- (id)searchIndexContents;
+@property(readonly, nonatomic) NSDate *keyAssetCreationDate;
+@property(readonly, nonatomic) NSString *keyAssetUUID;
+@property(readonly, nonatomic) unsigned int numberOfAssets;
+- (id)_searchableExtremityDateFromStart:(_Bool)arg1;
+@property(readonly, nonatomic) NSDate *searchableEndDate;
+@property(readonly, nonatomic) NSDate *searchableStartDate;
+@property(readonly, nonatomic) NSString *subtitle;
+- (_Bool)validForPersistenceChangedForChangedKeys:(id)arg1;
+- (id)payloadIDForTombstone:(id)arg1;
+- (id)payloadForChangedKeys:(id)arg1;
+- (id)payloadID;
 - (id)momentShare;
 - (id)cplFullRecord;
 @property(readonly, retain, nonatomic) id localID;
@@ -170,6 +193,7 @@
 @property(nonatomic) short cloudDeleteState; // @dynamic cloudDeleteState;
 @property(retain, nonatomic) NSString *cloudGUID; // @dynamic cloudGUID;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;
+@property(retain, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(readonly, copy) NSString *debugDescription;
 @property(retain, nonatomic) NSDate *endDate; // @dynamic endDate;
 @property(readonly) unsigned int hash;
@@ -181,13 +205,13 @@
 @property(nonatomic) int pendingItemsCount; // @dynamic pendingItemsCount;
 @property(nonatomic) int pendingItemsType; // @dynamic pendingItemsType;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset; // @dynamic secondaryKeyAsset;
-@property(retain, nonatomic) NSDictionary *slideshowSettings; // @dynamic slideshowSettings;
 @property(retain, nonatomic) NSDate *startDate; // @dynamic startDate;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset; // @dynamic tertiaryKeyAsset;
 @property(retain, nonatomic) NSString *title; // @dynamic title;
 @property(retain, nonatomic) NSDate *trashedDate; // @dynamic trashedDate;
 @property(nonatomic) short trashedState; // @dynamic trashedState;
+@property(retain, nonatomic) NSData *userQueryData; // @dynamic userQueryData;
 @property(retain, nonatomic) NSString *uuid; // @dynamic uuid;
 
 @end

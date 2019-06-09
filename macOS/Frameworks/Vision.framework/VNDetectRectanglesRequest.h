@@ -15,6 +15,7 @@
 }
 
 + (Class)configurationClass;
+@property(readonly) NSArray *supportedImageSizeSet;
 - (void)applyConfigurationOfRequest:(id)arg1;
 @property(nonatomic) unsigned long long maximumObservations;
 @property(nonatomic) unsigned long long requiredVersion;
@@ -26,11 +27,9 @@
 - (void)setSortedResults:(id)arg1;
 - (CDUnknownBlockType)resultsSortingComparator;
 - (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
-- (id)_detectorOptions;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)newDefaultDetectorOptionsForRequestRevision:(unsigned long long)arg1;
 - (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 - (long long)dependencyProcessingOrdinality;
-@property(readonly) NSArray *supportedImageSizeSet;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

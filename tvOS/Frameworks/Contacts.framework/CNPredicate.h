@@ -14,12 +14,14 @@
 {
     NSPredicate *_cn_predicate;
     _Bool _augmentMainStoreResults;
+    CDUnknownBlockType _cn_resultTransform;
     NSArray *_mainStoreContactIdentifiers;
 }
 
-+ (id)_convertSuggestions:(id)arg1 withSortOrder:(long long)arg2 mutableObjects:(_Bool)arg3;
++ (id)os_log;
 @property(nonatomic) _Bool augmentMainStoreResults; // @synthesize augmentMainStoreResults=_augmentMainStoreResults;
 @property(retain, nonatomic) NSArray *mainStoreContactIdentifiers; // @synthesize mainStoreContactIdentifiers=_mainStoreContactIdentifiers;
+@property(readonly, copy) CDUnknownBlockType cn_resultTransform; // @synthesize cn_resultTransform=_cn_resultTransform;
 - (void).cxx_destruct;
 - (id)shortDebugDescription;
 - (void)mainStoreDidFetchContacts:(id)arg1 unifiedFetch:(_Bool)arg2;
@@ -32,8 +34,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPredicate:(id)arg1;
 - (id)init;
-- (id)suggestedContactsWithSortOrder:(long long)arg1 keysToFetch:(id)arg2 mutableObjects:(_Bool)arg3 service:(id)arg4 error:(id *)arg5;
-- (void)_convertContactMatches:(id)arg1 withService:(id)arg2 intoSuggestions:(id)arg3;
 
 @end
 

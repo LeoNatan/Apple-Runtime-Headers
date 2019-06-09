@@ -6,10 +6,17 @@
 
 #import <CarouselServices/NSObject-Protocol.h>
 
-@class CSLSSession;
+@class CSLSSession, NSDate;
 
 @protocol CSLSSessionServiceInterface <NSObject>
+- (void)fetchStickyCapableApps:(void (^)(NSSet *, NSError *))arg1;
+- (void)cancelScheduledSession:(CSLSSession *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)scheduleSession:(CSLSSession *)arg1 startDate:(NSDate *)arg2 options:(unsigned int)arg3 completion:(void (^)(NSError *))arg4;
 - (void)endSession:(CSLSSession *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)startSession:(CSLSSession *)arg1 completionWithExpirationDate:(void (^)(NSDate *, NSError *))arg2;
 - (void)startSession:(CSLSSession *)arg1 completion:(void (^)(NSError *))arg2;
+
+@optional
+- (void)defaultSession:(void (^)(CSLSSession *, NSError *))arg1;
 @end
 

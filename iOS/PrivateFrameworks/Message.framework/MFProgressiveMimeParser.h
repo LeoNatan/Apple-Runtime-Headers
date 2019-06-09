@@ -28,6 +28,7 @@
     } _parserFlags;
 }
 
+- (void).cxx_destruct;
 - (void)_reportError:(id)arg1;
 - (void)_continueParsing;
 - (void)_continueParsingBody;
@@ -43,7 +44,6 @@
 - (void)setContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)start;
-- (void)dealloc;
 - (id)initWithBodyData:(id)arg1 topLevelHeaders:(id)arg2 headersToPreserve:(id)arg3;
 
 @end

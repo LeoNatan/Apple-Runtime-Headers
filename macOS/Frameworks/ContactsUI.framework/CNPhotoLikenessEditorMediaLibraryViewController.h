@@ -6,12 +6,12 @@
 
 #import <AppKit/NSViewController.h>
 
-@class IKImageBrowserView, NSTextField, NSView;
+@class CNUIDeprecatedIKImageBrowserView, NSTextField, NSView;
 
 @interface CNPhotoLikenessEditorMediaLibraryViewController : NSViewController
 {
-    IKImageBrowserView *_mediaLibraryView;
-    IKImageBrowserView *_defaultPhotosLibraryView;
+    CNUIDeprecatedIKImageBrowserView *_mediaLibraryView;
+    CNUIDeprecatedIKImageBrowserView *_defaultPhotosLibraryView;
     NSView *_emptyContentView;
     NSTextField *_emptyContentTextField;
 }
@@ -19,8 +19,8 @@
 + (Class)mediaLibraryClass;
 @property(retain) NSTextField *emptyContentTextField; // @synthesize emptyContentTextField=_emptyContentTextField;
 @property(retain) NSView *emptyContentView; // @synthesize emptyContentView=_emptyContentView;
-@property(retain) IKImageBrowserView *defaultPhotosLibraryView; // @synthesize defaultPhotosLibraryView=_defaultPhotosLibraryView;
-@property(retain) IKImageBrowserView *mediaLibraryView; // @synthesize mediaLibraryView=_mediaLibraryView;
+@property(retain) CNUIDeprecatedIKImageBrowserView *defaultPhotosLibraryView; // @synthesize defaultPhotosLibraryView=_defaultPhotosLibraryView;
+@property(retain) CNUIDeprecatedIKImageBrowserView *mediaLibraryView; // @synthesize mediaLibraryView=_mediaLibraryView;
 - (void).cxx_destruct;
 - (void)viewWillAppear;
 - (id)createLoadingView;

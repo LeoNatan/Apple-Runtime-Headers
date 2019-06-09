@@ -11,12 +11,9 @@
 }
 
 + (id)defaultDirectoryURL;
-- (void)removeWallpaperOptionsForVariants:(long long)arg1;
-- (_Bool)setWallpaperOptions:(id)arg1 forVariants:(long long)arg2;
-- (id)wallpaperOptionsForVariant:(long long)arg1;
-- (id)wallpaperOptionsURLForVariant:(long long)arg1;
 - (void)didWriteFileToURL:(id)arg1;
 - (id)directoryCreationAttributes;
+- (id)initWithDirectoryURL:(id)arg1;
 
 @end
 

@@ -6,34 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSNumber, NSString;
+@class NSNumber, NSString;
 
 @interface QuickTypePFLTrainer : NSObject
 {
-    NSString *_seedModelPath;
-    NSData *_modelData;
-    void *_model;
     unsigned int _batchSize;
     NSNumber *_learningRate;
     unsigned int _maxSequenceLength;
     NSString *_updatedModelPath;
 }
 
-+ (float *)dumpMontreal:(void *)arg1 toFlatVectorWithDimension:(unsigned int *)arg2;
 @property(readonly, copy, nonatomic) NSString *updatedModelPath; // @synthesize updatedModelPath=_updatedModelPath;
 @property(readonly, nonatomic) unsigned int maxSequenceLength; // @synthesize maxSequenceLength=_maxSequenceLength;
 @property(copy, nonatomic) NSNumber *learningRate; // @synthesize learningRate=_learningRate;
 @property(nonatomic) unsigned int batchSize; // @synthesize batchSize=_batchSize;
 - (void)reset;
 - (float *)copyWeightUpdates:(unsigned int *)arg1;
-- (id)privatizeUsingGamma:(double)arg1 andNu:(double)arg2;
-- (void)dealloc;
 - (id)evaluateOn:(id)arg1;
 - (void)trainOn:(id)arg1 forNEpochs:(unsigned int)arg2 andKeepInMemory:(_Bool)arg3;
 - (void)trainAndKeepInMemory:(id)arg1 forNEpochs:(unsigned int)arg2;
 - (void)trainOn:(id)arg1 forNEpochs:(unsigned int)arg2;
 - (id)initWithSeedModelPath:(id)arg1;
-- (void)loadPretrainedModel:(id)arg1;
 
 @end
 

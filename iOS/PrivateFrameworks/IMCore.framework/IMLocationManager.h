@@ -38,6 +38,8 @@
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 @property(readonly, nonatomic) _Bool locationAuthorizationDenied;
+@property(readonly, nonatomic) _Bool locationAuthorizationDetermined;
+- (void)startUpdatingCurrentLocationWithForegroundAssertionForBundleIdentifier:(id)arg1 updateHandler:(CDUnknownBlockType)arg2;
 - (void)startUpdatingCurrentLocationWithHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 - (void)dealloc;

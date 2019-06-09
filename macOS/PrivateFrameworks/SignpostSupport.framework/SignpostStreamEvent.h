@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (BOOL)_hasTotalFrames;
 - (id)initWithDictionary:(id)arg1;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1 shouldRedact:(BOOL)arg2;
 
 @end
 

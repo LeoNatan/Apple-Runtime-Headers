@@ -13,9 +13,11 @@
     id _ecPublicKeyInternal;
 }
 
++ (id)keyWithSubjectPublicKeyInfo:(id)arg1;
 + (id)_secKeyCreationAttributesForSpecifier:(id)arg1;
-+ (id)_specifierForSecKey:(struct __SecKey *)arg1;
++     // Error parsing type: @24@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16, name: _specifierForSecKey:
 - (void).cxx_destruct;
+- (id)encodeSubjectPublicKeyInfo;
 - (id)performWithCCKey:(CDUnknownBlockType)arg1;
 
 // Remaining properties

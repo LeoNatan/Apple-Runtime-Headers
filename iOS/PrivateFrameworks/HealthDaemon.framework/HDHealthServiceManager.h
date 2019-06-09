@@ -86,7 +86,7 @@
 - (id)retrieveOOBData:(id *)arg1;
 - (id)allServicesWithError:(id *)arg1;
 - (void)removeConnectingPeripheralsWithError:(id)arg1;
-- (void)removeAllDisconnectedPeripherals;
+- (void)retrieveAndRemoveDisconnectedPeripherals;
 - (void)_disconnectPeripheralWithDeviceIdentifier:(id)arg1 error:(id)arg2;
 - (void)servicesInvalidatedForDevice:(id)arg1 withError:(id)arg2;
 - (void)unpairHealthServiceIfNecessary:(id)arg1;
@@ -104,6 +104,7 @@
 - (_Bool)setHealthUpdatesEnabled:(_Bool)arg1 fromDevice:(id)arg2 error:(id *)arg3;
 - (_Bool)healthUpdatesEnabledFromDevice:(id)arg1 error:(id *)arg2;
 - (id)reviewSavedHealthServiceSessionsWithError:(id *)arg1;
+- (void)dealloc;
 - (id)initWithProfile:(id)arg1 centralManager:(id)arg2 queue:(id)arg3;
 - (id)initWithProfile:(id)arg1;
 

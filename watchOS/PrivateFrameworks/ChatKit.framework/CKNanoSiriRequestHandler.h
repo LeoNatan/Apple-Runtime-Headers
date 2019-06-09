@@ -10,6 +10,7 @@
 
 @class AFSiriRequest, AFSiriResponse, NSError;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoSiriRequestHandler : CKNanoSiriObject <CKNanoSiriRequestHandler>
 {
     AFSiriRequest *_request;

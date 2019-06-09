@@ -9,8 +9,9 @@
 #import <AVKit/AVExternalGestureRecognizerPreventing-Protocol.h>
 #import <AVKit/AVPlaybackControlsViewItem-Protocol.h>
 
-@class AVMicaPackage, NSString, NSTimer, UISelectionFeedbackGenerator, UIViewPropertyAnimator;
+@class AVMicaPackage, NSString, NSTimer, UIImageView, UISelectionFeedbackGenerator, UIViewPropertyAnimator;
 
+__attribute__((visibility("hidden")))
 @interface AVVolumeButtonControl : UIControl <AVExternalGestureRecognizerPreventing, AVPlaybackControlsViewItem>
 {
     long long _trackingState;
@@ -18,12 +19,14 @@
     _Bool _collapsed;
     _Bool _hasAlternateAppearance;
     _Bool _hasFullScreenAppearance;
+    _Bool _removed;
     _Bool _longPressEnabled;
     _Bool _showsHighlightedAppearance;
     UISelectionFeedbackGenerator *_feedbackGenerator;
     NSString *_micaPackageStateName;
     UIViewPropertyAnimator *_highlightAnimator;
     AVMicaPackage *_micaPackage;
+    UIImageView *_imageView;
     NSTimer *_longPressTimer;
     struct CGSize _extrinsicContentSize;
     struct CGPoint _translationOfPanFromPreviousTouch;
@@ -37,6 +40,7 @@
 @property(nonatomic) long long trackingState; // @synthesize trackingState=_trackingState;
 @property(nonatomic) __weak NSTimer *longPressTimer; // @synthesize longPressTimer=_longPressTimer;
 @property(nonatomic) struct CGPoint initialPreciseLocationOfTouch; // @synthesize initialPreciseLocationOfTouch=_initialPreciseLocationOfTouch;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) AVMicaPackage *micaPackage; // @synthesize micaPackage=_micaPackage;
 @property(nonatomic) __weak UIViewPropertyAnimator *highlightAnimator; // @synthesize highlightAnimator=_highlightAnimator;
 @property(nonatomic) struct CGPoint locationOfTouchInWindow; // @synthesize locationOfTouchInWindow=_locationOfTouchInWindow;
@@ -45,6 +49,7 @@
 @property(nonatomic) struct NSDirectionalEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(nonatomic, getter=isLongPressEnabled) _Bool longPressEnabled; // @synthesize longPressEnabled=_longPressEnabled;
 @property(retain, nonatomic) NSString *micaPackageStateName; // @synthesize micaPackageStateName=_micaPackageStateName;
+@property(nonatomic, getter=isRemoved) _Bool removed; // @synthesize removed=_removed;
 @property(nonatomic) _Bool hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) _Bool hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
@@ -62,8 +67,9 @@
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)willMoveToWindow:(id)arg1;
 - (_Bool)avkit_shouldPreventExternalGestureRecognizerAtPoint:(struct CGPoint)arg1;
+- (id)imageNameForMicaPackageState;
+- (void)setNeedsUpdateGlyphRenderingMode;
 - (void)triggerSelectionChangedFeedback;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
 @property(readonly, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;

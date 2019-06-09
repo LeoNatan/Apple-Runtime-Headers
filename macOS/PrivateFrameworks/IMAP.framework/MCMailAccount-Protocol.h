@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <IMAP/EDIndexableAccount-Protocol.h>
 #import <IMAP/MCAccount-Protocol.h>
 
 @class NSOperationQueue;
 
-@protocol MCMailAccount <MCAccount>
+@protocol MCMailAccount <MCAccount, EDIndexableAccount>
 @property(readonly, nonatomic) BOOL isGmailAccount;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue;

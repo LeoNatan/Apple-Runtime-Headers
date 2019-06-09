@@ -8,17 +8,24 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapLayerDataServiceLayer, GEOMapLayerDataServiceVersion;
+@class GEOMapLayerDataServiceLayer, GEOMapLayerDataServiceVersion, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOMapLayerDataServiceVersionedLayer : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOMapLayerDataServiceLayer *_layer;
     GEOMapLayerDataServiceVersion *_version;
+    struct {
+        unsigned int read_layer:1;
+        unsigned int read_version:1;
+        unsigned int wrote_layer:1;
+        unsigned int wrote_version:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOMapLayerDataServiceVersion *version; // @synthesize version=_version;
-@property(retain, nonatomic) GEOMapLayerDataServiceLayer *layer; // @synthesize layer=_layer;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -27,10 +34,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOMapLayerDataServiceVersion *version;
 @property(readonly, nonatomic) _Bool hasVersion;
+- (void)_readVersion;
+@property(retain, nonatomic) GEOMapLayerDataServiceLayer *layer;
 @property(readonly, nonatomic) _Bool hasLayer;
+- (void)_readLayer;
 
 @end
 

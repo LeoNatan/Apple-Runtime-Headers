@@ -8,7 +8,7 @@
 
 @interface NFFieldNotificationECP1_0 : NFFieldNotification
 {
-    unsigned char _odaRequired;
+    BOOL _odaRequired;
     unsigned int _terminalMode;
     unsigned int _terminalType;
 }
@@ -16,7 +16,7 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly) unsigned int terminalType; // @synthesize terminalType=_terminalType;
 @property(readonly) unsigned int terminalMode; // @synthesize terminalMode=_terminalMode;
-@property(readonly) unsigned char odaRequired; // @synthesize odaRequired=_odaRequired;
+@property(readonly) BOOL odaRequired; // @synthesize odaRequired=_odaRequired;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;

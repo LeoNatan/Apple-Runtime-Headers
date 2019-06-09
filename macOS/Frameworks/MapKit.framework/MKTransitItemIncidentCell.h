@@ -25,6 +25,7 @@
 @property(copy, nonatomic) NSString *incidentMessage;
 - (id)multilineTextFieldsWithinContainer;
 - (void)configureWithIncident:(id)arg1 referenceDate:(id)arg2 shouldShowImage:(BOOL)arg3 inSiri:(BOOL)arg4;
+- (void)configureViews;
 - (id)initWithReuseIdentifier:(id)arg1;
 
 // Remaining properties

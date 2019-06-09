@@ -15,10 +15,10 @@
 + (void)setLogLevel:(long long)arg1;
 + (id)trustPolicies;
 + (id)policyValuesForTrust:(struct __SecTrust *)arg1;
-+ (unsigned int)trustDomainForKeychain:(struct OpaqueSecKeychainRef *)arg1;
++ (unsigned int)trustDomainForKeychain:(struct __SecKeychain *)arg1;
 + (int)createTrustWithCertificates:(id)arg1 policy:(void *)arg2 trust:(struct __SecTrust **)arg3;
-+ (BOOL)isCA:(struct OpaqueSecCertificateRef *)arg1;
-+ (BOOL)isRoot:(struct OpaqueSecCertificateRef *)arg1;
++ (BOOL)isCA:(struct __SecCertificate *)arg1;
++ (BOOL)isRoot:(struct __SecCertificate *)arg1;
 + (BOOL)isRevocationStatusCode:(int)arg1;
 + (BOOL)isCRLStatusCode:(int)arg1;
 + (BOOL)isOCSPStatusCode:(int)arg1;
@@ -35,7 +35,7 @@
 - (id)statusString;
 - (id)evaluateStatus;
 - (BOOL)ignorableStatusCode:(int)arg1;
-- (BOOL)certificate:(struct OpaqueSecCertificateRef *)arg1 isEqualTo:(struct OpaqueSecCertificateRef *)arg2;
+- (BOOL)certificate:(struct __SecCertificate *)arg1 isEqualTo:(struct __SecCertificate *)arg2;
 - (BOOL)existsInKeychain:(void *)arg1;
 - (BOOL)existsInKeychain:(void *)arg1 path:(id *)arg2;
 - (int)certStatusFromDomainTrustSettings:(unsigned int)arg1 isMixed:(char *)arg2 hasBasic:(char *)arg3 names:(id *)arg4;
@@ -54,15 +54,15 @@
 - (id)policyNames;
 - (id)policies;
 - (void)setPolicies:(id)arg1;
-- (struct OpaqueSecPolicyRef *)copyPolicyForOid:(const struct cssm_data *)arg1;
-- (struct OpaqueSecKeychainRef *)keychain;
+- (struct __SecPolicy *)copyPolicyForOid:(const struct cssm_data *)arg1;
+- (struct __SecKeychain *)keychain;
 - (struct __SecTrust *)trust;
 - (void)setTrust:(struct __SecTrust *)arg1;
 - (id)expirationDate;
 - (id)firstValidDate;
 - (struct cssm_x509_name *)issuer;
 - (struct cssm_x509_name *)subject;
-- (struct OpaqueSecCertificateRef *)certificate;
+- (struct __SecCertificate *)certificate;
 - (void)setLeaf:(BOOL)arg1;
 - (BOOL)isLeafCertificate;
 - (BOOL)isAuthorityCertificate;
@@ -79,18 +79,20 @@
 - (id)userIdentityFieldIndexes;
 - (id)fieldDataForOid:(const struct cssm_data *)arg1;
 - (id)fieldDataForOid:(const struct cssm_data *)arg1 inCert:(const struct cssm_data *)arg2 auxData:(id *)arg3;
-- (void)setCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (void)setCertificate:(struct __SecCertificate *)arg1;
 - (void)setData:(struct cssm_data *)arg1;
 - (void)setCertData:(struct cssm_data *)arg1;
 - (void)parseCert:(const struct cssm_data *)arg1;
 - (void)minimalParseCert:(const struct cssm_data *)arg1;
+- (id)certTitle;
 - (void)parseField:(const struct cssm_field *)arg1 atIndex:(unsigned int)arg2;
 - (void)parseExtension:(const struct cssm_data *)arg1;
 - (int)parseExtensionCommon:(const struct cssm_data *)arg1 expect:(BOOL)arg2;
 - (int)parseEmbeddedSCTs:(const struct cssm_data *)arg1;
 - (int)parseNameConstraints:(const struct cssm_data *)arg1;
 - (int)parseGeneralSubtree:(const struct cssm_data *)arg1 index:(int)arg2;
-- (int)parseAuthorityInfoAccess:(const struct cssm_data *)arg1;
+- (int)parseInhibitAnyPolicy:(const struct cssm_data *)arg1;
+- (int)parseInfoAccess:(const struct cssm_data *)arg1 forAuthority:(BOOL)arg2;
 - (int)parseAccessDescription:(const struct cssm_data *)arg1 index:(int)arg2;
 - (void)parseAuthorityKeyId:(const struct cssm_data *)arg1;
 - (void)parseExtKeyUsage:(const struct cssm_data *)arg1;
@@ -122,8 +124,8 @@
 - (void)dealloc;
 - (id)initWithData:(struct cssm_data *)arg1;
 - (id)initWithCertData:(struct cssm_data *)arg1;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1 trust:(struct __SecTrust *)arg2 parse:(BOOL)arg3;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1 trust:(struct __SecTrust *)arg2 parse:(BOOL)arg3;
 - (id)init;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class DAAccount, DAActivity, DATransaction, NSArray, NSMutableArray, NSMutableSet, NSTimer;
+@class DAAccount, DAActivity, DATransaction, NSArray, NSMutableArray, NSMutableSet, NSString, NSTimer;
 @protocol DATask;
 
 @interface DATaskManager : NSObject
@@ -17,6 +17,7 @@
     int _state;
     id <DATask> _activeModalTask;
     id <DATask> _activeQueuedTask;
+    NSString *_powerAssertionGroupID;
     NSMutableArray *_queuedExclusiveTasks;
     id <DATask> _activeExclusiveTask;
     NSMutableSet *_independentTasks;
@@ -42,6 +43,7 @@
 @property(retain, nonatomic) NSMutableSet *independentTasks; // @synthesize independentTasks=_independentTasks;
 @property(retain, nonatomic) id <DATask> activeExclusiveTask; // @synthesize activeExclusiveTask=_activeExclusiveTask;
 @property(retain, nonatomic) NSMutableArray *queuedExclusiveTasks; // @synthesize queuedExclusiveTasks=_queuedExclusiveTasks;
+@property(copy, nonatomic) NSString *powerAssertionGroupID; // @synthesize powerAssertionGroupID=_powerAssertionGroupID;
 @property(retain, nonatomic) id <DATask> activeQueuedTask; // @synthesize activeQueuedTask=_activeQueuedTask;
 @property(retain, nonatomic) id <DATask> activeModalTask; // @synthesize activeModalTask=_activeModalTask;
 @property(nonatomic) __weak DAAccount *account; // @synthesize account=_account;

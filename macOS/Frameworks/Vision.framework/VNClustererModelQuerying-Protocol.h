@@ -18,6 +18,7 @@
 - (NSNumber *)distanceBetweenClustersWithFaceId:(NSNumber *)arg1 andFaceId:(NSNumber *)arg2 error:(id *)arg3;
 - (NSDictionary *)getDistances:(NSArray *)arg1 to:(NSArray *)arg2 error:(id *)arg3;
 - (NSArray *)l1ClusteredFaceIdsGroupedByL0ClustersForClustersContainingFaceIds:(NSArray *)arg1 error:(id *)arg2;
+- (NSArray *)getAllClustersAndReturnError:(id *)arg1;
 - (NSArray *)clusteredFaceIdsForClusterContainingFaceId:(NSNumber *)arg1 error:(id *)arg2;
 - (NSSet *)allClusteredFaceIdsAndReturnError:(id *)arg1;
 @end

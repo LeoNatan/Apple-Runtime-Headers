@@ -6,10 +6,11 @@
 
 #import <ContactsUICore/NSObject-Protocol.h>
 
-@class CNFuture, NSURL;
+@class BSServiceConnectionEndpoint, CNFuture, NSURL;
 @protocol CNScheduler;
 
 @protocol CNUIUserActionURLOpener <NSObject>
+- (CNFuture *)openURL:(NSURL *)arg1 isSensitive:(_Bool)arg2 connectionEndpoint:(BSServiceConnectionEndpoint *)arg3 withScheduler:(id <CNScheduler>)arg4;
 - (CNFuture *)openURL:(NSURL *)arg1 isSensitive:(_Bool)arg2 withScheduler:(id <CNScheduler>)arg3;
 - (CNFuture *)openURL:(NSURL *)arg1 withScheduler:(id <CNScheduler>)arg2;
 @end

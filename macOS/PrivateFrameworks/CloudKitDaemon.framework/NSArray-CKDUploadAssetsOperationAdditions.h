@@ -6,7 +6,18 @@
 
 #import <Foundation/NSArray.h>
 
-@interface NSArray (CKDUploadAssetsOperationAdditions)
+#import <CloudKitDaemon/CKLParsedObject-Protocol.h>
+
+@class NSString;
+
+@interface NSArray (CKDUploadAssetsOperationAdditions) <CKLParsedObject>
 - (id)CKSortedForUpload;
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

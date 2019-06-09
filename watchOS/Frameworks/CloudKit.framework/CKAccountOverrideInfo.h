@@ -16,22 +16,24 @@
     _Bool _isUnitTestingAccount;
     _Bool _accountWantsPushRegistration;
     _Bool _accountWantsFlowControl;
+    NSString *_accountID;
+    NSDictionary *_accountPropertyOverrides;
+    NSDictionary *_overridesByDataclass;
     NSString *_email;
     NSString *_password;
     NSString *_secondEmail;
-    NSDictionary *_accountPropertyOverrides;
-    NSDictionary *_overridesByDataclass;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *overridesByDataclass; // @synthesize overridesByDataclass=_overridesByDataclass;
-@property(copy, nonatomic) NSDictionary *accountPropertyOverrides; // @synthesize accountPropertyOverrides=_accountPropertyOverrides;
 @property(nonatomic) _Bool accountWantsFlowControl; // @synthesize accountWantsFlowControl=_accountWantsFlowControl;
 @property(nonatomic) _Bool accountWantsPushRegistration; // @synthesize accountWantsPushRegistration=_accountWantsPushRegistration;
 @property(nonatomic) _Bool isUnitTestingAccount; // @synthesize isUnitTestingAccount=_isUnitTestingAccount;
 @property(copy, nonatomic) NSString *secondEmail; // @synthesize secondEmail=_secondEmail;
 @property(readonly, nonatomic) NSString *password; // @synthesize password=_password;
 @property(readonly, nonatomic) NSString *email; // @synthesize email=_email;
+@property(copy, nonatomic) NSDictionary *overridesByDataclass; // @synthesize overridesByDataclass=_overridesByDataclass;
+@property(copy, nonatomic) NSDictionary *accountPropertyOverrides; // @synthesize accountPropertyOverrides=_accountPropertyOverrides;
+@property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -42,6 +44,7 @@
 - (id)CKPropertiesDescription;
 - (id)initAnonymousAccount;
 - (id)initWithEmail:(id)arg1 password:(id)arg2;
+- (id)initWithAccountID:(id)arg1;
 
 @end
 

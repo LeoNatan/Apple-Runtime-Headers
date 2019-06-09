@@ -9,26 +9,36 @@
 #import <ContactsUI/CNContactContentViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNContactListViewControllerDelegate-Protocol.h>
 
-@class AVExternalDevice, CNStarkNoContentBannerView, NSString;
+@class AVExternalDevice, CNContactListTableView, CNStarkNoContentBannerView, NSArray, NSString, UITableViewHeaderFooterView;
 
 @interface CNStarkContactsListViewController : CNContactListViewController <CNContactListViewControllerDelegate, CNContactContentViewControllerDelegate>
 {
     _Bool _limitedUI;
+    NSArray *_displayedContactProperties;
+    CNContactListTableView *_contactListTableView;
     CNStarkNoContentBannerView *_overlayView;
+    UITableViewHeaderFooterView *_siriHeaderView;
     AVExternalDevice *_externalDevice;
 }
 
-@property(nonatomic) _Bool limitedUI; // @synthesize limitedUI=_limitedUI;
++ (id)makeContactsDisplayedProperties;
 @property(retain, nonatomic) AVExternalDevice *externalDevice; // @synthesize externalDevice=_externalDevice;
+@property(nonatomic) _Bool limitedUI; // @synthesize limitedUI=_limitedUI;
+@property(retain, nonatomic) UITableViewHeaderFooterView *siriHeaderView; // @synthesize siriHeaderView=_siriHeaderView;
 @property(retain, nonatomic) CNStarkNoContentBannerView *overlayView; // @synthesize overlayView=_overlayView;
+@property(retain, nonatomic) CNContactListTableView *contactListTableView; // @synthesize contactListTableView=_contactListTableView;
+@property(retain, nonatomic) NSArray *displayedContactProperties; // @synthesize displayedContactProperties=_displayedContactProperties;
 - (void).cxx_destruct;
-- (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (void)contactListViewController:(id)arg1 didSelectContact:(id)arg2;
 - (_Bool)contactListViewController:(id)arg1 canSelectContact:(id)arg2;
+- (id)contactListStyleApplier;
+- (void)showContactListTableView;
+- (void)showOverlayView;
 - (void)postMessageOverlayIfNecessary;
-- (void)viewDidLayoutSubviews;
-- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
+- (void)handleSiriHeaderViewTap:(id)arg1;
+- (void)refreshTableViewHeaderWithSize:(struct CGSize)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)limitedUINotification:(id)arg1;
 - (void)updateLimitedUI;
 - (id)createTableView;

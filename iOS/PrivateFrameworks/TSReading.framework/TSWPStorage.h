@@ -355,7 +355,6 @@
 - (struct TSWPParagraphAttributeArray *)paragraphAttributeArrayForKind:(unsigned int)arg1 withCreate:(_Bool)arg2;
 - (struct TSWPAttributeArray *)attributeArrayForKind:(unsigned int)arg1 withCreate:(_Bool)arg2 fromUndo:(_Bool)arg3 undoTransaction:(struct TSWPStorageTransaction *)arg4;
 - (struct TSWPAttributeArray *)attributeArrayForKind:(unsigned int)arg1 withCreate:(_Bool)arg2 undoTransaction:(struct TSWPStorageTransaction *)arg3;
-- (void)pCreateHyperlinksFromAttributedString:(id)arg1;
 - (id)pDrawableInfoFromImporter:(id)arg1 error:(id *)arg2;
 - (id)pImportParagraphAttributes:(id)arg1 paragraphStyle:(id)arg2;
 - (id)pParagraphStyleWithFrequentAttributesInString:(id)arg1 withinStringRange:(struct _NSRange)arg2 currentParagraphStyle:(id)arg3;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class NSString, PXToastPresentationWindow, UIImage, UIImageView, UILabel, UINotificationFeedbackGenerator, UIVisualEffectView;
+@class CAShapeLayer, NSString, PXToastPresentationWindow, UIImage, UIImageView, UILabel, UINotificationFeedbackGenerator, UIVisualEffectView;
 @protocol PXToastViewControllerDelegate;
 
 @interface PXToastViewController : UIViewController
@@ -20,6 +20,7 @@
     UILabel *_secondaryLabel;
     UIImageView *_imageView;
     UIVisualEffectView *_toastView;
+    CAShapeLayer *_checkLayer;
     UINotificationFeedbackGenerator *_feedbackGenerator;
 }
 
@@ -29,6 +30,7 @@
 + (id)checkmarkToastWithTitle:(id)arg1 message:(id)arg2;
 + (id)toastWithTitle:(id)arg1 message:(id)arg2 image:(id)arg3;
 @property(retain, nonatomic) UINotificationFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
+@property(retain, nonatomic) CAShapeLayer *checkLayer; // @synthesize checkLayer=_checkLayer;
 @property(retain, nonatomic) UIVisualEffectView *toastView; // @synthesize toastView=_toastView;
 @property(nonatomic) _Bool shouldUseAnimatedCheckmark; // @synthesize shouldUseAnimatedCheckmark=_shouldUseAnimatedCheckmark;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
@@ -42,6 +44,7 @@
 - (void)_animateCheckMark;
 - (void)_dismissAfterDelay:(double)arg1;
 - (void)present;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

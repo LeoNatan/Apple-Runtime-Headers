@@ -7,6 +7,7 @@
 #import <PassKitCore/PKPassLogoImageSet.h>
 
 @interface PKPassLogoImageSet (NanoPassKit)
+- (_Bool)npkHasValidPaymentCardAssets;
 - (void)loadPDFArtFromBundle:(id)arg1 targetSize:(struct CGSize)arg2 scale:(float)arg3;
 - (void)loadPDFArtFromBundle:(id)arg1;
 - (void)resizeWithScreenSize:(struct CGSize)arg1;

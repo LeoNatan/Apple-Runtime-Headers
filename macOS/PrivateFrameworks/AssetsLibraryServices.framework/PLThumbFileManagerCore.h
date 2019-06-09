@@ -26,13 +26,15 @@
 - (id)_debugDescription;
 - (BOOL)validateData:(id)arg1 withToken:(id)arg2;
 - (struct CGImage *)createImageWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 decodeSession:(void *)arg3;
+- (void)preheatDataForThumbnailIndexes:(id)arg1;
 - (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 dataOffset:(int *)arg8;
-- (void)setImageForEntry:(id)arg1 withIdentifier:(id)arg2 orIndex:(unsigned long long)arg3 photoUUID:(id)arg4 options:(id)arg5;
+- (BOOL)setImageForEntry:(id)arg1 withIdentifier:(id)arg2 orIndex:(unsigned long long)arg3 photoUUID:(id)arg4 options:(id)arg5;
 - (void)endThumbnailSafePropertyUpdatesOnAssetThumbnailIdentifier:(id)arg1 withToken:(id)arg2;
 - (id)beginThumbnailSafePropertyUpdatesOnAssetThumbnailIdentifier:(id)arg1;
 - (void)deleteEntryWithIdentifier:(id)arg1;
 - (void)obtainAccessAndWaitWithFileWithIdentifier:(id)arg1 urlHandler:(CDUnknownBlockType)arg2;
 - (id)thumbnailPathForThumbIdentifier:(id)arg1;
+- (id)_fileIdentifierForThumbnailIdentifier:(id)arg1;
 - (BOOL)usesThumbIdentifiers;
 @property(readonly, nonatomic) BOOL isReadOnly;
 @property(readonly, copy) NSString *description;

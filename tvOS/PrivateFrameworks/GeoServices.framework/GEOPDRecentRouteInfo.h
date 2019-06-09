@@ -8,21 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSData, PBUnknownFields;
+@class NSData, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDRecentRouteInfo : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSData *_routeId;
     NSData *_sessionState;
     NSData *_zilchPoints;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_routeId:1;
+        unsigned int read_sessionState:1;
+        unsigned int read_zilchPoints:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_routeId:1;
+        unsigned int wrote_sessionState:1;
+        unsigned int wrote_zilchPoints:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSData *routeId; // @synthesize routeId=_routeId;
-@property(retain, nonatomic) NSData *sessionState; // @synthesize sessionState=_sessionState;
-@property(retain, nonatomic) NSData *zilchPoints; // @synthesize zilchPoints=_zilchPoints;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,11 +42,18 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSData *routeId;
 @property(readonly, nonatomic) _Bool hasRouteId;
+- (void)_readRouteId;
+@property(retain, nonatomic) NSData *sessionState;
 @property(readonly, nonatomic) _Bool hasSessionState;
+- (void)_readSessionState;
+@property(retain, nonatomic) NSData *zilchPoints;
 @property(readonly, nonatomic) _Bool hasZilchPoints;
+- (void)_readZilchPoints;
 
 @end
 

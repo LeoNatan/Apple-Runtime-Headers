@@ -17,8 +17,10 @@
     NSString *_errorText;
     NSString *_instructionText;
     NSWindow *_overWindow;
+    NSString *_userShortName;
 }
 
+@property __weak NSString *userShortName; // @synthesize userShortName=_userShortName;
 @property NSWindow *overWindow; // @synthesize overWindow=_overWindow;
 @property BOOL passwordIsTemporary; // @synthesize passwordIsTemporary=_passwordIsTemporary;
 @property(retain) NSString *instructionText; // @synthesize instructionText=_instructionText;

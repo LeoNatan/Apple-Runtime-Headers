@@ -22,6 +22,7 @@
     NSObject<OS_xpc_object> *_clientConnection;
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSString *_clientBundleID;
+    NSString *_clientPersonaID;
     NSString *_protectionClass;
 }
 
@@ -30,6 +31,7 @@
 @property(nonatomic) _Bool isInternal; // @synthesize isInternal=_isInternal;
 @property(copy, nonatomic) NSString *protectionClass; // @synthesize protectionClass=_protectionClass;
 @property(nonatomic) unsigned int clientUID; // @synthesize clientUID=_clientUID;
+@property(copy, nonatomic) NSString *clientPersonaID; // @synthesize clientPersonaID=_clientPersonaID;
 @property(copy, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *clientConnection; // @synthesize clientConnection=_clientConnection;
@@ -49,16 +51,15 @@
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 options:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)addInteraction:(id)arg1 intentClassName:(id)arg2 bundleID:(id)arg3 protectionClass:(id)arg4 options:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)performDataMigrationWithTimeout:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)performIndexJob:(id)arg1;
-- (void)performIndexJob:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)_forceAppWithBundleID:(id)arg1 toPerformJob:(id)arg2;
 - (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2 options:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteAllUserActivities:(id)arg1 options:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)performIndexJob:(id)arg1 protectionClass:(id)arg2 acknowledgementHandler:(CDUnknownBlockType)arg3;
 - (void)changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(long long)arg2 protectionClass:(id)arg3 forBundleID:(id)arg4 forUTIType:(id)arg5 options:(long long)arg6;
 - (void)deleteAllSearchableItemsWithProtectionClass:(id)arg1 forBundleID:(id)arg2 options:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteAllSearchableItemsWithBundleID:(id)arg1 protectionClass:(id)arg2 shouldGC:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_deleteAllSearchableItemsWithBundleID:(id)arg1 protectionClass:(id)arg2 shouldGC:(_Bool)arg3 options:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)_issueCommand:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_issueCommand:(id)arg1 searchContext:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)provideFileURLForBundle:(id)arg1 identifier:(id)arg2 type:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)provideDataForBundle:(id)arg1 identifier:(id)arg2 type:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)deleteSearchableItemsSinceDate:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;

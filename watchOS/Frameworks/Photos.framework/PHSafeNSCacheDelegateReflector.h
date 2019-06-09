@@ -8,12 +8,12 @@
 
 #import <Photos/NSCacheDelegate-Protocol.h>
 
-@class NSLock, NSMapTable, NSString;
+@class NSMapTable, NSString;
 
 @interface PHSafeNSCacheDelegateReflector : NSObject <NSCacheDelegate>
 {
+    struct os_unfair_lock_s _lock;
     NSMapTable *_delegegatesByCache;
-    NSLock *_lock;
 }
 
 + (void)removeDelegateForCache:(id)arg1;

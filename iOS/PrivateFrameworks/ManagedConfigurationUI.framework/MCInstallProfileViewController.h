@@ -12,13 +12,14 @@
 #import <ManagedConfigurationUI/MCInteractionDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCProfileQuestionsControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/MCProfileViewControllerDelegate-Protocol.h>
+#import <ManagedConfigurationUI/MCUISignInViewControllerDelegate-Protocol.h>
 #import <ManagedConfigurationUI/PSStateRestoration-Protocol.h>
 #import <ManagedConfigurationUI/UIAlertViewDelegate-Protocol.h>
 
 @class MCInstallProfileQuestionViewController, MCProfile, MCProfileViewController, NSArray, NSData, NSSManager, NSString, UIAlertController;
 @protocol MCInstallProfileDelegate;
 
-@interface MCInstallProfileViewController : UIViewController <MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate, DevicePINControllerDelegate, MCProfileViewControllerDelegate, MCInteractionDelegate>
+@interface MCInstallProfileViewController : UIViewController <MCUISignInViewControllerDelegate, MCInstallationConsentDelegate, MCInstallationWarningDelegate, MCProfileQuestionsControllerDelegate, PSStateRestoration, UIAlertViewDelegate, DevicePINControllerDelegate, MCProfileViewControllerDelegate, MCInteractionDelegate>
 {
     MCInstallProfileQuestionViewController *_questionsController;
     CDUnknownBlockType _didAppearBlock;
@@ -36,6 +37,8 @@
     MCProfile *_profile;
     NSData *_profileData;
     id <MCInstallProfileDelegate> _delegate;
+    CDUnknownBlockType _signInCompletionHandler;
+    NSString *_enrollmentPersonaID;
     MCProfileViewController *_profileViewController;
     NSArray *_warningsToPresent;
     UIAlertController *_activeAlertController;
@@ -56,6 +59,8 @@
 @property(retain, nonatomic) UIAlertController *activeAlertController; // @synthesize activeAlertController=_activeAlertController;
 @property(retain, nonatomic) NSArray *warningsToPresent; // @synthesize warningsToPresent=_warningsToPresent;
 @property(retain, nonatomic) MCProfileViewController *profileViewController; // @synthesize profileViewController=_profileViewController;
+@property(copy, nonatomic) NSString *enrollmentPersonaID; // @synthesize enrollmentPersonaID=_enrollmentPersonaID;
+@property(copy, nonatomic) CDUnknownBlockType signInCompletionHandler; // @synthesize signInCompletionHandler=_signInCompletionHandler;
 @property(nonatomic) __weak id <MCInstallProfileDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSData *profileData; // @synthesize profileData=_profileData;
 @property(retain, nonatomic) MCProfile *profile; // @synthesize profile=_profile;
@@ -69,6 +74,8 @@
 @property(nonatomic) _Bool installHasFailed; // @synthesize installHasFailed=_installHasFailed;
 @property(nonatomic) _Bool processingPayload; // @synthesize processingPayload=_processingPayload;
 - (void).cxx_destruct;
+- (void)signInViewControllerDidCancelAuthentication:(id)arg1;
+- (void)signInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (void)_profileRemovalDidFinish;
 - (void)_removePhoneProfileWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_removeWatchProfileWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -89,6 +96,7 @@
 - (void)didCancelEnteringPIN;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)_showPINSheet;
+- (void)profileConnection:(id)arg1 didRequestMAIDSignIn:(id)arg2 personaID:(id)arg3;
 - (void)profileConnectionDidRequestCurrentPasscode:(id)arg1;
 - (void)profileConnection:(id)arg1 didBeginInstallingNextProfile:(id)arg2;
 - (void)profileConnection:(id)arg1 didUpdateStatus:(id)arg2;
@@ -111,7 +119,9 @@
 - (_Bool)_installErrorIsUserCancelledError:(id)arg1;
 - (void)_cancelUserInputAnimated:(_Bool)arg1;
 - (void)_submitResponses:(id)arg1;
+- (void)_signInMAID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_installFinishedWithIdentifier:(id)arg1 error:(id)arg2;
+- (void)_cancelInstallAfterMAIDAuthenticationAnimated:(_Bool)arg1;
 - (void)_cancelInstallAfterPresentingWarningsAnimated:(_Bool)arg1;
 - (void)_continueInstallAfterPresentingWarnings;
 - (void)_performInstall;

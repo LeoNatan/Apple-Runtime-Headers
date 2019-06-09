@@ -21,14 +21,15 @@ __attribute__((visibility("hidden")))
         struct TOperationRecord *__i;
     } _operationRecordIter;
     struct OperationStatus _status;
-    id <IAsyncNodeOperationDelegateProtocol> _delegate;
+    struct TNSWeakPtr<NSObject<IAsyncNodeOperationDelegateProtocol>, void> _weakDelegate;
     unsigned int _respondsToFlags;
     unsigned int _options;
+    FI_IAsyncNodeOperation *_selfReference;
 }
 
 + (id)operationWithNodes:(const struct TFENodeVector *)arg1;
+@property(retain, nonatomic) FI_IAsyncNodeOperation *selfReference; // @synthesize selfReference=_selfReference;
 @property unsigned int options; // @synthesize options=_options;
-@property(nonatomic) id <IAsyncNodeOperationDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (int)handleCompletedNotification;
@@ -48,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (struct TString)authorizationPrompt;
 - (struct TString)firstNodeName;
 - (const struct TFENodeVector *)nodes;
+@property(nonatomic) __weak NSObject<IAsyncNodeOperationDelegateProtocol> *delegate; // @dynamic delegate;
 - (void)dealloc;
 - (id)initWithNodes:(const struct TFENodeVector *)arg1;
 

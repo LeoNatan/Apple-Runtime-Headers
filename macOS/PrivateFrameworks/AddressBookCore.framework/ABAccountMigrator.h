@@ -19,6 +19,8 @@
     BOOL _deletionHandledDuringMigration;
 }
 
++ (id)os_log;
+- (void).cxx_destruct;
 - (id)_debugStringForOptions:(int)arg1;
 - (BOOL)setOutError:(id *)arg1;
 - (BOOL)isMigrationSuccessful;
@@ -40,7 +42,6 @@
 - (void)performMigrationSteps;
 - (void)prepareToMigrate;
 - (BOOL)migrateAccount:(id *)arg1;
-- (void)dealloc;
 - (id)initWithRepository:(id)arg1 sourceAccount:(id)arg2 destinationAccount:(id)arg3 options:(int)arg4;
 
 @end

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL builtIn; // @synthesize builtIn=_builtIn;
 @property(readonly) unsigned long long registryID; // @synthesize registryID=_registryID;
 @property(readonly) struct __IOHIDServiceClient *service; // @synthesize service=_service;
+- (BOOL)updateEventData;
 @property struct __IOHIDEvent *event; // @synthesize event=_event;
 - (BOOL)setPropertyForKey:(id)arg1 withValue:(id)arg2;
 - (id)copyPropertyForKey:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ABACAccount, ABAccountPersistence, NSString;
+@class ABACAccount, ABAccount, ABAccountPersistence, NSArray, NSNumber, NSString;
 @protocol ABACAccountStore, ABAccountCustomizationPolicy;
 
 @interface ABAccountBuilder : NSObject
@@ -15,6 +15,9 @@
     NSString *_name;
     NSString *_basePath;
     Class _sourceClass;
+    NSArray *_childAccounts;
+    NSNumber *_dsid;
+    NSString *_altDSID;
     CDUnknownBlockType _sourceCreationBlock;
     id <ABAccountCustomizationPolicy> _customizationPolicy;
     BOOL _isMainAccount;
@@ -23,16 +26,23 @@
     CDUnknownBlockType _searchPolicyBlock;
     ABAccountPersistence *_persistence;
     ABACAccount *_acAccount;
+    ABACAccount *_parentACAccount;
     id <ABACAccountStore> _accountStore;
+    ABAccount *_parentAccount;
+    ABACAccount *_acParentAccount;
 }
 
 @property(retain, nonatomic) id <ABACAccountStore> accountStore; // @synthesize accountStore=_accountStore;
+@property(retain, nonatomic) ABACAccount *acParentAccount; // @synthesize acParentAccount=_acParentAccount;
 @property(retain, nonatomic) ABACAccount *acAccount; // @synthesize acAccount=_acAccount;
 @property(nonatomic) Class configurationClass; // @synthesize configurationClass=_configurationClass;
 @property(nonatomic) BOOL isMainAccount; // @synthesize isMainAccount=_isMainAccount;
 @property(retain, nonatomic) id <ABAccountCustomizationPolicy> customizationPolicy; // @synthesize customizationPolicy=_customizationPolicy;
 @property(copy, nonatomic) CDUnknownBlockType primitiveSourceCreationBlock; // @synthesize primitiveSourceCreationBlock=_sourceCreationBlock;
 @property(nonatomic) Class primitiveSourceClass; // @synthesize primitiveSourceClass=_sourceClass;
+@property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
+@property(copy, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
+@property(retain, nonatomic) ABAccount *parentAccount; // @synthesize parentAccount=_parentAccount;
 @property(copy, nonatomic) NSString *basePath; // @synthesize basePath=_basePath;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -42,6 +52,8 @@
 @property(retain, nonatomic) ABAccountPersistence *persistence;
 - (id)makeSearchPolicyWithAccount:(id)arg1;
 - (void)setSearchPolicyBlock:(CDUnknownBlockType)arg1;
+- (id)childAccounts;
+- (void)setDSID:(id)arg1;
 - (id)newBaseURL;
 - (id)baseURL;
 - (id)newFutureSource;

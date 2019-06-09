@@ -6,23 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <FamilyCircleUI/DevicePINControllerDelegate-Protocol.h>
+@class FARequestConfigurator, RUIStyle, UIViewController;
 
-@class FARequestConfigurator, NSString, UIViewController;
-
-@interface FACircleStateController : NSObject <DevicePINControllerDelegate>
+@interface FACircleStateController : NSObject
 {
     FARequestConfigurator *_requestConfigurator;
     CDUnknownBlockType _performOperationCompletion;
     UIViewController *_presenter;
+    RUIStyle *_customRUIStyle;
 }
 
+@property(retain, nonatomic) RUIStyle *customRUIStyle; // @synthesize customRUIStyle=_customRUIStyle;
 @property(nonatomic) __weak UIViewController *presenter; // @synthesize presenter=_presenter;
 - (void).cxx_destruct;
-- (void)_restrictionsPINCompletionWithSuccess:(_Bool)arg1;
-- (void)didCancelEnteringPIN;
-- (void)didAcceptEnteredPIN;
-- (void)showRestrictionsPINController;
 - (void)_performOperationWithContext:(id)arg1 viewController:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_presentViewServiceWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_contextRequiresRemoteService:(id)arg1;
@@ -30,12 +26,6 @@
 - (void)performOperationWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithPresenter:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+#import <Foundation/NSProgressReporting-Protocol.h>
+
+@class NSProgress, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NSOperationQueue : NSObject
+@interface NSOperationQueue : NSObject <NSProgressReporting>
 {
-    id _private;
-    void *_reserved;
+    // Error parsing type: {?="__queueLock"{os_unfair_lock_s="_os_unfair_lock_opaque"I}"__firstOperation"@"NSOperation""__lastOperation"@"NSOperation""__firstPriOperation"[6@"NSOperation"]"__lastPriOperation"[6@"NSOperation"]"_barriers"@"NSMutableArray""_progress"@"_NSOperationQueueProgress""__operationCount"AQ"__activeThreads"@"NSPointerArray""__maxNumOps"q"__actualMaxNumOps"i"__numExecOps"i"__dispatch_queue"@"NSObject<OS_dispatch_queue>""__backingQueue"@"NSObject<OS_dispatch_queue>""__name"@"NSString""__nameBuffer"[300c]"__suspended"AB"__overcommit"AB"__propertyQoS"AC"__operationsObserverCount"AC"__operationCountObserverCount"AC"__progressReporting"AC"__mainQ"C}, name: _iqp
 }
 
 + (id)mainQueue;
@@ -20,7 +21,7 @@
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)__graphDescription;
 - (void)waitUntilAllOperationsAreFinished;
 - (void)cancelAllOperations;
@@ -31,8 +32,10 @@
 - (_Bool)overcommitsOperations;
 @property(getter=isSuspended) _Bool suspended;
 @property long long maxConcurrentOperationCount;
-@property(readonly) unsigned long long operationCount;
-@property(readonly, copy) NSArray *operations;
+@property(readonly) NSProgress *progress;
+- (unsigned long long)operationCount;
+- (id)operations;
+- (void)addBarrierBlock:(CDUnknownBlockType)arg1;
 - (void)addOperationWithBlock:(CDUnknownBlockType)arg1;
 - (void)addOperations:(id)arg1 waitUntilFinished:(_Bool)arg2;
 - (void)addOperation:(id)arg1;
@@ -40,6 +43,11 @@
 - (id)init;
 - (void)_fc_addUncancellableOperationForReactorID:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_fc_addUncancellableOperationWithBlock:(CDUnknownBlockType)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

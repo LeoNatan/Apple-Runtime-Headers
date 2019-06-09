@@ -97,9 +97,6 @@
 - (void)saveAutosaveValues;
 - (id)autosaveDefaultsKey;
 - (void)pasteboard:(id)arg1 provideDataForType:(id)arg2;
-- (double)splitView:(id)arg1 constrainMaxCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
-- (double)splitView:(id)arg1 constrainMinCoordinate:(double)arg2 ofSubviewAt:(long long)arg3;
-- (void)splitView:(id)arg1 resizeSubviewsWithOldSize:(struct CGSize)arg2;
 - (void)writeSplitViewColumnWidthsToPrefs:(BOOL)arg1;
 - (void)tableView:(id)arg1 userClickedSubrow:(long long)arg2 ofRow:(long long)arg3;
 - (void)_postSelectionChangedNotification;

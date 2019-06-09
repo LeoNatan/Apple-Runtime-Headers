@@ -22,5 +22,6 @@
 - (void)setRouteSummaryWithGuidanceStateData:(NSData *)arg1;
 - (void)setRouteSummaryWithTransitSummaryData:(NSData *)arg1;
 - (void)setRouteSummaryWithNavigationRouteSummaryData:(NSData *)arg1;
+- (void)setNavigationSessionState:(unsigned long long)arg1 transportType:(int)arg2;
 @end
 

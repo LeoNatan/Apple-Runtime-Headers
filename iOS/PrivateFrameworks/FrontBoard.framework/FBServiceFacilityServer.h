@@ -4,14 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoardServices/BSBaseXPCServer.h>
+#import <objc/NSObject.h>
 
+#import <FrontBoard/BSServiceConnectionListenerDelegate-Protocol.h>
 #import <FrontBoard/FBSServiceFacilityManaging-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSString;
+@class BSServiceConnectionListener, BSServiceDomainSpecification, NSMutableDictionary, NSMutableSet, NSString;
+@protocol OS_dispatch_queue;
 
-@interface FBServiceFacilityServer : BSBaseXPCServer <FBSServiceFacilityManaging>
+@interface FBServiceFacilityServer : NSObject <BSServiceConnectionListenerDelegate, FBSServiceFacilityManaging>
 {
+    BSServiceDomainSpecification *_domain;
+    NSObject<OS_dispatch_queue> *_queue;
+    BSServiceConnectionListener *_serviceListener;
     NSMutableDictionary *_facilitiesByIdentifier;
     NSMutableSet *_completedMilestones;
     NSMutableDictionary *_suspendedFacilitiesByIdentifier;
@@ -19,20 +24,21 @@
 }
 
 + (id)sharedInstance;
+@property(readonly, nonatomic) BSServiceDomainSpecification *domain; // @synthesize domain=_domain;
 - (void).cxx_destruct;
-- (void)_handleConnect:(id)arg1 forClient:(id)arg2 facilityID:(id)arg3;
+- (void)_handleConnect:(id)arg1 forClient:(id)arg2;
 - (void)_evaluateSuspendedFacility:(id)arg1;
 - (void)_evaluateSuspendedFacilities;
 - (_Bool)_areFacilityPrerequisitesSatisfied:(id)arg1;
 - (void)queue_handleMessage:(id)arg1 client:(id)arg2;
-- (void)queue_clientRemoved:(id)arg1;
-- (void)queue_clientAdded:(id)arg1;
-- (Class)queue_classForNewClientConnection:(id)arg1;
 - (void)noteMilestoneReached:(id)arg1;
 - (void)removeFacility:(id)arg1;
 - (void)addFacility:(id)arg1;
 - (_Bool)ping;
+- (void)run;
+- (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
 - (void)dealloc;
+- (id)_initWithDomain:(id)arg1;
 - (id)init;
 
 // Remaining properties

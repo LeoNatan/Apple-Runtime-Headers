@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSError, NSString, TTSSpeechRequest, TTSSpeechRequestOwner;
+@class NSError, NSString, NSURL, TTSSpeechRequest, TTSSpeechRequestOwner;
 
 @protocol TTSSpeechConnectionDelegate
+- (void)connection:(TTSSpeechRequestOwner *)arg1 speechRequest:(TTSSpeechRequest *)arg2 didSynthesizeSilentlyToURL:(NSURL *)arg3;
 - (void)connection:(TTSSpeechRequestOwner *)arg1 speechRequest:(TTSSpeechRequest *)arg2 willSpeakMark:(int)arg3 inRange:(struct _NSRange)arg4;
 - (void)connection:(TTSSpeechRequestOwner *)arg1 speechRequest:(TTSSpeechRequest *)arg2 didStopAtEnd:(_Bool)arg3 phonemesSpoken:(NSString *)arg4 error:(NSError *)arg5;
 - (void)connection:(TTSSpeechRequestOwner *)arg1 speechRequestDidContinue:(TTSSpeechRequest *)arg2;

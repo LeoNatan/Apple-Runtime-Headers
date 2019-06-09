@@ -7,7 +7,7 @@
 #import <MetalTools/MTLCommandBuffer-Protocol.h>
 
 @class MTLRenderPassDescriptor, NSDictionary, NSMutableDictionary;
-@protocol MTLComputeCommandEncoder, MTLDebugCommandEncoder, MTLHeap, MTLRenderCommandEncoder, MTLResource, MTLVideoCommandEncoderSPI;
+@protocol MTLComputeCommandEncoder, MTLDebugCommandEncoder, MTLEvent, MTLHeap, MTLRenderCommandEncoder, MTLResource, MTLVideoCommandEncoderSPI;
 
 @protocol MTLCommandBufferSPI <MTLCommandBuffer>
 @property(readonly, nonatomic) NSMutableDictionary *userDictionary;
@@ -15,6 +15,7 @@
 @property(getter=isProfilingEnabled) BOOL profilingEnabled;
 
 @optional
+@property(readonly) unsigned long long globalTraceObjectID;
 @property(readonly) double GPUEndTime;
 @property(readonly) double GPUStartTime;
 @property(readonly) double kernelEndTime;
@@ -23,12 +24,16 @@
 - (void)addPurgedHeap:(id <MTLHeap>)arg1;
 - (void)addPurgedResource:(id <MTLResource>)arg1;
 - (void)doCorruptCBSPI:(int)arg1;
+- (void)encodeWaitForEvent:(id <MTLEvent>)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
+- (unsigned long long)protectionOptions;
+- (void)setProtectionOptions:(unsigned long long)arg1;
 - (BOOL)commitAndWaitUntilSubmitted;
 - (void)commitAndHold;
 - (id <MTLDebugCommandEncoder>)debugCommandEncoder;
 - (id <MTLComputeCommandEncoder>)sampledComputeCommandEncoderWithDispatchType:(unsigned long long)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned long long)arg3;
 - (id <MTLComputeCommandEncoder>)sampledComputeCommandEncoderWithProgramInfoBuffer:(CDStruct_4af8c268 *)arg1 capacity:(unsigned long long)arg2;
 - (id <MTLRenderCommandEncoder>)sampledRenderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned long long)arg3;
+- (void *)debugBufferContentsWithLength:(unsigned long long *)arg1;
 - (id <MTLVideoCommandEncoderSPI>)videoCommandEncoder;
 @end
 

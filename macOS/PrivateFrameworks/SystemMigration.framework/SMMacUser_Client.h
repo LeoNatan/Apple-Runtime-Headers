@@ -21,6 +21,7 @@
 
 + (id)keyPathsForValuesAffectingExtraInfoColor;
 + (id)keyPathsForValuesAffectingDisplayExtraInfo;
++ (id)interestedDaemonKeysLimitedToMigratableUsers;
 + (id)interestedDaemonKeys;
 @property(readonly, getter=isSecureTokenAuth) BOOL secureTokenAuth; // @synthesize secureTokenAuth=_secureTokenAuth;
 @property BOOL extraInfoIncludeFileVaultWarning; // @synthesize extraInfoIncludeFileVaultWarning=_extraInfoIncludeFileVaultWarning;

@@ -7,6 +7,7 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (SBUIColorAdditions)
++ (id)sbui_randomColor;
 - (double)sb_brightness;
 - (_Bool)sb_isGrayscale;
 @end

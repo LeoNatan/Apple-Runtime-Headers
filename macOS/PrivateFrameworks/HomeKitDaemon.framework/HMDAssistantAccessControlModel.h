@@ -16,10 +16,10 @@
 - (id)dependentUUIDs;
 
 // Remaining properties
-@property(retain, nonatomic) NSArray *accessoryModelIDs; // @dynamic accessoryModelIDs;
+@property(copy, nonatomic) NSArray *accessoryModelIDs; // @dynamic accessoryModelIDs;
 @property(retain, nonatomic) NSString *changeTag; // @dynamic changeTag;
-@property(retain, nonatomic) NSNumber *enabled; // @dynamic enabled;
-@property(retain, nonatomic) NSNumber *options; // @dynamic options;
+@property(copy, nonatomic) NSNumber *enabled; // @dynamic enabled;
+@property(copy, nonatomic) NSNumber *options; // @dynamic options;
 
 @end
 

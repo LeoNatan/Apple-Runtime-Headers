@@ -26,6 +26,7 @@
     _Bool _failed;
 }
 
++ (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
 @property(nonatomic) unsigned int direction; // @synthesize direction=_direction;
 @property(nonatomic) unsigned int numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;

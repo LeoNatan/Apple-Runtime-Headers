@@ -6,32 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class AVTransportBarViewController, NSArray;
+@class AVControlItem, AVTransportBarViewController, NSArray, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface AVInternalPlaybackOptions : NSObject
 {
     _Bool _includeTransportBar;
     _Bool _includeInfoViews;
+    _Bool _includeInteractiveOverlay;
     _Bool _requiresLinearPlayback;
     _Bool _requiresFullSubtitles;
     _Bool _disableScrubbingThumbnails;
     _Bool _appliesPreferredDisplayCriteriaAutomatically;
     _Bool _skipForwardEnabled;
     _Bool _skipBackwardEnabled;
+    _Bool _allowInfoMetadataSubpanel;
+    _Bool _allowsPictureInPicturePlayback;
     NSArray *_allowedSubtitleOptionLanguages;
     AVTransportBarViewController *_clientTransportBarViewController;
+    UIViewController *_customOverlayViewController;
     long long _skippingBehavior;
+    AVControlItem *_interactiveOverlayItem;
 }
 
+@property(retain, nonatomic) AVControlItem *interactiveOverlayItem; // @synthesize interactiveOverlayItem=_interactiveOverlayItem;
+@property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
+@property(nonatomic) _Bool allowInfoMetadataSubpanel; // @synthesize allowInfoMetadataSubpanel=_allowInfoMetadataSubpanel;
 @property(nonatomic, getter=isSkipBackwardEnabled) _Bool skipBackwardEnabled; // @synthesize skipBackwardEnabled=_skipBackwardEnabled;
 @property(nonatomic, getter=isSkipForwardEnabled) _Bool skipForwardEnabled; // @synthesize skipForwardEnabled=_skipForwardEnabled;
 @property(nonatomic) long long skippingBehavior; // @synthesize skippingBehavior=_skippingBehavior;
+@property(retain, nonatomic) UIViewController *customOverlayViewController; // @synthesize customOverlayViewController=_customOverlayViewController;
 @property(nonatomic) _Bool appliesPreferredDisplayCriteriaAutomatically; // @synthesize appliesPreferredDisplayCriteriaAutomatically=_appliesPreferredDisplayCriteriaAutomatically;
 @property(retain, nonatomic) AVTransportBarViewController *clientTransportBarViewController; // @synthesize clientTransportBarViewController=_clientTransportBarViewController;
 @property(nonatomic) _Bool disableScrubbingThumbnails; // @synthesize disableScrubbingThumbnails=_disableScrubbingThumbnails;
 @property(nonatomic) _Bool requiresFullSubtitles; // @synthesize requiresFullSubtitles=_requiresFullSubtitles;
 @property(copy, nonatomic) NSArray *allowedSubtitleOptionLanguages; // @synthesize allowedSubtitleOptionLanguages=_allowedSubtitleOptionLanguages;
 @property(nonatomic) _Bool requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
+@property(nonatomic) _Bool includeInteractiveOverlay; // @synthesize includeInteractiveOverlay=_includeInteractiveOverlay;
 @property(nonatomic) _Bool includeInfoViews; // @synthesize includeInfoViews=_includeInfoViews;
 @property(nonatomic) _Bool includeTransportBar; // @synthesize includeTransportBar=_includeTransportBar;
 - (void).cxx_destruct;

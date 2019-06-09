@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <BackBoardServices/BKSEventFocusManagerClientInterface-Protocol.h>
+#import <BackBoardServices/BKSTouchDeliveryObserving_IPC-Protocol.h>
 
-@class BSMutableIntegerMap, NSHashTable, NSMapTable, NSString, NSXPCConnection;
+@class BSMutableIntegerMap, BSServiceConnection, NSHashTable, NSMapTable, NSString;
 @protocol OS_dispatch_queue;
 
-@interface BKSTouchDeliveryObservationService : NSObject <BKSEventFocusManagerClientInterface>
+@interface BKSTouchDeliveryObservationService : NSObject <BKSTouchDeliveryObserving_IPC>
 {
     NSObject<OS_dispatch_queue> *_calloutQueue;
     NSObject<OS_dispatch_queue> *_touchClientQueue;
-    NSXPCConnection *_connection;
+    BSServiceConnection *_connection;
     BSMutableIntegerMap *_touchIdentifierToObserverLists;
     NSMapTable *_observersToTouchIdentifiers;
     NSHashTable *_generalObservers;
@@ -25,19 +25,17 @@
 @property(retain, nonatomic) NSHashTable *generalObservers; // @synthesize generalObservers=_generalObservers;
 @property(retain, nonatomic) NSMapTable *observersToTouchIdentifiers; // @synthesize observersToTouchIdentifiers=_observersToTouchIdentifiers;
 @property(retain, nonatomic) BSMutableIntegerMap *touchIdentifierToObserverLists; // @synthesize touchIdentifierToObserverLists=_touchIdentifierToObserverLists;
-@property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) BSServiceConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
-- (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1 forTouchIdentifier:(unsigned int)arg2;
-- (void)addObserver:(id)arg1;
-- (void)touchDetachedForIdentifier:(unsigned int)arg1 context:(unsigned int)arg2 pid:(int)arg3;
-- (void)touchUpOccuredForIdentifier:(unsigned int)arg1 detached:(_Bool)arg2 context:(unsigned int)arg3 pid:(int)arg4;
-- (void)focusedDeferralPropertiesUpdatedWithProperties:(id)arg1;
+- (void)observeTouchEventDeliveryDidOccur:(id)arg1;
 - (void)_connectToTouchDeliveryService;
-- (_Bool)_removeObserver:(id)arg1 forTouchIdentifier:(unsigned int)arg2;
-- (_Bool)_addObserver:(id)arg1 forTouchIdentifier:(unsigned int)arg2;
-- (void)_removeObserversForTouchIdentifier:(unsigned int)arg1;
-- (id)_observersForTouchIdentifier:(unsigned int)arg1;
+- (_Bool)_queue_removeObserver:(id)arg1 forTouchIdentifier:(unsigned int)arg2;
+- (_Bool)_queue_addObserver:(id)arg1 forTouchIdentifier:(unsigned int)arg2;
+- (void)_queue_removeObserversForTouchIdentifier:(unsigned int)arg1;
+- (id)_queue_observersForTouchIdentifier:(unsigned int)arg1;
+- (oneway void)removeObserver:(id)arg1;
+- (oneway void)addObserver:(id)arg1 forTouchIdentifier:(unsigned int)arg2;
+- (oneway void)addObserver:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

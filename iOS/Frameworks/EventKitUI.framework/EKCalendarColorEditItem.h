@@ -22,7 +22,9 @@
 - (unsigned long long)numberOfSubitems;
 - (void)setCalendar:(id)arg1 store:(id)arg2;
 @property(readonly, nonatomic) NSMutableArray *cells; // @synthesize cells=_cells;
+- (id)_cellForSymbolicColor:(id)arg1;
 - (id)_cellForColor:(id)arg1;
+- (id)_cellWithText:(id)arg1;
 - (_Bool)configureWithCalendar:(id)arg1;
 - (void)reset;
 

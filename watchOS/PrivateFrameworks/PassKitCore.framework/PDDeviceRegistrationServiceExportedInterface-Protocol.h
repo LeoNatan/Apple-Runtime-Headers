@@ -9,6 +9,6 @@
 @class NSString;
 
 @protocol PDDeviceRegistrationServiceExportedInterface <PDXPCServiceExportedInterface>
-- (void)performDeviceRegistrationForReason:(NSString *)arg1 completion:(void (^)(unsigned int))arg2;
+- (void)performDeviceRegistrationForReason:(NSString *)arg1 actionType:(int)arg2 completion:(void (^)(unsigned int))arg3;
 @end
 

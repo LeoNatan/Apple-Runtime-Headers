@@ -16,20 +16,22 @@
     _Bool _userIsSender;
     _Bool _seen;
     NSDate *_creationDate;
-    long long _type;
+    long long _inboxModelType;
     NSString *_inboxModelTitle;
     unsigned long long _assetsCount;
     NSArray *_senderNames;
     NSArray *_assetsForOneUp;
+    long long _type;
 }
 
 + (id)oldDate;
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic, getter=isSeen) _Bool seen; // @synthesize seen=_seen;
 @property(nonatomic) _Bool userIsSender; // @synthesize userIsSender=_userIsSender;
 @property(copy, nonatomic) NSArray *senderNames; // @synthesize senderNames=_senderNames;
 @property(nonatomic) unsigned long long assetsCount; // @synthesize assetsCount=_assetsCount;
 @property(copy, nonatomic) NSString *inboxModelTitle; // @synthesize inboxModelTitle=_inboxModelTitle;
-@property(nonatomic) long long type; // @synthesize type=_type;
+@property(readonly, nonatomic) long long inboxModelType; // @synthesize inboxModelType=_inboxModelType;
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *assetsForOneUp; // @synthesize assetsForOneUp=_assetsForOneUp;

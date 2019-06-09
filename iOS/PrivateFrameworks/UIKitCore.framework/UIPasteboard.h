@@ -12,6 +12,8 @@
 {
 }
 
++ (void)_clearPinnedItemProvidersForPasteboardNamed:(id)arg1;
++ (void)_pinItemProviders:(id)arg1 forPasteboardNamed:(id)arg2 withExpirationDate:(id)arg3;
 + (id)_pasteboardWithUniqueName;
 + (id)_pasteboardWithName:(id)arg1 create:(_Bool)arg2;
 + (void)removePasteboardWithName:(id)arg1;
@@ -25,6 +27,8 @@
 - (void)setObjects:(id)arg1 localOnly:(_Bool)arg2 expirationDate:(id)arg3;
 - (void)setObjects:(id)arg1;
 - (void)setObjects:(id)arg1 options:(id)arg2;
+- (void)_clearPinnedItemProviders;
+- (void)_pinItemProviders:(id)arg1 expirationDate:(id)arg2;
 - (void)setItemProviders:(id)arg1 localOnly:(_Bool)arg2 expirationDate:(id)arg3;
 - (void)setItemProviders:(id)arg1 options:(id)arg2;
 - (_Bool)_hasStrings;

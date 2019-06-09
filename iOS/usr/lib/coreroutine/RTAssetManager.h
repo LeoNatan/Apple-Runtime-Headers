@@ -6,44 +6,37 @@
 
 #import <coreroutine/RTService.h>
 
-@class ASAssetQuery, NSDate, RTDefaultsManager, RTInvocationDispatcher, RTMetricManager, RTXPCActivityManager;
+@class RTAssetProcessor, RTDefaultsManager, RTXPCActivityManager;
 
 @interface RTAssetManager : RTService
 {
-    _Bool _ready;
-    NSDate *_dateOfLastUpdateAttempt;
-    NSDate *_dateOfLastSuccessfulUpdate;
-    RTInvocationDispatcher *_dispatcher;
+    RTAssetProcessor *_assetProcessor;
     RTDefaultsManager *_defaultsManager;
-    RTMetricManager *_metricManager;
     RTXPCActivityManager *_xpcActivityManager;
-    ASAssetQuery *_assetQuery;
 }
 
-@property(retain, nonatomic) ASAssetQuery *assetQuery; // @synthesize assetQuery=_assetQuery;
-@property(nonatomic) _Bool ready; // @synthesize ready=_ready;
 @property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
-@property(retain, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
-@property(retain, nonatomic) RTInvocationDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
-@property(retain, nonatomic) NSDate *dateOfLastSuccessfulUpdate; // @synthesize dateOfLastSuccessfulUpdate=_dateOfLastSuccessfulUpdate;
-@property(retain, nonatomic) NSDate *dateOfLastUpdateAttempt; // @synthesize dateOfLastUpdateAttempt=_dateOfLastUpdateAttempt;
+@property(retain, nonatomic) RTAssetProcessor *assetProcessor; // @synthesize assetProcessor=_assetProcessor;
 - (void).cxx_destruct;
 - (void)updateAssetServerURL:(id)arg1 assetType:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)forceUpdateAssetMetadata;
-- (void)_installAsset:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)forceUpdateAssetMetadataWithHandler:(CDUnknownBlockType)arg1;
+- (void)_installAsset:(id)arg1 fileManager:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_handleAssetDownloadResult:(long long)arg1 asset:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_downloadAsset:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_finalizeAssetUpdateOperationWithError:(id)arg1;
+- (id)latestAssetFromAssets:(id)arg1;
+- (void)_handleMetadataQueryResult:(long long)arg1 assetQuery:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_handleCatalogDownloadWithType:(id)arg1 downloadResult:(long long)arg2 handler:(CDUnknownBlockType)arg3;
+- (_Bool)nonUserInitiatedDownloadsAllowed;
+- (id)defaultAssetDownloadOptions;
+- (id)defaultCatalogDownloadOptions;
+- (id)defaultXPCActivityCriteria;
 - (void)_performUpdateOfAssetsWithTypeAssetType:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performUpdateOfAssetsWithTypeAssetType:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_invalidateAssetQuery;
-- (void)shutdown;
-- (void)_setup;
-- (id)initWithDefaultsManager:(id)arg1 metricManager:(id)arg2 xpcActivityManager:(id)arg3;
+- (void)_shutdown;
+- (id)initWithDefaultsManager:(id)arg1 assetProcessor:(id)arg2 xpcActivityManager:(id)arg3;
 - (id)init;
-- (void)_registerForMetricSubmission;
-- (void)_submitAssertVersionMetricWithHandler:(CDUnknownBlockType)arg1;
-- (void)_submitAssertVersionMetric;
 
 @end
 

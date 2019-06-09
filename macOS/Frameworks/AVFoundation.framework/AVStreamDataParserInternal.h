@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAsset, AVContentKeyRequest, AVContentKeySession, AVWeakReference, NSError, NSMutableArray, NSMutableData, NSMutableDictionary;
+@class AVAsset, AVContentKeyRequest, AVContentKeySession, AVWeakReference, NSError, NSMutableArray, NSMutableDictionary;
 @protocol AVStreamDataParserOutputHandling, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_trackIDsNotProvidingMedia;
     struct OpaqueFigManifold *_figManifold;
     unsigned long long _typeIdOfInitialFigManifold;
-    NSMutableData *_accumulatedInitializationData;
+    struct OpaqueCMBlockBuffer *_accumulatedInitializationData;
     BOOL _encounteredStreamDiscontinuity;
     AVWeakReference *_legacyStreamSession;
     AVContentKeySession *_defaultContentKeySession;

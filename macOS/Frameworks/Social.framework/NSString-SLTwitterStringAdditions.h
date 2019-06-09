@@ -9,5 +9,13 @@
 @interface NSString (SLTwitterStringAdditions)
 - (BOOL)isTwitterDuplicatePostError;
 - (unsigned long long)SLTwitterCharacterCountWithShortenedURLLength:(unsigned long long)arg1;
+- (BOOL)isWeiboDuplicatePostError;
+- (unsigned long long)SLWeiboCharacterCountWithShortenedURLLength:(unsigned long long)arg1;
+- (BOOL)isTencentWeiboDuplicatePostError;
+- (unsigned long long)SLTencentWeiboCharacterCountWithShortenedURLLength:(unsigned long long)arg1;
+- (id)_SHA256String;
+- (id)sl_urlEncodedSHA256;
+- (BOOL)hasCaseInsensitiveSuffix:(id)arg1;
+- (id)urlEncodedString;
 @end
 

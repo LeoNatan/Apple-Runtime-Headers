@@ -27,6 +27,9 @@
 + (id)_localCalendarCreationQueue;
 + (id)_asyncWorkQueue;
 + (void)processMigrationGroups;
++ (id)migrationLogHandle;
++ (id)toServerMigrationLogHandle;
++ (id)toLocalMigrationLogHandle;
 
 @end
 

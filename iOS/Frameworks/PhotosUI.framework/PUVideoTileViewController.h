@@ -8,38 +8,49 @@
 
 #import <PhotosUI/PUAssetViewModelChangeObserver-Protocol.h>
 #import <PhotosUI/PUBrowsingVideoPlayerChangeObserver-Protocol.h>
+#import <PhotosUI/PUBrowsingVideoPlayerTimeObserver-Protocol.h>
+#import <PhotosUI/PXChangeObserver-Protocol.h>
+#import <PhotosUI/PXVideoSessionUIViewDelegate-Protocol.h>
 
-@class ISWrappedAVPlayer, NSString, PUAssetViewModel, PUBrowsingVideoPlayer, PUMediaProvider, PXVideoPlayerView, UIImage;
+@class NSString, PUAssetViewModel, PUBrowsingVideoPlayer, PUMediaProvider, PXVideoSession, PXVideoSessionUIView, UIImage, UIImageView, UIView;
 @protocol PUDisplayAsset;
 
 __attribute__((visibility("hidden")))
-@interface PUVideoTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver>
+@interface PUVideoTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUBrowsingVideoPlayerChangeObserver, PXVideoSessionUIViewDelegate, PXChangeObserver, PUBrowsingVideoPlayerTimeObserver>
 {
-    id _playerObserver;
+    UIView *_view;
+    UIImageView *_placeholderImageView;
     UIImage *_preloadedImage;
+    _Bool _hidePlaceholderImmediately;
     _Bool _canPlayVideo;
     _Bool __isDisplayingFullQualityImage;
+    _Bool _playerIsSeeking;
+    _Bool _playerDidPlayToEnd;
+    _Bool _placeholderVisible;
     int __currentImageRequestID;
     PUAssetViewModel *_assetViewModel;
     PUMediaProvider *_mediaProvider;
-    PXVideoPlayerView *__playerView;
+    PXVideoSession *_videoSession;
+    PXVideoSessionUIView *_videoView;
     id <PUDisplayAsset> _asset;
     PUBrowsingVideoPlayer *__browsingVideoPlayer;
-    ISWrappedAVPlayer *__player;
     long long __thumbnailRequestNumber;
     CDUnknownBlockType __readyForDisplayCompletionHandler;
     struct CGSize __targetSize;
 }
 
+@property(nonatomic) _Bool placeholderVisible; // @synthesize placeholderVisible=_placeholderVisible;
+@property(nonatomic) _Bool playerDidPlayToEnd; // @synthesize playerDidPlayToEnd=_playerDidPlayToEnd;
+@property(nonatomic) _Bool playerIsSeeking; // @synthesize playerIsSeeking=_playerIsSeeking;
 @property(copy, nonatomic, setter=_setReadyForDisplayCompletionHandler:) CDUnknownBlockType _readyForDisplayCompletionHandler; // @synthesize _readyForDisplayCompletionHandler=__readyForDisplayCompletionHandler;
 @property(nonatomic, setter=_setDisplayingFullQualityImage:) _Bool _isDisplayingFullQualityImage; // @synthesize _isDisplayingFullQualityImage=__isDisplayingFullQualityImage;
 @property(nonatomic, setter=_setThumbnailRequestNumber:) long long _thumbnailRequestNumber; // @synthesize _thumbnailRequestNumber=__thumbnailRequestNumber;
-@property(retain, nonatomic, setter=_setPlayer:) ISWrappedAVPlayer *_player; // @synthesize _player=__player;
 @property(retain, nonatomic, setter=_setBrowsingVideoPlayer:) PUBrowsingVideoPlayer *_browsingVideoPlayer; // @synthesize _browsingVideoPlayer=__browsingVideoPlayer;
 @property(nonatomic, setter=_setTargetSize:) struct CGSize _targetSize; // @synthesize _targetSize=__targetSize;
 @property(nonatomic, setter=_setCurrentImageRequestID:) int _currentImageRequestID; // @synthesize _currentImageRequestID=__currentImageRequestID;
 @property(retain, nonatomic, setter=_setAsset:) id <PUDisplayAsset> asset; // @synthesize asset=_asset;
-@property(retain, nonatomic, setter=_setPlayerView:) PXVideoPlayerView *_playerView; // @synthesize _playerView=__playerView;
+@property(retain, nonatomic) PXVideoSessionUIView *videoView; // @synthesize videoView=_videoView;
+@property(retain, nonatomic) PXVideoSession *videoSession; // @synthesize videoSession=_videoSession;
 @property(nonatomic) _Bool canPlayVideo; // @synthesize canPlayVideo=_canPlayVideo;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) PUAssetViewModel *assetViewModel; // @synthesize assetViewModel=_assetViewModel;
@@ -50,10 +61,16 @@ __attribute__((visibility("hidden")))
 - (void)_handleBrowsingVideoPlayer:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
-- (void)videoPlayerView:(id)arg1 isDisplayingPlaceholerDidChange:(_Bool)arg2;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)videoSessionViewPlaceholderVisibilityChanged:(id)arg1;
+- (void)videoPlayer:(id)arg1 currentTimeDidChange:(CDStruct_1b6d18a9)arg2;
+- (void)videoPlayer:(id)arg1 desiredSeekTimeDidChange:(CDStruct_1b6d18a9)arg2;
+- (void)_updatePlaceholderVisibility;
 @property(readonly, nonatomic) _Bool _isDisplayingVideo;
 - (void)_updateVideo;
+- (void)_handleImageResult:(id)arg1 info:(id)arg2 requestID:(int)arg3;
 - (void)_updateImage;
+- (void)setPlaceholderVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)dealloc;
 - (void)setEdgeAntialiasingEnabled:(_Bool)arg1;
 - (void)setPreloadedImage:(id)arg1;

@@ -58,6 +58,7 @@
 @property(retain, nonatomic) NSArray *manufacturer; // @synthesize manufacturer=_manufacturer;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (_Bool)isFakeDevice;
 - (void)setNewName:(id)arg1;
 - (void)registerWriteBlock:(CDUnknownBlockType)arg1;
 - (void)persist;

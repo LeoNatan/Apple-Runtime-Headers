@@ -14,24 +14,23 @@ __attribute__((visibility("hidden")))
 @interface UISectionRowData : NSObject <NSCopying>
 {
     _Bool _valid;
-    double _headerHeight;
-    double _maxHeaderTitleWidth;
-    double _footerHeight;
-    double _maxFooterTitleWidth;
+    unsigned long long _numRows;
+    double _sectionOffset;
+    _Bool _sectionOffsetValid;
+    long long _sectionRowOffset;
+    double _sectionHeight;
     double _headerOffset;
     double _footerOffset;
-    unsigned long long _numRows;
+    long long _headerAlignment;
+    long long _footerAlignment;
+    double _maxHeaderTitleWidth;
+    double _maxFooterTitleWidth;
+    UITableViewRowData *_rowData;
+    double _headerHeight;
+    double _footerHeight;
     unsigned long long _arrayLength;
     float *_rowHeights;
     double *_rowOffsets;
-    _Bool _estimatesHeights;
-    double _sectionHeight;
-    long long _headerAlignment;
-    long long _footerAlignment;
-    UITableViewRowData *_rowData;
-    _Bool _sectionOffsetValid;
-    double _sectionOffset;
-    long long _sectionRowOffset;
 }
 
 - (double)defaultSectionFooterHeight;
@@ -54,10 +53,13 @@ __attribute__((visibility("hidden")))
 - (double)heightForRow:(long long)arg1 inSection:(long long)arg2 canGuess:(_Bool)arg3;
 - (void)updateSectionHeightWithDelta:(double)arg1 section:(long long)arg2 updateFooterOffset:(_Bool)arg3;
 - (void)setHeight:(double)arg1 forRow:(long long)arg2 inSection:(long long)arg3;
+- (void)setHeight:(double)arg1 forFooterInSection:(long long)arg2;
+- (void)setHeight:(double)arg1 forHeaderInSection:(long long)arg2;
 - (void)addOffset:(double)arg1 fromRow:(long long)arg2;
 - (double)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 detailText:(id)arg3 isHeader:(_Bool)arg4 stripPaddingForAbuttingView:(_Bool)arg5 isTopHeader:(_Bool)arg6;
 - (void)invalidateSectionOffset;
 - (void)invalidate;
+- (void)allocateArraysWithCapacity:(unsigned long long)arg1 forSection:(long long)arg2;
 - (void)dealloc;
 - (id)initWithRowData:(id)arg1;
 

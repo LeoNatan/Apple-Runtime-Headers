@@ -10,12 +10,12 @@
 
 @interface ICScannerBandData : NSObject
 {
-    unsigned long long _fullImageWidth;
+    BOOL _bigEndian;
     unsigned long long _fullImageHeight;
+    unsigned long long _fullImageWidth;
     unsigned long long _bitsPerPixel;
     unsigned long long _bitsPerComponent;
     unsigned long long _numComponents;
-    BOOL _bigEndian;
     unsigned long long _pixelDataType;
     NSString *_colorSyncProfilePath;
     unsigned long long _bytesPerRow;

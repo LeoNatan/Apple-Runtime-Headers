@@ -8,6 +8,7 @@
 
 @class CHDChart;
 
+__attribute__((visibility("hidden")))
 @interface CHDSeriesCollection : EDSortedCollection
 {
     CHDChart *mChart;

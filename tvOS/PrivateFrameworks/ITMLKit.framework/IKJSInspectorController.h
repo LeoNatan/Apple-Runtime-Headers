@@ -8,7 +8,7 @@
 
 #import <ITMLKit/IKJSInspectorControllerDelegate-Protocol.h>
 
-@class IKAppContext, IKDOMDocument, IKJSInspectorCSSAgent, IKJSInspectorDOMAgent, IKJSInspectorNetworkAgent, IKJSInspectorPageAgent, IKJSInspectorStorageAgent, NSDate, NSMutableArray, NSString, RWIProtocolInspector;
+@class IKAppContext, IKDOMDocument, IKJSInspectorCSSAgent, IKJSInspectorDOMAgent, IKJSInspectorNetworkAgent, IKJSInspectorPageAgent, IKJSInspectorStorageAgent, NSDate, NSString, RWIProtocolInspector;
 @protocol IKJSInspectorControllerDelegate, IKNetworkRequestLoader;
 
 @interface IKJSInspectorController : NSObject <IKJSInspectorControllerDelegate>
@@ -26,7 +26,6 @@
     id <IKNetworkRequestLoader> _requestLoader;
     IKDOMDocument *_activeDocument;
     NSString *_activeDocumentIdentifier;
-    NSMutableArray *_appDocumentStack;
     IKJSInspectorDOMAgent *_domAgent;
     IKJSInspectorNetworkAgent *_networkAgent;
     IKJSInspectorPageAgent *_pageAgent;
@@ -43,7 +42,6 @@
 @property(readonly, nonatomic) __weak IKJSInspectorPageAgent *pageAgent; // @synthesize pageAgent=_pageAgent;
 @property(readonly, nonatomic) __weak IKJSInspectorNetworkAgent *networkAgent; // @synthesize networkAgent=_networkAgent;
 @property(readonly, nonatomic) __weak IKJSInspectorDOMAgent *domAgent; // @synthesize domAgent=_domAgent;
-@property(readonly, nonatomic) NSMutableArray *appDocumentStack; // @synthesize appDocumentStack=_appDocumentStack;
 @property(readonly, copy, nonatomic) NSString *activeDocumentIdentifier; // @synthesize activeDocumentIdentifier=_activeDocumentIdentifier;
 @property(readonly, nonatomic) __weak IKDOMDocument *activeDocument; // @synthesize activeDocument=_activeDocument;
 @property(readonly, nonatomic) id <IKNetworkRequestLoader> requestLoader; // @synthesize requestLoader=_requestLoader;

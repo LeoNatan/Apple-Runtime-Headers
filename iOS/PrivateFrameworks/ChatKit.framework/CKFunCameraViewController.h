@@ -50,6 +50,7 @@
 - (void)_handleRemoteConnectionInterrupted:(id)arg1;
 - (id)contentViewControllerForPlugin:(id)arg1;
 - (id)configuredContentViewControllerForPlugin:(id)arg1;
+- (id)traitCollection;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;

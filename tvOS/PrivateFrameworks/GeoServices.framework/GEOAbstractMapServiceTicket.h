@@ -8,9 +8,8 @@
 
 #import <GeoServices/GEOMapServiceTicket-Protocol.h>
 
-@class GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSDictionary, NSString;
+@class GEOCategorySearchResultSection, GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEOPDMerchantLookupResult, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface GEOAbstractMapServiceTicket : GEOAbstractTicket <GEOMapServiceTicket>
 {
     GEOMapRegion *_resultBoundingRegion;
@@ -26,10 +25,16 @@ __attribute__((visibility("hidden")))
     GEOResolvedItem *_clientResolvedResult;
     GEODirectionIntent *_directionIntent;
     NSArray *_retainedSearchMetadata;
+    NSArray *_searchResultSections;
     unsigned int _dymSuggestionVisibleTime;
     _Bool _showDymSuggestionCloseButton;
+    GEOPDMerchantLookupResult *_merchantLookupResult;
+    GEOCategorySearchResultSection *_categorySearchResultSection;
 }
 
+@property(readonly, nonatomic) GEOCategorySearchResultSection *categorySearchResultSection; // @synthesize categorySearchResultSection=_categorySearchResultSection;
+@property(readonly, nonatomic) GEOPDMerchantLookupResult *merchantLookupResult; // @synthesize merchantLookupResult=_merchantLookupResult;
+@property(readonly, nonatomic) NSArray *searchResultSections; // @synthesize searchResultSections=_searchResultSections;
 @property(readonly, nonatomic) _Bool showDymSuggestionCloseButton; // @synthesize showDymSuggestionCloseButton=_showDymSuggestionCloseButton;
 @property(readonly, nonatomic) unsigned int dymSuggestionVisibleTime; // @synthesize dymSuggestionVisibleTime=_dymSuggestionVisibleTime;
 @property(readonly, nonatomic) _Bool shouldEnableRedoSearch; // @synthesize shouldEnableRedoSearch=_shouldEnableRedoSearch;
@@ -46,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) GEODirectionIntent *directionIntent; // @synthesize directionIntent=_directionIntent;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolvedResult; // @synthesize clientResolvedResult=_clientResolvedResult;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 - (void)applyToPlaceInfo:(id)arg1;
 - (void)applyToCorrectedSearch:(id)arg1;
 - (void)submitWithRefinedHandler:(CDUnknownBlockType)arg1 auditToken:(id)arg2 timeout:(long long)arg3 networkActivity:(CDUnknownBlockType)arg4 queue:(id)arg5;

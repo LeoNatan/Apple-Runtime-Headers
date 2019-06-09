@@ -6,6 +6,7 @@
 
 #import <AppKit/NSGestureRecognizer.h>
 
+__attribute__((visibility("hidden")))
 @interface _MKMouseDownGestureRecognizer : NSGestureRecognizer
 {
 }

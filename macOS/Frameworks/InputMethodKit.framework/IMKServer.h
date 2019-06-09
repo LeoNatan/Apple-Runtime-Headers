@@ -21,9 +21,10 @@
 + (id)_clientWrapperForXPCConn:(id)arg1;
 + (id)_clientWrapperForDOProxy:(id)arg1;
 + (id)imkServerSingleton;
+- (void)doCommandBySelector:(SEL)arg1;
+- (void)insertText:(id)arg1;
 - (id)keyBindingManager;
 - (void)setEventHandlingStatus:(int)arg1;
-- (id)keyBindingState;
 - (void)ironwoodPlaceholderWasInvalidated_Common:(id)arg1 clientWrapper:(id)arg2 controller:(id)arg3;
 - (void)ironwoodPlaceholderWasInvalidated:(id)arg1 client:(id)arg2;
 - (void)ironwoodTextWasCorrected_Common:(id)arg1 clientWrapper:(id)arg2 controller:(id)arg3;
@@ -47,7 +48,7 @@
 - (id)_attributedStringFromEventPack:(id)arg1;
 - (id)modes_CommonWithClientWrapper:(id)arg1 controller:(id)arg2;
 - (id)modes:(id)arg1;
-- (id)_keys;
+- (id)newKeyBindings;
 - (void)clientProxy:(id)arg1;
 - (unsigned long long)recognizedEvents_CommonWithClientWrapper:(id)arg1 controller:(id)arg2;
 - (unsigned long long)recognizedEvents:(id)arg1;
@@ -134,6 +135,7 @@
 - (oneway void)ironwoodTextWasCorrected:(id)arg1;
 - (oneway void)sendInputSessionSessAction:(unsigned int)arg1 timestamp:(double)arg2 withInfo:(id)arg3;
 - (oneway void)sendInputSessionSessAction:(unsigned int)arg1;
+- (void)setInputMethodProperty:(unsigned long long)arg1 value:(id)arg2;
 - (oneway void)invalidateClientGeometry;
 - (void)recognizedEventsWithReply:(CDUnknownBlockType)arg1;
 - (void)recognizedEventsWithClientAsync:(BOOL)arg1 reply:(CDUnknownBlockType)arg2;

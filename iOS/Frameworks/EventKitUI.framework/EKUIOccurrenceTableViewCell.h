@@ -6,7 +6,7 @@
 
 #import <EventKitUI/EKUITableViewCellWithPrimaryAndSecondaryFonts.h>
 
-@class ColorBarView, EKCalendarDate, EKUIOccurrenceTableViewCellLabel, NSArray, NSDate, NSDictionary, NSLayoutConstraint, NSObject, NSString, UIColor, UIImageView, UIVisualEffect, UIVisualEffectView;
+@class ColorBarView, EKCalendarDate, EKUIOccurrenceTableViewCellLabel, NSArray, NSDate, NSDictionary, NSLayoutConstraint, NSObject, NSString, UIColor, UIImageView, UIView, UIVisualEffect, UIVisualEffectView;
 @protocol OS_dispatch_source;
 
 @interface EKUIOccurrenceTableViewCell : EKUITableViewCellWithPrimaryAndSecondaryFonts
@@ -24,6 +24,8 @@
     UIImageView *_accessoryImageView;
     NSArray *_ekUIOccurrenceTableViewCellConstraints;
     _Bool _areCurrentCellConstraintsForLargeText;
+    _Bool _carplayMode;
+    _Bool _includesTopTimeLabel;
     UIVisualEffectView *_primaryVisualEffectParentView;
     UIVisualEffectView *_secondaryVisualEffectParentView;
     _Bool _travelTimeTemplate;
@@ -41,10 +43,8 @@
     NSLayoutConstraint *_countdownLabelRightMarginConstraint;
     NSLayoutConstraint *_countdownLabelBaseling_to_contentBottom_Constraint;
     double _travelTime;
-    UIColor *_eventCalendarColor;
     UIColor *_selectedBackGroundColor;
     NSDate *_eventStartDateIncludingTravelTime;
-    EKCalendarDate *_eventStartDate;
     EKCalendarDate *_eventEndDate;
     NSString *_eventTitle;
     NSString *_eventLocation;
@@ -70,38 +70,31 @@
     _Bool _cancelled;
     _Bool _opaque;
     NSObject<OS_dispatch_source> *_countdownLabelUpdateTimer;
+    _Bool _secondaryLabelShouldShowAlertDot;
     _Bool _doesNotUseTemplate;
     _Bool _isTemplateCell;
     _Bool _isFakeInvitation;
+    UIColor *_eventCalendarColor;
+    UIView *_coloredBackgroundView;
+    EKCalendarDate *_eventStartDate;
     UIVisualEffect *_primaryVisualEffect;
     UIVisualEffect *_secondaryVisualEffect;
 }
 
 + (id)_allDayLocalizedString;
 + (id)_nowLocalizedString;
-+ (id)_tentativeAngledStripeBackground;
-+ (id)_needsReplyAngledStripeBackground;
-+ (id)_needsReplyDot;
++ (id)_tentativeAngledStripeBackground:(id)arg1;
++ (id)_needsReplyAngledStripeBackground:(id)arg1;
 + (double)_rightImageSpacing;
 + (_Bool)vibrant;
 + (double)tentativeStripeBackgroundAlpha;
 + (id)tentativeStripeColor;
-+ (id)tentativeBackgroundColor;
 + (double)needsReplyStripeBackgroundAlpha;
 + (id)needsReplyStripeColor;
-+ (id)needsReplyBackgroundColor;
 + (id)normalBackgroundColor;
-+ (id)strikethroughTimeTextColor;
-+ (id)normalBottomTimeTextColor;
-+ (id)normalTopTimeTextColor;
-+ (id)strikethroughSecondaryTextColor;
-+ (id)normalSecondaryTextColor;
-+ (id)strikethroughPrimaryTextColor;
-+ (id)invitationPrimaryTextColor;
-+ (id)prefixPrimaryTextColor;
-+ (id)normalPrimaryTextColor;
 + (id)cancelledDeclinedColorBarColor;
 + (_Bool)requiresConstraintBasedLayout;
++ (id)color:(id)arg1 lightenedToPercentage:(double)arg2 withFinalAlpha:(double)arg3;
 + (double)cellHeightForWidth:(double)arg1;
 + (id)reuseIdentifierForEvent:(id)arg1;
 + (id)allReuseIdentifiers;
@@ -113,6 +106,9 @@
 @property(retain, nonatomic) UIVisualEffect *secondaryVisualEffect; // @synthesize secondaryVisualEffect=_secondaryVisualEffect;
 @property(retain, nonatomic) UIVisualEffect *primaryVisualEffect; // @synthesize primaryVisualEffect=_primaryVisualEffect;
 @property(nonatomic) _Bool isFakeInvitation; // @synthesize isFakeInvitation=_isFakeInvitation;
+@property(readonly, nonatomic) EKCalendarDate *eventStartDate; // @synthesize eventStartDate=_eventStartDate;
+@property(retain, nonatomic) UIView *coloredBackgroundView; // @synthesize coloredBackgroundView=_coloredBackgroundView;
+@property(retain, nonatomic) UIColor *eventCalendarColor; // @synthesize eventCalendarColor=_eventCalendarColor;
 @property(nonatomic) _Bool isTemplateCell; // @synthesize isTemplateCell=_isTemplateCell;
 @property(nonatomic) _Bool doesNotUseTemplate; // @synthesize doesNotUseTemplate=_doesNotUseTemplate;
 - (void).cxx_destruct;
@@ -141,7 +137,8 @@
 - (void)_updateSecondaryTextLabel;
 - (void)_updatePrimaryTextLabel;
 - (void)_updateNumberOfLinesForLabel:(id)arg1 isRightAlignedInStandardLayout:(_Bool)arg2;
-- (void)_updateAngleBackgroundColor;
+- (void)_updateColoredBackgroundViewColor;
+- (void)updateAngleBackgroundColor;
 - (void)_updateColorBarColor;
 - (id)_setUpLargeTextConstraints;
 - (id)_setUpStandardConstraints;
@@ -155,13 +152,35 @@
 - (double)_verticalSpacingTopToBaselineForBottomLabel;
 - (double)_verticalSpacingTopToBaselineForTopLabel;
 - (void)updateConstraints;
+- (void)layoutSubviews;
 - (void)contentCategorySizeChanged;
 - (id)_createParentVisualEffectViewWithVisualEffect:(id)arg1;
 - (void)_createViewsForReuseIdentifier:(id)arg1;
 - (void)forceUpdateOfAllElements;
+- (id)tentativeAngledStripeBackground;
+- (id)needsReplyAngledStripeBackground;
+- (id)_needsReplyDot;
 - (id)_birthdayIcon;
 - (void)setColorBarLayerFilter:(id)arg1;
 - (void)setCalendarColor:(id)arg1;
+- (id)colorBarColor;
+- (id)cancelledDeclinedColorBarColor;
+- (double)tentativeStripeBackgroundAlpha;
+- (id)tentativeStripeColor;
+- (double)needsReplyStripeBackgroundAlpha;
+- (id)needsReplyStripeColor;
+- (id)normalBackgroundColor;
+- (id)birthdayIconColor;
+- (id)secondaryPastTextColor;
+- (id)secondaryStrikethroughTextColor;
+- (id)secondaryTextColor;
+- (id)primaryPastTextColor;
+- (id)primaryStrikethroughTextColor;
+- (id)topTimeColor;
+- (id)primaryTextColor;
+- (id)prefixTextColor;
+- (id)invitationPrimaryTextColor;
+- (id)coloredBackgroundViewColor;
 - (id)_selectedBackgroundViewWithColor:(id)arg1;
 - (id)imageView;
 - (id)detailTextLabel;
@@ -169,9 +188,12 @@
 - (void)_updateContentForSizeCategoryChange:(id)arg1;
 - (id)accessoryImage;
 - (void)_updateAccessoryImage;
+- (void)updateWithEvent:(id)arg1 calendar:(id)arg2 placedUnderDayWithStartDate:(id)arg3 opaque:(_Bool)arg4 drawsDimmedForPast:(_Bool)arg5 includingTravelTime:(_Bool)arg6 includingCountdown:(_Bool)arg7 includingTopTimeLabel:(_Bool)arg8 carplayMode:(_Bool)arg9;
+- (void)hideUnwantedItemsInCarplayMode;
 - (void)updateWithEvent:(id)arg1 calendar:(id)arg2 placedUnderDayWithStartDate:(id)arg3 opaque:(_Bool)arg4 drawsDimmedForPast:(_Bool)arg5 includingTravelTime:(_Bool)arg6 includingCountdown:(_Bool)arg7;
 - (void)updateWithEvent:(id)arg1 calendar:(id)arg2 placedUnderDayWithStartDate:(id)arg3 opaque:(_Bool)arg4 drawsDimmedForPast:(_Bool)arg5 includingTravelTime:(_Bool)arg6;
 - (void)updateWithEvent:(id)arg1 calendar:(id)arg2 placedUnderDayWithStartDate:(id)arg3 opaque:(_Bool)arg4 drawsDimmedForPast:(_Bool)arg5;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (id)reuseIdentifier;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

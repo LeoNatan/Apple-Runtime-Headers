@@ -7,6 +7,6 @@
 #import <UIKit/UIApplication.h>
 
 @interface UIApplication (SafariServicesExtras)
-- (void)_sf_openTelURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) int _sf_currentKeyboardModifierFlags;
 @end
 

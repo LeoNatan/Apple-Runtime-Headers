@@ -27,7 +27,7 @@
 @property(nonatomic) unsigned long long mediaCategoryType; // @synthesize mediaCategoryType=_mediaCategoryType;
 @property(nonatomic) unsigned long long subtype; // @synthesize subtype=_subtype;
 - (id)description;
-- (id)debugDescription;
+- (id)stringDescription;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

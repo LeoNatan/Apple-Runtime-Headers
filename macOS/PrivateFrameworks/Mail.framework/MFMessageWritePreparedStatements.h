@@ -6,58 +6,60 @@
 
 #import <objc/NSObject.h>
 
-@class MFPreparedStatement, MFSqliteHandle;
+@class EDPersistenceDatabaseConnection, EFSQLPreparedStatement;
 
 @interface MFMessageWritePreparedStatements : NSObject
 {
-    MFPreparedStatement *_fetchMessageStatement;
-    MFPreparedStatement *_fetchSubjectStatement;
-    MFPreparedStatement *_fetchSenderAndSubjectStatement;
-    MFPreparedStatement *_insertSubjectStatement;
-    MFPreparedStatement *_insertThreadStatement;
-    MFPreparedStatement *_insertAttachmentsStatement;
-    MFPreparedStatement *_insertRecipientsStatement;
-    MFPreparedStatement *_insertAddressesStatement;
-    MFPreparedStatement *_insertEventStatement;
-    MFPreparedStatement *_fetchRecipientStatement;
-    MFPreparedStatement *_fetchAddressStatement;
-    MFPreparedStatement *_copyRecipientStatement;
-    MFPreparedStatement *_copyThreadStatement;
-    MFPreparedStatement *_copyAttachmentStatement;
-    MFPreparedStatement *_copyEventStatement;
-    MFPreparedStatement *_deleteThreadStatement;
-    MFPreparedStatement *_deleteAttachmentStatement;
-    MFPreparedStatement *_deleteRecipientStatement;
-    MFPreparedStatement *_deleteAddressesStatement;
-    MFPreparedStatement *_deleteSubjectsStatement;
-    MFSqliteHandle *_handle;
+    EFSQLPreparedStatement *_fetchMessageStatement;
+    EFSQLPreparedStatement *_fetchSubjectStatement;
+    EFSQLPreparedStatement *_fetchSenderAndSubjectStatement;
+    EFSQLPreparedStatement *_insertSubjectStatement;
+    EFSQLPreparedStatement *_insertThreadStatement;
+    EFSQLPreparedStatement *_insertAttachmentsStatement;
+    EFSQLPreparedStatement *_insertRecipientsStatement;
+    EFSQLPreparedStatement *_insertAddressesStatement;
+    EFSQLPreparedStatement *_insertEventStatement;
+    EFSQLPreparedStatement *_insertConversationStatement;
+    EFSQLPreparedStatement *_fetchRecipientStatement;
+    EFSQLPreparedStatement *_fetchAddressStatement;
+    EFSQLPreparedStatement *_copyRecipientStatement;
+    EFSQLPreparedStatement *_copyThreadStatement;
+    EFSQLPreparedStatement *_copyAttachmentStatement;
+    EFSQLPreparedStatement *_copyEventStatement;
+    EFSQLPreparedStatement *_deleteThreadStatement;
+    EFSQLPreparedStatement *_deleteAttachmentStatement;
+    EFSQLPreparedStatement *_deleteRecipientStatement;
+    EFSQLPreparedStatement *_deleteAddressesStatement;
+    EFSQLPreparedStatement *_deleteSubjectsStatement;
+    EDPersistenceDatabaseConnection *_connection;
 }
 
-@property(readonly, nonatomic) MFSqliteHandle *handle; // @synthesize handle=_handle;
+@property(readonly, nonatomic) EDPersistenceDatabaseConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) MFPreparedStatement *deleteSubjectsStatement;
-@property(readonly, nonatomic) MFPreparedStatement *deleteAddressesStatement;
-@property(readonly, nonatomic) MFPreparedStatement *deleteRecipientStatement;
-@property(readonly, nonatomic) MFPreparedStatement *deleteAttachmentStatement;
-@property(readonly, nonatomic) MFPreparedStatement *deleteThreadStatement;
-@property(readonly, nonatomic) MFPreparedStatement *copyEventStatement;
-@property(readonly, nonatomic) MFPreparedStatement *copyAttachmentStatement;
-@property(readonly, nonatomic) MFPreparedStatement *copyThreadStatement;
-@property(readonly, nonatomic) MFPreparedStatement *copyRecipientStatement;
-@property(readonly, nonatomic) MFPreparedStatement *insertEventStatement;
-@property(readonly, nonatomic) MFPreparedStatement *insertAddressesStatement;
-@property(readonly, nonatomic) MFPreparedStatement *insertRecipientsStatement;
-@property(readonly, nonatomic) MFPreparedStatement *insertAttachmentsStatement;
-@property(readonly, nonatomic) MFPreparedStatement *insertThreadStatement;
-@property(readonly, nonatomic) MFPreparedStatement *insertSubjectStatement;
-@property(readonly, nonatomic) MFPreparedStatement *fetchAddressStatement;
-@property(readonly, nonatomic) MFPreparedStatement *fetchRecipientStatement;
-@property(readonly, nonatomic) MFPreparedStatement *fetchSenderAndSubjectStatement;
-@property(readonly, nonatomic) MFPreparedStatement *fetchSubjectStatement;
-@property(readonly, nonatomic) MFPreparedStatement *fetchMessageStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *deleteSubjectsStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *deleteAddressesStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *deleteRecipientStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *deleteAttachmentStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *deleteThreadStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *copyEventStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *copyAttachmentStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *copyThreadStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *copyRecipientStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *insertConversationStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *insertEventStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *insertAddressesStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *insertRecipientsStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *insertAttachmentsStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *insertReferenceStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *insertSubjectStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *fetchAddressStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *fetchRecipientStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *fetchSenderAndSubjectStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *fetchSubjectStatement;
+@property(readonly, nonatomic) EFSQLPreparedStatement *fetchMessageStatement;
 - (void)handleSQLError:(int)arg1 errorString:(id)arg2;
 - (id)init;
-- (id)initWithHandle:(id)arg1;
+- (id)initWithConnection:(id)arg1;
 
 @end
 

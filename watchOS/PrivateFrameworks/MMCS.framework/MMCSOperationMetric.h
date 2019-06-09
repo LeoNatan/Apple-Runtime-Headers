@@ -8,7 +8,7 @@
 
 #import <MMCS/MMCSOperationMetric-Protocol.h>
 
-@class NSArray, NSDate, NSMutableArray, NSMutableSet, NSString;
+@class NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MMCSOperationMetric : NSObject <MMCSOperationMetric>
@@ -17,6 +17,9 @@ __attribute__((visibility("hidden")))
     unsigned int _bytesDownloaded;
     unsigned int _connections;
     unsigned int _connectionsCreated;
+    NSMutableDictionary *_totalBytesByChunkProfile;
+    NSMutableDictionary *_chunkCountByChunkProfile;
+    NSMutableDictionary *_fileCountByChunkProfile;
     NSMutableSet *_requestUUIDs;
     NSDate *_startDate;
     NSMutableArray *_ranges;
@@ -29,6 +32,9 @@ __attribute__((visibility("hidden")))
 @property double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly) NSMutableSet *requestUUIDs; // @synthesize requestUUIDs=_requestUUIDs;
+@property(readonly) NSMutableDictionary *fileCountByChunkProfile; // @synthesize fileCountByChunkProfile=_fileCountByChunkProfile;
+@property(readonly) NSMutableDictionary *chunkCountByChunkProfile; // @synthesize chunkCountByChunkProfile=_chunkCountByChunkProfile;
+@property(readonly) NSMutableDictionary *totalBytesByChunkProfile; // @synthesize totalBytesByChunkProfile=_totalBytesByChunkProfile;
 @property unsigned int connectionsCreated; // @synthesize connectionsCreated=_connectionsCreated;
 @property unsigned int connections; // @synthesize connections=_connections;
 @property unsigned int bytesDownloaded; // @synthesize bytesDownloaded=_bytesDownloaded;

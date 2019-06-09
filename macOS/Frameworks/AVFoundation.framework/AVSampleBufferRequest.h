@@ -21,7 +21,6 @@
 @property(retain, nonatomic) AVSampleCursor *limitCursor;
 @property(nonatomic) long long direction;
 @property(readonly, retain, nonatomic) AVSampleCursor *startCursor;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithStartCursor:(id)arg1;

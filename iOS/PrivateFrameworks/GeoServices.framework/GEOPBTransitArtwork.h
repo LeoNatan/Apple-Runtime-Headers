@@ -9,31 +9,44 @@
 #import <GeoServices/GEOTransitArtworkDataSource-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPBTransitIcon, GEOPBTransitShield, NSString, PBUnknownFields;
-@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource;
+@class GEOPBTransitIcon, GEOPBTransitShield, NSString, PBDataReader, PBUnknownFields;
+@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource, GEOTransitTextDataSource;
 
 @interface GEOPBTransitArtwork : PBCodable <GEOTransitArtworkDataSource, NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_accessibilityString;
+    GEOPBTransitShield *_iconFallbackShield;
+    GEOPBTransitIcon *_icon;
+    GEOPBTransitShield *_shield;
     int _artworkType;
     int _artworkUse;
     int _badge;
-    GEOPBTransitIcon *_icon;
-    GEOPBTransitShield *_iconFallbackShield;
-    GEOPBTransitShield *_shield;
     struct {
-        unsigned int artworkType:1;
-        unsigned int artworkUse:1;
-        unsigned int badge:1;
-    } _has;
+        unsigned int has_artworkType:1;
+        unsigned int has_artworkUse:1;
+        unsigned int has_badge:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_accessibilityString:1;
+        unsigned int read_iconFallbackShield:1;
+        unsigned int read_icon:1;
+        unsigned int read_shield:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_accessibilityString:1;
+        unsigned int wrote_iconFallbackShield:1;
+        unsigned int wrote_icon:1;
+        unsigned int wrote_shield:1;
+        unsigned int wrote_artworkType:1;
+        unsigned int wrote_artworkUse:1;
+        unsigned int wrote_badge:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *accessibilityString; // @synthesize accessibilityString=_accessibilityString;
-@property(retain, nonatomic) GEOPBTransitShield *iconFallbackShield; // @synthesize iconFallbackShield=_iconFallbackShield;
-@property(retain, nonatomic) GEOPBTransitIcon *icon; // @synthesize icon=_icon;
-@property(retain, nonatomic) GEOPBTransitShield *shield; // @synthesize shield=_shield;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -42,31 +55,41 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) NSString *accessibilityString;
 @property(readonly, nonatomic) _Bool hasAccessibilityString;
+- (void)_readAccessibilityString;
 - (int)StringAsBadge:(id)arg1;
 - (id)badgeAsString:(int)arg1;
 @property(nonatomic) _Bool hasBadge;
-@property(nonatomic) int badge; // @synthesize badge=_badge;
+@property(nonatomic) int badge;
+@property(retain, nonatomic) GEOPBTransitShield *iconFallbackShield;
 @property(readonly, nonatomic) _Bool hasIconFallbackShield;
+- (void)_readIconFallbackShield;
+@property(retain, nonatomic) GEOPBTransitIcon *icon;
 @property(readonly, nonatomic) _Bool hasIcon;
+- (void)_readIcon;
+@property(retain, nonatomic) GEOPBTransitShield *shield;
 @property(readonly, nonatomic) _Bool hasShield;
+- (void)_readShield;
 - (int)StringAsArtworkUse:(id)arg1;
 - (id)artworkUseAsString:(int)arg1;
 @property(nonatomic) _Bool hasArtworkUse;
-@property(nonatomic) int artworkUse; // @synthesize artworkUse=_artworkUse;
+@property(nonatomic) int artworkUse;
 - (int)StringAsArtworkType:(id)arg1;
 - (id)artworkTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasArtworkType;
-@property(nonatomic) int artworkType; // @synthesize artworkType=_artworkType;
+@property(nonatomic) int artworkType;
+@property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource;
 @property(readonly, nonatomic) NSString *accessibilityText;
 @property(readonly, nonatomic) _Bool hasRoutingIncidentBadge;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> iconFallbackShieldDataSource;
 @property(readonly, nonatomic) id <GEOTransitIconDataSource> iconDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource;
-@property(readonly, nonatomic) long long artworkUseType;
-@property(readonly, nonatomic) long long artworkSourceType;
+@property(readonly, nonatomic) int artworkUseType;
+@property(readonly, nonatomic) int artworkSourceType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

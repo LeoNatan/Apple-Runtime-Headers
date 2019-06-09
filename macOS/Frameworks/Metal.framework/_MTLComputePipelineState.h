@@ -8,7 +8,7 @@
 
 #import <Metal/MTLComputePipelineState-Protocol.h>
 
-@class MTLIndirectArgumentBufferEmulationData, NSString;
+@class MTLDebugInstrumentationData, MTLIndirectArgumentBufferEmulationData, NSString;
 @protocol MTLDevice;
 
 @interface _MTLComputePipelineState : NSObject <MTLComputePipelineState>
@@ -16,10 +16,13 @@
     NSString *_label;
     id <MTLDevice> _device;
     MTLIndirectArgumentBufferEmulationData *_iabEmulationData;
+    MTLDebugInstrumentationData *_debugInstrumentationData;
     BOOL _supportIndirectCommandBuffers;
-    unsigned long long _uniqueIdentifier;
+    unsigned long long _resourceIndex;
 }
 
+@property(nonatomic) unsigned long long resourceIndex; // @synthesize resourceIndex=_resourceIndex;
+@property(retain, nonatomic) MTLDebugInstrumentationData *debugInstrumentationData; // @synthesize debugInstrumentationData=_debugInstrumentationData;
 @property(retain, nonatomic) MTLIndirectArgumentBufferEmulationData *IABEmulationData; // @synthesize IABEmulationData=_iabEmulationData;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly) NSString *label; // @synthesize label=_label;

@@ -32,7 +32,7 @@
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithShadow:(id)arg1;
-- (void)_applyToCGContext:(struct CGContext *)arg1 graphicsContext:(id)arg2;
+- (void)applyToGraphicsContext:(id)arg1;
 @property(nonatomic) double shadowBlurRadius;
 @property(nonatomic) struct CGSize shadowOffset;
 - (id)init;

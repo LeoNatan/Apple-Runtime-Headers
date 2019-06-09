@@ -15,13 +15,13 @@ __attribute__((visibility("hidden")))
     NSArray *mEffects;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)setEffects:(id)arg1;
 - (id)effects;
 - (void)setFill:(id)arg1;
 - (id)fill;
-- (void)dealloc;
 
 @end
 

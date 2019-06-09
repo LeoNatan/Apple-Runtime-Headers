@@ -18,7 +18,6 @@
     BOOL mIsGlobalScreen;
     double mUIResolution;
     struct SSRect mScaledFrame;
-    void *mReservedForInstanceVariables;
 }
 
 @property struct CGRect destinationFrame; // @synthesize destinationFrame=mDestinationFrame;

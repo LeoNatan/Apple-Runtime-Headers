@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUICardLayout.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIDefaultCardLayout : SKUICardLayout
 {
 }

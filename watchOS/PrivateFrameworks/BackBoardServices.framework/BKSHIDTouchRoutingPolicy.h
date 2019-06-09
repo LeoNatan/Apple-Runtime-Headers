@@ -8,20 +8,20 @@
 
 #import <BackBoardServices/NSSecureCoding-Protocol.h>
 
-@class NSArray;
+@class BSMutableSettings, NSArray;
 
 @interface BKSHIDTouchRoutingPolicy : NSObject <NSSecureCoding>
 {
-    _Bool _avoidHitTesting;
-    NSArray *_contextIDsToAlwaysSendTouches;
-    NSArray *_contextIDsToExcludeFromHitTesting;
+    BSMutableSettings *_settings;
 }
 
++ (void)inspectChangesWithOldPolicy:(id)arg1 newPolicy:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic, getter=shouldAvoidHitTesting) _Bool avoidHitTesting; // @synthesize avoidHitTesting=_avoidHitTesting;
-@property(copy, nonatomic) NSArray *contextIDsToExcludeFromHitTesting; // @synthesize contextIDsToExcludeFromHitTesting=_contextIDsToExcludeFromHitTesting;
-@property(copy, nonatomic) NSArray *contextIDsToAlwaysSendTouches; // @synthesize contextIDsToAlwaysSendTouches=_contextIDsToAlwaysSendTouches;
+@property(retain, nonatomic) BSMutableSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *contextIDsToExcludeFromHitTesting;
+@property(copy, nonatomic) NSArray *contextIDsToAlwaysSendTouches;
+@property(nonatomic, getter=shouldAvoidHitTesting) _Bool avoidHitTesting;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

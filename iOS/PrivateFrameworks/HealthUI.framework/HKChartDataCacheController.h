@@ -8,12 +8,13 @@
 
 #import <HealthUI/HKSampleTypeUpdateControllerObserver-Protocol.h>
 
-@class HKActivitySummaryDataProvider, HKHealthStore, HKSampleTypeUpdateController, HKUnitPreferenceController, NSArray, NSMutableDictionary, NSString;
+@class HKActivitySummaryDataProvider, HKHealthStore, HKSampleTypeUpdateController, HKUnitPreferenceController, NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface HKChartDataCacheController : NSObject <HKSampleTypeUpdateControllerObserver>
 {
     NSArray *_chartCachesByTimeScopeAndDisplayTypeIdentifier;
     struct NSMutableDictionary *_chartCachesByDisplayTypeIdentifier;
+    NSMutableArray *_chartCachesByCustomDisplayType;
     NSMutableDictionary *_currentValueDataProvidersByDisplayType;
     NSMutableDictionary *_alternateCurrentValueDataProvidersByDisplayType;
     NSMutableDictionary *_secondaryValueDataProviders;
@@ -27,6 +28,7 @@
 @property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 @property(retain, nonatomic) HKSampleTypeUpdateController *updateController; // @synthesize updateController=_updateController;
 - (void).cxx_destruct;
+- (void)addCustomChartCache:(id)arg1 forDisplayType:(id)arg2;
 - (id)activitySummaryDataProviderWithHealthStore:(id)arg1 dateCache:(id)arg2 displayTypeController:(id)arg3 unitController:(id)arg4;
 - (id)_createAlternateCurrentValueDataProviderForDisplayType:(id)arg1 healthStore:(id)arg2 updateController:(id)arg3 dateCache:(id)arg4;
 - (id)_createCurrentValueDataProviderForDisplayType:(id)arg1 healthStore:(id)arg2 updateController:(id)arg3 dateCache:(id)arg4;

@@ -15,7 +15,6 @@
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 @property(retain, nonatomic) UIView<NTKComplicationImageView> *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;
 - (void)_enumerateForegroundColoringViewsWithBlock:(CDUnknownBlockType)arg1;

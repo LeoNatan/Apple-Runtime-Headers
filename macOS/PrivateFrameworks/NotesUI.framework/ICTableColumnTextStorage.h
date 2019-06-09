@@ -13,20 +13,22 @@
 
 @interface ICTableColumnTextStorage : ICTableTextStorage <ICTableCellMergeableStringObserving>
 {
-    BOOL _preventEditingUpdates;
+    BOOL _shouldPreventUndoCommands;
     NSUUID *_columnID;
     id <ICTableUndoHelping> _undoHelper;
     ICTable *_table;
     NSMutableArray *_rows;
     NSMutableDictionary *_mergeableStringDelegates;
     NSMutableIndexSet *_rowStartIndexes;
+    unsigned long long _preventEditingUpdatesCount;
 }
 
+@property(nonatomic) unsigned long long preventEditingUpdatesCount; // @synthesize preventEditingUpdatesCount=_preventEditingUpdatesCount;
 @property(readonly, nonatomic) NSMutableIndexSet *rowStartIndexes; // @synthesize rowStartIndexes=_rowStartIndexes;
 @property(readonly, nonatomic) NSMutableDictionary *mergeableStringDelegates; // @synthesize mergeableStringDelegates=_mergeableStringDelegates;
 @property(readonly, nonatomic) NSMutableArray *rows; // @synthesize rows=_rows;
 @property(readonly, nonatomic) __weak ICTable *table; // @synthesize table=_table;
-@property(nonatomic) BOOL preventEditingUpdates; // @synthesize preventEditingUpdates=_preventEditingUpdates;
+@property(nonatomic) BOOL shouldPreventUndoCommands; // @synthesize shouldPreventUndoCommands=_shouldPreventUndoCommands;
 @property(nonatomic) __weak id <ICTableUndoHelping> undoHelper; // @synthesize undoHelper=_undoHelper;
 @property(readonly) NSUUID *columnID; // @synthesize columnID=_columnID;
 - (void).cxx_destruct;
@@ -34,9 +36,14 @@
 - (void)restoreSelection:(id)arg1;
 - (id)savedSelectionWithSelectionAffinity:(unsigned long long)arg1;
 - (BOOL)wantsUndoCommands;
+- (id)mergeableStringReplicaUUIDAtIndex:(unsigned long long)arg1;
 - (void)resetUndoManager;
 - (void)breakUndoCoalescing;
 - (void)closeUndoGroups;
+- (void)endPreventEditingUpdates;
+- (void)beginPreventEditingUpdates;
+@property(readonly, nonatomic) BOOL preventEditingUpdates;
+- (void)textStorage:(id)arg1 didProcessEditing:(unsigned long long)arg2 range:(struct _NSRange)arg3 changeInLength:(long long)arg4;
 - (void)edited:(unsigned long long)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3;
 - (unsigned long long)nextLocationAfterRowLocation:(unsigned long long)arg1;
 - (unsigned long long)rowLocationForRowIndex:(unsigned long long)arg1;

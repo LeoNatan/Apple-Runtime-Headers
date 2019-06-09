@@ -29,6 +29,7 @@
 - (_Bool)_appendPixelBuffer:(struct __CVBuffer *)arg1 withPresentationTime:(CDStruct_1b6d18a9)arg2;
 - (_Bool)appendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (long long)_appendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 error:(id *)arg2;
+- (void)stopRequestingMediaData;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)respondToEachPassDescriptionOnQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -94,7 +95,6 @@
 - (void)_tellAssetWriterToTransitionToFailedStatusWithError:(id)arg1;
 @property(retain, nonatomic, getter=_weakReferenceToAssetWriter, setter=_setWeakReferenceToAssetWriter:) AVWeakReference *weakReferenceToAssetWriter;
 @property(readonly, copy) NSString *description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithMediaType:(id)arg1 outputSettings:(id)arg2 sourceFormatHint:(struct opaqueCMFormatDescription *)arg3;
 - (id)initWithMediaType:(id)arg1 outputSettings:(id)arg2;

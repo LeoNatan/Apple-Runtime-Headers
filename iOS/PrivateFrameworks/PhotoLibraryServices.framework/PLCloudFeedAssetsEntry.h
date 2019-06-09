@@ -14,7 +14,7 @@
 
 + (id)entityName;
 - (_Bool)shouldBeRemovedFromPhotoLibrary:(id)arg1;
-@property(readonly, nonatomic) NSMutableOrderedSet *mutableEntryAssets;
+@property(readonly, nonatomic) __weak NSMutableOrderedSet *mutableEntryAssets;
 
 // Remaining properties
 @property(retain, nonatomic) NSOrderedSet *entryAssets; // @dynamic entryAssets;

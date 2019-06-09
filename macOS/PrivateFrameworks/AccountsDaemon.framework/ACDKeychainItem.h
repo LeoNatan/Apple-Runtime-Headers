@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ACDKeychainItem : NSObject
 {
     NSMutableDictionary *_properties;
@@ -34,7 +35,7 @@
 @property(copy, nonatomic) NSString *service;
 @property(copy, nonatomic) NSString *account;
 - (id)_metadataWithError:(id *)arg1;
-@property(readonly, nonatomic) struct OpaqueSecAccessControlRef *accessControlRef;
+@property(readonly, nonatomic) struct __SecAccessControl *accessControlRef;
 - (BOOL)save:(id *)arg1;
 - (void)reload;
 - (void)dealloc;

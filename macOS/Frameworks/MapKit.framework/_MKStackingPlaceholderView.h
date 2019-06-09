@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint;
 
+__attribute__((visibility("hidden")))
 @interface _MKStackingPlaceholderView : NSView
 {
     NSLayoutConstraint *_contentHeightConstraint;

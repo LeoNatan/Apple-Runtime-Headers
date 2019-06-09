@@ -8,27 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocation, NSString;
+@class GEOLocation, NSString, PBDataReader;
 
 @interface GEOSignificantLocation : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     double _confidence;
     NSString *_identifier;
     GEOLocation *_location;
     unsigned int _locationIndex;
     unsigned int _numberOfVisitsBucket;
     struct {
-        unsigned int confidence:1;
-        unsigned int locationIndex:1;
-        unsigned int numberOfVisitsBucket:1;
-    } _has;
+        unsigned int has_confidence:1;
+        unsigned int has_locationIndex:1;
+        unsigned int has_numberOfVisitsBucket:1;
+        unsigned int read_identifier:1;
+        unsigned int read_location:1;
+        unsigned int wrote_confidence:1;
+        unsigned int wrote_identifier:1;
+        unsigned int wrote_location:1;
+        unsigned int wrote_locationIndex:1;
+        unsigned int wrote_numberOfVisitsBucket:1;
+    } _flags;
 }
 
-@property(nonatomic) double confidence; // @synthesize confidence=_confidence;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) unsigned int numberOfVisitsBucket; // @synthesize numberOfVisitsBucket=_numberOfVisitsBucket;
-@property(nonatomic) unsigned int locationIndex; // @synthesize locationIndex=_locationIndex;
-@property(retain, nonatomic) GEOLocation *location; // @synthesize location=_location;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -37,13 +42,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasConfidence;
+@property(nonatomic) double confidence;
+@property(retain, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) _Bool hasIdentifier;
+- (void)_readIdentifier;
 @property(nonatomic) _Bool hasNumberOfVisitsBucket;
+@property(nonatomic) unsigned int numberOfVisitsBucket;
 @property(nonatomic) _Bool hasLocationIndex;
+@property(nonatomic) unsigned int locationIndex;
+@property(retain, nonatomic) GEOLocation *location;
 @property(readonly, nonatomic) _Bool hasLocation;
+- (void)_readLocation;
 
 @end
 

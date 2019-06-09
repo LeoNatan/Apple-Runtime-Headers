@@ -6,44 +6,33 @@
 
 #import <EventKitUI/EKEventDetailItem.h>
 
-#import <EventKitUI/MKMapViewDelegate-Protocol.h>
+@class CLLocation, EKEventMapCell, MKMapItemView, UIView;
 
-@class CLLocation, MKMapView, NSString, UITableViewCell, UIView;
-
-@interface EKEventMapDetailItem : EKEventDetailItem <MKMapViewDelegate>
+@interface EKEventMapDetailItem : EKEventDetailItem
 {
-    UITableViewCell *_cell;
-    MKMapView *_mapView;
+    EKEventMapCell *_cell;
+    MKMapItemView *_mapView;
     UIView *_overlayView;
     UIView *_loadingView;
     CLLocation *_location;
-    UITableViewCell *_oldCell;
+    EKEventMapCell *_oldCell;
+    _Bool _animationHasRan;
     _Bool _hasMapItemLaunchOptionFromTimeToLeaveNotification;
 }
 
-+ (id)_mapsURLForLocationOnEvent:(id)arg1 hasMapItemLaunchOptionFromTimeToLeaveNotification:(_Bool)arg2;
-+ (id)_locationStringForStructuredLocation:(id)arg1;
 @property(nonatomic) _Bool hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 - (void).cxx_destruct;
-- (id)mapView:(id)arg1 rendererForOverlay:(id)arg2;
-- (void)mapViewDidFinishRenderingMap:(id)arg1 fullyRendered:(_Bool)arg2;
-- (void)mapViewWillStartRenderingMap:(id)arg1;
-- (void)eventViewController:(id)arg1 didSelectReadOnlySubitem:(unsigned long long)arg2;
 - (void)eventViewController:(id)arg1 didUnhighlightSubitem:(unsigned long long)arg2;
 - (void)eventViewController:(id)arg1 didHighlightSubitem:(unsigned long long)arg2;
 - (double)_mapHeight;
-- (void)_setupMapView;
+- (void)_loadMapItem:(id)arg1 withCoordinateSpan:(CDStruct_c3b9c2ee)arg2;
+- (void)setupMapView;
 - (id)_mapRelatedViewConstraintsForMapRelatedView:(id)arg1 inCell:(id)arg2;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (_Bool)configureWithCalendar:(id)arg1 preview:(_Bool)arg2;
 - (void)reset;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)eventViewController:(id)arg1 tableViewDidScroll:(id)arg2;
 
 @end
 

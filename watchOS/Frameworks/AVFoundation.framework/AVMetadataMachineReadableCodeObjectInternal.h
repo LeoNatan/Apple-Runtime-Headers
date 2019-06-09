@@ -8,12 +8,13 @@
 
 @class CIBarcodeDescriptor, NSArray, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVMetadataMachineReadableCodeObjectInternal : NSObject
 {
-    _Bool decoded;
     NSArray *corners;
     NSString *stringValue;
     NSDictionary *basicDescriptor;
+    _Bool decoded;
     CIBarcodeDescriptor *descriptor;
 }
 

@@ -12,10 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_monogramConfiguration;
-+ (id)_generateDefaultFavoritesIconWithGlyphColor:(id)arg1;
-+ (id)_favoritesGlyph;
++ (id)_generateDefaultFavoritesIcon;
 + (id)defaultBackgroundColor;
-+ (id)defaultFavoritesIcon;
 - (_Bool)canHandleRequest:(id)arg1;
 - (id)_operationWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 

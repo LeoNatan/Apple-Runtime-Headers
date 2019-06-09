@@ -16,7 +16,7 @@
 + (id)errorWithException:(id)arg1;
 + (id)errorWithDomain:(id)arg1 code:(long long)arg2 localizedDescription:(id)arg3 title:(id)arg4 userInfo:(id)arg5;
 + (id)errorWithDomain:(id)arg1 code:(long long)arg2 localizedDescription:(id)arg3;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)useGenericDescription:(id)arg1;
 - (void)setShortDescription:(id)arg1;
 - (void)setMoreInfo:(id)arg1;

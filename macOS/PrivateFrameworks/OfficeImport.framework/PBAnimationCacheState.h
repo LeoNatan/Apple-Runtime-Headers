@@ -8,6 +8,7 @@
 
 @class NSMutableSet;
 
+__attribute__((visibility("hidden")))
 @interface PBAnimationCacheState : PDAnimationCacheState
 {
     NSMutableSet *mEntranceDrawables;

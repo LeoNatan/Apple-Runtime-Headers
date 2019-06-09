@@ -27,6 +27,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)remoteObjectDiedNotification:(id)arg1;

@@ -8,6 +8,11 @@
 
 @interface NSColor (SCNAdditions)
 + (id)scn_colorWithC3DColor:(const struct C3DColor4 *)arg1;
++ (id)color:(double)arg1:(double)arg2:(double)arg3:(double)arg4;
 - (struct C3DColor4)scn_C3DColorIgnoringColorSpace:(BOOL)arg1 success:(char *)arg2;
+- (double)a;
+- (double)b;
+- (double)g;
+- (double)r;
 @end
 

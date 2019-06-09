@@ -8,46 +8,62 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, NSString;
+@class GEOLatLng, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEORouteIncident : PBCodable <NSCopying>
 {
-    long long _endTime;
-    long long _startTime;
-    long long _updateTime;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSString *_crossStreet;
+    long long _endTime;
     NSString *_incidentId;
     NSString *_info;
+    GEOLatLng *_position;
+    long long _startTime;
+    NSString *_street;
+    long long _updateTime;
     unsigned int _laneClosureCount;
     int _laneClosureType;
-    GEOLatLng *_position;
     int _significance;
-    NSString *_street;
     int _type;
     _Bool _endTimeReliable;
     struct {
-        unsigned int endTime:1;
-        unsigned int startTime:1;
-        unsigned int updateTime:1;
-        unsigned int laneClosureCount:1;
-        unsigned int laneClosureType:1;
-        unsigned int significance:1;
-        unsigned int type:1;
-        unsigned int endTimeReliable:1;
-    } _has;
+        unsigned int has_endTime:1;
+        unsigned int has_startTime:1;
+        unsigned int has_updateTime:1;
+        unsigned int has_laneClosureCount:1;
+        unsigned int has_laneClosureType:1;
+        unsigned int has_significance:1;
+        unsigned int has_type:1;
+        unsigned int has_endTimeReliable:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_crossStreet:1;
+        unsigned int read_incidentId:1;
+        unsigned int read_info:1;
+        unsigned int read_position:1;
+        unsigned int read_street:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_crossStreet:1;
+        unsigned int wrote_endTime:1;
+        unsigned int wrote_incidentId:1;
+        unsigned int wrote_info:1;
+        unsigned int wrote_position:1;
+        unsigned int wrote_startTime:1;
+        unsigned int wrote_street:1;
+        unsigned int wrote_updateTime:1;
+        unsigned int wrote_laneClosureCount:1;
+        unsigned int wrote_laneClosureType:1;
+        unsigned int wrote_significance:1;
+        unsigned int wrote_type:1;
+        unsigned int wrote_endTimeReliable:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool endTimeReliable; // @synthesize endTimeReliable=_endTimeReliable;
-@property(nonatomic) unsigned int laneClosureCount; // @synthesize laneClosureCount=_laneClosureCount;
-@property(nonatomic) long long updateTime; // @synthesize updateTime=_updateTime;
-@property(nonatomic) long long endTime; // @synthesize endTime=_endTime;
-@property(nonatomic) long long startTime; // @synthesize startTime=_startTime;
-@property(retain, nonatomic) NSString *crossStreet; // @synthesize crossStreet=_crossStreet;
-@property(retain, nonatomic) NSString *street; // @synthesize street=_street;
-@property(retain, nonatomic) NSString *info; // @synthesize info=_info;
-@property(retain, nonatomic) NSString *incidentId; // @synthesize incidentId=_incidentId;
-@property(retain, nonatomic) GEOLatLng *position; // @synthesize position=_position;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -55,30 +71,46 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsSignificance:(id)arg1;
 - (id)significanceAsString:(int)arg1;
 @property(nonatomic) _Bool hasSignificance;
-@property(nonatomic) int significance; // @synthesize significance=_significance;
+@property(nonatomic) int significance;
 @property(nonatomic) _Bool hasEndTimeReliable;
+@property(nonatomic) _Bool endTimeReliable;
 @property(nonatomic) _Bool hasLaneClosureCount;
+@property(nonatomic) unsigned int laneClosureCount;
 - (int)StringAsLaneClosureType:(id)arg1;
 - (id)laneClosureTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasLaneClosureType;
-@property(nonatomic) int laneClosureType; // @synthesize laneClosureType=_laneClosureType;
+@property(nonatomic) int laneClosureType;
 @property(nonatomic) _Bool hasUpdateTime;
+@property(nonatomic) long long updateTime;
 @property(nonatomic) _Bool hasEndTime;
+@property(nonatomic) long long endTime;
 @property(nonatomic) _Bool hasStartTime;
+@property(nonatomic) long long startTime;
+@property(retain, nonatomic) NSString *crossStreet;
 @property(readonly, nonatomic) _Bool hasCrossStreet;
+- (void)_readCrossStreet;
+@property(retain, nonatomic) NSString *street;
 @property(readonly, nonatomic) _Bool hasStreet;
+- (void)_readStreet;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
+@property(retain, nonatomic) NSString *info;
 @property(readonly, nonatomic) _Bool hasInfo;
+- (void)_readInfo;
+@property(retain, nonatomic) NSString *incidentId;
 @property(readonly, nonatomic) _Bool hasIncidentId;
+- (void)_readIncidentId;
+@property(retain, nonatomic) GEOLatLng *position;
 @property(readonly, nonatomic) _Bool hasPosition;
+- (void)_readPosition;
 
 @end
 

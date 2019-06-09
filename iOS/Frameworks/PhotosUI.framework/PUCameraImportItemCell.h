@@ -8,8 +8,8 @@
 
 #import <PhotosUI/PXChangeObserver-Protocol.h>
 
-@class NSString, PUImportItemViewModel, PUPhotoView, UIActivityIndicatorView, UIImageView, UITextField;
-@protocol PUImportDisplayDelegate;
+@class NSString, PUPhotoView, PXImportItemViewModel, UIActivityIndicatorView, UITextField, UIView;
+@protocol PUCameraImportItemCellDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PUCameraImportItemCell : UICollectionViewCell <PXChangeObserver>
@@ -18,12 +18,13 @@ __attribute__((visibility("hidden")))
     _Bool _needsThumbnailRefresh;
     _Bool _selectable;
     _Bool _needsBadgeUpdate;
-    id <PUImportDisplayDelegate> _displayDelegate;
-    PUImportItemViewModel *_representedImportItem;
-    long long _badgeType;
-    UIImageView *_badgeImageView;
-    UIActivityIndicatorView *_spinner;
+    id <PUCameraImportItemCellDelegate> _delegate;
+    PXImportItemViewModel *_representedImportItem;
     PUPhotoView *_photoView;
+    long long _badgeType;
+    UIView *_badgeContainerView;
+    UIView *_badgeView;
+    UIActivityIndicatorView *_spinner;
     UITextField *_debugTextField;
     long long _thumbnailRequestID;
     struct CGRect _scaledDisplayRect;
@@ -34,14 +35,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect scaledDisplayRect; // @synthesize scaledDisplayRect=_scaledDisplayRect;
 @property(nonatomic) _Bool needsBadgeUpdate; // @synthesize needsBadgeUpdate=_needsBadgeUpdate;
 @property(retain, nonatomic) UITextField *debugTextField; // @synthesize debugTextField=_debugTextField;
-@property(retain, nonatomic) PUPhotoView *photoView; // @synthesize photoView=_photoView;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
-@property(retain, nonatomic) UIImageView *badgeImageView; // @synthesize badgeImageView=_badgeImageView;
+@property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
+@property(retain, nonatomic) UIView *badgeContainerView; // @synthesize badgeContainerView=_badgeContainerView;
 @property(nonatomic) _Bool selectable; // @synthesize selectable=_selectable;
 @property(nonatomic) long long badgeType; // @synthesize badgeType=_badgeType;
+@property(retain, nonatomic) PUPhotoView *photoView; // @synthesize photoView=_photoView;
 @property(readonly, nonatomic) _Bool needsThumbnailRefresh; // @synthesize needsThumbnailRefresh=_needsThumbnailRefresh;
-@property(retain, nonatomic) PUImportItemViewModel *representedImportItem; // @synthesize representedImportItem=_representedImportItem;
-@property(nonatomic) __weak id <PUImportDisplayDelegate> displayDelegate; // @synthesize displayDelegate=_displayDelegate;
+@property(retain, nonatomic) PXImportItemViewModel *representedImportItem; // @synthesize representedImportItem=_representedImportItem;
+@property(nonatomic) __weak id <PUCameraImportItemCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)updateDebugLabel:(id)arg1;
 - (id)accessibilityCustomActions;
@@ -65,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (void)prepareForReuse;
 - (void)showActivityBadge:(_Bool)arg1;
 - (_Bool)shouldBeginGestureForPoint:(struct CGPoint)arg1;
-- (id)badgeView;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

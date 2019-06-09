@@ -24,6 +24,7 @@
     Class _webAttachmentClass;
     NSArray *_signers;
     NSArray *_signerNames;
+    CDUnknownBlockType _URLClickObserver;
     NSURL *_baseURL;
     NSDictionary *_dataDetectorsContext;
     NSError *_smimeError;
@@ -40,6 +41,7 @@
 @property(retain, nonatomic) NSError *smimeError; // @synthesize smimeError=_smimeError;
 @property(copy, nonatomic) NSDictionary *dataDetectorsContext; // @synthesize dataDetectorsContext=_dataDetectorsContext;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
+@property(copy, nonatomic) CDUnknownBlockType URLClickObserver; // @synthesize URLClickObserver=_URLClickObserver;
 @property(nonatomic) BOOL isSigned; // @synthesize isSigned=_isSigned;
 @property(nonatomic) BOOL hasEncryptedDescendantPart; // @synthesize hasEncryptedDescendantPart=_hasEncryptedDescendantPart;
 @property(nonatomic) BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;

@@ -8,6 +8,7 @@
 
 @class NSString, TCDumpType;
 
+__attribute__((visibility("hidden")))
 @interface TCDumpField : NSObject
 {
     TCDumpType *mType;

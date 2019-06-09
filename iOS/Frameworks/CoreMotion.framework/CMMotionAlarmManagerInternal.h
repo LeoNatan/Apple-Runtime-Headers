@@ -7,13 +7,12 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue;
 
 @interface CMMotionAlarmManagerInternal : NSObject
 {
     struct CLConnectionClient *fLocationdConnection;
     NSObject<OS_dispatch_queue> *fInternalQueue;
-    NSObject<OS_dispatch_source> *fWatchdogTimer;
     NSMutableDictionary *fAlarms;
     _Bool fListening;
 }
@@ -26,8 +25,6 @@
 - (_Bool)_registerAlarm:(id)arg1 error:(id *)arg2;
 - (void)_stopListeners;
 - (void)_startListeners;
-- (void)_stopWatchdogCheckins;
-- (void)_startWatchdogCheckins;
 - (void)_teardown;
 - (void)dealloc;
 - (id)init;

@@ -29,9 +29,9 @@
 - (void)addRouteData:(id)arg1 hasFinishedQuery:(_Bool)arg2;
 - (void)loadRoute;
 @property(readonly) HKWorkoutRoute *workoutRoute;
-- (id)initWithSample:(id)arg1 delegate:(id)arg2;
+- (id)initWithSample:(id)arg1 usingInsetStyling:(_Bool)arg2 delegate:(id)arg3;
 - (void)viewDidLoad;
-- (id)initWithWorkoutRoute:(id)arg1 healthStore:(id)arg2 delegate:(id)arg3;
+- (id)initWithWorkoutRoute:(id)arg1 healthStore:(id)arg2 usingInsetStyling:(_Bool)arg3 delegate:(id)arg4;
 
 @end
 

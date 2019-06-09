@@ -18,6 +18,7 @@
     BOOL _logActivity;
     double _timeout;
     NSString *_schemaVersion;
+    NSString *_clientRequestID;
     SOAPParser *_parser;
     NSConditionLock *_finishedConditionLock;
     NSError *_error;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSConditionLock *finishedConditionLock; // @synthesize finishedConditionLock=_finishedConditionLock;
 @property(readonly, nonatomic) SOAPParser *parser; // @synthesize parser=_parser;
+@property(copy) NSString *clientRequestID; // @synthesize clientRequestID=_clientRequestID;
 @property(copy) NSString *schemaVersion; // @synthesize schemaVersion=_schemaVersion;
 @property double timeout; // @synthesize timeout=_timeout;
 - (void).cxx_destruct;
@@ -46,6 +48,7 @@
 - (void)failWithError:(id)arg1;
 - (BOOL)shouldRetryForOAuthTokenRefreshWithError:(id)arg1;
 - (double)_backOffTimeForFaultDetail:(id)arg1;
+- (id)_exchangeServiceErrorFromSOAPError:(id)arg1;
 - (BOOL)_shouldRetryFromParser:(id)arg1 error:(id *)arg2;
 - (void)completeWithResponse:(id)arg1;
 @property(readonly, copy) NSData *requestData;

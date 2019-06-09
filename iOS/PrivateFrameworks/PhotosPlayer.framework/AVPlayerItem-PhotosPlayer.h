@@ -8,7 +8,6 @@
 
 @interface AVPlayerItem (PhotosPlayer)
 - (void)is_enableColorMatching;
-- (_Bool)is_setEnabled:(_Bool)arg1 forTracksWithMediaType:(id)arg2 force:(_Bool)arg3;
 @property(readonly, nonatomic, getter=is_isHighFramerate) _Bool is_highFramerate;
 @end
 

@@ -7,11 +7,6 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (ICNFMCConvenience)
-- (BOOL)addObjectIfAbsentAccordingToEquals:(id)arg1;
-- (BOOL)addObjectIfAbsent:(id)arg1;
-- (void)addAbsentObjectsFromArrayAccordingToEquals:(id)arg1;
-- (void)addAbsentObjectsFromArray:(id)arg1;
-- (unsigned long long)insertObjectIfAbsent:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
-- (unsigned long long)highestIndexOfObject:(id)arg1 inRange:(struct _NSRange)arg2;
+- (BOOL)ic_addObjectIfAbsentAccordingToEquals:(id)arg1;
 @end
 

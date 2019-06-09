@@ -87,10 +87,12 @@
 - (_Bool)messageEntryRichTextView:(id)arg1 shouldPasteMediaObjects:(id)arg2;
 - (float)_maxWidthForTextView;
 - (float)maxWidthForPreviewImagesInMessageEntryRichTextView:(id)arg1;
+- (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 - (void)textViewDidBeginEditing:(id)arg1;
 - (_Bool)textViewShouldBeginEditing:(id)arg1;
+- (void)collapseTextFieldsIfInPencilMode;
 - (void)didFinishAnimatedBoundsChange;
 - (void)willAnimateBoundsChange;
 - (void)acceptAutocorrection;

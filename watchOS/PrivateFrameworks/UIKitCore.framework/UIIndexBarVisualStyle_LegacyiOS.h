@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 @property(copy, nonatomic) UIColor *nonTrackingBackgroundColor; // @synthesize nonTrackingBackgroundColor=_nonTrackingBackgroundColor;
 - (void).cxx_destruct;
+- (int)_accessibility_indexForEntryAtPoint:(struct CGPoint)arg1;
 - (_Bool)updateSectionForTouch:(id)arg1 withEvent:(id)arg2;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)_visibleBoundsForRect:(struct CGRect)arg1 stride:(float *)arg2;

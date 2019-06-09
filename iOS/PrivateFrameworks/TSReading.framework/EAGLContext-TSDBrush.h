@@ -8,5 +8,6 @@
 
 @interface EAGLContext (TSDBrush)
 - (id)initForBrushes;
+- (id)initForShadow;
 @end
 

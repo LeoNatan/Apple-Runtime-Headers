@@ -26,7 +26,7 @@
 @property(retain, nonatomic) NSMapTable *inputOperations; // @synthesize inputOperations=_inputOperations;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputProtocols;
-@property(readonly, nonatomic) NSArray *inputsProtocols;
+@property(readonly, nonatomic) NSArray *inputProtocols;
 - (void)execute;
 - (id)initWithMiddleware:(id)arg1 playerRequest:(id)arg2;
 

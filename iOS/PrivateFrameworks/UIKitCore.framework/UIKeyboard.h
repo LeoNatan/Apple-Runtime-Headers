@@ -35,6 +35,8 @@
 + (struct CGSize)keyboardSizeForInterfaceOrientation:(long long)arg1;
 + (struct CGSize)sizeForInterfaceOrientation:(long long)arg1 ignoreInputView:(_Bool)arg2;
 + (struct CGSize)sizeForInterfaceOrientation:(long long)arg1;
++ (void)setSuppressionPolicyDelegate:(id)arg1;
++ (id)suppressionPolicyDelegate;
 + (_Bool)shouldMinimizeForHardwareKeyboard;
 + (_Bool)respondsToProxGesture;
 + (_Bool)isOnScreen;
@@ -65,7 +67,7 @@
 - (void)implBoundsHeightChangeDone:(double)arg1 suppressNotification:(_Bool)arg2;
 - (void)prepareForImplBoundsHeightChange:(double)arg1 suppressNotification:(_Bool)arg2;
 - (struct UIPeripheralAnimationGeometry)geometryForImplHeightDelta:(double)arg1;
-- (void)keyboardMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)keyboardMinMaximized:(_Bool)arg1;
 @property(nonatomic, getter=isMinimized) _Bool minimized;
 - (void)maximize;
 - (void)minimize;
@@ -150,6 +152,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
+- (_Bool)_isAutomaticKeyboard;
 - (void)clearActivePerScreenIfNeeded;
 - (_Bool)isActivePerScreen;
 - (void)dealloc;
@@ -163,6 +166,7 @@
 - (void)manualKeyboardWillBeOrderedOut;
 - (void)manualKeyboardWasOrderedIn;
 - (void)manualKeyboardWillBeOrderedIn;
+- (struct CGRect)_floatingKeyboardDraggableRect;
 - (long long)_positionInCandidateList:(id)arg1;
 - (_Bool)_hasCandidates;
 - (void)_acceptCurrentCandidate;
@@ -180,7 +184,6 @@
 - (id)_getLocalizedInputMode;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
-- (_Bool)_isAutomaticKeyboard;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,6 +15,8 @@
 }
 
 @property(retain, nonatomic) ADCountdownButton *closeButton; // @synthesize closeButton=_closeButton;
+@property(nonatomic) __weak ADInterstitialAd *interstitialAd; // @synthesize interstitialAd=_interstitialAd;
+- (void).cxx_destruct;
 - (_Bool)shouldTestVisibilityAtPoint:(struct CGPoint)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -22,9 +24,7 @@
 - (_Bool)wantsFullScreenLayout;
 - (_Bool)prefersStatusBarHidden;
 - (void)loadView;
-@property(readonly, nonatomic) __weak ADInterstitialAd *interstitialAd;
 - (id)initForInterstitialAd:(id)arg1;
-- (void)dealloc;
 
 @end
 

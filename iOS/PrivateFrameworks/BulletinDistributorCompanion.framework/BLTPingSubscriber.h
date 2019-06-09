@@ -29,12 +29,18 @@
 - (void)pingWithRecordID:(id)arg1 forSectionID:(id)arg2;
 - (void)pingWithBulletin:(id)arg1 ack:(CDUnknownBlockType)arg2;
 - (void)pingWithBulletin:(id)arg1;
+- (void)subscribeToSectionID:(id)arg1 withNotificationAckForwardForAnyConnectionHandler:(CDUnknownBlockType)arg2;
+- (void)subscribeToSectionID:(id)arg1 withNotificationAckForwardHandler:(CDUnknownBlockType)arg2;
+- (void)subscribeToSectionID:(id)arg1 withNotificationAckHandler:(CDUnknownBlockType)arg2;
+- (void)subscribeToSectionID:(id)arg1 withNotificationHandler:(CDUnknownBlockType)arg2;
+- (void)subscribeToSectionID:(id)arg1 withBulletinAckForwardForAnyConnectionHandler:(CDUnknownBlockType)arg2;
 - (void)subscribeToSectionID:(id)arg1 withBulletinAckForwardHandler:(CDUnknownBlockType)arg2;
 - (void)subscribeToSectionID:(id)arg1 withBulletinAckHandler:(CDUnknownBlockType)arg2;
 - (void)subscribeToSectionID:(id)arg1 withBulletinHandler:(CDUnknownBlockType)arg2;
 - (void)subscribeToSectionID:(id)arg1 withPingAckForwardHandler:(CDUnknownBlockType)arg2;
 - (void)subscribeToSectionID:(id)arg1 withPingAckHandler:(CDUnknownBlockType)arg2;
 - (void)subscribeToSectionID:(id)arg1 withPingHandler:(CDUnknownBlockType)arg2;
+- (void)_subscribeToSectionID:(id)arg1 pingHandler:(id)arg2 ackType:(unsigned long long)arg3 forFullBulletins:(_Bool)arg4 forNotifications:(_Bool)arg5;
 - (void)_subscribeToSectionID:(id)arg1 pingHandler:(id)arg2 ackType:(unsigned long long)arg3 forFullBulletins:(_Bool)arg4;
 - (void)unsubscribeFromSectionID:(id)arg1;
 - (id)subscriptionInfos;

@@ -7,93 +7,74 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlayer/MPAVQueueController-Protocol.h>
-#import <MediaPlayer/MPAVQueueCoordinatorDataSource-Protocol.h>
-#import <MediaPlayer/MPQueueBehaviorManaging-Protocol.h>
 #import <MediaPlayer/MPQueueFeederDelegate-Protocol.h>
-#import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@class MPAVController, MPAVItem, MPAVQueueCoordinator, MPQueueFeeder, NSString;
-@protocol MPAVItemQueueIdentifier, MPAVPlaylistManagerDelegate;
+@class MPAVItem, MPQueueFeeder, NSString;
+@protocol MPAVPlaylistManagerDelegate, MPAVQueueCoordinating;
 
-@interface MPAVPlaylistManager : NSObject <MPQueueFeederDelegate, MPAVQueueCoordinatorDataSource, MPAVQueueController, MPQueueBehaviorManaging, NSSecureCoding>
+@interface MPAVPlaylistManager : NSObject <MPQueueFeederDelegate, MPAVQueueController>
 {
-    MPAVItem *_currentItem;
     _Bool _goToTargetIndex;
     long long _lastSelectionDirection;
     MPQueueFeeder *_playlistFeeder;
-    long long _repeatMode;
     long long _targetIndex;
-    _Bool _updatedAudioSessionMode;
-    MPQueueFeeder *_currentQueueFeeder;
-    id <MPAVItemQueueIdentifier> _currentItemQueueIdentifier;
-    long long _playbackMode;
-    MPAVController *_avController;
-    MPAVQueueCoordinator *_queueCoordinator;
+    _Bool _allowsQueueModifications;
+    _Bool _userCanChangeShuffleAndRepeatType;
+    MPAVItem *_currentItem;
+    id <MPAVQueueCoordinating> _queueCoordinator;
+    long long _repeatType;
+    long long _shuffleType;
+    unsigned long long _supportedInsertionPositions;
     id <MPAVPlaylistManagerDelegate> _delegate;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(retain) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
 @property(readonly, nonatomic) MPQueueFeeder *playlistFeeder; // @synthesize playlistFeeder=_playlistFeeder;
 @property(nonatomic) __weak id <MPAVPlaylistManagerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) MPAVQueueCoordinator *queueCoordinator; // @synthesize queueCoordinator=_queueCoordinator;
-@property(nonatomic) __weak MPAVController *avController; // @synthesize avController=_avController;
-@property(readonly, nonatomic) long long playbackMode; // @synthesize playbackMode=_playbackMode;
+@property(readonly, nonatomic) _Bool userCanChangeShuffleAndRepeatType; // @synthesize userCanChangeShuffleAndRepeatType=_userCanChangeShuffleAndRepeatType;
+@property(readonly, nonatomic) unsigned long long supportedInsertionPositions; // @synthesize supportedInsertionPositions=_supportedInsertionPositions;
+@property(nonatomic) long long shuffleType; // @synthesize shuffleType=_shuffleType;
+@property(nonatomic) long long repeatType; // @synthesize repeatType=_repeatType;
+@property(retain, nonatomic) id <MPAVQueueCoordinating> queueCoordinator; // @synthesize queueCoordinator=_queueCoordinator;
+@property(readonly, nonatomic) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
+@property(nonatomic) _Bool allowsQueueModifications; // @synthesize allowsQueueModifications=_allowsQueueModifications;
 - (void).cxx_destruct;
-- (long long)_indexForStringIdentifier:(id)arg1;
-- (id)_nowplayingContentItemForIndex:(long long)arg1;
-- (id)_nowplayingContentItemIdentifierForIndex:(long long)arg1;
-- (void)_updateAudioSessionModeWithIndex:(unsigned long long)arg1;
 - (unsigned long long)_playbackIndexForDelta:(long long)arg1 fromIndex:(unsigned long long)arg2 ignoreElapsedTime:(_Bool)arg3 totalItemCount:(unsigned long long)arg4 didReachEnd:(_Bool *)arg5;
 - (void)_notifyQueueFeederContentsChanged;
 - (void)_applyVolumeNormalizationForQueuedItems;
 - (void)queueCoordinatorDidChangeItems:(id)arg1;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
-- (_Bool)setMusicPlayerControllerQueue:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)requestMusicPlayerControllerQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)musicPlayerControllerQueueForUUID:(id)arg1;
-- (id)currentQueueUUID;
 - (id)_itemToFollowItemIndex:(long long)arg1 skipUnavailableContent:(_Bool)arg2;
-- (long long)_nextItemIndex:(long long)arg1 repeatMode:(long long)arg2;
+- (long long)_nextItemIndex:(long long)arg1;
 - (void)_reloadQueuedItemsIfPathBecameAvailable;
 - (_Bool)setPlaylistFeeder:(id)arg1 startIndex:(long long)arg2 keepPlaying:(_Bool)arg3;
+- (void)updateLocationDependentPropertiesForItem:(id)arg1;
+- (void)finalizeStateRestorationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)canSkipItem:(id)arg1;
+- (void)removeAllItemsAfterContentItemID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeContentItemID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)moveContentItemID:(id)arg1 afterContentItemID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addPlaybackContext:(id)arg1 atPosition:(long long)arg2 jumpToIt:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addPlaybackContext:(id)arg1 atPosition:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addPlaybackContext:(id)arg1 afterContentItemID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)jumpToFirstContentItem;
+- (void)jumpToContentItemID:(id)arg1;
+- (id)contentItemIDWithCurrentItemOffset:(long long)arg1 mode:(long long)arg2 didReachEnd:(_Bool *)arg3;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-@property(nonatomic) long long repeatMode;
-@property(readonly, nonatomic) long long playlistItemCount;
-@property(readonly) long long currentIndex;
+@property(readonly, nonatomic) long long currentIndex;
 - (void)setCurrentIndex:(long long)arg1 selectionDirection:(long long)arg2;
 - (void)reloadItemsKeepingCurrentItem:(_Bool)arg1;
-- (void)_willFinishReloadWithQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (long long)_prepareToQueuePlaybackIndex:(long long)arg1 selectionDirection:(long long)arg2;
-- (id)_queuePlayerFeederItemForIndex:(long long)arg1;
-- (void)updateForSoundCheckDefaultsChange;
-- (long long)playlistIndexOfQueueIdentifier:(id)arg1 inPlaylistFeeder:(id)arg2;
-- (long long)playlistIndexOfItemIdentifier:(id)arg1;
-- (long long)indexOfItemIdentifier:(id)arg1;
-- (long long)playlistIndexOfItem:(id)arg1;
 - (long long)playlistIndexOfIndex:(long long)arg1 inPlaylistFeeder:(id)arg2;
 - (id)playlistFeederForPlaylistIndex:(long long)arg1;
-- (id)metadataItemForPlaylistIndex:(long long)arg1;
 - (unsigned long long)indexForContentItemID:(id)arg1;
-- (id)contentItemIDForPlaylistIndex:(long long)arg1;
-- (void)updateLocationDependentPropertiesForItem:(id)arg1;
 - (_Bool)isPlaceholderItemForContentItemID:(id)arg1;
 - (id)itemForContentItemID:(id)arg1;
 - (id)itemForPlaylistIndex:(long long)arg1;
 - (void)handlePlaybackFailureForItem:(id)arg1;
 - (unsigned long long)displayIndexForItem:(id)arg1;
 - (unsigned long long)displayCountForItem:(id)arg1;
-- (long long)playlistIndexWithDelta:(long long)arg1 fromIndex:(long long)arg2 ignoreElapsedTime:(_Bool)arg3 didReachEnd:(_Bool *)arg4;
 - (long long)indexWithDelta:(long long)arg1 fromIndex:(long long)arg2 ignoreElapsedTime:(_Bool)arg3 didReachEnd:(_Bool *)arg4;
-- (_Bool)canSkipItem:(id)arg1;
-@property(readonly, nonatomic) _Bool userCanChangeShuffleAndRepeatType;
-@property(readonly, nonatomic) _Bool allowsQueueResetWhenReachingEnd;
-- (_Bool)canSkipToPreviousItemForItem:(id)arg1;
-@property(readonly, nonatomic) _Bool canSkipToPreviousItem;
-@property(readonly, nonatomic) _Bool canSeek;
-@property(readonly, nonatomic) _Bool allowsUserVisibleUpcomingItems;
-- (void)queueFeederDidInvalidateRealShuffleType:(id)arg1;
-- (void)queueFeederDidInvalidateRealRepeatType:(id)arg1;
+@property(readonly, nonatomic) _Bool hasUserMutations;
 - (void)queueFeederDidInvalidateAssets:(id)arg1;
 - (void)queueFeederDidReplaceItem:(id)arg1;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithReplacementPlaybackContext:(id)arg2;
@@ -101,20 +82,10 @@
 - (void)queueCoordinator:(id)arg1 willInsertItem:(id)arg2 afterItem:(id)arg3;
 - (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
-@property(nonatomic) _Bool shouldDeferItemLoading;
-@property(readonly, nonatomic) long long upNextItemCount;
-- (_Bool)hasQueueContents;
-- (_Bool)canSeekItem:(id)arg1;
 - (void)reset;
-- (void)clearQueueFeeder;
 - (void)player:(id)arg1 currentItemDidChangeFromItem:(id)arg2 toItem:(id)arg3;
-- (void)disconnectQueueCoordinator;
-- (void)connectQueueCoordinator:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (void)finalizeStateRestorationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)init;
 
 // Remaining properties

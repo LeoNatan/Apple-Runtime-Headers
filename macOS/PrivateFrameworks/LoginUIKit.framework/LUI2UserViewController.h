@@ -10,12 +10,16 @@
 
 @interface LUI2UserViewController : LUI2ViewController
 {
+    BOOL _usesVisualEffectBackgroundUserViewInternal;
     LUI2UserView *_userView;
 }
 
+@property BOOL usesVisualEffectBackgroundUserViewInternal; // @synthesize usesVisualEffectBackgroundUserViewInternal=_usesVisualEffectBackgroundUserViewInternal;
 @property(retain) LUI2UserView *userView; // @synthesize userView=_userView;
 - (void)dealloc;
 - (void)viewDidLoad;
+@property BOOL usesVisualEffectBackgroundUserView;
+- (void)_createUserView;
 
 @end
 

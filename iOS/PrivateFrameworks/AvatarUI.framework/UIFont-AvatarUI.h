@@ -14,6 +14,7 @@
 + (id)avt_avatarActionButtonTitleFont;
 + (id)avt_templateInstructionLabelFont;
 + (id)avt_templateTitleLabelFont;
++ (id)avt_attributeTitleButtonFont;
 + (id)avt_attributeTitleFont;
 + (id)avt_splashContinueButtonFont;
 + (id)avt_splashSubTitleFont;

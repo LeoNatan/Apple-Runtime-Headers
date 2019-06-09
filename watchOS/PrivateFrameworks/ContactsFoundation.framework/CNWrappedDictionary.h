@@ -11,11 +11,11 @@
     NSDictionary *_underlyingDictionary;
 }
 
+- (void).cxx_destruct;
 - (id)keyEnumerator;
 - (id)objectForKey:(id)arg1;
 - (unsigned int)count;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 
 @end

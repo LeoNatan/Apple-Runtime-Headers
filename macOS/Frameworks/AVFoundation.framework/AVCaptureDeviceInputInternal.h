@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     MediaIOGraphNodeDescription *deviceInputUnitDescription;
     MediaIOGraphNodeDescription *demuxUnitDescription;
     BOOL ready;
-    BOOL automaticallyConfiguresDevice;
 }
 
 @end

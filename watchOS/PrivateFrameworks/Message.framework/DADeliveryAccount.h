@@ -13,9 +13,9 @@
     DAMailAccount *_DAMailAccount;
 }
 
+- (void).cxx_destruct;
 - (id)mailAccountIfAvailable;
-- (void)dealloc;
-- (id)newDeliveryWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
+- (id)newDeliveryWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 - (id)newDeliveryWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 - (id)newDeliveryWithMessage:(id)arg1;
 - (Class)deliveryClass;

@@ -8,23 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEOStaleResourceEntry : PBCodable <NSCopying>
 {
-    int _ageInSeconds;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_canonicalName;
     NSString *_desiredName;
     NSString *_storedName;
+    int _ageInSeconds;
     struct {
-        unsigned int ageInSeconds:1;
-    } _has;
+        unsigned int has_ageInSeconds:1;
+        unsigned int read_canonicalName:1;
+        unsigned int read_desiredName:1;
+        unsigned int read_storedName:1;
+        unsigned int wrote_canonicalName:1;
+        unsigned int wrote_desiredName:1;
+        unsigned int wrote_storedName:1;
+        unsigned int wrote_ageInSeconds:1;
+    } _flags;
 }
 
-@property(nonatomic) int ageInSeconds; // @synthesize ageInSeconds=_ageInSeconds;
-@property(retain, nonatomic) NSString *desiredName; // @synthesize desiredName=_desiredName;
-@property(retain, nonatomic) NSString *storedName; // @synthesize storedName=_storedName;
-@property(retain, nonatomic) NSString *canonicalName; // @synthesize canonicalName=_canonicalName;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,12 +39,20 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasAgeInSeconds;
+@property(nonatomic) int ageInSeconds;
+@property(retain, nonatomic) NSString *desiredName;
 @property(readonly, nonatomic) _Bool hasDesiredName;
+- (void)_readDesiredName;
+@property(retain, nonatomic) NSString *storedName;
 @property(readonly, nonatomic) _Bool hasStoredName;
+- (void)_readStoredName;
+@property(retain, nonatomic) NSString *canonicalName;
 @property(readonly, nonatomic) _Bool hasCanonicalName;
+- (void)_readCanonicalName;
 
 @end
 

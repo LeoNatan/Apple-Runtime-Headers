@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <UIFoundation/NSSecureCoding-Protocol.h>
+
 @class NSAttributedString, UIFont;
 
-@interface NSTextLineFragment : NSObject
+@interface NSTextLineFragment : NSObject <NSSecureCoding>
 {
     struct __CTLine *_lineRef;
     unsigned short *_glyphs;
     struct CGSize *_advances;
+    int _glyphCount;
     UIFont *_font;
     NSAttributedString *_attributedString;
     struct _NSRange _characterRange;
@@ -28,12 +31,15 @@
 - (int)characterIndexForPoint:(struct CGPoint)arg1 fractionOfDistanceThroughGlyph:(float *)arg2;
 - (struct CGPoint)locationForCharacterAtIndex:(int)arg1;
 - (void)drawAtPoint:(struct CGPoint)arg1 context:(struct CGContext *)arg2;
-@property(readonly) int numberOfGlyphs; // @dynamic numberOfGlyphs;
+- (void)drawAtPoint:(struct CGPoint)arg1 graphicsContext:(id)arg2;
+- (unsigned int)numberOfGlyphs;
+- (struct CGRect)boundsWithType:(int)arg1 options:(unsigned int)arg2;
 - (struct CGRect)typographicUsedBounds;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)setGlyphs:(const unsigned short *)arg1 advances:(const struct CGSize *)arg2 font:(id)arg3;
+- (void)setGlyphs:(const unsigned short *)arg1 advances:(const struct CGSize *)arg2 count:(int)arg3 font:(id)arg4;
 - (void)setLineRef:(struct __CTLine *)arg1;
+- (id)initWithString:(id)arg1 attributes:(id)arg2 range:(struct _NSRange)arg3;
 - (void)dealloc;
 - (id)initWithAttributedString:(id)arg1 range:(struct _NSRange)arg2;
 

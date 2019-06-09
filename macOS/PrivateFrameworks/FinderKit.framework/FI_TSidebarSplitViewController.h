@@ -67,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (void)updateHoldingPriorities;
 @property(retain) FI_TSplitView *splitView; // @dynamic splitView;
 - (void)aboutToTearDown;
-- (id)init;
 - (id)initWithFrame:(const struct CGRect *)arg1 initialSidebarWidth:(double)arg2 containerLayoutManager:(id)arg3 browserContainerController:(id)arg4;
 
 @end

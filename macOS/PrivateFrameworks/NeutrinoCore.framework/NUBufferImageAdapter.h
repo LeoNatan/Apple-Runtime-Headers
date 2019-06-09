@@ -9,12 +9,12 @@
 #import <NeutrinoCore/NUBufferImage-Protocol.h>
 
 @class NSString, NUColorSpace, NUImageLayout, NUPixelFormat, NURegion;
-@protocol NUBuffer;
+@protocol NUBufferProvider;
 
 @interface NUBufferImageAdapter : NSObject <NUBufferImage>
 {
     NUImageLayout *_layout;
-    id <NUBuffer> _buffer;
+    id <NUBufferProvider> _bufferProvider;
     NURegion *_validRegion;
     NUColorSpace *_colorSpace;
 }
@@ -23,6 +23,7 @@
 @property(readonly) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly) NUImageLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
+- (id)debugQuickLookObject;
 - (id)mutablePurgeableImageCopy;
 - (id)purgeableImageCopy;
 - (id)mutableImageCopy;
@@ -31,6 +32,7 @@
 @property(readonly) NUPixelFormat *format;
 @property(readonly) CDStruct_912cb5d2 size;
 - (id)init;
+- (id)initWithBufferProvider:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
 - (id)initWithBuffer:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
 
 // Remaining properties

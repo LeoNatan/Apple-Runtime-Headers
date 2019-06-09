@@ -22,6 +22,8 @@
     NSString *_connectionUUID;
     int _networkLoadType;
     int _networkProtocolName;
+    _Bool _apsRelayAttempted;
+    _Bool _apsRelaySucceeded;
     _Bool _isRedirected;
     _Bool _reusedConnection;
     struct {
@@ -34,11 +36,15 @@
         unsigned int totalBytesWritten:1;
         unsigned int networkLoadType:1;
         unsigned int networkProtocolName:1;
+        unsigned int apsRelayAttempted:1;
+        unsigned int apsRelaySucceeded:1;
         unsigned int isRedirected:1;
         unsigned int reusedConnection:1;
     } _has;
 }
 
+@property(nonatomic) _Bool apsRelaySucceeded; // @synthesize apsRelaySucceeded=_apsRelaySucceeded;
+@property(nonatomic) _Bool apsRelayAttempted; // @synthesize apsRelayAttempted=_apsRelayAttempted;
 @property(retain, nonatomic) NSString *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
 @property(nonatomic) unsigned long long totalBytesRead; // @synthesize totalBytesRead=_totalBytesRead;
 @property(nonatomic) unsigned long long totalBytesWritten; // @synthesize totalBytesWritten=_totalBytesWritten;
@@ -58,6 +64,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasApsRelaySucceeded;
+@property(nonatomic) _Bool hasApsRelayAttempted;
 @property(readonly, nonatomic) _Bool hasConnectionUUID;
 @property(nonatomic) _Bool hasTotalBytesRead;
 @property(nonatomic) _Bool hasTotalBytesWritten;

@@ -29,13 +29,14 @@
 + (_Bool)adShouldCreateADSession;
 @property(retain, nonatomic) ADDeviceInfo *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 @property(nonatomic) _Bool applicationCanRecieveAds; // @synthesize applicationCanRecieveAds=_applicationCanRecieveAds;
-@property(nonatomic) NSObject<OS_dispatch_queue> *adSpaceQueue; // @synthesize adSpaceQueue=_adSpaceQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *adSpaceQueue; // @synthesize adSpaceQueue=_adSpaceQueue;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) ADAdServingDaemonConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) int classicUnavailableToken; // @synthesize classicUnavailableToken=_classicUnavailableToken;
 @property(retain, nonatomic) NSMutableArray *adSpaces; // @synthesize adSpaces=_adSpaces;
 @property(nonatomic) _Bool appExtensionCanReceiveAds; // @synthesize appExtensionCanReceiveAds=_appExtensionCanReceiveAds;
 @property(nonatomic) _Bool applicationCanReceiveBackgroundAds; // @synthesize applicationCanReceiveBackgroundAds=_applicationCanReceiveBackgroundAds;
+- (void).cxx_destruct;
 - (void)adAnalyticsEventReceived:(id)arg1;
 - (void)_appDidEnterBackground;
 - (void)_appDidBecomeActive;
@@ -47,6 +48,7 @@
 - (void)reportPrerollRequest;
 - (void)_remote_policyEngineDidIdleDisable;
 - (void)_remote_deviceInfo:(CDUnknownBlockType)arg1;
+- (void)_remote_adDataForAdSpace:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_remote_updateActionViewControllerOrientation:(unsigned long long)arg1 forAdSpaceWithIdentifier:(id)arg2;
 - (void)_remote_dismissViewControllerForAdSpaceWithIdentifier:(id)arg1;
 - (void)_remote_dismissViewControllerForAdSpaceWithIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -76,6 +78,7 @@
 - (id)additionalAdServingDaemonLaunchOptions;
 - (_Bool)shouldConnectToAdServingDaemon;
 - (void)updateDeviceInfo;
+- (void)createDeviceInfo;
 - (void)orientationChanged:(id)arg1;
 - (id)_linkedOnVersion;
 - (void)establishRPCConnection;

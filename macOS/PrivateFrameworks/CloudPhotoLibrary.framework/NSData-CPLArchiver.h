@@ -9,5 +9,9 @@
 @interface NSData (CPLArchiver)
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+- (id)cplQueryCursorDescription;
+- (id)cplQueryCursorSimpleDescription;
+- (id)cplSyncAnchorDescription;
+- (id)cplSyncAnchorSimpleDescription;
 @end
 

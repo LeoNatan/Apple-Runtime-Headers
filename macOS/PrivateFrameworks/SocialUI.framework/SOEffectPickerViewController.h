@@ -6,35 +6,38 @@
 
 #import <AppKit/NSViewController.h>
 
-#import <SocialUI/SOEffectDescriptorDelegate-Protocol.h>
+#import <SocialUI/SOEffectPickerButtonControllerDelegate-Protocol.h>
 
-@class NSButton, NSMutableArray, NSString, NSTextField, NSView, SOEffectDescriptor;
+@class NSMutableArray, NSString, NSView, SOEffectPickerButtonController, SOEffectPickerUnsentMessage, SOVerticalPillView;
 @protocol SOEffectPickerViewControllerDelegate;
 
-@interface SOEffectPickerViewController : NSViewController <SOEffectDescriptorDelegate>
+@interface SOEffectPickerViewController : NSViewController <SOEffectPickerButtonControllerDelegate>
 {
     NSMutableArray *_descriptors;
-    NSView *_verticalPill;
-    NSTextField *_placeholderBubble;
-    NSButton *_cancelButton;
+    SOVerticalPillView *_verticalPill;
+    NSView *_messageBubble;
     id <SOEffectPickerViewControllerDelegate> _delegate;
-    SOEffectDescriptor *_selectedDescriptor;
+    SOEffectPickerButtonController *_selectedDescriptor;
+    SOEffectPickerUnsentMessage *_unsentMessage;
 }
 
-@property(retain, nonatomic) SOEffectDescriptor *selectedDescriptor; // @synthesize selectedDescriptor=_selectedDescriptor;
+@property(retain) SOEffectPickerUnsentMessage *unsentMessage; // @synthesize unsentMessage=_unsentMessage;
+@property(retain, nonatomic) SOEffectPickerButtonController *selectedDescriptor; // @synthesize selectedDescriptor=_selectedDescriptor;
 @property(nonatomic) __weak id <SOEffectPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)updateTextForDarkBackground:(BOOL)arg1;
-- (void)userCancelledPicker:(id)arg1;
 - (void)effectDescriptorWillSend:(id)arg1;
 - (void)effectDescriptorWillActivate:(id)arg1;
-- (void)showPlaceholderMessageForEffect:(id)arg1 withDarkBackground:(BOOL)arg2;
+- (void)showBubbleForButton:(id)arg1 withDarkBackground:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)setBubbleViewFrame:(id)arg1 relativeToButtonFrame:(struct CGRect)arg2;
+- (void)animateInBubble:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewWillAppear;
 - (void)updateButtons:(BOOL)arg1;
 - (void)viewWillLayout;
 - (void)addEffectWithDisplayName:(id)arg1 effectIdentifier:(id)arg2 target:(id)arg3 action:(SEL)arg4;
 - (void)loadView;
 - (void)viewDidLoad;
+- (id)initWithUnsentMessage:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -85,8 +85,9 @@
 - (double)_textVerticalAdjust;
 - (double)_textVerticalInset;
 - (int)_vibrancyBlendModeForControlView:(id)arg1;
-- (BOOL)canSmoothFontsInFrame:(struct CGRect)arg1 forLayerBackedView:(id)arg2;
-- (struct __CFDictionary *)_coreUIDrawOptionsWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (id)_coreUIDrawOptionsWithFrame:(struct CGRect)arg1 inView:(id)arg2 focusRingOnly:(BOOL)arg3;
+- (struct __CFString *)_coreUIWidgetName;
+- (BOOL)_isToolbarComboBox;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)setControlView:(id)arg1;
 - (void)_computeBezelRectWithTextCellFrame:(struct CGRect)arg1 inView:(id)arg2 topLeft:(struct CGRect *)arg3 bottomLeft:(struct CGRect *)arg4 left:(struct CGRect *)arg5 right:(struct CGRect *)arg6 top:(struct CGRect *)arg7 bottom:(struct CGRect *)arg8;
@@ -95,7 +96,7 @@
 - (struct CGRect)boundsForTextCell:(struct CGRect)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
-- (void)setAlignment:(unsigned long long)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)setBaseWritingDirection:(long long)arg1;
 - (void)setFont:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
@@ -122,6 +123,8 @@
 - (BOOL)isOpaque;
 @property long long numberOfVisibleItems;
 @property double itemHeight;
+- (void)setButtonHighlighted:(BOOL)arg1;
+- (BOOL)isButtonHighlighted;
 - (BOOL)_isButtonBordered;
 @property(getter=isButtonBordered) BOOL buttonBordered;
 - (void)_setButtonBordered:(BOOL)arg1;

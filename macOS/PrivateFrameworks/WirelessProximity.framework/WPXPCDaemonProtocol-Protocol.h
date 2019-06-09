@@ -11,10 +11,12 @@
 @protocol WPXPCDaemonProtocol <NSObject>
 
 @optional
-- (void)disconnectFromLEPipePeer:(NSUUID *)arg1;
+- (void)isRangingEnabledReply:(void (^)(NSError *, BOOL))arg1;
+- (void)enableRanging:(BOOL)arg1 reply:(void (^)(NSError *))arg2;
+- (void)sendTestRequest:(NSDictionary *)arg1;
 - (void)sendDatatoLePipe:(NSData *)arg1 forPeer:(NSUUID *)arg2;
 - (void)unregisterEndpoint:(NSString *)arg1;
-- (void)registerEndpoint:(NSString *)arg1;
+- (void)registerEndpoint:(NSString *)arg1 requireAck:(BOOL)arg2 requireEncryption:(BOOL)arg3;
 - (void)enableBubbleTestMode;
 - (void)dumpDaemonState;
 - (void)registerForAnyScanResults:(BOOL)arg1;

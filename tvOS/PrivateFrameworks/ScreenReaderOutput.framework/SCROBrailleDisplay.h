@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <ScreenReaderOutput/BRLTBrailleStateManagerDelegate-Protocol.h>
 #import <ScreenReaderOutput/SCROBrailleDisplayCommandDispatcherDelegate-Protocol.h>
 #import <ScreenReaderOutput/SCROBrailleDriverDelegate-Protocol.h>
 
 @class NSAttributedString, NSLock, NSMutableArray, NSString, SCROBrailleDisplayInput, SCROBrailleDisplayStatus, SCROBrailleEventDispatcher, SCROBrailleLine;
 @protocol SCROBrailleDisplayCommandDispatcherProtocol, SCROBrailleDisplayDelegate, SCROBrailleDriverProtocol, SCROIOElementProtocol;
 
-@interface SCROBrailleDisplay : NSObject <SCROBrailleDisplayCommandDispatcherDelegate, SCROBrailleDriverDelegate>
+@interface SCROBrailleDisplay : NSObject <SCROBrailleDisplayCommandDispatcherDelegate, SCROBrailleDriverDelegate, BRLTBrailleStateManagerDelegate>
 {
     NSLock *_contentLock;
     id <SCROBrailleDisplayDelegate> _delegate;
@@ -50,10 +51,12 @@
     _Bool _delegateWantsDisplayCallback;
     unsigned int _persistentKeyModifiers;
     CDUnknownBlockType _eventHandled;
+    double _brailleKeyDebounceTimeout;
 }
 
 + (id)displayWithIOElement:(id)arg1 driverIdentifier:(id)arg2 delegate:(id)arg3;
 + (_Bool)brailleDriverClassIsValid:(Class)arg1;
+@property(nonatomic) double brailleKeyDebounceTimeout; // @synthesize brailleKeyDebounceTimeout=_brailleKeyDebounceTimeout;
 @property(copy, nonatomic) CDUnknownBlockType eventHandled; // @synthesize eventHandled=_eventHandled;
 @property(nonatomic) unsigned int persistentKeyModifiers; // @synthesize persistentKeyModifiers=_persistentKeyModifiers;
 @property(nonatomic) _Bool outputShowEightDot; // @synthesize outputShowEightDot=_outputShowEightDot;
@@ -63,6 +66,12 @@
 @property(nonatomic) _Bool automaticBrailleTranslationEnabled; // @synthesize automaticBrailleTranslationEnabled=_automaticBrailleTranslationEnabled;
 @property(nonatomic) _Bool inputAllowed; // @synthesize inputAllowed=_inputAllowed;
 - (void).cxx_destruct;
+- (void)brailleDisplayDeletedCharacter:(id)arg1;
+- (void)brailleDisplayInsertedCharacter:(id)arg1;
+- (void)didInsertScriptString:(id)arg1;
+- (void)scriptSelectionDidChange:(struct _NSRange)arg1;
+- (void)replaceScriptStringRange:(struct _NSRange)arg1 withScriptString:(id)arg2 cursorLocation:(unsigned long long)arg3;
+- (void)brailleDisplayStringDidChange:(id)arg1 brailleSelection:(struct _NSRange)arg2;
 - (void)_delayedSleepNotification:(id)arg1;
 - (void)_sleepNotification:(id)arg1;
 - (void)_delayedConfigurationChangeNotification;
@@ -80,7 +89,7 @@
 - (void)handleCommandToggleContractedBrailleEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandTranslateForDispatcher:(id)arg1;
 - (void)handleCommandReturnBrailleEvent:(id)arg1 forDispatcher:(id)arg2;
-- (void)handleCommandEscapeForDispatcher:(id)arg1;
+- (void)handleCommandEscapeKeyEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandForwardDeleteKeyEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandDeleteKeyEvent:(id)arg1 forDispatcher:(id)arg2;
 - (void)handleCommandRouterKeyEvent:(id)arg1 forDispatcher:(id)arg2;
@@ -103,14 +112,15 @@
 - (void)_unpauseInput;
 - (void)_pauseInput;
 - (_Bool)_inputPaused;
-- (id)_translatedBrailleStringAndKeyEvents:(out id *)arg1 replacementRange:(out struct _NSRange *)arg2 cursor:(out unsigned long long *)arg3;
-- (void)_translateBrailleStringAndPostEventAppendingKeys:(id)arg1;
 - (void)_translateBrailleStringAndPostEvent;
 - (void)_startEditingText;
 @property(readonly, nonatomic) SCROBrailleLine *testingBrailleLine;
 - (void)insertTypingString:(id)arg1;
 - (_Bool)_currentChordShouldExecuteEvenDuringTyping;
-- (void)_keyboardHelpHandler:(id)arg1;
+- (void)_setBrailleKeyDebounceTimeoutHandler:(double)arg1;
+- (void)_translateBrailleToClipboard;
+- (void)_textSearchModeHandler:(id)arg1;
+- (void)_singleLetterInputHandler:(id)arg1;
 - (void)_configurationChangeHandler;
 - (void)_updateDisplay;
 - (void)_setBatchUpdates:(id)arg1;
@@ -129,7 +139,9 @@
 - (void)_unloadHandler;
 - (void)handleEvent:(id)arg1;
 - (long long)tokenForRouterIndex:(long long)arg1 location:(long long *)arg2 appToken:(id *)arg3;
-- (void)setKeyboardHelpIsOn:(_Bool)arg1;
+- (void)translateBrailleToClipboard;
+- (void)setTextSearchModeOn:(_Bool)arg1;
+- (void)setSingleLetterInputIsOn:(_Bool)arg1;
 - (void)setPrepareToMemorizeNextKey:(_Bool)arg1 immediate:(_Bool)arg2;
 - (void)panRight;
 - (void)panLeft;

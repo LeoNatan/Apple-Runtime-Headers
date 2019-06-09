@@ -11,7 +11,15 @@
 
 @interface MMModalDialog : NSObject
 {
+    BOOL _isVisible;
+    BOOL _isModal;
+    CDUnknownBlockType _completionHandler;
+    CDUnknownBlockType _helpHandler;
     id <MMModalDialogDelegate> _delegate;
+    NSWindow *_parentWindow;
+    NSString *defaultButtonKeyEquivalent;
+    NSString *alternateButtonKeyEquivalent;
+    NSString *otherButtonKeyEquivalent;
     NSString *_title;
     NSString *_message;
     NSString *_defaultButtonTitle;
@@ -22,33 +30,26 @@
     NSImage *_icon;
     NSImage *_badge;
     MMAlert *_alert;
-    BOOL _isVisible;
-    BOOL _isModal;
-    CDUnknownBlockType _completionHandler;
-    CDUnknownBlockType _helpHandler;
-    NSWindow *_parentWindow;
-    NSString *defaultButtonKeyEquivalent;
-    NSString *alternateButtonKeyEquivalent;
-    NSString *otherButtonKeyEquivalent;
 }
 
 @property BOOL isVisible; // @synthesize isVisible=_isVisible;
-@property MMAlert *alert; // @synthesize alert=_alert;
+@property(retain) MMAlert *alert; // @synthesize alert=_alert;
 @property NSImage *badge; // @synthesize badge=_badge;
 @property NSImage *icon; // @synthesize icon=_icon;
-@property NSString *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
-@property NSString *iconLabel; // @synthesize iconLabel=_iconLabel;
-@property NSString *otherButtonTitle; // @synthesize otherButtonTitle=_otherButtonTitle;
-@property NSString *alternateButtonTitle; // @synthesize alternateButtonTitle=_alternateButtonTitle;
-@property NSString *defaultButtonTitle; // @synthesize defaultButtonTitle=_defaultButtonTitle;
-@property NSString *message; // @synthesize message=_message;
-@property NSString *title; // @synthesize title=_title;
-@property NSString *otherButtonKeyEquivalent; // @synthesize otherButtonKeyEquivalent;
-@property NSString *alternateButtonKeyEquivalent; // @synthesize alternateButtonKeyEquivalent;
-@property NSString *defaultButtonKeyEquivalent; // @synthesize defaultButtonKeyEquivalent;
+@property(copy) NSString *badgeLabel; // @synthesize badgeLabel=_badgeLabel;
+@property(copy) NSString *iconLabel; // @synthesize iconLabel=_iconLabel;
+@property(copy) NSString *otherButtonTitle; // @synthesize otherButtonTitle=_otherButtonTitle;
+@property(copy) NSString *alternateButtonTitle; // @synthesize alternateButtonTitle=_alternateButtonTitle;
+@property(copy) NSString *defaultButtonTitle; // @synthesize defaultButtonTitle=_defaultButtonTitle;
+@property(copy) NSString *message; // @synthesize message=_message;
+@property(copy) NSString *title; // @synthesize title=_title;
+@property(copy) NSString *otherButtonKeyEquivalent; // @synthesize otherButtonKeyEquivalent;
+@property(copy) NSString *alternateButtonKeyEquivalent; // @synthesize alternateButtonKeyEquivalent;
+@property(copy) NSString *defaultButtonKeyEquivalent; // @synthesize defaultButtonKeyEquivalent;
 @property BOOL isModal; // @synthesize isModal=_isModal;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(nonatomic) id <MMModalDialogDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)endModalDialog:(id)arg1;
 @property(readonly) NSButton *otherButton;
 @property(readonly) NSButton *alternateButton;
@@ -57,7 +58,6 @@
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)beginModalDialogWithParentWindow:(id)arg1 shouldNest:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)beginModalDialogWithParentWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 defaultButtonTitle:(id)arg3 alternateButtonTitle:(id)arg4 otherButtonTitle:(id)arg5 icon:(id)arg6 iconLabel:(id)arg7 badge:(id)arg8 badgeLabel:(id)arg9 helpHandler:(CDUnknownBlockType)arg10;
 
 @end

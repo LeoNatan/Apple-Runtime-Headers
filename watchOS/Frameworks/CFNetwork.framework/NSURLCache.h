@@ -13,7 +13,6 @@
     NSURLCacheInternal *_internal;
 }
 
-+ (void)_setVaryHeaderSupport;
 + (void)setSharedURLCache:(id)arg1;
 + (id)sharedURLCache;
 - (_Bool)_isVaryHeaderSupportEnabled;
@@ -35,6 +34,7 @@
 - (void)flushWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 relativePath:(id)arg3;
 - (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
+- (id)_initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 directoryURL:(id)arg3;
 -     // Error parsing type: @12@0:4^{_CFURLCache={__CFRuntimeBase=IAI}{shared_ptr<__CFURLCache>=^{__CFURLCache}^{__shared_weak_count}}}8, name: _initWithExistingCFURLCache:
 -     // Error parsing type: @12@0:4^{_CFURLCache={__CFRuntimeBase=IAI}{shared_ptr<__CFURLCache>=^{__CFURLCache}^{__shared_weak_count}}}8, name: initWithExistingSharedCFURLCache:
 - (id)_initVaryHeaderEnabledWithPath:(id)arg1;
@@ -48,8 +48,8 @@
 - (void)_nscfBridgeURLCacheSetDiskCapacity:(long)arg1;
 - (void)_nscfBridgeURLCacheSetMemoryCapacity:(long)arg1;
 - (long)_nscfBridgeURLCacheDiskCapacity;
--     // Error parsing type: v16@0:4^{_CFCachedURLResponse={__CFRuntimeBase=IAI}^{__CFCachedURLResponse}}8^{_CFURLRequest=}12, name: _nscfBridgeURLCacheStoreCachedResponse:forRequest:
--     // Error parsing type: ^{_CFCachedURLResponse={__CFRuntimeBase=IAI}^{__CFCachedURLResponse}}12@0:4^{_CFURLRequest=}8, name: _nscfBridgeURLCacheCopyResponseForRequest:
+-     // Error parsing type: v16@0:4^{_CFCachedURLResponse={__CFRuntimeBase=IAI}^{__CFCachedURLResponse}}8@12, name: _nscfBridgeURLCacheStoreCachedResponse:forRequest:
+-     // Error parsing type: ^{_CFCachedURLResponse={__CFRuntimeBase=IAI}^{__CFCachedURLResponse}}12@0:4@8, name: _nscfBridgeURLCacheCopyResponseForRequest:
 - (void)removeCachedResponseForDataTask:(id)arg1;
 - (void)getCachedResponseForDataTask:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)storeCachedResponse:(id)arg1 forDataTask:(id)arg2;

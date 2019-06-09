@@ -6,10 +6,10 @@
 
 #import <UserNotificationsUIKit/PLExpandedPlatterPresentationControllerDelegate-Protocol.h>
 
-@class UIPresentationController, UIView;
-@protocol PLExpandedPlatterPresentationController;
+@class PLExpandedPlatterPresentationController, UIView;
 
 @protocol NCLongLookDefaultPresentationControllerDelegate <PLExpandedPlatterPresentationControllerDelegate>
-- (struct CGRect)expandedPlatterPresentationController:(UIPresentationController<PLExpandedPlatterPresentationController> *)arg1 frameForTransitionViewInPresentationSuperview:(UIView *)arg2;
+- (_Bool)expandedPlatterPresentationControllerShouldProvideBackground:(PLExpandedPlatterPresentationController *)arg1;
+- (struct CGRect)expandedPlatterPresentationController:(PLExpandedPlatterPresentationController *)arg1 frameForTransitionViewInPresentationSuperview:(UIView *)arg2;
 @end
 

@@ -14,7 +14,8 @@ __attribute__((visibility("hidden")))
     EXReadState *mExcelState;
 }
 
-- (id)excelState;
+@property(readonly) __weak EXReadState *excelState; // @synthesize excelState=mExcelState;
+- (void).cxx_destruct;
 - (id)initWithExcelState:(id)arg1;
 
 @end

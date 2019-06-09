@@ -10,7 +10,7 @@
 
 @interface SGNameInversionPredictor : NSObject
 {
-    struct __CFDictionary *_tradToTrie;
+    NSDictionary *_tradToTrie;
     NSDictionary *_tradToInversionRate;
     double _confidenceThreshold;
 }
@@ -21,10 +21,7 @@
 - (BOOL)shouldInvertFirst:(id)arg1 last:(id)arg2 underNamingTradition:(id)arg3;
 - (double)inversionRateForNamingTradition:(id)arg1;
 - (double)firstNameLikelihood:(id)arg1 underNamingTradition:(id)arg2 default:(double)arg3;
-- (struct _CFBurstTrie *)getTrieForNamingTradition:(id)arg1;
-- (float)decodeTriePayload:(unsigned int)arg1;
 - (BOOL)shouldInvertFirst:(id)arg1 last:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

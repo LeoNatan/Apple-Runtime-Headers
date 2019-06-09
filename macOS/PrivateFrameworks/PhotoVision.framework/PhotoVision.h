@@ -6,30 +6,44 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL, PVCVMLAnalyzer, PVClusterer, PVContext, PVDataAccessor, PVEventManager, PVFaceMerger;
-@protocol PVCVMLIntegrating, PVNotificationListener, PVPersistenceDelegate;
+@class NSURL, PVClusterer, PVContext, PVDataAccessor, PVEventManager, PVFaceMerger, PVVisionAnalyzer;
+@protocol PVNotificationListener, PVPersistenceDelegate, PVVisionIntegrating;
 
 @interface PhotoVision : NSObject
 {
-    id <PVCVMLIntegrating> _cvmlIntegration;
+    id <PVVisionIntegrating> _visionIntegration;
     id <PVNotificationListener> _notificationListener;
     id <PVPersistenceDelegate> _persistenceDelegate;
     PVContext *_context;
-    PVCVMLAnalyzer *_analyzer;
+    PVVisionAnalyzer *_analyzer;
     PVFaceMerger *_faceMerger;
     PVDataAccessor *_dataAccessor;
     PVEventManager *_eventManager;
     PVClusterer *_clusterer;
     NSURL *_cacheDirUrl;
+    unsigned int _faceAlgorithmUmbrellaVersion;
+    unsigned int _sceneAlgorithmUmbrellaVersion;
 }
 
-+ (unsigned int)activeFaceAlgorithmVersion;
++ (BOOL)isAppleInternal;
++ (void)setAlgorithmRevisionForRequest:(id)arg1 algorithmUmbrellaVersion:(unsigned int)arg2 algorithmCollectionType:(unsigned long long)arg3;
++ (unsigned long long)faceprintAnalysisOptionsForFaceAlgorithmUmbrellaVersion:(unsigned int)arg1;
++ (unsigned long long)defaultFaceAnalysisOptionsForFaceAlgorithmUmbrellaVersion:(unsigned int)arg1;
++ (id)supportedSceneAlgorithmUmbrellaVersions;
++ (unsigned int)maximumSceneAlgorithmUmbrellaVersion;
++ (unsigned int)minimumSceneAlgorithmUmbrellaVersion;
++ (id)supportedFaceAlgorithmUmbrellaVersions;
++ (unsigned int)maximumFaceAlgorithmUmbrellaVersion;
++ (unsigned int)minimumFaceAlgorithmUmbrellaVersion;
++ (int)_intValueForKey:(id)arg1 defaultValue:(int)arg2;
+@property(readonly, nonatomic) unsigned int sceneAlgorithmUmbrellaVersion; // @synthesize sceneAlgorithmUmbrellaVersion=_sceneAlgorithmUmbrellaVersion;
+@property(readonly, nonatomic) unsigned int faceAlgorithmUmbrellaVersion; // @synthesize faceAlgorithmUmbrellaVersion=_faceAlgorithmUmbrellaVersion;
 - (void).cxx_destruct;
 - (id)suggestedPersonLocalIdentifierForPersonLocalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)suggestedPersonLocalIdentifierForFaceLocalIdentifier:(id)arg1 error:(id *)arg2;
 - (id)suggestionsForFaceClusterSequenceNumbers:(id)arg1 error:(id *)arg2;
-- (BOOL)cancelAllSuggestionRequests;
-- (BOOL)cancelSuggestionRequest:(id)arg1;
+- (void)cancelAllSuggestionRequests;
+- (void)cancelSuggestionRequest:(id)arg1;
 - (id)requestSuggestionsForFaceClusterSequenceNumbers:(id)arg1 withClusteringFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (id)clusteringStatus;
 - (void)cancelFaceClustering;
@@ -42,7 +56,7 @@
 - (id)analyzeImage:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (void)stop;
 - (void)startAndSyncClusterCacheWithLibrary:(BOOL)arg1 reply:(CDUnknownBlockType)arg2;
-- (id)initWithPersistenceDelegate:(id)arg1 notificationListener:(id)arg2 options:(id)arg3;
+- (id)initWithPersistenceDelegate:(id)arg1 visionIntegration:(id)arg2 workingDirectoryURL:(id)arg3 faceAlgorithmUmbrellaVersion:(unsigned int)arg4 sceneAlgorithmUmbrellaVersion:(unsigned int)arg5 notificationListener:(id)arg6;
 - (BOOL)buildPersonsWithCanceler:(id)arg1 keyFaceUpdateBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (id)context;
 - (void)resetClusterer;

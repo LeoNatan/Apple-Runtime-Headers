@@ -31,7 +31,7 @@
 @property(retain, nonatomic) NSDictionary *membershipsByChannelID; // @synthesize membershipsByChannelID=_membershipsByChannelID;
 - (void).cxx_destruct;
 - (void)_fetchPrivateChannelMembershipsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)activityObservingApplicationDidBecomeActive;
+- (void)activityObservingApplicationWindowDidBecomeForeground;
 - (void)changedMembershipsFrom:(id)arg1 toMemberships:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

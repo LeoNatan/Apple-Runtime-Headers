@@ -6,11 +6,17 @@
 
 #import <NotesShared/ICAttachmentInlineDrawingModel.h>
 
-@class NSObject, PKDrawing;
+@class NSImage, NSObject, PKDrawing;
 @protocol OS_dispatch_queue;
 
 @interface ICAttachmentInlineDrawingModel (UI)
++ (void)generatePreviewsForAttachment:(id)arg1 fromDrawing:(id)arg2;
++ (struct NSImage *)generateImageForAttachment:(id)arg1 fromDrawing:(id)arg2 fullResolution:(BOOL)arg3;
++ (struct NSImage *)previewImageFromDrawing:(id)arg1 fullImage:(struct CGImage *)arg2 scale:(double)arg3;
++ (unsigned short)drawingPreviewVersion;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
 - (void)titleQuery:(id)arg1 didUpdateWithItem:(id)arg2;
+- (id)titleQueryDrawingDispatchQueue:(id)arg1;
 - (void)setTitleQuery:(id)arg1;
 - (id)titleQuery;
 @property(nonatomic, getter=isTitleQueryEnabled) BOOL titleQueryEnabled;
@@ -19,14 +25,18 @@
 - (void)setHandwritingRecognitionDrawing:(id)arg1;
 @property(readonly, nonatomic) PKDrawing *handwritingRecognitionDrawing;
 @property(nonatomic, getter=isHandwritingRecognitionEnabled) BOOL handwritingRecognitionEnabled;
+- (void)updateAfterLoadWithSubAttachmentIdentifierMap:(id)arg1;
 - (id)mergeableDataForCopying;
 - (id)activityItems;
 - (id)activityItem;
-- (struct NSImage *)imageForActivityItem;
+@property(readonly, nonatomic) NSImage *imageForActivityItem;
 - (id)newDrawingFromMergeableData;
 - (BOOL)actuallyMergeWithDrawing:(id)arg1;
 - (BOOL)mergeWithMergeableData:(id)arg1;
 - (BOOL)mergeWithDrawing:(id)arg1;
 - (void)attachmentModelDealloc;
+- (BOOL)generatePreviewsInOperation:(id)arg1;
+- (BOOL)needToGeneratePreviews;
+- (BOOL)generatePreviewsDuringCloudActivity;
 @end
 

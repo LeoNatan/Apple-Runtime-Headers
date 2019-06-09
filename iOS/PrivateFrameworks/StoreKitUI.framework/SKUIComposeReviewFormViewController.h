@@ -11,6 +11,7 @@
 @class NSString, SKUIComposeReviewView, SKUIReviewMetadata;
 @protocol SKUIComposeReviewFormDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIComposeReviewFormViewController : SUViewController <SKUIComposeReviewViewDelegate>
 {
     SKUIComposeReviewView *_composeView;

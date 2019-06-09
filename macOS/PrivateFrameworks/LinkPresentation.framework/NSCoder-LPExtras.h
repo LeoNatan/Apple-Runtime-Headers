@@ -7,10 +7,12 @@
 #import <Foundation/NSCoder.h>
 
 @interface NSCoder (LPExtras)
+- (void)_lp_encodeURLIfNotNilOrLocalFile:(id)arg1 forKey:(id)arg2;
 - (void)_lp_encodeArrayIfNotEmpty:(id)arg1 forKey:(id)arg2;
 - (void)_lp_encodeObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 - (id)_lp_strictlyDecodeDictionaryOfObjectsWithKeysOfClass:(Class)arg1 andObjectsOfClass:(Class)arg2 forKey:(id)arg3;
 - (id)_lp_strictlyDecodeArrayOfObjectsOfClass:(Class)arg1 forKey:(id)arg2;
+- (id)_lp_strictlyDecodeTopLevelObjectOfClass:(Class)arg1 forKey:(id)arg2 error:(id *)arg3;
 - (id)_lp_strictlyDecodeObjectOfClass:(Class)arg1 forKey:(id)arg2;
 @end
 

@@ -67,6 +67,7 @@
 @property(readonly) NSMutableDictionary *mutableAttributes; // @synthesize mutableAttributes=_mutableAttributes;
 - (id)initWithAttributes:(id)arg1;
 - (id)initWithItemContentType:(id)arg1;
+- (id)initWithMutableDictionary:(id)arg1;
 - (id)initWithAttributeSet:(id)arg1;
 - (id)init;
 - (id)providerInPlaceFileTypeIdentifiers;
@@ -543,6 +544,7 @@
 @property(copy) NSArray *fileProviderUserInfoValues;
 @property(copy) NSArray *fileProviderUserInfoKeys;
 @property(copy) NSString *fileProviderDomaindentifier;
+@property(copy) NSString *fileProviderDomainIdentifier;
 @property(copy) NSString *lastEditorIdentifier;
 @property(copy) NSString *lastEditorName;
 @property(copy) NSString *ownerIdentifier;
@@ -554,8 +556,11 @@
 @property(retain) NSNumber *backgroundRunnable;
 @property(copy) NSString *suggestedInvocationPhrase;
 @property(copy) NSData *intentData;
+- (void)setTopic:(id)arg1;
+- (id)topic;
 @property(retain) NSNumber *isPlaceholder;
 @property(copy) NSDate *lastApplicationLaunchedDate;
+@property(retain) NSNumber *isZombie;
 - (id)containerOrder;
 - (void)setContainerOrder:(id)arg1;
 - (id)containerIdentifier;

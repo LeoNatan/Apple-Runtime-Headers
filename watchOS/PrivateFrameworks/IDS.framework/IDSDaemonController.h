@@ -8,13 +8,14 @@
 
 #import <IDS/IDSDaemonProtocol-Protocol.h>
 
-@class IDSDaemonListener, IMLocalObject, IMRemoteObject, NSMutableDictionary, NSMutableSet, NSProtocolChecker, NSSet, NSString;
+@class IDSDaemonControllerForwarder, IDSDaemonListener, IMLocalObject, IMRemoteObject, NSMutableDictionary, NSMutableSet, NSProtocolChecker, NSSet, NSString;
 @protocol IDSDaemonProtocol, OS_dispatch_group, OS_dispatch_queue;
 
 @interface IDSDaemonController : NSObject <IDSDaemonProtocol>
 {
     id _delegate;
     IMRemoteObject<IDSDaemonProtocol> *_remoteObject;
+    IDSDaemonControllerForwarder *_forwarder;
     IMLocalObject *_localObject;
     IDSDaemonListener *_daemonListener;
     NSProtocolChecker *_protocol;
@@ -46,6 +47,7 @@
 + (void)_blockUntilSendQueueIsEmpty;
 + (_Bool)_applicationWillTerminate;
 + (id)sharedInstance;
+@property(retain, nonatomic) IMRemoteObject<IDSDaemonProtocol> *remoteObject; // @synthesize remoteObject=_remoteObject;
 @property(setter=_setAutoReconnect:) _Bool _autoReconnect; // @synthesize _autoReconnect;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_remoteMessageQueue; // @synthesize _remoteMessageQueue;
@@ -55,8 +57,8 @@
 - (void)systemApplicationWillEnterForeground;
 - (void)systemApplicationDidEnterBackground;
 - (void)systemApplicationDidSuspend;
-- (void)forwardInvocation:(id)arg1;
-- (id)methodSignatureForSelector:(SEL)arg1;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)forwarderWithCompletion:(CDUnknownBlockType)arg1;
 - (void)sendXPCObject:(id)arg1 objectContext:(id)arg2;
 - (void)remoteObjectDiedNotification:(id)arg1;
 - (void)localObjectDiedNotification:(id)arg1;
@@ -82,7 +84,7 @@
 - (_Bool)hasListenerForID:(id)arg1;
 - (_Bool)addListenerID:(id)arg1 services:(id)arg2;
 - (_Bool)addListenerID:(id)arg1 services:(id)arg2 commands:(id)arg3;
-- (void)addedDelegateForService:(id)arg1;
+- (void)addedDelegateForService:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_listenerSetUpdated;
 @property(nonatomic) int curXPCMessagePriority; // @synthesize curXPCMessagePriority=_curXPCMessagePriority;
 - (_Bool)_setCapabilities:(unsigned int)arg1;

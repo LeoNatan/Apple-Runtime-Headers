@@ -6,33 +6,48 @@
 
 #import <objc/NSObject.h>
 
-#import <SafariServices/SFContentBlockerManagerObserver-Protocol.h>
+#import <SafariServices/_SFRequestDesktopSitePerSitePreferenceObserver-Protocol.h>
 
-@class NSMutableDictionary, NSString, WKWebView, _SFInjectedJavaScriptController;
+@class NSDictionary, NSMutableDictionary, NSMutableSet, NSNumber, NSString, WKWebView, _SFInjectedJavaScriptController, _SFRequestDesktopSitePreferenceManager;
 
-@interface _SFReloadOptionsController : NSObject <SFContentBlockerManagerObserver>
+@interface _SFReloadOptionsController : NSObject <_SFRequestDesktopSitePerSitePreferenceObserver>
 {
+    _SFRequestDesktopSitePreferenceManager *_perSitePreferenceManager;
+    NSDictionary *_perSitePreferenceValues;
+    NSNumber *_requestDesktopSiteDefaultValue;
     NSMutableDictionary *_domainToUserAgentPolicyMap;
+    NSMutableSet *_domainsOverridenAsMobile;
     WKWebView *_webView;
-    _Bool _hasEnabledContentBlockers;
+    _Bool _tryUsingMobileIfPossible;
     _SFInjectedJavaScriptController *_activityJSController;
+    long long _effectiveContentMode;
 }
 
-@property(nonatomic) _Bool hasEnabledContentBlockers; // @synthesize hasEnabledContentBlockers=_hasEnabledContentBlockers;
+@property(nonatomic) long long effectiveContentMode; // @synthesize effectiveContentMode=_effectiveContentMode;
+@property(nonatomic) _Bool tryUsingMobileIfPossible; // @synthesize tryUsingMobileIfPossible=_tryUsingMobileIfPossible;
 @property(readonly, nonatomic) _SFInjectedJavaScriptController *activityJSController; // @synthesize activityJSController=_activityJSController;
 - (void).cxx_destruct;
-- (void)contentBlockerManagerExtensionListDidChange:(id)arg1;
-- (void)_checkForContentBlockers;
+- (void)logCompletedPageloadToDifferentialPrivacy:(id)arg1;
 - (void)dealloc;
 - (void)invalidate;
+- (void)didMarkURLAsNeedingStandardUserAgent:(id)arg1;
 - (void)didMarkURLAsNeedingDesktopUserAgent:(id)arg1;
+- (void)requestStandardSite;
 - (void)requestDesktopSiteWithURL:(id)arg1;
 - (void)requestDesktopSite;
+- (id)customNavigatorPlatformForSetting:(long long)arg1;
+- (id)customSiteCompatibilityScriptForMainFrameURL:(id)arg1;
+- (id)customJavaScriptUserAgentForSetting:(long long)arg1 withMainFrameURL:(id)arg2;
 - (id)customUserAgentForSetting:(long long)arg1;
 - (void)customUserAgentSettingForMainFrameURL:(id)arg1 withTimeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_overrideSettingIfNeeded:(long long)arg1 source:(unsigned long long)arg2 domain:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)_updateSettingSource:(unsigned long long)arg1 domain:(id)arg2;
 @property(readonly, nonatomic) _Bool loadedUsingDesktopUserAgent;
+- (void)_loadPerSitePreferences;
+- (void)didUpdateRequestDesktopSitePerSitePreference:(id)arg1;
+- (void)didUpdateRequestDesktopSiteDefaultValue:(long long)arg1;
 - (id)init;
-- (id)initWithWebView:(id)arg1 activityJSController:(id)arg2;
+- (id)initWithWebView:(id)arg1 activityJSController:(id)arg2 perSitePreferenceManager:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

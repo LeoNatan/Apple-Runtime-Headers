@@ -8,20 +8,24 @@
 
 #import <AccessibilityFoundation/AXFScreenSource-Protocol.h>
 
-@class NSArray, NSString;
-@protocol AXFScreen;
+@class AXFScreen, NSArray, NSString;
+@protocol AXFScreenSourceDelegate;
 
 @interface AXFScreenSourceTest : NSObject <AXFScreenSource>
 {
+    id <AXFScreenSourceDelegate> _delegate;
     NSArray *_screens;
-    id <AXFScreen> _mainScreen;
+    AXFScreen *_mainScreen;
     struct CGRect _totalScreenBounds;
 }
 
-@property(retain) id <AXFScreen> mainScreen; // @synthesize mainScreen=_mainScreen;
-@property struct CGRect totalScreenBounds; // @synthesize totalScreenBounds=_totalScreenBounds;
+@property(nonatomic) struct CGRect totalScreenBounds; // @synthesize totalScreenBounds=_totalScreenBounds;
+@property(retain, nonatomic) AXFScreen *mainScreen; // @synthesize mainScreen=_mainScreen;
+@property(nonatomic) __weak id <AXFScreenSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-@property(retain) NSArray *screens; // @synthesize screens=_screens;
+- (void)stop;
+- (void)start;
+@property(retain, nonatomic) NSArray *screens; // @synthesize screens=_screens;
 - (id)init;
 
 // Remaining properties

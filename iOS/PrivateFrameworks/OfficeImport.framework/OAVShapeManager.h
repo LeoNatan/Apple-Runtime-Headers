@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     OAVReadState *mOAVState;
 }
 
+- (void).cxx_destruct;
 - (struct OAVTextBoxInsets)textInsets;
 - (_Bool)fitShapeToText;
 - (id)textRotation;
@@ -76,7 +77,6 @@ __attribute__((visibility("hidden")))
 - (id)packagePart;
 - (struct _xmlNode *)shape;
 - (unsigned short)type;
-- (void)dealloc;
 - (id)initWithShape:(struct _xmlNode *)arg1 type:(unsigned short)arg2 packagePart:(id)arg3 state:(id)arg4;
 
 @end

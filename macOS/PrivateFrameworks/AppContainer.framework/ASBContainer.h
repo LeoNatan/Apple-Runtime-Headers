@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class ASBContainerACL, NSData, NSDictionary, NSMutableDictionary, NSString, NSURL;
+@class ASBContainerACL, ASBContainerSchema, NSData, NSDictionary, NSMutableDictionary, NSString, NSURL;
 
 @interface ASBContainer : NSObject
 {
     NSString *_homeDirPath;
+    NSString *_personaVolume;
     NSString *_containerPath;
     NSString *_metadataPath;
     NSString *_dataPath;
     NSMutableDictionary *_metadata;
     ASBContainerACL *_acl;
+    ASBContainerSchema *_schema;
 }
 
 + (id)containerForApplicationAtURL:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
@@ -27,12 +29,16 @@
 + (id)containerURLForApplicationAtURL:(id)arg1 error:(id *)arg2;
 + (id)containerURLForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 error:(id *)arg3;
 + (id)containerURLForAppSigningId:(id)arg1 andHomeDirectory:(id)arg2;
++ (id)containerURLForAppSigningId:(id)arg1 inBaseDirectory:(id)arg2;
 + (id)containerURLForAppSigningId:(id)arg1;
 + (id)containerIdentifierForAppSigningId:(id)arg1;
-+ (unsigned long long)currentVersion;
++ (id)currentPersonaOrHomeDirectoryOverride:(id)arg1;
++ (id)currentPersonaOrHomeDirectory;
++ (id)currentPersonaVolume;
 @property(readonly) NSString *dataPath; // @synthesize dataPath=_dataPath;
 @property(readonly) NSString *metadataPath; // @synthesize metadataPath=_metadataPath;
 @property(readonly) NSString *containerPath; // @synthesize containerPath=_containerPath;
+@property(readonly) NSString *personaVolume; // @synthesize personaVolume=_personaVolume;
 @property(readonly) NSString *homeDirPath; // @synthesize homeDirPath=_homeDirPath;
 - (void).cxx_destruct;
 - (BOOL)setError:(id *)arg1 message:(id)arg2 forPath:(id)arg3 withDomain:(id)arg4 code:(long long)arg5;

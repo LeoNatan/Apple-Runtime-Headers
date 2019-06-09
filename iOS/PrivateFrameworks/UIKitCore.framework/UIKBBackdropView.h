@@ -16,8 +16,8 @@
 @property(retain, nonatomic) UIImage *imageForCorners; // @synthesize imageForCorners=_imageForCorners;
 - (void)_setRenderConfig:(id)arg1;
 - (int)textEffectsVisibilityLevel;
-- (void)updateFrame:(struct CGRect)arg1 withCorners:(int)arg2;
-- (id)_generateCornerContentsImage:(int)arg1;
+- (void)updateFrame:(struct CGRect)arg1 withCorners:(unsigned long long)arg2;
+- (id)_generateCornerContentsImage:(unsigned long long)arg1;
 - (void)transitionToStyle:(long long)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (_Bool)_applyCornerMaskToSelf;

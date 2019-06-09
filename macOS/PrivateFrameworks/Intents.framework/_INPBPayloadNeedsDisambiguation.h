@@ -18,6 +18,7 @@
     NSArray *_disambiguationItems;
 }
 
++ (BOOL)supportsSecureCoding;
 + (Class)disambiguationItemsType;
 @property(copy, nonatomic) NSArray *disambiguationItems; // @synthesize disambiguationItems=_disambiguationItems;
 - (void).cxx_destruct;
@@ -25,6 +26,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)disambiguationItemsAtIndex:(unsigned long long)arg1;

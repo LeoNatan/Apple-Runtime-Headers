@@ -7,12 +7,11 @@
 #import <UIKit/UITableViewController.h>
 
 #import <VoiceShortcutsUI/VCUIDebugWorkflowViewControllerDelegate-Protocol.h>
-#import <VoiceShortcutsUI/VCUIEditVoiceShortcutViewControllerDelegate-Protocol.h>
-#import <VoiceShortcutsUI/VCUIGalleryViewControllerDelegate-Protocol.h>
+#import <VoiceShortcutsUI/VCUIShortcutViewControllerDelegate-Protocol.h>
 
 @class NSArray, NSString, UISearchController, VCUIVoiceShortcutCell, VCVoiceShortcutClient;
 
-@interface VCUIActiveVoiceShortcutsViewController : UITableViewController <VCUIGalleryViewControllerDelegate, VCUIEditVoiceShortcutViewControllerDelegate, VCUIDebugWorkflowViewControllerDelegate>
+@interface VCUIActiveVoiceShortcutsViewController : UITableViewController <VCUIShortcutViewControllerDelegate, VCUIDebugWorkflowViewControllerDelegate>
 {
     VCVoiceShortcutClient *_voiceShortcutClient;
     UISearchController *_searchController;
@@ -26,15 +25,13 @@
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(readonly, nonatomic) VCVoiceShortcutClient *voiceShortcutClient; // @synthesize voiceShortcutClient=_voiceShortcutClient;
 - (void).cxx_destruct;
-- (void)galleryViewControllerDidFinish:(id)arg1;
-- (void)galleryViewControllerDidCancel:(id)arg1;
 - (void)showHandleIntentResponse:(id)arg1;
 - (void)showConfirmationWithTitle:(id)arg1 message:(id)arg2 confirmationHandler:(CDUnknownBlockType)arg3;
 - (void)launchExtensionToRunVoiceShortcut:(id)arg1;
 - (void)debugWorkflowViewControllerDidFinish:(id)arg1;
-- (void)editVoiceShortcutViewController:(id)arg1 didDeleteVoiceShortcut:(id)arg2;
-- (void)editVoiceShortcutViewController:(id)arg1 didSaveWithUpdatedVoiceShortcut:(id)arg2;
-- (void)editVoiceShortcutViewControllerDidCancel:(id)arg1;
+- (void)shortcutViewController:(id)arg1 didDeleteShortcut:(id)arg2;
+- (void)shortcutViewController:(id)arg1 didSaveShortcut:(id)arg2;
+- (void)shortcutViewControllerDidCancel:(id)arg1;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
@@ -42,7 +39,6 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)didTapCancel;
-- (void)createNewShortcut;
 - (void)viewDidLoad;
 - (void)reloadVoiceShortcuts;
 - (id)initWithVoiceShortcutClient:(id)arg1;

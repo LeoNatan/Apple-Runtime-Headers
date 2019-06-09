@@ -19,7 +19,6 @@
 + (float)_imageScaleForTemplate:(id)arg1 forDevice:(id)arg2;
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 @property(nonatomic) float maxDynamicFontSize; // @synthesize maxDynamicFontSize=_maxDynamicFontSize;
 @property(retain, nonatomic) UIView<NTKComplicationImageView> *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) NTKColoringLabel *label; // @synthesize label=_label;

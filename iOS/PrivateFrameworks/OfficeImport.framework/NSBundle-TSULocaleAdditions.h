@@ -7,6 +7,7 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (TSULocaleAdditions)
+- (id)localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 locale:(id)arg4;
 - (id)localizedDocumentStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 @end
 

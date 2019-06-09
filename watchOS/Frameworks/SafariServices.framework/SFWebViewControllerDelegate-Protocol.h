@@ -10,6 +10,7 @@
 
 @protocol SFWebViewControllerDelegate <NSObject>
 - (void)webViewControllerUpdateNavigationBar:(SFWebViewController *)arg1;
+- (void)webViewController:(SFWebViewController *)arg1 mediaCaptureStateDidChange:(unsigned int)arg2;
 - (void)webViewController:(SFWebViewController *)arg1 didChangeFullScreen:(_Bool)arg2;
 - (int)webViewController:(SFWebViewController *)arg1 presentationPolicyForDialog:(_SFDialog *)arg2;
 - (unsigned int)browserPersonaForWebViewController:(SFWebViewController *)arg1;
@@ -32,7 +33,7 @@
 - (void)webViewControllerDidChangeURL:(SFWebViewController *)arg1;
 - (void)webViewController:(SFWebViewController *)arg1 didFailProvisionalNavigation:(WKNavigation *)arg2 withError:(NSError *)arg3;
 - (void)webViewController:(SFWebViewController *)arg1 decidePolicyForNavigationResponse:(WKNavigationResponse *)arg2 decisionHandler:(void (^)(int))arg3;
-- (void)webViewController:(SFWebViewController *)arg1 decidePolicyForNavigationAction:(WKNavigationAction *)arg2 decisionHandler:(void (^)(int, _WKWebsitePolicies *))arg3;
+- (void)webViewController:(SFWebViewController *)arg1 decidePolicyForNavigationAction:(WKNavigationAction *)arg2 decisionHandler:(void (^)(int, WKWebpagePreferences *))arg3;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(SFWebViewController *)arg1;
 - (void)webViewController:(SFWebViewController *)arg1 didFailNavigation:(WKNavigation *)arg2 withError:(NSError *)arg3;
 - (void)webViewControllerDidChangeEstimatedProgress:(SFWebViewController *)arg1;

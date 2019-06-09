@@ -12,6 +12,8 @@
 
 @interface PHFetchResult (PVFetchResultProtocol) <PVFetchResultProtocol>
 - (id)allObjects;
+- (id)resultsAsSet;
+- (id)resultsAsArray;
 
 // Remaining properties
 @property(readonly, nonatomic) unsigned long long count;

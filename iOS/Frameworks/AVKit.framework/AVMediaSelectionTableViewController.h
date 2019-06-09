@@ -8,6 +8,7 @@
 
 @class AVMediaSelectionOption, AVPlayerController;
 
+__attribute__((visibility("hidden")))
 @interface AVMediaSelectionTableViewController : UITableViewController
 {
     AVMediaSelectionOption *_selectedAudioMediaSelectionOption;
@@ -25,6 +26,7 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (_Bool)_isSelectedOrCurrentLegibleMediaSelectionOption:(id)arg1;
 - (_Bool)_isSelectedOrCurrentAudioMediaSelectionOption:(id)arg1;
+- (void)playerControllerMediaSelectionChanged:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

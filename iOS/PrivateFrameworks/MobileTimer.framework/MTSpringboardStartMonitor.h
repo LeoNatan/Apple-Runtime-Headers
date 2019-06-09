@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable;
+@class MTObserverStore;
 @protocol OS_dispatch_queue;
 
 @interface MTSpringboardStartMonitor : NSObject
 {
     int _notifyToken;
     _Bool _isSpringBoardStarted;
-    NSHashTable *_observers;
+    MTObserverStore *_observers;
     NSObject<OS_dispatch_queue> *_queue;
 }
 

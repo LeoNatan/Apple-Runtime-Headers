@@ -15,7 +15,6 @@
 @interface IPAEditDescription : NSObject <IPAEditOperationOrdering, NSCopying, NSFastEnumeration>
 {
     NSArray *_operations;
-    int _editSource;
 }
 
 + (id)sortOperations:(id)arg1 withOrdering:(id)arg2;
@@ -44,7 +43,6 @@
 - (unsigned int)insertIndexForOperationWithIdentifier:(id)arg1;
 - (unsigned int)indexOfOperationWithUUID:(id)arg1;
 - (unsigned int)firstIndexOfOperationWithIdentifier:(id)arg1;
-- (int)editSource;
 - (id)operations;
 - (unsigned int)operationCount;
 - (_Bool)isEqualToDescriptionRenderOperations:(id)arg1;
@@ -57,7 +55,7 @@
 - (id)_debugDescriptionSuffix;
 - (id)_operations;
 - (id)_operationAtIndex:(unsigned int)arg1;
-- (id)initWithOperations:(id)arg1 editSource:(int)arg2;
+- (id)initWithOperations:(id)arg1;
 - (id)archivalRepresentation;
 
 // Remaining properties

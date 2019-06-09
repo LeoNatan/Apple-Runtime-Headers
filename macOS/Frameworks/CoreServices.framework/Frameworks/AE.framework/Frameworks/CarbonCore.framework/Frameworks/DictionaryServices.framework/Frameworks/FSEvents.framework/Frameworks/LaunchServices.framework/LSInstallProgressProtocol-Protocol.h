@@ -13,7 +13,7 @@
 - (void)sendNotification:(int)arg1 forApplications:(NSArray *)arg2 withPlugins:(BOOL)arg3;
 - (void)installationFailedForApplication:(NSString *)arg1 reply:(void (^)(BOOL))arg2;
 - (void)installationEndedForApplication:(NSString *)arg1 withState:(unsigned long long)arg2;
-- (void)createInstallProgressForApplication:(LSApplicationProxy *)arg1 withPhase:(unsigned long long)arg2 andPublishingString:(NSString *)arg3;
+- (void)createInstallProgressForApplication:(LSApplicationProxy *)arg1 withPhase:(unsigned long long)arg2 andPublishingString:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
 - (void)removeObserver;
 - (void)addObserver;
 @end

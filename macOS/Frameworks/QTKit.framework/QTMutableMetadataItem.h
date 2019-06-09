@@ -6,20 +6,9 @@
 
 #import <QTKit/QTMetadataItem.h>
 
-@class NSDictionary, NSLocale, NSString;
-@protocol NSCopying;
-
 @interface QTMutableMetadataItem : QTMetadataItem
 {
 }
-
-- (id)copyWithZone:(struct _NSZone *)arg1;
-@property(copy) NSDictionary *extraAttributes;
-@property(copy) id <NSCopying> value;
-@property CDStruct_900afa40 time;
-@property(copy) NSLocale *locale;
-@property(copy) NSString *keySpace;
-@property(copy) id <NSCopying> key;
 
 @end
 

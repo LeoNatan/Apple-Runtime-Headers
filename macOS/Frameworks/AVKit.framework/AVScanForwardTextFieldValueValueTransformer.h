@@ -8,6 +8,7 @@
 
 @class NSNumberFormatter;
 
+__attribute__((visibility("hidden")))
 @interface AVScanForwardTextFieldValueValueTransformer : NSValueTransformer
 {
     NSNumberFormatter *_numberFormatter;

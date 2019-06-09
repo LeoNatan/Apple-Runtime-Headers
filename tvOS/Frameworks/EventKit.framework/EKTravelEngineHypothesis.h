@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <EventKit/NSCopying-Protocol.h>
+#import <EventKit/NSMutableCopying-Protocol.h>
 #import <EventKit/NSSecureCoding-Protocol.h>
 
 @class NSDate, NSString;
 
-@interface EKTravelEngineHypothesis : NSObject <NSSecureCoding>
+@interface EKTravelEngineHypothesis : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
-    _Bool _supportsLiveTraffic;
     int _transportType;
     NSDate *_conservativeDepartureDate;
     double _conservativeTravelTime;
@@ -21,34 +22,36 @@
     NSDate *_aggressiveDepartureDate;
     double _aggressiveTravelTime;
     NSString *_routeName;
+    _Bool _supportsLiveTraffic;
     unsigned long long _currentTrafficDensity;
     NSString *_trafficDensityDescription;
     long long _travelState;
 }
 
++ (id)syntheticHypothesisWithStartDate:(id)arg1 conservativeTravelTime:(double)arg2 estimatedTravelTime:(double)arg3 aggressiveTravelTime:(double)arg4;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) long long travelState; // @synthesize travelState=_travelState;
-@property(retain, nonatomic) NSString *trafficDensityDescription; // @synthesize trafficDensityDescription=_trafficDensityDescription;
-@property(nonatomic) unsigned long long currentTrafficDensity; // @synthesize currentTrafficDensity=_currentTrafficDensity;
-@property(nonatomic) _Bool supportsLiveTraffic; // @synthesize supportsLiveTraffic=_supportsLiveTraffic;
-@property(retain, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
-@property(nonatomic) double aggressiveTravelTime; // @synthesize aggressiveTravelTime=_aggressiveTravelTime;
-@property(retain, nonatomic) NSDate *aggressiveDepartureDate; // @synthesize aggressiveDepartureDate=_aggressiveDepartureDate;
-@property(nonatomic) double estimatedTravelTime; // @synthesize estimatedTravelTime=_estimatedTravelTime;
-@property(retain, nonatomic) NSDate *suggestedDepartureDate; // @synthesize suggestedDepartureDate=_suggestedDepartureDate;
-@property(nonatomic) double conservativeTravelTime; // @synthesize conservativeTravelTime=_conservativeTravelTime;
-@property(retain, nonatomic) NSDate *conservativeDepartureDate; // @synthesize conservativeDepartureDate=_conservativeDepartureDate;
-@property(nonatomic) int transportType; // @synthesize transportType=_transportType;
+@property(readonly, nonatomic) long long travelState; // @synthesize travelState=_travelState;
+@property(readonly, copy, nonatomic) NSString *trafficDensityDescription; // @synthesize trafficDensityDescription=_trafficDensityDescription;
+@property(readonly, nonatomic) unsigned long long currentTrafficDensity; // @synthesize currentTrafficDensity=_currentTrafficDensity;
+@property(readonly, nonatomic) _Bool supportsLiveTraffic; // @synthesize supportsLiveTraffic=_supportsLiveTraffic;
+@property(readonly, copy, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
+@property(readonly, nonatomic) double aggressiveTravelTime; // @synthesize aggressiveTravelTime=_aggressiveTravelTime;
+@property(readonly, copy, nonatomic) NSDate *aggressiveDepartureDate; // @synthesize aggressiveDepartureDate=_aggressiveDepartureDate;
+@property(readonly, nonatomic) double estimatedTravelTime; // @synthesize estimatedTravelTime=_estimatedTravelTime;
+@property(readonly, copy, nonatomic) NSDate *suggestedDepartureDate; // @synthesize suggestedDepartureDate=_suggestedDepartureDate;
+@property(readonly, nonatomic) double conservativeTravelTime; // @synthesize conservativeTravelTime=_conservativeTravelTime;
+@property(readonly, copy, nonatomic) NSDate *conservativeDepartureDate; // @synthesize conservativeDepartureDate=_conservativeDepartureDate;
+@property(readonly, nonatomic) int transportType; // @synthesize transportType=_transportType;
 - (void).cxx_destruct;
-- (id)description;
-@property(readonly, nonatomic) double effectiveTravelTime;
-@property(readonly, nonatomic) NSDate *effectiveDepartureDate;
-- (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithEKGEORouteHypothesis:(id)arg1;
-- (id)initWithSyntheticGEORouteHypothesis:(id)arg1;
-- (id)initWithGEORouteHypothesis:(id)arg1;
-- (id)init;
+- (void)encodeWithCoder:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)hash;
+- (_Bool)isEqualToHypothesis:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (id)description;
+- (id)initWithTransportType:(int)arg1 conservativeDepartureDate:(id)arg2 conservativeTravelTime:(double)arg3 suggestedDepartureDate:(id)arg4 estimatedTravelTime:(double)arg5 aggressiveDepartureDate:(id)arg6 aggressiveTravelTime:(double)arg7 routeName:(id)arg8 supportsLiveTraffic:(_Bool)arg9 currentTrafficDensity:(unsigned long long)arg10 trafficDensityDescription:(id)arg11 travelState:(long long)arg12;
 
 @end
 

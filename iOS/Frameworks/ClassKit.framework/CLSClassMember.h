@@ -6,15 +6,18 @@
 
 #import <ClassKit/CLSObject.h>
 
+#import <ClassKit/CLSRelationable-Protocol.h>
+
 @class NSString;
 
-@interface CLSClassMember : CLSObject
+@interface CLSClassMember : CLSObject <CLSRelationable>
 {
     NSString *_personID;
     unsigned long long _roles;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)relations;
 @property(nonatomic) unsigned long long roles; // @synthesize roles=_roles;
 @property(copy, nonatomic) NSString *personID; // @synthesize personID=_personID;
 - (void).cxx_destruct;
@@ -22,6 +25,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

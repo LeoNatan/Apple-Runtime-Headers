@@ -4,19 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class GEOMapServiceTraits, GEOPDPlaceRequest, NSData, NSString;
+@class GEOMapServiceTraits, GEOPDPlaceRequest, NSData, NSDictionary, NSString, NSURL;
 
 @protocol GEOCompanionXPCInterface
 - (void)fetchExperimentsConfiguration:(void (^)(NSData *, NSError *))arg1;
 - (void)requestPlaceData:(GEOPDPlaceRequest *)arg1 traits:(GEOMapServiceTraits *)arg2 withCallback:(void (^)(NSData *, NSError *))arg3;
 - (void)checkPairedDeviceReachability:(void (^)(_Bool))arg1;
-- (void)loadResource:(NSString *)arg1 isRegional:(_Bool)arg2 withCallback:(void (^)(NSData *, NSError *))arg3;
-- (void)forceUpdateManifest:(void (^)(NSError *))arg1;
-- (void)checkinWithCurrentTileGroupIdentifier:(NSString *)arg1;
+- (void)loadResource:(NSString *)arg1 fromURL:(NSURL *)arg2 isRegional:(_Bool)arg3 withCallback:(void (^)(NSData *, NSError *))arg4;
 - (void)updateCountryCode:(void (^)(NSString *, NSError *))arg1;
 - (void)reportCorruptTile:(NSData *)arg1;
 - (void)cancelTilesForRequestIdentifier:(NSString *)arg1;
 - (void)sendEnqueuedTileFetchesForRequestIdentifier:(NSString *)arg1;
-- (void)enqueueFetchTile:(NSData *)arg1 cachedETag:(NSString *)arg2 forRequestIdentifier:(NSString *)arg3 callback:(void (^)(NSData *, NSData *, NSError *, NSDictionary *, NSString *))arg4;
+- (void)enqueueFetchTile:(NSData *)arg1 priority:(unsigned int)arg2 baseURL:(NSURL *)arg3 baseHeaders:(NSDictionary *)arg4 cachedBaseETag:(NSString *)arg5 localizationURL:(NSURL *)arg6 localizationHeaders:(NSDictionary *)arg7 cachedLocalizationETag:(NSString *)arg8 checksumMethod:(int)arg9 signpostID:(unsigned long long)arg10 forRequestIdentifier:(NSString *)arg11 callback:(void (^)(NSData *, NSData *, NSString *, NSData *, NSString *, NSError *, NSDictionary *))arg12;
 @end
 

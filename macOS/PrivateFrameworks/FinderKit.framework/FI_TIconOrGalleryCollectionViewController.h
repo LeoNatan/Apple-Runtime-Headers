@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 {
     _Bool _doubleClickOnMouseUp;
     _Bool _startEditingOnMouseUp;
-    struct TNSRef<NSEvent, void> _mouseDownEventForDrag;
     struct CGPoint _initialClickAt;
     struct TNotificationCenterObserver _clipViewBoundsDidChangeObserver;
     struct TFENode _nodeClickedOnMouseDown;

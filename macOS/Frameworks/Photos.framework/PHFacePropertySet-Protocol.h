@@ -6,9 +6,11 @@
 
 #import <Photos/PHObjectPropertySet-Protocol.h>
 
-@class PHFace;
+@class NSString, PHFace;
+@protocol PHFetchDictionaryAccessing;
 
 @protocol PHFacePropertySet <PHObjectPropertySet>
-@property(readonly, nonatomic) __weak PHFace *face;
++ (NSString *)propertySetName;
+- (id)initWithFetchDictionary:(id <PHFetchDictionaryAccessing>)arg1 face:(PHFace *)arg2 prefetched:(BOOL)arg3;
 @end
 

@@ -14,6 +14,6 @@
 @property(readonly) CNContactListController *contactListController;
 - (void)setAccounts:(NSArray *)arg1;
 - (void)setPickerScope:(CNContactPickerScope *)arg1;
-- (void)setInitialSelection;
+- (void)performInitialSelection;
 @end
 

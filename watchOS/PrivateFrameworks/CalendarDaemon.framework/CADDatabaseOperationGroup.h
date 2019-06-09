@@ -33,12 +33,15 @@ __attribute__((visibility("hidden")))
 - (void)CADDatabaseGetChangesSinceSequenceNumber:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseGetSequenceNumber:(CDUnknownBlockType)arg1;
 - (void)CADDatabaseClearSuperfluousChanges:(CDUnknownBlockType)arg1;
+- (struct __CFSet *)_copyToIntCFSetRef:(id)arg1;
+- (struct __CFArray *)_copyToIntCFArrayRef:(id)arg1;
+- (void)CADDatabaseMarkIndividualChangesConsumed:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseMarkChangedObjectIDsConsumedUpToSequenceNumber:(int)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)CADDatabaseFetchObjectChangesForEntityType:(int)arg1 insideObject:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)CADDatabaseFetchObjectChangesForEntityTypes:(id)arg1 insideObject:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)CADDatabaseFetchChangedObjectIDsSinceSequenceNumber:(int)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)CADDatabaseUnregisterForDetailedChangeTracking:(CDUnknownBlockType)arg1;
 - (void)CADDatabaseRegisterForDetailedChangeTracking:(CDUnknownBlockType)arg1;
 - (void)CADDatabaseGetUUID:(CDUnknownBlockType)arg1;
-- (void)CADDatabaseSetInitializationOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 
 @end
 

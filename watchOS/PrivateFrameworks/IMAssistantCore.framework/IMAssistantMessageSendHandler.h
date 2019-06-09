@@ -9,30 +9,36 @@
 #import <IMAssistantCore/INSendMessageIntentHandling-Protocol.h>
 
 @class NSString;
+@protocol IMAssistantMessageSendHandlerDelegate;
 
 @interface IMAssistantMessageSendHandler : IMAssistantMessageHandler <INSendMessageIntentHandling>
 {
     NSString *_conversationIdentifierResolvedDuringRecipientResolution;
+    id <IMAssistantMessageSendHandlerDelegate> _messageSendHandlerDelegate;
 }
 
+@property(retain, nonatomic) id <IMAssistantMessageSendHandlerDelegate> messageSendHandlerDelegate; // @synthesize messageSendHandlerDelegate=_messageSendHandlerDelegate;
 - (void).cxx_destruct;
 - (id)recipientsResolutionFailureResultWithResult:(id)arg1 forRecipient:(id)arg2 amongRecipients:(id)arg3;
-- (id)handleResolutionResultForContact:(id)arg1 recipient:(id)arg2 account:(id)arg3;
-- (id)contactResolutionResultForContacts:(id)arg1 matchingRecipient:(id)arg2 account:(id)arg3;
+- (id)handleResolutionResultForContact:(id)arg1 recipient:(id)arg2;
+- (id)contactResolutionResultForContacts:(id)arg1 matchingRecipient:(id)arg2;
 - (id)findValidMappingOfRequestedRecipientToChatParticipantAmongMatches:(id)arg1;
 - (_Bool)shouldContinueToExamineRelevantChatsWithMatches:(id)arg1 nextChat:(id)arg2;
 - (id)resolveRecipientsByFindingExistingRelevantChatsForRecipients:(id)arg1 withContacts:(id)arg2 fromChats:(id)arg3;
 - (id)contactsWithDuplicateNamesAmongContacts:(id)arg1;
-- (id)imHandleForAnonymousContact:(id)arg1 chatAccount:(id)arg2 recipient:(id)arg3;
+- (id)imHandleForAnonymousContact:(id)arg1 recipient:(id)arg2;
 - (id)resolvedRecipientsFromChat:(id)arg1;
 - (void)resolveRecipients:(id)arg1 forIntent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)recipientDisambiguationResultsFromMultipleRelevantChats:(id)arg1;
 - (id)resolveMessageContentWithString:(id)arg1;
-- (int)sendMessageWithText:(id)arg1 idsIdentifier:(id)arg2 toChat:(id)arg3;
+- (int)sendMessageWithText:(id)arg1 currentLocation:(_Bool)arg2 expressiveSendStyleID:(id)arg3 idsIdentifier:(id)arg4 executionContext:(int)arg5 toChat:(id)arg6;
+- (_Bool)isMemberOfChat:(id)arg1;
 - (void)resolveSpeakableGroupNameForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveContentForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveRecipientsForSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)updateSenderIdentityForChat:(id)arg1 recipients:(id)arg2;
 - (void)handleSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)initWithDataSource:(id)arg1 delegate:(id)arg2 intentIdentifier:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

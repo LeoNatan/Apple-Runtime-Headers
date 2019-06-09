@@ -8,6 +8,7 @@
 
 @interface NSProcessInfo (SafariSharedExtras)
 - (id)_safari_operatingSystemVersionStringFromOperatingSystemVersion:(CDStruct_f6aba300)arg1;
+@property(readonly, nonatomic) _Bool safari_systemSupportsBroadway;
 - (id)safari_operatingSystemVersionString;
 @end
 

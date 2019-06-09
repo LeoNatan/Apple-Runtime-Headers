@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isWhitelistedEmergencyNumberForDigits:(id)arg1 subscriptionUUID:(id)arg2 error:(id *)arg3;
 - (BOOL)isEmergencyNumberForDigits:(id)arg1 subscription:(id)arg2 error:(id *)arg3;
 - (BOOL)isEmergencyNumberForDigits:(id)arg1 subscriptionUUID:(id)arg2 error:(id *)arg3;
+- (BOOL)inEmergencyMode;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

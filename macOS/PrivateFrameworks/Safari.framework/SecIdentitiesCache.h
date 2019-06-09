@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)_keyStringFromURL:(id)arg1;
-- (void)setSecIdentity:(struct OpaqueSecIdentityRef *)arg1 forURL:(id)arg2;
-- (struct OpaqueSecIdentityRef *)secIdentityForURL:(id)arg1;
+- (void)setSecIdentity:(struct __SecIdentity *)arg1 forURL:(id)arg2;
+- (struct __SecIdentity *)secIdentityForURL:(id)arg1;
 - (id)init;
 
 @end

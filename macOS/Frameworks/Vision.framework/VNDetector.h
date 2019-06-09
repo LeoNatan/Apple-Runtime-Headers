@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
 - (BOOL)currentQueueIsSynchronizationQueue;
 - (id)processInSynchronizationQueueUsingQualityOfServiceClass:(unsigned int)arg1 options:(id)arg2 regionOfInterest:(struct CGRect)arg3 warningRecorder:(id)arg4 error:(id *)arg5;
+- (BOOL)warmUpWithOptions:(id)arg1 error:(id *)arg2;
 - (BOOL)useGPU;
 - (BOOL)completeInitializationAndReturnError:(id *)arg1;
 - (id)initWithConfigurationOptions:(id)arg1;

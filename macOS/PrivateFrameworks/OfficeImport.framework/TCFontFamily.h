@@ -8,6 +8,7 @@
 
 @class NSArray, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface TCFontFamily : NSObject
 {
     NSDictionary *_namesByLanguage;

@@ -6,7 +6,25 @@
 
 #import <CoreLocation/CLPlacemark.h>
 
-@interface CLPlacemark (INIntentsAdditionsDeprecated)
+#import <Intents/INCodableAttributeRelationComparing-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
+
+@class NSString;
+
+@interface CLPlacemark (INIntentsAdditionsDeprecated) <INCodableAttributeRelationComparing, INJSONSerializable>
++ (id)placemarkWithLocation:(id)arg1 name:(id)arg2 postalAddress:(id)arg3;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 - (id)initIntentPlacemarkWithLocation:(id)arg1 addressDictionary:(id)arg2;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_defaultReadableDescription;
+- (_Bool)_intents_compareValue:(id)arg1 relation:(unsigned int)arg2;
+- (id)_intents_indexingRepresentation;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 @end
 

@@ -14,7 +14,6 @@
         unsigned int needsPullsDownFromTemplate:1;
         unsigned int RESERVED:31;
     } _pbFlags;
-    id _popupReserved;
 }
 
 + (void)initialize;

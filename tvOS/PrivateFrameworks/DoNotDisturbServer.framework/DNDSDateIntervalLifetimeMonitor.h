@@ -13,10 +13,10 @@
     PCPersistentTimer *_lifetimeTimer;
 }
 
-+ (_Bool)willMonitorLifetime:(id)arg1;
++ (Class)lifetimeClass;
 - (void).cxx_destruct;
 - (void)_timerFired:(id)arg1;
-- (id)updateForModeAssertionDetails:(id)arg1 date:(id)arg2;
+- (id)updateForModeAssertions:(id)arg1 date:(id)arg2;
 
 @end
 

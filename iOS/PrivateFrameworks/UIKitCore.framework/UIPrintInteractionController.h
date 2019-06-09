@@ -12,7 +12,7 @@
 @interface UIPrintInteractionController : NSObject
 {
     _Bool _hidesNumberOfCopies;
-    _Bool _isManagedContent;
+    _Bool _isContentManaged;
     CDUnknownBlockType _completionHandler;
     unsigned long long _backgroundTaskIdentifier;
     NSObject<OS_dispatch_queue> *_previewQueue;
@@ -35,8 +35,8 @@
 + (_Bool)canPrintURL:(id)arg1;
 + (id)printableUTIs;
 + (_Bool)isPrintingAvailable;
-@property(nonatomic) _Bool isManagedContent; // @synthesize isManagedContent=_isManagedContent;
 @property(nonatomic) __weak id <UIPrintInteractionControllerActivityDelegate> printActivityDelegate; // @synthesize printActivityDelegate=_printActivityDelegate;
+@property(nonatomic) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(copy, nonatomic) NSArray *printingItems; // @synthesize printingItems=_printingItems;
 @property(copy, nonatomic) id printingItem; // @synthesize printingItem=_printingItem;
 @property(retain, nonatomic) UIPrintFormatter *printFormatter; // @synthesize printFormatter=_printFormatter;
@@ -72,7 +72,7 @@
 - (void)_printPanelDidPresent;
 - (void)_cancelAllPreviewGeneration;
 - (void)_generatePrintPreview:(CDUnknownBlockType)arg1;
-- (id)_newPDFPreviewURLWithPath:(id)arg1 isManagedContent:(_Bool)arg2;
+- (id)_newPDFPreviewURLWithPath:(id)arg1 isContentManaged:(_Bool)arg2;
 - (_Bool)_setupPrintPanel:(CDUnknownBlockType)arg1;
 - (void)_updatePageCount;
 @property(retain, nonatomic) UIPrintPaper *paper;
@@ -93,6 +93,7 @@
 - (id)_currentPrintInfo;
 - (void)_cleanPrintState;
 - (void)dismissAnimated:(_Bool)arg1;
+- (_Bool)savePDFToURL:(id)arg1 showProgress:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)savePDFToURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)printToPrinter:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)presentFromBarButtonItem:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;

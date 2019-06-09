@@ -18,7 +18,7 @@
     id _mobileAssetListener;
 }
 
-+ (id)inputModeIdentifierFrom:(int)arg1;
++ (id)TIInputModeIdentifierFrom:(int)arg1;
 + (id)sharedInstance;
 @property(retain, nonatomic) id mobileAssetListener; // @synthesize mobileAssetListener=_mobileAssetListener;
 @property(nonatomic) BOOL logStateSet; // @synthesize logStateSet=_logStateSet;

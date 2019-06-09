@@ -6,11 +6,14 @@
 
 #import <Zoom/NSObject-Protocol.h>
 
-@class AXKElementController, AXKWorkspaceManager, NSArray;
+@class AXKApplicationController, AXKWorkspaceManager, NSArray;
 
 @protocol AXKWorkspaceManagerDelegate <NSObject>
+
+@optional
 - (void)workspaceManagerDidUpdateMenuExtraInformation:(AXKWorkspaceManager *)arg1;
-- (void)workspaceManager:(AXKWorkspaceManager *)arg1 didUpdateFrontmostApplicationController:(AXKElementController *)arg2;
+- (void)workspaceManager:(AXKWorkspaceManager *)arg1 didUpdateFocusedApplicationController:(AXKApplicationController *)arg2;
+- (void)workspaceManager:(AXKWorkspaceManager *)arg1 didUpdateFrontmostApplicationController:(AXKApplicationController *)arg2;
 - (void)workspaceManager:(AXKWorkspaceManager *)arg1 didUpdateRunningApplications:(NSArray *)arg2;
 @end
 

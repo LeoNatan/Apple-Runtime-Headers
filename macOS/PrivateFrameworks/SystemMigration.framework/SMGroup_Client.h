@@ -10,6 +10,7 @@
 {
 }
 
++ (id)interestedDaemonKeysLimitedToMigratableUsers;
 + (id)interestedDaemonKeys;
 - (id)initWithXpcDictionaryRepresentation:(id)arg1;
 

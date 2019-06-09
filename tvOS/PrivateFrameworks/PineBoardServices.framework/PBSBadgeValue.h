@@ -6,22 +6,34 @@
 
 #import <objc/NSObject.h>
 
+#import <PineBoardServices/BSXPCCoding-Protocol.h>
+#import <PineBoardServices/NSSecureCoding-Protocol.h>
+
 @class NSNumber, NSString;
 
-@interface PBSBadgeValue : NSObject
+@interface PBSBadgeValue : NSObject <NSSecureCoding, BSXPCCoding>
 {
     NSString *_badgeString;
     NSNumber *_badgeNumber;
 }
 
 + (id)badgeValueWithValue:(id)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSNumber *badgeNumber; // @synthesize badgeNumber=_badgeNumber;
 @property(readonly, copy, nonatomic) NSString *badgeString; // @synthesize badgeString=_badgeString;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
+- (void)encodeWithXPCDictionary:(id)arg1;
+- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class EDAlignmentInfo, EDBorders, EDContentFormat, EDFill, EDFont, EDProtection;
 
+__attribute__((visibility("hidden")))
 @interface EDDifferentialStyle : NSObject <NSCopying>
 {
     EDAlignmentInfo *mAlignmentInfo;

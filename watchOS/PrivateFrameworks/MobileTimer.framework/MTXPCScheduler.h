@@ -18,6 +18,9 @@
 + (id)xpcSchedulerWithEvent:(id)arg1;
 @property(copy, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
 - (void).cxx_destruct;
+- (void)unscheduleActivity;
+- (void)scheduleActivityWithCriteria:(id)arg1 activityHandler:(CDUnknownBlockType)arg2 performImmediately:(_Bool)arg3;
+- (void)scheduleActivityWithCriteria:(id)arg1 activityHandler:(CDUnknownBlockType)arg2;
 - (void)unscheduleTimer;
 - (void)scheduleTimerForSeconds:(double)arg1;
 - (id)initWithEvent:(id)arg1;

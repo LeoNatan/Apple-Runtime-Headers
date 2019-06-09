@@ -8,13 +8,8 @@
 
 @interface QTPixelBufferConverter : NSObject
 {
-    struct QTPixelBufferConverterInternal *_internal;
 }
 
-- (BOOL)convertFromPixelBuffer:(struct __CVBuffer *)arg1 toPixelBuffer:(struct __CVBuffer *)arg2 error:(id *)arg3;
-- (void)finalize;
-- (void)dealloc;
-- (void)tearDown;
 - (id)init;
 
 @end

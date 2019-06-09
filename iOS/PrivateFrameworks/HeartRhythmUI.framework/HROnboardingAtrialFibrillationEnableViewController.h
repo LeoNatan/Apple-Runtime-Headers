@@ -40,6 +40,7 @@
 - (id)createHeroView;
 - (void)setUpConstraints;
 - (void)setUpUI;
+- (id)initForOnboarding:(_Bool)arg1;
 
 @end
 

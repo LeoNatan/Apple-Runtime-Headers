@@ -20,6 +20,7 @@
     BOOL _supportsAutoAttach;
     BOOL _supportsWirelessConnections;
     BOOL _wirelessEnabled;
+    BOOL _passcodeLocked;
     long long _deviceClass;
     id <RWIDeviceDelegate> _deviceDelegate;
     long long _pairingProgress;
@@ -28,6 +29,7 @@
 + (void)initialize;
 @property(readonly, copy, nonatomic) NSArray *mobileDeviceConnections; // @synthesize mobileDeviceConnections=_mobileDeviceConnections;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *deviceAccessQueue; // @synthesize deviceAccessQueue=_deviceAccessQueue;
+@property(readonly, nonatomic, getter=isPasscodeLocked) BOOL passcodeLocked; // @synthesize passcodeLocked=_passcodeLocked;
 @property(readonly, nonatomic, getter=isWirelessEnabled) BOOL wirelessEnabled; // @synthesize wirelessEnabled=_wirelessEnabled;
 @property(readonly, nonatomic) BOOL supportsWirelessConnections; // @synthesize supportsWirelessConnections=_supportsWirelessConnections;
 @property(readonly, nonatomic) long long pairingProgress; // @synthesize pairingProgress=_pairingProgress;
@@ -36,8 +38,10 @@
 - (void).cxx_destruct;
 - (void)_queueAttemptingPairWithProgressCallback:(CDUnknownBlockType)arg1;
 - (void)_fetchDeviceInformationFromMobileDeviceConnection:(id)arg1;
+- (void)setPasscodeLocked:(BOOL)arg1;
 - (void)webInspectorServiceEnabled;
 - (void)wirelessCapabilitiesChanged;
+- (void)lockStatusChanged;
 - (void)deviceNameChanged;
 - (void)disableWireless;
 - (void)enableWireless;
@@ -50,9 +54,9 @@
 - (void)addMobileDeviceConnection:(id)arg1;
 - (void)setDeviceName:(id)arg1 udid:(id)arg2 buildVersion:(id)arg3 productVersion:(id)arg4 deviceClass:(long long)arg5 paired:(long long)arg6 wirelessEnabled:(BOOL)arg7 supported:(BOOL)arg8 supportsAutoAttach:(BOOL)arg9;
 - (void)markAsHavingBuildVersion;
-- (BOOL)_paired;
-- (void)launchOrActivateApplicationWithBundleIdentifier:(id)arg1;
+- (BOOL)paired;
 - (id)loggingIdentifier;
+- (BOOL)supportsWebDriver;
 - (BOOL)supportsAutomaticInspection;
 - (BOOL)isSimulator;
 - (BOOL)isDevice;
@@ -60,6 +64,7 @@
 - (BOOL)isReady;
 - (BOOL)hadConnectionError;
 - (void)pair;
+@property(readonly, nonatomic, getter=isPaired) BOOL paired;
 - (id)description;
 - (id)initWithMobileDeviceConnection:(id)arg1 manager:(id)arg2;
 

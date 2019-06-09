@@ -29,6 +29,9 @@
 @property(nonatomic) int portRole; // @synthesize portRole=_portRole;
 @property(nonatomic) unsigned short portNumber; // @synthesize portNumber=_portNumber;
 - (void)dealloc;
+- (struct IONotificationPort *)_notificationPort;
+- (id)_portForNotification;
+- (id)_notificationQueue;
 @property(readonly, nonatomic) int portType; // @dynamic portType;
 - (int)_portRole;
 - (unsigned short)_portNumber;

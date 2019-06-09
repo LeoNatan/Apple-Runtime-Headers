@@ -16,6 +16,7 @@
     long long _options;
     NSString *_bundleIdentifier;
     NSString *_name;
+    NSString *_owningAppBundleIdentifier;
     NSString *_productType;
     NSData *_uuid;
     _Bool _deleted;
@@ -26,6 +27,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *owningAppBundleIdentifier; // @synthesize owningAppBundleIdentifier=_owningAppBundleIdentifier;
 @property(nonatomic) _Bool deleted; // @synthesize deleted=_deleted;
 @property(nonatomic) double modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain, nonatomic) NSData *uuid; // @synthesize uuid=_uuid;
@@ -43,6 +45,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasOwningAppBundleIdentifier;
 @property(nonatomic) _Bool hasDeleted;
 @property(nonatomic) _Bool hasModificationDate;
 @property(readonly, nonatomic) _Bool hasUuid;

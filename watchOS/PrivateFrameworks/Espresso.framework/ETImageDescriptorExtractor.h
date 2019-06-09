@@ -15,7 +15,7 @@
     CDStruct_f9cfda8c _outputBlob;
     unsigned long _targetWidth;
     unsigned long _targetHeight;
-    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> _inputName;
+    basic_string_8c74bb18 _inputName;
     unsigned int *_inputShape;
     float _rotation_range;
     float _horizontal_flip;

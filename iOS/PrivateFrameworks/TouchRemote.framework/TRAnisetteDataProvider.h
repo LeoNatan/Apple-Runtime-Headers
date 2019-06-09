@@ -9,7 +9,7 @@
 #import <TouchRemote/AKAnisetteServiceProtocol-Protocol.h>
 #import <TouchRemote/NSCopying-Protocol.h>
 
-@class TRSession;
+@class NSString, TRSession;
 
 @interface TRAnisetteDataProvider : NSObject <AKAnisetteServiceProtocol, NSCopying>
 {
@@ -25,6 +25,12 @@
 - (void)provisionAnisetteWithCompletion:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSession:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

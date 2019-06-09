@@ -9,7 +9,13 @@
 #import <AssistantServices/AFSecurityDigestibleChunksProviding-Protocol.h>
 
 @interface NSString (AFSecurityDigestibleChunksProvider) <AFSecurityDigestibleChunksProviding>
++ (id)hexStringFromData:(id)arg1;
++ (id)hexStringFromBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)af_enumerateDigestibleChunksWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)_afpreferences_languageCodePrefix;
+- (_Bool)_afpreferences_isLanguageCodePrefix;
+- (id)_af_stringByRemovingSuffix:(id)arg1;
+- (id)_af_stringByRemovingPrefixWithLength:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

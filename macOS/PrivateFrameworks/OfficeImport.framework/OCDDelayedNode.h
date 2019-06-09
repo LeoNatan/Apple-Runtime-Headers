@@ -8,6 +8,7 @@
 
 @protocol OCDDelayedNodeContext;
 
+__attribute__((visibility("hidden")))
 @interface OCDDelayedNode : NSObject
 {
     id <OCDDelayedNodeContext> mDelayedContext;

@@ -8,6 +8,7 @@
 
 @class NSString, VirtualDisplayListener;
 
+__attribute__((visibility("hidden")))
 @interface VirtualDisplayProxy : NSObject
 {
     VirtualDisplayListener *_listener;

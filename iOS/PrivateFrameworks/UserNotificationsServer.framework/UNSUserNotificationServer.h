@@ -7,21 +7,28 @@
 #import <objc/NSObject.h>
 
 #import <UserNotificationsServer/LSApplicationWorkspaceObserverProtocol-Protocol.h>
+#import <UserNotificationsServer/UNSContentProtectionObserver-Protocol.h>
 #import <UserNotificationsServer/UNSDefaultDataProviderFactoryObserver-Protocol.h>
 #import <UserNotificationsServer/UNSNotificationRepositoryDelegate-Protocol.h>
 #import <UserNotificationsServer/UNSRemoteNotificationServerObserver-Protocol.h>
 
-@class BKSApplicationStateMonitor, FBSSystemService, NSSet, NSString, UNSApplicationLauncher, UNSApplicationService, UNSAttachmentsRepository, UNSAttachmentsService, UNSDaemonLauncher, UNSDefaultDataProviderFactory, UNSLocationMonitor, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationScheduleRepository, UNSNotificationSchedulingService, UNSNotificationSettingsService, UNSNotificationTopicRepository, UNSPendingNotificationRepository, UNSPushRegistrationRepository, UNSRemoteNotificationServer, UNSUserNotificationServerConnectionListener;
+@class BKSApplicationStateMonitor, NSSet, NSString, UNSApplicationLauncher, UNSApplicationService, UNSAttachmentsRepository, UNSAttachmentsService, UNSBundleLibrarian, UNSContentProtectionManager, UNSDaemonLauncher, UNSDefaultDataProviderFactory, UNSLocalizationService, UNSLocationMonitor, UNSNotificationAuthorizationService, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationScheduleRepository, UNSNotificationSchedulingService, UNSNotificationSettingsService, UNSNotificationTopicRepository, UNSPendingNotificationRepository, UNSPushRegistrationRepository, UNSRemoteNotificationServer, UNSSettingsGateway, UNSUserNotificationServerConnectionListener, UNSUserNotificationServerRemoteNotificationConnectionListener, UNSUserNotificationServerSettingsConnectionListener;
 
-@interface UNSUserNotificationServer : NSObject <LSApplicationWorkspaceObserverProtocol, UNSDefaultDataProviderFactoryObserver, UNSNotificationRepositoryDelegate, UNSRemoteNotificationServerObserver>
+@interface UNSUserNotificationServer : NSObject <LSApplicationWorkspaceObserverProtocol, UNSContentProtectionObserver, UNSDefaultDataProviderFactoryObserver, UNSNotificationRepositoryDelegate, UNSRemoteNotificationServerObserver>
 {
     UNSApplicationLauncher *_applicationLauncher;
     UNSApplicationService *_applicationService;
     UNSAttachmentsRepository *_attachmentsRepository;
+    UNSBundleLibrarian *_librarian;
+    UNSContentProtectionManager *_contentProtectionManager;
     UNSDefaultDataProviderFactory *_dataProviderFactory;
+    UNSLocalizationService *_localizationService;
     UNSUserNotificationServerConnectionListener *_userNotificationServerConnectionListener;
+    UNSUserNotificationServerSettingsConnectionListener *_userNotificationServerSettingsConnectionListener;
+    UNSUserNotificationServerRemoteNotificationConnectionListener *_userNotificationServerRemoteNotificationConnectionListener;
     UNSNotificationCategoryRepository *_categoryRepository;
     UNSNotificationSchedulingService *_notificationSchedulingService;
+    UNSNotificationAuthorizationService *_notificationAuthorizationService;
     UNSNotificationSettingsService *_notificationSettingsService;
     UNSNotificationRepository *_notificationRepository;
     UNSPendingNotificationRepository *_pendingNotificationRepository;
@@ -32,15 +39,18 @@
     UNSAttachmentsService *_attachmentsService;
     UNSLocationMonitor *_locationMonitor;
     UNSDaemonLauncher *_daemonLauncher;
-    FBSSystemService *_systemService;
     BKSApplicationStateMonitor *_applicationStateMonitor;
-    NSSet *_sourceBundleIdentifiers;
+    NSSet *_systemSourceBundleIdentifiers;
     NSString *_libraryDirectory;
     NSString *_directory;
+    UNSSettingsGateway *_settingsGateway;
 }
 
++ (id)sharedInstanceIfExists;
 + (id)sharedInstance;
++ (id)_sharedInstanceCreateIfNecessary:(_Bool)arg1;
 - (void).cxx_destruct;
+- (void)_removeBundleLibrarianMappingsForSourceDescriptions:(id)arg1;
 - (void)_removeNotificationSourceDirectories:(id)arg1;
 - (void)_notificationSourcesDidUninstall:(id)arg1;
 - (void)_notificationSourcesDidInstall:(id)arg1;
@@ -52,6 +62,7 @@
 - (void)_addObserverForSignificantTimeChanges;
 - (void)_addObserverForRemoteNotificationServiceChanges;
 - (void)_addObserverForDataProviderFactoryChanges;
+- (void)_addObserverForContentProtectionChanges;
 - (void)_addObserverForApplicationWorkspaceChanges;
 - (void)_addObserverForApplicationStateRestore;
 - (void)_addObserverForApplicationStateMonitor;
@@ -68,6 +79,8 @@
 - (void)_migratePendingNotificationRequests;
 - (void)_validateNotificationRepository;
 - (void)_migrateNotificationRepository;
+- (void)_migrateUserNotificationsRepositories;
+- (void)contentProtectionStateChangedForFirstUnlock:(_Bool)arg1;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)willPresentNotification:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)isApplicationForeground:(id)arg1;

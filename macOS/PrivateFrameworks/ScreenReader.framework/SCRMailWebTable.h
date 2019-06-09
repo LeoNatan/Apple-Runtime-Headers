@@ -14,7 +14,8 @@ __attribute__((visibility("hidden")))
     id <SCRLocaleInfoProviding> __currentLocale;
 }
 
-@property(nonatomic) id <SCRLocaleInfoProviding> _currentLocale; // @synthesize _currentLocale=__currentLocale;
+@property(retain, nonatomic) id <SCRLocaleInfoProviding> _currentLocale; // @synthesize _currentLocale=__currentLocale;
+- (void).cxx_destruct;
 - (BOOL)requiresInteraction;
 - (void)handleBoundaryWithDirection:(long long)arg1 cell:(struct SCRDataCell)arg2 outputRequest:(id)arg3 event:(id)arg4;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2 currentLocale:(id)arg3;

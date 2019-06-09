@@ -6,26 +6,31 @@
 
 #import <Metal/NSObject-Protocol.h>
 
-@class MTLCompileOptions, MTLComputePipelineDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLIndirectCommandBufferDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLSharedEventHandle, MTLSharedTextureHandle, MTLTextureDescriptor, NSArray, NSBundle, NSObject, NSString, NSURL;
-@protocol MTLArgumentEncoder, MTLBuffer, MTLCommandQueue, MTLComputePipelineState, MTLDepthStencilState, MTLEvent, MTLFence, MTLFunction, MTLHeap, MTLIndirectCommandBuffer, MTLLibrary, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture, OS_dispatch_data;
+@class MTLCompileOptions, MTLComputePipelineDescriptor, MTLCounterSampleBufferDescriptor, MTLDepthStencilDescriptor, MTLHeapDescriptor, MTLIndirectCommandBufferDescriptor, MTLRenderPipelineDescriptor, MTLSamplerDescriptor, MTLSharedEventHandle, MTLSharedTextureHandle, MTLTextureDescriptor, NSArray, NSBundle, NSObject, NSString, NSURL;
+@protocol MTLArgumentEncoder, MTLBuffer, MTLCommandQueue, MTLComputePipelineState, MTLCounterSampleBuffer, MTLDepthStencilState, MTLEvent, MTLFence, MTLFunction, MTLHeap, MTLIndirectCommandBuffer, MTLLibrary, MTLRenderPipelineState, MTLSamplerState, MTLSharedEvent, MTLTexture, OS_dispatch_data;
 
 @protocol MTLDevice <NSObject>
+@property(readonly) NSArray *counterSets;
 @property(readonly) unsigned long long maxBufferLength;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
 @property(readonly) unsigned long long maxArgumentBufferSamplerCount;
 @property(readonly) unsigned long long maxThreadgroupMemoryLength;
 @property(readonly) unsigned long long currentAllocatedSize;
+@property(readonly, getter=areBarycentricCoordsSupported) BOOL barycentricCoordsSupported;
 @property(readonly, getter=areRasterOrderGroupsSupported) BOOL rasterOrderGroupsSupported;
 @property(readonly) unsigned long long argumentBuffersSupport;
 @property(readonly) unsigned long long readWriteTextureSupport;
 @property(readonly, getter=isDepth24Stencil8PixelFormatSupported) BOOL depth24Stencil8PixelFormatSupported;
 @property(readonly) unsigned long long recommendedMaxWorkingSetSize;
+@property(readonly) BOOL hasUnifiedMemory;
 @property(readonly, getter=isRemovable) BOOL removable;
 @property(readonly, getter=isHeadless) BOOL headless;
 @property(readonly, getter=isLowPower) BOOL lowPower;
 @property(readonly) CDStruct_14f26992 maxThreadsPerThreadgroup;
 @property(readonly) unsigned long long registryID;
 @property(readonly) NSString *name;
+- (void)sampleTimestamps:(unsigned long long *)arg1 gpuTimestamp:(unsigned long long *)arg2;
+- (id <MTLCounterSampleBuffer>)newCounterSampleBufferWithDescriptor:(MTLCounterSampleBufferDescriptor *)arg1 error:(id *)arg2;
 - (id <MTLSharedEvent>)newSharedEventWithHandle:(MTLSharedEventHandle *)arg1;
 - (id <MTLSharedEvent>)newSharedEvent;
 - (id <MTLEvent>)newEvent;
@@ -35,6 +40,8 @@
 - (unsigned long long)minimumTextureBufferAlignmentForPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)minimumLinearTextureAlignmentForPixelFormat:(unsigned long long)arg1;
 - (BOOL)supportsTextureSampleCount:(unsigned long long)arg1;
+- (BOOL)supportsVersion:(long long)arg1;
+- (BOOL)supportsFamily:(long long)arg1;
 - (BOOL)supportsFeatureSet:(unsigned long long)arg1;
 - (id <MTLFence>)newFence;
 - (void)newComputePipelineStateWithDescriptor:(MTLComputePipelineDescriptor *)arg1 options:(unsigned long long)arg2 completionHandler:(void (^)(id <MTLComputePipelineState>, MTLComputePipelineReflection *, NSError *))arg3;

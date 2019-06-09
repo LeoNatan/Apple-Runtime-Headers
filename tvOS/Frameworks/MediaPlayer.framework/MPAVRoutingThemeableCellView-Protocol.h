@@ -6,10 +6,11 @@
 
 #import <MediaPlayer/NSObject-Protocol.h>
 
-@class UIImageView, UILabel, UIView;
+@class MPVolumeSlider, UIImageView, UILabel, UIView;
 
 @protocol MPAVRoutingThemeableCellView <NSObject>
 - (void)setSubtitleViewAlpha:(double)arg1;
+- (MPVolumeSlider *)volumeSlider;
 - (UIView *)separatorView;
 - (UIImageView *)iconView;
 - (UILabel *)subtitleView;

@@ -20,7 +20,6 @@
 - (void)redoIt;
 - (void)undoIt;
 - (void)_undoRedoChangeProperties;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1 person:(id)arg2 properties:(id)arg3 addressBook:(id)arg4;
 

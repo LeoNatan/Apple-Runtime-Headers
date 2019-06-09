@@ -43,5 +43,6 @@
 - (_Bool)nsli_lowersExpressionRelativeToConstraintContainer;
 - (_Bool)nsli_isLegalConstraintItem;
 - (_Bool)nsli_canHostIndependentVariableAnchor;
+- (_Bool)nsli_defaultResolvedValue:(float *)arg1 forSymbolicConstant:(NSString *)arg2 inConstraint:(NSLayoutConstraint *)arg3 error:(id *)arg4;
 @end
 

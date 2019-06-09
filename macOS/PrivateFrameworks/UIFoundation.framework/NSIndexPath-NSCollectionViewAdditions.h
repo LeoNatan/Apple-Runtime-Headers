@@ -9,8 +9,6 @@
 @interface NSIndexPath (NSCollectionViewAdditions)
 + (id)indexPathForItem:(long long)arg1 inSection:(long long)arg2;
 @property(readonly) long long item;
-
-// Remaining properties
 @property(readonly) long long section;
 @end
 

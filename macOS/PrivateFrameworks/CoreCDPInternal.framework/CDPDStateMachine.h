@@ -46,6 +46,7 @@
 - (void)_recoverSecureBackupWithCircleJoinResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_confirmCDPEligibilityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_preflightAccountStateWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)_isICloudKeychainDisabledByManagementProfile;
 - (BOOL)shouldAllowCDPEnrollment;
 - (void)_authenticatedRepairCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_refreshAndAuthenticateWithContext:(id)arg1;

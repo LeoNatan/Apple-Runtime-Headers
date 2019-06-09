@@ -13,7 +13,14 @@
 @interface AWDHomeKitHomeConfiguration : PBCodable <NSCopying>
 {
     NSMutableArray *_eventTriggers;
+    int _networkProtectionStatus;
     unsigned int _numAccessories;
+    unsigned int _numAccessoriesNetworkProtectionAutoFullAccess;
+    unsigned int _numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN;
+    unsigned int _numAccessoriesNetworkProtectionAutoProtectedMainLAN;
+    unsigned int _numAccessoriesNetworkProtectionFullAccess;
+    unsigned int _numAccessoriesNetworkProtectionHomeKitOnly;
+    unsigned int _numAccessoriesWiFiPPSKCredential;
     unsigned int _numAccessoryServiceGroups;
     unsigned int _numAdmins;
     unsigned int _numAppleAudioAccessories;
@@ -46,7 +53,14 @@
     _Bool _isResidentAvailable;
     _Bool _primaryReportingDevice;
     struct {
+        unsigned int networkProtectionStatus:1;
         unsigned int numAccessories:1;
+        unsigned int numAccessoriesNetworkProtectionAutoFullAccess:1;
+        unsigned int numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN:1;
+        unsigned int numAccessoriesNetworkProtectionAutoProtectedMainLAN:1;
+        unsigned int numAccessoriesNetworkProtectionFullAccess:1;
+        unsigned int numAccessoriesNetworkProtectionHomeKitOnly:1;
+        unsigned int numAccessoriesWiFiPPSKCredential:1;
         unsigned int numAccessoryServiceGroups:1;
         unsigned int numAdmins:1;
         unsigned int numAppleAudioAccessories:1;
@@ -82,6 +96,12 @@
 }
 
 + (Class)eventTriggersType;
+@property(nonatomic) unsigned int numAccessoriesNetworkProtectionHomeKitOnly; // @synthesize numAccessoriesNetworkProtectionHomeKitOnly=_numAccessoriesNetworkProtectionHomeKitOnly;
+@property(nonatomic) unsigned int numAccessoriesNetworkProtectionFullAccess; // @synthesize numAccessoriesNetworkProtectionFullAccess=_numAccessoriesNetworkProtectionFullAccess;
+@property(nonatomic) unsigned int numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN; // @synthesize numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN=_numAccessoriesNetworkProtectionAutoProtectedHomeKitLAN;
+@property(nonatomic) unsigned int numAccessoriesNetworkProtectionAutoProtectedMainLAN; // @synthesize numAccessoriesNetworkProtectionAutoProtectedMainLAN=_numAccessoriesNetworkProtectionAutoProtectedMainLAN;
+@property(nonatomic) unsigned int numAccessoriesNetworkProtectionAutoFullAccess; // @synthesize numAccessoriesNetworkProtectionAutoFullAccess=_numAccessoriesNetworkProtectionAutoFullAccess;
+@property(nonatomic) unsigned int numAccessoriesWiFiPPSKCredential; // @synthesize numAccessoriesWiFiPPSKCredential=_numAccessoriesWiFiPPSKCredential;
 @property(nonatomic) unsigned int numTelevisionAccessories; // @synthesize numTelevisionAccessories=_numTelevisionAccessories;
 @property(nonatomic) _Bool primaryReportingDevice; // @synthesize primaryReportingDevice=_primaryReportingDevice;
 @property(nonatomic) unsigned int numResidentsEnabled; // @synthesize numResidentsEnabled=_numResidentsEnabled;
@@ -125,6 +145,16 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionHomeKitOnly;
+@property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionFullAccess;
+@property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionAutoProtectedHomeKitLAN;
+@property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionAutoProtectedMainLAN;
+@property(nonatomic) _Bool hasNumAccessoriesNetworkProtectionAutoFullAccess;
+@property(nonatomic) _Bool hasNumAccessoriesWiFiPPSKCredential;
+- (int)StringAsNetworkProtectionStatus:(id)arg1;
+- (id)networkProtectionStatusAsString:(int)arg1;
+@property(nonatomic) _Bool hasNetworkProtectionStatus;
+@property(nonatomic) int networkProtectionStatus; // @synthesize networkProtectionStatus=_networkProtectionStatus;
 @property(nonatomic) _Bool hasNumTelevisionAccessories;
 @property(nonatomic) _Bool hasPrimaryReportingDevice;
 @property(nonatomic) _Bool hasNumResidentsEnabled;

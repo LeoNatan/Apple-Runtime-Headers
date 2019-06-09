@@ -15,7 +15,7 @@
 #import <AVConference/VCMomentTransportDelegate-Protocol.h>
 #import <AVConference/VCVideoCaptureClient-Protocol.h>
 
-@class FFTMeter, GKNATObserver, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, VCAudioIO, VCAudioPowerLevelMonitor, VCAudioPowerSpectrumSource, VCCallSession, VCMoments, VCVideoRule, VideoConferenceManager;
+@class GKNATObserver, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, VCAudioIO, VCAudioPowerLevelMonitor, VCAudioPowerSpectrumSource, VCCallSession, VCMoments, VCVideoRule, VideoConferenceManager;
 @protocol OS_dispatch_queue, VideoConferenceChannelQualityDelegate, VideoConferenceDelegate, VideoConferenceSpeakingDelegate;
 
 @interface VideoConference : NSObject <VCCallSessionDelegate, VCVideoCaptureClient, GKNATObserverDelegate, VCAudioIOSource, VCAudioIOSink, VCAudioIODelegate, VCAudioPowerLevelMonitorDelegate, VCMomentTransportDelegate>
@@ -36,8 +36,8 @@
     _Bool inputMeteringEnabled;
     _Bool inputFrequencyMeteringEnabled;
     _Bool outputFrequencyMeteringEnabled;
-    FFTMeter *_inputFFTMeter;
-    FFTMeter *_outputFFTMeter;
+    struct opaqueVCFFTMeter *_inputFFTMeter;
+    struct opaqueVCFFTMeter *_outputFFTMeter;
     float outputMeterLevel;
     float inputMeterLevel;
     long long _inputAudioPowerSpectrumToken;
@@ -137,6 +137,7 @@
 - (_Bool)canProcessAudio;
 - (void)pullAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
+- (void)didUpdateBasebandCodec:(const struct _VCRemoteCodecInfo *)arg1;
 - (void)didResumeAudioIO:(id)arg1;
 - (void)didSuspendAudioIO:(id)arg1;
 - (float)powerIntToFloat:(unsigned char)arg1;
@@ -189,7 +190,7 @@
 - (_Bool)getIsVideoPaused:(_Bool *)arg1 callID:(unsigned int)arg2 error:(id *)arg3;
 - (void)didReceiveCaptions:(id)arg1 remoteClient:(unsigned int)arg2;
 - (void)vcAudioPowerLevelMonitor:(id)arg1 isAudioBelowThreshold:(_Bool)arg2;
-- (void)moments:(id)arg1 shouldProcessRequest:(id)arg2;
+- (void)moments:(id)arg1 shouldProcessRequest:(id)arg2 recipientID:(id)arg3;
 - (void)processRemoteIPChange:(id)arg1 callID:(unsigned int)arg2;
 - (id)callMetadataForCallID:(unsigned int)arg1;
 - (void)notifyDelegateOfLocalVariablesChange;
@@ -261,7 +262,7 @@
 - (void)wrlock;
 - (void)session:(id)arg1 didReceiveMomentsRequest:(id)arg2;
 - (unsigned int)momentsCapabilitiesWithNegotiationBlobMomentsSettings_Capabilities:(int)arg1;
-- (void)session:(id)arg1 setMomentsCapabilities:(int)arg2;
+- (void)session:(id)arg1 setMomentsCapabilities:(int)arg2 imageType:(int)arg3 videoCodec:(int)arg4;
 - (struct AudioStreamBasicDescription)audioIOFormat;
 - (void)session:(id)arg1 setRemoteBasebandCodecType:(unsigned int)arg2 sampleRate:(double)arg3;
 - (void)session:(id)arg1 stopAudioWithCompletionHandler:(CDUnknownBlockType)arg2;

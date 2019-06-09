@@ -8,6 +8,7 @@
 
 @class OADColorMap, OADTextListStyle, OADTheme;
 
+__attribute__((visibility("hidden")))
 @interface PDNotesMaster : PDSlideBase
 {
     OADTheme *mTheme;

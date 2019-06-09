@@ -18,7 +18,6 @@
     id <XBApplicationSnapshotManifestDelegate> _delegate;
 }
 
-+ (id)_manifestQueue;
 + (id)_manifestsByIdentity;
 + (unsigned long long)maximumInFlightDataSize;
 + (void)deleteAllSystemSnapshots;
@@ -27,7 +26,7 @@
 @property(readonly, nonatomic) __weak XBApplicationSnapshotManifestImpl *manifestImpl; // @synthesize manifestImpl=_manifestImpl;
 @property(nonatomic) __weak id <XBApplicationSnapshotManifestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)manifestDidPurgeSnapshotsWithProtectedContent:(id)arg1;
+- (void)manifest:(id)arg1 didPurgeProtectedContentSnapshotsWithGroupIdentifiers:(id)arg2;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -48,9 +47,13 @@
 - (void)generateImageForSnapshot:(id)arg1 dataProvider:(id)arg2 writeToFile:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)createVariantForSnapshot:(id)arg1 withIdentifier:(id)arg2;
 - (id)createSnapshotWithGroupID:(id)arg1;
+- (id)snapshotsForGroupIDs:(id)arg1 fetchRequest:(id)arg2;
+- (id)snapshotsForGroupIDs:(id)arg1 matchingPredicate:(id)arg2;
+- (id)snapshotsForGroupIDs:(id)arg1;
 - (id)snapshotsForGroupID:(id)arg1 fetchRequest:(id)arg2;
 - (id)snapshotsForGroupID:(id)arg1 matchingPredicate:(id)arg2;
 - (id)snapshotsForGroupID:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *defaultGroupIdentifier;
 @property(readonly, copy, nonatomic) NSString *containerPath;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier;
 @property(readonly, copy) NSString *description;

@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)NS_hasPrefetchedContents;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
-- (void)drawInContext:(struct CGContext *)arg1;
 - (void)display;
 - (BOOL)NS_contentsAligningEnabled;
 - (void)setNeedsLayout;

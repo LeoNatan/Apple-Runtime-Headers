@@ -7,6 +7,7 @@
 #import <Foundation/NSSet.h>
 
 @interface NSSet (NSKeyValueCoding)
++ (_Bool)supportsSecureCoding;
 - (id)valueForKeyPath:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForKey:(id)arg1;
@@ -18,5 +19,14 @@
 - (id)_countForKeyPath:(id)arg1;
 - (id)_avgForKeyPath:(id)arg1;
 - (id)_sumForKeyPath:(id)arg1;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
+- (Class)classForCoder;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)sortedArrayUsingDescriptors:(id)arg1;
+- (id)filteredSetUsingPredicate:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 @end
 

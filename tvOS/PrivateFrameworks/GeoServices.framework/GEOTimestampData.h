@@ -9,25 +9,35 @@
 #import <GeoServices/GEOServerFormatTokenTimeStampValue-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, NSTimeZone;
+@class NSString, NSTimeZone, PBDataReader, PBUnknownFields;
 
 @interface GEOTimestampData : PBCodable <GEOServerFormatTokenTimeStampValue, NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSString *_formatPattern;
-    unsigned int _timestampVal;
     NSString *_timezone;
+    unsigned int _timestampVal;
     _Bool _displayTimezone;
     struct {
-        unsigned int timestampVal:1;
-        unsigned int displayTimezone:1;
-    } _has;
+        unsigned int has_timestampVal:1;
+        unsigned int has_displayTimezone:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_formatPattern:1;
+        unsigned int read_timezone:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_formatPattern:1;
+        unsigned int wrote_timezone:1;
+        unsigned int wrote_timestampVal:1;
+        unsigned int wrote_displayTimezone:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *formatPattern; // @synthesize formatPattern=_formatPattern;
-@property(nonatomic) _Bool displayTimezone; // @synthesize displayTimezone=_displayTimezone;
-@property(retain, nonatomic) NSString *timezone; // @synthesize timezone=_timezone;
-@property(nonatomic) unsigned int timestampVal; // @synthesize timestampVal=_timestampVal;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
@@ -35,12 +45,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) NSString *formatPattern;
 @property(readonly, nonatomic) _Bool hasFormatPattern;
+- (void)_readFormatPattern;
 @property(nonatomic) _Bool hasDisplayTimezone;
+@property(nonatomic) _Bool displayTimezone;
+@property(retain, nonatomic) NSString *timezone;
 @property(readonly, nonatomic) _Bool hasTimezone;
+- (void)_readTimezone;
 @property(nonatomic) _Bool hasTimestampVal;
+@property(nonatomic) unsigned int timestampVal;
 @property(readonly, nonatomic) NSTimeZone *timeZone;
 @property(readonly, nonatomic) double timeStamp;
 - (_Bool)displayTimeZone;

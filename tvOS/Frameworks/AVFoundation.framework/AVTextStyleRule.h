@@ -25,7 +25,6 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithTextMarkupAttributes:(id)arg1 textSelector:(id)arg2;
 - (id)initWithTextMarkupAttributes:(id)arg1;

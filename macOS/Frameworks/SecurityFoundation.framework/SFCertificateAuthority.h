@@ -13,31 +13,31 @@
 
 + (id)certificateAuthorityWithName:(id)arg1;
 + (id)certificateAuthorityWithFullPath:(id)arg1;
-+ (int)_createUserKeyPair:(struct OpaqueSecKeyRef **)arg1 privKey:(struct OpaqueSecKeyRef **)arg2 keychain:(struct OpaqueSecKeychainRef *)arg3 algorithm:(unsigned int)arg4 size:(int)arg5 userName:(id)arg6 accessRef:(struct OpaqueSecAccessRef *)arg7 inputParms:(id)arg8;
-+ (void)_setPrintNameWithName:(id)arg1 item:(struct OpaqueSecKeychainItemRef *)arg2;
++ (int)_createUserKeyPair:(struct __SecKey **)arg1 privKey:(struct __SecKey **)arg2 keychain:(struct __SecKeychain *)arg3 algorithm:(unsigned int)arg4 size:(int)arg5 userName:(id)arg6 accessRef:(struct __SecAccess *)arg7 inputParms:(id)arg8;
++ (void)_setPrintNameWithName:(id)arg1 item:(struct __SecKeychainItem *)arg2;
 + (id)_invitationFromContentsOfFile:(id)arg1;
 - (void)setWebURL:(id)arg1;
 - (id)signedCertificateFromCSR:(id)arg1 inputParms:(id)arg2 error:(id *)arg3;
-- (id)createSelfSignedCertificateWithPublicKey:(struct OpaqueSecKeyRef *)arg1 privateKey:(struct OpaqueSecKeyRef *)arg2 inputParms:(id)arg3 error:(id *)arg4;
+-     // Error parsing type: @48@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24@32^@40, name: createSelfSignedCertificateWithPublicKey:privateKey:inputParms:error:
 - (id)_publicKeyHash;
 - (void)_setCSR:(id)arg1;
-- (void)setDestinationKeychain:(struct OpaqueSecKeychainRef *)arg1;
+- (void)setDestinationKeychain:(struct __SecKeychain *)arg1;
 - (void)_setSerialNumberToIssuerMappedToCAConfigFile;
-- (struct OpaqueSecKeyRef *)_copyPrivateKeyFromPublicKeyHash:(id)arg1 inKeychainOrArray:(void *)arg2;
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}32@0:8@16^v24, name: _copyPrivateKeyFromPublicKeyHash:inKeychainOrArray:
 - (int)_selectIssuerBasedOnPublicKeyHash;
 - (void)_chooseIssuer;
 - (void)_setIssuerHashOfPublicKey:(id)arg1;
-- (void)_setChosenIssuer:(struct OpaqueSecIdentityRef *)arg1;
-- (struct OpaqueSecCertificateRef *)_copyCertificateFromPublicKeyHash;
-- (BOOL)createWithPublicKey:(struct OpaqueSecKeyRef *)arg1 privateKey:(struct OpaqueSecKeyRef *)arg2 keychain:(struct OpaqueSecKeychainRef *)arg3 authenticator:(id)arg4 signer:(struct OpaqueSecIdentityRef *)arg5 inputParms:(id)arg6 error:(id *)arg7;
-- (BOOL)_createWithPublicKey:(struct OpaqueSecKeyRef *)arg1 privateKey:(struct OpaqueSecKeyRef *)arg2 keychain:(struct OpaqueSecKeychainRef *)arg3 authenticator:(id)arg4 signer:(struct OpaqueSecIdentityRef *)arg5 ca:(id)arg6 inputParms:(id)arg7 error:(id *)arg8;
+- (void)_setChosenIssuer:(struct __SecIdentity *)arg1;
+- (struct __SecCertificate *)_copyCertificateFromPublicKeyHash;
+-     // Error parsing type: c72@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24^{__SecKeychain=}32@40^{__SecIdentity=}48@56^@64, name: createWithPublicKey:privateKey:keychain:authenticator:signer:inputParms:error:
+-     // Error parsing type: c80@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24^{__SecKeychain=}32@40^{__SecIdentity=}48@56@64^@72, name: _createWithPublicKey:privateKey:keychain:authenticator:signer:ca:inputParms:error:
 - (void)_setAuthenticator:(id)arg1;
 - (id)_authenticator;
 - (int)_createCA;
 - (id)_crlDistributionPoints;
-- (struct OpaqueSecCertificateRef *)_resultingCertificate;
+- (struct __SecCertificate *)_resultingCertificate;
 - (int)_createCertExportFileForCAWithFormat:(unsigned int)arg1 pathToExportFile:(id *)arg2 exportedData:(id *)arg3;
-- (int)_createCert:(struct OpaqueSecKeyRef *)arg1 privKey:(struct OpaqueSecKeyRef *)arg2 keychain:(struct OpaqueSecKeychainRef *)arg3;
+-     // Error parsing type: i40@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24^{__SecKeychain=}32, name: _createCert:privKey:keychain:
 - (id)_lastUsedSerialNumber;
 - (void)setBasicConstraintsExtension:(id)arg1;
 - (void)setSubjectAltNameExtension:(id)arg1;
@@ -48,7 +48,7 @@
 - (void)setAdditionalCertificateInformation:(id)arg1;
 - (void)setCertificateInformation:(id)arg1;
 - (void)_setCRLDistributionPoints:(id)arg1;
-- (void)_setResultingCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (void)_setResultingCertificate:(struct __SecCertificate *)arg1;
 - (void)_setResultingCertificateData:(struct cssm_data)arg1;
 - (void)_setupCertExtensions:(struct __CE_DataAndType *)arg1 numExtens:(unsigned int *)arg2;
 - (void)_setupCRLDistPoints:(id)arg1 inCEGeneralNames:(struct __CE_GeneralNames *)arg2;
@@ -64,8 +64,8 @@
 - (void)setFullPath:(id)arg1;
 - (id)fullPath;
 - (id)name;
-- (struct OpaqueSecCertificateRef *)certificate;
-- (void)_setCACertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (struct __SecCertificate *)certificate;
+- (void)_setCACertificate:(struct __SecCertificate *)arg1;
 - (id)invitation;
 - (void)_setInvitation:(id)arg1;
 

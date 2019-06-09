@@ -8,6 +8,7 @@
 
 @protocol NSUserInterfaceItemSearching, NSUserInterfaceItemSearching><NSUserInterfaceItemSearching_Private;
 
+__attribute__((visibility("hidden")))
 @interface SCTCustomSearchResultGRL : SCTGRL
 {
     id <NSUserInterfaceItemSearching><NSUserInterfaceItemSearching_Private> mSearchHandler;

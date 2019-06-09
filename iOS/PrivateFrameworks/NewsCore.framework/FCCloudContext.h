@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+#import <NewsCore/FCAssetKeyManagerDelegate-Protocol.h>
+#import <NewsCore/FCBundleSubscriptionChangeObserver-Protocol.h>
 #import <NewsCore/FCCKDatabaseEncryptionDelegate-Protocol.h>
 #import <NewsCore/FCCacheFlushing-Protocol.h>
 #import <NewsCore/FCContentContext-Protocol.h>
@@ -15,7 +17,7 @@
 @class FCAccessChecker, FCArticleController, FCAssetManager, FCClientEndpointConnection, FCCommandQueue, FCFeedManager, FCFlintResourceManager, FCIssueReadingHistory, FCNetworkBehaviorMonitor, FCNotificationController, FCNotificationsEndpointConnection, FCPersonalizationData, FCPrivateChannelMembershipController, FCPurchaseController, FCReadingHistory, FCReadingList, FCSubscriptionController, FCSubscriptionList, FCTagController, FCTagSettings, FCTranslationManager, FCUserInfo, NSString, NSURL;
 @protocol FCAppActivityMonitor, FCBackgroundTaskable, FCBundleSubscriptionManagerType, FCClearableReadingHistory, FCContentContext, FCContentContextInternal, FCCoreConfigurationManager, FCCurrentIssuesChecker, FCFeedPersonalizing, FCFlintHelper, FCForYouMagazineFeedManaging, FCNewsAppConfigurationManager, FCPPTContext, FCPaidAccessCheckerType, FCPrivateDataContext, FCPrivateDataContextInternal, FCPurchaseManagerType, FCPushNotificationHandling, FCWebArchiveSource;
 
-@interface FCCloudContext : NSObject <FCTestingContext, FCCKDatabaseEncryptionDelegate, FCContentContext, FCPrivateDataContext, FCCacheFlushing>
+@interface FCCloudContext : NSObject <FCTestingContext, FCCKDatabaseEncryptionDelegate, FCAssetKeyManagerDelegate, FCBundleSubscriptionChangeObserver, FCContentContext, FCPrivateDataContext, FCCacheFlushing>
 {
     _Bool _deviceIsiPad;
     FCSubscriptionController *_subscriptionController;
@@ -41,11 +43,13 @@
     id <FCPPTContext> _pptContext;
     id <FCContentContext> _contentContext;
     id <FCPrivateDataContext> _privateDataContext;
+    long long _options;
 }
 
 + (id)testingContextWithDesiredHeadlineFieldOptions:(unsigned long long)arg1;
 + (id)testingContext;
 + (void)initialize;
+@property(nonatomic) long long options; // @synthesize options=_options;
 @property(retain, nonatomic) id <FCPrivateDataContext> privateDataContext; // @synthesize privateDataContext=_privateDataContext;
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(readonly, nonatomic) id <FCPPTContext> pptContext; // @synthesize pptContext=_pptContext;
@@ -64,6 +68,9 @@
 @property(readonly, nonatomic) FCNotificationController *notificationController; // @synthesize notificationController=_notificationController;
 @property(retain, nonatomic) id <FCAppActivityMonitor> appActivityMonitor; // @synthesize appActivityMonitor=_appActivityMonitor;
 - (void).cxx_destruct;
+- (void)_purchaseControllerDidAddALaCarteSubscription;
+- (void)bundleSubscriptionDidSubscribe:(id)arg1;
+- (_Bool)shouldAssetKeyManagerSimulateUnauthorizedAssetKeys:(id)arg1;
 - (void)fetchOriginalDataShouldBeDeletedAfterMigrationForDatabase:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchPrivateDataEncryptionMigrationIsDesiredForDatabase:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchPrivateDataEncryptionIsAllowedForDatabase:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -117,9 +124,10 @@
 @property(readonly, nonatomic) FCFeedManager *feedManager; // @synthesize feedManager=_feedManager;
 - (id)notificationsController;
 @property(readonly, nonatomic) FCSubscriptionController *subscriptionController; // @synthesize subscriptionController=_subscriptionController;
-- (id)initWithContentContext:(id)arg1 privateDataContext:(id)arg2 networkBehaviorMonitor:(id)arg3;
+- (id)initWithContentContext:(id)arg1 privateDataContext:(id)arg2 networkBehaviorMonitor:(id)arg3 options:(long long)arg4;
 - (id)initForTestingWithDesiredHeadlineFieldOptions:(unsigned long long)arg1;
 - (id)initForTesting;
+- (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentHostDirectory:(id)arg3 privateDataHostDirectory:(id)arg4 privateDataActionProvider:(id)arg5 networkBehaviorMonitor:(id)arg6 appActivityMonitor:(id)arg7 desiredHeadlineFieldOptions:(unsigned long long)arg8 feedUsage:(long long)arg9 deviceIsiPad:(_Bool)arg10 backgroundTaskable:(id)arg11 privateDataSyncAvailability:(id)arg12 pptContext:(id)arg13 options:(long long)arg14;
 - (id)initWithConfiguration:(id)arg1 configurationManager:(id)arg2 contentHostDirectory:(id)arg3 privateDataHostDirectory:(id)arg4 privateDataActionProvider:(id)arg5 networkBehaviorMonitor:(id)arg6 appActivityMonitor:(id)arg7 desiredHeadlineFieldOptions:(unsigned long long)arg8 feedUsage:(long long)arg9 lockStoreFrontIfNeeded:(_Bool)arg10 deviceIsiPad:(_Bool)arg11 backgroundTaskable:(id)arg12 privateDataSyncAvailability:(id)arg13 pptContext:(id)arg14;
 - (id)init;
 

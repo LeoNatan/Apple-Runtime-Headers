@@ -8,7 +8,7 @@
 
 #import <CarPlay/NSSecureCoding-Protocol.h>
 
-@class CPAlertAction, CPImageSet, NSArray, NSUUID;
+@class CPAlertAction, CPImageSet, NSArray, NSUUID, UIImage;
 @protocol CPNavigationAlertUpdating;
 
 @interface CPNavigationAlert : NSObject <NSSecureCoding>
@@ -33,10 +33,13 @@
 @property(readonly, copy, nonatomic) NSArray *subtitleVariants; // @synthesize subtitleVariants=_subtitleVariants;
 @property(readonly, copy, nonatomic) NSArray *titleVariants; // @synthesize titleVariants=_titleVariants;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) UIImage *image;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)updateTitleVariants:(id)arg1 subtitleVariants:(id)arg2;
+- (id)initWithTitleVariants:(id)arg1 subtitleVariants:(id)arg2 image:(id)arg3 primaryAction:(id)arg4 secondaryAction:(id)arg5 duration:(double)arg6;
 - (id)initWithTitleVariants:(id)arg1 subtitleVariants:(id)arg2 imageSet:(id)arg3 primaryAction:(id)arg4 secondaryAction:(id)arg5 duration:(double)arg6;
+- (id)_initWithTitleVariants:(id)arg1 subtitleVariants:(id)arg2 imageSet:(id)arg3 primaryAction:(id)arg4 secondaryAction:(id)arg5 duration:(double)arg6;
 
 @end
 

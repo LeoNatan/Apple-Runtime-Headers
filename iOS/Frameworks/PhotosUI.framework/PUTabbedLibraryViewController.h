@@ -8,17 +8,17 @@
 
 #import <PhotosUI/PLAssetContainerListChangeObserver-Protocol.h>
 #import <PhotosUI/PLAssetContainerObserver-Protocol.h>
-#import <PhotosUI/PLDismissableViewController-Protocol.h>
 #import <PhotosUI/PLInvitationRecordsObserver-Protocol.h>
-#import <PhotosUI/PLRootLibraryNavigationController-Protocol.h>
 #import <PhotosUI/PXChangeObserver-Protocol.h>
+#import <PhotosUI/PXForcedDismissableViewController-Protocol.h>
+#import <PhotosUI/PXRootLibraryNavigationController-Protocol.h>
 #import <PhotosUI/PXSettingsKeyObserver-Protocol.h>
 #import <PhotosUI/UINavigationControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSMutableIndexSet, NSObject, NSString, PUImportViewController, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, PUTabbedLibraryViewModel, PXForYouBadgeManager, UINavigationController;
+@class NSArray, NSMutableDictionary, NSMutableIndexSet, NSObject, NSString, PUImportViewController, PUMomentsZoomLevelManager, PUSessionInfo, PUTabbedLibraryViewControllerSpec, PUTabbedLibraryViewModel, PXForYouBadgeManager, PXProgrammaticNavigationRequest, UINavigationController;
 @protocol OS_os_log, PUTabbedLibraryViewControllerContainerDelegate;
 
-@interface PUTabbedLibraryViewController : UITabBarController <PXSettingsKeyObserver, PXChangeObserver, PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLInvitationRecordsObserver, PLDismissableViewController, PLRootLibraryNavigationController, UINavigationControllerDelegate>
+@interface PUTabbedLibraryViewController : UITabBarController <PXSettingsKeyObserver, PXChangeObserver, PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLInvitationRecordsObserver, PXForcedDismissableViewController, PXRootLibraryNavigationController, UINavigationControllerDelegate>
 {
     PUTabbedLibraryViewControllerSpec *_spec;
     PUSessionInfo *_sessionInfo;
@@ -34,9 +34,11 @@
     id <PUTabbedLibraryViewControllerContainerDelegate> _containerDelegate;
     NSArray *_excludedContentModes;
     PXForYouBadgeManager *_badgeManager;
+    PXProgrammaticNavigationRequest *_pendingNavigationRequest;
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
+@property(retain, nonatomic) PXProgrammaticNavigationRequest *pendingNavigationRequest; // @synthesize pendingNavigationRequest=_pendingNavigationRequest;
 @property(retain, nonatomic) PXForYouBadgeManager *badgeManager; // @synthesize badgeManager=_badgeManager;
 @property(nonatomic) _Bool shouldNavigateToAllPhotosAlbum; // @synthesize shouldNavigateToAllPhotosAlbum=_shouldNavigateToAllPhotosAlbum;
 @property(copy, nonatomic) NSArray *excludedContentModes; // @synthesize excludedContentModes=_excludedContentModes;
@@ -52,6 +54,10 @@
 - (void)prepareForDefaultImageSnapshot;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (int)_contentModeForDestination:(id)arg1;
+- (id)nextExistingParticipantOnRouteToDestination:(id)arg1;
+- (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)canRouteToDestination:(id)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
@@ -70,7 +76,7 @@
 - (id)_snapBackRootViewControllerInNavigationController:(id)arg1;
 - (void)navigateToPeopleAlbumAnimated:(_Bool)arg1 revealPersonWithLocalIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)navigateToMemoryWithLocalIdentifier:(id)arg1;
-- (void)_handleFetchedMomentShare:(id)arg1 error:(id)arg2 timedOut:(_Bool)arg3;
+- (void)_handleFetchedMomentShare:(id)arg1 atURL:(id)arg2 error:(id)arg3 timedOut:(_Bool)arg4;
 - (void)navigateToMomentShareWithURL:(id)arg1 animated:(_Bool)arg2;
 - (void)navigateToInvitationCMMWithIdentifier:(id)arg1 animated:(_Bool)arg2;
 - (void)navigateToSuggestedCMMWithIdentifier:(id)arg1 animated:(_Bool)arg2;
@@ -103,6 +109,7 @@
 - (void)navigateToRevealAlbum:(struct NSObject *)arg1 initiallyHidden:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)navigateToAlbum:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_navigateToAlbum:(struct NSObject *)arg1 andPerformAction:(int)arg2 initiallyHidden:(_Bool)arg3 animated:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)navigateToInitialLocationInCurrentNavigationController;
 - (_Bool)_navigateToDefaultLocationInNavigationController:(id)arg1 animated:(_Bool)arg2;
 - (void)navigateToInitialLocationInNavigationController:(id)arg1;
 - (void)_updateTabBarVisibilityForHorizontalSizeClass:(long long)arg1;
@@ -112,8 +119,7 @@
 - (void)invitationRecordsDidChange:(id)arg1;
 - (void)assetContainerDidChange:(id)arg1;
 - (void)assetContainerListDidChange:(id)arg1;
-- (void)_libraryDidChange:(id)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_sceneWillEnterForeground:(id)arg1;
 - (void)_updateSharedAlbumBadges;
 - (void)updateDisplayedTabsAnimated:(_Bool)arg1;
 - (_Bool)_isNavigationControllerBadged:(id)arg1;
@@ -129,7 +135,7 @@
 @property(readonly, nonatomic) NSArray *rootViewControllers;
 - (int)_contentModeForNavigationController:(id)arg1;
 - (int)_contentModeForAlbum:(struct NSObject *)arg1;
-- (struct NSObject *)_albumListForContentMode:(int)arg1;
+- (struct NSObject *)_albumListForContentMode:(int)arg1 library:(id)arg2;
 - (_Bool)pu_shouldSelectViewController:(id)arg1;
 - (void)setImportViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;
@@ -142,6 +148,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithSpec:(id)arg1;
+- (id)px_gridPresentation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

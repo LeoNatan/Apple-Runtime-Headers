@@ -13,7 +13,6 @@
 
 + (_Bool)canInitiateDistributedPhotoStreamDeletionForAssetUUID:(id)arg1;
 + (_Bool)writeBreadcrumbContent:(id)arg1 forHashString:(id)arg2;
-+ (id)publishBreadcrumbsPath;
 + (id)iCloudServiceAccount;
 + (_Bool)photoStreamsEnabled;
 + (id)sharedPhotoStreamsHelper;

@@ -8,6 +8,7 @@
 
 #import <ChatKit/CKAssociatedMessageTranscriptCellDelegate-Protocol.h>
 #import <ChatKit/CKAudioControllerDelegate-Protocol.h>
+#import <ChatKit/CKBalloonViewDelegate-Protocol.h>
 #import <ChatKit/CKFullScreenEffectManagerDelegate-Protocol.h>
 #import <ChatKit/CKLocationShareBalloonViewDelegate-Protocol.h>
 #import <ChatKit/CKLocationSharingDelegate-Protocol.h>
@@ -23,11 +24,12 @@
 #import <ChatKit/UICollectionViewDataSource-Protocol.h>
 #import <ChatKit/UICollectionViewDelegate-Protocol.h>
 #import <ChatKit/UICollectionViewDelegateFlowLayout-Protocol.h>
+#import <ChatKit/UICollectionViewDelegate_Private-Protocol.h>
 
-@class ArouetPrewarmer, CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKNanoPPTSmartReplyTest, CKNanoReplyLoader, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSHashTable, NSIndexPath, NSIndexSet, NSMutableSet, NSObject, NSString, PUICMixedDetentsFrameNotchProvider, PUICQuickboardLanguageController, UITapGestureRecognizer, UIView;
+@class ArouetPrewarmer, CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKNanoPPTSmartReplyTest, CKNanoReplyLoader, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSDate, NSHashTable, NSIndexPath, NSIndexSet, NSMutableSet, NSObject, NSString, PUICMixedDetentsFrameNotchProvider, PUICQuickboardLanguageController, UITapGestureRecognizer, UIView;
 @protocol CKFullscreenEffectView, CKGradientReferenceView, CKTranscriptCollectionViewControllerDelegate, OS_dispatch_group;
 
-@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CKNanoReplyButtonsCellDelegate, CKNanoReplyListCellDelegate, UIAlertViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKSendAnimationManagerDelegate, PUICQuickboardLanguageControllerDelegate>
+@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CKNanoReplyButtonsCellDelegate, CKNanoReplyListCellDelegate, UIAlertViewDelegate, UICollectionViewDelegate, UICollectionViewDelegate_Private, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKBalloonViewDelegate, CKSendAnimationManagerDelegate, PUICQuickboardLanguageControllerDelegate>
 {
     NSIndexPath *_itemIndexPathToHighlight;
     _Bool _initialLoad;
@@ -59,10 +61,11 @@
     NSString *___CurrentTestName;
     ArouetPrewarmer *_arouetPrewarmer;
     UITapGestureRecognizer *_loggingTapGestureRecognizer;
-    NSArray *_bulletins;
+    NSArray *_notifications;
     CKTranscriptCollectionView *_collectionView;
     CKAudioController *_audioController;
     NSString *_cachedRepliesContext;
+    NSDate *_cachedRepliesContextTime;
     CKNanoReplyLoader *_replyLoader;
     PUICQuickboardLanguageController *_languageController;
     CDUnknownBlockType _postScrollAnimationBlock;
@@ -110,10 +113,11 @@
 @property(copy, nonatomic) CDUnknownBlockType postScrollAnimationBlock; // @synthesize postScrollAnimationBlock=_postScrollAnimationBlock;
 @property(retain, nonatomic) PUICQuickboardLanguageController *languageController; // @synthesize languageController=_languageController;
 @property(retain, nonatomic) CKNanoReplyLoader *replyLoader; // @synthesize replyLoader=_replyLoader;
+@property(retain, nonatomic) NSDate *cachedRepliesContextTime; // @synthesize cachedRepliesContextTime=_cachedRepliesContextTime;
 @property(retain, nonatomic) NSString *cachedRepliesContext; // @synthesize cachedRepliesContext=_cachedRepliesContext;
 @property(retain, nonatomic) CKAudioController *audioController; // @synthesize audioController=_audioController;
 @property(retain, nonatomic) CKTranscriptCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-@property(copy, nonatomic) NSArray *bulletins; // @synthesize bulletins=_bulletins;
+@property(copy, nonatomic) NSArray *notifications; // @synthesize notifications=_notifications;
 @property(retain, nonatomic) UITapGestureRecognizer *loggingTapGestureRecognizer; // @synthesize loggingTapGestureRecognizer=_loggingTapGestureRecognizer;
 @property(nonatomic) _Bool forceDisableNotches; // @synthesize forceDisableNotches=_forceDisableNotches;
 @property(retain, nonatomic) ArouetPrewarmer *arouetPrewarmer; // @synthesize arouetPrewarmer=_arouetPrewarmer;
@@ -148,7 +152,6 @@
 - (id)replies;
 - (void)updateRepliesAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateReplies;
-- (id)repliesContext;
 - (void)verticallyScrollTranscriptByAmount:(float)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)wantsDrawerLayout;
 - (id)collectionViewLayout;
@@ -198,10 +201,10 @@
 - (void)loadMoreRecentMessages;
 - (void)setChatItems:(id)arg1 removedAssociatedIndexes:(id *)arg2 insertedAssociatedIndexes:(id *)arg3;
 - (void)_diffAssociatedItemsWithOldAssociatedItems:(id)arg1 removedAssociatedIndexes:(id *)arg2 insertedAssociatedIndexes:(id *)arg3;
-- (id)chatItemWithIMChatItem:(id)arg1;
+- (id)chatItemWithIMChatItem:(id)arg1 traitCollection:(id)arg2;
 - (id)chatItemsWithIMChatItems:(id)arg1;
-- (id)chatItemWithBulletin:(id)arg1;
-- (id)chatItemsWithBulletins:(id)arg1;
+- (id)chatItemWithNotification:(id)arg1;
+- (id)chatItemsWithNotifications:(id)arg1;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(_Bool)arg6 checkFiltered:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)_updatePluginPlaybackManagerForInsertedChatItems:(id)arg1;
@@ -262,6 +265,8 @@
 - (void)_configureVisibleTranscriptBalloonCells;
 - (void)_removeVisibleTranscriptBalloonCell:(id)arg1;
 - (void)_addVisibleTranscriptBalloonCell:(id)arg1;
+- (void)collectionView:(id)arg1 didBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
@@ -297,7 +302,7 @@
 - (void)reloadData;
 - (void)_prewarmBalloonControllers;
 - (void)sizeFullTranscriptIfNecessary;
-- (void)invalidateChatItemLayoutWithBalloonMaxWidth:(float)arg1 marginInsets:(struct UIEdgeInsets)arg2;
+- (void)invalidateChatItemLayoutWithBalloonMaxWidth:(float)arg1 marginInsets:(struct UIEdgeInsets)arg2 traitCollection:(id)arg3;
 - (void)setScrollAnchor:(float)arg1;
 - (void)deleteSelectedItems:(id)arg1;
 - (void)setSelectedItems:(id)arg1;
@@ -305,8 +310,8 @@
 - (void)highlightItemAtIndexPathWhenDisplayed:(id)arg1;
 - (void)_highlightCell:(id)arg1;
 @property(readonly, nonatomic) IMChat *chat;
-- (id)initWithConversation:(id)arg1 bulletins:(id)arg2 balloonMaxWidth:(float)arg3 marginInsets:(struct UIEdgeInsets)arg4;
-- (id)initWithConversation:(id)arg1 balloonMaxWidth:(float)arg2 marginInsets:(struct UIEdgeInsets)arg3;
+- (id)initWithConversation:(id)arg1 delegate:(id)arg2 notifications:(id)arg3 balloonMaxWidth:(float)arg4 marginInsets:(struct UIEdgeInsets)arg5;
+- (id)initWithConversation:(id)arg1 delegate:(id)arg2 balloonMaxWidth:(float)arg3 marginInsets:(struct UIEdgeInsets)arg4;
 - (void)_prewarmTranscriptAssetsIfNecessary;
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidAppear:(_Bool)arg1;

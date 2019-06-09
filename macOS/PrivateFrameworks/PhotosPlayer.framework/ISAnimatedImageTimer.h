@@ -6,6 +6,7 @@
 
 #import <PhotosPlayer/ISObservable.h>
 
+__attribute__((visibility("hidden")))
 @interface ISAnimatedImageTimer : ISObservable
 {
     struct __CVDisplayLink *_displayLink;

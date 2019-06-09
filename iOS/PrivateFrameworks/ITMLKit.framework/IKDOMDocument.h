@@ -17,6 +17,15 @@
 
 @interface IKDOMDocument : IKDOMNode <NSObject, IKJSDOMDocument, _IKJSDOMDocumentProxy, _IKJSDOMDocument, IKJSDOMXPathEvaluator>
 {
+    struct {
+        _Bool hasSetNeedsUpdate;
+        _Bool hasSnapshotImpressions;
+        _Bool hasRecordedImpressions;
+        _Bool hasImpressionsMatchingTag;
+        _Bool hasScrollToTop;
+        _Bool hasRunTest;
+    } _appBridgeFlags;
+    _Bool _embeddedScriptExecuted;
     id <IKNetworkRequestLoader> __requestLoader;
     id <IKJSDOMDocumentAppBridge> _appBridge;
     unsigned long long _itmlIDSequence;
@@ -27,8 +36,10 @@
 + (void)_resetUpdatesForNode:(id)arg1;
 @property(retain, nonatomic, setter=_setDocumentURI:) NSString *_documentURI; // @synthesize _documentURI=__documentURI;
 @property(nonatomic) unsigned long long itmlIDSequence; // @synthesize itmlIDSequence=_itmlIDSequence;
+@property(nonatomic, getter=isEmbeddedScriptExecuted) _Bool embeddedScriptExecuted; // @synthesize embeddedScriptExecuted=_embeddedScriptExecuted;
 @property(nonatomic) __weak id <IKJSDOMDocumentAppBridge> appBridge; // @synthesize appBridge=_appBridge;
 - (void).cxx_destruct;
+- (void)_executeEmbeddedScriptWithExtraInfo:(id)arg1;
 - (void)_updateITMLIDRecursivelyForNodePtr:(struct _xmlNode *)arg1;
 - (void)swapITMLIDForNode:(id)arg1 withITMLIDForNode:(id)arg2;
 - (void)setITMLIDForNode:(id)arg1;
@@ -62,6 +73,7 @@
 @property(readonly, retain, nonatomic) IKDOMElement *documentElement;
 @property(readonly, nonatomic) __weak IKDOMImplementation *implementation;
 - (_Bool)markUpdated;
+- (void)prepareForPresentationWithExtraInfo:(id)arg1;
 - (void)dealloc;
 - (id)initWithAppContext:(id)arg1 qualifiedName:(id)arg2;
 - (id)initWithAppContext:(id)arg1 input:(id)arg2 error:(id *)arg3;

@@ -9,7 +9,7 @@
 #import <NetworkExtension/NSCopying-Protocol.h>
 #import <NetworkExtension/NSSecureCoding-Protocol.h>
 
-@class NEFilterAbsoluteVerdict, NSData, NSString, NSURL, NSUUID;
+@class NEFilterAbsoluteVerdict, NSData, NSMutableArray, NSString, NSURL, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface NEFilterFlow : NSObject <NSSecureCoding, NSCopying>
@@ -17,22 +17,40 @@
     BOOL _isOpen;
     NEFilterAbsoluteVerdict *_currentVerdict;
     BOOL _isRemediationFlow;
+    BOOL _isPaused;
+    BOOL _reportAtEnd;
+    BOOL _sourceAppIdentifierFromApp;
     int _pid;
     int _epid;
     NSURL *_URL;
     NSData *_sourceAppUniqueIdentifier;
     NSString *_sourceAppIdentifier;
     NSString *_sourceAppVersion;
+    long long _direction;
+    NSData *_sourceAppAuditToken;
     NSObject<OS_dispatch_queue> *_queue;
     NSUUID *_flowUUID;
+    NSMutableArray *_savedMessageHandlerQueue;
+    unsigned long long _inBytes;
+    unsigned long long _outBytes;
+    NSData *_crypto_signature;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain) NSData *crypto_signature; // @synthesize crypto_signature=_crypto_signature;
+@property unsigned long long outBytes; // @synthesize outBytes=_outBytes;
+@property unsigned long long inBytes; // @synthesize inBytes=_inBytes;
+@property BOOL sourceAppIdentifierFromApp; // @synthesize sourceAppIdentifierFromApp=_sourceAppIdentifierFromApp;
+@property BOOL reportAtEnd; // @synthesize reportAtEnd=_reportAtEnd;
+@property(retain) NSMutableArray *savedMessageHandlerQueue; // @synthesize savedMessageHandlerQueue=_savedMessageHandlerQueue;
+@property BOOL isPaused; // @synthesize isPaused=_isPaused;
 @property int epid; // @synthesize epid=_epid;
 @property int pid; // @synthesize pid=_pid;
 @property(copy) NSUUID *flowUUID; // @synthesize flowUUID=_flowUUID;
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property BOOL isRemediationFlow; // @synthesize isRemediationFlow=_isRemediationFlow;
+@property(retain) NSData *sourceAppAuditToken; // @synthesize sourceAppAuditToken=_sourceAppAuditToken;
+@property long long direction; // @synthesize direction=_direction;
 @property(copy) NSString *sourceAppVersion; // @synthesize sourceAppVersion=_sourceAppVersion;
 @property(copy) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
 @property(copy) NSData *sourceAppUniqueIdentifier; // @synthesize sourceAppUniqueIdentifier=_sourceAppUniqueIdentifier;

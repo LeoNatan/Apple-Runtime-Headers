@@ -13,6 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface VUILibraryLockupViewCell : UICollectionViewCell <VUIRentalExpirationLabelDelegate>
 {
+    _Bool _hideTitleLabel;
     _TVImageView *_imageView;
     double _imageAspectRatio;
     VUILabel *_titleLabel;
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)configureLockupCell:(id)arg1 withMedia:(id)arg2 width:(double)arg3 forMetrics:(_Bool)arg4;
+@property(nonatomic) _Bool hideTitleLabel; // @synthesize hideTitleLabel=_hideTitleLabel;
 @property(retain, nonatomic) VUIRentalExpirationLabel *expirationLabel; // @synthesize expirationLabel=_expirationLabel;
 @property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) double imageAspectRatio; // @synthesize imageAspectRatio=_imageAspectRatio;

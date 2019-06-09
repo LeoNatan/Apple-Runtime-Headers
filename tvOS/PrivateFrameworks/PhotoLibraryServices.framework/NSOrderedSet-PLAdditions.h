@@ -10,5 +10,6 @@
 - (_Bool)pl_isSortedUsingComparator:(CDUnknownBlockType)arg1;
 - (unsigned long long)pl_indexOfObjectIdenticalTo:(id)arg1;
 - (id)pl_shortDescription;
+- (id)_pl_prettyDescriptionWithIndent:(long long)arg1;
 @end
 

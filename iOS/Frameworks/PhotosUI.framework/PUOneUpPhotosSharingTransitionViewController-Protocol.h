@@ -6,10 +6,10 @@
 
 #import <PhotosUI/PUPhotosSharingTransitionViewController-Protocol.h>
 
-@class PUOneUpAssetTransitionInfo, PUOneUpPhotosSharingTransitionContext;
+@class PUAssetTransitionInfo, PUOneUpPhotosSharingTransitionContext;
 
 @protocol PUOneUpPhotosSharingTransitionViewController <PUPhotosSharingTransitionViewController>
-- (void)setOneUpPhotosSharingTransitionInfo:(PUOneUpAssetTransitionInfo *)arg1;
+- (void)setOneUpPhotosSharingTransitionInfo:(PUAssetTransitionInfo *)arg1;
 - (void)setOneUpPhotosSharingTransitionContext:(PUOneUpPhotosSharingTransitionContext *)arg1;
 @end
 

@@ -12,6 +12,7 @@
 {
 }
 
++ (Class)meltedClass;
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 + (id)attendeeWithEmailAddress:(id)arg1 name:(id)arg2;

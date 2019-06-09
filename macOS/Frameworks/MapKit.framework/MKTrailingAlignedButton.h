@@ -6,6 +6,7 @@
 
 #import <MapKit/MKButtonWithTargetArgument.h>
 
+__attribute__((visibility("hidden")))
 @interface MKTrailingAlignedButton : MKButtonWithTargetArgument
 {
 }

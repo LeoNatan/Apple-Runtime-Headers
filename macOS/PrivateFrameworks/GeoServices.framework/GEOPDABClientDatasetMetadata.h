@@ -16,14 +16,14 @@
     unsigned int _bucketId;
     unsigned int _datasetId;
     struct {
-        unsigned int bucketId:1;
-        unsigned int datasetId:1;
-    } _has;
+        unsigned int has_bucketId:1;
+        unsigned int has_datasetId:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int datasetId; // @synthesize datasetId=_datasetId;
-@property(nonatomic) unsigned int bucketId; // @synthesize bucketId=_bucketId;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,10 +32,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasDatasetId;
+@property(nonatomic) unsigned int datasetId;
 @property(nonatomic) BOOL hasBucketId;
+@property(nonatomic) unsigned int bucketId;
 
 @end
 

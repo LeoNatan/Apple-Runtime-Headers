@@ -9,31 +9,35 @@
 #import <MapKit/GEOTransitArtworkDataSource-Protocol.h>
 
 @class NSString;
-@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource;
+@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource, GEOTransitTextDataSource;
 
 @interface MKTransitArtwork : NSObject <GEOTransitArtworkDataSource>
 {
     NSString *_accessibilityText;
     _Bool _hasRoutingIncidentBadge;
-    long long _artworkSourceType;
+    int _artworkSourceType;
+    int _artworkUseType;
     id <GEOTransitShieldDataSource> _shieldDataSource;
     id <GEOTransitIconDataSource> _iconDataSource;
-    long long _artworkUseType;
     id <GEOTransitShieldDataSource> _iconFallbackShieldDataSource;
+    id <GEOTransitTextDataSource> _textDataSource;
 }
 
 + (id)artworkWithIcon:(id)arg1 accessibilityText:(id)arg2;
++ (id)artworkWithText:(id)arg1;
 + (id)artworkWithShield:(id)arg1 accessibilityText:(id)arg2;
 @property(readonly, nonatomic) _Bool hasRoutingIncidentBadge; // @synthesize hasRoutingIncidentBadge=_hasRoutingIncidentBadge;
+@property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource; // @synthesize textDataSource=_textDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> iconFallbackShieldDataSource; // @synthesize iconFallbackShieldDataSource=_iconFallbackShieldDataSource;
-@property(readonly, nonatomic) long long artworkUseType; // @synthesize artworkUseType=_artworkUseType;
+@property(readonly, nonatomic) int artworkUseType; // @synthesize artworkUseType=_artworkUseType;
 @property(readonly, nonatomic) id <GEOTransitIconDataSource> iconDataSource; // @synthesize iconDataSource=_iconDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource; // @synthesize shieldDataSource=_shieldDataSource;
-@property(readonly, nonatomic) long long artworkSourceType; // @synthesize artworkSourceType=_artworkSourceType;
+@property(readonly, nonatomic) int artworkSourceType; // @synthesize artworkSourceType=_artworkSourceType;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *accessibilityText;
 - (id)initWithIcon:(id)arg1 fallbackShield:(id)arg2 accessibilityText:(id)arg3;
 - (id)initWithIcon:(id)arg1 accessibilityText:(id)arg2;
+- (id)initWithText:(id)arg1;
 - (id)initWithShield:(id)arg1 accessibilityText:(id)arg2;
 
 // Remaining properties

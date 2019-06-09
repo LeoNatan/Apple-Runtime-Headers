@@ -9,6 +9,7 @@
 @class NSHashTable, NSMapTable, SKUIMediaPlayerItemStatus;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaPlayerInterface : NSObject
 {
     NSObject<OS_dispatch_queue> *_accessQueue;

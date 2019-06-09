@@ -18,8 +18,6 @@
     double _trainingWeight;
 }
 
-+ (_Bool)canClassifyPolarityForLanguageIdentifier:(id)arg1 withOptions:(unsigned int)arg2 dataProvider:(id)arg3;
-+ (_Bool)canClassifyPolarityForLanguageIdentifier:(id)arg1 withOptions:(unsigned int)arg2;
 + (unsigned int)polarityTypeFromName:(id)arg1;
 + (id)polarityNameFromType:(unsigned int)arg1;
 + (unsigned int)annotationTypeFromName:(id)arg1;
@@ -33,8 +31,6 @@
 @property(retain) NSString *languageID; // @synthesize languageID=_languageID;
 @property(retain) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
-- (unsigned int)polarityClassificationWithOptions:(unsigned int)arg1 dataProvider:(id)arg2;
-- (unsigned int)polarityClassificationWithOptions:(unsigned int)arg1;
 - (id)lsmText;
 - (id)taggedText;
 - (unsigned int)annotatedPolarity;

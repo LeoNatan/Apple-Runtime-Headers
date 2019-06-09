@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: stateConstraints
     // Error parsing type: , name: participantListHeightConstraint
+    // Error parsing type: , name: localParticipantViewHeightConstraint
     // Error parsing type: , name: effectsConstraintManagers
     // Error parsing type: , name: currentConstraints
 }

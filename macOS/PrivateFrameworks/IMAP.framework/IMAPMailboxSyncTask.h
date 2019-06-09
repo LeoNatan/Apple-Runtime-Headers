@@ -6,6 +6,7 @@
 
 #import <IMAP/IMAPTask.h>
 
+#import <IMAP/ECSignpostable-Protocol.h>
 #import <IMAP/IMAPPersistDeletedMessagesOperationDelegate-Protocol.h>
 #import <IMAP/IMAPPersistFlagChangesOperationDelegate-Protocol.h>
 #import <IMAP/IMAPPersistLabelChangesOperationDelegate-Protocol.h>
@@ -18,15 +19,15 @@
 @class IMAPTaskManager, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSProgress, NSString;
 @protocol IMAPMessageDataSource;
 
-@interface IMAPMailboxSyncTask : IMAPTask <IMAPPersistDeletedMessagesOperationDelegate, IMAPPersistFlagChangesOperationDelegate, IMAPPersistLabelChangesOperationDelegate, IMAPPersistMessagesOperationDelegate, IMAPSelectMailboxOperationDelegate, IMAPSyncSkeletonsOperationDelegate, IMAPSyncUIDsFlagsAndLabelsOperationDelegate, IMAPVerifyMailboxOperationDelegate>
+@interface IMAPMailboxSyncTask : IMAPTask <ECSignpostable, IMAPPersistDeletedMessagesOperationDelegate, IMAPPersistFlagChangesOperationDelegate, IMAPPersistLabelChangesOperationDelegate, IMAPPersistMessagesOperationDelegate, IMAPSelectMailboxOperationDelegate, IMAPSyncSkeletonsOperationDelegate, IMAPSyncUIDsFlagsAndLabelsOperationDelegate, IMAPVerifyMailboxOperationDelegate>
 {
     NSMutableIndexSet *_messageNumbersNeedingUIDs;
     NSMutableIndexSet *_messageNumbersNeedingSkeletons;
     NSMutableIndexSet *_uidsNeedingSkeletons;
     NSMutableOrderedSet *_messagesToPersist;
     NSMutableIndexSet *_uidsToDelete;
-    NSMutableDictionary *_flagChangesByDetails;
-    NSMutableDictionary *_labelChangesByDetails;
+    NSMutableDictionary *_flagChangesByServerMessage;
+    NSMutableDictionary *_labelChangesByServerMessage;
     NSMutableArray *_messagesNeedingUIDs;
     NSMutableIndexSet *_uidsAddedLocally;
     BOOL _userInitiated;
@@ -76,15 +77,14 @@
 @property(nonatomic) BOOL wasReset; // @synthesize wasReset=_wasReset;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-@property(readonly) unsigned long long signpostID;
 - (void)verifyMailboxOperation:(id)arg1 foundInconsistencies:(BOOL)arg2;
 - (void)_finishCheckForMailProgressIfNecessary;
 - (void)_setFoundNewUnreadMessageInInbox;
 - (void)_incrementFoundMessages:(unsigned long long)arg1;
 - (void)persistDeletedMessagesOperation:(id)arg1 deletedUIDs:(id)arg2;
-- (void)persistLabelChangesOperation:(id)arg1 persistedLabelChangesForMessageDetails:(id)arg2;
-- (void)persistFlagChangesOperation:(id)arg1 persistedFlagChangesForUIDs:(id)arg2;
-- (void)persistMessagesOperation:(id)arg1 persistedMessagesAndGotNewMessages:(id)arg2 missedMessages:(id)arg3;
+- (void)persistLabelChangesOperation:(id)arg1 persistedLabelChangesForServerMessages:(id)arg2;
+- (void)persistFlagChangesOperation:(id)arg1 persistedFlagChangesForRemoteIDs:(id)arg2;
+- (void)persistMessagesOperation:(id)arg1 persistedMessages:(id)arg2 andGotNewMessages:(id)arg3;
 - (id)_gmailLabelsForNames:(id)arg1;
 - (void)_updateLastSyncedModificationSequenceIfNeeded;
 - (void)syncSkeletonsOperationFinished:(id)arg1 withFetchResponses:(id)arg2 serverInterface:(id)arg3;
@@ -122,6 +122,7 @@
 - (id)initWithDataSource:(id)arg1 taskManager:(id)arg2 exists:(unsigned long long)arg3;
 - (id)initWithDataSource:(id)arg1 taskManager:(id)arg2 messageNumbersNeedingFlags:(id)arg3;
 - (id)initWithDataSource:(id)arg1 taskManager:(id)arg2 imapMailbox:(id)arg3 fromStatus:(BOOL)arg4 forceFullSync:(BOOL)arg5;
+@property(readonly) unsigned long long signpostID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

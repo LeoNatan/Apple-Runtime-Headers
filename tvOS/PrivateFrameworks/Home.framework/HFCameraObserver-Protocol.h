@@ -6,10 +6,11 @@
 
 #import <Home/HMCameraSnapshotControlDelegate-Protocol.h>
 #import <Home/HMCameraStreamControlDelegate-Protocol.h>
+#import <Home/HMCameraUserSettingsDelegate-Protocol.h>
 
 @class HMCameraStream, HMCameraStreamControl, NSError;
 
-@protocol HFCameraObserver <HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate>
+@protocol HFCameraObserver <HMCameraSnapshotControlDelegate, HMCameraStreamControlDelegate, HMCameraUserSettingsDelegate>
 
 @optional
 - (void)cameraStream:(HMCameraStream *)arg1 didUpdateAudioStreamSettingWithError:(NSError *)arg2;

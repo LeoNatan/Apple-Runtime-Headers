@@ -10,7 +10,7 @@
 #import <PassKitUI/PKPaymentSetupHideSetupLaterButtonProtocol-Protocol.h>
 #import <PassKitUI/PKPaymentSetupPresentationProtocol-Protocol.h>
 
-@class NSMutableArray, NSString, PKPaymentCredentialTableViewCell, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentSetupProduct, PKTableHeaderView, UIImage;
+@class NSMutableArray, NSString, PKPaymentCredentialCache, PKPaymentCredentialTableViewCell, PKPaymentProvisioningController, PKPaymentSetupFooterView, PKPaymentSetupProduct, PKTableHeaderView, UIImage;
 @protocol PKPaymentSetupViewControllerDelegate;
 
 @interface PKPaymentCredentialsViewController : PKPaymentSetupTableViewController <PKPaymentSetupHideSetupLaterButtonProtocol, PKPaymentProvisioningControllerDelegate, PKPaymentSetupPresentationProtocol>
@@ -18,6 +18,7 @@
     PKPaymentProvisioningController *_provisioningController;
     id <PKPaymentSetupViewControllerDelegate> _setupDelegate;
     NSMutableArray *_credentialCaches;
+    PKPaymentCredentialCache *_peerPaymentCredentialCache;
     NSMutableArray *_refundedCredentialCaches;
     PKTableHeaderView *_tableHeader;
     PKPaymentSetupFooterView *_tableFooter;
@@ -35,6 +36,8 @@
 - (void).cxx_destruct;
 - (id)paymentSetupMarker;
 - (void)_createPassSnapshotFromPaymentPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_presentSecurityCapabilitiesFlowWithFeature:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)performSecurityCheckForCredentials:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentPassUpdatedOnCredential:(id)arg1;
 - (void)_terminateSetupFlow;
 - (void)_startProvisioningForCredentials:(id)arg1;
@@ -47,6 +50,7 @@
 - (void)_sortCredentialCaches:(id)arg1;
 - (void)_updateRemoteCredentialCache;
 - (void)_updateTableHeaderViewSubtitle;
+- (_Bool)_canSelectCredential:(id)arg1;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)_showRefund:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

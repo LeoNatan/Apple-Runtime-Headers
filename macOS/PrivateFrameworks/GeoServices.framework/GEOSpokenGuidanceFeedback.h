@@ -13,12 +13,12 @@
     int _spokenGuidanceIndex;
     BOOL _shortPrompt;
     struct {
-        unsigned int spokenGuidanceIndex:1;
-        unsigned int shortPrompt:1;
-    } _has;
+        unsigned int has_spokenGuidanceIndex:1;
+        unsigned int has_shortPrompt:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL shortPrompt; // @synthesize shortPrompt=_shortPrompt;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -26,11 +26,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasShortPrompt;
+@property(nonatomic) BOOL shortPrompt;
 @property(nonatomic) BOOL hasSpokenGuidanceIndex;
-@property(nonatomic) int spokenGuidanceIndex; // @synthesize spokenGuidanceIndex=_spokenGuidanceIndex;
+@property(nonatomic) int spokenGuidanceIndex;
 
 @end
 

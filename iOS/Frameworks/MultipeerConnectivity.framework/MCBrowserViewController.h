@@ -8,7 +8,6 @@
 
 #import <MultipeerConnectivity/MCNearbyServiceBrowserDelegate-Protocol.h>
 #import <MultipeerConnectivity/MCSessionPrivateDelegate-Protocol.h>
-#import <MultipeerConnectivity/UIAlertViewDelegate-Protocol.h>
 #import <MultipeerConnectivity/UINavigationBarDelegate-Protocol.h>
 #import <MultipeerConnectivity/UITableViewDataSource-Protocol.h>
 #import <MultipeerConnectivity/UITableViewDelegate-Protocol.h>
@@ -16,7 +15,7 @@
 @class MCNearbyServiceBrowser, MCPeerID, MCSession, NSBundle, NSMutableArray, NSMutableDictionary, NSObject, NSString, UIBarButtonItem, UINavigationBar, UITableView;
 @protocol MCBrowserViewControllerDelegate, OS_dispatch_queue;
 
-@interface MCBrowserViewController : UIViewController <MCSessionPrivateDelegate, UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate, UINavigationBarDelegate, MCNearbyServiceBrowserDelegate>
+@interface MCBrowserViewController : UIViewController <MCSessionPrivateDelegate, UITableViewDataSource, UITableViewDelegate, UINavigationBarDelegate, MCNearbyServiceBrowserDelegate>
 {
     id <MCBrowserViewControllerDelegate> _delegate;
     MCNearbyServiceBrowser *_browser;

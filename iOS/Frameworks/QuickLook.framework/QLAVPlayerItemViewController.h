@@ -22,9 +22,6 @@ __attribute__((visibility("hidden")))
     _Bool _isAudioOnly;
 }
 
-+ (_Bool)shouldBeRemoteForContentType:(id)arg1;
-+ (id)supportedContentTypes;
-+ (Class)transformerClass;
 - (void).cxx_destruct;
 - (_Bool)playerViewController:(id)arg1 shouldExitFullScreenWithReason:(long long)arg2;
 - (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)ghostedRect:(struct CGRect)arg1;
 @property(readonly, nonatomic) struct CGRect boundingRect; // @synthesize boundingRect=_boundingRect;
 @property(readonly, nonatomic) double alpha; // @synthesize alpha=_alpha;
+- (id)description;
 - (id)initWithRect:(struct CGRect)arg1 alpha:(double)arg2;
 
 @end

@@ -6,18 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue;
 
 @interface CMFitnessMachineInternal : NSObject
 {
     struct CLConnectionClient *fLocationdConnection;
     NSObject<OS_dispatch_queue> *fInternalQueue;
-    NSObject<OS_dispatch_source> *fWatchdogTimer;
 }
 
 - (void)_feedFitnessMachineData:(id)arg1;
-- (void)_stopWatchdogCheckins;
-- (void)_startWatchdogCheckins;
 - (void)_teardown;
 - (void)dealloc;
 - (id)init;

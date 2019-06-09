@@ -8,6 +8,7 @@
 
 @class SKUIEmbeddedMediaView, SKUIMediaComponent;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGalleryPaneViewController : UIViewController
 {
     SKUIMediaComponent *_component;

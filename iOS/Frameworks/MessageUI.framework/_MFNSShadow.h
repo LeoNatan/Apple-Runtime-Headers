@@ -17,9 +17,9 @@
 
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSShadow *shadow; // @synthesize shadow=_shadow;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithShadow:(id)arg1;
 
 @end

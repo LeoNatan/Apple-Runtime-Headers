@@ -8,7 +8,7 @@
 
 #import <WebKitLegacy/NSCoding-Protocol.h>
 
-@class NSString, NSURL;
+@class NSArray, NSString, NSURL;
 
 @interface WebPreferences : NSObject <NSCoding>
 {
@@ -38,6 +38,7 @@
 - (void)_updatePrivateBrowsingStateTo:(_Bool)arg1;
 @property(nonatomic) _Bool privateBrowsingEnabled;
 @property(nonatomic) _Bool autosaves;
+@property(retain, nonatomic) NSArray *additionalSupportedImageTypes;
 @property(nonatomic) _Bool loadsImagesAutomatically;
 @property(nonatomic) _Bool allowsAnimatedImageLooping;
 @property(nonatomic) _Bool allowsAnimatedImages;
@@ -70,6 +71,8 @@
 - (unsigned int)_unsignedIntValueForKey:(id)arg1;
 - (void)_setIntegerValue:(int)arg1 forKey:(id)arg2;
 - (int)_integerValueForKey:(id)arg1;
+- (void)_setStringArrayValueForKey:(id)arg1 forKey:(id)arg2;
+- (id)_stringArrayValueForKey:(id)arg1;
 - (void)_setStringValue:(id)arg1 forKey:(id)arg2;
 - (id)_stringValueForKey:(id)arg1;
 - (id)_valueForKey:(id)arg1;
@@ -80,6 +83,13 @@
 - (id)initWithIdentifier:(id)arg1 sendChangeNotification:(_Bool)arg2;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
+@property(nonatomic) _Bool coreMathMLEnabled;
+@property(nonatomic) _Bool resizeObserverEnabled;
+@property(nonatomic) _Bool referrerPolicyAttributeEnabled;
+- (void)setAdClickAttributionEnabled:(_Bool)arg1;
+- (_Bool)adClickAttributionEnabled;
+- (void)setCSSLogicalEnabled:(_Bool)arg1;
+- (_Bool)cssLogicalEnabled;
 - (void)setSelectionAcrossShadowBoundariesEnabled:(_Bool)arg1;
 - (_Bool)selectionAcrossShadowBoundariesEnabled;
 - (void)setServerTimingEnabled:(_Bool)arg1;
@@ -111,11 +121,12 @@
 - (_Bool)modernMediaControlsEnabled;
 - (void)setFetchAPIKeepAliveEnabled:(_Bool)arg1;
 - (_Bool)fetchAPIKeepAliveEnabled;
+- (void)setPointerEventsEnabled:(_Bool)arg1;
+- (_Bool)pointerEventsEnabled;
 - (void)setWebAnimationsEnabled:(_Bool)arg1;
 - (_Bool)webAnimationsEnabled;
 @property(nonatomic) _Bool CSSOMViewScrollingAPIEnabled;
 @property(nonatomic) _Bool visualViewportAPIEnabled;
-@property(nonatomic) _Bool visualViewportEnabled;
 - (_Bool)directoryUploadEnabled;
 - (void)setDirectoryUploadEnabled:(_Bool)arg1;
 - (void)setDownloadAttributeEnabled:(_Bool)arg1;
@@ -282,8 +293,6 @@
 - (void)setDiskImageCacheEnabled:(_Bool)arg1;
 - (void)setAccelerated2dCanvasEnabled:(_Bool)arg1;
 - (_Bool)accelerated2dCanvasEnabled;
-- (void)setWebMetalEnabled:(_Bool)arg1;
-- (_Bool)webMetalEnabled;
 - (void)setWebGPUEnabled:(_Bool)arg1;
 - (_Bool)webGPUEnabled;
 - (void)setForceWebGLUsesLowPower:(_Bool)arg1;
@@ -366,6 +375,8 @@
 - (void)_setTextAutosizingEnabled:(_Bool)arg1;
 - (float)_minimumZoomFontSize;
 - (void)_setMinimumZoomFontSize:(float)arg1;
+- (void)setContentChangeObserverEnabled:(_Bool)arg1;
+- (_Bool)contentChangeObserverEnabled;
 - (_Bool)_telephoneNumberParsingEnabled;
 - (void)_setTelephoneNumberParsingEnabled:(_Bool)arg1;
 - (void)_setStandalone:(_Bool)arg1;

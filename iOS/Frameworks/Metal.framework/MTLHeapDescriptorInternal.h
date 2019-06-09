@@ -13,7 +13,15 @@ __attribute__((visibility("hidden")))
 }
 
 - (_Bool)validateWithDevice:(id)arg1;
+- (void)setResourceOptions:(unsigned long long)arg1;
+- (unsigned long long)resourceOptions;
+- (void)setHazardTrackingMode:(unsigned long long)arg1;
+- (unsigned long long)hazardTrackingMode;
 - (const struct MTLHeapDescriptorPrivate *)descriptorPrivate;
+- (id)formattedDescription:(unsigned long long)arg1;
+- (id)description;
+- (void)setType:(long long)arg1;
+- (long long)type;
 - (void)setStorageMode:(unsigned long long)arg1;
 - (unsigned long long)storageMode;
 - (void)setCpuCacheMode:(unsigned long long)arg1;

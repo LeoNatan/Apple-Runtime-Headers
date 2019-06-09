@@ -10,18 +10,15 @@
 
 @interface AVTAvatarAssetLibrary : NSObject
 {
-    NSMutableArray *_assetsByType[13];
-    NSMutableDictionary *_assets;
+    NSMutableArray *_assets[27];
+    NSMutableDictionary *_assetsByName[27];
 }
 
 + (id)sharedAvatarAssetLibrary;
 - (void).cxx_destruct;
-- (id)assetWithUID:(id)arg1;
-- (id)assetsWithType:(long long)arg1 ContainingString:(id)arg2;
+- (id)assetWithType:(long long)arg1 identifier:(id)arg2;
 - (id)assetsWithType:(long long)arg1;
 - (void)reload;
-- (void)loadAssetsWithPackID:(id)arg1 inFolder:(id)arg2;
-- (void)loadAssetWithPath:(id)arg1 type:(long long)arg2 inPackID:(id)arg3;
 
 @end
 

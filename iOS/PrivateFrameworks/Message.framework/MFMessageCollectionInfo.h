@@ -16,10 +16,11 @@
 
 + (unsigned long long)stateForMessages:(id)arg1;
 @property(readonly, nonatomic) long long messageCollectionHash; // @synthesize messageCollectionHash=_messageCollectionHash;
+- (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType duplicatePreferenceComparator;
-- (unsigned long long)state;
+@property(readonly, nonatomic) unsigned long long state;
 - (void)mergeWithCollection:(id)arg1;
-- (id)visibleMessageInfo;
+@property(readonly, nonatomic) MFMessageInfo *visibleMessageInfo;
 - (id)duplicatesOfMessageInfo:(id)arg1;
 - (id)messageInfoEquivalentToMessageInfo:(id)arg1;
 - (id)messageInfoAtIndex:(unsigned long long)arg1;
@@ -35,7 +36,6 @@
 @property(readonly, nonatomic) MFMessageInfo *firstMessage;
 @property(readonly, nonatomic) _Bool isEmpty;
 - (id)debugDescription;
-- (void)dealloc;
 - (id)initWithHash:(long long)arg1 comparator:(CDUnknownBlockType)arg2;
 
 @end

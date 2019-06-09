@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 - (Class)valueClass;
 - (BOOL)isWritable;
 - (id)key;
+- (id)abcdContainerValueForCNValue:(id)arg1;
+- (id)abcdContainerKey;
 
 @end
 

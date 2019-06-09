@@ -20,7 +20,7 @@
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)sendBulletinSummary:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(_Bool)arg2 withAck:(_Bool)arg3;
+- (void)subscribeToSectionID:(id)arg1 forFullBulletins:(_Bool)arg2 withAck:(_Bool)arg3 ackAllowedOnLocalConnection:(_Bool)arg4;
 - (void)unsubscribeFromSectionID:(id)arg1;
 
 // Remaining properties

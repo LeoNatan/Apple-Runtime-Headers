@@ -22,12 +22,13 @@ __attribute__((visibility("hidden")))
         float *list;
         unsigned int count;
         unsigned int size;
-    } _supportedRates;
+    } _supportedPlaybackRates;
     int _command;
     NSString *_localizedShortTitle;
     NSString *_localizedTitle;
     float _maximumRating;
     float _minimumRating;
+    float _preferredPlaybackRate;
     int _presentationStyle;
     int _repeatMode;
     int _shuffleMode;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
         unsigned int command:1;
         unsigned int maximumRating:1;
         unsigned int minimumRating:1;
+        unsigned int preferredPlaybackRate:1;
         unsigned int presentationStyle:1;
         unsigned int repeatMode:1;
         unsigned int shuffleMode:1;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+@property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
 @property(nonatomic) int presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(nonatomic) float maximumRating; // @synthesize maximumRating=_maximumRating;
 @property(nonatomic) float minimumRating; // @synthesize minimumRating=_minimumRating;
@@ -62,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPreferredPlaybackRate;
 @property(nonatomic) _Bool hasPresentationStyle;
 - (int)StringAsShuffleMode:(id)arg1;
 - (id)shuffleModeAsString:(int)arg1;
@@ -71,12 +75,12 @@ __attribute__((visibility("hidden")))
 - (id)repeatModeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRepeatMode;
 @property(nonatomic) int repeatMode; // @synthesize repeatMode=_repeatMode;
-- (void)setSupportedRates:(float *)arg1 count:(unsigned int)arg2;
-- (float)supportedRateAtIndex:(unsigned int)arg1;
-- (void)addSupportedRate:(float)arg1;
-- (void)clearSupportedRates;
-@property(readonly, nonatomic) float *supportedRates;
-@property(readonly, nonatomic) unsigned int supportedRatesCount;
+- (void)setSupportedPlaybackRates:(float *)arg1 count:(unsigned int)arg2;
+- (float)supportedPlaybackRateAtIndex:(unsigned int)arg1;
+- (void)addSupportedPlaybackRate:(float)arg1;
+- (void)clearSupportedPlaybackRates;
+@property(readonly, nonatomic) float *supportedPlaybackRates;
+@property(readonly, nonatomic) unsigned int supportedPlaybackRatesCount;
 @property(nonatomic) _Bool hasMaximumRating;
 @property(nonatomic) _Bool hasMinimumRating;
 @property(readonly, nonatomic) _Bool hasLocalizedShortTitle;

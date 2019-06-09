@@ -8,19 +8,42 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
+#import <UIKitCore/_UIFallbackEnvironment-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, UIImageConfiguration;
+@protocol _UIThemeKey;
 
-@interface UITraitCollection : NSObject <NSCopying, NSSecureCoding>
+@interface UITraitCollection : NSObject <_UIFallbackEnvironment, NSCopying, NSSecureCoding>
 {
-    CDStruct_477bbee4 _builtinTraits;
+    CDStruct_8ff49dc2 _builtinTraits;
     NSDictionary *_clientDefinedTraits;
+    NSObject *_environmentWrapper;
 }
 
++ (id)_traitCollectionFromImageConfiguration:(id)arg1;
++ (id)_traitCollectionForThemeKey:(id)arg1;
++ (void)_performWithCurrentTraitCollection:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (void)_setCurrentTraitCollection:(id)arg1;
++ (id)_currentTraitCollection;
++ (void)setCurrentTraitCollection:(id)arg1;
++ (id)currentTraitCollection;
++ (id)_backgroundThreadFallbackTraitCollection;
++ (void)_setBackgroundThreadFallbackTraitCollection:(id)arg1;
++ (id)_fallbackTraitCollection;
 + (id)_defaultTraitCollection;
 + (id)_emptyTraitCollection;
 + (id)_traitCollectionWithValue:(id)arg1 forTraitNamed:(id)arg2;
++ (id)traitCollectionWithTextLegibility:(long long)arg1;
++ (id)_traitCollectionWithEnvironmentWrapper:(id)arg1;
 + (id)traitCollectionWithPreferredContentSizeCategory:(id)arg1;
++ (id)_traitCollectionWithBackgroundLevel:(long long)arg1;
++ (id)_traitCollectionWithContrast:(long long)arg1;
++ (id)_traitCollectionWithDebugHighlight:(long long)arg1;
++ (id)_traitCollectionWithVibrancy:(long long)arg1;
++ (id)traitCollectionWithUserInterfaceLevel:(long long)arg1;
++ (id)traitCollectionWithAccessibilityContrast:(long long)arg1;
++ (id)_traitCollectionWithSemanticContext:(long long)arg1;
++ (id)traitCollectionWithLegibilityWeight:(long long)arg1;
 + (id)traitCollectionWithDisplayCornerRadius:(double)arg1;
 + (id)traitCollectionWithForceTouchCapability:(long long)arg1;
 + (id)traitCollectionWithLayoutDirection:(long long)arg1;
@@ -36,10 +59,32 @@
 + (id)traitCollectionWithUserInterfaceIdiom:(long long)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
 + (_Bool)supportsSecureCoding;
-+ (id)traitCollectionWithBarPosition:(long long)arg1;
-+ (id)traitCollectionWithBarMetrics:(long long)arg1;
++ (id)_descriptionForChangeFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
+- (id)imageConfiguration;
+@property(readonly, nonatomic, getter=_imageConfiguration) UIImageConfiguration *_imageConfiguration;
+- (id)_traitCollectionRelevantForImageConfiguration;
+- (id)_traitCollectionWithFallbacksForUnspecifiedThemeTraits;
+- (id)_appearanceName;
+- (void)_enumerateThemeAppearanceNamesForLookup:(CDUnknownBlockType)arg1;
+- (void)_enumerateThemeKeysForLookup:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic, getter=_themeKey) id <_UIThemeKey> _themeKey;
+- (_Bool)hasDifferentColorAppearanceComparedToTraitCollection:(id)arg1;
+- (void)performAsCurrentTraitCollection:(CDUnknownBlockType)arg1;
+- (id)_invertedTraitCollection;
 - (id)_traitCollectionByReplacingValue:(id)arg1 forTraitName:(id)arg2;
+- (id)_environmentWrapper;
+- (long long)_textLegibility;
 @property(readonly, copy, nonatomic) NSString *preferredContentSizeCategory;
+- (id)_traitCollectionWithIncrementedBackgroundLevel;
+- (long long)_themeLevelForKey;
+- (long long)_backgroundLevel;
+- (long long)_contrast;
+- (long long)_debugHighlight;
+- (long long)_vibrancy;
+@property(readonly, nonatomic) long long userInterfaceLevel;
+@property(readonly, nonatomic) long long accessibilityContrast;
+@property(readonly, nonatomic) long long _semanticContext;
+@property(readonly, nonatomic) long long legibilityWeight;
 - (double)displayCornerRadius;
 @property(readonly, nonatomic) long long forceTouchCapability;
 @property(readonly, nonatomic) long long layoutDirection;
@@ -55,23 +100,31 @@
 @property(readonly, nonatomic) long long userInterfaceIdiom;
 - (_Bool)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (id)_valueForTraitNamed:(id)arg1;
+- (id)_traitNamesOfIntersectionWithTraitCollection:(id)arg1;
+- (long long)_countOfIntersectionWithTraitCollection:(id)arg1;
 - (_Bool)_matchesIntersectionWithTraitCollection:(id)arg1;
+- (id)_traitNamesForUnspecifiedBuiltInTraits;
 - (_Bool)containsTraitsInCollection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)_description;
 - (id)_descriptionWithPrivateTraits:(_Bool)arg1;
+- (id)_traitsDescription;
 - (long long)_compare:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_477bbee4 *)arg1 clientDefinedTraits:(id)arg2;
-@property(readonly, nonatomic) long long barPosition;
-@property(readonly, nonatomic) long long barMetrics;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_8ff49dc2 *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_8ff49dc2 *)arg1 clientDefinedTraits:(id)arg2;
+- (id)_fallbackTraitCollection;
 - (id)_namedImageDescription;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

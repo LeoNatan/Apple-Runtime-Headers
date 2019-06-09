@@ -30,26 +30,26 @@
 }
 
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
-@property NSButton *optionsViewConfirmButton; // @synthesize optionsViewConfirmButton=_optionsViewConfirmButton;
-@property NSButton *optionsViewAlternateButton; // @synthesize optionsViewAlternateButton=_optionsViewAlternateButton;
-@property NSButton *optionsViewCancelButton; // @synthesize optionsViewCancelButton=_optionsViewCancelButton;
-@property NSButton *optionsViewHelpButton; // @synthesize optionsViewHelpButton=_optionsViewHelpButton;
-@property NSTextField *optionsViewOptOutInfoLabel; // @synthesize optionsViewOptOutInfoLabel=_optionsViewOptOutInfoLabel;
-@property NSButtonCell *optionsViewOptOutRadionButton; // @synthesize optionsViewOptOutRadionButton=_optionsViewOptOutRadionButton;
-@property NSButtonCell *optionsViewRandomRadioButton; // @synthesize optionsViewRandomRadioButton=_optionsViewRandomRadioButton;
-@property NSButtonCell *optionsViewComplexRadioButton; // @synthesize optionsViewComplexRadioButton=_optionsViewComplexRadioButton;
-@property NSMatrix *optionsViewRadioMatrix; // @synthesize optionsViewRadioMatrix=_optionsViewRadioMatrix;
-@property NSTextField *optionsViewMessage; // @synthesize optionsViewMessage=_optionsViewMessage;
-@property NSTextField *optionsViewTitle; // @synthesize optionsViewTitle=_optionsViewTitle;
-@property NSImageView *optionsViewImageView; // @synthesize optionsViewImageView=_optionsViewImageView;
+@property __weak NSButton *optionsViewConfirmButton; // @synthesize optionsViewConfirmButton=_optionsViewConfirmButton;
+@property __weak NSButton *optionsViewAlternateButton; // @synthesize optionsViewAlternateButton=_optionsViewAlternateButton;
+@property __weak NSButton *optionsViewCancelButton; // @synthesize optionsViewCancelButton=_optionsViewCancelButton;
+@property __weak NSButton *optionsViewHelpButton; // @synthesize optionsViewHelpButton=_optionsViewHelpButton;
+@property __weak NSTextField *optionsViewOptOutInfoLabel; // @synthesize optionsViewOptOutInfoLabel=_optionsViewOptOutInfoLabel;
+@property __weak NSButtonCell *optionsViewOptOutRadionButton; // @synthesize optionsViewOptOutRadionButton=_optionsViewOptOutRadionButton;
+@property __weak NSButtonCell *optionsViewRandomRadioButton; // @synthesize optionsViewRandomRadioButton=_optionsViewRandomRadioButton;
+@property __weak NSButtonCell *optionsViewComplexRadioButton; // @synthesize optionsViewComplexRadioButton=_optionsViewComplexRadioButton;
+@property __weak NSMatrix *optionsViewRadioMatrix; // @synthesize optionsViewRadioMatrix=_optionsViewRadioMatrix;
+@property __weak NSTextField *optionsViewMessage; // @synthesize optionsViewMessage=_optionsViewMessage;
+@property __weak NSTextField *optionsViewTitle; // @synthesize optionsViewTitle=_optionsViewTitle;
+@property __weak NSImageView *optionsViewImageView; // @synthesize optionsViewImageView=_optionsViewImageView;
 @property id <MMCSCOptionsSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)otherButtonClicked:(id)arg1;
 - (void)alternateButtonClicked:(id)arg1;
 - (void)defaultButtonClicked:(id)arg1;
 @property(readonly) long long advancedOption;
 - (void)setup:(BOOL)arg1;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

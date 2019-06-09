@@ -4,10 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
+
 @class NSArray, NSError;
 
-@protocol PPContactClientProtocol
+@protocol PPContactClientProtocol <PPFeedbackAccepting>
 - (void)contactNameRecordChangesBatch:(NSArray *)arg1 isLast:(_Bool)arg2 error:(NSError *)arg3 queryId:(unsigned long long)arg4 completion:(void (^)(_Bool))arg5;
 - (void)contactNameRecordBatch:(NSArray *)arg1 isLast:(_Bool)arg2 error:(NSError *)arg3 queryId:(unsigned long long)arg4 completion:(void (^)(_Bool))arg5;
+- (void)rankedContactsBatch:(NSArray *)arg1 isLast:(_Bool)arg2 error:(NSError *)arg3 queryId:(unsigned long long)arg4 completion:(void (^)(_Bool))arg5;
 @end
 

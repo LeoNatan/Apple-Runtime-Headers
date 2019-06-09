@@ -8,6 +8,7 @@
 
 @class AVNowPlayingPlaybackControlsViewController, UIView;
 
+__attribute__((visibility("hidden")))
 @interface _AVPlayerViewControllerContainerView : _AVFocusContainerView
 {
     _Bool _fullScreen;

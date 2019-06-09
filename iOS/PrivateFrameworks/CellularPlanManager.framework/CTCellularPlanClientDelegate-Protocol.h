@@ -11,6 +11,7 @@
 @protocol CTCellularPlanClientDelegate <NSObject>
 - (void)remoteProvisioningDidBecomeAvailable;
 - (void)carrierInfoDidUpdate;
+- (void)pendingTransferPlanInfoDidUpdate;
 - (void)localPlanInfoDidUpdate:(NSError *)arg1;
 - (void)planInfoDidUpdate;
 @end

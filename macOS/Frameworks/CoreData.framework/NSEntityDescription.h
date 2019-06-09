@@ -41,12 +41,13 @@
         unsigned int _hasAttributesWithExternalDataReferences:1;
         unsigned int _hasNonstandardPrimitiveProperties:2;
         unsigned int _hasUniqueProperties:1;
+        unsigned int _hasChildrenWithUniqueProperties:1;
         unsigned int _validationUniqueProperties:1;
         unsigned int _isPersistentHistoryEntity:1;
         unsigned int _hasAttributesWithFileBackedFutures:1;
-        unsigned int _reservedEntityDescription:17;
+        unsigned int _reservedEntityDescription:16;
     } _entityDescriptionFlags;
-    void *_extraIvars;
+    struct _ExtraEntityIVars *_extraIvars;
     NSMutableDictionary *_userInfo;
     id _flattenedSubentities;
     id **_kvcPropertyAccessors;
@@ -64,6 +65,7 @@
 - (unsigned long long)retainCount;
 - (oneway void)release;
 - (id)retain;
+- (void)_setUniquenessConstraints:(id)arg1;
 @property(retain) NSArray *uniquenessConstraints;
 - (id)_checkForNonCascadeNoInverses;
 @property(retain) NSArray *compoundIndexes;
@@ -99,6 +101,8 @@
 - (id)_indexDescriptionFromJSONArray:(id)arg1;
 - (id)_indexElementFromJSONArray:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (struct _ExtraEntityIVars *)_extraIVars;
+- (void)_initializeExtraIVars;
 - (void)dealloc;
 - (id)init;
 - (void)_addProperty:(id)arg1;
@@ -108,14 +112,15 @@
 - (void)setElementID:(id)arg1;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
 - (BOOL)_isSchemaEqual:(id)arg1;
-- (BOOL)_hasUniquedAttributeWithName:(id)arg1;
+- (BOOL)_hasUniquedPropertyNamed:(id)arg1;
 - (id)_extensionsOfParentConstraint:(id)arg1;
 - (BOOL)_constraintIsExtension:(id)arg1;
 - (id)_uniquenessConstraints;
 - (BOOL)_hasUniqueProperties;
-- (BOOL)_hasUniquePropertiesUncached;
+- (void)_setHasUniquePropertiesUpInheritanceHierachy;
+- (void)_setHasUniqueProperties:(BOOL)arg1;
+- (void)_setValidationRequiredUniquePropertiesUpInheritanceHierachy;
 - (BOOL)_isPathologicalForConstraintMerging:(id *)arg1;
-- (BOOL)_hasUniquePropertiesDownInheritanceHiearchy;
 - (void)_finalizeIndexes;
 - (void)_removeIndexForProperty:(id)arg1;
 - (void)_addIndexForProperty:(id)arg1;
@@ -163,6 +168,7 @@
 - (void)_setSuperentity:(id)arg1;
 - (id)_subentityNamed:(id)arg1;
 - (void)_throwIfNotEditable;
+- (unsigned long long)_inheritanceDepth;
 - (BOOL)_isEditable;
 - (void)_setIsEditable:(BOOL)arg1;
 - (id)_relationshipNamed:(id)arg1;
@@ -177,7 +183,9 @@
 - (id)toManyRelationshipKeys;
 - (id)attributeKeys;
 - (id)_relationshipNamesByType:(BOOL)arg1;
+- (BOOL)_propertyKeys:(id)arg1 matchingBlock:(CDUnknownBlockType)arg2;
 - (id)_propertiesOfType:(unsigned long long)arg1;
+- (id)_propertiesMatchingBlock:(CDUnknownBlockType)arg1;
 - (void)_setManagedObjectModel:(id)arg1;
 - (id)_initWithName:(id)arg1;
 - (id)_newMappingForPropertiesOfRange:(unsigned int)arg1;
@@ -189,6 +197,9 @@
 - (id)_propertyWithRenamingIdentifier:(id)arg1;
 - (id)_uniquenessConstraintsAsFetchIndexes;
 - (id)_constraintAsIndex:(id)arg1;
+- (void)_addFactoryToRetainList:(id)arg1;
+- (id)_checkSelfForNonCascadeNoInverses;
+- (BOOL)_hasUniquePropertiesRaw;
 
 @end
 

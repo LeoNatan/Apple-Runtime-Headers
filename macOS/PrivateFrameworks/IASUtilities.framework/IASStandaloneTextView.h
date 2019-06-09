@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
 - (void)dealloc;
+- (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

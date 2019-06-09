@@ -9,38 +9,40 @@
 #import <AvatarUI/AVTDiscardableContent-Protocol.h>
 #import <AvatarUI/AVTSectionItemTransitionModel-Protocol.h>
 
-@class CAShapeLayer, NSString, NSUUID, UIImage, UIImageView;
+@class CALayer, CAShapeLayer, NSString, NSUUID, UIImage;
 
 @interface AVTAttributeValueView : UIView <AVTSectionItemTransitionModel, AVTDiscardableContent>
 {
+    _Bool _showPlaceholder;
     CDUnknownBlockType discardableContentHandler;
     UIImage *_image;
-    UIImageView *_imageView;
+    CALayer *_imageLayer;
     unsigned long long _selectionStyle;
     NSUUID *_displaySessionUUID;
-    UIImageView *_transitionImageView;
     CAShapeLayer *_clippingLayer;
     CAShapeLayer *_selectionLayer;
     UIView *_highlightView;
+    CALayer *_transitionImageLayer;
     struct CGSize _imageSizeRatio;
 }
 
 + (struct CGRect)imageViewRectForBounds:(struct CGRect)arg1 imageSizeRatio:(struct CGSize)arg2 scale:(double)arg3;
+@property(retain, nonatomic) CALayer *transitionImageLayer; // @synthesize transitionImageLayer=_transitionImageLayer;
 @property(retain, nonatomic) UIView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) CAShapeLayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(retain, nonatomic) CAShapeLayer *clippingLayer; // @synthesize clippingLayer=_clippingLayer;
-@property(retain, nonatomic) UIImageView *transitionImageView; // @synthesize transitionImageView=_transitionImageView;
 @property(retain, nonatomic) NSUUID *displaySessionUUID; // @synthesize displaySessionUUID=_displaySessionUUID;
 @property(nonatomic) unsigned long long selectionStyle; // @synthesize selectionStyle=_selectionStyle;
-@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
+@property(retain, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(nonatomic) struct CGSize imageSizeRatio; // @synthesize imageSizeRatio=_imageSizeRatio;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) CDUnknownBlockType discardableContentHandler; // @synthesize discardableContentHandler;
 - (void).cxx_destruct;
 - (void)discardContent;
 - (void)cleanupAfterTransition;
-- (id)toView;
-- (id)fromView;
+- (id)toLayer;
+- (id)fromLayer;
+@property(nonatomic) _Bool showPlaceholder; // @synthesize showPlaceholder=_showPlaceholder;
 - (void)prepareForTransitionToImage:(id)arg1;
 - (void)updateWithImage:(id)arg1;
 - (void)bringSelectionLayersToFront;
@@ -49,11 +51,12 @@
 - (void)updateCornerRadii;
 - (id)clippingBezierPath;
 - (id)selectionBezierPath;
-- (void)configureImageView:(id)arg1;
+- (void)configureImageLayer:(id)arg1;
 - (struct CGRect)shapeLayerRect;
 - (struct CGRect)selectorRect;
 - (void)relayoutSublayers;
 - (void)layoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateSelectionLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 

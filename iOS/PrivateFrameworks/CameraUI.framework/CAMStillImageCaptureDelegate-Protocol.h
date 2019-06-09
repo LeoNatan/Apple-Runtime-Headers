@@ -6,16 +6,16 @@
 
 #import <CameraUI/NSObject-Protocol.h>
 
-@class CAMStillImageCaptureRequest, CAMStillImageCaptureResolvedSettings, CAMStillImageCaptureResult, CAMVideoCaptureResult, NSError;
+@class CAMCaptureCoordinationInfo, CAMStillImageCaptureRequest, CAMStillImageCaptureResolvedSettings, CAMStillImageCaptureResult, CAMVideoCaptureResult, NSError;
 
 @protocol CAMStillImageCaptureDelegate <NSObject>
 
 @optional
 - (void)stillImageRequestDidCompleteCapture:(CAMStillImageCaptureRequest *)arg1 error:(NSError *)arg2;
 - (void)stillImageRequest:(CAMStillImageCaptureRequest *)arg1 didCompleteVideoCaptureWithResult:(CAMVideoCaptureResult *)arg2;
-- (void)stillImageRequestDidStopCapturingVideo:(CAMStillImageCaptureRequest *)arg1;
+- (void)stillImageRequest:(CAMStillImageCaptureRequest *)arg1 didStopCapturingLivePhotoVideoForCoordinationInfo:(CAMCaptureCoordinationInfo *)arg2;
 - (void)stillImageRequest:(CAMStillImageCaptureRequest *)arg1 didCompleteStillImageCaptureWithResult:(CAMStillImageCaptureResult *)arg2;
-- (void)stillImageRequestDidStopCapturing:(CAMStillImageCaptureRequest *)arg1;
+- (void)stillImageRequestDidStopCapturingStillImage:(CAMStillImageCaptureRequest *)arg1;
 - (void)stillImageRequestDidStartCapturing:(CAMStillImageCaptureRequest *)arg1 resolvedSettings:(CAMStillImageCaptureResolvedSettings *)arg2;
 - (void)stillImageRequestWillStartCapturingVideo:(CAMStillImageCaptureRequest *)arg1;
 @end

@@ -10,9 +10,10 @@
 {
 }
 
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (long long)_interiorContentStateInView:(id)arg1;
+- (long long)_interiorContentPresentationStateInView:(id)arg1;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (void)drawImage:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
-- (unsigned long long)_themeImageState;
 - (long long)interiorBackgroundStyle;
 - (void)drawBezelWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_hasRolloverContentArt;

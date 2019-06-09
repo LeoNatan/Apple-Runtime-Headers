@@ -11,12 +11,12 @@
 #import <CFNetwork/NSURLSessionDataDelegate_Internal-Protocol.h>
 #import <CFNetwork/NSURLSessionSubclass-Protocol.h>
 #import <CFNetwork/NSURLSessionTaskDelegatePrivate-Protocol.h>
+#import <CFNetwork/__NSURLSessionTaskGroupForConfiguration-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSURLSession, NSURLSessionConfiguration;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
-@interface __NSURLSessionLocal : __NSCFURLSession <NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionTaskDelegatePrivate, NSURLSessionDataDelegate_Internal, NSURLSessionSubclass>
+@interface __NSURLSessionLocal : __NSCFURLSession <NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionTaskDelegatePrivate, NSURLSessionDataDelegate_Internal, NSURLSessionSubclass, __NSURLSessionTaskGroupForConfiguration>
 {
     unsigned long long _identSeed;
     struct XTubeManager *_tubeManager;
@@ -62,21 +62,22 @@ __attribute__((visibility("hidden")))
 - (_Bool)_prependProtocolClassForDefaultSession:(Class)arg1;
 - (struct URLProtocol *)_newURLProtocolForTask:(id)arg1 client:(struct URLProtocolClient *)arg2;
 - (struct URLProtocol *)_newURLProtocolForTask:(id)arg1 client:(struct URLProtocolClient *)arg2 protocolClass:(Class)arg3;
-- (_Bool)_cfurlRequest:(struct _CFURLRequest *)arg1 isCacheEquivalentTo:(struct _CFURLRequest *)arg2;
+- (_Bool)_cfurlRequest:(id)arg1 isCacheEquivalentTo:(id)arg2;
 - (_Bool)_request:(id)arg1 isCacheEquivalentTo:(id)arg2;
 - (id)_createCanonicalRequestForTask:(id)arg1;
-- (id)_createCanonicalRequest:(id)arg1;
+- (id)_createCanonicalRequest:(id)arg1 task:(id)arg2;
+- (id)_createCanonicalRequest_GOOD:(id)arg1 task:(id)arg2;
 - (Class)_protocolClassForRequest:(id)arg1;
+- (Class)_protocolClassForTask:(id)arg1 skipAppSSO:(_Bool)arg2;
 - (Class)_protocolClassForTask:(id)arg1;
-- (id)_protocolClasses;
+- (id)_protocolClassesForTask:(id)arg1;
 - (struct GlueTube *)_withConnectionCache_getPendingTubeForProtocol:(struct MetaConnectionCacheClient *)arg1 withKey:(const struct HTTPConnectionCacheKey *)arg2 scheduling:(const struct CoreSchedulingSet *)arg3;
 - (_Bool)_withConnectionCache_enqueueRequest:(const struct HTTPRequestMessage *)arg1 forProtocol:(struct MetaConnectionCacheClient *)arg2 scheduling:(const struct CoreSchedulingSet *)arg3 options:(struct MetaConnectionOptions)arg4;
-- (void)_withConnectionCache_setIOFallbackForKey:(const struct HTTPConnectionCacheKey *)arg1 scheduling:(const struct CoreSchedulingSet *)arg2;
 - (void)_withConnectionCache_setCurrentSSLMethod:(struct __CFString *)arg1 forKey:(const struct HTTPConnectionCacheKey *)arg2 scheduling:(const struct CoreSchedulingSet *)arg3;
 - (struct __CFString *)_withConnectionCache_getCurrentSSLMethodForKey:(const struct HTTPConnectionCacheKey *)arg1 scheduling:(const struct CoreSchedulingSet *)arg2;
 - (void)_getCookieHeadersForTask:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (const struct XCookieStorage *)copyBaseStorageForRequest:(struct _CFURLRequest *)arg1;
-- (id)_createTaskFromOriginalCFURLRequest:(struct _CFURLRequest *)arg1 updatedCFURLRequest:(struct _CFURLRequest *)arg2 connProps:(struct __CFDictionary *)arg3 sockProps:(struct __CFDictionary *)arg4;
+- (const struct XCookieStorage *)copyBaseStorageForRequest:(id)arg1;
+- (id)_createTaskFromOriginalCFURLRequest:(id)arg1 updatedCFURLRequest:(id)arg2 connProps:(struct __CFDictionary *)arg3 sockProps:(struct __CFDictionary *)arg4;
 - (void)invalidateUnpurgeableConnectionsForConnectionCacheKey:(struct HTTPConnectionCacheKey *)arg1;
 - (void)_purgeIdleConnections;
 - (void)_invalidateAllConnections;
@@ -96,18 +97,21 @@ __attribute__((visibility("hidden")))
 - (id)AVAssetDownloadTaskForURLAsset:(id)arg1 assetTitle:(id)arg2 assetArtworkData:(id)arg3 options:(id)arg4;
 - (id)AVAssetDownloadTaskForURLAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)_AVAssetDownloadTaskForURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
-- (id)downloadTaskForRequest:(id)arg1 downloadFilePath:(id)arg2 resumeData:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)dataTaskForRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_downloadTaskWithTaskForClass:(id)arg1;
+- (id)_uploadTaskWithTaskForClass:(id)arg1;
+- (id)webSocketTaskForURL:(id)arg1 protocols:(id)arg2;
+- (id)webSocketTaskForRequest:(id)arg1;
+- (id)_dataTaskWithTaskForClass:(id)arg1;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
+- (void)_useTLSSessionCacheFromSession:(id)arg1;
 - (void)_flushOrResetStorage:(CDUnknownBlockType)arg1 reset:(unsigned char)arg2;
 - (void)_onqueue_invalidateSession:(_Bool)arg1 withQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_onqueue_checkForCompletion;
 - (void)_onqueue_invokeInvalidateCallback;
-- (id)taskForClass:(Class)arg1 request:(id)arg2 uploadFile:(id)arg3 bodyData:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)taskForClassInfo:(id)arg1;
 - (unsigned long long)nextSeed;
-- (void)_onqueue_finishConnectUpRequest:(id)arg1 task:(id)arg2;
+- (void)_onqueue_configureAndCreateConnection:(id)arg1 task:(id)arg2;
 - (void)_onqueue_canonicalizeTaskAndCreateConnection:(id)arg1;
 - (void)_onqueue_connectUploadTask:(id)arg1 strippedRequest:(id)arg2 bodyStream:(id)arg3 bodyParts:(id)arg4;
 - (void)removeConnectionlessTask:(id)arg1;
@@ -119,6 +123,8 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
+@property(readonly) __weak NSURLSessionConfiguration *_groupConfiguration;
+@property(readonly) __weak NSURLSession *_groupSession;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

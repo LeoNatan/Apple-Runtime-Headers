@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSBox, NSCollectionView, NSCollectionViewData, NSCollectionViewLayout, NSCollectionViewLayoutAttributes, NSCollectionViewUpdate, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSView, _NSCollectionViewPrefetchingContext;
+@class NSArray, NSBox, NSCollectionView, NSCollectionViewData, NSCollectionViewLayout, NSCollectionViewLayoutAttributes, NSCollectionViewUpdate, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSView, _NSCollectionViewOrthogonalScrollerSectionController, _NSCollectionViewPrefetchingContext;
 @protocol NSCollectionViewCoreDelegate, NSCollectionViewDataSource, NSCollectionViewPrefetching;
 
 @interface _NSCollectionViewCore : NSObject
@@ -173,6 +173,7 @@
     NSIndexPath *_dropTargetIndexPath;
     long long _proposedDropOperation;
     struct CGSize _contentSize;
+    _NSCollectionViewOrthogonalScrollerSectionController *_orthogonalScrollerController;
 }
 
 + (id)_reuseKeyForSupplementaryViewOfKind:(id)arg1 withReuseIdentifier:(id)arg2;
@@ -300,6 +301,7 @@
 - (struct CGRect)_visibleBounds;
 - (struct CGRect)visibleBounds;
 - (void)_addControlledSubview:(id)arg1 atZIndex:(long long)arg2 forced:(BOOL)arg3;
+- (void)_addControlledSubview:(id)arg1;
 - (void)_invalidateLayoutIfNecessaryForReload;
 - (void)prefetchCompleteForItemAtIndexPath:(id)arg1;
 - (void)reloadData;

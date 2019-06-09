@@ -9,6 +9,7 @@
 @class AVPlayer, AVPlayerItem, AVPlayerLayer;
 @protocol CKVideoPreviewViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKVideoPreviewViewController : UIViewController
 {
     _Bool _redisplayStatusBar;

@@ -17,6 +17,7 @@
 
 + (id)photoSettingsFromPhotoSettings:(id)arg1;
 + (id)burstQualityPhotoSettings;
++ (id)photoSettingsFromPhotoInitiationSettings:(id)arg1 format:(id)arg2;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned int)arg1 rawFileType:(id)arg2 processedFormat:(id)arg3 processedFileType:(id)arg4;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned int)arg1 processedFormat:(id)arg2;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned int)arg1;
@@ -24,6 +25,14 @@
 + (id)photoSettings;
 + (long long)uniqueID;
 - (id)_sanitizedLivePhotoMovieMetadataForArray:(id)arg1 exceptionReason:(id *)arg2;
+- (void)setVideoFileMetadata:(id)arg1;
+- (id)videoFileMetadata;
+- (void)setVideoFormat:(id)arg1;
+- (id)videoFormat;
+- (void)setVideoFileURL:(id)arg1;
+- (id)videoFileURL;
+- (void)setHEICSFileURL:(id)arg1;
+- (id)HEICSFileURL;
 - (void)setAdjustedPhotoFilters:(id)arg1;
 - (id)adjustedPhotoFilters;
 - (void)setPhotoFilters:(id)arg1;
@@ -58,7 +67,10 @@
 - (void)setLivePhotoMovieFileURLForOriginalPhoto:(id)arg1;
 - (id)livePhotoMovieFileURLForOriginalPhoto;
 @property(copy, nonatomic) NSURL *livePhotoMovieFileURL;
+- (id)metadataForOriginalPhoto;
 @property(copy, nonatomic) NSDictionary *metadata;
+@property(nonatomic) _Bool embedsSemanticSegmentationMattesInPhoto;
+@property(copy, nonatomic) NSArray *enabledSemanticSegmentationMatteTypes;
 @property(nonatomic) _Bool embedsPortraitEffectsMatteInPhoto;
 @property(nonatomic, getter=isPortraitEffectsMatteDeliveryEnabled) _Bool portraitEffectsMatteDeliveryEnabled;
 @property(nonatomic, getter=isCameraCalibrationDataDeliveryEnabled) _Bool cameraCalibrationDataDeliveryEnabled;
@@ -69,6 +81,9 @@
 @property(nonatomic, getter=isDualCameraDualPhotoDeliveryEnabled) _Bool dualCameraDualPhotoDeliveryEnabled;
 @property(nonatomic, getter=isAutoDualCameraFusionEnabled) _Bool autoDualCameraFusionEnabled;
 @property(nonatomic, getter=isAutoStillImageStabilizationEnabled) _Bool autoStillImageStabilizationEnabled;
+- (_Bool)photoQualityPrioritizationIsSetByClient;
+- (void)_setPhotoQualityPrioritization:(long long)arg1;
+@property(nonatomic) long long photoQualityPrioritization;
 - (void)setEV0PhotoDeliveryEnabled:(_Bool)arg1;
 - (_Bool)isEV0PhotoDeliveryEnabled;
 - (void)setHDRMode:(long long)arg1;

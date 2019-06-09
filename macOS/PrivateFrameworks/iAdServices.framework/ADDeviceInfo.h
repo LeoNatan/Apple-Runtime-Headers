@@ -14,6 +14,7 @@
 {
     _Bool _batteryDischarging;
     _Bool _carKitConnected;
+    _Bool _voiceOverRunning;
     int _orientation;
     int _interfaceIdiom;
     NSString *_deviceModel;
@@ -22,17 +23,28 @@
     NSString *_buildVersion;
     NSNumber *_screenWidth;
     NSNumber *_screenHeight;
+    NSString *_locality;
+    NSString *_administrativeArea;
+    NSString *_subAdministrativeArea;
+    NSString *_ISOcountryCode;
+    NSString *_postalCode;
     NSArray *_keyboards;
     NSNumber *_scale;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) _Bool voiceOverRunning; // @synthesize voiceOverRunning=_voiceOverRunning;
 @property(retain, nonatomic) NSNumber *scale; // @synthesize scale=_scale;
 @property(nonatomic) _Bool carKitConnected; // @synthesize carKitConnected=_carKitConnected;
 @property(nonatomic) int interfaceIdiom; // @synthesize interfaceIdiom=_interfaceIdiom;
 @property(nonatomic) int orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) _Bool batteryDischarging; // @synthesize batteryDischarging=_batteryDischarging;
 @property(copy, nonatomic) NSArray *keyboards; // @synthesize keyboards=_keyboards;
+@property(copy, nonatomic) NSString *postalCode; // @synthesize postalCode=_postalCode;
+@property(copy, nonatomic) NSString *ISOcountryCode; // @synthesize ISOcountryCode=_ISOcountryCode;
+@property(copy, nonatomic) NSString *subAdministrativeArea; // @synthesize subAdministrativeArea=_subAdministrativeArea;
+@property(copy, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
+@property(copy, nonatomic) NSString *locality; // @synthesize locality=_locality;
 @property(retain, nonatomic) NSNumber *screenHeight; // @synthesize screenHeight=_screenHeight;
 @property(retain, nonatomic) NSNumber *screenWidth; // @synthesize screenWidth=_screenWidth;
 @property(retain, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;

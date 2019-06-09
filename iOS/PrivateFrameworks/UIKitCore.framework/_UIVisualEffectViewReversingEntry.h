@@ -22,8 +22,6 @@ __attribute__((visibility("hidden")))
 - (void)applyIdentityEffectToView:(id)arg1;
 - (void)applyRequestedEffectToView:(id)arg1;
 - (void)addEffectToView:(id)arg1;
-- (_Bool)hasTransform;
-- (_Bool)shouldManageCornerRadius;
 - (_Bool)shouldAnimateProperty:(id)arg1;
 - (id)initWithViewEntry:(id)arg1;
 

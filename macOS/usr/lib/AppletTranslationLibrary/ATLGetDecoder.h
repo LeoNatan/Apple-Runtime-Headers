@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (Class)getDecoderForApplet:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3;
++ (id)getDecoderForApplet:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3;
 
 @end
 

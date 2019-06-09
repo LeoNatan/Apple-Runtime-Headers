@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     BOOL _isSearchSurroundedByPunctuation;
 }
 
+- (void).cxx_destruct;
 - (void)_finalizeInitialization;
 - (id)description;
 - (id)createStorageDictionary;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (void)setSubstitutionText:(id)arg1;
 - (id)searchText;
 - (void)setSearchText:(id)arg1;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStorageDictionary:(id)arg1;
 - (id)initWithSearchText:(id)arg1 substitutionTextKey:(id)arg2 substitutionText:(id)arg3 macinTalkPhonemes:(id)arg4 editorMode:(id)arg5 domainIdentifier:(id)arg6 componentName:(id)arg7;

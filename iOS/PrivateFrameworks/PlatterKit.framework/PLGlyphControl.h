@@ -6,47 +6,49 @@
 
 #import <UIKit/UIControl.h>
 
+#import <PlatterKit/MTMaterialGrouping-Protocol.h>
+#import <PlatterKit/MTVisualStylingProviderObserving-Protocol.h>
+
 @class MTMaterialView, NSString, UIImage, UIImageView, UIView;
 
-@interface PLGlyphControl : UIControl
+@interface PLGlyphControl : UIControl <MTVisualStylingProviderObserving, MTMaterialGrouping>
 {
+    _Bool _blurEnabled;
     long long _materialRecipe;
-    unsigned long long _backgroundMaterialOptions;
-    unsigned long long _overlayMaterialOptions;
     UIImageView *_glyphView;
     MTMaterialView *_backgroundMaterialView;
-    MTMaterialView *_overlayMaterialView;
     UIView *_highlightView;
 }
 
-+ (id)dismissControlWithMaterialRecipe:(long long)arg1 backgroundMaterialOptions:(unsigned long long)arg2 overlayMaterialOptions:(unsigned long long)arg3;
++ (id)dismissControlWithMaterialRecipe:(long long)arg1;
 @property(retain, nonatomic, getter=_hightlightView) UIView *highlightView; // @synthesize highlightView=_highlightView;
-@property(retain, nonatomic, getter=_overlayMaterialView) MTMaterialView *overlayMaterialView; // @synthesize overlayMaterialView=_overlayMaterialView;
 @property(retain, nonatomic, getter=_backgroundMaterialView) MTMaterialView *backgroundMaterialView; // @synthesize backgroundMaterialView=_backgroundMaterialView;
 @property(retain, nonatomic, getter=_glyphView) UIImageView *glyphView; // @synthesize glyphView=_glyphView;
-@property(readonly, nonatomic) unsigned long long overlayMaterialOptions; // @synthesize overlayMaterialOptions=_overlayMaterialOptions;
-@property(readonly, nonatomic) unsigned long long backgroundMaterialOptions; // @synthesize backgroundMaterialOptions=_backgroundMaterialOptions;
+@property(nonatomic, getter=isBlurEnabled) _Bool blurEnabled; // @synthesize blurEnabled=_blurEnabled;
 @property(readonly, nonatomic) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
 - (void).cxx_destruct;
-- (void)_configureOverlayMaterialViewIfNecessary;
 - (void)_configureBackgroundMaterialViewIfNecessary;
-- (void)_configureMaterialView:(id *)arg1 ifNecessaryWithOptions:(unsigned long long)arg2 positioningAtIndex:(unsigned long long)arg3;
+- (void)_configureMaterialView:(id *)arg1 ifNecessaryWithConfiguration:(long long)arg2 positioningAtIndex:(unsigned long long)arg3;
 - (void)_configureGlyphViewIfNecessaryWithImage:(id)arg1;
-- (void)_updateGlyphViewVibrantStyling;
+- (void)_updateGlyphViewVisualStyling;
+- (CDUnknownBlockType)visualStylingProvider:(id)arg1 willReplaceStylingOfView:(id)arg2;
 - (void)layoutSubviews;
 - (double)_cornerRadius;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_sendActionsForEvents:(unsigned long long)arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(_Bool)arg1;
-@property(copy, nonatomic) NSString *groupName;
+@property(copy, nonatomic) NSString *materialGroupNameBase;
 @property(copy, nonatomic) UIImage *glyph;
-- (void)dealloc;
-- (id)initWithMaterialRecipe:(long long)arg1 backgroundMaterialOptions:(unsigned long long)arg2 overlayMaterialOptions:(unsigned long long)arg3;
-- (void)_updateVibrantStylingOfView:(id)arg1;
-- (void)_reduceTransparencyStatusDidChange:(id)arg1;
-- (void)_darkerSystemColorsStatusDidChange:(id)arg1;
+- (id)initWithMaterialRecipe:(long long)arg1;
+- (void)_updateVisualStylingOfView:(id)arg1;
 - (void)_handleTouchUpInsideWithEvent:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

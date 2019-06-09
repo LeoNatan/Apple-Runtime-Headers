@@ -8,14 +8,16 @@
 
 #import <DocumentManager/DOCTargetSelectionBrowserViewControllerDelegate-Protocol.h>
 
-@class DOCTargetSelectionBrowserViewController;
+@class DOCTargetSelectionBrowserViewController, NSURL;
 
 @interface DOCExportModeViewController : UIDocumentBrowserViewController <DOCTargetSelectionBrowserViewControllerDelegate>
 {
+    NSURL *_directoryURLToReveal;
     DOCTargetSelectionBrowserViewController *_moveVC;
 }
 
 @property(retain, nonatomic) DOCTargetSelectionBrowserViewController *moveVC; // @synthesize moveVC=_moveVC;
+@property(copy, nonatomic) NSURL *directoryURLToReveal; // @synthesize directoryURLToReveal=_directoryURLToReveal;
 - (void).cxx_destruct;
 - (void)targetSelectionController:(id)arg1 didExportToURLs:(id)arg2;
 - (void)targetSelectionControllerWasCancelled:(id)arg1;

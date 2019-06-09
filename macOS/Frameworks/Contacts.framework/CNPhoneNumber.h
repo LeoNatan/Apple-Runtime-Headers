@@ -19,17 +19,28 @@
     struct __CFPhoneNumber *_phoneNumberRef;
 }
 
++ (id)_countryCodeForNorthAmericanDialingPlanAreaCodesExcludingUS;
++ (id)_countryCodesForNorthAmericanDialingPlan;
++ (BOOL)_isCountryCodeForNorthAmericanDialingPlan:(id)arg1;
++ (id)dialingCodeForISOCountryCode:(id)arg1;
++ (id)unsupportedCountryCodes;
 + (struct __CFPhoneNumber *)createCFPhoneNumberForStringValue:(id)arg1 countryCode:(id)arg2;
-+ (unsigned long long)samePersonPhoneNumberComparisonMatchCount;
 + (BOOL)supportsSecureCoding;
 + (id)defaultCountryCode;
++ (id)phoneNumberWithCopiedStringValue:(id)arg1;
 + (id)phoneNumberWithStringValue:(id)arg1;
 + (id)phoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 + (id)new;
 @property(readonly, copy, nonatomic) NSString *initialCountryCode; // @synthesize initialCountryCode=_initialCountryCode;
 @property(readonly, copy) NSString *stringValue; // @synthesize stringValue=_stringValue;
 - (void).cxx_destruct;
+- (id)_determineCorrectCountryCodeForNorthAmericanDialingPlan;
+- (id)formattedStringValueRemovingDialingCode;
+- (id)digitsRemovingDialingCode;
+- (id)fullyQualifiedDigits;
+- (BOOL)isFullyQualified;
 @property(readonly, copy) NSString *countryCode;
+- (id)_countryCodeFromPhoneNumberRef;
 @property(readonly, copy) NSString *unformattedInternationalStringValue;
 @property(readonly, copy) NSString *formattedInternationalStringValue;
 @property(readonly, copy) NSString *formattedStringValue;
@@ -49,6 +60,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithStringValue:(id)arg1;
+- (id)primitiveInitWithStringValue:(id)arg1 countryCode:(id)arg2;
 - (id)initWithStringValue:(id)arg1 countryCode:(id)arg2;
 - (id)init;
 

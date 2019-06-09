@@ -8,6 +8,7 @@
 
 @class UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemTextField : UITextField
 {
     UIView *_bottomBorderView;

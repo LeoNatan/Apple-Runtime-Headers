@@ -8,9 +8,7 @@
 
 @interface NSDate (GEOCelestial)
 + (id)_geo_calendar;
-+ (id)geo_dateWithJulianEphemerisDay:(double)arg1;
 + (id)geo_dateWithJulianDay:(double)arg1;
-- (double)geo_julianEphemerisDay;
 - (double)geo_hoursAndMinutes;
 - (double)geo_julianDay;
 @end

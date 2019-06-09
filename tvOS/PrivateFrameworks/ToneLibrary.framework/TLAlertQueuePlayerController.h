@@ -70,7 +70,7 @@
 - (void)_stopPlaybackWithOptions:(id)arg1 playerWasAlreadyPausedExternally:(_Bool)arg2;
 - (void)_stopPlayback;
 - (void)_performDelayedAudioPlaybackInitiationForAlert:(id)arg1;
-- (void)_startPlaybackForPlayingAlertUsingConfirmedPlayableAsset:(id)arg1 isFullyReady:(_Bool)arg2;
+- (void)_startPlaybackForPlayingAlertUsingConfirmedPlayableAsset:(id)arg1 hasAlreadyDetectedUserAttention:(_Bool)arg2;
 - (void)_startPlaybackForPlayingAlertUsingConfirmedPlayableAsset:(id)arg1;
 - (void)_startPlaybackForAssetWithLoadedProperties:(id)arg1 alert:(id)arg2;
 - (void)_reloadPlaybackForPlayingAlertWithToneIdentifier:(id)arg1;

@@ -15,5 +15,15 @@
 @property(nonatomic, setter=tvck_setHasOptedInToITunesRadio:) _Bool tvck_hasOptedInToITunesRadio;
 @property(nonatomic, getter=tvck_isITunesMatchEnabled, setter=tvck_setITunesMatchEnabled:) _Bool tvck_iTunesMatchEnabled;
 @property(nonatomic, getter=tvck_isOneClickEnabled, setter=tvck_setOneClickEnabled:) _Bool tvck_oneClickEnabled;
+- (id)_debugKeychainDictionary;
+- (void)tvpx_eraseAllKeychainData;
+- (void)tvpx_removeSecureKeychainString;
+- (void)tvpx_setSecureKeychainString:(id)arg1;
+- (id)tvpx_copySecureKeychainString;
+- (void)tvpx_removeKeychainObjectForKey:(id)arg1;
+- (void)tvpx_setKeychainObject:(id)arg1 forKey:(id)arg2;
+- (id)tvpx_copyKeychainObjectForKey:(id)arg1;
+- (id)_attributeDictionary;
+- (id)_copyQueryTemplateForService:(id)arg1;
 @end
 

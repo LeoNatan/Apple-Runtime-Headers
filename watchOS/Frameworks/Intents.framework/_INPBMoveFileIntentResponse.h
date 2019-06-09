@@ -26,6 +26,7 @@
     _INPBString *_sourceName;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)entityNameType;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(retain, nonatomic) _INPBString *sourceName; // @synthesize sourceName=_sourceName;
@@ -37,6 +38,9 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasSuccess;

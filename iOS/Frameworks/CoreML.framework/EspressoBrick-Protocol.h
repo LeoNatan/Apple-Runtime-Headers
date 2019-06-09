@@ -15,6 +15,8 @@
 - (NSArray *)setupForInputShapes:(NSArray *)arg1 withParameters:(NSDictionary *)arg2;
 
 @optional
+- (NSArray *)computeDynamicOutputShape:(NSArray *)arg1;
+- (_Bool)hasDynamicOutputShape:(unsigned long long)arg1;
 - (void)encodeToMetalCommandBuffer:(id <MTLCommandBuffer>)arg1 inputTensors:(NSArray *)arg2 outputTensors:(NSArray *)arg3;
 - (void)computeOnCPUWithInputTensors:(NSArray *)arg1 outputTensors:(NSArray *)arg2;
 - (void)setMappedWeights:(void *)arg1 sizeInBytes:(unsigned long long)arg2;

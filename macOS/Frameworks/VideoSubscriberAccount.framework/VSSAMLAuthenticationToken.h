@@ -20,6 +20,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(copy, nonatomic) NSString *body;
+- (BOOL)isFromUnsupportedProvider;
 - (BOOL)isOpaque;
 - (BOOL)isValid;
 @property(readonly, copy, nonatomic) NSDate *expirationDate;

@@ -16,13 +16,13 @@
     MFPlaceholderMessageRewriter *_rewriter;
 }
 
+- (void).cxx_destruct;
 - (id)contentForPlaceholder:(id)arg1;
 - (id)contentForContentID:(id)arg1;
 - (id)contentForURL:(id)arg1;
 - (id)_attachmentsContextID;
 - (id)deliverSynchronouslyWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithMessage:(id)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

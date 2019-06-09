@@ -25,6 +25,9 @@
 + (id)holidayCalendarURL;
 + (_Bool)customAutoDV2UserAgentEnabled;
 + (_Bool)earlyPingEnabled;
++ (_Bool)useContactsDelegatesDebugHack;
++ (_Bool)useContactsFramework;
++ (_Bool)useContactsFramerwork;
 + (_Bool)alwaysUseCalendarHomeSync;
 + (_Bool)babysitterEnabled;
 + (_Bool)isInHoldingPattern;

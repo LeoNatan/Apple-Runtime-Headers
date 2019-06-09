@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNCDContactSaveExecutor, CNCDGroupMembershipSaveExecutor, CNCDGroupSaveExecutor, CNCDSaveContext;
+@class CNCDContactSaveExecutor, CNCDContainerSaveExecutor, CNCDGroupMembershipSaveExecutor, CNCDGroupSaveExecutor, CNCDSaveContext;
 
 @interface CNCDSaveRequestExecutor : NSObject
 {
@@ -14,6 +14,7 @@
     CNCDContactSaveExecutor *_contactSaveExecutor;
     CNCDGroupSaveExecutor *_groupSaveExecutor;
     CNCDGroupMembershipSaveExecutor *_groupMembershipSaveExecutor;
+    CNCDContainerSaveExecutor *_containerSaveExecutor;
 }
 
 + (BOOL)executeSaveRequest:(id)arg1 inPersistenceStack:(id)arg2 error:(id *)arg3;

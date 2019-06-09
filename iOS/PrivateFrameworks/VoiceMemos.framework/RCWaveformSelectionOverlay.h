@@ -38,6 +38,7 @@
     _Bool _overviewTrimHandleStyle;
     _Bool _playBarOnly;
     _Bool _isOverView;
+    _Bool _changeAXValue;
     id <RCWaveformSelectionOverlayDelegate> _delegate;
     double _selectedTimeRangeMinimumDuration;
     double _selectedTimeRangeMaximumDuration;
@@ -56,6 +57,7 @@
 
 @property(retain, nonatomic) UIButton *resetRegionButton; // @synthesize resetRegionButton=_resetRegionButton;
 @property(nonatomic) double trackedAssetCurrentTime; // @synthesize trackedAssetCurrentTime=_trackedAssetCurrentTime;
+@property(nonatomic) _Bool changeAXValue; // @synthesize changeAXValue=_changeAXValue;
 @property(nonatomic) __weak UIView *selectionBackgroundView; // @synthesize selectionBackgroundView=_selectionBackgroundView;
 @property(nonatomic) long long selectionMode; // @synthesize selectionMode=_selectionMode;
 @property(nonatomic) _Bool isOverView; // @synthesize isOverView=_isOverView;
@@ -112,6 +114,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+@property(readonly, nonatomic) _Bool isCurrentlyTracking;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_clearStaleTouches;
 - (void)_updateSelectedTimeRangeForTrackedTouchesAnimated:(_Bool)arg1;

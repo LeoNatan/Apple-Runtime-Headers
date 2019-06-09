@@ -6,13 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <UserNotificationsUI/_UNNotificationContentExtensionLegacyDelegate-Protocol.h>
 #import <UserNotificationsUI/_UNNotificationExtensionRemoteInterface-Protocol.h>
 
-@class NSString, UIScrollViewDelayedTouchesBeganGestureRecognizer;
+@class UIScrollViewDelayedTouchesBeganGestureRecognizer;
 @protocol UNNotificationContentExtension, _UNNotificationExtensionHostInterface;
 
-@interface _UNNotificationExtensionRemoteViewController : UIViewController <_UNNotificationContentExtensionLegacyDelegate, _UNNotificationExtensionRemoteInterface>
+@interface _UNNotificationExtensionRemoteViewController : UIViewController <_UNNotificationExtensionRemoteInterface>
 {
     // Error parsing type: {atomic_flag="_Value"AB}, name: _invalidationOnceFlag
     UIScrollViewDelayedTouchesBeganGestureRecognizer *_touchDelayGestureRecognizer;
@@ -34,7 +33,6 @@
 - (void)_setupExtensionViewController:(id)arg1;
 - (id)notificationExtensionContext;
 - (id)_extensionBundleIdentifier;
-- (void)_loadAudioAccessoryViewForNotification:(id)arg1;
 - (void)_updateMediaPlayPauseButton;
 - (void)_mediaPause;
 - (void)_mediaPlay;
@@ -43,9 +41,6 @@
 - (void)_didReceiveNotification:(id)arg1;
 - (void)_restoreInputViews;
 - (void)_preserveInputViews;
-- (void)notificationContentExtensionDismiss:(id)arg1;
-- (void)notificationContentExtensionDefaultAction:(id)arg1;
-- (void)notificationContentExtension:(id)arg1 setDismissEnabled:(_Bool)arg2;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
@@ -62,12 +57,6 @@
 - (_Bool)_shouldForwardSystemLayoutFittingSizeChanges;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

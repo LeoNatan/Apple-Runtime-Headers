@@ -6,11 +6,11 @@
 
 #import <RelevanceEngine/RERule.h>
 
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/REAutomaticExportedInterface-Protocol.h>
 
-@class NSString, REComparisonCondition, RECondition, REConditionEvaluator;
+@class REComparisonCondition, RECondition, REConditionEvaluator;
 
-@interface RERankingRule : RERule <REIndentedDescription>
+@interface RERankingRule : RERule <REAutomaticExportedInterface>
 {
     REConditionEvaluator *_leftConditionEvaluator;
     REConditionEvaluator *_rightConditionEvaluator;
@@ -26,19 +26,13 @@
 @property(readonly, nonatomic) RECondition *rightCondition; // @synthesize rightCondition=_rightCondition;
 @property(readonly, nonatomic) RECondition *leftCondition; // @synthesize leftCondition=_leftCondition;
 - (void).cxx_destruct;
-- (id)descriptionWithIndent:(unsigned long long)arg1;
-@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithLeftCondition:(id)arg1 rightCondition:(id)arg2 comparisonCondition:(id)arg3 order:(long long)arg4;
 @property(readonly, nonatomic) REConditionEvaluator *comparisonConditionEvaluator;
 @property(readonly, nonatomic) REConditionEvaluator *rightConditionEvaluator;
 @property(readonly, nonatomic) REConditionEvaluator *leftConditionEvaluator;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

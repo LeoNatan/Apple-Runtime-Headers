@@ -21,13 +21,13 @@
     SearchUIWatchListCardsManager *_manager;
 }
 
-@property(retain) SearchUIWatchListCardsManager *manager; // @synthesize manager=_manager;
+@property(retain, nonatomic) SearchUIWatchListCardsManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) _Bool hasError; // @synthesize hasError=_hasError;
-@property(retain) SFPunchout *punchout; // @synthesize punchout=_punchout;
-@property long long buttonState; // @synthesize buttonState=_buttonState;
-@property(retain) SFImage *image; // @synthesize image=_image;
-@property(retain) NSString *text; // @synthesize text=_text;
-@property _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
+@property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
+@property(nonatomic) long long buttonState; // @synthesize buttonState=_buttonState;
+@property(retain, nonatomic) SFImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
+@property(nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property __weak id <SearchUIWatchListCardRowModelDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (int)separatorStyle;
@@ -37,7 +37,7 @@
 - (id)initWithResult:(id)arg1 cardSection:(id)arg2 asyncRowManager:(id)arg3;
 
 // Remaining properties
-@property(retain) SFWatchListCardSection *cardSection; // @dynamic cardSection;
+@property(retain, nonatomic) SFWatchListCardSection *cardSection; // @dynamic cardSection;
 
 @end
 

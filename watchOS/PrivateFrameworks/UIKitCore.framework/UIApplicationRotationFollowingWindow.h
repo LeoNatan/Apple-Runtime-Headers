@@ -8,16 +8,20 @@
 
 @interface UIApplicationRotationFollowingWindow : UIWindow
 {
+    _Bool _limitToWindowLevel;
+    int _priorityLevel;
 }
 
 + (_Bool)_isSystemWindow;
+@property(nonatomic) _Bool limitToWindowLevel; // @synthesize limitToWindowLevel=_limitToWindowLevel;
+@property(nonatomic) int priorityLevel; // @synthesize priorityLevel=_priorityLevel;
 - (id)__autorotationSanityCheckObjectFromSource:(id)arg1 selector:(SEL)arg2;
 - (_Bool)_shouldControlAutorotation;
 - (_Bool)isInterfaceAutorotationDisabled;
 - (void)_handleStatusBarOrientationChange:(id)arg1;
 - (_Bool)_shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)applicationWindowRotated:(id)arg1;
-- (void)dealloc;
+- (id)_topMostWindow;
 - (id)_initWithFrame:(struct CGRect)arg1 attached:(_Bool)arg2;
 - (id)init;
 - (void)_commonApplicationRotationFollowingWindowInit;

@@ -36,10 +36,6 @@
     GCDAsyncWritePacket *currentWrite;
     unsigned long long socketFDBytesAvailable;
     GCDAsyncSocketPreBuffer *preBuffer;
-    struct SSLContext *sslContext;
-    GCDAsyncSocketPreBuffer *sslPreBuffer;
-    unsigned long long sslWriteCachedLength;
-    int sslErrCode;
     void *IsOnSocketQueueOrTargetQueueKey;
     id userData;
     unsigned long long countedBytesWritten;
@@ -64,7 +60,6 @@
 + (id)hostFromSockaddr4:(const struct sockaddr_in *)arg1;
 - (void).cxx_destruct;
 - (void)logBuffer:(const void *)arg1 length:(unsigned long long)arg2 prefix:(id)arg3;
-- (struct SSLContext *)sslContext;
 - (int)socket6FD;
 - (int)socket4FD;
 - (int)socketFD;
@@ -73,10 +68,6 @@
 - (void)markSocketQueueTargetQueue:(id)arg1;
 - (void)setAutoDisconnectOnClosedReadStream:(BOOL)arg1;
 - (BOOL)autoDisconnectOnClosedReadStream;
-- (void)ssl_continueSSLHandshake;
-- (void)ssl_startTLS;
-- (int)sslWriteWithBuffer:(const void *)arg1 length:(unsigned long long *)arg2;
-- (int)sslReadWithBuffer:(void *)arg1 length:(unsigned long long *)arg2;
 - (void)maybeStartTLS;
 - (void)startTLS:(id)arg1;
 - (void)doWriteTimeoutWithExtension:(double)arg1;
@@ -87,8 +78,6 @@
 - (void)doWriteData;
 - (void)maybeDequeueWrite;
 - (float)progressOfWriteReturningTag:(long long *)arg1 bytesDone:(unsigned long long *)arg2 total:(unsigned long long *)arg3;
-- (void)writeSendfile:(id)arg1 atOffset:(long long)arg2 andLength:(long long)arg3 withTimeout:(double)arg4 tag:(long long)arg5 countBytesWritten:(BOOL)arg6;
-- (void)writeSendfile:(id)arg1 atOffset:(long long)arg2 andLength:(long long)arg3 withTimeout:(double)arg4 tag:(long long)arg5;
 - (void)writeData:(id)arg1 withTimeout:(double)arg2 tag:(long long)arg3 countBytesWritten:(BOOL)arg4;
 - (void)writeData:(id)arg1 withTimeout:(double)arg2 tag:(long long)arg3;
 - (void)asyncQueuePacket:(id)arg1;

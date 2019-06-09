@@ -8,6 +8,7 @@
 
 @class NSString, SKUIImageViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBrowseItemComponent : SKUIPageComponent
 {
     NSString *_title;

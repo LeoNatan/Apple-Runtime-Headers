@@ -6,22 +6,21 @@
 
 #import <Mail/MFEWSNetworkTaskOperation.h>
 
-@class MFEWSLocalMessageAction, NSProgress;
+@class ECLocalMessageAction, NSProgress;
 @protocol MFEWSMessageActionSyncOperationDelegate;
 
 @interface MFEWSMessageActionSyncOperation : MFEWSNetworkTaskOperation
 {
-    BOOL _actionWasReplayed;
-    MFEWSLocalMessageAction *_messageAction;
+    ECLocalMessageAction *_messageAction;
     NSProgress *_progress;
     id <MFEWSMessageActionSyncOperationDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <MFEWSMessageActionSyncOperationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-@property(nonatomic) BOOL actionWasReplayed; // @synthesize actionWasReplayed=_actionWasReplayed;
-@property(readonly, nonatomic) MFEWSLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
+@property(readonly, nonatomic) ECLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
 - (void).cxx_destruct;
+- (id)folderIDStringForMailboxURLString:(id)arg1;
 - (id)folderIDStringForMailbox:(id)arg1;
 - (BOOL)isRecoverableError:(id)arg1;
 - (id)init;

@@ -13,6 +13,9 @@
 + (id)safari_attributedStringWithGlyphRepresentation:(id)arg1 session:(id)arg2 shouldSkipHighlighting:(BOOL)arg3;
 + (id)safari_attributedStringWithGlyphs:(id)arg1;
 + (id)safari_attributedStringWithGlyph:(id)arg1 shouldSkipHighlighting:(BOOL)arg2;
++ (id)safari_attributedStringWithString:(id)arg1 attributes:(id)arg2;
 - (BOOL)safari_endsWithWhitespace;
+- (id)safari_attributedStringWithParagraphStyleAppliedForLineBreakMode:(unsigned long long)arg1;
+- (id)_safari_paragraphAttributesForLineBreakMode:(unsigned long long)arg1;
 @end
 

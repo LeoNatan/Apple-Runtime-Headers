@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)flushDiskCache;
 - (void)_prunePersistentCache;
 - (void)_doNetworkRequestForLatLng:(id)arg1 traits:(id)arg2 auditToken:(id)arg3 shouldCache:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)shiftLatLng:(id)arg1 auditToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)locationShiftFunctionVersion;
 - (_Bool)isLocationShiftEnabled;
 @property(readonly, nonatomic) GEOLocationShifterPersistence *persistentCache;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue;
 - (void)dealloc;
 - (id)init;
 

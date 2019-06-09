@@ -6,44 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock;
+@class AXFDispatchQueue;
 
 __attribute__((visibility("hidden")))
 @interface SCRGestureManager : NSObject
 {
-    NSLock *_lock;
-    double _nothingSoundDelay;
-    struct CGPoint _lastValidElementPoint;
+    struct __AXUIElement *_lastSeenAXMenubar;
+    BOOL _menuBarBoundsNeedsUpdate;
     BOOL _trackingFirstTouch;
     BOOL _trackingMovement;
     BOOL _ignoreNextEcho;
-    BOOL _movedOntoNothing;
-    double _movedOntoNothingTime;
     BOOL _onMenuExtraMenuItem;
-    BOOL _menuBarBoundsNeedsUpdate;
+    BOOL _movedOntoNothing;
+    double _nothingSoundDelay;
+    AXFDispatchQueue *__gestureManagerDispatchQueue;
+    double _movedOntoNothingTime;
+    id __delayForNothingSoundObserver;
+    struct CGPoint _lastValidElementPoint;
     struct CGRect _mainMenuBarBounds;
     struct CGRect _menuExtraMenuBarBounds;
-    struct __AXUIElement *_lastSeenAXMenubar;
 }
 
-+ (id)sharedManager;
-@property(readonly, nonatomic) BOOL menuBarBoundsNeedsUpdate; // @synthesize menuBarBoundsNeedsUpdate=_menuBarBoundsNeedsUpdate;
-@property(readonly) struct CGRect menuExtraMenuBarBounds; // @synthesize menuExtraMenuBarBounds=_menuExtraMenuBarBounds;
-@property(nonatomic) BOOL onMenuExtraMenuItem; // @synthesize onMenuExtraMenuItem=_onMenuExtraMenuItem;
+@property(retain, nonatomic, setter=_setDelayForNothingSoundObserver:) id _delayForNothingSoundObserver; // @synthesize _delayForNothingSoundObserver=__delayForNothingSoundObserver;
+@property(nonatomic) double movedOntoNothingTime; // @synthesize movedOntoNothingTime=_movedOntoNothingTime;
+@property(readonly, nonatomic) AXFDispatchQueue *_gestureManagerDispatchQueue; // @synthesize _gestureManagerDispatchQueue=__gestureManagerDispatchQueue;
 @property(nonatomic) BOOL movedOntoNothing; // @synthesize movedOntoNothing=_movedOntoNothing;
+@property(nonatomic) BOOL onMenuExtraMenuItem; // @synthesize onMenuExtraMenuItem=_onMenuExtraMenuItem;
 @property(nonatomic) BOOL ignoreNextEcho; // @synthesize ignoreNextEcho=_ignoreNextEcho;
 @property(nonatomic) BOOL trackingMovement; // @synthesize trackingMovement=_trackingMovement;
 @property(nonatomic) BOOL trackingFirstTouch; // @synthesize trackingFirstTouch=_trackingFirstTouch;
+@property(readonly, nonatomic) struct CGRect menuExtraMenuBarBounds; // @synthesize menuExtraMenuBarBounds=_menuExtraMenuBarBounds;
+@property(readonly, nonatomic) BOOL menuBarBoundsNeedsUpdate; // @synthesize menuBarBoundsNeedsUpdate=_menuBarBoundsNeedsUpdate;
+- (void).cxx_destruct;
 - (void)setMenuBarBoundsNeedsUpdate;
 - (void)updateMenuBarBounds:(id)arg1;
-@property(readonly) double movedOntoNothingTime; // @synthesize movedOntoNothingTime=_movedOntoNothingTime;
 - (struct CGRect)menuExtraBounds;
-@property(readonly) struct CGRect mainMenuBarBounds; // @synthesize mainMenuBarBounds=_mainMenuBarBounds;
-@property struct CGPoint lastValidElementPoint; // @synthesize lastValidElementPoint=_lastValidElementPoint;
-@property double nothingSoundDelay; // @synthesize nothingSoundDelay=_nothingSoundDelay;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+@property(readonly, nonatomic) struct CGRect mainMenuBarBounds; // @synthesize mainMenuBarBounds=_mainMenuBarBounds;
+@property(nonatomic) struct CGPoint lastValidElementPoint; // @synthesize lastValidElementPoint=_lastValidElementPoint;
+@property(nonatomic) double nothingSoundDelay; // @synthesize nothingSoundDelay=_nothingSoundDelay;
+- (void)setDelayForNothingSoundValue:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithUserDefaults:(id)arg1;
 
 @end
 

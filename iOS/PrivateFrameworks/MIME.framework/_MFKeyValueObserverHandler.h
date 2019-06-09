@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <MIME/MFCancelable-Protocol.h>
+#import <MIME/EFCancelable-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface _MFKeyValueObserverHandler : NSObject <MFCancelable>
+@interface _MFKeyValueObserverHandler : NSObject <EFCancelable>
 {
     id _object;
     NSString *_keyPath;
@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     _Bool _observing;
 }
 
+- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)cancel;
 - (void)startObservingWithOptions:(unsigned long long)arg1;

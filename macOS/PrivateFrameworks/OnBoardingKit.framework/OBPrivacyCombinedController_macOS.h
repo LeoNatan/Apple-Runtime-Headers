@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)processBundles:(id)arg1;
+- (void)prepareToPresent;
 - (void)reloadWindow;
 - (id)initWithIdentifiers:(id)arg1;
 - (id)init;

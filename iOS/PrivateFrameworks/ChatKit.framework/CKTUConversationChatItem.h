@@ -14,6 +14,7 @@
 
 @property(readonly, nonatomic) __weak NSUUID *tuConversationUUID;
 @property(readonly, nonatomic) BOOL color;
+- (id)sender;
 - (id)time;
 - (void)configureBalloonView:(id)arg1;
 - (_Bool)isFromMe;

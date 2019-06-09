@@ -8,12 +8,11 @@
 
 #import <AssetsLibraryServices/PLPhotoLibraryPathManager-Protocol.h>
 
-@class NSString, NSURL;
-@protocol PLPhotoLibraryPathManager;
+@class NSString, NSURL, PLPhotoLibraryPathManagerCore;
 
 @interface PLPhotoLibraryPathManager : NSObject <PLPhotoLibraryPathManager>
 {
-    id <PLPhotoLibraryPathManager> _internalPathManager;
+    PLPhotoLibraryPathManagerCore *_internalPathManager;
     NSString *_singletonPhotoLibraryPath;
 }
 
@@ -31,9 +30,11 @@
 - (void).cxx_destruct;
 - (BOOL)createTimeMachineExclusionPathsWithError:(id *)arg1;
 - (id)timeMachineExclusionPathForPathType:(unsigned char)arg1;
+- (void)enumerateBundleScopesWithBlock:(CDUnknownBlockType)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)setOrCompareLibraryURL:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (id)initWithLibraryURL:(id)arg1 bundleScope:(unsigned char)arg2;
 - (id)initWithLibraryURL:(id)arg1;
 - (id)initWithBaseDirectory:(id)arg1;
 - (id)init;

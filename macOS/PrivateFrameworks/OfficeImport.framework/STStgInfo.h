@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface STStgInfo : NSObject
 {
     NSString *m_pstrName;

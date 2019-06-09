@@ -6,7 +6,7 @@
 
 #import <UIKit/UIResponder.h>
 
-@class AVAsset, AVObservationController, AVPlayer, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSNumber, NSObject;
+@class AVAsset, AVAssetTrack, AVMediaSelectionOption, AVObservationController, AVPlayer, AVTimecodeController, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSNumber, NSObject;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface AVPlayerController : UIResponder
@@ -16,7 +16,10 @@
     _Bool _lKeyDown;
     NSArray *_audioMediaSelectionOptions;
     NSArray *_legibleMediaSelectionOptions;
+    AVMediaSelectionOption *_cachedSelectedAudioMediaSelectionOption;
+    AVMediaSelectionOption *_cachedSelectedLegibleMediaSelectionOption;
     long long _savedCaptionAppearanceDisplayType;
+    _Bool _alwaysWantsAutomaticMediaOptionSelection;
     float _rate;
     _Bool _isResumed;
     NSObject<OS_dispatch_source> *_seekTimer;
@@ -26,8 +29,10 @@
     void *_observationInfo;
     _Bool _inspectionSuspended;
     id _updateAtMinMaxTimePeriodicObserverToken;
+    id _timecodePeriodicObserverToken;
     _Bool _pictureInPictureInterrupted;
     _Bool _handlesAudioSessionInterruptions;
+    _Bool _isDeallocating;
     NSNumber *_rateToRestoreAfterAudioSessionInterruptionEnds;
     CDUnknownBlockType _retryPlayingImmediatelyBlock;
     _Bool _shouldPlayImmediately;
@@ -48,10 +53,7 @@
     _Bool _shouldPlayWhenLikelyToKeepUp;
     _Bool _forceScanning;
     double _rateBeforeForceScanning;
-    id _deviceBatteryStateDidChangeObserver;
-    _Bool _deviceBatteryMonitoringWasEnabled;
     _Bool _playingOnSecondScreen;
-    long long _allowsIdleSleepPreventionCount;
     _Bool _atMaxTime;
     _Bool _atMinTime;
     _Bool _scrubbing;
@@ -64,8 +66,13 @@
     _Bool _preventingIdleSystemSleep;
     _Bool _preventingIdleDisplaySleep;
     _Bool _disablingAutomaticTermination;
-    _Bool _deviceBatteryChargingOrFull;
+    _Bool _allowsPictureInPicturePlayback;
+    _Bool _pictureInPictureActive;
+    _Bool _canTogglePictureInPicture;
+    _Bool _hasBegunInspection;
+    _Bool _touchBarRequiresLinearPlayback;
     AVPlayer *_player;
+    long long _status;
     AVObservationController *_observationController;
     AVAsset *_currentAssetIfReady;
     NSObject<OS_dispatch_queue> *_assetInspectionQueue;
@@ -73,11 +80,14 @@
     AVValueTiming *_timing;
     AVValueTiming *_minTiming;
     AVValueTiming *_maxTiming;
+    AVAssetTrack *_currentAudioTrack;
+    AVTimecodeController *_timecodeController;
     double _seekToTime;
     NSDictionary *_metadata;
     NSArray *_contentChapters;
     NSArray *_availableMetadataFormats;
     double _rateBeforeScrubBegan;
+    double _defaultPlaybackRate;
     struct CGSize _presentationSize;
     CDStruct_1b6d18a9 _seekToTimeInternal;
 }
@@ -120,15 +130,14 @@
 + (id)keyPathsForValuesAffectingContentDuration;
 + (id)keyPathsForValuesAffectingHasContent;
 + (id)keyPathsForValuesAffectingMuted;
++ (id)keyPathsForValuesAffectingVolume;
 + (id)keyPathsForValuesAffectingCanTogglePlayback;
 + (id)keyPathsForValuesAffectingCanPause;
 + (id)keyPathsForValuesAffectingPlaying;
 + (id)keyPathsForValuesAffectingCanPlay;
-+ (id)keyPathsForValuesAffectingShouldPreventIdleDisplaySleep;
 + (id)keyPathsForValuesAffectingCompletelySeekable;
 + (id)keyPathsForValuesAffectingError;
 + (id)keyPathsForValuesAffectingReadyToPlay;
-+ (id)keyPathsForValuesAffectingStatus;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingHasLegibleMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasAudioMediaSelectionOptions;
@@ -136,7 +145,12 @@
 + (id)keyPathsForValuesAffectingMaximumVideoResolution;
 + (id)keyPathsForValuesAffectingPreferredDisplayCriteria;
 + (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
-@property(nonatomic, getter=isDeviceBatteryChargingOrFull) _Bool deviceBatteryChargingOrFull; // @synthesize deviceBatteryChargingOrFull=_deviceBatteryChargingOrFull;
+@property(nonatomic) _Bool touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
+@property(nonatomic) double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
+@property(nonatomic) _Bool hasBegunInspection; // @synthesize hasBegunInspection=_hasBegunInspection;
+@property(nonatomic) _Bool canTogglePictureInPicture; // @synthesize canTogglePictureInPicture=_canTogglePictureInPicture;
+@property(nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
+@property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
 @property(nonatomic, getter=isDisablingAutomaticTermination) _Bool disablingAutomaticTermination; // @synthesize disablingAutomaticTermination=_disablingAutomaticTermination;
 @property(nonatomic, getter=isPreventingIdleDisplaySleep) _Bool preventingIdleDisplaySleep; // @synthesize preventingIdleDisplaySleep=_preventingIdleDisplaySleep;
 @property(nonatomic, getter=isPreventingIdleSystemSleep) _Bool preventingIdleSystemSleep; // @synthesize preventingIdleSystemSleep=_preventingIdleSystemSleep;
@@ -151,6 +165,8 @@
 @property CDStruct_1b6d18a9 seekToTimeInternal; // @synthesize seekToTimeInternal=_seekToTimeInternal;
 @property(nonatomic, getter=isSeeking) _Bool seeking; // @synthesize seeking=_seeking;
 @property(getter=isSeekingInternal) _Bool seekingInternal; // @synthesize seekingInternal=_seekingInternal;
+@property(retain, nonatomic) AVTimecodeController *timecodeController; // @synthesize timecodeController=_timecodeController;
+@property(retain, nonatomic) AVAssetTrack *currentAudioTrack; // @synthesize currentAudioTrack=_currentAudioTrack;
 @property(retain, nonatomic) AVValueTiming *maxTiming; // @synthesize maxTiming=_maxTiming;
 @property(retain, nonatomic) AVValueTiming *minTiming; // @synthesize minTiming=_minTiming;
 @property(retain, nonatomic) AVValueTiming *timing; // @synthesize timing=_timing;
@@ -163,16 +179,19 @@
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic, getter=isAtMinTime) _Bool atMinTime; // @synthesize atMinTime=_atMinTime;
 @property(nonatomic, getter=isAtMaxTime) _Bool atMaxTime; // @synthesize atMaxTime=_atMaxTime;
+@property(nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
 - (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;
 - (void)_updateRateForScrubbingAndSeeking;
 - (void)_cancelPendingSeeksIfNeeded;
+- (id)_timecodeTrack;
 - (void)setCanUseNetworkResourcesForLiveStreamingWhilePaused:(_Bool)arg1;
 - (_Bool)canUseNetworkResourcesForLiveStreamingWhilePaused;
 - (void)stopUsingNetworkResourcesForLiveStreamingWhilePaused;
 - (void)startUsingNetworkResourcesForLiveStreamingWhilePaused;
+- (void)togglePictureInPicture:(id)arg1;
 - (void)setPictureInPictureInterrupted:(_Bool)arg1;
 - (_Bool)isPictureInPictureInterrupted;
 - (_Bool)isPictureInPicturePossible;
@@ -224,8 +243,11 @@
 - (void)seekToTime:(double)arg1;
 - (_Bool)canSeek;
 - (long long)timeControlStatus;
-- (_Bool)_isMarkedNotSerializablePlayerItem:(id)arg1;
-- (_Bool)_isRestrictedFromSavingPlayerItem:(id)arg1;
+- (void)_updateCurrentAudioTrackIfNeeded;
+- (_Bool)_assetContainsProResRaw:(id)arg1;
+- (_Bool)_assetIsMarkedNotSerializable:(id)arg1;
+- (id)audioWaveform;
+- (_Bool)_assetIsRestrictedFromSaving:(id)arg1;
 - (_Bool)hasShareableContent;
 - (_Bool)hasTrimmableContent;
 - (_Bool)hasSeekableLiveStreamingContent;
@@ -238,6 +260,7 @@
 - (id)loadedTimeRanges;
 - (id)seekableTimeRanges;
 - (double)currentTimeWithinEndTimes;
+@property(readonly, nonatomic) NSDate *currentOrEstimatedDate;
 @property(readonly, nonatomic) NSDate *currentDate;
 - (double)contentDurationWithinEndTimes;
 - (void)_setMinTiming:(id)arg1 maxTiming:(id)arg2;
@@ -285,23 +308,21 @@
 - (void)setRate:(double)arg1;
 - (double)rate;
 - (void)_observeValueForKeyPath:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3;
-@property(readonly, nonatomic) _Bool shouldPreventIdleDisplaySleep;
-- (_Bool)allowsIdleSleepPrevention;
-- (void)stopAllowingIdleSleepPrevention;
-- (void)startAllowingIdleSleepPrevention;
 - (_Bool)isCompletelySeekable;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic, getter=isReadyToPlay) _Bool readyToPlay;
-@property(readonly, nonatomic) long long status;
+- (void)_updateStatus;
 - (id)_queuePlayer;
 - (void)setObservationInfo:(void *)arg1;
 - (void *)observationInfo;
 - (void)startKVO;
 - (void)dealloc;
-- (id)init;
+- (void)startInspectionIfNeeded;
 - (id)initWithPlayer:(id)arg1;
+- (id)init;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
+- (void)_enableAutoMediaSelection:(id)arg1 shouldUpdateUserPreference:(_Bool)arg2;
 - (void)_enableAutoMediaSelection:(id)arg1;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
 - (id)legibleOptions;
@@ -309,6 +330,7 @@
 - (void)reloadLegibleOptions;
 - (void)reloadAudioOptions;
 - (void)reloadOptions;
+- (void)selectedMediaOptionMayHaveChanged;
 - (id)_optionsForGroup:(id)arg1;
 - (void)toggleCaptions;
 - (void)setSavedCaptionAppearanceDisplayType:(long long)arg1;
@@ -327,11 +349,24 @@
 - (id)audioMediaSelectionOptions;
 - (_Bool)hasAudioMediaSelectionOptions;
 - (_Bool)hasMediaSelectionOptions;
+@property(readonly, nonatomic) _Bool supportsVolumeAnimation;
 - (void)setRateWithForce:(double)arg1;
 @property(readonly, nonatomic) struct CGSize maximumVideoResolution;
 - (id)preferredDisplayCriteria;
 @property(readonly, nonatomic) _Bool usesExternalPlaybackWhileExternalScreenIsActive;
 @property(nonatomic) _Bool handlesAudioSessionInterruptions;
+- (id)maxFrameCountString;
+- (id)maxTimecode;
+- (long long)frameNumberForCurrentTime;
+- (id)timecodeForCurrentTime;
+- (void)seekToFrame:(long long)arg1;
+- (void)seekToTimecode:(id)arg1;
+- (void)stopGeneratingTimecodes;
+- (_Bool)startGeneratingTimecodesUsingBlock:(CDUnknownBlockType)arg1;
+- (double)timecodeObservationInterval;
+- (id)loadTimecodeControllerIfNeeded;
+@property(readonly, nonatomic) _Bool hasTimecodes;
+@property(readonly, nonatomic) _Bool hasReadableTimecodes;
 
 @end
 

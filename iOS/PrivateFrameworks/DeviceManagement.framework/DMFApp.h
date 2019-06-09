@@ -9,7 +9,7 @@
 #import <DeviceManagement/NSCopying-Protocol.h>
 #import <DeviceManagement/NSSecureCoding-Protocol.h>
 
-@class DMFAppManagementInformation, NSDictionary, NSNumber, NSString;
+@class DMFAppManagementInformation, NSArray, NSDictionary, NSNumber, NSString;
 
 @interface DMFApp : NSObject <NSCopying, NSSecureCoding>
 {
@@ -39,6 +39,7 @@
     NSNumber *_sharedUsage;
     unsigned long long _installationState;
     NSString *_VPNUUIDString;
+    NSArray *_associatedDomains;
     NSDictionary *_configuration;
     NSDictionary *_feedback;
     DMFAppManagementInformation *_managementInformation;
@@ -49,6 +50,7 @@
 @property(copy, nonatomic) DMFAppManagementInformation *managementInformation; // @synthesize managementInformation=_managementInformation;
 @property(copy, nonatomic) NSDictionary *feedback; // @synthesize feedback=_feedback;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
+@property(copy, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
 @property(copy, nonatomic) NSString *VPNUUIDString; // @synthesize VPNUUIDString=_VPNUUIDString;
 @property(nonatomic) _Bool hasUpdateAvailable; // @synthesize hasUpdateAvailable=_hasUpdateAvailable;
 @property(nonatomic) _Bool isAdHocCodeSigned; // @synthesize isAdHocCodeSigned=_isAdHocCodeSigned;

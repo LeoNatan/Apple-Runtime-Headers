@@ -25,9 +25,93 @@ typedef struct {
     Class _field1;
 } EKPersistentObject_556b3b22;
 
+typedef struct {
+    Class _field1;
+    struct _opaque_pthread_mutex_t _field2;
+    id _field3;
+    id _field4;
+    id _field5;
+    unsigned int _field6;
+    id _field7;
+    id _field8;
+} EKPersistentObject_e5dd8935;
+
 #endif
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+} CDStruct_c0454aff;
+
+typedef struct {
+    unsigned int supportsAlarmTriggerIntervals:1;
+    unsigned int supportsAlarmTriggerDates:1;
+    unsigned int supportsAlarmsTriggeringAfterStartDate:1;
+    unsigned int snoozeAlarmRequiresDetach:1;
+    unsigned int organizerCanSeeAttendeeStatuses:1;
+    unsigned int inviteesCanSeeAttendeeStatuses:1;
+    unsigned int statusesAreAccurate:1;
+    unsigned int supportsIncomingInvitations:1;
+    unsigned int supportsOutgoingInvitations:1;
+    unsigned int requiresOutgoingInvitationsInDefaultCalendar:1;
+    unsigned int supportsInvitationModifications:1;
+    unsigned int supportsEventForwarding:1;
+    unsigned int supportsResponseComments:1;
+    unsigned int deliverySourceOrExternalIDRequiredForResponse:1;
+    unsigned int proposedStatusRequiredForResponse:1;
+    unsigned int declinedStatusChangeRequiresNoPendingStatus:1;
+    unsigned int eventDurationConstrainedToRecurrenceInterval:1;
+    unsigned int alarmTriggerIntervalConstrainedToRecurrenceInterval:1;
+    unsigned int occurrencesMustOccurOnSeparateDays:1;
+    unsigned int futureStartDateLimitedToOccurrenceCacheBounds:1;
+    unsigned int supportsRecurrencesOnDetachedEvents:1;
+    unsigned int recurrencesShouldPinToMonthDays:1;
+    unsigned int requiresAttendeeSearchInSingleAccount:1;
+    unsigned int mustAcknowledgeMasterEvent:1;
+    unsigned int canSetAvailability:1;
+    unsigned int eventAvalabilityLimited:1;
+    unsigned int requiresMSFormattedUID:1;
+    unsigned int shouldCancelDeletedEvents:1;
+    unsigned int shouldDeclineDeletedInvitations:1;
+    unsigned int supportsStructuredLocations:1;
+    unsigned int supportsReminderActions:1;
+    unsigned int supportsReminderLocations:1;
+    unsigned int supportsAlarmProximity:1;
+    unsigned int allowsCalendarAddDeleteModify:1;
+    unsigned int allowsTasks:1;
+    unsigned int allowsEvents:1;
+    unsigned int supportsURLField:1;
+    unsigned int supportsAllDayDueDates:1;
+    unsigned int supportsSharedCalendars:1;
+    unsigned int isFacebook:1;
+    unsigned int recurrenceSeriesMustIncludeMoreThanFirstOccurrence:1;
+    unsigned int supportsPrivateEvents:1;
+    unsigned int prohibitsPrivateEventsWithAttendees:1;
+    unsigned int supportsAvailabilityRequests:1;
+    unsigned int supportsIgnoringEventsInAvailabilityRequests:1;
+    unsigned int supportsLocationDirectorySearches:1;
+    unsigned int requiresSamePrivacyLevelAcrossRecurrenceSeries:1;
+    unsigned int supportsInboxAvailability:1;
+    unsigned int prohibitsMultipleMonthsInYearlyRecurrence:1;
+    unsigned int prohibitsMultipleDaysInMonthlyRecurrence:1;
+    unsigned int prohibitsYearlyRecurrenceInterval:1;
+    unsigned int requiresOccurrencesConformToRecurrenceRule:1;
+    unsigned int prohibitsDetachmentOnCommentChange:1;
+    unsigned int allowsProposeNewTime:1;
+    unsigned int prohibitsICSImport:1;
+    unsigned int supportsAutoGeocodingStructuredLocations:1;
+    unsigned int supportsJunkReporting:1;
+    unsigned int supportsPhoneNumbers:1;
+    unsigned int attendeesUseDeletedByOrganizerStatus:1;
+    unsigned int prohibitsSlicingEventsWithAttendees:1;
+    unsigned int supportsSubscribedCalendars:1;
+    unsigned int supportsAttachments:1;
+    unsigned int supportsDelegation:1;
+    unsigned int supportsDelegateEnumeration:1;
+    unsigned int supportsRecurrenceSplit:1;
+} CDStruct_4df63007;
 
 typedef struct {
     int _field1;

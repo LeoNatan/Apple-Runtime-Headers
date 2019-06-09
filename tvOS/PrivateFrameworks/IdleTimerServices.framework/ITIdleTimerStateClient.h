@@ -4,27 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoardServices/FBSServiceFacilityClient.h>
+#import <objc/NSObject.h>
 
+#import <IdleTimerServices/ITIdleTimerClientInterface-Protocol.h>
 #import <IdleTimerServices/ITIdleTimerStateRequestHandling-Protocol.h>
 
-@class NSMutableSet, NSObject, NSString;
-@protocol OS_dispatch_queue;
+@class BSServiceConnection, NSString;
+@protocol ITIdleTimerStateRequestDelegate;
 
-@interface ITIdleTimerStateClient : FBSServiceFacilityClient <ITIdleTimerStateRequestHandling>
+@interface ITIdleTimerStateClient : NSObject <ITIdleTimerClientInterface, ITIdleTimerStateRequestHandling>
 {
-    NSObject<OS_dispatch_queue> *_accessQueue;
-    NSMutableSet *_assertionReasons;
+    struct os_unfair_lock_s _accessLock;
+    unsigned long long _serviceAvailability;
+    BSServiceConnection *_connection;
+    id <ITIdleTimerStateRequestDelegate> _delegate;
 }
 
-+ (id)sharedInstance;
 - (void).cxx_destruct;
-- (_Bool)_requestIsIdleTimerServiceAvailable;
-- (void)_queue_setIdleTimerDisabled:(_Bool)arg1 forReason:(id)arg2;
-- (void)configureConnectMessage:(id)arg1;
-- (void)setIdleTimerDisabled:(_Bool)arg1 forReason:(id)arg2;
+- (void)_access_addIdleTimerConfiguration:(id)arg1 forReason:(id)arg2;
+- (void)_access_removeIdleTimerConfiguration:(id)arg1 forReason:(id)arg2;
+- (void)_connectionInterrupted;
+- (_Bool)handleIdleEvent:(id)arg1 usingConfigurationWithIdentifier:(id)arg2;
+- (void)removeIdleTimerConfiguration:(id)arg1 forReason:(id)arg2;
+- (void)addIdleTimerConfiguration:(id)arg1 forReason:(id)arg2;
 - (_Bool)isIdleTimerServiceAvailable;
-- (id)_init;
+- (id)initWithDelegate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

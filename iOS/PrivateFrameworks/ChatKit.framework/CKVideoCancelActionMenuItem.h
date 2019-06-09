@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKActionMenuItem.h>
 
+__attribute__((visibility("hidden")))
 @interface CKVideoCancelActionMenuItem : CKActionMenuItem
 {
     unsigned long long _touchDownCount;

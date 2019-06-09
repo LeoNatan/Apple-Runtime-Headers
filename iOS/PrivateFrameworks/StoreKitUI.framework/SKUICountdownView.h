@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSNumberFormatter, NSOperationQueue, NSTimer, SKUIClientContext, SKUICountdown, SKUICountdownViewTimerTarget, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUICountdownView : UIView
 {
     SKUIClientContext *_clientContext;

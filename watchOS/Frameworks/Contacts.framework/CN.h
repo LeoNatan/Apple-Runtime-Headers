@@ -12,9 +12,19 @@
 
 + (id)writableContainerProperties;
 + (id)allContainerProperties;
++ (id)containerGuardianStateDirtyDescription;
++ (id)containerGuardianRestrictedDescription;
++ (id)containerRestrictionsDescription;
++ (id)containerMeIdentifierDescription;
++ (id)containerConstraintsPathDescription;
++ (id)containerExternalSyncDataDescription;
++ (id)containerExternalSyncTagDescription;
++ (id)containerExternalModificationTagDescription;
++ (id)containerExternalIdentifierDescription;
 + (id)containerEnabledDescription;
-+ (id)containerTypeDescription;
++ (id)containerAccountIdentifierDescription;
 + (id)containeriOSLegacyIdentifierDescription;
++ (id)containerTypeDescription;
 + (id)containerNameDescription;
 + (id)containerIdentifierDescription;
 + (id)sourceContactForValue:(id)arg1 labeledValueIdentifier:(id)arg2 propertyKey:(id)arg3 inUnifiedContact:(id)arg4;
@@ -30,11 +40,19 @@
 + (id)mutableContactUnifyingContacts:(id)arg1 includingMainStoreContacts:(_Bool)arg2;
 + (unsigned int)indexOfPreferredContactsForUnifying:(id)arg1 includingMainStoreContacts:(_Bool)arg2;
 + (Class)defaultDataMapperClass;
++ (id)imageHash;
++ (id)imageType;
++ (id)downtimeWhitelistDescription;
 + (id)mapsDataDescription;
 + (id)preferredChannelDescription;
 + (id)callAlertDescription;
 + (id)textAlertDescription;
 + (id)phonemeDataDescription;
++ (id)externalImageURIDescription;
++ (id)externalUUIDDescription;
++ (id)externalModificationTagDescription;
++ (id)externalRepresentationDescription;
++ (id)externalIdentifierDescription;
 + (id)calendarURIsDescription;
 + (id)postalAddressesDescription;
 + (id)socialProfilesDescription;
@@ -51,6 +69,7 @@
 + (id)preferredForNameDescription;
 + (id)linkIdentifierDescription;
 + (id)imageDataAvailableDescription;
++ (id)syncImageDataDescription;
 + (id)fullscreenImageDataDescription;
 + (id)thumbnailImageDataDescription;
 + (id)cropRectDescription;
@@ -81,6 +100,7 @@
 + (id)iOSLegacyIdentifierDescription;
 + (id)identifierDescription;
 + (id)contactPropertiesByKey;
++ (id)restrictedProperties;
 + (id)writableMultiValueContactProperties;
 + (id)writableSingleValueContactProperties;
 + (id)writableContactProperties;

@@ -8,5 +8,6 @@
 
 @interface NSAttributedString (IKEditingExtensions)
 - (struct CGSize)IKSizeOfTextForWidth:(float)arg1 textView:(id)arg2;
+- (void)getMetrics:(CDStruct_a6c50959 *)arg1 containerSize:(struct CGSize)arg2 wrap:(BOOL)arg3 alignment:(long long)arg4 tagOffset:(double)arg5;
 @end
 

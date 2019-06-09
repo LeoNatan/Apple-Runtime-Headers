@@ -31,6 +31,7 @@
 @property(readonly) NSString *displayTitle; // @synthesize displayTitle=_displayTitle;
 - (id)installerApplicationBundleURLOnDisk;
 @property(readonly) NSImage *iconImage;
+- (id)description;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

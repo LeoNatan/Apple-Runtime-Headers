@@ -7,19 +7,43 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (IC)
++ (id)ic_NSAttachmentCharacterString;
+@property(readonly, nonatomic) NSString *ic_quotedString;
+- (id)ic_truncatedStringWithMaxLength:(unsigned long long)arg1 truncated:(_Bool *)arg2;
+- (id)ic_stringByTrimmingLeadingCharactersInSet:(id)arg1;
+- (unsigned long long)ic_countOfCharactersInSet:(id)arg1;
+- (struct _NSRange)ic_safeCharacterRangeForRange:(struct _NSRange)arg1;
+- (_Bool)ic_isLastCharacterInRangeANewlineForRange:(struct _NSRange)arg1;
 - (unsigned long long)lengthOfLongestLine;
 - (struct _NSRange)paragraphRangeForRange:(struct _NSRange)arg1 contentEnd:(unsigned long long *)arg2;
+- (id)ic_stringByReplacingCharactersInStringMap:(id)arg1;
 - (id)ic_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 - (id)ic_stringByReplacingNewlineCharactersWithWhiteSpace;
+- (id)ic_checkedSubstringWithRange:(struct _NSRange)arg1;
 - (id)ic_substringWithRange:(struct _NSRange)arg1;
 - (id)ic_substringToIndex:(unsigned long long)arg1;
 - (id)ic_substringFromIndex:(unsigned long long)arg1;
 - (void)enumerateContentLineRangesInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateParagraphsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (_Bool)ic_containsAlphanumericCharacters;
+- (_Bool)ic_containsNonWhitespaceCharacters;
+- (id)ic_uniqueWordsWithMinLength:(unsigned long long)arg1;
 - (unsigned long long)numberOfLines;
+@property(readonly, nonatomic) _Bool ic_isLastCharacterANewline;
+@property(readonly, nonatomic) NSString *ic_stringByRemovingAttachmentCharacters;
+@property(readonly, nonatomic) NSString *ic_stringReplacingUnsafeXMLCharacters;
+@property(readonly, nonatomic) NSString *ic_stringReplacingUnsafeHTMLCharacters;
+- (_Bool)ic_rangeIsValid:(struct _NSRange)arg1;
 @property(readonly, nonatomic) NSString *ic_sanitizedFilenameString;
 @property(readonly, nonatomic) NSString *ic_whitespaceAndNewlineCoalescedString;
+@property(readonly, nonatomic) NSString *ic_leadingTrimmedString;
+@property(readonly, nonatomic) NSString *ic_trailingTrimmedString;
 @property(readonly, nonatomic) NSString *ic_trimmedString;
+@property(readonly, nonatomic) NSString *ic_htmlStringEscapingQuotesAndLineBreaks;
 - (id)ic_md5;
+@property(readonly, nonatomic) struct _NSRange ic_range;
+- (id)_HTMLTagNameClosing:(_Bool *)arg1;
+- (struct _NSRange)_HTMLRangeOfLastTagBeforeIndex:(unsigned long long)arg1;
+- (unsigned long long)ic_HTMLInsertionPoint;
 @end
 

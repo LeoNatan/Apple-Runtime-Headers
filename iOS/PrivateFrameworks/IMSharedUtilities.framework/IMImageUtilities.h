@@ -10,6 +10,7 @@
 {
 }
 
++ (double)scaleFactorForThumbnailWithSize:(struct CGSize)arg1 constraints:(struct IMPreviewConstraints)arg2 targetPxSize:(struct CGSize)arg3 shouldScaleUpPreview:(_Bool)arg4 maxUpScale:(double)arg5;
 + (struct CGImage *)newThumbnailForTargetSize:(struct CGSize)arg1 imageSize:(struct CGSize)arg2 imageSource:(struct CGImageSource *)arg3 atIndex:(unsigned long long)arg4 mode:(long long)arg5 scale:(double)arg6;
 + (struct CGImage *)newThumbnailForTargetSize:(struct CGSize)arg1 imageSize:(struct CGSize)arg2 imageSource:(struct CGImageSource *)arg3 mode:(long long)arg4 scale:(double)arg5;
 + (_Bool)persistCPBitmapWithImage:(struct CGImage *)arg1 url:(id)arg2;

@@ -17,7 +17,9 @@
     _Bool _userInteractionActive;
     id <HUQuickControlColorPickerViewInteractionDelegate> _interactionDelegate;
     HUQuickControlColorViewProfile *_profile;
+    unsigned long long _reachabilityState;
     unsigned long long _colorPickerMode;
+    double _magnifierLength;
     unsigned long long _mirroringAxisBias;
     HUColorWheelView *_colorWheelView;
     HUQuickControlMagnifierView *_magnifierView;
@@ -35,7 +37,6 @@
     } _selectedColor;
 }
 
-@property(nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
 @property(nonatomic) CDStruct_d2b197d1 selectedColor; // @synthesize selectedColor=_selectedColor;
 @property(nonatomic) CDStruct_c3b9c2ee selectedColorCoordinate; // @synthesize selectedColorCoordinate=_selectedColorCoordinate;
 @property(nonatomic) double touchDownTimestamp; // @synthesize touchDownTimestamp=_touchDownTimestamp;
@@ -43,12 +44,14 @@
 @property(retain, nonatomic) HUQuickControlMagnifierView *magnifierView; // @synthesize magnifierView=_magnifierView;
 @property(retain, nonatomic) HUColorWheelView *colorWheelView; // @synthesize colorWheelView=_colorWheelView;
 @property(nonatomic) unsigned long long mirroringAxisBias; // @synthesize mirroringAxisBias=_mirroringAxisBias;
+@property(nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
+@property(nonatomic) double magnifierLength; // @synthesize magnifierLength=_magnifierLength;
 @property(nonatomic) unsigned long long colorPickerMode; // @synthesize colorPickerMode=_colorPickerMode;
+@property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(copy, nonatomic) HUQuickControlColorViewProfile *profile; // @synthesize profile=_profile;
 @property(nonatomic) __weak id <HUQuickControlColorPickerViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (void)_configureInitialConstraints;
 - (void)_updateMagnifierTransformForTouchLocation:(struct CGPoint)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_handleGesture:(id)arg1;
@@ -62,6 +65,8 @@
 - (id)_colorWheelSpaceForMode:(unsigned long long)arg1;
 - (void)_setColorPickerMode:(unsigned long long)arg1 notifyDelegate:(_Bool)arg2;
 @property(nonatomic) struct CGPoint magnifierLocation;
+- (void)_updateMagnifierView;
+- (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 @property(nonatomic) double wheelHoleRadius;
 @property(readonly, nonatomic) id <HUColorWheelSpace> colorWheelSpace;
 - (id)initWithProfile:(id)arg1;

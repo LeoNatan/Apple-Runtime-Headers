@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
     id <TabButtonDelegate> _delegate;
     id <TabBarViewItem> _tabBarViewItem;
     NSString *_title;
-    unsigned long long _alignment;
+    long long _alignment;
     NSImage *_image;
     double _buttonWidthForTitleLayout;
     double _mainContentContainerCenterOffset;
@@ -53,7 +53,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
 @property(nonatomic) BOOL canShowCloseButton; // @synthesize canShowCloseButton=_canShowCloseButton;
 @property(copy, nonatomic) NSArray *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
-@property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly) id <TabBarViewItem> tabBarViewItem; // @synthesize tabBarViewItem=_tabBarViewItem;
 @property(nonatomic) __weak id <TabButtonDelegate> delegate; // @synthesize delegate=_delegate;

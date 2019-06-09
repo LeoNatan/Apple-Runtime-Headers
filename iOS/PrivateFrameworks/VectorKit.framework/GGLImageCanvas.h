@@ -22,8 +22,11 @@ __attribute__((visibility("hidden")))
     _Bool _recreateRenderTarget;
     _Bool _allowAlpha;
     id <GGLRenderQueueSource> _renderSource;
+    struct unique_ptr<ggl::IOSurfaceTexture, std::__1::default_delete<ggl::IOSurfaceTexture>> _flippedSurfaceTexture;
+    struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget>> _flippedRenderTarget;
+    struct unique_ptr<(anonymous namespace)::YFlipPass, std::__1::default_delete<(anonymous namespace)::YFlipPass>> _yFlipPass;
     struct RenderTargetFormat _format;
-    shared_ptr_807ec9ac _device;
+    struct shared_ptr<ggl::Device> _device;
     struct Renderer {
         CDUnknownFunctionPointerType *;
         struct Device *;
@@ -32,6 +35,7 @@ __attribute__((visibility("hidden")))
         unsigned long long;
         _Bool;
         float;
+        unsigned long long;
         struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, geo::StdAllocator<std::__1::shared_ptr<ggl::DebugRenderer>, ggl::Allocator>>;
         struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue>>;
         struct shared_ptr<ggl::CommonLibrary>;
@@ -44,6 +48,7 @@ __attribute__((visibility("hidden")))
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _depthStencilBuffer;
     _Bool _useMultisampling;
     struct unique_ptr<ggl::Texture, std::__1::default_delete<ggl::Texture>> _msaaResolveBuffer;
+    unsigned long long _signpostId;
 }
 
 @property(readonly, nonatomic) struct RenderTargetFormat resolvedRenderTargetFormat; // @synthesize resolvedRenderTargetFormat=_resolvedRenderTargetFormat;
@@ -57,17 +62,18 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)didDrawView;
 - (void)willDrawView;
-- (void)renderWithTimestamp:(double)arg1 completion:(function_30b369b8)arg2;
+- (void)renderWithTimestamp:(double)arg1 completion:(function_d3afe2e2)arg2;
 - (_Bool)hasRenderTarget;
 - (void)destroyRenderTarget;
 - (void)createRenderTarget;
 @property(readonly, nonatomic) struct Renderer *renderer;
 @property(readonly, nonatomic) const struct RenderTargetFormat *format;
-- (shared_ptr_fa6aa836)bitmapData:(struct Texture *)arg1;
+- (shared_ptr_fa6aa836)bitmapData;
 @property(readonly, nonatomic) struct Texture2D *imageTexture;
 @property(readonly, nonatomic) _Bool shouldRasterize;
 - (void)dealloc;
-- (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2 useMultisampling:(_Bool)arg3 taskContext:(const shared_ptr_e963992e *)arg4 device:(struct Device *)arg5;
+- (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2 useMultisampling:(_Bool)arg3 taskContext:(const shared_ptr_e963992e *)arg4 device:(struct Device *)arg5 signpostId:(unsigned long long)arg6;
+- (struct RenderTarget *)_internalRenderTarget;
 @property(readonly, nonatomic) struct RenderTarget *finalRenderTarget;
 @property(readonly, nonatomic) struct CGSize sizeInPixels;
 - (struct Texture *)finalSurface;

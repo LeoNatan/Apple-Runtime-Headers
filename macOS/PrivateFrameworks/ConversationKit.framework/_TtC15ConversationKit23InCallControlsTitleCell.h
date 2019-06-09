@@ -6,7 +6,6 @@
 
 #import <AppKit/NSView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit23InCallControlsTitleCell : NSView
 {
     // Error parsing type: , name: summaryLabel

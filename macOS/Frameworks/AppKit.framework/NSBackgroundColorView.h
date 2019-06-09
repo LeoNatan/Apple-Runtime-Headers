@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;
 @property(copy) NSColor *backgroundColor;
+- (BOOL)isFlipped;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

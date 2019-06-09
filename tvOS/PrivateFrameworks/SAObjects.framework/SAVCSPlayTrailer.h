@@ -15,6 +15,7 @@
 + (id)playTrailerWithDictionary:(id)arg1 context:(id)arg2;
 + (id)playTrailer;
 @property(copy, nonatomic) NSString *utsId;
+@property(copy, nonatomic) NSURL *url;
 @property(copy, nonatomic) NSURL *lowresTrailerUri;
 @property(retain, nonatomic) SAUIImageResource *image;
 @property(copy, nonatomic) NSURL *hiresTrailerUri;

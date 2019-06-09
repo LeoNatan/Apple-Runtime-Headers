@@ -36,6 +36,7 @@
 - (BOOL)containsFragments;
 - (BOOL)canContainFragments;
 - (BOOL)isCompatibleWithAirPlayVideo;
+- (BOOL)isCompatibleWithPhotosTranscodingServiceWithOptions:(id)arg1;
 - (BOOL)isComposable;
 - (BOOL)isReadable;
 - (BOOL)isExportable;
@@ -72,6 +73,7 @@
 - (BOOL)providesPreciseDurationAndTiming;
 - (int)naturalTimeScale;
 @property(readonly, nonatomic) struct CGSize naturalSize;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 minimumTimeOffsetFromLive;
 - (id)availableVideoDynamicRanges;
 - (struct CGSize)maximumVideoResolution;
 @property(readonly, nonatomic) struct CGAffineTransform preferredTransform;
@@ -127,6 +129,7 @@
 - (BOOL)_containsAtLeastOnePlayableAudioTrack;
 - (id)_chapterTracks;
 @property(readonly, nonatomic) long long moovAtomSize;
+@property(readonly, nonatomic) NSArray *fragments;
 @property(readonly, retain, nonatomic) id <AVLoggingIdentifier> loggingIdentifier;
 - (int)unusedTrackID;
 @property(readonly, nonatomic) BOOL isProxy;

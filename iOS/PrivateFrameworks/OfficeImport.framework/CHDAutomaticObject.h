@@ -17,9 +17,9 @@ __attribute__((visibility("hidden")))
 + (id)automaticEffects;
 + (id)automaticStroke;
 + (id)automaticFill;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithName:(id)arg1;
 
 @end

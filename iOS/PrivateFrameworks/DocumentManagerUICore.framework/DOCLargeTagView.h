@@ -6,25 +6,24 @@
 
 #import <UIKit/UIView.h>
 
-@class DOCTag, DOCTagIconView, UILabel, UIVisualEffectView;
+@class DOCTag, DOCTagCheckmarkView, DOCTagDotView, UILabel;
 
 @interface DOCLargeTagView : UIView
 {
     DOCTag *_tagValue;
     long long _style;
-    DOCTagIconView *_tagDotView;
+    DOCTagDotView *_tagDotView;
     UILabel *_tagNameLabel;
-    UIVisualEffectView *_tagNameLabelWrapper;
-    DOCTagIconView *_checkmarkView;
+    DOCTagCheckmarkView *_checkmarkView;
 }
 
-@property(readonly, nonatomic) DOCTagIconView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
-@property(readonly, nonatomic) UIVisualEffectView *tagNameLabelWrapper; // @synthesize tagNameLabelWrapper=_tagNameLabelWrapper;
+@property(readonly, nonatomic) DOCTagCheckmarkView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(readonly, nonatomic) UILabel *tagNameLabel; // @synthesize tagNameLabel=_tagNameLabel;
-@property(readonly, nonatomic) DOCTagIconView *tagDotView; // @synthesize tagDotView=_tagDotView;
+@property(readonly, nonatomic) DOCTagDotView *tagDotView; // @synthesize tagDotView=_tagDotView;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(retain, nonatomic) DOCTag *tagValue; // @synthesize tagValue=_tagValue;
 - (void).cxx_destruct;
+- (void)layoutSubviews;
 - (void)updateBorder;
 - (void)updateBackgroundColor;
 - (id)initWithFrame:(struct CGRect)arg1;

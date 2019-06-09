@@ -15,21 +15,41 @@
 {
     _Bool _mustWake;
     _Bool _isDeserialized;
+    unsigned int _qualityOfService;
     NSString *_identifier;
     _CDContextualPredicate *_predicate;
     _CDContextualPredicate *_dismissalPolicy;
     CDUnknownBlockType _callback;
     unsigned long long _deviceSet;
+    unsigned long long _deviceTypes;
+    NSString *_clientIdentifier;
+    NSString *_locationManagerEffectiveBundleID;
+    NSString *_locationManagerEffectiveBundlePath;
+    CDUnknownBlockType _autoDeregistrationCallback;
+    CDUnknownBlockType _informativeCallback;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)localNonWakingRegistrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 clientIdentifier:(id)arg3 callback:(CDUnknownBlockType)arg4;
 + (id)localNonWakingRegistrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 callback:(CDUnknownBlockType)arg3;
++ (id)localWakingRegistrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 clientIdentifier:(id)arg3 callback:(CDUnknownBlockType)arg4;
 + (id)localWakingRegistrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 callback:(CDUnknownBlockType)arg3;
++ (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 deviceTypes:(unsigned long long)arg3 clientIdentifier:(id)arg4 mustWake:(_Bool)arg5 qualityOfService:(unsigned int)arg6 callback:(CDUnknownBlockType)arg7;
++ (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 deviceTypes:(unsigned long long)arg3 clientIdentifier:(id)arg4 mustWake:(_Bool)arg5 callback:(CDUnknownBlockType)arg6;
++ (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 clientIdentifier:(id)arg5 mustWake:(_Bool)arg6 qualityOfService:(unsigned int)arg7 callback:(CDUnknownBlockType)arg8;
++ (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 clientIdentifier:(id)arg5 mustWake:(_Bool)arg6 callback:(CDUnknownBlockType)arg7;
 + (id)registrationWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 mustWake:(_Bool)arg5 callback:(CDUnknownBlockType)arg6;
+@property(copy) CDUnknownBlockType informativeCallback; // @synthesize informativeCallback=_informativeCallback;
+@property(copy) CDUnknownBlockType autoDeregistrationCallback; // @synthesize autoDeregistrationCallback=_autoDeregistrationCallback;
+@property(copy, nonatomic) NSString *locationManagerEffectiveBundlePath; // @synthesize locationManagerEffectiveBundlePath=_locationManagerEffectiveBundlePath;
+@property(copy, nonatomic) NSString *locationManagerEffectiveBundleID; // @synthesize locationManagerEffectiveBundleID=_locationManagerEffectiveBundleID;
 @property(nonatomic) _Bool isDeserialized; // @synthesize isDeserialized=_isDeserialized;
+@property(readonly, nonatomic) unsigned int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) _Bool mustWake; // @synthesize mustWake=_mustWake;
+@property(retain, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
+@property(readonly, nonatomic) unsigned long long deviceTypes; // @synthesize deviceTypes=_deviceTypes;
 @property(nonatomic) unsigned long long deviceSet; // @synthesize deviceSet=_deviceSet;
-@property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
+@property(readonly, copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
 @property(retain, nonatomic) _CDContextualPredicate *dismissalPolicy; // @synthesize dismissalPolicy=_dismissalPolicy;
 @property(retain, nonatomic) _CDContextualPredicate *predicate; // @synthesize predicate=_predicate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -40,7 +60,9 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 mustWake:(_Bool)arg5 callback:(CDUnknownBlockType)arg6;
+- (_Bool)isMultiDeviceRegistration;
+- (id)initWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 deviceTypes:(unsigned long long)arg5 clientIdentifier:(id)arg6 mustWake:(_Bool)arg7 qualityOfService:(unsigned int)arg8 informativeCallback:(CDUnknownBlockType)arg9;
+- (id)initWithIdentifier:(id)arg1 contextualPredicate:(id)arg2 dismissalPolicy:(id)arg3 deviceSet:(unsigned long long)arg4 deviceTypes:(unsigned long long)arg5 clientIdentifier:(id)arg6 mustWake:(_Bool)arg7 callback:(CDUnknownBlockType)arg8;
 - (id)init;
 
 @end

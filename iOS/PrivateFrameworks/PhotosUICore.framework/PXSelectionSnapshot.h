@@ -12,17 +12,27 @@
 {
     PXSectionedDataSource *_dataSource;
     PXIndexPathSet *_selectedIndexPaths;
+    struct PXSimpleIndexPath _cursorIndexPath;
 }
 
+@property(readonly, nonatomic) struct PXSimpleIndexPath cursorIndexPath; // @synthesize cursorIndexPath=_cursorIndexPath;
 @property(readonly, nonatomic) PXIndexPathSet *selectedIndexPaths; // @synthesize selectedIndexPaths=_selectedIndexPaths;
 @property(readonly, nonatomic) PXSectionedDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)description;
+- (id)fetchSelectedObjects;
+- (struct PXSimpleIndexPath)indexPathOfObjectPassingTest:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) struct PXSimpleIndexPath lastSelectedIndexPath;
+@property(readonly, nonatomic) struct PXSimpleIndexPath firstSelectedIndexPath;
 - (_Bool)areAllItemsSelected;
 - (_Bool)isAnyItemSelected;
+- (_Bool)isAnySectionSelected;
 - (_Bool)isIndexPathSelected:(struct PXSimpleIndexPath)arg1;
 - (id)init;
+- (id)initWithDataSource:(id)arg1 selectedIndexPath:(struct PXSimpleIndexPath)arg2;
 - (id)initWithDataSource:(id)arg1 selectedIndexPaths:(id)arg2;
+- (id)initWithDataSource:(id)arg1 selectedIndexPaths:(id)arg2 cursorIndexPath:(struct PXSimpleIndexPath)arg3;
+- (_Bool)areAllUnsavedAssetsSelectedWithImportStatusManager:(id)arg1;
 
 @end
 

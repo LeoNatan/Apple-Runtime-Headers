@@ -30,11 +30,15 @@
         unsigned int isClone:1;
     } _layoutFlags;
     long long _zIndex;
+    unsigned long long _maskedCorners;
+    struct UIEdgeInsets _defaultLayoutMargins;
 }
 
 + (id)layoutAttributesForDecorationViewOfKind:(id)arg1 withIndexPath:(id)arg2;
 + (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 withIndexPath:(id)arg2;
 + (id)layoutAttributesForCellWithIndexPath:(id)arg1;
+@property(nonatomic, getter=_defaultLayoutMargins, setter=_setDefaultLayoutMargins:) struct UIEdgeInsets defaultLayoutMargins; // @synthesize defaultLayoutMargins=_defaultLayoutMargins;
+@property(nonatomic, getter=_maskedCorners, setter=_setMaskedCorners:) unsigned long long maskedCorners; // @synthesize maskedCorners=_maskedCorners;
 @property(retain, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(nonatomic) long long zIndex; // @synthesize zIndex=_zIndex;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;

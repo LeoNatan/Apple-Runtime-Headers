@@ -37,13 +37,13 @@
 - (_Bool)shouldContinueAfterError:(id)arg1 fromTask:(id)arg2;
 - (_Bool)shouldProcessScope:(id)arg1 inTransaction:(id)arg2;
 - (id)enumerateScopesForTaskInTransaction:(id)arg1;
-- (id)newScopedTaskWithScope:(id)arg1 transportScope:(id)arg2 clientCacheIdentifier:(id)arg3;
+- (id)newScopedTaskWithScope:(id)arg1 session:(id)arg2 transportScope:(id)arg3 clientCacheIdentifier:(id)arg4;
 - (_Bool)shouldStartTaskInTransaction:(id)arg1;
 - (void)dispatchAsyncWithCurrentSubtask:(CDUnknownBlockType)arg1;
 - (id)_currentScope;
 - (void)_setCurrentTask:(id)arg1;
 - (id)_currentTask;
-- (id)initWithEngineLibrary:(id)arg1;
+- (id)initWithEngineLibrary:(id)arg1 session:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

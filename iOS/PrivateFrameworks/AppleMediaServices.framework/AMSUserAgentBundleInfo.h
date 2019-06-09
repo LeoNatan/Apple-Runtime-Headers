@@ -6,29 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface AMSUserAgentBundleInfo : NSObject
 {
-    NSString *_identifier;
     NSString *_clientName;
     NSString *_clientVersion;
-    NSDictionary *_infoPlist;
 }
 
-+ (id)_infoWithIdentifier:(id)arg1 clientName:(id)arg2 clientVersion:(id)arg3;
-+ (id)_infoWithIdentifier:(id)arg1 clientName:(id)arg2;
-+ (id)infoForIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *infoPlist; // @synthesize infoPlist=_infoPlist;
-@property(readonly, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
-@property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
++ (id)_clientVersionFromProcessInfo:(id)arg1 clientName:(id)arg2;
++ (id)_clientNameFromProcessInfo:(id)arg1;
++ (id)_infoForProcess:(id)arg1 identifier:(id)arg2 clientName:(id)arg3 clientVersion:(id)arg4;
++ (id)_infoForProcess:(id)arg1 identifier:(id)arg2 clientName:(id)arg3;
++ (id)_infoWithClient:(long long)arg1 processInfo:(id)arg2;
++ (id)mediaTypeForProcessInfo:(id)arg1;
++ (id)bundleInfoForProcessInfo:(id)arg1;
++ (id)currentBundleInfo;
++ (id)accountMediaTypeInfoForProcessInfo:(id)arg1;
+@property(retain, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
+@property(retain, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 - (void).cxx_destruct;
-- (id)_clientVersionFromIdentifier:(id)arg1 clientName:(id)arg2 infoPlist:(id)arg3 preferredVersion:(id)arg4;
-- (id)_clientNameFromIdentifier:(id)arg1 infoPlist:(id)arg2 preferredClientName:(id)arg3;
-- (id)_infoPlistFromIdentifier:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 preferredClientName:(id)arg2 preferredClientVersion:(id)arg3;
 
 @end
 

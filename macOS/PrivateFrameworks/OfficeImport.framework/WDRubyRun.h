@@ -8,6 +8,7 @@
 
 @class WDRubyProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDRubyRun : WDCharacterRun
 {
     WDCharacterRun *mPhoneticRun;

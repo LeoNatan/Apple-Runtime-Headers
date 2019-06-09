@@ -4,25 +4,38 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIButton.h>
+#import <UIKit/UIView.h>
 
-@class UIColor;
+@class UIButton, UIVisualEffectView;
 
-@interface CKEntryViewButton : UIButton
+@interface CKEntryViewButton : UIView
 {
-    UIColor *_ckTintColor;
+    BOOL _ckTintColor;
+    _Bool _wantsVibrancy;
+    UIButton *_button;
     long long _entryViewButtonType;
+    UIVisualEffectView *_vibrancyView;
 }
 
++ (id)overlayImageForImageNamed:(id)arg1 tintColor:(BOOL)arg2;
++ (id)entryViewButtonImageWithName:(id)arg1 tintColor:(BOOL)arg2 shouldSuppressHairline:(_Bool)arg3;
++ (id)entryViewButtonImageForType:(long long)arg1 color:(BOOL)arg2;
 + (id)entryViewButtonImageForType:(long long)arg1;
 + (void)prewarmEntryViewButtons;
 + (id)imageNameForEntryViewButtonType:(long long)arg1;
 + (id)entryViewButtonOfType:(long long)arg1;
+@property(retain, nonatomic) UIVisualEffectView *vibrancyView; // @synthesize vibrancyView=_vibrancyView;
 @property(nonatomic) long long entryViewButtonType; // @synthesize entryViewButtonType=_entryViewButtonType;
-@property(retain, nonatomic) UIColor *ckTintColor; // @synthesize ckTintColor=_ckTintColor;
+@property(nonatomic) _Bool wantsVibrancy; // @synthesize wantsVibrancy=_wantsVibrancy;
+@property(nonatomic) BOOL ckTintColor; // @synthesize ckTintColor=_ckTintColor;
+@property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
-- (void)setTintedImageForButtonType:(long long)arg1 tintColor:(id)arg2;
+- (void)setTintedImageForButtonType:(long long)arg1 tintColor:(BOOL)arg2;
 - (void)setDefaultImage;
+- (_Bool)isEnabled;
+- (void)setEnabled:(_Bool)arg1;
+- (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

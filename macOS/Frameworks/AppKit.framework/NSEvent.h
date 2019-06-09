@@ -13,8 +13,8 @@
 
 @interface NSEvent : NSObject <NSCopying, NSCoding>
 {
-    unsigned long long _type;
     struct CGPoint _location;
+    unsigned long long _type;
     unsigned int _modifierFlags;
     id _WSTimestamp;
     double _timestamp;
@@ -92,6 +92,7 @@
 + (id)_delayedEventMatchingMask:(unsigned long long)arg1 pull:(BOOL)arg2;
 + (void)_discardCursorEventsForWindowNumber:(long long)arg1 criteria:(long long)arg2;
 + (void)_discardEventsForTrackingArea:(id)arg1 window:(id)arg2;
++ (void)_discardTrackingAndCursorEventsIfNeeded;
 + (void)_discardEventsForTrackingArea:(id)arg1;
 + (void)_discardEventsWithMask:(unsigned long long)arg1 eventTime:(unsigned long long)arg2;
 + (void)_discardEventsFromSubthread:(id)arg1;
@@ -219,6 +220,10 @@
 - (void)_setEventRef:(void *)arg1;
 - (BOOL)_isDeadkey;
 @property(readonly, copy) NSString *charactersIgnoringModifiers;
+- (id)_commandModifiedCharacters;
+- (id)_unmodifiedCharacters;
+- (id)_charactersApplyingModifiers:(unsigned long long)arg1 carbonModifiers:(unsigned int)arg2;
+- (id)charactersByApplyingModifiers:(unsigned long long)arg1;
 - (BOOL)_matchesKeyEquivalent:(id)arg1 modifierMask:(unsigned long long)arg2;
 @property(readonly, copy) NSString *characters;
 @property(readonly) double magnification;

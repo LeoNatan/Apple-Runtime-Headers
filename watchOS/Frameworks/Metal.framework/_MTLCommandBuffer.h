@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Metal/_MTLObjectWithLabel.h>
 
 @class NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, _MTLCommandQueue;
 @protocol MTLCommandEncoder, MTLCommandQueue;
 
-@interface _MTLCommandBuffer : NSObject
+@interface _MTLCommandBuffer : _MTLObjectWithLabel
 {
     id <MTLCommandEncoder> _currentCommandEncoder;
     _MTLCommandQueue<MTLCommandQueue> *_queue;
@@ -34,7 +34,6 @@
     unsigned long long _completionHandlerExecutionTime;
     unsigned int _status;
     NSError *_error;
-    NSString *_label;
     _Bool _skipRender;
     _Bool _profilingEnabled;
     _Bool _scheduledCallbacksDone;
@@ -72,7 +71,7 @@
 @property(readonly) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_queue;
 @property(readonly) _Bool synchronousDebugMode; // @synthesize synchronousDebugMode=_synchronousDebugMode;
 @property(readonly) _Bool retainedReferences; // @synthesize retainedReferences=_retainedReferences;
-@property(copy) NSString *label; // @synthesize label=_label;
+- (void *)debugBufferContentsWithLength:(unsigned long long *)arg1;
 - (id)computeCommandEncoderWithDispatchType:(unsigned int)arg1;
 - (void)executeSynchronizationNotifications:(int)arg1 scope:(unsigned int)arg2 resources:(const id *)arg3 count:(unsigned int)arg4;
 - (void)executeSynchronizationNotifications:(int)arg1;
@@ -115,6 +114,9 @@
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1 retainedReferences:(_Bool)arg2;
 - (id)initWithQueue:(id)arg1 retainedReferences:(_Bool)arg2 synchronousDebugMode:(_Bool)arg3;
+
+// Remaining properties
+@property(copy) NSString *label; // @dynamic label;
 
 @end
 

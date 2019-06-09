@@ -21,6 +21,8 @@
 @property(nonatomic) _Bool shouldShuffle;
 @property(nonatomic) _Bool shouldReloadQueue;
 @property(nonatomic) _Bool shouldOverrideManuallyCuratedUpNext;
+@property(copy, nonatomic) NSString *sharedUserIdFromPlayableMusicAccount;
+@property(copy, nonatomic) NSString *requesterSharedUserId;
 @property(copy, nonatomic) NSString *recommendationId;
 @property(retain, nonatomic) SAMPCollection *mediaItems;
 @property(copy, nonatomic) NSArray *hashedRouteUIDs;

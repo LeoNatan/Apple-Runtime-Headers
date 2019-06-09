@@ -12,27 +12,25 @@
 
 @interface GEOLogMsgEventLogFramework : PBCodable <NSCopying>
 {
-    unsigned long long _messageSize;
     NSMutableArray *_logFrameworkItems;
+    unsigned long long _messageSize;
     unsigned int _messageCount;
     int _messageType;
     int _metricState;
     int _metricType;
     int _purgeReason;
     struct {
-        unsigned int messageSize:1;
-        unsigned int messageCount:1;
-        unsigned int messageType:1;
-        unsigned int metricState:1;
-        unsigned int metricType:1;
-        unsigned int purgeReason:1;
-    } _has;
+        unsigned int has_messageSize:1;
+        unsigned int has_messageCount:1;
+        unsigned int has_messageType:1;
+        unsigned int has_metricState:1;
+        unsigned int has_metricType:1;
+        unsigned int has_purgeReason:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)logFrameworkItemType;
-@property(retain, nonatomic) NSMutableArray *logFrameworkItems; // @synthesize logFrameworkItems=_logFrameworkItems;
-@property(nonatomic) unsigned long long messageSize; // @synthesize messageSize=_messageSize;
-@property(nonatomic) unsigned int messageCount; // @synthesize messageCount=_messageCount;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -41,30 +39,34 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsPurgeReason:(id)arg1;
 - (id)purgeReasonAsString:(int)arg1;
 @property(nonatomic) _Bool hasPurgeReason;
-@property(nonatomic) int purgeReason; // @synthesize purgeReason=_purgeReason;
+@property(nonatomic) int purgeReason;
 - (id)logFrameworkItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)logFrameworkItemsCount;
 - (void)addLogFrameworkItem:(id)arg1;
 - (void)clearLogFrameworkItems;
+@property(retain, nonatomic) NSMutableArray *logFrameworkItems;
 - (int)StringAsMessageType:(id)arg1;
 - (id)messageTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasMessageType;
-@property(nonatomic) int messageType; // @synthesize messageType=_messageType;
+@property(nonatomic) int messageType;
 @property(nonatomic) _Bool hasMessageSize;
+@property(nonatomic) unsigned long long messageSize;
 @property(nonatomic) _Bool hasMessageCount;
+@property(nonatomic) unsigned int messageCount;
 - (int)StringAsMetricState:(id)arg1;
 - (id)metricStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasMetricState;
-@property(nonatomic) int metricState; // @synthesize metricState=_metricState;
+@property(nonatomic) int metricState;
 - (int)StringAsMetricType:(id)arg1;
 - (id)metricTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasMetricType;
-@property(nonatomic) int metricType; // @synthesize metricType=_metricType;
+@property(nonatomic) int metricType;
 
 @end
 

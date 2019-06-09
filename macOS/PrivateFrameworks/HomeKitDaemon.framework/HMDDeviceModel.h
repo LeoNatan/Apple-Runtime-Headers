@@ -17,12 +17,12 @@
 @property(readonly, nonatomic) NSArray *deviceHandles;
 
 // Remaining properties
-@property(retain, nonatomic) NSArray *handles; // @dynamic handles;
-@property(retain, nonatomic) NSUUID *identifier; // @dynamic identifier;
-@property(retain, nonatomic) NSString *name; // @dynamic name;
-@property(retain, nonatomic) HMFProductInfo *productInfo; // @dynamic productInfo;
-@property(retain, nonatomic) HMDRPIdentity *rpIdentity; // @dynamic rpIdentity;
-@property(retain, nonatomic) HMDHomeKitVersion *version; // @dynamic version;
+@property(copy, nonatomic) NSArray *handles; // @dynamic handles;
+@property(copy, nonatomic) NSUUID *identifier; // @dynamic identifier;
+@property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) HMFProductInfo *productInfo; // @dynamic productInfo;
+@property(copy, nonatomic) HMDRPIdentity *rpIdentity; // @dynamic rpIdentity;
+@property(copy, nonatomic) HMDHomeKitVersion *version; // @dynamic version;
 
 @end
 

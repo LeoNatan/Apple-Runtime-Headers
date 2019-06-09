@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSSavePanel *_panel;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isPartialStringValid:(id *)arg1 proposedSelectedRange:(struct _NSRange *)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange)arg4 errorDescription:(id *)arg5;
 - (BOOL)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
 - (id)stringForObjectValue:(id)arg1;

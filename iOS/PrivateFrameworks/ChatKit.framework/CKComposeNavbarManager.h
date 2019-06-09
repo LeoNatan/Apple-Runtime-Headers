@@ -8,6 +8,7 @@
 
 @class CKComposeNavbarCanvasViewController, CKComposeNavbarManagerContentView, CKNavbarCanvasViewController, UIButton, UIView;
 
+__attribute__((visibility("hidden")))
 @interface CKComposeNavbarManager : NSObject
 {
     CKComposeNavbarManagerContentView *_contentView;
@@ -24,6 +25,7 @@
 - (void)commitTransitionAnimationWithConversation:(id)arg1 shouldShowBackButtonView:(_Bool)arg2;
 - (void)_setupAvatarNavBarViewControllerWithConversation:(id)arg1 shouldShowBackButtonView:(_Bool)arg2;
 - (void)_setupDefaultNavbarCanvasViewController;
+- (void)setCanvasViewControllerDelegate:(id)arg1;
 @property(readonly, nonatomic) UIButton *cancelButton;
 - (void)updateTitle:(id)arg1 animated:(_Bool)arg2;
 - (void)dealloc;

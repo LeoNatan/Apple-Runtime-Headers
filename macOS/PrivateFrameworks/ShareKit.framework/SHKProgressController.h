@@ -8,6 +8,7 @@
 
 @class NSMutableArray, SHKProgressWindowController;
 
+__attribute__((visibility("hidden")))
 @interface SHKProgressController : NSObject
 {
     NSMutableArray *_currentProgressItems;

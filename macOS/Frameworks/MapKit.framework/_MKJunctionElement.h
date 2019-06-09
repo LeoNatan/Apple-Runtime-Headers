@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface _MKJunctionElement : NSObject
 {
     struct CGPoint _leftBasePoint;
@@ -13,9 +14,9 @@
     double _angle;
 }
 
-@property double angle; // @synthesize angle=_angle;
-@property struct CGPoint rightBasePoint; // @synthesize rightBasePoint=_rightBasePoint;
-@property struct CGPoint leftBasePoint; // @synthesize leftBasePoint=_leftBasePoint;
+@property(nonatomic) double angle; // @synthesize angle=_angle;
+@property(nonatomic) struct CGPoint rightBasePoint; // @synthesize rightBasePoint=_rightBasePoint;
+@property(nonatomic) struct CGPoint leftBasePoint; // @synthesize leftBasePoint=_leftBasePoint;
 - (struct CGPoint)rightEdgePointAtDistanceFromBase:(double)arg1;
 - (struct CGPoint)leftEdgePointAtDistanceFromBase:(double)arg1;
 

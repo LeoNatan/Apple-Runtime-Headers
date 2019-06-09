@@ -8,5 +8,7 @@
 
 @interface NSValue (IMSharedUICompatibility)
 + (id)valueWithCGPoint:(struct CGPoint)arg1;
++ (id)valueWithBalloonDescriptor:(struct IMBalloonDescriptor_t)arg1;
+@property(readonly) struct IMBalloonDescriptor_t balloonDescriptor;
 @end
 

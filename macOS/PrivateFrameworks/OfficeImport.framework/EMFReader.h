@@ -10,6 +10,7 @@
 
 @class EMFPlayer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EMFReader : NSObject <MFReader>
 {
     EMFPlayer *m_player;

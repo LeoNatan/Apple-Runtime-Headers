@@ -6,6 +6,7 @@
 
 #import <MapKit/_MKConditionalPanGestureRecognizer.h>
 
+__attribute__((visibility("hidden")))
 @interface _MKDirectionalPanGestureRecognizer : _MKConditionalPanGestureRecognizer
 {
     long long _direction;

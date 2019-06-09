@@ -6,7 +6,7 @@
 
 #import <HealthUI/HKScalarGraphViewController.h>
 
-@class HKAxis, HKUIInteractiveChartDateLabelSlider, NSDate, NSMutableArray;
+@class HKAxis, NSDate, NSMutableArray;
 
 @interface HKHeartbeatSequenceChartViewController : HKScalarGraphViewController
 {
@@ -15,24 +15,19 @@
     NSMutableArray *_graphSeries;
     HKAxis *_commonVerticalAxis;
     float _initialXAxisOffset;
-    HKUIInteractiveChartDateLabelSlider *_dateLabelSlider;
 }
 
-@property(retain, nonatomic) HKUIInteractiveChartDateLabelSlider *dateLabelSlider; // @synthesize dateLabelSlider=_dateLabelSlider;
 @property(nonatomic) float initialXAxisOffset; // @synthesize initialXAxisOffset=_initialXAxisOffset;
 @property(retain, nonatomic) HKAxis *commonVerticalAxis; // @synthesize commonVerticalAxis=_commonVerticalAxis;
 @property(retain, nonatomic) NSMutableArray *graphSeries; // @synthesize graphSeries=_graphSeries;
 @property(retain, nonatomic) NSMutableArray *sequenceDataSources; // @synthesize sequenceDataSources=_sequenceDataSources;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
-- (void)graphView:(id)arg1 didUpdateVisibleValueRange:(id)arg2 changeContext:(int)arg3;
 - (void)graphViewSizeChanged:(id)arg1;
 - (id)graphView:(id)arg1 graphSeriesForZoom:(int)arg2 stackOffset:(int)arg3;
 - (int)stackCountForGraphView:(id)arg1;
-- (void)_createDateLabelSlider;
 - (id)_verticalNumericalAxis;
 - (id)_heartbeatSequenceSeriesForSource:(id)arg1 axis:(id)arg2 color:(id)arg3 lineWidth:(float)arg4 markerRadius:(float)arg5 dashStyle:(int)arg6 annotate:(_Bool)arg7;
-- (void)_resizeDateLabelSlider:(struct CGSize)arg1;
 - (void)_recomputeAxisRanges;
 - (void)_synchronizeVerticalAxes;
 - (void)_adjustGraphViewOptions;

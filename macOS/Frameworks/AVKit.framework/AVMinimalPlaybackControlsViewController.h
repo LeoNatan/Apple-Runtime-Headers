@@ -8,6 +8,7 @@
 
 @class NSView;
 
+__attribute__((visibility("hidden")))
 @interface AVMinimalPlaybackControlsViewController : AVPlayerControlsViewController
 {
     NSView *_initialFirstResponder;

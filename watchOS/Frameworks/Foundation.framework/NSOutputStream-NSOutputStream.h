@@ -13,10 +13,12 @@
 + (id)outputStreamToMemory;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (unsigned long)_cfTypeID;
+- (void)dealloc;
 - (id)initWithURL:(id)arg1 append:(_Bool)arg2;
 - (id)initToBuffer:(char *)arg1 capacity:(unsigned int)arg2;
 - (id)initToMemory;
 - (_Bool)hasSpaceAvailable;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
+- (CDStruct_1ef3fb1f)_cfStreamError;
 @end
 

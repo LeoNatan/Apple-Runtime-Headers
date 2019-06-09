@@ -6,6 +6,7 @@
 
 #import <Shortcut/SCTGRL.h>
 
+__attribute__((visibility("hidden")))
 @interface SCTGUIStateGRL : SCTGRL
 {
     id mState;

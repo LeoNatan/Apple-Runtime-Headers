@@ -18,6 +18,7 @@
 
 @property(nonatomic) BOOL shouldEnable; // @synthesize shouldEnable=_shouldEnable;
 @property(retain, nonatomic) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
+- (void).cxx_destruct;
 - (void)_closeModalWindow;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;
@@ -33,7 +34,6 @@
 - (BOOL)shouldEnableOnLogin;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (id)icon;
-- (void)dealloc;
 - (id)initWithServiceID:(id)arg1 forAccount:(id)arg2;
 
 // Remaining properties

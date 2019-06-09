@@ -7,6 +7,11 @@
 #import <AppKit/NSColor.h>
 
 @interface NSColor (IKAdditions)
++ (id)colorWithHexColorString:(id)arg1;
++ (id)IKIPMenuWindowBackgroundColor;
++ (id)colorWithIntegerDeviceRed:(long long)arg1 green:(long long)arg2 blue:(long long)arg3 alpha:(long long)arg4;
++ (id)disabledTextColor;
++ (id)enabledTextColor;
 - (BOOL)IKGetComponentsRed:(double *)arg1 green:(double *)arg2 blue:(double *)arg3 alpha:(double *)arg4;
 @end
 

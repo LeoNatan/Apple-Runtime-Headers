@@ -20,11 +20,13 @@
     BOOL _disabled;
     BOOL _systemMode;
     BOOL _hiddenNetwork;
-    NSDate *_lastConnected;
+    NSDate *_lastAutoJoinAt;
+    NSDate *_lastManualJoinAt;
     long long _captiveNetworkStatus;
     BOOL _wasCaptiveNetwork;
     BOOL _temporarilyDisabled;
     BOOL _captiveBypass;
+    NSDate *_captiveSheetTimestamp;
     BOOL _isPasspoint;
     NSString *_domainName;
     NSString *_displayName;
@@ -41,12 +43,17 @@
     long long _userRole;
     NSString *_payloadUUID;
     unsigned long long _addedBy;
+    NSDate *_addedAt;
+    NSDate *_wasHiddenBefore;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)networkProfileWithNetworkProfile:(id)arg1;
 + (id)networkProfile;
 + (id)allNetworkProfiles;
+@property(copy) NSDate *captiveSheetTimestamp; // @synthesize captiveSheetTimestamp=_captiveSheetTimestamp;
+@property(copy) NSDate *wasHiddenBefore; // @synthesize wasHiddenBefore=_wasHiddenBefore;
+@property(copy) NSDate *addedAt; // @synthesize addedAt=_addedAt;
 @property unsigned long long addedBy; // @synthesize addedBy=_addedBy;
 @property(copy) NSString *payloadUUID; // @synthesize payloadUUID=_payloadUUID;
 @property long long userRole; // @synthesize userRole=_userRole;
@@ -63,13 +70,13 @@
 @property(copy) NSString *domainName; // @synthesize domainName=_domainName;
 @property BOOL isPasspoint; // @synthesize isPasspoint=_isPasspoint;
 @property BOOL disabled; // @synthesize disabled=_disabled;
-@property unsigned long long securityType; // @synthesize securityType=_securityType;
 @property BOOL hiddenNetwork; // @synthesize hiddenNetwork=_hiddenNetwork;
 @property BOOL captiveBypass; // @synthesize captiveBypass=_captiveBypass;
 @property BOOL systemMode; // @synthesize systemMode=_systemMode;
 @property BOOL temporarilyDisabled; // @synthesize temporarilyDisabled=_temporarilyDisabled;
 @property long long captiveNetworkStatus; // @synthesize captiveNetworkStatus=_captiveNetworkStatus;
-@property(copy) NSDate *lastConnected; // @synthesize lastConnected=_lastConnected;
+@property(copy) NSDate *lastManualJoinAt; // @synthesize lastManualJoinAt=_lastManualJoinAt;
+@property(copy) NSDate *lastAutoJoinAt; // @synthesize lastAutoJoinAt=_lastAutoJoinAt;
 @property(readonly, copy) NSString *ssid; // @synthesize ssid=_ssid;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -86,10 +93,13 @@
 - (id)init;
 - (id)externalForm;
 - (void)dealloc;
+@property(readonly, copy) NSDate *lastConnected; // @dynamic lastConnected;
 @property BOOL wasCaptiveNetwork; // @synthesize wasCaptiveNetwork=_wasCaptiveNetwork;
 @property BOOL captiveNetwork; // @dynamic captiveNetwork;
 @property(copy) NSData *ssidData; // @dynamic ssidData;
 @property long long security; // @dynamic security;
+@property unsigned long long securityType; // @dynamic securityType;
+- (unsigned long long)__supportedSecurityType:(unsigned long long)arg1;
 @property long long shareMode; // @dynamic shareMode;
 @property BOOL autoLogin; // @dynamic autoLogin;
 

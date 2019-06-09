@@ -14,19 +14,20 @@
 __attribute__((visibility("hidden")))
 @interface FI_TViewAnimationHelper : NSObject <CAAnimationDelegate>
 {
-    NSView *_view;
-    NSObject<CAAnimationDelegate> *_delegate;
+    struct TNSRef<NSView, void> _view;
+    struct TNSWeakPtr<NSObject<CAAnimationDelegate>, void> _weakDelegate;
     _Bool _origWantsLayers;
 }
 
 + (id)animationHelperWithView:(id)arg1;
-@property id <CAAnimationDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, retain) NSView *view; // @synthesize view=_view;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)animationDidStart:(id)arg1;
 - (void)setView:(id)arg1;
+@property(readonly, retain) NSView *view; // @dynamic view;
 - (void)configureAnimations:(_Bool)arg1;
-- (void)dealloc;
+@property __weak NSObject<CAAnimationDelegate> *delegate; // @dynamic delegate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

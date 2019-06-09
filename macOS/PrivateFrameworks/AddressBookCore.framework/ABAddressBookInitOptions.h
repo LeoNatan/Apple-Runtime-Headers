@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ABPersistentStoreCoordinatorCache;
+@class ABPersistentStoreCoordinatorCache, NSArray, NSString;
 
 @interface ABAddressBookInitOptions : NSObject
 {
@@ -17,19 +17,24 @@
     BOOL _directoryResults;
     BOOL _overridesReadOnly;
     BOOL _hasUnfilteredAccess;
+    NSString *_databaseDirectory;
     ABPersistentStoreCoordinatorCache *_persistentStoreCoordinatorCache;
+    NSArray *_delegateInfos;
 }
 
 + (id)defaultOptions;
-@property(retain) ABPersistentStoreCoordinatorCache *persistentStoreCoordinatorCache; // @synthesize persistentStoreCoordinatorCache=_persistentStoreCoordinatorCache;
-@property BOOL hasUnfilteredAccess; // @synthesize hasUnfilteredAccess=_hasUnfilteredAccess;
-@property BOOL overridesReadOnly; // @synthesize overridesReadOnly=_overridesReadOnly;
-@property BOOL directoryResults; // @synthesize directoryResults=_directoryResults;
-@property BOOL provisional; // @synthesize provisional=_provisional;
-@property BOOL tracksAllSources; // @synthesize tracksAllSources=_tracksAllSources;
-@property BOOL registerForChangeNotifications; // @synthesize registerForChangeNotifications=_registerForChangeNotifications;
-@property BOOL doInitialImports; // @synthesize doInitialImports=_doInitialImports;
-- (void)dealloc;
+@property(copy, nonatomic) NSArray *delegateInfos; // @synthesize delegateInfos=_delegateInfos;
+@property(retain, nonatomic) ABPersistentStoreCoordinatorCache *persistentStoreCoordinatorCache; // @synthesize persistentStoreCoordinatorCache=_persistentStoreCoordinatorCache;
+@property(copy, nonatomic) NSString *databaseDirectory; // @synthesize databaseDirectory=_databaseDirectory;
+@property(nonatomic) BOOL hasUnfilteredAccess; // @synthesize hasUnfilteredAccess=_hasUnfilteredAccess;
+@property(nonatomic) BOOL overridesReadOnly; // @synthesize overridesReadOnly=_overridesReadOnly;
+@property(nonatomic) BOOL directoryResults; // @synthesize directoryResults=_directoryResults;
+@property(nonatomic) BOOL provisional; // @synthesize provisional=_provisional;
+@property(nonatomic) BOOL tracksAllSources; // @synthesize tracksAllSources=_tracksAllSources;
+@property(nonatomic) BOOL registerForChangeNotifications; // @synthesize registerForChangeNotifications=_registerForChangeNotifications;
+@property(nonatomic) BOOL doInitialImports; // @synthesize doInitialImports=_doInitialImports;
+- (void).cxx_destruct;
+- (id)description;
 
 @end
 

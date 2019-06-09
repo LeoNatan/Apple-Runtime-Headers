@@ -8,6 +8,7 @@
 
 @class UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPagePlaceholderScrollView : UIScrollView
 {
     UIView *_placeholderView;

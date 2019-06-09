@@ -16,9 +16,11 @@
 @property(readonly, nonatomic) float EUVolumeLimit;
 @property(readonly, nonatomic) float volumeValue;
 @property(readonly, nonatomic, getter=isMuted) _Bool muted;
+@property(readonly, nonatomic) int volumeWarningState;
 @property(readonly, nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable;
 @property(nonatomic) __weak id <NACVolumeControllerDelegate> delegate;
+- (void)allowUserToExceedEUVolumeLimit;
 - (void)setMuted:(_Bool)arg1;
 - (void)setVolumeValue:(float)arg1;
 - (void)endObservingHaptics;

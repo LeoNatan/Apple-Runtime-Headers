@@ -39,7 +39,6 @@
     long long _mode;
 }
 
-+ (long long)indexClosestToIndex:(unsigned long long)arg1 withinSet:(id)arg2;
 + (void)setupAVTView:(id)arg1;
 + (id)recordingCarouselForRecordDataSource:(id)arg1;
 + (id)displayingCarouselForRecordDataSource:(id)arg1;
@@ -67,7 +66,6 @@
 - (void)avatarEditorViewControllerDidCancel:(id)arg1;
 - (void)avatarEditorViewController:(id)arg1 didFinishWithAvatarRecord:(id)arg2;
 - (void)avatarActionsViewControllerDidFinish:(id)arg1;
-- (id)indexSetForEditableRecords;
 - (id)avatarActionsViewController:(id)arg1 recordUpdateForDeletingRecord:(id)arg2;
 - (void)significantRecordChangeInDataSource:(id)arg1;
 - (void)dataSource:(id)arg1 didRemoveRecord:(id)arg2 atIndex:(unsigned long long)arg3;
@@ -94,7 +92,6 @@
 - (void)showMultiAvatarControllerAnimated:(_Bool)arg1;
 - (void)setAllowsCreate:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic) _Bool allowsCreate;
-- (void)renderForARFrame:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)displayAvatarRecord:(id)arg1 animated:(_Bool)arg2;
 - (void)displayAvatarRecordWithIdentifier:(id)arg1 animated:(_Bool)arg2;
 - (void)setSingleAvatarMode:(_Bool)arg1 animated:(_Bool)arg2;

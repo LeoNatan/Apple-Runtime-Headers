@@ -21,7 +21,6 @@
 - (id)dataType;
 - (id)value;
 @property(readonly) __weak AVMetadataItem *metadataItem;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithMetadataItem:(id)arg1;
 

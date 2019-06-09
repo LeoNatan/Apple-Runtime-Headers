@@ -20,14 +20,14 @@
 }
 
 + (id)_deriveOutgoingMessageContentFromLibraryMessageContent:(id)arg1;
-@property(nonatomic) id <MFMessageRewriterPlaceholderResolver> placeholderResolver; // @synthesize placeholderResolver=_placeholderResolver;
+@property(nonatomic) __weak id <MFMessageRewriterPlaceholderResolver> placeholderResolver; // @synthesize placeholderResolver=_placeholderResolver;
 @property(readonly, nonatomic) MFOutgoingMessageContent *originalMessageContent; // @synthesize originalMessageContent=_originalMessageContent;
+- (void).cxx_destruct;
 - (id)shouldCreateRichTextRepresentation;
 - (id)attachments;
-- (_Bool)hasAnyHiddenTrailingEmptyQuote;
 - (id)sendingAccountProxy;
 - (id)sendingEmailAddress;
-- (void)setSendingEmailAddress:(id)arg1 addIfNotPresent:(_Bool)arg2;
+- (void)setSendingEmailAddress:(id)arg1;
 - (id)savedHeaders;
 - (void)setSavedHeaders:(id)arg1;
 - (id)subject;
@@ -43,7 +43,6 @@
 - (id)rewrittenMessageContent;
 - (id)initWithOriginalMessageContent:(id)arg1 resolver:(id)arg2;
 - (id)init;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

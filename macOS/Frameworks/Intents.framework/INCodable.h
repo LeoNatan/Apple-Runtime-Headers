@@ -39,9 +39,11 @@
 - (void)_setValue:(void *)arg1 forAttribute:(id)arg2;
 - (void)_setObject:(id)arg1 forAttribute:(id)arg2;
 - (id)_copyWithZone:(struct _NSZone *)arg1 error:(id *)arg2;
+- (void)_setEmptyArrayForNonNilRepeatedAttributes:(id)arg1;
 - (id)_dataWithError:(id *)arg1;
-- (void)_writeTo:(id)arg1 error:(id *)arg2;
+- (BOOL)_writeTo:(id)arg1 error:(id *)arg2;
 - (BOOL)_readFrom:(id)arg1 error:(id *)arg2;
+- (id)_nonNilRepeatedAttributes;
 - (id)_nonNilAttributes;
 - (BOOL)_isStringAttribute:(id)arg1 equalTo:(id)arg2;
 - (BOOL)_isAttribute:(id)arg1 equalTo:(id)arg2;

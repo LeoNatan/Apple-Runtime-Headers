@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface VNFaceLandmarkDetectorRevision1 : VNFaceLandmarkDetector
 {
-    struct shared_ptr<vision::mod::LandmarkDetector> mFaceLandmarkAlgorithmImpl;
-    struct shared_ptr<vision::mod::LandmarkDetector> mFaceLandmarkMouthRefinerImpl;
-    struct shared_ptr<vision::mod::LandmarkDetector> mFaceLandmarkRightEyeRefinerImpl;
-    struct shared_ptr<vision::mod::LandmarkDetector> mFaceLandmarkLeftEyeRefinerImpl;
+    struct shared_ptr<vision::mod::LandmarkDetectorERT> mFaceLandmarkAlgorithmImpl;
+    struct shared_ptr<vision::mod::LandmarkDetectorERT> mFaceLandmarkMouthRefinerImpl;
+    struct shared_ptr<vision::mod::LandmarkDetectorERT> mFaceLandmarkRightEyeRefinerImpl;
+    struct shared_ptr<vision::mod::LandmarkDetectorERT> mFaceLandmarkLeftEyeRefinerImpl;
     BOOL modelFilesWereMemmapped;
     id <VNModelFile> mCoreLandmarkModelFileHandle;
     id <VNModelFile> mLandmarkRefinerModelFileHandle;
@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
 - (void)dealloc;
 - (BOOL)_loadEspressoModelWithConfigurationOptions:(id)arg1 error:(id *)arg2;
+- (BOOL)loadRefinersAndReturnError:(id *)arg1;
 - (BOOL)completeInitializationAndReturnError:(id *)arg1;
 
 @end

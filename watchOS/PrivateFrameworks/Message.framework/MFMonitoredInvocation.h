@@ -23,6 +23,7 @@
 @property(copy, nonatomic) NSString *powerAssertionId; // @synthesize powerAssertionId=_powerAssertionId;
 @property(nonatomic) _Bool isLowPriority; // @synthesize isLowPriority=_isLowPriority;
 @property(readonly, nonatomic) MFActivityMonitor *monitor; // @synthesize monitor=_monitor;
+- (void).cxx_destruct;
 - (id)description;
 - (void)invoke;
 - (void)setShouldLogInvocation:(_Bool)arg1;

@@ -8,5 +8,6 @@
 
 @interface RWIProtocolCSSSelectorList (IKJSInspector)
 + (id)ik_cssSelectorListFromSelectorList:(id)arg1 forStyleMarkup:(id)arg2 withNewLineIndexSet:(id)arg3;
++ (id)safe_initWithSelectors:(id)arg1 text:(id)arg2;
 @end
 

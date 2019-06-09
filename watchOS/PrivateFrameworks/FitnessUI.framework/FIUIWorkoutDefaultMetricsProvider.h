@@ -12,6 +12,7 @@
 {
     FIUIWorkoutActivityType *_activityType;
     _Bool _supportsElevationMetrics;
+    _Bool _supportsGroundElevationMetrics;
     int _metricsVersion;
     NSArray *_defaultEnabledMetrics;
     NSArray *_supportedMetrics;
@@ -25,7 +26,7 @@
 - (_Bool)isMetricTypeSupported:(unsigned int)arg1 isMachineWorkout:(_Bool)arg2 activityType:(id)arg3;
 - (id)appendMachineMetricsToMetrics:(id)arg1 maxNumMetrics:(int)arg2 activityType:(id)arg3;
 - (id)_machineProvidedMetricsForActivityType:(id)arg1;
-- (id)_supportedMetricsForActivityType:(id)arg1 metricsVersion:(int)arg2 supportsElevationMetrics:(_Bool)arg3;
+- (id)_supportedMetricsForActivityType:(id)arg1 metricsVersion:(int)arg2;
 - (id)_defaultPreGloryOutdoorEnabledMetricsForActivityType:(unsigned int)arg1;
 - (id)_defaultGloryOutdoorEnabledMetricsForActivityType:(unsigned int)arg1 supportsElevationMetrics:(_Bool)arg2;
 - (id)_defaultOutdoorEnabledMetricsForActivityType:(unsigned int)arg1 metricsVersion:(int)arg2 supportsElevationMetrics:(_Bool)arg3;
@@ -33,8 +34,8 @@
 - (id)_defaultGloryIndoorEnabledMetricsForActivityType:(unsigned int)arg1;
 - (id)_indoorDefaultEnabledMetricsForActivityType:(unsigned int)arg1 metricsVersion:(int)arg2;
 - (id)_defaultEnabledMetricsForSwimmingWithLocationType:(int)arg1 metricsVersion:(int)arg2;
-- (id)_defaultEnabledMetricsForActivityType:(id)arg1 metricsVersion:(int)arg2 supportsElevationMetrics:(_Bool)arg3;
-- (id)initWithMetricsVersion:(int)arg1 activityType:(id)arg2 deviceSupportsElevationMetrics:(_Bool)arg3;
+- (id)_defaultEnabledMetricsForActivityType:(id)arg1 metricsVersion:(int)arg2;
+- (id)initWithMetricsVersion:(int)arg1 activityType:(id)arg2 deviceSupportsElevationMetrics:(_Bool)arg3 deviceSupportsGroundElevationMetrics:(_Bool)arg4;
 
 @end
 

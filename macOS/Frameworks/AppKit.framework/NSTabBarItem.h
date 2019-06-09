@@ -17,17 +17,19 @@
     NSString *_toolTip;
     NSArray *_accessoryViews;
     NSImage *_image;
-    NSImage *_alternateImage;
     NSColor *_themeColor;
     BOOL _pinned;
+    BOOL _showIcon;
+    BOOL _hideTab;
 }
 
 + (BOOL)supportsSecureCoding;
+@property BOOL hideTab; // @synthesize hideTab=_hideTab;
 @property(copy) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
+@property BOOL showIcon; // @synthesize showIcon=_showIcon;
 @property(getter=isPinned) BOOL pinned; // @synthesize pinned=_pinned;
 @property(copy) NSColor *themeColor; // @synthesize themeColor=_themeColor;
 @property(copy) NSArray *accessoryViews; // @synthesize accessoryViews=_accessoryViews;
-@property(retain) NSImage *alternateImage; // @synthesize alternateImage=_alternateImage;
 @property(retain) NSImage *image; // @synthesize image=_image;
 @property(copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property(copy) NSString *label; // @synthesize label=_label;

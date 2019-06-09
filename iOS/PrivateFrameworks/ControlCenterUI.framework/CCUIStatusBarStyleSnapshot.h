@@ -27,8 +27,6 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithHidden:(_Bool)arg1 leadingStyleRequest:(id)arg2 trailingStyleRequest:(id)arg3 statusBarInsets:(struct UIEdgeInsets)arg4 avoidanceFrame:(struct CGRect)arg5;
-- (id)initWithHidden:(_Bool)arg1 leadingStyleRequest:(id)arg2 trailingStyleRequest:(id)arg3 statusBarFrame:(struct CGRect)arg4 avoidanceFrame:(struct CGRect)arg5;
-- (id)initWithHidden:(_Bool)arg1 leadingStyleRequest:(id)arg2 trailingStyleRequest:(id)arg3 avoidanceFrame:(struct CGRect)arg4;
 
 @end
 

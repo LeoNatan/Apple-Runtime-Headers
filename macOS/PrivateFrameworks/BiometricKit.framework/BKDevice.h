@@ -20,7 +20,8 @@
 }
 
 + (BOOL)biometryAvailabilityInfo:(long long *)arg1 fromDeviceInfo:(long long)arg2 error:(id *)arg3;
-+ (BOOL)lockoutState:(long long *)arg1 fromDeviceLockoutState:(int)arg2 error:(id *)arg3;
++ (BOOL)extendedLockoutState:(long long *)arg1 fromDeviceLockoutState:(long long)arg2 error:(id *)arg3;
++ (BOOL)lockoutState:(long long *)arg1 fromDeviceLockoutState:(long long)arg2 error:(id *)arg3;
 + (id)deviceWithDescriptor:(id)arg1 error:(id *)arg2;
 + (BOOL)deviceAvailableWithError:(id *)arg1;
 @property(retain, nonatomic) BKDeviceDescriptor *descriptor; // @synthesize descriptor=_descriptor;
@@ -54,6 +55,7 @@
 - (BOOL)dropAllUnlockTokensWithError:(id *)arg1;
 - (id)identitiesDatabaseHashForUser:(unsigned int)arg1 error:(id *)arg2;
 - (id)identitiesDatabaseUUIDForUser:(unsigned int)arg1 error:(id *)arg2;
+- (BOOL)extendedBioLockoutState:(long long *)arg1 forUser:(unsigned int)arg2 error:(id *)arg3;
 - (BOOL)bioLockoutState:(long long *)arg1 forUser:(unsigned int)arg2 error:(id *)arg3;
 - (BOOL)setSystemProtectedConfiguration:(id)arg1 credentialSet:(id)arg2 error:(id *)arg3;
 - (BOOL)setProtectedConfiguration:(id)arg1 forUser:(unsigned int)arg2 credentialSet:(id)arg3 error:(id *)arg4;

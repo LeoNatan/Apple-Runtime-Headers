@@ -18,8 +18,6 @@
     UIImageView *__warningIndicatorView;
 }
 
-+ (long long)flashModeForTorchMode:(long long)arg1;
-+ (long long)torchModeForFlashMode:(long long)arg1;
 @property(readonly, nonatomic) UIImageView *_warningIndicatorView; // @synthesize _warningIndicatorView=__warningIndicatorView;
 @property(readonly, nonatomic) UIImageView *_glyphView; // @synthesize _glyphView=__glyphView;
 @property(nonatomic, getter=isUnavailable) _Bool unavailable; // @synthesize unavailable=_unavailable;

@@ -13,7 +13,7 @@
     float _pressure;
 }
 
-- (unsigned int)type;
+- (int)type;
 - (float)pressure;
 - (struct CGPoint)location;
 - (unsigned int)identifier;

@@ -10,6 +10,7 @@
 
 @class SKUIApplicationController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSApplication : IKJSApplication <SKUIJSApplication>
 {
     SKUIApplicationController *_applicationController;

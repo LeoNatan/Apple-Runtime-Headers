@@ -19,6 +19,10 @@
 - (void).cxx_destruct;
 - (void)setPaused:(_Bool)arg1;
 - (void)updateTimeLabel;
+- (void)setFilterProvider:(id)arg1;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)prepareForReuse;
 - (void)configureWithContent:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

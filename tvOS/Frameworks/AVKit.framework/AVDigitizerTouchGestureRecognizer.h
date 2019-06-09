@@ -6,6 +6,7 @@
 
 #import <UIKit/UIPanGestureRecognizer.h>
 
+__attribute__((visibility("hidden")))
 @interface AVDigitizerTouchGestureRecognizer : UIPanGestureRecognizer
 {
     struct CGPoint _digitizerLocation;

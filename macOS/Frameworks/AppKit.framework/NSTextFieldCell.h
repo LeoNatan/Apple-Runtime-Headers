@@ -6,7 +6,7 @@
 
 #import <AppKit/NSActionCell.h>
 
-@class NSArray, NSAttributedString, NSColor, NSString;
+@class CALayer, NSArray, NSAttributedString, NSColor, NSString;
 
 @interface NSTextFieldCell : NSActionCell
 {
@@ -35,6 +35,7 @@
         unsigned int determiningMenuItemTextColor:1;
         unsigned int reservedTextFieldCell:6;
     } _tfFlags;
+    CALayer *_bezelLayer;
 }
 
 + (void)initialize;
@@ -43,7 +44,6 @@
 - (void)_setCachedLineRef:(id)arg1;
 - (id)_cachedLineRef;
 - (BOOL)cachesLineRef;
-- (id)_stringDrawingContextWithBaselineOffsetsInRect:(struct CGRect)arg1;
 - (id)_stringDrawingContext;
 - (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -64,11 +64,12 @@
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 - (BOOL)_shouldStyleUneditableTextInView:(id)arg1;
 - (BOOL)_textDimsWhenDisabled;
-- (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
+- (long long)_contentBacking;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (long long)interiorBackgroundStyle;
-- (unsigned long long)_interiorContentValueStateInView:(id)arg1;
+- (long long)_interiorContentValueInView:(id)arg1;
 - (id)_textColorForMenuItemView;
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (long long)_interiorContentStateInView:(id)arg1;
 - (id)setUpFieldEditorAttributes:(id)arg1;
 - (void)_getTextColor:(id *)arg1 backgroundColor:(id *)arg2;
 @property(copy) NSArray *allowedInputSourceLocales;
@@ -81,7 +82,7 @@
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)updateLayerWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)_bezelLayer;
-- (BOOL)_updateBezelInLayer:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
+- (void)_updateBezelInLayer:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)_setContents:(id)arg1;
 - (void)_invalidateCachedLineRef;
@@ -114,6 +115,7 @@
 - (double)_coreUIHeightForRoundedBezel;
 @property(copy) NSAttributedString *placeholderAttributedString;
 @property(copy) NSString *placeholderString;
+- (unsigned long long)lineBreakStrategy;
 - (void)setAutomaticTextCompletionEnabled:(BOOL)arg1;
 - (BOOL)isAutomaticTextCompletionEnabled;
 - (void)setAllowsCharacterPickerTouchBarItem:(BOOL)arg1;
@@ -134,6 +136,7 @@
 - (id)init;
 - (void)_setToolbarMode:(BOOL)arg1;
 - (BOOL)_isToolbarMode;
+- (void)accessibilityDrawFocusRing;
 - (id)accessibilityAuditContrast;
 - (BOOL)accessibilityIsPlaceholderValueAttributeSettable;
 - (id)accessibilityPlaceholderValueAttribute;

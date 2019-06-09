@@ -6,28 +6,16 @@
 
 #import <UIKitCore/UIButton.h>
 
-@class UITableViewRowAction, UIVisualEffect;
+@class UIVisualEffect;
 
 @interface _UITableViewCellActionButton : UIButton
 {
     UIVisualEffect *_backgroundEffect;
-    UITableViewRowAction *_action;
-    unsigned long long _style;
 }
 
 + (id)actionButtonWithStyle:(unsigned long long)arg1;
-@property(nonatomic) unsigned long long style; // @synthesize style=_style;
-@property(retain, nonatomic) UITableViewRowAction *action; // @synthesize action=_action;
 @property(copy, nonatomic) UIVisualEffect *backgroundEffect; // @synthesize backgroundEffect=_backgroundEffect;
 - (void).cxx_destruct;
-- (void)layoutSubviews;
-- (void)didMoveToWindow;
-- (double)dynamicTypeSizeFittingHeight:(double)arg1;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)setTitleFontSizeForContentSizeCategory:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
-- (double)preferredFontSizeForContentSizeCategory:(id)arg1;
 
 @end
 

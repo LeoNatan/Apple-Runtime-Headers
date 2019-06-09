@@ -8,7 +8,7 @@
 
 #import <AssistantServices/WPHeySiriProtocol-Protocol.h>
 
-@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFMyriadStereoPairManager, AFPowerAssertionManager, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, WPHeySiri, _DKKnowledgeStore;
+@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, WPHeySiri, _DKKnowledgeStore;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface AFMyriadCoordinator : NSObject <WPHeySiriProtocol>
@@ -16,6 +16,7 @@
     unsigned long long _myriadState;
     unsigned long long _nextState;
     unsigned long long _previousState;
+    NSData *_incomingAudioData;
     NSData *_previousAdvertisedData;
     NSMutableDictionary *_replies;
     NSMutableDictionary *_replyCounts;
@@ -39,7 +40,6 @@
     NSObject<OS_dispatch_source> *_timer;
     NSObject<OS_dispatch_semaphore> *_wiproxReadinessSemaphore;
     AFPowerAssertionManager *_powerAssertionManager;
-    AFMyriadStereoPairManager *_pairManager;
     struct __CFNotificationCenter *_center;
     AFMyriadRecord *_triggerRecord;
     unsigned long long _voiceTriggerTime;
@@ -99,7 +99,7 @@
 - (void)heySiriStoppedAdvertising:(id)arg1;
 - (void)heySiriAdvertisingPending:(id)arg1;
 - (void)heySiriStartedAdvertising:(id)arg1;
-- (void)heySiri:(id)arg1 foundDevice:(id)arg2 withData:(id)arg3;
+- (void)heySiri:(id)arg1 foundDevice:(id)arg2 withInfo:(id)arg3;
 - (void)heySiriDidUpdateState:(id)arg1;
 - (void)_waitWiProxAndExecute:(CDUnknownBlockType)arg1;
 - (void)_waitWiProx:(long long)arg1 andExecute:(CDUnknownBlockType)arg2;
@@ -110,6 +110,7 @@
 - (BOOL)_isAPhone:(unsigned char)arg1;
 - (BOOL)_shouldHandleEmergency;
 - (BOOL)_shouldContinueFor:(id)arg1;
+- (id)emptyRecord;
 - (id)slowdownRecord:(unsigned short)arg1;
 - (id)responseObject:(unsigned short)arg1;
 - (id)emergencyHandledRecord;
@@ -165,20 +166,30 @@
 - (void)endAdvertisingAfterDelay:(float)arg1;
 - (void)startAdvertisingSlowdown:(unsigned short)arg1;
 - (void)startResponseAdvertising:(unsigned short)arg1;
+- (void)startAdvertisingFromAlertFiringVoiceTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromAlertFiringVoiceTrigger;
+- (void)startAdvertisingFromInTaskVoiceTriggerWithContext:(id)arg1;
+- (void)startAdvertisingFromInTaskTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromInTaskVoiceTrigger;
 - (void)startAdvertisingEmergency;
 - (void)startAdvertisingEmergencyHandled;
 - (void)startAdvertisingFromCarPlayTrigger;
 - (void)startAdvertisingFromInEarTrigger;
+- (void)startAdvertisingFromOutgoingTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromOutgoingTrigger;
+- (void)startAdvertisingFromDirectTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromDirectTrigger;
+- (void)startWatchAdvertisingFromDirectTriggerWithContext:(id)arg1;
 - (void)startWatchAdvertisingFromDirectTrigger;
+- (void)startWatchAdvertisingFromVoiceTriggerWithContext:(id)arg1;
 - (void)startWatchAdvertisingFromVoiceTrigger;
 - (double)_targetDelayAfterTrigger:(unsigned long long)arg1;
 - (void)_startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
+- (void)startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1 withContext:(id)arg2;
 - (void)startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
+- (void)resetStateMachine;
 - (void)_startAdvertisingFromVoiceTrigger;
+- (void)startAdvertisingFromVoiceTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromVoiceTrigger;
 - (void)_initDeviceClassAndAdjustments;
 - (void)_readDefaults;

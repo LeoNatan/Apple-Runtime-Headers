@@ -15,8 +15,12 @@ __attribute__((visibility("hidden")))
 {
     NSString *_localizedSectionHeader;
     NSArray *_items;
+    _Bool _shouldInterleaveClientResults;
+    _Bool _enforceServerResultsOrder;
 }
 
+@property(readonly, nonatomic) _Bool enforceServerResultsOrder; // @synthesize enforceServerResultsOrder=_enforceServerResultsOrder;
+@property(readonly, nonatomic) _Bool shouldInterleaveClientResults; // @synthesize shouldInterleaveClientResults=_shouldInterleaveClientResults;
 @property(readonly, nonatomic) NSString *localizedSectionHeader; // @synthesize localizedSectionHeader=_localizedSectionHeader;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;

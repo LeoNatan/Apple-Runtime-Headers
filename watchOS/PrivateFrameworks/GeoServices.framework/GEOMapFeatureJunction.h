@@ -16,7 +16,7 @@
 }
 
 + (_Bool)_isPointOnTileBorder:(CDStruct_6e3f967a)arg1;
-+ (id)junctionForRoadFeature:(CDStruct_75fd159b *)arg1 startJunction:(_Bool)arg2;
++ (id)junctionForRoadFeature:(CDStruct_91c84281 *)arg1 startJunction:(_Bool)arg2;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 @property(readonly, nonatomic) _Bool isOnTileBorder;

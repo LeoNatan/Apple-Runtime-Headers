@@ -18,8 +18,10 @@
 @property(copy, nonatomic) NSString *cloudID; // @dynamic cloudID;
 @property(copy, nonatomic) NSString *deviceID; // @dynamic deviceID;
 @property(copy, nonatomic) NSDate *lastSeenDate; // @dynamic lastSeenDate;
+@property(copy, nonatomic) NSString *model; // @dynamic model;
 @property(copy, nonatomic) NSString *rapportID; // @dynamic rapportID;
 @property(copy, nonatomic) NSUUID *uuid; // @dynamic uuid;
+@property(copy, nonatomic) NSString *version; // @dynamic version;
 
 @end
 

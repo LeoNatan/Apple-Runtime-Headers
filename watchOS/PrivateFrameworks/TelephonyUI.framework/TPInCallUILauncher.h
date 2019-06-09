@@ -11,7 +11,8 @@
 }
 
 + (id)TPRemoteAlertActivationReasonForTPInCallUILaunchReason:(int)arg1;
-+ (void)launchInCallUIForReason:(int)arg1 completion:(CDUnknownBlockType)arg2;
++ (id)sharedInstance;
+- (void)launchInCallUIForReason:(int)arg1 withRequestURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
 
 @end
 

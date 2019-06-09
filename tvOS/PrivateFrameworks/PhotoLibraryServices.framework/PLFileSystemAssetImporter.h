@@ -25,6 +25,7 @@
 @property(retain, nonatomic) NSMutableDictionary *existingOIDsByUUID; // @synthesize existingOIDsByUUID=_existingOIDsByUUID;
 @property(retain, nonatomic) NSMutableDictionary *existingUUIDsByUppercasePath; // @synthesize existingUUIDsByUppercasePath=_existingUUIDsByUppercasePath;
 @property(retain, nonatomic) NSMutableSet *existingUUIDs; // @synthesize existingUUIDs=_existingUUIDs;
+- (void).cxx_destruct;
 - (unsigned long long)nextThumbnailIndex;
 - (void)addAvailableThumbnailIndex:(unsigned long long)arg1;
 - (_Bool)_setupVideoAsset:(id)arg1 withURL:(id)arg2;
@@ -34,7 +35,7 @@
 - (_Bool)_setupPhotoAsset:(id)arg1 withURL:(id)arg2;
 - (_Bool)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1;
 - (void)setModificationAndCreationDateOnAsset:(id)arg1 withURL:(id)arg2;
-- (id)addAssetWithURLs:(id)arg1 forceInsert:(_Bool)arg2 forceUpdate:(_Bool)arg3 fixAddedDate:(_Bool)arg4;
+- (id)addAssetWithURLs:(id)arg1 assetPayload:(id)arg2 forceInsert:(_Bool)arg3 forceUpdate:(_Bool)arg4 fixAddedDate:(_Bool)arg5;
 - (id)assetURLisInDatabase:(id)arg1;
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
 - (void)dealloc;

@@ -9,7 +9,7 @@
 #import <UIKitCore/NSFilePresenter-Protocol.h>
 #import <UIKitCore/NSProgressReporting-Protocol.h>
 
-@class NSDate, NSDocumentDifferenceSize, NSLock, NSMutableArray, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSUndoManager, NSUserActivity;
+@class NSDate, NSDocumentDifferenceSize, NSLock, NSMutableArray, NSMutableSet, NSOperationQueue, NSProgress, NSSet, NSString, NSTimer, NSURL, NSUndoManager, NSUserActivity;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface UIDocument : NSObject <NSFilePresenter, NSProgressReporting>
@@ -17,6 +17,7 @@
     NSUserActivity *_currentUserActivity;
     NSLock *_activityContinuationLock;
     NSURL *_fileURL;
+    NSString *_fileBookmark;
     NSString *_fileType;
     NSString *_localizedName;
     NSUndoManager *_undoManager;
@@ -33,13 +34,14 @@
     double _lastPreservationTime;
     id _versionWithoutRecentChanges;
     NSMutableArray *_versions;
-    NSLock *_documentPropertyLock;
     id _alertPresenter;
     id _progressSubscriber;
+    NSMutableSet *_progresses;
     struct __docFlags {
         unsigned int inClose:1;
         unsigned int isOpen:1;
         unsigned int inOpen:1;
+        unsigned int inRevert:1;
         unsigned int isAutosavingBecauseOfTimer:1;
         unsigned int versionWithoutRecentChangesIsNotLastOpened:1;
         unsigned int ignoreUndoAndRedoNotifications:1;
@@ -51,7 +53,6 @@
         unsigned int inConflict:1;
         unsigned int needToStopAccessingSecurityScopedResource:1;
     } _docFlags;
-    NSProgress *_progress;
 }
 
 + (void)_autosavingTimerDidFireSoContinue:(id)arg1;
@@ -60,7 +61,6 @@
 + (id)_customizationOfError:(id)arg1 withDescription:(id)arg2 recoverySuggestion:(id)arg3 recoveryAttempter:(id)arg4;
 + (id)_typeForContentsOfURL:(id)arg1 error:(id *)arg2;
 + (id)_fileModificationDateForURL:(id)arg1;
-@property(retain, nonatomic, getter=progress, setter=_setProgress:) NSProgress *progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *differenceSinceSaving; // @synthesize differenceSinceSaving=_differenceSinceSaving;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *differenceSincePreservingPreviousVersion; // @synthesize differenceSincePreservingPreviousVersion=_differenceSincePreservingPreviousVersion;
 @property(readonly, nonatomic) NSDocumentDifferenceSize *differenceDueToRecentChanges; // @synthesize differenceDueToRecentChanges=_differenceDueToRecentChanges;
@@ -124,11 +124,13 @@
 - (id)fileAttributesToWriteToURL:(id)arg1 forSaveOperation:(long long)arg2 error:(id *)arg3;
 - (_Bool)writeContents:(id)arg1 toURL:(id)arg2 forSaveOperation:(long long)arg3 originalContentsURL:(id)arg4 error:(id *)arg5;
 - (_Bool)writeContents:(id)arg1 andAttributes:(id)arg2 safelyToURL:(id)arg3 forSaveOperation:(long long)arg4 error:(id *)arg5;
+- (id)_writingProgressForURL:(id)arg1 indeterminate:(_Bool)arg2;
 - (id)_presentableFileNameForSaveOperation:(long long)arg1 url:(id)arg2;
 - (_Bool)loadFromContents:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (_Bool)readFromURL:(id)arg1 error:(id *)arg2;
 - (void)revertToContentsOfURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_progressUnpublished;
+@property(readonly) NSProgress *progress;
+- (void)_progressUnpublished:(id)arg1;
 - (void)_progressPublished:(id)arg1;
 - (void)_unlockFileAccessQueue;
 - (void)_lockFileAccessQueueAndPerformBlock:(CDUnknownBlockType)arg1;

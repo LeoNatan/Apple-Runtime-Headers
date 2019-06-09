@@ -10,6 +10,7 @@
 
 @interface PHAssetMediaAnalysisProperties : PHAssetPropertySet
 {
+    short _audioClassification;
     float _blurrinessScore;
     float _exposureScore;
     float _autoplaySuggestionScore;
@@ -19,6 +20,7 @@
     unsigned long long _mediaAnalysisVersion;
     unsigned long long _faceCount;
     CDStruct_1b6d18a9 _bestKeyFrameTime;
+    struct CGRect _bestPlaybackRect;
     CDStruct_e83c9415 _bestVideoTimeRange;
 }
 
@@ -26,6 +28,7 @@
 + (id)entityName;
 + (id)keyPathFromPrimaryObject;
 + (id)propertySetName;
+@property(readonly, nonatomic) short audioClassification; // @synthesize audioClassification=_audioClassification;
 @property(readonly, nonatomic) unsigned long long faceCount; // @synthesize faceCount=_faceCount;
 @property(readonly, nonatomic) float activityScore; // @synthesize activityScore=_activityScore;
 @property(readonly, nonatomic) float videoScore; // @synthesize videoScore=_videoScore;
@@ -34,6 +37,7 @@
 @property(readonly, nonatomic) float blurrinessScore; // @synthesize blurrinessScore=_blurrinessScore;
 @property(readonly, nonatomic) unsigned long long mediaAnalysisVersion; // @synthesize mediaAnalysisVersion=_mediaAnalysisVersion;
 @property(readonly, nonatomic) NSDate *mediaAnalysisTimeStamp; // @synthesize mediaAnalysisTimeStamp=_mediaAnalysisTimeStamp;
+@property(readonly, nonatomic) struct CGRect bestPlaybackRect; // @synthesize bestPlaybackRect=_bestPlaybackRect;
 @property(readonly, nonatomic) CDStruct_e83c9415 bestVideoTimeRange; // @synthesize bestVideoTimeRange=_bestVideoTimeRange;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 bestKeyFrameTime; // @synthesize bestKeyFrameTime=_bestKeyFrameTime;
 - (void).cxx_destruct;

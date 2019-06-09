@@ -60,7 +60,6 @@
 + (Class)class;
 + (id)self;
 + (void)initialize;
-+ (void)load;
 - (id)mutableCopy;
 - (id)copy;
 - (struct _NSZone *)zone;

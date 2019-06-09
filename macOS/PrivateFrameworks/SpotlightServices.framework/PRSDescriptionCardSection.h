@@ -16,21 +16,21 @@
     int _description_size;
     int _description_weight;
     int _description_max_lines;
+    int _imageAlign;
+    int _text_align;
     NSString *_description_text;
     NSString *_description_expand_text;
     NSImage *_image;
-    unsigned long long _imageAlign;
     NSImage *_attribution_glyph;
     NSString *_attribution_text;
     NSURL *_attribution_url;
-    unsigned long long _text_align;
 }
 
-@property(nonatomic) unsigned long long text_align; // @synthesize text_align=_text_align;
-@property(retain, nonatomic) NSURL *attribution_url; // @synthesize attribution_url=_attribution_url;
-@property(retain, nonatomic) NSString *attribution_text; // @synthesize attribution_text=_attribution_text;
-@property(retain, nonatomic) NSImage *attribution_glyph; // @synthesize attribution_glyph=_attribution_glyph;
-@property(readonly, nonatomic) unsigned long long imageAlign; // @synthesize imageAlign=_imageAlign;
+@property(nonatomic) int text_align; // @synthesize text_align=_text_align;
+@property(readonly, nonatomic) NSURL *attribution_url; // @synthesize attribution_url=_attribution_url;
+@property(readonly, nonatomic) NSString *attribution_text; // @synthesize attribution_text=_attribution_text;
+@property(readonly, nonatomic) NSImage *attribution_glyph; // @synthesize attribution_glyph=_attribution_glyph;
+@property(readonly, nonatomic) int imageAlign; // @synthesize imageAlign=_imageAlign;
 @property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) int description_max_lines; // @synthesize description_max_lines=_description_max_lines;
 @property(readonly, nonatomic) NSString *description_expand_text; // @synthesize description_expand_text=_description_expand_text;

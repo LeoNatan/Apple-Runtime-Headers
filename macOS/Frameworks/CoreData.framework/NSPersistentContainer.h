@@ -20,6 +20,8 @@
 + (id)defaultDirectoryURL;
 + (id)persistentContainerWithName:(id)arg1 managedObjectModel:(id)arg2;
 + (id)persistentContainerWithName:(id)arg1;
++ (Class)persistentStoreDescriptionClass;
++ (id)persistentContainerUsingCachedModelWithPath:(id)arg1;
 + (id)persistentContainerWithPath:(id)arg1 managedObjectModel:(id)arg2;
 + (id)persistentContainerWithPath:(id)arg1 modelNamed:(id)arg2;
 + (id)persistentContainerWithPath:(id)arg1;
@@ -28,6 +30,7 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void)performBackgroundTask:(CDUnknownBlockType)arg1;
 - (id)newBackgroundContext;
+- (void)_loadStoreDescriptons:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)loadPersistentStoresWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 managedObjectModel:(id)arg2;

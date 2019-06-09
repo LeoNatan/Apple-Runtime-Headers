@@ -11,11 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTagColumnRowView : NSTableRowView
 {
-    FI_TTagColumnTableViewController *_tableViewController;
+    struct TNSWeakPtr<FI_TTagColumnTableViewController, void> _weakTableViewController;
 }
 
-@property(nonatomic) FI_TTagColumnTableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)setSelected:(BOOL)arg1;
+@property(nonatomic) __weak FI_TTagColumnTableViewController *tableViewController; // @dynamic tableViewController;
 
 @end
 

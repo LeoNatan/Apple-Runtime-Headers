@@ -8,5 +8,10 @@
 
 @interface WAKView (WebHTMLViewFileInternal)
 - (void)_web_addDescendentWebHTMLViewsToArray:(id)arg1;
+- (_Bool)_web_firstResponderIsSelfOrDescendantView;
+- (id)_web_parentWebFrameView;
+- (id)_web_superviewOfClass:(Class)arg1;
+- (id)_webView;
+- (id)_frame;
 @end
 

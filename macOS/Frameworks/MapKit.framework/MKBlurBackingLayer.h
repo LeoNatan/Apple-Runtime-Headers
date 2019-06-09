@@ -6,6 +6,7 @@
 
 #import <QuartzCore/CALayer.h>
 
+__attribute__((visibility("hidden")))
 @interface MKBlurBackingLayer : CALayer
 {
     CALayer *_backdropLayer;

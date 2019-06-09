@@ -9,7 +9,7 @@
 #import <ClockKit/NSCopying-Protocol.h>
 #import <ClockKit/NSSecureCoding-Protocol.h>
 
-@class NSString, UIColor, UIImage;
+@class CLKImageProvider, NSDictionary, NSString, UIColor, UIImage;
 
 @interface CLKFullColorImageProvider : NSObject <NSSecureCoding, NSCopying>
 {
@@ -17,14 +17,27 @@
     _Bool _applyScalingAndCircularMasking;
     _Bool _finalized;
     UIImage *_image;
+    CLKImageProvider *_tintedImageProvider;
     NSString *_accessibilityLabel;
+    Class _ImageViewClass;
+    NSDictionary *_metadata;
+    int _monochromeFilterType;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)fullColorImageProviderWithImageViewClass:(Class)arg1;
++ (id)providerWithFullColorImage:(id)arg1 tintedImageProvider:(id)arg2 applyScalingAndCircularMasking:(_Bool)arg3;
++ (id)providerWithFullColorImage:(id)arg1 monochromeFilterType:(int)arg2 applyScalingAndCircularMasking:(_Bool)arg3;
 + (id)providerWithFullColorImage:(id)arg1 applyScalingAndCircularMasking:(_Bool)arg2;
++ (id)providerWithFullColorImage:(id)arg1 tintedImageProvider:(id)arg2;
++ (id)providerWithFullColorImage:(id)arg1 monochromeFilterType:(int)arg2;
 + (id)providerWithFullColorImage:(id)arg1;
+@property(nonatomic) int monochromeFilterType; // @synthesize monochromeFilterType=_monochromeFilterType;
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(readonly, nonatomic) Class ImageViewClass; // @synthesize ImageViewClass=_ImageViewClass;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
+@property(retain, nonatomic) CLKImageProvider *tintedImageProvider; // @synthesize tintedImageProvider=_tintedImageProvider;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (void)_resizeImagesIfNecessaryWithMaxSize:(struct CGSize)arg1 cornerRadius:(float)arg2;

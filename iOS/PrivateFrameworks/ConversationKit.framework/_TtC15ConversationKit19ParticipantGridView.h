@@ -6,21 +6,21 @@
 
 #import <UIKit/UIView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit19ParticipantGridView : UIView
 {
     // Error parsing type: , name: participantViews
     // Error parsing type: , name: unfocusedParticipantOverlay
+    // Error parsing type: , name: organicLayoutConfiguration
     // Error parsing type: , name: currentlyFocusedParticipantIdentifier
     // Error parsing type: , name: mostRecentAnimationIndex
     // Error parsing type: , name: delegate
 }
 
 - (void).cxx_destruct;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
-- (void)layoutSubviews;
 
 @end
 

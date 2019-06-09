@@ -16,20 +16,24 @@ __attribute__((visibility("hidden")))
     id <GGLLayerDelegate> _delegate;
     shared_ptr_94286ce0 _device;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _texture;
+    BOOL _sRGB;
     struct CGSize _backingSize;
 }
 
+@property(readonly, nonatomic) BOOL sRGB; // @synthesize sRGB=_sRGB;
 @property(readonly, nonatomic) struct CGSize backingSize; // @synthesize backingSize=_backingSize;
 @property id <GGLLayerDelegate> renderDelegate; // @synthesize renderDelegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)display;
 - (void)didEnterBackground;
+- (void)onTimerFired:(double)arg1 presentAtTime:(double)arg2;
 - (void)onTimerFired:(double)arg1;
+- (void)_onTimerFired:(double)arg1 withPresent:(CDUnknownBlockType)arg2;
 - (id)_updateDrawable;
 - (void)_createTexture;
 - (void)layoutSublayers;
-- (id)initWithDevice:(shared_ptr_94286ce0)arg1;
+- (id)initWithDevice:(shared_ptr_94286ce0)arg1 sRGB:(BOOL)arg2;
 @property(readonly) int backingFormat;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <QuickLookUI/NSObject-Protocol.h>
 
-@class NSArray, NSDraggingSession, NSEvent, NSPasteboard, NSURL, NSView, QLDisplayBundle;
+@class NSArray, NSDraggingSession, NSEvent, NSPasteboard, NSURL, NSView;
 @protocol NSDraggingSource, NSPasteboardWriting;
 
 @protocol QLPreviewDragDelegate <NSObject>
@@ -14,7 +14,9 @@
 - (id <NSPasteboardWriting>)pasteboardWriter;
 - (BOOL)useLegacyDragging;
 - (NSView *)draggingSourceView;
-- (QLDisplayBundle *)draggingSourceDisplayBundle;
+- (void)getImageRepresentationWithFrame:(struct CGRect)arg1 completion:(void (^)(struct CGImage *, struct CGRect))arg2;
+- (struct CGRect)borderFrame;
+- (struct CGRect)sourceFrame;
 - (NSURL *)draggedURL;
 
 @optional

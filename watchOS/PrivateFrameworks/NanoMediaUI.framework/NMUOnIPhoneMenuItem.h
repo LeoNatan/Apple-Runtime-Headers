@@ -6,14 +6,11 @@
 
 #import <NanoMediaUI/NMUMenuItem.h>
 
-#import <NanoMediaUI/NMCConnectivityObserver-Protocol.h>
-
-@interface NMUOnIPhoneMenuItem : NMUMenuItem <NMCConnectivityObserver>
+@interface NMUOnIPhoneMenuItem : NMUMenuItem
 {
 }
 
-- (void)_handleMediaRemoteOriginAvailableOriginsDidChangeNotification:(id)arg1;
-- (void)manager:(id)arg1 connectivityDidChange:(_Bool)arg2;
+- (void)_handleAvailableOriginsDidChangeNotification:(id)arg1;
 - (CDUnknownBlockType)visibilityBlock;
 - (void)dealloc;
 - (id)init;

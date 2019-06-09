@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface CKGroupAcknowledgmentVotingLayout : UICollectionViewLayout
 {
     _Bool _isAnimatedLayoutChange;

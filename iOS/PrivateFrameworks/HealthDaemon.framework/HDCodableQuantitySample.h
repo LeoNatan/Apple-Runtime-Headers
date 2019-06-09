@@ -18,6 +18,7 @@
     double _min;
     double _mostRecent;
     double _mostRecentDate;
+    double _mostRecentDuration;
     double _valueInCanonicalUnit;
     double _valueInOriginalUnit;
     NSString *_originalUnitString;
@@ -31,6 +32,7 @@
         unsigned int min:1;
         unsigned int mostRecent:1;
         unsigned int mostRecentDate:1;
+        unsigned int mostRecentDuration:1;
         unsigned int valueInCanonicalUnit:1;
         unsigned int valueInOriginalUnit:1;
         unsigned int final:1;
@@ -39,6 +41,7 @@
 }
 
 + (Class)quantitySeriesDataType;
+@property(nonatomic) double mostRecentDuration; // @synthesize mostRecentDuration=_mostRecentDuration;
 @property(retain, nonatomic) NSMutableArray *quantitySeriesDatas; // @synthesize quantitySeriesDatas=_quantitySeriesDatas;
 @property(nonatomic) double mostRecentDate; // @synthesize mostRecentDate=_mostRecentDate;
 @property(nonatomic) double mostRecent; // @synthesize mostRecent=_mostRecent;
@@ -61,6 +64,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(nonatomic) _Bool hasMostRecentDuration;
 - (id)quantitySeriesDataAtIndex:(unsigned long long)arg1;
 - (unsigned long long)quantitySeriesDatasCount;
 - (void)addQuantitySeriesData:(id)arg1;

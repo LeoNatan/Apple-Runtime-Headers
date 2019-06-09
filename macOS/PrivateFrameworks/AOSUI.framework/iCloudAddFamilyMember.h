@@ -27,9 +27,9 @@
     NSTextField *_addMemberNoChildAddFamilMemberLabel;
     NSTextField *_addMemberNoChildEnterFamilyLabel;
     int _viewType;
-    id <iCloudAddFamilyMemberDelegate> _delegate;
     NSString *_accountID;
     NSDictionary *_membershipInfo;
+    id <iCloudAddFamilyMemberDelegate> _delegate;
 }
 
 @property(retain) NSDictionary *membershipInfo; // @synthesize membershipInfo=_membershipInfo;
@@ -38,6 +38,7 @@
 @property int viewType; // @synthesize viewType=_viewType;
 @property(retain) NSArray *matchingTokens; // @synthesize matchingTokens=_matchingTokens;
 @property(retain) NSArray *matches; // @synthesize matches=_matches;
+- (void).cxx_destruct;
 - (id)inviteeMembershipInfo;
 - (id)inviteeObject;
 - (id)emailAddressOfAddFamily;

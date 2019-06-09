@@ -4,24 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PlatterKit/PLTitledPlatterView.h>
+#import <UIKit/UIView.h>
 
-@class NSString, UIButton, UIView, WGWidgetHostingViewController, WGWidgetListItemViewController;
+#import <Widgets/MTMaterialGrouping-Protocol.h>
+#import <Widgets/MTVisualStylingRequiring-Protocol.h>
+#import <Widgets/PLContentSizeManaging-Protocol.h>
 
-@interface WGWidgetPlatterView : PLTitledPlatterView
+@class MTMaterialView, MTVisualStylingProvider, NSArray, NSString, UIButton, WGPlatterHeaderContentView, WGWidgetHostingViewController, WGWidgetListItemViewController;
+
+@interface WGWidgetPlatterView : UIView <PLContentSizeManaging, MTMaterialGrouping, MTVisualStylingRequiring>
 {
+    MTMaterialView *_backgroundView;
+    MTMaterialView *_headerBackgroundView;
+    WGPlatterHeaderContentView *_headerContentView;
     UIView *_compatibilityDarkeningView;
-    NSString *_longerTitle;
+    double _cornerRadius;
+    _Bool _backgroundHidden;
     _Bool _showingMoreContent;
+    NSString *_materialGroupNameBase;
     WGWidgetHostingViewController *_widgetHost;
     WGWidgetListItemViewController *_listItem;
+    UIView *_contentView;
+    unsigned long long _clippingEdge;
     long long _buttonMode;
 }
 
 @property(nonatomic, getter=isShowingMoreContent) _Bool showingMoreContent; // @synthesize showingMoreContent=_showingMoreContent;
 @property(nonatomic) long long buttonMode; // @synthesize buttonMode=_buttonMode;
+@property(nonatomic, getter=isBackgroundHidden) _Bool backgroundHidden; // @synthesize backgroundHidden=_backgroundHidden;
+@property(nonatomic) unsigned long long clippingEdge; // @synthesize clippingEdge=_clippingEdge;
+@property(retain, nonatomic, setter=_setContentView:) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak WGWidgetListItemViewController *listItem; // @synthesize listItem=_listItem;
 @property(nonatomic) __weak WGWidgetHostingViewController *widgetHost; // @synthesize widgetHost=_widgetHost;
+@property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 - (void).cxx_destruct;
 - (void)iconDidInvalidate:(id)arg1;
 - (void)_updateCompatibilityDarkeningViewIfNecessary;
@@ -32,18 +47,38 @@
 - (_Bool)_isUtilityButtonVisible;
 - (void)_updateUtilityButtonForMode:(long long)arg1;
 - (void)_handleIconButton:(id)arg1;
+- (void)_layoutHeaderViews;
+- (void)_layoutContentView;
+- (struct CGRect)_headerFrameForBounds:(struct CGRect)arg1;
+- (struct CGSize)_contentSize;
+- (void)_configureHeaderViewsIfNecessary;
+- (void)_updateHeaderContentViewVisualStyling;
+- (void)_configureBackgroundMaterialViewIfNecessary;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+@property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
+- (id)visualStylingProviderForCategory:(long long)arg1;
+- (struct CGSize)contentSizeForSize:(struct CGSize)arg1;
+- (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;
+- (void)_updateShowMoreButtonImage;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (double)_continuousCornerRadius;
+- (void)willRemoveSubview:(id)arg1;
+- (void)layoutSubviews;
+- (struct CGSize)intrinsicContentSize;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(nonatomic, getter=isAddWidgetButtonVisible) _Bool addWidgetButtonVisible;
 @property(readonly, nonatomic) UIButton *addWidgetButton;
 @property(nonatomic, getter=isShowMoreButtonVisible) _Bool showMoreButtonVisible;
 @property(readonly, nonatomic) UIButton *showMoreButton;
-- (void)_configureHeaderContentView;
-- (void)_willRemoveCustomContent:(id)arg1;
-- (void)setBackgroundBlurred:(_Bool)arg1;
-- (void)layoutSubviews;
-- (struct CGSize)intrinsicContentSize;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (struct CGSize)minimumSizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 andCornerRadius:(double)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

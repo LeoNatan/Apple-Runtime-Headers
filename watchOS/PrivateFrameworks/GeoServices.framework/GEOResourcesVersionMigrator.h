@@ -8,14 +8,13 @@
 
 #import <GeoServices/GEOActiveTileGroupMigrator-Protocol.h>
 
-@class GEOResourceManifestConfiguration, NSMutableArray, NSString;
-@protocol OS_dispatch_queue;
+@class GEOResourceManifestConfiguration, NSMutableArray, NSString, geo_isolater;
 
 __attribute__((visibility("hidden")))
 @interface GEOResourcesVersionMigrator : NSObject <GEOActiveTileGroupMigrator>
 {
     GEOResourceManifestConfiguration *_manifestConfiguration;
-    NSObject<OS_dispatch_queue> *_isolationQueue;
+    geo_isolater *_isolater;
     NSMutableArray *_runningTasks;
 }
 

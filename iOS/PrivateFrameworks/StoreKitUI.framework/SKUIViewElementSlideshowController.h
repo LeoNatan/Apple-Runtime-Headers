@@ -12,6 +12,7 @@
 @class NSMutableArray, NSString, SKUIIPhoneSlideshowViewController, SKUISlideshowViewController, SKUIViewElementLayoutContext;
 @protocol SKUIViewElementSlideshowDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewElementSlideshowController : NSObject <SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate>
 {
     id <SKUIViewElementSlideshowDelegate> _delegate;

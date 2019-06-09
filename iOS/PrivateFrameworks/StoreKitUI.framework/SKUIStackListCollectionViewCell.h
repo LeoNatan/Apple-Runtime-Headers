@@ -10,6 +10,7 @@
 
 @class NSMapTable, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStackListCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView>
 {
     unsigned long long _alignment;

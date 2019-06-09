@@ -65,6 +65,7 @@
 - (id)description;
 @property(readonly, retain, nonatomic) NSString *friendlyName;
 @property(readonly, nonatomic) NSDictionary *restrictions;
+- (id)filterForUserEnrollmentOutError:(id *)arg1;
 - (id)stubDictionary;
 - (id)malformedPayloadErrorWithError:(id)arg1;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id *)arg3;

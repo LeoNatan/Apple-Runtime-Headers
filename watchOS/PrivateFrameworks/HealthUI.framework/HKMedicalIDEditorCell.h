@@ -40,6 +40,7 @@
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)setupStackView;
 - (void)setupSubviews;
+- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties

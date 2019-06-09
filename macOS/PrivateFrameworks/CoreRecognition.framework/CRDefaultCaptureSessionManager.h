@@ -69,6 +69,7 @@
 - (void)highISOAdjustExposure;
 - (void)setupHighISO:(id)arg1;
 - (struct CGRect)convertCameraRect:(struct CGRect)arg1 fromLayer:(id)arg2;
+- (struct CGPoint)convertCameraPointOCR:(struct CGPoint)arg1 toLayer:(id)arg2 flipped:(BOOL)arg3;
 - (struct CGPoint)convertCameraPoint:(struct CGPoint)arg1 toLayer:(id)arg2 flipped:(BOOL)arg3;
 - (struct CGPoint)convertCameraPoint:(struct CGPoint)arg1 toLayer:(id)arg2;
 - (struct CGPoint)convertCameraPoint:(struct CGPoint)arg1 fromLayer:(id)arg2;

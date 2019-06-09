@@ -41,6 +41,8 @@ __attribute__((visibility("hidden")))
 - (void)_authorizationStatusChanged:(id)arg1;
 - (id)_activityIndicatorView;
 - (void)dealloc;
+- (id)_symbolConfiguration;
+- (void)_setupPreferredSymbolConfiguration;
 - (id)initWithTarget:(id)arg1 userTrackingView:(id)arg2 imageView:(id)arg3 button:(id)arg4;
 
 // Remaining properties

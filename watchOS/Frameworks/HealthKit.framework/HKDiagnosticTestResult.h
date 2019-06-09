@@ -6,12 +6,13 @@
 
 #import <HealthKit/HKMedicalRecord.h>
 
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKDiagnosticTestResultType, HKInspectableValueCollection, HKMedicalCoding, HKMedicalDate, NSArray, NSString;
+@class HKConcept, HKDiagnosticTestResultType, HKInspectableValueCollection, HKMedicalCoding, HKMedicalDate, NSArray, NSLocale, NSString, NSUUID;
 
-@interface HKDiagnosticTestResult : HKMedicalRecord <NSSecureCoding, NSCopying>
+@interface HKDiagnosticTestResult : HKMedicalRecord <HKConceptIndexable, NSSecureCoding, NSCopying>
 {
     NSArray *_diagnosticTestCodings;
     HKInspectableValueCollection *_value;
@@ -26,22 +27,40 @@
     NSArray *_bodySiteCodings;
     NSArray *_methodCodings;
     NSArray *_performers;
+    HKConcept *_diagnosticTest;
+    HKConcept *_status;
+    HKConcept *_interpretation;
+    HKConcept *_bodySite;
+    HKConcept *_method;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 diagnosticTestCodings:(id)arg10 value:(id)arg11 referenceRanges:(id)arg12 effectiveStartDate:(id)arg13 category:(id)arg14 issueDate:(id)arg15 effectiveEndDate:(id)arg16 statusCoding:(id)arg17 interpretationCodings:(id)arg18 comments:(id)arg19 bodySiteCodings:(id)arg20 methodCodings:(id)arg21 performers:(id)arg22;
++ (id)_newDiagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 diagnosticTestCodings:(id)arg11 value:(id)arg12 referenceRanges:(id)arg13 effectiveStartDate:(id)arg14 category:(id)arg15 issueDate:(id)arg16 effectiveEndDate:(id)arg17 statusCoding:(id)arg18 interpretationCodings:(id)arg19 comments:(id)arg20 bodySiteCodings:(id)arg21 methodCodings:(id)arg22 performers:(id)arg23 config:(CDUnknownBlockType)arg24;
++ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 diagnosticTestCodings:(id)arg11 value:(id)arg12 referenceRanges:(id)arg13 effectiveStartDate:(id)arg14 category:(id)arg15 issueDate:(id)arg16 effectiveEndDate:(id)arg17 statusCoding:(id)arg18 interpretationCodings:(id)arg19 comments:(id)arg20 bodySiteCodings:(id)arg21 methodCodings:(id)arg22 performers:(id)arg23;
 + (id)defaultDisplayString;
-+ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 diagnosticTestCodings:(id)arg9 value:(id)arg10 referenceRanges:(id)arg11 effectiveStartDate:(id)arg12 category:(id)arg13 issueDate:(id)arg14 effectiveEndDate:(id)arg15 statusCoding:(id)arg16 interpretationCodings:(id)arg17 comments:(id)arg18 bodySiteCodings:(id)arg19 methodCodings:(id)arg20 performers:(id)arg21;
++ (id)diagnosticTestResultWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 diagnosticTestCodings:(id)arg10 value:(id)arg11 referenceRanges:(id)arg12 effectiveStartDate:(id)arg13 category:(id)arg14 issueDate:(id)arg15 effectiveEndDate:(id)arg16 statusCoding:(id)arg17 interpretationCodings:(id)arg18 comments:(id)arg19 bodySiteCodings:(id)arg20 methodCodings:(id)arg21 performers:(id)arg22;
 + (id)statusCodingPreferredSystems;
 + (id)methodCodingsPreferredSystems;
 + (id)interpretationCodingsPreferredSystems;
 + (id)diagnosticTestCodingsPreferredSystems;
 + (id)bodySiteCodingsPreferredSystems;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
 - (void).cxx_destruct;
 @property(readonly, copy) HKDiagnosticTestResultType *diagnosticTestResultType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setMethod:(id)arg1;
+@property(readonly, copy) HKConcept *method;
+- (void)_setBodySite:(id)arg1;
+@property(readonly, copy) HKConcept *bodySite;
+- (void)_setInterpretation:(id)arg1;
+@property(readonly, copy) HKConcept *interpretation;
+- (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKConcept *status;
+- (void)_setDiagnosticTest:(id)arg1;
+@property(readonly, copy) HKConcept *diagnosticTest;
 - (void)_setPerformers:(id)arg1;
 @property(readonly, copy) NSArray *performers;
 - (void)_setMethodCodings:(id)arg1;
@@ -68,11 +87,21 @@
 @property(readonly, copy) HKInspectableValueCollection *value;
 - (void)_setDiagnosticTestCodings:(id)arg1;
 @property(readonly, copy) NSArray *diagnosticTestCodings;
+- (id)methodCodingsContext;
+- (id)methodCodingsCollection;
+- (id)bodySiteCodingsContext;
+- (id)bodySiteCodingsCollection;
+- (id)interpretationCodingsContext;
+- (id)interpretationCodingsCollection;
+- (id)statusCodingContext;
+- (id)statusCodingCollection;
+- (id)diagnosticTestCodingsContext;
+- (id)diagnosticTestCodingsCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
@@ -82,6 +111,15 @@
 - (id)interpretationCodingsTasks;
 - (id)diagnosticTestCodingsTasks;
 - (id)bodySiteCodingsTasks;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly) NSUUID *UUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly, copy, nonatomic) NSLocale *locale;
+@property(readonly) Class superclass;
 
 @end
 

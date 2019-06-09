@@ -8,6 +8,7 @@
 
 @class NSData, NSHTTPURLResponse;
 
+__attribute__((visibility("hidden")))
 @interface SKUIURLResolverResponse : NSObject
 {
     NSData *_data;

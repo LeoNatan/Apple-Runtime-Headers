@@ -6,17 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableSet, NSString;
+@class NSMutableSet, NSString;
 
-__attribute__((visibility("hidden")))
 @interface NSURLCacheDBReader : NSObject
 {
     struct sqlite3_stmt *_sqlSelectStmt;
     struct sqlite3_stmt *_sqlSelectTimeStmt;
     struct sqlite3 *_dbReadConnection;
-    NSLock *_dbReadConnectionLock;
+    struct os_unfair_lock_s _dbReadConnectionLock;
     long long _schemaVersion;
-    NSLock *_timeRelativeLookupLock;
+    struct os_unfair_lock_s _timeRelativeLookupLock;
     NSMutableSet *recentTimeStampLookups;
     unsigned char _performTimeRelativeLookups;
     NSString *_dbPathDirectory;

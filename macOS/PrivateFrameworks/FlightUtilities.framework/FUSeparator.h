@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)setStyleProvider:(id)arg1;
 - (void)updateConstraints;
 - (double)onePixelSize;
 - (id)initWithCoder:(id)arg1;

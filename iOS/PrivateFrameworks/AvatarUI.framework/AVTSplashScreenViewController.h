@@ -8,7 +8,7 @@
 
 #import <AvatarUI/AVTSplashScreenLayoutDelegate-Protocol.h>
 
-@class AVPlayerLooper, AVPlayerViewController, AVQueuePlayer, AVTSplashScreenConfiguration, AVTSplashScreenLayout, AVTUIStyle, UIButton, UILabel;
+@class AVPlayerLooper, AVPlayerViewController, AVQueuePlayer, AVTSplashScreenConfiguration, AVTSplashScreenLayout, AVTUIStyle, UIButton, UILabel, UIScrollView;
 @protocol AVTSplashScreenViewControllerDelegate;
 
 @interface AVTSplashScreenViewController : UIViewController <AVTSplashScreenLayoutDelegate>
@@ -17,6 +17,7 @@
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UIButton *_continueButton;
+    UIScrollView *_scrollView;
     AVTSplashScreenConfiguration *_configuration;
     AVTUIStyle *_styleProvider;
     AVPlayerLooper *_playerLooper;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) AVPlayerLooper *playerLooper; // @synthesize playerLooper=_playerLooper;
 @property(retain, nonatomic) AVTUIStyle *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(retain, nonatomic) AVTSplashScreenConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;

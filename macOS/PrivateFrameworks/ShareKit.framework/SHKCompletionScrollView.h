@@ -6,11 +6,12 @@
 
 #import <AppKit/NSScrollView.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKCompletionScrollView : NSScrollView
 {
 }
 
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 
 @end
 

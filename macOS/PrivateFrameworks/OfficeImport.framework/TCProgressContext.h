@@ -8,6 +8,7 @@
 
 @class NSDate, NSMutableArray, OITSUProgressContext, TCProgressStage;
 
+__attribute__((visibility("hidden")))
 @interface TCProgressContext : NSObject
 {
     OITSUProgressContext *m_parentProgressContext;

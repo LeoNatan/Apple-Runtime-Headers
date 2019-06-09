@@ -6,7 +6,8 @@
 
 #import <FileProvider/NSObject-Protocol.h>
 
-@class NSData, NSDate, NSDictionary, NSError, NSNumber, NSPersonNameComponents, NSString;
+@class NSData, NSDate, NSDictionary, NSError, NSFileProviderItemVersion, NSNumber, NSPersonNameComponents, NSString;
+@protocol NSFileProviderItemFlags;
 
 @protocol NSFileProviderItem <NSObject>
 @property(readonly, copy, nonatomic) NSString *typeIdentifier;
@@ -16,12 +17,14 @@
 
 @optional
 @property(readonly, nonatomic) NSDictionary *userInfo;
+@property(readonly, nonatomic) NSFileProviderItemVersion *itemVersion;
 @property(readonly, nonatomic) NSData *versionIdentifier;
 @property(readonly, nonatomic) NSPersonNameComponents *mostRecentEditorNameComponents;
 @property(readonly, nonatomic) NSPersonNameComponents *ownerNameComponents;
 @property(readonly, nonatomic, getter=isSharedByCurrentUser) _Bool sharedByCurrentUser;
 @property(readonly, nonatomic, getter=isShared) _Bool shared;
 @property(readonly, nonatomic, getter=isMostRecentVersionDownloaded) _Bool mostRecentVersionDownloaded;
+@property(readonly, nonatomic, getter=isExcludedFromSync) _Bool excludedFromSync;
 @property(readonly, copy, nonatomic) NSError *downloadingError;
 @property(readonly, nonatomic, getter=isDownloading) _Bool downloading;
 @property(readonly, nonatomic, getter=isDownloaded) _Bool downloaded;
@@ -32,10 +35,12 @@
 @property(readonly, copy, nonatomic) NSNumber *favoriteRank;
 @property(readonly, copy, nonatomic) NSData *tagData;
 @property(readonly, copy, nonatomic) NSDate *lastUsedDate;
+@property(readonly, nonatomic) NSDictionary *extendedAttributes;
 @property(readonly, copy, nonatomic) NSDate *contentModificationDate;
 @property(readonly, copy, nonatomic) NSDate *creationDate;
 @property(readonly, copy, nonatomic) NSNumber *childItemCount;
 @property(readonly, copy, nonatomic) NSNumber *documentSize;
+@property(readonly, nonatomic) id <NSFileProviderItemFlags> flags;
 @property(readonly, nonatomic) unsigned long long capabilities;
 @end
 

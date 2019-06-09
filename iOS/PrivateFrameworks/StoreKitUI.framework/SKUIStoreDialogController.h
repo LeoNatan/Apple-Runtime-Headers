@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStoreDialogController : NSObject <UIAlertViewDelegate>
 {
     NSMutableArray *_alerts;

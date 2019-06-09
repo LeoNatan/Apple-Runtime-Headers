@@ -12,11 +12,11 @@
 {
     unsigned int _personalizedAddressIndex;
     struct {
-        unsigned int personalizedAddressIndex:1;
-    } _has;
+        unsigned int has_personalizedAddressIndex:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int personalizedAddressIndex; // @synthesize personalizedAddressIndex=_personalizedAddressIndex;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -24,9 +24,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasPersonalizedAddressIndex;
+@property(nonatomic) unsigned int personalizedAddressIndex;
 
 @end
 

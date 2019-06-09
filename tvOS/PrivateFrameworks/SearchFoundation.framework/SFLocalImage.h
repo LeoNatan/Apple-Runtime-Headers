@@ -22,6 +22,8 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) int localImageType; // @synthesize localImageType=_localImageType;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
@@ -35,7 +37,6 @@
 @property(nonatomic) double cornerRadius;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(copy, nonatomic) NSString *identifier;
 @property(copy) NSData *imageData;
 @property(nonatomic) _Bool isTemplate;

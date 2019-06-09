@@ -14,11 +14,11 @@
     int _clientpid;
     unsigned int _clientuid;
     BOOL _privacyUserReadEntitled;
-    long long _privacyUserReadEntitlementChecked;
+    unsigned char _privacyUserReadEntitlementChecked;
     BOOL _privacyUserWriteEntitled;
-    long long _privacyUserWriteEntitlementChecked;
+    unsigned char _privacyUserWriteEntitlementChecked;
     BOOL _privacySystemWriteEntitled;
-    long long _privacySystemWriteEntitlementChecked;
+    unsigned char _privacySystemWriteEntitlementChecked;
 }
 
 @property unsigned int userIdentifier; // @synthesize userIdentifier=_clientuid;

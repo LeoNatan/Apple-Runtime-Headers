@@ -23,8 +23,6 @@
 + (void)updateItemForServiceName:(id)arg1 username:(id)arg2 accessGroup:(id)arg3 newValues:(id)arg4 options:(id)arg5 error:(id *)arg6;
 + (id)passwordForServiceName:(id)arg1 username:(id)arg2 accessGroup:(id)arg3 options:(id)arg4 error:(id *)arg5;
 + (_Bool)canAccessPasswordsWithPolicy:(id)arg1;
-+ (id)_missingKeychainItemSpecifierForService:(id)arg1 username:(id)arg2;
-+ (id)_knownMissingKeychainItems;
 
 @end
 

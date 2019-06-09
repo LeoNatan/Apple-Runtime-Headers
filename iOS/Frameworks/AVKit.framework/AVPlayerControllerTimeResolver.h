@@ -25,7 +25,7 @@
 + (_Bool)automaticallyNotifiesObserversOfCurrentTime;
 + (id)keyPathsForValuesAffectingCurrentTimeAtEndOfSeekableTimeRanges;
 + (id)keyPathsForValuesAffectingThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
-+ (id)keyPathForValuesAffectingSeekableTimeRangeDuration;
++ (id)keyPathsForValuesAffectingSeekableTimeRangeDuration;
 + (id)keyPathsForValuesAffectingRemainingTimeWithinEndTimes;
 + (id)keyPathsForValuesAffectingRemainingTime;
 + (id)keyPathsForValuesAffectingCurrentTimeWithinEndTimes;

@@ -8,6 +8,7 @@
 
 @protocol SKUISettingsDocumentViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsDocumentView : UIView
 {
     id <SKUISettingsDocumentViewDelegate> _delegate;

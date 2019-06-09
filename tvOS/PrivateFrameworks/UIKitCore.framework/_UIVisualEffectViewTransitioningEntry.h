@@ -18,8 +18,6 @@ __attribute__((visibility("hidden")))
 - (id)copyForTransitionOut;
 - (id)copyForTransitionToEffect:(id)arg1;
 - (_Bool)canTransitionToEffect:(id)arg1;
-- (_Bool)hasTransform;
-- (_Bool)shouldManageCornerRadius;
 - (_Bool)isSameTypeOfEffect:(id)arg1;
 - (void)removeEffectFromView:(id)arg1;
 - (void)applyRequestedEffectToView:(id)arg1;

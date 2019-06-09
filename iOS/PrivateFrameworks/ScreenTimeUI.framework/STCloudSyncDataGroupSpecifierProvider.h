@@ -7,29 +7,30 @@
 #import <ScreenTimeUI/STRootGroupSpecifierProvider.h>
 
 #import <ScreenTimeUI/AAUIDeviceToDeviceEncryptionHelperDelegate-Protocol.h>
+#import <ScreenTimeUI/MCProfileConnectionObserver-Protocol.h>
 
 @class NSString, PSSpecifier;
 
-@interface STCloudSyncDataGroupSpecifierProvider : STRootGroupSpecifierProvider <AAUIDeviceToDeviceEncryptionHelperDelegate>
+__attribute__((visibility("hidden")))
+@interface STCloudSyncDataGroupSpecifierProvider : STRootGroupSpecifierProvider <AAUIDeviceToDeviceEncryptionHelperDelegate, MCProfileConnectionObserver>
 {
-    _Bool _wantsToEnableSync;
     PSSpecifier *_toggleCloudSyncDataSpecifier;
 }
 
-@property(nonatomic) _Bool wantsToEnableSync; // @synthesize wantsToEnableSync=_wantsToEnableSync;
-@property(retain, nonatomic) PSSpecifier *toggleCloudSyncDataSpecifier; // @synthesize toggleCloudSyncDataSpecifier=_toggleCloudSyncDataSpecifier;
+@property(readonly, nonatomic) PSSpecifier *toggleCloudSyncDataSpecifier; // @synthesize toggleCloudSyncDataSpecifier=_toggleCloudSyncDataSpecifier;
 - (void).cxx_destruct;
+- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)deviceToDeviceEncryptionHelper:(id)arg1 shouldContinueUpgradingUserToHSA2WithCompletion:(CDUnknownBlockType)arg2;
+- (void)_updateEnabledValue;
 - (id)cloudSyncData:(id)arg1;
 - (void)presentHSA2RepairUI:(CDUnknownBlockType)arg1;
 - (void)performHSA2RepairIfNeeded:(CDUnknownBlockType)arg1;
 - (void)setScreenTimeSyncing:(_Bool)arg1;
-- (void)cancelChangeSync:(id)arg1;
-- (void)acceptedPINToChangeSync:(id)arg1;
 - (void)changeCloudSyncData:(_Bool)arg1;
 - (void)setCloudSyncData:(id)arg1 specifier:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

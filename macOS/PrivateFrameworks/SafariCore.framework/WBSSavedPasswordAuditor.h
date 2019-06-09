@@ -21,6 +21,7 @@
 - (BOOL)_passwordIsReused:(id)arg1 byOtherSavedPassword:(id)arg2;
 - (BOOL)_savedPasswordQualifiesForReuseAuditing:(id)arg1;
 - (id)initWithSavedPasswordStore:(id)arg1 autoFillQuirksManager:(id)arg2;
+- (id)init;
 
 @end
 

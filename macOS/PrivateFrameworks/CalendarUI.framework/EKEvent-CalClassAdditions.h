@@ -31,9 +31,8 @@
 - (BOOL)addAttachmentsWithURLs:(id)arg1;
 - (BOOL)addAttachmentsFromDraggingPasteboard:(id)arg1;
 - (BOOL)addAttendeeFromAttendeeRep:(id)arg1;
-- (BOOL)addAttendeeFromABPerson:(id)arg1;
-- (BOOL)draggedABPeople:(id)arg1;
-- (BOOL)draggedABGroup:(id)arg1;
+- (BOOL)draggedPeople:(id)arg1;
+- (BOOL)draggedGroup:(id)arg1;
 - (id)textRepresentationForAttendee:(id)arg1 includeEmailAddress:(BOOL)arg2;
 - (id)textRepresentationWithFormat:(int)arg1 showURI:(BOOL)arg2;
 - (id)showEventURLString;

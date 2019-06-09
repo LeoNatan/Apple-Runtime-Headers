@@ -10,6 +10,7 @@
 
 @class EBReaderSheetState, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EBSheetContext : NSObject <OCDDelayedNodeContext>
 {
     EBReaderSheetState *mSheetState;

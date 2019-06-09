@@ -16,15 +16,25 @@
     TIKeyboardIntermediateText *_intermediateText;
     RTIStyledIntermediateText *_styledIntermediateText;
     NSDictionary *_attributedPlaceholders;
+    NSAttributedString *_textCheckingAnnotatedString;
     NSString *_textToAssert;
     SEL _editingActionSelector;
+    NSString *_textCheckingAnnotationToRemove;
     struct _NSRange _selectionRangeToAssert;
+    struct _NSRange _textCheckingAnnotationRange;
+    struct _NSRange _textCheckingReplacementRange;
+    struct _NSRange _textCheckingAnnotationRemovalRange;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *textCheckingAnnotationToRemove; // @synthesize textCheckingAnnotationToRemove=_textCheckingAnnotationToRemove;
+@property(nonatomic) struct _NSRange textCheckingAnnotationRemovalRange; // @synthesize textCheckingAnnotationRemovalRange=_textCheckingAnnotationRemovalRange;
+@property(nonatomic) struct _NSRange textCheckingReplacementRange; // @synthesize textCheckingReplacementRange=_textCheckingReplacementRange;
+@property(nonatomic) struct _NSRange textCheckingAnnotationRange; // @synthesize textCheckingAnnotationRange=_textCheckingAnnotationRange;
 @property(nonatomic) SEL editingActionSelector; // @synthesize editingActionSelector=_editingActionSelector;
 @property(nonatomic) struct _NSRange selectionRangeToAssert; // @synthesize selectionRangeToAssert=_selectionRangeToAssert;
 @property(copy, nonatomic) NSString *textToAssert; // @synthesize textToAssert=_textToAssert;
+@property(copy, nonatomic) NSAttributedString *textCheckingAnnotatedString; // @synthesize textCheckingAnnotatedString=_textCheckingAnnotatedString;
 @property(retain, nonatomic) NSDictionary *attributedPlaceholders; // @synthesize attributedPlaceholders=_attributedPlaceholders;
 @property(retain, nonatomic) RTIStyledIntermediateText *styledIntermediateText; // @synthesize styledIntermediateText=_styledIntermediateText;
 @property(retain, nonatomic) TIKeyboardIntermediateText *intermediateText; // @synthesize intermediateText=_intermediateText;

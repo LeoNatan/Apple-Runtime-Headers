@@ -25,6 +25,7 @@
 @property(retain) NSObject<OS_dispatch_queue> *contextRequestsQueue; // @synthesize contextRequestsQueue=_contextRequestsQueue;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)persistenceContextWithOptions:(long long)arg1;
 - (id)_persistenceContext;
 - (id)waitForPersistenceContext;
 - (id)persistenceContext;

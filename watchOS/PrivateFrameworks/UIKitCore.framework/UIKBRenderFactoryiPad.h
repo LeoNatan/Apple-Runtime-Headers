@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (float)cornerRadiusForKey:(id)arg1;
 - (_Bool)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
 - (_Bool)_onLeftSide:(id)arg1 onKeyplane:(id)arg2;
+- (struct CGPoint)variantAnnotationTextOffset;
 - (struct UIEdgeInsets)variantSymbolFrameInsets;
 - (struct UIEdgeInsets)variantDisplayFrameInsets;
 - (struct UIEdgeInsets)variantPaddedFrameInsets;

@@ -8,7 +8,7 @@
 
 #import <PlatterKit/UIViewControllerAnimatedTransitioning-Protocol.h>
 
-@class NSPointerArray, NSString, UIView;
+@class NSPointerArray, NSString, UIView, UIViewPropertyAnimator;
 @protocol PLViewControllerAnimatorDelegate;
 
 @interface PLViewControllerAnimator : NSObject <UIViewControllerAnimatedTransitioning>
@@ -18,14 +18,18 @@
     _Bool _didPrepareForTransition;
     _Bool _presenting;
     _Bool _includePresentingViewInAnimation;
+    _Bool _runAlongsideAnimationsManually;
+    UIViewPropertyAnimator *_propertyAnimator;
     id <PLViewControllerAnimatorDelegate> _delegate;
 }
 
 + (_Bool)drivesAnimation;
+@property(nonatomic) _Bool runAlongsideAnimationsManually; // @synthesize runAlongsideAnimationsManually=_runAlongsideAnimationsManually;
 @property(nonatomic) _Bool includePresentingViewInAnimation; // @synthesize includePresentingViewInAnimation=_includePresentingViewInAnimation;
 @property(readonly, nonatomic, getter=isPresenting) _Bool presenting; // @synthesize presenting=_presenting;
 @property(nonatomic) __weak id <PLViewControllerAnimatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)animationEnded:(_Bool)arg1;
 - (void)animateTransition:(id)arg1;
 - (void)_animateTransitionWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performTransitionWithContext:(id)arg1;
@@ -39,11 +43,12 @@
 - (id)_sourceViewForPresentation:(_Bool)arg1 withTransitionContext:(id)arg2;
 - (id)_presentedViewForPresentation:(_Bool)arg1 withTransitionContext:(id)arg2;
 - (id)_presentingViewForPresentation:(_Bool)arg1 withTransitionContext:(id)arg2;
-- (id)_animationFactoryForLongLookPresentation:(_Bool)arg1;
+- (id)_newPropertyAnimator;
 - (_Bool)_isTransitionAnimated;
 - (void)_notifyObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly, nonatomic) UIViewPropertyAnimator *propertyAnimator; // @synthesize propertyAnimator=_propertyAnimator;
 - (id)initForPresentation:(_Bool)arg1 withSourceView:(id)arg2;
 
 // Remaining properties

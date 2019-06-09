@@ -12,6 +12,7 @@
 {
 }
 
++ (Class)meltedClass;
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 + (id)calendarWithRandomUUID;
@@ -30,6 +31,8 @@
 @property(copy, nonatomic) NSString *ownerIdentityPhoneNumber; // @dynamic ownerIdentityPhoneNumber;
 @property(copy, nonatomic) NSString *ownerIdentityEmail; // @dynamic ownerIdentityEmail;
 @property(copy, nonatomic) NSString *ownerIdentityDisplayName; // @dynamic ownerIdentityDisplayName;
+- (void)setOwnerIdentityId:(int)arg1;
+- (int)ownerIdentityId;
 @property(copy, nonatomic) NSString *selfIdentityLastName; // @dynamic selfIdentityLastName;
 @property(copy, nonatomic) NSString *selfIdentityFirstName; // @dynamic selfIdentityFirstName;
 @property(copy, nonatomic) NSURL *selfIdentityAddress; // @dynamic selfIdentityAddress;
@@ -41,6 +44,8 @@
 @property(nonatomic) unsigned long long invitationStatus; // @dynamic invitationStatus;
 @property(retain, nonatomic) EKPersistentSource *source; // @dynamic source;
 @property(copy, nonatomic) NSSet *sharees; // @dynamic sharees;
+- (void)setNotifications:(id)arg1;
+- (id)notifications;
 @property(nonatomic, getter=isPublished) _Bool published; // @dynamic published;
 - (void)setIsPublished:(_Bool)arg1;
 @property(copy, nonatomic) NSString *publishedURL; // @dynamic publishedURL;

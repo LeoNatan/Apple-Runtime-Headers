@@ -9,19 +9,19 @@
 #import <Home/HFCharacteristicValueSource-Protocol.h>
 #import <Home/HFMediaValueSource-Protocol.h>
 
-@class NSError, NSString;
-@protocol HFCharacteristicOperationContextProviding, HFMediaProfileContainer;
+@class NSString;
+@protocol HFCharacteristicOperationContextProviding;
 
 @interface HFNullValueSource : NSObject <HFCharacteristicValueSource, HFMediaValueSource>
 {
 }
 
 + (id)na_identity;
-@property(readonly, nonatomic) NSError *cachedPlaybackStateWriteError;
-@property(readonly, nonatomic) _Bool hasPendingWrites;
-- (id)writePlaybackState:(int)arg1;
-- (int)lastPlaybackStateForProfile;
-@property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer;
+- (id)cachedPlaybackStateWriteErrorForRouteID:(id)arg1;
+- (_Bool)hasPendingWritesForRouteID:(id)arg1;
+- (id)writePlaybackState:(int)arg1 forRouteID:(id)arg2;
+- (int)lastPlaybackStateForProfileForRouteID:(id)arg1;
+- (id)mediaProfileContainerForRouteID:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)commitTransactionWithReason:(id)arg1;

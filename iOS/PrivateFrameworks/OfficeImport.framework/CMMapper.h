@@ -8,19 +8,27 @@
 
 #import <OfficeImport/CMMapperRootArchiver-Protocol.h>
 
+@class CMArchiveManager, NSString, OCDDocument;
+
 __attribute__((visibility("hidden")))
 @interface CMMapper : NSObject <CMMapperRootArchiver>
 {
     CMMapper *mParent;
     CMMapper *mRoot;
+    OCDDocument *_document;
+    CMArchiveManager *mArchiver;
+    NSString *_fileName;
 }
 
+@property(retain) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly) __weak CMMapper *parent; // @synthesize parent=mParent;
 - (void).cxx_destruct;
+@property(readonly) OCDDocument *document;
 - (void)finishMappingWithState:(id)arg1;
 - (void)mapElement:(id)arg1 atIndex:(unsigned long long)arg2 withState:(id)arg3 isLastElement:(_Bool)arg4;
 - (void)startMappingWithState:(id)arg1;
 - (void)mapStylesheetAt:(id)arg1 stylesheet:(id)arg2;
+- (void)mapWithState:(id)arg1;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)addStyle:(id)arg1 withName:(id)arg2;
 - (void)addStyleUsingGlobalCacheTo:(id)arg1 style:(id)arg2 embedStyle:(_Bool)arg3;

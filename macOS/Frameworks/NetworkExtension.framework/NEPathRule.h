@@ -14,6 +14,7 @@
 @interface NEPathRule : NEAppRule <NEConfigurationValidating, NEPrettyDescription>
 {
     BOOL _denyCellularFallback;
+    BOOL _isIdentifierExternal;
     NSNumber *_aggregatePersonalCellular;
     NSNumber *_aggregateEnterpriseCellular;
     long long _internalCellularBehavior;
@@ -30,6 +31,7 @@
 @property long long internalCellularBehavior; // @synthesize internalCellularBehavior=_internalCellularBehavior;
 @property(retain) NSNumber *aggregateEnterpriseCellular; // @synthesize aggregateEnterpriseCellular=_aggregateEnterpriseCellular;
 @property(retain) NSNumber *aggregatePersonalCellular; // @synthesize aggregatePersonalCellular=_aggregatePersonalCellular;
+@property BOOL isIdentifierExternal; // @synthesize isIdentifierExternal=_isIdentifierExternal;
 @property BOOL denyCellularFallback; // @synthesize denyCellularFallback=_denyCellularFallback;
 - (void).cxx_destruct;
 - (BOOL)supportsWiFiBehavior:(long long)arg1;

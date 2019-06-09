@@ -20,7 +20,8 @@
 
 + (_Bool)isDataProtectionError:(id)arg1;
 + (id)standardStoreOptions;
-+ (id)newManagedObjectModel;
++ (id)oldManagedObjectModel;
++ (id)managedObjectModel;
 @property(nonatomic) _Bool abortAfterReplacingDatabase; // @synthesize abortAfterReplacingDatabase=_abortAfterReplacingDatabase;
 @property(nonatomic) unsigned long long fakeFreeDiskSpace; // @synthesize fakeFreeDiskSpace=_fakeFreeDiskSpace;
 @property(retain, nonatomic) NSMergePolicy *mergePolicy; // @synthesize mergePolicy=_mergePolicy;
@@ -36,6 +37,8 @@
 - (_Bool)loadPersistentStore:(id *)arg1;
 - (void)setupPersistentStoreDescriptions;
 - (id)newBackgroundContext;
+- (_Bool)migrateFromOldDataModel;
+- (id)initWithStoreURL:(id)arg1 storeType:(id)arg2 options:(id)arg3 mergePolicy:(id)arg4 managedObjectModel:(id)arg5;
 - (id)initWithStoreURL:(id)arg1 storeType:(id)arg2 options:(id)arg3 mergePolicy:(id)arg4;
 
 @end

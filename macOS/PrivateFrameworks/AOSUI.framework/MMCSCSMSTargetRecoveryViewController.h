@@ -16,20 +16,20 @@
 
 @interface MMCSCSMSTargetRecoveryViewController : NSViewController <NSTouchBarProvider, MMPinFieldViewDelegate, MMLinkTextFieldDelegate, MMCSCProgressIndicatorProtocol>
 {
+    MMPinFieldView *_smsTargetPinFieldView;
+    NSString *_smsTargetCountryCode;
+    NSString *_smsTarget;
+    NSString *_smsVerificationToken;
     id <MMCSCSMSTargetRecoveryViewControllerDelegate> _delegate;
     NSImageView *_smsTargetImageView;
     NSTextField *_smsTargetTitle;
+    MMLinkTextField *_smsTargetMessage;
     NSView *_smsTargetPinFieldPlaceholder;
     NSLayoutConstraint *_smsTargetPinFieldWidthConstraint;
-    MMPinFieldView *_smsTargetPinFieldView;
-    MMLinkTextField *_smsTargetMessage;
     NSButton *_smsTargetConfirmButton;
     NSButton *_smsTargetCancelButton;
     NSButton *_smsTargetHelpButton;
     NSProgressIndicator *_smsTargetProgressIndicator;
-    NSString *_smsTargetCountryCode;
-    NSString *_smsTarget;
-    NSString *_smsVerificationToken;
     iCloudTouchBarController *_touchBarController;
 }
 
@@ -37,17 +37,18 @@
 @property(copy) NSString *smsVerificationToken; // @synthesize smsVerificationToken=_smsVerificationToken;
 @property(copy) NSString *smsTarget; // @synthesize smsTarget=_smsTarget;
 @property(copy) NSString *smsTargetCountryCode; // @synthesize smsTargetCountryCode=_smsTargetCountryCode;
-@property NSProgressIndicator *smsTargetProgressIndicator; // @synthesize smsTargetProgressIndicator=_smsTargetProgressIndicator;
-@property NSButton *smsTargetHelpButton; // @synthesize smsTargetHelpButton=_smsTargetHelpButton;
-@property NSButton *smsTargetCancelButton; // @synthesize smsTargetCancelButton=_smsTargetCancelButton;
-@property NSButton *smsTargetConfirmButton; // @synthesize smsTargetConfirmButton=_smsTargetConfirmButton;
+@property __weak NSProgressIndicator *smsTargetProgressIndicator; // @synthesize smsTargetProgressIndicator=_smsTargetProgressIndicator;
+@property __weak NSButton *smsTargetHelpButton; // @synthesize smsTargetHelpButton=_smsTargetHelpButton;
+@property __weak NSButton *smsTargetCancelButton; // @synthesize smsTargetCancelButton=_smsTargetCancelButton;
+@property __weak NSButton *smsTargetConfirmButton; // @synthesize smsTargetConfirmButton=_smsTargetConfirmButton;
 @property(retain) MMPinFieldView *smsTargetPinFieldView; // @synthesize smsTargetPinFieldView=_smsTargetPinFieldView;
-@property NSLayoutConstraint *smsTargetPinFieldWidthConstraint; // @synthesize smsTargetPinFieldWidthConstraint=_smsTargetPinFieldWidthConstraint;
-@property NSView *smsTargetPinFieldPlaceholder; // @synthesize smsTargetPinFieldPlaceholder=_smsTargetPinFieldPlaceholder;
-@property MMLinkTextField *smsTargetMessage; // @synthesize smsTargetMessage=_smsTargetMessage;
-@property NSTextField *smsTargetTitle; // @synthesize smsTargetTitle=_smsTargetTitle;
-@property NSImageView *smsTargetImageView; // @synthesize smsTargetImageView=_smsTargetImageView;
+@property __weak NSLayoutConstraint *smsTargetPinFieldWidthConstraint; // @synthesize smsTargetPinFieldWidthConstraint=_smsTargetPinFieldWidthConstraint;
+@property __weak NSView *smsTargetPinFieldPlaceholder; // @synthesize smsTargetPinFieldPlaceholder=_smsTargetPinFieldPlaceholder;
+@property __weak MMLinkTextField *smsTargetMessage; // @synthesize smsTargetMessage=_smsTargetMessage;
+@property __weak NSTextField *smsTargetTitle; // @synthesize smsTargetTitle=_smsTargetTitle;
+@property __weak NSImageView *smsTargetImageView; // @synthesize smsTargetImageView=_smsTargetImageView;
 @property id <MMCSCSMSTargetRecoveryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)clickedOnLink:(id)arg1;
 - (void)pinFieldViewTextDidChange:(id)arg1;
 - (id)_countryPrefixForCountryCode:(id)arg1;
@@ -59,7 +60,6 @@
 - (void)confirmButtonClicked:(id)arg1;
 - (void)setupViewWithPinLength:(long long)arg1;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

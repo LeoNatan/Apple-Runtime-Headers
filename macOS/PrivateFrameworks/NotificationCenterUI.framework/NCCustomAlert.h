@@ -18,6 +18,7 @@
     _Bool _markedForRemoval;
     BOOL _ignoresDND;
     BOOL _allowsSwipeToDismiss;
+    BOOL ignoresDowntime;
     BOOL _displaysOnLockscreen;
     unsigned long long _order;
     id <NCCustomAlertDelegate> _delegate;
@@ -38,6 +39,7 @@
 @property(readonly) NSViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property __weak id <NCCustomAlertDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL allowsSwipeToDismiss; // @synthesize allowsSwipeToDismiss=_allowsSwipeToDismiss;
+@property BOOL ignoresDowntime; // @synthesize ignoresDowntime;
 @property BOOL ignoresDND; // @synthesize ignoresDND=_ignoresDND;
 @property unsigned long long order; // @synthesize order=_order;
 - (void).cxx_destruct;

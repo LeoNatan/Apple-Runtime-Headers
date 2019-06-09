@@ -6,28 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL;
+@class NSMutableDictionary, NSURL;
 
 @interface AVTResourceLocator : NSObject
 {
+    NSMutableDictionary *_imageCache;
     NSURL *_resourcesURL;
     NSURL *_componentsURL;
 }
 
 + (id)sharedResourceLocator;
 - (void).cxx_destruct;
+- (struct CGImage *)imageWithPath:(id)arg1;
 @property(readonly) NSURL *propsURL;
 @property(readonly) NSURL *presetThumbnailsURL;
 @property(readonly) NSURL *materialsURL;
 @property(readonly) NSURL *maskImagesURL;
 @property(readonly) NSURL *componentsURL; // @synthesize componentsURL=_componentsURL;
+- (id)pathForStickerResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
+- (id)pathForStickerResource:(id)arg1 ofType:(id)arg2;
 - (id)pathForAnimojiResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 - (id)pathForAnimojiResource:(id)arg1 ofType:(id)arg2;
 - (id)pathForMemojiResource:(id)arg1 ofType:(id)arg2 inDirectory:(id)arg3;
 - (id)pathForMemojiResource:(id)arg1 ofType:(id)arg2;
+@property(readonly) NSURL *stickerResourcesURL;
 @property(readonly) NSURL *animojiResourcesURL;
 @property(readonly) NSURL *memojiResourcesURL;
 @property(readonly) NSURL *resourcesURL; // @synthesize resourcesURL=_resourcesURL;
+- (id)init;
 
 @end
 

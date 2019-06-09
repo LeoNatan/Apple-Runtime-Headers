@@ -13,10 +13,10 @@
 
 @interface SCRKeyboardKey : NSObject <NSCopying, NSSecureCoding>
 {
+    BOOL _didSetKeyCode;
+    BOOL _shifted;
     BOOL _commanded;
     BOOL _fned;
-    BOOL _shifted;
-    BOOL _didSetKeyCode;
     BOOL _function;
     unsigned short _keyCode;
     unsigned int _eventFlags;
@@ -30,15 +30,15 @@
 + (id)keysWithPressCountGreaterThanOne;
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL function; // @synthesize function=_function;
+@property(nonatomic) BOOL fned; // @synthesize fned=_fned;
+@property(nonatomic) BOOL commanded; // @synthesize commanded=_commanded;
+@property(nonatomic) BOOL shifted; // @synthesize shifted=_shifted;
 @property(nonatomic) unsigned long long pressCount; // @synthesize pressCount=_pressCount;
 @property(nonatomic) unsigned int eventFlags; // @synthesize eventFlags=_eventFlags;
 @property(nonatomic) BOOL didSetKeyCode; // @synthesize didSetKeyCode=_didSetKeyCode;
 @property(nonatomic) unsigned short keyCode; // @synthesize keyCode=_keyCode;
 @property(copy, nonatomic) NSString *rawCharacters; // @synthesize rawCharacters=_rawCharacters;
 @property(copy, nonatomic) NSString *characters; // @synthesize characters=_characters;
-@property(nonatomic) BOOL isShifted; // @synthesize isShifted=_shifted;
-@property(nonatomic) BOOL isFned; // @synthesize isFned=_fned;
-@property(nonatomic) BOOL isCommanded; // @synthesize isCommanded=_commanded;
 - (void).cxx_destruct;
 - (long long)modifierMask;
 - (long long)modifierMaskForGuide;

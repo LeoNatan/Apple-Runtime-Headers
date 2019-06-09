@@ -14,7 +14,7 @@
 @interface HDCodableVaccinationRecord : PBCodable <HDDecoding, NSCopying>
 {
     NSData *_administrationDate;
-    HDCodableMedicalCodingList *_bodySiteCoding;
+    HDCodableMedicalCodingList *_bodySiteCodings;
     NSString *_doseNumber;
     NSString *_doseQuantity;
     NSData *_expirationDate;
@@ -42,7 +42,7 @@
 @property(retain, nonatomic) NSData *administrationDate; // @synthesize administrationDate=_administrationDate;
 @property(nonatomic) _Bool notGiven; // @synthesize notGiven=_notGiven;
 @property(retain, nonatomic) NSString *reaction; // @synthesize reaction=_reaction;
-@property(retain, nonatomic) HDCodableMedicalCodingList *bodySiteCoding; // @synthesize bodySiteCoding=_bodySiteCoding;
+@property(retain, nonatomic) HDCodableMedicalCodingList *bodySiteCodings; // @synthesize bodySiteCodings=_bodySiteCodings;
 @property(retain, nonatomic) NSString *performer; // @synthesize performer=_performer;
 @property(retain, nonatomic) NSString *doseQuantity; // @synthesize doseQuantity=_doseQuantity;
 @property(retain, nonatomic) NSString *doseNumber; // @synthesize doseNumber=_doseNumber;
@@ -67,7 +67,7 @@
 @property(readonly, nonatomic) _Bool hasAdministrationDate;
 @property(nonatomic) _Bool hasNotGiven;
 @property(readonly, nonatomic) _Bool hasReaction;
-@property(readonly, nonatomic) _Bool hasBodySiteCoding;
+@property(readonly, nonatomic) _Bool hasBodySiteCodings;
 @property(readonly, nonatomic) _Bool hasPerformer;
 @property(readonly, nonatomic) _Bool hasDoseQuantity;
 @property(readonly, nonatomic) _Bool hasDoseNumber;

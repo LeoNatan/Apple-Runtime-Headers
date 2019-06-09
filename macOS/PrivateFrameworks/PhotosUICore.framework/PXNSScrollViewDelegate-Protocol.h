@@ -7,6 +7,7 @@
 @class NSScrollView;
 
 @protocol PXNSScrollViewDelegate
+- (void)scrollViewDidScroll:(NSScrollView *)arg1;
 - (void)scrollViewDidLayout:(NSScrollView *)arg1;
 @end
 

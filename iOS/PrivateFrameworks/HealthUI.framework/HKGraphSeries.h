@@ -61,6 +61,9 @@
 @property(retain, nonatomic) NSArray *titleLegendEntries; // @synthesize titleLegendEntries=_titleLegendEntries;
 @property(retain, nonatomic) HKGraphSeriesDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (struct CGRect)backgroundRectFromStringRect:(struct CGRect)arg1 forFont:(id)arg2;
+- (void)drawRoundedRect:(struct CGRect)arg1 color:(id)arg2 context:(struct CGContext *)arg3;
+- (struct CGRect)adjustRect:(struct CGRect)arg1 forFont:(id)arg2;
 - (_Bool)untransformedChartPointsForTimeScope:(long long)arg1 range:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)findVisibleBlockCoordinatesForChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5;
 - (double)distanceFromTouchPoint:(struct CGPoint)arg1 inChartRect:(struct CGRect)arg2 xAxis:(id)arg3 zoomScale:(double)arg4 contentOffset:(struct CGPoint)arg5 xAxisTransform:(struct CGAffineTransform)arg6;
@@ -69,6 +72,11 @@
 - (_Bool)isHighlighted;
 - (id)closestXCoordinateRange;
 - (CDStruct_f3788345)selectedPathRange;
+- (void)layoutOverlayInteractiveViews:(id)arg1 seriesOverlayData:(id)arg2 overlayRect:(struct CGRect)arg3;
+- (id)overlayInteractiveViewsWithDelegate:(id)arg1;
+- (void)drawOverlayInContext:(struct CGContext *)arg1 seriesOverlayData:(id)arg2;
+- (id)overlayIdentifier;
+- (long long)overlayType;
 - (void)updateLegendsForTimeScope:(long long)arg1 range:(id)arg2;
 - (id)marginsForYAxis:(id)arg1 chartRect:(struct CGRect)arg2;
 - (_Bool)supportsMultiTouchSelection;
@@ -90,7 +98,9 @@
 - (void)enumerateCoordinatesInChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5 roundToViewScale:(_Bool)arg6 exclusionOptions:(long long)arg7 block:(CDUnknownBlockType)arg8;
 - (_Bool)containsCoordinatesInChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 xAxisTransform:(struct CGAffineTransform)arg5;
 - (struct CGAffineTransform)coordinateTransformForChartRect:(struct CGRect)arg1 xAxisTransform:(struct CGAffineTransform)arg2;
-- (void)drawWithChartRect:(struct CGRect)arg1 xAxis:(id)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4 zoomLevelConfiguration:(id)arg5 xAxisTransform:(struct CGAffineTransform)arg6 inContext:(struct CGContext *)arg7 secondaryRenderContext:(id)arg8;
+- (void)drawWithChartRect:(struct CGRect)arg1 seriesCoordinates:(id)arg2 zoomLevelConfiguration:(id)arg3 coordinateTransform:(struct CGAffineTransform)arg4 inContext:(struct CGContext *)arg5 secondaryRenderContext:(id)arg6;
+- (struct CGAffineTransform)coordinateTransformFromXAxisTransform:(struct CGAffineTransform)arg1 chartRect:(struct CGRect)arg2;
+- (id)seriesCoordinatesWithXAxis:(id)arg1 chartRect:(struct CGRect)arg2 zoomScale:(double)arg3 contentOffset:(struct CGPoint)arg4;
 - (_Bool)blockCoordinate:(id)arg1 greaterThan:(id)arg2;
 - (_Bool)blockCoordinate:(id)arg1 lessThan:(id)arg2;
 - (_Bool)blockCoordinateIsVisibleInsideOfChartRect:(struct CGRect)arg1 blockCoordinate:(id)arg2;

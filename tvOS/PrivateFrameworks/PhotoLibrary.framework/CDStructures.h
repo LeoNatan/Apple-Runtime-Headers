@@ -43,11 +43,6 @@ struct UIEdgeInsets {
     double right;
 };
 
-struct _NSRange {
-    unsigned long long _field1;
-    unsigned long long _field2;
-};
-
 struct entryList {
     struct lruEntry *tqh_first;
     struct lruEntry **tqh_last;

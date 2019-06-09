@@ -12,12 +12,10 @@ __attribute__((visibility("hidden")))
 @interface BackgroundColorView : ConfigurableVibrancyView
 {
     NSVisualEffectView *_windowBackgroundMaterialVisualEffectView;
-    BOOL _continuousCorners;
     NSColor *_backgroundColor;
     double _cornerRadius;
 }
 
-@property(nonatomic) BOOL continuousCorners; // @synthesize continuousCorners=_continuousCorners;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (void).cxx_destruct;
@@ -25,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateLayerFromProperties;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
+- (void)setBackgroundColor:(id)arg1 withAnimation:(BOOL)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

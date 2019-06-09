@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)flushPendingOperations:(BOOL)arg1;
 - (void)addOperation:(id)arg1;
 - (id)initWithDB:(id)arg1 maxOperations:(unsigned long long)arg2 maxOperationsSizeInBytes:(unsigned long long)arg3;
+- (id)init;
 
 @end
 

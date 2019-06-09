@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL shouldRegisterQueryGeneration;
 - (void)executeEpilogue;
 - (BOOL)executeRequestUsingConnection:(id)arg1;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (void)executePrologue;
 @property(readonly, nonatomic) NSQueryGenerationToken *queryGenerationToken;
 @property(readonly, nonatomic) BOOL isWritingRequest;

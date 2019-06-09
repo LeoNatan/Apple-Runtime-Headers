@@ -17,12 +17,15 @@
     NSSet *_oidsSet;
     id <PHBatchFetchingArrayDataSource> _dataSource;
     unsigned long long _count;
+    struct os_unfair_lock_s _cacheLock;
     NSCache *_cache;
-    unsigned long long _firstBatchIndex;
-    NSArray *_firstBatch;
+    struct os_unfair_lock_s _lastBatchLock;
+    unsigned long long _lastBatchIndex;
+    NSArray *_lastBatch;
+    NSObject<OS_dispatch_queue> *_uuidsQueue;
     NSMutableDictionary *_uuidsByOIDs;
-    NSObject<OS_dispatch_queue> *_firstBatchQueue;
     unsigned long long _batchSize;
+    Class _fetchedObjectClass;
     unsigned long long _propertyHint;
 }
 
@@ -31,12 +34,14 @@
 - (void).cxx_destruct;
 @property(readonly) NSSet *oidsSet;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
-- (void)_invalidateUUIDCache;
-- (void)_evictBatchNumber:(long long)arg1;
+- (unsigned long long)test_lastBatchIndex;
+- (void)test_invalidateUUIDCache;
+- (void)test_evictBatchNumber:(long long)arg1;
 - (void)_rememberUUIDsForBatch:(id)arg1;
 - (void)cache:(id)arg1 willEvictObject:(id)arg2;
+- (id)_fetchObjectsInBatchNumber:(unsigned long long)arg1;
+- (id)_batchForBatchNumber:(unsigned long long)arg1 shouldUpdateLastBatch:(_Bool)arg2;
 - (id)_phObjectAtIndex:(unsigned long long)arg1;
-- (id)__batchHelper:(unsigned long long)arg1;
 - (id)_phObjectsForOIDs:(id)arg1;
 - (unsigned long long)batchSize;
 @property(readonly) PHPhotoLibrary *photoLibrary;
@@ -55,6 +60,7 @@
 - (void)dealloc;
 - (id)initWithOIDs:(id)arg1 options:(id)arg2 dataSource:(id)arg3;
 - (id)initWithOIDs:(id)arg1 options:(id)arg2 photoLibrary:(id)arg3;
+- (id)initWithObjects:(id)arg1 options:(id)arg2 photoLibrary:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

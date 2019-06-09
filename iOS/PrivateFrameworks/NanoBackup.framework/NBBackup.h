@@ -15,7 +15,9 @@
     _Bool _locationOptInEnabled;
     _Bool _diagnosticsOptInEnabled;
     _Bool _hasResolvedActiveWatchFaceFilePath;
+    NSURL *_activeWatchFaceFileURL;
     NSUUID *_uuid;
+    unsigned long long _backupType;
     NSString *_name;
     NSString *_productType;
     NSString *_productName;
@@ -35,11 +37,9 @@
     NSString *_watchFaceColor;
     NSDate *_lastModificationDate;
     NSNumber *_sizeInBytes;
-    NSURL *_activeWatchFaceFileURL;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSURL *activeWatchFaceFileURL; // @synthesize activeWatchFaceFileURL=_activeWatchFaceFileURL;
 @property(nonatomic) _Bool hasResolvedActiveWatchFaceFilePath; // @synthesize hasResolvedActiveWatchFaceFilePath=_hasResolvedActiveWatchFaceFilePath;
 @property(retain, nonatomic) NSNumber *sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
 @property(retain, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
@@ -62,10 +62,12 @@
 @property(retain, nonatomic) NSString *productName; // @synthesize productName=_productName;
 @property(retain, nonatomic) NSString *productType; // @synthesize productType=_productType;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) unsigned long long backupType; // @synthesize backupType=_backupType;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(retain, nonatomic) NSURL *activeWatchFaceFileURL; // @synthesize activeWatchFaceFileURL=_activeWatchFaceFileURL;
 - (id)description;
 
 @end

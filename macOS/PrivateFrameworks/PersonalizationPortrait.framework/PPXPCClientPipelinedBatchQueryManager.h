@@ -7,11 +7,13 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary;
+@protocol OS_dispatch_queue;
 
 @interface PPXPCClientPipelinedBatchQueryManager : NSObject
 {
     // Error parsing type: AQ, name: _queryId
     NSMutableDictionary *_queryContexts;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (void)assertBatch:(id)arg1 forQueryName:(id)arg2 hasExpectedContainedType:(Class)arg3;
@@ -19,6 +21,7 @@
 - (void)cancelPendingQueriesWithError:(id)arg1;
 - (void)handleReplyWithName:(id)arg1 batch:(id)arg2 isLast:(BOOL)arg3 error:(id)arg4 queryId:(unsigned long long)arg5 completion:(CDUnknownBlockType)arg6;
 - (BOOL)syncExecuteQueryWithName:(id)arg1 error:(id *)arg2 queryInitializer:(CDUnknownBlockType)arg3 handleBatch:(CDUnknownBlockType)arg4;
+- (id)initWithName:(id)arg1;
 - (id)init;
 
 @end

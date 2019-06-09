@@ -6,47 +6,62 @@
 
 #import <CoreHandwriting/CHStrokeGroupingStrategy.h>
 
+@class NSString;
+
 @interface CHBottomUpStrokeGroupingStrategy : CHStrokeGroupingStrategy
 {
+    struct CGVector _defaultOrientationVector;
+    struct CGVector _defaultDeviationVector;
+    NSString *_strategyIdentifier;
+    float _strokeDeviationCapCoeff;
+    float _groupingMergingCostThresh;
+    float _groupingMergingEndCostLowThresh;
+    float _groupingSimilarCostThresh;
+    int _groupingContextSize;
+    float _mergeEndDxCostCoeff;
+    float _mergeEndDyCostCoeff;
+    float _mergeEndBelowModifier;
+    float _mergeEndLeftModifier;
+    float _mergeMiddleDxCostCoeff;
+    float _mergeMiddleDyCostCoeff;
+    float _mergeMiddleBelowModifier;
+    _Bool _shouldLimitDefaultWritingOrientationDeviation;
+    _Bool _shouldAdjustDeviationOfSmallGroups;
+    _Bool _shouldCoalesceLastSubstrokes;
+    _Bool _isInlineContinuousMode;
 }
 
-+ (float)_containerSupportForPoints:(const vector_2e7754b6 *)arg1 withBounds:(struct CGRect)arg2;
-+ (float)_lineOrientationForStrokePoints:(const vector_2e7754b6 *)arg1 error:(float *)arg2;
-+ (float)_vectorMeanWithoutOutliers:(vector_f9ed6fc8 *)arg1;
-+ (float)_circumferenceRatioOfCircleFittedToPoints:(list_c5fac4d1)arg1 circleCenter:(struct CGPoint *)arg2 circleRadius:(float *)arg3;
-+ (vector_2e7754b6)_convexHullForPoints:(vector_2e7754b6 *)arg1;
-+ (vector_2e7754b6)_convexHullForStroke:(id)arg1;
-+ (struct CGRect)_unionStrokeBounds:(const vector_ea45b3ba *)arg1 aroundXPosition:(float)arg2 usingOneSideStrokeCountLimit:(int)arg3;
-+ (struct CGRect)_unionStrokeBounds:(const vector_ea45b3ba *)arg1 usingStrokeCountLimit:(int)arg2 reverseOrder:(_Bool)arg3;
-+ (struct CGRect)_boundingBoxOfPoints:(const vector_2e7754b6 *)arg1 rotatedAroundPoint:(struct CGPoint)arg2 byAngle:(float)arg3;
 + (vector_ea45b3ba)_boundingBoxesOfStrokesInGroup:(id)arg1 rotatedAroundPoint:(struct CGPoint)arg2 byAngle:(float)arg3;
-- (_Bool)_isStrokeClassifiedAsDoodling:(id)arg1 withSubstrokes:(id)arg2;
-- (id)averageAngleAndReliabilityForStrokeGroup:(id)arg1;
-- (void)_mergeGroupsPostProcessing:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3;
-- (void)_updateLocalStrokeDeviationsForSubstrokes:(id)arg1 averageStrokeDeviation:(struct CGVector *)arg2;
-- (_Bool)_refineWritingOrientationAndResortSubstrokes:(id)arg1 averageWritingOrientation:(struct CGVector *)arg2;
-- (vector_2e7754b6)_flippedCenters:(const vector_2e7754b6 *)arg1 ofSubstrokes:(id)arg2 maxStrokesGap:(int)arg3 begnning:(_Bool)arg4;
-- (void)_refineLocalWritingOrientationsForSubstrokes:(id)arg1 useCoalescedCenter:(_Bool)arg2;
-- (void)_smoothLocalWritingOrientations:(vector_5071ab7f *)arg1;
-- (void)_updateLocalWritingOrientationsForSubstrokes:(id)arg1 useCoalescedCenter:(_Bool)arg2;
-- (void)_sortSubstrokesByWritingDirection:(id)arg1 averageWritingOrientation:(struct CGVector *)arg2;
-- (void)_estimateWritingDirectionAndSortSubstrokesAccordingly:(id)arg1 averageWritingOrientation:(struct CGVector *)arg2 averageStrokeDeviation:(struct CGVector *)arg3;
-- (id)_substrokesForStroke:(id)arg1;
-- (struct CGVector)_averageVectorFromSubstroke:(id)arg1 toSubstroke:(id)arg2 withOrientation:(struct CGVector)arg3 strokeRef:(id)arg4;
-- (int)_compareDistanceInWritingSequenceOfStroke:(id)arg1 andStroke:(id)arg2 toReferenceStroke:(id)arg3;
-- (void)_getMergingMiddleOfLineCost:(float *)arg1 mergingMiddleOfLineStroke:(id *)arg2 forStrokeSubstrokes:(id)arg3 toLineGroup:(id)arg4;
-- (void)_getMergingEndOfLineCost:(float *)arg1 mergingEndOfLineStroke:(id *)arg2 forStrokeSubstrokes:(id)arg3 toLineGroup:(id)arg4;
+@property(readonly, nonatomic) _Bool isInlineContinuousMode; // @synthesize isInlineContinuousMode=_isInlineContinuousMode;
+- (float)_strokeGroupConfidenceForSortedSubstrokes:(id)arg1 writingDirectionSortedStrokeIdentifiers:(id)arg2 localStrokeWritingOrientations:(const vector_5071ab7f *)arg3 averageWritingOrientation:(struct CGVector)arg4 averageStrokeDeviation:(struct CGVector)arg5;
+- (id)_averageAngleAndReliabilityForStrokeGroup:(id)arg1;
+- (void)mergeGroupsPostProcessing:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3;
+- (void)updateLocalStrokeDeviationsForSubstrokes:(id)arg1 averageStrokeDeviation:(struct CGVector *)arg2;
+- (_Bool)refineWritingOrientationAndResortSubstrokes:(id)arg1 averageWritingOrientation:(struct CGVector *)arg2;
+- (vector_2e7754b6)flippedCenters:(const vector_2e7754b6 *)arg1 ofSubstrokes:(id)arg2 maxStrokesGap:(int)arg3 begnning:(_Bool)arg4;
+- (void)refineLocalWritingOrientationsForSubstrokes:(id)arg1 useCoalescedCenter:(_Bool)arg2;
+- (struct CGVector)clippedWritingOrientation:(struct CGVector)arg1;
+- (void)smoothLocalWritingOrientations:(vector_5071ab7f *)arg1;
+- (void)updateLocalWritingOrientationsForSubstrokes:(id)arg1 useCoalescedCenter:(_Bool)arg2;
+- (void)sortSubstrokesByWritingDirection:(id)arg1 averageWritingOrientation:(struct CGVector *)arg2;
+- (void)estimateWritingDirectionAndSortSubstrokesAccordingly:(id)arg1 averageWritingOrientation:(struct CGVector *)arg2 averageStrokeDeviation:(struct CGVector *)arg3;
+- (struct CGVector)_averageVectorFromCoalescedSubstrokes:(id)arg1 toSubstroke:(id)arg2 withOrientation:(struct CGVector)arg3 strokeRef:(id)arg4 strokeDest:(id)arg5;
+- (int)compareDistanceInWritingSequenceOfStroke:(id)arg1 andStroke:(id)arg2 toReferenceStroke:(id)arg3;
+- (void)getMergingMiddleOfLineCost:(float *)arg1 mergingMiddleOfLineStroke:(id *)arg2 forStroke:(id)arg3 consistingOfSubstrokes:(id)arg4 toLineGroup:(id)arg5;
+- (void)_getMergingEndOfLineCost:(float *)arg1 mergingEndOfLineStroke:(id *)arg2 forStroke:(id)arg3 consistingOfSubstrokes:(id)arg4 toLineGroup:(id)arg5 refSubstrokeIndex:(int)arg6;
+- (void)getMergingEndOfLineCost:(float *)arg1 mergingEndOfLineStroke:(id *)arg2 forStroke:(id)arg3 consistingOfSubstrokes:(id)arg4 toLineGroup:(id)arg5;
+- (void)_getMergingLowerBoundCost:(float *)arg1 withStrokeBounds:(struct CGRect)arg2 toLineGroup:(id)arg3;
 - (id)_writingDirectionSortedStrokeIdentifiersFromSubstrokes:(id)arg1 localWritingOrientations:(vector_5071ab7f *)arg2;
 - (float)_verticalOffsetForBoundsHeight:(float)arg1 andScaleFactor:(float)arg2;
 - (float)_scaleFactorForBoundsHeight:(float)arg1;
-- (id)recognizableDrawingForStrokeGroup:(id)arg1 orderedStrokesIDs:(id *)arg2;
-- (void)_updateTextGroups:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3 forAddedStroke:(id)arg4 substrokesByStrokeIdentifier:(id)arg5;
-- (void)_updateNontextGroups:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3 byRemovingStrokeIdentifier:(id)arg4;
-- (void)_updateNontextCandidateSupport:(id)arg1 withStroke:(id)arg2 substrokesByStrokeIdentifier:(id)arg3 nontextStrokeIdentifiers:(id)arg4 nontextGroups:(id)arg5 createdGroups:(id)arg6;
-- (void)_updateNontextCandidates:(id)arg1 byAddingStrokes:(id)arg2 substrokesByStrokeIdentifier:(id)arg3 newNontextStrokeIdentifiers:(id)arg4 textGroups:(id)arg5 nontextGroups:(id)arg6 nontextGroupsSnapshot:(id)arg7 createdGroups:(id)arg8 shouldCancelCallback:(CDUnknownBlockType)arg9;
-- (void)_updateNontextCandidates:(id)arg1 byRemovingStrokeIdentifiers:(id)arg2 substrokesByStrokeIdentifier:(id)arg3 reinsertedStrokes:(id)arg4 removedNontextStrokeIdentifiers:(id)arg5 nontextGroups:(id)arg6 createdGroups:(id)arg7 deletedGroups:(id)arg8 shouldCancelCallback:(CDUnknownBlockType)arg9;
-- (id)updatedGroupingResultWithCancellationBlock:(CDUnknownBlockType)arg1;
-- (id)initWithStrokeProvider:(id)arg1 sessionLastResult:(id)arg2 locales:(id)arg3;
+- (id)_lastSubstrokeCoalescedWithOverlappingSubstrokes:(id)arg1 strokeDeviation:(struct CGVector)arg2;
+- (struct CGRect)_normalizedBoundsForWritingDirectionSortedStrokes:(id)arg1 strokeWritingOrientations:(const vector_5071ab7f *)arg2 firstStrokeDeviation:(struct CGVector)arg3 originalDrawing:(id *)arg4 rotatedSortedStrokes:(vector_15a5c7bd *)arg5;
+- (id)recognizableDrawingForStrokeGroup:(id)arg1 translationVector:(struct CGVector)arg2 originalDrawing:(id *)arg3 orderedStrokesIDs:(id *)arg4 rescalingFactor:(float *)arg5;
+- (void)_updateGroups:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3 forAddedStroke:(id)arg4 withSubstrokePlacements:(id)arg5 reusableIDRemovedGroups:(id)arg6 cancellationBlock:(CDUnknownBlockType)arg7;
+- (id)updatedGroupingResult:(id)arg1 byAddingStrokes:(id)arg2 removingStrokeIdentifiers:(id)arg3 stableStrokeIdentifiers:(id)arg4 allSubstrokesByStrokeIdentifier:(id)arg5 withCancellationBlock:(CDUnknownBlockType)arg6;
+- (id)strategyIdentifier;
+- (void)dealloc;
+- (id)initWithStrokeProvider:(id)arg1 defaultWritingOrientation:(int)arg2 locales:(id)arg3 isInlineContinuousMode:(_Bool)arg4 inlineContinuousModeTargets:(id)arg5;
 
 @end
 

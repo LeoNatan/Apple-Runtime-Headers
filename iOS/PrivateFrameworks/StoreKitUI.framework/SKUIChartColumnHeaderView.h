@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface SKUIChartColumnHeaderView : UIControl
 {
     NSArray *_buttons;

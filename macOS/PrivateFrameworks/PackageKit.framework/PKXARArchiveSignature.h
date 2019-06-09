@@ -11,7 +11,7 @@
     struct __xar_signature_t *_sig;
 }
 
-- (BOOL)_hasSigningCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (BOOL)_hasSigningCertificate:(struct __SecCertificate *)arg1;
 - (id)signatureDataReturningAlgorithm:(id *)arg1;
 - (id)signedDataReturningAlgorithm:(id *)arg1;
 - (id)algorithmType;

@@ -23,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (long long)_valueStatus;
 - (_Bool)_valueForKeyDependsOnMetadataValue:(id)arg1;
 - (void)_valueRequestDidFinish;
-- (void)finalize;
 - (void)dealloc;
 - (id)_initWithFigMetadataDictionary:(id)arg1 valueLoadingHandler:(CDUnknownBlockType)arg2;
 

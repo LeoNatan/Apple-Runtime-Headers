@@ -20,6 +20,7 @@
     NSString *_trailingText;
     NSString *_coreSpotlightUniqueIdentifier;
     NSDate *_referenceDate;
+    NSString *_hostUUID;
     NSString *_authorABUUID;
     NSString *_authorEmailAddress;
     NSString *_authorName;
@@ -42,10 +43,12 @@
     struct CGSize _targetScreenSize;
     NSView *_view;
     NSPopover *_popover;
+    NSString *_hostProcessIdentifier;
 }
 
 + (id)contextFromDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSString *hostProcessIdentifier; // @synthesize hostProcessIdentifier=_hostProcessIdentifier;
 @property(retain) NSPopover *popover; // @synthesize popover=_popover;
 @property __weak NSView *view; // @synthesize view=_view;
 @property BOOL altMode; // @synthesize altMode=_altMenuMode;
@@ -62,6 +65,7 @@
 @property(retain) NSArray *allResults; // @synthesize allResults=_allResults;
 @property(copy) NSString *matchedString; // @synthesize matchedString=_matchedString;
 @property(copy) NSURL *URL; // @synthesize URL=_url;
+@property(copy) NSString *hostUUID; // @synthesize hostUUID=_hostUUID;
 @property(copy) NSString *authorEmailAddress; // @synthesize authorEmailAddress=_authorEmailAddress;
 @property(copy) NSString *authorUUID; // @synthesize authorUUID=_authorABUUID;
 @property(copy) NSString *authorName; // @synthesize authorName=_authorName;

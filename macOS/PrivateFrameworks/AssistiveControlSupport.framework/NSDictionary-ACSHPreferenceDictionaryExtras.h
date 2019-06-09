@@ -9,5 +9,19 @@
 @interface NSDictionary (ACSHPreferenceDictionaryExtras)
 + (id)acsh_cachedColorForString:(id)arg1;
 - (id)acsh_colorForKey:(id)arg1;
+- (id)identifier;
+- (id)localizedName;
+- (id)name;
+- (BOOL)boolForKey:(id)arg1;
+- (unsigned long long)unsignedIntegerForKey:(id)arg1;
+- (long long)integerForKey:(id)arg1;
+- (double)floatForKey:(id)arg1;
+- (id)dataForKey:(id)arg1;
+- (id)indexPathForKey:(id)arg1;
+- (id)dictionaryForKey:(id)arg1;
+- (id)arrayForKey:(id)arg1;
+- (id)numberForKey:(id)arg1;
+- (id)stringForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 expectedClass:(Class)arg2;
 @end
 

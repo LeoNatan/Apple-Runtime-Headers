@@ -11,13 +11,11 @@
 __attribute__((visibility("hidden")))
 @interface VCMediaNegotiatorCaptionsResults : NSObject
 {
-    BOOL _isSupported;
     BOOL _remoteCanDisplayCaptions;
     NSSet *_localLanguages;
     NSSet *_remoteLanguages;
 }
 
-@property(nonatomic) BOOL isSupported; // @synthesize isSupported=_isSupported;
 @property(nonatomic) BOOL remoteCanDisplayCaptions; // @synthesize remoteCanDisplayCaptions=_remoteCanDisplayCaptions;
 @property(retain, nonatomic) NSSet *remoteLanguages; // @synthesize remoteLanguages=_remoteLanguages;
 @property(retain, nonatomic) NSSet *localLanguages; // @synthesize localLanguages=_localLanguages;

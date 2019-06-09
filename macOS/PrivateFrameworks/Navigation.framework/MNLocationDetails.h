@@ -12,10 +12,11 @@
 
 @interface MNLocationDetails : PBCodable <NSCopying>
 {
-    double _course;
     double _courseAccuracy;
     double _distanceFromRoute;
     double _horizontalAccuracy;
+    double _roadMatchCourse;
+    double _routeMatchCourse;
     long long _shieldType;
     long long _speedLimitShieldType;
     double _timestamp;
@@ -28,7 +29,7 @@
     unsigned int _roadLineType;
     NSString *_roadName;
     MNRouteCoordinate *_routeCoordinate;
-    NSData *_routeDetailsID;
+    NSData *_routeIDData;
     NSString *_shieldText;
     unsigned int _speedLimit;
     unsigned int _stepIndex;
@@ -36,10 +37,11 @@
     BOOL _isTunnelProjection;
     BOOL _speedLimitIsMPH;
     struct {
-        unsigned int course:1;
         unsigned int courseAccuracy:1;
         unsigned int distanceFromRoute:1;
         unsigned int horizontalAccuracy:1;
+        unsigned int roadMatchCourse:1;
+        unsigned int routeMatchCourse:1;
         unsigned int shieldType:1;
         unsigned int speedLimitShieldType:1;
         unsigned int timestamp:1;
@@ -73,13 +75,14 @@
 @property(nonatomic) long long shieldType; // @synthesize shieldType=_shieldType;
 @property(retain, nonatomic) NSString *shieldText; // @synthesize shieldText=_shieldText;
 @property(retain, nonatomic) NSString *roadName; // @synthesize roadName=_roadName;
+@property(nonatomic) double roadMatchCourse; // @synthesize roadMatchCourse=_roadMatchCourse;
+@property(nonatomic) double routeMatchCourse; // @synthesize routeMatchCourse=_routeMatchCourse;
 @property(retain, nonatomic) GEOLatLng *roadCoordinate; // @synthesize roadCoordinate=_roadCoordinate;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 @property(retain, nonatomic) MNRouteCoordinate *routeCoordinate; // @synthesize routeCoordinate=_routeCoordinate;
 @property(nonatomic) unsigned int locationState; // @synthesize locationState=_locationState;
-@property(nonatomic) double course; // @synthesize course=_course;
 @property(nonatomic) unsigned int stepIndex; // @synthesize stepIndex=_stepIndex;
-@property(retain, nonatomic) NSData *routeDetailsID; // @synthesize routeDetailsID=_routeDetailsID;
+@property(retain, nonatomic) NSData *routeIDData; // @synthesize routeIDData=_routeIDData;
 @property(retain, nonatomic) GEOLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -111,13 +114,14 @@
 @property(nonatomic) BOOL hasShieldType;
 @property(readonly, nonatomic) BOOL hasShieldText;
 @property(readonly, nonatomic) BOOL hasRoadName;
+@property(nonatomic) BOOL hasRoadMatchCourse;
+@property(nonatomic) BOOL hasRouteMatchCourse;
 @property(readonly, nonatomic) BOOL hasRoadCoordinate;
 @property(nonatomic) BOOL hasTimestamp;
 @property(readonly, nonatomic) BOOL hasRouteCoordinate;
 @property(nonatomic) BOOL hasLocationState;
-@property(nonatomic) BOOL hasCourse;
 @property(nonatomic) BOOL hasStepIndex;
-@property(readonly, nonatomic) BOOL hasRouteDetailsID;
+@property(readonly, nonatomic) BOOL hasRouteIDData;
 @property(readonly, nonatomic) BOOL hasLocation;
 
 @end

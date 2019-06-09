@@ -26,9 +26,10 @@
 - (void)bookmarkInfoViewController:(id)arg1 didFinishWithResult:(_Bool)arg2;
 - (_Bool)prepareForPresentationForAddingBookmark:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
-- (void)addBookmarkWithTitle:(id)arg1 address:(id)arg2 parentBookmark:(id)arg3;
+- (id)addBookmarkWithTitle:(id)arg1 address:(id)arg2 parentBookmark:(id)arg3;
 - (id)_lastSelectedFolder;
 - (id)initForAddingToFavoritesInCollection:(id)arg1;
+- (id)initWithFolderOfBookmarks:(id)arg1 inCollection:(id)arg2;
 - (id)initWithCollection:(id)arg1;
 - (id)initWithBookmark:(id)arg1 inCollection:(id)arg2;
 - (id)_initWithBookmark:(id)arg1 childBookmarks:(id)arg2 inCollection:(id)arg3 addingBookmark:(_Bool)arg4 toFavorites:(_Bool)arg5;

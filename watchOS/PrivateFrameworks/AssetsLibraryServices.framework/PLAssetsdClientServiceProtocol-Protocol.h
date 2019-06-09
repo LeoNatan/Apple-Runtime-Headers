@@ -9,6 +9,8 @@
 @class NSData, NSDictionary, NSError, NSString, NSURL;
 
 @protocol PLAssetsdClientServiceProtocol <NSObject>
+- (void)libraryBecameUnavailable:(NSURL *)arg1 reason:(NSError *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
+- (void)resourceRepairIdentifier:(NSString *)arg1 finishedWithSuccess:(_Bool)arg2 error:(NSError *)arg3;
 - (void)resourceURLReceivedForIdentifier:(NSString *)arg1 url:(NSURL *)arg2 info:(NSDictionary *)arg3 error:(NSError *)arg4;
 - (void)assetAvailableForIdentifier:(NSString *)arg1 success:(_Bool)arg2 error:(NSError *)arg3;
 - (void)downloadFinishedForIdentifier:(NSString *)arg1 success:(_Bool)arg2 url:(NSURL *)arg3 data:(NSData *)arg4 info:(NSDictionary *)arg5 error:(NSError *)arg6;

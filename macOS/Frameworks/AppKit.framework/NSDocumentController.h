@@ -60,7 +60,6 @@
 - (BOOL)presentError:(id)arg1;
 - (void)presentError:(id)arg1 modalForWindow:(id)arg2 delegate:(id)arg3 didPresentSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)_restorePersistentDocumentWithState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)_persistenceCanRecreateEmptyUntitledDocumentOfType:(id)arg1;
 - (BOOL)_persistenceMustOpenDocumentsThroughApplicationDelegate;
 - (id)standardShareMenuItem;
 @property(readonly) BOOL allowsAutomaticShareMenu;

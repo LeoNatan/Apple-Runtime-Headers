@@ -14,8 +14,8 @@
     double _stallDistance;
     double _maxDimension;
     double _thumbRegion;
-    int _orientation;
-    int _directions[7];
+    long long _orientation;
+    long long _directions[7];
     struct {
         double horizontal;
         double vertical;
@@ -40,8 +40,8 @@
     double _potentialTrackingStartTimestamp;
     BOOL _requireUp;
     BOOL _thumbRejectionEnabled;
-    int _state;
-    int _direction;
+    long long _state;
+    long long _direction;
     double _directionalSlope;
     struct SCRCFingerState _finger[2];
     unsigned long long _absoluteFingerCount;
@@ -56,6 +56,7 @@
     id <SCRCGestureFactoryCallback> _gutterUpDelegate;
     id <SCRCGestureFactoryCallback> _splitTapDelegate;
     id <SCRCGestureFactoryCallback> _canSplitTapDelegate;
+    id <SCRCGestureFactoryCallback> _didBeginSplitGestureDelegate;
     SCRCTargetSelectorTimer *_trackingTimer;
     struct {
         char isFingerCurrentlyDown;
@@ -80,13 +81,14 @@
         char tapDead;
         char timedOut;
         char active;
+        char didNotify;
         unsigned long long fingerIdentifier;
         double fingerDownTime;
         struct CGPoint startTapLocation;
         struct CGPoint lastTapLocation;
         struct CGPoint primaryFingerLocation;
         double tapDistance;
-        int state;
+        long long state;
     } _split;
 }
 
@@ -112,15 +114,16 @@
 - (double)distance;
 - (double)velocity;
 - (double)vector;
-- (int)direction;
-- (int)gestureState;
+- (long long)direction;
+- (long long)gestureState;
 - (double)directionalSlope;
-- (CDStruct_1c7a58cf)captureCurrentState;
+- (CDStruct_dbfbd0c6)captureCurrentState;
+- (void)_resetSplit;
 - (void)reset;
 - (void)_up;
 - (void)_drag:(id)arg1;
 - (void)_down:(id)arg1;
-- (CDStruct_1c7a58cf)handleGestureEvent:(id)arg1;
+- (CDStruct_dbfbd0c6)handleGestureEvent:(id)arg1;
 - (BOOL)_handleSplitEvent:(id)arg1;
 - (BOOL)_handleSplitTap;
 - (void)_updateStartWithPoint:(struct CGPoint)arg1 time:(double)arg2;
@@ -133,8 +136,8 @@
 - (struct CGRect)_currentTapRect;
 - (struct CGRect)mainFrame;
 - (void)dealloc;
-- (int)orientation;
-- (void)setOrientation:(int)arg1;
+- (long long)orientation;
+- (void)setOrientation:(long long)arg1;
 - (double)tapSpeed;
 - (void)setTapSpeedTimeThreshold:(double)arg1 forRegion:(struct CGRect)arg2 fingerCount:(long long)arg3;
 - (void)setTapSpeed:(double)arg1;

@@ -13,15 +13,18 @@
 @interface HFPrimaryStateIconDescriptor : NSObject <HFIconDescriptor>
 {
     NSString *_identifier;
+    NSString *_imageIdentifier;
     long long _primaryState;
 }
 
 @property(readonly, nonatomic) long long primaryState; // @synthesize primaryState=_primaryState;
+@property(readonly, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)iconDescriptorByMergingWithIconDescriptor:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 imageIdentifier:(id)arg2 primaryState:(long long)arg3;
 - (id)initWithIdentifier:(id)arg1 primaryState:(long long)arg2;
 
 // Remaining properties

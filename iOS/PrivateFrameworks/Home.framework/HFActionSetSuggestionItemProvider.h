@@ -6,21 +6,33 @@
 
 #import <Home/HFItemProvider.h>
 
-@class HMHome, NSSet;
+@class HFItem, HMHome, NSSet;
+@protocol HFServiceLikeItem;
 
 @interface HFActionSetSuggestionItemProvider : HFItemProvider
 {
+    _Bool _includeExistingActionSets;
+    _Bool _includeCustomActionSets;
+    _Bool _persistAddedSuggestions;
     _Bool _hasProvidedStaticSuggestionItems;
     HMHome *_home;
+    HFItem<HFServiceLikeItem> *_serviceLikeItem;
     NSSet *_staticSuggestionItems;
+    NSSet *_customSuggestionItems;
 }
 
 @property(nonatomic) _Bool hasProvidedStaticSuggestionItems; // @synthesize hasProvidedStaticSuggestionItems=_hasProvidedStaticSuggestionItems;
+@property(retain, nonatomic) NSSet *customSuggestionItems; // @synthesize customSuggestionItems=_customSuggestionItems;
 @property(retain, nonatomic) NSSet *staticSuggestionItems; // @synthesize staticSuggestionItems=_staticSuggestionItems;
+@property(nonatomic) _Bool persistAddedSuggestions; // @synthesize persistAddedSuggestions=_persistAddedSuggestions;
+@property(nonatomic) _Bool includeCustomActionSets; // @synthesize includeCustomActionSets=_includeCustomActionSets;
+@property(nonatomic) _Bool includeExistingActionSets; // @synthesize includeExistingActionSets=_includeExistingActionSets;
+@property(copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
 - (id)items;
 - (id)reloadItems;
+- (id)_builtInActionSetOfType:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithHome:(id)arg1;
 

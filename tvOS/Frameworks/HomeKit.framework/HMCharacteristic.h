@@ -9,7 +9,7 @@
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMCharacteristicMetadata, HMFUnfairLock, HMService, NSArray, NSDate, NSNumber, NSString, NSUUID, _HMContext;
+@class HMCharacteristicMetadata, HMFUnfairLock, HMService, NSArray, NSDate, NSDictionary, NSNumber, NSString, NSUUID, _HMContext;
 
 @interface HMCharacteristic : NSObject <NSSecureCoding, HMObjectMerge>
 {
@@ -35,6 +35,8 @@
 + (id)_characteristicTypeAsString:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
++ (id)characteristicWithCharacteristicReference:(id)arg1 home:(id)arg2;
++ (id)characteristicWithSerializedDictionaryRepresentation:(id)arg1 home:(id)arg2;
 @property(nonatomic) _Bool notificationEnabledByThisClient; // @synthesize notificationEnabledByThisClient=_notificationEnabledByThisClient;
 @property(readonly, nonatomic) NSNumber *instanceID; // @synthesize instanceID=_instanceID;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
@@ -71,6 +73,7 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)init;
+@property(readonly, copy) NSDictionary *serializedDictionaryRepresentation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

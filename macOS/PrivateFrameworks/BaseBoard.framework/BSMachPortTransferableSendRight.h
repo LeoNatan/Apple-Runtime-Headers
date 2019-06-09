@@ -11,7 +11,7 @@
 }
 
 + (id)_rightDescription;
-- (BOOL)_shouldInvalidateOnEncode;
+- (id)_lock_encodePort:(unsigned int)arg1;
 
 @end
 

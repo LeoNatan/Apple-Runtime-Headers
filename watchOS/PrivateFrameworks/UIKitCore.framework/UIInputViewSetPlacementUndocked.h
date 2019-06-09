@@ -19,14 +19,15 @@ __attribute__((visibility("hidden")))
 + (id)placementWithUndockedOffset:(struct CGPoint)arg1 chromeBuffer:(struct UIEdgeInsets)arg2;
 + (_Bool)supportsSecureCoding;
 + (id)infoWithPoint:(struct CGPoint)arg1;
-@property(nonatomic) struct UIEdgeInsets chromeBuffer; // @synthesize chromeBuffer=_chromeBuffer;
 @property(nonatomic) struct CGPoint normalizedOffset; // @synthesize normalizedOffset=_normalizedOffset;
+@property(nonatomic) struct UIEdgeInsets chromeBuffer; // @synthesize chromeBuffer=_chromeBuffer;
 - (struct CGRect)remoteIntrinsicContentSizeForInputViewInSet:(id)arg1 includingIAV:(_Bool)arg2;
 - (_Bool)isUndocked;
 - (_Bool)inputViewWillAppear;
 - (_Bool)isEqual:(id)arg1;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (float)heightOfInputViews:(id)arg1;
+- (void)setOffset:(struct CGPoint)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (Class)applicatorClassForKeyboard:(_Bool)arg1;

@@ -29,6 +29,8 @@
 @property(copy, nonatomic) NSDate *usageDate; // @synthesize usageDate=_usageDate;
 - (id)storageIdentifier;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
+- (id)debugTitle;
 - (void)_noteWillMutate;
 - (void)_markImmutable;
 - (_Bool)isFailed;
@@ -45,7 +47,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

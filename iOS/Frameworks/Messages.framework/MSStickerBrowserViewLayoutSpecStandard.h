@@ -6,6 +6,7 @@
 
 #import <Messages/MSStickerBrowserViewLayoutSpec.h>
 
+__attribute__((visibility("hidden")))
 @interface MSStickerBrowserViewLayoutSpecStandard : MSStickerBrowserViewLayoutSpec
 {
 }

@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (unsigned char)toStyleEtaComparison:(unsigned char)arg1;
-+ (shared_ptr_c5d816ee)styleQueryForNavContext:(const struct NavContext *)arg1 selected:(_Bool)arg2 etaComparison:(unsigned char)arg3 transportType:(unsigned char)arg4;
++ (shared_ptr_c5d816ee)styleQueryForNavContext:(const struct NavContext *)arg1 selected:(_Bool)arg2 focused:(_Bool)arg3 etaComparison:(unsigned char)arg4 transportType:(unsigned char)arg5;
 + (id)artworkForEtaDescription:(id)arg1 navContext:(const struct NavContext *)arg2 styleQuery:(shared_ptr_c5d816ee)arg3 orientation:(unsigned char)arg4 artworkCache:(struct VKLabelNavArtworkCache *)arg5 selected:(_Bool)arg6;
 @property(nonatomic) _Bool isRepositioning; // @synthesize isRepositioning=_isRepositioning;
 @property(nonatomic) _Bool isPicked; // @synthesize isPicked=_isPicked;
@@ -50,7 +50,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool isRamp;
 - (_retain_ptr_86da96eb)updateRoadSignWithNavContext:(const struct NavContext *)arg1 artworkCache:(struct VKLabelNavArtworkCache *)arg2;
-- (Box_3fb92e00)labelRectForOrientation:(unsigned char)arg1 styleQuery:(const shared_ptr_c5d816ee *)arg2 navContext:(const struct NavContext *)arg3 anchorPosition:(Matrix_8746f91e)arg4 artworkCache:(struct VKLabelNavArtworkCache *)arg5;
+- (Box_8bd38d92)labelRectForOrientation:(unsigned char)arg1 styleQuery:(const shared_ptr_c5d816ee *)arg2 navContext:(const struct NavContext *)arg3 anchorPosition:(Matrix_8746f91e)arg4 artworkCache:(struct VKLabelNavArtworkCache *)arg5;
 - (void)prepareStyleVarsWithContext:(struct NavContext *)arg1;
 - (void)createLabelWithNavContext:(const struct NavContext *)arg1 orientation:(unsigned char)arg2 etaDescription:(id)arg3 selected:(_Bool)arg4 artworkCache:(struct VKLabelNavArtworkCache *)arg5;
 - (void)layoutWithNavContext:(struct NavContext *)arg1;

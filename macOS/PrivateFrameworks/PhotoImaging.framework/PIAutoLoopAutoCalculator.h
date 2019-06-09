@@ -12,7 +12,7 @@
 }
 
 @property(nonatomic) long long flavor; // @synthesize flavor=_flavor;
-- (void)calculate:(CDUnknownBlockType)arg1;
+- (void)submit:(CDUnknownBlockType)arg1;
 - (id)initWithComposition:(id)arg1;
 
 @end

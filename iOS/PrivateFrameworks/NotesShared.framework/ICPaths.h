@@ -11,10 +11,14 @@
 }
 
 + (id)persistentStoreURL;
++ (id)oldManagedObjectModelURL;
 + (id)managedObjectModelURL;
 + (id)attributesForGroupContainerDirectory;
 + (id)URLForGroupContainerWithIdentifier:(id)arg1;
++ (id)previewImageDirectoryURLForAccount:(id)arg1;
 + (id)importDocumentsURL;
++ (id)accountsDirectoryURL;
++ (void)setApplicationDocumentsURL:(id)arg1;
 + (id)applicationDocumentsURL;
 + (id)applicationDataContainerURL;
 + (void)setIsReadOnlyPersistentStore:(_Bool)arg1;

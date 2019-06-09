@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)queryString;
 - (void)appendToQuery:(id)arg1 key:(id)arg2 value:(id)arg3 additions:(id)arg4;
 - (id)tokenText;
+- (_Bool)isScopedAppSearch;
 - (_Bool)isPeopleSearch;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

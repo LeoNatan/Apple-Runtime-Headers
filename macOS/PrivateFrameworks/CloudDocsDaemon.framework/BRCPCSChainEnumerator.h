@@ -6,7 +6,7 @@
 
 #import <Foundation/NSEnumerator.h>
 
-@class BRCPrivateClientZone, NSMutableArray;
+@class BRCItemID, BRCPrivateClientZone, NSError, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface BRCPCSChainEnumerator : NSEnumerator
@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
     unsigned long long _maxPathDepth;
     BRCPrivateClientZone *_clientZone;
     NSMutableArray *_stack;
-    BOOL _failed;
+    NSError *_error;
+    BRCItemID *_itemIDNeedingListing;
 }
 
 - (void).cxx_destruct;
-- (BOOL)failed;
+- (id)error;
 - (id)nextObject;
 - (id)initWithPCSChainInfo:(id)arg1 clientZone:(id)arg2;
+- (id)itemIDNeedingListing;
 
 @end
 

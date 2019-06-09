@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <Photos/NSCopying-Protocol.h>
+
 @class CLLocation, NSArray, NSDate, NSDictionary, PHPhotoLibrary;
 
-@interface PHMemoryGenerationOptions : NSObject
+@interface PHMemoryGenerationOptions : NSObject <NSCopying>
 {
     unsigned long long _reason;
     NSDate *_date;
@@ -20,17 +22,17 @@
     PHPhotoLibrary *_photoLibrary;
 }
 
-+ (id)identifierCode;
-@property(retain) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-@property(retain) NSDictionary *extraParameters; // @synthesize extraParameters=_extraParameters;
-@property(retain) NSArray *blacklistedMemories; // @synthesize blacklistedMemories=_blacklistedMemories;
-@property(retain) NSArray *existingMemories; // @synthesize existingMemories=_existingMemories;
-@property(retain) NSArray *peopleNames; // @synthesize peopleNames=_peopleNames;
-@property(retain) CLLocation *location; // @synthesize location=_location;
-@property(retain) NSDate *date; // @synthesize date=_date;
-@property unsigned long long reason; // @synthesize reason=_reason;
+@property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
+@property(retain, nonatomic) NSDictionary *extraParameters; // @synthesize extraParameters=_extraParameters;
+@property(retain, nonatomic) NSArray *blacklistedMemories; // @synthesize blacklistedMemories=_blacklistedMemories;
+@property(retain, nonatomic) NSArray *existingMemories; // @synthesize existingMemories=_existingMemories;
+@property(retain, nonatomic) NSArray *peopleNames; // @synthesize peopleNames=_peopleNames;
+@property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
+@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(nonatomic) unsigned long long reason; // @synthesize reason=_reason;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 
 @end

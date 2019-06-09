@@ -9,7 +9,7 @@
 #import <AppKit/NSTabBarDelegate-Protocol.h>
 #import <AppKit/NSTabPickerDelegate-Protocol.h>
 
-@class NSMenu, NSMutableArray, NSMutableDictionary, NSString, NSTabBar, NSTabPickerViewController, NSWindow, NSWindowTab, _NSFullScreenModalStackController;
+@class NSMenu, NSMutableArray, NSMutableDictionary, NSString, NSTabBar, NSTabPickerViewController, NSTabPickerWindow, NSWindow, NSWindowTab, _NSFullScreenModalStackController;
 
 __attribute__((visibility("hidden")))
 @interface NSWindowStackController : NSWindowTabGroup <NSTabBarDelegate, NSTabPickerDelegate>
@@ -18,12 +18,14 @@ __attribute__((visibility("hidden")))
     NSString *_stateIdentifier;
     NSMutableDictionary *_talTabbingOrder;
     NSTabBar *_tabBar;
+    NSWindow *_overlayWindow;
     NSWindow *_minimizedWindow;
     NSWindow *_windowBeingRemoved;
     NSWindow *_windowBeingDragged;
     NSMenu *_tabItemMenu;
     NSMenu *_pinnedTabItemMenu;
     NSTabPickerViewController *_tabPickerViewController;
+    NSTabPickerWindow *_tabPickerWindow;
     NSWindowTab *_plusTab;
     _NSFullScreenModalStackController *_fullScreenModalStackController;
     unsigned int _doingClose:1;
@@ -56,17 +58,22 @@ __attribute__((visibility("hidden")))
 @property BOOL shouldAnimate; // @dynamic shouldAnimate;
 - (void)_closeTabPickerAnimated:(BOOL)arg1;
 - (void)_openTabPickerAnimated:(BOOL)arg1;
+- (void)_syncInactiveTabWindowSizesToWindow:(id)arg1;
 - (void)_syncInactiveTabWindowSizesForSnapshot;
-- (void)_moveTabPickerToWindow:(id)arg1;
 - (void)_addTabPickerView:(id)arg1 toWindow:(id)arg2;
-- (void)_removeTabPickerFromWindow:(id)arg1;
 - (void)_ensureTabPickerViewController;
+- (id)_overlayWindow;
+- (id)_tabPickerThumbnailViews;
 - (void)tabPickerDidOpen:(id)arg1;
 - (void)tabPickerWillOpen:(id)arg1;
 - (void)tabPickerDidClose:(id)arg1;
 - (void)tabPickerWillClose:(id)arg1;
 - (void)_sendTabOverviewIsVisibleDidChange;
+- (struct CGRect)tabPickerFrameForWindowContentAnimation:(id)arg1;
+- (BOOL)tabPicker:(id)arg1 highlightStateForTabItem:(id)arg2;
+- (id)tabPicker:(id)arg1 imageForTabItem:(id)arg2;
 - (id)tabPicker:(id)arg1 thumbnailViewForTabItem:(id)arg2;
+- (id)windowSnapshotForTabPickerAnimation:(id)arg1;
 - (id)tabBarSnapshotForTabPicker:(id)arg1;
 - (id)tabPickerItemsForTabPicker:(id)arg1;
 - (id)tabPickerCurrentlySelectedTabItem:(id)arg1;
@@ -126,6 +133,8 @@ __attribute__((visibility("hidden")))
 - (id)selectedTabBarViewItemAfterClosingCurrentTabInTabBar:(id)arg1;
 - (void)tabBar:(id)arg1 selectTabBarViewItem:(id)arg2;
 - (void)_doTabSelectionAndWindowOrderingAtIndex:(unsigned long long)arg1 makeKeyAndOrderFront:(BOOL)arg2 justOrderFront:(BOOL)arg3;
+- (void)_doWindowOrderingForOverlaySwapWithNewWindow:(id)arg1 priorWindow:(id)arg2;
+- (void)_syncWindowFrameStateForSwapWithNewWindow:(id)arg1 priorWindow:(id)arg2;
 - (void)_doWindowOrderingToSwapPriorWindow:(id)arg1 withNewWindow:(id)arg2;
 - (void)_ensureWindowHasTabBar:(id)arg1;
 - (void)_exitWindowFromFullScreenIfNeeded:(id)arg1 basedOnWindow:(id)arg2;
@@ -148,12 +157,14 @@ __attribute__((visibility("hidden")))
 - (void)_noteTabbingChangedForWindow:(id)arg1;
 - (void)_addSyncedTabBarItemForWindow:(id)arg1 atIndex:(long long)arg2;
 - (BOOL)_shouldAnimateTabInsertion;
+- (BOOL)_overlayWindowIsVisible;
 - (BOOL)_tabPickerIsVisible;
 - (BOOL)_tabBarShouldBeVisible;
 @property(getter=isTabBarVisible) BOOL tabBarVisible;
 - (void)_setTabBarIsVisible:(BOOL)arg1 force:(BOOL)arg2;
 @property BOOL shouldShowTabBarWithOneItem; // @dynamic shouldShowTabBarWithOneItem;
 - (id)_shouldShowTabBarKey;
+- (id)_activeWindow;
 - (id)_selectedWindow;
 - (id)initWithTabbingIdentifier:(id)arg1;
 - (void)removeWindow:(id)arg1;

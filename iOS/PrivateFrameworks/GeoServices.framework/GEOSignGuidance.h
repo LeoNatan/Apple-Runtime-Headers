@@ -8,33 +8,47 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOJunctionInfo, GEONameInfo, NSMutableArray;
+@class GEOJunctionInfo, GEONameInfo, NSMutableArray, PBDataReader, PBUnknownFields;
 
 @interface GEOSignGuidance : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     GEOJunctionInfo *_junctionInfo;
-    int _maneuverArrowOverride;
     NSMutableArray *_secondarySigns;
     GEONameInfo *_shieldName;
     NSMutableArray *_signDetails;
     NSMutableArray *_signTitles;
+    int _maneuverArrowOverride;
     unsigned int _stackRanking;
     struct {
-        unsigned int maneuverArrowOverride:1;
-        unsigned int stackRanking:1;
-    } _has;
+        unsigned int has_maneuverArrowOverride:1;
+        unsigned int has_stackRanking:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_junctionInfo:1;
+        unsigned int read_secondarySigns:1;
+        unsigned int read_shieldName:1;
+        unsigned int read_signDetails:1;
+        unsigned int read_signTitles:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_junctionInfo:1;
+        unsigned int wrote_secondarySigns:1;
+        unsigned int wrote_shieldName:1;
+        unsigned int wrote_signDetails:1;
+        unsigned int wrote_signTitles:1;
+        unsigned int wrote_maneuverArrowOverride:1;
+        unsigned int wrote_stackRanking:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)secondarySignType;
 + (Class)signDetailType;
 + (Class)signTitleType;
-@property(retain, nonatomic) GEOJunctionInfo *junctionInfo; // @synthesize junctionInfo=_junctionInfo;
-@property(nonatomic) unsigned int stackRanking; // @synthesize stackRanking=_stackRanking;
-@property(retain, nonatomic) GEONameInfo *shieldName; // @synthesize shieldName=_shieldName;
-@property(retain, nonatomic) NSMutableArray *secondarySigns; // @synthesize secondarySigns=_secondarySigns;
-@property(retain, nonatomic) NSMutableArray *signDetails; // @synthesize signDetails=_signDetails;
-@property(retain, nonatomic) NSMutableArray *signTitles; // @synthesize signTitles=_signTitles;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -42,27 +56,42 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOJunctionInfo *junctionInfo;
 @property(readonly, nonatomic) _Bool hasJunctionInfo;
+- (void)_readJunctionInfo;
 @property(nonatomic) _Bool hasStackRanking;
+@property(nonatomic) unsigned int stackRanking;
+@property(retain, nonatomic) GEONameInfo *shieldName;
 @property(readonly, nonatomic) _Bool hasShieldName;
+- (void)_readShieldName;
 - (int)StringAsManeuverArrowOverride:(id)arg1;
 - (id)maneuverArrowOverrideAsString:(int)arg1;
 @property(nonatomic) _Bool hasManeuverArrowOverride;
-@property(nonatomic) int maneuverArrowOverride; // @synthesize maneuverArrowOverride=_maneuverArrowOverride;
+@property(nonatomic) int maneuverArrowOverride;
 - (id)secondarySignAtIndex:(unsigned long long)arg1;
 - (unsigned long long)secondarySignsCount;
+- (void)_addNoFlagsSecondarySign:(id)arg1;
 - (void)addSecondarySign:(id)arg1;
 - (void)clearSecondarySigns;
+@property(retain, nonatomic) NSMutableArray *secondarySigns;
+- (void)_readSecondarySigns;
 - (id)signDetailAtIndex:(unsigned long long)arg1;
 - (unsigned long long)signDetailsCount;
+- (void)_addNoFlagsSignDetail:(id)arg1;
 - (void)addSignDetail:(id)arg1;
 - (void)clearSignDetails;
+@property(retain, nonatomic) NSMutableArray *signDetails;
+- (void)_readSignDetails;
 - (id)signTitleAtIndex:(unsigned long long)arg1;
 - (unsigned long long)signTitlesCount;
+- (void)_addNoFlagsSignTitle:(id)arg1;
 - (void)addSignTitle:(id)arg1;
 - (void)clearSignTitles;
+@property(retain, nonatomic) NSMutableArray *signTitles;
+- (void)_readSignTitles;
 
 @end
 

@@ -12,10 +12,10 @@ __attribute__((visibility("hidden")))
     _Bool _allowInteraction;
 }
 
++ (id)makeDelegate;
 @property _Bool allowInteraction; // @synthesize allowInteraction=_allowInteraction;
 - (int)asyncNodeOperation:(id)arg1 uniqueNameProc:(id)arg2 seedFileSuffix:(id)arg3 reservedName:(id)arg4;
 - (int)asyncNodeOperation:(id)arg1 errorNotification:(const struct TOperationMonitor *)arg2 error:(const struct OperationErrorRecord *)arg3 reply:(struct NodeEventReply *)arg4;
-- (id)init;
 
 @end
 

@@ -31,12 +31,18 @@
     AVPlayerItem *_playerItem;
     _Bool _playerStarted;
     _Bool _invalidated;
+    _Bool _offerAddToWatch;
     CDUnknownBlockType _continueHandler;
+    NSString *_titleOverride;
+    NSString *_bodyAddition;
 }
 
 + (id)assetBackgroundColorPad;
 + (id)assetBackgroundColor;
 + (_Bool)shouldPresentForPass:(id)arg1 inEducationContext:(unsigned int)arg2;
+@property(copy, nonatomic) NSString *bodyAddition; // @synthesize bodyAddition=_bodyAddition;
+@property(copy, nonatomic) NSString *titleOverride; // @synthesize titleOverride=_titleOverride;
+@property(nonatomic) _Bool offerAddToWatch; // @synthesize offerAddToWatch=_offerAddToWatch;
 @property(copy, nonatomic) CDUnknownBlockType continueHandler; // @synthesize continueHandler=_continueHandler;
 - (void).cxx_destruct;
 - (void)_showAddToWatchOfferForPass:(id)arg1;
@@ -55,6 +61,7 @@
 - (void)dealloc;
 - (id)initWithPaymentPass:(id)arg1 setupContext:(int)arg2 educationContext:(unsigned int)arg3;
 - (id)init;
+- (_Bool)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

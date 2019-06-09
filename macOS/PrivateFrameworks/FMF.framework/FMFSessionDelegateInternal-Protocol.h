@@ -9,7 +9,6 @@
 @protocol FMFSessionDelegateInternal <FMFSessionDelegate>
 
 @optional
-- (void)networkReachabilityUpdated:(BOOL)arg1;
 - (void)removeAllFriendLocationsFromMap;
 @end
 

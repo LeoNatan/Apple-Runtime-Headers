@@ -19,7 +19,6 @@
     NTKColoringLabel *_label;
 }
 
-+ (void)load;
 + (id)supportedTemplateClasses;
 + (_Bool)supportsComplicationFamily:(long long)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;

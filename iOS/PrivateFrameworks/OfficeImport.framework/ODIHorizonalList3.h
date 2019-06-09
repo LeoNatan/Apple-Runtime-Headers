@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)mapIdentifier:(id)arg1 state:(id)arg2;
+- (void).cxx_destruct;
 - (void)mapBaseStyleFromPoint:(id)arg1 shape:(id)arg2;
 - (void)mapOnePillarStyleFromPoint:(id)arg1 shape:(id)arg2;
 - (void)mapRoofStyleFromPoint:(id)arg1 shape:(id)arg2;

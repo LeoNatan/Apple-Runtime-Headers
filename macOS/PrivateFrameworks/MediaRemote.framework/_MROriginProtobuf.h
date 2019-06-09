@@ -22,6 +22,7 @@
     } _has;
 }
 
++ (id)localOrigin;
 @property(retain, nonatomic) _MRDeviceInfoMessageProtobuf *deviceInfoDeprecated; // @synthesize deviceInfoDeprecated=_deviceInfoDeprecated;
 @property(nonatomic) int identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
@@ -42,7 +43,7 @@
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
 @property(nonatomic) int type; // @synthesize type=_type;
-- (BOOL)isLocal;
+@property(readonly, nonatomic) BOOL isLocal;
 
 @end
 

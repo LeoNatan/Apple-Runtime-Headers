@@ -28,17 +28,17 @@
     CDUnknownBlockType _onSpeechStartCallback;
     _Bool _ignoreCustomSubstitutions;
     _Bool _useMonarchStyleSpeechRate;
-    unsigned int _audioQueueFlags;
     NSString *_voiceIdentifier;
     long long _state;
+    CDUnknownBlockType _audioBufferCallback;
     NSAttributedString *_attributedString;
-    NSString *_IPAPhonemes;
     long long _wordCallbackPostProcessedOffset;
     NSString *_finalSpokenString;
     NSString *_processedString;
     NSMutableArray *_emojiRangeReplacements;
 }
 
++ (void)test_setUseMaxSpeechRate:(_Bool)arg1;
 + (id)actionWithAttributedString:(id)arg1 shouldQueue:(_Bool)arg2;
 + (id)actionWithString:(id)arg1 shouldQueue:(_Bool)arg2;
 @property(retain, nonatomic) NSMutableArray *emojiRangeReplacements; // @synthesize emojiRangeReplacements=_emojiRangeReplacements;
@@ -54,11 +54,10 @@
 @property(copy, nonatomic) CDUnknownBlockType onResumeCallback; // @synthesize onResumeCallback=_onResumeCallback;
 @property(copy, nonatomic) CDUnknownBlockType onPauseCallback; // @synthesize onPauseCallback=_onPauseCallback;
 @property(copy, nonatomic) CDUnknownBlockType completionCallback; // @synthesize completionCallback=_completionCallback;
-@property(copy, nonatomic) NSString *IPAPhonemes; // @synthesize IPAPhonemes=_IPAPhonemes;
 @property(copy, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 @property(copy, nonatomic) NSString *string; // @synthesize string=_string;
+@property(copy, nonatomic) CDUnknownBlockType audioBufferCallback; // @synthesize audioBufferCallback=_audioBufferCallback;
 @property(nonatomic) long long state; // @synthesize state=_state;
-@property(nonatomic) unsigned int audioQueueFlags; // @synthesize audioQueueFlags=_audioQueueFlags;
 @property(retain, nonatomic) NSString *voiceIdentifier; // @synthesize voiceIdentifier=_voiceIdentifier;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) _Bool ignoreCustomSubstitutions; // @synthesize ignoreCustomSubstitutions=_ignoreCustomSubstitutions;

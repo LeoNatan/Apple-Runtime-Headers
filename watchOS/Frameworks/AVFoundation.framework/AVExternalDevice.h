@@ -58,7 +58,6 @@
 - (id)_screenInfo;
 - (id)_figEndpointPropertyValueForKey:(struct __CFString *)arg1;
 @property(nonatomic) id <AVExternalDeviceDelegate> delegate;
-- (void)finalize;
 - (void)dealloc;
 - (id)_weakReference;
 - (id)initWithFigEndpoint:(struct OpaqueFigEndpoint *)arg1;

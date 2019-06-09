@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
     id _object;
 }
 
-+ (id)__new:(id)arg1:(BOOL)arg2;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

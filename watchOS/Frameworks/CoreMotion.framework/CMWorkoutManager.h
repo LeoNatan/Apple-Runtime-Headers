@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) CMWorkoutManagerInternal *_internal; // @synthesize _internal;
 - (void)userDismissedWorkoutAlert;
 - (void)setSuggestedStopTimeout:(double)arg1;
+- (void)getPromptsNeededForWorkoutType:(int)arg1 handler:(CDUnknownBlockType)arg2;
 - (unsigned int)supportedMetricsForWorkoutType:(int)arg1;
 - (void)stopWorkout:(id)arg1;
 - (void)startWorkout:(id)arg1;

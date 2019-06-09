@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     OADTextListStyle *mTextListStyle;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)textListStyle;
 - (void)setTextListStyle:(id)arg1;
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)setTextBodyProperties:(id)arg1;
 - (id)shapeProperties;
 - (void)setShapeProperties:(id)arg1;
-- (void)dealloc;
 - (id)initWithDefaults;
 - (id)init;
 

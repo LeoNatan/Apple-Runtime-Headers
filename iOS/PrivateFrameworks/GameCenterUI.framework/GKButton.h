@@ -18,9 +18,9 @@
 
 + (void)initialize;
 @property(retain, nonatomic) GKTextStyle *appliedStyle; // @synthesize appliedStyle=_appliedStyle;
+- (void).cxx_destruct;
 - (void)setAttributedTitle:(id)arg1 forState:(unsigned long long)arg2;
 - (void)applyTextStyle:(id)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(retain, nonatomic) GKTextStyle *baseStyle;
 - (void)replayAndApplyStyleWithSystemContentChange:(_Bool)arg1;

@@ -9,5 +9,7 @@
 @interface NSManagedObjectContext (RTExtensions)
 - (_Bool)deleteAllWithEntityName:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
 - (id)fetchAllWithEntityName:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 error:(id *)arg4;
+@property(nonatomic) long long mirroringQualityOfService;
+- (id)currentDevice;
 @end
 

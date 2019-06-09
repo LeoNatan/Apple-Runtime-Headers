@@ -19,6 +19,9 @@
 + (id)homeFolder;
 - (id)confirmationTextForSummaryAction:(id)arg1;
 - (id)performSummaryAction:(id)arg1;
+- (id)localizedRevealButtonTitle;
+- (BOOL)showRevealButton;
+- (BOOL)showItemPaths;
 - (BOOL)showsSummaryPanel;
 - (long long)totalSpaceUsed;
 - (id)managedPaths;

@@ -8,7 +8,6 @@
 
 @class ML3DatabaseConnection, NSString;
 
-__attribute__((visibility("hidden")))
 @interface ML3PersistentIDGenerator : NSObject
 {
     ML3DatabaseConnection *_connection;

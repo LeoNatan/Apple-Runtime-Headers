@@ -13,6 +13,7 @@
 - (id)initWithConfiguration:(DEDBugSessionConfiguration *)arg1 session:(DEDBugSession *)arg2;
 
 @optional
+- (void)didFinishAllCollections;
 - (void)didAdoptAttachmentGroup:(DEDAttachmentGroup *)arg1;
 - (void)didCollectAttachmentGroup:(DEDAttachmentGroup *)arg1;
 - (void)didCancelCollectionOnExtension:(NSString *)arg1;

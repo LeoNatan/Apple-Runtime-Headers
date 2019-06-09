@@ -9,9 +9,9 @@
 @class MTUpdateAlarmIntent;
 
 @protocol MTUpdateAlarmIntentHandling <NSObject>
-- (void)handleMTUpdateAlarm:(MTUpdateAlarmIntent *)arg1 completion:(void (^)(MTUpdateAlarmIntentResponse *))arg2;
+- (void)handleUpdateAlarm:(MTUpdateAlarmIntent *)arg1 completion:(void (^)(MTUpdateAlarmIntentResponse *))arg2;
 
 @optional
-- (void)confirmMTUpdateAlarm:(MTUpdateAlarmIntent *)arg1 completion:(void (^)(MTUpdateAlarmIntentResponse *))arg2;
+- (void)confirmUpdateAlarm:(MTUpdateAlarmIntent *)arg1 completion:(void (^)(MTUpdateAlarmIntentResponse *))arg2;
 @end
 

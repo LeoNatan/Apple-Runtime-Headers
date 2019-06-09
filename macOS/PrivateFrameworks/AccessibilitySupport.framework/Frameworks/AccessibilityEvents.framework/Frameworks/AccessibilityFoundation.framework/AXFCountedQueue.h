@@ -9,6 +9,7 @@
 #import <AccessibilityFoundation/AXFDispatchQueue-Protocol.h>
 
 @class AXFDispatchGroup, AXFDispatchQueue, AXFDispatchSemaphore, NSString;
+@protocol OS_dispatch_queue;
 
 @interface AXFCountedQueue : NSObject <AXFDispatchQueue>
 {
@@ -23,6 +24,7 @@
 @property(readonly, nonatomic) AXFDispatchQueue *_stagingQueue; // @synthesize _stagingQueue=__stagingQueue;
 @property(readonly, nonatomic) AXFDispatchQueue *_workQueue; // @synthesize _workQueue=__workQueue;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_dispatch_queue> *underlyingQueue;
 - (void)notifyWithQueue:(id)arg1 workItem:(id)arg2;
 - (void)notifyWithQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)waitWithTimeout:(long long)arg1;

@@ -10,21 +10,30 @@
 
 @interface SBSAppDragLocalContext : NSObject
 {
+    _Bool _showingInlineAppExpose;
     _Bool _cancelsViaScaleAndFade;
     NSString *_applicationBundleIdentifier;
     NSSet *_launchActions;
-    NSURL *_launchURL;
     int _startLocation;
+    NSString *_draggedSceneIdentifier;
+    NSURL *_launchURL;
     UIView *_portaledPreview;
 }
 
 @property(nonatomic) _Bool cancelsViaScaleAndFade; // @synthesize cancelsViaScaleAndFade=_cancelsViaScaleAndFade;
 @property(retain, nonatomic) UIView *portaledPreview; // @synthesize portaledPreview=_portaledPreview;
-@property(readonly, nonatomic) int startLocation; // @synthesize startLocation=_startLocation;
 @property(copy, nonatomic) NSURL *launchURL; // @synthesize launchURL=_launchURL;
+@property(nonatomic) _Bool showingInlineAppExpose; // @synthesize showingInlineAppExpose=_showingInlineAppExpose;
+@property(copy, nonatomic) NSString *draggedSceneIdentifier; // @synthesize draggedSceneIdentifier=_draggedSceneIdentifier;
+@property(readonly, nonatomic) int startLocation; // @synthesize startLocation=_startLocation;
 @property(readonly, copy, nonatomic) NSSet *launchActions; // @synthesize launchActions=_launchActions;
 @property(copy, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier=_applicationBundleIdentifier;
 - (void).cxx_destruct;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)description;
 - (id)initWithApplicationBundleIdentifier:(id)arg1 withLaunchActions:(id)arg2 startLocation:(int)arg3;
 
 @end

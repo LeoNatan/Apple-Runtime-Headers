@@ -11,10 +11,8 @@
 }
 
 - (struct CGImage *)rasterizeImageUsingScaleFactor:(float)arg1 forTargetSize:(struct CGSize)arg2;
-@property(readonly, nonatomic) int layoutDirection;
-@property(readonly, nonatomic) int displayGamut;
-@property(readonly, nonatomic) float scale;
 @property(readonly, nonatomic) struct CGPDFDocument *pdfDocument;
+@property(readonly, nonatomic) float scale;
 
 @end
 

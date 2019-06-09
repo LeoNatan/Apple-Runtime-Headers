@@ -6,8 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <FinderKit/TCoalescingNodeObserverProtocol-Protocol.h>
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface FI_TICloudAccountManager : NSObject
+@interface FI_TICloudAccountManager : NSObject <TCoalescingNodeObserverProtocol>
 {
     struct TriStateBool fLoggedIntoICloud;
     struct TriStateBool fICloudDriveEnabled;
@@ -18,6 +22,15 @@ __attribute__((visibility("hidden")))
     struct TriStateBool fIsOverQuota;
     struct TriStateBool fAppSynchingDocuments;
     struct TNSRef<BRContainer, void> fDefaultContainer;
+    struct TNSRef<NSImage, void> fSharedFolderImage;
+    struct TFENode _providersContainer;
+    struct TFENode _desktopInHome;
+    struct TFENode _documentsInHome;
+    struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _homeObserver;
+    struct shared_ptr<TCoalescingNodeObserverCocoaBridge> _providersObserver;
+    struct TNotificationCenterObserver fiCloudAccountTokenDidChangeObserver;
+    struct TNotificationCenterObserver fContainerListDidChangeObserver;
+    struct TKeyValueObserver fOverQuotaObserver;
 }
 
 + (_Bool)isMaxTier;
@@ -35,8 +48,11 @@ __attribute__((visibility("hidden")))
 + (id)singleton;
 + (void)postOverQuotaChange;
 + (void)postStatusChange;
++ (void)checkForFileProviderChanges;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)sharedFolderImage;
+- (void)setSharedFolderImageIfNonNil:(id)arg1;
 - (_Bool)appIsSyncingDocuments;
 - (_Bool)documentsInTheCloud;
 - (_Bool)desktopInTheCloud;
@@ -45,15 +61,23 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasDeclinedUpgrade;
 - (_Bool)isSignedIntoICloud;
 - (_Bool)isSynchingDocuments;
-- (_Bool)updateLoginState:(_Bool)arg1 userHasDeclinedUpgrade:(_Bool)arg2 firstSyncDownComplete:(_Bool)arg3 syncDesktop:(_Bool)arg4 syncDocuments:(_Bool)arg5 loggedIntoIcloud:(_Bool)arg6;
+- (pair_5f6a4f40)updateLoginState:(_Bool)arg1 userHasDeclinedUpgrade:(_Bool)arg2 firstSyncDownComplete:(_Bool)arg3 syncDesktop:(_Bool)arg4 syncDocuments:(_Bool)arg5 loggedIntoIcloud:(_Bool)arg6;
 - (void)computeLoginState;
 - (void)computeIsOverQuota;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesDeleted:(const struct TFENodeVector *)arg2 fromObservedNode:(const struct TFENode *)arg3;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesChanged:(const vector_614ab7ad *)arg2 inObservedNode:(const struct TFENode *)arg3;
+- (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesAdded:(const struct TFENodeVector *)arg2 toObservedNode:(const struct TFENode *)arg3;
+- (void)postFPProviderChange;
 - (void)invalidate;
 - (void)dealloc;
 - (id)_init;
 - (void)iCloudAccountAvailabilityChanged;
-- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

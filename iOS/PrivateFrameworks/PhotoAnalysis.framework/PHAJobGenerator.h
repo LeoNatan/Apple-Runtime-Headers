@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, PHAWorkerHealthMonitor, PHPhotoLibrary;
+@class NSMutableDictionary, PHAWorkerHealthMonitor, PHPhotoLibrary;
 
 @interface PHAJobGenerator : NSObject
 {
@@ -15,7 +15,6 @@
     PHPhotoLibrary *_library;
     PHAWorkerHealthMonitor *_healthMonitor;
     NSMutableDictionary *_workInfoReadersByMode;
-    NSDictionary *_workersByType;
     long long _generatedJobCountGoal;
     NSMutableDictionary *_countOfJobsGeneratedByWorkerType;
 }
@@ -23,16 +22,15 @@
 + (long long)maxBatchSize;
 @property(readonly, nonatomic) NSMutableDictionary *countOfJobsGeneratedByWorkerType; // @synthesize countOfJobsGeneratedByWorkerType=_countOfJobsGeneratedByWorkerType;
 @property(nonatomic) long long generatedJobCountGoal; // @synthesize generatedJobCountGoal=_generatedJobCountGoal;
-@property(readonly, nonatomic) NSDictionary *workersByType; // @synthesize workersByType=_workersByType;
 @property(readonly, nonatomic) NSMutableDictionary *workInfoReadersByMode; // @synthesize workInfoReadersByMode=_workInfoReadersByMode;
 @property(readonly, nonatomic) PHAWorkerHealthMonitor *healthMonitor; // @synthesize healthMonitor=_healthMonitor;
 @property(readonly, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
 @property _Bool graphIncompatibleWorkersAreInhibited; // @synthesize graphIncompatibleWorkersAreInhibited=_graphIncompatibleWorkersAreInhibited;
 - (void).cxx_destruct;
-- (id)generateJobWithCurrentConstraints:(id)arg1;
-- (id)initWithHealthMonitor:(id)arg1 library:(id)arg2 workersByType:(id)arg3;
+- (id)generateJobWithCurrentConstraints:(id)arg1 workersByType:(id)arg2;
+- (id)initWithHealthMonitor:(id)arg1 library:(id)arg2;
 - (id)_produceAcknowledgeDeletesJobForWorkerType:(short)arg1 scenario:(unsigned long long)arg2 defaultsDisabledKey:(id)arg3 failureReason:(id *)arg4;
-- (id)_produceAssetAnalysisOrAdditionalJobWithForWorkerType:(short)arg1 workInfoReaderMode:(id)arg2 scenario:(unsigned long long)arg3 allowLoadBalanceSkip:(_Bool)arg4 additionalStatesToExclude:(id)arg5 askAboutAdditionalJobs:(_Bool)arg6 canUseNetwork:(_Bool)arg7 defaultsDisabledKey:(id)arg8 failureReason:(id *)arg9;
+- (id)_produceAssetAnalysisOrAdditionalJobWithForWorkerType:(id)arg1 workInfoReaderMode:(id)arg2 scenario:(unsigned long long)arg3 allowLoadBalanceSkip:(_Bool)arg4 additionalStatesToExclude:(id)arg5 askAboutAdditionalJobs:(_Bool)arg6 canUseNetwork:(_Bool)arg7 defaultsDisabledKey:(id)arg8 failureReason:(id *)arg9;
 - (_Bool)_workerUnavailableForWorkerType:(short)arg1 defaultsDisabledKey:(id)arg2 unavailableReason:(id *)arg3;
 - (id)_transformWorkInfoByUUIDToWorkInfoByLocalIdentifier:(id)arg1;
 - (void)_incrementGeneratedJobCountForWorkerType:(short)arg1;

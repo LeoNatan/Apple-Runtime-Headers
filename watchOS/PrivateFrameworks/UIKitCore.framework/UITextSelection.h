@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)setRangedSelectionBaseToCurrentSelectionEnd;
 - (void)setRangedSelectionBaseToCurrentSelectionStart;
 - (void)setRangedSelectionBaseToCurrentSelection;
+- (_Bool)isRangedSelectionSpanningDocument;
 - (_Bool)hasEditableSelection;
 - (_Bool)pointAtEndOfLine:(struct CGPoint)arg1;
 - (_Bool)pointAtStartOfLine:(struct CGPoint)arg1;
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)increaseSelectionGranularity;
 - (void)alterSelectionGranularity:(int)arg1;
 - (void)alterSelection:(struct CGPoint)arg1 granularity:(int)arg2;
+- (void)aggressivelyExpandSelectionToSmartSelectionContainingCaretSelection;
 - (void)aggressivelyExpandSelectionToWordContainingCaretSelection;
 - (void)collapseSelection;
 - (void)clearSelection;

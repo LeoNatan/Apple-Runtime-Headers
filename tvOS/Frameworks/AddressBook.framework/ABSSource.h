@@ -19,6 +19,7 @@
     CNMutableContainer *_cnImpl;
 }
 
++ (void)initialize;
 @property(nonatomic) int revertedRecordID; // @synthesize revertedRecordID=_revertedRecordID;
 @property(retain, nonatomic) CNMutableContainer *cnImpl; // @synthesize cnImpl=_cnImpl;
 @property(readonly, nonatomic) CNAccount *account; // @synthesize account=_account;

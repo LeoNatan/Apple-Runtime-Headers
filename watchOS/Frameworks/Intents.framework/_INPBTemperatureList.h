@@ -19,6 +19,7 @@
     NSArray *_temperatures;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)temperatureType;
 @property(copy, nonatomic) NSArray *temperatures; // @synthesize temperatures=_temperatures;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)temperatureAtIndex:(unsigned int)arg1;

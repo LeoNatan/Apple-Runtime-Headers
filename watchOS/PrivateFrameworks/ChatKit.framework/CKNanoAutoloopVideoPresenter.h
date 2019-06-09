@@ -11,6 +11,7 @@
 
 @class AVPlayerLooper, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoAutoloopVideoPresenter : AVPlayerViewController <CKNanoMediaPresentingViewController, AVPlayerViewControllerDelegate>
 {
     AVPlayerLooper *_playerLooper;

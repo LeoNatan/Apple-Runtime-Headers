@@ -36,6 +36,7 @@
 
 + (id)rendererWithContext:(id)arg1 options:(id)arg2;
 + (void)setPrefersOpenGL:(_Bool)arg1;
++ (id)rendererWithDevice:(id)arg1 options:(id)arg2;
 + (void)restoreDefaultOpenGLState:(id)arg1 frameBuffer:(int)arg2;
 + (int)getOpenGLFramebuffer:(id)arg1;
 @property(nonatomic) double backingScaleFactor; // @synthesize backingScaleFactor=_backingScaleFactor;
@@ -84,6 +85,9 @@
 - (void)settingsForTransition:(id)arg1 atTime:(double)arg2 renderIncomingToTexture:(_Bool *)arg3 renderOutgoingToTexture:(_Bool *)arg4 renderIncomingToScreen:(_Bool *)arg5 renderOutgoingToScreen:(_Bool *)arg6;
 - (void)render:(_Bool)arg1;
 - (void)renderToFramebuffer:(int)arg1 shouldClear:(_Bool)arg2;
+- (void)renderToTexture:(id)arg1 commandQueue:(id)arg2;
+- (void)renderTransition:(id)arg1 withInputTexture:(id)arg2 outputTexture:(id)arg3 time:(float)arg4 encoder:(id)arg5 pass:(id)arg6 commandQueue:(id)arg7;
+- (void)renderWithEncoder:(id)arg1 pass:(id)arg2 commandQueue:(id)arg3;
 - (void)updateAtTime:(double)arg1;
 - (void)setupContext;
 - (void)_initialize;

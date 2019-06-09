@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (id)contactFromABPerson:(void *)arg1 uniqueKeysToConvert:(id)arg2 mutable:(_Bool)arg3;
 + (id)contactFromABPerson:(void *)arg1 keysToConvert:(id)arg2 mutable:(_Bool)arg3;
 + (void)initialize;
++ (id)os_log;
 + (id)numberFromIntegerABBytes:(char *)arg1 length:(unsigned long long)arg2;
 + (id)dataFromABBytes:(char *)arg1 length:(unsigned long long)arg2;
 + (id)dateFromABBytes:(char *)arg1 length:(unsigned long long)arg2;

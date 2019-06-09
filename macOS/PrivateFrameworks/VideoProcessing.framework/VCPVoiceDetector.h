@@ -4,17 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <VideoProcessing/VCPAudioAnalyzer.h>
+#import <objc/NSObject.h>
 
-@interface VCPVoiceDetector : VCPAudioAnalyzer
+@class NSDictionary, NSMutableArray;
+
+@interface VCPVoiceDetector : NSObject
 {
+    NSDictionary *_model;
+    struct AudioStreamBasicDescription _audioStream;
+    int _sampleBatchSize;
+    CDStruct_1b6d18a9 _trackStart;
+    BOOL _voiceActivity;
+    CDStruct_1b6d18a9 _voiceStart;
+    NSMutableArray *_voiceDetections;
+    NSMutableArray *_utteranceDetections;
+    NSMutableArray *_musicDetections;
 }
 
++ (id)detector;
+@property(retain) NSMutableArray *voiceDetections; // @synthesize voiceDetections=_voiceDetections;
+- (void).cxx_destruct;
+- (id)results;
 - (int)finalizeAnalysisAtTime:(const CDStruct_1b6d18a9 *)arg1;
-- (int)processAudioSamples;
-- (int)loadModel;
+- (int)processAudioSamples:(struct AudioBufferList *)arg1 timestamp:(struct AudioTimeStamp)arg2;
 - (int)initializeAudioUnit:(const struct AudioStreamBasicDescription *)arg1;
+- (int)loadModel;
+- (int)initialize:(struct opaqueCMSampleBuffer *)arg1 sampleBatchSize:(int)arg2;
+- (void)addDetectionFromTime:(const CDStruct_1b6d18a9 *)arg1 toTime:(const CDStruct_1b6d18a9 *)arg2 result:(id)arg3;
 - (id)audioFormatRequirements;
+- (id)init;
 
 @end
 

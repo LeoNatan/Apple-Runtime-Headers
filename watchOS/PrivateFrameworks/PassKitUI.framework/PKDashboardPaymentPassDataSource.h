@@ -6,18 +6,24 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitUI/PKAccountServiceAccountResolutionControllerDelegate-Protocol.h>
+#import <PassKitUI/PKAccountServiceObserver-Protocol.h>
 #import <PassKitUI/PKDashboardPassDataSource-Protocol.h>
 #import <PassKitUI/PKDashboardTransactionFetcherDelegate-Protocol.h>
+#import <PassKitUI/PKDiscoveryObserver-Protocol.h>
 #import <PassKitUI/PKForegroundActiveArbiterObserver-Protocol.h>
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
+#import <PassKitUI/PKPaymentSetupViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentVerificationControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
+#import <PassKitUI/PKPhysicalCardControllerDelegate-Protocol.h>
 #import <PassKitUI/PKSecureElementObserver-Protocol.h>
+#import <PassKitUI/PKSpendingSummaryFetcherObserver-Protocol.h>
 
-@class NSArray, NSDateFormatter, NSOrderedSet, NSString, PKDashboardTransactionFetcher, PKGroup, PKPassGroupView, PKPaymentDefaultDataProvider, PKPaymentPass, PKPaymentVerificationController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentContactResolver, PKPeerPaymentWebService, PKSecureElement, PKTransitBalanceModel;
-@protocol PKDashboardDataSourceDelegate;
+@class NSArray, NSDate, NSDateFormatter, NSError, NSMutableArray, NSMutableSet, NSOrderedSet, NSString, PKAMPEnrollmentManager, PKAccount, PKAccountServiceAccountResolutionController, PKCreditAccountStatement, PKDashboardTransactionFetcher, PKGroup, PKPassGroupView, PKPassPresentationContext, PKPaymentDefaultDataProvider, PKPaymentPass, PKPaymentVerificationController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentContactResolver, PKPeerPaymentWebService, PKPhysicalCardController, PKSecureElement, PKSpendingSummary, PKSpendingSummaryFetcher, PKTransitBalanceModel;
+@protocol OS_dispatch_source, PKDashboardDataSourceDelegate;
 
-@interface PKDashboardPaymentPassDataSource : NSObject <PKSecureElementObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKForegroundActiveArbiterObserver, PKDashboardPassDataSource, PKDashboardTransactionFetcherDelegate>
+@interface PKDashboardPaymentPassDataSource : NSObject <PKSecureElementObserver, PKPaymentDataProviderDelegate, PKPaymentVerificationControllerDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKForegroundActiveArbiterObserver, PKPhysicalCardControllerDelegate, PKSpendingSummaryFetcherObserver, PKAccountServiceAccountResolutionControllerDelegate, PKDiscoveryObserver, PKPaymentSetupViewControllerDelegate, PKAccountServiceObserver, PKDashboardPassDataSource, PKDashboardTransactionFetcherDelegate>
 {
     PKPassGroupView *_groupView;
     PKGroup *_group;
@@ -30,16 +36,23 @@
     struct os_unfair_lock_s _lockTransactions;
     NSArray *_previousTransactions;
     _Bool _transactionsPerPeriodLoaded;
+    NSArray *_transactionGroups;
+    _Bool _forceTransactionsReload;
+    _Bool _forceTransactionsUpdate;
+    NSObject<OS_dispatch_source> *_timerTransactions;
+    NSDate *_lastTransactionReload;
     PKPeerPaymentAccount *_peerPaymentAccount;
     PKPeerPaymentContactResolver *_contactResolver;
     PKPeerPaymentWebService *_peerPaymentWebService;
     PKPeerPaymentAccountResolutionController *_peerPaymentAccountResolutionController;
     _Bool _performingPeerPaymentResolution;
+    _Bool _performingAMPEnrollment;
     PKTransitBalanceModel *_transitBalanceModel;
     _Bool _canDisplayProducts;
     _Bool _productsLoaded;
     _Bool _canDisplayBalance;
     _Bool _balanceLoaded;
+    _Bool _balanceSectionNeedsUpdate;
     PKPaymentDefaultDataProvider *_paymentDataProvider;
     PKPaymentVerificationController *_paymentVerificationController;
     _Bool _performingVerification;
@@ -52,10 +65,47 @@
     NSDateFormatter *_formatterYear;
     _Bool _allContentIsLoaded;
     CDStruct_973bafd3 _activeState;
+    NSMutableArray *_executionBlocksContentIsLoaded;
+    PKPassPresentationContext *_context;
+    _Bool _isCreditPass;
+    PKAccount *_account;
+    PKPhysicalCardController *_physicalCardController;
+    PKCreditAccountStatement *_currentStatement;
+    NSArray *_upcomingScheduledPayments;
+    _Bool _scheduledPaymentsLoaded;
+    PKSpendingSummaryFetcher *_summaryFetcher;
+    NSDate *_startCurrentPeriod;
+    PKSpendingSummary *_currentSummary;
+    _Bool _pendingSummaryUpdate;
+    _Bool _hasMoreSummaryUpdates;
+    NSError *_accountUpdateError;
+    _Bool _performingAccountUpdate;
+    PKAccountServiceAccountResolutionController *_accountResolutionController;
+    struct os_unfair_lock_s _lockDownloads;
+    NSMutableSet *_iconDownloads;
+    NSString *_scaleKey;
+    _Bool _showAMPEnrollmentMessage;
+    PKAMPEnrollmentManager *_AMPEnrollmentManager;
+    NSArray *_weeks;
+    NSArray *_months;
 }
 
+@property(retain, nonatomic) NSArray *months; // @synthesize months=_months;
+@property(retain, nonatomic) NSArray *weeks; // @synthesize weeks=_weeks;
+@property(readonly, nonatomic) PKSpendingSummaryFetcher *summaryFetcher; // @synthesize summaryFetcher=_summaryFetcher;
+@property(readonly, nonatomic) PKAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (void)viewControllerDidCancelSetupFlow:(id)arg1;
+- (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
+- (void)scheduledPaymentsChangedForAccountIdentifier:(id)arg1;
+- (void)discoveryServiceDidReceiveUpdatedDiscoveryEngagementMessages:(id)arg1;
+- (void)accountServiceAccountResolutionController:(id)arg1 requestsDismissCurrentViewControllerAnimated:(_Bool)arg2;
+- (void)accountServiceAccountResolutionController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
+- (void)invalidatedSummariesAvailable;
+- (void)invalidatedSpendingSummariesOfType:(unsigned int)arg1;
+- (void)invalidatedSpendingSummaryOfType:(unsigned int)arg1 startingWithDate:(id)arg2;
+- (void)physicalCardControllerDidUpdatePhysicalCards:(id)arg1;
 - (void)presentVerificationViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)didChangeVerificationPresentation;
 - (void)_verificationButtonTapped;
@@ -68,9 +118,14 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(_Bool)arg2;
+- (void)_addToAMPButtonTappedForPass:(id)arg1;
+- (void)_fetchAMPEnrollmentEligibility;
+- (_Bool)_passAvailableForAMPEnrollment;
 - (void)_updateTransitBalance;
 - (void)reloadTransitBalance;
 - (_Bool)_canDisplayBalance;
+- (void)_presentPassWithPassUniqueIdentifier:(id)arg1;
+- (void)_presentPassDetailsWithAction:(unsigned int)arg1;
 - (void)_deleteButtonTapped;
 - (void)_lostModeButtonTapped;
 - (void)secureElementDidLeaveRestrictedMode:(id)arg1;
@@ -78,25 +133,49 @@
 - (void)reloadAllContent;
 - (void)updateContentIsLoaded;
 - (void)groupViewDidUpdatePassView:(id)arg1;
+- (id)_messageForAMPEnrollment;
+- (id)_messageFromEngagementMessage:(id)arg1;
+- (void)_presentPhysicalCardActivation;
+- (id)_messageForPhysicalCard;
+- (void)_messageForEnableNotificationsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_messageForPaymentFailedWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_messageForRewardsRedemptionWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_messageForPeerPaymentIdentityVerificationForRewardsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_openBusinessChatWithContext:(id)arg1;
+- (void)_callIssuer;
+- (void)_presentContactViewControllerWithBusinessChatContext:(id)arg1;
+- (void)_educationMessagesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_messagesForAccountStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)_shouldPaymentMessageAppear:(id)arg1;
 - (void)_messageFromPaymentServiceSuppressingPassStateChanges:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_messageForSessionActive;
 - (id)_messageForPaymentApplicationStatus;
 - (void)reloadMessages;
+- (void)_updateTransactionsTimer;
+- (void)_localeDidChangeNotification:(id)arg1;
 - (void)updateWithTransactions:(id)arg1;
 - (void)transactionsChanged:(id)arg1;
+- (void)_updateWithTransactionGroups:(id)arg1;
 - (void)reloadTransactionGroups;
 - (void)reloadTransactions;
 - (_Bool)_canShowTransactions;
+- (CDStruct_1c32fd50)_peerPaymentDashboardCondition;
+- (void)loadSummariesWithForceReload:(_Bool)arg1;
+- (void)summaryTypeDidChange;
 - (void)_updateBalance;
+- (void)reloadScheduledPayments;
 - (void)reloadAccount;
+- (id)footerTextForSection:(unsigned int)arg1;
 - (id)titleForSection:(unsigned int)arg1;
 - (unsigned int)numberOfSections;
 - (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
 - (id)itemAtIndexPath:(id)arg1;
+@property(readonly, nonatomic) NSArray *upcomingScheduledPayments;
+@property(readonly, nonatomic) NSArray *currentMonthTransactions;
+- (void)executeAfterContentIsLoaded:(CDUnknownBlockType)arg1;
 - (void)setDataSourceDelegate:(id)arg1;
 - (void)dealloc;
-- (id)initWithGroupView:(id)arg1;
+- (id)initWithGroupView:(id)arg1 context:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

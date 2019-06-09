@@ -6,10 +6,11 @@
 
 #import <NanoWeatherKit/NSObject-Protocol.h>
 
-@class NSArray, NSError, NWKForecastConnection, WFAirQualityConditions, WFLocation, WFWeatherConditions;
+@class NSArray, NSDate, NSError, NWKForecastConnection, WFAirQualityConditions, WFLocation, WFWeatherConditions;
 
 @protocol NWKForecastConnectionDelegate <NSObject>
+- (void)forecastConnectionInterrupted:(NWKForecastConnection *)arg1;
 - (void)connection:(NWKForecastConnection *)arg1 isUpdatingForecast:(_Bool)arg2 forLocation:(WFLocation *)arg3 error:(NSError *)arg4;
-- (void)connection:(NWKForecastConnection *)arg1 updateForecastWithToken:(unsigned int)arg2 currentConditions:(WFWeatherConditions *)arg3 hourlyForecasts:(NSArray *)arg4 dailyForecasts:(NSArray *)arg5 airQuality:(WFAirQualityConditions *)arg6 forLocation:(WFLocation *)arg7;
+- (void)connection:(NWKForecastConnection *)arg1 forecastUpdatedAt:(NSDate *)arg2 token:(unsigned int)arg3 currentConditions:(WFWeatherConditions *)arg4 hourlyForecasts:(NSArray *)arg5 dailyForecasts:(NSArray *)arg6 airQuality:(WFAirQualityConditions *)arg7 forLocation:(WFLocation *)arg8;
 @end
 

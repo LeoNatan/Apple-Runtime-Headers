@@ -25,6 +25,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDictionary *metrics;
+- (void)flush;
 - (void)reset;
 - (void)willBeep;
 - (void)cancelBeepFromSamples:(id)arg1 timestamp:(unsigned long long)arg2;

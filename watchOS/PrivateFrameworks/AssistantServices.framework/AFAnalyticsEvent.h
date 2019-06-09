@@ -21,6 +21,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)eventsReferenceTime;
 @property(readonly, copy, nonatomic) NSData *contextData; // @synthesize contextData=_contextData;
 @property(readonly, nonatomic) int contextDataType; // @synthesize contextDataType=_contextDataType;
 @property(readonly, nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
@@ -30,6 +31,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)dateStamp;
 - (id)contextDataAsProtobuf;
 - (id)contextDataAsDictionary;
 - (id)legacyTypeName;

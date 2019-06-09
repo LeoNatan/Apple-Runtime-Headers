@@ -6,7 +6,7 @@
 
 #import <SAObjects/SADomainObject.h>
 
-@class NSString, SAHAAttributeValue;
+@class NSArray, NSString, SAHAAttributeValue;
 
 @interface SAHAAction : SADomainObject
 {
@@ -15,6 +15,9 @@
 + (id)actionWithDictionary:(id)arg1 context:(id)arg2;
 + (id)action;
 @property(retain, nonatomic) SAHAAttributeValue *value;
+@property(nonatomic) _Bool includeCompleteInformation;
+@property(nonatomic) long long executionOrder;
+@property(copy, nonatomic) NSArray *executionFlags;
 @property(copy, nonatomic) NSString *attribute;
 @property(copy, nonatomic) NSString *actionType;
 - (id)encodedClassName;

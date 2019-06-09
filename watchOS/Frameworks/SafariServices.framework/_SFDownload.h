@@ -6,36 +6,65 @@
 
 #import <objc/NSObject.h>
 
+#import <SafariServices/SFDownloadFileDelegate-Protocol.h>
 #import <SafariServices/WBSFluidProgressStateSource-Protocol.h>
 #import <SafariServices/_WKDownloadDelegate-Protocol.h>
 
-@class NSString, NSURL, WBSFluidProgressController, WBSFluidProgressState, _WKDownload, _WKUserInitiatedAction;
-@protocol _SFDownloadDelegate;
+@class NSData, NSDate, NSDictionary, NSString, NSTimer, NSURL, NSURLRequest, NSURLResponse, NSUUID, SFDownloadFile, WBSFluidProgressController, WBSFluidProgressState, WKWebView, _SFQuickLookDocument, _WKDownload, _WKUserInitiatedAction;
+@protocol _SFDownloadDelegate, _SFDownloadPlaceholderImporter;
 
-@interface _SFDownload : NSObject <_WKDownloadDelegate, WBSFluidProgressStateSource>
+@interface _SFDownload : NSObject <SFDownloadFileDelegate, _WKDownloadDelegate, WBSFluidProgressStateSource>
 {
     _WKDownload *_download;
-    unsigned int _downloadBackgroundTaskIdentifier;
-    long long _bytesExpected;
-    unsigned int _bytesLoaded;
-    _Bool _hasFailed;
     _Bool _wasCanceled;
     WBSFluidProgressState *_fluidProgressState;
     double _timeLastProgressNotificationWasSent;
+    int _cachedFileType;
+    NSTimer *_reportUpdatedProgressTimer;
+    WKWebView *_originatingWebView;
+    NSData *_resumeData;
+    NSData *_placeholderBookmarkData;
+    NSURL *_placeholderURL;
+    NSData *_completedFileBookmarkData;
+    SFDownloadFile *_completedFile;
+    NSString *_suggestedFilename;
+    NSURLRequest *_request;
+    _Bool _explicitlySaved;
+    _Bool _suppressesPrompt;
     NSURL *_sourceURL;
     NSString *_fileDownloadPath;
-    int _fileType;
     _WKUserInitiatedAction *_userInitiatedAction;
+    NSString *_uti;
+    NSString *_mimeType;
+    NSURLResponse *_response;
+    _SFQuickLookDocument *_quickLookDocument;
+    NSUUID *_identifier;
+    unsigned int _bytesLoaded;
+    int _state;
+    NSDate *_dateFinished;
     WBSFluidProgressController *_fluidProgressController;
     id <_SFDownloadDelegate> _delegate;
+    id <_SFDownloadPlaceholderImporter> _placeholderImporter;
+    long long _bytesExpected;
 }
 
 + (id)downloadDestinationPathWithFilename:(id)arg1;
-+ (id)provisionalDownloadWithType:(int)arg1 request:(id)arg2 uti:(id)arg3 userInitiatedAction:(id)arg4;
++ (id)provisionalDownloadWithMIMEType:(id)arg1 request:(id)arg2 response:(id)arg3 filename:(id)arg4 uti:(id)arg5 userInitiatedAction:(id)arg6;
+@property(nonatomic) __weak id <_SFDownloadPlaceholderImporter> placeholderImporter; // @synthesize placeholderImporter=_placeholderImporter;
 @property(nonatomic) __weak id <_SFDownloadDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak WBSFluidProgressController *fluidProgressController; // @synthesize fluidProgressController=_fluidProgressController;
+@property(readonly, nonatomic) NSDate *dateFinished; // @synthesize dateFinished=_dateFinished;
+@property(readonly, nonatomic) int state; // @synthesize state=_state;
+@property(readonly, nonatomic) unsigned int bytesLoaded; // @synthesize bytesLoaded=_bytesLoaded;
+@property(readonly, nonatomic) long long bytesExpected; // @synthesize bytesExpected=_bytesExpected;
+@property(nonatomic) _Bool suppressesPrompt; // @synthesize suppressesPrompt=_suppressesPrompt;
+@property(nonatomic) _Bool explicitlySaved; // @synthesize explicitlySaved=_explicitlySaved;
+@property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) _SFQuickLookDocument *quickLookDocument; // @synthesize quickLookDocument=_quickLookDocument;
+@property(readonly, nonatomic) NSURLResponse *response; // @synthesize response=_response;
+@property(readonly, copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
+@property(readonly, copy, nonatomic) NSString *uti; // @synthesize uti=_uti;
 @property(readonly, nonatomic) _WKUserInitiatedAction *userInitiatedAction; // @synthesize userInitiatedAction=_userInitiatedAction;
-@property(readonly, nonatomic) int fileType; // @synthesize fileType=_fileType;
 @property(readonly, nonatomic) NSString *fileDownloadPath; // @synthesize fileDownloadPath=_fileDownloadPath;
 @property(readonly, nonatomic) NSURL *sourceURL; // @synthesize sourceURL=_sourceURL;
 - (void).cxx_destruct;
@@ -49,18 +78,49 @@
 - (void)_downloadDidCancel:(id)arg1;
 - (void)_download:(id)arg1 didFailWithError:(id)arg2;
 - (void)_downloadDidFinish:(id)arg1;
+- (void)_continueAfterDecidingFileDownloadPath:(CDUnknownBlockType)arg1;
+- (void)_continueAfterDownloadConfirmation:(_Bool)arg1 destinationCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_didUpdateBytesLoaded;
 - (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
 - (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)_downloadDidStart:(id)arg1;
-- (void)_endDownloadBackgroundTask;
-- (void)_beginDownloadBackgroundTask;
+- (void)downloadFileDidChangeURL:(id)arg1;
+- (void)downloadFileWillBeDeleted:(id)arg1;
+- (void)downloadFileContentsDidChange:(id)arg1;
+- (void)_notifyDelegateOfFinishedDownload;
+- (id)_createResumeData;
+- (void)reveal;
+@property(readonly, nonatomic) _Bool canReveal;
+- (void)_didImportFileAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_importCompleteDownloadIfNeeded;
+- (void)_didImportPlaceholderAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_importPlaceholderIfNeeded:(CDUnknownBlockType)arg1;
+- (void)resumeInProcessPool:(id)arg1;
+@property(readonly, nonatomic) _Bool canResume;
+- (id)completedFileURL:(_Bool *)arg1;
+@property(readonly, nonatomic) NSURL *completedFileURL;
+@property(readonly, nonatomic) NSString *filenameWithoutExtension;
+@property(readonly, nonatomic) NSString *filename;
+- (id)initWithDictionaryRepresentation:(id)arg1 didUpdateRepresentation:(_Bool *)arg2;
+@property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(readonly, nonatomic) _WKDownload *wkDownload;
+@property(readonly, nonatomic) int fileType;
 - (void)cancel;
+- (void)removeDataAndPlaceholderFromDisk;
 - (_Bool)removeFromDisk;
+@property(readonly, nonatomic, getter=isIdle) _Bool idle;
+@property(readonly, nonatomic) double progress;
+- (void)_reportUpdatedProgressNow;
+- (void)_reportUpdatedProgressTimerFired:(id)arg1;
+- (void)_reportUpdatedProgressSoon;
+- (void)_cancelReportUpdatedProgressTimer;
+@property(readonly, copy) NSString *description;
+- (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

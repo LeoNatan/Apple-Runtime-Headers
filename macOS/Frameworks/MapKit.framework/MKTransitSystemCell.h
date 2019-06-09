@@ -8,12 +8,14 @@
 
 #import <MapKit/MKMultiLineLabelContainer-Protocol.h>
 
-@class MKImageView, NSImage, NSLayoutConstraint, NSString, _MKUILabel;
+@class MKImageView, NSImage, NSLayoutConstraint, NSString, NSView, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKTransitSystemCell : MKCustomSeparatorTableViewCell <MKMultiLineLabelContainer>
 {
     MKImageView *_shieldImageView;
     _MKUILabel *_systemLabel;
+    NSView *_disclosureButton;
     NSLayoutConstraint *_imageToLabelConstraint;
 }
 

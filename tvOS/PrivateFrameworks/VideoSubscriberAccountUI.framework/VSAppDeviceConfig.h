@@ -8,13 +8,16 @@
 
 #import <VideoSubscriberAccountUI/IKAppDeviceConfig-Protocol.h>
 
-@class NSString;
+@class NSOperationQueue, NSString;
 
 __attribute__((visibility("hidden")))
 @interface VSAppDeviceConfig : NSObject <IKAppDeviceConfig>
 {
+    NSOperationQueue *_privateQueue;
 }
 
+@property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
+- (void).cxx_destruct;
 - (id)timeZone;
 - (id)storeFrontCountryCode;
 - (id)systemLanguage;
@@ -22,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)screenSize;
 - (unsigned long long)preferredVideoPreviewFormat;
 - (unsigned long long)preferredVideoFormat;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class NSDate, NSMutableData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface JournalRecordInfo : NSObject
 {
     NSString *_journalName;

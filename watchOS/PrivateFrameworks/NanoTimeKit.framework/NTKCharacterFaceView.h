@@ -51,13 +51,17 @@
 - (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
+- (_Bool)_isAnalog;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyShowsCanonicalContent;
 - (void)_applyDataMode;
 - (void)_applyDataModeFromOldDataMode:(int)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
+- (void)_unloadContentViews;
+- (void)_loadContentViews;
 - (void)_applyForegroundAlphaForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(int)arg2;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
@@ -77,6 +81,8 @@
 - (id)_slotForUtilitySlot:(int)arg1;
 - (int)_utilitySlotForSlot:(id)arg1;
 - (_Bool)_needsForegroundContainerView;
+- (void)_stopOutputtingTime;
+- (void)_outputTime:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 

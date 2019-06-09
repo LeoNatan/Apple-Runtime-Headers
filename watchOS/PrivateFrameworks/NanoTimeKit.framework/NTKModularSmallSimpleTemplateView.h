@@ -16,7 +16,6 @@
     int _maxDynamicFontSize;
 }
 
-+ (void)load;
 + (id)supportedTemplateClasses;
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;

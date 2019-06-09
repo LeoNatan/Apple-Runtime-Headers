@@ -11,12 +11,14 @@
 @interface AVCaptureDeviceDiscoverySession : NSObject
 {
     NSArray *_deviceTypes;
-    long long *_position;
+    long long _position;
     NSString *_mediaType;
     NSArray *_devices;
+    NSArray *_supportedMultiCamDeviceSets;
 }
 
 + (id)discoverySessionWithDeviceTypes:(id)arg1 mediaType:(id)arg2 position:(long long)arg3;
+@property(readonly, nonatomic) NSArray *supportedMultiCamDeviceSets; // @synthesize supportedMultiCamDeviceSets=_supportedMultiCamDeviceSets;
 @property(readonly, nonatomic) NSArray *devices; // @synthesize devices=_devices;
 - (id)description;
 - (void)dealloc;

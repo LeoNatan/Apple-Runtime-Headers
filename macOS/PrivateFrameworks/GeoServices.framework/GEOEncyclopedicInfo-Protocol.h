@@ -10,6 +10,7 @@
 
 @protocol GEOEncyclopedicInfo <NSObject>
 @property(readonly, nonatomic) GEOMapItemAttribution *encyclopedicAttribution;
+@property(readonly, nonatomic) BOOL hasStandAloneFactoids;
 @property(readonly, nonatomic) NSArray *factoids;
 @property(readonly, nonatomic) BOOL hasPairOfFactoids;
 @property(readonly, nonatomic) NSString *textBlockText;

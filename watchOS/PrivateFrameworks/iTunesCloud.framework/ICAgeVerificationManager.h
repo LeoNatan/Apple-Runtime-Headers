@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 - (void).cxx_destruct;
 - (_Bool)_bagHasValidKeys:(id)arg1;
-- (_Bool)_processPotentialStateChangesWithStatus:(int)arg1 treatment:(int)arg2 verificationURL:(id)arg3 error:(id)arg4;
+- (_Bool)_processAgeVerificationState:(id)arg1;
 - (void)_runAgeVerificationForUserIdentity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateAgeVerificationStateForUserIdentity:(id)arg1 sendNotification:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_updateAgeVerificationStateAndSendNotification:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

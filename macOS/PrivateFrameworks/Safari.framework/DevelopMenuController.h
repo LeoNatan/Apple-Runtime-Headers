@@ -9,13 +9,12 @@
 #import <Safari/NSMenuDelegate-Protocol.h>
 #import <Safari/RWIApplicationDelegate-Protocol.h>
 #import <Safari/RWIDebuggableDelegate-Protocol.h>
-#import <Safari/RWIManagerDelegate-Protocol.h>
 #import <Safari/RWITargetDelegate-Protocol.h>
 
-@class ExtensionBuilderController, NSArray, NSMenu, NSMenuItem, NSString;
+@class NSArray, NSMenu, NSMenuItem, NSString;
 
 __attribute__((visibility("hidden")))
-@interface DevelopMenuController : NSObject <RWIManagerDelegate, RWITargetDelegate, RWIApplicationDelegate, RWIDebuggableDelegate, NSMenuDelegate>
+@interface DevelopMenuController : NSObject <RWITargetDelegate, RWIApplicationDelegate, RWIDebuggableDelegate, NSMenuDelegate>
 {
     NSMenuItem *_developMenuItem;
     NSMenuItem *_highlightedRemoteWebInspectorMenuItem;
@@ -24,26 +23,18 @@ __attribute__((visibility("hidden")))
     NSMenu *_experimentalFeaturesMenu;
     NSMenu *_serviceWorkersMenu;
     NSMenuItem *_getSafariTechnologyPreviewMenuItem;
-    BOOL _menuInstalled;
-    ExtensionBuilderController *_extensionBuilderController;
     BOOL _developMenuOpen;
     NSArray *_userAgents;
+    struct Optional<unsigned long long> _notificationHandlerID;
+    BOOL _menuInstalled;
 }
 
 + (id)sharedController;
+@property(readonly, nonatomic, getter=isMenuInstalled) BOOL menuInstalled; // @synthesize menuInstalled=_menuInstalled;
+- (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)debuggableDidChange:(id)arg1;
-- (void)applicationDidBecomeInactive:(id)arg1;
-- (void)applicationDidBecomeActive:(id)arg1;
-- (void)application:(id)arg1 didRemoveDebuggable:(id)arg2;
-- (void)application:(id)arg1 didAddDebuggable:(id)arg2;
-- (void)target:(id)arg1 decidePolicyForAutomaticInspectionCandidate:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)target:(id)arg1 didRemoveApplication:(id)arg2;
-- (void)target:(id)arg1 didAddApplication:(id)arg2;
-- (void)targetDidBecomeNotReady:(id)arg1;
-- (void)targetDidBecomeReady:(id)arg1;
-- (void)manager:(id)arg1 didRemoveTarget:(id)arg2;
-- (void)manager:(id)arg1 didAddTarget:(id)arg2;
+- (void)inspectDebuggable:(id)arg1;
+- (void)showSnippetEditor:(id)arg1;
 @property(readonly) NSString *iPadUserAgent;
 @property(readonly) NSString *iPhoneUserAgent;
 @property(readonly) NSArray *userAgents;
@@ -69,23 +60,29 @@ __attribute__((visibility("hidden")))
 - (id)_menuItemForTarget:(id)arg1;
 - (BOOL)menuHasKeyEquivalent:(id)arg1 forEvent:(id)arg2 target:(id *)arg3 action:(SEL *)arg4;
 - (BOOL)updateMenu:(id)arg1 withEvent:(id)arg2 withFlags:(unsigned long long)arg3;
+- (void)removeMenu;
+- (void)_actuallyInstallMenu;
+- (void)installMenuWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)pairWithDevice:(id)arg1;
 - (void)_toggleWirelessDebugging:(id)arg1;
 - (void)_toggleAutoPause:(id)arg1;
 - (void)_toggleAutoAttach:(id)arg1;
+- (void)_configureAutomaticInspectionForTarget:(id)arg1;
 - (BOOL)_togglePauseSettingForTarget:(id)arg1;
 - (BOOL)_autoPauseSettingForTarget:(id)arg1;
 - (id)_autoPausePreferenceKeyForTarget:(id)arg1;
 - (BOOL)_toggleAttachSettingForTarget:(id)arg1;
 - (BOOL)_autoAttachSettingForTarget:(id)arg1;
 - (id)_autoAttachPreferenceKeyForTarget:(id)arg1;
-- (void)inspectDebuggable:(id)arg1;
-- (void)pairWithDevice:(id)arg1;
-- (void)saveExtensionBuilderChanges;
-- (void)showExtensionBuilder:(id)arg1;
-- (void)showSnippetEditor:(id)arg1;
-- (void)removeMenu;
-- (void)_actuallyInstallMenu;
-- (void)installMenuWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)debuggableDidChange:(id)arg1;
+- (void)application:(id)arg1 didRemoveDebuggable:(id)arg2;
+- (void)application:(id)arg1 didAddDebuggable:(id)arg2;
+- (void)target:(id)arg1 decidePolicyForAutomaticInspectionCandidate:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)target:(id)arg1 didRemoveApplication:(id)arg2;
+- (void)target:(id)arg1 didAddApplication:(id)arg2;
+- (void)_handleRWINotification:(id)arg1;
+- (void)_unregisterForRWINotifications;
+- (void)_registerForRWINotifications;
 - (void)_setDeveloperExtrasEnabled:(BOOL)arg1;
 - (void)dealloc;
 

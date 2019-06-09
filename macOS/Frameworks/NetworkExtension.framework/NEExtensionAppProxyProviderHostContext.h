@@ -18,10 +18,8 @@
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 - (void)openFlowDivertControlSocketWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)verifyAppWithPID:(long long)arg1 uuid:(id)arg2 matchesAppRule:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setDelegateInterface:(unsigned int)arg1;
 - (void)setInitialFlowDivertControlSocket:(id)arg1;
-- (void)setInitialFlowDivertControlSocket:(id)arg1 extraValidation:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface NSDragDestination : NSObject <NSDraggingInfo, NSDraggingInfoPrivate, NSDraggingInfo_Private>
 {
     NSWindow *_window;
+    void *_windowReference;
     unsigned int _dragID;
     struct OpaqueCoreDragHandler *trackingHandlerRef;
     struct OpaqueCoreDragHandler *receiveHandlerRef;
@@ -86,6 +87,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isOnDemandSpringLoadingActivated;
 - (void)_setDragDeepEnabled:(BOOL)arg1;
 - (BOOL)_isDragDeep;
+- (BOOL)_isRelatedToWindow:(id)arg1;
 - (void)_invalidateUpdateDraggingItemTimer;
 - (void)_resetUpdateDraggingItemTimer;
 - (void)enumerateDraggingItemsWithOptions:(unsigned long long)arg1 forView:(id)arg2 classes:(id)arg3 searchOptions:(id)arg4 usingBlock:(CDUnknownBlockType)arg5;

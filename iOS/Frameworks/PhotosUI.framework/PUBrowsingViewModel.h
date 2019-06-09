@@ -8,12 +8,12 @@
 
 #import <PhotosUI/PUAssetSharedViewModelChangeObserver-Protocol.h>
 #import <PhotosUI/PUAssetViewModelChangeObserver-Protocol.h>
-#import <PhotosUI/PXImportStatusObserver-Protocol.h>
+#import <PhotosUI/PXAssetImportStatusObserver-Protocol.h>
 
 @class NSDate, NSMutableSet, NSString, PUAssetReference, PUAssetsDataSource, PUCachedMapTable, PUMediaProvider, PUReviewScreenBarsModel;
-@protocol PXImportStatusManager;
+@protocol PXAssetImportStatusManager;
 
-@interface PUBrowsingViewModel : PUViewModel <PUAssetViewModelChangeObserver, PUAssetSharedViewModelChangeObserver, PXImportStatusObserver>
+@interface PUBrowsingViewModel : PUViewModel <PUAssetViewModelChangeObserver, PUAssetSharedViewModelChangeObserver, PXAssetImportStatusObserver>
 {
     PUAssetReference *_currentAssetReference;
     NSDate *_currentAssetReferenceChangedDate;
@@ -32,10 +32,12 @@
     _Bool _accessoryViewsDefaultVisibility;
     _Bool _isChromeVisible;
     _Bool _presentingOverOneUp;
+    _Bool _videoMuted;
     PUAssetsDataSource *_assetsDataSource;
     double _currentAssetTransitionProgress;
     NSString *_transitionDriverIdentifier;
     long long _browsingSpeedRegime;
+    long long _videoOverlayPlayState;
     long long _lastChromeVisibilityChangeReason;
     id _lastChromeVisibilityChangeContext;
     PUAssetReference *_trailingAssetReference;
@@ -46,18 +48,19 @@
     NSMutableSet *__animatingTransitionIdentifiers;
     NSMutableSet *__videoDisallowedReasons;
     PUMediaProvider *_mediaProvider;
-    id <PXImportStatusManager> _importStatusManager;
+    id <PXAssetImportStatusManager> _importStatusManager;
     struct CGSize _secondScreenSize;
 }
 
 + (void)initialize;
-@property(retain, nonatomic) id <PXImportStatusManager> importStatusManager; // @synthesize importStatusManager=_importStatusManager;
+@property(retain, nonatomic) id <PXAssetImportStatusManager> importStatusManager; // @synthesize importStatusManager=_importStatusManager;
 @property(retain, nonatomic) PUMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic, setter=_setVideoDisallowedReasons:) NSMutableSet *_videoDisallowedReasons; // @synthesize _videoDisallowedReasons=__videoDisallowedReasons;
 @property(retain, nonatomic, setter=_setAnimatingTransitionIdentifiers:) NSMutableSet *_animatingTransitionIdentifiers; // @synthesize _animatingTransitionIdentifiers=__animatingTransitionIdentifiers;
 @property(nonatomic, setter=_setScrubbingSessionDistance:) long long _scrubbingSessionDistance; // @synthesize _scrubbingSessionDistance=__scrubbingSessionDistance;
 @property(nonatomic, setter=_setUserNavigationDistance:) long long _userNavigationDistance; // @synthesize _userNavigationDistance=__userNavigationDistance;
 @property(retain, nonatomic) PUReviewScreenBarsModel *reviewScreenBarsModel; // @synthesize reviewScreenBarsModel=_reviewScreenBarsModel;
+@property(nonatomic, getter=isVideoMuted) _Bool videoMuted; // @synthesize videoMuted=_videoMuted;
 @property(retain, nonatomic, setter=_setLeadingAssetReference:) PUAssetReference *leadingAssetReference; // @synthesize leadingAssetReference=_leadingAssetReference;
 @property(retain, nonatomic, setter=_setTrailingAssetReference:) PUAssetReference *trailingAssetReference; // @synthesize trailingAssetReference=_trailingAssetReference;
 @property(nonatomic) struct CGSize secondScreenSize; // @synthesize secondScreenSize=_secondScreenSize;
@@ -66,6 +69,7 @@
 @property(nonatomic, setter=_setLastChromeVisibilityChangeReason:) long long lastChromeVisibilityChangeReason; // @synthesize lastChromeVisibilityChangeReason=_lastChromeVisibilityChangeReason;
 @property(nonatomic, setter=setChromeVisible:) _Bool isChromeVisible; // @synthesize isChromeVisible=_isChromeVisible;
 @property(nonatomic) _Bool accessoryViewsDefaultVisibility; // @synthesize accessoryViewsDefaultVisibility=_accessoryViewsDefaultVisibility;
+@property(nonatomic) long long videoOverlayPlayState; // @synthesize videoOverlayPlayState=_videoOverlayPlayState;
 @property(nonatomic, setter=_setAnimatingAnyTransition:) _Bool isAnimatingAnyTransition; // @synthesize isAnimatingAnyTransition=_isAnimatingAnyTransition;
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(nonatomic) _Bool isScrubbing; // @synthesize isScrubbing=_isScrubbing;
@@ -75,10 +79,11 @@
 @property(retain, nonatomic) PUAssetsDataSource *assetsDataSource; // @synthesize assetsDataSource=_assetsDataSource;
 - (void).cxx_destruct;
 - (id)debugDetailedDescription;
-- (void)importStatusManager:(id)arg1 didChangeStatusForAssetReference:(id)arg2;
+- (void)assetImportStatusManager:(id)arg1 didChangeStatusForAssetReference:(id)arg2;
 - (void)_handleAssetSharedViewModel:(id)arg1 didChange:(id)arg2;
 - (void)_handleAssetViewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
+- (void)_handleWillResignActiveNotification:(id)arg1;
 - (long long)_importStateForAssetReference:(id)arg1;
 - (id)_badgeInfoPromiseForAssetReference:(id)arg1;
 - (double)_focusValueForAsset:(id)arg1;

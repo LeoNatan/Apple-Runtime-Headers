@@ -10,7 +10,9 @@
 {
 }
 
++ (void)fetchCalendarChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchCalendarChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (int)entityType;
 
 @end
 

@@ -19,6 +19,8 @@
 - (void)_gkUpdateContentsWithCompletionHandlerAndError:(CDUnknownBlockType)arg1;
 - (void)_gkResetContents;
 - (void)_gkSetContentsNeedUpdateWithHandler:(CDUnknownBlockType)arg1;
+- (void)_gkSetViewControllers:(id)arg1 transition:(id)arg2;
+- (void)_gkReplaceTopViewControllerWithViewController:(id)arg1 transition:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

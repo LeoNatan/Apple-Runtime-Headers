@@ -28,8 +28,6 @@
     _Bool _PINPairingFailed;
     _Bool _PINPairingCancelled;
     long long _transportType;
-    NSArray *_registryIDs;
-    NSString *_physicalDeviceUniqueID;
     long long _type;
     NSString *_name;
     NSString *_identifier;
@@ -60,8 +58,6 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long type; // @synthesize type=_type;
-@property(readonly, copy, nonatomic) NSString *physicalDeviceUniqueID; // @synthesize physicalDeviceUniqueID=_physicalDeviceUniqueID;
-@property(readonly, copy, nonatomic) NSArray *registryIDs; // @synthesize registryIDs=_registryIDs;
 @property(readonly, nonatomic) _Bool supportsIsCharging; // @synthesize supportsIsCharging=_supportsIsCharging;
 @property(readonly, nonatomic) _Bool supportsBatteryLevel; // @synthesize supportsBatteryLevel=_supportsBatteryLevel;
 @property(readonly, nonatomic) long long transportType; // @synthesize transportType=_transportType;
@@ -103,6 +99,8 @@
 - (id)__accessory;
 @property(readonly, nonatomic, getter=isMagicPaired) _Bool magicPaired;
 @property(readonly, nonatomic, getter=isCloudPaired) _Bool cloudPaired;
+@property(readonly, copy, nonatomic) NSString *physicalDeviceUniqueID;
+@property(readonly, copy, nonatomic) NSArray *registryIDs;
 - (void)_finishInitializingAppleTVRemote;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

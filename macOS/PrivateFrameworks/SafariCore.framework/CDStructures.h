@@ -74,6 +74,28 @@ struct task_vm_info {
     unsigned long long phys_footprint;
     unsigned long long min_address;
     unsigned long long max_address;
+    long long ledger_phys_footprint_peak;
+    long long ledger_purgeable_nonvolatile;
+    long long ledger_purgeable_novolatile_compressed;
+    long long ledger_purgeable_volatile;
+    long long ledger_purgeable_volatile_compressed;
+    long long ledger_tag_network_nonvolatile;
+    long long ledger_tag_network_nonvolatile_compressed;
+    long long ledger_tag_network_volatile;
+    long long ledger_tag_network_volatile_compressed;
+    long long ledger_tag_media_footprint;
+    long long ledger_tag_media_footprint_compressed;
+    long long ledger_tag_media_nofootprint;
+    long long ledger_tag_media_nofootprint_compressed;
+    long long ledger_tag_graphics_footprint;
+    long long ledger_tag_graphics_footprint_compressed;
+    long long ledger_tag_graphics_nofootprint;
+    long long ledger_tag_graphics_nofootprint_compressed;
+    long long ledger_tag_neural_footprint;
+    long long ledger_tag_neural_footprint_compressed;
+    long long ledger_tag_neural_nofootprint;
+    long long ledger_tag_neural_nofootprint_compressed;
+    unsigned long long limit_bytes_remaining;
 };
 
 #pragma mark Typedef'd Structures

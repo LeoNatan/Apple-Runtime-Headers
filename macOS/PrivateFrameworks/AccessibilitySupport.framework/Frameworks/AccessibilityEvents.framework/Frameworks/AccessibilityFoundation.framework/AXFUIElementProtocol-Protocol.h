@@ -7,11 +7,15 @@
 #import <AccessibilityFoundation/NSCopying-Protocol.h>
 #import <AccessibilityFoundation/NSObject-Protocol.h>
 
-@class AXFUIElement, NSArray, NSAttributedString, NSData, NSString, NSURL;
+@class AXFTextPosition, AXFTextRange, AXFUIElement, NSArray, NSAttributedString, NSData, NSString, NSURL;
 @protocol AXFAction;
 
 @protocol AXFUIElementProtocol <NSObject, NSCopying>
+@property(readonly, nonatomic) BOOL canSetAccessibilityValue;
+@property(readonly, nonatomic) BOOL shouldTryToUseMarkerBasedTextAPI;
+@property(readonly, nonatomic) BOOL isAccessibilityEnabledAttributeSet;
 @property(readonly, nonatomic) NSArray *accessibilitySupportedActions;
+@property(readonly, copy, nonatomic) NSArray *accessibilityCustomRotors;
 @property(retain, nonatomic) AXFUIElement *accessibilityZoomButton;
 @property(retain, nonatomic) AXFUIElement *accessibilityToolbarButton;
 @property(retain, nonatomic) AXFUIElement *accessibilityProxy;
@@ -24,11 +28,12 @@
 @property(nonatomic, getter=isAccessibilityModal) BOOL accessibilityModal;
 @property(nonatomic, getter=isAccessibilityMinimized) BOOL accessibilityMinimized;
 @property(nonatomic, getter=isAccessibilityMain) BOOL accessibilityMain;
-@property(nonatomic) struct _NSRange accessibilityVisibleCharacterRange;
+@property(readonly, nonatomic) AXFTextRange *accessibilityTextInputMarkedRange;
+@property(retain, nonatomic) AXFTextRange *accessibilityVisibleCharacterRange;
 @property(copy, nonatomic) NSArray *accessibilitySharedTextUIElements;
 @property(nonatomic) struct _NSRange accessibilitySharedCharacterRange;
 @property(copy, nonatomic) NSArray *accessibilitySelectedTextRanges;
-@property(nonatomic) struct _NSRange accessibilitySelectedTextRange;
+@property(retain, nonatomic) AXFTextRange *accessibilitySelectedTextRange;
 @property(copy, nonatomic) NSString *accessibilitySelectedText;
 @property(nonatomic) long long accessibilityNumberOfCharacters;
 @property(nonatomic) long long accessibilityInsertionPointLineNumber;
@@ -45,9 +50,9 @@
 @property(copy, nonatomic) NSArray *accessibilityVisibleRows;
 @property(copy, nonatomic) NSArray *accessibilityRows;
 @property(copy, nonatomic) NSArray *accessibilityColumns;
-@property(nonatomic) long long accessibilityIndex;
-@property(nonatomic) long long accessibilityRowCount;
-@property(nonatomic) long long accessibilityColumnCount;
+@property(readonly, nonatomic) long long accessibilityIndex;
+@property(readonly, nonatomic) long long accessibilityRowCount;
+@property(readonly, nonatomic) long long accessibilityColumnCount;
 @property(retain, nonatomic) AXFUIElement *accessibilityHeader;
 @property(copy, nonatomic) NSArray *accessibilityTabs;
 @property(retain, nonatomic) AXFUIElement *accessibilityIncrementButton;
@@ -69,6 +74,11 @@
 @property(retain, nonatomic) NSArray *accessibilityDisclosedRows;
 @property(nonatomic) __weak AXFUIElement *accessibilityDisclosedByRow;
 @property(nonatomic, getter=isAccessibilityDisclosed) BOOL accessibilityDisclosed;
+@property(readonly, copy, nonatomic) NSString *accessibilityMenuItemMarkChar;
+@property(readonly, nonatomic) long long accessibilityMenuItemCmdVirtualKey;
+@property(readonly, nonatomic) long long accessibilityMenuItemCmdModifiers;
+@property(readonly, nonatomic) long long accessibilityMenuItemCmdGlyph;
+@property(readonly, copy, nonatomic) NSString *accessibilityMenuItemCmdChar;
 @property(retain, nonatomic) id accessibilityCriticalValue;
 @property(retain, nonatomic) id accessibilityWarningValue;
 @property(copy, nonatomic) NSArray *accessibilityHandles;
@@ -110,7 +120,7 @@
 @property(copy, nonatomic) NSArray *accessibilityServesAsTitleForUIElements;
 @property(retain, nonatomic) AXFUIElement *accessibilitySearchMenu;
 @property(retain, nonatomic) AXFUIElement *accessibilitySearchButton;
-@property(copy, nonatomic) NSURL *accessibilityURL;
+@property(retain, nonatomic) NSURL *accessibilityURL;
 @property(copy, nonatomic) NSString *accessibilityPlaceholderValue;
 @property(nonatomic) long long accessibilityOrientation;
 @property(nonatomic) struct CGPoint accessibilityActivationPoint;
@@ -128,6 +138,7 @@
 @property(nonatomic) float floatValue;
 @property(copy, nonatomic) NSString *stringValue;
 @property(retain, nonatomic) id accessibilityValue;
+@property(readonly, nonatomic) __weak AXFUIElement *accessibilityEditableAncestor;
 @property(copy, nonatomic) NSArray *accessibilitySelectedChildren;
 @property(copy, nonatomic) NSArray *accessibilityVisibleChildren;
 @property(copy, nonatomic) NSArray *accessibilityChildren;
@@ -153,6 +164,7 @@
 - (id <AXFAction>)accessibilityDecrementAction;
 - (id <AXFAction>)accessibilityConfirmAction;
 - (id <AXFAction>)accessibilityCancelAction;
+- (id <AXFAction>)accessibilityActivateAction;
 - (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformShowDefaultUI;
 - (BOOL)accessibilityPerformShowAlternateUI;
@@ -164,6 +176,8 @@
 - (BOOL)accessibilityPerformDecrement;
 - (BOOL)accessibilityPerformConfirm;
 - (BOOL)accessibilityPerformCancel;
+- (BOOL)accessibilityPerformActivate;
+- (void)accessibilityReplaceRange:(struct _NSRange)arg1 withText:(NSString *)arg2;
 - (long long)accessibilityLineForIndex:(long long)arg1;
 - (struct _NSRange)accessibilityStyleRangeForIndex:(long long)arg1;
 - (NSData *)accessibilityRTFForRange:(struct _NSRange)arg1;
@@ -173,7 +187,14 @@
 - (NSString *)accessibilityStringForRange:(struct _NSRange)arg1;
 - (struct _NSRange)accessibilityRangeForLine:(long long)arg1;
 - (NSAttributedString *)accessibilityAttributedStringForRange:(struct _NSRange)arg1;
+- (AXFTextPosition *)accessibilityPreviousTextPositionForPosition:(AXFTextPosition *)arg1;
+- (long long)accessibilityLineForTextPosition:(AXFTextPosition *)arg1;
+- (struct CGRect)accessibilityBoundsForTextRange:(AXFTextRange *)arg1;
+- (NSString *)accessibilityStringForTextRange:(AXFTextRange *)arg1;
+- (AXFTextRange *)accessibilityTextRangeForLine:(long long)arg1;
+- (NSAttributedString *)accessibilityAttributedStringForTextRange:(AXFTextRange *)arg1;
 - (AXFUIElement *)accessibilityCellForColumn:(long long)arg1 row:(long long)arg2;
+- (BOOL)makeElementVisibleInScrollArea;
 - (struct CGSize)accessibilityScreenSizeForLayoutSize:(struct CGSize)arg1;
 - (struct CGPoint)accessibilityScreenPointForLayoutPoint:(struct CGPoint)arg1;
 - (struct CGSize)accessibilityLayoutSizeForScreenSize:(struct CGSize)arg1;

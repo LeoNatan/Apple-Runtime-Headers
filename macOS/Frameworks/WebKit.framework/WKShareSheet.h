@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 @interface WKShareSheet : NSObject <NSSharingServiceDelegate, NSSharingServicePickerDelegate>
 {
     struct WeakObjCPtr<WKWebView> _webView;
-    CompletionHandler_dde7f840 _completionHandler;
+    CompletionHandler_e3f3fa93 _completionHandler;
     struct RetainPtr<NSSharingServicePicker> _sharingServicePicker;
     id <WKShareSheetDelegate> _delegate;
 }
@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
 - (void)sharingServicePicker:(id)arg1 didChooseSharingService:(id)arg2;
-- (void)presentWithParameters:(const struct ShareDataWithParsedURL *)arg1 completionHandler:(CompletionHandler_dde7f840 *)arg2;
+- (void)presentWithParameters:(const struct ShareDataWithParsedURL *)arg1 inRect:(Optional_93f3c085)arg2 completionHandler:(CompletionHandler_e3f3fa93 *)arg3;
 - (id)initWithView:(id)arg1;
 
 // Remaining properties

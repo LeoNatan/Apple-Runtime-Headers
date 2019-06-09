@@ -29,6 +29,7 @@
 - (unsigned long long)hash;
 - (id)moreGlyphsWithSession:(id)arg1;
 - (id)contentAdvisoryImageWithSession:(id)arg1;
+- (id)initWithSFRichText:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

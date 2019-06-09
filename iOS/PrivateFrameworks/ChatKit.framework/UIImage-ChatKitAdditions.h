@@ -13,11 +13,14 @@
 + (id)abImageNamed:(id)arg1;
 + (id)ckColorImageOfSize:(struct CGSize)arg1 withColor:(id)arg2;
 + (id)ckImageNamed:(id)arg1;
++ (id)placeholderExtensionIcon;
++ (id)badgeIconForImageNamed:(id)arg1 inBundle:(id)arg2;
 - (id)ckImageWithTintColor:(id)arg1;
 - (void)decode;
 - (id)__ck_ASTCRepresentation;
 - (struct CGRect)__ck_contentsCenter;
 - (id)__ck_imageWithOrientation:(long long)arg1;
 - (id)__ck_resizableBalloonWithBalloonDescriptor:(struct CKBalloonDescriptor_t)arg1 framed:(_Bool)arg2;
+- (id)iconForInterfaceStyle:(long long)arg1;
 @end
 

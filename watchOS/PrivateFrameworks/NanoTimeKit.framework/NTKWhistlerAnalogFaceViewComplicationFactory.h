@@ -6,18 +6,28 @@
 
 #import <NanoTimeKit/NTKFaceViewComplicationFactory.h>
 
-@class NTKUtilityComplicationFactory;
+#import <NanoTimeKit/NTKFaceViewComplicationFactory-Protocol.h>
 
-@interface NTKWhistlerAnalogFaceViewComplicationFactory : NTKFaceViewComplicationFactory
+@class NSString, NTKFaceView, NTKUtilityComplicationFactory;
+
+@interface NTKWhistlerAnalogFaceViewComplicationFactory : NTKFaceViewComplicationFactory <NTKFaceViewComplicationFactory>
 {
     NTKUtilityComplicationFactory *_complicationFactory;
+    _Bool _usesNarrowTopSlots;
+    NTKFaceView *_faceView;
+    float _dialDiameter;
 }
 
+@property(nonatomic) float dialDiameter; // @synthesize dialDiameter=_dialDiameter;
+@property(nonatomic) __weak NTKFaceView *faceView; // @synthesize faceView=_faceView;
+@property(nonatomic) _Bool usesNarrowTopSlots; // @synthesize usesNarrowTopSlots=_usesNarrowTopSlots;
 - (void).cxx_destruct;
+- (void)setAlpha:(float)arg1 faceView:(id)arg2;
 - (_Bool)_convertCircularSlot:(id)arg1 toPosition:(int *)arg2;
 - (_Bool)_convertCornerSlot:(id)arg1 toPosition:(int *)arg2;
 - (id)_cornerKeylineViewForSlot:(id)arg1;
 - (_Bool)_isCornerComplicationForSlot:(id)arg1;
+- (_Bool)isCornerComplicationForSlot:(id)arg1;
 - (_Bool)_isCenterComplicationForSlot:(id)arg1;
 - (unsigned int)keylineLabelAlignmentForComplicationSlot:(id)arg1 faceView:(id)arg2;
 - (void)configureComplicationView:(id)arg1 forSlot:(id)arg2 faceView:(id)arg3;
@@ -29,7 +39,19 @@
 - (id)curvedPickerMaskForSlot:(id)arg1;
 - (id)keylineViewForComplicationSlot:(id)arg1;
 - (struct CGPoint)circularComplicationCenterForSlot:(id)arg1 inFaceBounds:(struct CGRect)arg2;
+- (id)newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
+- (void)loadLayoutRules;
+- (int)legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
+- (unsigned int)keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (void)configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)initForDevice:(id)arg1;
+- (id)initWithFaceView:(id)arg1 dialDiameter:(float)arg2 device:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

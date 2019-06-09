@@ -5,6 +5,7 @@
 //
 
 @protocol HDHealthRecordsProfileExtension
+- (_Bool)hasAccounts:(_Bool *)arg1 error:(id *)arg2;
 - (_Bool)deviceConfigurationSupportsHealthRecords:(_Bool *)arg1 error:(id *)arg2;
 @end
 

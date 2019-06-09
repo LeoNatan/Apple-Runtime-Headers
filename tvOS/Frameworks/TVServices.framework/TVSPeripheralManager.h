@@ -35,6 +35,7 @@
 - (_Bool)_shouldConnectDerpModePeripheral:(id)arg1 withAdvertisementData:(id)arg2;
 - (id)configurationInfo;
 - (_Bool)shouldIgnorePeripheral:(id)arg1;
+- (_Bool)isApplePencil:(id)arg1;
 - (_Bool)isHomeKitPeripheral:(id)arg1;
 - (_Bool)isAppleTVRemote:(id)arg1;
 - (id)advertisementDataForPeripheral:(id)arg1;

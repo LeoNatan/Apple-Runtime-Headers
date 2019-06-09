@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class GEORouteHypothesizer;
-@protocol OS_dispatch_queue;
+@class GEORouteHypothesizer, GEOXPCActivity, geo_isolater;
 
 __attribute__((visibility("hidden")))
 @interface GEORouteHypothesizerDelayer : NSObject
 {
     struct __CFBinaryHeap *_minHeap;
     GEORouteHypothesizer *_nextHypothesizer;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    geo_isolater *_isolater;
+    GEOXPCActivity *_activity;
 }
 
 + (void)checkin;

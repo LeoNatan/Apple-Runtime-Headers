@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OnBoardingKit/OBSplashController.h>
-
-#import <OnBoardingKit/UIScrollViewDelegate-Protocol.h>
+#import <OnBoardingKit/OBWelcomeController.h>
 
 @class NSString, OBPrivacyFlow, UIButton, UILabel;
 
-@interface OBPrivacySplashController : OBSplashController <UIScrollViewDelegate>
+@interface OBPrivacySplashController : OBWelcomeController
 {
     OBPrivacyFlow *_flow;
     _Bool _suppressPerPageAnalyticsLogging;
@@ -27,11 +25,11 @@
     UILabel *_privacyGatewayDescription;
     UILabel *_linkToPrivacyGateway;
     UIButton *_unifiedAboutButton;
-    double _incomingNavigationBarOpacity;
+    CDUnknownBlockType _defaultButtonHandler;
 }
 
 + (id)splashPageWithBundleIdentifier:(id)arg1;
-@property(nonatomic) double incomingNavigationBarOpacity; // @synthesize incomingNavigationBarOpacity=_incomingNavigationBarOpacity;
+@property(copy) CDUnknownBlockType defaultButtonHandler; // @synthesize defaultButtonHandler=_defaultButtonHandler;
 @property(retain) UIButton *unifiedAboutButton; // @synthesize unifiedAboutButton=_unifiedAboutButton;
 @property(retain) UILabel *linkToPrivacyGateway; // @synthesize linkToPrivacyGateway=_linkToPrivacyGateway;
 @property(retain) UILabel *privacyGatewayDescription; // @synthesize privacyGatewayDescription=_privacyGatewayDescription;
@@ -47,18 +45,11 @@
 @property _Bool allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
 @property _Bool suppressPerPageAnalyticsLogging; // @synthesize suppressPerPageAnalyticsLogging=_suppressPerPageAnalyticsLogging;
 - (void).cxx_destruct;
+- (void)defaultButtonPressed:(id)arg1;
 - (void)updateFontForUnifiedAboutButton;
 - (void)updateFontForPrivacyGateway;
-- (_Bool)shouldUseTiledTextViews;
-- (void)scrollViewDidScroll:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateNavigationBarAnimated:(_Bool)arg1;
-- (void)setDarkMode:(_Bool)arg1;
 - (void)setDismissHandlerForDefaultButton:(CDUnknownBlockType)arg1;
-- (void)viewDidDisappear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)viewDidLayoutSubviews;
-- (void)viewWillLayoutSubviews;
 - (void)_initializeFromBundle;
 - (void)viewDidLoad;
 - (void)showPrivacyGateway:(id)arg1;
@@ -67,12 +58,6 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (id)_defaultButtonTitle;
 - (id)initWithPrivacyIdentifier:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

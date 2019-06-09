@@ -6,26 +6,32 @@
 
 #import <SearchUI/SearchUICardSectionView.h>
 
-@class NUIContainerStackView, SearchUIImageView, TLKEmojiableVibrantLabel;
+#import <SearchUI/NUIContainerViewDelegate-Protocol.h>
 
-@interface SearchUISuggestionCardSectionView : SearchUICardSectionView
+@class NSString, NUIContainerStackView, SearchUIImageView, TLKLabel;
+
+@interface SearchUISuggestionCardSectionView : SearchUICardSectionView <NUIContainerViewDelegate>
 {
     SearchUIImageView *_iconView;
-    TLKEmojiableVibrantLabel *_suggestionLabel;
+    TLKLabel *_suggestionLabel;
 }
 
-+ (id)suggestedContactIconWithStyle:(unsigned long long)arg1;
-+ (id)suggestedQueryIconWithStyle:(unsigned long long)arg1;
-+ (id)_imageForSuggestion:(id)arg1 withStyle:(unsigned long long)arg2;
++ (void)initialize;
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
-@property(retain) TLKEmojiableVibrantLabel *suggestionLabel; // @synthesize suggestionLabel=_suggestionLabel;
-@property(retain) SearchUIImageView *iconView; // @synthesize iconView=_iconView;
+@property(retain, nonatomic) TLKLabel *suggestionLabel; // @synthesize suggestionLabel=_suggestionLabel;
+@property(retain, nonatomic) SearchUIImageView *iconView; // @synthesize iconView=_iconView;
 - (void).cxx_destruct;
+- (void)updateMargins;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;
+- (void)tlk_updateForAppearance:(id)arg1;
 
 // Remaining properties
-@property(retain) NUIContainerStackView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) NUIContainerStackView *contentView; // @dynamic contentView;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

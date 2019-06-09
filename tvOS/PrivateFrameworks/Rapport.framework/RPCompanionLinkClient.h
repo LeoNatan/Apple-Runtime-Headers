@@ -30,6 +30,7 @@
     int _passwordType;
     int _passwordTypeActual;
     unsigned int _flags;
+    unsigned int _clientID;
     unsigned int _internalAuthFlags;
     NSString *_password;
     CDUnknownBlockType _authCompletionHandler;
@@ -42,6 +43,7 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
+    NSString *_serviceType;
     CDUnknownBlockType _deviceFoundHandler;
     CDUnknownBlockType _deviceLostHandler;
     CDUnknownBlockType _deviceChangedHandler;
@@ -52,12 +54,14 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned int internalAuthFlags; // @synthesize internalAuthFlags=_internalAuthFlags;
+@property(nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
 @property(copy, nonatomic) NSDictionary *siriInfo; // @synthesize siriInfo=_siriInfo;
 @property(copy, nonatomic) CDUnknownBlockType localDeviceUpdatedHandler; // @synthesize localDeviceUpdatedHandler=_localDeviceUpdatedHandler;
 @property(retain) RPCompanionLinkDevice *localDevice; // @synthesize localDevice=_localDevice;
 @property(copy, nonatomic) CDUnknownBlockType deviceChangedHandler; // @synthesize deviceChangedHandler=_deviceChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceLostHandler; // @synthesize deviceLostHandler=_deviceLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceFoundHandler; // @synthesize deviceFoundHandler=_deviceFoundHandler;
+@property(copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
@@ -79,15 +83,18 @@
 - (void)_reregisterProfileIDs;
 - (void)_registerProfileID:(id)arg1 reregister:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerProfileID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)launchAppWithURL:(id)arg1 destinationID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)launchAppWithBundleID:(id)arg1 destinationID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)companionLinkReceivedRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)sendRequestID:(id)arg1 request:(id)arg2 destinationID:(id)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
+- (void)sendRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)deregisterRequestID:(id)arg1;
 - (void)_reregisterRequests;
 - (void)_registerRequestID:(id)arg1 options:(id)arg2 reregister:(_Bool)arg3;
 - (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)companionLinkReceivedEventID:(id)arg1 event:(id)arg2 options:(id)arg3;
 - (void)sendEventID:(id)arg1 event:(id)arg2 destinationID:(id)arg3 options:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)sendEventID:(id)arg1 event:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)deregisterEventID:(id)arg1;
 - (void)_reregisterEvents;
 - (void)_registerEventID:(id)arg1 options:(id)arg2 reregister:(_Bool)arg3;

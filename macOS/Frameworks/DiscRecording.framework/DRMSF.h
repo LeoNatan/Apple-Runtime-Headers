@@ -8,7 +8,7 @@
 
 @interface DRMSF : NSNumber
 {
-    unsigned int _value;
+    long long _value;
 }
 
 + (id)msfWithString:(id)arg1;

@@ -6,12 +6,12 @@
 
 #import <FrontBoard/NSObject-Protocol.h>
 
-@class FBSWorkspaceConnectEvent, FBSWorkspaceCreateSceneRequestEvent, FBSWorkspaceDestroySceneRequestEvent, FBWorkspaceServer;
+@class FBProcess, FBSWorkspaceSceneRequestOptions, FBWorkspaceServer, RBSTarget;
 
 @protocol FBWorkspaceServerDelegate <NSObject>
-- (void)server:(FBWorkspaceServer *)arg1 handleDestroySceneRequest:(FBSWorkspaceDestroySceneRequestEvent *)arg2 withCompletion:(void (^)(void))arg3;
-- (void)server:(FBWorkspaceServer *)arg1 handleCreateSceneRequest:(FBSWorkspaceCreateSceneRequestEvent *)arg2 withCompletion:(void (^)(FBScene *))arg3;
-- (void)server:(FBWorkspaceServer *)arg1 handleConnectEvent:(FBSWorkspaceConnectEvent *)arg2;
 - (void)serverDidInvalidateConnection:(FBWorkspaceServer *)arg1;
+- (void)server:(FBWorkspaceServer *)arg1 didReceiveSceneRequestWithOptions:(FBSWorkspaceSceneRequestOptions *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
+- (RBSTarget *)injectionTargetForServer:(FBWorkspaceServer *)arg1;
+- (FBProcess *)processForServer:(FBWorkspaceServer *)arg1;
 @end
 

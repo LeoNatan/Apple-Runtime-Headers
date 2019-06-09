@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSArray *_elementIDs;
 }
 
+- (void).cxx_destruct;
 - (id)elementIDs;
 - (id)applicationPSN;
-- (void)dealloc;
 - (id)initWithApplicationPSN:(id)arg1 elementIDs:(id)arg2;
 
 @end

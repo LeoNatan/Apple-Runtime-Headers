@@ -6,11 +6,12 @@
 
 #import <Suggestions/SGTQueryGenius.h>
 
-@class ABAddressBook, NSArray, NSMutableDictionary, NSString;
+@class ABAddressBook, NSArray, NSMutableDictionary, NSPersonNameComponentsFormatter, NSString;
 
 @interface SGTMailQueryGenius : SGTQueryGenius
 {
     ABAddressBook *ab;
+    NSPersonNameComponentsFormatter *personFormatter;
     NSMutableDictionary *imageCache;
     NSMutableDictionary *uniqueIDToLoader;
     BOOL contentSearchEnabled;

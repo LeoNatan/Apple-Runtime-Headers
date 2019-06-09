@@ -8,6 +8,7 @@
 
 @class NSData, OITSUImage;
 
+__attribute__((visibility("hidden")))
 @interface MFPBitmapImage : MFPImage
 {
     NSData *mBitmapData;

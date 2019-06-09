@@ -147,8 +147,9 @@ struct CPPDFImage {
 
 struct CPPDFObject {
     struct CGRect _field1;
-    unsigned int _field2;
+    struct CGRect _field2;
     unsigned int _field3;
+    unsigned int _field4;
 };
 
 struct CPPDFShape {

@@ -10,7 +10,6 @@
 {
     unsigned long long mKeyCode;
     int mKeyState;
-    void *mReservedForInstanceVariablesKeyboard;
 }
 
 + (id)keyboardEventWithKeyCode:(unsigned long long)arg1 withState:(int)arg2;

@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 @property(getter=isObservinglsd) BOOL observinglsd; // @synthesize observinglsd=_observinglsd;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+- (void).cxx_destruct;
+- (void)deviceManagementPolicyDidChange:(id)arg1;
 - (void)networkUsageChanged:(BOOL)arg1;
 - (void)applicationIconDidChange:(id)arg1;
 - (void)applicationStateDidChange:(id)arg1;
@@ -49,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (id)localObservers;
 - (void)removeLocalObserver:(id)arg1;
 - (void)addLocalObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

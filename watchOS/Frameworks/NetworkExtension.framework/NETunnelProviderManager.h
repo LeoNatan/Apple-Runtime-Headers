@@ -10,6 +10,7 @@
 {
 }
 
++ (id)copyDesignatedRequirementForProvider:(id *)arg1 extensionPoint:(id)arg2;
 + (void)loadAllFromPreferencesWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly) int routingMethod;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
@@ -18,7 +19,7 @@
 - (void)additionalSetup;
 - (_Bool)isProtocolTypeValid:(int)arg1;
 - (id)init;
-- (id)initWithSessionType:(int)arg1;
+- (id)initWithSessionType:(int)arg1 tunnelType:(int)arg2;
 
 @end
 

@@ -131,7 +131,8 @@ typedef struct {
     float end;
     float endWithOffset;
     unsigned int endEdgeType;
-} CDStruct_51c09d0b;
+    float restingPosition;
+} CDStruct_b31d0695;
 
 typedef struct {
     float _field1;

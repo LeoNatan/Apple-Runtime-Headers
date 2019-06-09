@@ -15,7 +15,6 @@
 
 + (id)sharedComplicationService;
 - (void).cxx_destruct;
-- (void)_connectIfNecessary;
 - (void)_disconnect;
 - (void)isComplicationBundleIDActive:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)activeComplicationBundleIDsWithCompletion:(CDUnknownBlockType)arg1;

@@ -6,45 +6,43 @@
 
 #import <TemplateKit/TLKView.h>
 
-#import <TemplateKit/TLKDetailsViewDelegate-Protocol.h>
+#import <TemplateKit/TLKTextAreaViewDelegate-Protocol.h>
 #import <TemplateKit/TLKTextAreaViewTesting-Protocol.h>
 
 @class NSArray, NSString, TLKImage, TLKMultilineText, TLKRichText, TLKTextAreaView;
 @protocol TLKDetailsViewDelegate;
 
-@interface TLKDetailsView : TLKView <TLKDetailsViewDelegate, TLKTextAreaViewTesting>
+@interface TLKDetailsView : TLKView <TLKTextAreaViewDelegate, TLKTextAreaViewTesting>
 {
     _Bool _secondaryTitleIsDetached;
-    id <TLKDetailsViewDelegate> _delegate;
     TLKRichText *_title;
+    id <TLKDetailsViewDelegate> _delegate;
     TLKMultilineText *_secondaryTitle;
     TLKImage *_secondaryTitleImage;
     NSArray *_details;
     TLKRichText *_footnote;
     NSString *_footnoteButtonText;
-    TLKTextAreaView *_textAreaView;
 }
 
-@property(retain) TLKTextAreaView *textAreaView; // @synthesize textAreaView=_textAreaView;
 @property(retain, nonatomic) NSString *footnoteButtonText; // @synthesize footnoteButtonText=_footnoteButtonText;
 @property(retain, nonatomic) TLKRichText *footnote; // @synthesize footnote=_footnote;
 @property(retain, nonatomic) NSArray *details; // @synthesize details=_details;
 @property(retain, nonatomic) TLKImage *secondaryTitleImage; // @synthesize secondaryTitleImage=_secondaryTitleImage;
 @property(nonatomic) _Bool secondaryTitleIsDetached; // @synthesize secondaryTitleIsDetached=_secondaryTitleIsDetached;
 @property(retain, nonatomic) TLKMultilineText *secondaryTitle; // @synthesize secondaryTitle=_secondaryTitle;
+@property(nonatomic) __weak id <TLKDetailsViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) TLKRichText *title; // @synthesize title=_title;
-@property __weak id <TLKDetailsViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)secondaryTitleLabelString;
 - (id)titleLabelString;
 - (id)footnoteLabelString;
 - (id)textAreaLabelStrings;
 - (void)observedPropertiesChanged;
-- (void)styleDidChange:(unsigned long long)arg1;
 - (void)footnoteButtonPressed;
-- (id)init;
+- (id)setupContentView;
 
 // Remaining properties
+@property(retain, nonatomic) TLKTextAreaView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

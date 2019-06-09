@@ -8,7 +8,7 @@
 
 @interface SGNamedEntityDissectorGuardedData : NSObject
 {
-    void *nlpTagger;
+    void *_nlpTagger;
 }
 
 @end

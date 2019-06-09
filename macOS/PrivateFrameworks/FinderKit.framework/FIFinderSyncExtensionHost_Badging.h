@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FinderKit/FIFinderSyncExtensionHost.h>
+#import <Foundation/NSExtensionContext.h>
 
 #import <FinderKit/FIFinderSyncExtensionHostProtocol-Protocol.h>
 #import <FinderKit/NSMenuDelegate-Protocol.h>
@@ -12,7 +12,7 @@
 @class NSDictionary, NSExtension, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FIFinderSyncExtensionHost_Badging : FIFinderSyncExtensionHost <FIFinderSyncExtensionHostProtocol, NSMenuDelegate>
+@interface FIFinderSyncExtensionHost_Badging : NSExtensionContext <FIFinderSyncExtensionHostProtocol, NSMenuDelegate>
 {
     struct TNSRef<NSObject<FIFinderSyncExtensionProtocol>, void> _remote;
     NSExtension *_extension;
@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
     _Bool _toolbarImageIsTemplate;
     struct TFENodeVector _interestedRoots;
     struct vector<TNSRef<NSURL, void>, std::__1::allocator<TNSRef<NSURL, void>>> _unresolvedRoots;
-    _Bool _pendingAddPrimaryRootToSidebar;
     struct unordered_map<TFENode, TString, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, TString>>> _nodeToBadgeIDMap;
     _Bool _fetchedContainingAppIcon;
     struct TIconRef _containingAppIcon;
@@ -65,7 +64,6 @@ __attribute__((visibility("hidden")))
 - (struct TString)toolbarToolTip;
 - (id)toolbarImageData;
 - (struct TString)toolbarItemName;
-- (void)refreshToolbars;
 - (void)setToolbarItemName:(id)arg1 imageData:(id)arg2 isTemplate:(_Bool)arg3 toolTip:(id)arg4;
 - (void)dealloc;
 - (void)tearDownWhileLocked;

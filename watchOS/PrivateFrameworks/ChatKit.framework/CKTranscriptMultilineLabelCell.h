@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKTranscriptLabelCell.h>
 
+__attribute__((visibility("hidden")))
 @interface CKTranscriptMultilineLabelCell : CKTranscriptLabelCell
 {
 }

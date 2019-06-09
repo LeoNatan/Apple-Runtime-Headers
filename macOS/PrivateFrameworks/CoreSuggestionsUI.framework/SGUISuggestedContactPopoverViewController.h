@@ -31,7 +31,7 @@
 @property(retain, nonatomic) ABPerson *representedPerson; // @synthesize representedPerson=_representedPerson;
 - (void).cxx_destruct;
 - (void)updateContacts:(id)arg1;
-- (void)dismissController:(id)arg1;
+- (void)ignoreContact:(id)arg1;
 @property(readonly, nonatomic) BOOL isNewContact;
 - (void)_populateRepresentedPerson:(id)arg1;
 @property(retain) SGRealtimeContact *representedObject;

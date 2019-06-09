@@ -20,7 +20,7 @@
     NSData *_headerData;
 }
 
-+ (void)_loadMailCoreFramework;
++ (void)sg_loadMailCoreFramework;
 + (id)messageWithRFC822Data:(id)arg1;
 + (id)messageWithRFC822Data:(id)arg1 sanitizeData:(BOOL)arg2;
 @property(readonly) NSData *headerData; // @synthesize headerData=_headerData;

@@ -6,14 +6,9 @@
 
 #import <PineBoardServices/NSObject-Protocol.h>
 
-@class BKSAnimationFenceHandle, NSArray;
+@class NSArray;
 
 @protocol PBSystemServiceClientInterface <NSObject>
-- (void)prepareForDefaultKioskAppTransitionWithCompletion:(void (^)(void))arg1;
-- (void)startDefaultKioskAppTransitionForType:(long long)arg1 animationDuration:(double)arg2 animationFence:(BKSAnimationFenceHandle *)arg3 delay:(double)arg4;
-- (void)startDefaultKioskAppTransitionWithAnimationFence:(BKSAnimationFenceHandle *)arg1 completion:(void (^)(void))arg2;
-- (void)prepareDefaultKioskAppTransitionForType:(long long)arg1 animationDuration:(double)arg2 delay:(double)arg3 completion:(void (^)(void))arg4;
 - (void)defaultKioskAppPurgeTopShelfContentForApplicationIdentifiers:(NSArray *)arg1;
-- (void)defaultKioskAppHandleHomeButtonWithCompletion:(void (^)(void))arg1;
 @end
 

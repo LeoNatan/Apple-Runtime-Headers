@@ -8,7 +8,7 @@
 
 #import <PhotosUI/NSCopying-Protocol.h>
 
-@class NSDictionary, NSHashTable, NSMapTable, NSMutableSet, NSOrderedSet, NSSet, PXSelectionSnapshot;
+@class NSArray, NSDictionary, NSHashTable, NSMapTable, NSMutableSet, NSOrderedSet, NSSet, PXSelectionSnapshot;
 @protocol PHAssetCollectionDataSource;
 
 @interface PUPhotoSelectionManager : NSObject <NSCopying>
@@ -30,8 +30,10 @@
 - (void)_beginSelectionChange;
 - (void)invalidateAllAssetIndexes;
 - (void)handlePhotoLibraryChange:(id)arg1;
+- (struct PXAssetMediaTypeCount)requestAssetsMediaTypeCount;
 - (id)localizedSelectionString;
 @property(readonly, nonatomic) PXSelectionSnapshot *selectionSnapshot;
+@property(readonly, nonatomic) NSArray *selectedAssetCollections;
 @property(readonly, nonatomic) NSDictionary *selectedAssetsByAssetCollection;
 @property(readonly, nonatomic) NSOrderedSet *orderedSelectedAssets;
 @property(readonly, nonatomic) NSSet *selectedAssets;

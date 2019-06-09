@@ -10,6 +10,7 @@
 
 @protocol _SFPBHorizontalScrollCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(nonatomic) unsigned long long numberOfRows;
 @property(copy, nonatomic) NSArray *cardSections;
 @property(retain, nonatomic) _SFPBColor *backgroundColor;
 @property(nonatomic) int separatorStyle;

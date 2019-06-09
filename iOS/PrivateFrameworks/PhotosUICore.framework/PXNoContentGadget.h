@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXGadget-Protocol.h>
 
-@class NSString, PXContentUnavailableView, PXGadgetSpec;
+@class NSString, PXGadgetSpec, PXNoContentGadgetView;
 @protocol PXGadgetDelegate;
 
 @interface PXNoContentGadget : NSObject <PXGadget>
@@ -16,33 +16,36 @@
     PXGadgetSpec *_gadgetSpec;
     long long _priority;
     id <PXGadgetDelegate> _delegate;
+    NSString *_title;
+    NSString *_message;
     double _contentHeightAdjustment;
-    PXContentUnavailableView *_noContentView;
+    PXNoContentGadgetView *_noContentView;
     double _minimumContentHeight;
 }
 
 @property(readonly, nonatomic) double minimumContentHeight; // @synthesize minimumContentHeight=_minimumContentHeight;
-@property(retain, nonatomic) PXContentUnavailableView *noContentView; // @synthesize noContentView=_noContentView;
+@property(retain, nonatomic) PXNoContentGadgetView *noContentView; // @synthesize noContentView=_noContentView;
 @property(nonatomic) double contentHeightAdjustment; // @synthesize contentHeightAdjustment=_contentHeightAdjustment;
+@property(copy, nonatomic) NSString *message; // @synthesize message=_message;
+@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct NSObject *)contentView;
+- (void)prepareCollectionViewItem:(struct UICollectionViewCell *)arg1;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 - (_Bool)hasLoadedContentData;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
 @property(readonly, nonatomic) unsigned long long gadgetType;
-- (void)configureWithButtonTitle:(id)arg1 buttonAction:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic) NSString *message;
-@property(copy, nonatomic) NSString *title;
 - (id)initWithLocalizedTitle:(id)arg1 localizedMessage:(id)arg2 minimumContentHeight:(double)arg3;
 - (id)initWithLocalizedTitle:(id)arg1 localizedMessage:(id)arg2;
 - (id)init;
+- (double)preferredHeightForViewController:(struct NSObject *)arg1;
+- (void)configureWithButtonTitle:(id)arg1 buttonAction:(CDUnknownBlockType)arg2;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

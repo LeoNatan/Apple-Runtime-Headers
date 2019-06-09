@@ -6,39 +6,32 @@
 
 #import <Photos/PHAssetPropertySet.h>
 
-#import <Photos/PHAssetPropertySet-Protocol.h>
+@class NSString, NSTimeZone;
 
-@class NSString, PHAsset;
-
-@interface PHAssetOriginalMetadataProperties : PHAssetPropertySet <PHAssetPropertySet>
+@interface PHAssetOriginalMetadataProperties : PHAssetPropertySet
 {
-    BOOL _isOriginalSRGB;
-    short _originalHeight;
-    short _originalWidth;
     short _originalExifOrientation;
-    int _originalFilesize;
     NSString *_originalAssetsUUID;
+    long long _originalHeight;
+    long long _originalWidth;
     NSString *_originalFilename;
-    NSString *_originalPath;
+    unsigned long long _originalFilesize;
+    NSTimeZone *_timeZone;
+    long long _timeZoneOffset;
 }
 
-+ (void)fetchPropertiesForObjects:(id)arg1 photoLibrary:(id)arg2;
-+ (id)masterPropertiesToLoadFromPhotoLibrary:(id)arg1;
-+ (id)propertiesToLoadFromPhotoLibrary:(id)arg1;
-@property(readonly, nonatomic) BOOL isOriginalSRGB; // @synthesize isOriginalSRGB=_isOriginalSRGB;
-@property(readonly, nonatomic) NSString *originalPath; // @synthesize originalPath=_originalPath;
-@property(readonly, nonatomic) int originalFilesize; // @synthesize originalFilesize=_originalFilesize;
++ (id)propertiesToFetch;
++ (id)propertySetName;
+@property(readonly, nonatomic) long long timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
+@property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
+@property(readonly, nonatomic) unsigned long long originalFilesize; // @synthesize originalFilesize=_originalFilesize;
 @property(readonly, nonatomic) short originalExifOrientation; // @synthesize originalExifOrientation=_originalExifOrientation;
 @property(readonly, nonatomic) NSString *originalFilename; // @synthesize originalFilename=_originalFilename;
-@property(readonly, nonatomic) short originalWidth; // @synthesize originalWidth=_originalWidth;
-@property(readonly, nonatomic) short originalHeight; // @synthesize originalHeight=_originalHeight;
+@property(readonly, nonatomic) long long originalWidth; // @synthesize originalWidth=_originalWidth;
+@property(readonly, nonatomic) long long originalHeight; // @synthesize originalHeight=_originalHeight;
 @property(readonly, nonatomic) NSString *originalAssetsUUID; // @synthesize originalAssetsUUID=_originalAssetsUUID;
 - (void).cxx_destruct;
-- (id)initWithAsset:(id)arg1 master:(id)arg2;
-- (id)initWithAsset:(id)arg1;
-
-// Remaining properties
-@property(readonly, nonatomic) __weak PHAsset *asset;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end
 

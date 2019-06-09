@@ -6,7 +6,7 @@
 
 #import <PhotoLibraryServices/PLAssetContainer-Protocol.h>
 
-@class NSDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSPredicate, NSString, NSURL, UIImage;
+@class NSMutableIndexSet, NSMutableOrderedSet, NSNumber, NSObject, NSOrderedSet, NSPredicate, NSString, NSURL, PLPhotoLibrary;
 
 @protocol PLAlbumProtocol <PLAssetContainer>
 @property(nonatomic) int pendingItemsType;
@@ -14,7 +14,6 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType sortingComparator;
 @property(readonly, retain, nonatomic) NSURL *groupURL;
 @property(retain, nonatomic) NSString *importSessionID;
-@property(retain, nonatomic) NSDictionary *slideshowSettings;
 @property(readonly, nonatomic) _Bool shouldDeleteWhenEmpty;
 @property(readonly, nonatomic) _Bool canContributeToCloudSharedAlbum;
 @property(readonly, nonatomic) _Bool isUserLibraryAlbum;
@@ -31,11 +30,12 @@
 @property(readonly, nonatomic) _Bool isPanoramasAlbum;
 @property(readonly, nonatomic) _Bool isCameraAlbum;
 @property(readonly, nonatomic) _Bool isLibrary;
-@property(readonly, retain, nonatomic) UIImage *posterImage;
+@property(readonly, retain, nonatomic) NSObject *posterImage;
 @property(nonatomic) _Bool hasUnseenContentBoolValue;
 @property(readonly, retain, nonatomic) NSMutableOrderedSet *mutableAssets;
 @property(readonly, nonatomic) int kindValue;
 @property(readonly, retain, nonatomic) NSNumber *kind;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (void)batchFetchAssets:(NSOrderedSet *)arg1;
 - (void)reducePendingItemsCountBy:(unsigned long long)arg1;
 

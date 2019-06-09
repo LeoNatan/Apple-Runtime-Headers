@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) long long resultType; // @synthesize resultType=_resultType;
 @property(readonly, nonatomic) long long priority; // @synthesize priority=_priority;
 - (id)initWithPriority:(long long)arg1 resultType:(long long)arg2 resultSubtype:(long long)arg3;
+- (id)init;
 
 @end
 

@@ -7,6 +7,7 @@
 #import <HomeKit/HMAccessoryCategory.h>
 
 @interface HMAccessoryCategory (HFAdditions)
+- (id)hf_compatibleServiceTypes;
 @property(readonly, nonatomic) _Bool hf_isMediaAccessory;
 @end
 

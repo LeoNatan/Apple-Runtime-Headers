@@ -8,7 +8,7 @@
 
 #import <Mail/MFPOPAccount-Protocol.h>
 
-@class MCActivityMonitor, MCAuthScheme, MFPOPStore, NSArray, NSLock, NSOperationQueue, NSString;
+@class ACAccount, ECAuthScheme, ECPOPAccount, MCActivityMonitor, MFPOPStore, NSArray, NSLock, NSOperationQueue, NSString;
 
 @interface MFPOPAccount : MFMailAccount <MFPOPAccount>
 {
@@ -25,6 +25,7 @@
 
 + (id)standardSSLPorts;
 + (id)standardPorts;
++ (id)csAccountTypeString;
 + (id)accountTypeString;
 @property(nonatomic) BOOL hasDoneBackgroundSynchronization; // @synthesize hasDoneBackgroundSynchronization=_hasDoneBackgroundSynchronization;
 @property(nonatomic) BOOL fetcherNeedsReset; // @synthesize fetcherNeedsReset=_fetcherNeedsReset;
@@ -56,8 +57,6 @@
 - (Class)storeClassForMailbox:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresAuthentication;
 @property(readonly, copy, nonatomic) NSString *saslProfileName;
-- (long long)defaultSecurePortNumber;
-- (long long)defaultPortNumber;
 - (void)_readCustomInfoFromMailboxCache:(id)arg1;
 - (void)setIsOffline:(BOOL)arg1;
 - (BOOL)canGoOffline;
@@ -88,24 +87,27 @@
 @property(readonly, copy) NSString *appleAuthenticationToken;
 @property(readonly, copy) NSString *applePersonID;
 @property(copy) NSString *authenticationScheme;
+@property(readonly) ECPOPAccount *baseAccount; // @dynamic baseAccount;
 @property(copy) NSString *canonicalEmailAddress;
 @property(readonly, copy) NSString *clientInfo;
 @property BOOL configureDynamically;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(copy) NSString *displayName;
+@property(readonly, copy) NSArray *emailAddressStrings;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) NSString *hostname;
+@property(readonly, copy) NSString *hostname;
 @property(readonly, copy) NSString *identifier;
 @property(readonly, nonatomic) BOOL isGmailAccount;
 @property(readonly) BOOL isYahooAccount;
 @property(readonly, copy) NSString *machineID;
+@property(readonly, nonatomic, getter=isManaged) BOOL managed;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *oneTimePassword;
-@property(copy, nonatomic) NSString *password;
+@property(readonly, copy) NSString *password;
 @property long long portNumber;
-@property(retain) MCAuthScheme *preferredAuthScheme;
+@property(retain) ECAuthScheme *preferredAuthScheme;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue;
 @property long long securityLayerType;
@@ -113,7 +115,8 @@
 @property(readonly, copy, nonatomic) NSArray *standardPorts;
 @property(readonly, copy, nonatomic) NSArray *standardSSLPorts;
 @property(readonly) Class superclass;
-@property(copy) NSString *username;
+@property(readonly, copy) ACAccount *systemAccount;
+@property(readonly, copy) NSString *username;
 @property BOOL usesSSL;
 
 @end

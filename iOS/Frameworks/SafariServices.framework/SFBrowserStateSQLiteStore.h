@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSURL, WBSSQLiteDatabase, WBSSQLiteStatement;
+@class NSArray, NSMutableDictionary, NSURL, WBSSQLiteDatabase, WBSSQLiteStatement;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
 - (void)removeTabWithTabData:(id)arg1;
 - (void)updateTabWithTabStateData:(id)arg1;
 - (_Bool)deleteTabStateWithBrowserWindowUUID:(id)arg1 andRemoveWindow:(_Bool)arg2;
-- (id)readSavedSessionStateDataForTabWithUUID:(id)arg1;
-- (id)_readSavedSessionStateDataForTabWithUUID:(id)arg1;
+- (id)readSavedSessionStateDataForTabWithUUIDString:(id)arg1;
+- (id)_readSavedSessionStateDataForTabWithUUIDString:(id)arg1;
 - (void)updateBrowserWindowStateWithDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (long long)_databaseIDForBrowserWindow:(id)arg1;
 - (void)_setDatabaseID:(long long)arg1 browserWindow:(id)arg2;
@@ -49,8 +49,16 @@ __attribute__((visibility("hidden")))
 - (void)_readTabStatesWithBrowserWindowUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)readTabStatesWithBrowserWindowUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)saveTabStateWithDictionary:(id)arg1;
-- (id)browserWindowUUIDs;
+- (void)removeSavedSessionStateDataForTabsWithUUIDStrings:(id)arg1;
+- (void)_removeSavedSessionStateDataForTabsWithUUIDStrings:(id)arg1;
+- (void)deleteAllRecentlyClosedWindows;
+@property(readonly, copy, nonatomic) NSArray *recentlyClosedWindows;
+@property(readonly, copy, nonatomic) NSArray *browserWindows;
 - (void)closeDatabase;
+- (_Bool)updateSceneID:(id)arg1;
+- (void)mergeAllWindows;
+- (int)_mergeAllWindowsIfNeeded;
+- (int)_migrateToSchemaVersion_4;
 - (int)_createFreshDatabaseSchema;
 - (int)_createTableForTabs;
 - (int)_createTableForTabSession;

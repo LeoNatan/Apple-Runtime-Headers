@@ -10,6 +10,7 @@
 {
 }
 
++ (id)chartPointWithLineSeriesPresentationStyle:(id)arg1;
 + (id)chartPointWithColor:(id)arg1 radius:(float)arg2 style:(int)arg3;
 
 @end

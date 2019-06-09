@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property BOOL isShown; // @synthesize isShown=_isShown;
 @property(retain) NSVisualTabPickerRootViewController *tabPickerController; // @synthesize tabPickerController=_tabPickerController;
 - (void).cxx_destruct;
+- (void)selectedTabDidChange;
 - (void)selectItemAtIndex:(long long)arg1;
 - (BOOL)entryOrExitAnimationInProgress;
 @property(readonly) BOOL isClosing; // @dynamic isClosing;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)visualTabPickerControllerDidBeginHiding:(id)arg1;
 - (void)willStartExitAnimationForVisualTabPickerController:(id)arg1;
 - (void)visualTabPickerControllerWillClose:(id)arg1;
+- (id)_tabPickerThumbnailViews;
 - (void)tabPickerItemsDidChange;
 - (void)visualTabPickerController:(id)arg1 closeTabBarItem:(id)arg2;
 - (void)visualTabPickerController:(id)arg1 selectTab:(id)arg2;
@@ -42,7 +44,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)creatingNewTabWillCloseVisualTabPickerController:(id)arg1;
 - (id)tabBarItemsForVisualTabPickerController:(id)arg1;
 - (id)selectedTabViewItemForVisualTabPickerController:(id)arg1;
+- (struct CGRect)frameForWindowContentAnimation;
 - (struct CGRect)frameForVisualTabPickerController:(id)arg1;
+- (BOOL)visualTabPicker:(id)arg1 highlightStateForTabItem:(id)arg2;
+- (id)visualTabPicker:(id)arg1 imageForTabItem:(id)arg2;
 - (id)visualTabPicker:(id)arg1 thumbnailViewForTabItem:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
@@ -50,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasSnapshotForWindow:(id)arg1;
 - (id)_updateSnapshotForWindow:(id)arg1;
 - (id)_makeTabPickerSnapshotForWindow:(id)arg1;
+- (void)updateSnapshots;
 - (void)hideTabPickerAnimated:(BOOL)arg1;
 - (void)showTabPickerAnimated:(BOOL)arg1 includeNewButton:(BOOL)arg2;
 - (void)_makeTabPickerViewControllerWithTabBarSnapshot:(id)arg1 includeNewButton:(BOOL)arg2;

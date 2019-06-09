@@ -8,6 +8,7 @@
 
 @class AVAsset, AVNavigationMarkersGroup;
 
+__attribute__((visibility("hidden")))
 @interface _AVChapterInfo : NSObject
 {
     AVAsset *_asset;

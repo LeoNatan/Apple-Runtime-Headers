@@ -9,13 +9,14 @@
 #import <PassKitUI/PKPasscodeLockManagerObserver-Protocol.h>
 #import <PassKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, PKPass, PKPassColorProfile, PKPassFrontFaceView, PKPasscodeLockManager, UITapGestureRecognizer;
+@class NSMutableArray, NSString, PKPass, PKPassColorProfile, PKPassFaceViewRendererState, PKPassFrontFaceView, PKPasscodeLockManager, UITapGestureRecognizer;
 @protocol WLCardViewDelegate;
 
 @interface PKPassView : UIView <UIGestureRecognizerDelegate, PKPasscodeLockManagerObserver>
 {
     PKPassFrontFaceView *_frontFace;
     PKPassColorProfile *_colorProfile;
+    PKPassFaceViewRendererState *_rendererState;
     UITapGestureRecognizer *_tapRecognizer;
     int _priorContentMode;
     PKPasscodeLockManager *_passcodeLockManager;
@@ -62,9 +63,10 @@
 @property(readonly, nonatomic) _Bool isForcedFrontFaceResized;
 @property(readonly, nonatomic) _Bool isFrontFaceResized;
 @property(readonly, nonatomic) NSString *uniqueID;
-- (void)setLiveMotionEnabled:(_Bool)arg1;
+@property(readonly, nonatomic) PKPassFaceViewRendererState *rendererState;
 - (id)item;
 - (_Bool)canShowBarcode;
+- (void)drawFrontFaceAtSize:(struct CGSize)arg1;
 - (id)snapshotViewOfVisibleFaceAfterScreenUpdates:(_Bool)arg1;
 - (id)snapshotOfFrontFaceWithRequestedSize:(struct CGSize)arg1;
 - (id)snapshotOfFrontFace;
@@ -77,6 +79,7 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)invalidate;
 - (void)dealloc;
+- (id)initWithPass:(id)arg1 content:(int)arg2 suppressedContent:(unsigned int)arg3 rendererState:(id)arg4;
 - (id)initWithPass:(id)arg1 content:(int)arg2 suppressedContent:(unsigned int)arg3;
 - (id)initWithPass:(id)arg1 content:(int)arg2;
 - (id)initWithPass:(id)arg1;

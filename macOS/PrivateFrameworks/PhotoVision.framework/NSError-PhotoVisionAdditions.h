@@ -20,6 +20,7 @@
 + (id)errorForPhotoVisionUnexpectedCondition:(id)arg1;
 + (id)errorForPhotoVisionCancelledOperation;
 + (id)errorForPhotoVisionUnimplementedFunction;
++ (id)errorForPhotoVisionErrorCode:(long long)arg1 localizedDescription:(id)arg2 underlyingError:(id)arg3;
 + (id)errorForPhotoVisionErrorCode:(long long)arg1 localizedDescription:(id)arg2;
 + (id)errorForPhotoVisionErrorCode:(long long)arg1 userInfo:(id)arg2;
 @end

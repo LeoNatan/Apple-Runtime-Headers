@@ -17,7 +17,6 @@
 + (id)_phFaceSortDescriptors;
 - (id)pv_lastAssetDate;
 - (id)pv_fetchInvalidAssetIdentifiersForCommonComparison;
-- (_Bool)pv_isLibraryBeingSynchronized;
 - (float)pv_faceProcessingProgress;
 - (double)_progressFromWorkerStatesDictionary:(id)arg1;
 - (id)pv_fetchFaceGroupsForPerson:(id)arg1;

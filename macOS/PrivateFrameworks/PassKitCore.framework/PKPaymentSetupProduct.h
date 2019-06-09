@@ -13,6 +13,7 @@
 @interface PKPaymentSetupProduct : NSObject <NSCopying>
 {
     BOOL _suppressPendingPurchases;
+    BOOL _hasAccount;
     NSString *_displayName;
     unsigned long long _type;
     NSSet *_regions;
@@ -33,6 +34,8 @@
     NSArray *_supportedCameraCaptureTypes;
     NSArray *_supportedInAppTypes;
     NSArray *_supportedTransitNetworkIdentifiers;
+    unsigned long long _featureIdentifier;
+    NSArray *_featureApplications;
     NSArray *_paymentOptions;
     NSDictionary *_rawDictionary;
     NSString *_identifier;
@@ -49,6 +52,9 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) NSDictionary *rawDictionary; // @synthesize rawDictionary=_rawDictionary;
 @property(readonly, copy, nonatomic) NSArray *paymentOptions; // @synthesize paymentOptions=_paymentOptions;
+@property(nonatomic) BOOL hasAccount; // @synthesize hasAccount=_hasAccount;
+@property(retain, nonatomic) NSArray *featureApplications; // @synthesize featureApplications=_featureApplications;
+@property(nonatomic) unsigned long long featureIdentifier; // @synthesize featureIdentifier=_featureIdentifier;
 @property(readonly, copy, nonatomic) NSArray *supportedTransitNetworkIdentifiers; // @synthesize supportedTransitNetworkIdentifiers=_supportedTransitNetworkIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *supportedInAppTypes; // @synthesize supportedInAppTypes=_supportedInAppTypes;
 @property(readonly, copy, nonatomic) NSArray *supportedCameraCaptureTypes; // @synthesize supportedCameraCaptureTypes=_supportedCameraCaptureTypes;
@@ -58,8 +64,8 @@
 @property(readonly, nonatomic) BOOL suppressPendingPurchases; // @synthesize suppressPendingPurchases=_suppressPendingPurchases;
 @property(readonly, nonatomic) PKPaymentSetupProductImageAssets *imageAssets; // @synthesize imageAssets=_imageAssets;
 @property(readonly, nonatomic) PKPaymentSetupProductImageAssetURLs *imageAssetURLs; // @synthesize imageAssetURLs=_imageAssetURLs;
-@property(readonly, nonatomic) long long hsa2Requirement; // @synthesize hsa2Requirement=_hsa2Requirement;
-@property(readonly, nonatomic) unsigned long long flags; // @synthesize flags=_flags;
+@property(nonatomic) long long hsa2Requirement; // @synthesize hsa2Requirement=_hsa2Requirement;
+@property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(readonly, copy, nonatomic) NSDictionary *readerModeMetadata; // @synthesize readerModeMetadata=_readerModeMetadata;
 @property(nonatomic) long long supportedProvisioningMethods; // @synthesize supportedProvisioningMethods=_supportedProvisioningMethods;
 @property(copy, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;

@@ -10,6 +10,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsNetworkLowInternetModeRecord : PBCodable <NSCopying>
 {
     unsigned long long _limConnTimeoutRatePercent;

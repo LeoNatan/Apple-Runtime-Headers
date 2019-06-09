@@ -6,14 +6,14 @@
 
 #import <AVFoundation/AVAsset.h>
 
-@class AVAssetInspectorLoader, NSArray, NSDictionary;
+@class AVAssetInspectorLoader, AVDispatchOnce, NSArray, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface AVDataAsset : AVAsset
 {
     NSDictionary *_initializationOptions;
     AVAssetInspectorLoader *_loader;
-    long _allocateTracksOnceOnly;
+    AVDispatchOnce *_allocateTracksOnceOnly;
     NSArray *_tracks;
 }
 

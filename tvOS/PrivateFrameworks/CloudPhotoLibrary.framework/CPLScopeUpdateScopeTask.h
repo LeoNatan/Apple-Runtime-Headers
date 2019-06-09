@@ -26,7 +26,7 @@
 - (void)_getLibraryInfo;
 - (void)_markScopeAsFeatureDisabledWithFlags:(id)arg1;
 - (void)_markScopeAsDeletedAndSucceedTaskWithFlags:(id)arg1;
-- (id)initWithEngineLibrary:(id)arg1 clientCacheIdentifier:(id)arg2 scope:(id)arg3 transportScope:(id)arg4;
+- (id)initWithEngineLibrary:(id)arg1 session:(id)arg2 clientCacheIdentifier:(id)arg3 scope:(id)arg4 transportScope:(id)arg5;
 
 @end
 

@@ -4,46 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreData/NSManagedObject.h>
 
-#import <CoreData/PFAncillaryModelObject-Protocol.h>
-
-@class NSData, NSNumber, NSString;
+@class NSCKRecordZoneMetadata, NSData, NSNumber, NSString;
 
 __attribute__((visibility("hidden")))
-@interface NSCKMirroredRelationship : NSObject <PFAncillaryModelObject>
+@interface NSCKMirroredRelationship : NSManagedObject
 {
-    NSString *_ckRecordID;
-    NSData *_ckRecordSystemFields;
-    NSString *_entityName;
-    NSString *_recordName;
-    NSString *_relatedEntityName;
-    NSString *_relatedRecordName;
-    NSString *_relationshipName;
-    BOOL _isPending;
-    BOOL _isDeleted;
-    BOOL _isUploaded;
-    NSNumber *_fetchedPKNum;
 }
 
-@property(readonly, nonatomic) NSNumber *fetchedPKNum; // @synthesize fetchedPKNum=_fetchedPKNum;
-@property(readonly, nonatomic) BOOL isUploaded; // @synthesize isUploaded=_isUploaded;
-@property(readonly, nonatomic) BOOL isDeleted; // @synthesize isDeleted=_isDeleted;
-@property(readonly, nonatomic) BOOL isPending; // @synthesize isPending=_isPending;
-@property(readonly, nonatomic) NSString *relationshipName; // @synthesize relationshipName=_relationshipName;
-@property(readonly, nonatomic) NSString *relatedRecordName; // @synthesize relatedRecordName=_relatedRecordName;
-@property(readonly, nonatomic) NSString *relatedEntityName; // @synthesize relatedEntityName=_relatedEntityName;
-@property(readonly, nonatomic) NSString *recordName; // @synthesize recordName=_recordName;
-@property(readonly, nonatomic) NSString *entityName; // @synthesize entityName=_entityName;
-@property(readonly, nonatomic) NSData *ckRecordSystemFields; // @synthesize ckRecordSystemFields=_ckRecordSystemFields;
-@property(readonly, nonatomic) NSString *ckRecordID; // @synthesize ckRecordID=_ckRecordID;
++ (id)orderRelationships:(id)arg1;
++ (id)entityPath;
++ (id)fetchMirroredRelationshipsMatchingPredicate:(id)arg1 fromStore:(id)arg2 inManagedObjectContext:(id)arg3 error:(id *)arg4;
++ (id)mirroredRelationshipForObject:(id)arg1 relatedToObject:(id)arg2 relatedByRelationship:(id)arg3 error:(id *)arg4;
++ (BOOL)updateMirroredRelationshipsMatchingRecords:(id)arg1 forStore:(id)arg2 withManagedObjectContext:(id)arg3 usingBlock:(CDUnknownBlockType)arg4 error:(id *)arg5;
++ (id)markRelationshipsForDeletedRecordIDs:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
++ (BOOL)purgeMirroredRelationshipsWithRecordIDs:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
++ (id)insertMirroredRelationshipForManyToMany:(id)arg1 inZoneWithMetadata:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4;
++ (id)mirroredRelationshipForManyToMany:(id)arg1 inStore:(id)arg2 withManagedObjectContext:(id)arg3 error:(id *)arg4;
++ (id)fetchMirroredRelationshipsForObject:(id)arg1 withRecordID:(id)arg2 relatedToObjectsByRelationship:(id)arg3 inManagedObjectContext:(id)arg4 error:(id *)arg5;
++ (id)fetchPendingMirroredRelationshipsInStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
++ (id)fetchMirroredRelationshipsMatchingRelatingRecords:(id)arg1 andRelatingRecordIDs:(id)arg2 fromStore:(id)arg3 inManagedObjectContext:(id)arg4 error:(id *)arg5;
 - (BOOL)updateRelationshipValueUsingImportContext:(id)arg1 andManagedObjectContext:(id)arg2 isDelete:(BOOL)arg3 error:(id *)arg4;
-- (void)setPending:(BOOL)arg1 deleted:(BOOL)arg2 uploaded:(BOOL)arg3;
-- (void)setBindValue:(id)arg1;
-- (void)updatePKNumFromInsert:(long long)arg1;
-- (void)dealloc;
-- (id)initWithMirroredManyToMany:(id)arg1;
-- (id)initWithFetchResult:(id)arg1 andSQLEntity:(id)arg2;
+- (id)createRecordIDForRelatedRecord;
+- (id)createRecordIDForRecord;
+- (id)createRecordID;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *cdEntityName; // @dynamic cdEntityName;
+@property(retain, nonatomic) NSString *ckRecordID; // @dynamic ckRecordID;
+@property(retain, nonatomic) NSData *ckRecordSystemFields; // @dynamic ckRecordSystemFields;
+@property(retain, nonatomic) NSNumber *isPending; // @dynamic isPending;
+@property(retain, nonatomic) NSNumber *isUploaded; // @dynamic isUploaded;
+@property(retain, nonatomic) NSNumber *needsDelete; // @dynamic needsDelete;
+@property(retain, nonatomic) NSString *recordName; // @dynamic recordName;
+@property(retain, nonatomic) NSCKRecordZoneMetadata *recordZone; // @dynamic recordZone;
+@property(retain, nonatomic) NSString *relatedEntityName; // @dynamic relatedEntityName;
+@property(retain, nonatomic) NSString *relatedRecordName; // @dynamic relatedRecordName;
+@property(retain, nonatomic) NSString *relationshipName; // @dynamic relationshipName;
 
 @end
 

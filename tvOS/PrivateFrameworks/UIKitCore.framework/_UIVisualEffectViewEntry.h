@@ -18,18 +18,16 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) long long requirements; // @synthesize requirements=_requirements;
 @property(readonly, copy) NSString *description;
+- (void)convertToIdentity;
 - (id)copyForTransitionOut;
 - (id)copyForTransitionToEffect:(id)arg1;
 - (_Bool)canTransitionToEffect:(id)arg1;
 - (_Bool)isSameTypeOfEffect:(id)arg1;
-- (_Bool)applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2 toView:(id)arg3;
 - (void)applyEffectAsRequested:(_Bool)arg1 toView:(id)arg2;
 - (void)removeEffectFromView:(id)arg1;
 - (void)applyIdentityEffectToView:(id)arg1;
 - (void)applyRequestedEffectToView:(id)arg1;
 - (void)addEffectToView:(id)arg1;
-- (_Bool)hasTransform;
-- (_Bool)shouldManageCornerRadius;
 - (_Bool)shouldAnimateProperty:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

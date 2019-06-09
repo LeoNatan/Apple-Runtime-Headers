@@ -40,7 +40,7 @@
 - (id)rowAt:(struct CGPoint)arg1;
 - (unsigned long long)indexOfRowAt:(struct CGPoint)arg1;
 - (void)_updateHairlineInsets;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_mapkit_layoutMarginsDidChange;
 - (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) unsigned long long lastQuoteLevel; // @synthesize lastQuoteLevel=_lastQuoteLevel;
 - (BOOL)speakWordOnEdgeMovementEvents;
-- (void)moveInsertionToElement:(id)arg1 affinity:(unsigned long long)arg2;
+- (void)moveInsertionToElement:(id)arg1 affinity:(long long)arg2;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
-- (CDStruct_79add89a)shouldMoveFocusFromElement:(id)arg1 toElement:(id)arg2;
+- (CDStruct_d7010776)shouldMoveFocusFromElement:(id)arg1 toElement:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
 - (void)addContentToRequest:(id)arg1;

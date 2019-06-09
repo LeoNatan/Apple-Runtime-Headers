@@ -8,6 +8,7 @@
 
 @class UIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVFrame : NSObject
 {
     _Bool _preserveCompressedImageRepresentation;

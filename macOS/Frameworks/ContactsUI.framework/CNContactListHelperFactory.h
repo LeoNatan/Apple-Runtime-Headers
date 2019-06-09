@@ -13,9 +13,12 @@
     CNContactPickerScope *_scope;
 }
 
+@property(readonly, nonatomic) CNContactPickerScope *scope; // @synthesize scope=_scope;
 - (void).cxx_destruct;
+- (id)showSelectedContactHelper:(id)arg1;
 - (id)selectContactHelper:(id)arg1;
 - (id)selectValueHelper:(id)arg1;
+- (id)selectHelper:(id)arg1;
 - (id)initWithPickerScope:(id)arg1;
 
 @end

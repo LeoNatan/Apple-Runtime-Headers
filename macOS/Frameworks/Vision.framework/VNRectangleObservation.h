@@ -15,6 +15,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)rectangleObservationWithRequestRevision:(unsigned long long)arg1 topLeft:(struct CGPoint)arg2 bottomLeft:(struct CGPoint)arg3 bottomRight:(struct CGPoint)arg4 topRight:(struct CGPoint)arg5;
++ (id)observationWithRequestRevision:(unsigned long long)arg1 boundingBox:(struct CGRect)arg2;
 @property(readonly, nonatomic) struct CGPoint topRight; // @synthesize topRight=_topRight;
 @property(readonly, nonatomic) struct CGPoint bottomRight; // @synthesize bottomRight=_bottomRight;
 @property(readonly, nonatomic) struct CGPoint bottomLeft; // @synthesize bottomLeft=_bottomLeft;

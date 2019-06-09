@@ -8,6 +8,7 @@
 
 @class PDAnimationTarget;
 
+__attribute__((visibility("hidden")))
 @interface PDMediaNode : PDTimeNode
 {
     PDAnimationTarget *mTarget;

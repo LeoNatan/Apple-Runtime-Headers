@@ -15,9 +15,9 @@
 - (BOOL)setData:(id)arg1 forPath:(id)arg2 compressed:(BOOL)arg3;
 - (id)initForWritingToPath:(id)arg1 ofType:(id)arg2 error:(id *)arg3;
 - (id)initForWritingToPath:(id)arg1 error:(id *)arg2;
-- (BOOL)addIntermediateCertificate:(struct OpaqueSecCertificateRef *)arg1;
-- (BOOL)addSignatureBySigningWithIdentity:(struct OpaqueSecIdentityRef *)arg1 algorithm:(id)arg2 usingTSAIfSupported:(BOOL)arg3;
-- (BOOL)addSignatureBySigningWithIdentity:(struct OpaqueSecIdentityRef *)arg1 algorithm:(id)arg2;
+- (BOOL)addIntermediateCertificate:(struct __SecCertificate *)arg1;
+- (BOOL)addSignatureBySigningWithIdentity:(struct __SecIdentity *)arg1 algorithm:(id)arg2 usingTSAIfSupported:(BOOL)arg3;
+- (BOOL)addSignatureBySigningWithIdentity:(struct __SecIdentity *)arg1 algorithm:(id)arg2;
 - (void)setSignatureSize:(int)arg1;
 
 @end

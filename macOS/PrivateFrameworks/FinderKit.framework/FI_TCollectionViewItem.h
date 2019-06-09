@@ -6,21 +6,33 @@
 
 #import <AppKit/NSCollectionViewItem.h>
 
-@class NSView;
+#import <FinderKit/TMarkTornDown-Protocol.h>
+
+@class NSString, NSView;
 @protocol TCollectionViewItemViewProtocol;
 
 __attribute__((visibility("hidden")))
-@interface FI_TCollectionViewItem : NSCollectionViewItem
+@interface FI_TCollectionViewItem : NSCollectionViewItem <TMarkTornDown>
 {
+    _Bool tornDown;
 }
 
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
+- (void)_setLayoutAttributes:(id)arg1;
 - (struct TFENode)node;
 - (void)setUseActiveAppearance:(_Bool)arg1;
 - (BOOL)_viewControllerSupports10_10Features;
 - (id)viewNoLoad;
 @property(retain) NSView<TCollectionViewItemViewProtocol> *view;
+- (void)prepareForReuse;
 - (void)aboutToTearDown;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

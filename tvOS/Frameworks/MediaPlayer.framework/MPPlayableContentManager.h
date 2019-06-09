@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVExternalDevice, MPPlayableContentManagerContext, NSArray, NSMutableSet, NSOperationQueue;
+@class MPPlayableContentManagerContext, NSArray, NSMutableSet, NSOperationQueue;
 @protocol MPPlayableContentDataSource, MPPlayableContentDelegate, OS_dispatch_queue;
 
 @interface MPPlayableContentManager : NSObject
@@ -17,7 +17,6 @@
     NSOperationQueue *_artworkUpdateQueue;
     _Bool _coalescingUpdates;
     _Bool _scheduledSupportedAPIsChange;
-    AVExternalDevice *_externalDevice;
     id <MPPlayableContentDataSource> _dataSource;
     id <MPPlayableContentDelegate> _delegate;
     MPPlayableContentManagerContext *_context;
@@ -27,16 +26,12 @@
 + (_Bool)_deviceIsCarplayCapable;
 + (id)sharedContentManager;
 @property(copy, nonatomic) NSArray *nowPlayingIdentifiers; // @synthesize nowPlayingIdentifiers=_nowPlayingIdentifiers;
-@property(retain, nonatomic) MPPlayableContentManagerContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) MPPlayableContentManagerContext *context; // @synthesize context=_context;
 @property(nonatomic) __weak id <MPPlayableContentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <MPPlayableContentDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)_scheduleUpdateSupportedAPIs;
 - (void)_updateSupportedAPIs;
-- (_Bool)_areContentLimitsEnforced;
-- (_Bool)_musicListsLimited;
-- (void)_browsableContentEndpointChanged:(id)arg1;
-- (void)_limitedUIChanged:(id)arg1;
 - (void)_markContentItemsAsSentToMediaRemote:(id)arg1;
 - (_Bool)_onQueueContentItemWasSentToMediaRemote:(id)arg1;
 - (_Bool)_contentItemWasSentToMediaRemote:(id)arg1;

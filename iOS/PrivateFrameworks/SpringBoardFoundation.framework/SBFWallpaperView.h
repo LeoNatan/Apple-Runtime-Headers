@@ -6,13 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+#import <SpringBoardFoundation/PTSettingsKeyObserver-Protocol.h>
 #import <SpringBoardFoundation/SBFLegibilitySettingsProvider-Protocol.h>
-#import <SpringBoardFoundation/_UISettingsKeyObserver-Protocol.h>
 
 @class NSString, NSTimer, SBFWallpaperParallaxSettings, SBFWallpaperSettings, UIColor, UIImage, _UILegibilitySettings, _UILegibilitySettingsProvider;
-@protocol SBFLegibilitySettingsProviderDelegate, SBFWallpaperViewInternalObserver, SBFWallpaperViewSettingsProvider;
+@protocol SBFLegibilitySettingsProviderDelegate, SBFWallpaperViewDelegate, SBFWallpaperViewInternalObserver;
 
-@interface SBFWallpaperView : UIView <_UISettingsKeyObserver, SBFLegibilitySettingsProvider>
+@interface SBFWallpaperView : UIView <PTSettingsKeyObserver, SBFLegibilitySettingsProvider>
 {
     SBFWallpaperSettings *_wallpaperSettings;
     UIView *_parallaxView;
@@ -36,28 +36,34 @@
     _Bool _sharesContentsAcrossVariants;
     id <SBFLegibilitySettingsProviderDelegate> _delegate;
     UIView *_contentView;
+    long long _wallpaperMode;
+    id <SBFWallpaperViewDelegate> _wallpaperDelegate;
     double _parallaxFactor;
     NSString *_wallpaperName;
     long long _logicalContentOrientation;
+    NSString *_cacheGroup;
     id <SBFWallpaperViewInternalObserver> _internalObserver;
-    id <SBFWallpaperViewSettingsProvider> _wallpaperSettingsProvider;
 }
 
 + (_Bool)_allowsRasterization;
 + (_Bool)_shouldScaleForParallax;
 + (_Bool)_allowsParallax;
-@property(nonatomic) __weak id <SBFWallpaperViewSettingsProvider> wallpaperSettingsProvider; // @synthesize wallpaperSettingsProvider=_wallpaperSettingsProvider;
++ (Class)wallpaperViewClassForWallpaperType:(long long)arg1;
++ (Class)wallpaperViewClassForConfiguration:(id)arg1;
 @property(nonatomic) __weak id <SBFWallpaperViewInternalObserver> internalObserver; // @synthesize internalObserver=_internalObserver;
+@property(readonly, copy, nonatomic) NSString *cacheGroup; // @synthesize cacheGroup=_cacheGroup;
 @property(nonatomic) long long logicalContentOrientation; // @synthesize logicalContentOrientation=_logicalContentOrientation;
 @property(nonatomic) unsigned long long transformOptions; // @synthesize transformOptions=_transformOptions;
 @property(nonatomic) _Bool sharesContentsAcrossVariants; // @synthesize sharesContentsAcrossVariants=_sharesContentsAcrossVariants;
-@property(copy, nonatomic) NSString *wallpaperName; // @synthesize wallpaperName=_wallpaperName;
+@property(readonly, copy, nonatomic) NSString *wallpaperName; // @synthesize wallpaperName=_wallpaperName;
 @property(nonatomic, getter=isRotating) _Bool rotating; // @synthesize rotating=_rotating;
 @property(nonatomic) _Bool wallpaperAnimationEnabled; // @synthesize wallpaperAnimationEnabled=_wallpaperAnimationEnabled;
 @property(nonatomic) _Bool continuousColorSamplingEnabled; // @synthesize continuousColorSamplingEnabled=_continuousColorSamplingEnabled;
 @property(nonatomic) double parallaxFactor; // @synthesize parallaxFactor=_parallaxFactor;
 @property(nonatomic) _Bool parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
+@property(nonatomic) __weak id <SBFWallpaperViewDelegate> wallpaperDelegate; // @synthesize wallpaperDelegate=_wallpaperDelegate;
+@property(readonly, nonatomic) long long wallpaperMode; // @synthesize wallpaperMode=_wallpaperMode;
 @property(nonatomic) long long variant; // @synthesize variant=_variant;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <SBFLegibilitySettingsProviderDelegate> delegate; // @synthesize delegate=_delegate;
@@ -73,7 +79,6 @@
 - (void)_updateRasterizationState;
 - (void)_endDisallowRasterizationBlock;
 - (void)_beginDisallowRasterizationBlock;
-- (void)_notifyGeometryInvalidated;
 - (void)_notifyBlursInvalidated;
 - (_Bool)_isVisible;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
@@ -86,10 +91,13 @@
 - (id)_displayedImage;
 - (id)_fallbackImageWithOriginalSize:(struct CGSize)arg1;
 - (_Bool)_needsFallbackImageForBackdropGeneratedImage:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *cacheUniqueIdentifier;
 @property(readonly, copy, nonatomic) NSString *variantCacheIdentifier;
-@property(readonly, copy, nonatomic) NSString *cacheGroup;
-- (id)_cacheKeyForParameters:(CDStruct_83077358)arg1 includingTint:(_Bool)arg2 downsampleFactor:(double)arg3;
-- (id)_imageForBackdropParameters:(CDStruct_83077358)arg1 includeTint:(_Bool)arg2;
+- (id)_cacheKeyForParameters:(CDStruct_d8f0d129)arg1 includingTint:(_Bool)arg2 downsampleFactor:(double)arg3;
+- (id)_material_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2;
+- (id)_backdrop_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2 includeTint:(_Bool)arg3;
+- (id)_generateImageFromImage:(id)arg1 forBackdropParameters:(CDStruct_d8f0d129)arg2 includeTint:(_Bool)arg3;
+- (id)_imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2;
 - (id)_blurredImage;
 - (void)preheatImageData;
 - (void)_stopGeneratingBlurredImages;
@@ -104,8 +112,7 @@
 - (void)setHidden:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)invalidate;
-- (id)_blurReplacementImage;
-- (id)imageForBackdropParameters:(CDStruct_83077358)arg1 includeTint:(_Bool)arg2;
+- (id)imageForBackdropParameters:(CDStruct_d8f0d129)arg1 includeTint:(_Bool)arg2;
 - (id)blurredImage;
 - (id)snapshotImage;
 - (void)setGeneratesBlurredImages:(_Bool)arg1;
@@ -119,7 +126,6 @@
 - (void)_setLegibilitySettings:(id)arg1 notify:(_Bool)arg2;
 - (id)_primaryColorOverride;
 - (void)setLegibilitySettings:(id)arg1;
-- (void)setVariant:(long long)arg1 withAnimationFactory:(id)arg2 forced:(_Bool)arg3;
 - (void)setVariant:(long long)arg1 withAnimationFactory:(id)arg2;
 - (void)setZoomFactor:(double)arg1 withAnimationFactory:(id)arg2;
 @property(readonly, nonatomic) _UILegibilitySettings *legibilitySettings;
@@ -131,7 +137,7 @@
 @property(readonly, nonatomic) struct CGRect cropRect;
 @property(readonly, nonatomic) long long wallpaperType;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 variant:(long long)arg2 wallpaperSettingsProvider:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 variant:(long long)arg3 cacheGroup:(id)arg4 delegate:(id)arg5 options:(unsigned long long)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -4,64 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSExtensionContext.h>
+#import <objc/NSObject.h>
 
-#import <Intents/INExtensionContextVending-Protocol.h>
+#import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSObject, NSString;
-@protocol INIntentHandlerProvidingPrivate, OS_dispatch_queue;
+@class NSArray, NSString, NSUUID;
 
-@interface INExtensionContext : NSExtensionContext <INExtensionContextVending>
+@interface INExtensionContext : NSObject <NSSecureCoding>
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    _Bool _isPrivateExtension;
-    id <INIntentHandlerProvidingPrivate> _extensionHandler;
-    id _activeHandlerForIntent;
+    NSString *_recordRoute;
+    NSUUID *_recordDeviceUID;
+    NSArray *_airPlayRouteIdentifiers;
 }
 
-+ (id)_extensionAuxiliaryVendorProtocol;
-+ (id)_extensionAuxiliaryHostProtocol;
-+ (void)initialize;
-@property(retain) id activeHandlerForIntent; // @synthesize activeHandlerForIntent=_activeHandlerForIntent;
++ (_Bool)supportsSecureCoding;
+@property(copy, nonatomic, setter=_setAirPlayRouteIdentifiers:) NSArray *_airPlayRouteIdentifiers; // @synthesize _airPlayRouteIdentifiers;
+@property(copy, nonatomic, setter=_setRecordDeviceUID:) NSUUID *_recordDeviceUID; // @synthesize _recordDeviceUID;
+@property(copy, nonatomic, setter=_setRecordRoute:) NSString *_recordRoute; // @synthesize _recordRoute;
 - (void).cxx_destruct;
-- (oneway void)cancelTransactionDueToTimeout;
-- (oneway void)completeTransaction;
-- (oneway void)handleIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (oneway void)handleIntent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)confirmationResponseForIntent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_cancelTransactionDueToTimeoutWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_completeTransactionWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_beginTransactionWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)cancelTransactionDueToTimeoutWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)completeTransactionWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (oneway void)beginTransactionWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_stopSendingUpdatesForIntent:(id)arg1;
-- (oneway void)stopSendingUpdatesForIntent:(id)arg1;
-- (void)_startSendingUpdatesForIntent:(id)arg1 toObserver:(id)arg2;
-- (oneway void)startSendingUpdatesForIntent:(id)arg1 toObserver:(id)arg2;
-- (void)_validateExtension;
-- (void)_getApplicationContextWithCompletion:(CDUnknownBlockType)arg1;
-- (oneway void)getApplicationContextWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_deliverIntent:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (void)_processIntentResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)_updateIntent:(id)arg1 intentSlotDescription:(id)arg2 resolutionResultDataProvider:(id)arg3;
-- (CDUnknownBlockType)_processResolutionDataProviderForIntent:(id)arg1 intentSlotDescription:(id)arg2 updateIntent:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
-- (CDUnknownBlockType)_processIntentResponseCompletionHandlerWithCompletion:(CDUnknownBlockType)arg1;
-- (oneway void)handleIntent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (oneway void)confirmIntent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (oneway void)_resolveIntentSlot:(id)arg1 forIntent:(id)arg2 updateIntent:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
-- (oneway void)resolveIntentSlot:(id)arg1 forIntent:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (oneway void)resolveIntentSlots:(id)arg1 forIntent:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-@property(readonly, nonatomic) id <INIntentHandlerProvidingPrivate> _extensionHandler; // @synthesize _extensionHandler;
-- (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
-- (id)initWithInputItems:(id)arg1 extension:(id)arg2;
-- (id)initWithInputItems:(id)arg1 privateIntentHandlerProvider:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

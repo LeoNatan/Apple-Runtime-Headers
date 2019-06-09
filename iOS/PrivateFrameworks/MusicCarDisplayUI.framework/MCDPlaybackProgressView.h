@@ -22,7 +22,7 @@
 @property(nonatomic) double playbackProgress; // @synthesize playbackProgress=_playbackProgress;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (void)_setProgressViewColor:(_Bool)arg1;
+- (void)setProgressViewHighlighted:(_Bool)arg1;
 - (id)init;
 
 @end

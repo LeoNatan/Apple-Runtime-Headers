@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     id <VCSessionDownlinkBandwidthAllocatorClient> _client;
     unsigned int _maxNetworkBitrate;
+    unsigned int _maxMediaBitrate;
     unsigned int _qualityIndex;
     _Bool _isLowestQualityAudio;
     unsigned char _type;
@@ -36,13 +37,14 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned char type; // @synthesize type=_type;
 @property _Bool isLowestQualityAudio; // @synthesize isLowestQualityAudio=_isLowestQualityAudio;
 @property(readonly) unsigned int qualityIndex; // @synthesize qualityIndex=_qualityIndex;
+@property(readonly) unsigned int maxMediaBitrate; // @synthesize maxMediaBitrate=_maxMediaBitrate;
 @property(readonly) unsigned int maxNetworkBitrate; // @synthesize maxNetworkBitrate=_maxNetworkBitrate;
 @property(readonly) id <VCSessionDownlinkBandwidthAllocatorClient> client; // @synthesize client=_client;
 - (long long)compare:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)initWithClient:(id)arg1 type:(unsigned char)arg2 networkBitrate:(unsigned int)arg3 qualityIndex:(unsigned int)arg4 streamID:(unsigned int)arg5 hasRepairStreamID:(_Bool)arg6 repairStreamID:(unsigned int)arg7 repairMaxNetworkBitrate:(unsigned int)arg8 enabled:(_Bool)arg9;
-- (id)initWithClient:(id)arg1 type:(unsigned char)arg2 networkBitrate:(unsigned int)arg3 qualityIndex:(unsigned int)arg4 streamID:(unsigned int)arg5;
+- (id)initWithClient:(id)arg1 type:(unsigned char)arg2 networkBitrate:(unsigned int)arg3 mediaBitrate:(unsigned int)arg4 qualityIndex:(unsigned int)arg5 streamID:(unsigned int)arg6 hasRepairStreamID:(_Bool)arg7 repairStreamID:(unsigned int)arg8 repairMaxNetworkBitrate:(unsigned int)arg9 enabled:(_Bool)arg10;
+- (id)initWithClient:(id)arg1 type:(unsigned char)arg2 networkBitrate:(unsigned int)arg3 mediaBitrate:(unsigned int)arg4 qualityIndex:(unsigned int)arg5 streamID:(unsigned int)arg6;
 
 @end
 

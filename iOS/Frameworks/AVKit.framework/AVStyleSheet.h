@@ -8,6 +8,7 @@
 
 @class UIFont, UITraitCollection;
 
+__attribute__((visibility("hidden")))
 @interface AVStyleSheet : NSObject
 {
     _Bool _shouldUseCompactFullScreenSize;
@@ -74,7 +75,7 @@
 @property(readonly, nonatomic) UIFont *infoLabelFont; // @synthesize infoLabelFont=_infoLabelFont;
 @property(readonly, nonatomic) UIFont *scrubberTimeLabelFont; // @synthesize scrubberTimeLabelFont=_scrubberTimeLabelFont;
 @property(readonly, nonatomic) UIFont *scrubberInfoLabelFont; // @synthesize scrubberInfoLabelFont=_scrubberInfoLabelFont;
-- (struct UIEdgeInsets)playbackControlsViewLayoutMarginsForView:(id)arg1 isFullScreen:(_Bool)arg2;
+- (struct UIEdgeInsets)playbackControlsViewLayoutMarginsForView:(id)arg1 keyboardHeight:(double)arg2 isFullScreen:(_Bool)arg3;
 - (id)initWithTraitCollection:(id)arg1 shouldUseCompactFullScreenSize:(_Bool)arg2;
 
 @end

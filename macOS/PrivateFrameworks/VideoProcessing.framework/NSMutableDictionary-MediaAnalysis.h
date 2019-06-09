@@ -25,5 +25,8 @@
 - (void)vcp_setDateAnalyzed:(id)arg1;
 - (void)vcp_setDateModified:(id)arg1;
 - (void)vcp_setVersion:(int)arg1;
+- (void)vcp_setTimerange:(CDStruct_e83c9415)arg1;
+- (void)vcp_removeSyncPoint;
+- (void)vcp_setSyncPoint:(CDStruct_1b6d18a9)arg1;
 @end
 

@@ -18,6 +18,7 @@
     NSObject<OS_xpc_object> *_responseHandler;
 }
 
+- (void).cxx_destruct;
 - (void)_generateUnitTestResponsesForResultArray:(id)arg1;
 - (id)_generateUnitTestReplyForMethod:(id)arg1 arg:(id)arg2 error:(id *)arg3;
 - (_Bool)_unitTestsAreEnabled;

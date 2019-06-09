@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (BOOL)isGestureContainerElement;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
 - (void)prepareBrailleItemDescriptionForRequest:(id)arg1 hasBrailleFocus:(BOOL)arg2;
 - (BOOL)allowFocusThroughSingleChild;
 - (BOOL)shouldMap;
@@ -27,8 +26,9 @@ __attribute__((visibility("hidden")))
 - (id)lastChildForFocusing;
 - (id)firstChildForFocusing;
 - (id)visibleChildrenDescriptionIgnoringChild:(id)arg1;
+- (BOOL)_addContainerSummaryToRequest:(id)arg1;
 - (void)addElementSummaryToRequest:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (BOOL)shouldPromoteUIElement:(id)arg1;
 - (void)addItemNameToRequest:(id)arg1;
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;

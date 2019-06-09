@@ -6,34 +6,10 @@
 
 #import <QTKit/QTCaptureOutput.h>
 
-@class QTCaptureDecompressedAudioOutputInternal;
-
 @interface QTCaptureDecompressedAudioOutput : QTCaptureOutput
 {
-    QTCaptureDecompressedAudioOutputInternal *_internal;
-    id _delegate;
-    long long _reserved4;
-    long long _reserved5;
-    long long _reserved6;
 }
 
-- (unsigned int)connectionUnitInputNumberForConnection:(id)arg1;
-- (int)connectionGraphNodeForConnection:(id)arg1;
-- (void)removeOutputUnitsForConnection:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
-- (BOOL)addOutputUnitsForConnection:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
-- (void)removeConnection:(id)arg1;
-- (id)addConnection:(id)arg1 error:(id *)arg2;
-- (id)connectionMediaTypes;
-- (id)connections;
-- (void)backgroundQueue:(id)arg1 invocationWasCanceled:(id)arg2;
-- (void)_outputAudioSampleBuffer:(id)arg1 fromConnection:(id)arg2;
-- (void)outputAudioSampleBuffer:(id)arg1 fromConnection:(id)arg2;
-- (void)_applyCompressionOptionsForConnection:(id)arg1;
-- (void)setCompressionOptions:(id)arg1 forConnection:(id)arg2;
-- (id)compressionOptionsForConnection:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)dealloc;
 - (id)init;
 
 @end

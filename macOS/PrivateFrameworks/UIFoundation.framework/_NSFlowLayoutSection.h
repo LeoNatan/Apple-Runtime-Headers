@@ -76,6 +76,8 @@
 - (void).cxx_destruct;
 - (void)transformItemIfInCollapsedRowEndZone:(id)arg1;
 @property(nonatomic, getter=isCollapsed) BOOL collapsed;
+- (unsigned long long)rowIndexForItemAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long rowsCount;
 - (id)rowsInRect:(struct CGRect)arg1;
 - (void)addInvalidatedIndexPath:(id)arg1;
 - (void)setSize:(struct CGSize)arg1 forItemAtIndexPath:(id)arg2 invalidationContext:(id)arg3;
@@ -85,6 +87,7 @@
 - (id)addItem;
 - (void)setEstimatedSize:(struct CGSize)arg1 forSection:(long long)arg2;
 - (void)updateEstimatedSizeForSection:(long long)arg1;
+- (void)fixupLastRowItemAlignment;
 - (void)computeLayoutInRect:(struct CGRect)arg1 forSection:(long long)arg2 invalidating:(BOOL)arg3 invalidationContext:(id)arg4;
 @property(readonly, nonatomic) struct CGRect effectiveFooterFrameWithSectionMarginsApplied;
 @property(readonly, nonatomic) struct CGRect effectiveHeaderFrameWithSectionMarginsApplied;

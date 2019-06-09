@@ -19,12 +19,13 @@
 @property(retain) NUImageTransformAffine *transform; // @synthesize transform=_transform;
 @property CDStruct_996ac03c cropRect; // @synthesize cropRect=_cropRect;
 - (void).cxx_destruct;
-- (BOOL)canPropagateOriginalDepthData;
-- (id)_evaluateDepthData:(out id *)arg1;
+- (BOOL)canPropagateOriginalAuxiliaryData;
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
+- (id)debugQuickLookObject;
 - (id)_evaluateImage:(out id *)arg1;
 - (id)_transformWithError:(out id *)arg1;
+- (id)transformAffine;
 - (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
 - (id)initWithRect:(CDStruct_996ac03c)arg1 input:(id)arg2;

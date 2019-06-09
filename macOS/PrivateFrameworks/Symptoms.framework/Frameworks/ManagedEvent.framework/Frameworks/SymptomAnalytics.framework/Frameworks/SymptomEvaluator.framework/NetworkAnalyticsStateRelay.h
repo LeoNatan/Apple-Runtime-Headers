@@ -6,15 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSDate, NSMutableSet, NSSet, NSString;
 
 @interface NetworkAnalyticsStateRelay : NSObject
 {
+    NSMutableSet *_defaultGateways;
     BOOL _active;
     BOOL _primary;
     BOOL _knownGood;
     BOOL _rxSignalThresholded;
+    BOOL _rxSignalFullBars;
     BOOL _txThresholded;
+    BOOL _congestionThresholded;
     BOOL _arpOut;
     BOOL _dnsOut;
     BOOL _internetDnsOut;
@@ -38,9 +41,11 @@
     unsigned long long _lastReportedL2TxFrames;
     unsigned long long _lastReportedL2TxRetry;
     unsigned long long _lastReportedL2TxFail;
+    NSDate *_madePrimaryDate;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property(retain) NSDate *madePrimaryDate; // @synthesize madePrimaryDate=_madePrimaryDate;
 @property unsigned long long lastReportedL2TxFail; // @synthesize lastReportedL2TxFail=_lastReportedL2TxFail;
 @property unsigned long long lastReportedL2TxRetry; // @synthesize lastReportedL2TxRetry=_lastReportedL2TxRetry;
 @property unsigned long long lastReportedL2TxFrames; // @synthesize lastReportedL2TxFrames=_lastReportedL2TxFrames;
@@ -55,6 +60,9 @@
 - (id)initForInternalType:(long long)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
+@property(readonly) NSSet *defaultGateways;
+- (void)removeAllDefaultGateways;
+- (void)addDefaultGateway:(id)arg1;
 @property unsigned char powerCostUL; // @synthesize powerCostUL=_powerCostUL;
 @property unsigned char powerCostDL; // @synthesize powerCostDL=_powerCostDL;
 @property int advisory; // @synthesize advisory=_advisory;
@@ -67,7 +75,9 @@
 @property BOOL internetDnsOut; // @synthesize internetDnsOut=_internetDnsOut;
 @property BOOL dnsOut; // @synthesize dnsOut=_dnsOut;
 @property BOOL arpOut; // @synthesize arpOut=_arpOut;
+@property BOOL congestionThresholded; // @synthesize congestionThresholded=_congestionThresholded;
 @property BOOL txThresholded; // @synthesize txThresholded=_txThresholded;
+@property BOOL rxSignalFullBars; // @synthesize rxSignalFullBars=_rxSignalFullBars;
 @property BOOL rxSignalThresholded; // @synthesize rxSignalThresholded=_rxSignalThresholded;
 @property BOOL knownGood; // @synthesize knownGood=_knownGood;
 @property BOOL primary; // @synthesize primary=_primary;

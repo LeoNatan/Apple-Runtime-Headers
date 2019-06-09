@@ -6,9 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class CLKFont, NSArray, NSDate, NTKColoringLabel, UIImageView, UILayoutGuide;
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKUpNextMatchupScoreView : UIView
+@class CLKFont, NSArray, NSDate, NSString, NTKColoringLabel, UIImageView, UILayoutGuide;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKUpNextMatchupScoreView : UIView <CLKMonochromeComplicationView>
 {
     UIImageView *_homeLogoImageView;
     NTKColoringLabel *_homeNameLabel;
@@ -27,14 +30,24 @@
     NSArray *_withLogoLayoutConstraints;
     NSArray *_withoutDateLayoutConstraints;
     _Bool _paused;
+    id <CLKMonochromeFilterProvider> _filterProvider;
 }
 
 + (id)_timeStringForFetchDate:(id)arg1;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)updateTimeLabel;
 - (void)configureWithMatchup:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

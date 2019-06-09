@@ -8,6 +8,7 @@
 
 @class NSOutlineView, NSTextField, SCTGRL, SCTGRLIndex, SCTGRLTree;
 
+__attribute__((visibility("hidden")))
 @interface SCTGRLInspectorController : NSObject
 {
     SCTGRLIndex *mGRLIndex;

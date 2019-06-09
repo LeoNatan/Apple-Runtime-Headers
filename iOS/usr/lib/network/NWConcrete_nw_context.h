@@ -16,31 +16,24 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_workloop> *workloop;
     char *identifier;
-    struct nw_hash_table *address_endpoints;
-    struct nw_hash_table *host_endpoints;
-    struct nw_hash_table *other_endpoints;
-    void *purge_timer;
-    struct os_unfair_lock_s channel_lock;
-    struct os_unfair_lock_s path_lock;
-    struct os_unfair_lock_s globals_lock;
+    struct nw_context_cache *cache;
+    struct nw_context_globals *globals;
+    NWConcrete_nw_context *isolated_context;
     struct os_unfair_lock_s activate_lock;
-    struct nw_hash_table *globals;
-    void *channel_globals;
-    void *path_globals;
-    struct nw_mem_buffer_manager *buffer_manager_128;
-    struct nw_mem_buffer_manager *buffer_manager_64;
-    struct nw_mem_buffer_manager *buffer_manager_16;
-    struct nw_mem_buffer_manager *buffer_manager_8;
-    struct nw_mem_buffer_manager *buffer_manager_2;
+    unsigned int max_cache_entries;
+    unsigned int target_cache_entries;
+    unsigned int max_idle_cache_entries;
     int scheduling_mode;
     int privacy_level;
     unsigned int isolate_protocol_stack:1;
     unsigned int isolate_protocol_cache:1;
     unsigned int is_implicit:1;
+    unsigned int is_isolated_context:1;
     unsigned int activated:1;
 }
 
 - (void).cxx_destruct;
+- (id)redactedDescription;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithIdentifier:(const char *)arg1;

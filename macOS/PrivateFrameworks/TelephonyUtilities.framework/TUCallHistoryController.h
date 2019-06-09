@@ -25,6 +25,7 @@
     NSMutableSet *_metadataPreCachedOptions;
 }
 
++ (id)tuHandleFromCHHandle:(id)arg1;
 + (id)callHistoryControllerWithCoalescingStrategy:(unsigned long long)arg1 options:(unsigned long long)arg2;
 + (id)sharedControllerWithCoalescingStrategy:(unsigned long long)arg1 options:(unsigned long long)arg2;
 + (id)sharedController;
@@ -43,6 +44,8 @@
 - (CDUnknownBlockType)callHistoryManagerInitializationDispatchBlock;
 - (void)loadDispatchQueue;
 - (id)initWithCoalescingStrategy:(unsigned long long)arg1 options:(unsigned long long)arg2;
+- (id)mostRecentCallWithHandle:(id)arg1;
+- (BOOL)outgoingRecentCallsContainsHandle:(id)arg1;
 - (BOOL)coalesceCall:(id)arg1 withCall:(id)arg2;
 - (BOOL)canCoalesceCall:(id)arg1 withCall:(id)arg2;
 - (void)reloadWithOptions:(unsigned long long)arg1;

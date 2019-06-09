@@ -18,8 +18,8 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) ADSInternalSize *size; // @synthesize size=_size;
-@property(retain, nonatomic) ADSInternalPoint *origin; // @synthesize origin=_origin;
+@property(copy, nonatomic) ADSInternalSize *size; // @synthesize size=_size;
+@property(copy, nonatomic) ADSInternalPoint *origin; // @synthesize origin=_origin;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

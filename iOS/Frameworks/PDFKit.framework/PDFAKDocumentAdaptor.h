@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <PDFKit/AKControllerDelegateProtocol-Protocol.h>
+#import <PDFKit/PKRulerHostingDelegate-Protocol.h>
 
 @class AKController, AKModelController, NSString, PDFAKDocumentAdaptorPrivate, PDFDocument, PDFView, UIView;
 @protocol PDFAKControllerDelegateProtocol;
 
 __attribute__((visibility("hidden")))
-@interface PDFAKDocumentAdaptor : NSObject <AKControllerDelegateProtocol>
+@interface PDFAKDocumentAdaptor : NSObject <AKControllerDelegateProtocol, PKRulerHostingDelegate>
 {
     PDFAKDocumentAdaptorPrivate *_private;
 }
@@ -26,10 +27,6 @@ __attribute__((visibility("hidden")))
 - (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned long long)arg1 forAnnotationController:(id)arg2;
 - (void)rotateLeft:(id)arg1;
 - (void)rotateRight:(id)arg1;
-- (id)characterIndexesForQuadPoints:(id)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
-- (id)quadPointsForCharacterIndexes:(id)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
-- (void)clearHighlightableSelectionForAnnotationController:(id)arg1;
-- (id)highlightableSelectionCharacterIndexesOnPageAtIndex:(unsigned long long)arg1 forAnnotationController:(id)arg2;
 - (_Bool)hasHighlightableSelectionForAnnotationController:(id)arg1;
 - (id)controller:(id)arg1 willSetToolbarItems:(id)arg2;
 - (void)positionSketchOverlay:(id)arg1 forAnnotationController:(id)arg2;
@@ -59,6 +56,8 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromOverlayToModelWithPageIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromModelToOverlayWithPageIndex:(unsigned long long)arg2 forAnnotationController:(id)arg3;
 - (id)undoManagerForAnnotationController:(id)arg1;
+- (_Bool)rulerHostWantsSharedRuler;
+- (id)rulerHostingView;
 - (void)pdfDocument:(id)arg1 didReplacePagePlaceholder:(id)arg2 atIndex:(unsigned long long)arg3 withPage:(id)arg4;
 - (void)pdfDocument:(id)arg1 didInsertPagePlaceholder:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)pdfDocument:(id)arg1 didExchangePage:(id)arg2 atIndex:(unsigned long long)arg3 withPage:(id)arg4 atIndex:(unsigned long long)arg5;

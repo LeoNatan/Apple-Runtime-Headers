@@ -14,9 +14,6 @@ __attribute__((visibility("hidden")))
     QLItemViewController *_previewController;
 }
 
-+ (_Bool)shouldBeRemoteForContentType:(id)arg1;
-+ (id)supportedContentTypes;
-+ (Class)transformerClass;
 - (void).cxx_destruct;
 - (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 

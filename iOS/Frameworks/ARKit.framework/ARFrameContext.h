@@ -8,7 +8,7 @@
 
 #import <ARKit/ARResultDataContext-Protocol.h>
 
-@class ARImageData, ARWorldMap, NSMutableArray, NSString;
+@class ARDeviceOrientationData, ARImageData, ARLocationData, ARWorldMap, NSMutableArray, NSMutableSet, NSString;
 
 @interface ARFrameContext : NSObject <ARResultDataContext>
 {
@@ -21,13 +21,17 @@
     _Bool _sessionTransformShouldResumeCameraPosition;
     _Bool _shouldRemoveExistingAnchors;
     ARImageData *_imageData;
+    ARDeviceOrientationData *_orientationData;
+    ARLocationData *_locationData;
     long long _worldAlignment;
     ARWorldMap *_worldMap;
     unsigned long long _frameDebugOptions;
+    NSMutableSet *_collaborationData;
     // Error parsing type: {?="columns"[4]}, name: _relocalizationDeltaTransform
     // Error parsing type: {?="columns"[4]}, name: _sessionTransform
 }
 
+@property(retain, nonatomic) NSMutableSet *collaborationData; // @synthesize collaborationData=_collaborationData;
 @property(readonly, nonatomic) _Bool shouldRemoveExistingAnchors; // @synthesize shouldRemoveExistingAnchors=_shouldRemoveExistingAnchors;
 @property(readonly, nonatomic) _Bool sessionTransformShouldResumeCameraPosition; // @synthesize sessionTransformShouldResumeCameraPosition=_sessionTransformShouldResumeCameraPosition;
 @property(readonly, nonatomic) _Bool sessionTransformShouldResumeCameraHeading; // @synthesize sessionTransformShouldResumeCameraHeading=_sessionTransformShouldResumeCameraHeading;
@@ -43,6 +47,8 @@
 @property(nonatomic) unsigned long long frameDebugOptions; // @synthesize frameDebugOptions=_frameDebugOptions;
 @property(retain, nonatomic) ARWorldMap *worldMap; // @synthesize worldMap=_worldMap;
 @property(nonatomic) long long worldAlignment; // @synthesize worldAlignment=_worldAlignment;
+@property(retain, nonatomic) ARLocationData *locationData; // @synthesize locationData=_locationData;
+@property(retain, nonatomic) ARDeviceOrientationData *orientationData; // @synthesize orientationData=_orientationData;
 @property(retain, nonatomic) ARImageData *imageData; // @synthesize imageData=_imageData;
 - (void).cxx_destruct;
 - (id)resultDataOfClass:(Class)arg1;
@@ -55,6 +61,7 @@
 - (void)resumeSessionCameraPositionAndHeading;
 - (void)resumeSessionCameraPosition;
 - (void)resetSessionTransform;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

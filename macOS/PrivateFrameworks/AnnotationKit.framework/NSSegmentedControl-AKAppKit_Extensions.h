@@ -9,5 +9,6 @@
 @interface NSSegmentedControl (AKAppKit_Extensions)
 - (void)setAccessibilityIdentifiers:(id)arg1;
 - (void)setAccessibilityDescriptions:(id)arg1;
+- (void)deselectAllSegments;
 @end
 

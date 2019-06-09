@@ -8,14 +8,14 @@
 
 #import <MediaPlayer/NSCopying-Protocol.h>
 
-@class MPMediaQueryCriteria, MPMediaQuerySectionInfo, MPWeakRef, NSMutableArray, NSObject;
+@class MPMediaLibrary, MPMediaQueryCriteria, MPMediaQuerySectionInfo, NSMutableArray, NSObject;
 @protocol MPMediaLibraryResultSet, OS_dispatch_queue;
 
 @interface MPMediaEntityResultSetArray : MPMediaArray <NSCopying>
 {
     id <MPMediaLibraryResultSet> _resultSet;
     Class _entityClass;
-    MPWeakRef *_libraryWeakRef;
+    MPMediaLibrary *_library;
     MPMediaQuerySectionInfo *_sectionInfo;
     NSMutableArray *_entities;
     NSObject<OS_dispatch_queue> *_entitiesQueue;

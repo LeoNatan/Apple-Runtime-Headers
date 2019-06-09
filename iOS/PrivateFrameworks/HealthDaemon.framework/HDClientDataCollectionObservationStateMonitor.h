@@ -8,21 +8,21 @@
 
 #import <HealthDaemon/HDProcessStateObserver-Protocol.h>
 
-@class HDProfile, HDXPCClient, NSLock, NSString;
+@class HDHealthStoreClient, HDProfile, NSLock, NSString;
 @protocol HDClientDataCollectionObservationStateMonitorDelegate;
 
 @interface HDClientDataCollectionObservationStateMonitor : NSObject <HDProcessStateObserver>
 {
     NSLock *_lock;
     // Error parsing type: AB, name: _invalidated
-    HDXPCClient *_client;
+    HDHealthStoreClient *_client;
     HDProfile *_profile;
     id <HDClientDataCollectionObservationStateMonitorDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <HDClientDataCollectionObservationStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-@property(readonly, nonatomic) HDXPCClient *client; // @synthesize client=_client;
+@property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
 - (void)processDidEnterForeground:(id)arg1;
 - (void)processDidEnterBackground:(id)arg1;
@@ -31,7 +31,7 @@
 - (id)currentObserverState;
 - (void)invalidate;
 - (void)dealloc;
-- (id)initWithClient:(id)arg1 profile:(id)arg2 delegate:(id)arg3;
+- (id)initWithClient:(id)arg1 delegate:(id)arg2;
 - (id)init;
 
 // Remaining properties

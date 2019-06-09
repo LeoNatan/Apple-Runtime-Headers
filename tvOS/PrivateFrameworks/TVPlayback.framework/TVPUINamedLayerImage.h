@@ -9,6 +9,7 @@
 #import <TVPlayback/UINamedLayerImage-Protocol.h>
 
 @class NSString, UIImage;
+@protocol UINamedLayerContentProvider;
 
 __attribute__((visibility("hidden")))
 @interface TVPUINamedLayerImage : NSObject <UINamedLayerImage>
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 
 // Remaining properties
+@property(readonly, nonatomic) id <UINamedLayerContentProvider> contentProvider;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

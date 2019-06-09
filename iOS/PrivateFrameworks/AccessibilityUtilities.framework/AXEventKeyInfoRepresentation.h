@@ -19,12 +19,14 @@
     unsigned short _alternativeKeyCode;
     unsigned int _usagePage;
     unsigned int _modifierState;
+    unsigned int _gsModifierState;
     NSString *_unmodifiedInput;
     NSString *_modifiedInput;
     NSString *_shiftModifiedInput;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned int gsModifierState; // @synthesize gsModifierState=_gsModifierState;
 @property(nonatomic) unsigned int modifierState; // @synthesize modifierState=_modifierState;
 @property(retain, nonatomic) NSString *shiftModifiedInput; // @synthesize shiftModifiedInput=_shiftModifiedInput;
 @property(retain, nonatomic) NSString *modifiedInput; // @synthesize modifiedInput=_modifiedInput;

@@ -6,19 +6,15 @@
 
 #import <EventKit/EKAttendee.h>
 
-@class ABGroup;
-
 @interface EKAttendee (CalClassAdditions)
 + (id)attendeeFromDictionary:(id)arg1;
 + (id)calUI_attendeeFromCNAutoCompleteResult:(id)arg1;
 + (id)calUI_attendeeWithAddress:(id)arg1 name:(id)arg2;
-+ (id)calUI_attendeeFromABPerson:(id)arg1 abGroup:(id)arg2;
 + (void)_checkAndSetAddressWithAttendee:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3;
 + (id)_attendeeFromURI:(id)arg1 email:(id)arg2 phone:(id)arg3 name:(id)arg4;
 + (id)attendeeFromAttendeeRep:(id)arg1;
-+ (id)attendeeFromPerson:(id)arg1 distributionIdentifier:(id)arg2;
-+ (id)attendeeFromPerson:(id)arg1;
-@property(readonly, nonatomic) ABGroup *abGroup;
++ (id)attendeeFromContact:(id)arg1 group:(id)arg2;
++ (id)attendeeFromContact:(id)arg1;
 - (id)dictionaryRepresentation;
 - (struct NSObject *)calUI_recentEvent;
 @end

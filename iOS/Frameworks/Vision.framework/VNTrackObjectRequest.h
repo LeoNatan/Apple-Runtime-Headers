@@ -10,7 +10,13 @@
 {
 }
 
-- (id)trackerType;
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
++ (unsigned int)frameCVPixelBufferFormatForRequestRevision:(unsigned long long)arg1;
++ (void)recordDefaultOptionsInDictionary:(id)arg1;
++ (id)trackerTypeForRequestRevision:(unsigned long long)arg1 error:(id *)arg2;
++ (const CDStruct_7d93034e *)revisionAvailability;
+- (id)_trackingLevelOptionFromTrackingLevelEnum;
+- (void)setTrackingLevel:(unsigned long long)arg1;
 - (id)initWithDetectedObjectObservation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithDetectedObjectObservation:(id)arg1;
 

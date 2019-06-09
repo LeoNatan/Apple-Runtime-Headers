@@ -6,19 +6,39 @@
 
 #import <Foundation/NSError.h>
 
+@class NSString;
+
 @interface NSError (FPAdditions)
 + (id)fp_invalidArgumentError:(id)arg1;
++ (id)_fp_errorWithPOSIXCode:(int)arg1 itemURL:(id)arg2 debugDescription:(id)arg3 format:(id)arg4 arguments:(struct __va_list_tag [1])arg5;
++ (id)fp_errorWithPOSIXCode:(int)arg1 itemURL:(id)arg2 debugDescription:(id)arg3;
 + (id)fp_errorWithPOSIXCode:(int)arg1 description:(id)arg2;
 + (id)fp_errorWithPOSIXCode:(int)arg1;
 + (void)load;
+- (id)fp_prettyDescription:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSString *fp_prettyDescription;
+- (id)fp_userInfoFPItem;
+- (id)fp_userInfoItem;
 - (id)fp_userInfoValueForKey:(id)arg1;
+- (id)fp_annotatedErrorWithOperationItem:(id)arg1;
+- (id)fp_recoverableErrorWithBlock:(CDUnknownBlockType)arg1;
+- (id)fp_annotatedErrorWithRecoveryAttempter:(id)arg1;
 - (id)fp_annotatedErrorWithItem:(id)arg1 variant:(id)arg2;
 - (id)fp_annotatedErrorWithURL:(id)arg1 variant:(id)arg2;
-- (id)fp_annotatedErrorWitName:(id)arg1 path:(id)arg2 variant:(id)arg3;
+- (id)fp_annotatedErrorWithName:(id)arg1;
+- (id)fp_annotatedErrorWithName:(id)arg1 path:(id)arg2 variant:(id)arg3;
 - (id)fp_annotatedErrorWithItems:(id)arg1 variant:(id)arg2;
+@property(readonly, nonatomic) _Bool fp_isFeatureUnsupportedError;
 @property(readonly, nonatomic) _Bool fp_isSyncAnchorExpiredError;
 @property(readonly, nonatomic) _Bool fp_isRemoteCrashError;
+- (_Bool)fp_isWarning;
+- (id)fp_asWarning;
+- (_Bool)fp_isGenericPreflightError;
+- (id)fp_genericPreflightError;
+- (id)fp_internalErrorForVendorErrorWithItemCreationBlock:(CDUnknownBlockType)arg1;
 - (id)fp_strippedError;
+- (_Bool)fp_isPOSIXErrorCode:(int)arg1;
+- (_Bool)fp_isCocoaErrorCode:(long long)arg1;
 - (_Bool)fp_isFileProviderError:(long long)arg1;
 @end
 

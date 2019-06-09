@@ -21,6 +21,7 @@
     _Bool _groupContainsGroupLeader;
     _Bool _airPlayReceiverSessionActive;
     _Bool _groupable;
+    _Bool _supportsBluetoothSharing;
     _Bool _proxyGroupPlayer;
     _Bool _canRelayCommunicationChannel;
     _Bool _supportsBufferedAirPlay;
@@ -49,12 +50,14 @@
     NSString *_playingPairedDeviceName;
     NSString *_parentGroupIdentifier;
     MRAVOutputDeviceSourceInfo *_sourceInfo;
+    NSString *_bluetoothID;
     MRAVEndpoint *_endpoint;
 }
 
 + (id)localDeviceLocalizedName;
 + (id)localDeviceUID;
 @property(nonatomic) __weak MRAVEndpoint *endpoint; // @synthesize endpoint=_endpoint;
+@property(readonly, nonatomic) NSString *bluetoothID; // @synthesize bluetoothID=_bluetoothID;
 @property(nonatomic) float volume; // @synthesize volume=_volume;
 @property(readonly, nonatomic) MRAVOutputDeviceSourceInfo *sourceInfo; // @synthesize sourceInfo=_sourceInfo;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
@@ -74,6 +77,7 @@
 @property(readonly, nonatomic) _Bool supportsBufferedAirPlay; // @synthesize supportsBufferedAirPlay=_supportsBufferedAirPlay;
 @property(readonly, nonatomic) _Bool canRelayCommunicationChannel; // @synthesize canRelayCommunicationChannel=_canRelayCommunicationChannel;
 @property(readonly, nonatomic, getter=isProxyGroupPlayer) _Bool proxyGroupPlayer; // @synthesize proxyGroupPlayer=_proxyGroupPlayer;
+@property(readonly, nonatomic) _Bool supportsBluetoothSharing; // @synthesize supportsBluetoothSharing=_supportsBluetoothSharing;
 @property(readonly, nonatomic, getter=isGroupable) _Bool groupable; // @synthesize groupable=_groupable;
 @property(readonly, nonatomic, getter=isAirPlayReceiverSessionActive) _Bool airPlayReceiverSessionActive; // @synthesize airPlayReceiverSessionActive=_airPlayReceiverSessionActive;
 @property(readonly, nonatomic) _Bool groupContainsGroupLeader; // @synthesize groupContainsGroupLeader=_groupContainsGroupLeader;
@@ -95,6 +99,8 @@
 @property(readonly, nonatomic) NSString *uid; // @synthesize uid=_uid;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *debugName;
+@property(readonly, nonatomic) _Bool isPersonalRoute;
 @property(readonly, nonatomic) unsigned int volumeCapabilities;
 @property(readonly, nonatomic) NSDictionary *jsonEncodableDictionaryRepresentation;
 @property(readonly, nonatomic) NSString *roleDescription;

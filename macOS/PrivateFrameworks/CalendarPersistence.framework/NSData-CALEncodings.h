@@ -8,6 +8,7 @@
 
 @interface NSData (CALEncodings)
 - (id)convert8bitBufferToUTF8From:(long long)arg1;
-- (id)stringWithEncoding:(id)arg1;
+- (id)calEncodingStringWithEncoding:(id)arg1;
+- (id)convertToDateListwithGlobalTZ:(id)arg1;
 @end
 

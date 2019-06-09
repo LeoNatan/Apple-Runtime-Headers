@@ -6,19 +6,26 @@
 
 #import <AppKit/NSButton.h>
 
+@class IMKUICandidateSortingBarView;
+
 @interface IMKUICandidateSortingBarButton : NSButton
 {
     BOOL _isRadarButton;
     BOOL _mousePointerInside;
+    IMKUICandidateSortingBarView *_sortingBarView;
     long long _trackingRectTag;
 }
 
 + (id)standardBackgroundColor;
 @property(nonatomic) long long trackingRectTag; // @synthesize trackingRectTag=_trackingRectTag;
+@property(nonatomic) __weak IMKUICandidateSortingBarView *sortingBarView; // @synthesize sortingBarView=_sortingBarView;
 @property(nonatomic) BOOL mousePointerInside; // @synthesize mousePointerInside=_mousePointerInside;
 @property(nonatomic) BOOL isRadarButton; // @synthesize isRadarButton=_isRadarButton;
+- (void).cxx_destruct;
+- (BOOL)accessibilityPerformPress;
 - (id)accessibilityRoleDescription;
 - (id)accessibilityRole;
+- (BOOL)isFlipped;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;

@@ -4,3 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#pragma mark Blocks
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
+#pragma mark Named Structures
+
+struct SWCFields {
+    unsigned int userApproval:2;
+    unsigned int siteOrFrameworkApproval:2;
+    unsigned int updating:1;
+    unsigned int systemApplication:1;
+    unsigned int readFromDisk:1;
+    unsigned int alwaysEnabled:1;
+    unsigned int commandLineAddition:1;
+};
+

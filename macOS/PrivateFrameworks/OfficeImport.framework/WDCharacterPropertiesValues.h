@@ -8,6 +8,7 @@
 
 @class NSDate, OADReflectionEffect, OADShadowEffect, OITSUColor, WDBorder, WDFont, WDShading, WDStyle;
 
+__attribute__((visibility("hidden")))
 @interface WDCharacterPropertiesValues : NSObject
 {
     unsigned int mBaseStyleOverridden:1;

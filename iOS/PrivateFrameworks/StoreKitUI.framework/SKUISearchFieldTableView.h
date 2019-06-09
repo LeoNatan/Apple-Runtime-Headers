@@ -9,6 +9,7 @@
 @class SKUITrendingSearchPage, SKUITrendingSearchPageView, SKUITrendingSearchProvider;
 @protocol SKUITrendingSearchPageViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISearchFieldTableView : UITableView
 {
     SKUITrendingSearchPage *_page;

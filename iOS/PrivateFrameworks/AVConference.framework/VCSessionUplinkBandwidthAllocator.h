@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 - (id)videoRepairStreamIDsForStreamIDs;
 - (id)videoRepairStreamIDsforTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(_Bool)arg2;
 - (id)audioRepairStreamIDsforTargetBitrate:(unsigned int)arg1;
-- (id)videoStreamIDsforTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(_Bool)arg2;
+- (id)videoMediaBitratesTargetNetworkBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(_Bool)arg2;
 - (id)audioStreamIDsforTargetBitrate:(unsigned int)arg1;
-- (id)_videoEntriesForTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(_Bool)arg2;
+- (id)_videoEntriesForTargetBitrate:(unsigned int)arg1 ignorePausedOnDemandStreams:(_Bool)arg2 remainingBitrate:(unsigned int *)arg3;
 - (_Bool)_isAvailableStreamConfiguration:(id)arg1;
 - (_Bool)enableVideoStream:(_Bool)arg1 streamID:(unsigned short)arg2;
 - (id)_audioEntriesForTargetBitrate:(unsigned int)arg1;

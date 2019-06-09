@@ -36,11 +36,9 @@
 @property(retain, nonatomic) NSDictionary *messageEntriesByMonitoredKeys; // @synthesize messageEntriesByMonitoredKeys=_messageEntriesByMonitoredKeys;
 @property(retain, nonatomic) NSArray *registeredMessageEntries; // @synthesize registeredMessageEntries=_registeredMessageEntries;
 - (void).cxx_destruct;
-- (void)_presentThroughApplicationContextViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_incrementNumberOfDisplayForMessageEntry:(id)arg1;
 - (void)_reportDisplayToITunesCloudManagerWithEventIdentifier:(id)arg1;
 - (void)reportDisplayForMessageEntry:(id)arg1;
-- (void)presentViewController:(id)arg1 forPresentationCoordinator:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)viewControllerForModalPresentationUsingCoordinator:(id)arg1;
 - (void)webMessagePresentationCoordinatorWebMessageDidRequestAction:(id)arg1 actionConfiguration:(id)arg2;
 - (void)webMessagePresentationCoordinatorWebMessageDidReportEvent:(id)arg1 event:(id)arg2;

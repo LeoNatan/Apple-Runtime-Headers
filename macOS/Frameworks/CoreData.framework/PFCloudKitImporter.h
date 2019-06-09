@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSCloudKitMirroringDelegateMetadata, NSCloudKitMirroringImportRequest, NSMutableArray, PFCloudKitImporterOptions;
+@class NSArray, NSCloudKitMirroringImportRequest, NSMutableArray, PFCloudKitImporterOptions;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitImporter : NSObject
@@ -15,12 +15,10 @@ __attribute__((visibility("hidden")))
     NSCloudKitMirroringImportRequest *_request;
     NSArray *_workItems;
     NSMutableArray *_workItemResults;
-    NSCloudKitMirroringDelegateMetadata *_metadata;
 }
 
 @property(readonly, nonatomic) NSArray *workItems; // @synthesize workItems=_workItems;
 @property(readonly, nonatomic) NSArray *workItemResults; // @synthesize workItemResults=_workItemResults;
-@property(readonly, nonatomic) NSCloudKitMirroringDelegateMetadata *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSCloudKitMirroringImportRequest *request; // @synthesize request=_request;
 @property(readonly, copy, nonatomic) PFCloudKitImporterOptions *options; // @synthesize options=_options;
 - (void)workItemFinished:(id)arg1 withResult:(id)arg2 completion:(CDUnknownBlockType)arg3;

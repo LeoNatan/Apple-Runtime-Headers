@@ -6,17 +6,17 @@
 
 #import <AccountsDaemon/ACDAccountStore.h>
 
-@class ACDClient;
+@class ACDDatabase;
 
 @interface ACDTimeMachineAccountStore : ACDAccountStore
 {
-    ACDClient *_localClient;
+    ACDDatabase *_database;
 }
 
-@property(retain) ACDClient *localClient; // @synthesize localClient=_localClient;
 - (void).cxx_destruct;
 - (id)_save;
 - (id)initWithTimeMachineSnapshotHomeFolderPath:(id)arg1;
+- (id)initWithClient:(id)arg1 databaseConnection:(id)arg2;
 
 @end
 

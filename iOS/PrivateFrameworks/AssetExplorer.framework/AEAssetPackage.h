@@ -68,6 +68,7 @@
 @property(readonly, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) NSDate *modificationDate;
+@property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, nonatomic) unsigned long long pixelHeight;
 @property(readonly, nonatomic) unsigned long long pixelWidth;
@@ -79,6 +80,7 @@
 @property(readonly, nonatomic) _Bool isPhotoIrisPlaceholder;
 @property(readonly, nonatomic) _Bool canPlayPhotoIris;
 @property(readonly, nonatomic) _Bool isTemporaryPlaceholder;
+@property(readonly, nonatomic) unsigned long long deferredLogInfo;
 - (unsigned long long)isContentEqualTo:(id)arg1;
 @property(readonly, nonatomic) _Bool hasPhotoColorAdjustments;
 @property(readonly, nonatomic) CDStruct_198678f7 photoIrisVideoDuration;

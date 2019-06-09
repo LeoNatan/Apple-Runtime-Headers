@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (oneway void)didUpdateFollowers:(id)arg1;
 - (oneway void)abPreferencesDidChange;
 - (oneway void)abDidChange;
+- (oneway void)didUpdatePreferences:(id)arg1;
 - (oneway void)didUpdateFences:(id)arg1;
 - (oneway void)didUpdateFavorites:(id)arg1;
 - (oneway void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;

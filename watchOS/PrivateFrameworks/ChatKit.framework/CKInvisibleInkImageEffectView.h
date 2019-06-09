@@ -10,6 +10,7 @@
 
 @class CAEmitterLayer, CALayer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKInvisibleInkImageEffectView : CKInvisibleInkEffectView <CAAnimationDelegate>
 {
     CALayer *_blurredImageLayer;

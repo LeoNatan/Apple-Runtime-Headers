@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) WBSTabOrderManager *tabOrderManager; // @synthesize tabOrderManager=_tabOrderManager;
 @property(nonatomic) __weak id <BrowserWindowTabViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (unsigned long long)indexForTab:(id)arg1;
 - (id)tabAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) id <WBSOrderedTab> selectedTabForTabOrderProvider;
 - (id)originatingTabForTab:(id)arg1;

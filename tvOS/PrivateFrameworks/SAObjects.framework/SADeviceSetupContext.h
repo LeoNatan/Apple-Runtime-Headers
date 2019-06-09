@@ -6,12 +6,15 @@
 
 #import <SAObjects/SADomainObject.h>
 
+@class NSString;
+
 @interface SADeviceSetupContext : SADomainObject
 {
 }
 
 + (id)setupContextWithDictionary:(id)arg1 context:(id)arg2;
 + (id)setupContext;
+@property(copy, nonatomic) NSString *setupSceneId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

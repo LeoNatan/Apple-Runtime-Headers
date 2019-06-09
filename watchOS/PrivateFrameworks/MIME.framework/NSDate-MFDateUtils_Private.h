@@ -8,5 +8,6 @@
 
 @interface NSDate (MFDateUtils_Private)
 + (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
++ (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
 @end
 

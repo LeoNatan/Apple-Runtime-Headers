@@ -6,7 +6,6 @@
 
 #import <QuartzCore/CALayer.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit23AudioVisualizationLayer : CALayer
 {
     // Error parsing type: , name: isAnimating

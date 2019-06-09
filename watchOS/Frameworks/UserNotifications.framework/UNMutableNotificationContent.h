@@ -14,6 +14,7 @@
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSDictionary *userInfo; // @dynamic userInfo;
+@property(copy, nonatomic) NSString *targetContentIdentifier; // @dynamic targetContentIdentifier;
 @property(nonatomic) unsigned int summaryArgumentCount; // @dynamic summaryArgumentCount;
 @property(copy, nonatomic) NSString *summaryArgument; // @dynamic summaryArgument;
 @property(copy, nonatomic) NSSet *topicIdentifiers; // @dynamic topicIdentifiers;
@@ -21,6 +22,8 @@
 @property(copy, nonatomic) NSString *threadIdentifier; // @dynamic threadIdentifier;
 @property(copy, nonatomic) NSString *subtitle; // @dynamic subtitle;
 @property(copy, nonatomic) UNNotificationSound *sound; // @dynamic sound;
+@property(nonatomic) _Bool shouldPreemptSTAR; // @dynamic shouldPreemptSTAR;
+@property(nonatomic) _Bool shouldPreemptPresentedNotification; // @dynamic shouldPreemptPresentedNotification;
 @property(nonatomic) _Bool shouldUseRequestIdentifierForDismissalSync; // @dynamic shouldUseRequestIdentifierForDismissalSync;
 @property(nonatomic) _Bool shouldSuppressSyncDismissalWhenRemoved; // @dynamic shouldSuppressSyncDismissalWhenRemoved;
 @property(nonatomic) _Bool shouldSuppressScreenLightUp; // @dynamic shouldSuppressScreenLightUp;
@@ -45,6 +48,7 @@
 @property(copy, nonatomic) NSString *body; // @dynamic body;
 @property(copy, nonatomic) NSNumber *badge; // @dynamic badge;
 @property(copy, nonatomic) NSArray *attachments; // @dynamic attachments;
+@property(copy, nonatomic) NSString *accessoryImageName; // @dynamic accessoryImageName;
 
 @end
 

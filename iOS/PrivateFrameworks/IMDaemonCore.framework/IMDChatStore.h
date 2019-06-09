@@ -29,6 +29,7 @@
 - (void)removeMessageWithGUID:(id)arg1 fromChat:(id)arg2;
 - (void)addMessageWithGUID:(id)arg1 toChat:(id)arg2 deferSpotlightIndexing:(_Bool)arg3;
 - (void)addMessageWithGUID:(id)arg1 toChat:(id)arg2;
+- (id)chatsGUIDsForMessageWithIdentifier:(long long)arg1;
 - (id)chatsGUIDsForMessageWithGUID:(id)arg1;
 - (id)newestChatWithOriginalGroupID:(id)arg1 onService:(id)arg2;
 - (id)chatsWithRoomname:(id)arg1 onService:(id)arg2;

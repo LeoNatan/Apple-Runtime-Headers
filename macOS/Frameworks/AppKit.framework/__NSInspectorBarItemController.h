@@ -42,7 +42,8 @@
         unsigned int _mainFontSectionInvalidated:1;
         unsigned int _forceUpdatingTypeface:1;
         unsigned int _lineSpaceSheet:1;
-        unsigned int _reserved:20;
+        unsigned int _clientIsAsync:1;
+        unsigned int _reserved:19;
     } _flags;
 }
 
@@ -65,8 +66,14 @@
 @property(retain) NSPopUpButton *stylePopup; // @synthesize stylePopup;
 - (double)defaultLineHeightForFont:(id)arg1;
 - (void)_doUserParagraphStyleLineHeightMultiple:(double)arg1 min:(double)arg2 max:(double)arg3 lineSpacing:(double)arg4 paragraphSpacingBefore:(double)arg5 after:(double)arg6 isFinal:(BOOL)arg7;
-- (void)updateInspectorItemViewsWithIdentifiers:(id)arg1 fontFamilyName:(id)arg2 fontFaceName:(id)arg3 fontPointSize:(double)arg4 foregroundColor:(id)arg5 backgroundColor:(id)arg6 boldTrait:(BOOL)arg7 italicTrait:(BOOL)arg8 underlineStyle:(id)arg9 strikeThrough:(id)arg10 alignment:(unsigned long long)arg11 lineSpacingStyle:(id)arg12 textList:(id)arg13;
+- (void)updateInspectorItemViewsWithIdentifiers:(id)arg1 fontFamilyName:(id)arg2 fontFaceName:(id)arg3 fontPointSize:(double)arg4 foregroundColor:(id)arg5 backgroundColor:(id)arg6 boldTrait:(BOOL)arg7 italicTrait:(BOOL)arg8 underlineStyle:(id)arg9 strikeThrough:(id)arg10 alignment:(long long)arg11 lineSpacingStyle:(id)arg12 textList:(id)arg13;
+- (void)updateInspectorItemViewsWithIdentifiers:(id)arg1 state:(id)arg2;
+- (void)_updateSelectedAttributesForSyncClient;
+- (void)_updateSelectedAttributesForAsyncClient;
 - (void)updateSelectedAttributes;
+- (BOOL)adjustStateForDifferentAttributeValuesInRange:(id)arg1 attributedString:(id)arg2 range:(struct _NSRange)arg3;
+- (id)resolveInspectorBarStateForFontAttributes:(id)arg1;
+- (void)_updateTextInputClient:(id)arg1;
 - (BOOL)inspectorBarItemCanBeDetached:(id)arg1;
 - (id)viewForInspectorBarItem:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;

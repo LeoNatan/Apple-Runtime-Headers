@@ -8,7 +8,7 @@
 
 #import <CameraUI/CAMTransientAssetConvertible-Protocol.h>
 
-@class CAMStillImageCaptureCoordinationInfo, NSDate, NSDictionary, NSString, NSURL, UIImage;
+@class CAMCaptureCoordinationInfo, NSDate, NSDictionary, NSString, NSURL, UIImage;
 
 @interface CAMStillImageCaptureResponse : CAMCaptureResponse <CAMTransientAssetConvertible>
 {
@@ -19,11 +19,11 @@
     NSString *_burstIdentifier;
     unsigned long long _burstRepresentedCount;
     UIImage *_imageWellImage;
-    CAMStillImageCaptureCoordinationInfo *_coordinationInfo;
+    CAMCaptureCoordinationInfo *_coordinationInfo;
 }
 
 @property(readonly, nonatomic, getter=isExpectingPairedVideo) _Bool expectingPairedVideo; // @synthesize expectingPairedVideo=_expectingPairedVideo;
-@property(readonly, nonatomic) CAMStillImageCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
+@property(readonly, nonatomic) CAMCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
 @property(readonly, nonatomic) UIImage *imageWellImage; // @synthesize imageWellImage=_imageWellImage;
 @property(readonly, nonatomic) unsigned long long burstRepresentedCount; // @synthesize burstRepresentedCount=_burstRepresentedCount;
 @property(readonly, copy, nonatomic) NSString *burstIdentifier; // @synthesize burstIdentifier=_burstIdentifier;

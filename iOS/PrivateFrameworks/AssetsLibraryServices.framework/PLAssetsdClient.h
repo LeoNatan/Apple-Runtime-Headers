@@ -6,15 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class PLAssetsdCloudClient, PLAssetsdCloudInternalClient, PLAssetsdDebugClient, PLAssetsdDemoClient, PLAssetsdDiagnosticsClient, PLAssetsdLibraryClient, PLAssetsdLibraryInternalClient, PLAssetsdMigrationClient, PLAssetsdNotificationClient, PLAssetsdResourceClient, PLAssetsdResourceInternalClient, PLAssetsdResourceWriteOnlyClient, PLAssetsdSyncClient;
-@protocol OS_dispatch_queue, PLXPCProxyCreating;
+@class PLAssetsdClientXPCConnection, PLAssetsdCloudClient, PLAssetsdCloudInternalClient, PLAssetsdDebugClient, PLAssetsdDemoClient, PLAssetsdDiagnosticsClient, PLAssetsdLibraryClient, PLAssetsdLibraryInternalClient, PLAssetsdLibraryManagementClient, PLAssetsdMigrationClient, PLAssetsdNotificationClient, PLAssetsdPhotoKitClient, PLAssetsdResourceClient, PLAssetsdResourceInternalClient, PLAssetsdResourceWriteOnlyClient, PLAssetsdSyncClient, PLAutoBindingProxyFactory;
+@protocol OS_dispatch_queue;
 
 @interface PLAssetsdClient : NSObject
 {
     NSObject<OS_dispatch_queue> *_isolationQueue;
-    id <PLXPCProxyCreating> _proxyFactory;
+    PLAssetsdClientXPCConnection *_nonBindingProxyFactory;
+    PLAutoBindingProxyFactory *_autoBindingProxyFactory;
     PLAssetsdLibraryClient *_libraryClient;
+    PLAssetsdLibraryManagementClient *_libraryManagementClient;
     PLAssetsdLibraryInternalClient *_libraryInternalClient;
+    PLAssetsdPhotoKitClient *_photoKitClient;
     PLAssetsdResourceClient *_resourceClient;
     PLAssetsdResourceWriteOnlyClient *_resourceWriteOnlyClient;
     PLAssetsdResourceInternalClient *_resourceInternalClient;
@@ -28,8 +31,12 @@
     PLAssetsdDebugClient *_debugClient;
 }
 
++ (id)sharedSystemLibraryAssetsdClient;
 - (void).cxx_destruct;
+- (void)prepareToShutdown;
+- (void)waitUntilConnectionSendsAllMessages;
 - (void)sendDaemonJob:(id)arg1 shouldRunSerially:(_Bool)arg2 replyHandler:(CDUnknownBlockType)arg3;
+- (void)_updateLibraryStateConnectionInterrupted:(id)arg1;
 @property(readonly) PLAssetsdDebugClient *debugClient;
 @property(readonly) PLAssetsdDiagnosticsClient *diagnosticsClient;
 @property(readonly) PLAssetsdDemoClient *demoClient;
@@ -41,9 +48,14 @@
 @property(readonly) PLAssetsdResourceInternalClient *resourceInternalClient;
 - (id)resourceWriteOnlyClient;
 @property(readonly) PLAssetsdResourceClient *resourceClient;
+@property(readonly) PLAssetsdPhotoKitClient *photoKitClient;
+@property(readonly) PLAssetsdLibraryManagementClient *libraryManagementClient;
 @property(readonly) PLAssetsdLibraryInternalClient *libraryInternalClient;
 @property(readonly) PLAssetsdLibraryClient *libraryClient;
-- (id)initWithProxyFactory:(id)arg1;
+- (id)_setupClientClass:(Class)arg1 proxyGetter:(SEL)arg2 autoBinding:(_Bool)arg3;
+- (void)addPhotoLibraryUnavailabilityHandler:(CDUnknownBlockType)arg1;
+- (id)initWithNonBindingProxyFactory:(id)arg1 autoBindingProxyFactory:(id)arg2;
+- (id)initWithPhotoLibraryURL:(id)arg1;
 - (id)init;
 
 @end

@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
     id <CNObserver> _observer;
 }
 
++ (id)makeSerialFetchSchedulerUsingSchedulerProvider:(id)arg1;
++ (id)schedulerForIdentifier:(id)arg1 provider:(id)arg2;
 + (id)observableWithPredicates:(id)arg1 sortOrdering:(unsigned int)arg2 options:(unsigned long long)arg3 addressBook:(void *)arg4 environment:(id)arg5;
 @property(retain, nonatomic) id <CNObserver> observer; // @synthesize observer=_observer;
 @property(readonly, nonatomic) CNCancelationToken *cancelationToken; // @synthesize cancelationToken=_cancelationToken;

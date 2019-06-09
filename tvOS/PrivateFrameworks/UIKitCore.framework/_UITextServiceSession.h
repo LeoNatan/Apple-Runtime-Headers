@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIPopoverControllerDelegate-Protocol.h>
 
-@class NSString, UIPopoverController, UIViewController;
+@class NSString, UIPopoverController, UIView, UIViewController;
 
 __attribute__((visibility("hidden")))
 @interface _UITextServiceSession : NSObject <UIPopoverControllerDelegate>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     long long _type;
     UIViewController *_modalViewController;
     UIPopoverController *_popoverController;
+    UIView *_contextView;
     _Bool _isTextEffectsWindow;
     _Bool _dismissed;
     CDUnknownBlockType _dismissedHandler;

@@ -7,13 +7,12 @@
 #import <UIKit/UITableViewController.h>
 
 #import <MapKit/MKStackingViewControllerPreferredSizeUse-Protocol.h>
-#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, NSString;
 @protocol MKNearestStationViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface MKNearestStationViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse, _MKInfoCardChildViewControllerAnalyticsDelegate>
+@interface MKNearestStationViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse>
 {
     NSString *_lineName;
     id <MKNearestStationViewControllerDelegate> _delegate;

@@ -6,10 +6,13 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSString, UIKBTree, UIKeyboardKeyplaneTransformationContext;
+@class NSString, UIKBKeyplaneTransformationContext, UIKBTree;
 
 @protocol UIKeyboardKeyplaneTransformation <NSObject>
-+ (UIKBTree *)transformKeyplane:(UIKBTree *)arg1 withTransformationContext:(UIKeyboardKeyplaneTransformationContext *)arg2;
++ (UIKBTree *)transformKeyplane:(UIKBTree *)arg1 withTransformationContext:(UIKBKeyplaneTransformationContext *)arg2;
 + (NSString *)transformationIdentifier;
+
+@optional
++ (UIKBTree *)rollbackKeyplane:(UIKBTree *)arg1 withTransformationContext:(UIKBKeyplaneTransformationContext *)arg2;
 @end
 

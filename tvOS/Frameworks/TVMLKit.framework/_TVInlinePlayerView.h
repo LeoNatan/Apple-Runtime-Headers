@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)setFocusDirection:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)setFocusDirection:(struct CGPoint)arg1;
 - (struct CGPoint)focusDirection;
-- (void)setFocusedState:(_Bool)arg1;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;

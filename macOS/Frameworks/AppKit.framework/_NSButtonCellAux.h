@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSColor, NSMutableArray, NSUserInterfaceCompressionOptions, _NSAcceleratorButtonHelper, _NSButtonAnimationView;
+@class NSColor, NSMutableArray, NSUserInterfaceCompressionOptions, _NSAcceleratorButtonHelper;
 
 __attribute__((visibility("hidden")))
 @interface _NSButtonCellAux : NSObject
 {
-    _NSButtonAnimationView *_animator;
     _NSAcceleratorButtonHelper *_acceleratorHelper;
     NSMutableArray *_animatingOutImageViews;
     NSMutableArray *_animatingOutTextFields;
@@ -21,7 +20,6 @@ __attribute__((visibility("hidden")))
     long long _maxAcceleratorLevel;
     double _acceleratorClickTimestamp;
     double _minimumPressDuration;
-    unsigned char _buttonType;
     NSUserInterfaceCompressionOptions *_compressibleOptions;
     unsigned long long _modelImagePosition;
     struct {
@@ -41,7 +39,6 @@ __attribute__((visibility("hidden")))
 @property double minimumPressDuration; // @synthesize minimumPressDuration=_minimumPressDuration;
 @property(copy) NSColor *contentTintColor; // @synthesize contentTintColor=_contentTintColor;
 @property(copy) NSColor *bezelTintColor; // @synthesize bezelTintColor=_bezelTintColor;
-@property(retain) _NSButtonAnimationView *animator; // @synthesize animator=_animator;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     OITSUColor *mPhonePatternColor;
 }
 
+- (void).cxx_destruct;
 - (id)color;
 - (void)fillPath:(id)arg1;
-- (void)dealloc;
 - (id)initWithPhoneImage:(id)arg1;
 
 @end

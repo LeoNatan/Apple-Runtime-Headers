@@ -9,9 +9,9 @@
 @class NSArray;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface SystemSettingsRelay : NSObject
 {
-    BOOL _autoBugCaptureEnabled;
     NSArray *_wifiKnownNetworkSSIDs;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -19,10 +19,8 @@
 + (id)defaultRelay;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(readonly) BOOL autoBugCaptureEnabled; // @synthesize autoBugCaptureEnabled=_autoBugCaptureEnabled;
 @property(readonly) NSArray *wifiKnownNetworkSSIDs; // @synthesize wifiKnownNetworkSSIDs=_wifiKnownNetworkSSIDs;
 - (void).cxx_destruct;
-- (void)_setAutoBugCaptureEnabled:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;
 

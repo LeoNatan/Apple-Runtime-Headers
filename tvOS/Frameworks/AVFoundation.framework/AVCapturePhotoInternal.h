@@ -8,10 +8,11 @@
 
 @class AVApplePortraitMetadata, AVCameraCalibrationData, AVCaptureBracketedStillImageSettings, AVCapturePhotoSettings, AVCaptureResolvedPhotoSettings, AVDepthData, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCapturePhotoInternal : NSObject
 {
     CDStruct_1b6d18a9 timestamp;
-    void *photoSurface;
+    struct __IOSurface *photoSurface;
     unsigned long long photoSurfaceSize;
     struct __CVBuffer *photoPixelBuffer;
     struct __CVBuffer *previewPixelBuffer;

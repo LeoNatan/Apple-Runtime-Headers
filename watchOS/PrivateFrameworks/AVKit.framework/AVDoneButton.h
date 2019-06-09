@@ -6,6 +6,7 @@
 
 #import <AVKit/AVButton.h>
 
+__attribute__((visibility("hidden")))
 @interface AVDoneButton : AVButton
 {
 }

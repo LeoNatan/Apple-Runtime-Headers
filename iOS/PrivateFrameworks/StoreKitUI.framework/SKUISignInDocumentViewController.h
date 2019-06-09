@@ -13,6 +13,7 @@
 
 @class NSString, SKUILayoutCache, SKUISignInTemplateView, SKUISignInTemplateViewElement, SKUIViewElementLayoutContext, UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface SKUISignInDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUILayoutCacheDelegate, SKUISignInViewDelegate, SKUIDocumentViewController>
 {
     struct CGRect _keyboardFrame;

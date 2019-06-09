@@ -57,6 +57,7 @@
 @property(retain, nonatomic) NSURL *defaultConfigurationServerURL; // @synthesize defaultConfigurationServerURL=_defaultConfigurationServerURL;
 @property(retain, nonatomic) NSURL *defaultServerURL; // @synthesize defaultServerURL=_defaultServerURL;
 - (void).cxx_destruct;
+@property(readonly) BOOL unitTesting;
 @property(nonatomic) int maxSegmentSendInterval;
 @property(nonatomic) int segmentRetrievalInterval;
 @property(readonly, nonatomic) NSString *localeIdentifier;
@@ -81,7 +82,6 @@
 @property(readonly, nonatomic) ACAccount *iCloudAccount;
 - (void)clearAdvertisingIdentifier;
 @property(readonly, nonatomic) NSUUID *IDFA;
-- (id)createAndStoreIDFAStringBasedOnLAT;
 - (void)expire;
 - (id)init;
 

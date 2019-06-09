@@ -14,6 +14,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_ioQueue;
 }
 
++ (void)addPathsForDomain:(unsigned int)arg1 toOrderedSet:(id)arg2;
++ (id)searchPathsForDomain:(unsigned int)arg1;
+- (void).cxx_destruct;
 - (void)scanAndRegisterSpotlightContents:(unordered_set_7cdfe647 *)arg1;
 - (void)scanAndRegisterNetworkVolumes:(unordered_set_7cdfe647 *)arg1;
 - (void)findAndRegisterApplicationBundles:(unordered_set_7cdfe647 *)arg1;
@@ -26,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (void)registerLibraries;
 - (void)setSeedingComplete:(BOOL)arg1;
 - (void)createAndSeedLocalDatabase:(char *)arg1;
-- (void)dealloc;
 - (id)initWithIOQueue:(id)arg1;
 
 @end

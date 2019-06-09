@@ -21,8 +21,8 @@
 
 + (_Bool)presentationValueOfCharacteristic:(id)arg1 equalTo:(id)arg2;
 + (id)characteristicTupleKeyFromServiceContextID:(id)arg1 currentType:(id)arg2;
++ (id)generateActionURLForHomeUUID:(id)arg1 cameraUUID:(id)arg2;
 + (id)unarchive;
-+ (void)archive;
 + (_Bool)supportsSecureCoding;
 + (id)bulletinSupportedCharacteristicsForService:(id)arg1;
 + (_Bool)isCriticalNonSecureServiceType:(id)arg1;
@@ -37,6 +37,7 @@
 @property(retain, nonatomic) HMDUserNotificationCenter *notificationCenter; // @synthesize notificationCenter=_notificationCenter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
+- (void)insertCameraSignificantEventBulletin:(id)arg1;
 - (_Bool)isTargetCharacteristic:(id)arg1 matchCurrentCharacteristic:(id)arg2;
 - (_Bool)_shouldPostBulletinOnCurrentValueChangeForCharacteristic:(id)arg1;
 - (void)_updateCharacteristicTupleFor:(id)arg1 withCurrentType:(id)arg2 changedByThisDevice:(_Bool)arg3;
@@ -46,6 +47,7 @@
 - (void)_removeBulletinsUsingPredicate:(id)arg1;
 - (id)_insertRequestWithTitle:(id)arg1 snapshotData:(id)arg2 message:(id)arg3 requestIdentifier:(id)arg4 bulletinType:(unsigned int)arg5 actionURL:(id)arg6 bulletinContext:(struct NSDictionary *)arg7 actionContext:(struct NSDictionary *)arg8;
 - (id)_insertImageBulletinsForChangedCharacteristics:(id)arg1 snapshotData:(id)arg2;
+- (void)archive;
 - (void)removeAllBulletins;
 - (void)removeBulletinsForTrigger:(id)arg1;
 - (void)removeBulletinsForService:(id)arg1;

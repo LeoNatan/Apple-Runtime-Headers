@@ -20,6 +20,8 @@
 - (oneway void)accountCreated:(NSString *)arg1 playerID:(NSString *)arg2 authenticationToken:(NSString *)arg3 alias:(NSString *)arg4 altDSID:(NSString *)arg5 finished:(_Bool)arg6 handler:(void (^)(GKAuthenticateResponse *, NSError *))arg7;
 - (oneway void)accountCreated:(NSString *)arg1 playerID:(NSString *)arg2 authenticationToken:(NSString *)arg3 alias:(NSString *)arg4 finished:(_Bool)arg5 handler:(void (^)(GKAuthenticateResponse *, NSError *))arg6;
 - (oneway void)authenticatePlayerWithUsername:(NSString *)arg1 password:(NSString *)arg2 handler:(void (^)(GKAuthenticateResponse *, NSError *))arg3;
+- (oneway void)switchLocalPlayerWithAltDSID:(NSString *)arg1 handler:(void (^)(GKAuthenticateResponse *, NSError *))arg2;
+- (oneway void)authenticateNonActivePlayerWithUsername:(NSString *)arg1 password:(NSString *)arg2 rawPassword:(NSString *)arg3 altDSID:(NSString *)arg4 usingFastPath:(_Bool)arg5 handler:(void (^)(GKAuthenticateResponse *, NSError *))arg6;
 - (oneway void)authenticatePlayerWithUsername:(NSString *)arg1 password:(NSString *)arg2 rawPassword:(NSString *)arg3 altDSID:(NSString *)arg4 usingFastPath:(_Bool)arg5 handler:(void (^)(GKAuthenticateResponse *, NSError *))arg6;
 @end
 

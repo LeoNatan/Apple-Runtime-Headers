@@ -10,6 +10,7 @@
 
 @class PSSpecifier, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface STSingleLineHeaderView : STTableViewHeaderFooterView <PSHeaderFooterView>
 {
     UILabel *_titleLabel;

@@ -4,39 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <NeutrinoCore/NUBufferAdapter.h>
 
 #import <NeutrinoCore/NUMutableBuffer-Protocol.h>
+#import <NeutrinoCore/NUMutableBufferProvider-Protocol.h>
 
 @class NSString, NUPixelFormat;
 
-@interface NUMutableBufferAdapter : NSObject <NUMutableBuffer>
+@interface NUMutableBufferAdapter : NUBufferAdapter <NUMutableBuffer, NUMutableBufferProvider>
 {
-    CDStruct_d58201db _size;
-    NUPixelFormat *_format;
-    long long _rowBytes;
     void *_mutableBytes;
-    BOOL _valid;
 }
 
-@property(readonly, nonatomic) long long rowBytes; // @synthesize rowBytes=_rowBytes;
-@property(readonly, nonatomic) NUPixelFormat *format; // @synthesize format=_format;
-@property(readonly, nonatomic) CDStruct_912cb5d2 size; // @synthesize size=_size;
-- (void).cxx_destruct;
+- (void)provideMutableBuffer:(CDUnknownBlockType)arg1;
 - (id)newRenderDestination;
-- (void)invalidate;
-- (const void *)bytesAtPoint:(CDStruct_912cb5d2)arg1;
 - (void *)mutableBytesAtPoint:(CDStruct_912cb5d2)arg1;
 @property(readonly, nonatomic) void *mutableBytes;
-@property(readonly, nonatomic) const void *bytes;
-- (id)init;
+- (id)initWithSize:(CDStruct_912cb5d2)arg1 format:(id)arg2 rowBytes:(long long)arg3 bytes:(const void *)arg4;
 - (id)initWithSize:(CDStruct_912cb5d2)arg1 format:(id)arg2 rowBytes:(long long)arg3 mutableBytes:(void *)arg4;
 - (id)initWithMutableBuffer:(id)arg1;
 
 // Remaining properties
+@property(readonly, nonatomic) const void *bytes;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) NUPixelFormat *format;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) long long rowBytes;
+@property(readonly, nonatomic) CDStruct_912cb5d2 size;
 @property(readonly) Class superclass;
 
 @end

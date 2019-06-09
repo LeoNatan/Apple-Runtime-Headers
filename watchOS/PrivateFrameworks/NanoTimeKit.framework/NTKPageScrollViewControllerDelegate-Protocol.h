@@ -11,6 +11,9 @@
 @protocol NTKPageScrollViewControllerDelegate <NSObject>
 
 @optional
+- (void)pageScrollViewController:(NTKPageScrollViewController *)arg1 didReorderPageFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (void)pageScrollViewController:(NTKPageScrollViewController *)arg1 didBeginReorderingPageAtIndex:(unsigned int)arg2;
+- (_Bool)pageScrollViewController:(NTKPageScrollViewController *)arg1 shouldBeginReorderingPageAtIndex:(unsigned int)arg2;
 - (void)pageScrollViewController:(NTKPageScrollViewController *)arg1 didScrollToFraction:(float)arg2 betweenIndex:(unsigned int)arg3 andIndex:(unsigned int)arg4;
 - (void)pageScrollViewController:(NTKPageScrollViewController *)arg1 didScrollToOffset:(struct CGPoint)arg2;
 - (void)pageScrollViewController:(NTKPageScrollViewController *)arg1 willDecelerateToIndex:(unsigned int)arg2;

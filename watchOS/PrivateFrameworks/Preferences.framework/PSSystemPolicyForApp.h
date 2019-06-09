@@ -18,6 +18,8 @@
 + (_Bool)isServiceRestricted:(id)arg1;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
+- (id)preferredLanguage:(id)arg1;
+- (id)preferredLanguageSpecifier;
 - (id)documentsSpecifier;
 - (id)privacyAccessForSpecifier:(id)arg1;
 - (id)_privacyAccessForService:(struct __CFString *)arg1;

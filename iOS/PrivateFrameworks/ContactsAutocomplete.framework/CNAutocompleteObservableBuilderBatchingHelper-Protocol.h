@@ -17,6 +17,7 @@
 - (void)addCachedDirectoryServerObservable:(CNObservable *)arg1;
 - (void)addSupplementalObservable:(CNObservable *)arg1;
 - (void)addDuetObservable:(CNObservable *)arg1;
+- (void)addLocalExtensionObservable:(CNObservable *)arg1;
 - (void)addSuggestionsObservable:(CNObservable *)arg1;
 - (void)addCoreRecentsObservable:(CNObservable *)arg1;
 - (void)addContactsObservable:(CNObservable *)arg1;

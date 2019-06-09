@@ -10,35 +10,33 @@
 
 @interface CHTextRecognitionResult : CHRecognitionResult
 {
-    _Bool _rare;
+    _Bool _isTextReplacement;
     NSString *_string;
     NSArray *_wordRanges;
     NSArray *_wordIDs;
-    NSArray *_wordScores;
+    NSArray *_wordRecognitionScores;
+    NSArray *_wordCombinedScores;
     NSArray *_wordStrokeSets;
     NSArray *_wordLexicalEntries;
     NSArray *_wordPatternEntries;
-    NSIndexSet *_wordOVSIDs;
+    NSIndexSet *_rareWordIndexes;
+    NSIndexSet *_inappropriateWordIndexes;
 }
 
-+ (void)_filterCharactersInRange:(struct _NSRange)arg1 fromString:(id)arg2 withLastFilteredRange:(struct _NSRange)arg3;
-@property(readonly) NSIndexSet *wordOVSIDs; // @synthesize wordOVSIDs=_wordOVSIDs;
+@property(readonly) _Bool isTextReplacement; // @synthesize isTextReplacement=_isTextReplacement;
+@property(readonly) NSIndexSet *inappropriateWordIndexes; // @synthesize inappropriateWordIndexes=_inappropriateWordIndexes;
+@property(readonly) NSIndexSet *rareWordIndexes; // @synthesize rareWordIndexes=_rareWordIndexes;
 @property(readonly) NSArray *wordPatternEntries; // @synthesize wordPatternEntries=_wordPatternEntries;
 @property(readonly) NSArray *wordLexicalEntries; // @synthesize wordLexicalEntries=_wordLexicalEntries;
 @property(readonly) NSArray *wordStrokeSets; // @synthesize wordStrokeSets=_wordStrokeSets;
-@property(readonly) NSArray *wordScores; // @synthesize wordScores=_wordScores;
+@property(readonly) NSArray *wordCombinedScores; // @synthesize wordCombinedScores=_wordCombinedScores;
+@property(readonly) NSArray *wordRecognitionScores; // @synthesize wordRecognitionScores=_wordRecognitionScores;
 @property(readonly) NSArray *wordIDs; // @synthesize wordIDs=_wordIDs;
 @property(readonly) NSArray *wordRanges; // @synthesize wordRanges=_wordRanges;
 @property(readonly) NSString *string; // @synthesize string=_string;
-@property(readonly) _Bool rare; // @synthesize rare=_rare;
 - (void)dealloc;
-- (float)languageFitnessForLocale:(id)arg1 competingLocales:(id)arg2;
-- (_Bool)_isGibberishWordAtIndex:(long long)arg1;
-- (id)stringByFilteringLowConfidenceRanges:(_Bool)arg1 excludeGibberish:(_Bool)arg2 rejectionRate:(double *)arg3;
 - (id)mecabraCandidate;
-- (id)initWithString:(id)arg1 score:(double)arg2 rare:(_Bool)arg3 wordRanges:(id)arg4 wordIDs:(id)arg5;
-- (id)initWithString:(id)arg1 score:(double)arg2 rare:(_Bool)arg3 wordRanges:(id)arg4 wordIDs:(id)arg5 lexicalEntry:(_Bool)arg6 patternEntry:(_Bool)arg7;
-- (id)initWithString:(id)arg1 score:(double)arg2 rare:(_Bool)arg3 wordRanges:(id)arg4 wordIDs:(id)arg5 wordScores:(id)arg6 wordStrokeSets:(id)arg7 wordLexicalEntries:(id)arg8 wordPatternEntries:(id)arg9 wordOVSIDs:(id)arg10;
+- (id)initWithString:(id)arg1 score:(double)arg2 wordRanges:(id)arg3 wordIDs:(id)arg4 wordRecognitionScores:(id)arg5 wordCombinedScores:(id)arg6 wordStrokeSets:(id)arg7 wordLexicalEntries:(id)arg8 wordPatternEntries:(id)arg9 rareWordIndexes:(id)arg10 inappropriateWordIndexes:(id)arg11 isTextReplacement:(_Bool)arg12;
 
 @end
 

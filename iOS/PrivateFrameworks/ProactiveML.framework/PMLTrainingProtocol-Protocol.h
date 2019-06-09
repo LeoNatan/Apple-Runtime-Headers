@@ -6,14 +6,16 @@
 
 #import <ProactiveML/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, PMLSessionDescriptor, PMLSparseVector, PMLSpotlightReference;
+@class NSArray, NSData, NSDictionary, NSString, PMLSessionDescriptor, PMLSparseVector, PMLSpotlightReference, _PASTuple2;
 
 @protocol PMLTrainingProtocol <NSObject>
-- (_Bool)modelServerUpdateWithPayload:(NSData *)arg1 error:(id *)arg2;
+- (void)setSourceRecoverer:(id (^)(NSData *))arg1;
 - (NSDictionary *)planReceivedWithPayload:(NSData *)arg1 error:(id *)arg2;
 - (void)trimDb;
 - (void)trainWhile:(_Bool (^)(void))arg1;
-- (void)updateSessionsAndLabelForModel:(PMLSessionDescriptor *)arg1 block:(void (^)(long long, NSData *, void (^)(long long, PMLSparseVector *)))arg2;
+- (void)updateLastTrainingFeaturizationForModel:(PMLSessionDescriptor *)arg1 andData:(NSData *)arg2;
+- (_PASTuple2 *)lastTrainingFeaturizationForModelName:(NSString *)arg1 andLocale:(NSString *)arg2;
+- (void)updateSessionsAndLabelForModel:(PMLSessionDescriptor *)arg1 block:(void (^)(long long, NSData *, void (^)(long long, PMLSparseVector *, PMLSessionDescriptor *)))arg2;
 - (void)deleteSessionsWithBundleID:(NSString *)arg1;
 - (void)deleteSessionsWithDomainIdentifiers:(NSArray *)arg1 bundleID:(NSString *)arg2;
 - (void)deleteSessionsWithIdentifiers:(NSArray *)arg1 bundleID:(NSString *)arg2;

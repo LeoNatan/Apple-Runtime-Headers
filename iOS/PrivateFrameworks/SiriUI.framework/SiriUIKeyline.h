@@ -20,7 +20,6 @@
 
 + (id)keylineWithKeylineType:(long long)arg1 platterStyling:(_Bool)arg2;
 + (id)keylineWithKeylineType:(long long)arg1;
-+ (id)starkKeyline;
 + (id)verticalKeyline;
 + (id)keylineForSelectableRow;
 + (id)keylineWithDefaultInsets;

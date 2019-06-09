@@ -19,6 +19,7 @@
 + (id)server;
 @property(nonatomic) __weak id <AXSystemAppServer> localServiceProvider; // @synthesize localServiceProvider=_localServiceProvider;
 - (void).cxx_destruct;
+- (_Bool)isNonExclusiveSystemUIVisible;
 - (_Bool)isSystemSleeping;
 - (void)wakeUpDeviceIfNecessary;
 - (void)activeInterfaceOrientation:(CDUnknownBlockType)arg1;
@@ -41,7 +42,6 @@
 - (_Bool)isAppSwitcherVisible;
 - (_Bool)isSiriVisible;
 - (_Bool)dismissSiri;
-- (_Bool)openSiri;
 - (void)_didConnectToClient;
 - (void)_wasDisconnectedFromClient;
 - (void)_didConnectToServer;

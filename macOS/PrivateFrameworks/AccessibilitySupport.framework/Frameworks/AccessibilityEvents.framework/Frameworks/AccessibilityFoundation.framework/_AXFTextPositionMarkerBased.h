@@ -14,23 +14,26 @@
     AXFUIElement *__webAreaUIElement;
 }
 
-@property(copy, nonatomic) AXFUIElement *_webAreaUIElement; // @synthesize _webAreaUIElement=__webAreaUIElement;
+@property(retain, nonatomic) AXFUIElement *_webAreaUIElement; // @synthesize _webAreaUIElement=__webAreaUIElement;
 - (void).cxx_destruct;
+- (long long)_distanceBetweenTextMarker:(struct __AXTextMarker *)arg1 andTextMarker:(struct __AXTextMarker *)arg2;
 - (long long)compare:(id)arg1;
 - (unsigned long long)hash;
+- (BOOL)isVisuallyEqual:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToAXFTextPositionMarkerBased:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)positionOffsetBy:(long long)arg1 withinLimit:(id)arg2;
 - (long long)offsetFromPosition:(id)arg1;
 - (const struct __AXTextMarker *)axTextMarkerValue;
-- (unsigned long long)indexValue;
+- (long long)indexValue;
 - (BOOL)isValid;
 - (long long)type;
+- (BOOL)isCompatibleWithPosition:(id)arg1;
 - (id)descriptionWithoutType;
 - (id)description;
 - (void)dealloc;
-- (id)_initWithMarker:(const struct __AXTextMarker *)arg1 webAreaUIElement:(id)arg2;
+- (id)_initWithMarker:(struct __AXTextMarker *)arg1 webAreaUIElement:(id)arg2;
 
 @end
 

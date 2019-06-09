@@ -15,6 +15,7 @@
 + (id)extensionForFileUTI:(id)arg1;
 + (id)fileUTIForExtension:(id)arg1;
 + (id)identityFromStoredIdentity:(id)arg1;
++ (id)zeroByteFileFingerPrint;
 + (id)fingerPrintForFD:(int)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)fingerPrintForData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)fingerPrintForFileAtURL:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;

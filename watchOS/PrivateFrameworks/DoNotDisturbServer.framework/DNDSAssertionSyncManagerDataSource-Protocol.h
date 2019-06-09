@@ -6,12 +6,10 @@
 
 #import <DoNotDisturbServer/NSObject-Protocol.h>
 
-@class NSArray, NSDate;
+@class DNDSPairedDevice;
 @protocol DNDSAssertionSyncManager;
 
 @protocol DNDSAssertionSyncManagerDataSource <NSObject>
-- (NSDate *)lastModeAssertionsUpdateDateForSyncManager:(id <DNDSAssertionSyncManager>)arg1;
-- (NSDate *)lastModeAssertionsCompleteInvalidationDateForSyncManager:(id <DNDSAssertionSyncManager>)arg1;
-- (NSArray *)activeLocalModeAssertionsForSyncManager:(id <DNDSAssertionSyncManager>)arg1;
+- (DNDSPairedDevice *)currentlyActivePairedDeviceForSyncManager:(id <DNDSAssertionSyncManager>)arg1;
 @end
 

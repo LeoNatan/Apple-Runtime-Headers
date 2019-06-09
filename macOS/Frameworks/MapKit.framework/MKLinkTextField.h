@@ -8,20 +8,21 @@
 
 @class NSURL;
 
+__attribute__((visibility("hidden")))
 @interface MKLinkTextField : NSTextField
 {
     NSURL *_link;
     CDUnknownBlockType _blockOnLinkOpened;
 }
 
-@property(copy) CDUnknownBlockType blockOnLinkOpened; // @synthesize blockOnLinkOpened=_blockOnLinkOpened;
+@property(copy, nonatomic) CDUnknownBlockType blockOnLinkOpened; // @synthesize blockOnLinkOpened=_blockOnLinkOpened;
 - (void).cxx_destruct;
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)autoHandleLinks;
 - (id)fontSmoothingBackgroundColor;
-@property(retain) NSURL *link;
+@property(retain, nonatomic) NSURL *link;
 - (void)setAttributedStringValue:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)linkifyString;

@@ -20,6 +20,8 @@
 - (double)_doubleForKey:(id)arg1 passUniqueID:(id)arg2;
 - (void)_setDouble:(double)arg1 forKey:(id)arg2 passUniqueID:(id)arg3;
 - (void)_synchronize;
+- (_Bool)hasDoneExpressUpgrade;
+- (void)setHasDoneExpressUpgrade:(_Bool)arg1;
 - (void)removeAllPreferences;
 - (void)removeAllPreferencesForPassWithUniqueID:(id)arg1;
 - (double)commutePlanRenewalReminderTimeIntervalForPassWithUniqueID:(id)arg1;

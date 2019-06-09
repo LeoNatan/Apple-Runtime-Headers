@@ -8,7 +8,7 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class NSString;
+@class CKCDPCodeServiceRequestOperationGroup, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKCDPCodeServiceRequestRequestContext : PBCodable <NSCopying>
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     int _databasePartition;
     int _databaseType;
     NSString *_deviceId;
+    CKCDPCodeServiceRequestOperationGroup *_operationGroup;
     NSString *_userAgent;
     NSString *_userId;
     struct {
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+@property(retain, nonatomic) CKCDPCodeServiceRequestOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
 @property(retain, nonatomic) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(nonatomic) unsigned long long dsid; // @synthesize dsid=_dsid;
 @property(retain, nonatomic) NSString *clientInfo; // @synthesize clientInfo=_clientInfo;
@@ -49,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasOperationGroup;
 @property(readonly, nonatomic) _Bool hasUserAgent;
 @property(nonatomic) _Bool hasDsid;
 @property(readonly, nonatomic) _Bool hasClientInfo;

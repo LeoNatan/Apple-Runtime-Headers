@@ -8,7 +8,7 @@
 
 #import <BulletinBoard/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSString;
+@class BSServiceConnectionEndpoint, NSDictionary, NSString, NSURL;
 
 @interface BBActionResponse : NSObject <NSSecureCoding>
 {
@@ -16,22 +16,26 @@
     unsigned int _actionActivationMode;
     int _actionBehavior;
     NSString *_actionID;
+    NSURL *_actionLaunchURL;
     NSString *_bulletinRecordID;
     NSString *_bulletinPublisherID;
     NSDictionary *_bulletinContext;
     NSString *_bulletinButtonID;
     NSDictionary *_context;
     NSString *_originID;
+    BSServiceConnectionEndpoint *_endpoint;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)actionResponseForResponse:(id)arg1 bulletinRequest:(id)arg2;
+@property(copy, nonatomic) BSServiceConnectionEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(copy, nonatomic) NSString *originID; // @synthesize originID=_originID;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
 @property(copy, nonatomic) NSString *bulletinButtonID; // @synthesize bulletinButtonID=_bulletinButtonID;
 @property(copy, nonatomic) NSDictionary *bulletinContext; // @synthesize bulletinContext=_bulletinContext;
 @property(copy, nonatomic) NSString *bulletinPublisherID; // @synthesize bulletinPublisherID=_bulletinPublisherID;
 @property(copy, nonatomic) NSString *bulletinRecordID; // @synthesize bulletinRecordID=_bulletinRecordID;
+@property(copy, nonatomic) NSURL *actionLaunchURL; // @synthesize actionLaunchURL=_actionLaunchURL;
 @property(copy, nonatomic) NSString *actionID; // @synthesize actionID=_actionID;
 @property(nonatomic) int actionBehavior; // @synthesize actionBehavior=_actionBehavior;
 @property(nonatomic) unsigned int actionActivationMode; // @synthesize actionActivationMode=_actionActivationMode;

@@ -18,6 +18,7 @@
 + (id)batchSlotResolutionResultStepResult;
 @property(copy, nonatomic) NSString *typeName;
 @property(copy, nonatomic) NSString *keyPath;
+@property(copy, nonatomic) NSString *jsonEncodedSlotResolutionResult;
 @property(retain, nonatomic) SACommandFailed *commandFailed;
 @property(copy, nonatomic) NSString *base64EncodedProtobufMessage;
 - (id)encodedClassName;

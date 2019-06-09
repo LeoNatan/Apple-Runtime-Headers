@@ -17,8 +17,7 @@
 @property(readonly, nonatomic) NSUUID *policyMonitorIdentifier; // @synthesize policyMonitorIdentifier=_policyMonitorIdentifier;
 @property(copy, nonatomic) NSArray *policyTypes; // @synthesize policyTypes=_policyTypes;
 - (void).cxx_destruct;
-- (_Bool)askPermissionForWebsite:(id)arg1 error:(id *)arg2;
-- (void)_fetchCategoriesIfNeededForWebsites:(id)arg1 response:(CDUnknownBlockType)arg2;
+- (void)_fetchCategoriesIfNeededForWebsiteURLs:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)requestPoliciesForWebsites:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, getter=isEnabled) _Bool enabled;
 - (void)dealloc;

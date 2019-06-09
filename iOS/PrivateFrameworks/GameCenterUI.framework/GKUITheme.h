@@ -40,6 +40,9 @@
 @property(readonly, retain, nonatomic) GKNetworkImageSource *iconLeaderboardListSource;
 @property(readonly, retain, nonatomic) GKNetworkImageSource *photoDetailSource;
 @property(readonly, retain, nonatomic) GKNetworkImageSource *photoListSource;
+- (id)placeholderSourceWithDimension:(long long)arg1;
+- (id)monogramSourceWithDimension:(long long)arg1;
+- (id)avatarSourceWithDimension:(long long)arg1;
 @property(readonly, nonatomic) GKNetworkImageSource *untreatedAchievementImageDetailSource;
 @property(readonly, nonatomic) GKNetworkImageSource *untreatedAchievementImageSource;
 @property(readonly, retain, nonatomic) GKNetworkImageSource *macGameIconSource;
@@ -54,6 +57,7 @@
 @property(readonly, retain, nonatomic) UIImage *interactiveRatingStarsForeground;
 @property(readonly, retain, nonatomic) UIImage *ratingStarsForegroundImage;
 @property(readonly, retain, nonatomic) UIImage *ratingStarsBackgroundImage;
+- (id)messagesInviteBackgroundImage;
 - (id)imageNamed:(id)arg1;
 - (void)dealloc;
 - (id)init;

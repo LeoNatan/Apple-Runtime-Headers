@@ -10,5 +10,7 @@
 - (void)setButtonsToStatuses:(unsigned int)arg1;
 - (void)disableButtons;
 - (unsigned int)buttonStatuses;
+- (struct CGPoint)SHKConvertPointFromScreen:(struct CGPoint)arg1;
+- (struct CGPoint)SHKConvertPointToScreen:(struct CGPoint)arg1;
 @end
 

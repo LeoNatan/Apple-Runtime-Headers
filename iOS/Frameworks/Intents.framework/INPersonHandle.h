@@ -17,9 +17,11 @@
     NSString *_value;
     long long _type;
     NSString *_label;
+    long long _emergencyType;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) long long emergencyType; // @synthesize emergencyType=_emergencyType;
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;
@@ -32,6 +34,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (id)initWithValue:(id)arg1 type:(long long)arg2 label:(id)arg3 emergencyType:(long long)arg4;
 - (id)initWithValue:(id)arg1 type:(long long)arg2 label:(id)arg3;
 - (id)initWithValue:(id)arg1 type:(long long)arg2;
 

@@ -17,18 +17,22 @@ __attribute__((visibility("hidden")))
     NSSegmentedControl *pageNumberLeftControl;
     NSTextField *pageNumberTextField;
     NSSegmentedControl *pageNumberRightControl;
-    BOOL _didLoadView;
     double _pageNumberViewLeading;
     BOOL _isPreviewing;
+    BOOL _isInStartOrStop;
     NSMapTable *_observedKeyPathsPerAccessoryController;
 }
 
+- (void)_updatePrintPreview:(id)arg1;
+- (void)_updatePrintPreviewDeferred;
 - (void)printInfoDidChange:(id)arg1;
 - (void)userClickedPageNumberControl:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)stop;
-- (void)start;
+- (void)_stop;
+- (void)_start;
 - (void)setMaxViewFrameSize:(struct CGSize)arg1;
+- (void)viewDidDisappear;
+- (void)viewWillAppear;
 - (void)loadView;
 - (BOOL)_checkSizeValidity:(struct CGSize)arg1;
 - (BOOL)_checkOriginValidity:(struct CGPoint)arg1;

@@ -6,10 +6,13 @@
 
 #import <LinkPresentation/NSObject-Protocol.h>
 
-@class LPLinkMetadata, LPMetadataProviderSpecialization, NSError;
+@class LPLinkMetadata, LPMetadataProviderSpecialization;
 
 @protocol LPMetadataProviderSpecializationDelegate <NSObject>
-- (void)metadataProviderSpecialization:(LPMetadataProviderSpecialization *)arg1 didFailWithError:(NSError *)arg2;
+- (void)metadataProviderSpecializationDidFail:(LPMetadataProviderSpecialization *)arg1;
 - (void)metadataProviderSpecialization:(LPMetadataProviderSpecialization *)arg1 didCompleteWithMetadata:(LPLinkMetadata *)arg2;
+
+@optional
+- (void)metadataProviderSpecialization:(LPMetadataProviderSpecialization *)arg1 didFetchPreliminaryMetadata:(LPLinkMetadata *)arg2;
 @end
 

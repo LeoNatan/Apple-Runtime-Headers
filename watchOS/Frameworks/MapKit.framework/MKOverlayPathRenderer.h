@@ -6,7 +6,7 @@
 
 #import <MapKit/MKOverlayRenderer.h>
 
-@class NSArray, UIColor;
+@class NSArray, NSMutableDictionary, UIColor;
 
 @interface MKOverlayPathRenderer : MKOverlayRenderer
 {
@@ -19,8 +19,16 @@
     float _lineDashPhase;
     NSArray *_lineDashPattern;
     struct CGPath *_path;
+    _Bool _shouldRasterize;
+    struct os_unfair_lock_s _runningVectorGeometryAnimationsLock;
+    NSMutableDictionary *_runningVectorGeometryAnimations;
+    _Bool _externalSubclassOverridesDrawingMethods;
 }
 
++ (_Bool)_externalSubclassOverridesDrawingMethods;
++ (Class)_mapkitLeafClass;
+@property(nonatomic) _Bool shouldRasterize; // @synthesize shouldRasterize=_shouldRasterize;
+@property(readonly, nonatomic, getter=_externalSubclassOverridesDrawingMethods) _Bool externalSubclassOverridesDrawingMethods; // @synthesize externalSubclassOverridesDrawingMethods=_externalSubclassOverridesDrawingMethods;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (_Bool)canDrawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(float)arg2;
@@ -41,6 +49,9 @@
 @property float lineWidth;
 @property(retain) UIColor *strokeColor;
 @property(retain) UIColor *fillColor;
+- (void)_animateVectorGeometryIfNecessaryForKey:(id)arg1 withStepHandler:(CDUnknownBlockType)arg2;
+- (void)_performInitialConfiguration;
+- (_Bool)_canProvideVectorGeometry;
 
 @end
 

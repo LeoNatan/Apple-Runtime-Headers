@@ -16,7 +16,7 @@
 @property(readonly, copy, nonatomic) NSArray *gmailLabelsToClear;
 @property(readonly, copy, nonatomic) NSArray *gmailLabelsToSet;
 - (unsigned char)operationType;
-- (id)initWithGmailLabelsToSet:(id)arg1 gmailLabelsToClear:(id)arg2 forUids:(id)arg3 inMailbox:(id)arg4;
+- (id)initWithGmailLabelsToSet:(id)arg1 gmailLabelsToClear:(id)arg2 forUIDs:(id)arg3 inMailbox:(id)arg4;
 
 @end
 

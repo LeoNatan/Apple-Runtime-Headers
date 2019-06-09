@@ -11,8 +11,14 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (BOOL)getOptionalRequestRevision:(unsigned long long *)arg1 fromSupportedRevisionsForRequestClass:(Class)arg2 inOptions:(id)arg3 error:(id *)arg4;
++ (BOOL)getOptionalRequestRevision:(unsigned long long *)arg1 fromSupportedRevisionsForRequestClass:(Class)arg2 forKey:(id)arg3 inOptions:(id)arg4 error:(id *)arg5;
++ (BOOL)getOptionalRequestRevision:(unsigned long long *)arg1 inOptions:(id)arg2 error:(id *)arg3;
++ (BOOL)getOptionalRequestRevision:(unsigned long long *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (BOOL)getRequiredRequestRevision:(unsigned long long *)arg1 fromSupportedRevisionsForRequestClass:(Class)arg2 inOptions:(id)arg3 error:(id *)arg4;
++ (BOOL)getRequiredRequestRevision:(unsigned long long *)arg1 fromSupportedRevisionsForRequestClass:(Class)arg2 forKey:(id)arg3 inOptions:(id)arg4 error:(id *)arg5;
 + (BOOL)getRequiredRequestRevision:(unsigned long long *)arg1 inOptions:(id)arg2 error:(id *)arg3;
++ (BOOL)getRequiredRequestRevision:(unsigned long long *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (id)requiredFaceObservationInOptions:(id)arg1 withOptionName:(id)arg2 error:(id *)arg3;
 + (id)requiredInputFacesArrayInOptions:(id)arg1 error:(id *)arg2;
 + (BOOL)getOptionalInputFacesArray:(id *)arg1 inOptions:(id)arg2 error:(id *)arg3;
@@ -23,10 +29,10 @@ __attribute__((visibility("hidden")))
 + (BOOL)getFloatValue:(float *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (BOOL)getDoubleValue:(double *)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(double)arg4 error:(id *)arg5;
 + (BOOL)getDoubleValue:(double *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
++ (BOOL)getNSUIntegerValue:(unsigned long long *)arg1 forKey:(id)arg2 inOptions:(id)arg3 withDefaultValue:(unsigned long long)arg4 error:(id *)arg5;
 + (BOOL)getNSUIntegerValue:(unsigned long long *)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (id)requiredObjectOfClass:(Class)arg1 forKey:(id)arg2 inOptions:(id)arg3 error:(id *)arg4;
 + (BOOL)getOptionalObject:(id *)arg1 ofClass:(Class)arg2 forKey:(id)arg3 inOptions:(id)arg4 error:(id *)arg5;
-+ (BOOL)validateFaceprintedFaceObservation:(id)arg1 error:(id *)arg2;
 + (BOOL)validateRequiredClusterIDs:(id)arg1 error:(id *)arg2;
 + (BOOL)validateOptionalFaceObservations:(id)arg1 forRequest:(id)arg2 error:(id *)arg3;
 + (BOOL)validateOptionalFaceObservations:(id)arg1 error:(id *)arg2;

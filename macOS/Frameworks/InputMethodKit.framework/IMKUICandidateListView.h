@@ -48,6 +48,7 @@
 @property(retain, nonatomic) IMKUIAbstractCandidateLayout *candidateLayout; // @synthesize candidateLayout=_candidateLayout;
 @property(nonatomic) __weak id <IMKUICandidateAccessibilityDelegate> accessibilityController; // @synthesize accessibilityController=_accessibilityController;
 - (void).cxx_destruct;
+- (long long)accessibilityOrientation;
 - (id)accessibilityRows;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (struct CGRect)convertedFrameForCandidateFrame:(struct CGRect)arg1;
@@ -56,13 +57,16 @@
 - (id)accessibilityVisibleChildren;
 - (id)accessibilityChildren;
 - (BOOL)isAccessibilityEnabled;
+- (id)accessibilityIdentifier;
 - (id)accessibilityLabel;
 - (id)accessibilityTitle;
+- (struct CGSize)sizeAllowanceForScrollers;
 - (void)setFrame:(struct CGRect)arg1;
 @property(readonly, nonatomic) NSArray *visibleLineIndices;
 - (id)groupTitleForLineWithIndex:(long long)arg1;
 - (id)viewForLineWithIndex:(long long)arg1 frame:(struct CGRect)arg2;
 - (id)visibleAreasForFrame:(struct CGRect)arg1;
+- (struct CGRect)documentViewFrameWithContentSize:(struct CGSize)arg1;
 - (void)removeTrailingViews;
 - (void)updateGroupView;
 - (void)didUpdateViewBounds;

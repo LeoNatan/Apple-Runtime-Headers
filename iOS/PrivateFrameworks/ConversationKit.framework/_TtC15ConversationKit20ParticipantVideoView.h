@@ -6,17 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit20ParticipantVideoView : UIView
 {
     // Error parsing type: , name: frontFacingCameraView
     // Error parsing type: , name: backFacingCameraView
-    // Error parsing type: , name: visualEffectView
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

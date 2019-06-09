@@ -18,7 +18,6 @@
 + (float)scoreWithHistoryItemForVisitScoring:(id)arg1 historyItemForURLScoring:(id)arg2 atTime:(double)arg3 withMinimumVisitCount:(unsigned int)arg4;
 + (float)scoreWithHistoryItemForVisitScoring:(id)arg1 historyItemForURLScoring:(id)arg2 atTime:(double)arg3;
 + (float)scoreForHistoryItem:(id)arg1 atTime:(double)arg2 withMinimumVisitCount:(unsigned int)arg3;
-+ (float)scoreForHistoryItemOnHistoryQueue:(id)arg1 atTime:(double)arg2;
 + (float)scoreForHistoryItem:(id)arg1 atTime:(double)arg2;
 - (void).cxx_destruct;
 - (void)_postFrequentlyVisitedSitesDidChangeNotification;

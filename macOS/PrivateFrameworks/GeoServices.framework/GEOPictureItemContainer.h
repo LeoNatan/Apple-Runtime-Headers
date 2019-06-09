@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)initWithPictureItemContainer:(id)arg1;
 - (id)initWithPictureItems:(id)arg1 allowFullScreenPhoto:(BOOL)arg2;
+- (id)init;
 
 @end
 

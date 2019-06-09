@@ -7,12 +7,14 @@
 #import <AppKit/NSButton.h>
 
 @class ICTrackedParagraph, NSImageView, NSTrackingArea;
+@protocol ICTodoButtonDragDelegate;
 
 @interface ICTodoButton : NSButton
 {
     BOOL _done;
     ICTrackedParagraph *_trackedParagraph;
     double _zoomFactor;
+    id <ICTodoButtonDragDelegate> _dragDelegate;
     struct NSImageView *_undoneImageView;
     struct NSImageView *_doneImageView;
     NSTrackingArea *_cursorTrackingArea;
@@ -25,6 +27,7 @@
 @property(retain) NSImageView *undoneImageView; // @synthesize undoneImageView=_undoneImageView;
 @property(nonatomic) struct CGSize defaultImageSize; // @synthesize defaultImageSize=_defaultImageSize;
 @property(nonatomic) struct CGSize defaultSize; // @synthesize defaultSize=_defaultSize;
+@property(nonatomic) __weak id <ICTodoButtonDragDelegate> dragDelegate; // @synthesize dragDelegate=_dragDelegate;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(nonatomic) __weak ICTrackedParagraph *trackedParagraph; // @synthesize trackedParagraph=_trackedParagraph;
 @property(nonatomic, getter=isDone) BOOL done; // @synthesize done=_done;
@@ -37,9 +40,12 @@
 - (void)setFrame:(struct CGRect)arg1 leftToRight:(BOOL)arg2;
 - (void)updateImagesAnimated:(BOOL)arg1;
 - (struct CGSize)sizeForLetterpressedImage;
+- (struct CGRect)imageFrame;
+- (void)wasPressed;
 - (void)updateAccentColor;
 - (void)accentColorDidChange;
 - (BOOL)allowsVibrancy;
+- (void)didPan:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;
 

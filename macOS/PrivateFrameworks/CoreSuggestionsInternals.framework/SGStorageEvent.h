@@ -42,6 +42,8 @@
 @property(readonly, nonatomic) SGDuplicateKey *duplicateKey; // @synthesize duplicateKey=_duplicateKey;
 @property(readonly, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
 - (void).cxx_destruct;
+- (id)poiFilters;
+- (unsigned long long)geocodingMode;
 - (id)geocodedEventWithStartDate:(id)arg1 startTimeZone:(id)arg2 endDate:(id)arg3 endTimeZone:(id)arg4 locations:(id)arg5;
 - (id)geocodeLocations;
 - (id)geocodeEndTimeZone;

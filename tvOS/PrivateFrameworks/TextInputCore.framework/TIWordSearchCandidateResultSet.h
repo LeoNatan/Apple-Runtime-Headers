@@ -15,8 +15,8 @@
     _Bool _empty;
     NSMutableArray *_mutableCandidates;
     NSMutableDictionary *_mutableCandidateRefsDictionary;
-    NSArray *_initiallyHiddenCandidates;
-    unsigned long long _selectedHiddenCandidateIndex;
+    NSArray *_disambiguationCandidates;
+    unsigned long long _selectedDisambiguationCandidateIndex;
     NSArray *_proactiveCandidates;
     NSArray *_autoconvertedCandidates;
     NSString *_autoconvertedCandidateString;
@@ -31,8 +31,8 @@
 @property(copy, nonatomic) NSArray *autoconvertedCandidates; // @synthesize autoconvertedCandidates=_autoconvertedCandidates;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(retain, nonatomic) NSArray *proactiveCandidates; // @synthesize proactiveCandidates=_proactiveCandidates;
-@property(nonatomic) unsigned long long selectedHiddenCandidateIndex; // @synthesize selectedHiddenCandidateIndex=_selectedHiddenCandidateIndex;
-@property(copy, nonatomic) NSArray *initiallyHiddenCandidates; // @synthesize initiallyHiddenCandidates=_initiallyHiddenCandidates;
+@property(nonatomic) unsigned long long selectedDisambiguationCandidateIndex; // @synthesize selectedDisambiguationCandidateIndex=_selectedDisambiguationCandidateIndex;
+@property(copy, nonatomic) NSArray *disambiguationCandidates; // @synthesize disambiguationCandidates=_disambiguationCandidates;
 @property(retain, nonatomic) NSMutableDictionary *mutableCandidateRefsDictionary; // @synthesize mutableCandidateRefsDictionary=_mutableCandidateRefsDictionary;
 @property(retain, nonatomic) NSMutableArray *mutableCandidates; // @synthesize mutableCandidates=_mutableCandidates;
 - (void).cxx_destruct;
@@ -56,7 +56,7 @@
 @property(readonly, nonatomic) NSArray *candidates;
 @property(readonly, nonatomic) NSArray *proactiveTriggers;
 - (id)initWithCandidates:(id)arg1 candidateRefsDictionary:(id)arg2;
-- (id)initWithCandidates:(id)arg1 candidateRefsDictionary:(id)arg2 initiallyHiddenCandidates:(id)arg3 selectedHiddenCandidateIndex:(unsigned long long)arg4;
+- (id)initWithCandidates:(id)arg1 candidateRefsDictionary:(id)arg2 disambiguationCandidates:(id)arg3 selectedDisambiguationCandidateIndex:(unsigned long long)arg4;
 - (id)init;
 
 @end

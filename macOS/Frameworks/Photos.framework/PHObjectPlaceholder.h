@@ -6,14 +6,20 @@
 
 #import <Photos/PHObject.h>
 
+@class NSString;
+
 @interface PHObjectPlaceholder : PHObject
 {
+    NSString *_localIdentifier;
+    long long _assetMediaType;
 }
 
+@property long long assetMediaType; // @synthesize assetMediaType=_assetMediaType;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isPlaceholder;
-- (id)initWithModel:(id)arg1 photoLibrary:(id)arg2;
+- (id)localIdentifier;
+- (id)initWithLocalIdentifier:(id)arg1;
 
 @end
 

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     double duration;
     unsigned long long extraOptions;
     _Bool interactivelyCancelled;
+    _Bool _isLegacy;
     _Bool force;
 }
 
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)launchAnimation:(CDUnknownBlockType)arg1 afterStarted:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3 forHost:(id)arg4 fromCurrentPosition:(_Bool)arg5;
 @property(readonly, nonatomic) _Bool isAnimationCompleted;
 - (id)description;
+- (id)legacyAnimationCopy;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

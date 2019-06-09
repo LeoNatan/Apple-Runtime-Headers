@@ -24,12 +24,17 @@
 + (_Bool)setupAssistantNeedsToRun;
 + (id)defaultWebServiceForContext:(int)arg1;
 - (void).cxx_destruct;
+- (void)viewControllerDidFailToChangePasscodeComplex:(id)arg1;
+- (void)viewControllerDidFinishChangingPasscodeComplex:(id)arg1;
+- (void)viewControllerWillPresentChangePasscodeComplex:(id)arg1;
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)_setExternalDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)bridgeSetupAssistantDidFailToChangePasscode;
+- (void)bridgeSetupAssistantDidFinishPasscodeChange;
 @property(readonly, nonatomic) NSArray *requiredPaymentSetupFileURLs;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;

@@ -53,7 +53,6 @@
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
-- (void)_reportTimingDataToAWD;
 - (id)_timingData;
 
 // Remaining properties

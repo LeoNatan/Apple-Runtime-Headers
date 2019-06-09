@@ -16,13 +16,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tokenTreeNodeWithIndexAndType:(unsigned int)arg1 type:(int)arg2;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setSibling:(id)arg1;
 - (id)sibling;
 - (void)setFirstChild:(id)arg1;
 - (id)firstChild;
 - (unsigned int)tokenIndex;
-- (void)dealloc;
 - (id)initWithIndexAndType:(unsigned int)arg1 type:(int)arg2;
 - (id)init;
 

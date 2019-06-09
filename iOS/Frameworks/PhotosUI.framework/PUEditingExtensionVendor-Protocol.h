@@ -8,7 +8,7 @@
 
 @protocol PUEditingExtensionVendor
 - (void)querySDKVersionWithResponseHandler:(void (^)(unsigned int))arg1;
-- (void)cancelContentEditing;
+- (void)cancelContentEditingWithResponseHandler:(void (^)(void))arg1;
 - (void)finishContentEditing;
 - (void)beginContentEditingWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)queryShouldShowCancelConfirmationWithResponseHandler:(void (^)(_Bool))arg1;

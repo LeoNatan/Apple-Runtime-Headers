@@ -14,6 +14,7 @@
 @class CKActionMenuController, CKActionMenuItem, CKMediaObject, CKRecordingElapsedTimeView, NSError, NSString, UIButton, UIImagePickerController, UIView, UIWindow;
 @protocol CKVideoMessageRecordingViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKVideoMessageRecordingViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CKActionMenuControllerDelegate, CKVideoRecorderDelegate>
 {
     UIView *_presentationView;

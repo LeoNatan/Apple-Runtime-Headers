@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSError, NSHashTable, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface NSFileWrapperMoreIVars : NSObject
 {
     NSString *fileType;

@@ -9,6 +9,7 @@
 @class FIFinderView, FITagEditorView, NSAlert, NSArray, NSBox, NSButton, NSDictionary, NSLayoutConstraint, NSSavePanelAlertStyleContentView, NSString, NSTextField, NSURL, NSView;
 @protocol NSOpenSavePanelDelegate;
 
+__attribute__((visibility("hidden")))
 @interface NSSavePanelAuxiliary : NSObject
 {
     SEL modalDelegateDidEndSelector;
@@ -31,7 +32,6 @@
     unsigned int _canSendSynchronousMessagesToRemote:1;
     unsigned int _animatingExpandCollapse:1;
     unsigned int _iCloudOpenPanel:1;
-    unsigned int _remoteAccessoryViewAvailable:1;
     unsigned int _customTitleSet:1;
     unsigned int _reserved:15;
     CDUnknownBlockType _completionHandler;

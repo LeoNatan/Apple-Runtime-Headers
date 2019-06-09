@@ -10,6 +10,9 @@
 
 @interface NSError (FPFSHelpers)
 + (id)fp_errorForCollisionWithURL:(id)arg1;
++ (id)fileProviderErrorForNonExistentItemWithIdentifier:(id)arg1;
++ (id)fileProviderErrorForOutOfDateItem:(id)arg1;
++ (id)fileProviderErrorForCollisionWithItem:(id)arg1;
 @property(readonly, nonatomic) NSURL *fp_collidingURL;
 @end
 

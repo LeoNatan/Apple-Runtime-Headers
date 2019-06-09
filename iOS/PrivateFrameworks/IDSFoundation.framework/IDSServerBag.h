@@ -13,6 +13,7 @@
 {
     _Bool _allowSelfSignedCertificates;
     _Bool _allowUnsignedBags;
+    BOOL _hashAlgorithm;
     int _trustStatus;
     int _token;
     IMConnectionMonitor *_connectionMonitor;
@@ -32,6 +33,8 @@
     NSData *_serverSignature;
     NSArray *_serverCerts;
     NSData *_serverGivenBag;
+    CDUnknownBlockType _remoteURLCreationBlock;
+    CDUnknownBlockType _connectionMonitorCreationBlock;
 }
 
 + (id)_bagCreationLock;
@@ -40,6 +43,9 @@
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
 + (id)sharedInstance;
+@property(copy) CDUnknownBlockType connectionMonitorCreationBlock; // @synthesize connectionMonitorCreationBlock=_connectionMonitorCreationBlock;
+@property(copy) CDUnknownBlockType remoteURLCreationBlock; // @synthesize remoteURLCreationBlock=_remoteURLCreationBlock;
+@property BOOL hashAlgorithm; // @synthesize hashAlgorithm=_hashAlgorithm;
 @property(retain) NSData *serverGivenBag; // @synthesize serverGivenBag=_serverGivenBag;
 @property(retain) NSArray *serverCerts; // @synthesize serverCerts=_serverCerts;
 @property(retain) NSData *serverSignature; // @synthesize serverSignature=_serverSignature;
@@ -80,7 +86,8 @@
 - (void)_invalidate;
 - (_Bool)_loadFromDictionary:(id)arg1 returningError:(id *)arg2;
 - (void)dealloc;
-- (id)_initWithURL:(id)arg1 apsEnvironmentName:(id)arg2 allowSelfSignedCertificates:(_Bool)arg3 allowUnsignedBags:(_Bool)arg4;
+- (id)_initWithURL:(id)arg1 apsEnvironmentName:(id)arg2 allowSelfSignedCertificates:(_Bool)arg3 allowUnsignedBags:(_Bool)arg4 hashAlgorithm:(BOOL)arg5 remoteURLCreationBlock:(CDUnknownBlockType)arg6 connectionMonitorCreationBlock:(CDUnknownBlockType)arg7;
+- (id)_initWithURL:(id)arg1 apsEnvironmentName:(id)arg2 allowSelfSignedCertificates:(_Bool)arg3 allowUnsignedBags:(_Bool)arg4 hashAlgorithm:(BOOL)arg5;
 - (void)_generateURLRequest;
 - (void)_bagExternallyReloaded;
 - (void)_saveToCache;

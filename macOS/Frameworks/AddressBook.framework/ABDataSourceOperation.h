@@ -14,7 +14,7 @@
 }
 
 @property(retain) PHXSource *source; // @synthesize source=_source;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

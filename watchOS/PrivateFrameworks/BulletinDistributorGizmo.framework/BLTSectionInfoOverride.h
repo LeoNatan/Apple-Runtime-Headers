@@ -12,8 +12,12 @@
 {
     NSNumber *_grouping;
     NSNumber *_level;
+    NSNumber *_sound;
+    NSNumber *_criticalAlert;
 }
 
+@property(retain, nonatomic) NSNumber *criticalAlert; // @synthesize criticalAlert=_criticalAlert;
+@property(retain, nonatomic) NSNumber *sound; // @synthesize sound=_sound;
 @property(retain, nonatomic) NSNumber *level; // @synthesize level=_level;
 @property(retain, nonatomic) NSNumber *grouping; // @synthesize grouping=_grouping;
 - (void).cxx_destruct;

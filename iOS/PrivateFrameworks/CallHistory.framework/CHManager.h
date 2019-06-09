@@ -41,10 +41,15 @@
 @property(retain) id <SyncManagerProtocol> syncManager; // @synthesize syncManager=_syncManager;
 @property long long numberOfUnseenMissedCalls; // @synthesize numberOfUnseenMissedCalls=_numberOfUnseenMissedCalls;
 @property(retain, nonatomic) NSArray *recentCalls; // @synthesize recentCalls=_recentCalls;
-@property _Bool generateSyncTransactions; // @synthesize generateSyncTransactions=_generateSyncTransactions;
+@property(nonatomic) _Bool generateSyncTransactions; // @synthesize generateSyncTransactions=_generateSyncTransactions;
 - (void).cxx_destruct;
 - (id)latestTelephonyCallMatchingNormalizedRemoteParticipantHandleValues:(id)arg1;
+- (id)latestCallMatchingNormalizedRemoteParticipantHandleValues:(id)arg1;
 - (id)latestRecentCallMatchingPredicate:(id)arg1;
+- (id)coalescedCallsWithPredicate:(id)arg1 limit:(unsigned long long)arg2 offset:(unsigned long long)arg3 batchSize:(unsigned long long)arg4;
+- (unsigned long long)coalescedCallCountWithPredicate:(id)arg1;
+- (id)callsWithPredicate:(id)arg1 limit:(unsigned long long)arg2 offset:(unsigned long long)arg3 batchSize:(unsigned long long)arg4;
+- (unsigned long long)callCountWithPredicate:(id)arg1;
 - (void)addMultipleCallsToCallHistory:(id)arg1;
 - (void)flush;
 - (void)callTimersReset;
@@ -53,7 +58,7 @@
 - (double)callTimersGetIncoming;
 @property(nonatomic) _Bool showsTelephonyCalls; // @synthesize showsTelephonyCalls=_showsTelephonyCalls;
 @property(copy, nonatomic) NSString *coalescingStrategy; // @synthesize coalescingStrategy=_coalescingStrategy;
-@property(copy, nonatomic) NSPredicate *postFetchingPredicate; // @synthesize postFetchingPredicate=_postFetchingPredicate;
+@property(retain, nonatomic) NSPredicate *postFetchingPredicate; // @synthesize postFetchingPredicate=_postFetchingPredicate;
 @property(copy, nonatomic) NSArray *limitingCallKinds; // @synthesize limitingCallKinds=_limitingCallKinds;
 @property(copy, nonatomic) NSDate *limitingEndDate; // @synthesize limitingEndDate=_limitingEndDate;
 @property(copy, nonatomic) NSDate *limitingStartDate; // @synthesize limitingStartDate=_limitingStartDate;
@@ -84,8 +89,8 @@
 - (id)unCoalesceCall:(id)arg1;
 - (id)coalesceCalls:(id)arg1;
 - (void)currentLocaleChanged:(id)arg1;
-- (void)databaseChanged:(id)arg1;
-- (void)addressBookChanged:(id)arg1;
+- (void)handleCallHistoryDatabaseChangedInternalNotification:(id)arg1;
+- (void)handleCallHistoryContactStoreChangedInternalNotification:(id)arg1;
 - (void)registerForNotifications;
 - (void)dealloc;
 - (void)setInitialLimitingCallKinds:(id)arg1;

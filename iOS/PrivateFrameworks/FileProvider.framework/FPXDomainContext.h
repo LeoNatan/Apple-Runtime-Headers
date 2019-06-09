@@ -11,6 +11,8 @@
 __attribute__((visibility("hidden")))
 @interface FPXDomainContext : NSObject
 {
+    _Bool _usesFPFS;
+    unsigned long long _extensionCapabilities;
     FPXExtensionContext *_extensionContext;
     NSFileProviderExtension *_vendorInstance;
     NSFileProviderDomain *_domain;
@@ -18,9 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, nonatomic) FPXSpotlightIndexer *spotlightIndexer; // @synthesize spotlightIndexer=_spotlightIndexer;
+@property(readonly, nonatomic) _Bool usesFPFS; // @synthesize usesFPFS=_usesFPFS;
 @property(readonly, nonatomic) NSFileProviderDomain *domain; // @synthesize domain=_domain;
 @property(readonly, nonatomic) NSFileProviderExtension *vendorInstance; // @synthesize vendorInstance=_vendorInstance;
 @property(readonly, nonatomic) __weak FPXExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
+@property(readonly, nonatomic) unsigned long long extensionCapabilities; // @synthesize extensionCapabilities=_extensionCapabilities;
 - (void).cxx_destruct;
 - (id)itemIDsFromVendorItemIDs:(id)arg1;
 - (id)itemsFromVendorItems:(id)arg1;
@@ -28,7 +32,8 @@ __attribute__((visibility("hidden")))
 - (id)itemFromVendorItem:(id)arg1;
 - (id)internalErrorFromVendorError:(id)arg1;
 - (void)prepareForDomainRemovalWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithVendorInstance:(id)arg1 domain:(id)arg2 extensionContext:(id)arg3;
+- (void)updateCapabilities;
+- (id)initWithVendorInstance:(id)arg1 domain:(id)arg2 extensionContext:(id)arg3 usesFPFS:(_Bool)arg4;
 
 @end
 

@@ -55,6 +55,11 @@
 + (_Bool)mmsEnabled;
 + (_Bool)smsEnabled;
 + (_Bool)iMessageEnabledForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2 previousService:(id)arg3;
++ (_Bool)_iMessageEnabledForMultipleSubscriptionsForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2 previousService:(id)arg3;
++ (_Bool)_shouldCheckIfLastAddressedHandleIsInSubscriptionsAnymoreButiMessageIsEnabledForAlias:(id)arg1 previousService:(id)arg2;
++ (_Bool)_isiMessageEnabledIfLastAddressedHandleIsNotActiveAnymore:(id)arg1;
++ (_Bool)_isSIMIdIDSRegisteredSIM:(id)arg1;
++ (id)_phoneNumberOnSubscriptionWithSIMID:(id)arg1;
 + (_Bool)iMessageEnabledForSenderLastAddressedHandle:(id)arg1 simID:(id)arg2;
 + (_Bool)hasAlias:(id)arg1 onAccountForService:(id)arg2;
 + (_Bool)mmsEnabledforPhoneNumber:(id)arg1 simID:(id)arg2;

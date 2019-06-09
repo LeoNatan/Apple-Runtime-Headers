@@ -15,6 +15,20 @@
 + (unsigned long long)_currentSplashScreenVersion;
 + (void)userAcknowledgedSplashScreen;
 + (BOOL)mustDisplaySplashScreenToUser;
++ (BOOL)areContextualRemindersSupported;
++ (BOOL)isContinuitySupported;
++ (BOOL)isSuggestionsEnabled;
++ (BOOL)areApplicationBadgesSupported;
++ (BOOL)areQuickActionsSupported;
++ (BOOL)calendarListViewCellsFeaturesAttendeeInformation;
++ (BOOL)calendarListViewCellsFeaturesExtraContent;
++ (BOOL)eventDetailsDayPreviewEnabled;
++ (BOOL)areVehicleTriggersEnabled;
++ (BOOL)isConservativeEntryEnabled;
++ (BOOL)isTravelAdvisorySupported;
++ (BOOL)isTravelAdvisorySupported;
++ (BOOL)eventDetailsDayPreviewEnabled;
++ (BOOL)calendarListViewCellsFeaturesExtraContent;
 
 @end
 

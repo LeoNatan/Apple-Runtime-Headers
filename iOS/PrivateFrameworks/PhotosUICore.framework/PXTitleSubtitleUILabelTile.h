@@ -14,15 +14,16 @@
 {
     UIView *_view;
     PXTitleSubtitleUILabel *_label;
-    PXTitleSubtitleLabelSpec *_spec;
     _Bool _rendersTextAsynchronously;
     NSString *_title;
     NSString *_subtitle;
+    PXTitleSubtitleLabelSpec *_labelSpec;
     long long __animationCount;
 }
 
 @property(nonatomic, setter=_setAnimationCount:) long long _animationCount; // @synthesize _animationCount=__animationCount;
 @property(nonatomic) _Bool rendersTextAsynchronously; // @synthesize rendersTextAsynchronously=_rendersTextAsynchronously;
+@property(readonly, copy, nonatomic) PXTitleSubtitleLabelSpec *labelSpec; // @synthesize labelSpec=_labelSpec;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;

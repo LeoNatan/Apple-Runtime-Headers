@@ -9,6 +9,8 @@
 @class NSArray, NSDictionary, NSString, NSUUID;
 
 @protocol SPGizmoAppServerProtocol <NSObject>
+- (void)showSystemAlertForBARDisabled:(NSString *)arg1 reply:(void (^)(_Bool))arg2;
+- (void)hapticPlayedDuringScheduledExtendedRuntimeSession:(NSString *)arg1;
 - (void)extensionDelegate:(NSString *)arg1 handlesBGTasksDidChange:(_Bool)arg2;
 - (void)extensionDidEndNotificationUICreation:(NSString *)arg1;
 - (void)extensionDidBeginNotificationUICreation:(NSString *)arg1;
@@ -21,6 +23,7 @@
 - (void)notificationUIDidBecomeActive:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)appDidEndBackgroundBARTask:(NSString *)arg1 barTaskUUID:(NSUUID *)arg2 clientIdentifier:(NSString *)arg3;
 - (void)appDidBeginBackgroundBARTask:(NSString *)arg1 barTaskUUID:(NSUUID *)arg2 clientIdentifier:(NSString *)arg3;
+- (void)appDidBecomeActive:(NSString *)arg1;
 - (void)appDidEnterBackground:(NSString *)arg1;
 - (void)appWillEnterForeground:(NSString *)arg1;
 - (void)appDidFinishLaunching:(NSString *)arg1 clientIdentifier:(NSString *)arg2 didLaunchSuspended:(_Bool)arg3;

@@ -30,7 +30,7 @@
 @property(retain, nonatomic, setter=_setProject:) PHProject *project; // @synthesize project=_project;
 @property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(retain, nonatomic) PHProjectTypeDescriptionSourceService *_typeDescriptionService; // @synthesize _typeDescriptionService;
-@property(retain, nonatomic) id <PHProjectExtensionController> _projectExtensionController; // @synthesize _projectExtensionController;
+@property(nonatomic) __weak id <PHProjectExtensionController> _projectExtensionController; // @synthesize _projectExtensionController;
 - (void).cxx_destruct;
 - (void)connectionWasInvalidatedForProjectTypeDescriptionSourceService:(id)arg1;
 - (void)photoLibraryDidChange:(id)arg1;

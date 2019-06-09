@@ -10,7 +10,11 @@
 {
 }
 
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
++ (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
++ (const CDStruct_7d93034e *)revisionAvailability;
 - (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (long long)dependencyProcessingOrdinality;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 
 @end

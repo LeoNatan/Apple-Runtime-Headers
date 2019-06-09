@@ -33,6 +33,7 @@
 - (id)fetchRequestWithPredicate:(id)arg1;
 - (id)fetchExchangeContactsMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)fetchContainerScopedContactsMatchingPredicate:(id)arg1 error:(id *)arg2;
+- (id)fetchUnscopedContactsMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)fetchContacts:(id *)arg1;
 - (id)initWithFetchRequestDescription:(id)arg1 persistenceContext:(id)arg2;
 - (id)init;

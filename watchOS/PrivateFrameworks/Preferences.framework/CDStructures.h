@@ -21,16 +21,12 @@ struct CGRect {
 };
 
 struct CGSize {
-    float width;
-    float height;
+    float _field1;
+    float _field2;
 };
 
 struct _NSRange {
     unsigned int location;
     unsigned int length;
-};
-
-struct os_unfair_lock_s {
-    unsigned int _os_unfair_lock_opaque;
 };
 

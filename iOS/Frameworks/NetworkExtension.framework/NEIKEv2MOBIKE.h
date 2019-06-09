@@ -8,33 +8,47 @@
 
 #import <NetworkExtension/NSObject-Protocol.h>
 
-@class NEIKEv2PacketTunnelProvider, NSString;
-@protocol OS_dispatch_source;
+@class NEIKEv2PacketTunnelProvider, NSString, NWInterface;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface NEIKEv2MOBIKE : NSObject <NSObject>
 {
-    _Bool _mobikeCapable;
-    _Bool _mobikeRunning;
-    unsigned int _mobikeRetries;
-    NEIKEv2PacketTunnelProvider *_ikev2TunnelProvider;
-    NSObject<OS_dispatch_source> *_mobikeTimer;
+    _Bool _mobikeInProgress;
+    _Bool _mobikePending;
+    _Bool _mobikeReasserting;
+    _Bool _mobikeEarlyDisconnect;
+    NEIKEv2PacketTunnelProvider *_tunnelProvider;
+    NSObject<OS_dispatch_source> *_mobikeWaitTimer;
+    NSObject<OS_dispatch_queue> *_mobikeQueue;
+    NWInterface *_mobikeInterface;
+    NWInterface *_mobikeTransportInterface;
+    long long _mobikePathStatus;
+    unsigned long long _mobikeTries;
+    NSString *_mobikeServer;
 }
 
-@property unsigned int mobikeRetries; // @synthesize mobikeRetries=_mobikeRetries;
-@property(retain) NSObject<OS_dispatch_source> *mobikeTimer; // @synthesize mobikeTimer=_mobikeTimer;
-@property _Bool mobikeRunning; // @synthesize mobikeRunning=_mobikeRunning;
-@property __weak NEIKEv2PacketTunnelProvider *ikev2TunnelProvider; // @synthesize ikev2TunnelProvider=_ikev2TunnelProvider;
-@property _Bool mobikeCapable; // @synthesize mobikeCapable=_mobikeCapable;
+@property _Bool mobikeEarlyDisconnect; // @synthesize mobikeEarlyDisconnect=_mobikeEarlyDisconnect;
+@property _Bool mobikeReasserting; // @synthesize mobikeReasserting=_mobikeReasserting;
+@property _Bool mobikePending; // @synthesize mobikePending=_mobikePending;
+@property _Bool mobikeInProgress; // @synthesize mobikeInProgress=_mobikeInProgress;
+@property(retain) NSString *mobikeServer; // @synthesize mobikeServer=_mobikeServer;
+@property unsigned long long mobikeTries; // @synthesize mobikeTries=_mobikeTries;
+@property long long mobikePathStatus; // @synthesize mobikePathStatus=_mobikePathStatus;
+@property(retain) NWInterface *mobikeTransportInterface; // @synthesize mobikeTransportInterface=_mobikeTransportInterface;
+@property(retain) NWInterface *mobikeInterface; // @synthesize mobikeInterface=_mobikeInterface;
+@property(retain) NSObject<OS_dispatch_queue> *mobikeQueue; // @synthesize mobikeQueue=_mobikeQueue;
+@property(retain) NSObject<OS_dispatch_source> *mobikeWaitTimer; // @synthesize mobikeWaitTimer=_mobikeWaitTimer;
+@property __weak NEIKEv2PacketTunnelProvider *tunnelProvider; // @synthesize tunnelProvider=_tunnelProvider;
 - (void).cxx_destruct;
+- (void)initiateMOBIKE:(unsigned long long)arg1 pathStatus:(long long)arg2 serverAddress:(id)arg3 earlyDisconnect:(_Bool)arg4;
+- (_Bool)startMOBIKE:(id)arg1;
+- (void)mobikeDisconnect;
+- (void)mobikeReassert;
+- (_Bool)mobikeReadyCheck:(unsigned long long)arg1 pathStatus:(long long)arg2 mobikeServer:(id)arg3;
+- (void)mobikeStopWaitTimer;
+- (void)mobikeStartWaitTimer;
 - (void)dealloc;
-- (id)initWithTunnelProvider:(id)arg1;
-- (void)ikev2MOBIKEStopTimer;
-- (void)ikev2MOBIKECleanup;
-- (_Bool)ikev2MOBIKESkipTunnelNetworkSettingsUpdate;
-- (void)ikev2MOBIKEReassert:(CDUnknownBlockType)arg1;
-- (_Bool)ikev2MOBIKESetup:(_Bool)arg1 ifChange:(_Bool)arg2 serverAddress:(id)arg3;
-- (void)ikev2MOBIKEStart:(unsigned long long)arg1 pathStatus:(long long)arg2 serverAddress:(id)arg3 persist:(unsigned char)arg4;
-- (void)ikev2MOBIKEFailed;
+- (id)initWithQueue:(id)arg1 tunnelProvider:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

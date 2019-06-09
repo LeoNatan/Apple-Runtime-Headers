@@ -38,10 +38,12 @@
 - (void)__closeDatabaseOnIvarQueue;
 - (void)_performInitialHousekeepingOnIvarQueue;
 - (_Bool)deleteBatchWithContext:(id)arg1 error:(id *)arg2;
+- (_Bool)deleteEntriesBeforeDate:(id)arg1 afterDate:(id)arg2 error:(id *)arg3;
 - (id)datasUpToLimit:(unsigned long long)arg1 deleteContext:(id *)arg2 error:(id *)arg3;
 - (id)dataForKey:(id)arg1 error:(id *)arg2;
 - (_Bool)persistData:(id)arg1 forKey:(id)arg2 error:(id *)arg3;
 - (void)_onIvarQueue_deleteSerializedValueForKey:(id)arg1 valueType:(BOOL)arg2;
+- (void)_onIvarQueue_deleteDatesBefore:(id)arg1 after:(id)arg2;
 - (void)_onIvarQueue_deleteUpToRowID:(unsigned long long)arg1 valueType:(BOOL)arg2;
 - (id)_onIvarQueue_serializedValuesUpToLimit:(unsigned long long)arg1 valueType:(BOOL)arg2 deleteContext:(id *)arg3;
 - (id)_onIvarQueue_serializedValueForKey:(id)arg1 valueType:(BOOL)arg2;

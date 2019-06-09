@@ -22,7 +22,7 @@
 @property(retain, nonatomic) NSNumber *counterValue; // @synthesize counterValue=_counterValue;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly) NSString *rawData;
+@property(readonly, nonatomic) NSString *rawData;
 - (void)dealloc;
 
 @end

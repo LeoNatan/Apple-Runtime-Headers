@@ -55,7 +55,10 @@
 + (id)componentMin;
 + (id)componentMultiply;
 + (id)componentAdd;
+- (id)applyWithForeground:(id)arg1 background:(id)arg2 colorSpace:(struct CGColorSpace *)arg3;
 - (id)applyWithForeground:(id)arg1 background:(id)arg2;
+- (void)setClearForegroundPreservesBackground:(_Bool)arg1;
+- (_Bool)clearForegroundPreservesBackground;
 - (id)initWithString:(id)arg1 extentType:(int)arg2;
 - (id)initWithString:(id)arg1;
 

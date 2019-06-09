@@ -24,5 +24,9 @@
 + (id)groupViewBackgroundColor;
 + (id)grayedOutLineColor;
 + (id)colorWithRGBString:(id)arg1;
++ (id)lineHighlightedColor;
++ (id)lineBackgroundColor;
++ (id)delimitingLineColorForDarkMode;
++ (id)delimitingLineColor;
 @end
 

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) _Bool browserIsBusy; // @synthesize browserIsBusy=_browserIsBusy;
+- (void).cxx_destruct;
 - (id)nibName;
 - (void)viewLoaded;
 

@@ -18,6 +18,7 @@
     id _value;
     HUQuickControlViewProfile *_profile;
     id <HUQuickControlViewInteractionDelegate> _interactionDelegate;
+    unsigned long long _reachabilityState;
     HUIconView *_iconView;
     HUCircleView *_circleView;
 }
@@ -28,11 +29,13 @@
 @property(retain, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
 @property(nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
 @property(nonatomic) _Bool open; // @synthesize open=_open;
+@property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(nonatomic) __weak id <HUQuickControlViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
 @property(copy, nonatomic) HUQuickControlViewProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
+- (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 @property(retain, nonatomic) id value; // @synthesize value=_value;
 - (void)_updateIconDescriptor;
 - (void)_updateAppearance;

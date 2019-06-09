@@ -6,25 +6,11 @@
 
 #import <QuartzCore/CALayer.h>
 
-@class QTCaptureLayerPrivate;
-
 @interface QTCaptureLayer : CALayer
 {
-    QTCaptureLayerPrivate *_captureLayerPriv;
 }
 
 + (id)layerWithSession:(id)arg1;
-- (void)setVideoPreviewConnection:(id)arg1;
-- (id)videoPreviewConnection;
-- (void)setAvailableVideoPreviewConnections:(id)arg1;
-- (id)availableVideoPreviewConnections;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (id)session;
-- (void)_updateVideoPreviewConnectionFromVideoPreviewOutput;
-- (void)setSession:(id)arg1;
-- (void)display;
-- (void)finalize;
-- (void)dealloc;
 - (id)initWithSession:(id)arg1;
 - (id)init;
 

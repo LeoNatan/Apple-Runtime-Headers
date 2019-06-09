@@ -11,13 +11,16 @@
 @interface RTPersistenceStore : NSObject
 {
     NSPersistentStoreDescription *_storeDescription;
+    BOOL _mirroringDelegateIntialized;
     RTPersistenceMigrator *_migrator;
     NSMutableDictionary *_userInfo;
     NSCloudKitMirroringDelegate *_mirroringDelegate;
     NSCloudKitMirroringDelegateOptions *_mirroringDelegateOptions;
     unsigned long long _state;
+    long long _mirroringDelegateState;
 }
 
+@property(nonatomic) long long mirroringDelegateState; // @synthesize mirroringDelegateState=_mirroringDelegateState;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringDelegateOptions; // @synthesize mirroringDelegateOptions=_mirroringDelegateOptions;
 @property(retain, nonatomic) NSCloudKitMirroringDelegate *mirroringDelegate; // @synthesize mirroringDelegate=_mirroringDelegate;
@@ -25,11 +28,13 @@
 @property(readonly) NSPersistentStoreDescription *storeDescription; // @synthesize storeDescription=_storeDescription;
 @property(retain, nonatomic) RTPersistenceMigrator *migrator; // @synthesize migrator=_migrator;
 - (void).cxx_destruct;
+- (void)onMirroringDelegateInitialization:(id)arg1;
 - (BOOL)updateMetadata:(id)arg1 coordinator:(id)arg2 error:(id *)arg3;
 - (id)retrieveMetadataWithCoordinator:(id)arg1 error:(id *)arg2;
 - (id)_validateKeys:(id)arg1;
 - (BOOL)performVacuumWithCoordinator:(id)arg1 error:(id *)arg2;
 - (id)cachedModelWithError:(id *)arg1;
+- (BOOL)rekeyWithCoordinator:(id)arg1 keyData:(id)arg2 error:(id *)arg3;
 - (BOOL)destroyWithCoordinator:(id)arg1 error:(id *)arg2;
 - (BOOL)removeFromCoordinator:(id)arg1 error:(id *)arg2;
 - (BOOL)removeStoreAtURL:(id)arg1 error:(id *)arg2;
@@ -40,6 +45,7 @@
 - (BOOL)error:(id *)arg1 code:(unsigned long long)arg2;
 - (id)storeName;
 @property(readonly) NSURL *URL;
+- (void)dealloc;
 - (id)initWithStoreDescription:(id)arg1;
 - (id)init;
 

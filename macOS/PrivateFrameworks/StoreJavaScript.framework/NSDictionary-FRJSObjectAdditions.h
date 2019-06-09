@@ -7,6 +7,7 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (FRJSObjectAdditions)
+- (void)setMessagingDelegate:(id)arg1;
 - (void)unprotect;
 - (void)protect;
 @end

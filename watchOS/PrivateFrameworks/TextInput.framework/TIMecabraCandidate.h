@@ -16,15 +16,21 @@
     _Bool _isAutocorrection;
     _Bool _OTAWordListCandidate;
     _Bool _regionalCandidate;
+    _Bool _responseKitCandidate;
+    _Bool _continuousPathConversion;
     NSString *_candidate;
     NSString *_input;
     NSNumber *_mecabraCandidatePointerValue;
     unsigned int _deleteCount;
     int _cursorMovement;
+    NSString *_responseKitCategory;
 }
 
 + (int)type;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, getter=isContinuousPathConversion) _Bool continuousPathConversion; // @synthesize continuousPathConversion=_continuousPathConversion;
+- (id)responseKitCategory;
+- (_Bool)isResponseKitCandidate;
 - (int)cursorMovement;
 - (_Bool)isRegionalCandidate;
 - (_Bool)isOTAWordListCandidate;
@@ -46,6 +52,7 @@
 - (id)label;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 withFlags:(int)arg4 deleteCount:(unsigned int)arg5 cursorMovement:(int)arg6;
 - (id)initWithCandidate:(id)arg1 forInput:(id)arg2 mecabraCandidatePointerValue:(id)arg3 withFlags:(int)arg4;
+- (id)initWithResponseKitString:(id)arg1 responseKitCategory:(id)arg2 mecabraCandidatePointerValue:(id)arg3;
 - (id)initWithSurface:(id)arg1 input:(id)arg2 mecabraCandidatePointerValue:(id)arg3;
 
 @end

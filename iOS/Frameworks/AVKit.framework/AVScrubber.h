@@ -12,9 +12,9 @@
 @class NSArray, NSMutableArray, NSString, NSTimer, UIImageView, UIScrollView, UISelectionFeedbackGenerator, UIView;
 @protocol AVScrubberDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVScrubber : UISlider <UIScrollViewDelegate, AVExternalGestureRecognizerPreventing>
 {
-    struct CGPoint _previousTouchLocationInView;
     double _trackingStartTime;
     float _previousValue;
     double _previousValueChangeTime;
@@ -23,10 +23,14 @@
     _Bool _scrollScrubbing;
     _Bool _slowKnobMovementDetected;
     _Bool _shouldRecoverFromPrecisionScrubbingIfNeeded;
+    _Bool _scrubsWhenTappedAnywhere;
+    _Bool _canChangeScrubbingSpeed;
     _Bool _collapsed;
     _Bool _included;
+    _Bool _removed;
     _Bool _hasAlternateAppearance;
     _Bool _hasFullScreenAppearance;
+    _Bool _hasChangedLocationAtLeastOnce;
     float _estimatedFrameRate;
     float _rate;
     UISelectionFeedbackGenerator *_feedbackGenerator;
@@ -45,11 +49,15 @@
 }
 
 + (id)keyPathsForValuesAffectingLocalizedScrubbingSpeedName;
+@property(nonatomic) _Bool hasChangedLocationAtLeastOnce; // @synthesize hasChangedLocationAtLeastOnce=_hasChangedLocationAtLeastOnce;
 @property(nonatomic) _Bool hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) _Bool hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
+@property(nonatomic, getter=isRemoved) _Bool removed; // @synthesize removed=_removed;
 @property(nonatomic, getter=isIncluded) _Bool included; // @synthesize included=_included;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
+@property(nonatomic) _Bool canChangeScrubbingSpeed; // @synthesize canChangeScrubbingSpeed=_canChangeScrubbingSpeed;
+@property(nonatomic) _Bool scrubsWhenTappedAnywhere; // @synthesize scrubsWhenTappedAnywhere=_scrubsWhenTappedAnywhere;
 @property(nonatomic) double timestampWhenTrackingEnded; // @synthesize timestampWhenTrackingEnded=_timestampWhenTrackingEnded;
 @property(retain, nonatomic) NSTimer *updateSlowKnobMovementDetectedTimer; // @synthesize updateSlowKnobMovementDetectedTimer=_updateSlowKnobMovementDetectedTimer;
 @property(nonatomic) __weak UIImageView *currentThumbView; // @synthesize currentThumbView=_currentThumbView;

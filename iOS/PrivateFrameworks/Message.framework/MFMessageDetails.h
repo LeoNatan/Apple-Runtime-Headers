@@ -13,10 +13,10 @@
 @interface MFMessageDetails : NSObject <MFBaseMessage>
 {
     MFMessageLibrary *library;
-    unsigned int libraryID;
+    long long libraryID;
     unsigned long long messageFlags;
     unsigned int uid;
-    unsigned int mailboxID;
+    long long mailboxID;
     long long conversationHash;
     long long messageIDHash;
     unsigned int dateReceived;
@@ -30,9 +30,10 @@
 @property(readonly, nonatomic) unsigned int dateReceivedInterval; // @synthesize dateReceivedInterval=dateReceived;
 @property(readonly, nonatomic) unsigned long long messageFlags; // @synthesize messageFlags;
 @property(readonly, nonatomic) long long messageIDHash; // @synthesize messageIDHash;
-@property(readonly, nonatomic) unsigned int mailboxID; // @synthesize mailboxID;
-@property(readonly, nonatomic) unsigned int libraryID; // @synthesize libraryID;
+@property(readonly, nonatomic) long long mailboxID; // @synthesize mailboxID;
+@property(readonly, nonatomic) long long libraryID; // @synthesize libraryID;
 @property(readonly, nonatomic) unsigned int uid; // @synthesize uid;
+- (void).cxx_destruct;
 - (id)copyMessageInfo;
 @property(readonly, nonatomic) _Bool senderVIP;
 @property(readonly, nonatomic) _Bool flagged;
@@ -46,7 +47,6 @@
 @property(readonly, nonatomic, getter=isLibraryMessage) _Bool libraryMessage;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

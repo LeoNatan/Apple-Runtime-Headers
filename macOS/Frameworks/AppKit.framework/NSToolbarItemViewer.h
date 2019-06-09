@@ -25,6 +25,7 @@
     struct CGSize _scalableMinIconSize;
     struct CGSize _scalableMaxIconSize;
     double _overriddenMaxWidth;
+    double _preferredTrailingPosition;
     struct _NSToolbarMotion *_motion;
     double _xOriginForLayout;
     double _iconWidthForLayout;
@@ -51,16 +52,19 @@
         unsigned int accessibilityAddedDescriptionToSubelements:1;
         unsigned int configuringForLayout:1;
         unsigned int needsLayoutAfterSubviewsBorrowed:1;
-        unsigned int UNUSED:14;
+        unsigned int needsPreferredTrailingPositionUpdate:1;
+        unsigned int UNUSED:13;
     } _tbivFlags;
 }
 
 - (id)_toolbarView;
 - (void)_menuFormRepresentationChanged;
 - (void)constraintsDidChangeInEngine:(id)arg1;
+- (void)_setLayoutEngine:(id)arg1;
 - (struct CGSize)_scalableMaxIconSize;
 - (struct CGSize)_scalableMinIconSize;
 - (void)_updateMeasuredSizes;
+- (void)_updatePreferredTrailingPosition;
 - (void)_itemChangedLabelOrPaletteLabel;
 - (void)_itemLayoutChanged;
 - (void)_itemChangedToolTip;
@@ -68,6 +72,8 @@
 - (void)_itemChanged;
 - (long long)_itemVisibilityPriority;
 - (BOOL)_labelOnlyShowsAsPopupMenu;
+- (BOOL)_needsPreferredTrailingPositionUpdate;
+- (void)_setNeedsPreferredTrailingPositionUpdate:(BOOL)arg1;
 - (BOOL)_needsViewerLayout;
 - (void)_setNeedsViewerLayout:(BOOL)arg1;
 - (BOOL)_needsModeConfiguration;
@@ -132,14 +138,9 @@
 - (void)_startInsertionOptimization;
 - (void)setFrameOrigin:(struct CGPoint)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
-- (void)viewWillMoveToWindow:(id)arg1;
-- (void)viewDidMoveToWindow;
-- (void)setLayer:(id)arg1;
-- (void)_stopWatchingBackgroundGradientNotification;
-- (void)_watchBackgroundGradientNotification;
-- (void)_invalidateLabelViewsWhenLayerBacked:(id)arg1;
 - (struct CGSize)minViewerSize;
 - (void)_setOverriddenMaxWidth:(double)arg1;
+@property(readonly) BOOL participatesInOverflow;
 @property(readonly) double preferredTrailingPosition;
 @property long long priorityIndex;
 @property(readonly) BOOL isSpace;

@@ -17,14 +17,11 @@
 + (id)predicateForArchival;
 + (id)predicatesForFacesNeedingFaceCropGeneration;
 + (id)predicatesToExcludeNonVisibleFaces;
-+ (void)batchFetchKeyFacesByPersonUUIDWithPersonUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
-+ (_Bool)facesSyncFeatureEnabled;
++ (void)batchFetchKeyFacesByPersonUUIDWithPersonUUIDs:(id)arg1 library:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)batchFetchDetectedFacesByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 library:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (unsigned int)countOfHiddenFacesOnAssetsWithObjectIDs:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)detectedFaceWithUUID:(id)arg1 inManagedObjectContext:(id)arg2;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)insertInManagedObjectContext:(id)arg1;
 + (void)enumerateAssetUUIDsForSearchIndexingWithDetctedFaceUUIDs:(id)arg1 managedObjectContext:(id)arg2 assetUUIDHandler:(CDUnknownBlockType)arg3;
 + (void)resetCloudStateInPhotoLibrary:(id)arg1 hardReset:(_Bool)arg2;
 + (int)resetAssetForAllSyncableFacesInManagedObjectContext:(id)arg1 error:(id *)arg2;
@@ -47,6 +44,13 @@
 - (void)willSave;
 - (void)delete;
 - (void)awakeFromInsert;
+- (_Bool)validForPersistenceChangedForChangedKeys:(id)arg1;
+- (id)payloadIDForTombstone:(id)arg1;
+- (id)payloadForChangedKeys:(id)arg1;
+- (id)payloadID;
+- (_Bool)isValidForPersistence;
+- (double)photosFaceRepresentationQuality;
+- (double)photosFaceRepresentationRoll;
 - (id)photosFaceRepresentationLocalIdentifier;
 - (int)photosFaceRepresentationClusterSequenceNumber;
 - (int)photosFaceRepresentationQualityMeasure;
@@ -111,11 +115,13 @@
 @property(retain, nonatomic) PLPerson *person; // @dynamic person;
 @property(retain, nonatomic) PLPerson *personBeingKeyFace; // @dynamic personBeingKeyFace;
 @property(nonatomic) double poseYaw; // @dynamic poseYaw;
+@property(nonatomic) double quality; // @dynamic quality;
 @property(nonatomic) int qualityMeasure; // @dynamic qualityMeasure;
 @property(retain, nonatomic) NSSet *rejectedPersons; // @dynamic rejectedPersons;
 @property(retain, nonatomic) NSSet *rejectedPersonsNeedingFaceCrops; // @dynamic rejectedPersonsNeedingFaceCrops;
 @property(nonatomic) double rightEyeX; // @dynamic rightEyeX;
 @property(nonatomic) double rightEyeY; // @dynamic rightEyeY;
+@property(nonatomic) double roll; // @dynamic roll;
 @property(nonatomic) double size; // @dynamic size;
 @property(nonatomic) unsigned short smileType; // @dynamic smileType;
 @property(nonatomic) long long sourceHeight; // @dynamic sourceHeight;
@@ -123,6 +129,7 @@
 @property(readonly) Class superclass;
 @property(nonatomic) int trainingType; // @dynamic trainingType;
 @property(retain, nonatomic) NSString *uuid; // @dynamic uuid;
+@property(nonatomic) double yaw; // @dynamic yaw;
 
 @end
 

@@ -6,9 +6,9 @@
 
 #import <DoNotDisturbServer/NSObject-Protocol.h>
 
-@class DNDModeAssertionInvalidation, NSString;
+@class DNDModeAssertion, DNDModeAssertionInvalidation, NSArray;
 
 @protocol DNDRemoteServiceClientModeAssertionProtocol <NSObject>
-- (void)deliverModeAssertionInvalidation:(DNDModeAssertionInvalidation *)arg1 forClientIdentifier:(NSString *)arg2;
+- (void)deliverActiveModeAssertionUpdate:(DNDModeAssertion *)arg1 invalidation:(DNDModeAssertionInvalidation *)arg2 clientIdentifiers:(NSArray *)arg3;
 @end
 

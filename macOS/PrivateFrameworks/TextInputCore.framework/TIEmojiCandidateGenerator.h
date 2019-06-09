@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)logEmojiUsageFromCandidateBar:(id)arg1;
 - (id)emojiAdornmentCandidatesForKeyboardState:(id)arg1;
+- (id)emojiReplacementCandidatesForText:(id)arg1;
 - (id)emojiReplacementCandidatesForKeyboardState:(id)arg1;
 - (id)emojiReplacementCandidates:(id)arg1;
 - (void)updateEmojiStatusForKeyboardState:(id)arg1;

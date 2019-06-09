@@ -13,8 +13,11 @@
 {
 }
 
++ (id)_secureCodingLifetimeClasses;
 + (_Bool)supportsSecureCoding;
 + (id)lifetimeForUserRequest;
++ (id)lifetimeUntilEndOfScheduleWithIdentifier:(id)arg1;
++ (id)lifetimeMatchingScheduleWithIdentifier:(id)arg1;
 + (id)lifetimeWithCalendarEventUniqueID:(id)arg1 occurrenceDate:(id)arg2;
 + (id)lifetimeUntilEndOfCalendarEventWithUniqueID:(id)arg1 occurrenceDate:(id)arg2;
 + (id)lifetimeWithDateInterval:(id)arg1;

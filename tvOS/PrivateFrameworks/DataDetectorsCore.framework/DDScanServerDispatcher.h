@@ -7,21 +7,30 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface DDScanServerDispatcher : NSObject
 {
     NSObject<OS_dispatch_queue> *_scannerQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
+    NSObject<OS_dispatch_queue> *_reportQueue;
+    NSObject<OS_dispatch_source> *_memoryWarningSource;
+    _Bool _memoryWarningInProgress;
     NSMutableDictionary *_scanners;
     _Bool _tearDownRequested;
+    unsigned long long _jobIdentifier;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
-- (void)recycleScanner:(id)arg1 fromList:(id)arg2;
-- (void)scannerType:(int)arg1 sync:(_Bool)arg2 runTask:(CDUnknownBlockType)arg3;
-- (id)scannerListForType:(int)arg1;
+- (void)recycleScanner:(id)arg1 fromList:(id)arg2 sameQueue:(_Bool)arg3;
+- (void)cancelJob:(long long)arg1;
+- (long long)scannerConf:(id)arg1 sync:(_Bool)arg2 shortTask:(_Bool)arg3 runTask:(CDUnknownBlockType)arg4;
+- (long long)emptyIdentifier;
+- (_Bool)reachedMaxSimultaneousTask;
+- (id)scannerListForConfiguration:(id)arg1;
+- (id)reportQueue;
 - (id)init;
 
 @end

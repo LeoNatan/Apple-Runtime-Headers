@@ -20,7 +20,10 @@
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 @property(retain, nonatomic) TIKeyboardTouchEvent *touchEvent; // @synthesize touchEvent=_touchEvent;
 - (void).cxx_destruct;
+- (void)replaceDocumentState:(id)arg1;
 - (id)shortDescription;
+- (void)removeContextFromKeyboardState;
+- (id)currentKeyboardState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)applyToStatistic:(id)arg1;

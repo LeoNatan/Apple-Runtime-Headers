@@ -14,7 +14,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_requestsById;
     NSMutableDictionary *_progressById;
-    int _currentRequestId;
+    // Error parsing type: Ai, name: _currentRequestId
     id <PLAssetDownloadRequestDelegate> _delegate;
 }
 

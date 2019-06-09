@@ -7,6 +7,10 @@
 #import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (WKURLSchemeTask)
++ (id)resultsDictionary;
 - (void)removeURLSchemeTask:(id)arg1;
+- (void)setLongLookDoneTime:(double)arg1;
+- (void)setQuickLookDoneTime:(double)arg1;
+- (void)setShowMessageStartTime:(double)arg1;
 @end
 

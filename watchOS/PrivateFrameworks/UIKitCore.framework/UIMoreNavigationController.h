@@ -21,6 +21,7 @@
 @property(nonatomic) _Bool moreViewControllersChanged;
 @property(nonatomic) _Bool allowsCustomizing;
 @property(retain, nonatomic) NSArray *moreViewControllers;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
 - (void)_redisplayMoreTableView;
 - (void)didShowViewController:(id)arg1 animated:(_Bool)arg2;

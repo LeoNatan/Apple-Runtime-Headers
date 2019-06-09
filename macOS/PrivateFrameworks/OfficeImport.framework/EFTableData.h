@@ -8,6 +8,7 @@
 
 @class EDReference, EDTable;
 
+__attribute__((visibility("hidden")))
 @interface EFTableData : NSObject
 {
     struct EFRefTok mRefTok;

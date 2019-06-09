@@ -25,10 +25,8 @@
     unsigned int _launchAssertionFlags;
     id <FBProcessWatchdogProviding> _watchdogProvider;
     double _watchdogExtension;
-    double _watchdogScaleFactor;
 }
 
-@property(nonatomic) double watchdogScaleFactor; // @synthesize watchdogScaleFactor=_watchdogScaleFactor;
 @property(nonatomic) double watchdogExtension; // @synthesize watchdogExtension=_watchdogExtension;
 @property(retain, nonatomic) id <FBProcessWatchdogProviding> watchdogProvider; // @synthesize watchdogProvider=_watchdogProvider;
 @property(nonatomic) unsigned int launchAssertionFlags; // @synthesize launchAssertionFlags=_launchAssertionFlags;
@@ -45,7 +43,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)_launchAssertionFlags;
 - (id)_initWithExecutionContext:(id)arg1;
-- (id)init;
 
 @end
 

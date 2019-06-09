@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)errorBarWithChart:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (int)type;
 - (void)setValue:(double)arg1;
 - (double)value;
-- (void)dealloc;
 - (id)initWithChart:(id)arg1;
 
 @end

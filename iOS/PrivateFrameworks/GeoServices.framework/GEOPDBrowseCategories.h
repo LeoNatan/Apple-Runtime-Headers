@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_browseCategorys;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)browseCategoryType;
-@property(retain, nonatomic) NSMutableArray *browseCategorys; // @synthesize browseCategorys=_browseCategorys;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)browseCategoryAtIndex:(unsigned long long)arg1;
 - (unsigned long long)browseCategorysCount;
 - (void)addBrowseCategory:(id)arg1;
 - (void)clearBrowseCategorys;
+@property(retain, nonatomic) NSMutableArray *browseCategorys;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSArray, NSHashTable, NSMapTable, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuBarTemplateShelfFixedElementsCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView>
 {
     NSHashTable *_artworkRelatedChildViewElementViews;

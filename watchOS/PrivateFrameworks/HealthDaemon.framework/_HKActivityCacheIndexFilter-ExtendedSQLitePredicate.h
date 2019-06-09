@@ -8,5 +8,6 @@
 
 @interface _HKActivityCacheIndexFilter (ExtendedSQLitePredicate)
 - (id)predicateWithProfile:(id)arg1;
+- (id)_filterIgnoringActivityCacheIndexFilter;
 @end
 

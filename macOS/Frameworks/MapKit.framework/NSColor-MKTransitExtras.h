@@ -8,5 +8,12 @@
 
 @interface NSColor (MKTransitExtras)
 + (id)_mapkit_colorForTransitLine:(id)arg1;
++ (id)_mapkit_userLocationAccuracyRingFillColor;
++ (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
++ (id)_mapkit_userLocationAccuracyRingStrokeColor;
++ (BOOL)_getColorComponent:(double *)arg1 fromSubString:(id)arg2;
++ (id)_maps_colorFromHexString:(id)arg1;
+- (id)_mapkit_blendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
+- (id)_maps_hexString;
 @end
 

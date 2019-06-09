@@ -6,7 +6,6 @@
 
 #import <AutoLoop/VideoAccessIndex.h>
 
-__attribute__((visibility("hidden")))
 @interface VideoAccessIndexNorm : VideoAccessIndex
 {
     struct FrameTimeNormalizer *mNormalizer;

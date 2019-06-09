@@ -139,7 +139,7 @@
 - (id)_createOneUpViewControllerWithBrowsingSession:(id)arg1 options:(unsigned long long)arg2;
 - (void)_didFinishTransitioningToOneUp;
 - (void)_disappearingTilingView:(id)arg1 animationCompleted:(_Bool)arg2;
-- (void)_cleanUpAfterTilingViewTransitionAnimated:(_Bool)arg1;
+- (void)_cleanUpAfterTilingViewTransitionAnimated:(_Bool)arg1 transitionAborted:(_Bool)arg2;
 - (void)_updateAssetReferencesDisplayedInTilingView;
 - (void)_invalidateAssetReferencesDisplayedInTilingView;
 - (void)_handleTap:(id)arg1;

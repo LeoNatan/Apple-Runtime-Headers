@@ -33,9 +33,9 @@ __attribute__((visibility("hidden")))
 - (void)_createConstraints;
 - (void)_updateLabelText;
 - (void)updateButtonText;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_punchOutButtonSelected:(id)arg1;
-- (void)_updateFonts:(id)arg1;
+- (void)_updateFonts;
 - (void)_updateShouldLayoutStack;
 - (void)_contentSizeDidChangeNotificationHandler;
 - (void)_commonInit;

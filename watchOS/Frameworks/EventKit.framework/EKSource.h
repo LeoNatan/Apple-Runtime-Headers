@@ -6,7 +6,7 @@
 
 #import <EventKit/EKObject.h>
 
-@class CDBSourceConstraints, EKAvailabilityCache, NSDate, NSNumber, NSSet, NSString;
+@class EKAvailabilityCache, EKSourceConstraints, NSDate, NSNumber, NSSet, NSString, REMObjectID;
 
 @interface EKSource : EKObject
 {
@@ -31,7 +31,8 @@
 @property(retain, nonatomic) NSString *cachedHost; // @synthesize cachedHost=_cachedHost;
 @property(retain, nonatomic) NSDate *timeOfLastExternalIdentificationCache; // @synthesize timeOfLastExternalIdentificationCache=_timeOfLastExternalIdentificationCache;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) _Bool syncs;
+- (int)managedConfigurationAccountAccess;
+@property(readonly, nonatomic) _Bool isWritable;
 @property(readonly, nonatomic) NSSet *ownerAddresses;
 @property(readonly, nonatomic) int serverPort;
 @property(readonly, nonatomic) NSString *serverHost;
@@ -42,12 +43,14 @@
 - (_Bool)remove:(id *)arg1;
 - (_Bool)commit:(id *)arg1;
 - (id)description;
+@property(readonly, nonatomic) _Bool syncs;
 @property(readonly, nonatomic) _Bool isSyncing;
 @property(retain, nonatomic) NSDate *lastSyncEndDate;
 @property(retain, nonatomic) NSDate *lastSyncStartDate;
 @property(nonatomic) unsigned int lastSyncError;
+@property(readonly, nonatomic) NSString *personaIdentifier;
 @property(readonly, nonatomic) int displayOrderForNewCalendar;
-@property(readonly, nonatomic) CDBSourceConstraints *constraints;
+@property(readonly, nonatomic) EKSourceConstraints *constraints;
 @property(readonly, nonatomic) _Bool supportsPhoneNumbers;
 @property(readonly, nonatomic) _Bool supportsJunkReporting;
 - (void)_countCalendarItemsOfCalType:(int)arg1 resultHandler:(CDUnknownBlockType)arg2;
@@ -56,10 +59,14 @@
 @property(readonly, nonatomic) _Bool supportsReminderActions;
 @property(readonly, nonatomic) _Bool supportsCalendarCreation;
 - (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
+- (_Bool)removeCalendarItemsOlderThanDate:(id)arg1 entityTypeMask:(unsigned int)arg2 error:(id *)arg3;
+- (id)calendarWithExternalIdentifier:(id)arg1;
 - (id)calendarsForEntityType:(unsigned int)arg1;
 @property(readonly, nonatomic) NSSet *allCalendars;
 @property(readonly, nonatomic) NSSet *calendars;
 @property(readonly, nonatomic) _Bool isFacebookSource;
+@property(readonly, nonatomic) _Bool isDelegate;
+@property(copy, nonatomic) NSString *delegatedAccountOwnerStoreID;
 @property(nonatomic) _Bool prohibitsYearlyRecurrenceInterval;
 @property(nonatomic) _Bool prohibitsMultipleMonthsInYearlyRecurrence;
 @property(nonatomic) _Bool prohibitsMultipleDaysInMonthlyRecurrence;
@@ -81,6 +88,7 @@
 - (void)setDisabled:(_Bool)arg1;
 - (_Bool)disabled;
 @property(nonatomic) _Bool usesSelfAttendee;
+@property(nonatomic) _Bool showsNotifications;
 @property(nonatomic) _Bool wasMigrated;
 - (void)setFlag:(int)arg1 value:(_Bool)arg2;
 - (_Bool)flag:(int)arg1;
@@ -91,6 +99,7 @@
 @property(copy, nonatomic) NSString *externalModificationTag;
 @property(retain, nonatomic) NSString *constraintsDescriptionPath;
 @property(copy, nonatomic) NSString *externalID;
+@property(readonly, nonatomic) REMObjectID *remAccountObjectID;
 @property(retain, nonatomic) NSString *sourceIdentifier;
 @property(copy, nonatomic) NSNumber *defaultAlarmOffset;
 @property(copy, nonatomic) NSString *title;

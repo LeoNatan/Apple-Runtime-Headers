@@ -6,12 +6,14 @@
 
 #import <PersonalizationPortrait/PPNamedEntityRecord.h>
 
-@class NSString, PPNamedEntity, PPSource;
+@class NSString, PPNamedEntity, PPNamedEntityMetadata, PPSource;
 
 @interface PPMutableNamedEntityRecord : PPNamedEntityRecord
 {
 }
 
+@property(retain, nonatomic) PPNamedEntityMetadata *metadata; // @dynamic metadata;
+@property(nonatomic) double sentimentScore; // @dynamic sentimentScore;
 @property(nonatomic) unsigned char changeType; // @dynamic changeType;
 @property(nonatomic) unsigned int extractionAssetVersion; // @dynamic extractionAssetVersion;
 @property(retain, nonatomic) NSString *extractionOsBuild; // @dynamic extractionOsBuild;

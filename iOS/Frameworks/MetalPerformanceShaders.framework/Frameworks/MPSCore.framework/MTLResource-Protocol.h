@@ -11,7 +11,10 @@
 
 @protocol MTLResource <NSObject>
 @property(readonly) unsigned long long allocatedSize;
+@property(readonly) unsigned long long heapOffset;
 @property(readonly) id <MTLHeap> heap;
+@property(readonly) unsigned long long resourceOptions;
+@property(readonly) unsigned long long hazardTrackingMode;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) unsigned long long cpuCacheMode;
 @property(readonly) id <MTLDevice> device;

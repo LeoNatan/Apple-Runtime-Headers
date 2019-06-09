@@ -6,45 +6,45 @@
 
 #import <objc/NSObject.h>
 
-#import <FrontBoardServices/FBSDisplayLayoutMonitorClientDelegate-Protocol.h>
+#import <FrontBoardServices/BSInvalidatable-Protocol.h>
 
-@class FBSDisplayLayout, FBSDisplayLayoutMonitorClient, NSHashTable, NSString;
-@protocol OS_dispatch_queue;
+@class BSServiceConnectionEndpoint, FBSDisplayLayout, NSMapTable, NSString, _FBSDisplayLayoutServiceAssertion;
 
-@interface FBSDisplayLayoutMonitor : NSObject <FBSDisplayLayoutMonitorClientDelegate>
+@interface FBSDisplayLayoutMonitor : NSObject <BSInvalidatable>
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_calloutQueue;
-    long long _displayType;
-    _Bool _queue_invalidated;
-    NSHashTable *_queue_observers;
-    FBSDisplayLayout *_queue_currentLayout;
-    CDUnknownBlockType _queue_handler;
-    FBSDisplayLayoutMonitorClient *_queue_client;
-    _Bool _sharedInstance;
-    unsigned long long _qualityOfService;
+    struct os_unfair_lock_s _lock;
+    _FBSDisplayLayoutServiceAssertion *_lock_handlerAssertion;
+    _Bool _lock_invalidated;
+    BSServiceConnectionEndpoint *_deprecated_endpoint;
+    CDUnknownBlockType _lock_deprecated_handler;
+    NSMapTable *_lock_deprecated_observerAssertions;
+    BOOL _deprecated_qos;
+    long long _deprecated_displayType;
+    _Bool _deprecated_singleton;
+    _Bool _deprecated_mutable;
 }
 
 + (id)sharedMonitorForDisplayType:(long long)arg1;
-@property(readonly, nonatomic) unsigned long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
-@property(readonly, nonatomic) long long displayType; // @synthesize displayType=_displayType;
++ (id)_endpointForDisplayType:(long long)arg1;
++ (id)interface;
++ (id)mainDisplayInstanceIdentifier;
++ (id)serviceIdentifier;
++ (id)monitorWithConfiguration:(id)arg1;
 - (void).cxx_destruct;
-- (void)client:(id)arg1 handleNewDisplayLayout:(id)arg2 withContext:(id)arg3;
-- (unsigned long long)clientQualityOfService:(id)arg1;
-- (long long)clientDisplayType:(id)arg1;
-- (void)_calloutQueue_postLayout:(id)arg1 withContext:(id)arg2 toObserver:(id)arg3;
-- (void)_queue_updateLayout:(id)arg1 withContext:(id)arg2;
-- (void)_queue_updateClient;
-- (id)_observers;
+- (unsigned long long)qualityOfService;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(readonly, nonatomic) FBSDisplayLayout *currentLayout;
-@property(copy, nonatomic) CDUnknownBlockType handler;
-- (void)invalidate;
-- (void)dealloc;
+- (void)setHandler:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)handler;
+- (long long)displayType;
 - (id)initWithDisplayType:(long long)arg1 qualityOfService:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)initWithDisplayType:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)initWithDisplayType:(long long)arg1;
+- (void)invalidate;
+@property(readonly, nonatomic) FBSDisplayLayout *currentLayout;
+- (void)dealloc;
+- (id)_initWithConfiguration:(id)arg1 singleton:(_Bool)arg2 needsDefaultPriority:(_Bool)arg3 mutable:(_Bool)arg4 displayType:(long long)arg5 mutableHandler:(CDUnknownBlockType)arg6;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

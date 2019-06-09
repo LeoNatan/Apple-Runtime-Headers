@@ -12,6 +12,7 @@
 
 + (id)confirmationRequiredWithNoteContentTypeToConfirm:(int)arg1;
 + (id)successWithResolvedNoteContentType:(int)arg1;
+- (void)transformResolutionResultForIntent:(id)arg1 intentSlotDescription:(id)arg2 withOptionsProvider:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
 

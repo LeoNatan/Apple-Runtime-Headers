@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (id)initWithAutocompleteResultSortPriorityMapping:(id)arg1;
 - (id)initWithEntries:(id)arg1;
+- (id)init;
 
 @end
 

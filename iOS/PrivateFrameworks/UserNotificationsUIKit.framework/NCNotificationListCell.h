@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-#import <UserNotificationsUIKit/NCLegibilitySettingsAdjusting-Protocol.h>
+#import <UserNotificationsUIKit/MTMaterialGrouping-Protocol.h>
 #import <UserNotificationsUIKit/NCNotificationViewControllerObserving-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 #import <UserNotificationsUIKit/UIGestureRecognizerDelegate-Protocol.h>
@@ -15,7 +15,7 @@
 @class NCNotificationListCellActionButtonsView, NCNotificationViewController, NSString, UIPanGestureRecognizer, UIView, UIViewFloatAnimatableProperty;
 @protocol NCNotificationListCellDelegate;
 
-@interface NCNotificationListCell : UICollectionViewCell <UIScrollViewDelegate, UIGestureRecognizerDelegate, NCNotificationViewControllerObserving, PLContentSizeCategoryAdjusting, NCLegibilitySettingsAdjusting>
+@interface NCNotificationListCell : UICollectionViewCell <UIScrollViewDelegate, UIGestureRecognizerDelegate, NCNotificationViewControllerObserving, PLContentSizeCategoryAdjusting, MTMaterialGrouping>
 {
     _Bool _adjustsFontForContentSizeCategory;
     _Bool _configured;
@@ -23,10 +23,10 @@
     _Bool _executingDefaultAction;
     _Bool _performingSwipeHinting;
     _Bool _performingOrbHinting;
+    NSString *_materialGroupNameBase;
     NCNotificationViewController *_contentViewController;
     id <NCNotificationListCellDelegate> _delegate;
     double _overrideAlpha;
-    NSString *_backgroundGroupName;
     NCNotificationListCellActionButtonsView *_leftActionButtonsView;
     NCNotificationListCellActionButtonsView *_rightActionButtonsView;
     UIView *_leftActionButtonsClippingRevealView;
@@ -52,7 +52,6 @@
 @property(retain, nonatomic) UIView *leftActionButtonsClippingRevealView; // @synthesize leftActionButtonsClippingRevealView=_leftActionButtonsClippingRevealView;
 @property(retain, nonatomic) NCNotificationListCellActionButtonsView *rightActionButtonsView; // @synthesize rightActionButtonsView=_rightActionButtonsView;
 @property(retain, nonatomic) NCNotificationListCellActionButtonsView *leftActionButtonsView; // @synthesize leftActionButtonsView=_leftActionButtonsView;
-@property(copy, nonatomic) NSString *backgroundGroupName; // @synthesize backgroundGroupName=_backgroundGroupName;
 @property(nonatomic) struct CGPoint overrideCenter; // @synthesize overrideCenter=_overrideCenter;
 @property(nonatomic) double overrideAlpha; // @synthesize overrideAlpha=_overrideAlpha;
 @property(nonatomic) _Bool shouldOverrideForReveal; // @synthesize shouldOverrideForReveal=_shouldOverrideForReveal;
@@ -60,11 +59,11 @@
 @property(nonatomic) struct UIEdgeInsets insetMargins; // @synthesize insetMargins=_insetMargins;
 @property(nonatomic) __weak id <NCNotificationListCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NCNotificationViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
+@property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 - (void).cxx_destruct;
-- (void)adjustForLegibilitySettingsChange:(id)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
+- (_Bool)_delegateAllowsPerformingClipping;
 - (_Bool)_shouldPerformClipping;
 - (void)_resetClipping;
 - (void)_setupClipping;
@@ -108,6 +107,7 @@
 - (void)applyLayoutAttributes:(id)arg1;
 - (_Bool)_disableRasterizeInAnimations;
 - (void)resetCellScrollPositionAnimated:(_Bool)arg1;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)prepareForReuse;
 - (void)cellOpenButtonPressed:(id)arg1;
 - (void)cellClearButtonPressed:(id)arg1;

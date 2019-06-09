@@ -8,13 +8,14 @@
 
 #import <PhotosUICore/PXSectionedLayoutDataSourceChangeDetails-Protocol.h>
 
-@class NSDictionary, NSIndexSet, NSString, PXArrayChangeDetails;
+@class NSDictionary, NSIndexSet, NSNumber, NSString, PXArrayChangeDetails;
 
 @interface PXSectionedDataSourceChangeDetails : NSObject <PXSectionedLayoutDataSourceChangeDetails>
 {
     NSDictionary *_itemChangeDetailsBySection;
     NSDictionary *_itemsWithSubitemChangesBySection;
     NSDictionary *_subitemChangeDetailsByItemBySection;
+    NSNumber *_hasAnyInsertionsRemovalsOrMovesCache;
     unsigned long long _fromDataSourceIdentifier;
     unsigned long long _toDataSourceIdentifier;
     PXArrayChangeDetails *_sectionChanges;
@@ -22,6 +23,9 @@
 }
 
 + (void)debug_assertValidChangeDetails:(id)arg1 fromDataSource:(id)arg2 toDataSource:(id)arg3;
++ (id)changeDetailsWithNoChangesFromDataSourceIdentifier:(unsigned long long)arg1 toDataSourceIdentifier:(unsigned long long)arg2;
++ (id)changeDetailsWithoutIncrementalChangesFromDataSourceIdentifier:(unsigned long long)arg1 toDataSourceIdentifier:(unsigned long long)arg2;
++ (_Bool)changesHaveAnyInsertionsRemovalsOrMoves:(id)arg1;
 + (id)indexPathSetAfterRevertingChanges:(id)arg1 fromIndexPathSet:(id)arg2 hasIncrementalChanges:(out _Bool *)arg3;
 + (id)indexPathSetAfterApplyingChanges:(id)arg1 toIndexPathSet:(id)arg2 hasIncrementalChanges:(out _Bool *)arg3;
 + (struct PXSimpleIndexPath)indexPathAfterRevertingChanges:(id)arg1 fromIndexPath:(struct PXSimpleIndexPath)arg2 hasIncrementalChanges:(out _Bool *)arg3 objectChanged:(out _Bool *)arg4;
@@ -39,6 +43,7 @@
 - (id)indexPathSetAfterApplyingChangesToIndexPathSet:(id)arg1 hasIncrementalChanges:(out _Bool *)arg2;
 - (struct PXSimpleIndexPath)indexPathAfterRevertingChangesFromIndexPath:(struct PXSimpleIndexPath)arg1 hasIncrementalChanges:(out _Bool *)arg2 objectChanged:(out _Bool *)arg3;
 - (struct PXSimpleIndexPath)indexPathAfterApplyingChangesToIndexPath:(struct PXSimpleIndexPath)arg1 hasIncrementalChanges:(out _Bool *)arg2 objectChanged:(out _Bool *)arg3;
+@property(readonly, nonatomic) _Bool hasAnyInsertionsRemovalsOrMoves;
 - (id)subitemChangesInItem:(long long)arg1 section:(long long)arg2;
 - (id)itemsWithSubitemChangesInSection:(long long)arg1;
 - (id)itemChangesInSection:(long long)arg1;

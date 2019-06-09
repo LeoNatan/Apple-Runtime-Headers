@@ -6,16 +6,19 @@
 
 #import <AppKit/NSButton.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit18RoundedImageButton : NSButton
 {
-    // Error parsing type: , name: radius
-    // Error parsing type: , name: buttonStyle
+    // Error parsing type: , name: style
+    // Error parsing type: , name: flatImage
+    // Error parsing type: , name: offColors
+    // Error parsing type: , name: onColors
     // Error parsing type: , name: imageName
+    // Error parsing type: , name: padding
 }
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 @property(nonatomic, readonly) BOOL allowsVibrancy;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

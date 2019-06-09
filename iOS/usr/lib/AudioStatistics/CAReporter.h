@@ -6,31 +6,41 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate;
+@class CAReportingPerformanceObject, NSDate, NSDictionary;
 
 @interface CAReporter : NSObject
 {
+    _Bool _started;
     _Bool _removedByClient;
+    _Bool _connected;
     unsigned short _serviceType;
+    NSDictionary *_configuration;
     long long _reporterID;
     NSDate *_startDate;
+    CAReportingPerformanceObject *_perfObject;
+    unsigned long long _signpostID;
 }
 
-+ (void)sendSingleMessage:(id)arg1 category:(unsigned short)arg2 type:(unsigned short)arg3;
++ (void)sendSingleMessage:(id)arg1 category:(unsigned int)arg2 type:(unsigned short)arg3;
+@property(readonly) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
+@property(retain) CAReportingPerformanceObject *perfObject; // @synthesize perfObject=_perfObject;
+@property _Bool connected; // @synthesize connected=_connected;
 @property _Bool removedByClient; // @synthesize removedByClient=_removedByClient;
+@property _Bool started; // @synthesize started=_started;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned short serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly) long long reporterID; // @synthesize reporterID=_reporterID;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)stop;
-- (void)sendMessage:(id)arg1 category:(unsigned short)arg2 type:(unsigned short)arg3;
+- (void)sendMessage:(id)arg1 category:(unsigned int)arg2 type:(unsigned short)arg3;
 - (void)start;
+@property(retain, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
 - (void)cacheServiceType:(unsigned short)arg1;
 - (void)updateWithReporterID:(long long)arg1;
+- (id)initWithSessionID:(unsigned int)arg1 serviceType:(unsigned short)arg2;
 - (id)initWithReporterID:(long long)arg1 serviceType:(unsigned short)arg2;
 - (id)initWithNewReporterID;
-- (id)init;
 
 @end
 

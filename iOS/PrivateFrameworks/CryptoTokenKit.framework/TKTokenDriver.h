@@ -6,30 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue, TKTokenDriverDelegate;
+@class NSDictionary, NSMutableDictionary, NSString, TKSharedResourceSlot, TKTokenDriverContext;
+@protocol TKTokenDriverDelegate;
 
 @interface TKTokenDriver : NSObject
 {
-    NSMutableDictionary *_contexts;
+    id _keepAlive;
     id <TKTokenDriverDelegate> _delegate;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_tokens;
+    TKTokenDriverContext *_context;
+    NSMutableDictionary *_tokenConnections;
+    TKSharedResourceSlot *_keepAliveResourceSlot;
     NSDictionary *_extensionAttributes;
 }
 
-+ (id)driver;
++ (id)createDriver;
 @property(retain) NSDictionary *extensionAttributes; // @synthesize extensionAttributes=_extensionAttributes;
-@property(retain) NSMutableDictionary *tokens; // @synthesize tokens=_tokens;
-@property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) TKSharedResourceSlot *keepAliveResourceSlot; // @synthesize keepAliveResourceSlot=_keepAliveResourceSlot;
+@property(readonly, nonatomic) NSMutableDictionary *tokenConnections; // @synthesize tokenConnections=_tokenConnections;
+@property(nonatomic) __weak TKTokenDriverContext *context; // @synthesize context=_context;
 @property __weak id <TKTokenDriverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)releaseTokenWithTokenID:(id)arg1;
-- (void)getTokenEndpointWithAttributes:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)invalidateToken:(id)arg1;
-- (void)addTokenDriverContext:(id)arg1;
-- (id)tokenIDForInstanceID:(id)arg1;
+- (void)terminate;
 - (void)getTokenWithAttributes:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)createTokenWithSlot:(id)arg1 AID:(id)arg2 error:(id *)arg3;
+- (void)configureWithReply:(CDUnknownBlockType)arg1;
+- (void)releaseTokenWithInstanceID:(id)arg1;
+- (void)acquireTokenWithSlot:(id)arg1 AID:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)acquireTokenWithInstanceID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)endpointForToken:(id)arg1;
+@property(retain, nonatomic) id keepAlive;
 @property(readonly) NSString *classID;
 - (id)init;
 

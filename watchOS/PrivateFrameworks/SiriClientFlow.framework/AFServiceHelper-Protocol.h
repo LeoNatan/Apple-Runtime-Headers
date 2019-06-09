@@ -9,6 +9,8 @@
 @class AFPeerInfo, NSBundle, NSString, NSURL, SABaseCommand;
 
 @protocol AFServiceHelper <NSObject>
+- (void)prepareForAudioHandoffFailedWithCompletion:(void (^)(void))arg1;
+- (void)prepareForAudioHandoffWithCompletion:(void (^)(_Bool))arg1;
 - (AFPeerInfo *)peerInfoForCurrentCommand;
 - (_Bool)isTimeoutSuspended;
 - (void)handleCommand:(SABaseCommand *)arg1 completion:(void (^)(SABaseCommand *, NSError *))arg2;

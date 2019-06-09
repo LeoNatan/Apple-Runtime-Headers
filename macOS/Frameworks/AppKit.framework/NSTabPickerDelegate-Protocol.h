@@ -13,6 +13,9 @@
 - (void)tabPickerWillClose:(NSTabPickerViewController *)arg1;
 - (void)tabPickerDidOpen:(NSTabPickerViewController *)arg1;
 - (void)tabPickerWillOpen:(NSTabPickerViewController *)arg1;
+- (BOOL)tabPicker:(NSTabPickerViewController *)arg1 highlightStateForTabItem:(NSTabBarItem *)arg2;
+- (struct CGRect)tabPickerFrameForWindowContentAnimation:(NSTabPickerViewController *)arg1;
+- (NSImage *)tabPicker:(NSTabPickerViewController *)arg1 imageForTabItem:(NSTabBarItem *)arg2;
 - (NSView *)tabPicker:(NSTabPickerViewController *)arg1 thumbnailViewForTabItem:(NSTabBarItem *)arg2;
 - (NSImage *)tabBarSnapshotForTabPicker:(NSTabPickerViewController *)arg1;
 - (NSArray *)tabPickerItemsForTabPicker:(NSTabPickerViewController *)arg1;

@@ -12,6 +12,7 @@
 @class NSOperationQueue, NSString, SKUIClientContext, SKUIContentRatingArtworkResourceLoader, SKUIItem, SKUIItemArtworkContext, SKUIItemOffer, SKUIProductPage, SKUIProductPageHeaderFloatingView, SKUIProductPageHeaderView, SSVLoadURLOperation, UIImage, UIPopoverController;
 @protocol SKUIProductPageHeaderViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageHeaderViewController : UIViewController <SKUIItemStateCenterObserver, UIPopoverControllerDelegate>
 {
     UIPopoverController *_activityPopoverController;

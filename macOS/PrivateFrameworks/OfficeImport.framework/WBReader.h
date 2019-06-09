@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, OITSUNoCopyDictionary, WBOfficeArtReaderState, WDDocument;
 
+__attribute__((visibility("hidden")))
 @interface WBReader : OCBReader
 {
     struct WrdNoteTable *mFootnoteTable;

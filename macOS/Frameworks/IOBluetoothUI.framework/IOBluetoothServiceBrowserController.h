@@ -35,6 +35,7 @@
 - (int)discoverAsSheetForWindow:(id)arg1 withRecord:(id *)arg2;
 - (int)discover:(id *)arg1;
 - (struct OpaqueIOBluetoothObjectRef *)getServiceBrowserControllerRef;
+- (id)init;
 
 @end
 

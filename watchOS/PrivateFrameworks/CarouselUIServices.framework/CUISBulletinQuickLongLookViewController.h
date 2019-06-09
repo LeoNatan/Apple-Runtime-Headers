@@ -112,7 +112,7 @@
 - (void)_updateContentFitSize;
 - (void)_updateHeaderFrame;
 - (void)setHeaderInfo:(id)arg1;
-- (void)viewDidLayoutSubviews;
+- (void)viewWillLayoutSubviews;
 - (void)_updateCellWidth;
 - (void)quickboardDidDismissed;
 - (void)viewDidDisappear:(_Bool)arg1;

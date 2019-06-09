@@ -11,6 +11,7 @@
 @class IKAppContext, NSMutableArray, NSString;
 @protocol SKUIPhysicalCirclesTemplateDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPhysicalCirclesTemplateDOMFeature : NSObject <SKUIDOMFeature>
 {
     IKAppContext *_appContext;

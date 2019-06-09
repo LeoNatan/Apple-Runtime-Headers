@@ -8,34 +8,29 @@
 
 #import <SearchUI/SearchUIKeyboardableNavigationProtocol-Protocol.h>
 
-@class NSArray, NSString, SearchUIDragSource, SearchUIDropTarget, UIView, UIViewController;
-@protocol SearchUIFeedbackDelegateInternal, SearchUIResultShortLook, SearchUIRowModel;
+@class NSArray, NSString, SearchUIDragSource, SearchUIRowModel, UIView, UIViewController;
+@protocol SearchUIFeedbackDelegateInternal, SearchUIResultShortLook;
 
 @interface SearchUITableViewCell : UITableViewCell <SearchUIKeyboardableNavigationProtocol>
 {
     _Bool _isExpanded;
-    id <SearchUIRowModel> _rowModel;
-    unsigned long long _style;
+    SearchUIRowModel *_rowModel;
     id <SearchUIFeedbackDelegateInternal> _delegate;
     UIView *_sizingContainer;
     SearchUIDragSource *_dragSource;
-    SearchUIDropTarget *_dropTarget;
     UIViewController<SearchUIResultShortLook> *_shortLookViewController;
 }
 
 + (double)distanceToTopOfAppIconsForMultiResultCell;
-+ (_Bool)canCellExpandWithResults:(id)arg1;
-+ (id)convertResultIfNecessary:(id)arg1;
++ (_Bool)canCellExpandWithResults:(id)arg1 forView:(id)arg2;
 + (id)reuseIdentifierForResult:(id)arg1;
-+ (id)cellViewForRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
-@property __weak UIViewController<SearchUIResultShortLook> *shortLookViewController; // @synthesize shortLookViewController=_shortLookViewController;
-@property(retain) SearchUIDropTarget *dropTarget; // @synthesize dropTarget=_dropTarget;
-@property(retain) SearchUIDragSource *dragSource; // @synthesize dragSource=_dragSource;
-@property(retain) UIView *sizingContainer; // @synthesize sizingContainer=_sizingContainer;
-@property __weak id <SearchUIFeedbackDelegateInternal> delegate; // @synthesize delegate=_delegate;
-@property _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
-@property unsigned long long style; // @synthesize style=_style;
-@property(retain) id <SearchUIRowModel> rowModel; // @synthesize rowModel=_rowModel;
++ (id)cellViewForRowModel:(id)arg1 feedbackDelegate:(id)arg2;
+@property(nonatomic) __weak UIViewController<SearchUIResultShortLook> *shortLookViewController; // @synthesize shortLookViewController=_shortLookViewController;
+@property(retain, nonatomic) SearchUIDragSource *dragSource; // @synthesize dragSource=_dragSource;
+@property(retain, nonatomic) UIView *sizingContainer; // @synthesize sizingContainer=_sizingContainer;
+@property(nonatomic) __weak id <SearchUIFeedbackDelegateInternal> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool isExpanded; // @synthesize isExpanded=_isExpanded;
+@property(retain, nonatomic) SearchUIRowModel *rowModel; // @synthesize rowModel=_rowModel;
 - (void).cxx_destruct;
 - (void)removeKeyboardHandler;
 - (_Bool)navigateKeyboardRight;
@@ -47,19 +42,20 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (_Bool)shouldHideBottomSeparator;
 - (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
-- (void)roundNecessaryCornersForView:(id)arg1;
-- (void)setSectionLocation:(int)arg1 animated:(_Bool)arg2;
+@property(readonly) _Bool shouldDrawBackgroundColor;
 - (_Bool)isExpandable;
 - (_Bool)supportsRecycling;
 - (void)updateExpanded:(_Bool)arg1;
 - (void)updateWithResults:(id)arg1;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 @property(readonly) NSArray *visibleResults;
 - (void)updateWithRowModel:(id)arg1;
-- (id)initWithStyle:(unsigned long long)arg1;
 - (void)updateWithResult:(id)arg1;
+- (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

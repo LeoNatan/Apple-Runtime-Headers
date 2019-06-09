@@ -23,10 +23,10 @@
 - (void)enableModeSwitchingForFrameRate:(_Bool)arg1;
 - (void)enableModeSwitchingForDynamicRange:(_Bool)arg1;
 - (void)fetchCurrentDisplayStateWithReply:(CDUnknownBlockType)arg1;
+- (void)setAudioLatency:(id)arg1 forKey:(id)arg2;
 - (void)displayAssistantDidCompleteForKind:(id)arg1;
 - (void)displayAssistantDidStartForKind:(id)arg1;
 - (void)removeCableCheckHistory;
-- (void)resetPoorCableWarnings;
 - (void)forgetDisplaysForDisplayAssistant;
 - (void)presentDisplayAssistantWithRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)handleRegionChangeWithNewCountryCode:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -34,7 +34,6 @@
 - (void)sleepDisplayWithReply:(CDUnknownBlockType)arg1;
 - (void)updateDisplayManagerWithRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (CDUnknownBlockType)_removePendingReplyHandler:(CDUnknownBlockType)arg1;
-- (_Bool)hasEntitlement:(id *)arg1;
 - (void)handleConnectionInterruption:(id)arg1;
 - (id)initWithRemoteServiceProxy:(id)arg1;
 

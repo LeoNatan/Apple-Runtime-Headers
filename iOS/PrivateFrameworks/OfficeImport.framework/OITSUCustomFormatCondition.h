@@ -13,18 +13,18 @@
 __attribute__((visibility("hidden")))
 @interface OITSUCustomFormatCondition : NSObject <NSCopying>
 {
-    int mConditionType;
-    double mConditionValue;
-    OITSUCustomFormatData *mData;
+    int _conditionType;
+    double _conditionValue;
+    OITSUCustomFormatData *_data;
 }
 
-@property(readonly, nonatomic) OITSUCustomFormatData *data; // @synthesize data=mData;
-@property(readonly, nonatomic) double conditionValue; // @synthesize conditionValue=mConditionValue;
-@property(readonly, nonatomic) int conditionType; // @synthesize conditionType=mConditionType;
+@property(readonly, nonatomic) OITSUCustomFormatData *data; // @synthesize data=_data;
+@property(readonly, nonatomic) double conditionValue; // @synthesize conditionValue=_conditionValue;
+@property(readonly, nonatomic) int conditionType; // @synthesize conditionType=_conditionType;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithType:(int)arg1 value:(double)arg2 data:(id)arg3;
 - (id)init;
 

@@ -10,7 +10,7 @@
 {
 }
 
-- (_Bool)_isConstrainedByScreenJail;
+- (struct CGPoint)_clampPointToCanvas:(struct CGPoint)arg1;
 - (_Bool)_usesWindowServerHitTesting;
 - (_Bool)_isWindowServerHostingManaged;
 - (id)initWithFrame:(struct CGRect)arg1;

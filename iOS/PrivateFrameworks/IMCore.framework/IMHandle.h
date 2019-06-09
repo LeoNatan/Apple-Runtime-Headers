@@ -48,7 +48,6 @@
     NSMutableArray *_notificationQueue;
     struct __CFPhoneNumber *_phoneNumberRef;
     NSString *_formattedNumber;
-    _Bool _hasCheckedPhoneNumber;
     unsigned long long _status;
     unsigned long long _prevStatus;
     unsigned long long _capabilities;
@@ -62,6 +61,7 @@
     _Bool _isAnonymous;
     _Bool _beingTornDown;
     _Bool _hasCheckedCardMap;
+    _Bool _hasCheckedPhoneNumber;
     long long _priority;
     int _addressBookIdentifier;
     int _notificationQueueCount;
@@ -147,6 +147,7 @@
 - (id)_bestChatSibling;
 - (id)_chatSiblingsArray;
 - (id)_chatSiblings;
+- (id)_contactID;
 - (_Bool)_isChatSiblingOf:(id)arg1;
 - (_Bool)isSiblingOf:(id)arg1;
 - (_Bool)isAccountSiblingOf:(id)arg1;
@@ -225,6 +226,10 @@
 @property(readonly, nonatomic) _Bool isSystemUser;
 @property(readonly, nonatomic) _Bool canBeAdded;
 - (void)_contactStoreDidChange:(id)arg1;
+- (void)updateCNContact:(id)arg1;
+- (id)_fallbackCNContactWithAllKeys;
+- (id)__imcnContactWithKeys:(id)arg1;
+- (id)cnContactWithKeys:(id)arg1;
 - (void)setEmails:(id)arg1;
 - (void)setEmail:(id)arg1;
 - (void)setFirstName:(id)arg1 lastName:(id)arg2;
@@ -248,6 +253,8 @@
 - (id)displayNameForChat:(id)arg1;
 @property(readonly, retain, nonatomic) NSString *normalizedID;
 @property(readonly, retain, nonatomic) NSString *displayID;
+- (id)_displayNameWithNicknameIfAvailable;
+- (id)_displayNameWithContact:(id)arg1;
 - (id)immediateNameWithNeedsSuggestedNameFetch:(_Bool *)arg1 useSuggestedName:(_Bool)arg2;
 - (void)scheduleSuggestedNameFetchIfNecessary;
 @property(readonly, retain, nonatomic) NSString *name;

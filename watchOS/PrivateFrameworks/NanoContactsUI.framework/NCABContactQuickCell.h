@@ -6,39 +6,66 @@
 
 #import <PepperUICore/PUICTableViewCell.h>
 
-@class NSMutableArray, TUSenderIdentity, UIButton, UILabel;
+@class NSLayoutConstraint, TUSenderIdentity, UIButton, UIImageView, UILabel, UILayoutGuide, UIStackView;
 @protocol NCABContactQuickCellDelegate;
 
 @interface NCABContactQuickCell : PUICTableViewCell
 {
+    UILayoutGuide *_labelLayoutGuide;
+    UILayoutGuide *_stackLayoutGuide;
     UILabel *_titleLabel;
+    UILabel *_downtimeContactLabel;
+    UIImageView *_downtimeLockImage;
     UIButton *_callButton;
     UIButton *_messageButton;
     UIButton *_mailButton;
-    NSMutableArray *_constraints;
+    UIButton *_walkieTalkieButton;
+    UIButton *_placeHolderButton;
+    UIStackView *_topStackView;
+    UIStackView *_bottomStackView;
+    UIStackView *_outerMostStackView;
+    NSLayoutConstraint *_titleLabelBaselineConstraint;
+    NSLayoutConstraint *_titleLabelHeightConstraint;
+    NSLayoutConstraint *_downtimeLabelBaselineConstraint;
+    NSLayoutConstraint *_downtimeLabelHeightConstraint;
+    NSLayoutConstraint *_stackLayoutGuideTopConstraint;
+    _Bool _constraintsAdded;
     _Bool _callEnabled;
     _Bool _messageEnabled;
     _Bool _mailEnabled;
-    TUSenderIdentity *_senderIdentity;
+    _Bool _walkieTalkieEnabled;
+    _Bool _walkieTalkieHidden;
+    _Bool _emergencyContact;
+    _Bool _downtimeContact;
     id <NCABContactQuickCellDelegate> _delegate;
+    TUSenderIdentity *_senderIdentity;
 }
 
-@property(nonatomic) __weak id <NCABContactQuickCellDelegate> delegate; // @synthesize delegate=_delegate;
++ (void)initialize;
+@property(nonatomic, getter=isDowntimeContact) _Bool downtimeContact; // @synthesize downtimeContact=_downtimeContact;
+@property(nonatomic, getter=isEmergencyContact) _Bool emergencyContact; // @synthesize emergencyContact=_emergencyContact;
+@property(nonatomic, getter=isWalkieTalkieHidden) _Bool walkieTalkieHidden; // @synthesize walkieTalkieHidden=_walkieTalkieHidden;
+@property(nonatomic, getter=isWalkieTalkieEnabled) _Bool walkieTalkieEnabled; // @synthesize walkieTalkieEnabled=_walkieTalkieEnabled;
 @property(nonatomic, getter=isMailEnabled) _Bool mailEnabled; // @synthesize mailEnabled=_mailEnabled;
 @property(nonatomic, getter=isMessageEnabled) _Bool messageEnabled; // @synthesize messageEnabled=_messageEnabled;
 @property(nonatomic, getter=isCallEnabled) _Bool callEnabled; // @synthesize callEnabled=_callEnabled;
 @property(retain, nonatomic) TUSenderIdentity *senderIdentity; // @synthesize senderIdentity=_senderIdentity;
+@property(nonatomic) __weak id <NCABContactQuickCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)quickMail:(id)arg1;
-- (void)quickMessage:(id)arg1;
-- (void)quickCall:(id)arg1;
-- (void)updateFonts;
+- (void)_quickWalkieTalkie:(id)arg1;
+- (void)_quickMail:(id)arg1;
+- (void)_quickMessage:(id)arg1;
+- (void)_quickCall:(id)arg1;
+- (void)_setupViewConstraints;
+- (void)_updateDynamicConstraintsAndActivate:(_Bool)arg1;
+- (void)_updateLabels;
+- (void)_contentSizeChanged;
+- (void)didMoveToSuperview;
 - (void)updateConstraints;
-- (void)contentSizeChanged;
-- (void)dealloc;
 - (void)prepareForReuse;
-- (id)initWithCellIdentifier:(id)arg1;
+- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithCellIdentifier:(id)arg1;
 
 @end
 

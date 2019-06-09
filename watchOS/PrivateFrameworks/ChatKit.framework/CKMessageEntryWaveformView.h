@@ -8,6 +8,7 @@
 
 @class NSMutableArray, UIImageView, UILabel, UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface CKMessageEntryWaveformView : UIView
 {
     NSMutableArray *_powerLevels;

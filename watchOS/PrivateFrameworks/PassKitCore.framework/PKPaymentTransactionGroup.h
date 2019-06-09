@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, PKCurrencyAmount, PKMapsBrand, PKMapsMerchant, PKMerchant;
+@class NSArray, NSDate, PKCurrencyAmount, PKMerchant;
 
 @interface PKPaymentTransactionGroup : NSObject <NSSecureCoding>
 {
@@ -17,8 +17,6 @@
     NSDate *_endDate;
     int _merchantCategory;
     PKMerchant *_merchant;
-    PKMapsMerchant *_mapsMerchant;
-    PKMapsBrand *_mapsBrand;
     unsigned int _transactionCount;
     PKCurrencyAmount *_totalAmount;
     NSArray *_transactions;
@@ -28,8 +26,6 @@
 @property(retain, nonatomic) NSArray *transactions; // @synthesize transactions=_transactions;
 @property(retain, nonatomic) PKCurrencyAmount *totalAmount; // @synthesize totalAmount=_totalAmount;
 @property(nonatomic) unsigned int transactionCount; // @synthesize transactionCount=_transactionCount;
-@property(retain, nonatomic) PKMapsBrand *mapsBrand; // @synthesize mapsBrand=_mapsBrand;
-@property(retain, nonatomic) PKMapsMerchant *mapsMerchant; // @synthesize mapsMerchant=_mapsMerchant;
 @property(retain, nonatomic) PKMerchant *merchant; // @synthesize merchant=_merchant;
 @property(nonatomic) int merchantCategory; // @synthesize merchantCategory=_merchantCategory;
 @property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
@@ -37,6 +33,8 @@
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)description;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

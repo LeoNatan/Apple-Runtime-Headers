@@ -9,6 +9,7 @@
 @protocol MobileInstallerProtocol
 - (void)dieForTesting;
 - (void)snapshotWKAppInCompanionAppID:(NSString *)arg1 toURL:(NSURL *)arg2 options:(NSDictionary *)arg3 completion:(void (^)(NSDictionary *, NSError *))arg4;
+- (void)setAppLaunchStateForApp:(NSString *)arg1 enable:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
 - (void)getAppMetadataForApp:(NSString *)arg1 completion:(void (^)(MIBundleMetadata *, NSError *))arg2;
 - (void)updatePlaceholderMetadataForApp:(NSString *)arg1 installType:(unsigned int)arg2 failureReason:(unsigned int)arg3 underlyingError:(NSError *)arg4 failureSource:(unsigned int)arg5 completion:(void (^)(NSError *))arg6;
 - (void)updateiTunesMetadataForLSWithIdentifier:(NSString *)arg1 options:(NSDictionary *)arg2 plistData:(NSData *)arg3 completion:(void (^)(NSError *))arg4;
@@ -20,7 +21,6 @@
 - (void)processRestoredContainerWithIdentifier:(NSString *)arg1 ofType:(int)arg2 options:(NSDictionary *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)fetchDiskUsageForIdentifiers:(NSArray *)arg1 withOptions:(NSDictionary *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)enumerateInstalledAppsWithOptions:(NSDictionary *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)fetchInstalledAppsWithOptions:(NSDictionary *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)fetchInstalledDeveloperAppsWithMountPath:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)updateSystemAppStateForIdentifier:(NSString *)arg1 appState:(int)arg2 completion:(void (^)(NSError *))arg3;
 - (void)lookupSystemAppStateWithOptions:(NSDictionary *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;

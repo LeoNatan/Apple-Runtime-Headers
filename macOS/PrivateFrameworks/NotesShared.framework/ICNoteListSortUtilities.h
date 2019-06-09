@@ -17,9 +17,12 @@
 + (BOOL)isMenuItemCurrentSortTypeForTag:(long long)arg1;
 + (void)setCurrentNoteListSortTypeByTag:(long long)arg1;
 + (id)descriptionForNoteListSortType:(long long)arg1;
++ (long long)sortTypeForFolderNoteOrder:(unsigned long long)arg1;
++ (id)sortDescriptorsForCurrentTypeIncludingPinnedNotes:(BOOL)arg1 folderNoteSortType:(id)arg2;
 + (id)sortDescriptorsForCurrentTypeIncludingPinnedNotes:(BOOL)arg1;
 + (id)sortDescriptorsForPinnedNotes;
 + (id)sortDescriptorsForCurrentType;
++ (id)sortDescriptorsForType:(long long)arg1 ascending:(BOOL)arg2;
 + (id)sortDescriptorsForType:(long long)arg1;
 + (void)setCurrentNoteListSortType:(long long)arg1;
 + (long long)currentNoteListSortType;

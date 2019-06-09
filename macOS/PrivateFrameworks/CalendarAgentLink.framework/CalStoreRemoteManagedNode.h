@@ -6,11 +6,11 @@
 
 #import <CalendarAgentLink/CalStoreRemoteManagedObject.h>
 
-@class NSColor, NSString, NSURL;
+@class NSString, NSURL;
 
 @interface CalStoreRemoteManagedNode : CalStoreRemoteManagedObject
 {
-    NSColor *_color;
+    NSString *_color;
     BOOL _isWritable;
     NSString *_notes;
     NSURL *_objectURI;
@@ -29,7 +29,7 @@
 @property(nonatomic) int order; // @synthesize order=_order;
 @property(retain, nonatomic) NSString *notes; // @synthesize notes=_notes;
 @property(nonatomic) BOOL isWritable; // @synthesize isWritable=_isWritable;
-@property(retain, nonatomic) NSColor *color; // @synthesize color=_color;
+@property(retain, nonatomic) NSString *color; // @synthesize color=_color;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)compareTitle:(id)arg1;

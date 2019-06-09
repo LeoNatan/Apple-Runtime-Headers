@@ -8,6 +8,7 @@
 
 @class NSBundle, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUILocalizedStringTable : NSObject
 {
     NSDictionary *_strings;

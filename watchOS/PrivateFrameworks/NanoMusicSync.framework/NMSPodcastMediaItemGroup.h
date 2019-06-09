@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_sharedPodcastSizeCache;
 - (id)itemList;
-- (id)libraryIdentifiersForContainerType:(unsigned int)arg1;
+- (id)identifiersForContainerType:(unsigned int)arg1;
 
 @end
 

@@ -8,5 +8,9 @@
 
 @interface UILabel (VideosUI)
 - (double)vui_heightToBaseline;
+- (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3 capitalize:(_Bool)arg4 overrideWithTraitCollection:(id)arg5;
+- (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3 capitalize:(_Bool)arg4;
+- (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3;
+- (long long)_textAlignmentFromElementAlignment:(unsigned long long)arg1;
 @end
 

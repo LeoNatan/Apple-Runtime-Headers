@@ -10,25 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CATransform3D {
-    float m11;
-    float m12;
-    float m13;
-    float m14;
-    float m21;
-    float m22;
-    float m23;
-    float m24;
-    float m31;
-    float m32;
-    float m33;
-    float m34;
-    float m41;
-    float m42;
-    float m43;
-    float m44;
-};
-
 struct CGAffineTransform {
     float a;
     float b;
@@ -51,5 +32,9 @@ struct CGRect {
 struct CGSize {
     float width;
     float height;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 

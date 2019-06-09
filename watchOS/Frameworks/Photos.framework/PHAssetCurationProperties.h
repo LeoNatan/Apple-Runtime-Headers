@@ -12,15 +12,25 @@
 {
     NSDate *_addedDate;
     float _interestingSubjectScore;
+    float _behavioralScore;
+    float _semanticScore;
+    float _interactionScore;
+    NSDate *_lastSharedDate;
 }
 
 + (id)propertiesToFetch;
 + (id)keyPathToPrimaryObject;
 + (id)keyPathFromPrimaryObject;
++ (id)entityName;
 + (id)propertySetName;
+@property(readonly, nonatomic) NSDate *lastSharedDate; // @synthesize lastSharedDate=_lastSharedDate;
+@property(readonly, nonatomic) float interactionScore; // @synthesize interactionScore=_interactionScore;
+@property(readonly, nonatomic) float semanticScore; // @synthesize semanticScore=_semanticScore;
+@property(readonly, nonatomic) float behavioralScore; // @synthesize behavioralScore=_behavioralScore;
 @property(readonly, nonatomic) float interestingSubjectScore; // @synthesize interestingSubjectScore=_interestingSubjectScore;
 @property(readonly, nonatomic) NSDate *addedDate; // @synthesize addedDate=_addedDate;
 - (void).cxx_destruct;
+- (float)_semanticScoreFromBehavioralScore:(double)arg1;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 
 @end

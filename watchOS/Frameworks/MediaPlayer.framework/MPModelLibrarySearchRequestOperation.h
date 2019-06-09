@@ -21,7 +21,6 @@
 @property(copy, nonatomic) MPModelLibrarySearchRequest *request; // @synthesize request=_request;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)finishWithError:(id)arg1;
 - (void)cancel;
 - (void)execute;
 - (id)init;

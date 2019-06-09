@@ -6,6 +6,7 @@
 
 #import <UIKit/UIBlurEffect.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIContextActionsBlurEffect : UIBlurEffect
 {
 }

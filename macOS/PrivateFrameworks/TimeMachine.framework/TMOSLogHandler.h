@@ -11,9 +11,7 @@
 
 @interface TMOSLogHandler : TMLoggingHandler
 {
-    NSObject<OS_os_log> *_errorLogObject;
-    NSObject<OS_os_log> *_infoLogObject;
-    NSObject<OS_os_log> *_debugLogObject;
+    NSObject<OS_os_log> *_generalLogObject;
     NSMutableDictionary *_categoryLogObjects;
     struct os_unfair_lock_s _lock;
 }

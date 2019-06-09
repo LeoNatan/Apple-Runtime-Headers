@@ -11,6 +11,7 @@
 @class NSString, PrimaryInterfaceUtils;
 @protocol DiagnosticLiaisonDelegate, OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticLiaison : NSObject <IDSCrossDeviceTransportEndpoint>
 {
     PrimaryInterfaceUtils *_interfaceUtils;
@@ -26,7 +27,6 @@
 - (void)processPayloadVersionOneFromIDSTransport:(id)arg1 incomingTime:(id)arg2;
 - (void)processPayloadFromIDSTransport:(id)arg1 incomingTime:(id)arg2;
 - (id)abcPayloadForIDSTransport:(BOOL)arg1;
-- (id)abcPayloadForIDSTransport;
 - (id)remoteCasePayloadForIDSTransport:(id)arg1 groupID:(id)arg2;
 - (id)basicSignatureFrom:(id)arg1;
 - (void)messageWithIdentifierHasBeenDelivered:(id)arg1;

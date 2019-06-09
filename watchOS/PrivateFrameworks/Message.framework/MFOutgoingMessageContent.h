@@ -16,11 +16,11 @@
 
 @property(retain, nonatomic) NSArray *placeholders; // @synthesize placeholders=_placeholders;
 @property(retain, nonatomic) MFMutableMessageHeaders *headers; // @synthesize headers=_headers;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) MFOutgoingMultipartRelatedContent *multipartContent;
 @property(readonly, nonatomic) MFOutgoingRichtextMessageContent *richtextContent;
 @property(readonly, nonatomic) MFOutgoingLibraryMessageContent *libraryContent;
 - (id)copy;
-- (void)dealloc;
 
 @end
 

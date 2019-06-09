@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)seriesCollectionWithChart:(id)arg1;
+- (void).cxx_destruct;
 - (id)firstNonEmptySeries;
 - (unsigned long long)nonEmptySeriesCount;
 - (unsigned long long)addObject:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class EKEvent, NSArray, NSImage, NSImageView, NSLayoutConstraint, NSTextField;
+@class EKEvent, NSArray, NSImage, NSImageView, NSTextField;
 
 @interface CalUIOccurrenceTableCellView : NSTableCellView
 {
@@ -16,10 +16,8 @@
     NSTextField *_titleField;
     NSImage *_dotImage;
     NSImage *_selectedDotImage;
-    NSLayoutConstraint *_dotLeadingConstraint;
 }
 
-@property(retain) NSLayoutConstraint *dotLeadingConstraint; // @synthesize dotLeadingConstraint=_dotLeadingConstraint;
 @property(retain) NSImage *selectedDotImage; // @synthesize selectedDotImage=_selectedDotImage;
 @property(retain) NSImage *dotImage; // @synthesize dotImage=_dotImage;
 @property(retain) NSTextField *titleField; // @synthesize titleField=_titleField;
@@ -40,7 +38,6 @@
 - (id)dotImageSelected:(BOOL)arg1;
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)updateTitleFontIsSelected:(BOOL)arg1;
-- (void)updateConstraints;
 - (id)initWithEvent:(id)arg1 hideDateField:(BOOL)arg2 hideTimeField:(BOOL)arg3 hideLocationField:(BOOL)arg4 hideAttendeeField:(BOOL)arg5 occurrenceType:(unsigned long long)arg6;
 - (id)initWithEvent:(id)arg1 hideDateField:(BOOL)arg2 hideTimeField:(BOOL)arg3 hideLocationField:(BOOL)arg4 hideAttendeeField:(BOOL)arg5;
 - (id)initWithEvent:(id)arg1;

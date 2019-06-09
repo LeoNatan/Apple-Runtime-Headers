@@ -24,27 +24,61 @@ struct CC_SHA1state_st {
     int _field9;
 };
 
-struct NEIKEPacketDelegateCallbacks {
-    CDUnknownFunctionPointerType registerIKEFlow;
-    CDUnknownFunctionPointerType unregisterIKEFlow;
-    CDUnknownFunctionPointerType sendData;
-    CDUnknownFunctionPointerType invalidate;
-    void *delegateHandle;
+struct NSMutableData {
+    Class _field1;
+};
+
+struct ccdigest_info;
+
+struct ccec_cp;
+
+struct ccec_full_ctx {
+    struct ccec_cp *cp;
+    unsigned char pad[8];
+    struct ccec_projective_point point[0];
+};
+
+struct ccec_projective_point {
+    unsigned long long xyz[1];
+};
+
+struct cfil_crypto_state {
+    struct ccdigest_info *_field1;
+    unsigned char _field2[32];
+};
+
+struct interpose_frame {
+    unsigned char ring_id;
+    char *buffer;
+    unsigned int bufferLength;
+    unsigned long long packet;
+    struct __user_buflet *buflet;
+};
+
+struct nw_frame;
+
+struct nw_frame_array_s {
+    struct nw_frame *tqh_first;
+    struct nw_frame **tqh_last;
 };
 
 struct nw_protocol {
-    unsigned char _field1[16];
-    struct nw_protocol_identifier *_field2;
-    struct nw_protocol_callbacks *_field3;
-    struct nw_protocol *_field4;
-    void *_field5;
-    struct nw_protocol *_field6;
-    void *_field7;
+    unsigned char flow_id[16];
+    struct nw_protocol_identifier *identifier;
+    struct nw_protocol_callbacks *callbacks;
+    struct nw_protocol *output_handler;
+    void *handle;
+    struct nw_protocol *default_input_handler;
+    void *output_handler_context;
 };
 
 struct nw_protocol_callbacks;
 
 struct nw_protocol_identifier;
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
 
 struct sockaddr {
     unsigned char _field1;
@@ -60,10 +94,28 @@ struct sockaddr_storage {
     char __ss_pad2[112];
 };
 
+struct timeval {
+    long long _field1;
+    int _field2;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
     int _field1;
     unsigned char _field2[12];
 } CDStruct_c3d3b44c;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    union {
+        struct ccec_full_ctx dhECPKey256[9];
+        struct ccec_full_ctx dhECPKey384[13];
+        struct ccec_full_ctx dhECPKey521[19];
+    } dhECPKey;
+    union {
+        unsigned char dhCurveKey25519[32];
+    } dhCurveKey;
+} CDUnion_07c5b791;
 

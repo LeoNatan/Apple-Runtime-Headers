@@ -24,7 +24,6 @@
 - (void)drawHighlightWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_drawHighlightWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initImageCell:(id)arg1;
 - (id)initTextCell:(id)arg1;

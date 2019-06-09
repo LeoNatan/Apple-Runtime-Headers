@@ -7,22 +7,57 @@
 #import <Home/HFItem.h>
 
 #import <Home/HFHomeKitItemProtocol-Protocol.h>
+#import <Home/HFHomeKitSettingsVendor-Protocol.h>
 #import <Home/NSCopying-Protocol.h>
 
-@class HFUserNameFormatter, HMHome, HMUser, NSString;
+@class HFHomeKitSettingsAdapterManager, HFHomeKitSettingsValueManager, HFUserNameFormatter, HMHome, HMSettings, HMUser, NSSet, NSString, NSUUID;
 @protocol HFHomeKitObject;
 
-@interface HFUserItem : HFItem <HFHomeKitItemProtocol, NSCopying>
+@interface HFUserItem : HFItem <HFHomeKitItemProtocol, HFHomeKitSettingsVendor, NSCopying>
 {
+    _Bool _isItemGroup;
+    _Bool _isContainedWithinItemGroup;
     HMHome *_home;
     HMUser *_user;
+    unsigned int _numberOfItemsContainedWithinGroup;
+    NSUUID *_uniqueIdentifier;
     HFUserNameFormatter *_userNameFormatter;
+    HMHome *_hf_home;
 }
 
+@property(retain, nonatomic) HMHome *hf_home; // @synthesize hf_home=_hf_home;
 @property(readonly, nonatomic) HFUserNameFormatter *userNameFormatter; // @synthesize userNameFormatter=_userNameFormatter;
+@property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(readonly, nonatomic) unsigned int numberOfItemsContainedWithinGroup; // @synthesize numberOfItemsContainedWithinGroup=_numberOfItemsContainedWithinGroup;
+@property(readonly, nonatomic) _Bool isContainedWithinItemGroup; // @synthesize isContainedWithinItemGroup=_isContainedWithinItemGroup;
+@property(readonly, nonatomic) _Bool isItemGroup; // @synthesize isItemGroup=_isItemGroup;
 @property(readonly, nonatomic) HMUser *user; // @synthesize user=_user;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
+- (_Bool)isIdentifyVoiceEnabled;
+- (id)setEnableIdentifyVoice:(_Bool)arg1;
+- (id)setDismissCameraRecordingReminderBanner:(_Bool)arg1;
+- (_Bool)hasDismissedCameraRecordingReminderBanner;
+- (id)setDismissCameraRecordingOnboarding:(_Bool)arg1;
+- (_Bool)hasDismissedCameraRecordingOnboarding;
+- (id)setDismissTVViewingProfilesReminderBanner:(_Bool)arg1;
+- (_Bool)hasDismissedTVViewingProfilesReminderBanner;
+- (id)setDismissTVViewingProfilesOnboarding:(_Bool)arg1;
+- (_Bool)hasDismissedTVViewingProfilesOnboarding;
+- (id)setDismissIdentifyVoiceReminderBanner:(_Bool)arg1;
+- (_Bool)hasDismissedIdentifyVoiceReminderBanner;
+- (id)setDismissIdentifyVoiceOnboarding:(_Bool)arg1;
+- (_Bool)hasDismissedVoiceProfileOnboarding;
+- (id)_setBoolSettingsValueForKeyPath:(id)arg1 newValue:(_Bool)arg2 settingsType:(unsigned int)arg3;
+- (_Bool)_getBoolSettingsValueForKeyPath:(id)arg1 defaultValue:(_Bool)arg2 settingsType:(unsigned int)arg3;
+- (_Bool)_hasValidPrivateSettings;
+- (id)_privateSettings;
+- (id)_privateSettingsValueManager;
+@property(readonly, nonatomic) _Bool hasValidSettings;
+@property(readonly) HMSettings *settings;
+@property(readonly, nonatomic) HFHomeKitSettingsValueManager *hf_settingsValueManager;
+@property(readonly, nonatomic) HFHomeKitSettingsAdapterManager *hf_settingsAdapterManager;
+@property(readonly, nonatomic) NSSet *hf_dependentHomeKitObjectsForDownstreamItems;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;

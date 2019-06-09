@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIResponderForwardable-Protocol.h>
 
-@class NSArray, NSMutableArray, NSNumber, NSString, UIResponder, UIView, UIWindow;
+@class NSArray, NSMutableArray, NSNumber, NSString, UIResponder, UIView, UIWindow, _UITouchPredictor;
 @protocol _UITouchPhaseChangeDelegate;
 
 @interface UITouch : NSObject <_UIResponderForwardable>
@@ -47,6 +47,7 @@
         unsigned int _isPredictedTouch:1;
         unsigned int _didDispatchAsEnded:1;
     } _touchFlags;
+    _UITouchPredictor *_touchPredictor;
     _Bool _eaten;
     _Bool _needsForceUpdate;
     _Bool _hasForceUpdate;
@@ -129,6 +130,10 @@
 - (void)_setIsFirstTouchForView:(_Bool)arg1;
 - (void)_setTouchIdentifier:(unsigned int)arg1;
 - (unsigned int)_touchIdentifier;
+- (id)_touchPredictor;
+- (id)_predictedTouchesWithEvent:(id)arg1;
+- (void)_updatePredictionsWithCoalescedTouches:(id)arg1;
+- (_Bool)_currentlyPredictingTouches;
 - (_Bool)_mightBeConsideredForForceSystemGesture;
 - (_Bool)_edgeForceActive;
 - (_Bool)_edgeForcePending;
@@ -162,7 +167,6 @@
 - (void)_clonePropertiesToTouch:(id)arg1;
 - (id)_clone;
 - (void)dealloc;
-- (double)_distanceFrom:(id)arg1 inView:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

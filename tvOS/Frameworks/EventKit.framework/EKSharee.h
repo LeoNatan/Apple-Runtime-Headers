@@ -28,7 +28,6 @@
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2;
 + (Class)frozenClass;
-@property(readonly, nonatomic) NSPredicate *contactPredicate;
 @property(nonatomic) unsigned long long shareeAccessLevel;
 - (void)setShareeAccessLevelRaw:(int)arg1;
 - (int)shareeAccessLevelRaw;
@@ -53,6 +52,7 @@
 - (id)initWithName:(id)arg1 url:(id)arg2 externalID:(id)arg3;
 - (id)initWithName:(id)arg1 url:(id)arg2;
 - (id)init;
+@property(readonly, nonatomic) NSPredicate *contactPredicate; // @dynamic contactPredicate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

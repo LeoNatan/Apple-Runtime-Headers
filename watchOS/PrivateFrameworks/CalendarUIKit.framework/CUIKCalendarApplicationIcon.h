@@ -10,6 +10,10 @@
 {
 }
 
++ (id)iconImageWithIdentifier:(id)arg1;
++ (id)iconIdentifierWithDate:(id)arg1 calendar:(id)arg2 format:(int)arg3;
++ (id)_identifierEncodingAllowedCharacters;
++ (int)iconVersion;
 + (float)_imageScaleForApplicationIconFormat:(int)arg1;
 + (int)_iconDateNameFormatTypeForNotificationsWithDate:(id)arg1 calendar:(id)arg2;
 + (int)_iconDateNameFormatTypeForDate:(id)arg1 calendar:(id)arg2 format:(int)arg3;
@@ -32,7 +36,8 @@
 + (id)getMaskedIconImageWithFormat:(int)arg1 imageScale:(float)arg2;
 + (id)_iconImageWithFormat:(int)arg1 square:(_Bool)arg2 outline:(_Bool)arg3 drawBlock:(CDUnknownBlockType)arg4;
 + (int)_iconVariantForFormat:(int)arg1 scale:(float)arg2 outline:(_Bool)arg3;
-+ (id)iconImageWithDateComponents:(id)arg1 dateNameFormatType:(int)arg2 format:(int)arg3 square:(_Bool)arg4 showGrid:(_Bool)arg5;
++ (int)_translateUIApplicationIconFormat:(int)arg1;
++ (id)iconImageWithDateComponents:(id)arg1 dateNameFormatType:(int)arg2 format:(int)arg3;
 + (id)iconImageWithDate:(id)arg1 calendar:(id)arg2 format:(int)arg3;
 + (id)iconImageWithDate:(id)arg1 calendar:(id)arg2 format:(int)arg3 outline:(_Bool)arg4;
 + (int)dynamicIconFormat:(int)arg1;

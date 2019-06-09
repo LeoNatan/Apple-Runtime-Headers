@@ -11,6 +11,7 @@
 @interface IMKUICandidateBarListView : IMKUICandidateListView
 {
     BOOL _animateChanges;
+    double _candidateItemMargin;
     unsigned long long _indexOfSelectedCandidate;
     NSColor *_lineHighlightedColor;
     IMKCandidate *_selectedCandidate;
@@ -25,6 +26,7 @@
 @property(retain, nonatomic) IMKCandidate *selectedCandidate; // @synthesize selectedCandidate=_selectedCandidate;
 @property(retain, nonatomic) NSColor *lineHighlightedColor; // @synthesize lineHighlightedColor=_lineHighlightedColor;
 @property(nonatomic) unsigned long long indexOfSelectedCandidate; // @synthesize indexOfSelectedCandidate=_indexOfSelectedCandidate;
+@property(nonatomic) double candidateItemMargin; // @synthesize candidateItemMargin=_candidateItemMargin;
 @property(nonatomic) BOOL animateChanges; // @synthesize animateChanges=_animateChanges;
 - (void).cxx_destruct;
 - (id)candidateForSelectionKey:(id)arg1;

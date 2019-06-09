@@ -18,6 +18,7 @@
 }
 
 @property(copy, nonatomic) CDUnknownBlockType decisionBlock; // @synthesize decisionBlock=_decisionBlock;
+- (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (struct CGSize)preferredContentSize;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -25,7 +26,6 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (id)_optionsStrings;
 - (id)initWithStyle:(long long)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

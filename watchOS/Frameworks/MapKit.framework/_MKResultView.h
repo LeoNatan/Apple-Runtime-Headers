@@ -11,6 +11,7 @@
 @class CLLocation, MKLocationManager, MKMapItem, NSArray, NSMutableArray, NSString, NSTimer, UIColor, UIImageView, _MKUILabel;
 @protocol _MKResultViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _MKResultView : UIView <MKLocationManagerObserver>
 {
     NSArray *_mapItems;

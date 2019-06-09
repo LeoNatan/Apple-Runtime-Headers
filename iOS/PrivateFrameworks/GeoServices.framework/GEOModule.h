@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEOPDModule;
+@class GEOModuleOptions, GEOPDModule;
 
 @interface GEOModule : NSObject
 {
@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GEOModuleOptions *options;
 @property(readonly, nonatomic) int type;
 - (id)initWithModule:(id)arg1;
 

@@ -16,7 +16,7 @@
 {
     _Bool _userEnabled;
     _Bool _needsRelogin;
-    struct NSUUID *_identifier;
+    NSUUID *_identifier;
     long long _state;
     NSDate *_lastFetchDate;
     NSDate *_lastFullFetchDate;
@@ -35,18 +35,17 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 @property(readonly, copy, nonatomic) HKClinicalBrand *brand;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, copy, nonatomic) NSString *title;
-@property(readonly, nonatomic) _Bool hasErrorState;
 @property(readonly, copy) NSString *description;
-- (id)initWithIdentifier:(struct NSUUID *)arg1 state:(long long)arg2 userEnabled:(_Bool)arg3 needsRelogin:(_Bool)arg4 lastFetchDate:(id)arg5 lastFullFetchDate:(id)arg6 gateway:(id)arg7;
+- (id)initWithIdentifier:(id)arg1 state:(long long)arg2 userEnabled:(_Bool)arg3 needsRelogin:(_Bool)arg4 lastFetchDate:(id)arg5 lastFullFetchDate:(id)arg6 gateway:(id)arg7;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic, getter=hasMultipleLocations) _Bool multiple;
 @property(readonly) Class superclass;
 
 @end

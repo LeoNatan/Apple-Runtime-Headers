@@ -6,6 +6,7 @@
 
 #import <ViewBridge/NSRemoteViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface AVOutputDeviceMenuRemoteViewController : NSRemoteViewController
 {
     CDUnknownBlockType _viewBridgeConnectionErrorHandler;

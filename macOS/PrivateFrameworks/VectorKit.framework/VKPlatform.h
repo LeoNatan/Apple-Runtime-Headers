@@ -36,8 +36,6 @@
 @property(readonly, nonatomic) BOOL supportsBuildingShadows;
 @property(readonly, nonatomic) unsigned char processingQueueWidth;
 @property(readonly, nonatomic) unsigned char tileDecodeQueueWidth;
-@property(readonly, nonatomic) BOOL shouldPregenerateLabelGlyphs;
-@property(readonly, nonatomic) BOOL shouldLayoutLabelsInParallel;
 @property(readonly, nonatomic) BOOL shouldStyleLabelsInParallel;
 @property(readonly, nonatomic) BOOL supportsHiResBuildings;
 @property(readonly, nonatomic) BOOL shouldDrawWhenReady;

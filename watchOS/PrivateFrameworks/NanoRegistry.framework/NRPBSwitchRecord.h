@@ -10,7 +10,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface NRPBSwitchRecord : PBCodable <NSCopying>
 {
     double _dateTimeInterval;

@@ -11,14 +11,14 @@
 @interface _WKThumbnailView : NSView
 {
     struct RetainPtr<WKView> _wkView;
-    struct RetainPtr<WKWebView> _wkWebView;
+    RetainPtr_1dbdd1e2 _wkWebView;
     struct WebPageProxy *_webPageProxy;
     BOOL _originalMayStartMediaWhenInWindow;
     BOOL _originalSourceViewIsInWindow;
     BOOL _snapshotWasDeferred;
     double _lastSnapshotScale;
     struct CGSize _lastSnapshotMaximumSize;
-    struct RetainPtr<NSColor *> _overrideBackgroundColor;
+    struct RetainPtr<NSColor> _overrideBackgroundColor;
     BOOL _waitingForSnapshot;
     BOOL _exclusivelyUsesSnapshot;
     BOOL _shouldKeepSnapshotWhenRemovedFromSuperview;

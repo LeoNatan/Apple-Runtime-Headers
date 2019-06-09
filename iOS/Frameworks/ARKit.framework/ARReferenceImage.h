@@ -8,13 +8,17 @@
 
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class ARReferenceImageManager, NSString, NSUUID;
+@class ARReferenceImageCachedError, NSString, NSUUID;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface ARReferenceImage : NSObject <NSSecureCoding>
 {
+    NSObject<OS_dispatch_queue> *_verificationQueue;
+    NSObject<OS_dispatch_semaphore> *_verificationQueueSemaphore;
     NSString *_name;
+    NSString *_resourceGroupName;
     double _estimatedQuality;
-    ARReferenceImageManager *_referenceImageManager;
+    ARReferenceImageCachedError *_cachedVerificationError;
     struct __CVBuffer *_pixelBuffer;
     struct __CVBuffer *_alphaMask;
     NSUUID *_identifier;
@@ -26,16 +30,18 @@
 + (id)referenceImagesInGroupNamed:(id)arg1 catalogName:(id)arg2 bundle:(id)arg3;
 + (id)referenceImagesInGroupNamed:(id)arg1 bundle:(id)arg2;
 + (id)referenceImagesInGroupNamed:(id)arg1 catalog:(id)arg2;
-+ (id)referenceImageManager;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) struct __CVBuffer *alphaMask; // @synthesize alphaMask=_alphaMask;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer; // @synthesize pixelBuffer=_pixelBuffer;
-@property(retain) ARReferenceImageManager *referenceImageManager; // @synthesize referenceImageManager=_referenceImageManager;
+@property(retain) ARReferenceImageCachedError *cachedVerificationError; // @synthesize cachedVerificationError=_cachedVerificationError;
 @property double estimatedQuality; // @synthesize estimatedQuality=_estimatedQuality;
+@property(readonly, nonatomic) NSString *resourceGroupName; // @synthesize resourceGroupName=_resourceGroupName;
 @property(readonly, nonatomic) struct CGSize physicalSize; // @synthesize physicalSize=_physicalSize;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)estimateQualityWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)validateWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setResourceGroupName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -6,25 +6,26 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
 @class NSData, NSString;
 
-@interface USSUserActivityContinuationRequest : NSObject <USSXPCEncodable>
+@interface USSUserActivityContinuationRequest : NSObject <NSSecureCoding>
 {
     NSString *_activityUUID;
     NSString *_activityType;
     NSData *_activityData;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)requestWithUUID:(id)arg1 activityType:(id)arg2 activityData:(id)arg3;
 + (id)requestWithUUID:(id)arg1 activityType:(id)arg2;
 @property(retain, nonatomic) NSData *activityData; // @synthesize activityData=_activityData;
 @property(retain, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(retain, nonatomic) NSString *activityUUID; // @synthesize activityUUID=_activityUUID;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithUUID:(id)arg1 activityType:(id)arg2 activityData:(id)arg3;
 
 @end

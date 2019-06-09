@@ -10,6 +10,7 @@
 {
 }
 
++ (void)readFlagMailboxesFromDiskForFlagMailboxes:(id)arg1;
 + (id)visibleFlagMailboxes;
 + (void)updateVisibleFlagMailboxes;
 + (id)flagMailboxes;
@@ -29,7 +30,8 @@
 - (void)saveUserInfo;
 - (id)_loadUserInfo;
 - (id)_viewerAttributesKey;
-- (id)tildeAbbreviatedPath;
+- (id)persistentUIIdentifier;
+- (id)_specialMailboxIdentifier;
 - (void)setAllCriteriaMustBeSatisfied:(BOOL)arg1;
 - (BOOL)allCriteriaMustBeSatisfied;
 - (void)setCriteria:(id)arg1;

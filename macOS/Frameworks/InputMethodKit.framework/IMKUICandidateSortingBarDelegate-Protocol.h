@@ -5,6 +5,7 @@
 //
 
 @protocol IMKUICandidateSortingBarDelegate
+- (void)radarButtonPressed;
 - (void)didSelectSortingMethodAtIndex:(unsigned long long)arg1;
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSString, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelNavigationMarkerImage : NSObject <AVImageProxyProtocol>
 {
     UIImage *_image;

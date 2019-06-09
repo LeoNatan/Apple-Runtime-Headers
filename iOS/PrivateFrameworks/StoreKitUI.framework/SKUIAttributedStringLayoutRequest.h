@@ -10,6 +10,7 @@
 
 @class NSAttributedString, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAttributedStringLayoutRequest : NSObject <SKUILayoutRequest>
 {
     NSAttributedString *_attributedString;

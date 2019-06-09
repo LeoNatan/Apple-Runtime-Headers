@@ -20,7 +20,6 @@
     BOOL _dragDataItemShouldBeRemoved;
     NSToolbarItem *_dragDataInsertionGapItem;
     struct CGPoint _dragDataLastPoint;
-    struct CGPoint _halftonePhaseOverrideValue;
     NSToolbar *_actingPaletteTargetToolbar;
     long long _layoutEnabledCount;
     double _earliestDateToStartDragAnimation;
@@ -56,7 +55,6 @@
     } _tbvFlags;
     NSResponder *_windowPriorFirstResponder;
     char *_delayedValidationCancel;
-    id toolbarViewReserved;
 }
 
 + (id)defaultMenu;
@@ -79,7 +77,6 @@
 - (void)_noteToolbarModeChangedAndUpdateItemViewers:(SEL)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (BOOL)_shouldUseEngineFrameForResizingWithOldSuperviewSize:(struct CGSize)arg1;
-- (void)_sendBackgroundGradientHeightChangedNotification;
 - (double)_distanceFromBaseToTopOfWindow;
 - (void)_sizeHorizontallyToFitWidth:(double)arg1;
 - (void)_sizeHorizontallyToFit;

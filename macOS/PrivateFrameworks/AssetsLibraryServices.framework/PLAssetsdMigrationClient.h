@@ -12,7 +12,7 @@
 
 - (void)moveiPhotoLibraryMediaWithReply:(CDUnknownBlockType)arg1;
 - (void)dataMigrationWillFinish;
-- (void)cleanupModelForDataMigration;
+- (void)cleanupModelForDataMigrationForRestoreType:(long long)arg1;
 
 @end
 

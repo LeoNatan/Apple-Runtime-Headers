@@ -9,11 +9,13 @@
 #import <TVMLKit/IKAppMenuBarDocumentDelegate-Protocol.h>
 #import <TVMLKit/UITabBarControllerDelegate-Protocol.h>
 #import <TVMLKit/UITabBarControllerDelegate_Private-Protocol.h>
+#import <TVMLKit/_TVAppDocumentControllerDelegate-Protocol.h>
+#import <TVMLKit/_TVApplicationInspectorDocumentProvider-Protocol.h>
 
 @class IKAppMenuBarDocument, IKViewElement, NSArray, NSString, _TVPlayer;
 
 __attribute__((visibility("hidden")))
-@interface _TVMenuBarController : UITabBarController <IKAppMenuBarDocumentDelegate, UITabBarControllerDelegate, UITabBarControllerDelegate_Private>
+@interface _TVMenuBarController : UITabBarController <IKAppMenuBarDocumentDelegate, UITabBarControllerDelegate, UITabBarControllerDelegate_Private, _TVAppDocumentControllerDelegate, _TVApplicationInspectorDocumentProvider>
 {
     IKViewElement *_menuBarTemplate;
     IKAppMenuBarDocument *_menuBarDocument;
@@ -32,6 +34,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) IKAppMenuBarDocument *menuBarDocument; // @synthesize menuBarDocument=_menuBarDocument;
 @property(retain, nonatomic) IKViewElement *menuBarTemplate; // @synthesize menuBarTemplate=_menuBarTemplate;
 - (void).cxx_destruct;
+- (id)activeDocument;
+- (void)appDocumentController:(id)arg1 didHostTemplateViewController:(id)arg2 usedTransitions:(_Bool)arg3;
 - (void)_updateNowPlayingPlayer:(id)arg1;
 - (void)_playerDidChangeState:(id)arg1;
 - (void)_playbackViewControllerWillPresent:(id)arg1;

@@ -12,11 +12,13 @@
 @interface CTEmergencyMode : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _enabled;
+    _Bool _isEmergencyText;
     long long _type;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)convertFromEmergencyMode:(const struct EmergencyMode *)arg1;
+@property(nonatomic) _Bool isEmergencyText; // @synthesize isEmergencyText=_isEmergencyText;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 - (id)initWithCoder:(id)arg1;
@@ -26,6 +28,7 @@
 - (_Bool)isEqualToCTEmergencyMode:(id)arg1;
 - (id)description;
 - (id)init;
+- (id)initWithEnabled:(_Bool)arg1 type:(long long)arg2 isEmergencyText:(_Bool)arg3;
 - (id)initWithEnabled:(_Bool)arg1 type:(long long)arg2;
 
 @end

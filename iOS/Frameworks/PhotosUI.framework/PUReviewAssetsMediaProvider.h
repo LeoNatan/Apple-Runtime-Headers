@@ -10,7 +10,7 @@
 
 @interface PUReviewAssetsMediaProvider : PUEditableMediaProvider
 {
-    int _nextRequestIdentifier;
+    // Error parsing type: Ai, name: _nextRequestIdentifier
     double __screenScale;
     PHConcurrentMapTable *__mediaRequests;
 }

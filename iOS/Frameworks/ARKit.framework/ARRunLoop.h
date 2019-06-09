@@ -6,12 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSRunLoop, NSString;
+@class NSMutableArray, NSString;
 
 @interface ARRunLoop : NSObject
 {
     NSString *_name;
-    NSRunLoop *_runloop;
+    struct __CFRunLoop *_runloop;
+    struct __CFRunLoopObserver *_runLoopEnterObserver;
+    struct __CFRunLoopObserver *_runLoopExitObserver;
+    struct __CFArray *_autoreleasePoolStack;
     NSMutableArray *_earlyRunloopBlocks;
     struct os_unfair_lock_s _lock;
     _Bool _started;
@@ -20,10 +23,14 @@
 
 @property _Bool cancelled; // @synthesize cancelled=_cancelled;
 - (void).cxx_destruct;
+- (void)_runloop_popAutoreleasePool;
+- (void)_runloop_pushAutoreleasePool;
+- (void)_runloop_handleActivity:(unsigned long long)arg1;
 - (void)cancel;
 - (void)runOnRunLoop:(CDUnknownBlockType)arg1;
 - (void)_startThread;
 - (void)start;
+- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)init;
 

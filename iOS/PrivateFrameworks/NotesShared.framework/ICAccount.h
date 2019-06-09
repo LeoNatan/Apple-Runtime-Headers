@@ -8,7 +8,7 @@
 
 #import <NotesShared/ICCloudObject-Protocol.h>
 
-@class ICAccountProxy, ICFolder, ICSelectorDelayer, NSData, NSSet, NSString;
+@class ICAccountData, ICAccountProxy, ICFolder, NSData, NSPersistentStore, NSSet, NSString;
 
 @interface ICAccount : ICNoteContainer <ICCloudObject>
 {
@@ -17,7 +17,6 @@
     ICFolder *_defaultFolder;
     ICFolder *_trashFolder;
     ICAccountProxy *_accountProxy;
-    ICSelectorDelayer *_trashFolderHiddenSelectorDelayer;
 }
 
 + (id)keyPathsForValuesAffectingCanBeSharedViaICloud;
@@ -26,18 +25,24 @@
 + (id)standardFolderIdentifierWithPrefix:(id)arg1 accountIdentifier:(id)arg2 accountType:(int)arg3;
 + (void)localeDidChange:(id)arg1;
 + (void)initialize;
++ (_Bool)hasActiveCloudKitAccountInContext:(id)arg1;
 + (id)accountsMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)localizedLocalAccountNameMidSentence;
 + (id)localizedLocalAccountName;
 + (_Bool)clearAccountForAppleCloudKitTable;
 + (_Bool)isCloudKitAccountAvailable;
 + (id)accountsWithAccountType:(int)arg1 context:(id)arg2;
++ (id)allActiveCloudKitAccountsInContext:(id)arg1;
++ (id)allCloudKitAccountsInContext:(id)arg1;
++ (id)allActiveAccountsInContext:(id)arg1 sortDescriptors:(id)arg2 relationshipKeyPathsForPrefetching:(id)arg3;
 + (id)allActiveAccountsInContext:(id)arg1;
++ (unsigned long long)numberOfCloudKitAccountsInContext:(id)arg1 onlyMigrated:(_Bool)arg2;
 + (id)allAccountsInContext:(id)arg1;
 + (id)defaultAccountInContext:(id)arg1;
 + (id)localAccountInContext:(id)arg1;
 + (id)cloudKitIfMigratedElseLocalAccountInContext:(id)arg1;
 + (id)cloudKitAccountInContext:(id)arg1;
++ (id)cloudKitAccountWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)accountWithIdentifier:(id)arg1 context:(id)arg2;
 + (void)deleteAccountWithBatchDelete:(id)arg1;
 + (void)deleteAccount:(id)arg1;
@@ -45,14 +50,17 @@
 + (id)newAccountWithIdentifier:(id)arg1 type:(int)arg2 context:(id)arg3;
 + (void)initializeLocalAccountNamesInBackground;
 + (id)allCloudObjectsInContext:(id)arg1;
-+ (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
-@property(retain, nonatomic) ICSelectorDelayer *trashFolderHiddenSelectorDelayer; // @synthesize trashFolderHiddenSelectorDelayer=_trashFolderHiddenSelectorDelayer;
++ (id)existingCloudObjectForRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 @property(retain, nonatomic) ICAccountProxy *accountProxy; // @synthesize accountProxy=_accountProxy;
 @property(retain, nonatomic) ICFolder *trashFolder; // @synthesize trashFolder=_trashFolder;
 @property(retain, nonatomic) ICFolder *defaultFolder; // @synthesize defaultFolder=_defaultFolder;
 @property(nonatomic) _Bool didAddTrashObservers; // @synthesize didAddTrashObservers=_didAddTrashObservers;
 @property(nonatomic) _Bool didAddObservers; // @synthesize didAddObservers=_didAddObservers;
 - (void).cxx_destruct;
+- (void)updateSubFolderMergeableDataChangeCount;
+- (id)subFolderOrderMergeableData;
+- (void)setSubFolderOrderMergeableData:(id)arg1;
+- (id)visibleSubFolders;
 - (id)ic_loggingValues;
 - (id)ic_loggingIdentifier;
 - (void)updateTrashFolderHiddenNoteContainerState;
@@ -71,6 +79,7 @@
 @property(nonatomic) _Bool didChooseToMigrate; // @dynamic didChooseToMigrate;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(nonatomic) int accountType; // @dynamic accountType;
+- (_Bool)isAllNotesContainer;
 - (id)titleForNavigationBar;
 - (unsigned long long)visibleNotesIncludingTrashCount;
 - (unsigned long long)visibleNotesCount;
@@ -80,10 +89,16 @@
 - (_Bool)canPasswordProtectNotes;
 - (id)passwordProtectedNotes;
 - (id)cryptoPassphraseVerifier;
+- (id)previewImageDirectoryURL;
+- (id)exportableMediaDirectoryURL;
+- (id)mediaDirectoryURL;
+- (id)fallbackImageDirectoryURL;
+- (id)accountFilesDirectoryURL;
 - (_Bool)shouldExcludeFilesFromBackup;
 - (id)allChildObjects;
 - (id)allItemsFolderLocalizedTitle;
 - (id)folderWithIdentifier:(id)arg1;
+- (id)subFolderIdentifiersOrderedSet;
 - (id)visibleNoteContainerChildren;
 - (id)visibleNoteContainers;
 - (id)reservedAccountFolderTitles;
@@ -93,13 +108,16 @@
 - (id)predicateForPinnedNotes;
 - (id)predicateForVisibleFolders;
 - (id)predicateForFolders;
-- (unsigned long long)countOfVisibleFolders;
+- (unsigned long long)indexOfCustomRootLevelFolder:(id)arg1;
+- (id)customRootLevelFolders;
+- (_Bool)containsSharedFolders;
 - (id)visibleFolders;
 - (_Bool)hasSameCryptoKeyAsAccount:(id)arg1;
 - (long long)compare:(id)arg1;
 - (_Bool)supportsLegacyTombstones;
 - (_Bool)isDeletable;
 - (_Bool)isLeaf;
+@property(readonly, nonatomic) NSPersistentStore *persistentStore;
 - (id)localizedNameMidSentence;
 @property(readonly, nonatomic) NSString *localizedName;
 - (id)standardFolderIdentifierWithPrefix:(id)arg1;
@@ -108,6 +126,9 @@
 - (void)createTrashFolder;
 - (void)createDefaultFolder;
 - (void)createStandardFolders;
+- (void)performBlockInPersonaContextIfNecessary:(CDUnknownBlockType)arg1;
+- (id)customNoteSortTypeValue;
+- (id)accountDataCreateIfNecessary;
 - (void)setMarkedForDeletion:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)removeAllObserversIfNecessary;
@@ -118,8 +139,9 @@
 - (void)prepareForDeletion;
 - (void)awakeFromInsert;
 - (void)awakeFromFetch;
+- (id)cacheKey;
 - (id)newlyCreatedRecord;
-- (void)mergeDataFromRecord:(id)arg1;
+- (void)mergeDataFromRecord:(id)arg1 accountID:(id)arg2;
 - (_Bool)shouldBeDeletedFromLocalDatabase;
 - (_Bool)needsToBePushedToCloud;
 - (_Bool)needsToBeDeletedFromCloud;
@@ -129,6 +151,7 @@
 - (_Bool)isInICloudAccount;
 
 // Remaining properties
+@property(retain, nonatomic) ICAccountData *accountData; // @dynamic accountData;
 @property(retain, nonatomic) NSData *cryptoVerifier; // @dynamic cryptoVerifier;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
@@ -141,6 +164,7 @@
 @property(retain, nonatomic) NSSet *notes; // @dynamic notes;
 @property(retain, nonatomic) NSSet *ownerInverse; // @dynamic ownerInverse;
 @property(retain, nonatomic) NSSet *serverChangeTokens; // @dynamic serverChangeTokens;
+@property(nonatomic) _Bool storeDataSeparately; // @dynamic storeDataSeparately;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) NSString *userRecordName; // @dynamic userRecordName;
 

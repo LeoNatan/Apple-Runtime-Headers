@@ -11,8 +11,10 @@
 @interface MPModelForYouRecommendationGroup : MPModelObject
 {
     NSURL *_refreshURL;
+    _Bool _groupRecommendation;
 }
 
++ (id)__displaysAsGridCellInCarPlay_KEY;
 + (id)__refreshURL_KEY;
 + (id)__loadAdditionalContentURL_KEY;
 + (id)__title_KEY;
@@ -21,12 +23,14 @@
 + (id)__sectionedItems_KEY;
 + (id)__lastUpdatedDate_KEY;
 + (id)__groupType_KEY;
+@property(nonatomic, getter=isGroupRecommendation) _Bool groupRecommendation; // @synthesize groupRecommendation=_groupRecommendation;
 - (void).cxx_destruct;
 - (id)itemAtIndex:(long long)arg1;
 - (long long)numberOfItems;
 @property(copy, nonatomic) NSURL *refreshURL; // @dynamic refreshURL;
 
 // Remaining properties
+@property(nonatomic) _Bool displaysAsGridCellInCarPlay; // @dynamic displaysAsGridCellInCarPlay;
 @property(nonatomic) unsigned long long groupType; // @dynamic groupType;
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @dynamic lastUpdatedDate;
 @property(copy, nonatomic) NSURL *loadAdditionalContentURL; // @dynamic loadAdditionalContentURL;

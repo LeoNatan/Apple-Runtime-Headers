@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSString *client; // @synthesize client=_client;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithExternalDevice:(id)arg1 client:(id)arg2 reason:(id)arg3;

@@ -6,7 +6,7 @@
 
 #import <PepperUICore/PUICTableViewCell.h>
 
-@class NMCKeyValueObserver, NMUNowPlayingIndicatorView, UIImageView;
+@class NMCKeyValueObserver, NMUArtworkFormat, NMUNowPlayingIndicatorView, UIImageView;
 
 @interface NMUBaseTableViewCell : PUICTableViewCell
 {
@@ -18,14 +18,14 @@
 - (_Bool)_wantsTransparentBackground;
 - (void)_configureImageObserver;
 - (void)_configureBackgroundPillColor;
+@property(readonly, nonatomic) NMUArtworkFormat *artworkImageViewFormat;
 @property(readonly, nonatomic) UIImageView *artworkImageView;
 - (void)prepareForReuse;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)_setNowPlayingIndicatorView:(id)arg1;
 - (id)_nowPlayingIndicatorView;
-- (void)setNowPlayingIndicatorViewHidden:(_Bool)arg1 animating:(_Bool)arg2;
+- (void)setNowPlayingIndicatorViewHidden:(_Bool)arg1 animating:(_Bool)arg2 placement:(unsigned int)arg3;
 @property(readonly, nonatomic) NMUNowPlayingIndicatorView *nowPlayingIndicatorView;
-@property(readonly, nonatomic) struct CGSize nowPlayingIndicatorSize;
 
 @end
 

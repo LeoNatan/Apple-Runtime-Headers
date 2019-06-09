@@ -8,17 +8,17 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDAccessory, HMDCentralMessageDispatcher, NSString;
+@class HMDAccessory, HMDMessageDispatcher, NSString;
 
 @interface HMDCameraResidentMessageHandler : HMFObject <HMFLogging>
 {
     NSString *_logID;
     HMDAccessory *_accessory;
-    HMDCentralMessageDispatcher *_remoteMessageDispatcher;
+    HMDMessageDispatcher *_remoteMessageDispatcher;
 }
 
 + (id)logCategory;
-@property(retain, nonatomic) HMDCentralMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
+@property(retain, nonatomic) HMDMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
 @property(readonly, nonatomic) __weak HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 - (void).cxx_destruct;

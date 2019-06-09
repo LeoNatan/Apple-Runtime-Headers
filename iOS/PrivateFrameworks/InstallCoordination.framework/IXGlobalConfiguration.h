@@ -29,7 +29,7 @@
 - (id)dataDirectoryAbortingOnError;
 - (id)dataDirectoryWithError:(id *)arg1;
 - (id)_systemContainerURLWithError:(id *)arg1;
-- (_Bool)createDirectories;
+- (void)createDirectories;
 - (id)init;
 
 @end

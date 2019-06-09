@@ -9,6 +9,7 @@
 @class MPUBorderDrawingCache, NSCache, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, NSString, SKUIBadgeTextAttachmentLoader, SKUIClientContext, SKUIItemOfferButton, SKUIResourceLoader, SKUIViewElementTextLayoutCache, UIColor, UIViewController;
 @protocol SKUIArtworkRequestDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewElementLayoutContext : NSObject
 {
     NSMutableDictionary *_aggregateValues;

@@ -10,10 +10,14 @@
 
 @interface ASDCreatePlaceholdersRequestOptions : ASDRequestOptions
 {
+    BOOL _completeDataPromise;
+    BOOL _createAsMobileBackup;
     NSArray *_items;
 }
 
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
+@property(nonatomic) BOOL createAsMobileBackup; // @synthesize createAsMobileBackup=_createAsMobileBackup;
+@property(nonatomic) BOOL completeDataPromise; // @synthesize completeDataPromise=_completeDataPromise;
 - (void).cxx_destruct;
 - (id)initWithApplicationMetadata:(id)arg1;
 - (id)init;

@@ -8,27 +8,22 @@
 
 #import <AOSUI/NSTouchBarProvider-Protocol.h>
 
-@class NSButtonGroupTouchBarItem, NSMutableDictionary, NSMutableOrderedSet, NSString, NSTouchBar;
+@class NSGroupTouchBarItem, NSMutableDictionary, NSMutableOrderedSet, NSString, NSTouchBar;
 
 @interface iCloudTouchBarController : NSObject <NSTouchBarProvider>
 {
     NSTouchBar *_iCloudTouchBar;
-    NSButtonGroupTouchBarItem *_buttonGroup;
+    NSGroupTouchBarItem *_buttonGroup;
     NSMutableDictionary *_buttonDictionary;
-    NSMutableDictionary *_buttonBarItemDictionary;
     NSMutableOrderedSet *_buttonIdentifiers;
 }
 
 @property(retain, nonatomic) NSMutableOrderedSet *buttonIdentifiers; // @synthesize buttonIdentifiers=_buttonIdentifiers;
-@property(retain) NSMutableDictionary *buttonBarItemDictionary; // @synthesize buttonBarItemDictionary=_buttonBarItemDictionary;
 @property(retain) NSMutableDictionary *buttonDictionary; // @synthesize buttonDictionary=_buttonDictionary;
-@property(retain) NSButtonGroupTouchBarItem *buttonGroup; // @synthesize buttonGroup=_buttonGroup;
+@property(retain) NSGroupTouchBarItem *buttonGroup; // @synthesize buttonGroup=_buttonGroup;
 @property(retain) NSTouchBar *iCloudTouchBar; // @synthesize iCloudTouchBar=_iCloudTouchBar;
-- (void)updateTouchBarButton:(id)arg1 forAlertButton:(id)arg2;
-- (void)updateTouchBar;
-- (id)makeTouchBarItemWithButton:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 - (id)initWithButtonDictionary:(id)arg1 withOrderedIdentifiers:(id)arg2;
 
 // Remaining properties

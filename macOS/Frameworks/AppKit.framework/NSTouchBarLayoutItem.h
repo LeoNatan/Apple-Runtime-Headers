@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) unsigned long long itemPosition;
+@property(readonly) BOOL participatesInOverflow;
 @property(readonly) struct CGSize preferredSize;
 @property(readonly) double preferredTrailingPosition;
 @property(readonly) double preferredZOrder;

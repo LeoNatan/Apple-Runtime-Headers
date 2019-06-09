@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <Mail/MCGmailLabel-Protocol.h>
+#import <Mail/ECGmailLabel-Protocol.h>
+#import <Mail/EDIndexableMailbox-Protocol.h>
 #import <Mail/MCMailbox-Protocol.h>
+#import <Mail/MFMailboxDisplayCountUpdater-Protocol.h>
 #import <Mail/MFUIMailbox-Protocol.h>
 
 @class MFCriterion, MFMailAccount, MFMessageCounts, MFMessageStore, NSArray, NSDate, NSDictionary, NSEnumerator, NSError, NSImage, NSMutableIndexSet, NSMutableSet, NSOperationQueue, NSString, NSURL;
+@protocol OS_dispatch_queue;
 
-@interface MFMailbox : NSObject <MCGmailLabel, MCMailbox, MFUIMailbox>
+@interface MFMailbox : NSObject <ECGmailLabel, MCMailbox, MFUIMailbox, EDIndexableMailbox, MFMailboxDisplayCountUpdater>
 {
     MFMailAccount *_account;
     NSMutableSet *_reservedPathComponents;
@@ -60,6 +63,7 @@
     NSString *_pathComponent;
     NSString *_uuid;
     long long _unreadCountQueryObserverID;
+    NSObject<OS_dispatch_queue> *_storeCreationQueue;
     NSOperationQueue *_statusCountsQueue;
     MFMessageCounts *_savedDatabaseMessageCounts;
 }
@@ -72,7 +76,7 @@
 + (id)mailboxForDisplayForMessage:(id)arg1 mailboxCriteria:(id)arg2;
 + (id)_mailboxesFromCriterion:(id)arg1;
 + (id)mailboxFromPath:(id)arg1;
-+ (id)mailboxWithPersistentID:(id)arg1;
++ (id)mailboxWithIdentifier:(id)arg1;
 + (BOOL)mailboxTypeAllowsDeduplication:(int)arg1;
 + (BOOL)mailboxTypeIsAlwaysUnread:(int)arg1;
 + (BOOL)mailboxTypeAllowsConversations:(int)arg1;
@@ -93,6 +97,7 @@
 @property BOOL needsToSaveMailboxName; // @synthesize needsToSaveMailboxName=_needsToSaveMailboxName;
 @property BOOL uuidUpdatedInDatabase; // @synthesize uuidUpdatedInDatabase=_uuidUpdatedInDatabase;
 @property BOOL storeIsReadOnly; // @synthesize storeIsReadOnly=_storeIsReadOnly;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *storeCreationQueue; // @synthesize storeCreationQueue=_storeCreationQueue;
 @property long long unreadCountQueryObserverID; // @synthesize unreadCountQueryObserverID=_unreadCountQueryObserverID;
 @property(copy) NSString *uuid; // @synthesize uuid=_uuid;
 @property(copy) NSString *pathComponent; // @synthesize pathComponent=_pathComponent;
@@ -108,7 +113,6 @@
 - (BOOL)isEqualToSmartMailbox:(id)arg1;
 @property(readonly, nonatomic) BOOL isValidDestinationMailbox;
 @property(readonly, nonatomic) BOOL isPlaceholder;
-@property(readonly) BOOL allowsMoveDeletedMessagesToTrash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setFailedToOpen:(BOOL)arg1 error:(id)arg2;
 @property(readonly) NSError *openFailureError;
@@ -122,7 +126,8 @@
 - (void)_setDisplayCountWithMessageCounts:(id)arg1;
 - (void)setMessageCounts:(id)arg1;
 @property(readonly) unsigned long long deletedCount;
-@property unsigned long long displayCount;
+- (void)setDisplayCount:(unsigned long long)arg1;
+@property(readonly) unsigned long long displayCount;
 - (BOOL)_isNormalMailbox;
 - (BOOL)criteriaAreValid:(id *)arg1;
 - (id)_abGroupsUsedInCriteria;
@@ -171,7 +176,6 @@
 - (id)_URLStringWithAccount:(id)arg1;
 @property(readonly, nonatomic) NSURL *URL;
 - (id)pathRelativeToMailbox:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *tildeAbbreviatedPath;
 @property(readonly, copy) NSString *realFullPath;
 @property(readonly, copy, nonatomic) NSString *fullPath;
 @property(readonly, copy, nonatomic) NSString *accountRelativeFilesystemPath;
@@ -180,6 +184,7 @@
 @property(readonly, nonatomic) BOOL isAllMailMailbox;
 @property(readonly) BOOL isGmailStarredLabel;
 @property(readonly) BOOL isGmailImportantLabel;
+@property(readonly, nonatomic) BOOL isJunk;
 @property(readonly, nonatomic) BOOL isSmartMailboxOrFolder;
 @property(readonly, nonatomic) BOOL isGeneric;
 @property(readonly) BOOL isSpecialMailbox;
@@ -245,7 +250,9 @@
 - (void)cancelUnreadCountQuery;
 - (id)dictionaryRepresentationIncludePII:(BOOL)arg1;
 - (id)dictionaryRepresentation;
-@property(readonly, copy, nonatomic) NSString *persistentID;
+@property(readonly, nonatomic) NSString *persistentID;
+- (long long)databaseID;
+@property(readonly, copy, nonatomic) NSString *persistentUIIdentifier;
 - (id)initWithDictionaryRepresentation:(id)arg1 copyUUID:(BOOL)arg2;
 - (id)initWithMailbox:(id)arg1;
 - (id)initWithName:(id)arg1 pathComponent:(id)arg2 attributes:(unsigned long long)arg3 forAccount:(id)arg4;

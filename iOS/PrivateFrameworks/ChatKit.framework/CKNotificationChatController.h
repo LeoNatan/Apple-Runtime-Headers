@@ -8,18 +8,17 @@
 
 #import <ChatKit/CKMessageEntryViewDelegate-Protocol.h>
 #import <ChatKit/CKMessageEntryViewInputDelegate-Protocol.h>
-#import <ChatKit/UIPreviewInteractionDelegate-Protocol.h>
 #import <ChatKit/UITextInputPayloadDelegate-Protocol.h>
 
-@class CKFullScreenBalloonViewControllerNotification, CKMessageEntryView, CKRaiseGesture, CKScheduledUpdater, NSExtensionContext, NSString;
+@class CKFullScreenBalloonViewControllerNotification, CKMessageEntryView, CKMessageEntryViewController, CKRaiseGesture, CKScheduledUpdater, NSExtensionContext, NSString;
 @protocol CKNotificationChatControllerDelegate;
 
-@interface CKNotificationChatController : CKCoreChatController <UITextInputPayloadDelegate, CKMessageEntryViewDelegate, CKMessageEntryViewInputDelegate, UIPreviewInteractionDelegate>
+@interface CKNotificationChatController : CKCoreChatController <UITextInputPayloadDelegate, CKMessageEntryViewDelegate, CKMessageEntryViewInputDelegate>
 {
     _Bool _shouldAllowReplyFromLockScreen;
-    CKMessageEntryView *_entryView;
     NSExtensionContext *_urlOpenContext;
     CKFullScreenBalloonViewControllerNotification *_notificationFullScreenBalloonController;
+    CKMessageEntryViewController *_entryViewController;
     CKScheduledUpdater *_typingUpdater;
     CKRaiseGesture *_raiseGesture;
 }
@@ -27,15 +26,13 @@
 @property(nonatomic) _Bool shouldAllowReplyFromLockScreen; // @synthesize shouldAllowReplyFromLockScreen=_shouldAllowReplyFromLockScreen;
 @property(retain, nonatomic) CKRaiseGesture *raiseGesture; // @synthesize raiseGesture=_raiseGesture;
 @property(retain, nonatomic) CKScheduledUpdater *typingUpdater; // @synthesize typingUpdater=_typingUpdater;
+@property(retain, nonatomic) CKMessageEntryViewController *entryViewController; // @synthesize entryViewController=_entryViewController;
 @property(nonatomic) __weak CKFullScreenBalloonViewControllerNotification *notificationFullScreenBalloonController; // @synthesize notificationFullScreenBalloonController=_notificationFullScreenBalloonController;
 @property(nonatomic) __weak NSExtensionContext *urlOpenContext; // @synthesize urlOpenContext=_urlOpenContext;
-@property(retain, nonatomic) CKMessageEntryView *entryView; // @synthesize entryView=_entryView;
 - (void).cxx_destruct;
 - (void)updateRaiseGesture;
 - (void)_dismissFullScreenBubbleViewControllerWithSendAnimation:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)raiseGestureRecognized:(id)arg1;
-- (void)previewInteractionDidCancel:(id)arg1;
-- (void)previewInteraction:(id)arg1 didUpdatePreviewTransition:(double)arg2 ended:(_Bool)arg3;
 - (void)updateTyping;
 - (_Bool)getContainerWidth:(double *)arg1 offset:(double *)arg2;
 - (_Bool)messageEntryShouldHideCaret:(id)arg1;
@@ -48,9 +45,6 @@
 - (struct CGSize)messageEntryViewMaxShelfPluginViewSize:(id)arg1;
 - (double)messageEntryViewMaxHeight:(id)arg1;
 - (void)messageEntryViewRaiseGestureAutoSend:(id)arg1;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressEnded:(struct CGPoint)arg2;
-- (void)messageEntryView:(id)arg1 sendButtonLongPressMoved:(struct CGPoint)arg2;
-- (void)messageEntryViewSendButtonLongPressBegan:(id)arg1;
 - (void)messageEntryViewSendButtonHitWhileDisabled:(id)arg1;
 - (void)messageEntryViewSendButtonHit:(id)arg1;
 - (void)messageEntryView:(id)arg1 didTapMediaObject:(id)arg2;
@@ -79,8 +73,13 @@
 - (void)_setEntryViewFrame:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (void)_updateEntryViewFrameIfNeeded:(_Bool)arg1;
 - (double)_maxEntryViewHeight;
+@property(readonly, nonatomic) CKMessageEntryView *entryView;
+- (void)setEntryView:(id)arg1;
 - (void)setSendingMessage:(_Bool)arg1;
 - (id)inputAccessoryView;
+- (id)inputAccessoryViewController;
+- (_Bool)inputAccessoryViewControllerEnabled;
+- (_Bool)shouldShowEntryView;
 - (_Bool)_shouldDisplayTextEntry;
 - (void)_setConversationDeferredSetup;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 longPressedForItemWithIndexPath:(id)arg3;

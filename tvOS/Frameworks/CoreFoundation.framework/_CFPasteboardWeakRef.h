@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
--     // Error parsing type: ^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@CCCC}16@0:8, name: tryRetainPasteboard
--     // Error parsing type: @24@0:8^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@CCCC}16, name: initWithPasteboard:
+-     // Error parsing type: ^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@AQCCCC}16@0:8, name: tryRetainPasteboard
+-     // Error parsing type: @24@0:8^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@AQCCCC}16, name: initWithPasteboard:
 
 @end
 

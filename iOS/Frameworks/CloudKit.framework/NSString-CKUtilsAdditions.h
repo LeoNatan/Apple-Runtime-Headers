@@ -6,7 +6,10 @@
 
 #import <Foundation/NSString.h>
 
-@interface NSString (CKUtilsAdditions)
+#import <CloudKit/CKRecordValue-Protocol.h>
+#import <CloudKit/CKShortDescription-Protocol.h>
+
+@interface NSString (CKUtilsAdditions) <CKRecordValue, CKShortDescription>
 - (id)CKBase64DecodedString;
 - (id)CKBase64EncodedURLSafeString;
 - (id)CKNilIfLengthZero;
@@ -18,5 +21,20 @@
 - (id)CKSafeStringForURLPathComponent;
 - (id)CKSafeHashStringForPathComponent;
 - (id)CKSafeStringForPathComponent;
+- (id)CKDPIdentifier_Zone;
+- (id)CKDPIdentifier_ShareId;
+- (id)CKDPIdentifier_Subscription;
+- (id)CKDPIdentifier_Device;
+- (id)CKDPIdentifier_User;
+- (id)CKDPIdentifier_Record;
+- (id)CKDPIdentifier_Raw;
+- (id)_CKDPIdentifierWithType:(int)arg1;
+- (id)ckShortDescription;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreDuet/_DKMonitor-Protocol.h>
+#import <CoreDuet/_DKMonitoring-Protocol.h>
 
 @class NSDictionary;
 
-@protocol _DKNotificationReceiver <_DKMonitor>
+@protocol _DKNotificationReceiver <_DKMonitoring>
 - (void)receiveNotificationEvent:(NSDictionary *)arg1;
 @end
 

@@ -10,13 +10,17 @@
 
 @interface ICGradientView : UIView
 {
+    NSArray *_gradientColors;
 }
 
 + (Class)layerClass;
+@property(copy, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
+- (void).cxx_destruct;
 @property(nonatomic) struct CGPoint endPoint;
 @property(nonatomic) struct CGPoint startPoint;
 @property(copy, nonatomic) NSArray *locations;
-@property(copy, nonatomic) NSArray *gradientColors;
+- (void)updateLayerColors;
+- (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) CAGradientLayer *gradientLayer;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <MetalKit/MTLDrawable-Protocol.h>
 
-@class NSString;
+@class CAMetalLayer, NSString;
 @protocol MTLDevice, MTLTexture;
 
 __attribute__((visibility("hidden")))
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     unsigned int _pixelFormat;
     struct CGSize _size;
     _Bool _textureDirty;
+    CAMetalLayer *_layer;
     unsigned int _drawableID;
     id <MTLDevice> _device;
     double _presentedTime;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(readonly, nonatomic) unsigned int drawableID; // @synthesize drawableID=_drawableID;
 @property(readonly, nonatomic) double presentedTime; // @synthesize presentedTime=_presentedTime;
+@property(readonly) CAMetalLayer *layer; // @synthesize layer=_layer;
 - (void).cxx_destruct;
 - (void)addPresentedHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) struct CGSize size;

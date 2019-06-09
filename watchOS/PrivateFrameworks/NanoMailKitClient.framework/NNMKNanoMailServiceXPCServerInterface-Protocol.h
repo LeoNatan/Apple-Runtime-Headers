@@ -6,7 +6,7 @@
 
 #import <NanoMailKitClient/NSObject-Protocol.h>
 
-@class NNMKComposedMessage, NNMKMailbox, NNMKMailboxFilter, NNMKMailboxSelection, NNMKMessage, NSArray, NSDate, NSString;
+@class NNMKComposedMessage, NNMKMailbox, NNMKMailboxFilter, NNMKMailboxSelection, NNMKMessage, NNMKMessageContent, NSArray, NSDate, NSString;
 
 @protocol NNMKNanoMailServiceXPCServerInterface <NSObject>
 - (oneway void)requestFetchOldMessages;
@@ -14,6 +14,9 @@
 - (oneway void)deleteAllMessages;
 - (oneway void)requestMessagesCount;
 - (oneway void)addMailbox:(NNMKMailbox *)arg1;
+- (oneway void)removeSubsectionWithId:(NSString *)arg1;
+- (oneway void)addSubsectionEnabledNotifications:(_Bool)arg1;
+- (oneway void)addMessageContent:(NNMKMessageContent *)arg1 preview:(NSString *)arg2 messageId:(NSString *)arg3;
 - (oneway void)addMessage:(NNMKMessage *)arg1;
 - (oneway void)ping;
 - (oneway void)resendComposedMessageWithId:(NSString *)arg1;
@@ -34,10 +37,12 @@
 - (oneway void)requestFirstUnreadMessagesWithContent:(unsigned int)arg1 sinceDate:(NSDate *)arg2 fromAccountsWithIds:(NSArray *)arg3 orVIPs:(_Bool)arg4 orNotifyConversation:(_Bool)arg5 excludingMessageIds:(NSArray *)arg6;
 - (oneway void)requestFailedComposedMessages;
 - (oneway void)requestSendingProgress;
+- (oneway void)requestEnabledMailboxFeatures;
 - (oneway void)updateMailboxSelection:(NNMKMailboxSelection *)arg1;
 - (oneway void)requestMailboxSelection;
 - (oneway void)requestAccounts;
 - (oneway void)notifyOpenedMessageWithId:(NSString *)arg1;
+- (oneway void)setupContentForUITest:(NSString *)arg1;
 - (oneway void)requestMessageWithId:(NSString *)arg1;
 - (oneway void)requestMoreMessagesForConversationWithId:(NSString *)arg1;
 - (oneway void)requestConversationsReceivedBefore:(NSDate *)arg1 count:(unsigned int)arg2;

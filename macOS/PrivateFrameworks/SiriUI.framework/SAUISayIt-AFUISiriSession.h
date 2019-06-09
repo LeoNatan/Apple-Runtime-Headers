@@ -8,5 +8,6 @@
 
 @interface SAUISayIt (AFUISiriSession)
 - (long long)_afui_usefulUserResultType;
+@property(nonatomic, setter=siriui_setIgnoresMuteSwitch:) BOOL siriui_ignoresMuteSwitch;
 @end
 

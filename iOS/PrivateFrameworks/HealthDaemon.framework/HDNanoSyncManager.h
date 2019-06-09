@@ -15,7 +15,7 @@
 #import <HealthDaemon/HDNanoSyncStoreDelegate-Protocol.h>
 #import <HealthDaemon/HDSyncSessionDelegate-Protocol.h>
 
-@class HDIDSMessageCenter, HDKeyValueDomain, HDNanoSyncStore, HDPairedSyncManager, HDProfile, HKNanoSyncPairedDevicesSnapshot, NSArray, NSDate, NSHashTable, NSMutableDictionary, NSString;
+@class HDIDSMessageCenter, HDKeyValueDomain, HDNanoSyncStore, HDPairedSyncManager, HDProfile, HKNanoSyncPairedDevicesSnapshot, HKObserverSet, NSArray, NSDate, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface HDNanoSyncManager : NSObject <HDDiagnosticObject, HDHealthDaemonReadyObserver, HDNanoSyncStoreDelegate, HDSyncSessionDelegate, HDDatabaseProtectedDataObserver, HDDataObserver, HDIDSMessageCenterDelegate, HDForegroundClientProcessObserver>
@@ -27,10 +27,9 @@
     HKNanoSyncPairedDevicesSnapshot *_pairedDevicesSnapshot;
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_observerQueue;
     NSObject<OS_dispatch_queue> *_syncQueue;
     HDIDSMessageCenter *_messageCenter;
-    NSHashTable *_observers;
+    HKObserverSet *_observers;
     HDKeyValueDomain *_nanoSyncDomain;
     HDNanoSyncStore *_activeSyncStore;
     NSMutableDictionary *_syncStoresByDeviceIdentifier;
@@ -51,10 +50,9 @@
 @property(retain, nonatomic) NSMutableDictionary *syncStoresByDeviceIdentifier; // @synthesize syncStoresByDeviceIdentifier=_syncStoresByDeviceIdentifier;
 @property(retain, nonatomic) HDNanoSyncStore *activeSyncStore; // @synthesize activeSyncStore=_activeSyncStore;
 @property(retain, nonatomic) HDKeyValueDomain *nanoSyncDomain; // @synthesize nanoSyncDomain=_nanoSyncDomain;
-@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) HKObserverSet *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) HDIDSMessageCenter *messageCenter; // @synthesize messageCenter=_messageCenter;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(retain) HKNanoSyncPairedDevicesSnapshot *pairedDevicesSnapshot; // @synthesize pairedDevicesSnapshot=_pairedDevicesSnapshot;
@@ -108,15 +106,19 @@
 - (void)_queue_startPeriodicSyncTimerIfNecessary;
 - (void)_queue_periodicSyncTimerFired;
 - (void)_queue_receiveChangeResponse:(id)arg1 syncStore:(id)arg2;
+- (long long)_changeResponseActionForMessage:(id)arg1 statusCode:(int)arg2 syncStore:(id)arg3 errorDescription:(id *)arg4;
 - (void)_queue_changeResponseDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_changeRequestDidFailToSendWithError:(id)arg1 syncStore:(id)arg2;
+- (id)_syncQueue_responseForChangesRequest:(id)arg1 syncStore:(id)arg2 statusCode:(int)arg3;
 - (void)_queue_receiveChangeRequest:(id)arg1 syncStore:(id)arg2;
+- (int)_changeResponseStatusCodeForAction:(long long)arg1;
+- (long long)_changeRequestActionForMessage:(id)arg1 syncStore:(id)arg2 errorDescription:(id *)arg3;
 - (void)_queue_sendSpeculativeChangeSet:(id)arg1 syncStore:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_queue_sendChangeSet:(id)arg1 status:(id)arg2 session:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_syncQueue_applyActivationRestore:(id)arg1 request:(id)arg2 syncStore:(id)arg3 error:(id *)arg4;
 - (void)_queue_handleRestoreResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_handleRestoreRequest:(id)arg1 syncStore:(id)arg2;
-- (_Bool)_prepareForCompanionChangeWithStore:(id)arg1 error:(id *)arg2;
+- (_Bool)_syncQueue_prepareForCompanionChangeWithStore:(id)arg1 error:(id *)arg2;
 - (long long)_actionForRestoreRequest:(id)arg1 syncStore:(id)arg2 error:(id *)arg3;
 - (void)_queue_sendRestoreMessageWithStore:(id)arg1 restoreUUID:(id)arg2 sequenceNumber:(long long)arg3 statusCode:(int)arg4;
 - (void)_queue_beginRestoreWithStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -166,6 +168,7 @@
 - (void)_queue_sendResponse:(id)arg1 syncStore:(id)arg2;
 - (void)_queue_sendRequest:(id)arg1 syncStore:(id)arg2;
 - (_Bool)_queue_permitSyncWithError:(id *)arg1;
+- (void)_addGraceVersionMessageHandlersToMessageCenter:(id)arg1;
 - (void)_addDaytonaVersionMessageHandlersToMessageCenter:(id)arg1;
 - (void)_queue_setUpMessageCentersIfNecessary;
 - (_Bool)_queue_finishInitializationAfterFirstUnlockIfNecessaryWithError:(id *)arg1;
@@ -179,7 +182,6 @@
 - (void)syncHealthDataWithOptions:(unsigned long long)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)syncHealthDataWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)pairedSyncDidBeginForDevice:(id)arg1 messagesSentHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)_allObservers;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
@@ -187,7 +189,7 @@
 @property(readonly) _Bool isMaster;
 - (void)dealloc;
 - (void)_invalidate;
-- (void)obliterateWithReason:(id)arg1 preserveCopy:(_Bool)arg2;
+- (void)obliterateWithOptions:(unsigned long long)arg1 reason:(id)arg2;
 - (void)invalidateAndWait;
 - (id)initWithProfile:(id)arg1 isMaster:(_Bool)arg2;
 

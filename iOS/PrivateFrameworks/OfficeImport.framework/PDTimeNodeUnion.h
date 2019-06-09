@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     PDCmdBehavior *mCmdBehavior;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setCmdBehavior:(id)arg1;
 - (id)cmdBehavior;
@@ -51,7 +52,6 @@ __attribute__((visibility("hidden")))
 - (void)setTimeBehavior:(id)arg1;
 - (id)timeBehavior;
 - (id)commonBehavior;
-- (void)dealloc;
 - (id)init;
 
 @end

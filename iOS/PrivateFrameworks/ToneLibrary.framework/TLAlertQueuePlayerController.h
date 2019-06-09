@@ -68,7 +68,7 @@
 - (void)_startObservingQueuePlayer;
 - (void)_destroyQueuePlayer;
 - (void)_createQueuePlayerIfNecessary;
-- (void)_didReceiveAttentionPollingEventOfType:(long long)arg1;
+- (void)_didReceiveAttentionPollingEventOfType:(long long)arg1 alertForAudioEnvironmentSetup:(id)arg2;
 - (void)_resetClientPriority;
 - (void)_restoreAudioEnvironment;
 - (void)_prepareAudioEnvironment;

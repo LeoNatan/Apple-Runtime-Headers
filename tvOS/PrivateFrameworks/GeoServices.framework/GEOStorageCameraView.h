@@ -16,13 +16,13 @@
     GEOURLCamera *_camera;
     int _mapType;
     struct {
-        unsigned int mapType:1;
-    } _has;
+        unsigned int has_mapType:1;
+    } _flags;
 }
 
-@property(nonatomic) int mapType; // @synthesize mapType=_mapType;
-@property(retain, nonatomic) GEOURLCamera *camera; // @synthesize camera=_camera;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,11 +31,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsMapType:(id)arg1;
 - (id)mapTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasMapType;
+@property(nonatomic) int mapType;
+@property(retain, nonatomic) GEOURLCamera *camera;
 @property(readonly, nonatomic) _Bool hasCamera;
 
 @end

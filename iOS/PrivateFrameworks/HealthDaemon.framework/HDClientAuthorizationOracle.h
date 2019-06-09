@@ -6,22 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class HDProfile, HDXPCClient;
+@class HDProfile, NSString, _HKEntitlements;
 
 @interface HDClientAuthorizationOracle : NSObject
 {
-    _Bool _clientHasPrivateEntitlement;
     HDProfile *_profile;
-    HDXPCClient *_client;
+    NSString *_sourceBundleIdentifier;
+    _HKEntitlements *_entitlements;
+    _Bool _clientHasPrivateEntitlement;
 }
 
-@property(readonly, nonatomic) HDXPCClient *client; // @synthesize client=_client;
-@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+- (_Bool)_shouldBypassAuthorization;
+- (id)readAuthorizationStatusesForTypes:(id)arg1 error:(id *)arg2;
 - (id)readAuthorizationStatusForType:(id)arg1 error:(id *)arg2;
 - (id)additionalAuthorizationPredicateForObjectType:(id)arg1 error:(id *)arg2;
+- (_Bool)performReadAuthorizationTransactionWithError:(id *)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)filteredObjectsForReadAuthorization:(id)arg1 anchor:(id)arg2 error:(id *)arg3;
-- (id)initWithClient:(id)arg1 profile:(id)arg2;
+- (id)initWithSourceBundleIdentifier:(id)arg1 entitlements:(id)arg2 profile:(id)arg3;
 - (id)init;
 
 @end

@@ -11,9 +11,9 @@
 
 @interface GEOComposedTransitTripRouteLeg : GEOComposedTransitBaseRouteLeg
 {
-    GEOComposedTransitTripRouteStep *_boardStep;
-    GEOComposedTransitTripRouteStep *_alightStep;
-    GEOComposedTransitTripRouteStep *_blockTransferStep;
+    unsigned int _boardStepIndex;
+    unsigned int _alightStepIndex;
+    unsigned int _blockTransferStepIndex;
     unsigned int _numberOfTransitStops;
     unsigned int _selectedRideOptionIndex;
     NSArray *_actionSheetDescriptions;
@@ -23,9 +23,12 @@
     NSArray *_alightNotifications;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSArray *transitLineOptions; // @synthesize transitLineOptions=_transitLineOptions;
 @property(nonatomic) unsigned int selectedRideOptionIndex; // @synthesize selectedRideOptionIndex=_selectedRideOptionIndex;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) _Bool notifyBeforeAlightStep;
 @property(readonly, nonatomic) NSArray *routeLineArtwork;
 @property(readonly, nonatomic) NSDate *lastStepArrivalDate;
@@ -43,11 +46,11 @@
 - (id)routeDetailsPrimaryArtworkForRideOption:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int rideOptionsCount;
 - (id)blockTransferStep;
-@property(readonly, nonatomic) GEOComposedTransitTripRouteStep *alightStep; // @synthesize alightStep=_alightStep;
-@property(readonly, nonatomic) GEOComposedTransitTripRouteStep *boardStep; // @synthesize boardStep=_boardStep;
+@property(readonly, nonatomic) GEOComposedTransitTripRouteStep *alightStep;
+@property(readonly, nonatomic) GEOComposedTransitTripRouteStep *boardStep;
 - (_Bool)_needsStepData;
 - (void)_cacheStepData;
-- (id)initWithComposedRoute:(id)arg1 tripIndex:(unsigned int)arg2 stepRange:(struct _NSRange)arg3 transitStepRange:(struct _NSRange)arg4 pointRange:(struct _NSRange)arg5;
+- (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 tripIndex:(unsigned int)arg3 stepRange:(struct _NSRange)arg4 transitStepRange:(struct _NSRange)arg5 pointRange:(struct _NSRange)arg6;
 
 @end
 

@@ -23,7 +23,9 @@
 + (id)sharedClient;
 - (void).cxx_destruct;
 - (void)_setProgressHandler:(CDUnknownBlockType)arg1 forUUID:(id)arg2;
-- (id)connectionWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)_xpcConnection;
+- (id)synchronousRemoteObjectWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)remoteObjectWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)managerResumed;
 - (void)managerStalled;
 - (void)disksDisappeared:(id)arg1;
@@ -31,6 +33,8 @@
 - (void)disksAppeared:(id)arg1;
 - (void)initialPopulateComplete;
 - (void)updateUUID:(id)arg1 progress:(float)arg2 message:(id)arg3;
+- (void)removeAPFSVolumeGroup:(id)arg1 container:(id)arg2 completetionBlock:(CDUnknownBlockType)arg3;
+- (void)createAPFSVolumeGroupWithDisks:(id)arg1 container:(id)arg2 completetionBlock:(CDUnknownBlockType)arg3;
 - (void)deleteSnapshots:(id)arg1 disk:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)revertToSnapshot:(id)arg1 disk:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)renameSnapshot:(id)arg1 toName:(id)arg2 disk:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
@@ -43,7 +47,10 @@
 - (void)deleteRAID:(id)arg1 progress:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)removeDisk:(id)arg1 fromRAID:(id)arg2 progress:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)repairRAID:(id)arg1 spareDisk:(id)arg2 progress:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
-- (void)addChildVolumeToAPFSContainer:(id)arg1 name:(id)arg2 caseSensitive:(BOOL)arg3 minSize:(unsigned long long)arg4 maxSize:(unsigned long long)arg5 password:(id)arg6 passwordHint:(id)arg7 progressBlock:(CDUnknownBlockType)arg8 completetionBlock:(CDUnknownBlockType)arg9;
+- (void)setAPFSRole:(id)arg1 forDisk:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)_addChildVolumeToAPFSContainer:(id)arg1 dataVolume:(id)arg2 name:(id)arg3 caseSensitive:(BOOL)arg4 minSize:(unsigned long long)arg5 maxSize:(unsigned long long)arg6 password:(id)arg7 passwordHint:(id)arg8 apfsRole:(id)arg9 progressBlock:(CDUnknownBlockType)arg10 completetionBlock:(CDUnknownBlockType)arg11;
+- (void)addSystemVolumeToAPFSContainer:(id)arg1 dataVolume:(id)arg2 name:(id)arg3 caseSensitive:(BOOL)arg4 minSize:(unsigned long long)arg5 maxSize:(unsigned long long)arg6 password:(id)arg7 passwordHint:(id)arg8 progressBlock:(CDUnknownBlockType)arg9 completetionBlock:(CDUnknownBlockType)arg10;
+- (void)addChildVolumeToAPFSContainer:(id)arg1 name:(id)arg2 caseSensitive:(BOOL)arg3 minSize:(unsigned long long)arg4 maxSize:(unsigned long long)arg5 password:(id)arg6 passwordHint:(id)arg7 apfsRole:(id)arg8 progressBlock:(CDUnknownBlockType)arg9 completetionBlock:(CDUnknownBlockType)arg10;
 - (void)addChildVolumeToAPFSContainer:(id)arg1 name:(id)arg2 caseSensitive:(BOOL)arg3 minSize:(unsigned long long)arg4 maxSize:(unsigned long long)arg5 password:(id)arg6 progressBlock:(CDUnknownBlockType)arg7 completetionBlock:(CDUnknownBlockType)arg8;
 - (void)deleteAPFSContainer:(id)arg1 progress:(CDUnknownBlockType)arg2 callbackBlock:(CDUnknownBlockType)arg3;
 - (void)createAPFSContainerWithDisks:(id)arg1 progress:(CDUnknownBlockType)arg2 callbackBlock:(CDUnknownBlockType)arg3;
@@ -82,6 +89,7 @@
 - (void)getRecoverySystemInfoForDisk:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)enableJournalingOnDisk:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)enablePermissionsOnDisk:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)unEnsureRecoveryForDisk:(id)arg1 withProgressHandler:(CDUnknownBlockType)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)ensureRecoveryForDisk:(id)arg1 withRecoverySystemPath:(id)arg2 chunkkList:(id)arg3 diagnostics:(id)arg4 ignoreBlacklist:(BOOL)arg5 handlingProgress:(CDUnknownBlockType)arg6 callbackBlock:(CDUnknownBlockType)arg7;
 - (void)blessDisk:(id)arg1 options:(id)arg2 withCallbackBlock:(CDUnknownBlockType)arg3;
 - (void)compositeDisks:(id)arg1 volumeName:(id)arg2 handlingProgress:(CDUnknownBlockType)arg3 callbackBlock:(CDUnknownBlockType)arg4;

@@ -14,6 +14,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (_Bool)filter:(id)arg1 acceptsDataObjectWithStartTimestamp:(double)arg2 endTimestamp:(double)arg3 valueInCanonicalUnit:(double)arg4;
++ (_Bool)filter:(id)arg1 acceptsActivitySummary:(id)arg2;
 + (_Bool)filter:(id)arg1 acceptsDataObject:(id)arg2;
 + (id)falseFilter;
 + (id)trueFilter;
@@ -26,6 +28,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)_subfilters;
 - (id)filterByApplyingTransformation:(CDUnknownBlockType)arg1;
+- (_Bool)acceptsDataObjectWithStartTimestamp:(double)arg1 endTimestamp:(double)arg2 valueInCanonicalUnit:(double)arg3;
+- (_Bool)acceptsActivitySummary:(id)arg1;
 - (_Bool)acceptsDataObject:(id)arg1;
 
 @end

@@ -22,11 +22,12 @@
 @property(retain, nonatomic) NWKXPCConnectionWrapper *connectionWrapper; // @synthesize connectionWrapper=_connectionWrapper;
 @property(copy, nonatomic) CDUnknownBlockType acknowledgedBlock; // @synthesize acknowledgedBlock=_acknowledgedBlock;
 - (void).cxx_destruct;
-- (void)location:(id)arg1 update:(unsigned int)arg2 current:(id)arg3 hourly:(id)arg4 daily:(id)arg5 airQuality:(id)arg6;
+- (void)location:(id)arg1 token:(unsigned int)arg2 updatedAt:(id)arg3 current:(id)arg4 hourly:(id)arg5 daily:(id)arg6 airQuality:(id)arg7;
 - (void)location:(id)arg1 isUpdating:(_Bool)arg2 error:(id)arg3;
 - (void)connectionAcknowledgedForBulkUpdateOfLocations:(id)arg1;
-- (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)cleanup;
 - (id)initWithLocations:(id)arg1;
 - (id)init;
 

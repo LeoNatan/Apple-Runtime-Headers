@@ -10,15 +10,15 @@
 #import <PhotosUICore/PXReusableObject-Protocol.h>
 #import <PhotosUICore/PXUIViewBasicTile-Protocol.h>
 
-@class NSString, PXCMMAssetsProgressListener, PXCMMViewModel, UIButton, UILabel, UIView;
-@protocol PXImportStatusManager;
+@class NSString, PXCMMViewModel, PXMomentShareStatusPresentation, UIButton, UILabel, UIView;
+@protocol PXAssetImportStatusManager;
 
 @interface PXCMMSectionHeaderController : NSObject <PXChangeObserver, PXUIViewBasicTile, PXReusableObject>
 {
     unsigned long long _activityType;
     PXCMMViewModel *_viewModel;
-    PXCMMAssetsProgressListener *_assetsProgressListener;
-    id <PXImportStatusManager> _importStatusManager;
+    PXMomentShareStatusPresentation *_momentShareStatusPresentation;
+    id <PXAssetImportStatusManager> _importStatusManager;
     _Bool _isViewLoaded;
     UIView *_underlyingView;
     UIButton *_actionButton;
@@ -48,7 +48,7 @@
 - (void)_handleActionButtonTapped:(id)arg1;
 @property(readonly, nonatomic) UIView *view;
 - (void)_loadViewIfNeeded;
-- (id)initWithActivityType:(unsigned long long)arg1 viewModel:(id)arg2 assetsProgressListener:(id)arg3 importStatusManager:(id)arg4;
+- (id)initWithActivityType:(unsigned long long)arg1 viewModel:(id)arg2 momentShareStatusPresentation:(id)arg3 importStatusManager:(id)arg4;
 - (id)init;
 
 // Remaining properties

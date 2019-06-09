@@ -14,6 +14,8 @@
     unsigned int _seqID;
     double _lastStartTime;
     _Bool _loopIsEnabled;
+    float _loopLength;
+    float _playbackRate;
     unsigned int _channelCount;
     unsigned int _activeChannel;
 }
@@ -26,15 +28,23 @@
 - (void).cxx_destruct;
 - (_Bool)setVolume:(float)arg1 atTime:(double)arg2 error:(id *)arg3;
 - (_Bool)activateChannelByIndex:(unsigned int)arg1 atTime:(double)arg2 error:(id *)arg3;
+- (_Bool)cancelAndReturnError:(id *)arg1;
 - (_Bool)setParameter:(unsigned int)arg1 value:(float)arg2 channel:(unsigned int)arg3 atTime:(double)arg4 error:(id *)arg5;
+- (_Bool)seekToTime:(double)arg1 error:(id *)arg2;
+- (_Bool)resumeAtTime:(double)arg1 error:(id *)arg2;
+- (_Bool)pauseAtTime:(double)arg1 error:(id *)arg2;
 - (_Bool)stopAtTime:(double)arg1 error:(id *)arg2;
 - (_Bool)playAtTime:(double)arg1 offset:(double)arg2 error:(id *)arg3;
 - (_Bool)prepareToPlayAndReturnError:(id *)arg1;
+@property float playbackRate;
+- (_Bool)setLoopLength:(float)arg1 error:(id *)arg2;
 @property _Bool loopingEnabled;
 - (unsigned int)getChannelCount;
+@property(copy) CDUnknownBlockType completionHandler;
 - (_Bool)setLoopingEnabled:(_Bool)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1 player:(id)arg2 error:(id *)arg3;
+- (id)initWithEvents:(id)arg1 player:(id)arg2 error:(id *)arg3;
 - (id)initWithData:(id)arg1 player:(id)arg2 error:(id *)arg3;
 - (id)init;
 

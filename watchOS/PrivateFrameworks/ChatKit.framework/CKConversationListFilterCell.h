@@ -8,6 +8,7 @@
 
 @class UISegmentedControl;
 
+__attribute__((visibility("hidden")))
 @interface CKConversationListFilterCell : UITableViewCell
 {
     UISegmentedControl *_filterControl;

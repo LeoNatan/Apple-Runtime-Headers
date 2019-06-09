@@ -13,7 +13,6 @@
     NSURLCacheInternal *_internal;
 }
 
-+ (void)_setVaryHeaderSupport;
 + (void)setSharedURLCache:(id)arg1;
 + (id)sharedURLCache;
 - (_Bool)_isVaryHeaderSupportEnabled;
@@ -35,6 +34,7 @@
 - (void)flushWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 relativePath:(id)arg3;
 - (id)initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 diskPath:(id)arg3;
+- (id)_initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 directoryURL:(id)arg3;
 -     // Error parsing type: @24@0:8^{_CFURLCache={__CFRuntimeBase=QAQ}{shared_ptr<__CFURLCache>=^{__CFURLCache}^{__shared_weak_count}}}16, name: _initWithExistingCFURLCache:
 -     // Error parsing type: @24@0:8^{_CFURLCache={__CFRuntimeBase=QAQ}{shared_ptr<__CFURLCache>=^{__CFURLCache}^{__shared_weak_count}}}16, name: initWithExistingSharedCFURLCache:
 - (id)_initVaryHeaderEnabledWithPath:(id)arg1;
@@ -48,8 +48,8 @@
 - (void)_nscfBridgeURLCacheSetDiskCapacity:(long long)arg1;
 - (void)_nscfBridgeURLCacheSetMemoryCapacity:(long long)arg1;
 - (long long)_nscfBridgeURLCacheDiskCapacity;
--     // Error parsing type: v32@0:8^{_CFCachedURLResponse={__CFRuntimeBase=QAQ}^{__CFCachedURLResponse}}16^{_CFURLRequest=}24, name: _nscfBridgeURLCacheStoreCachedResponse:forRequest:
--     // Error parsing type: ^{_CFCachedURLResponse={__CFRuntimeBase=QAQ}^{__CFCachedURLResponse}}24@0:8^{_CFURLRequest=}16, name: _nscfBridgeURLCacheCopyResponseForRequest:
+-     // Error parsing type: v32@0:8^{_CFCachedURLResponse={__CFRuntimeBase=QAQ}^{__CFCachedURLResponse}}16@24, name: _nscfBridgeURLCacheStoreCachedResponse:forRequest:
+-     // Error parsing type: ^{_CFCachedURLResponse={__CFRuntimeBase=QAQ}^{__CFCachedURLResponse}}24@0:8@16, name: _nscfBridgeURLCacheCopyResponseForRequest:
 - (void)removeCachedResponseForDataTask:(id)arg1;
 - (void)getCachedResponseForDataTask:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)storeCachedResponse:(id)arg1 forDataTask:(id)arg2;

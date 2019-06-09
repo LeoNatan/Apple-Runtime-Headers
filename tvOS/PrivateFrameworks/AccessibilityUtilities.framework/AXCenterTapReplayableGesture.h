@@ -11,6 +11,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

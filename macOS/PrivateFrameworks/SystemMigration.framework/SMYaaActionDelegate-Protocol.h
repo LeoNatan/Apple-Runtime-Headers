@@ -7,6 +7,7 @@
 @class NSURL, SMNYaaAction;
 
 @protocol SMYaaActionDelegate
+- (void)translateUID:(unsigned int *)arg1 andGID:(unsigned int *)arg2;
 - (void)yaaFileFinished:(SMNYaaAction *)arg1 filePath:(NSURL *)arg2 totalSize:(unsigned long long)arg3;
 @end
 

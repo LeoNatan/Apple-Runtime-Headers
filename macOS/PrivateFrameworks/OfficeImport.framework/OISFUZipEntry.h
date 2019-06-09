@@ -9,6 +9,7 @@
 @class OISFUCryptoKey;
 @protocol SFUZipArchiveDataRepresentation;
 
+__attribute__((visibility("hidden")))
 @interface OISFUZipEntry : OISFUDataRepresentation
 {
     OISFUDataRepresentation<SFUZipArchiveDataRepresentation> *mArchiveDataRepresentation;

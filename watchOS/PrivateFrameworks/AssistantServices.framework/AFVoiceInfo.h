@@ -47,6 +47,7 @@
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
+- (_Bool)isLanguageAndGenderEqual:(id)arg1;
 - (id)initWithLanguageCode:(id)arg1;
 - (id)initWithLanguageCode:(id)arg1 gender:(int)arg2 isCustom:(_Bool)arg3;
 - (id)initWithLanguageCode:(id)arg1 gender:(int)arg2 isCustom:(_Bool)arg3 name:(id)arg4 footprint:(int)arg5 contentVersion:(id)arg6 masteredVersion:(id)arg7;

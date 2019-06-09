@@ -30,6 +30,7 @@
 - (void)_performAction:(long long)arg1;
 - (id)initWithCPLService:(id)arg1;
 - (id)init;
+- (BOOL)performDefaultHandlerForAction:(long long)arg1;
 
 @end
 

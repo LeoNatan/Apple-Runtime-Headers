@@ -12,6 +12,7 @@
 
 @class NSString, NSTableView, SHKProgressController;
 
+__attribute__((visibility("hidden")))
 @interface SHKProgressWindowController : NSWindowController <NSWindowDelegate, NSTableViewDelegate, NSTableViewDataSource>
 {
     NSTableView *_tableView;

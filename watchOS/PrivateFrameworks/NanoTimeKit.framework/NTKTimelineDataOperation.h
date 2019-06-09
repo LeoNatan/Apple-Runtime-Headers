@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CLKComplication, NTKComplicationDataSource;
+@class CLKCComplicationDataSource, CLKComplication;
 @protocol CLKComplicationDataSource;
 
 @interface NTKTimelineDataOperation : NSObject
 {
-    NTKComplicationDataSource *_localDataSource;
+    CLKCComplicationDataSource *_localDataSource;
     id <CLKComplicationDataSource> _remoteDataSource;
     CLKComplication *_remoteComplication;
     _Bool _started;
@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) _Bool started; // @synthesize started=_started;
 - (void).cxx_destruct;
 - (id)_finalizedValidEntries:(id)arg1;
+- (_Bool)_validateTemplate:(id)arg1;
 - (_Bool)_validateEntry:(id)arg1;
 - (void)_cancel;
 - (void)_start;

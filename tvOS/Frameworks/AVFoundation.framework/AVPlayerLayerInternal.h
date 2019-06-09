@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class AVKeyPathDependencyManager, AVNetworkPlaybackPerfHUDLayer, AVPlayer, FigBaseCALayer, FigSubtitleCALayer, FigVideoContainerLayer, NSDictionary, NSSet, NSString;
-@protocol AVCallbackCancellation, OS_dispatch_queue;
+@class AVKeyPathDependencyManager, AVNetworkPlaybackPerfHUDLayer, AVPlayer, AVPlayerLayer, CALayer, FigBaseCALayer, FigSubtitleCALayer, FigVideoContainerLayer, NSDictionary, NSSet, NSString;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVPlayerLayerInternal : NSObject
@@ -17,23 +17,29 @@ __attribute__((visibility("hidden")))
     _Bool isPresentationLayer;
     struct OpaqueFigSimpleMutex *isReadyForDisplayMutex;
     NSObject<OS_dispatch_queue> *configurationQueue;
-    NSString *subtitleGravity;
     AVKeyPathDependencyManager *dependencyManager;
     AVPlayer *player;
     NSString *videoGravity;
     NSDictionary *pixelBufferAttributes;
     _Bool lanczosDownscalingEnabled;
     long long lanczosDownscalingFactor;
-    _Bool shouldObservePlayer;
     FigBaseCALayer *maskLayer;
     FigVideoContainerLayer *videoLayer;
     FigSubtitleCALayer *subtitleLayer;
     FigBaseCALayer *closedCaptionLayer;
+    _Bool isLegibleDisplayEnabled;
+    AVPlayerLayer *associatedRemoteModeLayer;
+    _Bool willManageSublayersAsSwappedLayers;
+    long long activeMode;
     _Bool isReadyForDisplay;
     AVPlayer *playerBeingObserved;
     NSSet *KVOInvokers;
     struct CGSize latestAppliedPresentationSize;
-    id <AVCallbackCancellation> playerCurrentItemHasVideoFrameEnqueuedKVOInvoker;
+    _Bool preventsChangesToSublayerHierarchy;
+    NSDictionary *clientLayers;
+    _Bool isPIPModeEnabled;
+    CALayer *placeholderContentLayerDuringPIPMode;
+    _Bool isConnectedToSecondScreen;
 }
 
 @end

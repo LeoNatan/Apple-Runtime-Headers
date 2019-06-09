@@ -15,6 +15,7 @@
     UIImage *_vCardImage;
 }
 
++ (_Bool)shouldUseTranscoderGeneratedPreviewSize;
 + (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;
@@ -30,6 +31,7 @@
 - (id)title;
 - (Class)coloredBalloonViewClass;
 - (int)mediaType;
+- (_Bool)generatePreviewOutOfProcess;
 
 @end
 

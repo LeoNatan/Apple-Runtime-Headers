@@ -8,9 +8,14 @@
 
 @interface NTKRichComplicationLineProgressView : NTKRichComplicationProgressView
 {
+    long long _progressFillStyle;
 }
 
-- (id)initWithForDevice:(id)arg1;
+@property(readonly, nonatomic) long long progressFillStyle; // @synthesize progressFillStyle=_progressFillStyle;
+- (id)overrideBackgroundGradientColorsForGradientColors:(id)arg1 locations:(id)arg2;
+- (id)overrideBackgroundGradientColorsForGradientColors:(id)arg1;
+- (void)setProgress:(double)arg1;
+- (id)initForDevice:(id)arg1 progressFillStyle:(long long)arg2;
 
 @end
 

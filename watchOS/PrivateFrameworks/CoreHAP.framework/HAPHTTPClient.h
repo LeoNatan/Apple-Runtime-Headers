@@ -6,15 +6,19 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class NSObject, NSString;
+#import <CoreHAP/HAPHTTPClientDebugDelegate-Protocol.h>
+#import <CoreHAP/HMFLogging-Protocol.h>
+
+@class HMFNetAddress, NSObject, NSString;
 @protocol HAPHTTPClientDebugDelegate, HAPHTTPClientDelegate, OS_dispatch_queue;
 
-@interface HAPHTTPClient : HMFObject
+@interface HAPHTTPClient : HMFObject <HAPHTTPClientDebugDelegate, HMFLogging>
 {
     struct HTTPClientPrivate *_httpClient;
+    _Bool _invalidated;
     _Bool _invalidateRequested;
     NSString *_dnsName;
-    unsigned int _port;
+    int _port;
     NSObject<OS_dispatch_queue> *_queue;
     id <HAPHTTPClientDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
@@ -22,31 +26,45 @@
     NSObject<OS_dispatch_queue> *_debugDelegateQueue;
 }
 
++ (id)logCategory;
 @property(nonatomic) _Bool invalidateRequested; // @synthesize invalidateRequested=_invalidateRequested;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *debugDelegateQueue; // @synthesize debugDelegateQueue=_debugDelegateQueue;
 @property(nonatomic) __weak id <HAPHTTPClientDebugDelegate> debugDelegate; // @synthesize debugDelegate=_debugDelegate;
 @property(nonatomic) __weak NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <HAPHTTPClientDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(readonly, nonatomic) unsigned int port; // @synthesize port=_port;
+@property(nonatomic, getter=isInvalidated) _Bool invalidated; // @synthesize invalidated=_invalidated;
+@property(readonly, nonatomic) int port; // @synthesize port=_port;
 @property(copy, nonatomic) NSString *dnsName; // @synthesize dnsName=_dnsName;
 - (void).cxx_destruct;
+- (id)logIdentifier;
+- (void)httpClient:(id)arg1 willSendHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
+- (void)httpClient:(id)arg1 didReceiveHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
 - (_Bool)_debugDelegateRespondsToSelector:(SEL)arg1;
 - (_Bool)_delegateRespondsToSelector:(SEL)arg1;
 - (id)_deserializeUAPJSONData:(id)arg1 error:(id *)arg2;
 - (id)_serializeUAPJSONObject:(id)arg1 error:(id *)arg2;
--     // Error parsing type: v16@0:4^{HTTPMessagePrivate={__CFRuntimeBase=IAI}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I***I*I}*Ii*ICQCi}CiC*III[32000C]*^{?}*I[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?^?@?iCq*iQ}8@?12, name: _handleHTTPResponseForMessage:completionHandler:
-- (void)_sendHTTPRequestToURL:(id)arg1 withMethod:(int)arg2 requestObject:(id)arg3 serializationType:(unsigned int)arg4 timeout:(double)arg5 completionHandler:(CDUnknownBlockType)arg6;
+-     // Error parsing type: v16@0:4^{HTTPMessagePrivate={__CFRuntimeBase=IAI}^{HTTPMessagePrivate}{?=[8192c]I*I*Ii*I{?=*I*I*I*I*I*I*I***I*I}*Ii*ICQCi}CiC*III[32000C]*^{?}*I[2{iovec=^vI}]^{iovec}iQiii^v^v^v^v^v^v^?^?@?iCq*iQI}8@?12, name: _handleHTTPResponseForMessage:completionHandler:
+- (void)_sendHTTPRequestToURL:(id)arg1 withMethod:(int)arg2 requestObject:(id)arg3 serializationType:(unsigned int)arg4 timeout:(double)arg5 activity:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)sendDELETERequestToURL:(id)arg1 withRequestObject:(id)arg2 serializationType:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)sendPOSTRequestToURL:(id)arg1 withRequestObject:(id)arg2 serializationType:(unsigned int)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)sendPUTRequestToURL:(id)arg1 withRequestObject:(id)arg2 serializationType:(unsigned int)arg3 timeout:(double)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)sendGETRequestToURL:(id)arg1 timeout:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)invalidate;
 - (_Bool)enableUAPSessionSecurityWithReadKey:(unsigned char [32])arg1 writeKey:(unsigned char [32])arg2 error:(id *)arg3;
-- (long)_initializeCoreUtilsHTTPClient;
+- (long)_initializeCoreUtilsHTTPClientWithPort:(int)arg1 withEventsEnabled:(_Bool)arg2;
 - (void)setDebugDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
+@property(readonly, nonatomic) NSString *peerEndpointDescription;
+@property(readonly, nonatomic) HMFNetAddress *peerAddress;
+- (id)initWithDNSName:(id)arg1 port:(int)arg2 eventsEnabled:(_Bool)arg3 queue:(id)arg4;
 - (id)initWithDNSName:(id)arg1 queue:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

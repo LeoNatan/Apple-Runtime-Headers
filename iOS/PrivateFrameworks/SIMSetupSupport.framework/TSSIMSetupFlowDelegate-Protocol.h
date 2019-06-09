@@ -18,6 +18,5 @@
 - (void)userDidTapCancel;
 - (long long)signupUserConsentResponse;
 - (void)setDefaultNavigationItems:(UIViewController *)arg1;
-- (_Bool)isPhoneFlow;
 @end
 

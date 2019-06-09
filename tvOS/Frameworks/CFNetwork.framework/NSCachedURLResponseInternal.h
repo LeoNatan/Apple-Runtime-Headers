@@ -8,7 +8,6 @@
 
 @class NSData, NSDictionary, NSURLResponse;
 
-__attribute__((visibility("hidden")))
 @interface NSCachedURLResponseInternal : NSObject
 {
     NSURLResponse *response;

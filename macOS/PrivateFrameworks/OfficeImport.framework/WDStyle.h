@@ -10,6 +10,7 @@
 
 @class NSString, WDCharacterProperties, WDParagraphProperties, WDStyleSheet, WDTableCellProperties, WDTableRowProperties, WDTableStyleOverride;
 
+__attribute__((visibility("hidden")))
 @interface WDStyle : NSObject <NSCopying>
 {
     WDParagraphProperties *mParagraphProperties;

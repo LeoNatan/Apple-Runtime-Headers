@@ -14,32 +14,32 @@
 
 @interface SSAddressResolver : NSObject <IDSServiceDelegate, IDSIDQueryControllerDelegate, DNSResolverObserver>
 {
-    NSString *mBonjourServiceType;
-    NSMutableDictionary *mEmbeddedComponentsMap;
-    NSMutableDictionary *mObserversMap;
-    NSLock *mObserversLock;
-    NSLock *mEmbeddedComponentsLock;
     BOOL mIsOSX_10OrLater;
     BOOL _isIOSinvitation;
     BOOL _idsInviteAcceptedOnScreensharingQRService;
     IDSService *_idsServiceOSX_QR;
     IDSService *_idsService;
     IDSService *_iOSidsService;
+    NSLock *_observersLock;
+    NSMutableDictionary *_observersMap;
     NSString *_idsIDQueryListenerID;
     NSString *_iOSIDSIDQueryListenerID;
 }
 
++ (id)deviceIDForURLOptions:(id)arg1;
 + (BOOL)isAppleIDOnlyDomain:(id)arg1;
 + (id)idsIDsForABPersonID:(id)arg1;
 + (id)resolver;
 @property(copy) NSString *iOSIDSIDQueryListenerID; // @synthesize iOSIDSIDQueryListenerID=_iOSIDSIDQueryListenerID;
 @property(copy) NSString *idsIDQueryListenerID; // @synthesize idsIDQueryListenerID=_idsIDQueryListenerID;
+@property(retain) NSMutableDictionary *observersMap; // @synthesize observersMap=_observersMap;
+@property(retain) NSLock *observersLock; // @synthesize observersLock=_observersLock;
 @property(retain) IDSService *iOSidsService; // @synthesize iOSidsService=_iOSidsService;
 @property(retain) IDSService *idsService; // @synthesize idsService=_idsService;
 @property(retain) IDSService *idsServiceOSX_QR; // @synthesize idsServiceOSX_QR=_idsServiceOSX_QR;
 @property BOOL idsInviteAcceptedOnScreensharingQRService; // @synthesize idsInviteAcceptedOnScreensharingQRService=_idsInviteAcceptedOnScreensharingQRService;
 @property BOOL isIOSinvitation; // @synthesize isIOSinvitation=_isIOSinvitation;
-- (void)removeIDSServiceMessageDelegate:(id)arg1;
+- (void)removeIDSServiceMessageObserver:(id)arg1;
 - (void)addIDSServiceMessageObserver:(id)arg1 forSession:(id)arg2;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 @property(readonly, nonatomic) IDSAccount *idsAccount;

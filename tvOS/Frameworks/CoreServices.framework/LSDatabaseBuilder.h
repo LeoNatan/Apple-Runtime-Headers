@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_ioQueue;
 }
 
+- (void).cxx_destruct;
 - (void)setSeedingComplete:(_Bool)arg1;
 - (void)createAndSeedLocalDatabase:(_Bool *)arg1;
-- (void)dealloc;
 - (id)initWithIOQueue:(id)arg1;
 
 @end

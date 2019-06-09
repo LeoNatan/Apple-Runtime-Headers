@@ -14,11 +14,12 @@
 - (id)_tinCanAppTintColor;
 - (id)_complicationLaunchURL;
 - (id)_complicationApplicationIdentifier;
+- (id)_appBackgroundColor;
 - (id)_appTintColor;
 - (id)_fullColorImageProvider;
 - (id)_tintableAppImageProvider;
 - (id)_appTitle;
-- (void)_addBackgroundColor:(id)arg1 toTemplate:(id)arg2;
+- (void)_addBackgroundColorToTemplate:(id)arg1;
 - (id)_signatureCircularTemplate;
 - (id)_signatureBezelTemplate;
 - (id)_signatureCornerTemplate;

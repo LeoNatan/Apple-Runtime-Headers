@@ -50,7 +50,6 @@
 @property(readonly) float alpha;
 @property(readonly) const float *components;
 @property(readonly) unsigned long numberOfComponents;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4 colorSpace:(struct CGColorSpace *)arg5;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 colorSpace:(struct CGColorSpace *)arg4;

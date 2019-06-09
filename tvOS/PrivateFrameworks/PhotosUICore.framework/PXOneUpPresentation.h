@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class PXAssetActionManager, PXAssetReference, PXAssetsDataSourceManager, PXGestureProvider, PXPhotosDetailsContext, PXUIMediaProvider, UIViewController;
-@protocol PXImportStatusManager, PXOneUpPresentationDelegate, PXOneUpPresentationImplementationDelegate;
+@class PXAssetActionManager, PXAssetReference, PXAssetsDataSourceManager, PXGestureProvider, PXPhotosDetailsContext, PXUIMediaProvider, UIScrollView, UIViewController;
+@protocol PXAssetImportStatusManager, PXOneUpPresentationDelegate, PXOneUpPresentationImplementationDelegate;
 
 @interface PXOneUpPresentation : NSObject
 {
@@ -15,16 +15,18 @@
         _Bool respondsToPhotosDetailsContext;
         _Bool respondsToInitialAssetReference;
         _Bool respondsToCurrentImageForAssetReference;
-        _Bool respondsToRegionOfInterestForAssetReferenceInCoordinateSpace;
+        _Bool respondsToRegionOfInterestForAssetReference;
         _Bool respondsToScrollAssetReferenceToVisible;
         _Bool respondsToSetHiddenAssetReferences;
         _Bool respondsToShouldAutoPlay;
+        _Bool respondsToPreventShowPhotosFromThisDay;
         _Bool respondsToActionManager;
         _Bool respondsToActionManagerForPreviewing;
         _Bool respondsToActionContext;
         _Bool respondsToGestureProvider;
         _Bool respondsToImportStatusManager;
         _Bool respondsToOrigin;
+        _Bool respondsToScrollView;
     } _delegateFlags;
     struct {
         _Bool respondsToPresentingViewControllerViewWillAppear;
@@ -52,12 +54,14 @@
 @property(nonatomic, setter=_setImplementationDelegate:) __weak id <PXOneUpPresentationImplementationDelegate> _implementationDelegate; // @synthesize _implementationDelegate=__implementationDelegate;
 - (void).cxx_destruct;
 - (void)_updateImplementationDelegate;
+@property(readonly, nonatomic) UIScrollView *scrollView;
 - (void)setHiddenAssetReferences:(id)arg1;
 - (void)scrollAssetReferenceToVisible:(id)arg1;
 - (id)regionOfInterestForAssetReference:(id)arg1;
 - (id)currentImageForAssetReference:(id)arg1;
+@property(readonly, nonatomic) _Bool preventShowPhotosFromThisDayAction;
 @property(readonly, nonatomic) _Bool shouldAutoPlay;
-@property(readonly, nonatomic) id <PXImportStatusManager> importStatusManager;
+@property(readonly, nonatomic) id <PXAssetImportStatusManager> importStatusManager;
 @property(readonly, nonatomic) long long actionContext;
 @property(readonly, nonatomic) PXAssetActionManager *actionManagerForPreviewing;
 @property(readonly, nonatomic) PXAssetActionManager *actionManager;

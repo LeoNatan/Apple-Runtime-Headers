@@ -6,9 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <Message/EMAccountFactory-Protocol.h>
+#import <Message/EDAccountFactory-Protocol.h>
 
-@interface MFAccountFactory_iOS : NSObject <EMAccountFactory>
+@interface MFAccountFactory_iOS : NSObject <EDAccountFactory>
 {
 }
 

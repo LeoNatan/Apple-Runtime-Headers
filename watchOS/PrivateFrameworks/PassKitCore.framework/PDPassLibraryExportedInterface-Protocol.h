@@ -6,13 +6,16 @@
 
 #import <PassKitCore/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSArray, NSData, NSSet, NSString, PKDisplayProfile;
+@class NSArray, NSData, NSSet, NSString, PKDisplayProfile, PKMapsTransitRouteInfo, PKPaymentMarket;
 
 @protocol PDPassLibraryExportedInterface <PDXPCServiceExportedInterface>
+- (void)postUpgradedPassNotificationForMarket:(PKPaymentMarket *)arg1 passUniqueID:(NSString *)arg2;
+- (void)checkForTransitNotification;
 - (void)peerPaymentPassUniqueIDWithHandler:(void (^)(NSString *))arg1;
 - (void)migrateDataWithHandler:(void (^)(_Bool))arg1;
 - (void)passWithDPANIdentifier:(NSString *)arg1 handler:(void (^)(PKPaymentPass *))arg2;
 - (void)passWithFPANIdentifier:(NSString *)arg1 handler:(void (^)(PKPaymentPass *))arg2;
+- (void)transitMessageForRouteInfo:(PKMapsTransitRouteInfo *)arg1 handler:(void (^)(PKMapsTransitMessage *))arg2;
 - (void)supportedTransitPartnersForDigitalIssuance:(void (^)(NSArray *))arg1;
 - (void)sortedTransitPassesForAppletDataFormat:(NSString *)arg1 handler:(void (^)(NSArray *))arg2;
 - (void)expressTransitPassWithHandler:(void (^)(PKPass *))arg1;
@@ -23,8 +26,9 @@
 - (void)hasPassesOfType:(unsigned int)arg1 handler:(void (^)(_Bool))arg2;
 - (void)submitVerificationCode:(NSString *)arg1 verificationData:(NSData *)arg2 forPassWithUniqueID:(NSString *)arg3 handler:(void (^)(_Bool, NSError *))arg4;
 - (void)isPaymentPassActivationAvailableWithHandler:(void (^)(_Bool))arg1;
+- (void)getArchivedObjectWithUniqueID:(NSString *)arg1 handler:(void (^)(NSData *))arg2;
 - (void)getDataForBundleResourceNamed:(NSString *)arg1 withExtension:(NSString *)arg2 objectUniqueIdentifier:(NSString *)arg3 handler:(void (^)(NSData *))arg4;
-- (void)getImageSetForUniqueID:(NSString *)arg1 ofType:(int)arg2 displayProfile:(PKDisplayProfile *)arg3 handler:(void (^)(PKImageSet *))arg4;
+- (void)getImageSetForUniqueID:(NSString *)arg1 ofType:(int)arg2 displayProfile:(PKDisplayProfile *)arg3 suffix:(NSString *)arg4 handler:(void (^)(PKImageSet *))arg5;
 - (void)getContentForUniqueID:(NSString *)arg1 handler:(void (^)(PKContent *))arg2;
 - (void)getPassWithUniqueID:(NSString *)arg1 handler:(void (^)(PKPass *))arg2;
 - (void)getPassWithPassTypeID:(NSString *)arg1 serialNumber:(NSString *)arg2 handler:(void (^)(PKPass *))arg3;

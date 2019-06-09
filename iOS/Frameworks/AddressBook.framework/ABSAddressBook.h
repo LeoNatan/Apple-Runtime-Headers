@@ -23,6 +23,8 @@
 + (long long)authorizationStatus;
 + (id)localizedLabelForLabel:(id)arg1;
 + (_Bool)eraseAllDataAtLocationName:(id)arg1 error:(id *)arg2;
++ (void)ABInitialize;
++ (void)initialize;
 @property(retain, nonatomic) ABSAddressBookContextStorage *sources; // @synthesize sources=_sources;
 @property(retain, nonatomic) ABSAddressBookContextStorage *groups; // @synthesize groups=_groups;
 @property(readonly, nonatomic) ABSBulkFaultHandler *faultHandler; // @synthesize faultHandler=_faultHandler;
@@ -30,6 +32,8 @@
 @property(readonly) ABSChangeCallbacks *changeCallbacks; // @synthesize changeCallbacks=_changeCallbacks;
 @property(retain, nonatomic) ABSAddressBookContextStorage *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
+- (int)saveSequenceCount;
+- (id)uniqueDatabaseVersionIdentifier;
 - (id)groupsInSource:(id)arg1;
 - (void)updateFetchingAllPropertiesForGroups:(id)arg1;
 - (id)groupWithRecordID:(int)arg1;
@@ -56,6 +60,9 @@
 - (void)completePerson:(id)arg1 withKeysToFetch:(id)arg2;
 - (void)updatePeople:(id)arg1 refetchingProperties:(id)arg2;
 - (id)contactsWithIdentifiers:(id)arg1 keysToFetch:(id)arg2;
+- (id)findPersonMatchingPhoneNumber:(id)arg1 country:(id)arg2;
+- (id)findPersonMatchingEmailAddress:(id)arg1;
+- (id)findPersonMatchingURL:(id)arg1;
 - (id)personWithRecordID:(int)arg1;
 - (id)peopleWithCNIdentifiers:(id)arg1;
 - (id)allPeople;

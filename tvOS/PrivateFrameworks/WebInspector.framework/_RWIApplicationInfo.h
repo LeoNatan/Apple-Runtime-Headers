@@ -14,21 +14,21 @@ __attribute__((visibility("hidden")))
     int _hostApplicationPID;
     _Bool _proxy;
     _Bool _hasRemoteDebugSession;
-    _Bool _allowsRemoteAutomation;
     _Bool _hasUpdatedFromListing;
     int _pid;
     NSString *_bundleId;
     NSString *_name;
     _RWIRelayConnectionToApplication *_connection;
     NSString *_debuggerConnectionIdentifier;
-    unsigned long long _applicationState;
+    unsigned long long _debuggerAvailability;
+    long long _automationAvailability;
 }
 
 + (id)identifierForPID:(int)arg1;
 @property(readonly, nonatomic) _Bool hasUpdatedFromListing; // @synthesize hasUpdatedFromListing=_hasUpdatedFromListing;
-@property(readonly, nonatomic) _Bool allowsRemoteAutomation; // @synthesize allowsRemoteAutomation=_allowsRemoteAutomation;
 @property(readonly, nonatomic) _Bool hasRemoteDebugSession; // @synthesize hasRemoteDebugSession=_hasRemoteDebugSession;
-@property(readonly, nonatomic) unsigned long long applicationState; // @synthesize applicationState=_applicationState;
+@property(readonly, nonatomic) long long automationAvailability; // @synthesize automationAvailability=_automationAvailability;
+@property(nonatomic) unsigned long long debuggerAvailability; // @synthesize debuggerAvailability=_debuggerAvailability;
 @property(copy, nonatomic) NSString *debuggerConnectionIdentifier; // @synthesize debuggerConnectionIdentifier=_debuggerConnectionIdentifier;
 @property(nonatomic) _RWIRelayConnectionToApplication *connection; // @synthesize connection=_connection;
 @property(nonatomic, getter=isProxy) _Bool proxy; // @synthesize proxy=_proxy;
@@ -37,11 +37,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
 - (void)setHostApplicationPID:(int)arg1;
-- (_Bool)updateApplicationState:(unsigned long long)arg1;
 - (_Bool)updateFromListing:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, nonatomic) NSString *identifier; // @dynamic identifier;
-- (id)initWithPID:(int)arg1 bundleId:(id)arg2 name:(id)arg3 isProxy:(_Bool)arg4 connection:(id)arg5 applicationState:(unsigned long long)arg6;
+- (id)initWithPID:(int)arg1 bundleId:(id)arg2 name:(id)arg3 isProxy:(_Bool)arg4 connection:(id)arg5 debuggerAvailability:(unsigned long long)arg6;
 
 @end
 

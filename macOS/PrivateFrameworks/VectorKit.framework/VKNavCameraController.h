@@ -11,7 +11,7 @@
 #import <VectorKit/VKNavigationCameraController-Protocol.h>
 
 @class GEOMapRegion, NSString, VKAttachedNavGestureCameraBehavior, VKDetachedNavGestureCameraBehavior, VKGestureCameraBehavior, VKNavContext, VKSceneConfiguration, VKScreenCanvas, VKTimedAnimation;
-@protocol VKInteractiveMap><VKMapDataAccess, VKNavGestureCameraBehavior;
+@protocol VKInteractiveMap, VKNavGestureCameraBehavior;
 
 __attribute__((visibility("hidden")))
 @interface VKNavCameraController : VKCameraController <VKNavigationCameraController, VKGesturingCameraController, VKNavContextObserver>
@@ -25,10 +25,10 @@ __attribute__((visibility("hidden")))
     CameraFrame_406dbd31 _lastCalculatedCameraFrame;
     CameraFrame_406dbd31 _cameraFrame;
     BOOL _needsUpdate;
-    struct Spring<double, 1, md::SpringType::Linear> _pitchSpring;
-    struct Spring<double, 1, md::SpringType::Angular> _headingSpring;
-    struct Spring<double, 1, md::SpringType::Linear> _distanceFromTargetSpring;
-    struct Spring<double, 2, md::SpringType::Linear> _screenPositionSpring;
+    struct Spring<double, 1, mdc::SpringType::Linear> _pitchSpring;
+    struct Spring<double, 1, mdc::SpringType::Angular> _headingSpring;
+    struct Spring<double, 1, mdc::SpringType::Linear> _distanceFromTargetSpring;
+    struct Spring<double, 2, mdc::SpringType::Linear> _screenPositionSpring;
     struct Unit<MeterUnitDescription, double> _cameraDistanceFromTarget;
     Unit_3d259e8a _cameraPitch;
     double _previousUpdateTime;
@@ -89,8 +89,9 @@ __attribute__((visibility("hidden")))
     _Bool _isTracking;
     shared_ptr_e963992e _taskContext;
     double _depthNear;
+    _Bool _leftHanded;
     _Bool _sentZoomNotification;
-    VKScreenCanvas<VKInteractiveMap><VKMapDataAccess> *_screenCanvas;
+    VKScreenCanvas<VKInteractiveMap> *_screenCanvas;
     VKSceneConfiguration *_sceneConfiguration;
     long long _baseDisplayRate;
 }
@@ -98,7 +99,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long baseDisplayRate; // @synthesize baseDisplayRate=_baseDisplayRate;
 @property(nonatomic) struct VKEdgeInsets clientFramingInsets; // @synthesize clientFramingInsets=_clientFramingInsets;
 @property(nonatomic) VKSceneConfiguration *sceneConfiguration; // @synthesize sceneConfiguration=_sceneConfiguration;
-@property(nonatomic) VKScreenCanvas<VKInteractiveMap><VKMapDataAccess> *screenCanvas; // @synthesize screenCanvas=_screenCanvas;
+@property(nonatomic) VKScreenCanvas<VKInteractiveMap> *screenCanvas; // @synthesize screenCanvas=_screenCanvas;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned char)cameraHeadingType;
@@ -162,7 +163,7 @@ __attribute__((visibility("hidden")))
 - (void)stylesheetDidReload;
 - (void)stylesheetDidChange;
 - (BOOL)_updateSprings:(double)arg1;
-- (Matrix_2bdd42a3)puckScreenPixel;
+- (Matrix_2bdd42a3)puckScreenPoint;
 - (void)_updateDebugOverlay;
 - (void)_updateDebugText;
 - (id)_debugText:(BOOL)arg1 showNavCameraDebugConsoleAttributes:(BOOL)arg2;
@@ -178,6 +179,7 @@ __attribute__((visibility("hidden")))
 - (void)puckAnimator:(id)arg1 updatedPosition:(const Coordinate3D_bc242218 *)arg2 course:(const Unit_3d259e8a *)arg3;
 - (void)puckAnimator:(id)arg1 runAnimation:(id)arg2;
 - (BOOL)isGesturing;
+- (BOOL)tapAtPoint:(struct CGPoint)arg1;
 - (void)transferGestureState:(id)arg1;
 - (void)stopPitchingWithFocusPoint:(struct CGPoint)arg1;
 - (void)updatePitchWithFocusPoint:(struct CGPoint)arg1 translation:(double)arg2;
@@ -196,18 +198,21 @@ __attribute__((visibility("hidden")))
 - (void)_setDetached:(BOOL)arg1;
 - (void)startWithPounce:(BOOL)arg1 startLocation:(CDStruct_c3b9c2ee)arg2 startCourse:(double)arg3 pounceCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;
-- (id)initWithTaskContext:(shared_ptr_e963992e)arg1 device:(struct Device *)arg2;
+- (id)initWithTaskContext:(shared_ptr_e963992e)arg1 device:(struct Device *)arg2 mapDataAccess:(struct MapDataAccess *)arg3 animationRunner:(struct AnimationRunner *)arg4 runLoopController:(struct RunLoopController *)arg5 cameraDelegate:(id)arg6;
 - (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic) struct AnimationRunner *animationRunner;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) BOOL isFullyPitched;
 @property(readonly, nonatomic) BOOL isPitched;
 @property(readonly, nonatomic) BOOL isRotated;
+@property(readonly, nonatomic) struct MapDataAccess *mapDataAccess;
 @property(readonly, nonatomic) GEOMapRegion *mapRegion;
 @property(readonly, nonatomic) double maxPitch;
+@property(readonly, nonatomic) struct RunLoopController *runLoopController;
 @property(readonly) Class superclass;
 
 @end

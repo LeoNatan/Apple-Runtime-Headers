@@ -6,12 +6,12 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSArray;
+@class NSArray, NSMutableArray;
 
 @interface NSBlockOperation : NSOperation
 {
-    id _private2;
-    void *_reserved2;
+    NSMutableArray *_executionBlocks;
+    CDUnknownBlockType _block;
 }
 
 + (id)blockOperationWithBlock:(CDUnknownBlockType)arg1;

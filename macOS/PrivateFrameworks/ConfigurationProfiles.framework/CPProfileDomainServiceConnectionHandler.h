@@ -17,6 +17,7 @@
 
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (_Bool)hostPrivRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
+- (_Bool)hostUpdateSecureSettingsForDevice:(_Bool)arg1 domain:(id)arg2 deltas:(id)arg3 error:(id *)arg4;
 - (_Bool)hostWriteSecureSettings:(id)arg1 forDevice:(_Bool)arg2 domain:(id)arg3 error:(id *)arg4;
 - (_Bool)hostGetProfiles:(id *)arg1 forDevice:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)hostGetProfiles:(id *)arg1 forDevice:(_Bool)arg2 withPayloadTypes:(id)arg3 error:(id *)arg4;

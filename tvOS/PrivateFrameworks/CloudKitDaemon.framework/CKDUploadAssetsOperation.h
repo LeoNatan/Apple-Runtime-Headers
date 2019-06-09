@@ -6,13 +6,14 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDAssetRequestPlanner, CKDCancelTokenGroup, NSArray, NSMapTable, NSMutableArray, NSObject;
+@class CKDAssetRequestPlanner, CKDCancelTokenGroup, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSObject;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface CKDUploadAssetsOperation : CKDDatabaseOperation
 {
     _Bool _atomic;
+    _Bool _temporary;
     CDUnknownBlockType _uploadPreparationBlock;
     CDUnknownBlockType _uploadProgressBlock;
     CDUnknownBlockType _uploadCompletionBlock;
@@ -24,9 +25,14 @@ __attribute__((visibility("hidden")))
     CKDCancelTokenGroup *_cancelTokens;
     unsigned long long _maxPackageUploadsPerBatch;
     CKDAssetRequestPlanner *_assetRequestPlanner;
+    NSDictionary *_assetUUIDToExpectedProperties;
+    NSDictionary *_packageUUIDToExpectedProperties;
 }
 
 + (long long)isPredominatelyDownload;
+@property(nonatomic) _Bool temporary; // @synthesize temporary=_temporary;
+@property(retain, nonatomic) NSDictionary *packageUUIDToExpectedProperties; // @synthesize packageUUIDToExpectedProperties=_packageUUIDToExpectedProperties;
+@property(retain, nonatomic) NSDictionary *assetUUIDToExpectedProperties; // @synthesize assetUUIDToExpectedProperties=_assetUUIDToExpectedProperties;
 @property(retain, nonatomic) CKDAssetRequestPlanner *assetRequestPlanner; // @synthesize assetRequestPlanner=_assetRequestPlanner;
 @property(nonatomic) unsigned long long maxPackageUploadsPerBatch; // @synthesize maxPackageUploadsPerBatch=_maxPackageUploadsPerBatch;
 @property(retain, nonatomic) CKDCancelTokenGroup *cancelTokens; // @synthesize cancelTokens=_cancelTokens;

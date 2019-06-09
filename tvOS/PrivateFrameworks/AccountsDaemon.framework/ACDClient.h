@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class ACDDatabase, NSMutableDictionary, NSNumber, NSString, NSXPCConnection;
+@class NSMutableDictionary, NSNumber, NSString, NSXPCConnection;
 
 @interface ACDClient : NSObject
 {
     NSXPCConnection *_connection;
-    ACDDatabase *_database;
     struct __CFBundle *_bundle;
     NSString *_bundleID;
     _Bool _didManuallySetBundleID;
@@ -25,12 +24,8 @@
 + (id)_bundleIDForPID:(int)arg1;
 + (id)_bundleForNonPlugInPID:(int)arg1;
 + (id)clientWithBundleID:(id)arg1;
-@property(readonly, nonatomic) ACDDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
-- (id)longDebugDescription;
-- (id)shortDebugDescription;
-- (id)debugDescription;
 - (id)description;
 - (_Bool)hasEntitlement:(id)arg1;
 @property(readonly, nonatomic) struct __CFBundle *bundle;
@@ -42,8 +37,8 @@
 @property(retain, nonatomic) NSString *bundleID;
 @property(readonly, nonatomic) NSNumber *pid;
 - (void)dealloc;
-- (id)initWithConnection:(id)arg1 database:(id)arg2;
 - (id)initWithConnection:(id)arg1;
+- (id)init;
 
 @end
 

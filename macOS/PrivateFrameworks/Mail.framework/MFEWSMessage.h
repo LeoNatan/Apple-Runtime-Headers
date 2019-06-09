@@ -39,7 +39,7 @@
 + (id)_extendedFieldsForFlags:(long long)arg1 importance:(long long *)arg2;
 + (id)_newEWSDeleteItemWithDistinguishedPropertySetId:(long long)arg1 propertyType:(long long)arg2 propertyId:(long long)arg3;
 + (id)_newEWSDeleteItemWithPropertyTag:(id)arg1 propertyType:(long long)arg2;
-+ (id)updatesForEWSItem:(id)arg1 applyingFlags:(id)arg2;
++ (id)updatesForEWSItem:(id)arg1 applyingFlagChange:(id)arg2;
 + (id)propertiesToGetBeforeUpdatingMessageFlags:(id)arg1 forMessageType:(BOOL)arg2 includesReadReceipts:(char *)arg3;
 + (id)extendedFieldsForEWSCalendarType;
 + (id)extendedFieldsForEWSMeetingRequestMessageType;
@@ -50,7 +50,6 @@
 + (BOOL)messageTypeForEWSItemClass:(id)arg1;
 + (long long)flagsForEWSItemType:(id)arg1;
 + (id)newMessageWithEWSItemType:(id)arg1;
-+ (void)initialize;
 @property(nonatomic) long long libraryID; // @synthesize libraryID=_libraryID;
 @property(retain) MFLibraryCalendarEvent *associatedCalendarEvent; // @synthesize associatedCalendarEvent=_associatedCalendarEvent;
 @property(retain) NSData *fetchedBodyData; // @synthesize fetchedBodyData=_fetchedBodyData;

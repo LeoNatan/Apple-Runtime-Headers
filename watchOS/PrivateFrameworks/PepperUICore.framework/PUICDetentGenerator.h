@@ -31,7 +31,6 @@
 - (void)detentService:(id)arg1 detentsDisabledChanged:(_Bool)arg2;
 - (void)_dispatchDetentsCommand:(CDUnknownBlockType)arg1;
 - (_Bool)deviceSupportsHardwareDetents;
-- (_Bool)_usingFakeDetents;
 - (_Bool)_shouldPlayDetents;
 - (void)_generateHardwareDetent:(int)arg1 withStrength:(int)arg2 velocity:(double)arg3;
 - (unsigned long)_majorDetentSystemSoundForStrength:(int)arg1;

@@ -8,6 +8,7 @@
 
 #import <SymptomEvaluator/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsNetworkUsageAttributionMetric : PBCodable <NSCopying>
 {
     unsigned long long _flowsImpactedCount;

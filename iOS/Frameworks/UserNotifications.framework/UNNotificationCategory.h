@@ -10,7 +10,7 @@
 #import <UserNotifications/NSMutableCopying-Protocol.h>
 #import <UserNotifications/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, UNNotificationAction;
 
 @interface UNNotificationCategory : NSObject <NSMutableCopying, NSCopying, NSSecureCoding>
 {
@@ -20,6 +20,8 @@
     NSString *_identifier;
     NSString *_hiddenPreviewsBodyPlaceholder;
     NSString *_categorySummaryFormat;
+    NSString *_actionsMenuTitle;
+    UNNotificationAction *_alternateAction;
     unsigned long long _options;
     unsigned long long _backgroundStyle;
     unsigned long long _listPriority;
@@ -35,10 +37,12 @@
 @property(readonly, nonatomic) unsigned long long listPriority; // @synthesize listPriority=_listPriority;
 @property(readonly, nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
+@property(readonly, copy, nonatomic) NSString *actionsMenuTitle; // @synthesize actionsMenuTitle=_actionsMenuTitle;
 @property(readonly, copy, nonatomic) NSString *categorySummaryFormat; // @synthesize categorySummaryFormat=_categorySummaryFormat;
 @property(readonly, copy, nonatomic) NSString *hiddenPreviewsBodyPlaceholder; // @synthesize hiddenPreviewsBodyPlaceholder=_hiddenPreviewsBodyPlaceholder;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSArray *intentIdentifiers; // @synthesize intentIdentifiers=_intentIdentifiers;
+@property(readonly, copy, nonatomic) UNNotificationAction *alternateAction; // @synthesize alternateAction=_alternateAction;
 @property(readonly, copy, nonatomic) NSArray *minimalActions; // @synthesize minimalActions=_minimalActions;
 @property(readonly, copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
@@ -49,7 +53,7 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)_initWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 intentIdentifiers:(id)arg4 hiddenPreviewsBodyPlaceholder:(id)arg5 categorySummaryFormat:(id)arg6 options:(unsigned long long)arg7 backgroundStyle:(unsigned long long)arg8 listPriority:(unsigned long long)arg9;
+- (id)_initWithIdentifier:(id)arg1 actions:(id)arg2 minimalActions:(id)arg3 alternateAction:(id)arg4 intentIdentifiers:(id)arg5 hiddenPreviewsBodyPlaceholder:(id)arg6 categorySummaryFormat:(id)arg7 actionsMenuTitle:(id)arg8 options:(unsigned long long)arg9 backgroundStyle:(unsigned long long)arg10 listPriority:(unsigned long long)arg11;
 
 @end
 

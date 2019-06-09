@@ -25,6 +25,8 @@
 @property(nonatomic) struct ProcessSerialNumber applicationProcessSerialNumber; // @synthesize applicationProcessSerialNumber=_applicationProcessSerialNumber;
 @property(nonatomic) int applicationProcessIdentifier; // @synthesize applicationProcessIdentifier=_applicationProcessIdentifier;
 - (id)applicationElement;
+- (id)_initWithApplicationRef:(struct __AXUIElement *)arg1 applicationProcessIdentifier:(int)arg2 applicationProcessSerialNumber:(struct ProcessSerialNumber)arg3 applicationIdentifier:(id)arg4 filterEnabled:(BOOL)arg5;
+- (id)initWithApplicationProcessIdentifier:(int)arg1 filterEnabled:(BOOL)arg2;
 - (id)initWithApplicationRef:(struct __AXUIElement *)arg1 applicationProcessIdentifier:(int)arg2 applicationProcessSerialNumber:(struct ProcessSerialNumber)arg3 applicationIdentifier:(id)arg4;
 
 @end

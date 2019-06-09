@@ -10,5 +10,7 @@
 + (id)placeholderCompletedAchievementImage;
 + (id)incompleteAchievementImage;
 - (void)loadImageWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)showBanner;
+- (id)imageURL;
 @end
 

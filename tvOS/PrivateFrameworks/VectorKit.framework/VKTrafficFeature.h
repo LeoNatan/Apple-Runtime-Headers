@@ -8,10 +8,16 @@
 
 #import <VectorKit/NSCopying-Protocol.h>
 
-@class GEOLatLng;
+@class GEOLatLng, NSString;
 
 @interface VKTrafficFeature : NSObject <NSCopying>
 {
+    struct PolylineCoordinate _approachingRouteOffset;
+    double _approachingDistanceInMeters;
+    long long _state;
+    NSString *_uniqueIdentifier;
+    unsigned int _priority;
+    int _groupIdentifier;
     Matrix_6e1d3589 _worldPoint;
     GEOLatLng *_position;
     CDStruct_2c43369c _location;
@@ -19,9 +25,18 @@
     float _maxZoom;
     struct PolylineCoordinate _routeOffset;
     long long _trafficFeatureType;
+    _Bool _shouldUpdateStyle;
 }
 
++ (id)newTrafficFeatureForEnrouteNotice:(id)arg1 onRoute:(id)arg2;
+@property(nonatomic) _Bool shouldUpdateStyle; // @synthesize shouldUpdateStyle=_shouldUpdateStyle;
+@property(readonly, nonatomic) int groupIdentifier; // @synthesize groupIdentifier=_groupIdentifier;
+@property(readonly, nonatomic) unsigned int priority; // @synthesize priority=_priority;
+@property(nonatomic) struct PolylineCoordinate approachingRouteOffset; // @synthesize approachingRouteOffset=_approachingRouteOffset;
+@property(readonly, nonatomic) double approachingDistanceInMeters; // @synthesize approachingDistanceInMeters=_approachingDistanceInMeters;
+@property(nonatomic) long long labelState; // @synthesize labelState=_state;
 @property(readonly, nonatomic) long long trafficFeatureType; // @synthesize trafficFeatureType=_trafficFeatureType;
+@property(readonly, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 @property(copy, nonatomic) GEOLatLng *position; // @synthesize position=_position;
 @property(nonatomic) CDStruct_c3b9c2ee location; // @synthesize location=_location;
 @property(nonatomic) float maxZoom; // @synthesize maxZoom=_maxZoom;
@@ -29,12 +44,20 @@
 @property(nonatomic) struct PolylineCoordinate routeOffset; // @synthesize routeOffset=_routeOffset;
 @property(nonatomic) Matrix_6e1d3589 worldPoint; // @synthesize worldPoint=_worldPoint;
 - (id).cxx_construct;
+- (void)updateLabelStateForRouteUserOffset:(const struct PolylineCoordinate *)arg1;
+@property(readonly, nonatomic) _Bool isGrouped;
+- (_Bool)isBehind;
+- (_Bool)isApproaching;
+- (_Bool)isAheadButNotApproaching;
 - (_Bool)isIncident;
 - (_Bool)isCamera;
+- (_Bool)isSignal;
 @property(readonly, nonatomic) Mercator2_57ec32b6 mercatorPoint;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithType:(long long)arg1;
+- (id)initWithEnrouteNotice:(id)arg1;
 
 @end
 

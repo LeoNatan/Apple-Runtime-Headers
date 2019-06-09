@@ -16,7 +16,9 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_nw_array> *application_protocols;
     NSObject<OS_nw_protocol_options> *transport_protocol;
+    NSObject<OS_nw_protocol_options> *secondary_transport_protocol;
     NSObject<OS_nw_protocol_options> *internet_protocol;
+    NSObject<OS_nw_protocol_options> *link_protocol;
 }
 
 - (void).cxx_destruct;

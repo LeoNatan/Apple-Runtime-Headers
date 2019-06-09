@@ -8,12 +8,12 @@
 
 #import <PhotosUI/PUTilingViewTileSource-Protocol.h>
 #import <PhotosUI/PUTilingViewTileTransitionDelegate-Protocol.h>
+#import <PhotosUI/PXLivePhotoTrimScrubberFilmStripView-Protocol.h>
 #import <PhotosUI/UIScrollViewDelegate-Protocol.h>
 
 @class AVAsset, AVVideoComposition, NSArray, NSString, PUFilmstripDataSource, PUFilmstripMediaProvider, PUTileViewAnimator, PUTilingView, UIImage;
 
-__attribute__((visibility("hidden")))
-@interface PUFilmstripView : UIView <PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, UIScrollViewDelegate>
+@interface PUFilmstripView : UIView <PXLivePhotoTrimScrubberFilmStripView, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, UIScrollViewDelegate>
 {
     _Bool _needsUpdateThumbnailAspectRatio;
     _Bool _needsUpdateDataSource;
@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (void)reloadThumbnails;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)setLivePhotoTrimScrubberThumbnail:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,7 +10,7 @@
 #import <XCTAutomationSupport/XCTConnectionAccepting-Protocol.h>
 #import <XCTAutomationSupport/XCTRemoteApplicationAutomationTarget-Protocol.h>
 
-@class DTXConnection, DTXProxyChannel, NSMutableArray, NSString, XCTAnimationsIdleNotifier, XCTElementQueryProcessor, XCTMainRunLoopIdleNotifier;
+@class DTXConnection, DTXProxyChannel, NSMutableArray, NSString, XCTAnimationsIdleNotifier, XCTCapabilities, XCTElementQueryProcessor, XCTMainRunLoopIdleNotifier;
 @protocol OS_dispatch_queue;
 
 @interface XCTAutomationSession : NSObject <XCTRemoteApplicationAutomationTarget, XCTConnectionAccepting, XCTAutomationTarget>
@@ -22,8 +22,11 @@
     XCTAnimationsIdleNotifier *_animationIdleNotifier;
     DTXConnection *_dtxConnection;
     DTXProxyChannel *_proxyChannel;
+    XCTCapabilities *_remoteInterfaceCapabilities;
 }
 
++ (id)capabilitiesBuilder;
+@property(retain) XCTCapabilities *remoteInterfaceCapabilities; // @synthesize remoteInterfaceCapabilities=_remoteInterfaceCapabilities;
 @property(readonly) DTXProxyChannel *proxyChannel; // @synthesize proxyChannel=_proxyChannel;
 @property(readonly) DTXConnection *dtxConnection; // @synthesize dtxConnection=_dtxConnection;
 @property(readonly) XCTAnimationsIdleNotifier *animationIdleNotifier; // @synthesize animationIdleNotifier=_animationIdleNotifier;
@@ -36,11 +39,13 @@
 - (id)_XCT_notifyWhenMainRunLoopIsIdle;
 - (id)_XCT_attributesForElement:(id)arg1 attributes:(id)arg2;
 - (id)_XCT_fetchMatchesForQuery:(id)arg1;
+- (id)_XCT_exchangeCapabilities:(id)arg1;
 - (void)listenForRemoteConnectionViaSerializedTransportWrapper:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)notifyWhenAnimationsAreIdle:(CDUnknownBlockType)arg1;
 - (void)notifyWhenMainRunLoopIsIdle:(CDUnknownBlockType)arg1;
 - (void)attributesForElement:(id)arg1 attributes:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)fetchMatchesForQuery:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)exchangeCapabilities:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)requestHostAppExecutableNameWithReply:(CDUnknownBlockType)arg1;
 - (BOOL)acceptNewConnection:(id)arg1;
 - (id)init;

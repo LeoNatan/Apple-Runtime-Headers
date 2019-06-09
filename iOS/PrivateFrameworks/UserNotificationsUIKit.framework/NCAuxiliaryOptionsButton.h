@@ -6,31 +6,17 @@
 
 #import <UIKit/UIButton.h>
 
-#import <UserNotificationsUIKit/NCMaterialsAdjusting-Protocol.h>
+@class UIView;
 
-@class MTMaterialView, NSString;
-
-@interface NCAuxiliaryOptionsButton : UIButton <NCMaterialsAdjusting>
+@interface NCAuxiliaryOptionsButton : UIButton
 {
-    MTMaterialView *_backgroundMaterialView;
-    long long _materialRecipe;
-    unsigned long long _materialOptions;
+    UIView *_backgroundView;
 }
 
 - (void).cxx_destruct;
 - (void)_configureBackgroundViewIfNecessary;
-- (void)adjustForChangeInMaterialRecipe:(long long)arg1 backgroundMaterialOptions:(unsigned long long)arg2 overlayMaterialOptions:(unsigned long long)arg3;
-- (void)setHighlighted:(_Bool)arg1;
 - (void)_setCornerRadius:(double)arg1;
-- (double)_cornerRadius;
 - (void)layoutSubviews;
-- (id)initWithRecipe:(long long)arg1 options:(unsigned long long)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

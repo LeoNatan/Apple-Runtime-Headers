@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedClient;
 - (void).cxx_destruct;
-- (id)_proxy;
+- (id)_proxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)fetchTrackAssetAvailabilityForTrackPID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchCompanionCloudAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)discoverAndConnectEndpoints;

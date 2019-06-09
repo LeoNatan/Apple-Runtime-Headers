@@ -6,13 +6,12 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class FIUIDividerView, HKRingsView, HKWorkout, UIImageView, UILabel;
+@class ARUIRingsView, FIUIDividerView, HKWorkout, UIImageView, UILabel;
 
 @interface FIUIWorkoutCompletionPercentageRingViewCell : UITableViewCell
 {
-    _Bool _showDivider;
     HKWorkout *_workout;
-    HKRingsView *_ringsView;
+    ARUIRingsView *_ringsView;
     UIImageView *_gradientBackgroundImageView;
     UIImageView *_iconImageView;
     UILabel *_typeLabel;
@@ -32,8 +31,7 @@
 @property(retain, nonatomic) UILabel *typeLabel; // @synthesize typeLabel=_typeLabel;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UIImageView *gradientBackgroundImageView; // @synthesize gradientBackgroundImageView=_gradientBackgroundImageView;
-@property(retain, nonatomic) HKRingsView *ringsView; // @synthesize ringsView=_ringsView;
-@property(nonatomic) _Bool showDivider; // @synthesize showDivider=_showDivider;
+@property(retain, nonatomic) ARUIRingsView *ringsView; // @synthesize ringsView=_ringsView;
 @property(nonatomic) double currentCompletionFactor; // @synthesize currentCompletionFactor=_currentCompletionFactor;
 @property(retain, nonatomic) HKWorkout *workout; // @synthesize workout=_workout;
 - (void).cxx_destruct;

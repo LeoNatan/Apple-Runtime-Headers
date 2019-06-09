@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     NSURL *_transcodeServerPublicKeyURL;
 }
 
-+ (struct OpaqueSecPolicyRef *)createTranscodeServerTrustPolicy;
++ (struct __SecPolicy *)createTranscodeServerTrustPolicy;
 @property(retain, nonatomic) NSURL *transcodeServerPublicKeyURL; // @synthesize transcodeServerPublicKeyURL=_transcodeServerPublicKeyURL;
 @property(readonly, nonatomic) NSString *transcodeServerHostname; // @synthesize transcodeServerHostname=_transcodeServerHostname;
 @property(retain) CKPublicKey *transcodeServerPublicKey; // @synthesize transcodeServerPublicKey=_transcodeServerPublicKey;

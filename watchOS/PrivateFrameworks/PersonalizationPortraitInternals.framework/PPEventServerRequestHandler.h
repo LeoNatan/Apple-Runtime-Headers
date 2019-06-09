@@ -20,6 +20,7 @@
 
 @property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void).cxx_destruct;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)sendRTCLogsWithWithCompletion:(CDUnknownBlockType)arg1;
 - (void)interactionSummaryMetricsWithQueryId:(unsigned long long)arg1;
 - (void)logEventInteractionForEventWithEventIdentifier:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;

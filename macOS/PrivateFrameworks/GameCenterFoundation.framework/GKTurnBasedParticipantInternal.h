@@ -31,6 +31,7 @@
 @property(retain, nonatomic) NSDate *timeoutDate; // @synthesize timeoutDate=_timeoutDate;
 @property(retain, nonatomic) NSDate *lastTurnDate; // @synthesize lastTurnDate=_lastTurnDate;
 @property(retain, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) BOOL isAutomatchParticipant; // @dynamic isAutomatchParticipant;
 - (id)descriptionSubstitutionMap;
 - (id)serverRepresentation;
 - (BOOL)isEqual:(id)arg1;

@@ -7,6 +7,8 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (NCAB)
+- (_Bool)isEmail;
+- (_Bool)isPhoneNumber;
 - (_Bool)ncab_containsEmojiCharacters;
 - (_Bool)ncab_containsNonLatinCharacters;
 - (id)ncab_stringByTransliteratingToPhoneticCharactersAsFamilyName:(_Bool)arg1;

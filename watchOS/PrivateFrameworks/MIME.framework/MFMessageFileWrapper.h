@@ -20,6 +20,8 @@
     int _type;
 }
 
+@property(copy, nonatomic) NSString *path; // @synthesize path=_path;
+- (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
 - (id)fileAttributes;
@@ -39,8 +41,6 @@
 - (void)setURL:(id)arg1;
 - (id)URL;
 - (_Bool)isPlaceholder;
-- (void)setPath:(id)arg1;
-- (id)path;
 - (id)initWithPath:(id)arg1;
 - (_Bool)isUnzippableFile;
 - (_Bool)isPDFFile;

@@ -8,12 +8,10 @@
 
 @interface PLResourceDataStoreOptions : NSObject
 {
-    _Bool _baseKeyOnExistingData;
     _Bool _assumeNoExistingResources;
 }
 
 @property(nonatomic) _Bool assumeNoExistingResources; // @synthesize assumeNoExistingResources=_assumeNoExistingResources;
-@property(nonatomic) _Bool baseKeyOnExistingData; // @synthesize baseKeyOnExistingData=_baseKeyOnExistingData;
 
 @end
 

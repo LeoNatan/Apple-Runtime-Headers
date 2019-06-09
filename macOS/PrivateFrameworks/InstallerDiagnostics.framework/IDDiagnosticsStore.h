@@ -23,7 +23,7 @@
 - (BOOL)clearSingleDiagnosticMessage:(long long)arg1 error:(id *)arg2;
 - (id)storedMessages:(id)arg1;
 - (BOOL)recordDiagnosticMessage:(long long)arg1 withData:(id)arg2 error:(id *)arg3;
-- (BOOL)_storeToV2WithError:(id *)arg1;
+- (BOOL)_storeMessage:(long long)arg1 toV2WithError:(id *)arg2;
 - (id)init;
 - (void)_resumeInstall;
 - (BOOL)_containsUnfinishedInstall;
@@ -34,7 +34,7 @@
 - (id)_storedNVRAMV1Data;
 - (BOOL)_storeDataToNVRAMV1:(id)arg1 error:(id *)arg2;
 - (id)_decompressData:(id)arg1 error:(id *)arg2;
-- (id)_compressData:(id)arg1 error:(id *)arg2;
+- (id)_compressData:(id)arg1 forMessage:(long long)arg2 error:(id *)arg3;
 
 @end
 

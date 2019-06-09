@@ -11,15 +11,16 @@
 @protocol ICSearchIndexable <NSObject>
 - (CSSearchableItemAttributeSet *)searchableItemAttributeSet;
 - (NSString *)searchDomainIdentifier;
-- (NSString *)searchableItemIdentifier;
 - (NSArray *)authorsExcludingCurrentUser;
+- (_Bool)isMovable;
 - (_Bool)isHiddenFromSearch;
 - (_Bool)searchResultCanBeDeletedFromNoteContext;
 - (unsigned long long)searchResultType;
 - (unsigned long long)searchResultsSection;
 - (NSDate *)modificationDate;
 - (NSDate *)creationDate;
-- (NSString *)identifier;
+- (NSString *)contentIdentifier;
+- (NSString *)searchIndexingIdentifier;
 - (long long)visibilityTestingType;
 - (NSManagedObjectID *)objectID;
 - (NSManagedObjectContext *)managedObjectContext;
@@ -27,6 +28,5 @@
 @optional
 - (NSData *)dataForTypeIdentifier:(NSString *)arg1;
 - (NSURL *)fileURLForTypeIdentifier:(NSString *)arg1;
-- (_Bool)ignoreInSearchIndexer;
 @end
 

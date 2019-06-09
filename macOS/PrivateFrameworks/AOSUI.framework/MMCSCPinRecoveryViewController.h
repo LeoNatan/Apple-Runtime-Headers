@@ -16,6 +16,10 @@
 
 @interface MMCSCPinRecoveryViewController : NSViewController <NSTouchBarProvider, MMPinFieldViewDelegate, MMLinkTextFieldDelegate, MMCSCProgressIndicatorProtocol>
 {
+    MMPinFieldView *_pinViewPinFieldView;
+    BOOL _needsVerification;
+    int _pinLength;
+    NSString *_passPhrase;
     id <MMCSCPinRecoveryViewControllerDelegate> _delegate;
     NSImageView *_pinViewImageView;
     NSTextField *_pinViewTitle;
@@ -23,14 +27,10 @@
     MMLinkTextField *_pinViewAlternateMessageTextField;
     NSView *_pinViewPinFieldPlaceholder;
     NSLayoutConstraint *_pinViewPinFieldWidthConstraint;
-    MMPinFieldView *_pinViewPinFieldView;
     NSButton *_pinViewHelpButton;
     NSButton *_pinViewConfirmButton;
     NSButton *_pinViewCancelButton;
     NSProgressIndicator *_pinViewProgressIndicator;
-    BOOL _needsVerification;
-    int _pinLength;
-    NSString *_passPhrase;
     iCloudTouchBarController *_touchBarController;
 }
 
@@ -38,18 +38,19 @@
 @property(copy) NSString *passPhrase; // @synthesize passPhrase=_passPhrase;
 @property int pinLength; // @synthesize pinLength=_pinLength;
 @property BOOL needsVerification; // @synthesize needsVerification=_needsVerification;
-@property NSProgressIndicator *pinViewProgressIndicator; // @synthesize pinViewProgressIndicator=_pinViewProgressIndicator;
-@property NSButton *pinViewCancelButton; // @synthesize pinViewCancelButton=_pinViewCancelButton;
-@property NSButton *pinViewConfirmButton; // @synthesize pinViewConfirmButton=_pinViewConfirmButton;
-@property NSButton *pinViewHelpButton; // @synthesize pinViewHelpButton=_pinViewHelpButton;
+@property __weak NSProgressIndicator *pinViewProgressIndicator; // @synthesize pinViewProgressIndicator=_pinViewProgressIndicator;
+@property __weak NSButton *pinViewCancelButton; // @synthesize pinViewCancelButton=_pinViewCancelButton;
+@property __weak NSButton *pinViewConfirmButton; // @synthesize pinViewConfirmButton=_pinViewConfirmButton;
+@property __weak NSButton *pinViewHelpButton; // @synthesize pinViewHelpButton=_pinViewHelpButton;
 @property(retain) MMPinFieldView *pinViewPinFieldView; // @synthesize pinViewPinFieldView=_pinViewPinFieldView;
-@property NSLayoutConstraint *pinViewPinFieldWidthConstraint; // @synthesize pinViewPinFieldWidthConstraint=_pinViewPinFieldWidthConstraint;
-@property NSView *pinViewPinFieldPlaceholder; // @synthesize pinViewPinFieldPlaceholder=_pinViewPinFieldPlaceholder;
-@property MMLinkTextField *pinViewAlternateMessageTextField; // @synthesize pinViewAlternateMessageTextField=_pinViewAlternateMessageTextField;
-@property MMLinkTextField *pinViewMessageTextField; // @synthesize pinViewMessageTextField=_pinViewMessageTextField;
-@property NSTextField *pinViewTitle; // @synthesize pinViewTitle=_pinViewTitle;
-@property NSImageView *pinViewImageView; // @synthesize pinViewImageView=_pinViewImageView;
+@property __weak NSLayoutConstraint *pinViewPinFieldWidthConstraint; // @synthesize pinViewPinFieldWidthConstraint=_pinViewPinFieldWidthConstraint;
+@property __weak NSView *pinViewPinFieldPlaceholder; // @synthesize pinViewPinFieldPlaceholder=_pinViewPinFieldPlaceholder;
+@property __weak MMLinkTextField *pinViewAlternateMessageTextField; // @synthesize pinViewAlternateMessageTextField=_pinViewAlternateMessageTextField;
+@property __weak MMLinkTextField *pinViewMessageTextField; // @synthesize pinViewMessageTextField=_pinViewMessageTextField;
+@property __weak NSTextField *pinViewTitle; // @synthesize pinViewTitle=_pinViewTitle;
+@property __weak NSImageView *pinViewImageView; // @synthesize pinViewImageView=_pinViewImageView;
 @property id <MMCSCPinRecoveryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)clickedOnLink:(id)arg1;
 - (void)pinFieldViewTextDidChange:(id)arg1;
 - (id)forgotCodeAttributedString;
@@ -63,7 +64,6 @@
 - (void)confirmButtonClicked:(id)arg1;
 - (void)setupView:(long long)arg1;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

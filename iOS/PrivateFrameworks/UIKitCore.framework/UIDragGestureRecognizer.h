@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (_Bool)_shouldReceivePress:(id)arg1;
-- (_Bool)_shouldReceiveTouch:(id)arg1 recognizerView:(id)arg2 touchView:(id)arg3;
+- (_Bool)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 - (_Bool)_shouldReceiveDragEvent:(id)arg1;
 @property(readonly, nonatomic) _UIDropSessionImpl *dropSession;
 @property(readonly, nonatomic) _UIInternalDraggingSessionDestination *sessionDestination;

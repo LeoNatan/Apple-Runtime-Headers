@@ -11,8 +11,8 @@
 }
 
 + (_Bool)isAvailable;
++ (id)callProvider;
 - (_Bool)isEmail;
-- (id)callProvider;
 - (long long)TTYType;
 - (int)interactionType;
 - (id)notificationURL;

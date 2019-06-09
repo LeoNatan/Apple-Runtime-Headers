@@ -8,6 +8,7 @@
 
 @class NSURL, SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUILoadTrendingSearchPageOperation : NSOperation
 {
     SKUIClientContext *_clientContext;

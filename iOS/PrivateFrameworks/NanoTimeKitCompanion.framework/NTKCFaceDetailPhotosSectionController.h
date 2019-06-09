@@ -32,6 +32,8 @@
 @property(nonatomic) __weak UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 - (void).cxx_destruct;
 - (void)customPhotosControllerDidFinish:(id)arg1;
+- (void)photoAlbumChanged:(id)arg1;
+- (id)_overrideTextForOption:(id)arg1;
 - (void)saveChangesWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool hasChanges;
 - (id)_currentEditor;

@@ -6,6 +6,7 @@
 
 #import <StoreServices/SSVURLDataConsumer.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUITrendingSearchPageConsumer : SSVURLDataConsumer
 {
 }

@@ -52,9 +52,11 @@
 - (id)referenceAttributesForLocation:(unsigned long long)arg1 textStorage:(id)arg2 currentParagraphStart:(unsigned long long)arg3;
 - (id)copyNSParagraphStylefromAttributes:(id)arg1 toAttributes:(id)arg2;
 - (id)copyAttribute:(id)arg1 fromAttributes:(id)arg2 toAttributes:(id)arg3;
-- (id)strippedTypingAttributesForEmptyParagraph:(id)arg1 atTheEndOfDocument:(_Bool)arg2 isTyping:(_Bool)arg3;
+- (id)strippedTypingAttributesAtStartOfParagraph:(id)arg1 atTheEndOfDocument:(_Bool)arg2 isTyping:(_Bool)arg3;
 - (id)defaultTypingAttributesForEmptyDocument;
+- (id)typingAttributesForRange:(struct _NSRange)arg1 forSelectionChange:(_Bool)arg2 forSettingTextStyle:(_Bool)arg3 currentTypingAttributes:(id)arg4 inTextStorage:(id)arg5;
 - (id)typingAttributesForRange:(struct _NSRange)arg1 forSelectionChange:(_Bool)arg2 currentTypingAttributes:(id)arg3 inTextStorage:(id)arg4;
+- (id)typingAttributesForSettingTextStyleForRange:(struct _NSRange)arg1 currentTypingAttributes:(id)arg2 inTextStorage:(id)arg3;
 - (id)fixedWidthAttributesWithContentSizeCategory:(id)arg1;
 - (id)fixedWidthAttributes;
 - (id)checklistAttributesWithContentSizeCategory:(id)arg1;

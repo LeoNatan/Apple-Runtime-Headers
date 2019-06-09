@@ -17,6 +17,7 @@
     id <NSSecureCoding> _tracklistToken;
     int _actionAfterQueueLoad;
     int _shuffleMode;
+    int _repeatMode;
     NSString *_playActivityFeatureName;
     NSData *_playActivityRecommendationData;
     NSString *_siriAssetInfo;
@@ -35,14 +36,13 @@
 @property(copy, nonatomic) NSString *siriAssetInfo; // @synthesize siriAssetInfo=_siriAssetInfo;
 @property(copy, nonatomic) NSData *playActivityRecommendationData; // @synthesize playActivityRecommendationData=_playActivityRecommendationData;
 @property(copy, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;
+@property(nonatomic) int repeatMode; // @synthesize repeatMode=_repeatMode;
 @property(nonatomic) int shuffleMode; // @synthesize shuffleMode=_shuffleMode;
 @property(nonatomic) int actionAfterQueueLoad; // @synthesize actionAfterQueueLoad=_actionAfterQueueLoad;
 @property(retain, nonatomic) id <NSSecureCoding> tracklistToken; // @synthesize tracklistToken=_tracklistToken;
 @property(nonatomic) int tracklistSource; // @synthesize tracklistSource=_tracklistSource;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 - (void).cxx_destruct;
-- (void)setPreventAutomaticPlayback:(_Bool)arg1;
-- (_Bool)preventAutomaticPlayback;
 - (void)getRepresentativeMetadataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getPlaybackContextWithCompletion:(CDUnknownBlockType)arg1;

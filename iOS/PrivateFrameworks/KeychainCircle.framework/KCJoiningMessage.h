@@ -19,6 +19,7 @@
 + (id)encodeToDERType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id *)arg4;
 + (unsigned long long)encodedSizeType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id *)arg4;
 + (id)messageWithType:(int)arg1 data:(id)arg2 payload:(id)arg3 error:(id *)arg4;
++ (id)messageWithType:(int)arg1 data:(id)arg2 secondData:(id)arg3 error:(id *)arg4;
 + (id)messageWithType:(int)arg1 data:(id)arg2 error:(id *)arg3;
 + (id)messageWithDER:(id)arg1 error:(id *)arg2;
 @property(readonly) NSData *der; // @synthesize der=_der;

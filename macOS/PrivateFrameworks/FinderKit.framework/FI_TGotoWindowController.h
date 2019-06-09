@@ -10,7 +10,7 @@
 #import <FinderKit/NSComboBoxDelegate-Protocol.h>
 #import <FinderKit/NSWindowDelegate-Protocol.h>
 
-@class FI_TProgressIndicator, NSComboBox, NSString, NSWindow;
+@class FI_TProgressIndicator, NSComboBox, NSObject, NSString, NSWindow;
 @protocol TGoToWindowDelegate;
 
 __attribute__((visibility("hidden")))
@@ -28,8 +28,8 @@ __attribute__((visibility("hidden")))
     struct TriStateBool _isTabAutoCompleting;
     struct TNSRef<FI_TGoToAutoCompletionController, void> _autoCompletionController;
     struct TNSRef<FI_TGoToFieldEditor, void> _fieldEditor;
-    id <TGoToWindowDelegate> _delegate;
-    NSWindow *_parentWindow;
+    struct TNSWeakPtr<NSObject<TGoToWindowDelegate>, void> _weakDelegate;
+    struct TNSWeakPtr<NSWindow, void> _weakParentWindow;
     _Bool _allowLeftoverLastPathComponent;
     _Bool _selectionChangedDuringAutoCompletion;
     function_8027184b _completionHandler;
@@ -37,7 +37,7 @@ __attribute__((visibility("hidden")))
     struct TNotificationCenterObserver _textDidChangeObserver;
     struct TNotificationCenterObserver _didChangeSelectionObserver;
     struct TNSRef<NSTouchBar, void> _goAndCancelButtonsTouchBar;
-    struct TKeyValueBinder _goTouchBarButtonBinder;
+    struct TNSRef<NSCustomTouchBarItem, void> _goAndCancelButtonsTouchBarItem;
 }
 
 + (struct TGoToPathToAutoCompleteHelper)calcPathToAutoComplete:(struct TString *)arg1 relativeToNode:(struct TFENode *)arg2 delegate:(id)arg3;
@@ -45,15 +45,14 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingEnablePathComboBox;
 + (id)keyPathsForValuesAffectingEnableGoBtn;
 + (id)showGoToWindowRelativeToNode:(const struct TFENode *)arg1 parentWindow:(id)arg2 initialPath:(const struct TString *)arg3 allowLeftoverLastPathComponent:(_Bool)arg4 completionHandler:(const function_8027184b *)arg5;
-@property(nonatomic) id <TGoToWindowDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool allowLeftoverLastPathComponent; // @synthesize allowLeftoverLastPathComponent=_allowLeftoverLastPathComponent;
-@property(nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(nonatomic) _Bool isAutoCompleteUIVisible; // @synthesize isAutoCompleteUIVisible=_isAutoCompleteUIVisible;
 @property(nonatomic) _Bool isAutoCompleting; // @synthesize isAutoCompleting=_isAutoCompleting;
 @property(nonatomic) _Bool isGoingToFolder; // @synthesize isGoingToFolder=_isGoingToFolder;
 @property(retain, nonatomic) NSString *errorMsgText; // @synthesize errorMsgText=_errorMsgText;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)touchBar:(id)arg1 makeItemForIdentifier:(id)arg2;
 - (id)makeTouchBar;
 - (id)comboBox:(id)arg1 objectValueForItemAtIndex:(long long)arg2;
 - (long long)numberOfItemsInComboBox:(id)arg1;
@@ -81,6 +80,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool enableGoBtn; // @dynamic enableGoBtn;
 - (void)windowWillClose:(id)arg1;
 - (void)windowDidLoad;
+@property(nonatomic) __weak NSObject<TGoToWindowDelegate> *delegate; // @dynamic delegate;
+- (void)setParentWindow:(id)arg1;
+@property(readonly, nonatomic) __weak NSWindow *parentWindow; // @dynamic parentWindow;
 - (id)_initWithRelativeToNode:(const struct TFENode *)arg1 parentWindow:(id)arg2 initialPath:(const struct TString *)arg3 allowLeftoverLastPathComponent:(_Bool)arg4 completionHandler:(const function_8027184b *)arg5;
 
 // Remaining properties

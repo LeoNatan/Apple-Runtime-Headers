@@ -6,9 +6,12 @@
 
 #import <NanoTimeKit/NTKRichComplicationShapeView.h>
 
-@class CAShapeLayer, UIView;
+#import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKRichComplicationRingView : NTKRichComplicationShapeView
+@class CAShapeLayer, NSString, UIView;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKRichComplicationRingView : NTKRichComplicationShapeView <CLKMonochromeComplicationView>
 {
     float _curveWidth;
     float _padding;
@@ -31,9 +34,18 @@
 - (struct CGPoint)_pointAtProgress:(float)arg1;
 - (float)_shapeLineWidth;
 - (void)_setupGradientLayer:(id)arg1;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)setProgress:(float)arg1;
 - (void)layoutSubviews;
-- (id)initWithCurveWidth:(float)arg1 padding:(float)arg2 forDevice:(id)arg3;
+- (id)initWithCurveWidth:(float)arg1 padding:(float)arg2 forDevice:(id)arg3 withFilterStyle:(int)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

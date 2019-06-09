@@ -1097,6 +1097,7 @@ struct _CGLContextObject {
         CDUnknownFunctionPointerType _field972;
         CDUnknownFunctionPointerType _field973;
         CDUnknownFunctionPointerType _field974;
+        CDUnknownFunctionPointerType _field975;
     } _field2;
     struct _CGLPrivateObject *_field3;
     void *_field4;

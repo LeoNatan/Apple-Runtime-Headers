@@ -23,7 +23,6 @@
     NSString *_pairedPunctuationsInsertedInLastAction;
 }
 
-+ (id)fullwidthToHalfwidthPunctuationMapping;
 + (id)contextualVariantMapping;
 @property(nonatomic) BOOL usesStandardPinyinKeyboardLayout; // @synthesize usesStandardPinyinKeyboardLayout=_usesStandardPinyinKeyboardLayout;
 @property(nonatomic) BOOL previousInputSelectedTone; // @synthesize previousInputSelectedTone=_previousInputSelectedTone;
@@ -71,6 +70,9 @@
 - (BOOL)handleITABCEvent;
 - (void)performPageNavigationRight:(id)arg1;
 - (void)performPageNavigationLeft:(id)arg1;
+- (BOOL)expandableWindowIsShownAboveInlineAndEventIsRepeating;
+- (BOOL)isShowingCandidateViewAboveInline;
+- (BOOL)isFirstCandidateSelected;
 - (BOOL)handleKeyEvent;
 - (void)didHandleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
 - (void)didHandleCandidateSelected:(id)arg1 isSecondary:(BOOL)arg2;

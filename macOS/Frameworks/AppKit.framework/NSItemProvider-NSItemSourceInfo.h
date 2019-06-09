@@ -11,5 +11,15 @@
 @property(readonly) struct CGRect containerFrame;
 @property(readonly) struct CGRect sourceFrame;
 - (id)_itemSourceInfo;
+- (void)setPreferredPresentationSize:(struct CGSize)arg1;
+- (void)setContainerFrame:(struct CGRect)arg1;
+- (void)setSourceFrame:(struct CGRect)arg1;
+- (id)_ckContainerID;
+- (id)_ckSourceAppBundleIdentifier;
+- (id)_ckContainerIdentifier;
+- (id)_ckShare;
+- (id)_ckDictionary;
+- (void)registerCloudKitShareWithPreparationHandler:(CDUnknownBlockType)arg1;
+- (void)registerCloudKitShare:(id)arg1 container:(id)arg2;
 @end
 

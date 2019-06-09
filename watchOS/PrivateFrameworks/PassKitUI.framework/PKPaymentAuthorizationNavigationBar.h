@@ -11,12 +11,16 @@
 @interface PKPaymentAuthorizationNavigationBar : UINavigationBar
 {
     UILabel *_environmentLabel;
+    int _interfaceStyle;
 }
 
 + (id)applePayBarButtonItem;
 + (id)cardOnFileBarButtonItemForRequestor:(unsigned int)arg1;
++ (id)_leftBarButtonItemWithImage:(id)arg1;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (void)didUpdateInterfaceStyle;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

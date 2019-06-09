@@ -52,11 +52,17 @@
 - (void).cxx_destruct;
 - (void)saveGreeting:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)changePassword:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)messagesForMailboxType:(long long)arg1 read:(_Bool)arg2 limit:(long long)arg3 offset:(long long)arg4 error:(id *)arg5;
+- (id)messagesForMailboxType:(long long)arg1 limit:(long long)arg2 offset:(long long)arg3 error:(id *)arg4;
+- (void)messageCountForMailboxType:(long long)arg1 read:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (long long)messageCountForMailboxType:(long long)arg1 read:(_Bool)arg2 error:(id *)arg3;
+- (void)messageCountForMailboxType:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)messageCountForMailboxType:(long long)arg1 error:(id *)arg2;
 - (void)setGreeting:(id)arg1 forAccountUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)greetingForAccountUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (double)maximumGreetingDurationForAccountUUID:(id)arg1;
 - (_Bool)isGreetingChangeSupportedForAccountUUID:(id)arg1;
-- (oneway void)updateAccounts:(id)arg1;
+- (void)updateAccounts:(id)arg1;
 - (void)setPasscode:(id)arg1 forAccountUUID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (long long)maximumPasscodeLengthForAccountUUID:(id)arg1;
 - (long long)minimumPasscodeLengthForAccountUUID:(id)arg1;
@@ -92,7 +98,7 @@
 - (void)requestInitialStateIfNecessaryAndSendNotifications:(_Bool)arg1;
 @property(readonly, nonatomic) id <VMServerXPCProtocol> serverConnection;
 - (id)synchronousServerConnectionWithErrorHandler:(CDUnknownBlockType)arg1;
-- (id)serverConnectionWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)asynchronousServerConnectionWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithClient:(id)arg1;
 - (id)init;

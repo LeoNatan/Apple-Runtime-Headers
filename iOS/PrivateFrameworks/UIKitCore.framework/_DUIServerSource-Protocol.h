@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSXPCListenerEndpoint, PBItemCollection, _DUITouchRoutingPolicy;
+@class UIDraggingSessionConfiguration;
 @protocol _DUIClientSessionSource;
 
 @protocol _DUIServerSource
-- (oneway void)beginDragWithTouchIdentifiers:(NSArray *)arg1 touchRoutingPolicy:(_DUITouchRoutingPolicy *)arg2 itemCollection:(PBItemCollection *)arg3 itemDetails:(NSArray *)arg4 dataProviderEndpoint:(NSXPCListenerEndpoint *)arg5 source:(id <_DUIClientSessionSource>)arg6 accessibilityEndpoint:(NSXPCListenerEndpoint *)arg7 centroid:(struct CGPoint)arg8 reply:(void (^)(unsigned int, id <_DUIServerSessionSource>))arg9;
+- (oneway void)beginDragWithClientSession:(id <_DUIClientSessionSource>)arg1 configuration:(UIDraggingSessionConfiguration *)arg2 reply:(void (^)(unsigned int, id <_DUIServerSessionSource>))arg3;
 - (oneway void)warmUp;
 @end
 

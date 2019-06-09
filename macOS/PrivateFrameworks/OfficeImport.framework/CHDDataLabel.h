@@ -8,6 +8,7 @@
 
 @class EDResources, EDString, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDDataLabel : NSObject
 {
     EDResources *mResources;

@@ -10,7 +10,10 @@
 {
 }
 
++ (void)checkEligibilityForAutoEnableWithHealthStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)checkEligibilityForAutoEnableWithCompletion:(CDUnknownBlockType)arg1;
++ (void)newtonEligibilityWithHealthStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)newtonEligibilityWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
 

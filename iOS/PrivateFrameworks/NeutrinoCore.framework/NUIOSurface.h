@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString, NUGLBuffer, NUGLTexture, NUPixelFormat;
+@protocol OS_dispatch_queue;
 
 @interface NUIOSurface : NSObject
 {
@@ -15,10 +16,12 @@
     NUPixelFormat *_internalFormat;
     NUGLBuffer *_buffer;
     NUGLTexture *_texture;
+    NSObject<OS_dispatch_queue> *_queue;
     CDStruct_d58201db _size;
 }
 
 + (id)_internalFormatForPixelFormat:(id)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NUGLTexture *texture; // @synthesize texture=_texture;
 @property(readonly, nonatomic) NUGLBuffer *buffer; // @synthesize buffer=_buffer;
 @property(readonly, nonatomic) NUPixelFormat *internalFormat; // @synthesize internalFormat=_internalFormat;

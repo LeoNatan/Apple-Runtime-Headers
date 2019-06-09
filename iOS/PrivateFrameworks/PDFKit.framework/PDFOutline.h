@@ -14,23 +14,23 @@
 }
 
 - (void).cxx_destruct;
-- (id)lastChild;
-- (id)firstChild;
-- (id)previous;
-- (id)next;
-- (_Bool)childDictionaryReferencesParent:(struct CGPDFDictionary *)arg1;
-- (int)openDescendantCount;
-- (void)addActionToDictionaryRef:(struct __CFDictionary *)arg1;
-- (_Bool)addDestinationToDictionaryRef:(struct __CFDictionary *)arg1;
-- (void)removeChildAtIndex:(unsigned long long)arg1;
-- (id)childArray;
-- (void)setParent:(id)arg1;
+- (id)_lastChild;
+- (id)_firstChild;
+- (id)_previous;
+- (id)_next;
+- (_Bool)_childDictionaryReferencesParent:(struct CGPDFDictionary *)arg1;
+- (int)_openDescendantCount;
+- (void)_addActionToDictionaryRef:(struct __CFDictionary *)arg1;
+- (_Bool)_addDestinationToDictionaryRef:(struct __CFDictionary *)arg1;
+- (void)_removeChildAtIndex:(unsigned long long)arg1;
+- (id)_childArray;
+- (void)_setParent:(id)arg1;
 - (void)setDocument:(id)arg1;
 - (void)invalidateDictionaryRef;
 - (struct __CFDictionary *)createDictionaryRef;
-- (struct CGPDFDictionary *)srcDictionaryRef;
+- (struct CGPDFDictionary *)_srcDictionaryRef;
 - (void)commonInit;
-- (void)lazilyLoadChildren;
+- (void)_lazilyLoadChildren;
 - (id)initWithDictionary:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2 parent:(id)arg3;
 - (void)dealloc;
 @property(retain, nonatomic) PDFAction *action;

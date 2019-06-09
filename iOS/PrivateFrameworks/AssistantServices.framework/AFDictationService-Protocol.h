@@ -9,6 +9,8 @@
 @class AFDictationOptions, AFSpeechCorrectionInfo, AFSpeechRequestOptions, NSData, NSDictionary, NSError, NSString, NSURL;
 
 @protocol AFDictationService <NSObject>
+- (oneway void)sendUserSelectedAlternativeDictationLanguageCode:(NSString *)arg1;
+- (oneway void)reportIssueForError:(NSError *)arg1 eventType:(long long)arg2 context:(NSDictionary *)arg3;
 - (oneway void)requestOfflineDictationSupportForLanguage:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (oneway void)getInstalledOfflineLanguagesWithCompletion:(void (^)(NSArray *))arg1;
 - (oneway void)_sendEngagementFeedback:(long long)arg1 voiceQueryIdentifier:(NSString *)arg2;

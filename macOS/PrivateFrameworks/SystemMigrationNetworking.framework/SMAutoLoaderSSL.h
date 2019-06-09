@@ -11,8 +11,8 @@
 }
 
 + (id)keychainPath;
-+ (struct OpaqueSecKeychainRef *)sessionKeychain;
-+ (struct OpaqueSecCertificateRef *)generateSelfSignedCertificate:(id)arg1 forSSLServer:(BOOL)arg2;
++ (struct __SecKeychain *)sessionKeychain;
++ (struct __SecCertificate *)generateSelfSignedCertificate:(id)arg1 forSSLServer:(BOOL)arg2;
 + (void)userRespondedToPasscode:(unsigned long long)arg1;
 + (BOOL)doSynchronousPairingWithPasscode:(unsigned long long)arg1;
 + (unsigned long long)passCodeFromServerKeyData:(id)arg1 clientKeyData:(id)arg2;
@@ -20,13 +20,13 @@
 + (void)persistKeychainAndCertificates:(BOOL)arg1;
 + (id)dataWithTxtRecordPublicKeyValues:(id)arg1;
 + (id)txtRecordPublicKeyValuesWithData:(id)arg1;
-+ (id)publicKeyDataFromCertificate:(struct OpaqueSecCertificateRef *)arg1;
-+ (id)publicKeyDataFromIdentity:(struct OpaqueSecIdentityRef *)arg1;
++ (id)publicKeyDataFromCertificate:(struct __SecCertificate *)arg1;
++ (id)publicKeyDataFromIdentity:(struct __SecIdentity *)arg1;
 + (void)deleteKeychain;
 + (void)unlockIdentityKeychain;
 + (id)identitiesMatchingPrefix:(id)arg1;
-+ (struct OpaqueSecIdentityRef *)clientIdentity;
-+ (struct OpaqueSecIdentityRef *)serverIdentity;
++ (struct __SecIdentity *)clientIdentity;
++ (struct __SecIdentity *)serverIdentity;
 
 @end
 

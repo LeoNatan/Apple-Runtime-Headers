@@ -6,19 +6,23 @@
 
 #import <FinderKit/FI_TViewController.h>
 
-@class FI_IPropertyValueExtractor, NSObject;
+#import <FinderKit/TMarkTornDown-Protocol.h>
+
+@class FI_IPropertyValueExtractor, NSObject, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_IPropertyValueController : FI_TViewController
+@interface FI_IPropertyValueController : FI_TViewController <TMarkTornDown>
 {
     struct TNSRef<NSObject, void> _value;
     struct TNSRef<FI_IPropertyValueExtractor, void> _valueExtractor;
     _Bool _shouldBeVisible;
     _Bool _shouldBeEnabled;
+    _Bool _isTornDown;
 }
 
 + (id)propertyValueControllerWithValueExtractor:(id)arg1;
 + (id)propertyValueController;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(nonatomic) _Bool shouldBeEnabled; // @synthesize shouldBeEnabled=_shouldBeEnabled;
 @property(nonatomic) _Bool shouldBeVisible; // @synthesize shouldBeVisible=_shouldBeVisible;
 - (id).cxx_construct;
@@ -39,6 +43,12 @@ __attribute__((visibility("hidden")))
 - (void)aboutToTearDown;
 - (void)initCommon;
 - (id)initWithValueExtractor:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

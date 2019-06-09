@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak _TVOneupView *oneupView; // @synthesize oneupView=_oneupView;
 @property(nonatomic) unsigned long long transition; // @synthesize transition=_transition;
 - (void).cxx_destruct;
-- (void)_dispatchEventOfType:(unsigned long long)arg1 forItemAtFlattenedIndex:(unsigned long long)arg2;
+- (void)_dispatchEvent:(id)arg1 forItemAtFlattenedIndex:(unsigned long long)arg2 cell:(id)arg3;
 - (id)_imgElementFromLockup:(id)arg1;
 - (void)_configureSupplementaryView:(id)arg1 withLockup:(id)arg2;
 - (void)_configureView:(id)arg1 withImageElement:(id)arg2 andIndex:(unsigned long long)arg3;

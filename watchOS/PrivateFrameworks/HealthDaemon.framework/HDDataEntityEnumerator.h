@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/HDSQLiteQueryDescriptor.h>
 
-@class HDProfile, HKObjectType, NSArray, NSMutableDictionary, NSNumber, NSSet, NSString, _HKFilter;
+@class HDDatabaseTransactionContext, HDProfile, HKObjectType, NSArray, NSMutableDictionary, NSNumber, NSSet, NSString, _HKFilter;
 
 @interface HDDataEntityEnumerator : HDSQLiteQueryDescriptor
 {
@@ -22,12 +22,14 @@
     NSNumber *_anchor;
     NSNumber *_deletedObjectsAnchor;
     NSArray *_sortDescriptors;
+    HDDatabaseTransactionContext *_databaseTransactionContext;
     NSString *_lastSQL;
 }
 
 @property(readonly, copy, nonatomic) NSString *lastSQL; // @synthesize lastSQL=_lastSQL;
 @property(nonatomic) _Bool improveJoinOrderingForStartDateIndexSelection; // @synthesize improveJoinOrderingForStartDateIndexSelection=_improveJoinOrderingForStartDateIndexSelection;
 @property(nonatomic) _Bool ignoreEntityClassAdditionalPredicateForEnumeration; // @synthesize ignoreEntityClassAdditionalPredicateForEnumeration=_ignoreEntityClassAdditionalPredicateForEnumeration;
+@property(copy, nonatomic) HDDatabaseTransactionContext *databaseTransactionContext; // @synthesize databaseTransactionContext=_databaseTransactionContext;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(retain, nonatomic) NSNumber *deletedObjectsAnchor; // @synthesize deletedObjectsAnchor=_deletedObjectsAnchor;
 @property(retain, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
@@ -40,15 +42,15 @@
 - (_Bool)_enumerateObjectsOnDatabase:(id)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)_prepareDeletedObjectsAndSamplesDescriptor:(id)arg1 error:(id *)arg2;
 - (_Bool)_prepareDescriptor:(id)arg1 error:(id *)arg2;
-- (_Bool)_setColumnNamesAndSortOrderingsOnDescriptor:(id)arg1 error:(id *)arg2;
+- (_Bool)_setOrderingTermsOnDescriptor:(id)arg1 error:(id *)arg2;
 - (_Bool)enumerateIncludingDeletedObjects:(_Bool)arg1 error:(id *)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)enumerateWithError:(id *)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)encodingOptionForKey:(id)arg1;
 - (void)setEncodingOption:(id)arg1 forKey:(id)arg2;
 - (void)addEncodingOptionsFromDictionary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithObjectType:(id)arg1 entityClass:(Class)arg2 profile:(id)arg3;
-- (id)initWithEntityClass:(Class)arg1 profile:(id)arg2;
+- (id)_initWithObjectType:(id)arg1 entityClass:(Class)arg2 profile:(id)arg3;
+- (id)_initWithEntityClass:(Class)arg1 profile:(id)arg2;
 
 @end
 

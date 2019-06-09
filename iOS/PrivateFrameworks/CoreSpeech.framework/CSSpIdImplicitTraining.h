@@ -35,6 +35,9 @@
 @property(retain, nonatomic) id <CSAudioFileWriter> uttLogger; // @synthesize uttLogger=_uttLogger;
 @property(retain, nonatomic) NSURL *lastCachedUtterance; // @synthesize lastCachedUtterance=_lastCachedUtterance;
 - (void).cxx_destruct;
+- (void)storeSingleUserImplicitTrainingUtterance:(id)arg1 audioDeviceType:(id)arg2 audioRecordType:(id)arg3 withVoiceTriggerCtxt:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (void)processSingleUserImplicitTrainingUtterance:(id)arg1 audioDeviceType:(id)arg2 audioRecordType:(id)arg3 withVoiceTriggerCtxt:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (void)storeMultiUserImplicitTrainingUtterance:(id)arg1 forProfileId:(id)arg2 withAudioDeviceType:(id)arg3 withAudioRecordType:(id)arg4 withVoiceTriggerCtxt:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
 - (_Bool)_isUtteranceHandheld;
 - (unsigned long long)_getBiometricMatchResultForTriggerTimeStamp:(unsigned long long)arg1;
 - (unsigned long long)_getNumberOfWavFilesAt:(id)arg1;

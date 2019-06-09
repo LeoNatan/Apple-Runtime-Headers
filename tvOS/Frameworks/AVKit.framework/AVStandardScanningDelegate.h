@@ -10,6 +10,7 @@
 
 @class AVKeyValueObserverCollection, AVPlayer, AVTimeRangeCollection, CADisplayLink, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVStandardScanningDelegate : NSObject <AVScanningDelegate>
 {
     _Bool _scanningActive;

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+@class ICMusicSubscriptionStatus;
+
 @interface MPSubscriptionStatusPlaybackInformation : NSObject
 {
-    id _subscriptionStatusObject;
+    ICMusicSubscriptionStatus *_subscriptionStatusObject;
     _Bool _definitiveInformation;
     _Bool _hasPlaybackCapability;
     _Bool _requiresCarrierManualVerification;
@@ -24,7 +26,6 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithICSubscriptionStatus:(id)arg1;
-- (id)initWithSubscriptionStatus:(id)arg1;
 
 @end
 

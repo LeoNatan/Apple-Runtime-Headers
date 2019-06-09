@@ -12,7 +12,7 @@
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDCentralMessageDispatcher, HMDHome, HMDResidentDevice, HMFMessageDispatcher, HMFTimer, NSArray, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
+@class HMDHome, HMDMessageDispatcher, HMDResidentDevice, HMFMessageDispatcher, HMFTimer, NSArray, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
 @protocol HMDResidentDeviceManagerDelegate, OS_dispatch_queue;
 
 @interface HMDResidentDeviceManager : HMFObject <HMFTimerDelegate, HMFLogging, HMDHomeMessageReceiver, NSSecureCoding, HMDBackingStoreObjectProtocol>
@@ -31,7 +31,7 @@
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFMessageDispatcher *_messageDispatcher;
-    HMDCentralMessageDispatcher *_remoteMessageDispatcher;
+    HMDMessageDispatcher *_remoteMessageDispatcher;
     long long _lastAtHomeLevel;
 }
 
@@ -42,7 +42,7 @@
 + (id)shortDescription;
 @property(nonatomic) long long lastAtHomeLevel; // @synthesize lastAtHomeLevel=_lastAtHomeLevel;
 @property(nonatomic, getter=isConfirming) _Bool confirming; // @synthesize confirming=_confirming;
-@property(readonly, nonatomic) HMDCentralMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
+@property(readonly, nonatomic) HMDMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
@@ -107,7 +107,8 @@
 - (void)_addResidentDevice:(id)arg1;
 - (void)setResidentDevices:(id)arg1;
 - (id)residentDeviceForDevice:(id)arg1;
-@property(readonly, nonatomic, getter=isCurrentDeviceAvaliableResident) _Bool currentDeviceAvaliableResident;
+@property(readonly, nonatomic, getter=isCurrentDevicePrimaryResident) _Bool currentDevicePrimaryResident;
+@property(readonly, nonatomic, getter=isCurrentDeviceAvailableResident) _Bool currentDeviceAvailableResident;
 @property(readonly, nonatomic) NSArray *availableResidentDevices;
 @property(readonly, copy, nonatomic) NSArray *residentDevices;
 - (id)ourSelf;

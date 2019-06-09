@@ -11,7 +11,7 @@
 @protocol ProbeManagerDelegate <NSObject>
 
 @optional
-- (void)probeFactString:(NSString *)arg1 module:(NSString *)arg2 run:(BOOL)arg3;
+- (void)probeFactString:(NSString *)arg1 module:(NSString *)arg2 goIntoDiagnosing:(BOOL)arg3 run:(BOOL)arg4;
 - (void)serviceRemoved:(NSDictionary *)arg1 type:(long long)arg2;
 - (void)serviceUpdated:(NSDictionary *)arg1 type:(long long)arg2;
 - (void)serviceAdded:(NSDictionary *)arg1 type:(long long)arg2;

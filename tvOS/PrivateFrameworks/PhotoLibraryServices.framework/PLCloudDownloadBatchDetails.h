@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
+@class NSArray, NSSet;
 
 @interface PLCloudDownloadBatchDetails : NSObject
 {
@@ -15,8 +15,10 @@
     long long _numberOfVideos;
     NSArray *_cmmUUIDsToNotify;
     NSArray *_flippedPlaceholderAssetUUIDs;
+    NSSet *_confirmedResourceIDs;
 }
 
+@property(copy, nonatomic) NSSet *confirmedResourceIDs; // @synthesize confirmedResourceIDs=_confirmedResourceIDs;
 @property(copy, nonatomic) NSArray *flippedPlaceholderAssetUUIDs; // @synthesize flippedPlaceholderAssetUUIDs=_flippedPlaceholderAssetUUIDs;
 @property(copy, nonatomic) NSArray *cmmUUIDsToNotify; // @synthesize cmmUUIDsToNotify=_cmmUUIDsToNotify;
 @property(nonatomic) long long numberOfVideos; // @synthesize numberOfVideos=_numberOfVideos;

@@ -17,10 +17,12 @@
 + (void)addFunctionsIfNecessaryForInk:(id)arg1 property:(unsigned long long)arg2 forDictionary:(id)arg3;
 + (id)dictionaryForInk:(id)arg1 name:(id)arg2;
 + (unique_ptr_94812230)loadFunction:(id)arg1;
++ (void)validateFunctionDictionary:(id)arg1;
 + (void)validatePiecewiseBezierFunction:(struct PKFunctionPiecewiseBezier *)arg1;
 + (vector_2b0a8222)loadOutput:(id)arg1 forBehavior:(id)arg2;
-+ (void)loadBaseRadius:(id)arg1 forBehavior:(id)arg2;
 + (void)verifyParameters:(id)arg1;
++ (void)validateRenderingDescriptorDictionary:(id)arg1;
++ (void)validateBehaviorVariantDictionary:(id)arg1;
 + (id)inkBehaviorVariantWithDictionary:(id)arg1 renderingDescriptor:(id)arg2 variant:(id)arg3;
 + (id)inkRenderingDescriptorWithDictionary:(id)arg1;
 + (struct CGImage *)imageRefForTextureName:(id)arg1;

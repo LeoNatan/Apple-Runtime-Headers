@@ -8,6 +8,7 @@
 
 @class CHDChart, CHDData, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDErrorBar : NSObject
 {
     CHDChart *mChart;

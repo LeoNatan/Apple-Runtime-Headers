@@ -16,7 +16,9 @@
     shared_ptr_2fc78ff4 _anchor;
     _Bool _followsTerrain;
     struct CGPoint _screenPointInCanvas;
-    struct LayoutContext *_lastLayoutContext;
+    struct CGSize _canvasSize;
+    const struct CameraContext *_cameraContext;
+    struct AnchorManager *_anchorManager;
     struct Coordinate2D<Degrees, double> _lastCoordinate;
     _Bool _isUpdating;
     double _pointsPerMeter;
@@ -29,9 +31,9 @@
 - (void).cxx_destruct;
 - (void)anchorWorldPointDidChange:(void *)arg1;
 - (void)updateIfNeeded;
-- (void)layoutWithContext:(struct LayoutContext *)arg1;
-- (void)_updateCachedPointWithContext:(struct LayoutContext *)arg1;
-- (shared_ptr_2fc78ff4)_anchorWithContext:(struct LayoutContext *)arg1;
+- (void)layoutWithContext:(const struct LayoutContext *)arg1;
+- (void)_updateCachedPoint;
+- (shared_ptr_2fc78ff4)_anchorWithContext:(struct AnchorManager *)arg1;
 - (double)pointOffsetForDistanceOffset:(double)arg1;
 - (struct CGPoint)pointInLayer:(id)arg1;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;

@@ -9,6 +9,7 @@
 @class NSObject, SKUIClientContext;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface SKUISyncWishlistOperation : NSOperation
 {
     SKUIClientContext *_clientContext;

@@ -18,6 +18,7 @@
 
 + (id)loadMergeView:(id)arg1;
 + (id)loadFromNib:(id)arg1;
+- (void).cxx_destruct;
 - (void)setAppsTitleText:(id)arg1;
 - (void)setAppsText:(id)arg1;
 - (void)setupButtons;

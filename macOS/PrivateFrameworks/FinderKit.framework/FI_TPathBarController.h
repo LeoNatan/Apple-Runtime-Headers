@@ -7,24 +7,28 @@
 #import <FinderKit/FI_TViewController.h>
 
 #import <FinderKit/NSMenuDelegate-Protocol.h>
+#import <FinderKit/TMarkTornDown-Protocol.h>
 #import <FinderKit/TNodeObserverProtocol-Protocol.h>
 #import <FinderKit/TPathControlDelegate-Protocol.h>
 
 @class FI_TBrowserContainerController, FI_TPathControl, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TPathBarController : FI_TViewController <TPathControlDelegate, TNodeObserverProtocol, NSMenuDelegate>
+@interface FI_TPathBarController : FI_TViewController <TPathControlDelegate, TNodeObserverProtocol, NSMenuDelegate, TMarkTornDown>
 {
     FI_TPathControl *_pathControl;
     struct shared_ptr<TNodeObserverCocoaBridge> _nodeObserver;
-    FI_TBrowserContainerController *_containerController;
+    struct TNSWeakPtr<FI_TBrowserContainerController, void> _containerController;
     struct TFENodeVector _commonPathVector;
     struct TFENodeVector _observedSelection;
+    struct TNotificationCenterObserver _backingPropertiesChangedObserver;
     struct TKeyValueObserver _effectiveAppearanceObserver;
     TNSWeakPtr_a131d41e _refreshToken;
+    _Bool tornDown;
 }
 
 + (double)defaultPathBarHeight;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)nodeObserver:(struct TNodeObserver *)arg1 nodeDeleted:(const struct TFENode *)arg2 fromObservedNode:(const struct TFENode *)arg3;
@@ -41,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)updatePathComponents;
 - (void)clearCommonPathNodes;
 - (void)clearObservedSelection;
+@property(readonly) __weak FI_TBrowserContainerController *containerController;
 - (void)aboutToTearDown;
 - (void)viewLoaded;
 - (void)dealloc;

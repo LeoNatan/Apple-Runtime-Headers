@@ -6,24 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NLModelConfiguration, NSDictionary;
+@class NLEmbedding, NLGazetteer, NLModelConfiguration, NSData, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface NLModelImpl : NSObject
 {
-    unsigned int _numberOfTrainingInstances;
 }
 
-@property(readonly) unsigned int numberOfTrainingInstances; // @synthesize numberOfTrainingInstances=_numberOfTrainingInstances;
 - (id)predictedLabelsForTokens:(id)arg1;
 - (id)predictedLabelForString:(id)arg1;
+@property(readonly, copy) NSData *embeddingData;
+@property(readonly, copy) NLEmbedding *embedding;
+@property(readonly, copy) NLGazetteer *gazetteer;
+@property(readonly, copy) NSDictionary *trainingInfo;
+@property(readonly) unsigned int numberOfTrainingInstances;
+@property(readonly, copy) NSData *customEmbeddingData;
 @property(readonly, copy) NSDictionary *documentFrequencyMap;
 @property(readonly, copy) NSDictionary *vocabularyMap;
 @property(readonly, copy) NSDictionary *labelMap;
 @property(readonly, copy) NLModelConfiguration *configuration;
 - (id)modelData;
 - (id)initWithModelTrainer:(id)arg1;
-- (id)initWithModelData:(id)arg1 configuration:(id)arg2 labelMap:(id)arg3 vocabularyMap:(id)arg4 documentFrequencyMap:(id)arg5 numberOfTrainingInstances:(unsigned int)arg6;
+- (id)initWithModelData:(id)arg1 configuration:(id)arg2 labelMap:(id)arg3 vocabularyMap:(id)arg4 documentFrequencyMap:(id)arg5 customEmbeddingData:(id)arg6 trainingInfo:(id)arg7;
 
 @end
 

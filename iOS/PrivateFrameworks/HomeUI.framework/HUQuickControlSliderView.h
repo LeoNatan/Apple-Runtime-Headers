@@ -8,33 +8,50 @@
 
 #import <HomeUI/HUQuickControlControllableView-Protocol.h>
 
-@class HUQuickControlSliderValueOverlayView, HUQuickControlSliderViewProfile, NSLayoutConstraint, NSString;
+@class HUIconView, HUQuickControlSliderValueOverlayView, HUQuickControlSliderViewProfile, NSLayoutConstraint, NSString, UIImpactFeedbackGenerator;
 
 @interface HUQuickControlSliderView : UIView <HUQuickControlControllableView>
 {
     _Bool _showOffState;
     HUQuickControlSliderViewProfile *_profile;
+    unsigned long long _reachabilityState;
     double _sliderValue;
     double _secondarySliderValue;
     double _rawSliderValue;
     UIView *_backgroundView;
+    UIView *_borderView;
     HUQuickControlSliderValueOverlayView *_valueOverlayView;
     NSLayoutConstraint *_overlayTopConstraint;
+    HUIconView *_decorationIconView;
+    double _primaryNormalizedValue;
+    double _secondaryNormalizedValue;
+    UIImpactFeedbackGenerator *_feedbackGenerator;
 }
 
 + (_Bool)requiresConstraintBasedLayout;
+@property(retain, nonatomic) UIImpactFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
+@property(nonatomic) double secondaryNormalizedValue; // @synthesize secondaryNormalizedValue=_secondaryNormalizedValue;
+@property(nonatomic) double primaryNormalizedValue; // @synthesize primaryNormalizedValue=_primaryNormalizedValue;
+@property(retain, nonatomic) HUIconView *decorationIconView; // @synthesize decorationIconView=_decorationIconView;
 @property(retain, nonatomic) NSLayoutConstraint *overlayTopConstraint; // @synthesize overlayTopConstraint=_overlayTopConstraint;
 @property(retain, nonatomic) HUQuickControlSliderValueOverlayView *valueOverlayView; // @synthesize valueOverlayView=_valueOverlayView;
+@property(retain, nonatomic) UIView *borderView; // @synthesize borderView=_borderView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) double rawSliderValue; // @synthesize rawSliderValue=_rawSliderValue;
 @property(nonatomic) _Bool showOffState; // @synthesize showOffState=_showOffState;
 @property(nonatomic) double secondarySliderValue; // @synthesize secondarySliderValue=_secondarySliderValue;
 @property(nonatomic) double sliderValue; // @synthesize sliderValue=_sliderValue;
+@property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(copy, nonatomic) HUQuickControlSliderViewProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+- (_Bool)_createDecorationIconViewIfNecessary;
+- (void)_updateDecorationIconDescriptorAnimated:(_Bool)arg1;
+- (void)_updateUIForReachabilityState:(unsigned long long)arg1;
 @property(retain, nonatomic) id secondaryValue;
 @property(retain, nonatomic) id value;
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
+- (void)_actuateTapticFeedbackIfAvailable;
+- (void)_prepareForTapticFeedbackIfAvailable;
 - (void)_updateOffState;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

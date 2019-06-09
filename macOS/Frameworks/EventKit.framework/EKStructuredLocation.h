@@ -9,7 +9,7 @@
 #import <EventKit/EKProtocolMutableStructuredLocation-Protocol.h>
 #import <EventKit/NSCopying-Protocol.h>
 
-@class CLLocation, NSData, NSDictionary, NSManagedObjectID, NSNumber, NSString;
+@class CLLocation, EKPredictedLocationOfInterest, NSData, NSDictionary, NSManagedObjectID, NSNumber, NSString;
 @protocol EKProtocolStructuredLocation;
 
 @interface EKStructuredLocation : EKObject <EKProtocolMutableStructuredLocation, NSCopying>
@@ -17,7 +17,7 @@
     NSString *uuid;
 }
 
-+ (id)addressBookEntityIDForABPerson:(id)arg1 unlocalizedLabel:(id)arg2;
++ (id)displayLabelForContact:(id)arg1 unlocalizedLabel:(id)arg2;
 + (BOOL)canonicalizedEqualityTestValue1:(id)arg1 value2:(id)arg2 key:(id)arg3 object1:(id)arg4 object2:(id)arg5;
 + (id)knownIdentityKeys;
 + (id)knownSingleValueKeys;
@@ -34,7 +34,7 @@
 @property(readonly, copy) NSString *description;
 @property(retain, nonatomic) CLLocation *geoLocation;
 @property(nonatomic) double radius;
-@property(copy, nonatomic) NSString *addressBookEntityID;
+@property(copy, nonatomic) NSString *contactLabel;
 @property(retain, nonatomic) NSString *routing;
 @property(copy, nonatomic) NSString *routeType;
 @property(copy, nonatomic) NSData *mapKitHandle;
@@ -48,6 +48,10 @@
 @property(readonly, nonatomic) BOOL isStructured;
 - (id)calLocation;
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;
+@property(readonly, nonatomic) NSString *derivedFrom;
+@property(readonly, nonatomic, getter=isImprecise) BOOL imprecise;
+@property(readonly, nonatomic, getter=isPrediction) BOOL prediction;
+@property(readonly, nonatomic) EKPredictedLocationOfInterest *predictedLOI;
 
 // Remaining properties
 @property(readonly, nonatomic) BOOL canBeConvertedToFullObject;

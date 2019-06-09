@@ -8,7 +8,7 @@
 
 #import <BulletinBoard/NSSecureCoding-Protocol.h>
 
-@class BBAssertion, NSArray, NSDictionary, NSString;
+@class BBAssertion, BSServiceConnectionEndpoint, NSArray, NSDictionary, NSString, NSURL;
 
 @interface BBResponse : NSObject <NSSecureCoding>
 {
@@ -22,18 +22,22 @@
     int _actionType;
     NSString *_buttonID;
     NSString *_actionID;
+    NSURL *_actionLaunchURL;
     NSString *_originID;
     unsigned int _actionActivationMode;
     int _actionBehavior;
+    BSServiceConnectionEndpoint *_endpoint;
     NSDictionary *_context;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSDictionary *context; // @synthesize context=_context;
+@property(copy, nonatomic) BSServiceConnectionEndpoint *endpoint; // @synthesize endpoint=_endpoint;
 @property(nonatomic) int actionBehavior; // @synthesize actionBehavior=_actionBehavior;
 @property(nonatomic) unsigned int actionActivationMode; // @synthesize actionActivationMode=_actionActivationMode;
 @property(nonatomic) _Bool activated; // @synthesize activated=_activated;
 @property(copy, nonatomic) NSString *originID; // @synthesize originID=_originID;
+@property(copy, nonatomic) NSURL *actionLaunchURL; // @synthesize actionLaunchURL=_actionLaunchURL;
 @property(copy, nonatomic) NSString *actionID; // @synthesize actionID=_actionID;
 @property(copy, nonatomic) NSString *buttonID; // @synthesize buttonID=_buttonID;
 @property(copy, nonatomic) NSString *replyText; // @synthesize replyText=_replyText;

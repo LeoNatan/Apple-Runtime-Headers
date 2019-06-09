@@ -8,15 +8,13 @@
 
 #import <CarPlaySupport/CPSAlternateRouteSelecting-Protocol.h>
 
-@class CPSAlternateRoutesView, NSString, UIButton;
+@class CPSAlternateRoutesView, NSString;
 
 @interface CPSRoutePreviewsCardView : CPSTripPreviewsCardView <CPSAlternateRouteSelecting>
 {
     CPSAlternateRoutesView *_alternatesView;
-    UIButton *_goButton;
 }
 
-@property(readonly, nonatomic) UIButton *goButton; // @synthesize goButton=_goButton;
 @property(readonly, nonatomic) CPSAlternateRoutesView *alternatesView; // @synthesize alternatesView=_alternatesView;
 - (void).cxx_destruct;
 - (id)_linearFocusItems;

@@ -25,8 +25,8 @@
 - (void)_computeCoreSpotlightIDsForBookmarks:(id)arg1;
 - (id)_indexedBookmarksIDs:(id *)arg1;
 - (void)_indexHistoryItemsToCoreSpotlight:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_removeAllCoreSpotlightHistoryDataDonatedBySafari;
-- (void)_historyItemsWereRemoved:(id)arg1;
+- (void)removeAllCoreSpotlightHistoryDataDonatedBySafari;
+- (void)processRemovedHistoryItems:(id)arg1;
 - (void)_removeCoreSpotlightDataWithIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_indexCoreSpotlightData:(id)arg1;
 - (id)_searchableItemsForIDs:(id)arg1 allBookmarks:(id)arg2;

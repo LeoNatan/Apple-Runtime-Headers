@@ -10,7 +10,7 @@
 @protocol _UIClickInteractionDriving;
 
 @protocol _UIClickInteractionDriverDelegate <NSObject>
-- (void)clickDriver:(id <_UIClickInteractionDriving>)arg1 didPerformStateChange:(unsigned long long)arg2;
+- (void)clickDriver:(id <_UIClickInteractionDriving>)arg1 didPerformEvent:(unsigned long long)arg2;
 - (_Bool)clickDriverShouldBegin:(id <_UIClickInteractionDriving>)arg1;
 
 @optional

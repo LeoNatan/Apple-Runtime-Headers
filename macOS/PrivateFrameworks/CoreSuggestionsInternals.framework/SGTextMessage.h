@@ -11,16 +11,26 @@
 @interface SGTextMessage : SGMessage
 {
     BOOL _senderIsAccountOwner;
+    BOOL _senderIsBusinessChat;
     CSPerson *_sender;
     NSArray *_recipients;
     NSString *_conversationIdentifier;
+    NSString *_nickname;
+    NSString *_photoPath;
 }
 
++ (BOOL)isSent:(id)arg1;
++ (id)_nicknameCustomKey;
++ (id)_photoPathCustomKey;
+@property(readonly) BOOL senderIsBusinessChat; // @synthesize senderIsBusinessChat=_senderIsBusinessChat;
+@property(retain) NSString *photoPath; // @synthesize photoPath=_photoPath;
+@property(retain) NSString *nickname; // @synthesize nickname=_nickname;
 @property(readonly) BOOL senderIsAccountOwner; // @synthesize senderIsAccountOwner=_senderIsAccountOwner;
 @property(retain) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 @property(retain) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(retain) CSPerson *sender; // @synthesize sender=_sender;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)spotlightDomainIdentifier;
 - (id)spotlightBundleIdentifier;
 - (id)initWithDictionary:(id)arg1;

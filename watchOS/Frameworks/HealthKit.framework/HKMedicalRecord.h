@@ -6,38 +6,49 @@
 
 #import <HealthKit/HKSample.h>
 
+#import <HealthKit/HKCodedSample-Protocol.h>
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/HKMedicalRecordCodings-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKFHIRIdentifier, HKSemanticDate, NSArray, NSDate, NSString;
+@class HKConcept, HKFHIRIdentifier, HKSemanticDate, NSArray, NSDate, NSLocale, NSString, NSUUID;
 
-@interface HKMedicalRecord : HKSample <HKMedicalRecordCodings, NSSecureCoding, NSCopying>
+@interface HKMedicalRecord : HKSample <HKMedicalRecordCodings, HKConceptIndexable, HKCodedSample, NSSecureCoding, NSCopying>
 {
     _Bool _enteredInError;
     NSString *_note;
     NSDate *_modifiedDate;
     HKFHIRIdentifier *_FHIRIdentifier;
+    NSLocale *_locale;
     int _extractionVersion;
     HKSemanticDate *_sortDate;
+    HKConcept *_primaryConcept;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (id)_sortDateIntervalFromStartDateComponents:(id)arg1 endDateComponents:(id)arg2 error:(out id *)arg3;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)_newMedicalRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 config:(CDUnknownBlockType)arg10;
++ (id)_newMedicalRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 config:(CDUnknownBlockType)arg11;
 + (id)defaultDisplayString;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
++ (id)indexableKeyPathsWithPrefix:(id)arg1;
+@property(readonly, nonatomic) HKConcept *primaryConcept; // @synthesize primaryConcept=_primaryConcept;
 @property(readonly, copy, nonatomic) HKSemanticDate *sortDate; // @synthesize sortDate=_sortDate;
 @property(readonly, nonatomic) int extractionVersion; // @synthesize extractionVersion=_extractionVersion;
+@property(readonly, copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 @property(readonly, copy, nonatomic) HKFHIRIdentifier *FHIRIdentifier; // @synthesize FHIRIdentifier=_FHIRIdentifier;
 @property(readonly, copy, nonatomic) NSDate *modifiedDate; // @synthesize modifiedDate=_modifiedDate;
 @property(readonly, nonatomic) _Bool enteredInError; // @synthesize enteredInError=_enteredInError;
 @property(readonly, copy, nonatomic) NSString *note; // @synthesize note=_note;
 - (void).cxx_destruct;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setPrimaryConcept:(id)arg1;
 - (void)_setSortDate:(id)arg1;
 - (void)_setExtractionVersion:(int)arg1;
+- (void)_setLocale:(id)arg1;
 - (void)_setFHIRIdentifier:(id)arg1;
 - (void)_setModifiedDate:(id)arg1;
 - (void)_setEnteredInError:(_Bool)arg1;
@@ -47,12 +58,17 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)_init;
 - (id)fallbackDisplayString;
+- (id)primaryCodingContext;
 @property(readonly, nonatomic) NSArray *medicalRecordPreferredSystems;
 @property(readonly, nonatomic) NSArray *medicalRecordCodings;
 @property(readonly, nonatomic) NSArray *indexKeywords;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
+@property(readonly) NSUUID *UUID;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSDate *endDate; // @dynamic endDate;

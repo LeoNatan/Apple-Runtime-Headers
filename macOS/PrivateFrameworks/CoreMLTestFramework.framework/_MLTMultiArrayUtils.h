@@ -10,12 +10,15 @@
 {
 }
 
++ (BOOL)hasOverflow:(id)arg1;
 + (double)relativeL2NormBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
 + (double)maxRelativeErrorBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
 + (id)relativeErrorMultiArrayBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
 + (double *)relativeErrorArrayBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
++ (id)absoluteDifferenceBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
++ (id)differenceBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
 + (double)maxAbsoluteErrorBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
-+ (id)topK:(long long)arg1 activationsForMultiArray:(id)arg2;
++ (id)topK:(long long)arg1 activationsForMultiArray:(id)arg2 error:(id *)arg3;
 + (double)PSNRBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
 + (double)SNRBetweenMultiArray:(id)arg1 multiArray:(id)arg2 error:(id *)arg3;
 + (id)arrayWithShape:(id)arg1 values:(id)arg2 type:(long long)arg3 error:(id *)arg4;

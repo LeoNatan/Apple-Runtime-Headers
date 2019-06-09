@@ -6,18 +6,20 @@
 
 #import <NetworkExtension/NEPacketTunnelProvider.h>
 
-@class NEIKEv2MOBIKE, NEIKEv2Rekey, NEIKEv2Server, NSArray, NSDictionary, NSObject, NWPathEvaluator, NWResolver;
+@class NEIKEv2MOBIKE, NEIKEv2Rekey, NEIKEv2Server, NEIKEv2Session, NSArray, NSDictionary, NSObject, NWPathEvaluator, NWResolver;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface NEIKEv2PacketTunnelProvider : NEPacketTunnelProvider
 {
     BOOL _isIfCellular;
     BOOL _hasNAT;
-    BOOL _stopped;
-    unsigned int _ikeChildID;
+    BOOL _dispose;
+    BOOL _sessionDidConnect;
+    BOOL _mobikeCapable;
     unsigned int _flags;
     NSArray *_ikeConfig;
-    NSDictionary *_childConfig;
+    NSArray *_localTrafficSelectors;
+    NSArray *_remoteTrafficSelectors;
     NSDictionary *_options;
     struct NEVirtualInterface_s *_virtualInterface;
     NEIKEv2Server *_serverAddresses;
@@ -27,7 +29,8 @@
     NEIKEv2MOBIKE *_mobikeHandle;
     CDUnknownBlockType _startTunnelCompletionHandler;
     CDUnknownBlockType _dnsResolverCompletionHandler;
-    struct NEIPSecIKE_s *_ikeRef;
+    long long _tunnelKind;
+    NEIKEv2Session *_session;
     unsigned long long _ifIndex;
     long long _pathStatus;
     NSObject<OS_dispatch_queue> *_queue;
@@ -39,8 +42,11 @@
 @property(retain) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property long long pathStatus; // @synthesize pathStatus=_pathStatus;
 @property unsigned long long ifIndex; // @synthesize ifIndex=_ifIndex;
-@property struct NEIPSecIKE_s *ikeRef; // @synthesize ikeRef=_ikeRef;
-@property BOOL stopped; // @synthesize stopped=_stopped;
+@property(retain) NEIKEv2Session *session; // @synthesize session=_session;
+@property BOOL mobikeCapable; // @synthesize mobikeCapable=_mobikeCapable;
+@property BOOL sessionDidConnect; // @synthesize sessionDidConnect=_sessionDidConnect;
+@property long long tunnelKind; // @synthesize tunnelKind=_tunnelKind;
+@property BOOL dispose; // @synthesize dispose=_dispose;
 @property(copy) CDUnknownBlockType dnsResolverCompletionHandler; // @synthesize dnsResolverCompletionHandler=_dnsResolverCompletionHandler;
 @property(copy) CDUnknownBlockType startTunnelCompletionHandler; // @synthesize startTunnelCompletionHandler=_startTunnelCompletionHandler;
 @property(retain) NEIKEv2MOBIKE *mobikeHandle; // @synthesize mobikeHandle=_mobikeHandle;
@@ -52,9 +58,9 @@
 @property BOOL isIfCellular; // @synthesize isIfCellular=_isIfCellular;
 @property struct NEVirtualInterface_s *virtualInterface; // @synthesize virtualInterface=_virtualInterface;
 @property(retain) NSDictionary *options; // @synthesize options=_options;
-@property(retain) NSDictionary *childConfig; // @synthesize childConfig=_childConfig;
+@property(retain) NSArray *remoteTrafficSelectors; // @synthesize remoteTrafficSelectors=_remoteTrafficSelectors;
+@property(retain) NSArray *localTrafficSelectors; // @synthesize localTrafficSelectors=_localTrafficSelectors;
 @property(retain) NSArray *ikeConfig; // @synthesize ikeConfig=_ikeConfig;
-@property unsigned int ikeChildID; // @synthesize ikeChildID=_ikeChildID;
 - (void).cxx_destruct;
 - (BOOL)tryAlternateServerAddresses;
 - (void)setTunnelNetworkSettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -70,24 +76,25 @@
 - (void)handleInterfaceDown;
 - (void)handleAdditionalServerAddressesNotification:(id)arg1;
 - (long long)handleRedirectNotification:(id)arg1;
-- (void)startCompleteOrCancelTunnelWithError:(id)arg1;
+- (void)invokeCancelTunnel:(long long)arg1;
 - (BOOL)invokeStartTunnelCompletionHandler:(id)arg1;
 - (id)createPacketTunnelNetworkSettings;
-- (BOOL)saveIKETunnelConfig:(void *)arg1;
-- (BOOL)saveChildTunnelConfig:(void *)arg1;
 - (long long)tunnelTeardown;
 - (long long)tunnelBringup;
+- (void)setupIKEv2CallbackBlocks;
 - (void)resolveServerAddressIfNeeded:(CDUnknownBlockType)arg1;
 - (void)wake;
 - (void)wakeIKEv2;
 - (void)stopTunnelWithReason:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)stopIKEv2TunnelWithReason:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startTunnelWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)startIKEv2TunnelWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)startIKEv2TunnelWithOptions:(id)arg1;
 - (void)dealloc;
 - (void)reset:(BOOL)arg1;
 - (id)init;
 - (void)ignoreSigPipe;
+- (id)description;
+- (id)stringForTunnelKind;
 
 @end
 

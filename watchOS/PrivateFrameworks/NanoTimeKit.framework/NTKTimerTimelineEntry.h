@@ -19,16 +19,21 @@
 + (id)_circularSmallImageProvider;
 + (id)_modularSmallImageProvider;
 + (id)_cornerSmallImageProvider;
++ (id)_modularRectangularImageProvider;
 + (id)companionModel;
 @property(nonatomic) double countdownDuration; // @synthesize countdownDuration=_countdownDuration;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
-- (id)_relativeDateTextProviderForTimeInterval:(double)arg1 paused:(_Bool)arg2;
+- (id)_relativeDateTextProviderForTimeInterval:(double)arg1 paused:(_Bool)arg2 twoDigitMinuteZeroPadding:(_Bool)arg3;
+- (id)_textProviderForTimeAtState:(unsigned int)arg1 withUnknownText:(id)arg2 twoDigitMinuteZeroPadding:(_Bool)arg3;
 - (id)_textProviderForTimeAtState:(unsigned int)arg1 withUnknownText:(id)arg2;
+- (id)_headerTextProviderForTimeAtState:(unsigned int)arg1;
 - (id)_textProviderForTimeAtState:(unsigned int)arg1;
-- (id)_relativeDateGaugeProviderForTimeInterval:(double)arg1 fullDuration:(double)arg2 paused:(_Bool)arg3;
-- (id)_gaugeProviderForTimeAtState:(unsigned int)arg1;
+- (id)_relativeDateGaugeProviderForTimeInterval:(double)arg1 fullDuration:(double)arg2 paused:(_Bool)arg3 tintColor:(id)arg4;
+- (id)_gaugeProviderForTimeAtState:(unsigned int)arg1 tintColor:(id)arg2 useFullBarForUnknown:(_Bool)arg3;
+- (id)_gaugeProviderForTimeAtState:(unsigned int)arg1 tintColor:(id)arg2;
 - (id)_newExtraLargeTemplate;
+- (id)_newSimpleTextTemplate;
 - (id)_newLargeFlatUtilityTemplate;
 - (id)_newSmallFlatUtilityTemplate;
 - (id)_newCircularMediumTemplate;
@@ -36,6 +41,8 @@
 - (id)_newLargeModularTemplate;
 - (id)_newSmallModularTemplate;
 - (id)_newSignatureCornerGaugeImageTemplate;
+- (id)_newSignatureRectangular;
+- (id)_countdownTextProvider;
 - (id)templateForComplicationFamily:(int)arg1;
 
 @end

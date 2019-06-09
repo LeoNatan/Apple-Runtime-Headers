@@ -39,8 +39,8 @@
 - (void)suspendNotifications:(BOOL)arg1 force:(BOOL)arg2;
 - (void)enableNotifications;
 - (void)disableNotifications;
-- (BOOL)getBlueLightStatus:(CDStruct_768fa5c4 *)arg1;
-- (BOOL)parseStatusDictionary:(id)arg1 intoStruct:(CDStruct_768fa5c4 *)arg2;
+- (BOOL)getBlueLightStatus:(CDStruct_d991f265 *)arg1;
+- (BOOL)parseStatusDictionary:(id)arg1 intoStruct:(CDStruct_d991f265 *)arg2;
 - (BOOL)setSchedule:(const CDStruct_6cee55f3 *)arg1;
 - (BOOL)setMode:(int)arg1;
 - (BOOL)setEnabled:(BOOL)arg1;

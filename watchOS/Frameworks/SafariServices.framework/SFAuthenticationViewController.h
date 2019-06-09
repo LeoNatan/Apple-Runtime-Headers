@@ -8,7 +8,7 @@
 
 #import <SafariServices/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSString, _UIFallbackPresentationViewController;
+@class NSString, UIWindow, _UIFallbackPresentationViewController;
 @protocol SFAuthenticationViewControllerPresentationDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
     _UIFallbackPresentationViewController *_fallbackPresentationViewController;
     NSString *_callbackURLScheme;
+    UIWindow *_presentationContextWindow;
     id <SFAuthenticationViewControllerPresentationDelegate> _presentationDelegate;
     CDUnknownBlockType _dismissCompletionHandler;
 }
@@ -29,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentViewController;
 - (void)setDefersAddingRemoteViewController:(_Bool)arg1;
-- (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 usingEphemeralSession:(_Bool)arg3;
+- (id)initWithURL:(id)arg1 callbackURLScheme:(id)arg2 usingEphemeralSession:(_Bool)arg3 presentationContextWindow:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 @class CALayerHost;
-@protocol OS_xpc_object;
 
 __attribute__((visibility("hidden")))
 @interface BU_DPRemoteDesktopPicture : NSObject
 {
-    NSObject<OS_xpc_object> *_connection;
+    struct TRef<NSObject<OS_xpc_object>*, TRetainReleasePolicy<xpc_object_t>> _connection;
     struct TRef<NSObject<OS_dispatch_queue>*, TRetainReleasePolicy<dispatch_queue_t>> _queue;
     unsigned int _displayID;
     unsigned int _context;
@@ -26,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)invalidate;
 - (void)dealloc;
 - (_Bool)finishHostLayerSetup;
-- (id)_initWithDisplay:(unsigned int)arg1 queue:(id)arg2 andCallback:(function_63706baa)arg3;
+- (void)fetchForDisplay:(unsigned int)arg1 queue:(id)arg2 andCallback:(function_63706baa)arg3;
 
 @end
 

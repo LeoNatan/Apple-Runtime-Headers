@@ -25,7 +25,7 @@
 - (void)_updateLabelsForElapsedTime:(double)arg1 duration:(double)arg2;
 - (void)_displayLinkTick:(id)arg1;
 - (void)layoutSubviews;
-- (void)_addConstraints;
+- (void)setupConstraints;
 - (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -6,31 +6,45 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class CLPlacemark;
+@class CLPlacemark, NSArray, NSString;
 
-@interface INSpatialEventTrigger : NSObject <NSCopying, NSSecureCoding>
+@interface INSpatialEventTrigger : NSObject <INJSONSerializable, NSCopying, NSSecureCoding>
 {
     CLPlacemark *_placemark;
     long long _event;
+    NSArray *_suggestedValues;
+    long long _mobileSpace;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) long long mobileSpace; // @synthesize mobileSpace=_mobileSpace;
+@property(readonly, copy, nonatomic) NSArray *suggestedValues; // @synthesize suggestedValues=_suggestedValues;
 @property(readonly, nonatomic) long long event; // @synthesize event=_event;
 @property(readonly, copy, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
+- (id)initWithMobileSpace:(long long)arg1 event:(long long)arg2;
+- (id)initWithPlacemark:(id)arg1 event:(long long)arg2 suggestedValues:(id)arg3 mobileSpace:(long long)arg4;
 - (id)initWithPlacemark:(id)arg1 event:(long long)arg2;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (id)init;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

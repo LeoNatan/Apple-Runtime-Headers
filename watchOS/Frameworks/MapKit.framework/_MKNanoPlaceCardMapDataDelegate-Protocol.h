@@ -5,11 +5,11 @@
 //
 
 #import <MapKit/NSObject-Protocol.h>
-#import <MapKit/_MKNanoPlaceCardSectionDataDelegate-Protocol.h>
+#import <MapKit/_MKNanoPlaceCardSectionProvidingDelegate-Protocol.h>
 
 @class _MKNanoPlaceCardMapDataSource;
 
-@protocol _MKNanoPlaceCardMapDataDelegate <_MKNanoPlaceCardSectionDataDelegate, NSObject>
+@protocol _MKNanoPlaceCardMapDataDelegate <_MKNanoPlaceCardSectionProvidingDelegate, NSObject>
 - (void)placeCardSectionTappedMap:(_MKNanoPlaceCardMapDataSource *)arg1;
 @end
 

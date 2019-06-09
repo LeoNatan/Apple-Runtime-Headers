@@ -6,31 +6,28 @@
 
 #import <objc/NSObject.h>
 
-#import <MetricsKit/MTMetricsKitJSExports-Protocol.h>
-
 @class MTConfig, MTEventHandlers, MTSystem, MTUtils, NSString;
 @protocol MTDelegatePackage;
 
-@interface MTMetricsKitTemplate : NSObject <MTMetricsKitJSExports>
+@interface MTMetricsKitTemplate : NSObject
 {
     NSString *_topic;
-    MTConfig *_config;
     MTEventHandlers *_eventHandlers;
-    MTSystem *_system;
     MTUtils *_utils;
+    MTConfig *_config;
+    MTSystem *_system;
     id <MTDelegatePackage> _delegatePackage;
 }
 
 @property(retain, nonatomic) id <MTDelegatePackage> delegatePackage; // @synthesize delegatePackage=_delegatePackage;
-@property(retain, nonatomic) MTUtils *utils; // @synthesize utils=_utils;
 @property(retain, nonatomic) MTSystem *system; // @synthesize system=_system;
-@property(retain, nonatomic) MTEventHandlers *eventHandlers; // @synthesize eventHandlers=_eventHandlers;
 @property(retain, nonatomic) MTConfig *config; // @synthesize config=_config;
+@property(retain, nonatomic) MTUtils *utils; // @synthesize utils=_utils;
+@property(retain, nonatomic) MTEventHandlers *eventHandlers; // @synthesize eventHandlers=_eventHandlers;
 @property(retain, nonatomic) NSString *topic; // @synthesize topic=_topic;
 - (void).cxx_destruct;
 - (id)initWithTopic:(id)arg1 delegatePackage:(id)arg2;
 - (id)initWithTopic:(id)arg1;
-- (void)exportToJavaScriptContext:(id)arg1 globalName:(id)arg2;
 
 @end
 

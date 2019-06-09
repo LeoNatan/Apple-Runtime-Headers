@@ -6,6 +6,7 @@
 
 #import <PhotosPlayer/ISSettings.h>
 
+__attribute__((visibility("hidden")))
 @interface ISPerformanceDiagnosticsSettings : ISSettings
 {
     BOOL _shouldTracePerformance;

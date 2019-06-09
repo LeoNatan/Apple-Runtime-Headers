@@ -10,7 +10,6 @@
 
 @protocol IDSGroupContextControllerDelegate <NSObject>
 - (NSDictionary *)groupContextController:(IDSGroupContextController *)arg1 accountsForAlises:(NSSet *)arg2;
-- (void)identitiesForGroupContextController:(IDSGroupContextController *)arg1 completion:(void (^)(IDSDeviceIdentity *, NSError *))arg2;
 - (void)groupContextController:(IDSGroupContextController *)arg1 didCreateGroup:(ENGroup *)arg2;
 @end
 

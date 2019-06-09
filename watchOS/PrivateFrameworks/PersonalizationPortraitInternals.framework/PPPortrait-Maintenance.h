@@ -7,11 +7,32 @@
 #import <PersonalizationPortrait/PPPortrait.h>
 
 @interface PPPortrait (Maintenance)
-+ (_Bool)_logDailyMetricsWithError:(id *)arg1;
++ (id)_quantizeTopics:(id)arg1;
++ (id)_quantizeAndFilterEntities:(id)arg1 withLimit:(unsigned int)arg2;
++ (_Bool)_logPerplexityWithError:(id *)arg1;
++ (_Bool)_logPerplexityForNamedEntitiesWithError:(id *)arg1;
++ (_Bool)_logPerplexityForTopicsWithError:(id *)arg1;
++ (_Bool)_logUniqueTopicsWithError:(id *)arg1;
++ (void)_registerAssetMetadataUpdate;
++ (void)_registerDailyMetricsLogging;
++ (void)_registerDataCollection;
++ (_Bool)_logDailyMetricsWithError:(id *)arg1 shouldContinueBlock:(CDUnknownBlockType)arg2;
 + (void)_registerRTCSendLogs;
 + (void)_registerPeriodicMetrics;
-+ (void)_registerKnowledgeStoreCleanup;
++ (_Bool)_checkDeferralAndAvoidDuetRateLimitWithBatchInterval:(double)arg1 lastSyncDate:(id)arg2 activity:(id)arg3;
++ (void)_registerKnowledgeStoreSync;
++ (void)_setDateOfLastTopicDKSyncViaCTSToDate:(id)arg1;
++ (id)_dateOfLastTopicDKSyncViaCTS;
++ (void)_setDateOfLastNamedEntityDKSyncViaCTSToDate:(id)arg1;
++ (id)_dateOfLastNamedEntityDKSyncViaCTS;
 + (void)_registerTTLBasedDonationCleanup;
++ (void)_deleteAllTopicsExceedingMaxAgeSeconds:(double)arg1;
++ (void)_deleteAllLocationsExceedingMaxAgeSeconds:(double)arg1;
++ (void)_deleteAllNamedEntitiesExceedingMaxAgeSeconds:(double)arg1;
++ (void)_deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 maxAgeSeconds:(double)arg3;
++ (void)_deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 maxAgeSeconds:(double)arg3;
++ (void)_registerContactsImport;
++ (void)_registerEventKitImport;
 + (void)_registerMapsImport;
 + (void)_registerCoreRoutineImport;
 + (void)registerMaintenanceTasksInternal;

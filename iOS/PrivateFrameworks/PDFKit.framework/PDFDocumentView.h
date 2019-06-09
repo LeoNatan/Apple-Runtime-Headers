@@ -4,20 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <PDFKit/PDFTextInputView.h>
 
 #import <PDFKit/PDFDocumentPageChangeDelegate-Protocol.h>
 #import <PDFKit/PDFPageBackgroundManagerDelegate-Protocol.h>
+#import <PDFKit/PDFTextInputDelegate-Protocol.h>
 
 @class NSString, PDFDocumentViewPrivate;
 
 __attribute__((visibility("hidden")))
-@interface PDFDocumentView : UIView <PDFPageBackgroundManagerDelegate, PDFDocumentPageChangeDelegate>
+@interface PDFDocumentView : PDFTextInputView <PDFPageBackgroundManagerDelegate, PDFDocumentPageChangeDelegate, PDFTextInputDelegate>
 {
     PDFDocumentViewPrivate *_private;
 }
 
 - (void).cxx_destruct;
+- (id)pdfView;
 - (void)recieveBackgroundImage:(id)arg1 atBackgroundQuality:(int)arg2 forPage:(id)arg3;
 - (id)backgroundImageForPage:(id)arg1 withQuality:(int *)arg2;
 - (void)didRotatePageNotification:(id)arg1;
@@ -32,20 +34,18 @@ __attribute__((visibility("hidden")))
 - (void)willRemovePage:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)didInsertPage:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)willInsertPage:(id)arg1 atIndex:(unsigned long long)arg2;
+- (struct CGPoint)_pixelAlignPageFrameOrigin:(struct CGRect)arg1;
 - (id)_createPageView:(id)arg1;
-- (void)enableTextSelectionHandles;
-- (void)clearTextSelectionHandles;
 - (id)pageBackgroundManager;
 - (void)forceUpdateActivePageIndex:(unsigned long long)arg1 withMaxDuration:(double)arg2;
 - (void)willForceUpdate;
 - (void)previewRotateShiftPages:(double)arg1;
-- (void)setSelection:(id)arg1;
 - (void)updateVisibility;
 - (struct CGSize)documentViewSize;
 - (void)layoutDocumentView;
 - (id)pageViews;
 - (void)removePageViewForPageAtIndex:(unsigned long long)arg1;
-- (id)createPageViewForPageAtIndex:(unsigned long long)arg1;
+- (id)createPageViewForPageAtIndex:(unsigned long long)arg1 withFrame:(struct CGRect)arg2;
 - (id)pageViewForPageAtIndex:(unsigned long long)arg1;
 - (id)document;
 - (void)setDocument:(id)arg1;

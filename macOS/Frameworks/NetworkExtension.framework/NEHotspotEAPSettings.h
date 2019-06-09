@@ -39,7 +39,7 @@
 @property(copy) NSString *username; // @synthesize username=_username;
 @property(copy) NSArray *supportedEAPTypes; // @synthesize supportedEAPTypes=_supportedEAPTypes;
 - (void).cxx_destruct;
-- (BOOL)setIdentity:(struct OpaqueSecIdentityRef *)arg1;
+- (BOOL)setIdentity:(struct __SecIdentity *)arg1;
 - (BOOL)setTrustedServerCertificates:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

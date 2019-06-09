@@ -14,6 +14,8 @@
 @interface QLPreviewDocument : NSObject <QLDisplayBundleOwner>
 {
     QLPreviewDocumentReserved *_reserved;
+    BOOL _isSavingMarkup;
+    long long _saveMode;
 }
 
 + (id)keyPathsForValuesAffectingCurrentURL;
@@ -30,17 +32,20 @@
 + (id)keyPathsForValuesAffectingNumberOfPages;
 @property(readonly, copy) NSString *description;
 - (void)doubleClickOnPreviewContent;
+- (void)displayBundle:(id)arg1 didShowScreentimeLockout:(BOOL)arg2;
 - (void)displayBundleCustomTitleUpdated:(id)arg1;
 - (void)displayBundleSizingUpdated:(id)arg1;
 - (void)displayBundle:(id)arg1 requestReloadAndFallbackWithError:(id)arg2;
 - (void)displayBundleAddHiddenContentViewToWindowForLoading:(id)arg1;
+- (void)displayBundle:(id)arg1 didSaveEdit:(BOOL)arg2 toURL:(id)arg3;
 - (void)displayBundle:(id)arg1 didEditPage:(long long)arg2;
-- (void)displayBundleDidExitMarkup:(id)arg1;
+- (void)displayBundleDidExitMarkup:(id)arg1 waitingForSave:(BOOL)arg2;
 - (void)displayBundleDidEnterMarkup:(id)arg1;
 - (void)displayBundleDidDesistRemote:(id)arg1 expectedDisplayBundleID:(id)arg2;
 - (void)displayBundleFailedToLoad:(id)arg1 withError:(id)arg2;
 - (void)displayBundleDidMismatchLoading:(id)arg1 withHints:(id)arg2 expectedDisplayBundleID:(id)arg3;
 - (void)displayBundleDidLoad:(id)arg1;
+@property(readonly) int previewStatus;
 @property(readonly) BOOL windowSupportsRemoteViews;
 @property(readonly) NSScreen *screen;
 @property(readonly) double backingScaleFactor;
@@ -65,6 +70,10 @@
 @property(readonly) int flavor;
 @property(readonly) int mode;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)rotate:(long long)arg1;
+@property(readonly) BOOL isSaving;
+@property(readonly) NSURL *savedCopyURL;
+@property long long saveMode;
 @property BOOL wasEdited;
 - (void)setInitialEditMode:(long long)arg1;
 - (long long)initialEditMode;
@@ -81,7 +90,7 @@
 - (void)setPreviewView:(id)arg1;
 @property(readonly) QLPreviewView *previewView;
 @property(readonly) id <QLPreviewItem> previewItem;
--     // Error parsing type: ^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}^v{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLGenerator}^{__QLServer}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCCC^{?}^{__QLPreviewRequest}}16@0:8, name: preview
+-     // Error parsing type: ^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}@{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLServer}^{__QLGenerator}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCC^{__CFString}C@}16@0:8, name: preview
 - (id)displayable;
 @property(readonly) BOOL isGeneric;
 @property(readonly) BOOL isLoaded;

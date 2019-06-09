@@ -14,7 +14,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)main;
+- (void)actionMain;
 - (id)initWithItems:(id)arg1;
 
 @end

@@ -102,6 +102,7 @@
 - (id)firstValueForKey:(id)arg1 inExtensionGroup:(id)arg2;
 - (BOOL)parseExtension:(id)arg1;
 - (BOOL)parseInstantMessageValueWithService:(id)arg1;
+- (BOOL)parse_X_APPLE_GUARDIAN_WHITELISTED;
 - (BOOL)parse_X_APPLE_LIKENESS_SERVICE_IDENTIFIER;
 - (BOOL)parse_X_APPLE_LIKENESS_SOURCE;
 - (BOOL)parse_X_ADDRESSBOOKSERVER_PHONEME_DATA;

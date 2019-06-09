@@ -8,21 +8,24 @@
 
 #import <PhotosUICore/_PXFeedbackTapToRadarViewControllerDelegate-Protocol.h>
 
-@class NSString, _PXFeedbackTapToRadarViewController;
+@class NSArray, NSString, _PXFeedbackTapToRadarViewController;
 
 @interface PXFeedbackTapToRadarViewController : UINavigationController <_PXFeedbackTapToRadarViewControllerDelegate>
 {
     _Bool _requestScreenshotPermission;
     CDUnknownBlockType _fileRadarHandler;
+    NSArray *_routes;
     _PXFeedbackTapToRadarViewController *_feedbackViewController;
 }
 
 @property(retain, nonatomic) _PXFeedbackTapToRadarViewController *feedbackViewController; // @synthesize feedbackViewController=_feedbackViewController;
+@property(copy, nonatomic) NSArray *routes; // @synthesize routes=_routes;
 @property(nonatomic) _Bool requestScreenshotPermission; // @synthesize requestScreenshotPermission=_requestScreenshotPermission;
 @property(copy, nonatomic) CDUnknownBlockType fileRadarHandler; // @synthesize fileRadarHandler=_fileRadarHandler;
 - (void).cxx_destruct;
+- (id)availableRoutes;
 - (_Bool)shouldRequestScreenshotPermission;
-- (void)didSelectFileRadarButtonWithScreenshotAllowed:(_Bool)arg1;
+- (void)didSelectFileRadarButtonWithScreenshotAllowed:(_Bool)arg1 attachDiagnose:(_Bool)arg2 selectedRoute:(id)arg3;
 - (id)init;
 
 // Remaining properties

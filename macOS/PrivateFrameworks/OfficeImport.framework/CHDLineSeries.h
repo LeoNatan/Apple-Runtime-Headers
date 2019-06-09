@@ -10,6 +10,7 @@
 
 @class CHDMarker, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CHDLineSeries : CHDSeries <CHDMarkerOwner>
 {
     CHDMarker *mMarker;

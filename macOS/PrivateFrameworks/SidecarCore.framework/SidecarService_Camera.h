@@ -11,10 +11,12 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (long long)minimumRapportVersion;
 + (id)returnTypes;
 + (id)name;
 - (id)localizedItemName;
 - (id)localizedDescription;
+- (id)serviceExtension;
 - (id)serviceIdentifier;
 - (id)mutableRequestMessage;
 

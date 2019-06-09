@@ -13,9 +13,11 @@
     NSString *_maxResourceSize;
     NSString *_maxImageSize;
     NSURL *_meCardURL;
+    _Bool _isGuardianRestricted;
 }
 
 + (id)copyPropertyMappingsForParser;
+@property(nonatomic) _Bool isGuardianRestricted; // @synthesize isGuardianRestricted=_isGuardianRestricted;
 @property(retain, nonatomic) NSURL *meCardURL; // @synthesize meCardURL=_meCardURL;
 @property(retain, nonatomic) NSString *maxImageSize; // @synthesize maxImageSize=_maxImageSize;
 @property(retain, nonatomic) NSString *maxResourceSize; // @synthesize maxResourceSize=_maxResourceSize;

@@ -7,21 +7,30 @@
 #import <objc/NSObject.h>
 
 @class NSData, NSDate, NSDictionary, NSString;
-@protocol SRPClientRequest;
 
 @interface SESWrapper : NSObject
 {
+    _Bool _recoveryPassphraseMutable;
     NSString *_decodedLabel;
     NSDate *_escrowDate;
     NSData *_recoveryBlob;
     struct ccses_crypto_t *_ccses;
     struct ccsrp_ctx *_srp;
+    NSString *_dsid;
+    NSString *_recoveryPassphrase;
+    NSString *_label;
+    NSString *_recordID;
+    NSDictionary *_escrowRecord;
     NSData *_escrowBlob;
-    id <SRPClientRequest> _request;
 }
 
-@property(readonly, retain, nonatomic) id <SRPClientRequest> request; // @synthesize request=_request;
 @property(retain, nonatomic) NSData *escrowBlob; // @synthesize escrowBlob=_escrowBlob;
+@property(readonly, copy, nonatomic) NSDictionary *escrowRecord; // @synthesize escrowRecord=_escrowRecord;
+@property(readonly, copy, nonatomic) NSString *recordID; // @synthesize recordID=_recordID;
+@property(readonly, copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(nonatomic) _Bool recoveryPassphraseMutable; // @synthesize recoveryPassphraseMutable=_recoveryPassphraseMutable;
+@property(copy, nonatomic) NSString *recoveryPassphrase; // @synthesize recoveryPassphrase=_recoveryPassphrase;
+@property(copy, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 @property(readonly, nonatomic) struct ccsrp_ctx *srp; // @synthesize srp=_srp;
 @property(readonly, nonatomic) struct ccses_crypto_t *ccses; // @synthesize ccses=_ccses;
 @property(retain) NSData *recoveryBlob; // @synthesize recoveryBlob=_recoveryBlob;
@@ -34,12 +43,9 @@
 - (id)decodedEscrowRecordFromData:(id)arg1;
 - (id)encodedEscrowRecordWithPublicKey:(struct __SecKey *)arg1 error:(id *)arg2;
 - (id)srpRecoveryBlobFromData:(id)arg1 error:(id *)arg2;
+- (void)srpRecoveryUpdateDSID:(id)arg1 recoveryPassphrase:(id)arg2;
 - (id)srpInitBlob;
-@property(readonly, copy, nonatomic) NSString *recordID;
-@property(readonly, retain, nonatomic) NSDictionary *escrowRecord;
-@property(readonly, copy, nonatomic) NSString *label;
-@property(readonly, copy, nonatomic) NSString *recoveryPassphrase;
-@property(readonly, copy, nonatomic) NSString *dsid;
+- (id)initWithDSID:(id)arg1 escrowRecordContents:(id)arg2 recoveryPassphrase:(id)arg3 recordID:(id)arg4 recordLabel:(id)arg5;
 - (id)initWithRequest:(id)arg1;
 
 @end

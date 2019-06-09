@@ -23,12 +23,3 @@ struct _ffi_type {
     struct _ffi_type **_field4;
 };
 
-struct ffi_cif {
-    int abi;
-    unsigned int nargs;
-    struct _ffi_type **arg_types;
-    struct _ffi_type *rtype;
-    unsigned int bytes;
-    unsigned int flags;
-};
-

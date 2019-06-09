@@ -21,8 +21,14 @@
     _Bool _isStalledDidChange;
     _Bool _alwaysRespectsMuteSwitchDidChange;
     _Bool _isPlayableDidChange;
+    _Bool _isMutedDidChange;
+    _Bool _audioStatusDidChange;
+    _Bool _audioSessionVolumeIncreaseDidOccur;
 }
 
+@property(nonatomic, setter=_setAudioSessionVolumeIncreaseDidOccur:) _Bool audioSessionVolumeIncreaseDidOccur; // @synthesize audioSessionVolumeIncreaseDidOccur=_audioSessionVolumeIncreaseDidOccur;
+@property(nonatomic, setter=_setAudioStatusDidChange:) _Bool audioStatusDidChange; // @synthesize audioStatusDidChange=_audioStatusDidChange;
+@property(nonatomic, setter=_setIsMutedDidChange:) _Bool isMutedDidChange; // @synthesize isMutedDidChange=_isMutedDidChange;
 @property(nonatomic, setter=_setPlayableDidChange:) _Bool isPlayableDidChange; // @synthesize isPlayableDidChange=_isPlayableDidChange;
 @property(nonatomic, setter=_setAlwaysRespectsMuteSwitchDidChange:) _Bool alwaysRespectsMuteSwitchDidChange; // @synthesize alwaysRespectsMuteSwitchDidChange=_alwaysRespectsMuteSwitchDidChange;
 @property(nonatomic, setter=_setStalledDidChange:) _Bool isStalledDidChange; // @synthesize isStalledDidChange=_isStalledDidChange;

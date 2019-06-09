@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 @property(copy) CDUnknownBlockType readHandler; // @synthesize readHandler=_readHandler;
 - (void)removeDatagramChannel:(id)arg1;
 - (void)executeBlockForIDSDestination:(id)arg1 blockToExecute:(CDUnknownBlockType)arg2;
-- (void)executeBlockForToken:(unsigned int)arg1 blockToExecute:(CDUnknownBlockType)arg2;
+- (id)datagramChannelWithChannelToken:(unsigned int)arg1;
 - (_Bool)setupDatagramChannel:(id)arg1 eventHandler:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (id)addDatagramChannelWithDestination:(id)arg1 eventHandler:(CDUnknownBlockType)arg2 error:(id *)arg3;
 - (id)addDatagramChannelWithDescriptor:(int)arg1 eventHandler:(CDUnknownBlockType)arg2 error:(id *)arg3;

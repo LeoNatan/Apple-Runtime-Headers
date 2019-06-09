@@ -13,6 +13,7 @@
 @class NSString, SKUISwooshPageComponent, SKUISwooshView, UICollectionView;
 @protocol SKUIGallerySwooshViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGallerySwooshViewController : SKUISwooshViewController <SKUIEmbeddedMediaViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 {
     UICollectionView *_collectionView;

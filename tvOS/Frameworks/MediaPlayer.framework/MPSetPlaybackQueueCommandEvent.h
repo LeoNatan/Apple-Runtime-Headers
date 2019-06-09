@@ -6,13 +6,15 @@
 
 #import <MediaPlayer/MPRemoteCommandEvent.h>
 
-@class MPRemotePlaybackQueue;
+@class MPRemotePlaybackQueue, NSNumber;
 
 @interface MPSetPlaybackQueueCommandEvent : MPRemoteCommandEvent
 {
     MPRemotePlaybackQueue *_playbackQueue;
+    NSNumber *_privateListeningOverride;
 }
 
+@property(readonly, nonatomic) NSNumber *privateListeningOverride; // @synthesize privateListeningOverride=_privateListeningOverride;
 @property(readonly, nonatomic) MPRemotePlaybackQueue *playbackQueue; // @synthesize playbackQueue=_playbackQueue;
 - (void).cxx_destruct;
 - (id)initWithCommand:(id)arg1 playbackQueue:(id)arg2;

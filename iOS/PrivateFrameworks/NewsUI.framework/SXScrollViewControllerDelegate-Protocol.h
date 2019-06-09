@@ -11,6 +11,9 @@
 @protocol SXScrollViewControllerDelegate <NSObject>
 
 @optional
+- (_Bool)accessibilityShouldScrollForScrollViewController:(SXScrollViewController *)arg1;
+- (_Bool)accessibilityShouldScrollForScrollViewController:(SXScrollViewController *)arg1 defaultValue:(_Bool)arg2;
+- (_Bool)scrollViewController:(SXScrollViewController *)arg1 shouldOccludeAccessibilityElement:(id)arg2;
 - (void)scrollViewController:(SXScrollViewController *)arg1 enableNavigation:(_Bool)arg2;
 - (void)scrollViewControllerDidStopScrolling:(SXScrollViewController *)arg1;
 - (void)scrollViewControllerDidScroll:(SXScrollViewController *)arg1;

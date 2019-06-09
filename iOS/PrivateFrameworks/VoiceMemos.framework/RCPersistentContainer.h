@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)newObjectModel;
++ (id)mirroringContainer;
 + (id)sharedContainer;
 + (void)initialize;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isRelevantTransaction:(id)arg1;
 - (id)_nextTransactionAfterToken:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (id)newContextWithConcurrencyType:(unsigned long long)arg1;
-- (void)dealloc;
 - (id)_initWithMirroring:(_Bool)arg1 useXPCStore:(_Bool)arg2;
 
 @end

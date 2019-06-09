@@ -30,6 +30,7 @@
 - (void)captureController:(id)arg1 requestsPresentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)captureController:(id)arg1 requestsPushViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)captureController:(id)arg1 didChangeStateTo:(int)arg2;
+- (void)captureController:(id)arg1 showLoading:(_Bool)arg2;
 - (void)updateUIWithState:(int)arg1;
 - (void)cancel;
 - (void)viewWillAppear:(_Bool)arg1;

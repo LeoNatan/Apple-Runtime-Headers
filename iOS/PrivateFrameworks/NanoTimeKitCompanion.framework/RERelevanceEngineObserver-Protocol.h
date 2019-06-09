@@ -9,6 +9,11 @@
 @class REElement, RERelevanceEngine, RESectionPath;
 
 @protocol RERelevanceEngineObserver <NSObject>
+
+@optional
+- (void)relevanceEngineDidFinishUpdatingRelevance:(RERelevanceEngine *)arg1;
+- (void)relevanceEngineDidBeginUpdatingRelevance:(RERelevanceEngine *)arg1;
+- (void)relevanceEngine:(RERelevanceEngine *)arg1 didUpdateRelevanceForElement:(REElement *)arg2;
 - (_Bool)relevanceEngine:(RERelevanceEngine *)arg1 isElementAtPathVisible:(RESectionPath *)arg2;
 - (void)relevanceEngine:(RERelevanceEngine *)arg1 didMoveElement:(REElement *)arg2 fromPath:(RESectionPath *)arg3 toPath:(RESectionPath *)arg4;
 - (void)relevanceEngine:(RERelevanceEngine *)arg1 didInsertElement:(REElement *)arg2 atPath:(RESectionPath *)arg3;

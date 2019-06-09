@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (BOOL)interactDownShiftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)addKeyboardSelectionSummaryToRequest:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 
 @end
 

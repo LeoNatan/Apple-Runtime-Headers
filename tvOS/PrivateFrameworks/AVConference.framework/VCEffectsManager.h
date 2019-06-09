@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
     int _receivedFrameCount;
     int _droppedFrameCount;
     int _failedFrameCount;
-    double _effectsTimeoutThreshold;
+    _Bool _forceDisableEffectsHealthCheck;
     int _thermalPressureLevel;
 }
 

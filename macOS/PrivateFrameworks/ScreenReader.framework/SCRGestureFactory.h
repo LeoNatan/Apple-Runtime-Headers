@@ -6,21 +6,20 @@
 
 #import <ScreenReaderCore/SCRCGestureFactory.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface SCRGestureFactory : SCRCGestureFactory
 {
-    unsigned long long _deviceIdentifier;
     BOOL _isFullyEnabled;
     BOOL _isBuiltIn;
+    unsigned long long _deviceIdentifier;
 }
 
-- (id)hitRegion;
-- (BOOL)isBuiltIn;
-- (void)setIsBuiltIn:(BOOL)arg1;
-- (BOOL)isFullyEnabled;
-- (void)setIsFullyEnabled:(BOOL)arg1;
-- (unsigned long long)deviceIdentifier;
-- (void)setDeviceIdentifier:(unsigned long long)arg1;
+@property(nonatomic) BOOL isBuiltIn; // @synthesize isBuiltIn=_isBuiltIn;
+@property(nonatomic) BOOL isFullyEnabled; // @synthesize isFullyEnabled=_isFullyEnabled;
+@property(nonatomic) unsigned long long deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
+@property(readonly, copy, nonatomic) NSString *hitRegion;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <UIKit/UIView.h>
 
+#import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
 #import <NanoTimeKit/NTKClockHardwareInput-Protocol.h>
 #import <NanoTimeKit/NTKClockIconZoomAnimator-Protocol.h>
 #import <NanoTimeKit/NTKComplicationDisplayWrapperViewAnimationDelegate-Protocol.h>
@@ -14,10 +15,10 @@
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class CAFilter, CLKDevice, CSLPIMinorDetentAssertion, NSDate, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NTKClockIconView, NTKContainerView, NTKExtraLargeTimeView, NTKFaceEditView, NTKTimeTravelModuleView, PUICCrownInputSequencer, UIImage;
-@protocol NTKFaceViewDelegate, NTKTimeView;
+@class CAFilter, CLKDevice, CSLPIMinorDetentAssertion, NSDate, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NTKClockIconView, NTKContainerView, NTKExtraLargeTimeView, NTKFaceEditView, NTKTimeTravelModuleView, PUICCrownInputSequencer, UIColor, UIImage, UIImageView;
+@protocol NTKFaceViewComplicationFactory, NTKFaceViewDelegate, NTKTimeView;
 
-@interface NTKFaceView : UIView <PUICCrownInputSequencerDelegate, NTKTimeTravelModuleViewTapClient, NTKContainerViewLayoutDelegate, NTKComplicationDisplayWrapperViewAnimationDelegate, NTKClockIconZoomAnimator, NTKTimeView, NTKClockHardwareInput>
+@interface NTKFaceView : UIView <PUICCrownInputSequencerDelegate, NTKTimeTravelModuleViewTapClient, NTKContainerViewLayoutDelegate, CLKMonochromeFilterProvider, NTKComplicationDisplayWrapperViewAnimationDelegate, NTKClockIconZoomAnimator, NTKTimeView, NTKClockHardwareInput>
 {
     PUICCrownInputSequencer *_crownSequencer;
     CSLPIMinorDetentAssertion *_minorDetentAssertion;
@@ -55,10 +56,7 @@
     NSDate *_overrideDate;
     _Bool _needsRender;
     _Bool _needsImageQueueDiscardOnRender;
-    _Bool _needsTraceOnRender;
     _Bool _removedFromWindowDuringThisTransaction;
-    _Bool _isBackgrounded;
-    _Bool _renderWasIgnored;
     _Bool _unadornedSnapshotRemoved;
     float _complicationEditingSaturationValue;
     CAFilter *_complicationEditingSaturationFilter;
@@ -74,6 +72,12 @@
     _Bool _complicationsShowEditingContent;
     _Bool _timeScrubbing;
     _Bool _editing;
+    UIView *_contentView;
+    UIView *_complicationContainerView;
+    UIView *_rootContainerView;
+    UIColor *_alternateComplicationColor;
+    UIColor *_complicationColor;
+    UIColor *_interpolatedComplicationColor;
     int _faceStyle;
     CLKDevice *_device;
     NSString *_clientIdentifier;
@@ -81,9 +85,12 @@
     id <NTKFaceViewDelegate> _delegate;
     NTKFaceEditView *_editView;
     UIView *_unadornedSnapshotView;
+    UIImageView *_switcherSnapshotView;
     NTKClockIconView *_zoomingIconView;
     float _minIconDiameter;
     float _maxIconDiameter;
+    id <NTKFaceViewComplicationFactory> _complicationFactory;
+    CDUnknownBlockType _rampBrightnessWithDurationBlock;
     NSString *_resourceDirectory;
     NSString *_selectedComplicationSlot;
     int _detailMode;
@@ -96,6 +103,7 @@
 + (int)_numberOfDetailModes;
 + (int)numberOfDetailModesForFaceStyle:(int)arg1;
 + (void)_prewarmForDevice:(id)arg1;
++ (int)uiSensitivity;
 + (id)newFaceViewOfStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 + (id)newFaceViewOfStyle:(int)arg1 forDevice:(id)arg2;
 @property(readonly, nonatomic) float editModeTransitionFraction; // @synthesize editModeTransitionFraction=_editModeTransitionFraction;
@@ -112,10 +120,13 @@
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 @property(nonatomic, getter=isEveryComplicationHidden) _Bool everyComplicationHidden; // @synthesize everyComplicationHidden=_everyComplicationHidden;
 @property(copy, nonatomic) NSString *resourceDirectory; // @synthesize resourceDirectory=_resourceDirectory;
+@property(copy, nonatomic) CDUnknownBlockType rampBrightnessWithDurationBlock; // @synthesize rampBrightnessWithDurationBlock=_rampBrightnessWithDurationBlock;
+@property(retain, nonatomic) id <NTKFaceViewComplicationFactory> complicationFactory; // @synthesize complicationFactory=_complicationFactory;
 @property(readonly, nonatomic) float maxIconDiameter; // @synthesize maxIconDiameter=_maxIconDiameter;
 @property(readonly, nonatomic) float minIconDiameter; // @synthesize minIconDiameter=_minIconDiameter;
 @property(readonly, nonatomic) NTKClockIconView *zoomingIconView; // @synthesize zoomingIconView=_zoomingIconView;
 @property(readonly, nonatomic) _Bool zooming; // @synthesize zooming=_zooming;
+@property(retain, nonatomic) UIImageView *switcherSnapshotView; // @synthesize switcherSnapshotView=_switcherSnapshotView;
 @property(retain, nonatomic) UIView *unadornedSnapshotView; // @synthesize unadornedSnapshotView=_unadornedSnapshotView;
 @property(retain, nonatomic) NTKFaceEditView *editView; // @synthesize editView=_editView;
 @property(nonatomic) __weak id <NTKFaceViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -127,8 +138,18 @@
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 @property(readonly, nonatomic) int faceStyle; // @synthesize faceStyle=_faceStyle;
+@property(retain, nonatomic) UIColor *interpolatedComplicationColor; // @synthesize interpolatedComplicationColor=_interpolatedComplicationColor;
+@property(retain, nonatomic) UIColor *complicationColor; // @synthesize complicationColor=_complicationColor;
+@property(retain, nonatomic) UIColor *alternateComplicationColor; // @synthesize alternateComplicationColor=_alternateComplicationColor;
+@property(retain, nonatomic) UIView *rootContainerView; // @synthesize rootContainerView=_rootContainerView;
+@property(retain, nonatomic) UIView *complicationContainerView; // @synthesize complicationContainerView=_complicationContainerView;
+@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) UIView *foregroundContainerView; // @synthesize foregroundContainerView=_foregroundContainerView;
 - (void).cxx_destruct;
+- (id)interpolatedColorForView:(id)arg1;
+- (id)colorForView:(id)arg1 accented:(_Bool)arg2;
+- (id)filterForView:(id)arg1 style:(int)arg2;
+- (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
 - (_Bool)_wantsMinorDetents;
 - (id)_additionalPrelaunchApplicationIdentifiers;
 - (void)_notifyActiveStatusFromOldDataMode:(int)arg1 newMode:(int)arg2;
@@ -201,14 +222,15 @@
 - (void)_applyTransitionFraction:(float)arg1 fromComplication:(id)arg2 toComplication:(id)arg3 slot:(id)arg4;
 - (void)_didLayoutComplicationViews;
 @property(readonly, nonatomic) float alphaForDimmedState;
-- (void)complicationDisplayWrapperView:(id)arg1 startCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4;
+- (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
+- (void)complicationDisplayWrapperView:(id)arg1 prepareCustomDataAnimation:(id)arg2 fromEarlierView:(id)arg3 laterView:(id)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6;
+- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (void)_updateStatusIconVisibility;
 - (void)prepareForStatusChange:(_Bool)arg1;
+- (float)horizontalPaddingForStatusBar;
 - (float)verticalPaddingForStatusBar;
 - (_Bool)wantsStatusBarIconShadow;
 - (_Bool)wantsStatusBarHidden;
-- (id)_snapshotContainerView;
 - (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (void)_prepareForSnapshotting;
 - (float)_minimumBreathingScaleForComplicationSlot:(id)arg1;
@@ -216,6 +238,7 @@
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (int)_keylineStyleForComplicationSlot:(id)arg1;
+- (id)_defaultKeylineViewForComplicationSlot:(id)arg1;
 - (id)_keylineViewForComplicationSlot:(id)arg1;
 - (int)_complicationPickerStyleForSlot:(id)arg1;
 - (void)hideAppropriateComplicationsForCurrentConfiguration;
@@ -241,6 +264,7 @@
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
+- (_Bool)_shouldShowEditingPageDotsOnBottom;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
 - (void)_cleanupAfterEditing;
@@ -253,6 +277,7 @@
 - (_Bool)_usesCustomZoom;
 - (void)_performWristRaiseAnimation;
 - (void)_prepareWristRaiseAnimation;
+- (void)handleScreenBlanked;
 - (void)_handleOrdinaryScreenWake;
 - (void)_handleWristRaiseScreenWake;
 - (void)_applySlow;
@@ -281,14 +306,16 @@
 - (_Bool)_wantsOpportunisticLiveFaceLoading;
 - (_Bool)_canStartTimeScrubbing;
 - (_Bool)_supportsTimeScrubbing;
+- (float)_horizontalPaddingForStatusBar;
 - (float)_verticalPaddingForStatusBar;
 - (void)_prepareForStatusChange:(_Bool)arg1;
 - (_Bool)_wantsStatusBarIconShadow;
 - (_Bool)_wantsStatusBarHidden;
 - (id)_blurSourceImage;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_applyShowsLockedUI;
-- (id)snapshotContainerView;
+- (void)_reorderSwitcherSnapshotView;
 - (void)handleUnadornedSnapshotRemoved;
 - (void)loadContentToReplaceUnadornedSnapshot;
 - (void)_loadContentToReplaceUnadornedSnapshot;
@@ -304,6 +331,9 @@
 - (void)enumerateComplicationDisplayWrappersWithBlock:(CDUnknownBlockType)arg1;
 - (id)complicationLayoutforSlot:(id)arg1;
 - (void)layoutContainerView:(id)arg1;
+- (_Bool)_isAnalog;
+- (_Bool)isAnalog;
+- (_Bool)shouldShowEditingPageDotsOnBottom;
 - (id)blurSourceImage;
 - (void)applyRubberBandingFraction:(float)arg1 forComplicationSlot:(id)arg2;
 - (void)applyBreathingFraction:(float)arg1 forComplicationSlot:(id)arg2;
@@ -324,6 +354,8 @@
 - (id)closestVisibleComplicationSlotToSlot:(id)arg1;
 - (id)closestVisibleSlotToSlot:(id)arg1 editMode:(int)arg2;
 - (id)customEditingViewController;
+- (_Bool)becomeFirstResponder;
+- (_Bool)canBecomeFirstResponder;
 - (_Bool)presentedViewControllerShouldBecomeFirstResponder:(id)arg1;
 - (void)cleanupAfterTransitionComplicationSlot:(id)arg1 selectedComplication:(id)arg2;
 - (void)applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
@@ -339,6 +371,8 @@
 - (void)setTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 customEditMode:(int)arg4 slot:(id)arg5;
 - (void)configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)configureForEditMode:(int)arg1;
+- (void)populateFaceViewEditOptionsFromFace:(id)arg1;
+- (void)populateFaceViewEditOptionsFromFace:(id)arg1 forced:(_Bool)arg2;
 - (void)cleanupAfterEditing;
 - (void)prepareForEditing;
 - (void)cleanupAfterOrb:(_Bool)arg1;
@@ -347,13 +381,12 @@
 - (void)prepareWristRaiseAnimation;
 - (void)handleOrdinaryScreenWake;
 - (void)handleWristRaiseScreenWake;
+- (void)screenDidTurnOff;
+- (void)screenWillTurnOn;
 - (_Bool)needsImageQueueDiscardOnRender;
-- (void)setNextRenderIsFirstAfterWake;
 - (void)setNeedsRenderWithAdditionalWork:(CDUnknownBlockType)arg1;
 - (void)setNeedsRender;
-- (void)renderIfNeeded;
-- (void)_willEnterForeground;
-- (void)_didEnterBackground;
+- (_Bool)renderIfNeeded;
 - (void)layoutComplicationViews;
 - (id)detachedComplicationDisplayWrapperForSlot:(id)arg1;
 - (void)setDetachedComplicationDisplayWrapper:(id)arg1 forSlot:(id)arg2;
@@ -362,6 +395,7 @@
 - (void)configureComplicationViewDisplayWrapper:(id)arg1 forSlot:(id)arg2;
 - (int)legacyComplicationLayoutOverrideForSlot:(id)arg1 complication:(id)arg2;
 - (id)newLegacyComplicationViewForSlot:(id)arg1 family:(int)arg2 complication:(id)arg3;
+- (void)setOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3 forceApply:(_Bool)arg4;
 - (void)setOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (id)optionForCustomEditMode:(int)arg1 slot:(id)arg2;
 @property(readonly, nonatomic) NSDate *currentDisplayDate;
@@ -370,7 +404,11 @@
 - (void)layoutSubviews;
 - (void)dealloc;
 - (_Bool)_shouldHideUI;
+@property(readonly, nonatomic) _Bool monochromeRichComplicationsEnabled;
 - (void)_handleLocaleDidChange;
+- (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_stopOutputtingTime;
+- (void)_outputTime:(id)arg1;
 - (id)initWithFaceStyle:(int)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;
 
 // Remaining properties

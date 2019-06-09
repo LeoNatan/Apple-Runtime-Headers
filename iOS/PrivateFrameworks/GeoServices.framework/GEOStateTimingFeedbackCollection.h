@@ -18,17 +18,14 @@ __attribute__((visibility("hidden")))
     double _sessionRelativeTimestamp;
     NSMutableArray *_stateTransitions;
     struct {
-        unsigned int sessionID:1;
-        unsigned int durationInOldState:1;
-        unsigned int sessionRelativeTimestamp:1;
-    } _has;
+        unsigned int has_sessionID:1;
+        unsigned int has_durationInOldState:1;
+        unsigned int has_sessionRelativeTimestamp:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)stateTransitionType;
-@property(nonatomic) double sessionRelativeTimestamp; // @synthesize sessionRelativeTimestamp=_sessionRelativeTimestamp;
-@property(nonatomic) double durationInOldState; // @synthesize durationInOldState=_durationInOldState;
-@property(retain, nonatomic) NSMutableArray *stateTransitions; // @synthesize stateTransitions=_stateTransitions;
-@property(nonatomic) struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,15 +34,20 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasSessionRelativeTimestamp;
+@property(nonatomic) double sessionRelativeTimestamp;
 @property(nonatomic) _Bool hasDurationInOldState;
+@property(nonatomic) double durationInOldState;
 - (id)stateTransitionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)stateTransitionsCount;
 - (void)addStateTransition:(id)arg1;
 - (void)clearStateTransitions;
+@property(retain, nonatomic) NSMutableArray *stateTransitions;
 @property(nonatomic) _Bool hasSessionID;
+@property(nonatomic) struct GEOSessionID sessionID;
 
 @end
 

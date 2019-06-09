@@ -28,7 +28,8 @@
 - (void).cxx_destruct;
 - (void)_commitPendingSnippets;
 - (void)_queueCommitPendingSnippets;
-- (void)didCalculateSnippet:(id)arg1 forMessage:(id)arg2;
+- (void)snippetCalculator:(id)arg1 didSkipMessages:(id)arg2;
+- (void)snippetCalculator:(id)arg1 didCalculateSnippet:(id)arg2 forMessage:(id)arg3;
 - (void)_messageBodyDataAvailable:(id)arg1;
 - (id)fetchSnippetsForMessages:(id)arg1;
 - (void)dealloc;

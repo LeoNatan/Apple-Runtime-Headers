@@ -13,8 +13,10 @@
     _Bool _depthDataDeliveryEnabled;
     _Bool _filterRenderingEnabled;
     NSArray *_filters;
+    float _simulatedAperture;
 }
 
+@property(nonatomic) float simulatedAperture; // @synthesize simulatedAperture=_simulatedAperture;
 @property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(nonatomic) _Bool filterRenderingEnabled; // @synthesize filterRenderingEnabled=_filterRenderingEnabled;
 @property(nonatomic) _Bool depthDataDeliveryEnabled; // @synthesize depthDataDeliveryEnabled=_depthDataDeliveryEnabled;
@@ -25,6 +27,7 @@
 - (id)description;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)init;
 
 @end
 

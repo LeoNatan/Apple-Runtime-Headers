@@ -16,7 +16,6 @@
 
 + (_Bool)isEnabled;
 - (_Bool)improveEntry:(id)arg1;
-- (void)_moveTitlesIfNecessaryInSuggestion:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

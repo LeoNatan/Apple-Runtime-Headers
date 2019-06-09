@@ -10,7 +10,7 @@
 #import <FrontBoardServices/FBSSceneLayerDelegate-Protocol.h>
 #import <FrontBoardServices/FBSSceneUpdaterDelegate-Protocol.h>
 
-@class FBSSceneClientSettings, FBSSceneSettings, NSArray, NSString;
+@class FBSSceneClientSettings, FBSSceneIdentityToken, FBSSceneSettings, FBSSceneSpecification, NSArray, NSString;
 @protocol FBSSceneDelegate;
 
 @interface FBSScene : NSObject <FBSSceneUpdaterDelegate, FBSSceneLayerDelegate, BSDescriptionProviding>
@@ -23,17 +23,16 @@
 - (id)succinctDescription;
 - (void)sceneLayerDidInvalidate:(id)arg1;
 - (void)sceneLayerDidUpdate:(id)arg1;
-- (_Bool)sceneLayerShouldObserveUpdates:(id)arg1;
 - (void)updater:(id)arg1 didReceiveMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
 - (void)updater:(id)arg1 didReceiveActions:(id)arg2;
 - (void)updater:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)invalidate;
-- (void)_willDestroyWithTransitionContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_didCreateWithTransitionContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_callOutQueue_agent_willDestroyWithTransitionContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_callOutQueue_agent_didCreateWithTransitionContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_hasAgent;
 - (id)contexts;
 - (id)fbsDisplay;
 - (id)display;
+@property(readonly, nonatomic) FBSSceneIdentityToken *identityToken;
 - (_Bool)invalidateSnapshotWithContext:(id)arg1;
 - (_Bool)performSnapshotWithContext:(id)arg1;
 - (id)snapshotRequest;
@@ -51,6 +50,7 @@
 @property(readonly, nonatomic) FBSSceneClientSettings *clientSettings;
 @property(readonly, nonatomic) FBSSceneSettings *settings;
 @property(nonatomic) __weak id <FBSSceneDelegate> delegate;
+@property(readonly, nonatomic) FBSSceneSpecification *specification;
 @property(readonly, copy, nonatomic) NSString *identifier;
 - (id)_init;
 - (id)init;

@@ -17,6 +17,7 @@
     NSString *_secondaryString;
     NSString *_tertiaryString;
     UIColor *_customSecondaryColor;
+    NSString *_rewardsString;
     NSString *_valueString;
 }
 
@@ -24,6 +25,7 @@
 @property(nonatomic) _Bool shouldStrikeValue; // @synthesize shouldStrikeValue=_shouldStrikeValue;
 @property(nonatomic) _Bool shouldGrayValue; // @synthesize shouldGrayValue=_shouldGrayValue;
 @property(retain, nonatomic) NSString *valueString; // @synthesize valueString=_valueString;
+@property(retain, nonatomic) NSString *rewardsString; // @synthesize rewardsString=_rewardsString;
 @property(retain, nonatomic) UIColor *customSecondaryColor; // @synthesize customSecondaryColor=_customSecondaryColor;
 @property(retain, nonatomic) NSString *tertiaryString; // @synthesize tertiaryString=_tertiaryString;
 @property(retain, nonatomic) NSString *secondaryString; // @synthesize secondaryString=_secondaryString;

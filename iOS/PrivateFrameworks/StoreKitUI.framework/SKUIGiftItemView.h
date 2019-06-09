@@ -8,6 +8,7 @@
 
 @class NSString, SKUIClientContext, SKUIGiftTheme, SKUIItem, SKUIItemArtworkContext, SKUIItemOfferButton, SKUIItemState, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftItemView : UIView
 {
     NSString *_artistName;
@@ -27,8 +28,10 @@
     UILabel *_titleLabel;
     float _userRating;
     UILabel *_userRatingCountLabel;
+    _Bool _leftToRight;
 }
 
+@property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(nonatomic) float userRating; // @synthesize userRating=_userRating;
 @property(copy, nonatomic) SKUIGiftTheme *theme; // @synthesize theme=_theme;
 @property(copy, nonatomic) NSString *price; // @synthesize price=_price;
@@ -45,8 +48,8 @@
 - (void)_reloadUserRatingViews;
 - (void)_reloadSubtitles;
 - (void)_reloadItemState:(_Bool)arg1;
-- (double)_paddingRight;
-- (double)_paddingLeft;
+- (double)_paddingTrailing;
+- (double)_paddingLeading;
 - (id)_newLabel;
 - (struct CGSize)_imageSize;
 - (struct UIEdgeInsets)_imageEdgeInsets;

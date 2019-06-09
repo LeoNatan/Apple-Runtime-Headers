@@ -13,13 +13,12 @@
     NSArray *_accounts;
 }
 
-+ (BOOL)requiredAfterBackbooting;
 + (unsigned long long)targetVersion;
 @property(readonly, copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;
-- (id)initWithSQLHandle:(id)arg1;
-- (id)initWithSQLHandle:(id)arg1 accounts:(id)arg2;
+- (id)initWithDatabaseConnection:(id)arg1;
+- (id)initWithDatabaseConnection:(id)arg1 accounts:(id)arg2;
 
 @end
 

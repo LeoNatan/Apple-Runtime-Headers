@@ -18,6 +18,7 @@
     MSMessage *_activeMessage;
     NSString *_conversationID;
     NSData *_conversationEngramID;
+    NSString *_iMessageLoginID;
     NSString *_senderAddress;
     NSArray *_recipientAddresses;
     NSArray *_draftAssetArchives;
@@ -27,6 +28,7 @@
 @property(copy, nonatomic) NSArray *draftAssetArchives; // @synthesize draftAssetArchives=_draftAssetArchives;
 @property(retain, nonatomic) NSArray *recipientAddresses; // @synthesize recipientAddresses=_recipientAddresses;
 @property(retain, nonatomic) NSString *senderAddress; // @synthesize senderAddress=_senderAddress;
+@property(retain, nonatomic, setter=setiMessageLoginID:) NSString *iMessageLoginID; // @synthesize iMessageLoginID=_iMessageLoginID;
 @property(retain, nonatomic) NSData *conversationEngramID; // @synthesize conversationEngramID=_conversationEngramID;
 @property(retain, nonatomic) NSString *conversationID; // @synthesize conversationID=_conversationID;
 @property(retain, nonatomic) MSMessage *activeMessage; // @synthesize activeMessage=_activeMessage;

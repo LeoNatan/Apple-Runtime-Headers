@@ -6,9 +6,9 @@
 
 #import <XCTAutomationSupport/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, XCAccessibilityElement, XCElementSnapshot;
+@class NSArray, NSDictionary, XCAccessibilityElement, XCElementSnapshot, XCTTimeoutControls;
 
 @protocol XCTElementSnapshotProvider <NSObject>
-- (XCElementSnapshot *)snapshotForElement:(XCAccessibilityElement *)arg1 attributes:(NSArray *)arg2 parameters:(NSDictionary *)arg3 error:(id *)arg4;
+- (XCElementSnapshot *)snapshotForElement:(XCAccessibilityElement *)arg1 attributes:(NSArray *)arg2 parameters:(NSDictionary *)arg3 timeoutControls:(XCTTimeoutControls *)arg4 error:(id *)arg5;
 @end
 

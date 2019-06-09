@@ -6,34 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class QTInvalidationSet, QTMovie;
-
 @interface QTNode : NSObject
 {
-    int _proxy;
-    QTMovie *_movie;
-    QTInvalidationSet *_children;
-    long long _reserved1;
 }
 
 + (id)nodeWithProxy:(int)arg1;
-- (id)hotspots;
-- (id)hotspotAtIndex:(int)arg1;
-- (int)hotspotCount;
-- (void)setMovie:(id)arg1;
-- (id)movie;
-- (id)type;
-- (id)name;
-- (id)comments;
-- (int)uniqueID;
-- (int)index;
-- (id)description;
-- (void)_forgetAboutHotspot:(id)arg1;
-- (void)_learnAboutHotspot:(id)arg1;
-- (void)invalidate;
-- (void)dealloc;
-- (void)finalize;
-- (int)proxy;
+- (id)init;
 - (id)initWithProxy:(int)arg1;
 
 @end

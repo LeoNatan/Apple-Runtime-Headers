@@ -9,16 +9,16 @@
 #import <Safari/UnifiedFieldDelegate-Protocol.h>
 #import <Safari/UnifiedFieldSecurityUIManagerDelegate-Protocol.h>
 
-@class BrowserViewController, NSString, NSWindow, PopupWindowUnifiedField, PopupWindowUnifiedFieldViewController, UnifiedFieldSecurityUIManager;
+@class BrowserViewController, NSString, NSTitlebarAccessoryViewController, NSWindow, PopupWindowUnifiedField, PopupWindowUnifiedFieldViewController, UnifiedFieldSecurityUIManager;
 
 __attribute__((visibility("hidden")))
 @interface FullscreenUnifiedFieldWindowController : NSController <UnifiedFieldDelegate, UnifiedFieldSecurityUIManagerDelegate>
 {
     BrowserViewController *_browserViewController;
     PopupWindowUnifiedFieldViewController *_unifiedFieldViewController;
+    NSTitlebarAccessoryViewController *_titlebarBottomSeparatorViewController;
     NSWindow *_window;
     UnifiedFieldSecurityUIManager *_unifiedFieldSecurityUIManager;
-    CDUnknownBlockType _restoreWindowCallback;
     PopupWindowUnifiedField *_unifiedField;
 }
 

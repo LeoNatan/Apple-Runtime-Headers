@@ -6,21 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, NSURL;
+@class NSDictionary, NSError, NSString, NSURL;
 
 @interface AMSURLAction : NSObject
 {
     int _actionType;
     NSError *_error;
+    NSString *_reason;
     NSURL *_redirectURL;
+    NSDictionary *_updatedHeaders;
 }
 
-+ (id)actionWithError:(id)arg1;
 + (id)redirectActionWithURL:(id)arg1;
 + (id)retryAction;
-@property(retain, nonatomic) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
-@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
-@property(nonatomic) int actionType; // @synthesize actionType=_actionType;
++ (id)proceedAction;
++ (id)actionWithError:(id)arg1;
+@property(retain, nonatomic) NSDictionary *updatedHeaders; // @synthesize updatedHeaders=_updatedHeaders;
+@property(readonly, nonatomic) NSURL *redirectURL; // @synthesize redirectURL=_redirectURL;
+@property(retain, nonatomic) NSString *reason; // @synthesize reason=_reason;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+@property(readonly, nonatomic) int actionType; // @synthesize actionType=_actionType;
 - (void).cxx_destruct;
 - (id)description;
 - (id)initWithType:(int)arg1;

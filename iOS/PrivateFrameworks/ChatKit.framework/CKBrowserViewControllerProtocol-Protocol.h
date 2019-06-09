@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) _Bool shouldShowChatChrome;
 @property(readonly, nonatomic) long long browserPresentationStyle;
 @property(readonly, nonatomic) _Bool mayBeKeptInViewHierarchy;
+@property(readonly, nonatomic, getter=isDismissing) _Bool dismissing;
 @property(nonatomic) _Bool isPrimaryViewController;
 @property(readonly, nonatomic) _Bool shouldSuppressEntryView;
 @property(readonly, nonatomic) _Bool supportsQuickView;
@@ -43,8 +44,8 @@
 @property(readonly, nonatomic) unsigned long long badgeValue;
 @property(retain, nonatomic) NSData *conversationEngramID;
 @property(readonly, nonatomic) _Bool wasExpandedPresentation;
-@property(retain, nonatomic) NSString *sender;
 @property(retain, nonatomic) NSArray *recipients;
+@property(retain, nonatomic) NSString *sender;
 - (void)volumeButtonPressed:(_Bool)arg1;
 - (void)killExtensionProcess;
 - (void)dropAssertion;

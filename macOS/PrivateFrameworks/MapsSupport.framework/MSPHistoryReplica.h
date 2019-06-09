@@ -6,13 +6,15 @@
 
 #import <MapsSupport/MSPReplica.h>
 
+#import <MapsSupport/MSPCloudReplica-Protocol.h>
 #import <MapsSupport/MSPContainerStateSnapshot-Protocol.h>
 #import <MapsSupport/MSPPropertyListReplicaDataSerialization-Protocol.h>
+#import <MapsSupport/MSPPropertyListReplicaSerialization-Protocol.h>
 #import <MapsSupport/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSData, NSString;
 
-@interface MSPHistoryReplica : MSPReplica <MSPContainerStateSnapshot, NSSecureCoding, MSPPropertyListReplicaDataSerialization>
+@interface MSPHistoryReplica : MSPReplica <MSPContainerStateSnapshot, NSSecureCoding, MSPPropertyListReplicaDataSerialization, MSPPropertyListReplicaSerialization, MSPCloudReplica>
 {
 }
 
@@ -21,7 +23,6 @@
 + (BOOL)supportsSecureCoding;
 - (id)editsToMergeWithReplica:(id)arg1;
 - (id)editsToMergeWithReplica:(id)arg1 mergeOptions:(id)arg2;
-- (id)_additionalEditsToUpdateContentsOfRecord:(id)arg1 identifier:(id)arg2;
 - (id)editsToMergeWithReplica:(id)arg1 knownSyncDateForLeastRecentlySyncedClientIfAny:(id)arg2;
 - (void)_mergeSelfRecord:(id)arg1 withRecordFromOtherReplica:(id)arg2 identifier:(id)arg3 options:(id)arg4 edits:(id)arg5;
 - (id)_sortedHistoryEntriesByApplyingEdits:(id)arg1 invalidEntryIdentifiers:(out id *)arg2;
@@ -33,6 +34,9 @@
 - (id)initWithPropertyListRepresentation:(id)arg1 recordCreationHandler:(CDUnknownBlockType)arg2;
 - (id)propertyListRepresentationDecoratingRecordsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id propertyListRepresentation;
+- (Class)replicaRecordClass;
+- (id)mergeOptionsWithLastSyncDate:(id)arg1;
+- (id)changesMergingCloudChanges:(id)arg1 withReplica:(id)arg2 lastSyncDate:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

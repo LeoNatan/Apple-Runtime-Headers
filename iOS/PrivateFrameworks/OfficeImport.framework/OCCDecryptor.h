@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 + (id)agilePasswordKeyEncryptorNamespace;
 + (id)agileDescriptorNamespace;
 @property(readonly, nonatomic) NSString *outputFilename; // @synthesize outputFilename=mOutputFilename;
+- (void).cxx_destruct;
 - (_Bool)decryptIntoOutputFile;
 - (_Bool)verifyPassphrase:(id)arg1;
 - (_Bool)decrypt;

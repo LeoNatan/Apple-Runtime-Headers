@@ -8,10 +8,11 @@
 
 #import <PhotosFormats/NSCopying-Protocol.h>
 
-@class NSData, NSDictionary, NSString;
+@class NSData, NSDate, NSDictionary, NSString;
 
 @interface PFAssetAdjustments : NSObject <NSCopying>
 {
+    NSDate *_adjustmentTimestamp;
     NSDictionary *_propertyListDictionary;
 }
 
@@ -24,6 +25,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPropertyListDictionary:(id)arg1;
 - (id)initWithURL:(id)arg1;
+@property(nonatomic) NSDate *adjustmentTimestamp;
 @property(readonly, nonatomic) unsigned int adjustmentRenderTypes;
 @property(readonly, copy, nonatomic) NSString *editorBundleID;
 @property(readonly, nonatomic) long long adjustmentBaseVersion;

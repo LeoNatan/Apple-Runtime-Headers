@@ -6,30 +6,37 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface INActivity : NSObject <NSCopying, NSSecureCoding>
+@interface INActivity : NSObject <INJSONSerializable, NSCopying, NSSecureCoding>
 {
     NSString *_activityType;
     NSArray *_activityDescriptors;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSArray *activityDescriptors; // @synthesize activityDescriptors=_activityDescriptors;
 @property(readonly, copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (id)initWithActivityType:(id)arg1 activityDescriptors:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

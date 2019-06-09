@@ -14,7 +14,6 @@
     struct __DCSDictionary *_definitionDictionary;
     struct __IDXIndex *_definitionIndexRef;
     BOOL _descriptionEnabled;
-    NSURL *_descriptionStyleSheet;
     BOOL _forceNoIncrementalSearchPositioning;
     BOOL _grouping;
     NSView *_informationView;
@@ -32,13 +31,11 @@
     IMKCandidateWindowPositioning *_windowPositioning;
     BOOL _windowVisibleWithDeferral;
     BOOL _windowVisibilityDidChange;
-    BOOL _isSortable;
 }
 
 + (id)mutableCandidateWindowIDs;
 + (id)candidateWindowIDs;
 + (id)defaultSelectionKeyTitles;
-@property(readonly, nonatomic) BOOL isSortable; // @synthesize isSortable=_isSortable;
 @property(nonatomic) BOOL windowVisibilityDidChange; // @synthesize windowVisibilityDidChange=_windowVisibilityDidChange;
 @property(nonatomic) BOOL windowVisibleWithDeferral; // @synthesize windowVisibleWithDeferral=_windowVisibleWithDeferral;
 @property(retain, nonatomic) IMKCandidateWindowPositioning *windowPositioning; // @synthesize windowPositioning=_windowPositioning;
@@ -63,6 +60,7 @@
 - (void)selectSortingMethod:(id)arg1 expand:(BOOL)arg2;
 - (void)selectPreviousSortingMethod;
 - (void)selectNextSortingMethod;
+@property(readonly, nonatomic) BOOL isSortable;
 @property(readonly, nonatomic) NSArray *topVisibleCandidates;
 - (void)setSelectedCandidateKey:(id)arg1 clickCount:(unsigned long long)arg2 sendMessageToDelegate:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL shouldNotShowCandidates;
@@ -81,7 +79,7 @@
 - (void)willUpdateCandidateCanvas;
 - (void)updateUIType;
 - (void)initializeCanvas;
-@property(retain, nonatomic) NSURL *descriptionStyleSheet; // @synthesize descriptionStyleSheet=_descriptionStyleSheet;
+@property(retain, nonatomic) NSURL *descriptionStyleSheet;
 - (id)styleSheet;
 - (BOOL)numberKeyPressed:(unsigned long long)arg1;
 - (BOOL)selectionKeyPressed:(id)arg1;

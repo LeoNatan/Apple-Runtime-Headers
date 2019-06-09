@@ -11,6 +11,7 @@
 
 @protocol CSSpIdSpeakerRecognizer <NSObject>
 @property(readonly, nonatomic) NSDictionary *lastSpeakerIdInfo;
+- (void)setCVTTriggerPhraseDetected;
 - (void)processMyriadDecision:(unsigned int)arg1;
 - (void)recordingStoppedForReason:(int)arg1;
 - (void)processAudioChunk:(CSAudioChunk *)arg1;

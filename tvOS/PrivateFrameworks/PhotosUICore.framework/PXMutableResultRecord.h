@@ -23,10 +23,12 @@
     PHFetchResult *_fetchResult;
     PHFetchResult *_curatedFetchResult;
     PHFetchResult *_keyAssetsFetchResult;
+    long long _keyAssetIndex;
 }
 
 @property(nonatomic) _Bool preloadAssetTypeCounts; // @synthesize preloadAssetTypeCounts=_preloadAssetTypeCounts;
 @property(nonatomic) _Bool wantsCuration; // @synthesize wantsCuration=_wantsCuration;
+@property(nonatomic) long long keyAssetIndex; // @synthesize keyAssetIndex=_keyAssetIndex;
 @property(retain, nonatomic) PHFetchResult *keyAssetsFetchResult; // @synthesize keyAssetsFetchResult=_keyAssetsFetchResult;
 @property(retain, nonatomic) PHFetchResult *curatedFetchResult; // @synthesize curatedFetchResult=_curatedFetchResult;
 @property(readonly, nonatomic) _Bool reverseSortOrder; // @synthesize reverseSortOrder=_reverseSortOrder;
@@ -41,6 +43,7 @@
 - (id)_exposedFetchResultBeforeFiltering;
 @property(readonly, nonatomic) PHFetchResult *filteredFetchResult;
 @property(readonly, nonatomic) PHFetchResult *exposedFetchResult;
+- (void)_invalidateKeyAssetIndex;
 - (void)setReverseSortOrder:(_Bool)arg1;
 - (void)setFetchResult:(id)arg1;
 - (void)setFetchResult:(id)arg1 reverseSortOrder:(_Bool)arg2;
@@ -53,6 +56,7 @@
 - (void)includeOids:(id)arg1;
 - (void)invalidateFetchResultAssetCache;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 
 @end
 

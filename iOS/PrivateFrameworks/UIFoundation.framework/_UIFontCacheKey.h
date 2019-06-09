@@ -8,39 +8,24 @@
 
 #import <UIFoundation/NSCopying-Protocol.h>
 
-@class NSString, UIFontDescriptor;
-
 @interface _UIFontCacheKey : NSObject <NSCopying>
 {
-    int _traits;
-    NSString *_fontName;
-    double _pointSize;
-    NSString *_textStyle;
-    NSString *_contentSizeCategory;
-    UIFontDescriptor *_fontDescriptor;
-    NSString *_textStyleForScaling;
-    double _pointSizeForScaling;
-    double _maximumPointSizeAfterScaling;
+    unsigned long long _hash;
+    _Bool _textLegibility;
 }
 
 + (id)fontCacheKeyWithFontDescriptor:(id)arg1 pointSize:(double)arg2 textStyleForScaling:(id)arg3 pointSizeForScaling:(double)arg4 maximumPointSizeAfterScaling:(double)arg5;
 + (id)fontCacheKeyWithTextStyle:(id)arg1 contentSizeCategory:(id)arg2;
 + (id)systemFontCacheKeyWithTraits:(int)arg1 pointSize:(double)arg2;
 + (id)fontCacheKeyWithFontName:(id)arg1 traits:(int)arg2 pointSize:(double)arg3;
-@property(nonatomic) double maximumPointSizeAfterScaling; // @synthesize maximumPointSizeAfterScaling=_maximumPointSizeAfterScaling;
-@property(nonatomic) double pointSizeForScaling; // @synthesize pointSizeForScaling=_pointSizeForScaling;
-@property(copy, nonatomic) NSString *textStyleForScaling; // @synthesize textStyleForScaling=_textStyleForScaling;
-@property(copy, nonatomic) UIFontDescriptor *fontDescriptor; // @synthesize fontDescriptor=_fontDescriptor;
-@property(copy, nonatomic) NSString *contentSizeCategory; // @synthesize contentSizeCategory=_contentSizeCategory;
-@property(copy, nonatomic) NSString *textStyle; // @synthesize textStyle=_textStyle;
-@property(nonatomic) double pointSize; // @synthesize pointSize=_pointSize;
-@property(nonatomic) int traits; // @synthesize traits=_traits;
-@property(copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
-- (id)description;
-- (_Bool)isEqual:(id)arg1;
+@property(nonatomic) _Bool textLegibility; // @synthesize textLegibility=_textLegibility;
+- (void)_precalculateHash;
+- (unsigned long long)_hash;
 - (unsigned long long)hash;
+- (_Bool)_isEqualToKey:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
+- (id)initWithTextLegibility:(_Bool)arg1;
 
 @end
 

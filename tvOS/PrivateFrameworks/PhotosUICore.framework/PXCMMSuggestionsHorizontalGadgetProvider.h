@@ -12,19 +12,19 @@
 #import <PhotosUICore/PXSettingsKeyObserver-Protocol.h>
 
 @class NSDate, NSString, PXCMMSuggestionsDataSourceManager;
-@protocol PXGadgetNavigating;
+@protocol PXCMMWorkflowPresenting;
 
 @interface PXCMMSuggestionsHorizontalGadgetProvider : PXGadgetProvider <PXSettingsKeyObserver, PXChangeObserver, PXSectionedDataSourceManagerObserver, PXForYouRankable>
 {
     PXCMMSuggestionsDataSourceManager *_dataSourceManager;
     CDUnknownBlockType _pendingNavigationBlock;
     _Bool _didGenerateGadgets;
-    id <PXGadgetNavigating> _gadgetNavigator;
+    id <PXCMMWorkflowPresenting> _workflowPresenter;
     NSDate *_cachedPriorityDate;
 }
 
 @property(retain, nonatomic) NSDate *cachedPriorityDate; // @synthesize cachedPriorityDate=_cachedPriorityDate;
-@property(nonatomic) __weak id <PXGadgetNavigating> gadgetNavigator; // @synthesize gadgetNavigator=_gadgetNavigator;
+@property(readonly, nonatomic) id <PXCMMWorkflowPresenting> workflowPresenter; // @synthesize workflowPresenter=_workflowPresenter;
 - (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
@@ -39,6 +39,7 @@
 - (_Bool)supportsDynamicRanking;
 - (void)_updateGadgets;
 - (void)_configureDataSourceManager;
+- (id)initWithWorkflowPresenter:(id)arg1;
 - (id)init;
 
 // Remaining properties

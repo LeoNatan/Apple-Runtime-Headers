@@ -38,6 +38,7 @@
 - (void)_handleSoftLimitErrorForCurrentContextWithDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleHardLimitErrorForCurrentContextWithDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)secretValidator:(id)arg1 didFailRecovery:(id)arg2 withError:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)secretValidator:(id)arg1 recoverSecureBackupWithContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)secretValidator:(id)arg1 shouldAcceptRecoveryError:(id *)arg2;
 - (void)secretValidatorWillAttemptRecovery;
 - (void)cancelRemoteSecretValidatorApplicationToJoinCircle:(id)arg1;

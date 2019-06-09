@@ -6,7 +6,7 @@
 
 #import <GameCenterFoundation/GKInternalRepresentation.h>
 
-@class NSArray, NSData, NSDictionary, NSString;
+@class GKTournamentInternal, NSArray, NSData, NSDictionary, NSString;
 
 @interface GKMatchRequestInternal : GKInternalRepresentation
 {
@@ -19,14 +19,18 @@
     NSString *_rid;
     unsigned int _version;
     _Bool _preloadedMatch;
-    int _playerGroup;
+    unsigned long long _playerGroup;
     unsigned int _playerAttributes;
     unsigned char _minPlayers;
     unsigned char _maxPlayers;
     unsigned char _defaultNumberOfPlayers;
+    _Bool _restrictToAutomatch;
+    GKTournamentInternal *_tournamentForInvitePool;
 }
 
 + (id)secureCodedPropertyKeys;
+@property(retain, nonatomic) GKTournamentInternal *tournamentForInvitePool; // @synthesize tournamentForInvitePool=_tournamentForInvitePool;
+@property(nonatomic) _Bool restrictToAutomatch; // @synthesize restrictToAutomatch=_restrictToAutomatch;
 @property(nonatomic) unsigned char defaultNumberOfPlayers; // @synthesize defaultNumberOfPlayers=_defaultNumberOfPlayers;
 @property(nonatomic, getter=isPreloadedMatch) _Bool preloadedMatch; // @synthesize preloadedMatch=_preloadedMatch;
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
@@ -38,7 +42,7 @@
 @property(retain, nonatomic) NSArray *recipientPlayerIDs; // @synthesize recipientPlayerIDs=_recipientPlayerIDs;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(nonatomic) unsigned int playerAttributes; // @synthesize playerAttributes=_playerAttributes;
-@property(nonatomic) int playerGroup; // @synthesize playerGroup=_playerGroup;
+@property(nonatomic) unsigned long long playerGroup; // @synthesize playerGroup=_playerGroup;
 @property(nonatomic) unsigned char maxPlayers; // @synthesize maxPlayers=_maxPlayers;
 @property(nonatomic) unsigned char minPlayers; // @synthesize minPlayers=_minPlayers;
 - (_Bool)hasGuestPlayers;

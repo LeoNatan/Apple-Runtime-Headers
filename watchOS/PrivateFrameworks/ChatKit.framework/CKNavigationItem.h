@@ -8,6 +8,7 @@
 
 @class UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface CKNavigationItem : UINavigationItem
 {
     UIScrollView *_contentScrollView;

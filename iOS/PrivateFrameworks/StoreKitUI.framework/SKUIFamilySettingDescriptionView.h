@@ -8,6 +8,7 @@
 
 @class SKUISettingsFamilyViewElement, SKUIViewElementLayoutContext, UIActivityIndicatorView, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIFamilySettingDescriptionView : SKUISettingDescriptionView
 {
     UIActivityIndicatorView *_activityIndicator;

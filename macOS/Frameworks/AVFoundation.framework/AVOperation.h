@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)evaluateDependenciesAndMarkAsExecuting;
 @property(readonly) NSError *error;
 @property(readonly) long long status;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

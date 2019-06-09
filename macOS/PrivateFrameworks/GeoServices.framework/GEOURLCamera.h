@@ -16,19 +16,15 @@
     double _longitude;
     double _pitch;
     struct {
-        unsigned int altitude:1;
-        unsigned int heading:1;
-        unsigned int latitude:1;
-        unsigned int longitude:1;
-        unsigned int pitch:1;
-    } _has;
+        unsigned int has_altitude:1;
+        unsigned int has_heading:1;
+        unsigned int has_latitude:1;
+        unsigned int has_longitude:1;
+        unsigned int has_pitch:1;
+    } _flags;
 }
 
-@property(nonatomic) double altitude; // @synthesize altitude=_altitude;
-@property(nonatomic) double pitch; // @synthesize pitch=_pitch;
-@property(nonatomic) double heading; // @synthesize heading=_heading;
-@property(nonatomic) double longitude; // @synthesize longitude=_longitude;
-@property(nonatomic) double latitude; // @synthesize latitude=_latitude;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -36,13 +32,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasAltitude;
+@property(nonatomic) double altitude;
 @property(nonatomic) BOOL hasPitch;
+@property(nonatomic) double pitch;
 @property(nonatomic) BOOL hasHeading;
+@property(nonatomic) double heading;
 @property(nonatomic) BOOL hasLongitude;
+@property(nonatomic) double longitude;
 @property(nonatomic) BOOL hasLatitude;
+@property(nonatomic) double latitude;
 
 @end
 

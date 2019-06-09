@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;
+- (id)initWithRowCardSection:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 // Remaining properties

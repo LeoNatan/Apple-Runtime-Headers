@@ -17,6 +17,7 @@
 }
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
+- (void).cxx_destruct;
 - (void)_calculateDiffs;
 - (id)_changedObjects;
 - (_Bool)_getOldSet:(id *)arg1 newSet:(id *)arg2;
@@ -31,7 +32,6 @@
 - (_Bool)shouldReload;
 - (id)album;
 - (id)object;
-- (void)dealloc;
 - (id)initWithShuffledAlbum:(id)arg1 albumChangeNotification:(id)arg2;
 - (id)init;
 

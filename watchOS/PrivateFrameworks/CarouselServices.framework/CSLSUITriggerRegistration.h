@@ -6,19 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@protocol CSLSUITriggerControllerDelegate;
+#import <CarouselServices/CSLSUIProviderRemoteWrapperDelegate-Protocol.h>
+#import <CarouselServices/CSLSUITriggerRegistration-Protocol.h>
 
-@interface CSLSUITriggerRegistration : NSObject
+@class NSString;
+@protocol CSLSUITriggerRegistration;
+
+@interface CSLSUITriggerRegistration : NSObject <CSLSUIProviderRemoteWrapperDelegate, CSLSUITriggerRegistration>
 {
-    id <CSLSUITriggerControllerDelegate> _controller;
+    id <CSLSUITriggerRegistration> _registration;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)requestUITriggerWithProvider:(id)arg1 UITriggerName:(id)arg2 withDictionary:(id)arg3 withReason:(int)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)removeUIProvider:(id)arg1 withUITriggerName:(id)arg2;
 - (void)addUIProvider:(id)arg1 forUITriggerName:(id)arg2 englishUsage:(id)arg3;
 - (id)initWithDelegate:(id)arg1;
+- (id)initWithMachServiceName:(id)arg1;
+- (id)initWithNullableMachServiceName:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

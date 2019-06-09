@@ -15,7 +15,8 @@
 @property(readonly) unsigned long long resultType; // @synthesize resultType=_resultType;
 @property(readonly) id result; // @synthesize result=_aggregatedResult;
 - (void)dealloc;
-- (id)initWithResult:(id)arg1 type:(unsigned long long)arg2;
+- (id)initWithSubresults:(id)arg1;
+- (id)initWithResultType:(unsigned long long)arg1 andObject:(id)arg2;
 
 @end
 

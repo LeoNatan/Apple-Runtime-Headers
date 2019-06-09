@@ -6,34 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore, PPContactScorer, _PASLock;
-@protocol SGSuggestionsServiceContactsProtocol;
+@class PPContactStorage;
 
 @interface PPLocalContactStore : NSObject
 {
-    CNContactStore *_store;
-    id <SGSuggestionsServiceContactsProtocol> _suggestionsContactService;
-    PPContactScorer *_contactScorer;
-    _PASLock *_diskCacheLock;
+    PPContactStorage *_contactStorage;
 }
 
 + (id)defaultStore;
 - (void).cxx_destruct;
-- (id)_allCNNameRecordsFromDiskCache:(id)arg1;
-- (BOOL)_writeCNNameRecords:(id)arg1 history:(id)arg2 diskCache:(id)arg3 fullLoadFromSource:(BOOL)arg4;
-- (id)_nameRecordKeysToFetch;
-- (void)registerContactsChangeHistoryForClient:(id)arg1;
-- (BOOL)clearChangeHistoryForClient:(id)arg1 history:(id)arg2;
-- (id)contactsChangeHistoryForClient:(id)arg1 error:(id *)arg2;
-- (id)_changeHistoryIdentifierForClient:(id)arg1;
-- (void)_namesRecordsForAllFoundInAppsContactsWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_cnNameRecordsForAllContactsFromSource;
-- (id)_cnNameRecordsForAllContacts;
-- (id)_allNameRecordsFromAllSources;
-- (id)_nameRecordFromCNContactChange:(id)arg1;
 - (id)contactNameRecordChangesForClient:(id)arg1 error:(id *)arg2;
 - (id)contactNameRecordsForClient:(id)arg1 error:(id *)arg2;
 - (BOOL)iterContactNameRecordsForClient:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (void)feedbackDisambiguationResultWithChoicesIdentifiers:(id)arg1 chosenContactIdentifier:(id)arg2;
+- (BOOL)registerFeedback:(id)arg1 error:(id *)arg2;
+- (id)scoredContactsWithContacts:(id)arg1;
+- (id)contactsWithQuery:(id)arg1 explanationSet:(id)arg2 timeoutSeconds:(double)arg3 error:(id *)arg4;
+- (id)contactsWithQuery:(id)arg1 error:(id *)arg2;
+- (id)rankedContactsWithQuery:(id)arg1 error:(id *)arg2;
 - (id)init;
 
 @end

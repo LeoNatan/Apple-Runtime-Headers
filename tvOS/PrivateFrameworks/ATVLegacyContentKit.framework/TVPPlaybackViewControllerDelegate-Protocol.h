@@ -12,8 +12,12 @@
 @protocol TVPPlaybackViewControllerDelegate <NSObject>
 
 @optional
+- (void)userDidFinishInteractionAfterErrorWasPresented:(TVPPlaybackViewController *)arg1;
 - (long long)currentEndpointDeviceTypeForPlaybackViewController:(UIViewController *)arg1;
 - (void)playbackViewControllerUserWillInitiatePlayback:(UIViewController *)arg1;
+- (void)playbackViewController:(UIViewController *)arg1 willShowIdleViewController:(UIViewController *)arg2 forMediaItem:(id <TVPMediaItem>)arg3 targetCoverFrame:(inout struct CGRect *)arg4;
+- (void)playbackViewController:(UIViewController *)arg1 wantsIdleViewControllerForMediaItem:(id <TVPMediaItem>)arg2 withCompletion:(void (^)(UIViewController *))arg3;
+- (_Bool)playbackViewController:(UIViewController *)arg1 shouldShowIdleViewControllerForMediaItem:(id <TVPMediaItem>)arg2;
 - (void)playbackViewController:(UIViewController *)arg1 controlsForMediaItem:(id <TVPMediaItem>)arg2 completionHandler:(void (^)(NSArray *))arg3;
 - (_Bool)playbackViewControllerProvidesCustomControls:(UIViewController *)arg1;
 - (void)playMediaItemAtIndex:(long long)arg1;

@@ -9,6 +9,7 @@
 @class NSMapTable, NSMutableSet;
 @protocol OS_dispatch_source, SKUIMediaQueryDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaQueryEvaluator : NSObject
 {
     NSMapTable *_cachedFeatureResults;

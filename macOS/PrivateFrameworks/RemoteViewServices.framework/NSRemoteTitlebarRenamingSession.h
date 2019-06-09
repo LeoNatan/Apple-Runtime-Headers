@@ -8,10 +8,11 @@
 
 #import <RemoteViewServices/NSRemoteServiceConnectionDelegate-Protocol.h>
 
-@class NSAccessibilityRemoteUIElement, NSRemoteServiceConnection, NSRemoteWindowController, NSSharedWindowController, NSString, NSTitlebarRenamingURLResolver, NSURL, NSWindow;
+@class NSAccessibilityRemoteUIElement, NSMutableArray, NSRemoteServiceConnection, NSRemoteWindowController, NSSharedWindowController, NSString, NSTitlebarRenamingURLResolver, NSURL, NSWindow;
 
 @interface NSRemoteTitlebarRenamingSession : NSObject <NSRemoteServiceConnectionDelegate>
 {
+    NSMutableArray *_blocksToPerformOnCleanup;
     NSRemoteServiceConnection *_connection;
     NSRemoteWindowController *_renameFieldWindowController;
     NSWindow *_parentWindow;
@@ -32,6 +33,7 @@
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly) NSTitlebarRenamingURLResolver *renameResolver; // @synthesize renameResolver=_renameResolver;
 @property(readonly) unsigned long long editingMode; // @synthesize editingMode=_editingMode;
+- (void).cxx_destruct;
 - (id)description;
 - (void)_accessibilityHandleFocusedUserInterfaceElementChanged:(id)arg1;
 - (void)_accessibilityHandleEnhancedUserInterfaceValueChanged:(id)arg1;
@@ -55,11 +57,10 @@
 - (void)_wakeElementWindow:(id)arg1;
 - (id)_configureElementWindowForRect:(struct CGRect)arg1 withButton:(id)arg2 atOrigin:(struct CGPoint)arg3 hideButton:(BOOL)arg4 withBorderView:(id)arg5;
 - (void)_configureButton:(id)arg1 forHoldingWindow:(id)arg2 atOrigin:(struct CGPoint)arg3;
-- (id)_makeEndpointForWindow:(id *)arg1 controller:(id *)arg2;
+- (id)_makeEndpointForWindow:(CDUnknownBlockType)arg1 controller:(CDUnknownBlockType)arg2;
 - (BOOL)beginWithEditingMode:(unsigned long long)arg1 editingTitle:(id)arg2 editingRange:(struct _NSRange)arg3 selectedRange:(struct _NSRange)arg4;
 - (void)addRect:(struct CGRect)arg1 withKey:(id)arg2 convertToScreen:(BOOL)arg3 toRequest:(id)arg4;
 - (BOOL)_createRemoteConnection;
-- (void)dealloc;
 - (void)_invalidatePBOXTitlebarRenamingSession;
 - (id)initWithWindow:(id)arg1;
 - (BOOL)_endingReasonShouldAllowSuccess:(unsigned long long)arg1;

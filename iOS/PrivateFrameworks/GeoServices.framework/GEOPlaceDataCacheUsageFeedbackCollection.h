@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_cacheFeedbacks;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)cacheFeedbackType;
-@property(retain, nonatomic) NSMutableArray *cacheFeedbacks; // @synthesize cacheFeedbacks=_cacheFeedbacks;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,12 +26,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)cacheFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)cacheFeedbacksCount;
 - (void)addCacheFeedback:(id)arg1;
 - (void)clearCacheFeedbacks;
+@property(retain, nonatomic) NSMutableArray *cacheFeedbacks;
 
 @end
 

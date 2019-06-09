@@ -13,6 +13,7 @@
     ABAccountPersistence *_persistence;
 }
 
+- (void).cxx_destruct;
 - (BOOL)save:(id *)arg1;
 - (id)allPersistentKeysAndValues;
 - (id)primitiveValueForKey:(id)arg1;
@@ -21,7 +22,6 @@
 - (BOOL)isEnabled;
 - (id)debugDescription;
 - (id)description;
-- (void)dealloc;
 - (id)initWithPersistence:(id)arg1;
 - (id)initWithAccount:(id)arg1 persistence:(id)arg2;
 

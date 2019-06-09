@@ -9,6 +9,7 @@
 @class SKUITrendingSearchPage, SKUITrendingSearchView;
 @protocol SKUITrendingSearchPageViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUITrendingSearchPageView : UIView
 {
     id <SKUITrendingSearchPageViewDelegate> _delegate;

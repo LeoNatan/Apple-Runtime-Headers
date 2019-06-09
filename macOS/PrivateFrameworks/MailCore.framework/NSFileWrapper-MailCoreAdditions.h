@@ -19,5 +19,9 @@
 @property(nonatomic) unsigned short finderFlags;
 @property(nonatomic) unsigned int creator;
 @property(nonatomic) unsigned int type;
+@property(readonly, copy, nonatomic) NSData *archivedData;
+- (id)archivedDataWithPartNumber:(id)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)dictionaryRepresentation;
 @end
 

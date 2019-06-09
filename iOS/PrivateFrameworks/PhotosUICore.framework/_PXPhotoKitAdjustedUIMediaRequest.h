@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, PHImageManager, PLEditSource, PLPhotoEditModel, PXPhotoKitEditSourceLoader;
+@class NSError, PHImageManager, PICompositionController, PLEditSource, PXPhotoKitEditSourceLoader;
 @protocol OS_dispatch_queue, PXPhotoKitAdjustedDisplayAsset;
 
 @interface _PXPhotoKitAdjustedUIMediaRequest : NSObject
@@ -19,14 +19,14 @@
     PHImageManager *_imageManager;
     PLEditSource *_editSource;
     NSError *_loadError;
-    PLPhotoEditModel *_baseEditModel;
+    PICompositionController *_baseCompositionController;
     double _progress;
 }
 
 @property(nonatomic) _Bool useCachedRenders; // @synthesize useCachedRenders=_useCachedRenders;
 @property(nonatomic) _Bool delayRenders; // @synthesize delayRenders=_delayRenders;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
-@property(retain, nonatomic) PLPhotoEditModel *baseEditModel; // @synthesize baseEditModel=_baseEditModel;
+@property(retain, nonatomic) PICompositionController *baseCompositionController; // @synthesize baseCompositionController=_baseCompositionController;
 @property(retain, nonatomic) NSError *loadError; // @synthesize loadError=_loadError;
 @property(retain, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 @property(readonly, nonatomic) PHImageManager *imageManager; // @synthesize imageManager=_imageManager;

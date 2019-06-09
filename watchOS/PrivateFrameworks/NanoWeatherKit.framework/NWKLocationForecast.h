@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <NanoWeatherKit/NSCopying-Protocol.h>
+#import <NanoWeatherKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, WFAirQualityConditions, WFLocation, WFWeatherConditions;
+@class NSArray, NSDate, NSString, WFAirQualityConditions, WFLocation, WFWeatherConditions;
 
-@interface NWKLocationForecast : NSObject <NSCopying>
+@interface NWKLocationForecast : NSObject <NSCopying, NSSecureCoding>
 {
     WFLocation *_location;
     WFWeatherConditions *_currentConditions;
@@ -18,14 +19,20 @@
     NSArray *_hourlyConditions;
     NSArray *_dailyConditions;
     unsigned int _token;
+    NSDate *_lastUpdateDate;
     NSDate *_startConditionsDate;
     NSDate *_endConditionsDate;
     NSDate *_expirationDate;
+    NSDate *_now;
 }
 
++ (_Bool)supportsSecureCoding;
++ (double)durationForConditions:(id)arg1 ofType:(unsigned int)arg2;
+@property(retain, nonatomic) NSDate *now; // @synthesize now=_now;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *endConditionsDate; // @synthesize endConditionsDate=_endConditionsDate;
 @property(readonly, nonatomic) NSDate *startConditionsDate; // @synthesize startConditionsDate=_startConditionsDate;
+@property(readonly, nonatomic) NSDate *lastUpdateDate; // @synthesize lastUpdateDate=_lastUpdateDate;
 @property(readonly, nonatomic) unsigned int token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSArray *dailyConditions; // @synthesize dailyConditions=_dailyConditions;
 @property(readonly, nonatomic) NSArray *hourlyConditions; // @synthesize hourlyConditions=_hourlyConditions;
@@ -33,13 +40,29 @@
 @property(readonly, nonatomic) WFWeatherConditions *currentConditions; // @synthesize currentConditions=_currentConditions;
 @property(readonly, nonatomic) WFLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) WFWeatherConditions *nowConditions;
+@property(readonly, nonatomic) NSString *naturalLanguageDescription;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned int)_timeHashForDate:(id)arg1;
+- (unsigned int)_mostFrequentConditionCodeInHourlyForecastRange:(struct _NSRange)arg1;
+- (_Bool)_isDateInDaytime:(id)arg1;
+- (struct _NSRange)_hourlyForecastRangeBetweenStartTimeHash:(unsigned int)arg1 endTimeHash:(unsigned int)arg2;
+- (void)_appendMorningDescriptionToFormatString:(id)arg1 formatArguments:(id)arg2 currentConditionsDescription:(id)arg3 currentTemperature:(id)arg4 forecastedHigh:(id)arg5;
+- (void)_appendEveningDescriptionToFormatString:(id)arg1 formatArguments:(id)arg2 observationRange:(struct _NSRange)arg3 currentConditionsCode:(unsigned int)arg4 currentConditionsDescription:(id)arg5 currentTemperature:(id)arg6 forecastedHigh:(id)arg7 forecastedLow:(id)arg8;
+- (void)_appendEarlyMorningDescriptionToFormatString:(id)arg1 formatArguments:(id)arg2 observationRange:(struct _NSRange)arg3 currentConditionsDescription:(id)arg4 currentTemperature:(id)arg5 forecastedHigh:(id)arg6 forecastedLow:(id)arg7;
+- (void)_appendDayDescriptionToFormatString:(id)arg1 formatArguments:(id)arg2 observationRange:(struct _NSRange)arg3 currentConditionsCode:(unsigned int)arg4 currentConditionsDescription:(id)arg5 currentTemperature:(id)arg6 forecastedHigh:(id)arg7 forecastedLow:(id)arg8;
+- (id)hourlyConditionsForDate:(id)arg1;
 - (id)dailyConditionsForDate:(id)arg1;
+- (void)enumerateHourlyConditionsFrom:(id)arg1 to:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (void)enumerateHourlyConditionsFrom:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateConditionsFrom:(id)arg1 to:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateConditionsFrom:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateConditionsUsingBlock:(CDUnknownBlockType)arg1;
+- (unsigned int)conditionsTypeForConditions:(id)arg1;
 - (id)conditionsForDate:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithLocation:(id)arg1 token:(unsigned int)arg2 currentConditions:(id)arg3 airQualityConditions:(id)arg4 hourlyConditions:(id)arg5 dailyConditions:(id)arg6;
+- (id)initWithLocation:(id)arg1 token:(unsigned int)arg2 updatedAt:(id)arg3 currentConditions:(id)arg4 airQualityConditions:(id)arg5 hourlyConditions:(id)arg6 dailyConditions:(id)arg7;
 
 @end
 

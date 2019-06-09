@@ -10,6 +10,7 @@
 
 @protocol _SFPBSuggestionCardSection <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(nonatomic) int suggestionType;
 @property(copy, nonatomic) NSString *scopedSearchSectionBundleIdentifier;
 @property(nonatomic) BOOL isContact;
 @property(retain, nonatomic) _SFPBRichText *suggestionText;

@@ -9,7 +9,7 @@
 #import <SecurityFoundation/NSCopying-Protocol.h>
 #import <SecurityFoundation/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSString, _SFServiceIdentifier;
+@class NSArray, NSData, NSDate, NSDictionary, NSString, _SFServiceIdentifier;
 
 @interface _SFCredential : NSObject <NSSecureCoding, NSCopying>
 {
@@ -21,6 +21,9 @@
     NSDate *_creationDate;
     NSDate *_modificationDate;
     NSDictionary *_customAttributes;
+    int _keyclass;
+    NSString *_accessGroup;
+    NSData *_changeToken;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -29,6 +32,9 @@
 @property(copy, nonatomic, setter=_setPersistentIdentifier:) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(retain, nonatomic) _SFServiceIdentifier *primaryServiceIdentifier; // @synthesize primaryServiceIdentifier=_primaryServiceIdentifier;
 - (void).cxx_destruct;
+@property(retain, nonatomic, getter=_changeToken, setter=_setChangeToken:) NSData *changeToken;
+@property(retain, nonatomic, getter=_accessGroup, setter=_setAccessGroup:) NSString *accessGroup;
+@property(nonatomic, getter=_keyclass, setter=_setKeyclass:) int keyclass;
 @property(copy, nonatomic) NSDictionary *customAttributes; // @synthesize customAttributes=_customAttributes;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_description;
 @property(copy, nonatomic) NSString *localizedLabel; // @synthesize localizedLabel=_label;

@@ -9,15 +9,15 @@
 @class AVTransitionController, UIColor, UIGestureRecognizer, UITouch, UIView, UIViewController;
 
 @protocol AVTransitionControllerDelegate <NSObject>
+- (void)transitionController:(AVTransitionController *)arg1 animationProgressDidChange:(float)arg2;
 - (void)transitionController:(AVTransitionController *)arg1 transitionWillComplete:(_Bool)arg2;
 - (void)transitionController:(AVTransitionController *)arg1 prepareForFinishingInteractiveTransition:(void (^)(void))arg2;
 - (void)transitionControllerBeginInteractiveDismissalTransition:(AVTransitionController *)arg1;
 - (void)transitionControllerBeginInteractivePresentationTransition:(AVTransitionController *)arg1;
 - (_Bool)transitionControllerCanBeginInteractivePresentationTransition:(AVTransitionController *)arg1;
 - (_Bool)transitionControllerCanBeginInteractiveDismissalTransition:(AVTransitionController *)arg1;
-- (UIColor *)transitionControllerBackgroundColorForInteractivelyTransitioningPresentedViewController:(AVTransitionController *)arg1;
-- (_Bool)transitionControllerCanCreateVideoOnlyWindow:(AVTransitionController *)arg1;
-- (UIViewController *)transitionControllerContentSourceViewController:(AVTransitionController *)arg1;
+- (UIColor *)transitionControllerBackgroundViewBackgroundColor:(AVTransitionController *)arg1;
+- (UIColor *)transitionControllerPresentedViewBackgroundColor:(AVTransitionController *)arg1;
 - (_Bool)transitionController:(AVTransitionController *)arg1 gestureRecognizer:(UIGestureRecognizer *)arg2 shouldReceiveTouch:(UITouch *)arg3;
 - (UIView *)transitionController:(AVTransitionController *)arg1 targetViewForDismissingViewController:(UIViewController *)arg2;
 - (void)transitionController:(AVTransitionController *)arg1 willBeginDismissingViewController:(UIViewController *)arg2;

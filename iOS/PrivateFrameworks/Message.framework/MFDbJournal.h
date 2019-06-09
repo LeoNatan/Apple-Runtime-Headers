@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MFMailboxUid, NSMutableArray, NSString;
+@class MFMailboxUid, NSString;
 
 @interface MFDbJournal : NSObject
 {
@@ -17,23 +17,16 @@
         char __opaque[56];
     } _lock;
     int _fd;
-    NSMutableArray *_journalStatements;
-    NSMutableArray *_onMergeEnvelopeUpdates;
 }
 
-+ (long long)mergeWithLibrary:(id)arg1;
-+ (_Bool)hasEntries;
++ (long long)mergeAllJournalsUsingConnection:(id)arg1;
 + (id)legacyJournal;
-+ (id)journalForMailbox:(id)arg1;
++ (id)_journalForMailbox:(id)arg1;
 + (void)initialize;
-- (_Bool)_markMailboxForReconciliation:(_Bool)arg1 db:(struct sqlite3 *)arg2;
-- (long long)mergeWithLibrary:(id)arg1;
-- (int)_processJournalFile:(id)arg1 db:(struct sqlite3 *)arg2;
-- (void)clear;
-- (_Bool)_writeToDisk:(struct sqlite3 *)arg1;
-- (int)_executeStatements:(id)arg1 db:(struct sqlite3 *)arg2;
-- (int)commit:(struct sqlite3 *)arg1 isProtectedDataAvailable:(_Bool)arg2;
-- (_Bool)append:(const char *)arg1 mergeUpdateStatement:(const char *)arg2;
+- (void).cxx_destruct;
+- (_Bool)_markMailboxForReconciliation:(_Bool)arg1 connection:(id)arg2;
+- (long long)mergeUsingConnection:(id)arg1;
+- (int)_processJournalFile:(id)arg1 connection:(id)arg2;
 - (void)dealloc;
 - (id)initWithMailbox:(id)arg1;
 

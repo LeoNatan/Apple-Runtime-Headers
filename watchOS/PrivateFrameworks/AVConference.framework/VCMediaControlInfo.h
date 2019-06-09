@@ -11,21 +11,25 @@
 __attribute__((visibility("hidden")))
 @interface VCMediaControlInfo : NSObject
 {
-    unsigned char _bitmap;
+    unsigned short _bitmap;
     unsigned long _serializedSize;
     id <VCMediaControlInfoDelegate> _delegate;
+    unsigned char _version;
 }
 
+@property unsigned char version; // @synthesize version=_version;
 @property id <VCMediaControlInfoDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) unsigned long serializedSize; // @synthesize serializedSize=_serializedSize;
 - (void)dispose;
 - (void)invalidate;
 - (long)serializeToBuffer:(char *)arg1 bufferLength:(unsigned long)arg2 blobLength:(unsigned int *)arg3;
+- (long)getInfoUnserialized:(CDStruct_b4442fdd *)arg1 type:(unsigned int)arg2;
 - (long)getInfo:(void *)arg1 bufferLength:(unsigned long)arg2 infoSize:(unsigned int *)arg3 type:(unsigned int)arg4;
 - (_Bool)hasInfoType:(unsigned int)arg1;
+- (long)setInfoUnserialized:(CDStruct_b4442fdd *)arg1 type:(unsigned int)arg2;
 - (long)setInfo:(void *)arg1 size:(unsigned long)arg2 type:(unsigned int)arg3;
-- (long)configureWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_475a354f *)arg3;
-- (id)initWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_475a354f *)arg3;
+- (long)configureWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_39aa150d *)arg3;
+- (id)initWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_39aa150d *)arg3 version:(unsigned char)arg4;
 
 @end
 

@@ -13,13 +13,16 @@
     NSMutableArray *_cachedSpans;
 }
 
-+ (id)_generateCachedSpansFromSpans:(id)arg1;
 + (id)_clampDateRangeForSpans:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (void).cxx_destruct;
 - (_Bool)_rangeCompletelyCoversPeriodBetweenStartDate:(id)arg1 endDate:(id)arg2;
-- (void)_validateCachedSpansIfDebugLoggingIsEnabled;
 - (id)spans;
-- (void)injectSpans:(id)arg1;
+- (void)insertSpans:(id)arg1;
+- (id)deDupSpans:(id)arg1;
+- (id)cachedSpansFromSpans:(id)arg1;
+- (void)sanitizeAndInsertResults:(id)arg1 inRange:(id)arg2;
+- (id)_eliminateOverlapsInResults:(id)arg1;
+- (long long)_currentMaxSpanTypeIn:(id)arg1;
 - (id)gatherFreshlyCachedSpansBetweenStartDate:(id)arg1 endDate:(id)arg2;
 - (id)description;
 - (id)init;

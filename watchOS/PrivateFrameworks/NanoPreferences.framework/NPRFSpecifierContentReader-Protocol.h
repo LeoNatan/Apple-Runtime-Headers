@@ -9,6 +9,10 @@
 @class NPRFPreferenceListController, PSSpecifier;
 
 @protocol NPRFSpecifierContentReader <UITextFieldDelegate>
++ (int)cellStyle;
 - (void)setContentsFromSpecifier:(PSSpecifier *)arg1 controller:(NPRFPreferenceListController *)arg2;
+
+@optional
++ (_Bool)useDefaultSelectionBehavior;
 @end
 

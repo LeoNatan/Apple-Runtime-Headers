@@ -9,40 +9,52 @@
 #import <HealthDaemon/HDAssertionObserver-Protocol.h>
 #import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 #import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
+#import <HealthDaemon/HDPeriodicActivityDelegate-Protocol.h>
 
-@class HDBTLEHeartRateDataCollector, HDDatabaseCoalescedWritePool, HDDemoManager, HDProfile, NSDate, NSMutableArray, NSMutableDictionary, NSString;
+@class HDAudioExposureEventObserver, HDBTLEHeartRateDataCollector, HDDatabaseCoalescedWritePool, HDDemoManager, HDPeriodicActivity, HDProfile, NSDate, NSMutableArray, NSMutableDictionary, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
-@interface HDDataCollectionManager : NSObject <HDDiagnosticObject, HDHealthDaemonReadyObserver, HDAssertionObserver>
+@interface HDDataCollectionManager : NSObject <HDDiagnosticObject, HDHealthDaemonReadyObserver, HDAssertionObserver, HDPeriodicActivityDelegate>
 {
     NSDate *_lastLaunchUpdate;
     NSMutableDictionary *_dataAggregatorsByType;
-    NSMutableArray *_builtinCollectors;
+    HDPeriodicActivity *_periodicUpdateActivity;
     HDDatabaseCoalescedWritePool *_pendingSavePool;
     double unitTest_pendingSaveCoalescingInterval;
     _Bool unitTest_hasSetPendingSaveCoalescingInterval;
+    int _privacyPreferencesNotificationToken;
+    struct os_unfair_lock_s _collectorLock;
+    NSMutableArray *_collectorLock_builtinCollectors;
+    NSMutableDictionary *_collectorLock_dataCollectorsByType;
+    struct os_unfair_lock_s _fakingLock;
     CDUnknownBlockType _unitTest_aggregatorConfigurationChangedHandler;
+    NSSet *_collectibleTypes;
+    HDAudioExposureEventObserver *_audioExposureEventObserver;
     HDProfile *_profile;
-    NSMutableDictionary *_dataCollectorsByType;
     NSMutableDictionary *_observersByType;
     HDBTLEHeartRateDataCollector *_blteHeartRateDataCollector;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_assertionQueue;
     HDDemoManager *_demoManager;
+    NSObject<OS_dispatch_queue> *_dataCollectionQueue;
 }
 
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *dataCollectionQueue; // @synthesize dataCollectionQueue=_dataCollectionQueue;
 @property(retain, nonatomic) HDDemoManager *demoManager; // @synthesize demoManager=_demoManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assertionQueue; // @synthesize assertionQueue=_assertionQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) HDBTLEHeartRateDataCollector *blteHeartRateDataCollector; // @synthesize blteHeartRateDataCollector=_blteHeartRateDataCollector;
 @property(retain, nonatomic) NSMutableDictionary *observersByType; // @synthesize observersByType=_observersByType;
-@property(retain, nonatomic) NSMutableDictionary *dataCollectorsByType; // @synthesize dataCollectorsByType=_dataCollectorsByType;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (id)_dataAggregatorsDiagnosticDescription;
 - (id)_dataCollectorsDiagnosticDescription;
 - (id)_observersDescription;
+- (void)daemonReady:(id)arg1;
+- (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)periodicActivity:(id)arg1 configureXPCActivityCriteria:(id)arg2;
+- (void)unitTest_addCollectibleType:(id)arg1;
 - (void)unitTest_setPendingSaveCoalescingInterval:(double)arg1;
 - (void)unitTest_setAggregatorConfigurationChangeHandler:(CDUnknownBlockType)arg1;
 - (id)unitTest_dataAggregatorConfigurationForType:(id)arg1;
@@ -55,7 +67,7 @@
 - (void)stopFakingData;
 - (void)startFakingWithHKWorkoutActivityType:(unsigned long long)arg1;
 - (void)startFakingDataWithActivityType:(long long)arg1 speed:(id)arg2;
-- (id)_queue_demoManagerCreatingIfNecessary;
+- (id)_fakingLock_demoManagerCreatingIfNecessary;
 - (_Bool)_dataReceived:(id)arg1 provenance:(id)arg2 isDemoData:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)sensorDataArrayReceived:(id)arg1 deviceEntity:(id)arg2 error:(id *)arg3;
 - (void)sensorDataReceived:(id)arg1 deviceEntity:(id)arg2;
@@ -63,28 +75,31 @@
 @property(readonly, nonatomic) _Bool hasAccessToFitnessData;
 - (id)pluginDataCollectors;
 - (void)_queue_setupUnprotectedDataDependantState;
-- (void)daemonReady:(id)arg1;
+- (id)btleHeartRateDataCollector;
+- (void)_queue_createBuiltinCollectors;
+- (void)_registerCollectors:(id)arg1;
 - (void)_queue_addDataCollector:(id)arg1;
 - (void)_queue_alertCollectorsOfTypesWithObservers;
-- (double)_queue_defaultCollectionIntervalForType:(id)arg1;
+- (_Bool)_typeIsCollectible:(id)arg1;
+- (id)collectibleTypes;
 - (void)_queue_adjustDataCollectionForType:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (id)_dataAggregatorConfigurationForCollectorState:(CDStruct_0714bc26)arg1;
-- (CDStruct_0714bc26)_queue_collectionStateForType:(id)arg1;
+- (id)_dataAggregatorConfigurationForCollectorState:(CDStruct_b3408c18)arg1;
+- (void)_queue_updateLegacyDataCollector:(id)arg1 forChangeFromState:(CDStruct_b3408c18)arg2 toState:(CDStruct_b3408c18)arg3 type:(id)arg4;
+- (CDStruct_b3408c18)_queue_collectionStateForType:(id)arg1;
+- (CDStruct_b3408c18)_queue_defaultCollectionStateForType:(id)arg1;
 - (id)_queue_observerMapForType:(id)arg1;
 - (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
 - (id)takeCollectionAssertionWithOwnerIdentifier:(id)arg1 sampleTypes:(id)arg2 observerState:(id)arg3 collectionInterval:(double)arg4;
-- (void)_requestAggregationThroughDate:(id)arg1 type:(id)arg2 mode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_requestAggregationThroughDate:(id)arg1 types:(id)arg2 mode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_requestAggregationThroughDate:(id)arg1 type:(id)arg2 mode:(long long)arg3 freezeSeries:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_requestAggregationThroughDate:(id)arg1 types:(id)arg2 mode:(long long)arg3 freezeSeries:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)requestAggregationForAllTypesThroughDate:(id)arg1 mode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)requestAggregationThroughDate:(id)arg1 types:(id)arg2 mode:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)requestAggregationThroughDate:(id)arg1 types:(id)arg2 mode:(long long)arg3 freezeSeries:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (double)defaultCollectionIntervalForType:(id)arg1;
 - (void)dataCollectionObserver:(id)arg1 didChangeState:(id)arg2;
 - (void)removeDataCollectionObserver:(id)arg1;
 - (void)removeDataCollectionObserver:(id)arg1 type:(id)arg2;
 - (void)addDataCollectionObserver:(id)arg1 type:(id)arg2 collectionInterval:(double)arg3 state:(id)arg4;
 - (void)performSaveWithMaximumLatency:(double)arg1 block:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)btleHeartRateDataCollector;
-- (void)_queue_createBuiltinCollectors;
 - (id)_queue_aggregatorForType:(id)arg1;
 - (id)_newAggregatorForObjectType:(id)arg1;
 - (id)aggregatorForType:(id)arg1;

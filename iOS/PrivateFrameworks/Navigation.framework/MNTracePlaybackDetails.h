@@ -13,13 +13,16 @@
 @interface MNTracePlaybackDetails : PBCodable <NSCopying>
 {
     double _currentPosition;
+    double _pedestrianTraceStartRelativeTimestamp;
     double _traceDuration;
     NSMutableArray *_bookmarks;
     int _eventType;
+    NSString *_pedestrianTracePath;
     unsigned int _recordedBookmarkID;
     NSString *_tracePath;
     struct {
         unsigned int currentPosition:1;
+        unsigned int pedestrianTraceStartRelativeTimestamp:1;
         unsigned int traceDuration:1;
         unsigned int eventType:1;
         unsigned int recordedBookmarkID:1;
@@ -27,6 +30,8 @@
 }
 
 + (Class)bookmarkType;
+@property(nonatomic) double pedestrianTraceStartRelativeTimestamp; // @synthesize pedestrianTraceStartRelativeTimestamp=_pedestrianTraceStartRelativeTimestamp;
+@property(retain, nonatomic) NSString *pedestrianTracePath; // @synthesize pedestrianTracePath=_pedestrianTracePath;
 @property(nonatomic) unsigned int recordedBookmarkID; // @synthesize recordedBookmarkID=_recordedBookmarkID;
 @property(retain, nonatomic) NSMutableArray *bookmarks; // @synthesize bookmarks=_bookmarks;
 @property(nonatomic) double currentPosition; // @synthesize currentPosition=_currentPosition;
@@ -42,6 +47,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPedestrianTraceStartRelativeTimestamp;
+@property(readonly, nonatomic) _Bool hasPedestrianTracePath;
 @property(nonatomic) _Bool hasRecordedBookmarkID;
 - (id)bookmarkAtIndex:(unsigned long long)arg1;
 - (unsigned long long)bookmarksCount;

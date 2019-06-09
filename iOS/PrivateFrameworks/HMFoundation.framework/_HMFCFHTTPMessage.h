@@ -8,6 +8,7 @@
 
 @class NSData, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface _HMFCFHTTPMessage : HMFObject
 {
     struct __CFHTTPMessage *_message;

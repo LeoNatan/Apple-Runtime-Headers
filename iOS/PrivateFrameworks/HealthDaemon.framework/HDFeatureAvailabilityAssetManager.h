@@ -9,12 +9,14 @@
 #import <HealthDaemon/HDPeriodicActivityDelegate-Protocol.h>
 
 @class HDPeriodicActivity, NPSManager, NSString, NSURL, NSUserDefaults, _HKMobileAssetDownloadManager;
+@protocol OS_dispatch_queue;
 
 @interface HDFeatureAvailabilityAssetManager : NSObject <HDPeriodicActivityDelegate>
 {
     NPSManager *_syncManager;
     NSURL *_assetDirectoryOverride;
     double _retryInterval;
+    NSObject<OS_dispatch_queue> *_queue;
     _HKMobileAssetDownloadManager *_downloadManager;
     HDPeriodicActivity *_periodicActivity;
     NSUserDefaults *_unitTest_defaults;
@@ -25,14 +27,15 @@
 @property(retain, nonatomic) NSUserDefaults *unitTest_defaults; // @synthesize unitTest_defaults=_unitTest_defaults;
 @property(retain, nonatomic) HDPeriodicActivity *periodicActivity; // @synthesize periodicActivity=_periodicActivity;
 @property(retain, nonatomic) _HKMobileAssetDownloadManager *downloadManager; // @synthesize downloadManager=_downloadManager;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) double retryInterval; // @synthesize retryInterval=_retryInterval;
 @property(readonly, nonatomic) NSURL *assetDirectoryOverride; // @synthesize assetDirectoryOverride=_assetDirectoryOverride;
 @property(readonly, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
 - (void).cxx_destruct;
 - (void)periodicActivity:(id)arg1 configureXPCActivityCriteria:(id)arg2;
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_downloadDidCompleteWithError:(id)arg1;
-- (void)_downloadDidCompleteWithAssets:(id)arg1;
+- (void)_queue_downloadDidCompleteWithError:(id)arg1;
+- (void)_queue_downloadDidCompleteWithAssets:(id)arg1;
 - (void)_configureDownloadManager;
 - (id)initWithProfile:(id)arg1;
 

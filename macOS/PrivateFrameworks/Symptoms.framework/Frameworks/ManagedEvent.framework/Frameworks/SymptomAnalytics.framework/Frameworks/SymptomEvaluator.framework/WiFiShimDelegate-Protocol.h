@@ -6,11 +6,12 @@
 
 #import <SymptomEvaluator/NSObject-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSSet, NSString;
 
 @protocol WiFiShimDelegate <NSObject>
 
 @optional
+- (void)wifiShim_HintForFallback:(BOOL)arg1 reasons:(NSSet *)arg2;
 - (void)wifiShim_InfraAdminDisable:(NSString *)arg1 bssid:(NSString *)arg2;
 - (void)wifiShim_AWDLLinkUp:(BOOL)arg1;
 - (void)wifiShim_L2TriggerDisconnectEdge:(BOOL)arg1 forInterface:(NSString *)arg2;

@@ -18,7 +18,7 @@
 @property(copy, nonatomic) CDUnknownBlockType rebootAction; // @synthesize rebootAction=_rebootAction;
 - (void).cxx_destruct;
 - (void)_didSelectRestart:(id)arg1;
-- (id)preferredFocusedView;
+- (id)preferredFocusEnvironments;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

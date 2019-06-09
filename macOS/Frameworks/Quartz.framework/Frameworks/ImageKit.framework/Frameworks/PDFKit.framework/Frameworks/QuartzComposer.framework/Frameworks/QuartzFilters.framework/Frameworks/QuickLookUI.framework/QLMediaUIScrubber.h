@@ -35,7 +35,7 @@
 - (struct CGRect)trackRect;
 - (struct CGRect)knobRect;
 - (void)getKnobRect:(struct CGRect *)arg1 trackRect:(struct CGRect *)arg2;
-- (id)_QTUIDrawingOptions;
+- (id)_QLQTUIDrawingOptions;
 - (BOOL)isFlipped;
 - (double)upperBoundForValue:(double)arg1;
 - (double)lowerBoundForValue:(double)arg1;

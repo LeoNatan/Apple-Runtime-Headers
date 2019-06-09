@@ -16,6 +16,7 @@
     NSString *_secondaryExtension;
     unsigned int _wantsHiddenExtension:1;
     unsigned int _isFolder:1;
+    unsigned int _isApplication:1;
     unsigned int _hadNonASCIICharacter:1;
     unsigned int _hadColonInFSName:1;
     unsigned int _hadBiDiControlCharacter:1;
@@ -25,6 +26,7 @@
 + (void)setSuffixForRemoteXCTests:(id)arg1;
 + (id)suffixForRemoteXCTests;
 + (id)displayNameConstructorsWithContext:(struct LSContext *)arg1 node:(id)arg2 error:(id *)arg3;
++ (id)displayNameConstructorWithContext:(struct LSContext *)arg1 bundle:(unsigned int)arg2 bundleClass:(const unsigned int *)arg3 node:(id)arg4 preferredLocalizations:(id)arg5 error:(id *)arg6;
 + (id)displayNameConstructorWithContext:(struct LSContext *)arg1 node:(id)arg2 error:(id *)arg3;
 + (void)setShowAllExtensions:(_Bool)arg1;
 + (_Bool)showAllExtensions;

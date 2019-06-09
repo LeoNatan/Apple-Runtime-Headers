@@ -6,7 +6,7 @@
 
 #import <NeutrinoCore/NUSourceNode.h>
 
-@class NSArray, NSDictionary, NSObject, NSString, NSURL;
+@class NSDictionary, NSObject, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface NUCGImageSourceNode : NUSourceNode
@@ -15,46 +15,43 @@
     BOOL _loaded;
     NSURL *_URL;
     NSString *_UTI;
-    struct CGImageSource *_imageSource;
-    NSDictionary *_imageProperties;
+    struct CGImageSource *_cgImageSource;
+    NSDictionary *_cgImageProperties;
     long long _orientation;
     struct CGColorSpace *_colorSpace;
     long long _alphaInfo;
     long long _componentInfo;
-    NSArray *_depthImagesProperties;
+    NSDictionary *_auxiliaryImagesProperties;
     CDStruct_d58201db _size;
 }
 
-@property(retain) NSArray *depthImagesProperties; // @synthesize depthImagesProperties=_depthImagesProperties;
+@property(retain) NSDictionary *auxiliaryImagesProperties; // @synthesize auxiliaryImagesProperties=_auxiliaryImagesProperties;
 @property long long componentInfo; // @synthesize componentInfo=_componentInfo;
 @property long long alphaInfo; // @synthesize alphaInfo=_alphaInfo;
 @property(retain, nonatomic) struct CGColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property long long orientation; // @synthesize orientation=_orientation;
 @property CDStruct_912cb5d2 size; // @synthesize size=_size;
-@property(retain, nonatomic) NSDictionary *imageProperties; // @synthesize imageProperties=_imageProperties;
-@property(retain, nonatomic) struct CGImageSource *imageSource; // @synthesize imageSource=_imageSource;
+@property(retain, nonatomic) NSDictionary *cgImageProperties; // @synthesize cgImageProperties=_cgImageProperties;
+@property(retain, nonatomic) struct CGImageSource *cgImageSource; // @synthesize cgImageSource=_cgImageSource;
 @property BOOL loaded; // @synthesize loaded=_loaded;
 @property(readonly) NSString *UTI; // @synthesize UTI=_UTI;
 @property(readonly) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (id)_evaluateImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
-- (id)_evaluateImageProperties:(out id *)arg1;
-- (id)_evaluateImageGeometry:(out id *)arg1;
+- (id)_evaluateImageGeometryWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (id)_evaluateRawImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
-- (id)_evaluateImage:(out id *)arg1;
 - (id)_finalizeSourceOptions:(id)arg1 subsampleFactor:(long long)arg2;
 - (void)_addDefaultFinalizedSourceOptions:(id)arg1;
-- (CDStruct_912cb5d2)pixelSize;
+- (CDStruct_912cb5d2)pixelSizeWithSourceOptions:(id)arg1;
 - (BOOL)load:(out id *)arg1;
 - (BOOL)_load:(out id *)arg1;
-- (BOOL)_setDepthInformationFromProperties:(id)arg1 error:(out id *)arg2;
+- (BOOL)_setAuxiliaryImagePropertiesFromCGProperties:(id)arg1 error:(out id *)arg2;
 - (BOOL)_setGeometryFromProperties:(id)arg1 error:(out id *)arg2;
 - (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)preparedNodeWithSourceContainer:(id)arg1 pipelineState:(id)arg2 pipelineSettings:(id)arg3 sourceSettings:(id)arg4 error:(out id *)arg5;
-- (id)resolvedMatteNodeForPipelineState:(id)arg1 error:(out id *)arg2;
-- (id)resolvedDepthNodeForPipelineState:(id)arg1 error:(out id *)arg2;
-- (id)auxiliaryImagePropertiesForDepthType:(long long)arg1;
+- (id)resolvedAuxiliaryImageNodeForPipelineState:(id)arg1 error:(out id *)arg2;
+- (id)auxiliaryImagePropertiesForAuxImageType:(long long)arg1;
 - (BOOL)supportsPipelineState:(id)arg1 error:(out id *)arg2;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
 - (long long)normalizeSubsampleFactor:(long long)arg1;
@@ -62,7 +59,7 @@
 - (void)dealloc;
 - (id)initWithSettings:(id)arg1;
 - (id)initWithURL:(id)arg1 UTI:(id)arg2 settings:(id)arg3;
-- (id)initWithURL:(id)arg1 UTI:(id)arg2;
+- (id)initWithURL:(id)arg1 UTI:(id)arg2 identifier:(id)arg3;
 - (id)initWithImageSource:(struct CGImageSource *)arg1 identifier:(id)arg2;
 - (void)_init;
 

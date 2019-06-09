@@ -11,12 +11,18 @@
     _Bool _sectionHasHeader;
 }
 
-@property _Bool sectionHasHeader; // @synthesize sectionHasHeader=_sectionHasHeader;
+@property(nonatomic) _Bool sectionHasHeader; // @synthesize sectionHasHeader=_sectionHasHeader;
+- (_Bool)isDark;
 - (_Bool)_isUsingOldStyleMultiselection;
 - (_Bool)_insetsBackground;
+- (_Bool)shouldDrawFullLengthSeparatorForSectionLocation:(int)arg1;
 - (void)_setShouldHaveFullLengthBottomSeparator:(_Bool)arg1;
+- (void)_setShouldHaveFullLengthTopSeparator:(_Bool)arg1;
 - (_Bool)_showSeparatorAtTopOfSection;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (_Bool)shouldDrawBackgroundColor;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 
 @end
 

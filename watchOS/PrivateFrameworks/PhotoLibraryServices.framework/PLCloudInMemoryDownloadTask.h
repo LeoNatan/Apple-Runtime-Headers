@@ -19,11 +19,11 @@
 @property(readonly, nonatomic, getter=isCompleted) _Bool completed; // @synthesize completed=_completed;
 @property(retain, nonatomic) CPLResourceTransferTask *transferTask; // @synthesize transferTask=_transferTask;
 @property(readonly, copy, nonatomic) NSString *resourceID; // @synthesize resourceID=_resourceID;
+- (void).cxx_destruct;
 - (void)reportCompletionWithData:(id)arg1 error:(id)arg2;
-@property(readonly, nonatomic) NSArray *taskIDs;
+@property(readonly, nonatomic) __weak NSArray *taskIDs;
 - (void)cancelClientWithTaskID:(id)arg1;
 - (void)addClientWithTaskID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 - (id)initWithResourceID:(id)arg1 taskID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 @end

@@ -6,20 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
 @class UNNotificationResponse;
 
-@interface USSUserNotificationResponseRequest : NSObject <USSXPCEncodable>
+@interface USSUserNotificationResponseRequest : NSObject <NSSecureCoding>
 {
     UNNotificationResponse *_notificationResponse;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)requestForNotificationResponse:(id)arg1;
 @property(retain, nonatomic) UNNotificationResponse *notificationResponse; // @synthesize notificationResponse=_notificationResponse;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithNotificationResponse:(id)arg1;
 
 @end

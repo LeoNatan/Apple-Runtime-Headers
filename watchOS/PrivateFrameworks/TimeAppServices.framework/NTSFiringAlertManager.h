@@ -6,18 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableOrderedSet;
-@protocol NTSAlertable;
+#import <TimeAppServices/NTSAlertHandler-Protocol.h>
 
-@interface NTSFiringAlertManager : NSObject
+@class NSMutableOrderedSet, NSSet, NSString;
+@protocol NTSAlertable, NTSBulletinHandlerDelegate;
+
+@interface NTSFiringAlertManager : NSObject <NTSAlertHandler>
 {
     Class _alertableClass;
+    NSString *_changeNotificationName;
     NSMutableOrderedSet *_alerts;
+    NSSet *_supportedBulletinCategories;
 }
 
 + (id)sharedTimerManager;
 + (id)sharedAlarmManager;
+@property(retain, nonatomic) NSSet *supportedBulletinCategories; // @synthesize supportedBulletinCategories=_supportedBulletinCategories;
 @property(retain, nonatomic) NSMutableOrderedSet *alerts; // @synthesize alerts=_alerts;
+@property(copy, nonatomic) NSString *changeNotificationName; // @synthesize changeNotificationName=_changeNotificationName;
 @property(retain, nonatomic) Class alertableClass; // @synthesize alertableClass=_alertableClass;
 - (void).cxx_destruct;
 - (void)alertProvider:(id)arg1 invalidateBulletinIDs:(id)arg2;
@@ -27,13 +33,15 @@
 - (void)alertProvider:(id)arg1 addBulletin:(id)arg2;
 - (_Bool)alertProvider:(id)arg1 wantsAlertForBulletin:(id)arg2;
 - (_Bool)isBulletinForUs:(id)arg1;
+- (_Bool)_isOrphanedLocalNotificationBulletin:(id)arg1;
+- (void)_removeOrphanedLocalNotificationBulletin:(id)arg1 alertProvider:(id)arg2;
 - (id)firingAlerts;
 - (void)clearBulletinForFiringAlert:(id)arg1 withBulletinActionBlock:(CDUnknownBlockType)arg2;
-- (void)removeOrphanedLocalNotificationBulletin:(id)arg1 alertProvider:(id)arg2;
 - (void)removeFiringAlert:(id)arg1;
 - (void)dismissFiringAlert:(id)arg1;
 - (void)repeatFiringAlert:(id)arg1;
 - (void)snoozeFiringAlert:(id)arg1;
+- (_Bool)shouldShowAlert:(id)arg1;
 - (void)_sendResponse:(id)arg1;
 - (void)_clearBulletin:(id)arg1 alertProvider:(id)arg2;
 @property(readonly, nonatomic) id <NTSAlertable> nextFiringAlert;
@@ -41,14 +49,21 @@
 - (void)_removeAlert:(id)arg1;
 - (void)_postChangeNotification;
 - (void)addAlert:(id)arg1;
+- (id)_alertWithBulletinID:(id)arg1;
 - (void)removeAlertWithBulletinID:(id)arg1;
 @property(readonly, nonatomic) int numFiringAlerts;
 - (void)alertsRemoved:(id)arg1;
 - (void)dealloc;
 - (void)setAlertProviderDelegate:(id)arg1;
 - (id)alertProviderDelegate;
-- (id)description;
-- (id)_initWithAlertableClass:(Class)arg1;
+@property(readonly, copy) NSString *description;
+- (id)_initWithAlertableClass:(Class)arg1 changeNotificationName:(id)arg2 removalNotificationName:(id)arg3 supportedBulletinCategories:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <NTSBulletinHandlerDelegate> delegate;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

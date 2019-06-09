@@ -27,9 +27,11 @@
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)_setUserInfoProperty:(id)arg1 forKey:(id)arg2;
 - (id)postMetricsWithBagContract:(id)arg1;
 - (id)performActionsWithContract:(id)arg1 account:(id)arg2;
+- (void)_setUserInfoProperty:(id)arg1 forKey:(id)arg2;
+- (id)postMetricsWithBag:(id)arg1;
+- (id)performActionsWithBag:(id)arg1 account:(id)arg2;
 @property(retain, nonatomic) NSMutableDictionary *userInfo;
 @property(nonatomic) _Bool requiresFollowUpUI;
 @property(retain, nonatomic) NSURLRequest *request;

@@ -19,14 +19,14 @@ __attribute__((visibility("hidden")))
     NSTextField *_label;
     NSImageView *_imageView;
     BOOL _isHighlighted;
-    unsigned long long _alignment;
+    long long _alignment;
 }
 
 + (id)keyPathsForValuesInvalidatingLayout;
 + (id)keyPathsForValuesInvalidatingDisplay;
 @property struct CGSize requiredSize; // @synthesize requiredSize=_requiredSize;
 @property(retain) NSTableViewRowAction *rowAction; // @synthesize rowAction=_rowAction;
-@property unsigned long long alignment; // @synthesize alignment=_alignment;
+@property long long alignment; // @synthesize alignment=_alignment;
 @property(getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_isHighlighted;
 @property(copy) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 - (BOOL)accessibilityPerformPress;

@@ -218,8 +218,10 @@
 - (void)didReceiveMemoryWarning;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)selectCardWithUniqueID:(id)arg1 showDiff:(_Bool)arg2 showServiceMode:(_Bool)arg3 actionType:(unsigned int)arg4 animated:(_Bool)arg5;
 - (void)selectCardWithUniqueID:(id)arg1 showDiff:(_Bool)arg2 showServiceMode:(_Bool)arg3 animated:(_Bool)arg4;
 - (void)selectCardWithUniqueID:(id)arg1 showDiff:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)selectCardWithUniqueID:(id)arg1 actionType:(unsigned int)arg2 animated:(_Bool)arg3;
 - (void)dealloc;
 - (id)initWithGroupsController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

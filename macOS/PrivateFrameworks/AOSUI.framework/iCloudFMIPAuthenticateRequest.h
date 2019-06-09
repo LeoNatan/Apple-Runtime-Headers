@@ -14,6 +14,7 @@
 }
 
 + (Class)responseClass;
+- (void).cxx_destruct;
 - (id)urlRequestWithPassword:(id)arg1;
 - (id)initWithAccount:(id)arg1;
 

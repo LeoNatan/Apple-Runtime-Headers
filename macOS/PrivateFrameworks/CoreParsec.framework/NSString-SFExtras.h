@@ -7,10 +7,19 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (SFExtras)
++ (id)parsec_stringByBase64EncodingData:(id)arg1;
 - (int)sf_asColumnAlignment;
 - (int)sf_asImageAlignment;
 - (int)sf_asButtonAlignment;
 - (int)sf_asTextAlignment;
 - (int)sf_asResultPlacement;
+- (int)sf_cardSectionType;
+- (BOOL)parsec_caseInsensitiveContainsString:(id)arg1;
+- (id)parsec_base64DecodedData;
+- (BOOL)parsec_hasLocalizedCaseInsensitivePrefix:(id)arg1;
+- (BOOL)parsec_hasCaseInsensitiveSuffix:(id)arg1;
+- (BOOL)parsec_hasCaseInsensitivePrefix:(id)arg1;
+- (BOOL)parsec_isCaseInsensitiveEqualToString:(id)arg1;
+- (BOOL)parsec_hasPrefix:(id)arg1;
 @end
 

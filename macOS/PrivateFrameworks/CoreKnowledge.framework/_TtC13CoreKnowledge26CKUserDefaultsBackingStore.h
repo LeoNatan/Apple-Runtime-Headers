@@ -4,15 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreKnowledge/CKAbstractBackingStore.h>
+#import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtC13CoreKnowledge26CKUserDefaultsBackingStore : CKAbstractBackingStore
+@interface _TtC13CoreKnowledge26CKUserDefaultsBackingStore : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: kv
 }
-
-- (void).cxx_destruct;
-- (id)init;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSHashTable, NSMapTable, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIVerticalInfoListCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView>
 {
     NSMapTable *_imageViewToImageResourceCacheKey;

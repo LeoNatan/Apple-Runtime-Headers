@@ -27,6 +27,8 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)_storeAccountFromLegacyStoreAccount:(id)arg1 client:(id)arg2;
++ (id)_storeAccountFromACAccount:(id)arg1 client:(id)arg2;
++ (id)_acAccountFromStoreAccount:(id)arg1 client:(id)arg2;
 @property(readonly) NSString *credit; // @synthesize credit=_credit;
 @property(readonly) NSString *lastName; // @synthesize lastName=_lastName;
 @property(readonly) BOOL isManagedStudent; // @synthesize isManagedStudent=_isManagedStudent;

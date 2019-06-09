@@ -11,19 +11,24 @@
 
 @interface ACAccountStore : NSObject
 {
-    NSString *_clientBundleID;
     NSObject<OS_dispatch_queue> *_replyQueue;
     id _daemonAccountStoreDidChangeObserver;
     NSMutableDictionary *_accountCache;
     ACRemoteAccountStoreSession *_remoteAccountStoreSession;
+    ACRemoteAccountStoreSession *_longLivedRemoteAccountStoreSession;
+    NSString *_effectiveBundleID;
 }
 
 + (_Bool)canSaveAccountsOfAccountTypeIdentifier:(id)arg1;
 + (long long)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
 + (int)accountsWithAccountTypeIdentifierExist:(id)arg1;
-@property(retain, nonatomic) ACRemoteAccountStoreSession *remoteAccountStoreSession; // @synthesize remoteAccountStoreSession=_remoteAccountStoreSession;
-@property(readonly) NSString *effectiveBundleID; // @synthesize effectiveBundleID=_clientBundleID;
++ (void)_setDefaultStore:(id)arg1;
++ (id)_defaultStore;
+@property(readonly) NSString *effectiveBundleID; // @synthesize effectiveBundleID=_effectiveBundleID;
+@property(readonly, nonatomic) ACRemoteAccountStoreSession *longLivedRemoteAccountStoreSession; // @synthesize longLivedRemoteAccountStoreSession=_longLivedRemoteAccountStoreSession;
+@property(readonly, nonatomic) ACRemoteAccountStoreSession *remoteAccountStoreSession; // @synthesize remoteAccountStoreSession=_remoteAccountStoreSession;
 - (void).cxx_destruct;
+- (void)scheduleBackupIfNonexistent:(CDUnknownBlockType)arg1;
 - (void)reportTelemetryForLandmarkEvent:(CDUnknownBlockType)arg1;
 - (id)_createSMTPAccountForServerAccount:(id)arg1;
 - (void)_removeObsoleteOSXServerAccountForiOS:(id)arg1;

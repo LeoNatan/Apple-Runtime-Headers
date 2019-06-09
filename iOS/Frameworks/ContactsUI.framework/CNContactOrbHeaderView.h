@@ -16,8 +16,8 @@
     NSString *_alternateName;
     NSString *_message;
     CNContactPhotoView *_photoView;
-    NSMutableArray *_headerConstraints;
     NSArray *_contacts;
+    NSMutableArray *_headerConstraints;
     NSDictionary *_nameTextAttributes;
     NSDictionary *_taglineTextAttributes;
     UILabel *_nameLabel;
@@ -36,8 +36,8 @@
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property(copy, nonatomic) NSDictionary *taglineTextAttributes; // @synthesize taglineTextAttributes=_taglineTextAttributes;
 @property(copy, nonatomic) NSDictionary *nameTextAttributes; // @synthesize nameTextAttributes=_nameTextAttributes;
-@property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(retain, nonatomic) NSMutableArray *headerConstraints; // @synthesize headerConstraints=_headerConstraints;
+@property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 @property(nonatomic) _Bool alwaysShowsMonogram; // @synthesize alwaysShowsMonogram=_alwaysShowsMonogram;
 @property(readonly, nonatomic) CNContactPhotoView *photoView; // @synthesize photoView=_photoView;
 @property(nonatomic) _Bool centersPhotoAndLabels; // @synthesize centersPhotoAndLabels=_centersPhotoAndLabels;

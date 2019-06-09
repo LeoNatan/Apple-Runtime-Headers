@@ -6,6 +6,7 @@
 
 #import <CoreWLANKit/APFormatter.h>
 
+__attribute__((visibility("hidden")))
 @interface MinMaxIntFormatter : APFormatter
 {
     int _minimum;

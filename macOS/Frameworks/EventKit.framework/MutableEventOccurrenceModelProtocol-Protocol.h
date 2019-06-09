@@ -16,7 +16,6 @@
 @property(retain, nonatomic) NSString *suggestionInfoOpaqueKey;
 @property(nonatomic) unsigned long long suggestionInfoChangedFields;
 @property(nonatomic) BOOL suggestionInfoAcknowledged;
-@property(copy, nonatomic) NSString *birthdayTitle;
 @property(copy, nonatomic) NSString *sliceParentID;
 @property(nonatomic) NSURL *conferenceURL;
 @property(nonatomic) unsigned long long junkStatus;
@@ -33,5 +32,6 @@
 @property(nonatomic) int availabilityEnum;
 @property(copy, nonatomic) NSTimeZone *endTimeZoneObject;
 @property(copy, nonatomic) NSDate *endDateUnadjustedFromUTC;
+@property(copy, nonatomic) NSString *lunarCalendarString;
 @end
 

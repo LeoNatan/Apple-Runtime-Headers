@@ -6,12 +6,12 @@
 
 #import <IdleTimerServices/NSObject-Protocol.h>
 
-@class NSString;
-@protocol FBSServiceFacilityClientHandle;
+@class BSProcessHandle, ITIdleTimerConfiguration, NSString;
 
 @protocol ITIdleTimerStateServerDelegate <NSObject>
-- (void)clientDidDisconnect:(id <FBSServiceFacilityClientHandle>)arg1;
-- (void)client:(id <FBSServiceFacilityClientHandle>)arg1 setIdleTimerDisabled:(_Bool)arg2 forReason:(NSString *)arg3;
+- (void)clientDidDisconnect:(BSProcessHandle *)arg1;
+- (void)removeIdleTimerConfigurationFromProcess:(BSProcessHandle *)arg1 forReason:(NSString *)arg2;
+- (_Bool)addIdleTimerConfiguration:(ITIdleTimerConfiguration *)arg1 fromProcess:(BSProcessHandle *)arg2 forReason:(NSString *)arg3;
 - (_Bool)isIdleTimerServiceAvailable;
 @end
 

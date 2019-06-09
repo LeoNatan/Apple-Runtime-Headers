@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -109,7 +110,6 @@ __attribute__((visibility("hidden")))
 - (void)setLineSpacing:(id)arg1;
 - (id)lineSpacing;
 - (_Bool)hasLineSpacing;
-- (void)dealloc;
 - (id)initWithDefaults;
 - (id)init;
 

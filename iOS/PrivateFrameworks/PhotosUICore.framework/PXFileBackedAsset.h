@@ -10,11 +10,13 @@
 #import <PhotosUICore/PXLayoutItemInput-Protocol.h>
 #import <PhotosUICore/PXMetadataAsset-Protocol.h>
 
-@class CLLocation, NSDate, NSString, NSURL, _PXFileBackedAssetMetadata;
+@class CLLocation, NSDate, NSString, NSURL, PXFileBackedAssetDescription, _PXFileBackedAssetMetadata;
 
 @interface PXFileBackedAsset : NSObject <PXDisplayAsset, PXLayoutItemInput, PXMetadataAsset>
 {
     _PXFileBackedAssetMetadata *_metadata;
+    PXFileBackedAssetDescription *_description;
+    NSString *_fileBackedUUID;
     NSURL *_url;
     NSString *_uniformTypeIdentifier;
 }
@@ -31,15 +33,27 @@
 @property(readonly, nonatomic) _Bool canPlayLoopingVideo;
 - (void)_loadFileMetadataIfNeeded;
 @property(readonly, nonatomic) CLLocation *location;
+@property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) NSDate *creationDate;
 - (struct CGRect)bestCropRectForAspectRatio:(double)arg1;
 @property(readonly, nonatomic) double aspectRatio;
+@property(readonly, nonatomic) struct CGPoint positionOffset;
+@property(readonly, nonatomic) struct CGAffineTransform transform;
 @property(readonly, nonatomic) struct CGRect acceptableCropRect;
 @property(readonly, nonatomic) struct CGRect preferredCropRect;
 @property(readonly, nonatomic) struct CGSize size;
+- (double)weightUsingCriterion:(long long)arg1;
 @property(readonly, nonatomic) double weight;
+@property(readonly, nonatomic) NSString *uuid;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToFileBackedAsset:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (long long)isContentEqualTo:(id)arg1;
+@property(readonly, nonatomic) Class defaultImageProviderClass;
+@property(readonly, nonatomic) unsigned long long thumbnailIndex;
+@property(readonly, nonatomic) unsigned long long pixelHeight;
+@property(readonly, nonatomic) unsigned long long pixelWidth;
+@property(readonly, nonatomic) _Bool isEligibleForAutoPlayback;
 @property(readonly, nonatomic) _Bool isInCloud;
 @property(readonly, nonatomic) _Bool representsBurst;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
@@ -47,18 +61,22 @@
 @property(readonly, nonatomic) long long playbackStyle;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) long long mediaType;
+@property(readonly, copy) NSString *description;
 - (id)initWithURL:(id)arg1;
+- (id)initWithDescription:(id)arg1;
 - (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic) unsigned long long burstSelectionTypes;
 @property(readonly, nonatomic) _Bool cloudIsDeletable;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) double duration;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) NSDate *importDate;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) unsigned long long thumbnailVersion;
 
 @end
 

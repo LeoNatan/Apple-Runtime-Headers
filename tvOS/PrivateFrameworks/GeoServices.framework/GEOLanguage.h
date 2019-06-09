@@ -13,14 +13,14 @@
 @interface GEOLanguage : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    unsigned int _identifier;
     NSMutableArray *_languages;
+    unsigned int _identifier;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)languageType;
-@property(retain, nonatomic) NSMutableArray *languages; // @synthesize languages=_languages;
-@property(nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,12 +29,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)languageAtIndex:(unsigned long long)arg1;
 - (unsigned long long)languagesCount;
 - (void)addLanguage:(id)arg1;
 - (void)clearLanguages;
+@property(retain, nonatomic) NSMutableArray *languages;
+@property(nonatomic) unsigned int identifier;
 
 @end
 

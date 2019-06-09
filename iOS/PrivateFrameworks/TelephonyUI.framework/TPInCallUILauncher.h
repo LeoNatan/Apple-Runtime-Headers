@@ -6,12 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@interface TPInCallUILauncher : NSObject
+#import <TelephonyUI/SBSRemoteAlertHandleObserver-Protocol.h>
+
+@class NSString;
+
+@interface TPInCallUILauncher : NSObject <SBSRemoteAlertHandleObserver>
 {
+    CDUnknownBlockType _launchSOSCompletion;
 }
 
 + (id)TPRemoteAlertActivationReasonForTPInCallUILaunchReason:(long long)arg1;
-+ (void)launchInCallUIForReason:(long long)arg1 completion:(CDUnknownBlockType)arg2;
++ (id)sharedInstance;
+@property(copy, nonatomic) CDUnknownBlockType launchSOSCompletion; // @synthesize launchSOSCompletion=_launchSOSCompletion;
+- (void).cxx_destruct;
+- (void)remoteAlertHandleDidActivate:(id)arg1;
+- (void)launchInCallUIForReason:(long long)arg1 withRequestURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

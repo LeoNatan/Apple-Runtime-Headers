@@ -13,7 +13,7 @@
 @interface HKSampleQuery : HKQuery <HKSampleQueryClientInterface>
 {
     unsigned int _limit;
-    _Bool _includeTimeZones;
+    _Bool _includeAutomaticTimeZones;
     NSArray *_sortDescriptors;
     NSMutableArray *_samplesPendingDelivery;
     CDUnknownBlockType _resultHandler;
@@ -22,8 +22,8 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
-@property(nonatomic) _Bool includeTimeZones; // @synthesize includeTimeZones=_includeTimeZones;
-@property(readonly, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
+@property(nonatomic) _Bool includeAutomaticTimeZones; // @synthesize includeAutomaticTimeZones=_includeAutomaticTimeZones;
+@property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 - (void).cxx_destruct;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_validate;

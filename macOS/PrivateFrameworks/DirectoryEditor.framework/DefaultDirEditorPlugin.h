@@ -8,6 +8,7 @@
 
 @class DEDragReceiverView, NSButton, NSData, NSDictionary, NSImageView, NSMutableArray, NSMutableDictionary, NSOutlineView, NSPanel, NSPopUpButton, NSSegmentedControl, NSSplitView, NSString, NSTabView, NSTextField, NSTextView, NSView;
 
+__attribute__((visibility("hidden")))
 @interface DefaultDirEditorPlugin : DirEditorPlugin
 {
     NSOutlineView *_outlineView;

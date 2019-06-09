@@ -31,6 +31,8 @@
 @property Class networkAgentClass; // @synthesize networkAgentClass=_networkAgentClass;
 - (void).cxx_destruct;
 @property(nonatomic) unsigned long long useCount;
+- (BOOL)assignResolvedEndpoints:(id)arg1 toClient:(id)arg2;
+- (BOOL)assignDiscoveredEndpoints:(id)arg1 toClient:(id)arg2;
 - (BOOL)assignNexusData:(id)arg1 toClient:(id)arg2;
 - (BOOL)removeNetworkAgentFromInterfaceNamed:(id)arg1;
 - (BOOL)addNetworkAgentToInterfaceNamed:(id)arg1;
@@ -44,6 +46,7 @@
 - (int)dupRegistrationFileDescriptor;
 @property(readonly, nonatomic, getter=isRegistered) BOOL registered;
 - (void)dealloc;
+- (id)initWithNetworkAgentClass:(Class)arg1 queue:(id)arg2;
 - (id)initWithNetworkAgentClass:(Class)arg1;
 
 @end

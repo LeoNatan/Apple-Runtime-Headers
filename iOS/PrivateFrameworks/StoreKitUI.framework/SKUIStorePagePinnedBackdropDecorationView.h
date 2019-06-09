@@ -8,6 +8,7 @@
 
 @class UIView, _UIBackdropView, _UIBackdropViewSettings;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStorePagePinnedBackdropDecorationView : UICollectionReusableView
 {
     _UIBackdropView *_backdropView;

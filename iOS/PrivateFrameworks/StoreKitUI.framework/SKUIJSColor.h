@@ -8,6 +8,7 @@
 
 #import <StoreKitUI/SKUIJSColor-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSColor : IKJSObject <SKUIJSColor>
 {
     unsigned long long _red;

@@ -27,7 +27,7 @@
 @property(readonly, nonatomic) NSArray *objectArray; // @synthesize objectArray=_objectArray;
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1 errorOut:(id *)arg2;
-- (id)newSerializedCollection;
+- (id)newSerializedCollection:(BOOL)arg1;
 - (id)initWithSerializeableObjectArray:(id)arg1;
 
 @end

@@ -16,7 +16,6 @@
     CDUnknownBlockType _responseHandler;
 }
 
-+ (id)activeDSID;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain, nonatomic) MPModelPerson *person; // @synthesize person=_person;
 @property(nonatomic) _Bool unfollow; // @synthesize unfollow=_unfollow;

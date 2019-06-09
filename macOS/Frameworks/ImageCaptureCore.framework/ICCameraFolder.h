@@ -6,13 +6,16 @@
 
 #import <ImageCaptureCore/ICCameraItem.h>
 
-@class NSArray;
+@class NSArray, NSMutableArray;
 
 @interface ICCameraFolder : ICCameraItem
 {
-    id _folderProperties;
+    struct os_unfair_lock_s _folderMediaLock;
+    NSMutableArray *_files;
+    NSMutableArray *_folders;
 }
 
+@property struct os_unfair_lock_s folderMediaLock; // @synthesize folderMediaLock=_folderMediaLock;
 - (void)sendDidRemoveFolderItemMessageToDelegateOfCameraDevice:(id)arg1;
 - (void)sendDidAddFolderItemMessageToDelegateOfCameraDevice:(id)arg1;
 - (id)metadataIfAvailable;
@@ -23,12 +26,10 @@
 - (void)deleteFileWithID:(unsigned long long)arg1;
 - (void)deleteFolderWithID:(unsigned long long)arg1;
 - (BOOL)hasThumbnail;
-- (id)folders;
-- (id)files;
-- (id)modificationDate;
-- (id)creationDate;
+@property(retain) NSMutableArray *folders; // @synthesize folders=_folders;
+@property(retain) NSMutableArray *files; // @synthesize files=_files;
 - (id)valueForUndefinedKey:(id)arg1;
-@property(readonly) NSArray *contents;
+@property(readonly, nonatomic) NSArray *contents;
 - (void)deleteFolder:(id)arg1;
 - (void)deleteFile:(id)arg1;
 - (void)deleteItem:(id)arg1;

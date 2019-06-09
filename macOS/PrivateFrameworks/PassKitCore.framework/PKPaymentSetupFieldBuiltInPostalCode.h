@@ -6,15 +6,10 @@
 
 #import <PassKitCore/PKPaymentSetupFieldText.h>
 
-@class NSCharacterSet;
-
 @interface PKPaymentSetupFieldBuiltInPostalCode : PKPaymentSetupFieldText
 {
-    NSCharacterSet *_allowedCharacters;
 }
 
-- (void).cxx_destruct;
-- (id)allowedCharacters;
 - (BOOL)isBuiltIn;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2;
 

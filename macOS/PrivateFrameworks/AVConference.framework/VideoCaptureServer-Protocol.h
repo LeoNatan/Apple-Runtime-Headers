@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol VideoCaptureServer
+- (void)setCameraZoomAvailable:(BOOL)arg1;
 - (void)handleCaptureEvent:(NSString *)arg1 subType:(NSString *)arg2;
 - (void)handleCaptureEvent:(NSString *)arg1;
 - (void)onCaptureFramerateChange:(unsigned int)arg1;

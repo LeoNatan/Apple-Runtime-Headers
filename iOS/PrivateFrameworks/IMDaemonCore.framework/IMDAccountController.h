@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary;
+@class NSArray, NSDictionary, NSMutableDictionary, NSSet;
 
 @interface IMDAccountController : NSObject
 {
     NSMutableDictionary *_accounts;
     NSMutableDictionary *_activeAccounts;
+    NSSet *_operationalAccountsCache;
     _Bool _isLoading;
     _Bool _isFirstLoad;
 }
@@ -19,6 +20,9 @@
 + (id)sharedAccountController;
 + (id)sharedInstance;
 @property(readonly, nonatomic) _Bool isLoading; // @synthesize isLoading=_isLoading;
+- (_Bool)_isOperationalForAccount:(id)arg1;
+- (id)_operationalAccounts;
+- (void)_rebuildOperationalAccountsCache;
 - (void)_checkPowerAssertion;
 - (id)anySessionForServiceName:(id)arg1;
 - (id)sessionForAccount:(id)arg1;

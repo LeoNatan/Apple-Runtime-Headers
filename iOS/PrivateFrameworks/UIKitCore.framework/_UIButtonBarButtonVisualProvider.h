@@ -8,13 +8,14 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class UIView;
+@class UIView, _UIButtonBarButton;
 
-__attribute__((visibility("hidden")))
 @interface _UIButtonBarButtonVisualProvider : NSObject <NSCopying>
 {
+    _UIButtonBarButton *_button;
 }
 
+- (void)resetButtonHasHighlighted;
 - (struct UIEdgeInsets)buttonAlignmentRectInsets:(id)arg1;
 - (struct CGSize)buttonIntrinsicContentSize:(id)arg1;
 - (void)button:(id)arg1 traitCollectionDidChange:(id)arg2;
@@ -22,7 +23,9 @@ __attribute__((visibility("hidden")))
 - (void)buttonWillMoveToWindow:(id)arg1;
 - (void)buttonLayoutSubviews:(id)arg1 baseImplementation:(CDUnknownBlockType)arg2;
 - (void)updateButton:(id)arg1 toUseButtonShapes:(_Bool)arg2;
+- (void)updateButtonAppearance:(id)arg1;
 - (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
+- (void)updateButton:(id)arg1 forFocusedState:(_Bool)arg2;
 - (void)updateButton:(id)arg1 forEnabledState:(_Bool)arg2;
 - (void)updateButton:(id)arg1 forHighlightedState:(_Bool)arg2;
 - (void)updateButton:(id)arg1 forSelectedState:(_Bool)arg2;

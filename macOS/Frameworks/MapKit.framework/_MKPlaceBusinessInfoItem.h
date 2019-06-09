@@ -8,6 +8,7 @@
 
 @class NSAttributedString, NSColor, NSFont, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _MKPlaceBusinessInfoItem : NSObject
 {
     NSString *_displayString;

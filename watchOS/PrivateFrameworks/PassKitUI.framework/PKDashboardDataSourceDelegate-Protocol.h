@@ -13,6 +13,7 @@
 - (void)reloadSections:(NSIndexSet *)arg1;
 - (void)deleteSections:(NSIndexSet *)arg1;
 - (void)insertSections:(NSIndexSet *)arg1;
+- (void)performBatchUpdates:(void (^)(void))arg1 completion:(void (^)(_Bool))arg2;
 - (void)itemChanged:(id <PKDashboardItem>)arg1 atIndexPath:(NSIndexPath *)arg2;
 - (void)contentIsLoaded;
 @end

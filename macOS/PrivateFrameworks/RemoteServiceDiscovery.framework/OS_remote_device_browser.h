@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _callback;
 }
 
-@property(copy) CDUnknownBlockType callback; // @synthesize callback=_callback;
-@property _Bool canceled; // @synthesize canceled=_canceled;
-@property(retain) NSObject<OS_dispatch_queue> *cbq; // @synthesize cbq=_cbq;
-@property(retain) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-@property unsigned int device_type; // @synthesize device_type=_device_type;
+@property(copy, nonatomic) CDUnknownBlockType callback; // @synthesize callback=_callback;
+@property(nonatomic) _Bool canceled; // @synthesize canceled=_canceled;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *cbq; // @synthesize cbq=_cbq;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
+@property(nonatomic) unsigned int device_type; // @synthesize device_type=_device_type;
 - (void).cxx_destruct;
 - (void)dealloc;
 

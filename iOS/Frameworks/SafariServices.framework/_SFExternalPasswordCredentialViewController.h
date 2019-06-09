@@ -24,7 +24,7 @@
 - (void)presentExternalPasswordCredentialRemoteViewController:(id)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_sceneDidEnterBackground:(id)arg1;
 - (id)init;
 - (void)autoFillWithExternalCredential:(id)arg1;
 

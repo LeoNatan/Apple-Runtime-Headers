@@ -13,14 +13,14 @@
     int _origin;
     unsigned int _timestamp;
     struct {
-        unsigned int origin:1;
-        unsigned int timestamp:1;
-    } _has;
+        unsigned int has_origin:1;
+        unsigned int has_timestamp:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (int)defaultOrigin;
 + (id)context;
-@property(nonatomic) unsigned int timestamp; // @synthesize timestamp=_timestamp;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -28,13 +28,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsOrigin:(id)arg1;
 - (id)originAsString:(int)arg1;
 @property(nonatomic) BOOL hasOrigin;
-@property(nonatomic) int origin; // @synthesize origin=_origin;
+@property(nonatomic) int origin;
 @property(nonatomic) BOOL hasTimestamp;
+@property(nonatomic) unsigned int timestamp;
 - (id)simpleDescription;
 - (BOOL)isStaleComparedToContext:(id)arg1;
 - (long long)compare:(id)arg1;

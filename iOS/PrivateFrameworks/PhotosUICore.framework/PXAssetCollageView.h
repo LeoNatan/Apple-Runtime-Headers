@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSMutableDictionary, NSMutableIndexSet, PXRoundedCornerOverlayView, PXUIMediaProvider, UIColor;
+@class NSMutableDictionary, NSMutableIndexSet, PXLayoutPerformerOutput, PXRoundedCornerOverlayView, PXUIMediaProvider, UIColor;
 
 @interface PXAssetCollageView : UIView
 {
@@ -18,13 +18,17 @@
     double _cornerRadius;
     UIColor *_cornerBackgroundColor;
     NSMutableDictionary *_assets;
+    NSMutableDictionary *_assetViews;
     PXRoundedCornerOverlayView *_roundedCornerOverlayView;
     NSMutableIndexSet *_hiddenItemIndexes;
+    PXLayoutPerformerOutput *_layoutOutput;
 }
 
 + (long long)maximumNumberOfItems;
+@property(readonly, nonatomic) PXLayoutPerformerOutput *layoutOutput; // @synthesize layoutOutput=_layoutOutput;
 @property(readonly, nonatomic) NSMutableIndexSet *hiddenItemIndexes; // @synthesize hiddenItemIndexes=_hiddenItemIndexes;
 @property(readonly, nonatomic) PXRoundedCornerOverlayView *roundedCornerOverlayView; // @synthesize roundedCornerOverlayView=_roundedCornerOverlayView;
+@property(readonly, nonatomic) NSMutableDictionary *assetViews; // @synthesize assetViews=_assetViews;
 @property(readonly, nonatomic) NSMutableDictionary *assets; // @synthesize assets=_assets;
 @property(nonatomic) _Bool allowAnimatedImagePlayback; // @synthesize allowAnimatedImagePlayback=_allowAnimatedImagePlayback;
 @property(nonatomic) _Bool allowLoopPlayback; // @synthesize allowLoopPlayback=_allowLoopPlayback;
@@ -50,6 +54,7 @@
 - (void)setAsset:(id)arg1 forItemAtIndex:(long long)arg2;
 @property(readonly, nonatomic) long long numberOfItems;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) _Bool portraitBias;
 - (id)initWithFrame:(struct CGRect)arg1 mediaProvider:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

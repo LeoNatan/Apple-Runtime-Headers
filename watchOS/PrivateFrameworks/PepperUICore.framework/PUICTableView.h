@@ -112,6 +112,7 @@
 - (void)_observeScrollViewDidScroll:(id)arg1;
 - (void)didMoveToWindow;
 - (unsigned int)_totalCellCount;
+- (_Bool)ellipticScrollingEnabledForCell:(id)arg1;
 - (id)_ellipticParametersForCell:(id)arg1;
 - (struct CATransform3D)ellipticScrollingTransformForCell:(id)arg1;
 - (float)ellipticScrollingAlphaForCell:(id)arg1;
@@ -138,6 +139,7 @@
 - (id)ellipticScrollingLayoutProvider:(id)arg1 visibleItemForIdentifier:(id)arg2;
 - (id)ellipticScrollingLayoutProvider:(id)arg1 visibleItemIdentifiersWithIndexOffset:(int *)arg2;
 - (float)scrollOffsetForEllipticScrollingLayoutProvider:(id)arg1;
+- (void)_resetAndRecalculateEllipticScrollingParametersOnVisibleCells;
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)_performTableAlteringOperation:(CDUnknownBlockType)arg1;

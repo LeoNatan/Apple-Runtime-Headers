@@ -10,6 +10,8 @@
 {
 }
 
++ (double)getRemoteMediaStallTimeout;
++ (double)getThresholdForSwitch:(unsigned int)arg1;
 + (double)getLongTermValueWeightC;
 + (double)getShortTermValueWeightC;
 + (double)getAdjustmentFactorC;
@@ -41,7 +43,6 @@
 + (void)setClientOptions:(id)arg1;
 + (void)setServerAddresses:(id)arg1;
 + (void)setAddress:(id)arg1 forService:(id)arg2;
-+ (void)initialize;
 - (void)dealloc;
 - (id)init;
 

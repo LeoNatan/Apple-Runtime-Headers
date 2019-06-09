@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIStatusBarBadgeView *badgeView; // @synthesize badgeView=_badgeView;
 - (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
+- (void)_create_badgeView;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
-- (id)_stringForCellularType:(long long)arg1;
 
 @end
 

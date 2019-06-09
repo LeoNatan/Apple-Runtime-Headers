@@ -17,6 +17,7 @@
     _Bool _isConvertingTables;
     _Bool _shouldMergeNoteAfterScrolling;
     _Bool _isAutoListInsertionDisabled;
+    _Bool _fullTextStylingRefreshScheduled;
     ICNote *_note;
     ICAttachmentInsertionController *_attachmentInsertionController;
     NSMutableDictionary *_trackedToDoParagraphs;
@@ -31,6 +32,7 @@
 + (double)extraWidthNeededForStyle:(id)arg1 range:(struct _NSRange)arg2 attributedString:(id)arg3 textView:(struct UITextView *)arg4;
 + (id)removeBeginningListStyleIfNecessaryForAttributedString:(id)arg1 fromTextStorage:(id)arg2 andRange:(struct _NSRange)arg3;
 + (_Bool)shouldRetainFirstListStyleForFilteredAttributedSubstring:(id)arg1 fromRange:(struct _NSRange)arg2;
+@property(nonatomic) _Bool fullTextStylingRefreshScheduled; // @synthesize fullTextStylingRefreshScheduled=_fullTextStylingRefreshScheduled;
 @property(nonatomic) _Bool isAutoListInsertionDisabled; // @synthesize isAutoListInsertionDisabled=_isAutoListInsertionDisabled;
 @property(nonatomic) _Bool shouldMergeNoteAfterScrolling; // @synthesize shouldMergeNoteAfterScrolling=_shouldMergeNoteAfterScrolling;
 @property(nonatomic) unsigned long long pauseMergeForScrollingCounter; // @synthesize pauseMergeForScrollingCounter=_pauseMergeForScrollingCounter;
@@ -48,6 +50,8 @@
 - (void)fixModelAttributesInTextStorage:(id)arg1 inRange:(struct _NSRange)arg2;
 - (struct _NSRange)numberListsInAttributedString:(id)arg1 inRange:(struct _NSRange)arg2;
 - (void)uniqueParagraphStylesInTextStorage:(id)arg1 inRange:(struct _NSRange)arg2;
+- (_Bool)shouldHighlightStyleAsLink:(unsigned int)arg1;
+- (void)styleDataDetectorTypesForPreviewInTextStorage:(id)arg1;
 - (void)styleListsAndIndentsInAttributedString:(id)arg1 inRange:(struct _NSRange)arg2;
 - (void)updateTrackedToDoParagraphsAfterIndex:(unsigned long long)arg1 byDelta:(long long)arg2 excludingSeenParagraphs:(id)arg3;
 - (void)createToDoItemForCharacterRange:(struct _NSRange)arg1 paragraphStyle:(id)arg2 textStorage:(id)arg3;
@@ -55,14 +59,17 @@
 - (void)updateTrackedAttributesInTextStorage:(id)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3;
 - (struct _NSRange)addExtraLinesIfNeededToTextStorage:(id)arg1 editedRange:(struct _NSRange)arg2 actualLengthIncrease:(long long *)arg3;
 - (void)trackExtraNewLineRangeIfNecessary:(struct _NSRange)arg1;
+- (void)setNote:(id)arg1 stylingTextUsingSeparateTextStorageForRendering:(_Bool)arg2 withLayoutManager:(id)arg3 firstVisibleCharLocation:(unsigned long long)arg4;
 - (void)setNote:(id)arg1 stylingTextUsingSeparateTextStorageForRendering:(_Bool)arg2 withLayoutManager:(id)arg3;
 - (void)refreshTextStylingForTextStorage:(id)arg1 withTextController:(id)arg2;
+- (void)targetedRefreshTextStylingForTextStorage:(id)arg1 withTextController:(id)arg2 firstVisibleCharLocation:(unsigned long long)arg3;
 - (_Bool)removeListStyleForDeletingEmptyParagrahIfNecessaryForTextView:(struct UITextView *)arg1 textStorage:(id)arg2 paragraphRange:(struct _NSRange)arg3 andLocation:(unsigned long long)arg4;
 - (_Bool)deleteWordBackwardForSpecialCasesInTextView:(struct UITextView *)arg1;
 - (_Bool)removeListStyleBeforeDeletingParagraphContentIfNecessaryForTextView:(struct UITextView *)arg1 textStorage:(id)arg2 rangeToBeDeleted:(struct _NSRange)arg3 blockBeforeEndEditing:(CDUnknownBlockType)arg4;
 - (_Bool)deleteBackwardForSpecialCasesInTextView:(struct UITextView *)arg1;
 - (void)setParagraphWritingDirectionInRange:(struct _NSRange)arg1 toDirection:(long long)arg2 inTextView:(struct UITextView *)arg3;
 - (void)insertedText:(id)arg1 replacementRange:(struct _NSRange)arg2 inTextView:(struct UITextView *)arg3;
+- (void)setSelectionToIndex:(unsigned long long)arg1 onTextView:(struct UITextView *)arg2;
 - (_Bool)insertedSpaceInTextView:(struct UITextView *)arg1 replacementRange:(struct _NSRange)arg2;
 - (_Bool)insertNewlineForSpecialCasesInTextView:(struct UITextView *)arg1;
 - (void)insertNewlineAtCharacterIndex:(unsigned long long)arg1 textStorage:(id)arg2;
@@ -86,7 +93,7 @@
 - (_Bool)isTodoDoneRange:(struct _NSRange)arg1 inTextStorage:(id)arg2;
 - (void)refreshTypingAttributesForTextView:(struct UITextView *)arg1 textStorage:(id)arg2;
 - (void)refreshTypingAttributesForAllTextViewsOfTextStorage:(id)arg1;
-- (void)setDone:(_Bool)arg1 range:(struct _NSRange)arg2 inTextStorage:(id)arg3;
+- (_Bool)setDone:(_Bool)arg1 range:(struct _NSRange)arg2 inTextStorage:(id)arg3;
 - (void)setTypingTextStyle:(unsigned int)arg1 textView:(struct UITextView *)arg2;
 - (void)setTypingAttributesForUndo:(id)arg1;
 - (long long)setTextStyle:(unsigned int)arg1 removeExtraStyling:(_Bool)arg2 range:(struct _NSRange)arg3 inTextStorage:(id)arg4 inTextView:(struct UITextView *)arg5;
@@ -101,6 +108,7 @@
 - (id)todoForRange:(struct _NSRange)arg1 inTextStorage:(id)arg2;
 - (void)indentRange:(struct _NSRange)arg1 byAmount:(long long)arg2 inTextStorage:(id)arg3 textView:(struct UITextView *)arg4;
 - (id)indentParagraphStyle:(id)arg1 byAmount:(long long)arg2;
+- (_Bool)canIndentTextView:(struct UITextView *)arg1 byDelta:(long long)arg2 forRanges:(id)arg3;
 - (_Bool)canIndentTextView:(struct UITextView *)arg1 byDelta:(long long)arg2;
 - (_Bool)attachmentsExistInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
 - (long long)writingDirectionForRange:(struct _NSRange)arg1 inTextView:(struct UITextView *)arg2 inTextStorage:(id)arg3;
@@ -114,6 +122,24 @@
 - (id)addTableAttachmentWithNSTextTable:(id)arg1 attributedString:(id)arg2 filterPastedAttributes:(_Bool)arg3 isReadingSelectionFromPasteboard:(_Bool)arg4;
 - (void)workAroundSageTables:(id)arg1;
 - (void)convertNSTablesToICTables:(id)arg1 pasteboardTypes:(id)arg2 filterPastedAttributes:(_Bool)arg3 isReadingSelectionFromPasteboard:(_Bool)arg4;
+- (id)analyticsInfoForChecklistAtIndex:(unsigned long long)arg1 textView:(struct UITextView *)arg2;
+- (id)paragraphInfoForCharacterAtIndex:(unsigned long long)arg1 includeChildren:(_Bool)arg2 textStorage:(id)arg3;
+- (_Bool)containsAnyTodoItemMarkedCompleted:(_Bool)arg1 inRange:(struct _NSRange)arg2 textStorage:(id)arg3;
+- (id)rangeForChecklistItemInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
+- (id)trackedParagraphsForTodosInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
+- (id)rangesForTodosInRange:(struct _NSRange)arg1 markedCompleted:(_Bool)arg2 textStorage:(id)arg3;
+- (struct _NSRange)expandedRangeForContiguousTodosForRange:(struct _NSRange)arg1 textView:(struct UITextView *)arg2;
+- (id)sortTrackedParagraphsMovingCheckedItemsToBottom:(id)arg1;
+- (id)createTreeFromTrackedParagraphs:(id)arg1;
+- (_Bool)moveCheckedChecklistsToBottomInTextView:(struct UITextView *)arg1 forRange:(struct _NSRange)arg2;
+- (_Bool)canMoveCheckedChecklistsToBottomInTextView:(struct UITextView *)arg1 forRange:(struct _NSRange)arg2;
+- (id)validAdjacentParagraphInfoFromParagraphInfo:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct UITextView *)arg3;
+- (id)adjacentTrackedParagraphFromTrackedParagraph:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct UITextView *)arg3;
+- (_Bool)canMoveListItemInDirection:(unsigned long long)arg1 inTextView:(struct UITextView *)arg2 forRange:(struct _NSRange)arg3;
+- (_Bool)moveListItemInDirection:(unsigned long long)arg1 inTextView:(struct UITextView *)arg2 forRange:(struct _NSRange)arg3;
+- (void)removeChecklistItemsMarkedCompleted:(_Bool)arg1 inTextView:(struct UITextView *)arg2 forRanges:(id)arg3;
+- (_Bool)checklistItemExistsMarkedCompleted:(_Bool)arg1 inTextView:(struct UITextView *)arg2 forRanges:(id)arg3;
+- (void)markAllChecklistItemsCompleted:(_Bool)arg1 inTextview:(struct UITextView *)arg2 forSelectedRanges:(id)arg3;
 
 @end
 

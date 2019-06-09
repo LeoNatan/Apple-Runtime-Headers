@@ -32,6 +32,8 @@
 - (id)restoreFromBackup:(id)arg1 forDevice:(id)arg2;
 - (void)restoreFromBackup:(id)arg1 forDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)listBackupsWithSynchronousCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)listBackupsOfType:(unsigned long long)arg1 timeout:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)listBackupsWithTimeout:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)listBackupsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)connection;
 - (void)dealloc;

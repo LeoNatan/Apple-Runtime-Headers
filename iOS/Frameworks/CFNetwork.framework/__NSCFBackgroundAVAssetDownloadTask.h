@@ -8,7 +8,6 @@
 
 @class AVMediaSelection, AVURLAsset, NSArray, NSData, NSDictionary, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFBackgroundAVAssetDownloadTask : __NSCFBackgroundSessionTask
 {
     unsigned long long _downloadToken;
@@ -46,8 +45,8 @@ __attribute__((visibility("hidden")))
 - (void)_onqueue_didLoadTimeRange:(id)arg1 totalTimeRangesLoaded:(id)arg2 timeRangeExpectedToLoad:(id)arg3;
 - (void)_onqueue_didReceiveProgressUpdateWithTotalBytesWritten:(long long)arg1 totalBytesExpectedToWrite:(long long)arg2;
 - (void)dealloc;
-- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned long long)arg4;
-- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 URLAsset:(id)arg3 URL:(id)arg4 destinationURL:(id)arg5 temporaryDestinationURL:(id)arg6 assetTitle:(id)arg7 assetArtworkData:(id)arg8 ident:(unsigned long long)arg9;
+- (id)initWithTaskInfo:(id)arg1 taskGroup:(id)arg2 ident:(unsigned long long)arg3;
+- (id)initWithTaskGroup:(id)arg1 URLAsset:(id)arg2 URL:(id)arg3 destinationURL:(id)arg4 temporaryDestinationURL:(id)arg5 assetTitle:(id)arg6 assetArtworkData:(id)arg7 ident:(unsigned long long)arg8;
 
 @end
 

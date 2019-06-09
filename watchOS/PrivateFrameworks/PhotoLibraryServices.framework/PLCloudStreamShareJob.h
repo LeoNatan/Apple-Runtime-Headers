@@ -24,14 +24,14 @@
 @property(retain, nonatomic) NSString *albumName; // @synthesize albumName=_albumName;
 @property(retain, nonatomic) NSString *albumCloudGUID; // @synthesize albumCloudGUID=_albumCloudGUID;
 @property(retain, nonatomic) NSArray *mediaSources; // @synthesize mediaSources=_mediaSources;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)executeDaemonOperation;
 - (id)description;
 - (_Bool)shouldArchiveXPCToDisk;
 - (long long)daemonOperation;
 - (void)run;
 - (void)runDaemonSide;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)addInfosForRecipients:(id)arg1;
 

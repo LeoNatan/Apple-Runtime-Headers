@@ -12,22 +12,22 @@
 
 @interface ADActionViewController : UIViewController <ADActionViewControllerInterface>
 {
-    ADAdSpace *_adSpace;
     _Bool _readyForPresentation;
+    ADAdSpace *_adSpace;
 }
 
 + (void)cancelRequestForActionViewControllerForAdSpaceController:(id)arg1;
 + (void)requestActionViewControllerForAdSpace:(id)arg1;
+@property(nonatomic) __weak ADAdSpace *adSpace; // @synthesize adSpace=_adSpace;
+- (void).cxx_destruct;
 - (void)setReadyForPresentation:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool readyForPresentation;
 - (void)_remote_viewControllerCreatedForAdSpaceControllerWithIdentifier:(id)arg1;
-@property(nonatomic) __weak ADAdSpace *adSpace;
 - (void)clientApplicationCancelledAction;
 - (void)clientApplicationDidEnterBackground;
 - (void)didSetAdSpace;
 - (void)dismiss;
 - (void)loadView;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

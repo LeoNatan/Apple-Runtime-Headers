@@ -8,6 +8,7 @@
 
 @protocol CRKSettingsUIVisibilityProvider;
 
+__attribute__((visibility("hidden")))
 @interface PSUIClassroomVisibilityArbitrator : NSObject
 {
     unsigned long long _visibilityState;

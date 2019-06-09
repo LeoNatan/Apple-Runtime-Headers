@@ -15,17 +15,21 @@
     unsigned long long _style;
 }
 
+- (void).cxx_destruct;
+- (_Bool)_needsToLayoutTitleLabel;
 - (id)_subtitleTextColor;
 - (double)_subtitleFontSizeWhenMini:(_Bool)arg1;
 - (double)_titleFontSizeWhenMini:(_Bool)arg1;
 - (double)_topPaddingForTitleWhenMini:(_Bool)arg1;
 - (double)_verticalOffsetForSubtitleWhenMini:(_Bool)arg1;
+- (void)_updateHeightForCurrentTraits;
+- (void)didMoveToWindow;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)_updateTrailingBarButtonItemsAlpha;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)_contentInsetsWithExclusionRects:(id)arg1 wantsUniformHorizontalInsets:(_Bool)arg2;
 - (void)contentDidChange;
 - (void)layoutMarginsDidChange;
-- (long long)_preferredAlignment;
 - (void)setSubtitle:(id)arg1 withStyle:(unsigned long long)arg2;
 @property(copy, nonatomic) NSString *subtitle;
 @property(copy, nonatomic) NSString *title;

@@ -12,9 +12,11 @@
 - (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
 - (void)passbookUIServiceDidLaunch:(void (^)(void))arg1;
 - (void)scheduleAutomaticPresentationAvailableNotificationForPassWithUniqueIdentifier:(NSString *)arg1 handler:(void (^)(_Bool))arg2;
+- (void)unscheduleDeviceCheckIn;
+- (void)scheduleDeviceCheckInWithStartTimeOffset:(double)arg1;
 - (void)scheduleSetupReminders:(void (^)(void))arg1;
 - (void)consistencyCheckWithHandler:(void (^)(void))arg1;
-- (void)simulatePaymentPushWithHandler:(void (^)(void))arg1;
+- (void)simulatePaymentPushTopic:(NSString *)arg1 handler:(void (^)(void))arg2;
 - (void)outstandingExpressTransactionState:(void (^)(PKExpressTransactionState *))arg1;
 - (void)transitStateWithPassUniqueIdentifier:(NSString *)arg1 paymentApplication:(PKPaymentApplication *)arg2 handler:(void (^)(PKTransitAppletState *))arg3;
 - (void)simulateDefaultExpressTransitPassIdentifier:(NSString *)arg1 forExpressMode:(NSString *)arg2 handler:(void (^)(void))arg3;

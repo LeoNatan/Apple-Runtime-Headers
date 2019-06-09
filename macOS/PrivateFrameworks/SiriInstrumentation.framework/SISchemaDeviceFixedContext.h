@@ -6,42 +6,43 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaDeviceFixedContext-Protocol.h>
 
-@class NSString;
+@class NSData, NSString;
 
-@interface SISchemaDeviceFixedContext : PBCodable <NSCopying>
+@interface SISchemaDeviceFixedContext : PBCodable <SISchemaDeviceFixedContext, NSSecureCoding>
 {
     NSString *_deviceType;
-    NSString *_siriDeviceID;
+    NSString *_systemBuild;
     NSString *_siriInputLanguage;
     NSString *_siriVoiceLanguage;
-    NSString *_systemBuild;
     NSString *_systemLocale;
+    NSString *_siriDeviceID;
+    NSString *_speechID;
 }
 
-@property(retain, nonatomic) NSString *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
-@property(retain, nonatomic) NSString *systemLocale; // @synthesize systemLocale=_systemLocale;
-@property(retain, nonatomic) NSString *siriVoiceLanguage; // @synthesize siriVoiceLanguage=_siriVoiceLanguage;
-@property(retain, nonatomic) NSString *siriInputLanguage; // @synthesize siriInputLanguage=_siriInputLanguage;
-@property(retain, nonatomic) NSString *systemBuild; // @synthesize systemBuild=_systemBuild;
-@property(retain, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
+@property(copy, nonatomic) NSString *speechID; // @synthesize speechID=_speechID;
+@property(copy, nonatomic) NSString *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
+@property(copy, nonatomic) NSString *systemLocale; // @synthesize systemLocale=_systemLocale;
+@property(copy, nonatomic) NSString *siriVoiceLanguage; // @synthesize siriVoiceLanguage=_siriVoiceLanguage;
+@property(copy, nonatomic) NSString *siriInputLanguage; // @synthesize siriInputLanguage=_siriInputLanguage;
+@property(copy, nonatomic) NSString *systemBuild; // @synthesize systemBuild=_systemBuild;
+@property(copy, nonatomic) NSString *deviceType; // @synthesize deviceType=_deviceType;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasSiriDeviceID;
-@property(readonly, nonatomic) BOOL hasSystemLocale;
-@property(readonly, nonatomic) BOOL hasSiriVoiceLanguage;
-@property(readonly, nonatomic) BOOL hasSiriInputLanguage;
-@property(readonly, nonatomic) BOOL hasSystemBuild;
-@property(readonly, nonatomic) BOOL hasDeviceType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

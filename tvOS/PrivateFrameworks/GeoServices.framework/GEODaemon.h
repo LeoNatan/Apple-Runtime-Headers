@@ -30,6 +30,7 @@
 - (void)_handleNewConnection:(id)arg1;
 - (id)_createPeerForConnection:(id)arg1;
 - (id)_createListenerWithQueue:(id)arg1 onPort:(const char *)arg2;
+- (void)start;
 - (id)initWithPort:(const char *)arg1;
 - (id)init;
 

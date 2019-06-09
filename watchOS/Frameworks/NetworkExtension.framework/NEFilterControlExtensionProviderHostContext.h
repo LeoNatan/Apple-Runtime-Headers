@@ -10,18 +10,13 @@
 #import <NetworkExtension/NEFilterControlExtensionProviderProtocol-Protocol.h>
 
 @class NSString;
-@protocol NEFilterControlExtensionProviderHostDelegate;
 
 @interface NEFilterControlExtensionProviderHostContext : NEFilterExtensionProviderHostContext <NEFilterControlExtensionProviderProtocol, NEFilterControlExtensionProviderHostProtocol>
 {
-    id <NEFilterControlExtensionProviderHostDelegate> _control_delegate;
 }
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property __weak id <NEFilterControlExtensionProviderHostDelegate> control_delegate; // @synthesize control_delegate=_control_delegate;
-- (void).cxx_destruct;
-- (void)startedWithError:(id)arg1;
 - (void)provideURLAppendStringMap:(id)arg1;
 - (void)provideRemediationMap:(id)arg1;
 - (void)notifyRulesChanged;

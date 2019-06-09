@@ -17,6 +17,7 @@
     NSSet *_alertSuppressionContexts;
     NSString *_alternateActionLabel;
     _Bool _dismissAutomatically;
+    _Bool _dismissAutomaticallyForCarPlay;
     _Bool _overridesQuietMode;
     _Bool _overridesDowntime;
     _Bool _alertsWhenLocked;
@@ -31,9 +32,9 @@
     _Bool _canTurnOnDisplay;
     _Bool _requestsFullScreenPresentation;
     _Bool _hideClearActionInList;
-    unsigned long long _messageNumberOfLines;
-    _Bool _prefersDarkAppearance;
+    _Bool _numberOfLinesInfinite;
     _Bool _preemptsPresentedNotification;
+    _Bool _preemptsSTAR;
     _Bool _revealsAdditionalContentOnPresentation;
     _Bool _suppressesTitleWhenLocked;
     _Bool _suppressesSubtitleWhenLocked;
@@ -43,8 +44,14 @@
     _Bool _preventsAutomaticLock;
     _Bool _revealsAdditionalContentIfNoDefaultAction;
     _Bool _lauchUsingSiriForCarPlayDefaultAction;
+    _Bool _allowActionsForCarPlay;
+    _Bool _playMediaWhenRaised;
+    _Bool _hideCloseActionForCarPlay;
 }
 
+@property(readonly, nonatomic) _Bool hideCloseActionForCarPlay; // @synthesize hideCloseActionForCarPlay=_hideCloseActionForCarPlay;
+@property(readonly, nonatomic) _Bool playMediaWhenRaised; // @synthesize playMediaWhenRaised=_playMediaWhenRaised;
+@property(readonly, nonatomic) _Bool allowActionsForCarPlay; // @synthesize allowActionsForCarPlay=_allowActionsForCarPlay;
 @property(readonly, nonatomic) _Bool lauchUsingSiriForCarPlayDefaultAction; // @synthesize lauchUsingSiriForCarPlayDefaultAction=_lauchUsingSiriForCarPlayDefaultAction;
 @property(readonly, nonatomic) _Bool revealsAdditionalContentIfNoDefaultAction; // @synthesize revealsAdditionalContentIfNoDefaultAction=_revealsAdditionalContentIfNoDefaultAction;
 @property(readonly, nonatomic) _Bool preventsAutomaticLock; // @synthesize preventsAutomaticLock=_preventsAutomaticLock;
@@ -54,9 +61,9 @@
 @property(readonly, nonatomic) _Bool suppressesSubtitleWhenLocked; // @synthesize suppressesSubtitleWhenLocked=_suppressesSubtitleWhenLocked;
 @property(readonly, nonatomic) _Bool suppressesTitleWhenLocked; // @synthesize suppressesTitleWhenLocked=_suppressesTitleWhenLocked;
 @property(readonly, nonatomic) _Bool revealsAdditionalContentOnPresentation; // @synthesize revealsAdditionalContentOnPresentation=_revealsAdditionalContentOnPresentation;
+@property(readonly, nonatomic) _Bool preemptsSTAR; // @synthesize preemptsSTAR=_preemptsSTAR;
 @property(readonly, nonatomic) _Bool preemptsPresentedNotification; // @synthesize preemptsPresentedNotification=_preemptsPresentedNotification;
-@property(readonly, nonatomic) _Bool prefersDarkAppearance; // @synthesize prefersDarkAppearance=_prefersDarkAppearance;
-@property(readonly, nonatomic) unsigned long long messageNumberOfLines; // @synthesize messageNumberOfLines=_messageNumberOfLines;
+@property(readonly, nonatomic, getter=isNumberOfLinesInfinite) _Bool numberOfLinesInfinite; // @synthesize numberOfLinesInfinite=_numberOfLinesInfinite;
 @property(readonly, nonatomic) _Bool hideClearActionInList; // @synthesize hideClearActionInList=_hideClearActionInList;
 @property(readonly, nonatomic) _Bool overridesPocketMode; // @synthesize overridesPocketMode=_overridesPocketMode;
 @property(readonly, nonatomic) _Bool silencedByMenuButtonPress; // @synthesize silencedByMenuButtonPress=_silencedByMenuButtonPress;
@@ -71,6 +78,7 @@
 @property(readonly, nonatomic) _Bool alertsWhenLocked; // @synthesize alertsWhenLocked=_alertsWhenLocked;
 @property(readonly, nonatomic) _Bool overridesDowntime; // @synthesize overridesDowntime=_overridesDowntime;
 @property(readonly, nonatomic) _Bool overridesQuietMode; // @synthesize overridesQuietMode=_overridesQuietMode;
+@property(readonly, nonatomic) _Bool dismissAutomaticallyForCarPlay; // @synthesize dismissAutomaticallyForCarPlay=_dismissAutomaticallyForCarPlay;
 @property(readonly, nonatomic) _Bool dismissAutomatically; // @synthesize dismissAutomatically=_dismissAutomatically;
 @property(readonly, copy, nonatomic) NSString *alternateActionLabel; // @synthesize alternateActionLabel=_alternateActionLabel;
 @property(readonly, copy, nonatomic) NSSet *alertSuppressionContexts; // @synthesize alertSuppressionContexts=_alertSuppressionContexts;

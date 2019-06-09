@@ -35,6 +35,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_unitStringForCodedValueCollection:(id)arg1;
 - (void)_assertValueType;
 - (void)_assertValueClass:(Class)arg1;
 - (unsigned long long)hash;

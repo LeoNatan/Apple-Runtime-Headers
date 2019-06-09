@@ -6,14 +6,13 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSArray, NSButton, NSPanel, NSTimer, NSTouchBarItem, NSView;
+@class NSArray, NSButton, NSTimer, NSTouchBarItem, NSView;
 @protocol NSTextInputClient;
 
 __attribute__((visibility("hidden")))
 @interface NSCandidateListViewController : NSViewController
 {
     NSButton *_button;
-    NSPanel *_panel;
     id _leftCandidate;
     id _middleCandidate;
     id _rightCandidate;
@@ -48,6 +47,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)standardWidth;
++ (id)sharedPanel:(BOOL)arg1;
 - (void)stopTrackingInSegmentType:(long long)arg1 index:(unsigned long long)arg2;
 - (void)continueTrackingInSegmentType:(long long)arg1 index:(unsigned long long)arg2;
 - (void)startTrackingInSegmentType:(long long)arg1 index:(unsigned long long)arg2;

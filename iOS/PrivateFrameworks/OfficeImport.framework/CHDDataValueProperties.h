@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)dataValueProperties;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setMarker:(id)arg1;
 - (id)marker;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)setDataLabel:(id)arg1;
 - (id)dataLabel;
 - (long long)key;
-- (void)dealloc;
 - (id)shallowCopyWithIndex:(unsigned long long)arg1;
 - (id)init;
 

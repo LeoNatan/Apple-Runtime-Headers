@@ -15,6 +15,7 @@
 - (void)updateDynamicApplicationShortcutItems:(id)arg1;
 - (void)fetchDynamicApplicationShortcutItemsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateDynamicApplicationShortcutItems:(id)arg1 forBundleIdentifier:(id)arg2;
+- (id)applicationShortcutItemsOfTypes:(unsigned int)arg1 forBundleIdentifier:(id)arg2;
 - (void)fetchApplicationShortcutItemsOfTypes:(unsigned int)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 
 @end

@@ -144,6 +144,7 @@
 - (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (BOOL)shouldInvalidateLayoutForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
+- (id)layoutAttributesForNextItemInDirection:(struct CGPoint)arg1 fromIndexPath:(id)arg2 constrainedToRect:(struct CGRect)arg3;
 - (id)layoutAttributesForInterItemGapBeforeIndexPath:(id)arg1;
 - (id)layoutAttributesForDropTargetAtPoint:(struct CGPoint)arg1;
 - (id)layoutAttributesForInterSectionGapAtPoint:(struct CGPoint)arg1;

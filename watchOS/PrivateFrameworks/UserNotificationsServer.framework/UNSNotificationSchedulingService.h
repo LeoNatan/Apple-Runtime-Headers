@@ -22,12 +22,11 @@
 - (void).cxx_destruct;
 - (id)_queue_clientForBundleIdentifier:(id)arg1;
 - (void)_queue_removeClientForBundleIdentifier:(id)arg1;
-- (id)_queue_addClientForNotificationSourceDescription:(id)arg1;
+- (id)_queue_addClientForBundleIdentifier:(id)arg1;
 - (void)_queue_timeDidChangeSignificantly;
 - (void)_queue_localeDidChange;
 - (void)_queue_applicationStateDidRestore;
 - (void)_queue_notificationSourcesDidUninstall:(id)arg1;
-- (void)_queue_notificationSourcesDidInstall:(id)arg1;
 - (void)_queue_applicationsDidDenyNotificationSettings:(id)arg1;
 - (void)_queue_applicationsDidAuthorizeNotificationSettings:(id)arg1;
 - (id)_queue_undeliveredNotificationRequestsForBundleIdentifier:(id)arg1;
@@ -41,7 +40,6 @@
 - (void)localeDidChange;
 - (void)applicationStateDidRestore;
 - (void)notificationSourcesDidUninstall:(id)arg1;
-- (void)notificationSourcesDidInstall:(id)arg1;
 - (void)applicationsDidDenyNotificationSettings:(id)arg1;
 - (void)applicationsDidAuthorizeNotificationSettings:(id)arg1;
 - (id)undeliveredNotificationRecordsForBundleIdentifier:(id)arg1;

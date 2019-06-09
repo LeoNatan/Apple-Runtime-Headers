@@ -12,7 +12,7 @@
 @interface NetworkPerformanceFeed : NSObject
 {
     AnalyticsWorkspace *workspace;
-    NSObject<OS_dispatch_queue> *concQueue;
+    NSObject<OS_dispatch_queue> *internalQueue;
     NSObject<OS_dispatch_queue> *callerQueue;
     NetworkInterfaceUtils *networkInterfaceUtils;
     BOOL activeDaemonRegardlessPrimaryInterface;

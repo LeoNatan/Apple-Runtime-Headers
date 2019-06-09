@@ -6,15 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class PPXPCClientHelper;
+#import <PersonalizationPortrait/PPClientStore-Protocol.h>
+#import <PersonalizationPortrait/PPFeedbackAccepting-Protocol.h>
 
-@interface PPQuickTypeBroker : NSObject
+@class NSString, PPClientFeedbackHelper, PPXPCClientHelper;
+
+@interface PPQuickTypeBroker : NSObject <PPFeedbackAccepting, PPClientStore>
 {
     PPXPCClientHelper *_clientHelper;
+    PPClientFeedbackHelper *_clientFeedbackHelper;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hibernateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)warmUpWithCompletion:(CDUnknownBlockType)arg1;
 - (void)recentQuickTypeItemsForRecipients:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -22,6 +28,9 @@
 - (void)quickTypeItemsWithQuery:(id)arg1 limit:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_remoteObjectProxy;
 - (id)init;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *clientIdentifier; // @dynamic clientIdentifier;
 
 @end
 

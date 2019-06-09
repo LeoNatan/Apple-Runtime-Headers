@@ -21,12 +21,15 @@
 @property(readonly, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGSize pixelSize;
 @property(readonly, nonatomic) void *ioSurface;
+- (id)description;
 - (void)dealloc;
 - (id)initWithCGImage:(struct CGImage *)arg1;
-- (id)initWithUIImage:(id)arg1;
-- (id)initWithUIImage:(id)arg1 backingData:(id)arg2 uniformTypeIdentifier:(id)arg3;
+- (id)initWithIOSurface:(struct __IOSurface *)arg1;
+- (id)initWithPLImage:(struct NSObject *)arg1;
+- (id)initWithPLImage:(struct NSObject *)arg1 backingData:(id)arg2 uniformTypeIdentifier:(id)arg3;
 - (id)initWithCGImage:(struct CGImage *)arg1 ioSurface:(void *)arg2 CIImage:(id)arg3 backingData:(id)arg4 uniformTypeIdentifier:(id)arg5 size:(struct CGSize)arg6;
 
 @end

@@ -56,6 +56,7 @@
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (void)dealloc;
+- (id)initWithSessionName:(id)arg1;
 - (id)init;
 - (id)initWithSocket:(int)arg1;
 

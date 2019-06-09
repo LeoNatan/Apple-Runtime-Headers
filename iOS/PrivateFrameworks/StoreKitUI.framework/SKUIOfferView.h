@@ -12,6 +12,7 @@
 @class NSMapTable, NSMutableArray, NSNumber, NSString, UIButton;
 @protocol SKUIOfferViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIOfferView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIViewElementView>
 {
     _Bool _showingConfirmation;

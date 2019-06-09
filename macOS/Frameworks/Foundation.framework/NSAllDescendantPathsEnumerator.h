@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 + (id)newWithPath:(id)arg1 prepend:(id)arg2 attributes:(id)arg3 cross:(BOOL)arg4 depth:(unsigned long long)arg5;
 - (void)dealloc;
+- (BOOL)isEnumeratingDirectoryPostOrder;
 - (void)skipDescendants;
 - (void)skipDescendents;
 - (id)_under;

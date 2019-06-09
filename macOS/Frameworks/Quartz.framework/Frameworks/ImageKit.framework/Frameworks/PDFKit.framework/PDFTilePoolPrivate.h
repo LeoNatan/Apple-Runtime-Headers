@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, PDFTimer;
+@class NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -14,11 +14,8 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_queue> *workQueue;
     struct os_unfair_lock_s surfacesLock;
-    NSMutableDictionary *usedSurfaces;
-    NSMutableDictionary *freeSurfaces;
-    PDFTimer *recycleTimer;
-    int tileRenderType;
-    _Bool debugColorTileEdge;
+    NSMutableDictionary *surfaces;
+    int surfaceType;
 }
 
 - (void).cxx_destruct;

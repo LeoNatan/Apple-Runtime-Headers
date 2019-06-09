@@ -6,9 +6,10 @@
 
 #import <PassKitCore/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSNumber, NSString, NSXPCListenerEndpoint, PKPaymentRequest;
+@class NSNumber, NSString, NSXPCListenerEndpoint, PKPaymentMerchantSession, PKPaymentRequest;
 
 @protocol PDInAppPaymentServiceExportedInterface <PDXPCServiceExportedInterface>
+- (void)enrollPaymentPassWithUniqueIdentifier:(NSString *)arg1 merchantSession:(PKPaymentMerchantSession *)arg2 completion:(void (^)(_Bool, PKPayment *))arg3;
 - (void)cardDataForMerchantIdentifier:(NSString *)arg1 countryCode:(NSString *)arg2 completion:(void (^)(PKAMPCardRegistrationResponse *))arg3;
 - (void)cardsAvailableForAMPWithCountryCode:(NSString *)arg1 completion:(void (^)(int))arg2;
 - (void)paymentHardwareStatusWithCompletion:(void (^)(PKPaymentHardwareStatus *))arg1;

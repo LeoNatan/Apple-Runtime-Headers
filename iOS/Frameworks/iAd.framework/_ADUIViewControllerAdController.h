@@ -14,7 +14,6 @@
 
 @interface _ADUIViewControllerAdController : NSObject <_UIViewControllerContentViewEmbedding, ADBannerViewDelegate, ADInterstitialAdDelegate>
 {
-    UIViewController *_contentViewController;
     _Bool _canDisplayBannerAds;
     _Bool _canOwnSharedBanner;
     _Bool _presentingFullScreenAd;
@@ -24,6 +23,7 @@
     NSURL *_interstitialServerURL;
     NSString *_interstitialAdSection;
     NSString *_interstitialAuthUserName;
+    UIViewController *_contentViewController;
     long long _interstitialPresentationPolicy;
     ADBannerView *_bannerView;
     ADInterstitialAd *_interstitialAd;
@@ -37,12 +37,14 @@
 @property(nonatomic) _Bool canOwnSharedBanner; // @synthesize canOwnSharedBanner=_canOwnSharedBanner;
 @property(nonatomic) _Bool canDisplayBannerAds; // @synthesize canDisplayBannerAds=_canDisplayBannerAds;
 @property(nonatomic) long long interstitialPresentationPolicy; // @synthesize interstitialPresentationPolicy=_interstitialPresentationPolicy;
+@property(nonatomic) __weak UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 @property(copy, nonatomic) NSString *interstitialAuthUserName; // @synthesize interstitialAuthUserName=_interstitialAuthUserName;
 @property(copy, nonatomic) NSString *interstitialAdSection; // @synthesize interstitialAdSection=_interstitialAdSection;
 @property(copy, nonatomic) NSURL *interstitialServerURL; // @synthesize interstitialServerURL=_interstitialServerURL;
 @property(copy, nonatomic) NSString *bannerAuthUserName; // @synthesize bannerAuthUserName=_bannerAuthUserName;
 @property(copy, nonatomic) NSString *bannerAdSection; // @synthesize bannerAdSection=_bannerAdSection;
 @property(copy, nonatomic) NSURL *bannerServerURL; // @synthesize bannerServerURL=_bannerServerURL;
+- (void).cxx_destruct;
 - (void)bannerViewActionDidFinish:(id)arg1;
 - (_Bool)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(_Bool)arg2;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
@@ -64,9 +66,7 @@
 - (void)viewController:(id)arg1 viewDidAppear:(_Bool)arg2;
 - (void)viewController:(id)arg1 viewWillAppear:(_Bool)arg2;
 - (void)viewControllerViewDidLayoutSubviews:(id)arg1;
-@property(readonly, nonatomic) __weak UIViewController *contentViewController;
 - (id)initWithContentViewController:(id)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,10 +8,11 @@
 
 #import <NanoPassKit/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSMutableArray, NSString;
 
 @interface NPKProtoPassSyncStateItem : PBCodable <NSCopying>
 {
+    NSMutableArray *_manifestEntrys;
     NSData *_manifestHash;
     NSString *_passTypeIdentifier;
     unsigned int _sequenceCounter;
@@ -21,6 +22,8 @@
     } _has;
 }
 
++ (Class)manifestEntryType;
+@property(retain, nonatomic) NSMutableArray *manifestEntrys; // @synthesize manifestEntrys=_manifestEntrys;
 @property(retain, nonatomic) NSData *manifestHash; // @synthesize manifestHash=_manifestHash;
 @property(nonatomic) unsigned int sequenceCounter; // @synthesize sequenceCounter=_sequenceCounter;
 @property(retain, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
@@ -35,6 +38,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)manifestEntryAtIndex:(unsigned long long)arg1;
+- (unsigned long long)manifestEntrysCount;
+- (void)addManifestEntry:(id)arg1;
+- (void)clearManifestEntrys;
 @property(nonatomic) _Bool hasSequenceCounter;
 
 @end

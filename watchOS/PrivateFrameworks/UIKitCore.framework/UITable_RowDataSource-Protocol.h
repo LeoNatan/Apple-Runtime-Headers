@@ -32,7 +32,6 @@
 @property(readonly, nonatomic, getter=_headerFooterLeadingMarginWidth) float headerFooterLeadingMarginWidth;
 @property(readonly, nonatomic, getter=_constants) id <UITableConstants> constants;
 - (void)_setHeight:(float)arg1 forRowAtIndexPath:(NSIndexPath *)arg2 usingPresentationValues:(_Bool)arg3;
-- (float)_swipeToDeleteOffsetForRow:(int)arg1 inSection:(int)arg2;
 - (_Bool)_shouldStripHeaderTopPaddingForSection:(int)arg1;
 - (float)_maxTitleWidthForFooterInSection:(int)arg1;
 - (float)_maxTitleWidthForHeaderInSection:(int)arg1;
@@ -44,7 +43,6 @@
 - (NSString *)_titleForFooterInSection:(int)arg1;
 - (NSString *)_titleForHeaderInSection:(int)arg1;
 - (void)_coalesceContentSizeUpdateWithDelta:(float)arg1;
-- (void)_applyContentSizeDeltaForEstimatedHeightAdjustments:(float)arg1;
 - (float)_dataSourceHeightForFooterInSection:(int)arg1;
 - (float)_dataSourceHeightForHeaderInSection:(int)arg1;
 - (float)_dataSourceHeightForRowAtIndexPath:(NSIndexPath *)arg1;

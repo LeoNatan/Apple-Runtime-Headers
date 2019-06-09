@@ -10,31 +10,45 @@
 #import <SymptomEvaluator/ManagedEventInfoProtocol-Protocol.h>
 #import <SymptomEvaluator/SymptomAdditionalProtocol-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSUUID, NWUUIDMapper;
-@protocol OS_dispatch_queue;
+@class NSMutableArray, NSMutableDictionary, NSString, NSUUID, NWUUIDMapper;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface NWActivityHandler : NSObject <ConfigurableObjectProtocol, SymptomAdditionalProtocol, ManagedEventInfoProtocol>
 {
     NSObject<OS_dispatch_queue> *_metricsQueue;
+    NSObject<OS_dispatch_source> *_metricCollectionTimer;
+    unsigned short _L2MetricCount;
     NSMutableDictionary *_mappedMetrics;
     NWUUIDMapper *_nullUUIDMapper;
     NSUUID *_nullUUID;
+    NSMutableArray *_currentActivities;
 }
 
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
+@property(readonly, nonatomic) NSMutableArray *currentActivities; // @synthesize currentActivities=_currentActivities;
 @property(readonly, nonatomic) NSUUID *nullUUID; // @synthesize nullUUID=_nullUUID;
 @property(readonly, nonatomic) NWUUIDMapper *nullUUIDMapper; // @synthesize nullUUIDMapper=_nullUUIDMapper;
 @property(readonly, nonatomic) NSMutableDictionary *mappedMetrics; // @synthesize mappedMetrics=_mappedMetrics;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *metricsQueue; // @synthesize metricsQueue=_metricsQueue;
 - (void).cxx_destruct;
 - (int)configureInstance:(id)arg1;
+- (BOOL)configuredForMetricStreaming;
+- (void)streamAWDMetric:(id)arg1 withIdentifier:(unsigned int)arg2 additionalDictionaryItems:(id)arg3;
 - (id)init;
 - (_Bool)noteSymptom:(id)arg1;
 - (void)_handleNWConnectionStatistics:(id)arg1 effectivePid:(int)arg2;
 - (void)_handleCFNetworkItem:(id)arg1;
 - (void)_handleEpilogue:(id)arg1;
 - (void)_handleStartActivity:(id)arg1;
+- (void)_triggerWiFiMetric;
+- (void)_stopL2Streaming;
+- (void)_startL2Streaming;
+- (void)_updateL2MetricLoggingRequests;
+- (void)_pruneCurrentActivityList;
+- (void)_handleL2Stop:(id)arg1;
+- (void)_handleL2Start:(id)arg1;
+- (id)_createNWL2Report;
 - (void)_pruneOldMappings;
 - (id)mapperForUUID:(id)arg1 reason:(int)arg2;
 - (void)generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;

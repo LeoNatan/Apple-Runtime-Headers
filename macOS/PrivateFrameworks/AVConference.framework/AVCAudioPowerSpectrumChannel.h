@@ -21,7 +21,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)applyChannelBins:(id)arg1;
+- (void)applyChannelBins:(struct _VCAudioPowerSpectrumEntry *)arg1 binCount:(unsigned int)arg2;
 
 @end
 

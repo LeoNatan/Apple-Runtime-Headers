@@ -6,7 +6,7 @@
 
 #import <VideosUICore/VUIAsynchronousOperation.h>
 
-@class MPMediaPredicate, NSArray, NSDictionary, NSError, NSMutableSet, VUIMPMediaLibrary, VUIMediaEntityFetchRequest, VUIMediaEntityFetchResponse, VUIMediaEntityKind;
+@class MPMediaPredicate, NSArray, NSDictionary, NSError, NSMutableSet, VUIMPMediaLibrary, VUIMediaEntityFetchRequest, VUIMediaEntityFetchResponse, VUIMediaEntityKind, VUIMediaEntityType;
 
 __attribute__((visibility("hidden")))
 @interface VUIMPMediaEntitiesSingleFetchOperation : VUIAsynchronousOperation
@@ -23,9 +23,11 @@ __attribute__((visibility("hidden")))
     NSArray *_mediaQuerySortOrderingProperties;
     NSDictionary *_mediaQuerySortOrderingDirectionMappings;
     NSArray *_postFetchSortDescriptors;
+    VUIMediaEntityType *_currentFetchMediaEntityType;
 }
 
 + (id)_sortIndexesWithMediaQuerySection:(id)arg1;
+@property(retain, nonatomic) VUIMediaEntityType *currentFetchMediaEntityType; // @synthesize currentFetchMediaEntityType=_currentFetchMediaEntityType;
 @property(nonatomic) _Bool processRangeAfterFetch; // @synthesize processRangeAfterFetch=_processRangeAfterFetch;
 @property(nonatomic) _Bool processPredicateAfterFetch; // @synthesize processPredicateAfterFetch=_processPredicateAfterFetch;
 @property(retain, nonatomic) NSArray *postFetchSortDescriptors; // @synthesize postFetchSortDescriptors=_postFetchSortDescriptors;
@@ -39,7 +41,8 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) VUIMediaEntityFetchResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) VUIMediaEntityFetchRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
-- (id)_fetchResponseWithMediaEntities:(id)arg1 mediaEntitySubtype:(unsigned long long)arg2 mediaQuerySections:(id)arg3;
+- (id)_coalesceResponses:(id)arg1;
+- (id)_fetchResponseWithMediaEntities:(id)arg1 mediaQuerySections:(id)arg2;
 - (id)_collectionsFetchResponseWithMediaQuery:(id)arg1;
 - (id)_itemsFetchResponseWithMediaQuery:(id)arg1;
 - (id)_mediaEntities:(id)arg1 subarrayWithRange:(struct _NSRange)arg2;

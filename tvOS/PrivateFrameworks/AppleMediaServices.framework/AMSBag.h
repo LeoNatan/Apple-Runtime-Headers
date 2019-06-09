@@ -19,7 +19,9 @@
 + (void)_resetBagCache;
 + (id)bagCacheAccessQueue;
 + (id)bagCache;
++ (id)bagForProfile:(id)arg1 profileVersion:(id)arg2 processInfo:(id)arg3;
 + (id)bagForProfile:(id)arg1 profileVersion:(id)arg2;
++ (id)internalBag;
 @property(retain, nonatomic) id <AMSBagDataSourceProtocol> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)dictionaryForKey:(id)arg1;

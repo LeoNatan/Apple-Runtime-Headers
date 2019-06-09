@@ -42,6 +42,7 @@
 - (unsigned long long)resultsCount;
 - (void)addResults:(id)arg1;
 - (void)clearResults;
+- (void)clearBundleid;
 - (id)initWithFacade:(id)arg1;
 - (id)feedbackJSON;
 

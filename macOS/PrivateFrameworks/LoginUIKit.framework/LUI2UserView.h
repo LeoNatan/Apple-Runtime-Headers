@@ -8,7 +8,7 @@
 
 #import <LoginUIKit/NSAccessibilityButton-Protocol.h>
 
-@class LUI2TextField, NSImageView, NSStackView, NSString;
+@class LUI2DarkenView, LUI2TextField, NSImageView, NSString, NSVisualEffectView;
 
 @interface LUI2UserView : LUI2View <NSAccessibilityButton>
 {
@@ -19,11 +19,13 @@
     NSImageView *_userPicture;
     LUI2TextField *_userName;
     NSImageView *_loggedInIndicator;
-    NSStackView *_stackView;
+    NSVisualEffectView *_backgroundView;
+    LUI2DarkenView *_darkenView;
 }
 
 + (struct CGSize)size;
-@property NSStackView *stackView; // @synthesize stackView=_stackView;
+@property(retain) LUI2DarkenView *darkenView; // @synthesize darkenView=_darkenView;
+@property(retain) NSVisualEffectView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly) NSImageView *loggedInIndicator; // @synthesize loggedInIndicator=_loggedInIndicator;
 @property(readonly) LUI2TextField *userName; // @synthesize userName=_userName;
 @property(readonly) NSImageView *userPicture; // @synthesize userPicture=_userPicture;
@@ -32,6 +34,7 @@
 @property SEL action; // @synthesize action=_action;
 @property id target; // @synthesize target=_target;
 - (void)dealloc;
+- (id)initWithFrame:(struct CGRect)arg1 usingVisualEffectBackground:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)mouseUp:(id)arg1;
@@ -40,7 +43,9 @@
 - (id)accessibilityLabel;
 - (BOOL)isAccessibilityElement;
 @property(getter=isLoggedInIndicatorHidden) BOOL loggedInIndicatorHidden;
+- (void)_setupVisualEffectUserView;
 - (void)_setupUserView;
+- (BOOL)allowsVibrancy;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

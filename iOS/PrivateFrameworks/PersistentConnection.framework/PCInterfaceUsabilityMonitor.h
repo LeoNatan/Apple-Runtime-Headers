@@ -8,19 +8,20 @@
 
 #import <PersistentConnection/PCInterfaceUsabilityMonitorProtocol-Protocol.h>
 
-@class CUTWeakReference, NSMutableArray, NSString;
-@protocol OS_dispatch_queue, PCInterfaceUsabilityMonitorDelegate;
+@class CUTWeakReference, NSMutableArray, NSRecursiveLock, NSString;
+@protocol OS_dispatch_queue, OS_nw_interface, OS_nw_parameters, OS_nw_path_evaluator, PCInterfaceUsabilityMonitorDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PCInterfaceUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol>
 {
     NSObject<OS_dispatch_queue> *_delegateQueue;
-    NSObject<OS_dispatch_queue> *_ivarQueue;
     long long _interfaceIdentifier;
-    NSString *_interfaceName;
     CUTWeakReference *_delegateReference;
-    void *_reachability;
-    _Bool _isInternetReachable;
+    NSObject<OS_nw_parameters> *_pathParameters;
+    NSObject<OS_nw_path_evaluator> *_evaluator;
+    NSObject<OS_nw_interface> *_lastInterface;
+    NSObject<OS_nw_interface> *_lastDelegateInterface;
+    _Bool _isPathSatisfied;
     void *_dynamicStore;
     struct __CFRunLoopSource *_linkQualitySource;
     struct __CFString *_lqKey;
@@ -29,24 +30,22 @@ __attribute__((visibility("hidden")))
     unsigned long long _thresholdOffTransitionCount;
     double _trackedTimeInterval;
     NSMutableArray *_offTransitions;
+    NSRecursiveLock *_recursiveLock;
 }
 
 + (id)stringForLinkQuality:(int)arg1;
 + (_Bool)isBadLinkQuality:(int)arg1;
 + (_Bool)isPoorLinkQuality:(int)arg1;
 - (void).cxx_destruct;
-- (void)_createLinkQualityMonitor;
-- (void)_createLinkQualityMonitorOnIvarQueue;
+- (_Bool)_createLinkQualityMonitor:(_Bool)arg1;
+- (void)_dynamicStoreCallbackForKeys:(id)arg1;
 - (void)_dynamicStoreCallback:(id)arg1;
-- (void)_dynamicStoreCallbackOnIvarQueue:(id)arg1;
-- (void)_processLinkQualityUpdateOnIvarQueueWithUpdatedLinkQuality:(int)arg1;
-- (void)_unscheduleLinkQualityMonitorOnIvarQueue;
-- (void)_reachabilityCallbackOnIvarQueue:(unsigned int)arg1;
-- (void)_reachabilityCallback:(unsigned int)arg1;
-- (void)_createReachabilityMonitor;
-- (void)_createReachabilityMonitorOnIvarQueue;
-- (void)_unscheduleReachabilityMonitorOnIvarQueue;
-- (void)_callDelegateOnIvarQueueWithBlock:(CDUnknownBlockType)arg1;
+- (void)_processLinkQualityUpdateWithChangedKey:(id)arg1 updatedLinkQuality:(int)arg2;
+- (void)_unscheduleLinkQualityMonitor;
+- (void)_pathUpdate:(id)arg1;
+- (void)_createPathEvaluator;
+- (void)_unschedulePathEvaluator;
+- (void)_callDelegateWithBlock:(CDUnknownBlockType)arg1;
 @property(nonatomic) id <PCInterfaceUsabilityMonitorDelegate> delegate;
 @property(readonly, nonatomic) long long interfaceIdentifier;
 @property(readonly, nonatomic) _Bool isNetworkingPowerExpensiveToUse;
@@ -57,16 +56,17 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool isPoorLinkQuality;
 @property(readonly, retain, nonatomic) NSString *linkQualityString;
 @property(readonly, nonatomic) _Bool isInterfaceHistoricallyUsable;
-- (_Bool)_isInterfaceHistoricallyUsableOnIvarQueue;
+- (_Bool)_isInterfaceHistoricallyUsable;
 @property(readonly, nonatomic) _Bool isInterfaceUsable;
-- (_Bool)_isInterfaceUsableOnIvarQueue;
+- (_Bool)_isInterfaceUsable;
 - (void)setTrackedTimeInterval:(double)arg1;
 - (void)setThresholdOffTransitionCount:(unsigned long long)arg1;
 - (void)setTrackUsability:(_Bool)arg1;
-- (void)_flushStaleTransitionsOnIvarQueue;
-- (void)_updateOffTransitionsForLinkQualityChangeOnIvarQueue;
+- (void)_flushStaleTransitions;
+- (void)_updateOffTransitionsForLinkQualityChange;
+- (id)currentInterfaceName;
 - (void)dealloc;
-- (id)initWithInterfaceName:(id)arg1 interfaceIdentifier:(long long)arg2 delegateQueue:(id)arg3;
+- (id)initWithInterfaceIdentifier:(long long)arg1 delegateQueue:(id)arg2;
 - (id)init;
 
 // Remaining properties

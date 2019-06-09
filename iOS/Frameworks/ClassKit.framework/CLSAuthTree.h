@@ -25,6 +25,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStatus:(long long)arg1 statusID:(id)arg2 identifier:(id)arg3;
 - (id)initWithOverridingStatus:(long long)arg1;
+- (id)init;
 
 @end
 

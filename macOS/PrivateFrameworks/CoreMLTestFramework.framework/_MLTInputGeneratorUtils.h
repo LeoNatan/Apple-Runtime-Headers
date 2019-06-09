@@ -10,7 +10,6 @@
 
 @interface _MLTInputGeneratorUtils : NSObject
 {
-    unsigned int _sleepTime;
     int _currentCase;
     unsigned int _seedForRandomInput;
     struct __CVBuffer *_buffer;
@@ -24,18 +23,17 @@
 @property(retain) NSDictionary *outputDescriptions; // @synthesize outputDescriptions=_outputDescriptions;
 @property(retain) NSDictionary *inputDescriptions; // @synthesize inputDescriptions=_inputDescriptions;
 @property int currentCase; // @synthesize currentCase=_currentCase;
-@property unsigned int sleepTime; // @synthesize sleepTime=_sleepTime;
 @property(nonatomic) struct __CVBuffer *buffer; // @synthesize buffer=_buffer;
 - (void).cxx_destruct;
-- (id)generateRandomMultiArrayFeatureWithMultiArrayConstraint:(id)arg1;
+- (id)generateRandomMultiArrayFeatureWithMultiArrayConstraint:(id)arg1 error:(id *)arg2;
 - (id)generateRandomDouble;
 - (id)generateRandomUniformBetween:(double)arg1 and:(double)arg2;
 - (id)generateRandomGaussianDoubleWithScale:(double)arg1 bias:(double)arg2;
-- (id)generateRandomCVPixelBufferFeatureWithImageConstraint:(id)arg1;
+- (id)generateRandomCVPixelBufferFeatureWithImageConstraint:(id)arg1 error:(id *)arg2;
 - (BOOL)hasCorrespondingRecurrentInput:(id)arg1;
 - (BOOL)hasCorrespondingRecurrentOutput:(id)arg1;
-- (id)generateRandomInputs;
-- (id)initInputGeneratorUtilWithModel:(id)arg1 currentCase:(int)arg2 sleepTime:(unsigned int)arg3 seed:(unsigned int)arg4;
+- (id)generateRandomInputs:(id *)arg1;
+- (id)initInputGeneratorUtilWithModel:(id)arg1 currentCase:(int)arg2 seed:(unsigned int)arg3;
 
 @end
 

@@ -8,16 +8,27 @@
 
 #import <PhotoLibraryServices/PLResourceDataStore-Protocol.h>
 
-@class NSString;
+@class NSArray, NSDictionary, NSString, PLPhotoLibraryPathManager, PLThumbnailIndexes, PLThumbnailManager;
 
 @interface PLThumbnailResourceDataStore : PLResourceDataStore <PLResourceDataStore>
 {
+    NSDictionary *_thumbnailFormatsByTableType;
+    NSArray *_thumbnailFormats;
+    PLThumbnailManager *_thumbnailManager;
+    PLThumbnailIndexes *_thumbnailIndexes;
 }
 
 + (_Bool)resourceIsSquare:(id)arg1;
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
 + (id)supportedRecipes;
-+ (unsigned int)storeID;
++ (unsigned int)storeClassID;
+@property(retain, nonatomic) PLThumbnailIndexes *thumbnailIndexes; // @synthesize thumbnailIndexes=_thumbnailIndexes;
+@property(retain, nonatomic) PLThumbnailManager *thumbnailManager; // @synthesize thumbnailManager=_thumbnailManager;
+- (void).cxx_destruct;
+- (struct CGImage *)newTableThumbImageForKey:(id)arg1;
+- (id)thumbnailFormatsByTableType;
+- (void)setThumbnailFormatsByIDs:(id)arg1;
+@property(retain, nonatomic) NSArray *thumbnailFormats; // @synthesize thumbnailFormats=_thumbnailFormats;
 - (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 inContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)videoResource:(id)arg1 matchesOrExceedsQualityLevel:(unsigned int)arg2;
 - (void)requestRemoteAvailabilityChange:(short)arg1 forResource:(id)arg2 asset:(id)arg3 inContext:(id)arg4 options:(id)arg5 completion:(CDUnknownBlockType)arg6;
@@ -31,11 +42,13 @@
 - (id)keyFromKeyStruct:(const void *)arg1;
 - (id)descriptionForSubtype:(long long)arg1;
 - (id)name;
+- (id)initWithPathManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager;
 @property(readonly) Class superclass;
 
 @end

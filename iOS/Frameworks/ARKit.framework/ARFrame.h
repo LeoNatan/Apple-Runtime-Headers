@@ -9,20 +9,26 @@
 #import <ARKit/NSCopying-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class ARCamera, ARFaceData, ARFrameTimingData, ARLightEstimate, ARPointCloud, ARRawSceneUnderstandingData, ARWorldTrackingErrorData, ARWorldTrackingState, AVDepthData, NSArray, NSDate, NSDictionary;
+@class ARBody2D, ARCamera, ARFaceData, ARFrameTimingData, ARLightEstimate, ARPointCloud, ARRawSceneUnderstandingData, ARWorldTrackingErrorData, ARWorldTrackingState, AVDepthData, NSArray, NSDate, NSDictionary;
+@protocol MTLTexture;
 
 @interface ARFrame : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned long long _transformFlags;
     _Bool _shouldRestrictFrameRate;
+    float _cameraGrainIntensity;
+    float _imageNoiseIntensity;
     double _timestamp;
     struct __CVBuffer *_capturedImage;
+    id <MTLTexture> _cameraGrainTexture;
     AVDepthData *_capturedDepthData;
     double _capturedDepthDataTimestamp;
     ARCamera *_camera;
     NSArray *_anchors;
     ARLightEstimate *_lightEstimate;
     long long _worldMappingStatus;
+    struct __CVBuffer *_segmentationBuffer;
+    struct __CVBuffer *_estimatedDepthData;
     double _currentCaptureTimestamp;
     ARPointCloud *_featurePoints;
     ARPointCloud *_referenceFeaturePoints;
@@ -35,7 +41,12 @@
     long long _renderFramesPerSecond;
     NSDate *_captureDate;
     ARRawSceneUnderstandingData *_rawSceneUnderstandingData;
+    double _estimatedLuminance;
+    struct __CVBuffer *_downSampledMattingPixelBuffer;
+    struct __CVBuffer *_mattingScaleImagePixelBuffer;
+    NSArray *_detectedBodies;
     ARFaceData *_faceData;
+    id <MTLTexture> _imageNoiseTexture;
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginTransform
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginDelta
     // Error parsing type: {?="columns"[4]}, name: _sessionOriginTransform
@@ -43,7 +54,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) float imageNoiseIntensity; // @synthesize imageNoiseIntensity=_imageNoiseIntensity;
+@property(retain, nonatomic) id <MTLTexture> imageNoiseTexture; // @synthesize imageNoiseTexture=_imageNoiseTexture;
 @property(retain, nonatomic) ARFaceData *faceData; // @synthesize faceData=_faceData;
+@property(copy, nonatomic) NSArray *detectedBodies; // @synthesize detectedBodies=_detectedBodies;
+@property(nonatomic) struct __CVBuffer *mattingScaleImagePixelBuffer; // @synthesize mattingScaleImagePixelBuffer=_mattingScaleImagePixelBuffer;
+@property(nonatomic) struct __CVBuffer *downSampledMattingPixelBuffer; // @synthesize downSampledMattingPixelBuffer=_downSampledMattingPixelBuffer;
+@property(nonatomic) double estimatedLuminance; // @synthesize estimatedLuminance=_estimatedLuminance;
 @property(retain, nonatomic) ARRawSceneUnderstandingData *rawSceneUnderstandingData; // @synthesize rawSceneUnderstandingData=_rawSceneUnderstandingData;
 @property(retain, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;
 @property(nonatomic) _Bool shouldRestrictFrameRate; // @synthesize shouldRestrictFrameRate=_shouldRestrictFrameRate;
@@ -69,12 +86,16 @@
 @property(retain, nonatomic) ARPointCloud *referenceFeaturePoints; // @synthesize referenceFeaturePoints=_referenceFeaturePoints;
 @property(retain, nonatomic) ARPointCloud *featurePoints; // @synthesize featurePoints=_featurePoints;
 @property(readonly, nonatomic) double currentCaptureTimestamp; // @synthesize currentCaptureTimestamp=_currentCaptureTimestamp;
+@property(nonatomic) struct __CVBuffer *estimatedDepthData; // @synthesize estimatedDepthData=_estimatedDepthData;
+@property(nonatomic) struct __CVBuffer *segmentationBuffer; // @synthesize segmentationBuffer=_segmentationBuffer;
 @property(nonatomic) long long worldMappingStatus; // @synthesize worldMappingStatus=_worldMappingStatus;
 @property(retain, nonatomic) ARLightEstimate *lightEstimate; // @synthesize lightEstimate=_lightEstimate;
 @property(copy, nonatomic) NSArray *anchors; // @synthesize anchors=_anchors;
 @property(readonly, copy, nonatomic) ARCamera *camera; // @synthesize camera=_camera;
 @property(nonatomic) double capturedDepthDataTimestamp; // @synthesize capturedDepthDataTimestamp=_capturedDepthDataTimestamp;
 @property(retain, nonatomic) AVDepthData *capturedDepthData; // @synthesize capturedDepthData=_capturedDepthData;
+@property(readonly, nonatomic) float cameraGrainIntensity; // @synthesize cameraGrainIntensity=_cameraGrainIntensity;
+@property(readonly, nonatomic) id <MTLTexture> cameraGrainTexture; // @synthesize cameraGrainTexture=_cameraGrainTexture;
 @property(nonatomic) struct __CVBuffer *capturedImage; // @synthesize capturedImage=_capturedImage;
 @property(readonly, nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
@@ -98,8 +119,12 @@
 - (_Bool)referenceOriginTransformAvailable;
 @property(readonly, nonatomic) ARPointCloud *rawFeaturePoints;
 - (struct CGAffineTransform)displayTransformForOrientation:(long long)arg1 viewportSize:(struct CGSize)arg2;
+- (id)raycastQueryFromPoint:(struct CGPoint)arg1 allowingTarget:(long long)arg2 alignment:(long long)arg3;
 - (id)hitTest:(struct CGPoint)arg1 types:(unsigned long long)arg2;
+-     // Error parsing type: 32@0:8{CGPoint=dd}16, name: transformPointToNDCSpace:
 - (void)dealloc;
+@property(readonly, nonatomic) ARBody2D *detectedBody;
+- (void)setPredictedTimestamp:(double)arg1;
 - (id)initWithTimestamp:(double)arg1 context:(id)arg2;
 - (id)initWithCamera:(id)arg1 timestamp:(double)arg2;
 

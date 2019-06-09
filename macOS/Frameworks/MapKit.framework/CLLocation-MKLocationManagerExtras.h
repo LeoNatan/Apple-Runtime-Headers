@@ -7,6 +7,7 @@
 #import <CoreLocation/CLLocation.h>
 
 @interface CLLocation (MKLocationManagerExtras)
++ (double)_mapkit_timeToExpire;
 @property(readonly, nonatomic) int _mapkit_source;
 @end
 

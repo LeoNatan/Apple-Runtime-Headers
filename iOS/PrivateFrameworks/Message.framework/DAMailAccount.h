@@ -6,15 +6,15 @@
 
 #import <Message/MailAccount.h>
 
-@class DAAccount, MFDAMailbox, MFDAOfflineCache, MFMailboxUid, MFRecursiveLock, NSArray, NSCountedSet, NSLock, NSMutableDictionary, NSObject, NSSet, NSString;
+#import <Message/ECLocalActionReplayerDelegate-Protocol.h>
+
+@class DAAccount, MFDAMailbox, MFMailboxUid, NSArray, NSCountedSet, NSLock, NSMutableDictionary, NSObject, NSSet, NSString;
 @protocol ASAccountActorMessages;
 
-@interface DAMailAccount : MailAccount
+@interface DAMailAccount : MailAccount <ECLocalActionReplayerDelegate>
 {
     NSObject<ASAccountActorMessages> *_accountConduit;
     DAAccount *_daAccount;
-    MFRecursiveLock *_offlineCacheLock;
-    MFDAOfflineCache *_offlineCache;
     _Bool _isNetworkReachable;
     NSString *_cachedAccountID;
     NSString *_cachedAccountPersistentUUID;
@@ -67,9 +67,17 @@
 + (id)csAccountTypeString;
 + (id)legacyPathForAccountIdentifier:(id)arg1 withHostname:(id)arg2 username:(id)arg3;
 + (id)accountTypeString;
-+ (id)folderIDForRelativePath:(id)arg1 accountID:(id *)arg2;
 + (Class)_accountConduitClass;
 @property(retain, nonatomic) MFMailboxUid *virtualAllSearchMailbox; // @synthesize virtualAllSearchMailbox=_virtualAllSearchMailbox;
+- (void).cxx_destruct;
+- (_Bool)moveSupportedFromMailboxURL:(id)arg1 toURL:(id)arg2;
+- (id)messageDataForMessage:(id)arg1;
+- (id)_deleteMessagesWithAction:(id)arg1;
+- (id)_appendMessagesWithAction:(id)arg1;
+- (id)_moveMessagesWithAction:(id)arg1;
+- (id)_remoteIDsForFlagChangeAction:(id)arg1;
+- (id)replayAction:(id)arg1;
+- (_Bool)moveSupported;
 - (id)unsupportedHandoffTypes;
 - (id)fetchLimits;
 - (_Bool)supportsMailDrop;
@@ -87,9 +95,6 @@
 - (void)setSigningIdentityPersistentReference:(id)arg1 forAddress:(id)arg2;
 - (id)signingIdentityPersistentReferenceForAddress:(id)arg1;
 - (void)_reachabilityChanged:(id)arg1;
-- (_Bool)_replayOfflineCache:(id)arg1;
-- (void)_deferMailboxRequests:(id)arg1 mailbox:(id)arg2 offlineCache:(id)arg3;
-- (id)_offlineCache;
 - (_Bool)canGoOffline;
 - (void)removeUserFocusMailbox:(id)arg1;
 - (void)addUserFocusMailbox:(id)arg1;
@@ -136,11 +141,10 @@
 - (id)_specialMailboxUidWithType:(int)arg1 create:(_Bool)arg2;
 - (id)_relativePathSpecialMailboxUidWithType:(int)arg1 create:(_Bool)arg2;
 - (id)_relativePathForType:(int)arg1;
-- (id)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(_Bool)arg4;
-- (_Bool)performRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
-- (void)processRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
-- (void)addRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
-- (void)addRequest:(id)arg1 mailbox:(id)arg2 consumer:(id)arg3;
+- (_Bool)performRequests:(id)arg1 mailbox:(id)arg2;
+- (void)processRequests:(id)arg1 mailbox:(id)arg2;
+- (void)addRequests:(id)arg1 mailbox:(id)arg2;
+- (void)addRequest:(id)arg1 consumer:(id)arg2 mailbox:(id)arg3;
 - (id)mailboxUidForInfo:(id)arg1;
 - (id)mailboxForFolderID:(id)arg1;
 - (id)_infoForMatchingURL:(id)arg1;
@@ -175,7 +179,7 @@
 - (id)allMailboxUids;
 - (id)uniqueIdForPersistentConnection;
 - (id)identifier;
-- (id)uniqueId;
+- (id)uniqueID;
 - (id)deliveryAccount;
 - (id)hostname;
 - (id)username;
@@ -186,6 +190,12 @@
 - (id)initWithDAAccount:(id)arg1;
 - (id)initWithLibrary:(id)arg1 persistentAccount:(id)arg2;
 - (id)URLStringFromLegacyURLString:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -16,6 +16,7 @@
 + (BOOL)seedBuild;
 + (BOOL)carrierBuild;
 + (BOOL)internalBuild;
++ (BOOL)isHomePod;
 + (BOOL)isMac;
 + (BOOL)isWatch;
 + (BOOL)isiOS;

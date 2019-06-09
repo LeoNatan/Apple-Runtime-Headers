@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)processRTPPacket;
 - (void)receiverThreadCallback:(struct tagVCRealTimeThreadParameters *)arg1;
 - (int)retrieveRTPPacket:(struct tagAudioPacket *)arg1;
+- (void)initializeTextPacket:(struct tagAudioPacket *)arg1 withMediaPacket:(struct _RTPMediaPacket *)arg2;
 - (_Bool)stop;
 - (_Bool)start;
 @property(nonatomic) id <VCTextReceiverDelegate> delegate;

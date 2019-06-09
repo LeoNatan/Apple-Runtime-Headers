@@ -8,6 +8,7 @@
 
 @class NSButton, NSImageView, NSPanel, NSTimer, NSView, ODCAddServerSheetController, ODCServersView, ODSession, XSDisablingTextField;
 
+__attribute__((visibility("hidden")))
 @interface ODCSummaryViewController : ODCViewControllerBase
 {
     NSView *_view;

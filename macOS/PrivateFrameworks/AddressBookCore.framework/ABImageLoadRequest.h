@@ -6,34 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSData, NSString;
 
 @interface ABImageLoadRequest : NSObject
 {
     NSString *_contactIdentifier;
     NSArray *_emailAddresses;
-    NSString *_primaryImagePath;
-    NSArray *_alternateImageIDs;
-    NSString *_alternateImagePath;
     BOOL _isMe;
     int _searchLocations;
+    NSData *_imageData;
+    NSData *_thumbnailImageData;
+    NSString *_primaryImagePath;
 }
 
-+ (id)imagesFolderForContact:(id)arg1 addressBook:(id)arg2;
 + (id)requestWithCoreDataContact:(id)arg1 addressBook:(id)arg2;
 + (id)requestWithAddressBookPerson:(id)arg1;
-+ (id)requestWithAddressKitPerson:(id)arg1 isMe:(BOOL)arg2 primaryImagePath:(id)arg3;
-@property int searchLocations; // @synthesize searchLocations=_searchLocations;
-@property(readonly) BOOL isMe; // @synthesize isMe=_isMe;
-@property(copy) NSString *alternateImagePath; // @synthesize alternateImagePath=_alternateImagePath;
-@property(copy) NSArray *alternateImageIDs; // @synthesize alternateImageIDs=_alternateImageIDs;
 @property(readonly, copy) NSString *primaryImagePath; // @synthesize primaryImagePath=_primaryImagePath;
+@property(readonly, copy) NSData *thumbnailImageData; // @synthesize thumbnailImageData=_thumbnailImageData;
+@property(readonly, copy) NSData *imageData; // @synthesize imageData=_imageData;
+@property(readonly) int searchLocations; // @synthesize searchLocations=_searchLocations;
+@property(readonly) BOOL isMe; // @synthesize isMe=_isMe;
 @property(copy) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly, copy) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-@property(readonly, copy) NSString *imagesFolder;
+- (void).cxx_destruct;
 - (void)logDebugInfoWithName:(id)arg1;
-- (void)dealloc;
-- (id)initWithContactIdentifier:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 isMe:(BOOL)arg4 primaryImagePath:(id)arg5;
+- (id)initWithContactIdentifier:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 isMe:(BOOL)arg4 imageData:(id)arg5 thumbnailImageData:(id)arg6;
 
 @end
 

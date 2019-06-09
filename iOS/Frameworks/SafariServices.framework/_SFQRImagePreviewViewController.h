@@ -16,7 +16,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)previewActions;
+- (id)previewActionItems;
 - (void)loadView;
 - (id)_contentViewSubtitleWithAction:(id)arg1;
 - (id)initWithImage:(id)arg1 defaultActions:(id)arg2 elementInfo:(id)arg3;

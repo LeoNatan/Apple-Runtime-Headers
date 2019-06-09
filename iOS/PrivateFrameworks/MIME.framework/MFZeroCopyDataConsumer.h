@@ -16,10 +16,10 @@
     _Bool _done;
 }
 
+- (void).cxx_destruct;
 - (void)done;
 - (long long)appendData:(id)arg1;
 - (id)data;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

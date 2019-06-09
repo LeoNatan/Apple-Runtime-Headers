@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     BOOL running;
     AVCaptureSessionInternalState *state;
     struct OpaqueCMClock *masterClock;
+    struct os_unfair_lock_s internalLock;
 }
 
 @end

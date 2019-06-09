@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 + (int)defaultBold;
 + (id)defaultFontReference;
 + (id)defaultColor;
+- (void).cxx_destruct;
 - (id)description;
 - (void)applyOverridesFrom:(id)arg1;
 - (id)shallowCopy;
@@ -33,7 +34,6 @@ __attribute__((visibility("hidden")))
 - (id)color;
 - (void)setFontReference:(id)arg1;
 - (id)fontReference;
-- (void)dealloc;
 - (id)init;
 
 @end

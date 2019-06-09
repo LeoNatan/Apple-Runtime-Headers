@@ -23,10 +23,10 @@
 @property(nonatomic) __weak id <HDWatchAppStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool appIsActive; // @synthesize appIsActive=_appIsActive;
 - (void).cxx_destruct;
-- (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (void)dealloc;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithFirstPartyWorkoutApp;
+- (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,34 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class AMSLRUCache, NSString;
+@class AMSProcessInfo, AMSUserAgentBundleInfo, NSString;
 
-__attribute__((visibility("hidden")))
 @interface AMSUserAgent : NSObject
 {
-    AMSLRUCache *_cache;
+    AMSUserAgentBundleInfo *_bundleInfo;
+    AMSProcessInfo *_processInfo;
 }
 
-+ (id)shared;
++ (id)userAgentForProcessInfo:(id)arg1;
++ (void)cacheUserAgent:(id)arg1 forBundleIdentifier:(id)arg2;
++ (id)cachedUserAgentForBundleIdentifier:(id)arg1;
++ (id)_sharedCache;
+@property(readonly, nonatomic) AMSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
+@property(readonly, nonatomic) AMSUserAgentBundleInfo *bundleInfo; // @synthesize bundleInfo=_bundleInfo;
 - (void).cxx_destruct;
+- (id)_sharedComponentParentheticalWithFairPlayDeviceType:(id)arg1;
 - (id)_sharedComponentFrameworkVersion;
-- (_Bool)_iOSFairPlayDeviceType:(unsigned int *)arg1 error:(id *)arg2;
+- (id)_sharedComponentFairPlayDeviceType;
+- (id)_compileAndShouldCache:(_Bool *)arg1;
 - (id)_iOSComponentProductVersion;
-- (id)_iOSComponentParentheticalWithFairPlayDeviceType:(id)arg1;
 - (id)_iOSComponentHardwarePlatform;
-- (id)_iOSComponentFairPlayDeviceType;
 - (id)_iOSComponentDeviceModel;
-- (id)_iOSComponentClientInfoWithBundleID:(id)arg1;
+- (id)_iOSComponentClientInfo;
 - (id)_iOSComponentBuildVersion;
-- (id)userAgentForBundleIdentifier:(id)arg1 additionalComponents:(id)arg2 addAccountMediaTypeComponent:(_Bool)arg3;
-- (id)userAgentForBundleIdentifier:(id)arg1 additionalComponents:(id)arg2;
-- (id)clientVersionForBundleIdentifier:(id)arg1;
-- (id)clientNameForBundleIdentifier:(id)arg1;
-- (void)cacheUserAgent:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)cachedUserAgentForBundleIdentifier:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *clientVersion;
-@property(readonly, copy, nonatomic) NSString *clientName;
-- (id)init;
+- (id)compile;
+@property(retain, nonatomic) NSString *clientVersion;
+@property(retain, nonatomic) NSString *clientName;
+- (id)initWithProcessInfo:(id)arg1;
 
 @end
 

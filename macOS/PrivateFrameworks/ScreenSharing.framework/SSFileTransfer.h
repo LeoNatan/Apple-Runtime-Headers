@@ -20,8 +20,10 @@
     SSFileCopy *activeCopy;
     NSString *displayName;
     NSLock *lock;
+    CDUnknownBlockType _completionHandler;
 }
 
+@property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy) NSString *displayName; // @synthesize displayName;
 @property int state; // @synthesize state;
 @property unsigned long long bytesCopied; // @synthesize bytesCopied;

@@ -17,6 +17,7 @@
     NSXPCConnection *_connection;
     CDUnknownBlockType _onResumeBlock;
     CDUnknownBlockType _onInterruptBlock;
+    CDUnknownBlockType _onInvalidateBlock;
     NSString *_serviceName;
     NSXPCInterface *_remoteObjectInterface;
     NSXPCInterface *_exportedInterface;
@@ -30,20 +31,23 @@
 @property(retain, nonatomic) NSXPCInterface *exportedInterface; // @synthesize exportedInterface=_exportedInterface;
 @property(retain, nonatomic) NSXPCInterface *remoteObjectInterface; // @synthesize remoteObjectInterface=_remoteObjectInterface;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
+@property(copy, nonatomic) CDUnknownBlockType onInvalidateBlock; // @synthesize onInvalidateBlock=_onInvalidateBlock;
 @property(copy, nonatomic) CDUnknownBlockType onInterruptBlock; // @synthesize onInterruptBlock=_onInterruptBlock;
 @property(copy, nonatomic) CDUnknownBlockType onResumeBlock; // @synthesize onResumeBlock=_onResumeBlock;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
-- (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
-- (void)resumeWithoutOnResumeWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic, getter=isResumed) _Bool resumed;
 - (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)cleanup;
 - (void)_locked_resumeCallOnResume:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_locked_invalidateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_locked_connectionInvalidated;
 - (void)_locked_connectionInterrupted;
 - (void)_createConnection;
+- (void)sendMessageToRemoteObject:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)resumeWithoutOnResumeWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithMachServiceName:(id)arg1 remoteObjectInterface:(id)arg2 exportedInterface:(id)arg3 exportedObject:(id)arg4;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

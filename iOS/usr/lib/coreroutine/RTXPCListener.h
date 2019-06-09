@@ -26,6 +26,8 @@
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)logClients;
+- (void)shutdown;
+- (void)_shutdown;
 - (void)setup;
 - (void)_setup;
 - (id)initWithMachServiceName:(id)arg1;

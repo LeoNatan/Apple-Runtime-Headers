@@ -9,6 +9,7 @@
 @class NSData, NSString;
 
 @protocol MapsSuggestionsDonateeProxy <NSObject>
+- (void)donateSignalPackData:(NSData *)arg1 handler:(void (^)(void))arg2;
 - (void)donateETAData:(NSData *)arg1 destinationKey:(NSString *)arg2 handler:(void (^)(void))arg3;
 @end
 

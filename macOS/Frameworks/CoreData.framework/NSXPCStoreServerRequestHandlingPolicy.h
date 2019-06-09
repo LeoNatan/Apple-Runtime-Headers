@@ -14,6 +14,8 @@
 - (id)processRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
 - (id)processPersistentHistoryRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
 - (id)processBatchDeleteRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
+- (id)processBatchUpdateRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
+- (id)processBatchInsertRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
 - (id)processSaveRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
 - (id)getIDsForEntity:(id)arg1 count:(id)arg2 inContext:(id)arg3 error:(id *)arg4;
 - (id)processFetchRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
@@ -31,7 +33,6 @@
 - (BOOL)shouldAcceptConnectionsFromClientWithContext:(id)arg1;
 - (id)processObtainRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)prefetchRelationships:(id)arg1 forFetch:(id)arg2 sourceOIDs:(id)arg3 fromClientWithContext:(id)arg4;
-- (id)processPullChangesRequest:(id)arg1 fromClientWithContext:(id)arg2 error:(id *)arg3;
 
 @end
 

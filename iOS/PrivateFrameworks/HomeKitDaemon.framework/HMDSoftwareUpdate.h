@@ -59,6 +59,7 @@
 - (void)setState:(long long)arg1;
 @property(readonly) long long state; // @synthesize state=_state;
 - (void)registerForMessages;
+- (void)invalidate;
 - (void)configureWithAccessory:(id)arg1 messageDispatcher:(id)arg2;
 @property(readonly, copy) NSString *propertyDescription;
 - (_Bool)isEqual:(id)arg1;

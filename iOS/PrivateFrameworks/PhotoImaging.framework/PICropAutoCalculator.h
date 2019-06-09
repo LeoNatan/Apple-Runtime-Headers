@@ -6,11 +6,33 @@
 
 #import <NeutrinoCore/NUAutoCalculator.h>
 
-@interface PICropAutoCalculator : NUAutoCalculator
+#import <PhotoImaging/NUTimeBased-Protocol.h>
+
+@class NSString;
+
+@interface PICropAutoCalculator : NUAutoCalculator <NUTimeBased>
 {
+    _Bool _shouldPreserveInputOrientation;
+    _Bool _shouldPerformAutoCrop;
+    _Bool _shouldPerformAutoStraighten;
+    double _maxAutoStraighten;
 }
 
-- (void)calculate:(CDUnknownBlockType)arg1;
+@property double maxAutoStraighten; // @synthesize maxAutoStraighten=_maxAutoStraighten;
+@property _Bool shouldPerformAutoStraighten; // @synthesize shouldPerformAutoStraighten=_shouldPerformAutoStraighten;
+@property _Bool shouldPerformAutoCrop; // @synthesize shouldPerformAutoCrop=_shouldPerformAutoCrop;
+@property _Bool shouldPreserveInputOrientation; // @synthesize shouldPreserveInputOrientation=_shouldPreserveInputOrientation;
+- (void)submit:(CDUnknownBlockType)arg1;
+- (id)imageProperties:(out id *)arg1;
+- (CDStruct_996ac03c)orientedRectForRect:(CDStruct_996ac03c)arg1 imageSize:(CDStruct_912cb5d2)arg2 orientation:(long long)arg3;
+- (id)initWithComposition:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(nonatomic) CDStruct_198678f7 time;
 
 @end
 

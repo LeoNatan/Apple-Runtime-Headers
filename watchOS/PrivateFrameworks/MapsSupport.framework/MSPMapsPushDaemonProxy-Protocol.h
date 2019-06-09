@@ -6,7 +6,7 @@
 
 #import <MapsSupport/MSPRemoteModelAccess-Protocol.h>
 
-@class GEOAnnouncement, MNCommuteNotificationDetails, MSPLowFuelDetails, NSData, NSString, NSURL, RTVehicleEvent;
+@class GEOAnnouncement, GEOCommuteNotificationDetails, MSPLowFuelDetails, NSData, NSString, NSURL, RTVehicleEvent;
 
 @protocol MSPMapsPushDaemonProxy <MSPRemoteModelAccess>
 - (void)fetchUserRoutingPreferencesWithCompletion:(void (^)(MSPUserRoutingPreferences *, NSError *))arg1;
@@ -21,22 +21,27 @@
 - (void)clearLowFuelAlertBulletin;
 - (void)showLowFuelAlertBulletinForLowFuelDetails:(MSPLowFuelDetails *)arg1;
 - (void)clearPredictedRouteTrafficIncidentBulletin;
-- (void)showPredictedRouteTrafficIncidentBulletinForCommuteDetails:(MNCommuteNotificationDetails *)arg1 afterDelay:(double)arg2;
-- (void)showPredictedRouteTrafficIncidentBulletinForCommuteDetails:(MNCommuteNotificationDetails *)arg1;
-- (void)clearTransitAlightAlertBulletin;
-- (void)showTransitAlightAlertWithTitle:(NSString *)arg1 message:(NSString *)arg2;
+- (void)showPredictedRouteTrafficIncidentBulletinForCommuteDetails:(GEOCommuteNotificationDetails *)arg1 afterDelay:(double)arg2;
+- (void)showPredictedRouteTrafficIncidentBulletinForCommuteDetails:(GEOCommuteNotificationDetails *)arg1;
 - (void)clearTrafficIncidentsBulletin;
 - (void)clearTrafficIncidentBulletinWithAlertID:(NSData *)arg1;
-- (void)showTrafficIncidentAlertWithID:(NSData *)arg1 type:(unsigned int)arg2 title:(NSString *)arg3 description:(NSString *)arg4;
+- (void)showTrafficIncidentAlertWithID:(NSData *)arg1 withReroute:(_Bool)arg2 title:(NSString *)arg3 description:(NSString *)arg4;
 - (void)clearTrafficConditionsBulletin;
 - (void)showTrafficConditionsBulletinWithTitle:(NSString *)arg1 message:(NSString *)arg2 actionURL:(NSURL *)arg3;
 - (void)removeProblemStatusResponseWithNotificationID:(NSString *)arg1;
 - (void)problemStatusResponseWithNotificationID:(NSString *)arg1 completion:(void (^)(GEORPProblemStatusResponse *))arg2;
 - (void)clearBulletinWithRecordID:(NSString *)arg1;
+- (void)fetchShownAnnouncements:(void (^)(NSArray *))arg1;
 - (void)fetchCurrentAnnouncement:(void (^)(GEOAnnouncement *))arg1;
-- (void)resetShownAnnouncements;
+- (void)resetAnnouncements;
+- (void)clearShownAnnouncements;
 - (void)clearCurrentAnnouncement;
-- (void)simulateAnnouncement:(GEOAnnouncement *)arg1;
+- (void)simulateAnnouncement:(GEOAnnouncement *)arg1 afterDelay:(double)arg2;
+- (void)updateActiveAnnouncement;
+- (void)updateAnnouncements:(void (^)(_Bool))arg1;
+- (void)fetchAnnouncementsURLPath:(void (^)(NSString *))arg1;
+- (void)fetchAnnouncementsFilePath:(void (^)(NSString *))arg1;
+- (void)fetchDownloadedAnnouncements:(void (^)(NSArray *))arg1;
 - (void)checkin;
 - (void)fetchDevicePushToken:(void (^)(NSData *))arg1;
 - (void)setShouldUseDevAPNS:(_Bool)arg1;

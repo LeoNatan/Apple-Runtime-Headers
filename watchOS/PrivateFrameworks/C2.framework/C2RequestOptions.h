@@ -20,6 +20,7 @@
     _Bool _allowRouting;
     _Bool _allowExpiredDNSBehavior;
     _Bool __allowsRetryForBackgroundDataTasks;
+    _Bool _redactRemoteEndpointFromNetworkMetrics;
     _Bool _outOfProcessDiscretionary;
     _Bool _metricRequest;
     int _qualityOfService;
@@ -28,6 +29,7 @@
     NSString *__sourceApplicationSecondaryIdentifier;
     NSString *__appleIDContextSessionIdentifier;
     unsigned int _discretionaryNetworkBehavior;
+    unsigned int _duetPreClearedMode;
     NSString *_identifier;
     NSDictionary *_resolvedEndpointsWithHostname;
     C2MetricOptions *_metricOptions;
@@ -43,6 +45,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)triesteMetricsEnabled;
++ (id)stringForDuetPreClearedMode:(unsigned int)arg1;
 + (id)stringForDiscretionaryNetworkBehavior:(unsigned int)arg1;
 + (id)stringForQualityOfService:(int)arg1;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_sessionGroupCreated; // @synthesize testBehavior_sessionGroupCreated=_testBehavior_sessionGroupCreated;
@@ -53,10 +56,12 @@
 @property(nonatomic) unsigned long long c2MetricsReportFrequency; // @synthesize c2MetricsReportFrequency=_c2MetricsReportFrequency;
 @property(copy, nonatomic) NSURL *c2MetricsEndpoint; // @synthesize c2MetricsEndpoint=_c2MetricsEndpoint;
 @property(nonatomic) _Bool outOfProcessDiscretionary; // @synthesize outOfProcessDiscretionary=_outOfProcessDiscretionary;
+@property(nonatomic) _Bool redactRemoteEndpointFromNetworkMetrics; // @synthesize redactRemoteEndpointFromNetworkMetrics=_redactRemoteEndpointFromNetworkMetrics;
 @property(retain, nonatomic) C2MetricOptions *metricOptions; // @synthesize metricOptions=_metricOptions;
 @property(retain, nonatomic) NSDictionary *resolvedEndpointsWithHostname; // @synthesize resolvedEndpointsWithHostname=_resolvedEndpointsWithHostname;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) _Bool _allowsRetryForBackgroundDataTasks; // @synthesize _allowsRetryForBackgroundDataTasks=__allowsRetryForBackgroundDataTasks;
+@property(nonatomic) unsigned int duetPreClearedMode; // @synthesize duetPreClearedMode=_duetPreClearedMode;
 @property(nonatomic) unsigned int discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
 @property(nonatomic) _Bool allowExpiredDNSBehavior; // @synthesize allowExpiredDNSBehavior=_allowExpiredDNSBehavior;
 @property(nonatomic) _Bool allowRouting; // @synthesize allowRouting=_allowRouting;

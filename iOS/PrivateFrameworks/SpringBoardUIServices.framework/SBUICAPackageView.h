@@ -8,19 +8,19 @@
 
 #import <SpringBoardUIServices/CAStateControllerDelegate-Protocol.h>
 
-@class CALayer, CAPackage, CAStateController, NSObject, NSString;
+@class CALayer, CAStateController, NSArray, NSDictionary, NSObject, NSString;
 @protocol CAStateControllerDelegate;
 
 @interface SBUICAPackageView : UIView <CAStateControllerDelegate>
 {
     CAStateController *_stateController;
     NSObject<CAStateControllerDelegate> *_stateControllerDelegate;
-    CAPackage *_package;
     CALayer *_rootLayer;
     struct CGSize _originalSize;
     NSString *_pendingCompletionToState;
     NSString *_pendingCompletionFromState;
     CDUnknownBlockType _pendingCompletion;
+    NSDictionary *_publishedObjectMap;
 }
 
 - (void).cxx_destruct;
@@ -35,6 +35,8 @@
 - (_Bool)setState:(id)arg1 animated:(_Bool)arg2 transitionSpeed:(double)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)setState:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)setState:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *publishedObjectNames;
+- (id)publishedObjectWithName:(id)arg1;
 - (id)initWithPackageName:(id)arg1 inBundle:(id)arg2;
 
 @end

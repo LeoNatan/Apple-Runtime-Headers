@@ -33,15 +33,18 @@
     NSLock *_statusTimerLock;
     NSObject<OS_dispatch_queue> *_initialAvailableUpdatesQueryQueue;
     BOOL _isSystemAppleInternal;
+    BOOL _shouldRegisterBundleURLWithLaunchServices;
     NSURLCredential *_sharedURLCredential;
 }
 
 + (id)_errorWithCode:(long long)arg1 userInfo:(id)arg2 underlyingError:(id)arg3;
 + (id)keyPathsForValuesAffectingCanStartUpdate;
 + (id)sharedUpdateController;
+@property BOOL shouldRegisterBundleURLWithLaunchServices; // @synthesize shouldRegisterBundleURLWithLaunchServices=_shouldRegisterBundleURLWithLaunchServices;
 @property(retain) NSURLCredential *sharedURLCredential; // @synthesize sharedURLCredential=_sharedURLCredential;
 @property(readonly) BOOL deferredUpdatesExist; // @synthesize deferredUpdatesExist=_deferredUpdatesExist;
 @property BOOL requireACPower; // @synthesize requireACPower=_requireACPower;
+- (void)installedBundlesToRegisterWithLaunchServices:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updatesQueuedForLaterDidChange;
 - (void)hiddenUpdatesDidChange;
 - (void)catalogURLDidChange;

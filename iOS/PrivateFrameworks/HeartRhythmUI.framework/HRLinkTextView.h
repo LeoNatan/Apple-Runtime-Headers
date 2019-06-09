@@ -15,9 +15,13 @@
     long long _URLIdentifier;
     id <HRLinkTextViewDelegate> _delegate;
     UITapGestureRecognizer *_tapGestureRecognizer;
+    long long _currentUserInterfaceStyle;
+    CDUnknownBlockType _userInterfaceStyleChanged;
     struct _NSRange _linkRange;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType userInterfaceStyleChanged; // @synthesize userInterfaceStyleChanged=_userInterfaceStyleChanged;
+@property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
 @property(nonatomic) __weak id <HRLinkTextViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) struct _NSRange linkRange; // @synthesize linkRange=_linkRange;
@@ -29,6 +33,9 @@
 - (id)lastBaselineAnchor;
 - (id)firstBaselineAnchor;
 - (void)linkTextViewTapped:(id)arg1;
+- (void)_updateCurrentUserInterfaceStyleIfNeeded;
+- (void)layoutSubviews;
+- (id)initWithLinkRange:(struct _NSRange)arg1 URLIdentifier:(long long)arg2 delegate:(id)arg3 userInterfaceStyleChanged:(CDUnknownBlockType)arg4;
 - (id)initWithLinkRange:(struct _NSRange)arg1 URLIdentifier:(long long)arg2 delegate:(id)arg3;
 
 @end

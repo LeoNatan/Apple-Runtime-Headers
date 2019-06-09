@@ -16,19 +16,23 @@
 {
     _Bool _shouldLayoutViews;
     _Bool _animationsDisabledForTesting;
+    _Bool _shouldAnimateForSend;
+    UIView *_balloonView;
+    CDUnknownBlockType _dismissalCompletionHandler;
     CKActionSheetMenuView *_menuView;
     CKGroupAcknowledgmentVotingViewController *_votingViewController;
-    UIView *_balloonView;
     NSArray *_interfaceActions;
     double _balloonYOffsetFromTranscript;
 }
 
+@property(nonatomic) _Bool shouldAnimateForSend; // @synthesize shouldAnimateForSend=_shouldAnimateForSend;
 @property(nonatomic) _Bool animationsDisabledForTesting; // @synthesize animationsDisabledForTesting=_animationsDisabledForTesting;
 @property(nonatomic) double balloonYOffsetFromTranscript; // @synthesize balloonYOffsetFromTranscript=_balloonYOffsetFromTranscript;
 @property(copy, nonatomic) NSArray *interfaceActions; // @synthesize interfaceActions=_interfaceActions;
-@property(retain, nonatomic) UIView *balloonView; // @synthesize balloonView=_balloonView;
 @property(retain, nonatomic) CKGroupAcknowledgmentVotingViewController *votingViewController; // @synthesize votingViewController=_votingViewController;
 @property(retain, nonatomic) CKActionSheetMenuView *menuView; // @synthesize menuView=_menuView;
+@property(copy, nonatomic) CDUnknownBlockType dismissalCompletionHandler; // @synthesize dismissalCompletionHandler=_dismissalCompletionHandler;
+@property(retain, nonatomic) UIView *balloonView; // @synthesize balloonView=_balloonView;
 - (void).cxx_destruct;
 - (void)disableAnimationsForTesting;
 - (_Bool)_shouldShowVotingView;
@@ -37,10 +41,13 @@
 - (void)stickerDetailViewController:(id)arg1 selectedStickerPackWithAdamID:(id)arg2;
 - (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
 - (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
-- (void)balloonViewDoubleTapped:(id)arg1;
+- (void)liveBalloonTouched:(id)arg1;
 - (void)balloonViewLongTouched:(id)arg1;
+- (void)balloonViewDoubleTapped:(id)arg1;
 - (void)balloonViewTapped:(id)arg1;
 - (void)performClosingAnimationsWithSendAnimation:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)performDismissalAnimations;
+- (void)messageAcknowledgmentPickerViewController:(id)arg1 didPickAcknowledgment:(long long)arg2;
 - (void)dismissTapGestureRecognized:(id)arg1;
 - (void)balloonEditMenuViewWasDismissed:(id)arg1;
 - (void)viewDidLayoutSubviews;

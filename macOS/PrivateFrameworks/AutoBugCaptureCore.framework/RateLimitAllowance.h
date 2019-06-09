@@ -8,6 +8,7 @@
 
 @class NSDate;
 
+__attribute__((visibility("hidden")))
 @interface RateLimitAllowance : NSObject
 {
     NSDate *_lastCheckedAt;

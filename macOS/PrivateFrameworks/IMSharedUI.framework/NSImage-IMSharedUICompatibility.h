@@ -9,5 +9,7 @@
 @interface NSImage (IMSharedUICompatibility)
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 - (id)layerContentsForLayer:(id)arg1;
+- (id)imageWithRotation:(double)arg1;
+- (struct CGImage *)CGImage;
 @end
 

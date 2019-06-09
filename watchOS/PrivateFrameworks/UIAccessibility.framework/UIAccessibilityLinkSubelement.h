@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (struct CGRect)accessibilityFrame;
 - (id)textRangeForTextView:(id)arg1;
+- (unsigned long long)_accessibilityAutomationType;
 - (unsigned long long)accessibilityTraits;
 
 @end

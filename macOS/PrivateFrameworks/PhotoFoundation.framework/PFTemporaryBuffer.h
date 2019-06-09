@@ -18,27 +18,27 @@
     unsigned long long _maximumRetiredCount;
     NSObject<OS_dispatch_queue> *_recentQueue;
     NSMutableArray *_recentList;
-    int _currentPartition;
+    // Error parsing type: Ai, name: _currentPartition
     NSObject<OS_dispatch_queue> *_retiredQueue[4];
     NSMutableArray *_retiredList[4];
-    long long _recentBytes;
-    int _recentCount;
-    long long _recentHitBytes;
-    int _recentHitCount;
-    long long _retiredBytes;
-    int _retiredCount;
-    long long _retiredHitBytes;
-    int _retiredHitCount;
-    long long _newTemporaryBuffersBytes;
-    int _newTemporaryBuffersCount;
-    long long _purgedBytes;
-    int _purgedCount;
-    long long _recycledBytes;
-    int _recycledCount;
-    long long _recycledPurgableBytes;
-    int _recycledPurgableCount;
-    long long _recycledPurgedBytes;
-    int _recycledPurgedCount;
+    // Error parsing type: Aq, name: _recentBytes
+    // Error parsing type: Ai, name: _recentCount
+    // Error parsing type: Aq, name: _recentHitBytes
+    // Error parsing type: Ai, name: _recentHitCount
+    // Error parsing type: Aq, name: _retiredBytes
+    // Error parsing type: Ai, name: _retiredCount
+    // Error parsing type: Aq, name: _retiredHitBytes
+    // Error parsing type: Ai, name: _retiredHitCount
+    // Error parsing type: Aq, name: _newTemporaryBuffersBytes
+    // Error parsing type: Ai, name: _newTemporaryBuffersCount
+    // Error parsing type: Aq, name: _purgedBytes
+    // Error parsing type: Ai, name: _purgedCount
+    // Error parsing type: Aq, name: _recycledBytes
+    // Error parsing type: Ai, name: _recycledCount
+    // Error parsing type: Aq, name: _recycledPurgableBytes
+    // Error parsing type: Ai, name: _recycledPurgableCount
+    // Error parsing type: Aq, name: _recycledPurgedBytes
+    // Error parsing type: Ai, name: _recycledPurgedCount
     BOOL _retireRecentScheduled;
     char _retiredMaximumScheduled[4];
 }

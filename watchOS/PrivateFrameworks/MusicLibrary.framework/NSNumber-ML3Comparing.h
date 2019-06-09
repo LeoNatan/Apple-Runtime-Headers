@@ -8,5 +8,7 @@
 
 @interface NSNumber (ML3Comparing)
 - (_Bool)ml_matchesValue:(id)arg1 usingComparison:(int)arg2;
+- (id)ml_stringValueForSQL;
+- (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt *)arg1 atPosition:(int)arg2;
 @end
 

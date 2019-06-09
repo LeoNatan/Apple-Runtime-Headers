@@ -24,7 +24,7 @@
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(nonatomic) unsigned long long badgeNumber; // @synthesize badgeNumber=_badgeNumber;
 - (void).cxx_destruct;
-- (struct CGSize)_numberLabelSizeForText:(id)arg1;
+- (struct CGSize)_numberLabelSizeForText:(id)arg1 withAttributes:(id)arg2;
 - (id)_numberImageForNumberText:(id)arg1 withAttributes:(id)arg2;
 - (id)_numberAttributedStringWithNumberText:(id)arg1 attributes:(id)arg2;
 - (id)_attributedStringWithColor:(id)arg1;

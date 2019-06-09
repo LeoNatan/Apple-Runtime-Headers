@@ -9,6 +9,7 @@
 @class NSString;
 
 @interface NSError (BridgeOSSoftwareUpdateErrorAdditions)
+@property(readonly) unsigned long long systemPartitionSize;
 @property(readonly) BOOL fullReplacementRequired;
 @property(readonly) BOOL networkRequired;
 @property(readonly) long long amAuthInstallErrorCode;

@@ -8,6 +8,7 @@
 
 @class UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUICategoryTableViewCell : UITableViewCell
 {
     UIView *_separatorView;

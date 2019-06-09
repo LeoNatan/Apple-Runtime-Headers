@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)_onProcessingQueue_updateStateWithStatus:(unsigned long long)arg1 downloadProgress:(double)arg2 bytesDownloaded:(unsigned long long)arg3 bytesToDownload:(unsigned long long)arg4 supportsPausing:(_Bool)arg5 supportsCancellation:(_Bool)arg6 notify:(_Bool)arg7;
 - (void)_onProcessingQueue_updateStateWithStatus:(unsigned long long)arg1 notify:(_Bool)arg2;
 - (void)_onProcessingQueue_startMonitoringDownload;
-- (void)_onProcessingQueue_removeDownloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_onProcessingQueue_cancelAndRemoveDownload;
 - (void)_onProcessingQueue_startDownloadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_onProcessingQueue_invalidateAndSetState;
 - (void)_onProcessingQueue_invalidate;
@@ -55,10 +55,9 @@ __attribute__((visibility("hidden")))
 - (void)_handleMediaItemAssetControllerStateDidChangeNotification:(id)arg1;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
 - (void)mediaItemDownloadController:(id)arg1 stateDidChange:(id)arg2;
-- (void)removeDownloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)cancelAndRemoveDownload;
 - (void)resumeDownload;
 - (void)pauseDownload;
-- (void)cancelDownload;
 - (void)startDownloadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 @property(readonly, copy, nonatomic) VUIMediaEntityAssetControllerState *state; // @synthesize state=_state;

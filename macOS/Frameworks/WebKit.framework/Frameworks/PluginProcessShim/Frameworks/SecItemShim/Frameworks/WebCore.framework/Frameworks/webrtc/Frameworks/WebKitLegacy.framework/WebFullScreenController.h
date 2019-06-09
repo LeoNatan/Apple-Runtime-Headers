@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_startExitFullScreenAnimationWithDuration:(double)arg1;
 - (void)_startEnterFullScreenAnimationWithDuration:(double)arg1;
 - (void)_swapView:(id)arg1 with:(id)arg2;
+- (struct FullscreenManager *)_manager;
 - (struct Document *)_document;
 - (void)_updateMenuAndDockForFullScreen;
 - (void)animationDidEnd:(id)arg1;

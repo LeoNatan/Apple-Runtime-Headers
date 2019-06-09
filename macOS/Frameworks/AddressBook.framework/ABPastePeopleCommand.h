@@ -19,7 +19,6 @@
 - (BOOL)doIt;
 - (void)redoIt;
 - (void)undoIt;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1 addressBook:(id)arg2;
 

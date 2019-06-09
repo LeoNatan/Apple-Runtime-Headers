@@ -13,12 +13,13 @@
 #import <Safari/DownloadViewControllerDelegate-Protocol.h>
 #import <Safari/PassFileDownloadDelegate-Protocol.h>
 #import <Safari/WebDownloadDelegate-Protocol.h>
+#import <Safari/_WKDownloadDelegate-Protocol.h>
 
 @class NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, WBSCoalescedAsynchronousWriter;
-@protocol DownloadsManagerDelegate;
+@protocol DownloadsManagerDecisionResponder, DownloadsManagerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface DownloadsManager : NSObject <DownloadProgressEntryDelegate, PassFileDownloadDelegate, AuthenticationSheetRequestDelegate, WebDownloadDelegate, DownloadAlertsManagerDataSource, DownloadViewControllerDataSource, DownloadViewControllerDelegate>
+@interface DownloadsManager : NSObject <DownloadProgressEntryDelegate, PassFileDownloadDelegate, AuthenticationSheetRequestDelegate, WebDownloadDelegate, DownloadAlertsManagerDataSource, DownloadViewControllerDataSource, DownloadViewControllerDelegate, _WKDownloadDelegate>
 {
     NSMutableArray *_entries;
     NSMapTable *_downloadToEntry;
@@ -38,13 +39,30 @@ __attribute__((visibility("hidden")))
     float _totalProgress;
     NSTimer *_updateTotalProgressTimer;
     NSTimer *_removeDownloadsAfterOneDayTimer;
+    id <DownloadsManagerDecisionResponder> _decisionResponder;
     id <DownloadsManagerDelegate> _delegate;
 }
 
 + (id)downloadBundleExtension;
 @property(nonatomic) __weak id <DownloadsManagerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <DownloadsManagerDecisionResponder> decisionResponder; // @synthesize decisionResponder=_decisionResponder;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)showQueuedPassFromDownload:(id)arg1;
+- (id)_sanitizedPathExtensionForAnalyticsForPathExtension:(id)arg1;
+- (void)_download:(id)arg1 didReceiveServerRedirectToURL:(id)arg2;
+- (void)_downloadProcessDidCrash:(id)arg1;
+- (void)_downloadDidCancel:(id)arg1;
+- (void)_download:(id)arg1 didFailWithError:(id)arg2;
+- (void)_downloadDidFinish:(id)arg1;
+- (void)_download:(id)arg1 didCreateDestination:(id)arg2;
+- (void)_download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (BOOL)_download:(id)arg1 shouldDecodeSourceDataOfMIMEType:(id)arg2;
+- (void)_download:(id)arg1 didReceiveData:(unsigned long long)arg2;
+- (void)wkDownload:(const struct Download *)arg1 willResumeWithResponse:(const struct URLResponse *)arg2 fromByte:(long long)arg3;
+- (void)_download:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)_downloadDidStart:(id)arg1;
+- (void)_download:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)downloadViewController:(id)arg1 didAcceptURLs:(id)arg2;
 - (void)downloadViewControllerDidRemoveIdleEntries:(id)arg1;
 - (void)downloadViewController:(id)arg1 didUndoRemovingEntry:(id)arg2 atIndex:(unsigned long long)arg3;
@@ -57,7 +75,7 @@ __attribute__((visibility("hidden")))
 - (void)downloadProgressEntry:(id)arg1 didMarkDownloadBundleAsInProgressAtBundlePath:(id)arg2 creationDate:(id)arg3;
 - (void)downloadProgressEntryDidFinish:(id)arg1 shouldClear:(BOOL)arg2;
 - (void)downloadProgressEntryDidStop:(id)arg1;
-- (void)downloadProgressEntry:(id)arg1 didResumeWithDownload:(id)arg2;
+- (void)downloadProgressEntry:(id)arg1 didResumeWithWK2Download:(struct Download *)arg2;
 - (id)downloadFilenameInProgressForDownloadAlertsManager:(id)arg1;
 - (unsigned long long)numberOfBusyEntriesForDownloadAlertsManager:(id)arg1;
 - (void)didCompleteAuthenticationSheetRequest:(struct AuthenticationSheetRequest *)arg1;
@@ -67,10 +85,10 @@ __attribute__((visibility("hidden")))
 - (float)_calculateTotalProgress;
 - (void)_updateTotalProgress:(id)arg1;
 - (void)_startUpdateTotalProgressTimerIfNeeded;
+- (void)_didStartDownloadEntry:(id)arg1 withNotification:(id)arg2 voiceOverMessage:(id)arg3;
 - (void)_notifyAboutStartingDownloadEntryAndUpdateProgressTimer:(id)arg1 notificationToSend:(id)arg2 voiceOverMessage:(id)arg3;
 - (BOOL)_promptForDownloadPath:(id *)arg1 filename:(id *)arg2 withSuggestedFilename:(id)arg3;
 - (void)_wkDownload:(const struct Download *)arg1 entry:(id)arg2 didFailWithError:(id)arg3 wasCanceled:(BOOL)arg4;
-- (void)_download:(id)arg1 entry:(id)arg2 didFailWithError:(id)arg3;
 - (BOOL)_downloadFailsDueToNotEnoughFreeDiskSpaceForEntry:(id)arg1 error:(id)arg2;
 - (void)_requestSpaceOrShowSheetForInsufficientDiskSpaceErrorForEntry:(id)arg1;
 - (void)_requestFreeSpaceFromStorageManagerFromEntry:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -81,7 +99,6 @@ __attribute__((visibility("hidden")))
 - (id)_passFileDownloadForWKDownload:(const struct Download *)arg1;
 - (id)_createEntryForWKDownload:(const struct Download *)arg1 addEntry:(BOOL)arg2;
 - (id)_createEntryForWKDownload:(const struct Download *)arg1 allowOverwrite:(BOOL)arg2 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg3 addEntry:(BOOL)arg4;
-- (id)_createEntryForDownload:(id)arg1 allowOverwrite:(BOOL)arg2 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg3;
 - (void)_addHistoryEntryFromLoadedDownloadHistory:(id)arg1;
 - (void)_addEntry:(id)arg1 withNotification:(BOOL)arg2;
 - (void)_insertEntry:(id)arg1 atIndex:(unsigned int)arg2 withNotification:(BOOL)arg3 removeOld:(BOOL)arg4;
@@ -109,7 +126,7 @@ __attribute__((visibility("hidden")))
 - (int)total;
 - (void)_removeEntriesFinishedBeforeDate:(id)arg1;
 - (void)removeEntriesAddedAfterDate:(id)arg1;
-- (void)_removePassFileDownloadForWKDownload:(const struct Download *)arg1;
+- (void)removePassFileDownloadForWKDownload:(const struct Download *)arg1;
 - (void)removeIdleEntries;
 - (void)_removeEntry:(id)arg1;
 - (void)_removeEntries:(id)arg1;
@@ -125,30 +142,7 @@ __attribute__((visibility("hidden")))
 - (void)stopAllDownloads;
 - (void)startWK2DownloadForRequest:(id)arg1 mayOpenWhenDone:(BOOL)arg2 allowOverwrite:(BOOL)arg3 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg4 path:(id)arg5 tags:(id)arg6 isUsingSavePanel:(BOOL)arg7;
 - (void)startWK2DownloadForRequest:(id)arg1 mayOpenWhenDone:(BOOL)arg2 shouldAvoidPersistingIdentifyingInformation:(BOOL)arg3;
-- (void)download:(id)arg1 didFailWithError:(id)arg2;
-- (void)downloadDidFinish:(id)arg1;
-- (void)download:(id)arg1 didCreateDestination:(id)arg2;
-- (BOOL)download:(id)arg1 shouldDecodeSourceDataOfMIMEType:(id)arg2;
-- (void)download:(id)arg1 didReceiveDataOfLength:(unsigned long long)arg2;
-- (void)download:(id)arg1 decideDestinationWithSuggestedFilename:(id)arg2;
-- (void)download:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)download:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (void)download:(id)arg1 willResumeWithResponse:(id)arg2 fromByte:(long long)arg3;
-- (void)downloadDidBegin:(id)arg1;
 - (id)init;
-- (id)_sanitizedPathExtensionForAnalyticsForPathExtension:(id)arg1;
-- (void)wkDownload:(const struct Download *)arg1 didReceiveServerRedirect:(const struct URL *)arg2;
-- (void)wkDownloadProcessDidCrash:(const struct Download *)arg1;
-- (void)wkDownloadDidCancel:(const struct Download *)arg1;
-- (void)wkDownload:(const struct Download *)arg1 didFailWithError:(const struct Error *)arg2;
-- (void)wkDownloadDidFinish:(const struct Download *)arg1;
-- (void)wkDownload:(const struct Download *)arg1 didCreateDestination:(const struct String *)arg2;
-- (struct String)wkDownload:(const struct Download *)arg1 decideDestinationWithSuggestedFilename:(const struct String *)arg2 allowOverwrite:(_Bool *)arg3;
-- (_Bool)wkDownload:(const struct Download *)arg1 shouldDecodeSourceDataOfMIMEType:(const struct String *)arg2;
-- (void)wkDownload:(const struct Download *)arg1 didReceiveDataOfLength:(unsigned long long)arg2;
-- (void)wkDownload:(const struct Download *)arg1 willResumeWithResponse:(const struct URLResponse *)arg2 fromByte:(long long)arg3;
-- (void)wkDownload:(const struct Download *)arg1 didReceiveResponse:(const struct URLResponse *)arg2;
-- (void)wkDownloadDidStart:(const struct Download *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

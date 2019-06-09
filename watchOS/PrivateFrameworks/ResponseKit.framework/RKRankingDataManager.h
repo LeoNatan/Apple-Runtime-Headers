@@ -21,8 +21,11 @@
 - (void).cxx_destruct;
 - (void)flushRankingData;
 - (void)resetRankingData;
+- (void)pruneUserDatabase;
+- (unsigned int)getNumberOfEntriesInDB;
 - (id)fetchRankingInfoForCategory:(id)arg1;
 - (id)fetchRankingInfoFromDB;
+- (void)insertRankingInfoFromDictionary:(id)arg1 withDate:(id)arg2;
 - (void)insertRankingInfoFromDictionary:(id)arg1;
 - (id)initWithDatabaseFilename:(id)arg1;
 - (id)initWithLanguageID:(id)arg1;

@@ -9,12 +9,11 @@
 #import <Navigation/MNMapsAppStateMonitorObserver-Protocol.h>
 #import <Navigation/MNNavigationSessionObserver-Protocol.h>
 
-@class MNHybridLocationProvider, MNMapsAppStateMonitor, NSString;
+@class MNHybridLocationProvider, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MNTransitLocationCoordinator : NSObject <MNMapsAppStateMonitorObserver, MNNavigationSessionObserver>
 {
-    MNMapsAppStateMonitor *_appStateMonitor;
     MNHybridLocationProvider *_locationProvider;
 }
 

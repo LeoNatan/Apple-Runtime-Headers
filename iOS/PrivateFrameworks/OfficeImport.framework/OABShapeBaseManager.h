@@ -44,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (struct EshColor)strokeBgColor;
 - (struct EshColor)strokeFgColor;
 - (_Bool)isStroked;
-- (void)dealloc;
 - (id)initWithShapeBase:(struct EshShapeBase *)arg1 shapeType:(int)arg2 masterShape:(struct EshShape *)arg3;
 
 // Remaining properties

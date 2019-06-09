@@ -13,10 +13,12 @@
 @interface LPSharingMetadataWrapper : NSObject <NSSecureCoding>
 {
     _Bool _hasFetchedSubresources;
+    _Bool _hasCompletedFetch;
     LPLinkMetadata *_metadata;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool hasCompletedFetch; // @synthesize hasCompletedFetch=_hasCompletedFetch;
 @property(nonatomic) _Bool hasFetchedSubresources; // @synthesize hasFetchedSubresources=_hasFetchedSubresources;
 @property(retain, nonatomic) LPLinkMetadata *metadata; // @synthesize metadata=_metadata;
 - (void).cxx_destruct;

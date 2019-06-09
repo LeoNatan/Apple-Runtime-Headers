@@ -6,25 +6,39 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSURLSessionConfiguration;
+@class NSDictionary, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString, NSURLSessionConfiguration, NSUUID, __CFN_SessionMetrics;
 @protocol NSURLSessionDelegate, OS_dispatch_queue;
 
 @interface NSURLSession : NSObject
 {
+    NSDictionary *_atsState_ivar;
+    NSURLSessionConfiguration *_local_immutable_configuration_ivar;
+    NSString *_sessionDescription_ivar;
+    NSOperationQueue *_delegateQueue_ivar;
+    id <NSURLSessionDelegate> _delegate_ivar;
+    _Bool _isSharedSession_ivar;
+    _Bool _invalid_ivar;
 }
 
 + (id)_errorFromError:(id)arg1 forTask:(id)arg2;
 + (id)sessionWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
 + (id)sessionWithConfiguration:(id)arg1;
++ (void)_disableAppSSO;
++ (void)_strictTrustEvaluate:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)_obliterateAllBackgroundSessionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)_getActiveSessionIdentifiersWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)_releaseProcessAssertionForSessionIdentifier:(id)arg1;
 + (void)_sendPendingCallbacksForSessionIdentifier:(id)arg1;
 + (id)_sharedSessionForConnection;
 + (id)sharedSession;
++ (_Bool)_backgroundServiceAvailable;
++ (void)_setHTTPRewriter:(id)arg1;
++ (void)_setEventDelegate:(id)arg1 queue:(id)arg2;
+@property _Bool _isSharedSession; // @synthesize _isSharedSession=_isSharedSession_ivar;
+@property(copy) NSString *sessionDescription; // @synthesize sessionDescription=_sessionDescription_ivar;
+@property(readonly, retain) id <NSURLSessionDelegate> delegate; // @synthesize delegate=_delegate_ivar;
+@property(readonly, retain) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue_ivar;
 - (void)finalizeDelegateWithError:(id)arg1;
-- (_Bool)isBackgroundSession;
-- (id)_copyConfiguration;
 - (struct __CFDictionary *)_copyATSState;
 - (id)dataTaskWithHTTPGetRequest:(id)arg1;
 - (id)dataTaskWithHTTPGetRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -41,15 +55,21 @@
 - (id)downloadTaskWithURL:(id)arg1;
 - (id)downloadTaskWithRequest:(id)arg1;
 - (id)_downloadTaskWithRequest:(id)arg1 downloadFilePath:(id)arg2;
+- (id)_downloadTaskWithTaskForClass:(id)arg1;
 - (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)uploadTaskWithStreamedRequest:(id)arg1;
 - (id)uploadTaskWithRequest:(id)arg1 fromData:(id)arg2;
 - (id)uploadTaskWithRequest:(id)arg1 fromFile:(id)arg2;
+- (id)_uploadTaskWithTaskForClass:(id)arg1;
+- (id)webSocketTaskWithRequest:(id)arg1;
+- (id)webSocketTaskWithURL:(id)arg1 protocols:(id)arg2;
+- (id)webSocketTaskWithURL:(id)arg1;
 - (id)dataTaskWithRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)dataTaskWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)dataTaskWithURL:(id)arg1;
 - (id)dataTaskWithRequest:(id)arg1;
+- (id)_dataTaskWithTaskForClass:(id)arg1;
 - (void)getAllTasksWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getTasksWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)flushWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -133,6 +153,8 @@
 - (_Bool)can_delegate_task_didReceiveChallenge;
 - (void)delegate_task:(id)arg1 willPerformHTTPRedirection:(id)arg2 newRequest:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)can_delegate_task_willPerformHTTPRedirection;
+- (void)delegate_task:(id)arg1 willUseEffectiveConfiguration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)can_delegate_willUseEffectiveConfiguration;
 - (void)delegate_taskIsWaitingForConnectivity:(id)arg1;
 - (_Bool)can_delegate_taskIsWaitingForConnectivity;
 - (void)delegate_task:(id)arg1 willBeginDelayedRequest:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -147,25 +169,26 @@
 - (void)delegate_didReceiveChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)can_delegate_didReceiveChallenge;
 - (void)addDelegateBlock:(CDUnknownBlockType)arg1;
+- (shared_ptr_9ad247fa)_nwContext;
 @property(readonly, copy) NSURLSessionConfiguration *configuration; // @dynamic configuration;
+@property(readonly) __weak NSURLSessionConfiguration *_local_immutable_configuration; // @dynamic _local_immutable_configuration;
+- (id)_update_local_configuration:(CDUnknownBlockType)arg1;
+- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_useTLSSessionCacheFromSession:(id)arg1;
-- (id)initWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
+@property(readonly) _Bool _isProxySession; // @dynamic _isProxySession;
+@property(readonly) _Bool isBackgroundSession; // @dynamic isBackgroundSession;
 
 // Remaining properties
 @property(retain) NSMutableDictionary *_altSvc; // @dynamic _altSvc;
-@property(copy) NSDictionary *_atsState; // @dynamic _atsState;
 @property(retain) NSMutableDictionary *_coalescing; // @dynamic _coalescing;
-@property(copy) CDUnknownBlockType _connBlock; // @dynamic _connBlock;
 @property(retain) NSMutableSet *_h2BlacklistedHosts; // @dynamic _h2BlacklistedHosts;
-@property _Bool _isSharedSession; // @dynamic _isSharedSession;
-@property(copy) NSURLSessionConfiguration *_local_immutable_configuration; // @dynamic _local_immutable_configuration;
-@property(copy) NSString *_uuid; // @dynamic _uuid;
-@property(retain) id <NSURLSessionDelegate> delegate; // @dynamic delegate;
-@property(retain) NSOperationQueue *delegateQueue; // @dynamic delegateQueue;
-@property _Bool invalid; // @dynamic invalid;
-@property(copy) NSString *sessionDescription; // @dynamic sessionDescription;
-@property(readonly, retain) NSObject<OS_dispatch_queue> *workQueue; // @dynamic workQueue;
+@property(retain) __CFN_SessionMetrics *_metrics; // @dynamic _metrics;
+@property(copy) NSString *_tlsSessionCachePrefix; // @dynamic _tlsSessionCachePrefix;
+@property(readonly) __weak NSUUID *_uuid; // @dynamic _uuid;
+@property(readonly) _Bool invalid; // @dynamic invalid;
+@property(readonly) unsigned long long nextSeed; // @dynamic nextSeed;
+@property(readonly) __weak NSObject<OS_dispatch_queue> *workQueue; // @dynamic workQueue;
 
 @end
 

@@ -40,7 +40,6 @@
 @property(readonly, copy, nonatomic) NSImage *transitionImageForPreview;
 @property(readonly) NSString *previewItemTitle;
 @property(readonly) NSURL *previewItemURL;
-@property(readonly, copy, nonatomic) NSString *deletionScriptString;
 @property(readonly, copy, nonatomic) NSString *registrationScriptString;
 @property(readonly, nonatomic) BOOL canDisplayInline;
 @property(nonatomic) long long displayState;

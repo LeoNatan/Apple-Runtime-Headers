@@ -28,6 +28,7 @@
 @property(retain, nonatomic) UIImage *dimmedIconImage; // @synthesize dimmedIconImage=_dimmedIconImage;
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic) _Bool dimmed; // @synthesize dimmed=_dimmed;
+- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (unsigned long long)accessibilityTraits;
 - (_Bool)isAccessibilityElement;
@@ -39,7 +40,6 @@
 - (double)countdownProgress;
 - (struct CGSize)intrinsicContentSize;
 - (id)init;
-- (void)dealloc;
 
 @end
 

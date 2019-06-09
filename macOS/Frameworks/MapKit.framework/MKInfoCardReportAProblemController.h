@@ -8,6 +8,7 @@
 
 @class NSArray, NSButton, _MKPlaceViewController;
 
+__attribute__((visibility("hidden")))
 @interface MKInfoCardReportAProblemController : NSObject
 {
     NSArray *_reportAProblemControls;

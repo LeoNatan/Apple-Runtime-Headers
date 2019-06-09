@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NSNumber;
 
 @interface PSCapabilityManager : NSObject
 {
     NSMutableDictionary *_overrides;
+    NSNumber *_overrideForAllBoolValues;
 }
 
 + (id)sharedManager;
+@property(retain, nonatomic) NSNumber *overrideForAllBoolValues; // @synthesize overrideForAllBoolValues=_overrideForAllBoolValues;
 @property(retain, nonatomic) NSMutableDictionary *overrides; // @synthesize overrides=_overrides;
 - (void).cxx_destruct;
+- (id)supportsPSDeveloperSettingsCapability;
 - (id)supportsPSTTYCapability;
 - (id)applicationDisplayIdentifiers;
-- (id)supportsPSShowStorageCapability;
 - (id)supportsInEDUModeCapability;
 - (id)supportsInStoreDemoModeCapability;
 - (id)supportsNightShiftCapability;

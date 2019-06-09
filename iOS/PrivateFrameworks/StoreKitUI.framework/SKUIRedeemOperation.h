@@ -8,6 +8,7 @@
 
 @class NSString, SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemOperation : NSOperation
 {
     _Bool _cameraRecognized;

@@ -6,45 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class GEOResourceManifestConfiguration, VKGGLTextureManager, VKIconManager, VKResourceManager, VKShieldManager;
+@class VKIconManager, VKResourceManager;
 
 __attribute__((visibility("hidden")))
 @interface VKSharedResources : NSObject
 {
-    GEOResourceManifestConfiguration *_manifestConfiguration;
     struct _retain_ptr<VKIconManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
         CDUnknownFunctionPointerType *_vptr$_retain_ptr;
         VKIconManager *_obj;
         struct _retain_objc _retain;
         struct _release_objc _release;
     } _iconManager;
-    struct _retain_ptr<VKShieldManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
-        CDUnknownFunctionPointerType *_vptr$_retain_ptr;
-        VKShieldManager *_obj;
-        struct _retain_objc _retain;
-        struct _release_objc _release;
-    } _shieldManager;
-    struct _retain_ptr<VKGGLTextureManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
-        CDUnknownFunctionPointerType *_vptr$_retain_ptr;
-        VKGGLTextureManager *_obj;
-        struct _retain_objc _retain;
-        struct _release_objc _release;
-    } _gglTextureManager;
-    struct _retain_ptr<VKResourceManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
-        CDUnknownFunctionPointerType *_vptr$_retain_ptr;
-        VKResourceManager *_obj;
-        struct _retain_objc _retain;
-        struct _release_objc _release;
-    } _resourceManager;
+    shared_ptr_f2399894 _textureManager;
+    struct _retain_ptr<VKResourceManager *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> _resourceManager;
     shared_ptr_dd2d1f5e _stylesheetVendor;
-    struct unique_ptr<md::FontManager, std::__1::default_delete<md::FontManager>> _fontManager;
+    shared_ptr_887a193f _dataOverrideManager;
     struct unique_ptr<md::Device, std::__1::default_delete<md::Device>> _device;
     struct unique_ptr<ggl::AlphaAtlas, std::__1::default_delete<ggl::AlphaAtlas>> _alphaAtlas;
     struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas>> _highInflationAlphaAtlas;
     struct unique_ptr<ggl::IsoAlphaAtlas, std::__1::default_delete<ggl::IsoAlphaAtlas>> _isoAlphaAtlas;
     struct unique_ptr<ggl::DistanceAtlas, std::__1::default_delete<ggl::DistanceAtlas>> _distanceAtlas;
     shared_ptr_1ddd16cb _shaderLibrary;
-    struct shared_ptr<ggl::CommonLibrary> _commonLibrary;
+    struct FigPhotoDecompressionSession *_defaultDecompressionSession;
+    struct shared_ptr<md::GeoResourceProvider> _resourceProvider;
+    shared_ptr_6d521cf7 _grlIconManager;
+    shared_ptr_76a6df1b _grlFontManager;
     unsigned int _referenceCount;
 }
 
@@ -56,7 +42,10 @@ __attribute__((visibility("hidden")))
 - (void)_removeResourceUser;
 - (void)_addResourceUser;
 - (void)dealloc;
-- (id)_initWithConfiguration:(id)arg1 device:(struct Device *)arg2 standardLibrary:(const shared_ptr_1ddd16cb *)arg3;
+- (id)_initWithDevice:(struct Device *)arg1 standardLibrary:(const shared_ptr_1ddd16cb *)arg2;
+@property(readonly, nonatomic) struct FigPhotoDecompressionSession *defaultDecompressionSession;
+@property(readonly, nonatomic) shared_ptr_76a6df1b grlFontManager;
+@property(readonly, nonatomic) struct IconManager *grlIconManager;
 @property(readonly, nonatomic) const struct StandardLibrary *shaderLibrary;
 @property(readonly, nonatomic) struct DistanceAtlas *distanceAtlas;
 @property(readonly, nonatomic) struct IsoAlphaAtlas *isoAlphaAtlas;
@@ -65,9 +54,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct Device *gglDevice;
 @property(readonly, nonatomic) struct Device *device;
 @property(readonly, nonatomic) VKResourceManager *resourceManager;
-@property(readonly, nonatomic) VKGGLTextureManager *gglTextureManager;
-@property(readonly, nonatomic) VKShieldManager *shieldManager;
+@property(readonly, nonatomic) shared_ptr_f2399894 textureManager;
 @property(readonly, nonatomic) VKIconManager *iconManager;
+- (const shared_ptr_887a193f *)dataOverrideManager;
 
 @end
 

@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)__new:(const id *)arg1:(unsigned int)arg2:(_Bool)arg3;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)initialize;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (void)removeObject:(id)arg1;
 - (void)removeAllObjects;
@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 - (unsigned int)countByEnumeratingWithState:(CDStruct_c73467ff *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (double)clumpingInterestingThreshold;
 - (double)clumpingFactor;
+- (unsigned int)countForObject:(id)arg1;
+- (_Bool)containsObject:(id)arg1;
 - (void)addObject:(id)arg1;
 - (void)_mutate;
 - (id)objectEnumerator;

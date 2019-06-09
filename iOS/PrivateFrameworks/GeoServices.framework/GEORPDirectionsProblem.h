@@ -8,37 +8,47 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEORPUserSearchInput, NSData, NSMutableArray;
+@class GEORPUserSearchInput, NSData, NSMutableArray, PBDataReader;
 
 @interface GEORPDirectionsProblem : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_clientSuggestedRoutes;
     NSData *_directionsResponseId;
     GEORPUserSearchInput *_endWaypoint;
     NSMutableArray *_instructionCorrections;
     NSData *_overviewScreenshotImageData;
-    unsigned int _problematicLineIndex;
     NSMutableArray *_problematicRouteIndexs;
-    unsigned int _problematicStepIndex;
     GEORPUserSearchInput *_startWaypoint;
+    unsigned int _problematicLineIndex;
+    unsigned int _problematicStepIndex;
     struct {
-        unsigned int problematicLineIndex:1;
-        unsigned int problematicStepIndex:1;
-    } _has;
+        unsigned int has_problematicLineIndex:1;
+        unsigned int has_problematicStepIndex:1;
+        unsigned int read_clientSuggestedRoutes:1;
+        unsigned int read_directionsResponseId:1;
+        unsigned int read_endWaypoint:1;
+        unsigned int read_instructionCorrections:1;
+        unsigned int read_overviewScreenshotImageData:1;
+        unsigned int read_problematicRouteIndexs:1;
+        unsigned int read_startWaypoint:1;
+        unsigned int wrote_clientSuggestedRoutes:1;
+        unsigned int wrote_directionsResponseId:1;
+        unsigned int wrote_endWaypoint:1;
+        unsigned int wrote_instructionCorrections:1;
+        unsigned int wrote_overviewScreenshotImageData:1;
+        unsigned int wrote_problematicRouteIndexs:1;
+        unsigned int wrote_startWaypoint:1;
+        unsigned int wrote_problematicLineIndex:1;
+        unsigned int wrote_problematicStepIndex:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)instructionCorrectionType;
 + (Class)problematicRouteIndexType;
 + (Class)clientSuggestedRouteType;
-@property(retain, nonatomic) NSMutableArray *instructionCorrections; // @synthesize instructionCorrections=_instructionCorrections;
-@property(retain, nonatomic) GEORPUserSearchInput *endWaypoint; // @synthesize endWaypoint=_endWaypoint;
-@property(retain, nonatomic) GEORPUserSearchInput *startWaypoint; // @synthesize startWaypoint=_startWaypoint;
-@property(nonatomic) unsigned int problematicLineIndex; // @synthesize problematicLineIndex=_problematicLineIndex;
-@property(retain, nonatomic) NSMutableArray *problematicRouteIndexs; // @synthesize problematicRouteIndexs=_problematicRouteIndexs;
-@property(retain, nonatomic) NSMutableArray *clientSuggestedRoutes; // @synthesize clientSuggestedRoutes=_clientSuggestedRoutes;
-@property(nonatomic) unsigned int problematicStepIndex; // @synthesize problematicStepIndex=_problematicStepIndex;
-@property(retain, nonatomic) NSData *overviewScreenshotImageData; // @synthesize overviewScreenshotImageData=_overviewScreenshotImageData;
-@property(retain, nonatomic) NSData *directionsResponseId; // @synthesize directionsResponseId=_directionsResponseId;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -47,26 +57,46 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)instructionCorrectionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)instructionCorrectionsCount;
+- (void)_addNoFlagsInstructionCorrection:(id)arg1;
 - (void)addInstructionCorrection:(id)arg1;
 - (void)clearInstructionCorrections;
+@property(retain, nonatomic) NSMutableArray *instructionCorrections;
+- (void)_readInstructionCorrections;
+@property(retain, nonatomic) GEORPUserSearchInput *endWaypoint;
 @property(readonly, nonatomic) _Bool hasEndWaypoint;
+- (void)_readEndWaypoint;
+@property(retain, nonatomic) GEORPUserSearchInput *startWaypoint;
 @property(readonly, nonatomic) _Bool hasStartWaypoint;
+- (void)_readStartWaypoint;
 @property(nonatomic) _Bool hasProblematicLineIndex;
+@property(nonatomic) unsigned int problematicLineIndex;
 - (id)problematicRouteIndexAtIndex:(unsigned long long)arg1;
 - (unsigned long long)problematicRouteIndexsCount;
+- (void)_addNoFlagsProblematicRouteIndex:(id)arg1;
 - (void)addProblematicRouteIndex:(id)arg1;
 - (void)clearProblematicRouteIndexs;
+@property(retain, nonatomic) NSMutableArray *problematicRouteIndexs;
+- (void)_readProblematicRouteIndexs;
 - (id)clientSuggestedRouteAtIndex:(unsigned long long)arg1;
 - (unsigned long long)clientSuggestedRoutesCount;
+- (void)_addNoFlagsClientSuggestedRoute:(id)arg1;
 - (void)addClientSuggestedRoute:(id)arg1;
 - (void)clearClientSuggestedRoutes;
+@property(retain, nonatomic) NSMutableArray *clientSuggestedRoutes;
+- (void)_readClientSuggestedRoutes;
 @property(nonatomic) _Bool hasProblematicStepIndex;
+@property(nonatomic) unsigned int problematicStepIndex;
+@property(retain, nonatomic) NSData *overviewScreenshotImageData;
 @property(readonly, nonatomic) _Bool hasOverviewScreenshotImageData;
+- (void)_readOverviewScreenshotImageData;
+@property(retain, nonatomic) NSData *directionsResponseId;
 @property(readonly, nonatomic) _Bool hasDirectionsResponseId;
+- (void)_readDirectionsResponseId;
 
 @end
 

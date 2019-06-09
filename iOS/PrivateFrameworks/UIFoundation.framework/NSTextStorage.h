@@ -6,10 +6,12 @@
 
 #import <Foundation/NSMutableAttributedString.h>
 
-@class NSArray, NSMutableArray;
-@protocol NSTextStorageDelegate;
+#import <UIFoundation/NSSecureCoding-Protocol.h>
 
-@interface NSTextStorage : NSMutableAttributedString
+@class NSArray, NSMutableArray;
+@protocol NSTextStorageController, NSTextStorageDelegate;
+
+@interface NSTextStorage : NSMutableAttributedString <NSSecureCoding>
 {
     struct _NSRange _editedRange;
     long long _editedDelta;
@@ -22,6 +24,7 @@
     } _flags;
     NSMutableArray *_layoutManagers;
     id _sideData;
+    id <NSTextStorageController> _textStorageController;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -32,6 +35,8 @@
 - (id)cuiStyleEffects;
 - (id)cuiCatalog;
 - (_Bool)_shouldSetOriginalFontAttribute;
+- (id)textStorageController;
+- (void)setTextStorageController:(id)arg1;
 @property(nonatomic) __weak id <NSTextStorageDelegate> delegate;
 - (void)fontSetChanged;
 - (void)_notifyEdited:(unsigned long long)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3 invalidatedRange:(struct _NSRange)arg4;

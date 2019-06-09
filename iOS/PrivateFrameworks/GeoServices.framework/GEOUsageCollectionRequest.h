@@ -8,24 +8,33 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOABExperimentAssignment, NSMutableArray;
+@class GEOABExperimentAssignment, NSMutableArray, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOUsageCollectionRequest : PBRequest <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_abExperimentAssignments;
     GEOABExperimentAssignment *_tilesAbExperimentAssignment;
     NSMutableArray *_timeToLeaveHypothesisFeedbackCollections;
     NSMutableArray *_timeToLeaveInitialTravelTimeFeedbackCollections;
+    struct {
+        unsigned int read_abExperimentAssignments:1;
+        unsigned int read_tilesAbExperimentAssignment:1;
+        unsigned int read_timeToLeaveHypothesisFeedbackCollections:1;
+        unsigned int read_timeToLeaveInitialTravelTimeFeedbackCollections:1;
+        unsigned int wrote_abExperimentAssignments:1;
+        unsigned int wrote_tilesAbExperimentAssignment:1;
+        unsigned int wrote_timeToLeaveHypothesisFeedbackCollections:1;
+        unsigned int wrote_timeToLeaveInitialTravelTimeFeedbackCollections:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)timeToLeaveInitialTravelTimeFeedbackCollectionType;
 + (Class)timeToLeaveHypothesisFeedbackCollectionType;
 + (Class)abExperimentAssignmentType;
-@property(retain, nonatomic) GEOABExperimentAssignment *tilesAbExperimentAssignment; // @synthesize tilesAbExperimentAssignment=_tilesAbExperimentAssignment;
-@property(retain, nonatomic) NSMutableArray *timeToLeaveInitialTravelTimeFeedbackCollections; // @synthesize timeToLeaveInitialTravelTimeFeedbackCollections=_timeToLeaveInitialTravelTimeFeedbackCollections;
-@property(retain, nonatomic) NSMutableArray *timeToLeaveHypothesisFeedbackCollections; // @synthesize timeToLeaveHypothesisFeedbackCollections=_timeToLeaveHypothesisFeedbackCollections;
-@property(retain, nonatomic) NSMutableArray *abExperimentAssignments; // @synthesize abExperimentAssignments=_abExperimentAssignments;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,21 +45,33 @@ __attribute__((visibility("hidden")))
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOABExperimentAssignment *tilesAbExperimentAssignment;
 @property(readonly, nonatomic) _Bool hasTilesAbExperimentAssignment;
+- (void)_readTilesAbExperimentAssignment;
 - (id)timeToLeaveInitialTravelTimeFeedbackCollectionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)timeToLeaveInitialTravelTimeFeedbackCollectionsCount;
+- (void)_addNoFlagsTimeToLeaveInitialTravelTimeFeedbackCollection:(id)arg1;
 - (void)addTimeToLeaveInitialTravelTimeFeedbackCollection:(id)arg1;
 - (void)clearTimeToLeaveInitialTravelTimeFeedbackCollections;
+@property(retain, nonatomic) NSMutableArray *timeToLeaveInitialTravelTimeFeedbackCollections;
+- (void)_readTimeToLeaveInitialTravelTimeFeedbackCollections;
 - (id)timeToLeaveHypothesisFeedbackCollectionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)timeToLeaveHypothesisFeedbackCollectionsCount;
+- (void)_addNoFlagsTimeToLeaveHypothesisFeedbackCollection:(id)arg1;
 - (void)addTimeToLeaveHypothesisFeedbackCollection:(id)arg1;
 - (void)clearTimeToLeaveHypothesisFeedbackCollections;
+@property(retain, nonatomic) NSMutableArray *timeToLeaveHypothesisFeedbackCollections;
+- (void)_readTimeToLeaveHypothesisFeedbackCollections;
 - (id)abExperimentAssignmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)abExperimentAssignmentsCount;
+- (void)_addNoFlagsAbExperimentAssignment:(id)arg1;
 - (void)addAbExperimentAssignment:(id)arg1;
 - (void)clearAbExperimentAssignments;
+@property(retain, nonatomic) NSMutableArray *abExperimentAssignments;
+- (void)_readAbExperimentAssignments;
 
 @end
 

@@ -10,5 +10,6 @@
 + (id)sp_recursivelyFindSubviewsOfView:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (void)sp_setBoundsAndPositionFromFrame:(struct CGRect)arg1;
 - (id)sp_containingViewControllerView;
+- (int)_spOverrideSemanticContentAttribute;
 @end
 

@@ -9,7 +9,7 @@
 #import <AppStoreDaemon/ASDNotificationServiceProtocol-Protocol.h>
 
 @class NSHashTable, NSMutableDictionary;
-@protocol OS_dispatch_queue;
+@protocol ASDNotificationCenterDialogObserver, OS_dispatch_queue;
 
 @interface ASDNotificationCenter : NSObject <ASDNotificationServiceProtocol>
 {
@@ -17,13 +17,17 @@
     NSMutableDictionary *_notificationObservers;
     struct os_unfair_lock_s _observerLock;
     NSHashTable *_progressObservers;
+    id <ASDNotificationCenterDialogObserver> _dialogObserver;
 }
 
 + (id)interface;
 + (id)defaultCenter;
+@property __weak id <ASDNotificationCenterDialogObserver> dialogObserver; // @synthesize dialogObserver=_dialogObserver;
 - (void).cxx_destruct;
 - (void)deliverProgress:(id)arg1;
 - (void)deliverNotifications:(id)arg1;
+- (void)deliverDialogRequest:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
+- (void)deliverAuthenticateRequest:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 - (void)removeProgressObserver:(id)arg1;
 - (void)removeNotificationObserver:(id)arg1 forName:(id)arg2;
 - (void)addProgressObserver:(id)arg1;

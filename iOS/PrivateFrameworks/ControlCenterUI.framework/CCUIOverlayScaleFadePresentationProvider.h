@@ -32,7 +32,7 @@
 - (unsigned long long)finalTransitionTypeForState:(id)arg1 gestureTranslation:(struct CGPoint)arg2 gestureVelocity:(struct CGPoint)arg3;
 - (id)transitionStateForType:(unsigned long long)arg1 interactive:(_Bool)arg2 translation:(struct CGPoint)arg3;
 @property(readonly, nonatomic) _Bool allowHotPocketDuringTransition; // @dynamic allowHotPocketDuringTransition;
-@property(readonly, nonatomic) unsigned long long backgroundMaterialOptions; // @dynamic backgroundMaterialOptions;
+@property(readonly, nonatomic, getter=isZoomEnabled) _Bool zoomEnabled; // @dynamic zoomEnabled;
 - (CDUnknownBlockType)customBackdropScaleAdjustment;
 - (_Bool)backdropViewShouldUseAlphaTransformer;
 @property(readonly, nonatomic, getter=isPanDismissalAvailable) _Bool panDismissalAvailable; // @dynamic panDismissalAvailable;

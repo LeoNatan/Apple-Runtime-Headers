@@ -20,7 +20,7 @@
     NSMutableOrderedSet *__remainingAssetCollectionObjectIDsToFetch;
 }
 
-+ (id)mockDataSourceManagerFromRecentLargeMoments:(unsigned long long)arg1;
++ (id)mockDataSourceManagerFromRecentLargeMoments;
 + (id)new;
 @property(retain) NSMutableOrderedSet *_remainingAssetCollectionObjectIDsToFetch; // @synthesize _remainingAssetCollectionObjectIDsToFetch=__remainingAssetCollectionObjectIDsToFetch;
 @property(retain, nonatomic) PXCMMMomentsInvitationsDataSourceState *_state; // @synthesize _state=__state;

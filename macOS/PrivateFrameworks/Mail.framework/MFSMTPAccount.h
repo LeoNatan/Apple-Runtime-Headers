@@ -6,7 +6,7 @@
 
 #import <Mail/MFDeliveryAccount.h>
 
-@class MFSMTPConnection, NSOperationQueue, NSTimer;
+@class ECSMTPAccount, MFSMTPConnection, NSOperationQueue, NSTimer;
 
 @interface MFSMTPAccount : MFDeliveryAccount
 {
@@ -19,6 +19,7 @@
 
 + (id)standardSSLPorts;
 + (id)standardPorts;
++ (id)csAccountTypeString;
 + (id)accountTypeString;
 @property(nonatomic) long long lastTimerSetTime; // @synthesize lastTimerSetTime=_lastTimerSetTime;
 @property(readonly, nonatomic) NSOperationQueue *connectionCleanupQueue; // @synthesize connectionCleanupQueue=_connectionCleanupQueue;
@@ -36,14 +37,13 @@
 - (id)newConnectedConnectionDiscoveringBestSettings:(BOOL)arg1 withConnectTimeout:(double)arg2 readWriteTimeout:(double)arg3;
 - (id)saslProfileName;
 - (BOOL)_parentSystemAccountDidUpdateProperties:(id)arg1 changedSystemAccount:(char *)arg2;
-- (id)usesSSLObject;
-- (id)_hostnameFromParentAccount:(id)arg1;
-- (id)portNumberObject;
-- (long long)defaultPortNumber;
 - (id)newDelivererWithMessage:(id)arg1;
 - (id)init;
 - (id)initWithSystemAccount:(id)arg1;
 - (id)objectSpecifier;
+
+// Remaining properties
+@property(readonly) ECSMTPAccount *baseAccount; // @dynamic baseAccount;
 
 @end
 

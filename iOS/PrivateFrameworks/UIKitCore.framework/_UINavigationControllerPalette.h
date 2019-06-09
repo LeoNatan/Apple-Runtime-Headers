@@ -6,11 +6,14 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, UINavigationController, UIViewController, _UIBarBackground;
+#import <UIKitCore/_UINavigationPalette-Protocol.h>
 
-@interface _UINavigationControllerPalette : UIView
+@class NSArray, NSString, UINavigationController, UIViewController, _UIBarBackground, _UIBarBackgroundLayoutLegacy;
+
+@interface _UINavigationControllerPalette : UIView <_UINavigationPalette>
 {
     _UIBarBackground *_backgroundView;
+    _UIBarBackgroundLayoutLegacy *_backgroundViewLayout;
     double _backgroundUnderlapHeight;
     struct {
         unsigned int isAttached:1;
@@ -19,44 +22,38 @@
         unsigned int pinned:1;
         unsigned int pinningBarShadowIsHidden:1;
         unsigned int paletteShadowIsHidden:1;
-        unsigned int shouldHideWhenScrolling:1;
         unsigned int pinningBarShadowWasHidden:1;
     } _paletteFlags;
     _Bool __paletteOverridesPinningBar;
     _Bool _visibleWhenPinningBarIsHidden;
     _Bool __palettePinningBarHidden;
-    UINavigationController *_navController;
     unsigned long long _boundaryEdge;
+    UINavigationController *_navController;
     UIViewController *__unpinnedController;
     id __pinningBar;
     NSArray *__constraints;
     NSArray *__backgroundConstraints;
-    double __heightWhenUnscrolled;
-    long long __visibilityState;
     struct CGSize __size;
     struct UIEdgeInsets _preferredContentInsets;
 }
 
-@property(nonatomic, setter=_setVisibilityState:) long long _visibilityState; // @synthesize _visibilityState=__visibilityState;
-@property(nonatomic, setter=_setHeightWhenUnscrolled:) double _heightWhenUnscrolled; // @synthesize _heightWhenUnscrolled=__heightWhenUnscrolled;
 @property(nonatomic, getter=_isPalettePinningBarHidden, setter=_setPalettePinningBarHidden:) _Bool _palettePinningBarHidden; // @synthesize _palettePinningBarHidden=__palettePinningBarHidden;
 @property(retain, nonatomic, setter=_setBackgroundConstraints:) NSArray *_backgroundConstraints; // @synthesize _backgroundConstraints=__backgroundConstraints;
 @property(nonatomic, setter=_setSize:) struct CGSize _size; // @synthesize _size=__size;
 @property(retain, nonatomic, setter=_setConstraints:) NSArray *_constraints; // @synthesize _constraints=__constraints;
 @property(nonatomic, setter=_setPinningBar:) id _pinningBar; // @synthesize _pinningBar=__pinningBar;
 @property(nonatomic) UIViewController *_unpinnedController; // @synthesize _unpinnedController=__unpinnedController;
-@property(nonatomic) struct UIEdgeInsets preferredContentInsets; // @synthesize preferredContentInsets=_preferredContentInsets;
 @property(nonatomic, getter=isVisibleWhenPinningBarIsHidden) _Bool visibleWhenPinningBarIsHidden; // @synthesize visibleWhenPinningBarIsHidden=_visibleWhenPinningBarIsHidden;
-@property(readonly, nonatomic) unsigned long long boundaryEdge; // @synthesize boundaryEdge=_boundaryEdge;
 @property(readonly, nonatomic) UINavigationController *navController; // @synthesize navController=_navController;
+@property(nonatomic) struct UIEdgeInsets preferredContentInsets; // @synthesize preferredContentInsets=_preferredContentInsets;
+@property(readonly, nonatomic) unsigned long long boundaryEdge; // @synthesize boundaryEdge=_boundaryEdge;
 @property(nonatomic, setter=_setPaletteOverridesPinningBar:) _Bool _paletteOverridesPinningBar; // @synthesize _paletteOverridesPinningBar=__paletteOverridesPinningBar;
 - (void)_setVisualAltitudeBias:(struct CGSize)arg1;
 - (void)_setVisualAltitude:(double)arg1;
 - (void)didMoveToSuperview;
 @property(retain, nonatomic, setter=_setBackgroundView:) UIView *_backgroundView;
+- (id)_backgroundViewLayout;
 - (void)_setupBackgroundViewIfNecessary;
-- (void)_resetVisibilityStateIfNecessary;
-@property(nonatomic, setter=_setShouldHideWhenScrolling:) _Bool _shouldHideWhenScrolling;
 - (void)_resetHeightConstraintConstant;
 - (void)_setLeftConstraintConstant:(double)arg1;
 - (void)_setTopConstraintConstant:(double)arg1;
@@ -86,6 +83,12 @@
 - (void)dealloc;
 - (id)_initWithNavigationController:(id)arg1 forEdge:(unsigned long long)arg2;
 - (_Bool)_supportsSpecialSearchBarTransitions;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

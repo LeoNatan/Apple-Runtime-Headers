@@ -6,45 +6,48 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet, NSString;
+@class NSSet, NSString, PLPhotoLibraryPathManager;
 
 @interface PLClientServerTransaction : NSObject
 {
     NSString *_transactionToken;
     NSSet *_changeScopes;
+    PLPhotoLibraryPathManager *_pathManager;
 }
 
-+ (id)descriptionOfAllTransactionFiles;
++ (id)descriptionOfAllTransactionFilesForPathManager:(id)arg1;
 + (id)transactionFromUserInfo:(id)arg1;
 + (void)removeTransactionFromUserInfo:(id)arg1;
 + (void)addTransaction:(id)arg1 toUserInfo:(id)arg2;
-+ (id)changeScopesFromXPCDictionary:(id)arg1;
-+ (id)transactionTokenFromXPCDictionary:(id)arg1;
-+ (void)addScopesForTransaction:(id)arg1 toXPCDictionary:(id)arg2;
-+ (void)addTokenForTransaction:(id)arg1 toXPCDictionary:(id)arg2;
-+ (void)handleOutstandingTransactions:(CDUnknownBlockType)arg1;
-+ (id)_outstandingTransactionScopesByPath;
++ (void)addTransaction:(id)arg1 toXPCDictionary:(id)arg2;
++ (id)_libraryURLFromXPCDictionary:(id)arg1;
++ (id)_changeScopesFromXPCDictionary:(id)arg1;
++ (id)_transactionTokenFromXPCDictionary:(id)arg1;
++ (void)_cleanupAllTransactionsScopesByPath:(id)arg1;
++ (void)handleOutstandingTransactionsForPathManager:(id)arg1 handler:(CDUnknownBlockType)arg2;
++ (id)_outstandingTransactionScopesByPathForPathManager:(id)arg1;
 + (_Bool)_isOutstandingTransactionAtPath:(id)arg1 getScopeValues:(unsigned long long *)arg2;
 + (unsigned long long)_readScopeValuesFromFileDescriptor:(int)arg1;
-+ (id)_allTransactionPaths;
-+ (void)_checkForAndHandleExcessiveRecoveryAttempts;
-+ (_Bool)_archiveRecoveryHistoryWithError:(id *)arg1;
-+ (_Bool)_hasExcessiveRecoveryAttempts;
-+ (void)_recordRecoveryAttempt;
-+ (id)_recoveryHistoryFilePath;
-+ (id)beginServerTransactionWithToken:(id)arg1 changeScopes:(id)arg2;
++ (id)_allTransactionPathsForPathManager:(id)arg1;
++ (void)_checkForAndHandleExcessiveRecoveryAttemptsForPathManager:(id)arg1;
++ (_Bool)_archiveRecoveryHistoryForPathManager:(id)arg1 error:(id *)arg2;
++ (_Bool)_hasExcessiveRecoveryAttemptsForPathManager:(id)arg1;
++ (void)_recordRecoveryAttemptForPathManager:(id)arg1;
++ (id)_recoveryHistoryFilePathForPathManager:(id)arg1;
++ (id)beginServerTransactionWithClientTransactionFromXPCDictionary:(id)arg1 pathManager:(id)arg2;
++ (id)beginServerTransactionWithToken:(id)arg1 changeScopes:(id)arg2 pathManager:(id)arg3;
 + (id)scopesFromScopeValues:(unsigned long long)arg1;
 + (unsigned long long)scopeValuesFromScopes:(id)arg1;
 + (id)_scopeValuesByScope;
-+ (id)_filePathForTransactionWithToken:(id)arg1;
-+ (id)beginClientTransactionWithChangeScopes:(id)arg1;
++ (id)_filePathForTransactionWithToken:(id)arg1 pathManager:(id)arg2;
++ (id)beginClientTransactionWithChangeScopes:(id)arg1 pathManager:(id)arg2;
++ (id)_serverTransactionForPathManager:(id)arg1 isNew:(_Bool *)arg2;
 + (id)serverTransactionQueue;
-+ (id)_fileManager;
-+ (id)_transactionsDirectory;
-@property(readonly, retain, nonatomic) NSSet *changeScopes; // @synthesize changeScopes=_changeScopes;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
+@property(readonly, nonatomic) NSSet *changeScopes; // @synthesize changeScopes=_changeScopes;
 @property(copy, nonatomic) NSString *transactionToken; // @synthesize transactionToken=_transactionToken;
+- (void).cxx_destruct;
 - (void)addChangeScopes:(id)arg1;
-- (void)dealloc;
 - (_Bool)isClientTransaction;
 - (void)popChangeScopesBatch;
 - (void)pushChangeScopesBatch;
@@ -52,6 +55,7 @@
 - (void)completeTransaction;
 - (void)abortTransaction;
 - (void)stillAlive;
+- (id)initWithPathManager:(id)arg1;
 
 @end
 

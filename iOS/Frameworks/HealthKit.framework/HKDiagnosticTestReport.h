@@ -6,39 +6,49 @@
 
 #import <HealthKit/HKMedicalRecord.h>
 
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKDiagnosticTestReportType, HKMedicalCoding, HKMedicalDate, NSArray, NSString;
+@class HKConcept, HKDiagnosticTestReportType, HKMedicalCoding, HKMedicalDate, NSArray, NSLocale, NSString, NSUUID;
 
-@interface HKDiagnosticTestReport : HKMedicalRecord <NSSecureCoding, NSCopying>
+@interface HKDiagnosticTestReport : HKMedicalRecord <HKConceptIndexable, NSSecureCoding, NSCopying>
 {
     NSArray *_diagnosticTestCodings;
     NSString *_panelName;
     NSArray *_results;
     HKMedicalDate *_effectiveStartDate;
-    HKMedicalCoding *_status;
+    HKMedicalCoding *_statusCoding;
     HKMedicalDate *_effectiveEndDate;
     HKMedicalDate *_issueDate;
+    HKConcept *_diagnosticTest;
+    HKConcept *_status;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)diagnosticTestReportWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 diagnosticTestCodings:(id)arg10 panelName:(id)arg11 results:(id)arg12 effectiveStartDate:(id)arg13 status:(id)arg14 effectiveEndDate:(id)arg15 issueDate:(id)arg16;
-+ (id)diagnosticTestReportWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 diagnosticTestCodings:(id)arg9 panelName:(id)arg10 results:(id)arg11 effectiveStartDate:(id)arg12 status:(id)arg13 effectiveEndDate:(id)arg14 issueDate:(id)arg15;
++ (id)_newDiagnosticTestReportWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 diagnosticTestCodings:(id)arg11 panelName:(id)arg12 results:(id)arg13 effectiveStartDate:(id)arg14 statusCoding:(id)arg15 effectiveEndDate:(id)arg16 issueDate:(id)arg17 config:(CDUnknownBlockType)arg18;
++ (id)diagnosticTestReportWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 diagnosticTestCodings:(id)arg11 panelName:(id)arg12 results:(id)arg13 effectiveStartDate:(id)arg14 statusCoding:(id)arg15 effectiveEndDate:(id)arg16 issueDate:(id)arg17;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
++ (id)diagnosticTestReportWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 diagnosticTestCodings:(id)arg10 panelName:(id)arg11 results:(id)arg12 effectiveStartDate:(id)arg13 statusCoding:(id)arg14 effectiveEndDate:(id)arg15 issueDate:(id)arg16;
 + (id)defaultDisplayString;
-+ (id)statusPreferredSystems;
++ (id)statusCodingPreferredSystems;
 + (id)diagnosticTestCodingsPreferredSystems;
 - (void).cxx_destruct;
 @property(readonly, copy) HKDiagnosticTestReportType *diagnosticTestReportType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned long long)arg1;
+- (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKConcept *status;
+- (void)_setDiagnosticTest:(id)arg1;
+@property(readonly, copy) HKConcept *diagnosticTest;
 - (void)_setIssueDate:(id)arg1;
 @property(readonly, copy) HKMedicalDate *issueDate;
 - (void)_setEffectiveEndDate:(id)arg1;
 @property(readonly, copy) HKMedicalDate *effectiveEndDate;
-- (void)_setStatus:(id)arg1;
-@property(readonly, copy) HKMedicalCoding *status;
+- (void)_setStatusCoding:(id)arg1;
+@property(readonly, copy) HKMedicalCoding *statusCoding;
 - (void)_setEffectiveStartDate:(id)arg1;
 @property(readonly, copy) HKMedicalDate *effectiveStartDate;
 - (void)_setResults:(id)arg1;
@@ -47,17 +57,30 @@
 @property(readonly, copy) NSString *panelName;
 - (void)_setDiagnosticTestCodings:(id)arg1;
 @property(readonly, copy) NSArray *diagnosticTestCodings;
+- (id)statusCodingContext;
+- (id)statusCodingCollection;
+- (id)diagnosticTestCodingsContext;
+- (id)diagnosticTestCodingsCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
 - (id)indexKeywords;
-- (id)statusTasks;
+- (id)statusCodingTasks;
 - (id)diagnosticTestCodingsTasks;
+
+// Remaining properties
+@property(readonly) NSUUID *UUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSLocale *locale;
+@property(readonly) Class superclass;
 
 @end
 

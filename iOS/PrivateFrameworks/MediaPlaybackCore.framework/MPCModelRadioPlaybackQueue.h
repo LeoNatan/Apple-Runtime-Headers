@@ -6,25 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class ICRadioPlaybackHistory, ICRadioPlaybackHistoryStore, ICStoreRequestContext, MPModelRadioStation, MPSectionedCollection, NSMutableArray, NSString, _MPCModelRadioPlaybackQueueAVItemSection, _MPCModelRadioPlaybackQueueExternalFeederSection, _MPCModelRadioPlaybackQueueStationTracksSection;
+@class ICRadioPlaybackHistory, ICRadioPlaybackHistoryStore, ICStoreRequestContext, MPModelRadioStation, MPSectionedCollection, _MPCModelRadioPlaybackQueueStationTracksCollection;
 
 @interface MPCModelRadioPlaybackQueue : NSObject
 {
-    NSString *_originalStationName;
-    _MPCModelRadioPlaybackQueueAVItemSection *_placeholderItemSection;
     ICRadioPlaybackHistoryStore *_playbackHistoryStore;
-    _MPCModelRadioPlaybackQueueExternalFeederSection *_prefixItemSection;
-    MPModelRadioStation *_radioStation;
-    NSMutableArray *_sections;
-    _MPCModelRadioPlaybackQueueStationTracksSection *_stationTracksSection;
     ICStoreRequestContext *_storeRequestContext;
+    MPModelRadioStation *_radioStation;
+    _MPCModelRadioPlaybackQueueStationTracksCollection *_stationTracks;
 }
 
-+ (_Bool)identifiersIdentifyRadioStation:(id)arg1;
 @property(retain, nonatomic) MPModelRadioStation *radioStation; // @synthesize radioStation=_radioStation;
 - (void).cxx_destruct;
-- (id)_indexPathForGlobalIndex:(long long)arg1;
-- (long long)_globalIndexForIndexPath:(id)arg1;
 - (void)updateWithPersonalizedResponse:(id)arg1;
 - (id)tracksByApplyingTracksResponse:(id)arg1 currentIndex:(long long)arg2;
 @property(readonly, nonatomic) MPSectionedCollection *tracks;
@@ -32,18 +25,14 @@
 @property(readonly, nonatomic) MPSectionedCollection *trackModels;
 - (void)savePlaybackHistoryWithUpdates:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)savePlaybackHistoryWithUpdates:(CDUnknownBlockType)arg1;
-- (void)removeTrailingLoadingPlaceholder;
 - (long long)removeExplicitItems;
 @property(readonly, copy, nonatomic) ICRadioPlaybackHistory *playbackHistory;
 @property(readonly, nonatomic) long long numberOfItems;
-- (_Bool)needsMoreTracksForPlaybackIndex:(long long)arg1;
-- (_Bool)isPlaceholderItemForQueueIdentifier:(id)arg1;
-- (_Bool)isPlaceholderAVItem:(id)arg1;
 - (_Bool)isExplicitItemAtIndex:(long long)arg1;
 - (long long)indexOfItemWithAVItemQueueIdentifier:(id)arg1;
 - (id)AVItemQueueIdentifierAtIndex:(long long)arg1;
 - (id)AVItemAtIndex:(long long)arg1;
-- (id)initWithPlaybackContext:(id)arg1;
+- (id)initWithPlaybackContext:(id)arg1 identityPropertySet:(id)arg2;
 
 @end
 

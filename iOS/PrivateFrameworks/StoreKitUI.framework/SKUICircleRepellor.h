@@ -8,6 +8,7 @@
 
 @class PKPhysicsBody;
 
+__attribute__((visibility("hidden")))
 @interface SKUICircleRepellor : NSObject
 {
     double _bufferSize;

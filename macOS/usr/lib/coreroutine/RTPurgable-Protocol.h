@@ -6,9 +6,9 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class RTPurgeManager;
+@class NSDate;
 
 @protocol RTPurgable <NSObject>
-- (void)purgeManager:(RTPurgeManager *)arg1 performPurgeOfType:(long long)arg2 completion:(void (^)(NSError *))arg3;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(NSDate *)arg2 completion:(void (^)(NSError *))arg3;
 @end
 

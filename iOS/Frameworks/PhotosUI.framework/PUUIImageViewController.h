@@ -47,13 +47,15 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isPhotosPickerExtensionAvailable;
 - (void)performPhotoPickerSelection;
 - (void)setPhotoPickerMediaTypes:(id)arg1;
-- (void)didUpdateNavigationBarAppearance;
 - (_Bool)isDisplayedInPhotoPicker;
 - (_Bool)uiipc_useTelephonyUI;
 - (_Bool)wantsLegacyImageUI;
 - (_Bool)wantsAutoloopUI;
 - (unsigned long long)imagePickerSavingOptions;
 - (_Bool)imagePickerAllowsEditing;
+- (id)maxZoomScaleOverride;
+- (id)customBackgroundColor;
+- (id)cancelButtonTitle;
 - (id)chooseButtonTitle;
 - (_Bool)force1XCroppedImage;
 - (_Bool)forceNativeScreenScale;
@@ -89,7 +91,6 @@ __attribute__((visibility("hidden")))
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)setIrisPlayer:(id)arg1;
-- (void)setupNavigationItem;
 - (void)loadView;
 - (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2 expectsLivePhoto:(_Bool)arg3;
 

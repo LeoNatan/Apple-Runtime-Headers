@@ -8,7 +8,9 @@
 
 @interface CATransaction (NSCATransaction)
 + (BOOL)NS_tryAggressiveCommit;
-+ (void)NS_setFlushesWithDisplayRefresh;
++ (void)NS_setFlushesWithDisplayLink;
 + (void)NS_apply:(long long)arg1 block:(CDUnknownBlockType)arg2;
++ (void)NS_setBackground:(BOOL)arg1;
++ (BOOL)NS_isBackground;
 @end
 

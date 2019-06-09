@@ -6,27 +6,41 @@
 
 #import <objc/NSObject.h>
 
-@class REConcurrentDictionary;
+#import <RelevanceEngine/REMLModelProperties-Protocol.h>
 
-@interface REMLModel : NSObject
+@class NSString, REConcurrentDictionary;
+@protocol RERelevanceEngineMetricsRecorder;
+
+@interface REMLModel : NSObject <REMLModelProperties>
 {
     REConcurrentDictionary *_predictionCache;
     _Bool _wantsPredictionCache;
+    _Bool _implementsDebugSaving;
     _Bool _allowsExploreExploit;
     float _exploreExploitModulator;
+    float _priorMean;
+    float _simulationExploreExploitModulator;
+    id <RERelevanceEngineMetricsRecorder> _metricsRecorder;
+    NSString *_metricsInteraction;
 }
 
 + (unsigned long long)maxFeatureCount;
 + (unsigned long long)featureBitWidth;
-+ (id)modelWithFeatureSet:(id)arg1;
++ (id)modelWithFeatureSet:(id)arg1 priorMean:(float)arg2;
+@property(retain, nonatomic) NSString *metricsInteraction; // @synthesize metricsInteraction=_metricsInteraction;
+@property(retain, nonatomic) id <RERelevanceEngineMetricsRecorder> metricsRecorder; // @synthesize metricsRecorder=_metricsRecorder;
+@property(nonatomic) float simulationExploreExploitModulator; // @synthesize simulationExploreExploitModulator=_simulationExploreExploitModulator;
+@property(nonatomic) float priorMean; // @synthesize priorMean=_priorMean;
 @property(nonatomic) float exploreExploitModulator; // @synthesize exploreExploitModulator=_exploreExploitModulator;
 @property(nonatomic) _Bool allowsExploreExploit; // @synthesize allowsExploreExploit=_allowsExploreExploit;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long maxFeatureCount;
+@property(readonly, nonatomic) unsigned long long featureBitWidth;
+@property(readonly, nonatomic) NSString *name;
 - (void)logCoreAnalyticsMetrics;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (_Bool)requiresDirectory;
 - (long long)_getNumberOfCoordinates;
-- (long long)getNumberOfCoordinates;
+@property(readonly, nonatomic) long long getNumberOfCoordinates;
 - (void)_clearModel;
 - (void)clearModel;
 - (_Bool)_saveDebugModelToURL:(id)arg1 error:(id *)arg2;
@@ -35,13 +49,14 @@
 - (_Bool)_saveModelToURL:(id)arg1 error:(id *)arg2;
 - (_Bool)saveModelToURL:(id)arg1 error:(id *)arg2;
 - (id)_predictWithFeatures:(id)arg1;
+- (id)predictionSetWithFeatures:(id)arg1;
 - (id)predictWithFeatures:(id)arg1;
 - (void)_clearCache;
 - (void)_trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;
 - (void)trainWithFeatures:(id)arg1 positiveEvent:(id)arg2;
 - (_Bool)wantsPredictionCache;
 - (void)setWantsPredictionCache:(_Bool)arg1;
-- (id)initWithFeatureSet:(id)arg1;
+- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2;
 - (id)init;
 
 @end

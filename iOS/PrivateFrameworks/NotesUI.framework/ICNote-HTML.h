@@ -6,12 +6,15 @@
 
 #import <NotesShared/ICNote.h>
 
+@class ICCollaborationColorManager, NSArray, PKInk, TTTextStorage;
+
 @interface ICNote (HTML)
 + (id)hexStringForColor:(struct UIColor *)arg1;
 + (_Bool)isDefaultColor:(struct UIColor *)arg1;
 + (id)tagDictionariesForAttributes:(id)arg1 attachmentConversionHandler:(CDUnknownBlockType)arg2;
 + (id)tagDictionaryForWrapperAroundParagraphStyle:(id)arg1;
 + (id)htmlStringFromAttributedString:(id)arg1 attachmentConversionHandler:(CDUnknownBlockType)arg2;
++ (void)fixTextColorsInAttributedString:(id)arg1;
 + (void)fixFontsInAttributedString:(id)arg1;
 + (void)fixUnwantedCharactersInAttributedString:(id)arg1;
 + (void)fixDashedListsInAttributedString:(id)arg1;
@@ -26,5 +29,51 @@
 - (id)htmlStringWithAttachmentConversionHandler:(CDUnknownBlockType)arg1;
 - (id)htmlStringWithAttachments:(_Bool)arg1;
 - (id)htmlString;
+- (void)updatePKDrawingsWithHandwritingRecognitionEnabled:(_Bool)arg1;
+@property(nonatomic, getter=isHandwritingRecognitionEnabled) _Bool handwritingRecognitionEnabled;
+@property(copy, nonatomic) PKInk *selectedInk;
+- (id)checklistStyleAccessibilityDescriptionForRange:(struct _NSRange)arg1;
+- (void)announceAccessibilitySelectionChangedByMerge;
+- (void)announceAccessibilitySelectionChangedByMergeWithSavedSelections:(id)arg1 beforeMergeTimestamp:(id)arg2;
+- (void)notifyTextViewsNoteDidMerge;
+- (void)notifyTextViewsNoteWillMerge;
+- (void)textStorageDidChange:(id)arg1;
+- (void)textStorageWillChange:(id)arg1;
+- (void)textStorageDidPerformUndo:(id)arg1;
+- (void)textStorage:(id)arg1 didProcessEditing:(unsigned long long)arg2 range:(struct _NSRange)arg3 changeInLength:(long long)arg4;
+- (void)textStorage:(id)arg1 willProcessEditing:(unsigned long long)arg2 range:(struct _NSRange)arg3 changeInLength:(long long)arg4;
+- (void)filterAttachmentsInTextStorage:(id)arg1 range:(struct _NSRange)arg2;
+- (void)createMissingAttachmentsInTextStorage;
+- (void)textStorageWillProcessEditing:(id)arg1;
+- (void)updateModificationDateAndChangeCountAndSaveImmediately;
+- (void)updateModificationDateAndChangeCountAndSaveAfterDelay;
+- (void)updateModificationDateAndChangeCount;
+- (void)saveAfterDelay;
+- (void)save;
+- (id)thumbnailImageCacheKeyWithItemSize:(struct CGSize)arg1 appearanceType:(unsigned long long)arg2;
+- (void)fetchThumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 cache:(id)arg3 appearanceInfo:(id)arg4 cacheKey:(id)arg5 processingBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7;
+- (struct UIImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 imageScaling:(unsigned long long *)arg3 showAsFileIcon:(_Bool *)arg4 isMovie:(_Bool *)arg5 movieDuration:(CDStruct_1b6d18a9 *)arg6 attachment:(id *)arg7;
+- (struct UIImage *)thumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 imageScaling:(unsigned long long *)arg3 showAsFileIcon:(_Bool *)arg4 isMovie:(_Bool *)arg5 movieDuration:(CDStruct_1b6d18a9 *)arg6;
+- (id)attachmentFromRemoteFileWrapper:(id)arg1;
+- (id)attachmentFromLegacyAttachmentFileWrapper:(id)arg1;
+- (id)attachmentFromStandardFileWrapper:(id)arg1;
+- (id)attachmentFromInlineDrawingAttachment:(id)arg1;
+- (id)attachmentFromTableData:(id)arg1;
+- (id)attachmentFromObject:(id)arg1 createIfNecessary:(_Bool)arg2;
+- (id)attachmentActivityItemsForSharingForRange:(struct _NSRange)arg1;
+@property(readonly, nonatomic) NSArray *attachmentActivityItemsForSharing;
+- (id)noteActivityItemsForSharingWithNoteExporter:(id)arg1;
+@property(readonly, nonatomic) long long primaryWritingDirection;
+- (id)uiAttributedString;
+@property(readonly, nonatomic) TTTextStorage *textStorageWithoutCreating;
+@property(readonly, nonatomic) TTTextStorage *textStorage;
+@property(readonly, retain, nonatomic) ICCollaborationColorManager *collaborationColorManager;
+- (void)didMergeNoteDocument:(id)arg1 withUserInfo:(id)arg2;
+- (void)willMergeNoteDocument:(id)arg1 withUserInfo:(id)arg2;
+- (void)noteDidReplaceDocument;
+- (void)noteDidSaveAndClearDecryptedData;
+- (_Bool)shouldReleaseTextStorageWhenTurningIntoFault;
+- (void)noteWillTurnIntoFault;
+- (id)dataForTypeIdentifier:(id)arg1;
 @end
 

@@ -14,13 +14,13 @@ __attribute__((visibility("hidden")))
     SCRUIElement *__uiElement;
 }
 
-@property(readonly, retain, nonatomic) SCRUIElement *_uiElement; // @synthesize _uiElement=__uiElement;
+@property(readonly, nonatomic) SCRUIElement *_uiElement; // @synthesize _uiElement=__uiElement;
+- (void).cxx_destruct;
 - (id)_dataDetectorItemOutputWithType:(id)arg1;
 - (id)_dataDetectorTypeAtPoint:(struct CGPoint)arg1;
 - (BOOL)openDataDetectorMenuAtPoint:(struct CGPoint)arg1;
 - (id)outputForDataDetectorItemsAtPoint:(struct CGPoint)arg1;
 - (BOOL)dataDetectorExistsAtPoint:(struct CGPoint)arg1;
-- (void)dealloc;
 - (id)initWithUIElement:(id)arg1;
 
 @end

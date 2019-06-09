@@ -8,5 +8,6 @@
 
 @interface NSData (SOMetadata)
 - (id)decodeMetadataDictionary;
+- (id)mimeTypeForData;
 @end
 

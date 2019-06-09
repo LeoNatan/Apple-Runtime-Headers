@@ -10,7 +10,10 @@
 {
 }
 
++ (Class)meltedClass;
 + (id)relations;
+- (void)setURLForPendingFileCopy:(id)arg1;
+- (id)URLForPendingFileCopy;
 - (id)description;
 - (id)semanticIdentifier;
 - (void)setExternalId:(id)arg1;
@@ -20,8 +23,8 @@
 - (id)UUID;
 - (void)setFileSize:(id)arg1;
 - (id)fileSize;
-- (void)setLocalURL:(id)arg1;
-- (id)localURL;
+- (void)setLocalRelativePath:(id)arg1;
+- (id)localRelativePath;
 - (void)setIsBinary:(_Bool)arg1;
 - (_Bool)isBinary;
 - (void)setFileFormat:(id)arg1;

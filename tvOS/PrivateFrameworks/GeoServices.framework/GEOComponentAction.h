@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     int _component;
     _Bool _handleLocally;
     struct {
-        unsigned int component:1;
-        unsigned int handleLocally:1;
-    } _has;
+        unsigned int has_component:1;
+        unsigned int has_handleLocally:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool handleLocally; // @synthesize handleLocally=_handleLocally;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -28,9 +28,11 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasHandleLocally;
+@property(nonatomic) _Bool handleLocally;
 - (int)StringAsActions:(id)arg1;
 - (id)actionsAsString:(int)arg1;
 - (void)setActions:(int *)arg1 count:(unsigned long long)arg2;
@@ -42,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (int)StringAsComponent:(id)arg1;
 - (id)componentAsString:(int)arg1;
 @property(nonatomic) _Bool hasComponent;
-@property(nonatomic) int component; // @synthesize component=_component;
+@property(nonatomic) int component;
 - (void)dealloc;
 
 @end

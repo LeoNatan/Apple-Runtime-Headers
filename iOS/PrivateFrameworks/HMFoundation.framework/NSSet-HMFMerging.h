@@ -6,9 +6,25 @@
 
 #import <Foundation/NSSet.h>
 
-@interface NSSet (HMFMerging)
+#import <HMFoundation/HMFObject-Protocol.h>
+
+@class NSArray, NSString;
+
+@interface NSSet (HMFMerging) <HMFObject>
++ (id)shortDescription;
 - (id)hmf_commonObjectsFromSet:(id)arg1;
 - (id)hmf_removedObjectsFromSet:(id)arg1;
 - (id)hmf_addedObjectsFromSet:(id)arg1;
+@property(readonly, getter=hmf_isEmpty) _Bool hmf_empty;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *shortDescription;
+
+// Remaining properties
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *propertyDescription;
+@property(readonly) Class superclass;
 @end
 

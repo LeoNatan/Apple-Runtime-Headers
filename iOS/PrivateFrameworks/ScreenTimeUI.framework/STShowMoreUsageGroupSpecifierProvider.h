@@ -8,6 +8,7 @@
 
 @class NSArray, PSSpecifier;
 
+__attribute__((visibility("hidden")))
 @interface STShowMoreUsageGroupSpecifierProvider : STUsageGroupSpecifierProvider
 {
     PSSpecifier *_summarySpecifier;

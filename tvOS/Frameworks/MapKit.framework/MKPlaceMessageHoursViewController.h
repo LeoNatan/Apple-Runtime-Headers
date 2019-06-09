@@ -6,6 +6,7 @@
 
 #import <MapKit/MKPlaceHoursViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceMessageHoursViewController : MKPlaceHoursViewController
 {
 }

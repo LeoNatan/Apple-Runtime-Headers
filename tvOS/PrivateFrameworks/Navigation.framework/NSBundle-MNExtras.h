@@ -8,6 +8,7 @@
 
 @interface NSBundle (MNExtras)
 + (id)_navigationBundle;
++ (_Bool)_navigation_implementsSiriMethod;
 + (_Bool)_navigation_isRunningInSiri;
 - (id)_navigation_localizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 @end

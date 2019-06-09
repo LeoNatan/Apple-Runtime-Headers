@@ -12,9 +12,14 @@
 @interface VCPProtoImageExposureResult : PBCodable <VCPProtoResultLegacyConversionProtocol, NSCopying>
 {
     float _exposure;
+    float _underExpose;
+    struct {
+        unsigned int underExpose:1;
+    } _has;
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+@property(nonatomic) float underExpose; // @synthesize underExpose=_underExpose;
 @property(nonatomic) float exposure; // @synthesize exposure=_exposure;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,6 +30,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasUnderExpose;
 - (id)exportToLegacyDictionary;
 
 @end

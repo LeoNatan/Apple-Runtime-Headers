@@ -8,7 +8,7 @@
 
 #import <MapKit/MKMapServiceSearchTicket-Protocol.h>
 
-@class GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSError, NSString;
+@class GEOCategorySearchResultSection, GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSError, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _MKSearchTicket : _MKTicket <MKMapServiceSearchTicket>
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, nonatomic) GEOMapRegion *boundingRegion;
 @property(readonly, nonatomic) NSArray *browseCategories;
+@property(readonly, nonatomic) GEOCategorySearchResultSection *categorySearchResultSection;
 @property(readonly, nonatomic, getter=isChainResultSet) _Bool chainResultSet;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolvedResult;
 @property(readonly, copy) NSString *debugDescription;
@@ -37,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double requestResponseTime;
 @property(readonly, nonatomic) NSString *resultDisplayHeader;
 @property(readonly, nonatomic) NSArray *retainedSearchMetadata;
+@property(readonly, nonatomic) NSArray *searchResultSections;
 @property(readonly, nonatomic) int searchResultType;
 @property(readonly, nonatomic) NSString *sectionHeader;
 @property(readonly, nonatomic) _Bool shouldEnableRedoSearch;

@@ -7,26 +7,35 @@
 #import <Message/NSCopying-Protocol.h>
 #import <Message/NSObject-Protocol.h>
 
-@class NSArray, NSDate, NSString;
-@protocol ECMailbox, ECMimePart;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@protocol ECMailAccount, ECMailbox, ECMessageHeaders, ECMimePart;
 
 @protocol ECMessage <NSCopying, NSObject>
-@property(readonly, nonatomic) id <ECMimePart> messageBody;
-@property(readonly, nonatomic) _Bool conversationMuted;
-@property(readonly, nonatomic) _Bool conversationVIP;
-@property(readonly, nonatomic) _Bool senderVIP;
-@property(readonly, nonatomic) _Bool junk;
-@property(readonly, nonatomic) _Bool answered;
-@property(readonly, nonatomic) _Bool flagged;
+@property(readonly, nonatomic) ECAngleBracketIDHash *listIDHash;
+@property(readonly, nonatomic) unsigned int numberOfAttachments;
+@property(readonly, copy, nonatomic) NSArray *references;
+@property(readonly, nonatomic) id <ECMessageHeaders> headers;
+@property(readonly, nonatomic) id <ECMailAccount> account;
+@property(readonly) NSSet *labels;
+@property(readonly, nonatomic) ECAngleBracketIDHash *messageIDHeaderHash;
+@property(readonly, copy, nonatomic) NSString *messageIDHeader;
+@property(readonly, copy, nonatomic) NSDictionary *headersDictionary;
+@property(readonly, nonatomic) id <ECMimePart> bodyPart;
+@property(readonly, nonatomic, getter=isPartOfExistingThread) _Bool partOfExistingThread;
+@property(readonly, nonatomic) ECMessageFlags *flags;
 @property(readonly, nonatomic) long long conversationID;
 @property(readonly, nonatomic) id <ECMailbox> mailbox;
 @property(readonly, copy, nonatomic) NSString *remoteID;
 @property(readonly, copy, nonatomic) NSArray *listUnsubscribe;
+@property(readonly, nonatomic) NSDate *dateSent;
 @property(readonly, nonatomic) NSDate *dateReceived;
+@property(readonly, copy, nonatomic) NSArray *senders;
+@property(readonly, copy, nonatomic) NSArray *bcc;
 @property(readonly, copy, nonatomic) NSArray *cc;
 @property(readonly, copy, nonatomic) NSArray *to;
 @property(readonly, copy, nonatomic) NSArray *from;
-@property(readonly, copy, nonatomic) NSString *subject;
+@property(readonly, copy, nonatomic) ECSubject *subject;
 @property(readonly, copy, nonatomic) NSString *persistentID;
+- (NSString *)bestAlternativePart:(_Bool *)arg1;
 @end
 

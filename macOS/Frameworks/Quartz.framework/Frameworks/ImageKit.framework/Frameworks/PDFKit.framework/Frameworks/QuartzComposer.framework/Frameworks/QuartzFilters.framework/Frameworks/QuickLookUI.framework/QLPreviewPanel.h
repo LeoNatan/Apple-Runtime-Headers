@@ -17,6 +17,7 @@
 + (id)keyPathsForValuesAffectingEditMode;
 + (BOOL)sharedPreviewPanelIsControlledByApplication;
 + (BOOL)sharedPreviewPanelExists;
++ (id)newPreviewPanel;
 + (id)_newPreviewPanelAndController:(id *)arg1;
 + (BOOL)_allowsNontitledResizableWindows;
 + (id)sharedPreviewPanel;
@@ -96,6 +97,7 @@
 - (void)selectPreviousItem;
 - (void)selectNextItem;
 - (BOOL)performKeyEquivalent:(id)arg1;
+- (BOOL)canPerformKeyEquivalent:(id)arg1;
 - (void)sendEvent:(id)arg1;
 - (void)_close:(id)arg1;
 - (void)_closeWithEffect:(int)arg1 canToggle:(BOOL)arg2 force:(BOOL)arg3;

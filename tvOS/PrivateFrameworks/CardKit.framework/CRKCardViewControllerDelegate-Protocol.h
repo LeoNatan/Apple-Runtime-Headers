@@ -7,13 +7,15 @@
 #import <CardKit/CRCommandHandling-Protocol.h>
 #import <CardKit/CRFeedbackListener-Protocol.h>
 
-@class CRKCardSectionViewController, CRNextCardCommand, CRPunchoutCommand, CRRequestUserConfirmationCommand, INIntent, UIViewController;
-@protocol CRCard, CRKCardViewControlling, CRReferentialCommand;
+@class CRBeganEditingCommand, CRKCardSectionViewController, CRNextCardCommand, CRPunchoutCommand, CRRequestUserConfirmationCommand, INIntent, UIViewController;
+@protocol CRCard, CRKCardSectionViewProviderManaging, CRKCardViewControlling, CRReferentialCommand;
 
 @protocol CRKCardViewControllerDelegate <CRFeedbackListener, CRCommandHandling>
 
 @optional
 - (void)cardViewController:(UIViewController<CRKCardViewControlling> *)arg1 requestCardSectionViewSourceForCard:(id <CRCard>)arg2 reply:(void (^)(id <CRKCardSectionViewSourcing>, NSError *))arg3;
+- (_Bool)cardViewController:(UIViewController<CRKCardViewControlling> *)arg1 shouldLoadIdentifiedCardSectionViewProvidersWithProviderManager:(id <CRKCardSectionViewProviderManaging>)arg2;
+- (_Bool)performBeganEditingCommand:(CRBeganEditingCommand *)arg1 forCardViewController:(UIViewController<CRKCardViewControlling> *)arg2;
 - (_Bool)performRequestUserConfirmationCommand:(CRRequestUserConfirmationCommand *)arg1 forCardViewController:(UIViewController<CRKCardViewControlling> *)arg2;
 - (_Bool)performPunchoutCommand:(CRPunchoutCommand *)arg1 forCardViewController:(UIViewController<CRKCardViewControlling> *)arg2;
 - (_Bool)performNextCardCommand:(CRNextCardCommand *)arg1 forCardViewController:(UIViewController<CRKCardViewControlling> *)arg2;

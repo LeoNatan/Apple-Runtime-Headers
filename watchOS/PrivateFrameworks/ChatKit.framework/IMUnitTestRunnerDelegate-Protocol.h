@@ -12,7 +12,6 @@
 @protocol IMUnitTestRunnerDelegate <NSObject>
 
 @optional
-- (NSString *)unitTestRunnerGetPathToXCTestFramework:(IMUnitTestRunner *)arg1;
 - (void)unitTestRunner:(IMUnitTestRunner *)arg1 didReceiveOutput:(NSString *)arg2;
 - (void)unitTestRunner:(IMUnitTestRunner *)arg1 testCaseDidFinish:(NSString *)arg2 withResult:(id <IMUnitTestRunnerResult>)arg3;
 - (void)unitTestRunner:(IMUnitTestRunner *)arg1 testCase:(NSString *)arg2 didFailWithDescription:(NSString *)arg3 inFile:(NSString *)arg4 atLine:(unsigned int)arg5;

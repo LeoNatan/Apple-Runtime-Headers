@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <SetupAssistant/BYBuddyDaemonProximitySourceProtocol-Protocol.h>
+#import <SetupAssistant/SASProximitySessionDelegate-Protocol.h>
 
 @class BYBuddyDaemonProximitySourceClient, CUMessageSession, NSString;
 
-@interface BYDeviceSetupSourceSession : NSObject <BYBuddyDaemonProximitySourceProtocol>
+@interface BYDeviceSetupSourceSession : NSObject <BYBuddyDaemonProximitySourceProtocol, SASProximitySessionDelegate>
 {
     _Bool _hasBackupCompleted;
     _Bool _hasSyncCompleted;

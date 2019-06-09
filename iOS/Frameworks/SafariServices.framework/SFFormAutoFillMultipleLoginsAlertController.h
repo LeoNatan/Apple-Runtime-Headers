@@ -12,13 +12,13 @@ __attribute__((visibility("hidden")))
 @interface SFFormAutoFillMultipleLoginsAlertController : UIAlertController
 {
     UIAlertAction *_cancelAction;
-    id _appDidEnterBackgroundObserver;
     _Bool _cancelsWhenAppEntersBackground;
 }
 
 + (id)alertControllerWithMatchesFromFormProtectionSpace:(id)arg1 matchesFromOtherProtectionSpaces:(id)arg2 externalCredentials:(id)arg3 preferredStyle:(long long)arg4 formURL:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 @property(nonatomic) _Bool cancelsWhenAppEntersBackground; // @synthesize cancelsWhenAppEntersBackground=_cancelsWhenAppEntersBackground;
 - (void).cxx_destruct;
+- (void)_sceneDidEnterBackground:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 
 @end

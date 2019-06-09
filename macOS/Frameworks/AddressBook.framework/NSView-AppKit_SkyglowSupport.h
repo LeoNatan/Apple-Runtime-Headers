@@ -8,5 +8,6 @@
 
 @interface NSView (AppKit_SkyglowSupport)
 @property(readonly, nonatomic) BOOL cn_isSkyglowEnabled;
+- (id)_ab_ancestralViewOfClass:(Class)arg1;
 @end
 

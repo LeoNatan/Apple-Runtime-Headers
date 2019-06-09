@@ -20,7 +20,7 @@
     NSString *_name;
     NSArray *_validationPredicates;
     NSArray *_validationWarnings;
-    void *_extraIvars;
+    struct _NSExtraPropertyIVars *_extraIvars;
     NSMutableDictionary *_userInfo;
     struct __propertyDescriptionFlags {
         unsigned int _isReadOnly:1;

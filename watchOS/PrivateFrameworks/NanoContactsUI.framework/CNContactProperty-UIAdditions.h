@@ -8,5 +8,14 @@
 
 @interface CNContactProperty (UIAdditions)
 - (id)property;
+- (id)_mapsURL;
+- (id)_mailURL;
+- (id)_messagesURL;
+- (id)_telephonyURLWithProvider:(id)arg1 ttyType:(int)arg2;
+- (id)_destinationIDForProperty;
+- (_Bool)_canFaceTimeAudio;
+- (id)_providerManager;
+- (id)actionURLWithFavoritesEntry:(id)arg1;
+- (id)actionURL;
 @end
 

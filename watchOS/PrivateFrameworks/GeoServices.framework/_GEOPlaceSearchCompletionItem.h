@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEOCompletionItemPrivate-Protocol.h>
 
-@class GEODirectionIntent, GEOMapItemIdentifier, GEOMapServiceTraits, GEOPDAutocompleteEntry, GEOResolvedItem, GEORetainedSearchMetadata, GEOSearchCategory, NSArray, NSData, NSString;
+@class GEODirectionIntent, GEOMapItemIdentifier, GEOMapServiceTraits, GEOPDAutocompleteEntry, GEOResolvedItem, GEORetainedSearchMetadata, GEOSearchCategory, GEOServerResultScoreMetadata, NSArray, NSData, NSString;
 @protocol GEOMapItem;
 
 __attribute__((visibility("hidden")))
@@ -39,6 +39,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSData *entryMetadata;
 - (void)sendFeedback;
 - (_Bool)getCoordinate:(CDStruct_c3b9c2ee *)arg1;
+@property(readonly, nonatomic) NSString *queryAcceleratorCompletionString;
+@property(readonly, nonatomic) _Bool hasQueryAcceleratorAffordanceEnabled;
+@property(readonly, nonatomic) GEOServerResultScoreMetadata *serverResultScoreMetadata;
+@property(readonly, nonatomic) int autocompleteCellType;
+@property(readonly, nonatomic) int entryTapBehavior;
 @property(readonly, nonatomic) int sortPriority;
 @property(readonly, nonatomic) _Bool hasSortPriority;
 @property(readonly, nonatomic) GEORetainedSearchMetadata *retainedSearchMetadata;

@@ -10,7 +10,7 @@
 #import <NanoPassKit/PKPaymentWebServiceArchiver-Protocol.h>
 #import <NanoPassKit/PKPaymentWebServiceTargetDeviceProtocol-Protocol.h>
 
-@class IDSService, NPKCompanionAgentConnection, NRActiveDeviceAssertion, NSMutableDictionary, NSString;
+@class IDSService, NPKCompanionAgentConnection, NPKTapToRadarManager, NPKTargetDeviceAssertionManager, NRActiveDeviceAssertion, NSMutableDictionary, NSString;
 @protocol NPKPaymentWebServiceCompanionTargetDeviceDelegate, OS_dispatch_queue;
 
 @interface NPKPaymentWebServiceCompanionTargetDevice : NSObject <IDSServiceDelegate, PKPaymentWebServiceTargetDeviceProtocol, PKPaymentWebServiceArchiver>
@@ -23,9 +23,13 @@
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_responseQueue;
     NRActiveDeviceAssertion *_provisioningActiveDeviceAssertion;
+    NPKTargetDeviceAssertionManager *_remoteDeviceAssertionManager;
+    NPKTapToRadarManager *_manager;
 }
 
 + (id)bridgedClientInfoHTTPHeader;
+@property(retain, nonatomic) NPKTapToRadarManager *manager; // @synthesize manager=_manager;
+@property(retain, nonatomic) NPKTargetDeviceAssertionManager *remoteDeviceAssertionManager; // @synthesize remoteDeviceAssertionManager=_remoteDeviceAssertionManager;
 @property(retain, nonatomic) NRActiveDeviceAssertion *provisioningActiveDeviceAssertion; // @synthesize provisioningActiveDeviceAssertion=_provisioningActiveDeviceAssertion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *responseQueue; // @synthesize responseQueue=_responseQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
@@ -45,6 +49,7 @@
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2 extraOptions:(id)arg3;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(_Bool)arg2;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
+- (void)paymentWebService:(id)arg1 requestPassUpgrade:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)claimSecureElementForCurrentUserWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)paymentWebServiceSupportsPeerPaymentRegistration:(id)arg1;
 - (void)handleUpdatedPeerPaymentWebServiceContext:(id)arg1;
@@ -58,8 +63,11 @@
 - (void)handleCompanionMigrationResponse:(id)arg1;
 - (void)sendWebServiceContextToWatch:(id)arg1;
 - (void)sendPaymentOptionsDefaultsToWatch;
+- (id)_upgradeExpressAutomaticSelectionCriteriaRequestForPass:(id)arg1 deviceClass:(id)arg2 OSVersion:(id)arg3 SEID:(id)arg4;
+- (id)_upgradeExpressAutomaticSelectionCriteriaRequestForPass:(id)arg1;
+- (id)_expressPassInformationWithPass:(id)arg1 upgradeRequst:(id)arg2;
 - (void)_singleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
-- (void)_multipleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 pass:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void)_multipleExpressTransitPassPaymentWebService:(id)arg1 handlePotentialExpressPassInformation:(id)arg2 upgradeRequest:(id)arg3 pass:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (void)paymentWebService:(id)arg1 handlePotentialExpressPass:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)supportsCredentialType:(long long)arg1;
 - (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(long long)arg1;
@@ -76,6 +84,18 @@
 - (void)initializeCloudStoreIfNecessaryWithHandlerResponse:(id)arg1;
 - (void)initializeCloudStoreIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initializeCloudStoreIfNecessaryResponse:(id)arg1;
+- (void)paymentWebService:(id)arg1 setDefaultPaymentPassUniqueIdentifier:(id)arg2;
+- (void)paymentWebService:(id)arg1 updateAccountWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateAccountWithIdentifierResponse:(id)arg1;
+- (id)supportedFeatureIdentifiersWithPaymentWebService:(id)arg1;
+- (void)paymentWebService:(id)arg1 deviceMetadataWithFields:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)deviceMetadataResponse:(id)arg1;
+- (void)updatedAccountsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
+- (void)updatedAccountsForProvisioningResponse:(id)arg1;
+- (_Bool)paymentWebServiceSupportsAccounts:(id)arg1;
+- (void)handleDeviceUnlockedForPendingProvisioningRequest:(id)arg1;
+- (void)handlePeerPaymentTermsAndConditionsAcceptanceRequest:(id)arg1;
+- (void)openURLWithRequest:(id)arg1;
 - (void)updatePeerPaymentAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updatePeerPaymentAccountResponse:(id)arg1;
 - (void)provisionPeerPaymentPassWithCompletion:(CDUnknownBlockType)arg1;
@@ -84,10 +104,17 @@
 - (void)peerPaymentUnregisterResponse:(id)arg1;
 - (void)peerPaymentRegisterWithURL:(id)arg1 forceReRegistration:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)peerPaymentRegisterResponse:(id)arg1;
+- (void)cancelOutstandingRemotePassUpdateRequest:(id)arg1 pass:(id)arg2;
+- (void)remotePassUpgradeWithRequest:(id)arg1 pass:(id)arg2 requireAuthorization:(_Bool)arg3 notifyUserOnPairedDevice:(_Bool)arg4 updateBlock:(CDUnknownBlockType)arg5;
+- (void)remotePassUpgradeResponse:(id)arg1;
 - (void)cancelOutstandingEnableServiceModeRequests;
 - (void)enableServiceModeForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelOutstandingSetDefaultExpressPassRequestsWithExpressMode:(id)arg1;
 - (void)enableServiceModeResponse:(id)arg1;
+- (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)setCommutePlanReminderWithCommutePlanAndPassResponse:(id)arg1;
+- (void)setBalanceReminder:(id)arg1 forBalance:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)setBalanceReminderWithBalanceAndPassResponse:(id)arg1;
 - (void)conflictingExpressPassIdentifiersForPassInformationResponse:(id)arg1;
 - (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 withReferenceExpressState:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -142,7 +169,11 @@
 - (void)configurationDataResponse:(id)arg1;
 - (void)paymentWebService:(id)arg1 provisioningDataWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)provisioningDataResponse:(id)arg1;
+- (void)_paymentWebService:(id)arg1 registrationDataWithAuthToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)paymentWebService:(id)arg1 registrationDataWithAuthToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)paymentWebService:(id)arg1 registrationDataWithCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)appleAccountInformation;
 - (void)registrationDataResponse:(id)arg1;
 - (void)handleBalanceChange:(id)arg1;
 - (void)markAllAppletsForDeletionWithCompletion:(CDUnknownBlockType)arg1;
@@ -168,6 +199,8 @@
 - (unsigned long long)maximumPaymentCards;
 - (void)noteProvisioningUserInterfaceDidDisappear;
 - (void)noteProvisioningUserInterfaceDidAppear;
+- (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
+- (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;
 - (void)noteProvisioningDidEnd;
 - (void)noteProvisioningDidBegin;
 - (id)deviceRegion;

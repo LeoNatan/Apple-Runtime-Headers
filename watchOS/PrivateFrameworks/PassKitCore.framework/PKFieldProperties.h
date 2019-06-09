@@ -13,6 +13,7 @@
 @interface PKFieldProperties : NSObject <NSSecureCoding>
 {
     _Bool _shouldIgnore;
+    _Bool _authenticationRequired;
     unsigned int _technology;
     int _terminalType;
     int _valueAddedServiceMode;
@@ -25,6 +26,7 @@
 @property(copy, nonatomic) NSError *error; // @synthesize error=_error;
 @property(copy, nonatomic) NSArray *merchantIdentifiers; // @synthesize merchantIdentifiers=_merchantIdentifiers;
 @property(copy, nonatomic) NSArray *TCIs; // @synthesize TCIs=_TCIs;
+@property(nonatomic) _Bool authenticationRequired; // @synthesize authenticationRequired=_authenticationRequired;
 @property(nonatomic) _Bool shouldIgnore; // @synthesize shouldIgnore=_shouldIgnore;
 @property(readonly, nonatomic) int valueAddedServiceMode; // @synthesize valueAddedServiceMode=_valueAddedServiceMode;
 @property(readonly, nonatomic) int terminalType; // @synthesize terminalType=_terminalType;

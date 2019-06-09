@@ -35,11 +35,12 @@
     int fSelector;
 }
 
-+ (id)stringForGestureState:(long long)arg1;
 + (id)stringForViewPose:(unsigned char)arg1;
 + (id)stringForStartPose:(unsigned char)arg1;
 + (id)stringForMode:(unsigned char)arg1;
 + (id)stringForNotification:(unsigned char)arg1;
++ (unsigned char)toRaw:(long long)arg1;
++ (long long)toState:(unsigned char)arg1;
 + (_Bool)hasSlowBootArgs;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -50,6 +51,7 @@
 - (void)playAlert;
 - (void)loadPreferences;
 - (void)invokeDelegateWithState:(long long)arg1;
+- (void)simulateGesture:(long long)arg1 after:(double)arg2;
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)stopWakeGestureUpdates;
 - (void)startWakeGestureUpdates;

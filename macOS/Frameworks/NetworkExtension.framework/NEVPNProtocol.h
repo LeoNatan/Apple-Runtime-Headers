@@ -17,6 +17,8 @@
 @interface NEVPNProtocol : NSObject <NEConfigurationValidating, NEPrettyDescription, NEConfigurationLegacySupport, NSCopying, NSSecureCoding>
 {
     BOOL _disconnectOnSleep;
+    BOOL _includeAllNetworks;
+    BOOL _excludeLocalNetworks;
     BOOL _disconnectOnWake;
     BOOL _identityDataImported;
     BOOL _disconnectOnIdle;
@@ -61,6 +63,8 @@
 @property(retain) NEIdentityKeychainItem *identity; // @synthesize identity=_identity;
 @property(retain) NSString *keychainAccessGroup; // @synthesize keychainAccessGroup=_keychainAccessGroup;
 @property long long keychainDomain; // @synthesize keychainDomain=_keychainDomain;
+@property BOOL excludeLocalNetworks; // @synthesize excludeLocalNetworks=_excludeLocalNetworks;
+@property BOOL includeAllNetworks; // @synthesize includeAllNetworks=_includeAllNetworks;
 @property(copy) NEProxySettings *proxySettings; // @synthesize proxySettings=_proxySettings;
 @property BOOL disconnectOnSleep; // @synthesize disconnectOnSleep=_disconnectOnSleep;
 @property(copy) NSString *identityDataPassword; // @synthesize identityDataPassword=_identityDataPassword;

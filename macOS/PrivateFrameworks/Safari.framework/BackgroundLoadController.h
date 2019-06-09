@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_kickOffBackgroundLoad:(id)arg1;
 - (void)_restartBackgroundLoadSoon:(id)arg1;
+- (void)_commitBackgroundLoadNow:(id)arg1 wasDeferred:(BOOL)arg2 usingTabViewItemSetUpBlock:(CDUnknownBlockType)arg3;
 - (void)_commitBackgroundLoadNow:(id)arg1 wasDeferred:(BOOL)arg2;
 - (void)_commitBackgroundLoadSoon:(id)arg1;
 - (void)_destinationPageCanBeClosedForCommittingBackgroundLoad:(id)arg1;
@@ -31,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)_removeBackgroundLoadFromUncommittedUniqueBackgroundLoads:(id)arg1;
 - (void)_backgroundLoadDidPerformFirstVisuallyNonEmptyLayout:(id)arg1;
 - (id)_backgroundLoadPassingTest:(CDUnknownBlockType)arg1;
-- (void)commitBackgroundLoadImmediately:(id)arg1 toDestinationTabViewItem:(id)arg2;
+- (void)commitBackgroundLoadImmediately:(id)arg1 usingTabViewItemSetUpBlock:(CDUnknownBlockType)arg2;
 - (void)commitBackgroundLoadImmediately:(id)arg1;
 - (void)commitBackgroundLoad:(id)arg1;
 - (void)startTrackingBackgroundLoad:(id)arg1;

@@ -8,14 +8,12 @@
 
 #import <SidecarCore/SidecarSessionDelegate-Protocol.h>
 
-@class NSMapTable;
 @protocol SidecarServiceProviderDelegate;
 
 __attribute__((visibility("hidden")))
 @interface SidecarProviderProxy : NSObject <SidecarSessionDelegate>
 {
     id <SidecarServiceProviderDelegate> _delegate;
-    NSMapTable *_responses;
 }
 
 + (id)defaultProxy;

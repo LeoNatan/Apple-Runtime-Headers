@@ -18,9 +18,9 @@
     double _intervalSinceLastTouchBegan;
 }
 
-@property(retain, nonatomic) NSTimer *pressingTimer; // @synthesize pressingTimer=_pressingTimer;
 @property(nonatomic, getter=isTrackingMouseMovement) BOOL trackingMouseMovement; // @synthesize trackingMouseMovement=_trackingMouseMovement;
 @property(retain, nonatomic) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
+@property(retain, nonatomic) NSTimer *pressingTimer; // @synthesize pressingTimer=_pressingTimer;
 @property(readonly, nonatomic) IMKUIProperties *properties; // @synthesize properties=_properties;
 @property(nonatomic) BOOL inScrubbingMode; // @synthesize inScrubbingMode=_inScrubbingMode;
 - (void)shouldUpdateForPressAndHold:(id)arg1 position:(struct CGPoint)arg2 with:(long long)arg3;

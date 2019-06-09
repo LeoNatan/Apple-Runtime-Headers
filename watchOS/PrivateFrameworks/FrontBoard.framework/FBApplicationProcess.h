@@ -6,41 +6,21 @@
 
 #import <FrontBoard/FBProcess.h>
 
-#import <FrontBoard/BKSProcessDelegate-Protocol.h>
+@class BKSProcessAssertion, FBProcessWatchdog, FBProcessWatchdogEventContext, FBSProcessTerminationRequest, FBSProcessWatchdogPolicy, NSMutableArray, RBSAssertion;
 
-@class BKSProcess, BKSProcessAssertion, BSMachPortSendRight, FBApplicationInfo, FBApplicationProcessExitContext, FBProcessCPUStatistics, FBProcessExecutionContext, FBProcessState, FBProcessWatchdog, FBProcessWatchdogEventContext, FBSProcessTerminationRequest, FBSProcessWatchdogPolicy, NSMutableArray, NSMutableSet, NSString;
-@protocol FBApplicationProcessDelegate;
-
-@interface FBApplicationProcess : FBProcess <BKSProcessDelegate>
+@interface FBApplicationProcess : FBProcess
 {
-    FBApplicationInfo *_applicationInfo;
-    FBApplicationProcessExitContext *_exitContext;
-    FBProcessExecutionContext *_executionContext;
     FBSProcessTerminationRequest *_terminationRequest;
     FBProcessWatchdogEventContext *_terminationWatchdogContext;
-    FBProcessState *_terminationState;
-    NSMutableSet *_allowedLockedFilePaths;
-    NSMutableArray *_queuedSceneBlocksToExecuteAfterLaunch;
+    int _terminationReason;
     NSMutableArray *_queue_terminateRequestCompletionBlocks;
-    _Bool _attemptedBootstrap;
-    _Bool _attemptedFinalizedLaunch;
-    _Bool _queue_launchEventReceiptAcknowledged;
-    _Bool _bootstrapFailed;
-    _Bool _exitedBeforeAttemptingFinalizedLaunch;
-    _Bool _pendingExit;
-    _Bool _beingDebugged;
-    _Bool _waitForDebugger;
-    BSMachPortSendRight *_gsEventPort;
+    int _watchdogReportType;
     FBProcessWatchdog *_watchdog;
     FBSProcessWatchdogPolicy *_sceneCreateWatchdogPolicy;
-    int _terminationReason;
-    FBProcessCPUStatistics *_cpuStatistics;
-    double _execTime;
-    unsigned long long _htAppIdentifier;
-    BKSProcess *_bksProcess;
-    BKSProcessAssertion *_launchProcessAssertion;
-    BKSProcessAssertion *_viewServiceProcessAssertion;
-    BKSProcessAssertion *_continuousProcessAssertion;
+    RBSAssertion *_gracefulKillAssertion;
+    BKSProcessAssertion *_mediaAssertion;
+    BKSProcessAssertion *_audioAssertion;
+    BKSProcessAssertion *_accessoryAssertion;
     _Bool _recordingAudio;
     _Bool _nowPlayingWithAudio;
     _Bool _connectedToExternalAccessory;
@@ -49,25 +29,13 @@
 @property(nonatomic, getter=isConnectedToExternalAccessory) _Bool connectedToExternalAccessory; // @synthesize connectedToExternalAccessory=_connectedToExternalAccessory;
 @property(nonatomic, getter=isNowPlayingWithAudio) _Bool nowPlayingWithAudio; // @synthesize nowPlayingWithAudio=_nowPlayingWithAudio;
 @property(nonatomic, getter=isRecordingAudio) _Bool recordingAudio; // @synthesize recordingAudio=_recordingAudio;
-@property(readonly, nonatomic, getter=_queue_cpuStatistics) FBProcessCPUStatistics *cpuStatistics; // @synthesize cpuStatistics=_cpuStatistics;
-@property(readonly, nonatomic, getter=isPendingExit) _Bool pendingExit; // @synthesize pendingExit=_pendingExit;
-@property(nonatomic, getter=isBeingDebugged) _Bool beingDebugged; // @synthesize beingDebugged=_beingDebugged;
-@property(readonly, copy, nonatomic) FBProcessExecutionContext *executionContext; // @synthesize executionContext=_executionContext;
-@property(readonly, nonatomic) FBApplicationInfo *applicationInfo; // @synthesize applicationInfo=_applicationInfo;
 - (void).cxx_destruct;
 - (id)_watchdog:(id)arg1 terminationRequestForViolatedProvision:(id)arg2 error:(id)arg3;
 - (_Bool)_watchdog:(id)arg1 shouldTerminateWithDeclineReason:(out id *)arg2;
 - (void)_watchdogStopped:(id)arg1;
 - (void)_watchdogStarted:(id)arg1;
 - (void)_terminateWithRequest:(id)arg1 forWatchdog:(id)arg2;
-- (void)process:(id)arg1 didExitWithContext:(id)arg2;
-- (void)process:(id)arg1 isBeingDebugged:(_Bool)arg2;
-- (void)processWillExpire:(id)arg1;
-- (void)process:(id)arg1 taskStateDidChange:(int)arg2;
-- (void)_queue_dropViewServiceAssertion;
-- (void)_queue_dropContinuousProcessAssertion;
-- (void)_queue_dropLaunchProcessAssertion;
-- (void)_queue_takeLaunchProcessAssertion;
+- (void)_queue_dropAssertions;
 - (int)_watchdogReportType;
 - (long long)_exceptionCodeForKillReason:(int)arg1;
 - (_Bool)_queue_shouldWatchdogWithDeclineReason:(id *)arg1;
@@ -77,65 +45,23 @@
 - (void)_queue_terminateWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_executeKillForRequest:(id)arg1;
 - (id)_queue_composeContextWithValue:(id)arg1 key:(id)arg2;
-- (unsigned int)_queue_noteExitedForForceQuit:(_Bool)arg1;
 - (id)_queue_crashReportThermalsInfo;
-- (void)_queue_killWithSignal:(int)arg1;
 - (void)_queue_doGracefulKillWithDeliveryConfirmation:(CDUnknownBlockType)arg1;
-- (id)_queue_lockedFilePathsIgnoringAllowed;
-- (int)_queue_ourTaskStateForBKSTaskState:(int)arg1;
-- (id)_queue_name;
-- (_Bool)_queue_isAllowedLockedFilePath:(id)arg1 standardizedPath:(out id *)arg2;
-- (void)_queue_addAllowedLockedFilePath:(id)arg1;
-- (void)_queue_setTaskState:(int)arg1;
-- (void)_queue_setVisibility:(int)arg1;
-- (int)_queue_bksVisibilityForVisibility:(int)arg1;
 - (id)_queue_newWatchdogForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_queue_invalidateBKSProcess;
 - (id)_queue_internalDebugEnvironmentVariables;
-- (void)_queue_finishLaunch;
-- (_Bool)_queue_bootstrapAndExecWithContext:(id)arg1;
-- (void)_queue_addAllowedLockedPaths;
-- (_Bool)_queue_isPlatformExecutable;
-- (void)_queue_enumerateApplicationObserversWithBlock:(CDUnknownBlockType)arg1;
+- (void)_queue_noteLaunchDidComplete:(_Bool)arg1;
+- (void)_queue_noteLaunchWillComplete;
+- (id)_queue_createBootstrapContext;
 - (id)_watchdogProvider;
-- (id)_workspaceServer;
-- (id)_workspace;
-- (void)_queue_noteSceneCreationAcknowledged:(id)arg1;
 - (void)_queue_executeTerminateRequestCompletionBlocksIfNecessaryForSucccess:(_Bool)arg1;
-- (void)_queue_executeLaunchCompletionBlocks;
-- (void)_queue_executeBlockAfterLaunchCompletes:(CDUnknownBlockType)arg1;
-- (void)executeBlockAfterLaunchCompletes:(CDUnknownBlockType)arg1;
-- (void)_queue_sceneNeedsGracefulExit:(id)arg1 withDeliveryConfirmation:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic, getter=_queue_execTime) double execTime;
-@property(readonly, nonatomic, getter=_queue_terminationReason) int terminationReason;
-- (void)_queue_processDidExit;
-- (void)_queue_launchIfNecessary;
-- (void)stop;
-- (void)launchIfNecessary;
-- (_Bool)bootstrapWithContext:(id)arg1;
-- (id)GSEventPort;
-- (void)setPendingExit:(_Bool)arg1;
+- (_Bool)_wantsStateUpdates;
+- (void)invalidate;
+- (void)_queue_noteProcessDidExit:(id)arg1;
 @property(readonly, nonatomic) double elapsedCPUTime;
-@property(readonly, nonatomic) _Bool finishedLaunching;
-- (void)_queue_callExitObservers;
-- (id)_applicationWorkspace;
-- (id)_createWorkspace;
-- (_Bool)isSystemApplicationProcess;
 - (_Bool)isApplicationProcess;
 - (void)killForReason:(int)arg1 andReport:(_Bool)arg2 withDescription:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)killForReason:(int)arg1 andReport:(_Bool)arg2 withDescription:(id)arg3;
-@property(readonly, nonatomic) FBApplicationProcessExitContext *exitContext;
-- (void)dealloc;
-- (id)initWithApplicationInfo:(id)arg1 handle:(id)arg2 callOutQueue:(id)arg3;
-- (id)initWithApplicationInfo:(id)arg1 callOutQueue:(id)arg2;
-- (id)initWithBundleID:(id)arg1 pid:(int)arg2 callOutQueue:(id)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(nonatomic) __weak id <FBApplicationProcessDelegate> delegate; // @dynamic delegate;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (id)initWithHandle:(id)arg1 identity:(id)arg2 executionContext:(id)arg3;
 
 @end
 

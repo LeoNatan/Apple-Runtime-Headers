@@ -6,13 +6,16 @@
 
 #import <HomeKitDaemon/HMDAccessoryTransaction.h>
 
-@class NSArray, NSData, NSDate, NSNumber, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface HMDHAPAccessoryTransaction : HMDAccessoryTransaction
 {
+    NSDictionary *_cameraClipCloudZoneUUIDByRecordingServiceUUID;
 }
 
 + (id)properties;
+@property(retain, nonatomic) NSDictionary *cameraClipCloudZoneUUIDByRecordingServiceUUID; // @synthesize cameraClipCloudZoneUUIDByRecordingServiceUUID=_cameraClipCloudZoneUUIDByRecordingServiceUUID;
+- (void).cxx_destruct;
 - (id)dependentUUIDs;
 
 // Remaining properties

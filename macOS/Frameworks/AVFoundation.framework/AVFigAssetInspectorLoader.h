@@ -6,7 +6,7 @@
 
 #import <AVFoundation/AVAssetInspectorLoader.h>
 
-@class AVAssetInspector, AVWeakReference, NSMutableArray, NSObject, NSURL;
+@class AVAssetInspector, AVDispatchOnce, AVWeakReference, NSMutableArray, NSObject, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface AVFigAssetInspectorLoader : AVAssetInspectorLoader
@@ -15,7 +15,7 @@
     int _figAssetCreationStatus;
     AVWeakReference *_weakReferenceToAsset;
     AVAssetInspector *_assetInspector;
-    long long _assetInspectorOnce;
+    AVDispatchOnce *_assetInspectorOnce;
     NSObject<OS_dispatch_queue> *_completionHandlerQueue;
     struct OpaqueFigSimpleMutex *_loadingMutex;
     NSMutableArray *_loadingBatches;
@@ -33,6 +33,8 @@
 - (void)_setFragmentMindingInterval:(double)arg1;
 - (double)_fragmentMindingInterval;
 - (void)_invokeCompletionHandlerForLoadingBatches:(id)arg1;
+- (long long)fragmentCount;
+- (long long)firstFragmentSequenceNumber;
 - (BOOL)_isStreaming;
 - (BOOL)hasProtectedContent;
 - (unsigned long long)downloadToken;
@@ -51,6 +53,7 @@
 - (void)cancelLoading;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (long long)_statusOfValueForKey:(id)arg1 error:(id *)arg2 firstNonLoadedDependencyKey:(id *)arg3;
 - (long long)statusOfValueForKey:(id)arg1 error:(id *)arg2;
 - (long long)_loadStatusForProperty:(id)arg1 figAsset:(struct OpaqueFigAsset *)arg2 error:(id *)arg3;
 - (id)_loadingBatches;
@@ -61,7 +64,6 @@
 - (id)assetInspector;
 - (id)asset;
 - (struct OpaqueFigFormatReader *)_formatReader;
-- (void)finalize;
 - (void)dealloc;
 - (void)_removeFigAssetNotifications;
 - (void)_addFigAssetNotifications;

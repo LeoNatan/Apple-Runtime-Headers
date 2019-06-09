@@ -34,6 +34,7 @@
     NSButton *_sourceShuffleButton;
     CDUnknownBlockType _sourceMenuLoadedBlock;
     NSMutableArray *_blocksToCallOnceFinishedLoading;
+    NSString *_pathToDefaultCollections;
 }
 
 + (id)photoChooser;
@@ -41,6 +42,7 @@
 - (id)_mediaGroupForID:(id)arg1;
 - (id)_imagePathsForMediaGroupID:(id)arg1;
 - (id)_imageFilesInDirectory:(id)arg1;
+- (id)_filePathForURL:(id)arg1 isInEligibleArray:(id)arg2;
 - (BOOL)photoStreamDetected;
 - (void)resetToDefaultImageSelection;
 - (void)_generateLatestPhotosInGroups;

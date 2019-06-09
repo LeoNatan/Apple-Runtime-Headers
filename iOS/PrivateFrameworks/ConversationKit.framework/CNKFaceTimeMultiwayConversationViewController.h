@@ -19,9 +19,10 @@
     // Error parsing type: , name: inCallControlsDismissTimer
     // Error parsing type: , name: hideInactiveParticipantsTimer
     // Error parsing type: , name: effectsLayoutController
+    // Error parsing type: , name: pipZoomControl
+    // Error parsing type: , name: shouldShowZoomControls
     // Error parsing type: , name: deviceOrientation
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: shouldInitializeEffects
     // Error parsing type: , name: effectsEnabled
     // Error parsing type: , name: isPipped
 }
@@ -30,6 +31,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)accessibilityConstraintController;
 - (void)setControllerIsPipped:(_Bool)arg1;
+- (void)hideEffectsBrowser;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)openMessagesConversation;
 - (void)muteVideo;
@@ -37,6 +39,7 @@
 - (void)toggleAudioMute;
 - (void)restartAutoHideInCallControlsDrawerTimer;
 - (void)updateViewConstraints;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

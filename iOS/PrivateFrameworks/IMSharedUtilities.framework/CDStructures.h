@@ -25,12 +25,9 @@ struct CGSize {
     double _field2;
 };
 
-struct IMFileLocation_t {
-    char *_field1;
-    char *_field2;
-    char *_field3;
-    char *_field4;
-    int _field5;
+struct CLLocationCoordinate2D {
+    double _field1;
+    double _field2;
 };
 
 struct IMPreviewConstraints {
@@ -38,6 +35,13 @@ struct IMPreviewConstraints {
     struct CGSize _field2;
     double _field3;
     _Bool _field4;
+};
+
+struct IMRequirementFailed_t {
+    char *_field1;
+    _Bool _field2;
+    _Bool _field3;
+    unsigned char _field4;
 };
 
 struct NSDictionary {
@@ -55,12 +59,5 @@ struct _NSRange {
 
 struct _TidyDoc {
     int _field1;
-};
-
-struct __va_list_tag {
-    unsigned int _field1;
-    unsigned int _field2;
-    void *_field3;
-    void *_field4;
 };
 

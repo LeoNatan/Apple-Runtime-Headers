@@ -6,17 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet;
+@class NSArray, RERelevanceEngine;
 @protocol NTKCUpNextDataSourcesManagerIdentifiersDelegate, OS_dispatch_queue;
 
 @interface NTKCUpNextDataSourcesManager : NSObject
 {
+    RERelevanceEngine *_relevanceEngine;
     unsigned int _watchVersion;
-    NSSet *_firstPartyDataSourceIdentifiers;
-    NSSet *_firstPartyDonatedApplicationIdentifiers;
-    NSSet *_thirdPartyDataSourceIdentifiers;
-    NSSet *_thirdPartyDonatedApplicationIdentifiers;
-    NSSet *_sportsDataSourceIdentifiers;
+    NSArray *_firstPartyDataSourceEntries;
+    NSArray *_thirdPartyDataSourceEntries;
+    NSArray *_sportsDataSourceEntries;
     id <NTKCUpNextDataSourcesManagerIdentifiersDelegate> _firstPartyIdentifiersDelegate;
     id <NTKCUpNextDataSourcesManagerIdentifiersDelegate> _thirdPartyIdentifiersDelegate;
     id <NTKCUpNextDataSourcesManagerIdentifiersDelegate> _sportsIdentifiersDelegate;
@@ -27,19 +26,22 @@
 @property(nonatomic) __weak id <NTKCUpNextDataSourcesManagerIdentifiersDelegate> sportsIdentifiersDelegate; // @synthesize sportsIdentifiersDelegate=_sportsIdentifiersDelegate;
 @property(nonatomic) __weak id <NTKCUpNextDataSourcesManagerIdentifiersDelegate> thirdPartyIdentifiersDelegate; // @synthesize thirdPartyIdentifiersDelegate=_thirdPartyIdentifiersDelegate;
 @property(nonatomic) __weak id <NTKCUpNextDataSourcesManagerIdentifiersDelegate> firstPartyIdentifiersDelegate; // @synthesize firstPartyIdentifiersDelegate=_firstPartyIdentifiersDelegate;
-@property(copy) NSSet *sportsDataSourceIdentifiers; // @synthesize sportsDataSourceIdentifiers=_sportsDataSourceIdentifiers;
-@property(copy) NSSet *thirdPartyDonatedApplicationIdentifiers; // @synthesize thirdPartyDonatedApplicationIdentifiers=_thirdPartyDonatedApplicationIdentifiers;
-@property(copy) NSSet *thirdPartyDataSourceIdentifiers; // @synthesize thirdPartyDataSourceIdentifiers=_thirdPartyDataSourceIdentifiers;
-@property(copy) NSSet *firstPartyDonatedApplicationIdentifiers; // @synthesize firstPartyDonatedApplicationIdentifiers=_firstPartyDonatedApplicationIdentifiers;
-@property(copy) NSSet *firstPartyDataSourceIdentifiers; // @synthesize firstPartyDataSourceIdentifiers=_firstPartyDataSourceIdentifiers;
+@property(copy) NSArray *sportsDataSourceEntries; // @synthesize sportsDataSourceEntries=_sportsDataSourceEntries;
+@property(copy) NSArray *thirdPartyDataSourceEntries; // @synthesize thirdPartyDataSourceEntries=_thirdPartyDataSourceEntries;
+@property(copy) NSArray *firstPartyDataSourceEntries; // @synthesize firstPartyDataSourceEntries=_firstPartyDataSourceEntries;
 @property(readonly, nonatomic) unsigned int watchVersion; // @synthesize watchVersion=_watchVersion;
 - (void).cxx_destruct;
 - (void)_buildRows;
-- (id)_identifiersForThirdParyAppsThatSupportActivitesOrIntents;
-- (void)dealloc;
+- (void)_fetchThirdPartyBundleIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_dedupeAndSortThirdPartyDataSourcesFromIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_phoneDedupeFromIdentifiers:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_firstPartyDataSourceEntries;
+- (id)_dedupeAndSortFirstPartyDataSourcesFromIdentifiers:(id)arg1;
+- (id)_preGraceThirdPartyBundleIdentifiers;
 - (void)fetchIdentifiers;
-- (void)_dataSourceChangedNotification:(id)arg1;
+- (void)_dataSourcesChangedNotification:(id)arg1;
 - (void)_appsChangedNotification:(id)arg1;
+- (void)dealloc;
 - (id)initWatchVersion:(unsigned int)arg1;
 
 @end

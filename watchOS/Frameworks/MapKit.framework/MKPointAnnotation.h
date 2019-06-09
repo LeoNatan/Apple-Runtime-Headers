@@ -9,10 +9,11 @@
 #import <MapKit/MKAnnotationPrivate-Protocol.h>
 #import <MapKit/MKAnnotationRepresentation-Protocol.h>
 #import <MapKit/MKCustomFeatureAnnotation-Protocol.h>
+#import <MapKit/MKGeoJSONObject-Protocol.h>
 
 @class CLLocation, NSString, VKCustomFeature;
 
-@interface MKPointAnnotation : MKShape <MKCustomFeatureAnnotation, MKAnnotationRepresentation, MKAnnotationPrivate>
+@interface MKPointAnnotation : MKShape <MKGeoJSONObject, MKCustomFeatureAnnotation, MKAnnotationRepresentation, MKAnnotationPrivate>
 {
     struct CLLocationCoordinate2D _coordinate;
     int _representation;
@@ -37,6 +38,10 @@
 @property(readonly, nonatomic) _Bool showsBalloonCallout;
 - (void)setShowsBalloonCallout:(_Bool)arg1;
 - (id)feature;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 title:(id)arg2 subtitle:(id)arg3;
+- (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1;
+- (id)init;
+- (id)_initWithGeoJSONObject:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(nonatomic) double course;

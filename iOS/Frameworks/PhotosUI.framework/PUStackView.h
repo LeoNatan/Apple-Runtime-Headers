@@ -99,6 +99,7 @@
 - (_Bool)isImageHiddenForItemAtIndex:(long long)arg1;
 - (void)setImage:(id)arg1 forItemAtIndex:(long long)arg2;
 - (void)setImageSize:(struct CGSize)arg1 forItemAtIndex:(long long)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

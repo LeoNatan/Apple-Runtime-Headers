@@ -8,13 +8,13 @@
 
 #import <AssistantServices/AFNotifyObserverDelegate-Protocol.h>
 
-@class AFNotifyObserver, NSMutableArray, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@class AFNotifyObserver, AFWatchdogTimer, NSMutableArray, NSString;
+@protocol OS_dispatch_queue;
 
 @interface AFMyriadMonitor : NSObject <AFNotifyObserverDelegate>
 {
     int _state;
-    NSObject<OS_dispatch_source> *_timer;
+    AFWatchdogTimer *_timer;
     struct __CFNotificationCenter *_center;
     NSObject<OS_dispatch_queue> *_myriadMonitorQueue;
     NSMutableArray *_completions;

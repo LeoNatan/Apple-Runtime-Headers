@@ -12,6 +12,8 @@
 @property(nonatomic) float obstruction;
 @property(nonatomic) float reverbBlend;
 @property(nonatomic) float rate;
+@property(nonatomic) int pointSourceInHeadMode;
+@property(nonatomic) int sourceMode;
 @property(nonatomic) int renderingAlgorithm;
 @end
 

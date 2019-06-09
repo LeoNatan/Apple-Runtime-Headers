@@ -25,13 +25,13 @@
     _Bool _immutablePathIsValid;
 }
 
-+ (id)_continuousRoundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(int)arg2 cornerRadii:(id)arg3 segments:(int)arg4 smoothPillShapes:(_Bool)arg5;
-+ (id)_continuousRoundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(int)arg2 cornerRadius:(struct CGSize)arg3 segments:(int)arg4;
++ (id)_continuousRoundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(unsigned int)arg2 cornerRadii:(id)arg3 segments:(int)arg4 smoothPillShapes:(_Bool)arg5;
++ (id)_continuousRoundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(unsigned int)arg2 cornerRadius:(struct CGSize)arg3 segments:(int)arg4;
 + (id)_bezierPathWithPillRect:(struct CGRect)arg1 cornerRadius:(float)arg2;
-+ (id)_roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(int)arg2 cornerRadius:(float)arg3 segments:(int)arg4 legacyCorners:(_Bool)arg5;
-+ (id)_roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(int)arg2 cornerRadius:(float)arg3 segments:(int)arg4;
-+ (id)roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(int)arg2 withCornerRadii:(id)arg3;
-+ (id)roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(int)arg2 withCornerRadius:(float)arg3;
++ (id)_roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(unsigned int)arg2 cornerRadius:(float)arg3 segments:(int)arg4 legacyCorners:(_Bool)arg5;
++ (id)_roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(unsigned int)arg2 cornerRadius:(float)arg3 segments:(int)arg4;
++ (id)roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(unsigned int)arg2 withCornerRadii:(id)arg3;
++ (id)roundedRectBezierPath:(struct CGRect)arg1 withRoundedCorners:(unsigned int)arg2 withCornerRadius:(float)arg3;
 + (id)roundedRectBezierPath:(struct CGRect)arg1 withRoundedEdges:(unsigned int)arg2;
 + (id)_bezierPathWithRoundedRect:(struct CGRect)arg1 byRoundingCorners:(unsigned int)arg2 cornerRadius:(float)arg3;
 + (id)roundedRectBezierPath:(struct CGRect)arg1 withTopCornerRadius:(float)arg2 withBottomCornerRadius:(float)arg3;

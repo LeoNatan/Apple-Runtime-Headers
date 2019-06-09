@@ -8,6 +8,7 @@
 
 @class NSURL, OITSUTemporaryDirectory;
 
+__attribute__((visibility("hidden")))
 @interface TSUSafeSaveAssistant : NSObject
 {
     NSURL *_saveURL;

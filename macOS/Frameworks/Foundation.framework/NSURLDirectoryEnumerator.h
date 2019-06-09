@@ -12,10 +12,12 @@ __attribute__((visibility("hidden")))
     struct __CFURLEnumerator *_enumerator;
     CDUnknownBlockType _errorHandler;
     BOOL shouldContinue;
+    BOOL isPostOrderDirectory;
 }
 
 @property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 - (void)dealloc;
+- (BOOL)isEnumeratingDirectoryPostOrder;
 - (id)directoryAttributes;
 - (id)fileAttributes;
 - (unsigned long long)level;

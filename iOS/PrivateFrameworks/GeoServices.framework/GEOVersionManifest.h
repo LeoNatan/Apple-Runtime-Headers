@@ -16,9 +16,10 @@
     NSMutableArray *_serviceVersions;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)serviceVersionType;
-@property(retain, nonatomic) NSMutableArray *serviceVersions; // @synthesize serviceVersions=_serviceVersions;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -27,12 +28,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)serviceVersionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)serviceVersionsCount;
 - (void)addServiceVersion:(id)arg1;
 - (void)clearServiceVersions;
+@property(retain, nonatomic) NSMutableArray *serviceVersions;
 
 @end
 

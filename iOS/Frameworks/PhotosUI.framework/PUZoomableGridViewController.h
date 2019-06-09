@@ -9,11 +9,11 @@
 #import <PhotosUI/PUMagnfiedViewControllerDelegate-Protocol.h>
 #import <PhotosUI/PXCPLServiceUIDelegate-Protocol.h>
 #import <PhotosUI/PXCloudQuotaControllerDelegate-Protocol.h>
-#import <PhotosUI/PXPhotosGlobalFooterViewModelPresentationDelegate-Protocol.h>
+#import <PhotosUI/PXPhotosLibraryFooterViewModelPresentationDelegate-Protocol.h>
 
 @class NSArray, NSIndexPath, NSString, NSTimer, PUGridMagnifiedImageViewController, PUGridPinchGestureRecognizer, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUZoomableGridTransition, PUZoomableGridViewControllerSpec, PXCPLServiceUI, PXCloudQuotaController, UITapGestureRecognizer;
 
-@interface PUZoomableGridViewController : PUPhotosGridViewController <PXCPLServiceUIDelegate, PXCloudQuotaControllerDelegate, PUMagnfiedViewControllerDelegate, PXPhotosGlobalFooterViewModelPresentationDelegate>
+@interface PUZoomableGridViewController : PUPhotosGridViewController <PXCPLServiceUIDelegate, PXCloudQuotaControllerDelegate, PUMagnfiedViewControllerDelegate, PXPhotosLibraryFooterViewModelPresentationDelegate>
 {
     _Bool _isDisplayingGlobalFooterView;
     _Bool _isDisplayingEmptyPlaceholderView;

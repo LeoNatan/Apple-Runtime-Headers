@@ -28,7 +28,7 @@
 - (id)status;
 - (BOOL)isEmpty;
 - (id)_timingStatisticStatuses;
-- (void)updateTimingStatisticForKey:(id)arg1 duration:(double)arg2 recordCount:(unsigned long long)arg3 error:(BOOL)arg4;
+- (void)updateTimingStatisticForKey:(id)arg1 duration:(double)arg2 recordCount:(unsigned long long)arg3 error:(BOOL)arg4 cancelled:(BOOL)arg5;
 @property(readonly, nonatomic) unsigned long long maximumResourceSizePerBatch;
 - (void)updateApproximativeUploadRate:(double)arg1;
 - (BOOL)removeChange:(id)arg1 error:(id *)arg2;
@@ -37,6 +37,7 @@
 - (id)allChangesWithClass:(Class)arg1 relatedScopedIdentifier:(id)arg2;
 - (id)allNonDeletedChangesWithClass:(Class)arg1 scopeIdentifier:(id)arg2;
 - (id)allChangesWithClass:(Class)arg1 scopeIdentifier:(id)arg2 changeType:(unsigned long long)arg3;
+- (unsigned long long)effectiveResourceSizeToUploadForUploadIdentifier:(id)arg1;
 - (id)allChangesWithClass:(Class)arg1 scopeIdentifier:(id)arg2 trashed:(BOOL)arg3;
 - (id)changeWithScopedIdentifier:(id)arg1;
 @property(retain, nonatomic) CPLBatchExtractionStrategy *extractionStrategy;

@@ -14,6 +14,6 @@
 - (BOOL)vcp_isDecodable;
 - (BOOL)vcp_isPhoto;
 - (BOOL)vcp_isMovie;
-- (id)vcp_url;
+- (id)vcp_avAsset;
 @end
 

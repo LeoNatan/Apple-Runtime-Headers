@@ -10,6 +10,7 @@
 
 @class WDCharacterProperties, WDDocument, WDParagraphProperties, WDStyle, WDTableCellProperties, WDTableRowProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDTableStyleOverride : NSObject <NSCopying>
 {
     WDDocument *mDocument;

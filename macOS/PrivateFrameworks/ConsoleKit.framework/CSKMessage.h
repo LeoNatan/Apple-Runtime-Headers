@@ -25,6 +25,7 @@
 + (id)messageTypeWithLocalizedTypeName:(id)arg1;
 + (id)localizedAccessibilityMessageTypeNameForType:(long long)arg1;
 + (id)localizedMessageTypeNameForType:(long long)arg1;
++ (id)nameForType:(long long)arg1;
 @property(copy, nonatomic) NSString *payload; // @synthesize payload=_payload;
 @property(copy, nonatomic) NSNumber *activityIdentifier; // @synthesize activityIdentifier=_activityIdentifier;
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
@@ -41,6 +42,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)localizedAccessibilityMessageTypeName;
 - (id)localizedMessageTypeName;
+- (id)upperCaseLocalizedMessageTypeName;
 - (BOOL)isEqualToMessage:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 processImagePath:(id)arg2 libraryImagePath:(id)arg3 timestamp:(id)arg4 timeZone:(id)arg5 isVolatile:(BOOL)arg6 message:(id)arg7 type:(long long)arg8;
 - (id)initWithIdentifier:(id)arg1 processImagePath:(id)arg2 libraryImagePath:(id)arg3 timestamp:(id)arg4 timeZone:(id)arg5 isVolatile:(BOOL)arg6;

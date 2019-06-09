@@ -7,11 +7,12 @@
 #import <UIKit/UIView.h>
 
 #import <PhotosUI/ISChangeObserver-Protocol.h>
+#import <PhotosUI/PXLivePhotoView-Protocol.h>
 
 @class ISLivePhotoPlayer, ISLivePhotoUIView, ISPlayerItem, NSString, PHLivePhoto, UIGestureRecognizer;
 @protocol PHLivePhotoViewDelegate;
 
-@interface PHLivePhotoView : UIView <ISChangeObserver>
+@interface PHLivePhotoView : UIView <PXLivePhotoView, ISChangeObserver>
 {
     struct {
         _Bool respondsToWillBeginPlaybackWithStyle;

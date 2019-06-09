@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mParts;
 }
 
+- (void).cxx_destruct;
 - (void)resetPartForLocation:(id)arg1;
 - (id)partForLocation:(id)arg1;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (id)initWithPath:(id)arg1;
 - (id)initWithArchive:(id)arg1;

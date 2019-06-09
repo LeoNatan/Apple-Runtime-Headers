@@ -15,13 +15,14 @@ __attribute__((visibility("hidden")))
     OITSUNoCopyDictionary *mBuildMap;
 }
 
-+ (void)initialize;
++ (id)exitSubTypeMap;
++ (id)entranceSubTypeMap;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setBuildMap:(id)arg1;
 - (id)buildMap;
 - (id)addRootTimeNode;
 - (id)rootTimeNode;
-- (void)dealloc;
 - (id)init;
 
 @end

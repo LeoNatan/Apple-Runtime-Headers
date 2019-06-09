@@ -13,18 +13,17 @@ __attribute__((visibility("hidden")))
 {
     _Bool _isBold;
     _Bool _isItalic;
-    NSString *_fontName;
-    NSString *_alphaFontName;
+    NSString *_fullName;
 }
 
-+ (id)officeFontInfoWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(_Bool)arg3 isItalic:(_Bool)arg4;
++ (id)officeFontInfoWithFullName:(id)arg1 isBold:(_Bool)arg2 isItalic:(_Bool)arg3;
 @property(readonly, nonatomic) _Bool isItalic; // @synthesize isItalic=_isItalic;
 @property(readonly, nonatomic) _Bool isBold; // @synthesize isBold=_isBold;
-@property(readonly, nonatomic) NSString *alphaFontName; // @synthesize alphaFontName=_alphaFontName;
-@property(readonly, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
+@property(readonly, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
-- (id)initWithFontName:(id)arg1 alphaFontName:(id)arg2 isBold:(_Bool)arg3 isItalic:(_Bool)arg4;
+- (id)officeName;
+- (id)initWithFullName:(id)arg1 isBold:(_Bool)arg2 isItalic:(_Bool)arg3;
 
 @end
 

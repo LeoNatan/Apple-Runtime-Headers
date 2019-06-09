@@ -34,7 +34,6 @@
     _Bool _supportsCellularData;
     _Bool _simBecameNotReady;
     int _simInserted;
-    _Bool _wantsForcedCellularQueries;
     int _isPNRSupportedCachedValue;
     _Bool _faceTimeBlocked;
     _Bool _iMessageBlocked;
@@ -48,7 +47,6 @@
 
 + (id)sharedInstance;
 @property(readonly, nonatomic) _Bool commCenterDead; // @synthesize commCenterDead=_commCenterDead;
-@property(readonly, nonatomic) _Bool wantsForcedCellularQueries; // @synthesize wantsForcedCellularQueries=_wantsForcedCellularQueries;
 @property(readonly, nonatomic) _Bool mmsConfigured; // @synthesize mmsConfigured=_mmsConfigured;
 @property(readonly, nonatomic) _Bool supportsMMS; // @synthesize supportsMMS=_supportsMMS;
 @property(readonly, nonatomic) _Bool supportsSMS; // @synthesize supportsSMS=_supportsSMS;
@@ -145,8 +143,6 @@
 - (void)_unregisterForCommCenterReadyNotifications;
 - (void)_registerForCommCenterReadyNotifications;
 - (void)_updateCapabilities;
-- (_Bool)_wantsForcedCellularQueries;
-- (id)_forceWWANQueriesCarrierBundleValue;
 - (void)_registerForCapabilityNotifications;
 - (void)_unregisterForServiceStatusNotifications;
 - (void)_registerForServiceStatusNotifications;

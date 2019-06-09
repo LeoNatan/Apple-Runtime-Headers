@@ -30,7 +30,6 @@
 @property(readonly, nonatomic) NSArray *videoTracks;
 - (id)description;
 - (BOOL)alwaysCopiesSampleData;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithVideoTracks:(id)arg1 videoSettings:(id)arg2;
 - (id)init;

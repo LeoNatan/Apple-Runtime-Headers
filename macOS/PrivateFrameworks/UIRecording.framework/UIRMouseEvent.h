@@ -27,7 +27,6 @@
 - (id)childrenStack;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCGEvent:(struct __CGEvent *)arg1 withAccessibilityElement:(id)arg2;
 
 @end

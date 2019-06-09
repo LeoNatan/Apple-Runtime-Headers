@@ -10,6 +10,14 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CSUnpackInfo {
+    short _field1;
+    short _field2;
+    short _field3;
+    short _field4;
+    short _field5;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

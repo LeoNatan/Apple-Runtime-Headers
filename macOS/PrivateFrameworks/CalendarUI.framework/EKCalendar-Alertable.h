@@ -16,8 +16,8 @@
 - (void)removeStructuredLocation;
 - (id)completeLocationString;
 - (id)preferredLocationString;
-- (void)setProximity:(long long *)arg1;
-- (long long *)proximity;
+- (void)setProximity:(long long)arg1;
+- (long long)proximity;
 - (id)structuredLocation;
 - (id)locationBasedAlarm;
 @property(retain) NSDate *alarmTime;

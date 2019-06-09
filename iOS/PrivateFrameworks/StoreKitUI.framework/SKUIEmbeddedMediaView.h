@@ -9,6 +9,7 @@
 @class MPMoviePlayerController, NSString, UIImage, UIImageView;
 @protocol SKUIEmbeddedMediaViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEmbeddedMediaView : UIControl
 {
     id <SKUIEmbeddedMediaViewDelegate> _delegate;

@@ -14,6 +14,8 @@
 {
 }
 
+- (void)resumeFlow:(id)arg1 withVerdict:(id)arg2;
+- (void)applySettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)handleRemediationForFlow:(id)arg1;
 - (void)handleRulesChanged;
 - (id)handleOutboundDataCompleteForFlow:(id)arg1;

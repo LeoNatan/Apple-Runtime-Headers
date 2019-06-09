@@ -6,22 +6,23 @@
 
 #import <RelevanceEngine/REFeatureTransformer.h>
 
-@class REFeatureValue;
-
 @interface _REBinaryFeatureTransformer : REFeatureTransformer
 {
-    REFeatureValue *_threshold;
+    unsigned long long _threshold;
 }
 
-- (void).cxx_destruct;
++ (id)functionName;
+@property(nonatomic) unsigned long long threshold; // @synthesize threshold=_threshold;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)_validateWithFeatures:(id)arg1;
-- (id)_transform:(id)arg1;
+- (unsigned long long)_createTransformFromValues:(unsigned long long *)arg1 count:(unsigned long long)arg2;
 - (unsigned long long)_outputType;
 - (unsigned long long)_featureCount;
 - (long long)_bitCount;
-- (id)initWithThreshold:(id)arg1;
+- (void)configureWithInvocation:(id)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end
 

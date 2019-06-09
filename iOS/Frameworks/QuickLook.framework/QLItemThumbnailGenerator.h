@@ -17,7 +17,6 @@
     QLItemDataThumbnailGenerator *_dataGenerator;
 }
 
-+ (_Bool)hasThirdPartyThumbnailGeneratorForItem:(id)arg1;
 @property(retain, nonatomic) QLItemDataThumbnailGenerator *dataGenerator; // @synthesize dataGenerator=_dataGenerator;
 @property(retain, nonatomic) QLItemURLThumbnailGenerator *urlGenerator; // @synthesize urlGenerator=_urlGenerator;
 @property(retain, nonatomic) QLExtensionThumbnailGenerator *extensionGenerator; // @synthesize extensionGenerator=_extensionGenerator;

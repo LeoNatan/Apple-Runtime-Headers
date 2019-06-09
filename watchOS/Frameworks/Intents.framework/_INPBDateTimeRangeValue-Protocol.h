@@ -21,5 +21,7 @@
 @property(retain, nonatomic) _INPBDateTime *endDateTime;
 @property(nonatomic) _Bool hasEndCalendar;
 @property(nonatomic) long long endCalendar;
+@property(nonatomic) _Bool hasAllDay;
+@property(nonatomic) _Bool allDay;
 @end
 

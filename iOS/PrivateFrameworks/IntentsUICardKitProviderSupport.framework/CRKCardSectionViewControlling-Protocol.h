@@ -10,5 +10,8 @@
 
 @protocol CRKCardSectionViewControlling <CRKEventResponding>
 @property(nonatomic) __weak id <CRKCardSectionViewControllingDelegate> cardSectionViewControllingDelegate;
+
+@optional
+- (void)desiresInteractivity:(void (^)(_Bool))arg1;
 @end
 

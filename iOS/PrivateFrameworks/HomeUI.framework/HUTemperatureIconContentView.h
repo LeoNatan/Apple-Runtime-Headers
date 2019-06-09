@@ -14,6 +14,7 @@
 
 - (void)drawRect:(struct CGRect)arg1;
 - (void)tintColorDidChange;
+- (_Bool)shouldFlipForRTL;
 - (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 

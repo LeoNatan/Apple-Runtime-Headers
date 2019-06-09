@@ -89,6 +89,7 @@
 + (struct CGRect)integralRect:(struct CGRect)arg1 withOptions:(unsigned long long)arg2;
 + (_Bool)isUnpresentablePoint:(struct CGPoint)arg1;
 + (_Bool)isUnpresentableSize:(struct CGSize)arg1;
++ (_Bool)rectHasZeroSize:(struct CGRect)arg1;
 + (_Bool)isUnpresentableRect:(struct CGRect)arg1;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (void).cxx_destruct;

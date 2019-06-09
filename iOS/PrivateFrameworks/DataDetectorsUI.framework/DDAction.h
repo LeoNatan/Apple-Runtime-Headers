@@ -9,7 +9,7 @@
 #import <DataDetectorsUI/NSCoding-Protocol.h>
 #import <DataDetectorsUI/NSSecureCoding-Protocol.h>
 
-@class CNContact, NSDictionary, NSString, NSURL, UIViewController;
+@class CNContact, NSDictionary, NSString, NSURL, UIImage, UIViewController;
 @protocol DDActionDelegate;
 
 @interface DDAction : NSObject <NSCoding, NSSecureCoding>
@@ -42,10 +42,10 @@
 + (void)setClientActionsDelegate:(id)arg1;
 @property(nonatomic) __weak NSObject<DDActionDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(retain) CNContact *contact; // @synthesize contact=_contact;
-@property int hostApplication; // @synthesize hostApplication=_hostApplication;
+@property(nonatomic) int hostApplication; // @synthesize hostApplication=_hostApplication;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool companion; // @synthesize companion=_companion;
-@property _Bool isDefaultAction; // @synthesize isDefaultAction=_isDefaultAction;
+@property(nonatomic) _Bool isDefaultAction; // @synthesize isDefaultAction=_isDefaultAction;
 - (void).cxx_destruct;
 - (id)displayNameForEmails:(id)arg1 phoneNumbers:(id)arg2;
 - (void)invalidate;
@@ -53,6 +53,7 @@
 - (id)description;
 - (void)addToRecents;
 - (id)context;
+@property(readonly, nonatomic) UIImage *icon;
 - (const struct __CFArray *)associatedResults;
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@0:8, name: coalescedResult
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@0:8, name: result
@@ -60,6 +61,7 @@
 - (id)notificationURL;
 - (id)notificationIconBundleIdentifier;
 - (id)notificationTitle;
+- (id)localizedSubItemName;
 - (id)localizedName;
 - (void)_copyURL:(id)arg1;
 - (void)_copyStringOnly:(id)arg1;

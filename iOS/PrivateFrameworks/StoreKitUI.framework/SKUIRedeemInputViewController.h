@@ -10,6 +10,7 @@
 
 @class NSString, SKUIRedeemITunesPassLockup, SKUIRedeemTextField, UIBarButtonItem, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemInputViewController : SKUIRedeemStepViewController <UITextFieldDelegate>
 {
     long long _category;

@@ -16,14 +16,23 @@ __attribute__((visibility("hidden")))
 - (CDUnknownBlockType)writeabilityHandler;
 - (void)setWriteabilityHandler:(CDUnknownBlockType)arg1;
 - (int)fileDescriptor;
+- (_Bool)closeAndReturnError:(out id *)arg1;
 - (void)closeFile;
+- (_Bool)synchronizeAndReturnError:(out id *)arg1;
 - (void)synchronizeFile;
+- (_Bool)truncateAtOffset:(unsigned long long)arg1 error:(out id *)arg2;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
+- (_Bool)seekToOffset:(unsigned long long)arg1 error:(out id *)arg2;
 - (void)seekToFileOffset:(unsigned long long)arg1;
+- (_Bool)seekToEndReturningOffset:(out unsigned long long *)arg1 error:(out id *)arg2;
 - (unsigned long long)seekToEndOfFile;
+- (_Bool)getOffset:(out unsigned long long *)arg1 error:(out id *)arg2;
 - (unsigned long long)offsetInFile;
+- (_Bool)writeData:(id)arg1 error:(out id *)arg2;
 - (void)writeData:(id)arg1;
+- (id)readDataUpToLength:(unsigned int)arg1 error:(out id *)arg2;
 - (id)readDataOfLength:(unsigned int)arg1;
+- (id)readDataToEndOfFileAndReturnError:(out id *)arg1;
 - (id)readDataToEndOfFile;
 - (id)availableData;
 

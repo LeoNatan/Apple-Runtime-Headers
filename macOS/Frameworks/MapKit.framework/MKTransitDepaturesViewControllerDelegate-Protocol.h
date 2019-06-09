@@ -6,11 +6,12 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@class GEOMapServiceTraits, MKTableViewCell, MKTransitAttributionDetailsViewController, MKTransitDeparturesViewController, NSArray;
-@protocol GEOTransitConnectionInfo, MKTransitLineMarker;
+@class GEOMapServiceTraits, MKMapItem, MKTableViewCell, MKTransitAttributionDetailsViewController, MKTransitDeparturesViewController, NSArray;
+@protocol GEOTransitConnectionInfo, GEOTransitDepartureSequence, MKTransitLineMarker;
 
 @protocol MKTransitDepaturesViewControllerDelegate <NSObject>
 - (GEOMapServiceTraits *)transitDeparturesViewControllerTraits:(MKTransitDeparturesViewController *)arg1;
+- (void)transitDeparturesViewController:(MKTransitDeparturesViewController *)arg1 didSelectDepartureSequence:(id <GEOTransitDepartureSequence>)arg2 transitMapItem:(MKMapItem *)arg3 transitLine:(id <MKTransitLineMarker>)arg4 fromCell:(MKTableViewCell *)arg5;
 - (void)transitDeparturesViewController:(MKTransitDeparturesViewController *)arg1 didSelectTransitLine:(id <MKTransitLineMarker>)arg2 fromCell:(MKTableViewCell *)arg3;
 - (void)transitDeparturesViewController:(MKTransitDeparturesViewController *)arg1 showIncidents:(NSArray *)arg2;
 - (void)transitDeparturesViewController:(MKTransitDeparturesViewController *)arg1 didSelectConnectionInformation:(id <GEOTransitConnectionInfo>)arg2;

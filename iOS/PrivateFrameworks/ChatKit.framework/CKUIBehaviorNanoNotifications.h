@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKUIBehaviorNano.h>
 
+__attribute__((visibility("hidden")))
 @interface CKUIBehaviorNanoNotifications : CKUIBehaviorNano
 {
 }

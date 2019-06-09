@@ -6,12 +6,10 @@
 
 #import <UIKit/UIView.h>
 
-#import <PhotosUICore/PXUIExtensionBadgeViewDelegate-Protocol.h>
-
-@class NSString, PXUIExtensionBadgeView, UILabel, _PXUIAssetBadgeImageView, _PXUIAssetBadgeTopLeftGroup;
+@class UILabel, _PXUIAssetBadgeImageView, _PXUIAssetBadgeTopGroup;
 @protocol PXUIAssetBadgeViewDelegate;
 
-@interface PXUIAssetBadgeView : UIView <PXUIExtensionBadgeViewDelegate>
+@interface PXUIAssetBadgeView : UIView
 {
     struct {
         _Bool userDidSelectBadges;
@@ -19,14 +17,16 @@
     _Bool _isPerformingUpdate;
     struct {
         _Bool topLeftElements;
+        _Bool topRightElements;
         _Bool bottomLeadingImage;
         _Bool bottomTrailingImage;
         _Bool bottomLabel;
         _Bool background;
         _Bool contentSize;
     } _needsUpdateFlags;
-    _PXUIAssetBadgeTopLeftGroup *_topLeftPrimaryGroup;
-    _PXUIAssetBadgeTopLeftGroup *_topLeftSecondaryGroup;
+    _PXUIAssetBadgeTopGroup *_topLeftPrimaryGroup;
+    _PXUIAssetBadgeTopGroup *_topLeftSecondaryGroup;
+    _PXUIAssetBadgeTopGroup *_topRightGroup;
     _PXUIAssetBadgeImageView *_bottomLeadingImageView;
     _PXUIAssetBadgeImageView *_bottomTrailingImageView;
     UILabel *_bottomLabel;
@@ -34,13 +34,15 @@
     _Bool _overContent;
     id <PXUIAssetBadgeViewDelegate> _delegate;
     long long _style;
-    PXUIExtensionBadgeView *__topLeftExtensionBadgeView;
+    double _contentWidth;
+    struct CGSize _bottomElementsPadding;
     struct PXAssetBadgeInfo _badgeInfo;
 }
 
 + (double)preferredHeightForStyle:(long long)arg1;
 + (void)preloadResourcesForStyle:(long long)arg1;
-@property(retain, nonatomic, setter=_setTopLeftExtensionBadgeView:) PXUIExtensionBadgeView *_topLeftExtensionBadgeView; // @synthesize _topLeftExtensionBadgeView=__topLeftExtensionBadgeView;
+@property(nonatomic) struct CGSize bottomElementsPadding; // @synthesize bottomElementsPadding=_bottomElementsPadding;
+@property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(nonatomic, getter=isOverContent) _Bool overContent; // @synthesize overContent=_overContent;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) struct PXAssetBadgeInfo badgeInfo; // @synthesize badgeInfo=_badgeInfo;
@@ -57,33 +59,28 @@
 - (void)_invalidateBottomTrailingImage;
 - (void)_updateBottomLeadingImageIfNeeded;
 - (void)_invalidateBottomLeadingImage;
-- (id)_updateTopLeftGroup:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2 origin:(struct CGPoint)arg3;
+- (id)_updateTopGroup:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2 origin:(struct CGPoint)arg3;
+- (void)_updateTopRightElementsIfNeeded;
 - (void)_updateTopLeftElementsIfNeeded;
+- (void)_invalidateTopRightElements;
 - (void)_invalidateTopLeftElements;
 - (void)_invalidate;
 - (void)_updateIfNeeded;
 - (void)_setNeedsUpdate;
 - (_Bool)_needsUpdate;
 - (void)_setBackgroundImage:(id)arg1;
-- (void)_installBadgeViewForType:(long long)arg1;
-- (void)extensionBadgeView:(id)arg1 userDidSelectBadge:(unsigned long long)arg2;
 - (void)_handleButton:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_layoutBottomLabel;
 - (void)_layoutBottomCornersImages;
 - (void)_removeViewsFromGroup:(id)arg1;
-- (void)_layoutTopLeftGroup:(id)arg1;
+- (void)_layoutTopGroup:(id)arg1;
 - (void)layoutSubviews;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)performChanges:(CDUnknownBlockType)arg1 animated:(_Bool)arg2;
+@property(readonly, nonatomic) _Bool _wantsBottomLabel;
 - (void)prepareForReuse;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -22,6 +22,7 @@
     NSArray *_supportedPlatforms;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)supportedPlatformsType;
 + (Class)localizedProjectsType;
 + (Class)intentSupportType;
@@ -35,6 +36,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)supportedPlatformsAtIndex:(unsigned long long)arg1;

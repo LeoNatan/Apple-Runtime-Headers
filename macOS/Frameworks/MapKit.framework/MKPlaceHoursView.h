@@ -6,14 +6,17 @@
 
 #import <AppKit/NSView.h>
 
-@class GEOBusinessHours, NSArray, NSDictionary, NSLayoutAnchor, NSLayoutConstraint, _MKLocalizedHoursBuilder, _MKUILabel;
+@class GEOBusinessHours, NSArray, NSDictionary, NSLayoutConstraint, _MKLocalizedHoursBuilder, _MKUILabel;
+@protocol MKPlaceHoursViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceHoursView : NSView
 {
     NSArray *_labels;
     _MKUILabel *_topLabel;
-    _MKUILabel *_topDayLabel;
-    _MKUILabel *_bottomLabel;
+    _MKUILabel *_topMessageLabel;
+    _MKUILabel *_topDayOrHourLabel;
+    _MKUILabel *_bottomMessageLabel;
     _MKUILabel *_collapsableOpenStateLabel;
     NSLayoutConstraint *_baselineToTop;
     NSArray *_baselineToBaselineConstraints;
@@ -24,22 +27,25 @@
     _MKLocalizedHoursBuilder *_hoursBuilder;
     NSDictionary *_formattedHoursData;
     GEOBusinessHours *_businessHours;
-    NSLayoutAnchor *_topLabelLastBaselineAnchor;
+    id <MKPlaceHoursViewDelegate> _hoursDelegate;
 }
 
-@property(retain, nonatomic) NSLayoutAnchor *topLabelLastBaselineAnchor; // @synthesize topLabelLastBaselineAnchor=_topLabelLastBaselineAnchor;
+@property(nonatomic) __weak id <MKPlaceHoursViewDelegate> hoursDelegate; // @synthesize hoursDelegate=_hoursDelegate;
 @property(retain, nonatomic) GEOBusinessHours *businessHours; // @synthesize businessHours=_businessHours;
 @property(retain, nonatomic) NSDictionary *formattedHoursData; // @synthesize formattedHoursData=_formattedHoursData;
 @property(retain, nonatomic) _MKLocalizedHoursBuilder *hoursBuilder; // @synthesize hoursBuilder=_hoursBuilder;
 @property(nonatomic) unsigned long long placeHoursViewOptions; // @synthesize placeHoursViewOptions=_placeHoursViewOptions;
 - (void).cxx_destruct;
+- (BOOL)_shouldCollapseTopMessageLabel;
 - (void)_collapseAllLabelsFromOptions;
 - (void)_updateHoursView;
 - (void)_updateOptionsForCollapsingToSingleLineAndColor;
 - (id)_standardLabel;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (BOOL)wantsDefaultClipping;
 - (void)applyRulesForTopAndBottomLabel;
+- (void)setTopLabel:(id)arg1;
+@property(readonly, nonatomic) _MKUILabel *topLabel;
 - (void)_contentSizeDidChange;
 - (void)_commonInit;
 - (id)initWithBusinessHours:(id)arg1;

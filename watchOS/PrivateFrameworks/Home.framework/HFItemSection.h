@@ -25,6 +25,7 @@
 
 + (id)filterSections:(id)arg1 toDisplayedItems:(id)arg2;
 + (id)na_identity;
++ (CDUnknownBlockType)itemResultManualSortComparator;
 + (CDUnknownBlockType)defaultItemComparator;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;

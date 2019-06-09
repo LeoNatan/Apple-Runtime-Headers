@@ -9,8 +9,8 @@
 #import <PhotosUICore/PXGadgetDelegate-Protocol.h>
 #import <PhotosUICore/PXGadgetProviderDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSObject, NSString, PXGadgetDataSource;
-@protocol OS_dispatch_queue, OS_os_log, PXGadgetDelegate;
+@class NSArray, NSMutableArray, NSObject, NSString, PXGadgetDataSource, PXGadgetNavigationHelper;
+@protocol OS_dispatch_queue, OS_os_log, PXGadgetDelegate, PXGadgetTransition;
 
 @interface PXGadgetDataSourceManager : PXSectionedDataSourceManager <PXGadgetProviderDelegate, PXGadgetDelegate>
 {
@@ -35,9 +35,8 @@
 - (struct NSObject *)gadgetViewControllerHostingGadget:(id)arg1;
 - (void)gadget:(id)arg1 animateChanges:(CDUnknownBlockType)arg2;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
-- (_Bool)scrollGadgetToVisible:(id)arg1 animated:(_Bool)arg2;
-- (id)gridPresentation;
-- (id)oneUpPresentation;
+@property(readonly, nonatomic) PXGadgetNavigationHelper *rootNavigationHelper;
+@property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
 - (void)dismissGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)gadget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

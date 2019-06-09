@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)enrollPaymentPassWithUniqueIdentifier:(id)arg1 merchantSession:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cardDataForMerchantIdentifier:(id)arg1 countryCode:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)cardsAvailableForAMPWithCountryCode:(id)arg1;
 - (void)cardsAvailableForAMPWithCountryCode:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/MFPEffect.h>
 
+__attribute__((visibility("hidden")))
 @interface MFPBrightnessContrastEffect : MFPEffect
 {
     int mBrightness;

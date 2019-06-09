@@ -10,7 +10,7 @@
 #import <ClassroomKit/CRKSettingsPaneInfoProvider-Protocol.h>
 #import <ClassroomKit/CRKStudentDaemonProxyObserver-Protocol.h>
 
-@class CATRemoteTaskOperation, CRKSecureCodedUserDefaultsObject, CRKSettingsUIVisibleRemoteValue, CRKStudentDaemonProxy, NSArray, NSDictionary, NSString;
+@class CATRemoteTaskOperation, CRKSecureCodedUserDefaultsObject, CRKSettingsUIVisibleRemoteValue, CRKStudentDaemonProxy, NSArray, NSDictionary, NSSet, NSString;
 @protocol CRKCourseEnrollmentControllerDelegate;
 
 @interface CRKCourseEnrollmentController : NSObject <CRKStudentDaemonProxyObserver, CATTaskOperationNotificationDelegate, CRKSettingsPaneInfoProvider>
@@ -24,6 +24,7 @@
     CRKSettingsUIVisibleRemoteValue *mSettingsUIVisibleRemoteValue;
     NSArray *_courses;
     NSArray *_courseInvitations;
+    NSSet *_acceptedInvitationIdentifiers;
     NSArray *_activeCourseIdentifiers;
     NSArray *_activeInstructorIdentifiers;
     NSDictionary *_observingInstructorIdentifiersByCourseIdentifiers;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) NSDictionary *observingInstructorIdentifiersByCourseIdentifiers; // @synthesize observingInstructorIdentifiersByCourseIdentifiers=_observingInstructorIdentifiersByCourseIdentifiers;
 @property(copy, nonatomic) NSArray *activeInstructorIdentifiers; // @synthesize activeInstructorIdentifiers=_activeInstructorIdentifiers;
 @property(copy, nonatomic) NSArray *activeCourseIdentifiers; // @synthesize activeCourseIdentifiers=_activeCourseIdentifiers;
+@property(copy, nonatomic) NSSet *acceptedInvitationIdentifiers; // @synthesize acceptedInvitationIdentifiers=_acceptedInvitationIdentifiers;
 @property(copy, nonatomic) NSArray *courseInvitations; // @synthesize courseInvitations=_courseInvitations;
 @property(copy, nonatomic) NSArray *courses; // @synthesize courses=_courses;
 - (void).cxx_destruct;

@@ -51,6 +51,7 @@
 @property(readonly, nonatomic) EKFrozenRecurrenceRule *backingRule; // @synthesize backingRule;
 @property(retain, nonatomic) EKRecurrenceEnd *cachedEnd; // @synthesize cachedEnd=_cachedEnd;
 - (void).cxx_destruct;
+- (BOOL)isEqualToRecurrenceRule:(id)arg1;
 - (id)humanReadableDescriptionWithStartDate:(id)arg1;
 - (BOOL)ruleIsForFloatingItem;
 - (BOOL)ruleIsForAllDayItem;
@@ -98,6 +99,11 @@
 - (id)initRecurrenceWithFrequency:(long long)arg1 interval:(long long)arg2 end:(id)arg3;
 - (id)initRecurrenceWithFrequency:(long long)arg1 interval:(long long)arg2 daysOfTheWeek:(id)arg3 daysOfTheMonth:(id)arg4 monthsOfTheYear:(id)arg5 weeksOfTheYear:(id)arg6 daysOfTheYear:(id)arg7 setPositions:(id)arg8 end:(id)arg9;
 - (id)init;
+- (BOOL)isSimpleRule;
+- (BOOL)isAnyDayRule;
+- (BOOL)isWeekendRule;
+- (BOOL)isWeekdayRule;
+- (void)pinToEndsOfMonthsWithCalendarItem:(id)arg1;
 
 @end
 

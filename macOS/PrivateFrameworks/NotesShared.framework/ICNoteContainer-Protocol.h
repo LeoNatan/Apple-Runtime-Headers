@@ -6,18 +6,30 @@
 
 #import <NotesShared/ICNoteVisibilityTesting-Protocol.h>
 
-@class ICAccount, ICNote, NSArray, NSPredicate, NSString;
+@class ICAccount, ICFolderCustomNoteSortType, ICNote, NSArray, NSData, NSManagedObjectContext, NSPredicate, NSString;
 @protocol ICNoteVisibilityTesting;
 
 @protocol ICNoteContainer <ICNoteVisibilityTesting>
+@property(retain, nonatomic) NSData *subFolderOrderMergeableData;
+@property(readonly, nonatomic) NSArray *visibleSubFolders;
+@property(readonly, nonatomic) BOOL isTrashFolder;
+@property(readonly, nonatomic) BOOL supportsEditingNotes;
+@property(readonly, nonatomic) BOOL isAllNotesContainer;
+@property(readonly, nonatomic) BOOL isSharedViaICloud;
+@property(readonly, nonatomic) ICFolderCustomNoteSortType *customNoteSortType;
+@property(readonly) NSManagedObjectContext *managedObjectContext;
 @property(readonly, nonatomic) ICAccount *noteContainerAccount;
 - (id <ICNoteVisibilityTesting>)noteVisibilityTestingForSearchingAccount;
 - (BOOL)isDeleted;
-- (BOOL)canBeSharedViaICloud;
+- (void)updateSubFolderMergeableDataChangeCount;
+- (BOOL)mergeWithSubFolderMergeableData:(NSData *)arg1;
+- (void)saveSubFolderMergeableDataIfNeeded;
+- (BOOL)isModernCustomFolder;
+@property(readonly, nonatomic) BOOL canBeSharedViaICloud;
 - (NSPredicate *)predicateForPinnedNotes;
 - (NSPredicate *)predicateForVisibleNotes;
-- (BOOL)supportsEditingNotes;
 - (NSString *)accountName;
+- (NSString *)detailForTableViewCell;
 - (NSString *)titleForTableViewCell;
 - (NSString *)titleForNavigationBar;
 - (unsigned long long)visibleNotesCount;

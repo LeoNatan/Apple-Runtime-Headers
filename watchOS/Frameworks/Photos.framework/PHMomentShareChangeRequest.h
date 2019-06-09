@@ -4,44 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Photos/PHChangeRequest.h>
 
 #import <Photos/PHInsertChangeRequest-Protocol.h>
 #import <Photos/PHUpdateChangeRequest-Protocol.h>
 
-@class NSData, NSDate, NSManagedObjectID, NSString, PHChangeRequestHelper, PHMomentShare, PHObjectPlaceholder, PHRelationshipChangeRequestHelper;
+@class NSData, NSDate, NSManagedObjectID, NSString, PHMomentShare, PHObjectPlaceholder, PHRelationshipChangeRequestHelper;
 
-@interface PHMomentShareChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest>
+@interface PHMomentShareChangeRequest : PHChangeRequest <PHInsertChangeRequest, PHUpdateChangeRequest>
 {
     PHMomentShare *_originalMomentShare;
-    _Bool _clientEntitled;
-    NSString *_clientName;
-    int _clientProcessID;
-    PHChangeRequestHelper *_helper;
     PHRelationshipChangeRequestHelper *_participantsHelper;
 }
 
-+ (_Bool)canGenerateUUIDWithoutEntitlements;
 + (void)expungeMomentShares:(id)arg1;
 + (void)trashMomentShares:(id)arg1;
 + (id)validateMomentShareCreationDate:(id)arg1 error:(id *)arg2;
 + (id)creationRequestForMomentShareWithTitle:(id)arg1 mode:(short)arg2 creationDate:(id)arg3 createMomentShareAssetsFromAssets:(id)arg4 assetCreationOptions:(id)arg5 preview:(id)arg6 originatingMomentShare:(id)arg7;
 + (id)changeRequestForMomentShare:(id)arg1;
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *participantsHelper; // @synthesize participantsHelper=_participantsHelper;
-@property(readonly, nonatomic) PHChangeRequestHelper *helper; // @synthesize helper=_helper;
-@property(readonly, nonatomic) int clientProcessID; // @synthesize clientProcessID=_clientProcessID;
-@property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
-@property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled; // @synthesize clientEntitled=_clientEntitled;
 - (void).cxx_destruct;
-- (void)didMutate;
-@property(readonly, nonatomic) NSManagedObjectID *objectID;
-@property(readonly, nonatomic) NSString *uuid;
-@property(readonly, getter=isMutated) _Bool mutated;
-@property(readonly, getter=isNew) _Bool new;
 - (_Bool)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;
-- (_Bool)applyMutationsToManagedObject:(id)arg1 error:(id *)arg2;
+- (_Bool)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
 - (_Bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id *)arg3;
-- (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (_Bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (void)createMomentShareAssetsFromAssets:(id)arg1 withAssetCreationOptions:(id)arg2 withPreview:(id)arg3;
@@ -65,14 +50,19 @@
 - (_Bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareForServicePreflightCheck:(id *)arg1;
 - (void)encodeToXPCDict:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initForNewObject;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled;
+@property(readonly, nonatomic) NSString *clientName;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly) _Bool isNewRequest;
+@property(readonly, getter=isMutated) _Bool mutated;
+@property(readonly, nonatomic) NSManagedObjectID *objectID;
 @property(readonly) Class superclass;
 
 @end

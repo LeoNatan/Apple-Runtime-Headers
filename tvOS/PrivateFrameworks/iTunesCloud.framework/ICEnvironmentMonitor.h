@@ -6,31 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable, NSString, NWPathEvaluator;
+@class NSHashTable, NSString, NWPathEvaluator;
 @protocol OS_dispatch_queue;
 
 @interface ICEnvironmentMonitor : NSObject
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;
-    NSMapTable *_observers;
+    NSHashTable *_observers;
     struct __CTServerConnection *_telephonyServerConnectionRef;
     NWPathEvaluator *_networkPathEvaluator;
+    int _thermalNotificationToken;
     _Bool _isCharging;
     _Bool _isRemoteServerLikelyReachable;
     _Bool _isWiFiActive;
     _Bool _currentNetworkLinkHighQuality;
     _Bool _wifiAssociated;
+    _Bool _networkConstrained;
+    _Bool _ethernetWired;
     NSString *_telephonyOperatorName;
     NSString *_telephonyRegistrationStatus;
     NSString *_telephonyStatusIndicator;
     long long _networkType;
     long long _lastKnownNetworkType;
+    unsigned long long _currentThermalLevel;
 }
 
 + (id)sharedMonitor;
+@property(readonly, nonatomic) unsigned long long currentThermalLevel; // @synthesize currentThermalLevel=_currentThermalLevel;
 @property(readonly, nonatomic) long long lastKnownNetworkType; // @synthesize lastKnownNetworkType=_lastKnownNetworkType;
 @property(readonly, nonatomic) long long networkType; // @synthesize networkType=_networkType;
+@property(readonly, nonatomic, getter=isEthernetWired) _Bool ethernetWired; // @synthesize ethernetWired=_ethernetWired;
+@property(readonly, nonatomic, getter=isNetworkConstrained) _Bool networkConstrained; // @synthesize networkConstrained=_networkConstrained;
 @property(readonly, nonatomic, getter=isWiFiAssociated) _Bool wifiAssociated; // @synthesize wifiAssociated=_wifiAssociated;
 @property(readonly, nonatomic, getter=isCurrentNetworkLinkHighQuality) _Bool currentNetworkLinkHighQuality; // @synthesize currentNetworkLinkHighQuality=_currentNetworkLinkHighQuality;
 @property(readonly, nonatomic, getter=isWiFiActive) _Bool wiFiActive; // @synthesize wiFiActive=_isWiFiActive;
@@ -45,7 +52,10 @@
 - (void)_handleApplicationDidEnterForegroundNotification:(id)arg1;
 - (void)_onQueue_updateTelephonyStateAndNotifyObservers:(_Bool)arg1;
 - (long long)_networkTypeFromTelephonyStatusIndicator:(id)arg1;
+- (_Bool)_networkConstrained;
+- (long long)_networkTypeFromWatchCarousel;
 - (long long)_currentNetworkType;
+- (void)_onQueue_updateThermalLevelWithToken:(int)arg1;
 - (void)_onQueue_updateNetworkReachabilityAndNotifyObservers:(_Bool)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

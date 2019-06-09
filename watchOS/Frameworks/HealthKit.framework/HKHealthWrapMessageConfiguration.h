@@ -24,8 +24,8 @@
 }
 
 @property(nonatomic) _Bool disableCompression; // @synthesize disableCompression=_disableCompression;
-@property(retain, nonatomic) NSDictionary *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
-@property(retain, nonatomic) NSData *applicationData; // @synthesize applicationData=_applicationData;
+@property(copy, nonatomic) NSDictionary *keyValuePairs; // @synthesize keyValuePairs=_keyValuePairs;
+@property(copy, nonatomic) NSData *applicationData; // @synthesize applicationData=_applicationData;
 @property(copy, nonatomic) NSString *payloadIdentifier; // @synthesize payloadIdentifier=_payloadIdentifier;
 @property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;

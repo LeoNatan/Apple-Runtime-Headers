@@ -23,6 +23,7 @@
     UIColor *_textColor;
     UIColor *_altTextColor;
     UIColor *_buttonTextColor;
+    UIColor *_buttonDisabledTextColor;
     UIColor *_buttonBackgroundColor;
     UIColor *_editableTextColor;
     UIColor *_editablePlaceholderTextColor;
@@ -53,6 +54,7 @@
 @property(copy, nonatomic) UIColor *editablePlaceholderTextColor; // @synthesize editablePlaceholderTextColor=_editablePlaceholderTextColor;
 @property(copy, nonatomic) UIColor *editableTextColor; // @synthesize editableTextColor=_editableTextColor;
 @property(copy, nonatomic) UIColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;
+@property(copy, nonatomic) UIColor *buttonDisabledTextColor; // @synthesize buttonDisabledTextColor=_buttonDisabledTextColor;
 @property(copy, nonatomic) UIColor *buttonTextColor; // @synthesize buttonTextColor=_buttonTextColor;
 @property(copy, nonatomic) UIColor *altTextColor; // @synthesize altTextColor=_altTextColor;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

@@ -25,6 +25,7 @@
     NSString *_cachedSizeCategory;
     _Bool _showsSeparatorAboveActions;
     _Bool _drawsBackground;
+    _Bool _alignActionSeparatorLeadingEdgeWithContent;
     id <UIInterfaceActionVisualStyleProviding> _visualStyleProvider;
     UIInterfaceActionSelectionTrackingController *_actionSelectionController;
     UIInterfaceActionGroup *_actionGroup;
@@ -40,10 +41,10 @@
     NSArray *_topLevelViewArrangementConstraints;
     NSMutableArray *_arrangedScrollableHeaderViews;
     UIView<UISeparatorDisplaying> *_actionSequenceTopSeparatorView;
-    _UIInterfaceActionRepresentationsSequenceView *_actionSequenceView;
     NSLayoutConstraint *_actionSequenceViewWidthAnchoredToConstantConstraint;
     NSLayoutConstraint *_actionSequenceViewWidthAnchoredToContentGuideConstraint;
     NSPointerArray *_weakSimultaneouslyPresentedGroupViews;
+    _UIInterfaceActionRepresentationsSequenceView *_actionSequenceView;
     UILongPressGestureRecognizer *_actionSelectionGestureRecognizer;
     double _requiredActionRepresentationWidth;
     UIInterfaceActionRepresentationView *_preferredActionRepresentation;
@@ -53,6 +54,7 @@
     double _selectionHighlightContinuousCornerRadius;
 }
 
+@property(nonatomic, getter=_alignActionSeparatorLeadingEdgeWithContent, setter=_setAlignActionSeparatorLeadingEdgeWithContent:) _Bool alignActionSeparatorLeadingEdgeWithContent; // @synthesize alignActionSeparatorLeadingEdgeWithContent=_alignActionSeparatorLeadingEdgeWithContent;
 @property(nonatomic, getter=_selectionHighlightContinuousCornerRadius, setter=_setSelectionHighlightContinuousCornerRadius:) double selectionHighlightContinuousCornerRadius; // @synthesize selectionHighlightContinuousCornerRadius=_selectionHighlightContinuousCornerRadius;
 @property(nonatomic, getter=_drawsBackground, setter=_setDrawsBackground:) _Bool drawsBackground; // @synthesize drawsBackground=_drawsBackground;
 @property(retain, nonatomic, getter=_visualStyleOverrideTitleLabelFont, setter=_setVisualStyleOverrideTitleLabelFont:) UIFont *visualStyleOverrideTitleLabelFont; // @synthesize visualStyleOverrideTitleLabelFont=_visualStyleOverrideTitleLabelFont;
@@ -61,11 +63,11 @@
 @property(retain, nonatomic) UIInterfaceActionRepresentationView *preferredActionRepresentation; // @synthesize preferredActionRepresentation=_preferredActionRepresentation;
 @property(nonatomic) double requiredActionRepresentationWidth; // @synthesize requiredActionRepresentationWidth=_requiredActionRepresentationWidth;
 @property(retain, nonatomic) UILongPressGestureRecognizer *actionSelectionGestureRecognizer; // @synthesize actionSelectionGestureRecognizer=_actionSelectionGestureRecognizer;
+@property(readonly, nonatomic) _UIInterfaceActionRepresentationsSequenceView *actionSequenceView; // @synthesize actionSequenceView=_actionSequenceView;
 @property(nonatomic) _Bool showsSeparatorAboveActions; // @synthesize showsSeparatorAboveActions=_showsSeparatorAboveActions;
 @property(readonly, nonatomic) NSPointerArray *weakSimultaneouslyPresentedGroupViews; // @synthesize weakSimultaneouslyPresentedGroupViews=_weakSimultaneouslyPresentedGroupViews;
 @property(readonly, nonatomic) NSLayoutConstraint *actionSequenceViewWidthAnchoredToContentGuideConstraint; // @synthesize actionSequenceViewWidthAnchoredToContentGuideConstraint=_actionSequenceViewWidthAnchoredToContentGuideConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *actionSequenceViewWidthAnchoredToConstantConstraint; // @synthesize actionSequenceViewWidthAnchoredToConstantConstraint=_actionSequenceViewWidthAnchoredToConstantConstraint;
-@property(readonly, nonatomic) _UIInterfaceActionRepresentationsSequenceView *actionSequenceView; // @synthesize actionSequenceView=_actionSequenceView;
 @property(readonly, nonatomic) UIView<UISeparatorDisplaying> *actionSequenceTopSeparatorView; // @synthesize actionSequenceTopSeparatorView=_actionSequenceTopSeparatorView;
 @property(readonly, nonatomic) NSMutableArray *arrangedScrollableHeaderViews; // @synthesize arrangedScrollableHeaderViews=_arrangedScrollableHeaderViews;
 @property(readonly, nonatomic) NSArray *topLevelViewArrangementConstraints; // @synthesize topLevelViewArrangementConstraints=_topLevelViewArrangementConstraints;
@@ -99,7 +101,7 @@
 - (id)_defaultOrderingForActionRepresentationViews:(id)arg1;
 - (void)_actionSequenceViewContentSizeDidChange;
 - (void)_updateActionSequenceViewActionLayoutAxis;
-- (id)_constraintsToPinView:(id)arg1 layoutGuide:(id)arg2 identifier:(id)arg3;
+- (id)_constraintsToPinView:(id)arg1 toObject:(id)arg2 identifier:(id)arg3;
 - (long long)_actionLayoutAxisUnknowDisallowed;
 - (_Bool)_actionLayoutAxisUnknownDisallowedIsVertical;
 - (void)_addBackgroudViewToViewHierarchy:(id)arg1;
@@ -125,6 +127,7 @@
 - (void)_setLayoutDebuggingIdentifier:(id)arg1;
 - (void)_loadActionSequenceView;
 - (void)_loadTopLevelItemsView;
+- (double)_topLevelItemsMargin;
 - (void)_updateRoundedCornerPositionForSubviews;
 - (void)_reloadStackViewContentsIfNeeded;
 - (_Bool)_shouldInstallContentGuideConstraints;

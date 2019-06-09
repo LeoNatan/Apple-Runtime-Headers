@@ -6,38 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@class MPSectionedIdentifierListEntry, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSString;
-@protocol MPSectionedIdentifierListDelegate;
+#import <MediaPlayer/MPExclusiveAccessible-Protocol.h>
+#import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@interface MPSectionedIdentifierList : NSObject
+@class MPSectionedIdentifierListEntry, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
+@protocol MPSectionedIdentifierListAnnotationDelegate, MPSectionedIdentifierListDelegate, OS_dispatch_queue;
+
+@interface MPSectionedIdentifierList : NSObject <MPExclusiveAccessible, NSSecureCoding>
 {
     long long _itemCount;
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    NSMutableArray *_startEntries;
+    MPSectionedIdentifierListEntry *_endEntry;
+    NSMutableDictionary *_sectionHeadEntryMap;
     _Bool _automaticallyReversesNonDestructiveDataSourceEdits;
     NSString *_identifier;
     id <MPSectionedIdentifierListDelegate> _delegate;
-    NSMutableArray *_startEntries;
-    MPSectionedIdentifierListEntry *_endEntry;
-    NSOperationQueue *_operationQueue;
-    NSMutableDictionary *_sectionHeadEntryMap;
+    id <MPSectionedIdentifierListAnnotationDelegate> _annotationDelegate;
 }
 
-@property(readonly, nonatomic) NSMutableDictionary *sectionHeadEntryMap; // @synthesize sectionHeadEntryMap=_sectionHeadEntryMap;
-@property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-@property(readonly, nonatomic) MPSectionedIdentifierListEntry *endEntry; // @synthesize endEntry=_endEntry;
-@property(readonly, nonatomic) NSMutableArray *startEntries; // @synthesize startEntries=_startEntries;
++ (void)_performWithoutRequiringExclusivity:(CDUnknownBlockType)arg1;
++ (_Bool)supportsSecureCoding;
+@property(nonatomic) __weak id <MPSectionedIdentifierListAnnotationDelegate> annotationDelegate; // @synthesize annotationDelegate=_annotationDelegate;
 @property(nonatomic) _Bool automaticallyReversesNonDestructiveDataSourceEdits; // @synthesize automaticallyReversesNonDestructiveDataSourceEdits=_automaticallyReversesNonDestructiveDataSourceEdits;
-@property(readonly, nonatomic) long long itemCount; // @synthesize itemCount=_itemCount;
 @property(nonatomic) __weak id <MPSectionedIdentifierListDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)_reverseEnumeratorWillStartAtEnd:(id)arg1;
-- (void)_enumerator:(id)arg1 didEncounterEntry:(id)arg2;
-- (id)_itemEntry:(id)arg1 sectionIdentifier:(id)arg2;
-- (void)_insertDataSource:(id)arg1 forSection:(id)arg2 afterEntry:(id)arg3;
-- (void)_enqueueDataSourceWorkIfNeeded:(CDUnknownBlockType)arg1;
-- (id)_dataSourceInsertItems:(id)arg1 fromSection:(id)arg2 afterEntry:(id)arg3;
-- (id)_dataSourceMoveItem:(id)arg1 inSection:(id)arg2 afterEntry:(id)arg3;
-- (void)_addBranchToEntry:(id)arg1 entries:(id)arg2;
+- (void)_reverseEnumeratorWillStartAtEnd:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (void)_enumerator:(id)arg1 didEncounterEntry:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (id)_endEntryWithExclusiveAccessToken:(id)arg1;
+- (id)_sectionHeadEntryMapWithExclusiveAccessToken:(id)arg1;
+- (id)_tailEntryForSectionIdentifier:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (id)_startEntriesWithExclusiveAccessToken:(id)arg1;
+@property(readonly, nonatomic, getter=_sectionDataSources) NSDictionary *sectionDataSources;
+- (void)_loadDataSource:(id)arg1 forSection:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (long long)_itemCountWithExclusiveAccessToken:(id)arg1;
+- (id)_itemEntry:(id)arg1 sectionIdentifier:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (void)_insertDataSource:(id)arg1 forSection:(id)arg2 afterEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
+- (void)_insertDataSourceHead:(id)arg1 afterEntry:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (id)_dataSourceMoveItem:(id)arg1 inSection:(id)arg2 afterEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
+- (id)_dataSourceInsertItems:(id)arg1 fromSection:(id)arg2 afterEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
+- (void)_addBranchToEntry:(id)arg1 entries:(id)arg2 withExclusiveAccessToken:(id)arg3;
 - (void)dataSourceReloadItem:(id)arg1 inSection:(id)arg2;
 - (void)dataSourceRemoveItem:(id)arg1 fromSection:(id)arg2;
 - (void)dataSourceMoveItemToTail:(id)arg1 inSection:(id)arg2;
@@ -52,19 +61,43 @@
 - (void)moveItem:(id)arg1 fromSection:(id)arg2 afterHeadOfSection:(id)arg3;
 - (void)moveItemToEnd:(id)arg1 fromSection:(id)arg2;
 - (void)moveItemToStart:(id)arg1 fromSection:(id)arg2;
-- (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2;
-- (void)addDataSource:(id)arg1 section:(id)arg2 afterTailOfSection:(id)arg3;
-- (void)addDataSource:(id)arg1 section:(id)arg2 afterItem:(id)arg3 inSection:(id)arg4;
-- (void)addDataSource:(id)arg1 section:(id)arg2 afterHeadOfSection:(id)arg3;
-- (void)addDataSourceAtStart:(id)arg1 section:(id)arg2;
+@property(readonly, nonatomic) long long itemCount;
+- (_Bool)hasItem:(id)arg1 inSection:(id)arg2;
+- (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addDataSource:(id)arg1 section:(id)arg2 afterTailOfSection:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addDataSource:(id)arg1 section:(id)arg2 afterItem:(id)arg3 inSection:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)addDataSource:(id)arg1 section:(id)arg2 afterHeadOfSection:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addDataSourceAtStart:(id)arg1 section:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)enumeratorWithOptions:(unsigned long long)arg1 startingAtTailOfSection:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (id)enumeratorWithOptions:(unsigned long long)arg1 startingAtTailOfSection:(id)arg2;
+- (id)enumeratorWithOptions:(unsigned long long)arg1 startingAtItem:(id)arg2 inSection:(id)arg3 withExclusiveAccessToken:(id)arg4;
 - (id)enumeratorWithOptions:(unsigned long long)arg1 startingAtItem:(id)arg2 inSection:(id)arg3;
+- (id)enumeratorWithOptions:(unsigned long long)arg1 withExclusiveAccessToken:(id)arg2;
 - (id)enumeratorWithOptions:(unsigned long long)arg1;
+- (long long)performWithExclusiveAccessAndReturnInteger:(CDUnknownBlockType)arg1;
+- (_Bool)performWithExclusiveAccessAndReturnBOOL:(CDUnknownBlockType)arg1;
+- (id)performWithExclusiveAccessAndReturnObject:(CDUnknownBlockType)arg1;
+- (void)performWithExclusiveAccess:(CDUnknownBlockType)arg1;
+- (void)replaceDataSource:(id)arg1 forSection:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_encodeEntry:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (void)encodeWithCoder:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (void)encodeWithCoder:(id)arg1;
+- (void)_stitchPreviousEntry:(id)arg1 toEntry:(id)arg2 cloneIndex:(struct NSMutableDictionary *)arg3;
+- (void)_stitchLastItemEntryToHeadEntry:(id)arg1 branchList:(id)arg2;
+- (void)_stitchWithPreviousEntry:(id)arg1 list:(id)arg2 cloneIndex:(struct NSMutableDictionary *)arg3;
+- (void)_beforeInitWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithOperationQueue:(id)arg1;
 - (id)init;
-- (id)_debugDescriptionWithEnumerator:(id)arg1;
+- (id)_debugDescriptionWithEnumerator:(id)arg1 lengths:(CDStruct_a734b2e2 *)arg2;
 - (id)debugDescriptionStartingAtItem:(id)arg1 inSection:(id)arg2;
-- (id)debugDescription;
+@property(readonly, copy) NSString *debugDescription;
+- (id)encodableNextEntriesWithExclusiveAccessToken:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSString, NSURL, SKUIPassbookLoader, SKUIRedeemITunesPassLearnMoreView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemITunesPassLearnMoreViewController : SKUIRedeemStepViewController <SKUIPassbookLoaderDelegate>
 {
     _Bool _didTapAddPassbookButton;

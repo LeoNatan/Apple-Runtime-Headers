@@ -7,8 +7,14 @@
 #import <Foundation/NSException.h>
 
 @interface NSException (NSException)
++ (BOOL)supportsSecureCoding;
++ (id)validationExceptionWithFormat:(id)arg1;
++ (id)aggregateExceptionWithExceptions:(id)arg1;
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)exceptionRememberingObject:(id)arg1 key:(id)arg2;
+- (id)exceptionAddingEntriesToUserInfo:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 @end
 

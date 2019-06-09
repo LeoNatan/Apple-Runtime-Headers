@@ -21,9 +21,9 @@
 @property(retain, nonatomic) id <NSObject> updatedValue; // @synthesize updatedValue=_updatedValue;
 @property(copy, nonatomic) NSString *propertyKey; // @synthesize propertyKey=_propertyKey;
 @property(retain, nonatomic) id <NSObject> oldValue; // @synthesize oldValue=_oldValue;
+- (void).cxx_destruct;
 - (void)executeUndo;
 - (void)execute;
-- (void)dealloc;
 - (id)initWithDataSourceProvider:(id)arg1 propertyKey:(id)arg2 oldValue:(id)arg3 updatedValue:(id)arg4;
 
 @end

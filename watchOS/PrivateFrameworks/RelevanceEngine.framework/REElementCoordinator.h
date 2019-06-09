@@ -6,19 +6,22 @@
 
 #import <RelevanceEngine/RERelevanceEngineSubsystem.h>
 
-@class NSMutableArray, NSMutableDictionary, REObserverStore;
+#import <RelevanceEngine/REElementCoordinatorProperties-Protocol.h>
 
-@interface REElementCoordinator : RERelevanceEngineSubsystem
+@class NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, REObserverStore;
+@protocol OS_dispatch_queue;
+
+@interface REElementCoordinator : RERelevanceEngineSubsystem <REElementCoordinatorProperties>
 {
     NSMutableDictionary *_displayElements;
     REObserverStore *_observers;
     _Bool _performingBatch;
     NSMutableArray *_updates;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
 + (id)applicationPrewarmIdentifiers;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (void)_performOperationsToDisplayElements:(id)arg1 toSection:(id)arg2;
 - (void)_performOperationsToDisplayElements:(id)arg1;
 - (void)_performOperation:(id)arg1 toObserver:(id)arg2;
@@ -32,13 +35,15 @@
 - (id)pathForElement:(id)arg1;
 - (unsigned int)numberOfElementsInSection:(id)arg1;
 - (id)elementAtPath:(id)arg1;
-- (id)displayElements;
+@property(readonly, nonatomic) NSDictionary *displayElements;
+- (void)_enumerateValidObservers:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned int numberOfObservers;
 - (void)enumerateObservers:(CDUnknownBlockType)arg1;
 - (void)didRemoveObserver:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)didAddObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue;
 - (void)dealloc;
 - (id)initWithRelevanceEngine:(id)arg1;
 

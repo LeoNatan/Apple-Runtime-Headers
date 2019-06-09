@@ -16,6 +16,7 @@
 - (struct CGRect)_frameOfPresentedViewControllerViewInSuperview;
 - (struct CGRect)frameOfPresentedViewInContainerView;
 - (_Bool)_shouldPresentedViewControllerControlStatusBarAppearance;
+- (_Bool)_mayChildGrabPresentedViewControllerView;
 - (_Bool)shouldRemovePresentersView;
 - (_Bool)_shouldRespectDefinesPresentationContext;
 - (_Bool)shouldPresentInFullscreen;

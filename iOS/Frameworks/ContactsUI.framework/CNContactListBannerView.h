@@ -8,18 +8,19 @@
 
 #import <ContactsUI/UIDragInteractionDelegate-Protocol.h>
 
-@class CNContact, CNContactFormatter, NSArray, NSLayoutConstraint, NSString, UIDragInteraction, UIGestureRecognizer, UILabel;
+@class CNContact, CNContactFormatter, CNContactListStyleApplier, NSArray, NSLayoutConstraint, NSString, UIDragInteraction, UIGestureRecognizer, UILabel;
 @protocol CNContactListBannerViewDelegate;
 
 @interface CNContactListBannerView : UIView <UIDragInteractionDelegate>
 {
     id <CNContactListBannerViewDelegate> _delegate;
+    CNContactListStyleApplier *_contactListStyleApplier;
     UIView *_bottomSeparator;
     CNContactFormatter *_formatter;
     CNContact *_meContact;
     UIGestureRecognizer *_longPress;
-    UIView *_avatarViewContainer;
     UIView *_avatarView;
+    UIView *_avatarViewContainer;
     UILabel *_titleLabel;
     UIView *_footnoteContainer;
     UILabel *_footnoteLabel;
@@ -39,12 +40,13 @@
 @property(readonly, nonatomic) UILabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
 @property(readonly, nonatomic) UIView *footnoteContainer; // @synthesize footnoteContainer=_footnoteContainer;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(retain, nonatomic) UIView *avatarView; // @synthesize avatarView=_avatarView;
 @property(readonly, nonatomic) UIView *avatarViewContainer; // @synthesize avatarViewContainer=_avatarViewContainer;
+@property(retain, nonatomic) UIView *avatarView; // @synthesize avatarView=_avatarView;
 @property(readonly, nonatomic) UIGestureRecognizer *longPress; // @synthesize longPress=_longPress;
 @property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(readonly, nonatomic) CNContactFormatter *formatter; // @synthesize formatter=_formatter;
 @property(readonly, nonatomic) UIView *bottomSeparator; // @synthesize bottomSeparator=_bottomSeparator;
+@property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
 @property(nonatomic) __weak id <CNContactListBannerViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)cellWasSingleTapped:(id)arg1;
@@ -57,12 +59,11 @@
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (void)configureDragInteraction;
 - (void)setMeContact:(id)arg1 footnoteTitle:(id)arg2 footnoteValue:(id)arg3;
-- (id)footnoteTextColor;
-- (id)footnoteFont;
 - (_Bool)displaysContactInfo;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateFontRelatedConstraints;
 - (void)activatePendingConstraints;
+- (void)applyStyle;
 - (void)dealloc;
 - (id)init;
 

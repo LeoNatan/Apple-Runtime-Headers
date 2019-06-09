@@ -8,6 +8,7 @@
 
 @class CHDTrendlineLabel, EDString, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDTrendline : NSObject
 {
     _Bool mDisplayEquation;

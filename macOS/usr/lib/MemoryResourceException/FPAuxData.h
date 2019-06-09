@@ -14,10 +14,10 @@
     long long _value;
 }
 
-@property(readonly, getter=shouldAggregate) BOOL aggregate; // @synthesize aggregate=_aggregate;
-@property(readonly) long long value; // @synthesize value=_value;
-@property(readonly) id jsonRepresentation;
-@property(readonly) BOOL isContainer;
+@property(readonly, nonatomic, getter=shouldAggregate) BOOL aggregate; // @synthesize aggregate=_aggregate;
+@property(readonly, nonatomic) long long value; // @synthesize value=_value;
+@property(readonly, nonatomic) id jsonRepresentation;
+@property(readonly, nonatomic) BOOL isContainer;
 - (id)initWithValue:(long long)arg1 shouldAggregate:(BOOL)arg2;
 
 @end

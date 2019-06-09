@@ -6,11 +6,11 @@
 
 #import <UserActivity/NSObject-Protocol.h>
 
-@class NSDate, NSDictionary, NSString, NSUUID;
+@class NSArray, NSDate;
 
 @protocol UABestAppSuggestionManagerResponseProtocol <NSObject>
 
 @optional
-- (void)notifyBestAppChanged:(NSUUID *)arg1 type:(unsigned long long)arg2 options:(NSDictionary *)arg3 bundleIdentifier:(NSString *)arg4 activityType:(NSString *)arg5 dynamicIdentifier:(NSString *)arg6 when:(NSDate *)arg7 confidence:(double)arg8 deviceName:(NSString *)arg9 deviceIdentifier:(NSString *)arg10 deviceType:(NSString *)arg11;
+- (void)notifyBestAppsChanged:(NSArray *)arg1 when:(NSDate *)arg2 confidence:(double)arg3;
 @end
 

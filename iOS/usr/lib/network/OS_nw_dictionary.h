@@ -11,8 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)_dispose;
+- (void)dealloc;
 - (id)description;
+- (id)redactedDescription;
 
 @end
 

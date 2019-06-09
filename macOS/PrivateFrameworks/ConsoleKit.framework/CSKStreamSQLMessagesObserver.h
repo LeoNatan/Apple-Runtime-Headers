@@ -52,6 +52,7 @@
 @property(retain, nonatomic) CSKDatabaseHandle *readDBHandle; // @synthesize readDBHandle=_readDBHandle;
 - (void).cxx_destruct;
 - (void)_removeMessages:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)_searchUsingFilters:(id)arg1 handleAdditions:(BOOL)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_searchUsingFilters:(id)arg1 handleAdditions:(BOOL)arg2;
 - (void)_searchUsingFilters:(id)arg1;
 - (void)handleRemovalDataBatch:(id)arg1;
@@ -62,7 +63,7 @@
 - (id)messageAtIndex:(unsigned long long)arg1;
 - (void)setFilters:(id)arg1;
 - (void)sortDisplayedMessagesWithSortDescriptor:(id)arg1;
-- (void)searchUsingFilters:(id)arg1;
+- (void)searchUsingFilters:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithIdentifier:(id)arg1;
 - (unsigned long long)numberOfRowsInMessagesViewController:(id)arg1;
 - (id)messagesViewController:(id)arg1 messagesAtRows:(id)arg2;

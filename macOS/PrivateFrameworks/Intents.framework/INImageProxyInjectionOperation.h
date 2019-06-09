@@ -20,9 +20,9 @@
 @property(copy, nonatomic) CDUnknownBlockType copyReturnBlock; // @synthesize copyReturnBlock=_copyReturnBlock;
 @property(copy, nonatomic) CDUnknownBlockType imageProxyRequestBlock; // @synthesize imageProxyRequestBlock=_imageProxyRequestBlock;
 @property(retain, nonatomic) id <INImageProxyInjecting> injector; // @synthesize injector=_injector;
+- (void).cxx_destruct;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
-- (void).cxx_destruct;
 - (BOOL)isAsynchronous;
 - (void)start;
 

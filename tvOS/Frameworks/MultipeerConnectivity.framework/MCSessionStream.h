@@ -9,6 +9,7 @@
 @class MCPeerID, MCResourceDownloader, MCResourceProgressObserver, NSMutableData, NSProgress, NSString, NSURL;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface MCSessionStream : NSObject
 {
     NSObject<OS_dispatch_source> *_source;

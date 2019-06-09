@@ -63,9 +63,8 @@
 @property(retain, nonatomic) Class dataSourceClass; // @synthesize dataSourceClass=_dataSourceClass;
 @property(retain, nonatomic) Class browserClass; // @synthesize browserClass=_browserClass;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool isEnabledUnremovableApp;
 @property(nonatomic) _Bool isEnabled;
-- (id)proxyWithErrorHandle:(CDUnknownBlockType)arg1;
-- (id)extensionConnection;
 - (void)_loadBundle;
 - (id)initWithPluginBundle:(id)arg1 appBundle:(id)arg2;
 

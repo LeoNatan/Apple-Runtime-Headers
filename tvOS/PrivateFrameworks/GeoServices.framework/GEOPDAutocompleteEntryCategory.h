@@ -8,23 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocalizedString, GEOPDVenueIdentifier, GEOStyleAttributes, NSData, PBUnknownFields;
+@class GEOLocalizedString, GEOPDVenueIdentifier, GEOStyleAttributes, NSData, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteEntryCategory : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOLocalizedString *_displayName;
     GEOStyleAttributes *_styleAttributes;
     NSData *_suggestionEntryMetadata;
     GEOPDVenueIdentifier *_venueIdentifier;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_displayName:1;
+        unsigned int read_styleAttributes:1;
+        unsigned int read_suggestionEntryMetadata:1;
+        unsigned int read_venueIdentifier:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_displayName:1;
+        unsigned int wrote_styleAttributes:1;
+        unsigned int wrote_suggestionEntryMetadata:1;
+        unsigned int wrote_venueIdentifier:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDVenueIdentifier *venueIdentifier; // @synthesize venueIdentifier=_venueIdentifier;
-@property(retain, nonatomic) NSData *suggestionEntryMetadata; // @synthesize suggestionEntryMetadata=_suggestionEntryMetadata;
-@property(retain, nonatomic) GEOStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
-@property(retain, nonatomic) GEOLocalizedString *displayName; // @synthesize displayName=_displayName;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,12 +45,21 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDVenueIdentifier *venueIdentifier;
 @property(readonly, nonatomic) _Bool hasVenueIdentifier;
+- (void)_readVenueIdentifier;
+@property(retain, nonatomic) NSData *suggestionEntryMetadata;
 @property(readonly, nonatomic) _Bool hasSuggestionEntryMetadata;
+- (void)_readSuggestionEntryMetadata;
+@property(retain, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) _Bool hasStyleAttributes;
+- (void)_readStyleAttributes;
+@property(retain, nonatomic) GEOLocalizedString *displayName;
 @property(readonly, nonatomic) _Bool hasDisplayName;
+- (void)_readDisplayName;
 
 @end
 

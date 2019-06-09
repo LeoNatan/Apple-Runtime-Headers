@@ -6,29 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_nw_path, OS_nw_path_monitor;
 
 @interface GEONetworkObserver : NSObject
 {
     NSObject<OS_dispatch_queue> *_isolationQueue;
-    unsigned int _networkReachability;
-    struct __SCNetworkReachability *_networkReach;
+    NSObject<OS_nw_path_monitor> *_monitor;
+    NSObject<OS_nw_path> *_currentPath;
     _Bool _initialized;
-    _Bool _networkNotified;
     _Bool _networkReachable;
 }
 
 + (id)sharedNetworkObserver;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 - (void).cxx_destruct;
-- (_Bool)isCellConnection;
+@property(readonly, nonatomic, getter=isCellConnection) _Bool cellConnection;
 - (void)removeNetworkReachableObserver:(id)arg1;
 - (void)addNetworkReachableObserver:(id)arg1 selector:(SEL)arg2;
-- (_Bool)isConnectionRequired;
-- (_Bool)isNetworkReachable;
+@property(readonly, nonatomic, getter=isNetworkReachable) _Bool networkReachable;
 - (void)initializeIfNecessary;
-- (void)_networkReachableCallBack:(unsigned int)arg1;
-- (void)_networkObserversInitialize;
+- (void)_networkPathUpdated:(id)arg1;
+- (void)_initializeNetworkMonitor;
 - (void)dealloc;
 - (id)init;
 

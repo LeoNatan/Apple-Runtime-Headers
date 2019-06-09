@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)_fencingControlTimedOut;
 - (void)forgetFencingMessagesForFencingControlProxy:(id)arg1;
 - (BOOL)fencingControlProxy:(id)arg1 didEndFencingWithSendRight:(id)arg2;
-- (void)fencingControlProxy:(id)arg1 didBeginFencingWithSendRight:(id)arg2;
+- (BOOL)fencingControlProxy:(id)arg1 didBeginFencingWithSendRight:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

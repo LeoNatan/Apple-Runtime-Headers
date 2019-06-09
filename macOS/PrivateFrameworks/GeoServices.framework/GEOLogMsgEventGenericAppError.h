@@ -15,12 +15,11 @@
     long long _appErrorCode;
     NSString *_appErrorDomain;
     struct {
-        unsigned int appErrorCode:1;
-    } _has;
+        unsigned int has_appErrorCode:1;
+    } _flags;
 }
 
-@property(nonatomic) long long appErrorCode; // @synthesize appErrorCode=_appErrorCode;
-@property(retain, nonatomic) NSString *appErrorDomain; // @synthesize appErrorDomain=_appErrorDomain;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,9 +28,12 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasAppErrorCode;
+@property(nonatomic) long long appErrorCode;
+@property(retain, nonatomic) NSString *appErrorDomain;
 @property(readonly, nonatomic) BOOL hasAppErrorDomain;
 
 @end

@@ -11,6 +11,7 @@
 @protocol ADWebViewActionViewControllerDelegate <SFSafariViewControllerDelegate>
 
 @optional
+- (void)dismissWebViewActionViewControlller:(ADWebViewActionViewController *)arg1;
 - (void)webViewActionViewControllerHomeButtonWasTapped:(ADWebViewActionViewController *)arg1;
 @end
 

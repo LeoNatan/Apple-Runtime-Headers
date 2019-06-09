@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 - (void)readerController:(id)arg1 didClickLinkRequestingNewWindowInReaderWithRequest:(id)arg2;
 - (void)readerController:(id)arg1 didDetermineReaderAvailability:(_Bool)arg2 dueToSameDocumentNavigation:(_Bool)arg3;
 - (void)webView:(id)arg1 didCommitNavigation:(id)arg2;
+- (void)_updateDarkModeEnabled;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)setUpReaderWithReaderWebView:(id)arg1;
 - (void)loadView;
 - (void)dealloc;

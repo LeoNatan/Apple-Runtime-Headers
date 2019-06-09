@@ -111,7 +111,7 @@
 - (void)setPuppetState:(id)arg1;
 - (id)puppetState;
 - (double)_renderer:(id)arg1 inputTimeForCurrentFrameWithTime:(double)arg2;
-- (void)renderer:(id)arg1 updateAtTime:(double)arg2;
+- (void)_renderer:(id)arg1 updateAtTime:(double)arg2;
 - (void)_didUpdateAtTime:(double)arg1;
 - (void)willUpdateAvatarWithNewFaceTrackingData:(double)arg1;
 - (void)didLostTrackingForAWhile;

@@ -34,7 +34,7 @@
 + (id)descriptionForBudget:(unsigned int)arg1;
 @property(readonly, nonatomic) __weak CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 - (void).cxx_destruct;
-- (void)networkStateDidChangeForNetworkWatcher:(id)arg1;
+- (void)watcher:(id)arg1 stateDidChangeToNetworkState:(id)arg2;
 - (void)scheduledOverrideDidEnd:(id)arg1;
 @property(readonly) _Bool isDataBudgetOverriden;
 - (void)stopOverridingSystemBudgetsForClient:(unsigned int)arg1;

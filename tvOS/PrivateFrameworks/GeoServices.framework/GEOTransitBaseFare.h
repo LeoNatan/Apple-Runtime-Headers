@@ -9,27 +9,39 @@
 #import <GeoServices/GEOTransitFare-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOTransitPrice, NSArray, NSDecimalNumber, NSMutableArray, NSString;
+@class GEOTransitPrice, NSArray, NSDecimalNumber, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOTransitBaseFare : PBCodable <GEOTransitFare, NSCopying>
 {
-    unsigned int _numberOfLegs;
-    int _paymentType;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     GEOTransitPrice *_price;
     NSMutableArray *_supportedPaymentMethods;
+    unsigned int _numberOfLegs;
+    int _paymentType;
     _Bool _cashOnly;
     struct {
-        unsigned int numberOfLegs:1;
-        unsigned int paymentType:1;
-        unsigned int cashOnly:1;
-    } _has;
+        unsigned int has_numberOfLegs:1;
+        unsigned int has_paymentType:1;
+        unsigned int has_cashOnly:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_price:1;
+        unsigned int read_supportedPaymentMethods:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_price:1;
+        unsigned int wrote_supportedPaymentMethods:1;
+        unsigned int wrote_numberOfLegs:1;
+        unsigned int wrote_paymentType:1;
+        unsigned int wrote_cashOnly:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)supportedPaymentMethodType;
-@property(nonatomic) _Bool cashOnly; // @synthesize cashOnly=_cashOnly;
-@property(retain, nonatomic) NSMutableArray *supportedPaymentMethods; // @synthesize supportedPaymentMethods=_supportedPaymentMethods;
-@property(retain, nonatomic) GEOTransitPrice *price; // @synthesize price=_price;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
@@ -37,20 +49,27 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool hasCashOnly;
+@property(nonatomic) _Bool cashOnly;
 - (id)supportedPaymentMethodAtIndex:(unsigned long long)arg1;
 - (unsigned long long)supportedPaymentMethodsCount;
+- (void)_addNoFlagsSupportedPaymentMethod:(id)arg1;
 - (void)addSupportedPaymentMethod:(id)arg1;
 - (void)clearSupportedPaymentMethods;
+@property(retain, nonatomic) NSMutableArray *supportedPaymentMethods;
+- (void)_readSupportedPaymentMethods;
 @property(nonatomic) _Bool hasNumberOfLegs;
-@property(nonatomic) unsigned int numberOfLegs; // @synthesize numberOfLegs=_numberOfLegs;
+@property(nonatomic) unsigned int numberOfLegs;
 - (int)StringAsPaymentType:(id)arg1;
 - (id)paymentTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPaymentType;
-@property(nonatomic) int paymentType; // @synthesize paymentType=_paymentType;
+@property(nonatomic) int paymentType;
+@property(retain, nonatomic) GEOTransitPrice *price;
 @property(readonly, nonatomic) _Bool hasPrice;
+- (void)_readPrice;
 @property(readonly, nonatomic) NSArray *supportedICCardProviders;
 @property(readonly, nonatomic) long long type;
 @property(readonly, copy, nonatomic) NSString *currencyCode;

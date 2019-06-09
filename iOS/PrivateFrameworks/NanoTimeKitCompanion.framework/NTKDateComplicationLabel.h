@@ -21,6 +21,8 @@
     struct CGSize _cachedSize;
     struct _NSRange _dayTextRange;
     _Bool _cachedSizeIsValid;
+    UIColor *_textColor;
+    UIColor *_computedTextColor;
     _Bool canUseCurvedText;
     _Bool _usesLegibility;
     _Bool _legibilityHidden;
@@ -61,6 +63,8 @@
 @property(nonatomic, setter=_setFirstLineBaselineFrameOriginY:) double _firstLineBaselineFrameOriginY;
 - (double)_firstLineBaselineOffsetFromBoundsTop;
 @property(retain, nonatomic) UIColor *textColor;
+- (void)_computeTextColor;
+- (void)_updateTextColor;
 - (id)_attributedStringAccentingNumbersInString:(id)arg1;
 - (void)setDateComplicationText:(id)arg1 withDayRange:(struct _NSRange)arg2 forDateStyle:(unsigned long long)arg3;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

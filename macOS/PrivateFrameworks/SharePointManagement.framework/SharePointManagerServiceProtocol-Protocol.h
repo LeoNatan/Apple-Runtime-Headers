@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSData, NSDictionary, NSString;
+@class NSData, NSDictionary, NSFileSecurity, NSString;
 
 @protocol SharePointManagerServiceProtocol
-- (void)updateSharePoint:(NSString *)arg1 permissions:(NSArray *)arg2 properties:(NSDictionary *)arg3 authenticationToken:(NSData *)arg4 withReply:(void (^)(NSError *))arg5;
+- (void)updateSharePoint:(NSString *)arg1 fileSecurity:(NSFileSecurity *)arg2 properties:(NSDictionary *)arg3 authenticationToken:(NSData *)arg4 withReply:(void (^)(NSError *))arg5;
 - (void)removeSharePointNamed:(NSString *)arg1 authenticationToken:(NSData *)arg2 withReply:(void (^)(NSError *))arg3;
 - (void)addSharePointNamed:(NSString *)arg1 properties:(NSDictionary *)arg2 authenticationToken:(NSData *)arg3 withReply:(void (^)(NSError *))arg4;
 @end

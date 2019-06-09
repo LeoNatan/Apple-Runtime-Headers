@@ -6,15 +6,13 @@
 
 #import <ScreenSharing/SSGestureEvent.h>
 
-__attribute__((visibility("hidden")))
 @interface SSGestureMagnifyEvent : SSGestureEvent
 {
-    double mMagnification;
-    void *mReservedForInstanceVariablesGestureMagnify;
+    double _magnification;
 }
 
 + (id)gestureMagnifyEventWithCoordinates:(struct SSPoint)arg1 subType:(long long)arg2 magnification:(double)arg3;
-@property(readonly) double magnification; // @synthesize magnification=mMagnification;
+@property double magnification; // @synthesize magnification=_magnification;
 - (id)initWithCoordinates:(struct SSPoint)arg1 subType:(long long)arg2 magnification:(double)arg3;
 
 @end

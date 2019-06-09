@@ -14,13 +14,15 @@ __attribute__((visibility("hidden")))
     id _list[0];
 }
 
-+ (id)__new:(const id *)arg1:(const id *)arg2:(struct __va_list_tag [1])arg3:(unsigned long long)arg4:(_Bool)arg5:(_Bool)arg6;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (double)_clumpingInterestingThreshold;
 - (double)_clumpingFactor;
+- (id)_cfMutableCopy;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)keysOfEntriesWithOptions:(unsigned long long)arg1 passingTest:(CDUnknownBlockType)arg2;

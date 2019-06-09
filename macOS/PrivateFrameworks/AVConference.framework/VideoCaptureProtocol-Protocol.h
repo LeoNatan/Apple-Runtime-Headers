@@ -22,6 +22,9 @@
 - (int)startPreview;
 
 @optional
+- (void)setViewPointCorrectionEnabaled:(BOOL)arg1;
+- (void)setCameraZoomFactor:(double)arg1 withRate:(double)arg2;
+- (void)setCameraZoomFactor:(double)arg1;
 - (void)addStickerWithURL:(NSURL *)arg1 atPosition:(struct CGPoint)arg2 identifier:(NSString *)arg3;
 - (BOOL)setMemoji:(NSData *)arg1;
 - (BOOL)setAnimoji:(NSString *)arg1;

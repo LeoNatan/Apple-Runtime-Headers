@@ -26,6 +26,12 @@
 @property BOOL emptyTitleWasShownIfNeeded; // @synthesize emptyTitleWasShownIfNeeded=_emptyTitleWasShownIfNeeded;
 @property(retain) CalUISuggestionsField *titleField; // @synthesize titleField=_titleField;
 - (void).cxx_destruct;
+- (void)insertNewline;
+- (void)suggestionSelected:(id)arg1;
+- (id)titleForSuggestion:(id)arg1;
+- (id)viewForSuggestion:(id)arg1;
+- (void)queryForString:(id)arg1 suggestionsFoundHandler:(CDUnknownBlockType)arg2;
+- (void)controlTextDidChange:(id)arg1;
 @property(readonly) CalUISuggestionsField *textField;
 - (BOOL)performDragOperation:(id)arg1;
 - (id)claimedPboardTypes;
@@ -36,13 +42,8 @@
 - (void)updateTitle:(id)arg1;
 - (BOOL)needsExpansion;
 - (BOOL)shouldDisplay;
-- (void)suggestionSelected:(id)arg1;
-- (id)titleForSuggestion:(id)arg1;
-- (id)viewForSuggestion:(id)arg1;
 - (BOOL)shouldKeepSuggestedEventsOnTheirOriginalCalendar;
 - (BOOL)wantsTimeDetection;
-- (void)queryForString:(id)arg1 suggestionsFoundHandler:(CDUnknownBlockType)arg2;
-- (void)controlTextDidChange:(id)arg1;
 - (void)setObject:(id)arg1;
 - (id)control;
 - (double)preferredWidth;

@@ -41,7 +41,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_handleBulletinBoardNotificationCommitRequest:(id)arg1;
-- (void)configureBulletinNotification:(CDUnknownBlockType)arg1;
+- (void)configureBulletinNotification;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)_registerNotificationHandlers;

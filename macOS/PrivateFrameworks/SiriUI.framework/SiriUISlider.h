@@ -6,7 +6,6 @@
 
 #import <AppKit/NSSlider.h>
 
-__attribute__((visibility("hidden")))
 @interface SiriUISlider : NSSlider
 {
 }

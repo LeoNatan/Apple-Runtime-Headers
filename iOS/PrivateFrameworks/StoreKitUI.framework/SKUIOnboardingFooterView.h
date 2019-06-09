@@ -8,6 +8,7 @@
 
 @class SKUIOnboardingProgressView, UIButton;
 
+__attribute__((visibility("hidden")))
 @interface SKUIOnboardingFooterView : UIView
 {
     UIButton *_leftButton;

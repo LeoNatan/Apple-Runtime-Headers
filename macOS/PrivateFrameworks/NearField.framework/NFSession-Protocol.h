@@ -6,7 +6,11 @@
 
 #import <NearField/NSObject-Protocol.h>
 
+@class NSObject;
+@protocol NFSession;
+
 @protocol NFSession <NSObject>
+- (void)endSessionAndStartNextSession:(NSObject<NFSession> *)arg1 completion:(void (^)(void))arg2;
 - (void)endSessionWithCompletion:(void (^)(void))arg1;
 - (void)endSession;
 - (BOOL)isFirstInQueue;

@@ -10,26 +10,24 @@
 #import <HealthDaemon/HDQueryServerDelegate-Protocol.h>
 #import <HealthDaemon/HDTaskServerDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
 @interface HDQueryControlServer : HDSubserver <HDQueryServerDelegate, HDTaskServerDelegate, HDQueryControlServerInterface>
 {
     NSMutableDictionary *_queryServersByUUID;
     NSMutableDictionary *_queryServerEndpointsByUUID;
+    NSObject<OS_dispatch_queue> *_connectionQueue;
+    struct os_unfair_lock_s _lock;
 }
 
 - (void).cxx_destruct;
-- (unsigned int)clientSDKVersionForQueryServer:(id)arg1;
-- (_Bool)queryServerClientIsInBackground:(id)arg1;
-- (_Bool)queryServerClientHasActiveWorkout:(id)arg1;
-- (_Bool)queryServerShouldObserveInBackground:(id)arg1;
 - (void)queryServerDidFinish:(id)arg1;
 - (void)queryServer:(id)arg1 shouldStartWithCompletion:(CDUnknownBlockType)arg2;
 - (void)queryServer:(id)arg1 requestsAuthorizationForSamples:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)readAuthorizationStatusForQueryServer:(id)arg1 type:(id)arg2 error:(id *)arg3;
-- (id)_clientSourceIdentifierWithError:(id *)arg1;
-- (void)_startQueryServer:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (_Bool)_queue_hasActiveQueries;
+- (void)_startQueryServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_lock_hasActiveQueries;
+- (_Bool)_hasActiveQueries;
 - (void)removeTaskServerObserver:(id)arg1;
 - (void)removeObserver:(id)arg1 forTaskServerUUID:(id)arg2;
 - (void)addObserver:(id)arg1 forTaskServerUUID:(id)arg2;
@@ -37,9 +35,9 @@
 - (void)taskServerDidFailToInitializeForUUID:(id)arg1;
 - (void)taskServerDidFinishInitialization:(id)arg1;
 - (id)taskServerWithUUID:(id)arg1;
-- (void)remote_createQueryServerForIdentifier:(id)arg1 queryUUID:(id)arg2 configuration:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)remote_createQueryServerEndpointForIdentifier:(id)arg1 queryUUID:(id)arg2 configuration:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)invalidate;
-- (id)initWithParentServer:(id)arg1;
+- (id)initWithParentServer:(id)arg1 connectionQueue:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)_toggleOn:(id)arg1;
 - (id)_switch;
+@property(readonly, copy) NSString *description;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isOn) _Bool on;
@@ -35,7 +36,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) __weak id <HUResizableCellDelegate> resizingDelegate;
 @property(readonly) Class superclass;

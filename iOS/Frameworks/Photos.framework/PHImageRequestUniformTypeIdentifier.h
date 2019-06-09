@@ -12,16 +12,20 @@
 
 @interface PHImageRequestUniformTypeIdentifier : NSObject <PLUniformTypeIdentifierIdentity>
 {
+    _Bool _conformsToRawImage;
     _Bool _conformsToImage;
     _Bool _conformsToMovie;
+    _Bool _isPlayableVideo;
     NSString *_identifier;
 }
 
+@property(nonatomic) _Bool isPlayableVideo; // @synthesize isPlayableVideo=_isPlayableVideo;
 @property(nonatomic) _Bool conformsToMovie; // @synthesize conformsToMovie=_conformsToMovie;
 @property(nonatomic) _Bool conformsToImage; // @synthesize conformsToImage=_conformsToImage;
+@property(nonatomic) _Bool conformsToRawImage; // @synthesize conformsToRawImage=_conformsToRawImage;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isPrimaryFormat) _Bool primaryFormat; // @dynamic primaryFormat;
+@property(readonly, nonatomic, getter=isPrimaryImageFormat) _Bool primaryImageFormat;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

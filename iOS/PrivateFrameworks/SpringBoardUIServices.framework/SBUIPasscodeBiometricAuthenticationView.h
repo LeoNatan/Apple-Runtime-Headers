@@ -6,7 +6,7 @@
 
 #import <SpringBoardUIServices/SBUIInteractionForwardingView.h>
 
-@class NSLayoutConstraint, NSString, PKGlyphView, SBUIButton, SBUIPasscodePillButton, UILabel, UILayoutGuide;
+@class NSLayoutConstraint, NSString, PKGlyphView, SBUIButton, SBUIPasscodePillButton, UIButton, UILabel, UILayoutGuide;
 @protocol SBUIPasscodeBiometricAuthenticationViewDelegate, SBUIPasscodeBiometricAuthenticationViewLayoutDelegate;
 
 @interface SBUIPasscodeBiometricAuthenticationView : SBUIInteractionForwardingView
@@ -25,6 +25,7 @@
     PKGlyphView *_touchIDGlyphView;
     SBUIButton *_emergencyCallButton;
     SBUIButton *_cancelButton;
+    UIButton *_backgroundCancelButton;
     UILabel *_touchIDReasonLabel;
     UILabel *_faceIDLabel;
     UILabel *_faceIDReasonLabel;
@@ -39,6 +40,7 @@
 @property(retain, nonatomic) UILabel *faceIDReasonLabel; // @synthesize faceIDReasonLabel=_faceIDReasonLabel;
 @property(retain, nonatomic) UILabel *faceIDLabel; // @synthesize faceIDLabel=_faceIDLabel;
 @property(retain, nonatomic) UILabel *touchIDReasonLabel; // @synthesize touchIDReasonLabel=_touchIDReasonLabel;
+@property(retain, nonatomic) UIButton *backgroundCancelButton; // @synthesize backgroundCancelButton=_backgroundCancelButton;
 @property(retain, nonatomic) SBUIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(retain, nonatomic) SBUIButton *emergencyCallButton; // @synthesize emergencyCallButton=_emergencyCallButton;
 @property(retain, nonatomic) PKGlyphView *touchIDGlyphView; // @synthesize touchIDGlyphView=_touchIDGlyphView;

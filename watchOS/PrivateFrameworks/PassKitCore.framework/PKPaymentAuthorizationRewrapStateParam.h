@@ -12,9 +12,11 @@
 {
     PKWrappedPayment *_wrappedPayment;
     NSData *_nonceData;
+    NSData *_credential;
 }
 
-+ (id)paramWithWrappedPayment:(id)arg1 nonce:(id)arg2;
++ (id)paramWithWrappedPayment:(id)arg1 nonce:(id)arg2 credential:(id)arg3;
+@property(retain, nonatomic) NSData *credential; // @synthesize credential=_credential;
 @property(retain, nonatomic) NSData *nonceData; // @synthesize nonceData=_nonceData;
 @property(retain, nonatomic) PKWrappedPayment *wrappedPayment; // @synthesize wrappedPayment=_wrappedPayment;
 - (void).cxx_destruct;

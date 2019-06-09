@@ -6,70 +6,34 @@
 
 #import <objc/NSObject.h>
 
-#import <MapsSupport/MSPCloudAccess-Protocol.h>
+@class CKContainer, NSString;
 
-@class CKContainer, CKDatabase, CKRecordZoneID, MSPCloudCoalescedOperationExecutor, MSPJournal, MSPLongLivedCKOpScopedCache, NSDate, NSString, NSUUID;
-@protocol OS_dispatch_queue;
-
-@interface MSPCloudKitAccountAccess : NSObject <MSPCloudAccess>
+@interface MSPCloudKitAccountAccess : NSObject
 {
-    NSString *_latestAccountIdentity;
     CKContainer *_container;
-    CKContainer *_containerForClientRegistrationRecords;
-    CKDatabase *_database;
-    CKRecordZoneID *_zoneID;
-    NSUUID *_clientRegistrationIdentifier;
-    NSDate *_minimumRetryAfter;
-    MSPJournal *_journal;
-    NSObject<OS_dispatch_queue> *_reachabilityQueue;
-    MSPCloudCoalescedOperationExecutor *_coalescedExecutor;
-    CDUnknownBlockType _availabilityDidChangeHandler;
-    CDUnknownBlockType _contentsDidChangeHandler;
-    MSPLongLivedCKOpScopedCache *_longLivedOpCache;
+    CKContainer *_containerWithZoneWidePCS;
+    CKContainer *_secureContainer;
+    CKContainer *_secureContainerWithZoneWidePCS;
+    BOOL _useSecureContainer;
+    NSString *_accountIdentifier;
 }
 
-+ (id)containerForEnvironment:(long long)arg1 usesZoneWidePCS:(BOOL)arg2;
++ (void)fetchDeviceToDeviceEncryptionStatus:(CDUnknownBlockType)arg1;
++ (id)sharedAccess;
++ (long long)containerEnvironmentForAccessEnvironment:(long long)arg1;
++ (long long)defaultEnvironment;
++ (BOOL)hasCloudKitEntitlement;
 + (BOOL)useLongLivedOperations;
-@property(retain, nonatomic) MSPLongLivedCKOpScopedCache *longLivedOpCache; // @synthesize longLivedOpCache=_longLivedOpCache;
-@property(copy, nonatomic) CDUnknownBlockType contentsDidChangeHandler; // @synthesize contentsDidChangeHandler=_contentsDidChangeHandler;
-@property(copy, nonatomic) CDUnknownBlockType availabilityDidChangeHandler; // @synthesize availabilityDidChangeHandler=_availabilityDidChangeHandler;
+@property(retain, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
+@property(nonatomic) BOOL useSecureContainer; // @synthesize useSecureContainer=_useSecureContainer;
 - (void).cxx_destruct;
-- (id)eventForState:(id)arg1 affectedObject:(id)arg2;
-- (int)telemetricKeyForState:(id)arg1;
-- (BOOL)shouldReportState:(id)arg1;
-- (id)statesToReport;
-- (void)noteDidReceiveCloudKitNotificationWithUserInfo:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)checkForAvailabilityWithCallbackQueue:(id)arg1 schedulePreAvailabilityOperationHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)newGroupForSubscriptionsAndZoneChanges;
-- (void)_rescheduleAllLongLivedOperationsWithHandler:(CDUnknownBlockType)arg1 completionGroup:(id)arg2 thenContinue:(CDUnknownBlockType)arg3;
-- (void)_accountChanged:(id)arg1;
-- (id)_subscriptionNameForZoneID:(id)arg1;
-- (id)newSubscriptionRegistrationRequestWithGroup:(id)arg1 successHandler:(CDUnknownBlockType)arg2;
-- (id)newModifyClientRegistrationRecordRequestWithGroup:(id)arg1 editedRecord:(id)arg2;
-- (id)newFetchRequestForCurrentClientRegistrationRecordWithGroup:(id)arg1 successHandler:(CDUnknownBlockType)arg2;
-- (id)newCombinedCachingFetchRequestWithGroup:(id)arg1 forTask:(id)arg2 successHandler:(CDUnknownBlockType)arg3;
-- (id)_newClientRegistrationRecordForThisClient;
-- (id)taskToResolveError:(id)arg1;
-- (BOOL)shouldRetryAfterError:(id)arg1 isCancelation:(char *)arg2 afterDelay:(out id *)arg3 withResolvingTask:(out id *)arg4;
-- (id)retryDelayForError:(id)arg1;
-- (id)minimumStartDate;
-- (id)newQueryRequestWithGroup:(id)arg1 forRecordsOfType:(id)arg2 predicate:(id)arg3 sortDescriptors:(id)arg4 successHandler:(CDUnknownBlockType)arg5;
-- (id)newModifyRequestWithGroup:(id)arg1 forRecordsToModify:(id)arg2 namesOfRecordsToDelete:(id)arg3;
-- (id)newFetchRequestWithGroup:(id)arg1 forRecordsWithNames:(id)arg2 successHandler:(CDUnknownBlockType)arg3;
-- (id)newRequestGroupWithName:(id)arg1 size:(long long)arg2;
-- (id)newReferenceToRecord:(id)arg1;
-- (id)newReferenceToRecordWithName:(id)arg1;
-- (id)newRecordOfType:(id)arg1 name:(id)arg2;
-- (void)setClientRegistrationIdentifier:(id)arg1;
-- (void)networkReachabilityChanged:(BOOL)arg1;
-- (id)initWithZoneID:(id)arg1;
-- (id)initWithEnvironment:(long long)arg1 zoneID:(id)arg2 usesZoneWidePCS:(BOOL)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)description;
+- (void)fetchDeviceToDeviceEncryptionStatus:(CDUnknownBlockType)arg1;
+- (void)fetchAccountStatus:(CDUnknownBlockType)arg1;
+- (void)fetchAccountIdentifierWithCompletion:(CDUnknownBlockType)arg1;
+- (id)containerWithZoneWidePCS:(BOOL)arg1;
+- (id)initWithEnvironment:(long long)arg1 createContainers:(BOOL)arg2;
+- (id)initWithEnvironment:(long long)arg1;
 
 @end
 

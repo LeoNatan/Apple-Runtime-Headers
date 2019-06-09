@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableOrderedSet, NSNumber, NSString, NSURL, PLGenericAlbum;
+@class NSData, NSMutableOrderedSet, NSNumber, NSString, NSURL, PLGenericAlbum;
 
 @interface PLPersistedAlbumMetadata : NSObject
 {
@@ -23,6 +23,7 @@
     NSString *_customKeyAssetUUID;
     NSMutableOrderedSet *_assetUUIDs;
     NSString *_importSessionID;
+    NSData *_userQueryData;
     PLGenericAlbum *_genericAlbum;
     NSURL *_metadataURL;
 }
@@ -31,6 +32,7 @@
 @property(retain, nonatomic) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) PLGenericAlbum *genericAlbum; // @synthesize genericAlbum=_genericAlbum;
 @property(nonatomic) _Bool allowsOverwrite; // @synthesize allowsOverwrite=_allowsOverwrite;
+@property(retain, nonatomic) NSData *userQueryData; // @synthesize userQueryData=_userQueryData;
 @property(retain, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
 @property(retain, nonatomic) NSMutableOrderedSet *assetUUIDs; // @synthesize assetUUIDs=_assetUUIDs;
 @property(retain, nonatomic) NSString *customKeyAssetUUID; // @synthesize customKeyAssetUUID=_customKeyAssetUUID;
@@ -43,6 +45,7 @@
 @property(retain, nonatomic) NSString *cloudGUID; // @synthesize cloudGUID=_cloudGUID;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
+- (void).cxx_destruct;
 - (void)_saveMetadata;
 - (_Bool)_readMetadata;
 - (id)description;
@@ -52,8 +55,7 @@
 - (void)persistAlbumData;
 - (id)initWithTitle:(id)arg1 uuid:(id)arg2 cloudGUID:(id)arg3 kind:(id)arg4 assetUUIDs:(id)arg5 persistedAlbumDataDirectory:(id)arg6;
 - (id)initWithPersistedDataAtURL:(id)arg1;
-- (id)initWithPLGenericAlbum:(id)arg1;
-- (void)dealloc;
+- (id)initWithPLGenericAlbum:(id)arg1 pathManager:(id)arg2;
 - (id)init;
 
 @end

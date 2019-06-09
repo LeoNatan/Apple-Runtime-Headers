@@ -10,6 +10,7 @@
 
 @class NSString, UIViewPropertyAnimator;
 
+__attribute__((visibility("hidden")))
 @interface CKBrowserFullscreenRevealAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 {
     _Bool _presenting;

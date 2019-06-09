@@ -32,16 +32,16 @@
 @property(nonatomic) __weak id <TUMomentsControllerDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (oneway void)didReceiveLocallyRequestedMomentDescriptor:(id)arg1;
-- (oneway void)willCaptureRemoteRequest;
+- (oneway void)willCaptureRemoteRequestFromRequesterID:(id)arg1;
 - (oneway void)didUpdateCapabilities:(id)arg1 forVideoStreamToken:(long long)arg2;
 - (id)synchronousServerWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)serverWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)_registerConnection;
 - (void)invalidate;
 - (void)endRequestWithTransactionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)startRequestWithMediaType:(int)arg1 forStreamToken:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)startRequestWithMediaType:(int)arg1 forStreamToken:(long long)arg2 requesteeID:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)unregisterStreamToken:(long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)registerStreamToken:(long long)arg1 remoteIDSDestination:(id)arg2 remoteMomentsAvailable:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)registerStreamToken:(long long)arg1 requesterID:(id)arg2 remoteIDSDestinations:(id)arg3 remoteMomentsAvailable:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)dealloc;
 - (id)init;
 

@@ -22,9 +22,11 @@
 @property(readonly, nonatomic) MPSectionedIdentifierList *sectionedIdentifierList; // @synthesize sectionedIdentifierList=_sectionedIdentifierList;
 - (void).cxx_destruct;
 - (id)nextObject;
-- (id)_initWithSectionedIdentifierList:(id)arg1 options:(unsigned long long)arg2 startingEntry:(id)arg3;
-- (id)initWithSectionedIdentifierList:(id)arg1 options:(unsigned long long)arg2 startingAtItem:(id)arg3 inSection:(id)arg4;
-- (id)initWithSectionedIdentifierList:(id)arg1 options:(unsigned long long)arg2;
+- (id)nextObjectWithExclusiveAccessToken:(id)arg1;
+- (id)initWithSectionedIdentifierList:(id)arg1 options:(unsigned long long)arg2 startingEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
+- (id)initWithSectionedIdentifierList:(id)arg1 options:(unsigned long long)arg2 startingAtTailOfSection:(id)arg3 withExclusiveAccessToken:(id)arg4;
+- (id)initWithSectionedIdentifierList:(id)arg1 options:(unsigned long long)arg2 startingAtItem:(id)arg3 inSection:(id)arg4 withExclusiveAccessToken:(id)arg5;
+- (id)initWithSectionedIdentifierList:(id)arg1 options:(unsigned long long)arg2 withExclusiveAccessToken:(id)arg3;
 
 @end
 

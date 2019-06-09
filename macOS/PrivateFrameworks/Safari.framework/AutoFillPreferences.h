@@ -6,7 +6,7 @@
 
 #import <Safari/PreferencesModule.h>
 
-@class CreditCardDataEditor, MiscFormsDataEditor, NSButton, NSLayoutConstraint, NSTextField, NSView, PasswordsEditor;
+@class CreditCardPreferencesViewController, MiscFormsDataEditor, NSButton, NSLayoutConstraint, NSTextField, NSView, NSViewController, PasswordsEditor;
 
 __attribute__((visibility("hidden")))
 @interface AutoFillPreferences : PreferencesModule
@@ -21,12 +21,13 @@ __attribute__((visibility("hidden")))
     NSButton *editCreditCardDataButton;
     MiscFormsDataEditor *miscFormsDataEditor;
     PasswordsEditor *passwordsEditor;
-    CreditCardDataEditor *_creditCardDataEditor;
     NSTextField *_autoFillTitle;
     NSLayoutConstraint *_editOtherFormDataButtonBottomLayoutConstraint;
     NSView *_mainContentView;
     NSTextField *_touchIDTextField;
     NSButton *_touchIDToAutoFillCheckBox;
+    NSViewController *_dummyViewController;
+    CreditCardPreferencesViewController *_creditCardPreferencesViewController;
 }
 
 - (void).cxx_destruct;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)moduleWasInstalled;
 - (void)willBeDisplayed;
 - (void)editCreditCardData:(id)arg1;
+- (id)_dummyViewController;
 - (void)editOtherFormData:(id)arg1;
 - (void)editPasswords:(id)arg1;
 - (void)editMyCard:(id)arg1;

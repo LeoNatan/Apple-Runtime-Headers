@@ -14,7 +14,7 @@
     void *ctx;
     void *plan;
     CDStruct_2bc666a5 net;
-    struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> output_layer_name;
+    basic_string_23d93216 output_layer_name;
     id <MTLCommandQueue> queue;
     id <MTLDevice> device;
     NSObject<OS_dispatch_queue> *dispatch_queue;

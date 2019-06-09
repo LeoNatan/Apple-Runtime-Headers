@@ -6,20 +6,25 @@
 
 #import <CallKit/CXCallSource.h>
 
-@class CXInProcessProvider;
+@class CXInProcessProvider, NSString, NSURL;
 
 @interface CXInProcessCallSource : CXCallSource
 {
+    NSString *_bundleIdentifier;
+    NSURL *_bundleURL;
     CXInProcessProvider *_provider;
 }
 
 @property(retain, nonatomic) CXInProcessProvider *provider; // @synthesize provider=_provider;
+- (id)bundleURL;
+- (id)bundleIdentifier;
 - (void).cxx_destruct;
 - (_Bool)isPermittedToUsePrivateAPI;
 - (_Bool)isPermittedToUsePublicAPI;
 - (int)processIdentifier;
 - (id)identifier;
 - (id)vendorProtocolDelegate;
+- (id)initWithBundleIdentifier:(id)arg1;
 
 @end
 

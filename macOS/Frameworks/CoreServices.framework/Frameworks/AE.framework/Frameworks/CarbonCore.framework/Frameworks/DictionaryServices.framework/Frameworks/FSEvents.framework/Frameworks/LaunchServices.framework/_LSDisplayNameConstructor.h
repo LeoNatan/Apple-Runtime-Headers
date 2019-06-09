@@ -16,19 +16,21 @@
     NSString *_secondaryExtension;
     unsigned int _wantsHiddenExtension:1;
     unsigned int _isFolder:1;
+    unsigned int _isApplication:1;
     unsigned int _hadNonASCIICharacter:1;
     unsigned int _hadColonInFSName:1;
     unsigned int _hadBiDiControlCharacter:1;
     unsigned int _hadForbiddenCharacter:1;
     unsigned int _hadCompoundConfusable:1;
     unsigned int _hadExactConfusable:1;
-    unsigned int _isApplication:1;
+    unsigned int _secondaryExtensionHadNonASCIICharacter:1;
     unsigned int _hasForcedExtension:1;
 }
 
 + (void)setSuffixForRemoteXCTests:(id)arg1;
 + (id)suffixForRemoteXCTests;
 + (id)displayNameConstructorsWithContext:(struct LSContext *)arg1 node:(id)arg2 error:(id *)arg3;
++ (id)displayNameConstructorWithContext:(struct LSContext *)arg1 bundle:(unsigned int)arg2 bundleClass:(const unsigned int *)arg3 node:(id)arg4 preferredLocalizations:(id)arg5 error:(id *)arg6;
 + (id)displayNameConstructorWithContext:(struct LSContext *)arg1 node:(id)arg2 error:(id *)arg3;
 + (void)setShowAllExtensions:(BOOL)arg1;
 + (BOOL)showAllExtensions;
@@ -51,7 +53,7 @@
 - (id)combineBaseName:(id)arg1 extension:(id)arg2;
 - (id)replaceForbiddenCharacters:(id)arg1;
 - (id)cleanSecondaryExtension:(id)arg1;
-- (id)addExtension:(id)arg1 ifMissingFromDisplayName:(id)arg2;
+- (id)addApplicationExtensionIfMissingFromDisplayName:(id)arg1;
 - (void)initNamePartsWithDisplayName:(id)arg1;
 - (void)initContentBitsWithDisplayName:(id)arg1 treatAsFSName:(BOOL)arg2;
 - (void)initNodeBitsWithContext:(struct LSContext *)arg1 node:(id)arg2 bundleClass:(const unsigned int *)arg3;

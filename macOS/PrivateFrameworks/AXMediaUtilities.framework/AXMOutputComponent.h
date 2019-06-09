@@ -13,8 +13,8 @@
 
 + (BOOL)isSupported;
 @property(nonatomic) long long componentState; // @synthesize componentState=_componentState;
-- (void)handleRequest:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)canHandleRequest:(id)arg1 options:(id)arg2;
+- (void)handleRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)canHandleRequest:(id)arg1;
 - (void)transitionToState:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)description;
 - (id)init;

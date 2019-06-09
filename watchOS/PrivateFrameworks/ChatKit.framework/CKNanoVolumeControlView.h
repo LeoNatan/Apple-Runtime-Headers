@@ -13,6 +13,7 @@
 @class NSString, PUICCrownInputSequencer;
 @protocol NACVolumeController;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoVolumeControlView : UIImageView <PUICCrownInputSequencerDelegate, NACVolumeControllerDelegate, NSFileManagerDelegate>
 {
     PUICCrownInputSequencer *_crownInputSequencer;

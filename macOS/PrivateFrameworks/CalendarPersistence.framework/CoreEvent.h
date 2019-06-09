@@ -82,9 +82,6 @@
 - (void)finalize;
 - (void)dealloc;
 - (Class)correspondingOccurrenceClass;
-- (void)forceFullDayEvent;
-- (void)setEndNSCalendarDate:(id)arg1;
-- (id)endNSCalendarDate;
 
 @end
 

@@ -32,14 +32,13 @@
 - (void)requestNotificationOfMediaDataChangeWithAdvanceInterval:(double)arg1;
 - (CDStruct_1b6d18a9)earliestAvailablePixelBufferItemTime;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue;
-@property(readonly, nonatomic) id <AVPlayerItemOutputPullDelegate> delegate;
+@property(readonly) __weak id <AVPlayerItemOutputPullDelegate> delegate;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)_detachFromPlayerItem;
 - (BOOL)_attachToPlayerItem:(id)arg1;
 - (id)_pixelBufferAttributes;
 - (long long)clientStateOnRequestedMediaDataChangeNotification;
 - (void)dealloc;
-- (void)finalize;
 - (id)initWithOutputSettings:(id)arg1;
 - (id)initWithPixelBufferAttributes:(id)arg1;
 - (id)init;

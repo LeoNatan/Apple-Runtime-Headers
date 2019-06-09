@@ -8,11 +8,13 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOAutomobileOptions, GEOTransitOptions, GEOWalkingOptions, PBUnknownFields;
+@class GEOAutomobileOptions, GEOTransitOptions, GEOWalkingOptions, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDETAFilter : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _transportTypes;
     GEOAutomobileOptions *_automobileOptions;
@@ -21,17 +23,26 @@ __attribute__((visibility("hidden")))
     _Bool _includeHistoricTravelTime;
     _Bool _includeRouteTrafficDetail;
     struct {
-        unsigned int includeHistoricTravelTime:1;
-        unsigned int includeRouteTrafficDetail:1;
-    } _has;
+        unsigned int has_includeHistoricTravelTime:1;
+        unsigned int has_includeRouteTrafficDetail:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_transportTypes:1;
+        unsigned int read_automobileOptions:1;
+        unsigned int read_transitOptions:1;
+        unsigned int read_walkingOptions:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_transportTypes:1;
+        unsigned int wrote_automobileOptions:1;
+        unsigned int wrote_transitOptions:1;
+        unsigned int wrote_walkingOptions:1;
+        unsigned int wrote_includeHistoricTravelTime:1;
+        unsigned int wrote_includeRouteTrafficDetail:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool includeRouteTrafficDetail; // @synthesize includeRouteTrafficDetail=_includeRouteTrafficDetail;
-@property(retain, nonatomic) GEOWalkingOptions *walkingOptions; // @synthesize walkingOptions=_walkingOptions;
-@property(retain, nonatomic) GEOTransitOptions *transitOptions; // @synthesize transitOptions=_transitOptions;
-@property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
-@property(nonatomic) _Bool includeHistoricTravelTime; // @synthesize includeHistoricTravelTime=_includeHistoricTravelTime;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,21 +51,32 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasIncludeRouteTrafficDetail;
+@property(nonatomic) _Bool includeRouteTrafficDetail;
+@property(retain, nonatomic) GEOWalkingOptions *walkingOptions;
 @property(readonly, nonatomic) _Bool hasWalkingOptions;
+- (void)_readWalkingOptions;
+@property(retain, nonatomic) GEOTransitOptions *transitOptions;
 @property(readonly, nonatomic) _Bool hasTransitOptions;
+- (void)_readTransitOptions;
+@property(retain, nonatomic) GEOAutomobileOptions *automobileOptions;
 @property(readonly, nonatomic) _Bool hasAutomobileOptions;
+- (void)_readAutomobileOptions;
 @property(nonatomic) _Bool hasIncludeHistoricTravelTime;
+@property(nonatomic) _Bool includeHistoricTravelTime;
 - (int)StringAsTransportTypes:(id)arg1;
 - (id)transportTypesAsString:(int)arg1;
 - (void)setTransportTypes:(int *)arg1 count:(unsigned long long)arg2;
 - (int)transportTypeAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsTransportType:(int)arg1;
 - (void)addTransportType:(int)arg1;
 - (void)clearTransportTypes;
 @property(readonly, nonatomic) int *transportTypes;
 @property(readonly, nonatomic) unsigned long long transportTypesCount;
+- (void)_readTransportTypes;
 - (void)dealloc;
 
 @end

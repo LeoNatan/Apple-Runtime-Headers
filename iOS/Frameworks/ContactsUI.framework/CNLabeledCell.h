@@ -44,11 +44,13 @@ __attribute__((visibility("hidden")))
 - (id)constantConstraintsForStandardLayout;
 - (id)variableConstraints;
 - (id)constantConstraints;
+@property(readonly, nonatomic) double valueViewBottomMargin;
 @property(readonly, nonatomic) double chevronWidth;
 - (double)minCellHeight;
 - (void)removeChevron;
 - (void)addChevron;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+- (_Bool)displaysCellSelectionState;
 - (_Bool)allowsCellSelection;
 
 @end

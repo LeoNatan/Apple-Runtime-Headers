@@ -15,14 +15,12 @@ __attribute__((visibility("hidden")))
     NSArray *_cookies;
     NSDictionary *_data;
     NSDate *_expirationDate;
-    NSString *_logKey;
     NSString *_profile;
     NSString *_profileVersion;
 }
 
 @property(retain, nonatomic) NSString *profileVersion; // @synthesize profileVersion=_profileVersion;
 @property(retain, nonatomic) NSString *profile; // @synthesize profile=_profile;
-@property(retain, nonatomic) NSString *logKey; // @synthesize logKey=_logKey;
 @property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) NSDictionary *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSArray *cookies; // @synthesize cookies=_cookies;

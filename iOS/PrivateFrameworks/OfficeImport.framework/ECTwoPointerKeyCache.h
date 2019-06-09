@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     OITSUPointerKeyDictionary *mCache;
 }
 
+- (void).cxx_destruct;
 - (void)setObject:(id)arg1 forKey1:(id)arg2 key2:(id)arg3;
 - (id)objectForKey1:(id)arg1 key2:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

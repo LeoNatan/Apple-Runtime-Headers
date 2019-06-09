@@ -26,6 +26,7 @@
 - (void)unitTest_interrupt;
 - (void)invalidate;
 - (void)resume;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithUnderlyingConnection:(id)arg1;

@@ -17,7 +17,6 @@
 - (void)aa_addDeviceProvisioningInfoHeadersWithDSID:(id)arg1 sendEmptyValues:(BOOL)arg2;
 - (void)aa_addDeviceProvisioningInfoHeadersWithDSID:(id)arg1;
 - (void)aa_addDeviceProvisioningInfoHeadersWithAccount:(id)arg1;
-- (void)aa_addiTunesHeadersWithAccount:(id)arg1;
 - (BOOL)aa_addGrandslamAuthorizationheaderWithAltDSID:(id)arg1 heartbeatToken:(id)arg2;
 - (BOOL)aa_addGrandslamAuthorizationHeaderWithAltDSID:(id)arg1 grandslamToken:(id)arg2;
 - (BOOL)aa_addGrandSlamAuthorizationHeaderWithAccount:(id)arg1 grandslamToken:(id)arg2;

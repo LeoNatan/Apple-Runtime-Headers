@@ -12,6 +12,7 @@
 
 @interface HKVaccinationRecord (HDCodingSupport) <HDCoding>
 + (id)createWithCodable:(id)arg1;
++ (Class)hd_dataEntityClass;
 - (_Bool)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
 

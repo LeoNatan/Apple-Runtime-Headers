@@ -45,6 +45,7 @@
 }
 
 + (_Bool)removeClusteringStateCacheWithContext:(id)arg1 cacheDirectoryUrl:(id)arg2 error:(id *)arg3;
++ (void)initialize;
 @property __weak PVEventManager *eventManager; // @synthesize eventManager=_eventManager;
 @property(nonatomic) long long clustererBringUpState; // @synthesize clustererBringUpState=_clustererBringUpState;
 - (void).cxx_destruct;
@@ -81,9 +82,9 @@
 - (void)_processingQueueQuickSyncClustererWithPhotoLibraryUsingFacesInClusterCache:(id)arg1 visionClusters:(id *)arg2 withCanceler:(id)arg3;
 - (void)_removeEmptyGroups;
 - (id)_faceObservationsFromFaces:(id)arg1 assignClusterSeqNumberIfNeeded:(_Bool)arg2 updatedFaces:(id)arg3;
-- (id)_faceObservationsFromFaceIdStrs:(id)arg1 assignClusterSeqNumberIfNeeded:(_Bool)arg2 updatedFaces:(id)arg3 excludeClustered:(_Bool)arg4;
+- (id)_faceObservationsFromFaceIdStrs:(id)arg1 assignClusterSeqNumberIfNeeded:(_Bool)arg2 updatedFaces:(id)arg3 excludeClustered:(_Bool)arg4 groupingIdentifiers:(id)arg5;
 - (id)_faceObservationsFromFaceCSNs:(id)arg1;
-- (_Bool)_performAndPersistClustersByAddingFaceObs:(id)arg1 removingFaceObs:(id)arg2 updateFaces:(id)arg3 canceler:(id)arg4 error:(id *)arg5;
+- (_Bool)_performAndPersistClustersByAddingFaceObs:(id)arg1 groupingIdentifiers:(id)arg2 removingFaceObs:(id)arg3 updateFaces:(id)arg4 canceler:(id)arg5 error:(id *)arg6;
 - (id)status;
 - (void)_recordCurrentStatus:(CDStruct_6069b02b)arg1;
 - (void)_recordIncrementCountOfPendingFacesToAdd:(unsigned long long)arg1;

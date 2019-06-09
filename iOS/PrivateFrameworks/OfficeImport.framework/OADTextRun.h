@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     OADCharacterProperties *mProperties;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isSimilarToTextRun:(id)arg1;
 - (void)removeUnnecessaryOverrides;
@@ -21,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)properties;
 - (unsigned long long)characterCount;
 - (_Bool)isEmpty;
-- (void)dealloc;
 - (id)init;
 
 @end

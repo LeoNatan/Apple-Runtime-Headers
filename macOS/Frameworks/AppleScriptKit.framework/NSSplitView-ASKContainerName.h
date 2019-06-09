@@ -8,5 +8,6 @@
 
 @interface NSSplitView (ASKContainerName)
 + (id)containerName_ask;
+- (void)setIsVertical:(BOOL)arg1;
 @end
 

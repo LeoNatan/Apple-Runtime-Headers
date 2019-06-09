@@ -35,7 +35,7 @@
 - (id)error;
 - (id)product;
 - (BOOL)_isValidChoice:(id)arg1;
-- (BOOL)applyIntegrityDataByPackageURL:(id)arg1;
+- (void)applyIntegrityInformation:(id)arg1;
 - (BOOL)applyPKMDataByPackageURL:(id)arg1;
 - (BOOL)evaluateProductReturningEvalMessages:(id *)arg1 predicateScan:(BOOL)arg2 evaluateOnly:(BOOL)arg3;
 - (BOOL)evaluateProductForPredicateScan:(BOOL)arg1;

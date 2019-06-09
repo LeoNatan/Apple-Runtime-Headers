@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableArray, NSMutableSet, NSString;
+@class MADownloadOptions, NSDictionary, NSMutableArray, NSMutableSet, NSString, _HKMobileAssetDownloadManagerV2;
 @protocol OS_dispatch_queue;
 
 @interface _HKMobileAssetDownloadManager : NSObject
@@ -14,7 +14,9 @@
     NSMutableArray *_pendingOperations;
     NSMutableSet *_downloadingPredicateFormats;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_queue_v2;
     _HKMobileAssetDownloadManager *_retainedSelf;
+    _HKMobileAssetDownloadManagerV2 *_mobileAssetDownloadManagerV2;
     _Bool _shouldQueryLocalAssetsFirst;
     _Bool _shouldAutoDownloadRemoteAssets;
     NSString *_mobileAssetTypeName;
@@ -39,8 +41,16 @@
 - (void)downloadAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAssetsWithPredicate:(id)arg1 onlyLocal:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)downloadAssetsWithPredicate:(id)arg1;
+- (void)_callDownloadCompletionHandlerWithAssets:(id)arg1 queryParams:(id)arg2;
+- (void)removeMobileAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)downloadMobileAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchAssetsWithQueryParams:(id)arg1 onlyLocal:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)downloadAssetsWithQueryParams:(id)arg1;
+@property(copy, nonatomic) CDUnknownBlockType mobileAssetDownloadCompletionHandler;
+@property(copy, nonatomic) MADownloadOptions *mobileAssetDownloadOptions;
 - (id)description;
 - (void)dealloc;
+- (id)initWithMobileAssetTypeName:(id)arg1 queue:(id)arg2;
 - (id)initWithMobileAssetTypeName:(id)arg1;
 
 @end

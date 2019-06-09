@@ -8,6 +8,14 @@
 
 @interface NSValue (TSA_NSValueCGGeometryExtensions)
 + (id)valueWithCGRect:(struct CGRect)arg1;
++ (id)valueWithQuadrilateral:(struct AKQuadrilateral)arg1;
++ (id)akValueWithRect:(struct CGRect)arg1;
++ (id)akValueWithSize:(struct CGSize)arg1;
++ (id)akValueWithPoint:(struct CGPoint)arg1;
 - (struct CGRect)CGRectValue;
+@property(readonly) struct AKQuadrilateral quadrilateralValue;
+- (struct CGRect)akRectValue;
+- (struct CGSize)akSizeValue;
+- (struct CGPoint)akPointValue;
 @end
 

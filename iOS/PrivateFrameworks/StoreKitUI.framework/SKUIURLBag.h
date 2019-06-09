@@ -8,6 +8,7 @@
 
 @class ISLoadURLBagOperation, ISURLBag, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface SKUIURLBag : SSURLBag
 {
     ISURLBag *_bag;

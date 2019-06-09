@@ -11,11 +11,18 @@
 @interface CSKFileSystem : NSObject
 {
     NSObject<OS_dispatch_queue> *_systemSerialQueue;
+    CDUnknownBlockType _handler;
 }
 
++ (id)_findPath:(id)arg1;
++ (id)applicationURLForLogFile:(id)arg1;
 + (id)userDiagnosticReportsPath;
 + (id)userLibraryLogsPath;
 + (id)unarchiveExecutablePathForExtension:(id)arg1;
++ (BOOL)isFileAtURLMiscLogFile:(id)arg1;
++ (BOOL)isFileAtURLSpinLogFile:(id)arg1;
++ (BOOL)isFileAtURLCrashLogFile:(id)arg1;
++ (BOOL)isFileAtURLLogFile:(id)arg1;
 + (BOOL)isFileAtURLASLFile:(id)arg1;
 + (BOOL)isFileAtPathValidASLFile:(id)arg1;
 + (BOOL)isFileAtPathValidLogArchive:(id)arg1;
@@ -28,6 +35,7 @@
 + (void)enumerateContentAtURL:(id)arg1 properties:(id)arg2 options:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
 + (id)_realUserHomeDirectory;
 + (id)sharedInstance;
+@property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *systemSerialQueue; // @synthesize systemSerialQueue=_systemSerialQueue;
 - (void).cxx_destruct;
 - (void)asyncFetchDirectoriesAtURL:(id)arg1 target:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

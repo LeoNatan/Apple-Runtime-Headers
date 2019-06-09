@@ -20,8 +20,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)isSupercededByOperation:(id)arg1;
 - (void)performWithDB:(id)arg1;
 - (BOOL)canIncreaseDataSizeInDB;
-@property(readonly) unsigned long long sizeInBytes;
-@property(readonly) struct _GEOTileKey *key;
+@property(readonly, nonatomic) unsigned long long sizeInBytes;
+@property(readonly, nonatomic) struct _GEOTileKey *key;
 - (id)initWithTileKey:(const struct _GEOTileKey *)arg1;
 
 // Remaining properties

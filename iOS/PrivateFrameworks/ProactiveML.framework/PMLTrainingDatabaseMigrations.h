@@ -13,11 +13,11 @@
     NSDictionary *_migrations;
 }
 
-+ (id)skipFromZeroSchema:(unsigned long long *)arg1;
++ (id)skipFromZeroSchema:(unsigned int *)arg1;
 + (id)mockMigrationsByAddingQueries:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *migrations; // @synthesize migrations=_migrations;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) unsigned long long maxVersion; // @dynamic maxVersion;
+@property(readonly, nonatomic) unsigned int maxVersion; // @dynamic maxVersion;
 - (id)init;
 - (id)initWithMigrations:(id)arg1;
 

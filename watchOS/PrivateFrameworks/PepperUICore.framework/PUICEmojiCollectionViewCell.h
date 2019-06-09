@@ -6,24 +6,31 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class NSString, UIFont;
+@class NSString, UIFont, UIImage, UIImageView;
 
 @interface PUICEmojiCollectionViewCell : UICollectionViewCell
 {
+    _Bool _fullBleed;
     _Bool _platterEnabled;
     NSString *_text;
     float _fontSize;
+    UIImage *_image;
     UIFont *_font;
+    UIImageView *_imageView;
 }
 
 + (float)deselectCellAnimationDuration;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
 @property(nonatomic) _Bool platterEnabled; // @synthesize platterEnabled=_platterEnabled;
+@property(nonatomic) _Bool fullBleed; // @synthesize fullBleed=_fullBleed;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) float fontSize; // @synthesize fontSize=_fontSize;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (id)emojiPlatterColor;
 - (void)drawRect:(struct CGRect)arg1;
+- (void)layoutSubviews;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)description;
 - (id)initWithFrame:(struct CGRect)arg1;

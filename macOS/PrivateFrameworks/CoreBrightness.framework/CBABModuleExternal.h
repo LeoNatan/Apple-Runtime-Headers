@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSString *_containerID;
     BOOL _enabled;
     BOOL _available;
+    BOOL _presetDisableAB;
     CBABCurve *_curve;
     CBABRamp *_ramp;
     BOOL _updatesFrozen;

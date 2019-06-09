@@ -8,6 +8,7 @@
 
 @class SKUICountdown;
 
+__attribute__((visibility("hidden")))
 @interface SKUICountdownComponent : SKUIPageComponent
 {
     SKUICountdown *_countdown;

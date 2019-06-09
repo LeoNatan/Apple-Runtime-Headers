@@ -8,6 +8,7 @@
 
 @class OADColorMap, OADThemeOverrides;
 
+__attribute__((visibility("hidden")))
 @interface PDSlideChild : PDSlideBase
 {
     BOOL mShowMasterPlaceholderAnimations;

@@ -14,8 +14,8 @@
 + (id)instance;
 @property _Bool hasDeviceBeenUnlockedSinceBoot; // @synthesize hasDeviceBeenUnlockedSinceBoot=_hasDeviceBeenUnlockedSinceBoot;
 - (void)cacheUnlockSinceBootState;
-- (void)reFetch;
 - (void)setupMobileKeyBag;
+- (void)reFetch;
 - (id)init;
 
 @end

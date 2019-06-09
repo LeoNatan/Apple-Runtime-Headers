@@ -19,6 +19,7 @@
     NSArray *_places;
 }
 
++ (BOOL)supportsSecureCoding;
 + (Class)placeType;
 @property(copy, nonatomic) NSArray *places; // @synthesize places=_places;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)placeAtIndex:(unsigned long long)arg1;

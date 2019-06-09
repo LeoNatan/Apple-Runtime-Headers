@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, OISFUZipArchive;
 
+__attribute__((visibility("hidden")))
 @interface OCPZipPackage : OCPPackage
 {
     OISFUZipArchive *mArchive;

@@ -17,8 +17,9 @@
     NSArray *_tokens;
 }
 
-@property(readonly, retain, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
+@property(readonly, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
 @property(copy, nonatomic, setter=setUUID:) NSString *uuid; // @synthesize uuid=_uuid;
+- (void).cxx_destruct;
 - (void)clear;
 - (void)reverse;
 - (void)enumerateSynonymsForOriginalContentString:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -27,7 +28,6 @@
 - (void)addIdentifier:(id)arg1 category:(short)arg2 owningCategory:(short)arg3;
 - (void)addContentString:(id)arg1 category:(short)arg2 owningCategory:(short)arg3;
 - (id)description;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initForReverse;
 - (id)initWithUUID:(id)arg1;

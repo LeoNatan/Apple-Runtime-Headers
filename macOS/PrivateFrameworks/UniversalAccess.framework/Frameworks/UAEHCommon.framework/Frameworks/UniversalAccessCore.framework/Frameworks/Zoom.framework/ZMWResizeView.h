@@ -8,6 +8,7 @@
 
 @class CALayer, ZMWButtonView;
 
+__attribute__((visibility("hidden")))
 @interface ZMWResizeView : ZMWView
 {
     ZMWButtonView *_doneButton;

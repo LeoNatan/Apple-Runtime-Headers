@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) MPMediaItem *mediaPlayerMediaItem;
+@property(readonly, copy, nonatomic) NSDate *downloadExpirationDate;
 @property(copy, nonatomic) NSNumber *bookmark;
 @property(copy, nonatomic) NSNumber *playCount;
 @property(copy, nonatomic) NSNumber *hasBeenPlayed;

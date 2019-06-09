@@ -22,6 +22,7 @@
     struct UIEdgeInsets _centeringRectInsets;
 }
 
++ (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 @property(nonatomic) struct UIEdgeInsets centeringRectInsets; // @synthesize centeringRectInsets=_centeringRectInsets;
 @property(readonly, nonatomic) NSArray *sectionTitleOffsets; // @synthesize sectionTitleOffsets=_sectionTitleOffsets;
@@ -30,6 +31,7 @@
 - (id)mostVisibleIndexPathForProposedContentOffset:(struct CGPoint)arg1;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1;
 - (struct CGPoint)targetContentOffsetForProposedContentOffset:(struct CGPoint)arg1 withScrollingVelocity:(struct CGPoint)arg2;
+- (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
@@ -37,6 +39,7 @@
 - (void)_updateContentInsets;
 - (void)prepareLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
+- (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (unsigned int)_delegate_snappingBehavior:(unsigned int)arg1;
 - (unsigned int)_delegate_preferredCount:(unsigned int)arg1;
 - (float)_delegate_topContentInset;

@@ -28,6 +28,7 @@
     id _weakMessageSentDelegate;
 }
 
++ (id)newSecureHierarchyTokenFromParentToken:(id)arg1;
 + (id)newHierarchyTokenFromParentToken:(id)arg1;
 + (_Bool)sendOneMessageWithSessionInfo:(id)arg1 userInfo:(id)arg2 category:(unsigned short)arg3 type:(unsigned short)arg4 payload:(id)arg5 error:(id *)arg6;
 + (id)getPersistentIdentifierForDNU:(_Bool)arg1;

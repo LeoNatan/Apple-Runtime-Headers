@@ -4,21 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <FrontBoardServices/BSAbstractDefaultDomain.h>
 
-@protocol OS_dispatch_queue;
-
-@interface FBPreferences : NSObject
+@interface FBPreferences : BSAbstractDefaultDomain
 {
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedInstance;
-- (void).cxx_destruct;
-- (void)_queue_reload;
-- (id)description;
-- (void)reload;
-- (id)init;
+- (void)_bindAndRegisterDefaults;
+- (id)_init;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool disableXPCServicesEndpointHack; // @dynamic disableXPCServicesEndpointHack;
 
 @end
 

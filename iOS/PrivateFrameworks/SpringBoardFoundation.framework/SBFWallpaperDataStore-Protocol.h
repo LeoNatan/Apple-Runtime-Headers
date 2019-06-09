@@ -6,17 +6,20 @@
 
 #import <SpringBoardFoundation/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSString, NSURL, SBFWallpaperOptions, SBWallpaperImage, UIColor, UIImage;
+@class NSData, NSDictionary, NSString, NSURL, SBFGradient, SBFWallpaperOptions, SBWallpaperImage, UIColor, UIImage;
 
 @protocol SBFWallpaperDataStore <NSObject>
+- (void)removeWallpaperGradientForVariants:(long long)arg1;
+- (_Bool)setWallpaperGradient:(SBFGradient *)arg1 forVariants:(long long)arg2;
+- (SBFGradient *)wallpaperGradientForVariant:(long long)arg1;
 - (void)removeWallpaperColorForVariants:(long long)arg1;
 - (_Bool)setWallpaperColorName:(NSString *)arg1 forVariants:(long long)arg2;
 - (_Bool)setWallpaperColor:(UIColor *)arg1 forVariants:(long long)arg2;
 - (NSString *)wallpaperColorNameForVariant:(long long)arg1;
 - (UIColor *)wallpaperColorForVariant:(long long)arg1;
 - (void)removeWallpaperOptionsForVariants:(long long)arg1;
-- (_Bool)setWallpaperOptions:(SBFWallpaperOptions *)arg1 forVariants:(long long)arg2;
-- (SBFWallpaperOptions *)wallpaperOptionsForVariant:(long long)arg1;
+- (_Bool)setWallpaperOptions:(SBFWallpaperOptions *)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;
+- (SBFWallpaperOptions *)wallpaperOptionsForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (void)removeProceduralWallpaperForVariants:(long long)arg1;
 - (_Bool)setProceduralWallpaperInfo:(NSDictionary *)arg1 forVariants:(long long)arg2;
 - (NSDictionary *)proceduralWallpaperInfoForVariant:(long long)arg1;
@@ -26,14 +29,17 @@
 - (NSURL *)verifiedOriginalVideoURLForVariant:(long long)arg1;
 - (NSURL *)verifiedVideoURLForVariant:(long long)arg1;
 - (NSURL *)unverifiedVideoURLForVariant:(long long)arg1;
+- (void)removeWallpaperImageHashDataForVariants:(long long)arg1;
+- (NSData *)wallpaperImageHashDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (_Bool)setWallpaperImageHashData:(NSData *)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;
 - (void)removeWallpaperImageDataTypes:(unsigned long long)arg1 forVariants:(long long)arg2;
 - (void)moveWallpaperImageDataTypes:(unsigned long long)arg1 fromVariant:(long long)arg2 toVariant:(long long)arg3;
-- (_Bool)setWallpaperThumbnailData:(NSData *)arg1 forVariant:(long long)arg2;
-- (_Bool)setWallpaperOriginalImage:(UIImage *)arg1 forVariant:(long long)arg2;
-- (_Bool)setWallpaperImage:(UIImage *)arg1 forVariant:(long long)arg2;
-- (NSData *)wallpaperThumbnailDataForVariant:(long long)arg1;
-- (UIImage *)wallpaperOriginalImageForVariant:(long long)arg1;
-- (_Bool)hasWallpaperImageForVariant:(long long)arg1;
-- (SBWallpaperImage *)wallpaperImageForVariant:(long long)arg1;
+- (_Bool)setWallpaperThumbnailData:(NSData *)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setWallpaperOriginalImage:(UIImage *)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setWallpaperImage:(UIImage *)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (NSData *)wallpaperThumbnailDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (UIImage *)wallpaperOriginalImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (_Bool)hasWallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (SBWallpaperImage *)wallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 @end
 

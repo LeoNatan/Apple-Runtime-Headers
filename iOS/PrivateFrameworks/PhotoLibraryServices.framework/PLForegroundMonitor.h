@@ -22,6 +22,8 @@
 - (void)_handleApplicationStateMonitorNotificationWithUserInfo:(id)arg1;
 - (void)_locked_applicationDidMoveToBackground:(id)arg1;
 - (void)_locked_applicationDidMoveToForeground:(id)arg1;
+- (void)_applicationChangeToBG:(id)arg1;
+- (void)_applicationChangeToFG:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

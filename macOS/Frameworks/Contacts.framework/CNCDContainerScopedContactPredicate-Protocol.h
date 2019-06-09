@@ -6,10 +6,10 @@
 
 #import <Contacts/CNCDContactPredicate-Protocol.h>
 
-@class NSPredicate, NSString;
+@class NSArray, NSPredicate;
 
 @protocol CNCDContainerScopedContactPredicate <CNCDContactPredicate>
 - (NSPredicate *)cn_coreDataExchangePredicate;
-- (NSString *)containerIdentifier;
+- (NSArray *)containerIdentifiers;
 @end
 

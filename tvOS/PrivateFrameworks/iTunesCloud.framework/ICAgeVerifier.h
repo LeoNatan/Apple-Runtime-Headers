@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <iTunesCloud/NSCopying-Protocol.h>
+
 @class NSDate;
 
-@interface ICAgeVerifier : NSObject
+@interface ICAgeVerifier : NSObject <NSCopying>
 {
     long long _status;
     NSDate *_verificationExpirationDate;
@@ -17,6 +19,9 @@
 @property(copy, nonatomic) NSDate *verificationExpirationDate; // @synthesize verificationExpirationDate=_verificationExpirationDate;
 @property(nonatomic) long long status; // @synthesize status=_status;
 - (void).cxx_destruct;
+- (id)description;
+- (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic, getter=isExplicitContentAllowed) _Bool explicitContentAllowed;
 - (void)runAgeVerification;
 - (id)initWithUserProperties:(id)arg1;

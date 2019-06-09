@@ -11,6 +11,7 @@
 }
 
 + (id)sharedManager;
+- (void)recordFactoryInstall;
 - (void)clearSingleDiagnosticMessage:(long long)arg1;
 - (void)recordCompletionOfQueueElement:(id)arg1 withDuration:(double)arg2;
 - (void)recordBeginningOfQueueElement:(id)arg1;

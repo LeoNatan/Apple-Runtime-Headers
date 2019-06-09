@@ -18,6 +18,7 @@
 + (id)_daysOfWeek;
 + (id)_numberedWeekDayString:(id)arg1;
 + (id)_andDaysOfWeekString:(id)arg1;
++ (id)localizedOfMonthStringForMonth:(id)arg1;
 - (id)naturalLanguageDescriptionForRecurrenceRule:(id)arg1 withStartDate:(id)arg2;
 
 @end

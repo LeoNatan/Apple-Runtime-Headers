@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 + (void)_removePresenter:(id)arg1;
 + (void)_addPresenter:(id)arg1;
 + (id)_currentFullScreenAlertPresenters;
-+ (void)_cancelPendingTouchesIfAppropriate;
++ (void)_cancelPendingTouchesIfAppropriateForWindow:(id)arg1;
 + (_Bool)_shouldPresentActionSheetsFullscreen;
 @property(nonatomic) UIAlertView *legacyAlert; // @synthesize legacyAlert=_legacyAlert;
 @property(nonatomic) __weak UIAlertController *alertController; // @synthesize alertController=_alertController;

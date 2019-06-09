@@ -6,10 +6,11 @@
 
 #import <CarPlaySupport/NSObject-Protocol.h>
 
-@class CPTemplate;
+@class CPTemplate, NAFuture;
 @protocol CPTemplateDelegate;
 
 @protocol CPSBaseTemplateViewController <NSObject>
+@property(readonly, nonatomic) NAFuture *templateProviderFuture;
 @property(retain, nonatomic) id <CPTemplateDelegate> templateDelegate;
 @property(retain, nonatomic) CPTemplate *associatedTemplate;
 @end

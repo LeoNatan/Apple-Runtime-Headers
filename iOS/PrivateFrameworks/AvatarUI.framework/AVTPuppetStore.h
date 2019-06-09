@@ -17,7 +17,8 @@
 @property(copy, nonatomic) NSArray *puppetRecords; // @synthesize puppetRecords=_puppetRecords;
 - (void).cxx_destruct;
 - (id)allAvatarPuppetsWithError:(id *)arg1;
-- (id)avatarsWithIdentifier:(id)arg1 error:(id *)arg2;
+- (id)allAvatarPuppetsExcluding:(id)arg1 error:(id *)arg2;
+- (id)avatarsWithIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)avatarPuppetsForFetchRequest:(id)arg1 error:(id *)arg2;
 - (void)loadPuppetRecordsIfNeeded;
 - (id)allPuppetRecords;

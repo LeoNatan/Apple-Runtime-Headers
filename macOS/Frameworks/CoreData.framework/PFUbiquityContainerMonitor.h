@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_processingQueue;
     id <NSObject><NSCopying><NSCoding> _currentIdentityToken;
     PFUbiquityContainerIdentifier *_containerIdentifier;
-    NSString *_identityTokenOverride;
 }
 
 @property(readonly, nonatomic) id <NSObject><NSCopying><NSCoding> currentIdentityToken; // @synthesize currentIdentityToken=_currentIdentityToken;

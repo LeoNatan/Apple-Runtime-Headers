@@ -8,8 +8,7 @@
 
 #import <AppKit/CARenderValue-Protocol.h>
 
-@class NSCache, NSHashTable, NSIOSurfacePool, NSMapTable, NSString;
-@protocol MTLCommandQueue;
+@class NSHashTable, NSMapTable, NSString;
 
 __attribute__((visibility("hidden")))
 @interface NSCGLSurface : NSObject <CARenderValue>
@@ -19,11 +18,7 @@ __attribute__((visibility("hidden")))
     unsigned int _surfaceID;
     struct _CAImageQueue *_imageQueue;
     struct os_unfair_lock_s _lock;
-    NSCache *_sourceTextureCache;
-    NSCache *_destinationTextureCache;
-    NSCache *_imageQueueBufferCache;
-    id <MTLCommandQueue> _commandQueue;
-    NSIOSurfacePool *_surfacesPool;
+    id _surface;
     NSMapTable *_surfacesToImageQueueBufferIDs;
     NSHashTable *_activeImageQueueBufferIDs;
 }
@@ -34,11 +29,8 @@ __attribute__((visibility("hidden")))
 - (void *)CA_copyRenderValue;
 - (BOOL)isCGLContextAttached:(struct _CGLContextObject *)arg1;
 - (BOOL)attachCGLContext:(struct _CGLContextObject *)arg1;
-@property unsigned long long format;
 @property(copy) struct CGColorSpace *colorSpace;
-@property(getter=isOpaque) BOOL opaque;
-@property(getter=isStereo) BOOL stereo;
-@property unsigned int display;
+@property(readonly, getter=isOpaque) BOOL opaque;
 @property struct CGSize size;
 @property(readonly) unsigned long long surfaceID;
 @property(readonly, copy) NSString *description;

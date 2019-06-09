@@ -8,6 +8,7 @@
 
 @class WDParagraph;
 
+__attribute__((visibility("hidden")))
 @interface WDRun : NSObject
 {
     WDParagraph *mParagraph;

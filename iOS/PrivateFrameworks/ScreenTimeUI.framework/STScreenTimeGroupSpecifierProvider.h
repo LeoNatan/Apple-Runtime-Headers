@@ -8,20 +8,22 @@
 
 @class PSSpecifier;
 
+__attribute__((visibility("hidden")))
 @interface STScreenTimeGroupSpecifierProvider : STRootGroupSpecifierProvider
 {
-    PSSpecifier *_thisDeviceSpecifier;
     PSSpecifier *_usageSummarySpecifier;
+    PSSpecifier *_seeAllActivitySpecifier;
 }
 
-@property(retain, nonatomic) PSSpecifier *usageSummarySpecifier; // @synthesize usageSummarySpecifier=_usageSummarySpecifier;
-@property(retain, nonatomic) PSSpecifier *thisDeviceSpecifier; // @synthesize thisDeviceSpecifier=_thisDeviceSpecifier;
+@property(readonly) PSSpecifier *seeAllActivitySpecifier; // @synthesize seeAllActivitySpecifier=_seeAllActivitySpecifier;
+@property(readonly) PSSpecifier *usageSummarySpecifier; // @synthesize usageSummarySpecifier=_usageSummarySpecifier;
 - (void).cxx_destruct;
-- (void)showUsageDetailController:(id)arg1;
-- (id)getCoordinator:(id)arg1;
-- (id)getUsageDescription:(id)arg1;
-- (void)reloadScreenTimeSummarySpecifier;
+- (void)_showUsageDetailListController:(id)arg1;
+- (id)_usageDetailsCoordinator:(id)arg1;
 - (void)_refreshingDidChange:(_Bool)arg1;
+- (void)_isSharingUsageDataDidChange:(_Bool)arg1;
+- (void)_displayNameDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)_usageReportDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
 - (id)init;

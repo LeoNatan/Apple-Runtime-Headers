@@ -20,16 +20,28 @@
     unsigned long long _autohighlightScrollPosition;
     _Bool _configureForListTemplate;
     long long _listTemplateAlignment;
+    struct {
+        _Bool hasUpdateRelatedView;
+        _Bool hasDidSelectItemAtIndexPath;
+        _Bool hasDidPlayItemAtIndexPath;
+        _Bool hasDidSettleOnItemAtIndexPath;
+        _Bool hasDidSnapToItemAtIndexPath;
+        _Bool hasFocusDependentMethods;
+    } _delegateFlags;
     _Bool _centered;
     id <__TVShelfViewControllerDelegate> _delegate;
     unsigned long long _speedBumpEdges;
+    long long _prominentSectionIndex;
 }
 
++ (void)_contentForCell:(id)arg1 shouldHide:(_Bool)arg2;
+@property(nonatomic) long long prominentSectionIndex; // @synthesize prominentSectionIndex=_prominentSectionIndex;
 @property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(nonatomic) unsigned long long speedBumpEdges; // @synthesize speedBumpEdges=_speedBumpEdges;
 @property(nonatomic) __weak id <__TVShelfViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_updatedPreviewWithItemAtIndexPath:(id)arg1;
+- (void)updateWithViewElement:(id)arg1;
+- (void)_didSettleOnItemAtIndexPath:(id)arg1;
 - (void)_delayedUpdatePreview;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -37,8 +49,11 @@
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 @property(nonatomic) _Bool hideHeader;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)dispatchEvent:(id)arg1 forItemAtIndexPath:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)updateViewLayoutAnimated:(_Bool)arg1 relayout:(_Bool)arg2;
-- (id)preferredFocusEnvironments;
+- (struct CGSize)expectedCellSizeForElement:(id)arg1 atIndexPath:(id)arg2;
+- (unsigned long long)preferredScrollPosition;
 - (_Bool)contentFlowsVertically;
 - (id)makeCollectionViewWithFrame:(struct CGRect)arg1;
 - (void)updateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
@@ -47,7 +62,8 @@
 - (void)_ensureScrollViewSnaps;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (void)_scrollToIndexPath:(id)arg1;
+- (id)preferredFocusEnvironments;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)updateWithViewElement:(id)arg1 cellMetrics:(struct TVCellMetrics)arg2;
 - (void)didMoveToParentViewController:(id)arg1;

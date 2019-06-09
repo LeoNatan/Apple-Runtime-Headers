@@ -6,22 +6,71 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
+@class MTMetricsKit, NSDictionary, NSHashTable, NSString, VUIMetricsPageEventData;
+@protocol OS_dispatch_queue;
+
 @interface VUIMetricsController : NSObject
 {
+    _Bool _isInternalBuild;
+    _Bool _isAppJustLaunched;
+    _Bool _isAppJustDeepLinkOpened;
+    _Bool _isGDPRConsented;
+    NSDictionary *_baseFields;
+    NSString *_currentTabIdentifier;
+    NSString *_exitEventDestinationUrl;
+    VUIMetricsPageEventData *_lastRecordedPageEventData;
+    MTMetricsKit *_activeMetricsKit;
+    MTMetricsKit *_metricsKitMain;
+    MTMetricsKit *_metricsKitUnidentified;
+    MTMetricsKit *_perfMetricsKit;
+    NSObject<OS_dispatch_queue> *_metricsDataDispatchSQ;
+    NSHashTable *_savedRecentEvents;
 }
 
-- (id)_getMediaLibraryTypeStringForMediaItem:(id)arg1;
-- (id)_getMediaEntityTypeStringForMediaItem:(id)arg1 setPageType:(id *)arg2;
-- (void)_submitLibraryMediaPlayEventForMediaItem:(id)arg1 withDate:(id)arg2;
-- (void)_submitLibraryPageEventWithDate:(id)arg1;
-- (void)_populateBaseFieldsAndSendEvent:(id)arg1 thatOccuredAt:(id)arg2;
-- (id)_createMetricsController;
-- (id)_getClientIDForAccount:(id)arg1;
-- (id)_getClientIDFromCookies:(id)arg1;
-- (_Bool)_isAllowedToSubmit;
-- (void)submitLibraryMediaPlayEventForMediaItem:(id)arg1;
-- (void)submitLibraryPageEvent;
++ (id)sharedInstance;
++ (id)_baseToVPAFMapping;
+@property(retain, nonatomic) NSHashTable *savedRecentEvents; // @synthesize savedRecentEvents=_savedRecentEvents;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *metricsDataDispatchSQ; // @synthesize metricsDataDispatchSQ=_metricsDataDispatchSQ;
+@property(retain, nonatomic) MTMetricsKit *perfMetricsKit; // @synthesize perfMetricsKit=_perfMetricsKit;
+@property(retain, nonatomic) MTMetricsKit *metricsKitUnidentified; // @synthesize metricsKitUnidentified=_metricsKitUnidentified;
+@property(retain, nonatomic) MTMetricsKit *metricsKitMain; // @synthesize metricsKitMain=_metricsKitMain;
+@property(retain, nonatomic) MTMetricsKit *activeMetricsKit; // @synthesize activeMetricsKit=_activeMetricsKit;
+@property(retain, nonatomic) VUIMetricsPageEventData *lastRecordedPageEventData; // @synthesize lastRecordedPageEventData=_lastRecordedPageEventData;
+@property(retain, nonatomic) NSString *exitEventDestinationUrl; // @synthesize exitEventDestinationUrl=_exitEventDestinationUrl;
+@property(readonly, copy, nonatomic) NSString *currentTabIdentifier; // @synthesize currentTabIdentifier=_currentTabIdentifier;
+@property(copy, nonatomic) NSDictionary *baseFields; // @synthesize baseFields=_baseFields;
+- (void).cxx_destruct;
+- (id)getRecentEventsForDebuggerUI;
+- (void)_saveRecentEvents:(id)arg1;
+- (void)_handleWLKAppLibChange:(id)arg1;
+- (void)_handleWLKSettingsDidChange:(id)arg1;
+- (void)_handleServerConfigChange:(id)arg1;
+- (void)_handleTabBarChange:(id)arg1;
+- (void)_updateBaseFieldsWithData:(id)arg1;
+- (void)flushMetrics;
+- (void)updateGDPRConsentStatus;
+- (void)registerForBaseFieldChanges;
+- (id)_createDataAddingBaseAndPageFieldsToEventData:(id)arg1;
+- (void)_initializeBaseFields;
+- (void)jsDelegateRecordPerfEvent:(id)arg1;
+- (void)_flushUnreportedEvents:(id)arg1;
+- (void)_recordEvent:(id)arg1 withEventData:(id)arg2;
+- (void)jsDelegateRecordEvent:(id)arg1;
+- (void)recordMedia:(id)arg1;
+- (void)recordClick:(id)arg1;
+- (void)recordPage:(id)arg1;
+- (void)_flushMetricsOnExit;
+- (void)_recordExit:(id)arg1;
+- (void)recordAppWillBackground;
+- (void)recordAppWillTerminate;
+- (void)_recordEnter:(id)arg1;
+- (void)recordOpenUrlLaunchWithExtURL:(id)arg1 andOptions:(id)arg2;
+- (void)recordAppBecameActive;
+- (void)recordAppLaunched;
+- (id)_createMetricsKitForTopic:(id)arg1;
+- (id)init;
+@property(readonly, copy, nonatomic) NSDictionary *iTunesVPAF;
+@property(readonly, copy, nonatomic) NSDictionary *baseFieldsForVPAF;
 
 @end
 

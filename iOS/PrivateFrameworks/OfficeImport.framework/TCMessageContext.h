@@ -14,22 +14,21 @@ __attribute__((visibility("hidden")))
 {
     NSMutableSet *m_warnings;
     NSMutableSet *m_errors;
-    NSMutableArray *m_currentObjectStack;
+    NSMutableArray *m_affectedObjectStack;
     NSMutableDictionary *m_placeholderToObjectMap;
     NSObject<OS_dispatch_queue> *mMessageSyncQueue;
 }
 
-+ (void)restoreObjectStack:(unsigned int)arg1;
-+ (unsigned long long)saveObjectStack;
 + (void)reportWarningsToDelegate;
-+ (void)replacePlaceholdersWithObjects;
-+ (void)setObject:(id)arg1 forPlaceholder:(id)arg2;
-+ (void)popCurrentPlaceholder:(id)arg1;
-+ (id)pushCurrentPlaceholder;
-+ (void)popCurrentObject;
-+ (void)pushCurrentObject:(id)arg1;
++ (void)restoreAffectedObjectStack:(unsigned long long)arg1;
++ (unsigned long long)saveAffectedObjectStack;
++ (void)popAffectedObjectPlaceholder:(id)arg1;
++ (void)pushAffectedObjectPlaceholder;
++ (void)popAffectedObject;
++ (void)pushAffectedObject:(id)arg1;
 + (_Bool)isFileStructuredStorage;
 + (void)setIsFileStructuredStorage:(_Bool)arg1;
++ (unsigned long long)getErrorCount;
 + (id)getErrorArray;
 + (id)getWarningArray;
 + (void)removeContextForCurrentThread;
@@ -42,19 +41,23 @@ __attribute__((visibility("hidden")))
 + (id)currentObjectOrPlaceholder;
 + (void)reportObjectOrPlaceholder:(id)arg1 withWarning:(id)arg2 parameters:(struct __va_list_tag [1])arg3;
 + (void)initialize;
+- (void).cxx_destruct;
 - (void)reportWarningForObject:(id)arg1 warning:(id)arg2 parameterList:(struct __va_list_tag [1])arg3;
 - (void)dealloc;
 - (id)init;
 - (void)reportWarningsToDelegate;
-- (void)replacePlaceholdersWithObjects:(_Bool)arg1;
-- (void)setObject:(id)arg1 forPlaceholderKey:(id)arg2 dispatchSync:(_Bool)arg3;
-- (void)popPlaceholder:(id)arg1;
-- (id)pushPlaceholder;
-- (void)popObject;
-- (void)pushObject:(id)arg1;
+- (void)replacePlaceholdersWithObjects;
+- (void)setAffectedObject:(id)arg1 forPlaceholderWithKey:(id)arg2;
+- (void)restoreAffectedObjectStack:(unsigned long long)arg1;
+- (unsigned long long)saveAffectedObjectStack;
+- (void)popAffectedObjectPlaceholder:(id)arg1;
+- (void)resolveObjectOfCurrentAffectedObjectPlaceholder;
+- (void)pushAffectedObjectPlaceholder;
+- (void)popAffectedObject;
+- (void)pushAffectedObject:(id)arg1;
 - (void)addWarningMessageEntry:(id)arg1;
 - (void)addErrorMessageEntry:(id)arg1;
-- (id)currentObject;
+- (id)currentObjectOrPlaceholder;
 
 @end
 

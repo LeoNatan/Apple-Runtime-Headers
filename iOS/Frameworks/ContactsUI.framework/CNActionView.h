@@ -9,7 +9,7 @@
 #import <ContactsUI/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSArray, NSString, UIFont, UIImage, UIImageView, UILabel, UILongPressGestureRecognizer, UITapGestureRecognizer;
-@protocol CNActionViewDelegate, CNActionViewTemplateImage;
+@protocol CNActionViewDelegate;
 
 @interface CNActionView : UIView <UIGestureRecognizerDelegate>
 {
@@ -27,7 +27,6 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
     UILongPressGestureRecognizer *_highlightGestureRecognizer;
-    id <CNActionViewTemplateImage> _templateImage;
     UIFont *_titleFont;
 }
 
@@ -39,7 +38,6 @@
 + (id)contentColorForDisabledBoldState;
 + (id)borderColorForDisabledBoldState;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
-@property(retain, nonatomic) id <CNActionViewTemplateImage> templateImage; // @synthesize templateImage=_templateImage;
 @property(retain, nonatomic) UILongPressGestureRecognizer *highlightGestureRecognizer; // @synthesize highlightGestureRecognizer=_highlightGestureRecognizer;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;

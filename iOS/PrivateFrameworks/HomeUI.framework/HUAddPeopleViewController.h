@@ -74,7 +74,7 @@
 - (id)requiredKeyDescriptors;
 - (void)updateStateDependentUI;
 - (id)tintColorForRecipient:(id)arg1;
-- (void)idStatusUpdatedForDestinations:(id)arg1;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (void)finishedSearchingForAutocompleteResults;
 - (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;

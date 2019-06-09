@@ -9,6 +9,13 @@
 @class AXEventPathInfoRepresentation;
 
 @interface NSArray (AXEventPathInfoRepresentationExtension)
++ (id)axArrayByIgnoringNilElementsWithCount:(unsigned int)arg1;
++ (id)axArrayWithPossiblyNilArrays:(unsigned int)arg1;
 @property(readonly, nonatomic) AXEventPathInfoRepresentation *firstPath;
+- (id)axSafeObjectAtIndex:(unsigned int)arg1;
+- (id)axFilterObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)axMapObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (_Bool)axIsEqualToOrderedArray:(id)arg1 withPredicate:(CDUnknownBlockType)arg2;
+- (id)axUniqueArrayWithPredicate:(CDUnknownBlockType)arg1;
 @end
 

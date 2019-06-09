@@ -10,7 +10,7 @@
 #import <Automator/AMRunnerState-Protocol.h>
 #import <Automator/NSProgressReporting-Protocol.h>
 
-@class AMAction, AMWorkflow, NSArray, NSError, NSMapTable, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSProgress, NSString;
+@class AMAction, AMFFeedController, AMWorkflow, NSArray, NSError, NSMapTable, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSProgress, NSString;
 @protocol AMWorkflowRunnerDelegate;
 
 @interface AMWorkflowRunner : NSObject <AMRunnerState, AMRunnerControl, NSProgressReporting>
@@ -39,6 +39,7 @@
     NSProgress *_workflowProgress;
     NSProgress *_actionProgress;
     NSMapTable *_childProgressesByAction;
+    AMFFeedController *_feedController;
     NSMutableArray *_progressValueObservedList;
     NSMutableArray *_actionOperationObservedList;
 }
@@ -46,6 +47,7 @@
 + (id)progressForWorkflow:(id)arg1;
 + (id)_operationKeysToObserve;
 @property(retain) NSMutableArray *actionOperationObservedList; // @synthesize actionOperationObservedList=_actionOperationObservedList;
+@property(retain) AMFFeedController *feedController; // @synthesize feedController=_feedController;
 @property(retain) NSMapTable *childProgressesByAction; // @synthesize childProgressesByAction=_childProgressesByAction;
 @property(retain) NSProgress *actionProgress; // @synthesize actionProgress=_actionProgress;
 @property(retain) NSProgress *workflowProgress; // @synthesize workflowProgress=_workflowProgress;

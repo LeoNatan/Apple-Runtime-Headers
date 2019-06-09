@@ -8,17 +8,16 @@
 
 #import <GeoServices/GEOExperimentServerProxyDelegate-Protocol.h>
 
-@class GEOABAssignmentResponse, NSDictionary, NSLock, NSMutableArray, NSString;
+@class GEOABAssignmentResponse, NSMutableArray, NSString;
 @protocol GEOExperimentServerProxy;
 
 @interface GEOExperimentConfiguration : NSObject <GEOExperimentServerProxyDelegate>
 {
     id <GEOExperimentServerProxy> _serverProxy;
     GEOABAssignmentResponse *_experimentsInfo;
-    NSLock *_experimentsInfoLock;
+    struct os_unfair_lock_s _experimentsInfoLock;
     NSMutableArray *_experimentObservers;
-    NSLock *_experimentObserversLock;
-    NSDictionary *_debugClientConfig;
+    struct os_unfair_lock_s _experimentObserversLock;
 }
 
 + (id)sharedConfiguration;
@@ -28,14 +27,13 @@
 - (void)removeExperimentObserver:(id)arg1;
 - (void)addExperimentObserver:(id)arg1 queue:(id)arg2;
 - (id)clientConfigurationValueForKey:(id)arg1;
-- (id)_debugClientConfig;
-- (void)updateURLComponents:(id)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
-- (id)experimentURLForURL:(id)arg1 type:(long long)arg2 dispatcherRequestType:(int)arg3;
-- (id)experimentAssignmentForType:(long long)arg1 dispatcherRequestType:(int)arg2;
+- (void)updateURLComponents:(id)arg1 forRequestKind:(CDStruct_d1a7ebee)arg2;
+- (id)experimentURLForURL:(id)arg1 requestKind:(CDStruct_d1a7ebee)arg2;
 - (id)_reportAProblemClientMetadata;
 - (id)_siriClientMetadata;
 - (id)_parsecClientMetadata;
 - (id)_mapsAbClientMetadata;
+- (void)abAssignUUIDWithSyncCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)abAssignUUIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)refreshDatasetABStatus:(id)arg1;
 - (id)clientConfig;
@@ -55,7 +53,6 @@
 - (void)_debug_forEachExperimentType:(CDUnknownBlockType)arg1;
 - (void)_debug_setCustomQuerySubstring:(id)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
 - (id)_debug_customQuerySubstringForType:(long long)arg1 dispatcherRequestType:(int)arg2;
-- (id)_debug_defaultQuerySubstringForType:(long long)arg1 dispatcherRequestType:(int)arg2;
 - (id)_debug_configurationDate;
 - (void)_debug_forceUpdate;
 

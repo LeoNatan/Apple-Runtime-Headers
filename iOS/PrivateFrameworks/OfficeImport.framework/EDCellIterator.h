@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned int mDesiredColumnNumber;
 }
 
+- (void).cxx_destruct;
 - (struct EDCellHeader *)scanToRowNumber:(unsigned int)arg1 columnNumber:(unsigned int)arg2;
 - (struct EDCellHeader *)adjacentCellRight;
 - (struct EDCellHeader *)adjacentCellLeft;

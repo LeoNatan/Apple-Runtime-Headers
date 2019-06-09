@@ -6,11 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class UIColor;
+#import <NanoTimeKitCompanion/NTKVictoryAnalogBackgroundColorPalette-Protocol.h>
 
-@interface NTKVictoryColorPalette : NSObject
+@class NSString, UIColor;
+
+@interface NTKVictoryColorPalette : NSObject <NTKVictoryAnalogBackgroundColorPalette>
 {
     _Bool _hasWhiteElements;
+    unsigned long long _color;
     UIColor *_numbersColor;
     UIColor *_handsColor;
     UIColor *_logoColor;
@@ -21,6 +24,7 @@
     UIColor *_digitalComplicationsColor;
     UIColor *_digitalComplicationsPlatterColor;
     UIColor *_platterColor;
+    UIColor *_cornerComplicationsAccentColor;
     unsigned long long _bleed;
     UIColor *_backgroundColor;
 }
@@ -31,6 +35,7 @@
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(readonly, nonatomic) unsigned long long bleed; // @synthesize bleed=_bleed;
 @property(readonly, nonatomic) _Bool hasWhiteElements; // @synthesize hasWhiteElements=_hasWhiteElements;
+@property(readonly, nonatomic) UIColor *cornerComplicationsAccentColor; // @synthesize cornerComplicationsAccentColor=_cornerComplicationsAccentColor;
 @property(readonly, nonatomic) UIColor *platterColor; // @synthesize platterColor=_platterColor;
 @property(readonly, nonatomic) UIColor *digitalComplicationsPlatterColor; // @synthesize digitalComplicationsPlatterColor=_digitalComplicationsPlatterColor;
 @property(readonly, nonatomic) UIColor *digitalComplicationsColor; // @synthesize digitalComplicationsColor=_digitalComplicationsColor;
@@ -41,8 +46,15 @@
 @property(readonly, nonatomic) UIColor *logoColor; // @synthesize logoColor=_logoColor;
 @property(readonly, nonatomic) UIColor *handsColor; // @synthesize handsColor=_handsColor;
 @property(readonly, nonatomic) UIColor *numbersColor; // @synthesize numbersColor=_numbersColor;
+@property(readonly, nonatomic) unsigned long long color; // @synthesize color=_color;
 - (void).cxx_destruct;
 - (id)initWithColor:(unsigned long long)arg1 bleed:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

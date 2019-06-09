@@ -39,8 +39,9 @@
 + (id)bsoSchemaHash;
 + (id)schemaHashRoot;
 + (id)properties;
++ (Class)backedObjectClass;
 @property _Bool bsoDataVersionOverride; // @synthesize bsoDataVersionOverride=_bsoDataVersionOverride;
-@property(readonly, nonatomic) CKRecord *bsoRecord; // @synthesize bsoRecord=_bsoRecord;
+@property(retain, nonatomic) CKRecord *bsoRecord; // @synthesize bsoRecord=_bsoRecord;
 @property(nonatomic) unsigned long long objectChangeType; // @synthesize objectChangeType=_objectChangeType;
 @property(readonly, nonatomic) HMFVersion *bsoDataVersion; // @synthesize bsoDataVersion=_bsoDataVersion;
 @property(readonly) unsigned long long bsoLogRowID; // @synthesize bsoLogRowID=_bsoLogRowID;
@@ -81,6 +82,7 @@
 - (id)validateType:(id)arg1 path:(id)arg2;
 - (_Bool)_validateType:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSSet *dependentUUIDs; // @dynamic dependentUUIDs;
+- (id)backedObjectWithParent:(id)arg1 error:(id *)arg2;
 - (id)initWithUUID:(id)arg1 parentUUID:(id)arg2;
 - (id)initWithUUID:(id)arg1;
 - (id)initWithObjectChangeType:(unsigned long long)arg1 uuid:(id)arg2 parentUUID:(id)arg3;

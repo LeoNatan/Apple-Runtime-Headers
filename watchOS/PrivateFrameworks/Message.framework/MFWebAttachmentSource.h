@@ -16,6 +16,7 @@
 
 + (id)allSources;
 + (id)_setOfAllSources;
+- (void).cxx_destruct;
 - (void)removeAttachmentForURL:(id)arg1;
 - (_Bool)setAttachment:(id)arg1 forURL:(id)arg2;
 - (id)attachmentForURL:(id)arg1;

@@ -6,14 +6,35 @@
 
 #import <objc/NSObject.h>
 
+#import <AppleMediaServices/AMSBagConsumer_Project-Protocol.h>
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface AMSAnisette : NSObject
+@interface AMSAnisette : NSObject <AMSBagConsumer_Project>
 {
 }
 
-+ (id)shared;
-- (id)signatureHeadersForRequest:(id)arg1 account:(id)arg2 type:(int)arg3;
-- (void)handleResponse:(id)arg1 task:(id)arg2 account:(id)arg3 type:(int)arg4;
++ (_Bool)_shouldRetryAfterError:(id)arg1;
++ (_Bool)_syncMachineWithActionData:(id)arg1 type:(int)arg2 account:(id)arg3 bag:(id)arg4;
++ (_Bool)_provisionMachineWithActionData:(id)arg1 type:(int)arg2 account:(id)arg3 bag:(id)arg4;
++ (id)_headersForRequest:(id)arg1 account:(id)arg2 type:(int)arg3;
++ (_Bool)_handleActionName:(id)arg1 actionData:(id)arg2 account:(id)arg3 type:(int)arg4 bag:(id)arg5;
++ (_Bool)_eraseProvisioningForType:(int)arg1 account:(id)arg2;
++ (void)_bagDomainExistsForURL:(id)arg1 type:(int)arg2 bag:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (unsigned long long)_accountIDForType:(int)arg1 account:(id)arg2;
++ (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (id)bagSubProfileVersion;
++ (id)bagSubProfile;
++ (id)bagKeySet;
++ (id)headersForRequest:(id)arg1 account:(id)arg2 type:(int)arg3 bag:(id)arg4;
++ (_Bool)handleResponse:(id)arg1 account:(id)arg2 type:(int)arg3 bag:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

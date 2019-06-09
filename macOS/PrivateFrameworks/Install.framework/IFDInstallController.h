@@ -8,11 +8,14 @@
 
 @interface IFDInstallController : NSObject
 {
-    struct IFDInstallController_Private *_private;
+    BOOL _userConsentedInstall;
+    struct IFDInstallController_Private *_privateController;
 }
 
 + (void)initialize;
 + (id)timeRemainingStringWithEstimate:(double)arg1;
+@property struct IFDInstallController_Private *privateController; // @synthesize privateController=_privateController;
+@property BOOL userConsentedInstall; // @synthesize userConsentedInstall=_userConsentedInstall;
 - (BOOL)hasSuccessfullyAuthorized:(int)arg1;
 - (void)cancel;
 - (void)skipCurrentPhase;

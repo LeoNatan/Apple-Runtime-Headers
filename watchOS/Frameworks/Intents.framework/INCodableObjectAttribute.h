@@ -8,23 +8,30 @@
 
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSString, NSValueTransformer;
 
 @interface INCodableObjectAttribute : INCodableAttribute <NSSecureCoding>
 {
-    NSString *_className;
+    NSString *_typeName;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *className; // @synthesize className=_className;
+@property(copy, nonatomic) NSString *typeName; // @synthesize typeName=_typeName;
 - (void).cxx_destruct;
+- (void)setClassName:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *className;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_dictionaryRepresentation;
+- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (void)updateWithDictionary:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)valueTransformer;
+- (int)valueType;
+- (Class)_relationshipValueTransformerClass;
+@property(readonly, nonatomic) NSValueTransformer *valueTransformer;
+- (Class)resolutionResultClass;
+- (Class)objectClass;
 
 @end
 

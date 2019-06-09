@@ -6,11 +6,10 @@
 
 #import <CoreServices/NSObject-Protocol.h>
 
-@class NSDictionary, NSSet, NSXPCConnection, _LSQuery, _LSQueryCache;
+@class NSDictionary, NSSet, NSXPCConnection, _LSQuery;
 
 @protocol _LSQueryResolving <NSObject>
 - (void)_enumerateResolvedResultsOfQuery:(_LSQuery *)arg1 XPCConnection:(NSXPCConnection *)arg2 withBlock:(void (^)(_LSQueryResult *, NSError *, _Bool *))arg3;
-- (_LSQueryCache *)_queryCache;
 - (NSDictionary *)_resolveQueries:(NSSet *)arg1 XPCConnection:(NSXPCConnection *)arg2 error:(id *)arg3;
 @end
 

@@ -14,6 +14,7 @@
     WBSHistoryItem *_historyItem;
 }
 
++ (id)titleForHistoryItem:(id)arg1;
 @property(readonly, nonatomic) float score; // @synthesize score=_score;
 @property(readonly, nonatomic) WBSHistoryItem *historyItem; // @synthesize historyItem=_historyItem;
 - (void).cxx_destruct;

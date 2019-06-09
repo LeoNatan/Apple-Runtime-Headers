@@ -6,18 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class ACDDatabase, NSArray;
+@class ACDDatabaseConnection, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface ACDDatabaseInitializer : NSObject
 {
-    ACDDatabase *_database;
+    ACDDatabaseConnection *_databaseConnection;
     NSArray *_dataclasses;
     NSArray *_accountTypes;
     NSArray *_accounts;
     NSArray *_accessKeys;
 }
 
++ (id)new;
 - (void).cxx_destruct;
+- (void)_removeRedundantDataclasses;
 - (void)_aolSupportsAuthentication;
 - (void)_switchAolAccountsToOAuth;
 - (void)_removeBTMMType;
@@ -143,14 +146,14 @@
 - (id)_accessKeyWithName:(id)arg1;
 - (id)_accountTypeWithIdentifier:(id)arg1;
 - (id)_dataclassWithName:(id)arg1;
-- (void)updateDefaultContent;
-- (void)insertAllDefaultContent;
 - (id)_accessKeys;
 - (id)_dataclasses;
 - (id)_accountTypes;
 - (id)_accounts;
 - (id)_resultsForEntityNamed:(id)arg1;
-- (id)initWithDatabase:(id)arg1;
+- (_Bool)updateDefaultContentIfNecessary:(id *)arg1;
+- (id)initWithDatabaseConnection:(id)arg1;
+- (id)init;
 
 @end
 

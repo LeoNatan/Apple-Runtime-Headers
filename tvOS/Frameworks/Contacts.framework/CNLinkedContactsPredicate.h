@@ -6,12 +6,10 @@
 
 #import <Contacts/CNPredicate.h>
 
-#import <Contacts/CNSuggestedContactPredicate-Protocol.h>
-
 @class CNContact, NSString;
 
 __attribute__((visibility("hidden")))
-@interface CNLinkedContactsPredicate : CNPredicate <CNSuggestedContactPredicate>
+@interface CNLinkedContactsPredicate : CNPredicate
 {
     CNContact *_contact;
     NSString *_contactIdentifier;
@@ -21,16 +19,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(readonly, copy, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithContactIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContact:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

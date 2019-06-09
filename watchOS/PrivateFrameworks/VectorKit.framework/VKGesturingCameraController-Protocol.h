@@ -10,6 +10,7 @@
 
 @protocol VKGesturingCameraController <NSObject>
 - (void)transferGestureState:(id <VKGesturingCameraController>)arg1;
+- (_Bool)tapAtPoint:(struct CGPoint)arg1;
 - (void)stopPitchingWithFocusPoint:(struct CGPoint)arg1;
 - (void)updatePitchWithFocusPoint:(struct CGPoint)arg1 translation:(double)arg2;
 - (void)startPitchingWithFocusPoint:(struct CGPoint)arg1;
@@ -25,6 +26,7 @@
 - (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint)arg2 completionHandler:(void (^)(void))arg3;
 
 @optional
+- (void)willStopPanningAtPoint:(struct CGPoint)arg1 withVelocity:(struct CGPoint)arg2;
 - (void)zoomToLevel:(double)arg1 withFocusPoint:(struct CGPoint)arg2;
 @end
 

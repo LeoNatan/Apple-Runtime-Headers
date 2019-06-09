@@ -6,34 +6,41 @@
 
 #import <PhotosUICore/PXAssetCollectionActionManager.h>
 
-@class NSDictionary, NSMapTable, PXAssetCollectionActionPerformer;
+#import <PhotosUICore/PXActivityActionDelegate-Protocol.h>
 
-@interface PXPhotoKitAssetCollectionActionManager : PXAssetCollectionActionManager
+@class NSDictionary, NSMapTable, NSString, PXAssetCollectionActionPerformer;
+
+@interface PXPhotoKitAssetCollectionActionManager : PXAssetCollectionActionManager <PXActivityActionDelegate>
 {
-    NSDictionary *__performerClassesByType;
     NSMapTable *__actionTypeByBarButtonItem;
-    NSMapTable *__actionTypeByPreviewAction;
+    NSDictionary *__performerClassesByType;
     PXAssetCollectionActionPerformer *__activePerformer;
 }
 
 @property(retain, nonatomic, setter=_setActivePerformer:) PXAssetCollectionActionPerformer *_activePerformer; // @synthesize _activePerformer=__activePerformer;
-@property(readonly, nonatomic) NSMapTable *_actionTypeByPreviewAction; // @synthesize _actionTypeByPreviewAction=__actionTypeByPreviewAction;
-@property(readonly, nonatomic) NSMapTable *_actionTypeByBarButtonItem; // @synthesize _actionTypeByBarButtonItem=__actionTypeByBarButtonItem;
 @property(readonly, nonatomic) NSDictionary *_performerClassesByType; // @synthesize _performerClassesByType=__performerClassesByType;
+@property(readonly, nonatomic) NSMapTable *_actionTypeByBarButtonItem; // @synthesize _actionTypeByBarButtonItem=__actionTypeByBarButtonItem;
 - (void).cxx_destruct;
+- (void)performActivity:(id)arg1;
+- (_Bool)canPerformWithActivityItems:(id)arg1 forActivity:(id)arg2;
 - (void)_handleActionPerformerComplete:(id)arg1 success:(_Bool)arg2 error:(id)arg3;
 - (void)_executeActionTypeIfPossible:(id)arg1;
-- (void)_handlePreviewAction:(id)arg1;
 - (void)_handleBarButtonItem:(id)arg1;
-- (Class)_firstPossiblePerformerForActionType:(id)arg1;
-- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
+- (id)activityForActionType:(id)arg1;
 - (id)alertActionForActionType:(id)arg1;
-- (id)previewActionGroupForActionType:(id)arg1;
-- (id)previewActionForActionType:(id)arg1;
 - (id)barButtonItemForActionType:(id)arg1;
+- (Class)_firstPossiblePerformerForActionType:(id)arg1;
+- (id)systemImageNameForActionType:(id)arg1;
+- (id)localizedTitleForActionType:(id)arg1 useCase:(unsigned long long)arg2;
 - (id)actionPerformerForActionType:(id)arg1;
 - (_Bool)canPerformActionType:(id)arg1;
 - (id)initWithAssetCollection:(id)arg1 displayTitleInfo:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

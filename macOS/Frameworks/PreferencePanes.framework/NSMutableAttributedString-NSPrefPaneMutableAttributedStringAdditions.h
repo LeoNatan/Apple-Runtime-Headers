@@ -7,7 +7,7 @@
 #import <Foundation/NSMutableAttributedString.h>
 
 @interface NSMutableAttributedString (NSPrefPaneMutableAttributedStringAdditions)
-- (void)allStringSetAlignment:(unsigned long long)arg1;
+- (void)allStringSetAlignment:(long long)arg1;
 - (void)allStringSetAttribute:(id)arg1 value:(id)arg2;
 @end
 

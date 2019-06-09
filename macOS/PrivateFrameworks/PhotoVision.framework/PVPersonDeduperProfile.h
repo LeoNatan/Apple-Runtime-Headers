@@ -8,7 +8,6 @@
 
 #import <PhotoVision/NSCopying-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface PVPersonDeduperProfile : NSObject <NSCopying>
 {
     BOOL _shouldRelaxThreshold;

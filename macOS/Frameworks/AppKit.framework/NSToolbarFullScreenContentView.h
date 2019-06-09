@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface NSToolbarFullScreenContentView : NSView
 {
     double _revealProgress;
-    double _auxMinHeight;
     double _toolbarViewHeight;
     double shadowWeight;
     _NSFullScreenDetachedToolbarMenuBarCompanionController *_companionController;

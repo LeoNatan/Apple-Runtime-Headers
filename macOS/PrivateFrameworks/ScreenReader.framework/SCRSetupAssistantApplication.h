@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (BOOL)isPreLoginApp;
-- (int)imageMappingLevel;
+- (long long)imageMappingLevel;
 - (void)_keyboardFocusDidChange:(id)arg1;
 - (void)_webAreaWasLoaded:(id)arg1;
 - (void)_titleWasDestroyed:(id)arg1;

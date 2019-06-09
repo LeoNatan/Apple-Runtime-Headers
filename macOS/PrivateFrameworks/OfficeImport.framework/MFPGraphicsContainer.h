@@ -8,6 +8,7 @@
 
 @class MFPGraphicsState;
 
+__attribute__((visibility("hidden")))
 @interface MFPGraphicsContainer : NSObject
 {
     MFPGraphicsState *mParentGraphicsState;

@@ -47,6 +47,7 @@
 @property(retain, nonatomic) SUClientInterface *clientInterface; // @synthesize clientInterface=_clientInterface;
 @property(readonly, nonatomic, getter=_isEnteringForeground) _Bool _enteringForeground; // @synthesize _enteringForeground=_isEnteringForeground;
 @property(readonly, nonatomic, getter=_cachedScriptProperties) SUViewControllerScriptProperties *_cachedScriptProperties; // @synthesize _cachedScriptProperties;
+- (void).cxx_destruct;
 - (void)_reloadExitStoreButtonWithParentViewController:(id)arg1;
 - (void)_invalidateForMemoryPurge;
 - (void)_reloadLibraryButton;

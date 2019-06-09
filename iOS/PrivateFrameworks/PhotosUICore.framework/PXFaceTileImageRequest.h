@@ -25,9 +25,9 @@
     struct PXFaceTileImageParams _params;
 }
 
-@property(copy, nonatomic, setter=ppt_setRequestStartDate:) NSDate *ppt_requestStartDate; // @synthesize ppt_requestStartDate=_ppt_requestStartDate;
-@property(getter=isCanceled) _Bool canceled; // @synthesize canceled=_canceled;
-@property(getter=isFullResMissing) _Bool fullResMissing; // @synthesize fullResMissing=_fullResMissing;
+@property(copy, nonatomic) NSDate *ppt_requestStartDate; // @synthesize ppt_requestStartDate=_ppt_requestStartDate;
+@property _Bool canceled; // @synthesize canceled=_canceled;
+@property _Bool fullResMissing; // @synthesize fullResMissing=_fullResMissing;
 @property(retain, nonatomic) PHAsset *assetContainingFace; // @synthesize assetContainingFace=_assetContainingFace;
 @property(retain, nonatomic) PHObject *originalRequestObject; // @synthesize originalRequestObject=_originalRequestObject;
 @property(nonatomic) struct CGSize lastDeliveredSize; // @synthesize lastDeliveredSize=_lastDeliveredSize;

@@ -19,10 +19,10 @@
 @property(readonly, copy) NSString *typeEncoding; // @synthesize typeEncoding=_typeEncoding;
 @property(readonly) CDUnknownFunctionPointerType implementation; // @synthesize implementation=_implementation;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (id)performOnObject:(id)arg1;
 - (id)methodBySettingName:(id)arg1;
 @property(readonly) SEL selector;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 implementation:(CDUnknownFunctionPointerType)arg2 typeEncoding:(id)arg3;
 - (id)initWithMethod:(struct objc_method *)arg1;
 

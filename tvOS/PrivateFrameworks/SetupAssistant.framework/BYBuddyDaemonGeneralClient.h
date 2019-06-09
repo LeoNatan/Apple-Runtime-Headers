@@ -8,7 +8,6 @@
 
 @class NSLock, NSXPCConnection;
 
-__attribute__((visibility("hidden")))
 @interface BYBuddyDaemonGeneralClient : NSObject
 {
     NSLock *_connectionLock;
@@ -20,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (void)performSilentICDPUpgrade;
 - (void)observeFinishSetupTriggers;
 - (id)backupMetadata;
+- (void)ensureShortLivedTokenUpgrade;
 - (void)ensureSilentLoginUpgrade;
 - (_Bool)setupAssistantNeedsToRun;
 - (id)init;

@@ -8,6 +8,7 @@
 
 @class UIImageView, UILabel, UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoHandoffView : UIView
 {
     UIScrollView *_scrollView;

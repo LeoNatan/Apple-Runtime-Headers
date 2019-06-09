@@ -8,12 +8,13 @@
 
 #import <NanoTimeKit/NTKComplicationDisplayObserver-Protocol.h>
 #import <NanoTimeKit/NTKControl-Protocol.h>
+#import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKit/NTKTimeTravel-Protocol.h>
 
-@class CLKComplicationTemplate, NSDate, NSString, UIView;
-@protocol NTKComplicationDisplay, NTKComplicationDisplayWrapperViewAnimationDelegate;
+@class CLKComplicationTemplate, NSDate, NSString, PUICClientSideAnimation, UIView;
+@protocol CLKMonochromeFilterProvider, NTKComplicationDisplay, NTKComplicationDisplayWrapperViewAnimationDelegate;
 
-@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKControl, NTKTimeTravel>
+@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKSensitiveUIStateObserver, NTKControl, NTKTimeTravel>
 {
     UIView<NTKComplicationDisplay> *_currentComplicationView;
     UIView<NTKComplicationDisplay> *_nextComplicationView;
@@ -26,6 +27,7 @@
     _Bool _didChangeLayoutOverride;
     _Bool _isAnimating;
     _Bool _isDetachedDisplay;
+    PUICClientSideAnimation *_timelineAnimation;
     _Bool _supportsCurvedText;
     _Bool _paused;
     _Bool _editing;
@@ -43,9 +45,11 @@
     CLKComplicationTemplate *_complicationTemplate;
     float _alphaForDimmedState;
     int _layoutOverride;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     struct CGSize _maxSize;
 }
 
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(readonly, nonatomic) int layoutOverride; // @synthesize layoutOverride=_layoutOverride;
 @property(readonly, nonatomic) _Bool hasLegacyDisplay; // @synthesize hasLegacyDisplay=_hasLegacyDisplay;
 @property(nonatomic) float alphaForDimmedState; // @synthesize alphaForDimmedState=_alphaForDimmedState;
@@ -65,24 +69,28 @@
 @property(retain, nonatomic) NSString *complicationSlotIdentifier; // @synthesize complicationSlotIdentifier=_complicationSlotIdentifier;
 @property(readonly, nonatomic) int family; // @synthesize family=_family;
 - (void).cxx_destruct;
+- (void)_updateDefaultDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 forward:(_Bool)arg3 animationType:(unsigned int)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6;
+- (void)_prepareDefaultNewDataAnimation:(id)arg1 fromEarlierView:(id)arg2 laterView:(id)arg3 forward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (_Bool)shouldCancelTouchesInScrollview;
 - (void)setHighlighted:(_Bool)arg1;
-- (void)_startDefaultNewDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 forward:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_resetComplicationViews;
-- (void)setComplicationView:(id)arg1 withComplicationAnimation:(unsigned int)arg2;
+- (void)_timelineAnimationDidFinish;
+- (void)setComplicationView:(id)arg1 withComplicationAnimation:(unsigned int)arg2 animationType:(unsigned int)arg3 animationFraction:(float)arg4;
 - (void)_removeDisplay:(id)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)complicationDisplayNeedsResize:(id)arg1;
+- (void)_updateVisibilityForSensitivity:(int)arg1;
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize preferredSize;
-- (void)_setDisplay:(id)arg1 withComplicationAnimation:(unsigned int)arg2;
+- (void)_setDisplay:(id)arg1 withComplicationAnimation:(unsigned int)arg2 animationType:(unsigned int)arg3 animationFraction:(float)arg4;
 - (void)_setDisplayEditing:(_Bool)arg1;
 - (void)_setDisplayMaxSize:(struct CGSize)arg1;
 - (void)_tryToSetDisplayHighlighted:(_Bool)arg1;
 - (void)_invokeNeedsResizeHandler;
 - (void)needsResize;
+- (void)sensitiveUIStateChanged;
 - (void)_invokeTouchDownHandler;
 - (void)_invokeTouchUpInsideHandler;
 - (_Bool)_displayIsTappable;
@@ -90,7 +98,8 @@
 - (void)setDimmed:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_didSetDisplayFromDisplay:(id)arg1 withComplicationAnimation:(unsigned int)arg2;
 - (void)_prepareToSetDisplay:(id)arg1 withComplicationAnimation:(inout unsigned int *)arg2;
-- (void)_replaceDisplayWithDisplayClass:(Class)arg1 template:(id)arg2 reason:(int)arg3 animation:(unsigned int)arg4;
+- (void)_replaceDisplayWithDisplayClass:(Class)arg1 template:(id)arg2 reason:(int)arg3 animation:(unsigned int)arg4 animationType:(unsigned int)arg5 animationFraction:(float)arg6;
+- (void)_setComplicationTemplate:(id)arg1 reason:(int)arg2 animation:(unsigned int)arg3 animationType:(unsigned int)arg4 animationFraction:(float)arg5;
 - (void)setComplicationTemplate:(id)arg1 reason:(int)arg2 animation:(unsigned int)arg3;
 - (void)dealloc;
 - (id)initWithCustomTemplateDisplay:(id)arg1 isDetachedDisplay:(_Bool)arg2 family:(int)arg3;

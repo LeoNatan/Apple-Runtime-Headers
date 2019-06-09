@@ -12,13 +12,19 @@
 {
 }
 
-+ (id)entityInManagedObjectContext:(id)arg1;
++ (id)keywordForUuid:(id)arg1 context:(id)arg2;
++ (id)keywordForTitle:(id)arg1 context:(id)arg2;
 + (id)entityName;
-+ (id)insertInManagedObjectContext:(id)arg1;
+- (void)awakeFromInsert;
+- (id)payloadForChangedKeys:(id)arg1;
+- (id)payloadIDForTombstone:(id)arg1;
+- (id)payloadID;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *assetAttributes; // @dynamic assetAttributes;
+@property(retain, nonatomic) NSString *shortcut; // @dynamic shortcut;
 @property(retain, nonatomic) NSString *title; // @dynamic title;
+@property(retain, nonatomic) NSString *uuid; // @dynamic uuid;
 
 @end
 

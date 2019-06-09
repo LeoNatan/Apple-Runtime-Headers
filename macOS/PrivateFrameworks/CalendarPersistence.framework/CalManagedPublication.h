@@ -6,17 +6,15 @@
 
 #import <CalendarPersistence/CalManagedObject.h>
 
-@class CalManagedNode, CalManagedPublicationError, NSCountedSet, NSDate, NSString, NSURL;
+@class CalManagedNode, CalManagedPublicationError, NSDate, NSString, NSURL;
 
 @interface CalManagedPublication : CalManagedObject
 {
     BOOL _needsPublish;
-    NSCountedSet *_outstandingOperations;
 }
 
 + (id)entityName;
 + (id)URLForPublicationWithBaseURL:(id)arg1 user:(id)arg2 filename:(id)arg3;
-- (void).cxx_destruct;
 - (id)publisher;
 - (int)status;
 - (id)lastOperationError;
@@ -44,7 +42,6 @@
 @property(retain) CalManagedPublicationError *lastError; // @dynamic lastError;
 @property(retain) NSString *name; // @dynamic name;
 @property(retain) CalManagedNode *node; // @dynamic node;
-@property(retain) NSCountedSet *outstandingOperations;
 @property(retain) NSDate *publishDate; // @dynamic publishDate;
 @property(retain) NSDate *requestDate; // @dynamic requestDate;
 @property(retain) NSString *uid; // @dynamic uid;

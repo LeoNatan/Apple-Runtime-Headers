@@ -32,6 +32,7 @@
     NSMutableDictionary *_deferredLastUsedTimeByTrackingUUID;
 }
 
++ (void)registerExpirationForAssetHandles;
 + (int)openFdForDownloadPath:(id)arg1 error:(id *)arg2;
 + (id)assetCacheWithApplicationBundleID:(id)arg1 assetDirectoryContext:(id)arg2 didInit:(_Bool *)arg3 error:(id *)arg4;
 + (id)_sharedCachesByPath;
@@ -95,6 +96,7 @@
 - (void)scheduleUnregisterItemsAndDeleteUnregisteredAssetHandlesWithIDs:(id)arg1 deleteUnregisteredAssetHandlesWithIDs:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)unregisterItemIDs:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAssetCache;
+- (unsigned long long)countAssetCacheItems;
 - (void)checkAssetHandlesForRegisteredMMCSItems:(id)arg1;
 - (void)clearAssetCache;
 - (void)cancelExpiryTimer;

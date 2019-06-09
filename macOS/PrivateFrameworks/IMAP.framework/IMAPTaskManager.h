@@ -6,7 +6,7 @@
 
 #import <MailCore/MCTaskManager.h>
 
-@class IMAPAccountSyncTask, NSConditionLock, NSCountedSet, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, _IMAPLock;
+@class IMAPAccountSyncTask, IMAPLocalActionSyncTask, NSConditionLock, NSCountedSet, NSMutableDictionary, NSMutableSet, NSString, _IMAPLock;
 @protocol IMAPAccount;
 
 @interface IMAPTaskManager : MCTaskManager
@@ -15,8 +15,6 @@
     NSMutableDictionary *_mailboxSyncTasks;
     NSMutableSet *_inSyncMailboxes;
     NSMutableDictionary *_bodyFetchTasks;
-    NSMutableDictionary *_localActionSyncTasks;
-    NSMutableArray *_allLocalActions;
     NSMutableSet *_mailboxesCheckedForIncomplete;
     NSMutableSet *_mailboxesUpdatingUIDValidity;
     NSMutableSet *_dataSourcesWaitingForBodySync;
@@ -40,6 +38,7 @@
     id <IMAPAccount> _account;
     unsigned long long _fetchChunkSize;
     IMAPAccountSyncTask *_accountSyncTask;
+    IMAPLocalActionSyncTask *_localActionSyncTask;
 }
 
 + (void)_setReadSizeParameters;
@@ -49,6 +48,7 @@
 + (id)powerLog;
 + (id)syncActivityLog;
 @property(nonatomic) BOOL canPerformLocalActions; // @synthesize canPerformLocalActions=_canPerformLocalActions;
+@property(retain, nonatomic) IMAPLocalActionSyncTask *localActionSyncTask; // @synthesize localActionSyncTask=_localActionSyncTask;
 @property(nonatomic) __weak IMAPAccountSyncTask *accountSyncTask; // @synthesize accountSyncTask=_accountSyncTask;
 @property(nonatomic) unsigned int firstNewInboxUID; // @synthesize firstNewInboxUID=_firstNewInboxUID;
 @property unsigned long long fetchChunkSize; // @synthesize fetchChunkSize=_fetchChunkSize;
@@ -57,7 +57,7 @@
 @property(nonatomic) BOOL networkIsLimited; // @synthesize networkIsLimited=_networkIsLimited;
 - (void).cxx_destruct;
 - (BOOL)hasLocalActions;
-- (void)actionWasProcessed:(id)arg1;
+- (void)addLocalAction:(id)arg1;
 - (void)_checkForNewLocalActions;
 - (void)checkForNewLocalActions;
 - (void)beginPerformingLocalActionsIfNeeded;
@@ -102,8 +102,6 @@
 - (void)syncUserRequestedBodiesForMessagesByDataSource:(id)arg1;
 - (void)syncBodiesForMessages:(id)arg1 uidNext:(unsigned int)arg2 dataSource:(id)arg3;
 - (void)deleteMessagesWithUIDs:(id)arg1 dataSource:(id)arg2;
-- (void)_cancelLocalActionSyncTasksForMailbox:(id)arg1;
-- (void)cancelLocalActionSyncTasksForMailbox:(id)arg1;
 - (void)_cancelMailboxSyncTaskForMailboxName:(id)arg1;
 - (void)cancelMailboxSyncTaskForMailboxName:(id)arg1;
 - (void)resetMailboxSyncWithDataSource:(id)arg1;

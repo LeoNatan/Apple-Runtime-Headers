@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface CSAsset : NSObject
 {
@@ -63,12 +63,17 @@
 @property(readonly, nonatomic) unsigned int SSVEnergyBufferSize;
 @property(readonly, nonatomic) unsigned long long SSVLKFSChannelBitset;
 @property(readonly, nonatomic) unsigned long long SSVNoiseLevelChannelBitset;
+- (id)configFilepathForDictationOrigin:(unsigned long long)arg1;
 - (id)_sha256:(id)arg1;
 - (id)_sha1:(id)arg1;
 - (id)hearstRTModelLocaleMap;
 - (id)hearstRTModelWithMajorVersion:(unsigned long long)arg1 minorVersion:(unsigned long long)arg2 locale:(id)arg3;
 - (id)latestHearstRTModelForLocale:(id)arg1;
 - (id)RTModelWithFallbackLanguage:(id)arg1;
+@property(readonly, nonatomic) NSString *spgConfigFile;
+@property(readonly, nonatomic) NSString *startOfSpeechDetectorConfigFile;
+@property(readonly, nonatomic) NSString *languageDetectorConfigFile;
+@property(readonly, nonatomic) NSArray *languageDetectorSupportedLocale;
 
 @end
 

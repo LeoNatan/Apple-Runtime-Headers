@@ -6,12 +6,24 @@
 
 #import <PhotosUICore/PXDisplayCollection-Protocol.h>
 
-@class NSDate, NSString;
+@class NSArray, NSDate, NSString;
 
 @protocol PXDisplayAssetCollection <PXDisplayCollection>
+@property(readonly, nonatomic) unsigned long long estimatedAssetCount;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
+@property(readonly, nonatomic) NSString *localizedSmartDescription;
+@property(readonly, nonatomic) NSString *localizedDateDescription;
+@property(readonly, nonatomic) NSArray *localizedLocationNames;
+@property(readonly, nonatomic) NSString *localizedDebugDescription;
 @property(readonly, nonatomic) NSString *localizedSubtitle;
 @property(readonly, nonatomic) NSString *localizedTitle;
+@property(readonly, nonatomic) long long px_highlightKind;
+@property(readonly, nonatomic) unsigned short px_highlightEnrichmentState;
+@property(readonly, nonatomic) _Bool isRecent;
+@property(readonly, nonatomic) _Bool isAggregation;
+@property(readonly, nonatomic) double promotionScore;
+@property(readonly, nonatomic) _Bool isEnrichmentComplete;
+@property(readonly, nonatomic) _Bool isEnriched;
 @end
 

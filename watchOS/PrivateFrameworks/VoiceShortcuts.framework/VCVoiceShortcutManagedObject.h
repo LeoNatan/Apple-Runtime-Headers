@@ -12,10 +12,7 @@
 {
 }
 
-+ (id)nonUserDataAttributes;
 + (id)fetchRequest;
-- (_Bool)populateWithVoiceShortcut:(id)arg1 error:(id *)arg2;
-- (id)initWithContext:(id)arg1 voiceShortcut:(id)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(copy, nonatomic) NSString *associatedAppBundleIdentifier; // @dynamic associatedAppBundleIdentifier;

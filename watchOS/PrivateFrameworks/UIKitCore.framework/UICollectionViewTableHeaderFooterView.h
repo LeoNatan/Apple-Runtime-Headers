@@ -24,6 +24,7 @@
 @property(retain, nonatomic) UIColor *tintColor;
 @property(readonly, nonatomic, getter=_tableAttributes) UICollectionViewTableLayoutAttributes *tableAttributes;
 @property(readonly, nonatomic, getter=_tableLayout) UICollectionViewTableLayout *tableLayout;
+- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)applyLayoutAttributes:(id)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;

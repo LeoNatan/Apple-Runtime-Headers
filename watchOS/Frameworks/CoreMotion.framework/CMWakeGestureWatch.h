@@ -23,12 +23,17 @@
     int fSelector;
 }
 
++ (unsigned char)toRaw:(int)arg1;
++ (int)toState:(unsigned char)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)onWakeUpdated:(const struct Sample *)arg1;
+- (_Bool)setFireAllEnabled:(_Bool)arg1;
+- (void)reset;
 - (void)setDetectedStateEnabled:(_Bool)arg1;
 - (_Bool)setNightStandMode:(_Bool)arg1 withConfiguration:(int)arg2;
 - (void)updateWristAndCrown;
+- (void)simulateGesture:(int)arg1 after:(double)arg2;
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)playAlert;
 - (void)stopWakeGestureUpdates;

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary, PDFRenderingProperties;
-@protocol PDFPageBackgroundManagerDelegate;
+@protocol OS_dispatch_queue, PDFPageBackgroundManagerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PDFPageBackgroundManagerPrivate : NSObject
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     PDFRenderingProperties *renderingProperties;
     unsigned long long activePageIndex;
     NSMutableDictionary *backgroundImageCache[3];
+    NSObject<OS_dispatch_queue> *workQueue;
     _Bool isCancled;
     _Bool isWorking;
     _Bool willForceUpdate;

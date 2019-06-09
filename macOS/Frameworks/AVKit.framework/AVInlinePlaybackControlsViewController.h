@@ -8,6 +8,7 @@
 
 @class NSStackView, NSView;
 
+__attribute__((visibility("hidden")))
 @interface AVInlinePlaybackControlsViewController : AVPlayerControlsViewController
 {
     NSView *_initialFirstResponder;

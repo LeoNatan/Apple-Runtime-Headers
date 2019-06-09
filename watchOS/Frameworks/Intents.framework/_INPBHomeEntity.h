@@ -10,33 +10,70 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBHomeEntity-Protocol.h>
 
-@class NSString, _INPBString;
+@class NSString, _INPBDataString, _INPBString;
 
 @interface _INPBHomeEntity : PBCodable <_INPBHomeEntity, NSSecureCoding, NSCopying>
 {
+    CDStruct_56d48c16 _deviceTypes;
     struct {
         unsigned int deviceType:1;
         unsigned int entityType:1;
+        unsigned int sceneType:1;
     } _has;
     int _deviceType;
+    NSString *_entityIdentifier;
+    _INPBDataString *_entityName;
     int _entityType;
+    _INPBDataString *_group;
+    _INPBDataString *_home;
     _INPBString *_name;
+    _INPBDataString *_room;
+    int _sceneType;
+    _INPBDataString *_zone;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) _INPBDataString *zone; // @synthesize zone=_zone;
+@property(nonatomic) int sceneType; // @synthesize sceneType=_sceneType;
+@property(retain, nonatomic) _INPBDataString *room; // @synthesize room=_room;
 @property(retain, nonatomic) _INPBString *name; // @synthesize name=_name;
+@property(retain, nonatomic) _INPBDataString *home; // @synthesize home=_home;
+@property(retain, nonatomic) _INPBDataString *group; // @synthesize group=_group;
 @property(nonatomic) int entityType; // @synthesize entityType=_entityType;
+@property(retain, nonatomic) _INPBDataString *entityName; // @synthesize entityName=_entityName;
+@property(copy, nonatomic) NSString *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
 @property(nonatomic) int deviceType; // @synthesize deviceType=_deviceType;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+@property(readonly, nonatomic) _Bool hasZone;
+- (int)StringAsSceneType:(id)arg1;
+- (id)sceneTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasSceneType;
+@property(readonly, nonatomic) _Bool hasRoom;
 @property(readonly, nonatomic) _Bool hasName;
+@property(readonly, nonatomic) _Bool hasHome;
+@property(readonly, nonatomic) _Bool hasGroup;
 - (int)StringAsEntityType:(id)arg1;
 - (id)entityTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasEntityType;
+@property(readonly, nonatomic) _Bool hasEntityName;
+@property(readonly, nonatomic) _Bool hasEntityIdentifier;
+- (int)StringAsDeviceTypes:(id)arg1;
+- (id)deviceTypesAsString:(int)arg1;
+- (int)deviceTypesAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int deviceTypesCount;
+- (void)addDeviceTypes:(int)arg1;
+- (void)clearDeviceTypes;
+@property(readonly, nonatomic) int *deviceTypes;
+- (void)setDeviceTypes:(int *)arg1 count:(unsigned int)arg2;
 - (int)StringAsDeviceType:(id)arg1;
 - (id)deviceTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasDeviceType;

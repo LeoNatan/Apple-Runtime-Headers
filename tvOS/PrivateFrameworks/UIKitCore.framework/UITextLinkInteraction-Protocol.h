@@ -14,5 +14,8 @@
 - (_Bool)isInteractingWithLink;
 - (void)tapLinkAtPoint:(struct CGPoint)arg1;
 - (_Bool)mightHaveLinks;
+
+@optional
+- (_Bool)interactionDidStartWithLinkAtPoint:(struct CGPoint)arg1;
 @end
 

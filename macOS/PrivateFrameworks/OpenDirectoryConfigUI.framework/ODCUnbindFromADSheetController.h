@@ -8,6 +8,7 @@
 
 @class NSAlert, NSButton, NSProgressIndicator, NSSecureTextField, NSTextField, NSView, NSWindow, ODCServersViewController, ODCUnbindFromADAction, SFAuthorizationView;
 
+__attribute__((visibility("hidden")))
 @interface ODCUnbindFromADSheetController : NSObject
 {
     NSWindow *_docWindow;

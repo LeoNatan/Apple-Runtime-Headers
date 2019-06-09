@@ -6,7 +6,7 @@
 
 #import <ARKit/ARAnchor.h>
 
-@class ARPatchGrid, ARPlaneGeometry, NSDictionary;
+@class ARPatchGrid, ARPlaneGeometry, NSDictionary, NSString;
 
 @interface ARPlaneAnchor : ARAnchor
 {
@@ -18,12 +18,14 @@
     ARPatchGrid *_gridExtent;
     long long _worldAlignmentRotation;
     NSDictionary *_possibleClassifications;
+    NSString *_classificationLabel;
     // Error parsing type: , name: _center
     // Error parsing type: , name: _extent
 }
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isClassificationSupported;
+@property(retain, nonatomic) NSString *classificationLabel; // @synthesize classificationLabel=_classificationLabel;
 @property(copy, nonatomic) NSDictionary *possibleClassifications; // @synthesize possibleClassifications=_possibleClassifications;
 @property(nonatomic) long long worldAlignmentRotation; // @synthesize worldAlignmentRotation=_worldAlignmentRotation;
 @property(nonatomic) float uncertaintyAlongNormal; // @synthesize uncertaintyAlongNormal=_uncertaintyAlongNormal;

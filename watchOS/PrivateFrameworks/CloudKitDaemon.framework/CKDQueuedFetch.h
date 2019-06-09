@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class CKDClientContext, CKDOperation, NSDate, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_os_activity;
 
 __attribute__((visibility("hidden")))
 @interface CKDQueuedFetch : NSObject
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSDate *_queuedDate;
     CDUnknownBlockType _completionHandler;
     CKDQueuedFetch *_equivalentRunningFetch;
+    NSObject<OS_os_activity> *_osActivity;
     NSMutableDictionary *_completionHandlersByItemID;
     unsigned int _lastCompletionHandlerCount;
     NSDate *_startDate;
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) unsigned int lastCompletionHandlerCount; // @synthesize lastCompletionHandlerCount=_lastCompletionHandlerCount;
 @property(retain, nonatomic) NSMutableDictionary *completionHandlersByItemID; // @synthesize completionHandlersByItemID=_completionHandlersByItemID;
+@property(retain, nonatomic) NSObject<OS_os_activity> *osActivity; // @synthesize osActivity=_osActivity;
 @property(nonatomic) __weak CKDQueuedFetch *equivalentRunningFetch; // @synthesize equivalentRunningFetch=_equivalentRunningFetch;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSDate *queuedDate; // @synthesize queuedDate=_queuedDate;

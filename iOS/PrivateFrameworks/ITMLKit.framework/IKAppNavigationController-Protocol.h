@@ -21,6 +21,7 @@
 @optional
 - (void)dismissModal;
 - (void)presentModal:(IKAppDocument *)arg1 options:(NSDictionary *)arg2;
+- (void)setDocuments:(NSArray *)arg1 options:(NSDictionary *)arg2;
 - (void)clear;
 @end
 

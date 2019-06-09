@@ -8,7 +8,7 @@
 
 #import <TVMLKit/TVRowHosting-Protocol.h>
 
-@class NSString, _TVCollectionView;
+@class CAGradientLayer, IKColor, NSString, _TVCollectionView;
 
 __attribute__((visibility("hidden")))
 @interface _TVCollectionWrappingView : UIView <TVRowHosting>
@@ -16,36 +16,50 @@ __attribute__((visibility("hidden")))
     struct CGRect _headerFrame;
     UIView *_selectingView;
     UIView *_headerView;
+    double _showcaseFactor;
+    struct CGRect _footerFrame;
+    UIView *_footerView;
+    CAGradientLayer *_gradientLayer;
     struct {
         _Bool respondsToAugmentedSelectionFrameForFrame;
     } _collectionViewFlags;
+    _Bool _centered;
     _Bool _headerCanBecomeFocused;
     _Bool _headerAuxiliarySelecting;
     _Bool _headerFloating;
     _Bool _headerHidden;
     _Bool _headerFocused;
     _TVCollectionView *_collectionView;
-    double _collectionCenteredPadding;
     double _headerSelectionMargin;
     long long _collectionGradientMask;
+    IKColor *_ikBackgroundColor;
+    struct TVShowcaseConfig _showcaseConfig;
 }
 
 + (void)gradientConfigForCollection:(id)arg1 gradientMask:(long long)arg2 gradientLengths:(struct UIEdgeInsets *)arg3 gradientInset:(struct UIEdgeInsets *)arg4 gradientBoundsInset:(struct UIEdgeInsets *)arg5;
 @property(nonatomic, getter=isHeaderFocused) _Bool headerFocused; // @synthesize headerFocused=_headerFocused;
+@property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
+@property(retain, nonatomic) IKColor *ikBackgroundColor; // @synthesize ikBackgroundColor=_ikBackgroundColor;
 @property(nonatomic) long long collectionGradientMask; // @synthesize collectionGradientMask=_collectionGradientMask;
 @property(nonatomic, getter=isHeaderHidden) _Bool headerHidden; // @synthesize headerHidden=_headerHidden;
 @property(nonatomic, getter=isHeaderFloating) _Bool headerFloating; // @synthesize headerFloating=_headerFloating;
 @property(nonatomic, getter=isHeaderAuxiliarySelecting) _Bool headerAuxiliarySelecting; // @synthesize headerAuxiliarySelecting=_headerAuxiliarySelecting;
+@property(nonatomic) struct TVShowcaseConfig showcaseConfig; // @synthesize showcaseConfig=_showcaseConfig;
 @property(nonatomic) double headerSelectionMargin; // @synthesize headerSelectionMargin=_headerSelectionMargin;
 @property(nonatomic) _Bool headerCanBecomeFocused; // @synthesize headerCanBecomeFocused=_headerCanBecomeFocused;
-@property(nonatomic) double collectionCenteredPadding; // @synthesize collectionCenteredPadding=_collectionCenteredPadding;
+@property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(retain, nonatomic) _TVCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
 - (void)_updateSubviews;
+- (id)_currentFooterView;
 - (id)_currentHeaderView;
+- (double)_showcaseContentScaleForExpectedWidth:(double)arg1;
+- (double)_adjustedShowcaseFactor;
 - (struct UIEdgeInsets)_adjustedPadding;
 - (struct CGRect)_adjustedHeaderFrame;
+- (id)_collectionRowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2 forShowcase:(_Bool)arg3;
+- (id)showcaseRowMetricsForExpectedWidth:(double)arg1;
 @property(readonly, nonatomic) _Bool shouldBindRowsTogether;
 - (id)rowMetricsForExpectedWidth:(double)arg1 firstItemRowIndex:(long long *)arg2;
 - (id)preferredFocusEnvironments;
@@ -53,7 +67,9 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setValue:(id)arg1 forTVViewStyle:(id)arg2;
+- (void)tv_setShowcaseFactor:(double)arg1;
 - (void)reevaluateHeaderFrame;
+- (void)reevaluateFooterFrame;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

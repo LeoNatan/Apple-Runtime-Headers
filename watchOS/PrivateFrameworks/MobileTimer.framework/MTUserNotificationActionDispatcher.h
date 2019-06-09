@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <MobileTimer/MTNotificationResponseDelegate-Protocol.h>
 #import <MobileTimer/UNUserNotificationCenterDelegate-Protocol.h>
 
 @class MTAlarmStorage, MTMetrics, MTTimerStorage, NSString;
 
-@interface MTUserNotificationActionDispatcher : NSObject <UNUserNotificationCenterDelegate, MTNotificationResponseDelegate>
+@interface MTUserNotificationActionDispatcher : NSObject <UNUserNotificationCenterDelegate>
 {
     MTAlarmStorage *_alarmStorage;
     MTTimerStorage *_timerStorage;
@@ -19,12 +18,13 @@
 }
 
 + (unsigned int)_timerNotificationActionForUserNotificationAction:(id)arg1;
-+ (unsigned int)_alarmNotificationActionForUserNotificationAction:(id)arg1 nonSnoozableNotification:(_Bool)arg2;
++ (unsigned int)_alarmNotificationActionForUserNotificationAction:(id)arg1 category:(id)arg2;
 @property(retain, nonatomic) MTMetrics *metrics; // @synthesize metrics=_metrics;
 @property(retain, nonatomic) MTTimerStorage *timerStorage; // @synthesize timerStorage=_timerStorage;
 @property(retain, nonatomic) MTAlarmStorage *alarmStorage; // @synthesize alarmStorage=_alarmStorage;
 - (void).cxx_destruct;
 - (void)_handleTimerNotificationResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)handleAlarmNotificationIdentifier:(id)arg1 action:(unsigned int)arg2 category:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_handleAlarmNotificationResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithAlarmStorage:(id)arg1 timerStorage:(id)arg2;

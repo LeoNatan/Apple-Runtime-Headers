@@ -8,6 +8,7 @@
 
 @class AVVolumeButton, NSTrackingArea;
 
+__attribute__((visibility("hidden")))
 @interface AVVolumeButtonContentView : NSView
 {
     AVVolumeButton *_volumeButton;

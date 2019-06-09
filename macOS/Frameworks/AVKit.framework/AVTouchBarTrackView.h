@@ -10,6 +10,7 @@
 
 @class CALayer, CAShapeLayer, NSArray, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarTrackView : NSView <CALayerDelegate>
 {
     BOOL _hasRoundedCorners;
@@ -38,6 +39,7 @@
 - (struct CGPoint)positionForPreviewLayerWithIndex:(long long)arg1;
 - (long long)numberOfPreviewLayersForWidth:(double)arg1;
 @property(readonly) BOOL allPreviewLayersHaveContent;
+- (id)makePreviewLayer;
 @property(readonly) struct CGSize previewLayerSize;
 - (void)dealloc;
 - (id)init;

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <ITMLKit/NSCopying-Protocol.h>
+
 @class IKCSSRule, IKColor, IKFourTuple, NSArray, NSMutableDictionary, NSNumber, NSShadow, NSString, NSURL, UIColor;
 
-@interface IKViewElementStyle : NSObject
+@interface IKViewElementStyle : NSObject <NSCopying>
 {
     _Bool _filterBlockedStyles;
     NSString *_classDescriptorString;
@@ -42,16 +44,18 @@
 @property(retain, nonatomic) NSArray *mediaQueryList; // @synthesize mediaQueryList=_mediaQueryList;
 @property(readonly, copy, nonatomic) IKCSSRule *cssRule; // @synthesize cssRule=_cssRule;
 - (void).cxx_destruct;
+- (id)_declarationForStyleName:(id)arg1 expectedClass:(Class)arg2;
 - (id)_styleNameForAlias:(id)arg1;
 - (void)_addDeclaration:(id)arg1;
 - (void)_addElementStyle:(id)arg1;
 - (void)_addParentStyle:(id)arg1;
-- (struct UIEdgeInsets)_edgeInsetsForStyleKey:(id)arg1;
+- (struct UIEdgeInsets)_edgeInsetsForStyleName:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (unsigned long long)typeForStyle:(id)arg1;
 - (_Bool)requiresDynamicEvaluation;
 @property(readonly, nonatomic) _Bool hidden;
+@property(readonly, nonatomic) NSNumber *lineHeight;
 @property(readonly, nonatomic) NSNumber *letterSpacing;
 @property(readonly, nonatomic) NSString *maxHeight;
 @property(readonly, nonatomic) NSShadow *textShadow;
@@ -99,9 +103,11 @@
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) UIColor *borderColor;
 @property(readonly, nonatomic) UIColor *color;
+- (unsigned long long)edgeFlagForStyle:(id)arg1;
 - (id)valueForStyle:(id)arg1;
 - (id)debugDescription;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithClassSelector:(id)arg1;
 - (id)initWithCSSRule:(id)arg1 filterBlockedStyles:(_Bool)arg2 selStr:(id)arg3;
 - (id)initWithStyle:(id)arg1 classSelector:(id)arg2;

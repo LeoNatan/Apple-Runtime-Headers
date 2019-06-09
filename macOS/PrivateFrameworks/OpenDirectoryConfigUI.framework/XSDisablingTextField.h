@@ -8,6 +8,7 @@
 
 @class NSColor;
 
+__attribute__((visibility("hidden")))
 @interface XSDisablingTextField : NSTextField
 {
     NSColor *origTextColor;

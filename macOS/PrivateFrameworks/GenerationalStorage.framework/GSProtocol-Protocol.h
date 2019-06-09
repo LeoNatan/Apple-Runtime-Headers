@@ -10,15 +10,12 @@
 - (void)chunkStorageCompact:(const char *)arg1 requestedSize:(unsigned long long)arg2 reply:(void (^)(BOOL, unsigned long long, NSError *))arg3;
 - (void)chunkFileRemove:(const char *)arg1 reply:(void (^)(BOOL, NSError *))arg2;
 - (void)chunkFile:(const char *)arg1 withIoPolicy:(unsigned int)arg2 withSchedPolicy:(unsigned int)arg3 reply:(void (^)(BOOL, NSError *))arg4;
-- (void)archiveImport:(NSURL *)arg1 forPath:(NSURL *)arg2 withTransferOptions:(unsigned long long)arg3 reply:(void (^)(BOOL, NSError *))arg4;
-- (oneway void)archiveDestroy:(NSURL *)arg1 forPath:(NSURL *)arg2;
-- (void)archiveCreate:(NSURL *)arg1 forGenerations:(NSDictionary *)arg2 withTransferOptions:(unsigned long long)arg3 reply:(void (^)(NSURL *, NSData *, NSError *))arg4;
-- (void)generationsCopy:(NSURL *)arg1 toPath:(NSURL *)arg2 forGenerations:(NSDictionary *)arg3 withOptions:(unsigned long long)arg4 reply:(void (^)(BOOL, NSError *))arg5;
+- (void)generationsCopy:(NSFileHandle *)arg1 toHandle:(NSFileHandle *)arg2 forGenerations:(NSDictionary *)arg3 withOptions:(unsigned long long)arg4 reply:(void (^)(BOOL, NSError *))arg5;
 - (void)permanentStorageIDForHandle:(NSFileHandle *)arg1 reply:(void (^)(unsigned long long, NSError *))arg2;
 - (void)permanentStoragePrefixForHandle:(NSFileHandle *)arg1 reply:(void (^)(NSString *, NSError *))arg2;
 - (void)hintDocIDCreationForFileHandle:(NSFileHandle *)arg1;
 - (void)getDocumentIDForFileHandle:(NSFileHandle *)arg1 reply:(void (^)(unsigned int, int))arg2;
-- (void)getFileIdForDocumentId:(unsigned long long)arg1 onDevice:(int)arg2 reply:(void (^)(unsigned long long, int))arg3;
+- (void)getFileIdForDocumentId:(unsigned long long)arg1 onDevice:(int)arg2 reply:(void (^)(unsigned long long, long long, int))arg3;
 - (void)requestFreeSpace:(unsigned long long)arg1 forVolume:(NSURL *)arg2 reply:(void (^)(BOOL, NSError *))arg3;
 - (void)setAdditionNameSpaceInStorage:(long long)arg1 nameSpace:(NSString *)arg2 additionName:(NSString *)arg3 value:(NSString *)arg4 completionHandler:(void (^)(NSDictionary *, NSError *))arg5;
 - (void)setAdditionDisplayNameInStorage:(long long)arg1 nameSpace:(NSString *)arg2 additionName:(NSString *)arg3 value:(NSString *)arg4 reply:(void (^)(BOOL, NSError *))arg5;

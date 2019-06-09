@@ -21,11 +21,7 @@
     _Bool _preferredLanguageWasSpecified;
     _Bool _isAudioSessionActive;
     _Bool _pendingAudioSessionActive;
-    _Bool _isInAudioInterruption;
-    _Bool _wasSpeakingBeforeAudioInterruption;
-    _Bool _didRequestStartSpeakingDuringAudioInterruption;
-    _Bool _didRequestPauseSpeakingDuringAudioInterruption;
-    _Bool _didRequestResumeSpeakingDuringAudioInterruption;
+    _Bool _isProcessingContentForSpeech;
     id <AXOratorDelegate> _delegate;
     long long _speakingContext;
     AXLanguageTaggedContent *_selectedContent;
@@ -39,19 +35,13 @@
     AVSpeechUtterance *_lastUtterance;
     AXLanguageTag *_lastUtteranceLanguageTag;
     NSString *_currentLanguageCode;
-    double _audioInterruptionStartedTime;
-    NSString *_requestedLanguageCodeDuringAudioInterruption;
+    NSMutableArray *_additionalContentToProcess;
     struct _NSRange _lastSpokenSubstringRange;
     struct _NSRange _lastUtteranceSubstringRange;
 }
 
-@property(copy, nonatomic) NSString *requestedLanguageCodeDuringAudioInterruption; // @synthesize requestedLanguageCodeDuringAudioInterruption=_requestedLanguageCodeDuringAudioInterruption;
-@property(nonatomic) _Bool didRequestResumeSpeakingDuringAudioInterruption; // @synthesize didRequestResumeSpeakingDuringAudioInterruption=_didRequestResumeSpeakingDuringAudioInterruption;
-@property(nonatomic) _Bool didRequestPauseSpeakingDuringAudioInterruption; // @synthesize didRequestPauseSpeakingDuringAudioInterruption=_didRequestPauseSpeakingDuringAudioInterruption;
-@property(nonatomic) _Bool didRequestStartSpeakingDuringAudioInterruption; // @synthesize didRequestStartSpeakingDuringAudioInterruption=_didRequestStartSpeakingDuringAudioInterruption;
-@property(nonatomic) _Bool wasSpeakingBeforeAudioInterruption; // @synthesize wasSpeakingBeforeAudioInterruption=_wasSpeakingBeforeAudioInterruption;
-@property(nonatomic) double audioInterruptionStartedTime; // @synthesize audioInterruptionStartedTime=_audioInterruptionStartedTime;
-@property(nonatomic) _Bool isInAudioInterruption; // @synthesize isInAudioInterruption=_isInAudioInterruption;
+@property(retain, nonatomic) NSMutableArray *additionalContentToProcess; // @synthesize additionalContentToProcess=_additionalContentToProcess;
+@property(nonatomic) _Bool isProcessingContentForSpeech; // @synthesize isProcessingContentForSpeech=_isProcessingContentForSpeech;
 @property(nonatomic) _Bool pendingAudioSessionActive; // @synthesize pendingAudioSessionActive=_pendingAudioSessionActive;
 @property(nonatomic) _Bool isAudioSessionActive; // @synthesize isAudioSessionActive=_isAudioSessionActive;
 @property(nonatomic) _Bool preferredLanguageWasSpecified; // @synthesize preferredLanguageWasSpecified=_preferredLanguageWasSpecified;
@@ -73,21 +63,15 @@
 @property(nonatomic) struct _NSRange lastSpokenSubstringRange; // @synthesize lastSpokenSubstringRange=_lastSpokenSubstringRange;
 @property(nonatomic) __weak id <AXOratorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_handleMediaServicesWereReset:(id)arg1;
-- (void)_handleMediaServicesWereLost:(id)arg1;
-- (void)_handleAudioInterruption:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange)arg2 utterance:(id)arg3;
 - (void)speechSynthesizer:(id)arg1 didCancelSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didStartSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didPauseSpeechUtterance:(id)arg2;
 - (void)speechSynthesizer:(id)arg1 didFinishSpeechUtterance:(id)arg2;
-- (void)_updateAudioSessionCategory;
 - (_Bool)_successWithCode:(long long)arg1 error:(id *)arg2;
-- (void)_setAudioSessionActive:(_Bool)arg1;
-- (void)_didEndInterruption;
-- (void)_didBeginInterruption;
 - (_Bool)_canSpeakTaggedContent:(id)arg1;
+- (void)_updateAudioSessionCategory;
 - (void)_clearAllContentState;
 - (void)_tokenizeContentIfNeeded;
 - (_Bool)_skipByUnit:(_Bool)arg1 boundary:(unsigned long long)arg2;
@@ -95,8 +79,10 @@
 - (long long)_currentTokenIndex:(_Bool)arg1;
 - (void)_respeakUtteranceIfNeeded;
 - (id)_speechSequenceItemsStartingAtContentLocation:(unsigned long long)arg1;
-- (_Bool)_changeSpeakingSpeed:(_Bool)arg1;
+- (_Bool)_changeSpeakingSpeed:(double)arg1 usingLanugageSpecificRate:(_Bool)arg2;
+- (_Bool)_useLanguageSpecificSpeakingRate;
 - (void)_speakNextItemInSequence;
+- (void)_processAdditionalContentInPreparationForSpeech;
 - (id)_getLangCodeForItem:(id)arg1;
 - (void)_updateSequenceForSpellOutBehavior;
 - (void)_startSpeakingSequence;
@@ -108,6 +94,8 @@
 - (_Bool)fastForwardWithBoundary:(unsigned long long)arg1;
 - (_Bool)speakSlower;
 - (_Bool)speakFaster;
+- (_Bool)setSpeakingRate:(double)arg1;
+- (double)currentSpeechRateForAdjustment;
 - (_Bool)isSpeaking;
 - (_Bool)isPaused;
 - (float)speechRate;
@@ -117,8 +105,8 @@
 - (_Bool)pauseSpeaking:(id *)arg1;
 - (_Bool)startSpeakingWithPreferredLanguage:(id)arg1 delayBeforeStart:(double)arg2 error:(id *)arg3;
 - (_Bool)startSpeakingWithPreferredLanguage:(id)arg1 error:(id *)arg2;
+- (void)addAdditionalContentToSpeechQueue:(id)arg1;
 @property(copy, nonatomic) NSString *content;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

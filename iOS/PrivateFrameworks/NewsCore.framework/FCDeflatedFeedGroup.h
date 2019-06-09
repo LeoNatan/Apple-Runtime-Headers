@@ -33,9 +33,13 @@
 @property(readonly, copy, nonatomic) FCFeedEdition *edition;
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, copy, nonatomic) NTPBDiscoverMoreVideosInfo *discoverMoreVideosInfo;
+@property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundGradient;
 @property(readonly, copy, nonatomic) FCColorGradient *backgroundGradient;
+@property(readonly, copy, nonatomic) FCColorGradient *darkStyleSauceGradient;
 @property(readonly, copy, nonatomic) FCColorGradient *sauceGradient;
+@property(readonly, copy, nonatomic) FCColor *darkStyleCardBackgroundColor;
 @property(readonly, copy, nonatomic) FCColor *cardBackgroundColor;
+@property(readonly, copy, nonatomic) FCColor *darkStyleTitleColor;
 @property(readonly, copy, nonatomic) FCColor *titleColor;
 @property(readonly, copy, nonatomic) NSString *ctaText;
 @property(readonly, copy, nonatomic) NSString *subtitle;

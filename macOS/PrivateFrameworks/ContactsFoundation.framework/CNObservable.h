@@ -20,6 +20,7 @@
 + (id)merge:(id)arg1;
 + (id)forkJoin:(id)arg1 scheduler:(id)arg2;
 + (id)concatenate:(id)arg1;
++ (id)combineLatest:(id)arg1 resultScheduler:(id)arg2 schedulerProvider:(id)arg3;
 + (id)combineLatest:(id)arg1 schedulerProvider:(id)arg2;
 + (id)combineLatest:(id)arg1;
 + (id)amb:(id)arg1;
@@ -37,9 +38,12 @@
 + (id)observableWithRange:(struct _NSRange)arg1;
 + (id)observableWithFutures:(id)arg1 schedulerProvider:(id)arg2;
 + (id)observableWithFutures:(id)arg1;
++ (id)observableWithFuture:(id)arg1 schedulerProvider:(id)arg2;
 + (id)observableWithFuture:(id)arg1;
 + (id)observableWithResult:(id)arg1;
 + (id)observableWithBlock:(CDUnknownBlockType)arg1;
++ (id)os_log_protocol;
++ (id)os_log;
 + (id)observableWithInitialState:(id)arg1 condition:(CDUnknownBlockType)arg2 nextState:(CDUnknownBlockType)arg3 resultSelector:(CDUnknownBlockType)arg4 delay:(CDUnknownBlockType)arg5 scheduler:(id)arg6;
 + (id)observableWithInitialState:(id)arg1 condition:(CDUnknownBlockType)arg2 nextState:(CDUnknownBlockType)arg3 resultSelector:(CDUnknownBlockType)arg4 scheduler:(id)arg5;
 + (id)observableWithInitialState:(id)arg1 condition:(CDUnknownBlockType)arg2 nextState:(CDUnknownBlockType)arg3 resultSelector:(CDUnknownBlockType)arg4;
@@ -50,6 +54,8 @@
 + (id)binderTypeForResultType:(unsigned long long)arg1;
 + (id)observableWithScannerResultsOfType:(unsigned long long)arg1 inString:(id)arg2;
 + (id)observableWithScannerResultsInString:(id)arg1;
++ (id)asyncScannerResultsInString:(id)arg1;
++ (id)scannerResultsInString:(id)arg1;
 + (id)observableOnNotificationCenter:(id)arg1 withName:(id)arg2 object:(id)arg3;
 + (id)observableOnDefaultNotificationCenterWithName:(id)arg1 object:(id)arg2;
 + (id)observableOnDarwinNotificationCenterWithName:(id)arg1;

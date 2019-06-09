@@ -11,6 +11,9 @@
 }
 
 + (id)preferencesValueforKey:(struct __CFString *)arg1 domain:(struct __CFString *)arg2;
++ (_Bool)wantsStatisticsShown;
++ (_Bool)wantsDebugVisualizationEnabled;
++ (_Bool)wantsRayTracedAmbientOcclusionEnabled;
 + (_Bool)wants2DOverlayControlsHidden;
 + (_Bool)wantsStatusBarHidden;
 + (_Bool)wantsAnimationDisabled;

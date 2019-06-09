@@ -9,5 +9,9 @@
 @interface NSFont (MKCrossPlatformOperations)
 - (double)_mapkit_scaledValueForValue:(double)arg1;
 - (double)_mapkit_lineHeight;
+- (id)_mapkit_fontWithWeight:(double)arg1;
+- (id)_mapkit_fontByAddingFeaturesForTabularFigures;
+- (id)_mapkit_fontByAddingFeaturesForTimeDisplay;
+- (id)_mapkit_fontByAddingFeaturesForTimeDisplayUseMonospace:(BOOL)arg1;
 @end
 

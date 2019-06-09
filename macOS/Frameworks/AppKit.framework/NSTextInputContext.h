@@ -11,6 +11,7 @@
 
 @interface NSTextInputContext : NSObject
 {
+    TITextInputTraits *_tiTextInputTraits;
     id _client;
     NSArray *_inputLocales;
     void *_documentID;
@@ -18,7 +19,6 @@
     id _keyBindingManager;
     NSString *_commandCharacters;
     long long _documentRefcon;
-    id _reserved[2];
     id _auxiliary;
     struct {
         unsigned int _acceptsGlyphInfo:1;
@@ -39,7 +39,6 @@
         unsigned int _unmarkbeforeinsert:1;
         unsigned int _completionHandlingClient:1;
     } _ticFlags;
-    TITextInputTraits *_tiTextInputTraits;
     NSBridgedTextTouchBarController *_bridgedTextTouchBarController;
     NSBridgedTextCorrectionController *_bridgedTextCorrectionController;
     NSBridgedTextSubstitutionController *_bridgedTextSubstitutionController;
@@ -55,6 +54,7 @@
 + (BOOL)isInputContextRefconValid:(const void *)arg1;
 + (id)inputSourcesFromInputSourceLocales:(id)arg1;
 + (BOOL)processInputKeyBindings:(id)arg1;
++ (id)selectedInputSourceUcharDataForInputContext:(id)arg1;
 + (void)updateInputContexts;
 + (id)inputContextWithClient:(id)arg1;
 + (void)_applicationDeactivated:(id)arg1;
@@ -62,12 +62,13 @@
 + (BOOL)currentKeyboardInputSourceParticipatesInTouchBar;
 + (void)cycleToNextInputKeyboardLayout:(id)arg1;
 + (void)cycleToNextInputScript:(id)arg1;
++ (BOOL)_TIPropertyValueIsValid:(long long)arg1;
 @property(readonly) id <NSTextInputClient> client; // @synthesize client=_client;
 @property(retain) NSBridgedTextSubstitutionController *bridgedTextSubstitutionController; // @synthesize bridgedTextSubstitutionController=_bridgedTextSubstitutionController;
 @property(retain) NSBridgedTextCorrectionController *bridgedTextCorrectionController; // @synthesize bridgedTextCorrectionController=_bridgedTextCorrectionController;
 @property(retain) NSBridgedTextTouchBarController *bridgedTextTouchBarController; // @synthesize bridgedTextTouchBarController=_bridgedTextTouchBarController;
 @property struct _NSRange tiSelectedTextRange; // @synthesize tiSelectedTextRange;
-@property(retain) TITextInputTraits *tiTextInputTraits; // @synthesize tiTextInputTraits=_tiTextInputTraits;
+- (void).cxx_destruct;
 - (void)doCommandBySelector:(SEL)arg1 completionHandlerWithResult:(CDUnknownBlockType)arg2;
 - (unsigned long long)incrementalSearchClientGeometry;
 - (BOOL)drawsVerticallyForCharacterAtIndex:(unsigned long long)arg1;
@@ -141,6 +142,8 @@
 - (void)_updateAllowedInputSources;
 - (BOOL)_forceAttributedString;
 - (void)_invalidate;
+- (BOOL)isActive;
+@property(retain) TITextInputTraits *tiTextInputTraits; // @dynamic tiTextInputTraits;
 - (void)wouldHandleEvent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)drawsVerticallyForCharacterAtIndex:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)baselineDeltaForCharacterAtIndex:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -156,6 +159,9 @@
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)doCommandBySelector:(SEL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)removeAnnotation:(id)arg1 range:(struct _NSRange)arg2;
+- (void)replaceCharactersInRange:(struct _NSRange)arg1 withAnnotatedString:(id)arg2 replacementRange:(struct _NSRange)arg3;
+- (id)annotatedString;
 @property(nonatomic, setter=setRTISelectedTextRange:) struct _NSRange rtiSelectedTextRange; // @dynamic rtiSelectedTextRange;
 - (BOOL)doCommandBySelectorWithResult:(SEL)arg1;
 - (void)convertToHalfWidth:(id)arg1;
@@ -183,6 +189,9 @@
 - (void)showGuessPanel:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (void)prepareContextMenu:(id)arg1;
+- (void)removeAnnotation_RTI:(id)arg1 range:(struct _NSRange)arg2;
+- (void)replaceCharactersInRange_RTI:(struct _NSRange)arg1 withAnnotatedString:(id)arg2 replacementRange:(struct _NSRange)arg3;
+- (id)annotatedString_RTI;
 - (BOOL)drawsVerticallyForCharacterAtIndex_RTI:(unsigned long long)arg1;
 - (double)baselineDeltaForCharacterAtIndex_RTI:(unsigned long long)arg1;
 - (double)fractionOfDistanceThroughGlyphForPoint_RTI:(struct CGPoint)arg1;
@@ -242,6 +251,8 @@
 - (id)localizedInputManagerName;
 - (void)cycleToNextInputKeyboardLayout:(id)arg1;
 - (void)cycleToNextInputScript:(id)arg1;
+- (id)_valueForTIProperty:(long long)arg1;
+- (void)_setValue:(id)arg1 forTIProperty:(long long)arg2;
 
 @end
 

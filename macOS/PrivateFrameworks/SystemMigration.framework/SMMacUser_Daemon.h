@@ -44,9 +44,6 @@
 @property(retain) SMSystem_Daemon *sourceSystem; // @synthesize sourceSystem;
 @property BOOL isAdminUser; // @synthesize isAdminUser;
 - (void).cxx_destruct;
-- (BOOL)_checkShadowHashPassword:(id)arg1;
-- (void)_binaryToHexConversion:(const char *)arg1 len:(unsigned long long)arg2 hex:(char *)arg3;
-- (BOOL)_checkCryptPassword:(id)arg1;
 - (id)_getEntry:(id)arg1 atIndex:(int)arg2;
 - (id)_fileVaultImagePath;
 - (void)setHomeDirSize:(id)arg1;
@@ -60,7 +57,6 @@
 - (id)sizeForSubPath:(id)arg1 withPather:(id)arg2;
 - (void)calculateHomeDirSizeWithPather:(id)arg1 callbackBlock:(CDUnknownBlockType)arg2;
 - (id)homeDirSize;
-- (BOOL)verifyPassword:(id)arg1;
 - (id)passwordFilePath;
 - (id)authenticationType;
 - (id)password;
@@ -96,7 +92,6 @@
 - (void)addUserExcludedPath:(id)arg1;
 - (id)pathsExcludedByTheUser;
 - (id)pathsExcludableByTheUserWithPather:(id)arg1;
-- (BOOL)migratableUser;
 - (id)pathsExcluded;
 - (Class)clientClass;
 - (id)description;

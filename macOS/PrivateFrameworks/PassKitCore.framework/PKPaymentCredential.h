@@ -33,6 +33,8 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)accountCredential;
+- (BOOL)isAccountCredential;
 - (id)purchasedProductCredential;
 - (BOOL)isPurchasedProductCredential;
 - (id)digitalIssuanceProductCredential;

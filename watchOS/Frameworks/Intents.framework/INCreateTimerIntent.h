@@ -22,11 +22,13 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+- (void)setType:(int)arg1;
+@property(readonly, nonatomic) int type;
 - (void)setDuration:(double)arg1;
 @property(readonly, nonatomic) double duration;
 - (void)setLabel:(id)arg1;
 @property(readonly, copy, nonatomic) INSpeakableString *label;
-- (id)initWithLabel:(id)arg1 duration:(double)arg2;
+- (id)initWithLabel:(id)arg1 duration:(double)arg2 type:(int)arg3;
 - (id)_categoryVerb;
 - (int)_intentCategory;
 - (void)_setMetadata:(id)arg1;

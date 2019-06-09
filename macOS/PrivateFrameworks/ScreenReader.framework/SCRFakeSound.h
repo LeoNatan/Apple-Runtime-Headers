@@ -4,28 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSProxy.h>
-
-@class NSString, SCRSound;
+#import <ScreenReader/SCRSound.h>
 
 __attribute__((visibility("hidden")))
-@interface SCRFakeSound : NSProxy
+@interface SCRFakeSound : SCRSound
 {
-    SCRSound *_realSound;
-    NSString *_name;
 }
 
-- (id)forwardingTargetForSelector:(SEL)arg1;
 - (void)audioCompletedCleanup;
 - (BOOL)isPlaying;
 - (BOOL)stopImmediately;
 - (BOOL)stop;
 - (BOOL)play;
-- (void)dealloc;
-- (id)initWithData:(id)arg1;
-- (id)initWithContentsOfFile:(id)arg1 byReference:(BOOL)arg2;
-- (id)initWithContentsOfURL:(id)arg1 byReference:(BOOL)arg2;
-- (id)init;
 
 @end
 

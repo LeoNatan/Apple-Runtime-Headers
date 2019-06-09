@@ -7,6 +7,28 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (MCFormatFlowedSupport)
++ (id)stringFromMimeEnrichedString:(id)arg1;
++ (id)htmlStringFromMimeEnrichedString:(id)arg1;
++ (id)htmlStringFromMimeRichTextString:(id)arg1;
++ (id)contentIDStringFromCidUrl:(id)arg1;
++ (id)messageIDStringWithDomainHint:(id)arg1;
++ (id)htmlForAttachmentWithContentID:(id)arg1;
++ (id)htmlForAttachment:(id)arg1;
++ (id)newURLForContentID:(id)arg1 percentEscaped:(BOOL)arg2;
 - (id)convertFromFlowedText:(unsigned long long)arg1;
+- (id)bestMimeCharsetUsingHint:(unsigned long long)arg1;
+- (id)decodeMimeMessageIDList;
+- (id)decodeMimeAddressList;
+- (id)decodeMimeHeaderValueWithCharsetHint:(id)arg1 detectOtherEncodings:(BOOL)arg2 fromWindows:(BOOL)arg3;
+- (id)encodedHeaderDataWithKey:(id)arg1 encodingHint:(unsigned long long)arg2;
+- (id)stringByRemovingCharactersInSet:(id)arg1;
+- (id)stringByReplacingNonBreakingSpacesWithString:(id)arg1;
+- (id)newStringByApplyingBodyClassName:(id)arg1;
+- (id)stringByApplyingBodyClassName:(id)arg1;
+- (id)stringByReplacingString:(id)arg1 withString:(id)arg2;
+- (long long)caseInsensitiveCompareExcludingXDash:(id)arg1;
+- (BOOL)isEqualToStringIgnoringCase:(id)arg1;
+- (BOOL)isEqualToStringIgnoreCaseAndDiacritics:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *stringSuitableForHTML;
 @end
 

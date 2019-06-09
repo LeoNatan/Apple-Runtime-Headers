@@ -10,7 +10,6 @@
 
 @class NSMutableDictionary, NSOperationQueue, NSString, SSDownloadManager;
 
-__attribute__((visibility("hidden")))
 @interface NSAsyncSSDownloadManager : NSObject <SSDownloadManagerObserver>
 {
     SSDownloadManager *_manager;

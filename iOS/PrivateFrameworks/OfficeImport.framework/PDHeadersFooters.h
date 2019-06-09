@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSString *mFooter;
 }
 
+- (void).cxx_destruct;
 - (void)setFooter:(id)arg1;
 - (id)footer;
 - (void)setHeader:(id)arg1;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasNowDateTime;
 - (void)setHasDateTime:(_Bool)arg1;
 - (_Bool)hasDateTime;
-- (void)dealloc;
 
 @end
 

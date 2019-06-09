@@ -8,5 +8,6 @@
 
 @interface UILabel (Linguistic)
 - (unsigned int)numberOfWordsInText;
+- (void)NTKSetAttributedText:(id)arg1 withDynamicTrackingFactor:(float)arg2;
 @end
 

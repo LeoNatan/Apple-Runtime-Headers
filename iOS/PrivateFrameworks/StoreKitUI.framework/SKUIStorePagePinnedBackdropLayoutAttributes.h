@@ -10,6 +10,7 @@
 
 @class NSString, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStorePagePinnedBackdropLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying>
 {
     UIColor *_backdropColor;

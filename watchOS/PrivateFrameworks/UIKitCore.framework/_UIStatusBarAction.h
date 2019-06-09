@@ -16,7 +16,7 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) CDUnknownBlockType block; // @synthesize block=_block;
 - (void).cxx_destruct;
-- (void)performWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)performWithStatusBar:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

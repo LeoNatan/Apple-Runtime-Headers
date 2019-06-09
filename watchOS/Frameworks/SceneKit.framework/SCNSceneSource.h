@@ -19,7 +19,6 @@
     NSDictionary *_sceneSourceOptions;
 }
 
-+ (void)patchColorSecureDecodingIfNeeded;
 + (id)sceneFileTypes;
 + (id)sceneTypes;
 + (id)sceneSourceWithData:(id)arg1 options:(id)arg2;

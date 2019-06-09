@@ -22,7 +22,6 @@
     NSNotificationCenter *_notificationCenter;
 }
 
-+ (void)updateTimerShortcutItem;
 + (void)setDefaultDuration:(double)arg1;
 + (double)defaultDuration;
 + (void)warmUp;

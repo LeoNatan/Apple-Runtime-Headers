@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)_observer_didRepositionLayer:(id)arg1 fromIndex:(unsigned long long)arg2 toIndex:(unsigned long long)arg3;
 - (void)_observer_didStopTrackingLayers;
+- (void)_observer_didStartTrackingLayers;
 - (void)_observer_willStartTrackingLayers;
 - (void)_enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

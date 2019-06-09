@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HDSQLiteStatementCache, NSMutableArray, NSMutableDictionary, NSURL;
+@class HDSQLiteStatementCache, NSMutableArray, NSMutableDictionary, NSNumber, NSURL;
 @protocol HDSQLiteDatabaseDelegate;
 
 @interface HDSQLiteDatabase : NSObject
@@ -21,10 +21,9 @@
     NSMutableArray *_onCommitBlocks;
     NSMutableArray *_onRollbackBlocks;
     _Bool _writer;
-    _Bool _secureDeleteEnabled;
     _Bool _checkpointRequired;
-    NSURL *_fileURL;
     id <HDSQLiteDatabaseDelegate> _delegate;
+    NSURL *_fileURL;
     long long _cacheScope;
     HDSQLiteStatementCache *_statementCache;
 }
@@ -37,10 +36,9 @@
 @property(readonly, nonatomic) HDSQLiteStatementCache *statementCache; // @synthesize statementCache=_statementCache;
 @property(nonatomic) long long cacheScope; // @synthesize cacheScope=_cacheScope;
 @property(nonatomic) _Bool checkpointRequired; // @synthesize checkpointRequired=_checkpointRequired;
-@property(nonatomic) __weak id <HDSQLiteDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) _Bool secureDeleteEnabled; // @synthesize secureDeleteEnabled=_secureDeleteEnabled;
 @property(nonatomic, getter=isWriter) _Bool writer; // @synthesize writer=_writer;
 @property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
+@property(nonatomic) __weak id <HDSQLiteDatabaseDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_statementCache;
 - (id)dumpSchemaWithError:(id *)arg1;
@@ -65,7 +63,7 @@
 - (void)onCommit:(CDUnknownBlockType)arg1 orRollback:(CDUnknownBlockType)arg2;
 - (_Bool)_integerValueForPragma:(id)arg1 databaseName:(id)arg2 value:(long long *)arg3 error:(id *)arg4;
 - (_Bool)_setPragma:(id)arg1 integerValue:(long long)arg2 withDatabaseName:(id)arg3 error:(id *)arg4;
-- (id)lastInsertRowID;
+@property(readonly, copy, nonatomic) NSNumber *lastInsertRowID;
 - (long long)userVersionWithDatabaseName:(id)arg1 error:(id *)arg2;
 - (_Bool)setUserVersion:(long long)arg1 withDatabaseName:(id)arg2 error:(id *)arg3;
 - (_Bool)_executeSQL:(id)arg1 cache:(_Bool)arg2 error:(id *)arg3 bindingHandler:(CDUnknownBlockType)arg4 enumerationHandler:(CDUnknownBlockType)arg5;

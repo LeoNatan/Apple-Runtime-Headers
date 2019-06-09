@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class UIStatusBar, UIStatusBar_Base, UISystemNavigationAction;
+@class UIStatusBar_Base, UISystemNavigationAction;
 
 @protocol UIStatusBarStyleDelegate <NSObject>
 - (void)statusBar:(UIStatusBar_Base *)arg1 didAnimateFromHeight:(float)arg2 toHeight:(float)arg3 animation:(int)arg4;
@@ -14,8 +14,8 @@
 - (int)statusBar:(UIStatusBar_Base *)arg1 styleForRequestedStyle:(int)arg2 overrides:(int)arg3;
 
 @optional
-- (void)statusBar:(UIStatusBar *)arg1 didTriggerButtonType:(int)arg2 withAction:(int)arg3 context:(id)arg4;
-- (void)statusBar:(UIStatusBar *)arg1 didTriggerButtonType:(int)arg2 withAction:(int)arg3;
+- (void)statusBar:(UIStatusBar_Base *)arg1 didTriggerButtonType:(int)arg2 withAction:(int)arg3 context:(id)arg4;
+- (void)statusBar:(UIStatusBar_Base *)arg1 didTriggerButtonType:(int)arg2 withAction:(int)arg3;
 - (UISystemNavigationAction *)statusBarSystemNavigationAction:(UIStatusBar_Base *)arg1;
 @end
 

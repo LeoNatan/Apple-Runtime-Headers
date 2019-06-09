@@ -6,17 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectContext, NSMutableDictionary, NSPersistentStoreCoordinator, NSString;
+@class NSDictionary, NSManagedObjectContext, NSPersistentStoreCoordinator, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface ACDDatabaseMigrator : NSObject
 {
     NSManagedObjectContext *_migrationContext;
     NSPersistentStoreCoordinator *_privateCoordinator;
-    NSPersistentStoreCoordinator *_realCoordinator;
-    NSString *_databasePath;
-    NSMutableDictionary *_realOptions;
+    NSURL *_databaseURL;
+    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
+    NSDictionary *_storeOptions;
 }
 
++ (id)new;
+@property(readonly, copy, nonatomic) NSDictionary *storeOptions; // @synthesize storeOptions=_storeOptions;
+@property(readonly, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator; // @synthesize persistentStoreCoordinator=_persistentStoreCoordinator;
+@property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 - (void).cxx_destruct;
 - (void)_postProcessMigrationFromVersion:(long long)arg1 migrationData:(id)arg2;
 - (long long)_versionForModel:(id)arg1;
@@ -27,8 +32,9 @@
 - (void)_migrateNameAttributeOfDataclassEntities;
 - (void)_migrateOptionsAttributeOfAuthorizatinEntitiesFromModelVersion:(long long)arg1;
 - (void)_migrateAccessAuthorizationsToTCCFromModelVersion:(long long)arg1;
-- (_Bool)run;
-- (id)initForDatabaseAtPath:(id)arg1 persistentStoreCoordinator:(id)arg2 options:(id)arg3;
+- (_Bool)runReturningError:(id *)arg1;
+- (id)initForDatabaseAtURL:(id)arg1 persistentStoreCoordinator:(id)arg2 storeOptions:(id)arg3;
+- (id)init;
 
 @end
 

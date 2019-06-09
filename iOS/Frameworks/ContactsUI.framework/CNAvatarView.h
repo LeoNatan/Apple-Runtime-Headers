@@ -26,6 +26,7 @@
     _Bool _asynchronousRendering;
     _Bool _allowsAnimation;
     _Bool _prohibitsPersonaFetch;
+    UIView *_forcePressView;
     unsigned long long _style;
     CNContactStore *_contactStore;
     PRPersonaStore *_personaStore;
@@ -33,7 +34,6 @@
     NSString *_name;
     NSString *_message;
     id <CNAvatarViewDelegate> _delegate;
-    UIView *_forcePressView;
     id <CNUILikenessRendering> _imageRenderer;
     id <CNCancelable> _rendererToken;
     UIImageView *_imageView;
@@ -41,6 +41,7 @@
     UINavigationController *_contactViewNavigationController;
     CNAvatarCardController *_cardController;
     id <CNSchedulerProvider> _schedulerProvider;
+    unsigned long long _stateCaptureHandle;
     UIImage *_overrideImage;
     long long _monogrammerStyle;
 }
@@ -59,6 +60,7 @@
 @property(retain, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
 @property _Bool registeredContactAction; // @synthesize registeredContactAction=_registeredContactAction;
 @property _Bool registeredInNotifier; // @synthesize registeredInNotifier=_registeredInNotifier;
+@property(nonatomic) unsigned long long stateCaptureHandle; // @synthesize stateCaptureHandle=_stateCaptureHandle;
 @property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) CNAvatarCardController *cardController; // @synthesize cardController=_cardController;
 @property(retain, nonatomic) UINavigationController *contactViewNavigationController; // @synthesize contactViewNavigationController=_contactViewNavigationController;
@@ -66,7 +68,6 @@
 @property(copy, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) id <CNCancelable> rendererToken; // @synthesize rendererToken=_rendererToken;
 @property(retain, nonatomic) id <CNUILikenessRendering> imageRenderer; // @synthesize imageRenderer=_imageRenderer;
-@property(nonatomic) __weak UIView *forcePressView; // @synthesize forcePressView=_forcePressView;
 @property(nonatomic) _Bool showsContactOnTap; // @synthesize showsContactOnTap=_showsContactOnTap;
 @property(nonatomic) __weak id <CNAvatarViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
@@ -85,6 +86,7 @@
 @property(readonly, nonatomic) UIView *transitioningView;
 - (void)contactDidChange:(id)arg1;
 - (void)didMoveToWindow;
+@property(nonatomic) __weak UIView *forcePressView; // @synthesize forcePressView=_forcePressView;
 - (void)_updateCardActions;
 - (void)avatarCardControllerDidDismiss:(id)arg1;
 - (void)avatarCardControllerWillDismiss:(id)arg1;
@@ -114,8 +116,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
-- (id)initWithImageRenderer:(id)arg1 threeDTouchEnabled:(_Bool)arg2 style:(unsigned long long)arg3 schedulerProvider:(id)arg4;
-- (id)initWithImageRenderer:(id)arg1 threeDTouchEnabled:(_Bool)arg2;
+- (id)initWithImageRenderer:(id)arg1 threeDTouchEnabled:(_Bool)arg2 contactStore:(id)arg3 style:(unsigned long long)arg4 schedulerProvider:(id)arg5;
+- (id)initWithImageRenderer:(id)arg1 threeDTouchEnabled:(_Bool)arg2 contactStore:(id)arg3;
 - (id)initWithSettings:(id)arg1;
 - (id)initWithContactStore:(id)arg1 personaStore:(id)arg2 threeDTouchEnabled:(_Bool)arg3;
 - (id)descriptorForRequiredKeys;

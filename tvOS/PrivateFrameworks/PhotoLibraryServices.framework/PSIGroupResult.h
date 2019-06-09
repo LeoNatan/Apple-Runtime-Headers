@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/NSCopying-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSMutableSet, NSString;
 @protocol OS_dispatch_queue, PSIGroupResultDelegate;
 
 @interface PSIGroupResult : NSObject <NSCopying>
@@ -18,50 +18,55 @@
     NSString *_owningContentString;
     NSMutableArray *_assetUUIDs;
     NSMutableArray *_collectionResults;
-    NSMutableArray *_tripResults;
     _Bool _didFetchOwningContentString;
+    NSMutableSet *_sceneGroupsIds;
+    short _dedupingSkippedCategory;
     float _score;
     NSString *_transientToken;
     NSArray *_groups;
     const struct __CFArray *_assetIds;
     const struct __CFArray *_collectionIds;
-    const struct __CFArray *_tripIds;
 }
 
 @property(nonatomic) __weak id <PSIGroupResultDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) const struct __CFArray *tripIds; // @synthesize tripIds=_tripIds;
+@property(nonatomic) short dedupingSkippedCategory; // @synthesize dedupingSkippedCategory=_dedupingSkippedCategory;
 @property(retain, nonatomic) const struct __CFArray *collectionIds; // @synthesize collectionIds=_collectionIds;
 @property(retain, nonatomic) const struct __CFArray *assetIds; // @synthesize assetIds=_assetIds;
 @property(copy, nonatomic) NSArray *groups; // @synthesize groups=_groups;
 @property(nonatomic) float score; // @synthesize score=_score;
 @property(copy, nonatomic) NSString *transientToken; // @synthesize transientToken=_transientToken;
 - (void).cxx_destruct;
-- (void)resolveObjectsWithAssetCache:(id)arg1 collectionCache:(id)arg2 tripCache:(id)arg3;
-- (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 tripResults:(_Bool)arg3 assetCountLimit:(unsigned long long)arg4 collectionCountLimit:(unsigned long long)arg5 tripCountLimit:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
-- (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 tripResults:(_Bool)arg3 count:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)resolveObjectsWithAssetCache:(id)arg1 collectionCache:(id)arg2;
+- (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 assetCountLimit:(unsigned long long)arg3 collectionCountLimit:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)fetchNextAssetUUIDs:(_Bool)arg1 collectionResults:(_Bool)arg2 count:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetchNextAssetUUIDs:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)_prepareForFetchWithAssetCountLimit:(unsigned long long)arg1 collectionCountLimit:(unsigned long long)arg2 tripCountLimit:(unsigned long long)arg3 outAssetRange:(struct _NSRange *)arg4 outCollectionRange:(struct _NSRange *)arg5 outTripRange:(struct _NSRange *)arg6 outFetchOwningContentString:(_Bool *)arg7;
-@property(readonly) NSArray *tripResults;
-@property(readonly) NSArray *collectionResults;
-@property(readonly) NSArray *assetUUIDs;
-@property(readonly) NSString *owningContentString;
+- (id)_prepareForFetchWithAssetCountLimit:(unsigned long long)arg1 collectionCountLimit:(unsigned long long)arg2 outAssetRange:(struct _NSRange *)arg3 outCollectionRange:(struct _NSRange *)arg4 outFetchOwningContentString:(_Bool *)arg5;
+@property(readonly) __weak NSArray *collectionResults;
+@property(readonly) __weak NSArray *assetUUIDs;
+@property(readonly) __weak NSString *owningContentString;
+@property(readonly, nonatomic) _Bool hasDateFilterFromImplicitToken;
+@property(readonly, nonatomic) _Bool isDateFilterPartiallyFromFullSearchText;
 - (id)dateFilterGroupSnapshot;
-- (id)searchTextGroupSnapshot;
+- (id)firstSearchTextGroupSnapshot;
+- (id)fullSearchTextGroupSnapshot;
 - (_Bool)isMatchedByIdentifierAtIndex:(long long)arg1;
 - (_Bool)isContentStringTextSearchableAtIndex:(long long)arg1;
 - (long long)categoryAtIndex:(long long)arg1;
+- (id)normalizedStringAtIndex:(long long)arg1;
 - (id)contentStringAtIndex:(long long)arg1;
+- (id)groupRangesAtIndex:(long long)arg1;
 - (id)matchRangesAtIndex:(long long)arg1;
 - (id)tokensAtIndex:(long long)arg1;
 - (unsigned long long)groupCount;
-@property(readonly, retain, nonatomic) NSArray *groupsMatchRanges;
-@property(readonly, retain, nonatomic) NSArray *lookupIdentifiers;
-@property(readonly, retain, nonatomic) NSArray *contentStrings;
-@property(readonly, retain, nonatomic) NSArray *groupsSearchTokens;
+@property(readonly, nonatomic) NSArray *groupsMatchRanges;
+@property(readonly, nonatomic) NSArray *lookupIdentifiers;
+@property(readonly, nonatomic) NSArray *contentStrings;
+@property(readonly, nonatomic) NSArray *groupsSearchTokens;
 @property(readonly, nonatomic) unsigned long long matchCount;
-@property(readonly, nonatomic) unsigned long long tripMatchCount;
 @property(readonly, nonatomic) unsigned long long collectionMatchCount;
 @property(readonly, nonatomic) unsigned long long assetMatchCount;
+@property(readonly) NSMutableSet *sceneGroupsIds;
+- (id)normalizedUnitTestDescription;
 - (id)unitTestDescription;
 - (id)debugDescription;
 - (id)description;

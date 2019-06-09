@@ -25,11 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct CLLocationCoordinate2D {
-    double _field1;
-    double _field2;
-};
-
 struct NSDictionary {
     Class _field1;
 };

@@ -6,19 +6,24 @@
 
 #import <objc/NSObject.h>
 
+#import <SafariShared/WBSCloudHistoryServiceProtocol-Protocol.h>
 #import <SafariShared/WBSCloudKitThrottlerDataStore-Protocol.h>
 
-@class NSMutableDictionary, NSString, WBSCloudHistoryConfiguration, WBSCloudHistoryPushAgentProxy, WBSCloudKitThrottler, WBSHistory, WBSOneShotTimer;
-@protocol NSObject, OS_dispatch_queue, WBSCloudHistoryDataStore;
+@class NSData, NSMutableArray, NSMutableDictionary, NSString, WBSCloudHistoryConfiguration, WBSCloudHistoryPushAgentProxy, WBSCloudKitThrottler, WBSOneShotTimer;
+@protocol OS_dispatch_queue, WBSCloudHistoryDataStore, WBSCloudKitContainerManateeObserving, WBSHistoryServiceDatabaseProtocol;
 
-@interface WBSCloudHistory : NSObject <WBSCloudKitThrottlerDataStore>
+@interface WBSCloudHistory : NSObject <WBSCloudHistoryServiceProtocol, WBSCloudKitThrottlerDataStore>
 {
     NSObject<OS_dispatch_queue> *_cloudHistoryQueue;
-    WBSHistory *_history;
+    id <WBSHistoryServiceDatabaseProtocol> _database;
+    NSData *_pushThrottlerData;
+    NSData *_fetchThrottlerData;
+    NSData *_syncCircleSizeRetrievalThrottlerData;
+    NSData *_longLivedSaveOperationData;
+    unsigned long long _syncCircleSize;
     BOOL _cloudHistoryEnabled;
     BOOL _saveChangesWhenHistoryLoads;
     BOOL _fetchChangesWhenHistoryLoads;
-    id <NSObject> _historyWasLoadedObserver;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _saveOperationSuddenTerminationDisabler;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _fetchOperationSuddenTerminationDisabler;
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _replayLongLivedSaveOperationSuddenTerminationDisabler;
@@ -37,6 +42,12 @@
     NSMutableDictionary *_syncCircleSizeRetrievalCompletionHandlersByOperation;
     CDUnknownBlockType _fetchCompletionHandler;
     CDUnknownBlockType _saveCompletionHandler;
+    id <WBSCloudKitContainerManateeObserving> _containerManateeObserver;
+    NSMutableArray *_storeDeterminationCompletionBlocks;
+    long long _currentManateeState;
+    BOOL _manateeStateNeedsUpdate;
+    BOOL _isWaitingForPCSIdentityUpdate;
+    BOOL _determiningStoreType;
     BOOL _removedHistoryItemsArePendingSave;
 }
 
@@ -44,6 +55,10 @@
 @property(nonatomic) BOOL removedHistoryItemsArePendingSave; // @synthesize removedHistoryItemsArePendingSave=_removedHistoryItemsArePendingSave;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)fetchDateOfNextPermittedSaveChangesAttemptWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)resetForAccountChangeWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)updateConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_resetForAccountChangeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetForAccountChange;
 - (void)_resetCloudHistoryDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_setCachedNumberOfDevicesInSyncCircle:(unsigned long long)arg1;
@@ -62,9 +77,7 @@
 - (long long)_resultFromError:(id)arg1;
 - (long long)_estimatedPriorityForPotentialSaveAttempt;
 - (long long)_priorityForSaveWithVisits:(id)arg1 tombstones:(id)arg2 bypassingThrottler:(BOOL)arg3;
-- (void)_historyItemsWereRemoved:(id)arg1;
 - (void)_performBlockAsynchronouslyOnCloudHistoryQueueAfterHistoryHasLoaded:(CDUnknownBlockType)arg1;
-- (void)_historyWasLoaded:(id)arg1;
 - (void)_registerForHistoryWasLoadedNotificationIfNecessary;
 - (void)_fetchChangesWhenHistoryLoads;
 - (void)_saveChangesWhenHistoryLoads;
@@ -82,6 +95,11 @@
 - (void)_replayPersistedLongLivedSaveOperationIfNecessary;
 - (void)_pruneTombstonesThatCanNoLongerMatchVisitsFetchedFromCloud;
 - (void)_fetchAndMergeChangesWithServerChangeTokenData:(id)arg1 withPriority:(long long)arg2;
+- (void)_deleteAllCloudHistoryAndSaveAgain;
+- (void)_transitionCloudHistoryStoreToManateeState:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_handleManateeErrorIfNeeded:(id)arg1;
+- (id)_manateeErrorCode:(id)arg1;
+- (void)_pcsIdentitiesChangedNotification:(id)arg1;
 - (void)_setServerChangeToken:(id)arg1;
 - (void)_getServerChangeTokenDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_callAndResetFetchCompletionHandlerWithError:(id)arg1;
@@ -101,8 +119,9 @@
 - (BOOL)_hasCloudHistoryEntitlement;
 @property(nonatomic, getter=isCloudHistoryEnabled) BOOL cloudHistoryEnabled;
 - (void)dealloc;
-- (id)initWithHistory:(id)arg1 configuration:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (id)initWithHistory:(id)arg1 configuration:(id)arg2;
+- (void)_determineCloudHistoryStoreWithCompletion:(CDUnknownBlockType)arg1;
+- (id)initWithDatabase:(id)arg1 configuration:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)initWithDatabase:(id)arg1 configuration:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,8 +20,6 @@
     _UIFeedbackParameters *_hapticParameters;
     long long _audioOutputMode;
     long long _hapticOutputMode;
-    id <_UIFeedbackPlayer> _player;
-    NSMutableArray *_playerDequeueBlocks;
     _UIFeedbackPattern *_parentPattern;
     double _delay;
     NSDictionary *_debugDictionary;
@@ -29,6 +27,7 @@
     NSString *_category;
     unsigned long long _eventToken;
     id <UICoordinateSpace> _coordinateSpace;
+    id <_UIFeedbackPlayer> _player;
 }
 
 + (id)feedbackWithDictionaryRepresentation:(id)arg1;
@@ -36,6 +35,7 @@
 + (Class)classForType:(id)arg1;
 + (id)type;
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic, getter=_player, setter=_setPlayer:) id <_UIFeedbackPlayer> player; // @synthesize player=_player;
 @property(nonatomic, getter=_coordinateSpace, setter=_setCoordinateSpace:) __weak id <UICoordinateSpace> coordinateSpace; // @synthesize coordinateSpace=_coordinateSpace;
 @property(nonatomic, getter=_eventToken, setter=_setEventToken:) unsigned long long eventToken; // @synthesize eventToken=_eventToken;
 @property(retain, nonatomic, getter=_category, setter=_setCategory:) NSString *category; // @synthesize category=_category;
@@ -43,8 +43,6 @@
 @property(readonly, nonatomic, getter=_debugDictionary) NSDictionary *debugDictionary; // @synthesize debugDictionary=_debugDictionary;
 @property(nonatomic, getter=_delay, setter=_setDelay:) double delay; // @synthesize delay=_delay;
 @property(nonatomic, getter=_parentPattern, setter=_setParentPattern:) __weak _UIFeedbackPattern *parentPattern; // @synthesize parentPattern=_parentPattern;
-@property(retain, nonatomic, getter=_playerDequeueBlocks, setter=_setPlayerDequeueBlocks:) NSMutableArray *playerDequeueBlocks; // @synthesize playerDequeueBlocks=_playerDequeueBlocks;
-@property(retain, nonatomic, getter=_player, setter=_setPlayer:) id <_UIFeedbackPlayer> player; // @synthesize player=_player;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing; // @synthesize playing=_playing;
 @property(nonatomic) float position; // @synthesize position=_position;
 @property(nonatomic) long long hapticOutputMode; // @synthesize hapticOutputMode=_hapticOutputMode;
@@ -52,14 +50,15 @@
 @property(readonly, nonatomic) _UIFeedbackParameters *hapticParameters; // @synthesize hapticParameters=_hapticParameters;
 @property(readonly, nonatomic) _UIFeedbackParameters *audioParameters; // @synthesize audioParameters=_audioParameters;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_effectiveFeedbackData) NSArray *effectiveFeedbackData;
 - (id)description;
 - (void)stop;
 - (void)play;
-- (void)_playAtTime:(double)arg1 engine:(id)arg2;
+- (void)_playedAtTime:(double)arg1 engine:(id)arg2;
 @property(readonly, nonatomic, getter=_effectiveDelay) double effectiveDelay;
 @property(readonly, nonatomic, getter=_allSystemSoundIDs) NSIndexSet *allSystemSoundIDs;
 @property(readonly, nonatomic, getter=_allEventTypes) NSIndexSet *allEventTypes;
-@property(readonly, nonatomic, getter=_allFeedbacks) NSArray *allFeedbacks;
+@property(readonly, nonatomic, getter=_individualFeedbacks) NSArray *individualFeedbacks;
 @property(readonly, nonatomic, getter=_effectiveSystemSoundID) unsigned int effectiveSystemSoundID;
 @property(readonly, nonatomic, getter=_effectiveEventType) unsigned long long effectiveEventType;
 @property(readonly, nonatomic, getter=_effectivePlayableFeedbackTypes) unsigned long long effectivePlayableFeedbackTypes;

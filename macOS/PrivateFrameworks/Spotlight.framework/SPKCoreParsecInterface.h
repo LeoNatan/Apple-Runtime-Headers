@@ -18,7 +18,6 @@
     NSString *_userAgentString;
     NSString *_queryLanguage;
     BOOL _parsecEnabled;
-    BOOL _bingEnabled;
     long long _nextQueryId;
     PRSSearchSession *_searchSession;
     NSObject<OS_dispatch_queue> *_sharedQueue;
@@ -45,18 +44,12 @@
 @property(retain) NSObject<OS_dispatch_queue> *sharedQueue; // @synthesize sharedQueue=_sharedQueue;
 @property(retain) PRSSearchSession *searchSession; // @synthesize searchSession=_searchSession;
 @property long long nextQueryId; // @synthesize nextQueryId=_nextQueryId;
-@property BOOL bingEnabled; // @synthesize bingEnabled=_bingEnabled;
 @property BOOL parsecEnabled; // @synthesize parsecEnabled=_parsecEnabled;
 - (void).cxx_destruct;
-- (id)convertResult:(id)arg1;
-- (id)createObjectForGenericTemplate;
-- (id)createObjectForSimpleTemplate;
-- (id)createObjectForMapsTemplate;
 - (void)unitConversion:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)deactivate;
 - (void)connectionChanged:(CDUnknownBlockType)arg1;
 - (void)bagFetchSuccessCallback;
-- (void)activate:(double)arg1 isSiri:(BOOL)arg2;
 - (void)activate:(double)arg1;
 - (void)getSQFDataAndParsecOrderWithReply:(CDUnknownBlockType)arg1;
 - (void)getRankingKnobsWithReply:(CDUnknownBlockType)arg1;
@@ -66,8 +59,7 @@
 - (void)query:(id)arg1 didFinishWithResults:(id)arg2 withSuggestions:(id)arg3 withCorrections:(id)arg4;
 - (void)cancelQuery:(long long)arg1;
 - (void)resumeQuery:(long long)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)queryWithString:(id)arg1 externalId:(unsigned int)arg2 scaleFactor:(double)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)setBingState:(BOOL)arg1;
+- (void)queryWithString:(id)arg1 keyboardLanguage:(id)arg2 externalId:(unsigned int)arg3 scaleFactor:(double)arg4 withReply:(CDUnknownBlockType)arg5;
 - (void)setParsecState:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;

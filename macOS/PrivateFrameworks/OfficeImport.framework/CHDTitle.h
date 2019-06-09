@@ -8,6 +8,7 @@
 
 @class CHDChart, CHDFormula, EDString, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDTitle : NSObject
 {
     CHDChart *mChart;

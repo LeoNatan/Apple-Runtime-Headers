@@ -13,14 +13,19 @@
 @interface IDSMessage : IDSBaseMessage <NSCopying>
 {
     NSNumber *_wantsDeliveryStatus;
-    NSDictionary *_deliveryStatusContext;
     NSNumber *_version;
+    NSDictionary *_deliveryStatusContext;
+    BOOL _wantsCertifiedDelivery;
 }
 
 @property(copy) NSNumber *version; // @synthesize version=_version;
 @property(copy) NSDictionary *deliveryStatusContext; // @synthesize deliveryStatusContext=_deliveryStatusContext;
+@property BOOL wantsCertifiedDelivery; // @synthesize wantsCertifiedDelivery=_wantsCertifiedDelivery;
 @property(copy) NSNumber *wantsDeliveryStatus; // @synthesize wantsDeliveryStatus=_wantsDeliveryStatus;
 - (void).cxx_destruct;
+- (id)_objectForKeyFromMadridBag:(id)arg1;
+- (id)_madridServerBag;
+- (BOOL)_shouldUseJSONForEncoding;
 - (BOOL)wantsUserAgentInHeaders;
 - (id)userAgentHeaderString;
 - (id)messageBody;

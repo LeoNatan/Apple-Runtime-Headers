@@ -26,10 +26,13 @@
 @property(readonly, nonatomic) int rssi; // @synthesize rssi=_rssi;
 @property(readonly, nonatomic) NSString *mac; // @synthesize mac=_mac;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMac:(id)arg1 rssi:(int)arg2 channel:(int)arg3 age:(double)arg4 date:(id)arg5;
+- (id)init;
 
 @end
 

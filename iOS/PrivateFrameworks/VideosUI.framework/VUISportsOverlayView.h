@@ -6,45 +6,56 @@
 
 #import <UIKit/UIView.h>
 
-#import <VideosUI/VUIOverlayViewProtocol-Protocol.h>
+#import <VideosUI/VUIOverlayWithMaterialRendering-Protocol.h>
 #import <VideosUI/VUIScorecardViewDelegate-Protocol.h>
+#import <VideosUI/VUISportsScoreboardManagerDelegate-Protocol.h>
 
-@class NSArray, NSOperationQueue, NSString, TVImageElement, TVViewElement, UIImage, VUIScorecardView, VUISportsOverlayLayout, VUITextBadgeView, _TVImageView;
+@class IKImageElement, IKViewElement, NSOperation, NSString, UICollectionReusableView, UIImage, VUIScorecardView, VUISportsOverlayLayout, VUISportsScoreboardViewModel, VUITextBadgeView, _TVImageView;
 
 __attribute__((visibility("hidden")))
-@interface VUISportsOverlayView : UIView <VUIScorecardViewDelegate, VUIOverlayViewProtocol>
+@interface VUISportsOverlayView : UIView <VUIScorecardViewDelegate, VUIOverlayWithMaterialRendering, VUISportsScoreboardManagerDelegate>
 {
     _Bool _textBadgeHasMaterial;
     _Bool _backgroundImageHasChanged;
+    _Bool _isHostSetup;
     UIImage *_backgroundImageForMaterialRendering;
     VUISportsOverlayLayout *_overlayLayout;
-    TVViewElement *_viewElement;
-    NSArray *_scorecardData;
-    TVViewElement *_scorecardElement;
+    VUISportsScoreboardViewModel *_scoreboardViewModel;
+    IKViewElement *_viewElement;
     VUIScorecardView *_scorecardView;
     VUITextBadgeView *_textBadge;
-    _TVImageView *_logo;
-    TVImageElement *_logoElement;
-    NSOperationQueue *_backgroundImageOperationQueue;
+    _TVImageView *_logoView;
+    IKImageElement *_logoElement;
+    NSOperation *_pendingOperation;
     UIImage *_scorecardViewBackgroundImage;
+    UICollectionReusableView *_containingCell;
+    struct CGSize _logoSize;
 }
 
 + (_Bool)_viewBackgroundImageNeedsUpdatingWithFrame:(struct CGRect)arg1 currentBackgroundImage:(id)arg2;
++ (id)_sharedDrawQueue;
 + (id)sportsOverlayViewFromElement:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
+@property(nonatomic) _Bool isHostSetup; // @synthesize isHostSetup=_isHostSetup;
+@property(nonatomic) __weak UICollectionReusableView *containingCell; // @synthesize containingCell=_containingCell;
 @property(nonatomic) _Bool backgroundImageHasChanged; // @synthesize backgroundImageHasChanged=_backgroundImageHasChanged;
 @property(retain, nonatomic) UIImage *scorecardViewBackgroundImage; // @synthesize scorecardViewBackgroundImage=_scorecardViewBackgroundImage;
-@property(retain, nonatomic) NSOperationQueue *backgroundImageOperationQueue; // @synthesize backgroundImageOperationQueue=_backgroundImageOperationQueue;
-@property(retain, nonatomic) TVImageElement *logoElement; // @synthesize logoElement=_logoElement;
-@property(retain, nonatomic) _TVImageView *logo; // @synthesize logo=_logo;
+@property(retain, nonatomic) NSOperation *pendingOperation; // @synthesize pendingOperation=_pendingOperation;
+@property(nonatomic) struct CGSize logoSize; // @synthesize logoSize=_logoSize;
+@property(retain, nonatomic) IKImageElement *logoElement; // @synthesize logoElement=_logoElement;
+@property(retain, nonatomic) _TVImageView *logoView; // @synthesize logoView=_logoView;
 @property(retain, nonatomic) VUITextBadgeView *textBadge; // @synthesize textBadge=_textBadge;
 @property(nonatomic) _Bool textBadgeHasMaterial; // @synthesize textBadgeHasMaterial=_textBadgeHasMaterial;
 @property(retain, nonatomic) VUIScorecardView *scorecardView; // @synthesize scorecardView=_scorecardView;
-@property(retain, nonatomic) TVViewElement *scorecardElement; // @synthesize scorecardElement=_scorecardElement;
-@property(copy, nonatomic) NSArray *scorecardData; // @synthesize scorecardData=_scorecardData;
-@property(retain, nonatomic) TVViewElement *viewElement; // @synthesize viewElement=_viewElement;
+@property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
+@property(retain, nonatomic) VUISportsScoreboardViewModel *scoreboardViewModel; // @synthesize scoreboardViewModel=_scoreboardViewModel;
 @property(retain, nonatomic) VUISportsOverlayLayout *overlayLayout; // @synthesize overlayLayout=_overlayLayout;
 @property(retain, nonatomic) UIImage *backgroundImageForMaterialRendering; // @synthesize backgroundImageForMaterialRendering=_backgroundImageForMaterialRendering;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_teardownHosting;
+- (void)_setupHosting;
+- (void)_unregisterOverlayView;
+- (void)_registerOverlayView;
 - (void)_redrawView:(id)arg1 withDuration:(double)arg2;
 - (_Bool)_scorecardViewBackgroundImageNeedsUpdating;
 - (_Bool)_scorecardViewRequiresBackgroundImage;
@@ -54,22 +65,23 @@ __attribute__((visibility("hidden")))
 - (void)_redrawTextBadgeWithDuration:(double)arg1;
 - (void)_updateBackgroundImagesWithCompletedOperation:(id)arg1;
 - (void)_updateBackgroundMaterialImagesWithBackgroundImageSize:(struct CGSize)arg1 performSynchronously:(_Bool)arg2;
-- (_Bool)_updateScoreView:(id)arg1;
-- (void)_updateLogo:(id)arg1;
 - (_Bool)_updateTextBadge:(id)arg1;
-- (void)_layoutWithElement:(id)arg1;
-- (void)_updateLogoPosition;
 - (void)_updateBadgePosition;
-- (int)backgroundBlendModeForElementInRow:(long long)arg1 atIndex:(long long)arg2;
+- (_Bool)_updateScoreView:(id)arg1;
+- (id)getJSContextDictionary;
+- (void)updateScoreboard:(id)arg1;
+- (int)backgroundBlendModeForScoreValueInRow:(long long)arg1 atIndex:(long long)arg2;
 - (id)backgroundImageForScorecardViewMaterial:(id)arg1;
 - (double)maximumWidthForScorecardView:(id)arg1;
-- (id)viewElementForScorecard:(id)arg1 inRow:(long long)arg2 atIndex:(long long)arg3;
-- (long long)numberOfElementsForScorecardView:(id)arg1 inRow:(long long)arg2;
+- (id)scoreValue:(id)arg1 inRow:(long long)arg2 atIndex:(long long)arg3;
+- (long long)numberOfScoreValuesForScorecardView:(id)arg1 inRow:(long long)arg2;
 - (long long)numberOfRowsInScorecardView:(id)arg1;
 - (long long)styleForScorecardView:(id)arg1;
 - (void)backgroundImageSizeDidChange:(struct CGSize)arg1;
 - (void)reset;
+- (void)willMoveToWindow:(id)arg1;
 - (void)layoutSubviews;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

@@ -32,5 +32,9 @@
 - (void)startUpdatingHeading;
 - (void)stopUpdatingLocation;
 - (void)startUpdatingLocation;
+
+@optional
+- (id)initWithEffectiveBundleIdentifier:(NSString *)arg1;
+- (id)initWithEffectiveBundle:(NSBundle *)arg1;
 @end
 

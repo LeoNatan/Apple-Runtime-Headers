@@ -6,7 +6,6 @@
 
 #import <Foundation/NSProxy.h>
 
-__attribute__((visibility("hidden")))
 @interface QLDelegateProxy : NSProxy
 {
     id _firstDelegate;

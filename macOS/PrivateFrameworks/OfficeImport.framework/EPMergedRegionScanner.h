@@ -6,6 +6,7 @@
 
 #import <OfficeImport/EDProcessor.h>
 
+__attribute__((visibility("hidden")))
 @interface EPMergedRegionScanner : EDProcessor
 {
 }

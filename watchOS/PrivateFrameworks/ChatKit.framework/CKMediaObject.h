@@ -13,9 +13,11 @@
 {
     _Bool _isFromMe;
     _Bool _suppressPreviewForUnknownSender;
+    _Bool _forceInlinePreviewGeneration;
     id <CKFileTransfer> _transfer;
     NSURL *_cachedHighQualityFileURL;
     NSObject<OS_dispatch_group> *_highQualityFetchInProgressGroup;
+    unsigned int _oopPreviewRequestCount;
 }
 
 + (id)mediaClasses;
@@ -23,9 +25,12 @@
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;
 + (id)iconCache;
++ (_Bool)shouldUseTranscoderGeneratedPreviewSize;
 + (_Bool)shouldShadePreview;
 + (_Bool)shouldScaleUpPreview;
 + (_Bool)isPreviewable;
+@property(nonatomic) unsigned int oopPreviewRequestCount; // @synthesize oopPreviewRequestCount=_oopPreviewRequestCount;
+@property(nonatomic) _Bool forceInlinePreviewGeneration; // @synthesize forceInlinePreviewGeneration=_forceInlinePreviewGeneration;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *highQualityFetchInProgressGroup; // @synthesize highQualityFetchInProgressGroup=_highQualityFetchInProgressGroup;
 @property(retain, nonatomic) NSURL *cachedHighQualityFileURL; // @synthesize cachedHighQualityFileURL=_cachedHighQualityFileURL;
 @property(nonatomic) _Bool suppressPreviewForUnknownSender; // @synthesize suppressPreviewForUnknownSender=_suppressPreviewForUnknownSender;
@@ -49,7 +54,7 @@
 @property(readonly, copy, nonatomic) NSData *data;
 @property(readonly, copy, nonatomic) NSString *transferGUID;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3;
+- (id)initWithTransfer:(id)arg1 isFromMe:(_Bool)arg2 suppressPreview:(_Bool)arg3 forceInlinePreview:(_Bool)arg4;
 - (id)description;
 - (void)dealloc;
 - (id)composeImagesForEntryContentViewWidth:(float)arg1;
@@ -67,8 +72,14 @@
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (void)savePreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
 @property(readonly, copy, nonatomic) NSString *previewFilenameExtension;
+- (struct CGSize)transcodingPreviewPxSize;
+- (struct IMPreviewConstraints)transcodingPreviewConstraints;
+- (struct CGSize)transcoderGeneratedSizeForConstraints:(struct IMPreviewConstraints)arg1;
 - (id)generatePreviewFromThumbnail:(id)arg1 width:(float)arg2 orientation:(BOOL)arg3;
 - (void)_sampleImageEdges:(id)arg1 usingRect:(struct CGRect)arg2 forMostlyWhitePixels:(unsigned int *)arg3 otherPixels:(unsigned int *)arg4;
+- (struct IMPreviewConstraints)_previewConstraintsForWidth:(float)arg1;
+- (id)_transcodeControllerSharedInstance;
+- (void)generateOOPPreviewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (void)cacheAndPersistPreview:(id)arg1 orientation:(BOOL)arg2;
 - (id)fileSizeString;
@@ -83,6 +94,7 @@
 - (_Bool)shouldBeQuickLooked;
 - (_Bool)shouldShowViewer;
 - (id)location;
+- (id)richIcon;
 - (id)icon;
 - (id)subtitle;
 - (id)title;

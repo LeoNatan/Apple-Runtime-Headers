@@ -40,6 +40,7 @@
 - (struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3;
 - (struct CGRect)trackRectForBounds:(struct CGRect)arg1;
 - (id)createThumbView;
+- (struct CGColor *)trackBorderColor;
 - (void)removeTrackLayer:(id)arg1 animated:(_Bool)arg2;
 - (void)setTrackLayer:(id)arg1 animated:(_Bool)arg2;
 @property(readonly, nonatomic) CALayer *thumbLayer;

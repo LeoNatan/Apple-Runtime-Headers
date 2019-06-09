@@ -6,28 +6,31 @@
 
 #import <AppKit/NSView.h>
 
-@class NSFormatter, NSString;
-
 @interface QTHUDRemoteIndicatorView : NSView
 {
-    struct QTHUDRemoteIndicatorViewInternal *_internal;
 }
 
-+ (id)_imageNamed:(id)arg1;
 + (id)keyPathsForValuesAffectingUpdateInterval;
++ (id)_imageNamed:(id)arg1;
 + (void)initialize;
+- (id)timeFormatter;
+- (double)updateInterval;
+- (void)setTime:(double)arg1;
+- (double)time;
+- (void)setTimeFormatter:(id)arg1;
+- (void)setChapterName:(id)arg1;
+- (id)chapterName;
+- (void)setRateThresholds:(const double *)arg1 count:(unsigned long long)arg2;
+- (void)_setTrackMagnitude:(double)arg1;
+- (double)_trackMagnitude;
+- (double)rate;
+- (void)setRate:(double)arg1;
 - (void)layoutSublayersOfLayer:(id)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-@property(readonly) double updateInterval;
-@property(getter=_trackMagnitude, setter=_setTrackMagnitude:) double trackMagnitude; // @dynamic trackMagnitude;
-@property(copy) NSFormatter *timeFormatter; // @dynamic timeFormatter;
-@property(copy) NSString *chapterName; // @dynamic chapterName;
-- (void)setRateThresholds:(const double *)arg1 count:(unsigned long long)arg2;
-@property double rate; // @dynamic rate;
-@property double time; // @dynamic time;
-@property double duration; // @dynamic duration;
 - (Class)valueClassForBinding:(id)arg1;
+- (double)duration;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)setDuration:(double)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;
 

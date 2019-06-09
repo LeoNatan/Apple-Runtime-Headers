@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKSimpleAcknowledgementGlyphView.h>
 
+__attribute__((visibility("hidden")))
 @interface CKHeartAcknowledgmentGlyphView : CKSimpleAcknowledgementGlyphView
 {
 }

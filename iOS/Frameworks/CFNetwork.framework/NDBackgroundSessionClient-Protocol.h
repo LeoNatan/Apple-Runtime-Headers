@@ -6,7 +6,7 @@
 
 #import <CFNetwork/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSError, NSHTTPURLResponse, NSString, NSURL, NSURLAuthenticationChallenge, NSURLCredential, NSURLProtectionSpace, NSURLRequest, NSURLResponse, NSURLSessionTaskMetrics, NSValue;
+@class NSArray, NSData, NSDictionary, NSError, NSHTTPURLResponse, NSString, NSURL, NSURLAuthenticationChallenge, NSURLCredential, NSURLProtectionSpace, NSURLRequest, NSURLResponse, NSValue, __CFN_TaskMetrics, __CFN_TransactionMetrics;
 
 @protocol NDBackgroundSessionClient <NSObject>
 - (void)credStorage_setDefaultCredential:(NSURLCredential *)arg1 forProtectionSpace:(NSURLProtectionSpace *)arg2;
@@ -27,16 +27,15 @@
 - (void)backgroundDownloadTask:(unsigned long long)arg1 didFinishDownloadingToURL:(NSURL *)arg2 reply:(void (^)(void))arg3;
 - (void)backgroundDownloadTask:(unsigned long long)arg1 didResumeAtOffset:(long long)arg2 expectedTotalBytes:(long long)arg3;
 - (void)backgroundDownloadTask:(unsigned long long)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
-- (void)willRetryBackgroundDataTask:(unsigned long long)arg1 withError:(NSError *)arg2 timingData:(NSDictionary *)arg3;
+- (void)willRetryBackgroundDataTask:(unsigned long long)arg1 withError:(NSError *)arg2 transactionMetrics:(__CFN_TransactionMetrics *)arg3;
 - (void)backgroundDataTaskDidBecomeDownloadTask:(unsigned long long)arg1;
 - (void)backgroundTask:(unsigned long long)arg1 getAuthHeadersForResponse:(NSURLResponse *)arg2 reply:(void (^)(_Bool, NSDictionary *))arg3;
 - (void)backgroundDataTask:(unsigned long long)arg1 didReceiveData:(NSData *)arg2 withReply:(void (^)(void))arg3;
-- (void)backgroundTask:(unsigned long long)arg1 didCompleteWithError:(NSError *)arg2 info:(NSDictionary *)arg3 reply:(void (^)(void))arg4;
-- (void)backgroundTask:(unsigned long long)arg1 didFinishCollectingMetrics:(NSURLSessionTaskMetrics *)arg2 reply:(void (^)(void))arg3;
+- (void)backgroundTask:(unsigned long long)arg1 didCompleteWithError:(NSError *)arg2 taskMetrics:(__CFN_TaskMetrics *)arg3 info:(NSDictionary *)arg4 reply:(void (^)(void))arg5;
 - (void)backgroundTask:(unsigned long long)arg1 needNewBodyStream:(_Bool)arg2 withReply:(void (^)(NSFileHandle *))arg3;
 - (void)backgroundTask:(unsigned long long)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
-- (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(NSURLResponse *)arg2 timingData:(NSDictionary *)arg3 reply:(void (^)(long long))arg4;
-- (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(NSURLResponse *)arg2 timingData:(NSDictionary *)arg3;
+- (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(NSURLResponse *)arg2 transactionMetrics:(__CFN_TransactionMetrics *)arg3 reply:(void (^)(long long))arg4;
+- (void)backgroundTask:(unsigned long long)arg1 didReceiveResponse:(NSURLResponse *)arg2 transactionMetrics:(__CFN_TransactionMetrics *)arg3;
 - (void)backgroundTask:(unsigned long long)arg1 hasConnectionWaitingWithError:(NSError *)arg2;
 - (void)backgroundTask:(unsigned long long)arg1 hasConnectionWaitingWithReason:(long long)arg2;
 - (void)backgroundTaskHasConnectionWaiting:(unsigned long long)arg1;

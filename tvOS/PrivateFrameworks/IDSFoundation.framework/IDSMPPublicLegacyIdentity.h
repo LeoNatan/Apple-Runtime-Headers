@@ -13,6 +13,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)identityWithDataProtectionClass:(unsigned int)arg1 error:(id *)arg2;
 + (id)identityWithData:(id)arg1 error:(id *)arg2;
 - (id)dataRepresentationWithError:(id *)arg1;
 - (void)encodeWithCoder:(id)arg1;

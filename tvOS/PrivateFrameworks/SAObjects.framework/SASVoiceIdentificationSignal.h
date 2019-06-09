@@ -15,6 +15,7 @@
 + (id)voiceIdentificationSignalWithDictionary:(id)arg1 context:(id)arg2;
 + (id)voiceIdentificationSignal;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *selectedSharedUserId;
 @property(copy, nonatomic) NSString *resultCandidateId;
 @property(nonatomic) _Bool recordUserAudio;
 - (id)encodedClassName;

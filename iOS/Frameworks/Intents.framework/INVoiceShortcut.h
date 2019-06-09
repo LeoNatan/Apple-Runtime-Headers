@@ -9,7 +9,7 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INIntent, INShortcut, INVoiceShortcutAction, NSString, NSUUID, NSUserActivity;
+@class INShortcut, NSString, NSUUID;
 
 @interface INVoiceShortcut : NSObject <NSSecureCoding, NSCopying>
 {
@@ -30,9 +30,8 @@
 - (id)description;
 - (id)_initWithVCVoiceShortcut:(id)arg1;
 - (id)_initWithIdentifier:(id)arg1 invocationPhrase:(id)arg2 shortcut:(id)arg3;
-@property(readonly, copy, nonatomic) INVoiceShortcutAction *action;
-@property(readonly, nonatomic) NSUserActivity *userActivity;
-@property(readonly, nonatomic) INIntent *intent;
+- (id)userActivity;
+- (id)intent;
 - (id)initWithUserActivity:(id)arg1;
 - (id)initWithIntent:(id)arg1;
 

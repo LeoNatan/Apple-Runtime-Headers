@@ -26,8 +26,8 @@ struct CGSize {
 };
 
 struct UAEvent {
-    int _field1;
-    int _field2;
+    long long _field1;
+    unsigned int _field2;
     unsigned int _field3;
     double _field4;
     struct CGPoint _field5;

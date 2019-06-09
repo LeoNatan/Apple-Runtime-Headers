@@ -10,5 +10,6 @@
 + (void)setNCIgnoresWindowChangedNotifications:(BOOL)arg1;
 + (BOOL)ncIgnoresWindowChangedNotifications;
 @property(nonatomic) BOOL safeHidden;
+- (void)printViews;
 @end
 

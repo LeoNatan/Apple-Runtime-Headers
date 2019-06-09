@@ -16,12 +16,16 @@
     _Bool _autoRedEyeReductionEnabled;
     _Bool _portraitEffectsMatteDeliveryEnabled;
     _Bool _embedsPortraitEffectsMatteInPhoto;
+    _Bool _embedsSemanticSegmentationMattesInPhoto;
+    long long _photoQualityPrioritization;
+    NSArray *_enabledSemanticSegmentationMatteTypes;
     NSArray *_availableRawEmbeddedThumbnailPhotoCodecTypes;
     NSDictionary *_rawEmbeddedThumbnailPhotoFormat;
 }
 
 + (id)photoSettingsFromPhotoSettings:(id)arg1;
 + (id)burstQualityPhotoSettings;
++ (id)photoSettingsFromPhotoInitiationSettings:(id)arg1 format:(id)arg2;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned int)arg1 rawFileType:(id)arg2 processedFormat:(id)arg3 processedFileType:(id)arg4;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned int)arg1 processedFormat:(id)arg2;
 + (id)photoSettingsWithRawPixelFormatType:(unsigned int)arg1;
@@ -30,10 +34,21 @@
 + (long long)uniqueID;
 @property(copy, nonatomic) NSDictionary *rawEmbeddedThumbnailPhotoFormat; // @synthesize rawEmbeddedThumbnailPhotoFormat=_rawEmbeddedThumbnailPhotoFormat;
 @property(readonly, nonatomic) NSArray *availableRawEmbeddedThumbnailPhotoCodecTypes; // @synthesize availableRawEmbeddedThumbnailPhotoCodecTypes=_availableRawEmbeddedThumbnailPhotoCodecTypes;
+@property(nonatomic) _Bool embedsSemanticSegmentationMattesInPhoto; // @synthesize embedsSemanticSegmentationMattesInPhoto=_embedsSemanticSegmentationMattesInPhoto;
+@property(copy, nonatomic) NSArray *enabledSemanticSegmentationMatteTypes; // @synthesize enabledSemanticSegmentationMatteTypes=_enabledSemanticSegmentationMatteTypes;
 @property(nonatomic) _Bool embedsPortraitEffectsMatteInPhoto; // @synthesize embedsPortraitEffectsMatteInPhoto=_embedsPortraitEffectsMatteInPhoto;
 @property(nonatomic, getter=isPortraitEffectsMatteDeliveryEnabled) _Bool portraitEffectsMatteDeliveryEnabled; // @synthesize portraitEffectsMatteDeliveryEnabled=_portraitEffectsMatteDeliveryEnabled;
+@property(nonatomic) long long photoQualityPrioritization; // @synthesize photoQualityPrioritization=_photoQualityPrioritization;
 @property(nonatomic, getter=isAutoRedEyeReductionEnabled) _Bool autoRedEyeReductionEnabled; // @synthesize autoRedEyeReductionEnabled=_autoRedEyeReductionEnabled;
 - (id)_sanitizedLivePhotoMovieMetadataForArray:(id)arg1 exceptionReason:(id *)arg2;
+- (void)setVideoFileMetadata:(id)arg1;
+- (id)videoFileMetadata;
+- (void)setVideoFormat:(id)arg1;
+- (id)videoFormat;
+- (void)setVideoFileURL:(id)arg1;
+- (id)videoFileURL;
+- (void)setHEICSFileURL:(id)arg1;
+- (id)HEICSFileURL;
 - (void)setAdjustedPhotoFilters:(id)arg1;
 - (id)adjustedPhotoFilters;
 - (void)setPhotoFilters:(id)arg1;
@@ -64,6 +79,7 @@
 - (void)setLivePhotoMovieFileURLForOriginalPhoto:(id)arg1;
 - (id)livePhotoMovieFileURLForOriginalPhoto;
 @property(copy, nonatomic) NSURL *livePhotoMovieFileURL;
+- (id)metadataForOriginalPhoto;
 @property(copy, nonatomic) NSDictionary *metadata;
 @property(nonatomic, getter=isCameraCalibrationDataDeliveryEnabled) _Bool cameraCalibrationDataDeliveryEnabled;
 @property(nonatomic, getter=isDepthDataFiltered) _Bool depthDataFiltered;

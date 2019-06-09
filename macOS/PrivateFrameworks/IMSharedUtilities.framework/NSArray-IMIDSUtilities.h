@@ -8,5 +8,6 @@
 
 @interface NSArray (IMIDSUtilities)
 - (id)__im_canonicalIDSIDsFromAddresses;
+- (BOOL)isArchivable_im;
 @end
 

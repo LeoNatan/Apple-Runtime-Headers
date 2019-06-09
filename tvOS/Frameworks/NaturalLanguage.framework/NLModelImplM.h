@@ -22,14 +22,13 @@ __attribute__((visibility("hidden")))
 - (id)predictedLabelsForTokens:(id)arg1;
 - (id)predictedLabelForString:(id)arg1;
 - (unsigned long long)numberOfTrainingInstances;
-- (id)documentFrequencyMap;
 - (id)vocabularyMap;
 - (id)labelMap;
 - (id)configuration;
 - (id)modelData;
 - (void)dealloc;
 - (id)initWithModelTrainer:(id)arg1;
-- (id)initWithModelData:(id)arg1 configuration:(id)arg2 labelMap:(id)arg3 vocabularyMap:(id)arg4 documentFrequencyMap:(id)arg5 numberOfTrainingInstances:(unsigned long long)arg6;
+- (id)initWithModelData:(id)arg1 configuration:(id)arg2 labelMap:(id)arg3 vocabularyMap:(id)arg4 documentFrequencyMap:(id)arg5 customEmbeddingData:(id)arg6 trainingInfo:(id)arg7;
 - (id)initWithOwnedModelObject:(const void *)arg1 configuration:(id)arg2 labelMap:(id)arg3 vocabularyMap:(id)arg4 numberOfTrainingInstances:(unsigned long long)arg5;
 
 @end

@@ -6,17 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@interface MFMailboxPredictor : NSObject
+#import <Mail/EDMessageChangeHookResponder-Protocol.h>
+
+@class EDCachingMailboxPredictor, NSString;
+@protocol EFScheduler;
+
+@interface MFMailboxPredictor : NSObject <EDMessageChangeHookResponder>
 {
+    EDCachingMailboxPredictor *_cachingPredictor;
+    id <EFScheduler> _scheduler;
 }
 
-+ (id)_validMailboxIDsForMailboxIDs:(id)arg1 counts:(id)arg2;
-+ (id)_mailboxIDsForSenders:(id)arg1 inMailboxes:(id)arg2 excludingMailboxes:(id)arg3 since:(id)arg4;
-+ (id)_mailboxIDsForRecipients:(id)arg1 inMailboxes:(id)arg2 excludingMailboxes:(id)arg3 since:(id)arg4;
-+ (id)_mailboxIDsForConversationIDs:(id)arg1 inMailboxes:(id)arg2 excludingMailboxes:(id)arg3 since:(id)arg4;
-+ (id)_predictedMailboxForConversationIDs:(id)arg1 recipients:(id)arg2 senders:(id)arg3 since:(id)arg4 excludingMailboxes:(id)arg5;
-+ (id)predictedMailboxForMessages:(id)arg1;
-+ (id)_log;
++ (id)defaultPredictor;
+@property(retain, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
+@property(retain, nonatomic) EDCachingMailboxPredictor *cachingPredictor; // @synthesize cachingPredictor=_cachingPredictor;
+- (void).cxx_destruct;
+- (void)persistenceDidAddMessages:(id)arg1;
+- (id)mailboxPredictionFutureForMessages:(id)arg1;
+- (void)dealloc;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

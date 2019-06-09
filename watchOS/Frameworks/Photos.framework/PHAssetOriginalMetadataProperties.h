@@ -6,13 +6,15 @@
 
 #import <Photos/PHAssetPropertySet.h>
 
-@class NSString;
+@class NSString, NSTimeZone;
 
 @interface PHAssetOriginalMetadataProperties : PHAssetPropertySet
 {
     short _originalExifOrientation;
     NSString *_originalAssetsUUID;
     NSString *_originalFilename;
+    NSTimeZone *_timeZone;
+    int _timeZoneOffset;
     long long _originalHeight;
     long long _originalWidth;
     unsigned long long _originalFilesize;
@@ -20,6 +22,8 @@
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
+@property(readonly, nonatomic) int timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
+@property(readonly, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(readonly, nonatomic) unsigned long long originalFilesize; // @synthesize originalFilesize=_originalFilesize;
 @property(readonly, nonatomic) short originalExifOrientation; // @synthesize originalExifOrientation=_originalExifOrientation;
 @property(readonly, nonatomic) NSString *originalFilename; // @synthesize originalFilename=_originalFilename;

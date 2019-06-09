@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class AMSURLAction, AMSURLRequestProperties, NSError, NSMutableData, NSURLResponse, NSURLSession, NSURLSessionTask, NSURLSessionTaskMetrics;
+@class AMSURLAction, AMSURLRequestProperties, AMSURLSession, NSError, NSMutableData, NSMutableDictionary, NSURLResponse, NSURLSessionTask, NSURLSessionTaskMetrics;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AMSURLTaskInfo : NSObject
@@ -17,8 +18,11 @@ __attribute__((visibility("hidden")))
     AMSURLRequestProperties *_properties;
     AMSURLAction *_receivedAction;
     NSURLResponse *_response;
-    NSURLSession *_session;
+    long long _retryCount;
+    AMSURLSession *_session;
     NSURLSessionTask *_task;
+    NSObject<OS_dispatch_queue> *_taskQueue;
+    NSMutableDictionary *_userInfo;
     CDUnknownBlockType _completionBlock;
 }
 
@@ -28,8 +32,11 @@ __attribute__((visibility("hidden")))
 + (id)createTaskInfoForTask:(id)arg1;
 + (id)taskInfoForTask:(id)arg1;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
+@property(readonly) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(readonly) NSObject<OS_dispatch_queue> *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(retain) NSURLSessionTask *task; // @synthesize task=_task;
-@property __weak NSURLSession *session; // @synthesize session=_session;
+@property(retain) AMSURLSession *session; // @synthesize session=_session;
+@property long long retryCount; // @synthesize retryCount=_retryCount;
 @property(retain) NSURLResponse *response; // @synthesize response=_response;
 @property(retain) AMSURLAction *receivedAction; // @synthesize receivedAction=_receivedAction;
 @property(retain) AMSURLRequestProperties *properties; // @synthesize properties=_properties;
@@ -37,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(retain) NSMutableData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+- (void)migrateFromTaskInfo:(id)arg1;
 - (id)initWithTask:(id)arg1;
 
 @end

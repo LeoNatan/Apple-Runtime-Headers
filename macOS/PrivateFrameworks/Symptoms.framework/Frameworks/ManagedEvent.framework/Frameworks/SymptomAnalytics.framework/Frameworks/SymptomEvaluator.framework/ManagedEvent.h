@@ -8,6 +8,7 @@
 
 @class DecisionDetails;
 
+__attribute__((visibility("hidden")))
 @interface ManagedEvent : NSObject
 {
     unsigned long long _id_number;

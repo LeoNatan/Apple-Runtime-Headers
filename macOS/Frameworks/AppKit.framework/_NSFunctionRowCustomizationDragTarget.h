@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 {
     id <_NSFunctionRowCustomizationDragTargetDelegate> _delegate;
     NSTrackingArea *_trackingArea;
-    unsigned int _dragInBounds:1;
+    BOOL _dragInBounds;
 }
 
 @property id <_NSFunctionRowCustomizationDragTargetDelegate> delegate; // @synthesize delegate=_delegate;

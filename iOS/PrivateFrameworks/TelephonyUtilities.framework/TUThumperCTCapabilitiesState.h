@@ -15,25 +15,34 @@
 @interface TUThumperCTCapabilitiesState : TUCTCapabilitiesState <NSSecureCoding, NSCopying, TUPubliclyAccessibleCopying>
 {
     _Bool _approved;
+    _Bool _supportsDefaultPairedDevice;
     NSSet *_approvedSecondaryDeviceIDs;
+    NSString *_accountID;
     NSString *_localDeviceID;
 }
 
++ (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool supportsDefaultPairedDevice; // @synthesize supportsDefaultPairedDevice=_supportsDefaultPairedDevice;
 @property(copy, nonatomic) NSString *localDeviceID; // @synthesize localDeviceID=_localDeviceID;
+@property(copy, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 @property(copy, nonatomic) NSSet *approvedSecondaryDeviceIDs; // @synthesize approvedSecondaryDeviceIDs=_approvedSecondaryDeviceIDs;
 @property(nonatomic, getter=isApproved) _Bool approved; // @synthesize approved=_approved;
 - (void).cxx_destruct;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone *)arg1;
 - (id)publiclyAccessibleCopy;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, copy) NSString *description;
+- (_Bool)isEqualToCapabilitiesState:(id)arg1;
+- (id)initWithCapabilityInfo:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

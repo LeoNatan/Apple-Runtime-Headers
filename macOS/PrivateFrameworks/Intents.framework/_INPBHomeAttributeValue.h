@@ -18,17 +18,24 @@
         unsigned int booleanValue:1;
         unsigned int doubleValue:1;
         unsigned int integerValue:1;
+        unsigned int limitValue:1;
+        unsigned int unit:1;
         unsigned int valueType:1;
     } _has;
     BOOL _booleanValue;
+    int _limitValue;
+    int _unit;
     int _valueType;
     double _doubleValue;
     long long _integerValue;
     NSString *_stringValue;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(nonatomic) int valueType; // @synthesize valueType=_valueType;
+@property(nonatomic) int unit; // @synthesize unit=_unit;
 @property(copy, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
+@property(nonatomic) int limitValue; // @synthesize limitValue=_limitValue;
 @property(nonatomic) long long integerValue; // @synthesize integerValue=_integerValue;
 @property(nonatomic) double doubleValue; // @synthesize doubleValue=_doubleValue;
 @property(nonatomic) BOOL booleanValue; // @synthesize booleanValue=_booleanValue;
@@ -37,12 +44,20 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)StringAsValueType:(id)arg1;
 - (id)valueTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasValueType;
+- (int)StringAsUnit:(id)arg1;
+- (id)unitAsString:(int)arg1;
+@property(nonatomic) BOOL hasUnit;
 @property(readonly, nonatomic) BOOL hasStringValue;
+- (int)StringAsLimitValue:(id)arg1;
+- (id)limitValueAsString:(int)arg1;
+@property(nonatomic) BOOL hasLimitValue;
 @property(nonatomic) BOOL hasIntegerValue;
 @property(nonatomic) BOOL hasDoubleValue;
 @property(nonatomic) BOOL hasBooleanValue;

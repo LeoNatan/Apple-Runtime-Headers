@@ -19,6 +19,7 @@
 @property(readonly, nonatomic) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)_performSynchronousBlockInSerialQueue:(CDUnknownBlockType)arg1;
+- (void)assertNotRunningInAccessQueue;
 - (void)performAsynchronousBlock:(CDUnknownBlockType)arg1;
 - (void)performSynchronousBlock:(CDUnknownBlockType)arg1;
 - (id)initWithLabel:(id)arg1 appendUUIDToLabel:(_Bool)arg2;

@@ -24,6 +24,8 @@
 @property(readonly) long long appliedSubsampleFactor; // @synthesize appliedSubsampleFactor=_appliedSubsampleFactor;
 @property(readonly) long long subsampleFactor; // @synthesize subsampleFactor=_subsampleFactor;
 - (void).cxx_destruct;
+- (id)_evaluateVideoComposition:(out id *)arg1;
+- (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_evaluateImageProperties:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (id)_evaluateImage:(out id *)arg1;

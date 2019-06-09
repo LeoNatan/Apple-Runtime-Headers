@@ -8,11 +8,14 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class AKAppleIDAuthenticationContext, NSArray, NSData, NSSet, NSString, NSURL, PKContact, PKPaymentMerchantSession;
+@class AKAppleIDAuthenticationContext, NSArray, NSData, NSDate, NSSet, NSString, NSTimeZone, NSURL, PKApplePayTrustSignatureRequest, PKContact, PKPaymentMerchantSession;
 
 @interface PKPaymentRequest : NSObject <NSSecureCoding>
 {
     BOOL _expectsMerchantSession;
+    BOOL _accountPaymentSupportsPeerPayment;
+    BOOL _accountPaymentUsePeerPaymentBalance;
+    BOOL _deviceSupportsPeerPaymentAccountPayment;
     BOOL _suppressTotal;
     BOOL _shippingEditable;
     BOOL _requiresAddressPrecision;
@@ -36,13 +39,18 @@
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSString *_CTDataConnectionServiceType;
+    PKApplePayTrustSignatureRequest *_applePayTrustSignatureRequest;
+    NSArray *_bankAccounts;
+    long long _paymentFrequency;
+    NSDate *_paymentDate;
+    NSTimeZone *_paymentTimeZone;
     unsigned long long _APIType;
     unsigned long long _requestType;
     unsigned long long _requestor;
     NSArray *_paymentContentItems;
     NSString *_localizedSummaryItemsTitle;
     NSData *_externalizedContext;
-    struct OpaqueSecAccessControlRef *_accesssControlRef;
+    struct __SecAccessControl *_accesssControlRef;
     AKAppleIDAuthenticationContext *_appleIDAuthenticationContext;
     NSString *_localizedNavigationTitle;
     unsigned long long _confirmationStyle;
@@ -79,7 +87,7 @@
 @property(nonatomic) unsigned long long confirmationStyle; // @synthesize confirmationStyle=_confirmationStyle;
 @property(copy, nonatomic) NSString *localizedNavigationTitle; // @synthesize localizedNavigationTitle=_localizedNavigationTitle;
 @property(retain, nonatomic) AKAppleIDAuthenticationContext *appleIDAuthenticationContext; // @synthesize appleIDAuthenticationContext=_appleIDAuthenticationContext;
-@property(nonatomic) struct OpaqueSecAccessControlRef *accesssControlRef; // @synthesize accesssControlRef=_accesssControlRef;
+@property(nonatomic) struct __SecAccessControl *accesssControlRef; // @synthesize accesssControlRef=_accesssControlRef;
 @property(copy, nonatomic) NSData *externalizedContext; // @synthesize externalizedContext=_externalizedContext;
 @property(copy, nonatomic) NSString *localizedSummaryItemsTitle; // @synthesize localizedSummaryItemsTitle=_localizedSummaryItemsTitle;
 @property(nonatomic) BOOL suppressTotal; // @synthesize suppressTotal=_suppressTotal;
@@ -87,6 +95,14 @@
 @property(nonatomic) unsigned long long requestor; // @synthesize requestor=_requestor;
 @property(nonatomic) unsigned long long requestType; // @synthesize requestType=_requestType;
 @property(nonatomic) unsigned long long APIType; // @synthesize APIType=_APIType;
+@property(copy, nonatomic) NSTimeZone *paymentTimeZone; // @synthesize paymentTimeZone=_paymentTimeZone;
+@property(copy, nonatomic) NSDate *paymentDate; // @synthesize paymentDate=_paymentDate;
+@property(nonatomic) long long paymentFrequency; // @synthesize paymentFrequency=_paymentFrequency;
+@property(nonatomic) BOOL deviceSupportsPeerPaymentAccountPayment; // @synthesize deviceSupportsPeerPaymentAccountPayment=_deviceSupportsPeerPaymentAccountPayment;
+@property(nonatomic) BOOL accountPaymentUsePeerPaymentBalance; // @synthesize accountPaymentUsePeerPaymentBalance=_accountPaymentUsePeerPaymentBalance;
+@property(nonatomic) BOOL accountPaymentSupportsPeerPayment; // @synthesize accountPaymentSupportsPeerPayment=_accountPaymentSupportsPeerPayment;
+@property(retain, nonatomic) NSArray *bankAccounts; // @synthesize bankAccounts=_bankAccounts;
+@property(retain, nonatomic) PKApplePayTrustSignatureRequest *applePayTrustSignatureRequest; // @synthesize applePayTrustSignatureRequest=_applePayTrustSignatureRequest;
 @property(retain, nonatomic) NSString *CTDataConnectionServiceType; // @synthesize CTDataConnectionServiceType=_CTDataConnectionServiceType;
 @property(retain, nonatomic) NSString *sourceApplicationSecondaryIdentifier; // @synthesize sourceApplicationSecondaryIdentifier=_sourceApplicationSecondaryIdentifier;
 @property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;

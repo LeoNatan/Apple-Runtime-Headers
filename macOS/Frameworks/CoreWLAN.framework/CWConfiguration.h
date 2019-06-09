@@ -26,11 +26,11 @@
 + (id)configurationWithConfiguration:(id)arg1;
 + (id)configurationForInterfaceWithName:(id)arg1;
 + (id)configuration;
-@property BOOL rememberJoinedNetworks; // @synthesize rememberJoinedNetworks=_rememberJoinedNetworks;
-@property BOOL requireAdministratorForIBSSMode; // @synthesize requireAdministratorForIBSSMode=_requireAdministratorForIBSSMode;
-@property BOOL requireAdministratorForAssociation; // @synthesize requireAdministratorForAssociation=_requireAdministratorForAssociation;
-@property BOOL requireAdministratorForPower; // @synthesize requireAdministratorForPower=_requireAdministratorForPower;
-@property(copy) NSOrderedSet *networkProfiles; // @synthesize networkProfiles=_networkProfiles;
+@property(nonatomic) BOOL rememberJoinedNetworks; // @synthesize rememberJoinedNetworks=_rememberJoinedNetworks;
+@property(nonatomic) BOOL requireAdministratorForIBSSMode; // @synthesize requireAdministratorForIBSSMode=_requireAdministratorForIBSSMode;
+@property(nonatomic) BOOL requireAdministratorForAssociation; // @synthesize requireAdministratorForAssociation=_requireAdministratorForAssociation;
+@property(nonatomic) BOOL requireAdministratorForPower; // @synthesize requireAdministratorForPower=_requireAdministratorForPower;
+@property(copy, nonatomic) NSOrderedSet *networkProfiles; // @synthesize networkProfiles=_networkProfiles;
 @property(copy) NSDictionary *info; // @synthesize info=_info;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

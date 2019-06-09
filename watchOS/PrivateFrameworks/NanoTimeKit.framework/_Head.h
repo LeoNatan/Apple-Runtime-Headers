@@ -17,15 +17,19 @@
     float _curHeadTilt;
     float _curHeadX;
     int _inAnimation;
-    union _GLKVector2 _bone;
-    union _GLKVector2 _offset;
+    // Error parsing type: , name: _bone
+    // Error parsing type: , name: _offset
 }
 
 @property(nonatomic) int inAnimation; // @synthesize inAnimation=_inAnimation;
 @property(nonatomic) float curHeadX; // @synthesize curHeadX=_curHeadX;
 @property(nonatomic) float curHeadTilt; // @synthesize curHeadTilt=_curHeadTilt;
-@property(nonatomic) union _GLKVector2 offset; // @synthesize offset=_offset;
-@property(nonatomic) union _GLKVector2 bone; // @synthesize bone=_bone;
+// Error parsing type for property offset:
+// Property attributes: T,N,V_offset
+
+// Error parsing type for property bone:
+// Property attributes: T,N,V_bone
+
 @property(retain, nonatomic) NSMutableArray *blinkTexs; // @synthesize blinkTexs=_blinkTexs;
 @property(retain, nonatomic) NSMutableArray *texs; // @synthesize texs=_texs;
 @property(nonatomic) float height; // @synthesize height=_height;

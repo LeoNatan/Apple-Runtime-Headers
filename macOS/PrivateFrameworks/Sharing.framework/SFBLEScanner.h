@@ -21,9 +21,11 @@
     CBCentralManager *_centralManager;
     struct NSMutableDictionary *_devices;
     BOOL _invalidateCalled;
+    NSObject<OS_dispatch_source> *_lostTimer;
     BOOL _needDups;
     long long _payloadType;
     _Bool _poweredOffSleep;
+    int _rescanSecondsActual;
     NSObject<OS_dispatch_source> *_rescanTimer;
     struct __sFILE {
         char *_field1;
@@ -138,6 +140,7 @@
 - (void)_rssiLogClose;
 - (void)_rssiLogOpen;
 - (void)_restartIfNeeded;
+- (void)_rescanLostFired;
 - (void)_rescanTimerFired;
 - (void)_removeAllDevicesWithReason:(id)arg1;
 - (void)_poweredOn;
@@ -154,7 +157,6 @@
 - (void)setPayloadFilterData:(id)arg1 mask:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithType:(long long)arg1;
 
 // Remaining properties

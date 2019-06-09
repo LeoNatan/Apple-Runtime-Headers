@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class BKSAnimationFenceHandle, NSArray, NSDictionary, NSString, _UIKeyboardChangedInformation;
+@class BKSAnimationFenceHandle, BKSHIDEventDeferringToken, NSArray, NSDictionary, NSString, _UIKeyboardChangedInformation;
 
 @protocol _UIKeyboardArbitration
 - (void)setKeyboardTotalDisable:(_Bool)arg1 withFence:(BKSAnimationFenceHandle *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)sceneShouldFocusWithToken:(BKSHIDEventDeferringToken *)arg1 onCompletion:(void (^)(_Bool))arg2;
 - (void)applicationShouldFocusWithBundle:(NSString *)arg1 onCompletion:(void (^)(_Bool))arg2;
 - (void)transition:(NSString *)arg1 eventStage:(unsigned int)arg2 withInfo:(NSDictionary *)arg3;
 - (void)notifyHostedPIDsOfSuppression:(_Bool)arg1;
 - (void)setWindowHostingPID:(int)arg1 active:(_Bool)arg2;
+- (void)notifyIAVHeight:(float)arg1;
 - (void)signalKeyboardChangeComplete;
 - (void)signalKeyboardChanged:(_UIKeyboardChangedInformation *)arg1 onCompletion:(void (^)(void))arg2;
 - (void)setWantsFencing:(_Bool)arg1;

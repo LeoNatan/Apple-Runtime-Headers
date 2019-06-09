@@ -8,7 +8,7 @@
 
 #import <Silex/SXComponentTextStyle-Protocol.h>
 
-@class NSString, SXDropCapStyle, SXJSONArray, SXShadow, SXTextDecoration, SXTextStroke, UIColor;
+@class NSString, SXDropCapStyle, SXJSONArray, SXTextDecoration, SXTextShadow, SXTextStroke, UIColor;
 @protocol SXTextStyleFontAttributes;
 
 @interface SXComponentTextStyle : SXTextStyle <SXComponentTextStyle>
@@ -16,6 +16,7 @@
 }
 
 + (CDUnknownBlockType)valueClassBlockForPropertyWithName:(id)arg1;
+- (_Bool)fontScalingWithValue:(id)arg1 withType:(int)arg2;
 - (long long)hyphenationWithValue:(id)arg1 withType:(int)arg2;
 - (double)relativeLineHeightWithValue:(id)arg1 withType:(int)arg2;
 - (long long)exactLineHeightWithValue:(id)arg1 withType:(int)arg2;
@@ -31,6 +32,7 @@
 @property(readonly, nonatomic) long long firstLineIndent; // @dynamic firstLineIndent;
 @property(readonly, nonatomic) id <SXTextStyleFontAttributes> fontAttributes;
 @property(readonly, nonatomic) NSString *fontName;
+@property(readonly, nonatomic) _Bool fontScaling; // @dynamic fontScaling;
 @property(readonly, nonatomic) long long fontSize;
 @property(readonly, nonatomic) _Bool hangingPunctuation; // @dynamic hangingPunctuation;
 @property(readonly) unsigned long long hash;
@@ -47,7 +49,7 @@
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) long long textAlignment; // @dynamic textAlignment;
 @property(readonly, nonatomic) UIColor *textColor;
-@property(readonly, nonatomic) SXShadow *textShadow;
+@property(readonly, nonatomic) SXTextShadow *textShadow;
 @property(readonly, nonatomic) long long textTransform;
 @property(readonly, nonatomic) double tracking;
 @property(readonly, nonatomic) SXTextDecoration *underline;

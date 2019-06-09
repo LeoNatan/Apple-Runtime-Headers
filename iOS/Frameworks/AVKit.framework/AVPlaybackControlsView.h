@@ -6,8 +6,9 @@
 
 #import <UIKit/UIView.h>
 
-@class AVBackdropView, AVButton, AVPlaybackControlsRoutePickerView, AVPlayerViewControllerCustomControlsView, AVScrubber, AVStyleSheet, AVTransportControlsView, AVView, AVVolumeButtonControl, AVVolumeSlider, NSArray, NSLayoutConstraint, NSUUID, UIViewPropertyAnimator, _UIVisualEffectBackdropView;
+@class AVBackdropView, AVButton, AVObservationController, AVPlaybackControlsRoutePickerView, AVPlayerViewControllerCustomControlsView, AVScrubber, AVStyleSheet, AVTransportControlsView, AVView, AVVolumeButtonControl, AVVolumeSlider, NSArray, NSLayoutConstraint, NSUUID, NSValue, UIViewPropertyAnimator;
 
+__attribute__((visibility("hidden")))
 @interface AVPlaybackControlsView : UIView
 {
     _Bool _fullScreen;
@@ -29,10 +30,10 @@
     AVButton *_fullScreenButton;
     AVButton *_videoGravityButton;
     AVButton *_pictureInPictureButton;
-    NSArray *_customDisplayModeButtons;
+    NSArray *_customDisplayModeItems;
     AVVolumeButtonControl *_volumeButton;
     AVVolumeSlider *_volumeSlider;
-    NSArray *_customAudioButtons;
+    NSArray *_customAudioItems;
     AVButton *_prominentPlayButton;
     AVButton *_miniPlayPauseButton;
     AVTransportControlsView *_transportControlsView;
@@ -44,20 +45,23 @@
     AVScrubber *_scrubber;
     AVPlaybackControlsRoutePickerView *_routePickerView;
     AVButton *_mediaSelectionButton;
-    NSArray *_customMediaButtons;
+    NSArray *_customMediaItems;
     NSArray *_customControlItems;
+    NSValue *_overrideLayoutMarginsWhenEmbeddedInline;
+    AVObservationController *_observationController;
     NSArray *_defaultAudioControls;
     NSArray *_defaultDisplayModeControls;
+    double _keyboardHeight;
+    UIViewPropertyAnimator *_keyboardUIAvoidanceAnimator;
     NSLayoutConstraint *_volumeButtonBottomToLayoutMarginsGuideBottomConstraint;
     NSLayoutConstraint *_volumeTopToLayoutGuideTopConstraint;
     NSLayoutConstraint *_volumeTopToViewTopConstraint;
     NSLayoutConstraint *_screenModeControlsToVolumeControlsSpacingConstraint;
     UIViewPropertyAnimator *_playbackControlsVisibilityAnimator;
     NSUUID *_mostRecentAnimationCompletionsID;
-    _UIVisualEffectBackdropView *_captureView;
+    struct CGAffineTransform _overrideTransformForProminentPlayButton;
 }
 
-@property(readonly, nonatomic) _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
 @property(nonatomic, getter=isTopAreaLayoutGuideExpanded) _Bool topAreaLayoutGuideExpanded; // @synthesize topAreaLayoutGuideExpanded=_topAreaLayoutGuideExpanded;
 @property(retain, nonatomic) NSUUID *mostRecentAnimationCompletionsID; // @synthesize mostRecentAnimationCompletionsID=_mostRecentAnimationCompletionsID;
 @property(retain, nonatomic) UIViewPropertyAnimator *playbackControlsVisibilityAnimator; // @synthesize playbackControlsVisibilityAnimator=_playbackControlsVisibilityAnimator;
@@ -67,10 +71,15 @@
 @property(readonly, nonatomic) NSLayoutConstraint *volumeTopToViewTopConstraint; // @synthesize volumeTopToViewTopConstraint=_volumeTopToViewTopConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *volumeTopToLayoutGuideTopConstraint; // @synthesize volumeTopToLayoutGuideTopConstraint=_volumeTopToLayoutGuideTopConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *volumeButtonBottomToLayoutMarginsGuideBottomConstraint; // @synthesize volumeButtonBottomToLayoutMarginsGuideBottomConstraint=_volumeButtonBottomToLayoutMarginsGuideBottomConstraint;
+@property(readonly, nonatomic) UIViewPropertyAnimator *keyboardUIAvoidanceAnimator; // @synthesize keyboardUIAvoidanceAnimator=_keyboardUIAvoidanceAnimator;
+@property(nonatomic) double keyboardHeight; // @synthesize keyboardHeight=_keyboardHeight;
 @property(readonly, nonatomic) NSArray *defaultDisplayModeControls; // @synthesize defaultDisplayModeControls=_defaultDisplayModeControls;
 @property(readonly, nonatomic) NSArray *defaultAudioControls; // @synthesize defaultAudioControls=_defaultAudioControls;
-@property(copy, nonatomic) NSArray *customControlItems; // @synthesize customControlItems=_customControlItems;
-@property(readonly, nonatomic) NSArray *customMediaButtons; // @synthesize customMediaButtons=_customMediaButtons;
+@property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
+@property(retain, nonatomic) NSValue *overrideLayoutMarginsWhenEmbeddedInline; // @synthesize overrideLayoutMarginsWhenEmbeddedInline=_overrideLayoutMarginsWhenEmbeddedInline;
+@property(nonatomic) struct CGAffineTransform overrideTransformForProminentPlayButton; // @synthesize overrideTransformForProminentPlayButton=_overrideTransformForProminentPlayButton;
+@property(readonly, copy, nonatomic) NSArray *customControlItems; // @synthesize customControlItems=_customControlItems;
+@property(readonly, copy, nonatomic) NSArray *customMediaItems; // @synthesize customMediaItems=_customMediaItems;
 @property(readonly, nonatomic) AVButton *mediaSelectionButton; // @synthesize mediaSelectionButton=_mediaSelectionButton;
 @property(readonly, nonatomic) AVPlaybackControlsRoutePickerView *routePickerView; // @synthesize routePickerView=_routePickerView;
 @property(readonly, nonatomic) AVScrubber *scrubber; // @synthesize scrubber=_scrubber;
@@ -82,10 +91,10 @@
 @property(readonly, nonatomic) AVTransportControlsView *transportControlsView; // @synthesize transportControlsView=_transportControlsView;
 @property(readonly, nonatomic) AVButton *miniPlayPauseButton; // @synthesize miniPlayPauseButton=_miniPlayPauseButton;
 @property(readonly, nonatomic) AVButton *prominentPlayButton; // @synthesize prominentPlayButton=_prominentPlayButton;
-@property(readonly, nonatomic) NSArray *customAudioButtons; // @synthesize customAudioButtons=_customAudioButtons;
+@property(readonly, copy, nonatomic) NSArray *customAudioItems; // @synthesize customAudioItems=_customAudioItems;
 @property(readonly, nonatomic) AVVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
 @property(readonly, nonatomic) AVVolumeButtonControl *volumeButton; // @synthesize volumeButton=_volumeButton;
-@property(readonly, nonatomic) NSArray *customDisplayModeButtons; // @synthesize customDisplayModeButtons=_customDisplayModeButtons;
+@property(readonly, copy, nonatomic) NSArray *customDisplayModeItems; // @synthesize customDisplayModeItems=_customDisplayModeItems;
 @property(readonly, nonatomic) AVButton *pictureInPictureButton; // @synthesize pictureInPictureButton=_pictureInPictureButton;
 @property(readonly, nonatomic) AVButton *videoGravityButton; // @synthesize videoGravityButton=_videoGravityButton;
 @property(readonly, nonatomic) AVButton *fullScreenButton; // @synthesize fullScreenButton=_fullScreenButton;
@@ -97,25 +106,28 @@
 @property(readonly, nonatomic) AVBackdropView *screenModeControls; // @synthesize screenModeControls=_screenModeControls;
 @property(readonly, nonatomic) UIView *playbackControlsContainer; // @synthesize playbackControlsContainer=_playbackControlsContainer;
 @property(readonly, nonatomic) UIView *volumeControlsContainer; // @synthesize volumeControlsContainer=_volumeControlsContainer;
-@property(nonatomic) long long includedContainers; // @synthesize includedContainers=_includedContainers;
+@property(readonly, nonatomic) long long includedContainers; // @synthesize includedContainers=_includedContainers;
 @property(nonatomic) long long preferredUnobscuredArea; // @synthesize preferredUnobscuredArea=_preferredUnobscuredArea;
 @property(nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;
 @property(retain, nonatomic) AVStyleSheet *styleSheet; // @synthesize styleSheet=_styleSheet;
 - (void).cxx_destruct;
 - (id)_customControlsViewIfLoaded;
-- (id)_buttonsForControlItems:(id)arg1 withType:(long long)arg2 limit:(unsigned long long)arg3;
+- (id)_playbackControlsViewsForControlItems:(id)arg1 withType:(long long)arg2;
 - (id)_playbackControlsViewItems;
-- (_Bool)_isDescendantOfNonPagingScrollView;
-- (void)_updateLayoutMargins:(struct CGRect)arg1;
+- (void)_animateKeyboardAvoidance:(long long)arg1 duration:(double)arg2;
 - (void)_updateLayoutMargins;
-- (void)_statusBarHiddenDidChange:(id)arg1;
-- (void)_statusBarFrameDidChange:(id)arg1;
-- (void)_statusBarFrameWillChange:(id)arg1;
-- (void)_statusBarOrientationWillChange:(id)arg1;
 - (void)_setupInitialLayout;
 - (void)_updateDoubleRowLayoutEnabled;
 - (void)_updateAreVolumeAndTransportControlsVisible;
-- (void)_updatePlaybackControlsVisibility;
+- (void)_updatePlaybackControlsContainerVisibility:(CDUnknownBlockType)arg1;
+- (void)_remove:(_Bool)arg1 view:(id)arg2;
+- (void)_remove:(_Bool)arg1 views:(id)arg2;
+- (id)_displayModeViewsToRemoveDuringAnimation;
+- (id)_audioViewsToRemoveDuringAnimation;
+- (id)_currentArrangedDisplayModeViews;
+- (id)_currentArrangedAudioModeViews;
+- (id)_preferredArrangedDisplayModeViews;
+- (id)_preferredArrangedAudioModeViews;
 - (void)layoutSubviews;
 - (void)safeAreaInsetsDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -123,14 +135,18 @@
 - (void)updateLayoutForChangedControlsVisibility;
 @property(readonly, nonatomic) _Bool hasVisibleSubview;
 - (void)animateAlongsideVisibilityAnimationsWithAnimationCoordinator:(id)arg1 appearingViews:(id)arg2 disappearingViews:(id)arg3;
-@property(readonly, nonatomic) _Bool playbackControlsIncludeDisplayModeControls;
-@property(readonly, nonatomic) _Bool playbackControlsIncludeTransportControls;
-@property(readonly, nonatomic) _Bool playbackControlsIncludeVolumeControls;
+- (void)setCustomControlItems:(id)arg1 animations:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) _Bool includesCustomDisplayModeControls;
+@property(readonly, nonatomic) _Bool includesDisplayModeControlsContainer;
+@property(readonly, nonatomic) _Bool includesTransportControls;
+@property(readonly, nonatomic) _Bool includesCustomAudioControls;
+@property(readonly, nonatomic) _Bool includesAudioControlsContainer;
 @property(readonly, nonatomic) _Bool showsProminentPlayButton;
+- (void)setIncludedContainers:(long long)arg1 animations:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) AVPlayerViewControllerCustomControlsView *customControlsView; // @synthesize customControlsView=_customControlsView;
 - (void)setupInitialLayout;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2 captureView:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2;
 
 @end
 

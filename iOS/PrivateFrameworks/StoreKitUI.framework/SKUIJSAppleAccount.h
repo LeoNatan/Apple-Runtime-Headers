@@ -10,6 +10,7 @@
 
 @class ACAccount, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSAppleAccount : NSObject <SKUIJSAppleAccount>
 {
     ACAccount *_account;

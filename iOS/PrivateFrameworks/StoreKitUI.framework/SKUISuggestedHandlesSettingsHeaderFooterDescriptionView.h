@@ -8,6 +8,7 @@
 
 @class NSMutableArray, SKUISuggestedHandlesSettingsHeaderFooterDescription, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUISuggestedHandlesSettingsHeaderFooterDescriptionView : SKUISettingsHeaderFooterDescriptionView
 {
     NSMutableArray *_buttons;

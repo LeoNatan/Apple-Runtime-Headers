@@ -10,8 +10,9 @@
 #import <MediaControls/MediaControlsEndpointControllerConnectionDelegate-Protocol.h>
 #import <MediaControls/MediaControlsEndpointObserverDelegate-Protocol.h>
 
-@class MPAVRoutingController, MPCFuture, MPMRAVEndpointObserverWrapper, MSVTimer, NSString;
+@class MPAVRoutingController, MPCFuture, MPMRAVEndpointObserverWrapper, MSVPersistentTimer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsStandaloneEndpointController : MediaControlsEndpointController <MPAVRoutingControllerDelegate, MediaControlsEndpointObserverDelegate, MediaControlsEndpointControllerConnectionDelegate>
 {
     _Bool _isDeferred;
@@ -21,14 +22,14 @@
     MPMRAVEndpointObserverWrapper *_endpointObserver;
     MPCFuture *_deferredPlayerPathFuture;
     id _deferredPlayerPathInvalidationToken;
-    MSVTimer *_deferredPlayerPathTimer;
+    MSVPersistentTimer *_deferredPlayerPathTimer;
     NSString *_activeEndpointUID;
 }
 
 + (double)mediaRecentlyPlayedTimeout;
 @property(nonatomic) _Bool isDeferred; // @synthesize isDeferred=_isDeferred;
 @property(retain, nonatomic) NSString *activeEndpointUID; // @synthesize activeEndpointUID=_activeEndpointUID;
-@property(retain, nonatomic) MSVTimer *deferredPlayerPathTimer; // @synthesize deferredPlayerPathTimer=_deferredPlayerPathTimer;
+@property(retain, nonatomic) MSVPersistentTimer *deferredPlayerPathTimer; // @synthesize deferredPlayerPathTimer=_deferredPlayerPathTimer;
 @property(retain, nonatomic) id deferredPlayerPathInvalidationToken; // @synthesize deferredPlayerPathInvalidationToken=_deferredPlayerPathInvalidationToken;
 @property(retain, nonatomic) MPCFuture *deferredPlayerPathFuture; // @synthesize deferredPlayerPathFuture=_deferredPlayerPathFuture;
 @property(retain, nonatomic) MPMRAVEndpointObserverWrapper *endpointObserver; // @synthesize endpointObserver=_endpointObserver;
@@ -39,12 +40,14 @@
 - (void)_activeSystemRouteDidChangeNotification:(id)arg1;
 - (void)_activeSystemRouteDidChangeWithChangeType:(long long)arg1;
 - (void)_fetchActiveSystemRoute:(CDUnknownBlockType)arg1;
+- (void)_maybeUpdateActiveSystemRoute;
 - (void)_updateActiveSystemRoute;
 - (void)_maybeRestoreDeferredPlayerPath;
 - (void)_restoreDeferredPlayerPath;
 - (void)_resetDeferredPlayerPath;
 - (void)setDeviceUnlocked:(_Bool)arg1;
 - (void)setOnScreen:(_Bool)arg1;
+- (_Bool)controller:(id)arg1 shouldRetryFailedRequestWithError:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (id)routeForEndpoint:(void *)arg1;
 - (void)endpointController:(id)arg1 willAttemptToConnectToRoute:(id)arg2;

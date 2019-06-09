@@ -4,52 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ITMLKit/IKJSObject.h>
+#import <ITMLKit/IKJSDataObservable.h>
 
 #import <ITMLKit/IKJSDataItem-Protocol.h>
 #import <ITMLKit/NSObject-Protocol.h>
 #import <ITMLKit/_IKJSDataItem-Protocol.h>
 #import <ITMLKit/_IKJSDataItemProxy-Protocol.h>
 
-@class JSManagedValue, NSArray, NSMutableArray, NSString;
+@class NSDictionary, NSString;
 
-@interface IKJSDataItem : IKJSObject <NSObject, IKJSDataItem, _IKJSDataItemProxy, _IKJSDataItem>
+@interface IKJSDataItem : IKJSDataObservable <NSObject, IKJSDataItem, _IKJSDataItemProxy, _IKJSDataItem>
 {
-    NSMutableArray *_observerRecords;
     NSString *_type;
     NSString *_identifier;
-    JSManagedValue *_managedObject;
-    _Bool _observersEnabled;
-    IKJSDataItem *_parent;
-    NSArray *_parentAccessorSequence;
+    NSString *_prototypeIdentifier;
 }
 
-+ (id)boxObject:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *parentAccessorSequence; // @synthesize parentAccessorSequence=_parentAccessorSequence;
-@property(nonatomic) _Bool observersEnabled; // @synthesize observersEnabled=_observersEnabled;
-@property(readonly, nonatomic) __weak IKJSDataItem *parent; // @synthesize parent=_parent;
+@property(copy, nonatomic) NSString *prototypeIdentifier; // @synthesize prototypeIdentifier=_prototypeIdentifier;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (_Bool)_isBoxed;
-- (id)_clonedObserverRecords;
-- (void)_notifyObserversForSubpathString:(id)arg1 inDataItem:(id)arg2;
-- (void)_notifyObserversForPathString:(id)arg1;
-- (void)_setParent:(id)arg1 accessorSequence:(id)arg2;
-- (id)_valueForAccessorSequence:(id)arg1 closestParent:(id *)arg2 accessorSequenceFromClosestParent:(id *)arg3;
-- (void)touchPropertyPath:(id)arg1;
-- (id)getPropertyPath:(id)arg1;
-- (void)setPropertyPath:(id)arg1:(id)arg2;
-@property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *type;
-- (id)initWithType:(id)arg1:(id)arg2;
-- (void)addObserver:(id)arg1 forSubscriptsOfPropertyPathWithString:(id)arg2;
-- (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1 forPropertyPathWithString:(id)arg2;
-- (void)resetValueForPropertyPath:(id)arg1;
-- (id)valuesForSubscripts:(struct _NSRange)arg1 ofPropertyPath:(id)arg2;
-- (id)valueForPropertyPath:(id)arg1;
-- (void)setValue:(id)arg1 forPropertyPath:(id)arg2;
-- (id)unbox;
-- (id)initWithObject:(id)arg1;
+- (id)initConstructor:(id)arg1:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *dataDictionary;
+- (id)init;
+- (id)initWithValue:(id)arg1;
+- (id)initWithType:(id)arg1 identifier:(id)arg2;
+- (id)initWithType:(id)arg1;
 - (id)asPrivateIKJSDataItem;
 
 // Remaining properties

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADProperties.h>
 
+__attribute__((visibility("hidden")))
 @interface ODDLayoutVariablePropertySet : OADProperties
 {
     int mDirection;

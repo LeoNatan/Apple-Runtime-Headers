@@ -6,20 +6,20 @@
 
 #import <PassKitUI/PKDashboardCollectionViewCell.h>
 
-@class UIImageView, UILabel;
+@class NSString, UIImageView, UILabel;
 
 @interface PKTransactionHistoryTransactionGroupHeaderCell : PKDashboardCollectionViewCell
 {
-    _Bool _isTemplateLayout;
     UILabel *_titleLabel;
-    UILabel *_secondaryLabel;
+    UILabel *_subtitleLabel;
+    _Bool _isTemplateLayout;
     UIImageView *_imageView;
 }
 
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
-@property(readonly, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSString *subtitle;
+@property(copy, nonatomic) NSString *title;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (void)layoutSubviews;

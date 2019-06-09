@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSDictionary, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureStillImageOutputInternal : NSObject
 {
     AVWeakReference *weakReference;

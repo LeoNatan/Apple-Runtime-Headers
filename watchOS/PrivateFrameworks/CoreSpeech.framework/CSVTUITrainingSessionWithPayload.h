@@ -19,6 +19,8 @@
     _Bool _reportedStopListening;
     _Bool _utteranceStored;
     unsigned int _numSamplesFed;
+    unsigned int _bestTriggerSampleStart;
+    unsigned int _extraSamplesAtStart;
     NSDictionary *_voiceTriggerEventInfo;
 }
 

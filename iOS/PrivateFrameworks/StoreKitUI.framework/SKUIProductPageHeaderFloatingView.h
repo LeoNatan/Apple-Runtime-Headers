@@ -8,6 +8,7 @@
 
 @class SKUIColorScheme, UIControl, UISegmentedControl, _UIBackdropView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageHeaderFloatingView : UIView
 {
     UISegmentedControl *_sectionControl;

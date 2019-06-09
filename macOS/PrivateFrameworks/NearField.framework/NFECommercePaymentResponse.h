@@ -8,24 +8,29 @@
 
 #import <NearField/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 
 @interface NFECommercePaymentResponse : NSObject <NSSecureCoding>
 {
     NSString *_transactionIdentifier;
     NSData *_transactionData;
     NSDictionary *_certs;
+    NSArray *_SEPcerts;
     NSData *_confirmationBlobHash;
     NSData *_confirmationBlobSignature;
+    long long _confirmationBlobVersion;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) long long confirmationBlobVersion; // @synthesize confirmationBlobVersion=_confirmationBlobVersion;
 @property(readonly, nonatomic) NSData *confirmationBlobSignature; // @synthesize confirmationBlobSignature=_confirmationBlobSignature;
 @property(readonly, nonatomic) NSData *confirmationBlobHash; // @synthesize confirmationBlobHash=_confirmationBlobHash;
+@property(readonly, nonatomic) NSArray *SEPcerts; // @synthesize SEPcerts=_SEPcerts;
 @property(readonly, nonatomic) NSDictionary *certs; // @synthesize certs=_certs;
 @property(readonly, nonatomic) NSData *transactionData; // @synthesize transactionData=_transactionData;
 @property(readonly, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
-- (void)setConfirmationBlobHash:(id)arg1 withSignature:(id)arg2;
+- (void)setSEPCerts:(id)arg1;
+- (void)setConfirmationBlobHash:(id)arg1 withSignature:(id)arg2 version:(unsigned long long)arg3;
 - (void)setCerts:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

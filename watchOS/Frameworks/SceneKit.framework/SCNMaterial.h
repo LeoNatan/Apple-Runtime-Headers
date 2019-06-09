@@ -29,6 +29,9 @@
     SCNMaterialProperty *_metalness;
     SCNMaterialProperty *_roughness;
     SCNMaterialProperty *_displacement;
+    SCNMaterialProperty *_clearCoat;
+    SCNMaterialProperty *_clearCoatRoughness;
+    SCNMaterialProperty *_clearCoatNormal;
     SCNOrderedDictionary *_animations;
     NSMutableDictionary *_bindings;
     NSString *_name;
@@ -143,6 +146,9 @@
 @property(nonatomic) float transparency;
 @property(nonatomic) float shininess;
 @property(nonatomic) int transparencyMode;
+@property(readonly, nonatomic) SCNMaterialProperty *clearCoatNormal;
+@property(readonly, nonatomic) SCNMaterialProperty *clearCoatRoughness;
+@property(readonly, nonatomic) SCNMaterialProperty *clearCoat;
 @property(readonly, nonatomic) SCNMaterialProperty *displacement;
 @property(readonly, nonatomic) SCNMaterialProperty *roughness;
 @property(readonly, nonatomic) SCNMaterialProperty *metalness;
@@ -163,7 +169,7 @@
 - (void)setColor:(id)arg1;
 - (void)_setupMaterialProperty:(id *)arg1;
 - (Class)_materialPropertyClass;
--     // Error parsing type: ^{__C3DEffectCommonProfile={__CFRuntimeBase=IAI}^{__C3DMaterial}l^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}fffffCiBBb1b1b1b1b1b1b1b1b1b13}8@0:4, name: commonProfile
+-     // Error parsing type: ^{__C3DEffectCommonProfile={__CFRuntimeBase=IAI}^{__C3DMaterial}l^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}fffffCiBBb1b1b1b1b1b1b1b1b1b13}8@0:4, name: commonProfile
 - (struct __C3DMaterial *)materialRef;
 - (_Bool)isPausedOrPausedByInheritance;
 - (id)presentationInstance;

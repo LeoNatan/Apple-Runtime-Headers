@@ -6,35 +6,42 @@
 
 #import <HomeUI/HUGridCell.h>
 
-@class HFItem, HUCameraView, HUGridCameraCellLayoutOptions, NADecayingTimer, NSArray, UILabel, UIView;
+@class HFItem, HUCameraView, HUGridCameraCellLayoutOptions, HULegibilityLabel, HUVisualEffectContainerView, NADecayingTimer, NSArray, UILabel, UIView, _UILegibilitySettings;
 
 @interface HUGridCameraCell : HUGridCell
 {
     HFItem *_item;
     HUGridCameraCellLayoutOptions *_layoutOptions;
     UIView *_topBarView;
+    UIView *_recordingIndicator;
     UILabel *_titleLabel;
-    UILabel *_descriptionLabel;
+    HULegibilityLabel *_descriptionLabel;
     HUCameraView *_cameraView;
+    _UILegibilitySettings *_legibilitySettings;
     NSArray *_allConstraints;
     NSArray *_labelsConstraints;
     NADecayingTimer *_descriptionLabelUpdateTimer;
+    HUVisualEffectContainerView *_exclamationView;
 }
 
 + (Class)layoutOptionsClass;
 + (_Bool)requiresConstraintBasedLayout;
+@property(retain, nonatomic) HUVisualEffectContainerView *exclamationView; // @synthesize exclamationView=_exclamationView;
 @property(retain, nonatomic) NADecayingTimer *descriptionLabelUpdateTimer; // @synthesize descriptionLabelUpdateTimer=_descriptionLabelUpdateTimer;
 @property(retain, nonatomic) NSArray *labelsConstraints; // @synthesize labelsConstraints=_labelsConstraints;
 @property(retain, nonatomic) NSArray *allConstraints; // @synthesize allConstraints=_allConstraints;
+@property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) HUCameraView *cameraView; // @synthesize cameraView=_cameraView;
-@property(retain, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
+@property(retain, nonatomic) HULegibilityLabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) UIView *recordingIndicator; // @synthesize recordingIndicator=_recordingIndicator;
 @property(retain, nonatomic) UIView *topBarView; // @synthesize topBarView=_topBarView;
 @property(retain, nonatomic) HUGridCameraCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 - (void)setItem:(id)arg1;
 - (id)item;
 - (void).cxx_destruct;
 - (id)_descriptionLabelText:(id)arg1;
+- (void)_updateRecordIndicatorColor;
 - (void)_updateCameraViewAppearance;
 - (void)_updateLabelsAppearance;
 - (void)_animateTransitionWithView:(id)arg1 animations:(CDUnknownBlockType)arg2;
@@ -42,7 +49,9 @@
 - (void)_invalidateConstraints;
 - (void)layoutOptionsDidChange;
 - (void)updateUIWithAnimation:(_Bool)arg1;
+- (_Bool)shouldDisplayErrorContent;
 - (struct CGRect)cameraViewFrame;
+@property(readonly, nonatomic) UIView *cameraContentView;
 @property(nonatomic) double cameraViewAlpha;
 - (void)tintColorDidChange;
 - (void)dealloc;

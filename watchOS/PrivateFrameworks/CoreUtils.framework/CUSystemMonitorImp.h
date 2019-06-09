@@ -71,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (void)_rotatingIdentifierMonitorStop;
 - (void)_rotatingIdentifierMonitorStart;
 - (void)_primaryAppleIDChanged:(id)arg1;
+- (id)_primaryAppleIDAccount;
 - (void)_primaryAppleIDMonitorStop;
 - (void)_primaryAppleIDMonitorStart;
 - (void)_powerUnlimitedMonitorStop;
@@ -82,6 +83,11 @@ __attribute__((visibility("hidden")))
 - (void)_manateeChanged:(id)arg1;
 - (void)_manateeMonitorStop;
 - (void)_manateeMonitorStart;
+- (void)_familyUpdated:(id)arg1;
+- (void)_familyNetworkChanged;
+- (void)_familyGetMembers:(_Bool)arg1;
+- (void)_familyMonitorStop;
+- (void)_familyMonitorStart;
 - (int)_connectedCallCountUnached;
 - (int)_activeCallCountUnached;
 - (void)callObserver:(id)arg1 callChanged:(id)arg2;

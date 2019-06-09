@@ -4,26 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HMFoundation/HMFObject.h>
+#import <HomeKitDaemon/HMDAction.h>
 
 #import <HomeKitDaemon/HMDBackingStoreObjectProtocol-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDActionSet, HMDCharacteristic, NSString, NSUUID;
+@class HMDCharacteristic, NSDictionary, NSString;
 
-@interface HMDCharacteristicWriteAction : HMFObject <NSSecureCoding, HMDBackingStoreObjectProtocol>
+@interface HMDCharacteristicWriteAction : HMDAction <NSSecureCoding, HMDBackingStoreObjectProtocol>
 {
-    NSUUID *_uuid;
-    HMDActionSet *_actionSet;
     HMDCharacteristic *_characteristic;
     id _targetValue;
+    NSDictionary *_actionInformation;
+    NSString *_dumpState;
 }
 
++ (id)logCategory;
 + (BOOL)supportsSecureCoding;
++ (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
+@property(readonly, nonatomic) NSString *dumpState; // @synthesize dumpState=_dumpState;
+@property(readonly, nonatomic) NSDictionary *actionInformation; // @synthesize actionInformation=_actionInformation;
 @property(copy, nonatomic) id targetValue; // @synthesize targetValue=_targetValue;
 @property(readonly, nonatomic) __weak HMDCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
-@property(readonly, nonatomic) __weak HMDActionSet *actionSet; // @synthesize actionSet=_actionSet;
-@property(readonly, copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (void)_processWriteActionModelUpdated:(id)arg1 message:(id)arg2;
@@ -31,10 +33,13 @@
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)requiresDeviceUnlock;
+- (BOOL)isActionForCharacteristic:(id)arg1;
 - (BOOL)isSecureAction;
-- (id)actionInformation;
-- (id)dumpState;
+- (id)dictionaryRepresentation;
+- (id)stateDump;
 - (void)replaceCharacteristic:(id)arg1;
+- (unsigned long long)type;
 - (id)initWithUUID:(id)arg1 characteristic:(id)arg2 targetValue:(id)arg3 actionSet:(id)arg4;
 - (id)init;
 

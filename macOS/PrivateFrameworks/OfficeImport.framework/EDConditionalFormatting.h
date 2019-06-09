@@ -8,6 +8,7 @@
 
 @class EDReferenceCollection, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface EDConditionalFormatting : NSObject
 {
     NSMutableArray *mRules;

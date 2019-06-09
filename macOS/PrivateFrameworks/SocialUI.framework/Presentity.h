@@ -19,7 +19,6 @@
 - (void)setPicture:(id)arg1;
 - (void)customPictureDataChanged:(id)arg1 key:(id)arg2;
 - (id)picture;
-- (id)buddyImage;
 - (void)setPictureFromImage:(id)arg1;
 - (void)_setPicture:(id)arg1;
 - (void)sendNotificationABPersonChanged;

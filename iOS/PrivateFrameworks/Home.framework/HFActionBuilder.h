@@ -14,8 +14,11 @@
 
 + (id)actionBuilderForAction:(id)arg1 inHome:(id)arg2;
 + (Class)homeKitRepresentationClass;
+- (_Bool)hasSameTargetAsAction:(id)arg1;
+- (_Bool)isEquivalentToAction:(id)arg1;
 @property(readonly, nonatomic, getter=isAffectedByEndEvents) _Bool affectedByEndEvents;
 - (id)createNewAction;
+- (id)getOrCreateAction;
 - (id)copyForCreatingNewAction;
 @property(readonly, nonatomic) _Bool requiresDeviceUnlock;
 - (_Bool)updateWithActionBuilder:(id)arg1;

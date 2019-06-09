@@ -33,6 +33,7 @@
     float _selectionPriority;
     _MKKVOProxy *_annotationObserver;
     _MKAnnotationViewCustomFeatureAnnotation *_customFeatureAnnotation;
+    _Bool _subclassImplementsAlignmentRectInsets;
     id <MKAnnotation> _annotation;
     float _displayPriority;
     struct CGRect _collisionFrame;
@@ -68,6 +69,8 @@
         unsigned int setSelectState:2;
     } _flags;
     CALayer *_imageLayer;
+    int _titleVisibility;
+    int _subtitleVisibility;
     _Bool _animatingToCoordinate;
     _Bool _tracking;
     _Bool _pendingSelectionAnimated;
@@ -83,11 +86,14 @@
 + (unsigned int)_zIndex;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentLocationTitle;
++ (Class)_mapkitLeafClass;
 + (Class)calloutViewClass;
 @property(nonatomic) int collisionMode; // @synthesize collisionMode=_collisionMode;
 @property(nonatomic) float displayPriority; // @synthesize displayPriority=_displayPriority;
 @property(readonly, nonatomic) __weak MKAnnotationView *clusterAnnotationView; // @synthesize clusterAnnotationView=_clusterAnnotationView;
 @property(copy, nonatomic) NSString *clusteringIdentifier; // @synthesize clusteringIdentifier=_clusteringIdentifier;
+@property(nonatomic) int subtitleVisibility; // @synthesize subtitleVisibility=_subtitleVisibility;
+@property(nonatomic) int titleVisibility; // @synthesize titleVisibility=_titleVisibility;
 @property(nonatomic, getter=_isPendingSelectionAnimated, setter=_setPendingSelectionAnimated:) _Bool pendingSelectionAnimated; // @synthesize pendingSelectionAnimated=_pendingSelectionAnimated;
 @property(nonatomic, getter=_selectionPriority, setter=_setSelectionPriority:) float selectionPriority; // @synthesize selectionPriority=_selectionPriority;
 @property(nonatomic, getter=_mapDisplayStyle, setter=_setMapDisplayStyle:) CDStruct_80aa614a mapDisplayStyle; // @synthesize mapDisplayStyle=_mapDisplayStyle;
@@ -107,6 +113,8 @@
 @property(copy, nonatomic, setter=_setPresentationCoordinateChangedCallback:) CDUnknownBlockType _presentationCoordinateChangedCallback; // @synthesize _presentationCoordinateChangedCallback;
 @property(nonatomic, setter=_setDirection:) double _direction; // @synthesize _direction;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_defaultCollisionAlignmentRectInsets) struct UIEdgeInsets defaultCollisionAlignmentRectInsets;
+@property(readonly, nonatomic, getter=_collisionAlignmentRectInsets) struct UIEdgeInsets collisionAlignmentRectInsets;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (void)prepareForSnapshotting;
 - (_Bool)isCollidingWithAnnotationView:(id)arg1 previouslyCollided:(_Bool)arg2;
@@ -125,7 +133,7 @@
 - (_Bool)_canChangeOrientation;
 - (unsigned int)_orientationCount;
 - (_Bool)_hasAlternateOrientation;
-- (void)_transitionFrom:(int)arg1 to:(int)arg2 duration:(double)arg3;
+- (void)_transitionTo:(int)arg1;
 - (void)_setRotationRadians:(float)arg1 withAnimation:(id)arg2;
 - (void)_userTrackingModeDidChange:(id)arg1;
 - (void)_enableRotationForHeadingMode:(float)arg1;
@@ -158,6 +166,7 @@
 - (_Bool)_canDisplayPlacemarkInCallout;
 - (void)_setCanDisplayDisclosureInCallout:(_Bool)arg1;
 - (_Bool)_canDisplayDisclosureInCallout;
+- (void)_setDragState:(unsigned int)arg1 animated:(_Bool)arg2;
 - (void)setDragState:(unsigned int)arg1 animated:(_Bool)arg2;
 @property(nonatomic) unsigned int dragState;
 @property(nonatomic, getter=isDraggable) _Bool draggable;
@@ -206,6 +215,8 @@
 - (_Bool)isSelectable;
 - (_Bool)shouldShowCallout;
 - (void)configureCustomFeature:(id)arg1;
+- (id)_effectiveSubtitlesIsCollidable:(_Bool *)arg1;
+- (id)_effectiveTitleIsCollidable:(_Bool *)arg1;
 - (void)invalidateCustomFeatureForced:(_Bool)arg1;
 - (_Bool)isProvidingCustomFeature;
 - (id)customFeatureAnnotation;

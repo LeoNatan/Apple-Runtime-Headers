@@ -12,16 +12,16 @@
 @interface IMAPPersistFlagChangesOperation : IMAPPersistenceTaskOperation
 {
     id <IMAPPersistFlagChangesOperationDelegate> _delegate;
-    NSDictionary *_flagChangesByMessageDetails;
+    NSDictionary *_flagChangesByServerMessage;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *flagChangesByMessageDetails; // @synthesize flagChangesByMessageDetails=_flagChangesByMessageDetails;
+@property(readonly, copy, nonatomic) NSDictionary *flagChangesByServerMessage; // @synthesize flagChangesByServerMessage=_flagChangesByServerMessage;
 @property(readonly, nonatomic) __weak id <IMAPPersistFlagChangesOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithDataSource:(id)arg1;
-- (id)initWithDataSource:(id)arg1 flagChangesByMessageDetails:(id)arg2 delegate:(id)arg3;
+- (id)initWithDataSource:(id)arg1 flagChangesByServerMessage:(id)arg2 delegate:(id)arg3;
 
 @end
 

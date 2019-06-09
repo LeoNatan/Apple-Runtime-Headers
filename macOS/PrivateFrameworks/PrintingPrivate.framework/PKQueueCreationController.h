@@ -8,7 +8,7 @@
 
 #import <PrintingPrivate/PMXPCSupportDelegate-Protocol.h>
 
-@class NSArray, NSButton, NSProgressIndicator, NSString, NSTextField, NSView, PKPrinter, PMXPCSupport;
+@class NSArray, NSButton, NSProgressIndicator, NSString, NSTextField, NSView, PK2Printer, PMXPCSupport;
 @protocol PKServerQueueCreationDelegate;
 
 @interface PKQueueCreationController : NSWindowController <PMXPCSupportDelegate>
@@ -18,7 +18,7 @@
     NSTextField *_progressTextField;
     NSProgressIndicator *_progressIndicator;
     NSArray *_topLevelNibObjects;
-    PKPrinter *_printer;
+    PK2Printer *_printer;
     NSString *_queueID;
     id <PKServerQueueCreationDelegate> _delegate;
     BOOL _isCancelled;
@@ -34,7 +34,7 @@
 @property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
 @property id <PKServerQueueCreationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSString *queueID; // @synthesize queueID=_queueID;
-@property(retain) PKPrinter *printer; // @synthesize printer=_printer;
+@property(retain) PK2Printer *printer; // @synthesize printer=_printer;
 - (void)handleEventForCommand:(int)arg1 status:(int)arg2 event:(id)arg3;
 - (void)startQueueCreation;
 - (void)presentErrorWithMessageText:(id)arg1 informativeTextWithFormat:(id)arg2;

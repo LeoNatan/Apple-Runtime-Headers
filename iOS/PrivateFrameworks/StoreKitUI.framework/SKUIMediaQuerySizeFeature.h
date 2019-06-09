@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIMediaQueryFeature.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaQuerySizeFeature : SKUIMediaQueryFeature
 {
     double _value;

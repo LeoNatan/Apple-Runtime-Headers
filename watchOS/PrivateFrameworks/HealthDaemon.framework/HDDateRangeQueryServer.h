@@ -33,9 +33,8 @@
 - (void)_queue_start;
 - (_Bool)_shouldObserveAllSampleTypes;
 - (_Bool)_shouldListenForUpdates;
-- (id)_sampleTypeFromNumber:(id)arg1;
 - (id)dateRangeClientProxy;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

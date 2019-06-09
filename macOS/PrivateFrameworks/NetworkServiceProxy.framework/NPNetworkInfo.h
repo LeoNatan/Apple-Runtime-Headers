@@ -13,9 +13,9 @@
 @interface NPNetworkInfo : NSObject <NSSecureCoding>
 {
     BOOL _isProbeInProgress;
-    unsigned int _lastFailureReason;
     NSDate *_lastVisited;
     NSDate *_lastUsed;
+    long long _lastFallbackReason;
     NSArray *_edgeLatencies;
     NSArray *_currentLatencyMap;
     NSDate *_probeRateLimit;
@@ -29,7 +29,7 @@
 @property(retain) NSDate *probeRateLimit; // @synthesize probeRateLimit=_probeRateLimit;
 @property(retain) NSArray *currentLatencyMap; // @synthesize currentLatencyMap=_currentLatencyMap;
 @property(retain) NSArray *edgeLatencies; // @synthesize edgeLatencies=_edgeLatencies;
-@property unsigned int lastFailureReason; // @synthesize lastFailureReason=_lastFailureReason;
+@property long long lastFallbackReason; // @synthesize lastFallbackReason=_lastFallbackReason;
 @property(retain) NSDate *lastUsed; // @synthesize lastUsed=_lastUsed;
 @property(retain) NSDate *lastVisited; // @synthesize lastVisited=_lastVisited;
 - (void).cxx_destruct;

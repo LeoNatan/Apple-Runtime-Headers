@@ -23,7 +23,7 @@
     UIView *__innerView;
     UIView *__innerViewContrastView;
     UIView *__stopModeBackground;
-    UIImageView *__spinnerView;
+    UIView *__spinnerView;
     long long _layoutStyle;
     struct UIEdgeInsets _tappableEdgeInsets;
     struct CAMShutterButtonSpec _spec;
@@ -35,7 +35,7 @@
 + (id)shutterButton;
 + (id)smallShutterButton;
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
-@property(retain, nonatomic) UIImageView *_spinnerView; // @synthesize _spinnerView=__spinnerView;
+@property(retain, nonatomic) UIView *_spinnerView; // @synthesize _spinnerView=__spinnerView;
 @property(retain, nonatomic) UIView *_stopModeBackground; // @synthesize _stopModeBackground=__stopModeBackground;
 @property(readonly, nonatomic) UIView *_innerViewContrastView; // @synthesize _innerViewContrastView=__innerViewContrastView;
 @property(readonly, nonatomic) UIView *_innerView; // @synthesize _innerView=__innerView;
@@ -58,15 +58,12 @@
 - (void)_updateOuterAndInnerLayers;
 - (_Bool)_shouldShowBackgroundViewForMode:(long long)arg1;
 - (_Bool)_shouldShowContrastBorderForMode:(long long)arg1 layoutStyle:(long long)arg2;
-- (_Bool)_shouldUseTimelapseOuterViewForMode:(long long)arg1;
-- (_Bool)_shouldUseImageViewForMode:(long long)arg1;
-- (_Bool)_isStopMode:(long long)arg1;
+- (CDStruct_8ae1ff66)_timelapseRingSpecForLayoutStyle:(long long)arg1;
 - (id)_outerImageForMode:(long long)arg1 layoutStyle:(long long)arg2;
 - (double)_cornerRadiusForMode:(long long)arg1;
 - (struct CGSize)_sizeForMode:(long long)arg1;
 - (id)_innerCircleColorForMode:(long long)arg1 spinning:(_Bool)arg2;
 - (id)_contentColor;
-- (double)_innerCircleDiameter;
 - (void)setMode:(long long)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (struct UIEdgeInsets)alignmentRectInsets;

@@ -11,6 +11,7 @@
 @class NSMutableDictionary, NSString;
 @protocol SymptomAdditionalProtocol;
 
+__attribute__((visibility("hidden")))
 @interface SimpleRuleCondition : NSObject <ConfigurableObjectProtocol>
 {
     NSMutableDictionary *_resetSources;

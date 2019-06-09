@@ -6,11 +6,11 @@
 
 #import <ScreenTimeUI/STTableCell.h>
 
+__attribute__((visibility("hidden")))
 @interface STAllowanceProgressCell : STTableCell
 {
 }
 
-- (void)setValue:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 
 @end

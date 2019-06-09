@@ -9,7 +9,7 @@
 #import <Celestial/FigXPCCoding-Protocol.h>
 #import <Celestial/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface FigCaptureIrisPreparedSettings : NSObject <FigXPCCoding, NSCopying>
 {
@@ -19,14 +19,14 @@
     unsigned int _outputWidth;
     unsigned int _outputHeight;
     unsigned int _bracketedImageCount;
-    int _SISMode;
+    int _qualityPrioritization;
     int _HDRMode;
-    _Bool _bravoDualImageDeliveryEnabled;
+    NSArray *_bravoConstituentImageDeliveryDeviceTypes;
 }
 
-@property(nonatomic) _Bool bravoDualImageDeliveryEnabled; // @synthesize bravoDualImageDeliveryEnabled=_bravoDualImageDeliveryEnabled;
+@property(copy, nonatomic) NSArray *bravoConstituentImageDeliveryDeviceTypes; // @synthesize bravoConstituentImageDeliveryDeviceTypes=_bravoConstituentImageDeliveryDeviceTypes;
 @property(nonatomic) int HDRMode; // @synthesize HDRMode=_HDRMode;
-@property(nonatomic) int SISMode; // @synthesize SISMode=_SISMode;
+@property(nonatomic) int qualityPrioritization; // @synthesize qualityPrioritization=_qualityPrioritization;
 @property(nonatomic) unsigned int bracketedImageCount; // @synthesize bracketedImageCount=_bracketedImageCount;
 @property(nonatomic) unsigned int rawOutputFormat; // @synthesize rawOutputFormat=_rawOutputFormat;
 @property(nonatomic) unsigned int outputHeight; // @synthesize outputHeight=_outputHeight;

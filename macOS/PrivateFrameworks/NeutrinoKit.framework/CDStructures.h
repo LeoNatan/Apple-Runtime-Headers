@@ -25,18 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct CVSMPTETime {
-    short _field1;
-    short _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned int _field5;
-    short _field6;
-    short _field7;
-    short _field8;
-    short _field9;
-};
-
 struct NSEdgeInsets {
     double top;
     double left;
@@ -48,20 +36,15 @@ struct NSEdgeInsets {
 
 typedef struct {
     long long _field1;
-    long long _field2;
-} CDStruct_912cb5d2;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
 
 typedef struct {
-    unsigned int _field1;
-    int _field2;
-    long long _field3;
-    unsigned long long _field4;
-    double _field5;
-    long long _field6;
-    struct CVSMPTETime _field7;
-    unsigned long long _field8;
-    unsigned long long _field9;
-} CDStruct_e50ab651;
+    long long _field1;
+    long long _field2;
+} CDStruct_912cb5d2;
 
 typedef struct {
     CDStruct_912cb5d2 _field1;

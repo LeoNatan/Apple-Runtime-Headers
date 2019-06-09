@@ -8,6 +8,7 @@
 
 @class SKUIButtonViewElement, SKUIViewElement, UIButton;
 
+__attribute__((visibility("hidden")))
 @interface SKUIButtonFooterSettingsHeaderFooterDescriptionView : SKUISettingsHeaderFooterDescriptionView
 {
     UIButton *_button;

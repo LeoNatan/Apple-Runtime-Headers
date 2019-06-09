@@ -23,7 +23,6 @@
 @property(readonly, nonatomic) NSString *URI;
 @property(readonly, nonatomic) NSDate *date;
 - (void)dealloc;
-- (void)finalize;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;

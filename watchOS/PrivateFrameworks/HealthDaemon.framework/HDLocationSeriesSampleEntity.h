@@ -30,6 +30,7 @@
 + (CDUnknownBlockType)objectInsertionFilter;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (id)createTableSQL;
++ (_Bool)isConcreteEntity;
 + (_Bool)participatesInInsertion;
 + (_Bool)isBackedByTable;
 - (id)_frozenUUIDForUnfrozenSeriesSample:(id)arg1 HFDKey:(long long)arg2 frozenStartTime:(double)arg3 frozenEndTime:(double)arg4 frozenCount:(long long)arg5 profile:(id)arg6 database:(id)arg7 error:(id *)arg8;

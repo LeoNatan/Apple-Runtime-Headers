@@ -13,7 +13,9 @@
     NSData *_bomData;
 }
 
+- (BOOL)writeToDestination:(id)arg1 forSystemContent:(BOOL)arg2 systemVolumeInstall:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)writeToDestination:(id)arg1 forSystemContent:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)writeToSandboxRoot:(id)arg1 destination:(id)arg2 forSystemContent:(BOOL)arg3 systemVolumeInstall:(BOOL)arg4 error:(id *)arg5;
 - (BOOL)writeToSandboxRoot:(id)arg1 destination:(id)arg2 forSystemContent:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)writeToDirectory:(id)arg1 error:(id *)arg2;
 - (BOOL)_writeToDirectory:(id)arg1 forSystemContent:(BOOL)arg2 error:(id *)arg3;

@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/NSSecureCoding-Protocol.h>
 
-@class NSIndexSet, NSMutableSet, NSString, PSIWordEmbeddingMatch;
+@class NSDictionary, NSIndexSet, NSMutableSet, NSString, PSIWordEmbeddingMatch;
 
 @interface PSIQueryToken : NSObject <NSSecureCoding>
 {
@@ -22,24 +22,24 @@
     unsigned int _userCategory;
     unsigned int _matchType;
     PSIQueryToken *_parentToken;
-    NSString *_resolvedText;
+    NSString *_normalizedText;
     PSIWordEmbeddingMatch *_wordEmbeddingMatch;
     NSMutableSet *_assetIds;
     NSMutableSet *_collectionIds;
-    NSMutableSet *_tripIds;
+    NSDictionary *_dateAttributes;
     struct _NSRange _rangeInSearchText;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)stringForMatchType:(unsigned int)arg1;
 + (id)personQueryTokensFromSocialGroupQueryToken:(id)arg1;
-@property(retain, nonatomic) NSMutableSet *tripIds; // @synthesize tripIds=_tripIds;
+@property(retain, nonatomic) NSDictionary *dateAttributes; // @synthesize dateAttributes=_dateAttributes;
 @property(retain, nonatomic) NSMutableSet *collectionIds; // @synthesize collectionIds=_collectionIds;
 @property(retain, nonatomic) NSMutableSet *assetIds; // @synthesize assetIds=_assetIds;
 @property(nonatomic) _Bool belongsToSearchText; // @synthesize belongsToSearchText=_belongsToSearchText;
 @property(nonatomic) _Bool isFullTextToken; // @synthesize isFullTextToken=_isFullTextToken;
 @property(retain, nonatomic) PSIWordEmbeddingMatch *wordEmbeddingMatch; // @synthesize wordEmbeddingMatch=_wordEmbeddingMatch;
-@property(copy, nonatomic) NSString *resolvedText; // @synthesize resolvedText=_resolvedText;
+@property(copy, nonatomic) NSString *normalizedText; // @synthesize normalizedText=_normalizedText;
 @property(retain, nonatomic) PSIQueryToken *parentToken; // @synthesize parentToken=_parentToken;
 @property(nonatomic) struct _NSRange rangeInSearchText; // @synthesize rangeInSearchText=_rangeInSearchText;
 @property(nonatomic) _Bool usesWordEmbeddings; // @synthesize usesWordEmbeddings=_usesWordEmbeddings;
@@ -48,10 +48,12 @@
 @property(nonatomic) unsigned int userCategory; // @synthesize userCategory=_userCategory;
 @property(copy, nonatomic) NSIndexSet *searchedCategories; // @synthesize searchedCategories=_searchedCategories;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, copy, nonatomic) NSString *text; // @synthesize text=_text;
+@property(copy, nonatomic) NSString *text; // @synthesize text=_text;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)replaceIdentifier:(id)arg1;
+@property(readonly, copy, nonatomic) NSDictionary *debugDictionary;
 - (id)description;
 - (id)tokenByWordEmbeddingWithMatch:(id)arg1;
 @property(readonly, nonatomic) _Bool containsMarker;
@@ -59,18 +61,19 @@
 @property(readonly, copy, nonatomic) NSString *groupMatchingText;
 @property(readonly, nonatomic) _Bool isTextSearchable;
 @property(readonly, nonatomic) unsigned int resultCount;
-@property(readonly, nonatomic) unsigned int tripCount;
 @property(readonly, nonatomic) unsigned int collectionCount;
 @property(readonly, nonatomic) unsigned int assetCount;
+@property(readonly, copy, nonatomic) NSString *resolvedText;
+- (void)normalizeTextWithTokenizer:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
-- (id)initWithText:(id)arg1 resolvedText:(id)arg2 userCategory:(unsigned int)arg3 searchedCategories:(id)arg4 matchType:(unsigned int)arg5;
-- (id)initWithText:(id)arg1 resolvedText:(id)arg2 userCategory:(unsigned int)arg3 matchType:(unsigned int)arg4;
+- (unsigned int)hash;
+- (id)initWithText:(id)arg1 normalizedText:(id)arg2 userCategory:(unsigned int)arg3 searchedCategories:(id)arg4 matchType:(unsigned int)arg5;
+- (id)initWithText:(id)arg1 normalizedText:(id)arg2 userCategory:(unsigned int)arg3 matchType:(unsigned int)arg4;
 - (id)initWithIdentifier:(id)arg1 userCategory:(unsigned int)arg2 searchedCategories:(id)arg3;
 - (id)initWithText:(id)arg1 userCategory:(unsigned int)arg2 searchedCategories:(id)arg3 matchType:(unsigned int)arg4;
 - (id)initWithIdentifier:(id)arg1 userCategory:(unsigned int)arg2;
 - (id)initWithText:(id)arg1 userCategory:(unsigned int)arg2 matchType:(unsigned int)arg3;
-- (id)initWithText:(id)arg1 resolvedText:(id)arg2 identifier:(id)arg3 userCategory:(unsigned int)arg4 searchedCategories:(id)arg5 matchType:(unsigned int)arg6;
+- (id)initWithText:(id)arg1 normalizedText:(id)arg2 identifier:(id)arg3 userCategory:(unsigned int)arg4 searchedCategories:(id)arg5 matchType:(unsigned int)arg6;
 
 @end
 

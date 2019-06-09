@@ -26,8 +26,8 @@
 @property _Bool canDownloadFromCloud; // @synthesize canDownloadFromCloud=_canDownloadFromCloud;
 @property _Bool deliveredPlaceholder; // @synthesize deliveredPlaceholder=_deliveredPlaceholder;
 @property int deliveredFormat; // @synthesize deliveredFormat=_deliveredFormat;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

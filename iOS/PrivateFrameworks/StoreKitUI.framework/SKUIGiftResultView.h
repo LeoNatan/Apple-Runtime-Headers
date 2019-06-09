@@ -8,6 +8,7 @@
 
 @class NSString, SKUIGiftItemView, UIButton, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftResultView : UIView
 {
     UIButton *_giftAgainButton;

@@ -22,11 +22,11 @@ __attribute__((visibility("hidden")))
 - (struct __CFLocale *)currentLocale;
 - (void)dealloc;
 - (id)init;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)autorelease;
 - (oneway void)release;
 - (unsigned long long)retainCount;
 - (id)retain;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

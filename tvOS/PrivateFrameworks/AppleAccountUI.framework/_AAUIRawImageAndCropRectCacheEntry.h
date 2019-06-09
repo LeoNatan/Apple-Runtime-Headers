@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) struct CGRect rawCropRect; // @synthesize rawCropRect=_rawCropRect;
 @property(readonly, nonatomic) UIImage *rawImage; // @synthesize rawImage=_rawImage;
 - (void).cxx_destruct;
-- (_Bool)valid;
+@property(readonly, nonatomic, getter=isValid) _Bool valid;
 
 @end
 

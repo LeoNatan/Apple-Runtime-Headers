@@ -19,6 +19,9 @@
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)initWithCRCoder:(id)arg1;
 - (void)mergeWith:(id)arg1;
+- (id)dictionaryFromQueryComponents;
+- (id)stringByEncodingURLFormat;
+- (id)stringByDecodingURLFormat;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

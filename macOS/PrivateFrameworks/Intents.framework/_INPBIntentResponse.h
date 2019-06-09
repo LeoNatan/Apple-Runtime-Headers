@@ -27,6 +27,7 @@
     _INPBUserActivity *_userActivity;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) _INPBUserActivity *userActivity; // @synthesize userActivity=_userActivity;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) BOOL requiresProtectedData; // @synthesize requiresProtectedData=_requiresProtectedData;
@@ -38,6 +39,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasUserActivity;

@@ -8,7 +8,8 @@
 
 #import <SpringBoardUIServices/SBFIrisWallpaperViewDelegate-Protocol.h>
 
-@class NSString, SBFLockScreenDateView, SBFWallpaperView, SBSUIEffectsSegmentedControl, _UILegibilityLabel;
+@class NSString, SBFLockScreenDateView, SBFWallpaperView, SBSUIEffectsSegmentedControl, UIButton, _UILegibilityLabel;
+@protocol SBSUIWallpaperPreviewViewDelegate;
 
 @interface SBSUIWallpaperPreviewView : UIView <SBFIrisWallpaperViewDelegate>
 {
@@ -17,22 +18,37 @@
     _UILegibilityLabel *_irisInstructionsLabel2;
     _Bool _observingParallaxChanges;
     _Bool _usingSegmentedControl;
+    id <SBSUIWallpaperPreviewViewDelegate> _delegate;
     SBSUIEffectsSegmentedControl *_segmentedControl;
     SBFLockScreenDateView *_dateView;
     SBFWallpaperView *_wallpaperView;
+    UIButton *_irisButton;
+    UIButton *_parallaxButton;
+    UIButton *_cancelButton;
+    UIButton *_setButton;
 }
 
 + (_Bool)shouldEnableParallaxForEffect:(unsigned long long)arg1;
 @property(retain, nonatomic) _UILegibilityLabel *irisInstructionsLabel2; // @synthesize irisInstructionsLabel2=_irisInstructionsLabel2;
 @property(retain, nonatomic) _UILegibilityLabel *irisInstructionsLabel1; // @synthesize irisInstructionsLabel1=_irisInstructionsLabel1;
+@property(retain, nonatomic) UIButton *setButton; // @synthesize setButton=_setButton;
+@property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(retain, nonatomic) UIButton *parallaxButton; // @synthesize parallaxButton=_parallaxButton;
+@property(retain, nonatomic) UIButton *irisButton; // @synthesize irisButton=_irisButton;
 @property(readonly, nonatomic) SBFWallpaperView *wallpaperView; // @synthesize wallpaperView=_wallpaperView;
 @property(retain, nonatomic) SBFLockScreenDateView *dateView; // @synthesize dateView=_dateView;
 @property(retain, nonatomic) SBSUIEffectsSegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
+@property(nonatomic) __weak id <SBSUIWallpaperPreviewViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)irisWallpaperViewPlaybackStateDidChange:(id)arg1;
 - (void)_updateSegmentedControl;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_layoutSetButton;
+- (void)_layoutCancelButton;
+- (void)_layoutParallaxButton;
+- (void)_layoutIrisButton;
 - (void)_layoutIrisInstructionLabels;
+- (void)_buildConstraints;
 - (double)_segmentedControlInset;
 - (void)_layoutSegmentedControl;
 - (void)_layoutDateView;
@@ -45,6 +61,11 @@
 - (_Bool)shouldEnableParallax;
 - (unsigned long long)selectedEffect;
 - (void)dealloc;
+- (void)_userDidTapOnSetButton:(id)arg1;
+- (void)_userDidTapOnCancelButton:(id)arg1;
+- (void)_userDidTapOnParallaxButton:(id)arg1;
+- (void)_userDidTapOnIrisButton:(id)arg1;
+- (id)_makeButtonWithVisualEffectBlur;
 - (id)initWithFrame:(struct CGRect)arg1 wallpaperView:(id)arg2;
 
 // Remaining properties

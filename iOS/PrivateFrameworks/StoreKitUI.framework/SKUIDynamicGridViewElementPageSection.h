@@ -13,6 +13,7 @@
 @class CPLRUDictionary, NSMutableDictionary, NSString, SKUIDynamicPageSectionIndexMapper, SKUIGridComponent, SKUIGridViewElementPageSectionConfiguration, SKUIMutableIntegerValue, SKUIViewElement, SKUIViewElementLayoutContext, SKUIViewElementTextLayoutCache, _SKUIDynamicGridSizeCacheKey;
 @protocol SKUIEntityProviding;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDynamicGridViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIGridViewElementPageSectionConfigurationDataSource, SKUICollectionDOMFeatureTargetting>
 {
     SKUIViewElementLayoutContext *_cellLayoutContext;

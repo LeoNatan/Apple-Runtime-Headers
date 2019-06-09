@@ -14,7 +14,6 @@
     _Bool _claimedOwnershipOfContacts;
     _Bool _claimedOwnershipOfEvents;
     _Bool _claimedOwnershipOfNotes;
-    _Bool _claimedOwnershipOfBookmarks;
     id <DADataclassLockWatcher> _contactsLockHolder;
     NSMutableArray *_contactsWaiters;
     NSMutableSet *_waiterIDsExpectingContactsLock;
@@ -24,18 +23,11 @@
     id <DADataclassLockWatcher> _notesLockHolder;
     NSMutableArray *_notesWaiters;
     NSMutableSet *_waiterIDsExpectingNotesLock;
-    id <DADataclassLockWatcher> _bookmarksLockHolder;
-    NSMutableArray *_bookmarksWaiters;
-    NSMutableSet *_waiterIDsExpectingBookmarksLock;
     NSString *_unitTestHackRunLoopMode;
 }
 
 + (id)sharedGateKeeper;
 @property(retain, nonatomic) NSString *unitTestHackRunLoopMode; // @synthesize unitTestHackRunLoopMode=_unitTestHackRunLoopMode;
-@property(retain, nonatomic) NSMutableSet *waiterIDsExpectingBookmarksLock; // @synthesize waiterIDsExpectingBookmarksLock=_waiterIDsExpectingBookmarksLock;
-@property(retain, nonatomic) NSMutableArray *bookmarksWaiters; // @synthesize bookmarksWaiters=_bookmarksWaiters;
-@property(retain, nonatomic) id <DADataclassLockWatcher> bookmarksLockHolder; // @synthesize bookmarksLockHolder=_bookmarksLockHolder;
-@property(nonatomic) _Bool claimedOwnershipOfBookmarks; // @synthesize claimedOwnershipOfBookmarks=_claimedOwnershipOfBookmarks;
 @property(retain, nonatomic) NSMutableSet *waiterIDsExpectingNotesLock; // @synthesize waiterIDsExpectingNotesLock=_waiterIDsExpectingNotesLock;
 @property(retain, nonatomic) NSMutableArray *notesWaiters; // @synthesize notesWaiters=_notesWaiters;
 @property(retain, nonatomic) id <DADataclassLockWatcher> notesLockHolder; // @synthesize notesLockHolder=_notesLockHolder;

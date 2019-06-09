@@ -10,6 +10,7 @@
 
 @class CHDTitle, EDResources, NSArray, NSString, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDAxis : NSObject <EDKeyedObject>
 {
     _Bool mReverseOrder;

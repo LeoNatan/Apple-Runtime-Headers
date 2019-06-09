@@ -21,6 +21,7 @@
 @property(retain) NSString *address; // @synthesize address=_address;
 @property int freeBusyType; // @synthesize freeBusyType=_freeBusyType;
 @property BOOL fromPrevious; // @synthesize fromPrevious=_fromPrevious;
+- (void).cxx_destruct;
 - (id)email;
 - (id)attendeeURL;
 - (id)description;
@@ -38,7 +39,6 @@
 - (id)firstName;
 - (id)displayedName;
 - (id)principalPath;
-- (void)dealloc;
 - (id)initWithAddress:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEOApplicationAuditToken, GEOCommonOptions, GEOComposedRoute, GEOComposedWaypoint, GEOETATrafficUpdateRequest, GEOLocation, GEORouteAttributes, GEORouteMatch, NSData, NSString, NSTimer;
+@class GEOApplicationAuditToken, GEOCommonOptions, GEOComposedRoute, GEOComposedRouteStep, GEOComposedWaypoint, GEOETATrafficUpdateRequest, GEOLocation, GEORouteAttributes, GEORouteMatch, NSData, NSString, NSTimer;
 @protocol GEOETAUpdaterDelegate;
 
 @interface GEOETAUpdater : NSObject
@@ -31,6 +31,8 @@
     NSData *_directionsResponseID;
     GEOCommonOptions *_commonOptions;
     GEOApplicationAuditToken *_auditToken;
+    GEOComposedRouteStep *_currentStepAtRequestStart;
+    double _percentageOfCurrentStepRemainingAtRequestStart;
 }
 
 @property(retain, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
@@ -57,9 +59,9 @@
 - (_Bool)_shouldStartConditionalETARequest;
 - (void)_continueUpdateRequests;
 - (double)_calculateNextTransitionTime;
-- (void)_updateRequestModeForRequest:(id)arg1 withResponse:(id)arg2;
-- (int)_requestModeForRequest:(id)arg1;
-- (void)_sendRequest:(id)arg1 shouldCallWillSendCallback:(_Bool)arg2;
+- (void)_trafficRequest:(id)arg1 finished:(id)arg2;
+- (void)_sendRequest:(id)arg1;
+- (id)_updateOrCreateRequest:(id)arg1;
 - (_Bool)_updateETAResponse:(id)arg1 withRemainingDistanceFromRequest:(id)arg2;
 - (void)_startConditionalConnectionETARequest;
 - (double)_currentTime;
@@ -71,7 +73,7 @@
 - (void)requestUpdate;
 - (void)_clearTimer;
 - (void)reset;
-@property(readonly) _Bool requestInProgress;
+@property(readonly, nonatomic) _Bool requestInProgress;
 - (void)dealloc;
 - (id)initWithRoute:(id)arg1 destination:(id)arg2 routeAttributes:(id)arg3;
 - (id)init;

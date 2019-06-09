@@ -8,12 +8,11 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface SYDJournal : NSObject
 {
-    NSMutableDictionary *store;
-    NSMutableDictionary *journal;
-    BOOL readonly;
+    NSMutableDictionary *_store;
+    NSMutableDictionary *_journal;
+    BOOL _readonly;
 }
 
 - (void).cxx_destruct;

@@ -6,10 +6,23 @@
 
 #import <VectorKit/NSObject-Protocol.h>
 
+@class NSError;
+
 @protocol MapEngineDelegate <NSObject>
+- (void)labelMarkerDidChangeState:(const shared_ptr_2d33c5e4 *)arg1;
+- (void)selectedLabelMarkerWillDisappear:(const shared_ptr_2d33c5e4 *)arg1;
+- (void)labelManagerDidLayout;
+- (void)didUpdateSceneStatus:(unsigned char)arg1;
+- (void)willBecomeFullyDrawn;
+- (void)didFinishLoadingDataWithError:(NSError *)arg1;
+- (void)didFinishLoadingData;
+- (void)didStartLoadingData;
 - (void)nearestVenueDidChange:(const struct Venue *)arg1 building:(const struct VenueBuilding *)arg2;
 - (_Bool)wantsTimerTick;
 - (void)didPresent;
 - (void)willLayoutWithTimestamp:(double)arg1;
+
+@optional
+- (void)muninJunctionDidChange:(const struct MuninJunction *)arg1 currentRoad:(const struct MuninRoadEdge *)arg2;
 @end
 

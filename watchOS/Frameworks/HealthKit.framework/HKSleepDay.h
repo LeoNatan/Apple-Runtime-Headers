@@ -30,10 +30,10 @@
 @property(readonly, nonatomic) double asleepDurationGoal; // @synthesize asleepDurationGoal=_asleepDurationGoal;
 @property(readonly, nonatomic) double asleepDuration; // @synthesize asleepDuration=_asleepDuration;
 @property(readonly, nonatomic) double inBedDuration; // @synthesize inBedDuration=_inBedDuration;
-@property(readonly, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
+@property(readonly, copy, nonatomic) NSDateInterval *dateInterval; // @synthesize dateInterval=_dateInterval;
 @property(readonly, copy, nonatomic) NSArray *sleepPeriods; // @synthesize sleepPeriods=_sleepPeriods;
-@property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
-@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(readonly, copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
+@property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
 - (id)description;
 - (id)primarySleepPeriod;

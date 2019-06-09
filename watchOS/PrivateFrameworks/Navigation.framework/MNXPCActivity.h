@@ -22,6 +22,7 @@
     double _tolerance;
 }
 
++ (void)checkInActivity:(id)arg1 codeBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSDate *scheduledDate; // @synthesize scheduledDate=_scheduledDate;
 @property(readonly, nonatomic) unsigned int networkRequirements; // @synthesize networkRequirements=_networkRequirements;
 @property(readonly, nonatomic) unsigned int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
@@ -39,6 +40,7 @@
 - (void)scheduleForDate:(id)arg1 codeBlock:(CDUnknownBlockType)arg2;
 - (double)remainingTime;
 - (id)initWithIdentifier:(id)arg1 repeat:(_Bool)arg2 shouldWakeDevice:(_Bool)arg3 useCoreDuetPowerBudgeting:(_Bool)arg4 runOnBattery:(_Bool)arg5 tolerance:(double)arg6 qualityOfService:(unsigned int)arg7 networkRequirements:(unsigned int)arg8;
+- (id)init;
 
 @end
 

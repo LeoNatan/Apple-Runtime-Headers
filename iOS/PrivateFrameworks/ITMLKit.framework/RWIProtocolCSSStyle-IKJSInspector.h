@@ -8,5 +8,6 @@
 
 @interface RWIProtocolCSSStyle (IKJSInspector)
 + (id)ik_cssStyleFromDeclarationList:(id)arg1 forStyleMarkup:(id)arg2 withNewLineIndexSet:(id)arg3 existingStyle:(id)arg4;
++ (id)safe_initWithCssProperties:(id)arg1 shorthandEntries:(id)arg2;
 @end
 

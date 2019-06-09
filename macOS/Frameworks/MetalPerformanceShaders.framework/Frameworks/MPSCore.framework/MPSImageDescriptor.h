@@ -19,6 +19,7 @@
     unsigned long long _storageMode;
     unsigned long long _usage;
     unsigned long long _featureChannelsLayout;
+    unsigned long long _featureChannelFormat;
     unsigned long long _cpuCacheMode;
 }
 

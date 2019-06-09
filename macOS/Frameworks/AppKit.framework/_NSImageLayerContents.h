@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSImage;
+@class NSCGImageSnapshotRep, NSImage;
 
 __attribute__((visibility("hidden")))
 @interface _NSImageLayerContents : NSObject
 {
     NSImage *_image;
     double _scale;
+    NSCGImageSnapshotRep *_cachedSnapshot;
 }
 
 - (void *)CA_copyRenderValue;

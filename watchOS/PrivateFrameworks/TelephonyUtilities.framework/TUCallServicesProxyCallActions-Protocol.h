@@ -9,6 +9,7 @@
 @class IDSDestination, NSString, TUAnswerRequest, TUDialRequest, TUProxyCall;
 
 @protocol TUCallServicesProxyCallActions <NSObject>
+- (oneway void)shouldSuppressInCallStatusBar:(_Bool)arg1;
 - (oneway void)setDownlinkMuted:(_Bool)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2;
 - (oneway void)setUplinkMuted:(_Bool)arg1 forCallWithUniqueProxyIdentifier:(NSString *)arg2;
 - (oneway void)sendMMIOrUSSDCodeWithRequest:(TUDialRequest *)arg1;

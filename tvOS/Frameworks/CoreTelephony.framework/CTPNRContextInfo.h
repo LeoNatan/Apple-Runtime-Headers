@@ -17,9 +17,11 @@
     NSString *_plmn;
     NSString *_imsi;
     NSString *_phoneNumber;
+    NSString *_phoneNumberOnSIM;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *phoneNumberOnSIM; // @synthesize phoneNumberOnSIM=_phoneNumberOnSIM;
 @property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) NSString *imsi; // @synthesize imsi=_imsi;
 @property(retain, nonatomic) NSString *plmn; // @synthesize plmn=_plmn;
@@ -31,6 +33,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToPNRContextInfo:(id)arg1;
 - (id)init;
+- (id)description;
 
 @end
 

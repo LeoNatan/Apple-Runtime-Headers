@@ -8,6 +8,7 @@
 
 @class EDResources, EDWorkbook, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface EDProcessor : NSObject
 {
     EDWorkbook *mWorkbook;

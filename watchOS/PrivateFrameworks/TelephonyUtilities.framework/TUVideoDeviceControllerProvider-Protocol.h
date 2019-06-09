@@ -21,6 +21,8 @@
 - (void)beginPreviewToPIPAnimation;
 - (void)setLocalScreenAttributes:(VideoAttributes *)arg1;
 - (VideoAttributes *)localScreenAttributesForVideoAttributes:(VideoAttributes *)arg1;
+- (void)rampCameraZoomFactor:(float)arg1 withRate:(float)arg2;
+- (void)setCameraZoomFactor:(float)arg1;
 - (void)stopPreview;
 - (void)pausePreview;
 - (void)startPreview;

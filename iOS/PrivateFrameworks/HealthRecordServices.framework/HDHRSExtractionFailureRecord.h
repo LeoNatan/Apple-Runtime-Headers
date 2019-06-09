@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) long long failureCode; // @synthesize failureCode=_failureCode;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, copy, nonatomic) NSString *internalDisplaySafeDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

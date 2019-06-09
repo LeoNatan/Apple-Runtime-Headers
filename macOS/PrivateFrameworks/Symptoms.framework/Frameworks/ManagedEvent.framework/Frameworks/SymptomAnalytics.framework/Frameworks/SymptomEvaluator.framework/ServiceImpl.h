@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <SymptomEvaluator/ExtendedServiceInterface-Protocol.h>
 #import <SymptomEvaluator/NSXPCListenerDelegate-Protocol.h>
-#import <SymptomEvaluator/ServiceInterface-Protocol.h>
 
 @class FlowAnalyticsEngine, NOIAnalyticsEngine, NSMutableDictionary, NSString, NetworkAnalyticsEngine;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface ServiceImpl : NSObject <NSXPCListenerDelegate, ServiceInterface>
+__attribute__((visibility("hidden")))
+@interface ServiceImpl : NSObject <NSXPCListenerDelegate, ExtendedServiceInterface>
 {
     FlowAnalyticsEngine *f_engine;
     NetworkAnalyticsEngine *n_engine;
@@ -30,6 +31,7 @@
 - (void)resetUsageFor:(id)arg1 nameKind:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)setUsageOption:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)shutdown;
+- (void)clientTransactionsRelease;
 - (void)performPersistentStoreHealthCheckWithReply:(CDUnknownBlockType)arg1;
 - (void)identifierForUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)unsubscribeToNOIs:(id)arg1;
@@ -40,6 +42,7 @@
 - (void)setOption:(id)arg1 inScopes:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)createSnapshotFor:(id)arg1 pred:(id)arg2 actions:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)performQueryOnEntity:(id)arg1 pred:(id)arg2 sort:(id)arg3 actions:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)getNetworkBitmapsWithNames:(id)arg1 startTime:(unsigned long long)arg2 endTime:(unsigned long long)arg3 Reply:(CDUnknownBlockType)arg4;
 - (id)initWithQueue:(id)arg1;
 - (void)dealloc;
 - (_Bool)assertEntitlement:(id)arg1 entitlement:(id)arg2 orWaiveOnIntent:(id)arg3;

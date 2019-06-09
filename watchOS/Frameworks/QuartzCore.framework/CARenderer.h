@@ -15,6 +15,7 @@
 }
 
 + (id)rendererWithEAGLContext:(id)arg1 options:(id)arg2;
++ (id)rendererWithMTLTexture:(id)arg1 options:(id)arg2;
 - (void)endFrame;
 - (void)render;
 - (_Bool)hasMissingContent;
@@ -26,6 +27,8 @@
 @property(retain) CALayer *layer;
 - (void)dealloc;
 - (id)_initWithEAGLContext:(id)arg1 options:(id)arg2;
+- (void)setDestination:(id)arg1;
+- (id)_initWithMTLTexture:(id)arg1 options:(id)arg2;
 - (id)_initWithOptions:(id)arg1;
 @property __weak id <CARendererDelegate> delegate;
 @property(retain) CAContext *context;

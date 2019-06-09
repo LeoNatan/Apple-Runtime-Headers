@@ -6,29 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSXPCConnection, SFAuthorization, WriteConfigOnewayMessageDispatcher;
+@class NSData, NSXPCConnection, WriteConfigOnewayMessageDispatcher;
 @protocol XPCWriteConfigOneway;
 
 @interface WriteConfigClient : NSObject
 {
-    SFAuthorization *_authorization;
     NSXPCConnection *_connection;
+    NSData *_authorizationData;
     WriteConfigOnewayMessageDispatcher *_onewayMessageDispatcher;
+    BOOL _requiresAuthorization;
 }
 
 + (id)sharedClient;
+@property BOOL requiresAuthorization; // @synthesize requiresAuthorization=_requiresAuthorization;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(readonly) SFAuthorization *authorization; // @synthesize authorization=_authorization;
+@property(readonly) NSData *authorizationData; // @synthesize authorizationData=_authorizationData;
 - (void)runBlockSync:(CDUnknownBlockType)arg1;
 - (BOOL)runBlockSync:(CDUnknownBlockType)arg1 timeOut:(unsigned long long)arg2;
-@property(readonly) NSData *authorizationData; // @dynamic authorizationData;
 - (void)addBarrierBlock:(CDUnknownBlockType)arg1;
 - (id)syncProxyWithSemaphore:(id)arg1;
 @property(readonly) id <XPCWriteConfigOneway> remoteProxy; // @dynamic remoteProxy;
 - (void)disconnect;
 - (BOOL)isAuthenticated;
-- (BOOL)authenticateUsingAuthorizationSync:(id)arg1;
-- (void)authenticateUsingAuthorization:(id)arg1;
+- (BOOL)authenticateUsingExternalFormSync:(id)arg1;
+- (void)authenticateUsingExternalForm:(id)arg1;
 - (void)dealloc;
 - (void)_connectionDidInvalidate;
 

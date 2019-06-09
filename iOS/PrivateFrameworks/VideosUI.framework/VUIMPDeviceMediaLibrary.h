@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 + (_Bool)_isUpdateInProgress;
 @property(retain, nonatomic) VUIMPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 - (void).cxx_destruct;
+- (void)_handleApplicationWillResignActiveNotification:(id)arg1;
+- (void)_handleApplicationDidBecomeActiveNotification:(id)arg1;
 - (void)_handleMediaLibraryIsUpdateInProgressDidChangeNotification:(id)arg1;
 - (void)_handleMediaLibraryContentsDidChangeNotification:(id)arg1;
 - (id)_imageLoadOperationWithParams:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3;
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)enqueueFetchRequests:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)enqueueMediaItemEntityTypesFetchWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)title;
+- (void)updateFromCloudWithReason:(long long)arg1;
 - (void)updateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)isInitialUpdateInProgress;
 - (_Bool)isUpdating;

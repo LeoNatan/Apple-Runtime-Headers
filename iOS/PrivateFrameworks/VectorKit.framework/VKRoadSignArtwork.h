@@ -22,9 +22,9 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (Box_3fb92e00)localCollisionBounds;
-- (Box_3fb92e00)localSignBounds;
-- (Box_3fb92e00)localRenderBounds;
+- (Box_8bd38d92)localCollisionBounds;
+- (Box_8bd38d92)localSignBounds;
+- (Box_8bd38d92)localRenderBounds;
 - (Matrix_8746f91e)offsetPixelForPixel:(Matrix_8746f91e)arg1;
 - (id)image;
 - (void)dealloc;

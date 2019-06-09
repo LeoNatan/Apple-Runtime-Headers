@@ -13,15 +13,15 @@
 
 + (id)dotMacPrefPanePath;
 + (id)sharedKeychainSettingsPanel;
-- (void)beginSheetForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 settings:(struct SecKeychainSettings *)arg5 keychain:(struct OpaqueSecKeychainRef *)arg6;
-- (long long)runModalForSettings:(struct SecKeychainSettings *)arg1 keychain:(struct OpaqueSecKeychainRef *)arg2;
+- (void)beginSheetForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 settings:(struct SecKeychainSettings *)arg5 keychain:(struct __SecKeychain *)arg6;
+- (long long)runModalForSettings:(struct SecKeychainSettings *)arg1 keychain:(struct __SecKeychain *)arg2;
 - (void)unlock;
 - (void)lock;
 - (void)dealloc;
 - (id)init;
 - (void)_setRunAsSheet:(BOOL)arg1;
 - (void)_setParentWindowForSheet:(id)arg1;
-- (void)_setKeychainRef:(struct OpaqueSecKeychainRef *)arg1;
+- (void)_setKeychainRef:(struct __SecKeychain *)arg1;
 - (void)_setKeychainName:(id)arg1;
 - (void)set_progressCtrl:(id)arg1;
 - (void)set_syncDotMacCtrl:(id)arg1;
@@ -60,7 +60,7 @@
 - (void)_setDidEndSelector:(SEL)arg1;
 - (void)_setSavedDelegate:(id)arg1;
 - (void)_setContextInfo:(void *)arg1;
-- (long long)runModalForSettingsDictionary:(id)arg1 keychain:(struct OpaqueSecKeychainRef *)arg2;
+- (long long)runModalForSettingsDictionary:(id)arg1 keychain:(struct __SecKeychain *)arg2;
 - (void)_chSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void *)_getClientContext;
 - (SEL)_getDidEndSelector;
@@ -71,7 +71,7 @@
 - (void)_syncSheetDidDismiss:(id)arg1 returnCode:(int)arg2 contextInfo:(void *)arg3;
 - (BOOL)_updateSettings;
 - (unsigned int)_lockInterval;
-- (void)_prepPanel:(struct SecKeychainSettings *)arg1 keychain:(struct OpaqueSecKeychainRef *)arg2;
+- (void)_prepPanel:(struct SecKeychainSettings *)arg1 keychain:(struct __SecKeychain *)arg2;
 - (id)_initWithNib:(id)arg1;
 - (id)_ivars;
 

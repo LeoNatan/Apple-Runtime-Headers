@@ -10,6 +10,7 @@
 
 @class NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TSUExtendedAttribute : NSObject <NSCopying>
 {
     NSString *_name;

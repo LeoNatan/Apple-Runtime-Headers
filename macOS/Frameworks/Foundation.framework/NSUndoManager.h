@@ -45,6 +45,8 @@
 @property(readonly, getter=isUndoing) BOOL undoing;
 @property(readonly) BOOL canRedo;
 @property(readonly) BOOL canUndo;
+- (void)__redoCommonDoSingle:(BOOL)arg1;
+- (void)__redoSingle;
 - (void)redo;
 - (void)undoNestedGroup;
 - (void)undo;

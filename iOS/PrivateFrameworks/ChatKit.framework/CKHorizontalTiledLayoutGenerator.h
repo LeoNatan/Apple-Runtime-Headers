@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKTiledLayoutGenerator.h>
 
+__attribute__((visibility("hidden")))
 @interface CKHorizontalTiledLayoutGenerator : CKTiledLayoutGenerator
 {
     struct CGPoint _origin;

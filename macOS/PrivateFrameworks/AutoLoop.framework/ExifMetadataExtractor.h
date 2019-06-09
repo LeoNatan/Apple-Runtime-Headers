@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSMutableArray, NSMutableDictionary, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface ExifMetadataExtractor : NSObject
 {
     NSDictionary *desiredAppleMakerKeyPairs;

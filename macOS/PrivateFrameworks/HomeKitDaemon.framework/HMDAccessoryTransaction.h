@@ -6,28 +6,40 @@
 
 #import <HomeKitDaemon/HMDBackingStoreModelObject.h>
 
-@class NSNumber, NSString;
+@class NSArray, NSData, NSNumber, NSObject, NSString;
+@protocol OS_dispatch_group;
 
 @interface HMDAccessoryTransaction : HMDBackingStoreModelObject
 {
+    NSObject<OS_dispatch_group> *_configurationTracker;
 }
 
 + (id)properties;
+@property(retain, nonatomic) NSObject<OS_dispatch_group> *configurationTracker; // @synthesize configurationTracker=_configurationTracker;
+- (void).cxx_destruct;
 - (id)dependentUUIDs;
 
 // Remaining properties
 @property(retain, nonatomic) NSNumber *accessoryCategory; // @dynamic accessoryCategory;
-@property(retain, nonatomic) NSNumber *blocked; // @dynamic blocked;
+@property(retain, nonatomic) NSArray *appliedFirewallWANRules; // @dynamic appliedFirewallWANRules;
 @property(retain, nonatomic) NSString *configurationAppIdentifier; // @dynamic configurationAppIdentifier;
 @property(retain, nonatomic) NSString *configuredName; // @dynamic configuredName;
+@property(retain, nonatomic) NSNumber *currentNetworkProtectionMode; // @dynamic currentNetworkProtectionMode;
 @property(retain, nonatomic) NSString *firmwareVersion; // @dynamic firmwareVersion;
 @property(retain, nonatomic) NSString *identifier; // @dynamic identifier;
+@property(retain, nonatomic) NSNumber *lastNetworkAccessViolationOccurrenceSince1970; // @dynamic lastNetworkAccessViolationOccurrenceSince1970;
+@property(retain, nonatomic) NSNumber *lastNetworkAccessViolationResetSince1970; // @dynamic lastNetworkAccessViolationResetSince1970;
 @property(retain, nonatomic) NSString *manufacturer; // @dynamic manufacturer;
 @property(retain, nonatomic) NSString *model; // @dynamic model;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
+@property(retain, nonatomic) NSNumber *networkClientIdentifier; // @dynamic networkClientIdentifier;
+@property(retain, nonatomic) NSString *productData; // @dynamic productData;
 @property(retain, nonatomic) NSString *providedName; // @dynamic providedName;
 @property(retain, nonatomic) NSString *roomUUID; // @dynamic roomUUID;
 @property(retain, nonatomic) NSString *serialNumber; // @dynamic serialNumber;
+@property(retain, nonatomic) NSNumber *targetNetworkProtectionMode; // @dynamic targetNetworkProtectionMode;
+@property(retain, nonatomic) NSNumber *wiFiCredentialType; // @dynamic wiFiCredentialType;
+@property(retain, nonatomic) NSData *wiFiUniquePreSharedKey; // @dynamic wiFiUniquePreSharedKey;
 
 @end
 

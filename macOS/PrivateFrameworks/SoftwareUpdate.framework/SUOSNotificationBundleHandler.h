@@ -10,18 +10,19 @@
 
 @interface SUOSNotificationBundleHandler : NSObject
 {
-    BOOL _notificationBundleExists;
-    BOOL _notificationPending;
     BOOL _mdmInitiatedNotificationBundleInstall;
+    BOOL _notificationPending;
+    BOOL _notificationBundleExists;
     CDUnknownBlockType _notificationBundleDidChangeHandler;
     NSString *_notificationBundlePath;
-    NSDate *_notificationPostDate;
+    NSDate *_deferralDate;
 }
 
 + (id)sharedNotificationBundleHandler;
-@property(readonly) NSDate *notificationPostDate; // @synthesize notificationPostDate=_notificationPostDate;
+@property(nonatomic) BOOL notificationBundleExists; // @synthesize notificationBundleExists=_notificationBundleExists;
+@property(retain) NSDate *deferralDate; // @synthesize deferralDate=_deferralDate;
 @property(readonly) NSString *notificationBundlePath; // @synthesize notificationBundlePath=_notificationBundlePath;
-@property(readonly) BOOL notificationPending; // @synthesize notificationPending=_notificationPending;
+@property(nonatomic) BOOL notificationPending; // @synthesize notificationPending=_notificationPending;
 @property(copy, nonatomic) CDUnknownBlockType notificationBundleDidChangeHandler; // @synthesize notificationBundleDidChangeHandler=_notificationBundleDidChangeHandler;
 @property BOOL mdmInitiatedNotificationBundleInstall; // @synthesize mdmInitiatedNotificationBundleInstall=_mdmInitiatedNotificationBundleInstall;
 - (id)osNotificationBundlePath;
@@ -30,11 +31,10 @@
 - (void)_listenForNotificationInfoPlistChangesIfExists;
 - (void)_handleMajorOSBundleInstalled:(BOOL)arg1;
 - (void)sendMajorOSAvailableNotification;
-- (id)_notificationDeferralDate;
-- (BOOL)notificationBundleExists;
-- (BOOL)shouldNotifyForMajorOSAvailable;
+- (void)_notificationDeferralDate:(CDUnknownBlockType)arg1;
+- (id)_subundleFromSUTags;
+- (void)shouldNotifyForMajorOSAvailable:(CDUnknownBlockType)arg1;
 - (void)clearNotificationPending;
-- (void)setNotificationPending:(BOOL)arg1 postDate:(id)arg2;
 - (id)init;
 - (void)dealloc;
 - (void)archiveToCoder:(id)arg1;

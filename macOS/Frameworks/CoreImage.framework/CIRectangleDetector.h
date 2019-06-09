@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
         CDUnknownFunctionPointerType _field2;
         CDUnknownFunctionPointerType _field3;
         CDUnknownFunctionPointerType _field4;
+        CDUnknownFunctionPointerType _field5;
     } *CVMLFuncs;
     float *_perMeshPtr;
     struct vImage_Buffer *_internalBuffer;

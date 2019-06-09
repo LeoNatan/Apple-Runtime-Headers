@@ -20,10 +20,12 @@
     NSError *_placeholderFailureUnderlyingError;
     unsigned long long _placeholderFailureUnderlyingErrorSource;
     NSString *_watchKitAppExecutableHash;
+    unsigned long long _autoInstallOverride;
 }
 
 + (id)metadataFromURL:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long autoInstallOverride; // @synthesize autoInstallOverride=_autoInstallOverride;
 @property(copy, nonatomic) NSString *watchKitAppExecutableHash; // @synthesize watchKitAppExecutableHash=_watchKitAppExecutableHash;
 @property(nonatomic) unsigned long long placeholderFailureUnderlyingErrorSource; // @synthesize placeholderFailureUnderlyingErrorSource=_placeholderFailureUnderlyingErrorSource;
 @property(retain, nonatomic) NSError *placeholderFailureUnderlyingError; // @synthesize placeholderFailureUnderlyingError=_placeholderFailureUnderlyingError;

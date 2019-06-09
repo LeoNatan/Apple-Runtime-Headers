@@ -27,6 +27,9 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)embeddingData;
+- (id)embeddingModel;
+- (id)embeddingURL;
 - (id)options;
 @property(readonly, copy) NSString *language;
 @property(readonly) unsigned long long revision;

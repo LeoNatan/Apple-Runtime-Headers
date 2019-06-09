@@ -10,6 +10,7 @@
 
 @class OADRotation3D;
 
+__attribute__((visibility("hidden")))
 @interface OADLightRig : NSObject <NSCopying>
 {
     OADRotation3D *mRotation;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     ESDObject *mTxInteractiveInfoAtomHolder;
 }
 
+- (void).cxx_destruct;
 - (void)setTxInteractiveInfoAtomHolder:(id)arg1;
 - (struct PptTxInteracInfoAtom *)txtInteractiveInfoAtom;
 - (void)setInteractiveInfoContainerHolder:(id)arg1;

@@ -22,8 +22,10 @@
 @property(retain, nonatomic) SUDownloadMetadata *metadata; // @synthesize metadata=_metadata;
 @property(retain, nonatomic) SUDescriptor *descriptor; // @synthesize descriptor=_descriptor;
 @property(retain, nonatomic) SUOperationProgress *progress; // @synthesize progress=_progress;
+- (_Bool)isValidDownload;
 - (id)description;
 - (unsigned long long)totalSpaceConsumed;
+- (_Bool)allowCellularDownload;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -15,7 +15,6 @@
 + (id)whiteViewBackgroundColor;
 + (id)searchElementUIRulesBoxBackgroundColor;
 + (id)searchElementUIRulesBoxBorderColor;
-+ (id)importTextFileUIBackgroundColor;
 + (id)largeTypeWindowBackgroundColor;
 + (id)largeTypeWindowTextColor;
 + (id)personViewPropertyHighlightColor;

@@ -56,7 +56,7 @@
 - (id)layoutConstraintsForData:(id)arg1;
 - (BOOL)candidateViewCanScroll;
 - (struct CGRect)recommendedWindowFrameWithFrame:(struct CGRect)arg1;
-@property(readonly, nonatomic) BOOL shouldLimitWindowSizeToCanvasSize;
+- (BOOL)shouldLimitWindowSizeToCanvasSize;
 - (struct CGSize)customSize;
 - (struct CGSize)customSizeForExpansion:(BOOL)arg1;
 - (double)numberOfColumns;

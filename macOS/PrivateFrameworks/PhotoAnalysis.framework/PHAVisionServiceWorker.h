@@ -7,11 +7,12 @@
 #import <PhotoAnalysis/PHAWorker.h>
 
 #import <PhotoAnalysis/PHAVisionServiceAssetsAnalyzingOperationDelegate-Protocol.h>
+#import <PhotoAnalysis/PVVisionIntegrating-Protocol.h>
 
 @class NSMapTable, NSMutableDictionary, NSNumber, NSObject, NSOperationQueue, NSString;
 @protocol OS_dispatch_queue;
 
-@interface PHAVisionServiceWorker : PHAWorker <PHAVisionServiceAssetsAnalyzingOperationDelegate>
+@interface PHAVisionServiceWorker : PHAWorker <PHAVisionServiceAssetsAnalyzingOperationDelegate, PVVisionIntegrating>
 {
     NSOperationQueue *_assetAnalysisOperationQueue;
     NSObject<OS_dispatch_queue> *_commandDispatchQueue;
@@ -21,13 +22,21 @@
     NSNumber *_lastRecordedDarkWakeState;
     // Error parsing type: AQ, name: _lastPerformedJobScenario
     BOOL _analysisJobCancelled;
+    unsigned int _visionAlgorithmUmbrellaVersion;
 }
 
 + (CDUnknownBlockType)assetResourceSmallestToLargestComparator;
 + (CDUnknownBlockType)assetResourceLargestToSmallestComparator;
++ (void)disableANEForRequest:(id)arg1;
++ (id)defaultImageCreationOptions;
++ (id)analysisLog;
 + (void)initialize;
 @property BOOL analysisJobCancelled; // @synthesize analysisJobCancelled=_analysisJobCancelled;
+@property(nonatomic) unsigned int visionAlgorithmUmbrellaVersion; // @synthesize visionAlgorithmUmbrellaVersion=_visionAlgorithmUmbrellaVersion;
 - (void).cxx_destruct;
+- (void)performVisionForcedCleanup;
+- (void)performVisionForcedCleanupWithOptions:(id)arg1;
+- (void)configureRequest:(id)arg1 algorithmUmbrellaVersion:(unsigned int)arg2;
 - (void)insidePhotoLibraryTransactionPersistResultsDictionary:(id)arg1 forAsset:(id)arg2;
 - (void)coalesceResultsDictionary:(id)arg1 forAssetLocalIdentifier:(id)arg2;
 - (void)coalesceJobResult:(unsigned long long)arg1 forAssetLocalIdentifier:(id)arg2;
@@ -39,7 +48,6 @@
 - (void)shutdown;
 - (void)startup;
 - (void)visionServiceAssetsProcessingOperation:(id)arg1 didExecuteToCompletion:(BOOL)arg2;
-- (id)defaultImageCreationOptions;
 - (struct CGImage *)createCGImageFromImageFileURL:(id)arg1 imageOptions:(id)arg2 orientation:(unsigned long long *)arg3 error:(id *)arg4;
 - (struct CGImage *)createCGImageForAssetResource:(id)arg1 imageOptions:(id)arg2 orientation:(unsigned long long *)arg3 error:(id *)arg4;
 - (id)imageDataForAssetResource:(id)arg1 error:(id *)arg2;
@@ -63,9 +71,6 @@
 - (BOOL)isExecutingDuringDarkWake;
 - (void)_checkForDarkWakeStateTransition;
 - (id)initWithPhotoAnalysisManager:(id)arg1 dataLoader:(id)arg2;
-- (id)newCVMLRequestOptions;
-- (void)performCVMLForcedCleanup;
-- (void)performCVMLForcedCleanupWithOptions:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

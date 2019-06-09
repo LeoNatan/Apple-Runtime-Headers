@@ -8,24 +8,27 @@
 
 #import <NotesUI/PKTextAttachment-Protocol.h>
 
-@class ICInlineDrawingChangeCoalescer, NSString, UIView;
+@class ICInlineDrawingChangeCoalescer, NSHashTable, NSString;
 
 @interface ICInlineDrawingTextAttachment : ICBaseTextAttachment <PKTextAttachment>
 {
     ICInlineDrawingChangeCoalescer *_changeCoalescer;
-    UIView *_inlineDrawingView;
+    NSHashTable *_inlineDrawingViews;
 }
 
-@property(nonatomic) __weak UIView *inlineDrawingView; // @synthesize inlineDrawingView=_inlineDrawingView;
+@property(retain, nonatomic) NSHashTable *inlineDrawingViews; // @synthesize inlineDrawingViews=_inlineDrawingViews;
 @property(retain, nonatomic) ICInlineDrawingChangeCoalescer *changeCoalescer; // @synthesize changeCoalescer=_changeCoalescer;
 - (void).cxx_destruct;
 - (void)drawingDataDidChange:(id)arg1;
 - (void)resetZoom;
-- (void)detachView:(id)arg1 fromParentView:(id)arg2;
-- (void)placeView:(id)arg1 withFrame:(struct CGRect)arg2 inParentView:(id)arg3 characterIndex:(unsigned long long)arg4 layoutManager:(id)arg5;
+- (struct UIImage *)_image;
+- (struct CGRect)attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect)arg2 glyphPosition:(struct CGPoint)arg3 characterIndex:(unsigned long long)arg4;
+- (void)detachView:(struct UIView *)arg1 fromParentView:(struct UIView *)arg2;
+- (void)placeView:(struct UIView *)arg1 withFrame:(struct CGRect)arg2 inParentView:(struct UIView *)arg3 characterIndex:(unsigned long long)arg4 layoutManager:(id)arg5;
 - (id)printableTextContent;
 - (id)attachmentAsNSTextAttachment;
 - (id)contents;
+- (void)detachView;
 - (void)saveIfNeeded;
 - (_Bool)canDragWithoutSelecting;
 

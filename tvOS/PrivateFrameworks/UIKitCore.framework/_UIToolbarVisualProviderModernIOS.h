@@ -8,24 +8,32 @@
 
 #import <UIKitCore/_UIBarButtonItemViewOwner-Protocol.h>
 
-@class NSString, UIView, _UIBarBackground, _UIToolbarContentView;
+@class NSString, UIView, _UIBarBackground, _UIBarBackgroundLayout, _UIToolbarContentView;
 
 __attribute__((visibility("hidden")))
 @interface _UIToolbarVisualProviderModernIOS : _UIToolbarVisualProvider <_UIBarButtonItemViewOwner>
 {
-    _UIBarBackground *_barBackgroundView;
+    _UIBarBackground *_backgroundView;
+    _UIBarBackgroundLayout *_backgroundViewLayout;
     UIView *_customBackgroundView;
     _UIToolbarContentView *_contentView;
-    NSString *_backdropViewLayerGroupName;
+    long long _itemDistribution;
+    _Bool _useModernAppearance;
 }
 
-@property(retain, nonatomic, getter=_backdropViewLayerGroupName, setter=_setBackdropViewLayerGroupName:) NSString *backdropViewLayerGroupName; // @synthesize backdropViewLayerGroupName=_backdropViewLayerGroupName;
 - (void).cxx_destruct;
 - (_Bool)toolbarIsSmall;
 - (struct CGSize)defaultSizeForOrientation:(long long)arg1;
+- (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
 - (void)updateArchivedSubviews:(id)arg1;
 - (id)_currentCustomBackground;
+- (void)updateBackgroundGroupName;
 - (void)updateBarBackground;
+- (void)_updateBackgroundModern;
+- (void)_updateBackgroundLegacyForPosition:(long long)arg1;
+- (void)updateAppearance;
+- (void)setUseModernAppearance:(_Bool)arg1;
+- (_Bool)useModernAppearance;
 - (void)updateBarForStyle:(long long)arg1;
 - (struct CGRect)backgroundFrame;
 - (id)currentBackgroundView;
@@ -33,15 +41,19 @@ __attribute__((visibility("hidden")))
 - (void)updateBarBackgroundSize;
 - (struct CGRect)_backgroundFrame;
 - (void)_itemDidChangeWidth:(id)arg1;
+- (void)_itemDidChangeSecondaryActionState:(id)arg1;
+- (void)_itemDidChangeSecondaryActions:(id)arg1;
+- (void)_itemDidChangeEnabledState:(id)arg1;
 - (void)_itemDidChangeHiddenState:(id)arg1;
 - (void)_itemDidChangeSelectionState:(id)arg1;
 - (void)_itemStandardViewNeedsUpdate:(id)arg1;
 - (void)_itemCustomViewDidChange:(id)arg1 fromView:(id)arg2;
-- (void)positionToolbarButtonsAndResetFontScaleAdjustment:(_Bool)arg1;
+- (void)layoutSubviews;
 - (void)updateWithItems:(id)arg1 fromOldItems:(id)arg2 animate:(_Bool)arg3;
-- (void)updateItemsForNewFrame:(id)arg1;
 - (void)_updateContentView;
 - (void)_setViewOwnersAndUpdateContentViewForItems:(id)arg1 withOldItems:(id)arg2 animated:(_Bool)arg3;
+- (void)setItemDistribution:(long long)arg1;
+- (long long)itemDistribution;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

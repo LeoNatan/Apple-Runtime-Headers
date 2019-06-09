@@ -38,6 +38,7 @@
 @property(nonatomic, setter=_setShouldObserveLayout:) BOOL _shouldObserveLayout; // @synthesize _shouldObserveLayout;
 - (void).cxx_destruct;
 - (BOOL)_cancelRequestTimer;
+- (double)_timeoutIntervalForTransactionState:(id)arg1;
 - (void)_startRequestTimerWithExtensionProxy:(id)arg1;
 - (void)reset;
 - (void)resumeWithCompletionHandler:(CDUnknownBlockType)arg1;

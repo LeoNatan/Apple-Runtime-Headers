@@ -14,3 +14,9 @@ struct ATXScoredPrediction {
     Class _field1;
 };
 
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned long long lastEventTimestamp;
+} CDStruct_a7b080c6;
+

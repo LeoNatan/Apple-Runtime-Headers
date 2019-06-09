@@ -7,7 +7,10 @@
 #import <AppKit/NSBezierPath.h>
 
 @interface NSBezierPath (AKPlatformGeometryExtensions)
++ (struct CGPath *)newCGPathWithBezierPath:(id)arg1;
++ (id)bezierPathWithCGPath:(struct CGPath *)arg1;
 - (void)akAppendPath:(id)arg1;
 - (struct CGPath *)newCGPathForPlatformBezierPath;
+- (void)applyTransform:(struct CGAffineTransform)arg1;
 @end
 

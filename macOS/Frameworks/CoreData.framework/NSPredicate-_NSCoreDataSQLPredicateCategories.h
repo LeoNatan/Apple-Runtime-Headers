@@ -7,6 +7,7 @@
 #import <Foundation/NSPredicate.h>
 
 @interface NSPredicate (_NSCoreDataSQLPredicateCategories)
+- (id)_keypathsForDerivedPropertyValidation:(id *)arg1;
 - (id)minimalFormInContext:(id)arg1;
 @end
 

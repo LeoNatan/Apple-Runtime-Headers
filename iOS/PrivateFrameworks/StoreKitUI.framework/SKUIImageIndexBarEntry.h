@@ -8,6 +8,7 @@
 
 @class UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIImageIndexBarEntry : SKUIIndexBarEntry
 {
     UIImage *_image;

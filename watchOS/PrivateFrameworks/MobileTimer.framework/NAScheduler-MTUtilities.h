@@ -7,6 +7,7 @@
 #import <NetAppsUtilities/NAScheduler.h>
 
 @interface NAScheduler (MTUtilities)
++ (id)mtSerialSchedulerForObject:(id)arg1;
 + (id)mtMainThreadScheduler;
 @end
 

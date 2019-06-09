@@ -14,6 +14,7 @@
 @class NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, UIPageViewController;
 @protocol SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISlideshowViewController : UIViewController <UIPageViewControllerDataSource, UIPageViewControllerDelegate, SKUISlideshowItemViewControllerDelegate, UIViewControllerTransitioningDelegate>
 {
     SKUIClientContext *_clientContext;

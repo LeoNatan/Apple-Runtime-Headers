@@ -12,20 +12,19 @@
 
 @interface GEOLogMsgEventProactiveSuggestionInteractionSession : PBCodable <NSCopying>
 {
+    NSMutableArray *_proactiveItems;
     int _duration;
     int _interactedItemIndex;
     int _listType;
-    NSMutableArray *_proactiveItems;
     struct {
-        unsigned int duration:1;
-        unsigned int interactedItemIndex:1;
-        unsigned int listType:1;
-    } _has;
+        unsigned int has_duration:1;
+        unsigned int has_interactedItemIndex:1;
+        unsigned int has_listType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)proactiveItemType;
-@property(nonatomic) int duration; // @synthesize duration=_duration;
-@property(retain, nonatomic) NSMutableArray *proactiveItems; // @synthesize proactiveItems=_proactiveItems;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,19 +33,22 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasInteractedItemIndex;
-@property(nonatomic) int interactedItemIndex; // @synthesize interactedItemIndex=_interactedItemIndex;
+@property(nonatomic) int interactedItemIndex;
 @property(nonatomic) _Bool hasDuration;
+@property(nonatomic) int duration;
 - (id)proactiveItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)proactiveItemsCount;
 - (void)addProactiveItem:(id)arg1;
 - (void)clearProactiveItems;
+@property(retain, nonatomic) NSMutableArray *proactiveItems;
 - (int)StringAsListType:(id)arg1;
 - (id)listTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasListType;
-@property(nonatomic) int listType; // @synthesize listType=_listType;
+@property(nonatomic) int listType;
 
 @end
 

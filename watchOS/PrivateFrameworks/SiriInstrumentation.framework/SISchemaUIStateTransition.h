@@ -6,41 +6,34 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaUIStateTransition-Protocol.h>
 
-@interface SISchemaUIStateTransition : PBCodable <NSCopying>
+@class NSData, NSString;
+
+@interface SISchemaUIStateTransition : PBCodable <SISchemaUIStateTransition, NSSecureCoding>
 {
     int _currentState;
     int _previousState;
     int _siriPresentationType;
-    struct {
-        unsigned int currentState:1;
-        unsigned int previousState:1;
-        unsigned int siriPresentationType:1;
-    } _has;
 }
 
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+@property(nonatomic) int siriPresentationType; // @synthesize siriPresentationType=_siriPresentationType;
+@property(nonatomic) int previousState; // @synthesize previousState=_previousState;
+@property(nonatomic) int currentState; // @synthesize currentState=_currentState;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (int)StringAsSiriPresentationType:(id)arg1;
-- (id)siriPresentationTypeAsString:(int)arg1;
-@property(nonatomic) _Bool hasSiriPresentationType;
-@property(nonatomic) int siriPresentationType; // @synthesize siriPresentationType=_siriPresentationType;
-- (int)StringAsPreviousState:(id)arg1;
-- (id)previousStateAsString:(int)arg1;
-@property(nonatomic) _Bool hasPreviousState;
-@property(nonatomic) int previousState; // @synthesize previousState=_previousState;
-- (int)StringAsCurrentState:(id)arg1;
-- (id)currentStateAsString:(int)arg1;
-@property(nonatomic) _Bool hasCurrentState;
-@property(nonatomic) int currentState; // @synthesize currentState=_currentState;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

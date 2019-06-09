@@ -6,40 +6,34 @@
 
 #import <objc/NSObject.h>
 
-#import <Photos/PHRecyclableObject-Protocol.h>
-
 @class NSString, PHAsset;
 
-@interface PHMediaRequest : NSObject <PHRecyclableObject>
+@interface PHMediaRequest : NSObject
 {
-    unsigned long long _contextID;
+    unsigned long long _requestIndex;
     // Error parsing type: AB, name: _cancelled
+    NSString *_identifierString;
     int _requestID;
     unsigned long long _managerID;
     PHAsset *_asset;
     long long _contextType;
+    unsigned long long _signpostID;
 }
 
-@property(nonatomic) long long contextType; // @synthesize contextType=_contextType;
-@property(retain, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
-@property(nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
-@property(nonatomic) unsigned long long contextID; // @synthesize contextID=_contextID;
-@property(nonatomic) int requestID; // @synthesize requestID=_requestID;
+@property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
+@property(readonly, nonatomic) long long contextType; // @synthesize contextType=_contextType;
+@property(readonly, nonatomic) PHAsset *asset; // @synthesize asset=_asset;
+@property(readonly, nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
+@property(readonly, nonatomic) unsigned long long requestIndex; // @synthesize requestIndex=_requestIndex;
+@property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
 - (void).cxx_destruct;
-- (void)prepareForReuse;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
 - (void)cancel;
-- (void)handleAvailabilityChangeForResource:(id)arg1 locallyAvailable:(_Bool)arg2 info:(id)arg3 error:(id)arg4;
+- (void)handleAvailabilityChangeForResource:(id)arg1 url:(id)arg2 info:(id)arg3 error:(id)arg4;
 - (void)startRequest;
 - (id)identifierString;
 @property(readonly, nonatomic, getter=isSynchronous) _Bool synchronous;
-- (id)initWithRequestID:(int)arg1 contextID:(unsigned long long)arg2 managerID:(unsigned long long)arg3 asset:(id)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithRequestID:(int)arg1 requestIndex:(unsigned long long)arg2 contextType:(long long)arg3 managerID:(unsigned long long)arg4 asset:(id)arg5;
 
 @end
 

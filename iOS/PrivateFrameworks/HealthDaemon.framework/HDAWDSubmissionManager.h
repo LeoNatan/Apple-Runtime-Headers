@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <HealthDaemon/HDDatabaseProtectedDataObserver-Protocol.h>
 #import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 #import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
 
 @class HDProfile, NSMutableArray, NSMutableDictionary, NSString, _HDAWDPeriodicAction;
 @protocol OS_dispatch_queue;
 
-@interface HDAWDSubmissionManager : NSObject <HDHealthDaemonReadyObserver, HDDatabaseProtectedDataObserver, HDDiagnosticObject>
+@interface HDAWDSubmissionManager : NSObject <HDHealthDaemonReadyObserver, HDDiagnosticObject>
 {
     HDProfile *_profile;
     NSMutableDictionary *_serverConnectionsByComponentId;
@@ -26,7 +25,7 @@
 }
 
 @property(copy, nonatomic) CDUnknownBlockType testHandler; // @synthesize testHandler=_testHandler;
-@property(readonly, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
+@property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (_Bool)_computeAndSubmitSleepAlarmStatistics:(_Bool)arg1;
 - (id)_sleepConsistencyEventForMonthPriorToDate:(id)arg1 calendar:(id)arg2;
@@ -51,20 +50,19 @@
 - (id)_updateMonthDeltaToInt64:(long long)arg1 forKey:(id)arg2 profile:(id)arg3 currentDate:(id)arg4 error:(id *)arg5;
 - (_Bool)_setInt64:(long long)arg1 keyPrefix:(id)arg2 profile:(id)arg3 date:(id)arg4 error:(id *)arg5;
 - (long long)_int64ForKeyPrefix:(id)arg1 profile:(id)arg2 date:(id *)arg3 error:(id *)arg4;
-- (long long)_nonAppleSourcesWithDataSince:(id)arg1 database:(id)arg2 error:(id *)arg3;
-- (long long)_nonAppleSourcesCountWithDatabase:(id)arg1 error:(id *)arg2;
-- (id)_hasWatchSourcesWithDatabase:(id)arg1 error:(id *)arg2;
-- (long long)_manuallyEnteredTypesCountWithDatabase:(id)arg1 error:(id *)arg2;
-- (long long)_CDACountWithDatabase:(id)arg1 error:(id *)arg2;
-- (long long)_deletedRowCountWithDatabase:(id)arg1 error:(id *)arg2;
-- (long long)_objectRowCountWithDatabase:(id)arg1 afterRowId:(long long)arg2 error:(id *)arg3;
+- (long long)_nonAppleSourcesWithDataSince:(id)arg1 transaction:(id)arg2 error:(id *)arg3;
+- (long long)_nonAppleSourcesCountWithTransaction:(id)arg1 error:(id *)arg2;
+- (id)_hasWatchSourcesWithTransaction:(id)arg1 error:(id *)arg2;
+- (long long)_manuallyEnteredTypesCountWithTransaction:(id)arg1 error:(id *)arg2;
+- (long long)_CDACountWithTransaction:(id)arg1 error:(id *)arg2;
+- (long long)_deletedRowCountWithTransaction:(id)arg1 error:(id *)arg2;
+- (long long)_objectRowCountWithTransaction:(id)arg1 afterRowId:(long long)arg2 error:(id *)arg3;
 - (long long)_countOfObjectsWithSQLQuery:(id)arg1 database:(id)arg2 error:(id *)arg3 bindingHandler:(CDUnknownBlockType)arg4;
 - (_Bool)_computeAndSubmitHealthTypesDifferentialPrivacyMetric;
 - (_Bool)_submitMetric:(id)arg1 container:(id)arg2 connection:(id)arg3 force:(_Bool)arg4;
 - (void)resetTask:(id)arg1;
 - (_Bool)runTask:(id)arg1 error:(id *)arg2;
 - (id)diagnosticDescription;
-- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)daemonReady:(id)arg1;
 - (void)_queue_start;
 - (void)_registerForFitnessDailyCollection;

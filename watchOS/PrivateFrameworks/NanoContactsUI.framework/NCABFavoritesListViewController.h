@@ -6,10 +6,12 @@
 
 #import <PepperUICore/PUICTableViewController.h>
 
-@class CNContactFormatter, CNContactStore, CNFavorites, NSDictionary, NSMutableDictionary, PUICContentUnavailableView;
+#import <NanoContactsUI/TUCallCapabilitiesDelegate-Protocol.h>
+
+@class CNContactFormatter, CNContactStore, CNFavorites, NSDictionary, NSMutableDictionary, NSString, PUICContentUnavailableView;
 @protocol NCABFavoritesListViewControllerDelegate;
 
-@interface NCABFavoritesListViewController : PUICTableViewController
+@interface NCABFavoritesListViewController : PUICTableViewController <TUCallCapabilitiesDelegate>
 {
     CNFavorites *_favorites;
     CNContactStore *_contactStore;
@@ -35,7 +37,6 @@
 - (void)_clearNameCacheAndReloadData;
 - (void)_reloadDataForNotification:(id)arg1;
 - (void)_favoritesChanged:(id)arg1;
-- (void)_favoriteChanged:(id)arg1;
 - (void)_contactStoreChanged:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
@@ -43,6 +44,9 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (void)didChangeFaceTimeVideoCallingSupport;
+- (void)didChangeFaceTimeAudioCallingSupport;
+- (void)didChangeTelephonyCallingSupport;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
@@ -50,6 +54,12 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(int)arg1;
 - (id)initWithContactStore:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

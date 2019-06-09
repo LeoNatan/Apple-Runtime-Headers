@@ -8,14 +8,17 @@
 
 #import <HealthUI/HKGraphSeriesChartData-Protocol.h>
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface HKInteractiveChartCategoryValueData : NSObject <HKGraphSeriesChartData>
 {
     long long _value;
+    NSDate *_date;
 }
 
+@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) long long value; // @synthesize value=_value;
+- (void).cxx_destruct;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

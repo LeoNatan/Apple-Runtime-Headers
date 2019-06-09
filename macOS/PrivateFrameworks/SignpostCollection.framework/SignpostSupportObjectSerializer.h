@@ -10,6 +10,7 @@
 
 @interface SignpostSupportObjectSerializer : NSObject
 {
+    BOOL _redactPrivacySensitiveData;
     unsigned long long _maxBatchSize;
     unsigned long long _maxBytesSize;
     CDUnknownBlockType _serializedSignpostEventBlock;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) NSMutableArray *outstandingLogMessage; // @synthesize outstandingLogMessage=_outstandingLogMessage;
 @property(retain, nonatomic) NSMutableArray *outstandingSignpostObjects; // @synthesize outstandingSignpostObjects=_outstandingSignpostObjects;
 @property(retain, nonatomic) SignpostSerializationFilterConfiguration *filterConfiguration; // @synthesize filterConfiguration=_filterConfiguration;
+@property(nonatomic) BOOL redactPrivacySensitiveData; // @synthesize redactPrivacySensitiveData=_redactPrivacySensitiveData;
 @property(copy, nonatomic) CDUnknownBlockType serializedLogMessageBlock; // @synthesize serializedLogMessageBlock=_serializedLogMessageBlock;
 @property(copy, nonatomic) CDUnknownBlockType serializedSignpostEventBlock; // @synthesize serializedSignpostEventBlock=_serializedSignpostEventBlock;
 @property(nonatomic) unsigned long long maxBytesSize; // @synthesize maxBytesSize=_maxBytesSize;

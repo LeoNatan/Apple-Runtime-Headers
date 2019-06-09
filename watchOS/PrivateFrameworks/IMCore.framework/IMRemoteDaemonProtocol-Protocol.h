@@ -6,11 +6,22 @@
 
 #import <IMCore/NSObject-Protocol.h>
 
-@class IMItem, IMMessageItem, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSString, NSURL;
+@class IMItem, IMMessageItem, IMNickname, NSArray, NSData, NSDate, NSDictionary, NSNumber, NSSet, NSString, NSURL;
 
 @protocol IMRemoteDaemonProtocol <NSObject>
+- (void)requestScreenTimeAvailability;
 - (void)preWarm;
 - (void)simulateMessageReceive:(NSString *)arg1 serviceName:(NSString *)arg2 handles:(NSArray *)arg3 sender:(NSString *)arg4;
+- (void)userNicknameForRecordID:(NSString *)arg1 decryptionKey:(NSData *)arg2 requestID:(NSString *)arg3;
+- (void)setNewPersonalNickname:(IMNickname *)arg1;
+- (void)fetchPersonalNickname;
+- (void)nicknamePreferencesDidChange;
+- (void)blacklistHandleIDsForNicknameSharing:(NSSet *)arg1;
+- (void)whitelistHandleIDsForNicknameSharing:(NSSet *)arg1;
+- (void)clearPendingNicknameUpdatesForHandleIDs:(NSArray *)arg1;
+- (void)fetchHandleSharingState;
+- (void)fetchNicknames;
+- (void)currentSelfNicknameForChat:(NSString *)arg1 requestID:(NSString *)arg2;
 - (void)simulateOneTimeCodeArriving:(NSDictionary *)arg1;
 - (void)consumeCodeWithMessageGUID:(NSString *)arg1;
 - (void)requestOneTimeCodeStatus;
@@ -24,6 +35,7 @@
 - (void)removePathFromiCloudBackups:(NSString *)arg1;
 - (void)setiCloudBackupsDisabled:(_Bool)arg1;
 - (void)toggleiCloudBackupsIfNeeded;
+- (void)reportMetricToCK:(NSString *)arg1 withDict:(NSDictionary *)arg2;
 - (void)writeCloudKitSyncCounts:(NSDictionary *)arg1;
 - (void)fetchSyncStateStatistics;
 - (void)fetchSyncStateStats;
@@ -37,6 +49,7 @@
 - (void)broadcastCloudKitStateAfterClearingErrors;
 - (void)clearAnalyticDefaultsAndLocalSyncState;
 - (void)uploadDailyAnalyticstoCloudKit;
+- (void)broadcastCloudKitStateAfterFetchingAccountStatus;
 - (void)broadcastCloudKitState;
 - (void)initiateSync;
 - (void)tryToDisableAllDevices;
@@ -151,6 +164,9 @@
 - (void)chat:(NSString *)arg1 updateDisplayName:(NSString *)arg2;
 - (void)chat:(NSString *)arg1 updateProperties:(NSDictionary *)arg2;
 - (void)cleanupAttachments;
+- (void)loadInternalPhishingBlacklist;
+- (void)fetchInternalPhishingBlacklist;
+- (void)initiateQuickSwitch;
 - (void)requestLastMessagesForChats;
 - (void)loadIsDownloadingPurgedAttachmentsForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 chatID:(NSString *)arg4 queryID:(NSString *)arg5;
 - (void)downloadPurgedAttachmentsForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 chatID:(NSString *)arg4;
@@ -166,6 +182,7 @@
 - (void)markPlayedForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 message:(IMMessageItem *)arg4;
 - (void)markPlayedForMessageGUID:(NSString *)arg1;
 - (void)storeItem:(IMItem *)arg1 inChatGUID:(NSString *)arg2;
+- (void)markReadForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 messages:(NSArray *)arg4 clientUnreadCount:(unsigned int)arg5 setUnreadCountToZero:(_Bool)arg6;
 - (void)markReadForIDs:(NSArray *)arg1 style:(unsigned char)arg2 onServices:(NSArray *)arg3 messages:(NSArray *)arg4 clientUnreadCount:(unsigned int)arg5;
 - (void)markReadForMessageGUID:(NSString *)arg1 callerOrigin:(int)arg2;
 - (void)markReadForMessageGUID:(NSString *)arg1;

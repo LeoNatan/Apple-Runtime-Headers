@@ -15,5 +15,11 @@
 - (struct CGRect)doubleBounds;
 - (void)setDoublePosition:(struct CGPoint)arg1;
 - (struct CGPoint)doublePosition;
+- (void)_mapkit_addAnimation:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_mapkit_removeAnimationImmediatelyForKey:(id)arg1;
+@property(readonly, retain, nonatomic) CALayer *_mapKit_mapLayer;
+- (_Bool)getPresentationValue:(id *)arg1 forValueKey:(id)arg2 animationKey:(id)arg3 removeAnimation:(_Bool)arg4;
+- (_Bool)getPresentationValue:(id *)arg1 forKey:(id)arg2 removeAnimation:(_Bool)arg3;
+@property(readonly, retain, nonatomic) CALayer *currentLayer;
 @end
 

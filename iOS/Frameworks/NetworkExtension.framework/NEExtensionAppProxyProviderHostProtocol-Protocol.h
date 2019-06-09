@@ -6,10 +6,7 @@
 
 #import <NetworkExtension/NEExtensionTunnelProviderHostProtocol-Protocol.h>
 
-@class NEAppRule, NSUUID;
-
 @protocol NEExtensionAppProxyProviderHostProtocol <NEExtensionTunnelProviderHostProtocol>
 - (void)openFlowDivertControlSocketWithCompletionHandler:(void (^)(NSFileHandle *))arg1;
-- (void)verifyAppWithPID:(long long)arg1 uuid:(NSUUID *)arg2 matchesAppRule:(NEAppRule *)arg3 completionHandler:(void (^)(_Bool))arg4;
 @end
 

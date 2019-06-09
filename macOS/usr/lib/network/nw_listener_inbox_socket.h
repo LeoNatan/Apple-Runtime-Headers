@@ -11,13 +11,19 @@ __attribute__((visibility("hidden")))
 {
     void *_source;
     int _sockfd_for_logging_only_do_not_close_or_use;
+    int _sockfd_from_client;
     unsigned char _ipProtocol;
+    unsigned char _listenUUID[16];
 }
 
 - (BOOL)cancel;
-- (id)initWithParameters:(id)arg1 delegate:(id)arg2;
+- (BOOL)resume;
+- (BOOL)suspend;
+- (id)initWithParameters:(id)arg1 delegate:(id)arg2 necpUUID:(unsigned char [16])arg3;
 - (id)description;
 - (id)initWithSocket:(int)arg1 parameters:(id)arg2 delegate:(id)arg3;
+- (id)initWithParameters:(id)arg1 delegate:(id)arg2;
+- (id)start;
 
 @end
 

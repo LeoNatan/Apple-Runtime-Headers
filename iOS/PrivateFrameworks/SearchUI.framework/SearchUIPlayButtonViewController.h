@@ -6,49 +6,57 @@
 
 #import <SearchUI/SearchUIAccessoryViewController.h>
 
-#import <SearchUI/MPUNowPlayingDelegate-Protocol.h>
-#import <SearchUI/NUIContainerStackViewDelegate-Protocol.h>
+#import <SearchUI/NUIContainerViewDelegate-Protocol.h>
 
-@class MPMediaItem, NSArray, NSString, SFPunchout, SearchUIButton, UILabel;
+@class MPMediaEntity, NSArray, NSString, NSTimer, SFPunchout, SearchUIButton, TLKLabel;
 
-@interface SearchUIPlayButtonViewController : SearchUIAccessoryViewController <NUIContainerStackViewDelegate, MPUNowPlayingDelegate>
+@interface SearchUIPlayButtonViewController : SearchUIAccessoryViewController <NUIContainerViewDelegate>
 {
-    UILabel *_captionLabel;
-    SearchUIButton *_playButton;
     SFPunchout *_punchout;
-    NSArray *_adamIDs;
-    MPMediaItem *_localMediaItem;
-    NSString *_localMediaItemIdentifier;
-    struct CGSize _playButtonSize;
-    struct CGSize _captionLabelSize;
+    SearchUIButton *_playButton;
+    TLKLabel *_captionLabel;
+    NSString *_spotlightIdentifier;
+    NSArray *_storeIdentifiers;
+    NSTimer *_timer;
+    MPMediaEntity *_mediaEntity;
+    long long _mediaEntityType;
+    unsigned long long _persistentID;
 }
 
-+ (id)localMediaItemForStoreIdentifiers:(id)arg1;
++ (_Bool)mediaItem:(id)arg1 matchesPersistentID:(unsigned long long)arg2 forType:(long long)arg3;
++ (id)mediaEntityForAction:(id)arg1;
 + (id)font;
-+ (_Bool)supportsResult:(id)arg1;
++ (_Bool)supportsRowModel:(id)arg1;
 + (void)initialize;
-@property struct CGSize captionLabelSize; // @synthesize captionLabelSize=_captionLabelSize;
-@property struct CGSize playButtonSize; // @synthesize playButtonSize=_playButtonSize;
-@property(retain) NSString *localMediaItemIdentifier; // @synthesize localMediaItemIdentifier=_localMediaItemIdentifier;
-@property(retain) MPMediaItem *localMediaItem; // @synthesize localMediaItem=_localMediaItem;
-@property(retain) NSArray *adamIDs; // @synthesize adamIDs=_adamIDs;
-@property(retain) SFPunchout *punchout; // @synthesize punchout=_punchout;
-@property(retain) SearchUIButton *playButton; // @synthesize playButton=_playButton;
-@property(retain) UILabel *captionLabel; // @synthesize captionLabel=_captionLabel;
+@property(nonatomic) unsigned long long persistentID; // @synthesize persistentID=_persistentID;
+@property(nonatomic) long long mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
+@property(retain, nonatomic) MPMediaEntity *mediaEntity; // @synthesize mediaEntity=_mediaEntity;
+@property(retain, nonatomic) NSTimer *timer; // @synthesize timer=_timer;
+@property(retain, nonatomic) NSArray *storeIdentifiers; // @synthesize storeIdentifiers=_storeIdentifiers;
+@property(retain, nonatomic) NSString *spotlightIdentifier; // @synthesize spotlightIdentifier=_spotlightIdentifier;
+@property(retain, nonatomic) TLKLabel *captionLabel; // @synthesize captionLabel=_captionLabel;
+@property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
+@property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
 - (void).cxx_destruct;
+- (_Bool)updateTimerForPauseState;
+- (void)invalidateTimerIfNeeded;
+- (void)createTimerIfNeeded;
+- (void)nowPlayingItemDidChange;
+- (void)playbackStateDidChange;
+- (void)hide;
+- (void)updatePlayState;
+- (void)updateButtonProgressAnimated:(_Bool)arg1;
+- (_Bool)matchesNowPlayingAudioItem;
+- (void)togglePlaybackState;
+- (void)buttonPressed;
+- (void)sendEngagementDidPunchout:(_Bool)arg1;
+- (unsigned long long)type;
 - (struct CGRect)containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect)arg3;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
-- (void)containerViewDidInvalidateIntrinsicContentSize:(id)arg1;
-- (void)nowPlayingController:(id)arg1 playbackStateDidChange:(_Bool)arg2;
-- (void)updateProgressForCurrentlyActiveTrackAnimated:(_Bool)arg1;
-- (void)nowPlayingController:(id)arg1 elapsedTimeDidChange:(double)arg2;
-- (_Bool)matchesNowPlayingAudioItem;
-- (void)buttonPressed;
-- (id)fetchLocalMediaItem;
-- (void)updatePlayState;
 - (_Bool)shouldTopAlignForAccessibilityContentSizes;
-- (void)updateWithResult:(id)arg1;
-- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (void)updateWithRowModel:(id)arg1;
+- (void)dealloc;
+- (id)setupView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

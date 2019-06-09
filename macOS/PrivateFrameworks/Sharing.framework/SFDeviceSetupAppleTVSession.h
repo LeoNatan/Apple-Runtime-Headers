@@ -61,6 +61,7 @@
 - (int)_runPreflightiTunes;
 - (int)_runPreflightWiFi;
 - (void)_run;
+- (void)_reportProgress:(unsigned int)arg1 info:(id)arg2;
 - (void)_reportError:(id)arg1 label:(id)arg2;
 - (void)pairSetupTryPIN:(id)arg1;
 - (void)homeKitSelectRoom:(id)arg1;

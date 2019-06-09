@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     CLLocation *_location;
 }
 
-+ (id)inlineMapWithMapItem:(id)arg1;
++ (id)inlineMapWithMapItem:(id)arg1 options:(unsigned long long)arg2;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(nonatomic) _Bool resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
 - (void).cxx_destruct;

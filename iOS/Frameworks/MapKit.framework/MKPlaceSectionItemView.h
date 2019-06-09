@@ -15,7 +15,8 @@
 - (void)didMoveToWindow;
 - (void)_updateHairlineInsets;
 - (void)layoutMarginsDidChange;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)infoCardThemeChanged;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -9,6 +9,7 @@
 @class NSObject, STContentPrivacyMediaRestrictionsDetailController;
 @protocol STContentPrivacyViewModelCoordinator;
 
+__attribute__((visibility("hidden")))
 @interface STWebFilterDetailController : PSListController
 {
     NSObject<STContentPrivacyViewModelCoordinator> *_coordinator;

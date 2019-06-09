@@ -12,6 +12,7 @@
 + (id <AXSystemAppServer>)server;
 - (void)wakeUpDeviceIfNecessary;
 - (_Bool)isSystemSleeping;
+- (_Bool)isNonExclusiveSystemUIVisible;
 - (void)rebootDevice;
 - (_Bool)isMediaPlaying;
 - (_Bool)isReceivingAirPlay;
@@ -26,7 +27,6 @@
 - (_Bool)isAppSwitcherVisible;
 - (_Bool)isSiriVisible;
 - (_Bool)dismissSiri;
-- (_Bool)openSiri;
 - (void)activeInterfaceOrientation:(void (^)(long long))arg1;
 - (long long)activeInterfaceOrientation;
 - (void)pid:(void (^)(int))arg1;

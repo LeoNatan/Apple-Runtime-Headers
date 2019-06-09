@@ -13,7 +13,6 @@
 
 @interface TCSSuggestionsDataSource : NSObject <TCSSuggestionsObserver>
 {
-    int _firstUnlockToken;
     id <TCSSuggestionsDataSourceDelegate> _delegate;
     TCSSuggestions *_suggestions;
     NSArray *_suggestedContacts;

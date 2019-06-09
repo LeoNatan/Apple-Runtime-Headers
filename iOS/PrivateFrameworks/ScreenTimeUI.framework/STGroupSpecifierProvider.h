@@ -8,14 +8,15 @@
 
 #import <ScreenTimeUI/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, PSSpecifier;
+@class NSArray, NSMutableArray, NSString, PSSpecifier, UIViewController;
 @protocol STGroupSpecifierProviderDelegate;
 
+__attribute__((visibility("hidden")))
 @interface STGroupSpecifierProvider : NSObject <UITableViewDelegate>
 {
     _Bool _isHidden;
     _Bool _invalid;
-    id <STGroupSpecifierProviderDelegate> _delegate;
+    UIViewController<STGroupSpecifierProviderDelegate> *_delegate;
     PSSpecifier *_groupSpecifier;
     NSMutableArray *_privateSpecifiers;
 }
@@ -24,7 +25,7 @@
 @property _Bool invalid; // @synthesize invalid=_invalid;
 @property(retain) NSMutableArray *privateSpecifiers; // @synthesize privateSpecifiers=_privateSpecifiers;
 @property(retain, nonatomic) PSSpecifier *groupSpecifier; // @synthesize groupSpecifier=_groupSpecifier;
-@property(nonatomic) __weak id <STGroupSpecifierProviderDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak UIViewController<STGroupSpecifierProviderDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 - (void).cxx_destruct;
 - (void)_tableCellHeightDidChange:(id)arg1;
@@ -34,9 +35,9 @@
 - (void)insertSpecifiers:(id)arg1 atIndexes:(id)arg2;
 - (id)specifiersAtIndexes:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *specifiers;
-- (id)mutableSpecifiers;
+@property(readonly) NSMutableArray *mutableSpecifiers;
 - (void)showStoreDemoAlert;
-- (void)showPINSheet:(id)arg1;
+- (void)showPINSheet:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)lazyLoadBundle:(id)arg1;
 - (void)endUpdates;
 - (void)beginUpdates;
@@ -46,6 +47,7 @@
 - (void)dismissViewControllerAnimated:(_Bool)arg1;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)showController:(id)arg1 animated:(_Bool)arg2;
+- (void)reloadSectionHeaderFootersWithAnimation:(long long)arg1;
 - (void)reloadSpecifier:(id)arg1 animated:(_Bool)arg2;
 - (void)invalidate;
 - (id)init;

@@ -56,6 +56,7 @@
 @property(retain, nonatomic) NSDictionary *relayCancel; // @synthesize relayCancel=_relayCancel;
 @property(retain, nonatomic) NSDictionary *relayUpdate; // @synthesize relayUpdate=_relayUpdate;
 @property(retain, nonatomic) NSDictionary *relayInitiate; // @synthesize relayInitiate=_relayInitiate;
+- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) _Bool isFinished;
 - (void)dealloc;

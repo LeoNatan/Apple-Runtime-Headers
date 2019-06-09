@@ -18,6 +18,7 @@
     NSMutableArray *subtrees;
     NSMutableDictionary *cache;
     NSString *layoutTag;
+    _Bool _isFloating;
     NSString *effectiveLayoutTag;
 }
 
@@ -30,6 +31,7 @@
 + (id)treeOfType:(int)arg1;
 + (id)uniqueName;
 + (_Bool)typeIsPersistent:(int)arg1;
+@property(nonatomic) _Bool isFloating; // @synthesize isFloating=_isFloating;
 @property(retain, nonatomic) NSString *effectiveLayoutTag; // @synthesize effectiveLayoutTag;
 @property(retain, nonatomic) NSString *layoutTag; // @synthesize layoutTag;
 @property(retain, nonatomic) NSMutableDictionary *cache; // @synthesize cache;
@@ -37,6 +39,7 @@
 @property(retain, nonatomic) NSMutableDictionary *properties; // @synthesize properties;
 @property(retain, nonatomic) NSString *name; // @synthesize name;
 @property(nonatomic) int type; // @synthesize type;
+- (id)keysForDisplayRowAtIndex:(unsigned int)arg1;
 - (_Bool)renderKeyInKeyplane:(id)arg1;
 - (_Bool)_renderAsStringKey;
 - (id)cacheSecondaryDisplayString;
@@ -57,6 +60,7 @@
 - (_Bool)modifiesKeyplane;
 - (_Bool)avoidsLanguageIndicator;
 - (_Bool)allowRetestAfterCommittingDownActions;
+- (_Bool)allowsStartingContinuousPath;
 - (_Bool)isExemptFromInputManagerHitTesting;
 - (_Bool)isExemptFromInputManagerLayout;
 - (void)setParentKey:(id)arg1;
@@ -65,8 +69,8 @@
 - (_Bool)mergeAsMoreKey;
 - (void)setForceMultitap:(_Bool)arg1;
 - (_Bool)forceMultitap;
-- (void)setClipCorners:(int)arg1;
-- (int)clipCorners;
+- (void)setClipCorners:(unsigned int)arg1;
+- (unsigned int)clipCorners;
 - (void)setSplitMode:(int)arg1;
 - (int)splitMode;
 - (void)setDisabled:(_Bool)arg1;
@@ -124,6 +128,7 @@
 - (void)setGeometriesList:(id)arg1;
 - (id)geometriesList;
 - (id)listShapes;
+- (id)supplementaryKeyList;
 - (id)attributeSet:(_Bool)arg1;
 - (id)geometrySet:(_Bool)arg1;
 - (id)keySet;
@@ -134,6 +139,8 @@
 - (void)insertKey:(id)arg1 withFrame:(struct CGRect)arg2 andShiftKeys:(id)arg3 scale:(float)arg4;
 - (void)removeKey:(id)arg1;
 - (void)scaleKeys:(id)arg1 withFactor:(struct CGSize)arg2 scale:(float)arg3;
+- (void)insetKeys:(id)arg1 withInsets:(struct UIEdgeInsets)arg2 scale:(float)arg3;
+- (void)resizeKeys:(id)arg1 withOffset:(struct CGPoint)arg2 scale:(float)arg3;
 - (void)repositionKeys:(id)arg1 withOffset:(struct CGPoint)arg2 scale:(float)arg3;
 - (void)centerKeys:(id)arg1 inRect:(struct CGRect)arg2 scale:(float)arg3;
 - (id)_horizontallyCoincidentKeysWithKey:(id)arg1;
@@ -154,6 +161,7 @@
 - (struct CGRect)frameForKeylayoutName:(id)arg1;
 - (_Bool)looksLike:(id)arg1;
 - (_Bool)supportsType:(int)arg1;
+- (_Bool)supportsContinuousPath;
 - (id)autolocalizedKeyCacheIterator;
 - (int)dragThreshold;
 - (float)primaryKeylayoutOffset;
@@ -161,6 +169,8 @@
 - (_Bool)isSplit;
 - (void)cacheNativeIdiomIfNecessary;
 - (int)nativeIdiom;
+- (void)setResizingOffset:(float)arg1;
+- (float)resizingOffset;
 - (void)setIsGenerated:(_Bool)arg1;
 - (_Bool)isGenerated;
 - (_Bool)isLetters;
@@ -233,6 +243,7 @@
 - (void)elaborateLayoutWithSize:(struct CGSize)arg1 scale:(float)arg2;
 - (int)_keyCountOnNamedRow:(id)arg1;
 - (void)zipAttributes;
+- (void)zipOnlyGeometrySet;
 - (void)zipGeometrySet;
 - (void)zipGeometries:(_Bool)arg1 attributes:(_Bool)arg2;
 - (void)updateFlickKeycapOnKeys;

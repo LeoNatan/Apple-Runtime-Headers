@@ -8,13 +8,14 @@
 
 #import <PhotosUICore/NSCopying-Protocol.h>
 
+@class NSView;
 @protocol PXAnonymousCoordinateSpace;
 
 @interface PXNonuniformTransform : NSObject <NSCopying>
 {
     struct CGRect _sourceRect;
     struct CGRect _targetRect;
-    NSObject<PXAnonymousCoordinateSpace> *_coordinateSpace;
+    NSView<PXAnonymousCoordinateSpace> *_coordinateSpace;
     double _minimumScale;
     double _maximumScale;
 }

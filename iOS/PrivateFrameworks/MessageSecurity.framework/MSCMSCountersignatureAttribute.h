@@ -15,7 +15,7 @@
     NSArray *_signerInfoSet;
 }
 
-@property(readonly) NSArray *signerInfoSet; // @synthesize signerInfoSet=_signerInfoSet;
+@property(readonly, retain) NSArray *signerInfoSet; // @synthesize signerInfoSet=_signerInfoSet;
 - (void).cxx_destruct;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (_Bool)verifyCountersignaturesAndCountersignersWithPolicies:(id)arg1 verifyTime:(id)arg2 signature:(id)arg3 error:(id *)arg4;

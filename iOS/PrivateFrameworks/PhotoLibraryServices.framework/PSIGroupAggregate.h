@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSString, PSIGroup;
 @protocol OS_dispatch_queue;
 
 @interface PSIGroupAggregate : NSObject
@@ -15,24 +15,24 @@
     NSMutableArray *_groupAggregateItems;
     NSMutableArray *_aggregatedGroupIds;
     NSMutableArray *_aggregateItemPool;
+    unsigned long long _filenameGroupCount;
     NSObject<OS_dispatch_queue> *_groupResultsQueue;
     NSString *_transientToken;
+    PSIGroup *_filenameGroupInAggregate;
 }
 
-+ (_Bool)_prefer:(id)arg1 over:(id)arg2;
-+ (void)postProcessGroupResults:(id)arg1 dedupedGroupResults:(out id *)arg2;
-+ (_Bool)_canDedupeGroupResult:(id)arg1 withGroupResult:(id)arg2;
+@property(readonly, nonatomic) PSIGroup *filenameGroupInAggregate; // @synthesize filenameGroupInAggregate=_filenameGroupInAggregate;
 @property(copy, nonatomic) NSString *transientToken; // @synthesize transientToken=_transientToken;
 @property(readonly, nonatomic) NSArray *searchTokens; // @synthesize searchTokens=_searchTokens;
+- (void).cxx_destruct;
 - (id)newGroupResult;
-- (id)newGroupResultWithDateFilter:(id)arg1;
+- (id)newGroupResultWithDateFilter:(id)arg1 datedTokens:(id)arg2;
 - (struct __CFArray *)_newSortedGroupIds;
 - (_Bool)_verifySortedGroupIdsUnique;
 - (id)aggregateItemWithSearchToken:(id)arg1 rangeMatchingToken:(id)arg2 group:(id)arg3;
 - (void)pop;
 - (_Bool)pushGroup:(id)arg1;
-- (struct _NSRange)_rangeOfString:(id)arg1 inGroup:(id)arg2 extendingSearchRange:(_Bool)arg3 matchingFullToken:(_Bool)arg4 excludingRanges:(id)arg5;
-- (void)dealloc;
+- (struct _NSRange)_rangeOfString:(id)arg1 inGroup:(id)arg2 useNormalizedString:(_Bool)arg3 extendingSearchRange:(_Bool)arg4 matchingFullToken:(_Bool)arg5 excludingRanges:(id)arg6;
 - (id)initWithSearchTokens:(id)arg1 groupResultsQueue:(id)arg2;
 
 @end

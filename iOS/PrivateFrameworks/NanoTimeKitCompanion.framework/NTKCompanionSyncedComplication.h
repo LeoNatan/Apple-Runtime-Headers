@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *localizedName;
-- (id)initWithDictionary:(id)arg1 supportedFamilies:(id)arg2;
+- (id)initWithRemoteApplication:(id)arg1 supportedFamilies:(id)arg2;
 
 @end
 

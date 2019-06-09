@@ -13,10 +13,8 @@
     NSArray *_texHandMnut;
     NSNumber *_texHandHour;
     NSNumber *_texArm;
-    unsigned int _vaoHand;
-    unsigned int _vboHand;
-    unsigned int _vaoArm;
-    unsigned int _vboArm;
+    unsigned int _mtlBufHandOffset;
+    unsigned int _mtlBufArmOffset;
     float _leftShoulderX;
     float _rightShoulderX;
     float _leftShoulderAdjustment;
@@ -31,10 +29,8 @@
 @property(nonatomic) float leftShoulderAdjustment; // @synthesize leftShoulderAdjustment=_leftShoulderAdjustment;
 @property(nonatomic) float rightShoulderX; // @synthesize rightShoulderX=_rightShoulderX;
 @property(nonatomic) float leftShoulderX; // @synthesize leftShoulderX=_leftShoulderX;
-@property(nonatomic) unsigned int vboArm; // @synthesize vboArm=_vboArm;
-@property(nonatomic) unsigned int vaoArm; // @synthesize vaoArm=_vaoArm;
-@property(nonatomic) unsigned int vboHand; // @synthesize vboHand=_vboHand;
-@property(nonatomic) unsigned int vaoHand; // @synthesize vaoHand=_vaoHand;
+@property(nonatomic) unsigned int mtlBufArmOffset; // @synthesize mtlBufArmOffset=_mtlBufArmOffset;
+@property(nonatomic) unsigned int mtlBufHandOffset; // @synthesize mtlBufHandOffset=_mtlBufHandOffset;
 @property(retain, nonatomic) NSNumber *texArm; // @synthesize texArm=_texArm;
 @property(retain, nonatomic) NSNumber *texHandHour; // @synthesize texHandHour=_texHandHour;
 @property(retain, nonatomic) NSArray *texHandMnut; // @synthesize texHandMnut=_texHandMnut;

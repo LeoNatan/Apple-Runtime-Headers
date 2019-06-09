@@ -8,7 +8,7 @@
 
 #import <TextInputCore/NSCopying-Protocol.h>
 
-@class NSLocale, NSString;
+@class NSArray, NSDictionary, NSLocale, NSString;
 
 @interface TIInputMode : NSObject <NSCopying>
 {
@@ -28,6 +28,11 @@
 @property(readonly, nonatomic) NSString *sentenceDelimitingCharacters;
 @property(readonly, nonatomic) NSString *sentencePrefixingCharacters;
 @property(readonly, nonatomic) NSString *nonstopPunctuationCharacters;
+@property(readonly, nonatomic) NSDictionary *reverseCompositionMap;
+@property(readonly, nonatomic) NSDictionary *compositionMap;
+@property(readonly, nonatomic) NSDictionary *layoutTags;
+@property(readonly, nonatomic) NSArray *allAccentKeyStrings;
+@property(readonly, nonatomic) _Bool doesComposeText;
 @property(readonly, nonatomic) NSString *replacementForDoubleSpace;
 @property(readonly, nonatomic) _Bool spaceAutocorrectionEnabled;
 @property(readonly, nonatomic) _Bool supportsMultilingualKeyboard;

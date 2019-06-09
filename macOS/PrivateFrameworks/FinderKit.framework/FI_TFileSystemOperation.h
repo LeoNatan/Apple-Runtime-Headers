@@ -6,6 +6,9 @@
 
 #import <FinderKit/FI_IAsyncNodeOperation.h>
 
+@class NSObject;
+@protocol TFileSystemOperationDelegateProtocol;
+
 __attribute__((visibility("hidden")))
 @interface FI_TFileSystemOperation : FI_IAsyncNodeOperation
 {
@@ -17,8 +20,7 @@ __attribute__((visibility("hidden")))
 - (int)startSuboperation:(unsigned int)arg1 string:(id)arg2 propertyList:(const struct TFENodePropertyList *)arg3 target:(const struct TFENode *)arg4;
 - (int)startSuboperation:(unsigned int)arg1 string:(id)arg2 propertyList:(const struct TFENodePropertyList *)arg3;
 - (void)configureOperationRecord:(struct TOperationRecord *)arg1 forNode:(const struct TFENode *)arg2;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+@property(nonatomic) __weak NSObject<TFileSystemOperationDelegateProtocol> *delegate;
 - (id)makeDelegate;
 - (id)initWithNodes:(const struct TFENodeVector *)arg1;
 - (id)initWithNodes:(const struct TFENodeVector *)arg1 delegate:(id)arg2;

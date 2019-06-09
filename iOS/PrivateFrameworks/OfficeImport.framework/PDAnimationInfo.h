@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) PDMediaNode *mediaNode; // @synthesize mediaNode;
 @property(retain, nonatomic) PDAnimationInfoData *mediaData; // @synthesize mediaData=mMedia;
+- (void).cxx_destruct;
 - (id)description;
 - (id)exitData;
 - (void)setExitData:(id)arg1;
 - (id)entranceData;
 - (void)setEntranceData:(id)arg1;
-- (void)dealloc;
 
 @end
 

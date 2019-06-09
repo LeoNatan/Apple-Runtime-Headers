@@ -14,6 +14,8 @@
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property long long headerLevel; // @dynamic headerLevel;
+- (void)setCompositionLanguage:(long long)arg1;
+- (void)setUsesDefaultHyphenation:(BOOL)arg1;
 @property float tighteningFactorForTruncation; // @dynamic tighteningFactorForTruncation;
 @property float hyphenationFactor; // @dynamic hyphenationFactor;
 @property long long baseWritingDirection; // @dynamic baseWritingDirection;
@@ -37,7 +39,7 @@
 @property double firstLineHeadIndent; // @dynamic firstLineHeadIndent;
 @property double tailIndent; // @dynamic tailIndent;
 @property double headIndent; // @dynamic headIndent;
-@property unsigned long long alignment; // @dynamic alignment;
+@property long long alignment; // @dynamic alignment;
 @property double paragraphSpacing; // @dynamic paragraphSpacing;
 @property double lineSpacing; // @dynamic lineSpacing;
 - (void)setParagraphStyle:(id)arg1;

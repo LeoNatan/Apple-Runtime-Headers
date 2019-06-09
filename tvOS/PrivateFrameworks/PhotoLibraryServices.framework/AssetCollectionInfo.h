@@ -27,19 +27,19 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, retain, nonatomic) NSString *derivativeUTI; // @synthesize derivativeUTI=_derivativeUTI;
-@property(readonly, retain, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-@property(readonly, retain, nonatomic) NSNumber *height; // @synthesize height=_height;
-@property(readonly, retain, nonatomic) NSNumber *width; // @synthesize width=_width;
-@property(readonly, retain, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
+@property(readonly, nonatomic) NSString *derivativeUTI; // @synthesize derivativeUTI=_derivativeUTI;
+@property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
+@property(readonly, nonatomic) NSNumber *height; // @synthesize height=_height;
+@property(readonly, nonatomic) NSNumber *width; // @synthesize width=_width;
+@property(readonly, nonatomic) NSDictionary *metaData; // @synthesize metaData=_metaData;
 @property(readonly, nonatomic) _Bool isDeletable; // @synthesize isDeletable=_isDeletable;
 @property(readonly, nonatomic) unsigned short playbackVariation; // @synthesize playbackVariation=_playbackVariation;
 @property(readonly, nonatomic) _Bool isPhotoIris; // @synthesize isPhotoIris=_isPhotoIris;
 @property(readonly, nonatomic) _Bool isVideo; // @synthesize isVideo=_isVideo;
 @property(readonly, nonatomic) _Bool isMine; // @synthesize isMine=_isMine;
-@property(readonly, retain, nonatomic) NSString *personID; // @synthesize personID=_personID;
-@property(readonly, retain, nonatomic) NSString *GUID; // @synthesize GUID=_GUID;
-- (void)dealloc;
+@property(readonly, nonatomic) NSString *personID; // @synthesize personID=_personID;
+@property(readonly, nonatomic) NSString *GUID; // @synthesize GUID=_GUID;
+- (void).cxx_destruct;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

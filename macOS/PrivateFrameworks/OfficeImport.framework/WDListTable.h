@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, WDDocument, WDList;
 
+__attribute__((visibility("hidden")))
 @interface WDListTable : NSObject
 {
     WDDocument *mDocument;

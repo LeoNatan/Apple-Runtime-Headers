@@ -6,6 +6,7 @@
 
 #import <UIKit/UIWindow.h>
 
+__attribute__((visibility("hidden")))
 @interface CKHandwritingWindow : UIWindow
 {
     _Bool _eatOrientationEvents;

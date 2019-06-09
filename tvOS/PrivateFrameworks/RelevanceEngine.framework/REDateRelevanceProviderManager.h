@@ -6,23 +6,28 @@
 
 #import <RelevanceEngine/RERelevanceProviderManager.h>
 
+#import <RelevanceEngine/REDateRelevanceProviderManagerProperties-Protocol.h>
+
 @class NSDate, NSDateInterval;
 
-@interface REDateRelevanceProviderManager : RERelevanceProviderManager
+@interface REDateRelevanceProviderManager : RERelevanceProviderManager <REDateRelevanceProviderManagerProperties>
 {
     NSDate *_lastDateUpdate;
     NSDateInterval *_todayInterval;
 }
 
 + (_Bool)_supportsHistoricProviders;
++ (_Bool)_wantsSeperateRelevanceQueue;
 + (id)_dependencyClasses;
 + (id)_features;
 + (Class)_relevanceProviderClass;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSDate *todayEnd;
+@property(readonly, nonatomic) NSDate *todayStart;
+@property(readonly, nonatomic) NSDate *lastDateUpdate;
 - (void)_handleSignificantTimeChange;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (void)_prepareForUpdate;
 - (void)_scheduleUpdateForDate:(id)arg1;
 - (void)_scheduleUpdatesForDateProvider:(id)arg1;

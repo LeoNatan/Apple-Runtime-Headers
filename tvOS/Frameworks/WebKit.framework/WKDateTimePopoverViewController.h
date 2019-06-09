@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface WKDateTimePopoverViewController : UIViewController
 {
-    struct RetainPtr<NSObject<WKFormControl>> _innerControl;
+    RetainPtr_5ad583fd _innerControl;
 }
 
 - (id).cxx_construct;

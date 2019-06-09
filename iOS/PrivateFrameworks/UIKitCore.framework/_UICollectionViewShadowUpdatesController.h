@@ -59,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)collectionView:(id)arg1 dropSessionDidEnter:(id)arg2;
 - (_Bool)collectionView:(id)arg1 canHandleDropSession:(id)arg2;
 - (void)collectionView:(id)arg1 performDropWithCoordinator:(id)arg2;
+- (_Bool)_collectionView:(id)arg1 dragSessionSupportsSystemDrag:(id)arg2;
 - (long long)_collectionView:(id)arg1 dataOwnerForDragSession:(id)arg2 atIndexPath:(id)arg3;
 - (_Bool)_collectionView:(id)arg1 prefersFullSizePreviewsForDragSession:(id)arg2;
 - (_Bool)collectionView:(id)arg1 dragSessionIsRestrictedToDraggingApplication:(id)arg2;
@@ -68,6 +69,13 @@ __attribute__((visibility("hidden")))
 - (id)collectionView:(id)arg1 dragPreviewParametersForItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 itemsForAddingToDragSession:(id)arg2 atIndexPath:(id)arg3 point:(struct CGPoint)arg4;
 - (id)collectionView:(id)arg1 itemsForBeginningDragSession:(id)arg2 atIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 listLayout:(id)arg2 didEndEditingRowAtIndexPath:(id)arg3;
+- (void)collectionView:(id)arg1 listLayout:(id)arg2 willBeginEditingRowAtIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 listLayout:(id)arg2 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 listLayout:(id)arg2 leadingSwipeActionsConfigurationForRowAtIndexPath:(id)arg3;
+- (double)collectionView:(id)arg1 listLayout:(id)arg2 heightForFooterInSection:(long long)arg3;
+- (double)collectionView:(id)arg1 listLayout:(id)arg2 heightForHeaderInSection:(long long)arg3;
+- (double)collectionView:(id)arg1 listLayout:(id)arg2 heightForRowAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 tableLayout:(id)arg2 trailingSwipeActionsForRowAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 tableLayout:(id)arg2 leadingSwipeActionsForRowAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 tableLayout:(id)arg2 indentationLevelForRowAtIndexPath:(id)arg3;
@@ -83,6 +91,9 @@ __attribute__((visibility("hidden")))
 - (double)collectionView:(id)arg1 heightForHeaderViewInTableLayout:(id)arg2;
 - (double)collectionView:(id)arg1 tableLayout:(id)arg2 heightForFooterInSection:(long long)arg3;
 - (double)collectionView:(id)arg1 tableLayout:(id)arg2 heightForHeaderInSection:(long long)arg3;
+- (double)collectionView:(id)arg1 tableLayout:(id)arg2 estimatedHeightForFooterInSection:(long long)arg3;
+- (double)collectionView:(id)arg1 tableLayout:(id)arg2 estimatedHeightForHeaderInSection:(long long)arg3;
+- (double)collectionView:(id)arg1 tableLayout:(id)arg2 estimatedHeightForRowAtIndexPath:(id)arg3;
 - (double)collectionView:(id)arg1 tableLayout:(id)arg2 heightForRowAtIndexPath:(id)arg3;
 - (id)_collectionView:(id)arg1 layout:(id)arg2 sizesForItemsInSection:(long long)arg3;
 - (id)_collectionView:(id)arg1 layout:(id)arg2 flowLayoutRowAlignmentOptionsForSection:(long long)arg3;
@@ -132,6 +143,7 @@ __attribute__((visibility("hidden")))
 - (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didHighlightItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (void)_collectionView:(id)arg1 willPerformUpdates:(id)arg2;
 - (id)_collectionView:(id)arg1 indexPathForSectionIndexTitle:(id)arg2 atIndex:(long long)arg3;
 - (id)_collectionView:(id)arg1 sectionIndexTitlesTrimmedToCount:(unsigned long long)arg2;
 - (id)_sectionIndexTitlesForCollectionView:(id)arg1;

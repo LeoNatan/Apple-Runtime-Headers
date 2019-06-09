@@ -13,10 +13,14 @@
     _Bool _didSetTimeoutInterval;
     NSString *_clientIdentifier;
     NSString *_clientVersion;
+    NSString *_clientPlatformIdentifier;
+    unsigned int _authenticationOptions;
     double _timeoutInterval;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned int authenticationOptions; // @synthesize authenticationOptions=_authenticationOptions;
+@property(copy, nonatomic) NSString *clientPlatformIdentifier; // @synthesize clientPlatformIdentifier=_clientPlatformIdentifier;
 @property(copy, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(nonatomic) double timeoutInterval; // @synthesize timeoutInterval=_timeoutInterval;

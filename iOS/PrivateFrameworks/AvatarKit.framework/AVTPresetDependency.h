@@ -19,6 +19,7 @@
 @property(retain, nonatomic) AVTPreset *preset; // @synthesize preset;
 @property(nonatomic) long long category; // @synthesize category;
 - (void).cxx_destruct;
+- (id)debugDescription;
 
 @end
 

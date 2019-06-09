@@ -11,7 +11,6 @@
 @class AFAnalyticsTurnBasedInstrumentationContext, AceObject, NSString, SAUISnippet;
 @protocol SiriUIAceObjectViewControllerDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIBaseSnippetViewController : NSViewController <SiriUIViewController>
 {
     AceObject *aceObject;

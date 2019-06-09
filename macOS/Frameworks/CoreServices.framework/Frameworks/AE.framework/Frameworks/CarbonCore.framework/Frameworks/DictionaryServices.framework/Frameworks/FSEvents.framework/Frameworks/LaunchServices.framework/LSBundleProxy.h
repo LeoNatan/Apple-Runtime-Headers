@@ -20,9 +20,12 @@
     BOOL _containerized;
     BOOL _profileValidated;
     BOOL _UPPValidated;
+    NSURL *_dataContainerURL;
+    NSString *_bundleIdentifier;
     NSString *_bundleType;
     NSURL *_bundleURL;
     NSString *_bundleExecutable;
+    NSURL *_bundleContainerURL;
     NSString *_bundleVersion;
     NSString *_sdkVersion;
     NSString *_signerIdentity;
@@ -40,8 +43,10 @@
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)canInstantiateFromDatabase;
++ (id)bundleProxyWithAuditToken:(CDStruct_4c969caf)arg1 error:(id *)arg2;
 + (id)bundleProxyForCurrentProcess;
 + (BOOL)bundleProxyForCurrentProcessNeedsUpdate:(id)arg1;
++ (id)bundleProxyForURL:(id)arg1 error:(id *)arg2;
 + (id)bundleProxyForURL:(id)arg1;
 + (id)bundleProxyForIdentifier:(id)arg1;
 @property(retain, nonatomic, setter=_setValidationToken:) _LSBundleIDValidationToken *_validationToken; // @synthesize _validationToken=__validationToken;
@@ -49,7 +54,7 @@
 @property(copy, nonatomic, setter=_setEntitlements:) _LSLazyPropertyList *_entitlements; // @synthesize _entitlements=__entitlements;
 @property(copy, nonatomic, setter=_setGroupContainers:) _LSLazyPropertyList *_groupContainers; // @synthesize _groupContainers=__groupContainers;
 @property(copy, nonatomic, setter=_setInfoDictionary:) _LSLazyPropertyList *_infoDictionary; // @synthesize _infoDictionary=__infoDictionary;
-@property(nonatomic, setter=_setCompatibilityState:) unsigned long long compatibilityState; // @synthesize compatibilityState=_compatibilityState;
+@property(readonly, nonatomic) unsigned long long compatibilityState; // @synthesize compatibilityState=_compatibilityState;
 @property(copy, nonatomic) NSArray *machOUUIDs; // @synthesize machOUUIDs=_machOUUIDs;
 @property(readonly, nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) NSUUID *cacheGUID; // @synthesize cacheGUID=_cacheGUID;
@@ -61,9 +66,12 @@
 @property(readonly, nonatomic) NSString *signerIdentity; // @synthesize signerIdentity=_signerIdentity;
 @property(copy, nonatomic, setter=setSDKVersion:) NSString *sdkVersion; // @synthesize sdkVersion=_sdkVersion;
 @property(readonly, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
+@property(readonly, nonatomic) NSURL *bundleContainerURL; // @synthesize bundleContainerURL=_bundleContainerURL;
 @property(readonly, nonatomic) NSString *bundleExecutable; // @synthesize bundleExecutable=_bundleExecutable;
 @property(readonly, nonatomic) NSURL *bundleURL; // @synthesize bundleURL=_bundleURL;
 @property(readonly, nonatomic) NSString *bundleType; // @synthesize bundleType=_bundleType;
+@property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)_valueForEqualityTesting;
@@ -81,23 +89,25 @@
 - (id)_environmentVariablesFromContainerManager;
 @property(readonly, nonatomic) NSURL *appStoreReceiptURL; // @dynamic appStoreReceiptURL;
 - (id)appStoreReceiptName;
-@property(readonly, nonatomic) NSURL *dataContainerURL;
+@property(readonly, nonatomic) NSURL *dataContainerURL; // @synthesize dataContainerURL=_dataContainerURL;
+- (BOOL)_shouldCallThroughToContainerManagerForPersona;
+- (BOOL)_hasAssociatedPersonas;
+- (BOOL)_usesSystemPersona;
+- (id)_managedPersonas;
 - (id)_macOSGroupContainerURLs;
 - (id)_macOSDataContainerURL;
 - (id)_macOSContainerInfo;
 - (id)_dataContainerURLFromContainerManager;
-@property(readonly, nonatomic) NSURL *bundleContainerURL;
 @property(readonly, nonatomic) NSURL *containerURL;
 @property(readonly, nonatomic) NSString *canonicalExecutablePath;
-@property(readonly, nonatomic) NSString *bundleIdentifier;
 - (id)uniqueIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)_initWithBundleUnit:(unsigned int)arg1 context:(struct LSContext *)arg2 bundleType:(unsigned long long)arg3 bundleID:(id)arg4 localizedName:(id)arg5 bundleContainerURL:(id)arg6 dataContainerURL:(id)arg7 resourcesDirectoryURL:(id)arg8 iconsDictionary:(id)arg9 iconFileNames:(id)arg10 version:(id)arg11;
 - (id)localizedName;
 - (id)localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(BOOL)arg2;
 @property(readonly, nonatomic) NSString *localizedShortName;
+- (id)_localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(BOOL)arg2;
 
 @end
 

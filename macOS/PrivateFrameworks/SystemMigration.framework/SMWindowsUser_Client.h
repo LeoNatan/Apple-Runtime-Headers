@@ -19,6 +19,7 @@
 }
 
 + (id)keyPathsForValuesAffectingDisplayExtraInfo;
++ (id)interestedDaemonKeysLimitedToMigratableUsers;
 + (id)interestedDaemonKeys;
 @property(retain) NSData *accountPictureData; // @synthesize accountPictureData=_accountPictureData;
 @property(readonly) NSString *windowsSID; // @synthesize windowsSID=_windowsSID;

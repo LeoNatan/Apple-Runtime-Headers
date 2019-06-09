@@ -15,7 +15,6 @@
 {
     _Bool _wantsToBecomeFirstResponder;
     _Bool _wantsToReceiveActionResponses;
-    _Bool _dismissEnabled;
     id <_UNNotificationExtensionHostDelegate> _delegate;
     unsigned long long _playPauseMediaButtonType;
     UIColor *_playPauseMediaButtonColor;
@@ -24,7 +23,6 @@
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-@property(nonatomic, getter=isDismissEnabled) _Bool dismissEnabled; // @synthesize dismissEnabled=_dismissEnabled;
 @property(retain, nonatomic) UIColor *playPauseMediaButtonColor; // @synthesize playPauseMediaButtonColor=_playPauseMediaButtonColor;
 @property(nonatomic) struct CGRect playPauseMediaButtonFrame; // @synthesize playPauseMediaButtonFrame=_playPauseMediaButtonFrame;
 @property(nonatomic) unsigned long long playPauseMediaButtonType; // @synthesize playPauseMediaButtonType=_playPauseMediaButtonType;
@@ -32,12 +30,10 @@
 @property(nonatomic) _Bool wantsToBecomeFirstResponder; // @synthesize wantsToBecomeFirstResponder=_wantsToBecomeFirstResponder;
 @property(nonatomic) __weak id <_UNNotificationExtensionHostDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_extensionRequestsToSetDismissEnabled:(_Bool)arg1;
 - (void)_extensionSetUserNotificationActions:(id)arg1;
 - (void)_extensionSetTitle:(id)arg1;
 - (void)_extensionRequestsDismiss;
 - (void)_extensionRequestsDefaultAction;
-- (void)_extensionAudioAccessoryViewContextId:(unsigned int)arg1;
 - (void)_extensionMediaPlayingPaused;
 - (void)_extensionMediaPlayingStarted;
 - (void)_extensionSetPlayPauseMediaButtonColor:(id)arg1;
@@ -47,6 +43,7 @@
 - (void)_extensionWantsToReceiveActionResponses:(_Bool)arg1;
 - (void)_extensionDidCompleteNotificationResponse:(id)arg1 withOption:(unsigned long long)arg2;
 - (void)_extensionDidUpdateControls;
+- (_Bool)_canShowWhileLocked;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

@@ -8,18 +8,19 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEODataSetURLOverride : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_addressCorrectionInitURL;
     NSString *_addressCorrectionUpdateURL;
     NSString *_announcementsURL;
     NSString *_batchReverseGeocoderURL;
     NSString *_businessPortalBaseURL;
-    unsigned int _dataSet;
     NSString *_directionsURL;
     NSString *_dispatcherURL;
     NSString *_etaURL;
@@ -30,26 +31,48 @@ __attribute__((visibility("hidden")))
     NSString *_problemSubmissionURL;
     NSString *_simpleETAURL;
     NSString *_spatialLookupURL;
-    CDStruct_2fe9a6d4 _has;
+    unsigned int _dataSet;
+    struct {
+        unsigned int has_dataSet:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_addressCorrectionInitURL:1;
+        unsigned int read_addressCorrectionUpdateURL:1;
+        unsigned int read_announcementsURL:1;
+        unsigned int read_batchReverseGeocoderURL:1;
+        unsigned int read_businessPortalBaseURL:1;
+        unsigned int read_directionsURL:1;
+        unsigned int read_dispatcherURL:1;
+        unsigned int read_etaURL:1;
+        unsigned int read_logMessageUsageURL:1;
+        unsigned int read_problemCategoriesURL:1;
+        unsigned int read_problemOptInURL:1;
+        unsigned int read_problemStatusURL:1;
+        unsigned int read_problemSubmissionURL:1;
+        unsigned int read_simpleETAURL:1;
+        unsigned int read_spatialLookupURL:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_addressCorrectionInitURL:1;
+        unsigned int wrote_addressCorrectionUpdateURL:1;
+        unsigned int wrote_announcementsURL:1;
+        unsigned int wrote_batchReverseGeocoderURL:1;
+        unsigned int wrote_businessPortalBaseURL:1;
+        unsigned int wrote_directionsURL:1;
+        unsigned int wrote_dispatcherURL:1;
+        unsigned int wrote_etaURL:1;
+        unsigned int wrote_logMessageUsageURL:1;
+        unsigned int wrote_problemCategoriesURL:1;
+        unsigned int wrote_problemOptInURL:1;
+        unsigned int wrote_problemStatusURL:1;
+        unsigned int wrote_problemSubmissionURL:1;
+        unsigned int wrote_simpleETAURL:1;
+        unsigned int wrote_spatialLookupURL:1;
+        unsigned int wrote_dataSet:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *spatialLookupURL; // @synthesize spatialLookupURL=_spatialLookupURL;
-@property(retain, nonatomic) NSString *logMessageUsageURL; // @synthesize logMessageUsageURL=_logMessageUsageURL;
-@property(retain, nonatomic) NSString *businessPortalBaseURL; // @synthesize businessPortalBaseURL=_businessPortalBaseURL;
-@property(retain, nonatomic) NSString *problemOptInURL; // @synthesize problemOptInURL=_problemOptInURL;
-@property(retain, nonatomic) NSString *dispatcherURL; // @synthesize dispatcherURL=_dispatcherURL;
-@property(retain, nonatomic) NSString *announcementsURL; // @synthesize announcementsURL=_announcementsURL;
-@property(retain, nonatomic) NSString *problemCategoriesURL; // @synthesize problemCategoriesURL=_problemCategoriesURL;
-@property(retain, nonatomic) NSString *problemStatusURL; // @synthesize problemStatusURL=_problemStatusURL;
-@property(retain, nonatomic) NSString *problemSubmissionURL; // @synthesize problemSubmissionURL=_problemSubmissionURL;
-@property(retain, nonatomic) NSString *addressCorrectionUpdateURL; // @synthesize addressCorrectionUpdateURL=_addressCorrectionUpdateURL;
-@property(retain, nonatomic) NSString *addressCorrectionInitURL; // @synthesize addressCorrectionInitURL=_addressCorrectionInitURL;
-@property(retain, nonatomic) NSString *simpleETAURL; // @synthesize simpleETAURL=_simpleETAURL;
-@property(retain, nonatomic) NSString *batchReverseGeocoderURL; // @synthesize batchReverseGeocoderURL=_batchReverseGeocoderURL;
-@property(retain, nonatomic) NSString *etaURL; // @synthesize etaURL=_etaURL;
-@property(retain, nonatomic) NSString *directionsURL; // @synthesize directionsURL=_directionsURL;
-@property(nonatomic) unsigned int dataSet; // @synthesize dataSet=_dataSet;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -58,24 +81,56 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *spatialLookupURL;
 @property(readonly, nonatomic) _Bool hasSpatialLookupURL;
+- (void)_readSpatialLookupURL;
+@property(retain, nonatomic) NSString *logMessageUsageURL;
 @property(readonly, nonatomic) _Bool hasLogMessageUsageURL;
+- (void)_readLogMessageUsageURL;
+@property(retain, nonatomic) NSString *businessPortalBaseURL;
 @property(readonly, nonatomic) _Bool hasBusinessPortalBaseURL;
+- (void)_readBusinessPortalBaseURL;
+@property(retain, nonatomic) NSString *problemOptInURL;
 @property(readonly, nonatomic) _Bool hasProblemOptInURL;
+- (void)_readProblemOptInURL;
+@property(retain, nonatomic) NSString *dispatcherURL;
 @property(readonly, nonatomic) _Bool hasDispatcherURL;
+- (void)_readDispatcherURL;
+@property(retain, nonatomic) NSString *announcementsURL;
 @property(readonly, nonatomic) _Bool hasAnnouncementsURL;
+- (void)_readAnnouncementsURL;
+@property(retain, nonatomic) NSString *problemCategoriesURL;
 @property(readonly, nonatomic) _Bool hasProblemCategoriesURL;
+- (void)_readProblemCategoriesURL;
+@property(retain, nonatomic) NSString *problemStatusURL;
 @property(readonly, nonatomic) _Bool hasProblemStatusURL;
+- (void)_readProblemStatusURL;
+@property(retain, nonatomic) NSString *problemSubmissionURL;
 @property(readonly, nonatomic) _Bool hasProblemSubmissionURL;
+- (void)_readProblemSubmissionURL;
+@property(retain, nonatomic) NSString *addressCorrectionUpdateURL;
 @property(readonly, nonatomic) _Bool hasAddressCorrectionUpdateURL;
+- (void)_readAddressCorrectionUpdateURL;
+@property(retain, nonatomic) NSString *addressCorrectionInitURL;
 @property(readonly, nonatomic) _Bool hasAddressCorrectionInitURL;
+- (void)_readAddressCorrectionInitURL;
+@property(retain, nonatomic) NSString *simpleETAURL;
 @property(readonly, nonatomic) _Bool hasSimpleETAURL;
+- (void)_readSimpleETAURL;
+@property(retain, nonatomic) NSString *batchReverseGeocoderURL;
 @property(readonly, nonatomic) _Bool hasBatchReverseGeocoderURL;
+- (void)_readBatchReverseGeocoderURL;
+@property(retain, nonatomic) NSString *etaURL;
 @property(readonly, nonatomic) _Bool hasEtaURL;
+- (void)_readEtaURL;
+@property(retain, nonatomic) NSString *directionsURL;
 @property(readonly, nonatomic) _Bool hasDirectionsURL;
+- (void)_readDirectionsURL;
 @property(nonatomic) _Bool hasDataSet;
+@property(nonatomic) unsigned int dataSet;
 
 @end
 

@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <CalendarUI/CNAutocompleteFetchDelegate-Protocol.h>
 #import <CalendarUI/MKSearchCompleterDelegate-Protocol.h>
 
-@class CUIKiCloudKVStore, CalUILocationSuggestionResult, MKLocalSearchCompleter, MKLocalSearchRequest, NSMutableArray, NSMutableSet, NSString;
-@protocol GEOMapServiceCompletionTicket, OS_dispatch_queue;
+@class CNAutocompleteStore, CUIKiCloudKVStore, CalUILocationSuggestionResult, MKLocalSearchCompleter, MKLocalSearchRequest, NSMutableArray, NSMutableSet, NSString;
+@protocol CNCancelable, GEOMapServiceCompletionTicket, OS_dispatch_queue;
 
-@interface CalUILocationSuggestionManager : NSObject <MKSearchCompleterDelegate>
+@interface CalUILocationSuggestionManager : NSObject <MKSearchCompleterDelegate, CNAutocompleteFetchDelegate>
 {
     BOOL _searchingTier1;
     BOOL _searchingTier2;
@@ -34,6 +35,8 @@
     NSMutableArray *_suggestionsNeedingGeocoding;
     CalUILocationSuggestionResult *_suggestionBeingGeocoded;
     CDUnknownBlockType _suggestionsFoundHandler;
+    CNAutocompleteStore *_autocompleteStore;
+    id <CNCancelable> _currentSearch;
 }
 
 + (void)recordRecentForSuggestion:(id)arg1 withDomain:(id)arg2;
@@ -47,6 +50,8 @@
 + (id)currentLocation;
 + (id)manager;
 + (void)initialize;
+@property(retain) id <CNCancelable> currentSearch; // @synthesize currentSearch=_currentSearch;
+@property(retain) CNAutocompleteStore *autocompleteStore; // @synthesize autocompleteStore=_autocompleteStore;
 @property(copy) CDUnknownBlockType suggestionsFoundHandler; // @synthesize suggestionsFoundHandler=_suggestionsFoundHandler;
 @property(retain) CalUILocationSuggestionResult *suggestionBeingGeocoded; // @synthesize suggestionBeingGeocoded=_suggestionBeingGeocoded;
 @property(retain) NSMutableArray *suggestionsNeedingGeocoding; // @synthesize suggestionsNeedingGeocoding=_suggestionsNeedingGeocoding;
@@ -79,7 +84,10 @@
 - (void)addRunningQuery:(id)arg1;
 - (void)executeSearch:(id)arg1;
 - (void)_addResult:(id)arg1 toResults:(id)arg2;
-- (id)addressBookLocationsForSearchString:(id)arg1;
+- (void)autocompleteFetchDidFinish:(id)arg1;
+- (void)autocompleteFetch:(id)arg1 didFailWithError:(id)arg2;
+- (void)autocompleteFetch:(id)arg1 didReceiveResults:(id)arg2;
+- (void)contactLocationsForSearchString:(id)arg1;
 - (id)results;
 - (void)_addArray:(id)arg1 toSet:(id)arg2 withKeySet:(id)arg3 withMaxElements:(long long)arg4;
 - (void)_addArray:(id)arg1 toArray:(id)arg2 withMaxElements:(long long)arg3;

@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     unsigned int _bundleClass;
     LSRegistrationInfo *_registrationInfo;
     unsigned char _retries;
-    unsigned int _installationType;
     unsigned long long _sequenceNumber;
     BOOL _registerChildItemsTrusted;
     NSData *_bundleAlias;
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
     unsigned char _iconFlags;
     unsigned int _itemFlags;
     unsigned short _archFlags;
+    unsigned int _platform;
     unsigned int _hfsType;
     unsigned int _hfsCreator;
     unsigned long long _inode;
@@ -35,8 +35,6 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_plistRarities;
     NSMutableDictionary *_commonInfoPlistEntries;
     BOOL _containerized;
-    NSNumber *_compatibilityState;
-    NSNumber *_installFailureReason;
     NSString *_version;
     NSString *_minSystemVersion;
     NSString *_maxSystemVersion;
@@ -48,27 +46,15 @@ __attribute__((visibility("hidden")))
     NSNumber *_itemID;
     NSString *_teamID;
     NSArray *_activityTypes;
-    NSArray *_deviceFamily;
-    NSNumber *_installType;
     NSString *_identifier;
     NSString *_displayName;
+    NSString *_shortDisplayName;
     NSString *_bundleName;
     NSArray *_alternateNames;
     NSURL *_dataContainerURL;
     NSURL *_bundleContainerURL;
     NSString *_categoryType;
     NSString *_secondCategoryType;
-    NSString *_signerIdentity;
-    NSString *_appType;
-    NSString *_vendorName;
-    NSString *_itemName;
-    NSString *_codeInfoIdentifier;
-    NSString *_signerOrganization;
-    NSNumber *_storefront;
-    NSNumber *_versionID;
-    NSString *_sourceAppIdentifier;
-    NSString *_appVariant;
-    NSString *_companionAppID;
     NSMutableSet *_counterpartAppIDs;
     NSString *_watchKitVersion;
     NSString *_complicationPrincipalClass;
@@ -80,10 +66,6 @@ __attribute__((visibility("hidden")))
     NSString *_primaryIconName;
     NSDictionary *_iconsDict;
     NSArray *_iconFileNames;
-    NSNumber *_purchaserDSID;
-    NSNumber *_downloaderDSID;
-    NSNumber *_famlyID;
-    NSNumber *_staticDiskUsage;
     NSString *_libraryPath;
     NSArray *_libraryItems;
     NSArray *_documentClaims;
@@ -91,22 +73,34 @@ __attribute__((visibility("hidden")))
     NSArray *_importedTypes;
     NSArray *_exportedTypes;
     NSArray *_services;
-    NSArray *_schemesWhitelist;
     NSDictionary *_pluginPlists;
     NSDictionary *_pluginMIDicts;
     NSDictionary *_groupContainers;
     NSDictionary *_entitlements;
     NSDictionary *_sandboxEnvironmentVariables;
     NSDictionary *_extensionSDK;
+    NSArray *_bgPermittedIdentifiers;
+    NSDictionary *_localizedNames;
+    NSDictionary *_localizedShortNames;
+    NSDictionary *_localizedStrings;
+    NSDictionary *_unlocalizedNamesWithContext;
+    NSArray *_managedPersonas;
+    NSNumber *_directoryClass;
 }
 
+@property(readonly, nonatomic) NSNumber *directoryClass; // @synthesize directoryClass=_directoryClass;
+@property(readonly, nonatomic) NSArray *managedPersonas; // @synthesize managedPersonas=_managedPersonas;
+@property(readonly, nonatomic) NSDictionary *unlocalizedNamesWithContext; // @synthesize unlocalizedNamesWithContext=_unlocalizedNamesWithContext;
+@property(readonly, nonatomic) NSDictionary *localizedStrings; // @synthesize localizedStrings=_localizedStrings;
+@property(readonly, nonatomic) NSDictionary *localizedShortNames; // @synthesize localizedShortNames=_localizedShortNames;
+@property(readonly, nonatomic) NSDictionary *localizedNames; // @synthesize localizedNames=_localizedNames;
+@property(readonly, nonatomic) NSArray *bgPermittedIdentifiers; // @synthesize bgPermittedIdentifiers=_bgPermittedIdentifiers;
 @property(readonly, nonatomic) NSDictionary *extensionSDK; // @synthesize extensionSDK=_extensionSDK;
 @property(readonly, nonatomic) NSDictionary *sandboxEnvironmentVariables; // @synthesize sandboxEnvironmentVariables=_sandboxEnvironmentVariables;
 @property(readonly, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
 @property(readonly, nonatomic) NSDictionary *groupContainers; // @synthesize groupContainers=_groupContainers;
 @property(readonly, nonatomic) NSDictionary *pluginMIDicts; // @synthesize pluginMIDicts=_pluginMIDicts;
 @property(readonly, nonatomic) NSDictionary *pluginPlists; // @synthesize pluginPlists=_pluginPlists;
-@property(readonly, nonatomic) NSArray *schemesWhitelist; // @synthesize schemesWhitelist=_schemesWhitelist;
 @property(readonly, nonatomic) NSArray *services; // @synthesize services=_services;
 @property(readonly, nonatomic) NSArray *exportedTypes; // @synthesize exportedTypes=_exportedTypes;
 @property(readonly, nonatomic) NSArray *importedTypes; // @synthesize importedTypes=_importedTypes;
@@ -114,10 +108,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *documentClaims; // @synthesize documentClaims=_documentClaims;
 @property(readonly, nonatomic) NSArray *libraryItems; // @synthesize libraryItems=_libraryItems;
 @property(readonly, nonatomic) NSString *libraryPath; // @synthesize libraryPath=_libraryPath;
-@property(readonly, nonatomic) NSNumber *staticDiskUsage; // @synthesize staticDiskUsage=_staticDiskUsage;
-@property(readonly, nonatomic) NSNumber *famlyID; // @synthesize famlyID=_famlyID;
-@property(readonly, nonatomic) NSNumber *downloaderDSID; // @synthesize downloaderDSID=_downloaderDSID;
-@property(readonly, nonatomic) NSNumber *purchaserDSID; // @synthesize purchaserDSID=_purchaserDSID;
 @property(readonly, nonatomic) NSArray *iconFileNames; // @synthesize iconFileNames=_iconFileNames;
 @property(readonly, nonatomic) NSDictionary *iconsDict; // @synthesize iconsDict=_iconsDict;
 @property(readonly, nonatomic) NSString *primaryIconName; // @synthesize primaryIconName=_primaryIconName;
@@ -129,27 +119,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *complicationPrincipalClass; // @synthesize complicationPrincipalClass=_complicationPrincipalClass;
 @property(readonly, nonatomic) NSString *watchKitVersion; // @synthesize watchKitVersion=_watchKitVersion;
 @property(readonly, nonatomic) NSMutableSet *counterpartAppIDs; // @synthesize counterpartAppIDs=_counterpartAppIDs;
-@property(readonly, nonatomic) NSString *companionAppID; // @synthesize companionAppID=_companionAppID;
-@property(readonly, nonatomic) NSString *appVariant; // @synthesize appVariant=_appVariant;
-@property(readonly, nonatomic) NSString *sourceAppIdentifier; // @synthesize sourceAppIdentifier=_sourceAppIdentifier;
-@property(readonly, nonatomic) NSNumber *versionID; // @synthesize versionID=_versionID;
-@property(readonly, nonatomic) NSNumber *storefront; // @synthesize storefront=_storefront;
-@property(readonly, nonatomic) NSString *signerOrganization; // @synthesize signerOrganization=_signerOrganization;
-@property(readonly, nonatomic) NSString *codeInfoIdentifier; // @synthesize codeInfoIdentifier=_codeInfoIdentifier;
-@property(readonly, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
-@property(readonly, nonatomic) NSString *vendorName; // @synthesize vendorName=_vendorName;
-@property(readonly, nonatomic) NSString *appType; // @synthesize appType=_appType;
-@property(readonly, nonatomic) NSString *signerIdentity; // @synthesize signerIdentity=_signerIdentity;
 @property(readonly, nonatomic) NSString *secondCategoryType; // @synthesize secondCategoryType=_secondCategoryType;
 @property(readonly, nonatomic) NSString *categoryType; // @synthesize categoryType=_categoryType;
 @property(readonly, nonatomic) NSURL *bundleContainerURL; // @synthesize bundleContainerURL=_bundleContainerURL;
 @property(readonly, nonatomic) NSURL *dataContainerURL; // @synthesize dataContainerURL=_dataContainerURL;
 @property(readonly, nonatomic) NSArray *alternateNames; // @synthesize alternateNames=_alternateNames;
 @property(readonly, nonatomic) NSString *bundleName; // @synthesize bundleName=_bundleName;
+@property(readonly, nonatomic) NSString *shortDisplayName; // @synthesize shortDisplayName=_shortDisplayName;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) NSNumber *installType; // @synthesize installType=_installType;
-@property(readonly, nonatomic) NSArray *deviceFamily; // @synthesize deviceFamily=_deviceFamily;
 @property(readonly, nonatomic) NSArray *activityTypes; // @synthesize activityTypes=_activityTypes;
 @property(readonly, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
 @property(readonly, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
@@ -161,25 +139,21 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *maxSystemVersion; // @synthesize maxSystemVersion=_maxSystemVersion;
 @property(readonly, nonatomic) NSString *minSystemVersion; // @synthesize minSystemVersion=_minSystemVersion;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
-@property(readonly, nonatomic) NSNumber *installFailureReason; // @synthesize installFailureReason=_installFailureReason;
-@property(readonly, nonatomic) NSNumber *compatibilityState; // @synthesize compatibilityState=_compatibilityState;
 @property(readonly, nonatomic) BOOL containerized; // @synthesize containerized=_containerized;
 @property(readonly, nonatomic) BOOL registerChildItemsTrusted; // @synthesize registerChildItemsTrusted=_registerChildItemsTrusted;
 @property(nonatomic) unsigned long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-@property(nonatomic) unsigned int installationType; // @synthesize installationType=_installationType;
 @property(nonatomic) unsigned char retries; // @synthesize retries=_retries;
-- (void)dealloc;
--     // Error parsing type: I32@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16^@24, name: registerBundleRecord:error:
--     // Error parsing type: i36@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16I24r^{LSBundleData=IQIICCCCSIIQQiiQQQQQ[4I]QQQIIIIIIIIIIIIIIIIIIQQQQIIQQQIQIIIIIIIIIIIIIIIIIIIIICCCCIIIIII}28, name: activateBindings:unitID:bundleData:
--     // Error parsing type: {LSBundleData=IQIICCCCSIIQQiiQQQQQ[4I]QQQIIIIIIIIIIIIIIIIIIQQQQIIQQQIQIIIIIIIIIIIIIIIIIIIIICCCCIIIIII}32@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16^@24, name: buildBundleData:error:
+- (void).cxx_destruct;
+- (unsigned int)registerBundleRecord:(id)arg1 error:(id *)arg2;
+- (int)activateBindings:(id)arg1 unitID:(unsigned int)arg2 bundleData:(const struct LSBundleData *)arg3;
+- (struct LSBundleData)buildBundleData:(id)arg1 error:(id *)arg2;
 - (void)parseNSExtensionSDKDefinitionsFromDictionary:(id)arg1;
 - (void)parseActivityTypesFromDictionary:(id)arg1;
 - (BOOL)parseInstallationInfo:(id)arg1;
 - (BOOL)parseInfoPlist:(id)arg1;
 - (void)parseURLClaimsFromDict:(id)arg1;
-- (void)parseDeviceFamilyFromDict:(id)arg1;
 - (void)parseIconFilenamesFromDict:(id)arg1;
-- (id)getIconsDictionaryFromDict:(id)arg1;
+- (id)iconsDictionaryFromDict:(id)arg1;
 - (void)parseCapabilityFlagsFromDict:(id)arg1;
 - (void)parseArchitecturesFromDict:(id)arg1;
 - (void)setCommonInfoPlistKeysFromDictionary:(id)arg1;
@@ -188,13 +162,12 @@ __attribute__((visibility("hidden")))
 - (id)_LSKeyTypeMap;
 - (id)_LSPlistRaritiesMap;
 - (id)_LSBundleFlagMap;
--     // Error parsing type: i32@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16^{LSBundleData=IQIICCCCSIIQQiiQQQQQ[4I]QQQIIIIIIIIIIIIIIIIIIQQQQIIQQQIQIIIIIIIIIIIIIIIIIIIIICCCCIIIIII}24, name: registerSchemesWhitelist:bundleData:
 - (void)addArchitectureFlag:(unsigned short)arg1;
 - (void)addItemInfoFlag:(unsigned int)arg1;
 - (void)addIconFlag:(unsigned char)arg1;
 - (void)addPlistFlag:(unsigned int)arg1;
 - (void)addBundleFlag:(unsigned long long)arg1;
-- (void)setRegistrationInfo:(id)arg1 alias:(struct __CFData *)arg2;
+- (void)setRegistrationInfo:(id)arg1 alias:(id)arg2;
 
 @end
 

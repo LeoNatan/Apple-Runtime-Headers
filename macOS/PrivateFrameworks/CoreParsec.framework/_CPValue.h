@@ -41,6 +41,7 @@
 @property(copy, nonatomic) NSString *string_value; // @synthesize string_value=_string_value;
 @property(nonatomic) double number_value; // @synthesize number_value=_number_value;
 @property(nonatomic) int null_value; // @synthesize null_value=_null_value;
+- (void)clearKind;
 - (BOOL)requiresQueryId;
 @property(readonly, nonatomic) id feedbackJSON;
 - (id)initWithFacade:(id)arg1;

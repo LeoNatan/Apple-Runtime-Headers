@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (CDStruct_c3b9c2ee)integrateWithState:(CDStruct_c3b9c2ee)arg1 springParameters:(CDStruct_57d825b2)arg2 deltaTime:(double)arg3;
++ (CDStruct_c3b9c2ee)integrateWithState:(CDStruct_c3b9c2ee)arg1 springParameters:(CDStruct_39925896)arg2 deltaTime:(double)arg3;
 
 @end
 

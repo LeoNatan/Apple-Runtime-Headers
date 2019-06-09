@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isTallPopup;
 - (float)popupFontSize;
 - (struct CGPoint)popupSymbolTextOffset;
+- (float)variantAnnotationTextFontSize;
 - (struct CGPoint)variantAnnotationTextOffset;
 - (struct CGPoint)variantSymbolTextOffset;
 - (float)variantWideShadowWeight;
@@ -57,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)secondaryShiftKeyOffset;
 - (struct CGPoint)shiftKeyOffset;
 - (struct CGPoint)deleteKeyOffset;
+- (struct CGPoint)moreABCKeyWideCellOffset;
 - (struct CGPoint)moreABCKeyOffset;
 - (struct CGPoint)more123KeyOffset;
 - (struct CGPoint)dictationKeyOffset;
@@ -74,6 +76,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)returnKeyOffset;
 - (struct CGPoint)stringKeyOffset;
 - (float)zhuyinFirstToneKeyFontSize;
+- (float)moreABCKeyWideCellFontSize;
 - (float)moreABCKeyFontSize;
 - (float)moreKeyFontSize;
 - (float)assistKeyFontSize;

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (id)description;
 - (id)to;
 - (id)from;
-- (void)dealloc;
 - (id)init;
 - (id)initWithDefaults;
 

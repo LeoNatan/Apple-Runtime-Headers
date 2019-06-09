@@ -46,6 +46,7 @@
     struct sqlite3_stmt *insertLog;
     struct sqlite3_stmt *updateLogXactID;
     struct sqlite3_stmt *selectLog;
+    struct sqlite3_stmt *selectChangeExistsLog;
     struct sqlite3_stmt *selectAllLog;
     struct sqlite3_stmt *insertLogOptions;
     struct sqlite3_stmt *selectLogOptions;
@@ -71,6 +72,7 @@
 - (void)_selectAllLog:(CDUnknownBlockType)arg1;
 - (id)_selectLogOptionsWithID:(long long)arg1;
 - (id)_insertLogOptionsWithID:(long long)arg1 options:(id)arg2;
+- (void)_selectLogWithMask:(long long)arg1 compare:(long long)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)_selectLogWithRoot:(id)arg1 after:(long long)arg2 mask:(long long)arg3 compare:(long long)arg4 callback:(CDUnknownBlockType)arg5;
 - (unsigned long long)_insertLogWithRoot:(id)arg1 transaction:(id)arg2 set:(long long)arg3 error:(id *)arg4;
 - (void)_selectAllRecords:(CDUnknownBlockType)arg1;

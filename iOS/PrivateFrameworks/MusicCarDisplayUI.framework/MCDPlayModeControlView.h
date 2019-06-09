@@ -30,7 +30,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)_updateButtonLayouts;
-- (void)_addConstraints;
+- (void)setupConstraints;
 - (void)addSizeConstraintsForButton:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -9,6 +9,8 @@
 @class NSArray, NSString;
 
 @protocol GEOCompletionGroup <NSObject>
+@property(readonly, nonatomic) _Bool enforceServerResultsOrder;
+@property(readonly, nonatomic) _Bool shouldInterleaveClientResults;
 @property(readonly, nonatomic) NSString *localizedSectionHeader;
 @property(readonly, nonatomic) NSArray *items;
 @end

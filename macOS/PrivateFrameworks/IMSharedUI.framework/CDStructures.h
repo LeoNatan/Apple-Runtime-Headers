@@ -11,91 +11,37 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGPoint {
-    double _field1;
-    double _field2;
+    double x;
+    double y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
-    double _field1;
-    double _field2;
+    double width;
+    double height;
+};
+
+struct IMBalloonDescriptor_t {
+    char _field1;
+    char _field2;
+    char _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    char _field6;
+    char _field7;
+};
+
+struct IMTextLayoutResults {
+    struct CGSize _field1;
+    char _field2;
 };
 
 struct NSCollectionView {
     Class _field1;
-    id _field2;
-    struct CGRect _field3;
-    struct CGRect _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags _field13;
-    struct __VFlags2 _field14;
-    id _field15;
-    id _field16;
-    id _field17;
-    struct CGSize _field18;
-    struct CGSize _field19;
-    unsigned long long _field20;
-    unsigned long long _field21;
-    id _field22;
-    id _field23;
-    double _field24;
-    struct {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :10;
-    } _field25;
-    id _field26;
-    id _field27;
-    struct CGSize _field28;
-    id _field29;
-    char *_field30;
-    id _field31;
-    id _field32;
-    id _field33;
-    char *_field34;
-    id _field35;
-    unsigned long long _field36;
-    unsigned long long _field37;
-    long long _field38;
-    long long _field39;
-    long long _field40;
-    unsigned long long _field41;
-    long long _field42;
-    id _field43;
-    char *_field44;
-    id _field45;
-    void *_field46[13];
 };
 
 struct NSColor {
@@ -109,54 +55,40 @@ struct NSEdgeInsets {
     double right;
 };
 
+struct NSImage {
+    Class _field1;
+};
+
 struct NSView {
     Class _field1;
-    id _field2;
+    struct CGRect _field2;
     struct CGRect _field3;
-    struct CGRect _field4;
+    id _field4;
     id _field5;
     id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags _field13;
-    struct __VFlags2 _field14;
-};
-
-struct __VFlags {
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :5;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :2;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :6;
-    unsigned int :1;
-    unsigned int :1;
-};
-
-struct __VFlags2 {
-    unsigned int :14;
-    unsigned int :14;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
+    struct __VFlags {
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :5;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :2;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :6;
+        unsigned int :1;
+        unsigned int :1;
+    } _field7;
 };
 

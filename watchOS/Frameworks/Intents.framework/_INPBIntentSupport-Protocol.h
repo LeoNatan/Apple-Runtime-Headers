@@ -6,15 +6,20 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, _INPBIntentType;
+@class NSArray, NSString, _INPBIntentType;
 
 @protocol _INPBIntentSupport <NSObject>
 + (Class)intentsSupportedType;
 + (Class)intentsRestrictedWhileLockedType;
+@property(readonly, nonatomic) unsigned int supportedMediaCategoriesCount;
+@property(copy, nonatomic) NSArray *supportedMediaCategories;
 @property(readonly, nonatomic) unsigned int intentsSupportedsCount;
 @property(copy, nonatomic) NSArray *intentsSupporteds;
 @property(readonly, nonatomic) unsigned int intentsRestrictedWhileLockedsCount;
 @property(copy, nonatomic) NSArray *intentsRestrictedWhileLockeds;
+- (NSString *)supportedMediaCategoriesAtIndex:(unsigned int)arg1;
+- (void)addSupportedMediaCategories:(NSString *)arg1;
+- (void)clearSupportedMediaCategories;
 - (_INPBIntentType *)intentsSupportedAtIndex:(unsigned int)arg1;
 - (void)addIntentsSupported:(_INPBIntentType *)arg1;
 - (void)clearIntentsSupporteds;

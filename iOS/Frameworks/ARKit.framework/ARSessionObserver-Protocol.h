@@ -6,11 +6,12 @@
 
 #import <ARKit/NSObject-Protocol.h>
 
-@class ARCamera, ARSession, NSError;
+@class ARCamera, ARCollaborationData, ARSession, NSError;
 
 @protocol ARSessionObserver <NSObject>
 
 @optional
+- (void)session:(ARSession *)arg1 didOutputCollaborationData:(ARCollaborationData *)arg2;
 - (void)session:(ARSession *)arg1 didOutputAudioSampleBuffer:(struct opaqueCMSampleBuffer *)arg2;
 - (_Bool)sessionShouldAttemptRelocalization:(ARSession *)arg1;
 - (void)sessionInterruptionEnded:(ARSession *)arg1;

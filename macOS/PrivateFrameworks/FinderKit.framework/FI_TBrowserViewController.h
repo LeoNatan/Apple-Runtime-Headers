@@ -10,7 +10,7 @@
 #import <FinderKit/NSScrollViewDelegate-Protocol.h>
 #import <FinderKit/TThumbnailExtractorDelegate-Protocol.h>
 
-@class FI_TBrowserContainerController, FI_TBrowserViewDataSource, FI_TContainerLayoutManager, FI_TViewOptionsSettingsController, NSLayoutGuide, NSString, NSView;
+@class FI_TBrowserViewDataSource, FI_TContainerLayoutManager, NSLayoutGuide, NSString, NSView;
 
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserViewController : FI_TBaseBrowserViewController <TThumbnailExtractorDelegate, NSMenuDelegate, NSScrollViewDelegate>
@@ -21,15 +21,16 @@ __attribute__((visibility("hidden")))
     _Bool _isShowingICloudDriveContent;
     _Bool _iCloudMode;
     _Bool _closingTarget;
-    FI_TContainerLayoutManager *_containerLayoutManager;
     NSLayoutGuide *_contentInsetsLayoutGuide;
     struct TNSRef<NSLayoutConstraint, void> _minimumHeightConstraint;
     struct TNSRef<NSMutableArray<NSLayoutConstraint *>, void> _layoutConstraints;
+    struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _viewSettingsBinders;
     NSView *_browserView;
     struct unordered_map<TFENode, ContainerObservingOptions, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<std::__1::pair<const TFENode, ContainerObservingOptions>>> _openContainerMap;
     struct CGPoint _savedScrollPosition;
     int _sortBy;
     struct TNSRef<FI_TBrowserViewDataSource, void> _dataSource;
+    struct TNSRef<FI_TContainerLayoutManager, void> _containerLayoutManager;
     _Bool _shouldSuspendPendingSelectionsAndRenamesDuringAnimation;
     struct TFENodeVector _pendingNodesToSelect;
     _Bool _shouldEditPendingNodesToSelect;
@@ -41,16 +42,17 @@ __attribute__((visibility("hidden")))
     _Bool _forceScrollToTop;
     double _scrollDistanceFromTop;
     _Bool _shouldRestoreScrollDistance;
+    _Bool _unbindingViewSettings;
     _Bool _allowAppCentricLibraryIcons;
-    FI_TBrowserContainerController *_containerController;
     _Bool _selectionHasBeenHandled;
     _Bool _delayNextPreviewPaneRetarget;
     double _lastArrowKeyDownTimeSince1970;
-    FI_TViewOptionsSettingsController *_viewOptionsSettingsController;
     shared_ptr_0f967b3d _thumbnailController;
     vector_7ca3ab92 _pendingIconFetchers;
     struct TNSRef<FI_TICloudNoDocumentsViewController, void> _iCloudNoDocumentsViewController;
     struct TNSRef<FI_TDelayedPopulationViewController, void> _delayedPopulationViewController;
+    struct TNSRef<NSViewController, void> _authenticationViewController;
+    struct TKeyValueObserver _viewSettingsObserver;
     struct TKeyValueBinder _sortByBinder;
     struct TKeyValueObserver _contentInsetsDidChangeObserver;
     struct TNotificationCenterObserver _dataSourceChangedObserver;
@@ -58,9 +60,8 @@ __attribute__((visibility("hidden")))
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationObservers;
 }
 
-+ (id)keyPathsForValuesAffectingViewSettings;
-+ (id)appCentricLibraryFolderIcon:(const struct TFENode *)arg1 iconSize:(double)arg2 includeAppIconOverlay:(_Bool)arg3 scaleFactor:(double)arg4 darkBackground:(_Bool)arg5;
 @property(readonly) _Bool closingTarget; // @synthesize closingTarget=_closingTarget;
+@property(readonly) _Bool unbindingViewSettings; // @synthesize unbindingViewSettings=_unbindingViewSettings;
 @property(readonly) _Bool iCloudMode; // @synthesize iCloudMode=_iCloudMode;
 @property(readonly) _Bool allowAppCentricLibraryIcons; // @synthesize allowAppCentricLibraryIcons=_allowAppCentricLibraryIcons;
 @property _Bool shouldRestoreScrollDistance; // @synthesize shouldRestoreScrollDistance=_shouldRestoreScrollDistance;
@@ -68,11 +69,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool forceScrollToTop; // @synthesize forceScrollToTop=_forceScrollToTop;
 @property(nonatomic) _Bool userHasInteractedWithView; // @synthesize userHasInteractedWithView=_userHasInteractedWithView;
 @property(nonatomic, getter=isGrouping) _Bool grouping; // @synthesize grouping=_grouping;
-@property(nonatomic) NSView *browserView; // @synthesize browserView=_browserView;
+@property(nonatomic) __weak NSView *browserView; // @synthesize browserView=_browserView;
 @property(nonatomic) struct CGPoint scrollPosition; // @synthesize scrollPosition=_savedScrollPosition;
 @property(nonatomic) _Bool selectionHasBeenHandled; // @synthesize selectionHasBeenHandled=_selectionHasBeenHandled;
-@property(readonly, nonatomic) FI_TBrowserContainerController *containerController; // @synthesize containerController=_containerController;
-@property(retain, nonatomic) FI_TViewOptionsSettingsController *viewOptionsSettingsController; // @synthesize viewOptionsSettingsController=_viewOptionsSettingsController;
 @property _Bool delayNextPreviewPaneRetarget; // @synthesize delayNextPreviewPaneRetarget=_delayNextPreviewPaneRetarget;
 @property(getter=isInitialConfigInProgress) _Bool initialConfigInProgress; // @synthesize initialConfigInProgress=_isInitialConfigInProgress;
 - (id).cxx_construct;
@@ -84,9 +83,7 @@ __attribute__((visibility("hidden")))
 - (id)dragFlockingImageComponentsForNode:(const struct TFENode *)arg1 dropTargetView:(id)arg2;
 - (id)dragFlockIconImageForNode:(const struct TFENode *)arg1 atIconSize:(double)arg2 inView:(id)arg3;
 - (id)dragFlockLabelImageForNode:(const struct TFENode *)arg1 outFrame:(struct CGRect *)arg2 inView:(id)arg3;
-- (id)beginDraggingNodes:(const struct TFENodeVector *)arg1 mouseDownEvent:(id)arg2;
-- (void)dragImage:(id)arg1 offset:(struct CGSize)arg2 event:(id)arg3 pasteboard:(id)arg4 source:(id)arg5;
-- (void)getGlobalDragItemBounds:(map_e297d142 *)arg1 forNodes:(const struct TFENodeVector *)arg2;
+- (id)beginDraggingNodes:(const struct TFENodeVector *)arg1 mouseDownEvent:(id)arg2 dragSourceView:(id)arg3;
 - (void)ensureCGSurfaceUpdateOnDraw:(_Bool)arg1;
 - (_Bool)quickLookShouldShowOpenButtonForNode:(const struct TFENode *)arg1;
 - (void)openQuickLookNode:(const struct TFENode *)arg1;
@@ -113,13 +110,15 @@ __attribute__((visibility("hidden")))
 - (void)configureForDelayedPopulation:(_Bool)arg1;
 - (unsigned long long)itemCountForDelayedPopulation;
 - (id)viewToCoverForDelayedPopulation;
+- (void)configureForAuthenticationUI;
+- (void)configureForAuthenticationUI:(_Bool)arg1;
+- (_Bool)shouldShowAuthenticationUI;
 - (void)configureForNoDocuments:(_Bool)arg1;
 - (_Bool)shouldShowNoDocumentsUI;
 - (void)refreshNoDocumentsView;
 - (_Bool)showingNoDocumentsUI;
 - (_Bool)isShowingICloudDriveContent;
 - (void)refreshNodeSettings:(_Bool)arg1;
-- (id)viewSettings;
 - (void)unbindViewSettings;
 - (void)bindViewSettings;
 - (void)privateBindSettings;
@@ -146,8 +145,8 @@ __attribute__((visibility("hidden")))
 - (void)showAllExtensionsPrefChanged;
 - (void)syncAllContainers;
 - (void)cancelDelayedNodeEventHandling;
-- (void)delayNodeEventHandling:(double)arg1;
-- (void)flushNodeEventsWithCompletion:(const function_b1fce659 *)arg1;
+- (void)delayNodeEventHandling:(duration_3c68f186)arg1;
+- (void)flushNodeEventsWithCompletion:(unique_function_63952f55 *)arg1;
 - (void)getNodes:(struct TFENodeVector *)arg1 fromIndexSet:(id)arg2 upTo:(unsigned long long)arg3;
 - (void)getNodes:(struct TFENodeVector *)arg1 fromArray:(id)arg2 upTo:(unsigned long long)arg3;
 - (_Bool)containsNode:(const struct TFENode *)arg1;
@@ -157,7 +156,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidSyncToDataSource:(const vector_274a36ec *)arg1;
 - (void)dataSourceChanged:(const vector_274a36ec *)arg1;
 - (_Bool)shouldDelayNextPreviewPaneRetargetForKeyDownEvent:(id)arg1 currentKey:(unsigned short)arg2;
-- (double)previewPaneDisplayDelay;
+- (duration_3c68f186)previewPaneDisplayDelay;
 - (_Bool)shouldDelayNextPreviewPaneRetargetForCurrentKey:(unsigned short)arg1;
 - (void)openPreviewPanelInFullScreen:(_Bool)arg1;
 - (id)iconImageForNode:(const struct TFENode *)arg1;
@@ -211,6 +210,7 @@ __attribute__((visibility("hidden")))
 - (void)selectionChangedByUserAction:(_Bool)arg1;
 - (_Bool)shouldTypeSelectForEvent:(id)arg1 withCurrentSearchString:(id)arg2;
 - (struct TFENodeVector)typeSelectCandidateNodes;
+- (void)ubiquityStatusChange:(const struct TFENode *)arg1;
 - (_Bool)nodeIsSelected:(const struct TFENode *)arg1;
 - (void)getVisibleNodes:(struct TFENodeVector *)arg1;
 - (void)setSelectionChangedAnimationsEnabled:(_Bool)arg1;
@@ -220,6 +220,7 @@ __attribute__((visibility("hidden")))
 - (void)setPendingNodesToSelect:(const struct TFENodeVector *)arg1 startEditing:(_Bool)arg2 renameOp:(id)arg3;
 - (void)attemptToSelectPendingNodes;
 - (void)selectNodesForTask:(const struct TFENodeVector *)arg1 startEditing:(_Bool)arg2;
+- (void)_superSelectNodesForTask:(const struct TFENodeVector *)arg1 startEditing:(_Bool)arg2;
 - (void)selectNodesNowOrLater:(const struct TFENodeVector *)arg1;
 - (void)_selectNodesNowOrLaterDetails:(const struct TFENodeVector *)arg1 startEditing:(_Bool)arg2 renameOp:(id)arg3;
 - (void)suspendPendingNodeSelectionDuringAnimation;
@@ -249,6 +250,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool downloadsUbiquitousContents;
 - (id)baseView;
 @property(retain, nonatomic) FI_TBrowserViewDataSource *dataSource;
+@property(retain, nonatomic) FI_TContainerLayoutManager *containerLayoutManager; // @dynamic containerLayoutManager;
+- (void)setContainerController:(id)arg1;
 - (void)browserViewEffectiveAppearanceChanged;
 - (void)showHiddenFilesPreferenceChanged;
 - (struct TString)searchString;

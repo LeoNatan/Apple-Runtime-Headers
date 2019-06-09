@@ -20,9 +20,10 @@
     MFMailMessageStoreSearchResult *searchResult;
 }
 
-@property(readonly, retain, nonatomic) NSDate *earliestDateAdded; // @synthesize earliestDateAdded;
-@property(readonly, retain, nonatomic) MFMailMessageStoreSearchResult *searchResult; // @synthesize searchResult;
+@property(readonly, nonatomic) NSDate *earliestDateAdded; // @synthesize earliestDateAdded;
+@property(readonly, nonatomic) MFMailMessageStoreSearchResult *searchResult; // @synthesize searchResult;
 @property(retain, nonatomic) NSDate *latestDateToAdd; // @synthesize latestDateToAdd;
+- (void).cxx_destruct;
 - (void)searchQuery:(id)arg1 returnedTotalCount:(id)arg2;
 - (void)searchQuery:(id)arg1 finishedWithError:(id)arg2;
 - (void)searchQuery:(id)arg1 returnedResults:(id)arg2;
@@ -30,7 +31,6 @@
 - (void)resetDoneCondition;
 - (void)waitUntilDone;
 - (_Bool)waitUntilDoneBeforeDate:(id)arg1;
-- (void)dealloc;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 
 @end

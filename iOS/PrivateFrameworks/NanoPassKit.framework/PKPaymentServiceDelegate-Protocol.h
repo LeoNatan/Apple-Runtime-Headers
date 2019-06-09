@@ -6,11 +6,15 @@
 
 #import <NanoPassKit/NSObject-Protocol.h>
 
-@class NSSet, NSString, PKFieldProperties, PKPaymentMessage, PKPaymentTransaction, PKTransitPassProperties, PKValueAddedServiceTransaction;
+@class NSSet, NSString, PKFeatureApplication, PKFieldProperties, PKPaymentMessage, PKPaymentTransaction, PKTransitPassProperties, PKValueAddedServiceTransaction;
 
 @protocol PKPaymentServiceDelegate <NSObject>
 
 @optional
+- (void)featureApplicationChanged:(PKFeatureApplication *)arg1;
+- (void)featureApplicationRemoved:(PKFeatureApplication *)arg1;
+- (void)featureApplicationAdded:(PKFeatureApplication *)arg1;
+- (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didUpdateCategoryVisualizationWithStyle:(long long)arg2;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didUpdateWithTransitPassProperties:(PKTransitPassProperties *)arg2;
 - (void)passWithUniqueIdentifier:(NSString *)arg1 didReceiveValueAddedServiceTransaction:(PKValueAddedServiceTransaction *)arg2;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didEnableTransactionService:(_Bool)arg2;

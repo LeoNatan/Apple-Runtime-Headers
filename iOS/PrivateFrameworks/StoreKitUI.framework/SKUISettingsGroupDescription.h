@@ -8,6 +8,7 @@
 
 @class NSMutableSet, SKUIClientContext, SKUIGroupViewElement, SKUISettingsContext, SKUISettingsGroupController, SKUISettingsGroupsDescription, SKUISettingsHeaderFooterDescription, SKUISettingsObjectStore;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsGroupDescription : NSObject
 {
     NSMutableSet *_editableSettings;

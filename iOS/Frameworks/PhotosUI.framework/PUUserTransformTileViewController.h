@@ -22,14 +22,14 @@
     id <PUUserTransformTileViewControllerDelegate> _delegate;
     PUAssetReference *_assetReference;
     PUUserTransformView *_userTransformView;
-    PUDisplayTileTransform *__displayTileTransform;
+    PUDisplayTileTransform *_displayTileTransform;
     NSString *__identifier;
     struct CGRect __untransformedContentFrame;
 }
 
 @property(copy, nonatomic, setter=_setIdentifier:) NSString *_identifier; // @synthesize _identifier=__identifier;
-@property(retain, nonatomic, setter=_setDisplayTileTransform:) PUDisplayTileTransform *_displayTileTransform; // @synthesize _displayTileTransform=__displayTileTransform;
 @property(nonatomic, setter=_setUntransformedContentFrame:) struct CGRect _untransformedContentFrame; // @synthesize _untransformedContentFrame=__untransformedContentFrame;
+@property(retain, nonatomic) PUDisplayTileTransform *displayTileTransform; // @synthesize displayTileTransform=_displayTileTransform;
 @property(nonatomic, setter=setUserInteractionEnabled:) _Bool userInteractionEnabled; // @synthesize userInteractionEnabled=_userInteractionEnabled;
 @property(retain, nonatomic, setter=_setUserTransformView:) PUUserTransformView *userTransformView; // @synthesize userTransformView=_userTransformView;
 @property(retain, nonatomic) PUAssetReference *assetReference; // @synthesize assetReference=_assetReference;

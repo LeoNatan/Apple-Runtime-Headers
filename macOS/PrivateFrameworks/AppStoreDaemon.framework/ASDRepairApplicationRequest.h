@@ -4,14 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppStoreDaemon/ASDBaseClient.h>
+#import <objc/NSObject.h>
 
-@interface ASDRepairApplicationRequest : ASDBaseClient
+@class ASDRepairOptions;
+
+@interface ASDRepairApplicationRequest : NSObject
 {
+    ASDRepairOptions *_options;
 }
 
+- (void).cxx_destruct;
+- (void)sendRequestWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithOptions:(id)arg1;
-- (id)init;
 
 @end
 

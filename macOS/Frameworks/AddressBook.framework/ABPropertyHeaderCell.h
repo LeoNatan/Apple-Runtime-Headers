@@ -26,7 +26,6 @@
 - (void)removeAllItems;
 - (void)setFont:(id)arg1;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4 inColumn:(id)arg5;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)accessibilityFocusedUIElement;

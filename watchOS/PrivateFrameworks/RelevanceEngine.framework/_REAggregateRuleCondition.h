@@ -6,9 +6,11 @@
 
 #import <RelevanceEngine/RECondition.h>
 
+#import <RelevanceEngine/REAutomaticExportedInterface-Protocol.h>
+
 @class NSSet;
 
-@interface _REAggregateRuleCondition : RECondition
+@interface _REAggregateRuleCondition : RECondition <REAutomaticExportedInterface>
 {
     unsigned int _type;
     NSSet *_conditions;
@@ -18,12 +20,12 @@
 @property(readonly, nonatomic) unsigned int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)descriptionWithIndent:(unsigned int)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)_acceptsLeftFeatureMap:(id)arg1 rightFeatureMap:(id)arg2;
-- (_Bool)_acceptsFeatureMap:(id)arg1;
+- (_Bool)_acceptsFeatureMap:(id)arg1 predictionSet:(id)arg2 explanation:(id *)arg3;
 - (id)_inflectionFeatureValuePairs;
+- (_Bool)_needsProbability;
 - (_Bool)_validForRanking;
 - (_Bool)_requiresTwoFeatures;
 - (id)_notCondition;

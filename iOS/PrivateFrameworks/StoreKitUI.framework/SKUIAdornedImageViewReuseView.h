@@ -11,6 +11,7 @@
 
 @class NSMapTable, NSString, SKUIImageViewElement, SKUIPlayButton;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAdornedImageViewReuseView : SKUIViewReuseView <SKUIViewElementView, SKUIMediaPlayerObserver>
 {
     NSMapTable *_imageViewToImageResourceCacheKey;

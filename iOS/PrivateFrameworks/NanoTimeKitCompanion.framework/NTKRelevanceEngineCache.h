@@ -43,7 +43,9 @@
 - (void)faceCollection:(id)arg1 didAddFace:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)prewarm;
 - (void)_clockViewControllerDidEndEditing;
+- (void)_clockViewControllerDidEnterAddable;
 - (void)_clockViewControllerDidBeginEditing;
+- (id)canonicalRelevanceEngineIgnoringAppInstallations;
 - (id)canonicalRelevanceEngine;
 - (id)sharedRelevanceEngine;
 - (void)setLibraryCollection:(id)arg1;

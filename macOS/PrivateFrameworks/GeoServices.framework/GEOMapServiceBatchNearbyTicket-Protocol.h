@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GeoServices/NSObject-Protocol.h>
+#import <GeoServices/GEOMapServiceCancellableTicket-Protocol.h>
+#import <GeoServices/GEOMapServiceThrottlableTicket-Protocol.h>
 
 @class GEOApplicationAuditToken, GEOMapServiceTraits, GEOSearchCategory, NSString;
 
-@protocol GEOMapServiceBatchNearbyTicket <NSObject>
+@protocol GEOMapServiceBatchNearbyTicket <GEOMapServiceCancellableTicket, GEOMapServiceThrottlableTicket>
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
 - (void)cancel;
 - (void)submitWithHandler:(void (^)(NSMapTable *, NSError *))arg1 auditToken:(GEOApplicationAuditToken *)arg2 networkActivity:(void (^)(BOOL))arg3;

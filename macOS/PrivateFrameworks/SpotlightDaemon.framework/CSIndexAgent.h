@@ -15,6 +15,7 @@
     NSMutableDictionary *_indexConnections;
 }
 
++ (id)indexDelegateAgent;
 + (id)indexAgent;
 + (void)initialize;
 @property(retain, nonatomic) NSMutableDictionary *indexConnections; // @synthesize indexConnections=_indexConnections;

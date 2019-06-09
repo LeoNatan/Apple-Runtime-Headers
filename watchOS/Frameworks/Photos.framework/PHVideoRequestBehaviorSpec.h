@@ -6,7 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@interface PHVideoRequestBehaviorSpec : NSObject
+#import <Photos/PLVideoChoosingOptions-Protocol.h>
+
+@class NSString;
+
+@interface PHVideoRequestBehaviorSpec : NSObject <PLVideoChoosingOptions>
 {
     _Bool _networkAccessAllowed;
     _Bool _streamingAllowed;
@@ -24,9 +28,17 @@
 @property(nonatomic, getter=isNetworkAccessAllowed) _Bool networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
 @property(nonatomic) int version; // @synthesize version=_version;
 @property(nonatomic) int deliveryMode; // @synthesize deliveryMode=_deliveryMode;
+- (int)videoVersion;
+- (int)videoDeliveryMode;
 - (id)shortDescription;
 - (id)plistDictionary;
 - (id)initWithPlistDictionary:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

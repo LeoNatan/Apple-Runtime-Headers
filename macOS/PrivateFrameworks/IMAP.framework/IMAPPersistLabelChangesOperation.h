@@ -12,16 +12,16 @@
 @interface IMAPPersistLabelChangesOperation : IMAPPersistenceTaskOperation
 {
     id <IMAPPersistLabelChangesOperationDelegate> _delegate;
-    NSDictionary *_labelChangesByMessageDetails;
+    NSDictionary *_labelChangesByServerMessages;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *labelChangesByMessageDetails; // @synthesize labelChangesByMessageDetails=_labelChangesByMessageDetails;
+@property(readonly, copy, nonatomic) NSDictionary *labelChangesByServerMessages; // @synthesize labelChangesByServerMessages=_labelChangesByServerMessages;
 @property(readonly, nonatomic) __weak id <IMAPPersistLabelChangesOperationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)main;
 - (id)description;
 - (id)initWithDataSource:(id)arg1;
-- (id)initWithDataSource:(id)arg1 labelChangesByMessageDetails:(id)arg2 delegate:(id)arg3;
+- (id)initWithDataSource:(id)arg1 labelChangesByServerMessages:(id)arg2 delegate:(id)arg3;
 
 @end
 

@@ -12,11 +12,13 @@ __attribute__((visibility("hidden")))
 @interface WDTableRow : NSObject
 {
     unsigned long long mIndex;
-    WDTable *mTable;
     WDTableRowProperties *mProperties;
     NSMutableArray *mCells;
+    WDTable *mTable;
 }
 
+@property(readonly) __weak WDTable *table; // @synthesize table=mTable;
+- (void).cxx_destruct;
 - (id)description;
 - (id)newCellIterator;
 - (id)cellIterator;
@@ -25,9 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)cellAt:(unsigned long long)arg1;
 - (unsigned long long)cellCount;
 - (id)properties;
-- (id)table;
 - (unsigned long long)index;
-- (void)dealloc;
 - (id)initWithTable:(id)arg1 at:(unsigned long long)arg2;
 - (void)setIndex:(unsigned long long)arg1;
 

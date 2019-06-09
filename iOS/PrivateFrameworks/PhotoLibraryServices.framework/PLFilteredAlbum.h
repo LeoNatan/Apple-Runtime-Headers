@@ -11,7 +11,7 @@
 #import <PhotoLibraryServices/PLIndexMappingCache-Protocol.h>
 #import <PhotoLibraryServices/PLUserEditableAlbumProtocol-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSIndexSet, NSMutableIndexSet, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSPredicate, NSString, NSURL, PLIndexMapper, PLManagedAsset, UIImage;
+@class NSArray, NSDate, NSDictionary, NSIndexSet, NSMutableIndexSet, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSPredicate, NSString, NSURL, PLIndexMapper, PLManagedAsset, PLPhotoLibrary;
 @protocol NSObject><NSCopying, PLAlbumProtocol;
 
 @interface PLFilteredAlbum : NSObject <PLUserEditableAlbumProtocol, PLCloudSharedAlbumProtocol, PLIndexMapperDataSource, PLIndexMappingCache>
@@ -30,18 +30,19 @@
 
 + (id)filteredIndexesInAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
 + (id)descriptionForAlbumFilter:(int)arg1 parameters:(id)arg2;
-+ (id)predicateForAlbumFilter:(int)arg1 parameters:(id)arg2;
++ (id)predicateForAlbumFilter:(int)arg1 parameters:(id)arg2 photoLibrary:(id)arg3;
 + (struct NSObject *)unfilteredAlbum:(struct NSObject *)arg1;
 + (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 intersectFilter:(int)arg2;
 + (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
 + (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 filter:(int)arg2 parameters:(id)arg3;
 + (struct NSObject *)filteredAlbum:(struct NSObject *)arg1 filter:(int)arg2;
-@property(readonly, retain, nonatomic) NSArray *filterParameters; // @synthesize filterParameters=_filterParameters;
+@property(readonly, nonatomic) NSArray *filterParameters; // @synthesize filterParameters=_filterParameters;
 @property(nonatomic) _Bool isObservingContextChanges; // @synthesize isObservingContextChanges;
 @property(retain, nonatomic) NSPredicate *predicate; // @synthesize predicate;
 @property(nonatomic) int filter; // @synthesize filter;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *backingAlbum; // @synthesize backingAlbum=_backingAlbum;
-- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
+- (void).cxx_destruct;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 customExportsInfo:(id)arg3 trimmedVideoPathInfo:(id)arg4 commentText:(id)arg5;
 - (void)replaceFilteredAssetsAtIndexes:(id)arg1 withFilteredValues:(id)arg2;
 - (void)replaceObjectInFilteredAssetsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeFilteredAssetsAtIndexes:(id)arg1;
@@ -49,7 +50,6 @@
 - (void)removeObjectFromFilteredAssetsAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inFilteredAssetsAtIndex:(unsigned long long)arg2;
 - (id)_editableBackingAlbum;
-- (void)getFilteredAssets:(id *)arg1 range:(struct _NSRange)arg2;
 - (id)filteredAssetsAtIndexes:(id)arg1;
 - (id)objectInFilteredAssetsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexInFilteredAssetsOfObject:(id)arg1;
@@ -60,7 +60,7 @@
 - (id)currentStateForChange;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> cachedIndexMapState;
 @property(readonly, copy, nonatomic) NSIndexSet *filteredIndexes;
-@property(readonly, retain, nonatomic) PLIndexMapper *indexMapper;
+@property(readonly, nonatomic) PLIndexMapper *indexMapper;
 - (id)initWithBackingAlbum:(struct NSObject *)arg1 filter:(int)arg2 parameters:(id)arg3;
 - (id)initWithBackingAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
 - (void)_commonInitWithBackingAlbum:(struct NSObject *)arg1 predicate:(id)arg2;
@@ -106,7 +106,6 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType sortingComparator;
 @property(readonly, retain, nonatomic) NSURL *groupURL;
 @property(retain, nonatomic) NSString *importSessionID;
-@property(retain, nonatomic) NSDictionary *slideshowSettings;
 @property(readonly, nonatomic) _Bool shouldDeleteWhenEmpty;
 - (_Bool)canPerformEditOperation:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *localizedLocationNames;
@@ -127,7 +126,7 @@
 @property(readonly, nonatomic) _Bool isPanoramasAlbum;
 @property(readonly, nonatomic) _Bool isCameraAlbum;
 @property(readonly, nonatomic) _Bool isLibrary;
-@property(readonly, retain, nonatomic) UIImage *posterImage;
+@property(readonly, retain, nonatomic) NSObject *posterImage;
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset;
@@ -147,9 +146,10 @@
 @property(readonly, retain, nonatomic) NSNumber *kind;
 @property(readonly, retain, nonatomic) NSString *title;
 @property(readonly, retain, nonatomic) NSString *uuid;
-@property(nonatomic) NSMutableOrderedSet *_assets;
+@property(nonatomic) __weak NSMutableOrderedSet *_assets;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 
 // Remaining properties
 @property(nonatomic) unsigned long long batchSize;

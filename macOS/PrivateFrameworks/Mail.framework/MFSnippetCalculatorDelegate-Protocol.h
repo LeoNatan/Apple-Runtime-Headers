@@ -6,9 +6,10 @@
 
 #import <Mail/NSObject-Protocol.h>
 
-@class MCMessage, NSString;
+@class MCMessage, MFSnippetCalculator, NSArray, NSString;
 
 @protocol MFSnippetCalculatorDelegate <NSObject>
-- (void)didCalculateSnippet:(NSString *)arg1 forMessage:(MCMessage *)arg2;
+- (void)snippetCalculator:(MFSnippetCalculator *)arg1 didSkipMessages:(NSArray *)arg2;
+- (void)snippetCalculator:(MFSnippetCalculator *)arg1 didCalculateSnippet:(NSString *)arg2 forMessage:(MCMessage *)arg3;
 @end
 

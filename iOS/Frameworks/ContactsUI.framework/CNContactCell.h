@@ -22,7 +22,6 @@
 - (void)updateConstraints;
 @property(readonly, nonatomic) NSArray *variableConstraints;
 @property(readonly, nonatomic) NSArray *constantConstraints;
-- (void)layoutSubviews;
 @property(readonly, nonatomic) _Bool hasGapBetweenSeparatorAndTrailingEdge;
 @property(nonatomic) _Bool showSeparator;
 - (void)performAccessoryAction;

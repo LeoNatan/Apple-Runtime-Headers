@@ -8,11 +8,11 @@
 
 @interface CALWeekDayNumber : NSObject
 {
-    int _number;
+    long long _number;
     unsigned long long _day;
 }
 
-+ (id)weekDayNumberWithDay:(unsigned long long)arg1 withNumber:(int)arg2;
++ (id)weekDayNumberWithDay:(unsigned long long)arg1 withNumber:(long long)arg2;
 - (long long)compareDay:(id)arg1;
 - (id)description;
 - (id)setNumber:(long long)arg1;
@@ -20,7 +20,7 @@
 - (id)setDay:(unsigned long long)arg1;
 - (unsigned long long)day;
 - (BOOL)isEqual:(id)arg1;
-- (id)initWithDay:(unsigned long long)arg1 withNumber:(int)arg2;
+- (id)initWithDay:(unsigned long long)arg1 withNumber:(long long)arg2;
 
 @end
 

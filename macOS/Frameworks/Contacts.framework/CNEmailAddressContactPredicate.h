@@ -7,20 +7,23 @@
 #import <Contacts/CNPredicate.h>
 
 #import <Contacts/CNCDContactPredicate-Protocol.h>
+#import <Contacts/CNMAIDPredicate-Protocol.h>
 #import <Contacts/CNSuggestedContactPredicate-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface CNEmailAddressContactPredicate : CNPredicate <CNCDContactPredicate, CNSuggestedContactPredicate>
+@interface CNEmailAddressContactPredicate : CNPredicate <CNCDContactPredicate, CNMAIDPredicate, CNSuggestedContactPredicate>
 {
     BOOL _returnsMultipleResults;
-    NSString *_emailAddress;
+    NSArray *_emailAddresses;
+    NSArray *_groupIdentifiers;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) BOOL returnsMultipleResults; // @synthesize returnsMultipleResults=_returnsMultipleResults;
-@property(readonly, copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
+@property(readonly, copy, nonatomic) NSArray *groupIdentifiers; // @synthesize groupIdentifiers=_groupIdentifiers;
+@property(readonly, copy, nonatomic) NSArray *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -28,8 +31,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (id)shortDebugDescription;
 @property(readonly, copy) NSString *description;
+- (id)initWithEmailAddress:(id)arg1 groupIdentifiers:(id)arg2 returnMultipleResults:(BOOL)arg3;
 - (id)initWithEmailAddress:(id)arg1 returnMultipleResults:(BOOL)arg2;
 - (id)cn_coreDataPredicate;
+- (id)contactsFromCLSDataStore:(id)arg1;
 - (id)sgContactMatchesWithSortOrder:(long long)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id *)arg4;
 
 // Remaining properties

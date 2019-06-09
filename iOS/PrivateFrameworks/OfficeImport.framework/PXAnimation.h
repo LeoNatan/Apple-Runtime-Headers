@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 + (int)readChartBuildType:(id)arg1;
 + (id)readParagraphBuild:(struct _xmlNode *)arg1;
 + (void)readAnimSequentialElement:(struct _xmlNode *)arg1 timeNode:(id)arg2 drawingState:(id)arg3;
++ (id)sequentialNextActionMap;
++ (id)sequentialPreviousActionMap;
 + (void)readAnimParallelElement:(struct _xmlNode *)arg1 timeNode:(id)arg2 drawingState:(id)arg3;
 + (void)readCommonBehaviorData:(struct _xmlNode *)arg1 tgtCommonBehaviorData:(id)arg2 drawingState:(id)arg3;
 + (void)readAnimRotationElement:(struct _xmlNode *)arg1 timeNode:(id)arg2 drawingState:(id)arg3;
@@ -33,20 +35,27 @@ __attribute__((visibility("hidden")))
 + (void)readAnimEffectElement:(struct _xmlNode *)arg1 timeNode:(id)arg2 drawingState:(id)arg3;
 + (void)readAnimElement:(struct _xmlNode *)arg1 timeNode:(id)arg2 drawingState:(id)arg3;
 + (void)readChartType:(id)arg1 oleChartTarget:(id)arg2;
++ (id)chartTypeMap;
 + (void)readChartBuildStep:(id)arg1 chartTarget:(id)arg2;
++ (id)chartBuildStepMap;
 + (id)newShapeTarget:(struct _xmlNode *)arg1 drawingState:(id)arg2;
 + (id)newTarget:(struct _xmlNode *)arg1 drawingState:(id)arg2;
 + (void)readTriggerEvent:(id)arg1 timeCondition:(id)arg2;
++ (id)triggerEventMap;
 + (void)readCondition:(struct _xmlNode *)arg1 timeCondition:(id)arg2 drawingState:(id)arg3;
 + (void)readStConditionList:(struct _xmlNode *)arg1 commonTimeNodeData:(id)arg2 drawingState:(id)arg3;
 + (void)readConditionList:(struct _xmlNode *)arg1 arrayOfConditions:(id)arg2 drawingState:(id)arg3;
 + (void)readIterate:(struct _xmlNode *)arg1 commonTimeNodeData:(id)arg2 drawingState:(id)arg3;
 + (void)readChildTimeNodeList:(struct _xmlNode *)arg1 commonTimeNodeData:(id)arg2 drawingState:(id)arg3;
 + (void)readRestartType:(id)arg1 commonTimeNodeData:(id)arg2;
++ (id)restartTypeMap;
 + (void)readPresetClass:(id)arg1 commonTimeNodeData:(id)arg2;
++ (id)presetClassMap;
 + (void)readTimeNodeType:(id)arg1 commonTimeNodeData:(id)arg2;
++ (id)timeNodeTypeMap;
 + (void)readCommonTimeNodeData:(struct _xmlNode *)arg1 commonTimeNodeData:(id)arg2 drawingState:(id)arg3;
-+ (_Bool)readOptionalStringAttribute:(id)arg1 fromNode:(struct _xmlNode *)arg2 attributeMap:(struct attributeMapEntry *)arg3 attributeCount:(int)arg4 toPDDomValue:(unsigned long long *)arg5;
++ (_Bool)readOptionalStringAttribute:(id)arg1 fromNode:(struct _xmlNode *)arg2 attributeMap:(id)arg3 toPDDomValue:(unsigned long long *)arg4;
++ (id)timeNodeFillTypeMap;
 
 @end
 

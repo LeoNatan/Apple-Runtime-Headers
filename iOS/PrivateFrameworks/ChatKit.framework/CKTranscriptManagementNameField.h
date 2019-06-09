@@ -11,6 +11,7 @@
 @class NSString, UILabel, UITextField, _UIBackdropView;
 @protocol CKTranscriptManagementNameFieldDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKTranscriptManagementNameField : UIView <UITextFieldDelegate>
 {
     _Bool _isOverlay;

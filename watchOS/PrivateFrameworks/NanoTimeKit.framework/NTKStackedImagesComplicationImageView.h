@@ -6,12 +6,14 @@
 
 #import <UIKit/UIView.h>
 
+#import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 #import <NanoTimeKit/NTKComplicationImageView-Protocol.h>
 #import <NanoTimeKit/NTKLegibilityView-Protocol.h>
 
 @class CLKDevice, CLKImageProvider, NSString, NTKColoringImageView, UIColor, UIImage, UIImageView;
+@protocol CLKMonochromeFilterProvider;
 
-@interface NTKStackedImagesComplicationImageView : UIView <NTKComplicationImageView, NTKLegibilityView>
+@interface NTKStackedImagesComplicationImageView : UIView <NTKComplicationImageView, NTKLegibilityView, CLKMonochromeComplicationView>
 {
     CLKDevice *_device;
     NTKColoringImageView *_foregroundImageView;
@@ -27,6 +29,7 @@
     UIColor *_shadowColor;
     float _imageScaleFactor;
     CLKImageProvider *_imageProvider;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     UIColor *_color;
     UIColor *_overrideColor;
     float _multicolorAlpha;
@@ -37,14 +40,18 @@
 @property(nonatomic) float multicolorAlpha; // @synthesize multicolorAlpha=_multicolorAlpha;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(retain, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 @property(nonatomic) _Bool legibilityEnabled; // @dynamic legibilityEnabled;
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(nonatomic) float shadowBlur; // @synthesize shadowBlur=_shadowBlur;
 @property(nonatomic) _Bool usesLegibility; // @dynamic usesLegibility;
 @property(readonly, nonatomic) UIColor *contentColor;
 - (_Bool)hasMonochromeImage;
+- (_Bool)_shouldIgnoreTwoPieceImage;
 - (void)_loadImageViewsIfNecessary;
 - (_Bool)_hasShadowViews;
 - (_Bool)_hasMultipartImages;

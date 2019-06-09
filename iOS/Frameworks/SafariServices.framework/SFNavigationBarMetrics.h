@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class UIFont, UITraitCollection;
+@class UIFont, UIImageSymbolConfiguration, UITraitCollection;
 
 __attribute__((visibility("hidden")))
 @interface SFNavigationBarMetrics : NSObject
@@ -22,7 +22,9 @@ __attribute__((visibility("hidden")))
     double _safariViewControllerBarHeight;
     double _safariSquishHeightQuantizationOffset;
     double _safariViewControllerSquishHeightQuantizationOffset;
-    _Bool _usesLargerBarMetrics;
+    double _statusBarHeight;
+    UIImageSymbolConfiguration *_accessoryImageSymbolConfiguration;
+    UIImageSymbolConfiguration *_squishedAccessoryImageSymbolConfiguration;
     double _accessibilityImageScale;
     double _urlOutlineCornerRadius;
     double _defaultBarHeight;
@@ -44,8 +46,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double defaultBarHeight; // @synthesize defaultBarHeight=_defaultBarHeight;
 @property(readonly, nonatomic) double urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(readonly, nonatomic) double accessibilityImageScale; // @synthesize accessibilityImageScale=_accessibilityImageScale;
-@property(readonly, nonatomic) _Bool usesLargerBarMetrics; // @synthesize usesLargerBarMetrics=_usesLargerBarMetrics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImageSymbolConfiguration *squishedAccessoryImageSymbolConfiguration;
+@property(readonly, nonatomic) UIImageSymbolConfiguration *accessoryImageSymbolConfiguration;
 @property(readonly, nonatomic) double narrowEditingScaleFactor;
 @property(readonly, nonatomic) UIFont *narrowEditingLabelFont;
 @property(readonly, nonatomic) UIFont *defaultBoldFont;
@@ -53,8 +56,8 @@ __attribute__((visibility("hidden")))
 - (double)squishHeightQuantizationOffsetWithBarMetricsCategory:(long long)arg1;
 - (double)barHeightWithBarMetricsCategory:(long long)arg1;
 - (void)_updateMetrics;
+- (_Bool)updateForStatusBarHeight:(double)arg1;
 - (_Bool)updateForContentSizeCategory:(id)arg1;
-- (void)forceUpdate;
 - (id)init;
 - (id)_contentSizeCategoryWithPreferredCategory:(id)arg1;
 

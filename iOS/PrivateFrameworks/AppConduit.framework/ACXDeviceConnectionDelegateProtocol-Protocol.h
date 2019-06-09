@@ -6,9 +6,13 @@
 
 #import <AppConduit/NSObject-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString, NSUUID;
 
 @protocol ACXDeviceConnectionDelegateProtocol <NSObject>
+- (void)applicationDatabaseResyncedForDeviceWithPairingID:(NSUUID *)arg1;
+- (void)applicationsUninstalled:(NSArray *)arg1 onDeviceWithPairingID:(NSUUID *)arg2;
+- (void)applicationsUpdated:(NSArray *)arg1 onDeviceWithPairingID:(NSUUID *)arg2;
+- (void)applicationsInstalled:(NSArray *)arg1 onDeviceWithPairingID:(NSUUID *)arg2;
 - (void)updateInstallProgressForApplication:(NSString *)arg1 progress:(double)arg2 phase:(unsigned long long)arg3;
 - (void)updatedInstallStateForApplicationsWithInfo:(NSDictionary *)arg1;
 @end

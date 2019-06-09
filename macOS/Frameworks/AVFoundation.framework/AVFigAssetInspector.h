@@ -6,15 +6,15 @@
 
 #import <AVFoundation/AVAssetInspector.h>
 
-@class NSArray, NSURL;
+@class AVDispatchOnce, NSArray, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface AVFigAssetInspector : AVAssetInspector
 {
     struct OpaqueFigAsset *_figAsset;
     struct OpaqueFigFormatReader *_formatReader;
-    long long _formatReaderOnce;
-    long long _checkIsStreamingOnce;
+    AVDispatchOnce *_formatReaderOnce;
+    AVDispatchOnce *_checkIsStreamingOnce;
     BOOL _isStreaming;
     BOOL didCheckForSaveRestriction;
     BOOL hasSaveRestriction;
@@ -28,10 +28,13 @@ __attribute__((visibility("hidden")))
 - (id)_assetAnalysisMessages;
 - (BOOL)supportsAnalysisReporting;
 - (CDStruct_1b6d18a9)overallDurationHint;
+- (long long)fragmentCount;
+- (long long)firstFragmentSequenceNumber;
 - (BOOL)containsFragments;
 - (BOOL)canContainFragments;
 - (id)SHA1Digest;
 - (BOOL)isCompatibleWithAirPlayVideo;
+- (BOOL)isCompatibleWithPhotosTranscodingServiceWithOptions:(id)arg1;
 - (BOOL)isPlayable;
 @property(readonly, nonatomic, getter=_isStreaming) BOOL streaming;
 @property(readonly, nonatomic) BOOL hasProtectedContent;
@@ -55,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (id)alternateTrackGroups;
 - (long long)trackCount;
 - (BOOL)providesPreciseDurationAndTiming;
+- (CDStruct_1b6d18a9)minimumTimeOffsetFromLive;
 - (int)naturalTimeScale;
 - (struct CGSize)naturalSize;
 - (struct CGAffineTransform)preferredTransform;
@@ -70,7 +74,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_figAsset) struct OpaqueFigAsset *figAsset;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFigAsset:(struct OpaqueFigAsset *)arg1;
 

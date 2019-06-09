@@ -18,7 +18,6 @@
 - (void)windowWillClose:(id)arg1;
 - (void)showWindow:(id)arg1;
 - (void)windowDidLoad;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -23,6 +23,7 @@
     _INPBString *_placeType;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)placeDescriptorsType;
 @property(retain, nonatomic) _INPBString *placeType; // @synthesize placeType=_placeType;
 @property(retain, nonatomic) _INPBString *placeSubType; // @synthesize placeSubType=_placeSubType;
@@ -33,6 +34,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasPlaceType;

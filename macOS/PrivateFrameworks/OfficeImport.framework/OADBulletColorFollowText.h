@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADBulletColor.h>
 
+__attribute__((visibility("hidden")))
 @interface OADBulletColorFollowText : OADBulletColor
 {
 }

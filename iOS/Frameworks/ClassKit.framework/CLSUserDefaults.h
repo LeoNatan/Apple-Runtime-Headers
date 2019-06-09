@@ -11,6 +11,8 @@
 }
 
 + (_Bool)isInternalOSVariant;
++ (_Bool)automatchClientPersona;
++ (_Bool)disableASMRosters;
 + (_Bool)persistProgressData;
 + (double)_doubleValueForKey:(id)arg1 defaultValue:(double)arg2;
 + (float)_floatValueForKey:(id)arg1 defaultValue:(float)arg2;

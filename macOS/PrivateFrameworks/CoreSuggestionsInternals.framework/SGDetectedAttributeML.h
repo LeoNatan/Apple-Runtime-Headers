@@ -17,8 +17,9 @@
 - (void)handleTextMessageContactSharingWithNegativeSample:(id)arg1 andLanguage:(id)arg2;
 - (void)handleTextMessageContactSharing:(id)arg1 andMatch:(id)arg2 andContext:(id)arg3 andLanguage:(id)arg4 withSupervision:(id)arg5;
 - (id)selfIdDetectionWithEntity:(id)arg1 inConversation:(id)arg2 withSupervision:(id)arg3;
-- (id)detectionFromMatch:(id)arg1 plainTextContent:(id)arg2;
-- (id)detectionFromEntity:(id)arg1 ddMatch:(id)arg2 matchedContext:(id)arg3 withSupervision:(id)arg4 inLanguage:(id)arg5;
+- (id)detectionFromMatch:(id)arg1 plainTextContent:(id)arg2 extractionInfo:(id)arg3 isUnlikelyPhone:(BOOL)arg4;
+- (id)detectionFromEntity:(id)arg1 ddMatch:(id)arg2 matchedContext:(id)arg3 withSupervision:(id)arg4 inConversation:(id)arg5;
+- (void)addSessionForTrainingWithSource:(id)arg1 andLabel:(long long)arg2 inLanguage:(id)arg3 andObjective:(unsigned long long)arg4 withSpotlightRef:(id)arg5 andFeatureCache:(id)arg6;
 - (id)init;
 - (id)initWithTraining:(id)arg1;
 

@@ -6,31 +6,56 @@
 
 #import <objc/NSObject.h>
 
-@class NSXPCConnection;
+@class NSHashTable, NSXPCConnection;
+@protocol OS_dispatch_queue;
 
 @interface VCVoiceShortcutClient : NSObject
 {
+    NSObject<OS_dispatch_queue> *_queue;
+    NSHashTable *_errorHandlers;
     NSXPCConnection *_xpcConnection;
+    CDUnknownBlockType _creationBlock;
 }
 
 + (id)standardClient;
 + (void)initialize;
-@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(readonly, copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
+@property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(readonly, nonatomic) NSHashTable *errorHandlers; // @synthesize errorHandlers=_errorHandlers;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (void)describeSyncStateIncludingDeleted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)requestSyncForServiceClassName:(id)arg1 forceReset:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)remoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
-- (void)getCloudKitAccountStatusWithCompletion:(CDUnknownBlockType)arg1;
+- (void)requestSyncToWatchWithForceReset:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)unsafeSetupXPCConnection;
+- (void)unsafeHandleXPCConnectionInvalidation;
+- (void)unsafeHandleXPCConnectionInterruption;
+- (void)unsafeRunConnectionErrorHandlersIsInvalidation:(_Bool)arg1;
+- (void)callErrorHandlerIfNeeded:(CDUnknownBlockType)arg1 withError:(id)arg2;
+- (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1 synchronous:(_Bool)arg2;
+- (id)synchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)asynchronousRemoteDataStoreWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void)runShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)runShortcutWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)deleteTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)checkTriggerStateWithKeyPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)checkTriggerStateWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fireTriggerWithIdentifier:(id)arg1 force:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)getConfiguredTriggerDescriptionsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)refreshTriggerWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getSiriPodcastsDatabaseURLWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setInteger:(int)arg1 forKey:(id)arg2 inDomain:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)unsubscribeFromVoiceShortcutDataUpdateNotifications;
 - (void)subscribeToVoiceShortcutDataUpdateNotifications;
+- (void)generateSingleUseTokenForWorkflowReference:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)shareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2 error:(id *)arg3;
+- (id)shareSheetWorkflowsForTypeIdentifiers:(id)arg1 error:(id *)arg2;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2;
 - (void)deleteVoiceShortcutWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)updateVoiceShortcutWithIdentifier:(id)arg1 phrase:(id)arg2 workflow:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)createVoiceShortcutWithWorkflow:(id)arg1 phrase:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)requestDataMigration:(CDUnknownBlockType)arg1;
+- (void)updateVoiceShortcutWithIdentifier:(id)arg1 phrase:(id)arg2 shortcut:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)createVoiceShortcut:(id)arg1 phrase:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)requestDataMigration:(id *)arg1;
+- (void)updateShortcutsVocabularyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)validateVoiceShortcutPhrases:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getVoiceShortcutsWithCompletion:(CDUnknownBlockType)arg1;
@@ -39,6 +64,10 @@
 - (void)getNumberOfVoiceShortcutsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithXPCConnection:(id)arg1;
+- (id)initWithListenerEndpoint:(id)arg1;
+- (id)initWithMachServiceName:(id)arg1 options:(unsigned int)arg2;
+- (id)initWithXPCConnectionCreationBlock:(CDUnknownBlockType)arg1;
+- (id)initWithXPCConnection:(id)arg1 XPCConnectionCreationBlock:(CDUnknownBlockType)arg2;
 
 @end
 

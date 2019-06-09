@@ -8,23 +8,23 @@
 
 #import <AVConference/VCAudioIOSink-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface VCAudioPowerSpectrumSource : VCObject <VCAudioIOSink>
 {
-    NSMutableArray *_powerSpectrumSinks;
     int _streamToken;
-    id _powerSpectrumSourceDelegate;
-    struct opaqueCMSimpleQueue *_eventQueueAdd;
-    struct opaqueCMSimpleQueue *_eventQueueRemove;
+    struct _VCAudioPowerSpectrumSourceRealtimeContext _realtimeContext;
 }
 
 @property(readonly, nonatomic) int streamToken; // @synthesize streamToken=_streamToken;
 - (void)unregisterAudioPowerSpectrumSink:(id)arg1;
-- (void)registerAudioPowerSpectrumSink:(id)arg1;
+- (void)registerAudioPowerSpectrumSink:(id)arg1 callback:(CDUnknownFunctionPointerType)arg2;
+@property(readonly, nonatomic) struct _VCAudioPowerSpectrumSourceRealtimeContext *realtimeContext;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
-- (void)processInternalEvents;
+- (void)cleanupAudioPowerSpectrumSinks;
+- (void)cleanupQueue:(struct opaqueCMSimpleQueue **)arg1;
+- (void)invalidate;
 - (void)dealloc;
 - (id)initWithStreamToken:(int)arg1 delegate:(id)arg2;
 

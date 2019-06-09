@@ -9,7 +9,7 @@
 #import <HeartRhythmUI/HRLinkTextViewDelegate-Protocol.h>
 #import <HeartRhythmUI/HRStackedButtonViewDelegate-Protocol.h>
 
-@class HKAnchoredObjectQuery, HKElectrocardiogram, HKElectrocardiogramCardView, HRLinkTextView, HRStackedButtonView, NSLayoutConstraint, NSLayoutYAxisAnchor, UIActivityIndicatorView, UIImageView, UILabel, UITapGestureRecognizer;
+@class HKAnchoredObjectQuery, HKElectrocardiogram, HKElectrocardiogramCardView, HRStackedButtonView, NSLayoutConstraint, NSLayoutYAxisAnchor, UIActivityIndicatorView, UILabel, UITapGestureRecognizer;
 
 @interface HROnboardingElectrocardiogramSetupCompleteViewController : HROnboardingBaseViewController <HRLinkTextViewDelegate, HRStackedButtonViewDelegate>
 {
@@ -22,8 +22,6 @@
     UILabel *_classificationLabel;
     HKElectrocardiogramCardView *_electrocardiogramCardView;
     UILabel *_bodyLabel;
-    UIImageView *_appleWatchImageView;
-    HRLinkTextView *_atrialFibrillationLearnMoreLinkTextView;
     HRStackedButtonView *_stackedButtonView;
     NSLayoutConstraint *_contentViewBottomConstraint;
     NSLayoutYAxisAnchor *_viewBottomAnchor;
@@ -32,8 +30,6 @@
 @property(retain, nonatomic) NSLayoutYAxisAnchor *viewBottomAnchor; // @synthesize viewBottomAnchor=_viewBottomAnchor;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) HRStackedButtonView *stackedButtonView; // @synthesize stackedButtonView=_stackedButtonView;
-@property(retain, nonatomic) HRLinkTextView *atrialFibrillationLearnMoreLinkTextView; // @synthesize atrialFibrillationLearnMoreLinkTextView=_atrialFibrillationLearnMoreLinkTextView;
-@property(retain, nonatomic) UIImageView *appleWatchImageView; // @synthesize appleWatchImageView=_appleWatchImageView;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) HKElectrocardiogramCardView *electrocardiogramCardView; // @synthesize electrocardiogramCardView=_electrocardiogramCardView;
 @property(retain, nonatomic) UILabel *classificationLabel; // @synthesize classificationLabel=_classificationLabel;
@@ -54,7 +50,6 @@
 - (void)_setUpElectrocardiogramQuery;
 - (id)_bodyTextForSetupCompleteState:(long long)arg1;
 - (id)_classificationAttributedTextForElectrocardiogram:(id)arg1;
-- (_Bool)_shouldShowAtrialFibrillationLearnMore;
 - (void)_recomputeState;
 - (void)stackedButtonView:(id)arg1 didTapButtonAtIndex:(long long)arg2;
 - (void)linkTextView:(id)arg1 didTapOnLinkInRange:(struct _NSRange)arg2;

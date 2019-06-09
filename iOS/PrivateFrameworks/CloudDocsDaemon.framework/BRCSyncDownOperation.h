@@ -8,25 +8,34 @@
 
 #import <CloudDocsDaemon/BRCOperationSubclass-Protocol.h>
 
-@class BRCServerZone, NSString;
+@class BRCPendingChangesStream, BRCServerZone, NSObject, NSString;
+@protocol OS_xpc_object;
 
 __attribute__((visibility("hidden")))
 @interface BRCSyncDownOperation : _BRCOperation <BRCOperationSubclass>
 {
     BRCServerZone *_serverZone;
     unsigned long long _editedAndDeletedRecordsCount;
+    BRCPendingChangesStream *_pendingChanges;
+    NSObject<OS_xpc_object> *_xpcActivity;
+    _Bool _fullSync;
 }
 
 - (void).cxx_destruct;
+- (id)allowsCellularAccess;
 - (void)main;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (_Bool)shouldRetryForError:(id)arg1;
 - (void)_startCreateZoneAndSubscriptionAndSyncDown;
+- (void)_fetchInitialZoneIfNecessaryWithCreatedZone:(id)arg1;
+- (void)_saveInitialServerZoneData:(id)arg1 clientChangeTokenData:(id)arg2;
 - (void)_startSyncDown;
 - (_Bool)handleZoneNotFoundIfSyncingDownForTheFirstTime:(id)arg1;
 - (void)_performAfterFetchingRecordChanges:(CDUnknownBlockType)arg1;
 - (id)createActivity;
-- (id)initWithServerZone:(id)arg1;
+- (id)initDeltaSyncWithServerZone:(id)arg1;
+- (id)initFullSyncWithServerZone:(id)arg1 xpcActivity:(id)arg2;
+- (id)_initWithServerZone:(id)arg1 fullSyncOperation:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

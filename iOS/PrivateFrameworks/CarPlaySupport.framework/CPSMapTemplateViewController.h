@@ -6,12 +6,13 @@
 
 #import <CarPlaySupport/CPSBaseTemplateViewController.h>
 
+#import <CarPlaySupport/BKSHIDEventDeliveryPolicyObserving-Protocol.h>
 #import <CarPlaySupport/CARNavigationOwnershipManagerDelegate-Protocol.h>
 #import <CarPlaySupport/CARSessionObserving-Protocol.h>
 #import <CarPlaySupport/CPMapTemplateProviding-Protocol.h>
 #import <CarPlaySupport/CPSApplicationStateObserving-Protocol.h>
 #import <CarPlaySupport/CPSButtonDelegate-Protocol.h>
-#import <CarPlaySupport/CPSEventObserverDelegate-Protocol.h>
+#import <CarPlaySupport/CPSEventObserving-Protocol.h>
 #import <CarPlaySupport/CPSLayoutHelperViewDelegate-Protocol.h>
 #import <CarPlaySupport/CPSLinearFocusProviding-Protocol.h>
 #import <CarPlaySupport/CPSNavigationAlertQueueDelegate-Protocol.h>
@@ -20,10 +21,10 @@
 #import <CarPlaySupport/CPSTripInitiating-Protocol.h>
 #import <CarPlaySupport/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CARSessionStatus, CPMapTemplate, CPSApplicationStateMonitor, CPSEventObserver, CPSLayoutHelperView, CPSNavigationAlertQueue, CPSNavigationCardView, CPSNavigationETAView, CPSNavigator, CPSPanViewController, CPSTripPreviewsCardView, CPTripPreviewTextConfiguration, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIFocusGuide, UIPanGestureRecognizer, UIStackView, UITapGestureRecognizer, UIView, _CPSFocusHoldingButton;
+@class BKSHIDEventDeliveryPolicyObserver, CARSessionStatus, CPMapTemplate, CPSApplicationStateMonitor, CPSLayoutHelperView, CPSNavigationAlertQueue, CPSNavigationCardView, CPSNavigationETAView, CPSNavigator, CPSPanViewController, CPSTripPreviewsCardView, CPTripPreviewTextConfiguration, NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer, UIColor, UIFocusGuide, UIPanGestureRecognizer, UIStackView, UITapGestureRecognizer, UIView, _CPSFocusHoldingButton;
 @protocol CPMapClientTemplateDelegate, CPSSafeAreaDelegate, UIFocusItem;
 
-@interface CPSMapTemplateViewController : CPSBaseTemplateViewController <CARSessionObserving, CPSButtonDelegate, CPSTripInitiating, UIGestureRecognizerDelegate, CPSPanEventDelegate, CPSNavigationAlertQueueDelegate, CPSNavigationDisplaying, CARNavigationOwnershipManagerDelegate, CPSEventObserverDelegate, CPSApplicationStateObserving, CPSLayoutHelperViewDelegate, CPMapTemplateProviding, CPSLinearFocusProviding>
+@interface CPSMapTemplateViewController : CPSBaseTemplateViewController <CARSessionObserving, CPSButtonDelegate, CPSTripInitiating, UIGestureRecognizerDelegate, CPSPanEventDelegate, CPSNavigationAlertQueueDelegate, CPSNavigationDisplaying, CARNavigationOwnershipManagerDelegate, CPSEventObserving, CPSApplicationStateObserving, CPSLayoutHelperViewDelegate, BKSHIDEventDeliveryPolicyObserving, CPMapTemplateProviding, CPSLinearFocusProviding>
 {
     _Bool _previewOnlyRouteChoices;
     _Bool _autoHidesNavigationBar;
@@ -31,6 +32,7 @@
     _Bool _demoAutoHideTimerDisabled;
     _Bool _applicationIsFrontmost;
     _Bool _rightHandDrive;
+    _Bool _hasSetTripEstimateStyle;
     _Bool _shouldRestoreFocusToNavigationBar;
     UIStackView *_trailingBottomStackView;
     unsigned long long _maximumMapButtonCount;
@@ -64,7 +66,6 @@
     NSLayoutConstraint *_navigationETAViewBottomConstraint;
     NSMutableDictionary *_lastTravelEstimatesByTrip;
     id <CPSSafeAreaDelegate> _safeAreaDelegate;
-    CPSEventObserver *_eventObserver;
     id <UIFocusItem> _lastFocusedItem;
     id <UIFocusItem> _itemFocusedBeforeNavAlert;
     UIColor *_guidanceBackgroundColor;
@@ -72,19 +73,21 @@
     _CPSFocusHoldingButton *_focusHoldingButton;
     UIFocusGuide *_focusHolderLeftFocusGuide;
     UIFocusGuide *_focusHolderRightFocusGuide;
+    BKSHIDEventDeliveryPolicyObserver *_eventDeliveryPolicyObserver;
     struct CGPoint _lastPanGesturePoint;
 }
 
+@property(retain, nonatomic) BKSHIDEventDeliveryPolicyObserver *eventDeliveryPolicyObserver; // @synthesize eventDeliveryPolicyObserver=_eventDeliveryPolicyObserver;
 @property(nonatomic) _Bool shouldRestoreFocusToNavigationBar; // @synthesize shouldRestoreFocusToNavigationBar=_shouldRestoreFocusToNavigationBar;
 @property(retain, nonatomic) UIFocusGuide *focusHolderRightFocusGuide; // @synthesize focusHolderRightFocusGuide=_focusHolderRightFocusGuide;
 @property(retain, nonatomic) UIFocusGuide *focusHolderLeftFocusGuide; // @synthesize focusHolderLeftFocusGuide=_focusHolderLeftFocusGuide;
 @property(retain, nonatomic) _CPSFocusHoldingButton *focusHoldingButton; // @synthesize focusHoldingButton=_focusHoldingButton;
+@property(nonatomic) _Bool hasSetTripEstimateStyle; // @synthesize hasSetTripEstimateStyle=_hasSetTripEstimateStyle;
 @property(nonatomic) unsigned long long tripEstimateStyle; // @synthesize tripEstimateStyle=_tripEstimateStyle;
 @property(retain, nonatomic) UIColor *guidanceBackgroundColor; // @synthesize guidanceBackgroundColor=_guidanceBackgroundColor;
 @property(nonatomic) struct CGPoint lastPanGesturePoint; // @synthesize lastPanGesturePoint=_lastPanGesturePoint;
 @property(nonatomic) __weak id <UIFocusItem> itemFocusedBeforeNavAlert; // @synthesize itemFocusedBeforeNavAlert=_itemFocusedBeforeNavAlert;
 @property(nonatomic) __weak id <UIFocusItem> lastFocusedItem; // @synthesize lastFocusedItem=_lastFocusedItem;
-@property(retain, nonatomic) CPSEventObserver *eventObserver; // @synthesize eventObserver=_eventObserver;
 @property(nonatomic) __weak id <CPSSafeAreaDelegate> safeAreaDelegate; // @synthesize safeAreaDelegate=_safeAreaDelegate;
 @property(nonatomic) _Bool rightHandDrive; // @synthesize rightHandDrive=_rightHandDrive;
 @property(retain, nonatomic) NSMutableDictionary *lastTravelEstimatesByTrip; // @synthesize lastTravelEstimatesByTrip=_lastTravelEstimatesByTrip;
@@ -124,9 +127,10 @@
 @property(nonatomic) unsigned long long maximumMapButtonCount; // @synthesize maximumMapButtonCount=_maximumMapButtonCount;
 @property(retain, nonatomic) UIStackView *trailingBottomStackView; // @synthesize trailingBottomStackView=_trailingBottomStackView;
 - (void).cxx_destruct;
+- (void)observerDeliveryPolicyDidChange:(id)arg1;
 - (void)didChangeLayout:(id)arg1;
 - (void)applicationStateMonitor:(id)arg1 didBecomeActive:(_Bool)arg2;
-- (void)eventObserver:(id)arg1 observedEvent:(unsigned long long)arg2;
+- (_Bool)shouldForwardEventForWindow:(id)arg1 eventType:(long long)arg2;
 - (id)_linearFocusItems;
 - (id)preferredFocusEnvironments;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
@@ -147,20 +151,21 @@
 - (void)_addPanControllerAsChild;
 - (void)_setPanInterfaceVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (void)_handleFocusHolderSelect;
 - (void)_handlePanGesture:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
 - (void)_hideBar:(id)arg1;
-- (void)_showBar;
+- (void)_showBarAnimated:(_Bool)arg1 allowFocusDeferral:(_Bool)arg2;
 - (void)_setFocusHoldersEnabled:(_Bool)arg1;
-- (void)_animateButtonsHidden:(_Bool)arg1;
-- (void)_resetAutoHideTimer;
+- (void)_setButtonsHidden:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_resetAutoHideTimerAndShowBarAnimated:(_Bool)arg1 allowFocusDeferral:(_Bool)arg2;
 - (void)_setAutoHideDisabled:(_Bool)arg1 forRequester:(id)arg2;
 - (_Bool)_isAutoHideEnabled;
 - (void)hostPanInterfaceVisible:(CDUnknownBlockType)arg1;
 - (void)hostSetMapButtons:(id)arg1;
 - (void)hostSetPanInterfaceVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setMapButton:(id)arg1 focusedImage:(id)arg2;
-- (void)setMapButton:(id)arg1 image:(id)arg2;
+- (void)hostSetMapButton:(id)arg1 imageSet:(id)arg2;
 - (void)setMapButton:(id)arg1 hidden:(_Bool)arg2;
 - (void)hostStartNavigationSessionForTrip:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)hostUpdateTravelEstimates:(id)arg1 forTripIdentifier:(id)arg2;
@@ -181,6 +186,7 @@
 - (void)navigator:(id)arg1 pausedTripForReason:(unsigned long long)arg2 description:(id)arg3;
 - (void)showManeuvers:(id)arg1 usingDisplayStyles:(id)arg2;
 - (void)navigator:(id)arg1 didEndTrip:(_Bool)arg2;
+- (void)viewSafeAreaInsetsDidChange;
 - (id)_tripDidBegin:(id)arg1 withEstimates:(id)arg2 forIdentifier:(id)arg3;
 - (_Bool)canAnimateNavigationAlert;
 - (void)navigationAlertQueue:(id)arg1 shouldRemoveAlertView:(id)arg2 animated:(_Bool)arg3 dismissalContext:(unsigned long long)arg4;
@@ -196,8 +202,9 @@
 - (void)_updateMapButtonsWithButtons:(id)arg1;
 - (void)_updateMapButtonVisibility;
 - (void)_setMaximumVisibleMapButtons:(unsigned long long)arg1;
-- (void)viewDidLoad;
+- (void)_viewDidLoad;
 @property(readonly, nonatomic) CPMapTemplate *mapTemplate;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)dealloc;
 - (id)initWithMapTemplate:(id)arg1 templateDelegate:(id)arg2 safeAreaDelegate:(id)arg3 applicationStateMonitor:(id)arg4;
 

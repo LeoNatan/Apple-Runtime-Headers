@@ -6,12 +6,14 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class _SFWebView;
+@class _SFDownload, _SFWebView, _WKDownload;
 
 @protocol _SFWebViewDelegate <NSObject>
 
 @optional
+- (_SFDownload *)sfWebView:(_SFWebView *)arg1 didStartDownload:(_WKDownload *)arg2;
 - (void)sfWebViewDidEndFormControlInteraction:(_SFWebView *)arg1;
+- (void)sfWebViewDidStartFormControlInteraction:(_SFWebView *)arg1;
 - (void)sfWebViewDidBecomeFirstResponder:(_SFWebView *)arg1;
 - (void)sfWebViewDidChangeSafeAreaInsets:(_SFWebView *)arg1;
 @end

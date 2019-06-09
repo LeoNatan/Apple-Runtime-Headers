@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSSQLModel *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSDictionary *entitiesAndCounts; // @synthesize entitiesAndCounts=_entitiesAndCounts;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (BOOL)isWritingRequest;
 - (void)dealloc;
 - (id)initForEntitiesAndCounts:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;

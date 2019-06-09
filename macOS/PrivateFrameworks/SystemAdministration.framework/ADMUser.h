@@ -26,6 +26,7 @@
 + (id)generateUnixNameUsingString:(id)arg1;
 + (id)suggestUnixNameUsingString:(id)arg1;
 + (BOOL)hasRootPasswordBeingSet;
++ (BOOL)isCurrentUserGuest;
 + (BOOL)isCurrentUserAdministrator;
 + (struct __CSIdentity *)currentUserCSIdentityRef;
 + (id)currentUser;
@@ -162,6 +163,7 @@
 - (void)dealloc;
 - (id)initWithRecordName:(const char *)arg1 type:(const char *)arg2 node:(id)arg3;
 - (id)setSecureTokenAuthorizationEnabled:(BOOL)arg1 userPassword:(id)arg2 authorizingUserName:(id)arg3 authorizingUserPassword:(id)arg4;
+- (id)setSecureTokenAuthorizationEnabled:(id)arg1;
 - (id)setSecureTokenAuthorizationEnabled:(BOOL)arg1 userPassword:(id)arg2;
 - (BOOL)isSecureTokenAuthorizationEnabled;
 - (id)authenticationAuthority;

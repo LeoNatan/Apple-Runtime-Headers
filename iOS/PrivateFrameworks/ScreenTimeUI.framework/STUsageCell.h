@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint, STCandyBarView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface STUsageCell : STTableCell
 {
     UILabel *_itemNameLabel;

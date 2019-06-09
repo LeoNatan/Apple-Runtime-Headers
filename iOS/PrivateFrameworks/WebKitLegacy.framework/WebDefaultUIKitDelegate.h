@@ -40,7 +40,8 @@ __attribute__((visibility("hidden")))
 - (void)deleteFromInputWithFlags:(unsigned long long)arg1;
 - (void)deleteFromInput;
 - (void)addInputString:(id)arg1 withFlags:(unsigned long long)arg2;
-- (_Bool)handleKeyCommandForCurrentEvent;
+- (_Bool)handleKeyAppCommandForCurrentEvent;
+- (_Bool)handleKeyTextCommandForCurrentEvent;
 - (void)webView:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)webView:(id)arg1 didHideFullScreenForPlugInView:(id)arg2;
 - (void)webView:(id)arg1 willShowFullScreenForPlugInView:(id)arg2;

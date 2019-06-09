@@ -11,11 +11,14 @@
 }
 
 + (void)registerXPCListeners;
++ (void)_registerInternalListener;
 + (void)_registerConfigListener;
 + (void)_registerConnectionsListener;
 + (void)_registerEventListener;
 + (void)_registerContactListener;
 + (void)_registerQuickTypeListener;
++ (void)_registerLocationReadWriteListener;
++ (void)_registerLocationReadOnlyListener;
 + (void)_registerTopicReadWriteListener;
 + (void)_registerTopicReadOnlyListener;
 + (void)_registerNamedEntityReadWriteListener;

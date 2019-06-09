@@ -57,7 +57,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldRemoveSpecialChild:(id)arg1;
 - (id)prepareUIChildrenForNavigation:(id)arg1;
 - (id)buildDefaultChildrenWithUIElements:(id)arg1;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 
 @end

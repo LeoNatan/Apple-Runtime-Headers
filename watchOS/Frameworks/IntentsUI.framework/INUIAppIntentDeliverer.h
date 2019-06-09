@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class AFSafetyBlock, AFWatchdogTimer, BKSApplicationStateMonitor, BKSProcessAssertion, NSString;
+@class AFSafetyBlock, BKSApplicationStateMonitor, BKSProcessAssertion, INWatchdogTimer, NSString;
 @protocol INUIIntentBackgroundHandlingAssertion, OS_dispatch_group, OS_dispatch_queue;
 
 @interface INUIAppIntentDeliverer : NSObject
 {
     BKSApplicationStateMonitor *_appStateMonitor;
     BKSProcessAssertion *_backgroundLaunchAssertion;
-    AFWatchdogTimer *_assertionTimer;
+    INWatchdogTimer *_assertionTimer;
     NSObject<OS_dispatch_group> *_assertionSetupGroup;
     NSObject<OS_dispatch_queue> *_queue;
-    AFWatchdogTimer *_requestTimer;
+    INWatchdogTimer *_requestTimer;
     AFSafetyBlock *_requestCompletionBlock;
     id <INUIIntentBackgroundHandlingAssertion> _intentBackgroundHandlingAssertion;
     NSString *_bundleIdentifier;

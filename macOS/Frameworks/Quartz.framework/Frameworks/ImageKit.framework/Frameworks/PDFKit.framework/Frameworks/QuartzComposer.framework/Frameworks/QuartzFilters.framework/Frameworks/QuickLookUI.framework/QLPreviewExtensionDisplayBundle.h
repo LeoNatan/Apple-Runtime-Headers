@@ -4,35 +4,47 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <QuickLookUI/QLDisplayBundle.h>
+#import <QuickLookUI/QLUIServiceBaseDisplayBundle.h>
 
 #import <QuickLookUI/QLRemoteViewControllerDelegate-Protocol.h>
 
-@class NSExtension, NSString, QLPreview, QLPreviewHostExtensionContext, QLRemoteViewController;
-@protocol QLPreviewExtensionContextProtocol;
+@class LOViewController, NSExtension, NSString, NSView, QLPreviewHostExtensionContext;
+@protocol QLPreviewExtensionContextProtocol, QLPreviewExtensionViewControllerProtocol;
 
-@interface QLPreviewExtensionDisplayBundle : QLDisplayBundle <QLRemoteViewControllerDelegate>
+@interface QLPreviewExtensionDisplayBundle : QLUIServiceBaseDisplayBundle <QLRemoteViewControllerDelegate>
 {
-    QLPreview *_previewContext;
-    QLRemoteViewController *_remoteViewController;
     NSExtension *_extension;
     id _extensionRequestId;
     QLPreviewHostExtensionContext *_extensionContext;
+    NSString *_extensionContentTitle;
+    NSView *_containerView;
+    LOViewController *_lockoutViewController;
+    struct CGSize _extensionPreferredPreviewSize;
 }
 
+@property(retain) LOViewController *lockoutViewController; // @synthesize lockoutViewController=_lockoutViewController;
+@property(retain) NSView *containerView; // @synthesize containerView=_containerView;
+@property(copy) NSString *extensionContentTitle; // @synthesize extensionContentTitle=_extensionContentTitle;
+@property struct CGSize extensionPreferredPreviewSize; // @synthesize extensionPreferredPreviewSize=_extensionPreferredPreviewSize;
 @property(retain) QLPreviewHostExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 @property(retain) id extensionRequestId; // @synthesize extensionRequestId=_extensionRequestId;
 @property(retain) NSExtension *extension; // @synthesize extension=_extension;
-@property(retain) QLRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
-@property(retain) QLPreview *previewContext; // @synthesize previewContext=_previewContext;
 - (void).cxx_destruct;
-- (void)viewServiceDidTerminateWithError:(id)arg1;
-- (id)_serviceCrashError;
+- (void)previewStatusDidChange;
+- (id)bundleIDForScreentime;
+- (void)modeDidChange;
+@property(readonly) id <QLPreviewExtensionViewControllerProtocol> extensionServiceViewController;
+- (id)serviceCrashError;
+- (id)customDisplayName;
+- (id)sizingConstraints;
+- (void)updateExtensionPreviewForExternalResourceAccess:(id)arg1 withExtension:(id)arg2;
+- (void)_insertRemoteView;
+- (void)presentScreenTimeLockout:(BOOL)arg1 withBundleID:(id)arg2;
 - (int)loadWithHints:(id)arg1;
-- (id)quickLookView;
 @property(readonly) id <QLPreviewExtensionContextProtocol> remoteExtensionContext;
+- (id)quickLookView;
 - (void)dealloc;
-- (id)initWithPreview:(struct __QLPreview *)arg1 owner:(id)arg2;
+- (id)initWithPreview:(id)arg1 owner:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

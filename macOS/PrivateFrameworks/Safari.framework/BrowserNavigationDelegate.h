@@ -9,7 +9,7 @@
 #import <Safari/ExternalURLNavigationDelegate-Protocol.h>
 #import <Safari/WKNavigationDelegatePrivate-Protocol.h>
 
-@class BrowserViewController, ExternalURLNavigationHandler, NSDate, NSString, NSTimer;
+@class BrowserViewController, ExternalURLNavigationHandler, NSDate, NSString, NSTimer, NSURL, WBSAppLink;
 
 __attribute__((visibility("hidden")))
 @interface BrowserNavigationDelegate : NSObject <ExternalURLNavigationDelegate, WKNavigationDelegatePrivate>
@@ -26,13 +26,19 @@ __attribute__((visibility("hidden")))
     ExternalURLNavigationHandler *_externalURLNavigationHandler;
     BOOL _isExternalSchemeRedirectScheduled;
     CDUnknownBlockType _pendingNavigationActionDueToExternalSchemePromptHandler;
+    NSURL *_urlReloadedWithOverriddenEnableContentBlockers;
+    BOOL _overriddenContentBlockersEnabledSetting;
+    WBSAppLink *_currentAppLink;
     BOOL _navigatingViaBackForwardList;
     BOOL _navigatingToCachedPageViaBackForwardList;
+    BOOL _didLoadCurrentURLWithContentBlockersEnabled;
 }
 
+@property(readonly, nonatomic) BOOL didLoadCurrentURLWithContentBlockersEnabled; // @synthesize didLoadCurrentURLWithContentBlockersEnabled=_didLoadCurrentURLWithContentBlockersEnabled;
 @property(nonatomic, getter=isNavigatingToCachedPageViaBackForwardList) BOOL navigatingToCachedPageViaBackForwardList; // @synthesize navigatingToCachedPageViaBackForwardList=_navigatingToCachedPageViaBackForwardList;
 @property(nonatomic, getter=isNavigatingViaBackForwardList) BOOL navigatingViaBackForwardList; // @synthesize navigatingViaBackForwardList=_navigatingViaBackForwardList;
 - (void).cxx_destruct;
+- (void)_showAppLinkBannerIfNeeded;
 - (void)_webView:(id)arg1 resolveWebGLLoadPolicyForURL:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_webView:(id)arg1 webGLLoadPolicyForURL:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_webView:(id)arg1 didBlockInsecurePluginVersionWithInfo:(id)arg2;
@@ -40,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)_webView:(id)arg1 willGoToBackForwardListItem:(id)arg2 inPageCache:(BOOL)arg3;
 - (void)_webView:(id)arg1 backForwardListItemAdded:(id)arg2 removed:(id)arg3;
 - (void)_webView:(id)arg1 URL:(id)arg2 contentRuleListIdentifiers:(id)arg3 notifications:(id)arg4;
+- (void)_webView:(id)arg1 contentRuleListWithIdentifier:(id)arg2 performedAction:(id)arg3 forURL:(id)arg4;
 - (void)_webViewDidEndNavigationGesture:(id)arg1 withNavigationToBackForwardListItem:(id)arg2;
 - (void)_webView:(id)arg1 webContentProcessDidTerminateWithReason:(long long)arg2;
 - (void)webView:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -84,8 +91,9 @@ __attribute__((visibility("hidden")))
 - (id)_provisionalURLFromMainFrameInWebView:(id)arg1;
 - (void)_stopTrackingInterruptedProvisionalLoads;
 - (void)_determineIfPageIsTryingToSpoofAddressFieldWhenInterruptingProvisionalLoad;
-- (void)_handleUseWithWebsitePoliciesForURL:(id)arg1 isMainFrame:(BOOL)arg2 decisionHandlerWillUseWebsitePoliciesForReload:(BOOL)arg3 decisionHandler:(CDUnknownBlockType)arg4;
+- (void)_handleUseWithWebsitePoliciesForURL:(id)arg1 isMainFrame:(BOOL)arg2 decisionHandlerWillUseWebsitePoliciesForReload:(BOOL)arg3 preferredUsePolicy:(long long)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_loadWebsitePoliciesForURL:(id)arg1 isForMainFrameNavigation:(BOOL)arg2 isForReload:(BOOL)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void)overrideEnableContentBlockersOnNextReload:(BOOL)arg1;
 - (void)updateWebsitePoliciesForURL:(id)arg1;
 - (BOOL)_decidePolicyForActionIfActionIsClickingToNavigateToPlugInDownloadPageForDisabledPluginForURL:(id)arg1 navigationType:(long long)arg2 isMainFrame:(BOOL)arg3 decisionHandler:(CDUnknownBlockType)arg4;
 - (void)_handlePolicyWhenNotReusingCurrentWebViewForURL:(id)arg1 policy:(long long)arg2 readingListItem:(id)arg3 pageNumber:(unsigned long long)arg4 navigationType:(long long)arg5;
@@ -97,7 +105,7 @@ __attribute__((visibility("hidden")))
 - (long long)_verifyDownloadPolicyDecisionForURL:(id)arg1 isMainFrame:(BOOL)arg2;
 - (void)verifyAndHandlePolicyDecisionForURL:(id)arg1 isMainFrame:(BOOL)arg2 decision:(long long)arg3 decisionHandlerWillUseWebsitePolicies:(long long)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (CDUnknownBlockType)decisionHandlerForNavigationResponsePolicyDecisionHandler:(CDUnknownBlockType)arg1;
-- (CDUnknownBlockType)decisionHandlerForNavigationActionPolicyDecisionHandler:(CDUnknownBlockType)arg1 inNewProcess:(BOOL)arg2;
+- (CDUnknownBlockType)policyDecisionHandlerForNavigationAction:(id)arg1 decisionHandler:(CDUnknownBlockType)arg2 inNewProcess:(BOOL)arg3;
 - (void)close;
 - (void)dealloc;
 - (id)initWithBrowserViewController:(id)arg1;

@@ -39,5 +39,7 @@
 - (id)br_displayFilenameWithExtensionHidden:(_Bool)arg1;
 - (id)brc_stringByDeletingPathExtension;
 - (id)br_pathExtension;
+- (id)brc_libnotifyPerUserNotificationName;
+- (id)brc_stringByBackslashEscapingCharactersInString:(id)arg1;
 @end
 

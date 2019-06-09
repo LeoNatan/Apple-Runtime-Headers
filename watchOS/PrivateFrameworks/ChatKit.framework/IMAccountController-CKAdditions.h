@@ -11,6 +11,5 @@
 - (id)__ck_bestAccountForAddresses:(id)arg1 withFallbackService:(id)arg2;
 - (id)__ck_bestAccountForAddresses:(id)arg1;
 - (id)__ck_defaultAccountForService:(id)arg1;
-- (id)__ck_operationalPhoneAccountForService:(id)arg1;
 @end
 

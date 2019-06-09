@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ZMWEventManager : NSObject <AXEEventTapListener>
 {
     BOOL _arePoroKeysDown;
@@ -31,7 +32,7 @@
     NSDictionary *_lastUAFocusInformation;
     double _lastPotentialFocusTrigger;
     double _onlyControlIsDownTime;
-    unsigned int _lastSeenFlags;
+    unsigned long long _lastSeenFlags;
     struct __CGEventSource *_eventSource;
     BOOL _isMouseDetached;
     BOOL __temporaryDetachKeysDown;
@@ -60,7 +61,7 @@
 - (struct __CGEvent *)_handleCGTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
 - (void)_handleCGTapListenOnlyEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
 - (BOOL)_handleCGTapEventWithZoomKeys:(struct __CGEvent *)arg1;
-- (struct __CGEvent *)processActiveEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (struct __CGEvent *)eventTapManager:(id)arg1 activelyTappedMouseEvent:(id)arg2 cgEvent:(struct __CGEvent *)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
 - (void)removeEventTapListenOnly;
 - (void)removeEventTap;
 - (void)installEventTap;

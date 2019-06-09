@@ -34,7 +34,8 @@
 @property(nonatomic) unsigned int drawMode; // @synthesize drawMode=_drawMode;
 @property(readonly) NSArray *vertexAttributes; // @synthesize vertexAttributes=_vertexAttributes;
 @property(readonly) unsigned long long vertexCount; // @synthesize vertexCount=_vertexCount;
-- (_Bool)p_setAttributeUpdateData:(CDStruct_c6084d62 *)arg1 fromAttribute:(id)arg2;
+- (void).cxx_destruct;
+- (_Bool)p_setAttributeUpdateData:(CDStruct_64113493 *)arg1 fromAttribute:(id)arg2;
 - (void)updateDataBufferAttributes:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)vertexAttributeNamed:(id)arg1;
 - (void)setDataForAttribute:(id)arg1 atIndex:(unsigned long long)arg2 fromAttribute:(id)arg3 dataBuffer:(id)arg4 index:(unsigned long long)arg5;

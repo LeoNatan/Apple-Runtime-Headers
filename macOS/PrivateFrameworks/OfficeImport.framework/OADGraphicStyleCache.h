@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, OADGraphicFeatureCache;
 
+__attribute__((visibility("hidden")))
 @interface OADGraphicStyleCache : NSObject
 {
     OADGraphicFeatureCache *mFillCacheArray[4];

@@ -6,25 +6,35 @@
 
 #import <UIKit/UIView.h>
 
-@class GEOLinkedService, NSArray, NSLayoutConstraint, UIImageView, _MKUILabel;
+#import <MapKit/MKPlaceHoursViewDelegate-Protocol.h>
 
-@interface MKPlaceCompleteHoursView : UIView
+@class GEOLinkedService, NSArray, NSLayoutConstraint, NSString, UIImageView, _MKUILabel;
+
+__attribute__((visibility("hidden")))
+@interface MKPlaceCompleteHoursView : UIView <MKPlaceHoursViewDelegate>
 {
     GEOLinkedService *_linkedService;
     NSArray *_sortedBusinessHours;
     UIView *_containerViewForHoursAndCategoryName;
     UIImageView *_categoryIconView;
     _MKUILabel *_localizedCategoryNameLabel;
-    NSLayoutConstraint *_hoursTopLabelLastBaselineToCategoryName;
+    NSLayoutConstraint *_hoursTopLabelBaselineToCategoryName;
     NSArray *_placeHoursViews;
 }
 
 @property(retain, nonatomic) NSArray *placeHoursViews; // @synthesize placeHoursViews=_placeHoursViews;
 - (void).cxx_destruct;
+- (void)hoursViewDidUpdate:(id)arg1;
 - (void)_setUpConstraints;
 - (void)_contentSizeDidChange;
 - (void)commonInit;
 - (id)initWithLinkedService:(id)arg1 showTodaysHoursOnly:(_Bool)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

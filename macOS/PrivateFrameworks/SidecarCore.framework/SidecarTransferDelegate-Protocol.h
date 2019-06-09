@@ -4,9 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSError, SidecarTransfer;
+@class NSArray, NSError, SidecarTransfer;
 
 @protocol SidecarTransferDelegate
 - (void)sidecarTransfer:(SidecarTransfer *)arg1 didComplete:(NSError *)arg2;
+
+@optional
+- (void)sidecarTransfer:(SidecarTransfer *)arg1 receivedItems:(NSArray *)arg2;
 @end
 

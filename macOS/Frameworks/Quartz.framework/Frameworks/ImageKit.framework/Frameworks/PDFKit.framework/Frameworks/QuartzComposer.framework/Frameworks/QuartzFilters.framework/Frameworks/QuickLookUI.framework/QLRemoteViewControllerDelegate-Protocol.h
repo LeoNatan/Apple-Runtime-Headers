@@ -9,6 +9,7 @@
 @class NSError;
 
 @protocol QLRemoteViewControllerDelegate <NSObject>
+- (void)doubleClickOnPreviewContent;
 - (void)viewServiceDidTerminateWithError:(NSError *)arg1;
 @end
 

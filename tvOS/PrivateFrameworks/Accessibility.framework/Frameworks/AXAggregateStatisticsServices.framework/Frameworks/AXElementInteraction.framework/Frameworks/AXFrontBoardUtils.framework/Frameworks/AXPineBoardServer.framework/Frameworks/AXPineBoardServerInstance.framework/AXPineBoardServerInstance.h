@@ -41,7 +41,6 @@
 - (id)_isScreenSaverVisible:(id)arg1;
 - (id)_isSiriVisible:(id)arg1;
 - (id)_dismissSiri:(id)arg1;
-- (id)_openSiri:(id)arg1;
 - (void)_migrateToTopaz;
 - (void)_startSystemAppServerIfNeeded;
 - (void)_updateAccessibilityProductStatus;

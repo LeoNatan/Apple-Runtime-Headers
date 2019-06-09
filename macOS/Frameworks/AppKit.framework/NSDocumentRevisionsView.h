@@ -122,7 +122,6 @@ __attribute__((visibility("hidden")))
 @property unsigned long long currentStackItemIndex;
 - (void)dealloc;
 - (id)initWithController:(id)arg1;
-- (unsigned int)_CAViewFlags;
 
 @end
 

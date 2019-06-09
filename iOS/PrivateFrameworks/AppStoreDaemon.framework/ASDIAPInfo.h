@@ -10,22 +10,33 @@
 #import <AppStoreDaemon/NSMutableCopying-Protocol.h>
 #import <AppStoreDaemon/NSSecureCoding-Protocol.h>
 
-@class NSNumber, NSString;
+@class NSDate, NSNumber, NSString;
 
 @interface ASDIAPInfo : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
-    NSNumber *_adamId;
-    NSNumber *_appAdamId;
-    NSNumber *_expirationTimestamp;
+    _Bool _autoRenewStatus;
     _Bool _hasUsedFreeOffer;
     _Bool _hasUsedIntroPricingOffer;
-    NSNumber *_lastModifiedTimestamp;
-    NSNumber *_purchaseTimestamp;
-    NSString *_subscriptionFamilyId;
     unsigned char _type;
+    NSNumber *_adamId;
+    NSNumber *_appAdamId;
+    NSDate *_expirationDate;
+    NSDate *_lastModifiedDate;
+    NSDate *_purchaseDate;
+    NSString *_subscriptionFamilyId;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned char type; // @synthesize type=_type;
+@property(retain, nonatomic) NSString *subscriptionFamilyId; // @synthesize subscriptionFamilyId=_subscriptionFamilyId;
+@property(retain, nonatomic) NSDate *purchaseDate; // @synthesize purchaseDate=_purchaseDate;
+@property(retain, nonatomic) NSDate *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
+@property(nonatomic) _Bool hasUsedIntroPricingOffer; // @synthesize hasUsedIntroPricingOffer=_hasUsedIntroPricingOffer;
+@property(nonatomic) _Bool hasUsedFreeOffer; // @synthesize hasUsedFreeOffer=_hasUsedFreeOffer;
+@property(retain, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
+@property(nonatomic) _Bool autoRenewStatus; // @synthesize autoRenewStatus=_autoRenewStatus;
+@property(retain, nonatomic) NSNumber *appAdamId; // @synthesize appAdamId=_appAdamId;
+@property(retain, nonatomic) NSNumber *adamId; // @synthesize adamId=_adamId;
 - (void).cxx_destruct;
 - (id)_newCopyWithClass:(Class)arg1 zone:(struct _NSZone *)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -35,15 +46,9 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (_Bool)isEqualToIAPInfo:(id)arg1;
-@property(readonly, nonatomic) unsigned char type;
-@property(readonly, nonatomic) NSString *subscriptionFamilyId;
 @property(readonly, nonatomic) NSNumber *purchaseTimestamp;
 @property(readonly, nonatomic) NSNumber *lastModifiedTimestamp;
-@property(readonly, nonatomic) _Bool hasUsedIntroPricingOffer;
-@property(readonly, nonatomic) _Bool hasUsedFreeOffer;
 @property(readonly, nonatomic) NSNumber *expirationTimestamp;
-@property(readonly, nonatomic) NSNumber *appAdamId;
-@property(readonly, nonatomic) NSNumber *adamId;
 
 @end
 

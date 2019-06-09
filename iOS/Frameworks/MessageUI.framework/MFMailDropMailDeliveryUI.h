@@ -15,6 +15,7 @@
     MFPlaceholderMessageRewriter *_rewriter;
 }
 
+- (void).cxx_destruct;
 - (id)_mailDropBannerHTMLString;
 - (_Bool)updateMessageWithAttachmentsSynchronously;
 - (id)contentForPlaceholder:(id)arg1;
@@ -24,7 +25,6 @@
 - (id)_mailDropAttachmentHTMLStringForAttachment:(id)arg1;
 - (id)_headersByAddingMailDropHeaders:(id)arg1;
 - (id)deliverSynchronouslyWithCompletion:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)scaledImages:(id)arg1;
 - (id)_scaleImages:(id)arg1 toFit:(unsigned long long)arg2 resultingSize:(out unsigned long long *)arg3;
 

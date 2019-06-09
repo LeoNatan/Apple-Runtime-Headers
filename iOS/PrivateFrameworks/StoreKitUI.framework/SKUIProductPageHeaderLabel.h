@@ -8,6 +8,7 @@
 
 @class NSArray, NSString, UIColor, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageHeaderLabel : UIView
 {
     NSString *_text;

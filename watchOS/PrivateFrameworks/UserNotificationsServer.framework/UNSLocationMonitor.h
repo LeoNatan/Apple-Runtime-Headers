@@ -19,7 +19,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)_triggerDidFireForRegion:(id)arg1;
+- (void)_queue_triggerDidFireForRegion:(id)arg1;
 - (void)locationManager:(id)arg1 didStartMonitoringForRegion:(id)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didExitRegion:(id)arg2;

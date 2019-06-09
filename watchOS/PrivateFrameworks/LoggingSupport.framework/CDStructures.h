@@ -279,10 +279,13 @@ struct os_log_fmt_cspec_s {
     unsigned short _field4;
     unsigned short _field5;
     unsigned short _field6;
-    int _field7;
+    unsigned short _field7;
     int _field8;
-    char *_field9;
+    int _field9;
     char *_field10;
+    char *_field11;
+    char *_field12;
+    unsigned long long _field13;
 };
 
 struct os_log_fmt_hdr_s {

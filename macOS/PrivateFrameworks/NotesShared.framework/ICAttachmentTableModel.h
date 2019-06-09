@@ -13,6 +13,7 @@
     ICTableVersionedDocument *_tableDocument;
 }
 
++ (id)tableFromAttributedString:(id)arg1 managedObjectContext:(id)arg2;
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 @property(retain, nonatomic) ICTableVersionedDocument *tableDocument; // @synthesize tableDocument=_tableDocument;
 - (void).cxx_destruct;
@@ -20,7 +21,7 @@
 - (id)localizedFallbackSubtitleIOS;
 - (id)localizedFallbackTitle;
 - (void)mergeTablePrimitiveData;
-- (void)updateAttachmentByMergingWithTableDoc:(id)arg1;
+- (void)updateAttachmentByMergingWithTableData:(id)arg1;
 - (void)writeMergeableData;
 - (BOOL)mergeWithMergeableData:(id)arg1;
 - (BOOL)isReadyToPresent;
@@ -31,6 +32,7 @@
 - (id)textContentInNote;
 - (BOOL)providesTextContentInNote;
 - (id)searchableTextContentInNote;
+- (id)stringsAtRow:(unsigned long long)arg1;
 - (void)attachmentDidRefresh:(BOOL)arg1;
 - (void)attachmentWillRefresh:(BOOL)arg1;
 - (void)attachmentWillTurnIntoFault;

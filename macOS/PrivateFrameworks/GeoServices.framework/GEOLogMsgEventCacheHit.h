@@ -14,14 +14,13 @@
     unsigned int _cacheMissCount;
     int _cacheType;
     struct {
-        unsigned int cacheHitCount:1;
-        unsigned int cacheMissCount:1;
-        unsigned int cacheType:1;
-    } _has;
+        unsigned int has_cacheHitCount:1;
+        unsigned int has_cacheMissCount:1;
+        unsigned int has_cacheType:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int cacheMissCount; // @synthesize cacheMissCount=_cacheMissCount;
-@property(nonatomic) unsigned int cacheHitCount; // @synthesize cacheHitCount=_cacheHitCount;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -29,14 +28,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasCacheMissCount;
+@property(nonatomic) unsigned int cacheMissCount;
 @property(nonatomic) BOOL hasCacheHitCount;
+@property(nonatomic) unsigned int cacheHitCount;
 - (int)StringAsCacheType:(id)arg1;
 - (id)cacheTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasCacheType;
-@property(nonatomic) int cacheType; // @synthesize cacheType=_cacheType;
+@property(nonatomic) int cacheType;
 
 @end
 

@@ -6,11 +6,11 @@
 
 #import <HomeUI/HUItemTableViewController.h>
 
-#import <HomeUI/HUPersonalRequestsDevicesModuleControllerDelegate-Protocol.h>
+#import <HomeUI/HUAccessorySettingsDetailsViewControllerProtocol-Protocol.h>
 
 @class HUPersonalRequestsDevicesModuleController, HUPersonalRequestsEditorItemManager, NSString;
 
-@interface HUPersonalRequestsEditorTableViewController : HUItemTableViewController <HUPersonalRequestsDevicesModuleControllerDelegate>
+@interface HUPersonalRequestsEditorTableViewController : HUItemTableViewController <HUAccessorySettingsDetailsViewControllerProtocol>
 {
     HUPersonalRequestsEditorItemManager *_prEditorItemManager;
     HUPersonalRequestsDevicesModuleController *_prDevicesModuleController;
@@ -19,7 +19,6 @@
 @property(readonly, nonatomic) HUPersonalRequestsDevicesModuleController *prDevicesModuleController; // @synthesize prDevicesModuleController=_prDevicesModuleController;
 @property(retain, nonatomic) HUPersonalRequestsEditorItemManager *prEditorItemManager; // @synthesize prEditorItemManager=_prEditorItemManager;
 - (void).cxx_destruct;
-- (void)devicesModuleController:(id)arg1 presentViewController:(id)arg2;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(_Bool)arg4;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
@@ -28,6 +27,7 @@
 - (_Bool)automaticallyUpdatesViewControllerTitle;
 - (id)initWithUserItem:(id)arg1 sourceMediaProfileContainer:(id)arg2;
 - (id)initWithUserItem:(id)arg1;
+- (id)initWithAccessoryGroupItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

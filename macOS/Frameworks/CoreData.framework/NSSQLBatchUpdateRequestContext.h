@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (id)dropObjectIDCaptureStatements;
 - (id)createObjectIDCaptureStatements;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (void)executePrologue;
 - (BOOL)isWritingRequest;
 - (id)createFetchRequestContextForObjectsToUpdate;
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSQLiteStatement *updateStatement;
 - (void)_createUpdateStatement;
 @property(readonly, nonatomic) NSBatchUpdateRequest *request;
+- (id)tempTableName;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3;
 

@@ -33,6 +33,7 @@
 + (id)uuid;
 @property(readonly, nonatomic) NSDate *updateTime; // @synthesize updateTime=_updateTime;
 - (void).cxx_destruct;
+- (void)unitTest_setUpdateTime:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)getBinaryValueWithError:(id *)arg1;
 - (id)_init;

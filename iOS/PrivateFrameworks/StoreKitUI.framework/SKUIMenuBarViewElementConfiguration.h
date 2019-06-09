@@ -11,6 +11,7 @@
 @class IKAppMenuBarDocument, NSArray, NSString, SKUIMenuItemViewElement;
 @protocol SKUIMenuBarViewElementConfigurationDelegate, _SKUIMenuBarViewElementConfigurationReloadDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuBarViewElementConfiguration : NSObject <IKAppMenuBarDocumentDelegate>
 {
     IKAppMenuBarDocument *_menuBarDocument;

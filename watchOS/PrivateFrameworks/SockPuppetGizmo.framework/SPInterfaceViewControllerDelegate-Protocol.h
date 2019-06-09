@@ -4,36 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SockPuppetGizmo/NSObject-Protocol.h>
+#import <SockPuppetGizmo/SPViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSNumber, NSString, SPInterfaceViewController;
+@class NSDictionary, NSString, SPInterfaceViewController;
 
-@protocol SPInterfaceViewControllerDelegate <NSObject>
-- (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 setProperties:(NSDictionary *)arg2 forInterfaceObjectNamed:(NSString *)arg3;
-- (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 crownData:(NSDictionary *)arg2;
+@protocol SPInterfaceViewControllerDelegate <SPViewControllerDelegate>
 - (void)xpcInterfaceViewController:(SPInterfaceViewController *)arg1 gestureData:(NSDictionary *)arg2;
 - (void)interfaceViewController:(SPInterfaceViewController *)arg1 setValue:(id)arg2 forKey:(NSString *)arg3;
-- (void)interfaceViewController:(SPInterfaceViewController *)arg1 sendAction:(NSString *)arg2 withValue:(id)arg3;
 - (void)interfaceContentSystemMinimumLayoutMargins:(SPInterfaceViewController *)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;
 - (void)interfaceContentSafeAreaInsets:(SPInterfaceViewController *)arg1 withValue:(struct UIEdgeInsets)arg2;
 - (void)interfaceOffsetDidScrollToBottom:(SPInterfaceViewController *)arg1;
 - (void)interfaceOffsetDidScrollToTop:(SPInterfaceViewController *)arg1;
 - (void)interfaceDidScrollToTop:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewControllerWillDisappear:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewControllerDidAppear:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewControllerDidDeactivate:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewControllerWillActivate:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewControllerRelease:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewController:(SPInterfaceViewController *)arg1 createCompanionControllerClass:(NSString *)arg2 properties:(NSArray *)arg3 initializationContextID:(NSNumber *)arg4;
 
 @optional
 - (void)interfaceViewControllerPurgeAndRecreate:(SPInterfaceViewController *)arg1;
 - (void)interfaceDidEndScrollingAnimation:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewControllerDidAppearAfterModalDismissal:(SPInterfaceViewController *)arg1;
-- (void)interfaceViewControllerDidDisappearAfterModalPresentation:(SPInterfaceViewController *)arg1;
 - (Class)rootGroupClass;
 - (void)appWithRootInterfaceViewController:(SPInterfaceViewController *)arg1 performActionWithItemID:(NSString *)arg2 forNotificationID:(NSString *)arg3 userInfo:(NSDictionary *)arg4 completionHandler:(void (^)(void))arg5;
-- (struct UIEdgeInsets)interfaceViewControllerContentInsets:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidUpdateInterfaceValues:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidHideDisconnectedView:(SPInterfaceViewController *)arg1;
 - (void)interfaceViewControllerDidShowDisconnectedView:(SPInterfaceViewController *)arg1;

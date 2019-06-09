@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSUShallowCopyPair.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUMutableShallowCopyPair : OITSUShallowCopyPair
 {
 }

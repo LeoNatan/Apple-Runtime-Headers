@@ -27,6 +27,7 @@
 - (void)navigationOwnershipChangedTo:(unsigned long long)arg1;
 - (void)_handleConnectionReset;
 - (void)_setupConnection;
+@property(readonly, nonatomic) NSString *lastNavigatingBundleIdentifier;
 @property(readonly, nonatomic) unsigned long long owner;
 - (void)releaseNavigationOwnership;
 - (void)requestNavigationOwnership;

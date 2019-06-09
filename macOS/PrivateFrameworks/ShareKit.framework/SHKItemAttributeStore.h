@@ -9,6 +9,7 @@
 @class NSDictionary;
 @protocol OS_dispatch_semaphore, SHKShareItem;
 
+__attribute__((visibility("hidden")))
 @interface SHKItemAttributeStore : NSObject
 {
     id <SHKShareItem> _shareItem;

@@ -28,10 +28,8 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
-- (void)endTransaction;
-- (void)beginTransaction;
 - (void)unregisterHost:(id)arg1;
-- (id)registerHost:(id)arg1;
+- (id)registerHost:(id)arg1 withInitialParameters:(id)arg2;
 - (void)registerInvalidationAction:(id)arg1;
 - (void)_performSynchronouslyOnMainThread:(CDUnknownBlockType)arg1;
 - (void)_queue_invalidate;

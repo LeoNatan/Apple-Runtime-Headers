@@ -6,16 +6,44 @@
 
 #import <objc/NSObject.h>
 
+@class NPKPaymentProvisioningFlowControllerRequestContext, NSString;
+
 @interface NPKPaymentProvisioningFlowStepContext : NSObject
 {
+    _Bool _allowsAddLater;
+    NPKPaymentProvisioningFlowControllerRequestContext *_requestContext;
+    NSString *_stepIdentifier;
+    NSString *_backStepIdentifier;
 }
 
+@property(nonatomic) _Bool allowsAddLater; // @synthesize allowsAddLater=_allowsAddLater;
+@property(retain, nonatomic) NSString *backStepIdentifier; // @synthesize backStepIdentifier=_backStepIdentifier;
+@property(retain, nonatomic) NSString *stepIdentifier; // @synthesize stepIdentifier=_stepIdentifier;
+@property(readonly) NPKPaymentProvisioningFlowControllerRequestContext *requestContext; // @synthesize requestContext=_requestContext;
+- (void).cxx_destruct;
+- (id)getIssuerApplicationAddRequestStepContext;
+- (id)verificationCodeStepContext;
+- (id)verificationFieldsStepContext;
+- (id)verificationChannelsStepContext;
 - (id)provisioningResultStepContext;
+- (id)moreInformationStepContext;
 - (id)provisioningProgressStepContext;
 - (id)termsAndConditionsStepContext;
+- (id)productDisambiguationStepContext;
+- (id)localDeviceManualEntryProgressStepContext;
+- (id)localDeviceManualEntryStepContext;
+- (id)secondaryManualEntryStepContext;
 - (id)manualEntryStepContext;
-- (id)remoteCredentialsStepContext;
+- (id)readerModeIngestionStepContext;
+- (id)readerModeEntryStepContext;
+- (id)digitalIssuancePaymentStepContext;
+- (id)digitalIssuanceAmountStepContext;
+- (id)chooseCredentialsStepContext;
+- (id)chooseProductStepContext;
+- (id)chooseFlowStepContext;
 - (id)welcomeStepContext;
+- (id)_baseFlowStepDescription;
+- (id)initWithRequestContext:(id)arg1;
 
 @end
 

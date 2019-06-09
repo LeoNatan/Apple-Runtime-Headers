@@ -33,7 +33,7 @@
 @property(readonly, nonatomic) unsigned int planes; // @dynamic planes;
 @property(readonly, nonatomic) unsigned int height; // @dynamic height;
 @property(readonly, nonatomic) unsigned int width; // @dynamic width;
-@property(readonly, nonatomic) unsigned int length; // @dynamic length;
+@property(readonly, nonatomic) unsigned int bytesLength; // @dynamic bytesLength;
 @property(readonly, nonatomic) const void *bytes; // @dynamic bytes;
 - (_Bool)writeToFile:(id)arg1 error:(id *)arg2;
 - (id)initWithUuid:(id)arg1 structure:(struct CLKUIAtlasBackingStructure)arg2 mmapFile:(id)arg3;

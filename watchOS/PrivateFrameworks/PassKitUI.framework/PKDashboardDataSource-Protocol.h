@@ -13,6 +13,7 @@
 - (id <PKDashboardItem>)itemAtIndexPath:(NSIndexPath *)arg1;
 - (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
 - (unsigned int)numberOfSections;
+- (NSString *)footerTextForSection:(unsigned int)arg1;
 - (NSString *)titleForSection:(unsigned int)arg1;
 
 @optional

@@ -6,11 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet, NSString;
+@class NSString;
 
 @interface SFLDefaults : NSObject
 {
-    struct os_unfair_lock_s _lock;
 }
 
 + (id)sharedInstance;
@@ -20,12 +19,8 @@
 @property(readonly) NSString *legacyAsyncServiceName;
 @property(readonly) NSString *legacyServiceName;
 @property(readonly) NSString *serviceName;
-@property(readonly) NSSet *modernizedListIdentifiers;
-@property(readonly) struct os_unfair_lock_s *lock;
 - (id)_objectForPrivilegedKey:(id)arg1;
 - (id)_objectForKey:(id)arg1;
-- (void)finalize;
-- (id)init;
 
 @end
 

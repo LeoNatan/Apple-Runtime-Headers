@@ -8,5 +8,16 @@
 
 @interface NSControl (ASKContainerName)
 + (id)containerName_ask;
+- (id)handlePerformActionScriptCommand:(id)arg1;
+- (void)setAlignment_ask:(unsigned long long)arg1;
+- (unsigned long long)alignment_ask;
+- (void)setAction_ask:(id)arg1;
+- (id)action_ask;
+- (void)setTarget_ask:(id)arg1;
+- (id)target_ask;
+- (void)setIsEnabled:(BOOL)arg1;
+- (void)setIsContinuous:(BOOL)arg1;
+- (void)setContent:(id)arg1;
+- (id)content;
 @end
 

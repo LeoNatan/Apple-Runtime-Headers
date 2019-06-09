@@ -14,6 +14,8 @@
 @interface NSImageCell : NSCell <NSCopying, NSCoding>
 {
     id _controlView;
+    struct _NSImageCellAnimationState *_animationState;
+    NSImage *_scaledImage;
     struct __ICFlags {
         unsigned int _unused:21;
         unsigned int _animates:1;
@@ -21,8 +23,6 @@
         unsigned int _scale:3;
         unsigned int _style:3;
     } _icFlags;
-    struct _NSImageCellAnimationState *_animationState;
-    NSImage *_scaledImage;
 }
 
 + (struct CGRect)_imageRectForDrawingImageOfAlignmentRectSize:(struct CGSize)arg1 inFrame:(struct CGRect)arg2 scaling:(unsigned long long)arg3 alignment:(unsigned long long)arg4 flipped:(BOOL)arg5;
@@ -55,10 +55,11 @@
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_drawImageWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_shouldDrawWithContentTintColorInView:(id)arg1;
-- (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
-- (BOOL)_preferInactiveContentInView:(id)arg1;
-- (unsigned long long)_interiorContentValueStateInView:(id)arg1;
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (long long)_contentBacking;
+- (void)_updateAppearanceContentStyle:(id)arg1 inView:(id)arg2;
+- (long long)_interiorContentPresentationStateInView:(id)arg1;
+- (long long)_interiorContentValueInView:(id)arg1;
+- (long long)_interiorContentStateInView:(id)arg1;
 - (unsigned long long)_currentImageStateForView:(id)arg1;
 - (BOOL)_shouldClip;
 - (struct CGRect)_imageRectForDrawing:(id)arg1 inFrame:(struct CGRect)arg2 inView:(id)arg3;

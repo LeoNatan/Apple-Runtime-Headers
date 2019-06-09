@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol BRBundleServiceProtocol
+- (void)enableFPFSWithReply:(void (^)(NSError *))arg1;
 - (void)getTypeSupportForBundleID:(NSString *)arg1 typeName:(NSString *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)getEntitledContainerIDsForBundleID:(NSString *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (void)getEntitlementsForBundleID:(NSString *)arg1 reply:(void (^)(NSDictionary *, NSURL *, NSError *))arg2;

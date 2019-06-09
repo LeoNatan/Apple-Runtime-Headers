@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 + (id)predicatesForStreet:(id)arg1;
 @property(readonly, copy, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, copy) NSString *description;
@@ -36,7 +38,6 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

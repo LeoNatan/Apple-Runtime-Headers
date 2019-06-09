@@ -9,7 +9,7 @@
 #import <CloudKit/NSCopying-Protocol.h>
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class CKRecord, CKRecordID, CKShare, CKShareParticipant, CKUserIdentity, NSArray, NSData, NSString;
+@class CKDeviceToDeviceShareInvitationToken, CKRecord, CKRecordID, CKRecordZone, CKShare, CKShareParticipant, CKUserIdentity, NSArray, NSData, NSString;
 
 @interface CKShareMetadata : NSObject <NSCopying, NSSecureCoding>
 {
@@ -26,20 +26,24 @@
     NSData *_protectedFullToken;
     NSData *_publicToken;
     NSData *_privateToken;
+    CKRecordZone *_sharedZone;
     CKShareParticipant *_callingParticipant;
     NSArray *_outOfNetworkMatches;
-    NSArray *_sharedItemHierarchy;
+    NSArray *_sharedItemHierarchyIDs;
     NSString *_rootRecordType;
     NSData *_encryptedData;
+    CKDeviceToDeviceShareInvitationToken *_invitationToken;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) CKDeviceToDeviceShareInvitationToken *invitationToken; // @synthesize invitationToken=_invitationToken;
 @property(retain, nonatomic) NSData *encryptedData; // @synthesize encryptedData=_encryptedData;
 @property(nonatomic) _Bool acceptedInProcess; // @synthesize acceptedInProcess=_acceptedInProcess;
 @property(retain, nonatomic) NSString *rootRecordType; // @synthesize rootRecordType=_rootRecordType;
-@property(copy, nonatomic) NSArray *sharedItemHierarchy; // @synthesize sharedItemHierarchy=_sharedItemHierarchy;
+@property(copy, nonatomic) NSArray *sharedItemHierarchyIDs; // @synthesize sharedItemHierarchyIDs=_sharedItemHierarchyIDs;
 @property(retain, nonatomic) NSArray *outOfNetworkMatches; // @synthesize outOfNetworkMatches=_outOfNetworkMatches;
 @property(copy, nonatomic) CKShareParticipant *callingParticipant; // @synthesize callingParticipant=_callingParticipant;
+@property(retain, nonatomic) CKRecordZone *sharedZone; // @synthesize sharedZone=_sharedZone;
 @property(copy, nonatomic) NSData *privateToken; // @synthesize privateToken=_privateToken;
 @property(copy, nonatomic) NSData *publicToken; // @synthesize publicToken=_publicToken;
 @property(copy, nonatomic) NSData *protectedFullToken; // @synthesize protectedFullToken=_protectedFullToken;

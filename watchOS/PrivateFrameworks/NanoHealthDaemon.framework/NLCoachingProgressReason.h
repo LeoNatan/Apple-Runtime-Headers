@@ -12,8 +12,6 @@
 }
 
 @property(nonatomic) double minimumDayDuration; // @synthesize minimumDayDuration=_minimumDayDuration;
-@property(readonly, nonatomic) _Bool isScheduled;
-- (_Bool)didCrossActivityThresholdWithModel:(id)arg1 evaluationDelegate:(id)arg2 forGoalType:(int)arg3;
 - (id)nextFireDateWithModel:(id)arg1;
 
 @end

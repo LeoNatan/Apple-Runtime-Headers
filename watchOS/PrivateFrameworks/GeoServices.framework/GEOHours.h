@@ -8,19 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOHours : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_56d48c16 _days;
     NSMutableArray *_timeRanges;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_days:1;
+        unsigned int read_timeRanges:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_days:1;
+        unsigned int wrote_timeRanges:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)timeRangeType;
-@property(retain, nonatomic) NSMutableArray *timeRanges; // @synthesize timeRanges=_timeRanges;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -29,20 +40,26 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)timeRangeAtIndex:(unsigned int)arg1;
 - (unsigned int)timeRangesCount;
+- (void)_addNoFlagsTimeRange:(id)arg1;
 - (void)addTimeRange:(id)arg1;
 - (void)clearTimeRanges;
+@property(retain, nonatomic) NSMutableArray *timeRanges;
+- (void)_readTimeRanges;
 - (int)StringAsDays:(id)arg1;
 - (id)daysAsString:(int)arg1;
 - (void)setDays:(int *)arg1 count:(unsigned int)arg2;
 - (int)dayAtIndex:(unsigned int)arg1;
+- (void)_addNoFlagsDay:(int)arg1;
 - (void)addDay:(int)arg1;
 - (void)clearDays;
 @property(readonly, nonatomic) int *days;
 @property(readonly, nonatomic) unsigned int daysCount;
+- (void)_readDays;
 - (void)dealloc;
 - (id)initWithPlaceDataHours:(id)arg1;
 

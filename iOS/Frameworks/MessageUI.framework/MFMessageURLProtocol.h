@@ -6,25 +6,42 @@
 
 #import <Foundation/NSURLProtocol.h>
 
-@class MFAttachment, MFPromise;
+#import <MessageUI/EFLoggable-Protocol.h>
 
-@interface MFMessageURLProtocol : NSURLProtocol
+@class EFPromise, EMContentRepresentation, NSString;
+@protocol EFCancelable;
+
+@interface MFMessageURLProtocol : NSURLProtocol <EFLoggable>
 {
-    MFAttachment *_attachment;
-    MFPromise *_promise;
+    id <EFCancelable> _cancelable;
+    EFPromise *_promise;
+    EMContentRepresentation *_contentRepresentation;
 }
 
 + (_Bool)requestIsCacheEquivalent:(id)arg1 toRequest:(id)arg2;
 + (id)canonicalRequestForRequest:(id)arg1;
 + (_Bool)canInitWithRequest:(id)arg1;
++ (id)contentRepresentationForURL:(id)arg1;
++ (void)registerContentRepresentation:(id)arg1;
++ (void)setRegistry:(id)arg1;
++ (id)registry;
 + (void)initialize;
-@property(retain, nonatomic) MFPromise *promise; // @synthesize promise=_promise;
-@property(retain, nonatomic) MFAttachment *attachment; // @synthesize attachment=_attachment;
++ (id)log;
+@property(retain, nonatomic) EMContentRepresentation *contentRepresentation; // @synthesize contentRepresentation=_contentRepresentation;
+@property(retain, nonatomic) EFPromise *promise; // @synthesize promise=_promise;
+@property(retain, nonatomic) id <EFCancelable> cancelable; // @synthesize cancelable=_cancelable;
+- (void).cxx_destruct;
 - (void)stopLoading;
 - (void)startLoading;
 - (id)_cachedResponseWithData:(id)arg1 mimeType:(id)arg2 error:(id *)arg3;
 - (id)initWithRequest:(id)arg1 cachedResponse:(id)arg2 client:(id)arg3;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

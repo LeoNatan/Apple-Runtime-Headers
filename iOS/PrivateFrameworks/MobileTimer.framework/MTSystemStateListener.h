@@ -25,12 +25,13 @@
 - (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
-- (id)handledLiveDarwinNotifications;
-- (void)handleNotification:(id)arg1;
-- (_Bool)handlesNotification:(id)arg1;
+- (id)liveDarwinNotifications;
+- (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
 - (void)_handleF5Reset;
 - (void)_handleRestoreDone;
 - (_Bool)_checkIfRestoreDone;
+- (_Bool)checkSystemReady;
 - (id)initWithDelegate:(id)arg1;
 
 // Remaining properties

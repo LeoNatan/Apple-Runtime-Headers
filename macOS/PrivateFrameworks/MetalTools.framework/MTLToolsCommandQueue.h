@@ -8,8 +8,8 @@
 
 #import <MetalTools/MTLCommandQueueSPI-Protocol.h>
 
-@class MTLToolsPointerArray, NSMutableDictionary, NSString;
-@protocol MTLDevice;
+@class MTLToolsPointerArray, NSMutableDictionary, NSObject, NSString;
+@protocol MTLDevice, OS_dispatch_queue;
 
 @interface MTLToolsCommandQueue : MTLToolsObject <MTLCommandQueueSPI>
 {
@@ -25,10 +25,15 @@
 @property(nonatomic, getter=isStatEnabled) BOOL StatEnabled;
 - (id)getRequestedCounters;
 - (id)availableCounters;
+@property(readonly) NSObject<OS_dispatch_queue> *completionQueue;
+@property(readonly) BOOL commitSynchronously;
+@property(readonly) NSObject<OS_dispatch_queue> *commitQueue;
+@property(readonly) unsigned long long qosLevel;
 - (id)subdivideCounterList:(id)arg1;
 - (int)requestCounters:(id)arg1 withIndex:(unsigned long long)arg2;
 - (void)addPerfSampleHandler:(CDUnknownBlockType)arg1;
 - (int)requestCounters:(id)arg1;
+@property BOOL isOpenGLQueue;
 - (void)setSubmissionQueue:(id)arg1;
 - (void)setCompletionQueue:(id)arg1;
 @property(getter=isProfilingEnabled) BOOL profilingEnabled;
@@ -36,8 +41,6 @@
 @property BOOL skipRender;
 - (void)finish;
 @property int backgroundTrackingPID;
-@property(readonly) long long qosRelativePriority;
-@property(readonly) unsigned long long qosClass;
 @property(readonly) unsigned long long maxCommandBufferCount;
 - (BOOL)setBackgroundGPUPriority:(unsigned long long)arg1 offset:(unsigned short)arg2;
 - (BOOL)setBackgroundGPUPriority:(unsigned long long)arg1;

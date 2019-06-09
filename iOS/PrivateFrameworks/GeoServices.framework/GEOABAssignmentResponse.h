@@ -8,46 +8,67 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOABClientConfig, GEOABSecondPartyPlaceRequestClientMetaData, NSMutableArray, NSString, PBUnknownFields;
+@class GEOABClientConfig, GEOABSecondPartyPlaceRequestClientMetaData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOABAssignmentResponse : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned long long _branchExpirationTtlHours;
-    unsigned long long _refreshIntervalSeconds;
-    double _timestamp;
     NSMutableArray *_assignments;
+    unsigned long long _branchExpirationTtlHours;
     GEOABClientConfig *_clientConfig;
     GEOABSecondPartyPlaceRequestClientMetaData *_mapsAbClientMetadata;
     GEOABSecondPartyPlaceRequestClientMetaData *_parsecClientMetadata;
     GEOABSecondPartyPlaceRequestClientMetaData *_rapClientMetadata;
+    unsigned long long _refreshIntervalSeconds;
     NSString *_requestGuid;
     GEOABSecondPartyPlaceRequestClientMetaData *_siriClientMetadata;
     NSString *_sourceURL;
+    double _timestamp;
     _Bool _invalidatePoiCache;
     _Bool _invalidateTileCache;
     struct {
-        unsigned int branchExpirationTtlHours:1;
-        unsigned int refreshIntervalSeconds:1;
-        unsigned int timestamp:1;
-        unsigned int invalidatePoiCache:1;
-        unsigned int invalidateTileCache:1;
-    } _has;
+        unsigned int has_branchExpirationTtlHours:1;
+        unsigned int has_refreshIntervalSeconds:1;
+        unsigned int has_timestamp:1;
+        unsigned int has_invalidatePoiCache:1;
+        unsigned int has_invalidateTileCache:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_assignments:1;
+        unsigned int read_clientConfig:1;
+        unsigned int read_mapsAbClientMetadata:1;
+        unsigned int read_parsecClientMetadata:1;
+        unsigned int read_rapClientMetadata:1;
+        unsigned int read_requestGuid:1;
+        unsigned int read_siriClientMetadata:1;
+        unsigned int read_sourceURL:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_assignments:1;
+        unsigned int wrote_branchExpirationTtlHours:1;
+        unsigned int wrote_clientConfig:1;
+        unsigned int wrote_mapsAbClientMetadata:1;
+        unsigned int wrote_parsecClientMetadata:1;
+        unsigned int wrote_rapClientMetadata:1;
+        unsigned int wrote_refreshIntervalSeconds:1;
+        unsigned int wrote_requestGuid:1;
+        unsigned int wrote_siriClientMetadata:1;
+        unsigned int wrote_sourceURL:1;
+        unsigned int wrote_timestamp:1;
+        unsigned int wrote_invalidatePoiCache:1;
+        unsigned int wrote_invalidateTileCache:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)assignmentType;
-@property(nonatomic) unsigned long long branchExpirationTtlHours; // @synthesize branchExpirationTtlHours=_branchExpirationTtlHours;
-@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *mapsAbClientMetadata; // @synthesize mapsAbClientMetadata=_mapsAbClientMetadata;
-@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *rapClientMetadata; // @synthesize rapClientMetadata=_rapClientMetadata;
-@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *siriClientMetadata; // @synthesize siriClientMetadata=_siriClientMetadata;
-@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *parsecClientMetadata; // @synthesize parsecClientMetadata=_parsecClientMetadata;
-@property(retain, nonatomic) GEOABClientConfig *clientConfig; // @synthesize clientConfig=_clientConfig;
-@property(nonatomic) unsigned long long refreshIntervalSeconds; // @synthesize refreshIntervalSeconds=_refreshIntervalSeconds;
-@property(nonatomic) _Bool invalidatePoiCache; // @synthesize invalidatePoiCache=_invalidatePoiCache;
-@property(nonatomic) _Bool invalidateTileCache; // @synthesize invalidateTileCache=_invalidateTileCache;
-@property(retain, nonatomic) NSMutableArray *assignments; // @synthesize assignments=_assignments;
-@property(retain, nonatomic) NSString *requestGuid; // @synthesize requestGuid=_requestGuid;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *sourceURL;
+@property(readonly, nonatomic) _Bool hasSourceURL;
+- (void)_readSourceURL;
+@property(nonatomic) _Bool hasTimestamp;
+@property(nonatomic) double timestamp;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -56,29 +77,43 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasBranchExpirationTtlHours;
+@property(nonatomic) unsigned long long branchExpirationTtlHours;
+@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *mapsAbClientMetadata;
 @property(readonly, nonatomic) _Bool hasMapsAbClientMetadata;
+- (void)_readMapsAbClientMetadata;
+@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *rapClientMetadata;
 @property(readonly, nonatomic) _Bool hasRapClientMetadata;
+- (void)_readRapClientMetadata;
+@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *siriClientMetadata;
 @property(readonly, nonatomic) _Bool hasSiriClientMetadata;
+- (void)_readSiriClientMetadata;
+@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *parsecClientMetadata;
 @property(readonly, nonatomic) _Bool hasParsecClientMetadata;
+- (void)_readParsecClientMetadata;
+@property(retain, nonatomic) GEOABClientConfig *clientConfig;
 @property(readonly, nonatomic) _Bool hasClientConfig;
+- (void)_readClientConfig;
 @property(nonatomic) _Bool hasRefreshIntervalSeconds;
+@property(nonatomic) unsigned long long refreshIntervalSeconds;
 @property(nonatomic) _Bool hasInvalidatePoiCache;
+@property(nonatomic) _Bool invalidatePoiCache;
 @property(nonatomic) _Bool hasInvalidateTileCache;
+@property(nonatomic) _Bool invalidateTileCache;
 - (id)assignmentAtIndex:(unsigned long long)arg1;
 - (unsigned long long)assignmentsCount;
+- (void)_addNoFlagsAssignment:(id)arg1;
 - (void)addAssignment:(id)arg1;
 - (void)clearAssignments;
+@property(retain, nonatomic) NSMutableArray *assignments;
+- (void)_readAssignments;
+@property(retain, nonatomic) NSString *requestGuid;
 @property(readonly, nonatomic) _Bool hasRequestGuid;
+- (void)_readRequestGuid;
 - (id)_clientConfigValueForKey:(id)arg1;
-- (id)_querySubstringForServiceType:(int)arg1 placeRequestType:(int)arg2;
-- (id)_experimentAssignmentForServiceType:(int)arg1 placeRequestType:(int)arg2;
-@property(retain, nonatomic) NSString *sourceURL;
-@property(readonly, nonatomic) _Bool hasSourceURL;
-@property(nonatomic) _Bool hasTimestamp;
-@property(nonatomic) double timestamp;
 
 @end
 

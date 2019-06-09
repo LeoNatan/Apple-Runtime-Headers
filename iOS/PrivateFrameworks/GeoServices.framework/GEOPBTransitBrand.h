@@ -8,27 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOStyleAttributes, NSString, PBUnknownFields;
+@class GEOStyleAttributes, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPBTransitBrand : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     unsigned long long _muid;
-    unsigned int _brandIndex;
     NSString *_nameDisplayString;
     GEOStyleAttributes *_styleAttributes;
+    unsigned int _brandIndex;
     struct {
-        unsigned int muid:1;
-        unsigned int brandIndex:1;
-    } _has;
+        unsigned int has_muid:1;
+        unsigned int has_brandIndex:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_nameDisplayString:1;
+        unsigned int read_styleAttributes:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_muid:1;
+        unsigned int wrote_nameDisplayString:1;
+        unsigned int wrote_styleAttributes:1;
+        unsigned int wrote_brandIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *nameDisplayString; // @synthesize nameDisplayString=_nameDisplayString;
-@property(retain, nonatomic) GEOStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-@property(nonatomic) unsigned int brandIndex; // @synthesize brandIndex=_brandIndex;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,12 +45,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *nameDisplayString;
 @property(readonly, nonatomic) _Bool hasNameDisplayString;
+- (void)_readNameDisplayString;
+@property(retain, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) _Bool hasStyleAttributes;
+- (void)_readStyleAttributes;
 @property(nonatomic) _Bool hasMuid;
+@property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasBrandIndex;
+@property(nonatomic) unsigned int brandIndex;
 
 @end
 

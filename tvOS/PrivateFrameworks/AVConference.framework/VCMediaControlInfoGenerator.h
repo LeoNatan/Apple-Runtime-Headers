@@ -17,19 +17,24 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *_callbacksDict;
     NSMutableArray *_controlInfoPool;
     struct _opaque_pthread_mutex_t _controlInfoPoolLock;
+    unsigned char _version;
+    unsigned int _optionBitmap;
 }
 
+@property(readonly) unsigned char version; // @synthesize version=_version;
 @property(readonly) unsigned int type; // @synthesize type=_type;
 - (void)disposeControlInfo:(id)arg1;
-- (void *)newControlInfoWithBuffer:(const char *)arg1 length:(unsigned long long)arg2 optionalControlInfo:(CDStruct_475a354f *)arg3;
+- (void *)newControlInfoWithBuffer:(const char *)arg1 length:(unsigned long long)arg2 optionalControlInfo:(CDStruct_39aa150d *)arg3;
 - (void *)newControlInfo;
 - (id)newControlInfoFromPool;
-- (void *)newMediaControlInfoWithBuffer:(const char *)arg1 length:(unsigned long long)arg2 optionalControlInfo:(CDStruct_475a354f *)arg3;
+- (unsigned long long)feedbackSize;
+- (int)addMediaControlInfoOption:(unsigned int)arg1;
+- (void *)newMediaControlInfoWithBuffer:(const char *)arg1 length:(unsigned long long)arg2 optionalControlInfo:(CDStruct_39aa150d *)arg3;
 - (void *)newMediaControlInfo;
 - (int)deregisterCallbacksWithContext:(void *)arg1;
 - (int)registerFillBlobCallback:(CDUnknownFunctionPointerType)arg1 processBlobCallback:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
 - (void)dealloc;
-- (id)initWithType:(unsigned int)arg1;
+- (id)initWithType:(unsigned int)arg1 version:(unsigned char)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

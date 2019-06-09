@@ -30,6 +30,7 @@
 - (void)transitionToSize:(struct CGSize)arg1 duration:(double)arg2 animationCurve:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)willMoveToWindow:(id)arg1;
 - (struct CGRect)convertRectToImage:(struct CGRect)arg1;
+- (void)renderFrameReachedTargetSize;
 @property(retain, nonatomic) NUImageGeometry *geometry;
 - (void)layoutSubviews;
 - (_Bool)inLiveResize;

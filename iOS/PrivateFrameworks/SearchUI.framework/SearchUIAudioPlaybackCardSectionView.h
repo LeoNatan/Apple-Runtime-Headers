@@ -6,28 +6,34 @@
 
 #import <SearchUI/SearchUICardSectionView.h>
 
-#import <SearchUI/NUIContainerStackViewDelegate-Protocol.h>
+#import <SearchUI/NUIContainerViewDelegate-Protocol.h>
 #import <SearchUI/SearchUICardSectionViewUpdatable-Protocol.h>
 #import <SearchUI/SearchUISelectableTextViewDelegate-Protocol.h>
 
-@class NSString, SKUIPlayButton, TLKStackView;
+@class NSString, SearchUIButton, SearchUILabel, SearchUISelectableTextView, TLKStackView;
 
-@interface SearchUIAudioPlaybackCardSectionView : SearchUICardSectionView <NUIContainerStackViewDelegate, SearchUISelectableTextViewDelegate, SearchUICardSectionViewUpdatable>
+@interface SearchUIAudioPlaybackCardSectionView : SearchUICardSectionView <NUIContainerViewDelegate, SearchUISelectableTextViewDelegate, SearchUICardSectionViewUpdatable>
 {
-    SKUIPlayButton *_playButton;
+    SearchUILabel *_detailTextLabel;
+    SearchUISelectableTextView *_titleTextView;
+    SearchUISelectableTextView *_subtitleView;
+    SearchUIButton *_playButton;
 }
 
-@property(retain, nonatomic) SKUIPlayButton *playButton; // @synthesize playButton=_playButton;
+@property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
+@property(retain, nonatomic) SearchUISelectableTextView *subtitleView; // @synthesize subtitleView=_subtitleView;
+@property(retain, nonatomic) SearchUISelectableTextView *titleTextView; // @synthesize titleTextView=_titleTextView;
+@property(retain, nonatomic) SearchUILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
 - (void).cxx_destruct;
 - (void)selectableTextView:(id)arg1 presentViewController:(id)arg2;
 - (void)_updateStateFromCardSection:(id)arg1 animated:(_Bool)arg2;
 - (void)_playButtonPressed:(id)arg1;
 - (void)updateStateFromCardSection:(id)arg1;
 - (id)setupContentView;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;
 
 // Remaining properties
-@property(retain) TLKStackView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) TLKStackView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

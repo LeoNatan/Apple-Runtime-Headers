@@ -8,7 +8,7 @@
 
 #import <EventKitUI/CUIKSingleDayTimelineViewItem-Protocol.h>
 
-@class EKCalendarDate, EKDayOccurrenceView, EKEvent, NSDate, NSString;
+@class EKCalendarDate, EKDayOccurrenceContentPayload, EKDayOccurrenceState, EKDayOccurrenceView, EKEvent, NSDate, NSString;
 
 @interface EKDayViewContentItem : NSObject <CUIKSingleDayTimelineViewItem>
 {
@@ -17,6 +17,9 @@
     double _visibleHeight;
     _Bool _visibleHeightLocked;
     double _travelTimeHeight;
+    long long _sizeClass;
+    long long _currentRequestId;
+    EKDayOccurrenceContentPayload *_stagedPayload;
     _Bool _usesSmallText;
     _Bool _isProposedTime;
     _Bool _isLoadingAsync;
@@ -28,9 +31,11 @@
     double _travelTime;
     double _topPinningProximity;
     double _bottomPinningProximity;
+    EKDayOccurrenceState *_currentState;
 }
 
 + (double)barToBarHorizontalDistanceIncludingBarWidth;
+@property(readonly, nonatomic) EKDayOccurrenceState *currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) double bottomPinningProximity; // @synthesize bottomPinningProximity=_bottomPinningProximity;
 @property(nonatomic) double topPinningProximity; // @synthesize topPinningProximity=_topPinningProximity;
 @property(nonatomic) double travelTime; // @synthesize travelTime=_travelTime;
@@ -43,8 +48,10 @@
 @property(nonatomic) _Bool usesSmallText; // @synthesize usesSmallText=_usesSmallText;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 - (void).cxx_destruct;
-- (void)setTravelTimeHeight:(double)arg1;
-- (void)setVisibleHeight:(double)arg1;
+- (void)_updateWithPayload:(id)arg1;
+- (void)_requestPayload:(_Bool)arg1;
+@property(nonatomic) double travelTimeHeight;
+@property(nonatomic) double visibleHeight;
 @property(readonly) _Bool visibleHeightLocked;
 @property struct CGRect unPinnedViewFrame;
 - (void)setStagedFrame:(struct CGRect)arg1;
@@ -60,7 +67,7 @@
 @property(readonly, copy, nonatomic) EKCalendarDate *startDateIncludingTravelTime;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithEventIndex:(unsigned long long)arg1;
+- (id)initWithEventIndex:(unsigned long long)arg1 sizeClass:(long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

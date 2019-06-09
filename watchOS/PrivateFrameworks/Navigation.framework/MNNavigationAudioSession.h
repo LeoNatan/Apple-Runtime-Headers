@@ -32,17 +32,18 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) unsigned int sessionType; // @synthesize sessionType=_sessionType;
 - (void).cxx_destruct;
-- (_Bool)_headphonesAreInUse;
 - (_Bool)vibrateForPrompt:(unsigned int)arg1;
 - (void)prepareToAnnounce;
 - (void)endSession;
 - (void)beginSession;
 - (void)clearAllAnnouncements;
 - (void)stop;
+- (_Bool)isSpeaking;
 - (void)speak:(id)arg1 shortPromptType:(unsigned int)arg2 ignorePromptStyle:(_Bool)arg3 minimumRequiredLevel:(unsigned int)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)speak:(id)arg1 shortPromptType:(unsigned int)arg2 ignorePromptStyle:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (_Bool)_beepIfNecessaryWithShortPromptType:(unsigned int)arg1 textToSpeak:(id)arg2;
 - (_Bool)_isVoiceGuidanceEnabled;
+- (_Bool)_deviceSettingsAllowSpeech;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

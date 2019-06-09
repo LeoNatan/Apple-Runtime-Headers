@@ -8,6 +8,7 @@
 
 @class SKUIDownloadsCellView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDownloadsTableViewCell : UITableViewCell
 {
     SKUIDownloadsCellView *_cellView;

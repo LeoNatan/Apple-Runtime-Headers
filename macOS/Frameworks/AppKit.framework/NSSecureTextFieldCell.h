@@ -11,7 +11,6 @@
 @interface NSSecureTextFieldCell : NSTextFieldCell
 {
     BOOL _echosBullets;
-    BOOL _csMode;
 }
 
 + (id)_sharedSecureFieldEditor;

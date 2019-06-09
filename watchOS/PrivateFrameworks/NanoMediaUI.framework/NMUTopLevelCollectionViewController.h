@@ -27,7 +27,7 @@
 - (void)_updateSpinnersForVisibleItemAtIndexPath:(id)arg1;
 - (void)_setMarqueeViewsPaused:(_Bool)arg1;
 - (void)_scrollToFirstVisibleItemIfNeeded;
-- (void)_updateBackViewRevealHeight;
+- (void)_updateBackViewHeight;
 - (void)_updateMenuViewVisibility;
 - (void)topLevelCollectionViewController:(id)arg1 didLandOnItemAtIndexPath:(id)arg2;
 - (void)menuTableViewControllerDidUpdateVisibleItems:(id)arg1;
@@ -37,6 +37,7 @@
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)contentLoader:(id)arg1 didUpdateModelResponseWithChangeDetails:(id)arg2;
 - (void)contentLoaderDidFinishLoadingContent:(id)arg1;
 - (void)contentLoaderWillBeginLoadingContent:(id)arg1;

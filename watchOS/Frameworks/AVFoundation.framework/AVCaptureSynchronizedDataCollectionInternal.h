@@ -8,6 +8,7 @@
 
 @class AVCaptureOutput, AVCaptureSynchronizedData, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureSynchronizedDataCollectionInternal : NSObject
 {
     AVCaptureOutput *dataOutputs[4];

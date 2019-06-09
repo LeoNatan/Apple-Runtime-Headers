@@ -14,7 +14,6 @@
 }
 
 + (_Bool)isSuggestionsSupported;
-+ (void)initialize;
 + (id)storeIdentifier;
 + (id)storeInfoClasses;
 @property(retain, nonatomic) id <SGSuggestionsServiceContactsProtocol> suggestionService; // @synthesize suggestionService=_suggestionService;

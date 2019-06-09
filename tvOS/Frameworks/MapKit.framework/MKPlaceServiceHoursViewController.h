@@ -30,11 +30,13 @@
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
 - (void)captureCloseAnalytics;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)_updateServiceHourRows;
 - (void)_contentSizeDidChange;
 - (void)_showAllHeaderButtonTapped;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 type:(long long)arg2;
 

@@ -6,20 +6,27 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class NSDictionary, NSError, NSManagedObjectContext, NSSet, RTPersistenceManager, RTPersistenceStore;
+@class NSCloudKitMirroringDelegateOptions, NSDictionary, NSError, NSManagedObjectContext, NSSet, RTPersistenceManager, RTPersistenceMigrator, RTPersistenceMirroringManager, RTPersistenceStore;
+@protocol RTPersistenceModelProvider;
 
 @protocol RTPersistenceDelegate <NSObject>
+- (NSDictionary *)remoteServerOptionsForStoreWithType:(unsigned long long)arg1;
 - (NSDictionary *)mirroringOptionsForStoreWithType:(unsigned long long)arg1;
 - (NSDictionary *)optionsForStoreWithType:(unsigned long long)arg1 error:(id *)arg2;
-- (void)persistenceManagerDidFinishResetSync:(RTPersistenceManager *)arg1;
-- (void)persistenceManagerWillStartResetSync:(RTPersistenceManager *)arg1;
+- (BOOL)persistenceMirroringManagerDidFinishZonePurge:(RTPersistenceMirroringManager *)arg1 store:(RTPersistenceStore *)arg2 context:(NSManagedObjectContext *)arg3 error:(id *)arg4;
+- (void)persistenceManagerDidFinishResetSync:(RTPersistenceManager *)arg1 userInfo:(NSDictionary *)arg2;
+- (void)persistenceManagerWillStartResetSync:(RTPersistenceManager *)arg1 userInfo:(NSDictionary *)arg2 context:(NSManagedObjectContext *)arg3;
 - (BOOL)prepareStore:(RTPersistenceStore *)arg1 withContext:(NSManagedObjectContext *)arg2 error:(id *)arg3;
 - (NSSet *)appleIDsForStore:(RTPersistenceStore *)arg1;
 - (BOOL)store:(RTPersistenceStore *)arg1 validateAppleIDs:(NSSet *)arg2;
 
 @optional
+- (void)persistenceStore:(RTPersistenceStore *)arg1 willBeginMirroringWithOptions:(NSCloudKitMirroringDelegateOptions *)arg2;
+- (void)persistenceMigrator:(RTPersistenceMigrator *)arg1 didFinishMigratingStore:(RTPersistenceStore *)arg2 withModelProvider:(id <RTPersistenceModelProvider>)arg3;
+- (void)persistenceMigrator:(RTPersistenceMigrator *)arg1 didStartMigratingStore:(RTPersistenceStore *)arg2 withModelProvider:(id <RTPersistenceModelProvider>)arg3;
 - (BOOL)backupPersistenceStore:(RTPersistenceStore *)arg1 error:(id *)arg2;
 - (void)persistenceStore:(RTPersistenceStore *)arg1 encounteredCriticalError:(NSError *)arg2;
 - (void)persistenceStore:(RTPersistenceStore *)arg1 failedWithError:(NSError *)arg2;
+- (void)persistenceManager:(RTPersistenceManager *)arg1 didFinishSetup:(BOOL)arg2;
 @end
 

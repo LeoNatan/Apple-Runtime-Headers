@@ -10,6 +10,10 @@
 {
 }
 
++ (id)downtimeWhitelistContactTypeTextColor;
++ (id)downtimeWhitelistUnrachableContactTextColor;
++ (id)downtimeWhitelistNotPersistedContactTextColor;
++ (id)downtimeWhitelistPersistedContactTextColor;
 + (id)bundle;
 + (id)colorNamed:(id)arg1;
 + (id)touchBarContactViewControllerRemoveRowButtonBackgroundColor;

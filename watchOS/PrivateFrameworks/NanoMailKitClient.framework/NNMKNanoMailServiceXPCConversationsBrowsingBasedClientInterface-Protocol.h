@@ -4,11 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <NanoMailKitClient/NNMKNanoMailServiceXPCAdHocClientInterface-Protocol.h>
 #import <NanoMailKitClient/NNMKNanoMailServiceXPCBasicClientInterface-Protocol.h>
 
 @class NSArray, NSDate, NSError, NSString;
 
-@protocol NNMKNanoMailServiceXPCConversationsBrowsingBasedClientInterface <NNMKNanoMailServiceXPCBasicClientInterface>
+@protocol NNMKNanoMailServiceXPCConversationsBrowsingBasedClientInterface <NNMKNanoMailServiceXPCBasicClientInterface, NNMKNanoMailServiceXPCAdHocClientInterface>
+- (oneway void)receiverXPCServerChangeAccountValidationStatus:(unsigned int)arg1 accountName:(NSString *)arg2;
 - (oneway void)receiverXPCServerDidUpdateMailboxWithId:(NSString *)arg1 lastUpdate:(NSDate *)arg2;
 - (oneway void)receiverXPCServerDidFailWithError:(NSError *)arg1;
 - (oneway void)receiverXPCServerDidReportProgress:(int)arg1 forComposedMessageWithId:(NSString *)arg2 referenceMessageId:(NSString *)arg3;

@@ -8,6 +8,7 @@
 
 @class NSSet, SKUIStoreIdentifier;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStoreItemRelationship : NSObject
 {
     SKUIStoreIdentifier *_singleParent;

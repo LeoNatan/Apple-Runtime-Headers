@@ -23,6 +23,9 @@
 - (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)chatTranscriptItems;
+- (id)chatTranscriptItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)numberOfChatTranscriptItems;
 - (BOOL)filterEmptyChatOut;
 - (BOOL)removeParticipant:(id)arg1;
 - (BOOL)canInsertFilesAtURLs:(id)arg1 intoInputLineContentsReturningError:(id *)arg2;

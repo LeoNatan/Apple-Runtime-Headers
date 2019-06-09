@@ -7,14 +7,14 @@
 #import <UIKit/UIView.h>
 
 #import <PlatterKit/BSUIDateLabelDelegate-Protocol.h>
-#import <PlatterKit/MTVibrantStylingProviderObserving-Protocol.h>
-#import <PlatterKit/MTVibrantStylingRequiring-Protocol.h>
+#import <PlatterKit/MTVisualStylingProviderObserving-Protocol.h>
+#import <PlatterKit/MTVisualStylingRequiring-Protocol.h>
 #import <PlatterKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
-@class BSUIFontProvider, MTVibrantStylingProvider, NSArray, NSDate, NSString, NSTimeZone, PLPlatterHeaderContentViewLayoutManager, UIButton, UIFont, UIImageView, UILabel;
+@class BSUIFontProvider, MTVisualStylingProvider, NSArray, NSDate, NSString, NSTimeZone, PLPlatterHeaderContentViewLayoutManager, UIButton, UIFont, UIImageView, UILabel;
 @protocol BSUIDateLabel;
 
-@interface PLPlatterHeaderContentView : UIView <BSUIDateLabelDelegate, MTVibrantStylingProviderObserving, MTVibrantStylingRequiring, PLContentSizeCategoryAdjusting>
+@interface PLPlatterHeaderContentView : UIView <BSUIDateLabelDelegate, MTVisualStylingProviderObserving, MTVisualStylingRequiring, PLContentSizeCategoryAdjusting>
 {
     UILabel<BSUIDateLabel> *_dateLabel;
     NSArray *_iconButtons;
@@ -22,11 +22,11 @@
     UIButton *_utilityButton;
     PLPlatterHeaderContentViewLayoutManager *_layoutManager;
     _Bool _hasUpdatedContent;
+    MTVisualStylingProvider *_visualStylingProvider;
     _Bool _adjustsFontForContentSizeCategory;
     _Bool _dateAllDay;
     _Bool _heedsHorizontalLayoutMargins;
     _Bool _usesLargeTextLayout;
-    MTVibrantStylingProvider *_vibrantStylingProvider;
     NSString *_preferredContentSizeCategory;
     NSDate *_date;
     NSTimeZone *_timeZone;
@@ -50,12 +50,15 @@
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
-@property(retain, nonatomic) MTVibrantStylingProvider *vibrantStylingProvider; // @synthesize vibrantStylingProvider=_vibrantStylingProvider;
 - (void).cxx_destruct;
 - (void)dateLabelDidChange:(id)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
-- (void)vibrantStylingDidChangeForProvider:(id)arg1;
+- (CDUnknownBlockType)visualStylingProvider:(id)arg1 willReplaceStylingOfView:(id)arg2;
+- (void)setVisualStylingProvider:(id)arg1;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+@property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
+@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
+- (id)visualStylingProviderForCategory:(long long)arg1;
 - (void)layoutSubviews;
 - (void)layoutMarginsDidChange;
 - (void)_updateUtilityButtonFont;
@@ -90,7 +93,7 @@
 - (void)_layoutTitleLabelWithScale:(double)arg1;
 - (void)_layoutIconButtonsWithScale:(double)arg1;
 - (void)_configureUtilityButton;
-- (void)_updateUtilityButtonVibrantStyling;
+- (void)_updateUtilityButtonVisualStyling;
 - (void)_configureDateLabel;
 - (void)_configureTitleLabel:(id)arg1;
 - (void)_updateStylingForTitleLabel:(id)arg1;

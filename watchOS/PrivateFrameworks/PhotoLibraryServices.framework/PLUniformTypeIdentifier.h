@@ -4,35 +4,43 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreData/NSManagedObject.h>
+#import <PhotoLibraryServices/PLManagedObject.h>
 
 #import <PhotoLibraryServices/PLUniformTypeIdentifierIdentity-Protocol.h>
 
-@class NSNumber, NSSet, NSString;
+@class NSNumber, NSString;
 
-@interface PLUniformTypeIdentifier : NSManagedObject <PLUniformTypeIdentifierIdentity>
+@interface PLUniformTypeIdentifier : PLManagedObject <PLUniformTypeIdentifierIdentity>
 {
-    NSNumber *_backingConformsToImage;
-    NSNumber *_backingConformsToMovie;
+    NSNumber *_isLosslessEncoding;
+    NSNumber *_conformsToJPEG;
 }
 
++ (id)utisConformingToRAWInContext:(id)arg1;
++ (id)plistUniformTypeIdentifierInContext:(id)arg1;
++ (id)videoComplementUniformTypeIdentifierInContext:(id)arg1;
 + (id)jpegUniformTypeIdentifierInContext:(id)arg1;
 + (id)uniformTypeIdentifierFromString:(id)arg1 createIfMissing:(_Bool)arg2 context:(id)arg3;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=isPrimaryFormat) _Bool primaryFormat; // @dynamic primaryFormat;
+@property(readonly, nonatomic) _Bool isPlayableVideo;
+@property(readonly, nonatomic, getter=isPrimaryImageFormat) _Bool primaryImageFormat;
+@property(readonly, nonatomic, getter=isDynamic) _Bool dynamic;
+@property(readonly, nonatomic) _Bool isLosslessEncoding;
+@property(readonly, nonatomic) _Bool conformsToJPEG;
+@property(readonly, nonatomic) _Bool conformsToData;
 @property(readonly, nonatomic) _Bool conformsToAudio;
-@property(nonatomic) _Bool conformsToMovie; // @dynamic conformsToMovie;
-@property(nonatomic) _Bool conformsToImage; // @dynamic conformsToImage;
+@property(readonly, copy, nonatomic) NSString *preferredExtension;
 - (_Bool)supportsCloudUpload;
 
 // Remaining properties
+@property(nonatomic) _Bool conformsToImage; // @dynamic conformsToImage;
+@property(nonatomic) _Bool conformsToMovie; // @dynamic conformsToMovie;
+@property(nonatomic) _Bool conformsToRawImage; // @dynamic conformsToRawImage;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(copy, nonatomic) NSString *identifier; // @dynamic identifier;
-@property(retain, nonatomic) NSSet *resources; // @dynamic resources;
 @property(readonly) Class superclass;
 
 @end

@@ -15,6 +15,7 @@
     BOOL _autoDetectBundles;
     NSFileHandle *_networkDirectoryEnumeratorStream;
     NSString *_compressionFormat;
+    CDUnknownBlockType _receiveDataBlock;
     NSString *_startingPath;
     NSSet *_dontDescendPaths;
     NSSet *_additionalProperties;
@@ -23,13 +24,14 @@
 
 + (id)actionWithPayload:(id)arg1;
 + (BOOL)shouldCloseInboundStreamWhenDone;
-+ (BOOL)needsDirectAccessToSendOrReceiveResult;
++ (BOOL)streamsResults;
 + (int)actionID;
 @property(retain) NSDictionary *restartPoint; // @synthesize restartPoint=_restartPoint;
 @property(retain) NSSet *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
 @property BOOL autoDetectBundles; // @synthesize autoDetectBundles=_autoDetectBundles;
 @property(retain) NSSet *dontDescendPaths; // @synthesize dontDescendPaths=_dontDescendPaths;
 @property(retain) NSString *startingPath; // @synthesize startingPath=_startingPath;
+@property(copy, nonatomic) CDUnknownBlockType receiveDataBlock; // @synthesize receiveDataBlock=_receiveDataBlock;
 @property BOOL useTrueOnDiskSizes; // @synthesize useTrueOnDiskSizes=_useTrueOnDiskSizes;
 @property BOOL autoSizeBundles; // @synthesize autoSizeBundles=_autoSizeBundles;
 @property(retain) NSString *compressionFormat; // @synthesize compressionFormat=_compressionFormat;
@@ -39,6 +41,7 @@
 - (BOOL)sendResultOnFd:(int)arg1;
 - (id)requestPayload;
 - (BOOL)isEqual:(id)arg1;
+- (id)description;
 - (id)initWithStartingPath:(id)arg1 dontDescendPaths:(id)arg2 andRestartPoint:(id)arg3;
 
 @end

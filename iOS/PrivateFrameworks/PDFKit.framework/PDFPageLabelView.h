@@ -8,6 +8,7 @@
 
 @class PDFPageLabelViewPrivate;
 
+__attribute__((visibility("hidden")))
 @interface PDFPageLabelView : UIView
 {
     PDFPageLabelViewPrivate *_private;

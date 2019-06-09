@@ -7,25 +7,39 @@
 #import <objc/NSObject.h>
 
 #import <FrontBoardServices/BSInvalidatable-Protocol.h>
+#import <FrontBoardServices/FBSServiceFacilityClientConfiguring-Protocol.h>
 #import <FrontBoardServices/FBSServiceFacilityClientMessaging-Protocol.h>
-#import <FrontBoardServices/FBSServiceFacilityXPCClientDelegate-Protocol.h>
 
-@class FBSServiceFacilityXPCClient, NSString;
+@class BSServiceConnection, BSServiceConnectionEndpoint, BSServiceInterface, BSServiceQuality, NSString;
 @protocol OS_dispatch_queue;
 
-@interface FBSServiceFacilityClient : NSObject <FBSServiceFacilityXPCClientDelegate, FBSServiceFacilityClientMessaging, BSInvalidatable>
+@interface FBSServiceFacilityClient : NSObject <FBSServiceFacilityClientConfiguring, FBSServiceFacilityClientMessaging, BSInvalidatable>
 {
-    NSString *_identifier;
+    BSServiceConnectionEndpoint *_endpoint;
+    NSString *_facilityID;
+    BSServiceQuality *_serviceQuality;
+    BSServiceInterface *_interface;
+    id _configOnly_interfaceTarget;
     NSObject<OS_dispatch_queue> *_queue;
-    FBSServiceFacilityXPCClient *_client;
+    NSObject<OS_dispatch_queue> *_calloutQueue;
+    _Bool _configured;
+    BSServiceConnection *_connection;
+    _Bool _connectionDenied;
+    _Bool _activated;
+    _Bool _invalidated;
+    _Bool _uisHack;
 }
 
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_queue;
++ (id)defaultShellEndpoint;
+@property(readonly, nonatomic, getter=isConfigured) _Bool configured; // @synthesize configured=_configured;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *calloutQueue; // @synthesize calloutQueue=_calloutQueue;
+@property(readonly, nonatomic) BSServiceQuality *serviceQuality; // @synthesize serviceQuality=_serviceQuality;
 - (void).cxx_destruct;
-- (void)client:(id)arg1 handleError:(id)arg2;
-- (void)client:(id)arg1 handleMessage:(id)arg2 withType:(long long)arg3;
-- (void)client:(id)arg1 configureConnectMessage:(id)arg2;
+- (void)_queue_handleMessage:(id)arg1;
+- (void)_queue_handleError:(id)arg1;
+- (void)_queue_activate;
+- (void)_queue_invalidate;
+- (_Bool)_isValid;
 - (void)sendMessage:(id)arg1 withType:(long long)arg2 replyHandler:(CDUnknownBlockType)arg3 waitForReply:(_Bool)arg4 timeout:(double)arg5;
 - (void)sendMessage:(id)arg1 withType:(long long)arg2;
 - (void)handleError:(id)arg1;
@@ -33,7 +47,16 @@
 - (void)configureConnectMessage:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)invalidate;
+- (void)activate;
+@property(readonly, copy, nonatomic) NSString *identifier;
+- (void)setCalloutQueue:(id)arg1;
+- (void)setInterfaceTarget:(id)arg1;
+- (void)setInterface:(id)arg1;
+- (void)setServiceQuality:(id)arg1;
+- (void)setIdentifier:(id)arg1;
+- (void)setEndpoint:(id)arg1;
 - (void)dealloc;
+- (id)initWithConfigurator:(CDUnknownBlockType)arg1;
 - (id)initWithIdentifier:(id)arg1 calloutQueue:(id)arg2;
 - (id)init;
 

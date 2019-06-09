@@ -8,19 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDMapsIdentifier, NSString, PBUnknownFields;
+@class GEOPDMapsIdentifier, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDChildPlace : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDMapsIdentifier *_mapsId;
     NSString *_name;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_mapsId:1;
+        unsigned int read_name:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_mapsId:1;
+        unsigned int wrote_name:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId; // @synthesize mapsId=_mapsId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,10 +39,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
+@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId;
 @property(readonly, nonatomic) _Bool hasMapsId;
+- (void)_readMapsId;
 
 @end
 

@@ -6,9 +6,11 @@
 
 #import <RelevanceEngine/REPredictor.h>
 
+#import <RelevanceEngine/REActivitySummaryPredictorProperties-Protocol.h>
+
 @class NSSet;
 
-@interface REActivitySummaryPredictor : REPredictor
+@interface REActivitySummaryPredictor : REPredictor <REActivitySummaryPredictorProperties>
 {
     NSSet *_queries;
     float _activeEnergyPercentComplete;
@@ -22,8 +24,7 @@
 @property float exerciseTimePercentComplete; // @synthesize exerciseTimePercentComplete=_exerciseTimePercentComplete;
 @property float activeEnergyPercentComplete; // @synthesize activeEnergyPercentComplete=_activeEnergyPercentComplete;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
-- (void)_updateWithActivitySummary:(id)arg1;
+- (void)_updateWithActivitySummary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_stopQueries;
 - (void)_stopQuery:(id)arg1;
 - (void)_runQuery:(id)arg1;
@@ -32,7 +33,7 @@
 - (void)update;
 - (void)pause;
 - (void)resume;
-- (id)init;
+- (id)_init;
 
 @end
 

@@ -25,16 +25,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AXFDispatchQueue *_sharedFocusManagerDispatchQueue; // @synthesize _sharedFocusManagerDispatchQueue=__sharedFocusManagerDispatchQueue;
 @property(retain, nonatomic) NSMutableDictionary *_notificationsForOutput; // @synthesize _notificationsForOutput=__notificationsForOutput;
 @property(retain, nonatomic) NSDictionary *sharedFocusUIElementJumpingInfo; // @synthesize sharedFocusUIElementJumpingInfo=_sharedFocusUIElementJumpingInfo;
-- (id)_descriptionForNotificationType:(unsigned long long)arg1;
+- (void).cxx_destruct;
+- (id)_descriptionForNotificationType:(long long)arg1;
 - (id)sharedFocusQueueDescription;
-- (id)_removeDuplicateOutputToRequest:(id)arg1 forNotificationKey:(unsigned long long)arg2;
-- (id)_addAdditionalOutputToRequest:(id)arg1 forNotificationKey:(unsigned long long)arg2;
+- (id)_removeDuplicateOutputToRequest:(id)arg1 forNotificationKey:(long long)arg2;
+- (id)_addAdditionalOutputToRequest:(id)arg1 forNotificationKey:(long long)arg2;
 - (void)_flushSharedFocusQueue;
 - (void)_scheduleOutputForSharedFocusQueue;
 - (void)_outputSharedFocusNotificationQueue;
-- (BOOL)addOutputRequestToSharedFocusQueue:(id)arg1 withNotificationKey:(unsigned long long)arg2;
+- (BOOL)addOutputRequestToSharedFocusQueue:(id)arg1 withNotificationKey:(long long)arg2;
 - (id)application;
-- (void)dealloc;
 - (id)initWithApplication:(id)arg1;
 
 @end

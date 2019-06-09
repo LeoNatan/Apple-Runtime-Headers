@@ -28,6 +28,7 @@
 @property(retain, nonatomic) NSString *albumGUID; // @synthesize albumGUID=_albumGUID;
 @property(nonatomic) long long relationshipChangeType; // @synthesize relationshipChangeType=_relationshipChangeType;
 @property(retain, nonatomic) NSArray *MSASSharingRelationships; // @synthesize MSASSharingRelationships=_MSASSharingRelationships;
+- (void).cxx_destruct;
 - (void)executeSendServerPendingInvitationsForAlbumWithGUID;
 - (void)executeSaveServerStateLocallyForSharingACLRelationships;
 - (void)executeSaveServerStateLocallyForSharingInvitationRelationships;
@@ -35,9 +36,8 @@
 - (_Bool)shouldArchiveXPCToDisk;
 - (void)run;
 - (long long)daemonOperation;
-- (void)dealloc;
 - (id)description;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
 
 @end

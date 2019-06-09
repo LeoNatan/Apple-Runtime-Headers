@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 - (void)removeRequestedPixelBufferAttributesAttributesForKey:(id)arg1;
 - (void)setRequestedPixelBufferAttributes:(id)arg1 forKey:(id)arg2;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 @end

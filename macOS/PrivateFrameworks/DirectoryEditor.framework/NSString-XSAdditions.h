@@ -8,5 +8,6 @@
 
 @interface NSString (XSAdditions)
 - (long long)numericCompare:(id)arg1;
+- (long long)attrNamesComparator:(id)arg1;
 @end
 

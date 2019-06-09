@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)requiresEmbeddingNavigationController;
 - (void)safariViewControllerDidFinish:(id)arg1;
 - (id)createViewController;
+- (id)menuActions;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

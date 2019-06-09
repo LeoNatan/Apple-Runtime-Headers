@@ -15,7 +15,6 @@
 {
     NSString *_waldoHost;
     BOOL _ignoreInvalidCerts;
-    unsigned int _lastFailureReason;
     NSNumber *_version;
     NSNumber *_timestamp;
     NSNumber *_enabled;
@@ -38,7 +37,6 @@
 + (id)defaultConfiguration;
 @property(retain) NSPConfiguration *defaults; // @synthesize defaults=_defaults;
 @property(readonly) long long diskVersion; // @synthesize diskVersion=_diskVersion;
-@property unsigned int lastFailureReason; // @synthesize lastFailureReason=_lastFailureReason;
 @property(copy) NSNumber *persistMetrics; // @synthesize persistMetrics=_persistMetrics;
 @property(retain) NSDictionary *edgeSets; // @synthesize edgeSets=_edgeSets;
 @property BOOL ignoreInvalidCerts; // @synthesize ignoreInvalidCerts=_ignoreInvalidCerts;
@@ -55,10 +53,11 @@
 @property(readonly) NSNumber *timestamp; // @synthesize timestamp=_timestamp;
 @property(readonly) NSNumber *version; // @synthesize version=_version;
 - (void).cxx_destruct;
+- (void)incrementSessionCountersOnFirstLaunch;
 - (BOOL)resetStaleEdgeSets;
 @property(copy) NSString *waldoHost;
 @property(readonly) BOOL isDead;
-- (id)getCurrentOnRampForAppRule:(id)arg1;
+- (id)getCurrentKeyBagForAppRule:(id)arg1;
 - (id)getEdgeSetForAppRule:(id)arg1;
 - (id)getEdgeSetForSigningIdentifier:(id)arg1;
 - (id)createWaldoURLWithDomain:(id)arg1 timestamp:(id)arg2;

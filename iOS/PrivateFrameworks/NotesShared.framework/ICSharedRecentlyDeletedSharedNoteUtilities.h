@@ -15,7 +15,7 @@
 + (id)messageForSharedNotesType:(unsigned long long)arg1;
 + (id)titleForSharedNotesType:(unsigned long long)arg1;
 + (void)showDeletingSharedNotesAlertWithType:(unsigned long long)arg1 displayWindow:(struct UIWindow *)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (void)showAlertsIfNecessaryForDeletingSharedNotes:(id)arg1 displayWindow:(struct UIWindow *)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)showAlertsIfNecessaryForDeletingSharedNotes:(id)arg1 noteDeleteType:(unsigned long long)arg2 displayWindow:(struct UIWindow *)arg3 completionHandler:(CDUnknownBlockType)arg4;
 
 @end
 

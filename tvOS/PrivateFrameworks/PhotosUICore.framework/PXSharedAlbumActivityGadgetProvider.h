@@ -9,8 +9,8 @@
 #import <PhotosUICore/PXFeedSectionInfosManagerDelegate-Protocol.h>
 #import <PhotosUICore/PXSharedAlbumInvitationGadgetDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, PXFeedSectionInfosManager;
-@protocol PXGadgetDelegate;
+@class NSMutableArray, NSString, PXFeedSectionInfosManager, PXGadgetNavigationHelper;
+@protocol PXGadgetDelegate, PXGadgetTransition;
 
 @interface PXSharedAlbumActivityGadgetProvider : PXGadgetProvider <PXFeedSectionInfosManagerDelegate, PXSharedAlbumInvitationGadgetDelegate>
 {
@@ -44,8 +44,10 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) __weak id <PXGadgetDelegate> nextGadgetResponder;
+@property(readonly, nonatomic) PXGadgetNavigationHelper *rootNavigationHelper;
 @property(readonly) Class superclass;
 
 @end

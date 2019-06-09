@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKCache : NSObject <CKCache>
 {
     NSMutableDictionary *_dictionary;

@@ -6,16 +6,39 @@
 
 #import <Silex/SXComponent.h>
 
-@class SXStrokeStyle;
+#import <Silex/SXLineComponent-Protocol.h>
 
-@interface SXLineComponent : SXComponent
+@class NSString, SXComponentAnimation, SXComponentClassification, SXComponentConditions, SXJSONArray, SXJSONDictionary, SXStrokeStyle;
+@protocol SXComponentAnchor;
+
+@interface SXLineComponent : SXComponent <SXLineComponent>
 {
 }
 
 + (id)typeString;
 
 // Remaining properties
+@property(readonly, nonatomic) SXJSONArray *additions;
+@property(readonly, nonatomic) SXJSONDictionary *analytics;
+@property(readonly, nonatomic) id <SXComponentAnchor> anchor;
+@property(readonly, nonatomic) SXComponentAnimation *animation;
+@property(readonly, nonatomic) SXJSONArray *behaviors;
+@property(readonly, nonatomic) SXComponentClassification *classification;
+@property(readonly, nonatomic) SXJSONArray *conditional;
+@property(readonly, nonatomic) SXComponentConditions *conditions;
+@property(readonly, nonatomic) unsigned long long contentRelevance;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool hidden;
+@property(readonly, nonatomic) NSString *identifier;
+@property(readonly, nonatomic) NSString *layout;
+@property(readonly, nonatomic) int role;
 @property(readonly, nonatomic) SXStrokeStyle *stroke; // @dynamic stroke;
+@property(readonly, nonatomic) NSString *style;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) unsigned long long traits;
+@property(readonly, nonatomic) NSString *type;
 
 @end
 

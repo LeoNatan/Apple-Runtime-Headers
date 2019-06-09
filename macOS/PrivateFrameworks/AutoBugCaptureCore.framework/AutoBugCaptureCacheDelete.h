@@ -8,6 +8,7 @@
 
 @class DiagnosticStorageManager, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AutoBugCaptureCacheDelete : NSObject
 {
     NSString *logArchivePath;

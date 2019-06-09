@@ -7,70 +7,71 @@
 #import <PhotoLibraryServices/PLManagedObject.h>
 
 #import <PhotoLibraryServices/PLAssetContainer-Protocol.h>
-#import <PhotoLibraryServices/PLMomentData_Private-Protocol.h>
+#import <PhotoLibraryServices/PLMomentData-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSObject, NSOrderedSet, NSString, PLManagedAsset, PLMomentList, PLMomentNameInfo;
-@protocol NSCopying;
+@class CLLocation, NSArray, NSDate, NSObject, NSOrderedSet, NSString, PLManagedAsset, PLMomentList;
+@protocol NSCopying, PLPhotosHighlightData;
 
-@interface PLMoment : PLManagedObject <PLAssetContainer, PLMomentData_Private>
+@interface PLMoment : PLManagedObject <PLAssetContainer, PLMomentData>
 {
-    PLMomentNameInfo *_cachedNameInfo;
     _Bool _loadedNameInfo;
     CLLocation *_cachedApproximateLocation;
     _Bool _didCacheApproximateLocation;
+    struct CLLocationCoordinate2D _cachedCoordinate;
+    _Bool _didCacheCoordinate;
     _Bool isRegisteredForChanges;
     _Bool didRegisteredWithUserInterfaceContext;
 }
 
 + (id)sortByTimeSortDescriptors;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)allAssetsIncludedInMomentsInLibrary:(id)arg1;
 + (id)baseSearchIndexPredicate;
++ (id)allAssetsInManagedObjectContext:(id)arg1 predicate:(id)arg2 IDsOnly:(_Bool)arg3 error:(id *)arg4;
++ (id)allInvalidAssetsInManagedObjectContext:(id)arg1 error:(id *)arg2;
++ (id)invalidAssetsIgnoringAssetIdentifiers:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
 + (id)allAssetsIncludedInMomentsInManagedObjectContext:(id)arg1 IDsOnly:(_Bool)arg2 error:(id *)arg3;
++ (void)batchFetchMomentUUIDsByAssetUUIDsWithAssetUUIDs:(id)arg1 library:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (id)predicateForInvalidAssets;
++ (id)predicateForInvalidAssetsIgnoringAssetsWithIdentifiers:(id)arg1;
++ (id)predicateForInvalidMoments;
 + (id)predicateForAssetsIncludedInMoments;
++ (id)momentsRequiringLocationProcessingWhenFrequentLocationsChangedInManagedObjectContext:(id)arg1 error:(id *)arg2;
++ (id)momentsWithLocationTypeUnprocessedInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)allMomentsRequiringAnalysisInManagedObjectContext:(id)arg1 error:(id *)arg2;
-+ (unsigned long long)numberOfMomentsGeneratedWithoutLocationsOfInterestInformation:(id)arg1 error:(id *)arg2;
++ (id)allMomentsInManagedObjectContext:(id)arg1 predicate:(id)arg2 idsOnly:(_Bool)arg3 error:(id *)arg4;
++ (id)allInvalidMomentIDsInManagedObjectContext:(id)arg1 error:(id *)arg2;
++ (id)allInvalidMomentsInManagedObjectContext:(id)arg1 error:(id *)arg2;
++ (id)allMomentIDsInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)allMomentsInManagedObjectContext:(id)arg1 error:(id *)arg2;
 + (id)insertNewMomentInManagedObjectContext:(id)arg1 error:(id *)arg2;
 @property(nonatomic) _Bool didRegisteredWithUserInterfaceContext; // @synthesize didRegisteredWithUserInterfaceContext;
 @property(nonatomic) _Bool isRegisteredForChanges; // @synthesize isRegisteredForChanges;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned long long pl_numberOfAssets;
+@property(readonly, nonatomic) struct CLLocationCoordinate2D pl_coordinate;
 @property(readonly, nonatomic) CLLocation *pl_location;
 @property(readonly, nonatomic) NSDate *pl_endDate;
 @property(readonly, nonatomic) NSDate *pl_startDate;
+@property(readonly, nonatomic) NSDate *localEndDate;
+@property(readonly, nonatomic) NSDate *localStartDate;
 - (unsigned long long)fetchedAssetsCount;
 @property(readonly, retain, nonatomic) NSArray *batchedAssets;
-@property(retain, nonatomic) NSArray *userTitles;
 - (void)removeAssetData:(id)arg1;
 - (void)replaceAssetDataAtIndex:(unsigned long long)arg1 withAssetData:(id)arg2;
 @property(readonly, retain, nonatomic) NSObject<NSCopying> *uniqueObjectID;
-- (void)removeAssets:(id)arg1;
-- (void)addAssets:(id)arg1;
 - (void)removeAssetsObject:(id)arg1;
-- (void)addAssetsObject:(id)arg1;
-- (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
-- (void)removeAssetsAtIndexes:(id)arg1;
-- (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
 - (void)replaceObjectInAssetsAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
-- (void)removeObjectFromAssetsAtIndex:(unsigned long long)arg1;
-- (void)insertObject:(id)arg1 inAssetsAtIndex:(unsigned long long)arg2;
 - (void)didTurnIntoFault;
 - (id)mutableAssets;
 - (void)willSave;
-- (_Bool)validateForUpdate:(id *)arg1;
-- (_Bool)validateForInsert:(id *)arg1;
-- (_Bool)_validateForInsertOrUpdate:(id *)arg1;
 - (void)delete;
 - (id)diagnosticInformation;
 - (_Bool)supportsDiagnosticInformation;
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset;
-- (void)invalidateNameInfo;
-@property(readonly, copy, nonatomic) NSArray *localizedLocationNames;
 @property(readonly, copy, nonatomic) NSString *localizedTitle;
-- (void)_updateCachedNameInfoIfNeeded;
 @property(readonly, nonatomic) _Bool canShowAvalancheStacks;
 @property(readonly, nonatomic) _Bool canShowComments;
 - (_Bool)canPerformEditOperation:(unsigned long long)arg1;
@@ -111,6 +112,7 @@
 - (_Bool)isCloudSharedAlbum;
 
 // Remaining properties
+@property(nonatomic) float aggregationScore; // @dynamic aggregationScore;
 @property(nonatomic) double approximateLatitude; // @dynamic approximateLatitude;
 @property(nonatomic) double approximateLongitude; // @dynamic approximateLongitude;
 @property(retain, nonatomic) NSOrderedSet *assets; // @dynamic assets;
@@ -120,20 +122,18 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(retain, nonatomic) NSDate *endDate; // @dynamic endDate;
-@property(nonatomic) short generationType; // @dynamic generationType;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) id <PLPhotosHighlightData> highlight; // @dynamic highlight;
+@property(readonly, copy, nonatomic) NSArray *localizedLocationNames; // @dynamic localizedLocationNames;
 @property(retain, nonatomic) PLMomentList *megaMomentList; // @dynamic megaMomentList;
 @property(retain, nonatomic) NSDate *modificationDate; // @dynamic modificationDate;
+@property(nonatomic) unsigned short processedLocation; // @dynamic processedLocation;
 @property(retain, nonatomic) NSDate *representativeDate; // @dynamic representativeDate;
-@property(retain, nonatomic) NSData *reverseLocationData; // @dynamic reverseLocationData;
-@property(nonatomic) _Bool reverseLocationDataContainsLocation; // @dynamic reverseLocationDataContainsLocation;
-@property(nonatomic) _Bool reverseLocationDataIsValid; // @dynamic reverseLocationDataIsValid;
 @property(retain, nonatomic) NSDate *startDate; // @dynamic startDate;
+@property(retain, nonatomic) NSString *subtitle; // @dynamic subtitle;
 @property(readonly) Class superclass;
+@property(nonatomic) int timeZoneOffset; // @dynamic timeZoneOffset;
 @property(retain, nonatomic) NSString *title; // @dynamic title;
-@property(retain, nonatomic) NSString *title2; // @dynamic title2;
-@property(retain, nonatomic) NSString *title3; // @dynamic title3;
-@property(nonatomic) _Bool usedLocationsOfInterest; // @dynamic usedLocationsOfInterest;
 @property(retain, nonatomic) NSString *uuid; // @dynamic uuid;
 @property(retain, nonatomic) PLMomentList *yearMomentList; // @dynamic yearMomentList;
 

@@ -19,15 +19,20 @@
     int _musicShuffleType;
     _Bool _soundCheckEnabled;
     _Bool _speakerRouteEnabled;
+    _Bool _includeContentItemDebugFields;
     NSMutableDictionary *_lastSiriPlaybackContextIDs;
     struct vector<int, std::__1::allocator<int>> _notifyTokens;
     NSObject<OS_dispatch_queue> *_userDefaultsMutationQueue;
+    NSNumber *_currentPrivateListeningEnabledValue;
+    NSObject<OS_dispatch_queue> *_loadValuesQueue;
 }
 
 + (id)standardUserDefaults;
 @property(readonly, nonatomic) int musicEQPreset; // @synthesize musicEQPreset=_musicEQPreset;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_accountStoreChangedNotification:(id)arg1;
+- (void)_loadAccountProperties;
 - (void)_mobileiPodPrefsDidChange;
 - (void)_postRepeatShuffleTypeGlobalNotification;
 - (int)_calculateCurrentMusicShuffleType;
@@ -36,10 +41,10 @@
 - (void)_addNotificationObserver:(CDUnknownBlockType)arg1 forUserDefaultKey:(struct __CFString *)arg2;
 - (void)setLastSiriPlaybackContextID:(id)arg1 forPlayerID:(id)arg2;
 - (id)lastSiriPlaybackContextIDForPlayerID:(id)arg1;
-@property(readonly, nonatomic) _Bool shouldUseNewQueueManagement;
 @property(copy, nonatomic, getter=isPrivateListeningEnabled) NSNumber *privateListeningEnabled;
 @property(readonly, nonatomic) unsigned int preferredVideosAssetQualityOnWifi;
 @property(readonly, nonatomic) unsigned int preferredVideosAssetQualityOnCellular;
+@property(readonly, nonatomic) _Bool includeContentItemDebugFields;
 @property(readonly, nonatomic) _Bool speakerRouteEnabled;
 @property(readonly, nonatomic) _Bool soundCheckEnabled;
 @property(nonatomic) int musicShuffleType;

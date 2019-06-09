@@ -11,6 +11,7 @@
     unsigned char _unsignedCharValue;
 }
 
++ (id)randomTransactionIdentifier;
 + (unsigned char)generateRequestIdentifier;
 @property(readonly, nonatomic) unsigned char unsignedCharValue; // @synthesize unsignedCharValue=_unsignedCharValue;
 - (BOOL)isEqual:(id)arg1;
@@ -20,7 +21,6 @@
 - (id)descriptionWithPointer:(BOOL)arg1;
 - (id)shortDescription;
 - (id)initWithUnsignedCharValue:(unsigned char)arg1;
-- (id)init;
 
 @end
 

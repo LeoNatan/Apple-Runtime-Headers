@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTextView.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKShareTextView : NSTextView
 {
 }

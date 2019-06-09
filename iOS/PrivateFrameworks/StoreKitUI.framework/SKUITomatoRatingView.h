@@ -10,6 +10,7 @@
 
 @class NSString, SKUIAttributedStringView, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUITomatoRatingView : UIView <SKUIViewElementView>
 {
     UIImageView *_imageView;

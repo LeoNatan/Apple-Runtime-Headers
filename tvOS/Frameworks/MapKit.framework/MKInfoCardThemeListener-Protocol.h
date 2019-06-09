@@ -6,9 +6,7 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@protocol MKInfoCardTheme;
-
 @protocol MKInfoCardThemeListener <NSObject>
-- (void)infoCardThemeChanged:(id <MKInfoCardTheme>)arg1;
+- (void)infoCardThemeChanged;
 @end
 

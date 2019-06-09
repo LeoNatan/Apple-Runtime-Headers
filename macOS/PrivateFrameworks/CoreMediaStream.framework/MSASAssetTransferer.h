@@ -70,7 +70,6 @@
 - (void)cancelCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)workQueueStop;
 - (void)stopCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
 - (void)_rereadPerformanceLoggingSetting;

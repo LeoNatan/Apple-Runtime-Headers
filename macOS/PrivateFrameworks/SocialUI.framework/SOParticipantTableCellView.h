@@ -46,6 +46,7 @@
 - (void)awakeFromNib;
 - (id)accessibilityLabel;
 - (id)avatarViewController:(id)arg1 requiredImageForContact:(id)arg2;
+- (void)_cnContactDidChange:(id)arg1;
 - (void)_personDidChange:(id)arg1;
 - (void)_imFMFSessionRelationshipStatusDidChange:(id)arg1;
 - (void)_imFMFSessionLocationReceived:(id)arg1;

@@ -6,19 +6,21 @@
 
 @class NSString;
 
-#pragma mark Blocks
+#pragma mark Function Pointers and Blocks
+
+typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
 #pragma mark Named Structures
 
 struct CGAffineTransform {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-    double _field5;
-    double _field6;
+    double a;
+    double b;
+    double c;
+    double d;
+    double tx;
+    double ty;
 };
 
 struct CGColorSpace;
@@ -77,14 +79,21 @@ struct CIRenderDestinationInternal {
     unsigned long long _field2;
     unsigned long long _field3;
     int _field4;
-    struct CGColorSpace *_field5;
-    unsigned long long _field6;
-    _Bool _field7;
+    int _field5;
+    struct {
+        double _field1[3];
+        double _field2[3];
+        double _field3[3];
+        double _field4;
+        double _field5;
+    } _field6;
+    unsigned long long _field7;
     _Bool _field8;
-    int _field9;
-    _Bool _field10;
+    _Bool _field9;
+    int _field10;
     _Bool _field11;
-    id _field12;
+    _Bool _field12;
+    id _field13;
 };
 
 struct FastRegistration_Signatures {
@@ -101,6 +110,19 @@ struct GridROI_t {
     int startY;
     int endX;
     int endY;
+};
+
+struct HoughTransform {
+    float *_field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    float _field5;
+    float *_field6;
+    unsigned long long _field7;
+    unsigned long long _field8;
+    unsigned long long _field9;
+    float _field10;
 };
 
 struct IPoint {
@@ -136,6 +158,10 @@ struct SharpnessGridElement_t {
     unsigned char _field1;
     unsigned char _field2;
     float _field3;
+};
+
+struct Trilean {
+    char _field1;
 };
 
 struct __SVMParameters {
@@ -225,6 +251,14 @@ struct vector<CI::KernelArgumentType, std::__1::allocator<CI::KernelArgumentType
     } _field3;
 };
 
+struct vector<HoughLine, std::__1::allocator<HoughLine>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<HoughLine *, std::__1::allocator<HoughLine>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
 struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>> {
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field2;
@@ -290,10 +324,17 @@ typedef struct {
 } CDStruct_c0454aff;
 
 typedef struct {
-    unsigned long long _field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-} CDStruct_14f26992;
+    unsigned long long width;
+    unsigned long long height;
+    unsigned long long depth;
+} CDStruct_da2e99ad;
+
+typedef struct {
+    float _field1[4];
+    float _field2[4];
+    float _field3[4];
+    int _field4[4];
+} CDStruct_04c5c26d;
 
 typedef struct {
     char *baseAddress;
@@ -320,18 +361,31 @@ typedef struct {
 } CDStruct_e5fcc3f9;
 
 typedef struct {
+    double lineSearchRangeV;
+    double lineSearchRangeH;
+    double pitchLimit;
+    double yawLimit;
+    double rollLimit;
+} CDStruct_6256a11b;
+
+typedef struct {
     double i;
     double q;
 } CDStruct_bfe67ca5;
 
 typedef struct {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-    float _field6;
-} CDStruct_265c7ca9;
+    double variance;
+    int nNonZero;
+} CDStruct_fc6961d5;
+
+typedef struct {
+    float skinval;
+    float avgLuminance;
+    float minLuminance;
+    float maxLuminance;
+    float darkPercent;
+    float clipPercent;
+} CDStruct_3882bc9d;
 
 typedef struct {
     float _field1;
@@ -362,6 +416,16 @@ typedef struct {
 
 typedef struct {
     int _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    float _field7;
+} CDStruct_c952897d;
+
+typedef struct {
+    int _field1;
     int _field2;
     _Bool _field3;
     _Bool _field4;
@@ -378,6 +442,13 @@ typedef struct {
 } CDStruct_1ef3fb1f;
 
 typedef struct CDStruct_183601bc;
+
+typedef struct {
+    _Bool _field1;
+    int _field2;
+    int _field3;
+    struct CGPoint *_field4;
+} CDStruct_d01ad076;
 
 typedef struct {
     _Bool _field1;
@@ -404,6 +475,29 @@ typedef struct {
     _Bool _field11;
     float _field12;
 } CDStruct_79f2618e;
+
+typedef struct {
+    float theta;
+    float rho;
+    struct CGPoint a;
+    struct CGPoint b;
+} CDStruct_c94878bf;
+
+typedef struct {
+    int _field1;
+    CDStruct_c952897d _field2[20];
+} CDStruct_b443dc70;
+
+typedef struct {
+    int _field1;
+    struct {
+        int _field1;
+        int _field2;
+        int _field3;
+        int _field4;
+        float _field5;
+    } _field2[20];
+} CDStruct_ccbddcce;
 
 typedef struct {
     int _field1;
@@ -447,7 +541,56 @@ typedef struct {
     int _field1;
     int _field2;
     CDStruct_183601bc *_field3;
+    int _field4;
+    int _field5;
+    int _field6;
+} CDStruct_892ad059;
+
+typedef struct {
+    int _field1;
+    int _field2;
+    CDStruct_183601bc *_field3;
 } CDStruct_f7cf7ab1;
+
+typedef struct {
+    int width;
+    int height;
+    float scaleFactor;
+    CDStruct_183601bc *grid;
+    int nPoints;
+    int maxPoints;
+    CDStruct_183601bc *points;
+    int nextNetNumber;
+    int nThreads;
+    int maxThreads;
+    CDStruct_183601bc *threads;
+    int nShapes;
+    int maxShapes;
+    CDStruct_183601bc *shapes;
+} CDStruct_ea27cb70;
+
+typedef struct {
+    int _field1;
+    int _field2;
+    int _field3;
+    float _field4;
+    float _field5;
+    int _field6;
+    _Bool _field7;
+    _Bool _field8;
+    _Bool _field9;
+    int _field10;
+    int _field11;
+    float _field12;
+    float _field13;
+    float _field14;
+    float _field15;
+    CDStruct_818bb265 _field16;
+    CDStruct_818bb265 _field17;
+    float _field18;
+    int _field19;
+    int _field20;
+} CDStruct_ed92ceb9;
 
 typedef struct {
     int _field1;
@@ -573,6 +716,19 @@ typedef struct {
 } CDStruct_9d808415;
 
 typedef struct {
+    CDStruct_818bb265 _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    float _field7;
+    float _field8;
+    float _field9;
+    float _field10;
+} CDStruct_73443751;
+
+typedef struct {
     CDStruct_5973fb4f FR;
     struct CGPoint leftEye;
     struct CGPoint rightEye;
@@ -586,6 +742,55 @@ typedef struct {
     CDStruct_c3faddef channels[7];
     CDStruct_c3faddef M;
 } CDStruct_99f3e179;
+
+typedef struct {
+    CDStruct_5973fb4f FR;
+    struct CGPoint leftEye;
+    struct CGPoint rightEye;
+    CDStruct_5973fb4f LR;
+    CDStruct_5973fb4f RR;
+    float leftDistMatrix[4];
+    float rightDistMatrix[4];
+    struct CGPoint LPoly[8];
+    struct CGPoint RPoly[8];
+    float IOD;
+} CDStruct_7286a259;
+
+typedef struct {
+    struct CGPoint _field1;
+    int _field2;
+    float _field3;
+} CDStruct_e958be04;
+
+typedef struct {
+    float xf;
+    float yf;
+    float xfi;
+    float yfi;
+    float ify;
+    int ioffx;
+    int ioffy;
+    int downsampleType;
+    float downsampleOversizeX;
+    float downsampleOversizeY;
+    int gradientChannel;
+    int edgeFindingChannel;
+    float minMagnitude;
+    float regressionRadius;
+    float capture;
+    float alignmentTolerance;
+    float connectThreshold;
+    _Bool forceFail;
+    struct CGRect inputImageExtent;
+    int orientation;
+    int cameraType;
+    int faceIndex;
+    int side;
+    float scale;
+    float IOD;
+    struct CGAffineTransform transform;
+    int height;
+} CDStruct_242bf05f;
 
 typedef struct {
     int _field1;
@@ -619,7 +824,7 @@ typedef struct {
         int _field3;
         int _field4;
     } _field21;
-    CDStruct_265c7ca9 _field22;
+    CDStruct_3882bc9d _field22;
     _Bool _field23;
     _Bool _field24;
     CDStruct_183601bc *_field25;
@@ -638,7 +843,7 @@ typedef struct {
     char _field38[4];
     char _field39[4];
     char _field40[12];
-} CDStruct_a3f7b727;
+} CDStruct_85f69347;
 
 typedef struct {
     int _field1;

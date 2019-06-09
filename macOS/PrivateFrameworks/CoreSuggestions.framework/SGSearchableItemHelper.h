@@ -15,24 +15,22 @@
 + (id)deserializeAttributes:(id)arg1;
 + (id)serializeAttributesAndBody:(id)arg1;
 + (id)serializeAttributes:(id)arg1;
-+ (BOOL)searchableItemIsEligibleForHarvesting:(id)arg1 eligibleExceptForAge:(char *)arg2;
-+ (BOOL)searchableItemIsWhitelistedNonMessage:(id)arg1;
-+ (BOOL)searchableItemIsTooBig:(id)arg1;
-+ (BOOL)searchableItemIsInTrash:(id)arg1;
-+ (BOOL)searchableItemIsInSent:(id)arg1;
-+ (BOOL)searchableItemIsInDrafts:(id)arg1;
-+ (BOOL)searchableItemIsSPAM:(id)arg1;
-+ (BOOL)searchableItemIsValid:(id)arg1;
-+ (BOOL)searchableItemIsRecent:(id)arg1;
-+ (BOOL)searchableItemIsSPAM:(id)arg1 emailHeaders:(id)arg2 mailboxIdentifiers:(id)arg3;
++ (BOOL)mailItemIsTooBig:(id)arg1;
++ (BOOL)mailItemIsInTrash:(id)arg1;
++ (BOOL)mailItemIsInSent:(id)arg1;
++ (BOOL)mailItemIsInDrafts:(id)arg1;
++ (BOOL)mailItemIsSPAM:(id)arg1;
++ (BOOL)mailItemIsValid:(id)arg1;
++ (BOOL)mailItemIsRecent:(id)arg1;
++ (BOOL)mailItemIsSPAM:(id)arg1 emailHeaders:(id)arg2 mailboxIdentifiers:(id)arg3;
 + (BOOL)searchableItemIsEmpty:(id)arg1;
-+ (BOOL)searchableItemIsFromSupportedAccount:(id)arg1;
-+ (BOOL)searchableItemIsInTrash:(id)arg1 mailboxIdentifiers:(id)arg2;
-+ (BOOL)searchableItemIsInSent:(id)arg1 mailboxIdentifiers:(id)arg2;
-+ (BOOL)searchableItemIsInDrafts:(id)arg1 mailboxIdentifiers:(id)arg2;
-+ (BOOL)searchableItemIsValid:(id)arg1 emailHeaders:(id)arg2 mailboxIdentifiers:(id)arg3;
-+ (id)messageIdHeaderValues:(id)arg1;
-+ (BOOL)searchableItemIsRecent:(id)arg1 emailHeaders:(id)arg2;
++ (BOOL)mailItemIsFromSupportedAccount:(id)arg1;
++ (BOOL)mailItemIsInTrash:(id)arg1 mailboxIdentifiers:(id)arg2;
++ (BOOL)mailItemIsInSent:(id)arg1 mailboxIdentifiers:(id)arg2;
++ (BOOL)mailItemIsInDrafts:(id)arg1 mailboxIdentifiers:(id)arg2;
++ (BOOL)mailItemIsValid:(id)arg1 emailHeaders:(id)arg2 mailboxIdentifiers:(id)arg3;
++ (id)mailItemMessageIdHeaderValues:(id)arg1;
++ (BOOL)mailItemIsRecent:(id)arg1 emailHeaders:(id)arg2;
 
 @end
 

@@ -36,8 +36,8 @@
 @property(readonly, nonatomic) BOOL dontSendNotificationForChanges;
 @property(readonly, nonatomic) NSString *nameForBirthday;
 @property(readonly, nonatomic) BOOL isYearlessBirthday;
-@property(readonly, copy, nonatomic) NSString *birthdayTitle;
-@property(readonly, nonatomic) NSString *lunarCalendarString;
+- (void)setLunarCalendarString:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *lunarCalendarString;
 @property(readonly, copy, nonatomic) NSString *sliceParentID;
 @property(readonly, nonatomic) BOOL cachedIsCurrentUserInvitedAttendee;
 @property(readonly, nonatomic) BOOL cachedIsCalendarOwnerInvitedAttendee;
@@ -110,7 +110,6 @@
 - (void)setTravelAdvisoryBehaviorString:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *travelAdvisoryBehaviorString;
 - (double)duration;
-- (id)birthdayStringForDate:(id)arg1;
 - (BOOL)allowAttendeePreservingMoveToCalendar:(id)arg1;
 - (BOOL)isOlderThanICSEvent:(id)arg1 fromICSCalendar:(id)arg2;
 - (BOOL)isOrganizerScheduleAgentNonServer;
@@ -204,9 +203,7 @@
 - (void)updateWithEntity:(id)arg1 alarms:(BOOL)arg2 inCalendar:(id)arg3 processChanges:(BOOL)arg4;
 - (void)updateWithEntity:(id)arg1 alarms:(BOOL)arg2 inCalendar:(id)arg3;
 - (void)_updateWithEntity:(id)arg1 alarms:(BOOL)arg2 omitSyncRecord:(BOOL)arg3 inCalendar:(id)arg4;
-- (void)updateBirthdayEventWithSummary:(id)arg1 birthday:(id)arg2 linkID:(id)arg3 abUID:(id)arg4 isYearless:(BOOL)arg5 name:(id)arg6 lunarCalendarString:(id)arg7;
-- (void)setBirthday:(id)arg1 isYearless:(BOOL)arg2 isYearlessLeapMonthBirthday:(BOOL)arg3 name:(id)arg4 lunarCalendarString:(id)arg5;
-- (id)_getBirthdayCalendarWithPotentialLunarCalendarString:(id)arg1;
+- (id)rawTitle;
 
 // Remaining properties
 @property BOOL amIInvited; // @dynamic amIInvited;
@@ -255,7 +252,6 @@
 @property(retain) CalManagedAttendee *myAttendee; // @dynamic myAttendee;
 @property(retain) NSString *myAttendeeStatus; // @dynamic myAttendeeStatus;
 @property BOOL needsReply; // @dynamic needsReply;
-@property(readonly, retain, nonatomic) id <EKProtocolParticipant> organizer;
 @property(retain) NSString *organizerCommonName; // @dynamic organizerCommonName;
 @property(retain) NSString *organizerEmailAddress; // @dynamic organizerEmailAddress;
 @property(retain) NSString *organizerLikenessDataString; // @dynamic organizerLikenessDataString;

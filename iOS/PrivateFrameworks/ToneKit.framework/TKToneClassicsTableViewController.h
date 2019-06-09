@@ -28,6 +28,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)separatorColorDidChangeInTonePickerTableView:(id)arg1;
 - (void)layoutMarginsDidChangeInTonePickerTableView:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;

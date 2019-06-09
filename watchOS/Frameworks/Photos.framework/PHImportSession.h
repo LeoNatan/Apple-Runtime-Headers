@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) NSString *importSessionID; // @synthesize importSessionID=_importSessionID;
 - (void).cxx_destruct;
 - (id)description;
+- (id)localizedTitle;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
 
 @end

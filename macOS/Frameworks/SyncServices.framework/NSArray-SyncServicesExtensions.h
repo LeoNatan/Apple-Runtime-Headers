@@ -7,8 +7,14 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (SyncServicesExtensions)
++ (id)isd_propertyValueWithType:(int)arg1 bytesEncodedForSqlite:(const void *)arg2;
 - (int)isd_collectionType;
 - (id)isd_flattenArray;
 - (id)isd_arrayByMappingElements:(id)arg1;
+- (id)isd_summaryWithIndent:(long long)arg1;
+- (int)isd_sqlitePropertyValueType;
+- (void *)isd_bytesEncodedForSqlite;
+- (id)isd_deepCopy;
+- (int)isd_quickDirtyCoderType;
 @end
 

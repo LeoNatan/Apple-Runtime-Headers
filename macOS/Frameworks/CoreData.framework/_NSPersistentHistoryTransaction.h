@@ -8,7 +8,7 @@
 
 #import <CoreData/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSManagedObjectID, NSSQLCore, NSString;
+@class NSArray, NSData, NSManagedObjectID, NSPersistentStoreCoordinator, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _NSPersistentHistoryTransaction : NSPersistentHistoryTransaction <NSSecureCoding>
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     NSString *_contextName;
     NSString *_author;
     NSData *_queryGeneration;
-    NSSQLCore *_store;
+    NSPersistentStoreCoordinator *_coordinator;
     NSManagedObjectID *_backingObjectID;
 }
 
@@ -42,6 +42,9 @@ __attribute__((visibility("hidden")))
 - (id)changes;
 - (void)_setChanges:(id)arg1;
 - (id)timestamp;
+- (void)_setCoordinator:(id)arg1;
+- (id)_coordinator;
+- (id)_persistentStore;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

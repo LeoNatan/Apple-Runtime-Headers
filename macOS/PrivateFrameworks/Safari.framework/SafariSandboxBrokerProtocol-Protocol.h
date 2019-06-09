@@ -7,13 +7,10 @@
 #import <Safari/NSObject-Protocol.h>
 #import <Safari/WBSSafariSandboxBrokerProtocol-Protocol.h>
 
-@class NSData, NSDictionary, NSString, NSURL;
+@class NSData, NSDictionary, NSURL;
 
 @protocol SafariSandboxBrokerProtocol <WBSSafariSandboxBrokerProtocol, NSObject>
-- (void)openWebClipWidgetWithURL:(NSURL *)arg1 positionWidgetAtPoint:(struct CGPoint)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)migrateResourcesToSandbox:(NSDictionary *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
-- (void)cancelUnarchivingOperationWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)extractArchiveAtPath:(NSString *)arg1 type:(unsigned long long)arg2 identifier:(NSString *)arg3 completionHandler:(void (^)(NSString *, NSError *))arg4;
 - (void)synchronouslyRemoveQuarantineHardAttributeFromFileAtURL:(NSURL *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)writeWebArchiveWithoutQuarantineFlag:(NSData *)arg1 atURL:(NSURL *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)synchronouslyIssueExtensionForDirectoryContainingDownloadDestinationAtURL:(NSURL *)arg1 completionHandler:(void (^)(NSString *, NSError *))arg2;

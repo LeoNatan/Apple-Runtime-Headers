@@ -6,7 +6,7 @@
 
 #import <coreroutine/RTCloudManagedObject.h>
 
-@class NSData, NSNumber, NSSet, NSString, NSUUID, RTAddressMO, RTMapItemExtendedAttributesMO;
+@class NSData, NSNumber, NSString, NSUUID, RTAddressMO, RTLearnedPlaceMO, RTMapItemExtendedAttributesMO, RTUserCorrectionMO;
 
 @interface RTMapItemMO : RTCloudManagedObject
 {
@@ -24,6 +24,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) RTAddressMO *address; // @dynamic address;
+@property(copy, nonatomic) NSString *displayLanguage; // @dynamic displayLanguage;
 @property(copy, nonatomic) NSUUID *extendedAttributesIdentifier; // @dynamic extendedAttributesIdentifier;
 @property(retain, nonatomic) NSData *geoMapItemHandle; // @dynamic geoMapItemHandle;
 @property(copy, nonatomic) NSNumber *latitude; // @dynamic latitude;
@@ -31,10 +32,11 @@
 @property(copy, nonatomic) NSNumber *mapItemSource; // @dynamic mapItemSource;
 @property(copy, nonatomic) NSNumber *muid; // @dynamic muid;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
-@property(retain, nonatomic) NSSet *places; // @dynamic places;
+@property(retain, nonatomic) RTLearnedPlaceMO *place; // @dynamic place;
 @property(copy, nonatomic) NSNumber *referenceFrame; // @dynamic referenceFrame;
 @property(copy, nonatomic) NSNumber *resultProviderID; // @dynamic resultProviderID;
 @property(copy, nonatomic) NSNumber *uncertainty; // @dynamic uncertainty;
+@property(retain, nonatomic) RTUserCorrectionMO *userCorrection; // @dynamic userCorrection;
 
 @end
 

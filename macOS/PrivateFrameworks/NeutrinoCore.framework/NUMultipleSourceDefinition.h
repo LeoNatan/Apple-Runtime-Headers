@@ -15,6 +15,8 @@
 
 @property(readonly) NSArray *sourceDefinitions; // @synthesize sourceDefinitions=_sourceDefinitions;
 - (void).cxx_destruct;
+- (id)description;
+- (long long)mediaType;
 - (id)initWithSourceDefinitions:(id)arg1;
 - (id)init;
 - (id)sourceContainerNodeWithIdentifier:(id)arg1 error:(out id *)arg2;

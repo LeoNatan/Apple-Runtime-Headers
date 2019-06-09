@@ -6,6 +6,7 @@
 
 #import <Foundation/NSException.h>
 
+__attribute__((visibility("hidden")))
 @interface TCBundleResourceException : NSException
 {
 }

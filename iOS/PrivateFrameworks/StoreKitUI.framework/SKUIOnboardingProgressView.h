@@ -8,6 +8,7 @@
 
 @class NSString, SKUIShapeView, UIColor, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIOnboardingProgressView : UIView
 {
     SKUIShapeView *_borderView;

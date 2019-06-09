@@ -20,7 +20,7 @@
 - (void)_modifyWebSiteURL:(id)arg1;
 - (void)_modifyInvitationWithObject:(id)arg1 forKey:(id)arg2;
 - (BOOL)_wasSigned;
-- (BOOL)_createCAConfigFile:(id *)arg1 pemData:(id)arg2 identityNameInfo:(id)arg3 subjAltNameExtObj:(id)arg4 keyUsageExtObj:(id)arg5 keyPairAttrsObj:(id)arg6 certInfoObj:(id)arg7 basicConstrExtObj:(id)arg8 extKeyUsageExtObj:(id)arg9 additionalCertInfoObj:(id)arg10 CACert:(struct OpaqueSecCertificateRef *)arg11 webURL:(id)arg12 returnedInvite:(id *)arg13;
+- (BOOL)_createCAConfigFile:(id *)arg1 pemData:(id)arg2 identityNameInfo:(id)arg3 subjAltNameExtObj:(id)arg4 keyUsageExtObj:(id)arg5 keyPairAttrsObj:(id)arg6 certInfoObj:(id)arg7 basicConstrExtObj:(id)arg8 extKeyUsageExtObj:(id)arg9 additionalCertInfoObj:(id)arg10 CACert:(struct __SecCertificate *)arg11 webURL:(id)arg12 returnedInvite:(id *)arg13;
 - (void)_setAuthenticator:(id)arg1;
 - (BOOL)_doesCAConfigFileExistWithFileName:(id)arg1;
 - (BOOL)_updateCAConfigFileSerialNumber;

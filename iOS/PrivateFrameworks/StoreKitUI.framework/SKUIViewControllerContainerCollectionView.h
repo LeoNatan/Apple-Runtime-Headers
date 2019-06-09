@@ -6,6 +6,7 @@
 
 #import <UIKit/UICollectionView.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewControllerContainerCollectionView : UICollectionView
 {
     double _competingScrollViewPanGestureRecognizerHysteresis;

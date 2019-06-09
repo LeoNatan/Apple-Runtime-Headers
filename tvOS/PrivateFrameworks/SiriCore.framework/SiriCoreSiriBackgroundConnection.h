@@ -126,7 +126,7 @@
 - (_Bool)_wifiOrCellularMayBeBetterThanCurrentStream;
 - (_Bool)_tcpInfoIndicatesPoorLinkQuality;
 - (void)_getWifiMetrics:(id)arg1;
-- (long long)_normalizeSNR:(int)arg1;
+- (long long)_normalizeSNR:(long long)arg1;
 - (void)_getCellularMetrics:(id)arg1;
 - (_Bool)_canFallBackFromError:(id)arg1;
 - (void)_fallBackToNextConnectionMethodWithError:(id)arg1 orElse:(CDUnknownBlockType)arg2;

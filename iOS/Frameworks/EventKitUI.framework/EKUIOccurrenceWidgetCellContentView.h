@@ -28,7 +28,6 @@
 + (id)tentativeBackgroundColor;
 + (double)needsReplyStripeBackgroundAlpha;
 + (id)needsReplyStripeColor;
-+ (id)needsReplyBackgroundColor;
 + (id)normalBackgroundColor;
 - (id)initWithFrame:(struct CGRect)arg1;
 

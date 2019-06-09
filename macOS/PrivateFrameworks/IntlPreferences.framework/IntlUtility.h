@@ -10,12 +10,15 @@
 
 @interface IntlUtility : NSObject
 {
-    void *mDisplayLanguageCachePtr;
-    int mDisplayLanguageCacheUsed;
     NSMutableArray *mBidiLanguagesArray;
     NSMutableArray *mBidiTestedLanguagesArray;
 }
 
++ (void)setPreferredLanguage:(id)arg1 forBundleID:(id)arg2 andRelaunchWithCompletion:(CDUnknownBlockType)arg3;
++ (void)setPreferredLanguage:(id)arg1 forBundleID:(id)arg2;
++ (void)_setPreferredLanguage:(id)arg1 forBundleID:(id)arg2;
++ (id)_proposedOverrideLanguageFromLanguage:(id)arg1 forLocalizations:(id)arg2 preferredLanguages:(id)arg3 regionCode:(id)arg4;
++ (id)preferredLanguageForBundleID:(id)arg1;
 + (long long)formattingContextFromIUDisplayNameContext:(unsigned long long)arg1;
 + (BOOL)upgradeAppleLanguagesFrom:(id)arg1 to:(id)arg2;
 + (id)parentLocaleIdentifierForIdentifier:(id)arg1;
@@ -51,6 +54,7 @@
 + (id)baseSystemLanguages;
 + (id)stdLanguageIDs;
 + (id)sharedIntlUtility;
+- (void).cxx_destruct;
 - (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3 short:(BOOL)arg4;
 - (id)displayNameForRegion:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3;
 - (id)displayNameForNormalizedLanguage:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;
@@ -59,7 +63,6 @@
 - (id)localizedNameForScript:(short)arg1;
 - (BOOL)isBidiLanguage:(id)arg1;
 - (BOOL)canRenderLanguage:(id)arg1;
-- (void)setUserTextEncoding:(id)arg1;
 - (id)displayNameForLocale:(id)arg1 displayLanguage:(id)arg2 capitalization:(unsigned long long)arg3 short:(BOOL)arg4;
 - (id)ICUdisplayNameForLanguage:(id)arg1 capitalization:(struct ULocaleDisplayNames *)arg2;
 - (id)displayNameForDialect:(id)arg1 context:(unsigned long long)arg2 displayLanguage:(id)arg3;

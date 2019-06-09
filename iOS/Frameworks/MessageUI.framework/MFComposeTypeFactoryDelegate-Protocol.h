@@ -6,16 +6,15 @@
 
 #import <MessageUI/NSObject-Protocol.h>
 
-@class MFFuture, MFMailAccountProxy, MFMailAccountProxyGenerator, MFMutableMessageHeaders, NSArray, NSString, UIView;
-@protocol MFComposeBodyField;
+@class EFFuture, MFMailAccountProxy, MFMutableMessageHeaders, NSArray, NSString, UIView;
+@protocol MFComposeBodyField, MFMailAccountProxyGenerator;
 
 @protocol MFComposeTypeFactoryDelegate <NSObject>
-- (MFFuture *)shouldCreateRichTextRepresentation;
+- (EFFuture *)shouldCreateRichTextRepresentation;
 - (NSArray *)attachments;
-- (_Bool)hasAnyHiddenTrailingEmptyQuote;
 - (MFMailAccountProxy *)sendingAccountProxy;
 - (NSString *)sendingEmailAddress;
-- (void)setSendingEmailAddress:(NSString *)arg1 addIfNotPresent:(_Bool)arg2;
+- (void)setSendingEmailAddress:(NSString *)arg1;
 - (MFMutableMessageHeaders *)savedHeaders;
 - (void)setSavedHeaders:(MFMutableMessageHeaders *)arg1;
 - (NSString *)subject;
@@ -27,9 +26,10 @@
 - (NSArray *)toRecipients;
 - (void)setToRecipients:(NSArray *)arg1;
 - (UIView<MFComposeBodyField> *)bodyField;
-- (MFMailAccountProxyGenerator *)accountProxyGenerator;
+- (id <MFMailAccountProxyGenerator>)accountProxyGenerator;
 
 @optional
+- (unsigned long long)contentVariationIndex;
 - (void)contentDidChange;
 - (void)addSignature:(_Bool)arg1;
 @end

@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)_generateSQLForSubqueryExpression:(id)arg1 trailingKeypath:(id)arg2 inContext:(id)arg3;
 - (id)_generateSQLForFetchExpression:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
 - (BOOL)_canDoASubselectForExpression:(id)arg1 inContext:(id)arg2;
-- (id)_generateSQLForConstantCollection:(id)arg1 inContext:(id)arg2;
+- (id)_generateSQLForConstantCollection:(id)arg1 reboundFrom:(id)arg2 inContext:(id)arg3;
 - (id)_generateSQLForExpressionCollection:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
 - (id)_generateSQLForVariableExpression:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;
 - (id)_generateSQLForKeyPathExpression:(id)arg1 allowToMany:(BOOL)arg2 inContext:(id)arg3;

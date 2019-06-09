@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_finderTagsFromRelativePath:(id)arg1;
-+ (BOOL)_modeFromRelativePath:(id)arg1 isPackageFault:(BOOL)arg2;
++ (BOOL)modeFromRelativePath:(id)arg1 isPackageFault:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSString *rawBouncedLogicalName; // @synthesize rawBouncedLogicalName=_bouncedLogicalName;
 @property(nonatomic) unsigned char itemScope; // @synthesize itemScope=_itemScope;
@@ -69,8 +69,7 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)updateItemModeFromSharingOptions:(unsigned long long)arg1;
-- (id)initAsShareAcceptFaultWithName:(id)arg1 mode:(BOOL)arg2;
+- (id)initAsShareAcceptFaultWithName:(id)arg1 isDirectory:(BOOL)arg2;
 - (id)initWithRelativePath:(id)arg1 itemID:(id)arg2 parentGlobalID:(id)arg3;
 - (id)initWithLocalStatInfo:(id)arg1;
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2;

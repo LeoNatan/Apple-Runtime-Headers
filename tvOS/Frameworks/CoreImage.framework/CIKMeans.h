@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSNumber *inputPasses; // @synthesize inputPasses;
 @property(copy, nonatomic) NSNumber *inputCount; // @synthesize inputCount;
 - (id)outputImage;
+- (id)defuse:(id)arg1 seed:(int)arg2;
 - (id)_kernelKmeans;
 - (id)_combine:(id)arg1;
 

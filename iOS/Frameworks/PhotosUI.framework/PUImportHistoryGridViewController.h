@@ -9,19 +9,19 @@
 #import <PhotosUI/PUImportHistorySectionHeaderViewDelegate-Protocol.h>
 #import <PhotosUI/PUSectionedGridLayoutDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, PHFetchResult, PLDateRangeFormatter, PUImportHistorySectionHeaderView;
+@class NSNumber, NSString, PHFetchResult, PLDateRangeFormatter, PUImportHistorySectionHeaderView;
 
 @interface PUImportHistoryGridViewController : PUPhotosGridViewController <PUSectionedGridLayoutDelegate, PUImportHistorySectionHeaderViewDelegate>
 {
     PHFetchResult *_importSessions;
     PLDateRangeFormatter *_dateFormatter;
     double _referenceWidth;
-    NSMutableDictionary *_headerHeightCache;
+    NSNumber *_cachedHeaderHeight;
     PUImportHistorySectionHeaderView *_referenceHeaderView;
 }
 
 @property(retain, nonatomic) PUImportHistorySectionHeaderView *referenceHeaderView; // @synthesize referenceHeaderView=_referenceHeaderView;
-@property(retain, nonatomic) NSMutableDictionary *headerHeightCache; // @synthesize headerHeightCache=_headerHeightCache;
+@property(retain, nonatomic) NSNumber *cachedHeaderHeight; // @synthesize cachedHeaderHeight=_cachedHeaderHeight;
 @property(nonatomic) double referenceWidth; // @synthesize referenceWidth=_referenceWidth;
 @property(readonly, nonatomic) PLDateRangeFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(retain, nonatomic) PHFetchResult *importSessions; // @synthesize importSessions=_importSessions;

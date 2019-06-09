@@ -21,6 +21,7 @@
 + (id)dataWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2;
 + (id)dataWithBytes:(const void *)arg1 length:(unsigned long long)arg2;
 + (id)data;
++ (id)_alloc;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (_Bool)_providesConcreteBacking;
 - (id)base64Encoding;
@@ -75,9 +76,20 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)_asciiDescription;
+- (id)debugDescription;
 - (id)description;
 - (unsigned long long)_cfTypeID;
 - (const void *)bytes;
 - (unsigned long long)length;
+- (id)compressedDataUsingAlgorithm:(long long)arg1 error:(id *)arg2;
+- (id)decompressedDataUsingAlgorithm:(long long)arg1 error:(id *)arg2;
+- (id)_dataWithCompressionOperation:(int)arg1 algorithm:(long long)arg2;
+- (_Bool)isNSData__;
+- (id)_replaceCString:(const char *)arg1 withCString:(const char *)arg2;
+- (id)_web_parseRFC822HeaderFields;
+- (id)_web_guessedMIMETypeForExtension:(id)arg1;
+- (id)_web_guessedMIMEType;
+- (id)_web_guessedMIMETypeForXML;
+- (id)replacementObjectForPortCoder:(id)arg1;
 @end
 

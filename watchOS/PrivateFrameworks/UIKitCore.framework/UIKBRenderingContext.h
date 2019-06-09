@@ -13,6 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface UIKBRenderingContext : NSObject <NSCopying>
 {
+    _Bool _isFloating;
     unsigned int _shiftState;
     UIKBRenderConfig *_renderConfig;
     int _keyboardType;
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)renderingContextForRenderConfig:(id)arg1;
+@property(nonatomic) _Bool isFloating; // @synthesize isFloating=_isFloating;
 @property(nonatomic) int handBias; // @synthesize handBias=_handBias;
 @property(nonatomic) int keyboardType; // @synthesize keyboardType=_keyboardType;
 @property(retain, nonatomic) UIKBRenderConfig *renderConfig; // @synthesize renderConfig=_renderConfig;

@@ -7,7 +7,6 @@
 @class UNNotification, UNNotificationResponse;
 
 @protocol _UNNotificationExtensionRemoteInterface
-- (void)_loadAudioAccessoryViewForNotification:(UNNotification *)arg1;
 - (void)_restoreInputViews;
 - (void)_preserveInputViews;
 - (void)_updateMediaPlayPauseButton;

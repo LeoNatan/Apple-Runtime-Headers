@@ -6,39 +6,50 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, SCRCTargetSelectorTimer, SCRCThreadKey;
+@class NSLock, SCRCTargetSelectorTimer, SCRCThreadKey, SCRCUserDefaults;
 @protocol SCRContextualHelpHandlerProtocol;
 
 __attribute__((visibility("hidden")))
 @interface SCRContextualHelpManager : NSObject
 {
-    NSLock *_variableLock;
-    SCRCTargetSelectorTimer *_outputTimer;
-    BOOL _shouldOutputVOInstructions;
-    BOOL _shouldOutputContextualHelp;
-    int _outputHelpTag;
+    long long _outputHelpTag;
     SCRCThreadKey *_threadKey;
     BOOL _needToOutputHelpForCurrentElement;
+    BOOL _shouldOutputContextualHelp;
+    BOOL _shouldOutputVOInstructions;
     id <SCRContextualHelpHandlerProtocol> _delegate;
+    SCRCTargetSelectorTimer *__outputTimer;
+    id __shouldOutputVOInstructionsObserver;
+    id __shouldOutputContextualHelpTagObserver;
+    NSLock *__variableLock;
+    SCRCUserDefaults *__userDefaults;
 }
 
 + (id)replaceCommandTagsInString:(id)arg1;
++ (id)displayStringForCommand:(id)arg1 userDefaults:(id)arg2;
 + (id)displayStringForCommand:(id)arg1;
-+ (id)sharedManager;
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
+@property(retain, nonatomic) NSLock *_variableLock; // @synthesize _variableLock=__variableLock;
+@property(retain, nonatomic, setter=_setShouldOutputContextualHelpTagObserver:) id _shouldOutputContextualHelpTagObserver; // @synthesize _shouldOutputContextualHelpTagObserver=__shouldOutputContextualHelpTagObserver;
+@property(retain, nonatomic, setter=_setShouldOutputVOInstructionsObserver:) id _shouldOutputVOInstructionsObserver; // @synthesize _shouldOutputVOInstructionsObserver=__shouldOutputVOInstructionsObserver;
+@property(nonatomic) BOOL shouldOutputVOInstructions; // @synthesize shouldOutputVOInstructions=_shouldOutputVOInstructions;
+@property(nonatomic) BOOL shouldOutputContextualHelp; // @synthesize shouldOutputContextualHelp=_shouldOutputContextualHelp;
+@property(retain, nonatomic) SCRCTargetSelectorTimer *_outputTimer; // @synthesize _outputTimer=__outputTimer;
+@property(nonatomic) __weak id <SCRContextualHelpHandlerProtocol> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)outputContextualHelpWithSpokenString:(id)arg1 helpTagString:(id)arg2 forceOutput:(BOOL)arg3;
 - (void)cancelTimer;
 - (BOOL)isHelpPending;
 - (void)resetTimer;
 - (void)_sendContextualHelpEvent;
-- (void)setDelegate:(id)arg1;
 - (void)_createTimer;
 - (void)invalidate;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setNeedToOutputContextualHelpForCurrentElement:(BOOL)arg1;
-- (BOOL)shouldOutputVOInstructions;
-- (BOOL)shouldOutputContextualHelp;
+- (void)_updateAfterPreferenceChanges;
+- (void)setShouldOutputContextualHelpTagValue:(id)arg1;
+- (void)setShouldOutputVOInstructionsValue:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)initWithUserDefaults:(id)arg1;
 
 @end
 

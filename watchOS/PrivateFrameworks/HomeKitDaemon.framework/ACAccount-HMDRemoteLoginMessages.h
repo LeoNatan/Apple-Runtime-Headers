@@ -10,5 +10,6 @@
 
 @interface ACAccount (HMDRemoteLoginMessages)
 @property(readonly, nonatomic) NSDictionary *messagePayload;
+- (id)description;
 @end
 

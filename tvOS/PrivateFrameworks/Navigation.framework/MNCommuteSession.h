@@ -21,7 +21,6 @@
     NSTimer *_etaUpdateTimer;
     MNNavigationTraceManager *_traceManager;
     unsigned long long _currentSuggestionID;
-    _Bool _isMapsActive;
     MNLocation *_lastLocation;
     MNLocationHistory *_locationHistory;
     MNSuggestionsManager *_suggestionsManager;
@@ -39,8 +38,6 @@
 - (void)commuteDestination:(id)arg1 didChangeInvalid:(_Bool)arg2;
 - (void)destinationUpdaterDidArrive:(id)arg1;
 - (void)destinationUpdater:(id)arg1 didUpdateDestination:(id)arg2;
-@property(readonly, nonatomic) _Bool isMapsActive;
-- (void)updateMapsActive:(_Bool)arg1;
 - (void)_updatedDestinations;
 - (void)updateComparisonStartDate;
 - (void)_resetRankedDestinations;

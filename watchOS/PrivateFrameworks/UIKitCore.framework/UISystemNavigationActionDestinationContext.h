@@ -15,11 +15,14 @@
     NSString *_title;
     NSString *_bundleId;
     NSURL *_URL;
+    NSString *_sceneIdentifier;
 }
 
 + (id)systemNavigationActionContextWithURL:(id)arg1;
++ (id)systemNavigationActionContextWithTitle:(id)arg1 sceneIdentifier:(id)arg2;
 + (id)systemNavigationActionContextWithTitle:(id)arg1 bundleId:(id)arg2;
 + (id)systemNavigationActionContextWithTitle:(id)arg1 andURL:(id)arg2;
+@property(copy, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 @property(copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(copy, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;

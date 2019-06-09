@@ -10,6 +10,7 @@
 {
 }
 
++ (id)service;
 + (id)tool;
 + (id)framework;
 + (id)daemon;

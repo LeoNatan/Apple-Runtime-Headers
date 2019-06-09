@@ -16,6 +16,7 @@
     ABAccountComponents *_components;
 }
 
++ (id)os_log;
 - (id)_persistentStoreURL;
 - (void)deleteAccountFromDiskWithAddressBook:(id)arg1;
 - (void)deleteAccountFromStoreWithCompletionBlock:(CDUnknownBlockType)arg1;
@@ -30,12 +31,12 @@
 @property(readonly) NSString *path;
 @property(readonly) id <ABACAccountStore> store;
 @property(readonly) ABACAccount *account;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithAccountComponents:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

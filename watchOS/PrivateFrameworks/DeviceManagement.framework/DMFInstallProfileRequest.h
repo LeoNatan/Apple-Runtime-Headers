@@ -14,12 +14,14 @@
     unsigned int _type;
     NSString *_managingProfileIdentifier;
     NSData *_profileData;
+    NSString *_personaID;
 }
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isPermittedOnUserConnection;
 + (_Bool)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+@property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(copy, nonatomic) NSData *profileData; // @synthesize profileData=_profileData;
 @property(copy, nonatomic) NSString *managingProfileIdentifier; // @synthesize managingProfileIdentifier=_managingProfileIdentifier;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;

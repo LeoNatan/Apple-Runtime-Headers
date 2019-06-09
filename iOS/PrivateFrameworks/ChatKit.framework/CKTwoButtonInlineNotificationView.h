@@ -8,6 +8,7 @@
 
 @class NSString, UIButton, UIImage, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface CKTwoButtonInlineNotificationView : CKInlineNotificationView
 {
     UIView *_contentView;

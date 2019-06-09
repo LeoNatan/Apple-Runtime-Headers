@@ -64,6 +64,7 @@
 - (void)peerPaymentActionController:(id)arg1 requestPresentViewController:(id)arg2 withTransition:(int)arg3;
 - (void)peerPaymentActionController:(id)arg1 requestPresentViewController:(id)arg2;
 - (void)peerPaymentActionController:(id)arg1 hasChangedState:(unsigned int)arg2;
+- (_Bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;

@@ -31,6 +31,7 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableTransactionService:(_Bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveMessage:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(_Bool)arg2;
+- (_Bool)supportsLowPowerExpressMode;
 - (_Bool)supportsExpressForAutomaticSelectionTechnologyType:(int)arg1;
 - (_Bool)supportsInAppPaymentsForPass:(id)arg1;
 - (_Bool)supportsNotificationsForPass:(id)arg1;
@@ -46,8 +47,17 @@
 - (void)balancesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deletePaymentTransactionWithIdentifier:(id)arg1 forPassWithUniqueIdentifier:(id)arg2;
 - (void)mapsMerchantsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)submitTransactionAnswerForTransaction:(id)arg1 questionType:(unsigned int)arg2 answer:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)transactionsRequiringReviewForAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)cashbackByPeriodFromPassUniqueIdentifier:(id)arg1 withStartDate:(id)arg2 endDate:(id)arg3 calendar:(id)arg4 calendarUnit:(unsigned int)arg5 type:(int)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)transactionWithReferenceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)transactionWithServiceIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transactionCountByPeriodForPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 calendar:(id)arg4 calendarUnit:(unsigned int)arg5 includePurchaseTotal:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 matchingMapsMerchantIdentifier:(unsigned long long)arg2 orMapsBrandIdentifier:(unsigned long long)arg3 withTransactionSource:(unsigned int)arg4 withBackingData:(unsigned int)arg5 limit:(int)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)pendingTransactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 startDate:(id)arg4 endDate:(id)arg5 limit:(int)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)approvedTransactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 startDate:(id)arg4 endDate:(id)arg5 limit:(int)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionType:(int)arg2 withTransactionSource:(unsigned int)arg3 withBackingData:(unsigned int)arg4 startDate:(id)arg5 endDate:(id)arg6 limit:(int)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)transactionsForPaymentPassWithuniqueIdentifier:(id)arg1 withMerchantCategory:(int)arg2 withTransactionSource:(unsigned int)arg3 withBackingData:(unsigned int)arg4 startDate:(id)arg5 endDate:(id)arg6 limit:(int)arg7 completion:(CDUnknownBlockType)arg8;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 matchingMapsMerchantIdentifier:(unsigned long long)arg2 orMapsBrandIdentifier:(unsigned long long)arg3 orMerchantCleanName:(id)arg4 withTransactionSource:(unsigned int)arg5 withBackingData:(unsigned int)arg6 limit:(int)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withMapsIdentifier:(unsigned long long)arg2 withTransactionSource:(unsigned int)arg3 withBackingData:(unsigned int)arg4 limit:(int)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withPeerPaymentCounterpartHandle:(id)arg2 withTransactionSource:(unsigned int)arg3 withBackingData:(unsigned int)arg4 limit:(int)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 limit:(int)arg4 completion:(CDUnknownBlockType)arg5;
@@ -57,6 +67,7 @@
 - (void)transitStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeExpressPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeExpressPassesWithCardType:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)passUpgradeWithRequest:(id)arg1 pass:(id)arg2 visibleViewController:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setExpressWithPassInformation:(id)arg1 credential:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)conflictingExpressPassIdentifiersForPassInformation:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NSString *defaultPaymentPassIdentifier;
@@ -77,6 +88,7 @@
 - (void)addDelegate:(id)arg1;
 - (int)apiVersion;
 - (void)dealloc;
+- (id)initWithPaymentService:(id)arg1 secureElement:(id)arg2;
 - (id)init;
 
 // Remaining properties

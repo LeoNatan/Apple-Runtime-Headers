@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)valueDescription;
-- (void)addTextBoundryToRequest:(id)arg1 edge:(int)arg2;
+- (void)addTextBoundryToRequest:(id)arg1 edge:(long long)arg2;
 - (void)echoAttributedString:(id)arg1 variants:(id)arg2 request:(id)arg3;
 - (BOOL)performBrailleWrapRightWithOutputRequest:(id)arg1;
 - (BOOL)_performBrailleWrapRightWithOutputRequest:(id)arg1;
@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)iBooksPerformBlockCheckingForScrolling:(CDUnknownBlockType)arg1 withEvent:(id)arg2 request:(id)arg3;
 - (void)iBooksReadAllWithEvent:(id)arg1 request:(id)arg2;
 - (id)iBooksInteractWithoutBoundaryCheckWithEvent:(id)arg1 request:(id)arg2 direction:(long long)arg3;

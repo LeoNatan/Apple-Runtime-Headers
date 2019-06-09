@@ -17,11 +17,14 @@
     struct _has;
     NSArray *_alternatives;
     NSString *_localizedValue;
+    NSString *_pronunciationHint;
     NSString *_vocabularyIdentifier;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)alternativesType;
 @property(copy, nonatomic) NSString *vocabularyIdentifier; // @synthesize vocabularyIdentifier=_vocabularyIdentifier;
+@property(copy, nonatomic) NSString *pronunciationHint; // @synthesize pronunciationHint=_pronunciationHint;
 @property(copy, nonatomic) NSString *localizedValue; // @synthesize localizedValue=_localizedValue;
 @property(copy, nonatomic) NSArray *alternatives; // @synthesize alternatives=_alternatives;
 - (void).cxx_destruct;
@@ -29,9 +32,12 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasVocabularyIdentifier;
+@property(readonly, nonatomic) _Bool hasPronunciationHint;
 @property(readonly, nonatomic) _Bool hasLocalizedValue;
 - (id)alternativesAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int alternativesCount;

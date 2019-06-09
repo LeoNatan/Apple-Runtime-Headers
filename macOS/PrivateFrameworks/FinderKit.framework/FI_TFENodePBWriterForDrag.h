@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)typesForClippings;
-- (id)initWithNode:(const struct TFENode *)arg1 checkForTEFFilesInContainer:(_Bool)arg2;
 
 @end
 

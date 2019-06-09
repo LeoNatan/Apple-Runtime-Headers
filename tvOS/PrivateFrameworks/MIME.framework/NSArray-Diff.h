@@ -8,5 +8,34 @@
 
 @interface NSArray (Diff)
 - (id)mf_diffWithArray:(id)arg1;
+- (id)mf_uncommentedAddressList;
+- (void)mf_enumerateObjectsInBatchesOfSize:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
+- (id)mf_objectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)mf_indicesOfStringsWithPrefix:(id)arg1;
+- (unsigned long long)mf_indexWhereObjectWouldBeInserted:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
+- (unsigned long long)mf_indexWhereObjectWouldBeInserted:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (id)mf_objectEquivalentTo:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
+- (id)mf_objectEquivalentTo:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (unsigned long long)mf_indexOfObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
+- (unsigned long long)mf_indexOfObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (id)mf_dictionaryWithMessagesSortedByStore;
+- (id)mf_permutations;
+- (id)mf_subarraysOfSize:(unsigned long long)arg1;
+- (id)mf_groupBy:(CDUnknownBlockType)arg1;
+- (id)mf_partition:(CDUnknownBlockType)arg1;
+- (id)mf_prefix:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSArray *mf_tail;
+- (id)mf_foldLeftWithStart:(id)arg1 reduce:(CDUnknownBlockType)arg2;
+- (id)mf_reduce:(CDUnknownBlockType)arg1;
+- (id)mf_flatMap:(CDUnknownBlockType)arg1;
+- (id)mf_mapSelector:(SEL)arg1;
+- (id)mf_map:(CDUnknownBlockType)arg1;
+- (id)mf_uniquifyWithComparator:(CDUnknownBlockType)arg1;
+- (id)mf_flatten;
+- (unsigned long long)mf_countObjectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)mf_firstObjectPassingTest:(CDUnknownBlockType)arg1;
+- (id)mf_filter:(CDUnknownBlockType)arg1;
+- (_Bool)mf_any:(CDUnknownBlockType)arg1;
+- (_Bool)mf_all:(CDUnknownBlockType)arg1;
 @end
 

@@ -12,6 +12,7 @@
 
 @class DecisionDetails, ManagedEventHandler, NSArray, NSDate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface WiFiTriggerHandler : NSObject <ConfigurableObjectProtocol, SyndromeHandlerProtocol, ManagedEventInfoProtocol>
 {
     NSString *_syndromeName;

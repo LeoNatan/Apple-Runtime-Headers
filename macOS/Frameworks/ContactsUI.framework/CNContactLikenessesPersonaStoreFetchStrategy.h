@@ -16,6 +16,7 @@
     CNContact *_contact;
 }
 
++ (id)os_log;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(retain, nonatomic) PRPersonaStore *personaStore; // @synthesize personaStore=_personaStore;
 - (void).cxx_destruct;

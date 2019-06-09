@@ -18,7 +18,7 @@
     NSNumber *_propertyLock_localSourceID;
     NSNumber *_propertyLock_localDeviceID;
     NSNumber *_propertyLock_deviceNoneID;
-    int _defaultsLoaded;
+    // Error parsing type: AB, name: _defaultsLoaded
     HDDatabaseValueCache *_persistentIDsByProvenanceKey;
     HDDatabaseValueCache *_originProvenanceByPersistentID;
     NSString *_localSystemBuild;

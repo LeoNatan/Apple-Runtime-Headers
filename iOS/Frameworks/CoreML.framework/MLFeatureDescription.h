@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <CoreML/NSCopying-Protocol.h>
+#import <CoreML/NSSecureCoding-Protocol.h>
 
 @class MLDictionaryConstraint, MLImageConstraint, MLMultiArrayConstraint, MLSequenceConstraint, NSDictionary, NSString;
 
-@interface MLFeatureDescription : NSObject <NSCopying>
+@interface MLFeatureDescription : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _optional;
     NSString *_name;
@@ -22,6 +23,7 @@
     MLSequenceConstraint *_sequenceConstraintCached;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)featureDescriptionWithName:(id)arg1 type:(long long)arg2 optional:(_Bool)arg3 constraints:(id)arg4;
 @property(readonly, nonatomic) MLSequenceConstraint *sequenceConstraintCached; // @synthesize sequenceConstraintCached=_sequenceConstraintCached;
 @property(readonly, nonatomic) MLDictionaryConstraint *dictionaryConstraintCached; // @synthesize dictionaryConstraintCached=_dictionaryConstraintCached;
@@ -32,6 +34,8 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)allowsValuesWithDescription:(id)arg1;

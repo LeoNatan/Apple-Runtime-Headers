@@ -36,14 +36,13 @@
 - (id)_statusLabelViewContainerView;
 - (long long)_interfaceOrientation;
 - (void)moduleInstancesChangedForModuleInstanceManager:(id)arg1;
-- (void)didUpdatePreferredSizeForContentModuleContext:(id)arg1;
 - (void)dismissControlCenterForContentModuleContext:(id)arg1;
 - (void)dismissExpandedViewForContentModuleContext:(id)arg1;
 - (void)requestExpandModuleForContentModuleContext:(id)arg1;
 - (void)contentModuleContext:(id)arg1 enqueueStatusUpdate:(id)arg2;
 - (void)contentModuleContext:(id)arg1 didUpdateHomeGestureDismissalAllowed:(_Bool)arg2;
-- (id)interactionHighlightContainerViewForModuleCollectionViewController:(id)arg1;
-- (id)obscuringBackgroundViewForModuleCollectionViewController:(id)arg1;
+- (void)moduleCollectionViewController:(id)arg1 willDismissViewController:(id)arg2;
+- (void)moduleCollectionViewController:(id)arg1 willPresentViewController:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 willRemoveModuleContainerViewController:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 didAddModuleContainerViewController:(id)arg2;
 - (void)moduleCollectionViewController:(id)arg1 didCloseExpandedModule:(id)arg2;
@@ -61,6 +60,7 @@
 - (void)_resignActive;
 - (void)_reparentAndBecomeActive;
 - (void)_reparent;
+- (void)displayWillTurnOff;
 - (void)dismissPresentedContentAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissExpandedModuleAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissPresentedContentWithCompletionHandler:(CDUnknownBlockType)arg1;

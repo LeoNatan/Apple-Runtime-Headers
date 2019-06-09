@@ -8,7 +8,6 @@
 
 @class NSSet;
 
-__attribute__((visibility("hidden")))
 @interface CHSearchQueryItem : NSObject
 {
     NSSet *_strokeIdentifiers;

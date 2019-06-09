@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (struct OpaqueFigFormatReader *)_formatReader;
 - (struct OpaqueFigAsset *)_figAsset;
 - (_Bool)isProxy;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithPropertyList:(id)arg1;
 

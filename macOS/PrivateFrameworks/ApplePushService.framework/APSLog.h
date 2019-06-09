@@ -11,6 +11,8 @@
 }
 
 + (BOOL)shouldPowerLogEvent:(id)arg1;
++ (id)ttlCollection;
++ (id)taskManager;
 + (id)connectionServer;
 + (id)main;
 + (id)preference;

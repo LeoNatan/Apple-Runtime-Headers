@@ -128,14 +128,18 @@ struct Box {
     struct vector<DSPGraph::PropertyTap, std::__1::allocator<DSPGraph::PropertyTap>> _field11;
     struct vector<std::__1::unique_ptr<DSPGraph::FileRecorder, std::__1::default_delete<DSPGraph::FileRecorder>>, std::__1::allocator<std::__1::unique_ptr<DSPGraph::FileRecorder, std::__1::default_delete<DSPGraph::FileRecorder>>>> _field12;
     struct vector<std::__1::unique_ptr<DSPGraph::FileInjector, std::__1::default_delete<DSPGraph::FileInjector>>, std::__1::allocator<std::__1::unique_ptr<DSPGraph::FileInjector, std::__1::default_delete<DSPGraph::FileInjector>>>> _field13;
-    struct function<void (double)> _field14;
-    struct function<void (DSPGraph::Box *)> _field15;
-    struct function<void (DSPGraph::Box *)> _field16;
-    _Bool _field17;
-    _Bool _field18;
-    _Bool _field19;
-    _Bool _field20;
-    long long _field21;
+    struct mutex _field14;
+    struct vector<std::__1::unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>>, std::__1::allocator<std::__1::unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>>>> _field15;
+    struct Set<DSPGraph::Analyzer *> _field16;
+    struct map<std::__1::pair<unsigned int, int>, long long, std::__1::less<std::__1::pair<unsigned int, int>>, std::__1::allocator<std::__1::pair<const std::__1::pair<unsigned int, int>, long long>>> _field17;
+    struct function<void (double)> _field18;
+    struct function<void (DSPGraph::Box *, int)> _field19;
+    struct function<void (DSPGraph::Box *, int)> _field20;
+    _Bool _field21;
+    _Bool _field22;
+    _Bool _field23;
+    _Bool _field24;
+    long long _field25;
 };
 
 struct Graph;
@@ -146,11 +150,18 @@ struct Interpreter;
 
 struct IsoGroup;
 
+struct Member;
+
 struct OutputPort;
 
 struct ParameterTap;
 
 struct PropertyTap;
+
+struct Set<DSPGraph::Analyzer *> {
+    struct Member *_field1;
+    unsigned long long _field2;
+};
 
 struct Subset;
 
@@ -167,6 +178,10 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::_
 struct __list_node_base<ASDDSPGraphHelper, void *> {
     struct __list_node_base<ASDDSPGraphHelper, void *> *__prev_;
     struct __list_node_base<ASDDSPGraphHelper, void *> *__next_;
+};
+
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *_field1;
 };
 
 struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
@@ -193,23 +208,46 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
     } _field1;
 };
 
-struct function<void (DSPGraph::Box *)> {
-    struct type _field1;
-    struct __base<void (DSPGraph::Box *)> *_field2;
+struct function<void (DSPGraph::Box *, int)> {
+    struct __value_func<void (DSPGraph::Box *, int)> {
+        struct type _field1;
+        struct __base<void (DSPGraph::Box *, int)> *_field2;
+    } _field1;
 };
 
 struct function<void (double)> {
-    struct type _field1;
-    struct __base<void (double)> *_field2;
+    struct __value_func<void (double)> {
+        struct type _field1;
+        struct __base<void (double)> *_field2;
+    } _field1;
 };
 
-struct guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>;
+struct guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, caulk::concurrent::guarded_lookup_hash_table_must_count_dereferences>;
 
 struct list<ASDDSPGraphHelper, std::__1::allocator<ASDDSPGraphHelper>> {
     struct __list_node_base<ASDDSPGraphHelper, void *> __end_;
     struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<ASDDSPGraphHelper, void *>>> {
         unsigned long long __value_;
     } __size_alloc_;
+};
+
+struct map<std::__1::pair<unsigned int, int>, long long, std::__1::less<std::__1::pair<unsigned int, int>>, std::__1::allocator<std::__1::pair<const std::__1::pair<unsigned int, int>, long long>>> {
+    struct __tree<std::__1::__value_type<std::__1::pair<unsigned int, int>, long long>, std::__1::__map_value_compare<std::__1::pair<unsigned int, int>, std::__1::__value_type<std::__1::pair<unsigned int, int>, long long>, std::__1::less<std::__1::pair<unsigned int, int>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::pair<unsigned int, int>, long long>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::pair<unsigned int, int>, long long>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::pair<unsigned int, int>, std::__1::__value_type<std::__1::pair<unsigned int, int>, long long>, std::__1::less<std::__1::pair<unsigned int, int>>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+};
+
+struct mutex {
+    struct _opaque_pthread_mutex_t {
+        long long _field1;
+        char _field2[56];
+    } _field1;
 };
 
 struct shared_ptr<DSPGraph::Graph> {
@@ -251,6 +289,8 @@ struct unique_ptr<AudioRingBuffer, std::__1::default_delete<AudioRingBuffer>> {
     } __ptr_;
 };
 
+struct unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>>;
+
 struct unique_ptr<DSPGraph::FileInjector, std::__1::default_delete<DSPGraph::FileInjector>>;
 
 struct unique_ptr<DSPGraph::FileRecorder, std::__1::default_delete<DSPGraph::FileRecorder>>;
@@ -267,9 +307,9 @@ struct unique_ptr<DSPGraph::Interpreter, std::__1::default_delete<DSPGraph::Inte
     } __ptr_;
 };
 
-struct unique_ptr<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>, std::__1::default_delete<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>>> {
-    struct __compressed_pair<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>*, std::__1::default_delete<ca::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3>>> {
-        struct guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, 3> *__value_;
+struct unique_ptr<caulk::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, caulk::concurrent::guarded_lookup_hash_table_must_count_dereferences>, std::__1::default_delete<caulk::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, caulk::concurrent::guarded_lookup_hash_table_must_count_dereferences>>> {
+    struct __compressed_pair<caulk::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, caulk::concurrent::guarded_lookup_hash_table_must_count_dereferences>*, std::__1::default_delete<caulk::concurrent::guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, caulk::concurrent::guarded_lookup_hash_table_must_count_dereferences>>> {
+        struct guarded_lookup_hash_table<unsigned long long, ASDDSPGraphHelper *, caulk::concurrent::guarded_lookup_hash_table_must_count_dereferences> *__value_;
     } __ptr_;
 };
 
@@ -362,6 +402,14 @@ struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_
     struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field2;
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
         struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> *_field1;
+    } _field3;
+};
+
+struct vector<std::__1::unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>>, std::__1::allocator<std::__1::unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>>>> {
+    struct unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>> *_field1;
+    struct unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>> *_field2;
+    struct __compressed_pair<std::__1::unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>>*, std::__1::allocator<std::__1::unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>>>> {
+        struct unique_ptr<DSPGraph::Analyzer, std::__1::default_delete<DSPGraph::Analyzer>> *_field1;
     } _field3;
 };
 

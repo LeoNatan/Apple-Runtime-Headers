@@ -8,7 +8,6 @@
 
 @class CAToolTipEditTextField;
 
-__attribute__((visibility("hidden")))
 @interface CAToolTipParameterStrip : NSView
 {
     CAToolTipEditTextField *labelField;

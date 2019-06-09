@@ -10,29 +10,38 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBRunVoiceCommandIntent-Protocol.h>
 
-@class NSString, _INPBDataString, _INPBIntentMetadata, _INPBVoiceCommandDeviceInformation;
+@class NSString, _INPBDataString, _INPBIntentExecutionResult, _INPBIntentMetadata, _INPBVoiceCommandDeviceInformation;
 
 @interface _INPBRunVoiceCommandIntent : PBCodable <_INPBRunVoiceCommandIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
+    _INPBIntentExecutionResult *_executionResult;
     _INPBIntentMetadata *_intentMetadata;
     _INPBVoiceCommandDeviceInformation *_originDevice;
+    NSString *_previousIntentIdentifier;
     _INPBDataString *_voiceCommand;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBDataString *voiceCommand; // @synthesize voiceCommand=_voiceCommand;
+@property(copy, nonatomic) NSString *previousIntentIdentifier; // @synthesize previousIntentIdentifier=_previousIntentIdentifier;
 @property(retain, nonatomic) _INPBVoiceCommandDeviceInformation *originDevice; // @synthesize originDevice=_originDevice;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBIntentExecutionResult *executionResult; // @synthesize executionResult=_executionResult;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasVoiceCommand;
+@property(readonly, nonatomic) _Bool hasPreviousIntentIdentifier;
 @property(readonly, nonatomic) _Bool hasOriginDevice;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasExecutionResult;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

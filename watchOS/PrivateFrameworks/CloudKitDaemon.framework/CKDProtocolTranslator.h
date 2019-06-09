@@ -50,6 +50,8 @@
 - (id)pSubscriptionFromSubscription:(id)arg1 error:(id *)arg2;
 - (id)subscriptionFromPSubscription:(id)arg1 error:(id *)arg2;
 - (id)pQueryFromQuery:(id)arg1 error:(id *)arg2;
+- (id)streamingAssetFromPStreamingAsset:(id)arg1 error:(id *)arg2;
+- (id)pStreamingAssetFromStreamingAsset:(id)arg1 forCache:(_Bool)arg2;
 - (id)pPackageFromPackage:(id)arg1;
 - (id)packageFromPPackage:(id)arg1 error:(id *)arg2;
 - (id)pAssetFromAsset:(id)arg1;
@@ -83,14 +85,17 @@
 - (id)initWithBundleIdentifier:(id)arg1 databaseScope:(int)arg2;
 - (id)initWithContainerScopedUserID:(id)arg1 orgAdminUserID:(id)arg2 bundleIdentifier:(id)arg3 databaseScope:(int)arg4;
 - (id)_initWithContainerScopedUserID:(id)arg1 orgAdminUserID:(id)arg2 bundleIdentifier:(id)arg3 databaseScope:(int)arg4;
+- (id)pFieldActionWithLocation:(int)arg1 length:(unsigned int)arg2 values:(id)arg3;
 - (id)pFieldWithKey:(id)arg1 value:(id)arg2;
+- (id)pFieldWithKey:(id)arg1 value:(id)arg2 forCache:(_Bool)arg3;
 - (id)objectRepresentationFromFieldValue:(id)arg1;
 - (id)encryptedObjectRepresentationFromFieldValue:(id)arg1;
-- (id)fieldValueListOfType:(int)arg1 withList:(id)arg2;
 - (id)locationFieldValueWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)fieldValueOfType:(int)arg1 withObject:(id)arg2;
+- (id)fieldValueOfType:(int)arg1 withObject:(id)arg2 forCache:(_Bool)arg3;
 - (id)encryptedFieldValueOfType:(int)arg1 withObject:(id)arg2;
 - (id)fieldValueFromObject:(id)arg1;
+- (id)fieldValueFromObject:(id)arg1 forCache:(_Bool)arg2;
 - (_Bool)objectIsAnEncryptedType:(id)arg1;
 - (int)fieldValueTypeFromObject:(id)arg1;
 - (int)fieldValueTypeFromEncryptedDataObject:(id)arg1 isInList:(_Bool)arg2;

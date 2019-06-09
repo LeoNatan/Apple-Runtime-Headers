@@ -24,6 +24,7 @@
 - (void)evaluate:(id)arg1;
 - (void)resetEffectivePriority;
 - (void)boostEffectivePriority;
+- (_Bool)validateVisionKitSoftLinkSymbols;
 - (void)nodeInitialize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

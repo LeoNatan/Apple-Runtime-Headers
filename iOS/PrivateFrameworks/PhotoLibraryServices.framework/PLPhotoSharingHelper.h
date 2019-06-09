@@ -37,7 +37,7 @@
 + (id)_downloadRequestQueue;
 + (_Bool)_recentlyRequestedDownloadAsset:(id)arg1 cloudPlaceholderKind:(short)arg2;
 + (void)prioritizeDownloadsForAlbumGUID:(id)arg1;
-+ (void)checkServerModelForAlbum:(id)arg1;
++ (void)checkServerModelForAlbum:(id)arg1 photoLibrary:(id)arg2;
 + (void)markCommentsForAssetCollectionWithGUID:(id)arg1 asViewedWithLastViewedDate:(id)arg2;
 + (void)markAlbumGUIDAsViewed:(id)arg1 clearUnseenAssetsCount:(_Bool)arg2;
 + (struct CGSize)derivedAssetSizeForMasterSizeWidth:(double)arg1 height:(double)arg2 derivativeType:(int)arg3 withSpecificationInfo:(id)arg4;

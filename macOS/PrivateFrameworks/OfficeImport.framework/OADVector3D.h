@@ -8,6 +8,7 @@
 
 #import <OfficeImport/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface OADVector3D : NSObject <NSCopying>
 {
     float mDx;

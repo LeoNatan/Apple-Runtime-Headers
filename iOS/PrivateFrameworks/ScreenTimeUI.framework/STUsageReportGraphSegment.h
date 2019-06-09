@@ -8,6 +8,7 @@
 
 @class NSNumber, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface STUsageReportGraphSegment : NSObject
 {
     NSNumber *_amount;

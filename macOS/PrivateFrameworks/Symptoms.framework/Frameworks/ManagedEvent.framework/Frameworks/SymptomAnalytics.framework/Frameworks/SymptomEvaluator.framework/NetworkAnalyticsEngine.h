@@ -8,7 +8,7 @@
 
 #import <SymptomEvaluator/WiFiShimDelegate-Protocol.h>
 
-@class ImpoExpoService, NSData, NSDate, NSMutableData, NSMutableDictionary, NSObject, NSString, NWPathEvaluator, NetworkAnalyticsModel, WiFiShim;
+@class ImpoExpoService, NSData, NSDate, NSMutableData, NSMutableDictionary, NSObject, NSString, NWPathEvaluator, NetworkAnalyticsModel, SystemSettingsRelay, WiFiShim;
 @protocol OS_dispatch_queue;
 
 @interface NetworkAnalyticsEngine : AnalyticsEngineCore <WiFiShimDelegate>
@@ -25,6 +25,7 @@
     NSMutableDictionary *liveDefaultRoutes;
     int lastScoreExit[5];
     _Bool idleExitSuppressed;
+    BOOL xpcShutdown;
     NSDate *lastEpochRemoved;
     NSDate *lastKnownGoodNotified;
     NSDate *pendedRssiEdge;
@@ -45,6 +46,10 @@
     unsigned long long cellSPIType;
     NetworkAnalyticsModel *model;
     WiFiShim *_wifiShim;
+    SystemSettingsRelay *systemSettingsRelay;
+    BOOL _wifiShimFastLQMUpdates;
+    BOOL _isABCEnabled;
+    BOOL _isInternalBuild;
     NSData *_hashSalt;
     unsigned long long _wifiSingleDNSFailureCount;
     unsigned long long _wifiCompleteDNSFailureCount;
@@ -56,6 +61,7 @@
 
 + (void)performPersistentStoreHealthCheckWithReply:(CDUnknownBlockType)arg1;
 + (void)awdCaptureIn:(id)arg1 replyQueue:(id)arg2 reply:(CDUnknownBlockType)arg3;
++ (unsigned int)_constructRxSignalExemptionsBitmapFromHint:(BOOL)arg1 reasons:(id)arg2;
 + (id)queue;
 + (void)estimatedTransferTimeOn:(long long)arg1 forPayloadInfo:(id)arg2 queue:(id)arg3 reply:(CDUnknownBlockType)arg4;
 + (void)layer2MetricsOn:(long long)arg1 queue:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -152,6 +158,7 @@
 - (void)_retrieveDNSServersForEpoch:(id)arg1;
 - (unsigned int)_getCellSPIType;
 - (void)shutdown;
+- (void)clientTransactionsRelease;
 - (void)_trackRealTimeLqmLastUpdatedOnInterfaceType:(long long)arg1;
 - (void)_computeAndApplyLoadedLqmFrom:(int)arg1 oldLqm:(int)arg2 onInterfaceType:(long long)arg3 loadedLqmAuditRecords:(id)arg4;
 - (void)_getAuditableLoadedLQMOn:(long long)arg1 queue:(id)arg2 reply:(CDUnknownBlockType)arg3;

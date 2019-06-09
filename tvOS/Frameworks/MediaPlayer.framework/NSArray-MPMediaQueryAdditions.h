@@ -6,7 +6,20 @@
 
 #import <Foundation/NSArray.h>
 
-@interface NSArray (MPMediaQueryAdditions)
+#import <MediaPlayer/MPSectionedIdentifierListIdentifierPair-Protocol.h>
+
+@class NSString;
+
+@interface NSArray (MPMediaQueryAdditions) <MPSectionedIdentifierListIdentifierPair>
 - (_Bool)MPIsEmpty;
+@property(readonly, nonatomic) NSString *itemIdentifier;
+@property(readonly, nonatomic) NSString *sectionIdentifier;
+@property(readonly, nonatomic) _Bool isQueryResultSetInvalidated;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSHashTable, NSMapTable, NSString, SKUIResourceLoader;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBadgeTextAttachmentLoader : NSObject <SKUIArtworkRequestDelegate>
 {
     NSMapTable *_imageRequests;

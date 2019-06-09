@@ -11,7 +11,7 @@
 #import <HealthDaemon/HKDataFlowLinkProcessor-Protocol.h>
 #import <HealthDaemon/HKLiveWorkoutDataSourceServerInterface-Protocol.h>
 
-@class HDClientAuthorizationOracle, HDProfile, HDWorkoutBasicDataSource, HKDataFlowLink, HKWorkoutDataSourceConfiguration, NSLock, NSString, NSUUID;
+@class HDProfile, HDWorkoutBasicDataSource, HKDataFlowLink, HKWorkoutDataSourceConfiguration, NSLock, NSString, NSUUID;
 @protocol HDWorkoutDataAccumulator;
 
 @interface HDLiveWorkoutDataSource : HDStandardTaskServer <HKLiveWorkoutDataSourceServerInterface, HKDataFlowLinkProcessor, HDWorkoutDataSource, HDWorkoutDataDestination>
@@ -21,10 +21,9 @@
     HKWorkoutDataSourceConfiguration *_dataSourceConfiguration;
     HDWorkoutBasicDataSource *_basicDataSource;
     NSLock *_lock;
-    HDClientAuthorizationOracle *_authorizationOracle;
 }
 
-+ (_Bool)validateConfiguration:(id)arg1 error:(out id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
@@ -46,7 +45,7 @@
 - (void)_setDataSourceConfiguration:(id)arg1;
 - (void)remote_setDataSourceConfiguration:(id)arg1;
 - (void)remote_startTaskServerIfNeeded;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
     BOOL _invalidateOnly;
 }
 
-@property BOOL invalidateOnly; // @synthesize invalidateOnly=_invalidateOnly;
-@property unsigned int provider; // @synthesize provider=_provider;
-@property unsigned int edition; // @synthesize edition=_edition;
-@property unsigned int tileset; // @synthesize tileset=_tileset;
+@property(nonatomic) BOOL invalidateOnly; // @synthesize invalidateOnly=_invalidateOnly;
+@property(nonatomic) unsigned int provider; // @synthesize provider=_provider;
+@property(nonatomic) unsigned int edition; // @synthesize edition=_edition;
+@property(nonatomic) unsigned int tileset; // @synthesize tileset=_tileset;
 
 @end
 

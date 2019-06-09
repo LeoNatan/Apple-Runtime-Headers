@@ -9,6 +9,8 @@
 @class NSURL;
 
 @interface NSFileManager (SafariNSFileManagerExtras)
+@property(readonly, nonatomic) NSURL *safari_faviconPersistenceBaseURL;
+@property(readonly, nonatomic) NSURL *safari_webpageIconDatabaseURL;
 - (void)safari_setSpotlightDownloadMetadataForURL:(id)arg1 referrer:(id)arg2 atPath:(id)arg3;
 - (void)safari_markItemAsUsedAtURL:(id)arg1;
 @property(readonly, nonatomic) NSURL *safari_sharedDataDirectory;

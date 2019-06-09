@@ -12,7 +12,7 @@
 {
     // Error parsing type: , name: type
     // Error parsing type: , name: negated
-    // Error parsing type: , name: sql.storage
+    // Error parsing type: , name: $__lazy_storage_$_sql
 }
 
 + (void)setSupportsSecureCoding:(_Bool)arg1;

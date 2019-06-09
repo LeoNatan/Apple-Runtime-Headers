@@ -11,7 +11,7 @@
 }
 
 + (id)applicationLaunchURLWithLaunchOptions:(id)arg1;
-- (void)fetchSupportedComplicationStyles:(CDUnknownBlockType)arg1;
+- (void)_fetchSupportedComplicationStyles:(CDUnknownBlockType)arg1;
 - (id)_enabledComplications;
 - (id)_validatedAppProxyForBundleProxy:(id)arg1;
 - (void)_enumerateAppsUsingBlock:(CDUnknownBlockType)arg1;

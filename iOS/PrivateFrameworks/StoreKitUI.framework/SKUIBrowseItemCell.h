@@ -8,6 +8,7 @@
 
 @class NSString, UIImage, UIImageView, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBrowseItemCell : UICollectionViewCell
 {
     UILabel *_titleLabel;

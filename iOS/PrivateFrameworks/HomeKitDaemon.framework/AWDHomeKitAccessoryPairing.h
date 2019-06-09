@@ -14,27 +14,38 @@
 {
     unsigned long long _timestamp;
     int _certified;
+    int _credentialType;
     unsigned int _duration;
     int _errorCode;
     unsigned int _retryCount;
     int _transportType;
     AWDHomeKitVendorInformation *_vendorDetails;
     _Bool _isAdd;
+    _Bool _isAddWithOwnershipProof;
     _Bool _isAddedViaWAC;
+    _Bool _isNetworkRouterAdd;
+    _Bool _isNetworkRouterReplace;
     _Bool _isSecureWAC;
     struct {
         unsigned int timestamp:1;
         unsigned int certified:1;
+        unsigned int credentialType:1;
         unsigned int duration:1;
         unsigned int errorCode:1;
         unsigned int retryCount:1;
         unsigned int transportType:1;
         unsigned int isAdd:1;
+        unsigned int isAddWithOwnershipProof:1;
         unsigned int isAddedViaWAC:1;
+        unsigned int isNetworkRouterAdd:1;
+        unsigned int isNetworkRouterReplace:1;
         unsigned int isSecureWAC:1;
     } _has;
 }
 
+@property(nonatomic) _Bool isNetworkRouterReplace; // @synthesize isNetworkRouterReplace=_isNetworkRouterReplace;
+@property(nonatomic) _Bool isNetworkRouterAdd; // @synthesize isNetworkRouterAdd=_isNetworkRouterAdd;
+@property(nonatomic) _Bool isAddWithOwnershipProof; // @synthesize isAddWithOwnershipProof=_isAddWithOwnershipProof;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) _Bool isSecureWAC; // @synthesize isSecureWAC=_isSecureWAC;
 @property(retain, nonatomic) AWDHomeKitVendorInformation *vendorDetails; // @synthesize vendorDetails=_vendorDetails;
@@ -53,6 +64,13 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsNetworkRouterReplace;
+@property(nonatomic) _Bool hasIsNetworkRouterAdd;
+@property(nonatomic) _Bool hasIsAddWithOwnershipProof;
+- (int)StringAsCredentialType:(id)arg1;
+- (id)credentialTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasCredentialType;
+@property(nonatomic) int credentialType; // @synthesize credentialType=_credentialType;
 @property(nonatomic) _Bool hasRetryCount;
 @property(nonatomic) _Bool hasIsSecureWAC;
 - (int)StringAsCertified:(id)arg1;

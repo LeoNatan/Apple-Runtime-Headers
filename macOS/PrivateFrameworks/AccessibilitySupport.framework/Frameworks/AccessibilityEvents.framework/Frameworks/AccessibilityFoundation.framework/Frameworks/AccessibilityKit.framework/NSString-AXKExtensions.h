@@ -12,5 +12,6 @@
 - (BOOL)axk_isAllPunctuations;
 - (BOOL)axk_isAllSymbols;
 - (BOOL)axk_isAllWhitespaceOrNewline;
+- (BOOL)axk_isAllWhitespace;
 @end
 

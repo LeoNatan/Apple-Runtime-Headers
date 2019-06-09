@@ -11,5 +11,20 @@
 - (id)__ck_indexSetForIndexPathItemsInSection:(int)arg1;
 - (id)__ck_indexSetForIndexPathRowsInSection:(int)arg1;
 - (id)__ck_commaJoinedValueForKey:(id)arg1;
+- (id)__ck_parentChatItemWithMesssageGUID:(id)arg1 associatedMessageRange:(struct _NSRange)arg2;
+- (unsigned int)__ck_indexOfParentChatItemWithMesssageGUID:(id)arg1 associatedMessageRange:(struct _NSRange)arg2;
+- (id)__ck_chatItemWithGUID:(id)arg1;
+- (unsigned int)__ck_indexOfChatItemWithGUID:(id)arg1;
+- (id)__ck_indexesOfPartsOfMessages:(id)arg1;
+- (id)__ck_indexesOfPartsOfNonAttachmentMessages:(id)arg1;
+- (id)__ck_indexesOfPartsOfMessage:(id)arg1;
+- (id)__ck_messageForChatItemAtIndex:(unsigned int)arg1;
+- (id)__ck_IMChatItemsAtIndexes:(id)arg1;
+- (id)__ck_indexesOfUnplayedAudioMessages;
+- (void)__ck_unloadTranscriptTextAtIndexes:(id)arg1;
+- (void)__ck_unloadSizesAtIndexes:(id)arg1;
+- (unsigned int)__ck_indexOfTransfer:(id)arg1;
+- (unsigned int)__ck_indexOfMediaObject:(id)arg1;
+- (_Bool)ck_containsObjectIdenticalTo:(id)arg1;
 @end
 

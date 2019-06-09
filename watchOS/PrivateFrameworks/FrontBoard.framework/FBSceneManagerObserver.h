@@ -4,70 +4,82 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoardServices/BSZeroingWeakReference.h>
+#import <objc/NSObject.h>
 
 #import <FrontBoard/BSDescriptionProviding-Protocol.h>
-#import <FrontBoard/FBSceneManagerDelegate-Protocol.h>
+#import <FrontBoard/FBSceneManagerDelegate_Private-Protocol.h>
 #import <FrontBoard/FBSceneManagerInternalObserver-Protocol.h>
 
 @class NSString;
+@protocol FBSceneManagerDelegate, FBSceneManagerObserver;
 
-@interface FBSceneManagerObserver : BSZeroingWeakReference <BSDescriptionProviding, FBSceneManagerInternalObserver, FBSceneManagerDelegate>
+@interface FBSceneManagerObserver : NSObject <BSDescriptionProviding, FBSceneManagerInternalObserver, FBSceneManagerDelegate_Private>
 {
-    _Bool _delegate;
+    id <FBSceneManagerObserver> _observer;
+    unsigned long _observerAddress;
+    Class _observerClass;
+    _Bool _isDelegate;
     _Bool _internalObserver;
+    _Bool _privateDelegate;
     _Bool _didCreate;
     _Bool _willDestroy;
     _Bool _didDestroy;
-    _Bool _updatePrepared;
-    _Bool _updateApplied;
-    _Bool _updateCompleted;
+    _Bool _updatePreparedDEPRECATED;
+    _Bool _updateAppliedDEPRECATED;
+    _Bool _updateCompletedDEPRECATED;
     _Bool _didCreateSceneDEPRECATED;
     _Bool _willUpdateSceneDEPRECATED;
     _Bool _willCommitDEPRECATED;
     _Bool _didCommitDEPRECATED;
     _Bool _didCommitDEPRECATED2;
+    _Bool _didReceiveActionsDEPRECATED;
     _Bool _willSynchronize;
     _Bool _didSynchronize;
-    _Bool _amendSettings;
+    _Bool _interceptSceneUpdatesForDeactivationManager;
     _Bool _didUpdateClientSettings;
-    _Bool _didReceiveActions;
+    _Bool _interceptSceneUpdates;
     _Bool _hostingPolicyForDisplay;
     _Bool _hostingPolicyForScene;
     _Bool _createDefaultTransitionContext;
 }
 
 + (id)observerWithObserver:(id)arg1;
-@property(readonly, nonatomic, getter=isInternalObserver) _Bool internalObserver; // @synthesize internalObserver=_internalObserver;
-@property(readonly, nonatomic, getter=isDelegate) _Bool delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <FBSceneManagerObserver> observer; // @synthesize observer=_observer;
+- (void).cxx_destruct;
+- (id)_privateDelegate;
+- (id)_internalObserver;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
+- (void)sceneManager:(id)arg1 interceptUpdateForScene:(id)arg2 withNewSettings:(id)arg3;
 - (id)sceneManager:(id)arg1 createDefaultTransitionContextForScene:(id)arg2;
 - (int)sceneManager:(id)arg1 hostingPolicyForScene:(id)arg2;
 - (int)sceneManager:(id)arg1 hostingPolicyForDisplay:(id)arg2;
 - (void)sceneManager:(id)arg1 scene:(id)arg2 didReceiveActions:(id)arg3;
-- (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
-- (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
+- (void)sceneManager:(id)arg1 scene:(id)arg2 didUpdateClientSettingsWithDiff:(id)arg3 oldClientSettings:(id)arg4 transitionContext:(id)arg5;
 - (void)sceneManager:(id)arg1 updateForScene:(id)arg2 completedWithContext:(id)arg3 error:(id)arg4;
 - (void)sceneManager:(id)arg1 updateForScene:(id)arg2 appliedWithContext:(id)arg3;
 - (void)sceneManager:(id)arg1 updateForScene:(id)arg2 preparedWithContext:(id)arg3;
+- (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
+- (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 didCreateScene:(id)arg2;
-- (void)sceneManager:(id)arg1 amendSettings:(id)arg2 forUpdatingScene:(id)arg3;
-- (void)sceneManager:(id)arg1 scene:(id)arg2 didUpdateClientSettingsWithDiff:(id)arg3 oldClientSettings:(id)arg4 transitionContext:(id)arg5;
+- (void)sceneManager:(id)arg1 interceptUpdateForSceneDeactivationManager:(id)arg2 withNewSettings:(id)arg3;
 - (void)sceneManagerDidEndSceneUpdateSynchronization:(id)arg1;
 - (void)sceneManagerWillBeginSceneUpdateSynchronization:(id)arg1;
-- (id)delegate;
-@property(readonly, nonatomic) __weak id observer;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned int hash;
+- (_Bool)isInternalObserver;
+- (_Bool)isDelegate;
+@property(readonly, nonatomic) __weak id <FBSceneManagerDelegate> delegate;
 - (id)initWithObject:(id)arg1;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithObserver:(id)arg1;
+- (id)_initWithObserver:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 
 @end

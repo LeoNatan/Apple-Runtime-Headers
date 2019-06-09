@@ -9,6 +9,7 @@
 @class TCMessageContext, TCProgressContext;
 @protocol OS_dispatch_group, OS_dispatch_queue, TCCancelDelegate;
 
+__attribute__((visibility("hidden")))
 @interface TCBackgroundThreadManager : NSObject
 {
     id <TCCancelDelegate> mCancelDelegate;

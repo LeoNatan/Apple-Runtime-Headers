@@ -10,6 +10,7 @@
 
 @protocol SKUIJSDOMFeatureCollectionAppBridge;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSDOMFeatureCollection : IKJSObject <SKUIJSDOMFeatureCollection>
 {
     id <SKUIJSDOMFeatureCollectionAppBridge> _appBridge;

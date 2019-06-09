@@ -12,11 +12,15 @@
 @interface ADWebViewActionViewController : SFSafariViewController
 {
     ADHomeButtonHandler *_homeButtonHandler;
+    id _notificationObserver;
 }
 
+@property(retain, nonatomic) id notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 @property(retain, nonatomic) ADHomeButtonHandler *homeButtonHandler; // @synthesize homeButtonHandler=_homeButtonHandler;
+- (void).cxx_destruct;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)dismissViewForHomeButton;
 - (void)dismissView;
 - (void)dealloc;
 

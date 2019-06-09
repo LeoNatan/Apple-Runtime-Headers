@@ -25,12 +25,12 @@
     id _importInfo;
     id <NSObject> _otherInfo;
     id _reserved1;
-    id _lock;
     NSXPCInterface *_remoteObjectInterface;
     NSString *_serviceName;
     NSXPCListenerEndpoint *_endpoint;
     id _eCache;
     id _dCache;
+    struct os_unfair_lock_s _lock;
 }
 
 + (void)endTransaction;
@@ -94,6 +94,7 @@
 - (void)_sendSelector:(SEL)arg1 withProxy:(id)arg2 arg1:(id)arg3;
 - (void)_sendSelector:(SEL)arg1 withProxy:(id)arg2;
 - (void)_sendDesistForProxy:(id)arg1;
+- (void)scheduleSendBarrierBlock:(CDUnknownBlockType)arg1;
 - (void)addBarrierBlock:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 - (void)stop;

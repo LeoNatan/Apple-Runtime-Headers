@@ -11,6 +11,7 @@
 @interface MPModelForYouRecommendationsRequest : MPStoreModelRequest
 {
     int _filteringPolicy;
+    int _requestEndpoint;
     NSURL *_customForYouURL;
 }
 
@@ -18,6 +19,7 @@
 + (id)allSupportedItemProperties;
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSURL *customForYouURL; // @synthesize customForYouURL=_customForYouURL;
+@property(nonatomic) int requestEndpoint; // @synthesize requestEndpoint=_requestEndpoint;
 @property(nonatomic) int filteringPolicy; // @synthesize filteringPolicy=_filteringPolicy;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;

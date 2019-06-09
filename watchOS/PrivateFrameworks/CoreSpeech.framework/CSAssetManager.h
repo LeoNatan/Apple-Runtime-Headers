@@ -11,20 +11,26 @@
 #import <CoreSpeech/CSSpeechEndpointAssetMetaUpdateMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerAssetMetaUpdateMonitorDelegate-Protocol.h>
 
-@class CSPolicy, NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue;
+@class CSAssetDownloadingOption, CSPolicy, NSMutableDictionary, NSString;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CSAssetManager : NSObject <CSVoiceTriggerAssetMetaUpdateMonitorDelegate, CSSpeechEndpointAssetMetaUpdateMonitorDelegate, CSAssetControllerDelegate, CSLanguageCodeUpdateMonitorDelegate>
 {
-    NSObject<OS_dispatch_queue> *_queue;
     CSPolicy *_enablePolicy;
     NSString *_currentLanguageCode;
+    CSAssetDownloadingOption *_downloadingOption;
     NSMutableDictionary *_observers;
-    _Bool _daemonRunningMode;
+    NSObject<OS_dispatch_source> *_downloadTimer;
+    int _downloadTimerCount;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedManager;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)_stopPeriodicalDownload;
+- (void)_startPeriodicalDownload;
+- (void)_createPeriodicalDownloadTimer;
 - (void)CSAssetController:(id)arg1 didDownloadNewAssetForType:(unsigned int)arg2;
 - (void)CSSpeechEndpointAssetMetaUpdateMonitor:(id)arg1 didReceiveNewSpeechEndpointAssetMetaData:(_Bool)arg2;
 - (void)CSVoiceTriggerAssetMetaUpdateMonitor:(id)arg1 didReceiveNewVoiceTriggerAssetMetaData:(_Bool)arg2;
@@ -42,8 +48,8 @@
 - (id)installedAssetForCurrentLanguageOfType:(unsigned int)arg1;
 - (void)assetForCurrentLanguageOfType:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)assetForCurrentLanguageOfType:(unsigned int)arg1;
-- (void)setDaemonRunningMode:(_Bool)arg1;
-- (id)initWithDaemonMode:(_Bool)arg1;
+- (void)setAssetDownloadingOption:(id)arg1;
+- (id)initWithDownloadOption:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

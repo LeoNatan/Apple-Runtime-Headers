@@ -8,6 +8,7 @@
 
 @class CKGradientReferenceView;
 
+__attribute__((visibility("hidden")))
 @interface CKSendAnimationWindow : UIAutoRotatingWindow
 {
     CKGradientReferenceView *_gradientReferenceView;

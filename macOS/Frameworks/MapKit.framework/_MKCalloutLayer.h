@@ -8,6 +8,7 @@
 
 @class CALayer, NSColor;
 
+__attribute__((visibility("hidden")))
 @interface _MKCalloutLayer : _MKResizingLayer
 {
     struct CGImage *_contentImage;

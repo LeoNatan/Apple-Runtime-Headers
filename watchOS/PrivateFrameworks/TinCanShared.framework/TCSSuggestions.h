@@ -55,10 +55,11 @@
 - (void)_startGenerationTimerWithFireDate:(id)arg1;
 - (_Bool)_shouldGenerateNewSuggestions;
 - (void)_invalidate;
+- (void)_handleDeviceFirstUnlock;
 - (void)_deleteSuggestions;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)destinationsDidChange:(id)arg1;
-- (void)idStatusUpdatedForDestinations:(id)arg1;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (void)generateNewSuggestionsIfNecessary;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

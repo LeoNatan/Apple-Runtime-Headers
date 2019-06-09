@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSPointerArray, PXRoundedCornerOverlayView, UIColor;
+@class NSArray, NSPointerArray, PXLayoutPerformerOutput, PXRoundedCornerOverlayView, UIColor;
 
 @interface PXCollageView : UIView
 {
@@ -15,6 +15,7 @@
     double _cornerRadius;
     UIColor *_cornerBackgroundColor;
     double _imageCornerRadius;
+    PXLayoutPerformerOutput *_layoutOutput;
     NSArray *__imageViews;
     NSPointerArray *__imageSizes;
     PXRoundedCornerOverlayView *__roundedCornerOverlayView;
@@ -24,6 +25,7 @@
 @property(retain, nonatomic) PXRoundedCornerOverlayView *_roundedCornerOverlayView; // @synthesize _roundedCornerOverlayView=__roundedCornerOverlayView;
 @property(readonly, nonatomic) NSPointerArray *_imageSizes; // @synthesize _imageSizes=__imageSizes;
 @property(readonly, nonatomic) NSArray *_imageViews; // @synthesize _imageViews=__imageViews;
+@property(retain, nonatomic) PXLayoutPerformerOutput *layoutOutput; // @synthesize layoutOutput=_layoutOutput;
 @property(nonatomic) double imageCornerRadius; // @synthesize imageCornerRadius=_imageCornerRadius;
 @property(copy, nonatomic) UIColor *cornerBackgroundColor; // @synthesize cornerBackgroundColor=_cornerBackgroundColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;

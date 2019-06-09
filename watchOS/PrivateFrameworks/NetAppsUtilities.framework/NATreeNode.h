@@ -36,6 +36,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
+- (id)_descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)initWithRepresentedObject:(id)arg1 childNodes:(id)arg2;
 - (id)initWithRepresentedObject:(id)arg1;
 

@@ -21,8 +21,6 @@
 }
 
 + (id)errorForStatusCode:(unsigned char)arg1;
-+ (id)keyPathsForValuesAffectingControllerGUID;
-+ (id)keyPathsForValuesAffectingTargetGUID;
 @property(copy) AVBMACAddress *sourceMAC; // @synthesize sourceMAC;
 @property unsigned short sequenceID; // @synthesize sequenceID;
 @property unsigned long long controllerEntityID; // @synthesize controllerEntityID;
@@ -31,8 +29,6 @@
 @property unsigned char messageType; // @synthesize messageType;
 - (void)dealloc;
 - (id)errorForStatusCode;
-@property unsigned long long controllerGUID; // @dynamic controllerGUID;
-@property unsigned long long targetGUID; // @dynamic targetGUID;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;

@@ -40,14 +40,17 @@
 - (UIFont *)_fontForCaretSelection;
 - (UIColor *)_textColorForCaretSelection;
 - (UITextPosition *)_clampedpositionFromPosition:(UITextPosition *)arg1 offset:(int)arg2;
+- (void)_transpose;
 - (void)_deleteForwardAndNotify:(_Bool)arg1;
 - (void)_deleteBackwardAndNotify:(_Bool)arg1;
+- (void)_deleteToEndOfParagraph;
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
 - (void)_deleteByWord;
 - (UITextRange *)_intersectionOfRange:(UITextRange *)arg1 andRange:(UITextRange *)arg2;
 - (_Bool)_range:(UITextRange *)arg1 intersectsRange:(UITextRange *)arg2;
 - (_Bool)_range:(UITextRange *)arg1 containsRange:(UITextRange *)arg2;
+- (UITextRange *)_rangeOfSmartSelectionIncludingRange:(UITextRange *)arg1;
 - (UITextPosition *)_findPleasingWordBoundaryFromPosition:(UITextPosition *)arg1;
 - (UITextRange *)_rangeSpanningTextUnit:(long long)arg1 andPosition:(UITextPosition *)arg2;
 - (UITextRange *)_fullRange;

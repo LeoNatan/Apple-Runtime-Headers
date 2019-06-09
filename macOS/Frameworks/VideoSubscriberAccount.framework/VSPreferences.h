@@ -19,6 +19,14 @@
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;
 - (void).cxx_destruct;
+- (id)setTopBoxInfoBundleIdentifierOverride;
+- (id)setTopBoxInfoAppAdamIdOverride;
+- (id)setTopBoxInfoProviderDisplayNameOverride;
+- (id)setTopBoxInfoProviderIdOverride;
+- (BOOL)setTopBoxInfoIsSetTopBoxOverride;
+- (void)noteIsInSTBMode:(BOOL)arg1;
+- (BOOL)shouldIgnoreExtendedValidation;
+- (BOOL)isInSTBMode;
 - (void)noteDesiredApp:(id)arg1;
 - (BOOL)hasChosenDesiredApp;
 - (void)noteDidSendWelcomeMessage;
@@ -26,6 +34,7 @@
 @property(nonatomic) long long cachedStoreProviderStatus;
 @property(nonatomic) long long cachedDeveloperProviderStatus;
 @property(nonatomic) long long cachedAvailabilityStatus;
+- (void)removeSkipSetupPreset;
 - (void)noteShouldSkipSetup;
 - (void)_updateShouldSkipSetupWithNumber:(id)arg1;
 - (void)_updateValue:(id)arg1 forKey:(id)arg2;

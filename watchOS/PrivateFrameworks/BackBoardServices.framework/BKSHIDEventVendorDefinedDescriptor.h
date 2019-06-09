@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <BackBoardServices/BKSHIDEventKeyboardDescriptor.h>
+#import <BackBoardServices/BKSHIDEventUsagePairDescriptor.h>
 
-@interface BKSHIDEventVendorDefinedDescriptor : BKSHIDEventKeyboardDescriptor
+@interface BKSHIDEventVendorDefinedDescriptor : BKSHIDEventUsagePairDescriptor
 {
 }
 
 + (id)descriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
-- (id)_initWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
 
 @end
 

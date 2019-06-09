@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIViewElement.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIImageGridViewElement : SKUIViewElement
 {
     struct CGSize _size;

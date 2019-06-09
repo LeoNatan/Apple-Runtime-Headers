@@ -19,13 +19,17 @@
 
 + (id)_blendingPressedView;
 + (id)_blendingSeparatorView;
++ (_Bool)isBorderView;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+- (void)_enumerateAllBlendingViewsWithBlock:(CDUnknownBlockType)arg1;
+- (void)_enumerateBlendingBorderViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)setPressed:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setRoundedCornerPosition:(unsigned int)arg1;
 - (void)_setContinuousCornerRadius:(float)arg1;
 - (void)layoutSubviews;
+- (struct UIEdgeInsets)_effectiveNonDirectionalContentInsets;
 - (id)initWithCompositingBurnColor:(id)arg1 plusDColor:(id)arg2;
 - (id)initWithTopLevelFilters:(id)arg1 compositingColors:(id)arg2 compositingFilterModes:(id)arg3;
 

@@ -8,6 +8,9 @@
 
 @interface NSAttributedString (NSAttributedStringUIFoundationAdditions)
 + (id)_documentTypeForFileType:(id)arg1;
++ (id)allowedSecureCodingClasses;
++ (_Bool)_isAttributedStringAgent;
++ (id)attributedStringWithAttachment:(id)arg1;
 - (int)itemNumberInTextList:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct _NSRange)rangeOfTextList:(id)arg1 atIndex:(unsigned int)arg2;
 - (_Bool)_atEndOfTextTableRow:(id)arg1 atIndex:(unsigned int)arg2;
@@ -53,5 +56,15 @@
 - (struct _NSRange)doubleClickAtIndex:(unsigned int)arg1;
 - (id)defaultLanguage;
 - (_Bool)_isStringDrawingTextStorage;
+- (struct CGSize)size;
+- (void)drawInRect:(struct CGRect)arg1;
+- (void)drawAtPoint:(struct CGPoint)arg1;
+- (_Bool)hasColorGlyphsInRange:(struct _NSRange)arg1;
+- (struct CGRect)boundingRectWithSize:(struct CGSize)arg1 options:(int)arg2;
+- (void)drawWithRect:(struct CGRect)arg1 options:(int)arg2;
+- (struct CGRect)boundingRectWithSize:(struct CGSize)arg1 options:(int)arg2 context:(id)arg3;
+- (id)_ui_attributedSubstringFromRange:(struct _NSRange)arg1 withTrackingAdjustment:(float)arg2;
+- (id)_ui_attributedSubstringFromRange:(struct _NSRange)arg1 scaledByScaleFactor:(float)arg2;
+- (void)drawWithRect:(struct CGRect)arg1 options:(int)arg2 context:(id)arg3;
 @end
 

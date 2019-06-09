@@ -8,7 +8,7 @@
 
 #import <EventKit/MutableCalendarSourceModelProtocol-Protocol.h>
 
-@class EKAvailabilityCache, NSDictionary, NSError, NSManagedObjectID, NSSet, NSString, NSURL;
+@class EKAvailabilityCache, EKSourceConstraints, NSDate, NSDictionary, NSError, NSManagedObjectID, NSSet, NSString, NSURL, REMObjectID;
 
 @interface EKSource : EKObject <MutableCalendarSourceModelProtocol>
 {
@@ -29,7 +29,6 @@
     BOOL supportsSharingScheduling;
     BOOL supportsTaskCalendarCreation;
     BOOL supportsUnbind;
-    BOOL _enabled;
     int displayOrder;
     NSString *externalSourceIdentifier;
     NSSet *ownerAddresses;
@@ -39,6 +38,7 @@
     NSString *dropBoxPathString;
     NSURL *serverURL;
     NSSet *_calendars;
+    NSString *_delegatedAccountOwnerStoreID;
 }
 
 + (id)knownSingleValueKeys;
@@ -53,7 +53,7 @@
 + (Class)frozenClass;
 + (id)sourceWithEventStore:(id)arg1;
 + (id)sourceWithCalendarSource:(id)arg1 eventStore:(id)arg2;
-@property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
+@property(copy, nonatomic) NSString *delegatedAccountOwnerStoreID; // @synthesize delegatedAccountOwnerStoreID=_delegatedAccountOwnerStoreID;
 @property(readonly, nonatomic) NSSet *calendars; // @synthesize calendars=_calendars;
 @property(readonly, nonatomic) BOOL supportsUnbind; // @synthesize supportsUnbind;
 @property(readonly, nonatomic) NSURL *serverURL; // @synthesize serverURL;
@@ -82,16 +82,28 @@
 @property(readonly, copy, nonatomic) NSString *externalSourceIdentifier; // @synthesize externalSourceIdentifier;
 - (void).cxx_destruct;
 - (id)_defaultSchedulingCalendar;
+- (id)_createSubscribedSourceConstraints;
+- (id)_createBirthdaySourceConstraints;
+- (id)_createLocalSourceConstraints;
+- (id)_createConstraintsFromManagedPrincipal;
+@property(readonly, nonatomic) EKSourceConstraints *constraints;
+- (void)setOfficeHours:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_ekOfficeHoursFromCalDAVOfficeHoursData:(id)arg1;
+- (void)fetchOfficeHours:(CDUnknownBlockType)arg1;
+- (void)_performBlockWithManagedPrincipal:(CDUnknownBlockType)arg1;
+- (id)_principalObjectIDString;
 - (BOOL)revert;
 - (void)refetch;
 - (id)_updatedBackingSource;
 - (BOOL)_refreshable;
 - (BOOL)_reset;
+- (BOOL)isPushAvailable;
 - (BOOL)supportsInvitationModificationsWithoutNotification;
 - (BOOL)_validateDeletable:(id *)arg1;
 - (BOOL)validate:(id *)arg1;
 - (void)_applyKnownImmutableValuesFrom:(id)arg1;
 - (id)backingSource;
+@property(readonly, nonatomic) REMObjectID *remAccountObjectID;
 @property(readonly, nonatomic) NSError *sourceError;
 - (id)sharedCalendarInvitationsForEntityType:(unsigned long long)arg1;
 - (id)dropBoxPathFromEvent:(id)arg1;
@@ -107,6 +119,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)changeDefaultSchedulingCalendar;
 @property(readonly, nonatomic) NSString *symbolicColorForNewCalendar;
+@property(readonly, nonatomic) BOOL syncs;
 @property(readonly, nonatomic) BOOL supportsAttendeeEventForwarding;
 @property(readonly, nonatomic) BOOL supportsYearlyRecurrenceWithArbitraryInterval;
 @property(readonly, nonatomic) BOOL prefersSuggestingNewTimeViaEmail;
@@ -125,6 +138,7 @@
 - (BOOL)supportsCalendarItemsOverlappingInSameSeries;
 - (BOOL)supportsAbsoluteAlarms;
 @property(readonly, nonatomic) BOOL supportsCalendarCreation;
+@property(nonatomic, getter=isEnabled) BOOL enabled;
 @property(readonly, nonatomic) int displayOrderForNewCalendar;
 @property(readonly, nonatomic) EKAvailabilityCache *availabilityCache;
 - (void)setTitle:(id)arg1;
@@ -133,8 +147,11 @@
 @property(copy, nonatomic) NSString *externalID;
 - (id)initWithTypeString:(id)arg1;
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;
-- (BOOL)removeWithSpan:(long long)arg1 error:(id *)arg2;
-- (BOOL)saveWithSpan:(long long)arg1 error:(id *)arg2;
+- (id)readWriteCalendarsForEntityType:(unsigned long long)arg1;
+@property(nonatomic) long long preferredEventPrivateValue;
+@property(retain, nonatomic) NSDate *lastSyncEndDate;
+@property(nonatomic) unsigned long long lastSyncError;
+@property(readonly, nonatomic) BOOL isSyncing;
 @property(readonly, nonatomic) BOOL hasOwnerEmailAddress;
 
 // Remaining properties

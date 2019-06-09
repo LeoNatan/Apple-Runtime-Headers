@@ -7,6 +7,11 @@
 #import <Foundation/NSIndexPath.h>
 
 @interface NSIndexPath (NAAdditions)
++ (id)na_indexPathForRow:(long long)arg1 inSection:(long long)arg2;
++ (id)na_indexPathForItem:(long long)arg1 inSection:(long long)arg2;
+@property(readonly, nonatomic) long long na_item;
+@property(readonly, nonatomic) long long na_row;
+@property(readonly, nonatomic) long long na_section;
 - (void)na_each:(CDUnknownBlockType)arg1;
 - (id)na_indexPathStartingAtPosition:(unsigned long long)arg1;
 @end

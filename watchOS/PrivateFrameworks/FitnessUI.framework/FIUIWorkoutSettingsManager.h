@@ -19,6 +19,7 @@
     NPSManager *_syncManager;
 }
 
++ (void)obliterateUserConfiguredWorkoutMetrics;
 @property(retain, nonatomic) NPSManager *syncManager; // @synthesize syncManager=_syncManager;
 @property(retain, nonatomic) NPSDomainAccessor *domainAccessor; // @synthesize domainAccessor=_domainAccessor;
 - (void).cxx_destruct;
@@ -37,6 +38,7 @@
 - (id)orderedSupportedMetrics;
 - (id)orderedEnabledMetrics;
 - (_Bool)isMetricEnabled:(unsigned int)arg1;
+- (void)_clearOldMetricsIfNeeded;
 - (id)initWithWorkoutActivityType:(id)arg1;
 - (id)init;
 

@@ -6,51 +6,41 @@
 
 #import <objc/NSObject.h>
 
-@class CNContactStore, EAEmailAddressSet, NSMutableDictionary, NSUbiquitousKeyValueStore;
+#import <Email/EMVIPManager-Protocol.h>
+
+@class EAEmailAddressSet, NSMutableDictionary, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
-@interface EMVIPManager : NSObject
+@interface EMVIPManager : NSObject <EMVIPManager>
 {
     NSMutableDictionary *_vipsByIdentifier;
     EAEmailAddressSet *_cachedEmailAddresses;
-    CNContactStore *_contactStore;
-    NSUbiquitousKeyValueStore *_keyValueStore;
     NSObject<OS_dispatch_queue> *_operationQueue;
 }
 
-+ (id)_contactDescriptors;
++ (id)remoteInterface;
 + (id)plistURL;
-+ (void)initialize;
-+ (id)_log;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
-@property(readonly, nonatomic) NSUbiquitousKeyValueStore *keyValueStore; // @synthesize keyValueStore=_keyValueStore;
-@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 - (void).cxx_destruct;
-- (id)_contactFromContacts:(id)arg1 matchingMostAddresses:(id)arg2;
-- (id)_contactForName:(id)arg1 emailAddresses:(id)arg2;
-- (id)_validatedCloudVIPFromStore:(id)arg1 withCloudKey:(id)arg2;
-- (id)_cloudKeyForIdentifier:(id)arg1;
-- (void)_mergeVIPs;
-- (void)_updateLocalWithCloud:(id)arg1 refresh:(BOOL)arg2;
-- (void)_keyValueStoreChanged:(id)arg1;
-- (void)_updateCloudWithLocal;
-- (void)_saveVIPsLocally;
-- (void)_saveVIPs;
 - (id)_vipsDictionary;
 - (void)_loadVIPs;
-- (void)_removeVIPsWithIdentifiers:(id)arg1;
-- (void)removeVIPsWithEmailAddresses:(id)arg1;
-- (void)removeVIPsWithIdentifiers:(id)arg1;
-- (BOOL)_isVIPForContact:(id)arg1 orAddresses:(id)arg2;
 - (void)saveVIPs:(id)arg1;
+- (void)removeVIPsWithIdentifiers:(id)arg1;
+- (void)removeVIPsWithEmailAddresses:(id)arg1;
+- (BOOL)isVIPAddress:(id)arg1;
 - (id)_allVIPEmailAddresses;
-- (id)allVIPEmailAddresses;
-- (id)allVIPs;
+@property(readonly, copy, nonatomic) EAEmailAddressSet *allVIPEmailAddresses;
+@property(readonly, copy, nonatomic) NSSet *allVIPs;
 - (id)vipWithIdentifier:(id)arg1;
-- (void)dealloc;
-- (void)_vipManagerCommonInitWithKeyValueStore:(id)arg1 contactStore:(id)arg2;
-- (id)initWithSyncEnabled:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL hasVIPs;
+- (id)initWithRemoteConnection:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

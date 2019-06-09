@@ -8,7 +8,6 @@
 
 @class NSString, _UILibArchiveStreamingReader;
 
-__attribute__((visibility("hidden")))
 @interface _UIArchiveListingController : NSObject
 {
     _UILibArchiveStreamingReader *_archiveReader;

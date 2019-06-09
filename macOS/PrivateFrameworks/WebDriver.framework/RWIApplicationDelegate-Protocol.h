@@ -11,9 +11,6 @@
 @protocol RWIApplicationDelegate <NSObject>
 
 @optional
-- (void)applicationCapabilitiesChanged:(RWIApplication *)arg1;
-- (void)applicationDidBecomeInactive:(RWIApplication *)arg1;
-- (void)applicationDidBecomeActive:(RWIApplication *)arg1;
 - (void)application:(RWIApplication *)arg1 didRemoveDrivable:(RWIDrivable *)arg2;
 - (void)application:(RWIApplication *)arg1 didAddDrivable:(RWIDrivable *)arg2;
 - (void)application:(RWIApplication *)arg1 didRemoveDebuggable:(RWIDebuggable *)arg2;

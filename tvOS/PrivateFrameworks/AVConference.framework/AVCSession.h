@@ -51,6 +51,7 @@
 - (void)endParticipantConfiguration;
 - (void)beginParticipantConfiguration;
 - (void)updateConfiguration:(id)arg1;
+- (void)stopWithError:(id)arg1;
 - (void)stop;
 - (void)start;
 - (void)removeParticipants:(id)arg1;
@@ -60,6 +61,8 @@
 - (void)addParticipants:(id)arg1;
 - (void)addParticipant:(id)arg1;
 - (id)initWithTransportToken:(id)arg1 configuration:(id)arg2 delegate:(id)arg3 queue:(id)arg4;
+- (id)initWithTransportToken:(id)arg1 configuration:(id)arg2 negotiationData:(id)arg3 delegate:(id)arg4 queue:(id)arg5;
+- (id)initPrivateWithTransportToken:(id)arg1 configuration:(id)arg2 negotiationData:(id)arg3 delegate:(id)arg4 queue:(id)arg5;
 @property(nonatomic) id <AVCSessionDelegate> delegate;
 @property(nonatomic) float volume;
 @property(nonatomic, getter=isAudioMuted) _Bool audioMuted;

@@ -12,26 +12,16 @@
 
 @interface PBSSystemServiceProxy : NSObject <PBSystemServiceInterface>
 {
-    _Bool _hiliteModeActive;
-    _Bool _screenSaverActive;
-    int _presenceDetectionNotifyToken;
-    int _hiliteModeNotifyToken;
-    int _screenSaverNotifyToken;
     NSXPCConnection *_systemServiceConnection;
 }
 
-+ (_Bool)automaticallyNotifiesObserversOfScreenSaverActive;
-+ (_Bool)automaticallyNotifiesObserversOfHiliteModeActive;
-@property(nonatomic) int screenSaverNotifyToken; // @synthesize screenSaverNotifyToken=_screenSaverNotifyToken;
-@property(nonatomic) int hiliteModeNotifyToken; // @synthesize hiliteModeNotifyToken=_hiliteModeNotifyToken;
-@property(nonatomic) int presenceDetectionNotifyToken; // @synthesize presenceDetectionNotifyToken=_presenceDetectionNotifyToken;
 @property(retain, nonatomic) NSXPCConnection *systemServiceConnection; // @synthesize systemServiceConnection=_systemServiceConnection;
-@property(nonatomic) _Bool screenSaverActive; // @synthesize screenSaverActive=_screenSaverActive;
-@property(nonatomic) _Bool hiliteModeActive; // @synthesize hiliteModeActive=_hiliteModeActive;
 - (void).cxx_destruct;
 - (void)_handlePresenceDetectionStateChanged:(_Bool)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
-- (void)dealloc;
+- (void)getPictureInPictureServiceProxyWithReply:(CDUnknownBlockType)arg1;
+- (void)getAppInfoServiceProxyWithReply:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool hiliteModeActive;
 - (id)initWithConnection:(id)arg1;
 - (id)init;
 

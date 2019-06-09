@@ -14,7 +14,7 @@
 }
 
 - (id)initWithRawDescription:(id)arg1 owningSession:(id)arg2;
-- (id)initWithCategory:(id)arg1;
+- (id)initWithCategory:(id)arg1 owningSession:(id)arg2;
 - (struct RouteDescriptionImpl *)privateGetImplementation;
 - (id)description;
 @property(readonly) NSArray *outputs;
@@ -23,6 +23,8 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)init;
+@property(readonly) _Bool supportsSoftwareVolume;
+@property(readonly) _Bool supportsDoAP;
 @property(readonly) unsigned long long siriInputSource;
 @property(readonly) NSString *siriRemoteInputIdentifier;
 

@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface DDButtonBar : NSView
 {
-    DDActionViewController *_target;
+    DDActionViewController *target;
 }
 
-@property __weak DDActionViewController *target; // @synthesize target=_target;
+@property __weak DDActionViewController *target; // @synthesize target;
 - (void).cxx_destruct;
 - (void)buttonClicked:(id)arg1;
 - (void)setControls:(id)arg1;

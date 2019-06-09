@@ -8,6 +8,7 @@
 
 @class NSDate, NSMutableDictionary, NSSet;
 
+__attribute__((visibility("hidden")))
 @interface RepeatedConnFailureDetector : NSObject
 {
     NSSet *_whitelistedDaemons;

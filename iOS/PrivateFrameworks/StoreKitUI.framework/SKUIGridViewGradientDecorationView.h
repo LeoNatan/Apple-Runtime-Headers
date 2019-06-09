@@ -8,6 +8,7 @@
 
 @class IKColor, SKUIGridViewGradientDecorationBackgroundView, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGridViewGradientDecorationView : UICollectionReusableView
 {
     SKUIGridViewGradientDecorationBackgroundView *_backgroundView;

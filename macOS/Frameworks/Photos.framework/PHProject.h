@@ -6,23 +6,38 @@
 
 #import <Photos/PHAssetCollection.h>
 
-@class NSData;
+@class NSData, NSString;
 
 @interface PHProject : PHAssetCollection
 {
-    BOOL _hasProjectPreview;
+    NSData *_projectExtensionData;
+    NSString *_projectExtensionIdentifier;
+    NSString *_projectDocumentType;
+    NSString *_projectRenderUuid;
 }
 
 + (id)fetchProjectsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchProjectsWithOptions:(id)arg1;
-@property(readonly, nonatomic) BOOL hasProjectPreview; // @synthesize hasProjectPreview=_hasProjectPreview;
-- (id)localizedTitle;
-- (long long)assetCollectionSubtype;
-- (long long)assetCollectionType;
-@property(readonly, nonatomic) NSData *projectExtensionData;
-- (id)projectDocumentType;
-- (id)projectExtensionIdentifier;
-- (id)initWithModel:(id)arg1 photoLibrary:(id)arg2;
++ (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)entityKeyMap;
++ (BOOL)managedObjectSupportsRejectedState;
++ (BOOL)managedObjectSupportsPendingState;
++ (BOOL)managedObjectSupportsTrashedState;
++ (id)identifierCode;
++ (id)fetchType;
++ (id)localIdentifierWithUUID:(id)arg1;
++ (id)managedEntityName;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSString *projectRenderUuid; // @synthesize projectRenderUuid=_projectRenderUuid;
+@property(readonly, nonatomic) NSString *projectDocumentType; // @synthesize projectDocumentType=_projectDocumentType;
+@property(readonly, nonatomic) NSString *projectExtensionIdentifier; // @synthesize projectExtensionIdentifier=_projectExtensionIdentifier;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSData *projectData;
+@property(readonly, nonatomic) NSData *projectExtensionData; // @synthesize projectExtensionData=_projectExtensionData;
+@property(readonly, nonatomic) BOOL hasProjectPreview;
+- (BOOL)canContainCustomKeyAssets;
+- (BOOL)canPerformEditOperation:(long long)arg1;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 
 @end
 

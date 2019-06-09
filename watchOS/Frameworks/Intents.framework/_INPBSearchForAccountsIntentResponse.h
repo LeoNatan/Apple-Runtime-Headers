@@ -18,6 +18,7 @@
     NSArray *_accounts;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)accountsType;
 @property(copy, nonatomic) NSArray *accounts; // @synthesize accounts=_accounts;
 - (void).cxx_destruct;
@@ -25,6 +26,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)accountsAtIndex:(unsigned int)arg1;

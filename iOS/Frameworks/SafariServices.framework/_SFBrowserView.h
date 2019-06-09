@@ -26,12 +26,14 @@
     UIView *_scrollToTopView;
     _SFCrashBanner *_crashBanner;
     double _crashBannerOffset;
+    UIView *_quickLookDocumentView;
     double _minimalUITopOffset;
     id <SFBrowserViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <SFBrowserViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) double minimalUITopOffset; // @synthesize minimalUITopOffset=_minimalUITopOffset;
+@property(retain, nonatomic) UIView *quickLookDocumentView; // @synthesize quickLookDocumentView=_quickLookDocumentView;
 @property(readonly, nonatomic) _Bool hasReceivedTouchEvents; // @synthesize hasReceivedTouchEvents=_hasReceivedTouchEvents;
 @property(nonatomic) double crashBannerOffset; // @synthesize crashBannerOffset=_crashBannerOffset;
 @property(retain, nonatomic) _SFCrashBanner *crashBanner; // @synthesize crashBanner=_crashBanner;
@@ -50,7 +52,6 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updatePreviewHeader;
 - (void)addWebView:(id)arg1;
-@property(readonly, nonatomic) double navigationBarOffset;
 - (void)updateDismissButtonStyle:(long long)arg1;
 - (void)updateNavigationBarTintColor:(id)arg1;
 - (void)updateToolbarTintColor:(id)arg1;

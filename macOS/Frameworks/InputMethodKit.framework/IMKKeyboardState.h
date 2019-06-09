@@ -14,6 +14,7 @@
 }
 
 @property(readonly, nonatomic) unsigned long long keyModifiers; // @synthesize keyModifiers=_keyModifiers;
+- (BOOL)isInShortcutState;
 - (BOOL)isModifiedByNoneOrAny:(unsigned long long)arg1;
 - (BOOL)isModifiedByAny:(unsigned long long)arg1;
 - (BOOL)isModifiedBy:(unsigned long long)arg1;

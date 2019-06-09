@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)_deprecated_hasReversedFlippednessInFlippedImages;
 + (BOOL)supportsSecureCoding;
 + (id)classFallbacksForKeyedArchiver;
+@property(readonly) struct CGImage *image;
 - (BOOL)_isValid;
 - (BOOL)hasAlpha;
 - (long long)pixelsHigh;

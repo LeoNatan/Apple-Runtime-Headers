@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)_enumerateResolvedResultsOfQuery:(id)arg1 XPCConnection:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
-- (id)_queryCache;
 - (id)_resolveQueries:(id)arg1 XPCConnection:(id)arg2 error:(id *)arg3;
 
 // Remaining properties

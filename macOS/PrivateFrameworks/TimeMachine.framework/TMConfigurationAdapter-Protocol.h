@@ -6,9 +6,11 @@
 
 #import <TimeMachine/NSObject-Protocol.h>
 
-@class NSString;
+@class NSNumber, NSString;
 
 @protocol TMConfigurationAdapter <NSObject>
+- (void)setObject:(NSNumber *)arg1 forKeyedSubscript:(NSString *)arg2;
+- (NSNumber *)objectForKeyedSubscript:(NSString *)arg1;
 - (BOOL)removeValueForKey:(NSString *)arg1 error:(id *)arg2;
 - (BOOL)setValue:(id)arg1 forKey:(NSString *)arg2 error:(id *)arg3;
 - (id)valueForKey:(NSString *)arg1;

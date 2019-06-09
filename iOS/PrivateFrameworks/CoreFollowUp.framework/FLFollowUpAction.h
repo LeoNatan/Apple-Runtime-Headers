@@ -34,7 +34,7 @@
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)description;
-- (void)_loadActionURL;
+- (_Bool)_loadActionURL;
 @property(retain, nonatomic) NSData *_userInfoData;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

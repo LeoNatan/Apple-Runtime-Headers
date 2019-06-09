@@ -14,7 +14,7 @@
 #import <PassKitUI/PKPassGroupViewReceiver-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, NSTimer, PKBackdropView, PKNavigationDashboardPassViewController, PKPGSVSectionHeaderContext, PKPGSVTransitionInterstitialView, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView, _UIDynamicValueAnimation;
+@class NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, NSTimer, PKBackdropView, PKDiscoveryDataSource, PKNavigationDashboardPassViewController, PKPGSVSectionHeaderContext, PKPGSVTransitionInterstitialView, PKPass, PKPassDeleteAnimationController, PKPassFooterView, PKPassGroupView, PKPassthroughView, PKPaymentService, PKReusablePassViewQueue, PKSecureElement, UIColor, UIImageView, UIView, _UIDynamicValueAnimation;
 @protocol OS_dispatch_source, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate><UIScrollViewDelegate;
 
 @interface PKPassGroupStackView : UIScrollView <PKPassGroupViewDelegate, PKPassDeleteAnimationControllerDelegate, PKPaymentServiceDelegate, PKPassFooterViewDelegate, PKDashboardPassViewControllerDelegate, PKPassDeleteHandler, PKPassGroupViewReceiver>
@@ -122,6 +122,7 @@
     _Bool _staggerPileAnimations;
     _Bool _paused;
     id <PKPassGroupStackViewDatasource> _datasource;
+    PKDiscoveryDataSource *_discoveryDatasource;
     UIColor *_pageIndicatorTintColor;
     UIColor *_currentPageIndicatorTintColor;
     float _topContentSeparatorHeight;
@@ -137,6 +138,7 @@
 @property(copy, nonatomic) UIColor *pageIndicatorTintColor; // @synthesize pageIndicatorTintColor=_pageIndicatorTintColor;
 @property(nonatomic) _Bool externalFooterSuppressed; // @synthesize externalFooterSuppressed=_externalFooterSuppressed;
 @property(nonatomic) _Bool footerSuppressed; // @synthesize footerSuppressed=_footerSuppressed;
+@property(retain, nonatomic) PKDiscoveryDataSource *discoveryDatasource; // @synthesize discoveryDatasource=_discoveryDatasource;
 @property(nonatomic) unsigned int modalGroupIndex; // @synthesize modalGroupIndex=_modalGroupIndex;
 @property(nonatomic) int presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) id <PKPassGroupStackViewDatasource> datasource; // @synthesize datasource=_datasource;
@@ -248,7 +250,8 @@
 - (unsigned int)_lastIndex;
 - (struct CATransform3D)_transformForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
 - (struct CGPoint)_positionForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
-- (float)_scaleForNonModalGroupInExternalPresentation;
+- (float)_scaleForStackGroupInExternalPresentation;
+- (float)_scaleForModalPileGroupInExternalPresentation;
 - (float)_scaleForGroupView:(id)arg1 atIndex:(unsigned int)arg2 forState:(int)arg3;
 - (float)_opacityForGroupAtIndex:(unsigned int)arg1 forState:(int)arg2;
 - (float)_xPositionForGroupView:(id)arg1 forState:(int)arg2;
@@ -284,6 +287,7 @@
 - (void)_updateContentSize;
 - (void)_updateContentSizeAndLayout:(_Bool)arg1 forceUpdate:(_Bool)arg2;
 - (void)_updateContentSizeAndLayout:(_Bool)arg1;
+- (CDStruct_d8808cea)discoveryGalleryLayoutStateForCurrentLayoutState;
 - (_Bool)_recomputeLayoutState;
 - (void)_updateHeaderFooterState:(_Bool)arg1 layout:(_Bool)arg2;
 - (_Bool)_updateHeaderContext:(id *)arg1 toContext:(id)arg2 animated:(_Bool)arg3;
@@ -311,7 +315,7 @@
 - (id)_factoryForExternalPresentation;
 - (void)_presentGroupStackViewWithAnimation:(_Bool)arg1 priorBounds:(struct CGRect)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_presentModalGroupViewPostAnimationActions;
-- (void)_presentModalGroupView:(id)arg1 withState:(int)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_presentModalGroupView:(id)arg1 withState:(int)arg2 animated:(_Bool)arg3 context:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_presentOffscreenAnimated:(_Bool)arg1 split:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_generateModalGroupPileWithVisibleIndexes:(struct _NSRange)arg1 reservePlaceForModalGroup:(_Bool)arg2;
 - (unsigned int)_edgeStylesObscuredByTopCornersOfPassStyle:(int)arg1;

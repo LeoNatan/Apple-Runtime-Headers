@@ -19,6 +19,7 @@
 }
 
 + (id)enumeratorWithAssetObjectIDs:(id)arg1 managedObjectContext:(id)arg2 conversionSupport:(id)arg3;
+- (void).cxx_destruct;
 - (id)assetsFromOffset:(unsigned int)arg1 count:(unsigned int)arg2;
 - (_Bool)enumerateAssetsWithCount:(unsigned int)arg1 fetchOffset:(unsigned int)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateDictionariesWithCount:(unsigned int)arg1 fetchOffset:(unsigned int)arg2 usingBlock:(CDUnknownBlockType)arg3;
@@ -26,7 +27,6 @@
 - (void)enumerateAssetsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateDictionariesUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_11f37819 *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
-- (void)dealloc;
 - (id)initWithAssetObjectIDs:(id)arg1 managedObjectContext:(id)arg2 conversionSupport:(id)arg3;
 
 @end

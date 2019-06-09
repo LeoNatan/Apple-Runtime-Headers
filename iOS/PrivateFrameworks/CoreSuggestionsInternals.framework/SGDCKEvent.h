@@ -8,17 +8,19 @@
 
 #import <CoreSuggestionsInternals/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray, NSString, SGDCKTimeRange;
+@class NSData, NSMutableArray, NSString, SGDCKInteractionInfo, SGDCKTimeRange;
 
 @interface SGDCKEvent : PBCodable <NSCopying>
 {
     double _creationTimestamp;
     double _lastModifiedTimestamp;
+    long long _parentEntityType;
     unsigned long long _categoryType;
     NSString *_content;
     NSString *_domain;
     NSString *_extraKey;
     NSString *_groupId;
+    SGDCKInteractionInfo *_interactionInfo;
     NSMutableArray *_locations;
     NSData *_schemaOrg;
     NSString *_sourceKey;
@@ -30,6 +32,7 @@
     struct {
         unsigned int creationTimestamp:1;
         unsigned int lastModifiedTimestamp:1;
+        unsigned int parentEntityType:1;
         unsigned int categoryType:1;
         unsigned int allDay:1;
         unsigned int cancelled:1;
@@ -37,6 +40,8 @@
 }
 
 + (Class)locationsType;
+@property(nonatomic) long long parentEntityType; // @synthesize parentEntityType=_parentEntityType;
+@property(retain, nonatomic) SGDCKInteractionInfo *interactionInfo; // @synthesize interactionInfo=_interactionInfo;
 @property(nonatomic) unsigned long long categoryType; // @synthesize categoryType=_categoryType;
 @property(retain, nonatomic) NSString *templateName; // @synthesize templateName=_templateName;
 @property(retain, nonatomic) NSString *domain; // @synthesize domain=_domain;
@@ -62,6 +67,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasParentEntityType;
+@property(readonly, nonatomic) _Bool hasInteractionInfo;
 - (unsigned long long)StringAsCategoryType:(id)arg1;
 - (id)categoryTypeAsString:(unsigned long long)arg1;
 @property(nonatomic) _Bool hasCategoryType;

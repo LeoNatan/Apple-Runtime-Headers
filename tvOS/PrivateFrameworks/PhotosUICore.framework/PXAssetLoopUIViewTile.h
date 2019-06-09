@@ -4,31 +4,50 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUICore/PXAssetUIImageViewTile.h>
+#import <objc/NSObject.h>
 
-@class AVPlayerItem, ISWrappedAVAudioSession, ISWrappedAVPlayer, PXVideoPlayerView;
+#import <PhotosUICore/PXAssetTile-Protocol.h>
+#import <PhotosUICore/PXAutoplayTile-Protocol.h>
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
+#import <PhotosUICore/PXReusableObject-Protocol.h>
+#import <PhotosUICore/PXUIViewBasicTile-Protocol.h>
 
-@interface PXAssetLoopUIViewTile : PXAssetUIImageViewTile
+@class NSString, PXImageRequester, PXVideoSession, PXVideoSessionUIView, UIView, _PXAssetLoopUIView;
+
+@interface PXAssetLoopUIViewTile : NSObject <PXChangeObserver, PXReusableObject, PXAssetTile, PXUIViewBasicTile, PXAutoplayTile>
 {
     unsigned long long _requestCount;
-    long long _loopingVideoRequestID;
-    PXVideoPlayerView *_loopingVideoView;
-    ISWrappedAVPlayer *_loopingVideoPlayer;
-    AVPlayerItem *__loopingPlayerItem;
-    ISWrappedAVAudioSession *__audioSession;
+    _PXAssetLoopUIView *_view;
+    PXVideoSession *_videoSession;
+    PXVideoSessionUIView *_videoView;
+    PXImageRequester *_imageRequester;
+    long long _desiredPlayState;
+    struct CGSize _contentSize;
+    struct CGRect _desiredContentsRect;
 }
 
-@property(retain, nonatomic, setter=_setAudioSession:) ISWrappedAVAudioSession *_audioSession; // @synthesize _audioSession=__audioSession;
-@property(retain, nonatomic, setter=_setLoopingPlayerItem:) AVPlayerItem *_loopingPlayerItem; // @synthesize _loopingPlayerItem=__loopingPlayerItem;
+@property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
+@property(nonatomic) struct CGRect desiredContentsRect; // @synthesize desiredContentsRect=_desiredContentsRect;
+@property(retain, nonatomic) PXVideoSession *videoSession; // @synthesize videoSession=_videoSession;
+@property(nonatomic) long long desiredPlayState; // @synthesize desiredPlayState=_desiredPlayState;
+@property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
 - (void).cxx_destruct;
-- (void)imageDidChange;
-- (void)setImageRequester:(id)arg1;
-- (void)_handlePlayerItemResult:(id)arg1 info:(id)arg2 expectedRequestCount:(unsigned long long)arg3;
-- (void)_requestLoopingVideoIfNeeded;
-- (void)_updateLoopingVideoView;
-- (id)view;
+- (void)dealloc;
+- (void)_reloadVideoSessionIfNecessary;
+- (void)_updateVideoSession;
+- (void)_updateImageRequester;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+@property(readonly, nonatomic) UIView *view;
+- (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;
 - (void)prepareForReuse;
 - (void)becomeReusable;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

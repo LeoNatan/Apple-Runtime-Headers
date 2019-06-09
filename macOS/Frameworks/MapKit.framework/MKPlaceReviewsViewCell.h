@@ -8,6 +8,7 @@
 
 @class MKImageView, MKPlaceReviewAvatarGenerator, MKVibrancyAwareLabelView, NSDate, NSLayoutConstraint, NSString, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceReviewsViewCell : MKPlaceSectionRowView
 {
     MKImageView *_pictureView;
@@ -16,6 +17,7 @@
     NSLayoutConstraint *_reviewLabelTopConstraint;
     NSLayoutConstraint *_reviewLabelToAuthorLabelConstraint;
     NSLayoutConstraint *_authorLabelBaselineConstraint;
+    BOOL _isLastReview;
     MKPlaceReviewAvatarGenerator *_avatarGenerator;
     unsigned long long _rating;
     NSString *_author;
@@ -26,6 +28,7 @@
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(nonatomic) unsigned long long rating; // @synthesize rating=_rating;
 @property(retain, nonatomic) MKPlaceReviewAvatarGenerator *avatarGenerator; // @synthesize avatarGenerator=_avatarGenerator;
+@property(nonatomic) BOOL isLastReview; // @synthesize isLastReview=_isLastReview;
 - (void).cxx_destruct;
 - (unsigned long long)maxCharacters;
 - (id)detailLabelText;
@@ -33,7 +36,7 @@
 - (void)setPicture:(id)arg1;
 - (void)setReview:(id)arg1;
 - (void)_updatePictureTheme:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_updateBaselineConstraints;
 - (void)_contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;

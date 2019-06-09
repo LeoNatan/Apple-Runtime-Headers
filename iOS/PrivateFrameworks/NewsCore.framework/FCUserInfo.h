@@ -13,7 +13,6 @@
 @interface FCUserInfo : FCPrivateDataController <FCTagSettingsDelegate>
 {
     _Bool _useParsecResults;
-    _Bool _iCloudAccountChanged;
     FCTagSettings *_tagSettings;
     NSDictionary *_readOnlyUserInfo;
     FCMTWriterLock *_userInfoLock;
@@ -35,7 +34,6 @@
 + (id)desiredKeys;
 @property(retain, nonatomic) FCMTWriterLock *userInfoLock; // @synthesize userInfoLock=_userInfoLock;
 @property(retain, nonatomic) NSDictionary *readOnlyUserInfo; // @synthesize readOnlyUserInfo=_readOnlyUserInfo;
-@property(nonatomic) _Bool iCloudAccountChanged; // @synthesize iCloudAccountChanged=_iCloudAccountChanged;
 @property(readonly, nonatomic) _Bool useParsecResults; // @synthesize useParsecResults=_useParsecResults;
 @property(retain, nonatomic) FCTagSettings *tagSettings; // @synthesize tagSettings=_tagSettings;
 - (void).cxx_destruct;
@@ -44,7 +42,6 @@
 - (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (_Bool)canHelpRestoreZoneName:(id)arg1;
-- (void)_removeiCloudDataValues;
 - (void)_persistNotificationsUserID:(id)arg1;
 - (void)syncLocalNotificationsUserID:(id)arg1 withRemoteNotificationsUserID:(id)arg2;
 - (void)handleSyncWithUserInfoRecord:(id)arg1;
@@ -81,7 +78,7 @@
 @property(readonly, copy, nonatomic) NSString *notificationsUserID;
 @property(copy, nonatomic) NSString *feldsparID;
 - (void)prepareForUse;
-- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3 iCloudAccountChanged:(_Bool)arg4;
+- (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -16,22 +16,18 @@
     BOOL _didParseSubject;
     NSURL *_fileURL;
     NSMutableAttributedString *_textWithAppAttributes;
-    NSMutableAttributedString *_subjectWithAppAttributes;
 }
 
 @property BOOL didParseSubject; // @synthesize didParseSubject=_didParseSubject;
 @property BOOL didParseText; // @synthesize didParseText=_didParseText;
 @property BOOL didHighlightMyName; // @synthesize didHighlightMyName=_didHighlightMyName;
-@property(retain) NSMutableAttributedString *subjectWithAppAttributes; // @synthesize subjectWithAppAttributes=_subjectWithAppAttributes;
 @property(retain) NSMutableAttributedString *textWithAppAttributes; // @synthesize textWithAppAttributes=_textWithAppAttributes;
 @property(retain) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(getter=isSaved) BOOL saved; // @synthesize saved=_saved;
 - (void).cxx_destruct;
-- (void)useScriptReplacementText:(id)arg1;
 - (void)highlightMyNameAtRange:(struct _NSRange)arg1;
 - (id)senderName;
 - (BOOL)isAddressedToMe;
-- (id)messageSubject;
 - (id)text;
 - (id)superText;
 - (id)superMessageSubject;

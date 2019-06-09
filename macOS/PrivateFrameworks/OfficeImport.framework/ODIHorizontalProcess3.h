@@ -6,6 +6,7 @@
 
 #import <OfficeImport/ODILinear.h>
 
+__attribute__((visibility("hidden")))
 @interface ODIHorizontalProcess3 : ODILinear
 {
 }

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *callbackContextTokens;
     float volume;
     NSString *outputDeviceUniqueID;
+    struct os_unfair_lock_s internalLock;
 }
 
 @end

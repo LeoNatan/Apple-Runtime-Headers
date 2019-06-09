@@ -15,9 +15,6 @@
     struct CGSize _cachedOutputCellSize;
 }
 
-- (BOOL)_needRedrawOnWindowChangedKeyState;
-- (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (BOOL)canSmoothFontsInFrame:(struct CGRect)arg1 forLayerBackedView:(id)arg2;
 - (void)performClickWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGPoint)_menuLocationForEvent:(id)arg1 inCellFrame:(struct CGRect)arg2 ofView:(id)arg3;
 - (long long)indexOfSelectedItem;
@@ -25,10 +22,11 @@
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 - (void)_setTextShadow:(BOOL)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (BOOL)_needRedrawOnWindowChangedKeyState;
 - (void)_drawRealTitleWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawTitleWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)_sharedTextCell;
-- (unsigned long long)alignment;
+- (long long)alignment;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
 - (id)title;
 - (void)finishUsingMenuRepresentation;

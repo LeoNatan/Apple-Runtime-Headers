@@ -35,7 +35,6 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (_Bool)_needsForegroundContainerView;
 - (void)logoTappedFromRect:(struct CGRect)arg1;
-- (void)_prepareTimeViewForReuse:(id)arg1;
 - (void)_prepareForEditing;
 - (double)_handsAlphaForEditMode:(long long)arg1;
 - (double)_complicationAlphaForEditMode:(long long)arg1;
@@ -47,7 +46,6 @@
 - (void)_applyComplicationViewColor:(id)arg1;
 - (void)_applyTransitionFraction:(double)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(long long)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
-- (id)_editOptionThatHidesAllComplications;
 - (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_layoutTimeTravelCaptionView:(id)arg1;
@@ -66,7 +64,7 @@
 - (id)_keylineViewForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (void)_applyDataMode;
 - (id)_additionalPrelaunchApplicationIdentifiers;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (id)initWithFaceStyle:(long long)arg1 forDevice:(id)arg2 clientIdentifier:(id)arg3;

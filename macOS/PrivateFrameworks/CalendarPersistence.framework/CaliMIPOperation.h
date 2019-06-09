@@ -32,6 +32,7 @@
 - (id)managedEventInContext:(id)arg1;
 - (id)organizerDisplayNameForAddress:(id)arg1 commonName:(id)arg2;
 - (BOOL)executeInContext:(id)arg1 error:(id *)arg2;
+- (id)fromAddressInContext:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)attachmentOptions;
 - (id)attachmentForManagedEvent:(id)arg1 withMethod:(int)arg2;

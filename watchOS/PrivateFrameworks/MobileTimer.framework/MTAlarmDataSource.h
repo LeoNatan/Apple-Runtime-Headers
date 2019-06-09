@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class MTAlarm, MTAlarmManager, NSHashTable, NSMutableArray;
+@class MTAlarm, MTAlarmManager, MTObserverStore, NSMutableArray;
 
 @interface MTAlarmDataSource : NSObject
 {
     MTAlarmManager *_alarmManager;
-    NSHashTable *_observers;
+    MTObserverStore *_observers;
     NSMutableArray *_alarms;
     MTAlarm *_sleepAlarm;
 }
 
 @property(retain, nonatomic) MTAlarm *sleepAlarm; // @synthesize sleepAlarm=_sleepAlarm;
 @property(retain, nonatomic) NSMutableArray *alarms; // @synthesize alarms=_alarms;
-@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) MTObserverStore *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
 - (void).cxx_destruct;
 - (id)removeAlarm:(id)arg1;
@@ -34,6 +34,7 @@
 - (void)dealloc;
 - (void)_registerForNotifications;
 - (void)_iterateObserversWithBlock:(CDUnknownBlockType)arg1;
+- (void)unregisterObserver:(id)arg1;
 - (void)registerObserver:(id)arg1;
 - (id)initWithAlarmManager:(id)arg1;
 

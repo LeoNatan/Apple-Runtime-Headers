@@ -73,6 +73,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqualToStatus:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly, nonatomic, getter=isCloudMusicServiceEnabled) _Bool cloudMusicServiceEnabled;
 - (id)initWithResponseDictionary:(id)arg1;
 
 @end

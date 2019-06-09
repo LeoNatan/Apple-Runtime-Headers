@@ -8,37 +8,51 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDDepartureSequence : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_cb16bb10 _nextStopIds;
-    unsigned long long _lineId;
     struct GEOPDTimeRange *_operatingHours;
     unsigned int _operatingHoursCount;
     unsigned int _operatingHoursSpace;
-    unsigned long long _stopId;
     NSMutableArray *_departureFrequencys;
     NSMutableArray *_departures;
     NSString *_directionNameString;
     NSString *_headsignString;
+    unsigned long long _lineId;
+    unsigned long long _stopId;
     struct {
-        unsigned int lineId:1;
-        unsigned int stopId:1;
-    } _has;
+        unsigned int has_lineId:1;
+        unsigned int has_stopId:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_nextStopIds:1;
+        unsigned int read_operatingHours:1;
+        unsigned int read_departureFrequencys:1;
+        unsigned int read_departures:1;
+        unsigned int read_directionNameString:1;
+        unsigned int read_headsignString:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_nextStopIds:1;
+        unsigned int wrote_operatingHours:1;
+        unsigned int wrote_departureFrequencys:1;
+        unsigned int wrote_departures:1;
+        unsigned int wrote_directionNameString:1;
+        unsigned int wrote_headsignString:1;
+        unsigned int wrote_lineId:1;
+        unsigned int wrote_stopId:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)departureFrequencyType;
 + (Class)departureType;
-@property(retain, nonatomic) NSString *headsignString; // @synthesize headsignString=_headsignString;
-@property(retain, nonatomic) NSString *directionNameString; // @synthesize directionNameString=_directionNameString;
-@property(retain, nonatomic) NSMutableArray *departureFrequencys; // @synthesize departureFrequencys=_departureFrequencys;
-@property(retain, nonatomic) NSMutableArray *departures; // @synthesize departures=_departures;
-@property(nonatomic) unsigned long long stopId; // @synthesize stopId=_stopId;
-@property(nonatomic) unsigned long long lineId; // @synthesize lineId=_lineId;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -47,32 +61,49 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setNextStopIds:(unsigned long long *)arg1 count:(unsigned int)arg2;
 - (unsigned long long)nextStopIdAtIndex:(unsigned int)arg1;
+- (void)_addNoFlagsNextStopId:(unsigned long long)arg1;
 - (void)addNextStopId:(unsigned long long)arg1;
 - (void)clearNextStopIds;
 @property(readonly, nonatomic) unsigned long long *nextStopIds;
 @property(readonly, nonatomic) unsigned int nextStopIdsCount;
+- (void)_readNextStopIds;
+@property(retain, nonatomic) NSString *headsignString;
 @property(readonly, nonatomic) _Bool hasHeadsignString;
+- (void)_readHeadsignString;
+@property(retain, nonatomic) NSString *directionNameString;
 @property(readonly, nonatomic) _Bool hasDirectionNameString;
+- (void)_readDirectionNameString;
 - (void)setOperatingHours:(struct GEOPDTimeRange *)arg1 count:(unsigned int)arg2;
 - (struct GEOPDTimeRange)operatingHoursAtIndex:(unsigned int)arg1;
+- (void)_addNoFlagsOperatingHours:(struct GEOPDTimeRange)arg1;
 - (void)addOperatingHours:(struct GEOPDTimeRange)arg1;
 - (void)clearOperatingHours;
 @property(readonly, nonatomic) struct GEOPDTimeRange *operatingHours;
 @property(readonly, nonatomic) unsigned int operatingHoursCount;
+- (void)_readOperatingHours;
 - (id)departureFrequencyAtIndex:(unsigned int)arg1;
 - (unsigned int)departureFrequencysCount;
+- (void)_addNoFlagsDepartureFrequency:(id)arg1;
 - (void)addDepartureFrequency:(id)arg1;
 - (void)clearDepartureFrequencys;
+@property(retain, nonatomic) NSMutableArray *departureFrequencys;
+- (void)_readDepartureFrequencys;
 - (id)departureAtIndex:(unsigned int)arg1;
 - (unsigned int)departuresCount;
+- (void)_addNoFlagsDeparture:(id)arg1;
 - (void)addDeparture:(id)arg1;
 - (void)clearDepartures;
+@property(retain, nonatomic) NSMutableArray *departures;
+- (void)_readDepartures;
 @property(nonatomic) _Bool hasStopId;
+@property(nonatomic) unsigned long long stopId;
 @property(nonatomic) _Bool hasLineId;
+@property(nonatomic) unsigned long long lineId;
 - (void)dealloc;
 
 @end

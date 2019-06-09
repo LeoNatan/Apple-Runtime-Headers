@@ -8,6 +8,7 @@
 
 @class NSString, SKUIPredicateListViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUITemplateDefinitionViewElement : SKUIViewElement
 {
 }

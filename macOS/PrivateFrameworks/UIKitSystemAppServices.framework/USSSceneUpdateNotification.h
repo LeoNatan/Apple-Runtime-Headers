@@ -20,8 +20,8 @@
 @property(nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initCommon;
 @property(readonly, nonatomic) NSString *notificationName;
 

@@ -25,18 +25,7 @@ struct Electrocardiogram {
     } _has;
 };
 
-struct HDStatisticsCalculator_DEPRECATED<double> {
-    double _min;
-    double _max;
-    double _mean;
-    long long _count;
-};
-
 struct NSDictionary {
-    Class _field1;
-};
-
-struct NSUUID {
     Class _field1;
 };
 
@@ -44,7 +33,11 @@ struct PtrVector<binarysample::ElectrocardiogramLead> {
     struct vector<std::__1::unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>>, std::__1::allocator<std::__1::unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>>>> _v;
 };
 
-struct _HDValueAndTime;
+struct _HKLazyLoader<bool> {
+    _Bool _value;
+    _Bool _hasLoaded;
+    struct os_unfair_lock_s _loadLock;
+};
 
 struct _NSRange {
     unsigned int location;
@@ -135,14 +128,6 @@ struct os_unfair_lock_s {
 
 struct unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>>;
 
-struct vector<_HDValueAndTime, std::__1::allocator<_HDValueAndTime>> {
-    struct _HDValueAndTime *_field1;
-    struct _HDValueAndTime *_field2;
-    struct __compressed_pair<_HDValueAndTime *, std::__1::allocator<_HDValueAndTime>> {
-        struct _HDValueAndTime *_field1;
-    } _field3;
-};
-
 struct vector<std::__1::unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>>, std::__1::allocator<std::__1::unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>>>> {
     struct unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>> *__begin_;
     struct unique_ptr<binarysample::ElectrocardiogramLead, std::__1::default_delete<binarysample::ElectrocardiogramLead>> *__end_;
@@ -152,6 +137,16 @@ struct vector<std::__1::unique_ptr<binarysample::ElectrocardiogramLead, std::__1
 };
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    id _field1;
+    id _field2;
+    id _field3;
+    id _field4;
+    short _field5;
+    char _field6;
+    unsigned char _field7;
+} CDStruct_0970132e;
 
 typedef struct {
     unsigned long _field1;
@@ -183,29 +178,12 @@ typedef struct {
     char *_field3;
     char *_field4;
     _Bool _field5;
-} CDStruct_457e09f6;
-
-typedef struct {
-    int _field1;
-    char *_field2;
-    char *_field3;
-    int _field4;
-    char *_field5;
-    char *_field6;
-} CDStruct_fdd59570;
+    _Bool _field6;
+} CDStruct_b04166ad;
 
 typedef struct {
     int majorVersion;
     int minorVersion;
     int patchVersion;
 } CDStruct_4bb15e50;
-
-// Template types
-typedef struct vector<_HDValueAndTime, std::__1::allocator<_HDValueAndTime>> {
-    struct _HDValueAndTime *_field1;
-    struct _HDValueAndTime *_field2;
-    struct __compressed_pair<_HDValueAndTime *, std::__1::allocator<_HDValueAndTime>> {
-        struct _HDValueAndTime *_field1;
-    } _field3;
-} vector_b70ce118;
 

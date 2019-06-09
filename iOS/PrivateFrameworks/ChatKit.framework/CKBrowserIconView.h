@@ -8,6 +8,7 @@
 
 @class CADisplayLink, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface CKBrowserIconView : UIView
 {
     double _percentComplete;

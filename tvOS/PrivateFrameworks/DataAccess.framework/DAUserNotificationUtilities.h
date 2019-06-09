@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)showUserNotification:(struct __CFUserNotification *)arg1 groupIdentifier:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
++ (void)showUserNotification:(struct __CFUserNotification *)arg1 groupIdentifier:(id)arg2 callbackQueue:(id)arg3 sourceRunLoop:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 
 @end
 

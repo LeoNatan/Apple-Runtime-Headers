@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, SCREventFactory, SCRWorkspace;
+@class NSArray, SCRCUserDefaults, SCREventFactory, SCRWorkspace;
 
 __attribute__((visibility("hidden")))
 @interface SCREventCapsLockDetector : NSObject
@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     BOOL __isCapsLockModifierOn;
     BOOL __isCapsLockSupportConfirmed;
     unsigned int __ioConnection;
-    unsigned long long _voModifierPreference;
+    long long _voModifierPreference;
     double __capsLockKeyUpTime;
     unsigned long long __unhandledCapsLockEventCount;
     unsigned long long __unhandledVOEventCount;
@@ -27,14 +27,16 @@ __attribute__((visibility("hidden")))
     double __capsLockModifierChangeTime;
     struct __IOHIDManager *__hidManager;
     NSArray *__devices;
+    SCRCUserDefaults *__userDefaults;
 }
 
+@property(readonly, nonatomic) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setIOConnection:) unsigned int _ioConnection; // @synthesize _ioConnection=__ioConnection;
 @property(copy, nonatomic, setter=_setDevices:) NSArray *_devices; // @synthesize _devices=__devices;
 @property(nonatomic, setter=_setHIDManager:) struct __IOHIDManager *_hidManager; // @synthesize _hidManager=__hidManager;
 @property(nonatomic, setter=_setCapsLockModifierChangeTime:) double _capsLockModifierChangeTime; // @synthesize _capsLockModifierChangeTime=__capsLockModifierChangeTime;
-@property(nonatomic, setter=_setWorkspaceDelegate:) SCRWorkspace *_workspaceDelegate; // @synthesize _workspaceDelegate=__workspaceDelegate;
-@property(nonatomic, setter=_setEventFactoryDelegate:) SCREventFactory *_eventFactoryDelegate; // @synthesize _eventFactoryDelegate=__eventFactoryDelegate;
+@property(nonatomic, setter=_setWorkspaceDelegate:) __weak SCRWorkspace *_workspaceDelegate; // @synthesize _workspaceDelegate=__workspaceDelegate;
+@property(nonatomic, setter=_setEventFactoryDelegate:) __weak SCREventFactory *_eventFactoryDelegate; // @synthesize _eventFactoryDelegate=__eventFactoryDelegate;
 @property(nonatomic, setter=_setUnhandledCapsLockKeyPressTime:) double _unhandledCapsLockKeyPressTime; // @synthesize _unhandledCapsLockKeyPressTime=__unhandledCapsLockKeyPressTime;
 @property(nonatomic, setter=_setUnhandledVOEventCount:) unsigned long long _unhandledVOEventCount; // @synthesize _unhandledVOEventCount=__unhandledVOEventCount;
 @property(nonatomic, setter=_setCapsLockSupportConfirmed:) BOOL _isCapsLockSupportConfirmed; // @synthesize _isCapsLockSupportConfirmed=__isCapsLockSupportConfirmed;
@@ -43,9 +45,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setCapsLockModifierOn:) BOOL _isCapsLockModifierOn; // @synthesize _isCapsLockModifierOn=__isCapsLockModifierOn;
 @property(nonatomic, setter=_setEchoLockKeysEnabled:) BOOL _isEchoLockKeysEnabled; // @synthesize _isEchoLockKeysEnabled=__isEchoLockKeysEnabled;
 @property(nonatomic, setter=_setCapsLockKeyPressed:) BOOL isCapsLockKeyPressed; // @synthesize isCapsLockKeyPressed=_isCapsLockKeyPressed;
-@property(nonatomic, setter=setVOModifierPreference:) unsigned long long voModifierPreference; // @synthesize voModifierPreference=_voModifierPreference;
+@property(nonatomic, setter=setVOModifierPreference:) long long voModifierPreference; // @synthesize voModifierPreference=_voModifierPreference;
+- (void).cxx_destruct;
 - (unsigned int)_openIOConnection;
-- (id)_createScancodeMatchingDictionaryWithScancode:(unsigned long long)arg1;
+- (id)newScancodeMatchingDictionaryWithScancode:(unsigned long long)arg1;
 - (id)_createDeviceMatchingDictionaryWithUsagePage:(unsigned long long)arg1 usage:(unsigned long long)arg2;
 - (void)_enableCapsLockKeyPressDetection;
 - (void)_toggleVOModifierLockInSecureInput;
@@ -56,7 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleCapsLockKeyDown;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (id)initWithEventFactory:(id)arg1 workspace:(id)arg2;
+- (id)initWithEventFactory:(id)arg1 workspace:(id)arg2 userDefaults:(id)arg3;
 - (id)init;
 - (void)receivedKeyPressWithControlAndOption:(BOOL)arg1;
 - (BOOL)capsLockModifierChanged:(BOOL)arg1;

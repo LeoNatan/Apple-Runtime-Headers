@@ -12,6 +12,7 @@
 @class NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticsServiceImpl : NSObject <NSXPCListenerDelegate, DiagnosticsServiceInterface>
 {
     NSObject<OS_dispatch_queue> *queue;
@@ -19,6 +20,9 @@
 }
 
 - (void).cxx_destruct;
+- (void)cloudKitUploadDecisionForCaseIdentifiers:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)uploadRecentCases:(unsigned long long)arg1;
+- (void)uploadCasesWithIdentifiersToCloudKit:(id)arg1;
 - (void)purgeAutoBugCaptureFilesWithSubPaths:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getAutoBugCaptureConfiguration:(CDUnknownBlockType)arg1;
 - (void)getDiagnosticPayloadsForSignatures:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -26,7 +30,7 @@
 - (void)resetAllWithReply:(CDUnknownBlockType)arg1;
 - (void)resetDiagnosticCaseUsageWithReply:(CDUnknownBlockType)arg1;
 - (void)resetDiagnosticCaseStorageWithReply:(CDUnknownBlockType)arg1;
-- (void)getAllCasesWithReply:(CDUnknownBlockType)arg1;
+- (void)getCasesListFromIdentifier:(id)arg1 count:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)getSessionStatisticsWithReply:(CDUnknownBlockType)arg1;
 - (void)triggerRemoteSessionForSignature:(id)arg1 groupIdentifier:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)cancelSession:(id)arg1;

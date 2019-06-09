@@ -48,6 +48,16 @@ struct _renditionkeytoken {
     unsigned short value;
 };
 
+struct _themeconstant {
+    long long _field1;
+    char *_field2;
+    char *_field3;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 struct vImage_Buffer {
     void *data;
     unsigned long long height;

@@ -17,6 +17,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)validate:(id)arg1 width:(unsigned long long *)arg2 height:(unsigned long long *)arg3;
 - (unsigned long long)getSamplePositions:(CDStruct_6e3f967a *)arg1 count:(unsigned long long)arg2;
 - (void)setSamplePositions:(const CDStruct_6e3f967a *)arg1 count:(unsigned long long)arg2;
+- (unsigned long long)defaultRasterSampleCount;
+- (void)setDefaultRasterSampleCount:(unsigned long long)arg1;
+- (BOOL)openGLModeEnabled;
+- (void)setOpenGLModeEnabled:(BOOL)arg1;
+- (BOOL)isDitherEnabled;
+- (void)setDitherEnabled:(BOOL)arg1;
 - (unsigned long long)renderTargetHeight;
 - (void)setRenderTargetHeight:(unsigned long long)arg1;
 - (unsigned long long)renderTargetWidth;

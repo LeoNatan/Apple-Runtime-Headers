@@ -17,10 +17,10 @@
 - (void)userInteractionCancelled;
 - (void)userInteractionEnded;
 - (void)userInteractionStarted;
+- (void)dragged;
 - (void)pressedUp;
 - (void)pressedDown;
-- (id)initWithStyle:(long long)arg1 coordinateSpace:(id)arg2;
-- (id)initWithStyle:(long long)arg1;
+- (id)initWithCoordinateSpace:(id)arg1;
 
 @end
 

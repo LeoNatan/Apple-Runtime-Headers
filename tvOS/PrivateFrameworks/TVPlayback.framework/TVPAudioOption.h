@@ -10,13 +10,19 @@
 
 @interface TVPAudioOption : NSObject
 {
+    int _trackID;
     AVMediaSelectionOption *_avMediaSelectionOption;
     NSString *_localizedDisplayString;
     NSString *_title;
     NSString *_languageCodeFromLocale;
     NSString *_languageCodeBCP47;
+    id _propertyListRepresentation;
+    NSString *_savedLocaleLanguageCode;
 }
 
+@property(copy, nonatomic) NSString *savedLocaleLanguageCode; // @synthesize savedLocaleLanguageCode=_savedLocaleLanguageCode;
+@property(nonatomic) int trackID; // @synthesize trackID=_trackID;
+@property(retain, nonatomic) id propertyListRepresentation; // @synthesize propertyListRepresentation=_propertyListRepresentation;
 @property(copy, nonatomic) NSString *languageCodeBCP47; // @synthesize languageCodeBCP47=_languageCodeBCP47;
 @property(copy, nonatomic) NSString *languageCodeFromLocale; // @synthesize languageCodeFromLocale=_languageCodeFromLocale;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -29,6 +35,8 @@
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithOption:(id)arg1;
+- (id)initWithSavedTrackID:(int)arg1 savedLocaleLanguageCode:(id)arg2;
+- (id)initWithPropertyListRepresentation:(id)arg1;
 - (id)mediaRemoteIdentifier;
 
 @end

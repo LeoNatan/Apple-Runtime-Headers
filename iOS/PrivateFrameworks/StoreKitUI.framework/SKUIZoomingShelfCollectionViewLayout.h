@@ -11,6 +11,7 @@
 
 @class NSMutableDictionary, NSString, SKUIShelfLayoutData;
 
+__attribute__((visibility("hidden")))
 @interface SKUIZoomingShelfCollectionViewLayout : UICollectionViewLayout <SKUIHorizontalScrollingContainerMenuBarCollectionViewLayout, SKUIShelfCollectionViewLayout>
 {
     struct CGSize _cachedCollectionViewContentSize;

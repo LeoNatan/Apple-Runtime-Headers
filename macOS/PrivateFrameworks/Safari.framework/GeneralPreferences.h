@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     double _forcedWindowHeight;
     BOOL _registeredForLaunchServicesDatabaseChangedNotifications;
     HomepageHostViewController *_remoteHomepageViewController;
+    BOOL _launchBehaviorMenuItemsAreHidden;
     NSView *_mainContentView;
     NSLayoutConstraint *_downloadLocationPopUpButtonMinimizeWidthConstraint;
     NSTextField *_favoritesCollectionTextField;
@@ -92,7 +93,8 @@ __attribute__((visibility("hidden")))
 - (long long)_userDefaultsTagByPersistingPopUpTagToDefaults:(long long)arg1;
 - (long long)_userDefaultsToPopUpTag:(long long)arg1;
 - (void)_updateLaunchBehaviorViews;
-- (id)constraintsForLaunchBehaviorViews;
+- (void)_setUpLaunchBehaviorPopup;
+- (void)_removeOpensWithANewPrivateWindowSettingIfNecessary;
 - (void)_performSynchronousRemoteHomepageUpdateOnlyIfFieldIsFirstResponder:(BOOL)arg1;
 - (void)_updateHomePageViews;
 - (void)_updateHistoryAgeLimitPopUp;

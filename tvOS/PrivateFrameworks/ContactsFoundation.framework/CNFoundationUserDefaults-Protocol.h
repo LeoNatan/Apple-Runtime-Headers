@@ -6,9 +6,10 @@
 
 #import <ContactsFoundation/NSObject-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @protocol CNFoundationUserDefaults <NSObject>
+@property(nonatomic) NSDictionary *filteredAccountsAndContainers;
 @property(nonatomic, getter=isShortNameFormatEnabled) _Bool shortNameFormatEnabled;
 @property unsigned long long shortNameFormat;
 @property unsigned long long nameOrder;

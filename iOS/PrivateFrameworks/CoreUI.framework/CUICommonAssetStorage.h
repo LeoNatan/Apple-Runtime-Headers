@@ -17,11 +17,10 @@
     void *_colordb;
     void *_fontdb;
     void *_fontsizedb;
-    void *_zcglyphdb;
-    void *_zcbezeldb;
     void *_facetKeysdb;
     void *_bitmapKeydb;
     void *_appearancedb;
+    void *_localizationdb;
     NSData *_globals;
     unsigned int _swap:1;
     unsigned int _isMemoryMapped:1;
@@ -35,13 +34,11 @@
 
 + (_Bool)isValidAssetStorageWithURL:(id)arg1;
 + (_Bool)isValidAssetStorageWithBytes:(const void *)arg1 length:(unsigned long long)arg2;
-+ (void)initialize;
-@property(nonatomic) NSData *globals; // @synthesize globals=_globals;
+@property(retain, nonatomic) NSData *globals; // @synthesize globals=_globals;
+@property(nonatomic) void *localizationdb; // @synthesize localizationdb=_localizationdb;
 @property(nonatomic) void *appearancedb; // @synthesize appearancedb=_appearancedb;
 @property(nonatomic) void *bitmapKeydb; // @synthesize bitmapKeydb=_bitmapKeydb;
 @property(nonatomic) void *facetKeysdb; // @synthesize facetKeysdb=_facetKeysdb;
-@property(nonatomic) void *zcbezeldb; // @synthesize zcbezeldb=_zcbezeldb;
-@property(nonatomic) void *zcglyphdb; // @synthesize zcglyphdb=_zcglyphdb;
 @property(nonatomic) void *fontsizedb; // @synthesize fontsizedb=_fontsizedb;
 @property(nonatomic) void *fontdb; // @synthesize fontdb=_fontdb;
 @property(nonatomic) void *colordb; // @synthesize colordb=_colordb;
@@ -49,6 +46,9 @@
 @property(nonatomic) struct _renditionkeyfmt *keyfmt; // @synthesize keyfmt=_keyfmt;
 @property(nonatomic) struct _carextendedMetadata *extendedMetadata; // @synthesize extendedMetadata=_extendedMetadata;
 @property(nonatomic) struct _carheader *header; // @synthesize header=_header;
+- (id)localizations;
+- (id)nameForLocalizationIdentifier:(unsigned short)arg1;
+- (unsigned short)localizationIdentifierForName:(id)arg1;
 - (id)appearances;
 - (id)nameForAppearanceIdentifier:(unsigned short)arg1;
 - (unsigned short)appearanceIdentifierForName:(id)arg1;
@@ -64,10 +64,6 @@
 - (const struct FontValue *)_fontValueForFontType:(id)arg1;
 - (_Bool)hasColorForName:(const char *)arg1;
 - (_Bool)getColor:(struct _colordef *)arg1 forName:(const char *)arg2;
-- (id)zeroCodeBezelList;
-- (id)zeroCodeGlyphList;
-- (id)_zeroCodeListFromTree:(const void *)arg1;
-- (void)_swapZeroCodeInformation:(CDStruct_c0454aff *)arg1;
 - (id)renditionNameForKeyBaseList:(struct _renditionkeytoken *)arg1;
 - (id)renditionNameForKeyList:(struct _renditionkeytoken *)arg1;
 - (id)allRenditionNames;
@@ -99,7 +95,6 @@
 - (const struct _renditionkeyfmt *)keyFormat;
 - (id)keyFormatData;
 - (int)keySemantics;
-- (void)updateTimestamp;
 - (long long)storageTimestamp;
 - (long long)_storagefileTimestamp;
 - (unsigned int)schemaVersion;

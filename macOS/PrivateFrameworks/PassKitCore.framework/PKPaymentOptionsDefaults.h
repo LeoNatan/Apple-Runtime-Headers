@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)migrateToSyncable;
 - (void)deleteDefaultForContactKey:(id)arg1;
+- (void)deleteAllLocalDefaults;
 - (void)deleteAllDefaults;
 - (void)deleteDefaultContactName;
 @property(retain, nonatomic) CNContact *defaultContactName; // @synthesize defaultContactName=_defaultContactName;
@@ -53,6 +54,7 @@
 - (id)_contactForKeychainKey:(id)arg1;
 - (void)_setContact:(id)arg1 forKeychainKey:(id)arg2;
 - (void)_setContact:(id)arg1 property:(id)arg2 forKeychainKey:(id)arg3;
+- (void)_deleteKeychainDataForKey:(id)arg1 localOnly:(BOOL)arg2;
 - (void)_deleteKeychainDataForKey:(id)arg1;
 - (void)_setKeychainData:(id)arg1 forKey:(id)arg2;
 - (id)_keychainDataForKey:(id)arg1;

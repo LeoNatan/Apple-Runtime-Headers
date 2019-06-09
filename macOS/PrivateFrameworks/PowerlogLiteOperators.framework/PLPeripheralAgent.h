@@ -16,12 +16,14 @@
     PLIOKitOperatorComposition *_thunderboltRemoveComposition;
     PLIOKitOperatorComposition *_externalDisplayAddComposition;
     PLIOKitOperatorComposition *_externalDisplayRemoveComposition;
+    PLIOKitOperatorComposition *_lidComposition;
 }
 
 + (id)entryAggregateDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionsClamshellState;
 + (id)entryEventForwardDefinitionsDeviceState;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitions;
@@ -29,6 +31,7 @@
 + (id)railDefinitions;
 + (id)defaults;
 + (void)load;
+@property(retain) PLIOKitOperatorComposition *lidComposition; // @synthesize lidComposition=_lidComposition;
 @property(retain) PLIOKitOperatorComposition *externalDisplayRemoveComposition; // @synthesize externalDisplayRemoveComposition=_externalDisplayRemoveComposition;
 @property(retain) PLIOKitOperatorComposition *externalDisplayAddComposition; // @synthesize externalDisplayAddComposition=_externalDisplayAddComposition;
 @property(retain) PLIOKitOperatorComposition *thunderboltRemoveComposition; // @synthesize thunderboltRemoveComposition=_thunderboltRemoveComposition;
@@ -36,6 +39,7 @@
 @property(retain) PLIOKitOperatorComposition *USBRemoveComposition; // @synthesize USBRemoveComposition=_USBRemoveComposition;
 @property(retain) PLIOKitOperatorComposition *USBAddComposition; // @synthesize USBAddComposition=_USBAddComposition;
 - (void).cxx_destruct;
+- (void)logEventForwardClamshellState:(BOOL)arg1;
 - (void)logEventForwardDeviceState:(const struct PLPeripheralDeviceState *)arg1;
 - (void)log;
 - (void)applyBlock:(void *)arg1 withIterator:(unsigned int)arg2;
@@ -46,6 +50,8 @@
 - (_Bool)retrieveDeviceInfoThunderbolt:(unsigned int)arg1 forDeviceState:(struct PLPeripheralDeviceState *)arg2;
 - (void)initThunderbolt;
 - (_Bool)retrieveDeviceInfoUSB:(unsigned int)arg1 forDeviceState:(struct PLPeripheralDeviceState *)arg2;
+- (_Bool)SupportsIOSWithVID:(int)arg1 andPID:(int)arg2;
+- (void)initLid;
 - (void)initUSB;
 - (void)deviceChanged:(unsigned long long)arg1 withObject:(unsigned int)arg2;
 - (void)initOperatorDependancies;

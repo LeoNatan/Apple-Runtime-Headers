@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OCBReader.h>
 
+__attribute__((visibility("hidden")))
 @interface PBReader : OCBReader
 {
     struct PptObjectFactory *mPptObjectFactory;

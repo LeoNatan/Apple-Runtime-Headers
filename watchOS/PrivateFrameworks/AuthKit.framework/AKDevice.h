@@ -29,11 +29,14 @@
     unsigned int _linkType;
 }
 
++ (int)currentDeviceAuthenticationMode;
 + (id)deviceSpecificLocalizedStringWithKey:(id)arg1;
++ (id)personaIDIfCurrentPersonaIsEnterprise;
 + (id)_buildNumber;
 + (id)_osVersion;
 + (id)_osName;
 + (id)_hardwareModel;
++ (id)_generateServerFriendlyDescriptionForPairedDevice:(id)arg1;
 + (id)_generateServerFriendlyDescription;
 + (id)_lookupModelNumber;
 + (id)_lookupMLBSerialNumber;
@@ -68,7 +71,8 @@
 @property(readonly) _Bool isInternalBuild;
 @property(readonly) NSString *integratedCircuitCardIdentifier;
 @property(readonly) NSString *mobileEquipmentIdentifier;
-@property(readonly) _Bool isAppleIDLoginEnabled;
+@property(readonly) _Bool isFaceIDCapable;
+@property(readonly) _Bool isBiometricAuthCapable;
 @property(readonly) _Bool isProtectedWithPasscode;
 @property(readonly) _Bool isInCircle;
 @property(readonly) _Bool isUnlocked;

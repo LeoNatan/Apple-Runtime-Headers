@@ -68,7 +68,6 @@
 - (void)_calcTextRect:(struct CGRect *)arg1;
 - (struct CGRect)titlebarRect;
 - (BOOL)isOpaque;
-- (id)fontSmoothingBackgroundColor;
 - (void)updateLayer;
 - (Class)_classToCheckForWantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;

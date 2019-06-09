@@ -11,6 +11,7 @@
 + (void)safari_drawHighlightBackgroundInRect:(struct CGRect)arg1 flipped:(BOOL)arg2;
 + (unsigned long long)safari_menuItemFlashCount;
 + (double)safari_menuItemFlashInterval;
++ (id)safari_inactionableMenuItemWithTitle:(id)arg1;
 + (id)safari_menuItemWithTitle:(id)arg1 menuItemHandler:(CDUnknownBlockType)arg2;
 + (void)_safari_invokeBlockForMenuItem:(id)arg1;
 + (id)safari_menuItemWithTitle:(id)arg1 keyEquivalent:(id)arg2 selectionHandler:(CDUnknownBlockType)arg3;

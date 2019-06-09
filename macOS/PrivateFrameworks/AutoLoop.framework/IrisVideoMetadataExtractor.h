@@ -8,7 +8,6 @@
 
 @class AVAsset, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface IrisVideoMetadataExtractor : NSObject
 {
     BOOL saveAllMetadata;

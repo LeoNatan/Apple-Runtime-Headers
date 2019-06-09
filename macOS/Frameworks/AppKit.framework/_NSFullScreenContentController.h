@@ -21,9 +21,11 @@ __attribute__((visibility("hidden")))
     BOOL _appInitiatedInvalidTileResizeToFit;
     NSArray *_frozenWids;
     _NSFullScreenContentController *_surrogateContentController;
+    BOOL _preventsResigningAsPrincipalWindow;
 }
 
 + (unsigned long long)_defaultPresentationOptions;
+@property(nonatomic) BOOL preventsResigningAsPrincipalWindow; // @synthesize preventsResigningAsPrincipalWindow=_preventsResigningAsPrincipalWindow;
 @property(nonatomic) __weak _NSFullScreenContentController *surrogateContentController; // @synthesize surrogateContentController=_surrogateContentController;
 @property(nonatomic) unsigned long long presentationOptions; // @synthesize presentationOptions=_presentationOptions;
 @property(retain, nonatomic) NSHIPresentationInstance *presentationInstance; // @synthesize presentationInstance=_presentationInstance;
@@ -52,8 +54,8 @@ __attribute__((visibility("hidden")))
 - (id)screen;
 - (void)activateFullScreenPresentationOptions;
 - (BOOL)isPrincipalInSpace;
-- (void)setAsThePrincipalFullScreenWindowInSpace;
-- (void)resignPrincipalFullScreenWindowInSpace;
+- (BOOL)setAsThePrincipalFullScreenWindowInSpace;
+- (BOOL)resignPrincipalFullScreenWindowInSpace;
 - (void)_discardPresentationInstance;
 - (void)_makePresentationInstanceIfNeeded;
 - (void)parentSpaceDidChange;

@@ -41,6 +41,7 @@
     NSMutableDictionary *_upperPriorityEventTypesIdentifiers;
 }
 
++ (id)humanReadableClusterType:(unsigned long long)arg1;
 + (id)eventClassificationTypeFromMessageUnit:(id)arg1 detectedStartDate:(id)arg2;
 + (id)eventTypeForGenericEventAndLanguageID:(id)arg1;
 + (id)eventTypeForEntertainmentAndLanguageID:(id)arg1;

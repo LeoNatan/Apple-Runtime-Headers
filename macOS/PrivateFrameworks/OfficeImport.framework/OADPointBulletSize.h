@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADBulletSize.h>
 
+__attribute__((visibility("hidden")))
 @interface OADPointBulletSize : OADBulletSize
 {
     int mPoints;

@@ -10,6 +10,7 @@
 
 @class HMAddUserRemoteViewController, HMHome, _UIAsyncInvocation;
 
+__attribute__((visibility("hidden")))
 @interface HMAddUserViewController : UIViewController <HMUserManagementRemoteHost>
 {
     _Bool _shouldPresentWhenLoaded;

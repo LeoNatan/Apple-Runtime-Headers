@@ -86,6 +86,7 @@
 - (void)_updateLayerForSelection;
 - (void)_updateImageLayerFilterValues;
 - (void)_updateImageLayerFilterChains;
+- (void)_updateContentProviderLayerFocusDirection;
 - (void)_updateSpecularLayerContentsRect;
 - (void)_updateFullBleedImageLayers;
 - (void)_updateNormalImageLayers;
@@ -166,6 +167,7 @@
 - (struct CGRect)_cursorBounds;
 - (void)_setupFrontmostTransformLayers;
 - (void)_layoutRadiosityLayer;
+- (void)_updateOverlayLayout;
 - (void)layoutSublayers;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setRasterizationScale:(double)arg1;

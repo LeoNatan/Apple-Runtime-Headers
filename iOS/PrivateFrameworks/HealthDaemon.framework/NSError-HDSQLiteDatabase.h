@@ -6,9 +6,23 @@
 
 #import <Foundation/NSError.h>
 
+@class NSDate, NSDictionary, NSString;
+
 @interface NSError (HDSQLiteDatabase)
++ (id)hk_errorWithCodableError:(id)arg1;
 - (_Bool)hd_isConstraintViolation;
 - (_Bool)hd_isDatabaseCorruptionError;
 - (id)hd_underlyingSQLiteError;
+- (id)hk_codableError;
+- (id)hd_persistentMessage;
+- (id)hd_cloudKitErrorRequiringUserActionFromCKErrorDomain;
+- (id)hd_cloudKitErrorRequiringUserAction;
+- (_Bool)hd_isResponseTimeout;
+@property(readonly, nonatomic, getter=hd_isFromRequest) _Bool hd_fromRequest;
+@property(readonly, nonatomic) NSDictionary *hd_persistentUserInfo;
+@property(readonly, nonatomic) NSString *hd_messageIDSDeviceIdentifier;
+@property(readonly, nonatomic) NSString *hd_messageIDSIdentifier;
+@property(readonly, nonatomic) NSDate *hd_messageSent;
+@property(readonly, nonatomic) unsigned short hd_messageID;
 @end
 

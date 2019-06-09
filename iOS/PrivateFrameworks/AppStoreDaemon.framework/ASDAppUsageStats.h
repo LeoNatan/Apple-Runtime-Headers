@@ -14,10 +14,12 @@
 {
     NSString *_bundleID;
     NSString *_bundleVersion;
+    NSDate *_endDate;
     long long _eventTime;
     NSNumber *_evid;
     NSNumber *_itemID;
     NSString *_itemName;
+    NSDate *_lastEventEndDate;
     NSDate *_startDate;
     long long _usageTime;
     long long _usageCount;
@@ -26,10 +28,12 @@
 @property(nonatomic) long long usageCount; // @synthesize usageCount=_usageCount;
 @property(nonatomic) long long usageTime; // @synthesize usageTime=_usageTime;
 @property(copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(copy, nonatomic) NSDate *lastEventEndDate; // @synthesize lastEventEndDate=_lastEventEndDate;
 @property(copy, nonatomic) NSString *itemName; // @synthesize itemName=_itemName;
 @property(copy, nonatomic) NSNumber *itemID; // @synthesize itemID=_itemID;
 @property(copy, nonatomic) NSNumber *evid; // @synthesize evid=_evid;
 @property(nonatomic) long long eventTime; // @synthesize eventTime=_eventTime;
+@property(copy, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;

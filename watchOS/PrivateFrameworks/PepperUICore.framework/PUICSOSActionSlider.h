@@ -10,6 +10,7 @@
 {
 }
 
++ (id)sosGlyphImage;
 - (id)initWithFrame:(struct CGRect)arg1 text:(id)arg2;
 
 @end

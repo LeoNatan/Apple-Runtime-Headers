@@ -22,7 +22,8 @@ __attribute__((visibility("hidden")))
 + (id)_tombstonesColumnsForEntity:(id)arg1;
 + (id)_tombstonesForEntity:(id)arg1;
 + (BOOL)_hasTombstonesInUserInfo:(id)arg1;
-+ (int)_maxCountOfTombstonesInModel:(id)arg1;
++ (id)_entitiesWithTooManyTombstonesInModel:(id)arg1;
++ (unsigned long long)_maxCountOfTombstonesInModel:(id)arg1;
 + (void)resetCaches;
 + (id)newPersistentHistorySQLModelForSQLModel:(id)arg1 options:(id)arg2;
 + (id)newPersistentHistoryManagedObjectModelForSQLModel:(id)arg1 options:(id)arg2;

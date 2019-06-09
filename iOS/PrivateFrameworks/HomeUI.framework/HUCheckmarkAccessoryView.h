@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIImageView.h>
+#import <UIKit/UIView.h>
 
-@interface HUCheckmarkAccessoryView : UIImageView
+@class UIImageView;
+
+@interface HUCheckmarkAccessoryView : UIView
 {
     _Bool _checked;
     _Bool _disabled;
@@ -22,6 +24,8 @@
 - (void).cxx_destruct;
 - (void)_updateColors;
 - (void)tintColorDidChange;
+- (struct CGSize)intrinsicContentSize;
+- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

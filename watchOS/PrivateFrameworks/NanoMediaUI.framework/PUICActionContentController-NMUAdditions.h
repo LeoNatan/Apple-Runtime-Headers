@@ -6,7 +6,10 @@
 
 #import <PepperUICore/PUICActionContentController.h>
 
+@class PUICTableView;
+
 @interface PUICActionContentController (NMUAdditions)
+@property(readonly, nonatomic) PUICTableView *nmu_tableView;
 @property(readonly, nonatomic, getter=nmu_headerViewOffsetFromScreenTop) float headerViewOffsetFromScreenTop;
 @end
 

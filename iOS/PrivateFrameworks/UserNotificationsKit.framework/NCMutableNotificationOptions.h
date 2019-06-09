@@ -13,6 +13,9 @@
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) _Bool hideCloseActionForCarPlay; // @dynamic hideCloseActionForCarPlay;
+@property(nonatomic) _Bool playMediaWhenRaised; // @dynamic playMediaWhenRaised;
+@property(nonatomic) _Bool allowActionsForCarPlay; // @dynamic allowActionsForCarPlay;
 @property(nonatomic) _Bool lauchUsingSiriForCarPlayDefaultAction; // @dynamic lauchUsingSiriForCarPlayDefaultAction;
 @property(nonatomic) _Bool revealsAdditionalContentIfNoDefaultAction; // @dynamic revealsAdditionalContentIfNoDefaultAction;
 @property(nonatomic) _Bool preventsAutomaticLock; // @dynamic preventsAutomaticLock;
@@ -22,9 +25,9 @@
 @property(nonatomic) _Bool suppressesSubtitleWhenLocked; // @dynamic suppressesSubtitleWhenLocked;
 @property(nonatomic) _Bool suppressesTitleWhenLocked; // @dynamic suppressesTitleWhenLocked;
 @property(nonatomic) _Bool revealsAdditionalContentOnPresentation; // @dynamic revealsAdditionalContentOnPresentation;
+@property(nonatomic) _Bool preemptsSTAR; // @dynamic preemptsSTAR;
 @property(nonatomic) _Bool preemptsPresentedNotification; // @dynamic preemptsPresentedNotification;
-@property(nonatomic) _Bool prefersDarkAppearance; // @dynamic prefersDarkAppearance;
-@property(nonatomic) unsigned long long messageNumberOfLines; // @dynamic messageNumberOfLines;
+@property(nonatomic, getter=isNumberOfLinesInfinite) _Bool numberOfLinesInfinite; // @dynamic numberOfLinesInfinite;
 @property(nonatomic) _Bool hideClearActionInList; // @dynamic hideClearActionInList;
 @property(nonatomic) _Bool requestsFullScreenPresentation; // @dynamic requestsFullScreenPresentation;
 @property(nonatomic) _Bool canTurnOnDisplay; // @dynamic canTurnOnDisplay;
@@ -39,6 +42,7 @@
 @property(nonatomic) _Bool alertsWhenLocked; // @dynamic alertsWhenLocked;
 @property(nonatomic) _Bool overridesDowntime; // @dynamic overridesDowntime;
 @property(nonatomic) _Bool overridesQuietMode; // @dynamic overridesQuietMode;
+@property(nonatomic) _Bool dismissAutomaticallyForCarPlay; // @dynamic dismissAutomaticallyForCarPlay;
 @property(nonatomic) _Bool dismissAutomatically; // @dynamic dismissAutomatically;
 @property(copy, nonatomic) NSString *alternateActionLabel; // @dynamic alternateActionLabel;
 @property(copy, nonatomic) NSSet *alertSuppressionContexts; // @dynamic alertSuppressionContexts;

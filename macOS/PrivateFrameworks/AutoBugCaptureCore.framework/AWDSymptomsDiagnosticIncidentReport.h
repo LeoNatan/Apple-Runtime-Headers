@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsDiagnosticIncidentReport : PBCodable <NSCopying>
 {
     struct {

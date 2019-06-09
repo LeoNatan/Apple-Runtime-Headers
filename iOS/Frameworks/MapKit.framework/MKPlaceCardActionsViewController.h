@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool useSmallFonts; // @synthesize useSmallFonts=_useSmallFonts;
 @property(nonatomic) _Bool haveTwoColumns; // @synthesize haveTwoColumns=_haveTwoColumns;
 - (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)placeCardActionSectionView:(id)arg1 buttonWithActionItemPressed:(id)arg2;
 - (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;

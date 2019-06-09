@@ -12,5 +12,6 @@
 @optional
 + (Class)validatedClass;
 + (id)validatorWithObject:(id)arg1;
+- (_Bool)isValidWithAPIType:(unsigned int)arg1 withError:(id *)arg2;
 @end
 

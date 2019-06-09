@@ -6,14 +6,20 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray;
+#import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKExplorerStatusView : UIView
+@class NSArray, NSString, NTKExplorerDotColorOptions, NTKExplorerDotLayoutConstraints, UIColor;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKExplorerStatusView : UIView <CLKMonochromeComplicationView>
 {
     NSArray *_dotLayers;
     _Bool _observing;
     int _targetDotPosition;
     _Bool _showsFullSignalStrength;
+    id <CLKMonochromeFilterProvider> _filterProvider;
+    NTKExplorerDotLayoutConstraints *_dotLayoutConstraints;
+    NTKExplorerDotColorOptions *_dotColorOptions;
     int _position;
     int _signalStrengthBars;
 }
@@ -27,11 +33,31 @@
 @property(nonatomic) _Bool showsFullSignalStrength; // @synthesize showsFullSignalStrength=_showsFullSignalStrength;
 @property(nonatomic) int signalStrengthBars; // @synthesize signalStrengthBars=_signalStrengthBars;
 @property(readonly, nonatomic) int position; // @synthesize position=_position;
+@property(retain, nonatomic) NTKExplorerDotColorOptions *dotColorOptions; // @synthesize dotColorOptions=_dotColorOptions;
+@property(retain, nonatomic) NTKExplorerDotLayoutConstraints *dotLayoutConstraints; // @synthesize dotLayoutConstraints=_dotLayoutConstraints;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)_layoutDotLayers;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+@property(readonly, nonatomic) UIColor *noServiceDotColor;
+@property(readonly, nonatomic) UIColor *connectedDotBackgroundColor;
+@property(readonly, nonatomic) UIColor *connectedDotColor;
+@property(readonly) float noServiceDotHeight;
+@property(readonly) float dotSpacing;
+@property(readonly) float dotBorderWidth;
+@property(readonly) float dotDiameter;
 - (void)_updateDotFillStates;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setDotPosition:(int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 dotLayoutConstraints:(id)arg2 dotColorOptions:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

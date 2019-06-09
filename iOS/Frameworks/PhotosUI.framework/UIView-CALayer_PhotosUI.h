@@ -9,6 +9,38 @@
 @class CABasicAnimation;
 
 @interface UIView (CALayer_PhotosUI)
++ (void)ph_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 withDuration:(double)arg5 delay:(double)arg6 usingSpringWithDamping:(double)arg7 initialVelocity:(struct PHDisplayVelocity)arg8 options:(unsigned long long)arg9 completion:(CDUnknownBlockType)arg10;
++ (void)_pu_animateViews:(id)arg1 withAnimationBlock:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)pu_animateViews:(id)arg1 usingSpringWithDuration:(double)arg2 delay:(double)arg3 options:(unsigned long long)arg4 mass:(double)arg5 stiffness:(double)arg6 damping:(double)arg7 initialVelocity:(double)arg8 animations:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10;
++ (void)pu_animateViews:(id)arg1 usingDefaultDampedSpringWithDelay:(double)arg2 initialSpringVelocity:(double)arg3 options:(unsigned long long)arg4 animations:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)pu_animateViews:(id)arg1 withDuration:(double)arg2 delay:(double)arg3 usingSpringWithDamping:(double)arg4 initialSpringVelocity:(double)arg5 options:(unsigned long long)arg6 animations:(CDUnknownBlockType)arg7 completion:(CDUnknownBlockType)arg8;
++ (void)pu_animateViews:(id)arg1 withDuration:(double)arg2 delay:(double)arg3 options:(unsigned long long)arg4 animations:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)_pu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 withInitialVelocity:(struct PUDisplayVelocity)arg5 usingSpringAnimation:(CDUnknownBlockType)arg6 completion:(CDUnknownBlockType)arg7;
++ (void)pu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 usingSpringWithDuration:(double)arg5 delay:(double)arg6 options:(unsigned long long)arg7 mass:(double)arg8 stiffness:(double)arg9 damping:(double)arg10 initialVelocity:(struct PUDisplayVelocity)arg11 completion:(CDUnknownBlockType)arg12;
++ (void)pu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 usingDefaultDampedSpringWithDelay:(double)arg5 initialVelocity:(struct PUDisplayVelocity)arg6 options:(unsigned long long)arg7 completion:(CDUnknownBlockType)arg8;
++ (void)pu_animateView:(id)arg1 toCenter:(struct CGPoint)arg2 bounds:(struct CGRect)arg3 transform:(struct CGAffineTransform)arg4 withDuration:(double)arg5 delay:(double)arg6 usingSpringWithDamping:(double)arg7 initialVelocity:(struct PUDisplayVelocity)arg8 options:(unsigned long long)arg9 completion:(CDUnknownBlockType)arg10;
++ (id)ph_videoOverlayButton;
++ (double)pu_springOscillationRootAtIndex:(long long)arg1 forMass:(double)arg2 stiffness:(double)arg3 damping:(double)arg4 initialVelocity:(double)arg5;
++ (void)pu_transitionWithView:(id)arg1 duration:(double)arg2 options:(unsigned long long)arg3 animations:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
++ (void)pu_animateWithDuration:(double)arg1 animations:(CDUnknownBlockType)arg2;
++ (void)pu_animateWithDuration:(double)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)pu_animateWithEnforcedDuration:(double)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)_pu_animateWithDuration:(double)arg1 enforced:(_Bool)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
++ (double)pu_layoutMarginWidthForCurrentScreenSize;
 @property(readonly, nonatomic) CABasicAnimation *_pu_referenceBasicAnimationForCurrentAnimation;
+- (id)_pu_animationDictionary;
+- (id)pu_constraintsForKey:(id)arg1;
+- (void)pu_clearAllConstraintsForKey:(id)arg1;
+- (void)pu_removeAllConstraintsForKey:(id)arg1;
+- (void)pu_addConstraints:(id)arg1 forKey:(id)arg2;
+- (void)pu_addConstraint:(id)arg1 forKey:(id)arg2;
+- (_Bool)pu_hasConstraintForKey:(id)arg1;
+- (id)_pu_associatedConstraints;
+- (void)pu_removeAllGeometryAnimationsRecursively:(_Bool)arg1;
+- (void)pu_setCenterAndBoundsForFrameRect:(struct CGRect)arg1;
+- (id)_pu_ancestorSharedWithView:(id)arg1;
+- (struct CGAffineTransform)pu_convertTransform:(struct CGAffineTransform)arg1 toView:(id)arg2;
+- (struct CGAffineTransform)pu_convertTransform:(struct CGAffineTransform)arg1 fromView:(id)arg2;
+- (void)pu_addTransform:(struct CGAffineTransform)arg1;
 @end
 

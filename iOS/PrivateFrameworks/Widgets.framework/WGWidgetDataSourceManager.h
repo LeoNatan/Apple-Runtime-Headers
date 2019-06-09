@@ -22,7 +22,7 @@
     id <_WGParentDataSourceManager> _parentDataSourceManager;
 }
 
-+ (void)availableWidgetsWithCompletion:(CDUnknownBlockType)arg1;
++ (id)discoverAvailableWidgetsWithError:(id *)arg1;
 + (id)_widgetExtensionsDiscoveryAttributes;
 @property(retain, nonatomic, getter=_widgetVisbilityManager) WGWidgetVisibilityManager *widgetVisbilityManager; // @synthesize widgetVisbilityManager=_widgetVisbilityManager;
 @property(nonatomic) id <_WGParentDataSourceManager> parentDataSourceManager; // @synthesize parentDataSourceManager=_parentDataSourceManager;

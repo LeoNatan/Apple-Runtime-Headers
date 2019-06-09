@@ -52,7 +52,7 @@
 - (_Bool)_dpqueue_replaceBulletin:(id)arg1 withAttachment:(id)arg2 updateAttachment:(_Bool)arg3 forDestinations:(unsigned int)arg4 replaceBulletinDidRepublish:(CDUnknownBlockType)arg5;
 - (void)_dpqueue_withdrawAllBulletins;
 - (void)_dqpqueue_withdrawBulletinWithPublisherBulletinID:(id)arg1 andRecordID:(id)arg2;
-- (void)_dpqueue_addBulletin:(id)arg1 publicationDate:(id)arg2 attachment:(id)arg3 forDestinations:(unsigned int)arg4 updateType:(unsigned int)arg5 updateAttachment:(_Bool)arg6 replaceBulletinDidRepublish:(CDUnknownBlockType)arg7;
+- (void)_dpqueue_addBulletin:(id)arg1 attachment:(id)arg2 forDestinations:(unsigned int)arg3 updateType:(unsigned int)arg4 updateAttachment:(_Bool)arg5 replaceBulletinDidRepublish:(CDUnknownBlockType)arg6;
 @property(copy, nonatomic) BBSectionIcon *sectionIcon; // @synthesize sectionIcon=_sectionIcon;
 @property(copy, nonatomic) NSString *sectionDisplayName; // @synthesize sectionDisplayName=_sectionDisplayName;
 - (id)sortDescriptors;
@@ -72,7 +72,7 @@
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1 andRecordID:(id)arg2;
 - (void)withdrawBulletinsNotInIdentifierList:(id)arg1;
 - (void)removeSection;
-- (void)addBulletin:(id)arg1 publicationDate:(id)arg2 attachment:(id)arg3 forDestinations:(unsigned int)arg4 updateType:(unsigned int)arg5 updateAttachment:(_Bool)arg6 replaceBulletinDidRepublish:(CDUnknownBlockType)arg7;
+- (void)addBulletin:(id)arg1 attachment:(id)arg2 forDestinations:(unsigned int)arg3 updateType:(unsigned int)arg4 updateAttachment:(_Bool)arg5 replaceBulletinDidRepublish:(CDUnknownBlockType)arg6;
 - (id)initWithSectionID:(id)arg1 sectionDisplayName:(id)arg2 connection:(id)arg3 responseDelegate:(id)arg4 sectionInfoStore:(id)arg5 universalSectionID:(id)arg6;
 - (id)init;
 

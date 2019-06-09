@@ -25,7 +25,6 @@
     CDUnknownBlockType _presetResourcesProvider;
 }
 
-+ (id)defaultThumbnail;
 @property(readonly, copy, nonatomic) CDUnknownBlockType presetResourcesProvider; // @synthesize presetResourcesProvider=_presetResourcesProvider;
 @property(readonly, copy, nonatomic) CDUnknownBlockType thumbnailProvider; // @synthesize thumbnailProvider=_thumbnailProvider;
 @property(readonly, nonatomic) double heightRatio; // @synthesize heightRatio=_heightRatio;

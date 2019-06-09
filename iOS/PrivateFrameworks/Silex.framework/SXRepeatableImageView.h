@@ -15,6 +15,7 @@
 
 @property(retain, nonatomic) UIImage *repeatingImage; // @synthesize repeatingImage=_repeatingImage;
 - (void).cxx_destruct;
+- (_Bool)isAccessibilityElement;
 - (id)image;
 - (void)setImage:(id)arg1;
 

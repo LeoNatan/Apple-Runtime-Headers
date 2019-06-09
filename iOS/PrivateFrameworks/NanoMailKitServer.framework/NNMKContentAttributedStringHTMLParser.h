@@ -6,7 +6,7 @@
 
 #import <NanoMailKitServer/NNMKHTMLParser.h>
 
-@class NSLock, NSMutableAttributedString, NSMutableDictionary;
+@class NSDataDetector, NSLock, NSMutableAttributedString, NSMutableDictionary;
 
 @interface NNMKContentAttributedStringHTMLParser : NNMKHTMLParser
 {
@@ -16,6 +16,7 @@
     double _maxImageWidth;
     _Bool *_partiallyParsed;
     NSMutableDictionary *_imageAtachmentsDataByContentId;
+    NSDataDetector *_dataDetector;
 }
 
 + (struct CGSize)_scaledDownSize:(struct CGSize)arg1 maxWidth:(double)arg2;
@@ -24,6 +25,7 @@
 + (id)adjustedImage:(id)arg1 maxWidth:(double)arg2 screenScale:(double)arg3;
 + (id)imageAttachmentAttributedStringWithContentId:(id)arg1 imageSize:(struct CGSize)arg2 mergingAttributes:(id)arg3;
 + (id)attachmentAttributedStringWithContentId:(id)arg1 mergingAttributes:(id)arg2;
+@property(retain, nonatomic) NSDataDetector *dataDetector; // @synthesize dataDetector=_dataDetector;
 @property(retain, nonatomic) NSMutableDictionary *imageAtachmentsDataByContentId; // @synthesize imageAtachmentsDataByContentId=_imageAtachmentsDataByContentId;
 @property(nonatomic) _Bool *partiallyParsed; // @synthesize partiallyParsed=_partiallyParsed;
 @property(nonatomic) double maxImageWidth; // @synthesize maxImageWidth=_maxImageWidth;
@@ -31,6 +33,7 @@
 @property(retain, nonatomic) NSMutableAttributedString *parsedAttributedString; // @synthesize parsedAttributedString=_parsedAttributedString;
 @property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
+- (_Bool)isWebLink:(id)arg1;
 - (_Bool)_validateURLsAndHTMLTagsInParsedString:(id)arg1 urlsFound:(id *)arg2;
 - (void)_addDataDetectionAttributes:(id)arg1;
 - (void)appendString:(id)arg1 stringAttributes:(id)arg2;

@@ -20,6 +20,7 @@
 + (void)migratePreSundanceAccountInformation;
 + (void)migratePreBlacktailAccountInformation;
 + (id)authMachineForEnvironment:(int)arg1;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) int serverEnvironment; // @synthesize serverEnvironment=_serverEnvironment;
 @property(retain, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
 @property(nonatomic) int loginCancelledCount; // @synthesize loginCancelledCount=_loginCancelledCount;

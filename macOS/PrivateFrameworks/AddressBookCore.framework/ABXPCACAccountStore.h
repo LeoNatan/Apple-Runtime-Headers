@@ -20,6 +20,8 @@
 + (id)contactsAccountServiceInterface;
 + (id)resumedContactsAccountsConnection;
 + (id)sharedAccountStore;
++ (id)os_log;
+- (void).cxx_destruct;
 - (id)_cachedAccountWithIdentifier:(id)arg1;
 - (id)_accountWithIdentifier:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1 returnCachedVersion:(BOOL)arg2;
@@ -30,7 +32,7 @@
 - (void)discoverPropertiesForAccount:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)passwordForAccount:(id)arg1;
 - (id)accountWithABAccountIdentifier:(id)arg1;
-- (id)allContactsAccounts;
+- (id)contactsAccountsWithFetchOptions:(unsigned long long)arg1;
 - (void)resumeConnection;
 
 // Remaining properties

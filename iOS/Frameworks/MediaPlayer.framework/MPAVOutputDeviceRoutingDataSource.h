@@ -6,7 +6,7 @@
 
 #import <MediaPlayer/MPAVRoutingDataSource.h>
 
-@class MPAVEndpointRoute, MPMRAVOutputContextWrapper, NSArray, NSObject, NSString;
+@class AVRoutingSessionManager, MPAVEndpointRoute, MPMRAVOutputContextWrapper, NSArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MPAVOutputDeviceRoutingDataSource : MPAVRoutingDataSource
@@ -19,11 +19,14 @@
     _Bool _devicePresenceDetected;
     NSArray *_outputDeviceRoutes;
     _Bool _shouldSourceOutputDevicesFromAVODDS;
+    AVRoutingSessionManager *_routingSessionManager;
+    _Bool _supportsRoutePrediction;
     MPMRAVOutputContextWrapper *_applicationOutputContext;
     MPAVEndpointRoute *_endpointRoute;
 }
 
 + (id)_globalAudioSessionLock;
+@property(nonatomic) _Bool supportsRoutePrediction; // @synthesize supportsRoutePrediction=_supportsRoutePrediction;
 @property(retain, nonatomic) MPAVEndpointRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
 @property(nonatomic) _Bool supportsMultipleSelection; // @synthesize supportsMultipleSelection=_supportsMultipleSelection;
 @property(retain, nonatomic) MPMRAVOutputContextWrapper *applicationOutputContext; // @synthesize applicationOutputContext=_applicationOutputContext;
@@ -44,6 +47,7 @@
 - (_Bool)devicePresenceDetected;
 - (void)setDiscoveryMode:(long long)arg1;
 - (long long)discoveryMode;
+- (id)routingSessionManager;
 @property(copy, nonatomic) NSString *routingContextUID;
 - (void)dealloc;
 - (id)init;

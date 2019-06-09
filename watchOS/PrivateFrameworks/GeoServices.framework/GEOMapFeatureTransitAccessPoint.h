@@ -8,7 +8,7 @@
 
 @interface GEOMapFeatureTransitAccessPoint : NSObject
 {
-    CDStruct_7cbc13b9 *_feature;
+    CDStruct_fd961fc6 *_feature;
     CDStruct_2c43369c _coordinate;
 }
 
@@ -17,8 +17,8 @@
 @property(readonly, nonatomic) _Bool isExit;
 @property(readonly, nonatomic) _Bool isEntrance;
 - (void)dealloc;
-- (id)initWithFeature:(CDStruct_7cbc13b9 *)arg1;
-@property(readonly, nonatomic) CDStruct_7cbc13b9 *feature;
+- (id)initWithFeature:(CDStruct_fd961fc6 *)arg1;
+@property(readonly, nonatomic) CDStruct_fd961fc6 *feature;
 
 @end
 

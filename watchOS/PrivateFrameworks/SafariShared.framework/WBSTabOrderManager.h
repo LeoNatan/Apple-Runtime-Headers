@@ -6,18 +6,39 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
 @protocol WBSOrderedTab, WBSTabOrderProvider;
 
 @interface WBSTabOrderManager : NSObject
 {
+    NSMutableDictionary *_simplifiedIdentifierMap;
+    int _nextSimplifiedIdentifier;
     id <WBSTabOrderProvider> _tabOrderProvider;
 }
 
 @property(nonatomic) __weak id <WBSTabOrderProvider> tabOrderProvider; // @synthesize tabOrderProvider=_tabOrderProvider;
 - (void).cxx_destruct;
+- (id)_nextNonClosedTabAdjacentToIndex:(unsigned int)arg1 inAscendingOrder:(_Bool)arg2;
+- (unsigned int)_relationConsideringUserPreferenceForRelation:(unsigned int)arg1 isBlankTab:(_Bool)arg2;
+- (id)_insertionHintWithTabToInsertAfter:(id)arg1 relation:(unsigned int)arg2;
+- (id)_insertionHintWithIndexOfTabToInsertAfter:(unsigned int)arg1 relation:(unsigned int)arg2;
+- (id)simplifiedIdentifierForDisplayInTabTitle:(id)arg1;
+- (_Bool)_tab:(id)arg1 isRelatedOrEqualToTab:(id)arg2;
 - (_Bool)tab:(id)arg1 isInSameSetAsTab:(id)arg2;
 @property(readonly, nonatomic) id <WBSOrderedTab> tabToSelectBeforeClosingSelectedTab;
+- (_Bool)_newTabPositionPreferenceAppliesToSwawnedTabs;
+- (unsigned int)_userPreferredNewSpawnedTabPosition;
+- (unsigned int)_userPreferredNewBlankTabPosition;
+- (id)tabInsertionHintForSpawnedTab;
+- (id)tabToInsertSpawnedTabAfter;
+- (id)tabInsertionHintForNewBlankTab;
+- (id)tabToInsertNewBlankTabAfter;
+- (unsigned int)_indexOfLastRelatedTab;
+- (unsigned int)_indexOfTabToInsertNewTabAfter;
+- (id)_tabInsertionHintForPosition:(unsigned int)arg1 isBlankTab:(_Bool)arg2;
+- (id)tabInsertionHintForPosition:(unsigned int)arg1;
 - (id)tabToInsertNewTabAfterForPosition:(unsigned int)arg1;
+- (id)init;
 
 @end
 

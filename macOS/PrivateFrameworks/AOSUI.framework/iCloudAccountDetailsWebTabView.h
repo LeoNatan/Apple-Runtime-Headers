@@ -14,14 +14,11 @@
 #import <AOSUI/iCloudAddFamilyMemberDelegate-Protocol.h>
 #import <AOSUI/iCloudWebViewDelegate-Protocol.h>
 
-@class ADMChangePasswordController, CDPStateUIController, JSValue, MMICAWebKitViewController, MMWebViewButtonBar, NSArray, NSDictionary, NSLayoutConstraint, NSProgressIndicator, NSString, NSTextField, NSTimer, NSTouchBar, NSView, NSWindow, iCloudAddFamilyMember, iCloudTouchBarController;
+@class ADMChangePasswordController, CDPStateUIController, JSValue, MMICAWebKitViewController, MMWebViewButtonBar, NSArray, NSDictionary, NSImage, NSLayoutConstraint, NSProgressIndicator, NSString, NSTextField, NSTimer, NSTouchBar, NSView, NSWindow, iCloudAddFamilyMember, iCloudTouchBarController;
 @protocol MBIA2UIDelegate, MBIA2WebKitViewControllerDelegate, iCloudWebViewDelegate;
 
-@interface iCloudAccountDetailsWebTabView : NSObject <NSTouchBarProvider, ICAUIDelegate, ICAWebKitViewControllerDelegate, iCloudWebViewDelegate, MMWebViewButtonBarDelegate, iCloudAddFamilyMemberDelegate, MBICAUIDelegate>
+@interface iCloudAccountDetailsWebTabView : NSObject <iCloudAddFamilyMemberDelegate, NSTouchBarProvider, ICAUIDelegate, ICAWebKitViewControllerDelegate, iCloudWebViewDelegate, MMWebViewButtonBarDelegate, MBICAUIDelegate>
 {
-    id <iCloudWebViewDelegate> _delegate;
-    id <MBIA2UIDelegate> _mbUIDelegate;
-    id <MBIA2WebKitViewControllerDelegate> _mbWebKitViewControllerDelegate;
     NSView *_containerView;
     NSView *_webViewContainer;
     NSView *_webView;
@@ -34,12 +31,7 @@
     NSView *_addiCloudMemberView;
     NSProgressIndicator *_loadingSpinner;
     MMICAWebKitViewController *webViewVC;
-    NSString *_viewName;
-    NSString *_url;
-    NSString *_content;
-    NSString *_parentURL;
     NSString *_accountID;
-    NSWindow *_parentWindow;
     NSWindow *_sheet;
     NSView *_sheetContent;
     iCloudAccountDetailsWebTabView *nestedWebView;
@@ -91,12 +83,22 @@
     JSValue *_rightButtonCallback;
     JSValue *_alternateButtonCallback;
     ADMChangePasswordController *mChangePasswordController;
+    NSString *_viewName;
+    NSString *_url;
+    NSString *_parentURL;
+    NSString *_content;
+    id <iCloudWebViewDelegate> _delegate;
+    id <MBIA2UIDelegate> _mbUIDelegate;
+    id <MBIA2WebKitViewControllerDelegate> _mbWebKitViewControllerDelegate;
+    NSWindow *_parentWindow;
+    NSImage *_displayImage;
     CDPStateUIController *_cdpStateUIController;
     iCloudTouchBarController *_touchBarController;
 }
 
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain, nonatomic) CDPStateUIController *cdpStateUIController; // @synthesize cdpStateUIController=_cdpStateUIController;
+@property(retain) NSImage *displayImage; // @synthesize displayImage=_displayImage;
 @property(nonatomic) unsigned long long webViewType; // @synthesize webViewType=_webViewType;
 @property(retain, nonatomic) JSValue *alternateButtonCallback; // @synthesize alternateButtonCallback=_alternateButtonCallback;
 @property(retain, nonatomic) JSValue *rightButtonCallback; // @synthesize rightButtonCallback=_rightButtonCallback;
@@ -119,10 +121,11 @@
 @property(nonatomic) id <MBIA2WebKitViewControllerDelegate> mbWebKitViewControllerDelegate; // @synthesize mbWebKitViewControllerDelegate=_mbWebKitViewControllerDelegate;
 @property(nonatomic) id <MBIA2UIDelegate> mbUIDelegate; // @synthesize mbUIDelegate=_mbUIDelegate;
 @property id <iCloudWebViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property NSString *content; // @synthesize content=_content;
-@property NSString *parentURL; // @synthesize parentURL=_parentURL;
-@property NSString *url; // @synthesize url=_url;
-@property NSString *viewName; // @synthesize viewName=_viewName;
+@property(copy) NSString *content; // @synthesize content=_content;
+@property(copy) NSString *parentURL; // @synthesize parentURL=_parentURL;
+@property(copy) NSString *url; // @synthesize url=_url;
+@property(copy) NSString *viewName; // @synthesize viewName=_viewName;
+- (void).cxx_destruct;
 - (void)button3Pressed:(id)arg1;
 - (void)button2Pressed:(id)arg1;
 - (void)button1Pressed:(id)arg1;
@@ -137,7 +140,7 @@
 - (void)alternateNavigationButtonClicked:(id)arg1;
 - (void)rightNavigationButtonClicked:(id)arg1;
 - (void)leftNavigationButtonClicked:(id)arg1;
-- (void)validateLocalPasswordWithTitle:(id)arg1 forcingReprompt:(BOOL)arg2 completion:(id)arg3;
+- (void)validateLocalPasswordWithTitle:(id)arg1 forcingReprompt:(BOOL)arg2 callback:(id)arg3;
 - (void)validateLocalPasswordWithCompletion:(id)arg1;
 - (void)icaWebKitControllerDidReceiveResponse:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)skipSignIn;
@@ -176,6 +179,8 @@
 - (void)_createWaitTimer;
 - (void)_createWaitTimerWithTimeInternval:(double)arg1;
 - (id)_cdpStateUIProviderWithWindow:(id)arg1;
+- (void)refreshPage;
+- (id)urlRequest;
 - (void)continueAddMemeberPressed:(id)arg1;
 - (void)cancelAddMemeberPressed:(id)arg1;
 - (void)cancelPressed:(id)arg1;

@@ -52,8 +52,8 @@
 - (void)updateLibraryScopedWorkerPreferencesWithEntriesFromDictionary:(id)arg1 keysToRemove:(id)arg2;
 - (id)libraryScopedWorkerPreferences;
 - (void)assertUserInitiatedRequestQueue;
-- (_Bool)dispatchSyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
-- (_Bool)dispatchAsyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
+- (void)dispatchSyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
+- (void)dispatchAsyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
 - (id)statusAsDictionary;
 @property(readonly) _Bool isEnabled;
 @property(readonly) NSURL *persistentStorageDirectoryURL;

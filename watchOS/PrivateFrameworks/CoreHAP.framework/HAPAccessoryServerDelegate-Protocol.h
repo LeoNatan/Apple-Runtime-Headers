@@ -9,6 +9,7 @@
 @class HAPAccessoryInfo, HAPAccessoryServer, HMFOSTransaction, NSArray, NSData, NSError, NSNumber, NSString, NSUUID;
 
 @protocol HAPAccessoryServerDelegate <NSObject>
+- (void)accessoryServerNeedsOwnershipProof:(HAPAccessoryServer *)arg1;
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 didFinishAuth:(NSError *)arg2;
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 confirmUUID:(NSUUID *)arg2 token:(NSData *)arg3;
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 authenticateUUID:(NSUUID *)arg2 token:(NSData *)arg3;

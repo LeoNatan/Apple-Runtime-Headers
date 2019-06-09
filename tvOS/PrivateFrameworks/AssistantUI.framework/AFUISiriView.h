@@ -9,14 +9,17 @@
 #import <AssistantUI/AFUISiriRemoteViewHosting-Protocol.h>
 #import <AssistantUI/SiriUISiriStatusViewDelegate-Protocol.h>
 
-@class NSString, SiriUIAudioRoutePickerButton, SiriUIConfiguration, SiriUIContentButton, SiriUIHelpButton, SiriUIVisualEffectView, UIImageView, UILabel, _UIBackdropView;
+@class AFUIStarkGradientView, NSString, SiriUIAudioRoutePickerButton, SiriUIConfiguration, SiriUIContentButton, SiriUIHelpButton, SiriUIVisualEffectView, UIImageView, UILabel, _UIBackdropView, _UIVisualEffectBackdropView;
 @protocol AFUISiriViewDataSource, AFUISiriViewDelegate, SiriUISiriStatusViewProtocol;
 
 @interface AFUISiriView : UIView <SiriUISiriStatusViewDelegate, AFUISiriRemoteViewHosting>
 {
     _UIBackdropView *_backdropView;
-    UIView *_carPlayGatekeeperBackdropView;
     _Bool _backdropViewVisible;
+    UIView *_carPlayBackgroundView;
+    UIImageView *_carPlayAuraView;
+    AFUIStarkGradientView *_carPlayGradientView;
+    _UIVisualEffectBackdropView *_carPlayGatekeeperBackdropView;
     _Bool _carPlayGatekeeperBackdropViewVisible;
     struct UIEdgeInsets _suspendedSafeAreaInsets;
     _Bool _safeAreaInsetsSuspended;
@@ -49,18 +52,18 @@
     UIView *_foregroundContainerView;
     id <AFUISiriViewDataSource> _dataSource;
     id <AFUISiriViewDelegate> _delegate;
+    long long _carDisplaySnippetMode;
     long long _siriSessionState;
     long long _mode;
     UIView<SiriUISiriStatusViewProtocol> *_siriStatusView;
-    UIView *_frozenBackdropSnapshotView;
 }
 
 + (void)_animateView:(id)arg1 fromYPosition:(double)arg2 toYPosition:(double)arg3 fade:(long long)arg4 completion:(CDUnknownBlockType)arg5;
-@property(retain, nonatomic) UIView *frozenBackdropSnapshotView; // @synthesize frozenBackdropSnapshotView=_frozenBackdropSnapshotView;
 @property(retain, nonatomic) UIView<SiriUISiriStatusViewProtocol> *siriStatusView; // @synthesize siriStatusView=_siriStatusView;
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) long long siriSessionState; // @synthesize siriSessionState=_siriSessionState;
 @property(nonatomic, getter=isInFluidDismissal) _Bool inFluidDismissal; // @synthesize inFluidDismissal=_inFluidDismissal;
+@property(nonatomic) long long carDisplaySnippetMode; // @synthesize carDisplaySnippetMode=_carDisplaySnippetMode;
 @property(nonatomic) _Bool carDisplaySnippetVisible; // @synthesize carDisplaySnippetVisible=_carDisplaySnippetVisible;
 @property(nonatomic) _Bool helpButtonDeferred; // @synthesize helpButtonDeferred=_helpButtonDeferred;
 @property(nonatomic) _Bool flamesViewDeferred; // @synthesize flamesViewDeferred=_flamesViewDeferred;

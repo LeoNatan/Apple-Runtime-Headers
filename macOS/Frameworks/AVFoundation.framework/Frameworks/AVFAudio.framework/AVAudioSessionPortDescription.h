@@ -11,26 +11,24 @@
 @interface AVAudioSessionPortDescription : NSObject
 {
     void *_impl;
-    BOOL _hasHardwareVoiceCallProcessing;
     NSString *_portType;
     NSString *_portName;
     NSString *_UID;
     NSArray *_channels;
-    NSArray *_dataSources;
-    AVAudioSessionDataSourceDescription *_selectedDataSource;
-    AVAudioSessionDataSourceDescription *_preferredDataSource;
 }
 
-@property(readonly) AVAudioSessionDataSourceDescription *preferredDataSource; // @synthesize preferredDataSource=_preferredDataSource;
-@property(readonly) AVAudioSessionDataSourceDescription *selectedDataSource; // @synthesize selectedDataSource=_selectedDataSource;
-@property(readonly) NSArray *dataSources; // @synthesize dataSources=_dataSources;
 @property(readonly) NSArray *channels; // @synthesize channels=_channels;
-@property(readonly) BOOL hasHardwareVoiceCallProcessing; // @synthesize hasHardwareVoiceCallProcessing=_hasHardwareVoiceCallProcessing;
 @property(readonly) NSString *UID; // @synthesize UID=_UID;
 @property(readonly) NSString *portName; // @synthesize portName=_portName;
 @property(readonly) NSString *portType; // @synthesize portType=_portType;
+- (void).cxx_destruct;
+- (id)description;
+@property(readonly) AVAudioSessionDataSourceDescription *preferredDataSource;
+@property(readonly) AVAudioSessionDataSourceDescription *selectedDataSource;
+@property(readonly) BOOL hasHardwareVoiceCallProcessing;
+@property(readonly) NSArray *dataSources;
 - (BOOL)setPreferredDataSource:(id)arg1 error:(id *)arg2;
-- (id)initWithType:(id)arg1;
+- (id)initWithType:(id)arg1 UID:(id)arg2 Name:(id)arg3 Channels:(id)arg4;
 
 @end
 

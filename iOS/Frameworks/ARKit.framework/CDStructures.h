@@ -10,9 +10,62 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct ARFLCompoundSpring {
+    struct ARFLSimpleSpringState state;
+    struct ARFLSimpleSpring stiffness;
+    struct ARFLSimpleSpring damping;
+    struct ARFLSimpleSpring dampingRatio;
+    struct ARFLSimpleSpring response;
+    struct ARFLSimpleSpring anchor;
+    _Bool usesDampingRatioResponse;
+};
+
+struct ARFLSimpleSpring {
+    struct ARFLSimpleSpringState state;
+    double mass;
+    double stiffness;
+    double damping;
+    double anchor;
+    double stablePositionThreshold;
+    double stableVelocityThreshold;
+};
+
+struct ARFLSimpleSpringState {
+    double position;
+    double velocity;
+};
+
+struct ARFLSpringParameters {
+    double dampingRatio;
+    double dampingRatioSmoothing;
+    double response;
+    double responseSmoothing;
+};
+
 struct ARLabHistogram {
     float _field1;
     struct array<std::__1::array<std::__1::array<float, 8>, 8>, 4> _field2;
+};
+
+struct ARTexturedPlane;
+
+struct CATransform3D {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    double _field5;
+    double _field6;
+    double _field7;
+    double _field8;
+    double _field9;
+    double _field10;
+    double _field11;
+    double _field12;
+    double _field13;
+    double _field14;
+    double _field15;
+    double _field16;
 };
 
 struct CGAffineTransform {
@@ -39,52 +92,80 @@ struct CGSize {
     double height;
 };
 
-struct ExponentialSmoother<cva::Matrix<float, 9, 1>> {
-    struct optional<cva::Matrix<float, 9, 1>> state;
+struct ExponentialSmoother<cva::Matrix<float, 9, 1, false>> {
+    struct optional<cva::Matrix<float, 9, 1, false>> state;
 };
 
 struct ExponentialSmoother<float> {
     struct optional<float> state;
 };
 
-struct FLEOptions {
-    float smoothingAlpha;
-    float lightIntensityMinimumConstraint;
-    _Bool ransacEnabled;
-    _Bool chromaEnabled;
-    int ransacMinSampleSet;
-    float ransacErrorThreshold;
-    _Bool darkBehindHead;
-};
-
 struct FaceTrackingData;
 
 struct FacialLightEstimation {
-    struct Matrix<float, 0, 1> m_validSampleIntensities;
+    struct Matrix<float, 0, 1, false> m_validSampleIntensities;
     struct vector<int, std::__1::allocator<int>> m_validChromaSampleIDS;
     struct vector<int, std::__1::allocator<int>> m_sampleIndices_all;
-    struct Matrix<float, 0, 0> m_validRtfs;
+    struct Matrix<float, 0, 0, false> m_validRtfs;
     struct shared_ptr<arkit::PrecomputedFaceData> m_precomputedFaceData;
-    struct ExponentialSmoother<cva::Matrix<float, 9, 1>> m_smoother;
+    struct ExponentialSmoother<cva::Matrix<float, 9, 1, false>> m_smoother;
     struct vector<unsigned long, std::__1::allocator<unsigned long>> m_inliers;
+};
+
+struct Human {
+    struct map<int, float __attribute__((ext_vector_type(2))), std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, float __attribute__((ext_vector_type(2)))>>> _field1;
+    struct array<float, 34> _field2;
+    array_d2feeb34 _field3;
+    struct CGRect _field4;
 };
 
 struct KeyMapBuffer<const void *, std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>>;
 
-struct Matrix<float, 0, 0> {
+struct Matrix<float, 0, 0, false> {
     float *m_data;
     unsigned long long m_capacity;
     unsigned int m_rows;
     unsigned int m_cols;
 };
 
-struct Matrix<float, 0, 1> {
+struct Matrix<float, 0, 1, false> {
     float *m_data;
     unsigned long long m_capacity;
     unsigned int m_rows;
 };
 
+struct Matrix<float, 9, 1, false> {
+    float m_data[9];
+};
+
 struct PrecomputedFaceData;
+
+struct RobustExpFilter<float>;
+
+struct SkeletonJointFilter<float> {
+    vector_7584168e m_values;
+    vector_7584168e m_speed;
+    struct vector<double, std::__1::allocator<double>> m_timestamps;
+    float m_smoothing;
+    float m_lowest_threshold;
+    float m_low_threshold;
+    float m_high_threshold;
+    float m_highest_threshold;
+    float m_temporal_smoothing;
+    float m_prediction_factor;
+    float m_min_smoothing;
+    double m_extrapolation_time_seconds;
+    float m_up_slope;
+    float m_down_slope;
+    float m_temporal_slope;
+};
+
+struct UIEdgeInsets {
+    double top;
+    double left;
+    double bottom;
+    double right;
+};
 
 struct __compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::allocator<float __attribute__((ext_vector_type(3)))>> {
     void *__value_;
@@ -92,14 +173,16 @@ struct __compressed_pair<float * __attribute__((ext_vector_type(3))), std::__1::
 
 struct __shared_weak_count;
 
-struct a4;
-
-struct aligned_storage<cva::Matrix<float, 9, 1>> {
-    union dummy_u dummy_;
+struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
+    struct __tree_node_base<void *> *_field1;
 };
 
-struct aligned_storage<float> {
-    union dummy_u dummy_;
+struct array<float, 32> {
+    float __elems_[32];
+};
+
+struct array<float, 34> {
+    float _field1[34];
 };
 
 struct array<float, 8> {
@@ -114,18 +197,52 @@ struct array<std::__1::array<std::__1::array<float, 8>, 8>, 4> {
     struct array<std::__1::array<float, 8>, 8> _field1[4];
 };
 
-struct optional<cva::Matrix<float, 9, 1>> {
-    _Bool m_initialized;
-    struct aligned_storage<cva::Matrix<float, 9, 1>> m_storage;
+struct array<unsigned char, 17> {
+    unsigned char _field1[17];
+};
+
+struct map<int, float __attribute__((ext_vector_type(2))), std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, float __attribute__((ext_vector_type(2)))>>> {
+    struct __tree<std::__1::__value_type<int, float __attribute__((ext_vector_type(2)))>, std::__1::__map_value_compare<int, std::__1::__value_type<int, float __attribute__((ext_vector_type(2)))>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, float __attribute__((ext_vector_type(2)))>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<int, float __attribute__((ext_vector_type(2)))>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<int, std::__1::__value_type<int, float __attribute__((ext_vector_type(2)))>, std::__1::less<int>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+};
+
+struct optional<cva::Matrix<float, 9, 1, false>> {
+    union {
+        char __null_state_;
+        struct Matrix<float, 9, 1, false> __val_;
+    } ;
+    _Bool __engaged_;
 };
 
 struct optional<float> {
-    _Bool m_initialized;
-    struct aligned_storage<float> m_storage;
+    union {
+        char __null_state_;
+        float __val_;
+    } ;
+    _Bool __engaged_;
 };
 
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
+};
+
+struct set<unsigned long long, std::__1::less<unsigned long long>, std::__1::allocator<unsigned long long>> {
+    struct __tree<unsigned long long, std::__1::less<unsigned long long>, std::__1::allocator<unsigned long long>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<unsigned long long, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::less<unsigned long long>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
 };
 
 struct shared_ptr<arkit::FaceTrackingData> {
@@ -143,11 +260,32 @@ struct shared_ptr<arkit::PrecomputedFaceData> {
     struct __shared_weak_count *__cntrl_;
 };
 
+struct shared_ptr<arkit::RobustExpFilter<float>> {
+    struct RobustExpFilter<float> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 struct vImage_Buffer {
     void *data;
     unsigned long long height;
     unsigned long long width;
     unsigned long long rowBytes;
+};
+
+struct vector<ARCoachingControlPoint, std::__1::allocator<ARCoachingControlPoint>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<ARCoachingControlPoint *, std::__1::allocator<ARCoachingControlPoint>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
+struct vector<ARCoachingPatchData, std::__1::allocator<ARCoachingPatchData>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<ARCoachingPatchData *, std::__1::allocator<ARCoachingPatchData>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
 };
 
 struct vector<ARPatch, std::__1::allocator<ARPatch>> {
@@ -158,10 +296,34 @@ struct vector<ARPatch, std::__1::allocator<ARPatch>> {
     } __end_cap_;
 };
 
-struct vector<ARTexturedPlane, std::__1::allocator<ARTexturedPlane>> {
+struct vector<ARSRT, std::__1::allocator<ARSRT>> {
     CDStruct_183601bc *__begin_;
     CDStruct_183601bc *__end_;
+    struct __compressed_pair<ARSRT *, std::__1::allocator<ARSRT>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
+struct vector<ARTexturedPlane, std::__1::allocator<ARTexturedPlane>> {
+    struct ARTexturedPlane *__begin_;
+    struct ARTexturedPlane *__end_;
     struct __compressed_pair<ARTexturedPlane *, std::__1::allocator<ARTexturedPlane>> {
+        struct ARTexturedPlane *__value_;
+    } __end_cap_;
+};
+
+struct vector<double, std::__1::allocator<double>> {
+    double *__begin_;
+    double *__end_;
+    struct __compressed_pair<double *, std::__1::allocator<double>> {
+        double *__value_;
+    } __end_cap_;
+};
+
+struct vector<espresso_buffer_t, std::__1::allocator<espresso_buffer_t>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<espresso_buffer_t *, std::__1::allocator<espresso_buffer_t>> {
         CDStruct_183601bc *__value_;
     } __end_cap_;
 };
@@ -198,6 +360,14 @@ struct vector<short, std::__1::allocator<short>> {
     } __end_cap_;
 };
 
+struct vector<simd_float4x4, std::__1::allocator<simd_float4x4>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<simd_float4x4 *, std::__1::allocator<simd_float4x4>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
 struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     char *__begin_;
     char *__end_;
@@ -219,6 +389,14 @@ struct vector<unsigned long, std::__1::allocator<unsigned long>> {
     unsigned long long *__end_;
     struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long>> {
         unsigned long long *__value_;
+    } __end_cap_;
+};
+
+struct vector<unsigned short, std::__1::allocator<unsigned short>> {
+    unsigned short *__begin_;
+    unsigned short *__end_;
+    struct __compressed_pair<unsigned short *, std::__1::allocator<unsigned short>> {
+        unsigned short *__value_;
     } __end_cap_;
 };
 
@@ -261,6 +439,11 @@ typedef struct {
 } CDStruct_cf098810;
 
 typedef struct {
+    void *plan;
+    int network_index;
+} CDStruct_2bc666a5;
+
+typedef struct {
     double m11;
     double m12;
     double m13;
@@ -279,6 +462,25 @@ typedef struct {
 } CDStruct_31142d93;
 
 typedef struct {
+    double _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+} CDStruct_d6f6a055;
+
+typedef struct {
+    float bias_r;
+    float bias_g;
+    float bias_b;
+    float scale;
+    _Bool network_wants_bgr;
+} CDStruct_b527887c;
+
+typedef struct {
+    float _field1;
+} CDStruct_37a3040a;
+
+typedef struct {
     int _field1;
     int _field2;
 } CDStruct_1ef3fb1f;
@@ -292,7 +494,27 @@ typedef struct {
 
 typedef struct CDStruct_183601bc;
 
+typedef struct {
+    CDStruct_183601bc _field1;
+} CDStruct_0c4e353b;
+
 // Template types
+typedef struct array<unsigned char, 17> {
+    unsigned char _field1[17];
+} array_d2feeb34;
+
+typedef struct set<unsigned long long, std::__1::less<unsigned long long>, std::__1::allocator<unsigned long long>> {
+    struct __tree<unsigned long long, std::__1::less<unsigned long long>, std::__1::allocator<unsigned long long>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<unsigned long long, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::less<unsigned long long>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+} set_8479fffa;
+
 typedef struct shared_ptr<arkit::FaceTrackingData> {
     struct FaceTrackingData *_field1;
     struct __shared_weak_count *_field2;
@@ -307,12 +529,12 @@ typedef struct vector<ARPatch, std::__1::allocator<ARPatch>> {
 } vector_f87b304d;
 
 typedef struct vector<ARTexturedPlane, std::__1::allocator<ARTexturedPlane>> {
-    CDStruct_183601bc *__begin_;
-    CDStruct_183601bc *__end_;
+    struct ARTexturedPlane *__begin_;
+    struct ARTexturedPlane *__end_;
     struct __compressed_pair<ARTexturedPlane *, std::__1::allocator<ARTexturedPlane>> {
-        CDStruct_183601bc *__value_;
+        struct ARTexturedPlane *__value_;
     } __end_cap_;
-} vector_478e3a44;
+} vector_f1799d67;
 
 typedef struct vector<float, std::__1::allocator<float>> {
     float *__begin_;
@@ -330,6 +552,14 @@ typedef struct vector<short, std::__1::allocator<short>> {
     } __end_cap_;
 } vector_00df4d9c;
 
+typedef struct vector<unsigned char, std::__1::allocator<unsigned char>> {
+    char *__begin_;
+    char *__end_;
+    struct __compressed_pair<unsigned char *, std::__1::allocator<unsigned char>> {
+        char *__value_;
+    } __end_cap_;
+} vector_aab22ae2;
+
 typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
     unsigned long long *__begin_;
     unsigned long long *__end_;
@@ -337,11 +567,4 @@ typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long
         unsigned long long *__value_;
     } __end_cap_;
 } vector_7984f87c;
-
-#pragma mark Named Unions
-
-union dummy_u {
-    char data[4];
-    struct a4 aligner_;
-};
 

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MIME/EFPubliclyDescribable-Protocol.h>
 #import <MIME/NSCopying-Protocol.h>
 
-@class MFMessageStore, MFMimePart, NSArray, NSString, NSURL;
+@class ECAngleBracketIDHash, ECSubject, MFMessageStore, MFMimePart, NSArray, NSString, NSURL;
 
-@interface MFMessage : NSObject <NSCopying>
+@interface MFMessage : NSObject <EFPubliclyDescribable, NSCopying>
 {
     MFMessageStore *_store;
     unsigned int _preferredEncoding;
@@ -18,7 +19,6 @@
     unsigned int _dateSentInterval;
     unsigned int _dateReceivedInterval;
     unsigned long long _generationNumber;
-    NSString *_subject;
     NSArray *_to;
     NSArray *_cc;
     NSArray *_bcc;
@@ -26,7 +26,7 @@
     NSString *_contentType;
     long long _messageIDHeaderHash;
     long long _conversationID;
-    long long _listIDHash;
+    ECAngleBracketIDHash *_listIDHash;
     NSString *_summary;
     NSString *_externalID;
     MFMimePart *_parentPart;
@@ -34,6 +34,7 @@
     NSString *_cachedMessageIDHeader;
     unsigned int _calculatedAttachmentInfo:1;
     unsigned short _numberOfAttachments;
+    ECSubject *_subject;
 }
 
 + (void)setMessageClassForStore:(id)arg1;
@@ -42,6 +43,7 @@
 + (id)messageWithRFC822Data:(id)arg1;
 + (Class)dataMessageStoreToUse;
 @property(retain, nonatomic) MFMimePart *parentPart; // @synthesize parentPart=_parentPart;
+- (void).cxx_destruct;
 - (id)additionalHeadersForForward;
 - (id)additionalHeadersForReply;
 - (_Bool)isLibraryMessage;
@@ -51,8 +53,8 @@
 - (long long)generationCompare:(id)arg1;
 - (unsigned long long)generationNumber;
 - (void)setGenerationNumber:(unsigned long long)arg1;
-- (void)setNumberOfAttachments:(unsigned int)arg1;
-- (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(_Bool)arg2 isEncrypted:(_Bool)arg3;
+- (void)setNumberOfAttachments:(unsigned long long)arg1;
+- (void)setNumberOfAttachments:(unsigned long long)arg1 isSigned:(_Bool)arg2 isEncrypted:(_Bool)arg3;
 - (void)calculateAttachmentInfoFromBody:(id)arg1;
 - (void)deleteBodyData;
 - (void)_calculateAttachmentInfoFromBody:(id)arg1;
@@ -72,15 +74,15 @@
 - (id)path;
 - (unsigned int)uid;
 - (id)remoteID;
-- (void)setMessageInfoFromMessage:(id)arg1;
+- (void)setMessagePropertiesFromMessage:(id)arg1;
 - (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10;
 - (void)setMessageInfo:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHash:(long long)arg8 conversationID:(long long)arg9 summary:(id)arg10;
 - (id)uniqueArray:(id)arg1 withStore:(id)arg2;
 - (id)summary;
-- (void)setExternalID:(id)arg1;
-- (id)externalID;
-- (void)setListIDHash:(long long)arg1;
-- (long long)listIDHash;
+@property(retain, nonatomic) NSString *externalID;
+- (void)setListIDHash:(id)arg1;
+- (id)listIDHash;
 - (void)setConversationID:(long long)arg1;
 - (void)setMessageIDHash:(long long)arg1;
 - (long long)conversationID;
@@ -107,9 +109,7 @@
 - (void)setDateReceivedTimeIntervalSince1970:(double)arg1;
 - (id)dateSent;
 - (id)dateReceived;
-- (void)setSubject:(id)arg1;
-- (id)subjectIfCached;
-- (id)subject;
+@property(copy, nonatomic) ECSubject *subject; // @synthesize subject=_subject;
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1;
 - (void)_setDateSentFromHeaders:(id)arg1;
 - (void)_setDateReceivedFromHeaders:(id)arg1;
@@ -119,12 +119,13 @@
 - (void)setPreferredEncoding:(unsigned int)arg1;
 - (unsigned int)preferredEncoding;
 - (_Bool)calculatedNumberOfAttachments;
-- (unsigned short)numberOfAttachments;
+- (unsigned long long)numberOfAttachments;
 - (_Bool)isMessageContentsLocallyAvailable;
 - (long long)_messageIDHeaderHashIvar;
 - (id)messageIDHeaderInFortyBytesOrLess;
 - (void)setMessageIDHeader:(id)arg1;
 - (id)messageIDHeader;
+- (id)messageIDHeaderHash;
 - (long long)messageIDHash;
 - (id)messageURL;
 - (void)setMessageURL:(id)arg1;
@@ -132,7 +133,6 @@
 - (id)preferredEmailAddressToReplyWith;
 - (unsigned long long)fileSize;
 - (unsigned long long)messageSize;
-- (void)dealloc;
 - (id)dataConsumerForMimePart:(id)arg1;
 - (void)setMessageData:(id)arg1 isPartial:(_Bool)arg2;
 - (id)messageDataHolder;
@@ -149,8 +149,16 @@
 - (id)headers;
 - (void)setMessageStore:(id)arg1;
 - (id)messageStore;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
+@property(readonly, copy) NSString *description;
+- (id)_privacySafeDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

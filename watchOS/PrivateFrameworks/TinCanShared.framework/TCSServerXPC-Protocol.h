@@ -12,8 +12,6 @@
 - (void)queryIsTinCannable:(CNContact *)arg1;
 - (void)ensureUplinkMuted;
 - (void)setClientRecordingInProgress:(_Bool)arg1;
-- (void)remoteMeterLevelForCall:(TCSCall *)arg1 result:(void (^)(float))arg2;
-- (void)localMeterLevelForCall:(TCSCall *)arg1 result:(void (^)(float))arg2;
 - (void)disconnectCall:(TCSCall *)arg1;
 - (void)setUplinkMuted:(_Bool)arg1 for:(TCSCall *)arg2 completion:(void (^)(void))arg3;
 - (void)getCall:(void (^)(TCSCall *))arg1;

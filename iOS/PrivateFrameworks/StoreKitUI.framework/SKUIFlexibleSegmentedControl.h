@@ -9,6 +9,7 @@
 @class NSArray, NSString, UISegmentedControl;
 @protocol SKUIFlexibleSegmentedControlDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIFlexibleSegmentedControl : UIView
 {
     id <SKUIFlexibleSegmentedControlDelegate> _delegate;

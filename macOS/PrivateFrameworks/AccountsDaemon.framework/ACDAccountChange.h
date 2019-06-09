@@ -8,6 +8,7 @@
 
 @class ACAccount;
 
+__attribute__((visibility("hidden")))
 @interface ACDAccountChange : NSObject
 {
     int _changeType;
@@ -16,9 +17,9 @@
 }
 
 + (id)changeWithChangeType:(int)arg1 account:(id)arg2 oldAccount:(id)arg3;
-@property(retain) ACAccount *oldAccount; // @synthesize oldAccount=_oldAccount;
-@property(retain) ACAccount *account; // @synthesize account=_account;
-@property int changeType; // @synthesize changeType=_changeType;
+@property(readonly) ACAccount *oldAccount; // @synthesize oldAccount=_oldAccount;
+@property(readonly) ACAccount *account; // @synthesize account=_account;
+@property(readonly) int changeType; // @synthesize changeType=_changeType;
 - (void).cxx_destruct;
 - (id)initWithChangeType:(int)arg1 account:(id)arg2 oldAccount:(id)arg3;
 

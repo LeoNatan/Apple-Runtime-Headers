@@ -6,9 +6,11 @@
 
 #import <CloudKit/CKOperationInfo.h>
 
+#import <CloudKit/NSSecureCoding-Protocol.h>
+
 @class NSArray;
 
-@interface CKMarkNotificationsReadOperationInfo : CKOperationInfo
+@interface CKMarkNotificationsReadOperationInfo : CKOperationInfo <NSSecureCoding>
 {
     NSArray *_notificationIDs;
 }

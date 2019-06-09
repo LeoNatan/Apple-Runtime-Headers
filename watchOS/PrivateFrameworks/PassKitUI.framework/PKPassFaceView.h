@@ -9,7 +9,7 @@
 #import <PassKitUI/PKForegroundActiveArbiterObserver-Protocol.h>
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 
-@class CAFilter, NSArray, NSMutableArray, NSMutableSet, NSString, PKLiveRenderedCardFaceView, PKPass, PKPassColorProfile, PKPassFaceTemplate, PKPaymentService, UIImage, UIImageView, UIView;
+@class CAFilter, NSArray, NSMutableArray, NSMutableSet, NSString, PKLiveRenderedCardFaceView, PKPass, PKPassColorProfile, PKPassFaceTemplate, PKPassFaceViewRendererState, PKPaymentService, PKTransactionDataOverlayCardFaceView, UIImage, UIImageView, UIView;
 
 @interface PKPassFaceView : WLEasyToHitCustomView <PKPaymentServiceDelegate, PKForegroundActiveArbiterObserver>
 {
@@ -34,6 +34,7 @@
     NSMutableArray *_bodyBucketViews;
     NSMutableArray *_delayedAnimations;
     PKLiveRenderedCardFaceView *_liveBackgroundView;
+    PKTransactionDataOverlayCardFaceView *_transactionDataOverlayView;
     unsigned int _contentViewCreatedRegions;
     unsigned int _invariantViewCreatedRegions;
     _Bool _showsLiveRendering;
@@ -58,6 +59,7 @@
 @property(nonatomic) int style; // @synthesize style=_style;
 @property(readonly, retain, nonatomic) NSArray *buckets; // @synthesize buckets=_buckets;
 @property(nonatomic) _Bool liveMotionEnabled; // @synthesize liveMotionEnabled=_liveMotionEnabled;
+@property(nonatomic) _Bool showsLiveRendering; // @synthesize showsLiveRendering=_showsLiveRendering;
 @property(nonatomic) float clippedContentHeight; // @synthesize clippedContentHeight=_clippedContentHeight;
 @property(nonatomic) _Bool allowBackgroundPlaceHolders; // @synthesize allowBackgroundPlaceHolders=_allowBackgroundPlaceHolders;
 @property(nonatomic) _Bool clipsContent; // @synthesize clipsContent=_clipsContent;
@@ -79,7 +81,8 @@
 - (void)_flushContentViewsForRegions:(unsigned int)arg1;
 - (void)_createContentViewsForRegions:(unsigned int)arg1;
 - (void)_createInvariantViewsForRegions:(unsigned int)arg1;
-@property(nonatomic) _Bool showsLiveRendering;
+- (void)setShowsLiveRendering:(_Bool)arg1 rendererState:(id)arg2;
+@property(readonly, nonatomic) PKPassFaceViewRendererState *rendererState;
 - (void)createBodyContentViews;
 - (void)createHeaderContentViews;
 - (void)createBodyInvariantViews;

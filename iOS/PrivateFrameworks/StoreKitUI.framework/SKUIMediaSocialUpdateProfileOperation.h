@@ -8,6 +8,7 @@
 
 @class NSLock, NSMutableDictionary, NSNumber, NSString, SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaSocialUpdateProfileOperation : SSVComplexOperation
 {
     SKUIClientContext *_clientContext;

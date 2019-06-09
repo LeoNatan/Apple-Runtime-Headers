@@ -8,12 +8,13 @@
 
 #import <CoreSpeech/CSAssetManagerDelegate-Protocol.h>
 #import <CoreSpeech/CSEndpointAnalyzerImpl-Protocol.h>
+#import <CoreSpeech/CSFirstUnlockMonitorDelegate-Protocol.h>
 #import <CoreSpeech/EARCaesuraSilencePosteriorGeneratorDelegate-Protocol.h>
 
 @class CSAsset, CSServerEndpointFeatures, EARCaesuraSilencePosteriorGenerator, EARClientSilenceFeatures, NSDate, NSDictionary, NSMutableArray, NSString, _EAREndpointer;
-@protocol CSEndpointAnalyzerDelegate, OS_dispatch_queue;
+@protocol CSEndpointAnalyzerDelegate, CSEndpointAnalyzerImplDelegate, OS_dispatch_queue;
 
-@interface CSHybridEndpointAnalyzer : NSObject <CSAssetManagerDelegate, EARCaesuraSilencePosteriorGeneratorDelegate, CSEndpointAnalyzerImpl>
+@interface CSHybridEndpointAnalyzer : NSObject <CSAssetManagerDelegate, CSFirstUnlockMonitorDelegate, EARCaesuraSilencePosteriorGeneratorDelegate, CSEndpointAnalyzerImpl>
 {
     _Bool _saveSamplesSeenInReset;
     _Bool _canProcessCurrentRequest;
@@ -25,6 +26,7 @@
     _Bool _recordingDidStop;
     _Bool _didDetectSpeech;
     id <CSEndpointAnalyzerDelegate> _delegate;
+    id <CSEndpointAnalyzerImplDelegate> _implDelegate;
     unsigned long long _activeChannel;
     long long _endpointStyle;
     long long _endpointMode;
@@ -104,19 +106,22 @@
 @property(nonatomic) long long endpointMode; // @synthesize endpointMode=_endpointMode;
 @property(nonatomic) long long endpointStyle; // @synthesize endpointStyle=_endpointStyle;
 @property(nonatomic) unsigned long long activeChannel; // @synthesize activeChannel=_activeChannel;
+@property(nonatomic) __weak id <CSEndpointAnalyzerImplDelegate> implDelegate; // @synthesize implDelegate=_implDelegate;
 @property(nonatomic) __weak id <CSEndpointAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)_shouldUsePhaticWithRecordContext;
 - (id)_getCSHybridEndpointerConfigForAsset:(id)arg1;
 - (void)_updateAssetWithCurrentLanguage;
 - (void)_updateAssetWithLanguage:(id)arg1;
+- (void)CSFirstUnlockMonitor:(id)arg1 didReceiveFirstUnlock:(_Bool)arg2;
 - (void)CSAssetManagerDidDownloadNewAsset:(id)arg1;
 - (void)CSLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
 @property(readonly, nonatomic) double lastStartOfVoiceActivityTime;
 @property(readonly, nonatomic) double lastEndOfVoiceActivityTime;
 - (void)reset;
 - (void)_readClientLagParametersFromHEPAsset:(id)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
-- (void)recordingStoppedForReason:(unsigned long long)arg1;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
+- (void)recordingStoppedForReason:(long long)arg1;
 - (void)preheat;
 - (void)handleVoiceTriggerWithActivationInfo:(id)arg1;
 - (id)serverFeaturesLatencyDistributionDictionary;

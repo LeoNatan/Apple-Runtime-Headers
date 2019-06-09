@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     _Bool _systemMuted;
     _Bool _prominentHapticEnabled;
     id <NACVolumeControllerDelegate> _delegate;
+    int _volumeWarningState;
     float _EUVolumeLimit;
     int _hapticState;
 }
@@ -44,6 +45,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isSystemMuted) _Bool systemMuted; // @synthesize systemMuted=_systemMuted;
 @property(readonly, nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
 @property(readonly, nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
+@property(readonly, nonatomic) int volumeWarningState; // @synthesize volumeWarningState=_volumeWarningState;
 @property(readonly, nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled; // @synthesize volumeWarningEnabled=_volumeWarningEnabled;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 @property(nonatomic) __weak id <NACVolumeControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -69,6 +71,7 @@ __attribute__((visibility("hidden")))
 - (void)_mutedStateDidChange;
 - (void)_volumeControlAvailabilityDidChange;
 - (void)_volumeValueDidChange;
+- (void)allowUserToExceedEUVolumeLimit;
 - (void)_hapticStateTimeout;
 - (void)_hapticTimeout;
 - (void)_setHapticIntensity:(id)arg1;

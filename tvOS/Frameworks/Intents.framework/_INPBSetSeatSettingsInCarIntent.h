@@ -31,6 +31,7 @@
     _INPBInteger *_level;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) int seat; // @synthesize seat=_seat;
 @property(nonatomic) int relativeLevelSetting; // @synthesize relativeLevelSetting=_relativeLevelSetting;
 @property(retain, nonatomic) _INPBInteger *level; // @synthesize level=_level;
@@ -44,6 +45,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (int)StringAsSeat:(id)arg1;

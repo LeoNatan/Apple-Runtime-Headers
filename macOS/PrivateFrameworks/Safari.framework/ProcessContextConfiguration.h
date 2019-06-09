@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface ProcessContextConfiguration : NSObject
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     BOOL _passwordAutoFillAvailable;
     BOOL _addressBookAutoFillEnabled;
     BOOL _shouldPerformAutomatedPageLoadTest;
+    BOOL _pageLoadTestShouldTakeScreenshots;
     BOOL _creditCardAutoFillEnabled;
     int _storageBlockingPolicy;
     NSString *_injectedBundlePath;
@@ -24,20 +25,21 @@ __attribute__((visibility("hidden")))
     double _pageLoadTestResourceDelay;
     struct ContextClient *_client;
     struct ContextInjectedBundleClient *_injectedBundleClient;
-    struct ContextDownloadClient *_downloadClient;
     struct ContextHistoryClient *_historyClient;
     struct GeolocationProvider *_geolocationProvider;
     struct UserNotificationProvider *_notificationProvider;
+    NSArray *_additionalReadAccessAllowedPaths;
 }
 
+@property(copy, nonatomic) NSArray *additionalReadAccessAllowedPaths; // @synthesize additionalReadAccessAllowedPaths=_additionalReadAccessAllowedPaths;
 @property(nonatomic, getter=isCreditCardAutoFillEnabled) BOOL creditCardAutoFillEnabled; // @synthesize creditCardAutoFillEnabled=_creditCardAutoFillEnabled;
 @property(nonatomic) struct UserNotificationProvider *notificationProvider; // @synthesize notificationProvider=_notificationProvider;
 @property(nonatomic) struct GeolocationProvider *geolocationProvider; // @synthesize geolocationProvider=_geolocationProvider;
 @property(nonatomic) struct ContextHistoryClient *historyClient; // @synthesize historyClient=_historyClient;
-@property(nonatomic) struct ContextDownloadClient *downloadClient; // @synthesize downloadClient=_downloadClient;
 @property(nonatomic) struct ContextInjectedBundleClient *injectedBundleClient; // @synthesize injectedBundleClient=_injectedBundleClient;
 @property(nonatomic) struct ContextClient *client; // @synthesize client=_client;
 @property(nonatomic) int storageBlockingPolicy; // @synthesize storageBlockingPolicy=_storageBlockingPolicy;
+@property(nonatomic) BOOL pageLoadTestShouldTakeScreenshots; // @synthesize pageLoadTestShouldTakeScreenshots=_pageLoadTestShouldTakeScreenshots;
 @property(nonatomic) double pageLoadTestResourceDelay; // @synthesize pageLoadTestResourceDelay=_pageLoadTestResourceDelay;
 @property(nonatomic) long long pageLoadTestVersion; // @synthesize pageLoadTestVersion=_pageLoadTestVersion;
 @property(nonatomic) BOOL shouldPerformAutomatedPageLoadTest; // @synthesize shouldPerformAutomatedPageLoadTest=_shouldPerformAutomatedPageLoadTest;

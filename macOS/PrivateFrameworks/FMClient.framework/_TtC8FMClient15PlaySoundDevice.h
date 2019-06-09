@@ -29,8 +29,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithServerId:(id)arg1 locality:(id)arg2 safetyWarningConfirmed:(BOOL)arg3;
 @property(nonatomic, readonly) BOOL safetyWarningConfirmed; // @synthesize safetyWarningConfirmed;
-@property(nonatomic, readonly) NSString *locality; // @synthesize locality;
-@property(nonatomic, readonly) NSString *serverId; // @synthesize serverId;
+@property(nonatomic, readonly) NSString *locality;
+@property(nonatomic, readonly) NSString *serverId;
 
 @end
 

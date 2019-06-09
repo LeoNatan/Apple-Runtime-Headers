@@ -12,7 +12,7 @@
 {
 }
 
-+ (id)typeString;
++ (void)load;
 - (_Bool)userControllable;
 - (Class)handlerClass;
 

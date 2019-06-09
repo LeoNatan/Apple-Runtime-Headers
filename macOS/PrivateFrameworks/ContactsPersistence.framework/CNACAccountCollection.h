@@ -26,6 +26,7 @@
 @property(retain) CNPublishingSubject *enabledAccountsObservable; // @synthesize enabledAccountsObservable=_enabledAccountsObservable;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(retain) NSArray *accounts; // @synthesize accounts=_accounts;
+- (void).cxx_destruct;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly) BOOL includeLocalAccount;
 @property(readonly, copy) NSArray *enabledAccounts;

@@ -7,6 +7,13 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (PKArrayAdditions)
++ (id)pk_FilteredCardErrors:(id)arg1;
++ (id)pk_FilteredShippingErrorsForContactFields:(id)arg1 errors:(id)arg2;
++ (id)pk_FilteredBillingErrorsForContactFields:(id)arg1 errors:(id)arg2;
++ (id)paymentShippingAddressUnserviceableErrorWithLocalizedDescription:(id)arg1;
++ (id)paymentBillingAddressInvalidErrorWithKey:(id)arg1 localizedDescription:(id)arg2;
++ (id)paymentShippingAddressInvalidErrorWithKey:(id)arg1 localizedDescription:(id)arg2;
++ (id)paymentContactInvalidErrorWithContactField:(id)arg1 localizedDescription:(id)arg2;
 - (_Bool)pk_containsObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)pk_objectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)pk_shuffledArray;

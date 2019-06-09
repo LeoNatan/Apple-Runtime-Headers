@@ -7,12 +7,10 @@
 #import <objc/NSObject.h>
 
 @class UISDisplayContext;
-@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface _UIScreenInitialDisplayConfigurationLoader : NSObject
 {
-    NSObject<OS_dispatch_queue> *_queue;
     UISDisplayContext *_context;
     _Bool _hasRequestedPreload;
 }

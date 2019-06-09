@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
     id <LSOpenResourceOperationDelegate> _delegate;
 }
 
+- (void).cxx_destruct;
 - (void)openResourceOperation:(id)arg1 didFailWithError:(id)arg2;
 - (void)openResourceOperationDidComplete:(id)arg1;
 - (void)openResourceOperation:(id)arg1 didFinishCopyingResource:(id)arg2;
-- (void)dealloc;
 - (id)initWithOperation:(id)arg1 wrappedDelegate:(id)arg2;
 
 // Remaining properties

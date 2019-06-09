@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class IMBalloonPlugin, NSString, UIView;
+@class CKSnapshotCacheKey, IMBalloonPlugin, UIView;
 
 @interface CKBrowserSwitcherCell : UICollectionViewCell
 {
@@ -14,11 +14,11 @@
     IMBalloonPlugin *_plugin;
     UIView *_browserSnapshotView;
     UIView *_extensionInterruptedView;
-    NSString *_snapshotCacheKey;
+    CKSnapshotCacheKey *_snapshotCacheKey;
 }
 
 + (id)identifier;
-@property(retain, nonatomic) NSString *snapshotCacheKey; // @synthesize snapshotCacheKey=_snapshotCacheKey;
+@property(retain, nonatomic) CKSnapshotCacheKey *snapshotCacheKey; // @synthesize snapshotCacheKey=_snapshotCacheKey;
 @property(retain, nonatomic) UIView *extensionInterruptedView; // @synthesize extensionInterruptedView=_extensionInterruptedView;
 @property(retain, nonatomic) UIView *browserSnapshotView; // @synthesize browserSnapshotView=_browserSnapshotView;
 @property(nonatomic, getter=isUsingFallbackSnapshot) _Bool usingFallbackSnapshot; // @synthesize usingFallbackSnapshot=_usingFallbackSnapshot;

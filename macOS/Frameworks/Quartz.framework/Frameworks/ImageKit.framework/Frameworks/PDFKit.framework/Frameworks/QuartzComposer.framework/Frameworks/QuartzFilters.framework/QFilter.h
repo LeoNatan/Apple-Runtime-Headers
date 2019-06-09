@@ -17,14 +17,14 @@
     NSMutableArray *mComponents;
 }
 
-+ (id)newWithName:(id)arg1 url:(id)arg2 filterData:(id)arg3 domains:(id)arg4 comments:(id)arg5 readOnly:(BOOL)arg6 owner:(id)arg7;
++ (id)filterWithName:(id)arg1 url:(id)arg2 filterData:(id)arg3 domains:(id)arg4 comments:(id)arg5 readOnly:(BOOL)arg6 owner:(id)arg7;
 - (long long)compare:(id)arg1;
 - (void)componentAddNotification:(id)arg1;
 - (void)componentRemoveNotification:(id)arg1;
 - (void)componentUpdateNotification:(id)arg1;
 - (void)removeComponent:(id)arg1;
 - (id)addComponentByID:(int)arg1;
-- (id)newComponentByID:(int)arg1;
+- (id)createComponentByID:(int)arg1;
 - (id)findComponentByID:(int)arg1;
 - (id)addComponent:(id)arg1;
 - (void)initializeComponents;

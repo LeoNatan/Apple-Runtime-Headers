@@ -10,6 +10,7 @@
 
 @class NSString, OISFUZipArchive;
 
+__attribute__((visibility("hidden")))
 @interface OISFUZipInputBundle : NSObject <SFUInputBundle>
 {
     OISFUZipArchive *_zipArchive;

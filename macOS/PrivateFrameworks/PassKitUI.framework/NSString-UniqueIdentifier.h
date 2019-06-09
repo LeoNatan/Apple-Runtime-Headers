@@ -8,5 +8,6 @@
 
 @interface NSString (UniqueIdentifier)
 + (id)uniqueIdentifier;
++ (id)localizedString:(id)arg1;
 @end
 

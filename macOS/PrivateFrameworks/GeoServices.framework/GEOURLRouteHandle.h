@@ -8,20 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSData;
+@class NSData, PBDataReader;
 
 @interface GEOURLRouteHandle : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSData *_directionsResponseID;
     NSData *_routeID;
     NSData *_transitData;
     NSData *_zilchPoints;
+    struct {
+        unsigned int read_directionsResponseID:1;
+        unsigned int read_routeID:1;
+        unsigned int read_transitData:1;
+        unsigned int read_zilchPoints:1;
+        unsigned int wrote_directionsResponseID:1;
+        unsigned int wrote_routeID:1;
+        unsigned int wrote_transitData:1;
+        unsigned int wrote_zilchPoints:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSData *transitData; // @synthesize transitData=_transitData;
-@property(retain, nonatomic) NSData *zilchPoints; // @synthesize zilchPoints=_zilchPoints;
-@property(retain, nonatomic) NSData *routeID; // @synthesize routeID=_routeID;
-@property(retain, nonatomic) NSData *directionsResponseID; // @synthesize directionsResponseID=_directionsResponseID;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,12 +39,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSData *transitData;
 @property(readonly, nonatomic) BOOL hasTransitData;
+- (void)_readTransitData;
+@property(retain, nonatomic) NSData *zilchPoints;
 @property(readonly, nonatomic) BOOL hasZilchPoints;
+- (void)_readZilchPoints;
+@property(retain, nonatomic) NSData *routeID;
 @property(readonly, nonatomic) BOOL hasRouteID;
+- (void)_readRouteID;
+@property(retain, nonatomic) NSData *directionsResponseID;
 @property(readonly, nonatomic) BOOL hasDirectionsResponseID;
+- (void)_readDirectionsResponseID;
 
 @end
 

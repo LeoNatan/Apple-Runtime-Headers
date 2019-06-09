@@ -34,6 +34,7 @@
     NSArray *_waypoints;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)waypointsType;
 + (Class)additionalActionItemsType;
 @property(copy, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
@@ -56,6 +57,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)waypointsAtIndex:(unsigned long long)arg1;

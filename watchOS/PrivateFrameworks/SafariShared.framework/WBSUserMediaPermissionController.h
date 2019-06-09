@@ -46,6 +46,8 @@
 - (id)localizedStringForValue:(id)arg1 inPreference:(id)arg2;
 - (id)valuesForPreference:(id)arg1;
 - (id)preferences;
+- (unsigned int)_permissionMaskForMediaCaptureType:(int)arg1;
+- (int)_mediaCaptureTypeForPreference:(id)arg1;
 - (void)checkUserMediaPermissionForURL:(id)arg1 mainFrameURL:(id)arg2 frameIdentifier:(unsigned int)arg3 decisionHandler:(CDUnknownBlockType)arg4;
 - (_Bool)hasPolicyEntryForTopLevelOrigin:(id)arg1;
 - (id)sortedPolicies;

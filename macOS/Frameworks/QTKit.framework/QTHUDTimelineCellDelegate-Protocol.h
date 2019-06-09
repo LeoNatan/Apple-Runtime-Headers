@@ -9,6 +9,6 @@
 @class QTHUDTimelineCell;
 
 @protocol QTHUDTimelineCellDelegate <NSObject>
-- (CDStruct_900afa40)timelineCell:(QTHUDTimelineCell *)arg1 willChangeTimeValue:(CDStruct_900afa40)arg2;
+- (CDStruct_2ec95fd7)timelineCell:(QTHUDTimelineCell *)arg1 willChangeTimeValue:(CDStruct_2ec95fd7)arg2;
 @end
 

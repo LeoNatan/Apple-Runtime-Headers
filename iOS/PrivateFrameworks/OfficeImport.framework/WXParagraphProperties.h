@@ -12,7 +12,15 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 readBaseStyle:(_Bool)arg3 state:(id)arg4;
-+ (void)initialize;
++ (id)wrapCodeEnumMap;
++ (id)tabLeaderEnumMap;
++ (id)strictTabTypeEnumMap;
++ (id)tabTypeEnumMap;
++ (id)dropCapEnumMap;
++ (id)lineSpacingEnumMap;
++ (id)horizontalAnchorEnumMap;
++ (id)verticalAnchorEnumMap;
++ (id)heightRuleEnumMap;
 
 @end
 

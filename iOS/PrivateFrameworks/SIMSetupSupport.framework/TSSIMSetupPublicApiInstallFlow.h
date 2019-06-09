@@ -14,7 +14,6 @@
 
 @interface TSSIMSetupPublicApiInstallFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSCellularPlanManagerCacheDelegate>
 {
-    _Bool _isPreinstallingViewControllerActive;
     _Bool _requireSetup;
     NSError *_planInstallError;
     NSMutableArray *_danglingPlanItems;
@@ -23,14 +22,18 @@
     UIViewController<TSSetupFlowItem> *_currentViewController;
     unsigned long long _userConsentType;
     UIBarButtonItem *_cancelButton;
+    _Bool _confirmationCodeRequired;
+    long long _signupConsentResponse;
+    _Bool _isPreinstallingViewControllerActive;
 }
 
+@property _Bool isPreinstallingViewControllerActive; // @synthesize isPreinstallingViewControllerActive=_isPreinstallingViewControllerActive;
 - (void).cxx_destruct;
+- (void)_maybeShowPreinstallConsentOnViewController:(id)arg1;
 - (void)planItemsUpdated:(id)arg1 planListError:(id)arg2;
 - (void)setDefaultNavigationItems:(id)arg1;
 - (void)viewControllerDidComplete:(id)arg1;
 - (long long)signupUserConsentResponse;
-- (_Bool)isPhoneFlow;
 - (id)nextViewControllerFrom:(id)arg1;
 - (void)firstViewController:(CDUnknownBlockType)arg1;
 - (id)firstViewController;

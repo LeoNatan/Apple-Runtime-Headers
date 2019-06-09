@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 - (long)getInfo:(void *)arg1 bufferLength:(unsigned long)arg2 infoSize:(unsigned int *)arg3 type:(unsigned int)arg4;
 - (_Bool)hasInfoType:(unsigned int)arg1;
 - (long)setInfo:(void *)arg1 size:(unsigned long)arg2 type:(unsigned int)arg3;
-- (long)configureWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_475a354f *)arg3;
+- (long)configureWithBuffer:(const char *)arg1 length:(unsigned long)arg2 optionalControlInfo:(CDStruct_39aa150d *)arg3;
 - (id)description;
 - (unsigned long)serializedSize;
 

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_showActionSheet;
 - (_Bool)allowHighlight;
 - (_Bool)allowInteraction:(long long)arg1;
+- (void)linkInteractionDidStart;
 - (void)handleLongPress;
 - (void)handleTap;
 - (id)_actionSheet;

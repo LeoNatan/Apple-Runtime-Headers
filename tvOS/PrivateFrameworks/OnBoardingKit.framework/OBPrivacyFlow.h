@@ -6,7 +6,7 @@
 
 #import <OnBoardingKit/OBFlow.h>
 
-@class NSArray, NSBundle, NSDictionary, NSString, UIImage;
+@class NSArray, NSBundle, NSDictionary, NSString, OBImage;
 
 @interface OBPrivacyFlow : OBFlow
 {
@@ -14,7 +14,7 @@
     NSString *_splashContentName;
     NSDictionary *_splashPlist;
     _Bool _buttonIconLoaded;
-    struct UIImage *_buttonIcon;
+    OBImage *_buttonIcon;
     NSString *_buttonTitle;
     NSString *_buttonCaption;
     NSString *_splashTitle;
@@ -38,10 +38,10 @@
 - (_Bool)_conformsToRequirements:(id)arg1;
 - (_Bool)_conformsToRequirement:(id)arg1;
 @property(readonly, nonatomic) _Bool showInCombinedList;
-- (void)setButtonIcon:(struct UIImage *)arg1;
-@property(readonly, nonatomic) UIImage *buttonIcon;
+- (void)setButtonIcon:(id)arg1;
+@property(readonly, nonatomic) OBImage *buttonIcon;
 @property(readonly, nonatomic, getter=isPersonallyIdentifiable) _Bool personallyIdentifiable;
-- (struct UIImage *)_bundleImageNamed:(id)arg1;
+- (id)_bundleImageNamed:(id)arg1;
 - (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 table:(id)arg3 preferredDeviceType:(unsigned long long)arg4;
 - (id)_splashLocalizedStringForKey:(id)arg1 language:(id)arg2 preferredDeviceType:(unsigned long long)arg3;
 @property(readonly, nonatomic) _Bool platformSupported;

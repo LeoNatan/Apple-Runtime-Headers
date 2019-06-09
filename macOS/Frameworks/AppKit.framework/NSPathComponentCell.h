@@ -31,12 +31,13 @@
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1 imageRect:(struct CGRect)arg2;
 - (struct CGRect)imageRectForBounds:(struct CGRect)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (unsigned long long)_interiorContentValueStateInView:(id)arg1;
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (long long)_interiorContentValueInView:(id)arg1;
+- (long long)_interiorContentStateInView:(id)arg1;
 - (BOOL)_shouldDrawHighlightRect;
 - (BOOL)_shouldStyleUneditableTextInView:(id)arg1;
-- (int)_effectiveArrowBackgroundStyleInView:(id)arg1;
-- (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
+- (long long)_contentBacking;
+- (id)_effectiveContentStyleForArrowInView:(id)arg1;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (long long)interiorBackgroundStyle;
 - (BOOL)_shouldDrawRTL;
 - (BOOL)_shouldHighlightDropTarget;

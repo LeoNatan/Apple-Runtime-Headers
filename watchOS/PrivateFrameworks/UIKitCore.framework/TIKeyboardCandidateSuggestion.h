@@ -8,7 +8,6 @@
 
 @class UITextSuggestion;
 
-__attribute__((visibility("hidden")))
 @interface TIKeyboardCandidateSuggestion : TIKeyboardCandidate
 {
     unsigned long long _customInfoType;

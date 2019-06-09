@@ -30,7 +30,6 @@
     NSObject<OS_dispatch_queue> *_clientNotifyQueue;
     NSObject<OS_dispatch_queue> *_backgroundActivityQueue;
     NSObject<OS_dispatch_queue> *_saveStateQueue;
-    long long _lastThermalEmergencyCount;
     long long _retriesForBackgroundActivity;
     BOOL _postLogoutInstallWillHaveFLO;
     BOOL _saveStateScheduled;
@@ -38,8 +37,6 @@
 }
 
 + (id)sharedUpdateServiceDaemon;
-+ (id)daemonTempDirectoryAppendedWithPath:(id)arg1;
-+ (id)daemonCacheDirectoryAppendedWithPath:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)migratePreferencesWithReply:(CDUnknownBlockType)arg1;
 - (void)clearCatalogAndNotifyWithReply:(CDUnknownBlockType)arg1;
@@ -47,7 +44,7 @@
 - (void)preferenceObjectForKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)_takeAllValidAdditionalPostLogoutInstallRequests;
 - (id)_addAdditionalPostLogoutInstallRequests:(id)arg1;
-- (void)_runBackgroundActionsOnCurrentQueueIfAppropriate:(char *)arg1;
+- (void)_runBackgroundActionsOnCurrentQueueIfAppropriate:(char *)arg1 shouldSkipScanning:(BOOL)arg2;
 - (void)_installStateDidChangeForKeys:(id)arg1;
 - (void)_refreshLocalUpdateObjects:(id)arg1 afterScan:(BOOL)arg2;
 - (void)authChallengeWasReceived:(id)arg1 handled:(char *)arg2;
@@ -63,6 +60,7 @@
 - (void)combinedStatusForUpdatesWithProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)conditionsMetForNonUserInitiatedUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)statusForUpdateWithProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)rebootForPostLogoutUpdatesAfterSuccess:(BOOL)arg1 nightInstall:(BOOL)arg2 shouldShutDown:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)takeRequestsToInstallAfterPostLogoutUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)registerRequestsToInstallAfterPostLogoutUpdates:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)productKeysToAutomaticallyInstallLaterWithReply:(CDUnknownBlockType)arg1;
@@ -83,7 +81,7 @@
 - (void)_updateProductForPostLogoutInstallResultsNotification:(id)arg1 withStatus:(id)arg2;
 - (void)_setProductsForPostLogoutInstallResultsNotification:(id)arg1 nowIsLater:(BOOL)arg2;
 - (void)cancelUpdatesForProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)startUpdatesForProductKeys:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 holdingBoostDuringInstall:(BOOL)arg3 usingForeground:(BOOL)arg4 clientBlocksRestart:(BOOL)arg5 allowOnlyAppleSigned:(BOOL)arg6 packageScriptUserID:(unsigned int)arg7 sendingStatusUpdates:(BOOL)arg8 replyWhenDone:(CDUnknownBlockType)arg9;
+- (void)startUpdatesForProductKeys:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 holdingBoostDuringInstall:(BOOL)arg3 usingForeground:(BOOL)arg4 clientBlocksRestart:(BOOL)arg5 packageScriptUserID:(unsigned int)arg6 sendingStatusUpdates:(BOOL)arg7 replyWhenDone:(CDUnknownBlockType)arg8;
 - (void)startRootModeUpdatesForProductKeys:(id)arg1 clientBlocksRestart:(BOOL)arg2 replyWhenDone:(CDUnknownBlockType)arg3;
 - (void)startUpdatesForProductKeys:(id)arg1 inForeground:(BOOL)arg2 clientBlocksRestart:(BOOL)arg3 replyWhenDone:(CDUnknownBlockType)arg4;
 - (void)startInstallingAdminUpdates:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
@@ -113,8 +111,6 @@
 - (void)currentDevKeyModeWithReply:(CDUnknownBlockType)arg1;
 - (void)clearInvalidationForIdentifier:(id)arg1 version:(id)arg2 forReason:(int)arg3;
 - (void)fetchMajorOSInfoForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)remainingPackageIdentifiersToInstallForProductKey:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)packageReferenceForMatchingIdentifier:(id)arg1 productKey:(id)arg2 invalidatingPrevious:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)availableUpdatesOfType:(long long)arg1 withState:(long long)arg2 filteredByState:(unsigned long long)arg3 filterDeferred:(BOOL)arg4 filterDuplicates:(BOOL)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)authorizeForManagingDaemonWithExternalFormData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)authorizeForUpdatingWithExternalFormData:(id)arg1 additionalTransactions:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;

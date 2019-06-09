@@ -9,8 +9,6 @@
 @interface NSOpenGLPixelBuffer : NSObject
 {
     struct _CGLPBufferObject *_CGLPBuffer;
-    void *_reserved1;
-    void *_reserved2;
 }
 
 + (void)initialize;

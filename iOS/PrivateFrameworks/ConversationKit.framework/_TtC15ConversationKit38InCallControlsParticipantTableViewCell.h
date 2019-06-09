@@ -8,7 +8,6 @@
 
 @class _TtC15ConversationKit19InCallControlButton;
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit38InCallControlsParticipantTableViewCell : UITableViewCell
 {
     // Error parsing type: , name: nameLabel
@@ -16,19 +15,13 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: cameraIcon
     // Error parsing type: , name: avatarView
     // Error parsing type: , name: ringButton
-    // Error parsing type: , name: isAccessiblityConstraintsEnabled
-    // Error parsing type: , name: nameLabelFirstBaselineLayoutConstraint
-    // Error parsing type: , name: subtitleLabelFirstBaselineLayoutConstraint
-    // Error parsing type: , name: subtitleLabelLastBaselineLayoutConstraint
-    // Error parsing type: , name: constraintsForCameraIconVisibleState
-    // Error parsing type: , name: constraintsForRingButtonVisibleState
     // Error parsing type: , name: callDelegate
     // Error parsing type: , name: delegate
 }
 
 - (void).cxx_destruct;
 - (void)didTapRing:(id)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 @property(nonatomic, readonly) _TtC15ConversationKit19InCallControlButton *ringButton; // @synthesize ringButton;

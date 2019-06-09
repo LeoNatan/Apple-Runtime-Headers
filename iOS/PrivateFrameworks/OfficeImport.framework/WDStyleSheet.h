@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 @interface WDStyleSheet : NSObject
 {
     NSMutableDictionary *mStyleDictionary;
-    WDDocument *mDocument;
     WDCharacterProperties *mDefaultCharacterProperties;
     WDParagraphProperties *mDefaultParagraphProperties;
     WDStyle *mDefaultParagraphStyle;
@@ -21,8 +20,11 @@ __attribute__((visibility("hidden")))
     WDStyle *mDefaultListStyle;
     NSMutableArray *mStylesInOrder;
     NSMutableDictionary *mIdDictionaryForName;
+    WDDocument *mDocument;
 }
 
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
+- (void).cxx_destruct;
 - (id)description;
 - (id)allAliasesForStyleId:(id)arg1 name:(id)arg2;
 - (id)styleIdToName:(id)arg1;
@@ -49,8 +51,6 @@ __attribute__((visibility("hidden")))
 - (id)styleWithId:(id)arg1;
 - (unsigned long long)styleCount;
 - (id)styles;
-- (id)document;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 - (void)initializeDefaultProperties;
 

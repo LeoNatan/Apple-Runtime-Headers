@@ -12,7 +12,7 @@
 #import <HealthDaemon/HKDataFlowLinkProcessor-Protocol.h>
 #import <HealthDaemon/HKWorkoutSessionServerInterface-Protocol.h>
 
-@class HDWorkoutBuilderEntity, HDWorkoutSessionServer, HKDataFlowLink, HKWorkoutSessionTaskConfiguration, NSObject, NSString, NSUUID;
+@class HDWorkoutBuilderEntity, HDWorkoutSessionServer, HKDataFlowLink, HKSource, HKWorkoutSessionTaskConfiguration, NSObject, NSString, NSUUID;
 @protocol HDWorkoutDataAccumulator, OS_dispatch_queue;
 
 @interface HDWorkoutSessionTaskServer : HDStandardTaskServer <HKWorkoutSessionServerInterface, HKDataFlowLinkProcessor, HDWorkoutDataSource, HDWorkoutDataDestination, HDWorkoutSessionObserver>
@@ -22,15 +22,17 @@
     HDWorkoutSessionServer *_sessionServer;
     HKDataFlowLink *_workoutDataFlowLink;
     HDWorkoutBuilderEntity *_builderEntity;
+    HKSource *_clientSource;
     id <HDWorkoutDataAccumulator> _accumulator;
 }
 
-+ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5 error:(id *)arg6;
-+ (_Bool)validateConfiguration:(id)arg1 error:(out id *)arg2;
++ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4 error:(id *)arg5;
++ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
 @property __weak id <HDWorkoutDataAccumulator> accumulator; // @synthesize accumulator=_accumulator;
+@property(readonly, copy, nonatomic) HKSource *clientSource; // @synthesize clientSource=_clientSource;
 - (void).cxx_destruct;
 - (void)_queue_setupSessionServer;
 - (void)connectionInvalidated;
@@ -56,8 +58,8 @@
 - (void)setAssociatedWorkoutBuilderEntity:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsAppRelaunchForRecovery;
 @property(readonly, nonatomic) _Bool requiresCoreLocationAssertion;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5 sessionServer:(id)arg6;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (void)connectionConfigured;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 clientSource:(id)arg4 delegate:(id)arg5 sessionServer:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

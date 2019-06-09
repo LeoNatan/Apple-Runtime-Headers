@@ -11,7 +11,6 @@
 }
 
 - (id)storeForMailboxUid:(id)arg1;
-- (id)tildeAbbreviatedPath;
 - (id)fullPath;
 - (id)displayName;
 

@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/NSObject-Protocol.h>
 
-@class HDDataCollectionObserverState, HKObjectType, NSString;
+@class HKObjectType, NSString;
 
 @protocol HDHealthDataCollector <NSObject>
 @property _Bool disabled;
@@ -17,8 +17,5 @@
 - (void)collectionStoppedForType:(HKObjectType *)arg1;
 - (void)updateCollectionInterval:(double)arg1 forType:(HKObjectType *)arg2;
 - (void)collectionStartedForType:(HKObjectType *)arg1 collectionInterval:(double)arg2;
-
-@optional
-- (_Bool)shouldCollectForObserverState:(HDDataCollectionObserverState *)arg1;
 @end
 

@@ -12,6 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)subsampleImagesToScreenSize;
++ (_Bool)disableAnimations;
++ (_Bool)disableAutoplay;
 + (_Bool)disableLegacyStoreLookups;
 + (_Bool)showDebugIndicators;
 + (void)initialize;

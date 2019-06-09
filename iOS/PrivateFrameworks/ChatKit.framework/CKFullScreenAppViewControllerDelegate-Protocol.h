@@ -14,6 +14,7 @@
 @optional
 - (_Bool)shouldAlwaysShowAppTitle;
 - (_Bool)fullscreenAppViewControllerShouldDismissOnDragSuccess:(id <CKFullScreenAppViewControllerProtocol>)arg1;
+- (double)fullscreenAppViewControllerCollapsedHeaderHeight:(id <CKFullScreenAppViewControllerProtocol>)arg1;
 - (double)fullscreenAppViewControllerCollapsedContentHeight:(id <CKFullScreenAppViewControllerProtocol>)arg1;
 - (void)fullscreenAppViewControllerDidTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)fullscreenAppViewControllerSwitcherDidSelectAppManager:(id <CKFullScreenAppViewControllerProtocol>)arg1;

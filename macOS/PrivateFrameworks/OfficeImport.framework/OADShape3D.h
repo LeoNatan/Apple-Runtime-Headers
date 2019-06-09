@@ -10,6 +10,7 @@
 
 @class OADBevel, OADColor;
 
+__attribute__((visibility("hidden")))
 @interface OADShape3D : NSObject <NSCopying>
 {
     OADBevel *mTopBevel;

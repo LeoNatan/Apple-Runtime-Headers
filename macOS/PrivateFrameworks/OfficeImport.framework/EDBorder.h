@@ -8,6 +8,7 @@
 
 @class EDColorReference, EDResources;
 
+__attribute__((visibility("hidden")))
 @interface EDBorder : NSObject
 {
     EDResources *mResources;

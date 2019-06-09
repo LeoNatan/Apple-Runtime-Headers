@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (id)editableTextFieldForCell:(id)arg1;
 - (id)detailTextLabelForCell:(id)arg1;
 - (void)layoutSubviewsOfCell:(id)arg1;
-- (id)defaultTextLabelFontForCell:(id)arg1;
 - (double)defaultTextFieldFontSizeForCell:(id)arg1;
 
 // Remaining properties

@@ -8,5 +8,23 @@
 
 @interface NSSet (CWChannel)
 - (id)channelsWithChannelProperties:(unsigned long long)arg1;
+- (id)mergedNetworks;
+- (id)networksWithSSID:(id)arg1;
+- (id)networksWithNoiseMinimum:(long long)arg1 maximum:(long long)arg2;
+- (id)networksWithRSSIMinimum:(long long)arg1 maximum:(long long)arg2;
+- (id)networksWithChannels:(id)arg1;
+- (id)networksWithPHYMode:(unsigned long long)arg1;
+- (id)networksWithSecurityType:(unsigned long long)arg1;
+- (id)infrastructureNetworks;
+- (id)ibssNetworks;
+- (id)mergedNetworks;
+- (id)networksWithSSID:(id)arg1;
+- (id)networksWithNoiseMinimum:(long long)arg1 maximum:(long long)arg2;
+- (id)networksWithRSSIMinimum:(long long)arg1 maximum:(long long)arg2;
+- (id)networksWithChannels:(id)arg1;
+- (id)networksWithPHYMode:(unsigned long long)arg1;
+- (id)networksWithSecurityType:(unsigned long long)arg1;
+- (id)infrastructureNetworks;
+- (id)ibssNetworks;
 @end
 

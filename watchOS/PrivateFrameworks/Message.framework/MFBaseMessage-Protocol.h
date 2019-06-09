@@ -9,7 +9,7 @@
 @class MFMessageInfo;
 
 @protocol MFBaseMessage <NSObject>
-@property(readonly, nonatomic) unsigned int libraryID;
+@property(readonly, nonatomic) long long libraryID;
 @property(readonly, nonatomic, getter=isLibraryMessage) _Bool libraryMessage;
 @property(readonly, nonatomic, getter=isKnownToHaveAttachments) _Bool knownToHaveAttachments;
 @property(readonly, nonatomic) _Bool senderVIP;
@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) _Bool read;
 @property(readonly, nonatomic) _Bool flagged;
 @property(readonly, nonatomic) long long messageIDHash;
-@property(readonly, nonatomic) unsigned int mailboxID;
+@property(readonly, nonatomic) long long mailboxID;
 @property(readonly, nonatomic) long long conversationHash;
 @property(readonly, nonatomic) unsigned int dateSentInterval;
 @property(readonly, nonatomic) unsigned int dateReceivedInterval;

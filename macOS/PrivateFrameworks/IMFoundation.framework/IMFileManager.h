@@ -20,13 +20,6 @@
 - (id)UTITypeOfMimeType:(id)arg1;
 - (id)pathExtensionForMIMEType:(id)arg1;
 - (id)displayNameOfFileWithName:(id)arg1 hfsFlags:(unsigned short)arg2;
-- (id)kindStringForFileWithName:(id)arg1 hfsType:(unsigned int)arg2 hfsCreator:(unsigned int)arg3 hfsFlags:(unsigned short)arg4;
-- (id)kindStringForFile:(id)arg1;
-- (BOOL)setAttributes:(id)arg1 ofItemAtPath:(id)arg2 error:(id *)arg3;
-- (id)attributesOfItemAtPath:(id)arg1 error:(id *)arg2;
-- (BOOL)existingPath:(id)arg1 toFSSpec:(void *)arg2;
-- (BOOL)existingPath:(id)arg1 toFSRef:(void *)arg2;
-- (id)createTempFileBasedOnName:(id)arg1 hfsType:(unsigned int)arg2 hfsCreator:(unsigned int)arg3 hfsFlags:(unsigned short)arg4;
 
 @end
 

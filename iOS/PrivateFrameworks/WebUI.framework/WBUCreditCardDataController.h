@@ -11,6 +11,10 @@
 }
 
 + (id)sharedCreditCardDataController;
+- (_Bool)_shouldOfferVirtualCards;
+- (void)setHasUsedNonVirtualCard;
+- (_Bool)hasUsedNonVirtualCard;
+- (unsigned long long)virtualCardFieldsToRequest;
 
 @end
 

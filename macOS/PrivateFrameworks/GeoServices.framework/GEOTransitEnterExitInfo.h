@@ -8,27 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOTransitEnterExitInfo : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     unsigned int _accessPointIndex;
     unsigned int _stopIndex;
     unsigned int _transferTime;
     BOOL _displayStop;
     BOOL _uncertainArrival;
     struct {
-        unsigned int accessPointIndex:1;
-        unsigned int stopIndex:1;
-        unsigned int transferTime:1;
-        unsigned int displayStop:1;
-        unsigned int uncertainArrival:1;
-    } _has;
+        unsigned int has_accessPointIndex:1;
+        unsigned int has_stopIndex:1;
+        unsigned int has_transferTime:1;
+        unsigned int has_displayStop:1;
+        unsigned int has_uncertainArrival:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL uncertainArrival; // @synthesize uncertainArrival=_uncertainArrival;
-@property(nonatomic) unsigned int transferTime; // @synthesize transferTime=_transferTime;
-@property(nonatomic) BOOL displayStop; // @synthesize displayStop=_displayStop;
-@property(nonatomic) unsigned int stopIndex; // @synthesize stopIndex=_stopIndex;
-@property(nonatomic) unsigned int accessPointIndex; // @synthesize accessPointIndex=_accessPointIndex;
++ (BOOL)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -36,13 +38,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasUncertainArrival;
+@property(nonatomic) BOOL uncertainArrival;
 @property(nonatomic) BOOL hasTransferTime;
+@property(nonatomic) unsigned int transferTime;
 @property(nonatomic) BOOL hasDisplayStop;
+@property(nonatomic) BOOL displayStop;
 @property(nonatomic) BOOL hasStopIndex;
+@property(nonatomic) unsigned int stopIndex;
 @property(nonatomic) BOOL hasAccessPointIndex;
+@property(nonatomic) unsigned int accessPointIndex;
 
 @end
 

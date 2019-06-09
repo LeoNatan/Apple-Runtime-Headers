@@ -4,9 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <IntentsUI/INUIVoiceShortcutRemoteViewControllerAddDelegate-Protocol.h>
-#import <IntentsUI/INUIVoiceShortcutRemoteViewControllerEditDelegate-Protocol.h>
+#import <IntentsUI/INUIVoiceShortcutRemoteViewControllerDelegate-Protocol.h>
 
-@protocol INUIVoiceShortcutRemoteHostingInterface <INUIVoiceShortcutRemoteViewControllerAddDelegate, INUIVoiceShortcutRemoteViewControllerEditDelegate>
+@protocol INUIVoiceShortcutRemoteHostingInterface <INUIVoiceShortcutRemoteViewControllerDelegate>
 @end
 

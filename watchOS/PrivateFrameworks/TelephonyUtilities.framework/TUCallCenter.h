@@ -8,7 +8,7 @@
 
 #import <TelephonyUtilities/TUCallContainer-Protocol.h>
 
-@class CNContactStore, NSArray, NSString, TUAudioDeviceController, TUCall, TUCallProviderManager, TUCallServicesInterface, TUConversationManager, TURouteController, TUVideoDeviceController;
+@class CNContactStore, NSArray, NSString, TUAudioDeviceController, TUCall, TUCallFilterController, TUCallProviderManager, TUCallServicesInterface, TUConversationManager, TURouteController, TUVideoDeviceController;
 @protocol OS_dispatch_queue, TUCallContainerPrivate;
 
 @interface TUCallCenter : NSObject <TUCallContainer>
@@ -18,6 +18,8 @@
     TUAudioDeviceController *_audioDeviceController;
     TUVideoDeviceController *_videoDeviceController;
     TURouteController *_routeController;
+    TURouteController *_pairedHostDeviceRouteController;
+    TUCallFilterController *_callFilterController;
     CNContactStore *_contactStore;
     TUCallProviderManager *_providerManager;
     TUConversationManager *_conversationManager;
@@ -26,18 +28,19 @@
     struct CGSize _localPortraitAspectRatio;
 }
 
-+ (id)callCenterWithQueue:(id)arg1 daemonDelegate:(id)arg2 shouldRegister:(_Bool)arg3;
++ (id)callCenterWithQueue:(id)arg1 server:(id)arg2 shouldRegister:(_Bool)arg3;
 + (id)callCenterWithQueue:(id)arg1;
-+ (id)sharedInstanceWithQueue:(id)arg1 daemonDelegate:(id)arg2 shouldRegister:(_Bool)arg3;
++ (id)sharedInstanceWithQueue:(id)arg1 server:(id)arg2 shouldRegister:(_Bool)arg3;
 + (id)sharedInstance;
 + (id)sharedContactStore;
-+ (const void *)sharedAddressBook;
 @property(copy, nonatomic) CDUnknownBlockType disconnectCallPreflight; // @synthesize disconnectCallPreflight=_disconnectCallPreflight;
 @property(nonatomic) struct CGSize localPortraitAspectRatio; // @synthesize localPortraitAspectRatio=_localPortraitAspectRatio;
 @property(nonatomic) struct CGSize localLandscapeAspectRatio; // @synthesize localLandscapeAspectRatio=_localLandscapeAspectRatio;
 @property(retain, nonatomic) TUConversationManager *conversationManager; // @synthesize conversationManager=_conversationManager;
 @property(retain, nonatomic) TUCallProviderManager *providerManager; // @synthesize providerManager=_providerManager;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+@property(retain, nonatomic) TUCallFilterController *callFilterController; // @synthesize callFilterController=_callFilterController;
+@property(retain, nonatomic) TURouteController *pairedHostDeviceRouteController; // @synthesize pairedHostDeviceRouteController=_pairedHostDeviceRouteController;
 @property(retain, nonatomic) TURouteController *routeController; // @synthesize routeController=_routeController;
 @property(retain, nonatomic) TUVideoDeviceController *videoDeviceController; // @synthesize videoDeviceController=_videoDeviceController;
 @property(retain, nonatomic) TUAudioDeviceController *audioDeviceController; // @synthesize audioDeviceController=_audioDeviceController;
@@ -160,6 +163,7 @@
 - (_Bool)isRelayCallingSupportedForProvider:(id)arg1 isVideo:(_Bool)arg2;
 - (id)callServicesClientCapabilities;
 @property(readonly, nonatomic) id <TUCallContainerPrivate> callContainer;
+- (void)fetchCurrentCalls;
 - (void)dealloc;
 - (void)registerWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *debugDescription;

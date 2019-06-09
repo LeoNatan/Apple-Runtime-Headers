@@ -8,6 +8,7 @@
 
 @class NSTrackingArea;
 
+__attribute__((visibility("hidden")))
 @interface MKMouseOverActionView : MKViewWithHairline
 {
     NSTrackingArea *_trackingArea;
@@ -15,8 +16,8 @@
     CDUnknownBlockType _onMouseExit;
 }
 
-@property(copy) CDUnknownBlockType onMouseExit; // @synthesize onMouseExit=_onMouseExit;
-@property(copy) CDUnknownBlockType onMouseEnter; // @synthesize onMouseEnter=_onMouseEnter;
+@property(copy, nonatomic) CDUnknownBlockType onMouseExit; // @synthesize onMouseExit=_onMouseExit;
+@property(copy, nonatomic) CDUnknownBlockType onMouseEnter; // @synthesize onMouseEnter=_onMouseEnter;
 - (void).cxx_destruct;
 - (void)updateTrackingAreas;
 - (void)mouseExited:(id)arg1;

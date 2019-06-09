@@ -24,11 +24,11 @@
 + (id)dictionaryWithObjects:(const id *)arg1 forKeys:(const id *)arg2 count:(unsigned long long)arg3;
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
 + (id)dictionary;
-+ (id)_alloc;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedKeySetForKeys:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)_cfMutableCopy;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithObjects:(id)arg1 forKeys:(id)arg2;

@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_focusOutExpose;
 - (void)_focusOnExpose;
 - (id)_widgetList;
-- (void)dispatchBuildWidgetGuide:(id)arg1 target:(id)arg2 tag:(int)arg3 wait:(double)arg4;
+- (void)dispatchBuildWidgetGuide:(id)arg1 target:(id)arg2 tag:(long long)arg3 wait:(double)arg4;
 - (void)dispatchFocusOutDock;
 - (void)dispatchFocusOnDockAndSelectDockItem:(id)arg1;
 - (void)dispatchFocusOnDockAndSelectDockItemAtIndex:(unsigned long long)arg1;
@@ -51,9 +51,6 @@ __attribute__((visibility("hidden")))
 - (void)_desktopDidShow:(id)arg1;
 - (void)_exposeDidShow:(id)arg1;
 - (void)_exposeDidHide:(id)arg1;
-- (void)_dashboardDidShow:(id)arg1;
-- (void)_dashboardDidHide:(id)arg1;
-- (void)_enableDashboard;
 - (void)applicationWillInvalidate;
 - (void)_initializeObserver;
 - (void)applicationDidInitialize;

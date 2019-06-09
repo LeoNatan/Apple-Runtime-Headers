@@ -9,6 +9,7 @@
 @class CTCarrierSpaceAuthInfo, CTCarrierSpacePlanGroupOptionInfo, NSDictionary, NSError;
 
 @protocol CTCarrierSpaceServiceInterface <NSObject>
+- (void)getAuthenticationContext:(void (^)(CTCarrierSpaceAuthenticationContext *, NSError *))arg1;
 - (void)refreshAppsInfo:(void (^)(NSError *))arg1;
 - (void)refreshPlansInfo:(void (^)(NSError *))arg1;
 - (void)refreshUsageInfo:(void (^)(NSError *))arg1;
@@ -19,7 +20,7 @@
 - (void)testMode:(_Bool)arg1 config:(NSDictionary *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)ping:(void (^)(NSError *))arg1;
 - (void)fetchDataPlanMetrics:(void (^)(CTCarrierSpaceDataPlanMetrics *, NSError *))arg1;
-- (void)purchasePlan:(CTCarrierSpacePlanGroupOptionInfo *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)purchasePlan:(CTCarrierSpacePlanGroupOptionInfo *)arg1 authInfo:(CTCarrierSpaceAuthInfo *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)refreshAllInfo:(void (^)(NSError *))arg1;
 - (void)fetchAppsInfo:(_Bool)arg1 completion:(void (^)(CTCarrierSpaceAppsInfo *, NSError *))arg2;
 - (void)fetchPlansInfo:(_Bool)arg1 completion:(void (^)(CTCarrierSpacePlansInfo *, NSError *))arg2;

@@ -21,7 +21,7 @@
 @property(nonatomic) _Bool textureVisible; // @synthesize textureVisible=_textureVisible;
 - (void).cxx_destruct;
 - (BOOL)_shouldAutoFlattenLayerTree;
-- (void)updateLayer;
+- (void)layout;
 - (void)_createBackdropLayers;
 - (void)_setupAppearance:(_Bool)arg1 style:(unsigned char)arg2;
 - (void)materialChanged:(unsigned char)arg1;

@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)labeledValueWithLabel:(id)arg1 value:(id)arg2;
-@property(readonly, copy) id value; // @synthesize value=_value;
-@property(readonly, copy) NSString *label; // @synthesize label=_label;
+@property(readonly) id value; // @synthesize value=_value;
+@property(readonly) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

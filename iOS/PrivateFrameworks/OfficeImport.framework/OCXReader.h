@@ -16,13 +16,13 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) OCPZipPackage *zipPackage; // @synthesize zipPackage=mZipPackage;
+- (void).cxx_destruct;
 - (id)read;
 - (_Bool)start;
 - (void)restartReaderToUseDecryptedDocument;
 - (_Bool)retainDecryptorWithErrorCode:(int *)arg1;
 - (_Bool)isBinaryReader;
 - (_Bool)verifyFileFormat;
-- (void)dealloc;
 
 @end
 

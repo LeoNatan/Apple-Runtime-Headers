@@ -10,7 +10,6 @@
 
 @class NSString, NSView, SiriUIAceObjectViewController;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIAceObjectControllerCell : SiriUIClearBackgroundCell <CAAnimationDelegate>
 {
     NSView *_animationView;

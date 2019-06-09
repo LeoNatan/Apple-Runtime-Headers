@@ -4,8 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CarPlaySupport/NSObject-Protocol.h>
+#import <CarPlaySupport/CPBaseTemplateProviding-Protocol.h>
 
-@protocol CPSearchTemplateProviding <NSObject>
+@protocol CPSearchTemplateProviding <CPBaseTemplateProviding>
 @end
 

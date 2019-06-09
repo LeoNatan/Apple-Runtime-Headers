@@ -9,6 +9,7 @@
 @class AVWeakReference, NSDictionary, NSString;
 @protocol AVAudioSessionDelegateMediaPlayerOnly;
 
+__attribute__((visibility("hidden")))
 @interface AVAudioSessionMediaPlayerOnlyInternal : NSObject
 {
     AVWeakReference *weakReference;

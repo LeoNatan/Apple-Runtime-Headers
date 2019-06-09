@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) NSArray *applicableRenderingAlgorithms;
 @property(readonly, nonatomic) unsigned long long nextAvailableInputBus;
 @property(nonatomic) float outputVolume;
+@property(nonatomic) long long outputType;
 - (id)init;
 
 // Remaining properties
@@ -29,7 +30,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(nonatomic) float volume;
+@property(nonatomic) float volume; // @dynamic volume;
 
 @end
 

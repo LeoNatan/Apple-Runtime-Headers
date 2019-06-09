@@ -16,7 +16,7 @@
 @property(retain, nonatomic) NSMutableDictionary *extensions; // @synthesize extensions=_extensions;
 - (void).cxx_destruct;
 - (id)_extensionMatchingSection:(id)arg1 category:(id)arg2;
-- (id)_customSectionIdentifierForExtension:(id)arg1;
+- (id)_customSectionIdentifiersForExtension:(id)arg1;
 - (id)_categoriesForExtension:(id)arg1;
 - (struct NSMutableDictionary *)_sectionDictForSection:(id)arg1;
 - (void)_removeAllExtensions;

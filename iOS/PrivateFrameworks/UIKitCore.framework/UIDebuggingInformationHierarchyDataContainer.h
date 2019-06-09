@@ -11,10 +11,12 @@
 __attribute__((visibility("hidden")))
 @interface UIDebuggingInformationHierarchyDataContainer : NSObject
 {
+    _Bool _collapsed;
     UIView *_view;
     long long _level;
 }
 
+@property(nonatomic) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) long long level; // @synthesize level=_level;
 @property(nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;

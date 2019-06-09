@@ -6,21 +6,18 @@
 
 #import <TemplateKit/TLKView.h>
 
-#import <TemplateKit/NUIContainerStackViewDelegate-Protocol.h>
+#import <TemplateKit/NUIContainerViewDelegate-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString, NUIContainerStackView;
 
-@interface TLKImagesView : TLKView <NUIContainerStackViewDelegate>
+@interface TLKImagesView : TLKView <NUIContainerViewDelegate>
 {
     _Bool _paddingDisabled;
     NSArray *_images;
     NSMutableArray *_imageViews;
-    NUIContainerStackView *_stackView;
 }
 
-+ (struct UIEdgeInsets)defaultInsets;
-@property(retain) NUIContainerStackView *stackView; // @synthesize stackView=_stackView;
-@property(retain) NSMutableArray *imageViews; // @synthesize imageViews=_imageViews;
+@property(retain, nonatomic) NSMutableArray *imageViews; // @synthesize imageViews=_imageViews;
 @property(nonatomic, getter=isPaddingDisabled) _Bool paddingDisabled; // @synthesize paddingDisabled=_paddingDisabled;
 @property(retain, nonatomic) NSArray *images; // @synthesize images=_images;
 - (void).cxx_destruct;
@@ -28,10 +25,11 @@
 - (void)updateWithImages:(id)arg1;
 - (void)updateForPaddingDisabled:(_Bool)arg1;
 - (void)observedPropertiesChanged;
-- (void)styleDidChange:(unsigned long long)arg1;
-- (id)init;
+- (_Bool)usesDefaultInsets;
+- (id)setupContentView;
 
 // Remaining properties
+@property(retain, nonatomic) NUIContainerStackView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

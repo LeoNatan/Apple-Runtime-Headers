@@ -14,6 +14,7 @@
 }
 
 @property(retain) NSPopUpButton *profilesPopupButton; // @synthesize profilesPopupButton=_profilesPopupButton;
+- (void)dealloc;
 
 @end
 

@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NeutrinoCore/NSObject-Protocol.h>
+#import <NeutrinoCore/NUMutableBufferProvider-Protocol.h>
 
 @class NSDictionary, NUPixelFormat, NURegion;
 @protocol NUImageStorage, NURenderer;
 
-@protocol NUImageStorage <NSObject>
+@protocol NUImageStorage <NUMutableBufferProvider>
 @property(readonly) NURegion *validRegion;
 @property(readonly) NUPixelFormat *format;
 @property(readonly) long long sizeInBytes;

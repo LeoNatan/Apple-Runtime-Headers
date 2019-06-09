@@ -9,7 +9,6 @@
 #import <CoreWLAN/NSCopying-Protocol.h>
 #import <CoreWLAN/NSSecureCoding-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface CWANQPProtoPortTuple : NSObject <NSSecureCoding, NSCopying>
 {
     long long _ipProtocol;

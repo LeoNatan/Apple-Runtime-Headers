@@ -7,6 +7,15 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (IKInterThread)
++ (void)insertAttribute:(id)arg1 intoView:(id)arg2 anchorPosition:(struct CGPoint *)arg3 forFilter:(id)arg4 settings:(id)arg5 configuration:(id)arg6 objectController:(id)arg7;
 - (id)ikInMainLoopWait:(BOOL)arg1;
+- (void)imageBrowser:(id)arg1 didValidateVisibleCellsAtIndexes:(id)arg2;
+- (void)imageBrowser:(id)arg1 willDisplayCellsAtIndexes:(id)arg2;
+- (id)IKImageRepresentationWithType:(id)arg1;
+- (id)imageToDrawForCell:(id)arg1;
+- (id)_viewIdentifier;
+- (id)imageSubtitle;
+- (id)imageTitle;
+@property(retain, nonatomic) id associatedObject; // @dynamic associatedObject;
 @end
 

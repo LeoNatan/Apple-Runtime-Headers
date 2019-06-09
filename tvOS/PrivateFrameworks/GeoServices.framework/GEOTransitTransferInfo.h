@@ -8,18 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOTransitTransferInfo : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     unsigned long long _transferMuid;
     unsigned int _transferTime;
     struct {
-        unsigned int transferMuid:1;
-        unsigned int transferTime:1;
-    } _has;
+        unsigned int has_transferMuid:1;
+        unsigned int has_transferTime:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int transferTime; // @synthesize transferTime=_transferTime;
-@property(nonatomic) unsigned long long transferMuid; // @synthesize transferMuid=_transferMuid;
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -27,10 +32,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasTransferTime;
+@property(nonatomic) unsigned int transferTime;
 @property(nonatomic) _Bool hasTransferMuid;
+@property(nonatomic) unsigned long long transferMuid;
 
 @end
 

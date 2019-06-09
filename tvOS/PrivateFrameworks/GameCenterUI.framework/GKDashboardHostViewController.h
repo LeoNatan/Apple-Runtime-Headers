@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GameCenterUI/GKUIRemoteViewController.h>
+#import <GameCenterUI/GKExtensionRemoteViewController.h>
 
 #import <GameCenterUI/GKGameCenterDashboardServiceProtocol-Protocol.h>
 
 @class GKDashboardAssetController, GKGame, GKGameCenterViewController, NSString;
 
-@interface GKDashboardHostViewController : GKUIRemoteViewController <GKGameCenterDashboardServiceProtocol>
+@interface GKDashboardHostViewController : GKExtensionRemoteViewController <GKGameCenterDashboardServiceProtocol>
 {
     GKGameCenterViewController *_delegateWeak;
     GKDashboardAssetController *_dashboardAssetController;

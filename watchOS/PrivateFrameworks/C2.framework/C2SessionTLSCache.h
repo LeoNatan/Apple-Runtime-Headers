@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)C2Session:(id)arg1 originalHost:(id)arg2 updatedRoute:(id)arg3;
 - (void)C2Session:(id)arg1 didBecomeInvalidWithError:(id)arg2;
+- (id)underlyingDelegateQueue;
 - (id)sessionForOptions:(id)arg1;
 - (id)_createSessionWithTLSPinning:(_Bool)arg1;
 - (id)init;

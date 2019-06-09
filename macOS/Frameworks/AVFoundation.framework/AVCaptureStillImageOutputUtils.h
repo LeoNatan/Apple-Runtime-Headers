@@ -27,14 +27,13 @@ __attribute__((visibility("hidden")))
 
 + (void)initialize;
 - (struct opaqueCMSampleBuffer *)copyTransformedSampleBufferWithSettings:(id)arg1 orientation:(long long)arg2 mirrored:(BOOL)arg3 sample:(struct opaqueCMSampleBuffer *)arg4 forceClean:(BOOL)arg5 error:(id *)arg6;
-- (struct opaqueCMSampleBuffer *)copyTransformedSampleBufferFromSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 forceClean:(BOOL)arg2 error:(id *)arg3;
-- (id)encodeTransform:(struct opaqueCMSampleBuffer *)arg1;
-- (id)transferTransform:(struct opaqueCMSampleBuffer *)arg1;
-- (id)rotationTransform:(struct opaqueCMSampleBuffer *)arg1;
+- (struct opaqueCMSampleBuffer *)_copyTransformedSampleBufferFromSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 forceClean:(BOOL)arg2 error:(id *)arg3;
+- (id)_encodeTransform:(struct opaqueCMSampleBuffer *)arg1;
+- (id)_transferTransform:(struct opaqueCMSampleBuffer *)arg1;
+- (id)_rotationTransform:(struct opaqueCMSampleBuffer *)arg1;
 @property(copy, nonatomic) NSDictionary *outputSettings;
 @property(nonatomic) long long imageOrientation;
 @property(nonatomic, getter=isImageMirrored) BOOL imageMirrored;
-- (void)finalize;
 - (void)dealloc;
 - (void)clean;
 - (id)init;

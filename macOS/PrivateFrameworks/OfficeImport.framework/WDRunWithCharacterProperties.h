@@ -8,6 +8,7 @@
 
 @class WDCharacterProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDRunWithCharacterProperties : WDRun
 {
     WDCharacterProperties *mProperties;

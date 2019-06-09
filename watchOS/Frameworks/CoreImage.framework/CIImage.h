@@ -9,7 +9,7 @@
 #import <CoreImage/NSCopying-Protocol.h>
 #import <CoreImage/NSSecureCoding-Protocol.h>
 
-@class AVDepthData, AVPortraitEffectsMatte, CIFilterShape, NSDictionary, NSURL;
+@class AVDepthData, AVPortraitEffectsMatte, AVSemanticSegmentationMatte, CIFilterShape, NSDictionary, NSURL;
 
 @interface CIImage : NSObject <NSSecureCoding, NSCopying>
 {
@@ -45,25 +45,41 @@
 + (id)imageWithBitmapData:(id)arg1 bytesPerRow:(unsigned long)arg2 size:(struct CGSize)arg3 format:(int)arg4 options:(id)arg5;
 + (id)imageWithCGLayer:(struct CGLayer *)arg1 options:(id)arg2;
 + (id)imageWithCGLayer:(struct CGLayer *)arg1;
++ (id)imageWithCGImageSource:(struct CGImageSource *)arg1 index:(unsigned long)arg2 options:(id)arg3;
 + (id)imageWithCGImage:(struct CGImage *)arg1 options:(id)arg2;
 + (id)imageWithCGImage:(struct CGImage *)arg1;
++ (id)imageWithIOSurface:(struct __IOSurface *)arg1 options:(id)arg2;
++ (id)imageWithIOSurface:(struct __IOSurface *)arg1;
 + (id)nullImage;
++ (id)clearImage;
++ (id)yellowImage;
++ (id)magentaImage;
++ (id)cyanImage;
++ (id)blueImage;
++ (id)greenImage;
++ (id)redImage;
++ (id)grayImage;
++ (id)whiteImage;
++ (id)blackImage;
 + (id)imageWithDepthData:(id)arg1;
 + (id)imageWithDepthData:(id)arg1 options:(id)arg2;
 + (id)imageWithPortraitEffectsMatte:(id)arg1;
 + (id)imageWithPortraitEffectsMatte:(id)arg1 options:(id)arg2;
 + (id)imageWithPortaitEffectsMatte:(id)arg1;
 + (id)imageWithPortaitEffectsMatte:(id)arg1 options:(id)arg2;
++ (id)imageWithSemanticSegmentationMatte:(id)arg1;
++ (id)imageWithSemanticSegmentationMatte:(id)arg1 options:(id)arg2;
 + (id)imageWithAttributedString:(id)arg1 format:(int)arg2 options:(id)arg3;
 + (id)imageWithAttributedString:(id)arg1 format:(int)arg2;
++ (id)clearImage:(struct CGRect)arg1;
 + (id)imageWithImageProvider:(id)arg1 size:(unsigned long)arg2:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 options:(id)arg6;
 + (id)imageWithImageProvider:(id)arg1 userInfo:(id)arg2 size:(struct CGSize)arg3 format:(int)arg4 flipped:(_Bool)arg5 colorSpace:(struct CGColorSpace *)arg6;
-+ (id)clearImage:(struct CGRect)arg1;
++ (id)imageYCC444:(id)arg1 matrix:(int)arg2 fullRange:(_Bool)arg3 colorSpace:(struct CGColorSpace *)arg4;
++ (id)imageWithYImage:(id)arg1 CrCbImage:(id)arg2 CrCbScale:(int)arg3 matrix:(int)arg4 fullRange:(_Bool)arg5 colorSpace:(struct CGColorSpace *)arg6;
++ (id)imageWithYCCImage:(id)arg1 matrix:(int)arg2 fullRange:(_Bool)arg3 colorSpace:(struct CGColorSpace *)arg4;
 + (id)smartColorAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
 + (id)smartToneAdjustmentsForValue:(double)arg1 localLightAutoValue:(double)arg2 andStatistics:(id)arg3;
 + (id)smartToneAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
-+ (id)imageYCC444:(id)arg1 matrix:(int)arg2 fullRange:(_Bool)arg3 colorSpace:(struct CGColorSpace *)arg4;
-+ (id)imageWithYImage:(id)arg1 CrCbImage:(id)arg2 CrCbScale:(int)arg3 matrix:(int)arg4 fullRange:(_Bool)arg5 colorSpace:(struct CGColorSpace *)arg6;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (struct CGRect)regionOfInterestForImage:(id)arg1 inRect:(struct CGRect)arg2;
 - (void *)_internalRepresentation;
@@ -144,6 +160,7 @@
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
 - (id)initWithCVPixelBuffer:(struct __CVBuffer *)arg1;
 - (id)_initWithCVImageBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
+@property(readonly, nonatomic) AVSemanticSegmentationMatte *semanticSegmentationMatte;
 @property(readonly, nonatomic) AVPortraitEffectsMatte *portraitEffectsMatte;
 @property(readonly, nonatomic) AVDepthData *depthData;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer;
@@ -160,6 +177,7 @@
 - (id)initWithCGLayer:(struct CGLayer *)arg1;
 - (id)initWithCGImageSource:(struct CGImageSource *)arg1 index:(unsigned long)arg2 options:(id)arg3;
 - (id)initMatteWithImageSource:(struct CGImageSource *)arg1 options:(id)arg2;
+- (struct __CVBuffer *)_pixelBufferFromAuxProps:(struct __CFDictionary *)arg1;
 - (id)initAuxiliaryWithImageSource:(struct CGImageSource *)arg1 options:(id)arg2 depth:(_Bool)arg3;
 - (id)initWithCGImage:(struct CGImage *)arg1 options:(id)arg2;
 - (id)_initNaiveWithCGImage:(struct CGImage *)arg1 options:(id)arg2;
@@ -167,6 +185,8 @@
 @property(readonly, nonatomic) struct CGImage *CGImage;
 - (struct CGImage *)_originalCGImage;
 - (void)_setOriginalCGImage:(struct CGImage *)arg1 options:(id)arg2;
+- (id)initWithIOSurface:(struct __IOSurface *)arg1 options:(id)arg2;
+- (id)initWithIOSurface:(struct __IOSurface *)arg1;
 - (id)_initWithIOSurface:(struct __IOSurface *)arg1 options:(id)arg2 owner:(void *)arg3;
 - (id)initWithDepthData:(id)arg1;
 - (id)initWithDepthData:(id)arg1 options:(id)arg2;
@@ -174,19 +194,11 @@
 - (id)initWithPortraitEffectsMatte:(id)arg1 options:(id)arg2;
 - (id)initWithPortaitEffectsMatte:(id)arg1;
 - (id)initWithPortaitEffectsMatte:(id)arg1 options:(id)arg2;
+- (id)initWithSemanticSegmentationMatte:(id)arg1;
+- (id)initWithSemanticSegmentationMatte:(id)arg1 options:(id)arg2;
 - (id)initWithAttributedString:(id)arg1 format:(int)arg2 options:(id)arg3;
 - (id)initWithAttributedString:(id)arg1 format:(int)arg2;
 - (id)_pdfDataRepresentation;
-- (id)_initWithImageProvider:(CDUnknownBlockType)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 surfaceCache:(_Bool)arg6 options:(id)arg7;
-- (id)initWithImageProvider:(CDUnknownBlockType)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 options:(id)arg6;
-- (id)initWithImageProvider:(id)arg1 size:(unsigned long)arg2:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 options:(id)arg6;
-- (id)initWithImageProvider:(id)arg1 userInfo:(id)arg2 size:(struct CGSize)arg3 format:(int)arg4 flipped:(_Bool)arg5 colorSpace:(struct CGColorSpace *)arg6;
-- (id)imageWithExtent:(struct CGRect)arg1 processorDescription:(id)arg2 argumentDigest:(unsigned long long)arg3 inputFormat:(int)arg4 outputFormat:(int)arg5 options:(id)arg6 roiCallback:(CDUnknownBlockType)arg7 processor:(CDUnknownBlockType)arg8;
-- (id)smartColorAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
-- (id)smartToneAdjustmentsForValue:(double)arg1 localLightAutoValue:(double)arg2 andStatistics:(id)arg3;
-- (id)smartToneAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
-- (id)smartColorStatistics;
-- (id)smartToneStatistics;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 options:(id)arg2;
 - (id)autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 options:(id)arg3;
 - (id)_autoRedEyeFilterWithFeatures:(id)arg1 imageProperties:(id)arg2 context:(id)arg3 options:(id)arg4;
@@ -198,17 +210,27 @@
 - (id)autoAdjustmentFilters;
 - (id)autoAdjustmentFiltersWithImageProperties:(id)arg1 options:(id)arg2;
 - (id)_scaleImageToMaxDimension:(unsigned int)arg1;
-- (id)smartBlackAndWhiteAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
-- (id)smartBlackAndWhiteStatistics;
-- (id)metalImageByApplyingFilter:(id)arg1;
-- (id)metalImageByApplyingFilter:(id)arg1 withInputParameters:(id)arg2;
+- (void)getAutocropRect:(id)arg1 rotateXfrm:(struct CGAffineTransform)arg2 inputImageRect:(struct CGRect)arg3 clipRect:(struct CGRect *)arg4;
+- (id)autoRotateFilterFFT:(id)arg1 image:(struct CGImage *)arg2 inputRect:(struct CGRect)arg3 maxTiltAngle:(float)arg4 detectVerticalLines:(_Bool)arg5;
+- (id)getAutoRotateFilter:(id)arg1 ciImage:(id)arg2 inputRect:(struct CGRect)arg3 rotateCropRect:(struct CGRect *)arg4 maxTiltAngle:(float)arg5 detectVerticalLines:(_Bool)arg6;
+- (struct CGPoint)calcIntersection:(struct CGPoint)arg1 slope1:(struct CGPoint)arg2 pt2:(struct CGPoint)arg3 slope2:(struct CGPoint)arg4;
+- (id)imageWithExtent:(struct CGRect)arg1 processorDescription:(id)arg2 argumentDigest:(unsigned long long)arg3 inputFormat:(int)arg4 outputFormat:(int)arg5 options:(id)arg6 roiCallback:(CDUnknownBlockType)arg7 processor:(CDUnknownBlockType)arg8;
+- (id)_initWithImageProvider:(CDUnknownBlockType)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 surfaceCache:(_Bool)arg6 options:(id)arg7;
+- (id)initWithImageProvider:(CDUnknownBlockType)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 options:(id)arg6;
+- (id)initWithImageProvider:(id)arg1 size:(unsigned long)arg2:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace *)arg5 options:(id)arg6;
+- (id)initWithImageProvider:(id)arg1 userInfo:(id)arg2 size:(struct CGSize)arg3 format:(int)arg4 flipped:(_Bool)arg5 colorSpace:(struct CGColorSpace *)arg6;
 - (id)localLightStatisticsNoProxy;
 - (id)localLightStatistics;
 - (id)localLightStatisticsWithProxy:(_Bool)arg1;
-- (void)getAutocropRect:(id)arg1 rotateXfrm:(struct CGAffineTransform)arg2 inputImageRect:(struct CGRect)arg3 clipRect:(struct CGRect *)arg4;
-- (id)autoRotateFilterFFT:(id)arg1 image:(struct CGImage *)arg2 inputRect:(struct CGRect)arg3;
-- (id)getAutoRotateFilter:(id)arg1 ciImage:(id)arg2 rgbRows:(id)arg3 inputRect:(struct CGRect)arg4 rotateCropRect:(struct CGRect *)arg5;
-- (struct CGPoint)calcIntersection:(struct CGPoint)arg1 slope1:(struct CGPoint)arg2 pt2:(struct CGPoint)arg3 slope2:(struct CGPoint)arg4;
+- (id)smartBlackAndWhiteAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
+- (id)smartBlackAndWhiteStatistics;
+- (id)smartColorAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
+- (id)smartToneAdjustmentsForValue:(double)arg1 localLightAutoValue:(double)arg2 andStatistics:(id)arg3;
+- (id)smartToneAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
+- (id)smartColorStatistics;
+- (id)smartToneStatistics;
+- (id)metalImageByApplyingFilter:(id)arg1;
+- (id)metalImageByApplyingFilter:(id)arg1 withInputParameters:(id)arg2;
 
 @end
 

@@ -6,12 +6,21 @@
 
 #import <CoreLocation/CLLocation.h>
 
-#import <coreroutine/RTCoreDataTransformable-Protocol.h>
+#import <coreroutine/RTCoreDataReadable-Protocol.h>
+#import <coreroutine/RTCoreDataWritable-Protocol.h>
 
 @class NSString;
 
-@interface CLLocation (RTCoreDataTransformable) <RTCoreDataTransformable>
+@interface CLLocation (RTCoreDataTransformable) <RTCoreDataReadable, RTCoreDataWritable>
++ (id)createWithRTCLLocationMO:(id)arg1;
++ (id)createWithManagedObject:(id)arg1;
 - (id)managedObjectWithContext:(id)arg1;
+- (id)coordinateToString;
+- (id)toString;
+- (id)initWithRTPLocation:(id)arg1;
+- (id)initWithRTLocationOfInterest:(id)arg1;
+- (id)initWithRTLocation:(id)arg1 speed:(double)arg2;
+- (id)initWithRTLocation:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

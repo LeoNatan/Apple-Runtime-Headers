@@ -6,9 +6,9 @@
 
 #import <Mail/NSObject-Protocol.h>
 
-@class MFEWSMessageActionSyncOperation;
+@class ECLocalMessageActionResults, MFEWSMessageActionSyncOperation;
 
 @protocol MFEWSMessageActionSyncOperationDelegate <NSObject>
-- (void)messageActionSyncOperationCompleted:(MFEWSMessageActionSyncOperation *)arg1;
+- (void)messageActionSyncOperationCompleted:(MFEWSMessageActionSyncOperation *)arg1 results:(ECLocalMessageActionResults *)arg2;
 @end
 

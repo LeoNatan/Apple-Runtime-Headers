@@ -135,10 +135,6 @@ struct EventTypeSpec {
     unsigned int _field2;
 };
 
-struct FSRef {
-    unsigned char hidden[80];
-};
-
 struct HandleTSMEventCompletionContext {
     int _field1;
     char _field2;
@@ -172,6 +168,23 @@ struct NSButtonState {
     char _field2;
     char _field3;
     char _field4;
+};
+
+struct NSDPClassInfo {
+    struct NSDPClassInfo *_field1;
+    Class _field2;
+    unsigned long long _field3;
+    struct NSDPPropertyInfo *_field4;
+    struct __CFDictionary *_field5;
+    struct __CFDictionary *_field6;
+    struct __CFDictionary *_field7;
+};
+
+struct NSDPPropertyInfo {
+    SEL _field1[3];
+    struct __CFString *_field2;
+    unsigned short _field3;
+    unsigned short _field4;
 };
 
 struct NSEdgeInsets {
@@ -244,22 +257,6 @@ struct NSToolbarFullScreenContentViewLayout_t {
     struct CGRect _field6;
     struct CGRect _field7;
     struct CGRect _field8;
-};
-
-struct NSVisualEffectViewInternal {
-    id _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    long long _field5;
-    long long _field6;
-    long long _field7;
-    long long _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    unsigned long long _field13;
 };
 
 struct NSWindowBatchOrderingTriplet {
@@ -393,21 +390,23 @@ struct SLMPopUpMenuContext_t {
     struct CGSize _field17;
     unsigned long long _field18;
     id _field19;
-    id _field20;
-    id _field21;
-    struct OpaqueMenuRef *_field22;
-    struct Point _field23;
-    char _field24;
-    struct Rect _field25;
-    struct Rect _field26;
-    char _field27;
-    unsigned int _field28;
+    struct CGRect _field20;
+    unsigned long long _field21;
+    id _field22;
+    id _field23;
+    struct OpaqueMenuRef *_field24;
+    struct Point _field25;
+    char _field26;
+    struct Rect _field27;
+    struct Rect _field28;
     char _field29;
-    char _field30;
+    unsigned int _field30;
     char _field31;
     char _field32;
     char _field33;
     char _field34;
+    char _field35;
+    char _field36;
 };
 
 struct SpeechChannelRecord {
@@ -1398,6 +1397,7 @@ struct _CGLContextObject {
         CDUnknownFunctionPointerType _field972;
         CDUnknownFunctionPointerType _field973;
         CDUnknownFunctionPointerType _field974;
+        CDUnknownFunctionPointerType _field975;
     } _field2;
     struct _CGLPrivateObject *_field3;
     void *_field4;
@@ -1571,7 +1571,7 @@ struct _TvFlags3 {
     unsigned int allowsTypeSelect:1;
     unsigned int editOnSingleClick:1;
     unsigned int delegateRespondsTo_shouldTrackCell:1;
-    unsigned int hasRowHeaderView:1;
+    unsigned int unused:1;
 };
 
 struct __CFDictionary;
@@ -1579,11 +1579,6 @@ struct __CFDictionary;
 struct __CFRunLoopTimer;
 
 struct __CFString;
-
-struct __NSBaselineOffsets {
-    double _field1;
-    double _field2;
-};
 
 struct __NSKeyValueCodingControllerModeType {
     long long mode;
@@ -1675,10 +1670,10 @@ typedef struct {
 } CDStruct_d87b8232;
 
 typedef struct {
-    unsigned long long serial;
-    unsigned long long timestamp;
-    unsigned long long delta;
-} CDStruct_c75109f2;
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+} CDStruct_14f26992;
 
 typedef struct {
     unsigned long long _field1;
@@ -1705,6 +1700,23 @@ typedef struct {
 } CDStruct_815caf98;
 
 typedef struct {
+    unsigned int trackingMode:3;
+    unsigned int trimmedLabels:1;
+    unsigned int drawing:1;
+    unsigned int reserved1:2;
+    unsigned int recalcToolTips:1;
+    unsigned int usesWindowsStyle:1;
+    unsigned int dontShowSelectedAndPressedAppearance:1;
+    unsigned int menuShouldBeUniquedAgainstMain:1;
+    unsigned int style:8;
+    unsigned int flatMinX:1;
+    unsigned int flatMaxX:1;
+    unsigned int segmentedSeparated:1;
+    unsigned int animateNextLayout:1;
+    unsigned int reserved:9;
+} CDStruct_bdbd3e0b;
+
+typedef struct {
     char _field1;
     char _field2;
     char _field3;
@@ -1728,6 +1740,16 @@ typedef struct {
     char _field2;
     double _field3;
 } CDStruct_8e9e3288;
+
+typedef struct {
+    double scaleFactor;
+    unsigned long long controlSize;
+    char isActive;
+    char isEnabled;
+    char isHighlighted;
+    char isOn;
+    char isRTL;
+} CDStruct_0b8ffed7;
 
 typedef struct {
     double minPossiblePosition;
@@ -1852,7 +1874,8 @@ typedef struct {
     double collapseAnimation_KnobOpacityProgress;
     double collapseAnimation_KnobCornerRadius;
     double collapseAnimation_TrackOpacityProgress;
-} CDStruct_5a39c0a2;
+    char prefersInactiveBezelArt;
+} CDStruct_c9beae75;
 
 typedef struct {
     unsigned int :4;
@@ -1917,13 +1940,4 @@ typedef struct {
     struct CGPoint contentTrackingPoint;
     char trackingSelection;
 } CDStruct_99688279;
-
-// Ambiguous groups
-typedef struct {
-    unsigned int _reserved:32;
-} CDStruct_4a40d4f7;
-
-typedef struct {
-    unsigned int reserved:32;
-} CDStruct_9fab449c;
 

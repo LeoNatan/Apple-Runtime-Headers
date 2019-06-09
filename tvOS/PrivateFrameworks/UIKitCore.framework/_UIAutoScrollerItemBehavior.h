@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (CDStruct_912d1c89)offsetForAutoScroller:(id)arg1;
+- (CDStruct_912d1c89)offsetForAutoScroller:(id)arg1 timeDelta:(double)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

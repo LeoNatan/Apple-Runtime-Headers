@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)executeEpilogue;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 context:(id)arg2 sqlCore:(id)arg3 idSets:(id)arg4 columnName:(id)arg5;
 

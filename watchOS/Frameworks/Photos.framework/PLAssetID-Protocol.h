@@ -9,7 +9,10 @@
 @class NSString;
 
 @protocol PLAssetID <NSObject>
-- (NSString *)cloudIdentifier;
+- (unsigned char)bundleScope;
+- (NSString *)filename;
+- (NSString *)directory;
+- (NSString *)libraryID;
 - (NSString *)uuid;
 @end
 

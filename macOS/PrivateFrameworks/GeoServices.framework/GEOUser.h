@@ -8,19 +8,22 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPhoto, NSString, PBUnknownFields;
+@class GEOPhoto, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOUser : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPhoto *_image;
     NSString *_name;
+    CDStruct_f720eac6 _flags;
 }
 
-@property(retain, nonatomic) GEOPhoto *image; // @synthesize image=_image;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,10 +32,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPhoto *image;
 @property(readonly, nonatomic) BOOL hasImage;
+- (void)_readImage;
+@property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) BOOL hasName;
+- (void)_readName;
 
 @end
 

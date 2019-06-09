@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <MessageUI/CNComposeHeaderViewDelegate-Protocol.h>
+
 @class MFComposeImageSizeView;
 
-@protocol MFComposeImageSizeViewDelegate
+@protocol MFComposeImageSizeViewDelegate <CNComposeHeaderViewDelegate>
 - (void)imageSizeView:(MFComposeImageSizeView *)arg1 changedSelectedScaleTo:(unsigned long long)arg2;
 @end
 

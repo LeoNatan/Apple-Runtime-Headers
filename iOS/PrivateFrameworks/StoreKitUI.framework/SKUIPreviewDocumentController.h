@@ -11,6 +11,7 @@
 
 @class IKAppDocument, NSHashTable, NSOperationQueue, NSString, SKUIClientContext, SUAudioPlayer;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPreviewDocumentController : NSObject <IKAppDocumentDelegate, SKUIStatusOverlayProvider>
 {
     SUAudioPlayer *_audioPlayer;

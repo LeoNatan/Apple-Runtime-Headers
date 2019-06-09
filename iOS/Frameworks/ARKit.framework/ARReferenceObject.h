@@ -8,11 +8,13 @@
 
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class ARPointCloud, NSData, NSString, NSUUID;
+@class ARPointCloud, NSData, NSSet, NSString, NSUUID;
 
 @interface ARReferenceObject : NSObject <NSSecureCoding>
 {
+    NSSet *_keyframes;
     NSString *_name;
+    NSString *_resourceGroupName;
     ARPointCloud *_rawFeaturePoints;
     NSUUID *_identifier;
     long long _version;
@@ -34,6 +36,7 @@
 @property(readonly, nonatomic) long long version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) ARPointCloud *rawFeaturePoints; // @synthesize rawFeaturePoints=_rawFeaturePoints;
+@property(readonly, nonatomic) NSString *resourceGroupName; // @synthesize resourceGroupName=_resourceGroupName;
 // Error parsing type for property extent:
 // Property attributes: T,R,N,V_extent
 
@@ -42,11 +45,13 @@
 
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)setResourceGroupName:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+@property(readonly, nonatomic) NSSet *keyframes;
 - (id)referenceObjectByMergingObject:(id)arg1 error:(id *)arg2;
 -     // Error parsing type: @80@0:8{?=[4]}16, name: referenceObjectByApplyingTransform:
 - (_Bool)exportObjectToURL:(id)arg1 previewImage:(id)arg2 error:(id *)arg3;

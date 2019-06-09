@@ -6,21 +6,27 @@
 
 #import <PassKitUI/PKSectionTableViewController.h>
 
-@class PKExpressPassCategory, PKExpressPassController, PKPassSnapshotter;
-@protocol PKExpressPassCategoryViewControllerDelegate;
+#import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 
-@interface PKExpressPassCategoryViewController : PKSectionTableViewController
+@class NSMutableDictionary, NSString, PKExpressPassCategory, PKExpressPassController, PKPassSnapshotter;
+@protocol PKExpressPassCategoryViewControllerDelegate, PKPaymentDataProvider;
+
+@interface PKExpressPassCategoryViewController : PKSectionTableViewController <PKPaymentDataProviderDelegate>
 {
     PKExpressPassCategory *_category;
     PKExpressPassController *_expressPassController;
     int _style;
     PKPassSnapshotter *_passSnapshotter;
+    id <PKPaymentDataProvider> _paymentDataProvider;
+    NSMutableDictionary *_passUniqueIDToCell;
+    NSMutableDictionary *_passUniqueIDToTransitBalanceModels;
     _Bool _isUserInteractionsEnabled;
     id <PKExpressPassCategoryViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <PKExpressPassCategoryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_fetchBalancesAndTransitPassPropertiesForPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateCategoryWithState:(id)arg1;
 - (id)_transformState:(id)arg1;
 - (void)_invalidateUserAuth;
@@ -31,6 +37,10 @@
 - (void)_enableExpressModeForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_disableExpressModeForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_didSelectPassAtIndexPath:(id)arg1;
+- (void)_updateBalancesWithServerBalances:(id)arg1 transitPassProperties:(id)arg2 forPass:(id)arg3;
+- (void)_updateBalancesWithServerBalances:(id)arg1 transitPassProperties:(id)arg2 forPassWithUniqueIdentifier:(id)arg3;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
@@ -39,7 +49,13 @@
 - (float)heightForRowAtIndexPath:(id)arg1;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (id)initWithCategory:(id)arg1 controller:(id)arg2 style:(int)arg3;
+- (id)initWithCategory:(id)arg1 paymentDataProvider:(id)arg2 controller:(id)arg3 style:(int)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

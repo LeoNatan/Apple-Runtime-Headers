@@ -8,6 +8,7 @@
 
 @class CKConversation;
 
+__attribute__((visibility("hidden")))
 @interface CKStarkConversationListViewController : UITableViewController
 {
     CKConversation *_selectedConversation;
@@ -23,6 +24,11 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)conversationListDidChange:(id)arg1;
+- (_Bool)isCarPlayIdiom;
+- (int)getCurrentUIUserInterfaceStyle;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateComposeButtonWithInterfaceStyle:(int)arg1;
+- (void)setupComposeButton;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

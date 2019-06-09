@@ -46,9 +46,9 @@ __attribute__((visibility("hidden")))
 - (void)restartSelection;
 - (void)beginSelection;
 - (struct CGPoint)boundedDeltaForTranslation:(struct CGPoint)arg1 cursorLocationBase:(struct CGPoint)arg2;
-- (void)endLoupeGestureAtPoint:(struct CGPoint)arg1;
-- (void)updateLoupeGestureAtPoint:(struct CGPoint)arg1;
-- (_Bool)beginLoupeGestureAtPoint:(struct CGPoint)arg1;
+- (void)endLoupeGestureAtPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
+- (void)updateLoupeGestureAtPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2 velocity:(struct CGPoint)arg3;
+- (_Bool)beginLoupeGestureAtPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
 - (void)endRangedMagnifierAtPoint:(struct CGPoint)arg1;
 - (void)updateRangedMagnifierAtPoint:(struct CGPoint)arg1;
 - (void)beginRangedMagnifierAtPoint:(struct CGPoint)arg1;
@@ -58,6 +58,8 @@ __attribute__((visibility("hidden")))
 - (void)endFloatingCursor;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
+- (void)willBeginFloatingCursor:(_Bool)arg1;
+- (void)willBeginHighlighterGesture;
 - (void)scrollSelectionToVisible;
 - (void)updateGestureRecognizers;
 - (void)willHandoffLoupeMagnifier;
@@ -75,6 +77,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool hasCaretSelection;
 @property(readonly, nonatomic) UIView *textInputView;
 - (_Bool)cursorPositionIsContainedByRange:(id)arg1;
+- (void)setSelectedTextRange:(id)arg1;
 - (void)resetCursorPosition;
 @property(retain, nonatomic) UITextPosition *cursorPosition;
 - (void)endSelectionChange;

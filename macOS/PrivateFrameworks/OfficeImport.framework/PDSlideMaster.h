@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OADColorMap, OADTextListStyle, OADTheme, PDPresentation;
 
+__attribute__((visibility("hidden")))
 @interface PDSlideMaster : PDSlideBase
 {
     NSMutableArray *mSlideLayouts;

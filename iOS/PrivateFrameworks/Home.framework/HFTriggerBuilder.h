@@ -6,27 +6,25 @@
 
 #import <Home/HFItemBuilder.h>
 
-@class HFConditionCollection, HFDurationEventBuilder, HFMutableSetDiff, HFTriggerAnonymousActionSetBuilder, HMTrigger, NSArray, NSString;
+@class HFConditionCollection, HFDurationEventBuilder, HFMutableSetDiff, HFTriggerActionSetsBuilder, HMTrigger, NSArray, NSString;
 @protocol HFTriggerBuilderContextProviding;
 
 @interface HFTriggerBuilder : HFItemBuilder
 {
     _Bool _enabled;
     NSString *_name;
-    HFTriggerAnonymousActionSetBuilder *_anonymousActionSetBuilder;
+    HFTriggerActionSetsBuilder *_triggerActionSets;
     id <HFTriggerBuilderContextProviding> _context;
     HFConditionCollection *_conditionCollection;
-    HFMutableSetDiff *_actionSetBuilders;
     HFMutableSetDiff *_endEventBuildersDiff;
 }
 
 + (id)triggerBuilderForTrigger:(id)arg1 inHome:(id)arg2 context:(id)arg3;
 + (Class)homeKitRepresentationClass;
 @property(retain, nonatomic) HFMutableSetDiff *endEventBuildersDiff; // @synthesize endEventBuildersDiff=_endEventBuildersDiff;
-@property(retain, nonatomic) HFMutableSetDiff *actionSetBuilders; // @synthesize actionSetBuilders=_actionSetBuilders;
 @property(retain, nonatomic) HFConditionCollection *conditionCollection; // @synthesize conditionCollection=_conditionCollection;
 @property(retain, nonatomic) id <HFTriggerBuilderContextProviding> context; // @synthesize context=_context;
-@property(retain, nonatomic) HFTriggerAnonymousActionSetBuilder *anonymousActionSetBuilder; // @synthesize anonymousActionSetBuilder=_anonymousActionSetBuilder;
+@property(retain, nonatomic) HFTriggerActionSetsBuilder *triggerActionSets; // @synthesize triggerActionSets=_triggerActionSets;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
@@ -49,6 +47,7 @@
 - (id)deleteTrigger;
 - (_Bool)markTriggerAsHomeAppCreated;
 - (void)setMarkTriggerAsHomeAppCreated:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool isShortcutOwned;
 @property(readonly, nonatomic) HFDurationEventBuilder *designatedDurationEventBuilder;
 @property(readonly, nonatomic, getter=areActionsAffectedByEndEvents) _Bool actionsAffectedByEndEvents;
 @property(readonly, nonatomic) _Bool requiresFMFDeviceToRun;
@@ -63,17 +62,8 @@
 - (void)removeEndEventBuilder:(id)arg1;
 - (void)updateEndEventBuilder:(id)arg1;
 - (void)addEndEventBuilder:(id)arg1;
-- (void)removeAllActionsAndActionSets;
-- (void)removeAction:(id)arg1;
-- (void)updateAction:(id)arg1;
-- (void)addAction:(id)arg1;
-- (void)removeActionSet:(id)arg1;
-- (void)updateActionSet:(id)arg1;
-- (void)addActionSet:(id)arg1;
-@property(readonly, nonatomic) NSArray *actionSets;
 - (void)setTrigger:(id)arg1;
 @property(readonly, nonatomic) HMTrigger *trigger;
-@property(readonly, nonatomic) _Bool hasActions;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2 context:(id)arg3;
 - (id)initWithExistingObject:(id)arg1 inHome:(id)arg2;
 - (id)initWithHome:(id)arg1 context:(id)arg2;

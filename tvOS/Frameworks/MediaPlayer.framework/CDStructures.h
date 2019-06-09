@@ -94,6 +94,10 @@ struct NSMapTable {
     Class _field1;
 };
 
+struct NSMutableDictionary {
+    Class _field1;
+};
+
 struct Predicate;
 
 struct PropertiesQuery;
@@ -207,6 +211,18 @@ struct map<long long, unsigned long, std::__1::less<long long>, std::__1::alloca
     } __tree_;
 };
 
+struct map<long, MPIdentifierSet *, std::__1::less<long>, std::__1::allocator<std::__1::pair<const long, MPIdentifierSet *>>> {
+    struct __tree<std::__1::__value_type<long, MPIdentifierSet *>, std::__1::__map_value_compare<long, std::__1::__value_type<long, MPIdentifierSet *>, std::__1::less<long>, true>, std::__1::allocator<std::__1::__value_type<long, MPIdentifierSet *>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long, MPIdentifierSet *>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long, std::__1::__value_type<long, MPIdentifierSet *>, std::__1::less<long>, true>> {
+            unsigned long long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
 struct map<std::__1::basic_string<char>, mlcore::ModelPropertyBase *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, mlcore::ModelPropertyBase *>>> {
     struct __tree<std::__1::__value_type<std::__1::basic_string<char>, mlcore::ModelPropertyBase *>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, mlcore::ModelPropertyBase *>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, mlcore::ModelPropertyBase *>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -224,6 +240,11 @@ struct mutex {
         long long _field1;
         char _field2[56];
     } _field1;
+};
+
+struct objc_method_description {
+    SEL _field1;
+    char *_field2;
 };
 
 struct shared_ptr<mlcore::DeviceLibrary> {
@@ -426,8 +447,9 @@ typedef struct {
     _Bool _field5;
     _Bool _field6;
     _Bool _field7;
-    long long _field8;
-} CDStruct_7fd8f4e3;
+    _Bool _field8;
+    long long _field9;
+} CDStruct_d4f770cf;
 
 typedef struct {
     _Bool useCarPlayBrowseTopLevelContentOnly;
@@ -447,17 +469,18 @@ typedef struct {
 } CDStruct_63a3d127;
 
 typedef struct {
+    int _field1;
+    int _field2;
+    int _field3;
+    int _field4;
+} CDStruct_a734b2e2;
+
+typedef struct {
     long long value;
     int timescale;
     unsigned int flags;
     long long epoch;
 } CDStruct_1b6d18a9;
-
-typedef struct {
-    long long numberOfAvailableSkips;
-    long long skipFrequency;
-    double skipInterval;
-} CDStruct_dcf4dde6;
 
 typedef struct {
     long long _field1;

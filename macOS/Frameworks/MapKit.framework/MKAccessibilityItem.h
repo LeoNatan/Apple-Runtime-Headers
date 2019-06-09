@@ -8,6 +8,7 @@
 
 @class MKMapView, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MKAccessibilityItem : NSObject
 {
     MKMapView *_mapView;

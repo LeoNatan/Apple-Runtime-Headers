@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImage:(id)arg1 capInsets:(struct UIEdgeInsets)arg2;
-- (void)_configureImage:(id)arg1;
+- (void)_configureImage:(id)arg1 assumePreconfigured:(_Bool)arg2;
 - (_Bool)_suppressesAccessibilityHairlineThickening;
 
 @end

@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AVAsset, ICHomographyWrapper, NSArray, NSDictionary, NSString, NSURL, StableVideoWriter;
+#import <AutoLoop/ICFlowControl-Protocol.h>
 
-__attribute__((visibility("hidden")))
-@interface AutoLoopStabilizer : NSObject
+@class AVAsset, NSArray, NSDictionary, NSString, NSURL;
+
+@interface AutoLoopStabilizer : NSObject <ICFlowControl>
 {
     _Bool drawFeaturesFlag;
-    _Bool didSkipFrames;
     _Bool onlyProcessForHighQualityTripod;
     _Bool doLoopClosureCorrection;
     _Bool _useLimitedTime;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
     float minConfidenceForTripodAccept;
     float confidenceHighQualityThreshold;
     float minimumHighQualityConfidenceValue;
-    float confidenceForSmoothingAccept;
+    float cropRatioMinimum;
     float alwaysAcceptedTripodCropRatio;
     float _minAllowedRemainingTripodCrop;
     int _naturalTimeScale;
@@ -36,10 +36,9 @@ __attribute__((visibility("hidden")))
     NSURL *statsFileOutURL;
     unsigned long long frameSearchLength;
     NSString *currentStatusString;
-    StableVideoWriter *stableVideoWriter;
     long long droppedStartFrameCount;
     long long droppedEndFrameCount;
-    ICHomographyWrapper *stabilizingHomographies;
+    void *icCorrectionResultRef;
     NSDictionary *featuresDictionary;
     CDUnknownBlockType _statusUpdateBlock;
     NSArray *_presentationTimesOfFramesToSkip;
@@ -77,46 +76,42 @@ __attribute__((visibility("hidden")))
 @property _Bool doLoopClosureCorrection; // @synthesize doLoopClosureCorrection;
 @property(nonatomic) float alwaysAcceptedTripodCropRatio; // @synthesize alwaysAcceptedTripodCropRatio;
 @property(nonatomic) _Bool onlyProcessForHighQualityTripod; // @synthesize onlyProcessForHighQualityTripod;
-@property(nonatomic) float confidenceForSmoothingAccept; // @synthesize confidenceForSmoothingAccept;
+@property(nonatomic) float cropRatioMinimum; // @synthesize cropRatioMinimum;
 @property(nonatomic) float minimumHighQualityConfidenceValue; // @synthesize minimumHighQualityConfidenceValue;
 @property(nonatomic) float confidenceHighQualityThreshold; // @synthesize confidenceHighQualityThreshold;
 @property(nonatomic) float minConfidenceForTripodAccept; // @synthesize minConfidenceForTripodAccept;
 @property(nonatomic) float necessaryCropGainFractionPerDroppedFrame; // @synthesize necessaryCropGainFractionPerDroppedFrame;
-@property(readonly, nonatomic) _Bool didSkipFrames; // @synthesize didSkipFrames;
 @property unsigned int canceledAnalysis; // @synthesize canceledAnalysis;
 @property(nonatomic) CDStruct_1b6d18a9 refFrameTime; // @synthesize refFrameTime;
 @property(readonly, nonatomic) struct CGSize inputMovieDimensions; // @synthesize inputMovieDimensions;
 @property(readonly, nonatomic) struct CGRect cropRect; // @synthesize cropRect;
-@property(readonly, retain) ICHomographyWrapper *stabilizingHomographies; // @synthesize stabilizingHomographies;
+@property(readonly, nonatomic) void *icCorrectionResultRef; // @synthesize icCorrectionResultRef;
 @property(nonatomic) long long droppedEndFrameCount; // @synthesize droppedEndFrameCount;
 @property(nonatomic) long long droppedStartFrameCount; // @synthesize droppedStartFrameCount;
 @property(nonatomic) _Bool drawFeaturesFlag; // @synthesize drawFeaturesFlag;
-@property(retain, nonatomic) StableVideoWriter *stableVideoWriter; // @synthesize stableVideoWriter;
 @property float progressValue; // @synthesize progressValue;
 @property(retain) NSString *currentStatusString; // @synthesize currentStatusString;
 @property(nonatomic) unsigned long long frameSearchLength; // @synthesize frameSearchLength;
 @property(retain, nonatomic) NSURL *statsFileOutURL; // @synthesize statsFileOutURL;
 @property(retain, nonatomic) AVAsset *movieAssetIn; // @synthesize movieAssetIn;
 - (void).cxx_destruct;
-- (void)SetMinimumTripodCropRatio:(float)arg1;
-- (int)processStabilizationAnalysis:(id)arg1 forcePassThru:(_Bool)arg2 forceSequentialTripod:(_Bool)arg3;
-- (int)FindAcceptableTripodSegmentForInput:(struct HomographyRecordVector *)arg1;
-- (int)analyzeForAutoloopWithDirect:(_Bool)arg1 toAnalysisOutput:(id *)arg2;
-- (void)frameTimesToPassThruHomographies:(const vector_0821a7d5 *)arg1;
-- (_Bool)updateVideoProgress;
+- (int)processStabilizationAnalysisForCinematicL1:(void *)arg1;
+- (int)processStabilizationAnalysis:(void *)arg1 forcePassThru:(_Bool)arg2 forceSmoothing:(_Bool)arg3 forceSequentialTripod:(_Bool)arg4;
+- (int)FindAcceptableTripodSegmentForInput:(const void *)arg1 frameTimes:(const vector_0821a7d5 *)arg2;
+- (int)analyzeForAutoloopWithDirect:(_Bool)arg1 toAnalysisOutput:(void **)arg2;
+- (_Bool)ICShouldBeCanceled;
+- (void)ICReportProgress:(float)arg1;
 - (_Bool)updateStabilizerStatus;
-- (_Bool)tripodOKWithTrimming:(const struct HomographyRecordVector *)arg1 minConfidence:(float)arg2;
-- (_Bool)CheckForTripodOKInHomographies:(struct HomographyRecordVector *)arg1 firstIndex:(unsigned long long)arg2 lastIndex:(unsigned long long)arg3 cropRectOut:(struct FloatRect *)arg4 minConfidence:(float)arg5 confidenceOut:(float *)arg6;
-- (void)setUpLoopClosures;
+- (_Bool)tripodOKWithTrimming:(const void *)arg1 frameTimes:(const vector_0821a7d5 *)arg2 minConfidence:(float)arg3;
+- (_Bool)CheckForTripodOKInHomographies:(const void *)arg1 firstIndex:(unsigned long long)arg2 lastIndex:(unsigned long long)arg3 refIndex:(unsigned long long)arg4 cropRectOut:(struct CGRect *)arg5 minConfidence:(float)arg6 confidenceOut:(float *)arg7;
 - (CDStruct_e83c9415)determinePreciseTimeRange;
 - (_Bool)getNaturalTimeScaleForVideoTrackInAsset;
 - (id)getVideoTrack;
 - (_Bool)CropRectValid:(const struct CGRect *)arg1;
-- (float)CropRatio:(const struct FloatRect *)arg1;
-- (CDStruct_1b6d18a9)GetPreciseReferenceTimeFromHomographies:(const struct HomographyRecordVector *)arg1;
-- (unsigned long long)FindFrameIndexForReferenceTimeInHomographies:(const struct HomographyRecordVector *)arg1;
-- (void)SetSkipFrameTimesFromArray:(vector_0821a7d5 *)arg1;
-- (_Bool)setStabilizerLimitedTimes;
+- (float)CropRatio:(const struct CGRect *)arg1;
+- (CDStruct_1b6d18a9)GetPreciseReferenceTimeFromHomographies:(const vector_0821a7d5 *)arg1;
+- (unsigned long long)FindFrameIndexForReferenceTimeInHomographies:(const vector_0821a7d5 *)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

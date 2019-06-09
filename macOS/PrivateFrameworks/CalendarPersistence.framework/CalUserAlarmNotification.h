@@ -18,10 +18,18 @@
     NSUserNotification *_notification;
 }
 
++ (id)_travelTimeDrivingSubstringWithEta:(id)arg1 location:(id)arg2 includeTransportType:(BOOL)arg3;
++ (id)_travelTimeRunningLateTransitStringWithEta:(id)arg1 location:(id)arg2;
++ (id)_travelTimeOnTimeWalkingStringWithEta:(id)arg1;
++ (id)_travelTimeOnTimeTransitStringWithEta:(id)arg1;
++ (id)_travelTimeOnTimeDrivingStringWithEta:(id)arg1;
++ (id)_travelTimeWalkingStringWithEta:(id)arg1 location:(id)arg2;
++ (id)_etaString:(double)arg1;
++ (id)timeToLeaveStringWithEta:(double)arg1 transportType:(int)arg2 runningLate:(BOOL)arg3;
 + (void)travelTimeEventInformativeTextAtDate:(id)arg1 eventStart:(id)arg2 transportType:(int)arg3 notification:(id)arg4 trafficDensityString:(id)arg5 estimatedTravelTime:(double)arg6;
 - (void).cxx_destruct;
 - (id)notification;
-- (id)_actionMenuStrings;
+- (id)_snoozeNotificationMenuActions;
 - (BOOL)_isReminderAlarm:(id)arg1;
 - (id)initWithAlarm:(id)arg1 triggerDate:(id)arg2 isForLocation:(BOOL)arg3;
 - (id)initWithAlarm:(id)arg1 triggerDate:(id)arg2;

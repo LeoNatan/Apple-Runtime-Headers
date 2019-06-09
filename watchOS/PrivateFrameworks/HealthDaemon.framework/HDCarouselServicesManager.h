@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (void)_queue_endAllSessions;
 - (void)_queue_endCarouselSession:(id)arg1;
-- (id)_queue_startCarouselSessionForBundleID:(id)arg1;
+- (id)_queue_startCarouselSessionForAssertion:(id)arg1;
 - (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
 - (void)assertionManager:(id)arg1 assertionTaken:(id)arg2;
 - (id)takeSessionAssertionForOwnerIdentifier:(id)arg1;

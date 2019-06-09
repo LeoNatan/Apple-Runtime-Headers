@@ -8,15 +8,12 @@
 
 #import <CFNetwork/AVAssetDownloadDelegate-Protocol.h>
 
-@class AVURLAsset, NSArray, NSData, NSDictionary, NSObject, NSString, NSURLSession;
-@protocol OS_dispatch_queue;
+@class AVURLAsset, NSArray, NSData, NSDictionary, NSString, NSURLSession;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFBackgroundAVAggregateAssetDownloadTask : __NSCFBackgroundSessionTask <AVAssetDownloadDelegate>
 {
     _Bool _sentWillDownloadToURL;
     _Bool _sentWillBeginDelayedRequest;
-    NSObject<OS_dispatch_queue> *_sessionWorkQueue;
     unsigned long long _AVAssetDownloadToken;
     AVURLAsset *_URLAsset;
     NSArray *_mediaSelections;
@@ -55,8 +52,8 @@ __attribute__((visibility("hidden")))
 - (id)originalRequest;
 - (_Bool)isKindOfClass:(Class)arg1;
 - (void)dealloc;
-- (id)initWithTaskInfo:(id)arg1 session:(id)arg2 remoteSession:(id)arg3 ident:(unsigned long long)arg4;
-- (id)initWithSession:(id)arg1 remoteSession:(id)arg2 URLAsset:(id)arg3 mediaSelections:(id)arg4 assetTitle:(id)arg5 assetArtworkData:(id)arg6 options:(id)arg7 ident:(unsigned long long)arg8;
+- (id)initWithTaskInfo:(id)arg1 taskGroup:(id)arg2 ident:(unsigned long long)arg3;
+- (id)initWithTaskGroup:(id)arg1 URLAsset:(id)arg2 mediaSelections:(id)arg3 assetTitle:(id)arg4 assetArtworkData:(id)arg5 options:(id)arg6 ident:(unsigned long long)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

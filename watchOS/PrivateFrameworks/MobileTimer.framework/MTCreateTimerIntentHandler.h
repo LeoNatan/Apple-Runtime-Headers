@@ -19,6 +19,7 @@
 - (void)_createTimerWithIntent:(id)arg1 dryRun:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)handleCreateTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmCreateTimer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)resolveTypeForCreateTimer:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveDurationForCreateTimer:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveLabelForCreateTimer:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 

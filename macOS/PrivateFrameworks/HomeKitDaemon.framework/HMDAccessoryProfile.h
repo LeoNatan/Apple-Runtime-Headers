@@ -38,7 +38,10 @@
 - (void)_encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)configureWithMessageDispatcher:(id)arg1;
+- (id)runtimeState;
+- (void)unconfigure;
+- (void)configureWithMessageDispatcher:(id)arg1 configurationTracker:(id)arg2;
+- (void)handleInitialState;
 - (void)registerForMessages;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;

@@ -8,7 +8,7 @@
 
 #import <CoreMLTestFramework/_MLTInputProvider-Protocol.h>
 
-@class MLModel, NSArray, NSDictionary, NSString, _MLTInputGeneratorConfiguration, _MLTInputGeneratorUtils;
+@class MLModel, NSArray, NSDictionary, NSString, _MLTInputGeneratorUtils;
 
 @interface _MLTInputGenerator : NSObject <_MLTInputProvider>
 {
@@ -18,31 +18,30 @@
     NSString *_otherFrameWorkPredictionKey;
     NSString *_testCaseNameKey;
     NSArray *_outputTestData;
-    NSArray *_imageReaders;
     NSDictionary *_inputDescriptions;
     NSDictionary *_outputDescriptions;
     MLModel *_model;
     struct __CVBuffer *_buffer;
-    unsigned long long _problemType;
     _MLTInputGeneratorUtils *_inputGeneratorUtils;
     NSArray *_testCases;
     unsigned long long _currentCase;
-    _MLTInputGeneratorConfiguration *_config;
+    _MLTInputGeneratorUtils *_util;
+    long long _seed;
+    unsigned long long _monteCarloCount;
 }
 
-+ (id)loadModelForComparison:(id)arg1 error:(id *)arg2;
 + (id)inputGeneratorWithModel:(id)arg1;
-+ (id)inputGeneratorWithModel:(id)arg1 configuration:(id)arg2;
-@property(retain) _MLTInputGeneratorConfiguration *config; // @synthesize config=_config;
-@property unsigned long long currentCase; // @synthesize currentCase=_currentCase;
-@property(retain) NSArray *testCases; // @synthesize testCases=_testCases;
++ (id)inputGeneratorWithModel:(id)arg1 seed:(long long)arg2 monteCarloIterations:(unsigned long long)arg3;
+@property unsigned long long monteCarloCount; // @synthesize monteCarloCount=_monteCarloCount;
+@property long long seed; // @synthesize seed=_seed;
+@property(retain, nonatomic) _MLTInputGeneratorUtils *util; // @synthesize util=_util;
+@property(nonatomic) unsigned long long currentCase; // @synthesize currentCase=_currentCase;
+@property(retain, nonatomic) NSArray *testCases; // @synthesize testCases=_testCases;
 @property(retain, nonatomic) _MLTInputGeneratorUtils *inputGeneratorUtils; // @synthesize inputGeneratorUtils=_inputGeneratorUtils;
-@property(nonatomic) unsigned long long problemType; // @synthesize problemType=_problemType;
 @property(nonatomic) struct __CVBuffer *buffer; // @synthesize buffer=_buffer;
-@property(retain) MLModel *model; // @synthesize model=_model;
-@property(retain) NSDictionary *outputDescriptions; // @synthesize outputDescriptions=_outputDescriptions;
-@property(retain) NSDictionary *inputDescriptions; // @synthesize inputDescriptions=_inputDescriptions;
-@property(retain, nonatomic) NSArray *imageReaders; // @synthesize imageReaders=_imageReaders;
+@property(retain, nonatomic) MLModel *model; // @synthesize model=_model;
+@property(retain, nonatomic) NSDictionary *outputDescriptions; // @synthesize outputDescriptions=_outputDescriptions;
+@property(retain, nonatomic) NSDictionary *inputDescriptions; // @synthesize inputDescriptions=_inputDescriptions;
 @property(copy, nonatomic) NSArray *outputTestData; // @synthesize outputTestData=_outputTestData;
 @property(copy, nonatomic) NSString *testCaseNameKey; // @synthesize testCaseNameKey=_testCaseNameKey;
 @property(copy, nonatomic) NSString *otherFrameWorkPredictionKey; // @synthesize otherFrameWorkPredictionKey=_otherFrameWorkPredictionKey;
@@ -51,13 +50,10 @@
 @property BOOL dataAvailable; // @synthesize dataAvailable=_dataAvailable;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)getNextDataSet;
-- (id)getAllDataSets;
-- (id)getNextImage;
-- (unsigned long long)inferedProblemType;
-- (id)exposedInputs;
+- (id)nextDataSet:(id *)arg1;
+- (id)allDataSets:(id *)arg1;
 - (id)initWithModel:(id)arg1;
-- (id)initWithModel:(id)arg1 configuration:(id)arg2;
+- (id)initWithModel:(id)arg1 seed:(long long)arg2 monteCarloIterations:(unsigned long long)arg3;
 
 @end
 

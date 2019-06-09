@@ -14,7 +14,7 @@
     struct header_s _header;
     const float *_bias;
     const unsigned int *_qids;
-    const unsigned int *_matrixIdxes;
+    const unsigned int *_matrixIndices;
     const float *_matrixElts;
     const char *_payloads;
 }
@@ -24,7 +24,8 @@
 - (void)sigmoid:(float *)arg1;
 - (void)scaleBuffer:(float *)arg1 withFactor:(float)arg2;
 - (void)addBias:(float *)arg1;
-- (void)addTopicToBuffer:(float *)arg1 qid:(unsigned int)arg2 weight:(float)arg3;
+- (id)QIDWeightsWithMappedTopicIdentifier:(id)arg1;
+- (void)addTopicToBuffer:(float *)arg1 countNonZeroComponentsInBuffer:(unsigned int *)arg2 qid:(unsigned int)arg3 score:(float)arg4;
 - (id)payloadForTopic:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned long long outputTopicCount;
 - (id)init;

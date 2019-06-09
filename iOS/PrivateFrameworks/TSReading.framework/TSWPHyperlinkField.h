@@ -17,7 +17,6 @@
 + (id)urlReferenceFromURL:(id)arg1;
 + (id)defaultMailURL;
 + (id)defaultFileURL;
-+ (id)urlWithEmailAddress:(id)arg1 subject:(id)arg2;
 + (id)defaultWebURL;
 + (id)defaultURLFromDefaultsKey:(id)arg1 defaultValue:(id)arg2;
 + (_Bool)schemeIsValidForURLReference:(id)arg1;

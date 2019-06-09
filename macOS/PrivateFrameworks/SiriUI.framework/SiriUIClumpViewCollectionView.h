@@ -11,7 +11,6 @@
 
 @class NSArray, NSIndexPath, NSString, QLPreviewPanel, SiriUIClumpView;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIClumpViewCollectionView : NSCollectionView <QLPreviewPanelDataSource, QLPreviewPanelDelegate>
 {
     BOOL _wasHiddenOnLastSetFrameSize;

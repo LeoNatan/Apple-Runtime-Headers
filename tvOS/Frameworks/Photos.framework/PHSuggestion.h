@@ -6,7 +6,7 @@
 
 #import <Photos/PHAssetCollection.h>
 
-@class NSData, NSDate, NSDictionary, NSString;
+@class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @interface PHSuggestion : PHAssetCollection
 {
@@ -16,6 +16,7 @@
     unsigned long long _approximateCount;
     unsigned long long _approximatePhotosCount;
     unsigned long long _approximateVideosCount;
+    NSArray *_assets;
     unsigned short _type;
     unsigned short _subtype;
     unsigned short _state;
@@ -29,6 +30,9 @@
     NSString *_subtitle;
 }
 
++ (id)suggestionInfosWithOptions:(id)arg1 photoLibrary:(id)arg2;
++ (id)availableSuggestionTypeInfosWithOptions:(id)arg1 photoLibrary:(id)arg2;
++ (id)transientSuggestionWithInfo:(id)arg1 photoLibrary:(id)arg2;
 + (id)fetchSuggestionsWithState:(unsigned short)arg1 ofType:(unsigned short)arg2 withOptions:(id)arg3;
 + (id)fetchSuggestionsWithState:(unsigned short)arg1 withOptions:(id)arg2;
 + (id)fetchSuggestionsWithOptions:(id)arg1;
@@ -53,6 +57,7 @@
 @property(readonly, nonatomic) unsigned short subtype; // @synthesize subtype=_subtype;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (id)assets;
 @property(readonly, nonatomic) _Bool containsUnverifiedPersons;
 - (id)description;
 @property(readonly, nonatomic) NSDictionary *featuresProperties; // @synthesize featuresProperties=_featuresProperties;

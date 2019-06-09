@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <TVMLKit/IKAppContextDelegate-Protocol.h>
 #import <TVMLKit/IKAppContextInspectorDelegate-Protocol.h>
 #import <TVMLKit/IKAppDeviceConfig-Protocol.h>
 #import <TVMLKit/_TVAppNavigationControllerDelegate-Protocol.h>
 
-@class IKAppContext, IKAppDataStorage, NSDate, NSDictionary, NSString, NSXPCListener, TVApplicationControllerContext, UINavigationController, UIView, UIViewController, UIWindow, _TVAppNavigationController, _TVApplicationInspector, _TVMLKitApplication;
-@protocol TVApplicationControllerDelegate, UITraitEnvironment;
+@class IKAppContext, IKAppDataStorage, NSDate, NSDictionary, NSString, NSXPCListener, TVApplicationControllerContext, UINavigationController, UIView, UIViewController, UIWindow, _TVApplicationInspector, _TVMLKitApplication;
+@protocol TVAppRootViewController, TVApplicationControllerDelegate, UITraitEnvironment;
 
-@interface TVApplicationController : NSObject <IKAppContextInspectorDelegate, IKAppDeviceConfig, _TVAppNavigationControllerDelegate>
+@interface TVApplicationController : NSObject <IKAppContextInspectorDelegate, IKAppDeviceConfig, _TVAppNavigationControllerDelegate, IKAppContextDelegate>
 {
     IKAppContext *_appContext;
     _TVMLKitApplication *_application;
@@ -29,7 +30,7 @@
     _Bool _doLaunchOpenURLHandling;
     NSDictionary *_launchOpenURLOptions;
     _Bool _popViewControllerOnBackground;
-    _TVAppNavigationController *_navigationController;
+    UIViewController<TVAppRootViewController> *_appRootViewController;
     IKAppContext *_headlessAppContext;
     _TVMLKitApplication *_headlessApplication;
     _Bool _openURLLaunchedOverSiri;
@@ -48,7 +49,8 @@
 @property(readonly, nonatomic) TVApplicationControllerContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) UIWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
-- (id)_externalPlayer;
+- (id)_rootViewController;
+- (id)_player;
 - (_Bool)_useDefaultScreenSaverProvider;
 - (_Bool)_hasReloadOnResumeMinIntervalPassed;
 - (_Bool)_shouldReloadOnResume;
@@ -65,6 +67,7 @@
 - (void)applicationDidResume:(id)arg1;
 @property(nonatomic) __weak UIView *viewServiceKeyView;
 @property(readonly, nonatomic) UIViewController *rootViewController;
+@property(readonly, nonatomic) IKAppContext *appContext;
 @property(readonly, nonatomic) UINavigationController *navigationController;
 - (id)timeZone;
 - (id)storeFrontCountryCode;

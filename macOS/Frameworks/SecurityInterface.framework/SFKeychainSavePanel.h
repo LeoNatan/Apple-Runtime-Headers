@@ -18,7 +18,7 @@
 + (id)sharedKeychainSavePanel;
 - (void)beginSheetForDirectory:(id)arg1 file:(id)arg2 modalForWindow:(id)arg3 modalDelegate:(id)arg4 didEndSelector:(SEL)arg5 contextInfo:(void *)arg6;
 - (id)error;
-- (struct OpaqueSecKeychainRef *)keychain;
+- (struct __SecKeychain *)keychain;
 - (void)setPassword:(id)arg1;
 - (long long)runModalForDirectory:(id)arg1 file:(id)arg2;
 - (void)unlock;

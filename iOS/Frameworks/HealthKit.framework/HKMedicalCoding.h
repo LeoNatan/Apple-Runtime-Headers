@@ -38,6 +38,7 @@
 - (id)description;
 - (id)init;
 - (id)initWithCodingSystem:(id)arg1 codingVersion:(id)arg2 code:(id)arg3 displayString:(id)arg4;
+- (id)synthesizedIdentifier;
 
 @end
 

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (CDStruct_d1a7ebee)dataRequestKind;
 - (id)mapItemsForParameters:(id)arg1;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 auditToken:(id)arg2 networkActivity:(CDUnknownBlockType)arg3 queue:(id)arg4;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 networkActivity:(CDUnknownBlockType)arg2 queue:(id)arg3;

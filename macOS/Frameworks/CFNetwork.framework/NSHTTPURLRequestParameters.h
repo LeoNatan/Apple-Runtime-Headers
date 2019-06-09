@@ -8,7 +8,6 @@
 
 @class NSArray, NSData, NSMutableDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface NSHTTPURLRequestParameters : NSObject
 {
     NSString *method;

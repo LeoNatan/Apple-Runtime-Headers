@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class UIFont;
+
 @interface PXCMMPosterHeaderViewSpec : NSObject
 {
     _Bool _canShowStatus;
@@ -42,6 +44,14 @@
 @property(readonly, nonatomic) double titleBaselineOffset; // @synthesize titleBaselineOffset=_titleBaselineOffset;
 @property(readonly, nonatomic) unsigned int titleFontDescriptorSymbolicTraits; // @synthesize titleFontDescriptorSymbolicTraits=_titleFontDescriptorSymbolicTraits;
 @property(readonly, nonatomic) long long titleFontTextStyle; // @synthesize titleFontTextStyle=_titleFontTextStyle;
+@property(readonly, nonatomic) UIFont *preferredStatusFont;
+@property(readonly, nonatomic) UIFont *preferredSubtitleFont;
+@property(readonly, nonatomic) UIFont *preferredTitleFont;
+@property(readonly, nonatomic) double scaledBottomGradientBaselineOffset;
+@property(readonly, nonatomic) double scaledStatusBaselineOffset;
+@property(readonly, nonatomic) double scaledTopGradientBaselineOffset;
+@property(readonly, nonatomic) double scaledSubtitleBaselineOffset;
+@property(readonly, nonatomic) double scaledTitleBaselineOffset;
 - (id)initWithPresentationStyle:(long long)arg1;
 - (id)init;
 

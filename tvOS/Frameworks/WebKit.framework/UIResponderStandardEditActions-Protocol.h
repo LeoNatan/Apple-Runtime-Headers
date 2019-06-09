@@ -9,6 +9,7 @@
 @protocol UIResponderStandardEditActions <NSObject>
 
 @optional
+- (void)updateTextAttributesWithConversionHandler:(NSDictionary * (^)(NSDictionary *))arg1;
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (void)toggleUnderline:(id)arg1;

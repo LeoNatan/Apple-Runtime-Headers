@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <SpringBoardFoundation/SBFAuthenticationAssertionProviding-Protocol.h>
 #import <SpringBoardFoundation/SBFAuthenticationStatusProvider-Protocol.h>
 #import <SpringBoardFoundation/SBFMobileKeyBagObserver-Protocol.h>
 #import <SpringBoardFoundation/SBFPasscodeFieldChangeObserver-Protocol.h>
 #import <SpringBoardFoundation/SBFUserAuthenticationModelDelegate-Protocol.h>
 
-@class NSDate, NSHashTable, NSMutableArray, NSString, PCPersistentTimer, SBFAuthenticationAssertion, SBFAuthenticationAssertionManager, SBFMobileKeyBag, SBFMobileKeyBagState;
+@class NSDate, NSHashTable, NSMutableArray, NSString, PCPersistentTimer, SBFAuthenticationAssertion, SBFAuthenticationAssertionManager, SBFMobileKeyBag, SBFMobileKeyBagState, SBFSecureDisplayCoordinator;
 @protocol SBFAuthenticationPolicy, SBFUserAuthenticationModel;
 
-@interface SBFUserAuthenticationController : NSObject <SBFMobileKeyBagObserver, SBFUserAuthenticationModelDelegate, SBFAuthenticationStatusProvider, SBFPasscodeFieldChangeObserver>
+@interface SBFUserAuthenticationController : NSObject <SBFMobileKeyBagObserver, SBFUserAuthenticationModelDelegate, SBFAuthenticationAssertionProviding, SBFAuthenticationStatusProvider, SBFPasscodeFieldChangeObserver>
 {
     SBFMobileKeyBag *_keybag;
     NSMutableArray *_responders;
@@ -29,14 +30,13 @@
     struct __CFRunLoopObserver *_runLoopObserver;
     PCPersistentTimer *_unblockTimer;
     long long _cachedAuthFlag;
-    _Bool _inSecureMode;
+    SBFSecureDisplayCoordinator *_secureDisplayCoordinator;
     SBFMobileKeyBagState *_cachedExtendedState;
 }
 
 @property(retain, nonatomic, getter=_policy, setter=_setPolicy:) id <SBFAuthenticationPolicy> policy; // @synthesize policy=_policy;
 @property(readonly, nonatomic) NSDate *lastRevokedAuthenticationDate; // @synthesize lastRevokedAuthenticationDate=_lastRevokedAuthenticationDate;
 - (void).cxx_destruct;
-- (void)_setSecureMode:(_Bool)arg1 postNotification:(_Bool)arg2;
 - (void)_updateSecureModeIfNecessaryForNewAuthState;
 - (void)_noteDeviceLockStateMayHaveChangedForExternalReasons;
 - (void)_clearBlockedState;
@@ -106,6 +106,7 @@
 - (void)processAuthenticationRequest:(id)arg1 responder:(id)arg2;
 - (void)removeResponder:(id)arg1;
 - (void)addAsFirstResponder:(id)arg1;
+@property(readonly, nonatomic) _Bool inSecureDisplayMode;
 - (void)dealloc;
 - (id)initWithAssertionManager:(id)arg1 policy:(id)arg2 keybag:(id)arg3 model:(id)arg4;
 - (id)initWithAssertionManager:(id)arg1 policy:(id)arg2;

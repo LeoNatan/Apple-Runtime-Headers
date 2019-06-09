@@ -6,65 +6,73 @@
 
 #import <AppKit/NSResponder.h>
 
-@class NSMutableAttributedString, NSString, NSTextInputContext;
+#import <AppKit/NSTextCheckingClient-Protocol.h>
+
+@class NSMutableAttributedString, NSTextCheckingController, NSTextInputContext;
 
 __attribute__((visibility("hidden")))
-@interface NSBridgedTextCorrectionController : NSResponder
+@interface NSBridgedTextCorrectionController : NSResponder <NSTextCheckingClient>
 {
     BOOL _secureTextEntry;
     int _grammarCheckingEnabledUserSetting;
     int _autocorrectionEnabledUserSetting;
     NSTextInputContext *_textInputContext;
-    long long _spellCheckerDocumentTag;
-    unsigned long long _previousCheckingSequenceNumber;
-    unsigned long long _prechangeCheckingSequenceNumber;
-    NSString *_previousString;
-    unsigned long long _spellCheckingType;
-    unsigned long long _autocorrectionType;
-    struct __CFRunLoopTimer *_bubbleTimer;
-    NSMutableAttributedString *_alternativesString;
-    struct _NSRange _bubbleRange;
-    struct _NSRange _previousInsertionRange;
+    long long _spellCheckingType;
+    long long _autocorrectionType;
+    NSMutableAttributedString *_annotationString;
+    NSTextCheckingController *_textCheckingController;
 }
 
-@property(retain) NSMutableAttributedString *alternativesString; // @synthesize alternativesString=_alternativesString;
-@property struct __CFRunLoopTimer *bubbleTimer; // @synthesize bubbleTimer=_bubbleTimer;
-@property struct _NSRange previousInsertionRange; // @synthesize previousInsertionRange=_previousInsertionRange;
-@property struct _NSRange bubbleRange; // @synthesize bubbleRange=_bubbleRange;
-@property unsigned long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
-@property unsigned long long spellCheckingType; // @synthesize spellCheckingType=_spellCheckingType;
+@property(retain) NSTextCheckingController *textCheckingController; // @synthesize textCheckingController=_textCheckingController;
+@property(retain) NSMutableAttributedString *annotationString; // @synthesize annotationString=_annotationString;
+@property long long autocorrectionType; // @synthesize autocorrectionType=_autocorrectionType;
+@property long long spellCheckingType; // @synthesize spellCheckingType=_spellCheckingType;
 @property int autocorrectionEnabledUserSetting; // @synthesize autocorrectionEnabledUserSetting=_autocorrectionEnabledUserSetting;
 @property int grammarCheckingEnabledUserSetting; // @synthesize grammarCheckingEnabledUserSetting=_grammarCheckingEnabledUserSetting;
 @property BOOL secureTextEntry; // @synthesize secureTextEntry=_secureTextEntry;
-@property(copy) NSString *previousString; // @synthesize previousString=_previousString;
-@property unsigned long long prechangeCheckingSequenceNumber; // @synthesize prechangeCheckingSequenceNumber=_prechangeCheckingSequenceNumber;
-@property unsigned long long previousCheckingSequenceNumber; // @synthesize previousCheckingSequenceNumber=_previousCheckingSequenceNumber;
-@property long long spellCheckerDocumentTag; // @synthesize spellCheckerDocumentTag=_spellCheckerDocumentTag;
 @property __weak NSTextInputContext *textInputContext; // @synthesize textInputContext=_textInputContext;
 - (void).cxx_destruct;
-- (void)_alternativesTimer;
-@property(readonly) unsigned long long enabledTextCheckingTypes;
+- (id)candidateListTouchBarItem;
+- (id)viewForRange:(struct _NSRange)arg1 firstRect:(struct CGRect *)arg2 actualRange:(struct _NSRange *)arg3;
+- (void)selectAndShowRange:(struct _NSRange)arg1;
+- (void)replaceCharactersInRange:(struct _NSRange)arg1 withAnnotatedString:(id)arg2 replacementRange:(struct _NSRange)arg3;
+- (void)replaceCharactersInRange:(struct _NSRange)arg1 withAnnotatedString:(id)arg2;
+- (void)removeAnnotation:(id)arg1 range:(struct _NSRange)arg2;
+- (void)addAnnotations:(id)arg1 range:(struct _NSRange)arg2;
+- (void)setAnnotations:(id)arg1 range:(struct _NSRange)arg2;
+- (id)annotatedSubstringForProposedRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
+- (BOOL)lacksAnnotatedString;
+@property long long textCompletionType;
+@property long long linkDetectionType;
+@property long long dataDetectionType;
+@property long long textReplacementType;
+@property long long smartInsertDeleteType;
+@property long long smartDashesType;
+@property long long smartQuotesType;
+@property long long grammarCheckingType;
+- (unsigned long long)characterIndexForPoint:(struct CGPoint)arg1;
+- (struct CGRect)firstRectForCharacterRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
+- (id)validAttributesForMarkedText;
+- (id)attributedSubstringForProposedRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
+- (struct _NSRange)markedRange;
+- (void)unmarkText;
+- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
+- (void)doCommandBySelector:(SEL)arg1;
+- (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
+@property(readonly) long long spellCheckerDocumentTag;
 - (void)toggleAutomaticSpellingCorrection:(id)arg1;
 - (BOOL)isAutomaticSpellingCorrectionEnabled;
 - (void)setAutomaticSpellingCorrectionEnabled:(BOOL)arg1;
 - (void)toggleGrammarChecking:(id)arg1;
-@property(getter=isGrammarCheckingEnabled) BOOL grammarCheckingEnabled;
+- (void)setGrammarCheckingEnabled:(BOOL)arg1;
+- (BOOL)isGrammarCheckingEnabled;
 - (BOOL)isContinuousSpellCheckingEnabled;
 - (void)ignoreSpelling:(id)arg1;
 - (void)changeSpelling:(id)arg1;
-- (void)_changeSpellingToWord:(id)arg1;
 - (void)showGuessPanel:(id)arg1;
 - (void)checkSpelling:(id)arg1;
-- (void)_checkSpelling:(BOOL)arg1;
-- (struct _NSRange)_modifiedGrammarRangeForRange:(struct _NSRange)arg1 details:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)traitsChangedFrom:(id)arg1 to:(id)arg2;
-- (void)selectedRangeChangedFrom:(struct _NSRange)arg1 to:(struct _NSRange)arg2;
-- (void)performActionsForSelectedRange:(struct _NSRange)arg1;
-- (void)checkTextWithSelectedRange:(struct _NSRange)arg1;
-- (void)checkTextInRange:(struct _NSRange)arg1 types:(unsigned long long)arg2;
-- (void)handleTextCheckingResults:(id)arg1 forRange:(struct _NSRange)arg2 types:(unsigned long long)arg3 options:(id)arg4 orthography:(id)arg5 wordCount:(long long)arg6;
-- (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)handlesMenuItem:(id)arg1;
@@ -73,6 +81,8 @@ __attribute__((visibility("hidden")))
 - (struct _NSRange)selectedRange;
 - (id)string;
 - (void)contextDidInsertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
+- (void)adjustAnnotationStringLength;
+- (id)annotatedString;
 - (id)attributedString;
 - (void)dealloc;
 - (id)initWithTextInputContext:(id)arg1;

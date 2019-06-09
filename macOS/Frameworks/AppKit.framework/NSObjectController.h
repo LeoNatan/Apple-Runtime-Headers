@@ -10,7 +10,8 @@
 
 @interface NSObjectController : NSController
 {
-    void *_reserved3;
+    id _content;
+    id _objectHandler;
     id _managedProxy;
     struct __objectControllerFlags {
         unsigned int _editable:1;
@@ -26,8 +27,6 @@
     NSString *_objectClassName;
     Class _objectClass;
     NSArray *_contentObjectArray;
-    id _content;
-    id _objectHandler;
 }
 
 + (id)_modelAndProxyKeys;

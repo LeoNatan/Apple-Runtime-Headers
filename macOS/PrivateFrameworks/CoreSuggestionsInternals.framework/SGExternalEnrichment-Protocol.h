@@ -4,8 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class SGSqlEntityStore;
+
 @protocol SGExternalEnrichment
 - (void)flushWrites;
-- (void)write;
+- (void)writeWithEntityStore:(SGSqlEntityStore *)arg1;
 @end
 

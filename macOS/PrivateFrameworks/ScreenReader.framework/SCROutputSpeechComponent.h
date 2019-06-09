@@ -11,21 +11,30 @@
 __attribute__((visibility("hidden")))
 @interface SCROutputSpeechComponent : SCROutputComponent
 {
+    int _characterTypeLookupArray[512];
     NSMutableArray *_synthesizers;
     NSLock *_synthesizersArrayLock;
     NSLock *_speechPausedLock;
     NSLock *_sanitizedAvailableVoicesLock;
     NSArray *_sanitizedAvailableVoices;
-    NSDictionary *_defaultLanguageTextProcessingProperties;
-    int _characterTypeLookupArray[512];
     BOOL _speechIsPaused;
+    BOOL _needToRebuildDefaultLanguageTextProcessingProperties;
+    NSDictionary *_defaultLanguageTextProcessingProperties;
     NSString *_lastSpokenString;
-    BOOL needToRebuildDefaultLanguageTextProcessingProperties;
+    NSDictionary *_customPunctuationTableRules;
+    NSDictionary *_customPunctuationTableReplacements;
     struct _NSRange __lastSpokenWordRange;
 }
 
 + (id)_createSanitizedAvailableVoices;
-@property struct _NSRange _lastSpokenWordRange; // @synthesize _lastSpokenWordRange=__lastSpokenWordRange;
+@property(nonatomic, setter=_setLastSpokenWordRange:) struct _NSRange _lastSpokenWordRange; // @synthesize _lastSpokenWordRange=__lastSpokenWordRange;
+@property(retain, nonatomic) NSDictionary *customPunctuationTableReplacements; // @synthesize customPunctuationTableReplacements=_customPunctuationTableReplacements;
+@property(retain, nonatomic) NSDictionary *customPunctuationTableRules; // @synthesize customPunctuationTableRules=_customPunctuationTableRules;
+@property(copy, nonatomic) NSString *lastSpokenString; // @synthesize lastSpokenString=_lastSpokenString;
+@property(retain, nonatomic) NSDictionary *defaultLanguageTextProcessingProperties; // @synthesize defaultLanguageTextProcessingProperties=_defaultLanguageTextProcessingProperties;
+@property(nonatomic) BOOL needToRebuildDefaultLanguageTextProcessingProperties; // @synthesize needToRebuildDefaultLanguageTextProcessingProperties=_needToRebuildDefaultLanguageTextProcessingProperties;
+- (void).cxx_destruct;
+- (void)_updateCustomPunctuationTables;
 - (id)_replaceEmbeddedTTSCommandsAttributedString:(id)arg1;
 - (id)_replaceEmbeddedTTSCommands:(id)arg1;
 - (void)_replaceEmbeddedTTSCommandsMutableString:(id)arg1;
@@ -70,14 +79,13 @@ __attribute__((visibility("hidden")))
 - (id)objectForAttribute:(id)arg1;
 - (void)_handleVoicesChangedNotification:(id)arg1;
 - (void)handleEvent:(id)arg1;
-- (id)lastSpokenString;
 - (void)dealloc;
+- (void)setupObservers;
 - (id)init;
-- (BOOL)_makeSubstitutionsInAction:(id)arg1 stringsFileName:(id)arg2 verbosityLevel:(long long)arg3 ranges:(id)arg4;
-- (BOOL)_makeSubstitutionsInAction:(id)arg1 stringsFileName:(id)arg2 verbosityLevel:(long long)arg3;
+- (BOOL)_makeSubstitutionsInAction:(id)arg1 stringsFileName:(id)arg2 ranges:(id)arg3 verbosityLevel:(long long)arg4;
 - (int)typeForCharacter:(int)arg1;
-- (int)typeForComposedCharacter:(id)arg1;
-- (id)_createSubstitutionStringForPunctuationString:(id)arg1 punctuationTable:(id)arg2 stringsFileName:(id)arg3;
+- (long long)typeForComposedCharacter:(id)arg1;
+- (id)_createSubstitutionStringForPunctuationString:(id)arg1 punctuationTable:(id)arg2 stringsFileName:(id)arg3 verbosityLevel:(long long)arg4;
 - (int)_substitutionActionForPunctuationString:(id)arg1 punctuationTable:(id)arg2;
 - (id)mergedPunctuationTableForVerboseness:(long long)arg1;
 - (id)_textProcessingProperties;

@@ -23,6 +23,7 @@
 - (void)invalidate;
 - (void)removeAllSAs;
 - (void)setDelegateQueue:(id)arg1;
+- (id)description;
 - (id)initWithName:(id)arg1 delegate:(id)arg2;
 - (id)initWithName:(id)arg1 delegate:(id)arg2 pfkeySocket:(int)arg3;
 

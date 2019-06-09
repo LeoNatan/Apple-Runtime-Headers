@@ -27,7 +27,7 @@
 - (void)establishIPCWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetIPCIdleTimer;
 - (void)handleIPCDetached;
-- (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2 deviceIdentifier:(id)arg3;
+- (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2;
 - (void)handleAppMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setTunnelConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)didSetReasserting:(_Bool)arg1;

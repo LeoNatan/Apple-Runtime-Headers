@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HAPSecuritySessionEncryption, HMDDataStreamControlProtocol, HMFTimer, NSMapTable, NSString;
+@class HAPSecuritySessionEncryption, HMDDataStreamControlProtocol, HMFTimer, NSMapTable, NSMutableSet, NSString;
 @protocol HMDDataStreamDelegate, HMDDataStreamTransport, OS_dispatch_queue;
 
 @interface HMDDataStream : NSObject <HMFLogging, HMFTimerDelegate>
@@ -22,9 +22,13 @@
     HMDDataStreamControlProtocol *_controlProtocol;
     HMFTimer *_helloMessageResponseTimer;
     NSObject<OS_dispatch_queue> *_workQueue;
+    unsigned long long _nextRequestIdentifier;
+    NSMutableSet *_pendingRequests;
 }
 
 + (id)logCategory;
+@property(readonly, nonatomic) NSMutableSet *pendingRequests; // @synthesize pendingRequests=_pendingRequests;
+@property(nonatomic) unsigned long long nextRequestIdentifier; // @synthesize nextRequestIdentifier=_nextRequestIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) HMFTimer *helloMessageResponseTimer; // @synthesize helloMessageResponseTimer=_helloMessageResponseTimer;
 @property(nonatomic) _Bool firstMessageReceived; // @synthesize firstMessageReceived=_firstMessageReceived;
@@ -38,13 +42,17 @@
 - (void)startHelloMessageResponseTimer;
 - (void)transportDidOpen:(id)arg1;
 - (void)transportDidClose:(id)arg1;
+- (void)fulfillPendingRequestWithResponseHeader:(id)arg1 payload:(id)arg2;
 - (void)transport:(id)arg1 didReceiveRawFrame:(id)arg2;
-- (_Bool)mayHandleFirstMessageReceivedOnDataStream:(id)arg1 payload:(id)arg2;
+- (void)handlePendingRequests;
+- (_Bool)handleFirstMessageReceivedOnDataStream:(id)arg1 payload:(id)arg2;
 - (void)transport:(id)arg1 didFailWithError:(id)arg2;
+- (void)sendRequestForProtocol:(id)arg1 topic:(id)arg2 payload:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)sendRequestForProtocol:(id)arg1 topic:(id)arg2 identifier:(unsigned long long)arg3 payload:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)sendResponseForRequestHeader:(id)arg1 payload:(id)arg2 status:(unsigned short)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)sendEventForProtocol:(id)arg1 topic:(id)arg2 payload:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_sendMessageWithHeader:(id)arg1 payload:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)createRequestIdentifier;
 - (id)protocolDelegateHandle;
 - (void)addProtocol:(id)arg1 name:(id)arg2;
 - (void)close;

@@ -6,10 +6,13 @@
 
 #import <ControlCenterUIKit/NSObject-Protocol.h>
 
-@class CALayer;
+@class CALayer, NSArray;
 
 @protocol CCUIGroupRendering <NSObject>
-@property(readonly, nonatomic) CALayer *punchOutRootLayer;
+@property(readonly, nonatomic) NSArray *punchOutRootLayers;
 @property(readonly, nonatomic, getter=isGroupRenderingRequired) _Bool groupRenderingRequired;
+
+@optional
+@property(readonly, nonatomic) CALayer *punchOutRootLayer;
 @end
 

@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Message/MFOfflineCacheOperation.h>
-
-#import <Message/MFDADeferredFolderChangeOperation-Protocol.h>
+#import <Message/_MFOfflineCacheOperation.h>
 
 @class NSString;
 
-@interface _MFDADeferredNewMailboxOperation : MFOfflineCacheOperation <MFDADeferredFolderChangeOperation>
+@interface _MFDADeferredNewMailboxOperation : _MFOfflineCacheOperation
 {
     NSString *_displayName;
     NSString *_parentFolderID;
@@ -18,14 +16,11 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)description;
-- (id)folderChangeResult;
-- (void)applyToFolderMap:(id)arg1;
-- (_Bool)performWithAccount:(id)arg1 offlineCache:(id)arg2;
-- (void)dealloc;
+- (_Bool)translateToLocalActionWithConnection:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDisplayName:(id)arg1 parentFolderID:(id)arg2 temporaryFolderID:(id)arg3;
 
 @end
 

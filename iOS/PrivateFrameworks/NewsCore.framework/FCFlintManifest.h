@@ -11,14 +11,18 @@
 @interface FCFlintManifest : NSObject
 {
     NSString *_identifier;
-    FCAssetHandle *_mainDocumentAssetHandle;
     NSArray *_fontResourceIDs;
+    FCAssetHandle *_mainDocumentAssetHandle;
 }
 
-@property(readonly, nonatomic) NSArray *fontResourceIDs; // @synthesize fontResourceIDs=_fontResourceIDs;
 @property(readonly, nonatomic) FCAssetHandle *mainDocumentAssetHandle; // @synthesize mainDocumentAssetHandle=_mainDocumentAssetHandle;
+@property(readonly, nonatomic) NSArray *fontResourceIDs; // @synthesize fontResourceIDs=_fontResourceIDs;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)fetchANFDocumentDataProviderWithPriority:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)fetchANFDocumentDataProviderWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool isANFDocumentCached;
+@property(readonly, nonatomic) NSArray *anfDocumentAssetHandles;
 - (id)initWithIdentifier:(id)arg1 mainDocumentAssetHandle:(id)arg2 fontResourceIDs:(id)arg3;
 
 @end

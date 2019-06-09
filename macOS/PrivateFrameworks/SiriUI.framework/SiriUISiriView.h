@@ -13,7 +13,6 @@
 @class NSString, SiriUIButton, SiriUIConfiguration, SiriUIFlamesAndAuraView, SiriUIHelpButton, SiriUISiriStatusView;
 @protocol SiriUISiriViewDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUISiriView : NSView <SiriUISiriStatusViewDelegate, SiriUIFlamesAndAuraViewDelegate, AFUISiriRemoteViewHosting>
 {
     BOOL _disabled;

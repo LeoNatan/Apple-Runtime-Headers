@@ -57,7 +57,7 @@ __attribute__((visibility("hidden")))
 - (id)createSetOfPersistentStoreCoordinatorsRegisteredForStoreName:(id)arg1;
 - (id)metaForStoreName:(id)arg1;
 - (id)cacheWrapperForStoreName:(id)arg1;
-- (void)unregisterPersistentStore:(id)arg1;
+- (void)unregisterPersistentStore:(id)arg1 inCoordinator:(id)arg2;
 - (void)unregisterPersistentStoreCoordinator:(id)arg1;
 - (void)registerPersistentStore:(id)arg1 withStoreName:(id)arg2;
 - (id)description;

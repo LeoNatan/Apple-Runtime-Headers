@@ -19,7 +19,6 @@
     NSString *_name;
     NSString *_processBundleIdentifier;
     NSString *_containerAppBundleIdentifier;
-    NSString *_sourceBundleIdentifier;
     NSUUID *_UUID;
     NSMutableSet *_droppedEntitlements;
 }
@@ -27,7 +26,6 @@
 + (id)clientWithConnection:(id)arg1 error:(id *)arg2;
 @property(retain, nonatomic) NSMutableSet *droppedEntitlements; // @synthesize droppedEntitlements=_droppedEntitlements;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_UUID;
-@property(readonly, copy) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 @property(readonly, copy) NSString *containerAppBundleIdentifier; // @synthesize containerAppBundleIdentifier=_containerAppBundleIdentifier;
 @property(readonly, copy) NSString *processBundleIdentifier; // @synthesize processBundleIdentifier=_processBundleIdentifier;
 @property(readonly) _Bool isExtension; // @synthesize isExtension=_isExtension;
@@ -38,8 +36,6 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)sourceVersionWithDaemon:(id)arg1;
-- (_Bool)shouldBypassAuthorization;
 - (void)restoreEntitlement:(id)arg1;
 - (void)dropEntitlement:(id)arg1;
 - (id)valueForEntitlement:(id)arg1;
@@ -50,10 +46,6 @@
 - (id)_initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)initWithEntitlements:(id)arg1;
 - (id)initWithConnection:(id)arg1 entitlements:(id)arg2;
-- (id)baseDataEntityEncodingOptions;
-- (id)_watchKitAvailabilityFilter;
-- (id)_antimonySourceFilterWithSourceManager:(id)arg1;
-- (id)filterWithQueryFilter:(id)arg1 objectType:(id)arg2 profile:(id)arg3;
 
 @end
 

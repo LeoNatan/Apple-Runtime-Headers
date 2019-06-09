@@ -13,13 +13,14 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)__new:(id)arg1:(_Bool)arg2;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)getObjects:(id *)arg1 count:(unsigned int)arg2;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_c73467ff *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
+- (unsigned int)countForObject:(id)arg1;
+- (_Bool)containsObject:(id)arg1;
 - (id)objectEnumerator;
 - (id)member:(id)arg1;
 - (unsigned int)count;

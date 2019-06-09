@@ -15,5 +15,9 @@
 - (struct _NSRange)ax_paragraphFromPosition:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (struct _NSRange)ax_lineFromPosition:(long long)arg1 inDirection:(unsigned long long)arg2;
 - (struct _NSRange)_ax_rangeOfNextUnitWithStartPosition:(long long)arg1 direction:(unsigned long long)arg2 withCharacterSet:(id)arg3;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id *)arg1;
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id *)arg1;
+- (id)_axReconstitutedRepresentationForDictionaryKeyReplacement;
+- (id)_axDictionaryKeyReplacementRepresentation;
 @end
 

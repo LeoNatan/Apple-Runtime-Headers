@@ -13,12 +13,13 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (_Bool)_adjustSupportForContainerClassificationWithStroke:(id)arg1 consistingOfSubstrokes:(id)arg2;
-- (_Bool)_adjustSupportForLineClassificationWithStroke:(id)arg1 consistingOfSubstrokes:(id)arg2;
-- (_Bool)updateByRemovingStrokeIdentifier:(id)arg1;
-- (_Bool)adjustSupportWithStroke:(id)arg1 consistingOfSubstrokes:(id)arg2;
-@property(nonatomic) _Bool active; // @dynamic active;
-@property(nonatomic) float support; // @dynamic support;
+- (id)description;
+- (_Bool)_adjustSupportForContainerClassificationByAddingStroke:(id)arg1 consistingOfSubstrokes:(id)arg2;
+- (_Bool)_adjustSupportForLineClassificationByAddingStroke:(id)arg1 consistingOfSubstrokes:(id)arg2;
+- (_Bool)adjustSupportByAddingStroke:(id)arg1 consistingOfSubstrokes:(id)arg2;
+- (_Bool)adjustSupportByRemovingStrokeIdentifier:(id)arg1;
+- (_Bool)_removeSupportForStrokeIdentifier:(id)arg1;
+- (void)_setSupportForStrokeIdentifier:(id)arg1 support:(float)arg2;
 @property(retain, nonatomic) NSDictionary *supportByStrokeIdentifier; // @dynamic supportByStrokeIdentifier;
 
 @end

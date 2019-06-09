@@ -14,6 +14,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) double headingAccuracy;
 @property(readonly, nonatomic) double heading;
 @property(readonly, nonatomic) _Bool doingBiasEstimation;
 @property(readonly, nonatomic) _Bool doingYawCorrection;
@@ -24,11 +25,12 @@
 @property(readonly, nonatomic) CDStruct_31142d93 rotationRate;
 @property(readonly, nonatomic) CMAttitude *attitude;
 - (id)description;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDeviceMotion:(CDStruct_981b33bd)arg1 andTimestamp:(double)arg2;
+- (id)initWithDeviceMotion:(CDStruct_981b33bd)arg1 internal:(CDStruct_37a3040a)arg2 timestamp:(double)arg3;
 
 @end
 

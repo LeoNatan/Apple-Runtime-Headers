@@ -18,13 +18,14 @@
     CDUnknownBlockType _errorHandler;
 }
 
++ (id)os_log;
 @property BOOL deleteOriginalData; // @synthesize deleteOriginalData=_deleteOriginalData;
 @property BOOL mergeData; // @synthesize mergeData=_mergeData;
 @property(copy) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
+- (void).cxx_destruct;
 - (id)makePersistentStoreCoordinatorCacheWithAccounts:(id)arg1;
 - (id)makeAddressBookWithAccounts:(id)arg1;
 - (void)main;
-- (void)dealloc;
 - (id)initWithAccountRepository:(id)arg1 originAccountIdentifier:(id)arg2 destinationAccountIdentifier:(id)arg3;
 
 @end

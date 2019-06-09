@@ -6,50 +6,33 @@
 
 #import <MapsSuggestions/MapsSuggestionsBaseSource.h>
 
+#import <MapsSuggestions/MapsSuggestionsPreloadableSource-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsSource-Protocol.h>
 
-@class GEOLocationShifter, MapsSuggestionsLimitedDictionary, MapsSuggestionsNetworkRequester, NSArray, NSObject, NSString, RTRoutineManager;
+@class MapsSuggestionsRoutine, NSObject, NSString;
 @protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface MapsSuggestionsRoutineSource : MapsSuggestionsBaseSource <MapsSuggestionsSource>
+@interface MapsSuggestionsRoutineSource : MapsSuggestionsBaseSource <MapsSuggestionsSource, MapsSuggestionsPreloadableSource>
 {
-    RTRoutineManager *_routineManager;
+    MapsSuggestionsRoutine *_routine;
     struct NSArray *_previouslyAddedEntries;
-    NSArray *_homeAddresses;
-    NSArray *_workAddresses;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _running;
     NSObject<OS_dispatch_source> *_updateTimer;
-    _Bool _areFrequentLocationsAvailable;
-    GEOLocationShifter *_locationShifter;
-    MapsSuggestionsNetworkRequester *_requester;
-    MapsSuggestionsLimitedDictionary *_mapItemCache;
-    MapsSuggestionsLimitedDictionary *_mapItemCacheOrigin;
 }
 
 + (unsigned long long)disposition;
 + (_Bool)isEnabled;
 - (void).cxx_destruct;
 - (void)_requestTouristInfoFromRoutineIfNeededForLocation:(id)arg1;
-- (void)_setFrequentLocationsAreAvailable:(_Bool)arg1;
 - (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)canProduceEntriesOfType:(long long)arg1;
+- (_Bool)suggestionsEntriesAtLocation:(id)arg1 period:(struct NSDateInterval *)arg2 handler:(CDUnknownBlockType)arg3;
 - (double)updateSuggestionEntries;
 - (void)stop;
 - (void)start;
 - (void)_startMonitoringVehicleEvents;
 - (void)_updateSuggestionEntries;
-- (void)_resolveMapItemsAndAddEntries:(struct NSArray *)arg1;
-- (void)_treatPLOIs:(id)arg1 stepName:(id)arg2;
-- (id)_suggestionEntryForPredictedLOI:(id)arg1;
-- (_Bool)_addResumeRouteFieldsToSuggestionEntry:(id)arg1 fromSource:(id)arg2;
-- (_Bool)_addRecentsFieldsToSuggestionEntry:(id)arg1 fromSource:(id)arg2;
-- (_Bool)_addCalendarFieldsToSuggestionEntry:(id)arg1 fromSource:(id)arg2;
-- (_Bool)_addParkedCarFieldsToSuggestionsEntry:(id)arg1 vehicleEvent:(id)arg2;
-- (_Bool)_addFieldsToSuggestionsEntry:(id)arg1 fromRTMapItem:(id)arg2;
-- (void)_addLabelForEntry:(id)arg1;
-- (int)_convertTransportType:(long long)arg1;
-- (long long)_convertType:(long long)arg1 source:(id)arg2 typeSource:(long long)arg3;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 

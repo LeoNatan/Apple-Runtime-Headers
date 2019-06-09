@@ -6,23 +6,31 @@
 
 #import <UIKit/UIViewController.h>
 
-@class PUICButton;
+@class PUICButton, PUICNotchProvider;
 
 @interface SPModalViewController : UIViewController
 {
+    _Bool _descriptionOnlyContainsTableView;
+    _Bool _classicMode;
     UIViewController *_contentViewController;
     PUICButton *_cancelButton;
+    PUICNotchProvider *_notchProvider;
 }
 
+@property(nonatomic) _Bool classicMode; // @synthesize classicMode=_classicMode;
+@property(retain, nonatomic) PUICNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
 @property(retain, nonatomic) PUICButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(nonatomic) _Bool descriptionOnlyContainsTableView; // @synthesize descriptionOnlyContainsTableView=_descriptionOnlyContainsTableView;
 @property(retain, nonatomic) UIViewController *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void).cxx_destruct;
+- (id)_firstTableViewSubView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)viewDidLayoutSubviews;
 - (void)cancel;
 - (void)viewDidLoad;
-- (void)setNeedsStatusBarAppearanceUpdate;
 - (_Bool)prefersStatusBarHidden;
 - (void)dealloc;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
 

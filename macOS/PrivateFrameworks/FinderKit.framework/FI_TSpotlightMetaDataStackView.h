@@ -6,7 +6,7 @@
 
 #import <FinderKit/FI_TUpdateLayerView.h>
 
-@class FI_TTitleAndValueView, NSArray, NSDictionary, NSSet, NSView;
+@class FI_TTitleAndValueView, NSArray, NSDictionary, NSSet, NSStackView, NSView;
 
 __attribute__((visibility("hidden")))
 @interface FI_TSpotlightMetaDataStackView : FI_TUpdateLayerView
@@ -25,8 +25,12 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSView, void> _viewForTitleWidth;
     struct TNSRef<NSMutableArray<NSView *>, void> _filterViews;
     _Bool _populateForAnimating;
+    _Bool _useRelativeDates;
+    _Bool _centerAligned;
 }
 
+@property(readonly, nonatomic) _Bool centerAligned; // @synthesize centerAligned=_centerAligned;
+@property(nonatomic) _Bool useRelativeDates; // @synthesize useRelativeDates=_useRelativeDates;
 @property(nonatomic) _Bool showAttributesWithNoData; // @synthesize showAttributesWithNoData=_showAttributesWithNoData;
 @property(nonatomic) _Bool addLabelSuffix; // @synthesize addLabelSuffix=_addLabelSuffix;
 @property(nonatomic) unsigned long long maxAttributesToDisplay; // @synthesize maxAttributesToDisplay=_maxAttributesToDisplay;
@@ -38,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)reset;
 - (void)populate;
 - (id)prepareForAnimatingExpansion:(_Bool)arg1;
+@property(readonly, retain, nonatomic) NSStackView *stackView;
 @property(readonly, nonatomic) unsigned long long numRows; // @dynamic numRows;
 @property(retain, nonatomic) NSView *viewForTitleWidth; // @dynamic viewForTitleWidth;
 @property(retain, nonatomic) NSSet *filteredMetadata; // @dynamic filteredMetadata;

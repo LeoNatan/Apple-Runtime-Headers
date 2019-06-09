@@ -19,6 +19,7 @@
 + (id)clientDOProxyInterposerWithXPCConnection:(id)arg1;
 @property(readonly, retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void)insertText:(id)arg1;
+- (void)dealloc;
 - (struct CGRect)firstRectForCharacterRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (id)stringFromRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
 - (id)uniqueClientIdentifierString;

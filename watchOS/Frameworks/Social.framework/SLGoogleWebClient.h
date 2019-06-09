@@ -15,6 +15,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) Class fallbackWebUserInfoResponseClass;
 @property(readonly, nonatomic) Class webUserInfoResponseClass;
 @property(readonly, nonatomic) Class webAuthRequestClass;
 @property(readonly, nonatomic) Class tokenRequestClass;
@@ -23,6 +24,7 @@
 @property(readonly, nonatomic) NSString *source;
 @property(readonly, nonatomic) NSArray *youTubeScope;
 @property(readonly, nonatomic) NSArray *defaultScope;
+@property(readonly, nonatomic) NSString *fallbackUserInfoURL;
 @property(readonly, nonatomic) NSString *userInfoURL;
 @property(readonly, nonatomic) NSString *authRequestURL;
 @property(readonly, nonatomic) NSString *tokenURL;

@@ -9,7 +9,7 @@
 #import <TVSystemUI/UINamedLayerImage-Protocol.h>
 
 @class NSString, UIImage;
-@protocol UINamedLayerImage;
+@protocol UINamedLayerContentProvider, UINamedLayerImage;
 
 @interface TVSUINamedLayerImage : NSObject <UINamedLayerImage>
 {
@@ -35,6 +35,7 @@
 - (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic) id <UINamedLayerContentProvider> contentProvider;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

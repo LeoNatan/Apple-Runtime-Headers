@@ -21,6 +21,9 @@ __attribute__((visibility("hidden")))
     WDDocument *mDocument;
 }
 
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isFormattingChangeDateOverridden;
 - (void)setFormattingChangeDate:(id)arg1;
@@ -127,9 +130,7 @@ __attribute__((visibility("hidden")))
 - (short)position;
 - (void)setWidth:(short)arg1;
 - (short)width;
-- (id)document;
 - (id)initWithDocument:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)description;
 - (void)addPropertiesValues:(CDStruct_dbdf0818 *)arg1 to:(CDStruct_dbdf0818 *)arg2;

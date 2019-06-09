@@ -8,6 +8,7 @@
 
 @class AVCapturePhotoSettings, AVCaptureResolvedPhotoSettings, AVWeakReferencingDelegateStorage, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCapturePhotoRequest : NSObject
 {
     AVWeakReferencingDelegateStorage *_delegateStorage;
@@ -17,9 +18,9 @@
     NSArray *_expectedPhotoManifest;
     unsigned int _firedCallbackFlags;
     unsigned long long _firedPhotoCallbacksCount;
-    void *_previewSurface;
+    struct __IOSurface *_previewSurface;
     struct opaqueCMSampleBuffer *_previewSampleBuffer;
-    void *_thumbnailSurface;
+    struct __IOSurface *_thumbnailSurface;
     _Bool _delegateSupportsDebugMetadataSidecarFile;
     _Bool _lensStabilizationSupported;
 }
@@ -27,9 +28,9 @@
 + (id)requestWithDelegate:(id)arg1 settings:(id)arg2 lensStabilizationSupported:(_Bool)arg3;
 @property(readonly) _Bool lensStabilizationSupported; // @synthesize lensStabilizationSupported=_lensStabilizationSupported;
 @property(readonly) _Bool delegateSupportsDebugMetadataSidecarFile; // @synthesize delegateSupportsDebugMetadataSidecarFile=_delegateSupportsDebugMetadataSidecarFile;
-@property(retain, nonatomic) void *thumbnailSurface; // @synthesize thumbnailSurface=_thumbnailSurface;
+@property(retain, nonatomic) struct __IOSurface *thumbnailSurface; // @synthesize thumbnailSurface=_thumbnailSurface;
 @property(retain, nonatomic) struct opaqueCMSampleBuffer *previewSampleBuffer; // @synthesize previewSampleBuffer=_previewSampleBuffer;
-@property(retain, nonatomic) void *previewSurface; // @synthesize previewSurface=_previewSurface;
+@property(retain, nonatomic) struct __IOSurface *previewSurface; // @synthesize previewSurface=_previewSurface;
 @property(nonatomic) unsigned long long firedPhotoCallbacksCount; // @synthesize firedPhotoCallbacksCount=_firedPhotoCallbacksCount;
 @property(nonatomic) unsigned int firedCallbackFlags; // @synthesize firedCallbackFlags=_firedCallbackFlags;
 @property(readonly, nonatomic) NSArray *expectedPhotoManifest; // @synthesize expectedPhotoManifest=_expectedPhotoManifest;

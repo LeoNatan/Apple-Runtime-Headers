@@ -12,6 +12,18 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct _ExtraEntityIVars {
+    id _field1;
+    id _field2;
+    id _field3;
+    id _field4;
+    id _field5;
+    id _field6;
+    int _field7;
+    int _field8;
+    void *_field9;
+};
+
 struct _NSExtraPropertyIVars {
     id _field1;
     long long _field2;
@@ -93,6 +105,10 @@ struct persistentStoreCacheFlags {
     unsigned int _reserved:31;
 };
 
+struct sqlite3_snapshot {
+    unsigned char _field1[48];
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -111,6 +127,28 @@ typedef struct {
 typedef struct {
     unsigned int val[8];
 } CDStruct_4c969caf;
+
+typedef struct {
+    unsigned int _field1;
+    double _field2;
+    unsigned long long _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    struct {
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :28;
+    } _field8;
+    int _field9;
+    void **_field10;
+    unsigned int *_field11;
+    void *_field12;
+    void *_field13;
+} CDStruct_6cdbdfa1;
 
 typedef struct {
     int _field1;

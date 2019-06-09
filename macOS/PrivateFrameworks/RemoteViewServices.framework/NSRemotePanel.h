@@ -9,10 +9,11 @@
 #import <RemoteViewServices/NSRemoteServiceConnectionDelegate-Protocol.h>
 
 @class NSError, NSRemotePanelOrderingContext, NSRemoteServiceConnection, NSRemoteWindowController, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@protocol NSAppearanceCustomization, OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface NSRemotePanel : NSObject <NSRemoteServiceConnectionDelegate>
 {
+    NSObject<NSAppearanceCustomization> *_appearanceCustomizer;
     NSRemoteWindowController *_windowController;
     NSRemoteServiceConnection *_serviceConnection;
     unsigned long long _state;
@@ -47,6 +48,7 @@
 @property(retain) NSString *prompt; // @synthesize prompt=_prompt;
 @property id delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSRemoteWindowController *controller; // @synthesize controller=_windowController;
+- (void).cxx_destruct;
 - (id)contentView;
 - (void)orderOut:(id)arg1;
 - (void)controller:(id)arg1 hasWindowAvailable:(id)arg2;
@@ -56,7 +58,7 @@
 - (void)_handlePerformKeyEquivalent:(id)arg1;
 - (void)_handlePanelWillExpandDelegate:(id)arg1;
 - (void)_attemptRecoveryFromErrorForRequest:(id)arg1;
-- (void)_didPresentErrorWithRecovery:(BOOL)arg1 contextInfo:(void *)arg2;
+- (void)_didPresentErrorWithRecovery:(BOOL)arg1 contextInfo:(id)arg2;
 - (void)_handleShouldEnableURLDelegate:(id)arg1;
 - (void)_handlePanelComplete:(id)arg1;
 - (void)panelCompletedWithNewDocumentRequest;
@@ -84,7 +86,6 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)dictionaryForObservedValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)getObservedkeyPathsForPanelSettings;
-- (void)tellRemotePanelAccessoryViewBecameFirstResponder;
 @property(getter=_useAlertStyle, setter=_setUseAlertStyle:) BOOL useAlertStyle;
 - (void)setMainThreadKVOActive:(BOOL)arg1;
 - (BOOL)mainThreadKVOActive;

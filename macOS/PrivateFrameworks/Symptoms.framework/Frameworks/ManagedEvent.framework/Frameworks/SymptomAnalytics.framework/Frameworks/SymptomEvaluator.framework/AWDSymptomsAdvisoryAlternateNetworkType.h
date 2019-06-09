@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsAdvisoryAlternateNetworkType : PBCodable <NSCopying>
 {
     unsigned long long _adviceHeldForSecs;

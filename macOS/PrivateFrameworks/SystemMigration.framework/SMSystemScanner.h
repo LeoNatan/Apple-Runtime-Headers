@@ -72,11 +72,10 @@
 - (void)disksDisappeared:(id)arg1;
 - (void)disksChanged:(id)arg1;
 - (void)disksAppeared:(id)arg1;
-- (id)latestBackupInFolder:(id)arg1;
 - (id)createContainingSparseBundleSystemForPath:(id)arg1;
 - (void)addArchiveAndInstallSystems:(id)arg1;
-- (int)addBackupDBTimeMachineSystems:(id)arg1 andRemoteDiskID:(id)arg2 andDADiskID:(id)arg3;
-- (id)addSparseBundleTimeMachineSystems:(id)arg1 fromSparseBundles:(id)arg2 andRemoteDiskID:(id)arg3 andDADiskID:(id)arg4;
+- (int)addSystemsFromTMDataVolume:(id)arg1 andRemoteDiskID:(id)arg2 andDADiskID:(id)arg3;
+- (id)addSystemsFromTMSparseBundles:(id)arg1 onVolume:(id)arg2 andRemoteDiskID:(id)arg3 andDADiskID:(id)arg4;
 - (id)timeCapsuleParentOfMountPoint:(id)arg1;
 - (void)scanDisk:(id)arg1;
 - (BOOL)mountDiskIfNeeded:(id)arg1;

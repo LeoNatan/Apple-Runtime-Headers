@@ -6,47 +6,44 @@
 
 #import <UIKitCore/UIPanGestureRecognizer.h>
 
-#import <UIKitCore/_UIScreenEdgePanRecognizingDelegate-Protocol.h>
+#import <UIKitCore/_UISEGestureFeatureDelegate-Protocol.h>
 
-@class NSString;
-@protocol _UIScreenEdgePanRecognizing;
+@class NSString, _UISEGestureFeatureSettings, _UISEMuxGestureFeature;
 
-@interface UIScreenEdgePanGestureRecognizer : UIPanGestureRecognizer <_UIScreenEdgePanRecognizingDelegate>
+@interface UIScreenEdgePanGestureRecognizer : UIPanGestureRecognizer <_UISEGestureFeatureDelegate>
 {
-    id <_UIScreenEdgePanRecognizing> _recognizer;
-    _Bool _ignoreSubsequentTouches;
+    _UISEGestureFeatureSettings *_settings;
+    CDUnknownBlockType _createFeatureBlock;
+    _UISEMuxGestureFeature *_rootFeature;
+    unsigned int _touchedEdges;
+    unsigned int _edges;
 }
 
++ (_Bool)supportsSecureCoding;
 + (_Bool)_shouldSupportStylusTouches;
 + (_Bool)_shouldDefaultToTouches;
+@property(nonatomic) unsigned int edges; // @synthesize edges=_edges;
 - (void).cxx_destruct;
-- (_Bool)ignoreSubsequentTouches;
-- (unsigned int)touchedEdges;
-- (void)setBottomEdgeAngleWindow:(double)arg1;
-- (double)bottomEdgeAngleWindow;
+- (id)debugDictionary;
 - (void)setRecognizeAlongEdge:(_Bool)arg1;
+- (unsigned int)touchedEdges;
 - (_Bool)recognizeAlongEdge;
-- (void)setRecognizeImmediatelyFromEdgeLocked:(_Bool)arg1;
-- (_Bool)recognizeImmediatelyFromEdgeLocked;
+- (void)setMinimumNumberOfTouches:(unsigned int)arg1;
 - (void)_setHysteresis:(float)arg1;
 - (void)_setEdgeRegionSize:(float)arg1;
 - (float)_edgeRegionSize;
-- (_Bool)isRequiringLongPress;
-- (void)screenEdgePanRecognizingStateDidChange:(id)arg1;
+- (void)featureDidChangeState:(id)arg1;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (_Bool)_shouldTryToBeginWithEvent:(id)arg1;
 - (void)reset;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (id)recognizerTouchesToIgnoreForEvent:(id)arg1;
-- (void)incorporateTouches:(id)arg1 withEvent:(id)arg2;
 - (_Bool)_shouldUseGrapeFlags;
 - (int)_touchInterfaceOrientation;
 - (struct CGPoint)_locationForTouch:(id)arg1;
-@property(nonatomic) unsigned int edges;
-- (id)_recognizer;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(int)arg3 options:(unsigned int)arg4;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(int)arg3 maxTouches:(unsigned int)arg4;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

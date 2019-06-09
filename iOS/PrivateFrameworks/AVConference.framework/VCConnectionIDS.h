@@ -8,13 +8,14 @@
 
 #import <AVConference/VCConnectionProtocol-Protocol.h>
 
-@class IDSDataChannelLinkContext, NSData, NSString, NSUUID;
+@class IDSDataChannelLinkContext, NSData, NSString, NSUUID, VCDatagramChannelIDS;
 
 __attribute__((visibility("hidden")))
 @interface VCConnectionIDS : NSObject <VCConnectionProtocol>
 {
     IDSDataChannelLinkContext *_linkContext;
     unsigned int _datagramChannelToken;
+    VCDatagramChannelIDS *_datagramChannel;
     int _priority;
     unsigned int _type;
     int _localCellTech;
@@ -22,17 +23,24 @@ __attribute__((visibility("hidden")))
     int _connectionMTU;
     unsigned int _uplinkBitrateCap;
     unsigned int _downlinkBitrateCap;
+    _Bool _isLocalConstrained;
+    _Bool _isRemoteConstrained;
 }
 
 + (unsigned int)worstCaseNetworkOverheadInBytesWithNumOfStreamId:(int)arg1 isPriorityIncluded:(_Bool)arg2;
+@property(readonly) _Bool isRemoteConstrained; // @synthesize isRemoteConstrained=_isRemoteConstrained;
+@property(readonly) _Bool isLocalConstrained; // @synthesize isLocalConstrained=_isLocalConstrained;
 @property unsigned int downlinkBitrateCap; // @synthesize downlinkBitrateCap=_downlinkBitrateCap;
 @property unsigned int uplinkBitrateCap; // @synthesize uplinkBitrateCap=_uplinkBitrateCap;
 @property(readonly) unsigned int type; // @synthesize type=_type;
 @property int priority; // @synthesize priority=_priority;
+@property(readonly) VCDatagramChannelIDS *datagramChannel; // @synthesize datagramChannel=_datagramChannel;
 @property(readonly) unsigned int datagramChannelToken; // @synthesize datagramChannelToken=_datagramChannelToken;
 - (_Bool)matchesChannelTokenWithSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
 - (_Bool)matchesSourceDestinationInfo:(struct tagVCSourceDestinationInfo *)arg1;
 @property(readonly) unsigned char linkID;
+- (_Bool)isOnSameInterfacesAndQRSessionWithConnection:(id)arg1;
+- (_Bool)isOnSameQRSessionWithConnection:(id)arg1;
 - (_Bool)isOnSameInterfacesWithConnection:(id)arg1;
 - (_Bool)isSameAsConnection:(id)arg1;
 @property int remoteCellTech;

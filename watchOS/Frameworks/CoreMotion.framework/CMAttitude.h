@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) double pitch;
 @property(readonly, nonatomic) double roll;
 - (id)description;
+- (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (void)setQuaternion:(CDStruct_bf7dff04)arg1;

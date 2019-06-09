@@ -25,7 +25,9 @@
 + (id)virtualInterfaceNames;
 + (id)interfaceByRole:(long long)arg1;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
-- (void)internal_joinWiFiNetworkWithUserAgent:(id)arg1 interfaceName:(id)arg2 dialogToken:(long long)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)internal_showLowBatteryNotificationForTetherDevice:(id)arg1 interfaceName:(id)arg2;
+- (void)internal_showAutoHotspotNotificationForTetherDevice:(id)arg1 retry:(BOOL)arg2 interfaceName:(id)arg3;
+- (void)internal_joinWiFiNetworkWithUserAgent:(id)arg1 interfaceName:(id)arg2 timestamp:(double)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)internal_enableTetherDevice:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)internal_stopBrowsingForTetherDevicesAndReply:(CDUnknownBlockType)arg1;
 - (void)internal_startBrowsingForTetherDevicesAndReply:(CDUnknownBlockType)arg1;
@@ -33,7 +35,7 @@
 - (void)internal_showMICErrorWithNetworkName:(id)arg1;
 - (void)internal_showAvailableWiFiNetworks:(id)arg1 interfaceName:(id)arg2;
 - (void)internal_setWiFiPasswordForUserKeychain:(id)arg1 ssid:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)internal_startLoginWindowMode8021XWithProfile:(id)arg1 username:(id)arg2 password:(id)arg3 interfaceWithName:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)internal_startUserMode8021XWithProfile:(id)arg1 interfaceWithName:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)internal_startUserMode8021XWithPasspointDomainName:(id)arg1 interfaceWithName:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)internal_startUserMode8021XWithSSID:(id)arg1 username:(id)arg2 password:(id)arg3 identity:(id)arg4 remember:(BOOL)arg5 interfaceWithName:(id)arg6 reply:(CDUnknownBlockType)arg7;
 - (void)internal_startUserMode8021XUsingKeychainWithSSID:(id)arg1 interfaceWithName:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -66,7 +68,6 @@
 - (BOOL)stopMonitoringEventWithType:(long long)arg1 error:(out id *)arg2;
 - (BOOL)startMonitoringEventWithType:(long long)arg1 error:(out id *)arg2;
 - (void)__startMonitoringEventWithType:(long long)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)interfaces;
 - (id)interfaceWithName:(id)arg1;
@@ -74,6 +75,8 @@
 - (id)__interfaceWithName:(id)arg1;
 - (id)__interfaceWithName:(id)arg1 legacy:(BOOL)arg2;
 - (id)init;
+- (long long)autoHotspotMode;
+- (BOOL)setAutoHotspotMode:(long long)arg1 error:(id *)arg2;
 - (BOOL)setWiFiPasswordInSystemKeychain:(id)arg1 ssid:(id)arg2 error:(id *)arg3;
 - (BOOL)forgetPasspointWiFiProfileWithDomainName:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)forgetWiFiProfileWithSSID:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
@@ -90,7 +93,11 @@
 - (BOOL)startBrowsingForTetherDevicesAndReturnError:(id *)arg1;
 - (id)interfaceWithRole:(long long)arg1;
 - (id)interfaceWithRole:(long long)arg1 legacy:(BOOL)arg2;
-- (BOOL)internal_userAgentWillShowJoinUIForWiFiNetwork:(id)arg1 interfaceName:(id)arg2 dialogToken:(long long)arg3 error:(id *)arg4;
+- (void)internal_cleanupSidecarMetricsSocketManager:(CDUnknownBlockType)arg1;
+- (void)internal_setupSidecarMetricsSocketManager:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)internal_handOffSidecarMetricsFromCompanion:(id)arg1 metricsData:(id)arg2;
+- (void)internal_receivedAutoHotspotNotificationResponse:(BOOL)arg1 updateMode:(long long)arg2 tetherDevice:(id)arg3 interfaceName:(id)arg4;
+- (BOOL)internal_userAgentWillShowJoinUIForWiFiNetwork:(id)arg1 interfaceName:(id)arg2 timestamp:(double)arg3 error:(id *)arg4;
 - (void)internal_foundTetherDevices:(id)arg1;
 
 @end

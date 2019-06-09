@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 + (id)oadGraphicPropertiesFromXlMarkerStyle:(const struct XlChartMarkerStyle *)arg1 complex:(_Bool)arg2 state:(id)arg3;
 + (id)oadStrokeFrom:(const struct XlChartLineStyle *)arg1;
 + (id)oadGraphicPropertiesFromState:(id)arg1 xlLineStyle:(const struct XlChartLineStyle *)arg2 xlFillStyle:(const struct XlChartFillStyle *)arg3;
++ (id)oadGraphicPropertiesFromXlLeaderLineStyleInPlot:(const struct XlChartPlot *)arg1 state:(id)arg2;
 + (id)oadGraphicPropertiesFromXlChartSeriesFormat:(const struct XlChartSeriesFormat *)arg1 state:(id)arg2;
 + (id)oadGraphicPropertiesFromXlChartTextFrame:(struct XlChartTextFrame *)arg1 state:(id)arg2;
 + (id)oadGraphicPropertiesFromShapePropsStream:(const char *)arg1 size:(unsigned int)arg2;

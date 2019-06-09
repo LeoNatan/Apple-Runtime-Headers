@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitUI/PKPeerPaymentUpdatedTermsViewControllerDelegate-Protocol.h>
 #import <PassKitUI/RemoteUIControllerDelegate-Protocol.h>
 
 @class NSString, NSURL, PKPeerPaymentWebService, RemoteUIController, UINavigationController, UIViewController;
 
-@interface PKPeerPaymentTermsController : NSObject <RemoteUIControllerDelegate>
+@interface PKPeerPaymentTermsController : NSObject <PKPeerPaymentUpdatedTermsViewControllerDelegate, RemoteUIControllerDelegate>
 {
+    CDUnknownBlockType _completionHandler;
     NSURL *_termsURL;
     NSString *_termsIdentifier;
+    NSString *_passUniqueID;
     PKPeerPaymentWebService *_webService;
     RemoteUIController *_remoteUIController;
     long long _paymentSetupContext;
@@ -28,12 +31,16 @@
 @property(nonatomic) long long paymentSetupContext; // @synthesize paymentSetupContext=_paymentSetupContext;
 @property(readonly, nonatomic) RemoteUIController *remoteUIController; // @synthesize remoteUIController=_remoteUIController;
 @property(readonly, nonatomic) PKPeerPaymentWebService *webService; // @synthesize webService=_webService;
+@property(readonly, copy, nonatomic) NSString *passUniqueID; // @synthesize passUniqueID=_passUniqueID;
 @property(readonly, copy, nonatomic) NSString *termsIdentifier; // @synthesize termsIdentifier=_termsIdentifier;
 @property(readonly, nonatomic) NSURL *termsURL; // @synthesize termsURL=_termsURL;
 - (void).cxx_destruct;
+- (void)_presentRemoteUIControllerWithUpdatedTermsViewController:(id)arg1;
+- (void)_presentRemoteUIController;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(unsigned long long *)arg3;
-- (void)presentTermsOverController:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithTermsURL:(id)arg1 termsIdentifier:(id)arg2 webService:(id)arg3;
+- (void)peerPaymentUpdatedTermsViewController:(id)arg1 didSelectContinue:(_Bool)arg2;
+- (void)presentTermsOverController:(id)arg1 showInterstitialViewController:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithTermsURL:(id)arg1 termsIdentifier:(id)arg2 passUniqueID:(id)arg3 webService:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

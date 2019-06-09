@@ -43,6 +43,7 @@
 - (id)accessibilityUserDefinedHint;
 - (void)setAccessibilityHint:(id)arg1;
 - (id)accessibilityHint;
+- (id)_accessibilityCapturedImages;
 - (id)accessibilityUserDefinedValue;
 - (void)setAccessibilityValue:(id)arg1;
 - (id)accessibilityValue;
@@ -53,6 +54,7 @@
 - (id)accessibilityLocalizationBundlePath;
 - (id)accessibilityLocalizationBundleID;
 - (id)accessibilityLocalizedStringKey;
+- (_Bool)accessibilityRespondsToUserInteraction;
 - (long long)indexOfAccessibilityElement:(id)arg1;
 - (id)accessibilityElementAtIndex:(long long)arg1;
 - (long long)accessibilityElementCount;

@@ -22,3 +22,8 @@ typedef struct {
     unsigned long long size;
 } CDStruct_5df41632;
 
+// Ambiguous groups
+typedef struct {
+    unsigned int globalDecision:1;
+} CDStruct_121d7f17;
+

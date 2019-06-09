@@ -9,20 +9,22 @@
 #import <GeoServices/GEOServerFormatTokenPriceValue-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBUnknownFields;
 
 @interface GEOPrice : PBCodable <GEOServerFormatTokenPriceValue, NSCopying>
 {
-    float _amount;
+    PBUnknownFields *_unknownFields;
     NSString *_currencyCode;
+    float _amount;
     struct {
-        unsigned int amount:1;
-    } _has;
+        unsigned int has_amount:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
-@property(nonatomic) float amount; // @synthesize amount=_amount;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
@@ -30,10 +32,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) NSString *currencyCode;
 @property(readonly, nonatomic) _Bool hasCurrencyCode;
 @property(nonatomic) _Bool hasAmount;
+@property(nonatomic) float amount;
 @property(readonly, nonatomic) double value;
 
 // Remaining properties

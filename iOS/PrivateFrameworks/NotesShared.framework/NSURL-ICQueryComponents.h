@@ -6,7 +6,23 @@
 
 #import <Foundation/NSURL.h>
 
+@class NSString;
+
 @interface NSURL (ICQueryComponents)
++ (id)ic_urlFromWeblocFileAtURL:(id)arg1;
 - (id)queryComponents;
+@property(readonly, nonatomic) _Bool ic_isURLAnInternetLocator;
+@property(readonly, nonatomic) _Bool ic_isReachable;
+@property(readonly, nonatomic) long long ic_fileSize;
+@property(readonly, nonatomic) NSString *ic_UTI;
+@property(readonly, nonatomic) _Bool ic_isSupportedAsAttachment;
+@property(readonly, nonatomic) _Bool ic_isWebURL;
+@property(readonly, nonatomic) _Bool ic_isAppStoreURL;
+@property(readonly, nonatomic) _Bool ic_isiTunesURL;
+@property(readonly, nonatomic) _Bool ic_isNewsURL;
+@property(readonly, nonatomic) _Bool ic_isMapURL;
+@property(readonly, nonatomic) NSURL *ic_uniquedURL;
+- (void)ic_updateFlagToExcludeFromCloudBackup:(_Bool)arg1;
+- (id)ic_dedupedURLWithProhibitedNames:(id)arg1;
 @end
 

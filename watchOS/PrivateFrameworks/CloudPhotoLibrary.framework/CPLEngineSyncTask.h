@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CPLEngineLibrary, NSString;
+@class CPLEngineLibrary, CPLSyncSession, NSString;
 @protocol CPLEngineSyncTaskDelegate, NSCoding;
 
 @interface CPLEngineSyncTask : NSObject
@@ -16,14 +16,16 @@
     _Bool _cancelled;
     id <CPLEngineSyncTaskDelegate> _delegate;
     CPLEngineLibrary *_engineLibrary;
+    CPLSyncSession *_session;
     id <NSCoding> _transportUserIdentifier;
 }
 
-+ (id)taskWithEngineLibrary:(id)arg1;
++ (id)taskWithEngineLibrary:(id)arg1 session:(id)arg2;
 @property(getter=isCancelled, setter=_setCancelled:) _Bool cancelled; // @synthesize cancelled=_cancelled;
 @property(nonatomic) _Bool forceSync; // @synthesize forceSync=_forceSync;
 @property(nonatomic) _Bool foreground; // @synthesize foreground=_foreground;
 @property(retain, nonatomic) id <NSCoding> transportUserIdentifier; // @synthesize transportUserIdentifier=_transportUserIdentifier;
+@property(readonly, nonatomic) CPLSyncSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) CPLEngineLibrary *engineLibrary; // @synthesize engineLibrary=_engineLibrary;
 @property(retain) id <CPLEngineSyncTaskDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -34,7 +36,7 @@
 - (void)launch;
 @property(readonly, nonatomic) NSString *taskIdentifier;
 - (unsigned int)diskPressureState;
-- (id)initWithEngineLibrary:(id)arg1;
+- (id)initWithEngineLibrary:(id)arg1 session:(id)arg2;
 
 @end
 

@@ -20,11 +20,6 @@
 @property(readonly, nonatomic) AWDServerConnection *awdServer; // @synthesize awdServer=_awdServer;
 - (void).cxx_destruct;
 - (void)submitVersioningMetricWithVersion:(id)arg1 variant:(int)arg2;
-- (void)ckBookmarkSyncFinishedWithResult:(long long)arg1 error:(id)arg2;
-- (void)didFailToMigrateToCKBookmarksAsPrimaryMigrator:(_Bool)arg1 error:(id)arg2;
-- (void)didSuccessfullyMigrateToCKBookmarksAsPrimaryMigrator:(_Bool)arg1;
-- (void)didStartMigratingToCKBookmarksAsPrimaryMigrator:(_Bool)arg1 localState:(long long)arg2 remoteState:(long long)arg3;
-- (void)unableToSilentlyMigrateToCKBookmarksWithReason:(int)arg1;
 - (void)submitAutomaticReaderActivation:(int)arg1;
 - (void)didToggleDomainSpecificAutomaticReader:(_Bool)arg1;
 - (void)didToggleGloballyUseAutomaticReader:(_Bool)arg1;
@@ -38,12 +33,11 @@
 - (void)didSelectContactAutoFillSet:(int)arg1 hasPreviouslyCustomizedSet:(_Bool)arg2;
 - (void)didShowContactAutoFillSetsWithMeCardSets:(_Bool)arg1 showingPreviouslyCustomizedSet:(_Bool)arg2;
 - (void)didAutoFillCustomContactSetShowingMeCard:(_Bool)arg1;
-- (void)safeBrowsingUserActionAfterSeeingWarning:(int)arg1;
-- (void)safeBrowsingWarningPageShown:(int)arg1;
 - (void)didReceiveInvalidMessageFromWebProcess:(id)arg1;
 - (void)pageLoadCompleted:(unsigned long long)arg1 withErrorCode:(long long)arg2;
 - (void)pageLoadStarted:(unsigned long long)arg1;
 - (void)pageLoadCompleted:(unsigned long long)arg1;
+- (void)performOnAnalyticsQueueWithDelay:(long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)registerQueriableMetric:(unsigned int)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)initWithQueue:(id)arg1;
 

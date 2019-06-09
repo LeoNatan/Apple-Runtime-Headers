@@ -136,9 +136,14 @@ struct statfs {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    int _field1;
-    int _field2;
-} CDStruct_1ef3fb1f;
+    double value;
+    double strength;
+} CDStruct_8bc0f2ec;
+
+typedef struct {
+    int width;
+    int height;
+} CDStruct_79c71658;
 
 typedef struct {
     long long value;
@@ -146,6 +151,13 @@ typedef struct {
     unsigned int flags;
     long long epoch;
 } CDStruct_1b6d18a9;
+
+typedef struct {
+    long long smallTickCount;
+    long long largeTickCount;
+    double smallTickLength;
+    double largeTickLength;
+} CDStruct_8ae1ff66;
 
 typedef struct {
     double _field1;
@@ -163,4 +175,10 @@ typedef struct {
     struct CGPoint _field2;
     double _field3;
 } CDStruct_9c823225;
+
+typedef struct {
+    struct CGRect _field1;
+    struct CGPoint _field2;
+    struct CGAffineTransform _field3;
+} CDStruct_d54ccef3;
 

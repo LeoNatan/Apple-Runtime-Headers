@@ -74,6 +74,7 @@
 - (_Bool)changeToActiveListIndex:(unsigned long long)arg1 withContext:(id)arg2;
 - (void)changeMedia:(long long)arg1 withContext:(id)arg2;
 - (void)changeMedia:(long long)arg1;
+- (_Bool)isEqualToPlaylist:(id)arg1;
 - (id)initWithMediaItems:(id)arg1 index:(long long)arg2 isCollection:(_Bool)arg3;
 - (id)init;
 - (void)insertAfterCurrentPlayingItem:(id)arg1;

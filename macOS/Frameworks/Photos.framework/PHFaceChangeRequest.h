@@ -4,57 +4,57 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Photos/PHChangeRequest.h>
 
-@class NSString, PHFace, PHFaceprint, PHObjectPlaceholder, PHPhotoLibrary, PHResourceOutput, RDFace;
+#import <Photos/PHInsertChangeRequest-Protocol.h>
+#import <Photos/PHUpdateChangeRequest-Protocol.h>
 
-@interface PHFaceChangeRequest : NSObject
+@class NSManagedObjectID, NSString, PHFaceprint, PHObjectPlaceholder;
+
+@interface PHFaceChangeRequest : PHChangeRequest <PHInsertChangeRequest, PHUpdateChangeRequest>
 {
-    PHFace *_face;
-    RDFace *_mutableModel;
-    BOOL _hidden;
-    BOOL _isInTrash;
-    BOOL _leftEyeClosed;
-    BOOL _rightEyeClosed;
-    PHObjectPlaceholder *_placeholderForCreatedFace;
-    id _adjustmentVersion;
-    PHResourceOutput *_faceTileResource;
-    PHPhotoLibrary *_photoLibrary;
+    PHFaceprint *_faceprint;
+    BOOL _didSetFaceprint;
+    BOOL _shouldClearFaceCropGenerationState;
 }
 
-+ (id)changeRequestForFace:(id)arg1;
++ (BOOL)canGenerateUUIDWithoutEntitlements;
 + (void)deleteFaces:(id)arg1;
++ (id)changeRequestForFace:(id)arg1;
 + (id)creationRequestForFace;
-@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-@property(retain, nonatomic) PHResourceOutput *faceTileResource; // @synthesize faceTileResource=_faceTileResource;
-@property(copy, nonatomic) id adjustmentVersion; // @synthesize adjustmentVersion=_adjustmentVersion;
-@property(nonatomic, getter=isRightEyeClosed) BOOL rightEyeClosed; // @synthesize rightEyeClosed=_rightEyeClosed;
-@property(nonatomic, getter=isLeftEyeClosed) BOOL leftEyeClosed; // @synthesize leftEyeClosed=_leftEyeClosed;
-@property(nonatomic, getter=isInTrash) BOOL isInTrash; // @synthesize isInTrash=_isInTrash;
-@property(nonatomic, getter=isHidden) BOOL hidden; // @synthesize hidden=_hidden;
-@property(readonly, nonatomic) PHObjectPlaceholder *placeholderForCreatedFace; // @synthesize placeholderForCreatedFace=_placeholderForCreatedFace;
+@property(nonatomic) BOOL shouldClearFaceCropGenerationState; // @synthesize shouldClearFaceCropGenerationState=_shouldClearFaceCropGenerationState;
 - (void).cxx_destruct;
-@property(nonatomic) long long clusterSequenceNumber;
-@property(nonatomic) long long qualityMeasure;
 @property(retain, nonatomic) PHFaceprint *faceprint;
-@property(nonatomic) long long assetModelId;
-@property(nonatomic) double posePitch;
-@property(nonatomic) double poseYaw;
-@property(nonatomic) double poseRoll;
-@property(nonatomic) double expressionScore3;
-@property(nonatomic) double expressionScore2;
-@property(nonatomic) double expressionScore1;
-@property(nonatomic) long long expressionType3;
-@property(nonatomic) long long expressionType2;
-@property(nonatomic) long long expressionType1;
-@property(nonatomic) double expressionConfidence;
+- (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
+- (BOOL)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
+@property(readonly, nonatomic) NSString *managedEntityName;
+@property(copy, nonatomic) id adjustmentVersion;
+@property(retain, nonatomic) NSString *groupingIdentifier;
+@property(nonatomic) unsigned short lipMakeupType;
+@property(nonatomic) unsigned short eyeMakeupType;
+@property(nonatomic) unsigned short glassesType;
+@property(nonatomic) unsigned short baldType;
+@property(nonatomic) unsigned short hairColorType;
+@property(nonatomic) unsigned short facialHairType;
+@property(nonatomic) unsigned short smileType;
+@property(nonatomic) unsigned short eyesState;
+@property(nonatomic) unsigned short genderType;
+@property(nonatomic) unsigned short ageType;
+@property(nonatomic) double quality;
+@property(nonatomic) long long qualityMeasure;
+@property(nonatomic) long long clusterSequenceNumber;
 @property(nonatomic) long long faceAlgorithmVersion;
-@property(nonatomic) long long confirmedFaceCropGenerationState;
+@property(nonatomic) double poseYaw;
 @property(nonatomic) long long nameSource;
-@property(nonatomic, getter=isBlurred) BOOL blurred;
+@property(nonatomic, getter=isRightEyeClosed) BOOL rightEyeClosed;
+@property(nonatomic, getter=isLeftEyeClosed) BOOL leftEyeClosed;
 @property(nonatomic) double blurScore;
 @property(nonatomic) BOOL hasSmile;
 @property(nonatomic) BOOL manual;
+@property(nonatomic, getter=isInTrash) BOOL inTrash;
+@property(nonatomic, getter=isHidden) BOOL hidden;
+@property(nonatomic) double yaw;
+@property(nonatomic) double roll;
 @property(nonatomic) double mouthY;
 @property(nonatomic) double mouthX;
 @property(nonatomic) double rightEyeY;
@@ -66,17 +66,24 @@
 @property(nonatomic) double centerY;
 @property(nonatomic) double centerX;
 @property(nonatomic) double size;
-@property(readonly, nonatomic) long long personModelId;
-- (id)adjustmentUuid;
-- (BOOL)rightEyeClosed;
-- (BOOL)leftEyeClosed;
-- (BOOL)hidden;
-@property(readonly, nonatomic) long long modelId;
-@property(readonly, nonatomic) RDFace *mutableModel;
-@property(readonly, nonatomic) RDFace *model;
-@property(readonly, nonatomic) NSString *localIdentifier;
-- (id)initWithFace:(id)arg1;
-- (id)initWithPhotoLibrary:(id)arg1;
+@property(readonly, nonatomic) PHObjectPlaceholder *placeholderForCreatedFace;
+- (BOOL)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
+- (BOOL)prepareForServicePreflightCheck:(id *)arg1;
+- (void)encodeToXPCDict:(id)arg1;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
+- (id)initWithUUID:(id)arg1 objectID:(id)arg2;
+- (id)initForNewObject;
+
+// Remaining properties
+@property(readonly, nonatomic, getter=isClientEntitled) BOOL clientEntitled;
+@property(readonly, nonatomic) NSString *clientName;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) BOOL isNewRequest;
+@property(readonly, getter=isMutated) BOOL mutated;
+@property(readonly, nonatomic) NSManagedObjectID *objectID;
+@property(readonly) Class superclass;
 
 @end
 

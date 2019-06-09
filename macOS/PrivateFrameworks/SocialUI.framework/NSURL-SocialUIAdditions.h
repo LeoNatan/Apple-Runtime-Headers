@@ -13,5 +13,6 @@
 - (id)newFileTransferPreview;
 - (id)newAudioMessagePreview:(BOOL)arg1;
 - (id)newMoviePreview;
+- (void)openURL;
 @end
 

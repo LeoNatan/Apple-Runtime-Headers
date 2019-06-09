@@ -18,6 +18,7 @@
     struct unique_ptr<quasar::LmeData, std::__1::default_delete<quasar::LmeData>> _quasarLmeData;
 }
 
++ (_Bool)isEasyToRecognizeWord:(id)arg1 forLocale:(id)arg2;
 + (void)initialize;
 - (id).cxx_construct;
 - (void).cxx_destruct;

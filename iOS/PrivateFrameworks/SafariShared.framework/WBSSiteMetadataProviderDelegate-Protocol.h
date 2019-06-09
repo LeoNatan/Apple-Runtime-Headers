@@ -11,10 +11,11 @@
 
 @protocol WBSSiteMetadataProviderDelegate <NSObject>
 - (void)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 didFinishUsingWebView:(WKWebView *)arg2;
-- (WKWebView *)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 webViewOfSize:(struct CGSize)arg2 withConfiguration:(WKWebViewConfiguration *)arg3;
+- (void)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 getWebViewOfSize:(struct CGSize)arg2 withConfiguration:(WKWebViewConfiguration *)arg3 completionHandler:(void (^)(WKWebView *))arg4;
 - (void)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 cancelRequestsWithTokens:(id <NSFastEnumeration>)arg2;
 - (id)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 registerOneTimeRequest:(WBSSiteMetadataRequest *)arg2 priority:(long long)arg3 responseHandler:(void (^)(WBSSiteMetadataResponse *))arg4;
 - (id)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 registerRequest:(WBSSiteMetadataRequest *)arg2 priority:(long long)arg3 responseHandler:(void (^)(WBSSiteMetadataResponse *))arg4;
+- (void)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 didReceiveResponse:(WBSSiteMetadataResponse *)arg2 forRequest:(WBSSiteMetadataRequest *)arg3 beginOperationUsingBlock:(NSOperation * (^)(void))arg4;
 - (void)siteMetadataProvider:(id <WBSSiteMetadataProvider>)arg1 didReceiveResponse:(WBSSiteMetadataResponse *)arg2 ofType:(long long)arg3 didReceiveNewData:(_Bool)arg4 forRequest:(WBSSiteMetadataRequest *)arg5;
 @end
 

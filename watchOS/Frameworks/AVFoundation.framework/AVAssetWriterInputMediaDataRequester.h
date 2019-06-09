@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *requestQueue; // @synthesize requestQueue=_requestQueue;
 - (void)requestMediaDataIfNecessary;
 @property __weak id <AVAssetWriterInputMediaDataRequesterDelegate> delegate;
-- (void)finalize;
 - (void)dealloc;
 - (void)_collectUncollectables_invokedFromDeallocAndFinalize;
 - (id)init;

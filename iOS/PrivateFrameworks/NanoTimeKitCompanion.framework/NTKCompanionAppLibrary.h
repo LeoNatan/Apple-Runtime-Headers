@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <NanoTimeKitCompanion/ACXDeviceConnectionDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/LSApplicationWorkspaceObserverProtocol-Protocol.h>
 #import <NanoTimeKitCompanion/NTKCompanionAppDelegate-Protocol.h>
+#import <NanoTimeKitCompanion/NTKSystemAppStateCache-Protocol.h>
 
-@class NRDevice, NSArray, NSHashTable, NSMutableArray, NSString;
+@class NRDevice, NSArray, NSHashTable, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NTKCompanionAppLibrary : NSObject <NTKCompanionAppDelegate, LSApplicationWorkspaceObserverProtocol>
+@interface NTKCompanionAppLibrary : NSObject <NTKCompanionAppDelegate, LSApplicationWorkspaceObserverProtocol, ACXDeviceConnectionDelegate, NTKSystemAppStateCache>
 {
+    NSArray *_allApps;
     NSArray *_firstPartyApps;
-    NSMutableArray *_allApps;
-    NSMutableArray *_thirdPartyApps;
+    NSArray *_watchSystemApps;
+    NSArray *_thirdPartyApps;
     NSHashTable *_changeObservers;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_updateProcessingQueue;
@@ -30,12 +33,13 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *updateProcessingQueue; // @synthesize updateProcessingQueue=_updateProcessingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain, nonatomic) NSHashTable *changeObservers; // @synthesize changeObservers=_changeObservers;
-@property(retain, nonatomic) NSMutableArray *thirdPartyApps; // @synthesize thirdPartyApps=_thirdPartyApps;
-@property(retain, nonatomic) NSMutableArray *allApps; // @synthesize allApps=_allApps;
+@property(retain, nonatomic) NSArray *thirdPartyApps; // @synthesize thirdPartyApps=_thirdPartyApps;
+@property(retain, nonatomic) NSArray *watchSystemApps; // @synthesize watchSystemApps=_watchSystemApps;
 @property(retain, nonatomic) NSArray *firstPartyApps; // @synthesize firstPartyApps=_firstPartyApps;
+@property(retain, nonatomic) NSArray *allApps; // @synthesize allApps=_allApps;
 - (void).cxx_destruct;
 - (void)_queue_loadApps;
-- (void)_loadThirdPartyApps;
+- (void)_loadWatchApps;
 - (void)_loadApps;
 - (void)_notifyAppIconUpdated:(id)arg1;
 - (void)_notifyAppRemoved:(id)arg1;
@@ -46,6 +50,12 @@
 - (void)companionAppUpdatedIcon:(id)arg1;
 - (void)companionAppWasUpdated:(id)arg1;
 - (void)applicationStateDidChange:(id)arg1;
+- (void)applicationDatabaseResyncedForDeviceWithPairingID:(id)arg1;
+- (void)applicationsUninstalled:(id)arg1 onDeviceWithPairingID:(id)arg2;
+- (void)applicationsUpdated:(id)arg1 onDeviceWithPairingID:(id)arg2;
+- (void)applicationsInstalled:(id)arg1 onDeviceWithPairingID:(id)arg2;
+- (_Bool)isRemovedSystemApp:(id)arg1;
+- (_Bool)isRestrictedSystemApp:(id)arg1;
 - (void)_activeDeviceChanged;
 - (void)_load;
 - (void)dealloc;

@@ -12,6 +12,7 @@
 + (NSString *)libraryVersion;
 @property(readonly, nonatomic) int knownAccuracy;
 @property(readonly, nonatomic) _Bool hasKnownAccuracy;
+@property(readonly, nonatomic) NSString *displayLanguage;
 - (NSString *)spokenAddressForLocale:(NSString *)arg1;
 - (NSString *)phoneticLocaleIdentifier;
 - (NSOrderedSet *)titlesForMapRect:(CDStruct_90e2a262)arg1;

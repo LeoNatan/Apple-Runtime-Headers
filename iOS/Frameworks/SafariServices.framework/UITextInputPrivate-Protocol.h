@@ -24,6 +24,9 @@
 @property(nonatomic) long long _textInputSource;
 @property(readonly, nonatomic) id <UITextInputSuggestionDelegate> textInputSuggestionDelegate;
 @property(nonatomic) long long selectionGranularity;
+- (void)removeAnnotation:(NSString *)arg1 forRange:(UITextRange *)arg2;
+- (void)replaceRange:(UITextRange *)arg1 withAnnotatedString:(NSAttributedString *)arg2 relativeReplacementRange:(struct _NSRange)arg3;
+- (NSAttributedString *)annotatedSubstringForRange:(UITextRange *)arg1;
 - (SEL)_sendCurrentLocationAction;
 - (_Bool)_shouldSuppressSelectionCommands;
 - (void)_didHideCorrections;
@@ -47,11 +50,14 @@
 - (UIView *)selectionContainerView;
 - (UIView *)automaticallySelectedOverlay;
 - (void)setBottomBufferHeight:(double)arg1;
+- (void)modifierFlagsDidChangeFrom:(long long)arg1 to:(long long)arg2;
 - (id <UISelectionInteractionAssistant>)selectionInteractionAssistant;
 - (void)handleKeyWebEvent:(WebEvent *)arg1 withCompletionHandler:(void (^)(WebEvent *, _Bool))arg2;
 - (void)handleKeyWebEvent:(WebEvent *)arg1;
 - (_Bool)requiresKeyEvents;
-- (void)setAttributedMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange)arg2;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
+- (void)insertText:(NSString *)arg1 style:(long long)arg2 alternatives:(NSArray *)arg3;
+- (void)replaceRange:(UITextRange *)arg1 withAttributedText:(NSAttributedString *)arg2;
 - (NSAttributedString *)attributedTextInRange:(UITextRange *)arg1;
 - (void)insertAttributedText:(NSAttributedString *)arg1;
 @end

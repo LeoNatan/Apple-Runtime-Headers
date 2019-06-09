@@ -6,11 +6,17 @@
 
 #import <PassKitCore/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, PKPaymentTransaction;
 
 @protocol PDCloudStoreServiceExportedInterface <PDXPCServiceExportedInterface>
 - (void)noteAccountDeletedWithHandler:(void (^)(void))arg1;
 - (void)noteCloudSyncPassesSwitchChangedWithHandler:(void (^)(void))arg1;
+- (void)populateEvents:(NSArray *)arg1 forAccountIdentifier:(NSString *)arg2 completion:(void (^)(PKCloudRecordArray *, NSError *))arg3;
+- (void)setupCloudDatabaseForContainerName:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)resetApplePayManateeViewWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)checkTLKsMissingWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)cloudStoreStatusForContainer:(NSString *)arg1 completion:(void (^)(CKAccountInfo *, _Bool, NSError *))arg2;
+- (void)uploadTransaction:(PKPaymentTransaction *)arg1 forPassWithUniqueIdentifier:(NSString *)arg2 completion:(void (^)(PKCloudRecordArray *, NSError *))arg3;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSError *))arg2;
 - (void)simulateCloudStorePushForContainerIdentifier:(NSString *)arg1 completion:(void (^)(PKCloudRecordArray *, NSArray *, NSError *))arg2;

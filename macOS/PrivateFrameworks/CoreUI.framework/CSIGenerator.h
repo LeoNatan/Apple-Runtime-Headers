@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CUIPSDGradient, CUIShapeEffectPreset, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSSet, NSString;
+@class CUIPSDGradient, CUIShapeEffectPreset, MDLAsset, MDLMesh, MDLSubmesh, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSSet, NSString;
 
 @interface CSIGenerator : NSObject
 {
@@ -27,10 +27,12 @@
     BOOL _allowsPaletteImageCompression;
     BOOL _allowsHevcCompression;
     BOOL _allowsDeepmapImageCompression;
+    BOOL _allowsDeepmap2ImageCompression;
     BOOL _optOutOfThinning;
     BOOL _preservedVectorRepresentation;
     BOOL _isFlippable;
     BOOL _isTintable;
+    long long _targetPlatform;
     short _colorSpaceID;
     short _layout;
     unsigned int _scaleFactor;
@@ -61,19 +63,51 @@
     NSString *_systemColorName;
     NSDictionary *_sizesByIndex;
     BOOL _clampMetrics;
+    NSString *_fontName;
+    double _fontSize;
+    double _maxPointSize;
+    double _minPointSize;
+    short _scalingStyle;
+    short _alignment;
     NSDictionary *_renditionProperties;
     int _objectVersion;
     // Error parsing type: {?="columns"[4]}, name: _transformation
+    MDLAsset *_modelAsset;
+    NSMutableArray *_meshReferences;
+    MDLMesh *_modelMesh;
+    NSMutableArray *_submeshReferences;
+    MDLSubmesh *_modelSubmesh;
+    NSArray *_vectorSizes;
+    unsigned int _standardVectorSize;
+    float _baseline;
+    float _capHeight;
+    CDStruct_3c058996 _alignmentRectInsets;
 }
 
 + (int)fileEncoding;
 + (void)setFileEncoding:(int)arg1;
 + (void)initialize;
+@property(nonatomic) CDStruct_3c058996 alignmentRectInsets; // @synthesize alignmentRectInsets=_alignmentRectInsets;
+@property(nonatomic) float capHeight; // @synthesize capHeight=_capHeight;
+@property(nonatomic) float baseline; // @synthesize baseline=_baseline;
+@property(nonatomic) unsigned int standardVectorSize; // @synthesize standardVectorSize=_standardVectorSize;
+@property(copy, nonatomic) NSArray *vectorSizes; // @synthesize vectorSizes=_vectorSizes;
+@property(copy, nonatomic) MDLSubmesh *modelSubmesh; // @synthesize modelSubmesh=_modelSubmesh;
+@property(readonly, nonatomic) NSArray *submeshReferences; // @synthesize submeshReferences=_submeshReferences;
+@property(copy, nonatomic) MDLMesh *modelMesh; // @synthesize modelMesh=_modelMesh;
+@property(readonly, nonatomic) NSArray *meshReferences; // @synthesize meshReferences=_meshReferences;
+@property(copy, nonatomic) MDLAsset *modelAsset; // @synthesize modelAsset=_modelAsset;
 // Error parsing type for property transformation:
 // Property attributes: T{?=[4]},N,V_transformation
 
 @property(nonatomic) int objectVersion; // @synthesize objectVersion=_objectVersion;
 @property(copy, nonatomic) NSDictionary *renditionProperties; // @synthesize renditionProperties=_renditionProperties;
+@property(nonatomic) short alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) short scalingStyle; // @synthesize scalingStyle=_scalingStyle;
+@property(nonatomic) double minPointSize; // @synthesize minPointSize=_minPointSize;
+@property(nonatomic) double maxPointSize; // @synthesize maxPointSize=_maxPointSize;
+@property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
+@property(copy, nonatomic) NSString *fontName; // @synthesize fontName=_fontName;
 @property(nonatomic) BOOL clampMetrics; // @synthesize clampMetrics=_clampMetrics;
 @property(copy, nonatomic) NSDictionary *sizesByIndex; // @synthesize sizesByIndex=_sizesByIndex;
 @property(copy, nonatomic) NSArray *colorComponents; // @synthesize colorComponents=_colorComponents;
@@ -86,6 +120,7 @@
 @property(nonatomic) BOOL isFlippable; // @synthesize isFlippable=_isFlippable;
 @property(nonatomic) BOOL preservedVectorRepresentation; // @synthesize preservedVectorRepresentation=_preservedVectorRepresentation;
 @property(nonatomic) BOOL optOutOfThinning; // @synthesize optOutOfThinning=_optOutOfThinning;
+@property(nonatomic) BOOL allowsDeepmap2ImageCompression; // @synthesize allowsDeepmap2ImageCompression=_allowsDeepmap2ImageCompression;
 @property(nonatomic) BOOL allowsDeepmapImageCompression; // @synthesize allowsDeepmapImageCompression=_allowsDeepmapImageCompression;
 @property(nonatomic) BOOL allowsHevcCompression; // @synthesize allowsHevcCompression=_allowsHevcCompression;
 @property(nonatomic) BOOL allowsPaletteImageCompression; // @synthesize allowsPaletteImageCompression=_allowsPaletteImageCompression;
@@ -117,6 +152,7 @@
 - (unsigned long long)writeExternalLinkToData:(id)arg1;
 - (unsigned long long)writeRawDataToData:(id)arg1;
 - (unsigned long long)writeMultisizeImageSetToData:(id)arg1;
+- (unsigned long long)writeTextStyleToData:(id)arg1;
 - (unsigned long long)writeColorToData:(id)arg1;
 - (unsigned long long)writeGradientToData:(id)arg1;
 - (void)_addNodes:(id)arg1 toNodeList:(struct _csigradientdatanode *)arg2;
@@ -124,10 +160,13 @@
 - (unsigned long long)writeResourcesToData:(id)arg1;
 - (void)writeHeader:(struct _csiheader *)arg1 toData:(id)arg2;
 - (void)formatCSIHeader:(struct _csiheader *)arg1;
+- (void)addSubmeshReference:(id)arg1;
+- (void)addMeshReference:(id)arg1;
 - (void)addMipReference:(id)arg1;
 - (void)addLayerReference:(id)arg1;
 - (void)addMetrics:(CDStruct_1ba92a5e)arg1;
 - (void)addSliceRect:(struct CGRect)arg1;
+@property long long targetPlatform;
 @property long long compressionType;
 @property(nonatomic) double compressionQuality;
 - (void)addBitmap:(id)arg1;
@@ -135,7 +174,11 @@
 - (BOOL)_shouldUseCompactCompressionForBitmap:(id)arg1;
 - (id)rawData;
 - (void)dealloc;
+- (id)initWithModelSubmesh:(id)arg1;
+- (id)initWithModelMesh:(id)arg1;
+- (id)initWithModelAsset:(id)arg1;
 - (id)initWithMultisizeImageSetNamed:(id)arg1 sizesByIndex:(id)arg2;
+- (id)initWithTextStyleNamed:(id)arg1 fontName:(id)arg2 fontSize:(double)arg3 maxPointSize:(double)arg4 minPointSize:(double)arg5 scalingStyle:(short)arg6 alignment:(short)arg7;
 - (id)initWithColorNamed:(id)arg1 colorSpaceID:(unsigned long long)arg2 components:(id)arg3 linkedToSystemColorWithName:(id)arg4;
 - (id)initWithColorNamed:(id)arg1 colorSpaceID:(unsigned long long)arg2 components:(id)arg3;
 - (id)initWithInternalReferenceRect:(struct CGRect)arg1 layout:(short)arg2;

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (long long)brailleLineType;
 - (id)lastChildForFocusing;
 - (id)firstChildForFocusing;
 - (id)childBeforeElement:(id)arg1;

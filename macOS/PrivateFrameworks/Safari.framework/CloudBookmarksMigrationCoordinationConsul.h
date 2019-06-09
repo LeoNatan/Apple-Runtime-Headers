@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (id)_migrationReadinessDeciderDictionaryURL;
 - (id)_migrationCoordinatorDirectoryURL;
 @property(copy, nonatomic) NSDictionary *migrationReadinessDeciderDictionaryRepresentation;
-@property(copy, nonatomic) NSDictionary *migrationRampEvaluatorDictionaryRepresentation;
 - (void)getLocalMigrationStateForMigrationCoordinator:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)forceStartMigration;
 @property(readonly, nonatomic) BOOL canForceStartMigration;

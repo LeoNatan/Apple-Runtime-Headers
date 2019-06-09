@@ -10,6 +10,7 @@
 
 @class CHDDataLabel, CHDMarker, NSString, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDDataValueProperties : NSObject <EDKeyedObject>
 {
     CHDDataLabel *mDataLabel;

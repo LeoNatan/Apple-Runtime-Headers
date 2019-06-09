@@ -18,7 +18,6 @@
     _Bool _inTransition;
     UIViewController<CKBrowserViewControllerProtocol> *_contentViewController;
     id <CKFullScreenAppViewControllerDelegate> _delegate;
-    long long _parentModalPresentationStyle;
     id <UIViewControllerTransitioningDelegate> _parentTransitioningDelegate;
     UIView *_contentView;
     CKDismissView *_dismissView;
@@ -32,7 +31,6 @@
 @property(retain, nonatomic) CKDismissView *dismissView; // @synthesize dismissView=_dismissView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic) __weak id <UIViewControllerTransitioningDelegate> parentTransitioningDelegate; // @synthesize parentTransitioningDelegate=_parentTransitioningDelegate;
-@property(readonly, nonatomic) long long parentModalPresentationStyle; // @synthesize parentModalPresentationStyle=_parentModalPresentationStyle;
 @property(nonatomic) __weak id <CKFullScreenAppViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIViewController<CKBrowserViewControllerProtocol> *contentViewController; // @synthesize contentViewController=_contentViewController;
 - (void).cxx_destruct;
@@ -42,6 +40,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (_Bool)canBecomeFirstResponder;
 - (id)inputAccessoryView;
+@property(readonly, nonatomic) long long parentModalPresentationStyle;
 - (long long)preferredStatusBarStyle;
 - (_Bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
@@ -71,6 +70,8 @@
 @property(readonly, nonatomic) IMBalloonPlugin *balloonPlugin;
 @property(nonatomic) __weak NSObject<CKBrowserViewControllerSendDelegate> *sendDelegate;
 @property(retain, nonatomic) UIViewController *presentationViewController;
+@property(nonatomic) _Bool isPrimaryViewController;
+@property(readonly, nonatomic, getter=isDismissing) _Bool dismissing;
 @property(readonly, nonatomic) _Bool shouldSuppressEntryView;
 @property(readonly, nonatomic) _Bool mayBeKeptInViewHierarchy;
 @property(readonly, nonatomic) _Bool supportsQuickView;
@@ -88,7 +89,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) struct CGRect horizontalSwipeExclusionRect;
-@property(nonatomic) _Bool isPrimaryViewController;
 @property(retain, nonatomic) NSArray *recipients;
 @property(readonly, nonatomic) UIViewController *remoteViewController;
 @property(retain, nonatomic) NSString *sender;

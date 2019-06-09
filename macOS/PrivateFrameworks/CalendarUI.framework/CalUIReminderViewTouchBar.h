@@ -9,7 +9,7 @@
 #import <CalendarUI/CalUIReminderDatePickerTouchBarDelegate-Protocol.h>
 #import <CalendarUI/NSTouchBarProvider-Protocol.h>
 
-@class CalUIGadgetViewTouchBar, CalUIReminderDatePickerTouchBar, EKReminder, NSButton, NSButtonGroupTouchBarItem, NSCustomTouchBarItem, NSPopoverTouchBarItem, NSString, NSTouchBar;
+@class CalUIGadgetViewTouchBar, CalUIReminderDatePickerTouchBar, EKReminder, NSButton, NSCustomTouchBarItem, NSGroupTouchBarItem, NSPopoverTouchBarItem, NSString, NSTouchBar;
 @protocol CalUIReminderViewTouchBarDelegate;
 
 @interface CalUIReminderViewTouchBar : NSObject <CalUIReminderDatePickerTouchBarDelegate, NSTouchBarProvider>
@@ -21,7 +21,7 @@
     NSButton *_reminderNewButton;
     NSButton *_reminderCompleteButton;
     NSButton *_reminderInspectorButton;
-    NSButtonGroupTouchBarItem *_inspectorFieldsTouchBarItem;
+    NSGroupTouchBarItem *_inspectorFieldsTouchBarItem;
     NSPopoverTouchBarItem *_reminderTimePopoverTouchBarItem;
     NSPopoverTouchBarItem *_locationPopoverTouchBarItem;
     CalUIReminderDatePickerTouchBar *_datePickerTouchBar;
@@ -38,7 +38,7 @@
 @property(retain) CalUIReminderDatePickerTouchBar *datePickerTouchBar; // @synthesize datePickerTouchBar=_datePickerTouchBar;
 @property(retain) NSPopoverTouchBarItem *locationPopoverTouchBarItem; // @synthesize locationPopoverTouchBarItem=_locationPopoverTouchBarItem;
 @property(retain) NSPopoverTouchBarItem *reminderTimePopoverTouchBarItem; // @synthesize reminderTimePopoverTouchBarItem=_reminderTimePopoverTouchBarItem;
-@property(retain) NSButtonGroupTouchBarItem *inspectorFieldsTouchBarItem; // @synthesize inspectorFieldsTouchBarItem=_inspectorFieldsTouchBarItem;
+@property(retain) NSGroupTouchBarItem *inspectorFieldsTouchBarItem; // @synthesize inspectorFieldsTouchBarItem=_inspectorFieldsTouchBarItem;
 @property(retain) NSButton *reminderInspectorButton; // @synthesize reminderInspectorButton=_reminderInspectorButton;
 @property(retain) NSButton *reminderCompleteButton; // @synthesize reminderCompleteButton=_reminderCompleteButton;
 @property(retain) NSButton *reminderNewButton; // @synthesize reminderNewButton=_reminderNewButton;
@@ -56,7 +56,6 @@
 - (void)updateReminderNew:(BOOL)arg1;
 - (void)_updateTouchBarIdentifiers;
 - (void)updateTouchBar;
-- (id)_addButtonOrPopoverWithIdentifier:(id)arg1 popoverTouchBar:(id)arg2 title:(id)arg3 image:(id)arg4 target:(id)arg5 action:(SEL)arg6 toGroupItem:(id)arg7;
 - (id)createInspectorFieldsTouchBarItem;
 - (id)createLocationGadgetViewTouchBar;
 - (id)createDatePickerGadgetViewTouchBar;

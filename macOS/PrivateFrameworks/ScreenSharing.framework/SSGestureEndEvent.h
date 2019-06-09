@@ -6,10 +6,8 @@
 
 #import <ScreenSharing/SSGestureEvent.h>
 
-__attribute__((visibility("hidden")))
 @interface SSGestureEndEvent : SSGestureEvent
 {
-    void *mReservedForInstanceVariablesGestureEnd;
 }
 
 + (id)gestureEndEventWithCoordinates:(struct SSPoint)arg1 subType:(long long)arg2;

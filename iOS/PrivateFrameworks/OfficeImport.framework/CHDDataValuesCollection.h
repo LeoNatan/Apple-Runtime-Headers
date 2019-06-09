@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (_Bool)containsStringValue;
 - (void)finishReading;
+- (unsigned long long)maxDataPointIndex;
 - (id)dataValueWithIndex:(unsigned long long)arg1;
 - (id)contentFormatAtIndex:(unsigned long long)arg1 resources:(id)arg2;
 - (id)dataValueAtIndex:(unsigned long long)arg1;

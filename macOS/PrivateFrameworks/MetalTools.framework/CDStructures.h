@@ -46,6 +46,14 @@ struct MTLCompressedPixelFormatInfo {
     unsigned long long blockDepth;
 };
 
+struct MTLGPUDebugBufferArgumentData {
+    _Bool needsFlush;
+    id buffers[31];
+    unsigned long long offsets[31];
+    unsigned int lengths[31];
+    unsigned long long gpu_address[31][2];
+};
+
 struct MTLNormalPixelFormatInfo {
     unsigned long long pixelBytes;
     unsigned char componentCount;
@@ -85,6 +93,7 @@ struct MTLRenderPassAttachmentDescriptorPrivate {
     unsigned long long _field16;
     unsigned long long _field17;
     unsigned long long _field18;
+    char _field19;
 };
 
 struct MTLSamplerDescriptorHashMap {
@@ -92,7 +101,35 @@ struct MTLSamplerDescriptorHashMap {
     unsigned int _limit;
 };
 
+struct MTLTargetDeviceArch {
+    unsigned int _field1;
+    unsigned int _field2;
+    char *_field3;
+};
+
 struct MemberRef;
+
+struct MetalBuffer {
+    struct MetalBufferHeap *heap;
+    unsigned int index;
+};
+
+struct MetalBufferHeap {
+    struct mutex _mutex;
+    struct vector<id<MTLBuffer>, std::__1::allocator<id<MTLBuffer>>> _buffers;
+    struct vector<unsigned int, std::__1::allocator<unsigned int>> _freeList;
+    int _currentFreeIndex;
+    unsigned long long _totalMemoryAllocated;
+    unsigned long long _totalMemoryInUse;
+    id device;
+    unsigned long long bufferLength;
+};
+
+struct ReportBufferEntry {
+    unsigned long long _field1;
+    id _field2;
+    unsigned long long _field3;
+};
 
 struct ResourceTrackingDeferredAttachments {
     NSMutableArray *colorAttachments;
@@ -158,6 +195,11 @@ struct os_unfair_lock_s {
 };
 
 struct pair<MTLDebugSharedEvent *, unsigned long long>;
+
+struct pair<id<MTLBuffer>, unsigned long> {
+    id _field1;
+    unsigned long long _field2;
+};
 
 struct set<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int>> {
     struct __tree<unsigned int, std::__1::less<unsigned int>, std::__1::allocator<unsigned int>> {
@@ -279,6 +321,38 @@ struct vector<MemberRef, std::__1::allocator<MemberRef>> {
     } _field3;
 };
 
+struct vector<MetalBuffer, std::__1::allocator<MetalBuffer>> {
+    struct MetalBuffer *__begin_;
+    struct MetalBuffer *__end_;
+    struct __compressed_pair<MetalBuffer *, std::__1::allocator<MetalBuffer>> {
+        struct MetalBuffer *__value_;
+    } __end_cap_;
+};
+
+struct vector<NSString *, std::__1::allocator<NSString *>> {
+    id *__begin_;
+    id *__end_;
+    struct __compressed_pair<NSString **, std::__1::allocator<NSString *>> {
+        id *__value_;
+    } __end_cap_;
+};
+
+struct vector<ReportBufferEntry, std::__1::allocator<ReportBufferEntry>> {
+    struct ReportBufferEntry *__begin_;
+    struct ReportBufferEntry *__end_;
+    struct __compressed_pair<ReportBufferEntry *, std::__1::allocator<ReportBufferEntry>> {
+        struct ReportBufferEntry *__value_;
+    } __end_cap_;
+};
+
+struct vector<id<MTLBuffer>, std::__1::allocator<id<MTLBuffer>>> {
+    id *__begin_;
+    id *__end_;
+    struct __compressed_pair<id<MTLBuffer>*, std::__1::allocator<id<MTLBuffer>>> {
+        id *__value_;
+    } __end_cap_;
+};
+
 struct vector<std::__1::pair<MTLDebugSharedEvent *, unsigned long long>, std::__1::allocator<std::__1::pair<MTLDebugSharedEvent *, unsigned long long>>> {
     struct pair<MTLDebugSharedEvent *, unsigned long long> *__begin_;
     struct pair<MTLDebugSharedEvent *, unsigned long long> *__end_;
@@ -287,7 +361,22 @@ struct vector<std::__1::pair<MTLDebugSharedEvent *, unsigned long long>, std::__
     } __end_cap_;
 };
 
+struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *__begin_;
+    unsigned int *__end_;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *__value_;
+    } __end_cap_;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+} CDStruct_a06f635e;
 
 typedef struct {
     unsigned int maxColorAttachments;
@@ -338,8 +427,9 @@ typedef struct {
     unsigned int maxViewportCount;
     unsigned int maxCustomSamplePositions;
     unsigned int maxTextureBufferWidth;
+    unsigned int maxComputeAttributes;
     unsigned long long maxBufferLength;
-} CDStruct_df0ba0f9;
+} CDStruct_ba442ac5;
 
 typedef struct {
     unsigned int _field1;
@@ -432,6 +522,11 @@ typedef struct {
     unsigned long long _field1;
     unsigned long long _field2;
 } CDStruct_4bcfbbae;
+
+typedef struct pair<id<MTLBuffer>, unsigned long> {
+    id _field1;
+    unsigned long long _field2;
+} pair_eb21f6dd;
 
 typedef struct vector<MTLScissorRect, std::__1::allocator<MTLScissorRect>> {
     CDStruct_183601bc *__begin_;

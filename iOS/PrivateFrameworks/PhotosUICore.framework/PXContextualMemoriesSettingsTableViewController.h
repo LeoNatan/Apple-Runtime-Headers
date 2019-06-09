@@ -33,7 +33,7 @@
 - (void)_didPressResetAll:(id)arg1;
 - (void)_handleLongPress:(id)arg1;
 - (void)_didChangeDatePicker:(id)arg1;
-- (CDStruct_88bcc19c)_regionForLocationCoordinate:(struct CLLocationCoordinate2D)arg1;
+- (CDStruct_26e8d939)_regionForLocationCoordinate:(struct CLLocationCoordinate2D)arg1;
 - (_Bool)_isPeopleValueCellAtIndexPath:(id)arg1;
 - (_Bool)_isLocationPickerCellAtIndexPath:(id)arg1;
 - (_Bool)_isDatePickerCellAtIndexPath:(id)arg1;

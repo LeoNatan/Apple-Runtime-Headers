@@ -9,13 +9,16 @@
 @class NSArray, NSNumber, NSSet, NSString, NSURL;
 
 @protocol PLAssetsdDebugServiceProtocol <NSObject>
+- (void)updateSiriVocabulary;
 - (void)coalesceJournalsForPayloadClassIDs:(NSSet *)arg1 withChangeJournalOverThreshold:(float)arg2 reply:(void (^)(void))arg3;
 - (void)snapshotJournalsForPayloadClassIDs:(NSSet *)arg1 reply:(void (^)(void))arg2;
 - (void)privateDownloadCloudPhotoLibraryAsset:(NSURL *)arg1 resourceType:(unsigned long long)arg2 highPriority:(BOOL)arg3 reply:(void (^)(void))arg4;
+- (void)invalidateHighlightSubtitlesAndRegenerateHighlightTitlesWithCompletionBlock:(void (^)(void))arg1;
 - (void)cleanupEmptyHighlightsWithReply:(void (^)(void))arg1;
 - (void)updateHighlightTitlesWithReply:(void (^)(void))arg1;
 - (void)processUnprocessedMomentLocationsWithReply:(void (^)(void))arg1;
 - (void)processRecentHighlightsWithReply:(void (^)(void))arg1;
+- (void)prefetchResourcesForHighlights:(NSArray *)arg1 reply:(void (^)(void))arg2;
 - (void)prefetchResourcesForMemories:(NSArray *)arg1 reply:(void (^)(void))arg2;
 - (void)pruneAssetsWithUUID:(NSArray *)arg1 resourceTypes:(NSArray *)arg2 reply:(void (^)(void))arg3;
 - (void)debugSidecarURLsWithObjectURI:(NSURL *)arg1 reply:(void (^)(BOOL, NSDictionary *, NSError *))arg2;
@@ -32,10 +35,6 @@
 - (void)deferredLogDumpWithFormat:(NSNumber *)arg1 reply:(void (^)(NSString *))arg2;
 - (void)dumpMomentsMetadataToPath:(NSString *)arg1 reply:(void (^)(NSDictionary *))arg2;
 - (void)dumpMetadataForMomentsToPath:(NSString *)arg1 reply:(void (^)(NSDictionary *))arg2;
-- (void)locationShiftStatusWithReply:(void (^)(NSString *))arg1;
-- (void)momentAnalysisStatusWithReply:(void (^)(NSString *))arg1;
-- (void)invalidateLocationShift;
-- (void)analyzeAllMoments;
 - (void)rebuildHighlightsDeletingExistingHighlights:(BOOL)arg1 reply:(void (^)(NSError *))arg2;
 - (void)rebuildMomentsDeletingExistingMoments:(BOOL)arg1 reply:(void (^)(NSError *))arg2;
 - (void)momentGenerationStatusWithReply:(void (^)(NSString *))arg1;

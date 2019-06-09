@@ -6,13 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
-
 @interface CUTPowerAssertion : NSObject
 {
-    unsigned int _assertion;
-    NSString *_identifier;
-    NSArray *_stack;
+    id _internal;
 }
 
 - (void).cxx_destruct;

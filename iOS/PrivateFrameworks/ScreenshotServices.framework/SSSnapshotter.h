@@ -10,9 +10,9 @@
 {
 }
 
-- (id)_captureScreen:(id)arg1;
+- (id)_captureScreen:(id)arg1 withScreenshotOptions:(id)arg2;
 - (id)_screensThatAreCaptureable;
-- (id)availableScreenSnapshots;
+- (id)captureAvailableSnapshotsWithOptionsCollection:(id)arg1;
 
 @end
 

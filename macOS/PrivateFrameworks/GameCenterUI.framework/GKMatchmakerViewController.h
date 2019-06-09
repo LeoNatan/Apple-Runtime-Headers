@@ -9,13 +9,12 @@
 #import <GameCenterUI/GKDialogControllerSizing-Protocol.h>
 #import <GameCenterUI/GKMatchDelegate-Protocol.h>
 #import <GameCenterUI/GKRemoteViewControllerDelegate-Protocol.h>
-#import <GameCenterUI/GKRestrictedViewController-Protocol.h>
 #import <GameCenterUI/GKViewController-Protocol.h>
 
-@class GKInvite, GKMatch, GKMatchRequest, GKRemoteViewController, NSMutableArray, NSString;
-@protocol GKMatchmakerViewControllerDelegate;
+@class GKInvite, GKMatch, GKMatchRequest, NSMutableArray, NSString;
+@protocol GKMatchmakerViewControllerDelegate, GKRemoteViewController;
 
-@interface GKMatchmakerViewController : NSViewController <GKMatchDelegate, GKRemoteViewControllerDelegate, GKDialogControllerSizing, GKRestrictedViewController, GKViewController>
+@interface GKMatchmakerViewController : NSViewController <GKMatchDelegate, GKRemoteViewControllerDelegate, GKDialogControllerSizing, GKViewController>
 {
     id _remoteViewController;
     id <GKMatchmakerViewControllerDelegate> _matchmakerDelegateWeak;
@@ -26,8 +25,10 @@
     BOOL _finished;
     BOOL _internalFlag;
     NSMutableArray *_hostedPlayers;
+    id <GKMatchmakerViewControllerDelegate> matchmakerDelegate;
 }
 
+@property(nonatomic) id <GKMatchmakerViewControllerDelegate> matchmakerDelegate; // @synthesize matchmakerDelegate;
 @property BOOL didRequestRemoteViewController; // @synthesize didRequestRemoteViewController=_internalFlag;
 @property(nonatomic) BOOL finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) NSMutableArray *hostedPlayers; // @synthesize hostedPlayers=_hostedPlayers;
@@ -35,7 +36,8 @@
 @property(retain, nonatomic) GKMatch *match; // @synthesize match=_match;
 @property(retain, nonatomic) GKInvite *acceptedInvite; // @synthesize acceptedInvite=_acceptedInvite;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
-@property(retain, nonatomic) GKRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+@property(retain, nonatomic) id <GKRemoteViewController> remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+- (void).cxx_destruct;
 - (id)_gkInGameUIUnavailableAlertWithDismissHandler:(CDUnknownBlockType)arg1;
 - (void)authenticationChanged:(id)arg1;
 - (void)playersToInvite:(id)arg1;
@@ -61,11 +63,11 @@
 - (void)finishWithMatch;
 - (void)finishWithError:(id)arg1;
 - (void)cancel;
+- (void)setHostedPlayerReady:(id)arg1;
 - (void)setHostedPlayer:(id)arg1 connected:(BOOL)arg2;
 - (void)setHostedPlayer:(id)arg1 didConnect:(BOOL)arg2;
 - (void)addPlayersToMatch:(id)arg1;
 @property(copy, nonatomic) NSString *defaultInvitationMessage; // @dynamic defaultInvitationMessage;
-@property(nonatomic) id <GKMatchmakerViewControllerDelegate> matchmakerDelegate; // @dynamic matchmakerDelegate;
 - (id)initialState;
 - (struct CGSize)_gkSizeForDialogController;
 - (void)viewDidDisappear;

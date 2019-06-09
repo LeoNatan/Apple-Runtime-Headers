@@ -8,6 +8,7 @@
 
 @class OADDrawable;
 
+__attribute__((visibility("hidden")))
 @interface PDBuild : NSObject
 {
     BOOL mIsAnimateBackground;

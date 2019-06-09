@@ -6,13 +6,13 @@
 
 #import <AVKit/NSObject-Protocol.h>
 
-@class NSArray;
+@class AVWaveform, NSArray;
 
 @protocol AVTouchBarTrackControlling <NSObject>
+@property(readonly) AVWaveform *audioWaveform;
 @property(readonly) BOOL hasEnabledVideo;
 @property(readonly) BOOL hasEnabledAudio;
-- (void)cancelThumbnailAndAudioAmplitudeSampleGenerationForRequestType:(long long)arg1;
-- (void)generateTouchBarAudioAmplitudeSamples:(long long)arg1 completionHandler:(void (^)(NSArray *))arg2;
+- (void)cancelThumbnailGenerationForRequestType:(long long)arg1;
 - (void)generateTouchBarThumbnailsForTimes:(NSArray *)arg1 tolerance:(double)arg2 size:(struct CGSize)arg3 requestType:(long long)arg4 thumbnailHandler:(void (^)(NSArray *, BOOL))arg5;
 @end
 

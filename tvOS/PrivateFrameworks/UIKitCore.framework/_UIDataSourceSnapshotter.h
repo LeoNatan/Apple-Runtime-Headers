@@ -7,23 +7,27 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/NSCopying-Protocol.h>
+#import <UIKitCore/_UIDataSourceSnapshot-Protocol.h>
 
 __attribute__((visibility("hidden")))
-@interface _UIDataSourceSnapshotter : NSObject <NSCopying>
+@interface _UIDataSourceSnapshotter : NSObject <NSCopying, _UIDataSourceSnapshot>
 {
     struct _NSRange *_sectionRanges;
     long long _sectionCount;
 }
 
++ (id)snapshotWithSectionCountsProvider:(CDUnknownBlockType)arg1;
 + (id)snapshotForDataSourceBackedView:(id)arg1;
 - (void)_recomputeRangeLocations;
 - (_Bool)_insertSection:(long long)arg1 withInitialCount:(long long)arg2;
 - (_Bool)_incrementSectionCount:(long long)arg1 byCount:(long long)arg2;
 - (_Bool)_incrementSectionCount:(long long)arg1;
+- (_Bool)_deleteAllSections;
 - (_Bool)_deleteSection:(long long)arg1;
 - (_Bool)_decrementSectionCount:(long long)arg1 byCount:(long long)arg2;
 - (_Bool)_decrementSectionCount:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)snapshot;
 - (id)indexPathForAppendingInsertInSection:(long long)arg1;
 - (_Bool)indexPathIsSectionAppendingInsert:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
@@ -37,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfItems;
 - (id)description;
 - (void)dealloc;
+- (id)initWithSectionCountsProvider:(CDUnknownBlockType)arg1;
 - (id)initWithDataSourceBackedView:(id)arg1;
 - (id)initWithSectionCounts:(id)arg1;
 - (id)init;

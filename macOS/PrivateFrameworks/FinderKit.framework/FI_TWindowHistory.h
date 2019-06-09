@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSMutableArray, void> _historyList;
     long long _historyPosition;
     struct shared_ptr<TNodeObserverCocoaBridge> _nodeObserver;
-    FI_TBrowserContainerController *_controller;
+    struct TNSWeakPtr<FI_TBrowserContainerController, void> _weakController;
 }
 
 @property(nonatomic) long long historyPosition; // @synthesize historyPosition=_historyPosition;
@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)removeEntry:(id)arg1;
 - (id)entryAtPosition:(long long)arg1;
 @property(readonly, nonatomic) long long entryCount;
+@property __weak FI_TBrowserContainerController *controller; // @dynamic controller;
 - (void)aboutToTearDown;
 - (void)dealloc;
 - (id)initWithBrowserContainer:(id)arg1;

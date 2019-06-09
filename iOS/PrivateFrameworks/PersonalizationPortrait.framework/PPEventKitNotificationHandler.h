@@ -24,7 +24,7 @@
 - (id)_popEvents;
 - (void)_pushEvents:(id)arg1;
 - (void)_executeBlocksWithEvents:(id)arg1;
-- (id)initWithName:(id)arg1 waitTime:(unsigned int)arg2;
+- (id)initWithName:(id)arg1 waitSeconds:(double)arg2;
 
 @end
 

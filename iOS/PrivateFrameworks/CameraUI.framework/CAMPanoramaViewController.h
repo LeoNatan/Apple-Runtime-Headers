@@ -42,6 +42,7 @@
 - (void)didChangeToCaptureOrientation:(long long)arg1;
 - (void)didChangeToMode:(long long)arg1 device:(long long)arg2;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 @property(readonly, nonatomic) CAMPanoramaView *panoramaView;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;

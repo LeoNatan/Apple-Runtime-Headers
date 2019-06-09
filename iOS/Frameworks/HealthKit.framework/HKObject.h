@@ -31,7 +31,8 @@
 @property(readonly) HKDevice *device; // @synthesize device=_device;
 @property(readonly) HKSourceRevision *sourceRevision; // @synthesize sourceRevision=_sourceRevision;
 - (void).cxx_destruct;
-@property(nonatomic, getter=_creationDate, setter=_setCreationDate:) NSDate *creationDate;
+@property(readonly, copy, nonatomic, getter=_timeZoneName) NSString *timeZoneName;
+@property(copy, nonatomic, getter=_creationDate, setter=_setCreationDate:) NSDate *creationDate;
 - (void)_setDevice:(id)arg1;
 - (void)_setSourceRevision:(id)arg1;
 - (id)_source;
@@ -49,11 +50,12 @@
 - (id)_valueDescription;
 - (id)description;
 - (_Bool)_shouldNotifyOnInsert;
-- (id)_validateConfigurationAllowingPrivateMetadata:(_Bool)arg1;
+- (id)_validateConfigurationAllowingPrivateMetadata:(_Bool)arg1 applicationSDKVersion:(unsigned int)arg2;
 - (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned long long)arg1;
 - (_Bool)prepareForDelivery:(id *)arg1;
 - (_Bool)prepareForSaving:(id *)arg1;
-- (_Bool)_validateForSavingWithClientEntitlements:(id)arg1 error:(id *)arg2;
+- (_Bool)_validateForSavingWithClientEntitlements:(id)arg1 applicationSDKVersion:(unsigned int)arg2 error:(id *)arg3;
 - (void)_validateForCreation;
 - (id)_copyByArchiving;
 - (id)_init;

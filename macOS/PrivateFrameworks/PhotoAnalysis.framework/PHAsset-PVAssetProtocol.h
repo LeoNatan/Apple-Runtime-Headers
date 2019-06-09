@@ -20,8 +20,12 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSData *distanceIdentity;
+@property(readonly, nonatomic) NSString *filename;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSString *localIdentifier;
+@property(readonly, nonatomic) NSString *originalFilename;
+@property(readonly, nonatomic) unsigned long long pixelHeight;
+@property(readonly, nonatomic) unsigned long long pixelWidth;
 @property(readonly) Class superclass;
 @end
 

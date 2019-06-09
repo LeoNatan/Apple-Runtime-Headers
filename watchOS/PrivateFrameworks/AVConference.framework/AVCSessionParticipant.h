@@ -22,6 +22,7 @@
     VCXPCClientShared *_connection;
     NSData *_frequencyLevels;
     int _videoToken;
+    unsigned long long spatialAudioSourceID;
     unsigned char _videoQuality;
     unsigned int _visibilityIndex;
     unsigned int _prominenceIndex;
@@ -35,6 +36,7 @@
     float _audioPosition;
     _Bool _configurationInProgress;
     _Bool _hasPendingChanges;
+    unsigned long long _spatialAudioSourceID;
 }
 
 @property(nonatomic) _Bool hasPendingChanges; // @synthesize hasPendingChanges=_hasPendingChanges;
@@ -51,6 +53,7 @@
 @property(nonatomic) unsigned int visibilityIndex; // @synthesize visibilityIndex=_visibilityIndex;
 @property(nonatomic) unsigned char videoQuality; // @synthesize videoQuality=_videoQuality;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateNotificationQueue; // @synthesize delegateNotificationQueue=_delegateNotificationQueue;
+@property(nonatomic) unsigned long long spatialAudioSourceID; // @synthesize spatialAudioSourceID=_spatialAudioSourceID;
 @property(nonatomic) int videoToken; // @synthesize videoToken=_videoToken;
 @property(readonly, nonatomic) NSData *negotiationData; // @synthesize negotiationData=_participantData;
 @property(readonly, nonatomic) unsigned long long participantID; // @synthesize participantID=_idsParticipantID;

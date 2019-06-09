@@ -13,6 +13,7 @@
 @interface AXEEventTapManager : NSObject <AXEEventTapDelegate>
 {
     unsigned int __tapPlacement;
+    unsigned long long _location;
     NSLock *__listenerLock;
     NSArray *__passiveListeners;
     NSArray *__activeListeners;
@@ -20,20 +21,30 @@
     AXEEventTap *__activeEventTap;
 }
 
-+ (id)sharedInstance;
++ (id)sharedTapForLocation:(unsigned long long)arg1;
++ (id)sharedAnnotatedSessionTapManager;
++ (id)sharedSessionTapManager;
++ (id)sharedHIDTapManager;
++ (id)shared;
 @property(retain, nonatomic) AXEEventTap *_activeEventTap; // @synthesize _activeEventTap=__activeEventTap;
 @property(retain, nonatomic) AXEEventTap *_passiveEventTap; // @synthesize _passiveEventTap=__passiveEventTap;
 @property(copy, nonatomic) NSArray *_activeListeners; // @synthesize _activeListeners=__activeListeners;
 @property(copy, nonatomic) NSArray *_passiveListeners; // @synthesize _passiveListeners=__passiveListeners;
 @property(readonly, nonatomic) NSLock *_listenerLock; // @synthesize _listenerLock=__listenerLock;
 @property(readonly, nonatomic) unsigned int _tapPlacement; // @synthesize _tapPlacement=__tapPlacement;
+@property(readonly, nonatomic) unsigned long long location; // @synthesize location=_location;
 - (void).cxx_destruct;
 - (void)_recreateEventTapAsNeededForListenerWrappers:(id)arg1 listenOnly:(BOOL)arg2;
+- (id)_createEventTapWithEventsOfInterest:(unsigned long long)arg1 listenOnly:(BOOL)arg2;
 - (id)_findWrapperForListener:(id)arg1 inListeners:(id)arg2;
 - (unsigned long long)_eventsOfInterestAcrossAllListeners:(id)arg1;
-- (id)_initWithPlacement:(unsigned int)arg1;
+- (id)_initWithPlacement:(unsigned int)arg1 location:(unsigned long long)arg2;
 - (struct __CGEvent *)eventTap:(id)arg1 handleEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
 - (void)unregisterListenerForAllEvents:(id)arg1;
+- (void)unregisterMouseEventListener:(id)arg1 listenOnly:(BOOL)arg2;
+- (void)unregisterKeyboardEventListener:(id)arg1 listenOnly:(BOOL)arg2;
+- (void)unregisterGestureEventListener:(id)arg1 listenOnly:(BOOL)arg2;
+- (void)unregisterListener:(id)arg1 listenOnly:(BOOL)arg2 forEventMask:(unsigned long long)arg3;
 - (void)registerMouseEventListener:(id)arg1 listenOnly:(BOOL)arg2;
 - (void)registerKeyboardEventListener:(id)arg1 listenOnly:(BOOL)arg2;
 - (void)registerGestureEventListener:(id)arg1 listenOnly:(BOOL)arg2;

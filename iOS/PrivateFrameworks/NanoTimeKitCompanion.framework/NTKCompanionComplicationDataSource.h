@@ -13,7 +13,6 @@
     CLKComplicationTemplate *_complicationTemplate;
 }
 
-+ (Class)richComplicationDisplayViewClassForType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
 + (_Bool)_isComplicationFamilyAvaialbleBeforeGlory:(long long)arg1;
 + (_Bool)acceptsClassicComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2;
 + (_Bool)acceptsComplicationType:(unsigned long long)arg1 withFamily:(long long)arg2 forDevice:(id)arg3;
@@ -34,6 +33,7 @@
 - (id)_city;
 - (id)_currentEntryModel;
 - (id)_worldClockTemplate;
+- (id)_alarmBaseTemplateWithDate:(id)arg1 utilitarianSmallImageProviderBlock:(CDUnknownBlockType)arg2 modularSmallImageProviderBlock:(CDUnknownBlockType)arg3 extraLargeImageProviderBlock:(CDUnknownBlockType)arg4 familyModularLargeTextFormat:(id)arg5 utilitarianLargeImageProviderBlock:(CDUnknownBlockType)arg6 familyGraphicCornerImageProviderBlock:(CDUnknownBlockType)arg7 familyGraphicCornerImageTintColor:(id)arg8 familyGraphicCornerTextFormat:(id)arg9;
 - (id)_alarmTemplate;
 - (id)_stopwatchTemplate;
 - (id)_timerTemplate;
@@ -49,37 +49,7 @@
 - (id)currentSwitcherTemplate;
 - (void)dealloc;
 - (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
-- (id)_weatherWindTemplate;
-- (id)_createUVSignatureCornerTemplate;
-- (id)_createUVSignatureCircularTemplate;
-- (id)_createUVSignatureBezelTemplate;
-- (id)_weatherUVIndexTemplate;
-- (id)_createAirQualitySignatureCornerTemplate;
-- (id)_createAirQualitySignatureCircularTemplate;
-- (id)_createAirQualitySignatureBezelTemplate;
-- (id)_weatherAirQualityTemplate;
-- (id)_createConditionsUtilitarianSmallFlatTemplate;
-- (id)_createConditionsUtilitarianSmallTemplate;
-- (id)_createConditionsModularSmallTemplate;
-- (id)_createConditionsExtraLargeTemplate;
-- (id)_createConditionsCircularSmallTemplate;
-- (id)_createConditionsCircularMediumTemplate;
-- (id)_createConditionsSignatureRectangularTemplate;
-- (id)_createConditionsSignatureCornerTemplate;
-- (id)_createConditionsSignatureCircularTemplate;
-- (id)_createConditionsSignatureBezelTemplate;
-- (id)_weatherConditionsTemplate;
-- (id)_createUtilitarianSmallTemplate;
-- (id)_createUtilitarianLargeTemplate;
-- (id)_createModularSmallTemplate;
-- (id)_createModularLargeTemplate;
-- (id)_createExtraLargeTemplate;
-- (id)_createCircularSmallTemplate;
-- (id)_createCircularMediumTemplate;
-- (id)_createSignatureCornerTemplate;
-- (id)_createSignatureCircularTemplate;
-- (id)_createSignatureBezelTemplate;
-- (id)_weatherTemplate;
+- (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (id)_stocksTemplate;
 
 @end

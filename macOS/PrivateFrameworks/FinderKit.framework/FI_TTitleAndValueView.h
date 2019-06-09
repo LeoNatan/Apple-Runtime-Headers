@@ -17,10 +17,14 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_titleAndValueGapConstraint;
     double _titleAndValueGap;
     double _valueViewBottomInset;
+    double _valueViewTopInset;
     _Bool _loadedFromNib;
+    NSView *_separatorView;
 }
 
+@property(retain, nonatomic) NSView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) double valueViewBottomInset; // @synthesize valueViewBottomInset=_valueViewBottomInset;
+@property(nonatomic) double valueViewTopInset; // @synthesize valueViewTopInset=_valueViewTopInset;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)updateValueViewAXTitle;

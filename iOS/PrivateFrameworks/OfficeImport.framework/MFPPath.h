@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     OITSUBezierPath *mPath;
 }
 
+- (void).cxx_destruct;
 - (id)path;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;

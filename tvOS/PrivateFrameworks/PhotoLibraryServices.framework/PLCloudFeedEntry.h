@@ -13,7 +13,6 @@
 }
 
 + (id)entityName;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entryWithURIRepresentation:(id)arg1 inLibrary:(id)arg2;
 + (id)allEntriesInManagedObjectContext:(id)arg1;
 + (id)firstEntryWithType:(long long)arg1 albumGUID:(id)arg2 inLibrary:(id)arg3;
@@ -29,7 +28,7 @@
 - (_Bool)shouldBeRemovedFromPhotoLibrary:(id)arg1;
 @property(readonly, nonatomic) long long entryPriority;
 @property(readonly, nonatomic) long long entryType;
-@property(readonly, nonatomic) NSURL *URIRepresentation;
+@property(readonly, nonatomic) __weak NSURL *URIRepresentation;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *entryAlbumGUID; // @dynamic entryAlbumGUID;

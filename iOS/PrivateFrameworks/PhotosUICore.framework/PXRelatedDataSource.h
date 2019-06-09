@@ -11,10 +11,12 @@
 @interface PXRelatedDataSource : PXSectionedDataSource
 {
     _Bool _transient;
+    _Bool _useItemIndexPaths;
     NSArray *_relatedEntries;
 }
 
 @property(readonly, copy, nonatomic) NSArray *relatedEntries; // @synthesize relatedEntries=_relatedEntries;
+@property(readonly, nonatomic) _Bool useItemIndexPaths; // @synthesize useItemIndexPaths=_useItemIndexPaths;
 @property(readonly, nonatomic, getter=isTransient) _Bool transient; // @synthesize transient=_transient;
 - (void).cxx_destruct;
 - (struct PXSimpleIndexPath)indexPathForRelatedEntry:(id)arg1;
@@ -22,8 +24,9 @@
 - (id)relatedEntryAtIndexPath:(struct PXSimpleIndexPath)arg1;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
 - (id)objectAtIndexPath:(struct PXSimpleIndexPath)arg1;
+- (long long)numberOfItemsInSection:(long long)arg1;
 - (long long)numberOfSections;
-- (id)initWithRelatedEntries:(id)arg1 isTransient:(_Bool)arg2;
+- (id)initWithRelatedEntries:(id)arg1 isTransient:(_Bool)arg2 useItemIndexPaths:(_Bool)arg3;
 - (id)init;
 
 @end

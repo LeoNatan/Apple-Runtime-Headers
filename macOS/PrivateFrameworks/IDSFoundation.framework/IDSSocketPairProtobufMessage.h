@@ -6,9 +6,11 @@
 
 #import <IDSFoundation/IDSSocketPairMessage.h>
 
+#import <IDSFoundation/IDSSocketPairMessage-Protocol.h>
+
 @class NSData, NSDate, NSString;
 
-@interface IDSSocketPairProtobufMessage : IDSSocketPairMessage
+@interface IDSSocketPairProtobufMessage : IDSSocketPairMessage <IDSSocketPairMessage>
 {
     unsigned long long _payloadOffset;
     unsigned long long _payloadLength;

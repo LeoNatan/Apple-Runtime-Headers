@@ -42,8 +42,8 @@
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)canBePersistedToDisk;
-@property(readonly) _Bool isStaleToPurgeFromDisk;
-@property(readonly) _Bool isStaleToRefresh;
+@property(readonly, nonatomic) _Bool isStaleToPurgeFromDisk;
+@property(readonly, nonatomic) _Bool isStaleToRefresh;
 - (_Bool)aggresiveArrivalIsAfterExpiration;
 - (void)encodeWithCoder:(id)arg1;
 - (void)commonInit;

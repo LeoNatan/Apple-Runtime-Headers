@@ -21,12 +21,7 @@ struct CGRect {
 };
 
 struct CGSize {
-    double width;
-    double height;
-};
-
-struct _NSRange {
-    unsigned long long _field1;
-    unsigned long long _field2;
+    double _field1;
+    double _field2;
 };
 

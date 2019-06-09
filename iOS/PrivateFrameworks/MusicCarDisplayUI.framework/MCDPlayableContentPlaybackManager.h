@@ -4,28 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <MusicCarDisplayUI/_MCDNowPlayingContentManager.h>
 
-#import <MusicCarDisplayUI/MCDNowPlayingViewControllerDataSource-Protocol.h>
-#import <MusicCarDisplayUI/MCDNowPlayingViewControllerDelegate-Protocol.h>
 #import <MusicCarDisplayUI/MPRequestResponseControllerDelegate-Protocol.h>
 #import <MusicCarDisplayUI/UITableViewDataSource-Protocol.h>
 #import <MusicCarDisplayUI/UITableViewDelegate-Protocol.h>
 
-@class AVExternalDevice, MCDPCModel, MPArtworkCatalog, MPRequestResponseController, NSString, UIAlertController, UIImage, UITableView;
-@protocol MCDPlayableContentQueueManagerDelegate;
+@class MCDPCModel, NSString;
 
-@interface MCDPlayableContentPlaybackManager : NSObject <MPRequestResponseControllerDelegate, UITableViewDelegate, UITableViewDataSource, MCDNowPlayingViewControllerDataSource, MCDNowPlayingViewControllerDelegate>
+@interface MCDPlayableContentPlaybackManager : _MCDNowPlayingContentManager <MPRequestResponseControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 {
-    _Bool _limitedUI;
     _Bool _seeking;
-    UITableView *_tableView;
-    MPRequestResponseController *_requestController;
-    UIAlertController *_alertController;
-    id <MCDPlayableContentQueueManagerDelegate> _delegate;
-    AVExternalDevice *_externalDevice;
-    UIImage *_albumArtwork;
-    MPArtworkCatalog *_artworkCatalog;
     MCDPCModel *_model;
     long long _playingItemIndex;
     long long _totalItemCount;
@@ -34,66 +23,29 @@
 @property(nonatomic) long long totalItemCount; // @synthesize totalItemCount=_totalItemCount;
 @property(nonatomic) long long playingItemIndex; // @synthesize playingItemIndex=_playingItemIndex;
 @property(retain, nonatomic) MCDPCModel *model; // @synthesize model=_model;
-@property(retain, nonatomic) MPArtworkCatalog *artworkCatalog; // @synthesize artworkCatalog=_artworkCatalog;
-@property(retain, nonatomic) UIImage *albumArtwork; // @synthesize albumArtwork=_albumArtwork;
-@property(retain, nonatomic) AVExternalDevice *externalDevice; // @synthesize externalDevice=_externalDevice;
-@property(nonatomic) __weak id <MCDPlayableContentQueueManagerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(nonatomic, getter=isSeeking) _Bool seeking; // @synthesize seeking=_seeking;
-@property(retain, nonatomic) MPRequestResponseController *requestController; // @synthesize requestController=_requestController;
-@property(nonatomic) _Bool limitedUI; // @synthesize limitedUI=_limitedUI;
-@property(nonatomic) __weak UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (void)nowPlayingViewControllerMore:(id)arg1;
 - (_Bool)nowPlayingViewControllerCanShowMore:(id)arg1;
 - (void)nowPlayingViewControllerAddToLibrary:(id)arg1;
 - (_Bool)nowPlayingViewControllerCanShowAddToLibrary:(id)arg1;
-- (id)nowPlayingViewControllerGetPlaybackRate:(id)arg1;
-- (void)nowPlayingViewControllerChangePlaybackRate:(id)arg1;
-- (_Bool)nowPlayingViewControllerCanShowChangePlaybackRate:(id)arg1;
-- (void)nowPlayingViewControllerToggleRepeat:(id)arg1;
-- (_Bool)nowPlayingViewControllerCanRepeat:(id)arg1;
-- (void)nowPlayingViewControllerToggleShuffle:(id)arg1;
-- (_Bool)nowPlayingViewControllerCanShuffle:(id)arg1;
 - (id)_alertActionForFeedbackCommand:(id)arg1 fallbackTitle:(id)arg2;
 - (void)_handleHamburgerActionSheet;
 - (void)nowPlayingViewController:(id)arg1 didSendAction:(long long)arg2 state:(long long)arg3;
 - (_Bool)nowPlayingViewController:(id)arg1 buttonShouldBeActive:(long long)arg2;
-- (id)_skipIntervalButtonImageForInterval:(double)arg1;
+- (id)_skipIntervalButtonImageForInterval:(double)arg1 size:(long long)arg2;
 - (_Bool)nowPlayingViewController:(id)arg1 shouldDisplayButton:(long long)arg2 withImage:(out id *)arg3 existingIdentifier:(id)arg4 tinted:(out _Bool *)arg5;
 - (double)_jumpBackwardInterval;
 - (double)_jumpForwardInterval;
-- (long long)repeatTypeForNowPlayingViewController:(id)arg1;
-- (long long)shuffleTypeForNowPlayingViewController:(id)arg1;
-- (_Bool)nowPlayingViewControllerIsPlaying:(id)arg1;
-- (CDStruct_fce57115)durationSnapshotForNowPlayingViewController:(id)arg1;
-- (_Bool)nowPlayingViewControllerIsShowingExplicitTrack:(id)arg1;
-- (id)backgroundArtForNowPlayingController:(id)arg1;
-- (id)titleForNowPlayingController:(id)arg1;
-- (id)albumTextForNowPlayingController:(id)arg1;
-- (id)artistTextForNowPlayingController:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
-- (void)_processArtwork;
-- (void)_performChangeRequest:(id)arg1;
 - (void)_updateTrackQueueIndex;
-- (id)_currentlyPlayingSong;
-- (id)_currentlyPlayingItem;
-- (id)_songForIndexPath:(id)arg1;
 - (id)_itemAtIndexPath:(id)arg1;
 - (id)_adjustedIndexPathForPlaybackQueue:(id)arg1;
 - (long long)_numberOfItemsInPlaybackQueue;
-- (void)modelResponseDidInvalidate:(id)arg1;
-- (void)_limitedUIChanged:(id)arg1;
-- (id)_setupRequest;
-- (void)_performRequest;
-- (void)viewWillDisappear;
-- (void)endRequestObservation;
-- (void)beginRequestObservation;
-- (id)initWithDelegate:(id)arg1 model:(id)arg2;
+- (void)_processResponse:(id)arg1 error:(id)arg2;
+- (id)initWithDelegate:(id)arg1 dataSource:(id)arg2 bundleID:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <Message/EDSearchableCriterion-Protocol.h>
 #import <Message/NSCopying-Protocol.h>
 
-@class NSArray, NSIndexSet, NSString;
+@class EFMutableInt64Set, NSArray, NSString;
 
-@interface MFMessageCriterion : NSObject <NSCopying>
+@interface MFMessageCriterion : NSObject <EDSearchableCriterion, NSCopying>
 {
     NSString *_criterionIdentifier;
     int _qualifier;
@@ -28,13 +29,21 @@
     _Bool _useFlaggedForUnreadCount;
     _Bool _expressionIsSanitized;
     _Bool _includeRemoteBodyContent;
-    NSIndexSet *_libraryIdentifiers;
+    NSArray *_expressionLanguages;
+    EFMutableInt64Set *_libraryIdentifiers;
 }
 
++ (id)matchNothingCriterion;
 + (id)orCompoundCriterionWithCriteria:(id)arg1;
 + (id)andCompoundCriterionWithCriteria:(id)arg1;
 + (id)notCriterionWithCriterion:(id)arg1;
++ (id)criterionForDateReceivedNewerThanDate:(id)arg1;
 + (id)criterionForDateReceivedOlderThanDate:(id)arg1;
++ (id)_criterionForDateReceivedBetween:(id)arg1 endDate:(id)arg2;
++ (id)_criterionForDateReceivedBetweenDateComponents:(id)arg1 endDateComponents:(id)arg2;
++ (id)_todayDateComponents;
++ (id)lastWeekMessageCriterion;
++ (id)yesterdayMessageCriterion;
 + (id)todayMessageCriterion;
 + (id)hasAttachmentsCriterion;
 + (id)ccMeCriterion;
@@ -47,6 +56,7 @@
 + (id)threadNotifyMessageCriterion;
 + (id)VIPSenderMessageCriterion;
 + (id)messageIsServerSearchResultCriterion:(_Bool)arg1;
++ (id)criterionForDocumentID:(id)arg1;
 + (id)criterionForLibraryID:(id)arg1;
 + (id)criterionForConversationID:(long long)arg1;
 + (id)criterionForNotDeletedConversationID:(long long)arg1;
@@ -60,6 +70,8 @@
 + (id)stringForCriterionType:(int)arg1;
 + (int)criterionTypeForString:(id)arg1;
 + (void)_updateAddressComments:(id)arg1;
++ (id)defaultsDictionaryFromCriterion:(id)arg1;
++ (id)criterionFromDefaultsDictionary:(id)arg1;
 + (id)defaultsArrayFromCriteria:(id)arg1;
 + (id)criteriaFromDefaultsArray:(id)arg1 removingRecognizedKeys:(_Bool)arg2;
 + (id)criteriaFromDefaultsArray:(id)arg1;
@@ -69,8 +81,10 @@
 @property(nonatomic) _Bool includeRelatedMessages; // @synthesize includeRelatedMessages=_includeRelatedMessages;
 @property(nonatomic) _Bool useFlaggedForUnreadCount; // @synthesize useFlaggedForUnreadCount=_useFlaggedForUnreadCount;
 @property(nonatomic) _Bool preferFullTextSearch; // @synthesize preferFullTextSearch=_preferFullTextSearch;
-@property(retain, nonatomic) NSIndexSet *libraryIdentifiers; // @synthesize libraryIdentifiers=_libraryIdentifiers;
+@property(retain, nonatomic) EFMutableInt64Set *libraryIdentifiers; // @synthesize libraryIdentifiers=_libraryIdentifiers;
+@property(copy, nonatomic) NSArray *expressionLanguages; // @synthesize expressionLanguages=_expressionLanguages;
 @property(nonatomic) int qualifier; // @synthesize qualifier=_qualifier;
+- (void).cxx_destruct;
 - (_Bool)isVIPCriterion;
 - (id)simplifiedCriterion;
 - (id)simplifyOnce;
@@ -110,11 +124,10 @@
 @property(nonatomic) int criterionType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)descriptionWithDepth:(unsigned int)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithDictionary:(id)arg1 andRemoveRecognizedKeysIfMutable:(_Bool)arg2;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithType:(int)arg1 qualifier:(int)arg2 expression:(id)arg3;
@@ -127,7 +140,7 @@
 - (id)criteriaSatisfyingPredicate:(CDUnknownFunctionPointerType)arg1;
 - (void)_addCriteriaSatisfyingPredicate:(CDUnknownFunctionPointerType)arg1 toCollector:(id)arg2;
 - (unsigned int)bestBaseTable;
-- (id)SQLExpressionWithTables:(unsigned int *)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(_Bool)arg3 searchableIndex:(id)arg4 mailboxIDs:(id)arg5;
+- (id)SQLExpressionWithTables:(unsigned int *)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(_Bool)arg3 searchableIndex:(id)arg4 mailboxIDs:(id)arg5 propertyMapper:(id)arg6;
 - (id)_resolveWithIndex:(id)arg1 mailboxIDs:(id)arg2;
 - (id)_collapsedMessageNumberCriterion:(id)arg1 allMustBeSatisfied:(_Bool)arg2 collapsedIndexes:(id *)arg3;
 - (id)_evaluateFTSCriterionWithIndex:(id)arg1 mailboxIDs:(id)arg2;
@@ -135,14 +148,24 @@
 - (id)_criterionForSQL;
 - (id)_SQLExpressionForMailboxCriterion;
 - (_Bool)hasLibraryIDCriterion;
-- (id)SQLExpressionWithContext:(CDStruct_f28f5ac0 *)arg1 depth:(unsigned int)arg2;
+- (id)SQLExpressionWithContext:(id)arg1 depth:(unsigned int)arg2;
 - (id)fixOnce;
-- (id)spotlightQueryString;
-- (_Bool)isFullTextSearchableCriterion;
+- (id)_spotlightQueryString;
+- (id)_queryWithAttributes:(id)arg1 matchingValue:(id)arg2 qualifier:(int)arg3;
+- (id)_queryWithAttributes:(id)arg1 matchingValue:(id)arg2;
+- (id)_wordQueryWithAttributes:(id)arg1 languages:(id)arg2 expression:(id)arg3;
+- (id)_comparisonOperationMatchingValue:(id)arg1 qualifier:(int)arg2;
+- (id)_attributesForHeaderCriterion;
+@property(readonly, nonatomic) NSString *spotlightQueryString;
+@property(readonly, nonatomic, getter=isFullTextSearchableCriterion) _Bool fullTextSearchableCriterion;
 - (_Bool)hasNonFullTextSearchableCriterion;
 - (id)unreadCountCriterion;
 - (id)daSearchPredicate;
 - (id)daBasicSearchString;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

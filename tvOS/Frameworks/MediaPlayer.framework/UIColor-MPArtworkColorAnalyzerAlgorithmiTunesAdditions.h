@@ -9,5 +9,7 @@
 @interface UIColor (MPArtworkColorAnalyzerAlgorithmiTunesAdditions)
 + (id)colorWithITColor:(struct ITColor)arg1;
 - (struct ITColor)ITColor;
+- (_Bool)MP_isArtworkColorAnalyzerLightColorForAlgorithm:(long long)arg1;
+@property(readonly, nonatomic) double MP_lightness;
 @end
 

@@ -6,13 +6,14 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBIntentMetadata-Protocol.h>
 
 @class NSArray, NSString, _INPBImageValue, _INPBString;
 
-@interface _INPBIntentMetadata : PBCodable <_INPBIntentMetadata, NSSecureCoding, NSCopying>
+@interface _INPBIntentMetadata : PBCodable <INJSONSerializable, _INPBIntentMetadata, NSSecureCoding, NSCopying>
 {
     CDStruct_56d48c16 _requiredEntitlements;
     struct {
@@ -20,11 +21,14 @@
         unsigned int intentCategory:1;
         unsigned int backgroundLaunch:1;
         unsigned int confirmed:1;
+        unsigned int idiom:1;
+        unsigned int isPrimaryDisplayDisabled:1;
         unsigned int triggerMethod:1;
         unsigned int userConfirmationRequired:1;
     } _has;
     _Bool _backgroundLaunch;
     _Bool _confirmed;
+    _Bool _isPrimaryDisplayDisabled;
     _Bool _userConfirmationRequired;
     NSString *_categoryVerb;
     _INPBImageValue *_defaultImageValue;
@@ -34,24 +38,32 @@
     NSString *_nanoLaunchId;
     NSString *_systemExtensionBundleId;
     NSString *_systemUIExtensionBundleId;
+    int _idiom;
     NSString *_intentDescription;
     NSString *_intentId;
     NSString *_originatingDeviceIdsIdentifier;
+    NSString *_originatingDeviceRapportEffectiveId;
+    NSString *_originatingDeviceRapportMediaSystemId;
     NSArray *_parameterImages;
     NSString *_suggestedInvocationPhrase;
     int _triggerMethod;
     _INPBString *_userUtterance;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)parameterImagesType;
 @property(retain, nonatomic) _INPBString *userUtterance; // @synthesize userUtterance=_userUtterance;
 @property(nonatomic) _Bool userConfirmationRequired; // @synthesize userConfirmationRequired=_userConfirmationRequired;
 @property(nonatomic) int triggerMethod; // @synthesize triggerMethod=_triggerMethod;
 @property(copy, nonatomic) NSString *suggestedInvocationPhrase; // @synthesize suggestedInvocationPhrase=_suggestedInvocationPhrase;
 @property(copy, nonatomic) NSArray *parameterImages; // @synthesize parameterImages=_parameterImages;
+@property(copy, nonatomic) NSString *originatingDeviceRapportMediaSystemId; // @synthesize originatingDeviceRapportMediaSystemId=_originatingDeviceRapportMediaSystemId;
+@property(copy, nonatomic) NSString *originatingDeviceRapportEffectiveId; // @synthesize originatingDeviceRapportEffectiveId=_originatingDeviceRapportEffectiveId;
 @property(copy, nonatomic) NSString *originatingDeviceIdsIdentifier; // @synthesize originatingDeviceIdsIdentifier=_originatingDeviceIdsIdentifier;
+@property(nonatomic) _Bool isPrimaryDisplayDisabled; // @synthesize isPrimaryDisplayDisabled=_isPrimaryDisplayDisabled;
 @property(copy, nonatomic) NSString *intentId; // @synthesize intentId=_intentId;
 @property(copy, nonatomic) NSString *intentDescription; // @synthesize intentDescription=_intentDescription;
+@property(nonatomic) int idiom; // @synthesize idiom=_idiom;
 @property(nonatomic) _Bool confirmed; // @synthesize confirmed=_confirmed;
 @property(nonatomic) _Bool backgroundLaunch; // @synthesize backgroundLaunch=_backgroundLaunch;
 @property(copy, nonatomic) NSString *systemUIExtensionBundleId; // @synthesize systemUIExtensionBundleId=_systemUIExtensionBundleId;
@@ -67,6 +79,9 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasUserUtterance;
@@ -79,9 +94,15 @@
 @property(readonly, nonatomic) unsigned int parameterImagesCount;
 - (void)addParameterImages:(id)arg1;
 - (void)clearParameterImages;
+@property(readonly, nonatomic) _Bool hasOriginatingDeviceRapportMediaSystemId;
+@property(readonly, nonatomic) _Bool hasOriginatingDeviceRapportEffectiveId;
 @property(readonly, nonatomic) _Bool hasOriginatingDeviceIdsIdentifier;
+@property(nonatomic) _Bool hasIsPrimaryDisplayDisabled;
 @property(readonly, nonatomic) _Bool hasIntentId;
 @property(readonly, nonatomic) _Bool hasIntentDescription;
+- (int)StringAsIdiom:(id)arg1;
+- (id)idiomAsString:(int)arg1;
+@property(nonatomic) _Bool hasIdiom;
 @property(nonatomic) _Bool hasConfirmed;
 @property(nonatomic) _Bool hasBackgroundLaunch;
 @property(readonly, nonatomic) _Bool hasSystemUIExtensionBundleId;
@@ -104,6 +125,8 @@
 @property(nonatomic) _Bool hasExecutionContext;
 @property(readonly, nonatomic) _Bool hasDefaultImageValue;
 @property(readonly, nonatomic) _Bool hasCategoryVerb;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (void)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

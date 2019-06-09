@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *mName;
 }
 
+- (void).cxx_destruct;
 - (id)name;
 - (id)type;
 - (id)initWithType:(id)arg1 name:(id)arg2;

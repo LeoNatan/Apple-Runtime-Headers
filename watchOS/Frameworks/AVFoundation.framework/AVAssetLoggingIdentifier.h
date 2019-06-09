@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 - (id)makeDerivedIdentifier;
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *name;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

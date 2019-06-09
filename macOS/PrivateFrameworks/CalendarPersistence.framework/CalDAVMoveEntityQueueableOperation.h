@@ -20,16 +20,19 @@
     NSString *_destinationCalendarUID;
     NSManagedObjectID *_objectID;
     NSData *_icsData;
+    NSString *eTag;
+    NSString *scheduleTag;
+    NSManagedObjectID *objectID;
     CalManagedMoveEntityChangeRequest *_changeRequest;
 }
 
-@property(readonly) CalManagedMoveEntityChangeRequest *changeRequest; // @synthesize changeRequest=_changeRequest;
-@property(retain) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(retain) NSString *destinationCalendarUID; // @synthesize destinationCalendarUID=_destinationCalendarUID;
 @property(retain) NSString *sourceCalendarUID; // @synthesize sourceCalendarUID=_sourceCalendarUID;
 @property(retain) NSString *filename; // @synthesize filename=_filename;
-@property(retain) NSString *scheduleTag; // @synthesize scheduleTag=_scheduleTag;
-@property(retain) NSString *eTag; // @synthesize eTag=_etag;
+@property(readonly) CalManagedMoveEntityChangeRequest *changeRequest; // @synthesize changeRequest=_changeRequest;
+@property(retain) NSManagedObjectID *objectID; // @synthesize objectID;
+@property(retain) NSString *scheduleTag; // @synthesize scheduleTag;
+@property(retain) NSString *eTag; // @synthesize eTag;
 - (void).cxx_destruct;
 - (void)finishOperation;
 - (void)configureOperationDependencies;
@@ -48,7 +51,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly) BOOL shouldHaveTagsUpdated;
+@property(readonly) BOOL shouldHaveTagsUpdated; // @dynamic shouldHaveTagsUpdated;
 @property(readonly) Class superclass;
 
 @end

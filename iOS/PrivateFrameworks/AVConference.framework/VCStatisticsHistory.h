@@ -15,17 +15,24 @@ __attribute__((visibility("hidden")))
     struct VCStatisticsStatsHistoryElement _lastStats;
     unsigned char _currentLinkID;
     double _lastHistoryNotEnoughLogTime;
+    struct VCStatisticsSendHistoryElement *_sendHistory;
 }
 
+- (void)clearSendHistory;
 - (void)resetHistory;
 - (_Bool)handleWrappedAroundByteCountForStats:(struct VCStatisticsStatsHistoryElement *)arg1;
 - (_Bool)getStatsHistoryElementIndex:(int *)arg1 time:(double)arg2 inMostRecentDuration:(double)arg3;
 - (_Bool)isStatsElementOutOfOrder:(struct VCStatisticsStatsHistoryElement)arg1;
+- (double)getRoundTripTimeWithPacketId:(unsigned int)arg1 time:(double)arg2;
+- (struct VCStatisticsSendHistoryElement *)getSendHistoryElementWithPacketId:(unsigned int)arg1;
+- (void)addAndPruneSendHistory:(struct VCStatisticsSendHistoryElement *)arg1 upToTime:(double)arg2;
+- (int)getBurstyLossAtTime:(double)arg1 inMostRecentDuration:(double)arg2 withPercentile:(double)arg3;
 - (double)getServerStatsBitrateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
 - (double)getReceivingBitrateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
 - (double)getSendingBitrateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
 - (double)getPacketLossRateAtTime:(double)arg1 inMostRecentDuration:(double)arg2;
 - (void)addStatsHistory:(struct VCStatisticsStatsHistoryElement)arg1;
+- (void)dealloc;
 
 @end
 

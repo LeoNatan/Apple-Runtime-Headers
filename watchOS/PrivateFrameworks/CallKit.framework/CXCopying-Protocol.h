@@ -7,9 +7,7 @@
 #import <CallKit/CXSanitizedCopying-Protocol.h>
 #import <CallKit/NSCopying-Protocol.h>
 
-@protocol NSCopying;
-
 @protocol CXCopying <NSCopying, CXSanitizedCopying>
-- (void)updateCopy:(id <NSCopying>)arg1 withZone:(struct _NSZone *)arg2;
+- (void)updateCopy:(id)arg1 withZone:(struct _NSZone *)arg2;
 @end
 

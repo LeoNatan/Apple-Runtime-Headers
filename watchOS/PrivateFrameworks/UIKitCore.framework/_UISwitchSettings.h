@@ -12,6 +12,22 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedSettings;
+@property(readonly, nonatomic) float trackGoingOffSpringAnimationDuration;
+@property(readonly, nonatomic) float trackGoingOffSpringAnimationDamping;
+@property(readonly, nonatomic) float trackGoingOffSpringAnimationStiffness;
+@property(readonly, nonatomic) float trackGoingOffSpringAnimationMass;
+@property(readonly, nonatomic) float trackGoingOnSpringAnimationDuration;
+@property(readonly, nonatomic) float trackGoingOnSpringAnimationDamping;
+@property(readonly, nonatomic) float trackGoingOnSpringAnimationStiffness;
+@property(readonly, nonatomic) float trackGoingOnSpringAnimationMass;
+@property(readonly, nonatomic) float knobTouchDownSpringAnimationDuration;
+@property(readonly, nonatomic) float knobTouchDownSpringAnimationDamping;
+@property(readonly, nonatomic) float knobTouchDownSpringAnimationStiffness;
+@property(readonly, nonatomic) float knobTouchDownSpringAnimationMass;
+@property(readonly, nonatomic) float knobSpringAnimationDuration;
+@property(readonly, nonatomic) float knobSpringAnimationDamping;
+@property(readonly, nonatomic) float knobSpringAnimationStiffness;
+@property(readonly, nonatomic) float knobSpringAnimationMass;
 @property(readonly, nonatomic) float knobSpringDurationAnimationTouchUp;
 @property(readonly, nonatomic) float knobSpringDurationAnimationTouchDown;
 @property(readonly, nonatomic) float knobSpringDampingAnimationTouchUp;

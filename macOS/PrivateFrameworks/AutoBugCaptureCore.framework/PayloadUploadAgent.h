@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSMutableDictionary, NWUsageMonitor;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface PayloadUploadAgent : NSObject
 {
     NSObject<OS_dispatch_queue> *_uploadQueue;
     NSMutableDictionary *_pendingUploadMap;
     id _foregroundStateObserver;
+    NWUsageMonitor *_usageMonitor;
 }
 
 + (id)sharedInstance;

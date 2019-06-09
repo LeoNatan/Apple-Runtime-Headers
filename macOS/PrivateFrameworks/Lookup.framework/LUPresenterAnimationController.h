@@ -8,6 +8,7 @@
 
 @class LUPresenter, LUSearchTermIndicator, NSAttributedString;
 
+__attribute__((visibility("hidden")))
 @interface LUPresenterAnimationController : NSPopoverAnimationController
 {
     LUSearchTermIndicator *_searchTermIndicator;

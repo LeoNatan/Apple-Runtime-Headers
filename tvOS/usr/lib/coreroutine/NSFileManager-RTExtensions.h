@@ -20,5 +20,6 @@
 + (id)userCacheDirectoryPath;
 + (id)defaultsDomain;
 + (id)frameworkDirectoryPath;
++ (id)frameworkBundle;
 @end
 

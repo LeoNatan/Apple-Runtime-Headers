@@ -13,7 +13,6 @@
 @class AFQueue, NSMutableArray, NSString;
 @protocol SVSTranscriptDataSource, SVSTranscriptDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SVSTranscript : NSObject <AFQueueDelegate, SVSTranscriptItemGroupDelegate, NSFastEnumeration>
 {
     id <SVSTranscriptDataSource> _dataSource;

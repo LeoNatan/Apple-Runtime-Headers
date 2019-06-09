@@ -9,7 +9,7 @@
 #import <Sharing/NSSecureCoding-Protocol.h>
 #import <Sharing/SFXPCInterface-Protocol.h>
 
-@class CUAppleIDClient, NSData, NSDate, NSDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint;
+@class CUAppleIDClient, NSData, NSDictionary, NSString, NSUUID, NSXPCConnection, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue;
 
 @interface SFService : NSObject <NSSecureCoding, SFXPCInterface>
@@ -21,15 +21,6 @@
     _Bool _invalidateDone;
     struct NSMutableDictionary *_requestQueue;
     struct NSMutableDictionary *_sessions;
-    int _tlsActivateState;
-    struct NSMutableDictionary *_tlsBuffers;
-    struct __SecIdentity *_tlsIdentity;
-    NSData *_tlsRecordData;
-    NSUUID *_tlsPeer;
-    NSObject<OS_dispatch_queue> *_tlsQueue;
-    NSDate *_tlsStart;
-    struct NSMutableDictionary *_tlsSessions;
-    struct NSMutableSet *_tlsVerifiedPeers;
     struct LogCategory *_ucatCore;
     struct LogCategory *_ucatCrypto;
     NSXPCConnection *_xpcCnx;
@@ -40,7 +31,6 @@
     _Bool _needsSetup;
     _Bool _overrideScreenOff;
     _Bool _pairSetupDisabled;
-    _Bool _tlsEnabled;
     _Bool _hasProblem;
     _Bool _supportsAirPlayReceiver;
     _Bool _wakeDevice;
@@ -78,6 +68,7 @@
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _eventMessageHandler;
     CDUnknownBlockType _requestMessageHandler;
+    NSData *_authTagOverride;
     CDUnknownBlockType _pairSetupCompletionHandler;
     CDUnknownBlockType _peerDisconnectedHandler;
     unsigned long long _problemFlags;
@@ -108,6 +99,7 @@
 @property(nonatomic) unsigned char deviceClassCode; // @synthesize deviceClassCode=_deviceClassCode;
 @property(nonatomic) _Bool autoUnlockWatch; // @synthesize autoUnlockWatch=_autoUnlockWatch;
 @property(nonatomic) _Bool autoUnlockEnabled; // @synthesize autoUnlockEnabled=_autoUnlockEnabled;
+@property(copy, nonatomic) NSData *authTagOverride; // @synthesize authTagOverride=_authTagOverride;
 @property(nonatomic) _Bool wakeDevice; // @synthesize wakeDevice=_wakeDevice;
 @property(nonatomic) _Bool supportsAirPlayReceiver; // @synthesize supportsAirPlayReceiver=_supportsAirPlayReceiver;
 @property(copy, nonatomic) CDUnknownBlockType requestMessageHandler; // @synthesize requestMessageHandler=_requestMessageHandler;
@@ -127,7 +119,6 @@
 @property(copy, nonatomic) NSString *peerAppleID; // @synthesize peerAppleID=_peerAppleID;
 @property(retain, nonatomic) CUAppleIDClient *myAppleIDInfoClient; // @synthesize myAppleIDInfoClient=_myAppleIDInfoClient;
 @property(copy, nonatomic) NSString *myAppleID; // @synthesize myAppleID=_myAppleID;
-@property(nonatomic) _Bool tlsEnabled; // @synthesize tlsEnabled=_tlsEnabled;
 @property(nonatomic) unsigned int sessionFlags; // @synthesize sessionFlags=_sessionFlags;
 @property(nonatomic) unsigned int pinType; // @synthesize pinType=_pinType;
 @property(copy, nonatomic) NSDictionary *pairVerifyACL; // @synthesize pairVerifyACL=_pairVerifyACL;
@@ -152,8 +143,6 @@
 - (void)serviceReceivedEvent:(id)arg1;
 - (void)servicePeerDisconnected:(id)arg1 error:(id)arg2;
 - (void)serviceError:(id)arg1;
-- (void)_sendTLSEncryptedObject:(id)arg1 toPeer:(id)arg2;
-- (void)sendTLSEncryptedObject:(id)arg1 toPeer:(id)arg2;
 - (void)_sendToPeer:(id)arg1 type:(unsigned char)arg2 data:(id)arg3;
 - (void)sendToPeer:(id)arg1 type:(unsigned char)arg2 data:(id)arg3;
 - (void)_sendToPeer:(id)arg1 type:(unsigned char)arg2 unencryptedObject:(id)arg3;
@@ -161,25 +150,11 @@
 - (void)sendResponse:(id)arg1;
 - (void)sendRequest:(id)arg1;
 - (void)sendEvent:(id)arg1;
-- (void)tlsSetData:(id)arg1 forPeer:(id)arg2;
-- (id)tlsDataForPeer:(id)arg1;
-- (int)tlsState;
-- (void)_tlsReceivedObjectFromPeer:(id)arg1 length:(unsigned long long)arg2;
-- (void)_tlsReceivedData:(id)arg1 type:(unsigned char)arg2 peer:(id)arg3;
-- (void)tlsReceivedData:(id)arg1 type:(unsigned char)arg2 peer:(id)arg3;
-- (void)_pairTLSComplete:(int)arg1 peer:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_pairTLSSendValidationRecord;
-- (void)_pairTLSWithPeer:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)pairTLSWithPeer:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (int)_tlsSetCertificatesForSession:(struct SSLContext *)arg1;
-- (int)_tlsEnsureConfiguredWithPeer:(id)arg1;
-- (void)activateTLSWithIdentity:(struct __SecIdentity *)arg1 recordData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_performActivateSafeChange:(CDUnknownBlockType)arg1;
 - (void)_invalidated;
 - (void)invalidate;
 - (void)_interrupted;
 - (void)_ensureXPCStarted;
-- (void)_tlsActivated;
 - (void)_activated;
 - (void)_activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;

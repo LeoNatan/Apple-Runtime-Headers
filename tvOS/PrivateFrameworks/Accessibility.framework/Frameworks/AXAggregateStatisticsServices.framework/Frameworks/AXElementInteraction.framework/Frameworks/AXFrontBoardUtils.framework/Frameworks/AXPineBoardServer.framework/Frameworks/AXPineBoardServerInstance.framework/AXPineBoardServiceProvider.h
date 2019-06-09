@@ -16,6 +16,7 @@
 
 + (id)server;
 - (id)_pbApp;
+- (_Bool)isNonExclusiveSystemUIVisible;
 - (void)activeInterfaceOrientation:(CDUnknownBlockType)arg1;
 - (long long)activeInterfaceOrientation;
 - (void)wakeUpDeviceIfNecessary;

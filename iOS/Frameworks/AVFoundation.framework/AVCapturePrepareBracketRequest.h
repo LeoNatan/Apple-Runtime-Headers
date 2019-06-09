@@ -8,6 +8,7 @@
 
 @class FigCaptureStillImageSettings;
 
+__attribute__((visibility("hidden")))
 @interface AVCapturePrepareBracketRequest : NSObject
 {
     CDUnknownBlockType _completionBlock;

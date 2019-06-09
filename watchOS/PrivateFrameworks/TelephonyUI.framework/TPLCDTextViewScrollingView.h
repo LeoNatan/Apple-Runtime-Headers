@@ -8,6 +8,7 @@
 
 @class TPLCDTextView;
 
+__attribute__((visibility("hidden")))
 @interface TPLCDTextViewScrollingView : UIView
 {
     TPLCDTextView *_owner;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class EKEventStore, NSArray, PPContactScorer, PPEventCache, _PASNotificationToken;
+@class EKEventStore, NSArray, PPEventCache, _PASNotificationToken;
 @protocol OS_dispatch_queue;
 
 @interface PPLocalEventStore : NSObject
@@ -16,13 +16,14 @@
     NSArray *_calendars;
     PPEventCache *_eventCache;
     NSObject<OS_dispatch_queue> *_eventLoadingQueue;
-    PPContactScorer *_contactScorer;
     _PASNotificationToken *_assetUpdateNotificationToken;
 }
 
 + (id)defaultStore;
 - (void).cxx_destruct;
+- (BOOL)registerFeedback:(id)arg1 error:(id *)arg2;
 - (void)refreshCacheWithChanges:(id)arg1;
+- (BOOL)shouldIngestEvent:(id)arg1;
 - (void)dealloc;
 - (id)eventsFromDate:(id)arg1 toDate:(id)arg2;
 - (void)iterateEventsFrom:(id)arg1 to:(id)arg2 inChunks:(int)arg3 withBlock:(CDUnknownBlockType)arg4;
@@ -31,6 +32,7 @@
 - (id)eventHighlightsFrom:(id)arg1 to:(id)arg2 options:(int)arg3;
 - (id)calendars;
 - (void)_registerForNotifications;
+- (void)_clearAndReloadAllCachesAndData;
 - (double)_scoreForSecondsRelativeToNow:(double)arg1;
 - (id)_filterOutAllDayAndMultiDayEvents:(id)arg1;
 - (BOOL)_inObservedCalendars:(id)arg1;

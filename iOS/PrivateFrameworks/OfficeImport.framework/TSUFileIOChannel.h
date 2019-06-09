@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
+- (void)truncateToLength:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)flushWithCompletion:(CDUnknownBlockType)arg1;
 - (void)addBarrier:(CDUnknownBlockType)arg1;
 - (void)setLowWater:(unsigned long long)arg1;
 - (void)close;
@@ -32,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (void)readFromOffset:(long long)arg1 length:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)initWithType:(unsigned long long)arg1 descriptor:(int)arg2 queue:(id)arg3 cleanupHandler:(CDUnknownBlockType)arg4;
+- (id)initForRandomReadingWritingURL:(id)arg1 error:(id *)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
+- (id)initForRandomReadingWritingURL:(id)arg1 error:(id *)arg2;
 - (id)initForRandomWritingURL:(id)arg1 error:(id *)arg2 cleanupHandler:(CDUnknownBlockType)arg3;
 - (id)initForRandomWritingURL:(id)arg1 error:(id *)arg2;
 - (id)initForStreamWritingURL:(id)arg1 error:(id *)arg2 cleanupHandler:(CDUnknownBlockType)arg3;

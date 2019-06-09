@@ -25,7 +25,6 @@
 + (id)valueWithBytes:(const void *)arg1 objCType:(const char *)arg2;
 + (id)value:(const void *)arg1 withObjCType:(const char *)arg2;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (void)initialize;
 - (id)initWithBytes:(const void *)arg1 objCType:(const char *)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

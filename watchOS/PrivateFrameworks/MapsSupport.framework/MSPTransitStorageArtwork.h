@@ -10,7 +10,7 @@
 #import <MapsSupport/NSCopying-Protocol.h>
 
 @class MSPTransitStorageIcon, MSPTransitStorageShield, NSString, PBUnknownFields;
-@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource;
+@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource, GEOTransitTextDataSource;
 
 @interface MSPTransitStorageArtwork : PBCodable <GEOTransitArtworkDataSource, NSCopying>
 {
@@ -58,6 +58,7 @@
 - (int)StringAsArtworkSourceType:(id)arg1;
 - (id)artworkSourceTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasArtworkSourceType;
+@property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource;
 @property(readonly, nonatomic) id <GEOTransitIconDataSource> iconDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> iconFallbackShieldDataSource;

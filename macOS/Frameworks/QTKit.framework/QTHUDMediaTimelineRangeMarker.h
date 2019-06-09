@@ -8,16 +8,11 @@
 
 @interface QTHUDMediaTimelineRangeMarker : NSObject
 {
-    id _representedObject;
-    CDStruct_977f9211 _mediaTimeRange;
 }
 
-+ (id)rangeMarkerWithRepresentedObject:(id)arg1 mediaTimeRange:(CDStruct_977f9211)arg2;
-@property(readonly, nonatomic) CDStruct_977f9211 mediaTimeRange; // @synthesize mediaTimeRange=_mediaTimeRange;
-@property(readonly, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-- (void)dealloc;
++ (id)rangeMarkerWithRepresentedObject:(id)arg1 mediaTimeRange:(CDStruct_7cbd8c8b)arg2;
+- (id)initWithRepresentedObject:(id)arg1 mediaTimeRange:(CDStruct_7cbd8c8b)arg2;
 - (id)init;
-- (id)initWithRepresentedObject:(id)arg1 mediaTimeRange:(CDStruct_977f9211)arg2;
 
 @end
 

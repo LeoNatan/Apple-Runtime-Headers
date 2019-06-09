@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUActivity.h>
+#import <PhotosUICore/PXActivity.h>
 
 #import <PhotosUI/PHAirPlayControllerRouteObserver-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface PUAirPlayActivity : PUActivity <PHAirPlayControllerRouteObserver>
+@interface PUAirPlayActivity : PXActivity <PHAirPlayControllerRouteObserver>
 {
     _Bool __routeAvailable;
     _Bool __needsUpdateRouteAvailable;
@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)tearDownForCompletion;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_activityBundleImageConfiguration;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 - (void)dealloc;

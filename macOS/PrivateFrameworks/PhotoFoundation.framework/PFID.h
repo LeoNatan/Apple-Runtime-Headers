@@ -8,12 +8,14 @@
 
 @interface PFID : NSObject
 {
-    long long _identifier;
+    // Error parsing type: Aq, name: _identifier
 }
 
 + (id)PFID;
 + (void)initialize;
-@property long long identifier; // @synthesize identifier=_identifier;
+// Error parsing type for property identifier:
+// Property attributes: TAq,V_identifier
+
 - (long long)currentID;
 - (void)setNextID:(long long)arg1;
 - (long long)nextID;

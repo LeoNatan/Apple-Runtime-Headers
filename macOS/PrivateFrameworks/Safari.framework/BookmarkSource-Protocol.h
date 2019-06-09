@@ -4,13 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSImage, NSMenu, NSString, WebBookmarkLeaf;
+@class NSArray, NSImage, NSString, WebBookmarkLeaf;
 
 @protocol BookmarkSource
-- (NSString *)bookmarkSourceMenuTitle;
-- (void)removeBookmarkSourceMenu:(NSMenu *)arg1;
-- (struct TabPlacementHint)tabPlacementHintForMenu:(NSMenu *)arg1;
-- (void)addBookmarkSourceMenu:(NSMenu *)arg1 withTabPlacementHint:(const struct TabPlacementHint *)arg2;
 - (NSString *)imageURLStringForContentItem:(id)arg1;
 - (NSImage *)imageForContentItem:(id)arg1;
 - (NSString *)titleStringForContentItem:(id)arg1;

@@ -6,13 +6,14 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOComposedRoute, GEOComposedWaypoint, MNLocation;
+@class GEOComposedRoute, GEOComposedWaypoint, MNLocation, NSDictionary;
 
 @protocol MNGuidanceManager <NSObject>
 - (void)stop;
 - (void)updateDestination:(GEOComposedWaypoint *)arg1;
 - (void)updateForReroute:(GEOComposedRoute *)arg1;
 - (void)updateForReturnToRoute;
+- (void)addInjectedEvent:(NSDictionary *)arg1;
 - (_Bool)repeatLastGuidanceAnnouncement:(MNLocation *)arg1;
 - (double)timeUntilNextAnnouncement;
 - (double)timeSinceLastAnnouncement;

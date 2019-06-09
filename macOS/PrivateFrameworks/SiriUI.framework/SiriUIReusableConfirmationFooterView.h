@@ -8,7 +8,6 @@
 
 @class NSButton, SAUIConfirmationOptions, SiriUIKeyline;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIReusableConfirmationFooterView : SiriUIReusableFooterView
 {
     SiriUIKeyline *_verticalKeyline;

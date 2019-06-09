@@ -6,14 +6,13 @@
 
 #import <SockPuppetGizmo/NSObject-Protocol.h>
 
-@class NSDictionary, NSString, SPInterfaceGroupView;
+@class NSString, SPInterfaceGroupView;
 
 @protocol SPInterfaceDelegate <NSObject>
 - (void)setValue:(id)arg1 forKey:(NSString *)arg2;
 - (void)performAction:(NSString *)arg1 withValue:(id)arg2;
 
 @optional
-- (void)setProperties:(NSDictionary *)arg1 forInterfaceObjectNamed:(NSString *)arg2;
 - (void)interfaceGroupViewDidAdjustHeight:(SPInterfaceGroupView *)arg1;
 @end
 

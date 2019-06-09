@@ -13,7 +13,6 @@
 @interface IMRemoteURLConnection (FTMessageDelivery_HTTP) <FTMessageDeliveryRemoteURLConnection>
 
 // Remaining properties
-@property BOOL alwaysForceCellular;
 @property(copy) CDUnknownBlockType block;
 @property(retain) NSString *bundleIdentifierForDataUsage;
 @property int concurrentConnections;

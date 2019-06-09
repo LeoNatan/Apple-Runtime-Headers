@@ -8,5 +8,6 @@
 
 @interface NSArray (SortedMailboxes)
 - (unsigned int)mf_indexOfMailboxDictionaryWithName:(id)arg1;
+- (void)mf_enumerateByStoreUsingBlock:(CDUnknownBlockType)arg1;
 @end
 

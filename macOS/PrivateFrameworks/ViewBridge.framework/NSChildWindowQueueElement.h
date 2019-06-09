@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
     CDUnknownBlockType _reply;
     NSXPCListenerEndpoint *_listenerEndpoint;
-    CDStruct_e578beec _parameters;
+    CDStruct_8ca9744b _parameters;
 }
 
-- (id)initWithIdentifier:(id)arg1 parameters:(const CDStruct_e578beec *)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (id)initWithIdentifier:(id)arg1 parameters:(const CDStruct_8ca9744b *)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)dealloc;
 
 @end

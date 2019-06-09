@@ -23,7 +23,6 @@
 - (void)didAddDebuggable:(RWIDebuggable *)arg1;
 - (void)willRemoveApplication:(RWIApplication *)arg1;
 - (void)didAddApplication:(RWIApplication *)arg1;
-- (void)targetDidChangeReadyState:(RWITarget *)arg1;
 - (void)targetHasBasicInformation:(RWITarget *)arg1;
 @end
 

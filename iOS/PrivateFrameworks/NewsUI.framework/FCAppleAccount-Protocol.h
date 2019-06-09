@@ -10,7 +10,6 @@
 
 @protocol FCAppleAccount <NSObject>
 @property(readonly, nonatomic) NSString *endpointConnectionClientID;
-@property(readonly, nonatomic, getter=iCloudAccountChanged) _Bool iCloudAccountChanged;
 @property(readonly, nonatomic, getter=isUserSignedInToiCloud) _Bool userSignedInToiCloud;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) _Bool privateDataSyncingEnabled;
 @property(readonly, nonatomic) NSString *supportedContentStoreFrontID;

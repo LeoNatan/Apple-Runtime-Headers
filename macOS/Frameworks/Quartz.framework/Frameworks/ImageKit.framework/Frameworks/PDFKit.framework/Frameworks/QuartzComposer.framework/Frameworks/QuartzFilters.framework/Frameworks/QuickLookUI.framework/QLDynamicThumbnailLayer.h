@@ -49,7 +49,7 @@
 @property(readonly) BOOL loaded;
 @property(copy) NSURL *URL; // @dynamic URL;
 - (void)_dispatchRequestInfo;
-- (struct CGSize)_optimalThumbnailSize;
+- (struct CGSize)_optimalThumbnailPointSize;
 - (void)_computeThumbnail:(struct __QLThumbnail *)arg1 forURL:(id)arg2 withUTIHint:(id)arg3 requestIndex:(unsigned long long)arg4;
 - (void)_computeFolderContentsThumbnailsContinuously:(struct __CFURL *)arg1 requestIndex:(unsigned long long)arg2;
 - (void)_blockAndWaitIfNecessaryWithRequestIndex:(unsigned long long)arg1;

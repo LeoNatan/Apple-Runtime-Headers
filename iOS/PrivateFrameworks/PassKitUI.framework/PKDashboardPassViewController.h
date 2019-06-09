@@ -8,11 +8,12 @@
 
 #import <PassKitUI/BKOperationDelegate-Protocol.h>
 #import <PassKitUI/PKForegroundActiveArbiterObserver-Protocol.h>
+#import <PassKitUI/_PKUIKVisibilityBackdropViewDelegate-Protocol.h>
 
-@class BKPresenceDetectOperation, NSObject, NSString, PKPass, PKPaymentPass, UIButton, _UIBackdropView;
+@class BKPresenceDetectOperation, NSObject, NSString, PKPass, PKPaymentPass, UIButton, _PKUIKVisibilityBackdropView;
 @protocol OS_dispatch_source, PKDashboardPassViewControllerDelegate><PKDashboardDelegate;
 
-@interface PKDashboardPassViewController : PKDashboardViewController <PKForegroundActiveArbiterObserver, BKOperationDelegate>
+@interface PKDashboardPassViewController : PKDashboardViewController <PKForegroundActiveArbiterObserver, _PKUIKVisibilityBackdropViewDelegate, BKOperationDelegate>
 {
     _Bool _fingerPresent;
     BKPresenceDetectOperation *_fingerDetectionOperation;
@@ -22,7 +23,7 @@
     unsigned char _visibility;
     _Bool _footerVisible;
     PKPaymentPass *_frontmostPaymentPass;
-    _UIBackdropView *_footerBackground;
+    _PKUIKVisibilityBackdropView *_footerBackground;
     struct CGSize _defaultPasscodeButtonSize;
     UIButton *_passcodeButton;
     PKPass *_frontmostPass;
@@ -30,6 +31,7 @@
 
 @property(retain, nonatomic) PKPass *frontmostPass; // @synthesize frontmostPass=_frontmostPass;
 - (void).cxx_destruct;
+- (long long)visibilityBackdropView:(id)arg1 preferredStyleForTraitCollection:(id)arg2;
 - (void)foregroundActiveArbiter:(id)arg1 didUpdateForegroundActiveState:(CDStruct_973bafd3)arg2;
 - (void)operation:(id)arg1 presenceStateChanged:(_Bool)arg2;
 - (void)_passcodeTapped:(id)arg1;

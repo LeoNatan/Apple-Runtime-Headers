@@ -9,26 +9,29 @@
 #import <Rapport/NSSecureCoding-Protocol.h>
 
 @class CUTCPServer, CUWiFiManager, NSData, NSString, NSUUID, RPConnection;
-@protocol OS_dispatch_queue, OS_nw_path_evaluator, RPMessageable;
+@protocol OS_dispatch_queue, OS_nw_listener, OS_nw_path_evaluator, RPMessageable;
 
 @interface RPStreamSession : NSObject <NSSecureCoding>
 {
-    NSObject<OS_dispatch_queue> *_dispatchQueue;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
+    NSObject<OS_nw_listener> *_nwListener;
     NSObject<OS_nw_path_evaluator> *_nwPathEvaluator;
     unsigned char _ourCurveSK[32];
+    CDUnion_fab80606 _peerIP;
     int _peerPort;
     _Bool _prepareOnly;
     RPConnection *_rpCnx;
     CUTCPServer *_tcpServer;
     CUWiFiManager *_wifiManager;
     _Bool _serverMode;
+    NSObject<OS_dispatch_queue> *_dispatchQueue;
     int _flowControlState;
     CDUnknownBlockType _invalidationHandler;
     id <RPMessageable> _messenger;
     NSUUID *_nwClientID;
     CDUnknownBlockType _receivedEventHandler;
+    CDUnknownBlockType _receivedRequestHandler;
     unsigned int _streamFlags;
     NSString *_streamID;
     NSData *_streamKey;
@@ -52,16 +55,21 @@
 @property(copy, nonatomic) NSData *streamKey; // @synthesize streamKey=_streamKey;
 @property(copy, nonatomic) NSString *streamID; // @synthesize streamID=_streamID;
 @property(nonatomic) unsigned int streamFlags; // @synthesize streamFlags=_streamFlags;
+@property(copy, nonatomic) CDUnknownBlockType receivedRequestHandler; // @synthesize receivedRequestHandler=_receivedRequestHandler;
 @property(copy, nonatomic) CDUnknownBlockType receivedEventHandler; // @synthesize receivedEventHandler=_receivedEventHandler;
 @property(copy, nonatomic) NSUUID *nwClientID; // @synthesize nwClientID=_nwClientID;
 @property(retain, nonatomic) id <RPMessageable> messenger; // @synthesize messenger=_messenger;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(readonly, nonatomic) int flowControlState; // @synthesize flowControlState=_flowControlState;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) unsigned long long delegatedProcessUPID; // @synthesize delegatedProcessUPID=_delegatedProcessUPID;
 - (void).cxx_destruct;
+- (void)_updateTrafficRegistrationForIP:(const CDUnion_fab80606 *)arg1;
 - (void)_updateTrafficRegistration;
+- (void)sendRequestID:(id)arg1 request:(id)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)sendEventID:(id)arg1 event:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (id)_lowLatencySelfAddressString;
+- (id)_lowLatencySelfAddressString:(id *)arg1;
+- (unsigned int)_getSockAddrInterfaceType:(const void *)arg1;
 - (void)_serverRPConnectionHandleConnectionStarted:(id)arg1;
 - (void)_serverRPConnectionHandleConnectionAccepted:(int)arg1;
 - (void)_serverRPConnectionStartRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
@@ -71,8 +79,10 @@
 - (void)_serverUDPSocketStartRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)_clientUDPSocketStartResponse:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_clientUDPSocketStartWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_serverUDPNWPathNextWithEndpoint:(id)arg1 nwInterface:(id)arg2 selfMACData:(id)arg3 peerIP:(CDUnion_fab80606)arg4 peerMACData:(id)arg5 usb:(_Bool)arg6 responseHandler:(CDUnknownBlockType)arg7;
 - (void)_serverUDPNWPathStartRequest:(id)arg1 options:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
-- (void)_clientUDPNWPathStartResponse:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_clientUDPNWPathStartResponse:(id)arg1 options:(id)arg2 localEndpoint:(id)arg3 nwInterface:(id)arg4 selfIPString:(id)arg5 usb:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)_clientUDPNWPathNextWithEndpoint:(id)arg1 nwInterface:(id)arg2 selfMACData:(id)arg3 usb:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_clientUDPNWPathStartWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_invalidated;
 - (void)_invalidate;

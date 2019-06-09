@@ -42,6 +42,7 @@
 - (void)addObserver:(id)arg1;
 @property(readonly, nonatomic) NSSet *extensions;
 - (void)reloadUserContentController;
+- (void)_loadTrackerBlocker;
 @property(readonly, nonatomic) WKUserContentController *userContentController;
 - (id)init;
 

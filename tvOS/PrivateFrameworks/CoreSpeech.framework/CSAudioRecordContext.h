@@ -6,25 +6,42 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+#import <CoreSpeech/NSCopying-Protocol.h>
 
-@interface CSAudioRecordContext : NSObject
+@class NSString;
+@protocol OS_xpc_object;
+
+@interface CSAudioRecordContext : NSObject <NSCopying>
 {
-    NSDictionary *_avvcContext;
-    unsigned long long _type;
+    _Bool _alwaysUseRemoteBuiltInMic;
+    long long _type;
     NSString *_deviceId;
 }
 
++ (id)recordTypeString:(long long)arg1;
++ (id)defaultContext;
++ (id)contextForServerInvoke;
++ (id)contextForVoiceTriggerTraining;
++ (id)contextForBTLE;
++ (id)contextForJarvisWithDeviceId:(id)arg1;
 + (id)contextForBuiltInVoiceTrigger;
 + (id)contextForHearstVoiceTriggerWithDeviceId:(id)arg1;
+@property(nonatomic) _Bool alwaysUseRemoteBuiltInMic; // @synthesize alwaysUseRemoteBuiltInMic=_alwaysUseRemoteBuiltInMic;
 @property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
-@property(nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (long long)avvcActivationMode:(unsigned long long)arg1;
-- (id)_createAVVCContextWithType:(unsigned long long)arg1 deviceId:(id)arg2;
+- (id)description;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *xpcObject;
+- (long long)avvcActivationMode:(long long)arg1;
+- (long long)recordTypeFromAVVCActivationMode:(long long)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (id)_createAVVCContextWithType:(long long)arg1 deviceId:(id)arg2;
 - (id)avvcContext;
-- (id)initWithRecordType:(unsigned long long)arg1 deviceId:(id)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithRecordType:(long long)arg1 deviceId:(id)arg2;
 - (id)initWithAVVCContext:(id)arg1;
+- (id)initWithXPCObject:(id)arg1;
+- (id)avvcContextSettings;
 
 @end
 

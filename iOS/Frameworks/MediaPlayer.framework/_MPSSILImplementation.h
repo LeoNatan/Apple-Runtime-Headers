@@ -14,28 +14,34 @@
     NSMutableArray *_candidateItems;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSMutableArray *candidateItems; // @synthesize candidateItems=_candidateItems;
 @property(readonly, nonatomic) MPRandomDistribution *randomDistribution; // @synthesize randomDistribution=_randomDistribution;
 - (void).cxx_destruct;
-- (void)_dequeueCandidatesWithQuota:(long long)arg1;
-- (id)_createShuffleCloneForItem:(id)arg1 inSection:(id)arg2 verifyInclusion:(_Bool)arg3;
-- (id)_createShuffleCloneForItem:(id)arg1 inSection:(id)arg2;
-- (void)_appendShuffledItems:(id)arg1;
-- (void)_addShuffleSection:(id)arg1 dataSource:(id)arg2;
-- (void)_reverseEnumeratorWillStartAtEnd:(id)arg1;
-- (void)_enumerator:(id)arg1 didEncounterEntry:(id)arg2;
+- (void)_dequeueCandidatesWithQuota:(long long)arg1 withExclusiveAccessToken:(id)arg2;
+- (id)_createShuffleCloneForItem:(id)arg1 inSection:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (void)_appendShuffledItems:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (void)_addShuffleSection:(id)arg1 dataSource:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (void)_reverseEnumeratorWillStartAtEnd:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (_Bool)_isSequentialSection:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (void)_enumerator:(id)arg1 didEncounterEntry:(id)arg2 withExclusiveAccessToken:(id)arg3;
 - (long long)itemCount;
 - (void)dataSourceReloadItem:(id)arg1 inSection:(id)arg2;
 - (void)dataSourceRemoveItem:(id)arg1 fromSection:(id)arg2;
 - (void)dataSourceInsertItemsAtTail:(id)arg1 inSection:(id)arg2;
 - (void)dataSourceInsertItems:(id)arg1 afterItem:(id)arg2 inSection:(id)arg3;
 - (void)dataSourceInsertItemsAtHead:(id)arg1 inSection:(id)arg2;
-- (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2;
-- (void)addDataSource:(id)arg1 section:(id)arg2 afterItem:(id)arg3 inSection:(id)arg4;
-- (void)addDataSourceAtStart:(id)arg1 section:(id)arg2;
-- (id)enumeratorWithOptions:(unsigned long long)arg1 startingAtItem:(id)arg2 inSection:(id)arg3;
+- (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3;
+- (void)addDataSource:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3 afterTailOfSection:(id)arg4;
+- (void)addDataSource:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3 afterItem:(id)arg4 inSection:(id)arg5;
+- (void)addDataSourceAtStart:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3;
+- (id)enumeratorWithOptions:(unsigned long long)arg1 startingAtItem:(id)arg2 inSection:(id)arg3 withExclusiveAccessToken:(id)arg4;
 - (void)safelyReshuffleAfterItem:(id)arg1 inSection:(id)arg2;
-- (id)initWithSectionedIdentifierList:(id)arg1 operationQueue:(id)arg2 randomSource:(id)arg3 startingItemEntry:(id)arg4;
+- (void)dequeueCandidatesWithQuota:(long long)arg1;
+- (void)encodeWithCoder:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (void)_beforeInitWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithSectionedIdentifierList:(id)arg1 randomSource:(id)arg2 startingItemEntry:(id)arg3 withExclusiveAccessToken:(id)arg4;
 
 @end
 

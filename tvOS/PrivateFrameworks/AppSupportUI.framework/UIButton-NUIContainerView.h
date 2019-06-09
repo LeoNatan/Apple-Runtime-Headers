@@ -10,6 +10,6 @@
 - (double)effectiveBaselineOffsetFromBottom;
 - (double)effectiveFirstBaselineOffsetFromTop;
 - (struct UIEdgeInsets)_nui_rectInsetsForBaseline;
-- (long long)_nui_isUIButtonType;
+- (long long)_nui_baselineViewType;
 @end
 

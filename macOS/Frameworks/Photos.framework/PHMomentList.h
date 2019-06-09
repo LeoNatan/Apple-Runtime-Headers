@@ -6,18 +6,35 @@
 
 #import <Photos/PHCollectionList.h>
 
+@class NSDate;
+
 @interface PHMomentList : PHCollectionList
 {
-    long long _collectionListType;
-    long long _collectionListSubtype;
+    short _granularityLevel;
+    int _sortIndex;
+    NSDate *_representativeDate;
 }
 
++ (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)entityKeyMap;
 + (id)identifierCode;
-- (long long)collectionListSubtype;
++ (BOOL)managedObjectSupportsTrashedState;
++ (id)fetchType;
++ (id)managedEntityName;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
+@property(readonly, nonatomic) int sortIndex; // @synthesize sortIndex=_sortIndex;
+@property(readonly, nonatomic) NSDate *representativeDate; // @synthesize representativeDate=_representativeDate;
+@property(readonly, nonatomic) short granularityLevel; // @synthesize granularityLevel=_granularityLevel;
+- (void).cxx_destruct;
+- (id)description;
+- (BOOL)collectionHasFixedOrder;
+- (BOOL)hasLocationInfo;
+- (BOOL)hasLocalizedTitle;
+- (id)localizedLocationNames;
+- (id)localizedTitle;
 - (long long)collectionListType;
-- (id)endDate;
-- (id)startDate;
-- (id)initWithModel:(id)arg1 photoLibrary:(id)arg2;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (Class)changeRequestClass;
 
 @end
 

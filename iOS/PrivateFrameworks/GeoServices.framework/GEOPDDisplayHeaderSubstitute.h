@@ -8,23 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDRelatedSearchSuggestion, NSString, PBUnknownFields;
+@class GEOPDRelatedSearchSuggestion, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDDisplayHeaderSubstitute : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_interpretedQuery;
     GEOPDRelatedSearchSuggestion *_relatedSearchSuggestion;
     int _substituteType;
     struct {
-        unsigned int substituteType:1;
-    } _has;
+        unsigned int has_substituteType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_interpretedQuery:1;
+        unsigned int read_relatedSearchSuggestion:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_interpretedQuery:1;
+        unsigned int wrote_relatedSearchSuggestion:1;
+        unsigned int wrote_substituteType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDRelatedSearchSuggestion *relatedSearchSuggestion; // @synthesize relatedSearchSuggestion=_relatedSearchSuggestion;
-@property(retain, nonatomic) NSString *interpretedQuery; // @synthesize interpretedQuery=_interpretedQuery;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,14 +42,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDRelatedSearchSuggestion *relatedSearchSuggestion;
 @property(readonly, nonatomic) _Bool hasRelatedSearchSuggestion;
+- (void)_readRelatedSearchSuggestion;
+@property(retain, nonatomic) NSString *interpretedQuery;
 @property(readonly, nonatomic) _Bool hasInterpretedQuery;
+- (void)_readInterpretedQuery;
 - (int)StringAsSubstituteType:(id)arg1;
 - (id)substituteTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSubstituteType;
-@property(nonatomic) int substituteType; // @synthesize substituteType=_substituteType;
+@property(nonatomic) int substituteType;
 
 @end
 

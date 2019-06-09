@@ -11,15 +11,37 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)synchKeyboardCursorToPosition:(id)arg1;
-- (BOOL)isTextSelectable;
+- (BOOL)handleReadContentsCallbackForEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
+- (BOOL)moveToPreviousParagraphWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToNextParagraphWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToPreviousSentenceWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToNextSentenceWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToNextWordWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToPreviousWordWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)interactRightWithEvent:(id)arg1 request:(id)arg2;
+- (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (void)readCurrentLine:(id)arg1;
+- (BOOL)_setSelection:(struct _NSRange)arg1 moveToNewRange:(BOOL)arg2 request:(id)arg3;
+- (BOOL)_brailleMoveToIndex:(id)arg1;
 - (BOOL)performBrailleReplaceTextRangeWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)performBrailleRouterActionWithIndex:(unsigned long long)arg1 outputRequest:(id)arg2;
+- (void)_performBrailleWrapRight:(BOOL)arg1 request:(id)arg2;
+- (BOOL)performBrailleWrapRightWithOutputRequest:(id)arg1;
+- (BOOL)performBrailleWrapLeftWithOutputRequest:(id)arg1;
+- (void)setSelectedTextRange:(id)arg1;
+- (void)moveVOCToSelectionRange;
+- (id)selectedTextRange;
+- (void)synchKeyboardCursorToPosition:(id)arg1;
+- (unsigned long long)cachedNumberOfCharacters;
+- (void)_updateCachedValue;
+- (id)value;
+- (unsigned long long)numberOfCharacters;
+- (BOOL)isSelectionSettable;
+- (BOOL)isTextSelectable;
+- (BOOL)isEditable;
 - (id)_staticText_textMarkerRange_selectRange:(struct _NSRange)arg1 textArea:(id)arg2;
-- (id)_braille_staticText_textMarkerRange_selectRange:(struct _NSRange)arg1 textArea:(id)arg2;
-- (BOOL)_braille_staticText_textMarkerRange_moveToIndex:(id)arg1 outputRequest:(id)arg2 textArea:(id)arg3;
-- (BOOL)_editableText_indexBasedMarkers_moveToIndex:(id)arg1 outputRequest:(id)arg2 textArea:(id)arg3;
+- (id)_staticTextSupportingTextMarkerRangeSelectRange:(struct _NSRange)arg1 withStartingIndexOffset:(unsigned long long)arg2 textArea:(id)arg3;
+- (BOOL)shouldOutputClickableState;
 - (id)helpDescription;
 - (id)shortInstruction;
 - (id)typeDescription;
@@ -29,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)canHandleTextValueChange;
 - (BOOL)canHandleTextSelectionChange;
 - (BOOL)canHandleEchoContentChange;
+- (id)_textArea;
 
 @end
 

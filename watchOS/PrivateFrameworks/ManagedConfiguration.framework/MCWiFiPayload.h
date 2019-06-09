@@ -94,6 +94,7 @@
 @property(nonatomic) _Bool isHidden; // @synthesize isHidden=_isHidden;
 @property(retain, nonatomic) NSString *ssid; // @synthesize ssid=_ssid;
 - (void).cxx_destruct;
+- (id)filterForUserEnrollmentOutError:(id *)arg1;
 - (id)userInputFields;
 - (id)installationWarnings;
 - (id)description;

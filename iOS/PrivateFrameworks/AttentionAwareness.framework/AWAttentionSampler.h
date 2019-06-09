@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_queue> *_queue;
     unsigned long long _nextDeadline;
+    _Bool _lastFaceMetadataValid;
+    _Bool _unitTestSampling;
     int _currentState;
     AWSampleLogger *_sampleLogger;
     CDUnknownBlockType _stateChangedCallback;
@@ -21,8 +23,18 @@ __attribute__((visibility("hidden")))
     unsigned long long _lastTriggerTime;
     unsigned long long _lastPositiveDetectTime;
     unsigned long long _lastPollTimeoutTime;
+    double _lastPitch;
+    double _lastYaw;
+    double _lastRoll;
+    unsigned long long _lastOrientation;
 }
 
+@property(readonly, nonatomic) _Bool unitTestSampling; // @synthesize unitTestSampling=_unitTestSampling;
+@property(nonatomic) unsigned long long lastOrientation; // @synthesize lastOrientation=_lastOrientation;
+@property(nonatomic) double lastRoll; // @synthesize lastRoll=_lastRoll;
+@property(nonatomic) double lastYaw; // @synthesize lastYaw=_lastYaw;
+@property(nonatomic) double lastPitch; // @synthesize lastPitch=_lastPitch;
+@property(nonatomic) _Bool lastFaceMetadataValid; // @synthesize lastFaceMetadataValid=_lastFaceMetadataValid;
 @property(nonatomic) unsigned long long lastPollTimeoutTime; // @synthesize lastPollTimeoutTime=_lastPollTimeoutTime;
 @property(nonatomic) unsigned long long lastPositiveDetectTime; // @synthesize lastPositiveDetectTime=_lastPositiveDetectTime;
 @property(nonatomic) unsigned long long lastTriggerTime; // @synthesize lastTriggerTime=_lastTriggerTime;
@@ -38,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSamplingDeadline:(unsigned long long)arg1 forClient:(id)arg2;
 - (void)startDeadlineComputation;
 - (void)setUnitTestMode;
+- (id)description;
 - (id)init;
 
 @end

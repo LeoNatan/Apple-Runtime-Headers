@@ -9,28 +9,30 @@
 #import <CarPlay/CPControl-Protocol.h>
 #import <CarPlay/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, NSUUID, UIImage;
+@class CPImageSet, NSArray, NSString, NSUUID, UIImage;
 @protocol CPControlDelegate;
 
 @interface CPGridButton : NSObject <CPControl, NSSecureCoding>
 {
     _Bool _enabled;
     NSUUID *_identifier;
-    UIImage *_image;
     NSArray *_titleVariants;
     CDUnknownBlockType _handler;
+    CPImageSet *_imageSet;
     id <CPControlDelegate> _delegate;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) __weak id <CPControlDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) CPImageSet *imageSet; // @synthesize imageSet=_imageSet;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(readonly, nonatomic) NSArray *titleVariants; // @synthesize titleVariants=_titleVariants;
-@property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImage *image;
 - (void)handlePrimaryAction;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_init;
@@ -38,7 +40,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

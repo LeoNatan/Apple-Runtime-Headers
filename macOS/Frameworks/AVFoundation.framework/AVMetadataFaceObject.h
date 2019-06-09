@@ -15,6 +15,16 @@
     AVMetadataFaceObjectInternal *_internal;
 }
 
+- (struct CGRect)rightEyeBounds;
+- (struct CGRect)leftEyeBounds;
+- (BOOL)hasRightEyeBounds;
+- (BOOL)hasLeftEyeBounds;
+- (int)smileConfidence;
+- (BOOL)hasSmileConfidence;
+- (int)rightEyeClosedConfidence;
+- (int)leftEyeClosedConfidence;
+- (BOOL)hasRightEyeClosedConfidence;
+- (BOOL)hasLeftEyeClosedConfidence;
 @property(readonly) double yawAngle;
 @property(readonly) BOOL hasYawAngle;
 @property(readonly) double rollAngle;
@@ -24,7 +34,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform)arg2 isVideoMirrored:(BOOL)arg3 rollAdjustment:(double)arg4;
-- (id)initWithFaceID:(long long)arg1 hasRollAngle:(BOOL)arg2 rollAngle:(double)arg3 hasYawAngle:(BOOL)arg4 yawAngle:(double)arg5 time:(CDStruct_1b6d18a9)arg6 duration:(CDStruct_1b6d18a9)arg7 bounds:(struct CGRect)arg8 originalMetadataObject:(id)arg9 sourceCaptureInput:(id)arg10;
+- (id)initWithFaceID:(long long)arg1 hasRollAngle:(BOOL)arg2 rollAngle:(double)arg3 hasYawAngle:(BOOL)arg4 yawAngle:(double)arg5 time:(CDStruct_1b6d18a9)arg6 duration:(CDStruct_1b6d18a9)arg7 bounds:(struct CGRect)arg8 optionalInfoDict:(id)arg9 originalMetadataObject:(id)arg10 sourceCaptureInput:(id)arg11;
 - (id)initWithFaceID:(long long)arg1 hasRollAngle:(BOOL)arg2 rollAngle:(double)arg3 hasYawAngle:(BOOL)arg4 yawAngle:(double)arg5 time:(CDStruct_1b6d18a9)arg6 duration:(CDStruct_1b6d18a9)arg7 bounds:(struct CGRect)arg8;
 - (id)initWithType:(id)arg1 time:(CDStruct_1b6d18a9)arg2 duration:(CDStruct_1b6d18a9)arg3 bounds:(struct CGRect)arg4 originalMetadataObject:(id)arg5 sourceCaptureInput:(id)arg6;
 

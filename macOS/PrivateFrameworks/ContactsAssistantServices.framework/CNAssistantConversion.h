@@ -20,10 +20,7 @@
 + (id)addressesFromPerson:(id)arg1;
 + (id)keysFromPerson:(id)arg1;
 + (void)markMeContactInPeople:(id)arg1 usingStore:(id)arg2;
-+ (id)abPersonFromContact:(id)arg1;
-+ (id)personForSyncFromContact:(id)arg1;
-+ (id)newSAPersonFromCNContact:(id)arg1;
-+ (id)personFromContact:(id)arg1;
++ (id)verifyContact:(id)arg1 hasDescriptorsForRequiredKeys:(id)arg2;
 + (id)socialProfilesFromContact:(id)arg1;
 + (id)relationsForSyncFromContact:(id)arg1;
 + (id)relationsFromContact:(id)arg1;
@@ -32,16 +29,18 @@
 + (id)phoneNumbersForSyncFromContact:(id)arg1;
 + (id)phoneNumbersFromContact:(id)arg1;
 + (id)emailAddressesForSyncFromContact:(id)arg1;
-+ (id)filterLabeledValues:(id)arg1 droppingEmptyLabels:(BOOL)arg2 droppingDuplicates:(BOOL)arg3;
 + (id)emailAddressesFromContact:(id)arg1;
++ (id)filterLabeledValues:(id)arg1 droppingEmptyLabels:(BOOL)arg2 droppingDuplicates:(BOOL)arg3;
++ (id)createSASourceFromCNContainer:(id)arg1;
++ (id)createSAPersonFromCNContactWithExternalIdentifier:(id)arg1;
++ (id)createSAPersonFromCNContact:(id)arg1;
++ (id)createSAPersonFromCNContact:(id)arg1 conversionType:(long long)arg2;
++ (id)personFromContact:(id)arg1;
++ (id)personFromContact:(id)arg1 useABPerson:(BOOL)arg2;
++ (id)personForSyncFromContact:(id)arg1;
 + (id)personFromMeContact:(id)arg1;
-+ (id)keysForSync;
-+ (id)keysForContact;
-+ (id)keysForMeContact;
-+ (id)identifierFromAssistantUrl:(id)arg1;
-+ (id)assistantUrlFromGroup:(id)arg1;
-+ (id)assistantUrlFromContact:(id)arg1;
-+ (id)assistantUrlFromContactIdentifier:(id)arg1;
++ (id)descriptorsForRequiredKeys;
++ (id)descriptorsForRequiredKeysForConversionType:(long long)arg1;
 
 @end
 

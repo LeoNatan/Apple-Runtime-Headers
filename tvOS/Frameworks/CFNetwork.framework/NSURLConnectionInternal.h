@@ -11,7 +11,6 @@
 
 @class NSDictionary, NSOperationQueue, NSString, NSURL, NSURLConnection, NSURLRequest;
 
-__attribute__((visibility("hidden")))
 @interface NSURLConnectionInternal : NSObject <NSURLConnectionRequired, NSURLAuthenticationChallengeSender>
 {
     NSURLConnection *_connection;
@@ -24,7 +23,6 @@ __attribute__((visibility("hidden")))
     _Bool _connectionActive;
 }
 
-- (void)_reportTimingDataToAWD;
 - (id)_timingData;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;

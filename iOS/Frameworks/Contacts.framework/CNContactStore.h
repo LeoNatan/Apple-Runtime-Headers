@@ -6,12 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class CNiOSAddressBook, CNiOSAddressBookDataMapper;
+@class CNiOSAddressBook, CNiOSAddressBookDataMapper, NSData;
 
 @interface CNContactStore : NSObject
 {
 }
 
++ (_Bool)isAccessRestrictedForEntityType:(long long)arg1;
++ (id)allLabelsForPropertyWithKey:(id)arg1;
++ (id)standardLabelsForPropertyWithKey:(id)arg1 options:(unsigned long long)arg2;
 + (id)standardLabelsForPropertyWithKey:(id)arg1;
 + (long long)authorizationStatusForEntityType:(long long)arg1;
 + (id)internalIdentifierFromContactIdentifier:(id)arg1;
@@ -23,32 +26,57 @@
 + (id)storeWithEnvironment:(id)arg1 options:(unsigned long long)arg2;
 + (id)storeWithOptions:(unsigned long long)arg1;
 + (void)initialize;
++ (id)storeForFamilyMember:(id)arg1;
 + (_Bool)eraseAllDataAtURL:(id)arg1 error:(id *)arg2;
 + (_Bool)eraseAllDataAtLocationWithName:(id)arg1 error:(id *)arg2;
++ (_Bool)isXPCDataMapperStore:(id)arg1;
 + (id)contactStoreForPublicAddressBook:(void *)arg1;
 + (id)_contactStoreForPublicAddressBook:(void *)arg1;
+- (id)authorizedKeysForContactKeys:(id)arg1;
+- (void)requestAuthorization:(long long)arg1 entityType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)individualContactCountWithError:(id *)arg1;
+- (_Bool)verifyChangeHistoryForClientIdentifier:(id)arg1 error:(id *)arg2;
+- (id)latestConsumedChangeHistoryAnchorForClientIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)executeChangeHistoryClearRequest:(id)arg1 error:(id *)arg2;
 - (_Bool)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id *)arg3;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id *)arg2;
+- (_Bool)unregisterChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
 - (_Bool)unregisterChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)registerChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
 - (_Bool)registerChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
+@property(readonly, copy, nonatomic) NSData *currentHistoryToken;
 - (id)contactIdentifierWithMatchingDictionary:(id)arg1;
 - (id)contactWithMatchingDictionary:(id)arg1 keysToFetch:(id)arg2;
 - (id)matchingDictionaryForContact:(id)arg1;
 - (id)descriptorForRequiredKeysForMatchingDictionary;
 - (id)userActivityUserInfoForContact:(id)arg1;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
+- (void)setLegacyTetheredSyncComputerAnchor:(id)arg1;
+- (id)legacyTetheredSyncComputerAnchor;
+- (void)setLegacyTetheredSyncDeviceAnchor:(id)arg1;
+- (id)legacyTetheredSyncDeviceAnchor;
+- (id)sectionListOffsetsForSortOrder:(long long)arg1 error:(id *)arg2;
+- (_Bool)setDefaultAccountIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)resetSortDataIfNeededWithError:(id *)arg1;
 - (id)mainContactStore;
 - (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id *)arg2;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)moveContacts:(id)arg1 fromContainer:(id)arg2 toContainer:(id)arg3 error:(id *)arg4;
 - (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
+- (int)saveSequenceCount;
 - (id)identifierWithError:(id *)arg1;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)executeFetchRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)enumeratorForChangeHistoryFetchRequest:(id)arg1 error:(id *)arg2;
+- (id)enumeratorForContactFetchRequest:(id)arg1 error:(id *)arg2;
+- (id)countForFetchRequest:(id)arg1 error:(id *)arg2;
+- (id)executeFetchRequest:(id)arg1 error:(id *)arg2;
+- (_Bool)hasMultipleGroupsOrAccounts;
 - (id)defaultContainerIdentifier;
 - (_Bool)supportsSaveRequest:(id)arg1;
 - (_Bool)executeSaveRequest:(id)arg1 error:(id *)arg2;
-- (_Bool)executeSaveRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
+- (_Bool)executeSaveRequest:(id)arg1 response:(id *)arg2 authorizationContext:(id)arg3 error:(id *)arg4;
 - (id)accountsMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)containersMatchingPredicate:(id)arg1 error:(id *)arg2;
@@ -83,7 +111,6 @@
 - (void)reindexSearchableItemsWithIdentifiers:(id)arg1;
 @property(readonly, nonatomic) CNiOSAddressBook *addressBook;
 @property(readonly, nonatomic) CNiOSAddressBookDataMapper *iOSMapper;
-@property(readonly, nonatomic) _Bool hasMultipleGroupsOrAccounts;
 - (_Bool)setDefaultContainer:(id)arg1 forAccount:(id)arg2 error:(id *)arg3;
 - (id)labeledValueFromMultiValueIdentifier:(int)arg1 contact:(id)arg2 key:(id)arg3;
 - (int)multiValueIdentifierFromLabeledValue:(id)arg1;
@@ -96,6 +123,8 @@
 - (id)contactFromPersonID:(int)arg1;
 - (id)contactFromPerson:(void *)arg1 mutable:(_Bool)arg2;
 - (id)contactFromPerson:(void *)arg1;
+- (id)contactIdentifierFromPublicPersonID:(int)arg1;
+- (id)contactFromPublicPersonID:(int)arg1 keysToFetch:(id)arg2;
 - (id)labeledValueFromPublicMultiValueIdentifier:(int)arg1 contact:(id)arg2 key:(id)arg3;
 - (int)publicMultiValueIdentifierFromLabeledValue:(id)arg1;
 - (void *)publicABPersonFromContact:(id)arg1 publicAddressBook:(const void **)arg2;

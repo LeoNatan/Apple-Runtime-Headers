@@ -19,7 +19,9 @@
 - (NSData *)copyAgentData;
 
 @optional
+@property(nonatomic) BOOL updateClientsImmediately;
 @property(nonatomic) BOOL requiresAssert;
+@property(nonatomic) BOOL supportsResolveRequests;
 @property(nonatomic) BOOL supportsBrowseRequests;
 @property(nonatomic, getter=isNexusProvider) BOOL nexusProvider;
 @property(nonatomic, getter=isNetworkProvider) BOOL networkProvider;

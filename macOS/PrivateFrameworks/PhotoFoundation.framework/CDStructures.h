@@ -67,6 +67,11 @@ struct _opaque_pthread_t {
     char _field3[8176];
 };
 
+struct mach_timebase_info {
+    unsigned int numer;
+    unsigned int denom;
+};
+
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };

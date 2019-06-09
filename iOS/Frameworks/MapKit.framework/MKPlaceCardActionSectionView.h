@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_leftButtonIsPressed:(id)arg1;
 - (id)_makePlaceActionButtonWithActionItem:(id)arg1 isLeftItem:(_Bool)arg2 useSmallFonts:(_Bool)arg3;
 - (void)_contentSizeDidChange;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)setTopHairlineHidden:(_Bool)arg1;
 - (id)glyphFont;
 - (void)_setUpViewWithButtons;

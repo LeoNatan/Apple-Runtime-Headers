@@ -6,30 +6,38 @@
 
 #import <Home/HFItem.h>
 
-@class HMHome, NSString;
+#import <Home/HFHomeKitItemProtocol-Protocol.h>
 
-@interface HFActionSetSuggestionItem : HFItem
+@class HMActionSet, HMHome, NSString;
+@protocol HFHomeKitObject, HFServiceLikeItem;
+
+@interface HFActionSetSuggestionItem : HFItem <HFHomeKitItemProtocol>
 {
+    _Bool _includeExistingActionSets;
+    _Bool _persistAddedSuggestions;
+    _Bool _hasEverHadValidSuggestion;
     HMHome *_home;
-    NSString *_builtInActionSetType;
+    HMActionSet *_actionSet;
+    HFItem<HFServiceLikeItem> *_serviceLikeItem;
 }
 
-@property(readonly, nonatomic) NSString *builtInActionSetType; // @synthesize builtInActionSetType=_builtInActionSetType;
+@property(nonatomic) _Bool hasEverHadValidSuggestion; // @synthesize hasEverHadValidSuggestion=_hasEverHadValidSuggestion;
+@property(nonatomic) _Bool persistAddedSuggestions; // @synthesize persistAddedSuggestions=_persistAddedSuggestions;
+@property(nonatomic) _Bool includeExistingActionSets; // @synthesize includeExistingActionSets=_includeExistingActionSets;
+@property(copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
+@property(readonly, nonatomic) HMActionSet *actionSet; // @synthesize actionSet=_actionSet;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
-- (id)_controlItemValueSourceForService:(id)arg1;
-- (id)_actionBuildersToSetTargetBlindsPositionOpen:(_Bool)arg1;
-- (id)_actionBuildersToSetTargetSecuritySystemState:(long long)arg1;
-- (id)_actionBuildersToSetTargetLockState:(long long)arg1 forServicesOfTypes:(id)arg2;
-- (id)_actionBuildersToSetTargetDoorState:(long long)arg1 forServicesOfTypes:(id)arg2;
-- (id)_actionBuildersToSetLightbulbBrightness:(double)arg1;
-- (id)_actionBuildersToSetLightbulbColorWithPaletteColor:(id)arg1;
-- (id)_actionBuildersToSetPowerState:(_Bool)arg1 forServicesOfTypes:(id)arg2;
-- (id)_actionSetBuilderForBuiltInActionSetType:(id)arg1 outDependentServiceTypes:(out id *)arg2;
-- (id)_builtInActionSetOfType:(id)arg1;
 - (id)_subclass_updateWithOptions:(id)arg1;
-- (id)initWithHome:(id)arg1 builtInActionSetType:(id)arg2;
+@property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
+- (id)initWithHome:(id)arg1 actionSet:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -20,6 +20,7 @@
     UIView *_outlineBackingView;
     UIView *_overlayView;
     _Bool _swipingToDelete;
+    _Bool _isReordering;
     _Bool _allowsSelect;
     _Bool _allowsDelete;
     int _layoutRule;
@@ -53,8 +54,8 @@
 @property(retain, nonatomic) UIColor *outlineColor; // @synthesize outlineColor=_outlineColor;
 @property(nonatomic) int layoutRule; // @synthesize layoutRule=_layoutRule;
 - (void).cxx_destruct;
-- (void)_tearDownOutlineBackingView;
-- (void)_setUpOutlineBackingView;
+- (void)endReorder;
+- (void)beginReorder;
 - (void)_handleTap:(id)arg1;
 - (void)_handleScrollingStopped;
 - (float)_deleteFractionForOffset:(struct CGPoint)arg1;

@@ -20,6 +20,7 @@
     BOOL _isAdvancedAppleAudioDevice;
     BOOL _supportsInEarDetection;
     BOOL _supportsVoiceTrigger;
+    BOOL _supportsSpokenNotification;
     struct _mutationFlags {
         unsigned int isDirty:1;
         unsigned int hasAddress:1;
@@ -29,11 +30,13 @@
         unsigned int hasIsAdvancedAppleAudioDevice:1;
         unsigned int hasSupportsInEarDetection:1;
         unsigned int hasSupportsVoiceTrigger:1;
+        unsigned int hasSupportsSpokenNotification:1;
     } _mutationFlags;
 }
 
 - (void).cxx_destruct;
 - (id)generate;
+- (void)setSupportsSpokenNotification:(BOOL)arg1;
 - (void)setSupportsVoiceTrigger:(BOOL)arg1;
 - (void)setSupportsInEarDetection:(BOOL)arg1;
 - (void)setIsAdvancedAppleAudioDevice:(BOOL)arg1;

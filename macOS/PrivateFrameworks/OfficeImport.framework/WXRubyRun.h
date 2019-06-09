@@ -6,6 +6,7 @@
 
 #import <OfficeImport/WXCharacterRun.h>
 
+__attribute__((visibility("hidden")))
 @interface WXRubyRun : WXCharacterRun
 {
 }

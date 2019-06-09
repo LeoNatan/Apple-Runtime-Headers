@@ -10,6 +10,7 @@
 
 @class NSArray, NSMutableSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVIterableCache : NSCache <NSCacheDelegate>
 {
     NSMutableSet *_allObjectsSet;

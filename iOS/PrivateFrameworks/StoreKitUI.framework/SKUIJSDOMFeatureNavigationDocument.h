@@ -11,6 +11,7 @@
 
 @class IKAppContext, IKJSNavigationDocument, NSMutableArray, NSString, SKUINavigationDocumentController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSDOMFeatureNavigationDocument : NSObject <IKAppNavigationController, SKUIDOMFeature>
 {
     IKJSNavigationDocument *_jsNavigationDocument;

@@ -15,7 +15,7 @@
     NSString *_shieldText;
     NSString *_shieldTextLocale;
     unsigned int _shieldType;
-    FixedPointVector_f041f768 _shieldColor;
+    Color_c5f82c4a _shieldColor;
     unsigned int _iconAttributeKey;
     unsigned int _iconAttributeValue;
     unsigned char _dataType;
@@ -43,12 +43,12 @@
 @property(readonly, nonatomic) unsigned int keyType; // @synthesize keyType=_keyType;
 - (id).cxx_construct;
 - (void)dealloc;
-@property(readonly, nonatomic) CDStruct_b3fd5d76 shieldColor;
+@property(readonly, nonatomic) CDStruct_83984b6f transitLineColor;
 - (id)initWithLabelImageKey:(const shared_ptr_85e81048 *)arg1;
 - (id)initWithIconName:(const char *)arg1;
 - (id)initWithIconAttributeKey:(unsigned int)arg1 attributeValue:(unsigned int)arg2;
-- (id)initWithShieldName:(const char *)arg1 text:(const char *)arg2 locale:(const char *)arg3 color:(FixedPointVector_f041f768)arg4;
-- (id)initWithShieldText:(const char *)arg1 locale:(const char *)arg2 type:(unsigned int)arg3 color:(FixedPointVector_f041f768)arg4;
+- (id)initWithShieldName:(const char *)arg1 text:(const char *)arg2 locale:(const char *)arg3 color:(Color_c5f82c4a)arg4;
+- (id)initWithShieldText:(const char *)arg1 locale:(const char *)arg2 type:(unsigned int)arg3 color:(Color_c5f82c4a)arg4;
 - (id)initWithDataType:(unsigned char)arg1;
 - (id)_initWithKeyType:(unsigned int)arg1;
 

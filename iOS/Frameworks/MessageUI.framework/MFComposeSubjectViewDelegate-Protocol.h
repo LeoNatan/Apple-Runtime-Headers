@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFComposeHeaderViewDelegate-Protocol.h>
+#import <MessageUI/CNComposeHeaderViewDelegate-Protocol.h>
 
 @class MFComposeSubjectView;
 
-@protocol MFComposeSubjectViewDelegate <MFComposeHeaderViewDelegate>
+@protocol MFComposeSubjectViewDelegate <CNComposeHeaderViewDelegate>
+- (void)composeSubjectViewDidSelectContentVariationButton:(MFComposeSubjectView *)arg1;
 - (void)composeSubjectViewDidSelectNotifyButton:(MFComposeSubjectView *)arg1;
 - (void)composeSubjectViewTextFieldDidBecomeFirstResponder:(MFComposeSubjectView *)arg1;
 - (void)composeSubjectViewTextFieldDidResignFirstResponder:(MFComposeSubjectView *)arg1;

@@ -20,10 +20,11 @@
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
++ (id)_newClinicalRecordWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 device:(id)arg4 metadata:(id)arg5 displayName:(id)arg6 FHIRResource:(id)arg7 config:(CDUnknownBlockType)arg8;
 + (id)clinicalRecordWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 device:(id)arg4 metadata:(id)arg5 displayName:(id)arg6 FHIRResource:(id)arg7;
 - (void).cxx_destruct;
 @property(readonly, copy) HKClinicalType *clinicalType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
 - (void)_setFHIRResource:(id)arg1;
 @property(readonly, copy) HKFHIRResource *FHIRResource;
 - (void)_setDisplayName:(id)arg1;

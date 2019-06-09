@@ -6,33 +6,27 @@
 
 #import <objc/NSObject.h>
 
-#import <DoNotDisturbServer/DNDSSyncService-Protocol.h>
 #import <DoNotDisturbServer/IDSServiceDelegate-Protocol.h>
 
-@class IDSDevice, IDSService, NSHashTable, NSString;
-@protocol OS_dispatch_queue;
+@class IDSService, NSString;
+@protocol DNDSIDSSyncServiceDelegate, OS_dispatch_queue;
 
-@interface DNDSIDSSyncService : NSObject <IDSServiceDelegate, DNDSSyncService>
+@interface DNDSIDSSyncService : NSObject <IDSServiceDelegate>
 {
-    Class _recordClass;
-    unsigned long long _versionNumber;
     NSObject<OS_dispatch_queue> *_queue;
     IDSService *_syncService;
-    IDSDevice *_activePairedDevice;
-    NSHashTable *_updateListeners;
+    id <DNDSIDSSyncServiceDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <DNDSIDSSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_queue_handleIncomingMessage:(id)arg1 sourceIdentifier:(id)arg2;
-- (_Bool)_queue_sendRecordToRemotes:(id)arg1 error:(id *)arg2;
+- (void)_queue_handleIncomingMessage:(id)arg1 deviceIdentifier:(id)arg2;
+- (_Bool)_queue_sendMessage:(id)arg1 withVersionNumber:(unsigned long long)arg2 error:(id *)arg3;
 - (void)_queue_resume;
-- (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(CDUnknownBlockType)arg3;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
-- (void)removeUpdateListener:(id)arg1;
-- (void)addUpdateListener:(id)arg1;
-- (void)sendRecordToRemotes:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)sendMessage:(id)arg1 withVersionNumber:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)resume;
-- (id)initWithRecordClass:(Class)arg1 versionNumber:(unsigned long long)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

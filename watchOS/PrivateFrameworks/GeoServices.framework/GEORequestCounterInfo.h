@@ -12,28 +12,25 @@
 
 @interface GEORequestCounterInfo : NSObject <NSSecureCoding>
 {
-    NSDictionary *_dict;
+    NSDictionary *_requestTypeStatistics;
+    unsigned int _bytesTransmitted;
+    unsigned int _bytesReceived;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)counterInfoWithDictionary:(id)arg1;
 - (void).cxx_destruct;
 - (id)description;
 - (id)_formattedString;
 - (void)encodeWithCoder:(id)arg1;
-- (id)nonZeroResultModesForMode:(unsigned char)arg1;
 - (id)nonZeroResultTypesForType:(unsigned char)arg1;
-- (unsigned int)numberOfRequestsForMode:(unsigned char)arg1 result:(unsigned char)arg2;
 - (unsigned int)numberOfRequestsForType:(unsigned char)arg1 result:(unsigned char)arg2;
-@property(readonly, nonatomic) NSArray *requestModes;
 @property(readonly, nonatomic) NSArray *requestTypes;
-- (unsigned int)recvBytesForMode:(unsigned char)arg1;
 - (unsigned int)recvBytesForType:(unsigned char)arg1;
 - (unsigned int)recvBytes;
-- (unsigned int)xmitBytesForMode:(unsigned char)arg1;
 - (unsigned int)xmitBytesForType:(unsigned char)arg1;
 - (unsigned int)xmitBytes;
 - (_Bool)isEqual:(id)arg1;
+- (void)_generateAggregateStatistics;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 

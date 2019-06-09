@@ -11,6 +11,7 @@
 }
 
 + (void)cleanupSandboxForSystem:(id)arg1 atPath:(id)arg2 sandBoxPath:(id)arg3;
++ (id)retreiveErrorFromShoveFailuresFilePath:(id)arg1 forErrorCode:(int)arg2;
 + (BOOL)shoveSandboxAtPath:(id)arg1 sandBoxPath:(id)arg2 destinationPath:(id)arg3 error:(id *)arg4;
 + (void)clearExistingBundleOnTarget:(id)arg1;
 + (BOOL)shoveSandboxAtPath:(id)arg1 sandBoxPath:(id)arg2 error:(id *)arg3;

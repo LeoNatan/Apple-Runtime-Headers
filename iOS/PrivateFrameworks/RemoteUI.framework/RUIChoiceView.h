@@ -17,6 +17,7 @@
     _UIBackdropView *_trayBackdrop;
     UIView *_buttonTray;
     UIScrollView *_scrollView;
+    long long _currentStyle;
     _Bool _usesTwoButtonLayout;
     RUIChoiceViewElement *_target;
     RUIElement *_header;
@@ -30,6 +31,7 @@
 - (void).cxx_destruct;
 - (void)setHeaderTitle:(id)arg1;
 - (id)titleLabel;
+- (void)_updateTrayBackdrop;
 - (void)layoutSubviews;
 - (void)choiceTapped:(id)arg1;
 - (void)setHelpLinkTitle:(id)arg1;

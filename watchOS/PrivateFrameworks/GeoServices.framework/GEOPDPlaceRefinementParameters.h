@@ -8,41 +8,57 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, GEOStructuredAddress, NSData, NSMutableArray, NSString, PBUnknownFields;
+@class GEOLatLng, GEOPDMapsIdentifier, GEOStructuredAddress, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDPlaceRefinementParameters : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned long long _muid;
-    int _addressGeocodeAccuracyHint;
     GEOStructuredAddress *_addressHint;
     NSData *_addressObjectHint;
     NSMutableArray *_formattedAddressLineHints;
     GEOLatLng *_locationHint;
+    GEOPDMapsIdentifier *_mapsId;
+    unsigned long long _muid;
     NSString *_placeNameHint;
+    int _addressGeocodeAccuracyHint;
     int _placeTypeHint;
     int _resultProviderId;
     _Bool _supportCoordinatesOnlyRefinement;
     struct {
-        unsigned int muid:1;
-        unsigned int addressGeocodeAccuracyHint:1;
-        unsigned int placeTypeHint:1;
-        unsigned int resultProviderId:1;
-        unsigned int supportCoordinatesOnlyRefinement:1;
-    } _has;
+        unsigned int has_muid:1;
+        unsigned int has_addressGeocodeAccuracyHint:1;
+        unsigned int has_placeTypeHint:1;
+        unsigned int has_resultProviderId:1;
+        unsigned int has_supportCoordinatesOnlyRefinement:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_addressHint:1;
+        unsigned int read_addressObjectHint:1;
+        unsigned int read_formattedAddressLineHints:1;
+        unsigned int read_locationHint:1;
+        unsigned int read_mapsId:1;
+        unsigned int read_placeNameHint:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_addressHint:1;
+        unsigned int wrote_addressObjectHint:1;
+        unsigned int wrote_formattedAddressLineHints:1;
+        unsigned int wrote_locationHint:1;
+        unsigned int wrote_mapsId:1;
+        unsigned int wrote_muid:1;
+        unsigned int wrote_placeNameHint:1;
+        unsigned int wrote_addressGeocodeAccuracyHint:1;
+        unsigned int wrote_placeTypeHint:1;
+        unsigned int wrote_resultProviderId:1;
+        unsigned int wrote_supportCoordinatesOnlyRefinement:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)formattedAddressLineHintType;
-@property(nonatomic) _Bool supportCoordinatesOnlyRefinement; // @synthesize supportCoordinatesOnlyRefinement=_supportCoordinatesOnlyRefinement;
-@property(retain, nonatomic) NSData *addressObjectHint; // @synthesize addressObjectHint=_addressObjectHint;
-@property(retain, nonatomic) NSMutableArray *formattedAddressLineHints; // @synthesize formattedAddressLineHints=_formattedAddressLineHints;
-@property(retain, nonatomic) NSString *placeNameHint; // @synthesize placeNameHint=_placeNameHint;
-@property(retain, nonatomic) GEOStructuredAddress *addressHint; // @synthesize addressHint=_addressHint;
-@property(retain, nonatomic) GEOLatLng *locationHint; // @synthesize locationHint=_locationHint;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-@property(nonatomic) int resultProviderId; // @synthesize resultProviderId=_resultProviderId;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -51,33 +67,51 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId;
+@property(readonly, nonatomic) _Bool hasMapsId;
+- (void)_readMapsId;
 @property(nonatomic) _Bool hasSupportCoordinatesOnlyRefinement;
+@property(nonatomic) _Bool supportCoordinatesOnlyRefinement;
+@property(retain, nonatomic) NSData *addressObjectHint;
 @property(readonly, nonatomic) _Bool hasAddressObjectHint;
+- (void)_readAddressObjectHint;
 - (int)StringAsAddressGeocodeAccuracyHint:(id)arg1;
 - (id)addressGeocodeAccuracyHintAsString:(int)arg1;
 @property(nonatomic) _Bool hasAddressGeocodeAccuracyHint;
-@property(nonatomic) int addressGeocodeAccuracyHint; // @synthesize addressGeocodeAccuracyHint=_addressGeocodeAccuracyHint;
+@property(nonatomic) int addressGeocodeAccuracyHint;
 - (int)StringAsPlaceTypeHint:(id)arg1;
 - (id)placeTypeHintAsString:(int)arg1;
 @property(nonatomic) _Bool hasPlaceTypeHint;
-@property(nonatomic) int placeTypeHint; // @synthesize placeTypeHint=_placeTypeHint;
+@property(nonatomic) int placeTypeHint;
 - (id)formattedAddressLineHintAtIndex:(unsigned int)arg1;
 - (unsigned int)formattedAddressLineHintsCount;
+- (void)_addNoFlagsFormattedAddressLineHint:(id)arg1;
 - (void)addFormattedAddressLineHint:(id)arg1;
 - (void)clearFormattedAddressLineHints;
+@property(retain, nonatomic) NSMutableArray *formattedAddressLineHints;
+- (void)_readFormattedAddressLineHints;
+@property(retain, nonatomic) NSString *placeNameHint;
 @property(readonly, nonatomic) _Bool hasPlaceNameHint;
+- (void)_readPlaceNameHint;
+@property(retain, nonatomic) GEOStructuredAddress *addressHint;
 @property(readonly, nonatomic) _Bool hasAddressHint;
+- (void)_readAddressHint;
+@property(retain, nonatomic) GEOLatLng *locationHint;
 @property(readonly, nonatomic) _Bool hasLocationHint;
+- (void)_readLocationHint;
 @property(nonatomic) _Bool hasMuid;
+@property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasResultProviderId;
+@property(nonatomic) int resultProviderId;
 - (_Bool)_routeHypothesisPlaceRefinementParametersIsEqual:(id)arg1;
 - (unsigned int)_routeHypothesisPlaceRefinementParametersHash;
 - (_Bool)_hasRequiredFields;
-- (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
+- (id)initWithSearchURLQuery:(id)arg1 identifier:(id)arg2;
 - (id)initWithMapItemToRefine:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2;
-- (id)initWithMuid:(unsigned long long)arg1 locationHint:(CDStruct_c3b9c2ee)arg2 placeNameHint:(id)arg3 resultProviderId:(int)arg4;
+- (id)initWithIdentifier:(id)arg1 placeNameHint:(id)arg2 locationHint:(CDStruct_c3b9c2ee)arg3;
 
 @end
 

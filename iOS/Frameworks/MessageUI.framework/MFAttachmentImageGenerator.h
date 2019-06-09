@@ -20,10 +20,11 @@
 + (id)imageForAttachment:(id)arg1;
 + (id)pngDataForAttachment:(id)arg1;
 + (double)defaultHeight;
+- (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)imageRect;
 - (id)image;
-- (void)dealloc;
+- (id)pngData;
 - (id)initWithAttachment:(id)arg1;
 
 @end

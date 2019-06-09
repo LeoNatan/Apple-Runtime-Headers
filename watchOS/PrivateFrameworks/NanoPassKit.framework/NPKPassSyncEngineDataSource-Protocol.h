@@ -6,9 +6,10 @@
 
 #import <NanoPassKit/NSObject-Protocol.h>
 
-@class NPKPassSyncEngine, NSData, NSString;
+@class NPKPassSyncEngine, NSData, NSDictionary, NSString;
 
 @protocol NPKPassSyncEngineDataSource <NSObject>
 - (NSData *)passSyncEngine:(NPKPassSyncEngine *)arg1 dataForPassWithUniqueID:(NSString *)arg2;
+- (NSData *)passSyncEngine:(NPKPassSyncEngine *)arg1 partialDataForPassWithUniqueID:(NSString *)arg2 baseManifest:(NSDictionary *)arg3 outRemoteAssets:(id *)arg4;
 @end
 

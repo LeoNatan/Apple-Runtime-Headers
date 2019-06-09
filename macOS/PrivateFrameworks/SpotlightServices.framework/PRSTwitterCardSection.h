@@ -12,12 +12,12 @@
 {
     BOOL _isMultiTweet;
     BOOL _title_nowrap;
+    int _image_align;
     long long _title_maxlines;
     NSString *_subtitle;
     NSImage *_thumbnail;
     NSString *_date;
     NSArray *_formattedText;
-    unsigned long long _image_align;
     NSString *_footnote;
     NSImage *_title_glyph;
     NSImage *_image;
@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) NSImage *title_glyph; // @synthesize title_glyph=_title_glyph;
 @property(readonly, nonatomic) NSString *footnote; // @synthesize footnote=_footnote;
-@property(readonly, nonatomic) unsigned long long image_align; // @synthesize image_align=_image_align;
+@property(readonly, nonatomic) int image_align; // @synthesize image_align=_image_align;
 @property(readonly, nonatomic) NSArray *formattedText; // @synthesize formattedText=_formattedText;
 @property(readonly, nonatomic) NSString *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSImage *thumbnail; // @synthesize thumbnail=_thumbnail;
@@ -42,7 +42,7 @@
 - (long long)type;
 @property BOOL isMultiTweet;
 - (id)initWithSFSearchResult:(id)arg1 cardSection:(id)arg2;
-- (id)initWithTitle:(id)arg1 glyph:(id)arg2 subtitle:(id)arg3 image:(id)arg4 title_nowrap:(BOOL)arg5 title_maxlines:(long long)arg6 thumbnail:(id)arg7 date:(id)arg8 formattedText:(id)arg9 image_align:(unsigned long long)arg10 footnote:(id)arg11;
+- (id)initWithTitle:(id)arg1 glyph:(id)arg2 subtitle:(id)arg3 image:(id)arg4 title_nowrap:(BOOL)arg5 title_maxlines:(long long)arg6 thumbnail:(id)arg7 date:(id)arg8 formattedText:(id)arg9 image_align:(int)arg10 footnote:(id)arg11;
 
 @end
 

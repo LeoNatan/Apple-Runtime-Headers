@@ -6,10 +6,11 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class HMActionSet, HMCharacteristicBatchRequest, HMHome;
+@class HMActionSet, HMCharacteristicBatchRequest, HMHome, NSSet;
 
 @protocol HFCharacteristicValueWriter <NSObject>
 - (HMHome *)hf_home;
+- (void)executeActions:(NSSet *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)executeActionSet:(HMActionSet *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)performBatchCharacteristicRequest:(HMCharacteristicBatchRequest *)arg1;
 @end

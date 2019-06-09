@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (id)existingSupplementaryLayoutAttributes;
 - (id)existingSupplementaryLayoutAttributesInSection:(long long)arg1;
 - (id)layoutAttributesForCellsInRect:(struct CGRect)arg1 validateLayout:(_Bool)arg2;
+- (id)_layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForElementsInSection:(long long)arg1;
 - (id)layoutAttributesForGlobalItemIndex:(long long)arg1;

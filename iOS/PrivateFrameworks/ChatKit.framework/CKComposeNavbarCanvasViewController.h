@@ -6,10 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
-@class CKNavigationBarCanvasView, UIButton, UILabel;
+#import <ChatKit/CKNavigationBarCanvasViewDelegate-Protocol.h>
 
-@interface CKComposeNavbarCanvasViewController : UIViewController
+@class CKNavigationBarCanvasView, NSString, UIButton, UILabel;
+@protocol CKNavbarCanvasViewControllerDelegate;
+
+@interface CKComposeNavbarCanvasViewController : UIViewController <CKNavigationBarCanvasViewDelegate>
 {
+    id <CKNavbarCanvasViewControllerDelegate> _delegate;
     UIButton *_cancelButton;
     UILabel *_titleLabel;
     CKNavigationBarCanvasView *_canvasView;
@@ -18,7 +22,9 @@
 @property(retain, nonatomic) CKNavigationBarCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(nonatomic) __weak id <CKNavbarCanvasViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (struct NSDirectionalEdgeInsets)systemMinimumLayoutMarginsForView:(id)arg1;
 - (void)_initializeForTraitCollection:(id)arg1;
 - (double)_preferredHeightForTraitCollection:(id)arg1;
 - (id)_windowTraitCollection;
@@ -27,6 +33,12 @@
 - (void)updateTitle:(id)arg1 animated:(_Bool)arg2;
 - (void)loadView;
 - (void)viewDidLoad;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

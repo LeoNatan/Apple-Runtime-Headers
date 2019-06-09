@@ -11,13 +11,9 @@
 }
 
 + (BOOL)_shouldDisableGDPR;
-+ (void)_requestAcknowledgementWithBody:(id)arg1 account:(id)arg2;
-+ (id)_requestBodyForIdentifier:(id)arg1 withVersion:(unsigned long long)arg2;
-+ (unsigned long long)_currentPrivacyContentVersionForIdentifier:(id)arg1;
 + (BOOL)shouldDisplayPrivacyLinkForIdentifier:(id)arg1 storeClient:(id)arg2;
 + (void)acknowledgePrivacyLinkForIdentifier:(id)arg1 storeClient:(id)arg2;
 + (void)_acknowledgePrivacyConsentForIdentifiers:(id)arg1 account:(id)arg2;
-+ (id)_privacyConsentForAccount:(id)arg1;
 + (BOOL)_mergeLocalPrivacyConsentWithAccount:(id)arg1;
 
 @end

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSProgressIndicator.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKProgressIndicator : NSProgressIndicator
 {
 }

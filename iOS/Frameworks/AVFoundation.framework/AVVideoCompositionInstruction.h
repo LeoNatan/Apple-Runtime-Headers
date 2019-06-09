@@ -34,7 +34,6 @@
 @property(readonly, nonatomic) _Bool containsTweening;
 @property(readonly, nonatomic) NSArray *requiredSourceTrackIDs;
 @property(readonly, nonatomic) int passthroughTrackID;
-- (void)finalize;
 - (void)dealloc;
 - (id)_deepCopy;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

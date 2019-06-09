@@ -28,7 +28,7 @@
 - (id)_fallbackCorruptMessageTextWithTextColor:(id)arg1;
 - (_Bool)showMoneyResults;
 - (id)loadTranscriptText;
-- (id)sendAnimationText;
+- (id)sendAnimationTextWithColor:(id)arg1;
 - (id)composition;
 
 @end

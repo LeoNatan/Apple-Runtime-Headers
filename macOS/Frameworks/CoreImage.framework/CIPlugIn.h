@@ -14,6 +14,7 @@
     void *_priv[8];
 }
 
++ (void)loadNonExecutablePlugIn:(id)arg1;
 + (void)loadPlugIn:(id)arg1 allowExecutableCode:(BOOL)arg2;
 + (void)loadPlugIn:(id)arg1 allowNonExecutable:(BOOL)arg2;
 + (void)loadAllPlugIns;

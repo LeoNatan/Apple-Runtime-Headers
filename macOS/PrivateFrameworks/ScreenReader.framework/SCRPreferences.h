@@ -21,9 +21,7 @@ __attribute__((visibility("hidden")))
 + (void)setFloat:(float)arg1 forKey:(id)arg2;
 + (void)setInteger:(long long)arg1 forKey:(id)arg2;
 + (void)setString:(id)arg1 forKey:(id)arg2;
-+ (unsigned long long)groupingBehavior;
-+ (void)setVOModifier:(unsigned long long)arg1;
-+ (unsigned long long)voModifier;
++ (long long)groupingBehavior;
 
 @end
 

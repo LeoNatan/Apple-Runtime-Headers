@@ -9,7 +9,8 @@
 #import <MapKit/NSCopying-Protocol.h>
 #import <MapKit/NSSecureCoding-Protocol.h>
 
-@class MKMapCamera, NSArray;
+@class MKMapCamera, MKPointOfInterestFilter, NSArray, UITraitCollection, VKRouteContext;
+@protocol VKRouteOverlay;
 
 @interface MKMapSnapshotOptions : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,17 +19,22 @@
     CDStruct_b7cb895d _region;
     unsigned long long _mapType;
     int _mode;
-    _Bool _showsPointsOfInterest;
     _Bool _showsPointLabels;
     _Bool _showsBuildings;
     _Bool _showsNightMode;
+    _Bool _showsAppleLogo;
     _Bool _rendersInBackground;
     _Bool _useSnapshotService;
     struct CGSize _size;
-    double _scale;
+    UITraitCollection *_traitCollection;
+    struct UIEdgeInsets _edgeInsets;
+    unsigned long long _signpostId;
+    VKRouteContext *_routeContext;
+    id <VKRouteOverlay> _routeOverlay;
     _Bool _usingRect;
     _Bool _showsVenues;
     unsigned char _searchResultsType;
+    MKPointOfInterestFilter *_pointOfInterestFilter;
     NSArray *_annotationViews;
     NSArray *_customFeatureAnnotations;
 }
@@ -37,14 +43,19 @@
 @property(copy, nonatomic, getter=_customFeatureAnnotations, setter=_setCustomFeatureAnnotations:) NSArray *customFeatureAnnotations; // @synthesize customFeatureAnnotations=_customFeatureAnnotations;
 @property(nonatomic, getter=_searchResultsType, setter=_setSearchResultsType:) unsigned char searchResultsType; // @synthesize searchResultsType=_searchResultsType;
 @property(nonatomic, getter=_showsVenues, setter=_setShowsVenues:) _Bool showsVenues; // @synthesize showsVenues=_showsVenues;
+@property(retain, nonatomic, getter=_routeOverlay, setter=_setRouteOverlay:) id <VKRouteOverlay> routeOverlay; // @synthesize routeOverlay=_routeOverlay;
+@property(retain, nonatomic, getter=_routeContext, setter=_setRouteContext:) VKRouteContext *routeContext; // @synthesize routeContext=_routeContext;
+@property(nonatomic, getter=_edgeInsets, setter=_setEdgeInsets:) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
+@property(nonatomic) unsigned long long signpostId; // @synthesize signpostId=_signpostId;
 @property(copy, nonatomic) NSArray *annotationViews; // @synthesize annotationViews=_annotationViews;
-@property(nonatomic) double scale; // @synthesize scale=_scale;
+@property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(nonatomic, getter=_rendersInBackground, setter=_setRendersInBackground:) _Bool rendersInBackground; // @synthesize rendersInBackground=_rendersInBackground;
 @property(nonatomic, getter=_useSnapshotService, setter=_setUseSnapshotService:) _Bool useSnapshotService; // @synthesize useSnapshotService=_useSnapshotService;
+@property(nonatomic, getter=_showsAppleLogo, setter=_setShowsAppleLogo:) _Bool showsAppleLogo; // @synthesize showsAppleLogo=_showsAppleLogo;
 @property(nonatomic, getter=_showsNightMode, setter=_setShowsNightMode:) _Bool showsNightMode; // @synthesize showsNightMode=_showsNightMode;
 @property(nonatomic) _Bool showsBuildings; // @synthesize showsBuildings=_showsBuildings;
 @property(nonatomic, getter=_showsPointLabels, setter=_setShowsPointLabels:) _Bool showsPointLabels; // @synthesize showsPointLabels=_showsPointLabels;
-@property(nonatomic) _Bool showsPointsOfInterest; // @synthesize showsPointsOfInterest=_showsPointsOfInterest;
+@property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
 @property(readonly, nonatomic) _Bool usingRect; // @synthesize usingRect=_usingRect;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) unsigned long long mapType; // @synthesize mapType=_mapType;
@@ -53,6 +64,9 @@
 @property(copy, nonatomic) MKMapCamera *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
+@property(nonatomic) _Bool showsPointsOfInterest; // @dynamic showsPointsOfInterest;
+- (void)_updateShouldUseSnapshotService;
+@property(nonatomic) double scale;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

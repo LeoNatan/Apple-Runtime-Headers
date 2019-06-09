@@ -45,14 +45,17 @@
     NSString *_lastSeenConfiguredName;
     NSNumber *_lastKnownDiscoveryMode;
     NSMutableDictionary *_deviceLastRequestPresenceDateMap;
+    NSString *_logID;
     NSString *_providedName;
 }
 
 + (BOOL)hasMessageReceiverChildren;
 + (BOOL)supportsSecureCoding;
 + (BOOL)validateProvidedName:(id)arg1;
++ (id)logCategory;
 + (id)generateUUIDWithAccessoryUUID:(id)arg1 serviceID:(id)arg2;
 @property(retain, nonatomic) NSString *providedName; // @synthesize providedName=_providedName;
+@property(readonly, nonatomic) NSString *logID; // @synthesize logID=_logID;
 @property(retain, nonatomic) NSMutableDictionary *deviceLastRequestPresenceDateMap; // @synthesize deviceLastRequestPresenceDateMap=_deviceLastRequestPresenceDateMap;
 @property(retain, nonatomic) NSNumber *lastKnownDiscoveryMode; // @synthesize lastKnownDiscoveryMode=_lastKnownDiscoveryMode;
 @property(copy, nonatomic) NSString *lastSeenConfiguredName; // @synthesize lastSeenConfiguredName=_lastSeenConfiguredName;
@@ -60,11 +63,11 @@
 @property(copy, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 @property(nonatomic) __weak id <HMDServiceOwner> owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSUUID *cachedAccessoryUUID; // @synthesize cachedAccessoryUUID=_cachedAccessoryUUID;
-@property(getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain, nonatomic) NSArray *mediaSourceDisplayOrder; // @synthesize mediaSourceDisplayOrder=_mediaSourceDisplayOrder;
 @property(retain, nonatomic) NSNumber *mediaSourceIdentifier; // @synthesize mediaSourceIdentifier=_mediaSourceIdentifier;
+@property(getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
 @property(retain, nonatomic) HMDBulletinBoardNotification *bulletinBoardNotification; // @synthesize bulletinBoardNotification=_bulletinBoardNotification;
 @property(retain, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(copy, nonatomic) NSArray *characteristics; // @synthesize characteristics=_characteristics;
@@ -103,6 +106,7 @@
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)_transactionServiceUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)_processTransactionForNameComponents:(id)arg1 messagesToSendToAcccessory:(id)arg2 result:(id)arg3;
+- (void)_saveLastSeenAndExpectedConfiguredName:(id)arg1;
 - (void)_saveForLastSeenConfiguredNameUpdate;
 - (void)_saveForExpectedConfiguredNameUpdate;
 - (id)_messagesForConfiguredNameChange;
@@ -113,7 +117,7 @@
 - (void)updatePresenceRequestTimeForDeviceWithDestination:(id)arg1;
 - (BOOL)shouldIncludePresenceForDeviceWithDestination:(id)arg1;
 - (BOOL)shouldEnableDaemonRelaunch;
-- (void)configureBulletinNotification:(CDUnknownBlockType)arg1;
+- (void)configureBulletinNotification;
 - (void)configureMsgDispatcher:(id)arg1;
 - (void)updateLastKnownValues;
 - (id)getLastSeenConfiguredName;
@@ -137,10 +141,11 @@
 - (void)_shouldServiceBeHidden;
 - (BOOL)_supportsBulletinNotification;
 - (void)_createNotification;
-- (id)configureWithService:(id)arg1 accessory:(id)arg2 shouldRead:(BOOL)arg3;
+- (id)configureWithService:(id)arg1 accessory:(id)arg2 shouldRead:(BOOL)arg3 added:(BOOL)arg4;
 - (id)configureWithService:(id)arg1 accessory:(id)arg2;
 - (void)_handleSetAppData:(id)arg1;
 @property(retain, nonatomic) HMDApplicationData *appData; // @synthesize appData=_appData;
+- (id)logIdentifier;
 @property(readonly, nonatomic) HMDHome *home;
 @property(readonly, copy, nonatomic) NSString *serviceIdentifier;
 @property(readonly, copy, nonatomic) NSString *type;
@@ -148,6 +153,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void)_recalculateUUID;
+- (void)dealloc;
 - (id)initWithAccessory:(id)arg1 owner:(id)arg2 instance:(id)arg3 uuid:(id)arg4;
 - (id)initWithTransaction:(id)arg1 accessory:(id)arg2 owner:(id)arg3;
 - (id)init;
@@ -155,6 +161,7 @@
 @property(readonly, copy, nonatomic) NSString *contextID;
 - (id)assistantObject;
 - (id)url;
+- (id)_serviceSubtypeFromLinkedServicesForServiceType:(id)arg1 accessoryCategory:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

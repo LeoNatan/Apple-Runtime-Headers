@@ -22,6 +22,7 @@
 - (id)windowWillReturnFieldEditor:(id)arg1 toObject:(id)arg2;
 - (void)invalidate;
 - (void)loadView;
+@property(readonly) NSString *prefPanePath; // @dynamic prefPanePath;
 - (unsigned long long)awakeFromRemoteView;
 - (void)advanceToRunPhase;
 

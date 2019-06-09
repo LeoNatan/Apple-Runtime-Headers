@@ -6,26 +6,40 @@
 
 #import <IMAP/IMAPNetworkTaskOperation.h>
 
-@class IMAPLocalMessageAction, NSProgress;
-@protocol IMAPMessageDataSource;
+#import <IMAP/ECIMAPLocalActionReplayerDelegate-Protocol.h>
 
-@interface IMAPMessageActionSyncOperation : IMAPNetworkTaskOperation
+@class ECLocalMessageAction, NSProgress, NSString;
+@protocol IMAPMessageActionSyncOperationDelegate, IMAPMessageDataSource;
+
+@interface IMAPMessageActionSyncOperation : IMAPNetworkTaskOperation <ECIMAPLocalActionReplayerDelegate>
 {
-    BOOL _actionWasReplayed;
     id <IMAPMessageDataSource> _dataSource;
-    IMAPLocalMessageAction *_messageAction;
+    ECLocalMessageAction *_messageAction;
+    id <IMAPMessageActionSyncOperationDelegate> _delegate;
     NSProgress *_progress;
 }
 
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-@property(nonatomic) BOOL actionWasReplayed; // @synthesize actionWasReplayed=_actionWasReplayed;
-@property(readonly, nonatomic) IMAPLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
+@property(nonatomic) __weak id <IMAPMessageActionSyncOperationDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) ECLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
 @property(readonly, nonatomic) id <IMAPMessageDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (id)messageDataForRemoteID:(id)arg1 mailboxURL:(id)arg2;
+- (BOOL)checkUIDValidity:(unsigned int)arg1 mailboxURL:(id)arg2;
+- (id)flagsForIMAPUIDs:(id)arg1 mailboxURL:(id)arg2;
+- (id)imapMailboxNameForMailboxURL:(id)arg1;
+- (BOOL)moveSupportedFromMailboxURL:(id)arg1 toURL:(id)arg2;
+- (id)messageDataForMessage:(id)arg1;
+- (void)main;
 - (BOOL)errorIsIMAPError:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithMailboxName:(id)arg1;
 - (id)initWithDataSource:(id)arg1 messageAction:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

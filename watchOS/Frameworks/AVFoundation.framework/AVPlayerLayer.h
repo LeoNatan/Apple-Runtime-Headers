@@ -33,22 +33,20 @@
 - (id)_maskLayer;
 - (void)_getMaskLayer:(id *)arg1 videoLayer:(id *)arg2 subtitleLayer:(id *)arg3 closedCaptionLayer:(id *)arg4;
 @property(copy, nonatomic) NSDictionary *pixelBufferAttributes;
-- (void)_setSubtitleGravity:(id)arg1;
-- (id)_subtitleGravity;
 @property(readonly, nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay;
 @property(copy) NSString *videoGravity;
+- (void)_updateReadyForDisplayForPlayerCurrentItem;
+- (void)hasEnqueuedVideoFrameChanged:(id)arg1;
 - (void)layerDidBecomeVisible:(_Bool)arg1;
 @property(retain, nonatomic) AVPlayer *player;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_stopObservingPlayer:(id)arg1;
 - (void)_startObservingPlayer:(id)arg1;
-- (void)_syncToPlayer:(id)arg1;
 - (void)_applyCurrentItemPresentationSizeChangeAndForceUpdate:(_Bool)arg1;
 - (struct CGSize)_playerCurrentItemPresentationSize;
 - (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 - (void)_notifyPlayerOfDisplaySize;
 - (struct CGSize)_displaySize;
-- (void)finalize;
 - (void)dealloc;
 - (void)addCallbackToCancelDuringDeallocation:(id)arg1;
 - (void)removeAllAnimations;
@@ -64,6 +62,7 @@
 - (void)setContentsScale:(float)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)layoutSublayers;
+- (id)_compactDescription;
 - (id)initWithLayer:(id)arg1;
 - (id)init;
 

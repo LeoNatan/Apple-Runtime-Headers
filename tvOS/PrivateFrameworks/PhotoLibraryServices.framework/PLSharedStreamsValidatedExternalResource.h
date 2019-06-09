@@ -6,11 +6,18 @@
 
 #import <PhotoLibraryServices/PLValidatedExternalResource.h>
 
+@class NSString;
+
 @interface PLSharedStreamsValidatedExternalResource : PLValidatedExternalResource
 {
+    unsigned int _sharedStreamsType;
+    NSString *_fingerprint;
 }
 
-@property(nonatomic) unsigned int sharedStreamsType;
+@property(retain, nonatomic) NSString *fingerprint; // @synthesize fingerprint=_fingerprint;
+@property(nonatomic) unsigned int sharedStreamsType; // @synthesize sharedStreamsType=_sharedStreamsType;
+- (void).cxx_destruct;
+- (id)description;
 
 @end
 

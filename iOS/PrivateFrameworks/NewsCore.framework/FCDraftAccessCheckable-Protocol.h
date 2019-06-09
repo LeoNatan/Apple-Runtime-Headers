@@ -7,10 +7,12 @@
 #import <NewsCore/NFCopying-Protocol.h>
 
 @class NSString;
+@protocol FCChannelProviding;
 
 @protocol FCDraftAccessCheckable <NFCopying>
 @property(readonly, nonatomic) _Bool isLocalDraft;
 @property(readonly, nonatomic) _Bool isDraft;
+@property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @end
 

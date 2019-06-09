@@ -8,11 +8,11 @@
 
 #import <PassKitUI/PKObservableContentContainer-Protocol.h>
 
-@class NSHashTable, NSLock, NSString, _UIBackdropView;
+@class NSHashTable, NSLock, NSString, UIVisualEffectView;
 
 @interface PKBlurredNavigationController : UINavigationController <PKObservableContentContainer>
 {
-    _UIBackdropView *_backdropView;
+    UIVisualEffectView *_backdropView;
     NSLock *_observersLock;
     NSHashTable *_observers;
 }

@@ -7,7 +7,7 @@
 #import <AvatarUI/NSObject-Protocol.h>
 
 @class AVTAvatarEditorViewController, NSArray, NSIndexSet, UIViewController;
-@protocol AVTAvatarRecord;
+@protocol AVTAvatarLibraryItem, AVTAvatarRecord;
 
 @protocol AVTAvatarLibraryModelDelegate <NSObject>
 - (void)didDeleteRecord:(id <AVTAvatarRecord>)arg1;
@@ -17,6 +17,6 @@
 - (void)didUpdateLibraryItems:(NSArray *)arg1;
 - (void)dismissController:(UIViewController *)arg1 completion:(void (^)(void))arg2;
 - (void)presetEditorViewController:(AVTAvatarEditorViewController *)arg1;
-- (void)presentUIViewController:(UIViewController *)arg1;
+- (void)presentUIViewController:(UIViewController *)arg1 forItem:(id <AVTAvatarLibraryItem>)arg2;
 @end
 

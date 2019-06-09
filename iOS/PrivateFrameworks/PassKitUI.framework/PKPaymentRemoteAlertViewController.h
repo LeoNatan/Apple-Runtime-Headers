@@ -51,14 +51,14 @@
 - (void)_dismissForSource:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dismissIfRestricted;
 - (void)_presentHomeButtonDoubleTapAlertIfNecessary;
-- (void)_presentPassAnimated:(_Bool)arg1;
+- (void)_presentPassAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_insertGroupController;
 - (void)_setupGroupController;
-- (void)handleHomeButtonPressed;
+- (void)handleButtonActions:(id)arg1;
 - (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setUserInfo:(id)arg1;
 - (id)childViewControllerForStatusBarStyle;
 - (id)childViewControllerForStatusBarHidden;
+- (_Bool)_canShowWhileLocked;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
@@ -70,7 +70,6 @@
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;
-- (void)_willAppearInRemoteViewController;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)_invalidateForType:(long long)arg1;
 - (void)_invalidate;

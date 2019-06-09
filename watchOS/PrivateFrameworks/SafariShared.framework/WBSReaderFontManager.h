@@ -19,6 +19,7 @@
 - (void)updateLanguageTag:(id)arg1;
 - (id)fontWithFontFamilyName:(id)arg1;
 - (id)defaultFontForLanguageTag:(id)arg1;
+@property(readonly) NSArray *possibleFonts;
 @property(readonly) NSArray *fonts;
 
 @end

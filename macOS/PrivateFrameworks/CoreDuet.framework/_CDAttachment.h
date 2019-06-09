@@ -17,6 +17,7 @@
     NSString *_uti;
     NSUUID *_identifier;
     NSUUID *_cloudIdentifier;
+    NSString *_photoLocalIdentifier;
     NSNumber *_size;
     NSURL *_contentURL;
     NSString *_contentText;
@@ -28,6 +29,7 @@
 @property(retain) NSString *contentText; // @synthesize contentText=_contentText;
 @property(retain) NSURL *contentURL; // @synthesize contentURL=_contentURL;
 @property(retain) NSNumber *size; // @synthesize size=_size;
+@property(retain) NSString *photoLocalIdentifier; // @synthesize photoLocalIdentifier=_photoLocalIdentifier;
 @property(retain) NSUUID *cloudIdentifier; // @synthesize cloudIdentifier=_cloudIdentifier;
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(retain) NSString *uti; // @synthesize uti=_uti;
@@ -39,6 +41,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 photoLocalIdentifier:(id)arg3 type:(id)arg4 sizeInBytes:(id)arg5 creationDate:(id)arg6 contentURL:(id)arg7 contentText:(id)arg8;
 - (id)initWithIdentifier:(id)arg1 cloudIdentifier:(id)arg2 type:(id)arg3 sizeInBytes:(id)arg4 creationDate:(id)arg5 contentURL:(id)arg6 contentText:(id)arg7;
 
 @end

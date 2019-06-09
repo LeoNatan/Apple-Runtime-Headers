@@ -11,17 +11,20 @@
 @interface PKPaymentSetupTableViewCell : PKTableViewCell
 {
     UILabel *_betaLabel;
+    _Bool _thumbnailImageViewHasBorder;
     _Bool _showBetaBadge;
     UIImageView *_thumbnailImageView;
 }
 
 + (struct CGSize)defaultImageViewSize;
 @property(nonatomic) _Bool showBetaBadge; // @synthesize showBetaBadge=_showBetaBadge;
+@property(nonatomic) _Bool thumbnailImageViewHasBorder; // @synthesize thumbnailImageViewHasBorder=_thumbnailImageViewHasBorder;
 @property(readonly, nonatomic) UIImageView *thumbnailImageView; // @synthesize thumbnailImageView=_thumbnailImageView;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
+- (void)setThumbnailImageHasBorder:(_Bool)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

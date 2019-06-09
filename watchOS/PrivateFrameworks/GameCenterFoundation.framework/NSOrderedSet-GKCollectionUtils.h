@@ -13,5 +13,8 @@
 - (id)_gkValuesForKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
+- (id)_gkFilteredOrderedSetUsingPredicate:(id)arg1;
+- (id)_gkSortedOrderedSetUsingDescriptors:(id)arg1;
+- (id)_gkDescriptionWithChildren:(int)arg1;
 @end
 

@@ -15,12 +15,12 @@
     NSMutableArray *_queue_pendingTasks;
     NSMutableArray *_queue_pendingSubtasks;
     NSMutableArray *_queue_taskErrors;
-    int _canceled;
+    // Error parsing type: AB, name: _canceled
+    // Error parsing type: AB, name: _rejectAddTask
     _Bool _queue_started;
     _Bool _queue_finished;
     CDUnknownBlockType _queue_completion;
     NSObject<OS_dispatch_queue> *_default_task_queue;
-    _Bool _rejectAddTask;
     NSString *_groupDescription;
 }
 

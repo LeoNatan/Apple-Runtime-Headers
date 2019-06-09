@@ -6,9 +6,10 @@
 
 #import <NanoMediaRemote/NMRNowPlayingState.h>
 
-@class NMUNowPlayingArtwork;
+@class NMUNowPlayingArtwork, NSString;
 
 @interface NMRNowPlayingState (NanoMediaUI)
 @property(retain, nonatomic) NMUNowPlayingArtwork *artwork;
+@property(retain, nonatomic, getter=nmu_displayTitle, setter=nmu_setDisplayTitle:) NSString *nmu_displayTitle;
 @end
 

@@ -10,8 +10,9 @@
 {
 }
 
++ (_Bool)isInternalBuild;
++ (_Bool)isSeedBuild;
 + (_Bool)isWatch;
-+ (_Bool)isServerTTSPlatform;
 + (_Bool)isAudioAccessory;
 + (id)hardwarePlatform;
 + (id)legacyPlatforms;

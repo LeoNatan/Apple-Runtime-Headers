@@ -6,6 +6,7 @@
 
 #import <OfficeImport/WDIterator.h>
 
+__attribute__((visibility("hidden")))
 @interface WDCombinedIterator : WDIterator
 {
     WDIterator *mParentIterator;

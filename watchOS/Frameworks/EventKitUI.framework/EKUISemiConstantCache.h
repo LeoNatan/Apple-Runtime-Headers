@@ -6,27 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, UIFont;
+@class UIFont;
 
 @interface EKUISemiConstantCache : NSObject
 {
+    _Bool _calInterfaceIsLeftToRight;
+    _Bool _usesLargeText;
+    float _dayOccurrenceMinimumCachedLineHeightCompact;
+    float _dayOccurrenceMinimumCachedLineHeightRegular;
+    float _dayOccurrenceMinimumCachedLineHeightSmallCompact;
+    float _dayOccurrenceMinimumCachedLineHeightSmallRegular;
+    UIFont *_dayOccurrenceUncompressedSecondaryTextFont;
+    float _weekAllDayBaselineForLargeFormatWeekView;
+    float _weekAllDayBaselineForSmallFormatWeekView;
+    UIFont *_weekAllDayLabelFontCompact;
+    UIFont *_weekAllDayLabelFontRegular;
+    UIFont *_weekAllDayTodayLabelFontCompact;
     float _currentWindowWidth;
     float _currentWindowHeight;
     float _currentScaleFactor;
-    _Bool _currentWidthSizeClassIsRegular;
     unsigned int _currentWindowSizeParadigm;
-    _Bool _calInterfaceIsLeftToRight;
-    _Bool _usesLargeText;
-    float _dayOccurrenceMinimumCachedLineHeight;
-    float _dayOccurrenceMinimumCachedLineHeightSmall;
-    UIFont *_dayOccurrenceUncompressedSecondaryTextFont;
-    NSMutableDictionary *_commentIconStrings;
-    NSArray *_statusGlyphs;
-    NSMutableDictionary *_birthdayImages;
-    float _weekAllDayBaselineForLargeFormatWeekView;
-    float _weekAllDayBaselineForSmallFormatWeekView;
-    UIFont *_weekAllDayLabelFont;
-    UIFont *_weekAllDayTodayLabelFont;
     float _weekAllDayOccurrenceHeight;
     float _minYearMonthHeaderFontSizeUsed;
 }
@@ -43,21 +42,24 @@
 @property(readonly) float currentWindowWidth; // @synthesize currentWindowWidth=_currentWindowWidth;
 @property(readonly) _Bool usesLargeText; // @synthesize usesLargeText=_usesLargeText;
 - (void).cxx_destruct;
-@property(readonly) UIFont *weekAllDayTodayLabelFont;
-@property(readonly) UIFont *weekAllDayLabelFont;
+@property(readonly) UIFont *weekAllDayTodayLabelFontRegular;
+@property(readonly) UIFont *weekAllDayTodayLabelFontCompact;
+@property(readonly) UIFont *weekAllDayLabelFontRegular;
+@property(readonly) UIFont *weekAllDayLabelFontCompact;
 - (id)birthdayImageForFont:(id)arg1;
-- (id)birthdayImageForFont:(id)arg1 withColor:(id)arg2;
+- (int)_participantStatusFromDetailAttendeesStatus:(int)arg1;
 - (id)statusGlyphForStatusType:(int)arg1;
 - (id)commentIconStringForFont:(id)arg1;
-@property(readonly) float dayOccurrenceMinimumCachedLineHeightSmall;
+@property(readonly) float dayOccurrenceMinimumCachedLineHeightSmallRegular;
+@property(readonly) float dayOccurrenceMinimumCachedLineHeightSmallCompact;
 @property(readonly) UIFont *dayOccurrenceUncompressedSecondaryTextFont;
-@property(readonly) float dayOccurrenceMinimumCachedLineHeight;
+@property(readonly) float dayOccurrenceMinimumCachedLineHeightRegular;
+@property(readonly) float dayOccurrenceMinimumCachedLineHeightCompact;
 - (id)_dayOccurrenceFontWithStyle:(id)arg1 size:(float)arg2 regularSize:(float)arg3;
 - (void)_localeChanged:(id)arg1;
 - (void)_contentCategorySizeChanged:(id)arg1;
 - (void)updateMetrics;
 - (void)_orientationChanged:(id)arg1;
-- (void)updateWindowSize;
 - (id)init;
 
 @end

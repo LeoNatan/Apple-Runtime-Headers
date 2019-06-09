@@ -9,7 +9,7 @@
 #import <ClassKit/CLSQuery-Protocol.h>
 #import <ClassKit/NSLocking-Protocol.h>
 
-@class NSDate, NSMutableArray, NSString;
+@class CLSSearchSpecification, NSDate, NSMutableArray, NSString;
 
 @interface CLSQuery : CLSDataObserver <NSLocking, CLSQuery>
 {
@@ -19,11 +19,13 @@
     _Bool _shouldAddResultsToDataStore;
     _Bool _shouldFaultResults;
     long long _fetchLimit;
+    CLSSearchSpecification *_searchSpec;
     CDUnknownBlockType _completion;
     NSDate *_startDate;
     unsigned long long _state;
 }
 
++ (id)queryWithSearchSpecification:(id)arg1;
 + (id)queryWithObjectType:(Class)arg1 predicate:(id)arg2 error:(id *)arg3;
 + (id)queryWithObjectType:(Class)arg1 predicate:(id)arg2;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
@@ -31,6 +33,7 @@
 @property(nonatomic) _Bool shouldFaultResults; // @synthesize shouldFaultResults=_shouldFaultResults;
 @property(nonatomic) _Bool shouldAddResultsToDataStore; // @synthesize shouldAddResultsToDataStore=_shouldAddResultsToDataStore;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(readonly, nonatomic) CLSSearchSpecification *searchSpec; // @synthesize searchSpec=_searchSpec;
 @property(nonatomic) long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(getter=isExecuting) _Bool executing; // @synthesize executing=_executing;
 - (void).cxx_destruct;
@@ -44,6 +47,7 @@
 @property(readonly, copy) NSString *description;
 - (void)unlock;
 - (void)lock;
+- (id)initWithSearchSpecification:(id)arg1 error:(id *)arg2;
 - (id)initWithObjectType:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 error:(id *)arg4;
 
 // Remaining properties

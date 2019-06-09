@@ -6,37 +6,58 @@
 
 #import <HomeKitDaemon/HMDAccessoryProfile.h>
 
+#import <HomeKitDaemon/HMDCameraBackingStoreDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCameraSettingProactiveReaderDelegate-Protocol.h>
+#import <HomeKitDaemon/HMDCameraUserSettingsDelegate-Protocol.h>
 
-@class HMDCameraResidentMessageHandler, HMDCameraSnapshotManager, HMDCameraStreamSnapshotHandler, HMFNetMonitor, NSMutableArray, NSSet, NSString;
+@class HMDCameraBackingStore, HMDCameraClipUserNotificationCenter, HMDCameraResidentMessageHandler, HMDCameraSnapshotManager, HMDCameraStreamSnapshotHandler, HMDCameraUserSettings, HMDHAPAccessory, HMDPredicateUtilities, HMDService, HMFNetMonitor, NSMutableArray, NSSet, NSString, NSUUID;
 
-@interface HMDCameraProfile : HMDAccessoryProfile <HMDCameraSettingProactiveReaderDelegate>
+@interface HMDCameraProfile : HMDAccessoryProfile <HMDCameraSettingProactiveReaderDelegate, HMDCameraBackingStoreDelegate, HMDCameraUserSettingsDelegate>
 {
     BOOL _microphonePresent;
     BOOL _speakerPresent;
+    NSUUID *_cloudZoneUUID;
+    HMDCameraBackingStore *_cameraBackingStore;
+    HMDService *_recordingManagementService;
+    HMDHAPAccessory *_hapAccessory;
     NSSet *_cameraStreamManagers;
     HMDCameraSnapshotManager *_snapshotManager;
     HMDCameraStreamSnapshotHandler *_streamSnapshotHandler;
     NSMutableArray *_settingProactiveReaders;
     HMFNetMonitor *_networkMonitor;
     HMDCameraResidentMessageHandler *_residentMessageHandler;
+    HMDCameraClipUserNotificationCenter *_clipUserNotificationCenter;
+    HMDPredicateUtilities *_predicateUtilities;
 }
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)hasMessageReceiverChildren;
 + (id)logCategory;
-@property(readonly, nonatomic) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
-@property(retain, nonatomic) HMFNetMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
-@property(readonly, nonatomic) NSMutableArray *settingProactiveReaders; // @synthesize settingProactiveReaders=_settingProactiveReaders;
-@property(readonly, nonatomic) HMDCameraStreamSnapshotHandler *streamSnapshotHandler; // @synthesize streamSnapshotHandler=_streamSnapshotHandler;
-@property(readonly, nonatomic) HMDCameraSnapshotManager *snapshotManager; // @synthesize snapshotManager=_snapshotManager;
-@property(readonly, nonatomic) NSSet *cameraStreamManagers; // @synthesize cameraStreamManagers=_cameraStreamManagers;
+@property(retain) HMDPredicateUtilities *predicateUtilities; // @synthesize predicateUtilities=_predicateUtilities;
+@property(retain) HMDCameraClipUserNotificationCenter *clipUserNotificationCenter; // @synthesize clipUserNotificationCenter=_clipUserNotificationCenter;
+@property(readonly) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
+@property(readonly) HMFNetMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
+@property(readonly) NSMutableArray *settingProactiveReaders; // @synthesize settingProactiveReaders=_settingProactiveReaders;
+@property(readonly) HMDCameraStreamSnapshotHandler *streamSnapshotHandler; // @synthesize streamSnapshotHandler=_streamSnapshotHandler;
+@property(readonly) HMDCameraSnapshotManager *snapshotManager; // @synthesize snapshotManager=_snapshotManager;
+@property(readonly) NSSet *cameraStreamManagers; // @synthesize cameraStreamManagers=_cameraStreamManagers;
+@property(readonly, nonatomic) __weak HMDHAPAccessory *hapAccessory; // @synthesize hapAccessory=_hapAccessory;
+@property(readonly, nonatomic) HMDService *recordingManagementService; // @synthesize recordingManagementService=_recordingManagementService;
+@property(readonly, nonatomic) HMDCameraBackingStore *cameraBackingStore; // @synthesize cameraBackingStore=_cameraBackingStore;
+@property(readonly, nonatomic) NSUUID *cloudZoneUUID; // @synthesize cloudZoneUUID=_cloudZoneUUID;
 @property(readonly, nonatomic, getter=isSpeakerPresent) BOOL speakerPresent; // @synthesize speakerPresent=_speakerPresent;
 @property(readonly, nonatomic, getter=isMicrophonePresent) BOOL microphonePresent; // @synthesize microphonePresent=_microphonePresent;
 - (void).cxx_destruct;
+- (void)cameraUserSettings:(id)arg1 canDisableRecordingWithCompletion:(CDUnknownBlockType)arg2;
+- (void)cameraUserSettings:(id)arg1 canEnableRecordingWithCompletion:(CDUnknownBlockType)arg2;
+- (void)cameraBackingStoreDidDisableCloudStorage:(id)arg1;
+- (void)cameraBackingStoreDidStop:(id)arg1;
+- (void)cameraBackingStoreDidStart:(id)arg1;
+- (void)cameraBackingStore:(id)arg1 didAddClipSignificantEventNotification:(id)arg2;
+- (void)cameraBackingStore:(id)arg1 didAddSignificantEventNotification:(id)arg2;
+- (BOOL)canPostSignificantEventNotification:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
-- (void)monitorForEventsForServices:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)cameraSettingProactiveReaderDidCompleteRead:(id)arg1 negotiateStreamMessageWasHandled:(BOOL)arg2;
@@ -45,11 +66,18 @@
 - (void)registerForMessages;
 - (void)_setControlSupport;
 - (id)_createCameraManagers:(id)arg1;
+@property(readonly, nonatomic) HMDCameraUserSettings *userSettings;
 - (id)dumpState;
 - (void)dealloc;
+- (void)unconfigure;
 @property(readonly, copy) NSString *description;
 - (id)logIdentifier;
+- (void)createCameraClipUserNotificationCenter;
+- (void)setUp;
+@property(readonly, nonatomic, getter=isCameraRecordingFeatureSupported) BOOL supportsCameraRecordingFeature;
 - (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3;
+- (id)assistantObject;
+- (id)url;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

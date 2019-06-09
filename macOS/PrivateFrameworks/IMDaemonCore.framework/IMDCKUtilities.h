@@ -22,6 +22,7 @@
 }
 
 + (id)im_AKSecurityLevelKey;
++ (id)restoreFailuresDirectory;
 + (id)sharedInstance;
 + (id)logHandle;
 @property(nonatomic) BOOL useDeprecatedApi; // @synthesize useDeprecatedApi=_useDeprecatedApi;
@@ -49,7 +50,8 @@
 - (id)_primaryiCloudAccount;
 - (id)_accountManager;
 - (void)submitPCSReportManateeStatuMetricWithPrefix:(id)arg1 andReason:(id)arg2;
-- (id)metricForPCSReportManateeStatusWithReason:(id)arg1;
+- (void)_metricForPCSReportManateeStatusWithReason:(id)arg1 linkedFunction:(CDUnknownFunctionPointerType)arg2 timeoutInSec:(double)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)metricForPCSReportManateeStatusWithReason:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)logDumpIsNecessaryAfterSync;
 - (void)noteAllSyncedItemsPriorToSync;
 - (id)ckStatisticCalculations;
@@ -136,6 +138,7 @@
 - (BOOL)_checkEligibilityWithAccountInfo:(id)arg1;
 - (id)_authenticationController;
 - (BOOL)accountIsVerifiedForMOCAndSafeForCacheDelete;
+- (id)internalQueue;
 - (BOOL)removeFromBackUpAllowed;
 - (BOOL)_serverAllowsRemovalFromBackUp;
 - (BOOL)cacheDeleteEnabled;
@@ -162,9 +165,11 @@
 - (long long)overrideNumberOfChatsToFetch;
 - (BOOL)shouldSyncToSRContainer;
 - (BOOL)shouldForceArchivedMessagesSync;
+- (BOOL)shouldUseDevNickNameContainer;
 - (BOOL)shouldUseDevContainer;
 - (void)keyRollPendingStateDidChange;
 - (void)broadcastCloudKitStateAfterClearingErrors;
+- (void)broadcastCloudKitStateAfterFetchingAccountStatus;
 - (void)broadcastCloudKitState;
 - (void)syncStateWillUpdate:(id)arg1;
 @property(readonly, nonatomic) IMDCKSyncState *syncState; // @synthesize syncState=_syncState;

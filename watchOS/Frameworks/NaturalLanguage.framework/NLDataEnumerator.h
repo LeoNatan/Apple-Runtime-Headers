@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (unsigned int)index;
+- (void)rewind;
 - (id)nextInstance;
 - (id)initWithDataProvider:(id)arg1;
 

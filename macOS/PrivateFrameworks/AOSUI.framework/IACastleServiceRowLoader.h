@@ -14,6 +14,7 @@
 }
 
 @property(readonly) IACastleServiceRow *serviceRow; // @synthesize serviceRow=_serviceRow;
+- (void).cxx_destruct;
 
 @end
 

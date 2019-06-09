@@ -12,6 +12,7 @@
 }
 
 @property(copy) CDUnknownBlockType pl_operationCountChangedBlock; // @synthesize pl_operationCountChangedBlock=_pl_operationCountChangedBlock;
+- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)init;

@@ -192,7 +192,7 @@
 - (BOOL)_parsePairingFeaturesCharacteristic:(id)arg1 authMethod:(unsigned long long *)arg2 error:(id *)arg3;
 - (void)_getPairingFeaturesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_checkForAuthPrompt:(BOOL)arg1;
-- (void)startPairingWithConsentRequired:(BOOL)arg1;
+- (void)startPairingWithConsentRequired:(BOOL)arg1 config:(id)arg2 ownershipProof:(id)arg3;
 - (void)_enableBroadcastEvent:(BOOL)arg1 interval:(unsigned long long)arg2 forCharacteristic:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_configureCharacteristics:(id)arg1 queue:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)configureCharacteristics:(id)arg1 queue:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;

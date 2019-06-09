@@ -34,12 +34,12 @@
 @property(copy, nonatomic) NSString *defaultMessage; // @synthesize defaultMessage=_defaultMessage;
 @property(retain, nonatomic) NSArray *players; // @synthesize players=_players;
 @property(retain, nonatomic) GKChallengeIssueHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+- (void)extensionDidFinishWithError:(id)arg1;
+- (void)_setupRemoteViewController;
 - (void)doneWithPlayers:(id)arg1 message:(id)arg2;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (_Bool)shouldAutomaticallyForwardRotationMethods;
 - (_Bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (void)extensionDidFinishWithError:(id)arg1;
-- (void)_setupRemoteViewController;
 - (void)_setupChildViewController;
 - (void)dealloc;
 - (id)initWithChallenge:(id)arg1 players:(id)arg2 defaultMessage:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

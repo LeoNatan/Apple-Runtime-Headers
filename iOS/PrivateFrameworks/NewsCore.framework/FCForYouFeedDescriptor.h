@@ -13,7 +13,7 @@
 
 @interface FCForYouFeedDescriptor : FCFeedDescriptor <FCFeedPaginating>
 {
-    unsigned long long _trendingAndSavedStoriesCount;
+    unsigned long long _savedStoriesCount;
     id <FCCoreConfigurationManager> _configurationManager;
     FCSubscriptionList *_subscriptionList;
     id <FCFeedPersonalizing> _feedPersonalizer;
@@ -24,7 +24,7 @@
 @property(retain, nonatomic) id <FCFeedPersonalizing> feedPersonalizer; // @synthesize feedPersonalizer=_feedPersonalizer;
 @property(retain, nonatomic) FCSubscriptionList *subscriptionList; // @synthesize subscriptionList=_subscriptionList;
 @property(retain, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
-@property(nonatomic) unsigned long long trendingAndSavedStoriesCount; // @synthesize trendingAndSavedStoriesCount=_trendingAndSavedStoriesCount;
+@property(nonatomic) unsigned long long savedStoriesCount; // @synthesize savedStoriesCount=_savedStoriesCount;
 - (void).cxx_destruct;
 - (void)d_fetchAllHeadlinesWithCloudContext:(id)arg1 sinceDate:(id)arg2 filter:(_Bool)arg3 personalize:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)_sortedEditorialGroupEmittersWithForYouGroupsConfiguration:(id)arg1;
@@ -43,7 +43,7 @@
 - (id)name;
 - (_Bool)hasEditions;
 - (_Bool)derivesContentsFromExplicitSubscriptions;
-- (id)initWithIdentifier:(id)arg1 trendingAndSavedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4 feedPersonalizer:(id)arg5 paidAccessChecker:(id)arg6;
+- (id)initWithIdentifier:(id)arg1 savedStoriesCount:(long long)arg2 configurationManager:(id)arg3 subscriptionList:(id)arg4 feedPersonalizer:(id)arg5 paidAccessChecker:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

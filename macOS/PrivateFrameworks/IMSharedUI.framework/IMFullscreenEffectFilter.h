@@ -18,18 +18,18 @@
     double _balloonAlpha;
     double _contentAlpha;
     CAFilter *_textCompositingFilter;
-    NSColor *_textColor;
+    struct NSColor *_textColor;
 }
 
-@property(copy, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
-@property(copy, nonatomic) CAFilter *textCompositingFilter; // @synthesize textCompositingFilter=_textCompositingFilter;
-@property(nonatomic) double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
-@property(nonatomic) double balloonAlpha; // @synthesize balloonAlpha=_balloonAlpha;
-@property(copy, nonatomic) CAFilter *balloonCompositingFilter; // @synthesize balloonCompositingFilter=_balloonCompositingFilter;
-@property(copy, nonatomic) NSArray *balloonBackdropFilters; // @synthesize balloonBackdropFilters=_balloonBackdropFilters;
-@property(copy, nonatomic) NSArray *balloonFilters; // @synthesize balloonFilters=_balloonFilters;
-@property(nonatomic) unsigned long long direction; // @synthesize direction=_direction;
-@property(nonatomic) long long type; // @synthesize type=_type;
+@property(copy) NSColor *textColor; // @synthesize textColor=_textColor;
+@property(copy) CAFilter *textCompositingFilter; // @synthesize textCompositingFilter=_textCompositingFilter;
+@property double contentAlpha; // @synthesize contentAlpha=_contentAlpha;
+@property double balloonAlpha; // @synthesize balloonAlpha=_balloonAlpha;
+@property(copy) CAFilter *balloonCompositingFilter; // @synthesize balloonCompositingFilter=_balloonCompositingFilter;
+@property(copy) NSArray *balloonBackdropFilters; // @synthesize balloonBackdropFilters=_balloonBackdropFilters;
+@property(copy) NSArray *balloonFilters; // @synthesize balloonFilters=_balloonFilters;
+@property unsigned long long direction; // @synthesize direction=_direction;
+@property long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)init;
 

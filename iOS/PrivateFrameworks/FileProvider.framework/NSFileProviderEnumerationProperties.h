@@ -4,36 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <FileProvider/FPEnumerationSettings.h>
 
-#import <FileProvider/NSSecureCoding-Protocol.h>
+@class NSArray, NSDictionary, NSString;
 
-@class FPItemID, NSArray, NSDictionary, NSString, NSURL;
-
-@interface NSFileProviderEnumerationProperties : NSObject <NSSecureCoding>
+@interface NSFileProviderEnumerationProperties : FPEnumerationSettings
 {
-    _Bool _recursiveEnumeration;
-    NSURL *_enumeratedItemURL;
-    FPItemID *_enumeratedItemID;
     NSArray *_fileTypes;
-    unsigned long long _requestedBatchSize;
-    NSString *_enumeratingApplicationBundleIdentifier;
     NSDictionary *_userInfo;
+    NSString *_enumeratingApplicationBundleIdentifier;
+    NSString *_enumeratedItemIdentifier;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property _Bool recursiveEnumeration; // @synthesize recursiveEnumeration=_recursiveEnumeration;
+@property(copy) NSString *enumeratedItemIdentifier; // @synthesize enumeratedItemIdentifier=_enumeratedItemIdentifier;
 @property(copy) NSString *enumeratingApplicationBundleIdentifier; // @synthesize enumeratingApplicationBundleIdentifier=_enumeratingApplicationBundleIdentifier;
-@property unsigned long long requestedBatchSize; // @synthesize requestedBatchSize=_requestedBatchSize;
+@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) NSArray *fileTypes; // @synthesize fileTypes=_fileTypes;
-@property(copy) FPItemID *enumeratedItemID; // @synthesize enumeratedItemID=_enumeratedItemID;
-@property(copy, getter=_enumeratedItemURL, setter=_setEnumeratedItemURL:) NSURL *_enumeratedItemURL; // @synthesize _enumeratedItemURL;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-@property(copy) NSString *enumeratedItemIdentifier;
-- (id)init;
 
 @end
 

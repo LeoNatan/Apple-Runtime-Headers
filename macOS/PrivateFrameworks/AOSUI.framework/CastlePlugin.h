@@ -7,20 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <AOSUI/AKAppleIDAuthenticationDelegate-Protocol.h>
-#import <AOSUI/FLFollowUpControllerDelegate-Protocol.h>
 #import <AOSUI/MMWebKitViewControllerDelegate-Protocol.h>
-#import <AOSUI/iCloudWebViewDelegate-Protocol.h>
 
-@class ADMChangePasswordController, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSArray, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSTimer, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController, iCloudSetupTopLevel;
+@class ADMChangePasswordController, MMOutOfNetworkSheetController, MMSignoutSheetController, MMWebKitViewController, MM_Account, NSBox, NSButton, NSDictionary, NSError, NSImageView, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSTimer, NSView, NSWindow, iCloudAccountDetailsController, iCloudAccountDetailsControllerNew, iCloudAccountDetailsWebTabView, iCloudPurchaseStorageController, iCloudSetupTopLevel;
 @protocol OS_dispatch_semaphore, iCloudPrefDelegate;
 
-@interface CastlePlugin : NSObject <AKAppleIDAuthenticationDelegate, FLFollowUpControllerDelegate, MMWebKitViewControllerDelegate, iCloudWebViewDelegate>
+@interface CastlePlugin : NSObject <AKAppleIDAuthenticationDelegate, MMWebKitViewControllerDelegate>
 {
-    id <iCloudPrefDelegate> _delegate;
     MMWebKitViewController *_webKitViewController;
     MM_Account *_provisionalAccount;
-    NSString *_pw;
-    NSString *_appleID;
     NSDictionary *_authenticationResults;
     iCloudSetupTopLevel *setupController;
     NSMutableDictionary *_accountList;
@@ -28,9 +23,9 @@
     NSTimer *_signoutSpinnerStartTimer;
     double _signoutSpinnerStopTime;
     NSWindow *_mainWindow;
+    NSString *_reAuthTitleFormat;
     iCloudAccountDetailsController *_accountDetailsController;
     iCloudAccountDetailsControllerNew *_accountDetailsControllerNew;
-    NSString *_reAuthTitleFormat;
     ADMChangePasswordController *mChangePasswordController;
     iCloudAccountDetailsWebTabView *setupFamilyView;
     iCloudAccountDetailsWebTabView *manageFamilyView;
@@ -39,12 +34,10 @@
     BOOL _signInSucess;
     NSObject<OS_dispatch_semaphore> *_signInTokenSemaphore;
     NSError *_signinErrorToReturn;
-    NSArray *_topLevelObjects;
     int _notifyToken;
-    NSView *_setupViewHolderTopLevel;
-    NSView *_setupContainerViewTopLevel;
-    NSView *_signInContainerViewTopLevel;
-    NSView *_signInViewHolderTopLevel;
+    NSString *_appleID;
+    NSString *_pw;
+    id <iCloudPrefDelegate> _delegate;
     NSView *_containerViewTopLevel;
     NSView *_viewHolderTopLevel;
     NSProgressIndicator *_signOutSpinner;
@@ -68,22 +61,18 @@
 @property(retain) MMOutOfNetworkSheetController *outofNetworkheetController; // @synthesize outofNetworkheetController=_outofNetworkheetController;
 @property(retain) MMSignoutSheetController *signoutSheetController; // @synthesize signoutSheetController=_signoutSheetController;
 @property(retain) NSView *signOutView; // @synthesize signOutView=_signOutView;
-@property(retain) NSTextField *signingOutLabel; // @synthesize signingOutLabel=_signingOutLabel;
-@property(retain) NSBox *familySetupView; // @synthesize familySetupView=_familySetupView;
+@property __weak NSTextField *signingOutLabel; // @synthesize signingOutLabel=_signingOutLabel;
+@property __weak NSBox *familySetupView; // @synthesize familySetupView=_familySetupView;
 @property(retain) NSView *familySetupContainerViewTopLevel; // @synthesize familySetupContainerViewTopLevel=_familySetupContainerViewTopLevel;
-@property(retain) NSButton *appSelectionGoBackButton; // @synthesize appSelectionGoBackButton=_appSelectionGoBackButton;
-@property(retain) NSButton *appSelectionCancelButton; // @synthesize appSelectionCancelButton=_appSelectionCancelButton;
-@property(retain) NSButton *appSelectionAddAccountButton; // @synthesize appSelectionAddAccountButton=_appSelectionAddAccountButton;
-@property(retain) NSTextField *appSelectionUseWithLabel; // @synthesize appSelectionUseWithLabel=_appSelectionUseWithLabel;
-@property(retain) NSTextField *appSelectionAccountLabel; // @synthesize appSelectionAccountLabel=_appSelectionAccountLabel;
-@property(retain) NSImageView *appSelectionLogoImage; // @synthesize appSelectionLogoImage=_appSelectionLogoImage;
-@property(retain) NSProgressIndicator *signOutSpinner; // @synthesize signOutSpinner=_signOutSpinner;
+@property __weak NSButton *appSelectionGoBackButton; // @synthesize appSelectionGoBackButton=_appSelectionGoBackButton;
+@property __weak NSButton *appSelectionCancelButton; // @synthesize appSelectionCancelButton=_appSelectionCancelButton;
+@property __weak NSButton *appSelectionAddAccountButton; // @synthesize appSelectionAddAccountButton=_appSelectionAddAccountButton;
+@property __weak NSTextField *appSelectionUseWithLabel; // @synthesize appSelectionUseWithLabel=_appSelectionUseWithLabel;
+@property __weak NSTextField *appSelectionAccountLabel; // @synthesize appSelectionAccountLabel=_appSelectionAccountLabel;
+@property __weak NSImageView *appSelectionLogoImage; // @synthesize appSelectionLogoImage=_appSelectionLogoImage;
+@property __weak NSProgressIndicator *signOutSpinner; // @synthesize signOutSpinner=_signOutSpinner;
 @property(retain) NSView *viewHolderTopLevel; // @synthesize viewHolderTopLevel=_viewHolderTopLevel;
 @property(retain) NSView *containerViewTopLevel; // @synthesize containerViewTopLevel=_containerViewTopLevel;
-@property(retain) NSView *signInViewHolderTopLevel; // @synthesize signInViewHolderTopLevel=_signInViewHolderTopLevel;
-@property(retain) NSView *signInContainerViewTopLevel; // @synthesize signInContainerViewTopLevel=_signInContainerViewTopLevel;
-@property(retain) NSView *setupContainerViewTopLevel; // @synthesize setupContainerViewTopLevel=_setupContainerViewTopLevel;
-@property(retain) NSView *setupViewHolderTopLevel; // @synthesize setupViewHolderTopLevel=_setupViewHolderTopLevel;
 @property(retain) NSError *signinErrorToReturn; // @synthesize signinErrorToReturn=_signinErrorToReturn;
 @property BOOL signInSuccess; // @synthesize signInSuccess=_signInSucess;
 @property(retain) NSObject<OS_dispatch_semaphore> *signInTokenSemaphore; // @synthesize signInTokenSemaphore=_signInTokenSemaphore;
@@ -91,8 +80,9 @@
 @property(retain) iCloudAccountDetailsControllerNew *accountDetailsControllerNew; // @synthesize accountDetailsControllerNew=_accountDetailsControllerNew;
 @property(retain) iCloudAccountDetailsController *accountDetailsController; // @synthesize accountDetailsController=_accountDetailsController;
 @property(retain) NSString *visibleAccountID; // @synthesize visibleAccountID=_visibleAccountID;
-@property NSString *pw; // @synthesize pw=_pw;
-@property NSString *appleID; // @synthesize appleID=_appleID;
+@property(retain) NSString *pw; // @synthesize pw=_pw;
+@property(retain) NSString *appleID; // @synthesize appleID=_appleID;
+- (void).cxx_destruct;
 - (void)sizeChangedFrom:(struct CGSize)arg1 toSize:(struct CGSize)arg2 webViewName:(id)arg3 callback:(id)arg4;
 - (void)loadFailed:(id)arg1;
 - (void)endWebView:(id)arg1;
@@ -105,12 +95,8 @@
 - (void)showAccountDetailsForAccount:(id)arg1 inWindow:(id)arg2;
 - (void)showNewAccountDetailsForAccount:(id)arg1 inWindow:(id)arg2;
 - (void)showNewAccountDetailsForAccount:(id)arg1 inWindow:(id)arg2 andOpenSection:(id)arg3;
-- (void)didClearFollowUpItem:(id)arg1;
-- (void)didDismissFollowUpItem:(id)arg1;
-- (void)didActivateFollowUpItem:(id)arg1;
 - (void)enableDataclassWhenAccountIsVetted:(id)arg1;
 - (void)showSharingUIForAccount:(id)arg1 inWindow:(id)arg2 withInfo:(id)arg3;
-- (void)checkGroupView;
 - (void)openSystemPrefCreateWindow;
 - (void)registerWithiCloud:(id)arg1 password:(id)arg2;
 - (void)setValue:(id)arg1 forProperty:(id)arg2 accountID:(id)arg3;
@@ -144,7 +130,6 @@
 - (BOOL)shouldShowPasswordField;
 - (id)bannerImage;
 - (id)imageForAccount:(id)arg1;
-- (id)isAccountBeta:(id)arg1;
 - (void)callRefresh;
 - (id)servicesViewForAccount:(id)arg1;
 - (id)loadServicesViewForAccount:(id)arg1 withSigninError:(id)arg2;
@@ -172,7 +157,6 @@
 - (void)createPressedTopLevel:(id)arg1;
 - (void)cancelPressedTopLevel:(id)arg1;
 - (void)enableDataClass:(id)arg1;
-- (void)releasePassword;
 - (void)_closeCreateAppleIDWindow:(BOOL)arg1;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;
@@ -220,7 +204,6 @@
 - (void)_loadNibIfNeeded;
 - (void)_registerNotificationListeners;
 @property(readonly) NSWindow *prefsWindow;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

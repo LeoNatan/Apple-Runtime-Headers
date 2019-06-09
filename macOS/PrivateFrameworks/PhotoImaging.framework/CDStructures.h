@@ -33,6 +33,14 @@ struct NUResponse {
     Class _field1;
 };
 
+struct vector<float, std::__1::allocator<float>> {
+    float *_field1;
+    float *_field2;
+    struct __compressed_pair<float *, std::__1::allocator<float>> {
+        float *_field1;
+    } _field3;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -40,10 +48,10 @@ typedef struct {
 } CDStruct_145c54d4;
 
 typedef struct {
-    double _field1;
-    double _field2;
-    double _field3;
-} CDStruct_39925896;
+    double sat;
+    double contrast;
+    double cast;
+} CDStruct_7982ab34;
 
 typedef struct {
     double _field1;
@@ -69,6 +77,11 @@ typedef struct {
 } CDStruct_92960315;
 
 typedef struct {
+    CDStruct_1b6d18a9 _field1;
+    CDStruct_1b6d18a9 _field2;
+} CDStruct_5c5366e1;
+
+typedef struct {
     struct {
         long long x;
         long long y;
@@ -86,4 +99,12 @@ typedef struct {
     long long width;
     long long height;
 } CDStruct_d58201db;
+
+typedef struct vector<float, std::__1::allocator<float>> {
+    float *_field1;
+    float *_field2;
+    struct __compressed_pair<float *, std::__1::allocator<float>> {
+        float *_field1;
+    } _field3;
+} vector_f9ed6fc8;
 

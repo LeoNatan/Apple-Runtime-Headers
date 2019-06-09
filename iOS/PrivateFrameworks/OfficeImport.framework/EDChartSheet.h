@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct CGRect mBounds;
 }
 
+- (void).cxx_destruct;
 - (void)addDrawable:(id)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (struct CGRect)bounds;

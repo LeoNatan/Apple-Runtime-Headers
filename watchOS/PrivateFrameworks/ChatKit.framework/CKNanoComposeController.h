@@ -6,13 +6,15 @@
 
 #import <PepperUICore/PUICQuickboardCompositionViewController.h>
 
+#import <ChatKit/PUICActionContentControllerDelegate-Protocol.h>
 #import <ChatKit/PUICQuickboardCompositionViewControllerDelegatePrivate-Protocol.h>
 #import <ChatKit/PUICQuickboardViewControllerDelegate-Protocol.h>
+#import <ChatKit/STLockoutViewControllerDelegate-Protocol.h>
 
 @class CKAudioMediaObject, CKBrowserItemPayload, CKConversation, IMSticker, NSString, NSURL;
 @protocol CKNanoComposeControllerDismissalDelegate;
 
-@interface CKNanoComposeController : PUICQuickboardCompositionViewController <PUICQuickboardCompositionViewControllerDelegatePrivate, PUICQuickboardViewControllerDelegate>
+@interface CKNanoComposeController : PUICQuickboardCompositionViewController <PUICQuickboardCompositionViewControllerDelegatePrivate, PUICQuickboardViewControllerDelegate, PUICActionContentControllerDelegate, STLockoutViewControllerDelegate>
 {
     _Bool _shouldPreserveConversation;
     id <CKNanoComposeControllerDismissalDelegate> _dismissalDelegate;
@@ -30,6 +32,7 @@
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(nonatomic) id <CKNanoComposeControllerDismissalDelegate> dismissalDelegate; // @synthesize dismissalDelegate=_dismissalDelegate;
 - (void).cxx_destruct;
+- (void)lockoutViewControllerDidFinishDismissing:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)resetMessageContent;
 - (id)localizedLabelForEntity:(id)arg1;
@@ -50,6 +53,7 @@
 - (void)composeControllerCompositionChanged:(id)arg1;
 - (void)composeControllerFinished:(id)arg1;
 - (void)composeControllerCancelled:(id)arg1;
+- (void)actionContentControllerCancel:(id)arg1;
 - (void)conversationPreferredServiceChanged:(id)arg1;
 - (void)assistantDidSend:(id)arg1;
 - (void)applicationDidEnterBackground:(id)arg1;

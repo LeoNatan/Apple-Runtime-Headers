@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSDictionary, NSString, NSURL, OSPDevice, OSPSecureBootBundle;
+@class NSArray, NSData, NSDictionary, NSString, NSURL, NSUUID, OSPDevice, OSPSecureBootBundle;
 
 @interface OSPRequest : NSObject
 {
@@ -38,9 +38,13 @@
     NSURL *_testPersonalizedOutputURL;
     long long _fakePersonalizationErrorCode;
     NSURL *_signedPRDocumentPublicKeyURL;
+    NSString *_kernelCacheOverrideTag;
+    NSUUID *_uuid;
 }
 
 @property BOOL showUsageForPersonalization; // @synthesize showUsageForPersonalization=_showUsageForPersonalization;
+@property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(retain) NSString *kernelCacheOverrideTag; // @synthesize kernelCacheOverrideTag=_kernelCacheOverrideTag;
 @property(retain) NSURL *signedPRDocumentPublicKeyURL; // @synthesize signedPRDocumentPublicKeyURL=_signedPRDocumentPublicKeyURL;
 @property BOOL useDummyDeviceIdentity; // @synthesize useDummyDeviceIdentity=_useDummyDeviceIdentity;
 @property long long fakePersonalizationErrorCode; // @synthesize fakePersonalizationErrorCode=_fakePersonalizationErrorCode;

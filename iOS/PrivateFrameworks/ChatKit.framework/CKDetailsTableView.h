@@ -6,6 +6,7 @@
 
 #import <UIKit/UITableView.h>
 
+__attribute__((visibility("hidden")))
 @interface CKDetailsTableView : UITableView
 {
 }

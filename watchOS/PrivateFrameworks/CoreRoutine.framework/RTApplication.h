@@ -6,31 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreRoutine/NSCopying-Protocol.h>
-#import <CoreRoutine/NSSecureCoding-Protocol.h>
-
 @class NSString;
 
-@interface RTApplication : NSObject <NSSecureCoding, NSCopying>
+@interface RTApplication : NSObject
 {
     NSString *_bundleId;
     NSString *_localizedDisplayName;
     int _capabilities;
 }
 
-+ (id)capabilitiesToString:(int)arg1;
-+ (_Bool)supportsSecureCoding;
 @property(nonatomic) int capabilities; // @synthesize capabilities=_capabilities;
 @property(readonly, nonatomic) NSString *localizedDisplayName; // @synthesize localizedDisplayName=_localizedDisplayName;
 @property(readonly, nonatomic) NSString *bundleId; // @synthesize bundleId=_bundleId;
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (_Bool)isEqual:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithBundleId:(id)arg1 localizedDisplayName:(id)arg2 capabilities:(int)arg3;
+- (id)init;
 
 @end
 

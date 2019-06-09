@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AVKeyPathDependencyManager, AVNetworkPlaybackPerfHUDLayer, AVPlayer, AVPlayerLayer, CALayer, FigBaseCALayer, FigSubtitleCALayer, FigVideoContainerLayer, NSDictionary, NSSet, NSString;
-@protocol AVCallbackCancellation, OS_dispatch_queue;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVPlayerLayerInternal : NSObject
@@ -17,14 +17,12 @@ __attribute__((visibility("hidden")))
     _Bool isPresentationLayer;
     struct OpaqueFigSimpleMutex *isReadyForDisplayMutex;
     NSObject<OS_dispatch_queue> *configurationQueue;
-    NSString *subtitleGravity;
     AVKeyPathDependencyManager *dependencyManager;
     AVPlayer *player;
     NSString *videoGravity;
     NSDictionary *pixelBufferAttributes;
     _Bool lanczosDownscalingEnabled;
     long long lanczosDownscalingFactor;
-    _Bool shouldObservePlayer;
     FigBaseCALayer *maskLayer;
     FigVideoContainerLayer *videoLayer;
     FigSubtitleCALayer *subtitleLayer;
@@ -36,7 +34,6 @@ __attribute__((visibility("hidden")))
     AVPlayer *playerBeingObserved;
     NSSet *KVOInvokers;
     struct CGSize latestAppliedPresentationSize;
-    id <AVCallbackCancellation> playerCurrentItemHasVideoFrameEnqueuedKVOInvoker;
     _Bool preventsChangesToSublayerHierarchy;
     NSDictionary *clientLayers;
     _Bool isPIPModeEnabled;

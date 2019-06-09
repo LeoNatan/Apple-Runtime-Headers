@@ -9,6 +9,7 @@
 @class NSURL;
 @protocol SKUIArtworkProviding;
 
+__attribute__((visibility("hidden")))
 @interface SKUIVideo : NSObject
 {
     id <SKUIArtworkProviding> _artworks;

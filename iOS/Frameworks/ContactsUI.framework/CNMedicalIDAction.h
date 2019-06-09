@@ -8,18 +8,16 @@
 
 #import <ContactsUI/HKMedicalIDViewControllerDelegate-Protocol.h>
 
-@class CNContact, HKHealthStore, NSString, _HKMedicalIDData;
+@class CNContact, CNHealthStoreManager, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CNMedicalIDAction : CNPropertyAction <HKMedicalIDViewControllerDelegate>
 {
     long long _medicalIDActionType;
-    HKHealthStore *_healthStore;
-    _HKMedicalIDData *_healthData;
+    CNHealthStoreManager *_healthStoreManager;
 }
 
-@property(retain, nonatomic) _HKMedicalIDData *healthData; // @synthesize healthData=_healthData;
-@property(retain, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
+@property(retain, nonatomic) CNHealthStoreManager *healthStoreManager; // @synthesize healthStoreManager=_healthStoreManager;
 @property(nonatomic) long long medicalIDActionType; // @synthesize medicalIDActionType=_medicalIDActionType;
 - (void).cxx_destruct;
 - (void)medicalIDViewControllerDidFinish:(id)arg1;

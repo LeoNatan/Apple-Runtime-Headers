@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (float)_scaledMessageSafeBaselineHeightInAlertControllerView:(id)arg1;
 - (float)_scaledTitleLabelSafeBaselineHeightInAlertControllerView:(id)arg1;
 - (float)_scaledSafeBaselineHeightForLabelFont:(id)arg1 inAlertControllerView:(id)arg2;
-- (float)_scaledMarginAboveTitleLabelFirstBaselineInAlertControllerView:(id)arg1;
+- (float)_scaledMarginAboveTitleLabelFirstBaselineInAlertControllerView:(id)arg1 titleText:(id)arg2;
 - (void)configureAttributesForImageView:(id)arg1 imageProperty:(id)arg2 actionViewState:(id)arg3;
 - (void)configureAttributesForTitleLabel:(id)arg1 classificationLabel:(id)arg2 actionViewState:(id)arg3;
 - (struct UIEdgeInsets)actionImageMarginForAction;
@@ -60,7 +60,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
 - (int)permittedActionLayoutDirection;
 - (id)defaultActionFont;
-- (id)textFieldContainingViewWithTextField:(id)arg1;
+- (id)textFieldContainingViewWithTextField:(id)arg1 position:(int)arg2;
 - (struct UIEdgeInsets)contentInsetsForContainerView:(id)arg1;
 - (float)maximumHeightForDisplayOnScreen:(id)arg1;
 - (float)maximumWidthForTitleAndMessageContentView;
@@ -78,10 +78,12 @@ __attribute__((visibility("hidden")))
 - (id)messageLabelColor;
 - (id)messageLabelFont;
 - (int)maximumNumberOfLinesInTitleLabel;
+- (float)_marginAroundActionGroup;
 - (float)marginBelowTitleLabelLastBaseline;
 - (float)marginAboveTitleLabelFirstBaseline;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
+- (id)vibrancyEffectForTitleAndMessageLabel;
 - (void)_reloadInterfaceActionVisualStyle;
 - (Class)interfaceActionVisualStyleClassForManagingConcreteVisualStyle;
 - (_Bool)isEqual:(id)arg1;

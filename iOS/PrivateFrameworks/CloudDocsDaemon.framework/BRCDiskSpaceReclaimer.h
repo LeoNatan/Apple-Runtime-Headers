@@ -35,16 +35,14 @@ __attribute__((visibility("hidden")))
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(CDUnknownBlockType)arg1 withUrgency:(int)arg2;
 - (void)_enumerateItemsForEvictSyncWithBlock:(CDUnknownBlockType)arg1 withTimeDelta:(double)arg2 onDiskAccessTimeDelta:(double)arg3;
-- (void)_updateNonPurgeableCachedSizeForDocument:(id)arg1;
 - (id)accessTimestampForDocument:(id)arg1;
 - (_Bool)documentWasAccessedRecently:(id)arg1;
+- (void)didUpdateMtimeOnDocument:(id)arg1;
 - (void)didAccessDocument:(id)arg1;
 - (_Bool)overwriteDocumentAccessTime:(id)arg1 atime:(unsigned long long)arg2;
 - (_Bool)documentUpdateEvictability:(id)arg1;
-- (_Bool)documentWasUpdated:(id)arg1 diffs:(unsigned long long)arg2;
 - (_Bool)documentWasDeleted:(id)arg1;
 - (_Bool)documentWasCreated:(id)arg1;
-- (void)_updateNonPurgeableCachedSizeByAddingBytes:(long long)arg1;
 - (long long)periodicReclaimSpace;
 - (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
 - (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
@@ -55,7 +53,6 @@ __attribute__((visibility("hidden")))
 - (long long)_dbAutovacuumableSpaceInBytes:(id)arg1;
 - (long long)_dbSizeInBytes:(id)arg1;
 - (void)computePurgeableSpaceForAllUrgenciesWithReply:(CDUnknownBlockType)arg1;
-- (void)cachedPurgeableSpaceForAllUrgencies:(id *)arg1 nonPurgeableSpace:(id *)arg2 error:(id *)arg3;
 - (void)close;
 - (id)initWithAccountSession:(id)arg1;
 

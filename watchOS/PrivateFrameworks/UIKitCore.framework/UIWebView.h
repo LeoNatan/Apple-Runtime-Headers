@@ -138,6 +138,9 @@
 - (void)_finishRotation;
 - (void)_beginRotation;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)_dynamicUserInterfaceTraitDidChange;
+- (_Bool)_effectiveAppearanceIsInactive;
+- (_Bool)_effectiveAppearanceIsDark;
 - (void)_updateCheckeredPattern;
 @property(nonatomic) _Bool suppressesIncrementalRendering;
 @property(readonly, nonatomic, getter=canGoForward) _Bool canGoForward;

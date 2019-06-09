@@ -28,6 +28,7 @@
     NSError *_smimeError;
     BOOL _isEncrypted;
     BOOL _isSigned;
+    BOOL _skipSignatureVerification;
     BOOL _hideCalendarMimePart;
     BOOL _isMalformed;
     BOOL _fromMicrosoft;
@@ -51,6 +52,7 @@
 @property(nonatomic) BOOL isMalformed; // @synthesize isMalformed=_isMalformed;
 @property BOOL hideCalendarMimePart; // @synthesize hideCalendarMimePart=_hideCalendarMimePart;
 @property(nonatomic) __weak MCMimePart *parentPart; // @synthesize parentPart=_parentPart;
+@property(nonatomic) BOOL skipSignatureVerification; // @synthesize skipSignatureVerification=_skipSignatureVerification;
 @property(nonatomic) unsigned long long contentLength; // @synthesize contentLength=_contentLength;
 @property(copy, nonatomic) NSString *contentTransferEncoding; // @synthesize contentTransferEncoding=_contentTransferEncoding;
 @property(readonly, copy, nonatomic) NSData *encodedBodyData; // @synthesize encodedBodyData=_encodedBodyData;
@@ -66,7 +68,6 @@
 - (id)_decodeApplicationSmil;
 - (id)_decodeApplicationZip;
 - (id)_decodeApplicationOctetStream;
-- (id)_decodeApplicationAppleCompositeImage;
 - (id)_decodeMultipartFolder;
 - (id)_decodeMultipartRelated;
 - (id)_decodeMultipartAlternative;
@@ -129,8 +130,6 @@
 - (BOOL)shouldConsiderInlineOverridingExchangeServer;
 @property(readonly, nonatomic) BOOL isMessageExternalBodyWithURL;
 - (id)_partThatIsAttachment;
-- (void)markAsStationeryImage;
-@property(readonly, nonatomic) BOOL isStationeryImage;
 @property(readonly, nonatomic) BOOL isCalendar;
 @property(readonly, nonatomic) BOOL isReadableText;
 @property(readonly, nonatomic) unsigned long long approximateDecodedSize;
@@ -139,11 +138,11 @@
 - (id)_cmsExtractedContentIsEncrypted:(char *)arg1 isSigned:(char *)arg2 error:(id *)arg3;
 - (id)_extractCMSContentIfNecessaryIsEncrypted:(char *)arg1 isSigned:(char *)arg2;
 @property(readonly, nonatomic) MCMimePart *cmsExtractedContent;
-@property(readonly, copy, nonatomic) NSArray *attachmentFilenames;
+@property(readonly, copy, nonatomic) NSArray *attachmentMetadata;
 @property(readonly, copy, nonatomic) NSArray *attachments;
-- (void)getNumberOfAttachments:(unsigned int *)arg1 filenames:(id)arg2 numberOfTNEFAttachments:(unsigned int *)arg3 isSigned:(char *)arg4 isEncrypted:(char *)arg5;
+- (void)getNumberOfAttachments:(unsigned int *)arg1 metadata:(id)arg2 numberOfTNEFAttachments:(unsigned int *)arg3 isSigned:(char *)arg4 isEncrypted:(char *)arg5;
 @property(readonly, nonatomic) unsigned int numberOfAttachments;
-- (void)_getAttachmentsAndAddToCount:(unsigned int *)arg1 isSigned:(char *)arg2 isEncrypted:(char *)arg3 attachments:(id)arg4 attachmentsName:(id)arg5 numberOfTNEFAttachments:(unsigned int *)arg6;
+- (void)_getAttachmentsAndAddToCount:(unsigned int *)arg1 isSigned:(char *)arg2 isEncrypted:(char *)arg3 attachments:(id)arg4 metadata:(id)arg5 numberOfTNEFAttachments:(unsigned int *)arg6;
 @property(readonly, nonatomic) BOOL isCMSPart;
 @property(readonly, copy, nonatomic) NSString *attachmentFilename;
 - (id)_attachmentFilenameWithHiddenExtension:(char *)arg1;
@@ -195,7 +194,7 @@
 - (id)decodeApplicationPkcs7;
 - (void)extractCMSContent;
 - (id)decodeMultipartSigned;
-- (id)newSignedPartWithData:(id)arg1 sender:(id)arg2 identity:(struct OpaqueSecIdentityRef *)arg3 signatureData:(id *)arg4;
+- (id)newSignedPartWithData:(id)arg1 sender:(id)arg2 identity:(struct __SecIdentity *)arg3 signatureData:(id *)arg4;
 
 @end
 

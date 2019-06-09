@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     NSPersistentStore *_store;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)migrate;
 - (id)_initWithStore:(id)arg1 context:(id)arg2;
 - (id)initWithStore:(id)arg1;

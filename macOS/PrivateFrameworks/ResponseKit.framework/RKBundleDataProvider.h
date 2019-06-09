@@ -28,7 +28,6 @@
 @property(readonly) RKAssets *assets; // @synthesize assets=_assets;
 @property(readonly) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
-- (struct __LSMMap *)polarityMapForLanguageID:(id)arg1;
 - (id)displayStringsForPlatform:(id)arg1 languageID:(id)arg2;
 - (id)stringsFromTable:(id)arg1 forLanguageIdentifier:(id)arg2;
 - (id)initWithAssetPlist:(id)arg1;

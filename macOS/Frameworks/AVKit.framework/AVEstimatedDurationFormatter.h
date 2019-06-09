@@ -6,6 +6,7 @@
 
 #import <Foundation/NSFormatter.h>
 
+__attribute__((visibility("hidden")))
 @interface AVEstimatedDurationFormatter : NSFormatter
 {
 }

@@ -18,13 +18,16 @@
 + (unsigned int)strategyFromExternalResource:(id)arg1 asset:(id)arg2;
 + (id)fileURLForPayloadKeyData:(unsigned long long)arg1 assetID:(id)arg2;
 - (id)descriptionForAssetID:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToKey:(id)arg1;
 - (id)initFromExistingLocationOfExternalResource:(id)arg1 asset:(id)arg2;
+- (id)validateForAssetID:(id)arg1 resourceIdentity:(id)arg2;
 - (id)_initFromExistingLocationOfExternalResource:(id)arg1 asset:(id)arg2;
 - (id)_initWithKeyStruct:(const void *)arg1;
 - (id)_init;
+- (id)uniformTypeIdentifier;
 - (id)fileURLForAssetID:(id)arg1;
 - (id)keyData;
-- (_Bool)isValid;
 - (id)initWithKeyStruct:(const void *)arg1;
 
 // Remaining properties

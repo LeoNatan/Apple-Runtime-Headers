@@ -11,17 +11,20 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (Class)_implClassForStyle:(long long)arg1;
 + (id)implementationFromCoder:(id)arg1;
 - (void)appendDescriptionTo:(id)arg1;
-- (_Bool)_needsUpdateForOption:(id)arg1;
-- (_Bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
+- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
 - (id)implementationForUserInterfaceStyle:(long long)arg1;
+- (_Bool)canProvideCoreMaterialVibrancyEffect;
 - (_Bool)canProvideVibrancyEffect;
 - (_Bool)invertAutomaticStyle;
 - (id)tintColor;
 - (long long)style;
 - (void)setEffect:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 
 @end

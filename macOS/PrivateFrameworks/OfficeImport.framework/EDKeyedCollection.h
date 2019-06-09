@@ -8,6 +8,7 @@
 
 @class OITSUIntegerKeyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface EDKeyedCollection : EDCollection
 {
     OITSUIntegerKeyDictionary *mMap;

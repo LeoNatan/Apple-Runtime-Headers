@@ -8,28 +8,37 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDReverseGeocodingParameters : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_extendedLocations;
     NSMutableArray *_locations;
     int _placeTypeLimit;
     BOOL _preserveOriginalLocation;
     struct {
-        unsigned int placeTypeLimit:1;
-        unsigned int preserveOriginalLocation:1;
-    } _has;
+        unsigned int has_placeTypeLimit:1;
+        unsigned int has_preserveOriginalLocation:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_extendedLocations:1;
+        unsigned int read_locations:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_extendedLocations:1;
+        unsigned int wrote_locations:1;
+        unsigned int wrote_placeTypeLimit:1;
+        unsigned int wrote_preserveOriginalLocation:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)extendedLocationType;
 + (Class)locationType;
-@property(retain, nonatomic) NSMutableArray *extendedLocations; // @synthesize extendedLocations=_extendedLocations;
-@property(nonatomic) BOOL preserveOriginalLocation; // @synthesize preserveOriginalLocation=_preserveOriginalLocation;
-@property(retain, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -38,21 +47,29 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)extendedLocationAtIndex:(unsigned long long)arg1;
 - (unsigned long long)extendedLocationsCount;
+- (void)_addNoFlagsExtendedLocation:(id)arg1;
 - (void)addExtendedLocation:(id)arg1;
 - (void)clearExtendedLocations;
+@property(retain, nonatomic) NSMutableArray *extendedLocations;
+- (void)_readExtendedLocations;
 @property(nonatomic) BOOL hasPreserveOriginalLocation;
+@property(nonatomic) BOOL preserveOriginalLocation;
 - (int)StringAsPlaceTypeLimit:(id)arg1;
 - (id)placeTypeLimitAsString:(int)arg1;
 @property(nonatomic) BOOL hasPlaceTypeLimit;
-@property(nonatomic) int placeTypeLimit; // @synthesize placeTypeLimit=_placeTypeLimit;
+@property(nonatomic) int placeTypeLimit;
 - (id)locationAtIndex:(unsigned long long)arg1;
 - (unsigned long long)locationsCount;
+- (void)_addNoFlagsLocation:(id)arg1;
 - (void)addLocation:(id)arg1;
 - (void)clearLocations;
+@property(retain, nonatomic) NSMutableArray *locations;
+- (void)_readLocations;
 
 @end
 

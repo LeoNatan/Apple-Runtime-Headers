@@ -9,37 +9,37 @@
 #import <MediaControls/FBSDisplayLayoutObserver-Protocol.h>
 #import <MediaControls/MPAVRoutingViewControllerDelegate-Protocol.h>
 #import <MediaControls/MPAVRoutingViewControllerThemeDelegate-Protocol.h>
+#import <MediaControls/MTVisualStylingRequiring-Protocol.h>
 #import <MediaControls/MediaControlsActionsDelegate-Protocol.h>
 #import <MediaControls/MediaControlsCollectionItemViewController-Protocol.h>
 #import <MediaControls/MediaControlsEndpointControllerDelegate-Protocol.h>
 #import <MediaControls/MediaControlsMasterVolumeSliderDelegate-Protocol.h>
 #import <MediaControls/MediaControlsPanelViewControllerDelegate-Protocol.h>
 
-@class FBSDisplayLayoutMonitor, MPAVEndpointRoute, MPAVRoutingViewController, MPArtworkCatalog, MPMediaControls, MPVolumeGroupSliderCoordinator, MRMediaControlsVideoPickerFooterView, MRMediaControlsVideoPickerHeaderView, MTVibrantStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsLanguageOptionsViewController, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsTransitioningDelegate, MediaControlsVolumeContainerView, NSArray, NSMutableArray, NSString, UIView;
+@class FBSDisplayLayoutMonitor, MPAVEndpointRoute, MPAVRoutingViewController, MPArtworkCatalog, MPMediaControls, MPVolumeGroupSliderCoordinator, MRMediaControlsVideoPickerFooterView, MRMediaControlsVideoPickerHeaderView, MTVisualStylingProvider, MediaControlsEndpointController, MediaControlsHeaderView, MediaControlsLanguageOptionsViewController, MediaControlsParentContainerView, MediaControlsRoutingCornerView, MediaControlsTransitioningDelegate, MediaControlsVolumeContainerView, NSArray, NSMutableArray, NSString, UIView;
 @protocol MRPlatterViewControllerDelegate;
 
-@interface MRPlatterViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsActionsDelegate, MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsPanelViewControllerDelegate, FBSDisplayLayoutObserver, MediaControlsCollectionItemViewController>
+@interface MRPlatterViewController : UIViewController <MediaControlsEndpointControllerDelegate, MediaControlsActionsDelegate, MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate, MediaControlsMasterVolumeSliderDelegate, MediaControlsPanelViewControllerDelegate, FBSDisplayLayoutObserver, MTVisualStylingRequiring, MediaControlsCollectionItemViewController>
 {
+    MTVisualStylingProvider *_visualStylingProvider;
     _Bool _selected;
     _Bool _allowsNowPlayingAppLaunch;
     _Bool _transitioning;
     _Bool _onScreen;
     _Bool _isListeningForResponse;
+    _Bool _failedToLoadArtwork;
     UIView *_contentView;
     UIView *_backgroundView;
     MPAVRoutingViewController *_routingViewController;
     id <MRPlatterViewControllerDelegate> _delegate;
     NSString *_routeUID;
     long long _style;
-    MTVibrantStylingProvider *_vibrantStylingProvider;
     double __continuousCornerRadius;
     MRMediaControlsVideoPickerFooterView *_videoPickerFooterView;
     MRMediaControlsVideoPickerHeaderView *_videoPickerHeaderView;
     MediaControlsRoutingCornerView *_routingCornerView;
     MediaControlsParentContainerView *_parentContainerView;
     MediaControlsVolumeContainerView *_volumeContainerView;
-    UIView *_topDividerView;
-    UIView *_bottomDividerView;
     NSMutableArray *_secondaryStringComponents;
     MPArtworkCatalog *_artworkCatalog;
     MPVolumeGroupSliderCoordinator *_groupSliderCoordinator;
@@ -50,6 +50,7 @@
     FBSDisplayLayoutMonitor *_displayMonitor;
     NSArray *_displayElements;
     NSString *_explicitString;
+    long long _failedArtworkRetryCount;
     NSString *_label;
     unsigned long long _supportedModes;
     long long _selectedMode;
@@ -66,6 +67,8 @@
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;
 @property(nonatomic) unsigned long long supportedModes; // @synthesize supportedModes=_supportedModes;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(readonly, nonatomic) long long failedArtworkRetryCount; // @synthesize failedArtworkRetryCount=_failedArtworkRetryCount;
+@property(nonatomic) _Bool failedToLoadArtwork; // @synthesize failedToLoadArtwork=_failedToLoadArtwork;
 @property(copy, nonatomic) NSString *explicitString; // @synthesize explicitString=_explicitString;
 @property(retain, nonatomic) NSArray *displayElements; // @synthesize displayElements=_displayElements;
 @property(retain, nonatomic) FBSDisplayLayoutMonitor *displayMonitor; // @synthesize displayMonitor=_displayMonitor;
@@ -79,8 +82,6 @@
 @property(nonatomic, getter=isOnScreen) _Bool onScreen; // @synthesize onScreen=_onScreen;
 @property(retain, nonatomic) MPArtworkCatalog *artworkCatalog; // @synthesize artworkCatalog=_artworkCatalog;
 @property(retain, nonatomic) NSMutableArray *secondaryStringComponents; // @synthesize secondaryStringComponents=_secondaryStringComponents;
-@property(retain, nonatomic) UIView *bottomDividerView; // @synthesize bottomDividerView=_bottomDividerView;
-@property(retain, nonatomic) UIView *topDividerView; // @synthesize topDividerView=_topDividerView;
 @property(retain, nonatomic) MediaControlsVolumeContainerView *volumeContainerView; // @synthesize volumeContainerView=_volumeContainerView;
 @property(retain, nonatomic) MediaControlsParentContainerView *parentContainerView; // @synthesize parentContainerView=_parentContainerView;
 @property(retain, nonatomic) MediaControlsRoutingCornerView *routingCornerView; // @synthesize routingCornerView=_routingCornerView;
@@ -88,7 +89,6 @@
 @property(retain, nonatomic) MRMediaControlsVideoPickerFooterView *videoPickerFooterView; // @synthesize videoPickerFooterView=_videoPickerFooterView;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(nonatomic, setter=_setContinuousCornerRadius:) double _continuousCornerRadius; // @synthesize _continuousCornerRadius=__continuousCornerRadius;
-@property(retain, nonatomic) MTVibrantStylingProvider *vibrantStylingProvider; // @synthesize vibrantStylingProvider=_vibrantStylingProvider;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) NSString *routeUID; // @synthesize routeUID=_routeUID;
 @property(nonatomic) _Bool allowsNowPlayingAppLaunch; // @synthesize allowsNowPlayingAppLaunch=_allowsNowPlayingAppLaunch;
@@ -99,7 +99,8 @@
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (void)_updateExplicitTreatmentString;
-- (_Bool)lockScreenPresentsAirPlayVideoPicker;
+- (long long)lockScreenInternalRoutePickerOverrideWithDefaultStyle:(long long)arg1;
+- (_Bool)lockScreenPresentsOverrideRoutePicker;
 - (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (void)_routingCornerViewReceivedTap:(id)arg1;
 - (void)_updateRoutingIndicators;
@@ -107,9 +108,11 @@
 - (_Bool)slider:(id)arg1 shouldCancelSnapWithTouch:(id)arg2;
 - (_Bool)slider:(id)arg1 syncStateWillChangeFromState:(long long)arg2 toState:(long long)arg3;
 - (_Bool)shouldEnableSyncingForSlider:(id)arg1;
+- (void)routingViewController:(id)arg1 willDisplayHeaderView:(id)arg2;
 - (void)routingViewController:(id)arg1 willDisplayCell:(id)arg2;
 - (struct UIEdgeInsets)contentInsetsForRoutingViewController:(id)arg1;
 - (void)routingViewController:(id)arg1 didPickRoute:(id)arg2;
+- (void)routingViewController:(id)arg1 didSelectRoutingViewItem:(id)arg2;
 - (void)_platterViewControllerReceivedInteraction:(id)arg1;
 - (void)presentLanguageOptions;
 - (void)presentTVRemote;
@@ -119,6 +122,7 @@
 - (void)headerViewLaunchNowPlayingAppButtonPressed:(id)arg1;
 - (void)_presentRoutingViewControllerFromCoverSheet;
 - (void)_setRoutingPickerVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (_Bool)_canToggleRoutingPicker;
 - (void)headerViewButtonPressed:(id)arg1;
 - (void)footerViewButtonPressed:(id)arg1;
 - (void)_updateSecondaryStringFormat;
@@ -133,6 +137,11 @@
 - (void)_updateConfiguration;
 - (void)setSelectedMode:(long long)arg1 animated:(_Bool)arg2;
 - (void)_updateOnScreenForStyle:(long long)arg1;
+- (void)_dismissShareAudioViewController;
+- (void)_showShareAudioViewController;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+@property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
+- (id)visualStylingProviderForCategory:(long long)arg1;
 - (_Bool)_shouldUseViewServiceToPresentTVRemote;
 - (void)_prewarmTVRemoteIfNeeded;
 - (id)_tvAirplayIdentifier;
@@ -142,6 +151,7 @@
 @property(readonly, nonatomic) UIView *effectiveHeaderView;
 @property(readonly, nonatomic) UIView *effectiveFooterView;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)didMoveToParentViewController:(id)arg1;
@@ -163,6 +173,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

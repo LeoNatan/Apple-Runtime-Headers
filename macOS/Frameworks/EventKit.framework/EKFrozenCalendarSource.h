@@ -8,7 +8,7 @@
 
 #import <EventKit/CalendarSourceModelProtocol-Protocol.h>
 
-@class NSDictionary, NSManagedObjectID, NSSet, NSString, NSURL;
+@class EKFrozenReminderSource, NSDictionary, NSManagedObjectID, NSSet, NSString, NSURL;
 
 @interface EKFrozenCalendarSource : EKFrozenObject <CalendarSourceModelProtocol>
 {
@@ -38,9 +38,11 @@
     NSString *typeString;
     NSString *dropBoxPathString;
     NSURL *serverURL;
+    EKFrozenReminderSource *_reminderSource;
 }
 
 + (Class)meltedClass;
+@property(retain) EKFrozenReminderSource *reminderSource; // @synthesize reminderSource=_reminderSource;
 @property(readonly, nonatomic) BOOL supportsUnbind; // @synthesize supportsUnbind;
 @property(readonly, nonatomic) NSURL *serverURL; // @synthesize serverURL;
 @property(readonly, nonatomic) NSString *dropBoxPathString; // @synthesize dropBoxPathString;

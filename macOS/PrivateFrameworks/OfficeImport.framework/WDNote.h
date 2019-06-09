@@ -8,6 +8,7 @@
 
 @class WDCharacterRun, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WDNote : WDRun
 {
     WDText *mText;

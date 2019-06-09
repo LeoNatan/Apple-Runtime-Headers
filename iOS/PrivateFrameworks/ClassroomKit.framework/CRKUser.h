@@ -10,7 +10,7 @@
 #import <ClassroomKit/NSCopying-Protocol.h>
 #import <ClassroomKit/NSSecureCoding-Protocol.h>
 
-@class CRKNotSoGoodImage, NSData, NSPersonNameComponents, NSString;
+@class CRKImage, NSData, NSPersonNameComponents, NSString;
 
 @interface CRKUser : NSObject <NSSecureCoding, NSCopying, CRKCloudStoringSubItem>
 {
@@ -26,7 +26,7 @@
     NSString *_userSource;
     long long _role;
     NSData *_userImageData;
-    CRKNotSoGoodImage *_userImage;
+    CRKImage *_userImage;
 }
 
 + (id)instanceWithParentObject:(id)arg1 keyValue:(id)arg2;
@@ -37,7 +37,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)customUserFromMeCardUser:(id)arg1;
 + (id)meCardUser;
-@property(copy, nonatomic) CRKNotSoGoodImage *userImage; // @synthesize userImage=_userImage;
+@property(copy, nonatomic) CRKImage *userImage; // @synthesize userImage=_userImage;
 @property(copy, nonatomic) NSData *userImageData; // @synthesize userImageData=_userImageData;
 @property(nonatomic, getter=shouldUseMeCardIfAvailable) _Bool useMeCardIfAvailable; // @synthesize useMeCardIfAvailable=_useMeCardIfAvailable;
 @property(nonatomic) long long role; // @synthesize role=_role;

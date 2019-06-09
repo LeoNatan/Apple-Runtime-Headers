@@ -24,7 +24,9 @@
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
 - (unsigned long long)estimatedBatchSize;
+- (id)redactedDescription;
 - (id)description;
+- (id)_descriptionRedacted:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)appendLocalResources:(id)arg1 forItemWithCloudScopedIdentifier:(id)arg2;
 - (id)localResourceOfType:(unsigned long long)arg1 forItemWithCloudScopedIdentifier:(id)arg2;

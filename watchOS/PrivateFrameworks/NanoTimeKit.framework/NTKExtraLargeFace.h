@@ -10,7 +10,9 @@
 {
 }
 
++ (id)_orderedComplicationSlots;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_complicationSlotDescriptors;
 - (_Bool)_complication:(id)arg1 appearsInDailySnapshotForSlot:(id)arg2;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
 - (_Bool)_snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;
@@ -20,8 +22,6 @@
 - (id)_defaultOptionForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_customEditModes;
 - (id)_localizedNameForComplicationSlot:(id)arg1;
-- (id)_orderedComplicationSlots;
-- (id)_complicationSlotDescriptors;
 - (int)_editModeForOldEncodingIndex:(int)arg1;
 
 @end

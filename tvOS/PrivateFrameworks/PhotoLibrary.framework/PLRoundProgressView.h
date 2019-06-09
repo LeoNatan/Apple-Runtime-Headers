@@ -35,6 +35,7 @@
 @property(retain, nonatomic, setter=_setContentView:) UIView *_contentView; // @synthesize _contentView=__contentView;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)resetProgress;
 - (void)recalculateIncreaseProgress:(double)arg1 withTimeDiff:(double)arg2;
 - (void)setInitialIncreaseRatePerFrame:(double)arg1;

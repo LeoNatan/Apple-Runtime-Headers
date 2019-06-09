@@ -6,17 +6,19 @@
 
 #import <MetalTools/MTLToolsObject.h>
 
-#import <MetalTools/MTLRenderPipelineState-Protocol.h>
+#import <MetalTools/MTLRenderPipelineStateSPI-Protocol.h>
 
-@class NSString;
+@class MTLDebugInstrumentationData, NSString;
 @protocol MTLDevice;
 
-@interface MTLToolsRenderPipelineState : MTLToolsObject <MTLRenderPipelineState>
+@interface MTLToolsRenderPipelineState : MTLToolsObject <MTLRenderPipelineStateSPI>
 {
 }
 
-- (unsigned long long)uniqueIdentifier;
-- (unsigned long long)resourceIndex;
+@property(readonly, retain, nonatomic) MTLDebugInstrumentationData *fragmentDebugInstrumentationData;
+@property(readonly, retain, nonatomic) MTLDebugInstrumentationData *vertexDebugInstrumentationData;
+@property(readonly) unsigned long long uniqueIdentifier;
+@property(nonatomic) unsigned long long resourceIndex;
 - (id)newFragmentShaderDebugInfo;
 - (id)newVertexShaderDebugInfo;
 @property(readonly) BOOL supportIndirectCommandBuffers;

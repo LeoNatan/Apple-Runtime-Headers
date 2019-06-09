@@ -6,14 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class AVPlayerLayer, SXAVPlayer, SXImageResource, SXImageView, SXVideoResource;
+@class AVPlayerLayer, SXAVPlayer, SXImageView, SXVideoResource;
 
 @interface SXVideoFillPlayerView : UIView
 {
     _Bool _shouldLoop;
     _Bool _hasRequestedPlayback;
     unsigned long long _fillMode;
-    SXImageResource *_imageResource;
     SXVideoResource *_videoResource;
     AVPlayerLayer *_playerLayer;
     SXAVPlayer *_player;
@@ -25,7 +24,6 @@
 @property(retain, nonatomic) SXAVPlayer *player; // @synthesize player=_player;
 @property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(retain, nonatomic) SXVideoResource *videoResource; // @synthesize videoResource=_videoResource;
-@property(retain, nonatomic) SXImageResource *imageResource; // @synthesize imageResource=_imageResource;
 @property(nonatomic) _Bool shouldLoop; // @synthesize shouldLoop=_shouldLoop;
 @property(nonatomic) unsigned long long fillMode; // @synthesize fillMode=_fillMode;
 - (void).cxx_destruct;
@@ -37,7 +35,7 @@
 - (void)pause;
 - (void)play;
 - (void)layoutSubviews;
-- (id)initWithImageResource:(id)arg1 videoResource:(id)arg2 imageViewFactory:(id)arg3;
+- (id)initWithVideoResource:(id)arg1 imageView:(id)arg2;
 
 @end
 

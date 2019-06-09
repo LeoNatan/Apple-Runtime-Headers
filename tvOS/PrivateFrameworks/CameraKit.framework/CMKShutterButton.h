@@ -6,7 +6,7 @@
 
 #import <UIKit/UIButton.h>
 
-@class CMKTimelapseShutterRingView, UIActivityIndicatorView, UIImageView, UIView;
+@class UIActivityIndicatorView, UIImageView, UIView;
 
 @interface CMKShutterButton : UIButton
 {
@@ -16,7 +16,6 @@
     long long _buttonMode;
     UIView *__outerView;
     UIImageView *__outerImageView;
-    CMKTimelapseShutterRingView *__timelapseOuterView;
     UIView *__innerView;
     UIActivityIndicatorView *__progressActivityIndicatorView;
     struct CMKShutterButtonSpec _spec;
@@ -28,7 +27,6 @@
 + (id)shutterButton;
 @property(readonly, nonatomic) UIActivityIndicatorView *_progressActivityIndicatorView; // @synthesize _progressActivityIndicatorView=__progressActivityIndicatorView;
 @property(readonly, nonatomic) UIView *_innerView; // @synthesize _innerView=__innerView;
-@property(readonly, nonatomic) CMKTimelapseShutterRingView *_timelapseOuterView; // @synthesize _timelapseOuterView=__timelapseOuterView;
 @property(readonly, nonatomic) UIImageView *_outerImageView; // @synthesize _outerImageView=__outerImageView;
 @property(readonly, nonatomic) UIView *_outerView; // @synthesize _outerView=__outerView;
 @property(nonatomic) _Bool showDisabled; // @synthesize showDisabled=_showDisabled;

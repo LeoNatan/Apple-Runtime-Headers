@@ -10,5 +10,9 @@
 - (_Bool)_nprf_updateInProgress;
 - (id)_nprf_updateDispatchGroup;
 - (void)_nprf_setUpdateDispatchGroup:(id)arg1;
+- (void)nprf_setValidValues:(id)arg1 validTitles:(id)arg2 shortTitles:(id)arg3;
+- (void)nprf_afterUpdates:(CDUnknownBlockType)arg1;
+- (void)nprf_endUpdates;
+- (_Bool)nprf_beginUpdates;
 @end
 

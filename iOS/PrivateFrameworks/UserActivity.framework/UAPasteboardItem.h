@@ -15,6 +15,7 @@
 
 @property(copy, nonatomic) NSArray *types; // @synthesize types=_types;
 - (void).cxx_destruct;
+- (id)description;
 - (void)addType:(id)arg1;
 - (id)init;
 

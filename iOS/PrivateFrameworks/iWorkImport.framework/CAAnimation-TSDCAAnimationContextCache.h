@@ -8,5 +8,6 @@
 
 @interface CAAnimation (TSDCAAnimationContextCache)
 - (id)TSDCAAnimationContextCache;
+- (id)TSD_valueForKeyPath:(id)arg1 atTime:(double)arg2;
 @end
 

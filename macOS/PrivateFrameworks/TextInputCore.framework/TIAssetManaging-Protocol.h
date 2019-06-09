@@ -11,6 +11,7 @@
 @protocol TIAssetManaging <NSObject>
 @property(copy, nonatomic) CDUnknownBlockType enabledInputModeIdentifiersProviderBlock;
 - (NSArray *)enabledInputModes;
+- (void)requestAssetDownloadForLanguage:(NSString *)arg1 completion:(void (^)(long long))arg2;
 - (NSArray *)assetContentItemsWithContentType:(NSString *)arg1 inputMode:(TIInputMode *)arg2;
 @end
 

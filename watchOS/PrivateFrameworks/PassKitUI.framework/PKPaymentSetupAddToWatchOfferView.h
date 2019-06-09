@@ -6,39 +6,40 @@
 
 #import <UIKit/UIView.h>
 
-@class PKPaymentPass, UIActivityIndicatorView, UIButton, UIImageView, UILabel;
+@class PKContinuousButton, PKPaymentPass, PKWatchHeroImageView, UIImageView, UILabel;
 
 @interface PKPaymentSetupAddToWatchOfferView : UIView
 {
+    PKWatchHeroImageView *_heroImageView;
+    UIView *_backgroundView;
+    struct CGSize _aspectSize;
+    unsigned int _screenType;
+    _Bool _isCompactWatch;
     PKPaymentPass *_pass;
     int _context;
-    UIImageView *_watchImageView;
     UIImageView *_passImageView;
     UILabel *_instructionLabel;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
-    UIButton *_openAppButton;
-    UIActivityIndicatorView *_openAppSpinner;
+    PKContinuousButton *_openAppButton;
 }
 
-@property(readonly, retain, nonatomic) UIActivityIndicatorView *openAppSpinner; // @synthesize openAppSpinner=_openAppSpinner;
-@property(readonly, retain, nonatomic) UIButton *openAppButton; // @synthesize openAppButton=_openAppButton;
+@property(readonly, retain, nonatomic) PKContinuousButton *openAppButton; // @synthesize openAppButton=_openAppButton;
 @property(readonly, retain, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, retain, nonatomic) UILabel *instructionLabel; // @synthesize instructionLabel=_instructionLabel;
 @property(readonly, retain, nonatomic) UIImageView *passImageView; // @synthesize passImageView=_passImageView;
-@property(readonly, retain, nonatomic) UIImageView *watchImageView; // @synthesize watchImageView=_watchImageView;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 @property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
+- (_Bool)_isSmallPhone;
 - (float)_instructionYCoordinate;
 - (float)_passImageYCoordinate;
+- (float)_sideMargin;
 - (struct CGSize)_passImageSize;
 - (float)_instructionFontSize;
-- (id)_watchImageName;
-- (id)_watchImage;
+- (void)showSpinner:(_Bool)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithPaymentPass:(id)arg1 context:(int)arg2;
 
 @end

@@ -13,27 +13,22 @@
     NSMutableDictionary *_jsonDictionary;
 }
 
-+ (id)serializedPlaceholderForURL:(id)arg1 mimeType:(id)arg2 contentID:(id)arg3;
-+ (id)serializedPlaceholderForData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 + (id)serializedPlaceholderForFileName:(id)arg1 fileSize:(long long)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 + (id)placeholderDirectory;
-+ (void)removePlaceholderForContentID:(id)arg1;
 + (void)removePlaceholder:(id)arg1;
 + (void)removePlaceholderForFileURL:(id)arg1;
-+ (_Bool)cloneFileAtURL:(id)arg1 toPlaceholderURL:(id)arg2;
++ (_Bool)setFileProtectionForFileAt:(id)arg1 error:(id *)arg2;
++ (void)cloneFileAtURL:(id)arg1 toPlaceholderURL:(id)arg2;
 + (_Bool)writeData:(id)arg1 forURL:(id)arg2;
 + (id)dataForPlaceholder:(id)arg1;
-+ (id)placeholderForMediaURL:(id)arg1 mimeType:(id)arg2 contentID:(id)arg3;
-+ (id)placeholderForData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
-+ (id)placeholderForFileURL:(id)arg1 mimeType:(id)arg2 contentID:(id)arg3;
 + (id)placeholderRepresentations:(id)arg1;
 + (_Bool)hasPlaceholderRepresentation:(id)arg1;
 + (_Bool)isPlaceholderSerializedRepresentation:(id)arg1;
 + (id)_placeholderMagic;
 + (id)placeholderFromSerializedRepresentation:(id)arg1;
 + (id)_localStoreURLForFileData:(id)arg1 contentID:(id)arg2;
-+ (id)_localStoreURLForFileURL:(id)arg1 contentID:(id)arg2;
 + (id)placeholder;
+- (void).cxx_destruct;
 - (id)serializedRepresentation;
 - (void)setUseMailDrop:(_Bool)arg1;
 - (_Bool)useMailDrop;
@@ -50,7 +45,6 @@
 - (id)fileName;
 - (void)_setJSONDictionary:(id)arg1;
 - (id)description;
-- (void)dealloc;
 - (id)init;
 
 @end

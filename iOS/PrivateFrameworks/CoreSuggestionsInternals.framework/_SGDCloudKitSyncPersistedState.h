@@ -20,10 +20,14 @@
     NSNumber *_hasSubscription;
     NSNumber *_eventsWereRemovedFromEventKit;
     NSString *_primaryICloudCalendarAccount;
+    NSNumber *_hasDeferredSync;
+    NSNumber *_hasDeferredProcessStateChanges;
 }
 
 + (id)properties;
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSNumber *hasDeferredProcessStateChanges; // @synthesize hasDeferredProcessStateChanges=_hasDeferredProcessStateChanges;
+@property(retain, nonatomic) NSNumber *hasDeferredSync; // @synthesize hasDeferredSync=_hasDeferredSync;
 @property(retain, nonatomic) NSString *primaryICloudCalendarAccount; // @synthesize primaryICloudCalendarAccount=_primaryICloudCalendarAccount;
 @property(retain, nonatomic) NSNumber *eventsWereRemovedFromEventKit; // @synthesize eventsWereRemovedFromEventKit=_eventsWereRemovedFromEventKit;
 @property(retain, nonatomic) NSNumber *hasSubscription; // @synthesize hasSubscription=_hasSubscription;

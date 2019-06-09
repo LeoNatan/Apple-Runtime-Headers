@@ -12,6 +12,7 @@
 @class NSArray, NSMapTable, NSMutableArray, NSObject, NSString, SKUIClientContext, SKUIOnboardingInstructionsView, SKUIPhysicalCirclesView, UIView;
 @protocol OS_dispatch_source, SKUIOnboardingAffiliationCirclesDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIOnboardingAffiliationCirclesViewController : UIViewController <SKUIPhysicalCirclesDataSource, SKUIPhysicalCirclesDelegate>
 {
     NSMutableArray *_affiliationItems;

@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(nonatomic) struct TFENode browserTargetNode;
 @property(nonatomic) _Bool showSmallThumbnail; // @dynamic showSmallThumbnail;
-@property(readonly, nonatomic) unsigned long long nameKindTextAlignment; // @dynamic nameKindTextAlignment;
+@property(readonly, nonatomic) long long nameKindTextAlignment; // @dynamic nameKindTextAlignment;
 @property(readonly, nonatomic) double nameFontSize; // @dynamic nameFontSize;
 - (void)targetNodesChanged;
 - (unsigned int)notificationOptionsForNodes:(const struct TFENodeVector *)arg1;

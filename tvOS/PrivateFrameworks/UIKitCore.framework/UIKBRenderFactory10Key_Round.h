@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)controlKeyShadowColorName;
 - (id)defaultKeyShadowColorName;
 - (void)_customizeGeometry:(id)arg1 forKey:(id)arg2 contents:(id)arg3 onKeyplane:(id)arg4;
-- (int)roundCornersForKey:(id)arg1 onKeyplane:(id)arg2;
+- (unsigned long long)roundCornersForKey:(id)arg1 onKeyplane:(id)arg2;
 - (unsigned long long)edgesWithInsetsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (_Bool)useRoundCorner;
 - (struct UIEdgeInsets)wideShadowPaddleInsets;

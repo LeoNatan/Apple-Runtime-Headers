@@ -39,6 +39,7 @@
 - (void)transition:(id)arg1 eventStage:(unsigned long long)arg2 withInfo:(id)arg3 fromHandler:(id)arg4;
 - (void)processWithPID:(int)arg1 foreground:(_Bool)arg2 suspended:(_Bool)arg3;
 - (void)updateInterestedBundleIDs;
+- (id)handlerForToken:(id)arg1;
 - (id)handlerForBundleID:(id)arg1;
 - (id)handlerForPID:(int)arg1;
 - (void)activateClients;
@@ -46,10 +47,13 @@
 - (void)updateSuppression:(_Bool)arg1 ofPIDs:(id)arg2;
 - (void)updateSceneSettings:(id)arg1;
 - (void)handleUnexpectedDeallocForHandler:(id)arg1;
-- (_Bool)handler:(id)arg1 deactivateSceneLayer:(id)arg2;
+- (_Bool)deactivateHandle:(id)arg1;
 - (void)checkHostingState;
-- (_Bool)handler:(id)arg1 activateSceneLayer:(id)arg2;
+- (_Bool)activateHandle:(id)arg1;
 - (void)newClientConnected:(id)arg1 withExpectedState:(id)arg2 onConnected:(CDUnknownBlockType)arg3;
+- (void)notifyHeightUpdated:(id)arg1;
+- (void)_findForHandle:(id)arg1 deepestHandleHandler:(CDUnknownBlockType)arg2;
+- (void)_findForHandle:(id)arg1 deepestHandleHandler:(CDUnknownBlockType)arg2 checklist:(id)arg3;
 - (void)completeKeyboardStatusChangedFromHandler:(id)arg1;
 - (void)updateKeyboardStatus:(id)arg1 fromHandler:(id)arg2;
 - (void)scheduleWindowTimeout;

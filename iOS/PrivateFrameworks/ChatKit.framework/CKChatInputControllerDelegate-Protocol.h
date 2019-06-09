@@ -10,6 +10,7 @@
 @protocol CKBrowserDragControllerTranscriptDelegate;
 
 @protocol CKChatInputControllerDelegate <NSObject>
+- (_Bool)chatInputControllerShouldShowHandwriting:(CKChatInputController *)arg1;
 - (void)chatInputControllerDidSelectFunCamera:(CKChatInputController *)arg1;
 - (void)chatInputControllerWillSelectFunCamera:(CKChatInputController *)arg1;
 - (void)sendCurrentLocation;
@@ -30,6 +31,7 @@
 - (void)chatInputDidSelectPhotoPicker;
 - (void)setLocalUserIsComposing:(_Bool)arg1 withPluginBundleID:(NSString *)arg2 typingIndicatorData:(NSData *)arg3;
 - (void)chatInputDidUpdateWithNewInputViewController:(UIInputViewController *)arg1;
+- (void)chatInputController:(CKChatInputController *)arg1 presentShelfModal:(UIViewController *)arg2 animated:(_Bool)arg3 completion:(void (^)(void))arg4;
 - (void)chatInputDidUpdateInputViewShowingBrowser:(_Bool)arg1 entryFieldCollapsed:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)chatInputWillUpdateInputViewShowingBrowser;
 - (void)chatInputSentComposition:(CKComposition *)arg1;

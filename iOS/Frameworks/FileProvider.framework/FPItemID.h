@@ -14,14 +14,20 @@
 @interface FPItemID : NSObject <NSCopying, NSSecureCoding>
 {
     NSString *_identifier;
-    NSString *_providerIdentifier;
+    NSString *_providerID;
     NSString *_domainIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)rootItemIDWithProviderDomainID:(id)arg1;
 + (id)rootItemIDWithProviderIdentifier:(id)arg1 domainIdentifier:(id)arg2;
++ (id)fpIdentifierFromCoreSpotlightIdentifier:(id)arg1 domainIdentifier:(id)arg2;
++ (id)stringByRemovingPrefix:(id)arg1 fromIdentifier:(id)arg2;
++ (id)csIdentifierFromFPIdentifier:(id)arg1 domainIdentifier:(id)arg2;
++ (void)getDomainIdentifier:(id *)arg1 andIdentifier:(id *)arg2 fromCoreSpotlightIdentifier:(id)arg3;
++ (id)coreSpotlightEncodedDomainIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSString *domainIdentifier; // @synthesize domainIdentifier=_domainIdentifier;
-@property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
+@property(readonly, nonatomic) NSString *providerID; // @synthesize providerID=_providerID;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
@@ -30,9 +36,16 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToItemID:(id)arg1;
+@property(readonly, nonatomic) NSString *providerDomainID;
+- (void)setProviderDomainID:(id)arg1;
+@property(readonly, nonatomic) NSString *providerIdentifier;
 - (id)description;
-- (id)initWithProviderIdentifier:(id)arg1 domainIdentifier:(id)arg2 itemIdentifier:(id)arg3;
+- (id)initWithProviderDomainID:(id)arg1 itemIdentifier:(id)arg2;
+- (id)initWithProviderID:(id)arg1 domainIdentifier:(id)arg2 itemIdentifier:(id)arg3;
+- (id)coreSpotlightIdentifier;
+- (id)initWithProviderID:(id)arg1 domainIdentifier:(id)arg2 coreSpotlightIdentifier:(id)arg3;
 - (id)initWithSearchableItem:(id)arg1;
+@property(readonly, nonatomic) _Bool isPlaceholder;
 
 @end
 

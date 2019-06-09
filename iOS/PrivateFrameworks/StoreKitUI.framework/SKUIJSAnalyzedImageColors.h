@@ -10,6 +10,7 @@
 
 @class SKUIJSColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSAnalyzedImageColors : IKJSObject <SKUIJSAnalyzedImageColors>
 {
     SKUIJSColor *_backgroundColor;

@@ -12,7 +12,8 @@
 }
 
 + (id)predicateWithAssociationID:(long long)arg1;
-- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(inout int *)arg2;
+- (id)description;
+- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(int *)arg2;
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 

@@ -29,6 +29,7 @@
 - (id)bestProfile;
 - (id)convertToContact:(id)arg1 sourceEntity:(id)arg2 enrichments:(id)arg3;
 - (id)convertToContact:(id)arg1;
+- (id)loadBirthdayDetailsFrom:(id)arg1;
 - (id)loadEmailAddressDetailsFrom:(id)arg1;
 - (id)loadAddressDetailsFrom:(id)arg1;
 - (id)loadPhoneDetailsFrom:(id)arg1;

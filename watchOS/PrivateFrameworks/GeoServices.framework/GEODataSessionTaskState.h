@@ -12,11 +12,10 @@
     unsigned int _taskIdentifier;
     long _completedSubtaskPointer;
     long _urlTaskPointer;
-    long _xpcTaskPointer;
     double _now;
     double _startTime;
     double _endTime;
-    int _requestKind;
+    CDStruct_d1a7ebee _requestKind;
     unsigned int _outgoingPayloadSize;
 }
 

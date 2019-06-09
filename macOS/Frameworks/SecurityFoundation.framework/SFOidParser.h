@@ -23,15 +23,16 @@ __attribute__((visibility("hidden")))
 + (id)printStringWithEncoding:(const struct cssm_data *)arg1 encoding:(unsigned long long)arg2;
 + (id)printBlobBytes:(id)arg1 quanta:(id)arg2 bytesToPrint:(unsigned int)arg3 thing:(const struct cssm_data *)arg4;
 + (id)printDigest:(unsigned int)arg1 thingToDigest:(const struct cssm_data *)arg2;
++ (id)printIPAddress:(const struct cssm_data *)arg1;
 + (id)printNumericData:(const struct cssm_data *)arg1;
 + (id)printDataAsHex:(const struct cssm_data *)arg1 maxToPrint:(unsigned int)arg2;
 + (id)killTrailingString:(id)arg1 end:(id)arg2;
 + (id)printCertTypeString:(unsigned int)arg1 isRoot:(BOOL)arg2;
 + (id)printTagTypeString:(unsigned char)arg1;
 + (BOOL)compareOid:(const struct cssm_data *)arg1 toOid:(const struct cssm_data *)arg2;
-- (id)printSigAlgParams:(struct cssm_x509_algorithm_identifier *)arg1;
+- (id)printSigAlgParams:(CDStruct_b9cef19c *)arg1;
 - (id)printECDSASigAlgParams:(struct cssm_data *)arg1;
-- (id)printSigAlg:(struct cssm_x509_algorithm_identifier *)arg1;
+- (id)printSigAlg:(CDStruct_b9cef19c *)arg1;
 - (id)printDerThing:(unsigned char)arg1 thing:(const struct cssm_data *)arg2;
 - (id)printOid:(const struct cssm_data *)arg1;
 - (id)parseOid:(const struct cssm_data *)arg1;

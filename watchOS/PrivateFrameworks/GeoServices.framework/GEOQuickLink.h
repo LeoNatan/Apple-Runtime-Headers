@@ -14,8 +14,9 @@
 }
 
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *quickLinkURLString;
-@property(readonly, nonatomic) NSString *quickLinkTitle;
+@property(readonly, nonatomic) NSString *appAdamID;
+@property(readonly, nonatomic) NSString *URLString;
+@property(readonly, nonatomic) NSString *title;
 - (id)initWithQuickLink:(id)arg1;
 
 @end

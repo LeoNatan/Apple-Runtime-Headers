@@ -6,7 +6,7 @@
 
 #import <TVServices/TVSEthernetInterface.h>
 
-@class NSArray, NSOperationQueue, NSString, TVSWiFiNetwork, _TVSWiFiNetworkAssociationContext;
+@class NSArray, NSOperationQueue, NSString, TVSWiFiDisassociationOperation, TVSWiFiNetwork, _TVSWiFiNetworkAssociationContext;
 
 @interface TVSWiFiInterface : TVSEthernetInterface
 {
@@ -17,12 +17,14 @@
     TVSWiFiNetwork *_associatedNetwork;
     NSArray *_availableNetworks;
     _TVSWiFiNetworkAssociationContext *_associationContext;
+    TVSWiFiDisassociationOperation *_pendingDisassociationOperation;
 }
 
 + (id)_interfaceType;
 + (_Bool)_supportsInterface:(struct __SCNetworkInterface *)arg1;
 + (void)enableNetworkManagement;
 + (id)WiFiInterface;
+@property(retain, nonatomic) TVSWiFiDisassociationOperation *pendingDisassociationOperation; // @synthesize pendingDisassociationOperation=_pendingDisassociationOperation;
 @property(retain, nonatomic) _TVSWiFiNetworkAssociationContext *associationContext; // @synthesize associationContext=_associationContext;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(copy, nonatomic) NSArray *availableNetworks; // @synthesize availableNetworks=_availableNetworks;
@@ -36,7 +38,8 @@
 - (void)cancelDirectedScan:(id)arg1;
 - (id)beginDirectedScanWithNetworkName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)associateNetwork:(id)arg1 withPassword:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)refreshAvailableNetworks;
+- (void)cancelAvailableNetworksRefresh:(id)arg1;
+- (id)refreshAvailableNetworks;
 - (void)_updateWithServiceRef:(struct __SCNetworkService *)arg1 interfaceRef:(struct __SCNetworkInterface *)arg2;
 
 @end

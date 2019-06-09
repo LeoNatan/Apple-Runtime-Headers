@@ -13,6 +13,9 @@ __attribute__((visibility("hidden")))
 {
     AVCaptureSession *session;
     NSMutableArray *connections;
+    struct CGAffineTransform metadataTransform;
+    double rollAdjustment;
+    struct os_unfair_lock_s internalLock;
 }
 
 @end

@@ -56,9 +56,9 @@
 - (double)heightToKeepVisible;
 - (double)minimumVerticalContentOffset;
 - (struct CGRect)rectOfInterestForRotation;
-- (void)updateBoundariesOfScrollView:(id)arg1 withScales:(CDStruct_57d825b2)arg2;
+- (void)updateBoundariesOfScrollView:(id)arg1 withScales:(CDStruct_39925896)arg2;
 - (_Bool)considerHeightForDoubleTap;
-- (CDStruct_57d825b2)doubleTapScalesForSize:(struct CGSize)arg1;
+- (CDStruct_39925896)doubleTapScalesForSize:(struct CGSize)arg1;
 - (struct CGRect)rectOfInterestForPoint:(struct CGPoint)arg1;
 - (double)minimumScaleForSize:(struct CGSize)arg1;
 - (struct CGRect)visibleContentRect;
@@ -69,7 +69,7 @@
 - (void)restoreStateFromHistoryItem:(id)arg1 forWebView:(id)arg2;
 - (void)restoreStateFromPendingHistoryItem;
 - (void)saveStateToHistoryItem:(id)arg1 forWebView:(id)arg2;
-- (CDStruct_57d825b2)scalesForContainerSize:(struct CGSize)arg1;
+- (CDStruct_39925896)scalesForContainerSize:(struct CGSize)arg1;
 - (void)revealSearchResult:(id)arg1 andZoomIn:(_Bool)arg2;
 - (void)_resultRects:(id)arg1 andResultViews:(id)arg2 forSearchResult:(id)arg3 inViewCoordinates:(id)arg4;
 - (void)handleScrollToAnchor:(id)arg1;

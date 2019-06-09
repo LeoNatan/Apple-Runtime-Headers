@@ -10,22 +10,27 @@
 
 @interface NMSMutableMediaSyncInfo : NMSMediaSyncInfo
 {
-    _Bool _needsUpdateAggregateContainerInfo;
+    _Bool _needsUpdateAggregateInfo;
 }
 
 - (void)_notifyInfoChanged;
 - (unsigned int)_persistingOptions;
 - (void)_writeInfo;
-- (void)_updateAggregateContainerInfoIfNeeded;
+- (void)_updateAggregateInfoIfNeeded;
 - (id)_infoForItem:(id)arg1;
 - (id)_infoForContainer:(id)arg1;
 - (id)_info;
 - (void)synchronize;
 - (void)setUserInfo:(id)arg1 forItem:(id)arg2;
 - (void)setUserInfo:(id)arg1 forContainer:(id)arg2;
+- (void)setOverStorageLimit:(_Bool)arg1 forItem:(id)arg2;
 - (void)setProgressBytes:(unsigned long long)arg1 totalBytes:(unsigned long long)arg2 forItem:(id)arg3;
 - (void)setStatus:(unsigned int)arg1 forItem:(id)arg2;
 - (void)setItems:(id)arg1 forContainer:(id)arg2;
+- (unsigned int)numberOfItemsOverStorageLimit;
+- (float)progress;
+- (unsigned int)status;
+- (unsigned int)numberOfItemsOverStorageLimitForContainer:(id)arg1;
 - (float)progressForContainer:(id)arg1;
 - (unsigned int)playabilityForContainer:(id)arg1;
 - (unsigned int)statusForContainer:(id)arg1;

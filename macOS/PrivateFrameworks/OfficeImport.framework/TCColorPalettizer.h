@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface TCColorPalettizer : NSObject
 {
     struct _tagOctree *m_pTree;

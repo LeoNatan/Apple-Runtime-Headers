@@ -20,8 +20,6 @@
 - (BOOL)_authorizedToUseDeviceAndRequestIfNecessary:(id)arg1;
 - (struct OpaqueCMClock *)inputClock;
 - (void)sessionWillUseOutputDecompressionOptions:(id)arg1 forPort:(id)arg2;
-- (void)setAutomaticallyConfiguresDevice:(BOOL)arg1;
-- (BOOL)automaticallyConfiguresDevice;
 - (int)clockProviderNodeForInputPort:(id)arg1;
 - (unsigned int)unitOutputNumberForInputPort:(id)arg1;
 - (int)graphNodeForInputPort:(id)arg1;
@@ -30,7 +28,6 @@
 - (id)ports;
 - (id)notReadyError;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (BOOL)_setDevice:(id)arg1 exceptionReason:(id *)arg2;
 @property(readonly, nonatomic) AVCaptureDevice *device;
 - (void)dealloc;
 - (id)init;

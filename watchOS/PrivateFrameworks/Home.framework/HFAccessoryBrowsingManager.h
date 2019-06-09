@@ -12,6 +12,7 @@
 
 @interface HFAccessoryBrowsingManager : NSObject <HMAccessoryBrowserDelegate>
 {
+    _Bool _isBrowsing;
     HMAccessoryBrowser *_accessoryBrowser;
     SFDeviceDiscovery *_sharingDeviceBrowser;
     NSHashTable *_observers;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) SFDeviceDiscovery *sharingDeviceBrowser; // @synthesize sharingDeviceBrowser=_sharingDeviceBrowser;
 @property(retain, nonatomic) HMAccessoryBrowser *accessoryBrowser; // @synthesize accessoryBrowser=_accessoryBrowser;
+@property(nonatomic) _Bool isBrowsing; // @synthesize isBrowsing=_isBrowsing;
 - (void).cxx_destruct;
 - (void)accessoryBrowser:(id)arg1 didRemoveNewAccessory:(id)arg2;
 - (void)accessoryBrowser:(id)arg1 didFindNewAccessory:(id)arg2;

@@ -10,10 +10,7 @@
 {
 }
 
-- (void)previewInvisibleInk:(id)arg1;
-- (void)previewGentleEffect:(id)arg1;
-- (void)previewLoudEffect:(id)arg1;
-- (void)previewSlamEffect:(id)arg1;
+- (void)previewEffect:(id)arg1;
 - (void)viewDidLoad;
 
 @end

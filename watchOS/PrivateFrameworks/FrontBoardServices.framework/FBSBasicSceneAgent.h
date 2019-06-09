@@ -25,10 +25,7 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
 - (void)_configureWithScene:(id)arg1;
-- (void)scene:(id)arg1 handleEvent:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)scene:(id)arg1 reviewEvent:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)scene:(id)arg1 willInvalidateWithEvent:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)scene:(id)arg1 didInitializeWithEvent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)didReceiveMessage:(id)arg1 fromCounterpartAgent:(id)arg2 withResponseSender:(CDUnknownBlockType)arg3;
 
 // Remaining properties

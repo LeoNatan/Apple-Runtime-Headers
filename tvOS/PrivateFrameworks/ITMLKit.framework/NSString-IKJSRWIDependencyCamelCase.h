@@ -7,6 +7,12 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (IKJSRWIDependencyCamelCase)
++ (long long)ik_valueForBooleanAttribute:(id)arg1;
 - (id)ikrwi_camelCase;
+- (id)ik_stringByTrimmingControlChars;
+- (_Bool)ik_attributeBoolValue;
+- (id)ik_sharedInstanceForDomain:(long long)arg1;
+- (id)ik_sharedInstanceForDataKeysDomain;
+- (id)ik_sharedInstance;
 @end
 

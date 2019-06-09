@@ -21,8 +21,14 @@ __attribute__((visibility("hidden")))
 + (id)withTransceiver:(id)arg1;
 - (BOOL)applyScript:(id)arg1 ignoreSW:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)applyScript:(id)arg1 error:(id *)arg2;
+- (id)transceiveAndGetAllData:(id)arg1 withGetMoreData:(id)arg2 withMoreDataSW:(unsigned short)arg3 withError:(id *)arg4;
+- (id)transceiveAndGetAllData:(id)arg1 withMoreDataSW:(unsigned short)arg2 withError:(id *)arg3;
+- (id)transceiveAndCheckSW:(id)arg1 inArray:(id)arg2 keepingSW:(BOOL)arg3 error:(id *)arg4;
+- (id)transceiveAndCheckSW:(id)arg1 keepingSW:(BOOL)arg2 error:(id *)arg3;
 - (id)transceiveAndCheckSW:(id)arg1 inArray:(id)arg2 error:(id *)arg3;
 - (id)transceiveAndCheckSW:(id)arg1 error:(id *)arg2;
+- (id)transceiveBytesAndCheckSW:(const char *)arg1 length:(unsigned long long)arg2 inArray:(id)arg3 keepingSW:(BOOL)arg4 error:(id *)arg5;
+- (id)transceiveBytesAndCheckSW:(const char *)arg1 length:(unsigned long long)arg2 keepingSW:(BOOL)arg3 error:(id *)arg4;
 - (id)transceiveBytesAndCheckSW:(const char *)arg1 length:(unsigned long long)arg2 inArray:(id)arg3 error:(id *)arg4;
 - (id)transceiveBytesAndCheckSW:(const char *)arg1 length:(unsigned long long)arg2 error:(id *)arg3;
 - (void)dumpAPDUs:(CDUnknownBlockType)arg1;

@@ -14,6 +14,11 @@ struct NSDictionary {
     Class _field1;
 };
 
+struct _NSRange {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {

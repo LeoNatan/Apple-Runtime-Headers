@@ -7,22 +7,26 @@
 #import <UIKit/UINavigationController.h>
 
 #import <TVMLKit/IKAppNavigationController-Protocol.h>
+#import <TVMLKit/TVAppRootViewController-Protocol.h>
 #import <TVMLKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <TVMLKit/UINavigationControllerDelegate-Protocol.h>
+#import <TVMLKit/_TVApplicationInspectorDocumentProvider-Protocol.h>
 
-@class NSString, UITapGestureRecognizer, UIViewController;
-@protocol NSObject, _TVAppNavigationControllerDelegate;
+@class IKAppTabBar, NSString, TVApplicationController, UITapGestureRecognizer, UIViewController;
+@protocol IKAppNavigationController, NSObject, _TVAppNavigationControllerDelegate;
 
-__attribute__((visibility("hidden")))
-@interface _TVAppNavigationController : UINavigationController <UIGestureRecognizerDelegate, UINavigationControllerDelegate, IKAppNavigationController>
+@interface _TVAppNavigationController : UINavigationController <UIGestureRecognizerDelegate, _TVApplicationInspectorDocumentProvider, UINavigationControllerDelegate, TVAppRootViewController, IKAppNavigationController>
 {
     struct {
         unsigned int shouldOverrideModalBehaviorForPlaybackDocument:1;
         unsigned int shouldIgnoreDismissal:1;
         unsigned int shouldDismissShroud:1;
         unsigned int willLoadAppDocumentWithController:1;
+        unsigned int willDisappear:1;
     } _ancDelegateFlags;
+    TVApplicationController *_appController;
     id <_TVAppNavigationControllerDelegate> _appNavigationControllerDelegate;
+    unsigned long long _maxNavControllerStackDepth;
     UITapGestureRecognizer *_menuRecognizer;
     UIViewController *_presentedModalViewController;
     id <NSObject> _modalPresenterObserverToken;
@@ -31,7 +35,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <NSObject> modalPresenterObserverToken; // @synthesize modalPresenterObserverToken=_modalPresenterObserverToken;
 @property(retain, nonatomic) UIViewController *presentedModalViewController; // @synthesize presentedModalViewController=_presentedModalViewController;
 @property(retain, nonatomic) UITapGestureRecognizer *menuRecognizer; // @synthesize menuRecognizer=_menuRecognizer;
+@property(nonatomic) unsigned long long maxNavControllerStackDepth; // @synthesize maxNavControllerStackDepth=_maxNavControllerStackDepth;
 @property(nonatomic) __weak id <_TVAppNavigationControllerDelegate> appNavigationControllerDelegate; // @synthesize appNavigationControllerDelegate=_appNavigationControllerDelegate;
+@property(readonly, nonatomic) __weak TVApplicationController *appController; // @synthesize appController=_appController;
 - (void).cxx_destruct;
 - (_Bool)_shouldOverrideModalBehaviorForPlaybackDocument:(id)arg1 andExistingPlaybackDocument:(id)arg2;
 - (_Bool)_shouldIgnoreModalDismissal:(id)arg1;
@@ -40,23 +46,31 @@ __attribute__((visibility("hidden")))
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (id)popToRootViewControllerAnimated:(_Bool)arg1;
 - (id)activeDocument;
-- (id)_activeViewController;
 - (void)replaceDocument:(id)arg1 withDocument:(id)arg2 options:(id)arg3;
 - (void)removeDocument:(id)arg1;
 - (void)popToRootDocument;
 - (id)popToRootDocument:(_Bool)arg1;
 - (void)popToDocument:(id)arg1;
 - (void)popDocument;
+- (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)dismissAllModals:(CDUnknownBlockType)arg1;
 - (void)dismissModal:(_Bool)arg1;
 - (void)dismissModal;
 - (void)dismissed;
+- (void)_presentModalDocumentController:(id)arg1 options:(id)arg2;
 - (void)presentModal:(id)arg1 options:(id)arg2;
+- (void)presentConfirmationViewController:(id)arg1 preferredContentSize:(struct CGSize)arg2;
 - (void)presentConfirmation:(id)arg1 options:(id)arg2;
 - (void)pushDocument:(id)arg1 options:(id)arg2;
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
 - (id)documents;
+- (void)setDocuments:(id)arg1 options:(id)arg2;
 - (void)clear;
+@property(readonly, nonatomic) IKAppTabBar *appTabBar;
+@property(readonly, nonatomic) UIViewController *currentViewController;
+@property(readonly, nonatomic) id <IKAppNavigationController> appNavigationController;
+@property(readonly, nonatomic) UINavigationController *currentNavigationController;
+- (void)setAppNavigationControllersDelegate:(id)arg1;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)dealloc;
 - (void)loadView;
@@ -64,8 +78,11 @@ __attribute__((visibility("hidden")))
 - (id)navigationController:(id)arg1 animationControllerForOperation:(long long)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)setTitle:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithApplicationController:(id)arg1;
+- (id)initWithRootViewController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

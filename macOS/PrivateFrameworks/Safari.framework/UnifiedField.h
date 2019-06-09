@@ -91,8 +91,6 @@ __attribute__((visibility("hidden")))
     DelayedPopUpRolloverImageButton *_readerButton;
     NSImageView *_faviconView;
     DelayedPopUpRolloverImageButton *_audioIndicator;
-    BOOL _hasAudio;
-    BOOL _hasActiveMediaCaptureDevice;
     NSTrackingArea *_unifiedFieldTrackingArea;
     BOOL _mouseIsInsideUnifiedField;
     OneStepBookmarkingButton *_oneStepBookmarkingButton;
@@ -146,9 +144,11 @@ __attribute__((visibility("hidden")))
 - (id)placeholderString;
 - (void).cxx_destruct;
 - (void)updateAudioIndicatorAppearance;
-- (void)setHasAudio:(BOOL)arg1 captureDevice:(BOOL)arg2;
+- (void)setHasAudio:(BOOL)arg1 mediaCaptureDevice:(BOOL)arg2 displayCaptureDevice:(BOOL)arg3;
 - (id)_audioIndicatorDescription;
 - (void)_updateAudioIndicator;
+- (long long)_muteButtonStateForAudioIndicator;
+- (id)_screenCaptureIndicatorPaused:(BOOL)arg1 color:(id)arg2;
 - (id)_mediaCaptureIndicatorWithColor:(id)arg1;
 - (id)_audioIndicatorImageWithMutedColor:(id)arg1 unmutedColor:(id)arg2;
 - (BOOL)_isCurrentTabPlayingMutableMedia;
@@ -188,7 +188,7 @@ __attribute__((visibility("hidden")))
 - (void)_showButtonDescriptionSoon;
 - (BOOL)_buttonDescriptionTextFieldShouldBeVisible;
 - (void)_setUpButtonDescriptionTextField;
-- (BOOL)_shouldShowMediaCaptureIndicator;
+- (BOOL)_shouldShowMediaOrScreenCaptureIndicator;
 - (void)_updateButtonDescriptionTextFieldStringValue;
 - (void)_createButtonDescriptionTextFieldIfNeeded;
 - (id)_createTextField;

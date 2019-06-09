@@ -20,6 +20,7 @@
 }
 
 + (id)sharedInstance;
+- (void)sizePreview:(id)arg1 constraints:(struct IMPreviewConstraints)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)generatePreview:(id)arg1 previewURL:(id)arg2 constraints:(struct IMPreviewConstraints)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)generateSnapshotForMessageGUID:(id)arg1 payloadURL:(id)arg2 balloonBundleID:(id)arg3 isFromMe:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)validateTextRenderingForMessage:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

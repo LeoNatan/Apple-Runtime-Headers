@@ -6,19 +6,8 @@
 
 #import <AppKit/NSImage.h>
 
-@class NSBitmapImageRep, NSData;
-
 @interface NSImage (ICNFMCMailCoreAdditions)
-+ (id)rotateImage:(id)arg1 byDegrees:(double)arg2;
-+ (id)imageDataForType:(id *)arg1 fromPasteboard:(id)arg2;
-+ (id)imagePasteboardTypesWithPreferenceToPNG;
-@property(readonly, nonatomic) double pixelsHigh;
-@property(readonly, nonatomic) double pixelsWide;
-- (void)drawTransformedInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4 flip:(BOOL)arg5;
-@property(readonly, nonatomic) BOOL isAnimated;
-@property(readonly, nonatomic) unsigned long long frameCount;
-@property(readonly, copy, nonatomic) NSData *PNGData;
-@property(readonly, nonatomic) NSBitmapImageRep *bitmapImageRep;
-@property(readonly, nonatomic) NSImage *opaqueImage;
+@property(readonly, nonatomic) BOOL ic_isAnimated;
+@property(readonly, nonatomic) unsigned long long ic_frameCount;
 @end
 

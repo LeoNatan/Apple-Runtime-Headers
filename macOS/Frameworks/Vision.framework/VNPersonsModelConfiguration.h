@@ -13,14 +13,17 @@
 {
     unsigned long long _maximumIdentities;
     unsigned long long _maximumFaceprintsPerIdentity;
+    unsigned long long _faceprintRequestRevision;
 }
 
 + (BOOL)supportsSecureCoding;
 + (unsigned long long)maximumAllowableFaceprintsPerIdentity;
 + (unsigned long long)maximumAllowableIdentities;
+@property(nonatomic) unsigned long long faceprintRequestRevision; // @synthesize faceprintRequestRevision=_faceprintRequestRevision;
 @property(nonatomic) unsigned long long maximumIdentities; // @synthesize maximumIdentities=_maximumIdentities;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;

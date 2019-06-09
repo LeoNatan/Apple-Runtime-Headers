@@ -8,6 +8,19 @@
 
 @interface NSObject (GKAdditions)
 + (id)_gkDefaultKeymap;
+- (id)_gkInvokeSelector:(SEL)arg1 withNullableObject:(id)arg2;
+- (id)_gkInvokeSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)_gkInvokeSelector:(SEL)arg1;
+- (void)_gkPerformSelector:(SEL)arg1 withNullableObject:(id)arg2;
+- (void)_gkPerformSelector:(SEL)arg1 withObject:(id)arg2;
+- (void)_gkPerformSelector:(SEL)arg1;
 - (void)_gkPopulateWithObject:(id)arg1 keymap:(id)arg2;
+- (id)_gkViewDebuggingChildren;
+- (id)_gkViewDebuggingChildKeys;
+- (id)_gkRecursiveDescription;
+- (id)_gkDescriptionWithChildren:(int)arg1;
+- (id)_gkDescription;
+- (void)_gkRemoveObserverWithBlockToken:(id)arg1;
+- (id)_gkAddObserverForKeyPath:(id)arg1 options:(unsigned long long)arg2 withBlock:(CDUnknownBlockType)arg3;
 @end
 

@@ -6,8 +6,23 @@
 
 #import <UIKit/UIView.h>
 
-@interface UIView (_CRKCardViewVisibility)
+#import <CardKit/CRKCardSectionView-Protocol.h>
+
+@class NSString;
+@protocol CRKComposableView;
+
+@interface UIView (_CRKCardViewVisibility) <CRKCardSectionView>
++ (struct CGSize)sizeThatFitsCardSection:(id)arg1 boundingSize:(struct CGSize)arg2;
 - (_Bool)_crk_subviewIsVisible:(id)arg1;
 - (_Bool)_crk_otherSubviewsOccludeSubview:(id)arg1;
+- (void)removeFromComposedSuperview;
+@property(nonatomic) __weak UIView<CRKComposableView> *composedSuperview; // @dynamic composedSuperview;
+@property(copy, nonatomic) NSString *cardSectionViewIdentifier;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

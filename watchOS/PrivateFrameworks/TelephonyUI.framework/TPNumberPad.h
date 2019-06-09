@@ -21,6 +21,7 @@
 - (void)buttonLongPressed:(id)arg1;
 - (void)buttonCancelled:(id)arg1;
 - (void)buttonDown:(id)arg1;
+- (void)buttonUpOutside:(id)arg1;
 - (void)buttonUp:(id)arg1;
 - (void)buttonTapped:(id)arg1;
 - (void)buttonLongPressedViaGesture:(id)arg1;

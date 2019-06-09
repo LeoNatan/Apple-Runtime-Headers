@@ -9,9 +9,10 @@
 @protocol _UIKeyboardArbitrationClient
 - (void)queue_setKeyboardDisabled:(_Bool)arg1 withCompletion:(void (^)(void))arg2;
 - (void)queue_getDebugInfoWithCompletion:(void (^)(NSDictionary *))arg1;
-- (void)queue_applicationLostFocusWithCompletion:(void (^)(void))arg1;
+- (void)queue_sceneBecameFocused:(NSString *)arg1 withCompletion:(void (^)(void))arg2;
 - (void)queue_keyboardSuppressed:(_Bool)arg1 withCompletion:(void (^)(void))arg2;
 - (void)queue_keyboardTransition:(NSString *)arg1 event:(unsigned int)arg2 withInfo:(NSDictionary *)arg3 onComplete:(void (^)(void))arg4;
+- (void)queue_keyboardIAVChanged:(float)arg1 onComplete:(void (^)(void))arg2;
 - (void)queue_keyboardChangedWithCompletion:(void (^)(void))arg1;
 - (void)queue_keyboardChanged:(_UIKeyboardChangedInformation *)arg1 onComplete:(void (^)(void))arg2;
 @end

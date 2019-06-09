@@ -8,20 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOFareOptions;
+@class GEOFareOptions, PBDataReader, PBUnknownFields;
 
 @interface GEOTransitOptions : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _avoidedModes;
     GEOFareOptions *_fareOptions;
     int _prioritization;
+    int _routingBehavior;
     struct {
-        unsigned int prioritization:1;
-    } _has;
+        unsigned int has_prioritization:1;
+        unsigned int has_routingBehavior:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_avoidedModes:1;
+        unsigned int read_fareOptions:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_avoidedModes:1;
+        unsigned int wrote_fareOptions:1;
+        unsigned int wrote_prioritization:1;
+        unsigned int wrote_routingBehavior:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOFareOptions *fareOptions; // @synthesize fareOptions=_fareOptions;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -29,25 +44,31 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsRoutingBehavior:(id)arg1;
+- (id)routingBehaviorAsString:(int)arg1;
+@property(nonatomic) _Bool hasRoutingBehavior;
+@property(nonatomic) int routingBehavior;
+@property(retain, nonatomic) GEOFareOptions *fareOptions;
 @property(readonly, nonatomic) _Bool hasFareOptions;
+- (void)_readFareOptions;
 - (int)StringAsPrioritization:(id)arg1;
 - (id)prioritizationAsString:(int)arg1;
 @property(nonatomic) _Bool hasPrioritization;
-@property(nonatomic) int prioritization; // @synthesize prioritization=_prioritization;
+@property(nonatomic) int prioritization;
 - (int)StringAsAvoidedModes:(id)arg1;
 - (id)avoidedModesAsString:(int)arg1;
 - (void)setAvoidedModes:(int *)arg1 count:(unsigned long long)arg2;
 - (int)avoidedModeAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsAvoidedMode:(int)arg1;
 - (void)addAvoidedMode:(int)arg1;
 - (void)clearAvoidedModes;
 @property(readonly, nonatomic) int *avoidedModes;
 @property(readonly, nonatomic) unsigned long long avoidedModesCount;
+- (void)_readAvoidedModes;
 - (void)dealloc;
-@property(nonatomic) _Bool showICFares;
-@property(nonatomic) int surchargeOption;
-@property(readonly, nonatomic) _Bool hasSurchargeOption;
 
 @end
 

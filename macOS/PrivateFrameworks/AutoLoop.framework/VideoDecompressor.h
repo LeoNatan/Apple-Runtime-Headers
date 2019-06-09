@@ -8,7 +8,6 @@
 
 @class NSCondition, NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface VideoDecompressor : NSObject
 {
     BOOL _decompInProgress;

@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <ScreenReaderOutput/BRLTBrailleStateManagerDelegate-Protocol.h>
+#import <ScreenReaderOutput/BRLTBrailleTranslationDelegateProtocol-Protocol.h>
 #import <ScreenReaderOutput/NSCopying-Protocol.h>
 
-@class NSArray, NSAttributedString, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, SCROBrailleChunk;
+@class BRLTBrailleStateManager, NSAttributedString, NSString;
+@protocol BRLTBrailleStateManagerDelegate;
 
-@interface SCROBrailleFormatter : NSObject <NSCopying>
+@interface SCROBrailleFormatter : NSObject <BRLTBrailleTranslationDelegateProtocol, BRLTBrailleStateManagerDelegate, NSCopying>
 {
-    NSMutableArray *_chunkArray;
-    NSMutableDictionary *_chunkDictionary;
-    NSMapTable *_tokenMap;
     _Bool _outputShowEightDot;
     _Bool _inputShowEightDot;
     _Bool _showDotsSevenAndEight;
@@ -27,18 +27,19 @@
     id _appToken;
     long long _lineOffset;
     NSAttributedString *_statusText;
-    SCROBrailleChunk *_editingChunk;
+    BRLTBrailleStateManager *_stateManager;
     long long _firstToken;
     long long _lastToken;
     unsigned long long _generationID;
+    id <BRLTBrailleStateManagerDelegate> _outputDelegate;
 }
 
++ (void)resetEditingManager;
+@property(nonatomic) __weak id <BRLTBrailleStateManagerDelegate> outputDelegate; // @synthesize outputDelegate=_outputDelegate;
 @property(readonly, nonatomic) unsigned long long generationID; // @synthesize generationID=_generationID;
 @property(readonly, nonatomic) long long lastToken; // @synthesize lastToken=_lastToken;
 @property(readonly, nonatomic) long long firstToken; // @synthesize firstToken=_firstToken;
-@property(readonly, nonatomic) __weak SCROBrailleChunk *editingChunk; // @synthesize editingChunk=_editingChunk;
-@property(readonly, nonatomic) NSDictionary *chunkDictionary; // @synthesize chunkDictionary=_chunkDictionary;
-@property(readonly, nonatomic) NSArray *chunkArray; // @synthesize chunkArray=_chunkArray;
+@property(readonly, nonatomic) BRLTBrailleStateManager *stateManager; // @synthesize stateManager=_stateManager;
 @property(retain, nonatomic) NSAttributedString *statusText; // @synthesize statusText=_statusText;
 @property(nonatomic) long long lineOffset; // @synthesize lineOffset=_lineOffset;
 @property(retain, nonatomic) id appToken; // @synthesize appToken=_appToken;
@@ -52,13 +53,17 @@
 @property(readonly, nonatomic) int outputContractionMode; // @synthesize outputContractionMode=_outputContractionMode;
 @property(nonatomic) int lineFocus; // @synthesize lineFocus=_lineFocus;
 - (void).cxx_destruct;
-- (id)description;
+- (void)brailleDisplayDeletedCharacter:(id)arg1;
+- (void)brailleDisplayInsertedCharacter:(id)arg1;
+- (void)didInsertScriptString:(id)arg1;
+- (void)scriptSelectionDidChange:(struct _NSRange)arg1;
+- (void)replaceScriptStringRange:(struct _NSRange)arg1 withScriptString:(id)arg2 cursorLocation:(unsigned long long)arg3;
+- (void)brailleDisplayStringDidChange:(id)arg1 brailleSelection:(struct _NSRange)arg2;
+- (id)textForPrintBraille:(id)arg1 language:(id)arg2 mode:(unsigned long long)arg3 locations:(id *)arg4;
+- (id)printBrailleForText:(id)arg1 language:(id)arg2 mode:(unsigned long long)arg3 textPositionsRange:(struct _NSRange)arg4 locations:(id *)arg5;
 - (void)translate:(_Bool)arg1;
 - (void)translate;
 - (struct _NSRange)rangeOfBrailleCellRepresentingCharacterAtIndex:(unsigned long long)arg1;
-- (void)enumerateChunksOfText:(id)arg1 selection:(struct _NSRange *)arg2 focus:(struct _NSRange *)arg3 paddingRange:(struct _NSRange)arg4 usingBlock:(CDUnknownBlockType)arg5;
-- (void)addChunk:(id)arg1 forToken:(long long)arg2;
-- (void)replaceObjectInChunkArrayAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 focus:(struct _NSRange *)arg6 technical:(_Bool)arg7 isEditableText:(_Bool)arg8 paddingRange:(struct _NSRange)arg9 editingString:(id)arg10;
 - (void)addText:(id)arg1 overrideText:(id)arg2 language:(id)arg3 selection:(struct _NSRange *)arg4 token:(long long)arg5 focus:(struct _NSRange *)arg6 technical:(_Bool)arg7 isEditableText:(_Bool)arg8;
 - (void)addText:(id)arg1 language:(id)arg2 selection:(struct _NSRange *)arg3 token:(long long)arg4 focus:(struct _NSRange *)arg5 technical:(_Bool)arg6 isEditableText:(_Bool)arg7;
@@ -68,6 +73,12 @@
 - (id)deepCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithOutputContractionMode:(int)arg1 inputContractionMode:(int)arg2 outputShowEightDot:(_Bool)arg3 inputShowEightDot:(_Bool)arg4 showDotsSevenAndEight:(_Bool)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

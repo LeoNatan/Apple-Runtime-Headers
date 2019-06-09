@@ -6,37 +6,41 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOAlightNotificationFeedback, GEOComposedRoute, GEOETARoute, GEOETATrafficUpdateResponse, GEOStep, MNCommuteDestination, MNGuidanceEventFeedback, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocation, MNNavigationService, MNTrafficIncidentAlert, NSArray, NSDate, NSError, NSString, NSUUID;
+@class GEOComposedRoute, GEOComposedRouteTraffic, GEOETATrafficUpdateResponse, GEOStep, MNCommuteDestination, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, MNLocation, MNNavigationService, MNNavigationTraceInfo, MNTrafficIncidentAlert, NSArray, NSDate, NSDictionary, NSError, NSSet, NSString, NSUUID;
 
 @protocol MNNavigationServiceObserver <NSObject>
 
 @optional
 - (void)navigationServiceDidDetectInterfaceMismatch:(MNNavigationService *)arg1;
+- (void)navigationService:(MNNavigationService *)arg1 didReceiveRealtimeUpdates:(NSSet *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 willRequestRealtimeUpdatesForRouteIDs:(NSSet *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 triggerHaptics:(int)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didChangeVolume:(unsigned long long)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateAudioOutputSettings:(NSArray *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didStartSpeakingPrompt:(NSString *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didActivateAudioSession:(BOOL)arg2;
-- (void)navigationService:(MNNavigationService *)arg1 didUpdateFeedback:(GEOAlightNotificationFeedback *)arg2 forAlightingStepAtIndex:(unsigned long long)arg3;
-- (void)navigationService:(MNNavigationService *)arg1 didSignalAlightForStepAtIndex:(unsigned long long)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didRecordTraceBookmarkWithID:(unsigned long long)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didSeekToTracePosition:(double)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didPlayTracePosition:(double)arg2;
 - (void)navigationServiceDidResumeTrace:(MNNavigationService *)arg1;
 - (void)navigationServiceDidPauseTrace:(MNNavigationService *)arg1;
-- (void)navigationServiceDidFinishLoadingTrace:(MNNavigationService *)arg1;
+- (void)navigationService:(MNNavigationService *)arg1 didFinishLoadingTrace:(MNNavigationTraceInfo *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didStartRecordingTraceWithPath:(NSString *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdatePredictedCommuteDestination:(MNCommuteDestination *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdatePossibleCommuteDestinations:(NSArray *)arg2;
-- (void)navigationService:(MNNavigationService *)arg1 didUpdateIsInVehicle:(BOOL)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didInvalidateTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didReceiveTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2 responseCallback:(void (^)(BOOL))arg3;
-- (void)navigationService:(MNNavigationService *)arg1 didUpdateAlternateRoutes:(NSArray *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateAlternateRoutes:(NSArray *)arg2 traffics:(NSDictionary *)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 failedRerouteWithErrorCode:(long long)arg2;
-- (void)navigationService:(MNNavigationService *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(GEOComposedRoute *)arg3;
+- (void)navigationService:(MNNavigationService *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(GEOComposedRoute *)arg3 traffic:(GEOComposedRouteTraffic *)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateRouteWithNewRideSelection:(GEOComposedRoute *)arg2;
 - (void)navigationServiceDidCancelReroute:(MNNavigationService *)arg1;
-- (void)navigationService:(MNNavigationService *)arg1 didReroute:(GEOComposedRoute *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 didReroute:(GEOComposedRoute *)arg2 traffic:(GEOComposedRouteTraffic *)arg3;
 - (void)navigationServiceWillReroute:(MNNavigationService *)arg1;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdatePreviewRoutes:(NSArray *)arg2 withSelectedRouteIndex:(unsigned long long)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateHeading:(double)arg2 accuracy:(double)arg3;
-- (void)navigationService:(MNNavigationService *)arg1 didUpdateIncidentsForRoute:(GEOComposedRoute *)arg2 etaRoute:(GEOETARoute *)arg3 incidentsOffset:(unsigned int)arg4;
+- (void)navigationService:(MNNavigationService *)arg1 didUpdateTraffic:(GEOComposedRouteTraffic *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateETAResponse:(GEOETATrafficUpdateResponse *)arg2 forRoute:(GEOComposedRoute *)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateRemainingTime:(double)arg2 remainingDistance:(double)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 didUpdateDisplayETA:(NSDate *)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(GEOComposedRoute *)arg4;
@@ -46,11 +50,14 @@
 - (void)navigationService:(MNNavigationService *)arg1 displayPrimaryStep:(GEOStep *)arg2 instructions:(NSArray *)arg3 shieldType:(int)arg4 shieldText:(NSString *)arg5 drivingSide:(int)arg6 maneuverStepIndex:(unsigned long long)arg7 isSynthetic:(BOOL)arg8;
 - (void)navigationService:(MNNavigationService *)arg1 updatedGuidanceEventFeedback:(MNGuidanceEventFeedback *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 newGuidanceEventFeedback:(MNGuidanceEventFeedback *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 hideJunctionViewForId:(NSUUID *)arg2;
+- (void)navigationService:(MNNavigationService *)arg1 showJunctionView:(MNGuidanceJunctionViewInfo *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 hideLaneDirectionsForId:(NSUUID *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 showLaneDirections:(MNGuidanceLaneInfo *)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 didEnableGuidancePrompts:(BOOL)arg2;
 - (void)navigationServicePredictingDidArrive:(MNNavigationService *)arg1;
 - (void)navigationServiceDidArrive:(MNNavigationService *)arg1;
+- (void)navigationServiceDidEnterPreArrivalState:(MNNavigationService *)arg1;
 - (void)navigationService:(MNNavigationService *)arg1 willAnnounce:(unsigned long long)arg2 inSeconds:(double)arg3;
 - (void)navigationService:(MNNavigationService *)arg1 usePersistentDisplay:(BOOL)arg2;
 - (void)navigationService:(MNNavigationService *)arg1 updateSignsWithInfo:(MNGuidanceSignInfo *)arg2;

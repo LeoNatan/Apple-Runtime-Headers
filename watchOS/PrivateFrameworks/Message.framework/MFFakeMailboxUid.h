@@ -25,6 +25,7 @@
 - (_Bool)isStore;
 - (_Bool)isSpecialMailboxUid;
 - (id)fullPath;
+- (id)URL;
 - (id)URLString;
 - (id)initWithAccount:(id)arg1 URLString:(id)arg2 fullPath:(id)arg3 isSpecial:(_Bool)arg4;
 - (id)initWithAccount:(id)arg1 URLString:(id)arg2 fullPath:(id)arg3;

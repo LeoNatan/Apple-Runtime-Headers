@@ -8,6 +8,7 @@
 
 @class SHKCompletionItem;
 
+__attribute__((visibility("hidden")))
 @interface SHKCompletionTextFieldCell : NSTextFieldCell
 {
     double _beforeMargin;

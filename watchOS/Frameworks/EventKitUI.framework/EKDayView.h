@@ -41,6 +41,8 @@
     _Bool _pinching;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
+    int _targetSizeClass;
+    _Bool _layoutWhenJoiningViewHierarchy;
     NSObject<OS_dispatch_queue> *_reloadQueue;
     _Bool _allowsOccurrenceSelection;
     _Bool _alignsMidnightToTop;
@@ -98,6 +100,8 @@
 - (void)highlightHour:(double)arg1;
 - (float)allDayRegionHeight;
 - (_Bool)scrollTowardPoint:(struct CGPoint)arg1;
+- (float)_scrollZoneTop;
+- (float)_scrollRate;
 - (struct CGPoint)pointAtDate:(double)arg1 isAllDay:(_Bool)arg2;
 - (double)_adjustSecondBackwardForDSTHole:(double)arg1;
 - (double)_adjustSecondForwardForDSTHole:(double)arg1;
@@ -112,6 +116,7 @@
 - (struct CGPoint)_pinchDistanceForGestureRecognizer:(id)arg1;
 - (void)_doubleTap:(id)arg1;
 - (void)_timeViewTapped:(id)arg1;
+- (void)dayViewContentDidCompleteAsyncLoadAndLayout:(id)arg1;
 - (void)dayViewContent:(id)arg1 didTapPinnedOccurrence:(id)arg2;
 - (void)dayViewContent:(id)arg1 didTapInEmptySpaceOnDay:(double)arg2;
 - (void)dayViewContent:(id)arg1 didSelectEvent:(id)arg2;
@@ -119,14 +124,15 @@
 - (void)occurrencePressed:(id)arg1 onDay:(double)arg2;
 - (void)allDayViewDidLayoutSubviews:(id)arg1;
 - (void)allDayView:(id)arg1 didSelectEvent:(id)arg2;
-- (void)reloadDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)resetOccurrenceViewColors;
+- (void)loadData:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)reloadDataSynchronously;
 - (void)reloadData;
 - (void)relayoutExistingTimedOccurrences;
 - (void)setScrollerYInset:(float)arg1 keepingYPointVisible:(float)arg2;
 - (void)scrollEventsIntoViewAnimated:(_Bool)arg1;
 - (void)_disposeAllDayView;
-- (void)_createAllDayView;
+- (void)_createAllDayViewWithSizeClass:(int)arg1;
 - (void)_updateContentForSizeCategoryChange:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -197,6 +203,7 @@
 - (void)_invalidateMarkerTimer;
 - (void)_startMarkerTimer;
 - (void)_adjustForDateOrCalendarChange;
+- (int)_sizeClass;
 - (void)stopScrolling;
 - (void)adjustFrameToSpanToMidnightFromStartDate:(id)arg1;
 - (void)dealloc;
@@ -204,10 +211,11 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setOpaque:(_Bool)arg1;
 - (void)removeFromSuperview;
+- (void)willMoveToWindow:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)_localeChanged;
 @property(readonly, copy) NSString *description;
-- (id)initWithFrame:(struct CGRect)arg1 orientation:(int)arg2 displayDate:(id)arg3 backgroundColor:(id)arg4 opaque:(_Bool)arg5 scrollbarShowsInside:(_Bool)arg6;
+- (id)initWithFrame:(struct CGRect)arg1 sizeClass:(int)arg2 orientation:(int)arg3 displayDate:(id)arg4 backgroundColor:(id)arg5 opaque:(_Bool)arg6 scrollbarShowsInside:(_Bool)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

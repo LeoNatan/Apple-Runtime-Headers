@@ -10,6 +10,7 @@
 
 @class NSData, NSString, NSURL, TSUURLTrackerFilePresenter;
 
+__attribute__((visibility("hidden")))
 @interface TSUURLTracker : NSObject <TSUURLWrapper>
 {
     TSUURLTrackerFilePresenter *_filePresenter;

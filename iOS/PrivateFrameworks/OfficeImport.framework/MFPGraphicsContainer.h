@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     struct CGAffineTransform mContainerTransform;
 }
 
+- (void).cxx_destruct;
 - (struct CGAffineTransform)containerTransform;
 - (id)parentGraphicsState;
-- (void)dealloc;
 - (id)initWithParentGraphicsState:(id)arg1 containerTransform:(struct CGAffineTransform)arg2;
 
 @end

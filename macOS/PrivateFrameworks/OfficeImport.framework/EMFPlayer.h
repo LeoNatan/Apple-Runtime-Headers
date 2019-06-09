@@ -8,6 +8,7 @@
 
 @class EMFPlusPlayer, MFGraphicsDevice;
 
+__attribute__((visibility("hidden")))
 @interface EMFPlayer : NSObject
 {
     MFGraphicsDevice *m_gdi;

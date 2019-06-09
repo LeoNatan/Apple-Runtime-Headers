@@ -18,6 +18,7 @@
 - (void)minusKeyVector:(id)arg1;
 - (void)addKey:(id)arg1;
 - (void)addKeys:(id)arg1;
+- (void)intersectKeyVector:(id)arg1;
 - (void)unionKeyVector:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithKeyVector:(id)arg1;

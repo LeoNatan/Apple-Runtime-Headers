@@ -8,7 +8,7 @@
 
 #import <Vision/VNImageIdealImageSizeProviding-Protocol.h>
 
-@class NSArray, NSString, VNSceneClassificationCustomHierarchy, VNSceneObservation;
+@class NSArray, NSString, VNClassificationCustomHierarchy, VNSceneObservation;
 
 @interface VNSceneClassificationRequest : VNImageBasedRequest <VNImageIdealImageSizeProviding>
 {
@@ -18,31 +18,31 @@
 + (id)knownSceneClassifications;
 + (const CDStruct_d47b9615 *)dependentRequestCompatability;
 + (Class)configurationClass;
-+ (id)_knownVNImageAnalyzerMultiDetectorLabelsForRevision:(unsigned long long)arg1 requestBackingStore:(unsigned long long)arg2 error:(id *)arg3;
++ (id)_knownVNImageAnalyzerMultiDetectorSceneClassificationObservationsForRevision:(unsigned long long)arg1 requestBackingStore:(unsigned long long)arg2 error:(id *)arg3;
 + (id)_knownVNSceneClassifierLabelsForRevision:(unsigned long long)arg1 requestBackingStore:(unsigned long long)arg2 error:(id *)arg3;
-+ (id)_imageAnalyzerMultiDetectorForRevision:(unsigned long long)arg1 detectionLevel:(unsigned long long)arg2 processingDevice:(id)arg3 requestBackingStore:(unsigned long long)arg4 error:(id *)arg5;
-+ (id)_sceneClassifierForRevision:(unsigned long long)arg1 requestBackingStore:(unsigned long long)arg2 error:(id *)arg3;
++ (id)_imageAnalyzerMultiDetectorForRevision:(unsigned long long)arg1 detectionLevel:(unsigned long long)arg2 processingDevice:(id)arg3 requestBackingStore:(unsigned long long)arg4 appliedDetectorOptions:(id *)arg5 error:(id *)arg6;
++ (id)_sceneClassifierForRevision:(unsigned long long)arg1 requestBackingStore:(unsigned long long)arg2 appliedDetectorOptions:(id *)arg3 error:(id *)arg4;
 + (const CDStruct_7d93034e *)revisionAvailability;
+@property(readonly) NSArray *supportedImageSizeSet;
 - (id)defineCustomHierarchyWithRelationships:(id)arg1 error:(id *)arg2;
 - (_Bool)defineCustomHierarchy:(id)arg1 error:(id *)arg2;
-- (void)_setCustomHierarchy:(id)arg1;
-@property(readonly, copy, nonatomic) VNSceneClassificationCustomHierarchy *customHierarchy;
+@property(readonly, copy, nonatomic) VNClassificationCustomHierarchy *customHierarchy;
 @property(nonatomic) unsigned long long maximumHierarchicalObservations;
 @property(nonatomic) unsigned long long maximumLeafObservations;
 - (void)setSceneObservation:(id)arg1;
 @property(readonly, retain, nonatomic) VNSceneObservation *sceneObservation;
 - (CDUnknownBlockType)resultsSortingComparator;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
-- (id)newDefaultDetectorOptionsForRequestRevision:(unsigned long long)arg1;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 - (void)setRevision:(unsigned long long)arg1;
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
-- (id)_applicableDetectorAndReturnError:(id *)arg1;
+- (void)_setCustomHierarchy:(id)arg1;
+- (id)_classificationOperationPointsAndReturnError:(id *)arg1;
+- (id)_applicableDetectorAndOptions:(id *)arg1 error:(id *)arg2;
+- (id)_errorForUnimplementedSelector:(SEL)arg1 forRevision:(unsigned long long)arg2;
 - (id)initWithSceneObservation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithSceneObservation:(id)arg1;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(readonly) NSArray *supportedImageSizeSet;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

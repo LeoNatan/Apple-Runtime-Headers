@@ -4,18 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Security/NSObject-Protocol.h>
+@class NSArray, NSData, NSString, OTJoiningConfiguration, OTOperationConfiguration, _SFECKeyPair;
 
-@class NSData, NSString;
-
-@protocol OTControlProtocol <NSObject>
+@protocol OTControlProtocol
+- (void)healthCheck:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)joinWithRecoveryKey:(NSString *)arg1 contextID:(NSString *)arg2 recoveryKey:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
+- (void)createRecoveryKey:(NSString *)arg1 contextID:(NSString *)arg2 recoveryKey:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
+- (void)fetchEscrowContents:(NSString *)arg1 contextID:(NSString *)arg2 reply:(void (^)(NSData *, NSString *, NSData *, NSError *))arg3;
+- (void)restore:(NSString *)arg1 contextID:(NSString *)arg2 bottleSalt:(NSString *)arg3 entropy:(NSData *)arg4 bottleID:(NSString *)arg5 reply:(void (^)(NSError *))arg6;
+- (void)fetchAllViableBottles:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSArray *, NSArray *, NSError *))arg3;
+- (void)peerDeviceNamesByPeerID:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)removeFriendsInClique:(NSString *)arg1 context:(NSString *)arg2 peerIDs:(NSArray *)arg3 reply:(void (^)(NSError *))arg4;
+- (void)leaveClique:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)establish:(NSString *)arg1 context:(NSString *)arg2 altDSID:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
+- (void)resetAndEstablish:(NSString *)arg1 context:(NSString *)arg2 altDSID:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
+- (void)startOctagonStateMachine:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)fetchTrustStatus:(NSString *)arg1 context:(NSString *)arg2 configuration:(OTOperationConfiguration *)arg3 reply:(void (^)(int, _Bool, NSNumber *, _Bool, NSError *))arg4;
+- (void)fetchCliqueStatus:(NSString *)arg1 context:(NSString *)arg2 configuration:(OTOperationConfiguration *)arg3 reply:(void (^)(int, NSError *))arg4;
+- (void)fetchEgoPeerID:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSString *, NSError *))arg3;
+- (void)status:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)scrubBottledPeer:(NSString *)arg1 bottleID:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)launchBottledPeer:(NSString *)arg1 bottleID:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)preflightBottledPeer:(NSString *)arg1 dsid:(NSString *)arg2 reply:(void (^)(NSData *, NSString *, NSData *, NSError *))arg3;
-- (void)scheduleCFUForFuture;
+- (void)rpcJoinWithConfiguration:(OTJoiningConfiguration *)arg1 vouchData:(NSData *)arg2 vouchSig:(NSData *)arg3 preapprovedKeys:(NSArray *)arg4 reply:(void (^)(NSError *))arg5;
+- (void)rpcVoucherWithConfiguration:(OTJoiningConfiguration *)arg1 peerID:(NSString *)arg2 permanentInfo:(NSData *)arg3 permanentInfoSig:(NSData *)arg4 stableInfo:(NSData *)arg5 stableInfoSig:(NSData *)arg6 reply:(void (^)(NSData *, NSData *, NSError *))arg7;
+- (void)rpcPrepareIdentityAsApplicantWithConfiguration:(OTJoiningConfiguration *)arg1 reply:(void (^)(NSString *, NSData *, NSData *, NSData *, NSData *, NSError *))arg2;
+- (void)rpcEpochWithConfiguration:(OTJoiningConfiguration *)arg1 reply:(void (^)(unsigned long long, NSError *))arg2;
+- (void)handleIdentityChangeForSigningKey:(_SFECKeyPair *)arg1 ForEncryptionKey:(_SFECKeyPair *)arg2 ForPeerID:(NSString *)arg3 reply:(void (^)(_Bool, NSError *))arg4;
 - (void)reset:(void (^)(_Bool, NSError *))arg1;
-- (void)signIn:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
-- (void)signOut:(void (^)(_Bool, NSError *))arg1;
+- (void)notifyIDMSTrustLevelChangeForContainer:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)signOut:(NSString *)arg1 context:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)signIn:(NSString *)arg1 container:(NSString *)arg2 context:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
 - (void)listOfEligibleBottledPeerRecords:(void (^)(NSArray *, NSError *))arg1;
 - (void)octagonSigningPublicKey:(void (^)(NSData *, NSError *))arg1;
 - (void)octagonEncryptionPublicKey:(void (^)(NSData *, NSError *))arg1;

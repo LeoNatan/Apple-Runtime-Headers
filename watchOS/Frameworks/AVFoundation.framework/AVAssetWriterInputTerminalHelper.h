@@ -23,7 +23,8 @@ __attribute__((visibility("hidden")))
 - (int)appendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 error:(id *)arg2;
 - (_Bool)canStartRespondingToEachPassDescriptionReturningReason:(id *)arg1;
 - (void)requestMediaDataOnceIfNecessaryWithMediaDataRequester:(id)arg1;
-- (_Bool)mediaDataRequesterShouldRequestMediaData:(id)arg1;
+- (_Bool)mediaDataRequesterShouldRequestMediaData;
+- (void)stopRequestingMediaData;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)isReadyForMoreMediaData;
 - (id)transitionToAndReturnTerminalHelperWithTerminalStatus:(int)arg1;

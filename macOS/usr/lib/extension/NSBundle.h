@@ -16,8 +16,8 @@
     Class _principalClass;
     id _initialPath;
     id _resolvedPath;
-    Class _firstClass;
-    id _lock;
+    NSString *_firstClassName;
+    struct os_unfair_lock_s _lock;
 }
 
 + (id)preferredLocalizationsFromArray:(id)arg1 forPreferences:(id)arg2;
@@ -28,6 +28,7 @@
 + (id)allBundles;
 + (id)loadedBundles;
 + (id)bundleForClass:(Class)arg1;
++ (id)_bundleWithIdentifier:(id)arg1 andLibraryName:(id)arg2;
 + (id)bundleWithIdentifier:(id)arg1;
 + (id)bundleWithURL:(id)arg1;
 + (id)bundleWithPath:(id)arg1;

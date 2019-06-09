@@ -16,7 +16,6 @@
     _Bool _usesVariableLayout;
     _Bool _orderSectionUsingRecencyDate;
     _Bool _showsDateInFloatingLockScreenAlert;
-    _Bool _displaysCriticalBulletins;
     unsigned long long _messageNumberOfLines;
     BBSectionSubtypeParameters *_defaultSubtypeParameters;
     NSMutableDictionary *_allSubtypeParameters;
@@ -27,7 +26,6 @@
 
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSUUID *UUID; // @synthesize UUID=_UUID;
-@property(nonatomic) _Bool displaysCriticalBulletins; // @synthesize displaysCriticalBulletins=_displaysCriticalBulletins;
 @property(retain, nonatomic) BBSectionIcon *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(retain, nonatomic) NSMutableDictionary *allSubtypeParameters; // @synthesize allSubtypeParameters=_allSubtypeParameters;

@@ -52,6 +52,7 @@
 - (id)createEndpointWithTransportType:(int)arg1 andProtocol:(int)arg2 andIdentifier:(id)arg3 forConnectionWithUUID:(id)arg4 publishConnection:(BOOL)arg5;
 - (BOOL)setAuthenticationStatus:(int)arg1 andCertificateData:(id)arg2 authCTA:(_Bool)arg3 forConnectionWithUUID:(id)arg4;
 - (BOOL)setProperties:(id)arg1 forConnectionWithUUID:(id)arg2;
+- (BOOL)setSupervisedTransportsRestricted:(BOOL)arg1 forConnectionWithUUID:(id)arg2;
 - (id)createConnectionWithType:(int)arg1 andIdentifier:(id)arg2;
 - (void)endpointPropertiesDidChangeHandler:(id)arg1;
 - (void)connectionPropertiesDidChangeHandler:(id)arg1;

@@ -41,12 +41,15 @@
 - (id)_resumeDownloadFromData:(id)arg1 path:(id)arg2 originatingWebView:(id)arg3;
 - (id)_downloadURLRequest:(id)arg1 originatingWebView:(id)arg2;
 - (void)_setAllowsAnySSLCertificateForServiceWorker:(BOOL)arg1;
+- (void)_synthesizeAppIsBackground:(BOOL)arg1;
 @property(nonatomic, getter=_isStorageAccessAPIEnabled, setter=_setStorageAccessAPIEnabled:) BOOL _storageAccessAPIEnabled;
 @property(nonatomic, getter=_isCookieStoragePartitioningEnabled, setter=_setCookieStoragePartitioningEnabled:) BOOL _cookieStoragePartitioningEnabled;
 - (unsigned long long)_serviceWorkerProcessCount;
+- (unsigned long long)_processCacheSize;
 - (unsigned long long)_processCacheCapacity;
 - (unsigned long long)_maximumSuspendedPageCount;
 - (unsigned long long)_pluginProcessCount;
+- (void)_removeCredential:(id)arg1 forProtectionSpace:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_preconnectToServer:(id)arg1;
 - (unsigned long long)_webPageContentProcessCount;
 - (unsigned long long)_webProcessCountIgnoringPrewarmedAndCached;
@@ -56,9 +59,12 @@
 - (void)_makeNextWebProcessLaunchFailForTesting;
 - (unsigned long long)_webProcessCount;
 - (void)_syncNetworkProcessCookies;
+- (int)_prewarmedProcessIdentifier;
 - (int)_networkProcessIdentifier;
 - (void)_disableServiceWorkerProcessTerminationDelay;
 - (void)_terminateServiceWorkerProcesses;
+- (void)_sendNetworkProcessDidResume;
+- (void)_sendNetworkProcessWillSuspendImminently;
 - (void)_terminateNetworkProcess;
 - (void)_clearSupportedPlugins;
 - (void)_addSupportedPlugin:(id)arg1 named:(id)arg2 withMimeTypes:(id)arg3 withExtensions:(id)arg4;
@@ -74,7 +80,6 @@
 - (id)_objectForBundleParameter:(id)arg1;
 - (void)_setCookieAcceptPolicy:(unsigned long long)arg1;
 - (void)_setCanHandleHTTPSServerTrustEvaluation:(BOOL)arg1;
-- (void)_setMaximumNumberOfProcesses:(unsigned long long)arg1;
 - (void)_registerURLSchemeAsCanDisplayOnlyIfCanRequest:(id)arg1;
 - (void)_registerURLSchemeServiceWorkersCanHandle:(id)arg1;
 - (void)_setAllowsSpecificHTTPSCertificate:(id)arg1 forHost:(id)arg2;

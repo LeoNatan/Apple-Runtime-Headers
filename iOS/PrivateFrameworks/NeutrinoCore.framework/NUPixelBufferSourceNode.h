@@ -11,8 +11,8 @@
     struct __CVBuffer *_pixelBuffer;
 }
 
-- (CDStruct_912cb5d2)pixelSize;
-- (id)_evaluateImage:(out id *)arg1;
+- (CDStruct_912cb5d2)pixelSizeWithSourceOptions:(id)arg1;
+- (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (void)dealloc;
 - (id)initWithSettings:(id)arg1 orientation:(long long)arg2;
 - (id)initWithPixelBuffer:(struct __CVBuffer *)arg1 settings:(id)arg2 orientation:(long long)arg3;

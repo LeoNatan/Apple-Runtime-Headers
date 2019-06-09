@@ -11,6 +11,7 @@
 }
 
 + (struct CGRect)defaultFrameForType:(long long)arg1;
++ (id)makeSystemFunctionRowForTouchBar:(id)arg1 systemType:(long long)arg2;
 + (void)markActiveFunctionRowsAsDimmed:(BOOL)arg1;
 + (void)removeActiveFunctionRow:(id)arg1;
 + (void)addActiveFunctionRow:(id)arg1;

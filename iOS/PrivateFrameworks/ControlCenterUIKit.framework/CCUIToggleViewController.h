@@ -8,7 +8,7 @@
 
 #import <ControlCenterUIKit/CCUIContentModuleContentViewController-Protocol.h>
 
-@class CCUICAPackageDescription, CCUIToggleModule, NSString, UIColor, UIImage, UIImageView;
+@class CCUICAPackageDescription, CCUIToggleModule, NSString, UIColor, UIImage, UIImageView, UIViewPropertyAnimator;
 
 @interface CCUIToggleViewController : CCUIButtonModuleViewController <CCUIContentModuleContentViewController>
 {
@@ -26,16 +26,19 @@
 - (_Bool)shouldFinishTransitionToExpandedContentModule;
 @property(readonly, nonatomic) double preferredExpandedContentHeight;
 - (void)reconfigureView;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)refreshState;
 - (void)buttonTapped:(id)arg1 forEvent:(id)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) double preferredExpandedContentWidth;
+@property(readonly, nonatomic) double preferredExpandedContinuousCornerRadius;
 @property(readonly, nonatomic) _Bool providesOwnPlatter;
 @property(readonly) Class superclass;
 

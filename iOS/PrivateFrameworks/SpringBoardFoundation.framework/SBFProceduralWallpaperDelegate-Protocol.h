@@ -11,6 +11,6 @@
 
 @protocol SBFProceduralWallpaperDelegate <NSObject>
 - (void)wallpaper:(id <SBFProceduralWallpaper>)arg1 didComputeAverageColor:(UIColor *)arg2 forRect:(struct CGRect)arg3;
-- (void)wallpaper:(id <SBFProceduralWallpaper>)arg1 didGenerateBlur:(void *)arg2 forRect:(struct CGRect)arg3;
+- (void)wallpaper:(id <SBFProceduralWallpaper>)arg1 didGenerateBlur:(struct __IOSurface *)arg2 forRect:(struct CGRect)arg3;
 @end
 

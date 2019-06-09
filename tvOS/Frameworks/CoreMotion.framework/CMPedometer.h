@@ -26,6 +26,7 @@
 - (void)queryStepCadenceToStrideLengthBinsWithHandler:(CDUnknownBlockType)arg1;
 - (void)queryRemoteRawSpeedToKValueBinsWithHandler:(CDUnknownBlockType)arg1;
 - (void)queryRawSpeedToKValueBinsWithHandler:(CDUnknownBlockType)arg1;
+- (id)strideCalibrationDump;
 - (_Bool)sendStrideCalibrationHistoryToFile:(id)arg1;
 - (void)stopPedometerEventUpdates;
 - (void)startPedometerEventUpdatesWithHandler:(CDUnknownBlockType)arg1;

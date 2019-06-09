@@ -38,6 +38,9 @@
 + (id)modelByMergingModels:(id)arg1;
 + (id)mergedModelFromBundles:(id)arg1;
 + (void)initialize;
++ (id)canonical:(id)arg1;
++ (BOOL)versionHashes:(id)arg1 compatibleWithStoreMetadata:(id)arg2;
++ (id)versionsHashesForModelAtURL:(id)arg1 error:(id *)arg2;
 + (id)_modelPathsFromBundles:(id)arg1;
 + (void)_deepCollectEntitiesInArray:(id)arg1 entity:(id)arg2;
 + (long long)_debugOptimizedModelLayout;
@@ -89,7 +92,9 @@
 - (void)_throwIfNotEditable;
 - (void)_setIsEditable:(BOOL)arg1;
 - (void)_setIsEditable:(BOOL)arg1 optimizationStyle:(unsigned long long)arg2;
+- (void)_unmarkTombstones;
 - (void)_markTombstones;
+- (void)_traverseTombstonesAndMark:(BOOL)arg1;
 - (BOOL)_isSkippingUserInfoTombstones;
 - (void)_skipUserInfoTombstones:(BOOL)arg1;
 - (id)_precomputedKeysForEntity:(id)arg1;

@@ -24,9 +24,9 @@
 @property(readonly, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
 @property(readonly, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
+- (void).cxx_destruct;
 - (unsigned long long)fileSize;
 - (id)description;
-- (void)dealloc;
 - (id)initWithData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (id)initWithFileURL:(id)arg1 mimeType:(id)arg2;
 

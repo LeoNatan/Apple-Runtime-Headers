@@ -62,7 +62,7 @@
     NSObject<OS_dispatch_source> *_transactionTerminalResponseTimer;
     _Bool _presentingPasscode;
     _Bool _requiresPasscodeDismissal;
-    UIViewController *_passcodePresenterVC;
+    UIViewController *_passcodeVC;
     CDStruct_973bafd3 _foregroundActiveState;
     unsigned int _deactivationReasons;
     _Bool _isVisible;
@@ -154,7 +154,6 @@
 - (void)_updateContentViewsWithTransaction:(id)arg1 transitBalanceModel:(id)arg2;
 - (void)_updateContentViewsWithTransitBalanceModel:(id)arg1;
 - (void)_updateContentViewsWithTransaction:(id)arg1;
-- (void)_applyLatestTransactionContentWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_applyLatestContentToViews;
 - (void)_resetCardEmulationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_resetActiveApplicationForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

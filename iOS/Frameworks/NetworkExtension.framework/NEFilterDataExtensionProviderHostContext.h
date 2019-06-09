@@ -10,23 +10,19 @@
 #import <NetworkExtension/NEFilterDataExtensionProviderProtocol-Protocol.h>
 
 @class NSString;
-@protocol NEFilterDataExtensionProviderHostDelegate;
 
 @interface NEFilterDataExtensionProviderHostContext : NEFilterExtensionProviderHostContext <NEFilterDataExtensionProviderProtocol, NEFilterDataExtensionProviderHostProtocol>
 {
-    id <NEFilterDataExtensionProviderHostDelegate> _data_delegate;
 }
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-@property __weak id <NEFilterDataExtensionProviderHostDelegate> data_delegate; // @synthesize data_delegate=_data_delegate;
-- (void).cxx_destruct;
+- (void)applySettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getSourceAppInfo:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)report:(id)arg1;
 - (void)fetchCurrentRulesForFlow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)sendSocketContentFilterRequest;
 - (void)sendBrowserContentFilterServerRequest;
-- (void)startedWithError:(id)arg1;
 - (void)provideURLAppendStringMap:(id)arg1;
 - (void)provideRemediationMap:(id)arg1;
 - (void)handleRulesChanged;

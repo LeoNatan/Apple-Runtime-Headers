@@ -14,26 +14,34 @@
 
 @interface _INPBSendMessageIntent : PBCodable <_INPBSendMessageIntent, NSSecureCoding, NSCopying>
 {
-    struct _has;
+    struct {
+        unsigned int effect:1;
+        unsigned int messageType:1;
+    } _has;
     NSArray *_attachments;
     _INPBString *_content;
     NSString *_conversationIdentifier;
+    int _effect;
     _INPBString *_groupName;
     _INPBIntentMetadata *_intentMetadata;
+    int _messageType;
     NSArray *_recipients;
     _INPBContact *_sender;
     NSString *_serviceName;
     _INPBDataString *_speakableGroupName;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)recipientType;
-+ (Class)attachmentType;
++ (Class)attachmentsType;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName; // @synthesize speakableGroupName=_speakableGroupName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(retain, nonatomic) _INPBContact *sender; // @synthesize sender=_sender;
 @property(copy, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
+@property(nonatomic) int messageType; // @synthesize messageType=_messageType;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(retain, nonatomic) _INPBString *groupName; // @synthesize groupName=_groupName;
+@property(nonatomic) int effect; // @synthesize effect=_effect;
 @property(copy, nonatomic) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 @property(retain, nonatomic) _INPBString *content; // @synthesize content=_content;
 @property(copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
@@ -42,6 +50,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasSpeakableGroupName;
@@ -51,13 +61,19 @@
 @property(readonly, nonatomic) unsigned int recipientsCount;
 - (void)addRecipient:(id)arg1;
 - (void)clearRecipients;
+- (int)StringAsMessageType:(id)arg1;
+- (id)messageTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasMessageType;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 @property(readonly, nonatomic) _Bool hasGroupName;
+- (int)StringAsEffect:(id)arg1;
+- (id)effectAsString:(int)arg1;
+@property(nonatomic) _Bool hasEffect;
 @property(readonly, nonatomic) _Bool hasConversationIdentifier;
 @property(readonly, nonatomic) _Bool hasContent;
-- (id)attachmentAtIndex:(unsigned int)arg1;
+- (id)attachmentsAtIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) unsigned int attachmentsCount;
-- (void)addAttachment:(id)arg1;
+- (void)addAttachments:(id)arg1;
 - (void)clearAttachments;
 
 // Remaining properties

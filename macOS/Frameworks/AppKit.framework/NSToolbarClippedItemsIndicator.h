@@ -13,7 +13,6 @@
     NSArray *_clippedItems;
     BOOL _cachedMenuIsValid;
     BOOL _returnFocusToWindowAfterClick;
-    id _clippedItemsReservedn8;
 }
 
 + (BOOL)willHaveItemsToDisplayForItemViewers:(id)arg1;

@@ -14,7 +14,6 @@
     unsigned int _shouldSuppressDropHighlight:1;
     unsigned int _isColumnControllerRetained:1;
     unsigned int _usePrimaryColorForSelection:1;
-    unsigned int _liveResizeImageCachingDisabled:1;
 }
 
 - (BOOL)resignFirstResponder;

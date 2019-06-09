@@ -10,6 +10,7 @@
 
 @class NSArray, NSMapTable, NSString, SKUIHeaderViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUISectionHeaderView : SKUIViewReuseView <SKUIViewElementView>
 {
     struct UIEdgeInsets _contentInset;

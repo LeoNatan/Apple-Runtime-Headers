@@ -17,6 +17,7 @@
 + (_Bool)_shouldUpdateAccountsInPlace;
 + (id)_accountWithAccountClass:(Class)arg1 persistentAccount:(id)arg2 useExisting:(_Bool)arg3;
 + (id)sharedAccountStore;
+- (void).cxx_destruct;
 - (void)_accountsStoreChanged:(id)arg1;
 - (void)removePersistentAccountWithAccount:(id)arg1;
 - (void)savePersistentAccountWithAccount:(id)arg1;

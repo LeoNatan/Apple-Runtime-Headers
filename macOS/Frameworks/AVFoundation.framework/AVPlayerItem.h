@@ -9,6 +9,7 @@
 #import <AVFoundation/NSCopying-Protocol.h>
 
 @class AVPlayerItemInternal, NSArray, NSDate, NSError, NSString;
+@protocol NSObject><NSCopying;
 
 @interface AVPlayerItem : NSObject <NSCopying>
 {
@@ -34,18 +35,27 @@
 + (BOOL)automaticallyNotifiesObserversOfUsesMinimalLatencyForVideoCompositionRendering;
 + (BOOL)automaticallyNotifiesObserversOfSavesDownloadedDataToDiskWhenDone;
 + (struct OpaqueCMTimebase *)_copyTimebaseFromFigPlaybackItem:(struct OpaqueFigPlaybackItem *)arg1;
-+ (int)_createFigPlaybackItemForFigPlayer:(struct OpaqueFigPlayer *)arg1 asset:(id)arg2 URL:(id)arg3 flags:(unsigned int)arg4 playbackItem:(struct OpaqueFigPlaybackItem **)arg5;
++ (int)_createFigPlaybackItemForFigPlayer:(struct OpaqueFigPlayer *)arg1 asset:(id)arg2 URL:(id)arg3 flags:(unsigned int)arg4 options:(struct __CFDictionary *)arg5 playbackItem:(struct OpaqueFigPlaybackItem **)arg6;
 + (BOOL)_hasOverrideForSelector:(SEL)arg1;
 + (id)playerItemWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 + (id)playerItemWithAsset:(id)arg1;
 + (id)playerItemWithURL:(id)arg1;
 + (BOOL)_forNonStreamingURLsFireKVOForAssetWhenReadyForInspection;
 + (BOOL)_forStreamingItemsVendAssetWithFigPlaybackItem;
-+ (long long)propertyStorageCachePolicy;
 + (void)initialize;
 + (void)_uninitializeProtectedContentPlaybackSupportSession:(id)arg1;
 + (id)_initializeProtectedContentPlaybackSupportSessionAsynchronouslyForProvider:(id)arg1 withOptions:(id)arg2;
+- (void)setAudioSpatializationAllowed:(BOOL)arg1;
+- (void)_updateAudioSpatializationAllowed;
+- (BOOL)isAudioSpatializationAllowed;
+- (void)setAdvanceTimeForOverlappedPlayback:(CDStruct_1b6d18a9)arg1;
+- (void)_updateAdvanceTimeForOverlappedPlaybackOnFigPlaybackItem;
+- (BOOL)advanceTimeForOverlappedPlaybackWasSet;
+- (CDStruct_1b6d18a9)advanceTimeForOverlappedPlayback;
 - (void)_updateCanPlayAndCanStepPropertiesWhenReadyToPlayWithNotificationPayload:(id)arg1;
+- (void)setLoudnessInfo:(id)arg1;
+- (void)_updateLoudnessInfoOnFigPlaybackItem;
+- (id)loudnessInfo;
 - (id)videoApertureMode;
 - (void)setVideoApertureMode:(id)arg1;
 - (void)_updateVideoApertureModeOnFigPlaybackItem;
@@ -223,11 +233,15 @@
 - (void)_updateRTCReportingFlagsOnFigPlaybackItem;
 - (void)_updateTimebase;
 - (struct OpaqueCMTimebase *)timebase;
-- (struct OpaqueCMTimebase *)_copyTimebase;
+- (struct OpaqueCMTimebase *)unfoldedTimebase;
+- (struct OpaqueCMTimebase *)_copyUnfoldedFigTimebase;
 - (struct OpaqueCMTimebase *)_copyProxyTimebase;
-- (struct OpaqueCMTimebase *)_copyLoopingTimebase;
+- (struct OpaqueCMTimebase *)_copyProxyFoldedTimebase;
+- (struct OpaqueCMTimebase *)_copyProxyUnfoldedTimebase;
+- (struct OpaqueCMTimebase *)_copyFoldedTimebase;
 - (void)setDecodesAllFramesDuringOrdinaryPlayback:(BOOL)arg1;
-- (void)_quietlySetDecodesAllFramesDuringOrdinaryPlayback:(BOOL)arg1;
+- (void)_updateDecodesAllFramesDuringOrdinaryPlaybackOnFigPlaybackItem;
+- (BOOL)decodesAllFramesDuringOrdinaryPlaybackWasSet;
 - (BOOL)decodesAllFramesDuringOrdinaryPlayback;
 - (void)setAggressivelyCachesVideoFrames:(BOOL)arg1;
 - (void)_updateAggressivelyCachesVideoFramesOnFigPlaybackItem;
@@ -269,10 +283,23 @@
 - (int)_cancelPendingSeekAndRegisterSeekCompletionHandler:(CDUnknownBlockType)arg1;
 - (int)_CreateSeekID;
 - (CDStruct_1b6d18a9)currentTime;
+- (CDStruct_1b6d18a9)currentUnfoldedTime;
+- (CDStruct_1b6d18a9)_currentTimeWithOptionalFoldedTimebase:(struct OpaqueCMTimebase *)arg1;
 - (struct CGSize)presentationSize;
 - (struct CGSize)_presentationSize;
 - (void)_markAsReadyForInspectionOfPresentationSize;
 - (BOOL)_isReadyForInspectionOfPresentationSize;
+- (CDStruct_1b6d18a9)recommendedTimeOffsetFromLive;
+- (CDStruct_1b6d18a9)_recommendedTimeOffsetFromLive;
+- (void)_markAsReadyForInspectionOfRecommendedTimeOffsetFromLive;
+- (BOOL)_isReadyForInspectionOfRecommendedTimeOffsetFromLive;
+- (void)setConfiguredTimeOffsetFromLive:(CDStruct_1b6d18a9)arg1;
+- (void)_updateConfiguredTimeOffsetFromLiveOnFigPlaybackItem:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)configuredTimeOffsetFromLive;
+- (CDStruct_1b6d18a9)_configuredTimeOffsetFromLive;
+- (void)setAutomaticallyPreservesTimeOffsetFromLive:(BOOL)arg1;
+- (void)_updatePreservesTimeOffsetFromLive:(BOOL)arg1;
+- (BOOL)automaticallyPreservesTimeOffsetFromLive;
 - (BOOL)canStepBackward;
 - (BOOL)_canStepBackward;
 - (BOOL)canStepForward;
@@ -292,8 +319,8 @@
 - (void)_markAsReadyForBasicInspection;
 - (BOOL)_isReadyForBasicInspection;
 - (void)_respondToBecomingReadyForBasicInspection;
-- (void)_removeLoopingTBListeners;
-- (void)_addLoopingTBListeners;
+- (void)_removeFoldedTBListeners;
+- (void)_addFoldedTBListeners;
 - (void)_removeFAListeners;
 - (void)_addFAListeners;
 - (void)_removeFPListeners;
@@ -315,8 +342,8 @@
 - (id)automaticallyLoadedAssetKeys;
 - (id)asset;
 - (void)_changeStatusToFailedWithError:(id)arg1;
-@property(readonly, nonatomic) NSError *error;
-@property(readonly, nonatomic) long long status;
+@property(readonly) NSError *error;
+@property(readonly) long long status;
 - (void)_informObserversAboutAvailabilityOfDuration:(CDStruct_1b6d18a9)arg1;
 - (void)_informObserversAboutAvailabilityOfPresentationSize;
 - (void)_informObserversAboutAvailabilityOfTracks;
@@ -328,6 +355,7 @@
 - (void)_setAsset:(id)arg1;
 - (void)_setURL:(id)arg1;
 - (id)_URL;
+- (id)_propertyListForMediaSelection:(id)arg1 forGroup:(id)arg2;
 - (void)_removeFromItems;
 - (void)_insertAfterItem:(id)arg1;
 - (id)_previousItem;
@@ -339,16 +367,10 @@
 - (void)_attachToPlayer:(id)arg1;
 - (id)_playerConnection;
 - (id)_player;
-- (void)_configurePlaybackItem;
+- (BOOL)_configurePlaybackItemAndReturnError:(id *)arg1;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
-- (id)valueForKeyForKVO:(id)arg1;
-- (void)_playerDidAccessCurrentItemKeypaths;
-- (void)_playerWillAccessCurrentItemKeypaths;
-- (void)_didAccessKVOForKey:(id)arg1;
-- (void)_willAccessKVOForKey:(id)arg1;
 - (BOOL)_getCachedNonForcedSubtitleEnabled:(char *)arg1;
 - (BOOL)_getCachedPresentationSize:(struct CGSize *)arg1;
-- (id)_propertyStorage;
 - (struct OpaqueFigPlaybackItem *)_copyFigPlaybackItem;
 - (id)_copyStateDispatchQueue;
 - (id)_weakReference;
@@ -358,7 +380,6 @@
 - (id)_nameForLogging;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 - (id)initWithAsset:(id)arg1;
@@ -413,6 +434,7 @@
 - (void)_figPlaybackItem:(struct OpaqueFigPlaybackItem *)arg1 didFlushMetadataOutputWithDictionaryKey:(id)arg2;
 - (void)_figPlaybackItem:(struct OpaqueFigPlaybackItem *)arg1 didOutputSampleBuffers:(id)arg2 fromTrackWithID:(int)arg3 forMetadataOutputWithDictionaryKey:(id)arg4;
 - (id)_metadataOutputForKey:(id)arg1;
+@property(retain) id <NSObject><NSCopying> AVKitData;
 - (void)setVideoEnhancementMode:(id)arg1;
 - (void)_updateVideoEnhancementModeOnFigPlaybackItem;
 - (id)videoEnhancementMode;

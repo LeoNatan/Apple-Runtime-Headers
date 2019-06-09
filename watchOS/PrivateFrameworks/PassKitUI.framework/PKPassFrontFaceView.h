@@ -6,14 +6,14 @@
 
 #import <PassKitUI/PKPassFaceView.h>
 
-@class PKBarcodeStickerView, PKLinkedAppIconView, UIImageView, UILabel, UIView;
+@class PKBarcodeStickerView, PKLinkedAppIconView, UILabel, UIView;
 
 @interface PKPassFrontFaceView : PKPassFaceView
 {
-    PKBarcodeStickerView *_barcodeView;
-    UIImageView *_contactlessLogoView;
-    UIView *_bottomRightItemView;
     UILabel *_logoLabel;
+    PKBarcodeStickerView *_barcodeView;
+    UIView *_bottomRightItemView;
+    _Bool _showsLinkedApp;
     _Bool _showsBarcodeView;
     _Bool _showsLiveBalance;
     int _bottomRightItem;
@@ -24,6 +24,7 @@
 @property(nonatomic) _Bool showsLiveBalance; // @synthesize showsLiveBalance=_showsLiveBalance;
 @property(nonatomic) _Bool showsBarcodeView; // @synthesize showsBarcodeView=_showsBarcodeView;
 @property(nonatomic) int bottomRightItem; // @synthesize bottomRightItem=_bottomRightItem;
+@property(nonatomic) _Bool showsLinkedApp; // @synthesize showsLinkedApp=_showsLinkedApp;
 - (void).cxx_destruct;
 - (id)_relevantBuckets;
 - (id)_rebucketAuxiliaryFields:(id)arg1;
@@ -32,6 +33,7 @@
 - (void)_positionBarcodeView;
 - (void)layoutSubviews;
 - (void)updateValidity;
+- (id)createExpiredLabel;
 - (id)createContactlessLogoView;
 - (void)createBodyContentViews;
 - (void)createHeaderContentViews;

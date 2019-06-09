@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     OADFill *mFill;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -22,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (id)fill;
 - (void)setBlendMode:(int)arg1;
 - (int)blendMode;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

@@ -8,7 +8,7 @@
 
 #import <Network/NWPrettyDescription-Protocol.h>
 
-@class NSArray, NSString, NSUUID, NWBrowseDescriptor, NWEndpoint, NWInterface, NWParameters;
+@class NSArray, NSString, NSUUID, NWAdvertiseDescriptor, NWBrowseDescriptor, NWEndpoint, NWInterface, NWParameters;
 @protocol OS_nw_path;
 
 @interface NWPath : NSObject <NWPrettyDescription>
@@ -32,6 +32,8 @@
 @property(readonly, nonatomic) BOOL fallbackIsWeak;
 @property(readonly, nonatomic) unsigned int fallbackInterfaceIndex;
 @property(readonly, nonatomic) NWParameters *derivedParameters;
+@property(readonly, nonatomic) NWAdvertiseDescriptor *advertiseDescriptor;
+@property(readonly, nonatomic) BOOL hasAdvertiseDescriptor;
 @property(readonly, nonatomic) NWBrowseDescriptor *browseDescriptor;
 @property(readonly, nonatomic) BOOL hasBrowseDescriptor;
 @property(readonly, nonatomic) NWInterface *connectedInterface;
@@ -56,6 +58,7 @@
 @property(readonly, nonatomic) unsigned long long secondsSinceInterfaceChange;
 @property(readonly, nonatomic) long long maximumDatagramSize;
 @property(readonly, nonatomic) long long mtu;
+@property(readonly, nonatomic) NSArray *gateways;
 @property(readonly, nonatomic) NSArray *dnsSearchDomains;
 @property(readonly, nonatomic) NSArray *dnsServersAsStrings;
 @property(readonly, nonatomic) NSArray *dnsServers;
@@ -70,10 +73,13 @@
 - (BOOL)usesNetworkAgent:(id)arg1;
 - (BOOL)usesNetworkAgentType:(Class)arg1;
 - (BOOL)usesInterfaceType:(long long)arg1;
+- (BOOL)isListenerInterfaceSpecific;
 - (BOOL)isLinkQualityAbort;
 - (BOOL)shouldProbeConnectivity;
+@property(readonly, nonatomic, getter=isPerAppVPN) BOOL perAppVPN;
 @property(readonly, nonatomic, getter=isViable) BOOL viable;
 @property(readonly, nonatomic, getter=isListener) BOOL listener;
+@property(readonly, nonatomic, getter=isConstrained) BOOL constrained;
 @property(readonly, nonatomic, getter=isExpensive) BOOL expensive;
 @property(readonly, nonatomic) NSUUID *clientID;
 @property(readonly, nonatomic) long long status;

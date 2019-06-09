@@ -20,6 +20,7 @@
 + (id)formattedDateTimeFromDate:(id)arg1 timeZone:(id)arg2;
 + (id)formattedTimeTimeZoneFromDate:(id)arg1 timeZone:(id)arg2;
 + (id)formattedTimeFromDate:(id)arg1 timeZone:(id)arg2;
++ (void)_updateTimeZoneDateFormattersWithDate:(id)arg1 timeZone:(id)arg2;
 
 @end
 

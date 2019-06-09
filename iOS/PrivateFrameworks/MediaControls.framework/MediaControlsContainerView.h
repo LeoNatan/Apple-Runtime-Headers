@@ -8,6 +8,7 @@
 
 @class MPCPlayerResponse, MediaControlsTimeControl, MediaControlsTransportStackView, UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsContainerView : UIView
 {
     _Bool _empty;

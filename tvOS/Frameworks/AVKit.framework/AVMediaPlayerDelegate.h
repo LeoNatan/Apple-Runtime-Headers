@@ -8,6 +8,7 @@
 
 @class AVPlayerViewController;
 
+__attribute__((visibility("hidden")))
 @interface AVMediaPlayerDelegate : NSObject
 {
     AVPlayerViewController *_playerViewController;

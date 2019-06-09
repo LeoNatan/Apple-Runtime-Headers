@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface OADColor : NSObject <NSCopying>
 {
     NSMutableArray *mTransforms;

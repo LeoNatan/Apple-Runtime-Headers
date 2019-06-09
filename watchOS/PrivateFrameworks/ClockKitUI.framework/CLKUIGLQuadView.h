@@ -19,13 +19,12 @@
     int _backingWidth;
     int _backingHeight;
     unsigned int _isDepthBufferRequired:1;
-    unsigned int _isTimeoutFixRequired:1;
 }
 
 + (Class)layerClass;
 - (void).cxx_destruct;
-- (void)_display;
-- (void)_discardContents;
+- (_Bool)_displayWithCompletion:(CDUnknownBlockType)arg1;
+- (void)discardContents;
 - (void)_handleQuadArrayChange:(id)arg1;
 - (void)removeAllQuads;
 - (void)removeQuad:(id)arg1;

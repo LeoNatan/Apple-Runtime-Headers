@@ -15,5 +15,13 @@
 - (id)_absoluteStringByDeletingBomPathPrefix;
 - (id)_absoluteString;
 - (id)_stringByInsertingBomPathPrefix;
+- (id)_stringByDeletingVolumePath;
+- (id)_systemVolumePath;
+- (id)_dataVolumePath;
+- (id)_volumePath;
+- (id)_rootVolumePath;
+- (long long)_numericCompare:(id)arg1;
+- (id)stringByExpandingSymlinksInPath;
+- (id)stringByReallyResolvingSymlinksInPath;
 @end
 

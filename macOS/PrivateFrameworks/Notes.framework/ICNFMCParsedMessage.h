@@ -34,7 +34,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (void)addAttachment:(id)arg1 forURL:(id)arg2;
-- (void)_mcParsedMessageCommonInit;
 - (id)init;
 - (id)initWithWebArchive:(id)arg1 archiveIsMailInternal:(BOOL)arg2;
 - (id)initWithWebArchive:(id)arg1;

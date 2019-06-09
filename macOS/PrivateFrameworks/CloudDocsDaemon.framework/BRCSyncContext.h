@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BRCAccountSession, BRCThrottleBase, BRCTransferStream, BRCUserDefaults, CKContainer, CKContainerID, NSDate, NSMutableSet, NSString;
+@class BRCAccountSession, BRCThrottleBase, BRCTransferStream, BRCUserDefaults, CKContainer, CKContainerID, NSDate, NSMutableSet, NSOperationQueue, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_timerForForcedForegroundPeriod;
     NSObject<OS_dispatch_queue> *_foregroundStateQueue;
     unsigned long long _foregroundState;
+    NSOperationQueue *_recursiveListOperationQueue;
     BRCAccountSession *_session;
     BRCThrottleBase *_readerThrottle;
     BRCThrottleBase *_applyThrottle;

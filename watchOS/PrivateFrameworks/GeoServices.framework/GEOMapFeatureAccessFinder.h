@@ -19,10 +19,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowNetwork; // @synthesize allowNetwork=_allowNetwork;
 - (void).cxx_destruct;
 - (id)init;
-- (_Bool)_boundingCircle:(const Sphere_dfb3aa99 *)arg1 intersectsPoints:(CDStruct_6e3f967a *)arg2 pointCount:(unsigned int)arg3;
-- (_Bool)_boundingCircle:(const Sphere_dfb3aa99 *)arg1 intersectsTransitLink:(CDStruct_3814b545 *)arg2;
-- (_Bool)_boundingCircle:(const Sphere_dfb3aa99 *)arg1 intersectsFeature:(CDStruct_75fd159b *)arg2;
-- (Sphere_dfb3aa99)_boundingCircleWithCenter:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 inTile:(struct _GEOTileKey)arg3;
+- (_Bool)_boundingCircle:(const Sphere_37dc312c *)arg1 intersectsPoints:(CDStruct_6e3f967a *)arg2 pointCount:(unsigned int)arg3;
+- (_Bool)_boundingCircle:(const Sphere_37dc312c *)arg1 intersectsTransitLink:(CDStruct_3814b545 *)arg2;
+- (_Bool)_boundingCircle:(const Sphere_37dc312c *)arg1 intersectsFeature:(CDStruct_91c84281 *)arg2;
+- (Sphere_37dc312c)_boundingCircleWithCenter:(CDStruct_c3b9c2ee)arg1 radius:(double)arg2 inTile:(struct _GEOTileKey)arg3;
 
 @end
 

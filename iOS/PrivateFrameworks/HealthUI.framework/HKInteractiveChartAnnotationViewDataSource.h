@@ -8,7 +8,7 @@
 
 #import <HealthUI/HKInteractiveChartAnnotationViewDataSource-Protocol.h>
 
-@class HKSelectedRangeFormatter, HKUIMetricColors, NSArray, NSDateComponents, NSString, UIFont, UILabel, UIStackView;
+@class HKSelectedRangeFormatter, HKUIMetricColors, NSArray, NSDateComponents, NSString, UIFont, UILabel;
 
 @interface HKInteractiveChartAnnotationViewDataSource : NSObject <HKInteractiveChartAnnotationViewDataSource>
 {
@@ -16,29 +16,32 @@
     HKUIMetricColors *_metricColors;
     NSArray *_annotationLabels;
     long long _timeScope;
-    UIStackView *_dateColumn;
     NSDateComponents *_dateComponents;
     UILabel *_upperDateLabel;
     UILabel *_lowerDateLabel;
+    UILabel *_dividerDateLabel;
     UIFont *_majorFont;
     UIFont *_minorFont;
 }
 
 @property(retain, nonatomic) UIFont *minorFont; // @synthesize minorFont=_minorFont;
 @property(retain, nonatomic) UIFont *majorFont; // @synthesize majorFont=_majorFont;
+@property(retain, nonatomic) UILabel *dividerDateLabel; // @synthesize dividerDateLabel=_dividerDateLabel;
 @property(retain, nonatomic) UILabel *lowerDateLabel; // @synthesize lowerDateLabel=_lowerDateLabel;
 @property(retain, nonatomic) UILabel *upperDateLabel; // @synthesize upperDateLabel=_upperDateLabel;
 @property(retain) NSDateComponents *dateComponents; // @synthesize dateComponents=_dateComponents;
-@property(retain, nonatomic) UIStackView *dateColumn; // @synthesize dateColumn=_dateColumn;
 @property(nonatomic) long long timeScope; // @synthesize timeScope=_timeScope;
 @property(retain, nonatomic) NSArray *annotationLabels; // @synthesize annotationLabels=_annotationLabels;
 @property(retain, nonatomic) HKUIMetricColors *metricColors; // @synthesize metricColors=_metricColors;
 @property(readonly, nonatomic) HKSelectedRangeFormatter *selectedRangeFormatter; // @synthesize selectedRangeFormatter=_selectedRangeFormatter;
 - (void).cxx_destruct;
 - (void)updateWithSelectionContext:(id)arg1 displayType:(id)arg2 timeScope:(long long)arg3;
-- (id)columnViewForColumnAtIndex:(long long)arg1;
-- (long long)numberOfColumnsForAnnotationView:(id)arg1;
+- (id)valueViewForColumnAtIndex:(long long)arg1 orientation:(long long)arg2;
+- (long long)numberOfValuesForAnnotationView:(id)arg1;
 - (void)updateDateText;
+- (id)leftMarginViewWithOrientation:(long long)arg1;
+- (id)dateViewWithOrientation:(long long)arg1;
+- (void)_buildDateLabels;
 - (id)initWithSelectedRangeFormatter:(id)arg1 metricColors:(id)arg2;
 
 // Remaining properties

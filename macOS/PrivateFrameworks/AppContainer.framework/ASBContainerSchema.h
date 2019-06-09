@@ -18,13 +18,11 @@
     NSObject<OS_dispatch_source> *_monitorSource;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)sharedSchema;
 @property(readonly) unsigned long long currentVersion; // @synthesize currentVersion=_currentVersion;
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)upgradeScriptFromSchemaVersion:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)reloadAndReturnError:(id *)arg1;
+- (id)initWithSchema:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)editItemViewControllerSave:(id)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (_Bool)_canChangeTravelTime;
 
 @end
 

@@ -14,7 +14,5 @@
 - (void)workspace:(FBSWorkspace *)arg1 didReceiveActions:(NSSet *)arg2;
 - (void)workspace:(FBSWorkspace *)arg1 willDestroyScene:(FBSScene *)arg2 withTransitionContext:(FBSSceneTransitionContext *)arg3 completion:(void (^)(FBSWorkspaceDestroySceneResponse *))arg4;
 - (void)workspace:(FBSWorkspace *)arg1 didCreateScene:(FBSScene *)arg2 withTransitionContext:(FBSSceneTransitionContext *)arg3 completion:(void (^)(FBSWorkspaceCreateSceneResponse *))arg4;
-- (void)workspaceDidEndTransaction:(FBSWorkspace *)arg1;
-- (void)workspaceDidBeginTransaction:(FBSWorkspace *)arg1;
 @end
 

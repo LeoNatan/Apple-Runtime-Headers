@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     MSVMultiCallback *_infoCallbacks;
     MSVMultiCallback *_lyricsCallbacks;
     MSVMultiCallback *_artworkCallbacks;
+    CDUnknownBlockType _playbackSessionCallback;
     CDUnknownBlockType _beginLyricsEventCallback;
     CDUnknownBlockType _endLyricsEventCallback;
     CDUnknownBlockType _videoThumbnailsCallback;
@@ -50,11 +51,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *commandHandlerBlocks;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (void)addCommandHandlerBlock:(CDUnknownBlockType)arg1 forKey:(id)arg2;
-@property(copy, nonatomic) CDUnknownBlockType endLyricsEventCallback;
-@property(copy, nonatomic) CDUnknownBlockType beginLyricsEventCallback;
 - (unsigned long)_onQueue_capabilities;
 @property(readonly, nonatomic) unsigned long capabilities;
 @property(readonly, nonatomic) _Bool hasPlaybackQueueCallbacks;
+@property(copy, nonatomic) CDUnknownBlockType endLyricsEventCallback;
+@property(copy, nonatomic) CDUnknownBlockType beginLyricsEventCallback;
+@property(copy, nonatomic) CDUnknownBlockType playbackSessionCallback;
 @property(copy, nonatomic) CDUnknownBlockType audioAmplitudeSamplesCallback;
 @property(copy, nonatomic) CDUnknownBlockType videoThumbnailsCallback;
 - (id)initWithPlayerPath:(id)arg1 queue:(id)arg2;

@@ -8,5 +8,7 @@
 
 @interface NSMutableAttributedString (SCRCMathExpression)
 - (void)scrcAppendFormat:(id)arg1;
+- (id)attributedStringByTrimmingEmptySpaceEdges;
+- (unsigned int)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 @end
 

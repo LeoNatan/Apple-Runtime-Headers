@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     OITSUBezierPath *mPath;
 }
 
+- (void).cxx_destruct;
 - (id)endColor;
 - (id)startColor;
 - (void)createShading;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)setSurroundColors:(id)arg1;
 - (void)setCenterPoint:(struct CGPoint)arg1;
 - (void)setCenterColor:(id)arg1;
-- (void)dealloc;
 
 @end
 

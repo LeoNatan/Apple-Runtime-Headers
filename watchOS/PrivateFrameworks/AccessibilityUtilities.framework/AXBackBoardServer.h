@@ -17,6 +17,7 @@
 
 + (id)server;
 - (void).cxx_destruct;
+- (struct AXBColorFilterDescription)colorFilterFromLastUpdate;
 - (void)resetAccessibilityFeatures;
 - (_Bool)loadGAXBundleForUnmanagedASAM;
 - (_Bool)supportsAccessibilityDisplayFilters;
@@ -26,7 +27,6 @@
 - (_Bool)blueLightStatusEnabled;
 - (_Bool)brightnessFiltersEnabled;
 - (void)disableBrightnessFilters;
-- (_Bool)supportsBlueLightReduction;
 - (void)jetsamThirdPartyApps;
 - (unsigned int)currentGuidedAccessModeAndSessionApp:(id *)arg1;
 - (id)guidedAccessIgnoredRegions;
@@ -47,11 +47,11 @@
 - (struct CGRect)zoomInitialFocusRectWithQueryingContext:(unsigned int)arg1;
 - (void)setZoomInitialFocusRect:(struct CGRect)arg1 fromContext:(unsigned int)arg2;
 - (void)setAccessibilityPreferenceAsMobile:(id)arg1 value:(id)arg2 notification:(id)arg3;
+- (id)accessibilityPreferenceAsMobile:(id)arg1;
 - (void)setSwitchControlHasScreenSwitch:(_Bool)arg1;
 - (void)setSwitchControlRendersDeviceUnusable:(_Bool)arg1;
 - (void)setHearingAidControlIsVisible:(_Bool)arg1;
 - (void)setCapsLockLightOn:(_Bool)arg1;
-- (void)setVoiceOverItemChooserVisible:(_Bool)arg1;
 - (void)userEventOccurred;
 - (struct CGRect)convertFrame:(struct CGRect)arg1 fromContextId:(unsigned int)arg2;
 - (struct CGRect)convertFrame:(struct CGRect)arg1 toContextId:(unsigned int)arg2;
@@ -62,7 +62,8 @@
 - (void)postEvent:(id)arg1 afterNamedTap:(id)arg2 includeTaps:(id)arg3;
 @property(nonatomic) _Bool invertColorsEnabled; // @dynamic invertColorsEnabled;
 - (void)registerAssistiveTouchPID:(int)arg1;
-@property(nonatomic) _Bool sessionIsLoginSession;
+- (void)sessionIsLoginSessionWithResult:(CDUnknownBlockType)arg1;
+- (void)setSessionIsLoginSession:(_Bool)arg1;
 @property(nonatomic) _Bool inCheckerBoardMode;
 @property(nonatomic) _Bool inPreboardMode;
 - (id)backboardServiceInstance;
@@ -73,12 +74,9 @@
 - (void)registerSiriViewServicePID:(int)arg1;
 - (void)setLockScreenDimTimerEnabled:(_Bool)arg1;
 - (void)adjustSystemZoom:(int)arg1;
-- (void)registerZoomAttributesChangeHandler:(CDUnknownBlockType)arg1;
-- (void)zoomAttributesChanged:(id)arg1;
 - (void)registerGestureConflictWithZoom:(id)arg1;
 - (void)_willClearServer;
 - (void)_didConnectToServer;
-- (id)_handleZoomAttributesListener:(id)arg1;
 - (id)_handleEventListener:(id)arg1;
 - (id)_serviceName;
 - (void)dealloc;

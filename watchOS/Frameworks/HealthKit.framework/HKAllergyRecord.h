@@ -6,12 +6,13 @@
 
 #import <HealthKit/HKMedicalRecord.h>
 
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKAllergyRecordType, HKMedicalCoding, HKMedicalDate, NSArray, NSString;
+@class HKAllergyRecordType, HKConcept, HKMedicalCoding, HKMedicalDate, NSArray, NSLocale, NSString, NSUUID;
 
-@interface HKAllergyRecord : HKMedicalRecord <NSSecureCoding, NSCopying>
+@interface HKAllergyRecord : HKMedicalRecord <HKConceptIndexable, NSSecureCoding, NSCopying>
 {
     NSArray *_allergyCodings;
     HKMedicalDate *_onsetDate;
@@ -20,19 +21,28 @@
     HKMedicalCoding *_criticalityCoding;
     HKMedicalDate *_lastOccurenceDate;
     HKMedicalDate *_recordedDate;
+    HKConcept *_allergy;
+    HKConcept *_criticality;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 allergyCodings:(id)arg10 onsetDate:(id)arg11 asserter:(id)arg12 reactions:(id)arg13 criticalityCoding:(id)arg14 lastOccurenceDate:(id)arg15 recordedDate:(id)arg16;
++ (id)_newAllergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17 config:(CDUnknownBlockType)arg18;
++ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 allergyCodings:(id)arg11 onsetDate:(id)arg12 asserter:(id)arg13 reactions:(id)arg14 criticalityCoding:(id)arg15 lastOccurenceDate:(id)arg16 recordedDate:(id)arg17;
 + (id)defaultDisplayString;
-+ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 allergyCodings:(id)arg9 onsetDate:(id)arg10 asserter:(id)arg11 reactions:(id)arg12 criticalityCoding:(id)arg13 lastOccurenceDate:(id)arg14 recordedDate:(id)arg15;
++ (id)allergyRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 allergyCodings:(id)arg10 onsetDate:(id)arg11 asserter:(id)arg12 reactions:(id)arg13 criticalityCoding:(id)arg14 lastOccurenceDate:(id)arg15 recordedDate:(id)arg16;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
 + (id)criticalityCodingPreferredSystems;
 + (id)allergyCodingsPreferredSystems;
 - (void).cxx_destruct;
 @property(readonly, copy) HKAllergyRecordType *allergyRecordType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setCriticality:(id)arg1;
+@property(readonly, copy) HKConcept *criticality;
+- (void)_setAllergy:(id)arg1;
+@property(readonly, copy) HKConcept *allergy;
 - (void)_setRecordedDate:(id)arg1;
 @property(readonly, copy) HKMedicalDate *recordedDate;
 - (void)_setLastOccurenceDate:(id)arg1;
@@ -47,17 +57,30 @@
 @property(readonly, copy) HKMedicalDate *onsetDate;
 - (void)_setAllergyCodings:(id)arg1;
 @property(readonly, copy) NSArray *allergyCodings;
+- (id)criticalityCodingContext;
+- (id)criticalityCodingCollection;
+- (id)allergyCodingsContext;
+- (id)allergyCodingsCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
 - (id)indexKeywords;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 - (id)criticalityCodingTasks;
 - (id)allergyCodingsTasks;
+
+// Remaining properties
+@property(readonly) NSUUID *UUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly, copy, nonatomic) NSLocale *locale;
+@property(readonly) Class superclass;
 
 @end
 

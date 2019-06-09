@@ -9,7 +9,7 @@
 #import <ContactsAutocomplete/CNCancelable-Protocol.h>
 
 @class CNAutocompleteDelegateWrapper, CNAutocompleteFetchRequest, CNAutocompleteUserSession, CNCancelationToken, NSString;
-@protocol CNAutocompleteProbeProvider, CNAutocompleteSearchProvider, CNCancelable, CNScheduler;
+@protocol CNAutocompleteProbeProvider, CNAutocompleteSearchProvider, CNAutocompleteSourceInclusionPolicy, CNCancelable, CNScheduler;
 
 @interface CNAutocompleteQuery : NSObject <CNCancelable>
 {
@@ -21,6 +21,7 @@
     id <CNAutocompleteProbeProvider> _probeProvider;
     CNAutocompleteUserSession *_userSession;
     id <CNCancelable> _delegateToken;
+    id <CNAutocompleteSourceInclusionPolicy> _sourceInclusionPolicy;
 }
 
 + (id)observableWithSupplementalResultsForQuery:(id)arg1;
@@ -29,9 +30,11 @@
 + (void)configureNetworkForBuilder:(id)arg1 query:(id)arg2;
 + (_Bool)shouldPerformQueryForRequest:(id)arg1;
 + (id)observableForQuery:(id)arg1 context:(id)arg2;
++ (_Bool)shouldSortResultsForPolicy:(id)arg1;
 + (_Bool)searchTypeSupportsSuppressionOfAlreadyChosenAddresses:(unsigned long long)arg1;
 + (_Bool)shouldSuppressAddressesAlreadyChosenForRequest:(id)arg1;
 + (id)queryWithRequest:(id)arg1 searchProvider:(id)arg2 delegate:(id)arg3 probeProvider:(id)arg4 scheduler:(id)arg5 userSession:(id)arg6 delegateToken:(id)arg7;
+@property(retain) id <CNAutocompleteSourceInclusionPolicy> sourceInclusionPolicy; // @synthesize sourceInclusionPolicy=_sourceInclusionPolicy;
 @property __weak id <CNCancelable> delegateToken; // @synthesize delegateToken=_delegateToken;
 @property(retain) CNAutocompleteUserSession *userSession; // @synthesize userSession=_userSession;
 @property(retain) id <CNAutocompleteProbeProvider> probeProvider; // @synthesize probeProvider=_probeProvider;
@@ -49,7 +52,7 @@
 - (void)searchOperationReportedResults:(id)arg1;
 - (id)executeWithContext:(id)arg1;
 - (id)execute;
-- (id)makeDelegateWrapperWithDelegate:(id)arg1 forRequest:(id)arg2 userSession:(id)arg3;
+- (id)makeDelegateWrapperWithDelegate:(id)arg1 forRequest:(id)arg2 sourceInclusionPolicy:(id)arg3 userSession:(id)arg4;
 - (id)initWithRequest:(id)arg1 searchProvider:(id)arg2 delegate:(id)arg3 probeProvider:(id)arg4 scheduler:(id)arg5 userSession:(id)arg6 delegateToken:(id)arg7;
 
 // Remaining properties

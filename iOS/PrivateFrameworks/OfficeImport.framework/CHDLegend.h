@@ -21,7 +21,9 @@ __attribute__((visibility("hidden")))
     NSArray *mLabelEffects;
 }
 
+- (void).cxx_destruct;
 - (id)description;
+- (_Bool)isAutoSizeAndPosition;
 - (void)setLabelEffects:(id)arg1;
 - (id)labelEffects;
 - (void)setIsOverlay:(_Bool)arg1;
@@ -35,7 +37,6 @@ __attribute__((visibility("hidden")))
 - (id)graphicProperties;
 - (void)setLegendPosition:(int)arg1;
 - (int)legendPosition;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setFontIndex:(unsigned long long)arg1;
 - (unsigned long long)fontIndex;

@@ -8,5 +8,6 @@
 
 @interface CIFilter (IKFilterUIAddition)
 - (id)viewForUIConfiguration:(id)arg1 excludedKeys:(id)arg2;
+- (id)provideViewForUIConfiguration:(id)arg1 excludedKeys:(id)arg2;
 @end
 

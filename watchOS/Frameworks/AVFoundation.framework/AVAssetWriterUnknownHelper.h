@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)setShouldOptimizeForNetworkUse:(_Bool)arg1;
 - (void)setOverallDurationHint:(CDStruct_1b6d18a9)arg1;
 - (void)setMovieFragmentInterval:(CDStruct_1b6d18a9)arg1;
+- (void)setDelegate:(id)arg1;
 - (int)status;
 - (id)initWithURL:(id)arg1 fileType:(id)arg2;
 - (id)initWithConfigurationState:(id)arg1;

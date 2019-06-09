@@ -8,6 +8,7 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface STMostUsedGroupSpecifierProvider : STShowMoreUsageGroupSpecifierProvider
 {
     NSDictionary *_allowancesByActiveBudgetedIdentifier;
@@ -22,10 +23,12 @@
 - (void)reloadMostUsedSpecifiers;
 - (void)toggleSelectedItemType:(id)arg1;
 - (id)getUsageItem:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)loadActiveBudgetedIdentifiers;
 - (void)updateSpecifier:(id)arg1 usageItem:(id)arg2;
 - (id)newSpecifierWithUsageItem:(id)arg1;
+- (void)_allowancesByIdentifierDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)_selectedUsageReportDidChangeFrom:(id)arg1 to:(id)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setCoordinator:(id)arg1;
 - (id)init;
 

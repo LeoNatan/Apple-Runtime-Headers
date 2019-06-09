@@ -26,7 +26,6 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)init;

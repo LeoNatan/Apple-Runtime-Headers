@@ -23,7 +23,6 @@
 - (void)undoIt;
 - (void)setNewValue:(id)arg1;
 - (id)propertyPath;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithPerson:(id)arg1 propertyPath:(id)arg2 oldValue:(id)arg3 inputController:(id)arg4;
 

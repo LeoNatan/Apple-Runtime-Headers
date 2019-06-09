@@ -8,11 +8,36 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class GEOTFTrafficSnapshot;
+
 __attribute__((visibility("hidden")))
 @interface GEOETATrafficUpdateRequestExtension : PBCodable <NSCopying>
 {
+    struct GEOTimepoint _clientTimepoint;
+    GEOTFTrafficSnapshot *_trafficSnapshot;
+    BOOL _needServerLatency;
+    BOOL _useClientTimepointAsNow;
+    BOOL _useLiveTrafficAsFallback;
+    struct {
+        unsigned int has_clientTimepoint:1;
+        unsigned int has_needServerLatency:1;
+        unsigned int has_useClientTimepointAsNow:1;
+        unsigned int has_useLiveTrafficAsFallback:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL hasNeedServerLatency;
+@property(nonatomic) BOOL needServerLatency;
+@property(nonatomic) BOOL hasUseClientTimepointAsNow;
+@property(nonatomic) BOOL useClientTimepointAsNow;
+@property(nonatomic) BOOL hasClientTimepoint;
+@property(nonatomic) struct GEOTimepoint clientTimepoint;
+@property(nonatomic) BOOL hasUseLiveTrafficAsFallback;
+@property(nonatomic) BOOL useLiveTrafficAsFallback;
+@property(retain, nonatomic) GEOTFTrafficSnapshot *trafficSnapshot;
+@property(readonly, nonatomic) BOOL hasTrafficSnapshot;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -20,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 

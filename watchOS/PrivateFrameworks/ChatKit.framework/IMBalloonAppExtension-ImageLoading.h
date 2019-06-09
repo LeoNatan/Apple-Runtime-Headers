@@ -6,10 +6,23 @@
 
 #import <IMCore/IMBalloonAppExtension.h>
 
+@class NSString;
+
 @interface IMBalloonAppExtension (ImageLoading)
 - (id)__ck_breadcrumbImage;
 - (id)__ck_statusImage;
-- (id)__ck_browserImage;
-- (void)__ck_prefetchBrowserImage;
+- (id)__ck_browserImageForInterfaceStyle:(int)arg1;
+- (void)_generateIconsFirstTimeForInterfaceStyle:(int)arg1;
+- (id)cacheKeyForInterfaceStyle:(int)arg1;
+- (void)_checkForIconUpdates:(id)arg1 interfaceStyle:(int)arg2;
+- (id)_iconPathOnDisk:(id)arg1;
+- (id)_generatePlaceholderImageForInterfaceStyle:(int)arg1;
+- (id)_generateCacheImageForInterfaceStyle:(int)arg1;
+- (void)_saveIconToURL:(id)arg1 toURL:(id)arg2;
+- (id)_appIconFromFileURL:(id)arg1;
+- (void)__ck_prefetchBrowserImageForInterfaceStyle:(int)arg1;
+- (id)placeholderImageForInterfaceStyle:(int)arg1;
+- (id)_adamID;
+@property(readonly, nonatomic) NSString *containingBundleIdentifier;
 @end
 

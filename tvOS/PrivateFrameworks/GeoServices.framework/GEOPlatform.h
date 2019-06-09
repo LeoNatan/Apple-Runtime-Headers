@@ -20,7 +20,6 @@
 - (id)clientCapabilities;
 - (_Bool)isCellDataPossible;
 - (_Bool)supportsForceTouch;
-- (_Bool)supportsNewiOS9Features;
 - (_Bool)supportsNavigation;
 - (_Bool)supportsRealisticTiles;
 - (_Bool)mapsFeatureFreedomEnabled;
@@ -31,6 +30,7 @@
 - (id)osVersion;
 - (id)productName;
 - (_Bool)isInternalInstall;
+- (id)init;
 
 @end
 

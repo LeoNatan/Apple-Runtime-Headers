@@ -18,8 +18,14 @@
 @property(nonatomic) _Bool alertInviteeDeclines;
 @property(nonatomic) _Bool showDeclinedEvents;
 @property(retain, nonatomic) NSArray *selectedCalendarIdentifiers;
-@property(retain, nonatomic) NSArray *deselectedCalendarSyncHashes;
-@property(retain, nonatomic) NSArray *deselectedCalendarIdentifiers;
+- (void)_setDeselectedCalendarSyncIdentifiers:(id)arg1;
+@property(readonly, nonatomic) NSArray *deselectedCalendarSyncIdentifiers;
+- (void)_setDeselectedCalendarSyncHashes:(id)arg1;
+@property(readonly, nonatomic) NSArray *deselectedCalendarSyncHashes;
+- (void)_setDeselectedCalendarIdentifiers:(id)arg1;
+@property(readonly, nonatomic) NSArray *deselectedCalendarIdentifiers;
+- (void)_setDeselectedCalendars_iOS:(id)arg1;
+- (void)setDeselectedCalendars:(id)arg1;
 @property(readonly) _Bool bypassSplashScreen;
 @property(nonatomic) unsigned int lastConfirmedSplashScreenVersion;
 @property(nonatomic) _Bool remindMeAboutThisInCalendarWidgetEnabled;

@@ -8,6 +8,7 @@
 
 @class NSXPCListener, ServiceImpl;
 
+__attribute__((visibility("hidden")))
 @interface AnalyticsPortal : NSObject
 {
     NSXPCListener *listener;
@@ -15,10 +16,12 @@
 }
 
 + (void)shutdown;
++ (void)clientTransactionsRelease;
 + (void)setListeningPort:(const char *)arg1 queue:(id)arg2;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)shutdown;
+- (void)clientTransactionsRelease;
 - (void)setListeningPort:(const char *)arg1 queue:(id)arg2;
 
 @end

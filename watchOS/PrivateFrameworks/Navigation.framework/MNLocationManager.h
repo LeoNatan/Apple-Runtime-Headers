@@ -9,7 +9,7 @@
 #import <Navigation/GEOResourceManifestTileGroupObserver-Protocol.h>
 #import <Navigation/MNLocationProviderDelegate-Protocol.h>
 
-@class CLHeading, GEOLocationShifter, MNLocation, NSBundle, NSDate, NSError, NSHashTable, NSLock, NSString;
+@class CLHeading, CLInUseAssertion, GEOLocationShifter, MNLocation, NSBundle, NSDate, NSError, NSHashTable, NSLock, NSString;
 @protocol MNLocationProvider, MNLocationRecorder;
 
 @interface MNLocationManager : NSObject <GEOResourceManifestTileGroupObserver, MNLocationProviderDelegate>
@@ -17,20 +17,21 @@
     unsigned int _locationProviderType;
     id <MNLocationProvider> _locationProvider;
     id <MNLocationRecorder> _locationRecorder;
-    NSString *_effectiveBundleIdentifier;
     NSBundle *_effectiveBundle;
+    NSString *_effectiveBundleIdentifier;
+    NSHashTable *_accessRequesters;
     NSHashTable *_locationObservers;
     NSHashTable *_locationListeners;
     NSHashTable *_headingObservers;
     NSLock *_observersLock;
     NSLock *_lastLocationLock;
     MNLocation *_lastLocation;
-    MNLocation *_lastGoodLocation;
     GEOLocationShifter *_locationShifter;
     double _lastLocationUpdateTime;
     double _lastLocationReportTime;
     double _locationUpdateStartTime;
     double _expectedGpsUpdateInterval;
+    CLInUseAssertion *_locationAssertion;
     CLHeading *_heading;
     NSDate *_lastUpdatedHeadingDate;
     _Bool _hasCustomDesiredAccuracy;
@@ -79,6 +80,12 @@
 - (void)_setTrackingHeading:(_Bool)arg1;
 - (void)_setTrackingLocation:(_Bool)arg1;
 - (void)_reset;
+- (void)removeLocationAccessForAll;
+- (void)removeLocationAccessFor:(id)arg1;
+- (void)requestLocationAccessFor:(id)arg1;
+- (_Bool)_hasLocationAssertion;
+- (void)_clearLocationAssertion;
+- (void)_createLocationAssertion;
 - (void)_setLastLocationReceivedFromMaps:(id)arg1;
 - (void)pushLocation:(id)arg1;
 - (void)stopHeadingUpdateWithObserver:(id)arg1;

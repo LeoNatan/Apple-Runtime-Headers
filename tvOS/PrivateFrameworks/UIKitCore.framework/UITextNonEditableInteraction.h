@@ -11,8 +11,10 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_performGestureType:(long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
 - (void)toggleSelectionCommands;
 - (void)doubleTapInUneditable:(id)arg1;
+- (void)_oneFingerTapInUneditableActionAtLocation:(struct CGPoint)arg1;
 - (void)oneFingerTapInUneditable:(id)arg1;
 - (id)initWithMode:(long long)arg1;
 

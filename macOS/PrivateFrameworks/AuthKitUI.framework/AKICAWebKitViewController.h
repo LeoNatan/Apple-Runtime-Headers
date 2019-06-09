@@ -93,6 +93,8 @@
 - (id)displayImageString;
 - (id)theme;
 - (id)dateFieldsOrder;
+- (id)currentApplicationVersion;
+- (id)currentApplicationIdentifier;
 - (id)clientVersion;
 - (id)client;
 - (id)osBuild;

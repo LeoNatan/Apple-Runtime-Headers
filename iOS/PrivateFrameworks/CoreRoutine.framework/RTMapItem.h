@@ -21,8 +21,10 @@
     unsigned long long _muid;
     long long _resultProviderID;
     RTLocation *_location;
+    NSString *_displayLanguage;
     RTMapItemExtendedAttributes *_extendedAttributes;
     NSDate *_creationDate;
+    NSDate *_expirationDate;
     double _weight;
 }
 
@@ -32,8 +34,10 @@
 + (_Bool)hasKnownTypeItem:(id)arg1;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
+@property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic) RTMapItemExtendedAttributes *extendedAttributes; // @synthesize extendedAttributes=_extendedAttributes;
+@property(readonly, copy, nonatomic) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
 @property(readonly, nonatomic) long long resultProviderID; // @synthesize resultProviderID=_resultProviderID;
 @property(readonly, nonatomic) unsigned long long muid; // @synthesize muid=_muid;
@@ -53,8 +57,7 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 name:(id)arg2 address:(id)arg3 location:(id)arg4 source:(unsigned long long)arg5 muid:(unsigned long long)arg6 resultProviderID:(long long)arg7 geoMapItemHandle:(id)arg8 creationDate:(id)arg9 extendedAttributes:(id)arg10;
-- (id)initWithMapItemMO:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2 address:(id)arg3 location:(id)arg4 source:(unsigned long long)arg5 muid:(unsigned long long)arg6 resultProviderID:(long long)arg7 geoMapItemHandle:(id)arg8 creationDate:(id)arg9 expirationDate:(id)arg10 extendedAttributes:(id)arg11 displayLanguage:(id)arg12;
 - (id)init;
 
 @end

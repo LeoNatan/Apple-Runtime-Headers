@@ -8,7 +8,7 @@
 
 #import <LinkPresentation/LPiTunesMediaUnresolvedMetadata-Protocol.h>
 
-@class LPiTunesMediaAsset, NSString;
+@class LPiTunesMediaAsset, NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface LPiTunesMediaAudioBookUnresolvedMetadata : NSObject <LPiTunesMediaUnresolvedMetadata>
@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     NSString *_author;
     NSString *_narrator;
     LPiTunesMediaAsset *_artwork;
+    NSArray *_offers;
 }
 
+@property(retain, nonatomic) NSArray *offers; // @synthesize offers=_offers;
 @property(retain, nonatomic) LPiTunesMediaAsset *artwork; // @synthesize artwork=_artwork;
 @property(copy, nonatomic) NSString *narrator; // @synthesize narrator=_narrator;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
@@ -28,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
 - (void).cxx_destruct;
-- (id)assetsToResolve;
+- (id)assetsToFetch;
 - (id)resolve;
 
 // Remaining properties

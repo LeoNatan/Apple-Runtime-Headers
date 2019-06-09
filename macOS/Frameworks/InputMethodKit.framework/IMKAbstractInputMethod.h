@@ -6,18 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <InputMethodKit/IMKCandidateMenuDelegate-Protocol.h>
 #import <InputMethodKit/IMKInputMethod-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString;
-@protocol IMKInputMethod, IMKKeyboard, IMKTextDocument;
+@protocol IMKCandidateEngine, IMKInputMethod, IMKKeyboard, IMKTextDocument;
 
-@interface IMKAbstractInputMethod : NSObject <IMKInputMethod>
+@interface IMKAbstractInputMethod : NSObject <IMKCandidateMenuDelegate, IMKInputMethod>
 {
     id <IMKKeyboard> _attachedKeyboard;
     id <IMKTextDocument> _attachedTextDocument;
     id <IMKInputMethod> _verbatimInputMethod;
     id <IMKInputMethod> _chainedInputMethod;
     id <IMKInputMethod> _composingInputMethod;
+    id <IMKCandidateEngine> _candidateEngine;
     NSMutableArray *_textDocumentStack;
     CDUnknownBlockType _compositionCompletionHandler;
 }
@@ -27,11 +29,26 @@
 + (id)inputMethodVerbatimChainWithAttachedKeyboard:(id)arg1;
 + (id)inputMethodWithAttachedKeyboard:(id)arg1;
 + (id)inputMethodWithChainedInputMethod:(id)arg1;
+@property(retain, nonatomic) id <IMKCandidateEngine> candidateEngine; // @synthesize candidateEngine=_candidateEngine;
 @property(copy, nonatomic) CDUnknownBlockType compositionCompletionHandler; // @synthesize compositionCompletionHandler=_compositionCompletionHandler;
 @property(retain, nonatomic) id <IMKInputMethod> composingInputMethod; // @synthesize composingInputMethod=_composingInputMethod;
 @property(readonly, nonatomic) id <IMKInputMethod> chainedInputMethod; // @synthesize chainedInputMethod=_chainedInputMethod;
 @property(readonly, nonatomic) __weak id <IMKKeyboard> attachedKeyboard; // @synthesize attachedKeyboard=_attachedKeyboard;
 - (void).cxx_destruct;
+- (void)candidateHandled:(id)arg1;
+- (BOOL)handleBoundedCandidate:(id)arg1;
+- (BOOL)handleCandidateRelativeToCursor:(id)arg1;
+- (BOOL)apply:(id)arg1 before:(long long)arg2 to:(id)arg3;
+- (BOOL)apply:(id)arg1 after:(long long)arg2 to:(id)arg3;
+- (BOOL)didAcceptCandidate:(id)arg1;
+- (id)verbatimFromString:(id)arg1;
+- (void)alignVerbatimWithComposingText;
+- (void)showCandidatesOnKeyboardFor:(id)arg1 withKeyboardState:(id)arg2;
+- (void)showCandidatesOnKeyboardFor:(id)arg1;
+- (id)_candidateSeparator;
+- (BOOL)ignoreSeparatorIfApplied;
+- (id)candidateSeparator;
+- (id)languageCode;
 - (void)popAttachedTextDocument;
 - (void)pushAttachedTextDocument;
 - (id)popTextDocument;
@@ -40,6 +57,7 @@
 - (BOOL)unhandledKeyPress:(id)arg1 whileInKeyboardState:(id)arg2;
 - (BOOL)handleKeyRelease:(id)arg1 whileInKeyboardState:(id)arg2;
 - (BOOL)handleKeyPress:(id)arg1 whileInKeyboardState:(id)arg2;
+- (BOOL)canHandle:(id)arg1 whileInShortcut:(id)arg2;
 - (BOOL)trackedVerbatimShouldHandle:(id)arg1 whileIn:(id)arg2;
 - (void)cancelComposition;
 - (void)completeComposition;
@@ -66,6 +84,9 @@
 - (id)initWithInputMethodToChain:(id)arg1;
 - (id)initWithKeyboardToAttach:(id)arg1;
 - (id)init;
+- (void)candidateMenuDidFinishInteracting:(id)arg1;
+- (void)candidateMenu:(id)arg1 didSelectCandidate:(id)arg2;
+- (void)candidateMenu:(id)arg1 didChangeFocusTo:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

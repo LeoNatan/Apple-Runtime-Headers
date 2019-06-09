@@ -6,9 +6,11 @@
 
 #import <CoreKnowledge/NSObject-Protocol.h>
 
-@class CKGenericCondition, CKTripleCondition, NSArray, NSDictionary, NSString;
+@class CKGenericCondition, CKTripleCondition, INIntent, INInteraction, NSArray, NSDictionary, NSString;
 
 @protocol CKDaemonInterface <NSObject>
+- (void)appMatchesForIntent:(INIntent *)arg1 candidateBundleIDs:(NSArray *)arg2 completionHandler:(void (^)(SRAppMatches *))arg3;
+- (void)saveInteraction:(INInteraction *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)disableSyncAndDeleteCloudDataWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)dropLinksBetweenSubject:(NSString *)arg1 andObject:(NSString *)arg2 inStoreWithIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)dropLinksWithLabel:(NSString *)arg1 fromSubject:(NSString *)arg2 inStoreWithIdentifier:(NSString *)arg3 completionHandler:(void (^)(NSError *))arg4;

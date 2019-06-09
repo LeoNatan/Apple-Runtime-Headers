@@ -17,6 +17,8 @@
 @property(nonatomic) BOOL useMarkedText; // @synthesize useMarkedText=_useMarkedText;
 @property(retain, nonatomic) IMKTextDocumentTextInputAdaptor *textDocument; // @synthesize textDocument=_textDocument;
 - (void).cxx_destruct;
+- (id)candidateControllerForTouchBar;
+- (void)handleIMKCandidateSelection:(id)arg1;
 - (void)commitComposition:(id)arg1;
 - (BOOL)handleEvent:(id)arg1 client:(id)arg2;
 - (void)setValue:(id)arg1 forTag:(long long)arg2 client:(id)arg3;

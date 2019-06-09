@@ -12,7 +12,7 @@
 #import <MusicCarDisplayUI/UITableViewDataSource-Protocol.h>
 #import <MusicCarDisplayUI/UITableViewDelegate-Protocol.h>
 
-@class AVExternalDevice, MCDNowPlayingButton, MCDPCContainer, MPWeakTimer, NSIndexPath, NSObject, NSString, UIAlertController, UITableView, UIView, _UIFilteredDataSource;
+@class CARSessionStatus, MCDNowPlayingButton, MCDPCContainer, MPWeakTimer, NSIndexPath, NSObject, NSString, UIAlertController, UITableView, UIView, _UIFilteredDataSource;
 @protocol OS_dispatch_queue;
 
 @interface MCDBrowsableContentTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, MCDPCContainerDelegate, MCDErrorViewDelegate>
@@ -27,11 +27,12 @@
     MPWeakTimer *_delayTimer;
     UIView *_MCD_tableView;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    AVExternalDevice *_externalDevice;
+    CARSessionStatus *_carSessionStatus;
     _Bool _limited;
     _Bool _hasCarScreen;
     _Bool _hasNoBrowsableContent;
     _Bool _didPushToNowPlayingAtLaunch;
+    _Bool _isRootTableViewController;
     _Bool _hasTabbedBrowsing;
     _Bool _visible;
     _Bool _currentlyPlayingApp;

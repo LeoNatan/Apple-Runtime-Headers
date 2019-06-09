@@ -15,7 +15,6 @@
 
 @property(readonly, nonatomic) NSArray *sourceTimeRanges;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithTimeRanges:(id)arg1;
 - (id)init;

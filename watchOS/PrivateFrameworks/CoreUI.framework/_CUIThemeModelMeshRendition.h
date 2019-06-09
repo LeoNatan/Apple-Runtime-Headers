@@ -6,10 +6,18 @@
 
 #import <CoreUI/CUIThemeRendition.h>
 
+@class MDLMesh, NSArray, NSMutableArray;
+
 __attribute__((visibility("hidden")))
 @interface _CUIThemeModelMeshRendition : CUIThemeRendition
 {
+    MDLMesh *_mesh;
+    NSMutableArray *_submeshKeys;
 }
+
+@property(readonly) NSArray *submeshKeys;
+- (unsigned long)writeToData:(id)arg1;
+- (id)initForArchiving:(id)arg1 withSubmeshRenditionKeys:(id)arg2;
 
 @end
 

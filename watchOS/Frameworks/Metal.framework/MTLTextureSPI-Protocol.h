@@ -12,18 +12,20 @@
 @protocol MTLTextureSPI <MTLTexture, MTLResourceSPI>
 @property(readonly) _Bool isDrawable;
 @property(readonly) unsigned int numFaces;
+@property(readonly) unsigned int swizzleKey;
+@property(readonly) int compressionFeedback;
 @property(readonly) _Bool isCompressed;
-@property unsigned int swizzle;
 @property(readonly) unsigned int rotation;
-- (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4 swizzle:(unsigned int)arg5;
+@property(readonly) unsigned int iosurfacePlane;
+@property(readonly) struct __IOSurface *iosurface;
 
 @optional
-@property(readonly) unsigned long long resourceIndex;
+@property(nonatomic) unsigned long long resourceIndex;
 @property(readonly) unsigned int uniqueIdentifier;
 - (void)generateMipmapLevel:(unsigned int)arg1 slice:(unsigned int)arg2;
 - (_Bool)canGenerateMipmapLevels;
 - (id <MTLTexture>)newCompressedTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 level:(unsigned int)arg3 slice:(unsigned int)arg4;
-- (void)replaceRegion:(CDStruct_44fb454a)arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6 options:(unsigned int)arg7;
-- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(CDStruct_44fb454a)arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6 options:(unsigned int)arg7;
+- (void)replaceRegion:(CDStruct_4e0934b9)arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6 options:(unsigned int)arg7;
+- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(CDStruct_4e0934b9)arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6 options:(unsigned int)arg7;
 @end
 

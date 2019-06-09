@@ -60,6 +60,7 @@
 - (void)willResignActive;
 - (void)statusBarWillChangeHeight:(id)arg1;
 - (void)showLeftButton:(id)arg1 withStyle:(int)arg2 rightButton:(id)arg3 withStyle:(int)arg4;
+- (void)handleURL:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleURL:(id)arg1;
 - (void)showController:(id)arg1 animate:(_Bool)arg2;
 - (void)showController:(id)arg1;

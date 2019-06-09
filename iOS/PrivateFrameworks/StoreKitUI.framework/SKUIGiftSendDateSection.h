@@ -8,6 +8,7 @@
 
 @class NSDate, NSString, SKUIGiftTableSectionHeaderView, SKUIItem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftSendDateSection : SKUIGiftTableViewSection
 {
     NSString *_dateString;

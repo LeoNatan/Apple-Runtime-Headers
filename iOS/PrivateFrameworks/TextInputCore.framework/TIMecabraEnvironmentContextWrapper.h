@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSDate, NSMutableArray, NSString;
 
 @interface TIMecabraEnvironmentContextWrapper : NSObject
 {
@@ -20,8 +20,10 @@
     struct __MecabraContext *_mecabraContext;
     NSMutableArray *_temporaryCandidates;
     NSMutableArray *_environmentCandidates;
+    NSDate *_lastAnalyzeInputDate;
 }
 
+@property(retain, nonatomic) NSDate *lastAnalyzeInputDate; // @synthesize lastAnalyzeInputDate=_lastAnalyzeInputDate;
 @property(retain, nonatomic) NSMutableArray *environmentCandidates; // @synthesize environmentCandidates=_environmentCandidates;
 @property(nonatomic) int shuangpinType; // @synthesize shuangpinType=_shuangpinType;
 @property(nonatomic) int textContentType; // @synthesize textContentType=_textContentType;
@@ -34,10 +36,12 @@
 @property(copy, nonatomic) NSString *appContext; // @synthesize appContext=_appContext;
 - (void).cxx_destruct;
 - (void *)createMecabraCandidateFromString:(id)arg1;
+- (void)setKeyboardLayout:(id)arg1;
 - (void)setGeometryModel:(void *)arg1 modelData:(struct __CFArray *)arg2;
 - (void)completelyCommitInlineCandidate:(void *)arg1;
 - (void)partiallyCommitInlineCandidate:(void *)arg1;
 - (_Bool)predictionCandidatesWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
+- (_Bool)analyzeInput:(id)arg1 options:(unsigned long long)arg2;
 - (_Bool)analyzeString:(id)arg1 options:(unsigned long long)arg2;
 - (void)syncEnvironmentAndContextCandidates;
 - (void)revertLearningForCandidate:(void *)arg1;
@@ -48,6 +52,7 @@
 @property(readonly, nonatomic) NSArray *environmentCandidateStrings;
 - (void)declareEndOfSentence;
 - (void)clearAll;
+- (void)clearInline;
 - (void)clearContext;
 @property(readonly, nonatomic) NSArray *contextCandidateStrings;
 @property(readonly, nonatomic) NSArray *contextCandidates;

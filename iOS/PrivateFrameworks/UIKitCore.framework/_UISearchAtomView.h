@@ -8,36 +8,46 @@
 
 #import <UIKitCore/_UIAtomTextViewAtomLayout-Protocol.h>
 
-@class NSArray, NSString, UIImageView, UILabel, _UISearchAtomBackgroundView;
+@class NSArray, NSLayoutConstraint, NSString, UIColor, UIImageView, UILabel, _UISearchAtomBackgroundView;
 
 __attribute__((visibility("hidden")))
 @interface _UISearchAtomView : UIView <_UIAtomTextViewAtomLayout>
 {
-    CDStruct_513ff01d _flags;
+    struct {
+        unsigned int enabled:1;
+    } _flags;
+    UIColor *_atomBackgroundColor;
     UILabel *_textLabel;
     UIImageView *_leadingImage;
     _UISearchAtomBackgroundView *_backgroundView;
     NSArray *_defaultConstraints;
+    NSLayoutConstraint *_imageBaselineConstraint;
+    NSLayoutConstraint *_imageCenterYConstraint;
     NSArray *_withImageConstraints;
     NSArray *_withoutImageConstraints;
 }
 
++ (id)defaultAtomBackgroundColor;
 + (_Bool)requiresConstraintBasedLayout;
 @property(copy, nonatomic) NSArray *withoutImageConstraints; // @synthesize withoutImageConstraints=_withoutImageConstraints;
 @property(copy, nonatomic) NSArray *withImageConstraints; // @synthesize withImageConstraints=_withImageConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *imageCenterYConstraint; // @synthesize imageCenterYConstraint=_imageCenterYConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *imageBaselineConstraint; // @synthesize imageBaselineConstraint=_imageBaselineConstraint;
 @property(copy, nonatomic) NSArray *defaultConstraints; // @synthesize defaultConstraints=_defaultConstraints;
 @property(retain, nonatomic) _UISearchAtomBackgroundView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(retain) UIImageView *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain) UILabel *textLabel; // @synthesize textLabel=_textLabel;
+@property(retain, nonatomic) UIColor *atomBackgroundColor; // @synthesize atomBackgroundColor=_atomBackgroundColor;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) struct CGRect selectionBounds;
 - (void)setSelectionStyle:(long long)arg1 animated:(_Bool)arg2;
 @property(nonatomic) long long selectionStyle;
 - (void)setEnabled:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
+- (void)_dynamicUserInterfaceTraitDidChange;
+- (void)tintColorDidChange;
 - (id)viewForLastBaselineLayout;
-- (void)_updateTextColor;
-- (void)_updateImageColor;
+- (void)_updateColors;
 - (void)updateConstraints;
 - (double)_bottomMargin;
 - (double)_topToBaselineDelta;

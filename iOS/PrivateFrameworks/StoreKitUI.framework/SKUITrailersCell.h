@@ -8,6 +8,7 @@
 
 @class NSString, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUITrailersCell : UICollectionViewCell
 {
     UIImageView *_imageView;

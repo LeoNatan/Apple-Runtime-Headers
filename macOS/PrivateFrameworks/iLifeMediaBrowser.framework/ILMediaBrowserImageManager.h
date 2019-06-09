@@ -38,7 +38,7 @@
 - (void)applyCachedInfo:(id)arg1 toMediaObject:(id)arg2;
 - (void)loadCachedAttributesForMediaObject:(id)arg1;
 - (void)updateThumbnailDataXmlForPath:(id)arg1 info:(id)arg2;
-- (void)_writeCachedDBaseDictToFile;
+- (void)writeCachedDBaseDictToFile;
 - (id)cachedDBaseDict;
 - (void)handleApplicationWillTerminate:(id)arg1;
 - (id)photoBoothIcon;

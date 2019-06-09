@@ -6,6 +6,7 @@
 
 #import <UIKit/UILabel.h>
 
+__attribute__((visibility("hidden")))
 @interface _Badge : UILabel
 {
 }

@@ -8,30 +8,39 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 @interface GEOBusinessOptions : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_attributeKeys;
-    int _maxBusinessResults;
     NSMutableArray *_photoOptions;
+    int _maxBusinessResults;
     _Bool _includeBusinessHours;
     _Bool _includeCenter;
     struct {
-        unsigned int maxBusinessResults:1;
-        unsigned int includeBusinessHours:1;
-        unsigned int includeCenter:1;
-    } _has;
+        unsigned int has_maxBusinessResults:1;
+        unsigned int has_includeBusinessHours:1;
+        unsigned int has_includeCenter:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_attributeKeys:1;
+        unsigned int read_photoOptions:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_attributeKeys:1;
+        unsigned int wrote_photoOptions:1;
+        unsigned int wrote_maxBusinessResults:1;
+        unsigned int wrote_includeBusinessHours:1;
+        unsigned int wrote_includeCenter:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)attributeKeyType;
 + (Class)photoOptionsType;
-@property(nonatomic) _Bool includeCenter; // @synthesize includeCenter=_includeCenter;
-@property(nonatomic) _Bool includeBusinessHours; // @synthesize includeBusinessHours=_includeBusinessHours;
-@property(retain, nonatomic) NSMutableArray *attributeKeys; // @synthesize attributeKeys=_attributeKeys;
-@property(retain, nonatomic) NSMutableArray *photoOptions; // @synthesize photoOptions=_photoOptions;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,20 +49,29 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasIncludeCenter;
+@property(nonatomic) _Bool includeCenter;
 @property(nonatomic) _Bool hasMaxBusinessResults;
-@property(nonatomic) int maxBusinessResults; // @synthesize maxBusinessResults=_maxBusinessResults;
+@property(nonatomic) int maxBusinessResults;
 @property(nonatomic) _Bool hasIncludeBusinessHours;
+@property(nonatomic) _Bool includeBusinessHours;
 - (id)attributeKeyAtIndex:(unsigned long long)arg1;
 - (unsigned long long)attributeKeysCount;
+- (void)_addNoFlagsAttributeKey:(id)arg1;
 - (void)addAttributeKey:(id)arg1;
 - (void)clearAttributeKeys;
+@property(retain, nonatomic) NSMutableArray *attributeKeys;
+- (void)_readAttributeKeys;
 - (id)photoOptionsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)photoOptionsCount;
+- (void)_addNoFlagsPhotoOptions:(id)arg1;
 - (void)addPhotoOptions:(id)arg1;
 - (void)clearPhotoOptions;
+@property(retain, nonatomic) NSMutableArray *photoOptions;
+- (void)_readPhotoOptions;
 
 @end
 

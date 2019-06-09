@@ -29,7 +29,6 @@
 @property(copy) NSColor *fillColor;
 - (void)viewDidMoveToWindow;
 - (void)viewDidMoveToSuperview;
-- (struct NSEdgeInsets)alignmentRectInsets;
 - (double)tickMarkValueAtIndex:(long long)arg1;
 - (struct CGRect)rectOfTickMarkAtIndex:(long long)arg1;
 - (void)setAlwaysDrawRatingPlaceholder:(BOOL)arg1;
@@ -42,6 +41,8 @@
 @property double maxValue;
 @property double minValue;
 @property(getter=isEditable) BOOL editable;
+- (double)firstBaselineOffsetFromTop;
+- (struct NSEdgeInsets)alignmentRectInsets;
 - (struct CGSize)intrinsicContentSize;
 - (void)sizeToFit;
 - (BOOL)isFlipped;

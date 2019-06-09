@@ -6,16 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class CLSSettingsVisibilityController;
-
+__attribute__((visibility("hidden")))
 @interface PSUIClassKitVisibilityArbitrator : NSObject
 {
     unsigned long long _visibilityState;
     CDUnknownBlockType _visibilityStateChangeHandler;
-    CLSSettingsVisibilityController *_visibilityController;
 }
 
-@property(retain, nonatomic) CLSSettingsVisibilityController *visibilityController; // @synthesize visibilityController=_visibilityController;
 @property(copy, nonatomic) CDUnknownBlockType visibilityStateChangeHandler; // @synthesize visibilityStateChangeHandler=_visibilityStateChangeHandler;
 @property(nonatomic) unsigned long long visibilityState; // @synthesize visibilityState=_visibilityState;
 - (void).cxx_destruct;

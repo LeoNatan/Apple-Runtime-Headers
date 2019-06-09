@@ -8,6 +8,7 @@
 
 @class UIView;
 
+__attribute__((visibility("hidden")))
 @interface AVPlaybackControlsVisibilityControllerItem : NSObject
 {
     _Bool _hidden;

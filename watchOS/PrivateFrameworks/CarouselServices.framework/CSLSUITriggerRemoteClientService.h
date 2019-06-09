@@ -10,7 +10,7 @@
 #import <CarouselServices/CSLSUITriggerRemoteClientServiceProtocol-Protocol.h>
 #import <CarouselServices/NSXPCListenerDelegate-Protocol.h>
 
-@class NSString, NSXPCConnection, NSXPCListener;
+@class NSMutableDictionary, NSString, NSXPCConnection, NSXPCListener;
 @protocol CSLSUITriggerRemoteClientServiceDelegate;
 
 @interface CSLSUITriggerRemoteClientService : NSObject <NSXPCListenerDelegate, CSLSUITriggerClientExportedInterface, CSLSUITriggerRemoteClientServiceProtocol>
@@ -20,6 +20,8 @@
     NSXPCListener *_listener;
     NSString *_machServiceName;
     int _serviceRestartedNotificationToken;
+    struct os_unfair_recursive_lock_s _lock;
+    NSMutableDictionary *_activeTriggers;
     id <CSLSUITriggerRemoteClientServiceDelegate> _delegate;
 }
 
@@ -34,7 +36,10 @@
 - (void)handleUITriggerWithName:(id)arg1 dictionary:(id)arg2 reason:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)removeUITriggerName:(id)arg1;
 - (void)addUITriggerName:(id)arg1 usage:(id)arg2;
+- (void)connect;
 - (void)connectWithMachServiceName:(id)arg1;
+- (void)_reestablishTriggersWithServer;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (void)_invalidateConnectionFromServer;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dealloc;

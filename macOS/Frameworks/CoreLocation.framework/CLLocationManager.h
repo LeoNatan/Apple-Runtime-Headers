@@ -15,6 +15,7 @@
     BOOL _allowsBackgroundLocationUpdates;
     BOOL _showsBackgroundLocationIndicator;
     BOOL _allowsAlteredAccessoryLocations;
+    NSSet *_rangedBeaconConstraints;
 }
 
 + (BOOL)bundleSupported:(id)arg1;
@@ -22,6 +23,14 @@
 + (BOOL)dumpLogsWithMessage:(id)arg1;
 + (void)setDefaultEffectiveBundle:(id)arg1;
 + (void)setDefaultEffectiveBundleIdentifier:(id)arg1;
++ (void)setBackgroundIndicatorEnabled:(BOOL)arg1 forBundle:(id)arg2;
++ (void)setBackgroundIndicatorEnabled:(BOOL)arg1 forBundleIdentifier:(id)arg2;
++ (void)setTemporaryAuthorizationGranted:(BOOL)arg1 forBundle:(id)arg2;
++ (void)setTemporaryAuthorizationGranted:(BOOL)arg1 forBundleIdentifier:(id)arg2;
++ (void)setAuthorizationStatusByType:(int)arg1 forBundle:(id)arg2;
++ (void)setAuthorizationStatusByType:(int)arg1 forBundleIdentifier:(id)arg2;
++ (void)setAuthorizationStatusByType:(int)arg1 withCorrectiveCompensation:(BOOL)arg2 forBundleIdentifier:(id)arg3;
++ (void)setAuthorizationStatusByType:(int)arg1 withCorrectiveCompensation:(BOOL)arg2 forBundle:(id)arg3;
 + (void)setAuthorizationStatus:(BOOL)arg1 forBundle:(id)arg2;
 + (void)setAuthorizationStatus:(BOOL)arg1 forBundleIdentifier:(id)arg2;
 + (int)authorizationStatus;
@@ -32,6 +41,8 @@
 + (int)authorizationStatusForBundle:(id)arg1;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
++ (id)_applyArchivedAuthorizationDecisions:(id)arg1;
++ (id)_archivedAuthorizationDecisionsWithError:(id *)arg1;
 + (id)appsUsingLocationWithInfo;
 + (BOOL)isPeerRangingAvailable;
 + (BOOL)deferredLocationUpdatesAvailable;
@@ -60,12 +71,13 @@
 + (BOOL)isStatusBarIconEnabledForLocationEntityClass:(unsigned long long)arg1;
 + (void)setStatusBarIconEnabled:(BOOL)arg1 forLocationEntityClass:(unsigned long long)arg2;
 @property(nonatomic) BOOL allowsAlteredAccessoryLocations; // @synthesize allowsAlteredAccessoryLocations=_allowsAlteredAccessoryLocations;
+@property(readonly, copy, nonatomic) NSSet *rangedBeaconConstraints; // @synthesize rangedBeaconConstraints=_rangedBeaconConstraints;
 @property(nonatomic) BOOL showsBackgroundLocationIndicator; // @synthesize showsBackgroundLocationIndicator=_showsBackgroundLocationIndicator;
 @property(nonatomic) BOOL allowsBackgroundLocationUpdates; // @synthesize allowsBackgroundLocationUpdates=_allowsBackgroundLocationUpdates;
+- (void)setIsActuallyAWatchKitExtension:(BOOL)arg1;
 - (void)registerAsLocationClient;
 @property(nonatomic, getter=isDynamicAccuracyReductionEnabled) BOOL dynamicAccuracyReductionEnabled;
 @property(nonatomic, getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
-@property(nonatomic, getter=isPersistentMonitoringEnabled) BOOL persistentMonitoringEnabled;
 - (void)requestAlwaysAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)requestWhenInUseAuthorization;
@@ -88,6 +100,7 @@
 - (void)onClientEventRegionState:(id)arg1;
 - (void)onClientEventRegion:(id)arg1;
 - (void)onClientEventError:(id)arg1;
+- (void)onClientEventPlaceInference:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventLocationUnavailable:(id)arg1;
@@ -148,16 +161,25 @@
 @property(nonatomic) BOOL pausesLocationUpdatesAutomatically;
 @property(nonatomic) double desiredAccuracy;
 @property(nonatomic) double distanceFilter;
-@property(nonatomic) id <CLLocationManagerDelegate> delegate;
+@property(nonatomic) __weak id <CLLocationManagerDelegate> delegate;
 - (void)dealloc;
+- (id)_initWithDelegate:(id)arg1 onQueue:(id)arg2;
+- (id)initWithEffectiveBundle:(id)arg1 delegate:(id)arg2 onQueue:(id)arg3;
 - (id)initWithEffectiveBundle:(id)arg1;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1 delegate:(id)arg2 onQueue:(id)arg3;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
 - (id)init;
-- (id)initWithEffectiveBundleIdentifier:(id)arg1 bundle:(id)arg2;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1 bundle:(id)arg2 delegate:(id)arg3 silo:(id)arg4;
 - (void)stopUpdatingVehicleHeading;
 - (void)startUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
 - (void)startUpdatingVehicleSpeed;
+- (void)_setGroundAltitudeEnabled:(BOOL)arg1;
+- (BOOL)_isGroundAltitudeEnabled;
+- (void)_fetchPlaceInferencesWithFidelityPolicy:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_updateLSLHeadingEstimation:(id)arg1;
+- (void)_updateARSessionState:(unsigned long long)arg1;
+- (void)_updateVIOEstimation:(id)arg1;
 
 @end
 

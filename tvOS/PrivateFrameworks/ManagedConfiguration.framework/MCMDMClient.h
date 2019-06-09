@@ -30,8 +30,10 @@
 - (void)scheduleTokenUpdateIfNecessary;
 - (void)scheduleTokenUpdate;
 - (void)notifyNewConfiguration;
-- (_Bool)checkOutCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 topic:(id)arg3 signMessage:(_Bool)arg4 outError:(id *)arg5;
-- (_Bool)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 topic:(id)arg3 useDevelopmentAPNS:(_Bool)arg4 signMessage:(_Bool)arg5 outError:(id *)arg6;
+- (_Bool)checkOutCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 topic:(id)arg3 signMessage:(_Bool)arg4 isUserEnrollment:(_Bool)arg5 enrollmentID:(id)arg6 outError:(id *)arg7;
+- (id)deviceEnrollmentAuthenticationDict;
+- (id)userEnrollmentAuthenticationDictWithEnrollmentID:(id)arg1;
+- (_Bool)authenticateWithCheckInURL:(id)arg1 identity:(struct __SecIdentity *)arg2 topic:(id)arg3 useDevelopmentAPNS:(_Bool)arg4 signMessage:(_Bool)arg5 isUserEnrollment:(_Bool)arg6 enrollmentID:(id)arg7 outError:(id *)arg8;
 - (void)_createAndStartMDMXPCConnection;
 - (void)dealloc;
 

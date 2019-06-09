@@ -15,11 +15,13 @@
     int _domain;
     int _filteringPolicy;
     MPModelStoreBrowseResponse *_previousResponse;
+    int _requestEndpoint;
 }
 
 + (id)allSupportedSectionProperties;
 + (id)allSupportedItemProperties;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) int requestEndpoint; // @synthesize requestEndpoint=_requestEndpoint;
 @property(retain, nonatomic) MPModelStoreBrowseResponse *previousResponse; // @synthesize previousResponse=_previousResponse;
 @property(nonatomic) int filteringPolicy; // @synthesize filteringPolicy=_filteringPolicy;
 @property(nonatomic) int domain; // @synthesize domain=_domain;

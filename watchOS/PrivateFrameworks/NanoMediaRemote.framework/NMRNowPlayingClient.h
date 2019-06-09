@@ -6,18 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <NanoMediaRemote/NMROriginMediaRemoteObserverNotificationHandler-Protocol.h>
-
 @class NSString;
 
-@interface NMRNowPlayingClient : NSObject <NMROriginMediaRemoteObserverNotificationHandler>
+@interface NMRNowPlayingClient : NSObject
 {
     void *_mediaRemoteNowPlayingClient;
     NSString *_bundleIdentifier;
     NSString *_displayName;
 }
 
-+ (void *)_nowPlayingClientFromNotification:(id)arg1;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, nonatomic) void *mediaRemoteNowPlayingClient; // @synthesize mediaRemoteNowPlayingClient=_mediaRemoteNowPlayingClient;
@@ -25,8 +22,6 @@
 - (void)dealloc;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithMRNowPlayingClient:(void *)arg1;
-- (_Bool)shouldHandleNotification:(id)arg1;
-- (id)initFromNotification:(id)arg1;
 
 @end
 

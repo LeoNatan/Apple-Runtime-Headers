@@ -39,7 +39,7 @@
 - (unsigned int)vista;
 - (id)rotatable:(unsigned int)arg1;
 - (void)layoutSubviews;
-- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_updateAnimation;
 - (void)stopAnimation;
 - (void)startAnimation;
@@ -48,7 +48,6 @@
 - (void)setOpaque:(_Bool)arg1;
 @property(retain, nonatomic) NUScene *scene;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2 options:(unsigned int)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 
 // Remaining properties

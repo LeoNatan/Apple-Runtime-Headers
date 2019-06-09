@@ -14,8 +14,6 @@ __attribute__((visibility("hidden")))
 + (void)_resetAccountStoreCache;
 + (id)mediaTypeForAccountStore:(id)arg1;
 + (id)accountStoreForMediaType:(id)arg1;
-+ (id)mediaTypeForProcessInfo:(id)arg1;
-+ (id)defaultMediaTypeForCurrentProcess;
 + (id)cacheAccessQueue;
 + (id)cache;
 

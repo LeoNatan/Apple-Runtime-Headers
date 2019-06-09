@@ -6,23 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <Photos/PLColorSpaceIdentity-Protocol.h>
-
 @class NSString;
 
-@interface PHImageRequestColorSpace : NSObject <PLColorSpaceIdentity>
+@interface PHImageRequestColorSpace : NSObject
 {
     NSString *_colorSpaceName;
 }
 
 @property(copy, nonatomic) NSString *colorSpaceName; // @synthesize colorSpaceName=_colorSpaceName;
 - (void).cxx_destruct;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

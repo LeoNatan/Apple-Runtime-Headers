@@ -8,6 +8,7 @@
 
 @protocol _DKDaemonInterface
 - (void)confirmDatabaseConnectionWithReply:(void (^)(_Bool, NSError *))arg1;
+- (void)deviceUUIDWithReply:(void (^)(NSObject *, NSError *))arg1;
 - (void)sourceDeviceIdentityWithReply:(void (^)(NSObject *, NSError *))arg1;
 - (void)deleteRemoteState:(void (^)(_Bool, NSError *))arg1;
 - (void)synchronizeWithUrgency:(unsigned long long)arg1 client:(NSString *)arg2 reply:(void (^)(_Bool, NSError *))arg3;

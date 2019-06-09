@@ -8,6 +8,7 @@
 
 @class ESDContainer, OABReaderState, OABTableSortedIntArray, OADTable;
 
+__attribute__((visibility("hidden")))
 @interface OABRTable : NSObject
 {
     ESDContainer *mSrcTable;

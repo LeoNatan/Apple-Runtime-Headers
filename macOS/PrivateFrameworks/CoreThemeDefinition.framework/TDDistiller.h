@@ -74,6 +74,7 @@
 - (BOOL)distillCustomColors;
 - (BOOL)_distillColorDefinitions:(id)arg1;
 - (BOOL)distillCatalogGlobals;
+- (BOOL)distillLocalizationss;
 - (BOOL)distillThemeAppearances;
 - (BOOL)distillRenditions;
 - (BOOL)_recordRenditionEntryFromRendition:(id)arg1;

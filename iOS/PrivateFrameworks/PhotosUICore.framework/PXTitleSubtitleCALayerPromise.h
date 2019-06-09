@@ -39,6 +39,7 @@
 - (void)setSubtitleText:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)performChanges:(CDUnknownBlockType)arg1;
+- (id)_stringByReplacingNonbreakableWhitespaceToAllowLineWrapping:(id)arg1 maxWidth:(double)arg2;
 - (id)_attributedStringForLabelWithText:(id)arg1 spec:(id)arg2;
 - (id)_linesToRenderWithContext:(struct CGContext *)arg1;
 - (void)drawLayerContentInContext:(struct CGContext *)arg1;

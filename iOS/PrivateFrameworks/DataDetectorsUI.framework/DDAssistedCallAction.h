@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)isAvailable;
+- (id)icon;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <CoreBrightness/CBDisplayModule.h>
 
-@class NSMutableDictionary, NSObject;
+@class NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
 {
     _Bool _running;
     struct DSDevice *_device;
+    NSString *_containerID;
     NSObject<OS_dispatch_source> *_delayedBrightnessCommitTimer;
     NSMutableDictionary *_properties;
+    _Bool _brightnessUpdatesDisabled;
     BOOL _builtIn;
     unsigned long long _displayID;
 }

@@ -11,7 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)_generateShadowWithRadius:(float)arg1 cornerRadius:(float)arg2 color:(id)arg3;
++ (id)_generateShadowWithRadius:(float)arg1 cornerRadius:(float)arg2 isContinuousCorner:(_Bool)arg3 color:(id)arg4;
++ (struct CGImage *)shadowWithRadius:(float)arg1 cornerRadius:(float)arg2 isContinuousCorner:(_Bool)arg3 white:(float)arg4;
 + (struct CGImage *)shadowWithRadius:(float)arg1 cornerRadius:(float)arg2 white:(float)arg3;
 + (struct CGImage *)shadowWithRadius:(float)arg1 cornerRadius:(float)arg2;
 

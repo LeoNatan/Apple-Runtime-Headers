@@ -18,6 +18,7 @@
 - (void)undoRedo:(id)arg1;
 - (BOOL)coalesceAffectedRange:(struct _NSRange)arg1 replacementRange:(struct _NSRange)arg2 selectedRange:(struct _NSRange)arg3 text:(id)arg4;
 - (void)dealloc;
+- (id)initWithAffectedRange:(struct _NSRange)arg1 textStorage:(id)arg2 undoManager:(id)arg3 replacementRange:(struct _NSRange)arg4;
 - (id)initWithAffectedRange:(struct _NSRange)arg1 layoutManager:(id)arg2 undoManager:(id)arg3 replacementRange:(struct _NSRange)arg4;
 
 @end

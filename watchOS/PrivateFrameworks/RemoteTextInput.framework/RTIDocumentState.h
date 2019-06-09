@@ -8,11 +8,12 @@
 
 #import <RemoteTextInput/NSSecureCoding-Protocol.h>
 
-@class NSMutableDictionary, TIDocumentState;
+@class NSAttributedString, NSMutableDictionary, TIDocumentState;
 
 @interface RTIDocumentState : NSObject <NSSecureCoding>
 {
     TIDocumentState *_documentState;
+    NSAttributedString *_textCheckingAnnotatedString;
     NSMutableDictionary *__selectionRects;
     struct CGRect _caretRectInWindow;
     struct CGRect _firstSelectionRectInWindow;
@@ -20,6 +21,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSMutableDictionary *_selectionRects; // @synthesize _selectionRects=__selectionRects;
+@property(copy, nonatomic) NSAttributedString *textCheckingAnnotatedString; // @synthesize textCheckingAnnotatedString=_textCheckingAnnotatedString;
 @property(nonatomic) struct CGRect firstSelectionRectInWindow; // @synthesize firstSelectionRectInWindow=_firstSelectionRectInWindow;
 @property(nonatomic) struct CGRect caretRectInWindow; // @synthesize caretRectInWindow=_caretRectInWindow;
 @property(retain, nonatomic) TIDocumentState *documentState; // @synthesize documentState=_documentState;

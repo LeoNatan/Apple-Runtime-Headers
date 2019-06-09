@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)_mediaBrowserTypeForTargetPath:(const struct TFENodeVector *)arg1;
 + (unsigned long long)_mediaBrowserTypeForNode:(const struct TFENode *)arg1;
 @property(nonatomic) _Bool historyDisabled; // @synthesize historyDisabled=_historyDisabled;
+- (id)appCustomMenuItemsForNodes:(const struct TFENodeVector *)arg1;
 - (void)cmdToggleHideExtension:(id)arg1;
 - (_Bool)validateToggleHideExtension:(id)arg1;
 - (_Bool)hidesSharedSharedItems;
@@ -41,7 +42,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBrowseNode:(const struct TFENode *)arg1;
 - (_Bool)quickLookShouldShowOpenButtonForNode:(const struct TFENode *)arg1;
 - (BOOL)previewPanel:(id)arg1 shouldShowOpenButtonForItem:(id)arg2;
-- (void)disableHistoryAndDoWork:(CDUnknownBlockType)arg1;
+- (void)disableHistoryAndDoWork:(const function_b1fce659 *)arg1;
 - (void)searchWasChanged;
 - (void)searchTextChanged:(id)arg1;
 - (void)searchFieldTextChanged;
@@ -65,7 +66,6 @@ __attribute__((visibility("hidden")))
 - (void)setMediaBrowserShownTypes:(unsigned long long)arg1;
 - (struct TFENodeVector)reduceRootedPath:(const struct TFENodeVector *)arg1;
 - (_Bool)nodeIsOurICloud:(const struct TFENode *)arg1;
-- (struct TFENode)_quickFollowAliasChainForNode:(const struct TFENode *)arg1;
 - (struct TFENode)sidebarTarget;
 - (_Bool)shouldShowSidebarSplitter;
 - (_Bool)shouldShowPathBarForTarget:(const struct TFENode *)arg1;

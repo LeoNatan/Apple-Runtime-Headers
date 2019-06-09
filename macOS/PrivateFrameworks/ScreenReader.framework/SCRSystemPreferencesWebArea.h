@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldPromoteUIElement:(id)arg1;
 - (BOOL)supportsInAppSearching;
 - (BOOL)navigatingWithWebGroups;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 
 @end
 

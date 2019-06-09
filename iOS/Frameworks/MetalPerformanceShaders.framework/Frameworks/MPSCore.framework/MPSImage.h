@@ -11,21 +11,23 @@
 
 @interface MPSImage : NSObject
 {
-    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]^{MPSFunctionTable}{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[79{atomic<MPSLibrary *>=A^{MPSLibrary}}]}, name: _device
+    // Error parsing type: ^{MPSDevice=^^?^{MPSDevice}@^{MPSDeviceFreeList}{atomic<MTLLibraryNode *>=A^{MTLLibraryNode}}[2[2[2{atomic<void *>=A^v}]]][563{MPSPixelCapabilities=b1b1b1b1b1b2b1b8}]{atomic<void *>=A^v}Ii{MPSGPUInfo=b8b8b8b16b4b20}[106{atomic<MPSLibrary *>=A^{MPSLibrary}}]}, name: _device
     unsigned long long _width;
     unsigned long long _height;
     unsigned long long _featureChannels;
     unsigned long long _featureChannelsLayout;
+    unsigned long long _featureChannelFormat;
     unsigned long long _numberOfImages;
     unsigned long long _textureType;
     NSString *_label;
     struct MPSPixelInfo _pixelInfo;
     MPSImage *_parent;
-    // Error parsing type: {MPSAutoTexture="_texture"{atomic<void *>="__a_"A^v}"_resourceSize"{?="size"Q"align"Q}"_rowBytes"Q""(?="_subTex"{?="parent"^{MPSAutoTexture}"subRangeStart"I"subRangeSize"I}""{?="_descriptor"@"MTLTextureDescriptor"""(?="_tex"{?="device"@"<MTLDevice>"}"_temporary"{?="cache"@"MPSCommandBufferImageCache"})})"_type"C"_twiddled"C}, name: _texture
+    // Error parsing type: {MPSAutoTexture="_texture"{atomic<id<MTLTexture> >="__a_"A@}"_resourceSize"{?="size"Q"align"Q}"_rowBytes"Q"_pixelInfo"{MPSPixelInfo="pixelFormat"b10"chunkSize"b6"chunkWidth"b4"chunkHeight"b4"pixelStyle"b4"colorModel"b4"bitDepth"b8"isSigned"b1"isClamped"b1"isInteger"b1"canFilter"b1"canRender"b1"canWrite"b1"canMultisample"b1"isSupported"b1"isCompressed"b1"chunkSizePlane2"b6"log2MinAlignment"b4"featureChannelFormat"b3"_padding"b2}""(?="_subTex"{?="parent"^{MPSAutoTexture}"subRangeStart"I"subRangeSize"I}""{?="_descriptor"@"MTLTextureDescriptor"""(?="_tex"{?="device"^{MPSDevice}}"_temporary"{?="cache"@"MPSCommandBufferImageCache"})})"_type"C"_twiddled"C}, name: _texture
     _Bool _updatedAlready;
 }
 
 + (id)defaultAllocator;
+@property(readonly, nonatomic) unsigned long long featureChannelFormat; // @synthesize featureChannelFormat=_featureChannelFormat;
 @property(readonly, retain, nonatomic) MPSImage *parent; // @synthesize parent=_parent;
 @property(readonly, nonatomic) unsigned long long featureChannelsLayout; // @synthesize featureChannelsLayout=_featureChannelsLayout;
 @property(copy) NSString *label; // @synthesize label=_label;
@@ -40,6 +42,7 @@
 - (void)writeBytes:(const void *)arg1 dataLayout:(unsigned long long)arg2 imageIndex:(unsigned long long)arg3;
 - (void)readBytes:(void *)arg1 dataLayout:(unsigned long long)arg2 imageIndex:(unsigned long long)arg3;
 - (void)writeBytes:(const void *)arg1 dataLayout:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 region:(CDStruct_4c83c94d)arg4 featureChannelInfo:(CDStruct_4bcfbbae)arg5 imageIndex:(unsigned long long)arg6;
+- (void)writeBytes:(const void *)arg1 dataLayout:(unsigned long long)arg2 bytesPerColumn:(unsigned long long)arg3 bytesPerRow:(unsigned long long)arg4 bytesPerImage:(unsigned long long)arg5 region:(CDStruct_4c83c94d)arg6 featureChannelInfo:(CDStruct_4bcfbbae)arg7 imageIndex:(unsigned long long)arg8;
 - (void)writeBytes:(const void *)arg1 dataLayout:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 bytesPerImage:(unsigned long long)arg4 region:(CDStruct_4c83c94d)arg5 featureChannelInfo:(CDStruct_4bcfbbae)arg6 imageIndex:(unsigned long long)arg7;
 - (void)readBytes:(void *)arg1 dataLayout:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 region:(CDStruct_4c83c94d)arg4 featureChannelInfo:(CDStruct_4bcfbbae)arg5 imageIndex:(unsigned long long)arg6;
 - (void)readBytes:(void *)arg1 dataLayout:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3 bytesPerImage:(unsigned long long)arg4 region:(CDStruct_4c83c94d)arg5 featureChannelInfo:(CDStruct_4bcfbbae)arg6 imageIndex:(unsigned long long)arg7;
@@ -54,7 +57,7 @@
 - (id)initWithDevice:(id)arg1 imageDescriptor:(id)arg2;
 - (id)initWithTexture:(id)arg1 featureChannels:(unsigned long long)arg2 featureChannelsLayout:(unsigned long long)arg3;
 - (id)initWithTexture:(id)arg1 featureChannels:(unsigned long long)arg2;
-- (id)initWithDescriptor:(id)arg1 featureChannels:(unsigned long long)arg2 featureChannelsLayout:(unsigned long long)arg3 onDevice:(id)arg4;
+- (id)initWithDescriptor:(id)arg1 featureChannels:(unsigned long long)arg2 featureChannelsLayout:(unsigned long long)arg3 featureChannelFormat:(unsigned long long)arg4 onDevice:(id)arg5;
 - (id)init;
 - (void)dealloc;
 @property(readonly, nonatomic) unsigned long long pixelSize;

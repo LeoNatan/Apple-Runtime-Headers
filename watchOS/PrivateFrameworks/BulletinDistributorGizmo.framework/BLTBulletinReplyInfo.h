@@ -6,27 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class BLTBulletinReplyInfoCompanionInfo, NSDate, NSString;
+@class BLTBulletinReplyInfoCompanionInfo, NSString;
 
 @interface BLTBulletinReplyInfo : NSObject
 {
-    _Bool _replySent;
     _Bool _overridesDND;
     BLTBulletinReplyInfoCompanionInfo *_companionInfo;
-    CDUnknownBlockType _reply;
-    NSDate *_gizmoPublicationDate;
-    NSString *_sectionID;
+    NSString *_sectionMatchID;
     NSString *_contactIdentifier;
 }
 
 @property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
 @property(nonatomic) _Bool overridesDND; // @synthesize overridesDND=_overridesDND;
-@property(copy, nonatomic) NSString *sectionID; // @synthesize sectionID=_sectionID;
-@property(retain, nonatomic) NSDate *gizmoPublicationDate; // @synthesize gizmoPublicationDate=_gizmoPublicationDate;
-@property(copy, nonatomic) CDUnknownBlockType reply; // @synthesize reply=_reply;
-@property(readonly, nonatomic) _Bool replySent; // @synthesize replySent=_replySent;
+@property(copy, nonatomic) NSString *sectionMatchID; // @synthesize sectionMatchID=_sectionMatchID;
 @property(retain, nonatomic) BLTBulletinReplyInfoCompanionInfo *companionInfo; // @synthesize companionInfo=_companionInfo;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool hasShouldPlayLightsAndSirensState;
+@property(readonly, nonatomic) _Bool hasCompletedReply;
+- (void)_sendReply;
+- (_Bool)hasReplyForSectionIDs:(id)arg1;
+- (_Bool)hasReplyForSectionID:(id)arg1;
+- (void)setReply:(CDUnknownBlockType)arg1 forSectionID:(id)arg2 universalComplete:(_Bool)arg3;
+- (id)anySectionID;
 - (id)description;
 - (_Bool)sendReplyWithIsConnected:(_Bool)arg1 isWristDetectDisabled:(_Bool)arg2 isAlertable:(_Bool)arg3 forceIfNoCompanionState:(_Bool)arg4;
 - (_Bool)hasExpired;

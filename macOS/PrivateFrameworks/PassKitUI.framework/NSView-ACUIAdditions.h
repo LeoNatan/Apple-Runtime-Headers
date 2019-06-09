@@ -15,5 +15,6 @@
 - (void)pinToSuperview;
 - (id)snapshot;
 - (void)setContentSubview:(id)arg1;
+- (id)layerFromContents;
 @end
 

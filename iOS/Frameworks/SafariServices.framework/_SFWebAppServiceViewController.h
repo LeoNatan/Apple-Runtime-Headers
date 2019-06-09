@@ -7,22 +7,23 @@
 #import <SafariServices/SFBrowserServiceViewController.h>
 
 #import <SafariServices/SFWebAppServiceViewControllerProtocol-Protocol.h>
+#import <SafariServices/WBSDigitalHealthManagerDelegate-Protocol.h>
 
-@class BKSApplicationStateMonitor, NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore, _SFNavigationUtilitiesManager;
+@class BKSApplicationStateMonitor, NSMutableArray, NSString, NSURL, UIView, UIWebClip, WBSDigitalHealthManager, WKProcessPool, WKWebsiteDataStore;
 
-@interface _SFWebAppServiceViewController : SFBrowserServiceViewController <SFWebAppServiceViewControllerProtocol>
+@interface _SFWebAppServiceViewController : SFBrowserServiceViewController <WBSDigitalHealthManagerDelegate, SFWebAppServiceViewControllerProtocol>
 {
     UIWebClip *_webClip;
     UIView *_statusBarBackgroundView;
-    _SFNavigationUtilitiesManager *_navigationUtilitiesManager;
     WKProcessPool *_processPool;
     WKWebsiteDataStore *_websiteDataStore;
     NSMutableArray *_fallbackURLs;
     BKSApplicationStateMonitor *_stateMonitor;
     unsigned int _hostState;
+    NSURL *_currentUsageTrackingURL;
+    WBSDigitalHealthManager *_digitalHealthManager;
 }
 
-+ (void)_removeCachedWebAppWithIdentifier:(id)arg1;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 - (void).cxx_destruct;
@@ -47,6 +48,11 @@
 - (_Bool)_isURLOutOfScope:(id)arg1;
 - (_Bool)_isURLOutOfManifestScope:(id)arg1;
 - (void)webViewController:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
+- (void)_hideDigitalHealthOverlay;
+- (void)_showDigitalHealthOverlay;
+- (void)_updateDigitalHealthTracking;
+- (void)policyDidChangeForDigitalHealthManager:(id)arg1;
+- (id)_digitalHealthManager;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(id)arg1;
 - (void)webViewControllerDidChangeLoadingState:(id)arg1;
 - (void)_hostApplicationDidEnterBackground;

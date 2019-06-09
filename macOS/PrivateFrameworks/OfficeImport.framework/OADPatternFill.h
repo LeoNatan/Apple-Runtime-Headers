@@ -8,6 +8,7 @@
 
 @class OADColor, OADPattern;
 
+__attribute__((visibility("hidden")))
 @interface OADPatternFill : OADFill
 {
     OADColor *mFgColor;

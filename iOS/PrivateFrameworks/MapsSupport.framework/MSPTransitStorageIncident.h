@@ -19,7 +19,7 @@
     unsigned int _creationDatetime;
     unsigned int _endDatetime;
     NSString *_fullDescription;
-    long long _iconType;
+    int _iconType;
     unsigned int _lastUpdatedDatetime;
     NSString *_messageForNonRoutable;
     NSString *_messageForRoutePlanning;
@@ -44,7 +44,7 @@
 @property(nonatomic) _Bool blockingIncident; // @synthesize blockingIncident=_blockingIncident;
 @property(nonatomic) unsigned int lastUpdatedDatetime; // @synthesize lastUpdatedDatetime=_lastUpdatedDatetime;
 @property(nonatomic) unsigned int creationDatetime; // @synthesize creationDatetime=_creationDatetime;
-@property(nonatomic) long long iconType; // @synthesize iconType=_iconType;
+@property(nonatomic) int iconType; // @synthesize iconType=_iconType;
 @property(nonatomic) unsigned int endDatetime; // @synthesize endDatetime=_endDatetime;
 @property(nonatomic) unsigned int startDatetime; // @synthesize startDatetime=_startDatetime;
 @property(retain, nonatomic) NSString *messageForNonRoutable; // @synthesize messageForNonRoutable=_messageForNonRoutable;
@@ -72,8 +72,8 @@
 @property(nonatomic) _Bool hasBlockingIncident;
 @property(nonatomic) _Bool hasLastUpdatedDatetime;
 @property(nonatomic) _Bool hasCreationDatetime;
-- (long long)StringAsIconType:(id)arg1;
-- (id)iconTypeAsString:(long long)arg1;
+- (int)StringAsIconType:(id)arg1;
+- (id)iconTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasIconType;
 @property(nonatomic) _Bool hasEndDatetime;
 @property(nonatomic) _Bool hasStartDatetime;

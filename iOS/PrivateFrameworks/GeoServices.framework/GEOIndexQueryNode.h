@@ -8,24 +8,25 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOIndexQueryNode : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_field;
     NSMutableArray *_operands;
-    int _type;
     NSString *_value;
+    int _type;
+    CDStruct_24aeab2f _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)operandsType;
-@property(retain, nonatomic) NSMutableArray *operands; // @synthesize operands=_operands;
-@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
-@property(retain, nonatomic) NSString *field; // @synthesize field=_field;
-@property(nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,16 +35,25 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)operandsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)operandsCount;
+- (void)_addNoFlagsOperands:(id)arg1;
 - (void)addOperands:(id)arg1;
 - (void)clearOperands;
+@property(retain, nonatomic) NSMutableArray *operands;
+- (void)_readOperands;
+@property(retain, nonatomic) NSString *value;
 @property(readonly, nonatomic) _Bool hasValue;
+- (void)_readValue;
+@property(retain, nonatomic) NSString *field;
 @property(readonly, nonatomic) _Bool hasField;
+- (void)_readField;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
+@property(nonatomic) int type;
 
 @end
 

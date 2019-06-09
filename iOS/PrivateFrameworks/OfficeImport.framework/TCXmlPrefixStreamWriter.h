@@ -14,8 +14,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mStateStack;
 }
 
-+ (struct _xmlTextWriter *)createNonXmlTextWriterAtEntry:(id)arg1 inOutputStream:(id)arg2 isCompressed:(_Bool)arg3;
-+ (struct _xmlTextWriter *)createXmlTextWriterAtEntry:(id)arg1 inOutputStream:(id)arg2 isCompressed:(_Bool)arg3;
+- (void).cxx_destruct;
 - (_Bool)writeValAttributeOnlyElementWithName:(id)arg1 doubleContent:(double)arg2;
 - (_Bool)writeValAttributeOnlyElementWithName:(id)arg1 enumContent:(int)arg2 map:(id)arg3;
 - (_Bool)writeValAttributeOnlyElementWithName:(id)arg1 intContent:(long long)arg2;
@@ -43,7 +42,7 @@ __attribute__((visibility("hidden")))
 - (id)pushState;
 - (void)pushElementPrefix:(id)arg1 attributePrefix:(id)arg2;
 - (void)dealloc;
-- (id)initWithTextWriter:(struct _xmlTextWriter *)arg1;
+- (id)initWithTextWriterProvider:(id)arg1;
 - (_Bool)writeOAAttribute:(id)arg1 doubleContent:(double)arg2;
 - (_Bool)writeOAAttribute:(id)arg1 enumContent:(int)arg2 map:(id)arg3;
 - (_Bool)writeOAAttribute:(id)arg1 intContent:(long long)arg2;

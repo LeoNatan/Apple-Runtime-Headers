@@ -16,7 +16,6 @@
 
 - (id)_sharedAlbumViewControllerForSectionInfo:(id)arg1 fromViewController:(id)arg2;
 - (void)navigateToInboxModel:(id)arg1 inSharedAlbumActivityFeedViewController:(id)arg2;
-- (void)popViewControllerForModel:(id)arg1 fromViewController:(id)arg2 toNavigableForYouViewController:(id)arg3;
 - (id)viewControllerForInboxModel:(id)arg1 fromViewController:(id)arg2;
 - (long long)presentationTypeForInboxModel:(id)arg1;
 

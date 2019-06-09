@@ -23,6 +23,7 @@
     // Error parsing type: {?="columns"[4]}, name: _referenceOriginTransform
 }
 
++     // Error parsing type: @96@0:8@16@24{?=[4]}32, name: keyframesForTrackingData:withFeaturePoints:referenceOriginTransform:
 + (CDStruct_183601bc)boundsForTrackingData:(id)arg1;
 +     // Error parsing type: @88@0:8@16{?=[4]}24, name: featurePointsForTrackingData:referenceOriginTransform:
 + (_Bool)supportsSecureCoding;

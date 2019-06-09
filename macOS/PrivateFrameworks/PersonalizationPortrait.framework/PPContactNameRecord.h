@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PersonalizationPortrait/NSCopying-Protocol.h>
 #import <PersonalizationPortrait/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSDictionary, NSString;
 
-@interface PPContactNameRecord : NSObject <NSSecureCoding>
+@interface PPContactNameRecord : NSObject <NSSecureCoding, NSCopying>
 {
     unsigned char _source;
     unsigned char _changeType;

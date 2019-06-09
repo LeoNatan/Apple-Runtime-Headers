@@ -8,6 +8,7 @@
 
 @class WDDocument;
 
+__attribute__((visibility("hidden")))
 @interface WDTableCellProperties : NSObject
 {
     short mWidth;

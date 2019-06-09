@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
     NSString *_localParticipantID;
     NSString *_remoteParticipantID;
     NSString *_sessionID;
-    struct OpaqueSecIdentityRef *_identity;
+    struct __SecIdentity *_identity;
     TCPTunnelClient *_tcpTunnelClient;
     NSObject<VideoConferenceRealTimeChannel> *rtChannel;
     LoopbackSocketTunnel *_tunnel;
@@ -76,7 +76,7 @@ __attribute__((visibility("hidden")))
 @property BOOL isCaller; // @synthesize isCaller=_isCaller;
 @property(nonatomic) BOOL initialSecondaryRelaySetupDone; // @synthesize initialSecondaryRelaySetupDone;
 @property(nonatomic) int pendingRelayCount; // @synthesize pendingRelayCount;
-- (void)setIdentity:(struct OpaqueSecIdentityRef *)arg1;
+- (void)setIdentity:(struct __SecIdentity *)arg1;
 - (void)handleMediaReceivedOverRelayLinkWithConnectionId:(int)arg1;
 - (void)handleMediaReceivedOverPeerToPeerLinkWithConnectionId:(int)arg1;
 - (void)reportNetworkConditionsDegraded;
@@ -89,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (void)setupTransport;
 - (int)generateConnectionData:(char **)arg1 forCallID:(unsigned int)arg2 connectionDataSize:(int *)arg3 nonCellularCandidateTimeout:(double)arg4;
 - (id)connectionDataUsingRelay:(BOOL)arg1 isInitialRelay:(BOOL)arg2 nonCellularCandidateTimeout:(double)arg3 error:(id *)arg4;
+- (id)connectionData:(char *)arg1 connectionDataSizeInBytes:(int)arg2 shouldUseRelay:(BOOL)arg3;
 - (void)getConnectionDataUsingRelay:(BOOL)arg1 isInitialRelay:(BOOL)arg2 nonCellularCandidateTimeout:(double)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (BOOL)getConnectionSetupData:(id *)arg1 withOptions:(id)arg2 error:(id *)arg3;
 - (id)createRelayUpdateDictionary:(id)arg1;

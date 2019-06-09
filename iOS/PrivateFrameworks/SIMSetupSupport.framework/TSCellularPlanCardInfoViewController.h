@@ -4,22 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/UIViewController.h>
+#import <OnBoardingKit/OBBaseWelcomeController.h>
 
 #import <SIMSetupSupport/TSSetupFlowItem-Protocol.h>
 #import <SIMSetupSupport/UITableViewDataSource-Protocol.h>
 #import <SIMSetupSupport/UITableViewDelegate-Protocol.h>
 #import <SIMSetupSupport/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSString, UILabel, UIScrollView, UITableView, UITextField;
+@class NSArray, NSLayoutConstraint, NSString, UIBarButtonItem, UILabel, UIScrollView, UITableView, UITextField;
 @protocol TSSIMSetupFlowDelegate;
 
-@interface TSCellularPlanCardInfoViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, TSSetupFlowItem>
+@interface TSCellularPlanCardInfoViewController : OBBaseWelcomeController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, TSSetupFlowItem>
 {
     NSString *_fauxCardData;
     NSArray *_tableData;
     UITextField *_activeTextField;
     struct CGSize _keyboardSize;
+    UIBarButtonItem *_nextButton;
     id <TSSIMSetupFlowDelegate> _delegate;
     UILabel *_enterActivationLabel;
     UITableView *_infoTableView;
@@ -33,8 +34,10 @@
 @property(nonatomic) __weak UILabel *enterActivationLabel; // @synthesize enterActivationLabel=_enterActivationLabel;
 @property(nonatomic) __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)canBeShownFromSuspendedState;
 - (void)addNewPlanWithUserInfo:(id)arg1;
 - (void)textFieldDidEndEditing:(id)arg1;
+- (_Bool)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

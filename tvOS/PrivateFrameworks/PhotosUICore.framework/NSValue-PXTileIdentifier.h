@@ -8,6 +8,16 @@
 
 @interface NSValue (PXTileIdentifier)
 + (id)valueWithPXTileIdentifier:(struct PXTileIdentifier)arg1;
++ (id)valueWithPXEdgeInsets:(struct UIEdgeInsets)arg1;
++ (id)px_valueWithSimpleIndexPath:(struct PXSimpleIndexPath)arg1;
++ (id)px_valueWithMemoryFontsSpecIdentifier:(struct PXMemoryFontsSpecIdentifier)arg1;
++ (id)px_valueWithViewSpecDescriptor:(struct PXViewSpecDescriptor)arg1;
++ (id)valueWithPXTileGeometry:(struct PXTileGeometry)arg1;
 @property(readonly, nonatomic) struct PXTileIdentifier PXTileIdentifierValue;
+@property(readonly) struct UIEdgeInsets PXEdgeInsetsValue;
+@property(readonly, nonatomic) struct PXSimpleIndexPath px_simpleIndexPathValue;
+- (struct PXMemoryFontsSpecIdentifier)px_memoryFontsSpecIdentifierValue;
+@property(readonly, nonatomic) struct PXViewSpecDescriptor px_viewSpecDescriptorValue;
+- (struct PXTileGeometry)PXTileGeometryValue;
 @end
 

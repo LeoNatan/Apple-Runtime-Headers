@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pivotArea;
+- (void).cxx_destruct;
 - (id)description;
 - (id)references;
 - (void)setOffset:(id)arg1;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)grandCol;
 - (void)setGrandRow:(_Bool)arg1;
 - (_Bool)grandRow;
-- (void)dealloc;
 - (id)init;
 
 @end

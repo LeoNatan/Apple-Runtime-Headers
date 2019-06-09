@@ -10,13 +10,12 @@
 #import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
 #import <HealthDaemon/HDPeriodicActivityDelegate-Protocol.h>
 
-@class ACAccountStore, HDAsynchronousTaskTree, HDDaemon, HDPeriodicActivity, NSDate, NSMutableArray, NSMutableDictionary, NSProgress, NSString;
+@class ACAccountStore, APSConnection, HDAsynchronousTaskTree, HDDaemon, HDPeriodicActivity, HKObserverSet, NSDate, NSMutableArray, NSProgress, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HDCloudSyncCoordinator : NSObject <HDDiagnosticObject, HDPeriodicActivityDelegate, HDHealthDaemonReadyObserver>
 {
     HDDaemon *_daemon;
-    NSObject<OS_dispatch_queue> *_queue;
     HDPeriodicActivity *_periodicActivity;
     _Bool _queue_syncInProgress;
     _Bool _queue_hasUpdatedCachedLastSuccessfulSyncDates;
@@ -31,9 +30,15 @@
     NSProgress *_activeTaskProgress;
     NSMutableArray *_pendingTasksProgress;
     NSMutableArray *_progressCompletionBlocks;
-    NSMutableDictionary *_waitForSyncObservations;
+    HKObserverSet *_observers;
+    _Bool _hasRestoreCompleted;
+    _Bool _cloudSyncEnabled;
+    _Bool _cloudSyncValueLoaded;
+    APSConnection *_apsConnection;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(readonly, copy, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)unitTest_performPeriodicSyncWithCompletion:(CDUnknownBlockType)arg1;
@@ -41,13 +46,18 @@
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_prepareAllProfilesForSyncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)periodicActivity:(id)arg1 configureXPCActivityCriteria:(id)arg2;
-- (void)_mergeCloudSyncJournalsForProfile:(id)arg1 progress:(id)arg2 taskTree:(id)arg3;
-- (void)_mergeCloudSyncJournalsWithTaskTree:(id)arg1 progress:(id)arg2;
-- (_Bool)_queue_setWaitTimeoutDateIfNecessaryWithError:(id *)arg1;
-- (int)_queue_cloudSyncWaitStatusWithError:(id *)arg1;
-- (id)_queue_waitOnHealthCloudSyncWithUUID:(id)arg1 startHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)readRestoreCompletionDateWithError:(id *)arg1;
+- (_Bool)persistRestoreCompletionDate:(id)arg1 withError:(id *)arg2;
+- (id)readErrorRequiringUserActionOnCloudSyncError:(id *)arg1;
+- (_Bool)persistErrorRequiringUserActionOnCloudSync:(id)arg1;
+- (_Bool)_queue_isDeviceInManateeUnavailableCFUState;
+- (_Bool)isDeviceInManateeUnavailableCFUState;
+- (id)hasErrorRequiringUserActionOnCloudSyncTaskTree:(id)arg1;
+- (id)activeTaskProgress;
+- (id)lastSuccessfulPushDate;
+- (id)lastSuccessfulPullDate;
 - (void)_queue_finishCloudSyncTaskProgressWithResult:(int)arg1 error:(id)arg2;
-- (void)_queue_addCloudSyncProgressCompletion:(CDUnknownBlockType)arg1;
+- (void)addCloudSyncProgressCompletion:(CDUnknownBlockType)arg1;
 - (void)_resetPersistedPeriodicSyncErrors;
 - (void)_persistPeriodicSyncError:(id)arg1;
 - (_Bool)_shouldPerformLastSyncDateCheckInternalSetting;
@@ -65,22 +75,28 @@
 - (id)_queue_disableAndDeleteCloudSyncDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_queue_fetchCloudDescriptionWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_queue_resetAllProfilesWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)_queue_syncAllProfilesWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_queue_syncProfilesWithIdentifiers:(id)arg1 withOptions:(unsigned int)arg2 reason:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_unitTest_shouldSyncProfile:(id)arg1;
-- (_Bool)_canPerformCloudSyncWithError:(id *)arg1;
+- (_Bool)canPerformCloudSyncWithError:(id *)arg1;
 - (void)_considerMigratingHealthAccountDataclassState;
 - (void)_setHealthAccountDataclassEnabled:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_checkiCloudAccountStatus;
 - (void)_respondToACAccountStoreDidChange;
-- (id)waitOnHealthCloudSyncWithUUID:(id)arg1 startHandler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1 queue:(id)arg2;
 - (id)fetchCloudSyncProgressWithCompletion:(CDUnknownBlockType)arg1;
 - (id)disableAndDeleteAllSyncDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)enableSyncLocallyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disableSyncLocallyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSyncStatusWithCompletion:(CDUnknownBlockType)arg1;
-- (_Bool)createShareWithRecipient:(id)arg1 sampleTypes:(id)arg2 maxSampleAge:(id)arg3 profile:(id)arg4 error:(id *)arg5;
 - (id)fetchCloudDescriptionWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)resetAllProfilesWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)syncAllProfilesWithOptions:(unsigned int)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)dealloc;
+- (void)_queue_disableCloudSyncSupport;
+- (void)_queue_enableCloudSyncSupport;
+- (void)_queue_setupCloudSyncSupportIfRequired;
+- (void)_setupCloudSyncSupportIfRequired;
 - (void)daemonReady:(id)arg1;
 - (id)initWithDaemon:(id)arg1;
 

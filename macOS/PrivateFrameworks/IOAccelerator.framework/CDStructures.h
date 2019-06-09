@@ -8,7 +8,8 @@
 
 struct IOAccelKernelCommandSignalOrWaitEventArgs {
     unsigned int _field1;
-    unsigned int _field2;
-    unsigned long long _field3;
+    unsigned short _field2;
+    unsigned short _field3;
+    unsigned long long _field4;
 };
 

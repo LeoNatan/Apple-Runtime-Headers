@@ -6,6 +6,7 @@
 
 #import <Foundation/NSAKSerializer.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDocumentSerializer : NSAKSerializer
 {
 }

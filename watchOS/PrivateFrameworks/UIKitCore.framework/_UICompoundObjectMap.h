@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)generateKeyForObject:(id)arg1 andProperty:(id)arg2;
 + (id)compoundObjectMap;
 - (void).cxx_destruct;
+- (id)deepCopy;
 - (void)performWithEach:(CDUnknownBlockType)arg1;
 - (void)removeAllMappings;
 - (void)setValue:(id)arg1 forObject:(id)arg2 andProperty:(id)arg3;

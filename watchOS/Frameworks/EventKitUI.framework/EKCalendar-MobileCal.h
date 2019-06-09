@@ -7,6 +7,8 @@
 #import <EventKit/EKCalendar.h>
 
 @interface EKCalendar (MobileCal)
++ (id)displayColorForSymbolicName:(id)arg1;
+- (id)displayColor;
 - (id)uiColor;
 @end
 

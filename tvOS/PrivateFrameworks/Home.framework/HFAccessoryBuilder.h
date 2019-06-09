@@ -8,17 +8,21 @@
 
 #import <Home/HFServiceLikeBuilder-Protocol.h>
 
-@class HFRoomBuilder, HMAccessory, NSArray, NSString;
+@class HFNamingComponents, HFRoomBuilder, HMAccessory, NSArray, NSString;
 @protocol HFIconDescriptor;
 
 @interface HFAccessoryBuilder : HFItemBuilder <HFServiceLikeBuilder>
 {
     _Bool isFavorite;
+    _Bool _skipPropagateFavoriteToServices;
     NSString *name;
     HFRoomBuilder *room;
+    HFNamingComponents *_namingComponent;
 }
 
 + (Class)homeKitRepresentationClass;
+@property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
+@property(nonatomic) _Bool skipPropagateFavoriteToServices; // @synthesize skipPropagateFavoriteToServices=_skipPropagateFavoriteToServices;
 @property(nonatomic) _Bool isFavorite; // @synthesize isFavorite;
 @property(retain, nonatomic) HFRoomBuilder *room; // @synthesize room;
 @property(copy, nonatomic) NSString *name; // @synthesize name;

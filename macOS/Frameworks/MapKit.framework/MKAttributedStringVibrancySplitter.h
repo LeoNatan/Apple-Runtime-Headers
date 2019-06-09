@@ -8,6 +8,7 @@
 
 @class NSAttributedString;
 
+__attribute__((visibility("hidden")))
 @interface MKAttributedStringVibrancySplitter : NSObject
 {
     NSAttributedString *_markedAttributedString;

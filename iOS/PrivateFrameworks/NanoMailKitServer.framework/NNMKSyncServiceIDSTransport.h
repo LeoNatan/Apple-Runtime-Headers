@@ -25,6 +25,7 @@
 @property(nonatomic) unsigned long long connectivityState; // @synthesize connectivityState=_connectivityState;
 @property(retain, nonatomic) IDSService *idsService; // @synthesize idsService=_idsService;
 - (void).cxx_destruct;
+- (double)_timeIntervalFromTimeoutCategory:(unsigned long long)arg1;
 - (unsigned long long)_connectivityState;
 - (void)_handleConnectivityChange;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
@@ -35,7 +36,7 @@
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (id)sendProtobufData:(id)arg1 type:(unsigned long long)arg2 priority:(unsigned long long)arg3 timeout:(double)arg4 allowCloudDelivery:(_Bool)arg5;
-- (id)sendProtobufData:(id)arg1 type:(unsigned long long)arg2 priority:(unsigned long long)arg3 shortTimeout:(_Bool)arg4 allowCloudDelivery:(_Bool)arg5;
+- (id)sendProtobufData:(id)arg1 type:(unsigned long long)arg2 priority:(unsigned long long)arg3 timeoutCategory:(unsigned long long)arg4 allowCloudDelivery:(_Bool)arg5;
 - (void)dealloc;
 - (id)initWithServiceName:(id)arg1 queue:(id)arg2 delegate:(id)arg3;
 

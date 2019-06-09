@@ -25,14 +25,14 @@
 @property struct _NEFlowDirector *director; // @synthesize director=_director;
 @property(retain) NSObject<OS_dispatch_queue> *flowQueue; // @synthesize flowQueue=_flowQueue;
 - (void).cxx_destruct;
+- (id)extensionPoint;
 - (void)cancelWithError:(id)arg1;
 - (void)stopWithReason:(int)arg1;
 - (void)startWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)flowDivertNewFlow:(struct _NEFlow *)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)flowDivertMatchAppRulesWithFlow:(unsigned int)arg1 pid:(int)arg2 uuid:(unsigned char [16])arg3 signingIdentifier:(struct __CFString *)arg4;
+- (void)flowDivertMatchAppRulesWithFlow:(unsigned int)arg1 auditToken:(struct __CFData *)arg2 signingIdentifier:(struct __CFString *)arg3;
 - (void)flowDivertOpenControlSocket;
 - (void)openFlowDivertControlSocketWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)verifyAppWithPID:(int)arg1 uuid:(id)arg2 matchesAppRule:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setDelegateInterface:(unsigned int)arg1;
 - (void)setInitialFlowDivertControlSocket:(id)arg1;
 - (void)setInitialFlowDivertControlSocket:(id)arg1 extraValidation:(_Bool)arg2;

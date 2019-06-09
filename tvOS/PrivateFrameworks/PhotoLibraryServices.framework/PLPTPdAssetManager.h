@@ -25,13 +25,15 @@
 }
 
 @property(retain, nonatomic) NSFileManager *fileManager; // @synthesize fileManager;
+- (void).cxx_destruct;
 - (id)fetchObjectIDsForAssetsExposedToPTPFromObjectIDs:(id)arg1;
 - (id)managedObjectContext;
 - (id)_performResultTransactionAndWait:(CDUnknownBlockType)arg1;
 - (void)_performTransactionAndWait:(CDUnknownBlockType)arg1;
 - (id)_performResultBlockAndWait:(CDUnknownBlockType)arg1;
 - (void)_performBlockAndWait:(CDUnknownBlockType)arg1;
-- (void)markSignpostForAsset:(id)arg1 endMarker:(_Bool)arg2 adjusted:(_Bool)arg3 arg4:(unsigned long long)arg4;
+- (void)endSignpostForThumbnailGenerationForAsset:(id)arg1;
+- (void)beginSignpostForThumbnailGenerationForAsset:(id)arg1 inputResourceTypeLabel:(id)arg2;
 - (id)_ptpAssetEnumeratorAllAssets;
 - (id)_ptpInformationForAllAssets;
 - (id)_allAssetObjectIDs;
@@ -41,8 +43,9 @@
 - (_Bool)_ptpDeletePhotoWithAssetID:(id)arg1 andExtension:(id)arg2;
 - (_Bool)ptpDeletePhotoWithKey:(id)arg1 andExtension:(id)arg2;
 - (id)dataByJPEGCompressingCGImage:(struct CGImage *)arg1 toLengthLimit:(long long)arg2 initialCompressionQuality:(float)arg3 size:(struct CGSize)arg4 orientation:(long long)arg5;
-- (id)_generateThumbnailForAsset:(id)arg1 imagePath:(id)arg2 size:(struct CGSize)arg3 compressionQuality:(float)arg4;
+- (id)_generateThumbnailForAsset:(id)arg1 fromOriginalImagePath:(id)arg2 size:(struct CGSize)arg3 compressionQuality:(float)arg4;
 - (id)dataForThumbnailFileAtPath:(id)arg1 rotatedToOrientation:(long long)arg2 size:(struct CGSize)arg3 compressionQuality:(float)arg4;
+- (id)_ptpThumbnailForPenultimateImageWithAssetID:(id)arg1 size:(struct CGSize)arg2 compressionQuality:(float)arg3;
 - (id)_ptpThumbnailForFullSizeRenderWithAssetID:(id)arg1 size:(struct CGSize)arg2 compressionQuality:(float)arg3;
 - (id)_ptpThumbnailForOriginalWithAssetID:(id)arg1 size:(struct CGSize)arg2 compressionQuality:(float)arg3;
 - (_Bool)requestedSize:(struct CGSize)arg1 fitsInSourceSize:(struct CGSize)arg2;
@@ -75,7 +78,7 @@
 - (id)associationsInAlbum:(struct NSObject *)arg1;
 - (id)infoForAlbum:(struct NSObject *)arg1;
 - (id)albumHandles;
-@property(readonly, retain, nonatomic) PLPhotoLibrary *photoLibrary;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (void)handlePhotoLibraryAvailableNotification;
 - (void)dealloc;
 - (id)init;

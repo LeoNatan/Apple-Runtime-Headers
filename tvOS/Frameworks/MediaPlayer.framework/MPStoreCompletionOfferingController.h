@@ -40,8 +40,6 @@
 - (void)cancelCompletionOfferingLookup:(unsigned long long)arg1;
 - (id)completionOfferingForAlbumItemsQuery:(id)arg1;
 - (id)_sanitizedQuery:(id)arg1;
-- (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_storeAccountsDidChangeNotification:(id)arg1;
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (void)dealloc;

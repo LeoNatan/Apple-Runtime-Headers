@@ -6,7 +6,6 @@
 
 #import <PhotosUI/PUSearchZeroKeywordAssetCollectionViewModel.h>
 
-__attribute__((visibility("hidden")))
 @interface PUSearchZeroKeywordDateViewModel : PUSearchZeroKeywordAssetCollectionViewModel
 {
 }

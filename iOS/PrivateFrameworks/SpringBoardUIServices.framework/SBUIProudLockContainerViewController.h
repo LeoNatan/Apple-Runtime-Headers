@@ -100,6 +100,7 @@
 @property(readonly, nonatomic) UIView *cameraCoveredView;
 - (void)setAuthenticated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setScreenOn:(_Bool)arg1 fromUnlockSource:(int)arg2;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

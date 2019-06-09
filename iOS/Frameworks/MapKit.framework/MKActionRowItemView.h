@@ -6,14 +6,15 @@
 
 #import <UIKit/UIView.h>
 
-@class MKPlaceCardActionItem, NSArray, _MKUILabel;
+@class MKPlaceCardActionItem, MKVibrantView, NSArray, UIImageView, _MKUILabel;
 @protocol MKActionRowItemViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface MKActionRowItemView : UIView
 {
     _MKUILabel *_label;
-    _MKUILabel *_glyphLabel;
+    UIImageView *_glyphImageView;
+    MKVibrantView *_vibrantView;
     unsigned long long _style;
     NSArray *_constraints;
     _Bool _enabled;
@@ -43,8 +44,11 @@ __attribute__((visibility("hidden")))
 - (void)_touchCancelled;
 - (void)_touchBegan;
 - (void)updateColor;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)tintColorDidChange;
+- (void)updateImage;
+- (void)infoCardThemeChanged;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)didMoveToWindow;
 - (void)dealloc;
 - (void)layoutSubviews;
 - (void)createConstraints;

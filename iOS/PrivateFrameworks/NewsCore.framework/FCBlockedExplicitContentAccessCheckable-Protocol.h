@@ -6,7 +6,10 @@
 
 #import <NewsCore/NFCopying-Protocol.h>
 
+@class NSString;
+
 @protocol FCBlockedExplicitContentAccessCheckable <NFCopying>
 @property(readonly, nonatomic) _Bool isBlockedExplicitContent;
+@property(readonly, copy, nonatomic) NSString *identifier;
 @end
 

@@ -9,32 +9,29 @@
 #import <CoreLocation/NSCopying-Protocol.h>
 #import <CoreLocation/NSSecureCoding-Protocol.h>
 
-@class CLFloor, NSDate, NSString;
+@class CLFloor, CLLocationMatchInfo, NSDate, NSString, _CLLocationGroundAltitude;
 
 @interface CLLocation : NSObject <NSCopying, NSSecureCoding>
 {
     id _internal;
-    int _referenceFrame;
-    CLFloor *_floor;
-    double _trustedTimestamp;
-    double _speedAccuracy;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) double speedAccuracy; // @synthesize speedAccuracy=_speedAccuracy;
-@property(readonly) double trustedTimestamp; // @synthesize trustedTimestamp=_trustedTimestamp;
-@property(nonatomic) int referenceFrame; // @synthesize referenceFrame=_referenceFrame;
-@property(readonly, copy, nonatomic) CLFloor *floor; // @synthesize floor=_floor;
++ (id)locationByReductivelyFilteringLocations:(id)arg1;
+- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3 groundAltitude:(id)arg4;
 - (void)setHorizontalAccuracy:(double)arg1;
 @property(readonly, nonatomic) NSString *iso6709Notation;
 - (id)propagateLocationToTime:(double)arg1;
 - (id)snapToResolution:(double)arg1;
 - (double)distanceFromLocation:(id)arg1;
 - (double)getDistanceFrom:(id)arg1;
+@property(readonly, copy, nonatomic) CLFloor *floor;
 @property(readonly, nonatomic) int type;
+@property(readonly) double trustedTimestamp;
 @property(readonly) unsigned int integrity;
 @property(readonly, nonatomic) double rawCourse;
 @property(readonly, nonatomic) double course;
+@property(readonly, nonatomic) double speedAccuracy;
 @property(readonly, nonatomic) double speed;
 @property(readonly, nonatomic) CDStruct_0a5906de clientLocation;
 @property(readonly, copy, nonatomic) NSDate *timestamp;
@@ -43,18 +40,26 @@
 @property(readonly, nonatomic) double altitude;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D rawCoordinate;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D coordinate;
+@property(nonatomic) int referenceFrame;
+- (id)jsonObject;
 - (id)shortDescription;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 clientLocationPrivate:(CDStruct_44e85285)arg2;
 - (id)initWithClientLocation:(CDStruct_0a5906de)arg1;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
-- (id)_initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
+- (id)_initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7 floor:(int)arg8;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)init;
+- (void)unmatch;
+@property(readonly, nonatomic) CLLocationMatchInfo *matchInfo;
+- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3;
+- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 matchInfo:(id)arg2;
+@property(readonly, nonatomic) _CLLocationGroundAltitude *_groundAltitude;
 
 @end
 

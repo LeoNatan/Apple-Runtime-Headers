@@ -18,6 +18,7 @@
     struct CGSize _viewportArgumentsSize;
     _Bool _widthIsDeviceWidth;
     _Bool _heightIsDeviceHeight;
+    _Bool _isInUpdateBlock;
     _Bool _classicViewportMode;
     id <_UIWebViewportHandlerDelegate> _delegate;
     struct CGRect _documentBounds;

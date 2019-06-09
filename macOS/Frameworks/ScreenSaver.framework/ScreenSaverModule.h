@@ -21,17 +21,20 @@
     BOOL _enabled;
     BOOL _archCompatible;
     BOOL _requiresGraphicsAcceleration;
+    BOOL _hasConfigureSheet;
 }
 
 + (id)floatingMessageModuleWithMessage:(id)arg1;
-+ (id)defaultModule;
 + (id)moduleFromLegacyDefaults:(id)arg1;
 + (id)moduleWithDictionary:(id)arg1;
 + (id)moduleWithName:(id)arg1;
 + (id)moduleWithPath:(id)arg1;
 + (id)localizedSaverNameForPath:(id)arg1;
 - (void)requestConfigurationViewController:(CDUnknownBlockType)arg1;
+- (void)requestConfigurationSheetViewController:(CDUnknownBlockType)arg1;
 - (id)loadViewForFrame:(struct CGRect)arg1 isPreview:(BOOL)arg2;
+- (void)presentConfigureSheetWithCompletionBlock:(CDUnknownBlockType)arg1 dismissBlock:(CDUnknownBlockType)arg2;
+- (BOOL)hasConfigureSheet;
 - (void)setEnabled:(BOOL)arg1;
 - (BOOL)enabled;
 - (id)description;
@@ -54,7 +57,6 @@
 - (void)setDisplayName:(id)arg1;
 - (id)crashReporterString;
 - (id)thumbnail;
-- (BOOL)needsAnimationTimer;
 - (id)displayName;
 - (id)defaultsName;
 - (void)setName:(id)arg1;

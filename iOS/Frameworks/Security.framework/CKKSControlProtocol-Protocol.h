@@ -6,9 +6,10 @@
 
 #import <Security/NSObject-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @protocol CKKSControlProtocol <NSObject>
+- (void)rpcCKMetric:(NSString *)arg1 attributes:(NSDictionary *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)rpcGetCKDeviceIDWithReply:(void (^)(NSString *))arg1;
 - (void)rpcPushOutgoingChanges:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)rpcFetchAndProcessClassAChanges:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
@@ -18,7 +19,6 @@
 - (void)rpcResyncLocal:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)rpcResync:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)rpcResetCloudKit:(NSString *)arg1 reason:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
-- (void)rpcResetCloudKit:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)rpcResetLocal:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)performanceCounters:(void (^)(NSDictionary *))arg1;
 @end

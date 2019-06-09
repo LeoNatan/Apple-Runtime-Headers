@@ -4,21 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NeutrinoCore/NURenderNode.h>
+#import <NeutrinoCore/NUTransformNode.h>
 
-@interface NUTrimNode : NURenderNode
+@interface NUTrimNode : NUTransformNode
 {
     CDStruct_e83c9415 _range;
 }
 
-+ (CDStruct_e83c9415)conformRange:(CDStruct_e83c9415)arg1 inRange:(CDStruct_e83c9415)arg2;
 @property(readonly) CDStruct_e83c9415 range; // @synthesize range=_range;
-- (id)_evaluateImage:(out id *)arg1;
 - (id)_evaluateVideoProperties:(out id *)arg1;
 - (id)_evaluateVideo:(out id *)arg1;
+- (id)_evaluateVideoComposition:(out id *)arg1;
 - (BOOL)requiresVideoComposition;
+- (id)_evaluateImage:(out id *)arg1;
 - (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
+- (id)_transformWithError:(out id *)arg1;
 - (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
 - (id)initWithTimeRange:(CDStruct_e83c9415)arg1 input:(id)arg2;
 

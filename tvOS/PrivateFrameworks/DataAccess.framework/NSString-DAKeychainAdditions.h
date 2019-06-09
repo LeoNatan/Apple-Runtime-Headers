@@ -7,6 +7,16 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (DAKeychainAdditions)
++ (id)da_new64ByteGUID;
++ (id)da_newGUID;
 - (id)stringByURLQuoting;
+- (id)da_trimWhiteSpace;
+- (_Bool)da_hasPrefixCaseInsensitive:(id)arg1;
+- (id)da_stringByURLEscapingPathComponent;
+- (id)da_appendSlashIfNeeded;
+- (id)da_removeSlashIfNeeded;
+- (id)da_stringByRemovingPercentEscapesForUsername;
+- (id)da_stringByAddingPercentEscapesForUsername;
+- (id)da_absoluteURLForChildLeastInfoRepresentationRelativeToParentURL:(id)arg1;
 @end
 

@@ -7,6 +7,7 @@
 #import <Safari/SheetWithTableController.h>
 
 #import <Safari/NSSharingServiceDelegate-Protocol.h>
+#import <Safari/NSTextViewDelegate-Protocol.h>
 #import <Safari/TableViewPlusDataSource-Protocol.h>
 #import <Safari/TableViewPlusDelegate-Protocol.h>
 
@@ -14,7 +15,7 @@
 @protocol PasswordsAuditingHandler, PasswordsDetailSheetControllerDecisionHandler;
 
 __attribute__((visibility("hidden")))
-@interface PasswordsDetailSheetController : SheetWithTableController <NSSharingServiceDelegate, TableViewPlusDelegate, TableViewPlusDataSource>
+@interface PasswordsDetailSheetController : SheetWithTableController <NSSharingServiceDelegate, TableViewPlusDelegate, TableViewPlusDataSource, NSTextViewDelegate>
 {
     NSSharingService *_sharingService;
     NSWindow *_airDropWindow;
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) WBSSavedPassword *password; // @synthesize password=_password;
 @property(nonatomic) __weak id <PasswordsDetailSheetControllerDecisionHandler> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)sharingServiceWindowDidResignMain:(id)arg1;
 - (void)sharingServiceWindowDidBecomeMain:(id)arg1;
 - (void)sharingService:(id)arg1 didFailToShareItems:(id)arg2 error:(id)arg3;

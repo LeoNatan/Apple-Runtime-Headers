@@ -8,5 +8,23 @@
 
 @interface DOMHTMLInputElement (UIWebFormPeripheral)
 - (id)createPeripheral;
+- (id)_textFormElement;
+- (void)_accessoryClear;
+- (_Bool)_supportsAccessoryClear;
+- (_Bool)_supportsAutoFill;
+- (_Bool)_requiresInputView;
+- (_Bool)_requiresAccessoryView;
+- (void)_stopAssistingDocumentView:(id)arg1;
+- (void)_startAssistingDocumentView:(id)arg1;
+- (_Bool)nodeCanBecomeFirstResponder;
+- (_Bool)isLikelyToBeginPageLoad;
+- (_Bool)isAssistedDateType;
+- (_Bool)isEditing;
+- (void)setSelectionWithPoint:(struct CGPoint)arg1;
+- (long long)keyboardType;
+- (_Bool)isTextControl;
+- (_Bool)isSecure;
+- (id)text;
+- (id)textInputTraits;
 @end
 

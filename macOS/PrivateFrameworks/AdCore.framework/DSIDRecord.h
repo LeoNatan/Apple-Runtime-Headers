@@ -17,6 +17,7 @@
     BOOL _accountIsT13;
     BOOL _accountIsU13;
     BOOL _accountIsU18;
+    BOOL _accountAgeUnknown;
     BOOL _isActiveRecord;
     BOOL _isRestrictedByEU_GDPR;
     BOOL _isPlaceholderAccount;
@@ -57,6 +58,7 @@
 @property(retain, nonatomic) NSString *IDFA; // @synthesize IDFA=_IDFA;
 @property(retain, nonatomic) NSString *segmentData; // @synthesize segmentData=_segmentData;
 @property(readonly, nonatomic) BOOL isActiveRecord; // @synthesize isActiveRecord=_isActiveRecord;
+@property(nonatomic) BOOL accountAgeUnknown; // @synthesize accountAgeUnknown=_accountAgeUnknown;
 @property(nonatomic) BOOL accountIsU18; // @synthesize accountIsU18=_accountIsU18;
 @property(nonatomic) BOOL accountIsU13; // @synthesize accountIsU13=_accountIsU13;
 @property(nonatomic) BOOL accountIsT13; // @synthesize accountIsT13=_accountIsT13;

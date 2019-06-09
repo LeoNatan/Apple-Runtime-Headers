@@ -4,19 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Preferences/PSListController.h>
+#import <ScreenTimeUI/STPINListViewController.h>
 
-@class NSObject;
-@protocol STContentPrivacyViewModelCoordinator;
+@class NSArray, PSSpecifier;
 
-@interface STContentPrivacyListController : PSListController
+__attribute__((visibility("hidden")))
+@interface STContentPrivacyListController : STPINListViewController
 {
-    NSObject<STContentPrivacyViewModelCoordinator> *_coordinator;
+    PSSpecifier *_enableRestrictionsSwitchSpecifier;
 }
 
-@property(retain, nonatomic) NSObject<STContentPrivacyViewModelCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
+@property(retain) PSSpecifier *enableRestrictionsSwitchSpecifier; // @synthesize enableRestrictionsSwitchSpecifier=_enableRestrictionsSwitchSpecifier;
 - (void).cxx_destruct;
+- (void)_isLoadedDidChange:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)setCoordinator:(id)arg1;
 - (void)dealloc;
 - (id)radioGroupSpecifierWithName:(id)arg1 footerText:(id)arg2 item:(id)arg3;
 - (id)tccSpecifierWithCapabilityKey:(id)arg1 id:(id)arg2;
@@ -34,9 +36,9 @@
 - (void)showiTunesPurchasesRestrictions:(id)arg1;
 - (id)_allowChangesSpecifiers;
 - (id)_privacySpecifiers;
-- (id)storeDetailSpecifiers;
+@property(readonly, copy) NSArray *storeDetailSpecifiers;
 - (id)_topLevelSpecifiers;
-- (id)_featureSwitchSpecifier;
+- (id)_enableRestrictionsSwitchSpecifier;
 - (id)specifiers;
 - (_Bool)canBeShownFromSuspendedState;
 - (id)init;

@@ -12,6 +12,7 @@
 @interface MRAVOutputContext : NSObject
 {
     NSArray *_outputDevices;
+    NSArray *_outputDevicesSnapshot;
     MRAVOutputDeviceSourceInfo *_outputDeviceSourceInfo;
     NSMutableArray *_pendingModifications;
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -64,7 +65,9 @@
 - (void)setOutputDevices:(id)arg1 withPassword:(id)arg2 callbackQueue:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (void)setOutputDevices:(id)arg1 withCallbackQueue:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (id)localDevice;
+- (void)setOutputDevicesSnapshot:(id)arg1;
 @property(copy, nonatomic) NSArray *outputDevices;
+@property(readonly, nonatomic) NSArray *outputDevicesSnapshot;
 - (id)description;
 - (void)dealloc;
 - (id)initWithAVOutputContext:(id)arg1 type:(unsigned int)arg2;

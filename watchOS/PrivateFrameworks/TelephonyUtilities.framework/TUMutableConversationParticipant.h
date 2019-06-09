@@ -17,7 +17,7 @@
 // Remaining properties
 @property(nonatomic, getter=isAudioEnabled) _Bool audioEnabled; // @dynamic audioEnabled;
 @property(copy, nonatomic) TUHandle *handle; // @dynamic handle;
-@property(nonatomic) unsigned int identifier; // @dynamic identifier;
+@property(nonatomic) unsigned long identifier; // @dynamic identifier;
 @property(nonatomic, getter=isMuted) _Bool muted; // @dynamic muted;
 @property(nonatomic) int streamToken; // @dynamic streamToken;
 @property(nonatomic, getter=isVideoEnabled) _Bool videoEnabled; // @dynamic videoEnabled;

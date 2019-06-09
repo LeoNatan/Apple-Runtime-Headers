@@ -6,31 +6,34 @@
 
 #import <objc/NSObject.h>
 
-#import <SpringBoardServices/SBSRemoteAlertClientHandle-Protocol.h>
+@class NSHashTable, NSString;
+@protocol OS_dispatch_queue, SBSRemoteAlertHandleClient;
 
-@class BSMachPortSendRight, NSHashTable, NSString, SBSRemoteAlertClient;
-@protocol OS_dispatch_queue;
-
-@interface SBSRemoteAlertHandle : NSObject <SBSRemoteAlertClientHandle>
+@interface SBSRemoteAlertHandle : NSObject
 {
-    SBSRemoteAlertClient *_client;
-    NSObject<OS_dispatch_queue> *_queue;
-    BSMachPortSendRight *_token;
+    NSObject<OS_dispatch_queue> *_accessSerialQueue;
     _Bool _active;
+    NSObject<OS_dispatch_queue> *_calloutSerialQueue;
+    _Bool _valid;
+    id <SBSRemoteAlertHandleClient> _handleClient;
+    NSString *_handleID;
     NSHashTable *_observers;
 }
 
 + (id)handleWithConfiguration:(id)arg1;
 + (id)lookupHandlesForConfiguration:(id)arg1 creatingIfNone:(_Bool)arg2;
++ (void)setDefaultHandleClient:(id)arg1;
++ (id)defaultHandleClient;
 + (id)newHandleWithDefinition:(id)arg1 configurationContext:(id)arg2;
++ (id)lookupHandlesForDefinition:(id)arg1 creatingIfNone:(_Bool)arg2 configurationContext:(id)arg3;
 + (id)lookupHandlesForDefinition:(id)arg1 creatingIfNone:(_Bool)arg2;
 + (id)lookupHandlesForDefinition:(id)arg1;
-+ (id)_lookupHandlesForDefinition:(id)arg1 creatingIfNone:(_Bool)arg2;
+@property(readonly, copy, nonatomic) NSString *handleID; // @synthesize handleID=_handleID;
 - (void).cxx_destruct;
-- (void)queue_noteInvalidWithError:(id)arg1;
-- (void)queue_setActive:(_Bool)arg1;
-- (id)queue_token;
-- (void)_queue_callObserversWithBlock:(CDUnknownBlockType)arg1;
+- (void)_invalidateWithError:(id)arg1 shouldInvalidateHandleClient:(_Bool)arg2;
+- (void)_receivedInvalidationWithError:(id)arg1;
+- (void)_didDeactivate;
+- (void)_didActivate;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
 - (void)invalidate;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
@@ -38,14 +41,7 @@
 - (void)activateWithOptions:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)_initWithHandleToken:(id)arg1;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)_initWithHandleID:(id)arg1 handleClient:(id)arg2;
 
 @end
 

@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) IMKCandidateList *candidateList; // @synthesize candidateList=_candidateList;
 - (void).cxx_destruct;
 - (void)reflectCandidatesInTouchBar;
+- (void)candidateMenuDidFinishInteracting:(id)arg1;
 - (void)candidateMenu:(id)arg1 didSelectCandidate:(id)arg2;
 - (void)candidateMenu:(id)arg1 didChangeFocusTo:(id)arg2;
 - (BOOL)handleKeyPress:(id)arg1 whileInKeyboardState:(id)arg2;

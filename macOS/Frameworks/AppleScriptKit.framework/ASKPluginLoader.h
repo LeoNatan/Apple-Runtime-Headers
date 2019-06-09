@@ -8,6 +8,7 @@
 
 @class NSArray, NSBundle;
 
+__attribute__((visibility("hidden")))
 @interface ASKPluginLoader : NSObject
 {
     NSBundle *_pluginBundle;

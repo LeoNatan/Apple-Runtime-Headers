@@ -28,7 +28,6 @@
     id <CNCancelable> _frameDidChangeToken;
 }
 
-+ (id)propertyToVisiblePreferenceKeyMap;
 + (id)sortedCollectionViewProperties;
 + (id)relationships;
 @property(retain, nonatomic) ABCardViewStyleProvider *styleProvider; // @synthesize styleProvider=_styleProvider;

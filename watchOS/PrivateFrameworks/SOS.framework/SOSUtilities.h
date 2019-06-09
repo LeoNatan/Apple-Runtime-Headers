@@ -14,6 +14,7 @@
 + (_Bool)isAllowedToMessageSOSContacts;
 + (void)setNewtonTriggersEmergencySOS:(_Bool)arg1;
 + (_Bool)newtonTriggersEmergencySOS;
++ (void)setNewtonTriggersEmergencySOSNumber:(id)arg1;
 + (id)newtonTriggersEmergencySOSNumber;
 + (void)setLongPressTriggersEmergencySOS:(_Bool)arg1;
 + (_Bool)longPressTriggersEmergencySOS;

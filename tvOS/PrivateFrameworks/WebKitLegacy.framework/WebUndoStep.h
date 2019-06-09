@@ -12,13 +12,13 @@ __attribute__((visibility("hidden")))
     struct RefPtr<WebCore::UndoStep, WTF::DumbPtrTraits<WebCore::UndoStep>> m_step;
 }
 
-+ (id)stepWithUndoStep:(struct UndoStep *)arg1;
++ (id)stepWithUndoStep:(Ref_d1ef333b *)arg1;
 + (void)initialize;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct UndoStep *)step;
 - (void)dealloc;
-- (id)initWithUndoStep:(struct UndoStep *)arg1;
+- (id)initWithUndoStep:(Ref_d1ef333b *)arg1;
 
 @end
 

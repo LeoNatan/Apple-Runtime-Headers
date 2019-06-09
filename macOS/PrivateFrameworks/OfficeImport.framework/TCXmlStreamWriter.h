@@ -8,6 +8,7 @@
 
 @class NSMutableSet, TCXmlTextWriterProvider;
 
+__attribute__((visibility("hidden")))
 @interface TCXmlStreamWriter : NSObject
 {
     TCXmlTextWriterProvider *mTextWriterProvider;

@@ -6,15 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class CAMPortraitModeDescriptionOverlayPrimaryVibrancyEffectView, UIButton, UILabel, UIVisualEffectView;
+@class CAMPortraitModeDescriptionOverlayPrimaryVibrancyEffectView, CAShapeLayer, UIButton, UILabel, UIVisualEffectView;
 @protocol CAMDescriptionOverlayViewDelegate;
 
 @interface CAMDescriptionOverlayView : UIView
 {
+    _Bool _blackoutFrameVisible;
     id <CAMDescriptionOverlayViewDelegate> _delegate;
     long long _orientation;
-    double _contentTopInset;
     UIVisualEffectView *__blurEffectView;
+    UIView *__blackoutView;
+    CAShapeLayer *__blackoutMask;
     CAMPortraitModeDescriptionOverlayPrimaryVibrancyEffectView *__primaryVibrancyEffectView;
     UILabel *__titleLabel;
     UILabel *__descriptionLabel;
@@ -22,10 +24,9 @@
     UIButton *__acknowledgmentButton;
     double __descriptionFontSizeMultiplier;
     double __infoFontSizeMultiplier;
-    UIView *__topBlackoutView;
+    struct CGRect _viewportFrame;
 }
 
-@property(retain, nonatomic) UIView *_topBlackoutView; // @synthesize _topBlackoutView=__topBlackoutView;
 @property(nonatomic, setter=_setInfoFontSizeMultiplier:) double _infoFontSizeMultiplier; // @synthesize _infoFontSizeMultiplier=__infoFontSizeMultiplier;
 @property(nonatomic, setter=_setDescriptionFontSizeMultiplier:) double _descriptionFontSizeMultiplier; // @synthesize _descriptionFontSizeMultiplier=__descriptionFontSizeMultiplier;
 @property(readonly, nonatomic) UIButton *_acknowledgmentButton; // @synthesize _acknowledgmentButton=__acknowledgmentButton;
@@ -33,8 +34,11 @@
 @property(readonly, nonatomic) UILabel *_descriptionLabel; // @synthesize _descriptionLabel=__descriptionLabel;
 @property(readonly, nonatomic) UILabel *_titleLabel; // @synthesize _titleLabel=__titleLabel;
 @property(readonly, nonatomic) CAMPortraitModeDescriptionOverlayPrimaryVibrancyEffectView *_primaryVibrancyEffectView; // @synthesize _primaryVibrancyEffectView=__primaryVibrancyEffectView;
+@property(readonly, nonatomic) CAShapeLayer *_blackoutMask; // @synthesize _blackoutMask=__blackoutMask;
+@property(readonly, nonatomic) UIView *_blackoutView; // @synthesize _blackoutView=__blackoutView;
 @property(readonly, nonatomic) UIVisualEffectView *_blurEffectView; // @synthesize _blurEffectView=__blurEffectView;
-@property(nonatomic) double contentTopInset; // @synthesize contentTopInset=_contentTopInset;
+@property(nonatomic, getter=isBlackoutFrameVisible) _Bool blackoutFrameVisible; // @synthesize blackoutFrameVisible=_blackoutFrameVisible;
+@property(nonatomic) struct CGRect viewportFrame; // @synthesize viewportFrame=_viewportFrame;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <CAMDescriptionOverlayViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -47,7 +51,7 @@
 - (id)titleTextUsingNarrowWidth:(_Bool)arg1;
 - (void)setVisible:(_Bool)arg1 animationDuration:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)_isVisible;
-- (void)_updateTopBlackoutViewForVisible:(_Bool)arg1;
+- (void)_layoutBlackoutMaskForFrame:(struct CGRect)arg1 inFrame:(struct CGRect)arg2;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
 - (void)_handleAcknowledgmentButtonTapped:(id)arg1;
 @property(nonatomic, getter=isAcknowledgmentButtonHighlighted) _Bool acknowledgmentButtonHighlighted;

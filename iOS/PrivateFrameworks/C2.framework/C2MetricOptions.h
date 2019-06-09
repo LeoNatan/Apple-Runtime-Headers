@@ -12,6 +12,7 @@
 {
     _Bool _anonymous;
     _Bool _pushTrigger;
+    unsigned int _randomValue;
     NSURL *_c2MetricsEndpoint;
     unsigned long long _reportFrequency;
     unsigned long long _reportFrequencyBase;
@@ -25,10 +26,13 @@
     NSString *_environment;
     NSArray *_operationGroups;
     NSArray *_clientOperations;
+    CDUnknownBlockType _didCompleteWithError;
     CDUnknownBlockType _testBehavior_reportMetric;
 }
 
+@property(nonatomic) unsigned int randomValue; // @synthesize randomValue=_randomValue;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_reportMetric; // @synthesize testBehavior_reportMetric=_testBehavior_reportMetric;
+@property(copy, nonatomic) CDUnknownBlockType didCompleteWithError; // @synthesize didCompleteWithError=_didCompleteWithError;
 @property(nonatomic) _Bool pushTrigger; // @synthesize pushTrigger=_pushTrigger;
 @property(retain, nonatomic) NSArray *clientOperations; // @synthesize clientOperations=_clientOperations;
 @property(retain, nonatomic) NSArray *operationGroups; // @synthesize operationGroups=_operationGroups;
@@ -47,6 +51,7 @@
 - (void).cxx_destruct;
 - (_Bool)operationGroupTriggered:(id)arg1;
 - (_Bool)clientOperationTriggered:(id)arg1;
+@property(readonly, nonatomic) NSString *headerValueForTriggers;
 - (int)generateTriggerWithResponseHeader:(unsigned char)arg1;
 - (id)generateCloudKitInfo;
 - (id)init;

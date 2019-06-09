@@ -6,27 +6,21 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class SCRBrailleLineManager;
-
 __attribute__((visibility("hidden")))
 @interface SCRProgressIndicator : SCRElement
 {
     double _lastValueChangedTime;
-    SCRBrailleLineManager *__brailleLineManager;
 }
 
-@property(retain, nonatomic, setter=_setBrailleLineManager:) SCRBrailleLineManager *_brailleLineManager; // @synthesize _brailleLineManager=__brailleLineManager;
-- (id)brailleLineManager;
 - (BOOL)_isBusyIndicator;
 - (id)typeDescription;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)maxValue;
 - (id)minValue;
 - (double)_percentValue;
 - (void)echoValueChangeToRequest:(id)arg1;
 - (BOOL)canHandleValueChange;
 - (BOOL)listenForValueChangeWithoutKeyboardFocus;
-- (void)dealloc;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 
 @end

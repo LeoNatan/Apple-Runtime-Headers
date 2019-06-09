@@ -7,7 +7,13 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (GKExtensions)
-- (id)_gkFormatedWhenStringWithOptions:(unsigned int)arg1;
++ (id)_gkFormattedTimeIntervalStringWithStartDate:(id)arg1 endDate:(id)arg2 calendarUnits:(unsigned int)arg3 style:(int)arg4;
++ (id)_gkServerTimestamp;
++ (id)_gkDateFromServerTimestamp:(id)arg1;
++ (id)_gkDateFromScalarServerTimestamp:(unsigned long long)arg1;
+- (id)_gkFormattedWhenStringWithOptions:(unsigned int)arg1;
 - (id)_gkFormattedDateForStyle:(unsigned int)arg1 relative:(_Bool)arg2;
+- (id)_gkFormattedStringWithDateStyle:(unsigned int)arg1 timeStyle:(unsigned int)arg2;
+- (id)_gkServerTimestamp;
 @end
 

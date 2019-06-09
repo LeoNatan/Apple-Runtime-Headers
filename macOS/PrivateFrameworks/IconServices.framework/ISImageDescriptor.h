@@ -7,8 +7,9 @@
 #import <objc/NSObject.h>
 
 #import <IconServices/NSCopying-Protocol.h>
+#import <IconServices/NSSecureCoding-Protocol.h>
 
-@interface ISImageDescriptor : NSObject <NSCopying>
+@interface ISImageDescriptor : NSObject <NSSecureCoding, NSCopying>
 {
     struct CGSize _size;
     double _scale;
@@ -17,6 +18,9 @@
     unsigned long long _backgroundStyle;
 }
 
++ (BOOL)supportsSecureCoding;
++ (id)imageDescriptorNamed:(id)arg1;
++ (id)icnsImageDescriptors;
 @property(nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) unsigned long long badgeOptions; // @synthesize badgeOptions=_badgeOptions;
 @property(nonatomic) unsigned long long variantOptions; // @synthesize variantOptions=_variantOptions;
@@ -25,12 +29,16 @@
 - (id)description;
 @property(readonly) double sanitizedScale;
 @property(readonly) struct CGSize sanitizedSize;
+@property(nonatomic) BOOL drawBadge;
 @property(nonatomic) BOOL drawBorder;
 @property(nonatomic) BOOL shouldApplyMask;
+@property(readonly, nonatomic) double continuousCornerRadius;
 @property(nonatomic) unsigned long long shape;
 @property(nonatomic) BOOL selectedVariant;
 @property(nonatomic) BOOL templateVariant;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)init;
 

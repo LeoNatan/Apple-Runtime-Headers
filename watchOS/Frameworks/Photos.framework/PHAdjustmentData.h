@@ -19,7 +19,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)photoEditModelWithAdjustmentData:(id)arg1 asset:(id)arg2;
 + (int)adjustmentBaseVersionFromVideoRequestVersion:(int)arg1;
 + (int)videoRequestVersionFromAdjustmentBaseVersion:(int)arg1;
 + (int)adjustmentBaseVersionFromImageRequestVersion:(int)arg1;
@@ -35,10 +34,10 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, getter=isOpaque) _Bool opaque;
 - (id)initWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2 data:(id)arg3;
+- (_Bool)_hasAdjustments;
 - (int)_requiredBaseVersionWithCanHandleAdjustmentData:(_Bool)arg1 assetIsVideo:(_Bool)arg2;
 - (_Bool)_canBeHandledByClientUsingVerificationBlock:(CDUnknownBlockType)arg1;
 - (_Bool)_contentEditingHasAdjustments;
-- (_Bool)_hasAdjustments;
 
 @end
 

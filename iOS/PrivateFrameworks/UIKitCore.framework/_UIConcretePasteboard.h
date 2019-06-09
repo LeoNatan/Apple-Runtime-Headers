@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 
 + (id)_pasteboardWithUniqueName;
 + (id)_pasteboardWithName:(id)arg1 create:(_Bool)arg2;
++ (void)_clearPinnedItemProvidersForPasteboardNamed:(id)arg1;
++ (void)_pinItemProviders:(id)arg1 forPasteboardNamed:(id)arg2 withExpirationDate:(id)arg3;
 + (void)removePasteboardWithName:(id)arg1;
 + (id)pasteboardWithUniqueName;
 + (id)pasteboardWithName:(id)arg1 create:(_Bool)arg2;
@@ -71,6 +73,8 @@ __attribute__((visibility("hidden")))
 - (void)setObjects:(id)arg1 localOnly:(_Bool)arg2 expirationDate:(id)arg3;
 - (void)setObjects:(id)arg1;
 - (void)setObjects:(id)arg1 options:(id)arg2;
+- (void)_clearPinnedItemProviders;
+- (void)_pinItemProviders:(id)arg1 expirationDate:(id)arg2;
 - (void)setItemProviders:(id)arg1 localOnly:(_Bool)arg2 expirationDate:(id)arg3;
 - (void)setItemProviders:(id)arg1 options:(id)arg2;
 - (void)setItemProviders:(id)arg1;
@@ -81,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_pasteboardCacheQueue_isPersistent;
 - (_Bool)isPersistent;
 - (id)_initWithName:(id)arg1;
+- (void)_pinItemCollection:(id)arg1;
 - (void)_saveItemCollection:(id)arg1;
 - (_Bool)_pasteboardCacheQueue_saveItemCollection:(id)arg1 currentNotificationState:(unsigned long long)arg2 outNewNotificationState:(unsigned long long *)arg3;
 

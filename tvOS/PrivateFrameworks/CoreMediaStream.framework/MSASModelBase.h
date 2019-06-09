@@ -44,7 +44,6 @@
 - (void)setPersistentString:(id)arg1 forKey:(id)arg2;
 - (id)persistentStringForKey:(id)arg1;
 - (struct sqlite3_stmt *)statementForString:(id)arg1;
-- (void)dealloc;
 - (void)shutDownForDestruction:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (_Bool)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;
 - (void)dbQueueInitializeDatabasePath:(id)arg1 currentVersion:(int)arg2;

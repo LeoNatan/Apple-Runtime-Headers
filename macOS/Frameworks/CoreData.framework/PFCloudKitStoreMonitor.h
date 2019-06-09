@@ -32,13 +32,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL storeIsAlive; // @synthesize storeIsAlive=_storeIsAlive;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *monitorGroup; // @synthesize monitorGroup=_monitorGroup;
 - (void).cxx_destruct;
+- (id)newBackgroundContextForMonitoredCoordinator;
 - (id)retainedMonitoredCoordinator;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (void)pfcloudstoremonitor_is_holding_your_store_open_waiting_for_cloudkit_activity_to_finish;
 - (void)declareStoreDead;
 - (void)coordinatorWillRemoveStore:(id)arg1;
 - (void)dealloc;
-- (id)initForStore:(id)arg1 inCoordinator:(id)arg2;
+- (id)initForStore:(id)arg1;
 
 @end
 

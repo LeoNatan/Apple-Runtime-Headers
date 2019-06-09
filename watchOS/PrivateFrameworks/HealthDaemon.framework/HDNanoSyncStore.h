@@ -9,7 +9,7 @@
 #import <HealthDaemon/HDSyncStore-Protocol.h>
 #import <HealthDaemon/NRDevicePropertyObserver-Protocol.h>
 
-@class HDNanoPairingEntity, HDNanoSyncRestoreSession, HDProfile, IDSDevice, NRDevice, NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSString, NSUUID;
+@class HDNanoPairingEntity, HDNanoSyncRestoreSession, HDProfile, HKNanoSyncPairedDeviceInfo, IDSDevice, NRDevice, NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, NSSet, NSString, NSUUID;
 @protocol HDNanoSyncStoreDelegate;
 
 @interface HDNanoSyncStore : NSObject <NRDevicePropertyObserver, HDSyncStore>
@@ -36,12 +36,14 @@
     id <HDNanoSyncStoreDelegate> _delegate;
     int _restoreState;
     HDNanoSyncRestoreSession *_restoreSession;
+    NSSet *_obliteratedDatabaseUUIDs;
 }
 
 + (id)_observedDeviceProperties;
 + (id)orderedSyncEntitiesForProfile:(id)arg1 protocolVersion:(int)arg2 companion:(_Bool)arg3;
 + (id)nanoSyncStoreWithProfile:(id)arg1 device:(id)arg2 delegate:(id)arg3;
 @property(nonatomic) _Bool needsSyncOnUnlock; // @synthesize needsSyncOnUnlock=_needsSyncOnUnlock;
+@property(readonly, copy, nonatomic) NSSet *obliteratedDatabaseUUIDs; // @synthesize obliteratedDatabaseUUIDs=_obliteratedDatabaseUUIDs;
 @property(readonly, nonatomic) HDNanoSyncRestoreSession *restoreSession; // @synthesize restoreSession=_restoreSession;
 @property(readonly, nonatomic) int restoreState; // @synthesize restoreState=_restoreState;
 @property(nonatomic) __weak id <HDNanoSyncStoreDelegate> delegate; // @synthesize delegate=_delegate;
@@ -53,6 +55,10 @@
 - (id)diagnosticDescription;
 @property(readonly, copy) NSString *description;
 - (void)device:(id)arg1 propertyDidChange:(id)arg2 fromValue:(id)arg3;
+- (void)setExpectedSequenceNumber:(int)arg1 forSyncEntityClass:(Class)arg2;
+- (int)expectedSequenceNumberForSyncEntityClass:(Class)arg1;
+- (_Bool)shouldEnforceSequenceOrdering;
+- (_Bool)shouldContinueAfterAnchorValidationError:(id)arg1;
 - (_Bool)supportsSpeculativeChangesForSyncEntityClass:(Class)arg1;
 - (id)syncEntityDependenciesForSyncEntity:(Class)arg1;
 - (_Bool)canRecieveSyncObjectsForEntityClass:(Class)arg1;
@@ -78,13 +84,9 @@
 @property(readonly, nonatomic, getter=isRestoreComplete) _Bool restoreComplete;
 - (void)finishRestoreSessionWithError:(id)arg1;
 - (id)beginRestoreSessionWithUUID:(id)arg1 timeout:(double)arg2 timeoutHandler:(CDUnknownBlockType)arg3;
-- (void)setExpectedSequenceNumber:(int)arg1 forSyncEntityClass:(Class)arg2;
-- (int)expectedSequenceNumberForSyncEntityClass:(Class)arg1;
-- (_Bool)shouldEnforceSequenceOrdering;
-- (_Bool)shouldContinueAfterAnchorValidationError:(id)arg1;
 - (_Bool)_savePairingEntity;
-@property(retain, nonatomic) NSUUID *persistentUUID;
-@property(retain, nonatomic) NSUUID *healthUUID;
+@property(copy, nonatomic) NSUUID *persistentUUID;
+@property(copy, nonatomic) NSUUID *healthUUID;
 @property(readonly, getter=isActive) _Bool active;
 @property(readonly) int syncStoreType;
 @property(readonly) int protocolVersion;
@@ -95,11 +97,12 @@
 @property(readonly, copy) NSString *remoteSystemBuildVersion;
 @property(readonly) NSUUID *nanoRegistryUUID;
 @property(readonly) IDSDevice *device;
-- (id)deviceInfo;
+@property(readonly, copy) HKNanoSyncPairedDeviceInfo *deviceInfo;
+- (void)prepareForObliteration;
 @property(readonly, getter=isInvalidated) _Bool invalidated;
 - (void)invalidate;
 - (void)dealloc;
-- (id)_initWithIdentityServicesDevice:(id)arg1 nanoRegistryDevice:(id)arg2 pairingEntity:(id)arg3 protocolVersion:(int)arg4 delegate:(id)arg5 profile:(id)arg6;
+- (id)_initWithIdentityServicesDevice:(id)arg1 nanoRegistryDevice:(id)arg2 pairingEntity:(id)arg3 obliteratedDatabaseUUIDs:(id)arg4 protocolVersion:(int)arg5 delegate:(id)arg6 profile:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

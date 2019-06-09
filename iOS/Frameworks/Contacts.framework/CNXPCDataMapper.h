@@ -25,14 +25,16 @@
 @property(retain, nonatomic) id <CNContactsLogger> logger; // @synthesize logger=_logger;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+- (id)authorizedKeysForContactKeys:(id)arg1 error:(id *)arg2;
 - (_Bool)writeFavoritesPropertyListData:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
 - (id)favoritesEntryDictionariesAtPath:(id)arg1 error:(id *)arg2;
 - (id)verifyIndexWithError:(id *)arg1;
 - (_Bool)reindexSearchableItemsWithIdentifiers:(id)arg1 error:(id *)arg2;
-- (_Bool)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id *)arg3;
+- (id)currentHistoryToken;
+- (_Bool)executeChangeHistoryClearRequest:(id)arg1 error:(id *)arg2;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id *)arg2;
-- (_Bool)unregisterChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
-- (_Bool)registerChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
+- (_Bool)unregisterChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
+- (_Bool)registerChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
 - (id)userActivityUserInfoForContact:(id)arg1;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
 - (_Bool)setBestMeIfNeededForGivenName:(id)arg1 familyName:(id)arg2 email:(id)arg3 error:(id *)arg4;
@@ -46,7 +48,7 @@
 - (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)containersMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)executeSaveRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
+- (_Bool)executeSaveRequest:(id)arg1 response:(id *)arg2 authorizationContext:(id)arg3 error:(id *)arg4;
 - (_Bool)executeSaveRequest:(id)arg1 error:(id *)arg2;
 - (id)meContactIdentifiers:(id *)arg1;
 - (id)identifierWithError:(id *)arg1;
@@ -54,6 +56,7 @@
 - (_Bool)fetchAndDecodeEncodedContactsForFetchRequest:(id)arg1 error:(id *)arg2 cancelationToken:(id)arg3 batchHandler:(CDUnknownBlockType)arg4;
 - (_Bool)fetchContactsForFetchRequest:(id)arg1 error:(id *)arg2 batchHandler:(CDUnknownBlockType)arg3;
 - (id)contactObservableForFetchRequest:(id)arg1;
+- (id)sectionListOffsetsForSortOrder:(long long)arg1 error:(id *)arg2;
 - (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
 - (id)remoteResultForSelector:(SEL)arg1 parameters:(id)arg2 error:(id *)arg3;
@@ -71,6 +74,8 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(retain, nonatomic) NSString *legacyTetheredSyncComputerAnchor;
+@property(retain, nonatomic) NSString *legacyTetheredSyncDeviceAnchor;
 @property(readonly) Class superclass;
 
 @end

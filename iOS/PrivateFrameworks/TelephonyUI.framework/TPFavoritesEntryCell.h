@@ -23,7 +23,6 @@
     UIVisualEffectView *_primaryVisualEffectView;
     UIVisualEffectView *_secondaryVisualEffectView;
     NSLayoutConstraint *_avatarContentViewHeightLayoutConstraint;
-    NSLayoutConstraint *_avatarContentViewWidthLayoutConstraint;
     NSLayoutConstraint *_contactNameLabelBaselineLayoutConstraint;
     NSLayoutConstraint *_transportNameLabelBaselineLayoutConstraint;
     NSLayoutConstraint *_transportNameLabelLeadingLayoutConstraint;
@@ -37,7 +36,6 @@
 @property(retain, nonatomic) NSLayoutConstraint *transportNameLabelLeadingLayoutConstraint; // @synthesize transportNameLabelLeadingLayoutConstraint=_transportNameLabelLeadingLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *transportNameLabelBaselineLayoutConstraint; // @synthesize transportNameLabelBaselineLayoutConstraint=_transportNameLabelBaselineLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *contactNameLabelBaselineLayoutConstraint; // @synthesize contactNameLabelBaselineLayoutConstraint=_contactNameLabelBaselineLayoutConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *avatarContentViewWidthLayoutConstraint; // @synthesize avatarContentViewWidthLayoutConstraint=_avatarContentViewWidthLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *avatarContentViewHeightLayoutConstraint; // @synthesize avatarContentViewHeightLayoutConstraint=_avatarContentViewHeightLayoutConstraint;
 @property(retain, nonatomic) UIVisualEffectView *secondaryVisualEffectView; // @synthesize secondaryVisualEffectView=_secondaryVisualEffectView;
 @property(retain, nonatomic) UIVisualEffectView *primaryVisualEffectView; // @synthesize primaryVisualEffectView=_primaryVisualEffectView;
@@ -53,7 +51,6 @@
 @property(readonly, nonatomic) double transportNameLabelLeadingLayoutConstraintConstant;
 @property(readonly, nonatomic) double transportNameLabelBaselineLayoutConstraintConstant;
 @property(readonly, nonatomic) double contactNameLabelBaselineLayoutConstraintConstant;
-@property(readonly, nonatomic) double avatarContentViewWidthLayoutConstraintConstant;
 @property(readonly, nonatomic) double avatarContentViewHeightLayoutConstraintConstant;
 - (void)handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)loadContentViewLayoutConstraints;

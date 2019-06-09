@@ -6,23 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSLock;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface NWKLocalCacheManager : NSObject
 {
-    NSArray *_cachedStaticLocations;
-    NSLock *_lock;
     NSObject<OS_dispatch_queue> *_diskAccessQueue;
 }
 
 + (id)sharedManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *diskAccessQueue; // @synthesize diskAccessQueue=_diskAccessQueue;
-@property(retain, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
-@property(retain, nonatomic) NSArray *cachedStaticLocations; // @synthesize cachedStaticLocations=_cachedStaticLocations;
+- (id)loadCachedStaticLocations;
 - (void)clearCachedStaticLocations;
-- (id)init;
+- (void)cacheStaticLocations:(id)arg1;
 - (id)initPrivate;
 
 @end

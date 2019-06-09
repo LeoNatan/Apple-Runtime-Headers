@@ -41,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (struct OpaqueFigAsset *)copyFigAssetAtIndex:(unsigned long long)arg1 options:(id)arg2 figErr:(int *)arg3;
 @property(readonly, nonatomic) unsigned long long assetCount;
 @property(readonly, nonatomic) NSString *type;
-- (void)finalize;
 - (void)dealloc;
 - (void)_cleanUpUncollectables;
 - (id)initWithFigCollectionAtURL:(id)arg1;

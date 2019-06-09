@@ -8,12 +8,9 @@
 
 @interface NSTextAttachment (NSTextAttachmentAdditions)
 + (BOOL)_usesRollover;
-+ (Class)_QTMovieViewClass;
-+ (Class)_QTMovieClass;
-+ (Class)_QTDataReferenceClass;
-+ (void)_loadQTKit;
 - (void)_processAttachmentWithNewContentsOfItem:(id)arg1 hanlder:(CDUnknownBlockType)arg2;
 - (BOOL)allowsEditingContents;
 - (void)setAllowsEditingContents:(BOOL)arg1;
+- (id)_immediateActionAnimationControllerForCharacterAtIndex:(unsigned long long)arg1 inTextView:(id)arg2;
 @end
 

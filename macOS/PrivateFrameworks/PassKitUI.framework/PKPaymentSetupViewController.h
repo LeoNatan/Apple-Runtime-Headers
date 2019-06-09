@@ -8,20 +8,23 @@
 
 #import <PassKitUI/NSTextViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentCameraCaptureDelegate-Protocol.h>
+#import <PassKitUI/PKPaymentProvisioningControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentSetupFieldViewDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentTermsAndConditionsDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentVerificationMethodsDelegate-Protocol.h>
+#import <PassKitUI/PKSelectCredentialsViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSButton, NSImageView, NSStackView, NSString, NSTextField, NSTextView, NSView, OBPrivacyLinkController, PKPaymentCameraCaptureViewController, PKPaymentCardVerificationViewController, PKPaymentCredential, PKPaymentProvisioningController, PKPaymentSetupDisambiguationViewController, PKPaymentSetupFieldsModel, PKPaymentTermsConditionsViewController, PKPaymentWebService;
+@class NSArray, NSButton, NSImageView, NSStackView, NSString, NSTextField, NSTextView, NSView, OBPrivacyLinkController, PKPaymentCameraCaptureViewController, PKPaymentCardVerificationViewController, PKPaymentCredential, PKPaymentProvisioningController, PKPaymentSetupDisambiguationViewController, PKPaymentSetupFieldsModel, PKPaymentTermsConditionsViewController, PKPaymentWebService, PKSelectCredentialsViewController;
 @protocol PKPaymentSetupDelegate;
 
-@interface PKPaymentSetupViewController : NSViewController <PKPaymentSetupFieldViewDelegate, PKPaymentCameraCaptureDelegate, NSTextViewDelegate, PKPaymentTermsAndConditionsDelegate, PKPaymentVerificationMethodsDelegate>
+@interface PKPaymentSetupViewController : NSViewController <PKPaymentSetupFieldViewDelegate, PKPaymentCameraCaptureDelegate, NSTextViewDelegate, PKPaymentTermsAndConditionsDelegate, PKPaymentVerificationMethodsDelegate, PKSelectCredentialsViewControllerDelegate, PKPaymentProvisioningControllerDelegate>
 {
     OBPrivacyLinkController *_privacyLinkController;
     BOOL _isProcessingRequest;
     BOOL _prefPaneIsUnselected;
     BOOL _nextButtonEnabled;
     BOOL _backButtonEnabled;
+    BOOL _selectCardsOnFileSkippedDueToSingleCredential;
     NSString *_currentTitle;
     unsigned long long _status;
     long long _context;
@@ -44,18 +47,22 @@
     NSView *_mainLayoutNavigationPlaceHolderView;
     NSImageView *_mainLayoutCardImageView;
     NSImageView *_cardImageView;
-    NSView *_mainLayoutSetupLaterContainer;
-    NSView *_buddyMainLayoutSetupLaterView;
     NSView *_setupFieldsView;
     NSTextField *_setupFieldsTitleLabel;
     NSStackView *_setupFieldsStack;
     NSView *_navigationViewDefault;
-    NSView *_navigationViewCardOnFile;
+    NSView *_navigationViewSelectCardsOnFile;
+    NSView *_navigationViewProvisionCardOnFile;
     NSView *_navigationViewCardVerification;
     NSView *_navigationViewCardAdded;
-    NSView *_buddyBottomPlaceHolder;
-    NSView *_buddyBottomCardAdded;
-    NSView *_buddyBottomProgressIndication;
+    NSButton *_navigationViewCardAddedDoneButton;
+    NSView *_buddyMainLayoutTopPlaceHolder;
+    NSView *_buddyMainLayoutBottomPlaceHolder;
+    NSView *_buddyBottomProgressIndicationView;
+    NSView *_buddyBottomCardAddedView;
+    NSView *_buddyBottomSelectCardsOnFileView;
+    NSView *_buddyBottomSelectCardsOnFileViewAddDifferentCardLinkPlaceHolder;
+    NSView *_buddyBottomSelectCardsOnFileViewSetUpLaterLinkPlaceHolder;
     NSView *_cameraCaptureView;
     NSView *_cameraCapturePlaceHolderView;
     NSView *_cameraCaptureManualEntryLinkPlaceHolder;
@@ -66,18 +73,21 @@
     PKPaymentSetupFieldsModel *_fieldsModel;
     id _currentNextActionBlock;
     NSArray *_pendingCameraCaptureObjects;
+    PKSelectCredentialsViewController *_selectCredentialsVC;
     PKPaymentSetupDisambiguationViewController *_disambiguationVC;
     PKPaymentCameraCaptureViewController *_cameraCaptureVC;
     PKPaymentTermsConditionsViewController *_termsConditionsVC;
     PKPaymentCardVerificationViewController *_verificationMethodsConditionsVC;
-    PKPaymentCredential *_cardOnFileCredential;
+    PKPaymentCredential *_inFlightCardOnFileCredential;
 }
 
-@property(retain, nonatomic) PKPaymentCredential *cardOnFileCredential; // @synthesize cardOnFileCredential=_cardOnFileCredential;
+@property(nonatomic) BOOL selectCardsOnFileSkippedDueToSingleCredential; // @synthesize selectCardsOnFileSkippedDueToSingleCredential=_selectCardsOnFileSkippedDueToSingleCredential;
+@property(retain, nonatomic) PKPaymentCredential *inFlightCardOnFileCredential; // @synthesize inFlightCardOnFileCredential=_inFlightCardOnFileCredential;
 @property(retain, nonatomic) PKPaymentCardVerificationViewController *verificationMethodsConditionsVC; // @synthesize verificationMethodsConditionsVC=_verificationMethodsConditionsVC;
 @property(retain, nonatomic) PKPaymentTermsConditionsViewController *termsConditionsVC; // @synthesize termsConditionsVC=_termsConditionsVC;
 @property(retain, nonatomic) PKPaymentCameraCaptureViewController *cameraCaptureVC; // @synthesize cameraCaptureVC=_cameraCaptureVC;
 @property(retain, nonatomic) PKPaymentSetupDisambiguationViewController *disambiguationVC; // @synthesize disambiguationVC=_disambiguationVC;
+@property(retain, nonatomic) PKSelectCredentialsViewController *selectCredentialsVC; // @synthesize selectCredentialsVC=_selectCredentialsVC;
 @property(copy, nonatomic) NSArray *pendingCameraCaptureObjects; // @synthesize pendingCameraCaptureObjects=_pendingCameraCaptureObjects;
 @property(retain, nonatomic) id currentNextActionBlock; // @synthesize currentNextActionBlock=_currentNextActionBlock;
 @property(retain, nonatomic) PKPaymentSetupFieldsModel *fieldsModel; // @synthesize fieldsModel=_fieldsModel;
@@ -88,18 +98,22 @@
 @property(retain) NSView *cameraCaptureManualEntryLinkPlaceHolder; // @synthesize cameraCaptureManualEntryLinkPlaceHolder=_cameraCaptureManualEntryLinkPlaceHolder;
 @property(retain) NSView *cameraCapturePlaceHolderView; // @synthesize cameraCapturePlaceHolderView=_cameraCapturePlaceHolderView;
 @property(retain) NSView *cameraCaptureView; // @synthesize cameraCaptureView=_cameraCaptureView;
-@property(retain) NSView *buddyBottomProgressIndication; // @synthesize buddyBottomProgressIndication=_buddyBottomProgressIndication;
-@property(retain) NSView *buddyBottomCardAdded; // @synthesize buddyBottomCardAdded=_buddyBottomCardAdded;
-@property(retain) NSView *buddyBottomPlaceHolder; // @synthesize buddyBottomPlaceHolder=_buddyBottomPlaceHolder;
+@property(retain) NSView *buddyBottomSelectCardsOnFileViewSetUpLaterLinkPlaceHolder; // @synthesize buddyBottomSelectCardsOnFileViewSetUpLaterLinkPlaceHolder=_buddyBottomSelectCardsOnFileViewSetUpLaterLinkPlaceHolder;
+@property(retain) NSView *buddyBottomSelectCardsOnFileViewAddDifferentCardLinkPlaceHolder; // @synthesize buddyBottomSelectCardsOnFileViewAddDifferentCardLinkPlaceHolder=_buddyBottomSelectCardsOnFileViewAddDifferentCardLinkPlaceHolder;
+@property(retain) NSView *buddyBottomSelectCardsOnFileView; // @synthesize buddyBottomSelectCardsOnFileView=_buddyBottomSelectCardsOnFileView;
+@property(retain) NSView *buddyBottomCardAddedView; // @synthesize buddyBottomCardAddedView=_buddyBottomCardAddedView;
+@property(retain) NSView *buddyBottomProgressIndicationView; // @synthesize buddyBottomProgressIndicationView=_buddyBottomProgressIndicationView;
+@property(retain) NSView *buddyMainLayoutBottomPlaceHolder; // @synthesize buddyMainLayoutBottomPlaceHolder=_buddyMainLayoutBottomPlaceHolder;
+@property(retain) NSView *buddyMainLayoutTopPlaceHolder; // @synthesize buddyMainLayoutTopPlaceHolder=_buddyMainLayoutTopPlaceHolder;
+@property(retain) NSButton *navigationViewCardAddedDoneButton; // @synthesize navigationViewCardAddedDoneButton=_navigationViewCardAddedDoneButton;
 @property(retain) NSView *navigationViewCardAdded; // @synthesize navigationViewCardAdded=_navigationViewCardAdded;
 @property(retain) NSView *navigationViewCardVerification; // @synthesize navigationViewCardVerification=_navigationViewCardVerification;
-@property(retain) NSView *navigationViewCardOnFile; // @synthesize navigationViewCardOnFile=_navigationViewCardOnFile;
+@property(retain) NSView *navigationViewProvisionCardOnFile; // @synthesize navigationViewProvisionCardOnFile=_navigationViewProvisionCardOnFile;
+@property(retain) NSView *navigationViewSelectCardsOnFile; // @synthesize navigationViewSelectCardsOnFile=_navigationViewSelectCardsOnFile;
 @property(retain) NSView *navigationViewDefault; // @synthesize navigationViewDefault=_navigationViewDefault;
 @property(retain) NSStackView *setupFieldsStack; // @synthesize setupFieldsStack=_setupFieldsStack;
 @property(retain) NSTextField *setupFieldsTitleLabel; // @synthesize setupFieldsTitleLabel=_setupFieldsTitleLabel;
 @property(retain) NSView *setupFieldsView; // @synthesize setupFieldsView=_setupFieldsView;
-@property(retain) NSView *buddyMainLayoutSetupLaterView; // @synthesize buddyMainLayoutSetupLaterView=_buddyMainLayoutSetupLaterView;
-@property(retain) NSView *mainLayoutSetupLaterContainer; // @synthesize mainLayoutSetupLaterContainer=_mainLayoutSetupLaterContainer;
 @property(retain) NSImageView *cardImageView; // @synthesize cardImageView=_cardImageView;
 @property(retain) NSImageView *mainLayoutCardImageView; // @synthesize mainLayoutCardImageView=_mainLayoutCardImageView;
 @property(retain) NSView *mainLayoutNavigationPlaceHolderView; // @synthesize mainLayoutNavigationPlaceHolderView=_mainLayoutNavigationPlaceHolderView;
@@ -132,6 +146,7 @@
 - (id)_contextSpecificStringForAggDKey:(id)arg1;
 - (void)_updateSetupFieldsTitle;
 - (void)updateFieldsModelWithPaymentCredential:(id)arg1;
+- (void)resetAllFieldsAndProvisioningStateForNewProvisioning;
 - (void)resetAllFieldsAndProvisioningState;
 - (BOOL)isEmpty;
 - (id)fieldForIdentifier:(id)arg1;
@@ -152,6 +167,7 @@
 - (id)newPaymentRequirementsRequest;
 - (id)_verifyLaterLink;
 - (id)_didNotReceiveCodeLink;
+- (id)_addThisCardLaterLink;
 - (id)_useDifferentCardLink;
 - (id)_setupLaterLink;
 - (id)_creditCardManualEntryLink;
@@ -160,11 +176,13 @@
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (id)textView:(id)arg1 willDisplayToolTip:(id)arg2 forCharacterAtIndex:(unsigned long long)arg3;
 - (id)textView:(id)arg1 willChangeSelectionFromCharacterRanges:(id)arg2 toCharacterRanges:(id)arg3;
+- (void)requestPassDetailsForAccountCredential:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_presentResetAndClaimSecureElementAlert:(unsigned long long)arg1 inWindow:(id)arg2 withErrorStateHandler:(CDUnknownBlockType)arg3;
 - (void)_presentDisplayableErrorAlert:(id)arg1 inWindow:(id)arg2 withErrorStateHandler:(CDUnknownBlockType)arg3;
 - (void)_setupWelcomeTextFieldShowsSetupLater:(BOOL)arg1;
 - (void)help:(id)arg1;
 - (void)setupLater:(id)arg1;
+- (void)addThisCardLater:(id)arg1;
 - (void)switchToCameraCaptureScreen:(id)arg1;
 - (void)_performFinishWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_bootStrapYellowFlow;
@@ -173,6 +191,7 @@
 - (void)_performEligibilityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performDisambiguationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performSecondaryWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_internalPerformRequirementsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_performRequirementsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performNextActionForProvisioningState:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_triggerNextActionLoop;
@@ -180,7 +199,12 @@
 - (void)didNotReceiveVerificationCode:(id)arg1;
 - (void)handleBack:(id)arg1;
 - (void)handleCancel:(id)arg1;
+- (void)_presentAccountCredentialAuthPromptIfNeeded:(CDUnknownBlockType)arg1;
+- (void)_preflightPaymentCredential:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)_pushNextCredentialForProvisioning;
 - (void)handleNext:(id)arg1;
+- (void)paymentPassUpdatedOnCredential:(id)arg1;
+- (void)selectCredentialsViewControllerSelectedCredentialsDidChange:(id)arg1;
 - (void)shouldShowCodeNotReceivedButton:(BOOL)arg1;
 - (void)showVerificationSuccess;
 - (void)shouldTerminatePaymentSetup;
@@ -202,6 +226,7 @@
 - (void)_bootStrapSetupFlow;
 - (void)startSetupFlow;
 - (void)skipWelcomeScreen;
+- (void)dealloc;
 - (id)initWithProvisioningController:(id)arg1 context:(long long)arg2 setupDelegate:(id)arg3;
 - (id)nibName;
 - (id)nibBundle;

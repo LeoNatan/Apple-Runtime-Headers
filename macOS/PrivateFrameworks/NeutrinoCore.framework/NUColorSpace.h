@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface NUColorSpace : NSObject
 {
     struct CGColorSpace *_CGColorSpace;
@@ -13,6 +15,8 @@
 
 + (id)colorSpaceFromColorPrimaries:(id)arg1 transferFunction:(id)arg2 yccMatrix:(id)arg3;
 + (id)colorSpaceFromVideoColorProperties:(id)arg1;
++ (struct CGColorSpace *)_newLinearWideGamutColorSpace;
++ (id)linearWideGamutColorSpace;
 + (id)workingColorSpace;
 + (id)displayP3LinearColorSpace;
 + (id)displayP3ColorSpace;
@@ -26,6 +30,7 @@
 @property(readonly, nonatomic) struct CGColorSpace *CGColorSpace; // @synthesize CGColorSpace=_CGColorSpace;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+@property(readonly, nonatomic) NSString *name;
 - (id)description;
 - (void)dealloc;
 - (id)initWithICCProfileData:(id)arg1;

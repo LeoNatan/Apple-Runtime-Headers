@@ -7,11 +7,12 @@
 #import <Preferences/PSListController.h>
 
 #import <AccountsUI/ACUISetupViewControllerDelegate-Protocol.h>
+#import <AccountsUI/ACUISignInControllerDelegate-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface ACUIAddOtherAccountsViewController : PSListController <ACUISetupViewControllerDelegate>
+@interface ACUIAddOtherAccountsViewController : PSListController <ACUISetupViewControllerDelegate, ACUISignInControllerDelegate>
 {
     NSString *_filteredDataclass;
 }

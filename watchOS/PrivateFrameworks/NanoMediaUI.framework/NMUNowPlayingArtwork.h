@@ -10,15 +10,15 @@
 
 @interface NMUNowPlayingArtwork : NSObject
 {
-    UIImage *_artworkImage;
-    UIImage *_processedArtworkImage;
-    UIImage *_touchHighlightArtworkImage;
+    CDUnknownBlockType _artworkImageBlock;
+    CDUnknownBlockType _processedArtworkImageBlock;
 }
 
-@property(retain, nonatomic) UIImage *touchHighlightArtworkImage; // @synthesize touchHighlightArtworkImage=_touchHighlightArtworkImage;
-@property(retain, nonatomic) UIImage *processedArtworkImage; // @synthesize processedArtworkImage=_processedArtworkImage;
-@property(retain, nonatomic) UIImage *artworkImage; // @synthesize artworkImage=_artworkImage;
+@property(copy, nonatomic) CDUnknownBlockType processedArtworkImageBlock; // @synthesize processedArtworkImageBlock=_processedArtworkImageBlock;
+@property(copy, nonatomic) CDUnknownBlockType artworkImageBlock; // @synthesize artworkImageBlock=_artworkImageBlock;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImage *processedArtworkImage;
+@property(readonly, nonatomic) UIImage *artworkImage;
 
 @end
 

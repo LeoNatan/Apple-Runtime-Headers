@@ -24,7 +24,6 @@
 + (id)classificationForComponentWithType:(id)arg1;
 + (id)classificationForComponentWithRole:(int)arg1;
 + (void)registerClassification;
-+ (void)initializeClassifications;
 + (void)initialize;
 @property(readonly, nonatomic) NSArray *defaultStyleIdentifiers; // @synthesize defaultStyleIdentifiers=_defaultStyleIdentifiers;
 - (void).cxx_destruct;

@@ -12,6 +12,7 @@
 
 @class CNContactPickerViewController, CNContactStore, MFComposeRecipientView, NSArray, NSAttributedString, NSString, SKUIGiftContactSearchController, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftRecipientTableViewCell : UITableViewCell <CNContactPickerDelegate, MFComposeRecipientViewDelegate, SKUIGiftContactSearchDelegate>
 {
     CNContactStore *_contactStore;
@@ -21,8 +22,10 @@
     SKUIGiftContactSearchController *_searchController;
     UIView *_topBorderView;
     _Bool _didLayoutSubviews;
+    _Bool _leftToRight;
 }
 
+@property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(nonatomic) _Bool didLayoutSubviews; // @synthesize didLayoutSubviews=_didLayoutSubviews;
 - (void).cxx_destruct;
 - (void)_sendDismissContactPicker;

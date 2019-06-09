@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 @property(retain) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(retain) NSDictionary *pluginsByBundleIentifier; // @synthesize pluginsByBundleIentifier=_pluginsByBundleIentifier;
+- (void).cxx_destruct;
 - (void)endpointForServiceIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)startPlugins;
 - (void)loadPluginsAtURL:(id)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

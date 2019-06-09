@@ -15,7 +15,8 @@
 }
 
 + (id)syncEntityDependenciesForSyncProtocolVersion:(int)arg1;
-+ (id)_baseDataObjectPredicate;
++ (id)_basePruningPredicateForDate:(id)arg1 profile:(id)arg2;
++ (id)_predicateForSyncSession:(id)arg1;
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;
 + (id)syncEntityIdentifier;

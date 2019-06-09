@@ -23,6 +23,7 @@
 - (id)description;
 @property(readonly, copy, nonatomic) NSString *localizedName;
 @property(readonly, copy, nonatomic) NSString *identifier;
+- (id)copyForPairedCategory:(long long)arg1;
 - (id)initWithPreset:(id)arg1;
 
 @end

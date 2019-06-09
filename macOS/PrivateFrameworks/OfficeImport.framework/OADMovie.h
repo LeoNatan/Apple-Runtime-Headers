@@ -8,6 +8,7 @@
 
 @class NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OADMovie : OCDDelayedMedia
 {
     NSData *mData;

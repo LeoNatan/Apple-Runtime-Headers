@@ -6,7 +6,7 @@
 
 #import <ScreenReader/SCROutputTextDisplayComponent.h>
 
-@class NSMutableArray, NSMutableAttributedString, NSMutableDictionary, NSMutableSet, NSMutableString, SCRCProcessIdentifier, SCROBrailleClient, SCROBrailleDisplayInputManager;
+@class NSMutableArray, NSMutableAttributedString, NSMutableSet, NSMutableString, SCRCProcessIdentifier, SCROBrailleClient, SCROBrailleDisplayInputManager, _SCRStatus;
 
 __attribute__((visibility("hidden")))
 @interface SCROutputBrailleComponent : SCROutputTextDisplayComponent
@@ -21,23 +21,11 @@ __attribute__((visibility("hidden")))
     double _alertTimeout;
     BOOL _alertHasTimeout;
     BOOL _ignoreAlertTimeoutPref;
-    int _alertPriority;
     BOOL _hasAnnouncement;
     BOOL _forceAnnouncement;
     BOOL _excludeFromAnnouncments;
     BOOL _needsCleanupWhenNonBlockingActionsAreComplete;
     struct _NSRange _elementLineStringCurrentElementRange;
-    struct {
-        unsigned char general;
-        unsigned char text;
-        unsigned char eText;
-        char showGeneral;
-        char showText;
-        char showEText;
-        NSMutableDictionary *generalDict;
-        NSMutableDictionary *textDict;
-        NSMutableDictionary *eTextDict;
-    } _status;
     BOOL _showsDotsSevenAndEight;
     NSMutableArray *_lineCache;
     SCRCProcessIdentifier *_currentApplicationPSN;
@@ -47,9 +35,12 @@ __attribute__((visibility("hidden")))
     int _inputAccessMode;
     int _lineFocus;
     unsigned int _toggledBrailleModifierKeys;
+    _SCRStatus *__status;
 }
 
+@property(retain, nonatomic, setter=_setStatus:) _SCRStatus *_status; // @synthesize _status=__status;
 @property(nonatomic) unsigned int toggledBrailleModifierKeys; // @synthesize toggledBrailleModifierKeys=_toggledBrailleModifierKeys;
+- (void).cxx_destruct;
 - (void)_dispatchBrailleDidPanWithSuccess:(id)arg1 token:(id)arg2 appToken:(id)arg3 direction:(int)arg4;
 - (void)_speakUntranslatedText:(id)arg1 speakLiterally:(BOOL)arg2;
 - (void)handleBrailleDeletedUntranslatedText:(id)arg1 speakLiterally:(BOOL)arg2;
@@ -69,11 +60,12 @@ __attribute__((visibility("hidden")))
 - (void)setKeyboardHelpIsOn:(BOOL)arg1;
 - (void)_handleBrailleDisplayKeypress:(id)arg1;
 - (BOOL)handleBrailleInputCommand:(id)arg1 withInfo:(id)arg2;
-- (BOOL)handleBrailleModifierCommand:(id)arg1 modifier:(long long *)arg2 persistent:(char *)arg3;
+- (BOOL)handleBrailleModifierCommand:(id)arg1 modifier:(unsigned long long *)arg2 persistent:(char *)arg3;
 - (void)_handleBrailleKeyboardHelp:(id)arg1;
 - (void)handleEvent:(id)arg1;
-- (BOOL)_isAnnouncementForCategory:(id)arg1 variants:(id)arg2 isAlert:(char *)arg3 alertHasTimeout:(char *)arg4 ignoreTimeoutPrefs:(char *)arg5 alertPriority:(int *)arg6 force:(char *)arg7;
+- (BOOL)_isAnnouncementForCategory:(id)arg1 variants:(id)arg2 isAlert:(char *)arg3 alertHasTimeout:(char *)arg4 ignoreTimeoutPrefs:(char *)arg5 force:(char *)arg6;
 - (void)nonBlockingActionsAreComplete;
+- (void)_filterUnacceptableBrailleStrings:(id)arg1;
 - (int)preflightSequentialSteps:(id)arg1 runnerName:(id)arg2;
 - (void)_showExpandedStatusForStatusCellIndex:(long long)arg1;
 - (void)_setTextCellsWithTextAttributes:(id)arg1;
@@ -84,7 +76,7 @@ __attribute__((visibility("hidden")))
 - (void)_releaseLineWithApplicationPSN:(id)arg1 elementID:(id)arg2;
 - (void)_cacheLineWithApplicationPSN:(id)arg1 elementIDs:(id)arg2;
 - (void)_flushCache;
-- (void)dealloc;
+- (void)setupObservers;
 - (id)init;
 
 @end

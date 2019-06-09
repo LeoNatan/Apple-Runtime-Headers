@@ -46,6 +46,7 @@
     _Bool _checkpointWriteAheadLogOnNextWrite;
     WBSPeriodicActivityScheduler *_maintenanceScheduler;
     _Bool _pushNotificationsAreInitialized;
+    _Bool _syncsWithManateeContainer;
     id <WBSHistoryStoreDelegate> _delegate;
     WBSSQLiteDatabase *_database;
     WBSHistoryCrypto *_crypto;
@@ -54,6 +55,7 @@
 
 @property(readonly, nonatomic) WBSHistoryCrypto *crypto; // @synthesize crypto=_crypto;
 @property(readonly, nonatomic) WBSSQLiteDatabase *database; // @synthesize database=_database;
+@property(nonatomic) _Bool syncsWithManateeContainer; // @synthesize syncsWithManateeContainer=_syncsWithManateeContainer;
 @property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
 @property(nonatomic) _Bool pushNotificationsAreInitialized; // @synthesize pushNotificationsAreInitialized=_pushNotificationsAreInitialized;
 @property(nonatomic) __weak id <WBSHistoryStoreDelegate> delegate; // @synthesize delegate=_delegate;
@@ -143,6 +145,7 @@
 - (void)_clearHistoryVisitsMatchingURLHash:(id)arg1 salt:(id)arg2 afterDate:(id)arg3 beforeDate:(id)arg4 addingTombstone:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)_clearHistoryVisitsMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3 addingTombstone:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 addingTombstone:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removePastHistoryVisitsForItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

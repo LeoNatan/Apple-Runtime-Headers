@@ -8,11 +8,12 @@
 
 #import <PassKitUI/UIScrollViewDelegate-Protocol.h>
 #import <PassKitUI/UITextViewDelegate-Protocol.h>
+#import <PassKitUI/_PKUIKVisibilityBackdropViewDelegate-Protocol.h>
 
-@class NSAttributedString, NSString, PKCheckGlyphLayer, PKPaymentSetupDockView, UIActivityIndicatorView, UIFont, UIImage, UIImageView, UILabel, UIScrollView, UITextView, _UIBackdropView;
+@class NSAttributedString, NSString, PKCheckGlyphLayer, PKPaymentSetupDockView, UIActivityIndicatorView, UIButton, UIFont, UIImage, UIImageView, UILabel, UIScrollView, UITextView, _PKUIKVisibilityBackdropView;
 @protocol PKExplanationViewDelegate;
 
-@interface PKExplanationView : UIView <UIScrollViewDelegate, UITextViewDelegate>
+@interface PKExplanationView : UIView <UIScrollViewDelegate, UITextViewDelegate, _PKUIKVisibilityBackdropViewDelegate>
 {
     int _context;
     _Bool _privacyFooterShouldPin;
@@ -22,25 +23,30 @@
     UILabel *_titleLabel;
     UIActivityIndicatorView *_activityIndicator;
     PKCheckGlyphLayer *_checkmarkLayer;
-    _UIBackdropView *_backdropView;
-    int _backdropStyle;
+    _PKUIKVisibilityBackdropView *_backdropView;
     float _backdropWeight;
-    _Bool _updatingBackdropSettings;
     _Bool _showPrivacyView;
     float _topMargin;
     struct CGRect _titleLabelFrame;
     struct CGRect _titleLabelLastLineBounds;
     float _titleLabelLastLineDescent;
+    UIButton *_bodyButton;
+    UITextView *_secondaryBodyTextView;
     _Bool _forceShowSetupLaterButton;
     _Bool _hideTitleText;
-    _Bool _bodyTextIsLeftAlgined;
     id <PKExplanationViewDelegate> _delegate;
     UIImage *_image;
     UIView *_heroView;
+    UIImage *_titleImage;
     UIFont *_titleFont;
+    int _titleTextAlignment;
     NSString *_bodyText;
     NSAttributedString *_attributedBodyText;
+    NSString *_secondaryBodyText;
+    NSString *_bodyButtonText;
     UIView *_bodyView;
+    int _bodyTextAlignment;
+    unsigned int _bodyDataDetectorTypes;
     UIScrollView *_scrollView;
     UIImageView *_logoImageView;
     UITextView *_bodyTextView;
@@ -52,31 +58,39 @@
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) PKPaymentSetupDockView *dockView; // @synthesize dockView=_dockView;
+@property(nonatomic) unsigned int bodyDataDetectorTypes; // @synthesize bodyDataDetectorTypes=_bodyDataDetectorTypes;
+@property(nonatomic) int bodyTextAlignment; // @synthesize bodyTextAlignment=_bodyTextAlignment;
 @property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;
+@property(copy, nonatomic) NSString *bodyButtonText; // @synthesize bodyButtonText=_bodyButtonText;
+@property(copy, nonatomic) NSString *secondaryBodyText; // @synthesize secondaryBodyText=_secondaryBodyText;
 @property(copy, nonatomic) NSAttributedString *attributedBodyText; // @synthesize attributedBodyText=_attributedBodyText;
 @property(copy, nonatomic) NSString *bodyText; // @synthesize bodyText=_bodyText;
+@property(nonatomic) int titleTextAlignment; // @synthesize titleTextAlignment=_titleTextAlignment;
+@property(nonatomic) _Bool hideTitleText; // @synthesize hideTitleText=_hideTitleText;
 @property(copy, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
+@property(retain, nonatomic) UIImage *titleImage; // @synthesize titleImage=_titleImage;
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 @property(retain, nonatomic) UIView *heroView; // @synthesize heroView=_heroView;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic) float topMargin; // @synthesize topMargin=_topMargin;
-@property(nonatomic) _Bool bodyTextIsLeftAlgined; // @synthesize bodyTextIsLeftAlgined=_bodyTextIsLeftAlgined;
-@property(nonatomic) _Bool hideTitleText; // @synthesize hideTitleText=_hideTitleText;
 @property(nonatomic) _Bool forceShowSetupLaterButton; // @synthesize forceShowSetupLaterButton=_forceShowSetupLaterButton;
 @property(nonatomic) _Bool showPrivacyView; // @synthesize showPrivacyView=_showPrivacyView;
 @property(nonatomic) __weak id <PKExplanationViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (int)visibilityBackdropView:(id)arg1 preferredStyleForTraitCollection:(id)arg2;
 - (_Bool)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(int)arg4;
-- (void)_accessibilitySettingsDidChange:(id)arg1;
+- (id)_createBodyTextView;
 - (_Bool)_isBuddyiPad;
-- (_Bool)_showApplePayLogo;
+- (_Bool)_showTitleLogoImageView;
 - (void)_updateCachedTitleLabelLastLine;
 - (void)_updateTitleLabel;
 - (void)_createSubviews;
 - (void)_calculateBlur;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)_bodyButtonTapped;
 - (void)_setupLater;
 - (void)_continue;
+@property(readonly, nonatomic) UIFont *bodyTextFont;
 @property(readonly, nonatomic) UIImageView *imageView;
 - (void)layoutSubviews;
 - (void)dealloc;

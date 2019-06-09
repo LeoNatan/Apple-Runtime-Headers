@@ -8,6 +8,7 @@
 
 @interface HROnboardingInlineExpandedContentView : UIView
 {
+    long long _currentUserInterfaceStyle;
 }
 
 + (double)_listLastBaselineToBodyFirstBaseline;
@@ -31,6 +32,7 @@
 + (id)highOrLowHeartRateExpandedView;
 + (id)atrialFibrillationExpandedView;
 + (id)sinusRhythmExpandedView;
+@property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 
 @end
 

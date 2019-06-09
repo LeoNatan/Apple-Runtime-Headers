@@ -8,6 +8,7 @@
 
 @class NSArray, NSHashTable, NSMutableDictionary, NSOperationQueue, NSURL, SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDonationConfiguration : NSObject
 {
     NSArray *_charities;

@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOAlightNotificationFeedback, GEODirectionsRequest, GEODirectionsResponse, GEOETARoute, MNActiveRouteInfo, MNLocation, MNLocationTracker, MNTrafficIncidentAlert, NSArray;
+@class GEOComposedRouteTraffic, GEODirectionsRequest, GEODirectionsResponse, MNActiveRouteInfo, MNLocation, MNLocationTracker, MNTrafficIncidentAlert, NSArray;
 
 @protocol MNLocationTrackerDelegate <NSObject>
 
@@ -14,19 +14,19 @@
 - (void)locationTracker:(MNLocationTracker *)arg1 updatedTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 invalidatedTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 receivedTrafficIncidentAlert:(MNTrafficIncidentAlert *)arg2 responseCallback:(void (^)(_Bool))arg3;
-- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateFeedback:(GEOAlightNotificationFeedback *)arg2 forAlightingStepAtIndex:(unsigned long long)arg3;
-- (void)locationTracker:(MNLocationTracker *)arg1 didSignalAlightForStepAtIndex:(unsigned long long)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(MNActiveRouteInfo *)arg3 request:(GEODirectionsRequest *)arg4 response:(GEODirectionsResponse *)arg5;
 - (void)locationTracker:(MNLocationTracker *)arg1 didUpdateAlternateRoutes:(NSArray *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 failedRerouteWithErrorCode:(long long)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 didReroute:(MNActiveRouteInfo *)arg2 newAlternateRoutes:(NSArray *)arg3 rerouteReason:(unsigned long long)arg4 request:(GEODirectionsRequest *)arg5 response:(GEODirectionsResponse *)arg6;
 - (void)locationTrackerDidCancelReroute:(MNLocationTracker *)arg1;
 - (void)locationTrackerWillReroute:(MNLocationTracker *)arg1;
-- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateTrafficForETARoute:(GEOETARoute *)arg2 from:(unsigned int)arg3 to:(unsigned int)arg4;
+- (void)locationTracker:(MNLocationTracker *)arg1 didUpdateTraffic:(GEOComposedRouteTraffic *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 didUpdateETAForRoute:(MNActiveRouteInfo *)arg2;
 - (void)locationTracker:(MNLocationTracker *)arg1 matchedToStepIndex:(unsigned long long)arg2 legIndex:(unsigned long long)arg3;
 - (void)locationTracker:(MNLocationTracker *)arg1 didUpdateMatchedLocation:(MNLocation *)arg2;
+- (void)locationTrackerDidTimeoutInArrivalRegion:(MNLocationTracker *)arg1;
 - (void)locationTrackerDidArrive:(MNLocationTracker *)arg1;
+- (void)locationTrackerDidEnterPreArrivalState:(MNLocationTracker *)arg1;
 - (void)locationTracker:(MNLocationTracker *)arg1 didChangeState:(int)arg2;
 @end
 

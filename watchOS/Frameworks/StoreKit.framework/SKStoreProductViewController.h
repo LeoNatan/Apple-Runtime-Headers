@@ -7,11 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 #import <StoreKit/SKScreenTrackingDelegate-Protocol.h>
+#import <StoreKit/_UIRemoteViewControllerContaining-Protocol.h>
 
-@class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation;
+@class NSDictionary, NSString, SKInvocationQueueProxy, SKRemoteProductViewController, SKScrollDetector, _UIAsyncInvocation, _UIRemoteViewController;
 @protocol SKStoreProductViewControllerDelegate, SKStoreProductViewControllerDelegatePrivate, SKUIServiceProductPageViewController;
 
-@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate>
+@interface SKStoreProductViewController : UIViewController <SKScreenTrackingDelegate, _UIRemoteViewControllerContaining>
 {
     NSString *_additionalBuyParameters;
     NSString *_affiliateIdentifier;
@@ -53,6 +54,7 @@
 @property(copy, nonatomic) NSString *additionalBuyParameters; // @synthesize additionalBuyParameters=_additionalBuyParameters;
 @property(nonatomic) __weak id <SKStoreProductViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _UIRemoteViewController *_containedRemoteViewController;
 - (void)sk_didBecomeOffScreen:(id)arg1;
 - (void)sk_didBecomeOnScreen:(id)arg1;
 - (void)_throwUnsupportedPresentationException;

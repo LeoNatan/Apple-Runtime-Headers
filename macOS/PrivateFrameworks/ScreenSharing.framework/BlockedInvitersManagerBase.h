@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface BlockedInvitersManagerBase : NSObject
 {
     BOOL _blockAllInviters;

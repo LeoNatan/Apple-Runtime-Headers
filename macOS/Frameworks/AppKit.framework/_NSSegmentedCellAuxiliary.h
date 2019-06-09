@@ -25,8 +25,10 @@ __attribute__((visibility("hidden")))
     BOOL _inTouchBar;
     long long _segmentDistribution;
     NSUserInterfaceCompressionOptions *_compressibleOptions;
+    long long _applicableSegmentStyleForCachedContentStyle;
 }
 
+@property long long applicableSegmentStyleForCachedContentStyle; // @synthesize applicableSegmentStyleForCachedContentStyle=_applicableSegmentStyleForCachedContentStyle;
 @property(retain) NSUserInterfaceCompressionOptions *compressibleOptions; // @synthesize compressibleOptions=_compressibleOptions;
 @property long long segmentDistribution; // @synthesize segmentDistribution=_segmentDistribution;
 @property BOOL inTouchBar; // @synthesize inTouchBar=_inTouchBar;

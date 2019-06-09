@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 @property(readonly, retain) NSXPCConnection *XPCConnection; // @synthesize XPCConnection=_XPCConnection;
+- (void).cxx_destruct;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(_Bool)arg3;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
 - (void)didHandleInvocation:(id)arg1 isReply:(_Bool)arg2;
 - (void)willHandleInvocation:(id)arg1 isReply:(_Bool)arg2;
-- (void)dealloc;
 - (id)initWithXPCConnection:(id)arg1;
 - (id)initWithXPCConnection:(id)arg1 queue:(id)arg2;
 

@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVPlayerConnection, AVPlayerItem, AVPropertyStorage, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, NSURL;
-@protocol AVLoggingIdentifier, AVPlayerItemDelegate, OS_dispatch_queue;
+@class AVAsset, AVAudioMix, AVCustomVideoCompositorSession, AVPlayerConnection, AVPlayerItem, AVVideoComposition, AVWeakReference, NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, NSURL;
+@protocol AVLoggingIdentifier, AVPlayerItemDelegate, NSObject><NSCopying, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVPlayerItemInternal : NSObject
@@ -15,13 +15,14 @@ __attribute__((visibility("hidden")))
     NSURL *URL;
     NSObject<OS_dispatch_queue> *ivarAccessQueue;
     AVWeakReference *weakReference;
-    AVPropertyStorage *propertyStorage;
     NSObject<OS_dispatch_queue> *figConfigurationQueue;
     NSObject<OS_dispatch_queue> *figPlaybackItemAccessorQueue;
+    NSObject<OS_dispatch_queue> *figPlaybackItemSetterQueue;
     NSObject<OS_dispatch_queue> *seekQueue;
     struct OpaqueFigSimpleMutex *seekIDMutex;
     struct OpaqueVTPixelBufferAttributesMediator *pixelBufferAttributeMediator;
-    struct OpaqueCMTimebase *proxyTimebase;
+    struct OpaqueCMTimebase *proxyUnfoldedTimebase;
+    struct OpaqueCMTimebase *proxyFoldedTimebase;
     NSArray *automaticallyLoadedAssetKeys;
     BOOL wasInitializedWithURL;
     AVAsset *asset;
@@ -35,12 +36,13 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *itemLegibleOutputsForKeys;
     NSMutableDictionary *itemMetadataOutputsForKeys;
     BOOL suppressesVideoLayers;
-    struct OpaqueCMTimebase *loopingTimebase;
-    struct OpaqueCMTimebase *figTimebase;
+    struct OpaqueCMTimebase *foldedTimebase;
+    struct OpaqueCMTimebase *unfoldedFigTimebase;
     BOOL didBecomeReadyForInspectionOfTracks;
     BOOL didBecomeReadyForInspectionOfPresentationSize;
     BOOL didBecomeReadyForInspectionOfDuration;
     BOOL didBecomeReadyForInspectionOfMediaSelectionOptions;
+    BOOL didBecomeReadyForInspectionOfRecommendedTimeOffsetFromLive;
     AVAsset *assetWithFigPlaybackItem;
     NSArray *trackIDsForAssetWithFigPlaybackItem;
     BOOL needTimedMetadataNotification;
@@ -51,6 +53,11 @@ __attribute__((visibility("hidden")))
     NSError *error;
     CDStruct_1b6d18a9 forwardPlaybackEndTime;
     CDStruct_1b6d18a9 reversePlaybackEndTime;
+    CDStruct_1b6d18a9 advanceTimeForOverlappedPlayback;
+    BOOL advanceTimeForOverlappedPlaybackWasSet;
+    BOOL preservesTimeOffsetFromLive;
+    CDStruct_1b6d18a9 configuredTimeOffsetFromLive;
+    CDStruct_1b6d18a9 recommendedTimeOffsetFromLive;
     CDStruct_1b6d18a9 duration;
     BOOL seekingWaitsForVideoCompositionRendering;
     NSArray *textStyleRules;
@@ -65,11 +72,14 @@ __attribute__((visibility("hidden")))
     NSDictionary *gaplessInfo;
     float soundCheckVolumeNormalization;
     float volumeAdjustment;
+    NSDictionary *loudnessInfo;
     BOOL shouldOptimizeForExclusivePlayback;
     BOOL reversesMoreVideoFramesInMemory;
     BOOL reversesMoreVideoFramesInMemoryWasSet;
     BOOL aggressivelyCachesVideoFrames;
     BOOL aggressivelyCachesVideoFramesWasSet;
+    BOOL decodesAllFramesDuringOrdinaryPlayback;
+    BOOL decodesAllFramesDuringOrdinaryPlaybackWasSet;
     BOOL initialContinuesPlayingDuringPrerollForSeek;
     BOOL initialContinuesPlayingDuringPrerollForRateChange;
     BOOL usesIFrameOnlyPlaybackForHighRateScaledEditsWasSet;
@@ -96,6 +106,7 @@ __attribute__((visibility("hidden")))
     BOOL allowProgressiveStartup;
     BOOL allowProgressiveResume;
     struct CGSize IFramePrefetchTargetDimensions;
+    id <NSObject><NSCopying> AVKitData;
     struct CGSize preferredMaximumResolution;
     BOOL canPlayFastForward;
     BOOL canPlayFastReverse;
@@ -131,8 +142,6 @@ __attribute__((visibility("hidden")))
     AVPlayerItem *nextItem;
     AVPlayerConnection *playerConnection;
     BOOL initialWillNeverSeekBackwardsHint;
-    BOOL decodesAllFramesDuringOrdinaryPlayback;
-    BOOL decodesAllFramesDuringOrdinaryPlaybackWasSet;
     AVVideoComposition *videoComposition;
     AVWeakReference *clientsOriginalVideoComposition;
     AVCustomVideoCompositorSession *customVideoCompositorSession;
@@ -146,6 +155,7 @@ __attribute__((visibility("hidden")))
     BOOL didInformObserversAboutAvailabilityOfTracks;
     BOOL didFireKVOForAssetForNonStreamingItem;
     AVAudioMix *mostRecentlyAppliedAudioMix;
+    BOOL audioSpatializationAllowed;
     AVWeakReference *playerReference;
     BOOL didSetAssetToAssetWithFigPlaybackItem;
     struct OpaqueFigCPEProtector *figCPEProtector;

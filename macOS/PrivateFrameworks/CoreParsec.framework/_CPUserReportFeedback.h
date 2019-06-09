@@ -18,8 +18,10 @@
     _CPSearchResultForFeedback *_result;
     _CPPunchoutForFeedback *_userSelection;
     _CPCardSectionForFeedback *_cardSection;
+    NSData *_uuidBytes;
 }
 
+@property(copy, nonatomic) NSData *uuidBytes; // @synthesize uuidBytes=_uuidBytes;
 @property(retain, nonatomic) _CPCardSectionForFeedback *cardSection; // @synthesize cardSection=_cardSection;
 @property(retain, nonatomic) _CPPunchoutForFeedback *userSelection; // @synthesize userSelection=_userSelection;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result; // @synthesize result=_result;

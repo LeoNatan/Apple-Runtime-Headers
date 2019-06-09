@@ -15,7 +15,10 @@
     unsigned int _aggregatedStepsDuration;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (unsigned int)_calculateAggregatedStepsDistance;
 - (unsigned int)distance;
 - (unsigned int)_calculateAggregatedStepsDuration;

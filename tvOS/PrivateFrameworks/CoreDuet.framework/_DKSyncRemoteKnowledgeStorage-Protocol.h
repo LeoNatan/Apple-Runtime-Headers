@@ -4,27 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDate, NSString, _DKSyncDeletedEventIDs, _DKSyncPeer;
+#import <CoreDuet/_DKSyncRemoteStorage-Protocol.h>
+
+@class NSArray, NSDate, _DKSyncDeletedEventIDs, _DKSyncPeer;
 @protocol _DKSyncRemoteKnowledgeStorageFetchDelegate;
 
-@protocol _DKSyncRemoteKnowledgeStorage
-@property(readonly) _Bool isAvailable;
-- (long long)transportType;
-- (NSString *)name;
-- (void)updateStorageWithAddedEvents:(NSArray *)arg1 deletedEventIDs:(_DKSyncDeletedEventIDs *)arg2 highPriority:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
+@protocol _DKSyncRemoteKnowledgeStorage <_DKSyncRemoteStorage>
 - (void)setFetchDelegate:(id <_DKSyncRemoteKnowledgeStorageFetchDelegate>)arg1;
-- (void)fetchSourceDeviceIDFromPeer:(_DKSyncPeer *)arg1 highPriority:(_Bool)arg2 completion:(void (^)(NSUUID *, NSError *))arg3;
+- (void)updateStorageWithAddedEvents:(NSArray *)arg1 deletedEventIDs:(_DKSyncDeletedEventIDs *)arg2 highPriority:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
 - (void)fetchDeletionsHighWaterMarkWithPeer:(_DKSyncPeer *)arg1 highPriority:(_Bool)arg2 completion:(void (^)(NSDate *, NSError *))arg3;
 - (void)fetchDeletedEventIDsFromPeer:(_DKSyncPeer *)arg1 sinceDate:(NSDate *)arg2 streamNames:(NSArray *)arg3 limit:(unsigned long long)arg4 highPriority:(_Bool)arg5 completion:(void (^)(NSArray *, NSDate *, NSError *))arg6;
 - (void)fetchAdditionsHighWaterMarkWithPeer:(_DKSyncPeer *)arg1 highPriority:(_Bool)arg2 completion:(void (^)(NSDate *, NSError *))arg3;
-- (void)fetchEventsFromPeer:(_DKSyncPeer *)arg1 creationDateBetweenDate:(NSDate *)arg2 andDate:(NSDate *)arg3 streamNames:(NSArray *)arg4 limit:(unsigned long long)arg5 fetchOrder:(long long)arg6 highPriority:(_Bool)arg7 completion:(void (^)(NSArray *, NSDate *, NSDate *, NSError *))arg8;
+- (void)fetchEventsFromPeer:(_DKSyncPeer *)arg1 windows:(NSArray *)arg2 streamNames:(NSArray *)arg3 limit:(unsigned long long)arg4 fetchOrder:(long long)arg5 highPriority:(_Bool)arg6 completion:(void (^)(NSArray *, NSArray *, NSError *))arg7;
 - (void)setHasDeletionsFlag:(_Bool)arg1 forPeer:(_DKSyncPeer *)arg2;
 - (_Bool)hasDeletionsFlagForPeer:(_DKSyncPeer *)arg1;
 - (void)setHasAdditionsFlag:(_Bool)arg1 forPeer:(_DKSyncPeer *)arg2;
 - (_Bool)hasAdditionsFlagForPeer:(_DKSyncPeer *)arg1;
 - (void)clearPrewarmedFlag;
 - (void)prewarmFetchWithCompletion:(void (^)(NSError *))arg1;
-- (void)cancelOutstandingOperations;
-- (void)start;
 @end
 

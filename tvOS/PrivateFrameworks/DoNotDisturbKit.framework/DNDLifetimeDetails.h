@@ -17,7 +17,7 @@
     NSString *_metadata;
 }
 
-+ (id)lifetimeDetailsForLocationOfInterest:(id)arg1 placemark:(id)arg2;
++ (id)lifetimeDetailsForPlaceInference:(id)arg1;
 + (id)lifetimeDetailsForEvent:(id)arg1 relativeToDate:(id)arg2;
 + (id)lifetimeDetailsUntilMorning;
 + (id)lifetimeDetailsUntilEvening;

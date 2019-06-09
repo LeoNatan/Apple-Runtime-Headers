@@ -17,12 +17,6 @@
 + (BOOL)checkMessageSize:(unsigned long long)arg1 priority:(long long)arg2;
 - (void).cxx_destruct;
 - (void)scheduleTransactionLogTask:(id)arg1;
-- (void)disableiCloudUser;
-- (void)enableiCloudUser;
-- (void)disablePhoneUser;
-- (void)enablePhoneUser;
-- (void)disable;
-- (void)enable;
 - (id)_accountWithAlias:(id)arg1;
 - (void)deactivateAliases:(id)arg1;
 - (void)deactivateAlias:(id)arg1;
@@ -35,6 +29,7 @@
 - (id)streamConnectionForSocketDescriptor:(int)arg1 error:(id *)arg2;
 - (id)streamConnectionForSessionDestination:(id)arg1 error:(id *)arg2;
 - (id)datagramConnectionForSocketDescriptor:(int)arg1 error:(id *)arg2;
+- (id)datagramConnectionForSessionDestination:(id)arg1 uid:(unsigned int)arg2 error:(id *)arg3;
 - (id)datagramConnectionForSessionDestination:(id)arg1 error:(id *)arg2;
 - (BOOL)updateSubServices:(id)arg1 forDevice:(id)arg2;
 - (void)updateSubServices:(id)arg1;
@@ -57,6 +52,7 @@
 - (id)serviceDomain;
 - (BOOL)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
 - (BOOL)cancelIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)sendCertifiedDeliveryReceipt:(id)arg1;
 - (void)sendAckForMessageWithContext:(id)arg1;
 - (BOOL)sendAheadGroup:(id)arg1 priority:(long long)arg2 options:(id)arg3 identifier:(id *)arg4 error:(id *)arg5;
 - (BOOL)getProgressUpdateForIdentifier:(id)arg1 error:(id *)arg2;
@@ -68,6 +64,8 @@
 - (BOOL)sendMessage:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id *)arg5 error:(id *)arg6;
 - (BOOL)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id *)arg6 error:(id *)arg7;
 - (BOOL)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 options:(id)arg4 identifier:(id *)arg5 error:(id *)arg6;
+- (BOOL)cancelOpportunisticDataWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)sendOpportunisticData:(id)arg1 options:(id)arg2 identifier:(id)arg3 error:(id *)arg4;
 - (BOOL)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(long long)arg3 options:(id)arg4 identifier:(id *)arg5 error:(id *)arg6;
 - (BOOL)sendProtobuf:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(long long)arg4 options:(id)arg5 identifier:(id *)arg6 error:(id *)arg7;
 - (SEL)protobufActionForIncomingResponsesOfType:(unsigned short)arg1;
@@ -76,6 +74,7 @@
 - (void)setProtobufAction:(SEL)arg1 forIncomingRequestsOfType:(unsigned short)arg2;
 - (void)performGroupTask:(CDUnknownBlockType)arg1;
 - (void)removeDelegate:(id)arg1;
+- (void)addDelegate:(id)arg1 withDelegateProperties:(id)arg2 queue:(id)arg3;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
 @property(readonly, nonatomic) _IDSService *_internal;
 - (void)dealloc;
@@ -83,6 +82,7 @@
 - (id)initWithService:(id)arg1 manuallyAckMessages:(BOOL)arg2;
 - (id)initWithService:(id)arg1 commands:(id)arg2;
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2;
+- (id)initWithService:(id)arg1 commands:(id)arg2 manuallyAckMessages:(BOOL)arg3;
 - (id)internal;
 
 @end

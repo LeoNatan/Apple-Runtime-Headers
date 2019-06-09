@@ -6,10 +6,13 @@
 
 #import <CloudDocsDaemon/NSObject-Protocol.h>
 
-@class NSError;
+@class NSError, NSNumber;
 
 @protocol BRCOperationSubclass <NSObject>
 - (BOOL)shouldRetryForError:(NSError *)arg1;
 - (void)main;
+
+@optional
+- (NSNumber *)allowsCellularAccess;
 @end
 

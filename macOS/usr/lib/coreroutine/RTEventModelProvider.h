@@ -45,7 +45,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) BOOL locationsOfInterestsAvailable; // @synthesize locationsOfInterestsAvailable=_locationsOfInterestsAvailable;
 - (void).cxx_destruct;
-- (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_deleteUserInteractionsBeforeDate:(id)arg1;
 - (BOOL)_persistUserInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2 feedback:(id)arg3;
 - (void)userInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2 feedback:(id)arg3 mapItem:(id)arg4 handler:(CDUnknownBlockType)arg5;

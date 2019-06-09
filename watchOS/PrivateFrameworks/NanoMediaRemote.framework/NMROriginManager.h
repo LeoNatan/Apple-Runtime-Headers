@@ -6,29 +6,41 @@
 
 #import <objc/NSObject.h>
 
-@class NMROrigin, NSArray, NSMutableDictionary, NSNumber, NSOrderedSet;
+#import <NanoMediaRemote/MPAVRoutingControllerDelegate-Protocol.h>
+
+@class BKSProcessAssertion, MPAVRoutingController, NMROrigin, NSArray, NSDictionary, NSMutableSet, NSNumber, NSOrderedSet, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NMROriginManager : NSObject
+@interface NMROriginManager : NSObject <MPAVRoutingControllerDelegate>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
-    NSMutableDictionary *_origins;
-    NSOrderedSet *_originIdentifiers;
+    NSOrderedSet *_availableOrigins;
+    NSDictionary *_availableOriginsByDeviceIdentifier;
+    NSDictionary *_availableOriginsByOriginIdentifier;
     NSNumber *_activeOriginIdentifier;
     NSNumber *_localOriginIdentifier;
-    NSNumber *_companionOriginIdentifier;
+    MPAVRoutingController *_endpointRoutingController;
+    NSMutableSet *_lastAvailableEndpointRouteUIDs;
+    BKSProcessAssertion *_endpointDiscoveryProcessAssertion;
+    struct __CFArray *_availableOriginRefs;
+    void *_activeOriginRef;
 }
 
 + (id)sharedManager;
 - (void).cxx_destruct;
-- (id)_originWithMROriginRef:(void *)arg1;
+- (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)_handleDeviceInfoDidChangeNotification:(id)arg1;
-- (void)_updateActiveOrigin;
-- (unsigned int)_orderForOriginIdentifier:(id)arg1;
+- (void)_handleMediaRemoteAvailableOriginsDidChangeNotification:(id)arg1;
+- (void)_handleMediaRemoteActiveOriginDidChangeNotification:(id)arg1;
+- (void)_forgetDiscoveredEndpoints;
+- (void)_setEndpointDiscoveryEnabled:(_Bool)arg1;
+- (_Bool)_isEndpointDiscoveryEnabled;
+- (void)_updateMediaRemoteActiveOrigin;
+- (void)_updateMediaRemoteAvailableOrigins;
+- (void)_updateMediaRemoteLocalOrigin;
 - (void)_updateAvailableOrigins;
-- (void)_updateLocalOrigin;
-- (id)deltaFromOrigins:(id)arg1;
 - (id)originWithUniqueIdentifier:(id)arg1;
+- (id)originWithDeviceIdentifier:(id)arg1;
 @property(readonly, nonatomic) NMROrigin *companionOrigin;
 @property(readonly, nonatomic) NMROrigin *localOrigin;
 @property(readonly, nonatomic) NMROrigin *activeOrigin;
@@ -36,6 +48,12 @@
 - (void)dealloc;
 - (id)init;
 - (id)_originFromTestOptions:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

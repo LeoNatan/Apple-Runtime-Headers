@@ -9,8 +9,8 @@
 #import <Message/MFActivityCondition-Protocol.h>
 #import <Message/MFActivityConditionBuilder-Protocol.h>
 
-@class MFCancelationToken, MFObservable, NSString;
-@protocol MFScheduler;
+@class EFCancelationToken, EFObservable, NSString;
+@protocol EFScheduler;
 
 @interface MFActivityCondition : NSObject <MFActivityConditionBuilder, MFActivityCondition>
 {
@@ -21,13 +21,13 @@
     _Bool _satisfied;
     float _minBatteryLevel;
     long long _maxThermalPressureLevel;
-    MFCancelationToken *_cancellationToken;
-    id <MFScheduler> _scheduler;
+    EFCancelationToken *_cancellationToken;
+    id <EFScheduler> _scheduler;
 }
 
 + (id)alwaysSatisfiedCondition;
-@property(retain, nonatomic) id <MFScheduler> scheduler; // @synthesize scheduler=_scheduler;
-@property(retain, nonatomic) MFCancelationToken *cancellationToken; // @synthesize cancellationToken=_cancellationToken;
+@property(retain, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
+@property(retain, nonatomic) EFCancelationToken *cancellationToken; // @synthesize cancellationToken=_cancellationToken;
 @property(nonatomic, getter=isSatisfied) _Bool satisfied; // @synthesize satisfied=_satisfied;
 @property(nonatomic) long long maxThermalPressureLevel; // @synthesize maxThermalPressureLevel=_maxThermalPressureLevel;
 @property(nonatomic) _Bool requireLowPowerModeDisabled; // @synthesize requireLowPowerModeDisabled=_requireLowPowerModeDisabled;
@@ -37,7 +37,7 @@
 @property(nonatomic) _Bool requireExternalPower; // @synthesize requireExternalPower=_requireExternalPower;
 - (void).cxx_destruct;
 - (_Bool)_isValidConfiguration;
-@property(readonly, nonatomic) MFObservable *conditionsObservable;
+@property(readonly, nonatomic) EFObservable *conditionsObservable;
 - (id)initWithBuilder:(CDUnknownBlockType)arg1;
 - (id)init;
 - (void)dealloc;

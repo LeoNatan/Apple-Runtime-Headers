@@ -12,7 +12,17 @@
 
 + (id)writableContainerProperties;
 + (id)allContainerProperties;
++ (id)containerGuardianStateDirtyDescription;
++ (id)containerGuardianRestrictedDescription;
++ (id)containerRestrictionsDescription;
++ (id)containerMeIdentifierDescription;
++ (id)containerConstraintsPathDescription;
++ (id)containerExternalSyncDataDescription;
++ (id)containerExternalSyncTagDescription;
++ (id)containerExternalModificationTagDescription;
++ (id)containerExternalIdentifierDescription;
 + (id)containerEnabledDescription;
++ (id)containerAccountIdentifierDescription;
 + (id)containerTypeDescription;
 + (id)containerNameDescription;
 + (id)containerIdentifierDescription;
@@ -25,9 +35,12 @@
 + (id)unifyContactMatchInfos:(id)arg1 linkedContacts:(id)arg2;
 + (id)unifyMultivalues:(id)arg1 forProperty:(id)arg2;
 + (id)_unifyContacts:(id)arg1 includingMainStoreContacts:(BOOL)arg2;
-+ (id)contactUnifyingContacts:(id)arg1 includingMainStoreContacts:(BOOL)arg2;
++ (id)contactUnifyingContacts:(id)arg1 includingMainStoreContacts:(BOOL)arg2 allowMutableContactFreeze:(BOOL)arg3;
 + (id)mutableContactUnifyingContacts:(id)arg1 includingMainStoreContacts:(BOOL)arg2;
 + (unsigned long long)indexOfPreferredContactsForUnifying:(id)arg1 includingMainStoreContacts:(BOOL)arg2;
++ (id)imageHash;
++ (id)imageType;
++ (id)downtimeWhitelistDescription;
 + (id)mapsDataDescription;
 + (id)callAlertDescription;
 + (id)textAlertDescription;
@@ -50,6 +63,8 @@
 + (id)linkIdentifierDescription;
 + (id)imageDataAvailableDescription;
 + (id)thumbnailImageDataDescription;
++ (id)cropRectHashDescription;
++ (id)cropRectIDDescription;
 + (id)cropRectDescription;
 + (id)imageDataDescription;
 + (id)noteDescription;
@@ -77,6 +92,7 @@
 + (id)accountIdentifierDescription;
 + (id)identifierDescription;
 + (id)contactPropertiesByKey;
++ (id)restrictedProperties;
 + (id)writableMultiValueContactProperties;
 + (id)writableSingleValueContactProperties;
 + (id)writableContactProperties;

@@ -19,7 +19,7 @@
 + (id)actionReader:(id)arg1;
 + (id)bundleIdReader:(id)arg1;
 - (void).cxx_destruct;
-- (id)readScoredPredictionsWithLimit:(int)arg1 andFilterRecentEngagements:(_Bool)arg2;
+- (id)readScoredPredictionsWithLimit:(int)arg1 filterPredicate:(id)arg2;
 - (id)readScoredPredictionsWithLimit:(int)arg1;
 - (id)_scoredPredictionFromData:(id)arg1 score:(float)arg2;
 - (id)init;

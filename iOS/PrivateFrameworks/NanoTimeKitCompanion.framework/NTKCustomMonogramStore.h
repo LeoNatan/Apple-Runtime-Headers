@@ -16,7 +16,6 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_notifyClientsOfChange;
-- (void)_handlePrefsChanged;
 - (void)setCustomMonogram:(id)arg1;
 - (id)customMonogram;
 - (id)_customMonogramFromPrefs;

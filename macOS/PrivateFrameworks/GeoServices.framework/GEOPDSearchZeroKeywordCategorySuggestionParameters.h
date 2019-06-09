@@ -15,19 +15,21 @@ __attribute__((visibility("hidden")))
 {
     PBUnknownFields *_unknownFields;
     double _requestLocalTimestamp;
-    unsigned int _maxNumCategoriesPerEntry;
     GEOLatLng *_significantLocation;
+    unsigned int _maxNumCategoriesPerEntry;
     int _userPreferredTransportType;
+    BOOL _shouldMatchNoQueryStateSuggestions;
     struct {
-        unsigned int requestLocalTimestamp:1;
-        unsigned int maxNumCategoriesPerEntry:1;
-        unsigned int userPreferredTransportType:1;
-    } _has;
+        unsigned int has_requestLocalTimestamp:1;
+        unsigned int has_maxNumCategoriesPerEntry:1;
+        unsigned int has_userPreferredTransportType:1;
+        unsigned int has_shouldMatchNoQueryStateSuggestions:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOLatLng *significantLocation; // @synthesize significantLocation=_significantLocation;
-@property(nonatomic) double requestLocalTimestamp; // @synthesize requestLocalTimestamp=_requestLocalTimestamp;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,16 +38,21 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasShouldMatchNoQueryStateSuggestions;
+@property(nonatomic) BOOL shouldMatchNoQueryStateSuggestions;
 - (int)StringAsUserPreferredTransportType:(id)arg1;
 - (id)userPreferredTransportTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasUserPreferredTransportType;
-@property(nonatomic) int userPreferredTransportType; // @synthesize userPreferredTransportType=_userPreferredTransportType;
+@property(nonatomic) int userPreferredTransportType;
 @property(nonatomic) BOOL hasMaxNumCategoriesPerEntry;
-@property(nonatomic) unsigned int maxNumCategoriesPerEntry; // @synthesize maxNumCategoriesPerEntry=_maxNumCategoriesPerEntry;
+@property(nonatomic) unsigned int maxNumCategoriesPerEntry;
+@property(retain, nonatomic) GEOLatLng *significantLocation;
 @property(readonly, nonatomic) BOOL hasSignificantLocation;
 @property(nonatomic) BOOL hasRequestLocalTimestamp;
+@property(nonatomic) double requestLocalTimestamp;
 
 @end
 

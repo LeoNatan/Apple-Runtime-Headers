@@ -25,11 +25,10 @@ struct CGSize {
     double height;
 };
 
-struct NSDirectionalEdgeInsets {
-    double _field1;
+struct SBIconImageInfo {
+    struct CGSize _field1;
     double _field2;
     double _field3;
-    double _field4;
 };
 
 struct UIEdgeInsets {

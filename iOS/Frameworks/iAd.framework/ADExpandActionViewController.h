@@ -26,9 +26,11 @@
     ADWebViewGestureRecognizer *_gestureRecognizer;
     NSString *_creativeIdentifier;
     ADHomeButtonHandler *_homeButtonHandler;
+    id _notificationObserver;
     struct CGSize _maximumExpandedSize;
 }
 
+@property(retain, nonatomic) id notificationObserver; // @synthesize notificationObserver=_notificationObserver;
 @property(retain, nonatomic) ADHomeButtonHandler *homeButtonHandler; // @synthesize homeButtonHandler=_homeButtonHandler;
 @property(nonatomic) _Bool tapWasRecognized; // @synthesize tapWasRecognized=_tapWasRecognized;
 @property(nonatomic) _Bool shouldBlockNavigation; // @synthesize shouldBlockNavigation=_shouldBlockNavigation;
@@ -42,6 +44,10 @@
 @property(nonatomic) _Bool adIsDismissing; // @synthesize adIsDismissing=_adIsDismissing;
 @property(retain, nonatomic) ADCountdownButton *dismissButton; // @synthesize dismissButton=_dismissButton;
 @property(retain, nonatomic) ADWebView *webView; // @synthesize webView=_webView;
+- (void).cxx_destruct;
+- (void)webView:(id)arg1 didFailProvisionalNavigation:(id)arg2 withError:(id)arg3;
+- (void)webViewWebContentProcessDidTerminate:(id)arg1;
+- (void)webView:(id)arg1 didFailNavigation:(id)arg2 withError:(id)arg3;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)webProcessMRAIDJSODidCallOpen:(id)arg1;
 - (void)webProcessMRAIDJSODidCallExpand:(id)arg1 withMaximumSize:(id)arg2;

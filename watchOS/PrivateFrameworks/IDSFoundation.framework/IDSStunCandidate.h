@@ -19,9 +19,11 @@
     unsigned int _radioAccessTechnology;
     unsigned int _mtu;
     double _extIPDetectionStartTime;
+    unsigned short _remoteLinkFlags;
 }
 
 + (id)candidateWithType:(unsigned int)arg1 transport:(int)arg2 radioAccessTechnology:(unsigned int)arg3 mtu:(unsigned int)arg4 index:(int)arg5 address:(struct sockaddr *)arg6 external:(struct sockaddr *)arg7;
+@property(nonatomic) unsigned short remoteLinkFlags; // @synthesize remoteLinkFlags=_remoteLinkFlags;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(nonatomic) double extIPDetectionStartTime; // @synthesize extIPDetectionStartTime=_extIPDetectionStartTime;
 @property(nonatomic) unsigned int mtu; // @synthesize mtu=_mtu;

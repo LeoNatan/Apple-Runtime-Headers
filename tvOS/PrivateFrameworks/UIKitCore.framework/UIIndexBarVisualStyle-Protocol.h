@@ -19,6 +19,7 @@
 
 @optional
 @property(nonatomic) _Bool expanded;
+- (long long)_accessibility_indexForEntryAtPoint:(struct CGPoint)arg1;
 - (void)traitCollectionDidChange:(UITraitCollection *)arg1;
 - (_Bool)updateSectionForTouch:(UITouch *)arg1 withEvent:(UIEvent *)arg2;
 - (void)drawRect:(struct CGRect)arg1;

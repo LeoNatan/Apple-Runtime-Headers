@@ -12,18 +12,14 @@
 
 @interface PVObject : NSObject <NSCopying>
 {
-    long long _modelId;
     NSString *_localIdentifier;
 }
 
 @property(readonly, copy, nonatomic) NSString *localIdentifier; // @synthesize localIdentifier=_localIdentifier;
-@property(readonly, nonatomic) long long modelId; // @synthesize modelId=_modelId;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithModelId:(long long)arg1 localIdentifier:(id)arg2;
 - (id)initWithLocalIdentifier:(id)arg1;
-- (id)initWithObject:(id)arg1;
 
 @end
 

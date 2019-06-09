@@ -8,6 +8,7 @@
 
 @class OITSUNoCopyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimationCacheState : NSObject
 {
     OITSUNoCopyDictionary *mMediaNodeMap;

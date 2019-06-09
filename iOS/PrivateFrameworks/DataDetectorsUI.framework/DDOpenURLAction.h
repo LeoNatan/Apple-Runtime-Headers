@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)companionAction;
 - (id)appLink;
 - (_Bool)useAppLink;
+- (id)icon;
 
 @end
 

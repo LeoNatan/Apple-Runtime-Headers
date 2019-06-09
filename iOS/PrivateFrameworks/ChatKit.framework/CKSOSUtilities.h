@@ -15,6 +15,7 @@
 + (void)sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3;
 + (_Bool)isMMSEnabled;
 - (id)sendComposition:(id)arg1 toConversation:(id)arg2 useStandalone:(_Bool)arg3;
+- (id)_uniqueFilePathForFilename:(id)arg1;
 - (id)_sendMessageAndReturnGUIDs:(id)arg1;
 - (void)_sendMessageAndObserveNotification:(id)arg1;
 - (void)sendMessage:(id)arg1;

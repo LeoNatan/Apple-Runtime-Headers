@@ -7,28 +7,31 @@
 #import <RelevanceEngine/REElementCoordinator.h>
 
 #import <RelevanceEngine/REDataSourceManagerObserver-Protocol.h>
+#import <RelevanceEngine/REElementDataSourceActivityDelegate-Protocol.h>
 #import <RelevanceEngine/REElementDataSourceControllerDelegate-Protocol.h>
 #import <RelevanceEngine/REElementRelevanceEngineDelegate-Protocol.h>
 
 @class NSCountedSet, NSMutableDictionary, NSMutableSet, NSObject, NSString, REElementRelevanceEngine, REUpNextScheduler;
 @protocol OS_dispatch_queue;
 
-@interface RELiveElementCoordinator : REElementCoordinator <REElementDataSourceControllerDelegate, REElementRelevanceEngineDelegate, REDataSourceManagerObserver>
+@interface RELiveElementCoordinator : REElementCoordinator <REElementDataSourceControllerDelegate, REElementRelevanceEngineDelegate, REElementDataSourceActivityDelegate, REDataSourceManagerObserver>
 {
     REElementRelevanceEngine *_relevanceEngine;
     NSMutableDictionary *_elementIdElementMap;
     REUpNextScheduler *_scheduler;
     NSObject<OS_dispatch_queue> *_controllerQueue;
+    unsigned long long _scheduleCount;
     _Bool _reloadImmediately;
     NSCountedSet *_remainingInsertOperations;
     NSCountedSet *_remainingRemoveOperations;
     unsigned long long _currentReloadTryCount;
     NSMutableSet *_refreshedElements;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (void)_onqueue_async:(CDUnknownBlockType)arg1;
+- (void)relevanceEngine:(id)arg1 didUpdateRelevanceOfElement:(id)arg2;
 - (void)relevanceEngine:(id)arg1 elementWasRemoved:(id)arg2;
 - (void)relevanceEngine:(id)arg1 elementWasAdded:(id)arg2;
 - (void)relevanceEngine:(id)arg1 didMoveElement:(id)arg2 fromPath:(id)arg3 toPath:(id)arg4;
@@ -42,6 +45,8 @@
 - (void)_queue_reloadElement:(id)arg1;
 - (id)_interactionForElement:(id)arg1;
 - (void)_queue_addElement:(id)arg1 toSection:(id)arg2;
+- (void)dataSource:(id)arg1 didFinishActivity:(id)arg2;
+- (void)dataSource:(id)arg1 didBeginActivity:(id)arg2;
 - (_Bool)elementDataSourceController:(id)arg1 isElementVisible:(id)arg2;
 - (void)elementDataSourceController:(id)arg1 didRefreshElement:(id)arg2;
 - (void)elementDataSourceController:(id)arg1 didRemoveElement:(id)arg2;
@@ -49,6 +54,10 @@
 - (void)elementDataSourceController:(id)arg1 didAddElement:(id)arg2 toSection:(id)arg3;
 - (void)elementDataSourceController:(id)arg1 performBatchUpdates:(CDUnknownBlockType)arg2;
 - (id)_predictionForElement:(id)arg1;
+- (id)elementRankerForSection:(id)arg1;
+- (id)featureProviderForElementAtPath:(id)arg1;
+- (id)featureProviderForElement:(id)arg1;
+- (id)predictionForElement:(id)arg1;
 - (id)predictionForElementAtPath:(id)arg1;
 - (void)removeElement:(id)arg1;
 - (void)addElement:(id)arg1 toSection:(id)arg2;

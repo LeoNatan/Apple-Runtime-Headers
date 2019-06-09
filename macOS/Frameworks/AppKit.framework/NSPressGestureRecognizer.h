@@ -8,7 +8,7 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSMutableArray;
 
 @interface NSPressGestureRecognizer : NSGestureRecognizer <NSCoding>
 {
@@ -17,10 +17,21 @@
     double _minimumPressDuration;
     double _allowableMovement;
     long long _buttonCount;
-    long long _lcflags;
-    id _reserved1;
+    struct {
+        unsigned int enoughTimeElapsed:1;
+        unsigned int gotButtonUp:1;
+        unsigned int hasCustomMinPressDuration:1;
+        unsigned int hasCustomAllowableMovement:1;
+        unsigned int cancelPastAllowableMovement:1;
+        unsigned int reserved:27;
+    } _lcflags;
+    long long _numberOfTouchesRequired;
+    long long _activeTouchCount;
+    NSMutableArray *_trackingTouchIdentities;
+    NSArray *_currentTouches;
 }
 
+@property long long numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (void)touchesCancelledWithEvent:(id)arg1;
 - (void)touchesEndedWithEvent:(id)arg1;
@@ -41,7 +52,6 @@
 - (void)reset;
 @property(readonly, retain) NSArray *touches;
 - (struct CGPoint)locationInView:(id)arg1;
-@property long long numberOfTouchesRequired;
 @property BOOL cancelPastAllowableMovement;
 @property double allowableMovement;
 @property double minimumPressDuration;

@@ -6,38 +6,29 @@
 
 #import <PhotosUICore/PXGadgetProvider.h>
 
-#import <PhotosUICore/PXCMMWorkflowCoordinatorDelegate-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXSectionedDataSourceManagerObserver-Protocol.h>
 
-@class NSString, PXCMMSuggestionsDataSource, PXCMMSuggestionsDataSourceManager, PXCMMWorkflowCoordinator, UIColor;
-@protocol PXGadgetNavigating;
+@class NSString, PXCMMSuggestionsDataSource, PXCMMSuggestionsDataSourceManager;
+@protocol PXCMMWorkflowPresenting;
 
-@interface PXCMMSuggestionsGadgetProvider : PXGadgetProvider <PXCMMWorkflowCoordinatorDelegate, PXChangeObserver, PXSectionedDataSourceManagerObserver>
+@interface PXCMMSuggestionsGadgetProvider : PXGadgetProvider <PXChangeObserver, PXSectionedDataSourceManagerObserver>
 {
     PXCMMSuggestionsDataSource *_dataSource;
     _Bool _didGenerateGadgets;
-    PXCMMWorkflowCoordinator *_workflowCoordinator;
     PXCMMSuggestionsDataSourceManager *_dataSourceManager;
-    id <PXGadgetNavigating> _gadgetNavigator;
-    UIColor *_backgroundColor;
+    id <PXCMMWorkflowPresenting> _workflowPresenter;
 }
 
-+ (id)new;
-@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-@property(nonatomic) __weak id <PXGadgetNavigating> gadgetNavigator; // @synthesize gadgetNavigator=_gadgetNavigator;
+@property(readonly, nonatomic) id <PXCMMWorkflowPresenting> workflowPresenter; // @synthesize workflowPresenter=_workflowPresenter;
 @property(readonly, nonatomic) PXCMMSuggestionsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
-- (void)workflowCoordinator:(id)arg1 workflowViewController:(id)arg2 didFinishSession:(id)arg3 withActivityState:(unsigned long long)arg4;
-- (long long)shareOriginForSession:(id)arg1 forWorkflowCoordinator:(id)arg2;
 - (void)_setDataSource:(id)arg1 changes:(id)arg2;
 - (id)_newGadgetForSuggestion:(id)arg1;
 - (void)generateGadgets;
 - (unsigned long long)estimatedNumberOfGadgets;
-- (void)presentQuickActionsForSuggestionGadget:(id)arg1;
-- (void)presentSuggestionGadget:(id)arg1 context:(id)arg2 animated:(_Bool)arg3;
-- (id)initWithDataSourceManager:(id)arg1;
+- (id)initWithDataSourceManager:(id)arg1 workflowPresenter:(id)arg2;
 - (id)init;
 
 // Remaining properties

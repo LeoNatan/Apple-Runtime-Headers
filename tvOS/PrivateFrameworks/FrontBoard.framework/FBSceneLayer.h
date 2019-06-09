@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <FrontBoard/BSDescriptionProviding-Protocol.h>
+#import <FrontBoard/NSCopying-Protocol.h>
 
 @class NSString;
 
-@interface FBSceneLayer : NSObject <BSDescriptionProviding>
+@interface FBSceneLayer : NSObject <BSDescriptionProviding, NSCopying>
 {
     long long _type;
     double _level;
@@ -32,6 +33,7 @@
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

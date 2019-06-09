@@ -12,6 +12,10 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct FlowClassificationDigest {
+    unsigned long long _field1;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -40,11 +44,6 @@ struct kern_event_msg {
     unsigned int _field5;
     unsigned int _field6;
     unsigned int _field7[1];
-};
-
-struct mach_timebase_info {
-    unsigned int numer;
-    unsigned int denom;
 };
 
 struct mach_timespec {
@@ -124,15 +123,6 @@ typedef struct {
     unsigned int _field4;
     long long _field5;
 } CDStruct_2e53e7ac;
-
-typedef struct {
-    unsigned long long _field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-    char _field4;
-    char _field5;
-    char _field6;
-} CDStruct_c6059480;
 
 typedef struct {
     unsigned long long _field1;

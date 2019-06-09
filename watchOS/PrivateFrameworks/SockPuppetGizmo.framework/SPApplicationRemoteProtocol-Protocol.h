@@ -4,35 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SockPuppetGizmo/NSObject-Protocol.h>
+#import <SockPuppetGizmo/SPApplicationRemoteXPCProtocol-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSDictionary, NSError, NSString, NSUUID, NSUserActivity;
+@class NSString;
 
-@protocol SPApplicationRemoteProtocol <NSObject>
-- (void)setupInProcessNotificationExtensionConnectionWithHostClientIdentifier:(NSString *)arg1 completion:(void (^)(id <SPApplicationRemoteProtocol>))arg2;
-- (void)extensionDelegate:(NSString *)arg1 handlesBGTasksDidChange:(_Bool)arg2;
-- (void)extensionDidEndNotificationUICreation:(NSString *)arg1;
-- (void)extensionDidBeginNotificationUICreation:(NSString *)arg1;
-- (NSString *)redirectClientIDForSelector:(SEL)arg1;
-- (void)controllerDismiss:(NSString *)arg1;
-- (void)notificationController:(NSString *)arg1 setNotificationActions:(NSData *)arg2;
-- (void)notificationControllerPerformDefaultAction:(NSString *)arg1;
-- (void)notificationController:(NSString *)arg1 showNotificationInterfaceType:(NSString *)arg2 bulletinUniqueID:(NSString *)arg3;
-- (void)interfaceViewController:(NSString *)arg1 updateUserActivity:(NSUserActivity *)arg2;
-- (void)interfaceViewController:(NSString *)arg1 updateUserActivityDict:(NSDictionary *)arg2;
-- (void)receivePushPagingScrollTableRow:(NSString *)arg1 row:(int)arg2 seguesByRowName:(NSDictionary *)arg3 rowNamesAndContextIDs:(NSArray *)arg4;
-- (void)receiveSetViewController:(NSString *)arg1 values:(NSArray *)arg2;
-- (void)receiveSetViewController:(NSString *)arg1 key:(NSString *)arg2 property:(NSString *)arg3 value:(id)arg4;
-- (void)receivePlistFromExtension:(id)arg1;
-- (NSString *)clientIdentifier;
-- (void)receiveAudioPlayerMessageData:(NSData *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
-- (void)receiveDataFromExtension:(NSData *)arg1 reply:(void (^)(NSData *, NSError *))arg2;
-- (void)receiveDataFromExtension:(NSData *)arg1;
-- (void)fetchConnectionIdentifierWithMetricsTimestamp:(double)arg1 extensionLaunchedForRemoteExtensionConnection:(_Bool)arg2 reply:(void (^)(NSString *, NSString *, NSDictionary *))arg3;
-- (void)failedToHandleBackgroundTasks:(NSDictionary *)arg1 error:(NSError *)arg2 barTaskUUID:(NSUUID *)arg3;
-- (void)didFinishHandlingBackgroundSnapshotTask:(_Bool)arg1 glanceableUI:(_Bool)arg2 staleDate:(NSDate *)arg3 userInfoUUID:(NSString *)arg4 error:(NSError *)arg5 barTaskUUID:(NSUUID *)arg6;
-- (void)didFinishHandlingBackgroundTask:(NSString *)arg1 refreshSnapshot:(_Bool)arg2 error:(NSError *)arg3 barTaskUUID:(NSUUID *)arg4;
-- (void)interfaceViewController:(NSString *)arg1 crownReplyData:(NSDictionary *)arg2;
-- (void)interfaceViewController:(NSString *)arg1 gestureReplyData:(NSDictionary *)arg2;
+@protocol SPApplicationRemoteProtocol <SPApplicationRemoteXPCProtocol>
+- (void)interfaceViewController:(NSString *)arg1 receivePresentTimerSupportInterfaceWithControllerClass:(Class)arg2 presentCompletion:(void (^)(NSString *))arg3 dismissCompletion:(void (^)(void))arg4;
 @end
 

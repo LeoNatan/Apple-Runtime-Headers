@@ -40,8 +40,8 @@ struct CGVector {
 };
 
 struct _NSRange {
-    unsigned int _field1;
-    unsigned int _field2;
+    unsigned int location;
+    unsigned int length;
 };
 
 struct mach_task_basic_info {
@@ -77,6 +77,28 @@ struct task_vm_info {
     unsigned long long phys_footprint;
     unsigned long long min_address;
     unsigned long long max_address;
+    long long ledger_phys_footprint_peak;
+    long long ledger_purgeable_nonvolatile;
+    long long ledger_purgeable_novolatile_compressed;
+    long long ledger_purgeable_volatile;
+    long long ledger_purgeable_volatile_compressed;
+    long long ledger_tag_network_nonvolatile;
+    long long ledger_tag_network_nonvolatile_compressed;
+    long long ledger_tag_network_volatile;
+    long long ledger_tag_network_volatile_compressed;
+    long long ledger_tag_media_footprint;
+    long long ledger_tag_media_footprint_compressed;
+    long long ledger_tag_media_nofootprint;
+    long long ledger_tag_media_nofootprint_compressed;
+    long long ledger_tag_graphics_footprint;
+    long long ledger_tag_graphics_footprint_compressed;
+    long long ledger_tag_graphics_nofootprint;
+    long long ledger_tag_graphics_nofootprint_compressed;
+    long long ledger_tag_neural_footprint;
+    long long ledger_tag_neural_footprint_compressed;
+    long long ledger_tag_neural_nofootprint;
+    long long ledger_tag_neural_nofootprint_compressed;
+    unsigned long long limit_bytes_remaining;
 };
 
 struct time_value {
@@ -84,7 +106,24 @@ struct time_value {
     int microseconds;
 };
 
+struct vector<int, std::__1::allocator<int>> {
+    int *_field1;
+    int *_field2;
+    struct __compressed_pair<int *, std::__1::allocator<int>> {
+        int *_field1;
+    } _field3;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    double *values;
+    double scaleMinimum;
+    double scaleMaximum;
+    double valueMinimum;
+    double valueMaximum;
+    double count;
+} CDStruct_79de6ffd;
 
 typedef struct {
     struct {
@@ -93,4 +132,13 @@ typedef struct {
     } range;
     unsigned long attributes;
 } CDStruct_7f2bddd5;
+
+// Template types
+typedef struct vector<int, std::__1::allocator<int>> {
+    int *_field1;
+    int *_field2;
+    struct __compressed_pair<int *, std::__1::allocator<int>> {
+        int *_field1;
+    } _field3;
+} vector_3203cf93;
 

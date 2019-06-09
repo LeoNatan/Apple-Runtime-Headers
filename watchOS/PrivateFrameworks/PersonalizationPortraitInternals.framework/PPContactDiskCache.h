@@ -8,7 +8,7 @@
 
 @interface PPContactDiskCache : NSObject
 {
-    double _lastCreatedAt;
+    long long _lastCreatedAt;
 }
 
 + (id)sharedInstance;

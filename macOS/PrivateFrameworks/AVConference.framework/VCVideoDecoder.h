@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)releaseVideoDecoderForStreamToken:(long long)arg1;
-+ (id)decoderForStreamToken:(long long)arg1 reportingAgent:(struct opaqueRTCReporting *)arg2;
++ (id)decoderForStreamToken:(long long)arg1 withConfig:(struct tagVideoDecoderConfig *)arg2;
 + (id)streamTokenDecoderMap;
 @property(readonly) struct tagHANDLE *videoPlayerHandle;
 - (void)dealloc;
-- (id)initWithStreamToken:(long long)arg1 reportingAgent:(struct opaqueRTCReporting *)arg2;
+- (id)initWithConfig:(struct tagVideoDecoderConfig *)arg1;
 
 @end
 

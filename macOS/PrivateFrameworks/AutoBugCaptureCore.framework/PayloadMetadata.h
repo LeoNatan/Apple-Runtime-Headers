@@ -8,6 +8,7 @@
 
 @class NSDate, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface PayloadMetadata : NSObject
 {
     BOOL _requiresUserConsent;

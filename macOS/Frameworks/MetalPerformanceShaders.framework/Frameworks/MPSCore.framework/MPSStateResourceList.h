@@ -17,6 +17,7 @@
 - (id)debugDescription;
 - (void)dealloc;
 - (void)appendBuffer:(unsigned long long)arg1;
+- (void)appendTexture:(id)arg1 format:(unsigned long long)arg2;
 - (void)appendTexture:(id)arg1;
 - (id)init;
 

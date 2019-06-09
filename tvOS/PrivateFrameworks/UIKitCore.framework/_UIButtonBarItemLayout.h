@@ -22,11 +22,13 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_popoverGuideTop;
     NSLayoutConstraint *_popoverGuideHeight;
     _Bool _useGroupSizing;
+    _Bool _suppressSpacing;
     UILayoutGuide *_popoverLayoutGuide;
     CDUnknownBlockType _itemViewGenerator;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType itemViewGenerator; // @synthesize itemViewGenerator=_itemViewGenerator;
+@property(nonatomic) _Bool suppressSpacing; // @synthesize suppressSpacing=_suppressSpacing;
 @property(nonatomic) _Bool useGroupSizing; // @synthesize useGroupSizing=_useGroupSizing;
 @property(readonly, nonatomic) UILayoutGuide *popoverLayoutGuide; // @synthesize popoverLayoutGuide=_popoverLayoutGuide;
 - (void).cxx_destruct;

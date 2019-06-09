@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEOResourceManifestTileGroupObserver-Protocol.h>
 
-@class GEOProactiveTileDownloader, GEOTileDB, NSLock, NSMapTable, NSMutableArray, NSObject, NSString;
+@class GEOProactiveTileDownloader, GEOTileDB, NSMapTable, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @interface GEOTileServerLocalProxy : GEOTileServerProxy <GEOResourceManifestTileGroupObserver>
@@ -17,7 +17,7 @@
     NSString *_cacheLocation;
     NSMapTable *_providers;
     NSMutableArray *_inProgress;
-    NSLock *_inProgressLock;
+    struct os_unfair_lock_s _inProgressLock;
     NSObject<OS_dispatch_queue> *_workQueue;
     GEOProactiveTileDownloader *_proactiveTileDownloader;
     _Bool _updatingManifestForProactiveTileDownload;
@@ -33,14 +33,16 @@
 - (_Bool)skipNetworkForKeysWhenPreloading:(id)arg1;
 - (void)endPreloadSession;
 - (void)beginPreloadSessionOfSize:(unsigned long long)arg1 exclusive:(_Bool)arg2;
+- (unsigned long long)shrinkDiskCacheToSizeSync:(unsigned long long)arg1;
 - (void)shrinkDiskCacheToSize:(unsigned long long)arg1;
+- (unsigned long long)calculateFreeableSizeSync;
 - (void)calculateFreeableSize;
 - (void)reportCorruptTile:(const struct _GEOTileKey *)arg1;
 - (void)tileRequesterFinished:(id)arg1;
-- (void)tileRequester:(id)arg1 receivedError:(id)arg2;
-- (void)tileRequester:(id)arg1 receivedData:(id)arg2 tileEdition:(unsigned int)arg3 tileSet:(unsigned int)arg4 etag:(id)arg5 forKey:(struct _GEOTileKey)arg6 userInfo:(id)arg7;
+- (void)tileRequester:(id)arg1 receivedError:(id)arg2 forKey:(struct _GEOTileKey)arg3;
+- (void)tileRequester:(id)arg1 receivedData:(id)arg2 tileEdition:(unsigned int)arg3 tileSetDB:(unsigned int)arg4 tileSet:(id)arg5 etag:(id)arg6 forKey:(struct _GEOTileKey)arg7 userInfo:(id)arg8;
 - (id)userInfoForRequesterUserInfo:(id)arg1 tileEdition:(unsigned int)arg2 tileSet:(unsigned int)arg3 eTag:(id)arg4 bundleIdentifier:(id)arg5 reason:(unsigned char)arg6;
-- (void)loadTiles:(id)arg1 priorities:(const unsigned int *)arg2 hasAdditionalInfos:(const _Bool *)arg3 additionalInfos:(const CDStruct_58878026 *)arg4 signpostIDs:(const unsigned long long *)arg5 reason:(unsigned char)arg6 options:(unsigned int)arg7 client:(id)arg8;
+- (void)loadTiles:(id)arg1 priorities:(const unsigned int *)arg2 hasAdditionalInfos:(const _Bool *)arg3 additionalInfos:(const struct GEOTileLoaderAdditionalInfo *)arg4 signpostIDs:(const unsigned long long *)arg5 reason:(unsigned char)arg6 options:(unsigned int)arg7 client:(id)arg8;
 - (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2;
 - (void)cancel:(const struct _GEOTileKey *)arg1;
 - (void)close;

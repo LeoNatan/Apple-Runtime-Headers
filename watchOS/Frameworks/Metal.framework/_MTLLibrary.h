@@ -4,32 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Metal/_MTLObjectWithLabel.h>
 
 #import <Metal/MTLLibrarySPI-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString;
+@class NSArray, NSData, NSMutableDictionary, NSString;
 @protocol MTLDevice;
 
-@interface _MTLLibrary : NSObject <MTLLibrarySPI>
+@interface _MTLLibrary : _MTLObjectWithLabel <MTLLibrarySPI>
 {
-    NSString *_label;
     id <MTLDevice> _device;
-    NSArray *_functionNames;
-    NSArray *_externFunctionNames;
     struct MTLLibraryData *_libraryData;
     NSMutableDictionary *_functionDictionary;
     struct MTLLibraryContainer *_cacheEntry;
-    struct MTLPipelineCollection *_pipelineCollection;
 }
 
 @property(readonly) struct MTLLibraryContainer *cacheEntry; // @synthesize cacheEntry=_cacheEntry;
-@property struct MTLPipelineCollection *pipelineCollection; // @synthesize pipelineCollection=_pipelineCollection;
 @property(readonly, retain, nonatomic) NSMutableDictionary *functionDictionary; // @synthesize functionDictionary=_functionDictionary;
 @property(readonly) struct MTLLibraryData *libraryData; // @synthesize libraryData=_libraryData;
-@property(readonly, retain) NSArray *functionNames; // @synthesize functionNames=_functionNames;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
-@property(copy) NSString *label; // @synthesize label=_label;
 @property(readonly, copy) NSString *description;
 - (id)formattedDescription:(unsigned int)arg1;
 - (void)dealloc;
@@ -43,12 +36,15 @@
 - (id)newFunctionWithName:(id)arg1;
 - (id)newExternFunctionWithName:(id)arg1;
 - (id)newFunctionWithNameInternal:(id)arg1;
-@property(readonly, retain) NSArray *externFunctionNames; // @synthesize externFunctionNames=_externFunctionNames;
+@property(readonly, retain) NSArray *externFunctionNames; // @dynamic externFunctionNames;
+@property(readonly, retain) NSArray *functionNames; // @dynamic functionNames;
 @property(copy) NSString *overrideTriple; // @dynamic overrideTriple;
+@property(readonly, copy) NSData *libraryDataContents;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
+@property(copy) NSString *label; // @dynamic label;
 @property(readonly) Class superclass;
 
 @end

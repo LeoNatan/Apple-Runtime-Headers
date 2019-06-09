@@ -27,11 +27,15 @@
 }
 
 - (void).cxx_destruct;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)updateMonochromeColor;
 - (_Bool)_shouldUseDaytimeColoring;
 - (void)_updateUI;
 - (void)_stopClockUpdates;
 - (void)_startClockUpdates;
 - (_Bool)_shouldAnimateWithTemplateUpdateReason:(long long)arg1;
+- (void)_applyPausedUpdate;
+- (void)setPaused:(_Bool)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)layoutSubviews;
 - (void)dealloc;

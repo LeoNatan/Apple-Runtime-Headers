@@ -8,6 +8,7 @@
 
 @class EDPivotTable;
 
+__attribute__((visibility("hidden")))
 @interface EPPivotTableStyleFlattener : EPStyleFlattener
 {
     EDPivotTable *mPivotTable;

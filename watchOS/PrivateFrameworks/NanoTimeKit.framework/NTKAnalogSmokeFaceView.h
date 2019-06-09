@@ -29,8 +29,7 @@
 - (void)_customizeVideoPlayerOnSetup;
 - (void)_handleEitherScreenWake;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
-- (void)_configureReusableTimeView:(id)arg1;
-- (id)_editOptionThatHidesAllComplications;
+- (void)_configureTimeView:(id)arg1;
 
 @end
 

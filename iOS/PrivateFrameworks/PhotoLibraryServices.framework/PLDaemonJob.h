@@ -6,33 +6,44 @@
 
 #import <objc/NSObject.h>
 
-@class NSError, PLXPCTransaction;
+#import <PhotoLibraryServices/NSSecureCoding-Protocol.h>
+
+@class NSXPCConnection, PLAssetsdClient, PLLibraryServicesManager, PLXPCTransaction;
 @protocol OS_xpc_object;
 
-@interface PLDaemonJob : NSObject
+@interface PLDaemonJob : NSObject <NSSecureCoding>
 {
     NSObject<OS_xpc_object> *_xpcReply;
     PLXPCTransaction *_transaction;
+    CDUnknownBlockType _replyHandler;
     unsigned long long _signpostId;
-    NSObject<OS_xpc_object> *_connection;
+    PLLibraryServicesManager *_libraryServicesManager;
+    NSXPCConnection *_clientConnection;
+    PLAssetsdClient *_assetsdClient;
 }
 
-+ (void)runDaemonSideWithXPCEvent:(id)arg1 connection:(id)arg2;
-@property(readonly, retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
-@property(nonatomic) NSObject<OS_xpc_object> *xpcReply;
++ (_Bool)supportsSecureCoding;
++ (void)runDaemonSideWithXPCEvent:(id)arg1 libraryServicesManager:(id)arg2;
+@property(readonly, nonatomic) PLAssetsdClient *assetsdClient; // @synthesize assetsdClient=_assetsdClient;
+@property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
+- (void).cxx_destruct;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *xpcReply;
 - (void)run;
-- (void)dealloc;
+- (id)initWithAssetsdClient:(id)arg1;
+- (id)init;
+@property(copy, nonatomic) CDUnknownBlockType replyHandler;
 - (_Bool)shouldArchiveXPCToDisk;
 - (void)archiveXPCToDisk:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)newDictionaryReplyForObject:(id)arg1;
 - (void)encodeToXPCObject:(id)arg1;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
-@property(readonly, retain, nonatomic) NSError *replyError;
-@property(readonly, nonatomic) _Bool replyIsError;
-@property(readonly, nonatomic) _Bool clientWantsReply;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)runDaemonSide;
 - (void)handleReply;
 - (void)sendToAssetsdWithReply;
 - (void)sendToAssetsd;
+@property(retain, nonatomic) PLLibraryServicesManager *libraryServicesManager;
 - (_Bool)shouldRunOnDaemonSerialQueue;
 - (long long)daemonOperation;
 

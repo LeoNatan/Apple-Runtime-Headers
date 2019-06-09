@@ -8,21 +8,22 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 
-@class NSURL;
+@class NSData, NSURL;
 
 @interface NSMovie : NSObject <NSCoding>
 {
-    void *_movie;
-    NSURL *_url;
+    NSData *_data;
+    NSURL *_URL;
 }
 
-+ (Class)_QTMovieClass;
-+ (void)_loadQTKit;
+- (id)QTMovie;
+- (id)initWithMovie:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)QTMovie;
+- (id)data;
+- (id)URL;
 - (void)dealloc;
-- (id)initWithMovie:(id)arg1;
 
 @end
 

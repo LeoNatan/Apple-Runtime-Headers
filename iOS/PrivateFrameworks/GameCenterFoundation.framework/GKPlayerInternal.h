@@ -11,10 +11,16 @@
 @interface GKPlayerInternal : GKInternalRepresentation
 {
     NSString *_playerID;
+    NSString *_gamePlayerID;
+    NSString *_teamPlayerID;
     NSString *_alias;
+    NSNumber *_avatarType;
     NSDictionary *_photos;
     NSString *_messagesID;
-    NSString *_friendLevel;
+    NSNumber *_friendLevel;
+    NSNumber *_friendBiDirectional;
+    NSNumber *_friendPlayedWith;
+    NSNumber *_friendPlayedNearby;
     unsigned short _numberOfFriends;
     unsigned short _numberOfGames;
     unsigned short _numberOfFriendsInCommon;
@@ -28,6 +34,7 @@
             unsigned int _underage:1;
             unsigned int _photoPending:1;
             unsigned int _findable:1;
+            unsigned int _defaultNickname:1;
             unsigned int _reserved:18;
         } ;
         unsigned int _value;
@@ -39,7 +46,10 @@
 + (id)compositeNameForFirstName:(id)arg1 lastName:(id)arg2;
 + (id)secureCodedPropertyKeys;
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *friendLevel; // @synthesize friendLevel=_friendLevel;
+@property(retain, nonatomic) NSNumber *friendPlayedNearby; // @synthesize friendPlayedNearby=_friendPlayedNearby;
+@property(retain, nonatomic) NSNumber *friendPlayedWith; // @synthesize friendPlayedWith=_friendPlayedWith;
+@property(retain, nonatomic) NSNumber *friendBiDirectional; // @synthesize friendBiDirectional=_friendBiDirectional;
+@property(retain, nonatomic) NSNumber *friendLevel; // @synthesize friendLevel=_friendLevel;
 @property(retain, nonatomic) NSString *messagesID; // @synthesize messagesID=_messagesID;
 @property(nonatomic) unsigned int numberOfAchievementPoints; // @synthesize numberOfAchievementPoints=_numberOfAchievementPoints;
 @property(nonatomic) unsigned int numberOfAchievements; // @synthesize numberOfAchievements=_numberOfAchievements;
@@ -48,7 +58,10 @@
 @property(nonatomic) unsigned short numberOfFriendsInCommon; // @synthesize numberOfFriendsInCommon=_numberOfFriendsInCommon;
 @property(nonatomic) unsigned short numberOfFriends; // @synthesize numberOfFriends=_numberOfFriends;
 @property(retain, nonatomic) NSDictionary *photos; // @synthesize photos=_photos;
+@property(retain, nonatomic) NSNumber *avatarType; // @synthesize avatarType=_avatarType;
 @property(retain, nonatomic) NSString *alias; // @synthesize alias=_alias;
+@property(retain, nonatomic) NSString *teamPlayerID; // @synthesize teamPlayerID=_teamPlayerID;
+@property(retain, nonatomic) NSString *gamePlayerID; // @synthesize gamePlayerID=_gamePlayerID;
 @property(retain, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 @property(retain, nonatomic) NSString *guestIdentifier; // @dynamic guestIdentifier;
 @property(nonatomic) unsigned short numberOfChallenges; // @dynamic numberOfChallenges;
@@ -59,6 +72,7 @@
 @property(nonatomic, getter=isPhotoPending) _Bool photoPending; // @dynamic photoPending;
 @property(nonatomic, getter=isFindable) _Bool findable; // @dynamic findable;
 @property(nonatomic, getter=isUnderage) _Bool underage; // @dynamic underage;
+@property(nonatomic, getter=isDefaultNickname) _Bool defaultNickname; // @dynamic defaultNickname;
 @property(nonatomic, getter=isPurpleBuddyAccount) _Bool purpleBuddyAccount; // @dynamic purpleBuddyAccount;
 @property(retain, nonatomic) NSNumber *iCloudUserID; // @dynamic iCloudUserID;
 @property(retain, nonatomic) NSString *facebookUserID; // @dynamic facebookUserID;

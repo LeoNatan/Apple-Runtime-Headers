@@ -10,9 +10,6 @@
 {
 }
 
-+ (id)overlayCalendar;
-+ (id)overlayCalendarID;
-+ (void)overlayCalendarPrefChanged;
 + (id)currentLanguageCode;
 + (id)currentLocationCode;
 + (id)activeCalendar;

@@ -20,6 +20,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)initDerivedMetadataObjectFromMetadataObject:(id)arg1 withTransform:(struct CGAffineTransform)arg2 isVideoMirrored:(_Bool)arg3 rollAdjustment:(float)arg4;
 - (id)initWithTime:(CDStruct_1b6d18a9)arg1 faceKitDictionary:(id)arg2 input:(id)arg3;
 
 @end

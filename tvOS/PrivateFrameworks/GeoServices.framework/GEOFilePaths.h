@@ -10,18 +10,16 @@
 {
 }
 
-+ (id)traceExtension;
-+ (id)navTracesDirectoryPath;
++ (id)analtyicsPipelineFilePath;
++ (id)pdPlaceCacheFilePath;
 + (id)geodLibraryDirectoryURL;
 + (id)aleStringsCacheDirectoryPath;
 + (id)mapsSuggestionsCacheDirectoryPath;
-+ (id)logMessageCacheDirectoryPath;
++ (id)analyticsUploadDirectoryPath;
++ (id)imageServiceDBFileURL;
 + (id)locationShifterDBFilePath;
-+ (id)layerDataTrackerDBFilePath;
 + (id)requestCountsDBFilePath;
-+ (id)mapLayerDataDirectoryPath;
 + (id)tileCacheDirectoryPath;
-+ (id)navdCacheDirectoryPath;
 + (id)placeDataCacheDirectoryPath;
 + (id)phoneNumberMUIDMappingFilePath;
 + (id)geoServicesCacheDirectoryPath;

@@ -9,13 +9,11 @@
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDate, NSString;
+@class NSArray, NSDate, NSString, NSUUID;
 
 @interface HKOAuth2Credential : NSObject <NSCopying, NSSecureCoding>
 {
-    NSData *_accessToken;
-    NSString *_tokenType;
-    NSData *_refreshToken;
+    NSUUID *_identifier;
     NSDate *_expiration;
     NSArray *_scope;
 }
@@ -26,21 +24,27 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSArray *scope; // @synthesize scope=_scope;
 @property(readonly, copy, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
-@property(readonly, copy, nonatomic) NSData *refreshToken; // @synthesize refreshToken=_refreshToken;
-@property(readonly, copy, nonatomic) NSString *tokenType; // @synthesize tokenType=_tokenType;
-@property(readonly, copy, nonatomic) NSData *accessToken; // @synthesize accessToken=_accessToken;
+@property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (id)description;
 @property(readonly, copy, nonatomic) NSString *scopeString;
 @property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)_commonInitWithAccessToken:(id)arg1 tokenType:(id)arg2 refreshToken:(id)arg3 expiration:(id)arg4 scope:(id)arg5;
+- (id)_commonInitWithIdentifier:(id)arg1 expiration:(id)arg2 scope:(id)arg3;
 - (unsigned long long)hash;
 - (_Bool)isEqualToCredential:(id)arg1 epsilonExpiration:(double)arg2;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithAccessToken:(id)arg1 tokenType:(id)arg2 refreshToken:(id)arg3 expiration:(id)arg4 scopeString:(id)arg5;
-- (id)initWithAccessToken:(id)arg1 tokenType:(id)arg2 refreshToken:(id)arg3 expiration:(id)arg4 scope:(id)arg5;
+- (id)_refreshTokenIdentifier;
+- (id)_accessTokenIdentifier;
+- (_Bool)deleteTokensWithError:(id *)arg1;
+- (_Bool)storeRefreshToken:(id)arg1 error:(id *)arg2;
+- (id)fetchRefreshTokenWithError:(id *)arg1;
+- (_Bool)storeAccessToken:(id)arg1 error:(id *)arg2;
+- (id)fetchAccessTokenWithError:(id *)arg1;
+- (id)initWithIdentifier:(id)arg1 expiration:(id)arg2 scopeString:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 expiration:(id)arg2 scope:(id)arg3;
 - (id)init;
 
 @end

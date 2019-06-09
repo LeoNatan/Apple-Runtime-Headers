@@ -8,14 +8,16 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKCDPCodeServiceRequestAccountConfig, CKCDPCodeServiceRequestRequestContext, NSData, NSMutableArray, NSString;
+@class CKCDPCodeServiceRequestAccountConfig, CKCDPCodeServiceRequestAssetAuthorizeGetRequestOptions, CKCDPCodeServiceRequestProtectedCloudComputeMetadata, CKCDPCodeServiceRequestRequestContext, NSData, NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKCDPCodeServiceRequest : PBRequest <NSCopying>
 {
     CKCDPCodeServiceRequestAccountConfig *_accountConfig;
+    CKCDPCodeServiceRequestAssetAuthorizeGetRequestOptions *_assetAuthorizeGetRequestOptions;
     NSMutableArray *_clientConfigs;
     NSString *_functionName;
+    CKCDPCodeServiceRequestProtectedCloudComputeMetadata *_protectedCloudComputeMetadata;
     CKCDPCodeServiceRequestRequestContext *_requestContext;
     int _serializationFormat;
     NSData *_serializedParameters;
@@ -26,6 +28,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)clientConfigType;
+@property(retain, nonatomic) CKCDPCodeServiceRequestProtectedCloudComputeMetadata *protectedCloudComputeMetadata; // @synthesize protectedCloudComputeMetadata=_protectedCloudComputeMetadata;
+@property(retain, nonatomic) CKCDPCodeServiceRequestAssetAuthorizeGetRequestOptions *assetAuthorizeGetRequestOptions; // @synthesize assetAuthorizeGetRequestOptions=_assetAuthorizeGetRequestOptions;
 @property(retain, nonatomic) CKCDPCodeServiceRequestRequestContext *requestContext; // @synthesize requestContext=_requestContext;
 @property(retain, nonatomic) CKCDPCodeServiceRequestAccountConfig *accountConfig; // @synthesize accountConfig=_accountConfig;
 @property(retain, nonatomic) NSMutableArray *clientConfigs; // @synthesize clientConfigs=_clientConfigs;
@@ -42,6 +46,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasProtectedCloudComputeMetadata;
+@property(readonly, nonatomic) BOOL hasAssetAuthorizeGetRequestOptions;
 @property(readonly, nonatomic) BOOL hasRequestContext;
 @property(readonly, nonatomic) BOOL hasAccountConfig;
 - (id)clientConfigAtIndex:(unsigned long long)arg1;

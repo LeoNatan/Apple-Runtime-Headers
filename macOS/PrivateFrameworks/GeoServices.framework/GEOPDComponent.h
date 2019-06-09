@@ -14,41 +14,37 @@ __attribute__((visibility("hidden")))
 @interface GEOPDComponent : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    double _timestampFirstSeen;
     GEOPDAttribution *_attribution;
-    int _cacheControl;
     GEOPDSource *_source;
+    double _timestampFirstSeen;
+    NSMutableArray *_values;
+    NSMutableArray *_versionDomains;
+    int _cacheControl;
     int _startIndex;
     int _status;
     unsigned int _ttl;
     int _type;
-    NSMutableArray *_values;
     int _valuesAvailable;
     unsigned int _version;
-    NSMutableArray *_versionDomains;
     struct {
-        unsigned int timestampFirstSeen:1;
-        unsigned int cacheControl:1;
-        unsigned int startIndex:1;
-        unsigned int status:1;
-        unsigned int ttl:1;
-        unsigned int type:1;
-        unsigned int valuesAvailable:1;
-        unsigned int version:1;
-    } _has;
+        unsigned int has_timestampFirstSeen:1;
+        unsigned int has_cacheControl:1;
+        unsigned int has_startIndex:1;
+        unsigned int has_status:1;
+        unsigned int has_ttl:1;
+        unsigned int has_type:1;
+        unsigned int has_valuesAvailable:1;
+        unsigned int has_version:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)versionDomainType;
 + (Class)valueType;
-@property(retain, nonatomic) GEOPDSource *source; // @synthesize source=_source;
-@property(nonatomic) unsigned int version; // @synthesize version=_version;
-@property(retain, nonatomic) NSMutableArray *versionDomains; // @synthesize versionDomains=_versionDomains;
-@property(retain, nonatomic) NSMutableArray *values; // @synthesize values=_values;
-@property(retain, nonatomic) GEOPDAttribution *attribution; // @synthesize attribution=_attribution;
-@property(nonatomic) int valuesAvailable; // @synthesize valuesAvailable=_valuesAvailable;
-@property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;
-@property(nonatomic) unsigned int ttl; // @synthesize ttl=_ttl;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hasTimestampFirstSeen;
+@property(nonatomic) double timestampFirstSeen;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -57,37 +53,44 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsCacheControl:(id)arg1;
 - (id)cacheControlAsString:(int)arg1;
 @property(nonatomic) BOOL hasCacheControl;
-@property(nonatomic) int cacheControl; // @synthesize cacheControl=_cacheControl;
+@property(nonatomic) int cacheControl;
+@property(retain, nonatomic) GEOPDSource *source;
 @property(readonly, nonatomic) BOOL hasSource;
 @property(nonatomic) BOOL hasVersion;
+@property(nonatomic) unsigned int version;
 - (id)versionDomainAtIndex:(unsigned long long)arg1;
 - (unsigned long long)versionDomainsCount;
 - (void)addVersionDomain:(id)arg1;
 - (void)clearVersionDomains;
+@property(retain, nonatomic) NSMutableArray *versionDomains;
 - (id)valueAtIndex:(unsigned long long)arg1;
 - (unsigned long long)valuesCount;
 - (void)addValue:(id)arg1;
 - (void)clearValues;
+@property(retain, nonatomic) NSMutableArray *values;
+@property(retain, nonatomic) GEOPDAttribution *attribution;
 @property(readonly, nonatomic) BOOL hasAttribution;
 @property(nonatomic) BOOL hasValuesAvailable;
+@property(nonatomic) int valuesAvailable;
 @property(nonatomic) BOOL hasStartIndex;
+@property(nonatomic) int startIndex;
 @property(nonatomic) BOOL hasTtl;
+@property(nonatomic) unsigned int ttl;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
+@property(nonatomic) int status;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
 - (BOOL)statusCodeIsValid;
-@property(nonatomic) BOOL hasTimestampFirstSeen;
-@property(nonatomic) double timestampFirstSeen;
 
 @end
 

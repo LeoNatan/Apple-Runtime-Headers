@@ -9,6 +9,7 @@
 @class AVCaptureDevice, AVWeakReference, NSArray;
 @protocol AVCallbackCancellation;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceInputInternal : NSObject
 {
     AVCaptureDevice *device;

@@ -18,7 +18,7 @@
 #import <FinderKit/TQLPreviewWindowControllerProtocol-Protocol.h>
 #import <FinderKit/TTypeSelectDelegate-Protocol.h>
 
-@class FI_TNodeViewSettings, NSString, NSView;
+@class FI_TBrowserContainerController, FI_TNodeViewSettings, NSEvent, NSString, NSView;
 
 __attribute__((visibility("hidden")))
 @interface FI_TBaseBrowserViewController : FI_TViewController <NSDraggingSource, NSSharingServiceDelegate, NSSharingServicePickerDelegate, TBrowserViewDelegate, TDropOperationDelegateProtocol, TNodeTaskDelegateProtocol, TQLPreviewWindowControllerProtocol, TTypeSelectDelegate, TMarkTornDown, NSTouchBarDelegate, TFloatingInputWindowDelegateProtocol>
@@ -30,9 +30,11 @@ __attribute__((visibility("hidden")))
     _Bool _isEditingTags;
     _Bool _isTornDown;
     _Bool _darkBackground;
+    struct TNSWeakPtr<FI_TBrowserContainerController, void> _weakContainerController;
     _Bool _allowsDraggingFilesIn;
     struct TRef<__CFMachPort *, TRetainReleasePolicy<CFMachPortRef>> _modifierFlagsEventMonitor;
     struct TRef<__CFRunLoopSource *, TRetainReleasePolicy<CFRunLoopSourceRef>> _modifierFlagsEventSource;
+    struct TNSRef<NSEvent, void> _mouseDownEventForDrag;
     struct TFENode _nodeToDoubleClick;
     struct TFENodeVector fOrderedSelection;
     struct TNSRef<NSSharingServicePicker, void> _toolbarSharingServicePicker;
@@ -49,10 +51,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)addTagsItemsToFileMenu:(id)arg1;
++ (_Bool)canDownloadNow:(const struct TFENode *)arg1;
 + (struct TTypeSelectController *)typeSelectControllerWithDelegate:(id)arg1;
 @property(readonly, nonatomic, getter=isDarkBackground) _Bool darkBackground; // @synthesize darkBackground=_darkBackground;
 @property struct TFENode nodeToDoubleClick; // @synthesize nodeToDoubleClick=_nodeToDoubleClick;
-@property(readonly, getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(readonly, nonatomic) _Bool isEditingTags; // @synthesize isEditingTags=_isEditingTags;
 @property(nonatomic) _Bool showIconPreview; // @synthesize showIconPreview=_showIconPreview;
 @property(nonatomic) double textSize; // @synthesize textSize=_textSize;
@@ -107,8 +110,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)validateRemoveTag:(id)arg1;
 - (void)handleMoveToTrashCommand:(const struct TFENodeVector *)arg1 immediately:(_Bool)arg2;
 - (void)handleMoveToTrashOrPutBackCommand:(const struct TFENodeVector *)arg1;
-- (void)cmdEvictNow:(id)arg1;
-- (_Bool)validateEvictNow:(id)arg1;
+- (void)cmdPinFolders:(id)arg1;
+- (_Bool)validatePinFolders:(id)arg1;
+- (void)cmdRemoveDownload:(id)arg1;
+- (_Bool)validateRemoveDownload:(id)arg1;
 - (void)cmdDownloadNow:(id)arg1;
 - (_Bool)validateDownloadNow:(id)arg1;
 - (void)cmdMoveToTrashFromToolbar:(id)arg1;
@@ -146,8 +151,6 @@ __attribute__((visibility("hidden")))
 - (id)anchoringViewForSharingService:(id)arg1 showRelativeToRect:(struct CGRect *)arg2 preferredEdge:(unsigned long long *)arg3;
 - (void)sharingServicePicker:(id)arg1 didChooseSharingService:(id)arg2;
 - (void)sharingService:(id)arg1 willShareItems:(id)arg2;
-- (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
-- (void)handlePreflightServicewithItems:(id)arg1 service:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
 - (id)sharingService:(id)arg1 sourceWindowForShareItems:(id)arg2 sharingContentScope:(long long *)arg3;
 - (id)sharingService:(id)arg1 transitionImageForShareItem:(id)arg2 contentRect:(struct CGRect *)arg3;
@@ -167,7 +170,6 @@ __attribute__((visibility("hidden")))
 - (id)dragFlockingImageComponentsForNode:(const struct TFENode *)arg1 dropTargetView:(id)arg2;
 - (unsigned long long)dragOperationWhenMovingInsideTargetAndCheckingModifiers;
 - (struct TFENode)nodeForDraggingItem:(id)arg1;
-- (_Bool)checkForTEFFilesInContainer:(const struct TFENode *)arg1;
 - (void)updateDraggingItemsForDrag:(id)arg1 dropTargetView:(id)arg2;
 - (_Bool)waitingForThumbnailForNode:(const struct TFENode *)arg1;
 - (_Bool)performDragOperation:(id)arg1 dropTargetView:(id)arg2;
@@ -183,6 +185,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)ignoreModifierKeysForDraggingSession:(id)arg1;
 - (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
+- (id)beginDraggingNodes:(const struct TFENodeVector *)arg1 mouseDownEvent:(id)arg2 dragSourceView:(id)arg3;
 - (id)beginDraggingNodes:(const struct TFENodeVector *)arg1 mouseDownEvent:(id)arg2;
 - (_Bool)isActiveQLWindowController;
 - (void)resignActiveQLWindowController;
@@ -247,14 +250,16 @@ __attribute__((visibility("hidden")))
 - (void)windowDidBecomeMain:(id)arg1;
 - (void)browserViewDidMoveToWindow;
 - (void)browserViewWillMoveToWindow:(id)arg1;
+@property(retain, nonatomic) NSEvent *mouseDownEventForDrag; // @dynamic mouseDownEventForDrag;
 - (void)checkDarkBackground;
 - (void)browserViewEffectiveAppearanceChanged;
 - (void)browserViewBackingPropertiesChanged;
 @property(readonly, nonatomic) double scaleFactor;
 @property(retain) FI_TNodeViewSettings *viewSettings; // @dynamic viewSettings;
-- (void)flushNodeEventsWithCompletion:(const function_b1fce659 *)arg1;
+- (void)setAccessibilityForNode:(const struct TFENode *)arg1 inView:(id)arg2;
+- (void)flushNodeEventsWithCompletion:(unique_function_63952f55 *)arg1;
 - (void)cancelDelayedNodeEventHandling;
-- (void)delayNodeEventHandling:(double)arg1;
+- (void)delayNodeEventHandling:(duration_3c68f186)arg1;
 - (void)flushNodeEvents;
 - (void)openSelectedNodes:(const struct TFENodeVector *)arg1 modifiers:(unsigned long long)arg2 allowTabs:(_Bool)arg3;
 - (void)openSelectionWithModifiers:(unsigned long long)arg1 allowTabs:(_Bool)arg2;
@@ -273,10 +278,12 @@ __attribute__((visibility("hidden")))
 - (const struct TFENodeVector *)resolvedTargetPath;
 - (struct TFENode)focusNode;
 - (const struct TFENode *)target;
+@property(nonatomic) __weak FI_TBrowserContainerController *containerController; // @dynamic containerController;
 - (id)scrollView;
 - (id)browserView;
 - (void)aboutToTearDown;
 - (void)viewLoaded;
+- (id)performSelector:(SEL)arg1 withObject:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -12,6 +12,7 @@
 @class NSArray, NSString, SKUIClientContext, SKUIColorScheme, SKUILayoutCache, SKUIProductPageHeaderViewController, SKUIProductPageTableView, UIColor, UITableView;
 @protocol SKUIProductPageChildViewController, SKUIProductPageChildViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     SKUIClientContext *_clientContext;

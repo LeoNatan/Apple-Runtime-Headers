@@ -6,7 +6,7 @@
 
 #import <Mail/MFRemoteStoreAccount.h>
 
-@class MFEWSAccountTaskManager, MFEWSConnection, MFEWSDeliveryAccount, MFEWSGateway, NSDate, NSDictionary, NSMutableDictionary, NSOperationQueue, NSString, NSTimer, NSURL, NSUUID;
+@class ECExchangeAccount, MFEWSAccountTaskManager, MFEWSConnection, MFEWSDeliveryAccount, MFEWSGateway, NSDate, NSDictionary, NSMutableDictionary, NSOperationQueue, NSString, NSTimer, NSURL, NSUUID;
 
 @interface MFEWSAccount : MFRemoteStoreAccount
 {
@@ -34,6 +34,7 @@
 + (void)resetAllFolderHierarchySyncStates;
 + (id)standardSSLPorts;
 + (id)standardPorts;
++ (id)csAccountTypeString;
 + (id)accountTypeString;
 @property(readonly, nonatomic) MFEWSDeliveryAccount *ewsDeliveryAccount; // @synthesize ewsDeliveryAccount=_ewsDeliveryAccount;
 @property(readonly, nonatomic) NSOperationQueue *autodiscoverQueue; // @synthesize autodiscoverQueue=_autodiscoverQueue;
@@ -108,9 +109,10 @@
 - (BOOL)canMailboxBeRenamed:(id)arg1;
 - (id)_createMailboxWithParent:(id)arg1 displayName:(id)arg2 localizedDisplayName:(id)arg3 type:(int)arg4;
 - (id)createMailboxWithParent:(id)arg1 displayName:(id)arg2 localizedDisplayName:(id)arg3;
-- (void)setEmailAddresses:(id)arg1;
+- (void)setEmailAddressStrings:(id)arg1;
 - (BOOL)_readMailboxCache;
-- (id)_mailDataclassPropertyForSpecialMailboxType:(int)arg1;
+- (void)_setSpecialMailboxRelativePath:(id)arg1 forType:(int)arg2;
+- (id)_specialMailboxRelativePathForType:(int)arg1;
 - (id)_defaultSpecialMailboxRelativePathForType:(int)arg1;
 - (BOOL)_setChildren:(id)arg1 forMailbox:(id)arg2;
 - (void)_synchronouslyLoadListingForParent:(id)arg1;
@@ -149,14 +151,13 @@
 - (void)setSecurityLayerType:(long long)arg1;
 - (long long)securityLayerType;
 - (BOOL)requiresAuthentication;
-- (long long)defaultSecurePortNumber;
-- (long long)defaultPortNumber;
 - (void)dealloc;
 - (id)_newTaskManager;
 - (id)init;
 - (id)initWithSystemAccount:(id)arg1;
 
 // Remaining properties
+@property(readonly) ECExchangeAccount *baseAccount; // @dynamic baseAccount;
 @property(readonly, nonatomic) MFEWSAccountTaskManager *taskManager; // @dynamic taskManager;
 
 @end

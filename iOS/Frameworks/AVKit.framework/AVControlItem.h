@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVButton, NSString, UIImage, UIView;
+@class AVButton, NSString, UIColor, UIImage, UIView;
 
 @interface AVControlItem : NSObject
 {
@@ -16,8 +16,10 @@
     NSString *_title;
     UIImage *_image;
     CDUnknownBlockType _action;
+    UIColor *_tintColor;
 }
 
+@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(copy, nonatomic) CDUnknownBlockType action; // @synthesize action=_action;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
@@ -31,6 +33,7 @@
 - (void)setAccessibilityAttributedLabel:(id)arg1;
 - (void)setAccessibilityLabel:(id)arg1;
 @property(readonly, nonatomic) UIView *view;
+- (void)_updateTintColor;
 - (id)initWithTitle:(id)arg1 type:(long long)arg2;
 
 @end

@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)_shouldDefaultToTouches;
 - (id)_gateGestureTypeString;
-- (void)_delayTouch:(id)arg1 forEvent:(id)arg2;
 - (void)setEnabled:(_Bool)arg1;
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
@@ -31,10 +30,12 @@ __attribute__((visibility("hidden")))
 - (void)_timeOut;
 - (void)_systemGestureStateChanged:(id)arg1;
 - (void)_resetGestureRecognizer;
+- (void)_notifyWindowNoLongerAwaitingSystemGestureNotification:(id)arg1;
 - (void)setDelaysTouchesEnded:(_Bool)arg1;
 - (void)setDelaysTouchesBegan:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithWindow:(id)arg1 type:(unsigned char)arg2;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end

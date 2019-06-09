@@ -6,27 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotoLibrary/NSSecureCoding-Protocol.h>
+@class NSDictionary, NSURL;
 
-@class NSData, NSDictionary, NSURL;
-
-@interface PHLIngestAsset : NSObject <NSSecureCoding>
+@interface PHLIngestAsset : NSObject
 {
-    BOOL _didDecodeURLFromBookmarkData;
     NSURL *_assetURL;
     NSDictionary *_metadataProperties;
-    NSData *_bookmarkData;
 }
 
-+ (BOOL)supportsSecureCoding;
-@property(retain) NSData *bookmarkData; // @synthesize bookmarkData=_bookmarkData;
-@property BOOL didDecodeURLFromBookmarkData; // @synthesize didDecodeURLFromBookmarkData=_didDecodeURLFromBookmarkData;
 @property(readonly) NSDictionary *metadataProperties; // @synthesize metadataProperties=_metadataProperties;
 @property(readonly) NSURL *assetURL; // @synthesize assetURL=_assetURL;
 - (void).cxx_destruct;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithAssetURL:(id)arg1 metadataProperties:(id)arg2 bookmarkData:(id)arg3;
 - (id)initWithAssetURL:(id)arg1 metadataProperties:(id)arg2;
 - (id)initWithAssetURL:(id)arg1;

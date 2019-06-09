@@ -37,6 +37,7 @@
 - (void)printCallTreeToFile:(struct __sFILE *)arg1 options:(unsigned long long)arg2;
 - (id)stringFromCallTreeIndentIfNoBranches:(BOOL)arg1;
 - (id)stringFromCallTreeIndentIfNoBranches:(BOOL)arg1 showPseudoNodes:(BOOL)arg2;
+- (id)stringFromCallTreeWithOptions:(unsigned long long)arg1;
 - (BOOL)callTreeHasBranches;
 - (id)fullOutputWithThreshold:(unsigned int)arg1;
 - (id)fullOutputWithThreshold:(unsigned int)arg1 showPseudoNodes:(BOOL)arg2;

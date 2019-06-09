@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class _CDPeriodicSchedulerJob;
+#import <CoreDuet/NSSecureCoding-Protocol.h>
 
-@interface _DKSyncType : NSObject
+@protocol OS_xpc_object;
+
+@interface _DKSyncType : NSObject <NSSecureCoding>
 {
     _Bool _isSingleDevice;
     _Bool _forceSync;
@@ -19,13 +21,14 @@
     _Bool _didReceivePush;
     _Bool _didAddSyncedEvents;
     _Bool _didDeleteSyncedEvents;
-    _Bool _didSetMediumUrgency;
     unsigned long long _urgency;
-    _CDPeriodicSchedulerJob *_periodicJob;
+    double _periodicSyncInterval;
+    NSObject<OS_xpc_object> *_xpcActivity;
 }
 
-@property(retain, nonatomic) _CDPeriodicSchedulerJob *periodicJob; // @synthesize periodicJob=_periodicJob;
-@property(nonatomic) _Bool didSetMediumUrgency; // @synthesize didSetMediumUrgency=_didSetMediumUrgency;
++ (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *xpcActivity; // @synthesize xpcActivity=_xpcActivity;
+@property(nonatomic) double periodicSyncInterval; // @synthesize periodicSyncInterval=_periodicSyncInterval;
 @property(nonatomic) _Bool didDeleteSyncedEvents; // @synthesize didDeleteSyncedEvents=_didDeleteSyncedEvents;
 @property(nonatomic) _Bool didAddSyncedEvents; // @synthesize didAddSyncedEvents=_didAddSyncedEvents;
 @property(nonatomic) _Bool didReceivePush; // @synthesize didReceivePush=_didReceivePush;
@@ -37,6 +40,9 @@
 @property(nonatomic) _Bool forceSync; // @synthesize forceSync=_forceSync;
 @property(readonly, nonatomic) _Bool isSingleDevice; // @synthesize isSingleDevice=_isSingleDevice;
 - (void).cxx_destruct;
+- (_Bool)isEqualToSyncType:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (void)mergeType:(id)arg1;
 - (id)initWithIsSingleDevice:(_Bool)arg1;

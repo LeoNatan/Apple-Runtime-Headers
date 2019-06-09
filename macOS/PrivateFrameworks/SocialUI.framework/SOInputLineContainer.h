@@ -6,20 +6,13 @@
 
 #import <AppKit/NSView.h>
 
-@class NSVisualEffectView;
-
 @interface SOInputLineContainer : NSView
 {
     BOOL _drawBorder;
-    NSVisualEffectView *_blurView;
 }
 
 + (double)inputLineBorderWidth;
-@property(retain, nonatomic) NSVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(nonatomic) BOOL drawBorder; // @synthesize drawBorder=_drawBorder;
-- (void).cxx_destruct;
-- (void)setupBlurView;
-- (void)setToDefaultAppearance;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (id)initWithCoder:(id)arg1;

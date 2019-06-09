@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (id)defaultReorderControlImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultReorderControlImageForCell:(id)arg1 forUserInterfaceStyle:(int)arg2;
 - (struct CGSize)defaultReorderControlSizeForCell:(id)arg1 inTableView:(id)arg2;
-- (id)defaultMultiSelectHighlightedImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultFocusedMultiSelectSelectedImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultMultiSelectSelectedImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultMultiSelectSelectedImageForCell:(id)arg1 forUserInterfaceStyle:(int)arg2;
@@ -45,14 +44,13 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)defaultEditControlSizeForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultFocusedCheckmarkImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultCheckmarkImageForCell:(id)arg1 inTableView:(id)arg2;
-- (id)defaultCheckmarkImageForCell:(id)arg1 forUserInterfaceStyle:(int)arg2;
+- (id)_defaultCheckmarkImageForCell:(id)arg1 tableView:(id)arg2 forUserInterfaceStyle:(int)arg3;
 - (id)defaultFocusedDisclosureImageForCell:(id)arg1 inTableView:(id)arg2;
-- (id)defaultDisclosurePressedImageForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultDisclosureImageForCell:(id)arg1 inTableView:(id)arg2;
-- (id)defaultDisclosureImageForCell:(id)arg1 forUserInterfaceStyle:(int)arg2;
+- (id)_defaultDisclosureImageForCell:(id)arg1 tableView:(id)arg2 forUserInterfaceStyle:(int)arg3;
+- (id)_symbolImageNamed:(id)arg1 font:(id)arg2 cell:(id)arg3 tableView:(id)arg4;
 - (id)_kitImageNamed:(id)arg1 withTint:(id)arg2 flippedForRightToLeftLayoutDirection:(_Bool)arg3;
-- (id)defaultFooterBackgroundColorForView:(id)arg1 inTableView:(id)arg2;
-- (id)defaultHeaderBackgroundColorForView:(id)arg1 inTableView:(id)arg2;
+- (id)defaultHeaderFooterBackgroundColorForView:(id)arg1 inTableView:(id)arg2;
 - (id)defaultFooterTextColorForView:(id)arg1 inTableView:(id)arg2;
 - (id)defaultFooterTextColorForTableViewStyle:(int)arg1;
 - (id)defaultHeaderTextColorForView:(id)arg1 inTableView:(id)arg2;
@@ -80,6 +78,10 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)defaultLayoutMarginsForTableView:(id)arg1;
 - (float)defaultPaddingBetweenHeaderAndRowsForTableView:(id)arg1;
 - (float)defaultPaddingBetweenRowsForTableView:(id)arg1;
+- (float)interspaceBetweenInnerAccessoryIdentifier:(id)arg1 outerAccessoryIdentifier:(id)arg2 forCell:(id)arg3 inTableView:(id)arg4 trailingAccessoryGroup:(_Bool)arg5;
+- (float)minimumImageViewAndAccessoryLayoutWidth;
+- (float)defaultTrailingContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
+- (float)defaultLeadingContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultContentAccessoryPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultContentReorderPaddingForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultContentEditPaddingForCell:(id)arg1 inTableView:(id)arg2;
@@ -92,6 +94,7 @@ __attribute__((visibility("hidden")))
 - (float)defaultRowHeightForTableView:(id)arg1 cellStyle:(int)arg2;
 - (int)defaultSeparatorStyleForTableViewStyle:(int)arg1;
 - (id)defaultSelectionEffectsForCell:(id)arg1 inTableView:(id)arg2;
+- (id)defaultMultiSelectBackgroundColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultSelectionTintColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultBackgroundColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultSeparatorColorForTableViewStyle:(int)arg1;

@@ -8,16 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEOTransitIncidentItem : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_transitIncidentTitle;
     NSString *_transitLineMuid;
+    struct {
+        unsigned int read_transitIncidentTitle:1;
+        unsigned int read_transitLineMuid:1;
+        unsigned int wrote_transitIncidentTitle:1;
+        unsigned int wrote_transitLineMuid:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *transitLineMuid; // @synthesize transitLineMuid=_transitLineMuid;
-@property(retain, nonatomic) NSString *transitIncidentTitle; // @synthesize transitIncidentTitle=_transitIncidentTitle;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,10 +33,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *transitLineMuid;
 @property(readonly, nonatomic) _Bool hasTransitLineMuid;
+- (void)_readTransitLineMuid;
+@property(retain, nonatomic) NSString *transitIncidentTitle;
 @property(readonly, nonatomic) _Bool hasTransitIncidentTitle;
+- (void)_readTransitIncidentTitle;
 
 @end
 

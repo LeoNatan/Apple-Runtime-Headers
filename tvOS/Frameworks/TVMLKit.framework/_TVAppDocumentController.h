@@ -4,28 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <TVMLKit/TVDocumentViewController.h>
 
+#import <TVMLKit/IKAppDocumentDelegate-Protocol.h>
 #import <TVMLKit/UIGestureRecognizerDelegate-Protocol.h>
+#import <TVMLKit/_TVApplicationInspectorDocumentProvider-Protocol.h>
 #import <TVMLKit/_TVIKAppDocumentDelegate-Protocol.h>
 #import <TVMLKit/_TVModalPresenterFocusing-Protocol.h>
 #import <TVMLKit/_TVPagePerformanceDelegate-Protocol.h>
 
-@class IKAppDocument, NSArray, NSString, TVMediaQueryEvaluator, UITapGestureRecognizer, UIView, _TVPagePerformanceController;
+@class IKAppDocument, NSArray, NSString, TVMediaQueryEvaluator, UITapGestureRecognizer, UIView, UIViewController, _TVPagePerformanceController;
 @protocol UIFocusEnvironment, UIFocusItemContainer, _TVAppDocumentControllerDelegate;
 
-@interface _TVAppDocumentController : UIViewController <_TVIKAppDocumentDelegate, UIGestureRecognizerDelegate, _TVModalPresenterFocusing, _TVPagePerformanceDelegate>
+@interface _TVAppDocumentController : TVDocumentViewController <UIGestureRecognizerDelegate, _TVModalPresenterFocusing, _TVPagePerformanceDelegate, _TVApplicationInspectorDocumentProvider, _TVIKAppDocumentDelegate, IKAppDocumentDelegate>
 {
     struct {
-        unsigned int mediaQueryEvaluatorForAppDocumentController:1;
+        _Bool hasMediaQueryEvaluator;
+        _Bool hasWillHostTemplateViewController;
+        _Bool hasDidHostTemplateViewController;
     } _delegateFlags;
     _Bool _opaque;
     _Bool _dismissAppOnMenu;
     _Bool _applicationDeactivatedOnMenu;
     _Bool _transitioning;
     _Bool _visualEffectDisablementNeeded;
+    _Bool _presentedModal;
+    _Bool _adoptsContext;
     IKAppDocument *_appDocument;
-    id <_TVAppDocumentControllerDelegate> _delegate;
+    id <_TVAppDocumentControllerDelegate> _appDelegate;
     UIViewController *_templateViewController;
     CDUnknownBlockType _menuGestureHandler;
     TVMediaQueryEvaluator *_mediaQueryEvaluator;
@@ -34,6 +40,8 @@
     UIView *_pagePerformanceView;
 }
 
+@property(nonatomic) _Bool adoptsContext; // @synthesize adoptsContext=_adoptsContext;
+@property(nonatomic, getter=isPresentedModal) _Bool presentedModal; // @synthesize presentedModal=_presentedModal;
 @property(retain, nonatomic) UIView *pagePerformanceView; // @synthesize pagePerformanceView=_pagePerformanceView;
 @property(retain, nonatomic) _TVPagePerformanceController *pagePerformance; // @synthesize pagePerformance=_pagePerformance;
 @property(nonatomic, getter=isVisualEffectDisablementNeeded) _Bool visualEffectDisablementNeeded; // @synthesize visualEffectDisablementNeeded=_visualEffectDisablementNeeded;
@@ -45,9 +53,11 @@
 @property(copy, nonatomic) CDUnknownBlockType menuGestureHandler; // @synthesize menuGestureHandler=_menuGestureHandler;
 @property(nonatomic) _Bool opaque; // @synthesize opaque=_opaque;
 @property(retain, nonatomic) UIViewController *templateViewController; // @synthesize templateViewController=_templateViewController;
-@property(nonatomic) __weak id <_TVAppDocumentControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <_TVAppDocumentControllerDelegate> appDelegate; // @synthesize appDelegate=_appDelegate;
 @property(retain, nonatomic) IKAppDocument *appDocument; // @synthesize appDocument=_appDocument;
 - (void).cxx_destruct;
+- (id)activeDocument;
+- (_Bool)ppt_isLoading;
 - (void)pagePerformanceController:(id)arg1 didUpdateMetrics:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_menuGestureHandler:(id)arg1;
@@ -57,15 +67,22 @@
 - (_Bool)_tvTabBarShouldOverlap;
 - (_Bool)_isFlowcaseStack;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
+- (void)_didHostTemplateViewController:(id)arg1 usedTransitions:(_Bool)arg2;
+- (void)_willHostTemplateViewController:(id)arg1 usesTransitions:(_Bool *)arg2;
 - (void)_updateTemplateViewController;
+- (void)_updateModalPresentationStateWithTemplateView:(id)arg1;
 - (id)_alertControllerWithError:(id)arg1;
 - (void)_updateIdleModeStatus;
 - (void)_markAndNotifyStylesDirty;
+- (void)didHostTemplateViewController:(id)arg1 usedTransitions:(_Bool)arg2;
+- (void)willHostTemplateViewController:(id)arg1 usesTransitions:(_Bool *)arg2;
 - (void)scrollToTop;
+- (void)documentDidUpdateImplicitly:(id)arg1;
 - (id)impressionableViewElementsForDocument:(id)arg1;
 - (_Bool)document:(id)arg1 evaluateStyleMediaQuery:(id)arg2;
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
+- (_Bool)tv_isPresentedModalForDocument:(id)arg1;
 - (struct CGSize)tv_adjustedWindowSizeForDocument:(id)arg1;
 - (id)childViewControllerForStatusBarHidden;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -74,8 +91,6 @@
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
 - (long long)preferredStatusBarStyle;
 - (void)viewDidLayoutSubviews;
-- (void)didMoveToParentViewController:(id)arg1;
-- (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

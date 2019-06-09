@@ -17,15 +17,14 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (_Bool)_shouldCacheResolvedResults;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
--     // Error parsing type: B32@0:8r^{LSPluginData=iIIQIIIIIIIIIIIIIQQIIIIIC}16^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[12{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}24, name: matchesPlugin:withDatabase:
+- (_Bool)matchesPlugin:(unsigned int)arg1 pluginData:(const struct LSPluginData *)arg2 withDatabase:(id)arg3;
 - (id)_queryDictionary;
-- (void)dealloc;
 - (id)_initWithQueryDictionary:(id)arg1 applyFilter:(CDUnknownBlockType)arg2;
 
 @end

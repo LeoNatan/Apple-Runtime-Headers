@@ -18,8 +18,9 @@
 + (Class)validatedClass;
 + (id)validatorWithObject:(id)arg1;
 - (void).cxx_destruct;
+- (BOOL)isValidWithAPIType:(unsigned long long)arg1 withError:(id *)arg2;
 - (BOOL)isValidWithError:(id *)arg1;
-- (BOOL)_checkTotal:(id)arg1 error:(id *)arg2;
+- (BOOL)_checkTotal:(id)arg1 withAPIType:(unsigned long long)arg2 error:(id *)arg3;
 - (id)initWithPaymentRequest:(id)arg1;
 
 // Remaining properties

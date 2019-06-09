@@ -89,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (void)setupTransport;
 - (long)generateConnectionData:(char **)arg1 forCallID:(unsigned long)arg2 connectionDataSize:(int *)arg3 nonCellularCandidateTimeout:(double)arg4;
 - (id)connectionDataUsingRelay:(_Bool)arg1 isInitialRelay:(_Bool)arg2 nonCellularCandidateTimeout:(double)arg3 error:(id *)arg4;
+- (id)connectionData:(char *)arg1 connectionDataSizeInBytes:(int)arg2 shouldUseRelay:(_Bool)arg3;
 - (void)getConnectionDataUsingRelay:(_Bool)arg1 isInitialRelay:(_Bool)arg2 nonCellularCandidateTimeout:(double)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (_Bool)getConnectionSetupData:(id *)arg1 withOptions:(id)arg2 error:(id *)arg3;
 - (id)createRelayUpdateDictionary:(id)arg1;

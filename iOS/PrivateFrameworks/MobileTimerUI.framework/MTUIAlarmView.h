@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <AppSupportUI/NUIContainerGridView.h>
 
 @class MTUIDigitalClockLabel, NSArray, NSDictionary, NSString, UIFont, UILabel, UISwitch;
 
-@interface MTUIAlarmView : UIView
+@interface MTUIAlarmView : NUIContainerGridView
 {
     id _contentSizeFontAdjustObserver;
     _Bool _shouldAddLayoutConstraints;
-    _Bool _switchVisible;
     long long _style;
     MTUIDigitalClockLabel *_timeLabel;
     NSString *_name;
@@ -21,12 +20,13 @@
     UIFont *_nameFont;
     UIFont *_repeatFont;
     UISwitch *_enabledSwitch;
+    NSDictionary *_viewsByIdentifier;
     NSArray *_currentConstraints;
 }
 
 @property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
-@property(nonatomic, getter=isSwitchVisible) _Bool switchVisible; // @synthesize switchVisible=_switchVisible;
 @property(nonatomic) _Bool shouldAddLayoutConstraints; // @synthesize shouldAddLayoutConstraints=_shouldAddLayoutConstraints;
+@property(readonly, nonatomic) NSDictionary *viewsByIdentifier; // @synthesize viewsByIdentifier=_viewsByIdentifier;
 @property(readonly, nonatomic) UISwitch *enabledSwitch; // @synthesize enabledSwitch=_enabledSwitch;
 @property(retain, nonatomic) UIFont *repeatFont; // @synthesize repeatFont=_repeatFont;
 @property(retain, nonatomic) UIFont *nameFont; // @synthesize nameFont=_nameFont;
@@ -39,9 +39,8 @@
 - (void)_loadFontsWithTextStyles;
 - (void)setName:(id)arg1 andRepeatText:(id)arg2 textColor:(id)arg3;
 - (void)updatePreferredMaxLayoutWidthForDetailContainerLabels;
-- (void)updateConstraints;
-@property(readonly, nonatomic) NSDictionary *viewsByIdentifier;
 - (void)tearDownContentSizeChangeObserver;
+@property(nonatomic, getter=isSwitchVisible) _Bool switchVisible;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

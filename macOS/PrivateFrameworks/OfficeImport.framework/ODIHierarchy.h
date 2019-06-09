@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, ODIState;
 
+__attribute__((visibility("hidden")))
 @interface ODIHierarchy : NSObject
 {
     int mType;

@@ -9,6 +9,7 @@
 @class NSArray, NSHashTable;
 @protocol _MKAnimationStackViewDelegate, _MKStackViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _MKStackView : UIView
 {
     NSArray *_stackConstraints;

@@ -15,10 +15,10 @@
 + (id)properties;
 
 // Remaining properties
-@property(retain, nonatomic) HMSoftwareUpdateDocumentationMetadata *documentationMetadata; // @dynamic documentationMetadata;
-@property(retain, nonatomic) NSNumber *downloadSize; // @dynamic downloadSize;
-@property(retain, nonatomic) HMFSoftwareVersion *softwareVersion; // @dynamic softwareVersion;
-@property(retain, nonatomic) NSNumber *state; // @dynamic state;
+@property(copy, nonatomic) HMSoftwareUpdateDocumentationMetadata *documentationMetadata; // @dynamic documentationMetadata;
+@property(copy, nonatomic) NSNumber *downloadSize; // @dynamic downloadSize;
+@property(copy, nonatomic) HMFSoftwareVersion *softwareVersion; // @dynamic softwareVersion;
+@property(copy, nonatomic) NSNumber *state; // @dynamic state;
 
 @end
 

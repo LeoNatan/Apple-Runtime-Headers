@@ -6,9 +6,13 @@
 
 #import <MapsSuggestions/NSObject-Protocol.h>
 
-@class NSData;
+@class CNContact, GEOMapItemStorage, NSData;
 
 @protocol MapsSuggestionsSourceProxy <NSObject>
+- (void)updateGraphWithHandler:(void (^)(_Bool))arg1;
+- (void)feedbackForContact:(CNContact *)arg1 action:(int)arg2;
+- (void)feedbackForMapItem:(GEOMapItemStorage *)arg1 action:(int)arg2;
+- (void)feedbackForEntryData:(NSData *)arg1 action:(int)arg2;
 - (void)removeEntryData:(NSData *)arg1 behavior:(int)arg2 handler:(void (^)(void))arg3;
 - (void)forceEarlyUpdateForType:(int)arg1 handler:(void (^)(void))arg2;
 - (void)stopMonitoringWithHandler:(void (^)(void))arg1;

@@ -23,13 +23,12 @@
     NSObject<OS_dispatch_queue> *_deviceQueue;
 }
 
-+ (id)_transactionName:(id)arg1;
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
 - (void)daemonReady:(id)arg1;
 - (void)_disconnectFromService:(id)arg1;
-- (void)_disconnectFromServices;
+- (void)_disconnectFromServicesStopConnecting:(_Bool)arg1;
 - (void)_connectToService:(id)arg1;
 - (void)_connectToServices;
 - (void)_subscribeBluetoothStateUpdates;

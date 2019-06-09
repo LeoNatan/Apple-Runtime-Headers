@@ -34,7 +34,6 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic, getter=isEmpty) _Bool empty; // @synthesize empty=_empty;
 @property(nonatomic, getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
-@property(readonly, nonatomic) NSSet *dirtyProperties; // @synthesize dirtyProperties=_dirtyProperties;
 @property(nonatomic) _Bool requiresTouchID; // @synthesize requiresTouchID=_requiresTouchID;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *credentialType;
@@ -56,6 +55,7 @@
 - (id)credentialItems;
 - (void)_clearDirtyProperties;
 - (void)_markPropertyDirty:(id)arg1;
+@property(readonly, nonatomic) NSSet *dirtyProperties;
 - (void)_setOwningAccount:(id)arg1;
 - (id)_encodeProtobufData;
 - (id)_encodeProtobuf;

@@ -4,27 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CarouselUIServices/CUISNotificationCenterDefaultCellFactoryBase.h>
 
 #import <CarouselUIServices/CUISNotificationCenterCellFactory-Protocol.h>
 
-@class CUISNotificationCenterCell, NSArray, NSDateFormatter, NSString;
+@class NSArray, NSString;
 @protocol CUISNotificationCenterCellFactoryDelegate;
 
-@interface CUISNotificationCenterDefaultCellFactory : NSObject <CUISNotificationCenterCellFactory>
+@interface CUISNotificationCenterDefaultCellFactory : CUISNotificationCenterDefaultCellFactoryBase <CUISNotificationCenterCellFactory>
 {
-    NSDateFormatter *_dateFormatter;
-    CUISNotificationCenterCell *_sizingCell;
     id <CUISNotificationCenterCellFactoryDelegate> _delegate;
 }
 
++ (Class)classFactory;
 @property(nonatomic) __weak id <CUISNotificationCenterCellFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_localeChanged;
-- (id)_formattedDateStringForDate:(id)arg1;
-- (id)_formattedStringForAttachmentType:(int)arg1 count:(unsigned int)arg2;
-- (id)_attachmentDescriptionForBulletin:(id)arg1;
-- (void)cellDidEndDisplaying:(id)arg1;
 - (_Bool)willReconfigureCellWhenModifyingBulletin:(id)arg1 withBulletin:(id)arg2;
 - (void)configureCell:(id)arg1 withBulletin:(id)arg2 appName:(id)arg3 icon:(id)arg4;
 - (void)configureCell:(id)arg1 withBulletin:(id)arg2 appName:(id)arg3 icon:(id)arg4 iconStyle:(unsigned int)arg5;
@@ -33,19 +27,16 @@
 - (float)heightForCellDisplayingBulletin:(id)arg1 allBulletins:(id)arg2;
 - (float)heightForCellDisplayingBulletin:(id)arg1;
 - (float)heightForCellDisplayingBulletin:(id)arg1 attachment:(id)arg2;
-- (id)_sizingCellForBulletinCount:(unsigned int)arg1;
 - (id)newCellForBulletin:(id)arg1;
 - (id)reuseIdentifierForBulletin:(id)arg1;
-@property(readonly, nonatomic) NSArray *supportedSectionIDs;
 - (_Bool)willProvideCellForBulletin:(id)arg1;
-- (void)dealloc;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) NSArray *supportedSectionIDs;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <Mail/NSObject-Protocol.h>
 
-@class NSDate, NSString;
+@class ECSubject, NSDate, NSString;
 @protocol IMAPMessageDataSource;
 
 @protocol IMAPMessage <NSObject>
@@ -14,7 +14,7 @@
 @property(readonly, nonatomic) BOOL hasAttachments;
 @property(readonly, copy, nonatomic) NSString *mailboxName;
 @property(readonly) NSDate *dateReceived;
-@property(readonly, copy) NSString *subject;
+@property(readonly, copy) ECSubject *subject;
 @property(readonly) unsigned long long messageSize;
 @property BOOL partsHaveBeenCached;
 @property BOOL isPartial;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSDictionary, NSNumber, NSString, SSLookupItem, SSLookupItemOffer, WLKBasicContentMetadata, WLKChannelDetails, WLKLocale, WLKPlayEvent;
+@class NSArray, NSDate, NSDictionary, NSNumber, NSString, NSURL, SSLookupItem, SSLookupItemOffer, WLKBasicContentMetadata, WLKChannelDetails, WLKLocale, WLKPlayEvent, WLKStoreOffer;
 
 @interface WLKPlayable : NSObject
 {
     _Bool _entitled;
+    _Bool _entitledAnywhere;
     _Bool _appInstalled;
     _Bool _itunes;
     _Bool _subtitled;
@@ -37,17 +38,29 @@
     NSDate *_endAirTime;
     NSDate *_startAirTime;
     WLKPlayEvent *_playEvent;
-    NSDictionary *_itsData;
-    SSLookupItem *_lookupItem;
+    NSURL *_tvAppDeeplinkURL;
     NSDictionary *_punchoutUrls;
     NSArray *_movieClips;
+    NSArray *_storeOffers;
+    NSArray *_subscriptionOffers;
+    NSDictionary *_itsData;
+    SSLookupItem *_lookupItem;
+    NSArray *_offers;
+    SSLookupItemOffer *_bestBuyOffer;
+    SSLookupItemOffer *_bestRentalOffer;
 }
 
-+ (id)playablesWithDictionaries:(id)arg1 canonicalID:(id)arg2;
-@property(readonly, copy, nonatomic) NSArray *movieClips; // @synthesize movieClips=_movieClips;
-@property(readonly, copy, nonatomic) NSDictionary *punchoutUrls; // @synthesize punchoutUrls=_punchoutUrls;
++ (id)playablesWithDictionaries:(id)arg1 context:(id)arg2;
+@property(readonly, copy, nonatomic) SSLookupItemOffer *bestRentalOffer; // @synthesize bestRentalOffer=_bestRentalOffer;
+@property(readonly, copy, nonatomic) SSLookupItemOffer *bestBuyOffer; // @synthesize bestBuyOffer=_bestBuyOffer;
+@property(readonly, copy, nonatomic) NSArray *offers; // @synthesize offers=_offers;
 @property(readonly, copy, nonatomic) SSLookupItem *lookupItem; // @synthesize lookupItem=_lookupItem;
 @property(readonly, copy, nonatomic) NSDictionary *itsData; // @synthesize itsData=_itsData;
+@property(readonly, copy, nonatomic) NSArray *subscriptionOffers; // @synthesize subscriptionOffers=_subscriptionOffers;
+@property(readonly, copy, nonatomic) NSArray *storeOffers; // @synthesize storeOffers=_storeOffers;
+@property(readonly, copy, nonatomic) NSArray *movieClips; // @synthesize movieClips=_movieClips;
+@property(readonly, copy, nonatomic) NSDictionary *punchoutUrls; // @synthesize punchoutUrls=_punchoutUrls;
+@property(readonly, copy, nonatomic) NSURL *tvAppDeeplinkURL; // @synthesize tvAppDeeplinkURL=_tvAppDeeplinkURL;
 @property(readonly, nonatomic) WLKPlayEvent *playEvent; // @synthesize playEvent=_playEvent;
 @property(readonly, copy, nonatomic) NSDate *startAirTime; // @synthesize startAirTime=_startAirTime;
 @property(readonly, copy, nonatomic) NSDate *endAirTime; // @synthesize endAirTime=_endAirTime;
@@ -67,6 +80,7 @@
 @property(readonly, nonatomic) long long airingType; // @synthesize airingType=_airingType;
 @property(readonly, nonatomic, getter=isiTunes) _Bool itunes; // @synthesize itunes=_itunes;
 @property(readonly, nonatomic, getter=isAppInstalled) _Bool appInstalled; // @synthesize appInstalled=_appInstalled;
+@property(readonly, nonatomic, getter=isEntitledAnywhere) _Bool entitledAnywhere; // @synthesize entitledAnywhere=_entitledAnywhere;
 @property(readonly, nonatomic, getter=isEntitled) _Bool entitled; // @synthesize entitled=_entitled;
 @property(readonly, nonatomic) long long contentSourceType; // @synthesize contentSourceType=_contentSourceType;
 @property(readonly, copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
@@ -78,15 +92,17 @@
 - (void).cxx_destruct;
 - (_Bool)_supportsHD;
 - (id)_localesArrayForDictionary:(id)arg1 andKey:(id)arg2;
-- (id)_filteredContentSource:(id)arg1;
-@property(readonly, copy, nonatomic) SSLookupItemOffer *bestRentalOffer;
-@property(readonly, copy, nonatomic) SSLookupItemOffer *bestBuyOffer;
-@property(readonly, copy, nonatomic) NSArray *offers;
+- (id)_filteredStoreContentSource:(id)arg1;
+@property(readonly, copy, nonatomic) WLKStoreOffer *bestStoreSubscriptionOffer;
+@property(readonly, copy, nonatomic) WLKStoreOffer *bestStoreRentalOffer;
+@property(readonly, copy, nonatomic) WLKStoreOffer *bestStoreBuyOffer;
+- (id)openPunchoutURL;
+- (id)playPunchoutURL;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)init;
-- (id)initWithDictionary:(id)arg1 canonicalID:(id)arg2;
+- (id)initWithDictionary:(id)arg1 context:(id)arg2;
 - (id)initWithDictionary:(id)arg1;
 
 @end

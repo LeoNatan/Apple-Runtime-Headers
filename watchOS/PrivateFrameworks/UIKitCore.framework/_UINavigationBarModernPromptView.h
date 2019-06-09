@@ -22,11 +22,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (float)_promptHeight;
-- (id)defaultFontDescriptor;
-- (void)traitCollectionDidChange:(id)arg1;
+@property(readonly, nonatomic) float promptHeight;
 - (void)_updatePromptLabel;
-- (void)_updateFontFromPreviousTraitCollection:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

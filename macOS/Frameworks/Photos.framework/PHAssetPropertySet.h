@@ -8,19 +8,29 @@
 
 #import <Photos/PHAssetPropertySet-Protocol.h>
 
-@class PHAsset;
+@class NSString, PHAsset;
 
 @interface PHAssetPropertySet : NSObject <PHAssetPropertySet>
 {
     PHAsset *_asset;
 }
 
-+ (void)fetchPropertiesForObjects:(id)arg1 photoLibrary:(id)arg2;
-+ (id)propertiesToLoadFromPhotoLibrary:(id)arg1;
-+ (id)propertySetWithObject:(id)arg1;
++ (id)propertiesToPrefetch;
++ (BOOL)isToMany;
++ (id)keyPathToPrimaryObject;
++ (id)keyPathFromPrimaryObject;
++ (id)entityName;
++ (id)propertiesToFetch;
++ (id)propertySetName;
 @property(readonly, nonatomic) __weak PHAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
-- (id)initWithAsset:(id)arg1;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -32,6 +32,7 @@
 - (void)pendingReleaseRemotePlan;
 - (void)didCancelRemotePlan;
 - (void)didPurchaseRemotePlanForEid:(id)arg1 imei:(id)arg2 meid:(id)arg3 iccid:(id)arg4 alternateSmdpFqdn:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)getPhoneAuthTokenWithMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getRemoteInfo:(CDUnknownBlockType)arg1;
 - (void)deleteAllRemoteProfiles;
 - (void)deleteRemoteProfile:(id)arg1;
@@ -62,6 +63,7 @@
 - (void)getDeviceInfo:(CDUnknownBlockType)arg1;
 - (void)carrierHandoffToken:(CDUnknownBlockType)arg1;
 - (void)setUserInPurchaseFlow:(_Bool)arg1;
+- (void)didTransferPlanForCsn:(id)arg1 iccid:(id)arg2 profileServer:(id)arg3 state:(id)arg4;
 - (void)didPurchasePlanForCsn:(id)arg1 iccid:(id)arg2 profileServer:(id)arg3;
 - (void)planLaunchInfoWithCompletion:(CDUnknownBlockType)arg1;
 - (void)eraseAllRemotePlansWithCSN:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -69,8 +71,7 @@
 - (void)didDeletePlanItem:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didPurchasePlanWithIccid:(id)arg1 downloadProfile:(_Bool)arg2;
 - (void)manageAccountForPlan:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)didSelectPlanForIMessage:(id)arg1;
-- (void)didSelectPlanForIMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didSelectPlansForIMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)didSelectPlanForDefaultVoice:(id)arg1;
 - (void)didSelectPlanForDefaultVoice:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)setLabelForPlan:(id)arg1 label:(id)arg2;
@@ -84,6 +85,9 @@
 - (void)remapSimLabel:(id)arg1 to:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)resolveSimLabel:(id)arg1;
 - (void)resolveSimLabel:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)deletePlanPendingTransfer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)activatePlanPendingTransfer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)getPlansPendingTransfer:(id *)arg1;
 - (id)danglingPlanItemsShouldUpdate:(_Bool)arg1;
 - (void)danglingPlanItemsShouldUpdate:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)planItemsShouldUpdate:(_Bool)arg1;
@@ -115,6 +119,7 @@
 - (void)setIMEIPrefix:(id)arg1;
 - (void)getIMEIPrefix:(CDUnknownBlockType)arg1;
 - (void)connectionSettings:(CDUnknownBlockType)arg1;
+- (void)addNewAddonPlanDuringBuddy:(_Bool)arg1 userConsent:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)resumePlanProvisioning:(_Bool)arg1 userConsent:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addNewPlanWithUserInWebsheetWithUserConsent:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addNewPlanWithUserInWebsheetWithCompletion:(CDUnknownBlockType)arg1;

@@ -6,10 +6,11 @@
 
 #import <Foundation/NSAttributedString.h>
 
-@class NSDictionary;
+@class NSDictionary, NSParagraphStyle;
 
 @interface NSAttributedString (TVMLKitAdditions)
 @property(copy, nonatomic, setter=tv_setDefaultAttributes:) NSDictionary *tv_defaultAttributes;
 - (struct CGRect)boundingRectWithWidth:(double)arg1 lines:(unsigned long long)arg2;
+@property(readonly, nonatomic) NSParagraphStyle *tv_currentParagraphStyle;
 @end
 

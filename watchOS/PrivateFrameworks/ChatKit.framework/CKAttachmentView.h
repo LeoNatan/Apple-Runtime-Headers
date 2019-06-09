@@ -10,6 +10,7 @@
 
 @class CKMediaObject, NSString, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface CKAttachmentView : UIView <CKAttachmentView>
 {
     CKMediaObject *_mediaObject;
@@ -32,6 +33,7 @@
 - (id)action;
 - (void)setAction:(id)arg1;
 - (id)icon;
+- (void)configureIconImageView:(_Bool)arg1;
 - (void)setIcon:(id)arg1;
 - (void)prepareForDisplay;
 - (void)prepareForReuse;

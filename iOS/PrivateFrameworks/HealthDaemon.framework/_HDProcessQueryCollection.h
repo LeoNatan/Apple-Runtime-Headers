@@ -6,18 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, NSString;
+@class HDQueryServerClientState, NSArray, NSMutableDictionary, NSString;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface _HDProcessQueryCollection : NSObject
 {
     NSMutableDictionary *_queryServersByUUID;
-    _Bool _processSuspended;
+    NSObject<OS_dispatch_source> *_timer;
+    NSObject<OS_dispatch_queue> *_queue;
     NSString *_processBundleIdentifier;
+    HDQueryServerClientState *_clientState;
 }
 
-@property(nonatomic, getter=isProcessSuspended) _Bool processSuspended; // @synthesize processSuspended=_processSuspended;
+@property(copy, nonatomic) HDQueryServerClientState *clientState; // @synthesize clientState=_clientState;
 @property(readonly, copy, nonatomic) NSString *processBundleIdentifier; // @synthesize processBundleIdentifier=_processBundleIdentifier;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)queue_cancelStateChangeTimer;
+- (void)queue_startStateChangeTimerWithInterval:(double)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)removeQueryServer:(id)arg1;
 - (void)addQueryServer:(id)arg1;
 @property(readonly, nonatomic) _Bool hasQueryServers;

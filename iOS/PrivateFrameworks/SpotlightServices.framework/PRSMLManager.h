@@ -38,16 +38,7 @@
 - (unsigned long long)getCountForCategory:(id)arg1;
 - (unsigned long long)getTotalResultsUsedCountForDuet;
 - (id)getLastSavedCategoryRankings;
-- (void)addResultToTrainCategories:(id)arg1;
 - (void)addCategoryAndGroupNameToTrainCategories:(id)arg1 groupName:(id)arg2;
-- (id)getTopHitResultForQuery:(id)arg1 resultSet:(id)arg2;
-- (void)updateCountsForUsedResult:(id)arg1;
-- (void)setTimeStampWhenLastLogged:(double)arg1;
-- (double)getTimeStampWhenLastLogged;
-- (void)setTotalResultsUsedCount:(unsigned long long)arg1;
-- (unsigned long long)getTotalResultsUsedCount;
-- (void)trackQueryCountsForQuery:(id)arg1 resultSet:(id)arg2 staticModelTopHit:(id)arg3;
-- (void)addResultToTrainingData:(id)arg1 queryString:(id)arg2 action:(id)arg3;
 - (id)initManager;
 
 @end

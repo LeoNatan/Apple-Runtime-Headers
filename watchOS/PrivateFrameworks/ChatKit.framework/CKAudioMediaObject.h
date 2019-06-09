@@ -15,6 +15,7 @@
 + (id)generateThumbnailForWidth:(float)arg1 color:(id)arg2 powerLevels:(id)arg3 fileURL:(id)arg4;
 + (id)_cachedPowerLevelsForKey:(id)arg1;
 + (void)_cachePowerLevels:(id)arg1 forKey:(id)arg2;
++ (_Bool)shouldUseTranscoderGeneratedPreviewSize;
 + (id)attachmentSummary:(unsigned int)arg1;
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;

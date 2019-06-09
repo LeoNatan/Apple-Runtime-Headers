@@ -10,12 +10,12 @@
 
 @interface MPCModelRadioGetTracksStep : NSObject
 {
-    ICUserIdentityProperties *_delegatedIdentityProperties;
     NSError *_error;
     _Bool _finished;
-    ICUserIdentityProperties *_identityProperties;
     SSVPlayActivityController *_playActivityController;
     unsigned long long _playActivitySessionToken;
+    ICUserIdentityProperties *_identityProperties;
+    ICUserIdentityProperties *_delegatedIdentityProperties;
     ICRadioGetTracksRequest *_request;
     ICRadioGetTracksResponse *_response;
     ICRadioGetTracksResponse *_siriAssetInfoGetTracksResponse;

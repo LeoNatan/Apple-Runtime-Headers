@@ -20,6 +20,7 @@
 - (double)nextFrameTime;
 -     // Error parsing type: v12@0:4^{__C3DRendererContext={__CFRuntimeBase=IAI}lIIIIfI^{__C3DTexture}^{__C3DStack}^vBBBBB^{__CFDictionary}I^{__CFDictionary}^{__CFDictionary}^{__CFDictionary}{C3DColor4=(?=[4f]{?=ffff})}^vi^{__C3DFXProgramObject}{__C3DEngineStats=IIIIIIIIIIIIIIIIIIIIIIIIdddddddddddddddIIIIIIIIIIIIIIIIIdIdIdddd[60d]Idd}{Cache=[8I]Ii^{__C3DBlendStates}I^{__C3DRasterizerStates}^{__C3DMesh}^{__C3DMeshElement}LIiI^vii}{?=[2I][5i][14{?=iII}][14I]^?^?^?^?^?^?^?^?^?}[2{VolatileObject=^{__C3DArray}II^{__CFArray}}]^{__C3DArray}I^{__CFDictionary}}8, name: cleanup:
 -     // Error parsing type: v20@0:4^{__C3DEngineContext=}8^{__C3DTextureSampler={__CFRuntimeBase=IAI}llllll{C3DColor4=(?=[4f]{?=ffff})}fClI}12^d16, name: renderWithEngineContext:textureSampler:nextFrameTime:
+-     // Error parsing type: @20@0:4^{__C3DEngineContext=}8^{__C3DTextureSampler={__CFRuntimeBase=IAI}llllll{C3DColor4=(?=[4f]{?=ffff})}fClI}12^d16, name: metalTextureWithEngineContext:textureSampler:nextFrameTime:
 -     // Error parsing type: 8@0:4, name: textureSize
 -     // Error parsing type: ^{__C3DTexture=}20@0:4^{__C3DEngineContext=}8^{__C3DTextureSampler={__CFRuntimeBase=IAI}llllll{C3DColor4=(?=[4f]{?=ffff})}fClI}12^d16, name: _textureWithEngineContext:textureSampler:nextFrameTime:
 -     // Error parsing type: ^{__C3DTexture=}20@0:4^{__C3DEngineContext=}8^{__C3DTextureSampler={__CFRuntimeBase=IAI}llllll{C3DColor4=(?=[4f]{?=ffff})}fClI}12^d16, name: textureWithEngineContext:textureSampler:nextFrameTime:

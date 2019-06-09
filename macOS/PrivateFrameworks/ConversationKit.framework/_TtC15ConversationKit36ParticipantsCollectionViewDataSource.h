@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit36ParticipantsCollectionViewDataSource : NSObject
 {
     // Error parsing type: , name: onlineParticipants

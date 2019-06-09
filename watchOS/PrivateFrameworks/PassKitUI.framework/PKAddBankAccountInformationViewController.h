@@ -8,7 +8,7 @@
 
 #import <PassKitUI/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, PKBankAccountInformation, PKFindBankAccountInformationFooterView, PKTableHeaderView, UIButton;
+@class NSArray, NSMutableDictionary, NSString, PKAccount, PKBankAccountInformation, PKFindBankAccountInformationFooterView, PKTableHeaderView, UIButton;
 @protocol PKAddBankAccountInformationViewControllerDelegate;
 
 @interface PKAddBankAccountInformationViewController : PKPaymentSetupTableViewController <UITextFieldDelegate>
@@ -26,6 +26,7 @@
     _Bool _isEditingBankInformation;
     _Bool _hasInteractedWithCell;
     _Bool _prefilledFromKeychain;
+    PKAccount *_featureAccount;
     _Bool _offerKeychainPreFill;
     id <PKAddBankAccountInformationViewControllerDelegate> _delegate;
 }
@@ -41,7 +42,9 @@
 - (void)_showHowToFindAccountInformationViewController:(id)arg1;
 - (id)_footerView;
 - (id)_headerTitle;
+- (void)_updateHeaderAndNavigationItems;
 - (id)_headerSubTitle;
+- (void)_addPaymentFundingSourceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_updateBankAccountInformationWithValues:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_deleteBankInformation;
 - (void)_setNavigationBarItemsHidden:(_Bool)arg1;
@@ -75,16 +78,15 @@
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)viewDidLoad;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
-- (id)pkui_navigationBarTintColor;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (void)dealloc;
-- (id)initWithState:(unsigned int)arg1 delegate:(id)arg2 bankInformation:(id)arg3 accountCountryCode:(id)arg4;
+- (id)initWithState:(unsigned int)arg1 delegate:(id)arg2 bankInformation:(id)arg3 accountCountryCode:(id)arg4 featureAccount:(id)arg5;
+- (id)initWithDelegate:(id)arg1 bankInformation:(id)arg2 accountCountryCode:(id)arg3 featureAccount:(id)arg4;
 - (id)initWithDelegate:(id)arg1 bankInformation:(id)arg2 accountCountryCode:(id)arg3;
+- (_Bool)pkui_disablesAutomaticDismissalUponEnteringBackground;
 - (id)init;
 
 // Remaining properties

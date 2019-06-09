@@ -17,6 +17,7 @@
 + (id)resolveIntentSlotCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)resolveIntentSlotCompleted;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *jsonEncodedIntentSlotResolutionResult;
 @property(retain, nonatomic) SAIntentGroupProtobufMessage *intentSlotResolutionResult;
 - (id)encodedClassName;
 - (id)groupIdentifier;

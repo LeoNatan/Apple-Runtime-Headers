@@ -10,6 +10,6 @@
 
 @protocol NMROriginCommandHandler <NSObject>
 @property(readonly, nonatomic) NMROrigin *origin;
-- (void)sendMediaRemoteCommand:(unsigned int)arg1 options:(NSDictionary *)arg2 launchApp:(_Bool)arg3;
+- (void)sendMediaRemoteCommand:(unsigned int)arg1 options:(NSDictionary *)arg2 launchApp:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
 @end
 

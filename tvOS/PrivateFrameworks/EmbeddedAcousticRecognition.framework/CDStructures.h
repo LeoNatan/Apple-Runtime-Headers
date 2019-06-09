@@ -50,9 +50,29 @@ struct HybridEndpointer;
 
 struct KeywordFinder;
 
+struct LDContext {
+    struct map<quasar::Locale, double, std::__1::less<quasar::Locale>, std::__1::allocator<std::__1::pair<const quasar::Locale, double>>> _field1;
+    struct optional<std::__1::set<quasar::Locale, std::__1::less<quasar::Locale>, std::__1::allocator<quasar::Locale>>> _field2;
+    struct optional<quasar::Locale> _field3;
+    struct optional<bool> _field4;
+    struct optional<std::__1::vector<quasar::Locale, std::__1::allocator<quasar::Locale>>> _field5;
+    struct optional<std::__1::map<quasar::Locale, double, std::__1::less<quasar::Locale>, std::__1::allocator<std::__1::pair<const quasar::Locale, double>>>> _field6;
+    struct optional<std::__1::map<quasar::Locale, double, std::__1::less<quasar::Locale>, std::__1::allocator<std::__1::pair<const quasar::Locale, double>>>> _field7;
+    struct optional<quasar::Locale> _field8;
+    struct optional<quasar::Locale> _field9;
+    struct optional<std::__1::map<quasar::Locale, double, std::__1::less<quasar::Locale>, std::__1::allocator<std::__1::pair<const quasar::Locale, double>>>> _field10;
+};
+
+struct LanguageDetector;
+
 struct LmeData;
 
 struct LmeDataFactory;
+
+struct Locale {
+    basic_string_23d93216 _field1;
+    basic_string_23d93216 _field2;
+};
 
 struct ModelLoader;
 
@@ -74,11 +94,15 @@ struct PronCache<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_
 
 struct PronChoice;
 
+struct RecogAudioBuffer;
+
 struct RecogAudioBufferBase;
 
 struct RecogResultStreamBase;
 
 struct ResultCombiner;
+
+struct ResultStreamWrapper;
 
 struct SdapiTokenizer;
 
@@ -127,6 +151,7 @@ struct SystemConfig {
     struct map<std::__1::basic_string<char>, double *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double *>>> doubleMap;
     struct map<std::__1::basic_string<char>, std::__1::basic_string<char>*, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::basic_string<char>*>>> stringMap;
     struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>>*, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>>*>>> stringVecMap;
+    struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>>> stringPairVecMap;
     struct map<std::__1::basic_string<char>, quasar::SystemConfig::Version, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, quasar::SystemConfig::Version>>> paramMinVersionMap;
     struct map<std::__1::basic_string<char>, quasar::SystemConfig::Version, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, quasar::SystemConfig::Version>>> paramMaxVersionMap;
     struct map<std::__1::basic_string<char>, std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>>>>> requiredParams;
@@ -214,6 +239,11 @@ struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>
     } __r_;
 };
 
+struct basic_string_view<char, std::__1::char_traits<char>> {
+    char *_field1;
+    unsigned long long _field2;
+};
+
 struct map<int, std::__1::map<std::__1::basic_string<char>, double, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double>>>, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, std::__1::map<std::__1::basic_string<char>, double, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double>>>>>> {
     struct __tree<std::__1::__value_type<int, std::__1::map<std::__1::basic_string<char>, double, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double>>>>, std::__1::__map_value_compare<int, std::__1::__value_type<int, std::__1::map<std::__1::basic_string<char>, double, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double>>>>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, std::__1::map<std::__1::basic_string<char>, double, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, double>>>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
@@ -224,6 +254,18 @@ struct map<int, std::__1::map<std::__1::basic_string<char>, double, std::__1::le
             unsigned long long __value_;
         } __pair3_;
     } __tree_;
+};
+
+struct map<quasar::Locale, double, std::__1::less<quasar::Locale>, std::__1::allocator<std::__1::pair<const quasar::Locale, double>>> {
+    struct __tree<std::__1::__value_type<quasar::Locale, double>, std::__1::__map_value_compare<quasar::Locale, std::__1::__value_type<quasar::Locale, double>, std::__1::less<quasar::Locale>, true>, std::__1::allocator<std::__1::__value_type<quasar::Locale, double>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<quasar::Locale, double>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<quasar::Locale, std::__1::__value_type<quasar::Locale, double>, std::__1::less<quasar::Locale>, true>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
 };
 
 struct map<std::__1::basic_string<char>, bool *, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, bool *>>> {
@@ -382,6 +424,18 @@ struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string
     } __tree_;
 };
 
+struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>>> {
+    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
+        } __pair1_;
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<std::__1::basic_string<char>, std::__1::basic_string<char>>>>*>, std::__1::less<std::__1::basic_string<char>>, true>> {
+            unsigned long long __value_;
+        } __pair3_;
+    } __tree_;
+};
+
 struct map<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>>>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>>>>>> {
     struct __tree<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>>>>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>>>>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, std::__1::vector<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>, std::__1::allocator<std::__1::vector<quasar::LmeDataFactoryBase::Word, std::__1::allocator<quasar::LmeDataFactoryBase::Word>>>>>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
@@ -406,11 +460,56 @@ struct map<std::__1::basic_string<char>, unsigned int *, std::__1::less<std::__1
     } __tree_;
 };
 
+struct optional<bool> {
+    union {
+        char _field1;
+        _Bool _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<quasar::Locale> {
+    union {
+        char _field1;
+        struct Locale _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<std::__1::map<quasar::Locale, double, std::__1::less<quasar::Locale>, std::__1::allocator<std::__1::pair<const quasar::Locale, double>>>> {
+    union {
+        char _field1;
+        struct map<quasar::Locale, double, std::__1::less<quasar::Locale>, std::__1::allocator<std::__1::pair<const quasar::Locale, double>>> _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<std::__1::set<quasar::Locale, std::__1::less<quasar::Locale>, std::__1::allocator<quasar::Locale>>> {
+    union {
+        char _field1;
+        struct set<quasar::Locale, std::__1::less<quasar::Locale>, std::__1::allocator<quasar::Locale>> _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<std::__1::vector<quasar::Locale, std::__1::allocator<quasar::Locale>>> {
+    union {
+        char _field1;
+        struct vector<quasar::Locale, std::__1::allocator<quasar::Locale>> _field2;
+    } _field1;
+    _Bool _field2;
+};
+
 struct pair<id<_EARLanguageModelDataSource>, float>;
 
 struct pair<std::__1::basic_string<char>, quasar::PTree>;
 
 struct pair<std::__1::basic_string<char>, std::__1::basic_string<char>>;
+
+struct pair<std::__1::vector<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::allocator<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>>>, std::__1::vector<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>, std::__1::allocator<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>>>> {
+    struct vector<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::allocator<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>>> _field1;
+    struct vector<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>, std::__1::allocator<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>>> _field2;
+};
 
 struct set<int, std::__1::less<int>, std::__1::allocator<int>> {
     struct __tree<int, std::__1::less<int>, std::__1::allocator<int>> {
@@ -424,6 +523,18 @@ struct set<int, std::__1::less<int>, std::__1::allocator<int>> {
     } __tree_;
 };
 
+struct set<quasar::Locale, std::__1::less<quasar::Locale>, std::__1::allocator<quasar::Locale>> {
+    struct __tree<quasar::Locale, std::__1::less<quasar::Locale>, std::__1::allocator<quasar::Locale>> {
+        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<quasar::Locale, void *>>> {
+            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::less<quasar::Locale>> {
+            unsigned long long _field1;
+        } _field3;
+    } _field1;
+};
+
 struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
     struct __tree<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
@@ -434,6 +545,11 @@ struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<c
             unsigned long long __value_;
         } __pair3_;
     } __tree_;
+};
+
+struct shared_ptr<const quasar::LDContext> {
+    struct LDContext *_field1;
+    struct __shared_weak_count *_field2;
 };
 
 struct shared_ptr<quasar::LmeDataFactory> {
@@ -453,6 +569,11 @@ struct shared_ptr<quasar::PSRAudioProcessor> {
 
 struct shared_ptr<quasar::PronCache<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>>>> {
     struct PronCache<std::__1::basic_string<char>, std::__1::vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_string<char>>>> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<quasar::RecogAudioBuffer> {
+    struct RecogAudioBuffer *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -530,6 +651,12 @@ struct unique_ptr<quasar::HybridEndpointer, std::__1::default_delete<quasar::Hyb
 struct unique_ptr<quasar::KeywordFinder, std::__1::default_delete<quasar::KeywordFinder>> {
     struct __compressed_pair<quasar::KeywordFinder *, std::__1::default_delete<quasar::KeywordFinder>> {
         struct KeywordFinder *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<quasar::LanguageDetector, std::__1::default_delete<quasar::LanguageDetector>> {
+    struct __compressed_pair<quasar::LanguageDetector *, std::__1::default_delete<quasar::LanguageDetector>> {
+        struct LanguageDetector *__value_;
     } __ptr_;
 };
 
@@ -647,6 +774,14 @@ struct unordered_map<std::__1::basic_string<char>, std::__1::basic_string<char>,
     } __table_;
 };
 
+struct vector<quasar::Locale, std::__1::allocator<quasar::Locale>> {
+    struct Locale *_field1;
+    struct Locale *_field2;
+    struct __compressed_pair<quasar::Locale *, std::__1::allocator<quasar::Locale>> {
+        struct Locale *_field1;
+    } _field3;
+};
+
 struct vector<quasar::PronChoice, std::__1::allocator<quasar::PronChoice>> {
     struct PronChoice *_field1;
     struct PronChoice *_field2;
@@ -668,6 +803,14 @@ struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1::basic_
     basic_string_23d93216 *_field2;
     struct __compressed_pair<std::__1::basic_string<char>*, std::__1::allocator<std::__1::basic_string<char>>> {
         basic_string_23d93216 *_field1;
+    } _field3;
+};
+
+struct vector<std::__1::optional<quasar::Locale>, std::__1::allocator<std::__1::optional<quasar::Locale>>> {
+    struct optional<quasar::Locale> *_field1;
+    struct optional<quasar::Locale> *_field2;
+    struct __compressed_pair<std::__1::optional<quasar::Locale>*, std::__1::allocator<std::__1::optional<quasar::Locale>>> {
+        struct optional<quasar::Locale> *_field1;
     } _field3;
 };
 
@@ -703,6 +846,29 @@ struct vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>
     } _field3;
 };
 
+struct vector<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>, std::__1::allocator<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>>> {
+    vector_2c247c42 *_field1;
+    vector_2c247c42 *_field2;
+    struct __compressed_pair<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>*, std::__1::allocator<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>>> {
+        vector_2c247c42 *_field1;
+    } _field3;
+};
+
+struct vector<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::allocator<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>>> {
+    struct vector<unsigned int, std::__1::allocator<unsigned int>> *_field1;
+    struct vector<unsigned int, std::__1::allocator<unsigned int>> *_field2;
+    struct __compressed_pair<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>*, std::__1::allocator<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>>> {
+        struct vector<unsigned int, std::__1::allocator<unsigned int>> *_field1;
+    } _field3;
+};
+
+struct vector<unsigned int, std::__1::allocator<unsigned int>>;
+
+struct weak_ptr<ResultStreamWrapper> {
+    struct ResultStreamWrapper *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 #pragma mark Typedef'd Structures
 
 // Template types
@@ -729,6 +895,26 @@ typedef struct basic_string<char, std::__1::char_traits<char>, std::__1::allocat
         } __value_;
     } __r_;
 } basic_string_23d93216;
+
+typedef struct basic_string_view<char, std::__1::char_traits<char>> {
+    char *_field1;
+    unsigned long long _field2;
+} basic_string_view_b5ef0455;
+
+typedef struct pair<std::__1::vector<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::allocator<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>>>, std::__1::vector<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>, std::__1::allocator<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>>>> {
+    struct vector<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::allocator<std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>>> _field1;
+    struct vector<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>, std::__1::allocator<std::__1::vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>>>> _field2;
+} pair_a60b4d2a;
+
+typedef struct shared_ptr<const quasar::LDContext> {
+    struct LDContext *_field1;
+    struct __shared_weak_count *_field2;
+} shared_ptr_9fadee34;
+
+typedef struct shared_ptr<quasar::RecogAudioBuffer> {
+    struct RecogAudioBuffer *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_9e2bfca6;
 
 typedef struct shared_ptr<quasar::RecogAudioBufferBase> {
     struct RecogAudioBufferBase *__ptr_;
@@ -765,6 +951,14 @@ typedef struct vector<std::__1::basic_string<char>, std::__1::allocator<std::__1
         basic_string_23d93216 *_field1;
     } _field3;
 } vector_9492931a;
+
+typedef struct vector<std::__1::optional<quasar::Locale>, std::__1::allocator<std::__1::optional<quasar::Locale>>> {
+    struct optional<quasar::Locale> *_field1;
+    struct optional<quasar::Locale> *_field2;
+    struct __compressed_pair<std::__1::optional<quasar::Locale>*, std::__1::allocator<std::__1::optional<quasar::Locale>>> {
+        struct optional<quasar::Locale> *_field1;
+    } _field3;
+} vector_4ce8f3d5;
 
 typedef struct vector<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>, std::__1::allocator<std::__1::vector<quasar::Token, std::__1::allocator<quasar::Token>>>> {
     vector_2f7ba0dc *_field1;

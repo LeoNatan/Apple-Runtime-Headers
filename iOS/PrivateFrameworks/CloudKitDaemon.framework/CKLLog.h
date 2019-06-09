@@ -13,6 +13,7 @@
 
 @interface CKLLog : NSObject <OSLogPersistenceDelegate, OSActivityStreamDelegate>
 {
+    _Bool _wantsSimulatorLogs;
     _Bool _colorOutput;
     double _startTimeOffset;
     NSDate *_absoluteStartDate;
@@ -33,6 +34,7 @@
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(retain, nonatomic) NSDate *absoluteStartDate; // @synthesize absoluteStartDate=_absoluteStartDate;
 @property(nonatomic) double startTimeOffset; // @synthesize startTimeOffset=_startTimeOffset;
+@property(nonatomic) _Bool wantsSimulatorLogs; // @synthesize wantsSimulatorLogs=_wantsSimulatorLogs;
 - (void).cxx_destruct;
 - (void)streamDidStop:(id)arg1;
 - (void)streamDidFail:(id)arg1 error:(id)arg2;
@@ -43,8 +45,7 @@
 - (void)addStreamObserver:(id)arg1;
 - (id)initWithArchiveAtURL:(id)arg1;
 - (id)initWithRemoteDevice:(id)arg1;
-- (id)initForSimulator;
-- (id)initForHost;
+- (id)initForHostStream;
 - (void)_configureStreamSource:(id)arg1;
 - (id)_init;
 

@@ -8,6 +8,7 @@
 
 @class OADColor;
 
+__attribute__((visibility("hidden")))
 @interface OADColorChangeEffect : OADBlipEffect
 {
     OADColor *mFromColor;

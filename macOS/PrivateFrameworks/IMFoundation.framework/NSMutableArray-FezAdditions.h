@@ -10,5 +10,6 @@
 + (id)nonRetainingArray;
 + (id)copyNonRetainingArray;
 - (void)removeFirstObject;
+- (void)__imRandomizeArray;
 @end
 

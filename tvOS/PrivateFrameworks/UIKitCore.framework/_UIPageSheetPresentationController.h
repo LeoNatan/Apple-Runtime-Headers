@@ -10,13 +10,10 @@
 {
 }
 
-- (_Bool)_presentationPotentiallyUnderlapsStatusBar;
++ (long long)_initialMode;
 - (_Bool)shouldSubscribeToKeyboardNotifications;
 - (_Bool)_shouldHideBottomCorner;
 - (struct CGRect)frameOfPresentedViewInContainerView;
-- (_Bool)_shouldPresentedViewControllerControlStatusBarAppearance;
-- (unsigned long long)dropShadowAutoresizingMask;
-- (long long)presentationStyle;
 
 @end
 

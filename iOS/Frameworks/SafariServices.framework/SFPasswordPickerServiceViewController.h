@@ -8,6 +8,7 @@
 
 #import <SafariServices/SFCredentialProviderExtensionManagerObserver-Protocol.h>
 #import <SafariServices/SFPasswordPickerServiceViewControllerProtocol-Protocol.h>
+#import <SafariServices/UIPresentationControllerDelegatePrivate-Protocol.h>
 #import <SafariServices/_ASCredentialListViewControllerDelegate-Protocol.h>
 #import <SafariServices/_ASPasswordCredentialAuthenticationViewControllerDelegate-Protocol.h>
 #import <SafariServices/_SFAuthenticationClient-Protocol.h>
@@ -16,7 +17,7 @@
 @class NSArray, NSString, NSURL, SFPasswordPickerViewController, _ASPasswordCredentialAuthenticationViewController, _SFAuthenticationContext;
 
 __attribute__((visibility("hidden")))
-@interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <SFCredentialProviderExtensionManagerObserver, _ASCredentialListViewControllerDelegate, _ASPasswordCredentialAuthenticationViewControllerDelegate, _SFAuthenticationClient, _SFAuthenticationContextDelegate, SFPasswordPickerServiceViewControllerProtocol>
+@interface SFPasswordPickerServiceViewController : SFPasswordServiceViewController <SFCredentialProviderExtensionManagerObserver, _ASCredentialListViewControllerDelegate, _ASPasswordCredentialAuthenticationViewControllerDelegate, _SFAuthenticationClient, _SFAuthenticationContextDelegate, UIPresentationControllerDelegatePrivate, SFPasswordPickerServiceViewControllerProtocol>
 {
     _ASPasswordCredentialAuthenticationViewController *_externalCredentialViewController;
     SFPasswordPickerViewController *_passwordPickerViewController;
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)_authenticateAndSetPresentCredentialsHandlerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fillCredential:(id)arg1 needsAuthentication:(_Bool)arg2;
 - (void)authenticateToPresentInPopover:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)_presentCredentialListForExtension:(id)arg1;
 - (id)_actionForPresentingPasswordManagerExtension:(id)arg1;
 - (void)_authenticateToViewOtherPasswordsWithCompletion:(CDUnknownBlockType)arg1;

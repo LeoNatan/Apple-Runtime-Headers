@@ -12,7 +12,7 @@
 #import <PassKitUI/PKPeerPaymentAccountResolutionControllerDelegate-Protocol.h>
 #import <PassKitUI/PKSwitchSpinnerTableCellDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, PKExpressPassController, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
+@class NSArray, NSMutableDictionary, NSString, PKAccountService, PKExpressPassController, PKPaymentPreference, PKPaymentPreferenceCard, PKPaymentPreferencesViewController, PKPaymentSetupAboutViewController, PKPeerPaymentAccount, PKPeerPaymentAccountResolutionController, PKPeerPaymentWebService, PSSpecifier;
 @protocol PKPassLibraryDataProvider, PKPassbookPeerPaymentSettingsDelegate, PKPassbookSettingsDataSource, PKPassbookSettingsDelegate, PKPaymentDataProvider, PKPaymentOptionsProtocol;
 
 @interface PKPassbookSettingsController : NSObject <PKPaymentServiceDelegate, PKPeerPaymentAccountResolutionControllerDelegate, PKPaymentDataProviderDelegate, PKSwitchSpinnerTableCellDelegate, PKPaymentPassTableCellDelegate>
@@ -33,6 +33,7 @@
     NSArray *_paymentPassSpecifiers;
     NSArray *_otherPassSpecifiers;
     NSArray *_companionPasses;
+    NSArray *_hiddenCompanionPasses;
     NSArray *_companionPassSpecifiers;
     NSArray *_lockscreenSwitchSpecifiers;
     NSArray *_handoffSwitchSpecifiers;
@@ -51,11 +52,13 @@
     PKPeerPaymentAccount *_peerPaymentAccount;
     _Bool _registeringForPeerPayment;
     PKExpressPassController *_expressPassController;
+    PKAccountService *_accountService;
+    NSMutableDictionary *_pairedDeviceSupportsFeatureByAccountID;
     _Bool _hasExpressCapablePass;
     NSString *_expressTransitSubtitleText;
     NSString *_expressTransitSectionFooterText;
     PSSpecifier *_defaultExpressTransitSpecifier;
-    NSMutableDictionary *_lastestTransitBalanceModel;
+    NSMutableDictionary *_latestTransitBalanceModel;
     id <PKPaymentDataProvider> _companionPaymentDataProvider;
     int _notifyToken;
     id <PKPassbookSettingsDelegate> _delegate;
@@ -63,6 +66,7 @@
 
 @property(nonatomic) id <PKPassbookSettingsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_updateCardSpecifier:(id)arg1 withAccountStateForPaymentPass:(id)arg2;
 - (void)_updateBalancesWithServerBalances:(id)arg1 transitPassProperties:(id)arg2 forPassWithUniqueIdentifier:(id)arg3;
 - (void)_fetchBalancesAndTransitPassPropertiesForPass:(id)arg1 withDataProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)_paymentSetupContextForSettingsContext:(int)arg1;
@@ -80,6 +84,8 @@
 - (_Bool)_useAlternateExpressTitle;
 - (void)switchSpinnerCell:(id)arg1 hasToggledSwitch:(_Bool)arg2;
 - (id)_peerPaymentSwitchSpecifier;
+- (void)_checkPairedDeviceSupportOfHiddenPassesAndRefreshUIIfNecessary;
+- (void)_accountServiceAccountDidChangeNotification:(id)arg1;
 - (id)_peerPaymentGroupSpecifiers;
 - (void)_unregisterForPeerPaymentWithSpecifier:(id)arg1;
 - (void)_presentPeerPaymentSetupFlowWithAmount:(id)arg1 flowState:(unsigned int)arg2 senderAddress:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -125,19 +131,21 @@
 - (id)_paymentPassSpecifiers;
 - (id)_passSpecifiersForPasses:(id)arg1 peerPaymentPassUniqueID:(id)arg2 showPeerPaymentSetup:(_Bool)arg3;
 - (id)_passSpecifiersForPasses:(id)arg1;
-- (void)openPaymentSetupWithMode:(int)arg1 referrerIdentifier:(id)arg2;
+- (void)openPaymentSetupWithMode:(int)arg1 referrerIdentifier:(id)arg2 allowedFeatureIdentifiers:(id)arg3;
 - (int)_paymentPreferencesStyle;
 - (void)openPeerPaymentSetupWithCurrenyAmount:(id)arg1 state:(unsigned int)arg2 senderAddress:(id)arg3;
 - (void)addCardTappedForPaymentPassWithUniqueID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addCardTappedForPaymentPassWithUniqueID:(id)arg1;
 - (void)addCardTapped;
 - (void)removeFooterForSpecifier:(id)arg1;
+- (id)rendererStateForPaymentPass:(id)arg1;
 - (id)passWithUniqueIdentifier:(id)arg1;
 - (void)refreshPeerPaymentStatus;
 - (void)_updateTransitExpressPassIdentifiersWithReload:(_Bool)arg1;
 - (id)_fallbackExpressTransitFooterText;
 - (void)refreshExpressTransitCard;
 - (void)refreshDefaultCard;
+- (void)_refreshPasses;
 - (void)refreshPasses;
 - (void)_reloadPassData;
 - (id)specifiers;

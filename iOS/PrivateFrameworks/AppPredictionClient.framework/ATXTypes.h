@@ -12,14 +12,17 @@
 
 + (void)iterConsumerSubTypesWithBlock:(CDUnknownBlockType)arg1;
 + (void)iterConsumerTypesWithBlock:(CDUnknownBlockType)arg1;
++ (_Bool)isActionSpotlightConsumerSubType:(unsigned char)arg1;
 + (unsigned long long)consumerTypeForSubType:(unsigned char)arg1;
 + (unsigned char)consumerSubtypeForString:(id)arg1 found:(_Bool *)arg2;
 + (unsigned long long)consumerTypeForString:(id)arg1 found:(_Bool *)arg2;
 + (unsigned long long)engagementTypeForString:(id)arg1 found:(_Bool *)arg2;
++ (id)uiTypeForConsumerSubType:(unsigned char)arg1;
 + (id)validConsumerSubTypeList;
 + (id)validConsumerSubTypes;
 + (id)validConsumerTypeList;
 + (id)validConsumerTypes;
++ (id)inverseConsumerSubtypeMapping;
 + (id)consumerSubtypeMapping;
 + (id)consumerMapping;
 + (id)stringForConsumerSubtype:(unsigned char)arg1;

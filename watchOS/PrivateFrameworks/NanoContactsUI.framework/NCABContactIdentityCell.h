@@ -6,32 +6,43 @@
 
 #import <PepperUICore/PUICTableViewCell.h>
 
-@class UIImageView, UILabel, UIView;
+@class NSLayoutConstraint, PUICKeylineView, UIFont, UIImageView, UILabel, UILayoutGuide;
 
 @interface NCABContactIdentityCell : PUICTableViewCell
 {
+    UILayoutGuide *_layoutGuide;
     UILabel *_name;
     UILabel *_name1;
     UILabel *_name2;
-    UIView *_separator;
+    PUICKeylineView *_keyline;
+    NSLayoutConstraint *_name1LeadingConstraint;
+    NSLayoutConstraint *_name2LeadingConstraint;
+    NSLayoutConstraint *_name1HeightConstraint;
+    NSLayoutConstraint *_name2HeightConstraint;
+    NSLayoutConstraint *_nameTrailingConstraint;
+    NSLayoutConstraint *_name1TrailingConstraint;
+    NSLayoutConstraint *_name2TrailingConstraint;
+    UIFont *_defaultNameLabelFont;
+    _Bool _constraintsAdded;
     _Bool _separatorHidden;
     UIImageView *_contactImageView;
 }
 
 + (id)contactImageForContact:(id)arg1 withDiameter:(float)arg2;
++ (void)initialize;
 @property(nonatomic, getter=isSeparatorHidden) _Bool separatorHidden; // @synthesize separatorHidden=_separatorHidden;
 @property(readonly, nonatomic) UIImageView *contactImageView; // @synthesize contactImageView=_contactImageView;
 - (void).cxx_destruct;
 - (id)_destinationStringForContact:(id)arg1;
-- (void)_matchNameLabelFontSizes;
-- (void)_setNameLabelFramesWithWidth:(float)arg1;
-- (float)_nameLabelWidth;
+- (float)_scaleFactorForLabel:(id)arg1;
+- (void)_updateDynamicConstraints;
+- (void)_setupViewConstraints;
 - (void)setContact:(id)arg1 forViewMode:(int)arg2;
-- (void)layoutSubviews;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)updateConstraints;
+- (void)didMoveToSuperview;
 - (void)prepareForReuse;
-- (id)initWithCellIdentifier:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithCellIdentifier:(id)arg1;
 
 @end
 

@@ -31,7 +31,6 @@
 + (id)orderedSetWithObject:(id)arg1;
 + (id)orderedSetWithObjects:(const id *)arg1 count:(unsigned long long)arg2;
 + (id)newOrderedSetWithObjects:(const id *)arg1 count:(unsigned long long)arg2;
-+ (id)_alloc;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

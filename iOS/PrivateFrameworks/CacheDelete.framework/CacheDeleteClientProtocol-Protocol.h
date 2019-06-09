@@ -9,10 +9,10 @@
 @protocol CacheDeleteClientProtocol
 - (void)clientRegisterLowDiskFailure:(NSString *)arg1 failureType:(int)arg2 isRoot:(_Bool)arg3;
 - (void)clientRequestCacheableSpaceGuidance:(NSDictionary *)arg1 replyBlock:(void (^)(NSDictionary *))arg2;
-- (void)clientUpdatePurgeable:(NSDictionary *)arg1 replyBlock:(void (^)(void))arg2;
+- (void)clientUpdatePurgeable:(NSDictionary *)arg1;
 - (void)clientGetState:(NSString *)arg1 replyBlock:(void (^)(id))arg2;
-- (void)clientSetState:(NSDictionary *)arg1 key:(NSString *)arg2 replyBlock:(void (^)(void))arg3;
-- (void)clientCancelPurge:(NSDictionary *)arg1 replyBlock:(void (^)(void))arg2;
+- (void)clientSetState:(NSDictionary *)arg1 key:(NSString *)arg2;
+- (void)clientCancelPurge:(NSDictionary *)arg1;
 - (void)clientPerformServiceRequest:(NSDictionary *)arg1 replyBlock:(void (^)(NSDictionary *))arg2;
 - (void)clientPerformOperation:(NSDictionary *)arg1 replyBlock:(void (^)(NSDictionary *))arg2;
 - (void)clientPurge:(NSDictionary *)arg1 replyBlock:(void (^)(NSDictionary *))arg2;

@@ -8,25 +8,36 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDMapsIdentifier, NSMutableArray, NSString, PBUnknownFields;
+@class GEOPDMapsIdentifier, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDTransitConnection : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned long long _muid;
     NSString *_entityNameString;
     GEOPDMapsIdentifier *_mapsId;
+    unsigned long long _muid;
     NSMutableArray *_transitLabels;
-    CDStruct_e99c65f7 _has;
+    struct {
+        unsigned int has_muid:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_entityNameString:1;
+        unsigned int read_mapsId:1;
+        unsigned int read_transitLabels:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_entityNameString:1;
+        unsigned int wrote_mapsId:1;
+        unsigned int wrote_muid:1;
+        unsigned int wrote_transitLabels:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)transitLabelType;
-@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId; // @synthesize mapsId=_mapsId;
-@property(retain, nonatomic) NSString *entityNameString; // @synthesize entityNameString=_entityNameString;
-@property(retain, nonatomic) NSMutableArray *transitLabels; // @synthesize transitLabels=_transitLabels;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,15 +46,24 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDMapsIdentifier *mapsId;
 @property(readonly, nonatomic) _Bool hasMapsId;
+- (void)_readMapsId;
+@property(retain, nonatomic) NSString *entityNameString;
 @property(readonly, nonatomic) _Bool hasEntityNameString;
+- (void)_readEntityNameString;
 - (id)transitLabelAtIndex:(unsigned long long)arg1;
 - (unsigned long long)transitLabelsCount;
+- (void)_addNoFlagsTransitLabel:(id)arg1;
 - (void)addTransitLabel:(id)arg1;
 - (void)clearTransitLabels;
+@property(retain, nonatomic) NSMutableArray *transitLabels;
+- (void)_readTransitLabels;
 @property(nonatomic) _Bool hasMuid;
+@property(nonatomic) unsigned long long muid;
 
 @end
 

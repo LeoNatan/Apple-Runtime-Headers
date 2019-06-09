@@ -29,6 +29,7 @@
 - (void)setDiscoveryMode:(long long)arg1;
 - (long long)discoveryMode;
 - (void)dealloc;
+- (id)initWithThrottlingEnabled:(_Bool)arg1;
 - (id)init;
 
 @end

@@ -82,6 +82,7 @@
 @property(readonly, nonatomic, getter=_isAutoDeactivated) _Bool autoDeactivated;
 - (_Bool)isActive;
 @property(readonly, nonatomic, getter=_effectiveCoordinateSpace) id <UICoordinateSpace> effectiveCoordinateSpace;
+- (id)_ui_descriptionBuilder;
 - (id)description;
 - (void)dealloc;
 - (id)initWithConfiguration:(id)arg1 coordinateSpace:(id)arg2;

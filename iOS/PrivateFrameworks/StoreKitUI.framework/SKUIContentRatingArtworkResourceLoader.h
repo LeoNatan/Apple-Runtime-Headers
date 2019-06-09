@@ -10,6 +10,7 @@
 
 @class NSHashTable, NSMapTable, NSString, SKUIImageDataConsumer, SKUIResourceLoader, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIContentRatingArtworkResourceLoader : NSObject <SKUIArtworkRequestDelegate>
 {
     NSMapTable *_artworkRequestIDs;

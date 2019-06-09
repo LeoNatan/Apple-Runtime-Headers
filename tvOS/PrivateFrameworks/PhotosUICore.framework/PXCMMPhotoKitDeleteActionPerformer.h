@@ -6,12 +6,19 @@
 
 #import <PhotosUICore/PXCMMActionPerformer.h>
 
-@interface PXCMMPhotoKitDeleteActionPerformer : PXCMMActionPerformer
+#import <PhotosUICore/PXCMMPhotoKitActionPerformer-Protocol.h>
+
+@class PXCMMPhotoKitSession;
+
+@interface PXCMMPhotoKitDeleteActionPerformer : PXCMMActionPerformer <PXCMMPhotoKitActionPerformer>
 {
 }
 
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
+
+// Remaining properties
+@property(readonly, nonatomic) PXCMMPhotoKitSession *session;
 
 @end
 

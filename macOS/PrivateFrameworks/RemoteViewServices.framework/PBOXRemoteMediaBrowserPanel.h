@@ -19,13 +19,13 @@
 + (id)keyPathsForPanelSettings;
 @property(copy) NSString *autosaveName; // @synthesize autosaveName=_autosaveName;
 @property unsigned long long browserType; // @synthesize browserType=_browserType;
+- (void).cxx_destruct;
 @property(readonly) BOOL isVisible;
 @property struct CGRect frame;
 - (void)orderOut:(id)arg1;
 - (void)orderFront:(id)arg1;
 - (id)dictionaryForObservedValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)serializeSettings;
-- (void)dealloc;
 - (unsigned long long)_panelType;
 
 @end

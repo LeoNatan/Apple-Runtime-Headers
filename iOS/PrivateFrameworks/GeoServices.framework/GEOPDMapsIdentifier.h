@@ -14,15 +14,12 @@ __attribute__((visibility("hidden")))
 @interface GEOPDMapsIdentifier : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    int _placeType;
     GEOPDShardedId *_shardedId;
-    struct {
-        unsigned int placeType:1;
-    } _has;
 }
 
-@property(retain, nonatomic) GEOPDShardedId *shardedId; // @synthesize shardedId=_shardedId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,14 +28,11 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-- (int)StringAsPlaceType:(id)arg1;
-- (id)placeTypeAsString:(int)arg1;
-@property(nonatomic) _Bool hasPlaceType;
-@property(nonatomic) int placeType; // @synthesize placeType=_placeType;
+@property(retain, nonatomic) GEOPDShardedId *shardedId;
 @property(readonly, nonatomic) _Bool hasShardedId;
-- (int)placeDisplayType;
 
 @end
 

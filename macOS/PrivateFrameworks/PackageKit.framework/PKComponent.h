@@ -48,7 +48,7 @@
 - (void)setScript:(id)arg1 forType:(id)arg2;
 - (id)scriptForType:(id)arg1;
 @property(retain) NSString *destinationPath; // @synthesize destinationPath;
-@property __weak PKPackage *package; // @synthesize package;
+@property PKPackage *package; // @synthesize package;
 - (id)description;
 - (id)componentKey;
 - (void)dealloc;

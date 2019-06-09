@@ -8,6 +8,7 @@
 
 @class CATextLayer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ZMWButtonView : ZMWView
 {
     CATextLayer *_textLayer;

@@ -14,12 +14,12 @@
 }
 
 + (id)notificationWithAsset:(id)arg1 snapshot:(id)arg2;
+- (void).cxx_destruct;
 - (id)_contentRelationshipName;
-@property(readonly, retain, nonatomic) PLManagedAsset *asset;
+@property(readonly, nonatomic) PLManagedAsset *asset;
 - (id)description;
 - (id)userInfo;
 - (id)name;
-- (void)dealloc;
 
 @end
 

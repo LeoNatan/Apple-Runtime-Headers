@@ -10,15 +10,16 @@
 #import <AppKit/NSPasteboardReading-Protocol.h>
 #import <AppKit/NSPasteboardWriting-Protocol.h>
 #import <AppKit/NSSecureCoding-Protocol.h>
+#import <AppKit/NSSoundEngineDelegate-Protocol.h>
 
 @class NSString;
 @protocol NSSoundDelegate;
 
-@interface NSSound : NSObject <NSCopying, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
+@interface NSSound : NSObject <NSSoundEngineDelegate, NSCopying, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
 {
     id <NSSoundDelegate> _delegate;
     id _info;
-    id _reserved[6];
+    id _reserved[4];
     unsigned int _sFlags;
 }
 
@@ -38,19 +39,23 @@
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
 - (void).cxx_destruct;
+- (BOOL)shouldLoopForSoundEngine:(id)arg1;
+- (double)volumeForSoundEngine:(id)arg1;
+- (id)channelMappingForSoundEngine:(id)arg1;
+- (id)deviceUIDForSoundEngine:(id)arg1;
+- (id)dataForSoundEngine:(id)arg1;
+- (id)URLForSoundEngine:(id)arg1;
+- (void)soundEngineDidFinishPlaying:(id)arg1;
 - (unsigned int)_systemSoundIDCreateIfNecessary:(BOOL)arg1;
 - (void)writeToPasteboard:(id)arg1;
 - (id)initWithPasteboard:(id)arg1;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (id)initWithPasteboardPropertyList:(id)arg1 ofType:(id)arg2;
-- (void)_qtMovieDidEnd:(id)arg1;
 @property double currentTime;
 @property(readonly) double duration;
 @property BOOL loops;
 @property float volume;
-- (void)_updateSoundShouldLoopByStoredLoopFlag;
-- (void)_updateVolumeByStoredVolume;
 - (BOOL)stop;
 - (BOOL)play;
 - (BOOL)resume;
@@ -58,9 +63,7 @@
 @property(readonly, getter=isPlaying) BOOL playing;
 - (id)channelMapping;
 - (void)setChannelMapping:(id)arg1;
-- (BOOL)_setChannelMapping:(id)arg1 error:(id *)arg2;
 @property(copy) NSString *playbackDeviceIdentifier;
-- (BOOL)_setAudioDeviceUID:(id)arg1 channels:(id)arg2 error:(id *)arg3;
 - (void)_setPlayingAndRetainIfUnset;
 - (BOOL)_unsetPlayingReturningIfWasSet;
 - (BOOL)_registersName;
@@ -80,7 +83,6 @@
 - (BOOL)_allocateExtraFields;
 - (void)dealloc;
 - (id)init;
-- (void)_postInitialization;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

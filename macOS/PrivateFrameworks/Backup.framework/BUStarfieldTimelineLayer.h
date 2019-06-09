@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)accessibilityIsIgnored;
-@property(nonatomic) NSObject<BUStarfieldTimelineDelegate> *timelineDelegate;
+@property(retain, nonatomic) NSObject<BUStarfieldTimelineDelegate> *timelineDelegate;
 @property(nonatomic) NSObject<BUStarfieldTimelineDataSource> *timelineDataSource;
 - (void)reloadData;
 - (void)handleReloadData;

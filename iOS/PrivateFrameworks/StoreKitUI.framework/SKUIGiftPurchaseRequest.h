@@ -8,6 +8,7 @@
 
 @class SKUIURLConnectionRequest;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftPurchaseRequest : NSObject
 {
     SKUIURLConnectionRequest *_request;

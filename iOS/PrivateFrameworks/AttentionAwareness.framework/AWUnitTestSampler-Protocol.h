@@ -6,9 +6,14 @@
 
 @protocol AWUnitTestSampler
 - (void)setSmartCoverCallback:(void (^)(_Bool))arg1;
+- (void)setSmartCoverClosed:(_Bool)arg1 reply:(void (^)(NSError *))arg2;
 - (void)setSmartCoverClosed:(_Bool)arg1;
 - (void)setDisplayCallback:(void (^)(_Bool))arg1;
+- (void)setDisplayState:(_Bool)arg1 reply:(void (^)(NSError *))arg2;
 - (void)setDisplayState:(_Bool)arg1;
+- (void)setSampleState:(_Bool)arg1 deliverEvent:(_Bool)arg2 reply:(void (^)(NSError *))arg3;
+- (void)setSampleState:(_Bool)arg1 deliverEvent:(_Bool)arg2;
+- (void)setSampleState:(_Bool)arg1 reply:(void (^)(NSError *))arg2;
 - (void)setSampleState:(_Bool)arg1;
 - (void)resetStats;
 - (void)getStatsWithBlock:(void (^)(struct))arg1;

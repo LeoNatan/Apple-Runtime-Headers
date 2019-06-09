@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AVOutputContext, AVPixelBufferAttributeMediator, AVPlayerItem, AVPropertyStorage, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@class AVOutputContext, AVPixelBufferAttributeMediator, AVPlayerItem, AVWeakReference, NSArray, NSDictionary, NSError, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol AVCallbackCancellation><AVKVOIntrospection, AVLoggingIdentifier, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVPlayerInternal : NSObject
 {
     AVWeakReference *weakReference;
-    AVPropertyStorage *propertyStorage;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
     NSObject<OS_dispatch_queue> *stateDispatchQueue;
     NSObject<OS_dispatch_queue> *figConfigurationQueue;
@@ -36,6 +35,7 @@ __attribute__((visibility("hidden")))
     BOOL IOwnTheFigPlayer;
     NSMutableArray *handlersToCallWhenReadyToPlay;
     BOOL shouldReduceResourceUsage;
+    long long resourceConservationLevelWhilePaused;
     NSString *playerRole;
     NSString *externalPlaybackVideoGravity;
     long long actionAtItemEnd;
@@ -79,8 +79,9 @@ __attribute__((visibility("hidden")))
     NSString *reasonForWaitingToPlay;
     struct CGSize currentItemPresentationSize;
     BOOL currentItemNonForcedSubtitlesEnabled;
+    unsigned long long preferredVideoDecoderGPURegistryID;
     BOOL disallowsAutoPauseOnRouteRemovalIfNoAudio;
-    struct __CFDictionary *videoLayers;
+    NSMutableArray *videoLayers;
     NSMutableArray *subtitleLayers;
     NSMutableArray *closedCaptionLayers;
     NSHashTable *avPlayerLayers;
@@ -101,7 +102,6 @@ __attribute__((visibility("hidden")))
     struct OpaqueCMClock *figMasterClock;
     NSString *captionRenderingStrategy;
     NSArray *displaysUsedForPlayback;
-    unsigned long long preferredVideoDecoderGPURegistryID;
     id <AVLoggingIdentifier> loggingIdentifier;
 }
 

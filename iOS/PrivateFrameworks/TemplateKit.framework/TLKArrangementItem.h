@@ -10,12 +10,13 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface TLKArrangementItem : NSObject <NUIArrangementItem>
 {
     struct CGSize _size;
 }
 
-@property struct CGSize size; // @synthesize size=_size;
+@property(nonatomic) struct CGSize size; // @synthesize size=_size;
 - (float)contentHuggingPriorityForAxis:(long long)arg1;
 - (float)contentCompressionResistancePriorityForAxis:(long long)arg1;
 - (double)effectiveBaselineOffsetFromContentBottom;

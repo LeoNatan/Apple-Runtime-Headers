@@ -12,6 +12,7 @@
 
 @class NSDate, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface RedirectHandler : NSObject <ConfigurableObjectProtocol, SymptomAdditionalProtocol, AdditionalInfoProtocol>
 {
     NSString *_originalURLKey;

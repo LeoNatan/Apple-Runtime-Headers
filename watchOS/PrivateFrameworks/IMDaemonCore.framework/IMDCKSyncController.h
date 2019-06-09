@@ -6,12 +6,15 @@
 
 #import <IMDaemonCore/IMDCKAbstractSyncController.h>
 
+#import <IMDaemonCore/IMDCKAbstractSyncControllerDelegate-Protocol.h>
 #import <IMDaemonCore/IMDXPCEventStreamHandlerDelegate-Protocol.h>
+#import <IMDaemonCore/IMSystemMonitorListener-Protocol.h>
 
 @class CKFetchRecordZonesOperation, IMTimer, NSDate, NSString, NSTimer;
 
-@interface IMDCKSyncController : IMDCKAbstractSyncController <IMDXPCEventStreamHandlerDelegate>
+@interface IMDCKSyncController : IMDCKAbstractSyncController <IMDXPCEventStreamHandlerDelegate, IMSystemMonitorListener, IMDCKAbstractSyncControllerDelegate>
 {
+    _Bool _shouldReloadConversations;
     NSDate *_syncStartDate;
     NSTimer *_longRunningSyncTimer;
     IMTimer *_nightlySyncTimer;
@@ -19,9 +22,12 @@
     CKFetchRecordZonesOperation *_cloudKitMetricsFetchOp;
     NSDate *_lastLogDumpDate;
     NSDate *_lastRestoreFailureLogDumpDate;
+    NSTimer *_reloadTimer;
 }
 
 + (id)sharedInstance;
+@property(retain) NSTimer *reloadTimer; // @synthesize reloadTimer=_reloadTimer;
+@property _Bool shouldReloadConversations; // @synthesize shouldReloadConversations=_shouldReloadConversations;
 @property(retain, nonatomic) NSDate *lastRestoreFailureLogDumpDate; // @synthesize lastRestoreFailureLogDumpDate=_lastRestoreFailureLogDumpDate;
 @property(retain, nonatomic) NSDate *lastLogDumpDate; // @synthesize lastLogDumpDate=_lastLogDumpDate;
 @property(retain, nonatomic) CKFetchRecordZonesOperation *cloudKitMetricsFetchOp; // @synthesize cloudKitMetricsFetchOp=_cloudKitMetricsFetchOp;
@@ -64,6 +70,7 @@
 - (_Bool)_isSyncingToStingRay;
 - (void)syncDeletesToCloudKitWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_beginPeriodicSyncWithActivity:(id)arg1 deviceConditionsToCheck:(unsigned int)arg2 attemptCount:(unsigned int)arg3 useStingRay:(_Bool)arg4 syncChatsCompletionBlock:(CDUnknownBlockType)arg5;
+- (void)syncAttachmentMetadataFirstSyncWithActivity:(id)arg1 deviceConditionsToCheck:(unsigned int)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_beginPeriodicSyncWithActivity:(id)arg1 deviceConditionsToCheck:(unsigned int)arg2 attemptCount:(unsigned int)arg3;
 - (id)_recordManager;
 - (void)_reloadChatRegistryOnMainThread;
@@ -84,6 +91,13 @@
 - (void)_performLastCompleteSyncedDBDateMetricForSuccessfulSync;
 - (void)_performLastSyncDateMetricForSuccessfulSync;
 - (void)performMetricForSuccessfulSync;
+- (void)systemDidUnlock;
+- (void)_refreshUIWhileSyncing;
+- (void)refreshUIIfApplicableWithBatchCount:(unsigned int)arg1;
+- (double)reloadTimeInterval;
+- (_Bool)_serverAllowsUIRefreshTimerWhileSyncing;
+- (_Bool)_serverAllowsUIRefreshWhileSyncing;
+- (void)syncController:(id)arg1 syncBatchCompleted:(unsigned int)arg2;
 - (void)clearLocalCloudKitSyncState;
 - (void)clearCKRelatedDefaults;
 - (void)kickOffCloudKitSyncIfNeededOnImagentLaunch;

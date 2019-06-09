@@ -17,8 +17,11 @@
 
 @property(readonly, nonatomic) UIBezierPath *path; // @synthesize path=_path;
 - (void).cxx_destruct;
+- (float)_computeDistanceBetweenPointA:(struct CGPoint)arg1 andPointB:(struct CGPoint)arg2;
+- (float)_estimatePercentageForEndPadding:(float)arg1;
 - (struct CGPoint)_computePointOnPathForHorizontalPercentage:(float)arg1;
 - (id)_buildHorizontalPercentageCache;
+- (struct CGPoint)pointOnPathForHorizontalPercentage:(float)arg1 withEndPadding:(float)arg2;
 - (struct CGPoint)pointOnPathForHorizontalPercentage:(float)arg1;
 - (id)initWithPath:(id)arg1;
 

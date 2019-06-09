@@ -15,8 +15,11 @@ __attribute__((visibility("hidden")))
 @interface BCSAction : NSObject <BCSActionPrivate>
 {
     BCSActionPickerViewAssistant *_actionPickerViewAssistant;
+    _Bool isInvalidDataAction;
+    _Bool isWiFiAction;
     id <BCSActionDelegate> delegate;
     NSURL *urlThatCanBeOpened;
+    NSArray *appLinks;
     id <BCSParsedDataPrivate> _data;
     NSURL *_url;
     id <BCSCodePayload> _codePayload;
@@ -26,6 +29,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <BCSCodePayload> codePayload; // @synthesize codePayload=_codePayload;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) id <BCSParsedDataPrivate> data; // @synthesize data=_data;
+@property(readonly, nonatomic) _Bool isWiFiAction; // @synthesize isWiFiAction;
+@property(readonly, nonatomic) _Bool isInvalidDataAction; // @synthesize isInvalidDataAction;
+@property(readonly, copy, nonatomic) NSArray *appLinks; // @synthesize appLinks;
 @property(readonly, nonatomic) NSURL *urlThatCanBeOpened; // @synthesize urlThatCanBeOpened;
 @property(nonatomic) __weak id <BCSActionDelegate> delegate; // @synthesize delegate;
 - (void).cxx_destruct;
@@ -43,7 +49,6 @@ __attribute__((visibility("hidden")))
 - (void)showActionPicker;
 - (void)performAction;
 - (long long)type;
-@property(readonly, nonatomic) _Bool canSkipUnlock;
 - (id)initWithData:(id)arg1 codePayload:(id)arg2;
 
 // Remaining properties

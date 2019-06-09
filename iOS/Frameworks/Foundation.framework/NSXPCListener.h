@@ -14,7 +14,7 @@
     void *_xconnection;
     NSObject<OS_dispatch_queue> *_userQueue;
     void *reserved0;
-    id <NSXPCListenerDelegate> _delegate;
+    id _delegate;
     NSString *_serviceName;
     unsigned long long _state;
     id _reserved1;
@@ -25,13 +25,13 @@
 + (void)enableTransactions;
 + (id)anonymousListener;
 + (id)serviceListener;
-@property id <NSXPCListenerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id)_xpcConnection;
 - (id)_queue;
 - (void)_setQueue:(id)arg1;
 - (void)setOptions:(unsigned long long)arg1;
 @property(readonly, retain) NSXPCListenerEndpoint *endpoint;
 - (id)serviceName;
+@property __weak id <NSXPCListenerDelegate> delegate;
 - (void)invalidate;
 - (void)stop;
 - (void)resume;

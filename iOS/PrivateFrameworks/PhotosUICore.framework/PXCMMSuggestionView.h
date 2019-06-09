@@ -4,43 +4,56 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <UIKit/UICollectionViewCell.h>
 
-@class NSArray, NSString, PXCMMPosterHeaderView, PXRoundedCornerOverlayView, UIColor, UIFont, UIImage, UIImageView, UILabel;
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@interface PXCMMSuggestionView : UIView
+@class NSString, PXCMMPosterHeaderView, PXCMMSuggestionViewModel, PXRoundedCornerOverlayView, UIFont, UIImageView, UILabel, UIView;
+@protocol PXCMMSuggestionViewDelegate;
+
+@interface PXCMMSuggestionView : UICollectionViewCell <PXChangeObserver>
 {
-    UIImageView *_combinedFaceTileImageView;
+    PXCMMPosterHeaderView *_headerView;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
+    UIImageView *_combinedFaceTileImageView;
     PXRoundedCornerOverlayView *_roundedCornerOverlayView;
     UIFont *_titleFont;
     UIFont *_titleBoldFont;
-    _Bool _containsUnverifiedPersons;
-    PXCMMPosterHeaderView *_headerView;
-    NSArray *_names;
-    NSString *_subtitle;
-    UIColor *_opaqueAncestorBackgroundColor;
+    id <PXCMMSuggestionViewDelegate> _delegate;
+    PXCMMSuggestionViewModel *_viewModel;
 }
 
-+ (double)faceTileImageDiameter;
-@property(copy, nonatomic) UIColor *opaqueAncestorBackgroundColor; // @synthesize opaqueAncestorBackgroundColor=_opaqueAncestorBackgroundColor;
-@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-@property(nonatomic) _Bool containsUnverifiedPersons; // @synthesize containsUnverifiedPersons=_containsUnverifiedPersons;
-@property(copy, nonatomic) NSArray *names; // @synthesize names=_names;
-@property(readonly, nonatomic) PXCMMPosterHeaderView *headerView; // @synthesize headerView=_headerView;
++ (struct CGSize)posterHeaderViewSizeForSize:(struct CGSize)arg1 scale:(double)arg2;
++ (struct CGSize)posterImageSizeThatFits:(struct CGSize)arg1 scale:(double)arg2;
++ (struct CGSize)sizeThatFits:(struct CGSize)arg1 viewModel:(id)arg2;
+@property(retain, nonatomic) PXCMMSuggestionViewModel *viewModel; // @synthesize viewModel=_viewModel;
+@property(nonatomic) __weak id <PXCMMSuggestionViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (_Bool)test_selected;
+- (id)test_subtitle;
+- (id)test_title;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_updateFonts;
+- (void)_tapGesture:(id)arg1;
+- (void)_updateOpaqueAncestorBackgroundColor;
+- (_Bool)_updateCombinedFaceTileImage;
+- (_Bool)_updateSubtitle;
+- (void)_updateHeaderView;
 - (struct CGSize)_performLayoutInWidth:(double)arg1 updateSubviewFrames:(_Bool)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)mediaProvider;
-- (id)asset;
-- (void)setAsset:(id)arg1 mediaProvider:(id)arg2;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted;
-@property(retain, nonatomic) UIImage *combinedFaceTileImage;
+- (void)_dynamicUserInterfaceTraitDidChange;
+@property(readonly, nonatomic) UIView *previewView;
+@property(readonly, nonatomic) struct CGRect headerViewBounds;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

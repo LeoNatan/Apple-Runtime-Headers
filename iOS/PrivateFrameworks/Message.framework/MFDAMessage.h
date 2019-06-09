@@ -10,13 +10,14 @@
 
 @interface MFDAMessage : MFMailMessage
 {
-    DAMailMessage *_DAMailMessage;
     MFMessage *_rfc822CreatedMessage;
     MFMailboxUid *_mailbox;
     NSString *_externalConversationID;
+    DAMailMessage *_DAMailMessage;
 }
 
 @property(readonly, nonatomic) DAMailMessage *DAMailMessage; // @synthesize DAMailMessage=_DAMailMessage;
+- (void).cxx_destruct;
 - (unsigned long long)messageSize;
 - (id)remoteMailboxURL;
 - (_Bool)messageDataHolder:(id *)arg1 messageSize:(unsigned long long *)arg2 isComplete:(_Bool *)arg3 downloadIfNecessary:(_Bool)arg4;
@@ -28,7 +29,6 @@
 - (id)mailbox;
 - (id)externalConversationID;
 - (id)remoteID;
-- (void)dealloc;
 - (id)initWithDAMailMessage:(id)arg1 mailbox:(id)arg2;
 
 @end

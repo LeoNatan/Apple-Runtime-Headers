@@ -110,6 +110,7 @@
 - (void)extractBacktraceInfo;
 - (id)prettyPrintBinaryImages;
 - (id)prettyPrintBacktrace;
+- (id)_symbolOwners;
 - (BOOL)extractCorpseInfo;
 - (void)extractCorpseInfoHandler:(struct kcdata_iter)arg1;
 - (BOOL)extractTaskInfo;

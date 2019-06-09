@@ -6,22 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_source;
-
 __attribute__((visibility("hidden")))
 @interface LocalAttachmentCleanUpSupport : NSObject
 {
-    NSObject<OS_dispatch_source> *_source;
 }
 
-- (void).cxx_destruct;
-- (void)_dispatchCleanupAfterDelay:(long long)arg1;
-- (void)_setTimerOnSource:(long long)arg1;
-- (void)interruptNextScheduledCleanup;
-- (void)scheduleNextCleanup;
-- (void)cleanUpOrphanedFiles;
-- (void)dealloc;
-- (id)init;
++ (void)cleanUpOrphanedFiles;
 
 @end
 

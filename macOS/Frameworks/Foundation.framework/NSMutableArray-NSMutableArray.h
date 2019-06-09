@@ -7,9 +7,13 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (NSMutableArray)
+- (id)initWithContentsOfURL:(id)arg1 error:(id *)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (void)removeObjectsFromIndices:(unsigned long long *)arg1 numIndices:(unsigned long long)arg2;
 - (Class)classForCoder;
+- (void)applyDifference:(id)arg1;
+- (void)filterUsingPredicate:(id)arg1;
+- (void)sortUsingDescriptors:(id)arg1;
 @end
 

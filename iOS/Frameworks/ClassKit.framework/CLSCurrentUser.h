@@ -9,25 +9,36 @@
 #import <ClassKit/NSCopying-Protocol.h>
 #import <ClassKit/NSSecureCoding-Protocol.h>
 
-@class CLSPerson;
+@class CLSPerson, NSDictionary, NSString;
 
 @interface CLSCurrentUser : NSObject <NSCopying, NSSecureCoding>
 {
     int _devMode;
     CLSPerson *_person;
+    NSString *_personaUniqueString;
     unsigned long long _roles;
+    NSDictionary *_locationIDsByAXMRoleType;
 }
 
 + (_Bool)supportsSecureCoding;
++ (unsigned long long)userRolesFromUserLocationIDsByAXMRoleType:(id)arg1;
 + (id)magicValue;
+@property(retain, nonatomic) NSDictionary *locationIDsByAXMRoleType; // @synthesize locationIDsByAXMRoleType=_locationIDsByAXMRoleType;
 @property(nonatomic) unsigned long long roles; // @synthesize roles=_roles;
+@property(copy, nonatomic) NSString *personaUniqueString; // @synthesize personaUniqueString=_personaUniqueString;
 @property(retain, nonatomic) CLSPerson *person; // @synthesize person=_person;
 @property(nonatomic) int devMode; // @synthesize devMode=_devMode;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) _Bool isStudent;
+@property(readonly, nonatomic) _Bool isInstructor;
+@property(readonly, nonatomic) _Bool isAdministrator;
 - (_Bool)hasRole:(unsigned long long)arg1;
+- (_Bool)_hasRole:(unsigned long long)arg1;
+- (unsigned long long)_useRoles;
+- (id)_init;
 
 @end
 

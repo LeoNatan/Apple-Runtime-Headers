@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)setBackgroundStyle:(long long)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (id)_focusInto:(id)arg1 withClip:(BOOL)arg2;
 - (BOOL)wantsDefaultClipping;
 - (BOOL)isOpaque;

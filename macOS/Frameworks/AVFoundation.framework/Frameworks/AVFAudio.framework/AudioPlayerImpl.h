@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioFormat, NSData, NSDictionary, NSURL;
+@class AVAudioFormat, NSArray, NSData, NSDictionary, NSURL;
 @protocol AVAudioPlayerDelegate, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_actualSettings;
     AVAudioFormat *_format;
     _Bool _playRetain;
+    NSArray *_channelAssignments;
     struct AVAudioPlayerCpp *_localPlayer;
     NSObject<OS_dispatch_queue> *_gcd;
 }

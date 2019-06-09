@@ -57,7 +57,9 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)dealloc;
+- (void)configure;
 - (id)initWithUser:(id)arg1;
+- (id)initWithUser:(id)arg1 accessories:(id)arg2;
 - (id)initWithUser:(id)arg1 model:(id)arg2;
 - (id)init;
 

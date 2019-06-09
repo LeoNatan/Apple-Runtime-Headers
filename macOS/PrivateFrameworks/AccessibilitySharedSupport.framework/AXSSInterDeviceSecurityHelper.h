@@ -10,7 +10,7 @@
 
 @interface AXSSInterDeviceSecurityHelper : NSObject
 {
-    struct OpaqueSecIdentityRef *_cachedAppleIDIdentity;
+    struct __SecIdentity *_cachedAppleIDIdentity;
     NSArray *_cachedCertificateChain;
     NSArray *_cachedSecurityIdentity;
 }
@@ -19,7 +19,7 @@
 - (BOOL)shouldTrustCertificate:(id)arg1;
 - (id)securityIdentity;
 - (id)_certificateChain;
-- (struct OpaqueSecIdentityRef *)_appleIDIdentity;
+- (struct __SecIdentity *)_appleIDIdentity;
 - (void)_appleIDsDidChange;
 - (void)dealloc;
 - (id)init;

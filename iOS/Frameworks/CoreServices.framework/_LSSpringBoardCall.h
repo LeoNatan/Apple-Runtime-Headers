@@ -8,7 +8,7 @@
 
 #import <CoreServices/NSCopying-Protocol.h>
 
-@class NSDictionary, NSString, NSXPCConnection;
+@class BSServiceConnectionEndpoint, NSDictionary, NSString, NSXPCConnection;
 
 __attribute__((visibility("hidden")))
 @interface _LSSpringBoardCall : NSObject <NSCopying>
@@ -16,19 +16,22 @@ __attribute__((visibility("hidden")))
     NSString *_schemeIfNotFileURL;
     _Bool _callCompletionHandlerWhenFullyComplete;
     NSDictionary *_launchOptions;
+    BSServiceConnectionEndpoint *_targetServiceConnectionEndpoint;
     NSString *_applicationIdentifier;
     NSXPCConnection *_clientXPCConnection;
 }
 
++ (id)springBoardDeadlockPreventionQueue;
 + (id)springBoardQueue;
 @property _Bool callCompletionHandlerWhenFullyComplete; // @synthesize callCompletionHandlerWhenFullyComplete=_callCompletionHandlerWhenFullyComplete;
 @property(retain) NSXPCConnection *clientXPCConnection; // @synthesize clientXPCConnection=_clientXPCConnection;
 @property(copy) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
+@property(retain) BSServiceConnectionEndpoint *targetServiceConnectionEndpoint; // @synthesize targetServiceConnectionEndpoint=_targetServiceConnectionEndpoint;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;
 - (void)callWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(copy) NSDictionary *launchOptions; // @synthesize launchOptions=_launchOptions;
-- (void)dealloc;
 - (void)promptAndCallSpringBoardWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)lieWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)callSpringBoardWithCompletionHandler:(CDUnknownBlockType)arg1;

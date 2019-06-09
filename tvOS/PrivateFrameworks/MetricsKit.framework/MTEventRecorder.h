@@ -6,23 +6,32 @@
 
 #import <MetricsKit/MTObject.h>
 
-#import <MetricsKit/MTEventRecorderJSExports-Protocol.h>
-
-@class NSString;
+@class NSMutableArray;
 @protocol MTEventRecorderDelegate;
 
-@interface MTEventRecorder : MTObject <MTEventRecorderJSExports>
+@interface MTEventRecorder : MTObject
 {
     id <MTEventRecorderDelegate> _delegate;
+    NSMutableArray *_eventListeners;
 }
 
++ (id)_compositePromiseWithPromises:(id)arg1 resolvingResultFromPromise:(id)arg2;
++ (id)_metricsDataApplyingWhitelisting:(id)arg1 usingRecorder:(id)arg2;
+@property(retain, nonatomic) NSMutableArray *eventListeners; // @synthesize eventListeners=_eventListeners;
 @property(nonatomic) __weak id <MTEventRecorderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_recordEvent:(id)arg1 toTopic:(id)arg2 usingRecorder:(id)arg3;
+- (id)_recordEvent:(id)arg1 usingRecorder:(id)arg2;
+- (id)_flushUnreportedEventsUsingRecorder:(id)arg1;
+- (id)recordEvent:(id)arg1 shouldSkipValidation:(_Bool)arg2;
 - (id)recordEvent:(id)arg1 toTopic:(id)arg2;
 - (id)recordEvent:(id)arg1;
-- (id)recordEvent:(id)arg1 shouldSkipValidation:(_Bool)arg2;
-@property(readonly) NSString *sendMethod;
+- (id)sendMethod;
 - (id)flushUnreportedEvents;
+- (void)removeEventListener:(id)arg1;
+- (void)addEventListener:(id)arg1;
+- (id)_amsDelegate;
+@property(nonatomic) _Bool monitorsLifecycleEvents;
 
 @end
 

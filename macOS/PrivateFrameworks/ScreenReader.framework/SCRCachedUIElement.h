@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     SCRUIElement *_uiElement;
 }
 
-- (id)uiElement;
+@property(retain, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
+- (void).cxx_destruct;
 - (unsigned int)elementRetainCount;
 - (void)releaseUIElement;
 - (void)retainUIElement;
-- (void)dealloc;
 - (id)initWithUIElement:(id)arg1;
 
 @end

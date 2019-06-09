@@ -7,16 +7,16 @@
 #import <UIKit/UIViewController.h>
 
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
+#import <MapKit/MKMuninViewProvider-Protocol.h>
 #import <MapKit/MKPlaceAttributionCellDelegate-Protocol.h>
 #import <MapKit/MKPlacePhotosViewDelegate-Protocol.h>
 #import <MapKit/UIScrollViewDelegate-Protocol.h>
 #import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
-@class MKMapItem, MKPhotoSmallAttributionView, MKPlaceAttributionCell, MKPlacePhotosView, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView, _MKPlaceViewController;
+@class MKMapItem, MKMuninContainerView, MKMuninView, MKPhotoSmallAttributionView, MKPlaceAttributionCell, MKPlacePhotosView, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView, _MKPlaceViewController;
 @protocol MKPlaceCardPhotosControllerDelegate><MKPlaceCardActionControllerDelegate;
 
-__attribute__((visibility("hidden")))
-@interface MKPlacePhotosViewController : UIViewController <MKPlaceAttributionCellDelegate, MKPlacePhotosViewDelegate, UIScrollViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
+@interface MKPlacePhotosViewController : UIViewController <MKPlaceAttributionCellDelegate, MKPlacePhotosViewDelegate, UIScrollViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol, MKMuninViewProvider>
 {
     MKPlacePhotosView *_currentPhotoViewer;
     UIView *_bottomHairline;
@@ -33,13 +33,16 @@ __attribute__((visibility("hidden")))
     _Bool _loadAppImageCanceledOrFailed;
     _Bool _isRTL;
     unsigned long long _photosCount;
+    UIView *_externalView;
     MKMapItem *_mapItem;
     NSLayoutConstraint *_heightConstraint;
     NSLayoutConstraint *_bottomConstraint;
     NSArray *_photos;
     unsigned long long _mode;
     unsigned long long _originalMode;
+    unsigned long long _options;
     MKPlaceAttributionCell *_attributionCell;
+    MKMuninContainerView *_muninContainerView;
     UIScrollView *_parentScrollView;
     _Bool _showsBottomHairline;
     _MKPlaceViewController *_owner;
@@ -52,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)viewDidLayoutSubviews;
 - (void)viewLayoutMarginsDidChange;
+- (void)setContentVisibility:(long long)arg1;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)placePhotoViewerWillClose:(id)arg1 photo:(id)arg2 onIndex:(unsigned long long)arg3;
 - (void)placePhotoViewerAttributionTappedForPhotoAtIndex:(unsigned long long)arg1 photo:(id)arg2;
@@ -62,7 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)_loadPhotos;
 - (void)_cancelLoadPhotos;
 - (void)_updatePhotoBackgroundColor:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_updateAlphaAttribution;
 - (void)_catchScrollNotification:(id)arg1;
 - (void)updateAttributionPositionWithOffset:(double)arg1;
@@ -70,20 +75,23 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewDidScroll:(id)arg1;
 - (struct CGSize)sizeForIndex:(unsigned long long)arg1;
 - (void)layoutImages;
+- (void)_applyCornerRadius;
 - (void)_createImageViews;
 - (void)openURL;
 - (id)attributionString;
 - (id)formattedAttributionString;
 - (void)updateAttributionCell;
 - (void)addAttributionCell;
+@property(readonly, nonatomic) MKMuninView *muninView;
 - (void)updateBottomHairlineVisibility;
 - (void)dealloc;
 - (void)_willResignActive:(id)arg1;
 - (void)_didBecomeActive:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2;
+- (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2 options:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

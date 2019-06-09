@@ -8,7 +8,6 @@
 
 @protocol NSProxyConnectionDelegate, OS_tcp_connection;
 
-__attribute__((visibility("hidden")))
 @interface NSProxyConnection : NSObject
 {
     BOOL _doCleanupWhenWritesCompleted;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)gatherParticipatingWindowNumbers;
 - (void)setupWindowForAfterFullScreenEnter;
 - (void)orderTransitionedWindowFront;
+- (void)associateWindowWithSpace;
 - (id)_getPossibleCustomWindowsForEnteringIntoFullScreen;
 - (id)fullScreenTitle;
 - (id)contentController;

@@ -8,20 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDTextItemDisplayConfig, NSMutableArray, PBUnknownFields;
+@class GEOPDTextItemDisplayConfig, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDTextItemContainer : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDTextItemDisplayConfig *_displayConf;
     NSMutableArray *_textItems;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_displayConf:1;
+        unsigned int read_textItems:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_displayConf:1;
+        unsigned int wrote_textItems:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)textItemType;
-@property(retain, nonatomic) GEOPDTextItemDisplayConfig *displayConf; // @synthesize displayConf=_displayConf;
-@property(retain, nonatomic) NSMutableArray *textItems; // @synthesize textItems=_textItems;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,13 +40,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDTextItemDisplayConfig *displayConf;
 @property(readonly, nonatomic) _Bool hasDisplayConf;
+- (void)_readDisplayConf;
 - (id)textItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)textItemsCount;
+- (void)_addNoFlagsTextItem:(id)arg1;
 - (void)addTextItem:(id)arg1;
 - (void)clearTextItems;
+@property(retain, nonatomic) NSMutableArray *textItems;
+- (void)_readTextItems;
 
 @end
 

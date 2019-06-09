@@ -8,6 +8,7 @@
 
 @protocol OS_dispatch_group, TSUReadChannel;
 
+__attribute__((visibility("hidden")))
 @interface TSUZipFileDescriptorWrapper : NSObject
 {
     NSObject<OS_dispatch_group> *_accessGroup;

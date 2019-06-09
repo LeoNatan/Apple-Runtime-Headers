@@ -20,8 +20,6 @@
 }
 
 + (struct CGSize)fileIconSize;
-+ (id)applicationNameFromURL:(id)arg1;
-+ (id)appsThatCanOpenAttachment:(id)arg1;
 @property __weak EKUIAttachmentGadget *gadget; // @synthesize gadget=_gadget;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain) EKUITokenField *tokenField; // @synthesize tokenField=_tokenField;

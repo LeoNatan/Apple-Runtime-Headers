@@ -8,7 +8,7 @@
 
 #import <CoreData/NSCopying-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, NSURL;
+@class NSDictionary, NSMutableDictionary, NSPersistentCloudKitContainerOptions, NSString, NSURL;
 
 @interface NSPersistentStoreDescription : NSObject <NSCopying>
 {
@@ -23,6 +23,8 @@
 @property(copy) NSURL *URL; // @synthesize URL=_url;
 @property(copy) NSString *configuration; // @synthesize configuration=_configuration;
 @property(copy) NSString *type; // @synthesize type=_type;
+- (void)setUsesPersistentHistoryTracking:(BOOL)arg1;
+- (BOOL)usesPersistentHistoryTracking;
 - (void)setOption:(id)arg1 forMirroringKey:(id)arg2;
 - (id)mirroringOptions;
 - (id)mirroringDelegate;
@@ -45,6 +47,7 @@
 @property(getter=isReadOnly) BOOL readOnly;
 - (void)setOption:(id)arg1 forKey:(id)arg2;
 @property(readonly, copy, nonatomic) NSDictionary *options;
+@property(retain) NSPersistentCloudKitContainerOptions *cloudKitContainerOptions;
 
 @end
 

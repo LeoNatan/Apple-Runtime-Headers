@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableSet, PLPhotoLibrary;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PLPhotoLibrary;
 
 @interface PLCloudBatchUploader : NSObject
 {
@@ -16,16 +16,21 @@
     NSMutableSet *_cameraAsset;
     _Bool _initialUpload;
     _Bool _shouldGenerateDerivatives;
+    NSMutableDictionary *_recordsToDelete;
+    NSString *_recordsToDeletePlistPath;
 }
 
 @property _Bool shouldGenerateDerivatives; // @synthesize shouldGenerateDerivatives=_shouldGenerateDerivatives;
 @property _Bool initialUpload; // @synthesize initialUpload=_initialUpload;
 - (void).cxx_destruct;
 - (id)processCommitError:(id)arg1 andFinalizeError:(id)arg2 forUploadBatchContainer:(id)arg3 withUploadTracker:(id)arg4;
+- (void)_clearSuccessfullyPushedDeletedRecords:(id)arg1;
+- (_Bool)_updateDeletionRecordListForKey:(id)arg1 removingRecordID:(id)arg2;
 - (_Bool)_processRepushAlbumError:(id)arg1 inUploadBatch:(id)arg2 forRecords:(id)arg3;
 - (void)_processGenerateDerivativesCommitError:(id)arg1 inUploadBatch:(id)arg2 forRecords:(id)arg3;
 - (void)tryToFixCommitError:(id)arg1 inUploadBatch:(id)arg2 forRecords:(id)arg3;
 - (void)_addLocalResourcesToRecord:(id)arg1;
+- (void)_processInvalidExpungeableResourceTypesCommitError:(id)arg1 inUploadBatch:(id)arg2 forRecords:(id)arg3;
 - (void)_processInvalidResourceCopySourceCommitError:(id)arg1 inUploadBatch:(id)arg2 forRecords:(id)arg3;
 - (void)_processInvalidScopeCommitError:(id)arg1 inUploadBatch:(id)arg2 forRecords:(id)arg3;
 - (void)_processQuarantineRecordsCommitError:(id)arg1 inUploadBatch:(id)arg2 forRecords:(id)arg3;
@@ -36,6 +41,7 @@
 - (id)_getLocalRecordFromCPLRecord:(id)arg1;
 - (void)_cleanUploadedResources:(id)arg1;
 - (void)uploadFullPhotoLibraryToCloud;
+- (void)uploadDeletedRecordsFromPlist:(id)arg1;
 - (id)_personsToUploadIncludingReverseOrderedMergeTargetsForPersons:(id)arg1;
 - (void)_processPendingObjects:(id)arg1 withBatchManager:(id)arg2;
 - (void)_sendAssets:(id)arg1 toBatchManager:(id)arg2;

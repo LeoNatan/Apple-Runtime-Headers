@@ -13,12 +13,14 @@
 #import <Widgets/WGWidgetHostingViewControllerDelegate-Protocol.h>
 #import <Widgets/WGWidgetListItemViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, UIScrollView, UIStackView, WGWidgetDiscoveryController;
+@class MTMaterialView, NSArray, NSLayoutConstraint, NSMutableDictionary, NSString, UIScrollView, UIStackView, WGWidgetDiscoveryController;
 @protocol WGWidgetListViewControllerDelegate;
 
 @interface WGWidgetListViewController : UIViewController <WGWidgetDebugging, UIScrollViewDelegate, WGWidgetDiscoveryObserving, WGWidgetHostingViewControllerDelegate, WGWidgetListItemViewControllerDelegate, WGWidgetExtensionVisibilityProviding>
 {
     WGWidgetDiscoveryController *_discoveryController;
+    MTMaterialView *_captureOnlyMaterialView;
+    UIScrollView *_scrollView;
     UIStackView *_stackView;
     NSMutableDictionary *_cancelTouchesAssertionsByWidgetID;
     NSMutableDictionary *_widgetIDsToItemVCs;
@@ -26,8 +28,10 @@
     _Bool _shouldBlurContent;
     id <WGWidgetListViewControllerDelegate> _delegate;
     NSArray *_previouslyVisibleWidgetIDs;
+    NSLayoutConstraint *_stackViewBottomConstraint;
 }
 
+@property(readonly, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
 @property(retain, nonatomic, getter=_previouslyVisibleWidgetIDs, setter=_setPreviouslyVisibleWidgetIDs:) NSArray *previouslyVisibleWidgetIDs; // @synthesize previouslyVisibleWidgetIDs=_previouslyVisibleWidgetIDs;
 @property(nonatomic) _Bool shouldBlurContent; // @synthesize shouldBlurContent=_shouldBlurContent;
 @property(nonatomic) __weak id <WGWidgetListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -42,10 +46,13 @@
 - (void)remoteViewControllerViewDidAppearForWidget:(id)arg1;
 - (void)widget:(id)arg1 didChangeLargestSupportedDisplayMode:(long long)arg2;
 - (struct UIEdgeInsets)marginInsetsForWidget:(id)arg1;
+- (void)unregisterWidgetForRefreshEvents:(id)arg1;
+- (void)registerWidgetForRefreshEvents:(id)arg1;
 - (struct CGSize)maxSizeForWidget:(id)arg1 forDisplayMode:(long long)arg2;
 - (struct CGSize)_maxVisibleContentSize;
 - (struct CGRect)_visibleContentFrameForBounds:(struct CGRect)arg1 withContentOccludingInsets:(struct UIEdgeInsets)arg2;
 - (void)orderOfVisibleWidgetsDidChange:(id)arg1;
+- (void)_scrollViewDidStop;
 - (void)scrollViewDidScrollToTop:(id)arg1;
 - (_Bool)scrollViewShouldScrollToTop:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -55,11 +62,15 @@
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (id)_wrapperViewForWidgetPlatterView:(id)arg1;
 - (void)_updateWidgetViewStateWithPreviouslyVisibleWidgetIdentifiers:(id)arg1;
 - (id)_widgetIdentifiersForPlatterViewsVisibleInBounds;
 - (void)_invokeBlockWithPlatterViewsVisibleInBounds:(CDUnknownBlockType)arg1;
 - (void)_invokeBlockWithPlatterViewsVisibleInRect:(struct CGRect)arg1 block:(CDUnknownBlockType)arg2;
+- (void)_invokeBlockWithAllPlatterViews:(CDUnknownBlockType)arg1;
 - (void)_invokeBlock:(CDUnknownBlockType)arg1 withPlatterViewsPassingTest:(CDUnknownBlockType)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)widgetWrapper:(id)arg1 willResizeWithTransitionCoordinator:(id)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -69,19 +80,21 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)viewDidLoad;
-- (void)loadView;
 - (void)_invalidateAllCancelTouchesAssertions;
 - (void)_cancelTouchesForWidget:(id)arg1;
-- (void)_cancelTouchesForHitWidgetIfNecessary;
+- (void)_cancelTouchesForHitWidgetIfNecessaryAndDisableTouchesOnAllWidgets;
 - (id)_platterViewAtLocation:(struct CGPoint)arg1;
 - (void)_repopulateStackView;
 - (void)_updateBackgroundViewForPlatter:(id)arg1;
 - (id)_scrollViewIfLoaded;
 - (id)_scrollViewLoadingIfNecessary:(_Bool)arg1;
+- (void)_configureScrollView;
+- (void)_configureCaptureOnlyMaterialView;
 - (CDUnknownBlockType)_insert:(_Bool)arg1 listItem:(id)arg2 withOrderedIdentifiers:(id)arg3 animated:(_Bool)arg4;
+- (void)_didUpdateStackViewArrangedSubviews;
 - (CDUnknownBlockType)_beginInsertion:(_Bool)arg1 ofListItem:(id)arg2 withOrderedIdentifiers:(id)arg3 removingViewIfPossible:(_Bool)arg4;
 - (unsigned long long)_insertionIndexofListItem:(id)arg1 intoWidgetViews:(id)arg2 withOrderedIdentifiers:(id)arg3;
-- (id)_repopulateStackViewWithWidgetIdentifiers:(id)arg1;
+- (void)_repopulateStackViewWithWidgetIdentifiers:(id)arg1;
 - (void)_configureStackView;
 - (id)_platterViewForWidgetWithIdentifier:(id)arg1 creatingIfNecessary:(_Bool)arg2;
 - (id)_listItemViewControllerForWidgetWithIdentifier:(id)arg1 creatingIfNecessary:(_Bool)arg2;

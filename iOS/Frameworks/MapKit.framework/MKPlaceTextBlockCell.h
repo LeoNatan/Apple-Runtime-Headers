@@ -6,7 +6,7 @@
 
 #import <MapKit/MKPlaceSectionRowView.h>
 
-@class MKExpandingLabel, NSArray, NSString;
+@class MKExpandingLabel, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceTextBlockCell : MKPlaceSectionRowView
@@ -14,21 +14,17 @@ __attribute__((visibility("hidden")))
     _Bool _constraintsAdded;
     MKExpandingLabel *_textBlock;
     NSString *_textBlockText;
-    NSArray *_marginConstraints;
 }
 
 @property(nonatomic) _Bool constraintsAdded; // @synthesize constraintsAdded=_constraintsAdded;
-@property(retain, nonatomic) NSArray *marginConstraints; // @synthesize marginConstraints=_marginConstraints;
 @property(copy, nonatomic) NSString *textBlockText; // @synthesize textBlockText=_textBlockText;
 @property(retain, nonatomic) MKExpandingLabel *textBlock; // @synthesize textBlock=_textBlock;
 - (void).cxx_destruct;
 @property(copy, nonatomic) CDUnknownBlockType textBlockResizedBlock;
 @property(nonatomic, getter=isTextBlockExpanded) _Bool textBlockExpanded;
-- (void)_refreshLayoutMargins;
-- (void)layoutMarginsDidChange;
 - (void)updateConstraints;
 - (void)_contentSizeDidChange;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

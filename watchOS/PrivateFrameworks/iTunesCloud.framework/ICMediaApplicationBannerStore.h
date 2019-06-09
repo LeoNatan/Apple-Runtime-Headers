@@ -19,12 +19,14 @@
 
 + (id)defaultStore;
 - (void).cxx_destruct;
+- (id)_onQueueBannersForBundleIdentifier:(id)arg1 target:(id)arg2 error:(id *)arg3;
 - (id)_defaultStoreFilePath;
 - (void)_commit;
 - (void)_load;
 - (_Bool)removeAllBannersWithResult:(id *)arg1;
 - (id)bannersForBundleIdentifier:(id)arg1 target:(id)arg2 error:(id *)arg3;
 - (id)allBannersWithResult:(id *)arg1;
+- (_Bool)removeBannersForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)removeBannerWithGUID:(id)arg1 error:(id *)arg2;
 - (_Bool)addBanner:(id)arg1 error:(id *)arg2;
 - (id)allProperties;

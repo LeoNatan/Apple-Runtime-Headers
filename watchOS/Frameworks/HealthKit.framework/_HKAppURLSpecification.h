@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isHealthRecordsProviderSearchURL:(id)arg1;
 + (_Bool)isViewHealthRecordsURL:(id)arg1;
 + (_Bool)isAtrialFibrillationEventURL:(id)arg1;
 + (_Bool)parseClinicalLoginRedirectURL:(id)arg1 resultHandler:(CDUnknownBlockType)arg2 errorHandler:(CDUnknownBlockType)arg3;

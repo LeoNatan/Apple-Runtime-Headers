@@ -13,10 +13,7 @@
     NSDictionary *_additions;
     NSDictionary *_overrides;
     NSDictionary *_mergeDocumentTypes;
-    NSDictionary *_launchOverrides;
-    NSDictionary *_highResOverrides;
-    NSDictionary *_appNapOverrides;
-    NSDictionary *_eGPUOverrides;
+    NSDictionary *_capabilityOverrides;
 }
 
 + (BOOL)allowInternallyBlockedApps;
@@ -24,11 +21,12 @@
 + (void)initialize;
 + (void)invalidateSharedInstance;
 - (void).cxx_destruct;
-- (unsigned int)overrideFlagsForCapability:(unsigned int)arg1 withBundleIdentifier:(id)arg2 bundleVersion:(unsigned long long)arg3;
+- (unsigned int)launchOverrideFlagsWithBundleIdentifier:(id)arg1 bundleVersion:(struct LSVersionNumber)arg2 overrideDictionary:(id *)arg3;
+- (unsigned int)overrideFlagsForCapability:(const struct PrefsCapabilityInfo *)arg1 withBundleIdentifier:(id)arg2 bundleVersion:(struct LSVersionNumber)arg3;
 - (void)applyToInfoDictionary:(id)arg1;
 - (id)init;
-- (BOOL)version:(unsigned long long)arg1 matchesOverrideVersion:(id)arg2;
-- (unsigned int)overrideFlagsForCapability:(unsigned int)arg1 withBundleIdentifier:(id)arg2 bundleVersion:(unsigned long long)arg3 overrideDictionary:(id *)arg4;
+- (BOOL)version:(struct LSVersionNumber)arg1 matchesOverrideVersion:(id)arg2;
+- (unsigned int)overrideFlagsForCapability:(const struct PrefsCapabilityInfo *)arg1 withBundleIdentifier:(id)arg2 bundleVersion:(struct LSVersionNumber)arg3 overrideDictionary:(id *)arg4;
 - (BOOL)claim:(id)arg1 intersectsClaim:(id)arg2;
 - (id)validateJavaRequirementInAdditions:(id)arg1 forInfoDictionary:(id)arg2;
 - (void)replaceMasterDictionary:(id *)arg1 settingNewValues:(id)arg2;

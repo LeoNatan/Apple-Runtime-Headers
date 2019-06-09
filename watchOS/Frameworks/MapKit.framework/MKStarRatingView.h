@@ -11,7 +11,7 @@
 @interface MKStarRatingView : UIView
 {
     float _rating;
-    int _numLevels;
+    unsigned int _numLevels;
     float _padding;
     _Bool _highlighted;
     UIImage *_fullStarImage;
@@ -26,7 +26,9 @@
 }
 
 + (id)ratingAsAttributedString:(float)arg1 baseFont:(id)arg2 style:(int)arg3 theme:(id)arg4;
-+ (id)ratingAsAttributedString:(float)arg1 baseFont:(id)arg2 style:(int)arg3;
++ (id)ratingShortAsAttributedString:(float)arg1 baseFont:(id)arg2 theme:(id)arg3;
++ (id)ratingShortForCarPlayAsAttributedString:(float)arg1 baseFont:(id)arg2 isFocused:(_Bool)arg3;
++ (id)colorForRating:(float)arg1;
 @property(retain, nonatomic) UIImage *emptyStarHighlightedImage; // @synthesize emptyStarHighlightedImage=_emptyStarHighlightedImage;
 @property(retain, nonatomic) UIImage *halfStarHighlightedImage; // @synthesize halfStarHighlightedImage=_halfStarHighlightedImage;
 @property(retain, nonatomic) UIImage *fullStarHighlightedImage; // @synthesize fullStarHighlightedImage=_fullStarHighlightedImage;
@@ -35,7 +37,7 @@
 @property(retain, nonatomic) UIImage *fullStarImage; // @synthesize fullStarImage=_fullStarImage;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) float rating; // @synthesize rating=_rating;
-@property(nonatomic) int numberOfRatingLevels; // @synthesize numberOfRatingLevels=_numLevels;
+@property(nonatomic) unsigned int numberOfRatingLevels; // @synthesize numberOfRatingLevels=_numLevels;
 @property(nonatomic) int starStyle; // @synthesize starStyle=_starStyle;
 - (void).cxx_destruct;
 - (void)setPadding:(float)arg1;

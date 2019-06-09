@@ -11,7 +11,7 @@
     // Error parsing type: , name: clientBundleId
     // Error parsing type: , name: clientProcessName
     // Error parsing type: , name: _activeConnection
-    // Error parsing type: , name: serverProxy.storage
+    // Error parsing type: , name: $__lazy_storage_$_serverProxy
     // Error parsing type: , name: authenticationProvider
 }
 

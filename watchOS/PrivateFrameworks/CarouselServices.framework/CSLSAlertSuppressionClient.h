@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSXPCConnection;
+@class NSMutableSet, NSXPCConnection;
 
 @interface CSLSAlertSuppressionClient : NSObject
 {
     NSXPCConnection *_connection;
+    NSMutableSet *_outstandingTokens;
+    struct os_unfair_lock_s _lock;
 }
 
 + (void)initialize;
@@ -18,8 +20,11 @@
 - (void).cxx_destruct;
 - (void)deactivateAssertionWithToken:(id)arg1;
 - (void)activateAssertionWithToken:(id)arg1;
+- (void)_activateRemoteAssertion:(id)arg1;
 - (id)_serviceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)identifierForReason:(unsigned int)arg1;
+- (void)_reactivateAssertions;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (id)init;
 
 @end

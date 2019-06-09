@@ -15,7 +15,7 @@
 + (id)viewWithBackgroundColor:(id)arg1;
 + (id)stackViewWithViews:(id)arg1;
 + (id)imageViewWithBackgroundColor:(id)arg1 roundEdges:(BOOL)arg2;
-+ (id)textFieldWithAlignment:(unsigned long long)arg1 font:(id)arg2 textColor:(id)arg3;
++ (id)textFieldWithAlignment:(long long)arg1 font:(id)arg2 textColor:(id)arg3;
 + (id)textFieldWithFont:(id)arg1;
 
 @end

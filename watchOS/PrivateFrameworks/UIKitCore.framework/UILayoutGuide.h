@@ -109,6 +109,7 @@
 - (unsigned int)nsli_autoresizingMask;
 - (_Bool)nsli_descriptionIncludesPointer;
 - (id)nsli_description;
+- (_Bool)nsli_defaultResolvedValue:(float *)arg1 forSymbolicConstant:(id)arg2 inConstraint:(id)arg3 error:(id *)arg4;
 - (_Bool)nsli_resolvedValue:(float *)arg1 forSymbolicConstant:(id)arg2 inConstraint:(id)arg3 error:(id *)arg4;
 - (id)nsli_superitem;
 - (struct CGSize)nsli_convertSizeFromEngineSpace:(struct CGSize)arg1;

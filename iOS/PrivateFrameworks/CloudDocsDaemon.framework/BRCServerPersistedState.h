@@ -19,18 +19,20 @@ __attribute__((visibility("hidden")))
     long long _nextRank;
     NSDate *_lastSyncDownDate;
     BRCServerChangeState *_sharedDatabaseChangeState;
+    unsigned long long _minLastUsedTime;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long minLastUsedTime; // @synthesize minLastUsedTime=_minLastUsedTime;
 @property(retain) BRCServerChangeState *sharedDatabaseChangeState; // @synthesize sharedDatabaseChangeState=_sharedDatabaseChangeState;
 @property(retain, nonatomic) NSDate *lastSyncDownDate; // @synthesize lastSyncDownDate=_lastSyncDownDate;
 @property(nonatomic) long long nextRank; // @synthesize nextRank=_nextRank;
 - (void).cxx_destruct;
-- (id)dumpMigrationQueriesForContainerID:(id)arg1;
-- (void)migrationQueryForContainerID:(id)arg1 key:(id)arg2 didCompleteWithContinuationCursor:(id)arg3;
-- (id)migrationQueryKeyForContainerID:(id)arg1 continuationCursor:(id *)arg2;
-- (void)initiateMigrationQueryForContainerIDs:(id)arg1 key:(id)arg2;
-- (_Bool)containerIDIsPendingMigration:(id)arg1;
+- (id)dumpMigrationQueriesForMangledID:(id)arg1;
+- (void)migrationQueryForMangledID:(id)arg1 key:(id)arg2 didUpdateWithCursor:(id)arg3;
+- (id)migrationQueryKeyForMangledID:(id)arg1 continuationCursor:(id *)arg2;
+- (void)initiateMigrationQueryForMangledIDs:(id)arg1 key:(id)arg2;
+- (_Bool)mangledIDIsPendingMigration:(id)arg1;
 - (void)saveToDB:(id)arg1;
 - (void)sqliteBind:(struct sqlite3_stmt *)arg1 index:(int)arg2;
 - (void)encodeWithCoder:(id)arg1;

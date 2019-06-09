@@ -8,7 +8,7 @@
 
 #import <MetalTools/MTLComputePipelineStateSPI-Protocol.h>
 
-@class NSString;
+@class MTLDebugInstrumentationData, NSString;
 @protocol MTLDevice, MTLFunction;
 
 @interface MTLToolsComputePipelineState : MTLToolsObject <MTLComputePipelineStateSPI>
@@ -16,8 +16,9 @@
     id <MTLFunction> _function;
 }
 
+@property(readonly, retain, nonatomic) MTLDebugInstrumentationData *debugInstrumentationData;
 @property(readonly) unsigned long long uniqueIdentifier;
-- (unsigned long long)resourceIndex;
+@property(nonatomic) unsigned long long resourceIndex;
 @property(readonly) unsigned long long staticThreadgroupMemoryLength;
 @property(readonly) unsigned long long threadExecutionWidth;
 @property(readonly) unsigned long long maxTotalThreadsPerThreadgroup;

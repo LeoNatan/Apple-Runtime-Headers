@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class INBalanceAmount, INSpeakableString, NSString;
 
-@interface INPaymentAccount : NSObject <NSCopying, NSSecureCoding>
+@interface INPaymentAccount : NSObject <INJSONSerializable, NSCopying, NSSecureCoding>
 {
     INSpeakableString *_nickname;
     NSString *_accountNumber;
@@ -21,6 +22,7 @@
     INBalanceAmount *_secondaryBalance;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) INBalanceAmount *secondaryBalance; // @synthesize secondaryBalance=_secondaryBalance;
 @property(readonly, copy, nonatomic) INBalanceAmount *balance; // @synthesize balance=_balance;
@@ -31,15 +33,20 @@
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 accountType:(int)arg3 organizationName:(id)arg4;
 - (id)initWithNickname:(id)arg1 number:(id)arg2 accountType:(int)arg3 organizationName:(id)arg4 balance:(id)arg5 secondaryBalance:(id)arg6;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

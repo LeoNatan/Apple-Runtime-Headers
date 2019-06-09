@@ -12,11 +12,11 @@
 {
     double _minutesUntilEvent;
     struct {
-        unsigned int minutesUntilEvent:1;
-    } _has;
+        unsigned int has_minutesUntilEvent:1;
+    } _flags;
 }
 
-@property(nonatomic) double minutesUntilEvent; // @synthesize minutesUntilEvent=_minutesUntilEvent;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -24,9 +24,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasMinutesUntilEvent;
+@property(nonatomic) double minutesUntilEvent;
 
 @end
 

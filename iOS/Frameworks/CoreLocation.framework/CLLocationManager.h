@@ -23,6 +23,10 @@
 + (void)setDefaultEffectiveBundleIdentifier:(id)arg1;
 + (void)setBackgroundIndicatorEnabled:(_Bool)arg1 forBundle:(id)arg2;
 + (void)setBackgroundIndicatorEnabled:(_Bool)arg1 forBundleIdentifier:(id)arg2;
++ (void)setTemporaryAuthorizationGranted:(_Bool)arg1 forBundle:(id)arg2;
++ (void)setTemporaryAuthorizationGranted:(_Bool)arg1 forBundleIdentifier:(id)arg2;
++ (void)setAuthorizationStatusByType:(int)arg1 withCorrectiveCompensation:(int)arg2 forBundle:(id)arg3;
++ (void)setAuthorizationStatusByType:(int)arg1 withCorrectiveCompensation:(int)arg2 forBundleIdentifier:(id)arg3;
 + (void)setAuthorizationStatusByType:(int)arg1 forBundle:(id)arg2;
 + (void)setAuthorizationStatusByType:(int)arg1 forBundleIdentifier:(id)arg2;
 + (void)setAuthorizationStatus:(_Bool)arg1 forBundle:(id)arg2;
@@ -35,6 +39,8 @@
 + (int)authorizationStatusForBundle:(id)arg1;
 + (int)authorizationStatusForBundleIdentifier:(id)arg1;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
++ (id)_applyArchivedAuthorizationDecisions:(id)arg1;
++ (id)_archivedAuthorizationDecisionsWithError:(id *)arg1;
 + (_Bool)isPeerRangingAvailable;
 + (_Bool)deferredLocationUpdatesAvailable;
 + (_Bool)mapCorrectionAvailable;
@@ -48,11 +54,12 @@
 + (_Bool)locationServicesEnabled:(_Bool)arg1;
 + (_Bool)locationServicesEnabled;
 + (id)sharedManager;
-+ (_Bool)isMicroLocationAvailable;
 + (void)setBackgroundIndicatorEnabled:(_Bool)arg1 forLocationDictionary:(id)arg2;
 + (_Bool)backgroundIndicatorEnabledForLocationDictionary:(id)arg1;
++ (void)setEntityAuthorization:(unsigned long long)arg1 withCorrectiveCompensation:(_Bool)arg2 forLocationDictionary:(id)arg3;
 + (void)setEntityAuthorization:(unsigned long long)arg1 forLocationDictionary:(id)arg2;
 + (void)setEntityAuthorized:(_Bool)arg1 forLocationDictionary:(id)arg2;
++ (_Bool)correctiveCompensationStatusForLocationDictionary:(id)arg1;
 + (unsigned long long)allowableAuthorizationForLocationDictionary:(id)arg1;
 + (unsigned long long)entityAuthorizationForLocationDictionary:(id)arg1;
 + (_Bool)isEntityAuthorizedForLocationDictionary:(id)arg1;
@@ -69,11 +76,9 @@
 @property(nonatomic) _Bool allowsAlteredAccessoryLocations;
 @property(nonatomic, getter=isDynamicAccuracyReductionEnabled) _Bool dynamicAccuracyReductionEnabled;
 @property(nonatomic, getter=isLocationServicesPreferencesDialogEnabled) _Bool locationServicesPreferencesDialogEnabled;
-@property(nonatomic, getter=isPersistentMonitoringEnabled) _Bool persistentMonitoringEnabled;
 - (void)requestAlwaysAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)requestWhenInUseAuthorization;
-- (void)onClientEventMicroLocation:(id)arg1;
 - (void)onClientEventSignificantLocationVisit:(id)arg1;
 - (void)onClientEventVehicleHeading:(id)arg1;
 - (void)onClientEventVehicleSpeed:(id)arg1;
@@ -94,6 +99,7 @@
 - (void)onClientEventRegionState:(id)arg1;
 - (void)onClientEventRegion:(id)arg1;
 - (void)onClientEventError:(id)arg1;
+- (void)onClientEventPlaceInference:(id)arg1;
 - (void)onClientEventHeadingCalibration:(id)arg1;
 - (void)onClientEventHeading:(id)arg1;
 - (void)onClientEventLocationUnavailable:(id)arg1;
@@ -113,6 +119,9 @@
 - (void)respondToRangingFromPeers:(id)arg1 timeoutSeconds:(double)arg2;
 - (void)requestRangingToPeers:(id)arg1 timeoutSeconds:(double)arg2;
 @property(readonly, copy, nonatomic) NSSet *rangedRegions;
+@property(readonly, copy, nonatomic) NSSet *rangedBeaconConstraints;
+- (void)stopRangingBeaconsSatisfyingConstraint:(id)arg1;
+- (void)startRangingBeaconsSatisfyingConstraint:(id)arg1;
 - (void)stopRangingBeaconsInRegion:(id)arg1;
 - (void)startRangingBeaconsInRegion:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *monitoredRegions;
@@ -157,24 +166,29 @@
 @property(nonatomic) _Bool pausesLocationUpdatesAutomatically;
 @property(nonatomic) double desiredAccuracy;
 @property(nonatomic) double distanceFilter;
-@property(nonatomic) id <CLLocationManagerDelegate> delegate;
+@property(nonatomic) __weak id <CLLocationManagerDelegate> delegate;
 - (void)dealloc;
+- (id)_initWithDelegate:(id)arg1 onQueue:(id)arg2;
+- (id)initWithEffectiveBundle:(id)arg1 delegate:(id)arg2 onQueue:(id)arg3;
 - (id)initWithEffectiveBundle:(id)arg1;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1 delegate:(id)arg2 onQueue:(id)arg3;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
 - (id)init;
-- (id)initWithEffectiveBundleIdentifier:(id)arg1 bundle:(id)arg2;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1 bundle:(id)arg2 delegate:(id)arg3 silo:(id)arg4;
 - (void)stopUpdatingVehicleHeading;
 - (void)startUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
 - (void)startUpdatingVehicleSpeed;
 @property(nonatomic, getter=isMatchInfoEnabled) _Bool matchInfoEnabled;
+- (void)_setGroundAltitudeEnabled:(_Bool)arg1;
+- (_Bool)_isGroundAltitudeEnabled;
 - (void)_startLeechingVisits;
 - (void)stopMonitoringVisits;
 - (void)startMonitoringVisits;
-- (void)requestCurrentMicroLocation;
-- (void)stopUpdatingMicroLocation;
-- (void)startUpdatingMicroLocationForLocationOfInterest:(id)arg1;
-- (void)startUpdatingMicroLocation;
+- (void)_fetchPlaceInferencesWithFidelityPolicy:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_updateLSLHeadingEstimation:(id)arg1;
+- (void)_updateARSessionState:(unsigned long long)arg1;
+- (void)_updateVIOEstimation:(id)arg1;
 
 @end
 

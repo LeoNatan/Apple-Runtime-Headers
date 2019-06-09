@@ -18,12 +18,11 @@
 
 + (id)sharedMonitor;
 - (void).cxx_destruct;
-- (_Bool)shouldHideSensitiveUI;
+- (_Bool)shouldHideForSensitivity:(long long)arg1;
+- (_Bool)hideSensitiveUISwitchEnabled;
 - (void)removeSensitiveUIObserver:(id)arg1;
 - (void)addSensitiveUIObserver:(id)arg1;
 - (id)init;
-- (_Bool)faceStyleIsSensitive:(long long)arg1;
-- (_Bool)shouldHideSensitiveUIForFaceStyle:(long long)arg1;
 - (_Bool)_isVendorRelease;
 
 @end

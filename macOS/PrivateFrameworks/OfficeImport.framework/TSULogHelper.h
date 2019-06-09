@@ -8,6 +8,7 @@
 
 @class NSDate;
 
+__attribute__((visibility("hidden")))
 @interface TSULogHelper : NSObject
 {
     unsigned long long _throttleCount;

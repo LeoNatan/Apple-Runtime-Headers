@@ -4,13 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SpringBoardServices/SBSAbstractSystemService.h>
+#import <objc/NSObject.h>
 
-@interface SBSLockScreenService : SBSAbstractSystemService
+#import <SpringBoardServices/BSInvalidatable-Protocol.h>
+
+@class NSString, SBSLockScreenServiceConnection;
+
+@interface SBSLockScreenService : NSObject <BSInvalidatable>
 {
+    struct os_unfair_lock_s _lock;
+    SBSLockScreenServiceConnection *_lock_connection;
 }
 
+- (void).cxx_destruct;
+- (id)preventPasscodeLockWithReason:(id)arg1;
 - (void)requestPasscodeUnlockUIWithOptions:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)launchEmergencyDialerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)invalidate;
+- (void)dealloc;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -14,6 +14,7 @@
     ABUserDefaults *_preferences;
 }
 
++ (id)os_log;
 - (void).cxx_destruct;
 - (void)defaultAccountChangedExternally:(id)arg1;
 - (void)postLocalNotification;

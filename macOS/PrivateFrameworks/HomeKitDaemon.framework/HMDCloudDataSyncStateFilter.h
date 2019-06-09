@@ -15,7 +15,6 @@
 @interface HMDCloudDataSyncStateFilter : HMDMessageFilter <HMFMessageReceiver, HMFTimerDelegate>
 {
     BOOL _decryptionFailed;
-    BOOL _deviceSetupRunning;
     BOOL _keychainSyncEnabled;
     BOOL _keychainSyncRequiredPopShown;
     BOOL _iCloudSwitchRequiredPopShown;
@@ -28,7 +27,6 @@
     BOOL _resetConfigDisplayTimeHasElapsed;
     BOOL _keychainSyncPeerAvailable;
     BOOL _cloudDataSyncPeerAvailable;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     NSUUID *_uuid;
     HMFMessageDispatcher *_msgDispatcher;
     NSObject<OS_dispatch_source> *_popupTimer;
@@ -68,7 +66,6 @@
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(nonatomic) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_keychainSyncEnabled;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
@@ -107,8 +104,6 @@
 - (void)_stopDataConfigResetTimers;
 - (void)_startDataConfigResetTimers;
 - (void)startDataConfigResetTimers;
-@property(nonatomic) BOOL deviceSetupRunning; // @synthesize deviceSetupRunning=_deviceSetupRunning;
-- (void)__handleDeviceSetupRunningUpdated;
 @property(nonatomic) BOOL decryptionFailed; // @synthesize decryptionFailed=_decryptionFailed;
 - (void)_postNotificationForDataSyncInProgress:(BOOL)arg1 dataSyncState:(unsigned long long)arg2 forcePost:(BOOL)arg3;
 - (void)handleKeychainSyncStateChangedNotification:(id)arg1;

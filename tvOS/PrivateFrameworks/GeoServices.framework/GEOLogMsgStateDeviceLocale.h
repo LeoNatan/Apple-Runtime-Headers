@@ -8,18 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEOLogMsgStateDeviceLocale : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_deviceInputLocale;
     NSString *_deviceOutputLocale;
     NSString *_deviceSettingsLocale;
+    struct {
+        unsigned int read_deviceInputLocale:1;
+        unsigned int read_deviceOutputLocale:1;
+        unsigned int read_deviceSettingsLocale:1;
+        unsigned int wrote_deviceInputLocale:1;
+        unsigned int wrote_deviceOutputLocale:1;
+        unsigned int wrote_deviceSettingsLocale:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *deviceOutputLocale; // @synthesize deviceOutputLocale=_deviceOutputLocale;
-@property(retain, nonatomic) NSString *deviceInputLocale; // @synthesize deviceInputLocale=_deviceInputLocale;
-@property(retain, nonatomic) NSString *deviceSettingsLocale; // @synthesize deviceSettingsLocale=_deviceSettingsLocale;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,11 +36,18 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *deviceOutputLocale;
 @property(readonly, nonatomic) _Bool hasDeviceOutputLocale;
+- (void)_readDeviceOutputLocale;
+@property(retain, nonatomic) NSString *deviceInputLocale;
 @property(readonly, nonatomic) _Bool hasDeviceInputLocale;
+- (void)_readDeviceInputLocale;
+@property(retain, nonatomic) NSString *deviceSettingsLocale;
 @property(readonly, nonatomic) _Bool hasDeviceSettingsLocale;
+- (void)_readDeviceSettingsLocale;
 
 @end
 

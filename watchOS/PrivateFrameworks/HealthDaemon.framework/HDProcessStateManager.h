@@ -17,7 +17,7 @@
     NSMutableDictionary *_processObserversByBundleID;
     NSHashTable *_foregroundClientProcessObservers;
     BKSApplicationStateMonitor *_applicationMonitor;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _lock;
     NSObject<OS_dispatch_queue> *_clientCalloutQueue;
     NSMutableDictionary *_processInfoByBundleID;
 }
@@ -27,16 +27,18 @@
 + (id)bundleVersionStringForProcessIdentifier:(int)arg1;
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
-- (void)_queue_notifyObserversProcessWithBundleIdentifier:(id)arg1 processIdentifier:(int)arg2 applicationStateChanged:(unsigned int)arg3 previousApplicationState:(unsigned int)arg4;
-- (void)_queue_handleProcessInfoChangedWithAllPreviousProcessInfos:(id)arg1;
-- (void)_queue_handleBackboardApplicationInfoChanged:(id)arg1;
+- (void)_lock_notifyObserversProcessWithBundleIdentifier:(id)arg1 processIdentifier:(int)arg2 applicationStateChanged:(unsigned int)arg3 previousApplicationState:(unsigned int)arg4;
+- (void)_lock_handleProcessInfoChangedWithAllPreviousProcessInfos:(id)arg1;
+- (void)_lock_unregisterObserver:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)_lock_handleBackboardApplicationInfoChanged:(id)arg1;
+- (_Bool)_lock_registerObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)_handleBackboardApplicationInfoChanged:(id)arg1;
 - (int)processIdentifierForApplicationIdentifier:(id)arg1;
 - (_Bool)applicationIsForeground:(id)arg1;
 - (id)bundleVersionStringForProcessIdentifier:(int)arg1;
 - (_Bool)isApplicationStateForegroundForBundleIdentifier:(id)arg1;
 - (_Bool)isApplicationStateSuspendedForBundleIdentifier:(id)arg1;
-- (unsigned int)_getApplicationStateForBundleIdentifier:(id)arg1;
+- (unsigned int)applicationStateForBundleIdentifier:(id)arg1;
 - (void)unregisterForegroundClientProcessObserver:(id)arg1;
 - (void)registerForegroundClientProcessObserver:(id)arg1;
 - (void)unregisterObserver:(id)arg1 forBundleIdentifier:(id)arg2;

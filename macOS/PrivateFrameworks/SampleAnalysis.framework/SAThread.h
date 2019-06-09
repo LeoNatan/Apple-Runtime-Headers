@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) BOOL isProcessorIdleThread;
+- (void)insertState:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)forwardFillMonotonicallyIncreasingData;
 - (unsigned long long)sampleCountInTimestampRangeStart:(id)arg1 end:(id)arg2;
 - (void)enumerateThreadStatesBetweenStartTime:(id)arg1 endTime:(id)arg2 reverseOrder:(BOOL)arg3 withSampleIndex:(BOOL)arg4 block:(CDUnknownBlockType)arg5;

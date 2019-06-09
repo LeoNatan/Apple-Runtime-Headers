@@ -17,16 +17,22 @@
     CALayer *_smallTickLayer;
     float _smallTickPositionY;
     int _largeTickCount;
+    int _smallTickCountPerLargeTick;
+    float _largeTicksTransformAngle;
     float _progress;
+    float _progressDirection;
 }
 
+@property(nonatomic) float progressDirection; // @synthesize progressDirection=_progressDirection;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(readonly, nonatomic) CALayer *smallTickLayer; // @synthesize smallTickLayer=_smallTickLayer;
 @property(readonly, nonatomic) CALayer *largeTickLayer; // @synthesize largeTickLayer=_largeTickLayer;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (void)_updateTicksRotationTransform;
+- (void)setLargeTicksTransformAngle:(float)arg1;
 - (id)initWithTickCount:(int)arg1 tickSize:(struct CGSize)arg2 dialRange:(float)arg3 startAngle:(float)arg4;
-- (id)initWithLargeTickCount:(int)arg1 largeTickSize:(struct CGSize)arg2 smallTickSize:(struct CGSize)arg3 dialRange:(float)arg4 startAngle:(float)arg5;
+- (id)initWithLargeTickCount:(int)arg1 smallTickCountPerLargeTick:(int)arg2 largeTickSize:(struct CGSize)arg3 smallTickSize:(struct CGSize)arg4 dialRange:(float)arg5 startAngle:(float)arg6;
 
 @end
 

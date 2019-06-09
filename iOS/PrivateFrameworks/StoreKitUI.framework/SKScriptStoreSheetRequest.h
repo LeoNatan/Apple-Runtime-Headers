@@ -8,6 +8,7 @@
 
 @class NSString, WebScriptObject;
 
+__attribute__((visibility("hidden")))
 @interface SKScriptStoreSheetRequest : SUScriptObject
 {
     long long _pageStyle;

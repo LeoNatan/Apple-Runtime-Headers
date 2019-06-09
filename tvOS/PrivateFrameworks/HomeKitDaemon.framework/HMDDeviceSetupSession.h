@@ -23,8 +23,6 @@
 }
 
 + (id)logCategory;
-+ (void)stopAdvertising;
-+ (void)startAdvertising;
 + (_Bool)isRoleSupported:(long long)arg1;
 @property(nonatomic, getter=isOpen) _Bool open; // @synthesize open=_open;
 @property(readonly, nonatomic) HMDDeviceSetupSessionInternal *internal; // @synthesize internal=_internal;
@@ -37,7 +35,7 @@
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (id)logIdentifier;
 - (void)_sendRequestData:(id)arg1;
-- (void)_handleRecieveData:(id)arg1;
+- (void)_handleReceiveData:(id)arg1;
 - (void)_handleClose:(id)arg1;
 - (void)_closeWithError:(id)arg1;
 - (void)open;

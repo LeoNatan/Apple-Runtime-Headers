@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)getiCloudHostNamesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)getURLOverrideForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)getURLOverrideForURL:(id)arg1 newsOnly:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)openUserActivityWithUniqueIdentifier:(id)arg1 activityData:(id)arg2 activityType:(id)arg3 bundleIdentifier:(id)arg4 options:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)willHandleInvocation:(id)arg1 isReply:(BOOL)arg2;
 

@@ -8,6 +8,7 @@
 
 @class NSString, NSTextCheckingResult;
 
+__attribute__((visibility("hidden")))
 @interface PRRecordedCorrection : NSObject
 {
     NSTextCheckingResult *_correctionResult;

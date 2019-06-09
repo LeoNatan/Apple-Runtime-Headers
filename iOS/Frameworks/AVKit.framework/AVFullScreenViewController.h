@@ -9,6 +9,7 @@
 @class UIView;
 @protocol AVFullScreenViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVFullScreenViewController : UIViewController
 {
     id <AVFullScreenViewControllerDelegate> _delegate;
@@ -18,16 +19,18 @@
 @property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <AVFullScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (_Bool)_requiresCustomPresentationController;
 - (long long)preferredWhitePointAdaptivityStyle;
 - (_Bool)prefersHomeIndicatorAutoHidden;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (long long)preferredStatusBarStyle;
 - (_Bool)prefersStatusBarHidden;
 - (_Bool)modalPresentationCapturesStatusBarAppearance;
-- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewWillMoveToWindow:(id)arg1;
+- (void)loadView;
 - (_Bool)canBecomeFirstResponder;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)keyCommands;

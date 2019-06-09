@@ -6,9 +6,12 @@
 
 #import <CommerceKit/NSObject-Protocol.h>
 
-@class CKDialogContext, CKPurchaseQueue, CKPurchaseTransaction;
+@class CKDialogContext, CKPurchaseQueue, CKPurchaseTransaction, NSString;
 
 @protocol CKPurchaseQueueDelegate <NSObject>
 - (CKDialogContext *)purchaseQueue:(CKPurchaseQueue *)arg1 dialogContextForTransaction:(CKPurchaseTransaction *)arg2;
+
+@optional
+- (BOOL)purchaseQueue:(CKPurchaseQueue *)arg1 shouldContinueTransaction:(CKPurchaseTransaction *)arg2 withNewStorefront:(NSString *)arg3;
 @end
 

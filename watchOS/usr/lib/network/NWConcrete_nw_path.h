@@ -9,15 +9,18 @@
 #import <network/OS_nw_path-Protocol.h>
 
 @class NSString;
-@protocol OS_nw_array, OS_nw_browse_descriptor, OS_nw_endpoint, OS_nw_interface, OS_nw_parameters, OS_xpc_object;
+@protocol OS_nw_advertise_descriptor, OS_nw_array, OS_nw_browse_descriptor, OS_nw_endpoint, OS_nw_interface, OS_nw_parameters, OS_xpc_object;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_path : NSObject <OS_nw_path>
 {
+    struct os_unfair_lock_s lock;
     NSObject<OS_nw_parameters> *parameters;
     NSObject<OS_nw_endpoint> *endpoint;
     NSObject<OS_nw_browse_descriptor> *browse_descriptor;
+    NSObject<OS_nw_advertise_descriptor> *advertise_descriptor;
     NSObject<OS_nw_array> *discovered_endpoints;
+    NSObject<OS_nw_array> *resolved_endpoints;
     NSObject<OS_nw_array> *flows;
     NSObject<OS_nw_endpoint> *override_local_endpoint;
     NSObject<OS_nw_interface> *override_interface;
@@ -31,19 +34,23 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *fallback_agent_types;
     NSObject<OS_nw_array> *dns_servers;
     NSObject<OS_xpc_object> *dns_search_domains;
+    NSObject<OS_nw_array> *gateways;
     NSObject<OS_xpc_object> *network_agent_dictionary;
     NSObject<OS_xpc_object> *proxy_settings;
-    NSObject<OS_xpc_object> *asserted_browse_agents;
     char *reason_description;
     struct nw_path_necp_result policy_result;
     unsigned int effective_mtu;
     unsigned int effective_traffic_class;
     unsigned int interface_time_delta;
+    unsigned int fallback_generation;
     int status;
     int reason;
+    unsigned short custom_ethertype;
+    unsigned char custom_ip_protocol;
     unsigned char recommended_mss;
     unsigned int weak_fallback:1;
     unsigned int no_fallback_timer:1;
+    unsigned int fallback_is_forced:1;
     unsigned int is_local:1;
     unsigned int is_direct:1;
     unsigned int has_ipv4:1;
@@ -56,9 +63,16 @@ __attribute__((visibility("hidden")))
     unsigned int link_quality_abort:1;
     unsigned int checked_dns:1;
     unsigned int is_listener:1;
+    unsigned int is_interpose:1;
+    unsigned int specific_listener:1;
+    unsigned int override_is_expensive:1;
+    unsigned int override_is_constrained:1;
+    unsigned int override_uses_wifi:1;
+    unsigned int override_uses_cellular:1;
 }
 
 - (void).cxx_destruct;
+- (id)redactedDescription;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;

@@ -8,17 +8,22 @@
 
 #import <Photos/PHImportSidecarAsset-Protocol.h>
 
+@class PHImportAsset;
+
 @interface PHImportDeviceSidecarAsset : PHImportDeviceAsset <PHImportSidecarAsset>
 {
     unsigned long long _sidecarType;
+    PHImportAsset *_primaryAsset;
 }
 
+@property(nonatomic) __weak PHImportAsset *primaryAsset; // @synthesize primaryAsset=_primaryAsset;
 @property(readonly, nonatomic) unsigned long long sidecarType; // @synthesize sidecarType=_sidecarType;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isValid;
 - (id)getMetadataForImportRecord:(id)arg1 fileData:(id)arg2;
 - (id)thumbnailForSize:(unsigned long long)arg1 atEnd:(CDUnknownBlockType)arg2;
 - (void)loadMetadataSync;
-- (id)initWithSidecarFile:(id)arg1;
+- (id)initWithSource:(id)arg1 sidecarFile:(id)arg2;
 
 @end
 

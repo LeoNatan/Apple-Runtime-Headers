@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <WebKit/NSCopying-Protocol.h>
 #import <WebKit/WKObject-Protocol.h>
 
 @class NSArray, NSData, NSString, NSURLRequest, WKWebView;
 
-@interface _WKDownload : NSObject <WKObject>
+@interface _WKDownload : NSObject <WKObject, NSCopying>
 {
     struct ObjectStorage<WebKit::DownloadProxy> _download;
 }
 
 @property(readonly) struct Object *_apiObject;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSData *resumeData;
 @property(readonly, nonatomic) _Bool wasUserInitiated;
 @property(readonly, copy, nonatomic) NSArray *redirectChain;

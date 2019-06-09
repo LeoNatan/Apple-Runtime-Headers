@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _Bool mStartNumberOverridden;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isListLevelOverridden;
 - (id)mutableListLevel;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (long long)startNumber;
 - (unsigned char)level;
 - (id)initWithDocument:(id)arg1 level:(unsigned char)arg2;
-- (void)dealloc;
 
 @end
 

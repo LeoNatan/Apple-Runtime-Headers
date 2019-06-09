@@ -8,17 +8,19 @@
 
 #import <AVFoundation/AVAsynchronousKeyValueLoading-Protocol.h>
 
-@class AVWeakReference, NSArray, NSDictionary, NSLocale, NSString;
+@class AVDispatchOnce, AVWeakReference, NSArray, NSDictionary, NSLocale, NSString;
 
 __attribute__((visibility("hidden")))
 @interface AVAssetTrackInspector : AVFigObjectInspector <AVAsynchronousKeyValueLoading>
 {
     AVWeakReference *_weakReference;
-    long long _synthesizeMediaCharacteristicsOnce;
+    AVDispatchOnce *_synthesizeMediaCharacteristicsOnce;
     NSArray *_cachedMediaCharacteristics;
 }
 
 + (id)assetTrackInspectorWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long long)arg3;
+@property(readonly, nonatomic) _Bool isAudibleBooksContentAuthorized;
+@property(readonly, nonatomic) _Bool hasAudibleBooksContent;
 @property(readonly, nonatomic) _Bool hasProtectedContent;
 @property(readonly, nonatomic, getter=_trackReferences) NSDictionary *trackReferences;
 @property(readonly, nonatomic, getter=isExcludedFromAutoselectionInTrackGroup) _Bool excludedFromAutoselectionInTrackGroup;
@@ -28,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)metadataForFormat:(id)arg1;
 @property(readonly, nonatomic) NSArray *availableMetadataFormats;
 @property(readonly, nonatomic) NSArray *commonMetadata;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 latentBaseDecodeTimeStampOfFirstTrackFragment;
 - (CDStruct_1b6d18a9)samplePresentationTimeForTrackTime:(CDStruct_1b6d18a9)arg1;
 - (id)segmentForTrackTime:(CDStruct_1b6d18a9)arg1;
 @property(readonly, copy, nonatomic) NSArray *segments;
@@ -43,8 +46,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *extendedLanguageTag;
 @property(readonly, nonatomic) NSArray *mediaCharacteristics;
 @property(readonly, nonatomic) NSString *languageCode;
+@property(readonly, nonatomic) float peakDataRate;
 @property(readonly, nonatomic) float estimatedDataRate;
 @property(readonly, nonatomic) int naturalTimeScale;
+@property(readonly, nonatomic) _Bool hasAudioSampleDependencies;
 @property(readonly, nonatomic) _Bool requiresFrameReordering;
 @property(readonly, nonatomic) CDStruct_e83c9415 mediaDecodeTimeRange;
 @property(readonly, nonatomic) CDStruct_e83c9415 mediaPresentationTimeRange;

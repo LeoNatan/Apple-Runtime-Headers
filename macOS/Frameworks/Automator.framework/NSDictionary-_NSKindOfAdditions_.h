@@ -8,5 +8,12 @@
 
 @interface NSDictionary (_NSKindOfAdditions_)
 - (BOOL)isNSDictionary__;
+- (BOOL)am_containsKey:(id)arg1;
+- (id)_mutableDeepCopyWithZone:(struct _NSZone *)arg1;
+- (id)_mutableDeepCopy;
+- (id)_am_convertForSendingOverXPCWithWorkflow:(id)arg1;
+- (id)_am_convertFromXPCWithWorkflow:(id)arg1;
+- (id)amf_arrayForKey:(id)arg1;
+- (id)amf_stringForKey:(id)arg1;
 @end
 

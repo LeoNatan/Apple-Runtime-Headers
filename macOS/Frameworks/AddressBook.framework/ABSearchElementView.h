@@ -58,7 +58,6 @@
 - (struct CGRect)textMatchingFieldFrame;
 - (struct CGRect)textMatchingPopUpFrame;
 - (struct CGRect)comparisonPopUpFrame;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 controller:(id)arg2 userInterfaceLayoutDirection:(long long)arg3;
 - (struct CGRect)propertyPopUpFrame;

@@ -4,14 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapKit/_MKNanoPlaceCardSectionData.h>
+#import <objc/NSObject.h>
 
-@class UIColor, _MKNanoPlaceCardFooterView;
+#import <MapKit/_MKNanoPlaceCardSectionProviding-Protocol.h>
+
+@class MKMapItem, NSString, UIColor, _MKNanoPlaceCardFooterView;
 @protocol _MKNanoPlaceCardMapDataDelegate;
 
-@interface _MKNanoPlaceCardMapDataSource : _MKNanoPlaceCardSectionData
+@interface _MKNanoPlaceCardMapDataSource : NSObject <_MKNanoPlaceCardSectionProviding>
 {
     _Bool _showsName;
+    id <_MKNanoPlaceCardMapDataDelegate> _delegate;
+    MKMapItem *_mapItem;
     UIColor *_pinTintColor;
     _MKNanoPlaceCardFooterView *_cell;
     unsigned int _mapType;
@@ -21,15 +25,21 @@
 @property(nonatomic) unsigned int mapType; // @synthesize mapType=_mapType;
 @property(retain, nonatomic) _MKNanoPlaceCardFooterView *cell; // @synthesize cell=_cell;
 @property(retain, nonatomic) UIColor *pinTintColor; // @synthesize pinTintColor=_pinTintColor;
+@property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
+@property(nonatomic) __weak id <_MKNanoPlaceCardMapDataDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)notifyDelegateForActionAtRow:(unsigned int)arg1;
-- (id)cellForRow:(unsigned int)arg1 inTableView:(id)arg2;
-- (id)title;
-- (int)numberOfRows;
+- (void)notifyDelegateForActionAtIndexPath:(id)arg1;
+- (id)cellForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
+- (id)titleForSection:(int)arg1;
+- (int)numberOfRowsInSection:(int)arg1;
+- (int)numberOfSections;
 - (id)initWithMapItem:(id)arg1 mapType:(unsigned int)arg2 showsName:(_Bool)arg3;
 
 // Remaining properties
-@property(nonatomic) __weak id <_MKNanoPlaceCardMapDataDelegate> delegate; // @dynamic delegate;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -11,6 +11,7 @@
 @class NSString;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface KernelEventMonitor : NSObject <ConfigurableObjectProtocol>
 {
     NSString *_symptomName;

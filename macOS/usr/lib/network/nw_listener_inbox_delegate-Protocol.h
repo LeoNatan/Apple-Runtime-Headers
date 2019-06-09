@@ -11,5 +11,6 @@
 - (void)handleInboxCancelComplete:(nw_listener_inbox *)arg1;
 - (void)handleInboxFailed:(nw_listener_inbox *)arg1 error:(NSObject<OS_nw_error> *)arg2;
 - (void)handleInbound:(NSObject<OS_nw_connection> *)arg1 addProtocolInbox:(BOOL)arg2;
+- (BOOL)canHandleNewConnection:(nw_listener_inbox *)arg1;
 @end
 

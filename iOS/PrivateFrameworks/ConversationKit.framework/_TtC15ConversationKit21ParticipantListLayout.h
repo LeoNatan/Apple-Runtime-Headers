@@ -6,7 +6,6 @@
 
 #import <UIKit/UICollectionViewFlowLayout.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit21ParticipantListLayout : UICollectionViewFlowLayout
 {
     // Error parsing type: , name: indexPathLayoutAttributes

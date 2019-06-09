@@ -21,6 +21,7 @@
     _Bool _shouldAdjustForApectFitIfNecessary;
     _Bool _invisibleButtonContainer;
     _Bool _didPressSave;
+    _Bool _didCallCompletion;
     UIScrollView *_scrollView;
     ICDocCamImageQuadEditImageView *_imageView;
     ICDocCamImageQuadEditImageView *_backgroundImageView;
@@ -44,6 +45,7 @@
     NSNumber *_startOrientationIsPortrait;
 }
 
+@property(nonatomic) _Bool didCallCompletion; // @synthesize didCallCompletion=_didCallCompletion;
 @property(nonatomic) _Bool didPressSave; // @synthesize didPressSave=_didPressSave;
 @property(nonatomic) _Bool invisibleButtonContainer; // @synthesize invisibleButtonContainer=_invisibleButtonContainer;
 @property(nonatomic) _Bool shouldAdjustForApectFitIfNecessary; // @synthesize shouldAdjustForApectFitIfNecessary=_shouldAdjustForApectFitIfNecessary;
@@ -73,6 +75,7 @@
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
 - (void)prepareForDismissal;
+- (void)callCompletionHandler:(_Bool)arg1 withImage:(id)arg2 quad:(id)arg3 preparingForDismissal:(_Bool)arg4;
 - (id)finalQuadFromOverlay;
 - (id)quadForOverlay;
 - (void)updateFonts;

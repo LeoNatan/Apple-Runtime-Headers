@@ -14,6 +14,7 @@
 - (void)setFiredDate:(NSDate *)arg1;
 - (void)setFireDate:(NSDate *)arg1;
 - (void)setFireTimeInterval:(double)arg1;
+- (void)setType:(long long)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setState:(long long)arg1;
 - (void)setTitle:(NSString *)arg1;

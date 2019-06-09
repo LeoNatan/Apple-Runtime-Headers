@@ -9,6 +9,7 @@
 @class NSArray, NSDictionary, NSURL, SMNAction;
 
 @protocol SMNRemoteProxy <NSObject>
+- (BOOL)sendActionToAffirmMigrationHasCompleted;
 - (NSDictionary *)itemAttributesAtPaths:(NSArray *)arg1;
 - (BOOL)sendAction:(SMNAction *)arg1 error:(id *)arg2;
 - (NSDictionary *)bundleInformationAtPaths:(NSArray *)arg1;

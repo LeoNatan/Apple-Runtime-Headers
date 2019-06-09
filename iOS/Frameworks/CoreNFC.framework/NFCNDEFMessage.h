@@ -15,14 +15,20 @@
     NSArray *_records;
 }
 
++ (id)_getPayloadsFromNDEFRecords:(id)arg1;
++ (_Bool)_validateRecords:(id)arg1 fromOriginal:(id)arg2;
++ (id)ndefMessageWithData:(id)arg1;
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSArray *records; // @synthesize records=_records;
+- (id)_getURLsFromNDEFMessage:(id)arg1;
+@property(readonly, nonatomic) unsigned long long length;
+- (id)asData;
 - (id)description;
 - (void)dealloc;
 - (id)initWithEmptyNdefMessage;
 - (id)initWithNFNdefMessage:(id)arg1;
+- (id)_initWithRecords:(id)arg1;
 - (id)initWithNDEFRecords:(id)arg1;
-- (id)initWithNDEFPayloads:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

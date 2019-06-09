@@ -10,6 +10,7 @@
 
 @class AAUIDeviceToDeviceEncryptionHelper, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKCloudKitAccountRepairController : NSObject <AAUIDeviceToDeviceEncryptionHelperDelegate>
 {
     AAUIDeviceToDeviceEncryptionHelper *_encryptionHelper;

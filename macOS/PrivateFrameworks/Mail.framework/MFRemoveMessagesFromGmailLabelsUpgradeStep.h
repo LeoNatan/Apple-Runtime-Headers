@@ -10,7 +10,6 @@
 {
 }
 
-+ (BOOL)requiredAfterBackbooting;
 + (unsigned long long)targetVersion;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;
 

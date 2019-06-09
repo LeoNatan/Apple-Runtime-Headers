@@ -7,6 +7,9 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (TintedImage)
++ (id)applicationIcon;
++ (id)securityLockIcon;
 - (id)tintedImageWithColor:(id)arg1 operation:(unsigned long long)arg2;
+- (id)resizeTo:(double)arg1;
 @end
 

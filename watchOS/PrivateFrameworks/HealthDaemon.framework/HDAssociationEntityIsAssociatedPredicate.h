@@ -12,7 +12,7 @@
 }
 
 + (id)predicateWithInvertedCondition:(_Bool)arg1;
-- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(inout int *)arg2;
+- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(int *)arg2;
 - (id)SQLForEntityClass:(Class)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 

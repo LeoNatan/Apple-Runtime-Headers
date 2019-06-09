@@ -10,5 +10,9 @@
 - (void)_setAccessibilityAttributedLocalizedString:(id)arg1;
 - (id)_accessibilityAttributedLocalizedString;
 - (_Bool)isAXAttributedString;
+- (id)_axReconstitutedRepresentationForDictionaryKeyReplacement;
+- (id)_axDictionaryKeyReplacementRepresentation;
+- (id)_axRecursivelyReconstitutedRepresentationFromPropertyListWithError:(id *)arg1;
+- (id)_axRecursivelyPropertyListCoercedRepresentationWithError:(id *)arg1;
 @end
 

@@ -66,6 +66,8 @@
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1 presetName:(id)arg2;
 - (id)init;
+- (void)estimateOutputFileLengthWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)estimateMaximumDurationWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 @end
 

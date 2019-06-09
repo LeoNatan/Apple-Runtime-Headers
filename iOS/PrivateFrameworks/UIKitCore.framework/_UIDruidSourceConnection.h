@@ -11,17 +11,16 @@
 #import <UIKitCore/_UIDruidSourceConnection-Protocol.h>
 
 @class NSString, NSXPCConnection;
-@protocol _DUIServerSessionSource;
+@protocol OS_dispatch_source, _DUIServerSessionSource;
 
 __attribute__((visibility("hidden")))
 @interface _UIDruidSourceConnection : NSObject <_DUIClientSource, _DUIClientSessionSource, _UIDruidSourceConnection>
 {
     NSXPCConnection *_connection;
+    NSObject<OS_dispatch_source> *_connectionWatchdogTimer;
     id <_DUIServerSessionSource> _serverSession;
     _Bool _cancelled;
-    CDUnknownBlockType _itemImageProviderBlock;
-    CDUnknownBlockType _itemDetailProviderBlock;
-    CDUnknownBlockType _itemUpdateBlock;
+    CDUnknownBlockType _dragPreviewProviderBlock;
     CDUnknownBlockType _canHandOffCancelledItemsBlock;
     CDUnknownBlockType _handOffCancelledItemsBlock;
     CDUnknownBlockType _dragCompletionBlock;
@@ -32,9 +31,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType dragCompletionBlock; // @synthesize dragCompletionBlock=_dragCompletionBlock;
 @property(copy, nonatomic) CDUnknownBlockType handOffCancelledItemsBlock; // @synthesize handOffCancelledItemsBlock=_handOffCancelledItemsBlock;
 @property(copy, nonatomic) CDUnknownBlockType canHandOffCancelledItemsBlock; // @synthesize canHandOffCancelledItemsBlock=_canHandOffCancelledItemsBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemUpdateBlock; // @synthesize itemUpdateBlock=_itemUpdateBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemDetailProviderBlock; // @synthesize itemDetailProviderBlock=_itemDetailProviderBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemImageProviderBlock; // @synthesize itemImageProviderBlock=_itemImageProviderBlock;
+@property(copy, nonatomic) CDUnknownBlockType dragPreviewProviderBlock; // @synthesize dragPreviewProviderBlock=_dragPreviewProviderBlock;
 - (void).cxx_destruct;
 - (void)_internalDragFailed;
 - (oneway void)dataTransferSessionFinished;
@@ -42,16 +39,14 @@ __attribute__((visibility("hidden")))
 - (oneway void)dragEndedWithOperation:(unsigned long long)arg1;
 - (oneway void)handOffCancelledItems:(id)arg1 withFence:(id)arg2;
 - (oneway void)checkCanHandOffCancelledItemsWithReply:(CDUnknownBlockType)arg1;
-- (oneway void)updateDetail:(id)arg1 forItemIndex:(unsigned long long)arg2;
-- (oneway void)requestDetailForItemIndex:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
-- (oneway void)requestImageForItemIndex:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (oneway void)requestDragPreviewsForIndexSet:(id)arg1 reply:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
 - (void)cancelDrag;
 - (id)addItems:(id)arg1 withOldItemCollection:(id)arg2;
 - (void)dragDidExitApp;
-- (void)takeOperationMasksInsideApp:(unsigned long long)arg1 outsideApp:(unsigned long long)arg2 prefersFullSizePreview:(_Bool)arg3;
+- (void)takeInsideAppSourceOperationMask:(unsigned long long)arg1 outsideAppSourceOperationMask:(unsigned long long)arg2 prefersFullSizePreview:(_Bool)arg3;
 - (void)dirtyItems:(id)arg1;
-- (void)beginDragWithTouches:(id)arg1 touchRoutingPolicy:(id)arg2 items:(id)arg3 sourceDataOwner:(long long)arg4 accessibilityEndpoint:(id)arg5 centroid:(struct CGPoint)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)beginDragWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)init;
 
 // Remaining properties

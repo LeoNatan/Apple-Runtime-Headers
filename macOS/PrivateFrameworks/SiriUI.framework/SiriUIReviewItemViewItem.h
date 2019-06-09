@@ -6,7 +6,6 @@
 
 #import <SiriUI/SiriUICollectionViewItem.h>
 
-__attribute__((visibility("hidden")))
 @interface SiriUIReviewItemViewItem : SiriUICollectionViewItem
 {
 }

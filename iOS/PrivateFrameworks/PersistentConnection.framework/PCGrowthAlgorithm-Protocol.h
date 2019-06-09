@@ -12,8 +12,12 @@
 @property(readonly, nonatomic) int growthStage;
 @property(readonly, copy, nonatomic) NSDictionary *cacheInfo;
 @property(readonly, nonatomic) unsigned long long countOfGrowthActions;
+@property(nonatomic) _Bool usingServerStatsAggressively;
 @property(nonatomic) _Bool minimumIntervalFallbackEnabled;
 @property(nonatomic) double lastSuccessfulKeepAliveInterval;
+@property(nonatomic) double serverStatsMinKeepAliveInterval;
+@property(nonatomic) double serverStatsMaxKeepAliveInterval;
+@property(nonatomic) double serverStatsExpectedKeepAliveInterval;
 @property(nonatomic) double maximumKeepAliveInterval;
 @property(nonatomic) double minimumKeepAliveInterval;
 @property(nonatomic) _Bool isServerOriginatedKeepAlive;

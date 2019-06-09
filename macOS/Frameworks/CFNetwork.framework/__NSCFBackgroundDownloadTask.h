@@ -6,7 +6,6 @@
 
 #import <CFNetwork/__NSCFBackgroundSessionTask.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSCFBackgroundDownloadTask : __NSCFBackgroundSessionTask
 {
     BOOL _finished;

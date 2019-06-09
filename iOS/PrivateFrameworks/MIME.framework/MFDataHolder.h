@@ -17,13 +17,13 @@
 + (id)dataHolderWithData:(id)arg1;
 + (id)dataHolder;
 @property(readonly, nonatomic) unsigned long long length; // @synthesize length=_length;
+- (void).cxx_destruct;
 - (void)enumerateConvertingNewlinesUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)numberOfNewlinesNeedingConversion:(_Bool)arg1;
 - (void)enumerateByteRangesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateDatasUsingBlock:(CDUnknownBlockType)arg1;
 - (id)data;
 - (void)addData:(id)arg1;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (id)init;
 

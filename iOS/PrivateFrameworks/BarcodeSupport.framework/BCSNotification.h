@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class BBBulletinRequest, BCSAction, BCSNotificationIcon, NSMutableDictionary, NSString;
+@class BCSAction, BCSNotificationIcon, NSMutableDictionary, NSString, UNNotificationRequest;
 
 @interface BCSNotification : NSObject
 {
@@ -30,17 +30,18 @@
 - (id)_fbOptionsHandlingUnlockIfNecessary;
 - (_Bool)_shouldScheduleBackgroundActionForLaunchBundleID:(id)arg1;
 - (void)didHandleBulletinActionWithIdentifier:(id)arg1;
-@property(readonly, nonatomic) BBBulletinRequest *bulletinRequest;
+@property(readonly, nonatomic) UNNotificationRequest *request;
+- (id)_content;
+- (id)_attachmentIconURL;
 - (void)handleActionWithIdentifier:(id)arg1 notificationResponseOriginID:(id)arg2;
-- (void)_performActionAfterUnlock:(_Bool)arg1 actionBlock:(CDUnknownBlockType)arg2;
 - (void)_performActionAfterUnlock:(CDUnknownBlockType)arg1;
 - (void)_handleContactInfo:(id)arg1;
 - (void)_handleCalendarEventWithICSString:(id)arg1;
 @property(readonly, nonatomic) _Bool canHandleActionLocally;
 - (id)_defaultURL;
-- (id)_previewableData;
+- (id)_contentExtensionData;
 - (_Bool)_contentIsPreviewable;
-- (id)_bbActionFromActionPickerItem:(id)arg1;
+- (id)_notificationActionFromActionPickerItem:(id)arg1;
 - (_Bool)_shouldHandleActionPickerItemLocally:(id)arg1;
 - (_Bool)shouldHandleBulletinActionWithIdentifier:(id)arg1;
 - (id)_supplementActions;
@@ -48,7 +49,6 @@
 - (id)_actionTypeStringForQRCode;
 - (id)_actionTypeStringForNFC;
 - (id)_title;
-- (id)attachmentDataForConstraints:(id)arg1;
 @property(readonly, nonatomic) long long codeType;
 @property(readonly, nonatomic) NSString *identifier;
 - (id)_initWithAction:(id)arg1;

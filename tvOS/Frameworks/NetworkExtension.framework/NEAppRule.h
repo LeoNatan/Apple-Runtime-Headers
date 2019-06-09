@@ -36,6 +36,7 @@
 @property(readonly) NSString *matchDesignatedRequirement; // @synthesize matchDesignatedRequirement=_matchDesignatedRequirement;
 @property(readonly) NSString *matchSigningIdentifier; // @synthesize matchSigningIdentifier=_matchSigningIdentifier;
 - (void).cxx_destruct;
+- (_Bool)matchesProcessWithAuditToken:(id)arg1;
 - (_Bool)signingIdentifierAllowed:(id)arg1 domainsRequired:(out _Bool *)arg2;
 - (_Bool)overlapsWithRule:(id)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;
@@ -44,6 +45,7 @@
 - (_Bool)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSigningIdentifier:(id)arg1;
 

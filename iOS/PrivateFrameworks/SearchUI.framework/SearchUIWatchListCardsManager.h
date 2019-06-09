@@ -18,11 +18,11 @@
 }
 
 + (_Bool)isUpNextCardSection:(id)arg1;
-@property _Bool isInUpNext; // @synthesize isInUpNext=_isInUpNext;
-@property(retain) SearchUIWatchListUtilities *watchListUtility; // @synthesize watchListUtility=_watchListUtility;
-@property(retain) WLKCanonicalPlayablesResponse *response; // @synthesize response=_response;
-@property(retain) NSString *watchListIdentifier; // @synthesize watchListIdentifier=_watchListIdentifier;
-@property(retain) NSHashTable *rowModels; // @synthesize rowModels=_rowModels;
+@property(nonatomic) _Bool isInUpNext; // @synthesize isInUpNext=_isInUpNext;
+@property(retain, nonatomic) SearchUIWatchListUtilities *watchListUtility; // @synthesize watchListUtility=_watchListUtility;
+@property(retain, nonatomic) WLKCanonicalPlayablesResponse *response; // @synthesize response=_response;
+@property(retain, nonatomic) NSString *watchListIdentifier; // @synthesize watchListIdentifier=_watchListIdentifier;
+@property(retain, nonatomic) NSHashTable *rowModels; // @synthesize rowModels=_rowModels;
 - (void).cxx_destruct;
 - (void)toggleUpNextWithDelegate:(id)arg1;
 - (long long)currentUpNextButtonState;

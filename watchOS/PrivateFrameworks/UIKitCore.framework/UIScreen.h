@@ -9,15 +9,16 @@
 #import <UIKitCore/UICoordinateSpace-Protocol.h>
 #import <UIKitCore/UIFocusItemContainer-Protocol.h>
 #import <UIKitCore/UITraitEnvironment-Protocol.h>
+#import <UIKitCore/_UIFallbackEnvironment-Protocol.h>
 #import <UIKitCore/_UIFocusEnvironmentInternal-Protocol.h>
 #import <UIKitCore/_UIFocusEnvironmentPrivate-Protocol.h>
 #import <UIKitCore/_UIFocusRegionContainer-Protocol.h>
 #import <UIKitCore/_UITraitEnvironmentInternal-Protocol.h>
 
-@class FBSDisplayConfiguration, NSArray, NSDictionary, NSString, UIFocusSystem, UIScreenMode, UISoftwareDimmingWindow, UITraitCollection, UIView, UIWindow, _UIDisplayEdgeInfoProvider, _UIFocusMovementPerformer, _UIFocusScrollManager, _UIScreenBoundingPathUtilities, _UIScreenFixedCoordinateSpace, _UIScreenFocusSystemManager;
-@protocol UICoordinateSpace, UIFocusEnvironment, UIFocusItem, UIFocusItemContainer, _UIFocusRegionContainer;
+@class FBSDisplayConfiguration, NSArray, NSDictionary, NSString, UIFocusSystem, UISDisplayContext, UIScreenMode, UISoftwareDimmingWindow, UITraitCollection, UIView, UIWindow, _UIFocusMovementPerformer, _UIFocusScrollManager, _UIScreenBoundingPathUtilities, _UIScreenFixedCoordinateSpace, _UIScreenFocusSystemManager;
+@protocol UICoordinateSpace, UIFocusEnvironment, UIFocusItem, UIFocusItemContainer, _UIDisplayInfoProviding, _UIFocusRegionContainer;
 
-@interface UIScreen : NSObject <UICoordinateSpace, _UITraitEnvironmentInternal, _UIFocusEnvironmentInternal, _UIFocusRegionContainer, UIFocusItemContainer, _UIFocusEnvironmentPrivate, UITraitEnvironment>
+@interface UIScreen : NSObject <_UIFallbackEnvironment, UICoordinateSpace, _UITraitEnvironmentInternal, _UIFocusEnvironmentInternal, _UIFocusRegionContainer, UIFocusItemContainer, _UIFocusEnvironmentPrivate, UITraitEnvironment>
 {
     struct CGRect _unjailedReferenceBounds;
     struct CGRect _referenceBounds;
@@ -25,13 +26,13 @@
     float _scale;
     int _gamut;
     int _userInterfaceIdiom;
-    unsigned int _artworkSubtype;
+    UISDisplayContext *_initialDisplayContext;
     NSDictionary *_capabilities;
     NSArray *_availableDisplayModes;
     float _pointsPerInch;
     _UIScreenFixedCoordinateSpace *_fixedCoordinateSpace;
     UITraitCollection *_contentSizeCategoryTraits;
-    _UIDisplayEdgeInfoProvider *_displayEdgeInfoProvider;
+    id <_UIDisplayInfoProviding> _displayInfoProvider;
     FBSDisplayConfiguration *__displayConfiguration;
     struct {
         unsigned int bitsPerComponent:4;
@@ -43,7 +44,6 @@
         unsigned int queriedDeviceContentMargins:1;
         unsigned int hasCalculatedPointsPerInch:1;
         unsigned int rightHandDrive:1;
-        unsigned int carPlayNightModeSupported:1;
         unsigned int carPlayNightModeEnabled:1;
     } _screenFlags;
     struct {
@@ -98,7 +98,6 @@
 + (struct CGAffineTransform)transformToRotateScreen:(float)arg1;
 + (struct CGAffineTransform)transformForScreenOriginRotation:(float)arg1;
 + (id)mainScreen;
-+ (id)__createPlugInScreenForFBSDisplay:(id)arg1;
 + (void)initialize;
 @property(nonatomic, setter=_setFocusedWindow:) UIWindow<UIFocusEnvironment> *_focusedWindow; // @synthesize _focusedWindow=__focusedWindow;
 @property(nonatomic, getter=_isMainScreen, setter=_setMainScreen:) _Bool mainScreen; // @synthesize mainScreen=_mainScreen;
@@ -141,6 +140,7 @@
 @property(readonly, nonatomic, getter=_focusScrollManager) _UIFocusScrollManager *focusScrollManager; // @synthesize focusScrollManager=_focusScrollManager;
 - (void)_handleForcedUserInterfaceLayoutDirectionChanged:(id)arg1;
 - (void)_handleEffectiveUserInterfaceStyleChanged:(id)arg1;
+- (void)_accessibilityBoldTextChanged:(id)arg1;
 - (void)_accessibilityForceTouchEnabledChanged:(id)arg1;
 @property(readonly, nonatomic) float nativeScale;
 - (float)_nativeScale;
@@ -160,7 +160,6 @@
 - (struct CGRect)_mainSceneFrame;
 - (id)_display;
 - (_Bool)_isRightHandDrive;
-- (_Bool)_isCarPlayNightModeSupported;
 - (_Bool)_isCarPlayNightModeEnabled;
 - (_Bool)_areListsLimited;
 - (_Bool)_areMusicListsLimited;
@@ -177,7 +176,6 @@
 - (id)_capabilities;
 - (void)_notifyTraitsChangedAndPropagateToAllWindows;
 - (void)_willTransitionToTraitCollection:(id)arg1;
-- (void)_setDefaultTraitCollection:(id)arg1 notify:(_Bool)arg2;
 - (void)_updateTraits;
 - (id)_launchImageTraitCollectionForInterfaceOrientation:(int)arg1 inBounds:(struct CGRect)arg2;
 - (int)_effectiveUserInterfaceStyle;
@@ -193,11 +191,12 @@
 @property(readonly) id <UICoordinateSpace> fixedCoordinateSpace;
 @property(readonly) id <UICoordinateSpace> coordinateSpace;
 - (void)_updateCapabilities;
-- (void)_setArtworkSubtype:(unsigned int)arg1;
 - (unsigned int)_artworkSubtype;
 - (void)_setUserInterfaceIdiom:(int)arg1;
 - (int)_userInterfaceIdiom;
 - (void)_updateUserInterfaceIdiom;
+- (void)_resetUserInterfaceIdiom;
+- (void)_setInitialDisplayContext:(id)arg1;
 - (void)_disconnectScreen;
 - (void)_connectScreen;
 - (_Bool)_isValidInterfaceOrientation:(int)arg1;
@@ -230,6 +229,7 @@
 - (int)bitsPerComponent;
 @property(readonly, nonatomic) UIScreenMode *preferredMode;
 @property(readonly, nonatomic) UIScreen *mirroredScreen;
+- (double)_latency;
 @property(readonly) int maximumFramesPerSecond;
 - (double)_refreshRate;
 - (int)_imageOrientation;
@@ -240,7 +240,7 @@
 - (struct CGRect)_interfaceOrientedMainSceneBounds;
 - (struct UIEdgeInsets)_peripheryInsets;
 - (struct UIEdgeInsets)_displayPeripheryInsets;
-- (id)_displayEdgeInfoProvider;
+- (id)_displayInfoProvider;
 - (struct CGRect)_mainSceneBoundsForInterfaceOrientation:(int)arg1;
 - (struct CGRect)_boundsForInterfaceOrientation:(int)arg1;
 - (struct CGRect)_unjailedReferenceBoundsForInterfaceOrientation:(int)arg1;
@@ -266,14 +266,17 @@
 - (void)_updateAvailableDisplayModes;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
+- (void)_invalidate;
 - (id)initWithDisplayConfiguration:(id)arg1 forceMainScreen:(_Bool)arg2;
 - (id)initWithDisplayConfiguration:(id)arg1;
 - (_Bool)_wantsWideContentMargins;
 - (id)snapshot;
 - (id)snapshotView;
 - (id)snapshotViewAfterScreenUpdates:(_Bool)arg1;
+- (id)_fallbackTraitCollection;
 
 // Remaining properties
+@property(nonatomic) _Bool areChildrenFocused;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic, getter=_isEligibleForFocusInteraction) _Bool eligibleForFocusInteraction;
 @property(readonly) unsigned int hash;

@@ -91,6 +91,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL transcriptEndIsVisible;
 @property(readonly, nonatomic) BOOL transcriptStartIsVisible;
 - (id)_conversation;
+- (void)siriDidStopSpeakingWithIdentifier:(id)arg1 speechQueueIsEmpty:(BOOL)arg2;
+- (void)siriDidStartSpeakingWithIdentifier:(id)arg1;
 - (void)siriRequestWillStart;
 - (void)siriDidDeactivate;
 - (void)siriDidTransitionFromState:(long long)arg1 event:(long long)arg2;

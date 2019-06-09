@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <Message/MFContentProtectionObserver-Protocol.h>
+#import <Message/EFContentProtectionObserver-Protocol.h>
 #import <Message/MFDiagnosticsGenerator-Protocol.h>
 
 @class NSConditionLock, NSMutableArray, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
-@interface MFInvocationQueue : NSObject <MFDiagnosticsGenerator, MFContentProtectionObserver>
+@interface MFInvocationQueue : NSObject <MFDiagnosticsGenerator, EFContentProtectionObserver>
 {
     NSConditionLock *_lock;
     NSMutableArray *_items;
@@ -31,6 +31,7 @@
 @property(nonatomic) double threadRecycleTimeout; // @synthesize threadRecycleTimeout=_threadRecycleTimeout;
 @property(nonatomic) int threadPriorityTrigger; // @synthesize threadPriorityTrigger=_threadPriorityTrigger;
 @property(readonly, nonatomic) unsigned int threadCount; // @synthesize threadCount=_numThreads;
+- (void).cxx_destruct;
 - (id)copyDiagnosticInformation;
 - (void)contentProtectionStateChanged:(int)arg1 previousState:(int)arg2;
 - (void)applicationWillResume;

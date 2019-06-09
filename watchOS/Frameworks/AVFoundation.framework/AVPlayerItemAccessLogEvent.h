@@ -45,7 +45,6 @@
 @property(readonly, nonatomic) int numberOfSegmentsDownloaded;
 @property(readonly, nonatomic) int numberOfMediaRequests;
 - (void)dealloc;
-- (void)finalize;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)init;

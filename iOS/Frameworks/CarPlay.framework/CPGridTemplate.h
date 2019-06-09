@@ -9,18 +9,15 @@
 #import <CarPlay/CPBarButtonProviding-Protocol.h>
 #import <CarPlay/CPGridTemplateClientDelegate-Protocol.h>
 
-@class CPBarButton, NSArray, NSString;
-@protocol CPGridTemplateProviding;
+@class CPBarButton, NAFuture, NSArray, NSString;
 
 @interface CPGridTemplate : CPTemplate <CPGridTemplateClientDelegate, CPBarButtonProviding>
 {
     NSArray *_gridButtons;
     NSString *_title;
-    NSArray *_buttons;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) NSArray *gridButtons; // @synthesize gridButtons=_gridButtons;
 - (void).cxx_destruct;
@@ -36,7 +33,7 @@
 @property(readonly) unsigned long long hash;
 @property(retain, nonatomic) NSArray *leadingNavigationBarButtons;
 @property(readonly) Class superclass;
-@property(retain, nonatomic) id <CPGridTemplateProviding> templateProvider; // @dynamic templateProvider;
+@property(retain, nonatomic) NAFuture *templateProviderFuture; // @dynamic templateProviderFuture;
 @property(retain, nonatomic) NSArray *trailingNavigationBarButtons;
 
 @end

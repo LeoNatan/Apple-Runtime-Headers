@@ -9,28 +9,25 @@
 #import <CoreLocation/CLLocationManagerRoutineClientInterface-Protocol.h>
 
 @class CLLocationManagerRoutine, NSString, NSXPCConnection;
-@protocol CLLocationManagerRoutineDelegate, OS_dispatch_queue;
+@protocol CLLocationManagerDelegate, OS_dispatch_queue;
 
 @interface _CLLocationManagerRoutineProxy : NSObject <CLLocationManagerRoutineClientInterface>
 {
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _updating;
-    _Bool _updatingPredictedApplications;
     NSXPCConnection *_connection;
-    id <CLLocationManagerRoutineDelegate> _delegate;
+    id <CLLocationManagerDelegate> _delegate;
     CLLocationManagerRoutine *_locationManagerRoutine;
 }
 
-@property(nonatomic) _Bool updatingPredictedApplications; // @synthesize updatingPredictedApplications=_updatingPredictedApplications;
 @property(nonatomic) _Bool updating; // @synthesize updating=_updating;
 @property(nonatomic) CLLocationManagerRoutine *locationManagerRoutine; // @synthesize locationManagerRoutine=_locationManagerRoutine;
-@property(nonatomic) id <CLLocationManagerRoutineDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) id <CLLocationManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void)createConnection;
-- (void)didUpdatePredictedApplications:(id)arg1;
 - (void)didUpdateLocations:(id)arg1;
 - (void)dealloc;
-- (id)initWithCLLocationManagerRoutine:(id)arg1;
+- (id)initWithQueue:(id)arg1 locationManagerRoutine:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

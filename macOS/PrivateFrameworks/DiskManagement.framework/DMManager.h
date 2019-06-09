@@ -13,10 +13,12 @@
 
 + (id)sharedManagerForThread;
 + (id)sharedManager;
++ (BOOL)daemonRunning;
 + (BOOL)systemResourcesSufficient;
 + (void)initialize;
 - (void)dealloc;
 - (void)done;
+- (int)clientInfos:(id *)arg1;
 - (void)stopDiskManagementLog;
 - (int)setUserID:(id)arg1 groupID:(id)arg2;
 - (void)setLanguage:(id)arg1;
@@ -27,6 +29,7 @@
 - (struct __DASession *)defaultDASession;
 - (void)setDefaultDASession:(struct __DASession *)arg1;
 - (id)init;
+- (id)dmManagerPrivVars;
 - (double)timeoutHint:(id)arg1;
 - (struct __DASession *)obtainedClientDASession:(struct __DADisk *)arg1;
 - (void)getSessionUUID:(char *)arg1 f2tPort:(unsigned int *)arg2 t2fPort:(unsigned int *)arg3 clientDefaultDASession:(struct __DASession **)arg4;
@@ -102,6 +105,7 @@
 - (id)bayNameForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (BOOL)isAESHardwareDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (BOOL)isErasableOpticalMedia:(struct __DADisk *)arg1 error:(int *)arg2;
+- (id)opticalMediaUserVisibleNameForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (id)opticalMediaTypeForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (id)opticalDeviceTypeForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (BOOL)isDVD:(struct __DADisk *)arg1 error:(int *)arg2;
@@ -139,10 +143,14 @@
 - (id)diskUUIDForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (id)volumeUUIDForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (id)uuidForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
+- (BOOL)isSiblingDisks:(struct __DADisk *)arg1 anotherDisk:(struct __DADisk *)arg2 reflexive:(BOOL)arg3 error:(int *)arg4;
+- (BOOL)isChildOfWholeDisk:(struct __DADisk *)arg1 wholeDisk:(struct __DADisk *)arg2 error:(int *)arg3;
 - (BOOL)isPartitionDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (BOOL)isChildDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (BOOL)isWholeDisk:(struct __DADisk *)arg1 error:(int *)arg2;
+- (BOOL)isEqualDisks:(struct __DADisk *)arg1 anotherDisk:(struct __DADisk *)arg2 error:(int *)arg3;
 - (id)descriptionForDisk:(struct __DADisk *)arg1;
+- (struct __DADisk *)copyDiskForDisk:(struct __DADisk *)arg1 error:(int *)arg2;
 - (struct __DADisk *)copyDiskForPartitionIdentifier:(id)arg1 forWholeDisk:(struct __DADisk *)arg2 error:(int *)arg3;
 - (struct __DADisk *)copyDiskForVolumeUUID:(id)arg1 error:(int *)arg2;
 - (struct __DADisk *)copyDiskForDiskUUID:(id)arg1 error:(int *)arg2;
@@ -233,11 +241,6 @@
 - (int)isSuitableTransformForLOG:(struct DMUDSPrivRec *)arg1 transform:(id)arg2 suitable:(char *)arg3 plan:(id *)arg4 details:(id)arg5;
 - (void)cryptoStatusForLOG:(struct DMUDSPrivRec *)arg1 inSS:(id)arg2 yesInfoFileVaulted:(char *)arg3 yesInfoFullyEncrypted:(char *)arg4 yesInfoBusy:(char *)arg5 yesInfoDirection:(char *)arg6 yesInfoLocked:(char *)arg7 nonNilInfoProgress:(id *)arg8;
 - (int)cryptoMigrationPlanForLOG:(struct DMUDSPrivRec *)arg1 transform:(id)arg2 currentOldSS:(id *)arg3 supported:(char *)arg4 planScript:(id *)arg5 plannedNewSS:(id *)arg6 plannedChangeSS:(char *)arg7 plannedChangeLOG:(char *)arg8;
-- (int)partitionMapTypeForDisk:(id)arg1;
-- (id)directChildrenOfDisk:(id)arg1;
-- (id)rootDisk;
-- (id)diskWithIdentifier:(id)arg1;
-- (void)waitForAppearanceOfDiskNodes;
 
 @end
 

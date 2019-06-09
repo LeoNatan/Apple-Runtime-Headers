@@ -85,17 +85,20 @@
     unsigned long long _halfLife;
     NSArray *_linkedArticleIDs;
     NSArray *_linkedIssueIDs;
+    long long _bodyTextLength;
     NTPBArticleRecord *_articleRecord;
     FCInterestToken *_articleInterestToken;
     long long _behaviorFlags;
     struct CGRect _thumbnailFocalFrame;
 }
 
++ (_Bool)_fakeArticlesTimestamp;
 + (_Bool)_simulateTopStoriesBadges;
 + (_Bool)_forceArticlesToBeShownAsSponsored;
 @property(nonatomic) long long behaviorFlags; // @synthesize behaviorFlags=_behaviorFlags;
 @property(retain, nonatomic) FCInterestToken *articleInterestToken; // @synthesize articleInterestToken=_articleInterestToken;
 @property(retain, nonatomic) NTPBArticleRecord *articleRecord; // @synthesize articleRecord=_articleRecord;
+- (long long)bodyTextLength;
 - (id)linkedIssueIDs;
 - (id)linkedArticleIDs;
 - (void)setHalfLife:(unsigned long long)arg1;

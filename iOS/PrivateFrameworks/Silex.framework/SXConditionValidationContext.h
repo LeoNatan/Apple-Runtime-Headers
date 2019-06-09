@@ -17,6 +17,8 @@
 
 @property(readonly, nonatomic) SXLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double contentScaleFactor;
+@property(readonly, nonatomic) long long userInterfaceStyle;
 @property(readonly, nonatomic, getter=isChannelSubscriber) _Bool channelSubscriber;
 @property(readonly, nonatomic, getter=isBundleSubscriber) _Bool bundleSubscriber;
 @property(readonly, nonatomic) unsigned long long viewingLocation;

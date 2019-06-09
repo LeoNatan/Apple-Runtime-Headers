@@ -6,21 +6,86 @@
 
 #import <AppKit/NSText.h>
 
+#import <AppKit/CALayerDelegate-Protocol.h>
 #import <AppKit/NSAccessibilityNavigableStaticText-Protocol.h>
 #import <AppKit/NSColorChanging-Protocol.h>
 #import <AppKit/NSDraggingSource-Protocol.h>
 #import <AppKit/NSMenuItemValidation-Protocol.h>
 #import <AppKit/NSStandardKeyBindingResponding-Protocol.h>
+#import <AppKit/NSTextCheckingClient-Protocol.h>
 #import <AppKit/NSTextInput-Protocol.h>
 #import <AppKit/NSTextInputClient-Protocol.h>
 #import <AppKit/NSTextLayoutOrientationProvider-Protocol.h>
+#import <AppKit/NSTextViewportLayoutDelegate-Protocol.h>
+#import <AppKit/NSTextViewportLayoutObserver-Protocol.h>
 #import <AppKit/NSUserInterfaceValidations-Protocol.h>
 
-@class NSArray, NSColor, NSDictionary, NSLayoutManager, NSParagraphStyle, NSString, NSTextContainer, NSTextStorage;
+@class NSArray, NSColor, NSDictionary, NSEvent, NSFindIndicator, NSImmediateActionGestureRecognizer, NSLayoutManager, NSMapTable, NSMutableArray, NSParagraphStyle, NSString, NSTextContainer, NSTextContentStorage, NSTextDragInfo, NSTextLayoutManager, NSTextStorage, NSTextViewSharedData, NSTimer, NSTrackingArea, NSViewWindowBackingStoreBuffer, _NSTextContentView, _NSTextSelectionView;
 @protocol NSTextViewDelegate;
 
-@interface NSTextView : NSText <NSColorChanging, NSMenuItemValidation, NSUserInterfaceValidations, NSTextInputClient, NSTextLayoutOrientationProvider, NSDraggingSource, NSStandardKeyBindingResponding, NSTextInput, NSAccessibilityNavigableStaticText>
+@interface NSTextView : NSText <NSTextCheckingClient, CALayerDelegate, NSTextViewportLayoutDelegate, NSTextViewportLayoutObserver, NSColorChanging, NSMenuItemValidation, NSUserInterfaceValidations, NSTextInputClient, NSTextLayoutOrientationProvider, NSDraggingSource, NSStandardKeyBindingResponding, NSTextInput, NSAccessibilityNavigableStaticText>
 {
+    struct CGSize _textContainerInset;
+    struct CGPoint _textContainerOrigin;
+    NSLayoutManager *_layoutManager;
+    NSTextStorage *_textStorage;
+    struct CGSize _maxBoundsSize;
+    struct CGSize _minBoundsSize;
+    struct _tvFlags {
+        unsigned int horizontallyResizable:1;
+        unsigned int verticallyResizable:1;
+        unsigned int viewOwnsTextStorage:1;
+        unsigned int displayWithoutLayout:1;
+        unsigned int settingMarkedRange:1;
+        unsigned int containerOriginInvalid:1;
+        unsigned int registeredForDragging:1;
+        unsigned int superviewIsClipView:1;
+        unsigned int forceRulerUpdate:1;
+        unsigned int typingText:1;
+        unsigned int wasPostingFrameNotifications:1;
+        unsigned int wasRotatedOrScaledFromBase:1;
+        unsigned int settingNeedsDisplay:1;
+        unsigned int mouseInside:1;
+        unsigned int verticalLayout:2;
+        unsigned int diagonallyRotatedOrScaled:1;
+        unsigned int hasScaledBacking:1;
+        unsigned int shouldCloseQL:1;
+        unsigned int dragUpdateRequstOwner:1;
+        unsigned int genericDragRemoveSource:1;
+        unsigned int isAttributedPlaceholder:1;
+        unsigned int isDDAction:1;
+        unsigned int showingFindIndicator:1;
+        unsigned int isDrawingLayer:1;
+        unsigned int touchBarInstantiated:1;
+        unsigned int calculatingContainerOrigin:1;
+        unsigned int doesOverrideDrawInsertionPointInRect:1;
+        unsigned int darkEffectiveAppearance:1;
+        unsigned int isPresentingReveal:1;
+        unsigned int isDrawingFindIndicatorContent:1;
+        unsigned int _pad:1;
+    } _tvFlags;
+    NSTextViewSharedData *_sharedData;
+    NSMutableArray *_eventList;
+    NSTextDragInfo *_tv_dragInfo;
+    struct CGRect _dirtyRectForDisplayWithoutLayout;
+    struct CGRect _insertionPointRect;
+    NSViewWindowBackingStoreBuffer *_insertionPointRectCache;
+    NSTrackingArea *_trackingArea;
+    NSEvent *_lastFirstMouseEvent;
+    NSTextContainer *_textContainer;
+    id _placeholderString;
+    struct _NSRange _adjustedSelectedRangeForActions;
+    NSTimer *_selectionDragCursorTimer;
+    NSImmediateActionGestureRecognizer *_immediateActionGestureRecognizer;
+    NSFindIndicator *_highlightIndicator;
+    BOOL _useTextLayoutManager;
+    NSTextLayoutManager *_textLayoutManager;
+    NSTextContentStorage *_textContentStorage;
+    _NSTextSelectionView *_selectionView;
+    _NSTextContentView *_textContentView;
+    double _contentHeight;
+    NSMutableArray *_lastUsedViewportViews;
+    NSMapTable *_textViewportViews;
 }
 
 + (id)defaultMenu;
@@ -118,7 +183,7 @@
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)mouseMoved:(id)arg1;
-- (BOOL)__performDataDetectorViewEvent:(id)arg1 isRightDown:(BOOL)arg2;
+- (BOOL)__performDataDetectorViewEvent:(id)arg1 contextual:(BOOL)arg2;
 - (void)_conditionallyRemoveDataDetectionIndicator:(id)arg1;
 - (void)_mouseExitedDataDetectionIndicator;
 - (void)_mouseInside:(id)arg1;
@@ -138,22 +203,38 @@
 - (BOOL)acceptsFirstResponder;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (void)_updateTextLayoutManagerSelectionLayers;
+- (void)_updateContentHeight;
+- (void)_updateContentSizeIfNeeded;
+- (void)_adjustViewportOffset;
+- (void)_adjustViewportOffsetIfNeeded;
+- (void)textViewportLayoutControllerDidLayout:(id)arg1;
+- (void)layoutElement:(id)arg1;
+- (void)textViewportLayoutControllerWillLayout:(id)arg1;
+@property(readonly) struct CGPoint viewportAnchor;
+@property(readonly) struct CGRect viewport;
+- (void)layoutSublayersOfLayer:(id)arg1;
+- (void)layout;
+- (BOOL)wantsLayer;
+- (void)updateConstraints;
+- (BOOL)needsUpdateConstraints;
+- (void)_updateTextContainerSize:(struct CGSize)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)shouldBeTreatedAsInkEvent:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
 - (BOOL)_attachmentAtGlyphIndex:(unsigned long long)arg1 containsWindowPoint:(struct CGPoint)arg2;
 - (BOOL)_shouldPrintByCallingDrawRect;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)setLayer:(id)arg1;
-- (id)makeBackingLayer;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)_renderingColorForDocumentColor:(id)arg1;
 - (id)documentColorForRenderingColor:(id)arg1;
 - (id)renderingColorForDocumentColor:(id)arg1;
+- (BOOL)_shouldDoAdaptiveColorMapping;
 - (void)_updateDarkEffectiveAppearanceFlagWithAppearance:(id)arg1;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)prepareContentInRect:(struct CGRect)arg1;
+- (BOOL)isCompatibleWithResponsiveScrolling;
 - (void)drawBackgroundOverhangInRect:(struct CGRect)arg1;
 - (void)drawViewBackgroundInRect:(struct CGRect)arg1;
 - (void)_showParagraphDirectionalityForGlyphRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;
@@ -172,16 +253,12 @@
 - (void)_createTrackingArea;
 - (BOOL)isOpaque;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
-- (void)_propagateDownNeedsDisplayInRect:(struct CGRect)arg1;
 - (BOOL)isFlipped;
 - (void)scrollRangeToVisible:(struct _NSRange)arg1;
 - (void)toggleRuler:(id)arg1;
 - (void)_lookUpIndefiniteRangeInDictionaryFromMenu:(id)arg1;
 - (void)_lookUpDefiniteRangeInDictionaryFromMenu:(id)arg1;
-- (id)_definitionAnimationControllerForAttributedString:(id)arg1 range:(struct _NSRange)arg2 options:(id)arg3 baselineOriginProvider:(CDUnknownBlockType)arg4;
 - (void)showDefinitionForAttributedString:(id)arg1 range:(struct _NSRange)arg2 options:(id)arg3 baselineOriginProvider:(CDUnknownBlockType)arg4;
-- (void)_showDefinitionForAttributedString:(id)arg1 characterIndex:(unsigned long long)arg2 range:(struct _NSRange)arg3 options:(id)arg4 baselineOriginProvider:(CDUnknownBlockType)arg5;
-- (void)_lookUpClose:(id)arg1;
 - (id)_dataDetectionResultForCharacterIndex:(unsigned long long)arg1 inRange:(struct _NSRange)arg2;
 - (void)_searchWithGoogleFromMenu:(id)arg1;
 - (void)_restoreReplacedString:(id)arg1;
@@ -245,8 +322,8 @@
 - (void)setTextColor:(id)arg1 range:(struct _NSRange)arg2;
 - (void)setBaseWritingDirection:(long long)arg1;
 - (long long)baseWritingDirection;
-- (unsigned long long)alignment;
-- (void)setAlignment:(unsigned long long)arg1;
+- (long long)alignment;
+- (void)setAlignment:(long long)arg1;
 - (id)textColor;
 - (void)setTextColor:(id)arg1;
 - (id)font;
@@ -268,10 +345,10 @@
 - (void)updateInspectorBar;
 - (id)_currentEditingColor;
 - (void)updateFontPanel;
+- (BOOL)_textLayoutManagerOwnsFirstResponderInWindow:(id)arg1;
 - (id)_renderingAttributesForDocumentAttributes:(id)arg1;
 - (void)updateRuler;
 - (BOOL)_shouldDoLayerPerformanceUpdates;
-- (BOOL)canSmoothFontsInLayer;
 - (void)drawInsertionPointInRect:(struct CGRect)arg1 color:(id)arg2 turnedOn:(BOOL)arg3;
 - (void)_drawInsertionPointInRect:(struct CGRect)arg1 color:(id)arg2;
 @property(readonly) BOOL shouldDrawInsertionPoint;
@@ -303,14 +380,16 @@
 - (void)removeAccents:(id)arg1;
 - (void)transliterateToLatin:(id)arg1;
 - (void)setBaseWritingDirection:(long long)arg1 range:(struct _NSRange)arg2;
-- (void)setAlignment:(unsigned long long)arg1 range:(struct _NSRange)arg2;
+- (void)setAlignment:(long long)arg1 range:(struct _NSRange)arg2;
 - (void)setConstrainedFrameSize:(struct CGSize)arg1;
 - (void)insertText:(id)arg1;
+- (void)_insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (id)_writingDirectionAttributeForPeriodBeforeInsertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (id)_writingDirectionAttributeForInsertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
 - (id)inputContext;
 - (void)handleTextCheckingResults:(id)arg1 forRange:(struct _NSRange)arg2 types:(unsigned long long)arg3 options:(id)arg4 orthography:(id)arg5 wordCount:(long long)arg6;
+- (void)_markAsCheckedForRange:(struct _NSRange)arg1;
 - (void)_noteUndoOfCorrections:(id)arg1;
 - (void)_handleTextCheckingResults:(id)arg1 sequenceNumber:(long long)arg2 forRange:(struct _NSRange)arg3 types:(unsigned long long)arg4 options:(id)arg5 orthography:(id)arg6 wordCount:(long long)arg7 applyNow:(BOOL)arg8 checkSynchronously:(BOOL)arg9;
 - (void)checkTextInDocument:(id)arg1;
@@ -354,9 +433,11 @@
 - (void)_addSpellingAttributeForRange:(struct _NSRange)arg1;
 - (void)doCommandBySelector:(SEL)arg1;
 @property(readonly) NSTextStorage *textStorage;
+- (id)textLayoutManager;
 @property(readonly) NSLayoutManager *layoutManager;
 - (void)invalidateTextContainerOrigin;
 @property(readonly) struct CGPoint textContainerOrigin;
+- (struct NSEdgeInsets)textContainerInsets;
 @property struct CGSize textContainerInset;
 - (void)replaceTextContainer:(id)arg1;
 @property NSTextContainer *textContainer;
@@ -364,6 +445,8 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)_selectedRangesAsIndexSet;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)_usingTextLayoutManager;
+- (void)_bellerophonCommonInit;
 - (void)encodeWithCoder:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)viewDidMoveToSuperview;
@@ -379,6 +462,27 @@
 - (BOOL)_tryRetain;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 textContainer:(id)arg2;
+- (void)_replaceCharactersInRange:(struct _NSRange)arg1 withAnnotatedString:(id)arg2 replacementRange:(struct _NSRange)arg3;
+- (id)viewForRange:(struct _NSRange)arg1 firstRect:(struct CGRect *)arg2 actualRange:(struct _NSRange *)arg3;
+- (void)selectAndShowRange:(struct _NSRange)arg1;
+- (void)replaceCharactersInRange:(struct _NSRange)arg1 withAnnotatedString:(id)arg2;
+- (void)removeAnnotation:(id)arg1 range:(struct _NSRange)arg2;
+- (void)addAnnotations:(id)arg1 range:(struct _NSRange)arg2;
+- (void)setAnnotations:(id)arg1 range:(struct _NSRange)arg2;
+- (void)_addAnnotations:(id)arg1 range:(struct _NSRange)arg2 textStorage:(id)arg3 layoutManager:(id)arg4 removeExistingAnnotations:(BOOL)arg5;
+- (id)annotatedSubstringForProposedRange:(struct _NSRange)arg1 actualRange:(struct _NSRange *)arg2;
+@property long long textCompletionType;
+@property long long linkDetectionType;
+@property long long dataDetectionType;
+@property long long textReplacementType;
+@property long long smartInsertDeleteType;
+@property long long smartDashesType;
+@property long long smartQuotesType;
+@property long long grammarCheckingType;
+@property long long spellCheckingType;
+@property long long autocorrectionType;
+- (id)textCheckingController;
+- (BOOL)usesTextCheckingController;
 - (BOOL)_isAccessibilityContentSectionCandidate;
 - (BOOL)accessibilityIsTextInputMarkedRangeAttributeSettable;
 - (id)accessibilityTextInputMarkedRangeAttribute;
@@ -671,6 +775,15 @@
 - (void)_scrollToEnd:(id)arg1;
 - (void)_setScrollingToEnd:(BOOL)arg1;
 - (BOOL)_isScrollingToEnd;
+- (id)_revealAnimationControllerForCharacterAtIndex:(unsigned long long)arg1;
+- (void)_revealItemAtCharacterIndex:(unsigned long long)arg1 options:(id)arg2;
+- (id)_rvDocumentContextWithOptions:(id)arg1 item:(id)arg2;
+- (id)_rvItemAtIndex:(unsigned long long)arg1;
+- (void)revealContext:(id)arg1 stopHighlightingItem:(id)arg2;
+- (void)revealContext:(id)arg1 startHighlightingItem:(id)arg2;
+- (void)revealContext:(id)arg1 drawRectsForItem:(id)arg2;
+- (BOOL)revealContext:(id)arg1 shouldUseDefaultHighlightForItem:(id)arg2;
+- (id)revealContext:(id)arg1 rectsForItem:(id)arg2;
 - (id)_immediateActionMenuItemForTextCheckingResult:(id)arg1 range:(struct _NSRange)arg2 location:(struct CGPoint)arg3;
 - (id)menuItemsForTextCheckingResult:(id)arg1 range:(struct _NSRange)arg2 contextual:(BOOL)arg3 event:(id)arg4;
 - (id)_menuItemsForTextCheckingResult:(id)arg1 range:(struct _NSRange)arg2 contextual:(BOOL)arg3 immediate:(BOOL)arg4 location:(struct CGPoint)arg5;
@@ -682,6 +795,8 @@
 - (void)_showFindIndicatorWithCharRange:(struct _NSRange)arg1 fade:(BOOL)arg2;
 - (BOOL)_hasVisisbleGlyphsInCharRange:(struct _NSRange)arg1;
 - (struct CGRect *)_createRectArrayForFindIndicatorForGlyphRange:(struct _NSRange)arg1 rectCount:(unsigned long long *)arg2;
+- (void)_performTypingAction:(CDUnknownBlockType)arg1;
+- (void)_setTypingText:(BOOL)arg1;
 - (BOOL)_isInsertingText;
 - (BOOL)_isUnmarking;
 - (BOOL)wantsNotificationForMarkedText;
@@ -696,9 +811,8 @@
 - (void)setUndoActionName:(id)arg1;
 - (void)_userDeleteRange:(struct _NSRange)arg1;
 - (void)_userReplaceRange:(struct _NSRange)arg1 withString:(id)arg2;
-- (id)_ivars;
 - (id)_sharedData;
-- (id)_setWindow:(id)arg1;
+- (void)_setWindow:(id)arg1;
 - (void)adjustPageHeightNew:(double *)arg1 top:(double)arg2 bottom:(double)arg3 limit:(double)arg4;
 - (struct CGRect)_blockRowRectForCharRange:(struct _NSRange)arg1 rect:(struct CGRect)arg2;
 - (struct CGRect)rectForPage:(long long)arg1;
@@ -716,6 +830,7 @@
 - (struct CGRect)_ensureLayoutCompleteForPreparingContentInRect:(struct CGRect)arg1;
 - (BOOL)_ensureLayoutCompleteForRect:(struct CGRect)arg1 withExtensionFactor:(double)arg2 minimumExtensionDistance:(double)arg3 repetitions:(unsigned long long)arg4 preparedContentRect:(struct CGRect *)arg5;
 - (void)_ensureLayoutCompleteToEndOfCharacterRange:(struct _NSRange)arg1;
+- (void)_fixSelectionAfterChangeInCharacterRange:(struct _NSRange)arg1 changeInLength:(long long)arg2;
 - (void)_setDistanceForVerticalArrowKeyMovement:(double)arg1;
 - (double)_distanceForVerticalArrowKeyMovement;
 - (BOOL)_couldHaveBlinkTimer;
@@ -754,9 +869,10 @@
 - (void)_optimizeHighlightForCharRange:(struct _NSRange)arg1 charRange:(struct _NSRange)arg2 fullSelectionCharRange:(struct _NSRange)arg3 oldSelectionFullCharRange:(struct _NSRange)arg4;
 - (BOOL)_charRangeIsHighlightOptimizable:(struct _NSRange)arg1 fromOldCharRange:(struct _NSRange)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_superviewClipViewBoundsChangedWithNotification:(id)arg1;
 - (void)_superviewClipViewFrameChangedWithNotification:(id)arg1;
 - (void)_superviewClipViewFrameChanged:(id)arg1;
-- (id)_setSuperview:(id)arg1;
+- (void)_setSuperview:(id)arg1;
 - (void)_setWatchingSuperviewClipView:(BOOL)arg1;
 - (void)_forceResizingForClipViewInsetBounds:(struct CGRect)arg1;
 - (void)_sizeDownIfPossible;
@@ -822,6 +938,7 @@
 - (void)acquireKeyFocus;
 - (BOOL)becomeFirstResponder;
 - (BOOL)resignFirstResponder;
+- (BOOL)pendingCandidateUpdate;
 - (void)performPendingTextChecking;
 - (void)_performPendingTextChecking;
 - (BOOL)_validateAndCommitTokens;
@@ -834,8 +951,7 @@
 - (void)toggleUsesAdaptiveColorMappingForDarkAppearance:(id)arg1;
 - (BOOL)usesColorsWithInvertedLightness;
 - (void)setUsesColorsWithInvertedLightness:(BOOL)arg1;
-- (BOOL)usesAdaptiveColorMappingForDarkAppearance;
-- (void)setUsesAdaptiveColorMappingForDarkAppearance:(BOOL)arg1;
+@property BOOL usesAdaptiveColorMappingForDarkAppearance; // @dynamic usesAdaptiveColorMappingForDarkAppearance;
 @property BOOL drawsBackground;
 @property(copy) NSColor *backgroundColor;
 @property(getter=isRulerVisible) BOOL rulerVisible;
@@ -895,6 +1011,7 @@
 - (void)_restartBlinkTimer;
 - (void)_restartBlinkTimersWithSharedData:(id)arg1;
 - (void)_updateBlinkTimersWithSharedData:(id)arg1 restartFlag:(BOOL)arg2 forceBlink:(BOOL)arg3;
+- (void)_updateBlinkRect;
 - (void)updateInsertionPointStateAndRestartTimer:(BOOL)arg1;
 - (BOOL)_usesSplitCursor;
 @property(copy) NSColor *insertionPointColor;
@@ -989,7 +1106,6 @@
 - (id)_sharingItemForAttachment:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)orderFrontSharingServicePicker:(id)arg1;
 - (id)_menuItemsForDataResult:(id)arg1;
-- (void)displayTextLayer:(id)arg1;
 - (BOOL)_isDrawingLayer;
 - (void)_setIsDrawingLayer:(BOOL)arg1;
 

@@ -8,6 +8,7 @@
 
 @class PDAnimationInfoData, PDMediaNode;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimationInfo : NSObject
 {
     PDAnimationInfoData *mEntrance;

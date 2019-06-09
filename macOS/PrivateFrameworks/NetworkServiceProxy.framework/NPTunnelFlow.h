@@ -6,81 +6,73 @@
 
 #import <objc/NSObject.h>
 
-#import <NetworkServiceProxy/NSPConnectionInfoSource-Protocol.h>
-
-@class NPFlowProperties, NPTunnel, NSData, NSDate, NSPAppRule, NetworkServiceProxyRequestStats;
+@class NPFlowProperties, NPTunnel, NSDate, NSPAppRule;
 @protocol OS_dispatch_data;
 
-@interface NPTunnelFlow : NSObject <NSPConnectionInfoSource>
+@interface NPTunnelFlow : NSObject
 {
+    BOOL _hasTunnel;
+    int _tunnelError;
     long long _fallbackReason;
-    BOOL _useCustomHostnameValidation;
     BOOL _isDirectConnectionViable;
     BOOL _fallbackDisabled;
-    BOOL _hasTunnel;
-    BOOL _shouldComposeIntialData;
     BOOL _enableDirectRace;
-    int _tunnelError;
+    BOOL _disconnectedByApp;
+    BOOL _shouldComposeIntialData;
+    unsigned long long _hashKey;
     unsigned long long _identifier;
     NPTunnel *_tunnel;
-    NSPAppRule *_appRule;
     long long _state;
-    void *_window;
-    unsigned long long _hashKey;
-    NSDate *_startDate;
-    NSDate *_firstTxByteTimestamp;
+    NSPAppRule *_appRule;
     NPFlowProperties *_extraFlowProperties;
-    NetworkServiceProxyRequestStats *_stats;
+    NSDate *_firstTxByteTimestamp;
+    NSDate *_startDate;
+    void *_window;
     unsigned long long _initialBytesLeftOver;
     NSObject<OS_dispatch_data> *_savedData;
-    long long _latestByteDate;
     void *_fallbackTimer;
     void *_telemetryTimer;
     double _fallbackDelay;
 }
 
-@property double fallbackDelay; // @synthesize fallbackDelay=_fallbackDelay;
-@property void *telemetryTimer; // @synthesize telemetryTimer=_telemetryTimer;
-@property void *fallbackTimer; // @synthesize fallbackTimer=_fallbackTimer;
-@property long long latestByteDate; // @synthesize latestByteDate=_latestByteDate;
-@property(retain) NSObject<OS_dispatch_data> *savedData; // @synthesize savedData=_savedData;
-@property unsigned long long initialBytesLeftOver; // @synthesize initialBytesLeftOver=_initialBytesLeftOver;
-@property BOOL enableDirectRace; // @synthesize enableDirectRace=_enableDirectRace;
-@property BOOL shouldComposeIntialData; // @synthesize shouldComposeIntialData=_shouldComposeIntialData;
-@property(readonly) NetworkServiceProxyRequestStats *stats; // @synthesize stats=_stats;
-@property(readonly) NPFlowProperties *extraFlowProperties; // @synthesize extraFlowProperties=_extraFlowProperties;
-@property(retain) NSDate *firstTxByteTimestamp; // @synthesize firstTxByteTimestamp=_firstTxByteTimestamp;
-@property(readonly) NSDate *startDate; // @synthesize startDate=_startDate;
-@property int tunnelError; // @synthesize tunnelError=_tunnelError;
-@property BOOL hasTunnel; // @synthesize hasTunnel=_hasTunnel;
-@property BOOL fallbackDisabled; // @synthesize fallbackDisabled=_fallbackDisabled;
-@property(readonly) unsigned long long hashKey; // @synthesize hashKey=_hashKey;
-@property BOOL isDirectConnectionViable; // @synthesize isDirectConnectionViable=_isDirectConnectionViable;
-@property BOOL useCustomHostnameValidation; // @synthesize useCustomHostnameValidation=_useCustomHostnameValidation;
-@property void *window; // @synthesize window=_window;
-@property long long state; // @synthesize state=_state;
-@property(readonly) NSPAppRule *appRule; // @synthesize appRule=_appRule;
-@property(readonly) NPTunnel *tunnel; // @synthesize tunnel=_tunnel;
-@property unsigned long long identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) double fallbackDelay; // @synthesize fallbackDelay=_fallbackDelay;
+@property(nonatomic) void *telemetryTimer; // @synthesize telemetryTimer=_telemetryTimer;
+@property(nonatomic) void *fallbackTimer; // @synthesize fallbackTimer=_fallbackTimer;
+@property(retain, nonatomic) NSObject<OS_dispatch_data> *savedData; // @synthesize savedData=_savedData;
+@property(nonatomic) BOOL shouldComposeIntialData; // @synthesize shouldComposeIntialData=_shouldComposeIntialData;
+@property(nonatomic) BOOL disconnectedByApp; // @synthesize disconnectedByApp=_disconnectedByApp;
+@property(readonly, nonatomic) BOOL enableDirectRace; // @synthesize enableDirectRace=_enableDirectRace;
+@property(nonatomic) BOOL fallbackDisabled; // @synthesize fallbackDisabled=_fallbackDisabled;
+@property(nonatomic) BOOL isDirectConnectionViable; // @synthesize isDirectConnectionViable=_isDirectConnectionViable;
+@property(nonatomic) unsigned long long initialBytesLeftOver; // @synthesize initialBytesLeftOver=_initialBytesLeftOver;
+@property(readonly, nonatomic) void *window; // @synthesize window=_window;
+@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(retain, nonatomic) NSDate *firstTxByteTimestamp; // @synthesize firstTxByteTimestamp=_firstTxByteTimestamp;
+@property(readonly, nonatomic) NPFlowProperties *extraFlowProperties; // @synthesize extraFlowProperties=_extraFlowProperties;
+@property(readonly, nonatomic) NSPAppRule *appRule; // @synthesize appRule=_appRule;
+@property(readonly, nonatomic) long long state; // @synthesize state=_state;
+@property(readonly, nonatomic) NPTunnel *tunnel; // @synthesize tunnel=_tunnel;
+@property(nonatomic) unsigned long long identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) unsigned long long hashKey; // @synthesize hashKey=_hashKey;
 - (void).cxx_destruct;
 - (void)handleTunnelReadyForData;
 - (void)reportTelemetry:(id)arg1 withService:(id)arg2 url:(id)arg3;
 - (void)createTelemetryDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)combineStateInfo:(id)arg1 andConnectionInfo:(id)arg2;
-@property(readonly) BOOL isBestEffort;
+@property(readonly, nonatomic) BOOL isBestEffort;
 - (void)reportMetrics;
-@property long long fallbackReason;
-@property(retain) NSData *appData;
+@property(nonatomic) long long fallbackReason;
+- (id)appData;
+- (void)setAppData:(id)arg1;
 - (id)copyConnectionInfo;
 - (id)createFallbackConnectionInfoWithFallbackReason:(long long)arg1;
-- (void)copyConnectionInfoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)processConnectionInfo:(id)arg1;
 - (void)handleTunnelCanHandleMoreData;
 - (void)handleTunnelDisconnected;
 - (void)handleTunnelConnected;
 - (void)closeFromDirectConnectionWithError:(int)arg1;
 - (void)closeFromTunnel;
-@property(readonly) BOOL isClientFlowClosed;
+@property(readonly, nonatomic) BOOL isClientFlowClosed;
 - (void)closeClientFlowWithError:(int)arg1;
 - (void)closeWithError:(int)arg1;
 - (void)increaseWindowSize:(unsigned long long)arg1;

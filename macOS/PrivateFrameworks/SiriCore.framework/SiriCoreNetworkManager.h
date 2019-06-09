@@ -41,6 +41,8 @@
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (BOOL)_getConnectionSuccessRate:(id)arg1 hasMetric:(char *)arg2;
+- (BOOL)_defaultWiFiLinkRecommendation;
+- (BOOL)_defaultBTLinkRecommendation;
 - (void)acquireWiFiAssertion:(long long)arg1;
 - (void)releaseWiFiAssertion;
 - (void)forceFastDormancy;

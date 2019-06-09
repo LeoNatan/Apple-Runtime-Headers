@@ -12,7 +12,7 @@
 #import <MobileTimer/MTTimerObserver-Protocol.h>
 
 @class MTScheduledList, NSString;
-@protocol MTNotificationCenter, MTSchedulingDelegate, MTTaskScheduler, MTTimerSchedulerDelegate, MTTimerStorage, NAScheduler;
+@protocol MTNotificationCenter, MTPersistence, MTSchedulingDelegate, MTTaskScheduler, MTTimerSchedulerDelegate, MTTimerStorage, NAScheduler;
 
 @interface MTTimerScheduler : NSObject <MTTimerObserver, MTScheduledListDelegate, MTAgentDiagnosticDelegate, MTAgentNotificationListener>
 {
@@ -24,9 +24,11 @@
     CDUnknownBlockType _currentDateProvider;
     id <MTSchedulingDelegate> _schedulingDelegate;
     id <MTTaskScheduler> _taskScheduler;
+    id <MTPersistence> _defaults;
 }
 
 + (id)_intervalToCheckForTimersToFireBeforeDate:(id)arg1;
+@property(retain, nonatomic) id <MTPersistence> defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) id <MTTaskScheduler> taskScheduler; // @synthesize taskScheduler=_taskScheduler;
 @property(readonly, nonatomic) id <MTSchedulingDelegate> schedulingDelegate; // @synthesize schedulingDelegate=_schedulingDelegate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType currentDateProvider; // @synthesize currentDateProvider=_currentDateProvider;
@@ -43,8 +45,8 @@
 - (void)source:(id)arg1 didRemoveTimers:(id)arg2;
 - (void)source:(id)arg1 didUpdateTimers:(id)arg2;
 - (void)source:(id)arg1 didAddTimers:(id)arg2;
-- (void)handleNotification:(id)arg1;
-- (_Bool)handlesNotification:(id)arg1;
+- (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
 - (void)_queue_setLastTimerTriggerDate:(id)arg1;
@@ -66,8 +68,8 @@
 - (void)rescheduleTimers;
 - (id)nextTriggerDate;
 - (id)nextTimer;
-- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 schedulingDelegate:(id)arg4 taskScheduler:(id)arg5 currentDateProvider:(CDUnknownBlockType)arg6;
-- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 defaults:(id)arg4 schedulingDelegate:(id)arg5 taskScheduler:(id)arg6 currentDateProvider:(CDUnknownBlockType)arg7;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 defaults:(id)arg4;
 - (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2;
 
 // Remaining properties

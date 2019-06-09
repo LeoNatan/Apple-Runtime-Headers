@@ -9,6 +9,7 @@
 @class CKActionMenuView, NSArray;
 @protocol CKActionMenuControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKActionMenuController : NSObject
 {
     unsigned int _defaultActionIndex;

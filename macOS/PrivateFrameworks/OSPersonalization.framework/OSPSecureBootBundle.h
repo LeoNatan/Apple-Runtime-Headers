@@ -14,9 +14,11 @@
     NSArray *_variants;
     NSArray *_devices;
     NSString *_buildVersion;
+    NSString *_buildTrain;
 }
 
 + (id)recommendedBundleForVolumeMountPoint:(id)arg1 variant:(id)arg2;
+@property(retain) NSString *buildTrain; // @synthesize buildTrain=_buildTrain;
 @property(retain) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property(retain) NSArray *devices; // @synthesize devices=_devices;
 @property(retain) NSArray *variants; // @synthesize variants=_variants;

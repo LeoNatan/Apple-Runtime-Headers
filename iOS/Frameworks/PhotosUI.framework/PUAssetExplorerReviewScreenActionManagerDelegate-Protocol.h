@@ -8,12 +8,11 @@
 #import <PhotosUI/PUFunEffectsViewControllerObserver-Protocol.h>
 #import <PhotosUI/PUPhotoEditViewControllerSessionDelegate-Protocol.h>
 #import <PhotosUI/PUPhotoMarkupViewControllerObserver-Protocol.h>
-#import <PhotosUI/PUVideoEditViewControllerSessionDelegate-Protocol.h>
 
 @class PUAssetExplorerReviewScreenActionManager, PUReviewScreenBarsModel;
 @protocol PUDisplayAsset, PUDisplayAssetCollection;
 
-@protocol PUAssetExplorerReviewScreenActionManagerDelegate <NSObject, PUPhotoEditViewControllerSessionDelegate, PUVideoEditViewControllerSessionDelegate, PUPhotoMarkupViewControllerObserver, PUFunEffectsViewControllerObserver>
+@protocol PUAssetExplorerReviewScreenActionManagerDelegate <NSObject, PUPhotoEditViewControllerSessionDelegate, PUPhotoMarkupViewControllerObserver, PUFunEffectsViewControllerObserver>
 - (void)assetExplorerReviewScreenActionManagerDidPressSend:(PUAssetExplorerReviewScreenActionManager *)arg1;
 - (void)assetExplorerReviewScreenActionManager:(PUAssetExplorerReviewScreenActionManager *)arg1 didToggleLivePhoto:(id <PUDisplayAsset>)arg2;
 - (void)assetExplorerReviewScreenActionManagerDidPressRetake:(PUAssetExplorerReviewScreenActionManager *)arg1;

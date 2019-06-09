@@ -9,7 +9,8 @@
 #import <MapKit/NSCopying-Protocol.h>
 #import <MapKit/NSSecureCoding-Protocol.h>
 
-@class MKMapCamera, NSAppearance, NSArray;
+@class MKMapCamera, MKPointOfInterestFilter, NSAppearance, NSArray, VKRouteContext;
+@protocol VKRouteOverlay;
 
 @interface MKMapSnapshotOptions : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,15 +19,19 @@
     CDStruct_b7cb895d _region;
     unsigned long long _mapType;
     int _mode;
-    BOOL _showsPointsOfInterest;
     BOOL _showsPointLabels;
     BOOL _showsBuildings;
     BOOL _showsNightMode;
     struct CGSize _size;
     NSAppearance *_appearance;
+    struct NSEdgeInsets _edgeInsets;
+    unsigned long long _signpostId;
+    VKRouteContext *_routeContext;
+    id <VKRouteOverlay> _routeOverlay;
     BOOL _usingRect;
     BOOL _showsVenues;
     unsigned char _searchResultsType;
+    MKPointOfInterestFilter *_pointOfInterestFilter;
     NSArray *_annotationViews;
     NSArray *_customFeatureAnnotations;
 }
@@ -35,12 +40,16 @@
 @property(copy, nonatomic, getter=_customFeatureAnnotations, setter=_setCustomFeatureAnnotations:) NSArray *customFeatureAnnotations; // @synthesize customFeatureAnnotations=_customFeatureAnnotations;
 @property(nonatomic, getter=_searchResultsType, setter=_setSearchResultsType:) unsigned char searchResultsType; // @synthesize searchResultsType=_searchResultsType;
 @property(nonatomic, getter=_showsVenues, setter=_setShowsVenues:) BOOL showsVenues; // @synthesize showsVenues=_showsVenues;
+@property(retain, nonatomic, getter=_routeOverlay, setter=_setRouteOverlay:) id <VKRouteOverlay> routeOverlay; // @synthesize routeOverlay=_routeOverlay;
+@property(retain, nonatomic, getter=_routeContext, setter=_setRouteContext:) VKRouteContext *routeContext; // @synthesize routeContext=_routeContext;
+@property(nonatomic, getter=_edgeInsets, setter=_setEdgeInsets:) struct NSEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
+@property(nonatomic) unsigned long long signpostId; // @synthesize signpostId=_signpostId;
 @property(copy, nonatomic) NSArray *annotationViews; // @synthesize annotationViews=_annotationViews;
 @property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 @property(nonatomic, getter=_showsNightMode, setter=_setShowsNightMode:) BOOL showsNightMode; // @synthesize showsNightMode=_showsNightMode;
 @property(nonatomic) BOOL showsBuildings; // @synthesize showsBuildings=_showsBuildings;
 @property(nonatomic, getter=_showsPointLabels, setter=_setShowsPointLabels:) BOOL showsPointLabels; // @synthesize showsPointLabels=_showsPointLabels;
-@property(nonatomic) BOOL showsPointsOfInterest; // @synthesize showsPointsOfInterest=_showsPointsOfInterest;
+@property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
 @property(readonly, nonatomic) BOOL usingRect; // @synthesize usingRect=_usingRect;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 @property(nonatomic) unsigned long long mapType; // @synthesize mapType=_mapType;
@@ -49,6 +58,7 @@
 @property(copy, nonatomic) MKMapCamera *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;
+@property(nonatomic) BOOL showsPointsOfInterest; // @dynamic showsPointsOfInterest;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

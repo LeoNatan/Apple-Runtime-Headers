@@ -45,6 +45,7 @@
 @property(nonatomic) struct CGColorSpace *colorSpace; // @synthesize colorSpace=mColorSpace;
 @property(nonatomic) struct CGRect contentRect; // @synthesize contentRect=mContentRect;
 @property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=mAttributes;
+- (char *)p_setupTextureDataWithSize:(struct CGSize)arg1 isBGRA:(_Bool)arg2;
 @property(readonly, nonatomic) CALayer *parentLayer;
 - (struct CGRect)boundingRectForStage:(long long)arg1 isBuildIn:(_Bool)arg2;
 @property(readonly, nonatomic) _Bool isBackgroundTexture;

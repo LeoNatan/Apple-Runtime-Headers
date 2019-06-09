@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEOSearchAttributionServerProxy-Protocol.h>
 
-@class GEOSearchAttributionManifest, NSLock, NSString;
+@class GEOSearchAttributionManifest, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_queue> *_attributionQueue;
     GEOSearchAttributionManifest *_attributionManifest;
-    NSLock *_attributionManifestLock;
+    struct os_unfair_lock_s _attributionManifestLock;
     int _attributionManifestUpdatedToken;
 }
 

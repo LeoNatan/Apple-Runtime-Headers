@@ -39,7 +39,7 @@
 - (_Bool)isProtocolTypeValid:(int)arg1;
 - (void)removeFromPreferencesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadFromPreferencesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithGrade:(int)arg1 connection:(id)arg2;
+- (id)initWithGrade:(int)arg1 connection:(id)arg2 tunnelType:(int)arg3;
 - (id)init;
 
 @end

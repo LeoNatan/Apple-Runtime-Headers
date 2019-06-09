@@ -10,6 +10,7 @@
 
 @protocol SYSyncEngineResponder <NSObject>
 @property(readonly, nonatomic) NSDictionary *extraTransportOptions;
+- (void)currentDeviceConnectionChanged:(_Bool)arg1;
 - (void)currentDeviceProximityChanged:(_Bool)arg1;
 - (void)serializeForIncomingSession:(void (^)(void))arg1;
 - (void)deliveredMessageWithID:(NSString *)arg1 context:(NSDictionary *)arg2;

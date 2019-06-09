@@ -17,6 +17,7 @@
 @property(readonly) NSArray *items; // @synthesize items=_items;
 @property(readonly) unsigned long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (double)duration;
 - (id)typeDescription;
 - (id)description;
 - (id)initWithItems:(id)arg1 type:(unsigned long long)arg2;

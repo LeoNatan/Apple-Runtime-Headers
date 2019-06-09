@@ -16,6 +16,7 @@
     PLEntryNotificationOperatorComposition *_entryListener;
 }
 
++ (id)audioOffCriterion;
 + (id)displayOffCriterion;
 + (id)pluggedInCriterion;
 @property(retain) PLEntryNotificationOperatorComposition *entryListener; // @synthesize entryListener=_entryListener;

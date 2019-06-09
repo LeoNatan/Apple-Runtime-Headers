@@ -6,24 +6,23 @@
 
 #import <Mail/MFEWSPersistenceTaskOperation.h>
 
-@class MFEWSLocalMessageAction;
+@class ECLocalMessageAction, ECLocalMessageActionResults;
 @protocol MFEWSPersistActionResultsOperationDelegate;
 
 @interface MFEWSPersistActionResultsOperation : MFEWSPersistenceTaskOperation
 {
-    BOOL _needToReplayAction;
-    MFEWSLocalMessageAction *_messageAction;
+    ECLocalMessageAction *_messageAction;
+    ECLocalMessageActionResults *_results;
     id <MFEWSPersistActionResultsOperationDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <MFEWSPersistActionResultsOperationDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) BOOL needToReplayAction; // @synthesize needToReplayAction=_needToReplayAction;
-@property(readonly, nonatomic) MFEWSLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
+@property(readonly, nonatomic) ECLocalMessageActionResults *results; // @synthesize results=_results;
+@property(readonly, nonatomic) ECLocalMessageAction *messageAction; // @synthesize messageAction=_messageAction;
 - (void).cxx_destruct;
-- (void)_displayErrorIfNecessary:(id)arg1;
 - (void)main;
 - (id)init;
-- (id)initWithMessageAction:(id)arg1;
+- (id)initWithMessageAction:(id)arg1 results:(id)arg2;
 
 @end
 

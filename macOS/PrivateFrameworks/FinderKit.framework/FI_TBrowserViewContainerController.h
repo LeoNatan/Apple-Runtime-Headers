@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TBrowserSplitViewController, void> _browserSplitViewController;
     struct TNSRef<FI_TSearchSliceController, void> _searchSliceController;
     struct TNSRef<FI_TPathBarController, void> _pathBarController;
-    FI_TContainerLayoutManager *_containerLayoutManager;
+    struct TNSRef<FI_TContainerLayoutManager, void> _containerLayoutManager;
     struct TNSRef<NSMutableArray<NSLayoutConstraint *>, void> _layoutConstraints;
     struct vector<TNotificationCenterObserver, std::__1::allocator<TNotificationCenterObserver>> _notificationCenterObservers;
     int _folderSharingBannerType;
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (id)browserSplitView;
 - (id)browserSplitViewWrapper;
 @property(readonly, retain, nonatomic) FI_TBrowserSplitViewController *browserSplitViewController;
+@property(retain, nonatomic) FI_TContainerLayoutManager *containerLayoutManager; // @dynamic containerLayoutManager;
 - (void)activateLayoutGuideRelatedConstraintsIfNeeded;
 - (void)tearDownAccessoryViews;
 - (void)aboutToTearDown;

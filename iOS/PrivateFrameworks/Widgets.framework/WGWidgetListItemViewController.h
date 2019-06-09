@@ -29,6 +29,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
+- (_Bool)_canShowWhileLocked;
 - (void)removeChildViewController:(id)arg1;
 - (void)managingContainerDidDisappear:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;

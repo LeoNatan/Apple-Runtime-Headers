@@ -15,7 +15,6 @@
 
 @property(retain) CalUINewFeaturesContinueButton *continueButton; // @synthesize continueButton=_continueButton;
 - (void).cxx_destruct;
-- (BOOL)validateMenuItem:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType removalBlock;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)_viewForIconWithName:(id)arg1;

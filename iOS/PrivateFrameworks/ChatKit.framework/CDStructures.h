@@ -53,15 +53,6 @@ struct CATransform3D {
     double m44;
 };
 
-struct CGAffineTransform {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
-    double _field5;
-    double _field6;
-};
-
 struct CGPoint {
     double x;
     double y;
@@ -84,9 +75,11 @@ struct CKBalloonDescriptor_t {
     char _field4;
     unsigned long long _field5;
     char _field6;
-    _Bool _field7;
-    _Bool _field8;
+    long long _field7;
+    long long _field8;
     _Bool _field9;
+    _Bool _field10;
+    _Bool _field11;
 };
 
 struct CKFeedSeparatorMetrics {
@@ -107,6 +100,24 @@ struct IMAssociatedMessageGeometryDescriptor {
     float yScalar;
     float scale;
     float rotation;
+};
+
+struct IMPreviewConstraints {
+    double _field1;
+    struct CGSize _field2;
+    double _field3;
+    _Bool _field4;
+};
+
+struct NSDirectionalEdgeInsets {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
+struct NSString {
+    Class _field1;
 };
 
 struct UIEdgeInsets {

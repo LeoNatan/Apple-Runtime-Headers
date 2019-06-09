@@ -22,6 +22,8 @@
     NSDate *_lastActiveDate;
     _Bool _hasCachedNearby;
     _Bool _cachedIsNearby;
+    _Bool _hasCachedConnected;
+    _Bool _cachedConnected;
     long long _state;
 }
 
@@ -31,6 +33,8 @@
 + (id)targetableDevice;
 + (id)knownDevices;
 @property(readonly, nonatomic) NRDevice *nrDevice; // @synthesize nrDevice=_nrDevice;
+@property(nonatomic) _Bool cachedConnected; // @synthesize cachedConnected=_cachedConnected;
+@property(nonatomic) _Bool hasCachedConnected; // @synthesize hasCachedConnected=_hasCachedConnected;
 @property(nonatomic) _Bool cachedIsNearby; // @synthesize cachedIsNearby=_cachedIsNearby;
 @property(nonatomic) _Bool hasCachedNearby; // @synthesize hasCachedNearby=_hasCachedNearby;
 @property(readonly, nonatomic) NSDate *lastActiveDate; // @synthesize lastActiveDate=_lastActiveDate;

@@ -6,21 +6,19 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, PUPhotoPickerAppearance, UIViewController;
+@class NSArray, NSData, NSDictionary, UIViewController;
 
 @protocol PUPhotoPicker <NSObject>
-@property(nonatomic) long long secondaryActionType;
-@property(retain, nonatomic) NSString *actionTypeDescription;
-@property(nonatomic) long long actionType;
 @property(readonly, nonatomic) NSDictionary *properties;
 @property(readonly, nonatomic) _Bool convertAutoloopsToGIF;
 @property(readonly, nonatomic) _Bool showsPrompt;
+@property(readonly, nonatomic) _Bool showsFileSizePicker;
+@property(readonly, nonatomic) _Bool requiresPickingConfirmation;
 @property(readonly, nonatomic) unsigned long long multipleSelectionLimit;
 @property(readonly, nonatomic) _Bool allowsMultipleSelection;
 @property(readonly, nonatomic) NSArray *mediaTypes;
 @property(readonly, nonatomic) unsigned long long savingOptions;
 - (void)performTraitCollectionUpdateUsingData:(NSData *)arg1 completion:(void (^)(NSNumber *))arg2;
-- (void)performAppearanceUpdateUsing:(PUPhotoPickerAppearance *)arg1;
 - (void)performPhotosSelection;
 - (void)didSelectMultipleMediaItemsWithInfoDictionaries:(NSArray *)arg1;
 - (void)didSelectMediaWithInfoDictionary:(NSDictionary *)arg1 allowedHandler:(void (^)(_Bool))arg2;

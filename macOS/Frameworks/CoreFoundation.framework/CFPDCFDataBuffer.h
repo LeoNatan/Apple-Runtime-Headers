@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     struct __CFData *data;
 }
 
+- (id)copyXPCData;
 - (struct __CFData *)copyCFData;
 - (void)dealloc;
 - (unsigned long long)length;

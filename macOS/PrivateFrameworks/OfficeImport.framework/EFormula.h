@@ -9,6 +9,7 @@
 @class EDFormula, EFTableData, NSString;
 @protocol EFHelper;
 
+__attribute__((visibility("hidden")))
 @interface EFormula : NSObject
 {
     id <EFHelper> mHelper;

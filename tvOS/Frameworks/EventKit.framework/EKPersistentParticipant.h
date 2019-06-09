@@ -22,10 +22,10 @@
 - (id)owner;
 - (void)setComment:(id)arg1;
 - (id)comment;
-- (id)url;
 - (void)setAddress:(id)arg1;
 - (id)address;
 - (void)setLastName:(id)arg1;
+- (id)url;
 - (id)lastName;
 - (void)setFirstName:(id)arg1;
 - (id)firstName;

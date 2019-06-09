@@ -20,6 +20,7 @@
 + (id)recordWithCKRecord:(id)arg1 error:(id *)arg2;
 @property(retain, nonatomic) NSSet *disabledOwnerIdentifiers; // @synthesize disabledOwnerIdentifiers=_disabledOwnerIdentifiers;
 - (void).cxx_destruct;
+- (id)description;
 - (id)initWithCKRecord:(id)arg1 disabledOwnerIdentifiers:(id)arg2 schemaVersion:(long long)arg3;
 - (id)initInSyncCircle:(id)arg1 disabledOwnerIdentifiers:(id)arg2;
 

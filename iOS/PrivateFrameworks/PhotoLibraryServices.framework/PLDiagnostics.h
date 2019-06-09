@@ -13,9 +13,9 @@
 + (void)collectYearsStatWithLibraryContext:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)collectCollectionsStatWithLibraryContext:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)collectMomentsStatWithLibraryContext:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-+ (id)createOrEmptyMemoriesRelatedSnapshotOutputFolder;
-+ (id)memoriesAndRelatedDiagnosticsOutputURL;
-+ (id)_memoriesRelatedOutputPathBaseDirectory;
++ (id)createOrEmptyMemoriesRelatedSnapshotOutputFolderWithPathManager:(id)arg1;
++ (id)memoriesAndRelatedDiagnosticsOutputURLWithPathManager:(id)arg1;
++ (id)_memoriesRelatedOutputPathBaseDirectoryWithPathManager:(id)arg1;
 + (void)fileRadarUserNotificationWithHeader:(id)arg1 message:(id)arg2 radarTitle:(id)arg3 radarDescription:(id)arg4;
 + (_Bool)shouldSuppressRadarUserNotificationWithMessage:(id)arg1 radarTitle:(id)arg2;
 + (void)tapToRadarWithTitle:(id)arg1 description:(id)arg2;

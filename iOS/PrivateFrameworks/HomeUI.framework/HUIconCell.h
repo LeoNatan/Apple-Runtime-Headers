@@ -18,6 +18,7 @@
     _Bool _hideIcon;
     _Bool _iconForegroundColorFollowsTintColor;
     _Bool _iconTintColorFollowsDisabledState;
+    _Bool _separatorInsetLinesUpWithText;
     HFItem *_item;
     UIColor *_iconForegroundColor;
     double _iconAlpha;
@@ -38,6 +39,7 @@
 @property(retain, nonatomic) NSArray *iconSpacingConstraints; // @synthesize iconSpacingConstraints=_iconSpacingConstraints;
 @property(retain, nonatomic) NSArray *dynamicConstraints; // @synthesize dynamicConstraints=_dynamicConstraints;
 @property(retain, nonatomic) NSArray *staticConstraints; // @synthesize staticConstraints=_staticConstraints;
+@property(nonatomic) _Bool separatorInsetLinesUpWithText; // @synthesize separatorInsetLinesUpWithText=_separatorInsetLinesUpWithText;
 @property(nonatomic) _Bool iconTintColorFollowsDisabledState; // @synthesize iconTintColorFollowsDisabledState=_iconTintColorFollowsDisabledState;
 @property(nonatomic) unsigned long long iconDisplayStyle; // @synthesize iconDisplayStyle=_iconDisplayStyle;
 @property(retain, nonatomic) HUIconCellContentMetrics *contentMetrics; // @synthesize contentMetrics=_contentMetrics;

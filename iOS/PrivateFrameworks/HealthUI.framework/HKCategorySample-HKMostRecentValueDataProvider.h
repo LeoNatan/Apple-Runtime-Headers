@@ -8,5 +8,8 @@
 
 @interface HKCategorySample (HKMostRecentValueDataProvider)
 - (id)dataProviderValue;
+- (void)_addHeartEventDetailValuesToSection:(id)arg1;
+- (void)_addDefaultCategoryDetailValuesToSection:(id)arg1;
+- (void)addDetailValuesToSection:(id)arg1;
 @end
 

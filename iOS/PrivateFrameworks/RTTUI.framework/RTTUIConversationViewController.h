@@ -38,6 +38,7 @@
     NSMutableArray *_utteranceBuffer;
 }
 
++ (_Bool)_validRectangle:(struct CGRect)arg1;
 + (id)viewControllerForConversation:(id)arg1;
 + (id)viewControllerForCall:(id)arg1;
 @property(nonatomic) _Bool processingUtteranceBuffer; // @synthesize processingUtteranceBuffer=_processingUtteranceBuffer;
@@ -80,6 +81,7 @@
 - (void)_sendNewUtteranceString:(id)arg1 atIndex:(unsigned long long)arg2 forCellPath:(id)arg3;
 - (void)processUtteranceQueue;
 - (id)addUtterance:(id)arg1;
+- (void)_updateServiceCellWithString:(id)arg1;
 - (void)updateServiceCellWithString:(id)arg1;
 - (id)currentCall;
 - (void)toggleMute:(id)arg1;

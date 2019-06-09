@@ -29,6 +29,8 @@
 - (unsigned long long)cleanupOrphanedSpaceOnVolume:(id)arg1;
 - (unsigned long long)purgeableSpaceOnVolume:(id)arg1 appStoreOnly:(BOOL)arg2;
 - (unsigned long long)purgeableSpaceOnVolume:(id)arg1;
+- (id)_installerSandboxesPathForVolume:(id)arg1 forSystemSoftware:(BOOL)arg2;
+- (BOOL)_ensureDirectoryExists:(id)arg1 withMode:(unsigned short)arg2 withUID:(unsigned int)arg3 withGID:(unsigned int)arg4;
 - (BOOL)_canCreateDirectoryUnder:(id)arg1;
 - (id)_repositoryParentPathForRootVolume;
 - (id)_sandboxRepositoryForDestination:(id)arg1 forSystemSoftware:(BOOL)arg2 create:(BOOL)arg3 error:(id *)arg4;

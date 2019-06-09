@@ -17,8 +17,9 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool peerSupportsAdjustmentBaseResources;
 - (id)conversionResultForAsset:(id)arg1 isVideo:(_Bool)arg2 isRender:(_Bool)arg3 forceLegacyConversion:(_Bool)arg4;
-@property(readonly, nonatomic) _Bool supportsTranscodeChoice;
+@property(readonly, nonatomic) _Bool peerSupportsTranscodeChoice;
 - (id)init;
 
 // Remaining properties

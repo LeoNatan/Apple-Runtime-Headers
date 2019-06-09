@@ -38,6 +38,7 @@
 @property(copy, nonatomic) NSArray *expectedClientIdentifiers; // @synthesize expectedClientIdentifiers=_expectedClientIdentifiers;
 @property(retain, nonatomic) NSString *copyright; // @synthesize copyright=_copyright;
 @property(retain, nonatomic) NSArray *allowedOrientations; // @synthesize allowedOrientations=_allowedOrientations;
+- (void).cxx_destruct;
 - (id)_newNavigationMenusFromArray:(id)arg1;
 - (id)_newNavigationHistoryItemsFromArray:(id)arg1;
 - (id)_newNavigationButtonsFromArray:(id)arg1;
@@ -47,7 +48,6 @@
 - (id)navigationMenuForLocation:(long long)arg1;
 - (id)navigationButtonForLocation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)_initCommon;
 

@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedProvider;
 - (_Bool)_suppressHairlineThickeningForImageName:(id)arg1 styleAttributes:(id)arg2;
-- (_Bool)_automaticallyFlipRightToLeftLayoutDirectionForImageNamed:(id)arg1 styleAttributes:(id)arg2;
 - (struct UIEdgeInsets)_alignmentInsetsForImageNamed:(id)arg1 styleAttributes:(id)arg2;
 - (id)imageNamed:(id)arg1 styleAttributes:(id)arg2;
 

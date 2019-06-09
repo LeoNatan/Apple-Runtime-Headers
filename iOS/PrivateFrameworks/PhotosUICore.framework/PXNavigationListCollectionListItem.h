@@ -4,45 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import <PhotosUICore/PXNavigationListItem-Protocol.h>
+#import <PhotosUICore/PXNavigationListItem.h>
 
 @class NSString, PHCollectionList;
 
-@interface PXNavigationListCollectionListItem : NSObject <PXNavigationListItem>
+@interface PXNavigationListCollectionListItem : PXNavigationListItem
 {
-    long long m_previousItemCount;
-    NSString *m_formattedCount;
+    _Bool _draggable;
+    _Bool _renamable;
+    _Bool _expandable;
     _Bool _expanded;
+    NSString *_glyphImageName;
     PHCollectionList *_collection;
-    long long _itemCount;
     long long _indentationLevel;
 }
 
-@property(nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
 @property(nonatomic, getter=isExpanded) _Bool expanded; // @synthesize expanded=_expanded;
-@property(readonly, nonatomic) long long itemCount; // @synthesize itemCount=_itemCount;
+@property(nonatomic) long long indentationLevel; // @synthesize indentationLevel=_indentationLevel;
 @property(readonly, nonatomic) PHCollectionList *collection; // @synthesize collection=_collection;
+- (_Bool)isExpandable;
+- (_Bool)isRenamable;
+- (_Bool)isDraggable;
+- (id)glyphImageName;
 - (void).cxx_destruct;
+- (id)representedObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) NSString *visualDescription;
-@property(readonly, copy) NSString *description;
-- (_Bool)isEqual:(id)arg1;
-- (_Bool)isEqualToNavigationListCollectionListItem:(id)arg1;
-@property(readonly) unsigned long long hash;
-@property(readonly, nonatomic, getter=isExpandable) _Bool expandable;
-@property(readonly, nonatomic) NSString *identifier;
-@property(readonly, nonatomic) NSString *imageName;
-@property(readonly, nonatomic) NSString *accessoryTitle;
-@property(readonly, nonatomic) NSString *title;
 - (id)initWithCollectionList:(id)arg1 itemCount:(long long)arg2;
 - (const struct __CFString *)aggregateDictionaryKey;
 - (id)viewControllerForCollectionWithGridPresentation:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

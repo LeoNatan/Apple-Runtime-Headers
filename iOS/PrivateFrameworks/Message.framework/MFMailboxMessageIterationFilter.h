@@ -8,15 +8,16 @@
 
 #import <Message/MFMessageIterationFilter-Protocol.h>
 
-@class NSIndexSet, NSString;
+@class EFMutableInt64Set, NSString;
 
 @interface MFMailboxMessageIterationFilter : NSObject <MFMessageIterationFilter>
 {
-    NSIndexSet *_mailboxes;
+    EFMutableInt64Set *_mailboxes;
 }
 
+- (void).cxx_destruct;
+- (_Bool)filterMessageWithRow:(id)arg1;
 - (_Bool)filterMessageWithStatement:(struct sqlite3_stmt *)arg1;
-- (void)dealloc;
 - (id)initWithMailboxes:(id)arg1;
 
 // Remaining properties

@@ -10,12 +10,14 @@
 #import <CoreSuggestions/SGSuggestionsServiceEventsProtocol-Protocol.h>
 #import <CoreSuggestions/SGSuggestionsServiceFidesProtocol-Protocol.h>
 #import <CoreSuggestions/SGSuggestionsServiceInternalProtocol-Protocol.h>
+#import <CoreSuggestions/SGSuggestionsServiceIpsosProtocol-Protocol.h>
 #import <CoreSuggestions/SGSuggestionsServiceMailProtocol-Protocol.h>
+#import <CoreSuggestions/SGSuggestionsServiceRemindersProtocol-Protocol.h>
 
 @class NSString, SGDaemonConnection, _PASLock;
 @protocol SGDSuggestManagerAllProtocol;
 
-@interface SGSuggestionsService : NSObject <SGSuggestionsServiceContactsProtocol, SGSuggestionsServiceEventsProtocol, SGSuggestionsServiceInternalProtocol, SGSuggestionsServiceMailProtocol, SGSuggestionsServiceFidesProtocol>
+@interface SGSuggestionsService : NSObject <SGSuggestionsServiceContactsProtocol, SGSuggestionsServiceEventsProtocol, SGSuggestionsServiceIpsosProtocol, SGSuggestionsServiceInternalProtocol, SGSuggestionsServiceMailProtocol, SGSuggestionsServiceFidesProtocol, SGSuggestionsServiceRemindersProtocol>
 {
     SGDaemonConnection *_daemonConnection;
     id <SGDSuggestManagerAllProtocol> _managerForTesting;
@@ -34,17 +36,29 @@
 + (id)serviceForMessages;
 + (id)serviceForFides;
 + (id)serviceForInternal;
++ (id)serviceForIpsos;
++ (id)serviceForReminders;
 + (id)serviceForEvents;
++ (id)serviceForURLs;
 + (id)serviceForContacts;
 + (id)serviceForMail;
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)foundInStringForRecordId:(id)arg1 style:(unsigned char)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (id)foundInStringForRecordId:(id)arg1 style:(unsigned char)arg2 error:(id *)arg3;
+- (void)urlsFoundBetweenStartDate:(id)arg1 endDate:(id)arg2 excludingBundleIdentifiers:(id)arg3 limit:(unsigned int)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (id)urlsFoundBetweenStartDate:(id)arg1 endDate:(id)arg2 excludingBundleIdentifiers:(id)arg3 limit:(unsigned int)arg4 error:(id *)arg5;
+- (void)recentURLsWithLimit:(unsigned int)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)recentURLsWithLimit:(unsigned int)arg1 error:(id *)arg2;
+- (void)ipsosMessagesWithSearchableItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)ipsosMessagesWithSearchableItems:(id)arg1 error:(id *)arg2;
 - (void)suggestionsFromMockData:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)sleepWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)sleep:(id *)arg1;
 - (void)daemonExitWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)daemonExit:(id *)arg1;
 - (void)keepDirty:(BOOL)arg1;
+- (void)logSuggestionInteractionForRecordId:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logEventInteractionForEventWithExternalIdentifier:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logEventInteractionForEventWithUniqueKey:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logMetricSearchResultsIncludedPureSuggestionWithBundleId:(id)arg1;
@@ -73,7 +87,6 @@
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 domainIdentifiers:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)purgeSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)spotlightObserver;
 - (void)planReceivedFromServerWithPayload:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateMessages:(id)arg1 state:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (BOOL)updateMessages:(id)arg1 state:(unsigned long long)arg2 error:(id *)arg3;
@@ -116,6 +129,10 @@
 - (BOOL)confirmEvent:(id)arg1 error:(id *)arg2;
 - (void)originFromRecordId:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)originFromRecordId:(id)arg1 error:(id *)arg2;
+- (void)launchAppForSuggestedEventUsingLaunchInfo:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)launchAppForSuggestedEventUsingLaunchInfo:(id)arg1 error:(id *)arg2;
+- (void)launchInfoForSuggestedEventWithUniqueIdentifier:(id)arg1 sourceURL:(id)arg2 clientLocale:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (id)launchInfoForSuggestedEventWithUniqueIdentifier:(id)arg1 sourceURL:(id)arg2 clientLocale:(id)arg3 error:(id *)arg4;
 - (void)eventFromUniqueId:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)eventFromUniqueId:(id)arg1 error:(id *)arg2;
 - (void)eventFromRecordID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -146,6 +163,20 @@
 - (id)harvestedSuggestionsFromSearchableItem:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (void)suggestionsFromSearchableItem:(id)arg1 options:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)suggestionsFromSearchableItem:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (void)reminderTitleForContent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)reminderTitleForContent:(id)arg1 error:(id *)arg2;
+- (void)allRemindersLimitedTo:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)allRemindersLimitedTo:(unsigned long long)arg1 error:(id *)arg2;
+- (void)reminderAlarmTriggeredForRecordId:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)reminderAlarmTriggeredForRecordId:(id)arg1 error:(id *)arg2;
+- (void)rejectRealtimeReminder:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)rejectRealtimeReminder:(id)arg1 error:(id *)arg2;
+- (void)rejectReminderByRecordId:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)rejectReminderByRecordId:(id)arg1 error:(id *)arg2;
+- (void)confirmRealtimeReminder:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)confirmRealtimeReminder:(id)arg1 error:(id *)arg2;
+- (void)confirmReminderByRecordId:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)confirmReminderByRecordId:(id)arg1 error:(id *)arg2;
 - (void)allEventsLimitedTo:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)allEventsLimitedTo:(unsigned long long)arg1 error:(id *)arg2;
 - (void)suggestEventsInFutureLimitTo:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;

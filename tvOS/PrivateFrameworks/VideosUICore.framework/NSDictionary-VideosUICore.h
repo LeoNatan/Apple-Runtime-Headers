@@ -7,6 +7,7 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (VideosUICore)
+- (id)vui_errorForKey:(id)arg1;
 - (id)vui_dataForKey:(id)arg1;
 - (id)vui_arrayForKey:(id)arg1;
 - (id)vui_dictionaryForKey:(id)arg1;

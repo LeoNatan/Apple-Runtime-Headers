@@ -33,14 +33,14 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 - (void)performActionViewControllerDidPerformAction:(id)arg1;
 - (void)performActionViewControllerDidCancel:(id)arg1;
-- (id)pkui_navigationBarTintColor;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)viewWillLayoutSubviews;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
 - (void)_handleActionSelected;
 - (void)_handleReminderAmountChanged:(id)arg1;

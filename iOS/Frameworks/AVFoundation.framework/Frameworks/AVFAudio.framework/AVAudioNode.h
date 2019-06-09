@@ -6,11 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <AVFAudio/AVAudioMixing-Protocol.h>
+@class AUAudioUnit, AVAudioEngine, AVAudioTime;
 
-@class AUAudioUnit, AVAudioEngine, AVAudioTime, NSString;
-
-@interface AVAudioNode : NSObject <AVAudioMixing>
+@interface AVAudioNode : NSObject
 {
     void *_impl;
 }
@@ -25,11 +23,16 @@
 - (void)setReverbBlend:(float)arg1;
 - (float)rate;
 - (void)setRate:(float)arg1;
+- (long long)pointSourceInHeadMode;
+- (void)setPointSourceInHeadMode:(long long)arg1;
+- (long long)sourceMode;
+- (void)setSourceMode:(long long)arg1;
 - (long long)renderingAlgorithm;
 - (void)setRenderingAlgorithm:(long long)arg1;
 - (float)pan;
 - (void)setPan:(float)arg1;
-@property(nonatomic) float volume;
+- (float)volume;
+- (void)setVolume:(float)arg1;
 - (id)destinationForMixer:(id)arg1 bus:(unsigned long long)arg2;
 @property(readonly, nonatomic) AUAudioUnit *AUAudioUnit;
 - (struct OpaqueAudioComponentInstance *)audioUnit;
@@ -50,7 +53,7 @@
 - (void)reset;
 - (id)nameForOutputBus:(unsigned long long)arg1;
 - (id)nameForInputBus:(unsigned long long)arg1;
-- (void)didDetachFromEngine:(id)arg1;
+- (void)didDetachFromEngine:(id)arg1 error:(id *)arg2;
 - (void)didAttachToEngine:(id)arg1;
 - (_Bool)setInputFormat:(id)arg1 forBus:(unsigned long long)arg2;
 - (id)inputFormatForBus:(unsigned long long)arg1;
@@ -60,12 +63,6 @@
 -     // Error parsing type: B24@0:8^{AVAudioNodeImplBase=^^?^{AVAudioEngineImpl}@{vector<bool, std::__1::allocator<bool> >=^QQ{__compressed_pair<unsigned long, std::__1::allocator<unsigned long> >=Q}}B^{AVAudioMixingImpl}^{map<std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *, std::__1::less<std::__1::pair<AVAudioNode *, unsigned int> >, std::__1::allocator<std::__1::pair<const std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *> > >}Bqd{atomic<double>=Ad}}16, name: resetImpl:
 - (id)init;
 -     // Error parsing type: @24@0:8^{AVAudioNodeImplBase=^^?^{AVAudioEngineImpl}@{vector<bool, std::__1::allocator<bool> >=^QQ{__compressed_pair<unsigned long, std::__1::allocator<unsigned long> >=Q}}B^{AVAudioMixingImpl}^{map<std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *, std::__1::less<std::__1::pair<AVAudioNode *, unsigned int> >, std::__1::allocator<std::__1::pair<const std::__1::pair<AVAudioNode *, unsigned int>, AVAudioMixingDestination *> > >}Bqd{atomic<double>=Ad}}16, name: initWithImpl:
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

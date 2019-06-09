@@ -34,9 +34,11 @@
     NSString *_textSample;
     NSString *_userNameElementUniqueID;
     unsigned int _requestType;
+    NSDictionary *_passwordRequirements;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSDictionary *passwordRequirements; // @synthesize passwordRequirements=_passwordRequirements;
 @property(readonly, nonatomic) _Bool isSearchForm; // @synthesize isSearchForm=_isSearchForm;
 @property(readonly, nonatomic) unsigned int requestType; // @synthesize requestType=_requestType;
 @property(readonly, nonatomic) _Bool usesGeneratedPassword; // @synthesize usesGeneratedPassword=_usesGeneratedPassword;

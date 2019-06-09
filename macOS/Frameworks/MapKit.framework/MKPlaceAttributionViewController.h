@@ -9,12 +9,12 @@
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 #import <MapKit/MKPlaceAttributionCellDelegate-Protocol.h>
 #import <MapKit/MKStackingViewControllerFixedHeightAware-Protocol.h>
-#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, MKPlaceAttributionCell, NSArray, NSAttributedString, NSString, _MKMapItemAttribution;
 @protocol _MKInfoCardAnalyticsDelegate;
 
-@interface MKPlaceAttributionViewController : MKPlaceSectionViewController <MKPlaceAttributionCellDelegate, MKStackingViewControllerFixedHeightAware, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
+__attribute__((visibility("hidden")))
+@interface MKPlaceAttributionViewController : MKPlaceSectionViewController <MKPlaceAttributionCellDelegate, MKStackingViewControllerFixedHeightAware, MKModuleViewControllerProtocol>
 {
     BOOL _resizableViewsDisabled;
     NSArray *_urlStrings;
@@ -28,7 +28,7 @@
 @property(nonatomic) __weak id <_MKInfoCardAnalyticsDelegate> analyticsDelegate; // @synthesize analyticsDelegate=_analyticsDelegate;
 @property(retain, nonatomic) _MKMapItemAttribution *attribution; // @synthesize attribution=_attribution;
 @property(nonatomic) BOOL resizableViewsDisabled; // @synthesize resizableViewsDisabled=_resizableViewsDisabled;
-@property(retain) MKPlaceAttributionCell *attributionCell; // @synthesize attributionCell=_attributionCell;
+@property(retain, nonatomic) MKPlaceAttributionCell *attributionCell; // @synthesize attributionCell=_attributionCell;
 @property(copy, nonatomic) NSAttributedString *attributionString; // @synthesize attributionString=_attributionString;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 @property(copy, nonatomic) NSArray *urlStrings; // @synthesize urlStrings=_urlStrings;
@@ -36,7 +36,7 @@
 - (void)attributionCellDidChangeEffectiveAppearance;
 - (void)openURL;
 - (id)infoAttributionString;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)updateLogo;
 - (void)viewDidLoad;
 - (void)loadView;

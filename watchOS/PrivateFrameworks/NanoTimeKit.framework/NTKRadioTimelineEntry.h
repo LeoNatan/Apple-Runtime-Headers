@@ -17,13 +17,18 @@
 }
 
 - (void).cxx_destruct;
+- (id)_fullColorNowPlayingProviderForFamily:(int)arg1;
 - (id)_italicTextProviderForText:(id)arg1;
+- (id)_graphicBezel;
+- (id)_graphicCircular;
+- (id)_graphicCorner;
 - (id)_smallCircular;
 - (id)_mediumCircular;
 - (id)_smallModular;
 - (id)_smallUtility;
 - (id)_extraLarge;
 - (id)_largeUtility;
+- (id)_graphicRectangular;
 - (id)_largeModular;
 - (id)templateForComplicationFamily:(int)arg1;
 - (id)description;

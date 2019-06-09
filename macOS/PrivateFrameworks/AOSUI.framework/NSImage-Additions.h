@@ -7,14 +7,18 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (Additions)
++ (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2 cornerRadius:(double)arg3;
++ (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2;
 + (id)imageNameForBundleID:(id)arg1;
 + (id)dialogImageForBundleIdentifer:(id)arg1;
 + (id)imageForApp:(id)arg1;
 + (id)imageWithIconType:(unsigned int)arg1;
 + (id)localizedApplicationNameForAbsolutePath:(id)arg1;
 + (id)imageForBundleIdentifer:(id)arg1;
++ (id)imageNamed:(id)arg1 bundle:(id)arg2;
 + (id)bundleImageNamed:(id)arg1;
 + (id)bundleImage;
+- (id)highQualityInterpolationToSize:(struct CGSize)arg1;
 - (id)croppedImagewithRect:(struct CGRect)arg1;
 - (id)compressedImageData;
 - (id)imageBadgedWithImage:(id)arg1 scaledToFractionOfWidth:(double)arg2;

@@ -63,6 +63,7 @@
 - (void)layoutSubviews;
 - (id)preferredFocusedView;
 - (id)_buttonBackgroundImageForStyle:(unsigned int)arg1 controlState:(unsigned int)arg2;
+- (struct CGColor *)_colorForButtonForStyle:(unsigned int)arg1 controlState:(unsigned int)arg2;
 - (void)_updateForCurrentContentSizeCategory;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)dealloc;

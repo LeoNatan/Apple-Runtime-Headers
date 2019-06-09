@@ -10,7 +10,7 @@
 {
     CDStruct_02837cd9 _localBounds;
     shared_ptr_92bc9970 _mapEdge;
-    struct vector<GEOVectorTilePoint, std::__1::allocator<GEOVectorTilePoint>> _points;
+    struct vector<GEOPosition2f, std::__1::allocator<GEOPosition2f>> _points;
     struct vector<geo::PolylineCoordinate, std::__1::allocator<geo::PolylineCoordinate>> _routeOffsets;
     unsigned long long _mapEdgeOffset;
     BOOL _clippedFront;
@@ -23,7 +23,7 @@
 @property(readonly, nonatomic) shared_ptr_92bc9970 mapEdge; // @synthesize mapEdge=_mapEdge;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) CDStruct_9c468c1c *feature;
+@property(readonly, nonatomic) CDStruct_f2d78687 *feature;
 @property(readonly, nonatomic) struct PolylineCoordinate routeOffsetB;
 @property(readonly, nonatomic) struct PolylineCoordinate routeOffsetA;
 @property(readonly, nonatomic) struct PolylineCoordinate *routeOffsets;

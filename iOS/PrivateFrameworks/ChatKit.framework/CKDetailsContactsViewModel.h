@@ -22,6 +22,7 @@
     CNContact *_contact;
 }
 
++ (id)descriptorForContactRequiredKeys;
 @property(nonatomic) _Bool verified; // @synthesize verified=_verified;
 @property(nonatomic) _Bool isPendingRecipient; // @synthesize isPendingRecipient=_isPendingRecipient;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;

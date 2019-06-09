@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) NSRelationshipDescription *relationship; // @synthesize relationship=_relationship;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 @property(readonly, nonatomic) NSSQLModel *sqlModel;
 - (void)dealloc;
 - (id)initWithObjectID:(id)arg1 relationship:(id)arg2 context:(id)arg3 sqlCore:(id)arg4;

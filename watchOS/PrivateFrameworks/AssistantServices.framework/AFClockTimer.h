@@ -19,6 +19,7 @@
     NSURL *_timerURL;
     NSString *_title;
     int _state;
+    int _type;
     NSDate *_fireDate;
     NSDate *_firedDate;
     NSDate *_dismissedDate;
@@ -34,6 +35,7 @@
 @property(readonly, copy, nonatomic) NSDate *firedDate; // @synthesize firedDate=_firedDate;
 @property(readonly, copy, nonatomic) NSDate *fireDate; // @synthesize fireDate=_fireDate;
 @property(readonly, nonatomic) double fireTimeInterval; // @synthesize fireTimeInterval=_fireTimeInterval;
+@property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -48,7 +50,7 @@
 @property(readonly) unsigned int hash;
 - (id)_descriptionWithIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
-- (id)initWithTimerID:(id)arg1 timerURL:(id)arg2 isFiring:(_Bool)arg3 title:(id)arg4 state:(int)arg5 duration:(double)arg6 fireTimeInterval:(double)arg7 fireDate:(id)arg8 firedDate:(id)arg9 dismissedDate:(id)arg10 lastModifiedDate:(id)arg11;
+- (id)initWithTimerID:(id)arg1 timerURL:(id)arg2 isFiring:(_Bool)arg3 title:(id)arg4 state:(int)arg5 duration:(double)arg6 type:(int)arg7 fireTimeInterval:(double)arg8 fireDate:(id)arg9 firedDate:(id)arg10 dismissedDate:(id)arg11 lastModifiedDate:(id)arg12;
 - (id)mutatedCopyWithMutator:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSURL *itemURL;
 @property(readonly, nonatomic) NSUUID *itemID;

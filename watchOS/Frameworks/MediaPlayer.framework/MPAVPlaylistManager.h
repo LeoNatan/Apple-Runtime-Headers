@@ -7,93 +7,74 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlayer/MPAVQueueController-Protocol.h>
-#import <MediaPlayer/MPAVQueueCoordinatorDataSource-Protocol.h>
-#import <MediaPlayer/MPQueueBehaviorManaging-Protocol.h>
 #import <MediaPlayer/MPQueueFeederDelegate-Protocol.h>
-#import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@class MPAVController, MPAVItem, MPAVQueueCoordinator, MPQueueFeeder, NSString;
-@protocol MPAVItemQueueIdentifier, MPAVPlaylistManagerDelegate;
+@class MPAVItem, MPQueueFeeder, NSString;
+@protocol MPAVPlaylistManagerDelegate, MPAVQueueCoordinating;
 
-@interface MPAVPlaylistManager : NSObject <MPQueueFeederDelegate, MPAVQueueCoordinatorDataSource, MPAVQueueController, MPQueueBehaviorManaging, NSSecureCoding>
+@interface MPAVPlaylistManager : NSObject <MPQueueFeederDelegate, MPAVQueueController>
 {
-    MPAVItem *_currentItem;
     _Bool _goToTargetIndex;
     int _lastSelectionDirection;
     MPQueueFeeder *_playlistFeeder;
-    int _repeatMode;
     int _targetIndex;
-    _Bool _updatedAudioSessionMode;
-    MPQueueFeeder *_currentQueueFeeder;
-    id <MPAVItemQueueIdentifier> _currentItemQueueIdentifier;
-    int _playbackMode;
-    MPAVController *_avController;
-    MPAVQueueCoordinator *_queueCoordinator;
+    _Bool _allowsQueueModifications;
+    _Bool _userCanChangeShuffleAndRepeatType;
+    MPAVItem *_currentItem;
+    id <MPAVQueueCoordinating> _queueCoordinator;
+    int _repeatType;
+    int _shuffleType;
+    unsigned int _supportedInsertionPositions;
     id <MPAVPlaylistManagerDelegate> _delegate;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(retain) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
 @property(readonly, nonatomic) MPQueueFeeder *playlistFeeder; // @synthesize playlistFeeder=_playlistFeeder;
 @property(nonatomic) __weak id <MPAVPlaylistManagerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) MPAVQueueCoordinator *queueCoordinator; // @synthesize queueCoordinator=_queueCoordinator;
-@property(nonatomic) __weak MPAVController *avController; // @synthesize avController=_avController;
-@property(readonly, nonatomic) int playbackMode; // @synthesize playbackMode=_playbackMode;
+@property(readonly, nonatomic) _Bool userCanChangeShuffleAndRepeatType; // @synthesize userCanChangeShuffleAndRepeatType=_userCanChangeShuffleAndRepeatType;
+@property(readonly, nonatomic) unsigned int supportedInsertionPositions; // @synthesize supportedInsertionPositions=_supportedInsertionPositions;
+@property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
+@property(nonatomic) int repeatType; // @synthesize repeatType=_repeatType;
+@property(retain, nonatomic) id <MPAVQueueCoordinating> queueCoordinator; // @synthesize queueCoordinator=_queueCoordinator;
+@property(readonly, nonatomic) MPAVItem *currentItem; // @synthesize currentItem=_currentItem;
+@property(nonatomic) _Bool allowsQueueModifications; // @synthesize allowsQueueModifications=_allowsQueueModifications;
 - (void).cxx_destruct;
-- (int)_indexForStringIdentifier:(id)arg1;
-- (id)_nowplayingContentItemForIndex:(int)arg1;
-- (id)_nowplayingContentItemIdentifierForIndex:(int)arg1;
-- (void)_updateAudioSessionModeWithIndex:(unsigned int)arg1;
 - (unsigned int)_playbackIndexForDelta:(int)arg1 fromIndex:(unsigned int)arg2 ignoreElapsedTime:(_Bool)arg3 totalItemCount:(unsigned int)arg4 didReachEnd:(_Bool *)arg5;
 - (void)_notifyQueueFeederContentsChanged;
 - (void)_applyVolumeNormalizationForQueuedItems;
 - (void)queueCoordinatorDidChangeItems:(id)arg1;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
-- (_Bool)setMusicPlayerControllerQueue:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)requestMusicPlayerControllerQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)musicPlayerControllerQueueForUUID:(id)arg1;
-- (id)currentQueueUUID;
 - (id)_itemToFollowItemIndex:(int)arg1 skipUnavailableContent:(_Bool)arg2;
-- (int)_nextItemIndex:(int)arg1 repeatMode:(int)arg2;
+- (int)_nextItemIndex:(int)arg1;
 - (void)_reloadQueuedItemsIfPathBecameAvailable;
 - (_Bool)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2 keepPlaying:(_Bool)arg3;
+- (void)updateLocationDependentPropertiesForItem:(id)arg1;
+- (void)finalizeStateRestorationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)canSkipItem:(id)arg1;
+- (void)removeAllItemsAfterContentItemID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)removeContentItemID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)moveContentItemID:(id)arg1 afterContentItemID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addPlaybackContext:(id)arg1 atPosition:(int)arg2 jumpToIt:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addPlaybackContext:(id)arg1 atPosition:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addPlaybackContext:(id)arg1 afterContentItemID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)jumpToFirstContentItem;
+- (void)jumpToContentItemID:(id)arg1;
+- (id)contentItemIDWithCurrentItemOffset:(int)arg1 mode:(int)arg2 didReachEnd:(_Bool *)arg3;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-@property(nonatomic) int repeatMode;
-@property(readonly, nonatomic) int playlistItemCount;
-@property(readonly) int currentIndex;
+@property(readonly, nonatomic) int currentIndex;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)reloadItemsKeepingCurrentItem:(_Bool)arg1;
-- (void)_willFinishReloadWithQueueFeeder:(id)arg1 fromPlaybackContext:(id)arg2;
 - (int)_prepareToQueuePlaybackIndex:(int)arg1 selectionDirection:(int)arg2;
-- (id)_queuePlayerFeederItemForIndex:(int)arg1;
-- (void)updateForSoundCheckDefaultsChange;
-- (int)playlistIndexOfQueueIdentifier:(id)arg1 inPlaylistFeeder:(id)arg2;
-- (int)playlistIndexOfItemIdentifier:(id)arg1;
-- (int)indexOfItemIdentifier:(id)arg1;
-- (int)playlistIndexOfItem:(id)arg1;
 - (int)playlistIndexOfIndex:(int)arg1 inPlaylistFeeder:(id)arg2;
 - (id)playlistFeederForPlaylistIndex:(int)arg1;
-- (id)metadataItemForPlaylistIndex:(int)arg1;
 - (unsigned int)indexForContentItemID:(id)arg1;
-- (id)contentItemIDForPlaylistIndex:(int)arg1;
-- (void)updateLocationDependentPropertiesForItem:(id)arg1;
 - (_Bool)isPlaceholderItemForContentItemID:(id)arg1;
 - (id)itemForContentItemID:(id)arg1;
 - (id)itemForPlaylistIndex:(int)arg1;
 - (void)handlePlaybackFailureForItem:(id)arg1;
 - (unsigned int)displayIndexForItem:(id)arg1;
 - (unsigned int)displayCountForItem:(id)arg1;
-- (int)playlistIndexWithDelta:(int)arg1 fromIndex:(int)arg2 ignoreElapsedTime:(_Bool)arg3 didReachEnd:(_Bool *)arg4;
 - (int)indexWithDelta:(int)arg1 fromIndex:(int)arg2 ignoreElapsedTime:(_Bool)arg3 didReachEnd:(_Bool *)arg4;
-- (_Bool)canSkipItem:(id)arg1;
-@property(readonly, nonatomic) _Bool userCanChangeShuffleAndRepeatType;
-@property(readonly, nonatomic) _Bool allowsQueueResetWhenReachingEnd;
-- (_Bool)canSkipToPreviousItemForItem:(id)arg1;
-@property(readonly, nonatomic) _Bool canSkipToPreviousItem;
-@property(readonly, nonatomic) _Bool canSeek;
-@property(readonly, nonatomic) _Bool allowsUserVisibleUpcomingItems;
-- (void)queueFeederDidInvalidateRealShuffleType:(id)arg1;
-- (void)queueFeederDidInvalidateRealRepeatType:(id)arg1;
+@property(readonly, nonatomic) _Bool hasUserMutations;
 - (void)queueFeederDidInvalidateAssets:(id)arg1;
 - (void)queueFeederDidReplaceItem:(id)arg1;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithReplacementPlaybackContext:(id)arg2;
@@ -101,20 +82,10 @@
 - (void)queueCoordinator:(id)arg1 willInsertItem:(id)arg2 afterItem:(id)arg3;
 - (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
-@property(nonatomic) _Bool shouldDeferItemLoading;
-@property(readonly, nonatomic) int upNextItemCount;
-- (_Bool)hasQueueContents;
-- (_Bool)canSeekItem:(id)arg1;
 - (void)reset;
-- (void)clearQueueFeeder;
 - (void)player:(id)arg1 currentItemDidChangeFromItem:(id)arg2 toItem:(id)arg3;
-- (void)disconnectQueueCoordinator;
-- (void)connectQueueCoordinator:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (void)dealloc;
-- (void)encodeWithCoder:(id)arg1;
-- (void)finalizeStateRestorationWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)init;
 
 // Remaining properties

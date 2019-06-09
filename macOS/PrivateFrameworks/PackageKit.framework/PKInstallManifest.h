@@ -6,23 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, PKInstallAnalyzer, PKInstallRequest;
+@class NSArray, NSSet, PKInstallAnalyzer, PKInstallRequest;
 
 @interface PKInstallManifest : NSObject
 {
     PKInstallRequest *_installRequest;
     PKInstallAnalyzer *_installAnalyzer;
-    NSDictionary *_defaultPathByBundleIdentifier;
-    NSDictionary *_actualPathByBundleIdentifier;
-    NSDictionary *_versionByBundleIdentifier;
-    NSDictionary *_downgradePathByBundleIdentifier;
-    NSArray *_topBundleIdentifiers;
-    NSArray *_actualFileInstallPaths;
     NSArray *_actualInstallPathsForSystemContent;
+    NSSet *_actualInstallPathsTargetingReadOnlySystemLocations;
 }
 
-- (void)_processAnalysis;
 - (id)actualInstallPathsForSystemContent;
+- (id)actualFileInstallPathsViolatingReadOnlySystemLocationsEvaluatingDestinationPath:(BOOL)arg1;
 - (id)downgradePathForBundleIdentifier:(id)arg1;
 - (id)installedVersionForBundleIdentifier:(id)arg1;
 - (id)actualInstallPathForBundleIdentifier:(id)arg1;
@@ -31,6 +26,8 @@
 - (id)bundleIdentifiers;
 - (void)dealloc;
 - (id)initWithInstallRequest:(id)arg1;
+- (int)_isCompatibleWithMDMAppManagementWithReason;
+- (BOOL)_isCompatibleWithMDMAppManagement;
 
 @end
 

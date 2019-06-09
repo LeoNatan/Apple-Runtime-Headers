@@ -14,16 +14,18 @@
 {
     PBUnknownFields *_unknownFields;
     BOOL _concatenatingFormatStringsSupported;
+    BOOL _styleSupported;
     BOOL _timestampFormatPatternSupported;
     struct {
-        unsigned int concatenatingFormatStringsSupported:1;
-        unsigned int timestampFormatPatternSupported:1;
-    } _has;
+        unsigned int has_concatenatingFormatStringsSupported:1;
+        unsigned int has_styleSupported:1;
+        unsigned int has_timestampFormatPatternSupported:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL timestampFormatPatternSupported; // @synthesize timestampFormatPatternSupported=_timestampFormatPatternSupported;
-@property(nonatomic) BOOL concatenatingFormatStringsSupported; // @synthesize concatenatingFormatStringsSupported=_concatenatingFormatStringsSupported;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,10 +34,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasStyleSupported;
+@property(nonatomic) BOOL styleSupported;
 @property(nonatomic) BOOL hasTimestampFormatPatternSupported;
+@property(nonatomic) BOOL timestampFormatPatternSupported;
 @property(nonatomic) BOOL hasConcatenatingFormatStringsSupported;
+@property(nonatomic) BOOL concatenatingFormatStringsSupported;
 
 @end
 

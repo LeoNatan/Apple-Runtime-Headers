@@ -9,11 +9,10 @@
 #import <SceneKit/NSCopying-Protocol.h>
 #import <SceneKit/NSSecureCoding-Protocol.h>
 #import <SceneKit/SCNAnimatable-Protocol.h>
-#import <SceneKit/SCNTechniqueSupport-Protocol.h>
 
 @class NSArray, NSData, NSMutableDictionary, NSString, NSURL, SCNMaterialProperty, SCNOrderedDictionary, SCNTechnique;
 
-@interface SCNLight : NSObject <SCNAnimatable, SCNTechniqueSupport, NSCopying, NSSecureCoding>
+@interface SCNLight : NSObject <SCNAnimatable, NSCopying, NSSecureCoding>
 {
     struct __C3DLight *_light;
     unsigned int _isPresentationInstance:1;
@@ -64,7 +63,11 @@
     SCNTechnique *_technique;
     NSData *_sphericalHarmonics;
     SCNMaterialProperty *_probeEnvironment;
-    NSArray *_probeTextureMipsArray;
+    int _areaType;
+    // Error parsing type: , name: _areaExtents
+    NSArray *_areaPolygonVertices;
+    _Bool _drawsArea;
+    _Bool _doubleSided;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -79,21 +82,30 @@
 - (void)_customEncodingOfSCNLight:(id)arg1;
 @property(retain, nonatomic) NSURL *IESProfileURL;
 @property(readonly, nonatomic) SCNMaterialProperty *gobo;
-- (id)probeEnvironment;
-- (void)setProbeOffset: /* Error: Ran out of types for this method. */;
--     // Error parsing type: 8@0:4, name: probeOffset
-- (void)setProbeExtents: /* Error: Ran out of types for this method. */;
--     // Error parsing type: 8@0:4, name: probeExtents
-- (void)setParallaxExtentsFactor: /* Error: Ran out of types for this method. */;
--     // Error parsing type: 8@0:4, name: parallaxExtentsFactor
-- (void)setParallaxCenterOffset: /* Error: Ran out of types for this method. */;
--     // Error parsing type: 8@0:4, name: parallaxCenterOffset
-- (void)setParallaxCorrectionEnabled:(_Bool)arg1;
-- (_Bool)parallaxCorrectionEnabled;
-- (void)setProbeUpdateType:(int)arg1;
-- (int)probeUpdateType;
-- (void)setProbeType:(int)arg1;
-- (int)probeType;
+- (_Bool)hasGobo;
+@property(copy, nonatomic) NSArray *areaPolygonVertices;
+@property(nonatomic) _Bool doubleSided;
+@property(nonatomic) _Bool drawsArea;
+// Error parsing type for property areaExtents:
+// Property attributes: T,N
+
+@property(nonatomic) int areaType;
+@property(readonly, nonatomic) SCNMaterialProperty *probeEnvironment;
+// Error parsing type for property probeOffset:
+// Property attributes: T,N
+
+// Error parsing type for property probeExtents:
+// Property attributes: T,N
+
+// Error parsing type for property parallaxExtentsFactor:
+// Property attributes: T,N
+
+// Error parsing type for property parallaxCenterOffset:
+// Property attributes: T,N
+
+@property(nonatomic) _Bool parallaxCorrectionEnabled;
+@property(nonatomic) int probeUpdateType;
+@property(nonatomic) int probeType;
 @property(nonatomic) int shadowMode;
 - (void)set_shadowCascadeDebugFactor:(float)arg1;
 - (float)_shadowCascadeDebugFactor;
@@ -114,8 +126,10 @@
 - (void)setUsesDeferredShadows:(_Bool)arg1;
 - (_Bool)usesDeferredShadows;
 @property(copy, nonatomic) NSString *type;
+- (void)_resyncObjCModelOfPerTypeParameters;
 @property(nonatomic) float temperature;
-@property(copy, nonatomic) SCNTechnique *technique;
+- (void)setTechnique:(id)arg1;
+- (id)technique;
 @property(nonatomic) float spotOuterAngle;
 @property(nonatomic) float spotInnerAngle;
 - (void)setSpotFalloffExponent:(float)arg1;
@@ -143,8 +157,6 @@
 @property(readonly, copy, nonatomic) NSData *sphericalHarmonicsCoefficients;
 - (void)set_sphericalHarmonics:(id)arg1;
 - (id)_sphericalHarmonics;
-- (void)set_probeTextureMipsArray:(id)arg1;
-- (id)_probeTextureMipsArray;
 - (id)attributeForKey:(id)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
 - (id)copy;

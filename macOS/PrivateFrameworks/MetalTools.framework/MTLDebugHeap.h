@@ -19,6 +19,9 @@
 @property(readonly, nonatomic) MTLDebugDevice *debugDevice; // @synthesize debugDevice=_debugDevice;
 @property(nonatomic) struct HeapHistoryEvent *latestEvent; // @synthesize latestEvent=_latestEvent;
 @property(nonatomic) struct HeapHistoryEvent *oldestEvent; // @synthesize oldestEvent=_oldestEvent;
+- (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2;
+- (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 offset:(unsigned long long)arg3;
+- (void)validateOffset:(unsigned long long)arg1 withRequirements:(CDStruct_4bcfbbae)arg2;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 - (id)newTextureWithDescriptor:(id)arg1;
 - (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;

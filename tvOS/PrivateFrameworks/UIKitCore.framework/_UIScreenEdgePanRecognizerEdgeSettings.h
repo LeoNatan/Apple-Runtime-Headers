@@ -12,20 +12,14 @@
     double _edgeRegionSize;
     double _bottomEdgeRegionSize;
     double _edgeAngleWindow;
-    double _bottomEdgeAngleWindow;
     double _edgeAngleWindowDecayTime;
-    double _restrictedEdgeRegionTimeInterval;
-    double _restrictedEdgeRegionMinimumWeight;
     double _maximumSwipeDuration;
 }
 
 + (id)settingsControllerModule;
 + (id)keyPathsForValuesAffectingEdgeAngleWindowDegreees;
 @property(nonatomic) double maximumSwipeDuration; // @synthesize maximumSwipeDuration=_maximumSwipeDuration;
-@property(nonatomic) double restrictedEdgeRegionMinimumWeight; // @synthesize restrictedEdgeRegionMinimumWeight=_restrictedEdgeRegionMinimumWeight;
-@property(nonatomic) double restrictedEdgeRegionTimeInterval; // @synthesize restrictedEdgeRegionTimeInterval=_restrictedEdgeRegionTimeInterval;
 @property(nonatomic) double edgeAngleWindowDecayTime; // @synthesize edgeAngleWindowDecayTime=_edgeAngleWindowDecayTime;
-@property(nonatomic) double bottomEdgeAngleWindow; // @synthesize bottomEdgeAngleWindow=_bottomEdgeAngleWindow;
 @property(nonatomic) double edgeAngleWindow; // @synthesize edgeAngleWindow=_edgeAngleWindow;
 @property(nonatomic) double bottomEdgeRegionSize; // @synthesize bottomEdgeRegionSize=_bottomEdgeRegionSize;
 @property(nonatomic) double edgeRegionSize; // @synthesize edgeRegionSize=_edgeRegionSize;

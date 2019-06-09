@@ -13,6 +13,7 @@
 
 @interface HKMedicalCodingSystem : NSObject <NSSecureCoding, NSCopying>
 {
+    _Bool _hasDisplayStrings;
     NSString *_identifier;
     NSString *_name;
     NSString *_OID;
@@ -22,6 +23,7 @@
 
 + (id)externalCodeSystems;
 + (_Bool)supportsSecureCoding;
++ (id)adHocConceptSystem;
 + (id)textSystem;
 + (id)FHIRQuantityComparatorSystem;
 + (id)FHIRConditionVerificationStatus;
@@ -43,8 +45,9 @@
 + (id)RxNormCodeSystem;
 + (id)SNOMEDCodeSystem;
 + (id)LOINCCodeSystem;
-+ (id)systemWithSystemDefinition:(CDStruct_457e09f6)arg1;
++ (id)systemWithSystemDefinition:(CDStruct_b04166ad)arg1;
 + (id)codeSystemWithIdentifier:(id)arg1;
+@property(nonatomic) _Bool hasDisplayStrings; // @synthesize hasDisplayStrings=_hasDisplayStrings;
 @property(copy, nonatomic) NSArray *synonyms; // @synthesize synonyms=_synonyms;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(copy, nonatomic) NSString *OID; // @synthesize OID=_OID;
@@ -55,9 +58,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCustomIdentifier:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 name:(id)arg2 OID:(id)arg3 type:(unsigned int)arg4 synonyms:(id)arg5;
+- (long long)codingSystemOntologyIdentifier;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2 OID:(id)arg3 type:(unsigned int)arg4 synonyms:(id)arg5 hasDisplayStrings:(_Bool)arg6;
 
 @end
 

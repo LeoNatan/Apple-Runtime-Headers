@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     UIButton *_checkMarkButton;
 }
 
-+ (id)backgroundGrayColor;
 @property(nonatomic) __weak UIButton *checkMarkButton; // @synthesize checkMarkButton=_checkMarkButton;
 @property(readonly, nonatomic) UIImage *thumbail; // @synthesize thumbail=_thumbail;
 @property(readonly, nonatomic) id <PXDisplayCollection> collection; // @synthesize collection=_collection;

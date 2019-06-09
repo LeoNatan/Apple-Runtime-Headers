@@ -8,7 +8,7 @@
 
 #import <MobileTimerUI/MTClock-Protocol.h>
 
-@class MTUIDigitalClockLabel, NSArray, NSTimeZone, UILabel;
+@class MTUIDigitalClockLabel, NSTimeZone, UILabel;
 @protocol MTUIWorldClockCellViewDelegate;
 
 @interface MTUIWorldClockCellView : UIView <MTClock>
@@ -22,12 +22,10 @@
     MTUIDigitalClockLabel *_digitalClock;
     UILabel *_nameLabel;
     UILabel *_combinedLabel;
-    NSArray *_currentConstraints;
 }
 
 + (id)dayAndTimeZoneOffsetStringFromDate:(id)arg1 withTimeZoneOffset:(long long)arg2 timeZoneAbbreviation:(id)arg3 spaceBeforeTimeDesignator:(_Bool)arg4;
 + (double)defaultHeight;
-@property(retain, nonatomic) NSArray *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
 @property(nonatomic) _Bool shouldStackViews; // @synthesize shouldStackViews=_shouldStackViews;
 @property(readonly, nonatomic) UILabel *combinedLabel; // @synthesize combinedLabel=_combinedLabel;
 @property(readonly, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;

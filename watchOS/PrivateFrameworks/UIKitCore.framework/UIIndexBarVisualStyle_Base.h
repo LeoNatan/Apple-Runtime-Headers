@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak UIIndexBarView *indexBarView; // @synthesize indexBarView=_indexBarView;
 - (void).cxx_destruct;
+- (int)_indexForEntryAtPoint:(struct CGPoint)arg1;
+- (struct CGRect)_visibleBoundsForRect:(struct CGRect)arg1 stride:(float *)arg2;
 - (id)displayEntryFromEntry:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) float minLineHeight;

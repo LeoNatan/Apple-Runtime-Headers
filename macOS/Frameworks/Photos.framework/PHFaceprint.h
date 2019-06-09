@@ -6,21 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, RDFacePrint;
+@class NSData;
 
 @interface PHFaceprint : NSObject
 {
     long long _faceprintVersion;
     NSData *_faceprintData;
-    RDFacePrint *_faceprintModel;
 }
 
-@property(readonly, nonatomic) RDFacePrint *faceprintModel; // @synthesize faceprintModel=_faceprintModel;
-@property(retain, nonatomic) NSData *faceprintData; // @synthesize faceprintData=_faceprintData;
-@property(nonatomic) long long faceprintVersion; // @synthesize faceprintVersion=_faceprintVersion;
+@property(readonly, retain, nonatomic) NSData *faceprintData; // @synthesize faceprintData=_faceprintData;
+@property(readonly, nonatomic) long long faceprintVersion; // @synthesize faceprintVersion=_faceprintVersion;
 - (void).cxx_destruct;
-- (void)constructModelForPhotoLibrary:(id)arg1;
-- (id)initWithFaceprintModel:(id)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)initWithFaceprintData:(id)arg1 faceprintVersion:(long long)arg2;
 
 @end

@@ -16,6 +16,7 @@
     CDUnknownBlockType _accessAllowedCompletionBlock;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType accessAllowedCompletionBlock; // @synthesize accessAllowedCompletionBlock=_accessAllowedCompletionBlock;
 @property(copy) CDUnknownBlockType allowAccessCompletionBlock; // @synthesize allowAccessCompletionBlock=_allowAccessCompletionBlock;
 - (void).cxx_destruct;

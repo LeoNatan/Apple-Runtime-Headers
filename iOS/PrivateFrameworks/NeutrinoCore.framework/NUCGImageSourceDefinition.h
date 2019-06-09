@@ -12,6 +12,7 @@
 }
 
 @property(readonly) struct CGImageSource *imageSource; // @synthesize imageSource=_imageSource;
+- (long long)mediaType;
 - (void)dealloc;
 - (id)initWithCGImageSource:(struct CGImageSource *)arg1;
 - (id)init;

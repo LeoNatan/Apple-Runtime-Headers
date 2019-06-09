@@ -6,24 +6,21 @@
 
 #import <objc/NSObject.h>
 
+@class _LSDatabase;
+
 __attribute__((visibility("hidden")))
 @interface LSRecordBuilder : NSObject
 {
-    // Error parsing type: ^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}, name: _db
+    _LSDatabase *_db;
 }
 
 + (id)recordBuilderForType:(unsigned long long)arg1;
-- (unsigned int)createStringFrom:(id)arg1 lowercase:(BOOL)arg2;
-- (id)retainURL:(id)arg1;
-- (id)retainDictionary:(id)arg1;
-- (id)retainArray:(id)arg1;
-- (id)retainNumber:(id)arg1;
-- (id)retainString:(id)arg1;
+- (void).cxx_destruct;
 - (BOOL)parseInstallationInfo:(id)arg1;
 - (void)parseiTunesMetadata:(id)arg1;
 - (BOOL)parseInfoPlist:(id)arg1;
--     // Error parsing type: I32@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16^@24, name: registerBundleRecord:error:
--     // Error parsing type: v24@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16, name: setDatabase:
+- (unsigned int)registerBundleRecord:(id)arg1 error:(id *)arg2;
+- (void)setDatabase:(id)arg1;
 
 @end
 

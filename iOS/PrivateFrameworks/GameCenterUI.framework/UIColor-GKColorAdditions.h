@@ -7,6 +7,8 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (GKColorAdditions)
++ (id)_gkSpeechViewTintColor;
++ (id)_gkSelectedCellBackgroundColor;
 - (double)_gkLuminance;
 @end
 

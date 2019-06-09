@@ -57,8 +57,8 @@
 - (id)numberArray;
 - (BOOL)setRangeWithRawData:(id)arg1 destIndex:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)fillWithNumber:(id)arg1;
-- (id)sequeezeDimensions:(id)arg1 error:(id *)arg2;
-- (id)sequeeze;
+- (id)squeezeDimensions:(id)arg1 error:(id *)arg2;
+- (id)squeeze;
 - (id)sliceAtOrigin:(id)arg1 shape:(id)arg2 squeeze:(BOOL)arg3 error:(id *)arg4;
 - (void *)multiArrayBuffer;
 - (id)debugQuickLookObject;

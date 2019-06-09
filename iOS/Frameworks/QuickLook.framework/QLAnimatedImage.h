@@ -8,7 +8,6 @@
 
 @class QLImageData, UIImage;
 
-__attribute__((visibility("hidden")))
 @interface QLAnimatedImage : NSObject
 {
     QLImageData *_imageData;

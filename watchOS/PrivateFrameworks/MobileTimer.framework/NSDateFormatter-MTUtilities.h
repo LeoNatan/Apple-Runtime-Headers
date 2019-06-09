@@ -8,5 +8,6 @@
 
 @interface NSDateFormatter (MTUtilities)
 + (id)mtTimeOnlyFormatter;
+- (id)stringFromDate:(id)arg1 withRelativeToTimeZone:(id)arg2;
 @end
 

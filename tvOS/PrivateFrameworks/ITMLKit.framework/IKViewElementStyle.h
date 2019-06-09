@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <ITMLKit/NSCopying-Protocol.h>
+
 @class IKCSSRule, IKColor, IKFourTuple, NSArray, NSMutableDictionary, NSNumber, NSShadow, NSString, NSURL, UIColor;
 
-@interface IKViewElementStyle : NSObject
+@interface IKViewElementStyle : NSObject <NSCopying>
 {
     _Bool _filterBlockedStyles;
     NSString *_classDescriptorString;
@@ -101,9 +103,11 @@
 @property(readonly, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) UIColor *borderColor;
 @property(readonly, nonatomic) UIColor *color;
+- (unsigned long long)edgeFlagForStyle:(id)arg1;
 - (id)valueForStyle:(id)arg1;
 - (id)debugDescription;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithClassSelector:(id)arg1;
 - (id)initWithCSSRule:(id)arg1 filterBlockedStyles:(_Bool)arg2 selStr:(id)arg3;
 - (id)initWithStyle:(id)arg1 classSelector:(id)arg2;

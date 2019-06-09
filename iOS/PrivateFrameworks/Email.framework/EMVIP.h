@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <Email/NSSecureCoding-Protocol.h>
+
 @class EAEmailAddressSet, NSString;
 
-@interface EMVIP : NSObject
+@interface EMVIP : NSObject <NSSecureCoding>
 {
     NSString *_identifier;
     NSString *_name;
@@ -16,14 +18,19 @@
     EAEmailAddressSet *_emailAddresses;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) EAEmailAddressSet *emailAddresses; // @synthesize emailAddresses=_emailAddresses;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (_Bool)_isEqualToVIP:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+- (void)_commonInitWithIdentifier:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 displayName:(id)arg4;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3;
 
 @end

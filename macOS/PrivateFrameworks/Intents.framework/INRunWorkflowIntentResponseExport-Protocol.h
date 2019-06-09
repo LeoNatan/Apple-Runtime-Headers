@@ -10,6 +10,7 @@
 @class INArchivedObject, NSArray, NSNumber, NSString;
 
 @protocol INRunWorkflowIntentResponseExport <NSObject, JSExport>
+@property(copy) NSNumber *requestsIntentExecution;
 @property(copy) NSArray *steps;
 @property(copy) NSNumber *continueRunning;
 @property(copy) NSNumber *waitingForResume;

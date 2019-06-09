@@ -10,6 +10,7 @@
 
 @interface BPSNotificationAppController : PSListController
 {
+    _Bool _installedOnWatch;
     _Bool _mirrorSettings;
     NSString *_bundleIdentifier;
     BBSectionInfo *_bbSectionInfo;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *sectionInfo; // @synthesize sectionInfo=_sectionInfo;
 @property(readonly, nonatomic) _Bool mirrorSettings; // @synthesize mirrorSettings=_mirrorSettings;
 @property(readonly, nonatomic) NSMutableArray *notificationSpecifiers; // @synthesize notificationSpecifiers=_notificationSpecifiers;
+@property(nonatomic) _Bool installedOnWatch; // @synthesize installedOnWatch=_installedOnWatch;
 @property(retain, nonatomic) NPSDomainAccessor *bbAppsSettings; // @synthesize bbAppsSettings=_bbAppsSettings;
 @property(retain, nonatomic) NSMutableArray *notificationApplicationSpecifiers; // @synthesize notificationApplicationSpecifiers=_notificationApplicationSpecifiers;
 @property(retain, nonatomic) BBSectionInfo *bbSectionInfo; // @synthesize bbSectionInfo=_bbSectionInfo;
@@ -72,6 +74,10 @@
 - (void)_showSettingsNotifications;
 - (id)customGroupSpecifierForDescription:(id)arg1;
 - (id)specifiers;
+- (void)setAppOnWatch:(id)arg1;
+- (id)appIsRemoved:(id)arg1;
+- (void)removeFirstPartyAppOnGizmo:(id)arg1;
+- (void)firstPartyAppRemovalAlert:(id)arg1;
 - (id)glanceSpecifierForIdentifier:(id)arg1;
 - (id)bulletinBoardSettings;
 - (_Bool)caresAboutSubsections;

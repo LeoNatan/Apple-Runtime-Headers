@@ -24,6 +24,7 @@
 @property long long eventSourceSnapShot; // @synthesize eventSourceSnapShot=_eventSourceSnapShot;
 @property(retain) AFAnalyticsTurnBasedInstrumentationContext *currentInstrumentationTurnContext; // @synthesize currentInstrumentationTurnContext=_currentInstrumentationTurnContext;
 - (void).cxx_destruct;
+- (unsigned int)audioDevice:(unsigned int)arg1 propertyUInt32:(unsigned int)arg2;
 - (void)emitTextToSpeechEndEvent;
 - (void)emitTextToSpeechBeginEvent;
 - (void)emitPunchOutEventWithURL:(id)arg1 appID:(id)arg2 previousTurnIdentifier:(struct NSUUID *)arg3;

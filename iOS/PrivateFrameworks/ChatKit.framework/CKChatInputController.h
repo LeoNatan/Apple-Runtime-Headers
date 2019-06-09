@@ -96,6 +96,7 @@
 - (id)workingDraftDirForPluginIdentifier:(id)arg1;
 - (id)workingDirForDraft;
 - (void)dismissEntryViewShelf;
+- (void)showModalViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)showEntryViewShelf:(id)arg1 forPlugin:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)showEntryViewShelf:(id)arg1;
 - (void)fullscreenAppViewControllerDidTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
@@ -220,7 +221,6 @@
 - (void)_loadPhotosBrowser;
 - (void)didTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;
 - (void)clearBrowserViewControllerIfNecessary;
-- (id)inputAccessoryView;
 - (id)inputViewController;
 - (id)init;
 - (void)dealloc;

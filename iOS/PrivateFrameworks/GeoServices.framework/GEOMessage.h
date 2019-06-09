@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEOApplicationAuditToken, GEOPeer, NSDictionary, NSProgress, NSString;
+@class GEOApplicationAuditToken, GEODataRequestThrottlerToken, GEOPeer, NSDictionary, NSProgress, NSString;
 @protocol OS_xpc_object;
 
 @interface GEOMessage : NSObject
@@ -17,8 +17,10 @@
     GEOPeer *_peer;
     NSProgress *_progressToMirrorOverXPC;
     GEOApplicationAuditToken *_preferredAuditToken;
+    GEODataRequestThrottlerToken *_throttleToken;
 }
 
+@property(readonly, nonatomic) GEODataRequestThrottlerToken *throttleToken; // @synthesize throttleToken=_throttleToken;
 @property(readonly, nonatomic) GEOApplicationAuditToken *preferredAuditToken; // @synthesize preferredAuditToken=_preferredAuditToken;
 @property(readonly, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) NSString *messageName; // @synthesize messageName=_messageName;
@@ -26,7 +28,7 @@
 - (void).cxx_destruct;
 - (void)sendReplyWithXPCUserInfo:(id)arg1;
 - (void)sendReply:(id)arg1;
-@property(readonly) NSProgress *progress;
+@property(readonly, nonatomic) NSProgress *progress;
 - (id)initWithXPCMessage:(id)arg1 peer:(id)arg2;
 
 @end

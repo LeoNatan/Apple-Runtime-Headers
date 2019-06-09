@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface TestDelegate24722429 : TheServerPorterHolderOfPower <NSURLSessionDataDelegate>
 {
 }

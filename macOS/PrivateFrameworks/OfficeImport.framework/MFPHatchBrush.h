@@ -6,6 +6,7 @@
 
 #import <OfficeImport/MFPImageBrush.h>
 
+__attribute__((visibility("hidden")))
 @interface MFPHatchBrush : MFPImageBrush
 {
 }

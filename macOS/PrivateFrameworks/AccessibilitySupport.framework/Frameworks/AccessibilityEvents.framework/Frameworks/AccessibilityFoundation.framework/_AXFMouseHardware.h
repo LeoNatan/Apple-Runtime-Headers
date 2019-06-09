@@ -8,32 +8,40 @@
 
 #import <AccessibilityFoundation/AXFMouseDelegate-Protocol.h>
 
-@class NSString;
-@protocol OS_dispatch_queue;
+@class AXFMouseCursorImage, NSString, NSTimer;
 
 @interface _AXFMouseHardware : NSObject <AXFMouseDelegate>
 {
     struct __CGEventSource *__eventSource;
     BOOL _accumulateClickCount;
+    BOOL _keepCursorImageSynchronizedWithSystem;
     unsigned int __cgsConnectionID;
-    int __currentCursorType;
     unsigned int __currentCursorSeed;
+    unsigned int __currentSystemCursorSeed;
+    AXFMouseCursorImage *_cursorImage;
     long long _currentDownButton;
     unsigned long long __currentDownButtonClickCount;
     unsigned long long __currentModifierFlags;
-    NSObject<OS_dispatch_queue> *__outputEventQueue;
+    NSTimer *__cursorTypeUpdateTimer;
+    double __cursorScaleCache;
 }
 
++ (id)_cursorImageIfChanged;
+@property(nonatomic) double _cursorScaleCache; // @synthesize _cursorScaleCache=__cursorScaleCache;
+@property(retain, nonatomic) NSTimer *_cursorTypeUpdateTimer; // @synthesize _cursorTypeUpdateTimer=__cursorTypeUpdateTimer;
+@property(nonatomic) unsigned int _currentSystemCursorSeed; // @synthesize _currentSystemCursorSeed=__currentSystemCursorSeed;
 @property(nonatomic) unsigned int _currentCursorSeed; // @synthesize _currentCursorSeed=__currentCursorSeed;
-@property(nonatomic) int _currentCursorType; // @synthesize _currentCursorType=__currentCursorType;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *_outputEventQueue; // @synthesize _outputEventQueue=__outputEventQueue;
 @property(nonatomic) unsigned long long _currentModifierFlags; // @synthesize _currentModifierFlags=__currentModifierFlags;
 @property(nonatomic) unsigned long long _currentDownButtonClickCount; // @synthesize _currentDownButtonClickCount=__currentDownButtonClickCount;
 @property(nonatomic) unsigned int _cgsConnectionID; // @synthesize _cgsConnectionID=__cgsConnectionID;
 @property(nonatomic) long long currentDownButton; // @synthesize currentDownButton=_currentDownButton;
+@property(retain, nonatomic) AXFMouseCursorImage *cursorImage; // @synthesize cursorImage=_cursorImage;
+@property(nonatomic) BOOL keepCursorImageSynchronizedWithSystem; // @synthesize keepCursorImageSynchronizedWithSystem=_keepCursorImageSynchronizedWithSystem;
 @property(nonatomic) BOOL accumulateClickCount; // @synthesize accumulateClickCount=_accumulateClickCount;
 - (void).cxx_destruct;
 - (struct __CGEventSource *)_eventSource;
+- (void)_updateCursorScaleCacheAndPostKVO:(BOOL)arg1;
+- (void)_mouseSettingsChanged:(id)arg1;
 - (void)_releaseButton:(long long)arg1 count:(unsigned long long)arg2 withModifiers:(unsigned long long)arg3 markupHandler:(CDUnknownBlockType)arg4;
 - (void)_pressButton:(long long)arg1 count:(unsigned long long)arg2 withModifiers:(unsigned long long)arg3 markupHandler:(CDUnknownBlockType)arg4;
 - (unsigned long long)_buttonPressCountForAction:(long long)arg1;
@@ -54,12 +62,13 @@
 - (void)pressButton:(long long)arg1 withModifiers:(unsigned long long)arg2;
 - (void)pressButton:(long long)arg1;
 - (void)pressButton:(long long)arg1 withModifiers:(unsigned long long)arg2 markupHandler:(CDUnknownBlockType)arg3;
+- (void)setSystemCursorType:(unsigned long long)arg1;
 - (void)setCursorType:(int)arg1;
 - (void)hideCursor;
 - (void)showCursor;
 - (void)_postEventRef:(struct __CGEvent *)arg1 markupHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) struct CGSize cursorImageSize;
-@property(readonly, nonatomic) float cursorScale;
+@property(nonatomic) double cursorScale;
 @property(nonatomic) struct CGPoint currentLocation;
 - (void)dealloc;
 - (id)init;

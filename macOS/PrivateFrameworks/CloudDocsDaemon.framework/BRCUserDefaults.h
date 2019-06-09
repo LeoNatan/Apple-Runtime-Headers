@@ -21,14 +21,31 @@
 + (void)loadCachedServerConfigFromDB:(id)arg1;
 + (void)reset;
 + (void)setServerConfigurationURL:(id)arg1 whenLoaded:(CDUnknownBlockType)arg2;
++ (id)defaultsForSideCar;
 + (id)defaultsForSharedZone;
 + (id)defaultsForMetadataContainer;
 + (id)defaultsForMangledID:(id)arg1;
 + (id)_userDefaultsManager;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL should2PhasePCSChainDocuments;
 @property(readonly, nonatomic) BOOL shouldReportAllPerItemFailures;
+@property(readonly, nonatomic) NSString *ckContainerID;
+@property(readonly, nonatomic) unsigned long long fpfsMigrationMaxNumberOfFiles;
+@property(readonly, nonatomic) unsigned int fpfsMigrationPercentage;
+@property(readonly, nonatomic) int recursiveListMaxOperationCount;
+@property(readonly, nonatomic) int concurrentSyncMaxOperationCount;
+@property(readonly, nonatomic) unsigned long long pendingChangesStreamCloseDelay;
+@property(readonly, nonatomic) unsigned long long pendingChangesStreamHardOpenCount;
+@property(readonly, nonatomic) unsigned long long pendingChangesStreamSoftOpenCount;
 @property(readonly, nonatomic) double eventMetricTimeout;
 @property(readonly, nonatomic) unsigned long long computeEvictableBatchSize;
+@property(readonly, nonatomic) int busyHandlerMillisecondsToAbort;
+@property(readonly, nonatomic) int busyHandlerMillisecondsToSleep;
+@property(readonly, nonatomic) double desktopEnableFetchTimeout;
+@property(readonly, nonatomic) unsigned long long numberOfGreedyRecentlyUsedItems;
+@property(readonly, nonatomic) BOOL allowsDirectoryListBeforeInitialChangeToken;
+@property(readonly, nonatomic) BOOL blockApplyUntilList;
+@property(readonly, nonatomic) BOOL forceDeltaInitialSync;
 @property(readonly, nonatomic) unsigned long long applyCountToSignalFaultsLive;
 @property(readonly, nonatomic) unsigned long long fieldsToMoveOutOfTrashMask;
 @property(readonly, nonatomic) unsigned long long utiCacheSize;
@@ -41,7 +58,6 @@
 @property(readonly, nonatomic) unsigned long long maxFolderEnumerationCount;
 @property(readonly, nonatomic) unsigned long long deleteShareIDBatchCount;
 @property(readonly, nonatomic) BOOL shouldFixupTargetCZMAliases;
-@property(readonly, nonatomic) unsigned long long optimisticallyFillChainBatchSpace;
 @property(readonly, nonatomic) BOOL optimisticallyPCSChain;
 @property(readonly, nonatomic) BOOL shouldAutoMigrateToCloudDocs;
 @property(readonly, nonatomic) unsigned int ignoredQuarantineMask;
@@ -68,6 +84,11 @@
 @property(readonly, nonatomic) long long minimalSizeToShowAdditionalDescription;
 @property(readonly, nonatomic) double intervalToWaitBeforeShowingAdditionalDescription;
 @property(readonly, nonatomic) NSDictionary *migrationThrottleParams;
+@property(readonly, nonatomic) NSDictionary *recentsEnumeratorFailureThrottleParams;
+@property(readonly, nonatomic) unsigned long long recentsEnumeratorMaxHierarchyDepth;
+@property(readonly, nonatomic) unsigned long long recentsEnumeratorBatchSize;
+@property(readonly, nonatomic) double recentsEnumeratorPacerInterval;
+@property(readonly, nonatomic) BOOL spotlightIndexingEnabled;
 @property(readonly, nonatomic) BOOL shouldDisplayUploadNotification;
 @property(readonly, nonatomic) double activeDownloadSizeRefreshInterval;
 @property(readonly, nonatomic) double diskSpaceCheckInterval;
@@ -82,6 +103,7 @@
 @property(readonly, nonatomic) unsigned long long copyShareIDsBatchSize;
 @property(readonly, nonatomic) unsigned long long statementCacheMaxCountForClientTruth;
 @property(readonly, nonatomic) unsigned long long statementCacheMaxCountForServerTruth;
+@property(readonly, nonatomic) long long maximumDocumentSizeToBeGreedy;
 @property(readonly, nonatomic) double maximumDocumentAgeToBeGreedy;
 @property(readonly, nonatomic) double cacheDeleteRecomputeInterval;
 @property(readonly, nonatomic) long long dbReclaimableSpaceThreshold;
@@ -190,6 +212,8 @@
 @property(readonly, nonatomic) NSDictionary *lostItemThrottleParams;
 @property(readonly, nonatomic) NSDictionary *appLibraryScanThrottleParams;
 @property(readonly, nonatomic) NSArray *syncThrottles;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *fullSyncXPCActivityWithoutOptimizeStorage;
+@property(readonly, nonatomic) NSObject<OS_xpc_object> *fullSyncXPCActivity;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *transmogrifyXPCActivity;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *forcedSyncXPCActivity;
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *configurationUpdateXPCActivity;
@@ -219,6 +243,8 @@
 @property(readonly, nonatomic) unsigned int maxRecordCountInClientZoneModifyRecordsOperation;
 @property(readonly, nonatomic) float modifyRecordsCountAdditiveIncreaseFraction;
 @property(readonly, nonatomic) float modifyRecordsCountMultiplicativeDecrease;
+@property(readonly, nonatomic) unsigned long long listDirChangesCancelDelay;
+@property(readonly, nonatomic) unsigned int maxRecordCountWhenListingDirChanges;
 @property(readonly, nonatomic) unsigned int maxRecordCountInModifyRecordsOperation;
 @property(readonly, nonatomic) unsigned int maxRecordCountInFetchRecordsOperation;
 @property(readonly, nonatomic) BOOL shouldFetchAllChanges;
@@ -236,6 +262,7 @@
 - (id)objectForKey:(id)arg1 inheritFromGlobal:(BOOL)arg2 validateWithBlock:(CDUnknownBlockType)arg3;
 - (id)_serverDefaultForKey:(id)arg1;
 - (id)_loadObjectForKey:(id)arg1 inheritFromGlobal:(BOOL)arg2 validateWithBlock:(CDUnknownBlockType)arg3;
+- (BOOL)_isSharedDefaults;
 - (id)initAsGlobalWithServerConfiguration:(id)arg1;
 - (id)initWithServerConfiguration:(id)arg1 globalUserDefaults:(id)arg2 clientZoneIdentifier:(id)arg3;
 

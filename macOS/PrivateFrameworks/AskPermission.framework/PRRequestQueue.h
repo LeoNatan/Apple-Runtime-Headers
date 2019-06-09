@@ -15,8 +15,8 @@
     NSString *_identifier;
 }
 
-+ (id)defaultRequestQueue;
 + (id)_requestQueueForIdentifier:(id)arg1;
++ (id)defaultRequestQueue;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) __weak id <PRRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -34,14 +34,9 @@
 - (void)_pendingStorePurchaseRequestForItemIdentifier:(unsigned long long)arg1 replyBlock:(CDUnknownBlockType)arg2;
 - (void)_didReceiveStorePushNotificationWithPayload:(id)arg1;
 - (void)_didStartNewPurchaseRequestWithInfo:(id)arg1;
-- (void)pendingRequestsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)attemptLocalApprovalForRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)addRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)pendingRequestsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)askPermissionTo:(id)arg1 withRequestInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)agentRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
-- (id)_agentRemoteObjectInterface;
-- (id)_agentXPCConnection;
-- (id)initWithIdentifier:(id)arg1;
 
 @end
 

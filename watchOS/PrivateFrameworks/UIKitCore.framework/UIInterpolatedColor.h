@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
 @interface UIInterpolatedColor : NSObject <UIVectorOperatable>
 {
     struct {
-        float h;
-        float s;
+        float r;
+        float g;
         float b;
         float a;
     } _color;

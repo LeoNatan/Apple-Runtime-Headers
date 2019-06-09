@@ -36,9 +36,15 @@
 
 + (unsigned long long)sizeofClassStructure:(_Bool)arg1;
 + (id)descriptionForTypeEncoding:(const char *)arg1 ivarName:(const char *)arg2;
++ (unsigned long long)firstSubclassOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2 returnedIsMetaclass:(_Bool *)arg3;
++ (unsigned long long)nextSiblingOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2 returnedIsMetaclass:(_Bool *)arg3;
++ (unsigned long long)relativeOfClass:(unsigned long long)arg1 sibling:(_Bool)arg2 memoryReader:(CDUnknownBlockType)arg3 returnedIsMetaclass:(_Bool *)arg4;
++ (unsigned long long)metaclassOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2;
++ (unsigned long long)superclassOfClass:(unsigned long long)arg1 memoryReader:(CDUnknownBlockType)arg2;
 + (id)classInfoWithClassName:(id)arg1 binaryPath:(id)arg2 type:(unsigned int)arg3;
 + (id)_genericBlockByrefInfo;
 + (void)initialize;
+@property(readonly, nonatomic) unsigned int ivarCount; // @synthesize ivarCount=_ivarCount;
 @property(readonly, nonatomic) _Bool usesSwiftRefcounting; // @synthesize usesSwiftRefcounting=_usesSwiftRefcounting;
 @property(readonly, nonatomic) unsigned int pointerSize; // @synthesize pointerSize=_remotePointerSize;
 @property(readonly, nonatomic) VMUClassInfo *superclassInfo; // @synthesize superclassInfo=_superclassLayout;
@@ -91,6 +97,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithSerializer:(id)arg1 classMap:(id)arg2 version:(unsigned int)arg3;
 - (void)serializeWithClassMap:(id)arg1 simpleSerializer:(id)arg2 version:(unsigned int)arg3;
+- (void)identifyObjCClassStructureBlocksWithScanner:(id)arg1 addressIdentifierBlock:(CDUnknownBlockType)arg2;
+- (void)_identifyObjCClassStructureBlocksForIsa:(unsigned long long)arg1 isMetaclass:(_Bool)arg2 withScanner:(id)arg3 addressIdentifierBlock:(CDUnknownBlockType)arg4;
 - (id)mutableCopy;
 - (void)dealloc;
 - (void)_freeLocalIvarList;

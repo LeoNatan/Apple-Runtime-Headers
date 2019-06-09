@@ -8,18 +8,15 @@
 
 #import <Mail/IMAPAccount-Protocol.h>
 
-@class IMAPTaskManager, MCAuthScheme, MFIMAPOperationCache, MFLibraryIMAPStore, MFMailbox, NSArray, NSDictionary, NSError, NSLock, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
+@class ACAccount, ECAuthScheme, ECIMAPAccount, IMAPTaskManager, MFLibraryIMAPStore, MFMailbox, NSArray, NSDictionary, NSError, NSLock, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
 
 @interface MFIMAPAccount : MFRemoteStoreAccount <IMAPAccount>
 {
-    NSMutableDictionary *_syncEngineMap;
     NSArray *_lastKnownCapabilities;
     NSMutableSet *_namespacePrivatePrefixes;
     NSMutableSet *_namespacePublicPrefixes;
     NSMutableSet *_namespaceSharedPrefixes;
     NSString *_separatorChar;
-    NSLock *_connectionPoolLock;
-    MFIMAPOperationCache *_offlineCache;
     NSString *_serverPathPrefixWithFilesystemSeparator;
     NSString *_serverPathPrefixAsFilesystemPath;
     NSLock *_fsPrefixLock;
@@ -56,6 +53,7 @@
 + (id)_mailboxNameForPathComponent:(id)arg1;
 + (id)_pathComponentForMailboxName:(id)arg1;
 + (void)_deleteQueuedMailboxes:(id)arg1;
++ (id)csAccountTypeString;
 + (id)accountTypeString;
 + (id)standardSSLPorts;
 + (id)standardPorts;
@@ -110,6 +108,7 @@
 - (void)_synchronizeMailboxListDuringMailCheck;
 - (void)_updateSpecialMailboxes;
 - (BOOL)_synchronizeMailboxList;
+@property(readonly, nonatomic) BOOL supportsMove;
 @property(readonly) BOOL supportsIDLE;
 @property(readonly, copy) NSArray *lastKnownCapabilities;
 - (id)separatorCharFetchIfNeeded:(BOOL)arg1;
@@ -185,17 +184,15 @@
 @property(readonly, nonatomic) BOOL requiresAuthentication;
 @property(readonly, copy, nonatomic) NSString *saslProfileName;
 - (BOOL)_parentSystemAccountDidUpdateProperties:(id)arg1 changedSystemAccount:(char *)arg2;
-- (id)usesSSLObject;
-- (id)_hostnameFromParentAccount:(id)arg1;
-- (id)portNumberObject;
-- (long long)defaultSecurePortNumber;
-- (long long)defaultPortNumber;
 - (id)mailboxPathExtension;
 - (Class)storeClassForMailbox:(id)arg1;
+- (long long)defaultSecurePortNumber;
+- (long long)defaultPortNumber;
 - (id)messageActionsAfterActionID:(long long)arg1;
 - (BOOL)discoverSettings;
 - (BOOL)needsToDiscoverSettings;
 - (void)setSupportsModificationSequences:(BOOL)arg1 forMailboxName:(id)arg2;
+- (id)dataSourceForMailboxURL:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)dataSourceForMailbox:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)dataSourceForMailboxName:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (void)doRoutineCleanup;
@@ -207,7 +204,6 @@
 - (id)_colorByMessageFromColorByMessageDigest:(id)arg1;
 - (void)_migrateColorsForGmail;
 @property BOOL needsGmailLabelsCleanup;
-- (id)_shouldUseGmailLabelStoresNumber;
 @property(readonly) BOOL shouldUseGmailLabelStoresIsSet;
 @property BOOL shouldUseGmailLabelStores;
 - (BOOL)needsServerMessages;
@@ -225,6 +221,7 @@
 @property(readonly, copy) NSString *appleAuthenticationToken;
 @property(readonly, copy) NSString *applePersonID;
 @property(copy) NSString *authenticationScheme;
+@property(readonly) ECIMAPAccount *baseAccount; // @dynamic baseAccount;
 @property long long cachePolicy;
 @property(copy) NSString *canonicalEmailAddress;
 @property(readonly, copy) NSString *clientInfo;
@@ -233,26 +230,29 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(copy) NSString *displayName;
+@property(readonly, copy) NSArray *emailAddressStrings;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) NSString *hostname;
+@property(readonly, copy) NSString *hostname;
 @property(readonly, copy) NSString *identifier;
 @property(readonly, nonatomic) BOOL isGmailAccount;
 @property(readonly) BOOL isYahooAccount;
 @property(readonly, copy) NSString *machineID;
+@property(readonly, nonatomic, getter=isManaged) BOOL managed;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *oneTimePassword;
-@property(copy, nonatomic) NSString *password;
+@property(readonly, copy) NSString *password;
 @property long long portNumber;
-@property(retain) MCAuthScheme *preferredAuthScheme;
+@property(retain) ECAuthScheme *preferredAuthScheme;
 @property long long securityLayerType;
 @property(readonly) BOOL shouldMoveDeletedMessagesToTrash;
 @property BOOL shouldUseAuthentication;
 @property(readonly, copy, nonatomic) NSArray *standardPorts;
 @property(readonly, copy, nonatomic) NSArray *standardSSLPorts;
 @property(readonly) Class superclass;
+@property(readonly, copy) ACAccount *systemAccount;
 @property(readonly, nonatomic) IMAPTaskManager *taskManager; // @dynamic taskManager;
-@property(copy) NSString *username;
+@property(readonly, copy) NSString *username;
 @property BOOL usesSSL;
 
 @end

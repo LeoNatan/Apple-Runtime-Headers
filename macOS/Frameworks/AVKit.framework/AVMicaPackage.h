@@ -11,6 +11,7 @@
 
 @class CALayer, CAStateController, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVMicaPackage : NSObject <CAMLParserDelegate, CAStateControllerDelegate>
 {
     NSString *_state;
@@ -38,10 +39,12 @@
 - (id)availableStates;
 - (void)transitionToStateWithName:(id)arg1 onLayer:(id)arg2;
 - (void)transitionToStateWithName:(id)arg1;
+- (void)_recursivelyRemoveCompositingFiltersWithName:(id)arg1 rootLayer:(id)arg2;
 - (void)_recursivelySetFillColor:(struct CGColor *)arg1 rootLayer:(id)arg2;
 - (id)_recursivelyFindSublayerWithName:(id)arg1 rootLayer:(id)arg2;
 - (void)_setState:(id)arg1;
 - (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
+- (void)removeCompositingFiltersWithName:(id)arg1;
 - (void)setState:(id)arg1 color:(struct CGColor *)arg2;
 - (id)initWithPackageName:(id)arg1 layoutDirection:(long long)arg2;
 

@@ -6,9 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <Mail/EMAccountFactory-Protocol.h>
+#import <Mail/EDAccountFactory-Protocol.h>
 
-@interface MFAccountFactory_macOS : NSObject <EMAccountFactory>
+@interface MFAccountFactory_macOS : NSObject <EDAccountFactory>
 {
 }
 

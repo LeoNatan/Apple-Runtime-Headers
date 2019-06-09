@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL, UNSKeyedDictionaryRepository;
+@class NSURL, UNSBundleLibrarian, UNSKeyedDictionaryRepository;
 
 @interface UNSAttachmentsRepository : NSObject
 {
     UNSKeyedDictionaryRepository *_referencesRepository;
     NSURL *_directoryURL;
+    UNSBundleLibrarian *_librarian;
 }
 
 + (id)_sha1HashOfFileAtURL:(id)arg1;
@@ -19,6 +20,7 @@
 - (id)_attachmentDirectoryForBundleIdentifier:(id)arg1;
 - (id)_fileURLForDigestString:(id)arg1 extension:(id)arg2 bundleIdentifier:(id)arg3;
 - (void)ensureIntegrityUsingNotificationIdentifiersForBundleIdentifiers:(id)arg1;
+- (void)_performAttachmentRepositoryKeyMigration;
 - (void)_performAttachmentReferencesMigrationForBundleIdentifier:(id)arg1;
 - (void)_performAttachmentFilesMigration;
 - (void)_performAttachmentReferencesMigration;
@@ -38,7 +40,7 @@
 - (_Bool)isRepositoryURL:(id)arg1;
 - (id)_claimedRepositoryURLsForBundleIdentifier:(id)arg1;
 - (id)bundleIdentifiersClaimingAttachments;
-- (id)initWithDirectory:(id)arg1;
+- (id)initWithDirectory:(id)arg1 librarian:(id)arg2;
 
 @end
 

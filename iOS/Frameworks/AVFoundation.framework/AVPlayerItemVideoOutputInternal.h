@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class AVVideoOutputSettings, AVWeakReference;
-@protocol AVPlayerItemOutputPullDelegate, OS_dispatch_queue, OS_dispatch_source;
+@class AVVideoOutputSettings, AVWeakReference, AVWeakReferencingDelegateStorage;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface AVPlayerItemVideoOutputInternal : NSObject
@@ -16,10 +16,9 @@ __attribute__((visibility("hidden")))
     double currentRate;
     struct OpaqueFigVisualContext *vc;
     AVWeakReference *playerItemWeakReference;
+    AVWeakReferencingDelegateStorage *delegateStorage;
     struct OpaqueVTPixelBufferConformer *pixelBufferConformer;
-    id <AVPlayerItemOutputPullDelegate> delegate;
     NSObject<OS_dispatch_queue> *stateQueue;
-    NSObject<OS_dispatch_queue> *delegateQueue;
     NSObject<OS_dispatch_source> *delegateWakeupSource;
     double advanceWakeUpInterval;
     _Bool advanceWakeUpIntervalIsValid;

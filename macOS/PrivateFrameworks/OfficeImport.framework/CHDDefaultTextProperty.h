@@ -10,6 +10,7 @@
 
 @class EDResources, EDRunsCollection, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CHDDefaultTextProperty : NSObject <EDKeyedObject>
 {
     EDResources *mResources;

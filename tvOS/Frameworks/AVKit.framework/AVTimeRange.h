@@ -10,6 +10,7 @@
 
 @class AVInterstitialTimeRange, NSDate;
 
+__attribute__((visibility("hidden")))
 @interface AVTimeRange : NSObject <NSCopying>
 {
     double _startTime;

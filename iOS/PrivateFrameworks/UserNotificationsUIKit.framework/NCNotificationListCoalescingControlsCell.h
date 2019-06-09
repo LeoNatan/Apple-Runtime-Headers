@@ -6,31 +6,29 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-#import <UserNotificationsUIKit/NCLegibilitySettingsAdjusting-Protocol.h>
+#import <UserNotificationsUIKit/MTMaterialGrouping-Protocol.h>
 #import <UserNotificationsUIKit/NCNotificationListCoalescingControlsHandler-Protocol.h>
 #import <UserNotificationsUIKit/NCNotificationListCoalescingControlsViewDelegate-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
-@class NCNotificationListCoalescingControlsView, NSString, _UILegibilitySettings;
+@class NCNotificationListCoalescingControlsView, NSString;
 @protocol NCNotificationListCoalescingControlsHandlerDelegate;
 
-@interface NCNotificationListCoalescingControlsCell : UICollectionViewCell <NCNotificationListCoalescingControlsViewDelegate, NCLegibilitySettingsAdjusting, PLContentSizeCategoryAdjusting, NCNotificationListCoalescingControlsHandler>
+@interface NCNotificationListCoalescingControlsCell : UICollectionViewCell <NCNotificationListCoalescingControlsViewDelegate, PLContentSizeCategoryAdjusting, NCNotificationListCoalescingControlsHandler, MTMaterialGrouping>
 {
     _Bool _adjustsFontForContentSizeCategory;
     _Bool _shouldShowCoalescingControls;
     NSString *_coalescingIdentifier;
     unsigned long long _groupingSection;
     id <NCNotificationListCoalescingControlsHandlerDelegate> _handlerDelegate;
-    NSString *_backgroundGroupName;
+    NSString *_materialGroupNameBase;
     NCNotificationListCoalescingControlsView *_coalescingControlsView;
-    _UILegibilitySettings *_legibilitySettings;
 }
 
 + (double)coalescingControlsCellHeightShowingCoalescingControls:(_Bool)arg1;
-@property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) NCNotificationListCoalescingControlsView *coalescingControlsView; // @synthesize coalescingControlsView=_coalescingControlsView;
 @property(nonatomic) _Bool shouldShowCoalescingControls; // @synthesize shouldShowCoalescingControls=_shouldShowCoalescingControls;
-@property(copy, nonatomic) NSString *backgroundGroupName; // @synthesize backgroundGroupName=_backgroundGroupName;
+@property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsHandlerDelegate> handlerDelegate; // @synthesize handlerDelegate=_handlerDelegate;
 @property(nonatomic) unsigned long long groupingSection; // @synthesize groupingSection=_groupingSection;
@@ -38,7 +36,6 @@
 - (void).cxx_destruct;
 - (void)_layoutCoalescingControlsView;
 - (void)_configureCoalescingControlsViewIfNecessary;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)notificationListCoalescingControlsViewDidDismissPreviewInteractionPresentedContent:(id)arg1;
 - (void)notificationListCoalescingControlsViewDidPresentPreviewInteractionPresentedContent:(id)arg1;
@@ -48,7 +45,6 @@
 - (void)notificationListCoalescingControlsViewRequestsRestack:(id)arg1;
 - (void)notificationListCoalescingControlsViewRequestsClearAll:(id)arg1;
 - (void)notificationListCoalescingControlsViewRequestsClear:(id)arg1;
-- (void)adjustForLegibilitySettingsChange:(id)arg1;
 - (void)prepareForReuse;
 - (_Bool)shouldReceiveTouchAtPointInWindowSpace:(struct CGPoint)arg1;
 - (_Bool)dismissModalFullScreenIfNeeded;

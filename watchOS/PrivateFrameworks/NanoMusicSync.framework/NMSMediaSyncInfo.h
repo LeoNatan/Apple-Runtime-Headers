@@ -30,6 +30,10 @@
 - (_Bool)_isValid;
 - (id)userInfoForItem:(id)arg1;
 - (id)userInfoForContainer:(id)arg1;
+- (unsigned int)numberOfItemsOverStorageLimit;
+- (float)progress;
+- (unsigned int)status;
+- (unsigned int)numberOfItemsOverStorageLimitForContainer:(id)arg1;
 - (unsigned int)playabilityForContainer:(id)arg1;
 - (float)progressForItem:(id)arg1;
 - (float)progressForContainer:(id)arg1;

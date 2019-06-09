@@ -13,6 +13,10 @@
 @interface SFSearchResult (SafariSharedExtras) <WBSCompletionListItem>
 + (id)safari_sfSearchResultWithUniqueIdentifier;
 @property(readonly, nonatomic) NSString *safari_loggingDescription;
+- (id)_firstCardSectionOfClass:(Class)arg1 ofCard:(id)arg2 outIndex:(unsigned long long *)arg3;
+- (unsigned long long)safari_indexOfFirstInlineCardSectionOfClass:(Class)arg1;
+- (id)safari_firstInlineCardSectionOfClass:(Class)arg1;
+- (id)safari_firstCardSectionOfClass:(Class)arg1;
 @property(readonly, nonatomic) unsigned long long engagementDestination;
 @property(readonly, nonatomic) SFSearchResult *sfSearchResultValue;
 @property(readonly, nonatomic) NSString *parsecDomainIdentifier;

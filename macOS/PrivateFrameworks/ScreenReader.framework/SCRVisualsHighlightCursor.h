@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AXVHighlightOutlineView, NSArray, SCRApplication, SCRElement;
+@class AXVHighlightOutlineView, NSArray, SCRApplication, SCRCUserDefaults, SCRElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRVisualsHighlightCursor : NSObject
@@ -21,9 +21,11 @@ __attribute__((visibility("hidden")))
     long long _magnificationLevel;
     AXVHighlightOutlineView *__voCursorView;
     SCRApplication *__cursorApplication;
+    SCRCUserDefaults *__userDefaults;
     struct CGRect _cursorRect;
 }
 
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setTrackpadMouseTrackingVOCursor:) BOOL _trackpadMouseTrackingVOCursor; // @synthesize _trackpadMouseTrackingVOCursor=__trackpadMouseTrackingVOCursor;
 @property(nonatomic, setter=_setCursorApplication:) __weak SCRApplication *_cursorApplication; // @synthesize _cursorApplication=__cursorApplication;
 @property(nonatomic, setter=_setCGSConnectionID:) unsigned int _cgsConnectionID; // @synthesize _cgsConnectionID=__cgsConnectionID;
@@ -58,7 +60,7 @@ __attribute__((visibility("hidden")))
 - (void)setCursorRect:(struct CGRect)arg1;
 @property(nonatomic) BOOL cursorEnabled;
 - (void)dealloc;
-- (id)init;
+- (id)initWithUserDefaults:(id)arg1;
 
 @end
 

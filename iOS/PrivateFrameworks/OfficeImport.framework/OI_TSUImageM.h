@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 + (id)initWithCGImage:(struct CGImage *)arg1;
 + (id)init;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (id)initWithUIImage:(id)arg1;
 
 @end
 

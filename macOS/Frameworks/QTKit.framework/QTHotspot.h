@@ -6,34 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class QTNode;
-
 @interface QTHotspot : NSObject
 {
-    int _proxy;
-    QTNode *_node;
-    long long _reserved1;
-    long long _reserved2;
 }
 
 + (id)hotspotWithProxy:(int)arg1;
-- (void)triggerHotspot;
-- (void)setEnabled:(BOOL)arg1;
-- (long long)hotspotType;
-- (id)type;
-- (id)name;
-- (id)link;
-- (BOOL)enabled;
-- (id)comments;
-- (int)uniqueID;
-- (int)index;
-- (id)description;
-- (void)setNode:(id)arg1;
-- (id)node;
-- (void)invalidate;
-- (void)dealloc;
-- (void)finalize;
-- (int)proxy;
+- (id)init;
 - (id)initWithProxy:(int)arg1;
 
 @end

@@ -6,12 +6,48 @@
 
 #import <UIKit/UIView.h>
 
-@interface UIView (AVAdditions)
+#import <AVKit/AVKitLayoutItem-Protocol.h>
+
+@class NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSString;
+
+@interface UIView (AVAdditions) <AVKitLayoutItem>
+- (void)avkit_makeSubtreeDisallowGroupBlending;
+- (_Bool)avkit_isDescendantOfNonPagingScrollView;
+- (_Bool)avkit_wantsAnimatedViewTransitions;
+- (_Bool)avkit_isInAScrollView;
+- (_Bool)avkit_isBeingScrolledQuickly;
+- (_Bool)avkit_isBeingScrolled;
+- (_Bool)avkit_isBeingScrollTested;
+- (id)avkit_backdropGroupLeader;
+- (void)avkit_needsUpdateBackdropCaptureViewHidden;
+- (_Bool)avkit_isVideoGravityFrozen;
+- (struct UIEdgeInsets)avkit_overrideLayoutMarginsForCounterRotation;
+- (_Bool)avkit_isCompletelyTransparent;
 - (_Bool)avkit_isInAWindowAndVisible;
 - (void)avkit_hitTestControlForPoint:(struct CGPoint)arg1 withEvent:(id)arg2 bestSoFar:(inout id *)arg3 shortestDistanceSoFar:(inout double *)arg4;
 - (id)avkit_hitTestControlForPoint:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)avkit_isDescendantOfViewPassingTest:(CDUnknownBlockType)arg1;
 - (_Bool)avkit_isAncestorOfViewPassingTest:(CDUnknownBlockType)arg1;
 - (id)avkit_ancestorViewPassingTest:(CDUnknownBlockType)arg1;
+- (id)avkit_constraintsFromCenterAndDimensionAnchorsToCenterAndDimensionAnchorsOfItem:(id)arg1;
+- (id)avkit_constraintsFromEdgeAnchorsToEdgeAnchorsOfItem:(id)arg1;
+- (id)avkit_constraintsFromCenterAnchorsToCenterAnchorsOfItem:(id)arg1;
+- (id)avkit_constraintsFromDimensionAnchorsToSize:(struct CGSize)arg1;
+
+// Remaining properties
+@property(readonly, nonatomic) NSLayoutYAxisAnchor *bottomAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *centerXAnchor;
+@property(readonly, nonatomic) NSLayoutYAxisAnchor *centerYAnchor;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSLayoutDimension *heightAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *leadingAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *leftAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *rightAnchor;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) NSLayoutYAxisAnchor *topAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *trailingAnchor;
+@property(readonly, nonatomic) NSLayoutDimension *widthAnchor;
 @end
 

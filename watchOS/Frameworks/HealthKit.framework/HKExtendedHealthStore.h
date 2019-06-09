@@ -14,6 +14,7 @@
 @interface HKExtendedHealthStore : NSObject <_HKXPCExportable>
 {
     _HKXPCConnection *_connection;
+    int _notifyToken;
     NSObject<OS_dispatch_queue> *_clientQueue;
 }
 

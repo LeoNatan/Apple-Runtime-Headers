@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSMutableArray;
+
 #pragma mark Function Pointers and Blocks
 
 typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
@@ -11,6 +13,15 @@ typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameter
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
 #pragma mark Named Structures
+
+struct AUOutputBL {
+    struct CAStreamBasicDescription _field1;
+    char *_field2;
+    struct AudioBufferList *_field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+};
 
 struct AudioBuffer {
     unsigned int mNumberChannels;
@@ -43,6 +54,22 @@ struct AudioTimeStamp {
     struct SMPTETime mSMPTETime;
     unsigned int mFlags;
     unsigned int mReserved;
+};
+
+struct CAStreamBasicDescription {
+    double _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+};
+
+struct CF<__CVMetalTextureCache *> {
+    struct __CVMetalTextureCache *value_;
 };
 
 struct CGAffineTransform {
@@ -80,11 +107,12 @@ struct CameraMotionAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct HinkleyDetector _field6[6];
-    int _field7;
-    struct RotationAnalysis _field8;
-    _Bool _field9;
+    float _field6;
+    struct HinkleyDetector _field7[6];
+    int _field8;
+    struct RotationAnalysis _field9;
     _Bool _field10;
+    _Bool _field11;
 };
 
 struct CameraMotionSegment;
@@ -104,10 +132,14 @@ struct DescriptorAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct Rotator *_field6;
+    float _field6;
+    struct Rotator *_field7;
+    struct __CFArray *_field8;
 };
 
 struct DescriptorSegment;
+
+struct DspLibBiquad;
 
 struct EncodeAnalysis {
     int _field1;
@@ -139,6 +171,11 @@ struct EncodeAnalysis {
     int _field23;
     float *_field24;
     float *_field25;
+    _Bool _field26;
+    long long _field27;
+    float _field28;
+    float _field29;
+    float _field30;
 };
 
 struct EncodeParameters {
@@ -174,8 +211,44 @@ struct EncodeStats {
     unsigned int _field20;
     _Bool _field21;
     _Bool _field22;
-    int _field23;
+    _Bool _field23;
     int _field24;
+    int _field25;
+};
+
+struct EncodeStatsHW {
+    CDUnknownFunctionPointerType *_field1;
+    _Bool *_field2;
+    _Bool *_field3;
+    struct MotionVector *_field4;
+    struct MotionVector *_field5;
+    unsigned short *_field6;
+    unsigned short *_field7;
+    unsigned int *_field8;
+    unsigned short *_field9;
+    unsigned short *_field10;
+    unsigned short *_field11;
+    unsigned short *_field12;
+    unsigned short *_field13;
+    unsigned short *_field14;
+    unsigned short *_field15;
+    unsigned short *_field16;
+    unsigned short *_field17;
+    unsigned short *_field18;
+    unsigned short *_field19;
+    unsigned int _field20;
+    _Bool _field21;
+    _Bool _field22;
+    _Bool _field23;
+    int _field24;
+    int _field25;
+    int _field26;
+    struct OpaqueVTCompressionSession *_field27;
+    struct __CFData *_field28;
+    CDStruct_1b6d18a9 _field29;
+    int _field30;
+    int _field31;
+    _Bool _field32;
 };
 
 struct FigLivePhotoDetectedFaceV1Struct {
@@ -216,8 +289,9 @@ struct FineSubjectMotionAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct HinkleyDetector _field6;
-    _Bool _field7;
+    float _field6;
+    struct HinkleyDetector _field7;
+    _Bool _field8;
 };
 
 struct FineSubjectMotionSegment;
@@ -275,7 +349,8 @@ struct InterestingnessAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct HinkleyDetector _field6;
+    float _field6;
+    struct HinkleyDetector _field7;
 };
 
 struct InterestingnessSegment;
@@ -313,11 +388,42 @@ struct LandmarkDetector {
     CDUnknownFunctionPointerType _field15;
 };
 
+struct LkFsMeasure {
+    unsigned int _field1;
+    unsigned int _field2;
+    long long _field3;
+    _Bool _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    double _field7;
+    double _field8;
+    double _field9;
+    double _field10;
+    long long _field11;
+    long long _field12;
+    unsigned int _field13;
+    unsigned int _field14;
+    unsigned int _field15;
+    float _field16[30][6];
+    float *_field17;
+    float *_field18;
+    float *_field19;
+    struct DspLibBiquad *_field20;
+    struct DspLibBiquad *_field21;
+};
+
 struct MetaDataAnalysis {
     _Bool _field1;
     struct FrameBuffer *_field2;
     struct Translation _field3;
     struct Translation _field4;
+};
+
+struct MetalBufferPool {
+    NSMutableArray *pool_;
+    id device_;
+    unsigned long long allocSize_;
+    unsigned long long storageMode_;
 };
 
 struct MotionFieldAnalysis {
@@ -333,20 +439,24 @@ struct MotionFieldAnalysis {
     float _field10;
     float _field11;
     _Bool _field12;
-    int *_field13[2];
-    float *_field14[2];
-    short *_field15[2];
-    int _field16[2];
-    int *_field17[2];
+    _Bool _field13;
+    int *_field14[2];
+    char *_field15[2];
+    float *_field16[2];
+    short *_field17[2];
     float *_field18[2];
-    float *_field19[2];
-    struct ObjectDetection _field20;
-    struct ObjectTracking _field21;
+    int _field19[2];
+    int *_field20[2];
+    float *_field21[2];
+    float *_field22[2];
+    struct ObjectDetection _field23;
+    struct ObjectTracking _field24;
 };
 
 struct MotionFilter {
     struct FrameBuffer *_field1;
     _Bool _field2;
+    _Bool _field3;
 };
 
 struct MotionResult {
@@ -378,9 +488,10 @@ struct MovingObjectAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    int _field6;
+    float _field6;
     int _field7;
     int _field8;
+    int _field9;
 };
 
 struct MovingObjectSegment;
@@ -440,11 +551,16 @@ struct ObstructionAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
+    float _field6;
 };
 
 struct ObstructionSegment;
 
+struct OpaqueVTCompressionSession;
+
 struct OpaqueVTImageRotationSession;
+
+struct OpaqueVTPixelTransferSession;
 
 struct PreEncodeAnalysis {
     _Bool _field1;
@@ -476,27 +592,28 @@ struct QualityAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct HinkleyDetector _field6;
-    CDStruct_1b6d18a9 _field7;
-    float _field8;
-    struct FrameBuffer *_field9;
-    float _field10;
+    float _field6;
+    struct HinkleyDetector _field7;
+    CDStruct_1b6d18a9 _field8;
+    float _field9;
+    struct FrameBuffer *_field10;
     float _field11;
     float _field12;
     float _field13;
-    int _field14;
+    float _field14;
     int _field15;
     int _field16;
-    _Bool _field17;
+    int _field17;
     _Bool _field18;
     _Bool _field19;
-    CDStruct_1b6d18a9 _field20;
-    float _field21;
+    _Bool _field20;
+    CDStruct_1b6d18a9 _field21;
     float _field22;
-    struct __CFArray *_field23;
+    float _field23;
     struct __CFArray *_field24;
     struct __CFArray *_field25;
     struct __CFArray *_field26;
+    struct __CFArray *_field27;
 };
 
 struct QualitySegment;
@@ -509,9 +626,10 @@ struct RotationAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct HinkleyDetector _field6;
-    int _field7;
+    float _field6;
+    struct HinkleyDetector _field7;
     int _field8;
+    int _field9;
 };
 
 struct RotationSegment;
@@ -536,6 +654,14 @@ struct SMPTETime {
     short mFrames;
 };
 
+struct Scaler {
+    struct __CVPixelBufferPool *pool_;
+    int width_;
+    int height_;
+    struct CGRect crop_rect_;
+    struct OpaqueVTPixelTransferSession *sw_scaler_;
+};
+
 struct SceneAnalysis {
     struct Vector<ma::SceneSegment *> _field1;
     struct SceneSegment *_field2;
@@ -543,23 +669,25 @@ struct SceneAnalysis {
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
     float _field6;
-    _Bool _field7;
+    float _field7;
     _Bool _field8;
     _Bool _field9;
     _Bool _field10;
     _Bool _field11;
-    int _field12;
+    _Bool _field12;
     int _field13;
     int _field14;
-    struct CameraMotionAnalysis _field15;
-    struct SubjectMotionAnalysis _field16;
-    struct FineSubjectMotionAnalysis _field17;
-    struct TrackingAnalysis _field18;
-    struct DescriptorAnalysis _field19;
-    struct MovingObjectAnalysis _field20;
-    struct InterestingnessAnalysis _field21;
-    struct QualityAnalysis _field22;
-    struct SlowMotionAnalysis _field23;
+    int _field15;
+    _Bool _field16;
+    struct CameraMotionAnalysis _field17;
+    struct SubjectMotionAnalysis _field18;
+    struct FineSubjectMotionAnalysis _field19;
+    struct TrackingAnalysis _field20;
+    struct DescriptorAnalysis _field21;
+    struct MovingObjectAnalysis _field22;
+    struct InterestingnessAnalysis _field23;
+    struct QualityAnalysis _field24;
+    struct SlowMotionAnalysis _field25;
 };
 
 struct SceneSegment;
@@ -570,9 +698,10 @@ struct SlowMotionAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct FrameBuffer *_field6;
-    struct __CVBuffer *_field7;
-    struct HinkleyDetector _field8;
+    float _field6;
+    struct FrameBuffer *_field7;
+    struct __CVBuffer *_field8;
+    struct HinkleyDetector _field9;
 };
 
 struct SlowMotionSegment;
@@ -583,7 +712,8 @@ struct SubjectMotionAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct HinkleyDetector _field6;
+    float _field6;
+    struct HinkleyDetector _field7;
 };
 
 struct SubjectMotionSegment;
@@ -596,7 +726,8 @@ struct TrackingAnalysis {
     struct __CFArray *_field3;
     CDStruct_1b6d18a9 _field4;
     _Bool _field5;
-    struct HinkleyDetector _field6;
+    float _field6;
+    struct HinkleyDetector _field7;
 };
 
 struct Translation {
@@ -677,7 +808,11 @@ struct ZPoint;
 
 struct __CFArray;
 
+struct __CFData;
+
 struct __CVBuffer;
+
+struct __CVPixelBufferPool;
 
 struct __sFILE {
     char *_field1;
@@ -707,9 +842,81 @@ struct __sbuf {
     int _field2;
 };
 
+struct future<unsigned int> {
+    struct __assoc_state<unsigned int> *_field1;
+};
+
+struct future<void> {
+    struct __assoc_sub_state *_field1;
+};
+
 struct tplTracker_resampler_context;
 
+struct vector<__CVBuffer *, std::__1::allocator<__CVBuffer *>> {
+    struct __CVBuffer **__begin_;
+    struct __CVBuffer **__end_;
+    struct __compressed_pair<__CVBuffer **, std::__1::allocator<__CVBuffer *>> {
+        struct __CVBuffer **__value_;
+    } __end_cap_;
+};
+
+struct vector<double, std::__1::allocator<double>> {
+    double *__begin_;
+    double *__end_;
+    struct __compressed_pair<double *, std::__1::allocator<double>> {
+        double *__value_;
+    } __end_cap_;
+};
+
+struct vector<espresso_buffer_t, std::__1::allocator<espresso_buffer_t>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<espresso_buffer_t *, std::__1::allocator<espresso_buffer_t>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
+};
+
+struct vector<float *, std::__1::allocator<float *>> {
+    float **__begin_;
+    float **__end_;
+    struct __compressed_pair<float **, std::__1::allocator<float *>> {
+        float **__value_;
+    } __end_cap_;
+};
+
+struct vector<float, std::__1::allocator<float>> {
+    float *__begin_;
+    float *__end_;
+    struct __compressed_pair<float *, std::__1::allocator<float>> {
+        float *__value_;
+    } __end_cap_;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+} CDStruct_14f26992;
+
+typedef struct {
+    void *data;
+    void *reserved;
+    unsigned long long dim[4];
+    unsigned long long stride[4];
+    unsigned long long width;
+    unsigned long long height;
+    unsigned long long channels;
+    unsigned long long batch_number;
+    unsigned long long sequence_length;
+    unsigned long long stride_width;
+    unsigned long long stride_height;
+    unsigned long long stride_channels;
+    unsigned long long stride_batch_number;
+    unsigned long long stride_sequence_length;
+    int storage_type;
+} CDStruct_0a65202a;
 
 typedef struct {
     int _field1;
@@ -735,7 +942,37 @@ typedef struct {
 typedef struct CDStruct_183601bc;
 
 typedef struct {
+    CDStruct_14f26992 _field1;
+    CDStruct_14f26992 _field2;
+} CDStruct_4c83c94d;
+
+typedef struct {
     CDStruct_1b6d18a9 start;
     CDStruct_1b6d18a9 duration;
 } CDStruct_e83c9415;
+
+// Template types
+typedef struct future<unsigned int> {
+    struct __assoc_state<unsigned int> *_field1;
+} future_dee8b545;
+
+typedef struct future<void> {
+    struct __assoc_sub_state *_field1;
+} future_da72c1f3;
+
+typedef struct vector<espresso_buffer_t, std::__1::allocator<espresso_buffer_t>> {
+    CDStruct_183601bc *__begin_;
+    CDStruct_183601bc *__end_;
+    struct __compressed_pair<espresso_buffer_t *, std::__1::allocator<espresso_buffer_t>> {
+        CDStruct_183601bc *__value_;
+    } __end_cap_;
+} vector_7cb31c67;
+
+typedef struct vector<float *, std::__1::allocator<float *>> {
+    float **__begin_;
+    float **__end_;
+    struct __compressed_pair<float **, std::__1::allocator<float *>> {
+        float **__value_;
+    } __end_cap_;
+} vector_f351fd4e;
 

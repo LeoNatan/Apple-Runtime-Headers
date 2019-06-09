@@ -18,9 +18,7 @@
 + (BOOL)version:(CDStruct_2ec95fd7)arg1 equalToVersion:(CDStruct_2ec95fd7)arg2;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)currentPlatform;
-- (BOOL)supportsRoutes;
-- (BOOL)supportsMagicalMomentsCapability;
-- (BOOL)supportsMicroLocations;
+- (BOOL)supportsScenarioTriggers;
 - (BOOL)paired;
 - (BOOL)supportsPairedDevice;
 - (BOOL)iPhoneDevice;

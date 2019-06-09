@@ -13,16 +13,16 @@
 @interface GEOTraitsTransitScheduleModeFilter : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    unsigned int _numAdditionalDepartures;
     GEOTraitsTransitScheduleTimeRange *_timeRange;
+    unsigned int _numAdditionalDepartures;
     struct {
-        unsigned int numAdditionalDepartures:1;
-    } _has;
+        unsigned int has_numAdditionalDepartures:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int numAdditionalDepartures; // @synthesize numAdditionalDepartures=_numAdditionalDepartures;
-@property(retain, nonatomic) GEOTraitsTransitScheduleTimeRange *timeRange; // @synthesize timeRange=_timeRange;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,9 +31,12 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasNumAdditionalDepartures;
+@property(nonatomic) unsigned int numAdditionalDepartures;
+@property(retain, nonatomic) GEOTraitsTransitScheduleTimeRange *timeRange;
 @property(readonly, nonatomic) _Bool hasTimeRange;
 - (void)configureWithDefaultStartTime:(double)arg1 duration:(double)arg2 numAdditionalDepartures:(unsigned int)arg3;
 

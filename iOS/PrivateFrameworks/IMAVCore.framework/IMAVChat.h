@@ -8,7 +8,7 @@
 
 #import <IMAVCore/IMSystemMonitorListener-Protocol.h>
 
-@class IMAVChatParticipant, IMAccount, IMHandle, IMPair, IMTimingCollection, NSArray, NSData, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSTimer;
+@class IMAVChatParticipant, IMAccount, IMHandle, IMTimingCollection, NSArray, NSData, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSTimer;
 @protocol OS_dispatch_queue;
 
 @interface IMAVChat : NSObject <IMSystemMonitorListener>
@@ -42,12 +42,10 @@
     NSDictionary *_callerProperties;
     NSObject<OS_dispatch_queue> *_conferenceQueue;
     NSData *_relayRemotePrimaryIdentifier;
-    id _conferenceController;
     unsigned int _sessionID;
     NSError *_error;
     unsigned int _localState;
     unsigned int _lastPostedState;
-    IMPair *_pendingPreemptiveRelayInitate;
     NSString *_callStatisticsGUID;
     double _connectionTimeoutTime;
     double _invitationTimeoutTime;
@@ -70,6 +68,7 @@
     _Bool _didRemotePause;
     _Bool _airplaneModeEnabled;
     _Bool _metadataFinalized;
+    id _conferenceController;
     NSTimer *_inviteTimeoutTimer;
     NSDate *_inviteTimeoutTimerStart;
     NSTimer *_firstFrameTimeoutTimer;
@@ -131,13 +130,13 @@
 @property(nonatomic, setter=_setNetworkCheckResult:) long long _networkCheckResult; // @synthesize _networkCheckResult;
 @property(nonatomic, setter=_setPingTestResult:) long long _pingTestResult; // @synthesize _pingTestResult;
 @property(retain, nonatomic, setter=_setPingTestResults:) NSDictionary *_pingTestResults; // @synthesize _pingTestResults;
-@property(readonly, retain) NSDictionary *_extraServerContext; // @synthesize _extraServerContext;
-@property(readonly, retain, nonatomic) NSArray *participants; // @synthesize participants=_participants;
-@property(readonly, retain, nonatomic) IMAVChatParticipant *localParticipant; // @synthesize localParticipant=_localParticipant;
+@property(readonly) NSDictionary *_extraServerContext; // @synthesize _extraServerContext;
+@property(readonly, nonatomic) NSArray *participants; // @synthesize participants=_participants;
+@property(readonly, nonatomic) IMAVChatParticipant *localParticipant; // @synthesize localParticipant=_localParticipant;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_localState;
-@property(readonly, retain, nonatomic) NSDate *dateEnded; // @synthesize dateEnded=_dateEnded;
-@property(readonly, retain, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
-@property(readonly, retain, nonatomic) NSDate *dateConnected; // @synthesize dateConnected=_dateConnected;
+@property(readonly, nonatomic) NSDate *dateEnded; // @synthesize dateEnded=_dateEnded;
+@property(readonly, nonatomic) NSDate *dateCreated; // @synthesize dateCreated=_dateCreated;
+@property(readonly, nonatomic) NSDate *dateConnected; // @synthesize dateConnected=_dateConnected;
 @property(nonatomic, setter=_setConferenceController:) id _conferenceController; // @synthesize _conferenceController;
 @property(retain, nonatomic, setter=_setGUID:) NSString *GUID; // @synthesize GUID=_GUID;
 @property(retain, nonatomic, setter=_setConferenceID:) NSString *conferenceID; // @synthesize conferenceID=_conferenceID;
@@ -159,12 +158,13 @@
 @property(nonatomic, setter=_setRemoteNetworkConnectionType:) unsigned long long _remoteNetworkConnectionType; // @synthesize _remoteNetworkConnectionType;
 @property(nonatomic, setter=_setLocalNetworkConnectionType:) unsigned long long _localNetworkConnectionType; // @synthesize _localNetworkConnectionType;
 @property(retain, nonatomic, setter=_setNatType:) NSNumber *_natType; // @synthesize _natType;
-@property(readonly, retain, nonatomic) IMHandle *initiatorIMHandle; // @synthesize initiatorIMHandle=_initiator;
+@property(readonly, nonatomic) IMHandle *initiatorIMHandle; // @synthesize initiatorIMHandle=_initiator;
 @property(retain, nonatomic, setter=_setCallerProperties:) NSDictionary *callerProperties; // @synthesize callerProperties=_callerProperties;
 @property(readonly, nonatomic) unsigned int sessionID; // @synthesize sessionID=_sessionID;
 @property(retain, nonatomic, setter=_setCallStatisticsGUID:) NSString *_callStatisticsGUID; // @synthesize _callStatisticsGUID;
 @property(nonatomic, setter=_setConnectionType:) int _connectionType; // @synthesize _connectionType;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *_conferenceQueue; // @synthesize _conferenceQueue;
+- (void).cxx_destruct;
 - (_Bool)_cachedBoolForKey:(id)arg1;
 - (_Bool)_hasCachedBoolForKey:(id)arg1;
 - (void)_cacheBool:(_Bool)arg1 forKey:(id)arg2;
@@ -174,7 +174,7 @@
 - (void)_postNotificationName:(id)arg1 participant:(id)arg2 userInfo:(id)arg3;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (void)_handleAVError:(id)arg1;
-@property(readonly, retain, nonatomic) NSArray *_imHandles;
+@property(readonly, nonatomic) NSArray *_imHandles;
 @property(readonly, nonatomic) _Bool isUsingWifi;
 @property(readonly, nonatomic) _Bool _usesRelay;
 @property(readonly, nonatomic) NSNumber *_relayConnectDuration;
@@ -188,9 +188,9 @@
 - (void)_setCreationDate;
 @property(readonly, nonatomic) unsigned int endedReason;
 @property(readonly, nonatomic) int endedError;
-@property(readonly, retain, nonatomic) IMAccount *account;
+@property(readonly, nonatomic) IMAccount *account;
 @property(readonly, nonatomic) _Bool _isProxy;
-@property(readonly, retain, nonatomic) IMHandle *otherIMHandle;
+@property(readonly, nonatomic) IMHandle *otherIMHandle;
 - (id)participantMatchingIMHandle:(id)arg1;
 - (id)vcPartyIDForIMHandle:(id)arg1;
 - (id)participantWithID:(id)arg1;
@@ -299,8 +299,8 @@
 @property(readonly, nonatomic) _Bool isStateFinal; // @dynamic isStateFinal;
 - (id)_participantMatchingVCPartyID:(id)arg1;
 @property(readonly, nonatomic) _Bool _allParticipantsUsingICE;
-@property(readonly, retain, nonatomic) NSArray *remoteParticipants; // @dynamic remoteParticipants;
-@property(readonly, retain, nonatomic) IMAVChatParticipant *initiatorParticipant; // @dynamic initiatorParticipant;
+@property(readonly, nonatomic) NSArray *remoteParticipants; // @dynamic remoteParticipants;
+@property(readonly, nonatomic) IMAVChatParticipant *initiatorParticipant; // @dynamic initiatorParticipant;
 - (_Bool)_participantsCheckOut;
 - (void)_initParticipantsWithIMHandles:(id)arg1;
 - (_Bool)_moveVCPartyID:(id)arg1 toIndex:(unsigned int)arg2 inCount:(unsigned int)arg3;

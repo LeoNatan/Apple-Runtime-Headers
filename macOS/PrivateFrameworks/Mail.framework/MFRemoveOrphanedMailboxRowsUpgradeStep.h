@@ -10,7 +10,6 @@
 {
 }
 
-+ (BOOL)requiredAfterBackbooting;
 + (unsigned long long)targetVersion;
 - (id)_mailboxRowIDListWithAccountURLStrings:(id)arg1;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;

@@ -9,7 +9,7 @@
 #import <SiriCore/SiriCoreConnectionProvider-Protocol.h>
 
 @class NSArray, NSString, NSURL, SAConnectionPolicy, SAConnectionPolicyRoute, SiriCoreConnectionMetrics, SiriCoreConnectionType;
-@protocol OS_dispatch_queue, OS_dispatch_source, OS_nw_connection, OS_nw_endpoint, SiriCoreConnectionProviderDelegate;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_nw_connection, OS_nw_content_context, OS_nw_endpoint, SiriCoreConnectionProviderDelegate;
 
 @interface SiriCoreNWConnection : NSObject <SiriCoreConnectionProvider>
 {
@@ -19,6 +19,7 @@
     NSString *_resolvedHost;
     NSObject<OS_nw_connection> *_connection;
     NSObject<OS_nw_endpoint> *_endpoint;
+    NSObject<OS_nw_content_context> *_content_context;
     SAConnectionPolicyRoute *_route;
     SAConnectionPolicy *_policy;
     _Bool _prefersWWAN;
@@ -36,6 +37,8 @@
     NSObject<OS_dispatch_source> *_openTimer;
     NSObject<OS_dispatch_source> *_staleConnectionTimer;
     unsigned long long _readWriteCounter;
+    NSObject<OS_dispatch_source> *_connectionUnviableTimer;
+    unsigned long long _betterPathAvailableNotificationMachTime;
     NSArray *_attemptedEndpoints;
     _Bool _isViable;
     _Bool _scopeToWiFiOnly;
@@ -84,6 +87,8 @@
 - (void)_getNWConnectionWithInitialData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_cancelStaleConnectionTimer;
 - (void)_setupStaleConnectionTimer;
+- (void)_cancelConnectionUnviableTimer;
+- (void)_startConnectionUnviableTimer;
 - (_Bool)_connectByPOPMethod;
 - (id)_connectionId;
 - (id)_url;

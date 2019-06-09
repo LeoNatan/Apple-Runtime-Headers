@@ -19,6 +19,7 @@
     long long _watchSize;
 }
 
++ (struct CGSize)cardArtSizeForWatchViewSize:(struct CGSize)arg1;
 + (id)defaultImages;
 @property(nonatomic) long long watchSize; // @synthesize watchSize=_watchSize;
 @property(nonatomic) id <PKPaymentHeroImageControllerDelegate> delegate; // @synthesize delegate=_delegate;

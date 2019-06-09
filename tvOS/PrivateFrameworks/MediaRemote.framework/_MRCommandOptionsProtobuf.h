@@ -28,6 +28,7 @@
     int _playbackQueueInsertionPosition;
     int _playbackQueueOffset;
     float _playbackRate;
+    NSData *_playbackSession;
     NSString *_radioStationHash;
     float _rating;
     NSString *_remoteControlInterface;
@@ -40,6 +41,8 @@
     NSString *_sourceID;
     NSString *_stationURL;
     NSData *_systemAppPlaybackQueueData;
+    _Bool _beginSeek;
+    _Bool _endSeek;
     _Bool _externalPlayerCommand;
     _Bool _negative;
     _Bool _requestDefermentToPlaybackQueuePosition;
@@ -59,6 +62,8 @@
         unsigned int sendOptions:1;
         unsigned int shuffleMode:1;
         unsigned int skipInterval:1;
+        unsigned int beginSeek:1;
+        unsigned int endSeek:1;
         unsigned int externalPlayerCommand:1;
         unsigned int negative:1;
         unsigned int requestDefermentToPlaybackQueuePosition:1;
@@ -67,6 +72,9 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSData *playbackSession; // @synthesize playbackSession=_playbackSession;
+@property(nonatomic) _Bool endSeek; // @synthesize endSeek=_endSeek;
+@property(nonatomic) _Bool beginSeek; // @synthesize beginSeek=_beginSeek;
 @property(retain, nonatomic) NSString *remoteControlInterface; // @synthesize remoteControlInterface=_remoteControlInterface;
 @property(retain, nonatomic) NSString *senderID; // @synthesize senderID=_senderID;
 @property(retain, nonatomic) NSString *commandID; // @synthesize commandID=_commandID;
@@ -106,6 +114,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPlaybackSession;
+@property(nonatomic) _Bool hasEndSeek;
+@property(nonatomic) _Bool hasBeginSeek;
 @property(readonly, nonatomic) _Bool hasRemoteControlInterface;
 @property(readonly, nonatomic) _Bool hasSenderID;
 @property(readonly, nonatomic) _Bool hasCommandID;

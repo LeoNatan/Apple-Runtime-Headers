@@ -10,7 +10,6 @@
 
 @class UIImage;
 
-__attribute__((visibility("hidden")))
 @interface QLImageItemContents : NSObject <NSSecureCoding>
 {
     UIImage *_image;

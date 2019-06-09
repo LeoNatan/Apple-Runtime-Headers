@@ -9,13 +9,16 @@
 #import <StoreUI/CKAccountObserver-Protocol.h>
 
 @class CKBag, CKStoreClient, FRSuggester, FRWKView, FRWindowBackgroundView, NSArray, NSMutableArray, NSMutableDictionary, NSString;
+@protocol FRStoreWebViewControllerDelegate;
 
 @interface FRStoreWebViewController : FRContentViewController <CKAccountObserver>
 {
     FRWKView *_webView;
     FRWindowBackgroundView *_splashView;
     CKStoreClient *_storeClient;
+    id <FRStoreWebViewControllerDelegate> _delegate;
     CKBag *_bag;
+    NSString *_storefrontBagKey;
     NSMutableArray *_pendingURLs;
     FRSuggester *_hintsSuggester;
     NSMutableDictionary *_iconRequests;
@@ -32,10 +35,12 @@
 @property(retain, nonatomic) NSMutableDictionary *iconRequests; // @synthesize iconRequests=_iconRequests;
 @property(retain, nonatomic) FRSuggester *hintsSuggester; // @synthesize hintsSuggester=_hintsSuggester;
 @property(retain, nonatomic) NSMutableArray *pendingURLs; // @synthesize pendingURLs=_pendingURLs;
-@property(readonly, nonatomic) CKBag *bag; // @synthesize bag=_bag;
-@property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
-@property(readonly, nonatomic) FRWindowBackgroundView *splashView; // @synthesize splashView=_splashView;
-@property(readonly, nonatomic) FRWKView *webView; // @synthesize webView=_webView;
+@property(copy) NSString *storefrontBagKey; // @synthesize storefrontBagKey=_storefrontBagKey;
+@property(readonly) CKBag *bag; // @synthesize bag=_bag;
+@property __weak id <FRStoreWebViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
+@property(readonly) FRWindowBackgroundView *splashView; // @synthesize splashView=_splashView;
+@property(readonly) FRWKView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
 - (id)_comparisonDictionaryFromURL:(id)arg1;
 - (id)_tabBarIdentifierForURL:(id)arg1;

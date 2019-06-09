@@ -65,8 +65,8 @@
 - (id)_processAppGroup:(id)arg1 keyboardGroup:(id *)arg2;
 @property(readonly, nonatomic) AXElementGroupPruner *elementGroupPruner;
 - (id)_filterGroup:(id)arg1 withFilter:(CDUnknownBlockType)arg2;
-- (id)_groupWithItems:(id)arg1 groupTraits:(unsigned long long)arg2 scanningBehaviorTraits:(unsigned long long)arg3 label:(id)arg4 identifier:(id)arg5 currentPid:(int)arg6;
-- (id)_groupWithDictionary:(id)arg1 currentPid:(int)arg2;
+- (id)_groupWithItems:(id)arg1 groupTraits:(unsigned long long)arg2 scanningBehaviorTraits:(unsigned long long)arg3 label:(id)arg4 identifier:(id)arg5 currentPid:(int)arg6 remoteViewPids:(id)arg7;
+- (id)_groupWithDictionary:(id)arg1 currentPid:(int)arg2 remoteViewPids:(id)arg3;
 - (id)findGroupableMatchingBlock:(CDUnknownBlockType)arg1;
 - (id)_findGroupableMatchingBlock:(CDUnknownBlockType)arg1 inElementGroup:(id)arg2;
 - (id)findGroupableMatchingGroupable:(id)arg1;

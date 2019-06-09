@@ -85,6 +85,7 @@
 - (void)_showRequestBluetoothView:(_Bool)arg1;
 - (void)_showConnectTypeView:(_Bool)arg1;
 - (_Bool)_shouldShowConnectTypeView;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)_createAlertFromGKContentView:(id)arg1;
 - (_Bool)_updatePicker:(int)arg1;
 - (void)loadInitialView;

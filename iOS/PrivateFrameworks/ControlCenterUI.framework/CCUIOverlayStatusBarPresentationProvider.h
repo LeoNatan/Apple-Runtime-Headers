@@ -67,7 +67,7 @@
 - (id)transitionStateForType:(unsigned long long)arg1 interactive:(_Bool)arg2 translation:(struct CGPoint)arg3;
 - (_Bool)backdropViewShouldUseAlphaTransformer;
 @property(readonly, nonatomic) _Bool allowHotPocketDuringTransition; // @dynamic allowHotPocketDuringTransition;
-@property(readonly, nonatomic) unsigned long long backgroundMaterialOptions; // @dynamic backgroundMaterialOptions;
+@property(readonly, nonatomic, getter=isZoomEnabled) _Bool zoomEnabled; // @dynamic zoomEnabled;
 @property(readonly, nonatomic, getter=isPanDismissalAvailable) _Bool panDismissalAvailable; // @dynamic panDismissalAvailable;
 
 // Remaining properties

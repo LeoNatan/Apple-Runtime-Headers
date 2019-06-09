@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) unsigned long long cornersToRound; // @synthesize cornersToRound=_cornersToRound;
 @property(readonly, nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_updateImageIfNeeded;
 - (void)_invalidateImage;
 - (void)_setNeedsUpdate;

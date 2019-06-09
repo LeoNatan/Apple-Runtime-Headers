@@ -34,6 +34,17 @@ struct CGSize {
     float _field2;
 };
 
+struct _BSProtobufFieldEntry {
+    unsigned int _field1;
+    char *_field2;
+    int _field3;
+    struct objc_ivar *_field4;
+    Class _field5;
+    Class _field6;
+    CDUnknownFunctionPointerType _field7;
+    CDUnknownFunctionPointerType _field8;
+};
+
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;
@@ -47,6 +58,8 @@ struct mig_subsystem {
     unsigned int _field5;
     struct routine_descriptor _field6[1];
 };
+
+struct objc_ivar;
 
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;

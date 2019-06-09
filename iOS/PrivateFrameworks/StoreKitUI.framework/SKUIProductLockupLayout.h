@@ -8,6 +8,7 @@
 
 @class NSMutableArray, SKUIViewElement, SKUIViewElementLayoutContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductLockupLayout : NSObject
 {
     long long _bottomLeftLayoutStyle;

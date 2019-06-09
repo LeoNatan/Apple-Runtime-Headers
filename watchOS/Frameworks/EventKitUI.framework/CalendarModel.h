@@ -8,22 +8,26 @@
 
 #import <EventKitUI/CalendarEventLoaderDelegate-Protocol.h>
 
-@class CalendarEventLoader, EKCalendarDate, EKEvent, EKEventStore, NSArray, NSCalendar, NSLock, NSSet, NSString, _EKNotificationMonitor;
+@class CalendarEventLoader, EKCalendarDate, EKEvent, EKEventStore, EKSource, NSArray, NSCalendar, NSLock, NSSet, NSString, _EKNotificationMonitor;
 @protocol OccurrenceCacheDataSourceProtocol;
 
 @interface CalendarModel : NSObject <CalendarEventLoaderDelegate>
 {
+    _Bool _modelLocked;
+    _Bool _notificationMonitorSetUp;
     EKEventStore *_eventStore;
     CalendarEventLoader *_eventLoader;
     NSLock *_filterLock;
     NSArray *_visibleCalendars;
     int _readWriteCalendarCount;
+    NSArray *_delegateSources;
     int _invitationBearingStoresExist;
     _EKNotificationMonitor *_notificationMonitor;
     id <OccurrenceCacheDataSourceProtocol> _occurrenceCacheDataSource;
     id <OccurrenceCacheDataSourceProtocol> _occurrenceCacheFilteredDataSource;
     int _cachedFakeTodayIndex;
     int _displayableAccountErrorsCount;
+    int _initialAccountSyncCount;
     _Bool _autoStartNotificationMonitor;
     NSSet *_selectedCalendars;
     NSString *_searchString;
@@ -31,10 +35,20 @@
     EKCalendarDate *_selectedDate;
     unsigned int _firstVisibleSecond;
     EKEvent *_selectedOccurrence;
+    EKSource *_sourceForSelectedIdentity;
+    NSArray *_sortedEnabledDelegates;
+    NSString *_sceneIdentifier;
 }
 
++ (unsigned int)errorForSource:(id)arg1;
++ (void)temporarilyIgnoreInvalidCredentialsErrorForSource:(id)arg1;
++ (id)sortedEnabledDelegateSourcesFromStore:(id)arg1;
++ (id)calendarModelWithEventStore:(id)arg1;
 + (id)calendarModelWithDataPath:(id)arg1;
 @property(nonatomic) _Bool autoStartNotificationMonitor; // @synthesize autoStartNotificationMonitor=_autoStartNotificationMonitor;
+@property(copy, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
+@property(retain, nonatomic) NSArray *sortedEnabledDelegates; // @synthesize sortedEnabledDelegates=_sortedEnabledDelegates;
+@property(readonly, retain, nonatomic) EKSource *sourceForSelectedIdentity; // @synthesize sourceForSelectedIdentity=_sourceForSelectedIdentity;
 @property(retain, nonatomic) EKEvent *selectedOccurrence; // @synthesize selectedOccurrence=_selectedOccurrence;
 @property(nonatomic) unsigned int firstVisibleSecond; // @synthesize firstVisibleSecond=_firstVisibleSecond;
 @property(copy, nonatomic) EKCalendarDate *selectedDate; // @synthesize selectedDate=_selectedDate;
@@ -42,8 +56,11 @@
 @property(readonly, nonatomic) EKEventStore *eventStore; // @synthesize eventStore=_eventStore;
 - (void).cxx_destruct;
 - (_Bool)searchingOccurrences;
-- (id)eventNotificationReferences;
-- (unsigned int)eventNotificationsCount;
+- (id)eventNotificationReferencesForIdentity:(id)arg1;
+- (id)eventNotificationReferencesForCurrentIdentity;
+- (unsigned int)eventNotificationsForCurrentIdentityCount;
+- (id)allEventNotificationReferences;
+- (unsigned int)allEventNotificationsCount;
 - (void)_notificationCountExpired:(id)arg1;
 - (void)_notificationsExpired:(id)arg1;
 - (_Bool)invitationBearingStoresExistForEvents;
@@ -53,16 +70,21 @@
 - (void)_systemWake;
 - (void)_timeZoneChanged:(id)arg1;
 - (void)_localeChanged:(id)arg1;
+- (void)_sceneEnteredForeground:(id)arg1;
+- (void)_sceneEnteredBackground:(id)arg1;
 - (void)_significantTimeChange:(id)arg1;
 - (void)_tzSupportTodayRolledOver;
 - (void)_reloadIfTodayDetermined;
 - (void)prepareForAppSuspend;
 - (void)updateAfterAppResume;
 - (void)_occurrenceCacheChanged;
+- (void)_ignoredErrorsChanged;
 - (void)_eventStoreChanged:(id)arg1;
 - (void)calendarEventLoader:(id)arg1 occurrencesDidUpdateBetweenStart:(double)arg2 end:(double)arg3 wasEmptyLoad:(_Bool)arg4;
 - (void)_finishedFirstLoad;
 - (void)simulateFirstLoadFinished;
+- (int)countAccountsInInitialSync;
+@property(readonly, nonatomic) int accountsInInitialSyncCount;
 - (int)countSourcesWithErrors;
 @property(readonly, nonatomic) int displayableAccountErrorsCount;
 - (void)_processReloadForCacheOnly:(_Bool)arg1 includingCalendars:(_Bool)arg2 checkCalendarsValid:(_Bool)arg3 checkSources:(_Bool)arg4;
@@ -112,11 +134,20 @@
 @property(readonly, nonatomic) int readWriteCalendarCount;
 @property(readonly, nonatomic) int visibleCalendarCount;
 @property(nonatomic) _Bool allowEventLocationPrediction;
+@property(readonly, nonatomic) _Bool containsDelegateSources;
+- (void)setSourceForSelectedIdentity:(id)arg1;
 - (_Bool)selectedOccurrenceIsSearchMatch;
 @property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
+- (void)updateSourceForSelectedIdentity:(id)arg1 selectedCalendars:(id)arg2;
+- (_Bool)_eventBelongsToCurrentIdentity:(id)arg1;
+- (void)setSelectedCalendarsAndRequestPreferenceSave:(id)arg1;
 @property(retain, nonatomic) NSSet *selectedCalendars; // @synthesize selectedCalendars=_selectedCalendars;
+- (id)calendarsForCurrentIdentityFromCalendars:(id)arg1;
+- (id)_calendarsForCurrentIdentityFromCalendars:(id)arg1 lock:(_Bool)arg2;
 - (void)dealloc;
+- (void)_performCommonInitialization;
 - (id)initWithDataPath:(id)arg1;
+- (id)initWithEventStore:(id)arg1;
 - (id)init;
 
 @end

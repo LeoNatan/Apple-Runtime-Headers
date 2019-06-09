@@ -9,6 +9,7 @@
 @class NSObject, OITSUScaledProgressStorage;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface OITSUScaledProgress : OITSUProgress
 {
     OITSUScaledProgressStorage *mStorage;

@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) int resultType; // @synthesize resultType=_resultType;
 @property(readonly, nonatomic) int priority; // @synthesize priority=_priority;
 - (id)initWithPriority:(int)arg1 resultType:(int)arg2 resultSubtype:(int)arg3;
+- (id)init;
 
 @end
 

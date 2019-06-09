@@ -8,24 +8,27 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEODestinationInfo : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     _Bool _hasDisplayAddress;
     _Bool _hasDisplayName;
     _Bool _hasSpokenAddress;
     _Bool _hasSpokenName;
     struct {
-        unsigned int hasDisplayAddress:1;
-        unsigned int hasDisplayName:1;
-        unsigned int hasSpokenAddress:1;
-        unsigned int hasSpokenName:1;
-    } _has;
+        unsigned int has_hasDisplayAddress:1;
+        unsigned int has_hasDisplayName:1;
+        unsigned int has_hasSpokenAddress:1;
+        unsigned int has_hasSpokenName:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool hasSpokenAddress; // @synthesize hasSpokenAddress=_hasSpokenAddress;
-@property(nonatomic) _Bool hasDisplayAddress; // @synthesize hasDisplayAddress=_hasDisplayAddress;
-@property(nonatomic) _Bool hasSpokenName; // @synthesize hasSpokenName=_hasSpokenName;
-@property(nonatomic) _Bool hasDisplayName; // @synthesize hasDisplayName=_hasDisplayName;
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -33,12 +36,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasHasSpokenAddress;
+@property(nonatomic) _Bool hasSpokenAddress;
 @property(nonatomic) _Bool hasHasDisplayAddress;
+@property(nonatomic) _Bool hasDisplayAddress;
 @property(nonatomic) _Bool hasHasSpokenName;
+@property(nonatomic) _Bool hasSpokenName;
 @property(nonatomic) _Bool hasHasDisplayName;
+@property(nonatomic) _Bool hasDisplayName;
 
 @end
 

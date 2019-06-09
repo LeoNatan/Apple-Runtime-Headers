@@ -6,6 +6,7 @@
 
 #import <OpenDirectoryConfigUI/XSCharacterSetFormatter.h>
 
+__attribute__((visibility("hidden")))
 @interface XSDomainNameFormatter : XSCharacterSetFormatter
 {
     BOOL _allowsMultipleValues;

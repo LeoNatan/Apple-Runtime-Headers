@@ -10,6 +10,7 @@
 
 @class EDResources;
 
+__attribute__((visibility("hidden")))
 @interface EDFill : NSObject <NSCopying>
 {
     EDResources *mResources;

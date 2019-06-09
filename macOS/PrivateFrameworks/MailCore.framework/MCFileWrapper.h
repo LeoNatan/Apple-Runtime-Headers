@@ -6,15 +6,12 @@
 
 #import <Foundation/NSFileWrapper.h>
 
-#import <MailCore/NSSecureCoding-Protocol.h>
-
 @class NSArray, NSDate, NSString, NSURL;
 
-@interface MCFileWrapper : NSFileWrapper <NSSecureCoding>
+@interface MCFileWrapper : NSFileWrapper
 {
     BOOL _isRemoteAttachment;
     NSString *_contentID;
-    NSString *_mailSpecialHandlingType;
     NSString *_mimeType;
     NSArray *_whereFroms;
     NSDate *_dateSent;
@@ -30,7 +27,6 @@
     struct CGSize _imageSize;
 }
 
-+ (BOOL)supportsSecureCoding;
 + (id)uniquedPathForFile:(id)arg1 inDirectory:(id)arg2;
 @property(retain, nonatomic) NSURL *primitiveEmptyAttachment; // @synthesize primitiveEmptyAttachment=_primitiveEmptyAttachment;
 @property(copy, nonatomic) NSString *savedPath; // @synthesize savedPath=_savedPath;
@@ -46,10 +42,8 @@
 @property(retain, nonatomic) NSDate *dateSent; // @synthesize dateSent=_dateSent;
 @property(copy, nonatomic) NSArray *whereFroms; // @synthesize whereFroms=_whereFroms;
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
-@property(copy, nonatomic) NSString *mailSpecialHandlingType; // @synthesize mailSpecialHandlingType=_mailSpecialHandlingType;
 @property(copy, nonatomic) NSString *contentID; // @synthesize contentID=_contentID;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (unsigned long long)approximateSizeAllowingDiskIO:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isALargeAttachment;
 @property(readonly, nonatomic) BOOL isPlaceholder;
@@ -62,6 +56,7 @@
 @property(readonly, nonatomic) NSURL *emptyAttachment;
 @property(readonly, nonatomic) BOOL emptyAttachmentExists;
 - (BOOL)createEmptyAttachmentAtURL:(id)arg1;
+- (id)initRegularFileWithContents:(id)arg1;
 - (id)appleDoubleDataWithFilename:(const char *)arg1 length:(unsigned long long)arg2;
 - (id)appleSingleDataWithFilename:(const char *)arg1 length:(unsigned long long)arg2;
 

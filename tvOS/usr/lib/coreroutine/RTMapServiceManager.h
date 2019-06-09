@@ -17,19 +17,16 @@
 
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
-- (id)mapsURLFromGeoMapItemHandle:(id)arg1 error:(id *)arg2;
-- (void)fetchMapsURLFromGeoMapItemHandle:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)calculateETAFromOrigin:(id)arg1 toDestination:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)mapItemWithIdentifier:(id)arg1 geoMapItem:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 error:(id *)arg5;
 - (void)fetchMapItemWithIdentifier:(id)arg1 geoMapItem:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)mapItemWithIdentifier:(id)arg1 geoMapItemStorage:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 error:(id *)arg5;
 - (void)createMapItemWithIdentifier:(id)arg1 geoMapItemStorage:(id)arg2 source:(unsigned long long)arg3 creationDate:(id)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)fetchMapItemsFromAddressDictionary:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)fetchMapItemsFromAddressString:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)fetchMapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)fetchMapItemsFromLocation:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)fetchMapItemsFromNaturalLanguageQuery:(id)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)fetchMapItemFromHandle:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchMapItemsFromAddressDictionary:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchMapItemsFromAddressString:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchMapItemsFromLocations:(id)arg1 accessPoints:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 options:(id)arg5 handler:(CDUnknownBlockType)arg6;
+- (void)fetchMapItemsFromLocation:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchMapItemsFromNaturalLanguageQuery:(id)arg1 location:(id)arg2 options:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)fetchMapItemFromHandle:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)_proxyForServicingSelector:(SEL)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
 - (void)_shutdown;
 - (id)init;

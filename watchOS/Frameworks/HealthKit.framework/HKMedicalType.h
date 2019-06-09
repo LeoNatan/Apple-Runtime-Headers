@@ -10,5 +10,7 @@
 {
 }
 
++ (id)allTypes;
+
 @end
 

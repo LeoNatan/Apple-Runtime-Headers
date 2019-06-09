@@ -21,6 +21,7 @@
 @property(copy, nonatomic) NSString *region;
 @property(copy, nonatomic) NSString *prefixText;
 @property(copy, nonatomic) NSString *postfixText;
+@property(copy, nonatomic) NSArray *languages;
 @property(copy, nonatomic) NSString *language;
 @property(copy, nonatomic) NSString *keyboardType;
 @property(copy, nonatomic) NSString *keyboardReturnKey;

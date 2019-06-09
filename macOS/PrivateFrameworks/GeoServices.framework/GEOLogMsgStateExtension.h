@@ -15,17 +15,14 @@
     BOOL _hasTableBookingAppEnabled;
     BOOL _hasTableBookingAppInstalled;
     struct {
-        unsigned int hasRideBookingAppEnabled:1;
-        unsigned int hasRideBookingAppInstalled:1;
-        unsigned int hasTableBookingAppEnabled:1;
-        unsigned int hasTableBookingAppInstalled:1;
-    } _has;
+        unsigned int has_hasRideBookingAppEnabled:1;
+        unsigned int has_hasRideBookingAppInstalled:1;
+        unsigned int has_hasTableBookingAppEnabled:1;
+        unsigned int has_hasTableBookingAppInstalled:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL hasTableBookingAppEnabled; // @synthesize hasTableBookingAppEnabled=_hasTableBookingAppEnabled;
-@property(nonatomic) BOOL hasTableBookingAppInstalled; // @synthesize hasTableBookingAppInstalled=_hasTableBookingAppInstalled;
-@property(nonatomic) BOOL hasRideBookingAppEnabled; // @synthesize hasRideBookingAppEnabled=_hasRideBookingAppEnabled;
-@property(nonatomic) BOOL hasRideBookingAppInstalled; // @synthesize hasRideBookingAppInstalled=_hasRideBookingAppInstalled;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -33,12 +30,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasHasTableBookingAppEnabled;
+@property(nonatomic) BOOL hasTableBookingAppEnabled;
 @property(nonatomic) BOOL hasHasTableBookingAppInstalled;
+@property(nonatomic) BOOL hasTableBookingAppInstalled;
 @property(nonatomic) BOOL hasHasRideBookingAppEnabled;
+@property(nonatomic) BOOL hasRideBookingAppEnabled;
 @property(nonatomic) BOOL hasHasRideBookingAppInstalled;
+@property(nonatomic) BOOL hasRideBookingAppInstalled;
 
 @end
 

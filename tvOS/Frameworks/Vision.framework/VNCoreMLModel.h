@@ -9,13 +9,14 @@
 #import <Vision/VNSequencedRequestSupporting-Protocol.h>
 
 @class MLModel, MLObjectBoundingBoxOutputDescription, NSString;
-@protocol NSObject><NSCopying;
+@protocol MLFeatureProvider, NSObject><NSCopying;
 
 @interface VNCoreMLModel : NSObject <VNSequencedRequestSupporting>
 {
     NSString *_uuidStringForCacheIdentifier;
     int _modelType;
     unsigned int _inputImageFormat;
+    id <MLFeatureProvider> _featureProvider;
     MLModel *_model;
     NSString *_inputImageKey;
     NSString *_predictedFeatureKey;
@@ -41,15 +42,16 @@
 @property(retain) NSString *inputImageKey; // @synthesize inputImageKey=_inputImageKey;
 @property int modelType; // @synthesize modelType=_modelType;
 @property(retain) MLModel *model; // @synthesize model=_model;
+@property(retain, nonatomic) id <MLFeatureProvider> featureProvider; // @synthesize featureProvider=_featureProvider;
 - (void).cxx_destruct;
 - (id)sequencedRequestPreviousObservationsKey;
 - (_Bool)wantsSequencedRequestObservationsRecording;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> cachingIdentifier;
 - (id)predictWithScenePrint:(id)arg1 options:(id)arg2 error:(id *)arg3;
-- (id)featureValueFromScenePrint:(id)arg1 dataType:(long long)arg2;
 - (id)predictWithCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2 error:(id *)arg3;
 - (void)_updateModelWithFlexibleImageConstraintUsingWidth:(long long)arg1 height:(long long)arg2;
 - (_Bool)setupInputImageFromModelDescription:(id)arg1;
+@property(copy, nonatomic) NSString *inputImageFeatureName;
 - (id)initWithMLModel:(id)arg1 error:(id *)arg2;
 
 @end

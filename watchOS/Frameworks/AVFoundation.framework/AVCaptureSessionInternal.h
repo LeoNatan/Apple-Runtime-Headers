@@ -8,6 +8,7 @@
 
 @class AVCaptureDevice, AVCaptureSessionConfiguration, AVRunLoopCondition, AVWeakReference, FigCaptureSessionConfiguration, NSError, NSHashTable, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureSessionInternal : NSObject
 {
     AVWeakReference *weakReference;

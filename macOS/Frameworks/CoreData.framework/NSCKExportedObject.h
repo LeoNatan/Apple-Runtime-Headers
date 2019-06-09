@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)entityPath;
 @property(nonatomic) long long changeType;
 @property(nonatomic) unsigned long long type;
 

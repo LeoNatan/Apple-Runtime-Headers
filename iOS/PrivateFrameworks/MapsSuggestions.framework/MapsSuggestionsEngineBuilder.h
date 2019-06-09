@@ -8,8 +8,8 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
-@protocol MapsSuggestionsLocationUpdater, MapsSuggestionsStrategy;
+@class MapsSuggestionsContacts, MapsSuggestionsRoutine, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
+@protocol MapsSuggestionsLocationUpdater, MapsSuggestionsNetworkRequester, MapsSuggestionsRoutineRequester, MapsSuggestionsShortcutStorage, MapsSuggestionsShortcutSuggestor, MapsSuggestionsStrategy;
 
 @interface MapsSuggestionsEngineBuilder : NSObject <MapsSuggestionsObject>
 {
@@ -27,6 +27,12 @@
     struct NSMutableArray *_excludeImprovers;
     struct NSMutableArray *_excludeDedupers;
     struct NSMutableDictionary *_titleFormatters;
+    id <MapsSuggestionsNetworkRequester> _networkRequester;
+    id <MapsSuggestionsRoutineRequester> _routineRequester;
+    MapsSuggestionsRoutine *_routine;
+    MapsSuggestionsContacts *_contacts;
+    id <MapsSuggestionsShortcutStorage> _shortcutStorage;
+    id <MapsSuggestionsShortcutSuggestor> _shortcutSuggestor;
 }
 
 + (id)simpleStrategy;
@@ -36,6 +42,12 @@
 + (id)_forPhone;
 + (id)forDevice;
 + (id)currentEngine;
+@property(retain, nonatomic) id <MapsSuggestionsShortcutSuggestor> shortcutSuggestor; // @synthesize shortcutSuggestor=_shortcutSuggestor;
+@property(retain, nonatomic) id <MapsSuggestionsShortcutStorage> shortcutStorage; // @synthesize shortcutStorage=_shortcutStorage;
+@property(retain, nonatomic) MapsSuggestionsContacts *contacts; // @synthesize contacts=_contacts;
+@property(retain, nonatomic) MapsSuggestionsRoutine *routine; // @synthesize routine=_routine;
+@property(retain, nonatomic) id <MapsSuggestionsRoutineRequester> routineRequester; // @synthesize routineRequester=_routineRequester;
+@property(retain, nonatomic) id <MapsSuggestionsNetworkRequester> networkRequester; // @synthesize networkRequester=_networkRequester;
 @property(retain, nonatomic) NSMutableDictionary *titleFormatters; // @synthesize titleFormatters=_titleFormatters;
 @property(retain, nonatomic) NSMutableArray *excludeDedupers; // @synthesize excludeDedupers=_excludeDedupers;
 @property(retain, nonatomic) NSMutableArray *excludeImprovers; // @synthesize excludeImprovers=_excludeImprovers;
@@ -61,6 +73,7 @@
 - (id)withImprovers:(id)arg1;
 - (id)withPostFilters:(struct NSSet *)arg1;
 - (id)withPreFilters:(struct NSSet *)arg1;
+- (id)withFavorites;
 - (id)withoutTracker;
 - (id)withLocationUpdater:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;

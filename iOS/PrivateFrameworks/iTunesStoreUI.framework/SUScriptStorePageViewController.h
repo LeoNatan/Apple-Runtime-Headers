@@ -17,6 +17,7 @@
 + (id)webScriptNameForSelector:(SEL)arg1;
 + (id)webScriptNameForKeyName:(id)arg1;
 + (_Bool)copyURLStrings:(id *)arg1 forValue:(id)arg2;
+- (void).cxx_destruct;
 - (id)scriptAttributeKeys;
 - (id)attributeKeys;
 - (id)_storePageViewController;
@@ -57,7 +58,6 @@
 - (id)newNativeViewController;
 @property(readonly) NSArray *URLStrings;
 - (void)applyURLStrings:(id)arg1 toViewController:(id)arg2;
-- (void)dealloc;
 - (id)initWithURLStrings:(id)arg1;
 - (id)init;
 

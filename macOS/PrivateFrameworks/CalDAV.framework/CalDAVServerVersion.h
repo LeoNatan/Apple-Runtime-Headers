@@ -13,7 +13,6 @@
 @interface CalDAVServerVersion : NSObject <NSCopying>
 {
     BOOL _supportsTimeRangeFilter;
-    BOOL _supportsTodoTimeRangeFilter;
     BOOL _supportsTimeRangeFilterWithoutEndDate;
     BOOL _supportsTimeRangeFilterOnInbox;
     BOOL _supportsAutoSchedule;
@@ -72,7 +71,6 @@
 @property(nonatomic) BOOL supportsAutoSchedule; // @synthesize supportsAutoSchedule=_supportsAutoSchedule;
 @property(nonatomic) BOOL supportsTimeRangeFilterOnInbox; // @synthesize supportsTimeRangeFilterOnInbox=_supportsTimeRangeFilterOnInbox;
 @property(nonatomic) BOOL supportsTimeRangeFilterWithoutEndDate; // @synthesize supportsTimeRangeFilterWithoutEndDate=_supportsTimeRangeFilterWithoutEndDate;
-@property(nonatomic) BOOL supportsTodoTimeRangeFilter; // @synthesize supportsTodoTimeRangeFilter=_supportsTodoTimeRangeFilter;
 @property(nonatomic) BOOL supportsTimeRangeFilter; // @synthesize supportsTimeRangeFilter=_supportsTimeRangeFilter;
 @property(nonatomic) double version; // @synthesize version=_version;
 - (void).cxx_destruct;

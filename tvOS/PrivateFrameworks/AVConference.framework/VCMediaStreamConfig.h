@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     long long _direction;
     VCNetworkAddress *_localAddress;
     NSString *_cName;
+    unsigned int _localSSRC;
     VCNetworkAddress *_remoteAddress;
     unsigned int _remoteSSRC;
     unsigned long long _recommendedMTU;
@@ -32,11 +33,13 @@ __attribute__((visibility("hidden")))
     long long _SRTCPCipherSuite;
     _Bool _rtcpTimeOutEnabled;
     double _rtcpTimeOutInterval;
+    _Bool _rtcpReceiveCallbackEnabled;
     unsigned short _rtcpRemotePort;
     _Bool _rateAdaptationEnabled;
     VCMediaStreamMultiwayConfig *_multiwayConfig;
 }
 
+@property(nonatomic, getter=isRTCPReceiveCallbackEnabled) _Bool rtcpReceiveCallbackEnabled; // @synthesize rtcpReceiveCallbackEnabled=_rtcpReceiveCallbackEnabled;
 @property(retain, nonatomic) VCMediaStreamMultiwayConfig *multiwayConfig; // @synthesize multiwayConfig=_multiwayConfig;
 @property(nonatomic, getter=isRateAdaptationEnabled) _Bool rateAdaptationEnabled; // @synthesize rateAdaptationEnabled=_rateAdaptationEnabled;
 @property(readonly, nonatomic) NSDictionary *txPayloadMap; // @synthesize txPayloadMap=_txPayloadMap;
@@ -57,6 +60,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned short rtcpRemotePort; // @synthesize rtcpRemotePort=_rtcpRemotePort;
 @property(nonatomic, getter=isRTCPEnabled) _Bool rtcpEnabled; // @synthesize rtcpEnabled=_rtcpEnabled;
 @property(nonatomic) unsigned int remoteSSRC; // @synthesize remoteSSRC=_remoteSSRC;
+@property(nonatomic) unsigned int localSSRC; // @synthesize localSSRC=_localSSRC;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
 @property(copy, nonatomic) NSString *cName; // @synthesize cName=_cName;
 @property(retain, nonatomic) VCNetworkAddress *remoteAddress; // @synthesize remoteAddress=_remoteAddress;

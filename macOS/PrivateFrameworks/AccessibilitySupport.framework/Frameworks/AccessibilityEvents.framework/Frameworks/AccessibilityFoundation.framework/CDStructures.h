@@ -44,3 +44,8 @@ typedef struct {
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
 
+typedef struct {
+    struct ProcessSerialNumber _field1;
+    struct ProcessSerialNumber _field2;
+} CDStruct_c59e237a;
+

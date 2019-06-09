@@ -9,6 +9,7 @@
 @class AVAsset, AVDisplayManager, AVMediaPlayerDelegate, AVPlayer, AVPlayerController, AVPlayerItem, AVPlayerViewController, AVTimeRangeCollection, NSMutableArray, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AVMediaRemoteManager : NSObject
 {
     void *_contentItemRef;
@@ -70,6 +71,7 @@
 - (id)_nowPlayingInfo;
 - (void)_scaleImage:(id)arg1 toSize:(struct CGSize)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fetchNowPlayingInfoArtworkForSize:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_determineArtworkAvailability:(CDUnknownBlockType)arg1;
 - (id)_metadataForPlayerItem:(id)arg1 identifiers:(id)arg2;
 - (void)_fetchNowPlayingInfo:(CDUnknownBlockType)arg1;
 - (id)_externalContentIdentifier;

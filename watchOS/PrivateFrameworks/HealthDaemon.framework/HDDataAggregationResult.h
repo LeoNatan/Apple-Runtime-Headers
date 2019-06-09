@@ -6,21 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
-@protocol HDCollectedSensorDatum;
+@class HDDataAggregationState, NSArray;
 
 @interface HDDataAggregationResult : NSObject
 {
-    NSArray *_aggregatedObjects;
-    NSArray *_remainingSensorData;
-    id <HDCollectedSensorDatum> _lastSensorData;
+    HDDataAggregationState *_aggregationState;
+    NSArray *_consumedSensorData;
+    CDUnknownBlockType _persistenceHandler;
 }
 
-@property(readonly, copy, nonatomic) id <HDCollectedSensorDatum> lastSensorData; // @synthesize lastSensorData=_lastSensorData;
-@property(readonly, copy, nonatomic) NSArray *remainingSensorData; // @synthesize remainingSensorData=_remainingSensorData;
-@property(readonly, copy, nonatomic) NSArray *aggregatedObjects; // @synthesize aggregatedObjects=_aggregatedObjects;
+@property(readonly, copy, nonatomic) CDUnknownBlockType persistenceHandler; // @synthesize persistenceHandler=_persistenceHandler;
+@property(readonly, copy, nonatomic) NSArray *consumedSensorData; // @synthesize consumedSensorData=_consumedSensorData;
+@property(readonly, copy, nonatomic) HDDataAggregationState *aggregationState; // @synthesize aggregationState=_aggregationState;
 - (void).cxx_destruct;
-- (id)initWithAggregatedObjects:(id)arg1 remainingSensorData:(id)arg2 lastSensorData:(id)arg3;
+- (id)initWithResultingAggregationState:(id)arg1 consumedSensorData:(id)arg2 persistenceHandler:(CDUnknownBlockType)arg3;
 
 @end
 

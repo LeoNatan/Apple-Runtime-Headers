@@ -7,6 +7,10 @@
 #import <Foundation/NSMapTable.h>
 
 @interface NSMapTable (TSUAdditions)
++ (id)newTspWeakObjectsMapTableWithCapacity:(unsigned long long)arg1;
++ (id)newTspWeakObjectsMapTable;
++ (id)newTspStrongObjectsMapTableWithCapacity:(unsigned long long)arg1;
++ (id)newTspStrongObjectsMapTable;
 - (void)tsu_enumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)tsu_allObjects;
 - (id)tsu_allKeys;
@@ -14,5 +18,11 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned long long)arg2;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
+@property(readonly, nonatomic) _Bool tsp_isWeakObjectMapTable;
+- (void)tsp_enumerateIdentifiersAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)tsp_enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)tsp_removeObjectForIdentifier:(long long)arg1;
+- (id)tsp_objectForIdentifier:(long long)arg1;
+- (void)tsp_setObject:(id)arg1 forIdentifier:(long long)arg2;
 @end
 

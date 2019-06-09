@@ -22,11 +22,8 @@
 @property(readonly, nonatomic) NSMutableSet *operations; // @synthesize operations=_operations;
 @property(readonly, nonatomic) NSString *text; // @synthesize text=_text;
 @property(readonly, nonatomic) id <MFContactsSearchConsumer> consumer; // @synthesize consumer=_consumer;
-- (_Bool)consumerRespondsToNetworkingMethods;
-- (_Bool)consumerRespondsToCorecipientCallbacks;
-- (_Bool)consumerRespondsToAutocompleteCallbacks;
-- (_Bool)consumerRespondsToOldSortingCallbacks;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (_Bool)consumerRespondsToCallbacks;
 - (_Bool)done;
 
 @end

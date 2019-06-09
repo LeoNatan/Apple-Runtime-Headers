@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_libraryVersions;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)libraryVersionType;
-@property(retain, nonatomic) NSMutableArray *libraryVersions; // @synthesize libraryVersions=_libraryVersions;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)libraryVersionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)libraryVersionsCount;
 - (void)addLibraryVersion:(id)arg1;
 - (void)clearLibraryVersions;
+@property(retain, nonatomic) NSMutableArray *libraryVersions;
 
 @end
 

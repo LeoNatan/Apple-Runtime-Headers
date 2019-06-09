@@ -9,6 +9,7 @@
 @class SKUIClientContext, SKUIFacebookLikeStatus, SKUIReviewsFacebookView;
 @protocol SKUIReviewsFacebookViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewsFacebookViewController : UIViewController
 {
     SKUIClientContext *_clientContext;

@@ -6,7 +6,7 @@
 
 #import <PassKitUI/NSObject-Protocol.h>
 
-@class CRCameraReader, NSArray, NSError, NSString;
+@class CRCameraReader, CRCameraReaderOutput, NSArray, NSAttributedString, NSError, NSString;
 
 @protocol CRCameraReaderDelegate <NSObject>
 - (void)cameraReader:(CRCameraReader *)arg1 didFailWithError:(NSError *)arg2;
@@ -14,6 +14,7 @@
 - (void)cameraReaderDidCancel:(CRCameraReader *)arg1;
 
 @optional
+- (NSAttributedString *)cameraReader:(CRCameraReader *)arg1 provideOverlayTextForRecognizedObject:(CRCameraReaderOutput *)arg2;
 - (BOOL)cameraReader:(CRCameraReader *)arg1 shouldReturnQRCode:(NSString *)arg2;
 - (void)cameraReader:(CRCameraReader *)arg1 didRecognizedNewObjects:(NSArray *)arg2;
 - (void)cameraReaderDidFindTarget:(CRCameraReader *)arg1 withCorners:(NSArray *)arg2;

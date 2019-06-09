@@ -19,6 +19,8 @@
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 - (void).cxx_destruct;
+- (void)loadBackupFromFile:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)saveBackupToFile:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)backupFileAtPath:(id)arg1;
 - (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2 cloudEnabled:(_Bool)arg3;
 - (void)synchronizeNanoDomain:(id)arg1 keys:(id)arg2;

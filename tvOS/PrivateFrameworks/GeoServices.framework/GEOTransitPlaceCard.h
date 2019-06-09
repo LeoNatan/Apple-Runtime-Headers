@@ -8,22 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOTransitDepartureSequenceUsage, NSString;
+@class GEOTransitDepartureSequenceUsage, NSString, PBDataReader;
 
 @interface GEOTransitPlaceCard : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_incidentType;
-    int _transitCategory;
     GEOTransitDepartureSequenceUsage *_transitDepartureSequenceUsage;
     NSString *_transitSystemName;
+    int _transitCategory;
     struct {
-        unsigned int transitCategory:1;
-    } _has;
+        unsigned int has_transitCategory:1;
+        unsigned int read_incidentType:1;
+        unsigned int read_transitDepartureSequenceUsage:1;
+        unsigned int read_transitSystemName:1;
+        unsigned int wrote_incidentType:1;
+        unsigned int wrote_transitDepartureSequenceUsage:1;
+        unsigned int wrote_transitSystemName:1;
+        unsigned int wrote_transitCategory:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *incidentType; // @synthesize incidentType=_incidentType;
-@property(retain, nonatomic) GEOTransitDepartureSequenceUsage *transitDepartureSequenceUsage; // @synthesize transitDepartureSequenceUsage=_transitDepartureSequenceUsage;
-@property(retain, nonatomic) NSString *transitSystemName; // @synthesize transitSystemName=_transitSystemName;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,15 +39,22 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *incidentType;
 @property(readonly, nonatomic) _Bool hasIncidentType;
+- (void)_readIncidentType;
+@property(retain, nonatomic) GEOTransitDepartureSequenceUsage *transitDepartureSequenceUsage;
 @property(readonly, nonatomic) _Bool hasTransitDepartureSequenceUsage;
+- (void)_readTransitDepartureSequenceUsage;
+@property(retain, nonatomic) NSString *transitSystemName;
 @property(readonly, nonatomic) _Bool hasTransitSystemName;
+- (void)_readTransitSystemName;
 - (int)StringAsTransitCategory:(id)arg1;
 - (id)transitCategoryAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransitCategory;
-@property(nonatomic) int transitCategory; // @synthesize transitCategory=_transitCategory;
+@property(nonatomic) int transitCategory;
 
 @end
 

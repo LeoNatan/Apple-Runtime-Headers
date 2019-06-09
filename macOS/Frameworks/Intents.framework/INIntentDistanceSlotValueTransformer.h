@@ -10,6 +10,8 @@
 {
 }
 
++ (Class)_intents_resolutionResultClass;
++ (long long)_intents_valueType;
 + (BOOL)allowsReverseTransformation;
 + (Class)reverseTransformedValueClass;
 + (Class)transformedValueClass;

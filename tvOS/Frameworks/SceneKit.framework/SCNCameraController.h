@@ -44,10 +44,10 @@
 -     // Error parsing type: 48@0:8{CGPoint=dd}16{CGSize=dd}32, name: _mapToSphere:inViewport:
 - (_Bool)_isLocationValid:(struct CGPoint)arg1 inViewport:(struct CGSize)arg2;
 - (void)_updateArcballOrientation;
-- (struct)_convertRotationFromWorldToPointOfView:(struct)arg1;
+- (CDStruct_183601bc)_convertRotationFromWorldToPointOfView:(CDStruct_183601bc)arg1;
 - (void)_updateRotation;
 - (void)_capOrientationAnglesToMaximum;
-- (struct)_orientationForMode;
+- (CDStruct_183601bc)_orientationForMode;
 - (void)_rotateByX:(float)arg1 Y:(float)arg2;
 - (void)_translateInCameraSpaceByX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
 -     // Error parsing type: 16@0:8, name: _targetRelativeToPointOfViewParent
@@ -63,7 +63,7 @@
 - (void)frameNodes:(id)arg1;
 - (void)stopInertia;
 - (void)clearRoll;
-- (struct)unrolledWorldOrientation:(out float *)arg1;
+- (CDStruct_183601bc)unrolledWorldOrientation:(out float *)arg1;
 - (_Bool)useOrbitInteractionMode;
 - (void)dollyToTarget:(float)arg1;
 - (void)rollAroundTarget:(float)arg1;

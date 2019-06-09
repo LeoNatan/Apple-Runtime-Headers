@@ -24,7 +24,6 @@
 @property(readonly, nonatomic) NSNumber *availableStorageInBytes;
 @property(readonly, nonatomic) NSNumber *usedStorageInBytes;
 @property(readonly, nonatomic) NSNumber *totalStorageInBytes;
-@property(readonly, nonatomic) NSNumber *totalStorageInByes;
 @property(readonly, nonatomic) NSArray *iCloudMediaUsage;
 @property(readonly, nonatomic) NSArray *usage;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

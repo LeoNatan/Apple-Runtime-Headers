@@ -9,6 +9,7 @@
 @class NSNumber;
 
 @interface HMNumberRange (HFAdditions)
+- (_Bool)hf_isEqual:(id)arg1;
 @property(readonly, nonatomic) NSNumber *hf_representativeValue;
 @end
 

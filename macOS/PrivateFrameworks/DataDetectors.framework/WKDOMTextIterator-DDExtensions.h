@@ -11,5 +11,6 @@
 -     // Error parsing type: @80@0:8^{__DDScanQuery={__CFRuntimeBase=QAQ}^{__DDQueryFragment}qq^?^v}16@24@32@40^c48^@56@64@?72, name: dd_doUrlificationForQuery:forResults:referenceDate:document:DOMWasModified:relevantResults:knownHighlights:URLificationBlock:
 -     // Error parsing type: @32@0:8^{__DDScanQuery={__CFRuntimeBase=QAQ}^{__DDQueryFragment}qq^?^v}16@24, name: dd_collectDDRangesForQuery:forResults:
 -     // Error parsing type: ^{__DDScanQuery={__CFRuntimeBase=QAQ}^{__DDQueryFragment}qq^?^v}24@0:8^@16, name: dd_newQueryStopRange:
+- (BOOL)dd_checkCurrentRangeAgainstString:(struct __CFString *)arg1;
 @end
 

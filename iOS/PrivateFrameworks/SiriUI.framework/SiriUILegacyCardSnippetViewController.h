@@ -16,6 +16,8 @@
 + (void)initialize;
 - (id)snippet;
 - (void).cxx_destruct;
+- (void)cardViewControllerDidLoad:(id)arg1;
+- (_Bool)cardViewController:(id)arg1 shouldLoadIdentifiedCardSectionViewProvidersWithProviderManager:(id)arg2;
 - (Class)transparentHeaderViewClass;
 - (void)wasAddedToTranscript;
 - (void)siriDidDeactivate;

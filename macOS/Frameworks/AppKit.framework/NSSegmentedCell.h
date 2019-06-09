@@ -14,26 +14,9 @@
     long long _selectedSegment;
     long long _keySegment;
     struct CGRect _lastBounds;
-    struct {
-        unsigned int trackingMode:3;
-        unsigned int trimmedLabels:1;
-        unsigned int drawing:1;
-        unsigned int reserved1:2;
-        unsigned int recalcToolTips:1;
-        unsigned int usesWindowsStyle:1;
-        unsigned int dontShowSelectedAndPressedAppearance:1;
-        unsigned int menuShouldBeUniquedAgainstMain:1;
-        unsigned int style:8;
-        unsigned int flatMinX:1;
-        unsigned int flatMaxX:1;
-        unsigned int segmentedSeparated:1;
-        unsigned int animateNextLayout:1;
-        unsigned int reserved:9;
-    } _seFlags;
+    CDStruct_bdbd3e0b _seFlags;
     id _segmentTrackingInfo;
     id _menuUniquer;
-    long long _reserved3;
-    long long _reserved4;
 }
 
 + (BOOL)prefersTrackingUntilMouseUp;
@@ -78,6 +61,7 @@
 - (void)_trackSelectedItemMenu;
 - (void)_calculateSelectedSegmentForPoint:(struct CGPoint)arg1;
 - (long long)indexOfSegmentContainingPoint:(struct CGPoint)arg1 inCellFrame:(struct CGRect)arg2;
+- (void)_prepareForAccessibilityPerformActionOnSegment:(long long)arg1;
 - (void)performClick:(id)arg1;
 - (void)_performClick:(id)arg1 ignoreMenus:(BOOL)arg2;
 - (void)_performClick:(id)arg1 onSegment:(long long)arg2 ignoreMenus:(BOOL)arg3;
@@ -104,7 +88,8 @@
 - (BOOL)_controlOrCellhasDrawingOverrides:(id)arg1;
 - (BOOL)_usesItemViews;
 - (BOOL)wantsUpdateLayerInView:(id)arg1;
-- (int)_effectiveBackgroundStyleForSegment:(long long)arg1 inView:(id)arg2 forSpecifiedStyle:(long long)arg3 isTemplate:(BOOL)arg4;
+- (id)_effectiveContentStyleForSegment:(long long)arg1 inView:(id)arg2;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (BOOL)_shouldDrawBezel;
 - (BOOL)_shouldUseAlternateImageForSegment:(long long)arg1;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -113,7 +98,6 @@
 - (struct CGRect)focusRingMaskBoundsForFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawFocusRingMaskWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (int)_vibrancyBlendModeForControlView:(id)arg1;
-- (BOOL)canSmoothFontsInFrame:(struct CGRect)arg1 forLayerBackedView:(id)arg2;
 - (struct __CFDictionary *)_copyCoreUIBackgroundDrawOptionsForSegment:(long long)arg1 inView:(id)arg2 drawFlags:(unsigned long long *)arg3;
 - (long long)_segmentHighlightState:(long long)arg1;
 - (unsigned long long)_getVisualStateForSegment:(unsigned long long)arg1 andTrackingMode:(unsigned long long *)arg2 forApplicableStyle:(long long)arg3;
@@ -165,8 +149,8 @@
 - (void)_setIsFlat:(BOOL)arg1 onEdge:(unsigned long long)arg2;
 - (id)accessibilityLabelForSegment:(long long)arg1;
 - (void)setAccessibilityLabel:(id)arg1 forSegment:(long long)arg2;
-- (unsigned long long)alignmentForSegment:(long long)arg1;
-- (void)setAlignment:(unsigned long long)arg1 forSegment:(long long)arg2;
+- (long long)alignmentForSegment:(long long)arg1;
+- (void)setAlignment:(long long)arg1 forSegment:(long long)arg2;
 - (BOOL)isMenuIndicatorShownForSegment:(long long)arg1;
 - (void)setMenuIndicatorShown:(BOOL)arg1 forSegment:(long long)arg2;
 - (BOOL)showsMenuIndicatorForSegment:(long long)arg1;
@@ -201,6 +185,7 @@
 @property long long segmentStyle;
 - (void)setSegmentStyle:(long long)arg1 forceRecalc:(BOOL)arg2;
 - (void)_setFlagsForStyle:(long long)arg1;
+- (void)_updateSegmentItemsActiveStateInView:(id)arg1;
 - (void)_controlViewDidMoveToWindow:(id)arg1;
 - (void)_windowChangedKeyStateInView:(id)arg1;
 - (BOOL)_needRedrawOnWindowChangedKeyState;
@@ -284,7 +269,7 @@
 - (void)_drawBackgroundWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_coreUIDrawSegmentBackground:(long long)arg1 withCellFrame:(struct CGRect)arg2 inView:(id)arg3 maskOnly:(BOOL)arg4;
 - (void)_drawMenuIndicatorForSegment:(long long)arg1 withRect:(struct CGRect)arg2 inView:(id)arg3;
-- (void)_configureLabelCell:(id)arg1 forItem:(id)arg2 controlView:(id)arg3 imageState:(unsigned long long)arg4 backgroundStyle:(long long)arg5;
+- (void)_configureLabelCell:(id)arg1 forItem:(id)arg2 controlView:(id)arg3;
 - (BOOL)_resizeSegmentsForCellFrame:(struct CGRect)arg1;
 - (BOOL)_resizeSegmentsForCellFrame:(struct CGRect)arg1 animate:(BOOL)arg2;
 - (void)_updateLabelViewForSegmentItem:(id)arg1 segmentContentRect:(struct CGRect)arg2 imageState:(unsigned long long)arg3 controlView:(id)arg4;
@@ -302,6 +287,7 @@
 - (id)accessibilityPositionOfChild:(id)arg1;
 - (void)accessibilitySetFocus:(id)arg1 forChild:(id)arg2;
 - (BOOL)accessibilityIsChildFocusable:(id)arg1;
+- (void)accessibilityDrawFocusRing;
 - (BOOL)accessibilityIsFocusedAttributeSettable;
 - (id)accessibilityFocusedAttribute;
 - (id)accessibilityFocusedUIElement;

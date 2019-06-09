@@ -12,13 +12,10 @@
 
 @interface NSSegmentedControl : NSControl <NSUserInterfaceCompression>
 {
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
     id _scAux;
 }
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (void)initialize;
 + (id)segmentedControlWithSegmentImages:(id)arg1 trackingMode:(unsigned long long)arg2 target:(id)arg3 action:(SEL)arg4;
 + (id)segmentedControlWithSegmentLabels:(id)arg1 trackingMode:(unsigned long long)arg2 target:(id)arg3 action:(SEL)arg4;
@@ -59,8 +56,8 @@
 - (long long)tagForSegment:(long long)arg1;
 - (void)setTag:(long long)arg1 forSegment:(long long)arg2;
 - (void)setToolTip:(id)arg1 forSegment:(long long)arg2;
-- (unsigned long long)alignmentForSegment:(long long)arg1;
-- (void)setAlignment:(unsigned long long)arg1 forSegment:(long long)arg2;
+- (long long)alignmentForSegment:(long long)arg1;
+- (void)setAlignment:(long long)arg1 forSegment:(long long)arg2;
 - (BOOL)isEnabledForSegment:(long long)arg1;
 - (void)setEnabled:(BOOL)arg1 forSegment:(long long)arg2;
 - (BOOL)isSelectedForSegment:(long long)arg1;

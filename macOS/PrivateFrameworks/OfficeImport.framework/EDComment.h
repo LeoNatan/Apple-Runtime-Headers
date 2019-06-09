@@ -8,6 +8,7 @@
 
 @class EDString;
 
+__attribute__((visibility("hidden")))
 @interface EDComment : NSObject
 {
     BOOL _visible;

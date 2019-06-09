@@ -37,7 +37,9 @@
 + (void)deleteCloudSharedAssetsWithCloudGUIDs:(id)arg1 info:(id)arg2;
 + (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollection:(id)arg2 mediaAssetType:(unsigned long long)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(_Bool)arg7;
 + (void)downloadPendingAssetsForPersonID:(id)arg1 info:(id)arg2;
++ (void)assetsdProcessMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4 libraryServicesManager:(id)arg5;
 + (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
++ (id)newCloudSharedAssetSaveJobFromAProcessThatIsNotAssetsd;
 @property(retain, nonatomic) NSDictionary *mstreamdInfoDictionary; // @synthesize mstreamdInfoDictionary=_mstreamdInfoDictionary;
 @property(nonatomic) long long jobType; // @synthesize jobType=_jobType;
 @property(retain, nonatomic) NSArray *cloudAssetGUIDsToDelete; // @synthesize cloudAssetGUIDsToDelete=_cloudAssetGUIDsToDelete;
@@ -50,6 +52,7 @@
 @property(nonatomic) unsigned long long currentCloudAssetMediaAssetType; // @synthesize currentCloudAssetMediaAssetType=_currentCloudAssetMediaAssetType;
 @property(retain, nonatomic) NSString *currentCloudAssetGUID; // @synthesize currentCloudAssetGUID=_currentCloudAssetGUID;
 @property(retain, nonatomic) NSString *currentFilePath; // @synthesize currentFilePath=_currentFilePath;
+- (void).cxx_destruct;
 - (unsigned long long)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
 - (void)executeDaemonOperationReplaceRecentlyUploadedOriginalJobType;
 - (void)executeDaemonOperationDeleteAssetJobType;
@@ -72,11 +75,12 @@
 - (_Bool)isProcessingThumbnail;
 - (void)runDaemonSide;
 - (void)run;
+- (void)setupSaveAssetMetadataForCollectionsJobForAssetCollections:(id)arg1 album:(id)arg2 personID:(id)arg3 info:(id)arg4;
 - (long long)daemonOperation;
 - (void)dealloc;
 - (id)description;
-- (id)init;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initWithAssetsdClient:(id)arg1;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
 
 @end

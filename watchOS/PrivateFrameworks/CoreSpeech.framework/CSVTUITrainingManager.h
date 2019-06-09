@@ -10,7 +10,7 @@
 #import <CoreSpeech/CSVTUIAudioSessionDelegate-Protocol.h>
 #import <CoreSpeech/CSVTUITrainingSessionDelegate-Protocol.h>
 
-@class CSVAD2EndpointAnalyzer, CSVTUIKeywordDetector, CSVTUITrainingSession, NSMutableArray, NSString, SFSpeechRecognizer;
+@class CSNNVADEndpointAnalyzer, CSVTUIKeywordDetector, CSVTUITrainingSession, NSMutableArray, NSString, SFSpeechRecognizer;
 @protocol CSVTUIAudioSession, CSVTUITrainingManagerDelegate, OS_dispatch_queue;
 
 @interface CSVTUITrainingManager : NSObject <CSVTUITrainingSessionDelegate, CSVTUIAudioSessionDelegate, CSEndpointAnalyzerDelegate>
@@ -18,7 +18,7 @@
     _Bool _performRMS;
     NSString *_locale;
     id <CSVTUIAudioSession> _audioSession;
-    CSVAD2EndpointAnalyzer *_audioAnalyzer;
+    CSNNVADEndpointAnalyzer *_audioAnalyzer;
     CSVTUIKeywordDetector *_keywordDetector;
     NSMutableArray *_trainingSessions;
     CSVTUITrainingSession *_currentTrainingSession;

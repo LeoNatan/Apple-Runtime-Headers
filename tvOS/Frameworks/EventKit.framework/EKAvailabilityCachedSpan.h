@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 - (void).cxx_destruct;
 - (id)description;
+- (id)initWithSpan:(id)arg1;
 
 @end
 

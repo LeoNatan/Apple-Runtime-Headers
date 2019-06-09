@@ -36,6 +36,7 @@
 - (oneway void)notifyAboutActivationWithError:(id)arg1;
 - (void)launchAfterDelay:(double)arg1;
 - (id)initWithDelegate:(id)arg1 privateDelegate:(id)arg2 delegateQueue:(id)arg3;
+- (id)_makeDNSTXTRecordsForPublicRanges:(id)arg1 validateAddresses:(BOOL)arg2 error:(id *)arg3;
 - (id)makeDNSTXTRecordsForPublicRanges:(id)arg1 error:(id *)arg2;
 - (void)setSettings:(id)arg1;
 - (void)settings;

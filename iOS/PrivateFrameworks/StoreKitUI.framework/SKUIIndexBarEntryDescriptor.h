@@ -8,6 +8,7 @@
 
 @class NSAttributedString, SKUIArtwork, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIndexBarEntryDescriptor : NSObject
 {
     long long _entryDescriptorType;

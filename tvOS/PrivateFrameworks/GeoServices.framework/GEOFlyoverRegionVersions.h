@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _regionsSpace;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setRegions:(struct GEOFlyoverRegion *)arg1 count:(unsigned long long)arg2;

@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     ODDLayoutNode *mRootNode;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)rootNode;
-- (void)dealloc;
 - (id)init;
 
 @end

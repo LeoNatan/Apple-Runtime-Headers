@@ -23,7 +23,7 @@
 - (id)description;
 - (_Bool)hasSubitemForIndexPathRow:(unsigned int)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
-- (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (id)cellForSubitemAtIndex:(unsigned int)arg1 withTraitCollection:(id)arg2;
 - (id)itemAtIndex:(unsigned int)arg1 subitemIndex:(unsigned int *)arg2;
 - (id)itemAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfRows;

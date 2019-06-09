@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UITextPasteSession-Protocol.h>
 
-@class NSAttributedString, NSString, UITextPasteController, UITextPasteCoordinator, UITextRange;
+@class NSArray, NSAttributedString, NSString, UITextPasteController, UITextPasteCoordinator, UITextRange;
 @protocol UITextPasteSessionDelegate, _UITextPasteProgressSupport;
 
 __attribute__((visibility("hidden")))
@@ -21,8 +21,10 @@ __attribute__((visibility("hidden")))
     UITextRange *_range;
     id <_UITextPasteProgressSupport> _progressSupport;
     NSAttributedString *_pasteResult;
+    NSArray *_originalItems;
 }
 
+@property(copy, nonatomic) NSArray *originalItems; // @synthesize originalItems=_originalItems;
 @property(retain, nonatomic) NSAttributedString *pasteResult; // @synthesize pasteResult=_pasteResult;
 @property(nonatomic, getter=isPastingBlocked) _Bool pastingBlocked; // @synthesize pastingBlocked=_pastingBlocked;
 @property(retain, nonatomic) id <_UITextPasteProgressSupport> progressSupport; // @synthesize progressSupport=_progressSupport;

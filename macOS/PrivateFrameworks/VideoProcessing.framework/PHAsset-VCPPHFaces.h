@@ -9,8 +9,21 @@
 @interface PHAsset (VCPPHFaces)
 + (BOOL)vcp_usePHFaceExpression;
 + (BOOL)vcp_usePHFace;
++ (id)vcp_fetchAssetsMatchingFingerprint:(id)arg1 forPhotoLibrary:(id)arg2;
++ (id)vcp_fetchOptionsForLibrary:(id)arg1;
 - (int)vcp_queryPHFaces:(unsigned long long *)arg1 results:(id *)arg2;
 - (struct CGRect)vcp_faceRectFrom:(id)arg1;
 - (unsigned long long)vcp_flagsForPHFace:(id)arg1 withFaceRect:(struct CGRect)arg2;
+- (id)vcp_fingerprint:(id)arg1;
+- (id)vcp_modificationDate;
+- (struct CGSize)vcp_originalSize;
+- (id)vcp_typeDescription;
+- (BOOL)vcp_isSdofPhoto;
+- (BOOL)vcp_isLivePhoto;
+- (BOOL)vcp_isPano;
+- (BOOL)vcp_isShortMovie;
+- (BOOL)vcp_isVideoTimelapse;
+- (BOOL)vcp_isVideoSlowmo;
+- (id)vcp_streamingMovieResourceURL;
 @end
 

@@ -55,6 +55,7 @@
 - (id)_imageForUserTrackingMode:(long long)arg1 controlState:(unsigned long long)arg2;
 - (id)_defaultImageForUserTrackingMode:(long long)arg1 controlState:(unsigned long long)arg2;
 - (id)_imageForState:(long long)arg1 controlState:(unsigned long long)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 @property(nonatomic) __weak id <MKUserTrackingView> userTrackingView;
 @property(nonatomic) __weak MKMapView *mapView;
 

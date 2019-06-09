@@ -22,6 +22,7 @@
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset; // @synthesize tertiaryKeyAsset=_tertiaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset; // @synthesize secondaryKeyAsset=_secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *localizedLocationNames;
 @property(readonly, nonatomic) _Bool canShowAvalancheStacks;
 @property(readonly, nonatomic) _Bool canShowComments;
@@ -36,7 +37,6 @@
 @property(readonly, retain, nonatomic) NSString *title;
 @property(readonly, retain, nonatomic) NSString *uuid;
 - (long long)_countOfAssetType:(short)arg1;
-- (void)dealloc;
 - (id)initWithTitle:(id)arg1 assets:(id)arg2;
 
 // Remaining properties

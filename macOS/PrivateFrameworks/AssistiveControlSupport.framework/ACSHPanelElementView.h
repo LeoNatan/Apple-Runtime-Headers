@@ -51,6 +51,7 @@
 @property(retain, nonatomic) ACSHPanelElement *panelElement; // @synthesize panelElement=_panelElement;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)adjustedFontForBaseFontSize:(double)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 allowingGroupViews:(BOOL)arg2;
 - (id)hitTest:(struct CGPoint)arg1;

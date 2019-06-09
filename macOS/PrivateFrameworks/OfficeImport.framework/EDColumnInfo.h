@@ -11,6 +11,7 @@
 
 @class EDReference, EDResources, EDWorksheet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDColumnInfo : NSObject <NSCopying, EDKeyedObject>
 {
     EDResources *mResources;

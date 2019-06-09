@@ -8,6 +8,7 @@
 
 @class CADisplayLink;
 
+__attribute__((visibility("hidden")))
 @interface ISDisplayLink : NSObject
 {
     long long _preferredFramesPerSecond;

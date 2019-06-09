@@ -13,7 +13,7 @@
 
 @interface _TVMonogramDescription : NSObject <NSCopying>
 {
-    _Bool _hasPlaceholder;
+    _Bool _shouldFallBackToSilhouette;
     NSString *_firstName;
     NSString *_lastName;
     NSString *_text;
@@ -21,6 +21,7 @@
     UIFont *_font;
     long long _scaleMode;
     UIColor *_backgroundColor;
+    UIColor *_textColor;
     double _upscaleAdjustment;
     double _cornerRadius;
     UIColor *_fillColor;
@@ -34,10 +35,11 @@
 @property(nonatomic) __weak id <IKNetworkRequestLoader> requestLoader; // @synthesize requestLoader=_requestLoader;
 @property(retain, nonatomic) UIColor *borderColor; // @synthesize borderColor=_borderColor;
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
-@property(nonatomic) _Bool hasPlaceholder; // @synthesize hasPlaceholder=_hasPlaceholder;
+@property(nonatomic) _Bool shouldFallBackToSilhouette; // @synthesize shouldFallBackToSilhouette=_shouldFallBackToSilhouette;
 @property(retain, nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) double upscaleAdjustment; // @synthesize upscaleAdjustment=_upscaleAdjustment;
+@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) long long scaleMode; // @synthesize scaleMode=_scaleMode;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;

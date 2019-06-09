@@ -13,8 +13,8 @@
 
 @interface MPIdentifierSet : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _shouldExcludeFromShuffle;
     long long _deviceLibraryPersistentID;
-    long long _homeSharingLibraryID;
     long long _syncID;
     NSString *_globalPlaylistID;
     long long _storeAdamID;
@@ -56,8 +56,8 @@
 @property(copy, nonatomic) NSArray *formerStoreAdamIDs; // @synthesize formerStoreAdamIDs=_formerStoreAdamIDs;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
 @property(copy, nonatomic) NSString *globalPlaylistID; // @synthesize globalPlaylistID=_globalPlaylistID;
+@property(nonatomic) _Bool shouldExcludeFromShuffle; // @synthesize shouldExcludeFromShuffle=_shouldExcludeFromShuffle;
 @property(nonatomic) long long syncID; // @synthesize syncID=_syncID;
-@property(nonatomic) long long homeSharingLibraryID; // @synthesize homeSharingLibraryID=_homeSharingLibraryID;
 @property(nonatomic) long long deviceLibraryPersistentID; // @synthesize deviceLibraryPersistentID=_deviceLibraryPersistentID;
 - (void).cxx_destruct;
 - (id)identifierDescriptions;

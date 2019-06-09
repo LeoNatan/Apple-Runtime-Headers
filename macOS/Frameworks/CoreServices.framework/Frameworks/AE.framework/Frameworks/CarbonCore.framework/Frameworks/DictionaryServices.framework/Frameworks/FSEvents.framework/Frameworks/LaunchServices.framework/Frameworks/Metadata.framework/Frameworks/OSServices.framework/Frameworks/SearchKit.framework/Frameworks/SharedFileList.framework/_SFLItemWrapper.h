@@ -13,9 +13,9 @@
 __attribute__((visibility("hidden")))
 @interface _SFLItemWrapper : NSObject <SFLInternalItem>
 {
-    id _internalItem;
-    id _listIdentifier;
-    id _bookmark;
+    _SFLItem *_internalItem;
+    SFLBookmark *_bookmark;
+    NSString *_listIdentifier;
 }
 
 @property(copy) NSString *listIdentifier; // @synthesize listIdentifier=_listIdentifier;

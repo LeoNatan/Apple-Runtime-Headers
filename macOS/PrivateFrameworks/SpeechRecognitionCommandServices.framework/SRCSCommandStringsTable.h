@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
+@class NSDictionary, NSString;
 
 @interface SRCSCommandStringsTable : NSObject
 {
+    NSString *_localeIdentifier;
     NSDictionary *_commandStringsCache;
 }
 
@@ -17,7 +18,8 @@
 + (BOOL)isSameLocaleIdentifier:(id)arg1 secondLocaleIdentifier:(id)arg2;
 + (id)componentsFromLocaleIdentifier:(id)arg1;
 + (id)supportedTargetTypes;
-- (id)createCommandStringsDictionaryForLocaleIdentifier:(id)arg1;
+- (void).cxx_destruct;
+- (id)_commandStringsDictionaryForLocaleIdentifier:(id)arg1;
 - (id)warningStringForText:(id)arg1 identifier:(id)arg2 textTable:(id)arg3;
 - (id)rowDataForTargetTypes:(id)arg1;
 - (id)spokenStringPermutationsOfLanguageModelDictionary:(id)arg1 stringsTable:(id)arg2 restrictPermutationsToShortestAndLongest:(BOOL)arg3;
@@ -30,7 +32,8 @@
 - (id)rootCommandIdentifier:(id)arg1 foundTargetType:(id *)arg2;
 - (BOOL)isSupportedCommandIdentifier:(id)arg1 forTargetTypes:(id)arg2;
 - (id)supportedCommandIdentifiersForTargetTypes:(id)arg1;
-- (void)dealloc;
+- (void)_flushCommandStringsTable;
+- (id)_commandStringsTable;
 - (id)initWithLocaleIdentifier:(id)arg1;
 
 @end

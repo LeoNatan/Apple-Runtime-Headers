@@ -9,7 +9,7 @@
 #import <TelephonyUtilities/NSCopying-Protocol.h>
 #import <TelephonyUtilities/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface TUCloudCallingDevice : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,11 +18,11 @@
     NSString *_name;
     NSString *_modelIdentifier;
     NSString *_uniqueID;
-    NSString *_phoneNumberURI;
+    NSArray *_linkedUserURIs;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *phoneNumberURI; // @synthesize phoneNumberURI=_phoneNumberURI;
+@property(copy, nonatomic) NSArray *linkedUserURIs; // @synthesize linkedUserURIs=_linkedUserURIs;
 @property(nonatomic) _Bool supportsRestrictingSecondaryCalling; // @synthesize supportsRestrictingSecondaryCalling=_supportsRestrictingSecondaryCalling;
 @property(nonatomic, getter=isDefaultPairedDevice) _Bool defaultPairedDevice; // @synthesize defaultPairedDevice=_defaultPairedDevice;
 @property(copy, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;

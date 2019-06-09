@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLService.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSObject, PLNSNotificationOperatorComposition, PLSemaphore, PLTimer, PLXPCResponderOperatorComposition;
+@class NSArray, NSDictionary, NSMutableDictionary, NSObject, PLNSNotificationOperatorComposition, PLSemaphore, PLTimer;
 @protocol OS_xpc_object;
 
 @interface PLXPCService : PLService
@@ -22,7 +22,6 @@
     PLTimer *_resetPermissionsForClientsTimer;
     PLNSNotificationOperatorComposition *_dailyTaskNotification;
     PLSemaphore *_satelliteProcessSemaphore;
-    PLXPCResponderOperatorComposition *_presubmissionTestResponder;
 }
 
 + (id)defaults;
@@ -34,7 +33,6 @@
 + (id)entryEventPointDefinitionClientLoggingDrops;
 + (id)entryEventPointDefinitions;
 + (void)load;
-@property(retain) PLXPCResponderOperatorComposition *presubmissionTestResponder; // @synthesize presubmissionTestResponder=_presubmissionTestResponder;
 @property unsigned int responderWaitTime; // @synthesize responderWaitTime=_responderWaitTime;
 @property(retain) PLSemaphore *satelliteProcessSemaphore; // @synthesize satelliteProcessSemaphore=_satelliteProcessSemaphore;
 @property(retain) PLNSNotificationOperatorComposition *dailyTaskNotification; // @synthesize dailyTaskNotification=_dailyTaskNotification;
@@ -63,7 +61,6 @@
 - (void)dailyTasks;
 - (void)initSatelliteProcessSemaphore;
 - (void)initOperatorDependancies;
-- (id)presubmissionTest_testEPLMode:(id)arg1 withParam:(id)arg2;
 - (id)init;
 
 @end

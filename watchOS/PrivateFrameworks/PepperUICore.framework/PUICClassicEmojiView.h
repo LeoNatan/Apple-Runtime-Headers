@@ -9,12 +9,13 @@
 #import <PepperUICore/PUICCollectionViewDelegateFlowLayout-Protocol.h>
 #import <PepperUICore/PUICDiverseEmojiSelectionViewDelegate-Protocol.h>
 #import <PepperUICore/PUICEmojiCollectionViewDelegate-Protocol.h>
+#import <PepperUICore/PUICEmojiSectionDelegate-Protocol.h>
 #import <PepperUICore/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSIndexPath, NSMutableDictionary, NSString, PUICDiverseEmojiSelectionView, PUICEmojiCategoryHeaderView, PUICEmojiCollectionView, PUICSectionedCollectionViewDataSource, UICollectionView;
 @protocol PUICRecentEmojiViewDelegate;
 
-@interface PUICClassicEmojiView : UIView <PUICEmojiCollectionViewDelegate, PUICCollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, PUICDiverseEmojiSelectionViewDelegate>
+@interface PUICClassicEmojiView : UIView <PUICEmojiCollectionViewDelegate, PUICEmojiSectionDelegate, PUICCollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, PUICDiverseEmojiSelectionViewDelegate>
 {
     _Bool _showStickers;
     PUICEmojiCollectionView *_collectionView;
@@ -24,13 +25,17 @@
     PUICDiverseEmojiSelectionView *_diverseEmojiSelectionView;
     NSIndexPath *_indexPathForDiverseEmojiView;
     _Bool _withHeader;
+    NSString *_animojiStickerPackIdentifier;
     id <PUICRecentEmojiViewDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <PUICRecentEmojiViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
-- (id)_emojiForIndexPath:(id)arg1;
+- (id)_animojiStickerForIndexPath:(id)arg1;
+- (id)_animojiStickerPackForIndexPath:(id)arg1;
+- (id)_stickerFromRecentItem:(id)arg1;
+- (id)_emojiOrStickerForIndexPath:(id)arg1;
 - (id)_emojiCategoryIdentifierForSection:(unsigned int)arg1;
 - (id)_sizingHeader;
 - (struct CGPoint)_contentOffsetForProposedContentOffset:(struct CGPoint)arg1;
@@ -43,6 +48,7 @@
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)emojiSection:(id)arg1 needsReloadFromStartIndex:(int)arg2;
 - (void)longPressDidEndForCollectionView:(id)arg1;
 - (void)longPressDidCancelForCollectionView:(id)arg1;
 - (void)collectionView:(id)arg1 longPressDidMoveToPoint:(struct CGPoint)arg2;
@@ -57,6 +63,7 @@
 - (void)_showDiverseEmojiPlatterForEmoji:(id)arg1 atIndexPath:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)configureCollectionViewWithCategoryIdentifiers:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 animojiStickerPackIdentifier:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1 categoryIdentifiers:(id)arg2 withHeader:(_Bool)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 categoryIdentifiers:(id)arg2 showStickers:(_Bool)arg3;
 

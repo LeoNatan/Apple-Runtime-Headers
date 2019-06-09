@@ -9,22 +9,42 @@
 #import <GeoServices/GEOTransitDeparture-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSDate, NSString, PBUnknownFields;
+@class GEOFormattedString, NSDate, NSString, PBDataReader, PBUnknownFields;
+@protocol GEOServerFormattedString;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDDeparture : PBCodable <GEOTransitDeparture, NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _absDepartureTime;
+    double _absLiveDepartureTime;
+    GEOFormattedString *_realTimeStatus;
+    unsigned long long _referenceTripId;
     NSString *_vehicleNumber;
+    _Bool _isCanceled;
     struct {
-        unsigned int absDepartureTime:1;
-    } _has;
+        unsigned int has_absDepartureTime:1;
+        unsigned int has_absLiveDepartureTime:1;
+        unsigned int has_referenceTripId:1;
+        unsigned int has_isCanceled:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_realTimeStatus:1;
+        unsigned int read_vehicleNumber:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_absDepartureTime:1;
+        unsigned int wrote_absLiveDepartureTime:1;
+        unsigned int wrote_realTimeStatus:1;
+        unsigned int wrote_referenceTripId:1;
+        unsigned int wrote_vehicleNumber:1;
+        unsigned int wrote_isCanceled:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *vehicleNumber; // @synthesize vehicleNumber=_vehicleNumber;
-@property(nonatomic) double absDepartureTime; // @synthesize absDepartureTime=_absDepartureTime;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -33,11 +53,30 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) GEOFormattedString *realTimeStatus;
+@property(readonly, nonatomic) _Bool hasRealTimeStatus;
+- (void)_readRealTimeStatus;
+@property(nonatomic) _Bool hasReferenceTripId;
+@property(nonatomic) unsigned long long referenceTripId;
+@property(nonatomic) _Bool hasIsCanceled;
+@property(nonatomic) _Bool isCanceled;
+@property(nonatomic) _Bool hasAbsLiveDepartureTime;
+@property(nonatomic) double absLiveDepartureTime;
+@property(retain, nonatomic) NSString *vehicleNumber;
 @property(readonly, nonatomic) _Bool hasVehicleNumber;
+- (void)_readVehicleNumber;
 @property(nonatomic) _Bool hasAbsDepartureTime;
+@property(nonatomic) double absDepartureTime;
+@property(readonly, nonatomic) _Bool isPastDeparture;
+@property(readonly, nonatomic) unsigned long long tripIdentifier;
+@property(readonly, nonatomic) id <GEOServerFormattedString> liveStatusString;
+@property(readonly, nonatomic) long long liveStatus;
 @property(readonly, nonatomic) NSString *vehicleIdentifier;
+@property(readonly, nonatomic) NSDate *liveDepartureDate;
+@property(readonly, nonatomic) NSDate *scheduledDepartureDate;
 @property(readonly, nonatomic) NSDate *departureDate;
 
 // Remaining properties

@@ -27,8 +27,8 @@
 - (float)settingFontSize;
 - (void)setSettingFontName:(id)arg1;
 - (id)settingFontName;
-- (void)setSettingTextAlignment:(unsigned long long)arg1;
-- (unsigned long long)settingTextAlignment;
+- (void)setSettingTextAlignment:(long long)arg1;
+- (long long)settingTextAlignment;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)settingObjectForKey:(id)arg1;
 - (id)layoutSettingsKeys;

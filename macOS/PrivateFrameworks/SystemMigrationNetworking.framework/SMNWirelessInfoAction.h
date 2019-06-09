@@ -20,9 +20,10 @@
 @property(retain) NSSet *supportedChannels; // @synthesize supportedChannels=_supportedChannels;
 - (void).cxx_destruct;
 - (BOOL)returnsData;
-- (BOOL)setResultFromData:(id)arg1;
+- (BOOL)setResultFromDict:(id)arg1;
 - (id)resultData;
 - (id)description;
+- (id)requestPayload;
 
 @end
 

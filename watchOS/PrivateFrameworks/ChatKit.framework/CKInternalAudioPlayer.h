@@ -11,6 +11,7 @@
 @class AVAudioPlayer, AVPlayer, AVPlayerItem, NSString;
 @protocol CKInternalAudioPlayerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKInternalAudioPlayer : NSObject <AVAudioPlayerDelegate>
 {
     AVAudioPlayer *_avAudioPlayer;

@@ -6,9 +6,10 @@
 
 #import <HealthKit/HKQueryClientInterface-Protocol.h>
 
-@class HKCodableQuantitySeries, NSUUID;
+@class HKCodableQuantitySeries, HKCodableQuantitySeriesEnumerationResultCollection, NSUUID;
 
 @protocol HKQuantitySeriesSampleQueryClientInterface <HKQueryClientInterface>
+- (void)client_deliverEnumerationResults:(HKCodableQuantitySeriesEnumerationResultCollection *)arg1 isFinal:(_Bool)arg2 query:(NSUUID *)arg3;
 - (void)client_deliverQuantitySeries:(HKCodableQuantitySeries *)arg1 seriesAnchor:(long long)arg2 isFinal:(_Bool)arg3 query:(NSUUID *)arg4;
 @end
 

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADPathElement.h>
 
+__attribute__((visibility("hidden")))
 @interface OADToPointPathElement : OADPathElement
 {
     struct OADAdjustPoint mToPoint;

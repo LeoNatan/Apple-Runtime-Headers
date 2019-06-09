@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)entitlementWhitelist;
+- (void)authorizationDidAuthorizeApplePayTrustSignatureCompleteWithResult:(id)arg1;
 - (void)prepareWithPaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleDismissWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleHostApplicationDidCancel;

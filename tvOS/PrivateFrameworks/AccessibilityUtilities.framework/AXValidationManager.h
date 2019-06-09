@@ -22,6 +22,7 @@
     NSString *_overrideProcessName;
     NSMutableArray *_consoleErrorMessages;
     id <AXValidationReportingServices> _validationReportingServices;
+    unsigned long long _numberOfValidations;
     unsigned long long _numberOfValidationWarnings;
     NSMutableArray *_consoleWarningMessages;
 }
@@ -29,6 +30,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *consoleWarningMessages; // @synthesize consoleWarningMessages=_consoleWarningMessages;
 @property(nonatomic) unsigned long long numberOfValidationWarnings; // @synthesize numberOfValidationWarnings=_numberOfValidationWarnings;
+@property(nonatomic) unsigned long long numberOfValidations; // @synthesize numberOfValidations=_numberOfValidations;
 @property(nonatomic) _Bool shouldPerformValidationChecks; // @synthesize shouldPerformValidationChecks=_shouldPerformValidationChecks;
 @property(retain, nonatomic) id <AXValidationReportingServices> validationReportingServices; // @synthesize validationReportingServices=_validationReportingServices;
 @property(nonatomic, getter=isDebugBuild) _Bool debugBuild; // @synthesize debugBuild=_debugBuild;
@@ -66,8 +68,6 @@
 - (void)_generateWarningsForPrefixedMethodNames:(id)arg1 client:(id)arg2 methodType:(int)arg3 methodName:(id)arg4 className:(id)arg5;
 - (id)_nameForMethod:(struct objc_method *)arg1;
 - (void)_iterateMethodsOfType:(int)arg1 onClass:(Class)arg2 block:(CDUnknownBlockType)arg3;
-- (_Bool)client:(id)arg1 validateProtocol:(id)arg2 hasProperty:(id)arg3;
-- (_Bool)validateProtocol:(id)arg1 hasProperty:(id)arg2;
 - (_Bool)client:(id)arg1 validateProtocol:(id)arg2 hasRequiredClassMethod:(id)arg3;
 - (_Bool)validateProtocol:(id)arg1 hasRequiredClassMethod:(id)arg2;
 - (_Bool)client:(id)arg1 validateProtocol:(id)arg2 hasOptionalClassMethod:(id)arg3;
@@ -82,7 +82,9 @@
 - (_Bool)validateProtocol:(id)arg1 conformsToProtocol:(id)arg2;
 - (_Bool)client:(id)arg1 validateClass:(id)arg2 conformsToProtocol:(id)arg3;
 - (_Bool)validateClass:(id)arg1 conformsToProtocol:(id)arg2;
+- (_Bool)client:(id)arg1 validateClass:(id)arg2 hasProperty:(id)arg3 customGetter:(id)arg4 customSetter:(id)arg5 withType:(const char *)arg6;
 - (_Bool)client:(id)arg1 validateClass:(id)arg2 hasProperty:(id)arg3 withType:(const char *)arg4;
+- (_Bool)validateClass:(id)arg1 hasProperty:(id)arg2 customGetter:(id)arg3 customSetter:(id)arg4 withType:(const char *)arg5;
 - (_Bool)validateClass:(id)arg1 hasProperty:(id)arg2 withType:(const char *)arg3;
 - (_Bool)validateClass:(id)arg1 hasInstanceMethod:(id)arg2 withFullSignature:(const char *)arg3;
 - (_Bool)client:(id)arg1 validateClass:(id)arg2 hasInstanceMethod:(id)arg3 withFullSignature:(const char *)arg4;

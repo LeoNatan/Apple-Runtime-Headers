@@ -15,6 +15,7 @@
     double _secondsToExpire;
 }
 
+- (void).cxx_destruct;
 - (void)removeObject:(id)arg1;
 - (void)addObject:(id)arg1;
 - (_Bool)containsObject:(id)arg1;

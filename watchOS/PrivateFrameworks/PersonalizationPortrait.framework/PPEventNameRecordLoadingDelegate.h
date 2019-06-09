@@ -4,13 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PersonalizationPortrait/PPRecordLoadingDelegate.h>
 
-@class NSString;
-
-@interface PPEventNameRecordLoadingDelegate : NSObject
+@interface PPEventNameRecordLoadingDelegate : PPRecordLoadingDelegate
 {
-    NSString *_name;
     CDUnknownBlockType _eventNameRecordsSetup;
     CDUnknownBlockType _eventNameRecordsHandler;
     CDUnknownBlockType _eventNameRecordsCompletion;
@@ -27,8 +24,14 @@
 @property(copy, nonatomic) CDUnknownBlockType eventNameRecordsCompletion; // @synthesize eventNameRecordsCompletion=_eventNameRecordsCompletion;
 @property(copy, nonatomic) CDUnknownBlockType eventNameRecordsHandler; // @synthesize eventNameRecordsHandler=_eventNameRecordsHandler;
 @property(copy, nonatomic) CDUnknownBlockType eventNameRecordsSetup; // @synthesize eventNameRecordsSetup=_eventNameRecordsSetup;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)resetRecordData;
+- (void)recentRecordLoadingCompletion;
+- (unsigned char)recentRecordLoadingHandler:(id)arg1;
+- (unsigned char)recentRecordLoadingSetup;
+- (void)recordLoadingCompletion;
+- (unsigned char)recordLoadingHandler:(id)arg1;
+- (unsigned char)recordLoadingSetup;
 - (id)description;
 - (id)initWithName:(id)arg1;
 

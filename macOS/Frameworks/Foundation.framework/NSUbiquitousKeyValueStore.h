@@ -38,6 +38,7 @@
 - (id)arrayForKey:(id)arg1;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (id)stringForKey:(id)arg1;
+- (id)_remotePreferencesSource;
 - (unsigned long long)maximumTotalDataLength;
 - (unsigned long long)maximumDataLengthPerKey;
 - (unsigned long long)maximumKeyLength;
@@ -45,6 +46,7 @@
 - (void)_sendPingToDaemon;
 - (void)_unregisterFromDaemon;
 - (void)_registerToDaemon;
+- (void)_sourceDidChangePassthroughNotification:(id)arg1;
 - (void)_configurationDidChange;
 - (void)_sourceDidChange:(id)arg1;
 - (BOOL)synchronize;
@@ -74,6 +76,8 @@
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2 additionalStore:(BOOL)arg3;
+- (id)_initWithStoreIdentifier:(id)arg1 usingEndToEndEncryption:(BOOL)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 storeIdentifier:(id)arg2 additionalStore:(BOOL)arg3 storeType:(long long)arg4;
 - (void)_useSourceSyncWithBlock:(CDUnknownBlockType)arg1;
 - (void)_useSourceAsyncWithBlock:(CDUnknownBlockType)arg1;
 - (void)_pleaseSynchronize:(id)arg1;

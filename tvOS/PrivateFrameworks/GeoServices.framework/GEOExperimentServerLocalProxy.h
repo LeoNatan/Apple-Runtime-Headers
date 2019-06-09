@@ -7,18 +7,21 @@
 #import <objc/NSObject.h>
 
 #import <GeoServices/GEOExperimentServerProxy-Protocol.h>
+#import <GeoServices/GEOPListStateCapturing-Protocol.h>
 #import <GeoServices/GEOResourceManifestTileGroupObserver-Protocol.h>
 
-@class GEOABAssignmentRequest, GEOABAssignmentResponse, NSLock, NSString;
+@class GEOABAssignmentRequest, GEOABAssignmentResponse, GEOXPCActivity, NSString;
 @protocol GEOExperimentServerProxyDelegate;
 
-@interface GEOExperimentServerLocalProxy : NSObject <GEOResourceManifestTileGroupObserver, GEOExperimentServerProxy>
+@interface GEOExperimentServerLocalProxy : NSObject <GEOResourceManifestTileGroupObserver, GEOPListStateCapturing, GEOExperimentServerProxy>
 {
     id <GEOExperimentServerProxyDelegate> _delegate;
     GEOABAssignmentResponse *_experimentsInfo;
-    NSLock *_experimentsInfoLock;
+    struct os_unfair_lock_s _experimentsInfoLock;
     GEOABAssignmentRequest *_currentRequest;
-    NSLock *_currentRequestLock;
+    struct os_unfair_lock_s _currentRequestLock;
+    GEOXPCActivity *_activity;
+    unsigned long long _stateCaptureHandle;
 }
 
 + (void)cancelOldActivities;
@@ -26,6 +29,7 @@
 - (void).cxx_destruct;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)_deleteExperimentInfoFromDisk;
+- (id)captureStatePlistWithHints:(struct os_state_hints_s *)arg1;
 - (void)_debug_setBucketIdDictionaryRepresentation:(id)arg1;
 - (void)_debug_setActiveExperimentBranchDictionaryRepresentation:(id)arg1;
 - (void)_debug_fetchAllAvailableExperiments:(CDUnknownBlockType)arg1;
@@ -33,12 +37,13 @@
 - (void)forceUpdate;
 - (void)_writeExperimentInfoToDisk:(id)arg1;
 - (void)_updateIfNecessary;
-- (_Bool)_removeOldExperimentsInfoIfNecessary;
-- (void)_invalidateTileCache:(_Bool)arg1 placesCache:(_Bool)arg2;
+- (void)_notifyExperimentsInfoChanged:(id)arg1 current:(id)arg2;
+- (_Bool)_removeOldExperimentsInfoIfNecessary:(_Bool)arg1;
 - (void)_debug_setQuerySubstring:(id)arg1 forExperimentType:(long long)arg2 dispatcherRequestType:(int)arg3;
 @property(readonly, nonatomic) GEOABAssignmentResponse *experimentsInfo;
 - (void)_executeRefreshWithinTime:(double)arg1;
 - (void)_setupRefreshActivity;
+- (void)abAssignUUIDWithSyncCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)abAssignUUIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)refreshDatasetABStatus:(id)arg1;
 - (void)dealloc;

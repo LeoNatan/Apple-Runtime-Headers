@@ -9,21 +9,23 @@
 #import <DoNotDisturb/NSCopying-Protocol.h>
 #import <DoNotDisturb/NSSecureCoding-Protocol.h>
 
-@class NSDateInterval, NSString;
+@class NSDate, NSDateInterval, NSString;
 
 @interface DNDStateModeAssertionMetadata : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _userRequested;
+    NSString *_clientIdentifier;
     NSString *_modeIdentifier;
     unsigned int _lifetimeType;
     NSDateInterval *_activeDateInterval;
+    NSDate *_userVisibleEndDate;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, copy, nonatomic) NSDate *userVisibleEndDate; // @synthesize userVisibleEndDate=_userVisibleEndDate;
 @property(readonly, copy, nonatomic) NSDateInterval *activeDateInterval; // @synthesize activeDateInterval=_activeDateInterval;
 @property(readonly, nonatomic) unsigned int lifetimeType; // @synthesize lifetimeType=_lifetimeType;
-@property(readonly, nonatomic, getter=isUserRequested) _Bool userRequested; // @synthesize userRequested=_userRequested;
 @property(readonly, copy, nonatomic) NSString *modeIdentifier; // @synthesize modeIdentifier=_modeIdentifier;
+@property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -31,7 +33,7 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithModeIdentifier:(id)arg1 userRequested:(_Bool)arg2 lifetimeType:(unsigned int)arg3 activeDateInterval:(id)arg4;
+- (id)initWithClientIdentifier:(id)arg1 modeIdentifier:(id)arg2 lifetimeType:(unsigned int)arg3 activeDateInterval:(id)arg4 userVisibleEndDate:(id)arg5;
 
 @end
 

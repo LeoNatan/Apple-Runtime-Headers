@@ -45,7 +45,6 @@
 - (void)_addDescriptionIconView;
 - (void)_addDescriptionLabel;
 - (void)_addTitleLabel;
-- (id)labelWithText:(id)arg1 font:(id)arg2;
 - (void)updateUIWithAnimation:(_Bool)arg1;
 - (void)updateHorizontalLabelConstraints;
 - (void)updateVerticalLabelConstraints;

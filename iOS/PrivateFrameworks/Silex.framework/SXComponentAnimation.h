@@ -6,24 +6,15 @@
 
 #import <Silex/SXJSONObject.h>
 
-#import <Silex/SXClassFactoryProtocol-Protocol.h>
-
-@class NSString;
-
-@interface SXComponentAnimation : SXJSONObject <SXClassFactoryProtocol>
+@interface SXComponentAnimation : SXJSONObject
 {
 }
 
-+ (id)typeString;
-+ (void)initializeObject;
++ (void)load;
 - (Class)handlerClass;
 @property(readonly, nonatomic) int transitionBehavior;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 @property(readonly, nonatomic) _Bool userControllable; // @dynamic userControllable;
 
 @end

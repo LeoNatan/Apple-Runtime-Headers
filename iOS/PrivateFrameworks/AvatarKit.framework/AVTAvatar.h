@@ -7,11 +7,10 @@
 #import <objc/NSObject.h>
 
 #import <AvatarKit/NSCopying-Protocol.h>
-#import <AvatarKit/SCNSceneRendererDelegate-Protocol.h>
 
-@class AVTEyeSkinningDescriptor, AVTMemoji, AVTPhysicsController, AVTPupilReflectionCorrectionDescriptor, CAAnimation, NSMutableArray, NSString, SCNAnimationPlayer, SCNNode;
+@class AVTEyeSkinningDescriptor, AVTMemoji, AVTPhysicsController, AVTPupilReflectionCorrectionDescriptor, CAAnimation, NSMutableArray, NSMutableDictionary, SCNAnimationPlayer, SCNNode;
 
-@interface AVTAvatar : NSObject <NSCopying, SCNSceneRendererDelegate>
+@interface AVTAvatar : NSObject <NSCopying>
 {
     AVTMemoji *_avatar;
     SCNNode *_avatarNode;
@@ -22,6 +21,8 @@
     SCNNode *_neckNode;
     SCNNode *_neckPivotNode;
     CDStruct_b01a1f36 *_morphInfoFromARKitBlendShapeIndex;
+    CDStruct_b01a1f36 *_friendlyPoseMorphInfos;
+    unsigned long long _friendlyPoseMorphInfoCount;
     int _transitionCount;
     _Bool _arMode;
     _Bool _optimizedForSnapshot;
@@ -30,12 +31,17 @@
     struct SCNVector3 _lookAt;
     NSMutableArray *_correctiveMorpherDescriptors;
     NSMutableArray *_physicalizedMorpherDescriptors;
+    NSMutableArray *_physicalizedSkeletonDescriptors;
     NSMutableArray *_morpherDrivenMaterialDescriptors;
     AVTPupilReflectionCorrectionDescriptor *_pupilReflectionCorrectionDescriptor;
     AVTEyeSkinningDescriptor *_eyeSkinningDescriptor;
+    NSMutableDictionary *_morpherWeightRemappingDescriptors;
+    NSMutableDictionary *_morpherWeightThresholdDescriptors;
+    NSMutableDictionary *_morpherWeightThresholdStates;
     // Error parsing type: , name: _arOffset
     float _arScale;
     double _physicsScaleFactor;
+    double _lastRenderTime;
     CAAnimation *_bakedAnimation;
     SCNAnimationPlayer *_bakedAnimationPlayer_lazy;
 }
@@ -46,12 +52,9 @@
 + (_Bool)canLoadDataRepresentationWithVersion:(unsigned short)arg1 minimumCompatibleVersion:(unsigned short)arg2 error:(id *)arg3;
 + (void)preloadAvatar:(id)arg1;
 + (struct SCNVector4)applyGazeCorrectionWithInputAngle:translation: /* Error: Ran out of types for this method. */;
-+ (id)animationClips;
-+ (id)animationClipForExpression:(long long)arg1;
-+ (void)initialize;
-+ (id)avatarWithData:(id)arg1 error:(id *)arg2;
-+ (id)avatar;
 - (void).cxx_destruct;
+- (id)arTechniqueName;
+- (_Bool)hasCustomARTechnique;
 - (void)update;
 - (_Bool)_decode:(id)arg1 error:(id *)arg2;
 - (void)_encode:(id)arg1;
@@ -63,10 +66,13 @@
 - (void)animatePhysicsScaleFactor:(double)arg1 duration:(double)arg2;
 - (void)setPhysicsScaleFactor:(double)arg1;
 - (_Bool)isTransitioning;
+- (id)debugPoseJSONRepresentation;
 - (void)setPose:(id)arg1;
 - (id)pose;
 - (void)_resetFaceToRandomPosition;
 - (void)setupFaceTracking;
+- (long long)blendShapeIndexForBlendShapeName:(id)arg1;
+- (id)blendShapeNameForBlendShapeIndex:(unsigned long long)arg1;
 - (CDStruct_b01a1f36)morphInfoForARKitBlendShapeIndex:(unsigned long long)arg1;
 - (void)applyHeadPoseWithTrackingInfo:(id)arg1 gazeCorrection:(_Bool)arg2;
 - (void)applyHeadPoseWithTrackingInfo:(id)arg1;
@@ -74,25 +80,32 @@
 - (void)applyBlendShapesWithTrackingInfo:(id)arg1;
 - (void)setupMorphInfo;
 - (id)effectiveMorphedNodeForTargetName:(id)arg1;
-- (_Bool)morphTargetNameIsDrivenByARKit:(id)arg1;
+- (void)updateAfterAnimationsEvaluatedAtTime:(double)arg1 renderer:(id)arg2;
 - (void)renderer:(id)arg1 didApplyAnimationsAtTime:(double)arg2;
 - (void)didAddToScene:(id)arg1;
 - (void)willRemoveFromScene:(id)arg1;
 - (void)updateEyeOrientationAndReflections;
 - (void)setupEyeOrientationAndReflections;
 - (_Bool)usesSkinningForEyeOrientation;
-- (void)updateMorpherDrivenMaterials;
+- (void)updateMorpherDrivenMaterialsWithDeltaTime:(double)arg1;
 - (void)removeMorpherDrivenMaterialsInHierarchy:(id)arg1;
 - (void)addMorpherDrivenMaterialsInHierarchy:(id)arg1;
 - (void)resetMorpherDrivenMaterials;
-- (void)applyCorrectiveBlendShapes;
-- (void)removeCorrectiveBlendShapesInHierarchy:(id)arg1;
-- (void)addCorrectiveBlendShapesInHierarchy:(id)arg1;
-- (void)resetCorrectiveBlendShapes;
-- (void)evaluatePhysicalizedMorphers;
-- (void)removePhysicalizedMorpherDescriptorsInHierarchy:(id)arg1;
-- (void)addPhysicalizedMorpherDescriptorsInHierarchy:(id)arg1 ignoreUpperNodes:(_Bool)arg2;
-- (void)resetPhysicalizedMorpherDescriptors;
+- (void)applyWeightWithThresholdingForLocation:(id)arg1 weight:(float)arg2 morphInfo:(CDStruct_b01a1f36)arg3;
+- (float)thresholdedWeightAtLocation:(id)arg1 sourceWeight:(float)arg2 time:(double)arg3;
+- (void)resetThresholdingStates;
+- (void)addMorpherWeightThresholdings;
+- (void)resetMorpherWeightThresholdings;
+- (void)addMorpherWeightRemappings;
+- (void)resetMorpherWeightRemappings;
+- (void)applyCorrectiveDescriptors;
+- (void)removeCorrectiveDescriptorsInHierarchy:(id)arg1;
+- (void)addCorrectiveDescriptorsInHierarchy:(id)arg1;
+- (void)resetCorrectiveDescriptors;
+- (void)evaluatePhysicalizedDescriptors;
+- (void)removePhysicalizedDescriptorsInHierarchy:(id)arg1;
+- (void)addPhysicalizedDescriptorsInHierarchy:(id)arg1 ignoreUpperNodes:(_Bool)arg2;
+- (void)resetPhysicalizedDescriptors;
 - (id)descriptorsByRemovingDescriptors:(id)arg1 inHierarchy:(id)arg2 passingTest:(CDUnknownBlockType)arg3;
 - (void)removeMorphingSkinningControllersInHierarchy:(id)arg1;
 - (void)addMorphingSkinningControllersInHierarchy:(id)arg1;
@@ -100,19 +113,13 @@
 - (void)removeCustomBehavioursInHierarchy:(id)arg1;
 - (void)addCustomBehavioursInHierarchy:(id)arg1;
 - (void)resetCustomBehaviours;
-- (id)playAnimationClipForSnapshotting:(id)arg1;
-- (void)stopAndRemoveAnimationClips;
-- (id)playAnimationClip:(id)arg1 usingSceneTime:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (id)playAnimationClip:(id)arg1 usingSceneTime:(_Bool)arg2;
-- (id)playAnimationClip:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (id)playAnimationClip:(id)arg1;
 - (void)updateBindingsOfNode:(id)arg1;
 - (void)updateBindings;
-- (_Bool)_headMayContainsMorphTargetNamed:(id)arg1;
 - (void)lookAt:(struct SCNVector3)arg1;
 - (void)lookAt:(struct SCNVector3)arg1 withDuration:(double)arg2;
 - (struct SCNVector3)currentLookAt;
 - (void)rotateHead:(double)arg1;
+- (float)applyWeightRemapForLocation:(id)arg1 weight:(float)arg2;
 - (void)resetARModeBehaviours;
 @property(nonatomic) _Bool arMode;
 - (void)_updateShaderModifier:(id)arg1 forARMode:(_Bool)arg2 withOnTopMask:(_Bool)arg3;
@@ -128,6 +135,7 @@
 - (id)cameraNode;
 - (id)lightingNode;
 - (void)setAvatarNode:(id)arg1;
+- (void)reinitPhysicsRig;
 - (float)arScale;
 -     // Error parsing type: 16@0:8, name: arOffset
 - (void)dealloc;
@@ -135,12 +143,6 @@
 - (void)avatarCommonInit;
 - (void)setOptimizeForSnapshot:(_Bool)arg1;
 - (_Bool)optimizeForSnapshot;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

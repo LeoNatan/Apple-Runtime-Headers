@@ -6,12 +6,11 @@
 
 #import <CarouselServices/CSLSBackgroundServiceAutoConnecting-Protocol.h>
 #import <CarouselServices/CSLSPrivilegedSnapshotServicing-Protocol.h>
-#import <CarouselServices/CSLSSnapshotServiceDeprecatedProtocol-Protocol.h>
 #import <CarouselServices/CSLSSnapshotServiceProtocol-Protocol.h>
 
 @class NSString;
 
-@protocol CSLSSnapshotServiceServerProtocol <CSLSSnapshotServiceProtocol, CSLSSnapshotServiceDeprecatedProtocol, CSLSPrivilegedSnapshotServicing, CSLSBackgroundServiceAutoConnecting>
+@protocol CSLSSnapshotServiceServerProtocol <CSLSSnapshotServiceProtocol, CSLSPrivilegedSnapshotServicing, CSLSBackgroundServiceAutoConnecting>
 - (void)snapshotAppWithBundleID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 @end
 

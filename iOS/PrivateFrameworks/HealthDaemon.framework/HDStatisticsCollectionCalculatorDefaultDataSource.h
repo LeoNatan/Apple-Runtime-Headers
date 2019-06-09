@@ -8,32 +8,38 @@
 
 #import <HealthDaemon/HDStatisticsCollectionCalculatorDataSource-Protocol.h>
 
-@class HDProfile, HDSQLitePredicate, HKQuantityType, NSNumber, NSSet, NSString;
+@class HDProfile, HDSQLitePredicate, HKQuantityType, NSNumber, NSSet, NSString, _HKFilter;
 
 @interface HDStatisticsCollectionCalculatorDefaultDataSource : NSObject <HDStatisticsCollectionCalculatorDataSource>
 {
     HDSQLitePredicate *_fullPredicate;
+    _Bool _isRealQuantityType;
+    _Bool _includeUnfrozenSeries;
     HDProfile *_profile;
     HKQuantityType *_quantityType;
     HDSQLitePredicate *_predicate;
     NSSet *_restrictedSourceEntities;
+    _HKFilter *_filter;
     NSNumber *_anchor;
     long long _shouldContinueFrequency;
     CDUnknownBlockType _shouldContinueHandler;
 }
 
++ (_Bool)_addValueForQuantitySample:(id)arg1 calculator:(id)arg2 error:(id *)arg3;
++ (_Bool)_addValueForQuantitySeriesSample:(id)arg1 calculator:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
++ (_Bool)_enumerateSampleTypeWithProfile:(id)arg1 predicate:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
++ (_Bool)_enumerateWithProfile:(id)arg1 predicate:(id)arg2 filter:(id)arg3 isQuantityType:(_Bool)arg4 includeUnfrozenSeries:(_Bool)arg5 error:(id *)arg6 block:(CDUnknownBlockType)arg7;
 @property(copy, nonatomic) CDUnknownBlockType shouldContinueHandler; // @synthesize shouldContinueHandler=_shouldContinueHandler;
 @property(nonatomic) long long shouldContinueFrequency; // @synthesize shouldContinueFrequency=_shouldContinueFrequency;
 @property(copy, nonatomic) NSNumber *anchor; // @synthesize anchor=_anchor;
+@property(nonatomic) _Bool includeUnfrozenSeries; // @synthesize includeUnfrozenSeries=_includeUnfrozenSeries;
+@property(copy, nonatomic) _HKFilter *filter; // @synthesize filter=_filter;
 @property(copy, nonatomic) NSSet *restrictedSourceEntities; // @synthesize restrictedSourceEntities=_restrictedSourceEntities;
 @property(copy, nonatomic) HDSQLitePredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, copy, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
-- (_Bool)_addValueForQuantitySample:(id)arg1 calculator:(id)arg2 error:(id *)arg3;
-- (_Bool)_addValueForQuantitySeriesSample:(id)arg1 calculator:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
-- (_Bool)_addValuesForQuantitySamples:(id)arg1 calculator:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
-- (_Bool)_addValuesForQuantitySamples:(id)arg1 calculator:(id)arg2 error:(id *)arg3;
+- (_Bool)_addValuesForQuantitySamples:(id)arg1 calculator:(id)arg2 requiresSeriesValues:(_Bool)arg3 transaction:(id)arg4 error:(id *)arg5;
 - (_Bool)addValuesForQuantitySamples:(id)arg1 calculator:(id)arg2 includeSeries:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)collectionCalculator:(id)arg1 queryForInterval:(id)arg2 error:(id *)arg3 sampleHandler:(CDUnknownBlockType)arg4;
 - (id)initForProfile:(id)arg1 quantityType:(id)arg2 predicate:(id)arg3 restrictedSourceEntities:(id)arg4;

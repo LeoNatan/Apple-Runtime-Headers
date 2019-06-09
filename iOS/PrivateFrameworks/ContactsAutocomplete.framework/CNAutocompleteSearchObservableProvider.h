@@ -26,6 +26,7 @@
 - (id)observableWithWrappedSearchProviderGetter:(CDUnknownBlockType)arg1 name:(id)arg2;
 - (id)calendarServersSearchObservable;
 - (id)directoryServersSearchObservable;
+- (id)localExtensionSearchObservables;
 - (id)predictionsSearchObservableWithUnfilteredResultPromise:(id)arg1;
 - (id)suggestionsSearchObservable;
 - (id)recentsSearchObservable;

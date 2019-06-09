@@ -10,6 +10,21 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGPoint {
+    double _field1;
+    double _field2;
+};
+
+struct CGRect {
+    struct CGPoint _field1;
+    struct CGSize _field2;
+};
+
+struct CGSize {
+    double _field1;
+    double _field2;
+};
+
 struct FeatureInfo {
     id _field1;
     unsigned short _field2;
@@ -71,11 +86,6 @@ struct prs_model_resource_header {
     unsigned int _field2;
     unsigned int _field3;
     unsigned char _field4[0];
-};
-
-struct ranking_index_score_t {
-    unsigned long long lsb;
-    unsigned long long msb;
 };
 
 #pragma mark Typedef'd Structures

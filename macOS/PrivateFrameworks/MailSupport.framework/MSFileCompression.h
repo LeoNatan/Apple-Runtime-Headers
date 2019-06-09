@@ -6,7 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@interface MSFileCompression : NSObject
+#import <MailSupport/EFLoggable-Protocol.h>
+
+@class NSString;
+
+@interface MSFileCompression : NSObject <EFLoggable>
 {
 }
 
@@ -15,10 +19,15 @@
 + (BOOL)_doCompressFile:(const char *)arg1 errorCode:(long long *)arg2;
 + (BOOL)_compressFile:(const char *)arg1 error:(id *)arg2;
 + (BOOL)_compressFileInPlace:(const char *)arg1 error:(id *)arg2;
-+ (BOOL)_compressFile:(const char *)arg1 compressInPlace:(BOOL)arg2 error:(id *)arg3;
-+ (BOOL)compressDirectory:(id)arg1 compressInPlace:(BOOL)arg2 shouldCancel:(CDUnknownBlockType)arg3 error:(id *)arg4;
-+ (BOOL)compressFile:(id)arg1 compressInPlace:(BOOL)arg2 error:(id *)arg3;
++ (BOOL)compressDirectory:(id)arg1 shouldCancel:(CDUnknownBlockType)arg2 error:(id *)arg3;
++ (BOOL)compressFile:(id)arg1 error:(id *)arg2;
 + (id)log;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

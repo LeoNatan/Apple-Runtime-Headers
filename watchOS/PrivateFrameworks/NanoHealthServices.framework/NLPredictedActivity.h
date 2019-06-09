@@ -9,7 +9,7 @@
 #import <NanoHealthServices/NSCopying-Protocol.h>
 #import <NanoHealthServices/NSSecureCoding-Protocol.h>
 
-@class FIUIWorkoutActivityType, NSDate, NSString;
+@class NSDate, NSString;
 
 @interface NLPredictedActivity : NSObject <NSCopying, NSSecureCoding>
 {
@@ -34,10 +34,7 @@
 @property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) FIUIWorkoutActivityType *fiuiAlternateLocationWorkoutActivityType;
 @property(readonly, nonatomic) _Bool activityHasAlternateLocation;
-@property(readonly, nonatomic) FIUIWorkoutActivityType *fiuiWorkoutActivityType;
-- (id)_fiuiWorkoutActivityTypeIndoor:(_Bool)arg1;
 - (id)_stringForState:(int)arg1;
 - (void)setState:(int)arg1;
 - (id)stateString;

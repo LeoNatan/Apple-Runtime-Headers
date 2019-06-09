@@ -6,13 +6,14 @@
 
 #import <Foundation/NSExtensionContext.h>
 
+#import <FileProvider/FPItemHierarchyLookingUp-Protocol.h>
 #import <FileProvider/FPXVendor-Protocol.h>
 
-@class FPXDomainContext, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject, NSString;
+@class FPXDomainContext, NSHashTable, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUserDefaults;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface FPXExtensionContext : NSExtensionContext <FPXVendor>
+@interface FPXExtensionContext : NSExtensionContext <FPXVendor, FPItemHierarchyLookingUp>
 {
     NSMutableSet *_listenerDelegates;
     NSObject<OS_dispatch_queue> *_notificationQueue;
@@ -20,68 +21,82 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_queue;
     NSHashTable *_runningEnumerators;
     NSMutableDictionary *_alternateContentsURLDictionary;
-    NSMutableDictionary *_contextByDomainID;
-    NSMutableDictionary *_domainContextByURL;
+    NSUserDefaults *_userDefaults;
+    FPXDomainContext *_domainContext;
     _Bool _isBeingDeallocated;
-    FPXDomainContext *_defaultDomainContext;
+    _Bool _usesFPFS;
     NSString *_providerIdentifier;
 }
 
++ (Class)principalClass;
++ (void)setPrincipalClass:(Class)arg1;
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+@property(readonly, nonatomic) _Bool usesFPFS; // @synthesize usesFPFS=_usesFPFS;
 @property(readonly, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;
-@property(retain, nonatomic) FPXDomainContext *defaultDomainContext; // @synthesize defaultDomainContext=_defaultDomainContext;
 - (void).cxx_destruct;
-- (void)startOperation:(id)arg1 toFetchDefaultContainerForBundleIdentifier:(id)arg2 englishName:(id)arg3 inDomainIdentifier:(id)arg4 reply:(CDUnknownBlockType)arg5;
-- (void)startOperation:(id)arg1 toFetchItemID:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)startOperation:(id)arg1 toFetchParentForItem:(id)arg2 recursively:(_Bool)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)startOperation:(id)arg1 toCreateFolderWithName:(id)arg2 underParent:(id)arg3 bounceOnCollision:(_Bool)arg4 bounceIndex:(unsigned long long)arg5 reply:(CDUnknownBlockType)arg6;
-- (void)startOperation:(id)arg1 toCreateFolderWithName:(id)arg2 underParent:(id)arg3 bounceOnCollision:(_Bool)arg4 reply:(CDUnknownBlockType)arg5;
-- (void)startOperation:(id)arg1 toDeleteItems:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)startOperation:(id)arg1 toRenameItem:(id)arg2 toNewName:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)startOperation:(id)arg1 toReparentItems:(id)arg2 underParent:(id)arg3 shouldBounce:(_Bool)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
+- (void)importDidFinishWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)signalEnumeratorForMaterializedItemsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)itemForItemID:(id)arg1;
+- (void)wakeForPushWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchCustomPushTopicsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchTrashIdentifiersWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)userInteractionErrorsForPerformingAction:(id)arg1 sourceItems:(id)arg2 destinationItem:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)bulkEvictItemsWithItemIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)wakeForSessionIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)disconnectDomainID:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)fetchPublishingURLForItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchDefaultContainerForBundleIdentifier:(id)arg1 defaultName:(id)arg2 inDomainIdentifier:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)fetchItemID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)fetchHierarchyForItemID:(id)arg1 recursively:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)_createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 bounce:(_Bool)arg5 bounceIndex:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)createItemBasedOnTemplate:(id)arg1 fields:(unsigned long long)arg2 contents:(id)arg3 options:(unsigned long long)arg4 bounce:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)deleteItemsWithIDs:(id)arg1 baseVersions:(id)arg2 options:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)preflightReparentItemID:(id)arg1 underParentID:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_reparentItem:(id)arg1 underParent:(id)arg2 withNewName:(id)arg3 shouldBounce:(_Bool)arg4 bounceIndex:(unsigned long long)arg5 reply:(CDUnknownBlockType)arg6;
-- (void)startOperation:(id)arg1 toImportDocumentsAtURLs:(id)arg2 withSandboxExtensions:(id)arg3 lastUsedDates:(id)arg4 intoFolderWithIdentifier:(id)arg5 bounceOnCollision:(_Bool)arg6 reply:(CDUnknownBlockType)arg7;
-- (void)_importDocumentAtURL:(id)arg1 intoFolderWithIdentifier:(id)arg2 bounceOnCollision:(_Bool)arg3 originalName:(id)arg4 bounceIndex:(unsigned long long)arg5 reply:(CDUnknownBlockType)arg6;
-- (id)_bounceURL:(id)arg1 originalName:(id)arg2 bounceIndex:(unsigned long long)arg3 error:(id *)arg4;
-- (id)_servicesForServiceNames:(id)arg1 itemID:(id)arg2;
-- (void)fetchSupportedServicesForItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)fetchSupportedServicesForDocumentAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_proxyWithCancellationHandler:(id)arg1 forClientOperation:(id)arg2;
-- (void)fetchRemoteFileProviderEndpointForProtocolName:(id)arg1 service:(id)arg2 itemURL:(id)arg3 needsItemURL:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)fetchVendorEndpoint:(CDUnknownBlockType)arg1;
+- (void)fetchOperationServiceEndpoint:(CDUnknownBlockType)arg1;
+- (void)fetchServicesForItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeListenerDelegate:(id)arg1;
 - (void)addListenerDelegate:(id)arg1;
 - (void)enumeratorWasInvalidated:(id)arg1;
-- (void)_startObservingCollectionWithProperties:(id)arg1 observer:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)valuesForAttributes:(id)arg1 forItemAtURL:(id)arg2 allowIdentifiers:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)privilegedValuesForAttributes:(id)arg1 forItemAtURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)directValuesForAttributes:(id)arg1 forItemAtURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchAndStartEnumeratingWithSettings:(id)arg1 observer:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)valuesForAttributes:(id)arg1 forItemID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)startOperation:(id)arg1 toFetchThumbnailsForItemIdentifiers:(id)arg2 size:(struct CGSize)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)trashItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)URLForItemID:(id)arg1 creatingPlaceholderIfMissing:(_Bool)arg2 ignoreAlternateContentsURL:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)_persistedDocumentURLForURL:(id)arg1 itemID:(id)arg2 extension:(id)arg3 shouldCreatePlaceholder:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_persistedDocumentURLForURL:(id)arg1 itemID:(id)arg2 extension:(id)arg3 creatingPlaceholderIfMissing:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)itemForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)itemForItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)identifierForItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)didUpdateAlternateContentsDocumentForDocumentAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setAlternateContentsURL:(id)arg1 onDocumentURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)alternateContentsURLForItemID:(id)arg1;
+- (void)didUpdateAlternateContentsDocumentForDocumentWithItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setAlternateContentsURL:(id)arg1 forDocumentWithItemID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)alternateContentsURLWrapperForItemID:(id)arg1;
 - (void)providePlaceholderAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setFavoriteRanks:(id)arg1 forItemIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setTagsData:(id)arg1 forItemIdentifiers:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setLastUsedDate:(id)arg1 forItemIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)untrashItemsWithIdentifiers:(id)arg1 toDirectoryWithIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)trashItemsWithIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)preflightTrashItemIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dumpIndexStateForDomain:(id)arg1 toFileHandler:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)dropIndexForDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)indexOneBatchInDomain:(id)arg1 fromAnchor:(id)arg2 toAnchor:(id)arg3 updatedItems:(id)arg4 deletedItems:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)indexOneBatchInDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)bulkItemChanges:(id)arg1 changedFields:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_singleItemChange:(id)arg1 changedFields:(unsigned long long)arg2 bounce:(_Bool)arg3 bounceIndex:(unsigned long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)singleItemChange:(id)arg1 changedFields:(unsigned long long)arg2 bounce:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)itemChanged:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)updateExistingContents:(id)arg1 ofItemWithIdentifier:(id)arg2 existingVersion:(id)arg3 toVersion:(id)arg4 request:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (id)contentsForItemWithIdentifier:(id)arg1 version:(id)arg2 request:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)acknowledgeUserVisibleRootDidChangeForDomain:(id)arg1 urlWrapper:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)itemChangedAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)removeTrashedItemsOlderThanDate:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)defaultInstance;
-- (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)dumpInternalStateToTermDumper:(id)arg1 domainIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)removeTrashedItemsOlderThanDate:(id)arg1 domainIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)deleteSearchableItemsWithSpotlightDomainIdentifiers:(id)arg1 domainIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)evictItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startProvidingItemAtURL:(id)arg1 readingOptions:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)didChangeItemID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)updateDomains:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)dropDomainWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_deleteIndexInDomainContexts:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)instanceForItemIDs:(id)arg1;
 - (id)domainContextForItemIDs:(id)arg1;
@@ -91,11 +106,16 @@ __attribute__((visibility("hidden")))
 - (id)domainContextForURL:(id)arg1;
 - (id)instanceForDomainIdentifier:(id)arg1;
 - (id)domainContextForIdentifier:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)sendBlacklistedProcessNamesUpdate;
 - (void)invalidate;
 - (void)dealloc;
 - (void)_setTransaction:(id)arg1;
-- (void)startWithPrincipalInstance:(id)arg1 domains:(id)arg2 alternateContentsDictionary:(id)arg3;
+- (void)beginRequestWithDomain:(id)arg1 alternateContentsDictionary:(id)arg2 usesFPFS:(_Bool)arg3;
 - (id)initWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 contextUUID:(id)arg3;
+- (void)importDocumentAtURL:(id)arg1 intoFolderWithIdentifier:(id)arg2 originalName:(id)arg3 extensionInstance:(id)arg4 reply:(CDUnknownBlockType)arg5;
+- (void)applyItemChange:(id)arg1 baseVersion:(id)arg2 contents:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)applyFieldChangesToItem:(id)arg1 baseVersion:(id)arg2 changedFields:(unsigned long long)arg3 contents:(id)arg4 lastKnownVendorItem:(id)arg5 extensionInstance:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
 
 @end
 

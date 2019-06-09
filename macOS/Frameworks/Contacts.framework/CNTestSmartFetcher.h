@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) NSArray *optionalKeys; // @synthesize optionalKeys=_optionalKeys;
 @property(readonly, nonatomic) NSArray *requiredKeys; // @synthesize requiredKeys=_requiredKeys;
 - (void).cxx_destruct;
+- (id)_cn_ignorableKeys;
 - (id)_cn_optionalKeys;
 - (id)_cn_requiredKeys;
 - (void)_cn_executeGetterForRepresentedKeys:(CDUnknownBlockType)arg1;

@@ -10,8 +10,9 @@
 
 @interface BLTBulletinStoreReplyInfoItem : NSObject
 {
+    _Bool _singleNotificationExpected;
     NSString *_publisherMatchID;
-    NSString *_localSectionID;
+    NSString *_sectionMatchID;
     NSDate *_transmissionDate;
     NSDate *_expiration;
     unsigned int _state;
@@ -22,11 +23,12 @@
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
 @property(retain, nonatomic) NSDate *transmissionDate; // @synthesize transmissionDate=_transmissionDate;
-@property(copy, nonatomic) NSString *localSectionID; // @synthesize localSectionID=_localSectionID;
+@property(copy, nonatomic) NSString *sectionMatchID; // @synthesize sectionMatchID=_sectionMatchID;
+@property(nonatomic) _Bool singleNotificationExpected; // @synthesize singleNotificationExpected=_singleNotificationExpected;
 @property(copy, nonatomic) NSString *publisherMatchID; // @synthesize publisherMatchID=_publisherMatchID;
 - (void).cxx_destruct;
-- (id)initWithPublisherMatchID:(id)arg1 localSectionID:(id)arg2 transmissionDate:(id)arg3 expiration:(id)arg4 state:(unsigned int)arg5;
-- (id)initWithPublisherMatchID:(id)arg1 localSectionID:(id)arg2 expiration:(id)arg3;
+- (id)initWithPublisherMatchID:(id)arg1 sectionMatchID:(id)arg2 transmissionDate:(id)arg3 expiration:(id)arg4 state:(unsigned int)arg5 singleNotificationExpected:(_Bool)arg6;
+- (id)initWithPublisherMatchID:(id)arg1 sectionMatchID:(id)arg2 expiration:(id)arg3;
 
 @end
 

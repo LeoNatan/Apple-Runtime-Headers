@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) _Bool shouldSuppressEntryView;
 @property(readonly, nonatomic) _Bool supportsQuickView;
 @property(readonly, nonatomic) _Bool shouldShowChatChrome;
+@property(readonly, nonatomic, getter=isDismissing) _Bool dismissing;
 @property(readonly, nonatomic) _Bool wantsDarkUI;
 @property(readonly, nonatomic) _Bool wantsOpaqueUI;
 - (void)didTransitionFromOrientation:(long long)arg1 toOrientation:(long long)arg2;

@@ -31,6 +31,9 @@
 + (id)defaultConnectionIfExists;
 + (void)initialize;
 - (void).cxx_destruct;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)remoteObjectProxy;
 - (struct BRXPCSyncProxy *)newSyncTokenProxy;
 - (struct BRXPCSyncProxy *)newSyncProxy;
 - (void)_setupAndResume;

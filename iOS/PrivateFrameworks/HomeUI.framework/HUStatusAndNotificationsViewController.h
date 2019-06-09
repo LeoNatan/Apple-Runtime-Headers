@@ -6,26 +6,32 @@
 
 #import <HomeUI/HUItemTableViewController.h>
 
+#import <HomeUI/HUCameraSmartNotificationSettingsModuleControllerDelegate-Protocol.h>
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 #import <HomeUI/HUTriggerConditionEditorItemModuleControllerDelegate-Protocol.h>
 
-@class HFItem, HUStatusAndNotificationsItemManager, HUTriggerConditionEditorItemModuleController, NSString;
+@class HFItem, HUCameraSmartNotificationSettingsModuleController, HUStatusAndNotificationsItemManager, HUTriggerConditionEditorItemModuleController, NSString;
 @protocol HFServiceLikeItem;
 
-@interface HUStatusAndNotificationsViewController : HUItemTableViewController <HUSwitchCellDelegate, HUTriggerConditionEditorItemModuleControllerDelegate>
+@interface HUStatusAndNotificationsViewController : HUItemTableViewController <HUSwitchCellDelegate, HUTriggerConditionEditorItemModuleControllerDelegate, HUCameraSmartNotificationSettingsModuleControllerDelegate>
 {
     HFItem<HFServiceLikeItem> *_item;
     HUTriggerConditionEditorItemModuleController *_conditionModuleController;
+    HUCameraSmartNotificationSettingsModuleController *_cameraSmartSettingsModuleController;
 }
 
+@property(readonly, nonatomic) HUCameraSmartNotificationSettingsModuleController *cameraSmartSettingsModuleController; // @synthesize cameraSmartSettingsModuleController=_cameraSmartSettingsModuleController;
 @property(readonly, nonatomic) HUTriggerConditionEditorItemModuleController *conditionModuleController; // @synthesize conditionModuleController=_conditionModuleController;
 @property(retain, nonatomic) HFItem<HFServiceLikeItem> *item; // @synthesize item=_item;
 - (void).cxx_destruct;
+- (void)smartNotificationSettingsModuleController:(id)arg1 didUpdateConditionCollection:(id)arg2;
 - (void)conditionEditorModuleController:(id)arg1 didUpdateConditionCollection:(id)arg2;
 - (void)conditionEditorModuleController:(id)arg1 dismissDetailViewController:(id)arg2;
 - (void)conditionEditorModuleController:(id)arg1 presentDetailViewController:(id)arg2;
 - (void)switchCell:(id)arg1 didTurnOn:(_Bool)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (_Bool)shouldHideHeaderAboveSection:(long long)arg1;
+- (double)tableView:(id)arg1 heightForFooterInSection:(long long)arg2;
 - (id)itemModuleControllers;
 - (unsigned long long)automaticDisablingReasonsForItem:(id)arg1;
 - (void)updateCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3 animated:(_Bool)arg4;

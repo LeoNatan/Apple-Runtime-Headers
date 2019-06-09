@@ -8,5 +8,7 @@
 
 @interface NSMutableSet (NSPasteboardTypesAdditions)
 + (id)_newUniformTypeIdentifierSet;
++ (id)setWithCollectionViewIndexPaths:(id)arg1;
++ (id)setWithCollectionViewIndexPath:(id)arg1;
 @end
 

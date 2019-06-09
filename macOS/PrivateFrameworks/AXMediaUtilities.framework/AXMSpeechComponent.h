@@ -6,18 +6,36 @@
 
 #import <AXMediaUtilities/AXMOutputComponent.h>
 
-@interface AXMSpeechComponent : AXMOutputComponent
+#import <AXMediaUtilities/AVSpeechSynthesizerDelegate-Protocol.h>
+
+@class AVSpeechSynthesizer, NSString;
+
+@interface AXMSpeechComponent : AXMOutputComponent <AVSpeechSynthesizerDelegate>
 {
+    AVSpeechSynthesizer *_synthesizer;
     CDUnknownBlockType _currentRequestCompletionBlock;
 }
 
 + (BOOL)isSupported;
 @property(copy, nonatomic) CDUnknownBlockType currentRequestCompletionBlock; // @synthesize currentRequestCompletionBlock=_currentRequestCompletionBlock;
+@property(retain, nonatomic) AVSpeechSynthesizer *synthesizer; // @synthesize synthesizer=_synthesizer;
 - (void).cxx_destruct;
+- (void)speechSynthesizer:(id)arg1 didContinueSpeechUtterance:(id)arg2;
+- (void)speechSynthesizer:(id)arg1 didPauseSpeechUtterance:(id)arg2;
+- (void)speechSynthesizer:(id)arg1 didCancelSpeechUtterance:(id)arg2;
+- (void)speechSynthesizer:(id)arg1 didFinishSpeechUtterance:(id)arg2;
+- (void)speechSynthesizer:(id)arg1 didStartSpeechUtterance:(id)arg2;
 - (void)stopSpeakingAtNextWord;
 - (void)stopSpeakingImmediately;
-- (BOOL)canHandleRequest:(id)arg1 options:(id)arg2;
+- (void)handleRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)canHandleRequest:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

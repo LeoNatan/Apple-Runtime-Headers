@@ -8,5 +8,8 @@
 
 @interface NSArray (GEOMapItemPhoto)
 - (id)_geo_firstPhotoOfAtLeastSize:(struct CGSize)arg1;
+- (id)_geo_bestLocalizedStringLocaleValue;
+- (id)_geo_bestLocalizedStringValue;
+- (id)_geo_bestLocalizedString;
 @end
 

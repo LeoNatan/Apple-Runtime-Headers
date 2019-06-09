@@ -8,5 +8,6 @@
 
 @interface UIView (PLCrossFade)
 - (void)pl_performCrossFadeIfNecessary;
+- (_Bool)pl_isScrollViewDelegateMethod:(SEL)arg1;
 @end
 

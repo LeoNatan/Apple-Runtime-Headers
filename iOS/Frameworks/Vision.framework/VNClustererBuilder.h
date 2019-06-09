@@ -29,6 +29,7 @@
 - (id)distanceBetweenClustersWithFaceId:(id)arg1 andFaceId:(id)arg2 error:(id *)arg3;
 - (id)getDistances:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (id)l1ClusteredFaceIdsGroupedByL0ClustersForClustersContainingFaceIds:(id)arg1 error:(id *)arg2;
+- (id)getAllClustersAndReturnError:(id *)arg1;
 - (id)clusteredFaceIdsForClusterContainingFaceId:(id)arg1 error:(id *)arg2;
 - (id)allClusteredFaceIdsAndReturnError:(id *)arg1;
 - (id)updateModelByAddingFaces:(id)arg1 withGroupingIdentifiers:(id)arg2 andRemovingFaces:(id)arg3 canceller:(id)arg4 error:(id *)arg5;
@@ -38,8 +39,8 @@
 - (id)updateModelByAddingFaces:(id)arg1 canceller:(id)arg2 error:(id *)arg3;
 - (id)saveAndReturnCurrentModelState:(id *)arg1;
 - (_Bool)resetModelState:(id)arg1 error:(id *)arg2;
-- (id)initWithType:(id)arg1 cachePath:(id)arg2 state:(id)arg3 threshold:(float)arg4 torsoThreshold:(float)arg5 error:(id *)arg6;
-- (id)initWithType:(id)arg1 cachePath:(id)arg2 state:(id)arg3 threshold:(float)arg4 error:(id *)arg5;
+- (id)initWithType:(id)arg1 cachePath:(id)arg2 state:(id)arg3 threshold:(float)arg4 torsoThreshold:(float)arg5 babyThreshold:(float)arg6 kidThreshold:(float)arg7 requestRevision:(unsigned long long)arg8 error:(id *)arg9;
+- (id)initWithType:(id)arg1 cachePath:(id)arg2 state:(id)arg3 threshold:(float)arg4 babyThreshold:(float)arg5 kidThreshold:(float)arg6 requestRevision:(unsigned long long)arg7 error:(id *)arg8;
 
 @end
 

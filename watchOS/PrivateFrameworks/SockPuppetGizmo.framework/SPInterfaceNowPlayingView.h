@@ -53,6 +53,7 @@
 - (void).cxx_destruct;
 - (id)_nowPlayingStandinImage;
 - (void)prepareInterfaceItemForIB;
+- (void)layoutSubviews;
 - (void)remoteViewBecomingVisible:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)hasIntrinsicHeight;

@@ -75,6 +75,10 @@
     NSObject<OS_dispatch_source> *_apcTimer;
     unsigned int _apcTimeoutCount;
     BOOL _apcTryingPasscode;
+    BOOL _lpcAligned;
+    int _lpcAlignmentState;
+    BOOL _lpcPlayAgain;
+    BOOL _lpcSkip;
     BOOL _siriPasscodeEnabled;
     BOOL _siriPasscodeInitDone;
     BOOL _siriPasscodeSecured;
@@ -110,16 +114,18 @@
     double _totalSecs;
     BOOL _prefBonjourTest;
     BOOL _prefForceSiriGreeting;
+    BOOL _prefLEDPasscodeEnabled;
     BOOL _liveOn;
     BOOL _pauseAfterPreAuth;
     unsigned char _stereoCounterpartColor;
     BOOL _touchRemoteEnabled;
-    unsigned int _testFlags;
+    int _bonjourTestState;
     NSDictionary *_additionalMetrics;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SFDevice *_peerDevice;
     unsigned long long _peerFeatureFlags;
     NSDictionary *_preAuthResponse;
+    unsigned long long _testFlags;
     CDUnknownBlockType _preAuthHandler;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _promptForAppleMusicHandler;
@@ -157,7 +163,7 @@
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(copy, nonatomic) CDUnknownBlockType preAuthHandler; // @synthesize preAuthHandler=_preAuthHandler;
 @property(nonatomic) BOOL touchRemoteEnabled; // @synthesize touchRemoteEnabled=_touchRemoteEnabled;
-@property(nonatomic) unsigned int testFlags; // @synthesize testFlags=_testFlags;
+@property(nonatomic) unsigned long long testFlags; // @synthesize testFlags=_testFlags;
 @property(readonly, nonatomic) unsigned char stereoCounterpartColor; // @synthesize stereoCounterpartColor=_stereoCounterpartColor;
 @property(retain, nonatomic) NSDictionary *preAuthResponse; // @synthesize preAuthResponse=_preAuthResponse;
 @property(nonatomic) unsigned long long peerFeatureFlags; // @synthesize peerFeatureFlags=_peerFeatureFlags;
@@ -165,6 +171,7 @@
 @property(nonatomic) BOOL pauseAfterPreAuth; // @synthesize pauseAfterPreAuth=_pauseAfterPreAuth;
 @property(nonatomic) BOOL liveOn; // @synthesize liveOn=_liveOn;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(readonly, nonatomic) int bonjourTestState; // @synthesize bonjourTestState=_bonjourTestState;
 @property(copy, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
 - (void).cxx_destruct;
 - (void)audioSessionInterrupted:(id)arg1;
@@ -202,6 +209,7 @@
 - (void)_runAudioPasscodeInitResponse:(id)arg1 error:(id)arg2;
 - (void)_runAudioPasscodeInitRequest;
 - (int)_runAudioPasscode;
+- (int)_runLEDPassCodeAlignment;
 - (int)_runShareSettings;
 - (int)_runTerms;
 - (int)_runPersonalRequests;
@@ -238,6 +246,7 @@
 - (void)personalRequestsEnabled:(BOOL)arg1;
 - (void)pairSetupTryPIN:(id)arg1;
 - (void)locationEnable:(BOOL)arg1;
+- (void)ledPasscodeMatched;
 - (void)homeKitSelectRoom:(id)arg1;
 - (void)homeKitReselectHome;
 - (void)homeKitSelectHome:(id)arg1;

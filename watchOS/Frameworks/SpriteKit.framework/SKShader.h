@@ -18,6 +18,7 @@
     NSMutableDictionary *_uniformData;
     NSString *_source;
     NSString *_fileName;
+    _Bool _isPrecompiledMetal;
     NSString *_compileLog;
     _Bool _programDirty;
     _Bool _programWithTransformDirty;
@@ -31,6 +32,7 @@
     _Bool _performFullCapture;
 }
 
++ (id)precompiledMetalShaderWithFile:(id)arg1 uniforms:(id)arg2;
 + (id)shaderWithFileNamed:(id)arg1;
 + (id)shaderWithSource:(id)arg1 uniforms:(id)arg2;
 + (id)shaderWithSource:(id)arg1;
@@ -49,6 +51,8 @@
 - (void)_setUniformsDirty;
 - (_Bool)_usesPathLengthUniform;
 - (_Bool)_usesTimeUniform;
+- (id)_getMetalFragmentShaderSource;
+- (id)_getMetalVertexShaderSource:(_Bool)arg1;
 - (id)_getShaderCompilationLog;
 - (id)_getMetalFragmentFunctionName;
 - (id)_getMetalVertexOutDefinition;

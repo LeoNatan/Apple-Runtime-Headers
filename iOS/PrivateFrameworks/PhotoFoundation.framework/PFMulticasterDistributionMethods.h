@@ -20,6 +20,7 @@
 - (void)distribute:(id)arg1 uint64_tArg:(unsigned long long)arg2 objectArg:(id)arg3;
 - (void)distribute:(id)arg1 double_Arg:(double)arg2 object_Arg:(id)arg3;
 - (void)distribute:(id)arg1 double_Arg:(double)arg2 double_Arg:(double)arg3;
+- (void)distribute:(id)arg1 int32t_Arg:(int)arg2 object_Arg:(id)arg3;
 - (void)distribute:(id)arg1 int32t_Arg:(int)arg2 double_Arg:(double)arg3;
 - (void)distribute:(id)arg1 int64t_Arg:(long long)arg2 int64t_Arg:(long long)arg3;
 - (void)distribute:(id)arg1 objectArg:(id)arg2 objectArg:(id)arg3;

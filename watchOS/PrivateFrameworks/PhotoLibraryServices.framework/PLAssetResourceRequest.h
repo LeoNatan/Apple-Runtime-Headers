@@ -6,12 +6,13 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSError, NSManagedObjectID, NSObject, NSString;
+@class NSError, NSManagedObjectID, NSObject, NSString, PLPhotoLibrary;
 @protocol OS_dispatch_queue;
 
 @interface PLAssetResourceRequest : NSOperation
 {
     NSObject<OS_dispatch_queue> *_queue;
+    PLPhotoLibrary *_library;
     CDUnknownBlockType _progressHandler;
     NSString *_assetUUID;
     int _requestID;
@@ -29,7 +30,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
-- (id)initWithRequestID:(int)arg1 queue:(id)arg2 cloudResourceType:(unsigned int)arg3 managedObjectID:(id)arg4 progressHandler:(CDUnknownBlockType)arg5;
+- (id)initWithRequestID:(int)arg1 library:(id)arg2 queue:(id)arg3 cloudResourceType:(unsigned int)arg4 managedObjectID:(id)arg5 progressHandler:(CDUnknownBlockType)arg6;
 - (void)_onQueueAsync:(CDUnknownBlockType)arg1;
 
 @end

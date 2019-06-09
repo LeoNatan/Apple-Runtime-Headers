@@ -19,6 +19,8 @@
 @property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
 - (id)_disclosureView;
+- (_Bool)_shouldShowDisclosureIndicator;
+@property(nonatomic) _Bool usesDarkMapAppearance;
 - (void)setTitleLabelColor:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

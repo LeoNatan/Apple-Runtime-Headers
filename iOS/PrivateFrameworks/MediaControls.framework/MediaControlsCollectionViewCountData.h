@@ -10,6 +10,7 @@
 
 @class NSIndexSet, NSMutableIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsCollectionViewCountData : NSObject <NSCopying>
 {
     NSMutableIndexSet *_insertedIndexes;

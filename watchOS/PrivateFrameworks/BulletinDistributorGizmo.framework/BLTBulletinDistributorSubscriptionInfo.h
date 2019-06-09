@@ -10,8 +10,10 @@
 {
     _Bool _fullBulletins;
     _Bool _ack;
+    _Bool _ackAllowedOnLocalConnection;
 }
 
+@property(nonatomic) _Bool ackAllowedOnLocalConnection; // @synthesize ackAllowedOnLocalConnection=_ackAllowedOnLocalConnection;
 @property(nonatomic) _Bool ack; // @synthesize ack=_ack;
 @property(nonatomic) _Bool fullBulletins; // @synthesize fullBulletins=_fullBulletins;
 

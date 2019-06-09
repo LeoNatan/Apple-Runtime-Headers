@@ -15,12 +15,14 @@
     NSString *_valueTransformerName;
     NSString *_attributeValueClassName;
     id _defaultValue;
+    BOOL preserveValueOnDeletionInPersistentHistory;
 }
 
 + (BOOL)supportsSecureCoding;
 + (void)initialize;
 + (id)stringForAttributeType:(unsigned long long)arg1;
 + (id)_classNameForType:(unsigned long long)arg1;
+@property BOOL preservesValueInHistoryOnDeletion; // @synthesize preservesValueInHistoryOnDeletion=preserveValueOnDeletionInPersistentHistory;
 @property BOOL preserveValueOnDeletionInPersistentHistory;
 @property BOOL allowsExternalBinaryDataStorage;
 - (id)validationWarnings;
@@ -58,6 +60,7 @@
 - (BOOL)_epsilonEquals:(id)arg1 rhs:(id)arg2 withFlags:(int)arg3;
 @property BOOL isFileBackedFuture;
 - (id)_initWithName:(id)arg1 type:(unsigned long long)arg2 withClassName:(id)arg3;
+- (BOOL)_attributeTypeIsSchemaEqual:(unsigned long long)arg1;
 
 @end
 

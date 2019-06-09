@@ -6,8 +6,19 @@
 
 #import <Foundation/NSValue.h>
 
-@interface NSValue (RERectExtension)
+#import <RelevanceEngine/REDonatedActionIdentifierProviding-Protocol.h>
+
+@class NSString;
+
+@interface NSValue (RERectExtension) <REDonatedActionIdentifierProviding>
 + (id)re_valueWithCGRect:(struct CGRect)arg1;
 - (struct CGRect)re_CGRectValue;
+- (unsigned long long)re_actionIdentifierHashValue;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

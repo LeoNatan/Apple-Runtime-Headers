@@ -8,16 +8,32 @@
 
 #import <Contacts/CNAbstractPropertyDescription-Protocol.h>
 
-@class NSString;
+@class CNContactRelationsDescriptionLabels, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
 @interface CNContactRelationsDescription : CNMultiValuePropertyDescription <CNAbstractPropertyDescription>
 {
+    NSObject<OS_dispatch_queue> *_generationQueue;
+    CNContactRelationsDescriptionLabels *_cachedLabels;
+    Class _provider;
 }
 
+@property(readonly, nonatomic) Class provider; // @synthesize provider=_provider;
+@property(retain, nonatomic) CNContactRelationsDescriptionLabels *cachedLabels; // @synthesize cachedLabels=_cachedLabels;
+@property(readonly) NSObject<OS_dispatch_queue> *generationQueue; // @synthesize generationQueue=_generationQueue;
+- (void).cxx_destruct;
 - (CDUnknownBlockType)fromPlistTransform;
 - (CDUnknownBlockType)plistTransform;
 - (Class)labeledValueClass;
+- (id)managedLabels;
+- (id)_builtInExtendedLabels;
+- (id)standardLabelsWithOptions:(unsigned int)arg1;
 - (id)standardLabels;
+- (id)localizedStringForLabel:(id)arg1;
+- (id)cachedLabelsForPreferredLanguages:(id)arg1;
+- (id)labelsForPreferredLanguages:(id)arg1;
+- (void)_addLocalizedLabels:(id)arg1 fromLanguagePlist:(id)arg2 languageIdentifier:(id)arg3 toDictionary:(id)arg4 conflictInfo:(id)arg5;
+- (id)_builtInStandardLabels;
 - (_Bool)canUnifyValue:(id)arg1 withValue:(id)arg2;
 - (void)setCNValue:(id)arg1 onContact:(id)arg2;
 - (id)CNValueForContact:(id)arg1;
@@ -26,6 +42,7 @@
 - (void)encodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (_Bool)isEqualForContact:(id)arg1 other:(id)arg2;
 - (id)init;
+- (id)initWithLocalizationProvider:(Class)arg1;
 - (id)CNLabeledValueValueFromABMultiValueValueBytes:(char *)arg1 length:(unsigned int)arg2;
 - (void *)ABMultiValueValueFromCNLabeledValueValue:(id)arg1;
 - (id)CNLabeledValueValueFromABMultiValueValue:(void *)arg1;

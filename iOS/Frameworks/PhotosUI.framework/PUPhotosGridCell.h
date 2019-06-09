@@ -11,7 +11,7 @@
 @interface PUPhotosGridCell : UICollectionViewCell
 {
     UIView *_selectionOverlayView;
-    UIImageView *_selectionBadgeImageView;
+    UIView *_selectionBadgeView;
     UIImageView *_cloudIconImageView;
     PUProgressIndicatorView *_progressIndicatorView;
     UIView *_highlightOverlayView;

@@ -17,6 +17,7 @@
 
 // Remaining properties
 @property(readonly, nonatomic) _Bool alwaysPerformDefaultAction; // @dynamic alwaysPerformDefaultAction;
+@property(readonly, nonatomic) _Bool alwaysSpeakNotifications; // @dynamic alwaysSpeakNotifications;
 @property(retain, nonatomic) NSArray *displayIDsWithBadgingEnabled; // @dynamic displayIDsWithBadgingEnabled;
 @property(readonly, nonatomic) _Bool dontSuppressForPrivacyWhenUnlocked; // @dynamic dontSuppressForPrivacyWhenUnlocked;
 @property(readonly, nonatomic) NSArray *legacyAlarmList; // @dynamic legacyAlarmList;

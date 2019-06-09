@@ -8,15 +8,16 @@
 
 #import <ViewBridge/ServiceCallsAuxiliary-Protocol.h>
 
-@class NSMutableSet;
+@class NSArray, NSMutableSet;
 
 __attribute__((visibility("hidden")))
 @interface ViewService : HostOrService <ServiceCallsAuxiliary>
 {
-    unsigned int _mayCreateTransparentSemiAutonomousWindows:2;
+    unsigned int _mayRequestArbitraryGeometryForTransparentSemiAutonomousWindows:2;
     unsigned int _maySeeAllCommandEquivalentAttempts:2;
     unsigned int _mayForwardEventsFromAccessoryView:2;
     NSMutableSet *_spawnedRendezvousChildWindows;
+    NSArray *_keyboardEventSpecs;
     struct CGRect _frameInScreenCoords;
 }
 
@@ -28,18 +29,20 @@ __attribute__((visibility("hidden")))
 - (BOOL)potentialCommandEquivalentIsWhitelisted:(struct __CGEvent *)arg1;
 - (void)potentialCommandEquivalentHitApplication:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)keyEventHitAccessoryView:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)addChildWindow:(CDStruct_e578beec)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)_addChildWindow:(const CDStruct_e578beec *)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
-- (void)requestResize:(struct CGSize)arg1 serviceWindowBackgroundColor:(id)arg2 animate:(BOOL)arg3 transaction:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)_requestResize:(struct CGSize)arg1 serviceWindowBackgroundColor:(id)arg2 animate:(BOOL)arg3 transaction:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)addChildWindow:(CDStruct_8ca9744b)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)_addChildWindow:(const CDStruct_8ca9744b *)arg1 identifier:(id)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)requestFrame:(struct CGRect)arg1 serviceWindowBackgroundColor:(id)arg2 animate:(BOOL)arg3 transaction:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_requestFrame:(struct CGRect)arg1 serviceWindowBackgroundColor:(id)arg2 animate:(BOOL)arg3 transaction:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)frameOfServiceWindowDidChange:(struct CGRect)arg1 windowBackgroundColor:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_frameOfServiceWindowDidChange:(struct CGRect)arg1 windowBackgroundColor:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (struct CGRect)safeFrameStartingWithHost:(id)arg1 amongHostsAndServices:(struct NSMutableDictionary *)arg2 during:(const char *)arg3;
 - (id)viewServiceWhichSpawnedRendezvousChildWindowWithIdentifier:(id)arg1 amongHostsAndServices:(struct NSMutableDictionary *)arg2;
 - (void)joinPair:(id)arg1 window:(unsigned int)arg2 reply:(CDUnknownBlockType)arg3;
-- (BOOL)mayCreateTransparentSemiAutonomousWindows;
+- (BOOL)mayRequestArbitraryGeometryForTransparentSemiAutonomousWindows;
 @property(readonly) BOOL mayForwardEventsFromAccessoryView;
 @property(readonly) BOOL maySeeAllCommandEquivalentAttempts;
+- (BOOL)wantsKeyboardEvent:(struct __CGEvent *)arg1;
+- (void)declineKeyboardEventsOtherThan:(id)arg1;
 
 @end
 

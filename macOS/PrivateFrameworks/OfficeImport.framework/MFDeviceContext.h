@@ -11,6 +11,7 @@
 @class MFBrush, MFFont, MFPalette, MFPath, MFPen, MFTransform, NSMutableArray, OITSUColor;
 @protocol MFDeviceDriver;
 
+__attribute__((visibility("hidden")))
 @interface MFDeviceContext : NSObject <NSCopying>
 {
     NSObject<MFDeviceDriver> *m_driver;

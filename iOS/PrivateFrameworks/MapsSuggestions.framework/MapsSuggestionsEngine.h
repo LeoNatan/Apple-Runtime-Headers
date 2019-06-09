@@ -8,12 +8,13 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class GEOAutomobileOptions, MapsSuggestionsManager, NSString;
+@class GEOAutomobileOptions, MapsSuggestionsManager, MapsSuggestionsShortcutManager, NSString;
 @protocol OS_dispatch_queue;
 
 @interface MapsSuggestionsEngine : NSObject <MapsSuggestionsObject>
 {
-    MapsSuggestionsManager *_manager;
+    MapsSuggestionsManager *_entryManager;
+    MapsSuggestionsShortcutManager *_shortcutManager;
     NSObject<OS_dispatch_queue> *_optionsSerialQueue;
     int _mapType;
     GEOAutomobileOptions *_automobileOptions;
@@ -21,7 +22,6 @@
 
 + (void)load;
 + (id)defaultCachePath;
-+ (id)defaultEngine;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property(nonatomic) int mapType; // @synthesize mapType=_mapType;
 - (void).cxx_destruct;
@@ -31,12 +31,16 @@
 - (id)fakeSource;
 - (id)strategy;
 - (id)manager;
+- (id)routine;
+- (id)shortcutManager;
+- (void)feedbackForContact:(id)arg1 action:(long long)arg2;
+- (void)feedbackForMapItem:(id)arg1 action:(long long)arg2;
+- (void)feedbackForEntry:(id)arg1 action:(long long)arg2;
 - (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)loadStorageFromFile:(id)arg1 callback:(CDUnknownBlockType)arg2 callbackQueue:(id)arg3;
 - (_Bool)loadStorageFromFile:(id)arg1;
 - (_Bool)saveStorageToFile:(id)arg1;
 - (void)hintRefreshOfType:(long long)arg1;
-- (id)currentLocation;
 - (void)removeAdditionalFilter:(id)arg1 forSink:(id)arg2;
 - (void)addAdditionalFilter:(id)arg1 forSink:(id)arg2;
 - (struct NSArray *)topSuggestionsFromStorageFile:(id)arg1 sink:(id)arg2 count:(unsigned long long)arg3 transportType:(int)arg4;
@@ -46,7 +50,7 @@
 - (_Bool)detachSink:(id)arg1;
 - (_Bool)attachSink:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
-- (id)initWithManager:(id)arg1;
+- (id)initWithEntryManager:(id)arg1 shortcutManager:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

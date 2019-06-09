@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <MKOfficialAppViewControllerDelegate> officialAppDelegate; // @synthesize officialAppDelegate=_officialAppDelegate;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)officialAppViewDidSelectPunchOutButton:(id)arg1;
 - (void)_updateAppImage:(id)arg1 error:(id)arg2;

@@ -11,7 +11,7 @@
 @interface TVPMusicNowPlayingBackgroundView : UIView
 {
     UIImage *_artworkImage;
-    UIImage *_appliedBlurredImage;
+    UIImage *_resizedImage;
     UIView *_animatedViewContainer;
     UIImageView *_animatedView1;
     UIImageView *_animatedView2;
@@ -22,8 +22,7 @@
 @property(nonatomic) double transitionDuration; // @synthesize transitionDuration=_transitionDuration;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_artworkImage;
 - (void).cxx_destruct;
-- (id)_resizeImage:(struct CGImage *)arg1 targetSize:(struct CGSize)arg2 shouldDither:(_Bool)arg3;
-- (id)_blurredImageWithImage:(id)arg1 targetSize:(struct CGSize)arg2;
+- (id)_resizedImageWithCGImage:(struct CGImage *)arg1 targetSize:(struct CGSize)arg2;
 - (void)_setupAnimatedViews;
 - (double)_imageFullSize;
 - (double)_imageHalfSize;

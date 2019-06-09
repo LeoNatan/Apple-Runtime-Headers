@@ -19,9 +19,7 @@
 + (id)sharedCookieStorageForGroupContainerIdentifier:(id)arg1;
 + (id)sharedHTTPCookieStorage;
 + (void)_setSharedHTTPCookieStorage:(id)arg1;
-+ (id)_sharedCookieStorageLock;
 + (id)_groupContainerCookieStorages;
-+ (id)_groupContainerStoragesLock;
 @property(nonatomic) _Bool _overrideSessionCookieAcceptPolicy; // @synthesize _overrideSessionCookieAcceptPolicy=__overrideSessionCookieAcceptPolicy;
 - (void)_testingOfStoringOfCookie:(id)arg1;
 - (void)_getCookiesForPartition:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

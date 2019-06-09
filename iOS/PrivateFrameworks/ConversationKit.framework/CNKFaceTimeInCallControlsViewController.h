@@ -13,6 +13,8 @@
 {
     // Error parsing type: , name: groupName
     // Error parsing type: , name: representedLegacyCallIdentifier
+    // Error parsing type: , name: controlsButtonRowCount
+    // Error parsing type: , name: tableViewSeparator
     // Error parsing type: , name: participantsTableViewController
     // Error parsing type: , name: localParticipant
     // Error parsing type: , name: viewContent
@@ -43,7 +45,7 @@
 - (id)accessibilityEffectsButton;
 - (id)accessibilityJoinLeaveButton;
 - (id)accessibilityHotdog;
-- (void)updateWithLegacyCall:(id)arg1;
+- (void)updateToRepresentLegacyCall:(id)arg1;
 - (void)updateAudioRouteButtonFor:(id)arg1;
 - (void)updateControlsVisibilityForExpandedState:(_Bool)arg1;
 - (void)didTapAudioRouteButton:(id)arg1;
@@ -52,10 +54,13 @@
 - (void)didTapJoinLeaveButton:(id)arg1;
 - (void)didTapFlipCameraButton:(id)arg1;
 - (void)didTapEffectsButton:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)loadView;
+- (void)embedEffectsBrowserViewController:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithActiveCall:(id)arg1;
 @property(nonatomic, readonly) NSString *description;

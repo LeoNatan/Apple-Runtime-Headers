@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNManagedConfiguration, NSIndexSet;
+@class ABSQLPredicate, CNManagedConfiguration, NSIndexSet;
 
 @interface ABBufferQuery : NSObject
 {
@@ -19,10 +19,12 @@
     _Bool _requestedImageCropRect;
     _Bool _requestedImageThumbnail;
     _Bool _requestedImageFullscreenData;
+    _Bool _requestedSyncImageData;
     _Bool _requestedHasImageData;
     unsigned int _sortOrder;
     void *_addressBook;
     CNManagedConfiguration *_managedConfiguration;
+    ABSQLPredicate *_predicate;
     struct CPSqliteStatement *_statement;
     NSIndexSet *_scopedStoreIdentifiers;
     NSIndexSet *_requestedPropertyIdentifiers;
@@ -31,6 +33,7 @@
 }
 
 @property(readonly, nonatomic) _Bool requestedHasImageData; // @synthesize requestedHasImageData=_requestedHasImageData;
+@property(readonly, nonatomic) _Bool requestedSyncImageData; // @synthesize requestedSyncImageData=_requestedSyncImageData;
 @property(readonly, nonatomic) _Bool requestedImageFullscreenData; // @synthesize requestedImageFullscreenData=_requestedImageFullscreenData;
 @property(readonly, nonatomic) _Bool requestedImageThumbnail; // @synthesize requestedImageThumbnail=_requestedImageThumbnail;
 @property(readonly, nonatomic) _Bool requestedImageCropRect; // @synthesize requestedImageCropRect=_requestedImageCropRect;
@@ -46,6 +49,7 @@
 @property(readonly, nonatomic) NSIndexSet *scopedStoreIdentifiers; // @synthesize scopedStoreIdentifiers=_scopedStoreIdentifiers;
 @property(readonly, nonatomic) unsigned int sortOrder; // @synthesize sortOrder=_sortOrder;
 @property(nonatomic) struct CPSqliteStatement *statement; // @synthesize statement=_statement;
+@property(readonly, nonatomic) ABSQLPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
 @property(nonatomic) void *addressBook; // @synthesize addressBook=_addressBook;
 - (void)appendBindParameterMarkersToQueryString:(id)arg1 count:(unsigned long long)arg2;
@@ -59,7 +63,7 @@
 - (void)dealloc;
 - (id)scopedStoresForManagedConfiguration:(id)arg1;
 - (void)_initSetupPropertySet:(struct __CFSet *)arg1 includeLinkedContacts:(_Bool)arg2;
-- (id)initWithAddressBook:(void *)arg1 whereClause:(id)arg2 whereClauseBindBlock:(CDUnknownBlockType)arg3 requestedProperties:(struct __CFSet *)arg4 includeLinkedContacts:(_Bool)arg5 sortOrder:(unsigned int)arg6 managedConfiguration:(id)arg7;
+- (id)initWithAddressBook:(void *)arg1 predicate:(id)arg2 requestedProperties:(struct __CFSet *)arg3 includeLinkedContacts:(_Bool)arg4 sortOrder:(unsigned int)arg5 managedConfiguration:(id)arg6;
 
 @end
 

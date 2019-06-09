@@ -4,23 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <JavaScriptCore/JSContext.h>
+#import <objc/NSObject.h>
 
-@class NSError, NSHashTable, NSMutableArray, NSMutableDictionary;
+@class JSContext, NSError, NSHashTable, NSMutableArray, NSMutableDictionary;
 
-@interface NUJSContext : JSContext
+@interface NUJSContext : NSObject
 {
     NSHashTable *_collectedProxies;
     NSMutableArray *_stateStack;
     NSMutableDictionary *_functions;
-    BOOL _didTimeOut;
-    double _executionTimeLimit;
+    JSContext *_jsContext;
 }
 
 + (void)execute:(CDUnknownBlockType)arg1;
 + (BOOL)validateValuesAreNumbers:(id)arg1 error:(out id *)arg2;
-@property(nonatomic) double executionTimeLimit; // @synthesize executionTimeLimit=_executionTimeLimit;
-@property BOOL didTimeOut; // @synthesize didTimeOut=_didTimeOut;
++ (id)contextForContext:(id)arg1;
+@property(retain) JSContext *jsContext; // @synthesize jsContext=_jsContext;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSError *error;
 - (void)setFunction:(id)arg1 forKey:(id)arg2;
@@ -28,7 +27,6 @@
 - (id)currentState;
 - (void)popState;
 - (void)pushState:(id)arg1;
-- (void)clearExecutionTimeLimit;
 - (void)resetAllProxies;
 - (void)addProxy:(id)arg1;
 - (void)setupBuiltInFunctions;

@@ -54,7 +54,6 @@
 - (id)blockingSharingSessionForDevice:(id)arg1;
 - (id)_existingSharingSessionForDevice:(id)arg1;
 - (void)_configureService:(id)arg1 withLabel:(id)arg2 needsSetup:(_Bool)arg3 actionType:(unsigned char)arg4 completion:(CDUnknownBlockType)arg5;
-- (_Bool)_distanceWithinRange:(long long)arg1;
 - (void)_saveDevice:(id)arg1;
 - (void)updateControllerWithDevice:(id)arg1 andStatus:(long long)arg2;
 - (void)didStartBugSessionWithInfo:(id)arg1 forCaller:(id)arg2;
@@ -66,8 +65,10 @@
 - (void)getSystemInfoForDevice:(id)arg1;
 - (void)trySessionWithFoundDevice:(id)arg1;
 - (void)stopPongDiscovery;
+- (void)_handleIncomingPongingDevice:(id)arg1;
 - (void)startPongDiscovery;
 - (void)stopPingDiscovery;
+- (void)_handleIncomingPingingDevice:(id)arg1;
 - (void)startPingDiscovery;
 - (void)startWorkerService;
 - (void)stopPongAdvertisement;

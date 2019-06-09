@@ -12,9 +12,6 @@
 - (struct CGSize)messageEntryViewMaxShelfPluginViewSize:(CKMessageEntryView *)arg1;
 - (double)messageEntryViewMaxHeight:(CKMessageEntryView *)arg1;
 - (void)messageEntryViewRaiseGestureAutoSend:(CKMessageEntryView *)arg1;
-- (void)messageEntryView:(CKMessageEntryView *)arg1 sendButtonLongPressEnded:(struct CGPoint)arg2;
-- (void)messageEntryView:(CKMessageEntryView *)arg1 sendButtonLongPressMoved:(struct CGPoint)arg2;
-- (void)messageEntryViewSendButtonLongPressBegan:(CKMessageEntryView *)arg1;
 - (void)messageEntryViewSendButtonHitWhileDisabled:(CKMessageEntryView *)arg1;
 - (void)messageEntryViewSendButtonHit:(CKMessageEntryView *)arg1;
 - (void)messageEntryView:(CKMessageEntryView *)arg1 didTapMediaObject:(CKMediaObject *)arg2;

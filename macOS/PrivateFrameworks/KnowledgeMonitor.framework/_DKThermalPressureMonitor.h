@@ -20,11 +20,13 @@
 @property(nonatomic) BOOL initialized; // @synthesize initialized=_initialized;
 - (void)synchronouslyReflectCurrentValue;
 - (void)getThermalPressureLevelWithToken:(int)arg1;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
 - (void)setCurrentThermalLevel:(int)arg1;
 - (id)loadState;
 - (void)saveState;
+- (void)dealloc;
 
 @end
 

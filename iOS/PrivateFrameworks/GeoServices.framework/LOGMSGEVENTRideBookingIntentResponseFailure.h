@@ -13,11 +13,12 @@
     int _failure;
     int _intent;
     struct {
-        unsigned int failure:1;
-        unsigned int intent:1;
-    } _has;
+        unsigned int has_failure:1;
+        unsigned int has_intent:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -25,16 +26,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsFailure:(id)arg1;
 - (id)failureAsString:(int)arg1;
 @property(nonatomic) _Bool hasFailure;
-@property(nonatomic) int failure; // @synthesize failure=_failure;
+@property(nonatomic) int failure;
 - (int)StringAsIntent:(id)arg1;
 - (id)intentAsString:(int)arg1;
 @property(nonatomic) _Bool hasIntent;
-@property(nonatomic) int intent; // @synthesize intent=_intent;
+@property(nonatomic) int intent;
 
 @end
 

@@ -16,11 +16,10 @@
 @property(nonatomic) _Bool includeAllImageStats;
 @property(nonatomic) _Bool includeAllImageIdentifiers;
 @property(nonatomic) _Bool includeClusters;
-- (_Bool)internalPerformInContext:(id)arg1 error:(id *)arg2;
+- (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (id)sequencedRequestPreviousObservationsKey;
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 
 @end

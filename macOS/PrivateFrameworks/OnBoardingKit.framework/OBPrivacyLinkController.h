@@ -6,7 +6,7 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSArray, NSColor, OBBundle, OBPrivacyFlow;
+@class NSArray, NSColor, NSString, OBBundle, OBPrivacyFlow;
 
 @interface OBPrivacyLinkController : NSViewController
 {
@@ -18,12 +18,16 @@
     BOOL _allowsOpeningSafari;
     NSColor *_iconTintColor;
     NSColor *_textTintColor;
+    NSString *_displayLanguage;
+    unsigned long long _displayDeviceType;
 }
 
 + (id)linkWithBundleIdentifier:(id)arg1;
 + (id)linkWithBundleIdentifiers:(id)arg1;
 + (Class)_platformSpecificClass;
 @property BOOL allowsOpeningSafari; // @synthesize allowsOpeningSafari=_allowsOpeningSafari;
+@property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
+@property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property BOOL displayCaptionText; // @synthesize displayCaptionText=_displayCaptionText;
 @property BOOL displayLargeIcon; // @synthesize displayLargeIcon=_displayLargeIcon;
 @property BOOL displayIcon; // @synthesize displayIcon=_displayIcon;

@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CoreDuetContext/NSXPCListenerDelegate-Protocol.h>
+#import <CoreDuetContext/_CDXPCEventPublisherDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, NSXPCListener, _CDInMemoryUserContext;
+@class NSMutableDictionary, NSMutableSet, NSString, NSXPCListener, _CDInMemoryUserContext, _CDXPCEventPublisher;
 @protocol _CDContextPersisting;
 
-@interface _CDUserContextService : NSObject <NSXPCListenerDelegate>
+@interface _CDUserContextService : NSObject <NSXPCListenerDelegate, _CDXPCEventPublisherDelegate>
 {
     id <_CDContextPersisting> _persistence;
     _CDInMemoryUserContext *_userContext;
@@ -19,9 +20,22 @@
     NSXPCListener *_listener;
     NSMutableSet *_openRegistrations;
     NSMutableSet *_firedRegistrations;
+    NSMutableDictionary *_firedRegistrationInfos;
+    _CDXPCEventPublisher *_mdcsEventPublisher;
+    _CDXPCEventPublisher *_notificationEventPublisher;
+    NSMutableDictionary *_mdcsEventSubscribersByToken;
+    NSMutableDictionary *_notificationEventSubscribersByToken;
+    NSMutableDictionary *_notificationEventSubscribersByClientIdentifier;
 }
 
 + (id)sharedInstanceWithSharedMemoryStore:(id)arg1;
++ (id)sharedInstanceWithPersistence:(id)arg1;
+@property(retain, nonatomic) NSMutableDictionary *notificationEventSubscribersByClientIdentifier; // @synthesize notificationEventSubscribersByClientIdentifier=_notificationEventSubscribersByClientIdentifier;
+@property(retain, nonatomic) NSMutableDictionary *notificationEventSubscribersByToken; // @synthesize notificationEventSubscribersByToken=_notificationEventSubscribersByToken;
+@property(retain, nonatomic) NSMutableDictionary *mdcsEventSubscribersByToken; // @synthesize mdcsEventSubscribersByToken=_mdcsEventSubscribersByToken;
+@property(retain, nonatomic) _CDXPCEventPublisher *notificationEventPublisher; // @synthesize notificationEventPublisher=_notificationEventPublisher;
+@property(retain, nonatomic) _CDXPCEventPublisher *mdcsEventPublisher; // @synthesize mdcsEventPublisher=_mdcsEventPublisher;
+@property(retain, nonatomic) NSMutableDictionary *firedRegistrationInfos; // @synthesize firedRegistrationInfos=_firedRegistrationInfos;
 @property(retain, nonatomic) NSMutableSet *firedRegistrations; // @synthesize firedRegistrations=_firedRegistrations;
 @property(retain, nonatomic) NSMutableSet *openRegistrations; // @synthesize openRegistrations=_openRegistrations;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
@@ -29,15 +43,32 @@
 @property(retain, nonatomic) _CDInMemoryUserContext *userContext; // @synthesize userContext=_userContext;
 @property(retain, nonatomic) id <_CDContextPersisting> persistence; // @synthesize persistence=_persistence;
 - (void).cxx_destruct;
+- (void)removeSubscriberWithToken:(unsigned long long)arg1 streamName:(id)arg2;
+- (void)addSubscriber:(id)arg1;
+- (void)fetchProxySourceDeviceUUIDFromSubscriber:(id)arg1;
+- (id)subscribersForClientIdentifier:(id)arg1;
+- (unsigned long long)tokenForSourceDeviceUUID:(id)arg1;
+- (id)subscriberForSourceDeviceUUID:(id)arg1;
+- (id)proxySourceDeviceUUIDForUserID:(unsigned int)arg1;
+- (void)setProxySourceDeviceUUID:(id)arg1 forUserID:(unsigned int)arg2;
+- (void)addProxyWithSourceDeviceUUID:(id)arg1;
+- (void)removeTokenForUserID:(unsigned int)arg1;
+- (void)setToken:(unsigned long long)arg1 forUserID:(unsigned int)arg2;
+- (BOOL)setMappingObject:(id)arg1 forContextualKeyPath:(id)arg2;
+- (void)sendEvent:(id)arg1 toClient:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
+- (void)sendEvent:(id)arg1 toClient:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)sendEvent:(id)arg1 toProxy:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
+- (void)sendEvent:(id)arg1 toProxy:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)clientWasInterrupted:(id)arg1;
 - (void)deleteSavedData;
 - (void)start;
 - (void)regenerateState;
 - (void)informClientOfFiredRegistration:(id)arg1;
-- (id)obtainFiredRegistrationMatchingRegistration:(id)arg1;
+- (id)obtainFiredRegistrationMatchingRegistration:(id)arg1 info:(id *)arg2;
 - (void)removeOpenRegistration:(id)arg1;
 - (void)addOpenRegistration:(id)arg1;
+- (id)initWithListener:(id)arg1 withPersistence:(id)arg2 withStorage:(id)arg3 withStore:(id)arg4;
 - (id)initWithListener:(id)arg1 withStorage:(id)arg2 withStore:(id)arg3;
 
 // Remaining properties

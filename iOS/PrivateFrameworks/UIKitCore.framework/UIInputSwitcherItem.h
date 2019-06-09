@@ -6,16 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, UIFont;
+@class NSArray, NSString, UIFont, UISwitch;
 
 __attribute__((visibility("hidden")))
 @interface UIInputSwitcherItem : NSObject
 {
+    _Bool _usesDeviceLanguage;
     NSString *_identifier;
     NSString *_localizedTitle;
     NSString *_localizedSubtitle;
     UIFont *_titleFont;
     UIFont *_subtitleFont;
+    UISwitch *_switchControl;
+    CDUnknownBlockType _switchIsOnBlock;
+    CDUnknownBlockType _switchToggleBlock;
     long long _selectedSegmentIndex;
     NSArray *_segmentTitles;
     NSArray *_segmentImages;
@@ -27,6 +31,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *segmentImages; // @synthesize segmentImages=_segmentImages;
 @property(retain, nonatomic) NSArray *segmentTitles; // @synthesize segmentTitles=_segmentTitles;
 @property(nonatomic) long long selectedSegmentIndex; // @synthesize selectedSegmentIndex=_selectedSegmentIndex;
+@property(copy, nonatomic) CDUnknownBlockType switchToggleBlock; // @synthesize switchToggleBlock=_switchToggleBlock;
+@property(copy, nonatomic) CDUnknownBlockType switchIsOnBlock; // @synthesize switchIsOnBlock=_switchIsOnBlock;
+@property(retain, nonatomic) UISwitch *switchControl; // @synthesize switchControl=_switchControl;
+@property(nonatomic) _Bool usesDeviceLanguage; // @synthesize usesDeviceLanguage=_usesDeviceLanguage;
 @property(retain, nonatomic) UIFont *subtitleFont; // @synthesize subtitleFont=_subtitleFont;
 @property(retain, nonatomic) UIFont *titleFont; // @synthesize titleFont=_titleFont;
 @property(copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;

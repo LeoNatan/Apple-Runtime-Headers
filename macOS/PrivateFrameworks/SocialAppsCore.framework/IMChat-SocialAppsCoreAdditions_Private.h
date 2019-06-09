@@ -6,9 +6,35 @@
 
 #import <IMCore/IMChat.h>
 
+@class IMServiceImpl, IMTypingChatItem, NSArray;
+
 @interface IMChat (SocialAppsCoreAdditions_Private)
++ (id)prefixedBusinessPluginPayloadGuidFromMessageGUID:(id)arg1;
++ (id)legacyTALIdentifierForChat:(id)arg1 key:(id)arg2;
 - (id)silentPrefKey;
 - (id)readReceiptVersionIDPrefKey;
 - (id)readReceiptPrefKey;
+- (BOOL)shouldInitialize;
+- (BOOL)isActive;
+- (id)recentChatParticipants;
+@property(readonly) BOOL shouldNotifyForReceivedMessages;
+- (BOOL)_shouldNotifyForSender:(id)arg1;
+- (id)firstInterestingMessage;
+- (BOOL)canSendFilesAtURLs:(id)arg1 error:(id *)arg2;
+- (id)contiguousAudioMessageChatItemsStartingAtGUID:(id)arg1;
+- (id)transcriptChatItemForBusinessPluginPayloadMessageGUID:(id)arg1;
+- (id)transcriptChatItemForGUID:(id)arg1;
+- (int)aggregateChatStyle;
+@property(readonly) BOOL canBeRestored;
+@property(readonly, nonatomic) BOOL canSendFiles; // @dynamic canSendFiles;
+@property(nonatomic, getter=isReadReceiptEnabled) BOOL readReceiptEnabled; // @dynamic readReceiptEnabled;
+@property(nonatomic, getter=isSilent) BOOL silent; // @dynamic silent;
+@property(readonly) IMTypingChatItem *typingIndicatorChatItem;
+@property(readonly, nonatomic) NSArray *myAddressableNames;
+- (long long)lastMessageID;
+@property(readonly) BOOL shouldAutoJoin; // @dynamic shouldAutoJoin;
+- (void)setMyAddressableNames:(id)arg1;
+- (id)_myAddressableNames;
+@property(readonly) IMServiceImpl *service;
 @end
 

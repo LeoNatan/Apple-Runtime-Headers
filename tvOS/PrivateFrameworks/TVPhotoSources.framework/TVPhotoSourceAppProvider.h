@@ -19,7 +19,6 @@
 - (void)fetchAssetsForCollectionWithIdentifier:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)sourceIdentifier;
 - (id)sourceName;
-- (id)init;
 
 @end
 

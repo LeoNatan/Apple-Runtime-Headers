@@ -6,27 +6,31 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaTextToSpeechEnd-Protocol.h>
 
-@class NSString;
+@class NSData, NSString;
 
-@interface SISchemaTextToSpeechEnd : PBCodable <NSCopying>
+@interface SISchemaTextToSpeechEnd : PBCodable <SISchemaTextToSpeechEnd, NSSecureCoding>
 {
     NSString *_aceID;
 }
 
-@property(retain, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
+@property(copy, nonatomic) NSString *aceID; // @synthesize aceID=_aceID;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasAceID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

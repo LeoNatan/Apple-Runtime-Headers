@@ -6,34 +6,56 @@
 
 #import <objc/NSObject.h>
 
-@class GCController, GCControllerButtonInput, GCControllerDirectionPad;
+@class GCController, GCControllerButtonInput, GCControllerDirectionPad, GCMotion;
 
 @interface GCMicroGamepad : NSObject
 {
-    _Bool _allowsRotation;
+    _Bool _dpadFlippedY;
     _Bool _reportsAbsoluteDpadValues;
+    _Bool _allowsRotation;
+    GCMotion *_motion;
+    GCControllerButtonInput *_button0;
+    GCControllerButtonInput *_button1;
+    GCController *_controller;
+    CDUnknownBlockType _valueChangedHandler;
+    GCControllerDirectionPad *_dpad;
+    GCControllerButtonInput *_buttonMenu;
     long long _deviceType;
 }
 
-+ (_Bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) long long deviceType; // @synthesize deviceType=_deviceType;
-@property(nonatomic) _Bool reportsAbsoluteDpadValues; // @synthesize reportsAbsoluteDpadValues=_reportsAbsoluteDpadValues;
 @property(nonatomic) _Bool allowsRotation; // @synthesize allowsRotation=_allowsRotation;
+@property(nonatomic) _Bool reportsAbsoluteDpadValues; // @synthesize reportsAbsoluteDpadValues=_reportsAbsoluteDpadValues;
+@property(readonly, nonatomic) GCControllerButtonInput *buttonMenu; // @synthesize buttonMenu=_buttonMenu;
+@property(readonly, retain, nonatomic) GCControllerDirectionPad *dpad; // @synthesize dpad=_dpad;
+@property(copy, nonatomic) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
+@property(readonly, nonatomic) __weak GCController *controller; // @synthesize controller=_controller;
+@property(readonly, retain, nonatomic) GCControllerButtonInput *buttonX; // @synthesize buttonX=_button1;
+@property(readonly, retain, nonatomic) GCControllerButtonInput *buttonA; // @synthesize buttonA=_button0;
+- (void)set_motion:(id)arg1;
+- (id)_motion;
+- (void).cxx_destruct;
+- (void)setStateFromMicroGamepad:(id)arg1;
+- (id)productCategory;
+- (_Bool)supportsDpadTaps;
+- (void)setController:(id)arg1;
+- (void)setPlayerIndex:(long long)arg1;
+- (id)name;
 - (void)setButton:(id)arg1 pressed:(_Bool)arg2;
 - (void)setButton:(id)arg1 value:(double)arg2;
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
-- (id)inputForElement:(struct __IOHIDElement *)arg1;
 - (id)saveSnapshot;
-- (_Bool)supportsDpadTaps;
-@property(readonly, retain, nonatomic) GCControllerButtonInput *buttonX;
+- (void)handleEvent:(struct __IOHIDEvent *)arg1;
+- (void)microControllerWithDigitizerX:(float)arg1 digitizerY:(float)arg2 timestamp:(unsigned long long)arg3 touchDown:(_Bool)arg4;
 - (id)buttonB;
-@property(readonly, retain, nonatomic) GCControllerButtonInput *buttonA;
 - (id)button1;
 - (id)button0;
-@property(readonly, retain, nonatomic) GCControllerDirectionPad *dpad;
-@property(copy, nonatomic) CDUnknownBlockType valueChangedHandler;
-@property(readonly, nonatomic) __weak GCController *controller;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithController:(id)arg1 dpadFlippedY:(_Bool)arg2;
 - (id)initWithController:(id)arg1;
+- (id)init;
 
 @end
 

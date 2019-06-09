@@ -26,11 +26,12 @@ typedef struct {
     float _field10;
     float _field11;
     float _field12;
-    double _field13[9];
+    float _field13;
     double _field14[9];
-    float _field15;
-    unsigned int _field16;
-    _Bool _field17;
-    float _field18;
-} CDStruct_7582d643;
+    double _field15[9];
+    float _field16;
+    unsigned int _field17;
+    _Bool _field18;
+    float _field19;
+} CDStruct_5a4619cb;
 

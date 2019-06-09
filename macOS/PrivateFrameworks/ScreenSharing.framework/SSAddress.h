@@ -8,7 +8,7 @@
 
 #import <ScreenSharing/NSCopying-Protocol.h>
 
-@class IDSSession, NSDictionary, NSFileHandle, NSImage, NSMutableSet, NSString, NSXPCConnection, NWConnectionManager, NWDatagramConnection;
+@class IDSSession, NSDictionary, NSFileHandle, NSMutableSet, NSString, NSXPCConnection, NWConnectionManager, NWDatagramConnection;
 
 @interface SSAddress : NSObject <NSCopying>
 {
@@ -29,7 +29,6 @@
     unsigned long long _session;
     IDSSession *_idsSession;
     IDSSession *_idsSessionOSX_QR;
-    NSImage *_inviteeImage;
     NWDatagramConnection *_datagramConnection;
     NWConnectionManager *_datagramConnectionManager;
     NSMutableSet *_types;
@@ -57,7 +56,6 @@
 @property(retain) NSMutableSet *types; // @synthesize types=_types;
 @property(retain) NWConnectionManager *datagramConnectionManager; // @synthesize datagramConnectionManager=_datagramConnectionManager;
 @property(retain) NWDatagramConnection *datagramConnection; // @synthesize datagramConnection=_datagramConnection;
-@property(readonly, retain) NSImage *inviteeImage; // @synthesize inviteeImage=_inviteeImage;
 @property(retain) IDSSession *idsSessionOSX_QR; // @synthesize idsSessionOSX_QR=_idsSessionOSX_QR;
 @property(retain) IDSSession *idsSession; // @synthesize idsSession=_idsSession;
 @property unsigned long long session; // @synthesize session=_session;

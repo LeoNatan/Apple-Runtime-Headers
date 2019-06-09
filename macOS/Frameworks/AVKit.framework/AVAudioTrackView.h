@@ -6,40 +6,23 @@
 
 #import <AVKit/AVTrackView.h>
 
-#import <AVKit/CALayerDelegate-Protocol.h>
+@class AVObservationController, AVWaveformLayer;
 
-@class AVAudioAmplitudeExtractionSession, AVDataPool, AVPlayerController, CALayer, CATiledLayer, NSString;
-
-@interface AVAudioTrackView : AVTrackView <CALayerDelegate>
+__attribute__((visibility("hidden")))
+@interface AVAudioTrackView : AVTrackView
 {
-    AVPlayerController *_playerController;
-    AVAudioAmplitudeExtractionSession *_audioAmplitudeExtractionSession;
-    CATiledLayer *_waveformLayer;
-    CALayer *_centerLineLayer;
-    struct CGSize _lastPreviewLayerBoundsSize;
-    AVDataPool *_rectListPool;
-    struct CGRect _pendingDirtyRect;
+    AVObservationController *_observationController;
+    AVWaveformLayer *_waveformLayer;
 }
 
-+ (void)drawAudioWaveformLayer:(id)arg1 inContext:(struct CGContext *)arg2 withAudioAmplitudeExtractionSession:(id)arg3 duration:(CDStruct_1b6d18a9)arg4 rectListPool:(id)arg5;
 - (void).cxx_destruct;
-- (void)audioAmplitudeSamplesDidBecomeAvailable:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)layoutSublayersOfLayer:(id)arg1;
-- (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
+- (void)_setupWaveformLayer;
+- (void)_updateWaveformIfNeeded;
+- (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidEndLiveResize;
-- (void)setAudioAmplitudeExtractionSession:(id)arg1;
-- (id)audioAmplitudeExtractionSession;
-- (void)setPlayerController:(id)arg1;
-- (id)playerController;
+- (id)makeBackingLayer;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

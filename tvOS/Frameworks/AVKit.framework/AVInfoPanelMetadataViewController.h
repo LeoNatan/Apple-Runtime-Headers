@@ -8,17 +8,22 @@
 
 @class AVInfoPanelDescriptionViewController, AVInfoPanelNavigationCollectionViewController, UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelMetadataViewController : AVInfoPanelContentViewController
 {
     AVInfoPanelDescriptionViewController *_descriptionViewController;
     AVInfoPanelNavigationCollectionViewController *_navigationViewController;
     UIVisualEffectView *_dividerView;
+    _Bool _suppressDescription;
 }
 
 + (_Bool)_preventsAppearanceProxyCustomization;
++ (id)_titleForNavigationOnly;
++ (id)_titleForInfo;
+@property(nonatomic) _Bool suppressDescription; // @synthesize suppressDescription=_suppressDescription;
 - (void).cxx_destruct;
 - (id)_navigationFlowLayout;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
 - (_Bool)hasContent;
 @property(readonly) AVInfoPanelNavigationCollectionViewController *navigationViewController;

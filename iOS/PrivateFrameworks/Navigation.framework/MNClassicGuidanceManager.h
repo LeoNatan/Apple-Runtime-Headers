@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int transportType;
 @property(readonly, nonatomic) NSData *remainingRouteZilchData;
 - (_Bool)repeatLastGuidanceAnnouncement:(id)arg1;
+- (void)addInjectedEvent:(id)arg1;
 - (void)_notifyDisplayManeuverForSecondaryStep:(id)arg1;
 - (void)_notifyDisplayManeuverForStep:(id)arg1 withDistance:(double)arg2 allowCombinedGuidance:(_Bool)arg3;
 - (void)_notifyAnnounceManeuverForStep:(id)arg1 withDistance:(double)arg2 withCombinedGuidance:(int)arg3 playShortPrompt:(_Bool)arg4 isRepeat:(_Bool)arg5 stage:(unsigned long long)arg6 timeLimit:(double)arg7;
@@ -84,7 +85,7 @@ __attribute__((visibility("hidden")))
 - (double)timeUntilNextAnnouncement;
 - (double)timeSinceLastAnnouncement;
 - (_Bool)_announcementInProgress;
-- (void)updateGuidanceForProceedToRouteAtLocation:(CDStruct_2c43369c)arg1 routeMatch:(id)arg2 remainingTime:(double)arg3 distanceUntilDestination:(double)arg4;
+- (void)updateGuidanceForProceedToRouteAtLocation:(CDStruct_c3b9c2ee)arg1 routeMatch:(id)arg2 remainingTime:(double)arg3 distanceUntilDestination:(double)arg4;
 - (void)_updatePrepareForNextStep;
 - (_Bool)_updateGuidanceStateWithLocation:(id)arg1 withMatch:(id)arg2 withNavigatorState:(int)arg3 stepChanged:(_Bool *)arg4;
 - (_Bool)_updateCheckIfNextStep:(id)arg1 navigatorState:(int)arg2 routeMatch:(id)arg3;
@@ -96,9 +97,9 @@ __attribute__((visibility("hidden")))
 - (void)_resetStepState;
 - (void)updateGuidanceForLocation:(id)arg1 navigatorState:(int)arg2;
 - (unsigned long long)_currentAnnouncementStage;
-- (id)_getClosestStepWithNameForProceedToRoute:(CDStruct_2c43369c)arg1 routeMatch:(id)arg2;
+- (id)_getClosestStepWithNameForProceedToRoute:(CDStruct_c3b9c2ee)arg1 routeMatch:(id)arg2;
 - (id)_combinedGuidanceForStep:(id)arg1 withType:(int)arg2;
-- (CDStruct_2c43369c)maneuverStepCoordinate;
+- (CDStruct_c3b9c2ee)maneuverStepCoordinate;
 @property(readonly, nonatomic) GEOComposedRouteStep *maneuverStep;
 @property(readonly, nonatomic) unsigned long long maneuverStepIndex;
 - (unsigned long long)_maneuverStepIndex;

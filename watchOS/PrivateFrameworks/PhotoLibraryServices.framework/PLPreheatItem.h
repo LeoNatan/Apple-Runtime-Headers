@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, PLAssetsdCloudClient;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface PLPreheatItem : NSObject
 {
-    int _format;
+    unsigned short _format;
     int _imageType;
     struct CGSize _optimalSourcePixelSize;
     NSString *_assetUUID;
@@ -22,10 +22,11 @@
     _Bool _CPLPrefetchingCancelled;
     NSObject<OS_dispatch_group> *_CPLPrefetchingWaitGroup;
     _Bool _cachingAllowed;
-    int _requestCount;
+    // Error parsing type: Ai, name: _requestCount
+    PLAssetsdCloudClient *_cloudClient;
     _Bool _didCompleteCPLPrefetchingWithSuccessOrError;
     _Bool _CPLPrefetchingWasCancelled;
-    int _bestFormat;
+    unsigned short _bestFormat;
     NSString *_virtualCPLTaskIdentifier;
 }
 
@@ -33,13 +34,14 @@
 @property _Bool CPLPrefetchingWasCancelled; // @synthesize CPLPrefetchingWasCancelled=_CPLPrefetchingWasCancelled;
 @property _Bool didCompleteCPLPrefetchingWithSuccessOrError; // @synthesize didCompleteCPLPrefetchingWithSuccessOrError=_didCompleteCPLPrefetchingWithSuccessOrError;
 @property(retain) NSString *virtualCPLTaskIdentifier; // @synthesize virtualCPLTaskIdentifier=_virtualCPLTaskIdentifier;
-@property(readonly, retain, nonatomic) NSObject<OS_dispatch_group> *CPLPrefetchingWaitGroup; // @synthesize CPLPrefetchingWaitGroup=_CPLPrefetchingWaitGroup;
+@property(readonly, nonatomic) NSObject<OS_dispatch_group> *CPLPrefetchingWaitGroup; // @synthesize CPLPrefetchingWaitGroup=_CPLPrefetchingWaitGroup;
 @property(readonly, nonatomic) _Bool CPLPrefetching; // @synthesize CPLPrefetching=_CPLPrefetching;
 @property(readonly, copy, nonatomic) NSString *assetUUID; // @synthesize assetUUID=_assetUUID;
 @property(readonly, nonatomic) struct CGSize optimalSourcePixelSize; // @synthesize optimalSourcePixelSize=_optimalSourcePixelSize;
 @property(readonly, nonatomic) int imageType; // @synthesize imageType=_imageType;
-@property(nonatomic) int bestFormat; // @synthesize bestFormat=_bestFormat;
-@property(readonly, nonatomic) int format; // @synthesize format=_format;
+@property(nonatomic) unsigned short bestFormat; // @synthesize bestFormat=_bestFormat;
+@property(readonly, nonatomic) unsigned short format; // @synthesize format=_format;
+- (void).cxx_destruct;
 - (_Bool)isRetained;
 - (int)decrementRequestCount;
 - (int)incrementRequestCount;
@@ -47,11 +49,10 @@
 - (void)cancelPreheatRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startPreheatRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)addImageHandler:(CDUnknownBlockType)arg1;
-- (id)cachedImageIfAvailable:(_Bool *)arg1;
-- (id)cachedImage:(_Bool *)arg1;
-- (void)dealloc;
+- (struct NSObject *)cachedImageIfAvailable:(_Bool *)arg1;
+- (struct NSObject *)cachedImage:(_Bool *)arg1;
 - (id)description;
-- (id)initForCPLPrefetchingWithAssetUUID:(id)arg1 format:(int)arg2;
+- (id)initForCPLPrefetchingWithAssetUUID:(id)arg1 format:(unsigned short)arg2 assetsdClient:(id)arg3;
 
 @end
 

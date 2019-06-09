@@ -6,12 +6,22 @@
 
 #import <PassKitCore/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSString, PKPass, PKPaymentPass, PKPaymentWebServiceBackgroundContext, PKPaymentWebServiceContext;
+@class NSData, NSDictionary, NSString, PKApplePayTrustKeyRequest, PKPass, PKPaymentPass, PKPaymentWebServiceBackgroundContext, PKPaymentWebServiceContext;
 
 @protocol PKPaymentWebServiceProxyObjectExportedInterface <NSObject>
 - (void)invalidateRemoteProxyTargetDevice;
 - (void)archiveBackgroundContext:(PKPaymentWebServiceBackgroundContext *)arg1;
 - (void)archiveContext:(PKPaymentWebServiceContext *)arg1;
+- (void)deleteApplePayTrustKeyWithIdentifier:(NSString *)arg1 completion:(void (^)(BOOL))arg2;
+- (void)createApplePayTrustKeyWithRequest:(PKApplePayTrustKeyRequest *)arg1 completion:(void (^)(PKApplePayTrustKey *, NSError *))arg2;
+- (void)applePayTrustKeyForIdentifier:(NSString *)arg1 completion:(void (^)(PKApplePayTrustKey *))arg2;
+- (void)deviceMetadataWithFields:(unsigned long long)arg1 completion:(void (^)(PKPaymentDeviceMetadata *))arg2;
+- (void)featureApplicationsForProvisioningWithCompletion:(void (^)(NSArray *))arg1;
+- (void)updatedAccountsForProvisioningWithCompletion:(void (^)(NSArray *, NSArray *))arg1;
+- (void)supportedFeatureIdentifiersWithCompletion:(void (^)(NSSet *))arg1;
+- (void)supportsAccountsWithCompletion:(void (^)(BOOL))arg1;
+- (void)updateAccountWithIdentifier:(NSString *)arg1 completion:(void (^)(PKAccount *, NSError *))arg2;
+- (void)setDefaultPaymentPassUniqueIdentifier:(NSString *)arg1;
 - (void)appleAccountInformationWithCompletion:(void (^)(PKAppleAccountInformation *))arg1;
 - (void)renewAppleAccountWithCompletion:(void (^)(long long, PKAppleAccountInformation *))arg1;
 - (void)supportsPeerPaymentRegistrationWithCompletion:(void (^)(BOOL))arg1;

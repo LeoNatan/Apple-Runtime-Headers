@@ -13,16 +13,17 @@
 @interface GEOGeoServiceTag : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    int _serviceType;
     NSString *_tag;
+    int _serviceType;
     struct {
-        unsigned int serviceType:1;
-    } _has;
+        unsigned int has_serviceType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)defaultTag;
-@property(retain, nonatomic) NSString *tag; // @synthesize tag=_tag;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,12 +32,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *tag;
 - (int)StringAsServiceType:(id)arg1;
 - (id)serviceTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasServiceType;
-@property(nonatomic) int serviceType; // @synthesize serviceType=_serviceType;
+@property(nonatomic) int serviceType;
 
 @end
 

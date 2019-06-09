@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/NSObject-Protocol.h>
 
-@class CMCatherineFeeder, HDXPCClient, NSArray, NSDate, NSString, NSTimeZone, NSXPCListenerEndpoint, _HKDeepBreathingSessionConfiguration;
+@class HDXPCClient, NSArray, NSDate, NSString, NSTimeZone, NSXPCListenerEndpoint, _HKDeepBreathingSessionConfiguration;
 @protocol HDDeepBreathingSessionServer, HDDeepBreathingSessionServerDelegate, HDHealthDaemon;
 
 @protocol HDHealthPlugin <NSObject>
@@ -15,8 +15,6 @@
 - (id)initWithHealthDaemon:(id <HDHealthDaemon>)arg1;
 
 @optional
-- (void)_setPluginHeartRateEnable:(_Bool)arg1;
-- (void)_setPluginCatherineFeeder:(CMCatherineFeeder *)arg1;
 - (void)setCurrentActivityCacheOverrideDate:(NSDate *)arg1 timeZone:(NSTimeZone *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (NSArray *)dataCollectors;
 - (id <HDDeepBreathingSessionServer>)deepBreathingServerForClient:(id)arg1 configuration:(_HKDeepBreathingSessionConfiguration *)arg2 healthDaemon:(id <HDHealthDaemon>)arg3 delegate:(id <HDDeepBreathingSessionServerDelegate>)arg4;

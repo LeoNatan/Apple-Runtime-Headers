@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ACDKeychainItem : NSObject
 {
     NSMutableDictionary *_properties;

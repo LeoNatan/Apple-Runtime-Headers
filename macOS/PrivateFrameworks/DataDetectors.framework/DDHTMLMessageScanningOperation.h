@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (void)main;
 - (id)initWithDocument:(id)arg1 threadManager:(id)arg2;
-- (id)initWithWebView:(id)arg1 threadManager:(id)arg2;
 
 @end
 

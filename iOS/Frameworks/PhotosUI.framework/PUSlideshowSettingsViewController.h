@@ -15,7 +15,7 @@
 #import <PhotosUI/UITableViewDataSource-Protocol.h>
 #import <PhotosUI/UITableViewDelegate-Protocol.h>
 
-@class NSString, OKProducerPreset, PUSlideshowMediaItem, PUSlideshowSession, PUSlideshowSettingsViewControllerSpec, PUSlideshowSettingsViewModel, UITableView, _UIBackdropView;
+@class NSString, OKProducerPreset, PUSlideshowMediaItem, PUSlideshowSession, PUSlideshowSettingsViewControllerSpec, PUSlideshowSettingsViewModel, UITableView;
 @protocol PUSlideshowSettingsViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
     PUSlideshowSettingsViewModel *_settingsViewModel;
     PUSlideshowSettingsViewControllerSpec *_spec;
     UITableView *_tableView;
-    _UIBackdropView *_backdropView;
     _Bool _shouldHideTableViewWhenViewWillDisappear;
     _Bool __needsUpdateSpec;
     _Bool __needsUpdateTableView;

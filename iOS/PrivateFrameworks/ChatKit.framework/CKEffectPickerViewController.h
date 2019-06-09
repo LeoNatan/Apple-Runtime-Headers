@@ -11,6 +11,7 @@
 @class CKEffectPickerView, NSAttributedString;
 @protocol CKEffectPickerViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKEffectPickerViewController : UIViewController <CKEffectPickerViewDelegate>
 {
     id <CKEffectPickerViewControllerDelegate> _delegate;

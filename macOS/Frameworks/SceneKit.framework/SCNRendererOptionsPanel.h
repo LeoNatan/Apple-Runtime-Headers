@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     SCNRendererOptionsPanelController *_controller;
 }
 
++ (void)recordGraphInView:(id)arg1;
 + (id)rendererOptionsPanelForView:(id)arg1;
 - (void).cxx_destruct;
 - (BOOL)canBecomeMainWindow;

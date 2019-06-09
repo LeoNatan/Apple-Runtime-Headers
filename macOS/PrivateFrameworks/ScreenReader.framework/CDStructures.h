@@ -15,6 +15,26 @@ struct AEDesc {
     struct OpaqueAEDataStorageType **_field2;
 };
 
+struct AudioBuffer {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+};
+
+struct AudioStreamBasicDescription {
+    double _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+};
+
+struct AudioStreamPacketDescription;
+
 struct CGPoint {
     double x;
     double y;
@@ -45,6 +65,10 @@ struct NSMutableArray {
 };
 
 struct OpaqueAEDataStorageType;
+
+struct OpaqueAudioConverter;
+
+struct OpaqueAudioFileID;
 
 struct ProcessSerialNumber {
     unsigned int highLongOfPSN;
@@ -82,25 +106,16 @@ struct _NSRange {
     unsigned long long length;
 };
 
-struct _SCRSearchData {
-    id _field1;
-    unsigned long long _field2;
-    id _field3;
-    unsigned long long _field4;
-    struct _NSRange _field5;
-    unsigned long long _field6;
+struct nssound_info {
+    struct OpaqueAudioConverter *_field1;
+    struct AudioBuffer _field2;
+    struct ComponentInstanceRecord *_field3;
+    struct OpaqueAudioFileID *_field4;
+    struct AudioStreamBasicDescription _field5;
+    long long _field6;
     unsigned long long _field7;
-    struct _NSRange _field8;
-    id _field9;
-    char _field10;
-    id _field11;
-    int _field12;
-};
-
-struct __SCRElementHashGroup {
-    id _field1;
-    struct CGRect _field2;
-    void *_field3;
+    unsigned int _field8;
+    struct AudioStreamPacketDescription *_field9;
 };
 
 struct os_unfair_lock_s {
@@ -108,11 +123,6 @@ struct os_unfair_lock_s {
 };
 
 #pragma mark Typedef'd Structures
-
-typedef struct {
-    unsigned int canWrap:1;
-    unsigned int handlingBeginFocus:1;
-} CDStruct_79add89a;
 
 typedef struct {
     long long _field1;
@@ -128,4 +138,10 @@ typedef struct {
         long long granularity;
     } selection;
 } CDStruct_97f7034d;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int :1;
+    unsigned int :1;
+} CDStruct_d7010776;
 

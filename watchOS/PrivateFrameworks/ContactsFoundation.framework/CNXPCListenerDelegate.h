@@ -16,7 +16,7 @@
     Protocol *_exportedInterfaceProtocol;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)initWithWithExportedObject:(id)arg1 exportedInterfaceProtocol:(id)arg2;
 

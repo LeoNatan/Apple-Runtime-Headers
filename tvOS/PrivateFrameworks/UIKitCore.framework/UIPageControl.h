@@ -35,6 +35,7 @@
 @property(retain, nonatomic) UIColor *pageIndicatorTintColor; // @synthesize pageIndicatorTintColor=_pageIndicatorTintColor;
 @property(retain, nonatomic) UIColor *currentPageIndicatorTintColor; // @synthesize currentPageIndicatorTintColor=_currentPageIndicatorTintColor;
 - (void).cxx_destruct;
+- (void)_hideBackgroundEffectView;
 - (id)_effectiveContentView;
 - (_Bool)canBecomeFocused;
 - (id)_createModernIndicatorImageFromView:(id)arg1;

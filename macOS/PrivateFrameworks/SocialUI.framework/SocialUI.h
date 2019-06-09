@@ -12,6 +12,7 @@
 
 + (id)facetime;
 + (id)transcript;
++ (id)inputLine;
 + (id)details;
 + (id)autocomplete;
 

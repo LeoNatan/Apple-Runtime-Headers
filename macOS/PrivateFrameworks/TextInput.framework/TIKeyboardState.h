@@ -23,6 +23,7 @@
             unsigned int keyboardEventsLagging:1;
             unsigned int hardwareKeyboardMode:1;
             unsigned int splitKeyboardMode:1;
+            unsigned int floatingKeyboardMode:1;
             unsigned int wordLearningEnabled:1;
             unsigned int autocorrectionEnabled:1;
             unsigned int shortcutConversionEnabled:1;
@@ -33,6 +34,7 @@
             unsigned int longPredictionListEnabled:1;
             unsigned int needAutofill:1;
             unsigned int needOneTimeCodeAutofill:1;
+            unsigned int landscapeOrientation:1;
         } fields;
     } _mask;
     union {
@@ -46,6 +48,7 @@
     NSUUID *_documentIdentifier;
     NSString *_clientIdentifier;
     NSString *_inputMode;
+    NSArray *_auxiliaryInputModeLanguages;
     NSString *_recipientIdentifier;
     TIInputContextHistory *_inputContextHistory;
     TIKeyboardLayout *_keyLayout;
@@ -78,6 +81,7 @@
 @property(retain, nonatomic) TIKeyboardLayout *keyLayout; // @synthesize keyLayout=_keyLayout;
 @property(retain, nonatomic) TIInputContextHistory *inputContextHistory; // @synthesize inputContextHistory=_inputContextHistory;
 @property(copy, nonatomic) NSString *recipientIdentifier; // @synthesize recipientIdentifier=_recipientIdentifier;
+@property(copy, nonatomic) NSArray *auxiliaryInputModeLanguages; // @synthesize auxiliaryInputModeLanguages=_auxiliaryInputModeLanguages;
 @property(copy, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
 @property(copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain, nonatomic) NSUUID *documentIdentifier; // @synthesize documentIdentifier=_documentIdentifier;
@@ -87,6 +91,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) BOOL shouldOutputFullwidthSpace;
 @property(nonatomic) BOOL needOneTimeCodeAutofill;
 @property(nonatomic) BOOL needAutofill;
 @property(nonatomic) BOOL longPredictionListEnabled;
@@ -103,6 +108,8 @@
 @property(nonatomic) BOOL shortcutConversionEnabled;
 @property(nonatomic) BOOL autocorrectionEnabled;
 @property(nonatomic) BOOL wordLearningEnabled;
+@property(nonatomic) BOOL landscapeOrientation;
+@property(nonatomic) BOOL floatingKeyboardMode;
 @property(nonatomic) BOOL splitKeyboardMode;
 @property(nonatomic) BOOL hardwareKeyboardMode;
 @property(nonatomic) BOOL keyboardEventsLagging;

@@ -11,6 +11,7 @@
 
 @class NSArray, NSMapTable, NSMutableArray, NSString, SKUIListViewElement, SKUIMenuPopoverController, UIControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUIHorizontalListView : SKUIViewReuseView <SKUIMenuPopoverDelegate, SKUIViewElementView>
 {
     NSMutableArray *_artworkRequestPassthroughViews;

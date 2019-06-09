@@ -29,6 +29,9 @@
 - (void).cxx_destruct;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)respondWithPayload:(id)arg1 error:(id)arg2;
+- (BOOL)respondWithError:(id)arg1;
+- (BOOL)respondWithPayload:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler;
 @property(copy, nonatomic) NSDictionary *messagePayload;
 @property(readonly, copy, nonatomic) NSDictionary *headers;
@@ -37,6 +40,7 @@
 @property(readonly, nonatomic) __weak HMFMessageTransport *transport;
 @property(retain, nonatomic) HMFMessageDestination *destination;
 @property(readonly, nonatomic) long long qualityOfService;
+@property(readonly, nonatomic) double timeout;
 @property(readonly, copy, nonatomic) NSString *name;
 @property(copy, nonatomic) NSUUID *identifier;
 - (id)description;
@@ -52,7 +56,6 @@
 - (id)initWithName:(id)arg1 identifier:(id)arg2 messagePayload:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (id)arrayOfDateComponentsForKey:(id)arg1;
 - (id)predicateForKey:(id)arg1;
-- (id)locationForKey:(id)arg1;
 - (id)calendarForKey:(id)arg1;
 - (id)errorForKey:(id)arg1;
 - (id)dateComponentsForKey:(id)arg1;

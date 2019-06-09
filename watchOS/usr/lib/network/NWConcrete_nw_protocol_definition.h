@@ -28,6 +28,10 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType check_equality_options;
     CDUnknownFunctionPointerType allocate_metadata;
     CDUnknownFunctionPointerType deallocate_metadata;
+    CDUnknownFunctionPointerType create_reply;
+    CDUnknownFunctionPointerType copy_original;
+    CDUnknownFunctionPointerType set_original;
+    CDUnknownFunctionPointerType copy_message_options;
     CDUnknownFunctionPointerType deallocate_cache_entry;
     CDUnknownFunctionPointerType should_flush_cache;
     CDUnknownFunctionPointerType initialize;
@@ -41,10 +45,20 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType outbound_stopping;
     CDUnknownFunctionPointerType start;
     CDUnknownFunctionPointerType stop;
+    CDUnknownFunctionPointerType link_state;
     CDUnknownFunctionPointerType copy_metadata;
+    CDUnknownFunctionPointerType copy_establishment_report;
+    CDUnknownFunctionPointerType framer_create;
+    CDUnknownBlockType framer_start;
     unsigned int custom_flow_map_key_size;
+    unsigned int framer:1;
+    unsigned int supports_replies:1;
+    unsigned int message_is_stream:1;
+    unsigned int receive_single_message:1;
+    unsigned int __pad_bits:4;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)init;
 

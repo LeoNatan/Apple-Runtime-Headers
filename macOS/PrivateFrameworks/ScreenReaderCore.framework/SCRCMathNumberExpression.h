@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)mathMLString;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(long long)arg1 arePausesAllowed:(BOOL)arg2;
 - (BOOL)isNumber;
 
 @end

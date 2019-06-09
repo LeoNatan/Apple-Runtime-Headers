@@ -16,8 +16,6 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_baselineToBaselineConstraint;
     NSLayoutConstraint *_iconHeightConstraint;
     NSLayoutConstraint *_iconWidthConstraint;
-    NSLayoutConstraint *_seeMoreBaselineConstraint;
-    NSLayoutConstraint *_seeMoreCenterYConstraint;
     _Bool _contentChanged;
     double _width;
     _Bool _showSeeMoreButton;

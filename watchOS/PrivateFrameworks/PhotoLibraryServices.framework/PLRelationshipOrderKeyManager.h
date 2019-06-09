@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, PLPhotoLibrary;
+@class NSMutableDictionary, NSURL, PLPhotoLibrary;
 @protocol OS_dispatch_queue;
 
 @interface PLRelationshipOrderKeyManager : NSObject
 {
-    PLPhotoLibrary *_photoLibrary;
     PLPhotoLibrary *_locationsPhotoLibrary;
     NSMutableDictionary *_locationsCache;
     NSMutableDictionary *_enqueuedFolderAlbumsOrderValueUpdates;
@@ -19,11 +18,12 @@
     NSObject<OS_dispatch_queue> *_locationsCacheQueue;
     _Bool _hasStashedLocationValues;
     _Bool _conflictDetected;
+    NSURL *_libraryURL;
 }
 
-+ (id)sharedManager;
 @property(readonly, nonatomic) _Bool conflictDetected; // @synthesize conflictDetected=_conflictDetected;
 @property(readonly, nonatomic) _Bool hasStashedLocationValues; // @synthesize hasStashedLocationValues=_hasStashedLocationValues;
+- (void).cxx_destruct;
 - (id)parentFolderOrderValueForAlbum:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)albumsAndOrderValuesForAsset:(id)arg1 inManagedObjectContext:(id)arg2;
 - (_Bool)writeStashedLocationValuesInLibrary:(id)arg1 error:(id *)arg2;
@@ -45,9 +45,7 @@
 - (id)_enqueuedFolderAlbumsOrderValueUpdates;
 - (id)_locationsCache;
 - (id)locationsPhotoLibrary;
-- (id)photoLibrary;
-- (void)dealloc;
-- (id)init;
+- (id)initWithLibraryURL:(id)arg1;
 - (void)updateKeyAssetsForAlbums:(id)arg1 inLibrary:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)migration_updateLegacyChildCollectionOrderKeysInFolder:(id)arg1;
 - (void)migration_updateLegacyOrderValuesForAssetsInAlbums:(id)arg1 managedObjectContext:(id)arg2;

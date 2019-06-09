@@ -11,6 +11,7 @@
 @class CLLocation, NSDate, NSString;
 
 @interface PXForYouSuggestionDisplayAsset (PhotosUI) <PUDisplayAsset>
+@property(readonly, nonatomic) unsigned long long deferredLogInfo;
 @property(readonly, nonatomic) unsigned long long pixelHeight;
 @property(readonly, nonatomic) unsigned long long pixelWidth;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 photoIrisVideoDuration;
@@ -23,6 +24,7 @@
 @property(readonly, nonatomic) unsigned long long originalFilesize;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) double duration;
+@property(readonly, nonatomic) NSString *uniformTypeIdentifier;
 @property(readonly, nonatomic) NSString *uuid;
 @property(readonly, nonatomic) CLLocation *location;
 
@@ -36,11 +38,11 @@
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool isAnimatedImage;
+@property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) unsigned long long mediaType;
 @property(readonly, nonatomic) long long playbackStyle;
 @property(readonly, nonatomic) long long playbackVariation;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) NSString *uniformTypeIdentifier;
 @end
 

@@ -14,6 +14,9 @@
     _Bool _wantsFullCellPhoto;
 }
 
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)prepareForReuse;
 - (id)transitionContextInView:(id)arg1;
 - (void)layoutSubviews;
 - (void)configureWithContent:(id)arg1;

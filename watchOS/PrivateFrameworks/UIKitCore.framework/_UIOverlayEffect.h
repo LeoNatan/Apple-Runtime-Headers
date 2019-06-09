@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(copy, nonatomic) NSString *filterType; // @synthesize filterType=_filterType;
 - (void).cxx_destruct;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(int)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

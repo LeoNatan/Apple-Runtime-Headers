@@ -6,24 +6,26 @@
 
 #import <NeutrinoCore/NUAutoCalculator.h>
 
-@class NUImagePropertiesClient, PIFaceBalanceAutoCalculator;
+#import <PhotoImaging/NUTimeBased-Protocol.h>
 
-@interface PIWhiteBalanceAutoCalculator : NUAutoCalculator
+@class NSString;
+
+@interface PIWhiteBalanceAutoCalculator : NUAutoCalculator <NUTimeBased>
 {
-    PIFaceBalanceAutoCalculator *_faceAutoCaculator;
-    NUImagePropertiesClient *_imagePropertiesClient;
-    struct CGColor *_grayColor;
-    struct CGColor *_grayColorXY;
-    BOOL _isRAW;
 }
 
-- (void).cxx_destruct;
 - (CDStruct_c3b9c2ee)_chooseTempTintForSushi:(CDStruct_92960315)arg1 RAWProperties:(id)arg2 brightness:(double)arg3;
 - (CDStruct_145c54d4)_chooseNeutralGrayForNonSushi:(CDStruct_92960315)arg1;
 - (CDStruct_145c54d4)_correctedRGBResultFromResult:(CDStruct_145c54d4)arg1;
 - (BOOL)_useTempTint:(CDStruct_145c54d4)arg1;
-- (void)calculate:(CDUnknownBlockType)arg1;
-- (id)initWithComposition:(id)arg1;
+- (void)submit:(CDUnknownBlockType)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(nonatomic) CDStruct_1b6d18a9 time;
 
 @end
 

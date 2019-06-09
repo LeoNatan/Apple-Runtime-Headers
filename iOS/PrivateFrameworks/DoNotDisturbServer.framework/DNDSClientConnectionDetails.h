@@ -6,24 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSXPCConnection;
+#import <DoNotDisturbServer/NSCopying-Protocol.h>
+#import <DoNotDisturbServer/NSMutableCopying-Protocol.h>
 
-@interface DNDSClientConnectionDetails : NSObject
+@class NSSet, NSUUID;
+
+@interface DNDSClientConnectionDetails : NSObject <NSCopying, NSMutableCopying>
 {
+    NSUUID *_interruptionInvalidationAssertionUUID;
+    NSSet *_assertionUpdateClientIdentifiers;
     _Bool _wantsStateUpdates;
-    _Bool _wantsAssertionUpdates;
     _Bool _wantsSettingsUpdates;
-    NSString *_identifier;
-    NSXPCConnection *_connection;
 }
 
-@property(nonatomic) _Bool wantsSettingsUpdates; // @synthesize wantsSettingsUpdates=_wantsSettingsUpdates;
-@property(nonatomic) _Bool wantsAssertionUpdates; // @synthesize wantsAssertionUpdates=_wantsAssertionUpdates;
-@property(nonatomic) _Bool wantsStateUpdates; // @synthesize wantsStateUpdates=_wantsStateUpdates;
-@property(readonly, nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) _Bool wantsSettingsUpdates; // @synthesize wantsSettingsUpdates=_wantsSettingsUpdates;
+@property(readonly, nonatomic) _Bool wantsStateUpdates; // @synthesize wantsStateUpdates=_wantsStateUpdates;
+@property(readonly, copy, nonatomic) NSSet *assertionUpdateClientIdentifiers; // @synthesize assertionUpdateClientIdentifiers=_assertionUpdateClientIdentifiers;
+@property(readonly, copy, nonatomic) NSUUID *interruptionInvalidationAssertionUUID; // @synthesize interruptionInvalidationAssertionUUID=_interruptionInvalidationAssertionUUID;
 - (void).cxx_destruct;
-- (id)initWithIdentifier:(id)arg1 connection:(id)arg2;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_initWithInterruptionInvalidationAssertionUUID:(id)arg1 assertionUpdateClientIdentifiers:(id)arg2 wantsStateUpdates:(_Bool)arg3 wantsSettingsUpdates:(_Bool)arg4;
+- (id)_initWithDetails:(id)arg1;
+- (id)init;
 
 @end
 

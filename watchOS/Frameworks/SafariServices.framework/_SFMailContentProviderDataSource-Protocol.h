@@ -6,12 +6,12 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class _SFMailContentProvider;
+@class WKWebView, _SFMailContentProvider, _SFPrintController, _SFReaderController;
 
 @protocol _SFMailContentProviderDataSource <NSObject>
-- (void)mailContentProvider:(_SFMailContentProvider *)arg1 getWebArchiveDataWithCompletion:(void (^)(NSData *, NSString *, NSError *))arg2;
-- (void)mailContentProvider:(_SFMailContentProvider *)arg1 getPDFDataWithCompletionHandler:(void (^)(NSData *, NSString *))arg2;
-- (void)mailContentProvider:(_SFMailContentProvider *)arg1 getReaderContentWithCompletionHandler:(void (^)(NSString *))arg2;
-- (_Bool)mailContentProvider:(_SFMailContentProvider *)arg1 canProvideContentType:(int)arg2;
+- (_SFPrintController *)printControllerForContentProvider:(_SFMailContentProvider *)arg1;
+- (WKWebView *)webViewForMailContentProvider:(_SFMailContentProvider *)arg1;
+- (_Bool)readerViewIsVisibleForMailContentProvider:(_SFMailContentProvider *)arg1;
+- (_SFReaderController *)readerControllerForMailContentProvider:(_SFMailContentProvider *)arg1;
 @end
 

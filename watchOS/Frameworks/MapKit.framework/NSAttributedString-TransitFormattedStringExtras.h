@@ -7,6 +7,16 @@
 #import <Foundation/NSAttributedString.h>
 
 @interface NSAttributedString (TransitFormattedStringExtras)
++ (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2 options:(CDStruct_f0a7d2be)arg3;
 + (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2;
++ (void)_handleFormattingError:(id)arg1 forString:(id)arg2;
++ (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 attributes:(id)arg3;
++ (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 defaultReplacementAttributes:(id)arg3 startTokenDelimiter:(id)arg4 endTokenDelimiter:(id)arg5 error:(id *)arg6;
++ (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 attributes:(id)arg3 error:(id *)arg4;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2 startTokenDelimiter:(id)arg3 endTokenDelimiter:(id)arg4 error:(id *)arg5;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2 error:(id *)arg3;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 error:(id *)arg2;
 @end
 

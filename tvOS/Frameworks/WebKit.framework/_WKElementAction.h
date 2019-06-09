@@ -17,11 +17,13 @@
     long long _type;
 }
 
++ (id)imageForElementActionType:(long long)arg1;
 + (id)elementActionWithType:(long long)arg1;
 + (id)elementActionWithType:(long long)arg1 customTitle:(id)arg2;
 + (id)_elementActionWithType:(long long)arg1 assistant:(id)arg2;
 + (id)_elementActionWithType:(long long)arg1 customTitle:(id)arg2 assistant:(id)arg3;
 + (id)_elementActionWithType:(long long)arg1 title:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
++ (id)elementActionWithType:(long long)arg1 title:(id)arg2 actionHandler:(CDUnknownBlockType)arg3;
 + (id)elementActionWithTitle:(id)arg1 actionHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) CDUnknownBlockType dismissalHandler; // @synthesize dismissalHandler=_dismissalHandler;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;

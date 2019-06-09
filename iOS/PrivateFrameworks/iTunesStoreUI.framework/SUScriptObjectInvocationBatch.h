@@ -16,6 +16,7 @@
     SUScriptObject *_rootObject;
 }
 
+- (void).cxx_destruct;
 @property SUScriptObject *rootObject;
 - (void)enqueueInvocation:(id)arg1;
 - (void)_delayedDequeueInvocations;

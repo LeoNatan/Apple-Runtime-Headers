@@ -66,6 +66,7 @@
 - (void)setMaxHeight:(double)arg1;
 @property(nonatomic) __weak id <CNAutocompleteResultWindowDelegate> autocompleteDelegate;
 - (void)setup;
+- (float)_backdropBleedAmount;
 - (double)defaultWindowWidth;
 - (id)init;
 

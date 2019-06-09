@@ -36,6 +36,8 @@
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 - (void).cxx_destruct;
+- (id)_filterInaccessibleIssues:(id)arg1;
+- (id)_filterInaccessibleHeadlines:(id)arg1;
 - (void)_fetchCurrentFeatureHeadlinesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_fetchConfigContentAndCurrentIssuesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)operationWillFinishWithError:(id)arg1;

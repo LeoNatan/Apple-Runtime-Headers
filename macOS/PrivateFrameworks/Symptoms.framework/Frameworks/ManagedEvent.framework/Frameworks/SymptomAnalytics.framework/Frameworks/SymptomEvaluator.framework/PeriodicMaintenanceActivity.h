@@ -6,19 +6,22 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableArray;
+
 @interface PeriodicMaintenanceActivity : NSObject
 {
-    CDUnknownBlockType _maintenanceBlocks;
+    NSMutableArray *_activities;
+    unsigned long long _nextActivityIndex;
 }
 
++ (void)registerPeriodicActivityWithIdentifier:(id)arg1 queue:(id)arg2 activity:(CDUnknownBlockType)arg3;
 + (id)sharedInstance;
 + (const char *)periodicActivityID;
 + (long long)periodicActivityInterval;
-+ (id)activityQueue;
-@property(copy) CDUnknownBlockType maintenanceBlocks; // @synthesize maintenanceBlocks=_maintenanceBlocks;
 - (void).cxx_destruct;
-- (void)_handleActivityRun;
-- (void)scheduleNextRunOnQueue:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)_registerPeriodicActivityWithIdentifier:(id)arg1 queue:(id)arg2 activity:(CDUnknownBlockType)arg3;
+- (void)_handleActivityRun:(id)arg1;
+- (void)_registerPeriodicMaintenanceActivity;
 - (void)dealloc;
 - (id)init;
 

@@ -25,7 +25,6 @@
     NSMutableArray *_characteristicDataBuffer;
     HKObserverSet *_fitnessMachineSessionObservers;
     HDFitnessMachineDataProducer *_fitnessMachineDataProducer;
-    NSDate *_machinePreferredUntilDate;
     HDHealthServiceManager *_serviceManager;
     HDFitnessMachineStateTimers *_fitnessMachineStateTimers;
     HDFitnessMachineAnalyticsCollector *_analyticsCollector;
@@ -35,7 +34,6 @@
 @property(retain, nonatomic) HDFitnessMachineAnalyticsCollector *analyticsCollector; // @synthesize analyticsCollector=_analyticsCollector;
 @property(retain, nonatomic) HDFitnessMachineStateTimers *fitnessMachineStateTimers; // @synthesize fitnessMachineStateTimers=_fitnessMachineStateTimers;
 @property(nonatomic) __weak HDHealthServiceManager *serviceManager; // @synthesize serviceManager=_serviceManager;
-@property(readonly, nonatomic) NSDate *machinePreferredUntilDate; // @synthesize machinePreferredUntilDate=_machinePreferredUntilDate;
 @property(readonly, nonatomic) HDFitnessMachineDataProducer *fitnessMachineDataProducer; // @synthesize fitnessMachineDataProducer=_fitnessMachineDataProducer;
 - (void).cxx_destruct;
 - (void)unitTest_receiveFakeCharacteristicUpdate:(id)arg1;
@@ -89,6 +87,7 @@
 - (void)_queue_handleBluetoothDisconnection;
 - (void)_queue_disconnectFitnessMachineFromBluetooth;
 - (_Bool)_queue_waitingOnInitialStatusAndData;
+- (void)_queue_setMachinePreferredUntilDate:(id)arg1;
 - (void)_queue_handleInitialStateIfNecessary;
 - (_Bool)_queue_handleInitialMachineDataIfNecessary:(id)arg1;
 - (_Bool)_queue_handleInitialMachineStatusIfNecessary:(id)arg1;
@@ -106,6 +105,7 @@
 - (void)finishSessionWithConfiguration:(id)arg1;
 - (void)recoverSessionWithConfiguration:(id)arg1;
 - (id)currentSessionRecoveryConfiguration;
+- (unsigned long long)fitnessMachineTypeForSessionUUID:(id)arg1;
 - (void)clientInvalidatedWithConnectionUUID:(id)arg1;
 - (void)_queue_endFitnessMachineConnectionForFitnessMachineSessionUUID:(id)arg1 withConnectionUUID:(id)arg2 forcingReset:(_Bool)arg3;
 - (void)endFitnessMachineSessionWithUUID:(id)arg1;
@@ -113,6 +113,7 @@
 - (void)endFitnessMachineConnectionWithUUID:(id)arg1;
 - (void)markClientReadyWithConnectionUUID:(id)arg1;
 - (void)registerClient:(id)arg1 withConnectionUUID:(id)arg2;
+@property(readonly, nonatomic) NSDate *machinePreferredUntilDate;
 - (void)_setQueue:(id)arg1;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;

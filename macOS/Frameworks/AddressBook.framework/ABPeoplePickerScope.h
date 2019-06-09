@@ -13,7 +13,8 @@
     ABPeoplePickerController *_peoplePickerController;
 }
 
-@property ABPeoplePickerController *peoplePickerController; // @synthesize peoplePickerController=_peoplePickerController;
+@property __weak ABPeoplePickerController *peoplePickerController; // @synthesize peoplePickerController=_peoplePickerController;
+- (void).cxx_destruct;
 
 @end
 

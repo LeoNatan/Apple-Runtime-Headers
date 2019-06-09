@@ -25,8 +25,8 @@
 @property(readonly, copy) NSString *nameValueSeparator; // @synthesize nameValueSeparator=_nameValueSeparator;
 @property(readonly, copy) NSString *fieldSeparator; // @synthesize fieldSeparator=_fieldSeparator;
 @property(readonly, copy) NSString *initialFieldSeparator; // @synthesize initialFieldSeparator=_initialFieldSeparator;
+- (void).cxx_destruct;
 - (id)descriptionForObject:(id)arg1 withIndent:(long long)arg2;
-- (void)dealloc;
 - (id)initWithIntialFieldSeparator:(id)arg1 fieldSeparator:(id)arg2 nameValueSeparator:(id)arg3 suffix:(id)arg4 extraIndent:(long long)arg5 prettyPrint:(_Bool)arg6;
 
 @end

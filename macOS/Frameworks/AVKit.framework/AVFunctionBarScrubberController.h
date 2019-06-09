@@ -11,6 +11,7 @@
 @class AVFunctionBarScrubberInternal, AVFunctionBarTrackViewController, AVPlayerControllerTimeResolver, AVPlayerLayer, NSMutableArray, NSString;
 @protocol AVFunctionBarScrubberControlling><AVFunctionBarTrackControlling><AVTimeControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarScrubberController : NSViewController <AVFunctionBarScrubberDelegateInternal>
 {
     id <AVFunctionBarScrubberControlling><AVFunctionBarTrackControlling><AVTimeControlling> _playerController;

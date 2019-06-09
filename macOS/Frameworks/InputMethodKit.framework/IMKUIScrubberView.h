@@ -56,6 +56,7 @@
 - (void)mouseUp:(id)arg1;
 - (void)mouseDragged:(id)arg1;
 - (void)mouseDown:(id)arg1;
+- (struct CGPoint)pointInViewFromMouseLocation:(struct CGPoint)arg1;
 - (void)checkCandidateSelectionForPoint:(struct CGPoint)arg1;
 - (BOOL)pointIsInsideView:(struct CGPoint)arg1;
 - (struct CGPoint)locationInViewWithEvent:(id)arg1;

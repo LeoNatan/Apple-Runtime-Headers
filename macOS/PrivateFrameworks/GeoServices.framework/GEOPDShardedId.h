@@ -14,19 +14,20 @@ __attribute__((visibility("hidden")))
 @interface GEOPDShardedId : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    unsigned long long _muid;
+    unsigned long long _basemapId;
     GEOLatLng *_center;
+    unsigned long long _muid;
     int _resultProviderId;
     struct {
-        unsigned int muid:1;
-        unsigned int resultProviderId:1;
-    } _has;
+        unsigned int has_basemapId:1;
+        unsigned int has_muid:1;
+        unsigned int has_resultProviderId:1;
+    } _flags;
 }
 
-@property(nonatomic) int resultProviderId; // @synthesize resultProviderId=_resultProviderId;
-@property(retain, nonatomic) GEOLatLng *center; // @synthesize center=_center;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,11 +36,17 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasBasemapId;
+@property(nonatomic) unsigned long long basemapId;
 @property(nonatomic) BOOL hasResultProviderId;
+@property(nonatomic) int resultProviderId;
+@property(retain, nonatomic) GEOLatLng *center;
 @property(readonly, nonatomic) BOOL hasCenter;
 @property(nonatomic) BOOL hasMuid;
+@property(nonatomic) unsigned long long muid;
 
 @end
 

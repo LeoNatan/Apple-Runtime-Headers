@@ -8,7 +8,7 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class CLLocation, GEOAutomobileOptions, GEOLocationShifter, MapsSuggestionsCanKicker, MapsSuggestionsDonater, MapsSuggestionsETARequester, MapsSuggestionsETARequirements, MapsSuggestionsManager, MapsSuggestionsMutableWeakEntries, MapsSuggestionsNetworkRequester, NSMutableDictionary, NSString;
+@class CLLocation, GEOAutomobileOptions, GEOLocationShifter, MapsSuggestionsCanKicker, MapsSuggestionsDonater, MapsSuggestionsETARequester, MapsSuggestionsETARequirements, MapsSuggestionsManager, MapsSuggestionsMutableWeakEntries, MapsSuggestionsNetworkRequester, MapsSuggestionsPredictor, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface MapsSuggestionsTracker : NSObject <MapsSuggestionsObject>
@@ -27,15 +27,18 @@
     MapsSuggestionsDonater *_donater;
     MapsSuggestionsCanKicker *_currentLocationWiper;
     NSMutableDictionary *_previousETAs;
+    id _transportTypeChangedListener;
     MapsSuggestionsETARequirements *_requirements;
     int _mapType;
     GEOAutomobileOptions *_automobileOptions;
     CLLocation *_currentLocation;
     MapsSuggestionsMutableWeakEntries *_trackedEntries;
     MapsSuggestionsNetworkRequester *_networkRequester;
+    MapsSuggestionsPredictor *_predictor;
 }
 
 + (_Bool)_isLocationShiftRequiredForLocation:(id)arg1;
+@property(retain, nonatomic) MapsSuggestionsPredictor *predictor; // @synthesize predictor=_predictor;
 @property(retain, nonatomic) MapsSuggestionsNetworkRequester *networkRequester; // @synthesize networkRequester=_networkRequester;
 @property(retain, nonatomic) MapsSuggestionsMutableWeakEntries *trackedEntries; // @synthesize trackedEntries=_trackedEntries;
 @property(retain) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;

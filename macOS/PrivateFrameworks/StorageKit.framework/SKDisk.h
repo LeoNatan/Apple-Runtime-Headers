@@ -116,6 +116,7 @@
 - (BOOL)blockRestoreFromDisk:(id)arg1 volumeUUID:(id)arg2 creatingNewVolume:(BOOL)arg3 handlingProgress:(CDUnknownBlockType)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
 - (BOOL)blockRestoreFromDisk:(id)arg1 handlingProgress:(CDUnknownBlockType)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)getRecoverySystemInfo:(CDUnknownBlockType)arg1;
+- (BOOL)unEnsureRecoveryWithProgressHandler:(CDUnknownBlockType)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)ensureRecovery:(id)arg1 chunkkList:(id)arg2 diagnostics:(id)arg3 handlingProgress:(CDUnknownBlockType)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
 - (BOOL)ensureRecovery:(id)arg1 chunkkList:(id)arg2 handlingProgress:(CDUnknownBlockType)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 - (BOOL)convertDiskToFDEWithUsers:(id)arg1 recoveryKey:(id)arg2 handlingProgress:(CDUnknownBlockType)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
@@ -141,6 +142,7 @@
 - (BOOL)eraseHandlingProgress:(CDUnknownBlockType)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)canBeErasedToRole:(id)arg1;
 - (BOOL)ejectWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (BOOL)mountWithOptionsDictionary:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)mountWithOptions:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)mountWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (BOOL)unmountWithOptions:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

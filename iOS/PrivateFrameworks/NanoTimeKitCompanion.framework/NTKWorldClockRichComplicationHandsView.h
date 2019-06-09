@@ -6,19 +6,32 @@
 
 #import <NanoTimeKitCompanion/NTKAnalogHandsView.h>
 
-@class CALayer;
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKWorldClockRichComplicationHandsView : NTKAnalogHandsView
+@class CALayer, NSString;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKWorldClockRichComplicationHandsView : NTKAnalogHandsView <CLKMonochromeComplicationView>
 {
     CALayer *_pegDot;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     double _timeZoneOffset;
 }
 
 @property(nonatomic) double timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (id)displayTime;
 - (void)layoutSubviews;
 - (id)initForDevice:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

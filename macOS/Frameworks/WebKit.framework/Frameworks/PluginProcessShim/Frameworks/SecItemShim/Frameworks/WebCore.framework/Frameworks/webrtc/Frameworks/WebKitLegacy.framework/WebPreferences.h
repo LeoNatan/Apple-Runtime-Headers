@@ -8,7 +8,7 @@
 
 #import <WebKitLegacy/NSCoding-Protocol.h>
 
-@class NSString, NSURL;
+@class NSArray, NSString, NSURL;
 
 @interface WebPreferences : NSObject <NSCoding>
 {
@@ -39,6 +39,7 @@
 @property(nonatomic) BOOL privateBrowsingEnabled;
 @property(nonatomic) BOOL tabsToLinks;
 @property(nonatomic) BOOL autosaves;
+@property(retain, nonatomic) NSArray *additionalSupportedImageTypes;
 @property(nonatomic) BOOL loadsImagesAutomatically;
 @property(nonatomic) BOOL allowsAnimatedImageLooping;
 @property(nonatomic) BOOL allowsAnimatedImages;
@@ -72,6 +73,8 @@
 - (unsigned int)_unsignedIntValueForKey:(id)arg1;
 - (void)_setIntegerValue:(int)arg1 forKey:(id)arg2;
 - (int)_integerValueForKey:(id)arg1;
+- (void)_setStringArrayValueForKey:(id)arg1 forKey:(id)arg2;
+- (id)_stringArrayValueForKey:(id)arg1;
 - (void)_setStringValue:(id)arg1 forKey:(id)arg2;
 - (id)_stringValueForKey:(id)arg1;
 - (id)_valueForKey:(id)arg1;
@@ -81,6 +84,13 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
+@property(nonatomic) BOOL coreMathMLEnabled;
+@property(nonatomic) BOOL resizeObserverEnabled;
+@property(nonatomic) BOOL referrerPolicyAttributeEnabled;
+- (void)setAdClickAttributionEnabled:(BOOL)arg1;
+- (BOOL)adClickAttributionEnabled;
+- (void)setCSSLogicalEnabled:(BOOL)arg1;
+- (BOOL)cssLogicalEnabled;
 - (void)setSelectionAcrossShadowBoundariesEnabled:(BOOL)arg1;
 - (BOOL)selectionAcrossShadowBoundariesEnabled;
 - (void)setServerTimingEnabled:(BOOL)arg1;
@@ -111,11 +121,12 @@
 - (BOOL)modernMediaControlsEnabled;
 - (void)setFetchAPIKeepAliveEnabled:(BOOL)arg1;
 - (BOOL)fetchAPIKeepAliveEnabled;
+- (void)setPointerEventsEnabled:(BOOL)arg1;
+- (BOOL)pointerEventsEnabled;
 - (void)setWebAnimationsEnabled:(BOOL)arg1;
 - (BOOL)webAnimationsEnabled;
 @property(nonatomic) BOOL CSSOMViewScrollingAPIEnabled;
 @property(nonatomic) BOOL visualViewportAPIEnabled;
-@property(nonatomic) BOOL visualViewportEnabled;
 - (BOOL)directoryUploadEnabled;
 - (void)setDirectoryUploadEnabled:(BOOL)arg1;
 - (void)setDownloadAttributeEnabled:(BOOL)arg1;
@@ -270,8 +281,6 @@
 - (void)setDiskImageCacheEnabled:(BOOL)arg1;
 - (void)setAccelerated2dCanvasEnabled:(BOOL)arg1;
 - (BOOL)accelerated2dCanvasEnabled;
-- (void)setWebMetalEnabled:(BOOL)arg1;
-- (BOOL)webMetalEnabled;
 - (void)setWebGPUEnabled:(BOOL)arg1;
 - (BOOL)webGPUEnabled;
 - (void)setForceWebGLUsesLowPower:(BOOL)arg1;

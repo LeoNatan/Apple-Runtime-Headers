@@ -19,7 +19,6 @@
 - (void)redoIt;
 - (void)undoIt;
 - (void)_showAs;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1 members:(id)arg2 showAs:(long long)arg3 addressBook:(id)arg4;
 

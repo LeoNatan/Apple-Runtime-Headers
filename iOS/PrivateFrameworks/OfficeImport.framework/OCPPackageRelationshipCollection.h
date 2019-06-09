@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mTypeMap;
 }
 
+- (void).cxx_destruct;
 - (id)relationshipsByType:(id)arg1;
 - (id)relationshipForIdentifier:(id)arg1;
-- (void)dealloc;
 - (id)initWithRelationshipsXml:(struct _xmlDoc *)arg1 baseLocation:(id)arg2;
 
 @end

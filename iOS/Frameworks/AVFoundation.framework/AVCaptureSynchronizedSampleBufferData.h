@@ -13,6 +13,7 @@
     AVCaptureSynchronizedSampleBufferDataInternal *_internal;
 }
 
+- (int)constituentDeviceCaptureID;
 - (_Bool)hasCorrespondingVisionData;
 - (_Bool)hasCorrespondingDepthData;
 @property(readonly) long long droppedReason;

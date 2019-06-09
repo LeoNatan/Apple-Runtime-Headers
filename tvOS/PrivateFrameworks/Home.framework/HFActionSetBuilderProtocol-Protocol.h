@@ -6,9 +6,10 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class HFActionBuilder, NSArray;
+@class HFActionBuilder, HFMediaPlaybackActionBuilder, NSArray;
 
 @protocol HFActionSetBuilderProtocol <NSObject>
+@property(readonly, nonatomic) HFMediaPlaybackActionBuilder *mediaAction;
 @property(readonly, nonatomic, getter=isAffectedByEndEvents) _Bool affectedByEndEvents;
 @property(readonly, nonatomic) _Bool requiresDeviceUnlock;
 @property(readonly, nonatomic) NSArray *actions;

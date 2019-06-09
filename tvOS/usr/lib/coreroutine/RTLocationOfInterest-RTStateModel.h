@@ -7,6 +7,13 @@
 #import <CoreRoutine/RTLocationOfInterest.h>
 
 @interface RTLocationOfInterest (RTStateModel)
++ (long long)routineModeFromLearnedLocationMode:(long long)arg1;
++ (id)locationsOfInterestFromLearnedLocationsOfInterest:(id)arg1;
++ (long long)typeSourceFromPlaceTypeSource:(unsigned long long)arg1;
++ (long long)typeFromPlaceType:(unsigned long long)arg1;
 - (id)initWithOneState:(id)arg1;
+- (id)initWithHistoryEntryPlaceDisplay:(id)arg1;
+- (id)initWithHistoryEntryRoute:(id)arg1;
+- (id)initWithLearnedLocationOfInterest:(id)arg1;
 @end
 

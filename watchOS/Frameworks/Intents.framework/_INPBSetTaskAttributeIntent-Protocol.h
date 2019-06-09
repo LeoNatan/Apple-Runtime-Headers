@@ -6,20 +6,28 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTask, _INPBTemporalEventTrigger;
+@class NSString, _INPBContactEventTrigger, _INPBDataString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTask, _INPBTemporalEventTrigger;
 
 @protocol _INPBSetTaskAttributeIntent <NSObject>
 @property(readonly, nonatomic) _Bool hasTemporalEventTrigger;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger;
+@property(readonly, nonatomic) _Bool hasTaskTitle;
+@property(retain, nonatomic) _INPBDataString *taskTitle;
 @property(readonly, nonatomic) _Bool hasTargetTask;
 @property(retain, nonatomic) _INPBTask *targetTask;
 @property(nonatomic) _Bool hasStatus;
 @property(nonatomic) int status;
 @property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
 @property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger;
+@property(nonatomic) _Bool hasPriority;
+@property(nonatomic) int priority;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata;
+@property(readonly, nonatomic) _Bool hasContactEventTrigger;
+@property(retain, nonatomic) _INPBContactEventTrigger *contactEventTrigger;
 - (int)StringAsStatus:(NSString *)arg1;
 - (NSString *)statusAsString:(int)arg1;
+- (int)StringAsPriority:(NSString *)arg1;
+- (NSString *)priorityAsString:(int)arg1;
 @end
 

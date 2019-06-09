@@ -23,9 +23,11 @@
 + (id)sharedHelperProxyIfAvailable;
 + (id)sharedHelperProxy;
 @property long long recentRights; // @synthesize recentRights=_recentRights;
+- (BOOL)rebootForPostLogoutUpdatesAfterSuccess:(BOOL)arg1 nightInstall:(BOOL)arg2 shouldShutDown:(BOOL)arg3;
 - (BOOL)armBaseSystemUpdates:(id)arg1 productKey:(id)arg2 recoveryUpdatePackageURL:(id)arg3 error:(id *)arg4;
 - (id)lookupURLCredentialInSystemKeychainForHost:(id)arg1 port:(long long)arg2;
 - (BOOL)configureProgressPhasesAll:(id)arg1;
+- (BOOL)setAppleUpgradeShouldFLORun:(BOOL)arg1;
 - (BOOL)setAppleStagedUpgradeShouldFLORun:(BOOL)arg1;
 - (BOOL)stashAndCommitAPFSFDEKey;
 - (BOOL)commitLoginCredentialsDisablingFLO:(BOOL)arg1 hasBaseSystemUpdates:(BOOL)arg2;
@@ -35,7 +37,6 @@
 - (BOOL)deletePref:(id)arg1 inDomain:(id)arg2;
 - (BOOL)setMacOSAutoUpdate:(BOOL)arg1;
 - (BOOL)setAppStoreAutoUpdate:(BOOL)arg1;
-- (BOOL)clearCriticalUpdateNotificationDate;
 - (BOOL)removeUpdatesAvailableCookie;
 - (BOOL)createUpdatesAvailableCookie;
 - (BOOL)updateAnyUserPreferences;

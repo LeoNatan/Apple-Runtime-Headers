@@ -28,11 +28,11 @@
 @property(readonly, nonatomic) double timeOfLastActivity; // @synthesize timeOfLastActivity=_timeOfLastActivity;
 @property(nonatomic) int requestedFormat; // @synthesize requestedFormat=_requestedFormat;
 @property(retain, nonatomic) id <MFMessageDataConsumerFactory> consumerFactory; // @synthesize consumerFactory=_consumerFactory;
-@property(readonly, retain, nonatomic) NSMutableData *bodyData; // @synthesize bodyData=_bodyData;
-@property(readonly, retain, nonatomic) DAMailMessage *message; // @synthesize message=_message;
+@property(readonly, nonatomic) NSMutableData *bodyData; // @synthesize bodyData=_bodyData;
+@property(readonly, nonatomic) DAMailMessage *message; // @synthesize message=_message;
 @property(retain, nonatomic) id <MFCollectingDataConsumer> alternatePartConsumer; // @synthesize alternatePartConsumer=_alternatePartConsumer;
 @property(retain, nonatomic) id <MFCollectingDataConsumer> dataConsumer; // @synthesize dataConsumer=_dataConsumer;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)dataConsumerForPart:(id)arg1;
 - (_Bool)didBeginStreaming;
 - (_Bool)succeeded;

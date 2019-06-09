@@ -4,21 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoLibraryServices/PLAbstractLibraryServicesManagerService.h>
 
 #import <PhotoLibraryServices/PLAssetsdDemoServiceProtocol-Protocol.h>
 
 @class NSString;
 
-@interface PLAssetsdDemoService : NSObject <PLAssetsdDemoServiceProtocol>
+@interface PLAssetsdDemoService : PLAbstractLibraryServicesManagerService <PLAssetsdDemoServiceProtocol>
 {
 }
 
+- (void)hasCompletedMomentAnalysisWithReply:(CDUnknownBlockType)arg1;
+- (void)hasCompletedRestorePostProcessingWithReply:(CDUnknownBlockType)arg1;
+- (void)cleanupForStoreDemoMode;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
+
 @end
 

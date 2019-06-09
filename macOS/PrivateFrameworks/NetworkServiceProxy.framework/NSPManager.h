@@ -9,24 +9,26 @@
 #import <NetworkServiceProxy/NEAppProxyProviderContainerDelegate-Protocol.h>
 #import <NetworkServiceProxy/NPTunnelDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSPAppRule, NSPConfiguration, NSPFlowDivert, NSString, NWPathEvaluator;
-@protocol NSPManagerDelegate;
+@class NPKeyBag, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSPAppRule, NSPConfiguration, NSPFlowDivert, NSString, NWPathEvaluator;
+@protocol NSPManagerDelegate, OS_nw_endpoint;
 
 @interface NSPManager : NSObject <NPTunnelDelegate, NEAppProxyProviderContainerDelegate>
 {
-    BOOL _currentNetworkHasProxies;
+    struct os_unfair_lock_s lock;
+    BOOL _disableIdleTimeout;
     BOOL _isObserving;
-    BOOL _initialUpdate;
     BOOL _testFetchDaypass;
     unsigned int _nextFlowID;
+    unsigned int _tunnelCount;
     NWPathEvaluator *_pathEvaluator;
     CDUnknownBlockType _changeHandler;
     CDUnknownBlockType _connectionInfoSetHandler;
     CDUnknownBlockType _tunnelConnectedHandler;
+    NPKeyBag *_keybag;
     NWPathEvaluator *_policyEvaluator;
     NSDictionary *_appRules;
+    NPKeyBag *_inUseKeybag;
     NSPConfiguration *_configuration;
-    NSMutableDictionary *_tunnels;
     NSPFlowDivert *_flowDivert;
     NSMutableDictionary *_flowInfoMap;
     NSArray *_currentAgents;
@@ -38,38 +40,42 @@
     CDUnknownBlockType _pendingCancellationHandler;
     NSArray *_testLatencyMap;
     unsigned long long _testLatencyMapIndex;
+    NSObject<OS_nw_endpoint> *_currentTunnelEndpoint;
 }
 
 + (id)sharedManager;
-@property unsigned int nextFlowID; // @synthesize nextFlowID=_nextFlowID;
+@property(retain, nonatomic) NSObject<OS_nw_endpoint> *currentTunnelEndpoint; // @synthesize currentTunnelEndpoint=_currentTunnelEndpoint;
+@property(nonatomic) unsigned int tunnelCount; // @synthesize tunnelCount=_tunnelCount;
+@property(nonatomic) unsigned int nextFlowID; // @synthesize nextFlowID=_nextFlowID;
 @property unsigned long long testLatencyMapIndex; // @synthesize testLatencyMapIndex=_testLatencyMapIndex;
 @property BOOL testFetchDaypass; // @synthesize testFetchDaypass=_testFetchDaypass;
 @property(retain) NSArray *testLatencyMap; // @synthesize testLatencyMap=_testLatencyMap;
-@property(copy) CDUnknownBlockType pendingCancellationHandler; // @synthesize pendingCancellationHandler=_pendingCancellationHandler;
-@property(readonly) NSMutableArray *knownFlows; // @synthesize knownFlows=_knownFlows;
+@property(copy, nonatomic) CDUnknownBlockType pendingCancellationHandler; // @synthesize pendingCancellationHandler=_pendingCancellationHandler;
+@property(readonly, nonatomic) NSMutableArray *knownFlows; // @synthesize knownFlows=_knownFlows;
 @property(retain) NSPAppRule *matchingAppRule; // @synthesize matchingAppRule=_matchingAppRule;
-@property(readonly) NSString *signingIdentifier; // @synthesize signingIdentifier=_signingIdentifier;
-@property __weak id <NSPManagerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly) NSMutableDictionary *fallbackCounts; // @synthesize fallbackCounts=_fallbackCounts;
-@property(retain) NSArray *currentAgents; // @synthesize currentAgents=_currentAgents;
-@property BOOL initialUpdate; // @synthesize initialUpdate=_initialUpdate;
-@property BOOL isObserving; // @synthesize isObserving=_isObserving;
-@property(retain) NSMutableDictionary *flowInfoMap; // @synthesize flowInfoMap=_flowInfoMap;
+@property(readonly, nonatomic) NSString *signingIdentifier; // @synthesize signingIdentifier=_signingIdentifier;
+@property(nonatomic) __weak id <NSPManagerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) NSMutableDictionary *fallbackCounts; // @synthesize fallbackCounts=_fallbackCounts;
+@property(retain, nonatomic) NSArray *currentAgents; // @synthesize currentAgents=_currentAgents;
+@property(nonatomic) BOOL isObserving; // @synthesize isObserving=_isObserving;
+@property(retain, nonatomic) NSMutableDictionary *flowInfoMap; // @synthesize flowInfoMap=_flowInfoMap;
 @property(retain) NSPFlowDivert *flowDivert; // @synthesize flowDivert=_flowDivert;
-@property(retain) NSMutableDictionary *tunnels; // @synthesize tunnels=_tunnels;
 @property(retain) NSPConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain) NPKeyBag *inUseKeybag; // @synthesize inUseKeybag=_inUseKeybag;
 @property(retain) NSDictionary *appRules; // @synthesize appRules=_appRules;
-@property(readonly) NWPathEvaluator *policyEvaluator; // @synthesize policyEvaluator=_policyEvaluator;
-@property(copy) CDUnknownBlockType tunnelConnectedHandler; // @synthesize tunnelConnectedHandler=_tunnelConnectedHandler;
-@property(copy) CDUnknownBlockType connectionInfoSetHandler; // @synthesize connectionInfoSetHandler=_connectionInfoSetHandler;
-@property(copy) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
-@property BOOL currentNetworkHasProxies; // @synthesize currentNetworkHasProxies=_currentNetworkHasProxies;
-@property(readonly) NWPathEvaluator *pathEvaluator; // @synthesize pathEvaluator=_pathEvaluator;
+@property(readonly, nonatomic) NWPathEvaluator *policyEvaluator; // @synthesize policyEvaluator=_policyEvaluator;
+@property BOOL disableIdleTimeout; // @synthesize disableIdleTimeout=_disableIdleTimeout;
+@property(retain) NPKeyBag *keybag; // @synthesize keybag=_keybag;
+@property(copy, nonatomic) CDUnknownBlockType tunnelConnectedHandler; // @synthesize tunnelConnectedHandler=_tunnelConnectedHandler;
+@property(copy, nonatomic) CDUnknownBlockType connectionInfoSetHandler; // @synthesize connectionInfoSetHandler=_connectionInfoSetHandler;
+@property(copy, nonatomic) CDUnknownBlockType changeHandler; // @synthesize changeHandler=_changeHandler;
+@property(readonly, nonatomic) NWPathEvaluator *pathEvaluator; // @synthesize pathEvaluator=_pathEvaluator;
 - (void).cxx_destruct;
 - (void)container:(id)arg1 didSetTunnelConfiguration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)container:(id)arg1 didRequestFlowDivertControlSocketWithCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)container:(id)arg1 didFailWithError:(id)arg2;
 - (void)container:(id)arg1 didStartWithError:(id)arg2;
+@property(readonly) double timeIntervalSinceLastUsage;
 - (void)resetTestLatencyMapIndex:(unsigned long long)arg1;
 - (BOOL)useTestDaypass;
 - (BOOL)useTestLatencyMap;
@@ -77,20 +83,19 @@
 - (void)ingestTestLatencyMap:(id)arg1 local:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)buildTestLatencyMap:(id)arg1;
 - (BOOL)shouldSetConfigurationToAppRule:(id)arg1 edgeSet:(id)arg2;
-- (BOOL)tunnelExistsFowFlow:(id)arg1;
 - (id)createAppRuleMapWithRules:(id)arg1;
-@property(readonly) BOOL isEnabled;
-@property(readonly) BOOL TFORequirementNotMet;
+@property(readonly, nonatomic) BOOL currentNetworkHasProxies;
+@property(readonly, nonatomic) BOOL isEnabled;
 - (void)fetchStateForClient:(id)arg1 withPeerEndpoint:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)sendKeyBag:(id)arg1 usageData:(id)arg2 fromClient:(id)arg3;
+- (void)sendUsageReport:(id)arg1;
 - (id)createTransformsForEndpoint:(id)arg1 parameters:(id)arg2;
 - (id)createReplacementEndpointForEndpoint:(id)arg1 properties:(id)arg2;
 - (id)getAppRuleMatchingParameters:(id)arg1 flowProperties:(id)arg2;
-- (void)resetTunnelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)getConnectionInfoForIdentifier:(id)arg1;
 - (void)setConnectionInfo:(id)arg1 forIdentifier:(id)arg2;
 @property(readonly) BOOL isFirstTunnel;
 - (void)tunnel:(id)arg1 flowDidFallbackWithReason:(long long)arg2;
+- (void)tunnelIsReady:(id)arg1;
 - (void)tunnelDidConnect:(id)arg1;
 - (void)tunnelDidCancel:(id)arg1;
 - (id)instantiateTunnelWithEndpoint:(id)arg1 parameters:(id)arg2;
@@ -100,7 +105,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)handlePolicyUpdate;
 - (void)stopWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)cancelAllTunnelsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)waitForTunnelsToCancelWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 
 // Remaining properties

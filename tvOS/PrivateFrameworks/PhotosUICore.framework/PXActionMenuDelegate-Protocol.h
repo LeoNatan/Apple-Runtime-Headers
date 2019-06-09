@@ -9,8 +9,8 @@
 @class PXActionMenuController, PXActionPerformer, UIViewController;
 
 @protocol PXActionMenuDelegate <NSObject>
-- (_Bool)actionMenu:(PXActionMenuController *)arg1 dismissViewController:(UIViewController *)arg2 completionHandler:(void (^)(void))arg3;
-- (_Bool)actionMenu:(PXActionMenuController *)arg1 presentViewController:(UIViewController *)arg2;
+- (_Bool)actionMenu:(PXActionMenuController *)arg1 actionPerformer:(PXActionPerformer *)arg2 dismissViewController:(UIViewController *)arg3 completionHandler:(void (^)(void))arg4;
+- (_Bool)actionMenu:(PXActionMenuController *)arg1 actionPerformer:(PXActionPerformer *)arg2 presentViewController:(UIViewController *)arg3;
 
 @optional
 - (void)actionMenu:(PXActionMenuController *)arg1 actionPerformer:(PXActionPerformer *)arg2 didChangeState:(unsigned long long)arg3;

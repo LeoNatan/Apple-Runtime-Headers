@@ -4,25 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <SearchUI/SearchUIRowModel.h>
 
-#import <SearchUI/SearchUIAuxilliaryFieldProtocol-Protocol.h>
-#import <SearchUI/SearchUIRowModel-Protocol.h>
-
-@class NSString, SFActionItem, SFCard, SFCardSection, SFImage, SFRichText, SFSearchResult;
-
-@interface SearchUICardSectionRowModel : NSObject <SearchUIAuxilliaryFieldProtocol, SearchUIRowModel>
+@interface SearchUICardSectionRowModel : SearchUIRowModel
 {
-    SFCardSection *_cardSection;
-    SFSearchResult *_identifyingResult;
+    _Bool _isInline;
+    Class _customCardSectionViewClass;
 }
 
-@property(retain) SFSearchResult *identifyingResult; // @synthesize identifyingResult=_identifyingResult;
-@property(retain) SFCardSection *cardSection; // @synthesize cardSection=_cardSection;
+@property(readonly) Class customCardSectionViewClass; // @synthesize customCardSectionViewClass=_customCardSectionViewClass;
+@property(nonatomic) _Bool isInline; // @synthesize isInline=_isInline;
 - (void).cxx_destruct;
+- (id)description;
 - (double)leadingSeparatorImageInset;
 - (int)separatorStyle;
-- (id)dragAppBundleID;
 - (id)dragURL;
 - (id)dragText;
 - (id)dragSubtitle;
@@ -31,27 +26,12 @@
 - (_Bool)isTappable;
 - (id)nextCard;
 - (_Bool)anyInlineCardSectionsHaveNextCards;
-- (Class)viewClass;
-- (_Bool)isSuggestion;
+- (Class)cellViewClass;
+- (_Bool)isQuerySuggestion;
 - (id)reuseIdentifier;
 - (id)punchouts;
 - (_Bool)anyInlineCardSectionsHavePunchouts;
-- (id)initWithResult:(id)arg1 cardSection:(id)arg2;
-@property(readonly) SFCard *card;
-@property(readonly) SFImage *thumbnail;
-@property(readonly) SFActionItem *action;
-@property(readonly) int auxiliaryBottomTextColor;
-@property(readonly) NSString *auxiliaryMiddleText;
-@property(readonly) NSString *auxiliaryBottomText;
-@property(readonly) NSString *auxiliaryTopText;
-@property(readonly) SFRichText *title;
-- (id)detailedRowCardSection;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithResult:(id)arg1 cardSection:(id)arg2 isInline:(_Bool)arg3;
 
 @end
 

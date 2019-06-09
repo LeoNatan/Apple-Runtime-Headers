@@ -6,31 +6,56 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSString;
+#import <AppleMediaServices/NSCopying-Protocol.h>
+#import <AppleMediaServices/NSSecureCoding-Protocol.h>
+
+@class AMSMappedBundleInfo, NSData, NSString;
 @protocol OS_dispatch_queue;
 
-@interface AMSProcessInfo : NSObject
+@interface AMSProcessInfo : NSObject <NSCopying, NSSecureCoding>
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSString *_partnerHeader;
+    NSString *_accountMediaType;
     NSData *_auditTokenData;
     NSString *_bundleIdentifier;
     NSString *_clientVersion;
+    NSString *_executableName;
     NSString *_proxyAppBundleID;
+    AMSMappedBundleInfo *_mappedBundleInfo;
 }
 
++ (id)_currentProcessBundleIdentifier;
++ (void)_accessProcessInfoCache:(CDUnknownBlockType)arg1;
++ (id)_cachedProcessInfoForIdentifier:(id)arg1;
++ (void)_cacheProcessInfo:(id)arg1;
++ (BOOL)supportsSecureCoding;
++ (void)copyPropertiesFrom:(id)arg1 to:(id)arg2;
++ (id)valueForEntitlement:(id)arg1;
 + (id)stringForEntitlement:(id)arg1;
++ (void)setDefaultMediaTypeForCurrentProcess:(id)arg1;
++ (id)bundleForIdentifier:(id)arg1;
++ (id)defaultMediaTypeForCurrentProcess;
++ (id)defaultMediaTypeAccessQueue;
 + (BOOL)boolForMachLookupAccess:(id)arg1;
 + (BOOL)boolForEntitlement:(id)arg1;
 + (BOOL)isBuddyRunning;
 + (id)currentProcess;
+@property(readonly) AMSMappedBundleInfo *mappedBundleInfo; // @synthesize mappedBundleInfo=_mappedBundleInfo;
 @property(retain) NSString *proxyAppBundleID; // @synthesize proxyAppBundleID=_proxyAppBundleID;
+@property(retain) NSString *executableName; // @synthesize executableName=_executableName;
 @property(retain) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSData *auditTokenData; // @synthesize auditTokenData=_auditTokenData;
+@property(retain) NSString *accountMediaType; // @synthesize accountMediaType=_accountMediaType;
 - (void).cxx_destruct;
 - (id)generateConfigurationFromBagContract:(id)arg1;
+- (id)generateConfigurationFromBag:(id)arg1;
 - (id)generateConfiguration;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 @property(retain) NSString *partnerHeader;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;

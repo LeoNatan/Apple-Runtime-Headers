@@ -10,7 +10,6 @@
 
 @protocol WBSCloudBookmarksMigrationCoordinatorStorage <NSObject>
 @property(nonatomic) BOOL migrationReadinessDataInvalidated;
-@property(copy, nonatomic) NSDictionary *migrationRampEvaluatorDictionaryRepresentation;
 @property(copy, nonatomic) NSDictionary *migrationReadinessDeciderDictionaryRepresentation;
 @end
 

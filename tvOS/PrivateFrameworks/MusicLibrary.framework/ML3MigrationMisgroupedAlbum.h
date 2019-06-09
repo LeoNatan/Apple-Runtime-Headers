@@ -8,7 +8,6 @@
 
 @class NSArray, NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface ML3MigrationMisgroupedAlbum : NSObject
 {
     NSMutableArray *_misgroupedTracks;

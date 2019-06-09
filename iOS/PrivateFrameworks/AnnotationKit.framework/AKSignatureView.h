@@ -7,10 +7,10 @@
 #import <UIKit/UIView.h>
 
 @class AKBitmapFIFO, CHBoxcarFilterPointFIFO, CHPointStrokeFIFO, CHQuadCurvePointFIFO, UIColor;
+@protocol AKSignatureViewLiveDelegate;
 
 @interface AKSignatureView : UIView
 {
-    struct CGColor *_cgColor;
     struct CGPoint _lastPoint;
     id _trackingTouchID;
     double _lastSetNeedsDisplayCallToSuperTime;
@@ -28,12 +28,14 @@
     CHBoxcarFilterPointFIFO *_boxcarFIFO;
     CHQuadCurvePointFIFO *_interpolatingFIFO;
     AKBitmapFIFO *_bitmapFifo;
+    id <AKSignatureViewLiveDelegate> _liveDelegate;
     struct CGPoint _strokeStartLocation;
     struct CGPoint _strokeLastLocation;
     struct CGRect _aggregateInvalid;
     struct CGRect _unionDrawingRect;
 }
 
+@property(nonatomic) __weak id <AKSignatureViewLiveDelegate> liveDelegate; // @synthesize liveDelegate=_liveDelegate;
 @property(nonatomic) struct CGRect unionDrawingRect; // @synthesize unionDrawingRect=_unionDrawingRect;
 @property(nonatomic) struct CGRect aggregateInvalid; // @synthesize aggregateInvalid=_aggregateInvalid;
 @property(retain, nonatomic) AKBitmapFIFO *bitmapFifo; // @synthesize bitmapFifo=_bitmapFifo;

@@ -12,7 +12,7 @@
 #import <MobileTimer/MTScheduledListDelegate-Protocol.h>
 
 @class MTScheduledList, NSString;
-@protocol MTAlarmScheduleDelegate, MTAlarmStorage, MTNotificationCenter, MTSchedulingDelegate, MTTaskScheduler, NAScheduler;
+@protocol MTAlarmScheduleDelegate, MTAlarmStorage, MTNotificationCenter, MTPersistence, MTSchedulingDelegate, MTTaskScheduler, NAScheduler;
 
 @interface MTAlarmScheduler : NSObject <MTAlarmObserver, MTScheduledListDelegate, MTAgentDiagnosticDelegate, MTAgentNotificationListener>
 {
@@ -24,9 +24,11 @@
     CDUnknownBlockType _currentDateProvider;
     id <MTSchedulingDelegate> _schedulingDelegate;
     id <MTTaskScheduler> _taskScheduler;
+    id <MTPersistence> _defaults;
 }
 
 + (id)_intervalToCheckForAlarmsToFireBeforeDate:(id)arg1;
+@property(retain, nonatomic) id <MTPersistence> defaults; // @synthesize defaults=_defaults;
 @property(readonly, nonatomic) id <MTTaskScheduler> taskScheduler; // @synthesize taskScheduler=_taskScheduler;
 @property(readonly, nonatomic) id <MTSchedulingDelegate> schedulingDelegate; // @synthesize schedulingDelegate=_schedulingDelegate;
 @property(readonly, copy, nonatomic) CDUnknownBlockType currentDateProvider; // @synthesize currentDateProvider=_currentDateProvider;
@@ -38,9 +40,8 @@
 - (void).cxx_destruct;
 - (id)gatherDiagnostics;
 - (void)printDiagnostics;
-- (void)timeListener:(id)arg1 didDetectSignificantTimeChangeWithCompletionBlock:(CDUnknownBlockType)arg2;
-- (void)handleNotification:(id)arg1;
-- (_Bool)handlesNotification:(id)arg1;
+- (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
 - (void)source:(id)arg1 didChangeNextAlarm:(id)arg2;
 - (void)source:(id)arg1 didFireAlarm:(id)arg2 triggerType:(unsigned long long)arg3;
 - (void)source:(id)arg1 didDismissAlarm:(id)arg2 dismissAction:(unsigned long long)arg3;
@@ -60,6 +61,7 @@
 - (id)_lastAlarmTriggerDate;
 - (void)_queue_fireTriggeredAlarmsWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_fireScheduledAlarm:(id)arg1 firedDate:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (_Bool)_shouldPostNotificationForScheduledAlarm:(id)arg1;
 - (void)_queue_triggerDidFireForAlarmWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_queue_unregisterTimer;
 - (void)_queue_updateNextAlarmTimerWithCompletion:(CDUnknownBlockType)arg1;
@@ -71,8 +73,8 @@
 - (void)_rescheduleAlarmsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)cleanDeliveredNotifications;
 - (void)rescheduleAlarmsWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 schedulingDelegate:(id)arg4 taskScheduler:(id)arg5 currentDateProvider:(CDUnknownBlockType)arg6;
-- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 defaults:(id)arg4 schedulingDelegate:(id)arg5 taskScheduler:(id)arg6 currentDateProvider:(CDUnknownBlockType)arg7;
+- (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2 scheduler:(id)arg3 defaults:(id)arg4;
 - (id)initWithStorage:(id)arg1 notificationCenter:(id)arg2;
 
 // Remaining properties

@@ -13,11 +13,11 @@
 __attribute__((visibility("hidden")))
 @interface SecConcrete_sec_certificate : NSObject <OS_sec_certificate>
 {
-    struct OpaqueSecCertificateRef *certificate;
+    struct __SecCertificate *certificate;
 }
 
 - (void)dealloc;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

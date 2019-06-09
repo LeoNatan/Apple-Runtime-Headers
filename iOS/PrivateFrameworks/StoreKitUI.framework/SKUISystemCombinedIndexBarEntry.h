@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIIndexBarEntry.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUISystemCombinedIndexBarEntry : SKUIIndexBarEntry
 {
 }

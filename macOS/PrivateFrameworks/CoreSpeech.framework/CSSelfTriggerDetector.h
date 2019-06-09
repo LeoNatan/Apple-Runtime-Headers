@@ -6,42 +6,65 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSAudioStreamProvidingDelegate-Protocol.h>
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
-#import <CoreSpeech/CSSpeechManagerDelegate-Protocol.h>
+#import <CoreSpeech/CSSiriClientBehaviorMonitorDelegate-Protocol.h>
 
-@class CSAsset, CSKeywordAnalyzerNDAPI, CSSpeechManager, NSString;
-@protocol CSSelfTriggerDetectorDelegate, OS_dispatch_queue;
+@class CSAsset, CSAudioStream, CSKeywordAnalyzerNDAPI, CSPolicy, CSSpeechManager, NSHashTable, NSString;
+@protocol OS_dispatch_queue;
 
-@interface CSSelfTriggerDetector : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSSpeechManagerDelegate>
+@interface CSSelfTriggerDetector : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate>
 {
+    BOOL _isSiriClientListening;
+    BOOL _selfTriggerEnabled;
+    BOOL _isListenPollingStarting;
     float _keywordThreshold;
-    id <CSSelfTriggerDetectorDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
+    NSHashTable *_observers;
     CSSpeechManager *_speechManager;
     CSAsset *_currentAsset;
     CSKeywordAnalyzerNDAPI *_keywordAnalyzer;
     unsigned long long _outputAudioChannel;
+    CSAudioStream *_audioStream;
+    CSPolicy *_enablePolicy;
 }
 
+@property(nonatomic) BOOL isListenPollingStarting; // @synthesize isListenPollingStarting=_isListenPollingStarting;
+@property(nonatomic) BOOL selfTriggerEnabled; // @synthesize selfTriggerEnabled=_selfTriggerEnabled;
+@property(nonatomic) BOOL isSiriClientListening; // @synthesize isSiriClientListening=_isSiriClientListening;
+@property(retain, nonatomic) CSPolicy *enablePolicy; // @synthesize enablePolicy=_enablePolicy;
+@property(retain, nonatomic) CSAudioStream *audioStream; // @synthesize audioStream=_audioStream;
 @property(nonatomic) unsigned long long outputAudioChannel; // @synthesize outputAudioChannel=_outputAudioChannel;
 @property(nonatomic) float keywordThreshold; // @synthesize keywordThreshold=_keywordThreshold;
 @property(retain, nonatomic) CSKeywordAnalyzerNDAPI *keywordAnalyzer; // @synthesize keywordAnalyzer=_keywordAnalyzer;
 @property(retain, nonatomic) CSAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(nonatomic) __weak CSSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
+@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(nonatomic) __weak id <CSSelfTriggerDetectorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
+- (void)siriClientBehaviorMonitor:(id)arg1 willStopStream:(id)arg2;
+- (void)siriClientBehaviorMonitor:(id)arg1 willStartStreamWithContext:(id)arg2 option:(id)arg3;
+- (void)siriClientBehaviorMonitor:(id)arg1 didStopStream:(id)arg2;
+- (void)siriClientBehaviorMonitor:(id)arg1 didStartStreamWithContext:(id)arg2 successfully:(BOOL)arg3 option:(id)arg4;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
-- (void)speechManagerDidStopForwarding:(id)arg1 forReason:(long long)arg2;
-- (void)speechManagerDidStartForwarding:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;
-- (void)speechManagerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
-- (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 audioChunkForTVAvailable:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 audioBufferAvailable:(id)arg2;
+- (void)audioStreamProvider:(id)arg1 didStopStreamUnexpectly:(long long)arg2;
+- (void)_handleEnablePolicyEvent:(BOOL)arg1;
+- (void)_stopListening;
+- (void)_startListenWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_startListenPollingWithInterval:(double)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_startListenPolling;
 - (void)_setAsset:(id)arg1;
+- (void)unregisterObserver:(id)arg1;
+- (void)registerObserver:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)_reset;
 - (void)reset;
 - (void)start;
-- (id)initWithManager:(id)arg1 asset:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

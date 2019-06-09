@@ -12,13 +12,13 @@
 {
     NSString *_retryOperationIdentifier;
     unsigned int _numberOfAttempts;
-    NSDate *_firstRetryDate;
     unsigned int _currentNumberOfAttempts;
+    NSDate *_firstRetryDate;
     double _timeIntervalToResetCount;
 }
 
-@property(nonatomic) unsigned int currentNumberOfAttempts; // @synthesize currentNumberOfAttempts=_currentNumberOfAttempts;
 @property(retain, nonatomic) NSDate *firstRetryDate; // @synthesize firstRetryDate=_firstRetryDate;
+@property(nonatomic) unsigned int currentNumberOfAttempts; // @synthesize currentNumberOfAttempts=_currentNumberOfAttempts;
 @property(nonatomic) unsigned int numberOfAttempts; // @synthesize numberOfAttempts=_numberOfAttempts;
 @property(nonatomic) double timeIntervalToResetCount; // @synthesize timeIntervalToResetCount=_timeIntervalToResetCount;
 @property(readonly, nonatomic) NSString *retryOperationIdentifier; // @synthesize retryOperationIdentifier=_retryOperationIdentifier;

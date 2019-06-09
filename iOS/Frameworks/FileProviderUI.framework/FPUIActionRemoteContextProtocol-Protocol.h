@@ -6,11 +6,11 @@
 
 #import <FileProviderUI/NSObject-Protocol.h>
 
-@class NSError, NSURL;
+@class NSDictionary, NSError, NSURL;
 
 @protocol FPUIActionRemoteContextProtocol <NSObject>
 - (void)_openExtensionURL:(NSURL *)arg1 completionHandler:(void (^)(_Bool))arg2;
-- (void)_cancelRequestWithError:(NSError *)arg1;
-- (void)_completeRequest;
+- (void)_didEncounterError:(NSError *)arg1 completionHandler:(void (^)(void))arg2;
+- (void)_completeRequestWithUserInfo:(NSDictionary *)arg1 error:(NSError *)arg2;
 @end
 

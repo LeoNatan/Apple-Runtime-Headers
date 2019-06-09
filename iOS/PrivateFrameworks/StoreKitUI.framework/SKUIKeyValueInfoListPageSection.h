@@ -10,6 +10,7 @@
 
 @class NSArray, NSNumber, NSString, SKUIInfoListViewElement, SKUIViewElementLayoutContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIKeyValueInfoListPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate>
 {
     SKUIViewElementLayoutContext *_cellLayoutContext;

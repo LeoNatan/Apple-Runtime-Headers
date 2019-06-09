@@ -4,16 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GeoServices/NSObject-Protocol.h>
+#import <GeoServices/GEOMapServiceCancellableTicket-Protocol.h>
+#import <GeoServices/GEOMapServiceCorrectableTicket-Protocol.h>
+#import <GeoServices/GEOMapServiceThrottlableTicket-Protocol.h>
 
-@class GEOApplicationAuditToken, GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORPCorrectedSearch, GEORPPlaceInfo, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSDictionary, NSObject, NSString;
+@class GEOApplicationAuditToken, GEOCategorySearchResultSection, GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEOPDMerchantLookupResult, GEORPPlaceInfo, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
-@protocol GEOMapServiceTicket <NSObject>
-@property(readonly, nonatomic, getter=isCancelled) BOOL cancelled;
+@protocol GEOMapServiceTicket <GEOMapServiceCancellableTicket, GEOMapServiceCorrectableTicket, GEOMapServiceThrottlableTicket>
+@property(readonly, nonatomic) GEOPDMerchantLookupResult *merchantLookupResult;
 @property(nonatomic) unsigned long long cachePolicy;
 @property(readonly, nonatomic) BOOL showDymSuggestionCloseButton;
 @property(readonly, nonatomic) unsigned int dymSuggestionVisibleTime;
+@property(readonly, nonatomic) GEOCategorySearchResultSection *categorySearchResultSection;
+@property(readonly, nonatomic) NSArray *searchResultSections;
 @property(readonly, nonatomic) NSArray *retainedSearchMetadata;
 @property(readonly, nonatomic) GEODirectionIntent *directionIntent;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolvedResult;
@@ -30,8 +34,6 @@
 @property(readonly, nonatomic) GEOMapRegion *resultBoundingRegion;
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
 - (void)applyToPlaceInfo:(GEORPPlaceInfo *)arg1;
-- (void)applyToCorrectedSearch:(GEORPCorrectedSearch *)arg1;
-- (void)cancel;
 - (void)submitWithRefinedHandler:(void (^)(NSArray *, NSArray *, NSError *))arg1 auditToken:(GEOApplicationAuditToken *)arg2 timeout:(long long)arg3 networkActivity:(void (^)(BOOL))arg4 queue:(NSObject<OS_dispatch_queue> *)arg5;
 - (void)submitWithRefinedHandler:(void (^)(NSArray *, NSArray *, NSError *))arg1 timeout:(long long)arg2 networkActivity:(void (^)(BOOL))arg3 queue:(NSObject<OS_dispatch_queue> *)arg4;
 - (void)submitWithRefinedHandler:(void (^)(NSArray *, NSArray *, NSError *))arg1 networkActivity:(void (^)(BOOL))arg2 queue:(NSObject<OS_dispatch_queue> *)arg3;

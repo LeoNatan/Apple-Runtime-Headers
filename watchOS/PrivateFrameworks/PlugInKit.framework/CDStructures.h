@@ -8,3 +8,21 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct NSArray {
+    Class _field1;
+};
+
+struct NSDictionary {
+    Class _field1;
+};
+
+struct NSMutableDictionary {
+    Class _field1;
+};
+
+struct NSSet {
+    Class _field1;
+};
+

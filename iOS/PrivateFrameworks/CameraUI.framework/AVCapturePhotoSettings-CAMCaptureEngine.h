@@ -8,6 +8,6 @@
 
 @interface AVCapturePhotoSettings (CAMCaptureEngine)
 + (id)cam_settingsWithRequest:(id)arg1;
-- (void)_configureForRequest:(id)arg1;
+- (void)_configureForRequest:(id)arg1 shouldIgnoreInitiationSettingsProperties:(_Bool)arg2;
 @end
 

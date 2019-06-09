@@ -7,28 +7,30 @@
 #import <objc/NSObject.h>
 
 #import <MailCore/ECMessage-Protocol.h>
+#import <MailCore/EDIndexableMessage-Protocol.h>
 #import <MailCore/MCMessageSortingInterface-Protocol.h>
 
-@class MCDisplayNameInfo, MCMimePart, NSArray, NSColor, NSData, NSDate, NSMutableSet, NSSet, NSString, NSUUID;
-@protocol ECMimePart, MCMailAccount, MCMailbox, MCMessageDataSource;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MCDisplayNameInfo, MCMimePart, NSArray, NSColor, NSDate, NSDictionary, NSMutableSet, NSSet, NSString, NSUUID;
+@protocol ECMessageHeaders, ECMimePart, MCMailAccount, MCMailbox, MCMessageDataSource;
 
-@interface MCMessage : NSObject <MCMessageSortingInterface, ECMessage>
+@interface MCMessage : NSObject <MCMessageSortingInterface, ECMessage, EDIndexableMessage>
 {
-    NSString *_subject;
+    ECSubject *_subject;
     NSArray *_toRecipients;
     NSArray *_ccRecipients;
+    NSArray *_bccRecipients;
     NSString *_sender;
-    NSData *_messageIDHeaderDigest;
-    NSData *_inReplyToHeaderDigest;
+    ECAngleBracketIDHash *_messageIDHeaderHash;
     NSUUID *_documentID;
     CDStruct_7ad7028e _messageColor;
     BOOL _type;
     double _dateSentInterval;
     double _dateReceivedInterval;
     double _dateLastViewedInterval;
+    ECAngleBracketIDHash *_listIDHash;
     id <MCMessageDataSource> _dataSource;
     // Error parsing type: Aq, name: _messageFlags
-    unsigned char _subjectPrefixLength;
+    unsigned long long _conversationFlags;
     NSMutableSet *_gmailLabels;
     BOOL _markedForOverwrite;
     BOOL _recipientType;
@@ -40,20 +42,16 @@
 }
 
 + (BOOL)isMessageURLString:(id)arg1;
-+ (id)_subjectTruncatedToMaximumAllowableSize:(id)arg1 prefixLength:(unsigned char)arg2;
-+ (id)subjectTruncatedToMaximumAllowableSize:(id)arg1;
 + (long long)displayablePriorityForPriority:(long long)arg1;
 + (long long)validatePriority:(long long)arg1;
 + (BOOL)messageColorIsValid:(CDStruct_7ad7028e)arg1;
 + (BOOL)allMessages:(id)arg1 areSameType:(BOOL)arg2;
-+ (unsigned char)subjectPrefixLengthUnknown;
 + (id)unreadMessagesFromMessages:(id)arg1;
 + (BOOL)_messageTypeForMessageTypeKey:(id)arg1;
 + (id)messageTypeKeyForMessageType:(BOOL)arg1;
 + (id)replyPrefixWithSpacer:(BOOL)arg1;
 + (id)forwardedMessagePrefixWithSpacer:(BOOL)arg1;
 + (id)messageWithRFC822Data:(id)arg1 sanitizeData:(BOOL)arg2;
-+ (void)initialize;
 @property double primitiveDateLastViewedInterval; // @synthesize primitiveDateLastViewedInterval=_primitiveDateLastViewedInterval;
 @property double primitiveDateReceivedInterval; // @synthesize primitiveDateReceivedInterval=_primitiveDateReceivedInterval;
 @property double primitiveDateSentInterval; // @synthesize primitiveDateSentInterval=_primitiveDateSentInterval;
@@ -62,14 +60,20 @@
 @property BOOL markedForOverwrite; // @synthesize markedForOverwrite=_markedForOverwrite;
 @property(readonly) long long conversationID; // @synthesize conversationID=_conversationID;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) id <ECMimePart> messageBody;
+@property(retain, nonatomic) ECAngleBracketIDHash *listIDHash;
+@property(readonly, copy, nonatomic) NSArray *references;
+@property(readonly, nonatomic) id <ECMessageHeaders> headers;
+@property(readonly, copy, nonatomic) NSDictionary *headersDictionary;
+@property(readonly, nonatomic, getter=isPartOfExistingThread) BOOL partOfExistingThread;
+- (id)bestAlternativePart:(char *)arg1;
+@property(readonly, nonatomic) id <ECMimePart> bodyPart;
 - (id)imageArchiveURL;
 - (void)_updateAttributeSet:(id)arg1 includingHTML:(BOOL)arg2 withMessageBody:(id)arg3 orderedAttachments:(id *)arg4;
 - (id)_uniqueIdentifierForSearchableItemUsingIdentifier:(id)arg1 useHeadersIfNecessary:(BOOL)arg2;
 @property(readonly, nonatomic) NSString *uniqueIdentifierForSearchableItem;
 - (id)_searchableItemWithHTML:(id)arg1 messageBody:(id)arg2 updatableAttributesOnly:(BOOL)arg3 outOrderedAttachments:(id *)arg4;
 - (id)searchableItemWithHTML:(id)arg1 messageBody:(id)arg2 updatableAttributesOnly:(BOOL)arg3;
-- (void)setAttachmentFilenames:(id)arg1;
+- (void)setAttachmentMetadata:(id)arg1;
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3;
 @property(readonly, nonatomic) MCMimePart *topLevelMimePart;
 - (BOOL)_calculateAttachmentInfoFromTopLevelMimePart:(id)arg1 numberOfAttachments:(unsigned int *)arg2 isSigned:(char *)arg3 isEncrypted:(char *)arg4 force:(BOOL)arg5;
@@ -78,6 +82,7 @@
 - (id)headerDataFetchIfNotAvailable:(BOOL)arg1 allowPartial:(BOOL)arg2;
 - (id)bodyDataFetchIfNotAvailable:(BOOL)arg1 allowPartial:(BOOL)arg2;
 @property(readonly, copy, nonatomic) NSString *persistentID;
+@property(readonly, nonatomic) unsigned long long fileSize;
 @property(readonly, copy) NSArray *listUnsubscribe;
 - (id)URLStringWithHeaders:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *URLStringIfAvailable;
@@ -89,19 +94,19 @@
 @property(readonly) CDStruct_7ad7028e messageColor;
 @property(readonly, nonatomic) unsigned int uid;
 @property(readonly, copy) NSString *remoteID;
-@property(readonly, copy) NSArray *references;
-- (void)setMessageInfo:(id)arg1 subjectPrefixLength:(unsigned char)arg2 to:(id)arg3 cc:(id)arg4 sender:(id)arg5 type:(BOOL)arg6 dateReceivedTimeIntervalSince1970:(double)arg7 dateSentTimeIntervalSince1970:(double)arg8 messageIDHeaderDigest:(id)arg9 inReplyToHeaderDigest:(id)arg10 dateLastViewedTimeIntervalSince1970:(double)arg11;
-@property(readonly) BOOL conversationMuted;
-@property(readonly) BOOL conversationVIP;
-@property(readonly) BOOL senderVIP;
-@property(readonly) BOOL junk;
-@property(readonly) BOOL answered;
-@property(readonly) BOOL flagged;
+@property(readonly, copy) NSArray *referencesHashes;
+- (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 sender:(id)arg4 type:(BOOL)arg5 dateReceivedTimeIntervalSince1970:(double)arg6 dateSentTimeIntervalSince1970:(double)arg7 messageIDHeaderHash:(id)arg8 dateLastViewedTimeIntervalSince1970:(double)arg9;
+- (BOOL)junk;
+- (BOOL)read;
+- (BOOL)answered;
+- (BOOL)flagged;
+@property(copy) NSArray *bcc;
 @property(copy) NSArray *cc;
 @property(copy) NSArray *to;
 @property(readonly, nonatomic) MCDisplayNameInfo *senderDisplayNameInfo;
 @property(readonly, copy, nonatomic) NSString *senderDisplayName;
 @property(readonly, copy) NSString *senderIfAvailable;
+@property(readonly, copy) NSArray *senders;
 @property(copy) NSString *sender;
 @property(readonly, copy) NSArray *from;
 @property double dateLastViewedAsTimeIntervalSince1970;
@@ -110,12 +115,8 @@
 @property(readonly) NSDate *dateSent;
 @property double dateReceivedAsTimeIntervalSince1970;
 @property(readonly) NSDate *dateReceived;
-- (void)_setSubject:(id)arg1 prefixLength:(unsigned char)arg2;
-- (void)setSubject:(id)arg1 prefixLength:(unsigned long long)arg2;
-@property(copy) NSString *subject;
-@property(readonly, copy) NSString *subjectIfAvailable;
-@property(readonly, copy, nonatomic) NSString *subjectNotIncludingReAndFwdPrefix;
-@property(readonly) unsigned long long subjectPrefixLength;
+@property(copy) ECSubject *subject;
+@property(readonly, copy) ECSubject *subjectIfAvailable;
 - (void)loadCachedHeaderValuesFromHeaders:(id)arg1 type:(BOOL)arg2;
 - (void)_setDateSentFromHeaders:(id)arg1;
 - (void)_setDateReceivedFromHeaders:(id)arg1;
@@ -129,14 +130,9 @@
 @property(readonly, nonatomic) BOOL isPartialMessageBodyAvailable;
 @property(readonly, nonatomic) BOOL isMessageContentLocallyAvailable;
 @property(readonly, nonatomic) BOOL shouldDeferBodyDownload;
-@property(readonly, copy) NSData *rawInReplyToHeaderDigest;
-@property(copy) NSData *inReplyToHeaderDigest;
-- (void)unlockedSetInReplyToHeaderDigest:(id)arg1;
 @property(readonly, nonatomic) BOOL isReply;
-@property(readonly, copy) NSData *rawMessageIDHeaderDigest;
-- (void)setMessageIDHeaderDigest:(id)arg1;
-- (void)unlockedSetMessageIDHeaderDigest:(id)arg1;
-@property(readonly, copy) NSData *messageIDHeaderDigest;
+@property(retain) ECAngleBracketIDHash *messageIDHeaderHash;
+@property(readonly, copy, nonatomic) NSString *messageIDHeader;
 @property(readonly, copy, nonatomic) NSString *messageID;
 @property(readonly, nonatomic) unsigned long long messageSize;
 - (void)setColor:(id)arg1 hasBeenEvaluated:(BOOL)arg2 flags:(long long)arg3 mask:(long long)arg4;
@@ -153,14 +149,21 @@
 - (void)removeGmailLabels:(id)arg1;
 - (void)addGmailLabels:(id)arg1;
 @property(retain) NSSet *gmailLabels;
+@property(readonly) NSSet *labels;
+- (void)setPrimitiveConversationFlags:(unsigned long long)arg1;
+- (void)setConversationFlags:(unsigned long long)arg1;
+- (unsigned long long)primitiveConversationFlags;
+@property(readonly) unsigned long long conversationFlags;
 - (void)setPrimitiveMessageFlags:(long long)arg1 mask:(long long)arg2;
 @property(readonly, nonatomic) long long primitiveMessageFlags;
 - (void)setMessageFlags:(long long)arg1 mask:(long long)arg2;
+@property(readonly, nonatomic) ECMessageFlags *flags;
 @property(readonly, nonatomic) long long messageFlags;
 @property(copy) NSUUID *documentID;
 @property(readonly, nonatomic) BOOL isMessageMeeting;
 @property(readonly, nonatomic) BOOL isEditable;
 @property BOOL type;
+- (id)bodyFetchIfNotAvailable:(BOOL)arg1 updateFlags:(BOOL)arg2 allowPartial:(BOOL)arg3 skipSignatureVerification:(BOOL)arg4;
 - (id)bodyFetchIfNotAvailable:(BOOL)arg1 updateFlags:(BOOL)arg2 allowPartial:(BOOL)arg3;
 - (id)headersFetchIfNotAvailable:(BOOL)arg1;
 @property(readonly, nonatomic) id <MCMailbox> mailbox;

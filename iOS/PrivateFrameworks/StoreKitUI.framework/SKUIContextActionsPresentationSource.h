@@ -8,6 +8,7 @@
 
 @class UIBarButtonItem, UIView, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIContextActionsPresentationSource : NSObject
 {
     UIViewController *_viewController;

@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/HMDMessageFilter.h>
+#import <HMFoundation/HMFMessageFilter.h>
 
-@interface HMDLostModeMessageFilter : HMDMessageFilter
+@interface HMDLostModeMessageFilter : HMFMessageFilter
 {
-    _Bool _deviceLost;
 }
 
-@property(nonatomic, getter=isDeviceLost) _Bool deviceLost; // @synthesize deviceLost=_deviceLost;
-- (_Bool)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id *)arg3;
-- (id)initWithName:(id)arg1;
-- (void)_deviceLostStateNotification:(id)arg1;
++ (_Bool)canInitWithMessage:(id)arg1;
++ (id)policyClasses;
+- (_Bool)acceptWithPolicies:(id)arg1 error:(id *)arg2;
 
 @end
 

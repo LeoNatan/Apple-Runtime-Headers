@@ -24,9 +24,11 @@
     BOOL _scannerStartCalled;
     CUSystemMonitor *_systemMonitor;
     struct LogCategory *_ucat;
+    int _bluetoothState;
     unsigned int _changeFlags;
     unsigned int _scanFlags;
     int _scanRate;
+    CDUnknownBlockType _bluetoothStateChangedHandler;
     CDUnknownBlockType _deviceFoundHandler;
     CDUnknownBlockType _deviceLostHandler;
     CDUnknownBlockType _deviceChangedHandler;
@@ -44,6 +46,8 @@
 @property(copy, nonatomic) CDUnknownBlockType deviceLostHandler; // @synthesize deviceLostHandler=_deviceLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceFoundHandler; // @synthesize deviceFoundHandler=_deviceFoundHandler;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
+@property(copy, nonatomic) CDUnknownBlockType bluetoothStateChangedHandler; // @synthesize bluetoothStateChangedHandler=_bluetoothStateChangedHandler;
+@property(nonatomic) int bluetoothState; // @synthesize bluetoothState=_bluetoothState;
 - (void).cxx_destruct;
 - (void)centralManager:(id)arg1 didDiscoverPeripheral:(id)arg2 advertisementData:(id)arg3 RSSI:(id)arg4;
 - (void)centralManagerDidUpdateState:(id)arg1;

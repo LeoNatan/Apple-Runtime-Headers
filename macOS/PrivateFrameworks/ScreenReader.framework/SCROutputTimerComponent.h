@@ -15,10 +15,10 @@ __attribute__((visibility("hidden")))
     NSLock *_timersArrayLock;
 }
 
+- (void).cxx_destruct;
 - (void)timer:(struct __CFRunLoopTimer *)arg1 firedForAction:(id)arg2 runner:(id)arg3;
 - (void)handleEvent:(id)arg1;
 - (int)preflightSequentialSteps:(id)arg1 runnerName:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

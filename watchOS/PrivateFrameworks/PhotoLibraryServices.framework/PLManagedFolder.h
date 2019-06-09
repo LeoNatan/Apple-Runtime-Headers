@@ -8,10 +8,12 @@
 
 #import <PhotoLibraryServices/PLAlbumContainer-Protocol.h>
 #import <PhotoLibraryServices/PLCloudDeletable-Protocol.h>
+#import <PhotoLibraryServices/PLDeletableManagedObject-Protocol.h>
+#import <PhotoLibraryServices/PLFileSystemAlbumMetadataPersistence-Protocol.h>
 
 @class NSOrderedSet, NSString;
 
-@interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer, PLCloudDeletable>
+@interface PLManagedFolder : PLGenericAlbum <PLAlbumContainer, PLCloudDeletable, PLFileSystemAlbumMetadataPersistence, PLDeletableManagedObject>
 {
     _Bool _needsPersistenceUpdate;
     _Bool _needsFixedOrderKeysComplianceUpdate;
@@ -22,9 +24,7 @@
 + (int)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)localizedRecoveredTitle;
 + (id)childKeyForOrdering;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)insertInManagedObjectContext:(id)arg1;
 @property(nonatomic) _Bool needsFixedOrderKeysComplianceUpdate; // @synthesize needsFixedOrderKeysComplianceUpdate=_needsFixedOrderKeysComplianceUpdate;
 @property(nonatomic) _Bool needsPersistenceUpdate; // @synthesize needsPersistenceUpdate=_needsPersistenceUpdate;
 - (void)refreshCollections;
@@ -42,9 +42,9 @@
 @property(readonly, retain, nonatomic) NSString *_typeDescription;
 @property(readonly, retain, nonatomic) NSString *_prettyDescription;
 - (void)enforceFixedOrderKeyCompliance;
-- (void)removePersistedFileSystemData;
-- (void)persistMetadataToFileSystem;
-- (_Bool)isValidKindForPersistence;
+- (void)removePersistedFileSystemDataWithPathManager:(id)arg1;
+- (void)persistMetadataToFileSystemWithPathManager:(id)arg1;
+- (_Bool)isValidForPersistence;
 @property(readonly, nonatomic) unsigned int unreadAlbumsCount;
 @property(readonly, nonatomic) int filter;
 - (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
@@ -64,6 +64,7 @@
 - (_Bool)canEditContainers;
 @property(readonly, nonatomic) unsigned int containersCount;
 - (id)containers;
+- (_Bool)canPerformDeleteOperation;
 - (_Bool)canPerformEditOperation:(unsigned int)arg1;
 - (unsigned int)videosCount;
 - (unsigned int)photosCount;
@@ -79,6 +80,7 @@
 - (void)didSave;
 - (void)willSave;
 - (id)childKeyForOrdering;
+- (id)payloadForChangedKeys:(id)arg1;
 - (id)descriptionOfChildCollectionOrderValues;
 
 // Remaining properties

@@ -57,6 +57,7 @@
 @property(readonly, nonatomic) MFModernAtomIconView *accessoryIconView; // @synthesize accessoryIconView=_accessoryIconView;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_label;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+- (void).cxx_destruct;
 - (void)performBuildInAnimationFromTextColor:(id)arg1 withDuration:(double)arg2;
 - (struct CGSize)intrinsicContentSize;
 - (id)viewForLastBaselineLayout;
@@ -95,9 +96,9 @@
 - (id)_chevronTextAttachment;
 - (id)_centeredTextAttachmentWithImage:(id)arg1;
 - (void)_updateSubviewsForWrapping;
+- (void)_updateIconViewsSemanticContentAttribute;
 - (int)_preferredIconVariant;
 @property(readonly, copy) NSString *description;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 presentationOptions:(unsigned long long)arg2 separatorStyle:(int)arg3 wrappingSupported:(_Bool)arg4;
 
 // Remaining properties

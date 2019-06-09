@@ -53,11 +53,9 @@
 - (void)coreDAVLogRequestBody:(id)arg1;
 - (void)coreDAVLogTransmittedDataPartial:(id)arg1;
 - (BOOL)shouldLogTransmittedData;
-- (void)coreDAVLogDiagnosticMessage:(id)arg1 atLevel:(long long)arg2;
-- (long long)coreDAVOutputLevel;
-- (long long)coreDAVLogLevel;
+- (id)logHandle;
 - (id)secCertificates;
-- (struct OpaqueSecIdentityRef *)copySecIdentity;
+- (struct __SecIdentity *)copySecIdentity;
 - (id)getAppleIDSession;
 - (id)userAgentHeader;
 - (BOOL)renewCredential;

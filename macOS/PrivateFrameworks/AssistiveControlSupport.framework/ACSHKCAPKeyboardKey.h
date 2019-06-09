@@ -10,15 +10,15 @@
 
 @interface ACSHKCAPKeyboardKey : NSObject
 {
-    unsigned short _keyCode;
     NSString *_title;
+    unsigned long long _keyCode;
     struct CGRect _frame;
     struct CGRect _extraFrame;
 }
 
 @property struct CGRect extraFrame; // @synthesize extraFrame=_extraFrame;
 @property struct CGRect frame; // @synthesize frame=_frame;
-@property unsigned short keyCode; // @synthesize keyCode=_keyCode;
+@property unsigned long long keyCode; // @synthesize keyCode=_keyCode;
 @property(retain) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)description;

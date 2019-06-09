@@ -6,11 +6,26 @@
 
 #import <Photos/PHPerson.h>
 
-@interface PHPerson (PhotosUICore)
-+ (id)px_memoryTitleStringFromPeople:(id)arg1;
-+ (id)px_slideshowTitleStringForPeople:(id)arg1;
-+ (id)_px_titleStringForPeople:(id)arg1 singlePersonFallback:(id)arg2 groupFallback:(id)arg3;
-+ (id)px_titleStringForPeople:(id)arg1;
-- (id)px_displayName;
+#import <PhotosUICore/PXPerson-Protocol.h>
+
+@class NSDate, NSString;
+
+@interface PHPerson (PhotosUICore) <PXPerson>
++ (void)px_loadRepresentativeFacesForPersons:(id)arg1;
++ (id)px_fetchPersonsForSuggestion:(id)arg1 options:(id)arg2;
+@property(readonly) NSString *px_displayName;
+@property(readonly) NSDate *px_keyPhotoDate;
+@property(readonly) _Bool isPersonModel;
+@property(readonly) NSString *px_localIdentifier;
+@property(readonly) unsigned long long numberOfAssets;
+- (void)requestFaceTileImageWithTargetSize:(struct CGSize)arg1 cropFactor:(unsigned long long)arg2 style:(unsigned long long)arg3 cacheResult:(_Bool)arg4 boundFaceRect:(_Bool)arg5 completionBlock:(CDUnknownBlockType)arg6;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) _Bool isVerified;
+@property(readonly) NSString *name;
+@property(readonly) Class superclass;
 @end
 

@@ -25,7 +25,10 @@
 - (void)updateAccountData:(CDUnknownBlockType)arg1;
 - (void)finishedReconciling:(CDUnknownBlockType)arg1 withError:(id)arg2;
 - (void)performOperationAfterReconcile:(CDUnknownBlockType)arg1;
+- (void)performOperationWhenNotReconciling:(CDUnknownBlockType)arg1;
 - (id)saveAndNotifyIfNecessary;
+- (void)updateUsageVectors:(id)arg1;
+- (id)storableUsageVectors;
 - (id)save;
 - (void)incrementMonthlyResetCount;
 - (void)notifyActiveRecordChanged;

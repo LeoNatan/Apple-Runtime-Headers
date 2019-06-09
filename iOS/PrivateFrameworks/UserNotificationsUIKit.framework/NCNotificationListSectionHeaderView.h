@@ -22,7 +22,7 @@
     id <NCNotificationListSectionHeaderViewDelegate> _delegate;
     NSString *_sectionIdentifier;
     NSString *_title;
-    NSString *_backgroundGroupName;
+    NSString *_materialGroupNameBase;
     double _overrideAlpha;
     NCNotificationListHeaderTitleView *_headerTitleView;
     _UILegibilitySettings *_legibilitySettings;
@@ -38,7 +38,7 @@
 @property(nonatomic) struct CGPoint overrideCenter; // @synthesize overrideCenter=_overrideCenter;
 @property(nonatomic) double overrideAlpha; // @synthesize overrideAlpha=_overrideAlpha;
 @property(nonatomic) _Bool shouldOverrideForReveal; // @synthesize shouldOverrideForReveal=_shouldOverrideForReveal;
-@property(copy, nonatomic) NSString *backgroundGroupName; // @synthesize backgroundGroupName=_backgroundGroupName;
+@property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(nonatomic) __weak id <NCNotificationListSectionHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;

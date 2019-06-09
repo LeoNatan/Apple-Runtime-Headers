@@ -11,8 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (struct CGRect)labelFrameForHUD:(id)arg1;
-- (unsigned long long)numberOfLinesForLabelInHUD:(id)arg1;
+- (_Bool)labelContainsSingleCharacter:(id)arg1;
+- (id)labelFontForHUD:(id)arg1;
+- (struct CGRect)labelFrameForHUD:(id)arg1 preferredSize:(struct CGSize)arg2;
+- (struct CGSize)minimumUnscaledSizeForHUD:(id)arg1 preferredLabelSize:(struct CGSize)arg2;
+- (struct CGSize)unscaledSizeForHUD:(id)arg1 containingSize:(struct CGSize)arg2;
 
 @end
 

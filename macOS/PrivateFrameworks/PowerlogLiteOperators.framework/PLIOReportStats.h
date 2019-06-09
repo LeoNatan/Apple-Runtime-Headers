@@ -42,6 +42,7 @@
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1 andSubGroup:(id)arg2 withChannelIDs:(id)arg3;
 - (id)initWithGroup:(id)arg1 andSubGroup:(id)arg2;
+- (id)initWithDriverName:(id)arg1 withGroup:(id)arg2;
 - (id)init;
 - (id)_init;
 

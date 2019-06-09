@@ -6,9 +6,11 @@
 
 #import <IDSFoundation/IDSSocketPairMessage.h>
 
+#import <IDSFoundation/IDSSocketPairMessage-Protocol.h>
+
 @class NSData, NSDate, NSString;
 
-@interface IDSSocketPairDataMessage : IDSSocketPairMessage
+@interface IDSSocketPairDataMessage : IDSSocketPairMessage <IDSSocketPairMessage>
 {
     unsigned int _sequenceNumber;
     unsigned short _streamID;

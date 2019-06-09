@@ -37,7 +37,7 @@
 - (void)enginePercentDone:(id)arg1;
 - (void)engineProcessingText:(id)arg1;
 - (void)engineStartedWithRequestUUID:(id)arg1 migrationType:(unsigned long long)arg2;
-- (long long)_statusText:(id)arg1 arguments:(id)arg2 timeRemaining:(id)arg3 percentDone:(id)arg4 eaw:(id)arg5;
+- (BOOL)_sendStatusText:(id)arg1 arguments:(id)arg2 timeRemaining:(id)arg3 percentDone:(id)arg4 eaw:(id)arg5;
 - (void)removeSplitForkCacheAtPath:(id)arg1;
 - (unsigned long long)sizeForPaths:(in id)arg1;
 - (id)bundleInformationAtPath:(id)arg1;
@@ -57,13 +57,11 @@
 - (unsigned long long)sizeOfType:(id)arg1 paths:(id)arg2 omitPaths:(id)arg3;
 - (id)resultOfRequestType:(id)arg1 paths:(id)arg2 omitPaths:(id)arg3;
 @property(readonly) unsigned long long protocolVersion;
-- (BOOL)receiveResultPortion:(id)arg1 onStream:(id)arg2 error:(id *)arg3;
-- (BOOL)sendRequestPortion:(id)arg1 onStream:(id)arg2 error:(id *)arg3;
-- (BOOL)sendActionMain:(id)arg1 error:(id *)arg2;
 - (void)closeActiveConnection;
 - (void)resume;
 - (void)cancel;
 - (BOOL)waitForConnectionReturningError:(id *)arg1;
+- (BOOL)sendActionToAffirmMigrationHasCompleted;
 - (BOOL)sendAction:(id)arg1 error:(id *)arg2;
 - (void)setConnected:(BOOL)arg1;
 - (BOOL)copyPath:(id)arg1 toPath:(id)arg2;

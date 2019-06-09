@@ -8,14 +8,13 @@
 
 #import <IdleTimerServices/ITIdleTimerStateServerDelegate-Protocol.h>
 
-@class FBSSerialQueue, ITIdleTimerStateServer, NSMutableDictionary, NSString;
+@class ITIdleTimerStateServer, NSMutableDictionary, NSString;
 @protocol BSInvalidatable, ITIdleTimerStateServiceDelegate, OS_dispatch_queue;
 
 @interface ITIdleTimerStateService : NSObject <ITIdleTimerStateServerDelegate>
 {
     ITIdleTimerStateServer *_server;
     NSObject<OS_dispatch_queue> *_calloutDispatchQueue;
-    FBSSerialQueue *_calloutQueue;
     NSMutableDictionary *_assertionsByReason;
     NSMutableDictionary *_assertionReasonsByClientID;
     id <BSInvalidatable> _stateCaptureAssertion;
@@ -25,12 +24,15 @@
 @property(nonatomic) __weak id <ITIdleTimerStateServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_addStateCaptureHandler;
-- (id)_identifierForClient:(id)arg1;
+- (id)_identifierForClientProcess:(id)arg1;
+- (_Bool)clientConfiguration:(id)arg1 handleIdleEvent:(unsigned long long)arg2;
 - (_Bool)isIdleTimerServiceAvailable;
 - (void)clientDidDisconnect:(id)arg1;
-- (void)client:(id)arg1 setIdleTimerDisabled:(_Bool)arg2 forReason:(id)arg3;
+- (void)removeIdleTimerConfigurationFromProcess:(id)arg1 forReason:(id)arg2;
+- (_Bool)addIdleTimerConfiguration:(id)arg1 fromProcess:(id)arg2 forReason:(id)arg3;
 - (void)dealloc;
 - (id)initWithDispatchQueue:(id)arg1;
+- (id)initWithDispatchQueue:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

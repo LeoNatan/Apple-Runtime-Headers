@@ -10,7 +10,7 @@
 #import <Contacts/NSMutableCopying-Protocol.h>
 #import <Contacts/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSString;
+@class NSData, NSDate, NSString;
 
 @interface CNGroup : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
@@ -19,6 +19,10 @@
     CNGroup *_snapshot;
     NSDate *_creationDate;
     NSDate *_modificationDate;
+    NSString *_externalIdentifier;
+    NSData *_externalRepresentation;
+    NSString *_externalModificationTag;
+    NSString *_externalUUID;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -34,6 +38,10 @@
 + (id)predicateForAllGroups;
 @property(readonly, copy) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(readonly, copy) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property(readonly, copy) NSString *externalUUID; // @synthesize externalUUID=_externalUUID;
+@property(readonly, copy) NSString *externalModificationTag; // @synthesize externalModificationTag=_externalModificationTag;
+@property(readonly, copy) NSData *externalRepresentation; // @synthesize externalRepresentation=_externalRepresentation;
+@property(readonly, copy) NSString *externalIdentifier; // @synthesize externalIdentifier=_externalIdentifier;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;

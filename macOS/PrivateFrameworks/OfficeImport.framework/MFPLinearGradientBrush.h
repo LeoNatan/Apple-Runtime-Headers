@@ -8,6 +8,7 @@
 
 @class OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface MFPLinearGradientBrush : MFPGradientBrush
 {
     struct CGRect mBounds;

@@ -6,25 +6,30 @@
 
 #import <AppKit/NSView.h>
 
-@class NSTimer, SSReconnectProgressIndicator;
+@class NSObject, NSTimer, SSNotificationOverlayViewController;
+@protocol SSFadeViewDelegate;
 
 @interface SSFadeView : NSView
 {
-    NSTimer *animationTimer;
     float currentAlpha;
-    SSReconnectProgressIndicator *spinner;
     BOOL wantsSpinner;
-    id delegate;
     float maxAlpha;
+    NSObject<SSFadeViewDelegate> *delegate;
+    NSTimer *_animationTimer;
+    SSNotificationOverlayViewController *_overlayNotificationViewController;
 }
 
+@property(retain) SSNotificationOverlayViewController *overlayNotificationViewController; // @synthesize overlayNotificationViewController=_overlayNotificationViewController;
+@property(retain) NSTimer *animationTimer; // @synthesize animationTimer=_animationTimer;
 @property float maxAlpha; // @synthesize maxAlpha;
-@property id delegate; // @synthesize delegate;
+@property NSObject<SSFadeViewDelegate> *delegate; // @synthesize delegate;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)updateFrameAndRedraw;
 - (void)animateFadeOut:(id)arg1;
 - (void)animateFadeIn:(id)arg1;
+- (void)addStaticViewWithMessage:(id)arg1 image:(id)arg2;
 - (void)addSpinnerView;
+- (void)addOverlayBoxWithMessage:(id)arg1;
 @property BOOL wantsSpinner;
 - (void)viewWillResignOverlay:(BOOL)arg1;
 - (void)viewDidBecomeOverlay;

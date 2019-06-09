@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSString, PLMutablePTPAsset, PLPTPAsset;
+@class NSArray, NSMutableArray, NSString, PLMutablePTPAsset;
 @protocol PLFileManager, PLPTPConversionSupport, PLPTPTransferableAsset;
 
 @interface PLPTPAssetBuilder : NSObject
@@ -16,13 +16,13 @@
     id <PLFileManager> _fileManager;
     NSString *_filenameForPTP;
     PLMutablePTPAsset *_currentPtpAsset;
-    PLPTPAsset *_commonPtpAsset;
-    PLPTPAsset *_originalPtpAsset;
+    PLMutablePTPAsset *_commonPtpAsset;
+    PLMutablePTPAsset *_originalPtpAsset;
     NSArray *_sidecarPtpAssets;
-    PLPTPAsset *_diagnosticPtpAsset;
-    PLPTPAsset *_originalAdjustmentPtpAsset;
-    PLPTPAsset *_fullSizeRenderImagePtpAsset;
-    PLPTPAsset *_fullSizeRenderVideoPtpAsset;
+    PLMutablePTPAsset *_diagnosticPtpAsset;
+    PLMutablePTPAsset *_adjustmentPtpAsset;
+    PLMutablePTPAsset *_fullSizeRenderImagePtpAsset;
+    PLMutablePTPAsset *_fullSizeRenderVideoPtpAsset;
     NSMutableArray *_convertedAssets;
     _Bool _irisSidecarRequiresFormatConversion;
 }
@@ -32,7 +32,7 @@
 - (void).cxx_destruct;
 - (void)_buildFullSizeRenderVideoAsset;
 - (void)_buildFullSizeRenderImageAsset;
-- (void)_buildOriginalAdjustmentAsset;
+- (void)_buildAdjustmentAsset;
 - (void)_buildDiagnosticAsset;
 - (id)_assetForSidecar:(id)arg1 sidecarPath:(id)arg2 irisSidecarPath:(id)arg3;
 - (void)_buildSidecarAssets;
@@ -62,6 +62,7 @@
 - (void)updateAssetForFormatConversion:(id)arg1 isVideo:(_Bool)arg2 isRender:(_Bool)arg3 forceLegacyConversion:(_Bool)arg4;
 - (_Bool)_buildOriginalAsset;
 - (void)_buildCommonAsset;
+- (void)updateSiblingAssetTypesOnMutablePTPAssets:(id)arg1;
 - (id)pictureTransferProtocolAssets;
 - (id)initWithAsset:(id)arg1 conversionSupport:(id)arg2 fileManager:(id)arg3;
 - (id)initWithAsset:(id)arg1 conversionSupport:(id)arg2;

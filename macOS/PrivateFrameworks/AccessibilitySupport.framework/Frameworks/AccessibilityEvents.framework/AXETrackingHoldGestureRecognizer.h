@@ -15,6 +15,7 @@
 @interface AXETrackingHoldGestureRecognizer : NSObject <AXETrackingTapGestureRecognizerDelegate, AXETrackingGestureRecognizer>
 {
     BOOL _allowInstabilityBeforeHold;
+    unsigned long long _fingerCount;
     unsigned long long _preHoldTapCount;
     double _maximumHoldDeviation;
     double _minimumHoldDuration;
@@ -42,8 +43,10 @@
 @property(readonly, nonatomic) double minimumHoldDuration; // @synthesize minimumHoldDuration=_minimumHoldDuration;
 @property(readonly, nonatomic) double maximumHoldDeviation; // @synthesize maximumHoldDeviation=_maximumHoldDeviation;
 @property(readonly, nonatomic) unsigned long long preHoldTapCount; // @synthesize preHoldTapCount=_preHoldTapCount;
+@property(readonly, nonatomic) unsigned long long fingerCount; // @synthesize fingerCount=_fingerCount;
 - (void).cxx_destruct;
 - (void)_signalAborted:(id)arg1;
+- (void)_signalTouchesMovedAfterStabilizing:(id)arg1;
 - (void)_signalStabilized:(id)arg1;
 - (void)_signalStartedStabilizing:(id)arg1;
 - (void)_minimumHoldDurationElapsed:(id)arg1;
@@ -55,9 +58,12 @@
 - (void)reset;
 - (void)processGestureEvent:(id)arg1;
 - (unsigned long long)_updateTouchHistoriesWithTouches:(id)arg1;
+- (id)initWithFingerCount:(unsigned long long)arg1 preHoldTapCount:(unsigned long long)arg2 maximumHoldDeviation:(double)arg3 minimumHoldDuration:(double)arg4 minimumPreStabilizationDuration:(double)arg5 allowInstabilityBeforeHold:(BOOL)arg6;
 - (id)initWithPreHoldTapCount:(unsigned long long)arg1 maximumHoldDeviation:(double)arg2 minimumHoldDuration:(double)arg3 minimumPreStabilizationDuration:(double)arg4 allowInstabilityBeforeHold:(BOOL)arg5;
 - (id)initWithMaximumHoldDeviation:(double)arg1 minimumHoldDuration:(double)arg2 minimumPreStabilizationDuration:(double)arg3 allowInstabilityBeforeHold:(BOOL)arg4;
+- (id)initWithFingerCount:(unsigned long long)arg1 preHoldTapCount:(unsigned long long)arg2;
 - (id)initWithPreHoldTapCount:(unsigned long long)arg1;
+- (id)initWithFingerCount:(unsigned long long)arg1;
 - (id)init;
 
 // Remaining properties

@@ -19,6 +19,7 @@
 + (id)tokenizeString:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
 @property(readonly, nonatomic) struct __CFStringTokenizer *tokenizer; // @synthesize tokenizer=_tokenizer;
+- (void).cxx_destruct;
 - (id)rangesOfWordUnitTokensInString:(id)arg1;
 - (id)rangesOfWordTokensInString:(id)arg1;
 - (id)tokenizeString:(id)arg1;

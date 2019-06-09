@@ -31,6 +31,7 @@
 - (id)init;
 - (id)initWithDefaultsResource:(id)arg1 withExtension:(id)arg2 inBundle:(id)arg3;
 - (id)initWithDefaultsAtURL:(id)arg1;
+- (id)initWithSuiteName:(id)arg1;
 
 @end
 

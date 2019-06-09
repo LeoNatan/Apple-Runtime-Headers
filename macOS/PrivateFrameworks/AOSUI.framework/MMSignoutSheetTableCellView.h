@@ -14,8 +14,9 @@
     NSButton *_optionsButton;
 }
 
-@property NSButton *optionsButton; // @synthesize optionsButton=_optionsButton;
-@property NSButton *checkbox; // @synthesize checkbox=_checkbox;
+@property __weak NSButton *optionsButton; // @synthesize optionsButton=_optionsButton;
+@property __weak NSButton *checkbox; // @synthesize checkbox=_checkbox;
+- (void).cxx_destruct;
 
 @end
 

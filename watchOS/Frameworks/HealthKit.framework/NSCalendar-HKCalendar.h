@@ -27,8 +27,6 @@
 - (id)hk_dateByShiftingFromGregorianCalendarWithUTCTimeZone:(id)arg1;
 - (id)hk_dateByShiftingToGregorianCalendarWithUTCTimeZone:(id)arg1;
 - (double)hk_timeIntervalSinceStartOfDayForDate:(id)arg1;
-- (id)hk_startOfBedditSleepDayForDate:(id)arg1;
-- (id)hk_startOfSleepDayForDate:(id)arg1;
 - (id)hk_nearestNoonBeforeDateOrEqualToDate:(id)arg1;
 - (id)hk_weekendDays;
 - (id)hk_firstDateWithHour:(int)arg1 minute:(int)arg2 afterDate:(id)arg3;
@@ -47,5 +45,6 @@
 - (id)hk_startOfDateByAddingDays:(int)arg1 toDate:(id)arg2;
 - (id)hk_startOfDateBySubtractingDays:(int)arg1 fromDate:(id)arg2;
 - (id)hk_dateOfBirthDateComponentsWithDate:(id)arg1;
+- (id)hk_activitySummaryDateComponentsFromDate:(id)arg1;
 @end
 

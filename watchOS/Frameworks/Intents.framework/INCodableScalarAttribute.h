@@ -17,10 +17,16 @@
 @property(nonatomic) int type; // @synthesize type=_type;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_dictionaryRepresentation;
+- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (void)updateWithDictionary:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (Class)_relationshipValueTransformerClass;
+- (Class)resolutionResultClass;
+- (Class)objectClass;
+- (int)valueType;
+- (id)initWithPropertyName:(id)arg1 type:(int)arg2;
 
 @end
 

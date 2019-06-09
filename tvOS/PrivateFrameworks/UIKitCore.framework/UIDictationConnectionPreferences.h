@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstance;
 @property(retain, nonatomic) AFPreferences *afPreferences; // @synthesize afPreferences=_afPreferences;
 - (void).cxx_destruct;
+- (id)dictationSLSEnabledLanguages;
 - (void)afPreferencesChanged:(id)arg1;
 - (id)languageCode;
 - (id)manualEndpointingThreshold;

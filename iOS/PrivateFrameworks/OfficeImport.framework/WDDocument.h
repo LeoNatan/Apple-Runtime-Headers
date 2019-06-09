@@ -8,6 +8,7 @@
 
 @class NSDate, NSMutableArray, NSMutableSet, NSString, OADBackground, OADColorMap, WDCitationTable, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WDDocument : OCDDocument
 {
     WDStyleSheet *mStyleSheet;
@@ -65,6 +66,7 @@
     OADColorMap *mColorMap;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setColorMap:(id)arg1;
 - (id)colorMap;
@@ -194,7 +196,6 @@
 - (id)styleSheet;
 - (void)removeObjPointer:(id)arg1;
 - (void)addObjPointer:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

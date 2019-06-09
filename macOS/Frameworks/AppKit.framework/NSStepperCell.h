@@ -6,7 +6,11 @@
 
 #import <AppKit/NSActionCell.h>
 
-@interface NSStepperCell : NSActionCell
+#import <AppKit/_NSStepperTrackable-Protocol.h>
+
+@class NSString;
+
+@interface NSStepperCell : NSActionCell <_NSStepperTrackable>
 {
     double _value;
     double _minValue;
@@ -16,17 +20,12 @@
         unsigned int valueWraps:1;
         unsigned int autorepeat:1;
         unsigned int drawing:1;
-        unsigned int stats1:1;
+        unsigned int isTrackingWithPressure:1;
         unsigned int reserved:28;
     } _stFlags;
-    unsigned int _reserved1;
-    unsigned int _reserved2;
-    unsigned int _reserved3;
-    unsigned int _reserved4;
 }
 
 + (BOOL)prefersTrackingUntilMouseUp;
-+ (void)initialize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)_sendActionFrom:(id)arg1;
@@ -38,7 +37,7 @@
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (void)getPeriodicDelay:(float *)arg1 interval:(float *)arg2;
 - (id)_pressureConfigurationIfNeeded;
-- (void)_updateMouseTracking;
+- (void)updateTrackingAreaWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)setControlView:(id)arg1;
 - (void)drawFocusRingMaskWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)focusRingMaskBoundsForFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -47,7 +46,6 @@
 - (id)_coreUIDrawOptionsWithView:(id)arg1;
 - (unsigned long long)hitTestForEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
-- (struct CGSize)_stepperImageSizeForControlSize:(unsigned long long)arg1;
 - (void)setDoubleValue:(double)arg1;
 - (double)doubleValue;
 - (void)setFloatValue:(float)arg1;
@@ -60,23 +58,12 @@
 - (id)objectValue;
 - (void)setStringValue:(id)arg1;
 - (id)stringValue;
-- (void)_setAutorepeat:(BOOL)arg1;
 @property BOOL autorepeat;
-- (BOOL)_autorepeat;
-- (void)_setValueWraps:(BOOL)arg1;
 @property BOOL valueWraps;
-- (BOOL)_valueWraps;
-- (void)_setIncrement:(double)arg1;
 @property double increment;
-- (double)_increment;
-- (void)_setMaxValue:(double)arg1;
 @property double maxValue;
-- (double)_maxValue;
-- (void)_setMinValue:(double)arg1;
 @property double minValue;
-- (double)_minValue;
 - (id)init;
-- (void)_stepInUpDirection:(BOOL)arg1;
 - (void)_doSingleStep:(BOOL)arg1 inView:(id)arg2;
 - (id)accessibilitySizeOfChild:(id)arg1;
 - (id)accessibilityPositionOfChild:(id)arg1;
@@ -97,6 +84,13 @@
 - (id)accessibilityRoleAttribute;
 - (id)accessibilityAttributeNames;
 - (BOOL)_shouldHighlightCellWhenSelected;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(getter=isHighlighted) BOOL highlighted;
+@property(readonly) Class superclass;
 
 @end
 

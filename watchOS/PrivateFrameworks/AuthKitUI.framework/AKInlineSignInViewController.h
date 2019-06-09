@@ -59,6 +59,7 @@
 - (void)createAppleIDButtonWasTapped:(id)arg1;
 - (void)iForgotButtonWasTapped:(id)arg1;
 - (void)signInButtonWasTapped:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateVibrancyAndBlurInTextFields;
 - (void)_prefillAuthFields;
 - (void)_updateSignInFieldStatuses;
@@ -73,6 +74,7 @@
 @property(copy) NSString *secondaryButtonTitle;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)dealloc;
+- (void)_setBlurAndVibrancy;
 - (id)init;
 - (_Bool)usesDarkMode;
 - (void)setUsesDarkMode:(_Bool)arg1;

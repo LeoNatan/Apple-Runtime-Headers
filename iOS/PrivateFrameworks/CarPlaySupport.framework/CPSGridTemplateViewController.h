@@ -21,7 +21,7 @@
 - (void)didSelectButton:(id)arg1;
 - (void)setControl:(id)arg1 enabled:(_Bool)arg2;
 - (id)_buttonForIdentifier:(id)arg1;
-- (void)viewDidLoad;
+- (void)_viewDidLoad;
 @property(readonly, nonatomic) CPGridTemplate *gridTemplate;
 - (id)initWithGridTemplate:(id)arg1 interfaceDelegate:(id)arg2;
 

@@ -9,15 +9,16 @@
 __attribute__((visibility("hidden")))
 @interface NSSliderKnob : NSView
 {
-    CDStruct_5a39c0a2 _drawingState;
+    CDStruct_c9beae75 _drawingState;
     BOOL _maskOnly;
 }
 
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)focusRingMaskBounds;
+- (void)accessibilityDrawFocusRing;
 - (void)drawFocusRingMask;
 @property BOOL maskOnly;
-@property CDStruct_5a39c0a2 drawingState;
+@property CDStruct_c9beae75 drawingState;
 - (BOOL)isFlipped;
 
 @end

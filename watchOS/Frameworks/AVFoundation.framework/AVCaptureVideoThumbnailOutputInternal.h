@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureVideoThumbnailOutputInternal : NSObject
 {
     AVWeakReference *weakReference;

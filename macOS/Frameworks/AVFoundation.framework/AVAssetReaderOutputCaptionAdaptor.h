@@ -22,7 +22,6 @@
 - (id)_readSampleBuffersAndReturnAVCaption;
 @property(readonly, nonatomic) AVAssetReaderTrackOutput *assetReaderTrackOutput;
 - (int)addExtractionForOutput:(id)arg1 figAssetReader:(struct OpaqueFigAssetReader *)arg2 options:(id)arg3 withOutputExtactionID:(int *)arg4;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAssetReaderTrackOutput:(id)arg1;
 @property __weak id <AVAssetReaderCaptionValidationHandling> validationDelegate;

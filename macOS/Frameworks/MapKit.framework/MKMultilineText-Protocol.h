@@ -8,7 +8,7 @@
 
 @protocol MKMultilineText <NSObject>
 @property struct CGRect frame;
-@property double preferredMaxLayoutWidth;
+@property(nonatomic) double preferredMaxLayoutWidth;
 - (struct CGRect)frameForAlignmentRect:(struct CGRect)arg1;
 - (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;
 @end

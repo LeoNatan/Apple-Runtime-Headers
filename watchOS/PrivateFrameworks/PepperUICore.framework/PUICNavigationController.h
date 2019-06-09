@@ -22,6 +22,7 @@
 - (void)viewDidLoad;
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)interactivePopGestureRecognizer;
+- (id)initWithRootViewController:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)__commonInit;

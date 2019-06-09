@@ -43,9 +43,9 @@
 - (void)clearPerLabelSupports;
 @property(nonatomic) BOOL hasBatchSize;
 @property(nonatomic) BOOL hasSupport;
+- (id)toDictionary;
 - (id)combineWithStats:(id)arg1;
 - (float)supportForLabel:(unsigned long long)arg1;
-- (id)toDictionary;
 
 @end
 

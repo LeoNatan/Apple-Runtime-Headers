@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumberFormatter;
+@class NSLock, NSNumberFormatter;
 
+__attribute__((visibility("hidden")))
 @interface NWKDataFormatterManager : NSObject
 {
+    NSLock *_lock;
     NSNumberFormatter *_uvIndexNumberFormatter;
 }
 
 + (id)sharedManager;
 @property(readonly, nonatomic) NSNumberFormatter *uvIndexNumberFormatter; // @synthesize uvIndexNumberFormatter=_uvIndexNumberFormatter;
+@property(readonly, nonatomic) NSLock *lock; // @synthesize lock=_lock;
 - (void).cxx_destruct;
-- (id)init;
+- (id)formattedUVIndexForUVIndexNumber:(id)arg1;
 - (id)initPrivate;
 
 @end

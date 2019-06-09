@@ -6,7 +6,6 @@
 
 #import <EventKit/EKPersistentObject.h>
 
-__attribute__((visibility("hidden")))
 @interface EKPersistentCalendarItem : EKPersistentObject
 {
 }
@@ -56,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (id)externalData;
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
+- (void)setExternalScheduleID:(id)arg1;
+- (id)externalScheduleID;
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
 - (void)setUniqueID:(id)arg1;

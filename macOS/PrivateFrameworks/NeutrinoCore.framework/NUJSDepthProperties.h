@@ -9,7 +9,7 @@
 #import <NeutrinoCore/NUJSDepthPropertiesExport-Protocol.h>
 
 @class NUJSAVCameraCalibrationData, NUJSCGImageMetadata;
-@protocol NUDepthProperties;
+@protocol NUAuxiliaryImageProperties;
 
 @interface NUJSDepthProperties : NUJSProxy <NUJSDepthPropertiesExport>
 {
@@ -17,7 +17,7 @@
 
 @property(readonly) NUJSCGImageMetadata *depthMetaData;
 @property(readonly) NUJSAVCameraCalibrationData *cameraCalibrationData;
-@property(readonly) id <NUDepthProperties> depthProperties;
+@property(readonly) id <NUAuxiliaryImageProperties> depthProperties;
 - (id)initWithDepthProperties:(id)arg1 context:(id)arg2;
 - (id)initWithRepresentedObject:(id)arg1 context:(id)arg2;
 

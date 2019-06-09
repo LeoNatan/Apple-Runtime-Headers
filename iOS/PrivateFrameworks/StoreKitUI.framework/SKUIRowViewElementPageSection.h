@@ -10,6 +10,7 @@
 
 @class NSString, SKUIRowComponent, SKUIViewElementLayoutContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRowViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate>
 {
     SKUIViewElementLayoutContext *_cellLayoutContext;

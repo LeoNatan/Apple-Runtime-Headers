@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)setStocksAdEnabled:(_Bool)arg1;
 - (void)requestAttributionDetailsWithBlock:(CDUnknownBlockType)arg1;
-- (void)beginAttributionRequest:(id)arg1 xpcToken:(unsigned int)arg2 reason:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)beginAttributionRequest:(id)arg1 reason:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)attachSearchMetadataTo:(id)arg1 forAdamID:(id)arg2;
 - (void)attachDownloadDataTo:(id)arg1 forAdamID:(id)arg2;
 - (void)requestAttributionDetails:(CDUnknownBlockType)arg1;

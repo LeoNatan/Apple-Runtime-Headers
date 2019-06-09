@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     _Bool m_wasShowingCommands;
     _Bool m_delayShowingCommands;
     _Bool m_dictationReplacementsMode;
+    _Bool m_shouldEmphasizeNextSelectionRects;
     int m_showingCommandsCounter;
     NSArray *m_replacements;
     _Bool m_deferSelectionCommands;
@@ -33,8 +34,12 @@ __attribute__((visibility("hidden")))
     _Bool m_isSuspended;
     int m_showingCommandsCounterForRotate;
     _Bool m_forceRangeView;
+    _Bool _isIndirectFloatingCaret;
+    struct CGRect _stashedCaretRect;
 }
 
+@property(nonatomic) _Bool isIndirectFloatingCaret; // @synthesize isIndirectFloatingCaret=_isIndirectFloatingCaret;
+@property(nonatomic) struct CGRect stashedCaretRect; // @synthesize stashedCaretRect=_stashedCaretRect;
 @property(retain, nonatomic) NSArray *replacements; // @synthesize replacements=m_replacements;
 @property(nonatomic) _Bool forceRangeView; // @synthesize forceRangeView=m_forceRangeView;
 @property(readonly, nonatomic) __weak UITextInteractionAssistant *interactionAssistant; // @synthesize interactionAssistant=m_interactionAssistant;
@@ -60,11 +65,15 @@ __attribute__((visibility("hidden")))
 - (void)endFloatingCursor;
 - (void)endFloatingCaretView;
 - (void)animateCaret:(id)arg1 toPosition:(struct CGPoint)arg2 withSize:(struct CGSize)arg3;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (struct CGPoint)floatingCursorPositionForPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
-- (void)animatePulsingCaret:(id)arg1;
+- (void)willBeginFloatingCursor:(_Bool)arg1;
+- (void)animatePulsingDirectCaret:(id)arg1;
+- (void)animatePulsingIndirectCaret:(id)arg1;
 - (void)beginFloatingCaretView;
+- (_Bool)point:(struct CGPoint)arg1 isNearCursorRect:(struct CGRect)arg2;
 @property(readonly, nonatomic) UIView *caretView; // @synthesize caretView=m_caretView;
 - (id)floatingCaretViewColor;
 - (id)caretViewColor;
@@ -72,13 +81,14 @@ __attribute__((visibility("hidden")))
 - (void)touchCaretBlinkTimer;
 - (void)clearCaretBlinkTimer;
 - (void)caretBlinkTimerFired:(id)arg1;
+- (void)_showCaret:(int)arg1;
 - (void)showCaret:(int)arg1;
 - (void)showInitialCaret;
 - (void)animateExpanderOn:(id)arg1;
 - (void)animateBoxShrinkOn:(id)arg1;
+- (void)_hideCaret:(int)arg1;
 - (void)hideCaret:(int)arg1;
 - (void)clearCaret;
-- (void)configureForRevealHighlightMode;
 - (void)configureForReplacementMode;
 - (void)configureForHighlightMode;
 - (void)configureForSelectionMode;
@@ -94,9 +104,9 @@ __attribute__((visibility("hidden")))
 - (void)showCalloutBarAfterDelay:(double)arg1;
 - (void)cancelDelayedCommandRequests;
 - (void)updateSelectionCommands;
-- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(_Bool)arg2;
+- (void)_showCommandsWithReplacements:(id)arg1 isForContextMenu:(_Bool)arg2 rectsToEvade:(id)arg3;
 - (void)showCommandsWithReplacements:(id)arg1;
-- (_Bool)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2;
+- (_Bool)updateCalloutBarRects:(id)arg1 effectsWindow:(id)arg2 rectsToEvade:(id)arg3;
 @property(nonatomic) _Bool caretBlinks; // @synthesize caretBlinks=m_caretBlinks;
 @property(nonatomic) _Bool visible; // @synthesize visible=m_visible;
 - (void)appearOrFadeIfNecessary;
@@ -104,6 +114,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSelectionDots;
 - (void)updateSelectionRectsIfNeeded;
 - (void)deferredUpdateSelectionCommands;
+- (void)setEmphasisOnNextSelectionRects;
 - (void)deferredUpdateSelectionRects;
 - (void)wilLResume:(id)arg1;
 - (void)didSuspend:(id)arg1;

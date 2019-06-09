@@ -102,15 +102,15 @@
 - (void)showCorrectionBubbleOfType:(long long)arg1 primaryString:(id)arg2 alternativeStrings:(id)arg3 forStringInRect:(struct CGRect)arg4 view:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)showCorrectionIndicatorOfType:(long long)arg1 primaryString:(id)arg2 alternativeStrings:(id)arg3 forStringInRect:(struct CGRect)arg4 view:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)languageForWordRange:(struct _NSRange)arg1 inString:(id)arg2 orthography:(id)arg3;
+- (long long)_requestCheckingAndCandidatesForSelectedRange:(struct _NSRange)arg1 inString:(id)arg2 types:(unsigned long long)arg3 keyboardLanguage:(id)arg4 processID:(int)arg5 options:(id)arg6 inSpellDocumentWithTag:(long long)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (long long)_requestCheckingAndCandidatesForSelectedRange:(struct _NSRange)arg1 inString:(id)arg2 types:(unsigned long long)arg3 keyboardLanguage:(id)arg4 bundleIdentifier:(id)arg5 processID:(int)arg6 options:(id)arg7 inSpellDocumentWithTag:(long long)arg8 completionHandler:(CDUnknownBlockType)arg9;
 - (long long)requestCandidatesForSelectedRange:(struct _NSRange)arg1 inString:(id)arg2 types:(unsigned long long)arg3 options:(id)arg4 inSpellDocumentWithTag:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (long long)_requestCandidatesForSelectedRange:(struct _NSRange)arg1 offset:(unsigned long long)arg2 inString:(id)arg3 types:(unsigned long long)arg4 options:(id)arg5 inSpellDocumentWithTag:(long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)_retryCandidateOperation:(id)arg1;
 - (id)checkString:(id)arg1 range:(struct _NSRange)arg2 types:(unsigned long long)arg3 options:(id)arg4 inSpellDocumentWithTag:(long long)arg5 orthography:(id *)arg6 wordCount:(long long *)arg7;
 - (long long)requestCheckingOfString:(id)arg1 range:(struct _NSRange)arg2 types:(unsigned long long)arg3 options:(id)arg4 inSpellDocumentWithTag:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (long long)_requestCheckingOfString:(id)arg1 range:(struct _NSRange)arg2 types:(unsigned long long)arg3 options:(id)arg4 inSpellDocumentWithTag:(long long)arg5 waitUntilFinished:(BOOL)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (id)menuForResult:(id)arg1 string:(id)arg2 options:(id)arg3 atLocation:(struct CGPoint)arg4 inView:(id)arg5;
-- (Class)_dataDetectorActionContextClass;
-- (id)_dataDetectorsActionsManager;
-- (Class)_dataDetectorActionsManagerClass;
 - (id)_legacyUserReplacementsDictionary;
 - (id)defaultEmojiReplacementsDictionary;
 - (void)setAdditionalTextReplacementsDictionary:(id)arg1;

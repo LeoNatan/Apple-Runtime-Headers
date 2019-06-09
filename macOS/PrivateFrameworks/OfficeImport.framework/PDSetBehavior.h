@@ -6,6 +6,7 @@
 
 #import <OfficeImport/PDAnimateBehavior.h>
 
+__attribute__((visibility("hidden")))
 @interface PDSetBehavior : PDAnimateBehavior
 {
     id mValue;

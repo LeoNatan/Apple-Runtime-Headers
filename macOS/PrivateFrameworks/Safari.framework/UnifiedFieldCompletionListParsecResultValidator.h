@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)resetValidationState;
 - (BOOL)validateParsecResult:(id)arg1 withSession:(id)arg2;
+- (BOOL)_isSFSearchResultValid:(id)arg1;
 - (BOOL)_validateSimpleResult:(id)arg1 withSession:(id)arg2;
-- (BOOL)_validateGenericResult:(id)arg1 withSession:(id)arg2;
 - (BOOL)_validateNonEmptyDescriptionInResult:(id)arg1;
 - (id)init;
 

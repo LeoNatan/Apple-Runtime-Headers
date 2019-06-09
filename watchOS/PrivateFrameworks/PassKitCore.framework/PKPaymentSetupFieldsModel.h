@@ -17,6 +17,7 @@
 + (id)fakePaymentSetupProvisioningFields;
 + (id)defaultPaymentSetupProvisioningFields;
 - (void).cxx_destruct;
+- (void)prefillDefaultValues;
 - (void)resetAllPaymentSetupFieldValues;
 - (id)secureSubmissionValuesForDestination:(id)arg1;
 - (_Bool)hasFooterPaymentSetupField;

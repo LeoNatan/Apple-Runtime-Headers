@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *fragment; // @synthesize fragment=mFragment;
 @property(retain, nonatomic) NSString *link; // @synthesize link=mLink;
 @property(nonatomic) _Bool internalLink; // @synthesize internalLink=mInternalLink;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 - (int)runType;
 
 @end

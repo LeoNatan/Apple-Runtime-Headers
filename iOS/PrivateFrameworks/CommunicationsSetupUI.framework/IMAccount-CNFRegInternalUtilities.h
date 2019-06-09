@@ -11,5 +11,6 @@
 - (_Bool)CNFRegIsSignedOut;
 - (_Bool)CNFRegSignInComplete;
 - (_Bool)CNFRegRegisteringLocalPhoneNumberSentinelAlias;
+- (id)loginDisplayString;
 @end
 

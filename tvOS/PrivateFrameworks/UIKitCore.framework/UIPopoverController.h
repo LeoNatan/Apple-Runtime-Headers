@@ -98,7 +98,7 @@
 - (void).cxx_destruct;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
-- (void)_modalAnimation:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)_modalAnimationFinishedEndIgnoringInteractiveEvents:(_Bool)arg1;
 - (void)_modalTransition:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3 target:(id)arg4 didEndSelector:(SEL)arg5;
 - (id)_dimmingView;
 - (_Bool)_embedsInView;
@@ -131,7 +131,6 @@
 - (void)_startWatchingForNavigationControllerNotifications:(id)arg1;
 - (void)_newViewControllerWasPushed:(id)arg1;
 - (void)_adjustPopoverForNewContentSizeFromViewController:(id)arg1 allowShrink:(_Bool)arg2;
-- (void)_newViewControllerWillBePushed:(id)arg1;
 - (void)_setGesturesEnabled:(_Bool)arg1;
 - (void)_swipe:(id)arg1;
 - (_Bool)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
@@ -184,7 +183,6 @@
 - (int)_presentationState;
 - (Class)_defaultChromeViewClass;
 - (Class)_popoverLayoutInfoForChromeClass:(Class)arg1;
-- (_Bool)_popoverBackgroundViewWantsDefaultContentAppearance;
 @property(copy, nonatomic) NSArray *passthroughViews;
 @property(copy, nonatomic) UIColor *backgroundColor;
 @property(nonatomic) struct UIEdgeInsets popoverLayoutMargins; // @synthesize popoverLayoutMargins=_popoverLayoutMargins;

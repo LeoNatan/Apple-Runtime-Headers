@@ -8,7 +8,7 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class NSData, NSMutableArray, NSString;
 
 @interface CKDPNotificationSyncResponsePushMessage : PBCodable <NSCopying>
 {
@@ -18,6 +18,12 @@
     NSData *_payload;
     NSString *_sound;
     int _source;
+    NSString *_subtitle;
+    NSMutableArray *_subtitleLocalizedArguments;
+    NSString *_subtitleLocalizedKey;
+    NSString *_title;
+    NSMutableArray *_titleLocalizedArguments;
+    NSString *_titleLocalizedKey;
     NSString *_uuid;
     BOOL _isRead;
     struct {
@@ -27,6 +33,14 @@
     } _has;
 }
 
++ (Class)subtitleLocalizedArgumentsType;
++ (Class)titleLocalizedArgumentsType;
+@property(retain, nonatomic) NSMutableArray *subtitleLocalizedArguments; // @synthesize subtitleLocalizedArguments=_subtitleLocalizedArguments;
+@property(retain, nonatomic) NSString *subtitleLocalizedKey; // @synthesize subtitleLocalizedKey=_subtitleLocalizedKey;
+@property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+@property(retain, nonatomic) NSMutableArray *titleLocalizedArguments; // @synthesize titleLocalizedArguments=_titleLocalizedArguments;
+@property(retain, nonatomic) NSString *titleLocalizedKey; // @synthesize titleLocalizedKey=_titleLocalizedKey;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) NSData *payload; // @synthesize payload=_payload;
 @property(nonatomic) int badgeCount; // @synthesize badgeCount=_badgeCount;
@@ -44,6 +58,18 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)subtitleLocalizedArgumentsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)subtitleLocalizedArgumentsCount;
+- (void)addSubtitleLocalizedArguments:(id)arg1;
+- (void)clearSubtitleLocalizedArguments;
+@property(readonly, nonatomic) BOOL hasSubtitleLocalizedKey;
+@property(readonly, nonatomic) BOOL hasSubtitle;
+- (id)titleLocalizedArgumentsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)titleLocalizedArgumentsCount;
+- (void)addTitleLocalizedArguments:(id)arg1;
+- (void)clearTitleLocalizedArguments;
+@property(readonly, nonatomic) BOOL hasTitleLocalizedKey;
+@property(readonly, nonatomic) BOOL hasTitle;
 @property(readonly, nonatomic) BOOL hasCategory;
 @property(readonly, nonatomic) BOOL hasPayload;
 @property(nonatomic) BOOL hasBadgeCount;

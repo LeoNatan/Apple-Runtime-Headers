@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *name;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

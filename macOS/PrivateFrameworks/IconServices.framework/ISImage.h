@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSUUID;
+@class NSData, NSUUID;
 
 @interface ISImage : NSObject
 {
@@ -17,6 +17,7 @@
     BOOL _placeholder;
 }
 
++ (struct CGColorSpace *)srgbColorSpace;
 + (struct CGColorSpace *)defaultCGColorSpace;
 + (id)imageDestinationPropertiesForScale:(unsigned int)arg1;
 + (BOOL)writeCGImage:(struct CGImage *)arg1 toURL:(id)arg2;
@@ -30,8 +31,14 @@
 @property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (void)dealloc;
+- (id)initWithContentsOfURL:(id)arg1 scale:(double)arg2;
 - (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2;
+- (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 placeholder:(BOOL)arg3;
+@property(readonly) NSData *bitmapData;
 - (id)initWithData:(id)arg1 uuid:(id)arg2;
+@property(readonly) struct CGSize pixelSize;
+@property(readonly) NSUUID *digest;
+- (BOOL)writeToURL:(id)arg1;
 
 @end
 

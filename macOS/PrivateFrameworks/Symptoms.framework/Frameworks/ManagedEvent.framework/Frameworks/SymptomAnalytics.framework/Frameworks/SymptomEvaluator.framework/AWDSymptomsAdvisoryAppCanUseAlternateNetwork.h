@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsAdvisoryAppCanUseAlternateNetwork : PBCodable <NSCopying>
 {
     unsigned long long _allFlows;

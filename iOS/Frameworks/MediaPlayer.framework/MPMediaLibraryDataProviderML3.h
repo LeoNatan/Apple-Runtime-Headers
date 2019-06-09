@@ -17,7 +17,7 @@
     unsigned long long _backgroundTask;
     unsigned long long _backgroundTaskCount;
     _Bool _hasScheduledEventPosting;
-    int _refreshState;
+    long long _refreshState;
     NSString *_uniqueIdentifier;
     NSOperationQueue *_setValuesWidthLimitedQueue;
     NSObject<OS_dispatch_queue> *_entitiesAddedOrRemovedNotificationQueue;
@@ -47,6 +47,7 @@
 - (void)_invisiblePropertiesDidChange:(id)arg1;
 - (void)_dynamicPropertiesDidChange:(id)arg1;
 - (void)_libraryEntitiesAddedOrRemoved:(id)arg1;
+- (void)_libraryPathDidChange:(id)arg1;
 - (void)_libraryContentsDidChange:(id)arg1;
 - (_Bool)_dataProviderSupportsEntityChangeTracking;
 - (void)_postEvents;
@@ -63,6 +64,7 @@
 - (id)_adjustedItemPropertyEpisodeNumberOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyMovieInfoOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyFilePathOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemNonnullDateOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemDateOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyRatingOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyVolumeAdjustmentOfEntity:(id)arg1 withDefaultValue:(id)arg2;
@@ -82,7 +84,7 @@
 - (void)populateLocationPropertiesOfItemWithIdentifier:(long long)arg1 withPath:(id)arg2 assetProtectionType:(long long)arg3;
 - (id)itemResultSetForQueryCriteria:(id)arg1;
 - (id)collectionResultSetForQueryCriteria:(id)arg1;
-- (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 inUsersLibrary:(_Bool)arg3 itemBlock:(CDUnknownBlockType)arg4 collectionBlock:(CDUnknownBlockType)arg5;
+- (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(long long)arg2 inUsersLibrary:(_Bool)arg3 itemBlock:(CDUnknownBlockType)arg4 collectionBlock:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic) NSString *syncValidity;
 @property(readonly, nonatomic) NSArray *preferredSubtitleLanguages;
 @property(readonly, nonatomic) NSArray *preferredAudioLanguages;
@@ -120,7 +122,7 @@
 - (void)addGlobalPlaylistWithID:(id)arg1 andAddToCloudLibrary:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)importOriginalArtworkFromImageData:(id)arg1 withArtworkToken:(id)arg2 artworkType:(long long)arg3 sourceType:(long long)arg4 mediaType:(unsigned long long)arg5;
 - (void)importArtworkTokenForEntityPersistentID:(unsigned long long)arg1 entityType:(long long)arg2 artworkToken:(id)arg3 artworkType:(long long)arg4 sourceType:(long long)arg5;
-- (void)_importStoreItemElements:(id)arg1 andAddTracksToCloudLibrary:(_Bool)arg2 usingCloudAdamID:(long long)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)_importStoreItemElements:(id)arg1 withReferralObject:(id)arg2 andAddTracksToCloudLibrary:(_Bool)arg3 usingCloudAdamID:(long long)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)addPlaylistStoreItemsForLookupItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)performStoreItemLibraryImport:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_storePlatformRequestContext;

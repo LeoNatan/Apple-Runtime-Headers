@@ -9,6 +9,7 @@
 @class PUICTableViewCell;
 
 @protocol PUICEllipticScrollingProvider <NSObject>
+- (_Bool)ellipticScrollingEnabledForCell:(PUICTableViewCell *)arg1;
 - (float)ellipticScrollingAlphaForCell:(PUICTableViewCell *)arg1;
 - (struct CATransform3D)ellipticScrollingTransformForCell:(PUICTableViewCell *)arg1;
 @end

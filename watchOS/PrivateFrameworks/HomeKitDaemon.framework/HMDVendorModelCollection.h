@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSMutableArray *vendorModelCollection; // @synthesize vendorModelCollection=_vendorModelCollection;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
+- (id)lookupProductData:(id)arg1;
 - (id)lookupModel:(id)arg1;
 - (void)addEntry:(id)arg1;
 - (id)description;

@@ -6,7 +6,6 @@
 
 #import <ConversationKit/_TtC15ConversationKit22PlatformViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit36ReportAProblemContractViewController : _TtC15ConversationKit22PlatformViewController
 {
 }

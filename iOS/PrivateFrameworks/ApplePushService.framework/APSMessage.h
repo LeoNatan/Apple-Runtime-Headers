@@ -19,11 +19,13 @@
     NSObject<OS_dispatch_queue> *_ivarQueue;
 }
 
+- (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 - (void)setInstanceObject:(id)arg1 forKey:(id)arg2;
 - (id)instanceObjectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;
+@property(nonatomic) unsigned long long sendRTT;
 - (id)guid;
 - (void)setGuid:(id)arg1;
 @property(nonatomic) unsigned long long identifier;
@@ -31,7 +33,6 @@
 @property(retain, nonatomic) NSString *correlationIdentifier;
 @property(retain, nonatomic) NSString *topic;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTopic:(id)arg1 userInfo:(id)arg2;
 - (id)initWithDictionary:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSClickGestureRecognizer, NSDate, NSMutableDictionary, NSPanGestureRecognizer, NSSet, NSString, NSURL, NSView, QLPreviewCacheManager, QLPreviewContainerView, QLPreviewDocument, QLPreviewDragController, QLPreviewOverlayController, QLPreviewPageNumberOverlayController, QLPreviewPathOverlayController, QLScrollController;
+@class NSArray, NSClickGestureRecognizer, NSDate, NSMutableDictionary, NSPanGestureRecognizer, NSSet, NSString, NSURL, NSView, NSWindow, QLPreviewCacheManager, QLPreviewContainerView, QLPreviewDocument, QLPreviewDragController, QLPreviewOverlayController, QLPreviewPageNumberOverlayController, QLPreviewPathOverlayController, QLScrollController;
 @protocol QLDisplayable, QLPreviewItem;
 
 __attribute__((visibility("hidden")))
@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
     BOOL dragging;
     BOOL inHitTest;
     NSClickGestureRecognizer *doubleClickRecognizer;
+    NSWindow *_windowLastMovedTo;
     id highlightObject;
     id mandatoryServer;
     id forcedContentTypeUTI;

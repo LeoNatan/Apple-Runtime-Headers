@@ -25,6 +25,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)shortDescriptionReversed;
 - (id)shortDescription;
 - (id)description;
@@ -58,7 +59,6 @@
 - (id)initSpeechActionWithMessage:(long long)arg1 string:(id)arg2 variant:(long long)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithOutputAction:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

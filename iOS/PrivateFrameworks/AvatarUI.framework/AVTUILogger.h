@@ -49,6 +49,10 @@
 - (void)logCarouselChangesCenterItemTo:(id)arg1;
 - (void)logCarouselChangingToMultiMode;
 - (void)logCarouselChangingToSingleMode;
+- (void)logRenderingStickerEnd:(id)arg1;
+- (void)logRenderingStickerStart:(id)arg1;
+- (void)logPaddleViewVideoPlayerFailed:(id)arg1;
+- (void)logStickerGeneratorPoolDidntHaveAvailableGenerator:(long long)arg1 maxCount:(long long)arg2;
 - (void)logDeduplicateRecordWithIdentifier:(id)arg1 toNewRecordWithIdentifier:(id)arg2;
 - (void)logDiscoveredDuplicates:(id)arg1 count:(unsigned long long)arg2;
 - (void)logMaintenanceCompleted;
@@ -97,6 +101,8 @@
 - (void)logCheckingIfMigrationNeeded;
 - (void)logErrorProcessingChangeTransactionsToUpdateThumbnails:(id)arg1;
 - (void)updatingThumbnailsForRemoteChanges:(CDUnknownBlockType)arg1;
+- (void)logDeletingStickerRecents;
+- (void)deletingStickerRecentsForRemoteChanges:(CDUnknownBlockType)arg1;
 - (void)logCouldntFindRecordIdentifierForChangeType:(long long)arg1 managedObjectID:(id)arg2;
 - (void)logFoundRecordIdentifier:(id)arg1 changeType:(long long)arg2 managedObjectID:(id)arg3;
 - (void)logErrorSavingChangeToken:(id)arg1 location:(id)arg2;
@@ -185,8 +191,11 @@
 - (void)fetchingRecords:(CDUnknownBlockType)arg1;
 - (void)deletingRecords:(CDUnknownBlockType)arg1;
 - (void)savingRecords:(CDUnknownBlockType)arg1;
-- (void)logRecordNotFoundInRecordStore:(id)arg1;
-- (void)logRecordNotFoundInPuppetStore:(id)arg1;
+- (void)logErrorFetchingRecentStickers:(id)arg1;
+- (void)logErrorSavingRecentSticker:(id)arg1;
+- (void)logRecordsNotFoundInRecordStore:(id)arg1;
+- (void)logRecordsNotFoundInPuppetStore:(id)arg1;
+- (void)logRecordsNotFoundInAnyStore:(id)arg1;
 - (void)logReadingError:(id)arg1;
 - (void)logSavingError:(id)arg1;
 - (void)logReadingBackendAtPath:(id)arg1;

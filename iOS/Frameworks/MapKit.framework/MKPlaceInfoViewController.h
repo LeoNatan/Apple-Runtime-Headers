@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool bottomHairlineHidden; // @synthesize bottomHairlineHidden=_bottomHairlineHidden;
 @property(nonatomic) _Bool offlineMode; // @synthesize offlineMode=_offlineMode;
 - (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)_launchMapsDirectionsWithSource:(id)arg1 destination:(id)arg2 directionsMode:(id)arg3;
 - (void)_shareAddress:(id)arg1 fromView:(id)arg2;

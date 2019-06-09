@@ -10,6 +10,8 @@
 {
 }
 
++ (BOOL)shouldMergeUnchangedEvents;
++ (id)entitlements;
 + (id)eventStream;
 
 @end

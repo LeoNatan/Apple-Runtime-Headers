@@ -13,11 +13,22 @@
 @interface ICAttachmentModel (UI) <QLPreviewItem>
 + (struct UIImage *)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2 uti:(id)arg3;
 + (struct UIImage *)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize)arg2;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
 - (struct UIImage *)fileIconWithPreferredSize:(struct CGSize)arg1;
 - (id)activityItems;
 @property(readonly, nonatomic) NSArray *quicklookPreviewItems;
+@property(readonly, nonatomic) CDUnknownBlockType genericBrickLargeThumbnailCreator;
 @property(readonly, nonatomic) CDUnknownBlockType genericBrickThumbnailCreator;
 @property(readonly, nonatomic) CDUnknownBlockType genericListThumbnailCreator;
+@property(readonly, nonatomic) _Bool needToPostProcessAttachment;
+- (void)didCancelPreviewGeneratorOperation;
+@property(readonly, nonatomic) _Bool requiresNetworkToGeneratePreview;
+@property(readonly, nonatomic) _Bool generatePreviewsDuringCloudActivity;
+@property(readonly, nonatomic) _Bool generateAsynchronousPreviews;
+@property(readonly, nonatomic) _Bool needToGeneratePreviews;
+- (void)classifyImageInOperation:(id)arg1;
+- (void)generateOCRInOperation:(id)arg1;
+- (_Bool)generatePreviewsInOperation:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

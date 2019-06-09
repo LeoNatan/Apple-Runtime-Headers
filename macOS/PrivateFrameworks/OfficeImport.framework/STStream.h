@@ -6,6 +6,7 @@
 
 #import <OfficeImport/STSStgObject.h>
 
+__attribute__((visibility("hidden")))
 @interface STStream : STSStgObject
 {
     struct _Stream *m_pCStream;

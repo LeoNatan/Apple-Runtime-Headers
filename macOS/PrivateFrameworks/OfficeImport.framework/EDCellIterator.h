@@ -8,6 +8,7 @@
 
 @class EDRowBlock, EDRowBlocks;
 
+__attribute__((visibility("hidden")))
 @interface EDCellIterator : NSObject
 {
     EDRowBlocks *mRowBlocks;

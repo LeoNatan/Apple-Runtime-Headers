@@ -8,6 +8,7 @@
 
 @class NSString, OCFontMetadata;
 
+__attribute__((visibility("hidden")))
 @interface OCFontSubfamily : NSObject
 {
     NSString *_name;

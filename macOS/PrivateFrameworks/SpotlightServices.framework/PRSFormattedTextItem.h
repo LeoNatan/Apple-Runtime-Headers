@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSColor, NSImage, NSString;
+@class NSImage, NSString, SFColor;
 
 @interface PRSFormattedTextItem : NSObject
 {
@@ -15,10 +15,10 @@
     NSString *_text;
     NSImage *_image;
     NSString *_formatted_text_delimiter;
-    NSColor *_text_color;
+    SFColor *_text_color;
 }
 
-@property(retain, nonatomic) NSColor *text_color; // @synthesize text_color=_text_color;
+@property(retain, nonatomic) SFColor *text_color; // @synthesize text_color=_text_color;
 @property(readonly, nonatomic) NSString *formatted_text_delimiter; // @synthesize formatted_text_delimiter=_formatted_text_delimiter;
 @property(nonatomic) BOOL bold; // @synthesize bold=_bold;
 @property(nonatomic) BOOL highlighted; // @synthesize highlighted=_highlighted;

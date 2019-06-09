@@ -8,11 +8,11 @@
 
 #import <SplashBoard/XBSnapshotDataProvider-Protocol.h>
 
-@class NSString, UIImage, XBDisplaySnapshot, XBSnapshotDataProviderContext;
+@class NSString, UIImage, XBSnapshotDataProviderContext, _FBSSnapshot;
 
 @interface XBLaunchImageDataProvider : NSObject <XBSnapshotDataProvider>
 {
-    XBDisplaySnapshot *_snapshot;
+    _FBSSnapshot *_snapshot;
     UIImage *_cachedImage;
     XBSnapshotDataProviderContext *_context;
 }
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)invalidateImage;
 - (id)fetchImage;
-- (id)initWithRequest:(id)arg1 contextID:(unsigned int)arg2;
+- (id)initWithRequest:(id)arg1 contextID:(unsigned int)arg2 opaque:(_Bool)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

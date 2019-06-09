@@ -12,6 +12,7 @@
 {
     BOOL _eplEnabled;
     BOOL _enableRestartAtEPL;
+    int _submitReason;
     PLStorageOperator *_storageOperator;
     PLSQLiteConnection *_connection;
     PLTimer *_watchdog;
@@ -22,18 +23,20 @@
     NSNumber *_capValue;
 }
 
-+ (id)getLogFilesFromPowerlog:(id)arg1 withLogType:(id)arg2;
++ (id)getLogFilesFromInterval:(id)arg1 withLogType:(id)arg2 withStartTime:(id)arg3 withEndTime:(id)arg4;
++ (id)getLogFilesFromPowerlog:(id)arg1 withLogType:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 + (id)getTagFromPowerlog:(id)arg1;
-+ (BOOL)mssSubmissionEnabled;
++ (BOOL)signpostSubmissionEnabled;
 + (BOOL)flushMicrostackshots;
 + (id)createAttachmentTarballWithTag:(id)arg1 withTag:(id)arg2 withSrcDir:(id)arg3 withDstDir:(id)arg4 withFileList:(id)arg5 withDelete:(BOOL)arg6;
 + (BOOL)createTagFile:(id)arg1 withTag:(id)arg2 withFileList:(id)arg3;
-+ (id)deviceModel;
++ (id)getArchiveDuration:(id)arg1;
 + (id)getArchiveInfo:(id)arg1;
++ (id)getArchiveUUID:(id)arg1;
 + (void)logArchiveInfo:(id)arg1 withTag:(id)arg2 withFiles:(id)arg3;
 + (void)generateSubmissionTag;
-+ (BOOL)submissionDisabled;
 + (id)sharedInstance;
+@property int submitReason; // @synthesize submitReason=_submitReason;
 @property BOOL enableRestartAtEPL; // @synthesize enableRestartAtEPL=_enableRestartAtEPL;
 @property(retain) NSNumber *capValue; // @synthesize capValue=_capValue;
 @property(retain) NSString *onDemandTasking; // @synthesize onDemandTasking=_onDemandTasking;
@@ -47,10 +50,10 @@
 - (void).cxx_destruct;
 - (void)stopWatchdog;
 - (void)startWatchdog;
-- (void)filterDatabaseAtPath:(id)arg1 withMaxOutputFileSize:(long long)arg2 removingTables:(id)arg3 hashingTableKeys:(id)arg4 usingTrimmingQueries:(id)arg5;
+- (void)filterDatabaseAtPath:(id)arg1 withMaxOutputFileSize:(long long)arg2 removingTables:(id)arg3 hashingTableKeys:(id)arg4 usingTrimmingQueries:(id)arg5 withSubmitReason:(id)arg6;
 - (void)taskingModeSetup;
 - (void)taskingModeSafeguard;
-- (void)filterAndSubmitAtStartDate:(id)arg1 withEndDate:(id)arg2;
+- (void)filterAndSubmitAtStartDate:(id)arg1 withEndDate:(id)arg2 withSubmitArchive:(BOOL)arg3;
 - (BOOL)taskingRequested;
 - (BOOL)taskConfigured;
 - (void)generateTaskedOTASubmission;
@@ -66,11 +69,15 @@
 - (void)enableHangtracer;
 - (void)logTaskingStatus:(int)arg1 withAction:(int)arg2 withTables:(id)arg3;
 - (void)logTaskingStatus:(int)arg1 withAction:(int)arg2;
-- (void)trimAndSubmitCurrentLog:(id)arg1 atPath:(id)arg2;
+- (void)trimAndSubmitCurrentLog:(id)arg1 withEndDate:(id)arg2 atPath:(id)arg3;
 - (BOOL)submitFile:(id)arg1;
 - (BOOL)runFilterQuery;
 - (id)trimmingQueryForIndex:(int)arg1;
+- (void)submitSignpost:(id)arg1 withReason:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (void)generateInternalOTASubmission;
+- (id)getSubmissionFileName:(id)arg1 withSubmissionType:(id)arg2 withID:(id)arg3 withExtension:(id)arg4;
+- (void)submitMicrostackshots:(id)arg1 withTag:(id)arg2 withFiles:(id)arg3;
+- (void)submitLogsForArchive:(id)arg1;
 - (void)generateSubmissionWithPayload:(id)arg1;
 - (void)registerEPLNotification;
 - (void)restartAtEPLEnable;

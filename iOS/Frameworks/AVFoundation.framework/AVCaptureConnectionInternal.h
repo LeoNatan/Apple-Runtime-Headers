@@ -8,6 +8,7 @@
 
 @class AVCaptureDevice, AVCaptureInputPort, AVWeakReference, NSArray, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureConnectionInternal : NSObject
 {
     NSMutableArray *inputPorts;
@@ -44,6 +45,7 @@
     NSString *connectionID;
     _Bool cameraIntrinsicMatrixDeliverySupported;
     _Bool cameraIntrinsicMatrixDeliveryEnabled;
+    _Bool livePhotoMetadataWritingEnabled;
     _Bool debugMetadataSidecarFileEnabled;
 }
 

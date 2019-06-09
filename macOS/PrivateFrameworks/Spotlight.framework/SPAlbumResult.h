@@ -21,8 +21,8 @@
 - (id)adamID;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)rank;
-- (unsigned long long)score;
+-     // Error parsing type: T16@0:8, name: rank
+-     // Error parsing type: T16@0:8, name: score
 - (id)iconImageForApplication;
 - (id)iconImage;
 - (id)filePath;
@@ -33,7 +33,7 @@
 - (id)title_note;
 - (id)URL;
 - (BOOL)shouldNotBeTopHit;
-- (BOOL)isTopHitCandidate;
+- (int)isTopHit;
 - (id)displayName;
 
 @end

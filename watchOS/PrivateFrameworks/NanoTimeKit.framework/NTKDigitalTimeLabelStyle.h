@@ -19,9 +19,11 @@
 + (id)smallInUpperRightCornerStyleForBounds:(struct CGRect)arg1 withFont:(id)arg2 forDevice:(id)arg3;
 + (id)smallInUpperRightCornerStyleForBounds:(struct CGRect)arg1 forDevice:(id)arg2;
 + (id)smallInUpperRightCornerStyleForBounds:(struct CGRect)arg1 weight:(float)arg2 forDevice:(id)arg3;
-+ (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 withBaselineY:(float)arg3 withFont:(id)arg4 forDevice:(id)arg5;
-+ (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 withBaselineY:(float)arg3 forDevice:(id)arg4;
-+ (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 forDevice:(id)arg3;
++ (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 applyAdvanceFudge:(_Bool)arg3 withBaselineY:(float)arg4 withFont:(id)arg5 forDevice:(id)arg6;
++ (id)defaultRoundedStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 applyAdvanceFudge:(_Bool)arg3 forDevice:(id)arg4;
++ (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 applyAdvanceFudge:(_Bool)arg3 withBaselineY:(float)arg4 forDevice:(id)arg5;
++ (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 applyAdvanceFudge:(_Bool)arg3 font:(id)arg4 forDevice:(id)arg5;
++ (id)defaultStyleForBounds:(struct CGRect)arg1 withRightSideMargin:(float)arg2 applyAdvanceFudge:(_Bool)arg3 forDevice:(id)arg4;
 @property(retain, nonatomic) NTKLayoutRule *layoutRule; // @synthesize layoutRule=_layoutRule;
 - (void).cxx_destruct;
 - (unsigned int)hash;

@@ -24,7 +24,6 @@
 - (id)description;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 - (id)initWithItems:(id)arg1 timeRange:(CDStruct_e83c9415)arg2;

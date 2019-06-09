@@ -8,6 +8,7 @@
 
 @class EDAlignmentInfo, EDProtection, EDString;
 
+__attribute__((visibility("hidden")))
 @interface EDTextBox : NSObject
 {
     EDString *mText;

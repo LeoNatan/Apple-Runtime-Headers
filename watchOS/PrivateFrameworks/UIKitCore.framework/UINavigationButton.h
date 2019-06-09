@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIButton.h>
 
-@class NSDictionary, NSSet, NSString, UIBarButtonItem, UIColor, UIImage, UINavigationItem, UIView;
+@class NSDictionary, NSSet, NSString, UIBarButtonItem, UIColor, UIImage, UINavigationItem, UIView, _UIBarButtonItemAppearanceStorage;
 
 @interface UINavigationButton : UIButton
 {
@@ -15,7 +15,7 @@
     int _barStyle;
     UIColor *_navigationBarTintColor;
     struct CGSize _boundsAdjustment;
-    id _appearanceStorage;
+    _UIBarButtonItemAppearanceStorage *_appearanceStorage;
     NSSet *_possibleSystemItems;
     unsigned int _size:2;
     unsigned int _wantsLetterpressContent:1;

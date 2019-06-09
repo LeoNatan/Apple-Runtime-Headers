@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedConverter;
-- (void)applyVibrancyConfig:(id)arg1 toEffectNode:(id)arg2;
-- (void)applyBackdropSettings:(id)arg1 toEffectNode:(id)arg2;
+- (void)applyVibrancyConfig:(id)arg1 toEffectDescriptor:(id)arg2;
+- (void)applyBackdropSettings:(id)arg1 toEffectDescriptor:(id)arg2 environment:(id)arg3;
 - (id)vibrancyConfigForReducedTransperancyVibrancyStyle:(int)arg1;
 - (id)vibrancyConfigForLowQualityVibrancyStyle:(int)arg1;
 - (id)vibrancyConfigForHighQualityVibrancyStyle:(int)arg1;

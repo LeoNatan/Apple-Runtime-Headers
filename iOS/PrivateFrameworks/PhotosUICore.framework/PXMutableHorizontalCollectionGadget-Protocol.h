@@ -10,7 +10,6 @@
 
 @protocol PXMutableHorizontalCollectionGadget <NSObject>
 @property(nonatomic) double collectionHeight;
-@property(nonatomic) const struct __CFString *collectionAccessoryButtonEventTrackerKey;
 @property(copy, nonatomic) NSString *collectionAccessoryButtonTitle;
 @property(nonatomic) unsigned long long collectionAccessoryButtonType;
 @property(copy, nonatomic) NSString *collectionTitle;

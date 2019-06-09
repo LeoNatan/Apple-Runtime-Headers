@@ -14,7 +14,7 @@
 }
 
 + (id)sharedCache;
-@property(retain) NSCache *imageCache; // @synthesize imageCache=_imageCache;
+@property(retain, nonatomic) NSCache *imageCache; // @synthesize imageCache=_imageCache;
 - (void).cxx_destruct;
 - (void)clearCacheAndPostNotificationForChangedIconForBundleIdentifier:(id)arg1;
 - (void)dateDidChange;

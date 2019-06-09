@@ -23,6 +23,7 @@
 
 @property BOOL handleEvents; // @synthesize handleEvents=_handleEvents;
 @property(readonly) NSWindow *window; // @synthesize window=_window;
+- (void).cxx_destruct;
 - (void)_remoteHostDidAcceptRights:(const CDStruct_22756628 *)arg1;
 - (void)_panelFrameChanged:(id)arg1;
 - (void)someApplicationDeactivated:(id)arg1;

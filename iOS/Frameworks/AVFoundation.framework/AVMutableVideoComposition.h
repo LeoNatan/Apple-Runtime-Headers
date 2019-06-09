@@ -13,6 +13,7 @@
     AVMutableVideoCompositionInternal *_mutableVideoComposition;
 }
 
++ (id)videoCompositionWithPropertiesOfAsset:(id)arg1 prototypeInstruction:(id)arg2;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
 + (id)videoComposition;

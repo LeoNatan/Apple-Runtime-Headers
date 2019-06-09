@@ -8,6 +8,7 @@
 
 @class UIButton, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface STAppStoreIconCell : STTableCell
 {
     UIImageView *_appIconView;

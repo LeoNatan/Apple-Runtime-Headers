@@ -44,8 +44,8 @@ __attribute__((visibility("hidden")))
 - (void)_handleShareProtectionDataForRecordInfo:(id)arg1;
 - (id)_decryptRecordPCSForRecord:(id)arg1 usingChainPCS:(id)arg2;
 - (id)_decryptRecordPCSForRecord:(id)arg1 usingSharePCS:(id)arg2;
+- (id)_decryptRecordPCSForRecord:(id)arg1 usingZonePCS:(id)arg2;
 - (void)_handleZoneProtectionDataForRecordInfo:(id)arg1;
-- (void)_decryptRecordInfo:(id)arg1 usingZonePCS:(id)arg2;
 - (void)_decryptRecordInfo:(id)arg1 usingWebSharingIdentityData:(id)arg2;
 - (void)_decryptRecordInfo:(id)arg1;
 - (void)_clearProtectionDataForRecordInfo:(id)arg1;

@@ -16,10 +16,13 @@
 - (long long)previewImageOrientation;
 - (struct CGAffineTransform)previewImageOrientationTransform;
 - (_Bool)supportsQuickLook;
+- (struct CGSize)sizeByCroppingSize:(struct CGSize)arg1;
 - (void)updateAttachmentSize;
 - (void)addLocation;
 - (void)updateFileBasedAttributes;
 - (_Bool)shouldCropImage;
+- (_Bool)supportsImageClassification;
+- (_Bool)supportsOCR;
 - (_Bool)needsFullSizePreview;
 - (id)generateHardLinkURLIfNecessaryForURL:(id)arg1;
 - (_Bool)canSaveURL;

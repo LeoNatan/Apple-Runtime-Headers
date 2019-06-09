@@ -6,14 +6,16 @@
 
 #import <ControlCenterUI/NSObject-Protocol.h>
 
-@class CCUIContentModuleContext, UIViewController;
+@class CCUIContentModuleContext, CCUIContentModulePresentationContext, UIViewController;
 @protocol CCUIContentModuleBackgroundViewController, CCUIContentModuleContentViewController;
 
 @protocol CCUIContentModule <NSObject>
-@property(readonly, nonatomic) UIViewController<CCUIContentModuleContentViewController> *contentViewController;
 
 @optional
 @property(readonly, nonatomic) UIViewController<CCUIContentModuleBackgroundViewController> *backgroundViewController;
+@property(readonly, nonatomic) UIViewController<CCUIContentModuleContentViewController> *contentViewController;
 - (void)setContentModuleContext:(CCUIContentModuleContext *)arg1;
+- (UIViewController<CCUIContentModuleBackgroundViewController> *)backgroundViewControllerForContext:(CCUIContentModulePresentationContext *)arg1;
+- (UIViewController<CCUIContentModuleContentViewController> *)contentViewControllerForContext:(CCUIContentModulePresentationContext *)arg1;
 @end
 

@@ -12,9 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)mutablePlaceholder;
-+ (id)immutablePlaceholder;
-+ (void)initialize;
 - (void)dealloc;
 - (unsigned int)retainCount;
 - (oneway void)release;
@@ -25,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)_initByAdoptingBuffer:(id *)arg1 count:(unsigned int)arg2 size:(unsigned long)arg3;
 - (id)initWithObjects:(const id *)arg1 count:(unsigned int)arg2;
 - (id)initWithArray:(id)arg1 copyItems:(_Bool)arg2;
+- (id)initWithArray:(id)arg1;
 - (id)init;
 - (void)replaceObjectAtIndex:(unsigned int)arg1 withObject:(id)arg2;
 - (void)removeObjectAtIndex:(unsigned int)arg1;

@@ -11,22 +11,22 @@
 
 @interface BTMLoginItemController : NSObject
 {
-    id _internalItems;
-    id _internalQueue;
-    id _delegate;
+    id <BTMLoginItemControllerDelegate> _delegate;
+    NSSet *_internalItems;
     unsigned long long _typeMask;
+    NSObject<OS_dispatch_queue> *_internalQueue;
 }
 
-@property(readonly) unsigned long long typeMask; // @synthesize typeMask=_typeMask;
-@property(readonly) __weak id <BTMLoginItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
-@property(retain) NSSet *_items; // @synthesize _items=_internalItems;
+@property(readonly) unsigned long long typeMask; // @synthesize typeMask=_typeMask;
+@property(retain) NSSet *internalItems; // @synthesize internalItems=_internalItems;
+@property(readonly) __weak id <BTMLoginItemControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_notifyDidChangeItems;
 - (void)_setLoginItems:(id)arg1;
 - (void)fetchLoginItems;
 - (void)handleLoginItemsChangeNotification:(id)arg1;
-@property(readonly) NSSet *items; // @dynamic items;
+@property(readonly) NSSet *items;
 - (void)removeLoginItem:(id)arg1;
 - (void)addLoginItem:(id)arg1;
 - (void)dealloc;

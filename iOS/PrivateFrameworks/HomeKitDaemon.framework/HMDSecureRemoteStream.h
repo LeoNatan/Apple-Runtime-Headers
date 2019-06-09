@@ -10,10 +10,12 @@
 #import <HomeKitDaemon/HMFObject-Protocol.h>
 
 @class HMDAWDRemoteSessionMetric, HMDDevice, HMDSecureRemoteStreamInternal, HMDUser, HMFPairingIdentity, NSArray, NSDate, NSNumber, NSObject, NSString, NSUUID;
-@protocol OS_dispatch_queue;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDSecureRemoteStream : HMFMessageTransport <HMFLogging, HMFObject>
 {
+    id <HMFLocking> _lock;
+    NSObject<OS_dispatch_queue> *_queue;
     _Bool _open;
     _Bool _idle;
     _Bool _supportsSharedIdentities;
@@ -23,8 +25,6 @@
     HMDDevice *_peerDevice;
     long long _role;
     NSUUID *_sessionID;
-    NSObject<OS_dispatch_queue> *_workQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMDUser *_peer;
     HMFPairingIdentity *_peerIdentity;
     HMDSecureRemoteStreamInternal *_remoteSession;
@@ -39,8 +39,6 @@
 @property(retain, nonatomic) HMDSecureRemoteStreamInternal *remoteSession; // @synthesize remoteSession=_remoteSession;
 @property(retain, nonatomic) HMFPairingIdentity *peerIdentity; // @synthesize peerIdentity=_peerIdentity;
 @property(retain, nonatomic) HMDUser *peer; // @synthesize peer=_peer;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, copy, nonatomic) NSUUID *sessionID; // @synthesize sessionID=_sessionID;
 @property(readonly) long long role; // @synthesize role=_role;
 - (void).cxx_destruct;
@@ -56,7 +54,6 @@
 - (void)closedWithError:(id)arg1;
 - (void)_configureWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startAndInvokeOnQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)notifyClientsUpdatedIdle:(_Bool)arg1;
 @property(readonly, copy) NSDate *lastActivity; // @synthesize lastActivity=_lastActivity;
 - (void)setIdle:(_Bool)arg1;
 @property(readonly, getter=isIdle) _Bool idle; // @synthesize idle=_idle;

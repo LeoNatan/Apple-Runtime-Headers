@@ -19,6 +19,7 @@
 - (id)initWithSettingsDictionary:(id)arg1;
 - (id)initWithOperation:(id)arg1;
 - (id)initWithFrameTime:(CDStruct_1b6d18a9)arg1;
+- (BOOL)isMigratable;
 
 @end
 

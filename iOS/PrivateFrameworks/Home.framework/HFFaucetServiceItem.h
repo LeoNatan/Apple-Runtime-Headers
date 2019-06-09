@@ -12,7 +12,7 @@
 
 + (id)supportedServiceTypes;
 - (id)currentStateActionBuildersForHome:(id)arg1;
-- (_Bool)containsActionableCharacteristics;
+- (_Bool)containsActions;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)createControlItems;
 - (id)servicesToReadForCharacteristicType:(id)arg1;

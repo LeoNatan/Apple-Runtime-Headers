@@ -9,6 +9,7 @@
 @class CADisplayLink;
 @protocol SKUIDynamicBarAnimatorDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDynamicBarAnimator : NSObject
 {
     double _topBarHeightForState[2];

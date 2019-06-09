@@ -8,6 +8,7 @@
 
 @class TCDumpEnum;
 
+__attribute__((visibility("hidden")))
 @interface TCDumpNumeric : TCDumpType
 {
     int mType;

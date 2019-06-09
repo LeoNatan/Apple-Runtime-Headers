@@ -23,12 +23,13 @@
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(readonly, nonatomic) id <CNUIPRLikenessResolver> likenessResolver; // @synthesize likenessResolver=_likenessResolver;
 - (void).cxx_destruct;
-- (id)renderedLoadingPlaceholderForContactCount:(unsigned int)arg1 scope:(id)arg2;
+- (id)renderedLoadingPlaceholderForContactCount:(unsigned int)arg1 provider:(id)arg2 scope:(id)arg3;
+- (id)renderedBasicMonogramForString:(id)arg1 color:(id)arg2 scope:(id)arg3 prohibitedSources:(int)arg4;
 - (id)renderedBasicMonogramFromString:(id)arg1 scope:(id)arg2;
 - (id)loadingPlaceholderForContactCount:(unsigned int)arg1 scope:(id)arg2;
 - (id)renderedLikenessesForLikenessProviders:(id)arg1 scope:(id)arg2;
-- (id)likenessProvidersForContacts:(id)arg1;
-- (id)renderedLikenessesForContacts:(id)arg1 scope:(id)arg2;
+- (id)likenessProvidersForContacts:(id)arg1 likenessResolverOptions:(id)arg2 workScheduler:(id)arg3;
+- (id)renderedLikenessesForContacts:(id)arg1 scope:(id)arg2 workScheduler:(id)arg3;
 - (id)initWithLikenessResolver:(id)arg1 schedulerProvider:(id)arg2;
 
 // Remaining properties

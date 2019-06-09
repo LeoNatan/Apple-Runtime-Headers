@@ -7,6 +7,8 @@
 #import <SAObjects/SAMetrics.h>
 
 @interface SAMetrics (SiriCoreSessionObject)
+- (BOOL)siriCore_supportedByLocalSession;
+- (BOOL)siriCore_isRetryable;
 - (void)siriCore_setSessionRequestId:(id)arg1;
 - (id)siriCore_requestId;
 @end

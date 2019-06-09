@@ -34,10 +34,10 @@
 - (id)renderedBasicMonogramFromString:(id)arg1 scope:(id)arg2;
 - (id)loadingPlaceholderForContactCount:(unsigned int)arg1 scope:(id)arg2;
 - (void)refreshCacheKey:(id)arg1;
-- (id)resizeCacheEntry:(id)arg1 withScope:(id)arg2;
+- (id)resizeCacheEntry:(id)arg1 withScope:(id)arg2 workScheduler:(id)arg3;
 - (id)startCacheEntryWithObservable:(id)arg1 contacts:(id)arg2 scope:(id)arg3;
-- (id)initialRenderedLikenessesForContacts:(id)arg1 scope:(id)arg2;
-- (id)renderedLikenessesForContacts:(id)arg1 scope:(id)arg2;
+- (id)initialRenderedLikenessesForContacts:(id)arg1 scope:(id)arg2 workScheduler:(id)arg3;
+- (id)renderedLikenessesForContacts:(id)arg1 scope:(id)arg2 workScheduler:(id)arg3;
 - (void)emptyCache:(id)arg1;
 - (void)dealloc;
 - (id)initWithLikenessRenderer:(id)arg1 schedulerProvider:(id)arg2 capacity:(unsigned int)arg3;

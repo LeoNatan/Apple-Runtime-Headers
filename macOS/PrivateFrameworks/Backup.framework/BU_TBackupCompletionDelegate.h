@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSString *fKey;
 }
 
+- (void).cxx_destruct;
 - (void)promoteDemoteSnapshotAnimationComplete;
 - (void)revealOutAnimationComplete;
 - (void)revealInAnimationComplete;

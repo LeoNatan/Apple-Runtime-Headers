@@ -20,7 +20,6 @@
 - (id)catalogGlobals;
 - (BOOL)assetExistsForKey:(struct _renditionkeytoken *)arg1;
 - (id)lookupAssetForKey:(struct _renditionkeytoken *)arg1;
-- (id)prefilteredAssetDataForKey:(struct _renditionkeytoken *)arg1;
 - (id)lookupAssetForKey:(struct _renditionkeytoken *)arg1 withSignature:(id)arg2;
 - (void)cacheAssetData:(id)arg1 forKey:(const struct _renditionkeytoken *)arg2 withSignature:(id)arg3;
 - (id)assetDataFromCacheWithKeySignature:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class OADRelativeRect;
 
+__attribute__((visibility("hidden")))
 @interface OADStretchTechnique : OADImageFillTechnique
 {
     OADRelativeRect *mFillRect;

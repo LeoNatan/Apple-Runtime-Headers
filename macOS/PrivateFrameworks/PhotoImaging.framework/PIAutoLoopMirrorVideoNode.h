@@ -10,6 +10,7 @@
 {
 }
 
++ (int)fadeLengthForTrimRange:(CDStruct_5c5366e1)arg1 frameDuration:(CDStruct_1b6d18a9)arg2;
 - (id)_evaluateAudioMix:(out id *)arg1;
 - (BOOL)requiresAudioMix;
 - (id)_evaluateVideoComposition:(out id *)arg1;

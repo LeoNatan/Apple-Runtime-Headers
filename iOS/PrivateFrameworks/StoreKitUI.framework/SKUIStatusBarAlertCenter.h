@@ -10,6 +10,7 @@
 
 @class NSString, _SKUIClickThroughWindow, _SKUIStatusBarAlertViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStatusBarAlertCenter : NSObject <_SKUIStatusBarAlertViewControllerDelegate>
 {
     double _duration;

@@ -25,9 +25,10 @@
 - (struct _LXEntry *)copyEntryForString:(id)arg1;
 - (id)getSortKeyEquivalents:(id)arg1;
 - (_Bool)contains:(id)arg1;
+- (void)removeEntriesBySource:(unsigned char)arg1;
 - (void)removeAllEntries;
-- (void)removeEntry:(id)arg1;
-- (void)addEntry:(id)arg1;
+- (void)removeEntry:(id)arg1 source:(unsigned char)arg2;
+- (_Bool)addEntry:(id)arg1 source:(unsigned char)arg2 type:(unsigned char)arg3;
 - (id)initWithName:(id)arg1 typeFlags:(unsigned char)arg2;
 - (void)dealloc;
 - (id)getUsageCount:(id)arg1;

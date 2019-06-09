@@ -21,15 +21,19 @@
 + (id)imageForMapItem:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3 isResizableImage:(char *)arg4;
 + (id)imageForMapItem:(id)arg1 forScale:(double)arg2 fallbackToBundleIcon:(BOOL)arg3;
 + (id)imageForMapItem:(id)arg1 forScale:(double)arg2;
++ (id)imageForTrafficIncidentType:(long long)arg1 size:(unsigned long long)arg2 forScale:(double)arg3 nightMode:(BOOL)arg4;
 + (id)imageForTrafficIncidentType:(long long)arg1 size:(unsigned long long)arg2 forScale:(double)arg3;
++ (id)imageForTrafficCamera:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3 nightMode:(BOOL)arg4;
 + (id)imageForTrafficCamera:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3;
++ (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3 nightMode:(BOOL)arg4;
 + (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3;
-+ (id)_imageForFeatureStyleAttributes:(id)arg1 iconText:(id)arg2 size:(unsigned long long)arg3 forScale:(double)arg4 navMode:(BOOL)arg5;
++ (id)_imageForFeatureStyleAttributes:(id)arg1 iconText:(id)arg2 size:(unsigned long long)arg3 forScale:(double)arg4 navMode:(BOOL)arg5 nightMode:(BOOL)arg6;
++ (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3 navMode:(BOOL)arg4 nightMode:(BOOL)arg5;
 + (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned long long)arg2 forScale:(double)arg3 navMode:(BOOL)arg4;
 + (struct CGColor *)newGlyphColorForStyleAttributes:(id)arg1 forScale:(double)arg2;
 + (struct CGColor *)newHaloColorForStyleAttributes:(id)arg1 forScale:(double)arg2;
 + (struct CGColor *)newFillColorForStyleAttributes:(id)arg1 forScale:(double)arg2;
-+ (id)_iconManager;
++ (id)iconManager;
 + (void)setUseSharedCaches;
 + (void)setDiskCacheURL:(id)arg1;
 

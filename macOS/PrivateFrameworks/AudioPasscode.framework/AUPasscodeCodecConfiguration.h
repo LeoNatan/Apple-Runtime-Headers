@@ -20,7 +20,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSString *algorithmName; // @synthesize algorithmName=_algorithmName;
+@property(copy, nonatomic) NSString *algorithmName; // @synthesize algorithmName=_algorithmName;
 @property(nonatomic) long long numChannels; // @synthesize numChannels=_numChannels;
 @property(nonatomic) long long sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(nonatomic) long long payloadLengthBytes; // @synthesize payloadLengthBytes=_payloadLengthBytes;

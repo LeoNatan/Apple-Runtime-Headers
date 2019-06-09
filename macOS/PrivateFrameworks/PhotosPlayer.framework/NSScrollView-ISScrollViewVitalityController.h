@@ -13,5 +13,6 @@
 - (void)is_prepareToSettleOnPageAlignmentOfAxis:(long long)arg1 atOffset:(double)arg2 fromInitialOffset:(double)arg3 withVelocity:(double)arg4;
 - (id)is_vitalityControllerCreateIfNeeded:(BOOL)arg1;
 @property(readonly, nonatomic) ISScrollViewVitalityController *is_vitalityController;
+- (void)is_didLayoutPlayerViews;
 @end
 

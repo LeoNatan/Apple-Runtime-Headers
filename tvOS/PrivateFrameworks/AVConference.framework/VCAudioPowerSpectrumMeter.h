@@ -6,33 +6,21 @@
 
 #import <AVConference/VCObject.h>
 
-#import <AVConference/VCAudioIOSink-Protocol.h>
-#import <AVConference/VCAudioPowerSpectrumDelegate-Protocol.h>
+#import <AVConference/VCAudioPowerSpectrumProtocol-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface VCAudioPowerSpectrumMeter : VCObject <VCAudioPowerSpectrumDelegate, VCAudioIOSink>
+@interface VCAudioPowerSpectrumMeter : VCObject <VCAudioPowerSpectrumProtocol>
 {
-    id _delegate;
     unsigned short _audioSpectrumBinCount;
-    double _audioSpectrumRefreshRate;
-    unsigned int _lastDeliveryTime;
-    // Error parsing type: {atomic_flag="_Value"AB}, name: _isProcessingOutput
-    NSMutableDictionary *_audioPowerSpectrums;
-    NSMutableDictionary *_outputPowerSpectrums;
-    struct opaqueCMSimpleQueue *_streamTokenRemovedEventQueue;
-    struct opaqueCMSimpleQueue *_streamTokenAddedEventQueue;
+    // Error parsing type: {_VCAudioPowerSpectrumMeterRealtimeContext="streams"{_VCSingleLinkedList="head"^{_VCSingleLinkedListEntry}"initialized"B"compare"^?}"eventQueue"^{opaqueCMSimpleQueue}"nextDeliveryTime"d"audioSpectrumRefreshRate"d"isProcessingOutput"{atomic_flag="_Value"AB}"outputPowerSpectrums"^{__CFDictionary}"powerSpectrumMeterDelegate"@"powerSpectrumMeterDelegateContext"^v}, name: _realtimeContext
 }
 
-@property(readonly, nonatomic) NSDictionary *audioPowerSpectrums; // @synthesize audioPowerSpectrums=_audioPowerSpectrums;
-- (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
-- (void)didUpdateAudioPowerSpectrum:(id)arg1;
+@property(readonly, nonatomic) void *realtimeContext;
+- (void)unregisterAllStreams;
 - (void)releaseAudioPowerSpectrumForStreamToken:(id)arg1;
 - (void)registerNewAudioPowerSpectrumForStreamToken:(id)arg1 spectrumSource:(id)arg2;
-- (void)processOutput;
-- (void)processInternalEvents;
-- (id)delegate;
 - (void)dealloc;
 - (id)initWithBinCount:(unsigned short)arg1 refreshRate:(double)arg2 delegate:(id)arg3;
 

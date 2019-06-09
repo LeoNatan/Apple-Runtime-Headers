@@ -69,7 +69,7 @@
 - (BOOL)canSelect;
 - (BOOL)isGroupItem;
 - (double)rowHeight;
-- (unsigned long long)textAlignment;
+- (long long)textAlignment;
 - (id)tableViewIdentifier;
 @property(readonly, copy) NSArray *children;
 @property(readonly, retain) ABGroup *group;

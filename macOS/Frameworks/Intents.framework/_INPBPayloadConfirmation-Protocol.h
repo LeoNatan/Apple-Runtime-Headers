@@ -6,10 +6,18 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class _INPBSelectionItem;
+@class NSString, _INPBSelectionItem;
 
 @protocol _INPBPayloadConfirmation <NSObject>
+@property(nonatomic) BOOL hasAddTasksIntentTargetTaskListConfirmationReason;
+@property(nonatomic) int addTasksIntentTargetTaskListConfirmationReason;
+@property(nonatomic) BOOL hasReason;
+@property(nonatomic) int reason;
 @property(readonly, nonatomic) BOOL hasConfirmationItem;
 @property(retain, nonatomic) _INPBSelectionItem *confirmationItem;
+- (int)StringAsAddTasksIntentTargetTaskListConfirmationReason:(NSString *)arg1;
+- (NSString *)addTasksIntentTargetTaskListConfirmationReasonAsString:(int)arg1;
+- (int)StringAsReason:(NSString *)arg1;
+- (NSString *)reasonAsString:(int)arg1;
 @end
 

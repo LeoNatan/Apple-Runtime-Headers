@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedInstance;
 - (Class)classForCompilingModelType:(int)arg1;
+- (Class)classForLoadingModelType:(int)arg1 isUpdatable:(_Bool)arg2;
 - (Class)classForLoadingModelType:(int)arg1;
 - (id)init;
 

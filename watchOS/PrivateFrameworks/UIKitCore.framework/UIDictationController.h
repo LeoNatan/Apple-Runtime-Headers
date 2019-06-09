@@ -10,7 +10,7 @@
 #import <UIKitCore/UIDictationConnectionTokenFilterProtocol-Protocol.h>
 #import <UIKitCore/_UITouchPhaseChangeDelegate-Protocol.h>
 
-@class CADisplayLink, NSMutableArray, NSString, NSTimer, UIAlertView, UIDictationConnection, UIDictationConnectionPreferences, UIDictationStreamingOperations, UIKeyboardInputMode, UIWindow, _UIDictationPrivacySheetController, _UIDictationTelephonyMonitor;
+@class CADisplayLink, NSDictionary, NSMutableArray, NSNumber, NSString, NSTimer, UIAlertController, UIDictationConnection, UIDictationConnectionPreferences, UIDictationStreamingOperations, UIKeyboardInputMode, UIWindow, _UIDictationPrivacySheetController, _UIDictationTelephonyMonitor;
 
 __attribute__((visibility("hidden")))
 @interface UIDictationController : NSObject <UIDictationConnectionDelegate, UIDictationConnectionTokenFilterProtocol, _UITouchPhaseChangeDelegate>
@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     UIDictationConnection *_dictationConnection;
     UIDictationConnectionPreferences *_preferences;
     NSTimer *_recordingLimitTimer;
-    UIAlertView *_dictationAvailableSoonAlert;
+    UIAlertController *_dictationAvailableSoonAlertController;
     _Bool _connectionWasAlreadyAliveForStatisticsLogging;
     UIDictationStreamingOperations *_streamingOperations;
     NSString *_language;
@@ -38,11 +38,15 @@ __attribute__((visibility("hidden")))
     NSString *_prefixTextForStart;
     NSString *_selectionTextForStart;
     NSString *_postfixTextForStart;
+    _Bool _hasDictated;
+    NSDictionary *_selectedAttributesForDictation;
     _Bool _performingStreamingEditingOperation;
     _Bool _discardNextHypothesis;
     _Bool _hasPreheated;
+    _Bool _logAppEnterBackground;
     _Bool _wantsAvailabilityMonitoringWhenAppActive;
     NSString *_activationIdentifier;
+    NSString *_smartLanguageSelectionOverrideLanguage;
     NSMutableArray *_pendingEdits;
     NSString *_previousHypothesis;
     NSString *_lastHypothesis;
@@ -58,6 +62,7 @@ __attribute__((visibility("hidden")))
     struct _NSRange _insertionRange;
 }
 
++ (_Bool)isDictationSearchBarButtonVisible;
 + (void)poppedLastStreamingOperation;
 + (_Bool)usingTypeAndTalk;
 + (id)stringForViewMode:(int)arg1;
@@ -107,6 +112,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool wantsAvailabilityMonitoringWhenAppActive; // @synthesize wantsAvailabilityMonitoringWhenAppActive=_wantsAvailabilityMonitoringWhenAppActive;
 @property(retain, nonatomic) UIKeyboardInputMode *keyboardInputModeToReturn; // @synthesize keyboardInputModeToReturn=_keyboardInputModeToReturn;
 @property(retain, nonatomic) UIKeyboardInputMode *currentInputModeForDictation; // @synthesize currentInputModeForDictation=_currentInputModeForDictation;
+@property(nonatomic) _Bool logAppEnterBackground; // @synthesize logAppEnterBackground=_logAppEnterBackground;
 @property(copy, nonatomic) NSString *lastMessageKeyboardLanguage; // @synthesize lastMessageKeyboardLanguage=_lastMessageKeyboardLanguage;
 @property(copy, nonatomic) id lastCorrectionIdentifier; // @synthesize lastCorrectionIdentifier=_lastCorrectionIdentifier;
 @property(copy, nonatomic) NSString *lastRecognitionText; // @synthesize lastRecognitionText=_lastRecognitionText;
@@ -121,7 +127,11 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *previousHypothesis; // @synthesize previousHypothesis=_previousHypothesis;
 @property(nonatomic) _Bool performingStreamingEditingOperation; // @synthesize performingStreamingEditingOperation=_performingStreamingEditingOperation;
 @property(retain, nonatomic) NSMutableArray *pendingEdits; // @synthesize pendingEdits=_pendingEdits;
+@property(copy) NSString *smartLanguageSelectionOverrideLanguage; // @synthesize smartLanguageSelectionOverrideLanguage=_smartLanguageSelectionOverrideLanguage;
 @property(copy, nonatomic) NSString *activationIdentifier; // @synthesize activationIdentifier=_activationIdentifier;
+- (void)keyboardDismissed:(id)arg1;
+- (_Bool)smartLanguageSelectionOverridden;
+- (void)overrideSmartLanguageSelection:(id)arg1;
 - (void)markKeyboardDidReset;
 - (void)markKeyboardDeleteMetricEvent;
 - (void)markKeyboardInputMetricEvent;
@@ -174,6 +184,7 @@ __attribute__((visibility("hidden")))
 - (void)performIgnoringDocumentChanges:(CDUnknownBlockType)arg1;
 - (_Bool)isIgnoringDocumentChanges;
 - (void)stopDictation;
+- (void)stopAndCancelDictationWithReasonType:(unsigned int)arg1;
 - (void)stopDictationIgnoreFinalizePhrases;
 - (void)stopDictation:(_Bool)arg1;
 - (void)cancelDictationForTextStoreChangesInResponder:(id)arg1;
@@ -203,6 +214,9 @@ __attribute__((visibility("hidden")))
 - (void)setupForDictationStart;
 - (void)setupForStreamingDictationStart;
 - (void)dismissDictationView:(id)arg1;
+- (_Bool)_hasKeyboardMatchingLocale:(id)arg1;
+- (_Bool)dictationSearchFieldUIEnabled;
+- (_Bool)currentViewModeSupportsDictationMics;
 - (_Bool)dictationEnabled;
 - (id)connectionForStatisticsLogging;
 - (void)releaseConnectionAfterStatisticsLogging;
@@ -231,6 +245,9 @@ __attribute__((visibility("hidden")))
 - (id)postfixTextForInputDelegate:(id)arg1;
 - (id)prefixTextForInputDelegate:(id)arg1;
 - (id)fieldIdentifierInputDelegate:(id)arg1;
+@property(readonly, retain, nonatomic) NSNumber *dictationRequestOrigin;
+- (_Bool)shouldOverrideManualEndpointing;
+- (_Bool)shouldUseDictationSearchFieldBehavior;
 - (float)audioLevel;
 - (_Bool)supportsInputMode:(id)arg1 error:(id *)arg2;
 - (_Bool)supportsDictationLanguage:(id)arg1 error:(id *)arg2;

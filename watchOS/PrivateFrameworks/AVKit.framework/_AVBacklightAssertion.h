@@ -8,6 +8,7 @@
 
 @class AVTimer, CSLSBacklightAssertion;
 
+__attribute__((visibility("hidden")))
 @interface _AVBacklightAssertion : NSObject
 {
     CSLSBacklightAssertion *_backlightAssertion;

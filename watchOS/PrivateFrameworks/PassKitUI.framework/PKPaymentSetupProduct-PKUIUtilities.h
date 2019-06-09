@@ -6,13 +6,7 @@
 
 #import <PassKitCore/PKPaymentSetupProduct.h>
 
-@class UIImage;
-
 @interface PKPaymentSetupProduct (PKUIUtilities)
-- (id)_generateThumbnailMask;
-- (id)_processThumbnailImage:(id)arg1 forSize:(struct CGSize)arg2;
-- (id)_processDigitalCardImage:(id)arg1;
-@property(copy, nonatomic) UIImage *thumbnailMask;
 - (void)resetCache;
 - (id)logoCachedImage:(CDUnknownBlockType)arg1;
 - (id)thumbnailCachedImageForSize:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;

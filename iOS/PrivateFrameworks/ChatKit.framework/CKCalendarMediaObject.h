@@ -13,6 +13,7 @@
 + (id)attachmentSummary:(unsigned long long)arg1;
 + (id)fallbackFilenamePrefix;
 + (id)UTITypes;
+- (_Bool)shouldBeQuickLooked;
 - (id)subtitle;
 - (int)mediaType;
 

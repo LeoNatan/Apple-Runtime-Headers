@@ -44,6 +44,7 @@
 @property(readonly, nonatomic) BOOL shouldCreateActiveAccounts;
 @property(readonly, nonatomic) BOOL serviceWantsNullHostReachability;
 @property(readonly, nonatomic) BOOL serviceIgnoresNetworkConnectivity;
+@property(readonly, nonatomic) BOOL serviceSupportsAuthorization;
 @property(readonly, nonatomic) BOOL serviceSupportsRegistration;
 @property(readonly, nonatomic) BOOL supportsDatabase;
 @property(readonly, nonatomic) BOOL disallowDeactivation;

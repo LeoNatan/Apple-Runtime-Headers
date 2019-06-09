@@ -6,23 +6,26 @@
 
 #import <UIKitCore/_UIDraggingImageSlotOwner.h>
 
-@class NSArray, NSSet, NSXPCListenerEndpoint, PBItemCollection, UIDragEvent, UIView, UIWindow, _DUITouchRoutingPolicy, _UIDragSetDownAnimation, _UIDraggingSession;
-@protocol _UIDruidSourceConnection;
+#import <UIKitCore/_UIDraggingInfo-Protocol.h>
+
+@class NSArray, NSSet, NSString, NSXPCListenerEndpoint, PBItemCollection, UIDragEvent, UIDraggingBeginningSessionConfiguration, UIDraggingSystemTouchRoutingPolicy, UIView, UIWindow, _UIDragSetDownAnimation, _UIDruidSourceConnection;
+@protocol _UIDraggingSessionDelegate;
 
 __attribute__((visibility("hidden")))
-@interface _UIInternalDraggingSessionSource : _UIDraggingImageSlotOwner
+@interface _UIInternalDraggingSessionSource : _UIDraggingImageSlotOwner <_UIDraggingInfo>
 {
     struct CGPoint _lastNotifiedCentroid;
     _Bool _didHandOffDragImage;
     PBItemCollection *_pbItemCollection;
-    _DUITouchRoutingPolicy *_touchRoutingPolicy;
+    UIDraggingSystemTouchRoutingPolicy *_touchRoutingPolicy;
     _UIDragSetDownAnimation *_setDownAnimation;
     long long _stateAfterSetDown;
     _Bool _sentWillEnd;
     _Bool _hostIsActive;
     _Bool _originatedInHostedWindow;
+    UIDraggingBeginningSessionConfiguration *_configuration;
     unsigned int _sessionIdentifier;
-    _UIDraggingSession *_publicSession;
+    id <_UIDraggingSessionDelegate> _delegate;
     UIDragEvent *_dragEvent;
     UIView *_sourceView;
     long long _state;
@@ -34,11 +37,11 @@ __attribute__((visibility("hidden")))
     UIWindow *_centroidWindow;
     unsigned long long _withinAppSourceOperationMask;
     unsigned long long _outsideAppSourceOperationMask;
-    id <_UIDruidSourceConnection> _druidConnection;
+    _UIDruidSourceConnection *_druidConnection;
     struct CGPoint _centroid;
 }
 
-@property(retain, nonatomic) id <_UIDruidSourceConnection> druidConnection; // @synthesize druidConnection=_druidConnection;
+@property(retain, nonatomic) _UIDruidSourceConnection *druidConnection; // @synthesize druidConnection=_druidConnection;
 @property(readonly, nonatomic) unsigned long long outsideAppSourceOperationMask; // @synthesize outsideAppSourceOperationMask=_outsideAppSourceOperationMask;
 @property(readonly, nonatomic) unsigned long long withinAppSourceOperationMask; // @synthesize withinAppSourceOperationMask=_withinAppSourceOperationMask;
 @property(readonly, nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
@@ -52,8 +55,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(nonatomic) __weak UIView *sourceView; // @synthesize sourceView=_sourceView;
 @property(nonatomic) __weak UIDragEvent *dragEvent; // @synthesize dragEvent=_dragEvent;
-@property(readonly, nonatomic) _UIDraggingSession *publicSession; // @synthesize publicSession=_publicSession;
+@property(nonatomic) __weak id <_UIDraggingSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_sendDataTransferFinished;
+- (void)_sendDidMove;
+- (void)_sendDidEndWithOperation:(unsigned long long)arg1;
+- (void)_sendWillAddItems:(id)arg1;
+- (void)_sendHandedOffDragImageForItem:(id)arg1;
+- (void)_sendHandedOffDragImage;
+- (void)_sendWillBegin;
 - (void)_hostDidDeactivate;
 - (void)_hostWillBecomeActive;
 @property(readonly, nonatomic) _Bool didHandOffDragImage;
@@ -70,15 +80,23 @@ __attribute__((visibility("hidden")))
 - (void)_getOperationMaskFromDelegate;
 - (void)_didBeginDrag;
 - (void)beginDrag:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) unsigned long long draggingSourceOperationMask;
+- (struct CGPoint)draggingLocationInCoordinateSpace:(id)arg1;
+- (void)enumerateItemsUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)dynamicallyUpdatesPrefersFullSizePreviews;
 @property(readonly, nonatomic) _Bool prefersFullSizePreview;
 - (_Bool)preventsSimultaneousDragFromView:(id)arg1;
-- (void)setCentroid:(struct CGPoint)arg1 inWindow:(id)arg2;
 - (void)_unregisterContextIDsForAdditionalDragEvents;
 - (void)_registerContextIDsForAdditionalDragEvents;
-- (id)initWithDragManager:(id)arg1 items:(id)arg2 dataOwner:(long long)arg3 sourceView:(id)arg4;
+- (id)initWithDragManager:(id)arg1 configuration:(id)arg2;
 - (_Bool)touchRoutingPolicyContainsContextIDToAlwaysSend:(unsigned int)arg1;
-@property(copy, nonatomic) _DUITouchRoutingPolicy *touchRoutingPolicy;
+- (id)touchRoutingPolicy;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

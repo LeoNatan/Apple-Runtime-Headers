@@ -8,6 +8,7 @@
 
 @class AVPlayerController;
 
+__attribute__((visibility("hidden")))
 @interface AVRemoteCommandController : NSObject
 {
     AVPlayerController *_playerController;

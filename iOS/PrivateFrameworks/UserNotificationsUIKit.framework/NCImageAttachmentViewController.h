@@ -20,6 +20,7 @@
 @property(retain, nonatomic) UIView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillAppear:(_Bool)arg1;
 - (struct CGSize)contentSize;
 - (void)loadView;

@@ -14,14 +14,20 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType _scenePrintsFromPixelBuffersUsesCPUOnlyImpl;
     CDUnknownFunctionPointerType _scenePrintElementCountImpl;
     CDUnknownFunctionPointerType _scenePrintLengthImpl;
+    Class _VNImageBufferClass;
 }
 
 + (id)sharedHandle;
+@property(readonly, nonatomic) Class VNImageBufferClass; // @synthesize VNImageBufferClass=_VNImageBufferClass;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintLengthImpl; // @synthesize scenePrintLengthImpl=_scenePrintLengthImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintElementCountImpl; // @synthesize scenePrintElementCountImpl=_scenePrintElementCountImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintsFromPixelBuffersUsesCPUOnlyImpl; // @synthesize scenePrintsFromPixelBuffersUsesCPUOnlyImpl=_scenePrintsFromPixelBuffersUsesCPUOnlyImpl;
 @property(readonly, nonatomic) CDUnknownFunctionPointerType scenePrintsFromPixelBuffersImpl; // @synthesize scenePrintsFromPixelBuffersImpl=_scenePrintsFromPixelBuffersImpl;
 @property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
+- (void).cxx_destruct;
+- (struct __CVBuffer *)createPixelBufferFromCGImage:(struct CGImage *)arg1 constraint:(id)arg2 cropRect:(struct CGRect)arg3 cropAndScaleOption:(unsigned int)arg4 options:(id)arg5 error:(id *)arg6;
+- (struct __CVBuffer *)createPixelBufferFromImageAtURL:(id)arg1 constraint:(id)arg2 cropRect:(struct CGRect)arg3 cropAndScaleOption:(unsigned int)arg4 options:(id)arg5 error:(id *)arg6;
+- (struct __CVBuffer *)createPixelBufferFromVNImageBuffer:(id)arg1 constraint:(id)arg2 cropRect:(struct CGRect)arg3 cropAndScaleOption:(unsigned int)arg4 options:(id)arg5 error:(id *)arg6;
 - (unsigned int)lengthInBytesForScenePrintRequestRevision:(int)arg1;
 - (unsigned int)elementCountForScenePrintRequestRevision:(int)arg1;
 - (id)scenePrintsFromPixelBuffers:(struct __CVBuffer *)arg1 version:(int)arg2 augmentationOptions:(id)arg3 useCPUOnly:(_Bool)arg4 error:(id *)arg5;

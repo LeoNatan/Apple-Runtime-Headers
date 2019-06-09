@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 {
     SCRLayoutArea *_container;
     SCRElement *_child;
-    NSString *_lastSizeDescription;
     BOOL _hasMultipleNonHandleChildren;
+    NSString *_lastSizeDescription;
 }
 
 @property(retain, nonatomic) NSString *lastSizeDescription; // @synthesize lastSizeDescription=_lastSizeDescription;
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)describePositionChangeFromPosition:(id)arg1;
 - (BOOL)addSelectionDescriptionToRequest:(id)arg1;
 - (void)addItemNameToRequest:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)captionDescriptionContainsUserLabel:(char *)arg1 containsAncestorLabel:(char *)arg2;
 - (id)titleDescription;
 - (id)valueDescription;
@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (id)_child;
 - (id)parentLayoutArea;
 - (id)containerIncludingScrollAreas:(BOOL)arg1;
+- (struct CGRect)enclosingBoundsIncludesScrollArea:(BOOL)arg1;
 - (BOOL)isContainerElement;
 - (BOOL)isInteractive;
 

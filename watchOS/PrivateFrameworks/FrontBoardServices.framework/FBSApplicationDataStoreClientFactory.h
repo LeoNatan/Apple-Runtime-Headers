@@ -14,14 +14,12 @@
     unsigned long long _count;
     NSObject<OS_dispatch_queue> *_queue;
     id <FBSApplicationDataStoreRepositoryClient> _sharedClient;
-    Class _dataStoreClientClass;
     NSArray *_prefetchedKeys;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSArray *prefetchedKeys; // @synthesize prefetchedKeys=_prefetchedKeys;
 - (void).cxx_destruct;
-- (void)registerClientClass:(Class)arg1;
 - (void)checkin;
 - (id)checkout;
 - (id)init;

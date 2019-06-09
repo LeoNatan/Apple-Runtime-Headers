@@ -6,68 +6,62 @@
 
 #import <objc/NSObject.h>
 
-#import <Photos/PHPhotoLibraryChangeObserver-Protocol.h>
+#import <Photos/PHMediaRequestContextDelegate-Protocol.h>
 
-@class NSString, PDImageManager, PHImageManagerSettings;
-@protocol OS_dispatch_source;
+@class NSMapTable, NSString, PHPhotoLibrary;
 
-@interface PHImageManager : NSObject <PHPhotoLibraryChangeObserver>
+@interface PHImageManager : NSObject <PHMediaRequestContextDelegate>
 {
-    id _cachedDomain;
-    PHImageManagerSettings *_settings;
-    PDImageManager *_newImageManager;
-    NSObject<OS_dispatch_source> *_memoryEventSource;
-    unsigned int _managerID;
+    NSMapTable *_requestContextsByID;
+    // Error parsing type: Ai, name: _nextRequestID
+    struct os_unfair_lock_s _lock;
+    PHPhotoLibrary *_photoLibrary;
+    unsigned long long _managerID;
 }
 
 + (_Bool)_allowVideoAccessForAsset:(id)arg1 options:(id)arg2;
++ (unsigned long long)_nextManagerID;
 + (id)defaultManager;
-+ (void)initialize;
-+ (struct CGSize)sizeOfBestNonFullscreenThumbnailAndContentMode:(int *)arg1;
-+ (struct CGSize)fullScreenSizeForScreen:(id)arg1 contentMode:(int *)arg2;
-+ (_Bool)useNewImageManager;
 + (struct CGSize)maximumImageSizeFromProperties:(id)arg1;
-@property(readonly, nonatomic) unsigned int managerID; // @synthesize managerID=_managerID;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryEventSource; // @synthesize memoryEventSource=_memoryEventSource;
+@property(readonly, nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
+@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
-- (int)requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-- (int)requestExportSessionForVideo:(id)arg1 options:(id)arg2 exportPreset:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
-- (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-- (int)requestLivePhotoForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
-- (id)localOptionsFromOptions:(id)arg1;
-- (void)cancelImageRequest:(int)arg1;
+- (void)mediaRequestContextDidFinish:(id)arg1;
+- (void)mediaRequestContext:(id)arg1 isQueryingCacheForRequest:(id)arg2 didWait:(_Bool *)arg3 didFindImage:(_Bool *)arg4 resultHandler:(CDUnknownBlockType)arg5;
 - (int)requestAnimatedImageForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (int)requestContentEditingInputForAsset:(id)arg1 withOptions:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)_shouldUseRAWResourceAsUnadjustedBaseForAsset:(id)arg1 options:(id)arg2;
+- (int)requestAVAssetForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (int)requestURLForVideo:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (int)requestNewCGImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
+- (id)synchronousImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4;
+- (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (int)requestExportSessionForVideo:(id)arg1 options:(id)arg2 exportPreset:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
+- (int)requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (int)requestLivePhotoForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
+- (void)_prepareLivePhotoResultWithImage:(struct CGImage *)arg1 uiOrientation:(int)arg2 shouldIncludeVideo:(_Bool)arg3 videoURL:(id)arg4 info:(id)arg5 photoTime:(CDStruct_1b6d18a9)arg6 asset:(id)arg7 completion:(CDUnknownBlockType)arg8;
+- (int)requestImageDataAndOrientationForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (int)requestImageDataForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (int)requestImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
-- (id)imageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 outInfo:(id *)arg5;
-@property(readonly, copy) NSString *description;
-- (void)dealloc;
-- (id)init;
-- (void)photoLibraryDidChange:(id)arg1;
-- (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (int)_requestAVAssetForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-- (id)_videoAVObjectBuilderFromVideoURL:(id)arg1 info:(id)arg2 playbackOnly:(_Bool)arg3;
-- (id)_requestAsynchronousVideoURLForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 options:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
-- (id)requestAsynchronousVideoURLForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 options:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
-- (id)requestAsynchronousVideoURLForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-- (id)_asyncFetchCloudSharedVideoForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-- (id)requestAsynchronousImageForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 targetSize:(struct CGSize)arg3 contentMode:(int)arg4 options:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
-- (id)requestAsynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
-- (void)requestSynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)unregisterRequest:(id)arg1;
-- (void)registerRequest:(id)arg1;
-- (id)_domain;
+- (void)cancelImageRequest:(int)arg1;
+- (void)additionalWorkForImageRequestCompletedWithResult:(id)arg1 request:(id)arg2 context:(id)arg3;
+- (int)runRequestWithContext:(id)arg1;
+- (int)nextID;
 @property(readonly) unsigned int hash;
-- (struct CGImage *)newResizedImageForImage:(struct CGImage *)arg1 withSize:(struct CGSize)arg2 normalizedCropRect:(struct CGRect)arg3 contentMode:(int)arg4;
-- (id)_modernImageManager;
-- (id)requestAsynchronousVideoURLForImageLoadingAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-- (id)requestAsynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 resultHandler:(CDUnknownBlockType)arg5;
-- (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize)arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (_Bool)_canStreamVideoForAsset:(id)arg1;
+- (void)_runBlockOnAppropriateResultQueueOrSynchronouslyWithRequest:(id)arg1 options:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (void)_handleActivityForMediaContext:(id)arg1;
+- (id)init;
 - (int)requestImagePropertiesForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 - (int)_requestImagePropertiesFromFileForAsset:(id)arg1 options:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
+- (void)buildExportSessionFromVideoURL:(id)arg1 infoDictionary:(id)arg2 exportPreset:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)buildAVAssetFromVideoURL:(id)arg1 infoDictionary:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)buildAVPlayerItemFromVideoURL:(id)arg1 infoDictionary:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_videoAVObjectBuilderFromVideoURL:(id)arg1 info:(id)arg2 playbackOnly:(_Bool)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 
 @end

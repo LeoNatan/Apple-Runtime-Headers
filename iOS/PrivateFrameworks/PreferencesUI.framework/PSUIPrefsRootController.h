@@ -13,9 +13,6 @@
     PSUIPrefsListController *_rootListController;
 }
 
-+ (void)stopRingtoneWithFadeOut:(float)arg1;
-+ (void)playRingtoneWithIdentifier:(id)arg1 loop:(_Bool)arg2;
-+ (_Bool)isPlayingRingtone;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 identifier:(id)arg2;
@@ -24,7 +21,6 @@
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;
 - (void)setupControllerForToolbar:(id)arg1;
-- (void)mediaServerDiedNotification:(id)arg1;
 
 @end
 

@@ -60,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isPresentedAndVisible;
 - (void)_handleActionSelectionGestureRecognizer:(id)arg1;
 - (void)_handleSystemProvidedGestureRecognizer:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (_Bool)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)_gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)_clearSystemProvidedGestureRecognizer;

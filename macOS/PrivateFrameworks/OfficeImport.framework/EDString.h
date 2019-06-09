@@ -11,6 +11,7 @@
 
 @class EDPhoneticInfo, EDRunsCollection, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDString : NSObject <NSCopying, EDImmutableObject>
 {
     NSString *mString;

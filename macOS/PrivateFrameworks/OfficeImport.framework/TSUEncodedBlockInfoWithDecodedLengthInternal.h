@@ -6,6 +6,7 @@
 
 #import <OfficeImport/TSUEncodedBlockInfoInternal.h>
 
+__attribute__((visibility("hidden")))
 @interface TSUEncodedBlockInfoWithDecodedLengthInternal : TSUEncodedBlockInfoInternal
 {
     unsigned long long _decodedLength;

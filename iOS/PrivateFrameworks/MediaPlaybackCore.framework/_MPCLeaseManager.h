@@ -17,7 +17,7 @@
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void).cxx_destruct;
 - (void)_playerDidPauseForPlaybackPreventionNotification:(id)arg1;
-- (void)prepareForPlayback;
+- (void)prepareForPlaybackWithUserIdentity:(id)arg1;
 - (void)dealloc;
 - (id)initWithPlaybackEngine:(id)arg1;
 

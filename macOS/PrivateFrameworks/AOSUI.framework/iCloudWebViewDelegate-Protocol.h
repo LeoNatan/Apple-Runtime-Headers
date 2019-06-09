@@ -6,11 +6,12 @@
 
 #import <AOSUI/NSObject-Protocol.h>
 
-@class JSValue, NSDictionary, NSString;
+@class JSValue, NSDictionary, NSString, iCloudAccountDetailsWebTabView;
 
 @protocol iCloudWebViewDelegate <NSObject>
 
 @optional
+- (void)authenticationFailed:(iCloudAccountDetailsWebTabView *)arg1;
 - (id)clientInfo;
 - (void)skipAndContinueSignIn;
 - (void)loadFailed:(NSString *)arg1;

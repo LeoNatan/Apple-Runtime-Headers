@@ -23,7 +23,6 @@
 @property(readonly, nonatomic) NSDictionary *sourcePixelBufferAttributes;
 @property(readonly, nonatomic) AVAssetWriterInput *assetWriterInput;
 @property(readonly, copy) NSString *description;
-- (void)finalize;
 - (void)dealloc;
 - (void)addCallbackToCancelDuringDeallocation:(id)arg1;
 - (id)initWithAssetWriterInput:(id)arg1 sourcePixelBufferAttributes:(id)arg2;

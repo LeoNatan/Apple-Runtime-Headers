@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, UIColor;
+@class NSString, PRMonogramColor, UIColor;
 
 @interface PRMonogram : NSObject
 {
     NSString *_text;
     unsigned long long _fontIndex;
     UIColor *_color;
+    PRMonogramColor *_monogramColor;
 }
 
 + (void)updatePlateOverlayLayer:(id)arg1;
@@ -21,16 +22,9 @@
 + (id)fontForIndex:(unsigned long long)arg1 plateDiameter:(double)arg2;
 + (unsigned long long)countOfFonts;
 + (id)_fontSpecs;
-+ (id)_defaultMonogramColor;
-+ (id)monogramColors;
-+ (id)plateSelectedActiveTextColor;
-+ (id)plateSelectedInactiveColor;
-+ (id)plateSelectedActiveColor;
-+ (id)plateGradientEndColor;
-+ (id)plateGradientStartColor;
-+ (id)plateFlatColor;
-+ (id)monogramWithData:(id)arg1;
 + (id)monogram;
++ (id)monogramWithData:(id)arg1;
+@property(retain, nonatomic) PRMonogramColor *monogramColor; // @synthesize monogramColor=_monogramColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 @property(nonatomic) unsigned long long fontIndex; // @synthesize fontIndex=_fontIndex;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
@@ -39,12 +33,19 @@
 - (_Bool)_renderTextInContext:(struct CGContext *)arg1 frame:(struct CGRect)arg2;
 - (id)snapshotWithSize:(struct CGSize)arg1 scale:(double)arg2 options:(id)arg3;
 - (id)stringAttributesForDiameter:(double)arg1;
-- (void)_takeValuesFromDataRepresentation:(id)arg1;
-- (id)dataRepresentation;
 - (void)setFontIndexToUnsupportedValue;
-- (id)_initWithData:(id)arg1;
+@property(readonly, nonatomic) UIColor *plateSelectedActiveTextColor;
+@property(readonly, nonatomic) UIColor *plateSelectedInactiveColor;
+@property(readonly, nonatomic) UIColor *plateSelectedActiveColor;
+@property(readonly, nonatomic) UIColor *plateGradientEndColor;
+@property(readonly, nonatomic) UIColor *plateGradientStartColor;
+@property(readonly, nonatomic) UIColor *plateFlatColor;
+- (id)initWithText:(id)arg1 fontIndex:(unsigned long long)arg2 monogramColor:(id)arg3;
 - (id)init;
-- (id)snapshotWithOptions:(id)arg1;
+- (void)_takeValuesFromDataRepresentation:(id)arg1;
+- (id)dataRepresentationWithVersion:(unsigned char)arg1;
+- (id)dataRepresentation;
+- (id)_initWithData:(id)arg1;
 
 @end
 

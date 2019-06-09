@@ -16,6 +16,7 @@
 - (void)assistantConnection:(AFConnection *)arg1 audioSessionWillBecomeActive:(BOOL)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 startPlaybackDidFail:(long long)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 willProcessStartPlayback:(long long)arg2;
+- (void)assistantConnection:(AFConnection *)arg1 willProcessStartPlayback:(long long)arg2 completion:(void (^)(BOOL))arg3;
 - (void)assistantConnection:(AFConnection *)arg1 didHandleQuickStopWithAction:(unsigned long long)arg2;
 - (void)assistantConnection:(AFConnection *)arg1 didStopAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2 error:(NSError *)arg3;
 - (void)assistantConnection:(AFConnection *)arg1 didNotStartAudioPlaybackRequest:(AFAudioPlaybackRequest *)arg2 error:(NSError *)arg3;

@@ -23,6 +23,7 @@
 + (double)widthForSunflowerRenderingType:(long long)arg1;
 + (double)widthForRenderingType:(long long)arg1 options:(unsigned long long)arg2;
 + (unsigned long long)scopeOptionsForEnvironment:(id)arg1;
++ (id)simplePickerThumbnailScope;
 + (id)funCamCarouselThumbnailScope;
 + (id)listControllerThumbnailScope;
 + (id)gridThumbnailScope;
@@ -34,9 +35,11 @@
 @property(readonly, nonatomic) long long renderingType; // @synthesize renderingType=_renderingType;
 @property(readonly, nonatomic) float sizeModifier; // @synthesize sizeModifier=_sizeModifier;
 @property(readonly, nonatomic) NSString *framingMode; // @synthesize framingMode=_framingMode;
+- (void).cxx_destruct;
 - (id)description;
 - (id)framingModeIdentifier;
 - (id)adaptedFramingModeForObjectType:(long long)arg1;
+- (id)copyApplyingPoseOverride:(id)arg1;
 - (id)copyWithSizeModifier:(float)arg1;
 - (id)copyWithFramingMode:(id)arg1;
 @property(readonly, nonatomic) struct CGSize size;

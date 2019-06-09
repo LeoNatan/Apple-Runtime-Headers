@@ -20,9 +20,6 @@
     float _horizontalClippingResistancePriority;
     float _verticalHuggingPriority;
     float _horizontalHuggingPriority;
-    BOOL _unused;
-    id _unused2;
-    id _unused3;
     id _private;
     struct {
         unsigned int _inDealloc:1;

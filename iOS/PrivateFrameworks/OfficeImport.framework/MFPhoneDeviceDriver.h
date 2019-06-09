@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (int)bezierTo:(id)arg1 x:(int)arg2 y:(int)arg3 x2:(int)arg4 y2:(int)arg5 x3:(int)arg6 y3:(int)arg7;
 - (int)ellipse:(id)arg1 x1:(int)arg2 y1:(int)arg3 x2:(int)arg4 y2:(int)arg5;
 - (int)roundRect:(id)arg1 left:(int)arg2 top:(int)arg3 right:(int)arg4 bottom:(int)arg5 rx:(double)arg6 ry:(double)arg7;
+- (int)fillRectangle:(id)arg1 x1:(int)arg2 y1:(int)arg3 x2:(int)arg4 y2:(int)arg5;
 - (int)rectangle:(id)arg1 x1:(int)arg2 y1:(int)arg3 x2:(int)arg4 y2:(int)arg5;
 - (int)lineTo:(id)arg1 x:(double)arg2 y:(double)arg3;
 - (int)polyPolygon:(id)arg1 in_points:(struct CGPoint *)arg2 in_polyCounts:(int *)arg3 in_count:(int)arg4;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 - (int)textOut:(id)arg1 px:(int *)arg2 py:(int *)arg3 in_text:(id)arg4;
 - (void)drawBezierPath:(id)arg1 dc:(id)arg2 fill:(_Bool)arg3 stroke:(_Bool)arg4;
 - (struct CGRect)getCanvas;
-- (void)dealloc;
 - (id)initWithCanvas:(struct CGRect)arg1;
 
 @end

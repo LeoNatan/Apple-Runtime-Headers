@@ -47,8 +47,10 @@
     _Bool _inlineDayViewRespectsSelectedCalendarsFilter;
     _Bool _trustsStatus;
     _Bool _needsReload;
+    _Bool _itemsNeedReload;
     _Bool _dead;
     _Bool _tableIsBeingEdited;
+    _Bool _minimalMode;
     NSArray *_currentSections;
     int _scrollToSection;
     UIView *_headerView;
@@ -71,7 +73,6 @@
     _Bool _showsDelegatorMessage;
     _Bool _showsDelegateMessage;
     _Bool _showsConferenceItem;
-    _Bool _minimalMode;
     _Bool _noninteractivePlatterMode;
     _Bool _isLargeDayView;
     int _editorShowTransition;
@@ -89,7 +90,6 @@
 @property(nonatomic) int editorShowTransition; // @synthesize editorShowTransition=_editorShowTransition;
 @property(nonatomic) _Bool isLargeDayView; // @synthesize isLargeDayView=_isLargeDayView;
 @property(nonatomic) _Bool noninteractivePlatterMode; // @synthesize noninteractivePlatterMode=_noninteractivePlatterMode;
-@property(nonatomic) _Bool minimalMode; // @synthesize minimalMode=_minimalMode;
 @property(nonatomic) _Bool showsConferenceItem; // @synthesize showsConferenceItem=_showsConferenceItem;
 @property(nonatomic) _Bool showsDelegateMessage; // @synthesize showsDelegateMessage=_showsDelegateMessage;
 @property(nonatomic) _Bool showsDelegatorMessage; // @synthesize showsDelegatorMessage=_showsDelegatorMessage;
@@ -138,7 +138,7 @@
 - (void)eventStatusButtonsView:(id)arg1 calculatedFontSizeToFit:(double)arg2;
 - (double)eventStatusButtonsViewButtonFontSize:(id)arg1;
 - (void)eventStatusButtonsView:(id)arg1 didSelectAction:(long long)arg2;
-- (id)previewActionItems;
+- (id)previewActionsWithPresentationController:(id)arg1;
 - (id)_statusButtonsForOrb:(_Bool)arg1;
 - (id)_statusButtons;
 - (_Bool)_shouldDisplayStatusButtons;
@@ -171,6 +171,7 @@
 - (id)activeEventEditor;
 - (void)editEvent;
 - (void)doneButtonPressed;
+- (void)_notifyDetailItemsOfVisibilityOnScreen;
 - (void)_updateStatusButtonsActions;
 - (id)_statusButtonsContainerView;
 - (id)_statusButtonsView;
@@ -195,6 +196,8 @@
 - (id)accessDeniedView;
 @property(nonatomic) int scrollToSection;
 - (void)completeWithAction:(long long)arg1;
+- (void)_didToggleMinimalMode;
+@property(nonatomic) _Bool minimalMode;
 @property(nonatomic) _Bool inlineDayViewRespectsSelectedCalendarsFilter;
 @property(nonatomic) _Bool calendarPreviewIsInlineDayView;
 @property(nonatomic) _Bool hideCalendarPreview;
@@ -202,6 +205,7 @@
 - (_Bool)_backingEventAllowsEditing;
 @property(retain, nonatomic) EKEvent *event;
 - (void)_reloadIfNeeded;
+- (void)_setNeedsReloadIncludingItems:(_Bool)arg1;
 - (void)setNeedsReload;
 - (void)reloadedData;
 - (void)openAttendeesDetailItem;

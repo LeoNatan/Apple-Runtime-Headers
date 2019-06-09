@@ -37,6 +37,7 @@
 + (id)defaultWorkspace;
 + (id)workspaceWithName:(id)arg1 atPath:(id)arg2 objectModelName:(id)arg3 objectModelBundle:(id)arg4 useReadOnly:(BOOL)arg5;
 + (id)workspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
++ (void)initialize;
 @property(retain, nonatomic) NSError *persistentStoreError; // @synthesize persistentStoreError=_persistentStoreError;
 @property(readonly, nonatomic) BOOL integrityCheckFailed; // @synthesize integrityCheckFailed=_integrityCheckFailed;
 @property(retain, nonatomic) NSBundle *objectModelResidentBundle; // @synthesize objectModelResidentBundle=_objectModelResidentBundle;
@@ -65,7 +66,8 @@
 - (id)initWorkspaceWithService:(id)arg1;
 - (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 objectModelName:(id)arg3 objectModelBundle:(id)arg4 useReadOnly:(BOOL)arg5;
 - (id)initWorkspaceWithName:(id)arg1 atPath:(id)arg2 useReadOnly:(BOOL)arg3;
-- (id)_initWithName:(id)arg1 useReadOnly:(BOOL)arg2 customModelName:(id)arg3 loadModelFromBundle:(id)arg4;
+- (id)initInMemoryWorkspaceWithName:(id)arg1 customModelName:(id)arg2 objectModelBundle:(id)arg3 revision:(id)arg4;
+- (id)_initWithName:(id)arg1 inMemory:(BOOL)arg2 useReadOnly:(BOOL)arg3 customModelName:(id)arg4 loadModelFromBundle:(id)arg5;
 - (void)dealloc;
 
 @end

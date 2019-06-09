@@ -12,12 +12,7 @@
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)sharedServiceFactory;
-- (id)_initWithServiceID:(id)arg1 forAccount:(id)arg2;
 - (id)serviceWithServiceID:(id)arg1 forAccount:(id)arg2;
-- (id)autorelease;
-- (oneway void)release;
-- (unsigned long long)retainCount;
-- (id)retain;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

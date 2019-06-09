@@ -6,7 +6,7 @@
 
 #import <PhotosUICore/PXCollectionsDataSource.h>
 
-@class NSArray, NSDictionary, PXPhotoKitCollectionsDataSourceManagerConfiguration;
+@class NSArray, NSDictionary, PHFetchResult, PXPhotoKitCollectionsDataSourceManagerConfiguration;
 
 @interface PXPhotoKitCollectionsDataSource : PXCollectionsDataSource
 {
@@ -16,11 +16,13 @@
     NSDictionary *__collectionsIndexPathsByCollection;
     NSDictionary *_itemFetchResultByCollection;
     NSArray *__virtualCollections;
+    PHFetchResult *_collectionsFetchResult;
     PXPhotoKitCollectionsDataSourceManagerConfiguration *_configuration;
 }
 
 + (long long)estimatedCountForAssetCollection:(id)arg1 withConfiguration:(id)arg2;
 @property(readonly, nonatomic) PXPhotoKitCollectionsDataSourceManagerConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(readonly, nonatomic) PHFetchResult *collectionsFetchResult; // @synthesize collectionsFetchResult=_collectionsFetchResult;
 @property(readonly, nonatomic) NSArray *_virtualCollections; // @synthesize _virtualCollections=__virtualCollections;
 @property(readonly, nonatomic) NSDictionary *itemFetchResultByCollection; // @synthesize itemFetchResultByCollection=_itemFetchResultByCollection;
 @property(readonly, nonatomic) NSDictionary *_collectionsIndexPathsByCollection; // @synthesize _collectionsIndexPathsByCollection=__collectionsIndexPathsByCollection;
@@ -29,10 +31,15 @@
 @property(readonly, nonatomic) NSArray *_collectionListBySection; // @synthesize _collectionListBySection=__collectionListBySection;
 - (void).cxx_destruct;
 - (void)enumerateCollectionsUsingBlock:(CDUnknownBlockType)arg1;
+- (long long)collectionsListCountForFetchResult:(id)arg1;
+- (long long)assetCollectionsCountForFetchResult:(id)arg1;
+- (long long)collectionsListCountForSection:(long long)arg1;
+- (long long)assetCollectionsCountForSection:(long long)arg1;
 - (long long)countForCollection:(id)arg1;
 - (id)collectionListForSection:(long long)arg1;
 - (id)collectionAtIndexPath:(id)arg1;
 - (id)indexPathForCollection:(id)arg1;
+- (id)content;
 - (struct PXSimpleIndexPath)indexPathForObjectReference:(id)arg1;
 - (id)_assetAtSimpleIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)_collectionAtSimpleIndexPath:(struct PXSimpleIndexPath)arg1;
@@ -42,7 +49,7 @@
 - (long long)numberOfItemsInSection:(long long)arg1;
 - (long long)numberOfSections;
 - (id)init;
-- (id)initWithCollectionListBySection:(id)arg1 collectionsFetchResultBySection:(id)arg2 keyAssetsFetchResultsByCollection:(id)arg3 collectionsIndexPathsByCollection:(id)arg4 itemFetchResultByCollection:(id)arg5 virtualCollections:(id)arg6 dataSourceConfiguration:(id)arg7;
+- (id)initWithCollectionListBySection:(id)arg1 collectionsFetchResultBySection:(id)arg2 keyAssetsFetchResultsByCollection:(id)arg3 collectionsIndexPathsByCollection:(id)arg4 itemFetchResultByCollection:(id)arg5 virtualCollections:(id)arg6 collectionsFetchResult:(id)arg7 dataSourceConfiguration:(id)arg8;
 
 @end
 

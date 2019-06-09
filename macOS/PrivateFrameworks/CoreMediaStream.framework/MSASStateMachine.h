@@ -187,7 +187,6 @@
 - (void)start;
 - (void)workQueueApplyServerSideConfiguration;
 - (int)assetsInDownloadQueueCount;
-- (void)dealloc;
 - (id)initWithPersonID:(id)arg1 eventQueue:(id)arg2;
 - (id)initWithPersonID:(id)arg1;
 - (id)init;

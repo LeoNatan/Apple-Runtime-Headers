@@ -10,20 +10,21 @@
 #import <HomeKit/HMMutableApplicationData-Protocol.h>
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
-#import <HomeKit/_HMLocationHandlerDelegate-Protocol.h>
 
-@class CLLocation, HMApplicationData, HMFUnfairLock, HMHomeManager, HMMutableArray, HMRoom, HMSetupViewController, HMUser, NSArray, NSDate, NSString, NSUUID, _HMContext;
+@class CLLocation, HMApplicationData, HMCameraClipCollectionManager, HMFMessageDestination, HMFUnfairLock, HMHomeManager, HMMutableArray, HMRoom, HMSetupViewController, HMUser, NSArray, NSDate, NSOperationQueue, NSString, NSUUID, _HMContext;
 @protocol HMHomeDelegate, HMSetupRemoteService, OS_dispatch_queue;
 
-@interface HMHome : NSObject <_HMLocationHandlerDelegate, NSSecureCoding, HMFMessageReceiver, HMObjectMerge, HMMutableApplicationData>
+@interface HMHome : NSObject <NSSecureCoding, HMFMessageReceiver, HMObjectMerge, HMMutableApplicationData>
 {
-    HMFUnfairLock *_lock;
     _Bool _automaticSoftwareUpdateEnabled;
     int _minimumMediaUserPrivilege;
     _Bool _mediaPeerToPeerEnabled;
     NSString *_mediaPassword;
+    HMFUnfairLock *_lock;
     _Bool _primary;
     _Bool _notificationsEnabled;
+    _Bool _multiUserEnabled;
+    _Bool _hasAnyUserAcknowledgedCameraRecordingOnboarding;
     _Bool _ownerUser;
     _Bool _adminUser;
     _Bool _notificationEnableRequested;
@@ -34,35 +35,42 @@
     HMUser *_currentUser;
     HMApplicationData *_applicationData;
     NSDate *_notificationsUpdatedTime;
+    HMCameraClipCollectionManager *_cameraClipCollectionManager;
+    int _protectionMode;
+    int _homeLocationStatus;
     unsigned int _homeHubState;
     HMHomeManager *_homeManager;
     HMSetupViewController *_setupViewController;
     id <HMSetupRemoteService> _setupRemoteViewController;
-    HMMutableArray *_currentAccessories;
     HMMutableArray *_currentRooms;
     HMMutableArray *_currentZones;
     HMMutableArray *_currentServiceGroups;
-    HMMutableArray *_currentActionSets;
     HMMutableArray *_currentTriggerOwnedActionSets;
     HMMutableArray *_currentActions;
     HMMutableArray *_currentTriggers;
     HMMutableArray *_currentUsers;
     HMMutableArray *_currentResidentDevices;
     int _locationAuthorization;
+    NSOperationQueue *_shareWithHomeOwnerOperationQueue;
     _HMContext *_context;
     NSUUID *_uuid;
     HMRoom *_homeAsRoom;
+    HMMutableArray *_currentActionSets;
     HMMutableArray *_currentMediaSystems;
+    HMMutableArray *_currentAccessories;
 }
 
 + (_Bool)supportsSecureCoding;
 + (_Bool)isValidMediaPassword:(id)arg1 error:(id *)arg2;
 + (id)generateMediaPasswordWithError:(id *)arg1;
 + (_Bool)accessorySupportsMediaAccessControl:(id)arg1;
+@property(retain, nonatomic) HMMutableArray *currentAccessories; // @synthesize currentAccessories=_currentAccessories;
 @property(retain, nonatomic) HMMutableArray *currentMediaSystems; // @synthesize currentMediaSystems=_currentMediaSystems;
+@property(retain, nonatomic) HMMutableArray *currentActionSets; // @synthesize currentActionSets=_currentActionSets;
 @property(retain, nonatomic) HMRoom *homeAsRoom; // @synthesize homeAsRoom=_homeAsRoom;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) NSOperationQueue *shareWithHomeOwnerOperationQueue; // @synthesize shareWithHomeOwnerOperationQueue=_shareWithHomeOwnerOperationQueue;
 @property(nonatomic) _Bool notificationEnableRequested; // @synthesize notificationEnableRequested=_notificationEnableRequested;
 @property(nonatomic) int locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
 @property(nonatomic, getter=isAdminUser) _Bool adminUser; // @synthesize adminUser=_adminUser;
@@ -72,15 +80,15 @@
 @property(retain, nonatomic) HMMutableArray *currentTriggers; // @synthesize currentTriggers=_currentTriggers;
 @property(retain, nonatomic) HMMutableArray *currentActions; // @synthesize currentActions=_currentActions;
 @property(retain, nonatomic) HMMutableArray *currentTriggerOwnedActionSets; // @synthesize currentTriggerOwnedActionSets=_currentTriggerOwnedActionSets;
-@property(retain, nonatomic) HMMutableArray *currentActionSets; // @synthesize currentActionSets=_currentActionSets;
 @property(retain, nonatomic) HMMutableArray *currentServiceGroups; // @synthesize currentServiceGroups=_currentServiceGroups;
 @property(retain, nonatomic) HMMutableArray *currentZones; // @synthesize currentZones=_currentZones;
 @property(retain, nonatomic) HMMutableArray *currentRooms; // @synthesize currentRooms=_currentRooms;
-@property(retain, nonatomic) HMMutableArray *currentAccessories; // @synthesize currentAccessories=_currentAccessories;
 @property(nonatomic) __weak id <HMSetupRemoteService> setupRemoteViewController; // @synthesize setupRemoteViewController=_setupRemoteViewController;
 @property(nonatomic) __weak HMSetupViewController *setupViewController; // @synthesize setupViewController=_setupViewController;
 @property(nonatomic) __weak HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) unsigned int homeHubState; // @synthesize homeHubState=_homeHubState;
+@property(nonatomic) _Bool multiUserEnabled; // @synthesize multiUserEnabled=_multiUserEnabled;
+@property int protectionMode; // @synthesize protectionMode=_protectionMode;
 - (void).cxx_destruct;
 - (void)_updateApplicationData:(id)arg1 forAppDataContainerWithUUID:(id)arg2 appDataContainerUUIDKeyName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)updateApplicationData:(id)arg1 forAppDataContainerWithUUID:(id)arg2 appDataContainerUUIDKeyName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -89,10 +97,11 @@
 - (void)updateApplicationData:(id)arg1 forRoom:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateApplicationData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
-- (id)messageDestination;
+@property(readonly, copy, nonatomic) HMFMessageDestination *messageDestination;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)_notifyDelegateOfUpdatedHomeLocationStatus;
 - (void)_notifyDelegateOfRemovedMediaSystem:(id)arg1;
 - (void)_notifyDelegateOfAddedMediaSystem:(id)arg1;
 - (void)_removeIncompatibleTrigger:(id)arg1;
@@ -115,6 +124,7 @@
 - (void)notifyDelegateOfAppDataUpdateForRoom:(id)arg1;
 - (id)_getContainerForAppData:(id)arg1;
 - (void)_handleHomeHubStateUpdatedNotification:(id)arg1;
+- (void)_handleHomeLocationStatusUpdateNotification:(id)arg1;
 - (void)_handleRequestAccessorySetupCodeRequestKey:(id)arg1;
 - (void)_launchSetupViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)handleUIApplicationWillResignActiveNotification:(id)arg1;
@@ -135,19 +145,21 @@
 - (void)enableNotifications:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateInvitation:(id)arg1 invitationState:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_acceptInvitation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)didUpdateAuthorization:(int)arg1;
-- (void)_updateLocation:(id)arg1;
+- (void)__locationAuthorizationUpdated:(id)arg1;
+- (void)__updateLocation:(id)arg1 mergeOperations:(id)arg2;
 - (void)_retrieveLocation;
+- (void)_updateAccessForUser:(id)arg1 camerasAccessLevel:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)updateAccessForUser:(id)arg1 camerasAccessLevel:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateForUser:(id)arg1 presenceAuthorizationStatus:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateAccessForUser:(id)arg1 remoteAccess:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateAccessForUser:(id)arg1 administrator:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_handleMultipleCharacteristicValuesUpdated:(id)arg1;
-- (void)_handlePairedAccessoryErrorNotification:(id)arg1;
-- (void)_handleBlockedStateNotification:(id)arg1;
+- (void)_handleAccessoryErrorNotification:(id)arg1;
 - (void)_handleUserRemovedNotification:(id)arg1;
 - (void)_handleUpdatedPresenceComputeNotification:(id)arg1;
 - (void)_handleUpdatedPresenceAuthNotification:(id)arg1;
 - (void)_handleUpdatedUserAccessNotification:(id)arg1;
+- (id)_findUserWithID:(id)arg1;
 - (void)_handleUserAddedNotification:(id)arg1;
 - (void)_handleUserInvitationsUpdatedNotification:(id)arg1;
 - (id)outgoingInvitations;
@@ -163,7 +175,6 @@
 - (void)_removeServices:(id)arg1;
 - (void)removeServices:(id)arg1;
 - (void)_handleAccessoryRemovedNotification:(id)arg1;
-- (void)_handleRegisteredProgressNotification:(id)arg1;
 - (void)_handleAddAccessoryProgressNotification:(id)arg1;
 - (void)_callProgressHandler:(CDUnknownBlockType)arg1 updatingAccessoryDescription:(id)arg2 fromMessage:(id)arg3;
 - (void)_handleAccessoryAddedNotification:(id)arg1;
@@ -184,6 +195,10 @@
 - (void)_handleRoomAddedNotification:(id)arg1;
 - (void)_handleHomeLocationUpdateNotificaton:(id)arg1;
 - (void)_handleHomeRenamedNotification:(id)arg1;
+- (id)profileWithUniqueIdentifier:(id)arg1;
+- (id)mediaProfileWithProfileUUID:(id)arg1;
+- (id)mediaProfileWithUUID:(id)arg1;
+- (id)accessoryWithUniqueIdentifier:(id)arg1;
 - (id)accessoryWithUUID:(id)arg1;
 - (id)triggerWithName:(id)arg1;
 - (id)triggerWithUUID:(id)arg1;
@@ -200,6 +215,14 @@
 - (void)invalidate;
 - (void)_registerNotificationHandlers;
 - (id)_privateDelegate;
+- (void)_handleHasAnyUserAcknowledgedCameraRecordingOnboardingChangeNotification:(id)arg1;
+- (void)_setHasAnyUserAcknowledgedCameraRecordingOnboardingWithCompleteionHandler:(CDUnknownBlockType)arg1;
+- (void)setHasAnyUserAcknowledgedCameraRecordingOnboardingWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(nonatomic) _Bool hasAnyUserAcknowledgedCameraRecordingOnboarding; // @synthesize hasAnyUserAcknowledgedCameraRecordingOnboarding=_hasAnyUserAcknowledgedCameraRecordingOnboarding;
+- (void)_handleMultiUserEnabledChangeNotification:(id)arg1;
+- (void)_enableMultiUserWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)enableMultiUserWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)isMultiUserEnabled;
 - (void)_updateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
@@ -223,6 +246,7 @@
 - (id)createActionSetWithName:(id)arg1 type:(id)arg2 uuid:(id)arg3;
 - (id)createAndAddActionSetWithName:(id)arg1 type:(id)arg2 uuid:(id)arg3;
 - (void)sendConfigureBulletinNotification;
+@property(readonly) HMCameraClipCollectionManager *cameraClipCollectionManager; // @synthesize cameraClipCollectionManager=_cameraClipCollectionManager;
 @property(copy, nonatomic) NSDate *notificationsUpdatedTime; // @synthesize notificationsUpdatedTime=_notificationsUpdatedTime;
 @property(nonatomic, getter=areNotificationsEnabled) _Bool notificationsEnabled; // @synthesize notificationsEnabled=_notificationsEnabled;
 - (id)targetControllers;
@@ -231,8 +255,9 @@
 - (void)setApplicationData:(id)arg1;
 @property(readonly, nonatomic) HMApplicationData *applicationData;
 @property(retain, nonatomic) HMUser *currentUser; // @synthesize currentUser=_currentUser;
-@property(retain, nonatomic) CLLocation *homeLocation; // @synthesize homeLocation=_homeLocation;
+@property(readonly) CLLocation *homeLocation; // @synthesize homeLocation=_homeLocation;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property int homeLocationStatus; // @synthesize homeLocationStatus=_homeLocationStatus;
 @property(nonatomic, getter=isPrimary) _Bool primary; // @synthesize primary=_primary;
 @property(nonatomic) __weak id <HMHomeDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
@@ -241,9 +266,10 @@
 - (id)initWithName:(id)arg1 uuid:(id)arg2 homeAsRoomUUID:(id)arg3 homeAsRoomName:(id)arg4 actionSets:(id)arg5;
 - (id)initWithName:(id)arg1 uuid:(id)arg2;
 - (id)init;
+- (id)cameraProfileWithUUID:(id)arg1;
+- (id)cameraProfileWithUniqueIdentifier:(id)arg1;
 - (void)_performBatchCharacteristicRequest:(id)arg1;
 - (void)performBatchCharacteristicRequest:(id)arg1;
-- (void)_unblockAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)unblockAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)servicesWithTypes:(id)arg1;
 - (void)_assignAccessory:(id)arg1 toRoom:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -258,10 +284,14 @@
 - (void)startPairingWithAccessoryDescription:(id)arg1 setupRemoteViewController:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)stopDiscoveringSymptomsForNearbyDevices;
 - (void)startDiscoveringSymptomsForNearbyDevices;
-- (void)_addAndSetupAccessoriesWithSetupPayload:(id)arg1 browseRequest:(id)arg2 suggestedRoomName:(id)arg3 legacyAPI:(_Bool)arg4 trustedOrigin:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_addAndSetupAccessoriesWithSetupPayloadURL:(id)arg1 browseRequest:(id)arg2 suggestedRoomName:(id)arg3 ownershipProof:(id)arg4 userActivityID:(id)arg5 legacyAPI:(_Bool)arg6 trustedOrigin:(_Bool)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)addAndSetupAccessoriesWithSetupPayload:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addAccessoryWithSetupPayload:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)registerSetupProgressHandler:(CDUnknownBlockType)arg1 forAccessory:(id)arg2;
+- (void)addAccessoryWithPayload:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)addAccessoryWithAccesssorySetupPayload:(id)arg1 progress:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)addAccessoryWithAccessorySetupPayload:(id)arg1 progress:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)establishShareWithHomeOwner:(id)arg1 container:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)shareWithHomeOwner:(id)arg1 container:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addAndSetUpNewAccessoriesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)addAndSetupAccessoriesWithPayload:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addAndSetupAccessoriesWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -269,10 +299,13 @@
 - (void)continuePairingForAccessoryWithUUID:(id)arg1 setupCode:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_cancelPairingForAccessoryWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)cancelPairingForAccessoryWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_addAccessory:(id)arg1 appID:(id)arg2 password:(id)arg3 setupCodeDeferred:(_Bool)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)startPairingWithAccessory:(id)arg1 accessorySetupDescription:(id)arg2 setupRemoteViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)addAccessory:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_addAccessory:(id)arg1 accessoryDescription:(id)arg2 password:(id)arg3 setupCodeDeferred:(_Bool)arg4 progress:(CDUnknownBlockType)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)startPairingWithAccessory:(id)arg1 accessorySetupDescription:(id)arg2 setupRemoteViewController:(id)arg3 progress:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)addAccessory:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)startPairingWithAccessory:(id)arg1 accessorySetupDescription:(id)arg2 setupRemoteViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)registerSetupProgressHandler:(CDUnknownBlockType)arg1 forAccessory:(id)arg2;
+- (void)addAccessory:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)addAccessory:(id)arg1 password:(id)arg2 progress:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(readonly, copy, nonatomic) NSArray *accessories;
 - (id)roomForEntireHome;
 - (void)_removeRoom:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -339,6 +372,9 @@
 @property(getter=isMediaPeerToPeerEnabled) _Bool mediaPeerToPeerEnabled; // @dynamic mediaPeerToPeerEnabled;
 - (void)updateMinimumMediaUserPrivilege:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property int minimumMediaUserPrivilege; // @dynamic minimumMediaUserPrivilege;
+- (void)_handleHomeNetworkProtectionModeUpdatedNotification:(id)arg1;
+- (void)updateNetworkProtection:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)executeActions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

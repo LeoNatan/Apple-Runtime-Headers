@@ -12,6 +12,9 @@
 }
 
 @property(nonatomic) unsigned int reason; // @synthesize reason=_reason;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 reason:(unsigned int)arg2;
 
 @end

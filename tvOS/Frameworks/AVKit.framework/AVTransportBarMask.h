@@ -8,6 +8,7 @@
 
 @class NSArray, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVTransportBarMask : NSObject
 {
     UIImage *_maskImage;

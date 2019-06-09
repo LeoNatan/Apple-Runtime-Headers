@@ -13,6 +13,13 @@
 + (id)tsu_errorWithDomain:(id)arg1 code:(long long)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4;
 + (id)tsu_errorWithCode:(long long)arg1 userInfo:(id)arg2;
 + (id)tsu_errorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3 recoverySuggestion:(id)arg4;
++ (id)tsu_fileWritePOSIXErrorWithNumber:(int)arg1 userInfo:(id)arg2;
++ (id)tsu_fileWriteUnknownErrorWithUserInfo:(id)arg1;
++ (id)tsu_fileReadPOSIXErrorWithNumber:(int)arg1 userInfo:(id)arg2;
++ (id)tsu_fileReadCorruptedFileErrorWithUserInfo:(id)arg1;
++ (id)tsu_fileReadUnknownErrorWithUserInfo:(id)arg1;
++ (id)tsu_userInfoWithErrorType:(long long)arg1 userInfo:(id)arg2;
++ (id)tsu_errorWithWarning:(id)arg1;
 - (BOOL)tsu_isErrorPassingTest:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL tsu_isNoSuchFileError;
 @property(readonly, nonatomic) BOOL tsu_isCancelError;
@@ -21,5 +28,8 @@
 - (id)tsu_localizedAlertTitle;
 - (id)tsu_errorPreservingCancel;
 - (id)tsu_errorPreservingAlertTitle;
+@property(readonly, nonatomic) BOOL tsu_isWriteError;
+@property(readonly, nonatomic) BOOL tsu_isCorruptedError;
+@property(readonly, nonatomic) BOOL tsu_isReadError;
 @end
 

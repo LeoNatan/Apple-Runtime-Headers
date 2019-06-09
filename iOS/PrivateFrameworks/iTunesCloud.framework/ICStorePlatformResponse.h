@@ -18,6 +18,7 @@
     NSArray *_requestedItemIdentifiers;
     NSDictionary *_responseDictionary;
     NSString *_storefrontIdentifier;
+    _Bool _authenticated;
 }
 
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
@@ -26,6 +27,8 @@
 - (void).cxx_destruct;
 - (void)_enumerateResultDictionariesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy, nonatomic) NSDictionary *resultsDictionary;
+@property(readonly, nonatomic, getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
 @property(readonly, copy, nonatomic) NSString *storefrontIdentifier;
 - (id)itemForIdentifier:(id)arg1;
 - (void)enumerateItemsUsingBlock:(CDUnknownBlockType)arg1;

@@ -8,7 +8,7 @@
 
 #import <PhotoLibraryServices/PLCloudSharedAlbumProtocol-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSString, NSURL, PLManagedAsset, UIImage;
+@class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSObject, NSOrderedSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
 
 @interface PLCloudSharedAlbum : PLManagedAlbum <PLCloudSharedAlbumProtocol>
 {
@@ -16,22 +16,17 @@
 }
 
 + (id)lightweightReimportDirectoryNameWithGUID:(id)arg1 cloudPersonID:(id)arg2;
-+ (id)cloudOwnerDisplayNameWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 includingEmail:(_Bool)arg5 allowsEmail:(_Bool)arg6;
-+ (id)localizedSharedByLabelWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 isOwned:(_Bool)arg5 allowsEmail:(_Bool)arg6;
++ (id)cloudOwnerDisplayNameWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 includingEmail:(_Bool)arg5 allowsEmail:(_Bool)arg6 emailAddressManager:(id)arg7;
++ (id)localizedSharedByLabelWithFirstName:(id)arg1 lastName:(id)arg2 fullName:(id)arg3 emailKey:(id)arg4 isOwned:(_Bool)arg5 allowsEmail:(_Bool)arg6 emailAddressManager:(id)arg7;
 + (id)allCloudSharedAlbumsInLibrary:(id)arg1;
 + (id)cloudSharedAlbumWithObjectID:(id)arg1 managedObjectContext:(id)arg2;
 + (id)cloudSharedAlbumWithGUID:(id)arg1 inLibrary:(id)arg2;
 + (id)entityName;
-+ (id)entityInManagedObjectContext:(id)arg1;
-- (id)activityViewControllerSubject:(id)arg1;
-- (id)activityViewController:(id)arg1 thumbnailForActivityType:(id)arg2;
-- (id)activityViewController:(id)arg1 itemsForActivityType:(id)arg2;
-- (id)activityViewControllerPlaceholderItems:(id)arg1;
 - (void)persistRecoveryMetadata;
 - (void)userDeleteSubscriberRecord:(id)arg1;
 @property(readonly, retain, nonatomic) NSOrderedSet *cloudAlbumSubscriberRecords; // @dynamic cloudAlbumSubscriberRecords;
 @property(retain, nonatomic) NSString *cloudOwnerEmail;
-- (void)publishBatchOfOriginalAssets:(id)arg1 withBatchCommentText:(id)arg2 assetsSharingInfos:(id)arg3 andTrimmedVideoPathInfo:(id)arg4 isNewAlbum:(_Bool)arg5;
+- (void)publishBatchOfOriginalAssetUUIDs:(id)arg1 withBatchCommentText:(id)arg2 assetsSharingInfos:(id)arg3 customExportsInfo:(id)arg4 andTrimmedVideoPathInfo:(id)arg5 isNewAlbum:(_Bool)arg6;
 - (void)updateCloudLastContributionDateWithDate:(id)arg1;
 - (void)updateCloudLastInterestingChangeDateWithDate:(id)arg1;
 - (id)cloudOwnerDisplayNameIncludingEmail:(_Bool)arg1 allowsEmail:(_Bool)arg2;
@@ -42,6 +37,7 @@
 @property(readonly, nonatomic) _Bool isOwnedCloudSharedAlbum;
 @property(readonly, retain, nonatomic) NSString *localizedSharedWithLabel;
 - (id)localizedSharedByLabelAllowsEmail:(_Bool)arg1;
+- (id)emailAddressManager;
 @property(readonly) int cloudRelationshipStateLocalValue;
 @property(readonly) int cloudRelationshipStateValue;
 @property(readonly, copy, nonatomic) CDUnknownBlockType sortingComparator;
@@ -114,12 +110,12 @@
 @property(readonly, copy, nonatomic) NSString *name;
 @property(nonatomic) int pendingItemsCount;
 @property(nonatomic) int pendingItemsType;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 @property(readonly, nonatomic) unsigned long long photosCount;
-@property(readonly, retain, nonatomic) UIImage *posterImage;
+@property(readonly, retain, nonatomic) NSObject *posterImage;
 @property(retain, nonatomic) NSString *publicURL; // @dynamic publicURL;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset;
 @property(readonly, nonatomic) _Bool shouldDeleteWhenEmpty;
-@property(retain, nonatomic) NSDictionary *slideshowSettings;
 @property(readonly, retain, nonatomic) NSDate *startDate;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset;

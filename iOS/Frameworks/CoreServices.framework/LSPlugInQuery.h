@@ -21,7 +21,6 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_requiresDatabaseMappingEntitlement;
-- (_Bool)_shouldCacheResolvedResults;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)sort:(_Bool)arg1 pluginIDs:(id)arg2 andYield:(CDUnknownBlockType)arg3 context:(struct LSContext *)arg4;
 

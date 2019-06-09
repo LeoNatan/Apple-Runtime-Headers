@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface SCRRadioButton : SCRButton
 {
-    int _type;
+    long long _type;
 }
 
 - (BOOL)wantsAutoFocusIn;
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (id)titleElement;
 - (id)siblingTabUIElements;
 - (BOOL)isTab;
+- (BOOL)ignoreValueChangeAfterAction;
 - (BOOL)isControlElement;
 - (void)echoValueChangeToRequest:(id)arg1;
 - (id)valueDescription;

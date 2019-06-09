@@ -10,16 +10,13 @@
 
 @interface FPUserProcess : FPProcess
 {
-    NSMutableArray *_images;
     unsigned int _task;
     unsigned long long _sharedRegionBase;
     unsigned long long _sharedRegionSize;
     unsigned int _sharedRegionAlignmentSize;
     unsigned long long _phys_footprint;
     unsigned long long _phys_footprint_peak;
-    BOOL _anonymousDirtyRecalculation;
-    long long _kprvt;
-    long long _kshrd;
+    NSMutableArray *_images;
     unsigned long long _cachedDispositionAddress;
     int _cachedDisposition;
     FPMemoryRegion *_pendingUnusedSharedRegion;
@@ -30,13 +27,14 @@
 - (BOOL)_isAlive;
 - (void)_gatherImageData;
 - (void)_gatherPhysFootprint;
-- (void)_gatherKernelMemory;
 - (void)_gatherIdleExitStatus;
 - (void)_setIdleExitStatusFromDirtyFlags:(unsigned int)arg1;
 - (BOOL)_setSharedRegionFromPlatform:(long long)arg1;
 - (BOOL)_populateTask;
 - (void)_processMachVMError:(int)arg1 expectingErrorOnExit:(int)arg2;
 - (void)_gatherMemoryData;
+- (void)_addSubrangesForRegion:(id)arg1 purgeState:(int)arg2;
+- (BOOL)_enumerateDispositionChunksWithStartAddr:(unsigned long long)arg1 pagesToQuery:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
 - (void)enumerateRegions:(CDUnknownBlockType)arg1;
 - (unsigned long long)_lastNonSharedCacheRegion;
 - (BOOL)_addRegionsToArray:(id)arg1 forRegionInSharedRegionStartingAt:(unsigned long long)arg2 withSize:(unsigned long long)arg3 withRegionInfo:(struct vm_region_submap_info_64 *)arg4 imageEnumerator:(id)arg5;

@@ -10,7 +10,7 @@
 
 @interface CUIThemeRendition : NSObject
 {
-    struct _renditionkeytoken _stackKey[18];
+    struct _renditionkeytoken _stackKey[22];
     struct _renditionkeytoken *_key;
     long long _type;
     unsigned int _subtype;
@@ -23,7 +23,6 @@
     unsigned long long _colorSpaceID;
     NSString *_name;
     NSData *_srcData;
-    long long _validLookGradation;
     double _opacity;
     NSString *_utiType;
     struct CGImage *_uncroppedImage;
@@ -32,19 +31,27 @@
 }
 
 + (id)displayNameForRenditionType:(long long)arg1;
-+ (id)filteredCSIDataFromBaseCSIData:(id)arg1;
 + (Class)renditionClassForRenditionType:(long long)arg1 andPixelFormat:(unsigned int)arg2;
 @property(nonatomic) int exifOrientation; // @synthesize exifOrientation=_exifOrientation;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
 @property(nonatomic) long long artworkStatus; // @synthesize artworkStatus=_artworkStatus;
 @property(readonly, nonatomic) NSData *srcData; // @synthesize srcData=_srcData;
-@property(nonatomic) NSString *internalName; // @synthesize internalName=_name;
 @property(nonatomic) long long internalTemplateRenderingMode; // @synthesize internalTemplateRenderingMode=_templateRenderingMode;
 @property(nonatomic) unsigned int internalScale; // @synthesize internalScale=_scale;
 @property(nonatomic) unsigned int subtype; // @synthesize subtype=_subtype;
 @property(nonatomic) long long type; // @synthesize type=_type;
 @property(nonatomic) double opacity; // @synthesize opacity=_opacity;
 - (unsigned short)valueForTokenIdentifier:(unsigned short)arg1;
+- (id)_sourceRendition;
+- (CDStruct_3c058996)vectorGlyphAlignmentRectInsets;
+- (double)vectorGlyphReferencePointSize;
+- (double)vectorGlyphCapLine;
+- (double)vectorGlyphBaseline;
+- (id)vectorGlyphAvailableSizes;
+- (struct CGSVGDocument *)svgDocument;
+- (id)modelSubmesh;
+- (id)modelMesh;
+- (id)modelAsset;
 - (int)objectVersion;
 -     // Error parsing type: {?=[4]}16@0:8, name: transformation
 - (struct CGImage *)uncroppedImage;
@@ -63,9 +70,10 @@
 - (id)gradient;
 - (double)gradientDrawingAngle;
 - (id)sizeIndexes;
+- (const struct _csitextstyle *)csiTextStyle;
 - (_Bool)substituteWithSystemColor;
 - (id)systemColorName;
-- (const struct _csicolor *)csiColor;
+- (struct CGColor *)cgColor;
 - (_Bool)edgesOnly;
 - (_Bool)isScaled;
 - (_Bool)isTiled;
@@ -78,7 +86,6 @@
 - (id)textureImages;
 - (id)provideTextureInfo;
 - (id)description;
-- (_Bool)isValidForLookGradation:(long long)arg1;
 - (unsigned long long)colorSpaceID;
 - (id)properties;
 - (_Bool)isTintable;
@@ -113,6 +120,7 @@
 - (void)_setStructuredThemeStore:(id)arg1;
 - (struct cuithemerenditionrenditionflags *)renditionFlags;
 - (void)setName:(id)arg1;
+@property(retain, nonatomic) NSString *internalName;
 
 @end
 

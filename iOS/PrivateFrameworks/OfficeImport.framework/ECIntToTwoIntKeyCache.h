@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class ECIntTwoIntKeyDictionary;
+@class NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
 @interface ECIntToTwoIntKeyCache : NSObject
 {
-    ECIntTwoIntKeyDictionary *mCache;
+    NSMutableDictionary *mCache;
 }
 
++ (id)keyForKey1:(unsigned long long)arg1 key2:(unsigned long long)arg2;
+- (void).cxx_destruct;
 - (void)setObject:(unsigned long long)arg1 forKey1:(unsigned long long)arg2 key2:(unsigned long long)arg3;
 - (_Bool)integerIsPresentForKey1:(unsigned long long)arg1 key2:(unsigned long long)arg2 outValue:(unsigned long long *)arg3;
-- (void)dealloc;
 - (id)init;
 
 @end

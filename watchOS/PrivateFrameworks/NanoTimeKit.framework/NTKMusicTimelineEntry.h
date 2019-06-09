@@ -38,6 +38,7 @@
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (id)_relativeDateTextProvider;
+- (id)_fullColorNowPlayingProviderForFamily:(int)arg1;
 - (id)_nowPlayingProviderForFamily:(int)arg1;
 - (id)_signatureSongSummaryTextProvider;
 - (id)signatureBezel;
@@ -50,6 +51,7 @@
 - (id)smallModular;
 - (id)_progressProviderForRingComplications;
 - (id)_italicTextProviderForText:(id)arg1;
+- (id)graphicRectangular;
 - (id)largeModular;
 - (id)templateForComplicationFamily:(int)arg1;
 - (id)description;

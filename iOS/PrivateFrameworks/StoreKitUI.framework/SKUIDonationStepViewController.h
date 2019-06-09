@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, SKUIDonationConfiguration, SKUIDonationViewController, SKUIGiftCharity;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDonationStepViewController : UIViewController
 {
     SKUIGiftCharity *_charity;

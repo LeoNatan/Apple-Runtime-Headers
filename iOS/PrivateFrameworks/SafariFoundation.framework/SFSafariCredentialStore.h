@@ -10,6 +10,7 @@
 {
 }
 
++ (void)_getBundleIDForPrimaryCredentialProviderWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)titleForPasswordCredentialIdentity:(id)arg1 formURL:(id)arg2;
 + (id)textSuggestionHeaderForExternalCredential:(id)arg1;
 + (void)_getExternalCredentialsMatchingSharedWebCredentialsDatabaseEntries:(id)arg1 websiteURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -30,6 +31,7 @@
 + (id)_credentialsMatchingSharedWebCredentialsDatabaseEntries:(id)arg1 websiteURL:(id)arg2 savedPasswords:(id)arg3;
 + (id)_highLevelDomainsFromDatabaseEntries:(id)arg1;
 + (void)_getCredentialsForAppWithApprovedAndValidSharedWebCredentialsDatabaseEntries:(id)arg1 websiteURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)getAllCredentialsWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)getCredentialsForAppWithAppID:(id)arg1 externallyVerifiedAndApprovedSharedWebCredentialDomains:(id)arg2 websiteURL:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (void)getCredentialsForAppWithAppID:(id)arg1 externallyVerifiedAndApprovedSharedWebCredentialDomains:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)getCredentialsForAppWithAppID:(id)arg1 websiteURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

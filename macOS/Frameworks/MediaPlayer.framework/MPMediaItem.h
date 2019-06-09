@@ -25,6 +25,7 @@
 - (id)_libraryLinkKind;
 - (id)_libraryLinkArtist;
 - (id)_directStoreURL;
+@property(readonly, nonatomic) NSDate *dateDownloaded;
 @property(readonly, nonatomic) BOOL isUsableAsRepresentativeItem;
 - (void)gaplessHeuristicInfo:(unsigned int *)arg1 durationInSamples:(unsigned long long *)arg2 lastPacketsResync:(unsigned long long *)arg3 encodingDelay:(unsigned int *)arg4 encodingDrain:(unsigned int *)arg5;
 - (unsigned long long)countOfChaptersOfType:(long long)arg1;

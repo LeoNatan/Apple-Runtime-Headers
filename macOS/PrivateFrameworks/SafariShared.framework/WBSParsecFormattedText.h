@@ -27,6 +27,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)glyphWithSession:(id)arg1;
+- (id)initWithSFFormattedText:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

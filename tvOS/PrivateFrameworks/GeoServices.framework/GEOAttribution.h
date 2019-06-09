@@ -8,35 +8,52 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOAttribution : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_regions;
     unsigned long long _regionsCount;
     unsigned long long _regionsSpace;
-    NSString *_badge;
     NSString *_badgeChecksum;
-    unsigned int _dataSet;
-    NSString *_logo;
+    NSString *_badge;
     NSString *_logoChecksum;
+    NSString *_logo;
     NSString *_name;
     NSMutableArray *_resources;
     NSString *_url;
-    CDStruct_2fe9a6d4 _has;
+    unsigned int _dataSet;
+    struct {
+        unsigned int has_dataSet:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_regions:1;
+        unsigned int read_badgeChecksum:1;
+        unsigned int read_badge:1;
+        unsigned int read_logoChecksum:1;
+        unsigned int read_logo:1;
+        unsigned int read_name:1;
+        unsigned int read_resources:1;
+        unsigned int read_url:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_regions:1;
+        unsigned int wrote_badgeChecksum:1;
+        unsigned int wrote_badge:1;
+        unsigned int wrote_logoChecksum:1;
+        unsigned int wrote_logo:1;
+        unsigned int wrote_name:1;
+        unsigned int wrote_resources:1;
+        unsigned int wrote_url:1;
+        unsigned int wrote_dataSet:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)resourceType;
-@property(nonatomic) unsigned int dataSet; // @synthesize dataSet=_dataSet;
-@property(retain, nonatomic) NSMutableArray *resources; // @synthesize resources=_resources;
-@property(retain, nonatomic) NSString *logoChecksum; // @synthesize logoChecksum=_logoChecksum;
-@property(retain, nonatomic) NSString *badgeChecksum; // @synthesize badgeChecksum=_badgeChecksum;
-@property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain, nonatomic) NSString *logo; // @synthesize logo=_logo;
-@property(retain, nonatomic) NSString *badge; // @synthesize badge=_badge;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -45,25 +62,44 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasDataSet;
+@property(nonatomic) unsigned int dataSet;
 - (void)setRegions:(struct GEOTileSetRegion *)arg1 count:(unsigned long long)arg2;
 - (struct GEOTileSetRegion)regionAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsRegion:(struct GEOTileSetRegion)arg1;
 - (void)addRegion:(struct GEOTileSetRegion)arg1;
 - (void)clearRegions;
 @property(readonly, nonatomic) struct GEOTileSetRegion *regions;
 @property(readonly, nonatomic) unsigned long long regionsCount;
+- (void)_readRegions;
 - (id)resourceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resourcesCount;
+- (void)_addNoFlagsResource:(id)arg1;
 - (void)addResource:(id)arg1;
 - (void)clearResources;
+@property(retain, nonatomic) NSMutableArray *resources;
+- (void)_readResources;
+@property(retain, nonatomic) NSString *logoChecksum;
 @property(readonly, nonatomic) _Bool hasLogoChecksum;
+- (void)_readLogoChecksum;
+@property(retain, nonatomic) NSString *badgeChecksum;
 @property(readonly, nonatomic) _Bool hasBadgeChecksum;
+- (void)_readBadgeChecksum;
+@property(retain, nonatomic) NSString *url;
 @property(readonly, nonatomic) _Bool hasUrl;
+- (void)_readUrl;
+@property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
+@property(retain, nonatomic) NSString *logo;
 @property(readonly, nonatomic) _Bool hasLogo;
+- (void)_readLogo;
+@property(retain, nonatomic) NSString *badge;
 @property(readonly, nonatomic) _Bool hasBadge;
+- (void)_readBadge;
 - (void)dealloc;
 
 @end

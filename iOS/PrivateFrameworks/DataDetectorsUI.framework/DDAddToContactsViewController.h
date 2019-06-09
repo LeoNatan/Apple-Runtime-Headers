@@ -12,6 +12,7 @@
 @class CNContactViewController, DDAction, NSString;
 @protocol DDRemoteActionPresenter;
 
+__attribute__((visibility("hidden")))
 @interface DDAddToContactsViewController : UINavigationController <DDRemoteActionViewService, CNContactViewControllerDelegate>
 {
     id <DDRemoteActionPresenter> _proxy;

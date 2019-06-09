@@ -7,25 +7,26 @@
 #import <UIKit/UIViewController.h>
 
 #import <VoiceMemos/CAAnimationDelegate-Protocol.h>
+#import <VoiceMemos/RCDisplayLinkObserver-Protocol.h>
 #import <VoiceMemos/RCWaveformDataSourceObserver-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, RCWaveformDataSource;
-@protocol RCWaveformRendererDelegate;
+@class NSArray, NSMutableDictionary, NSMutableIndexSet, NSObject, NSString, RCWaveformDataSource;
+@protocol OS_dispatch_queue, RCWaveformRendererDelegate;
 
 __attribute__((visibility("hidden")))
-@interface RCWaveformRenderer : UIViewController <RCWaveformDataSourceObserver, CAAnimationDelegate>
+@interface RCWaveformRenderer : UIViewController <RCWaveformDataSourceObserver, RCDisplayLinkObserver, CAAnimationDelegate>
 {
     _Bool displayLinkConnected;
     CDStruct_73a5d3ca _renderedTimeRange;
-    _Bool _renderedTimeRangeIsApproximatedWaveform;
     double _cachedContentWidth;
-    _Bool _contentWidthDirty;
     _Bool _needsVisibleRangeRendering;
     _Bool _isCompactView;
-    NSMutableArray *_cachedSegmentArray;
-    NSMutableDictionary *_waveformSlices;
-    NSMutableIndexSet *_waveformSliceIndexes;
-    _Bool _requiresFullRefresh;
+    CDStruct_73a5d3ca _waveformAmpSlicesForRenderingTimeRange;
+    struct _NSRange _waveformAmpSlicesForRenderingIndexRange;
+    _Bool _waveformAmpSlicesForRenderingRecordStateChanged;
+    NSObject<OS_dispatch_queue> *_renderingQueue;
+    CDStruct_73a5d3ca _lastVisibleTimeRange;
+    double _visibleTimeRangeVelocity;
     struct _RCWaveformRendererState _rendererState;
     _Bool _frequentUpdatesSegmentUpdatesExpectedHint;
     _Bool _isRecordWaveform;
@@ -33,22 +34,38 @@ __attribute__((visibility("hidden")))
     _Bool _isPlayback;
     _Bool _isOverview;
     _Bool _isPlayBarOnlyMode;
+    _Bool _requiresFullRefresh;
+    _Bool _syncRenderOnMainThread;
     _Bool _paused;
     _Bool _activeDisplayLinkRequired;
+    _Bool _renderingQueueIsBusy;
+    _Bool _renderReadyForDraw;
     RCWaveformDataSource *_dataSource;
     id <RCWaveformRendererDelegate> _rendererDelegate;
     double _spacingWidth;
     double _dataPointWidth;
+    CDUnknownBlockType _nextRenderBlock;
+    NSArray *_waveformAmpSlicesForRendering;
+    NSMutableDictionary *_waveformSlices;
+    NSMutableIndexSet *_waveformSliceIndexes;
     CDStruct_73a5d3ca _visibleTimeRange;
     CDStruct_73a5d3ca _highlightTimeRange;
 }
 
+@property(retain) NSMutableIndexSet *waveformSliceIndexes; // @synthesize waveformSliceIndexes=_waveformSliceIndexes;
+@property(retain) NSMutableDictionary *waveformSlices; // @synthesize waveformSlices=_waveformSlices;
+@property(retain) NSArray *waveformAmpSlicesForRendering; // @synthesize waveformAmpSlicesForRendering=_waveformAmpSlicesForRendering;
+@property(copy) CDUnknownBlockType nextRenderBlock; // @synthesize nextRenderBlock=_nextRenderBlock;
+@property _Bool renderReadyForDraw; // @synthesize renderReadyForDraw=_renderReadyForDraw;
+@property _Bool renderingQueueIsBusy; // @synthesize renderingQueueIsBusy=_renderingQueueIsBusy;
 @property(nonatomic) CDStruct_73a5d3ca highlightTimeRange; // @synthesize highlightTimeRange=_highlightTimeRange;
 @property(nonatomic) CDStruct_73a5d3ca visibleTimeRange; // @synthesize visibleTimeRange=_visibleTimeRange;
 @property(nonatomic) double dataPointWidth; // @synthesize dataPointWidth=_dataPointWidth;
 @property(nonatomic) double spacingWidth; // @synthesize spacingWidth=_spacingWidth;
 @property(nonatomic, getter=isActiveDisplayLinkRequired) _Bool activeDisplayLinkRequired; // @synthesize activeDisplayLinkRequired=_activeDisplayLinkRequired;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic) _Bool syncRenderOnMainThread; // @synthesize syncRenderOnMainThread=_syncRenderOnMainThread;
+@property(nonatomic) _Bool requiresFullRefresh; // @synthesize requiresFullRefresh=_requiresFullRefresh;
 @property(nonatomic) _Bool isPlayBarOnlyMode; // @synthesize isPlayBarOnlyMode=_isPlayBarOnlyMode;
 @property(nonatomic) _Bool isOverview; // @synthesize isOverview=_isOverview;
 @property(nonatomic) _Bool isCompactView; // @synthesize isCompactView=_isCompactView;
@@ -66,15 +83,12 @@ __attribute__((visibility("hidden")))
 - (double)_pixelOffsetForTime:(double)arg1;
 - (double)_pixelsPerSecond;
 - (double)_pixelsPerSecondWithVisibleTimeRange:(CDStruct_73a5d3ca)arg1;
-- (_Bool)_currentViewportRequiresRenderingNewSegments;
-- (CDStruct_73a5d3ca)_timeRangeToRenderForVisibleTimeRange:(CDStruct_73a5d3ca)arg1;
-- (id)_updateCachedSegmentArray:(id)arg1 withTimeRange:(CDStruct_73a5d3ca)arg2;
-- (CDStruct_73a5d3ca)_updateRenderTimeRange:(CDStruct_73a5d3ca)arg1;
 - (void)_renderVisibleTimeRangeWithDuration:(double)arg1;
-- (void)_renderSegments:(id)arg1 timeRangeOfSegments:(CDStruct_73a5d3ca)arg2 isApproximatedWaveform:(_Bool)arg3 withDuration:(double)arg4;
+- (_Bool)_needsWaveformRendering;
+- (void)_renderTimeRangeOfSegments:(CDStruct_73a5d3ca)arg1 withDuration:(double)arg2 needsWaveformCalculation:(_Bool)arg3;
 - (void)_clearRenderingState;
 - (void)_draw:(double)arg1;
-- (void)displayLinkDidUpdate:(id)arg1 withCurrentCaptureSession:(id)arg2;
+- (void)displayLinkDidUpdate:(id)arg1 withTimeController:(id)arg2;
 - (void)_stopRendering;
 - (void)_startRendering;
 - (void)_setNeedsVisibleTimeRangeRendering;
@@ -93,6 +107,8 @@ __attribute__((visibility("hidden")))
 - (double)horizontalOffsetAtTime:(double)arg1 withVisibleTimeRange:(CDStruct_73a5d3ca)arg2;
 - (double)horizontalOffsetAtTime:(double)arg1;
 @property(readonly, nonatomic) double contentWidth;
+- (double)_duration;
+- (void)_updateOverviewUnitsPerSecond;
 - (void)waveformDataSourceRequiresUpdate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)willMoveToParentViewController:(id)arg1;

@@ -43,7 +43,7 @@
 - (void)_scheduleUpdateForType:(unsigned long long)arg1;
 - (void)_schedulePendingUpdates;
 - (void)_performUpdate;
-- (id)_updateState:(id)arg1 requestedTypes:(unsigned long long)arg2 failedTypes:(unsigned long long *)arg3;
+- (id)_updateState:(id)arg1 requestedTypes:(unsigned long long)arg2;
 - (void)setState:(id)arg1;
 - (id)mutableChangeObject;
 - (void)dealloc;

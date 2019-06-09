@@ -49,7 +49,7 @@
 - (id)defaultsForPlugInNamed:(id)arg1;
 - (void)copyAppStoreReceipt:(CDUnknownBlockType)arg1;
 - (void)launchContainingApplicationForPlugInNamed:(id)arg1;
-- (id)discoverSubsystemNamed:(id)arg1 logMissing:(_Bool)arg2;
+- (id)discoverSubsystemNamed:(id)arg1 options:(id)arg2 logMissing:(_Bool)arg3;
 - (void)mergeSubsystemList:(id)arg1 from:(id)arg2;
 - (void)mergeSubsystems:(id)arg1 from:(id)arg2;
 - (id)configuredSubsystemList;
@@ -59,6 +59,8 @@
 - (void)_prepareToRun;
 - (void)run;
 - (id)init;
+- (void)beganUsing;
+- (void)checkIn;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

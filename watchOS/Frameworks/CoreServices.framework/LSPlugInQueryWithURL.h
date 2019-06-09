@@ -14,14 +14,13 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (_Bool)_shouldCacheResolvedResults;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (id)_bundleURL;
-- (void)dealloc;
 - (id)_initWithURL:(id)arg1;
 
 @end

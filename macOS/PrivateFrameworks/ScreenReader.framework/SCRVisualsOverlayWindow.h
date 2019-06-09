@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AXVHighlightOutlineView, AXVOverlayWindow, SCRVisualsEncircledPoint, SCRVisualsHighlightCursor, SCRVisualsHighlightCurtain;
+@class AXVHighlightOutlineView, AXVOverlayWindow, SCRCUserDefaults, SCRVisualsEncircledPoint, SCRVisualsHighlightCursor, SCRVisualsHighlightCurtain;
 
 __attribute__((visibility("hidden")))
 @interface SCRVisualsOverlayWindow : NSObject
@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     SCRVisualsEncircledPoint *_encircledPoint;
     AXVOverlayWindow *__overlayWindow;
     AXVHighlightOutlineView *__highlightView;
+    SCRCUserDefaults *__userDefaults;
 }
 
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain, nonatomic, setter=_setHighlightView:) AXVHighlightOutlineView *_highlightView; // @synthesize _highlightView=__highlightView;
 @property(retain, nonatomic, setter=_setOverlayWindow:) AXVOverlayWindow *_overlayWindow; // @synthesize _overlayWindow=__overlayWindow;
 @property(readonly, nonatomic) SCRVisualsEncircledPoint *encircledPoint; // @synthesize encircledPoint=_encircledPoint;
@@ -34,7 +36,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL highlightCurtainEnabled;
 - (void)showVOCursor;
 @property(nonatomic, setter=setVOCursorEnabled:) BOOL voCursorEnabled;
-- (id)init;
+- (id)initWithUserDefaults:(id)arg1 overlayWindow:(id)arg2;
 
 @end
 

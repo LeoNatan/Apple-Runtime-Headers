@@ -11,6 +11,7 @@
 @class IKAppContext, NSString;
 @protocol SKUIAnimatorDOMFeatureDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAnimatorDOMFeature : NSObject <SKUIDOMFeature>
 {
     id <SKUIAnimatorDOMFeatureDelegate> _delegate;

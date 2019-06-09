@@ -18,10 +18,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)request;
-@property BOOL imageMirrored; // @synthesize imageMirrored=_imageMirrored;
-@property long long imageOrientation; // @synthesize imageOrientation=_imageOrientation;
-@property(retain) NSDictionary *outputSettings; // @synthesize outputSettings=_outputSettings;
-@property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
+@property(nonatomic) BOOL imageMirrored; // @synthesize imageMirrored=_imageMirrored;
+@property(nonatomic) long long imageOrientation; // @synthesize imageOrientation=_imageOrientation;
+@property(retain, nonatomic) NSDictionary *outputSettings; // @synthesize outputSettings=_outputSettings;
+@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void)dealloc;
 
 @end

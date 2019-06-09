@@ -24,8 +24,8 @@ __attribute__((visibility("hidden")))
 - (oneway void)observePresentationChangeOfKind:(id)arg1 forPresenterWithID:(id)arg2 fromProcessWithIdentifier:(int)arg3 observedUbiquityAttributes:(id)arg4 url:(id)arg5 newURL:(id)arg6;
 - (void)providePhysicalItemForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (oneway void)cancelProvidingItemAtURL:(id)arg1 forClaimWithID:(id)arg2;
-- (void)provideItemAtURL:(id)arg1 forClaimWithID:(id)arg2 madeByClientWithProcessIdentifier:(int)arg3 options:(unsigned int)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)_makeProvider:(id)arg1 provideItemAtURL:(id)arg2 options:(unsigned int)arg3 forAccessClaimWithID:(id)arg4 processIdentifier:(int)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)provideItemAtURL:(id)arg1 forClaimWithID:(id)arg2 madeByClientWithProcessIdentifier:(int)arg3 options:(unsigned int)arg4 kernelOperation:(unsigned int)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_makeProvider:(id)arg1 provideItemAtURL:(id)arg2 options:(unsigned int)arg3 forAccessClaimWithID:(id)arg4 processIdentifier:(int)arg5 kernelOperation:(unsigned int)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)checkInProviderWithReply:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 - (void)dealloc;

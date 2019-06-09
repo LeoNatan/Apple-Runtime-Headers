@@ -13,7 +13,7 @@
 {
     NSMutableArray *_delegates;
     AVTFaceTrackingInfo *_trackingInfo;
-    CDStruct_40c3f62d _trackingData;
+    CDStruct_32896d86 _trackingData;
     NSLock *_trackingDataLock;
     unsigned long long _lastTrackingCaptureTimestamp;
     // Error parsing type: {?="columns"[4]}, name: _rawTransform
@@ -22,6 +22,7 @@
     _Bool _trackingIsPaused;
     _Bool _isActive;
     _Bool _shouldConstraintHeadPose;
+    _Bool _shouldUseAudioData;
     struct {
         double refTimestamp;
         double arDelegateTimestamp;
@@ -59,7 +60,7 @@
 // Error parsing type for property rawTransform:
 // Property attributes: T{?=[4]},R
 
-- (void)copyTrackingData:(CDStruct_40c3f62d *)arg1;
+- (void)copyTrackingData:(CDStruct_32896d86 *)arg1;
 - (void)endQuery;
 - (void)beginQuery;
 - (void)startRecording;
@@ -71,6 +72,7 @@
 @property(readonly, nonatomic) double arDelegateTimestamp;
 @property(readonly, nonatomic) double arFrameTimestamp;
 @property(readonly) long long faceTrackingFrameID;
+@property(nonatomic) _Bool shouldUseAudioData;
 - (void)setSensorCovered:(_Bool)arg1;
 - (void)setLowLight:(_Bool)arg1;
 - (void)setFaceIsTracked:(_Bool)arg1;

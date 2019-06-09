@@ -11,6 +11,7 @@
 @class NSMutableDictionary, NSString, SKUIClientContext, SKUIRedeemIdManager, UIBarButtonItem, UITableView;
 @protocol SKUIRedeemIdDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemIdViewController : UIViewController <SKUIRedeemIdManagerDelegate>
 {
     id <SKUIRedeemIdDelegate> _delegate;

@@ -8,6 +8,7 @@
 
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
+@class NSArray;
 @protocol UIInputViewSetPlacementDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,13 +17,19 @@ __attribute__((visibility("hidden")))
     _Bool _dirty;
     id <UIInputViewSetPlacementDelegate> delegate;
     float _extendedHeight;
+    NSArray *_subPlacements;
 }
 
 + (id)placement;
 + (id)encodablePlacementsForXPC;
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSArray *subPlacements; // @synthesize subPlacements=_subPlacements;
 @property(nonatomic) float extendedHeight; // @synthesize extendedHeight=_extendedHeight;
 @property(nonatomic) id <UIInputViewSetPlacementDelegate> delegate; // @synthesize delegate;
+- (void).cxx_destruct;
+- (struct CGRect)adjustBoundsForNotificationsWithOwner:(id)arg1;
+- (id)expiringPlacement;
+- (unsigned int)indexForPurpose:(unsigned int)arg1;
 - (void)checkSizeForOwner:(id)arg1;
 - (id)applicatorInfoForOwner:(id)arg1;
 - (Class)applicatorClassForKeyboard:(_Bool)arg1;
@@ -30,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)accessoryViewWillAppear;
 - (_Bool)inputViewWillAppear;
 - (unsigned int)notificationsForTransitionToPlacement:(id)arg1;
+- (float)inputAssistantViewHeightForInputViewSet:(id)arg1;
 - (id)widthConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
@@ -38,7 +46,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool showsInputViews;
 @property(readonly, nonatomic) _Bool isUndocked;
 - (_Bool)isEqual:(id)arg1;
-- (float)alpha;
+- (struct CGAffineTransform)transform;
+@property(readonly, nonatomic) float alpha;
 - (void)setDirty;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

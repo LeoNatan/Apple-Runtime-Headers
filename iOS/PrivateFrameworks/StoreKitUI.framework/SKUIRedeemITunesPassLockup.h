@@ -8,6 +8,7 @@
 
 @class SKUIClientContext, SKUIITunesPassConfiguration, UIImageView, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemITunesPassLockup : UIControl
 {
     SKUIClientContext *_clientContext;

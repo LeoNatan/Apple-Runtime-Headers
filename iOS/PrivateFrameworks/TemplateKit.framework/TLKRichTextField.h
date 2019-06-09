@@ -6,28 +6,29 @@
 
 #import <TemplateKit/TLKStackView.h>
 
-#import <TemplateKit/NUIContainerStackViewDelegate-Protocol.h>
+#import <TemplateKit/NUIContainerViewDelegate-Protocol.h>
 #import <TemplateKit/TLKObservable-Protocol.h>
 #import <TemplateKit/TLKObserver-Protocol.h>
 
-@class NSString, TLKEmojiableVibrantLabel, TLKIconsView, TLKRichText, TLKRoundedCornerLabels, TLKStarsView, UIColor, UIFont;
+@class NSString, TLKIconsView, TLKLabel, TLKRichText, TLKRoundedCornerLabels, TLKStarsView, UIFont;
 @protocol TLKObserver;
 
-@interface TLKRichTextField : TLKStackView <NUIContainerStackViewDelegate, TLKObservable, TLKObserver>
+__attribute__((visibility("hidden")))
+@interface TLKRichTextField : TLKStackView <NUIContainerViewDelegate, TLKObservable, TLKObserver>
 {
     _Bool inBatchUpdate;
     id <TLKObserver> observer;
     TLKRichText *_richText;
-    TLKEmojiableVibrantLabel *_textLabel;
+    TLKLabel *_textLabel;
     TLKRoundedCornerLabels *_roundedCornerLabels;
     TLKStarsView *_starRatingView;
     TLKIconsView *_iconView;
 }
 
-@property(retain) TLKIconsView *iconView; // @synthesize iconView=_iconView;
-@property(retain) TLKStarsView *starRatingView; // @synthesize starRatingView=_starRatingView;
-@property(retain) TLKRoundedCornerLabels *roundedCornerLabels; // @synthesize roundedCornerLabels=_roundedCornerLabels;
-@property(retain) TLKEmojiableVibrantLabel *textLabel; // @synthesize textLabel=_textLabel;
+@property(retain, nonatomic) TLKIconsView *iconView; // @synthesize iconView=_iconView;
+@property(retain, nonatomic) TLKStarsView *starRatingView; // @synthesize starRatingView=_starRatingView;
+@property(retain, nonatomic) TLKRoundedCornerLabels *roundedCornerLabels; // @synthesize roundedCornerLabels=_roundedCornerLabels;
+@property(retain, nonatomic) TLKLabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) TLKRichText *richText; // @synthesize richText=_richText;
 @property _Bool inBatchUpdate; // @synthesize inBatchUpdate;
 @property __weak id <TLKObserver> observer; // @synthesize observer;
@@ -37,15 +38,12 @@
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
 - (struct CGRect)containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect)arg3;
-- (struct UIEdgeInsets)containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
 - (void)updateRoundedCornerLabels:(id)arg1;
 - (void)updateIcons:(id)arg1;
 - (void)updateStarRating:(id)arg1;
-@property(readonly) UIColor *textColor;
-- (void)makeTertiary;
-@property(retain) UIFont *font;
+@property(nonatomic) unsigned long long prominence;
+@property(retain, nonatomic) UIFont *font;
 - (void)updateWithRichText:(id)arg1;
-- (void)setStyle:(unsigned long long)arg1;
 - (void)propertiesDidChange;
 - (id)init;
 

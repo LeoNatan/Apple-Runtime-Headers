@@ -15,13 +15,16 @@ __attribute__((visibility("hidden")))
     _Bool _leak;
 }
 
-- (void)_createDirectoryWithSignature:(id)arg1 subdirectory:(id)arg2;
+- (void).cxx_destruct;
+- (_Bool)_createDirectoryWithSignature:(id)arg1 subdirectory:(id)arg2 error:(id *)arg3;
 - (void)leakTemporaryDirectory;
 - (id)URL;
 - (id)path;
 - (void)dealloc;
-- (id)initWithSignature:(id)arg1 subdirectory:(id)arg2;
-- (id)initWithSignature:(id)arg1;
+- (id)initForWritingToURL:(id)arg1 error:(id *)arg2;
+- (id)initWithSignature:(id)arg1 subdirectory:(id)arg2 error:(id *)arg3;
+- (id)initWithSignature:(id)arg1 error:(id *)arg2;
+- (id)initWithError:(id *)arg1;
 - (id)init;
 
 @end

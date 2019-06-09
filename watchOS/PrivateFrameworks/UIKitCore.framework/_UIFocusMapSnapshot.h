@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIFocusRegionSearchContext-Protocol.h>
 
-@class NSArray, NSHashTable, NSMutableArray, NSString, UIFocusSystem, UIScreen, _UIFocusMapSnapshotDebugInfo, _UIFocusRegion;
+@class NSArray, NSHashTable, NSMutableArray, NSString, UIFocusSystem, UIScreen, _UIFocusMapSnapshotDebugInfo, _UIFocusRegion, _UIFocusSearchInfo;
 @protocol UICoordinateSpace, _UIFocusMapArea, _UIFocusRegionContainer;
 
 __attribute__((visibility("hidden")))
@@ -22,16 +22,19 @@ __attribute__((visibility("hidden")))
     NSHashTable *_eligibleEnvironments;
     NSHashTable *_ineligibleEnvironments;
     _Bool _isSearchingRegionsOfInterestContainer;
+    _Bool _clipToSnapshotRect;
     NSArray *_regions;
     UIFocusSystem *_focusSystem;
     id <_UIFocusRegionContainer> _rootContainer;
     id <_UIFocusMapArea> _mapArea;
     _UIFocusRegion *_focusedRegion;
     id <_UIFocusRegionContainer> _regionsContainer;
+    _UIFocusSearchInfo *_searchInfo;
     id <_UIFocusMapArea> _searchArea;
 }
 
 @property(readonly, nonatomic, getter=_searchArea) id <_UIFocusMapArea> searchArea; // @synthesize searchArea=_searchArea;
+@property(retain, nonatomic) _UIFocusSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
 @property(readonly, nonatomic) __weak id <_UIFocusRegionContainer> regionsContainer; // @synthesize regionsContainer=_regionsContainer;
 @property(readonly, copy, nonatomic) _UIFocusRegion *focusedRegion; // @synthesize focusedRegion=_focusedRegion;
 @property(readonly, nonatomic) id <_UIFocusMapArea> mapArea; // @synthesize mapArea=_mapArea;

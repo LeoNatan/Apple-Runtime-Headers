@@ -10,11 +10,9 @@
 #import <CoreRoutine/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSString, NSUUID, RTMapItem;
-@protocol GEOMapItem;
 
 @interface RTLocationOfInterest : NSObject <NSCopying, NSSecureCoding>
 {
-    id <GEOMapItem> _cachedGeoMapItem;
     double _latitude;
     double _longitude;
     double _uncertainty;
@@ -31,6 +29,7 @@
 + (id)geoMapItemSourceToString:(long long)arg1;
 + (id)locationOfInterestTypeSourceToString:(long long)arg1;
 + (id)locationOfInterestTypeToString:(long long)arg1;
++ (BOOL)locationOfInterestTypeIsValid:(long long)arg1;
 @property(readonly, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property(readonly, nonatomic) NSArray *visits; // @synthesize visits=_visits;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;
@@ -45,7 +44,6 @@
 - (long long)recentCompare:(id)arg1;
 - (id)nameFromType:(long long)arg1;
 @property(readonly, nonatomic) NSString *preferredName;
-@property(readonly, nonatomic) id <GEOMapItem> geoMapItem;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

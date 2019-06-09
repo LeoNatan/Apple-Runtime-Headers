@@ -9,10 +9,10 @@
 #import <HomeKitDaemon/HMDDataStreamDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDDataStream, HMDDataStreamSetup, HMDHAPAccessory, HMDNotificationRegistration, HMDService, NSMutableArray, NSString;
+@class HMDDataStream, HMDDataStreamSetup, HMDHAPAccessory, HMDService, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
-@interface HMDDataStreamController : NSObject <HMDDataStreamDelegate, HMFLogging>
+@interface HMDDataStreamController : NSObject <HMFLogging, HMDDataStreamDelegate>
 {
     _Bool _supportsDataStreamOverTCP;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -20,23 +20,26 @@
     HMDService *_transferManagementService;
     HMDDataStream *_defaultDataStream;
     NSMutableArray *_activeProtocols;
-    HMDNotificationRegistration *_notificationRegistration;
     HMDDataStreamSetup *_setupInProgress;
+    CDUnknownBlockType _dataStreamFactory;
 }
 
 + (id)logCategory;
+@property(readonly) CDUnknownBlockType dataStreamFactory; // @synthesize dataStreamFactory=_dataStreamFactory;
 @property(retain, nonatomic) HMDDataStreamSetup *setupInProgress; // @synthesize setupInProgress=_setupInProgress;
 @property(nonatomic) _Bool supportsDataStreamOverTCP; // @synthesize supportsDataStreamOverTCP=_supportsDataStreamOverTCP;
-@property(readonly, nonatomic) HMDNotificationRegistration *notificationRegistration; // @synthesize notificationRegistration=_notificationRegistration;
 @property(retain, nonatomic) NSMutableArray *activeProtocols; // @synthesize activeProtocols=_activeProtocols;
 @property(retain, nonatomic) HMDDataStream *defaultDataStream; // @synthesize defaultDataStream=_defaultDataStream;
 @property(nonatomic) __weak HMDService *transferManagementService; // @synthesize transferManagementService=_transferManagementService;
 @property(nonatomic) __weak HMDHAPAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 - (void).cxx_destruct;
+- (void)invalidate;
+- (void)startBulkSendSessionForFileType:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)dataStreamDidOpen:(id)arg1;
 - (void)dataStreamDidClose:(id)arg1;
 - (void)dataStream:(id)arg1 didFailWithError:(id)arg2;
+- (void)_resetDefaultDataStream;
 - (void)_createBulkStreamProtocol;
 - (void)_cancelStreamTransportWithError:(id)arg1;
 - (void)_finishStreamTransport;
@@ -52,6 +55,7 @@
 - (void)_handleAccessoryIsReachable;
 - (void)handleAccessoryIsReachable:(id)arg1;
 - (void)registerForMessages;
+- (id)initWithAccessory:(id)arg1 service:(id)arg2 workQueue:(id)arg3 dataStreamFactory:(CDUnknownBlockType)arg4;
 - (id)initWithAccessory:(id)arg1 service:(id)arg2 workQueue:(id)arg3;
 
 // Remaining properties

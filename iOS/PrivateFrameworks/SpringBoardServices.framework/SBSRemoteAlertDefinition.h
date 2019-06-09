@@ -8,24 +8,26 @@
 
 #import <SpringBoardServices/BSDescriptionProviding-Protocol.h>
 #import <SpringBoardServices/BSXPCCoding-Protocol.h>
+#import <SpringBoardServices/NSCopying-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface SBSRemoteAlertDefinition : NSObject <BSXPCCoding, BSDescriptionProviding>
+@interface SBSRemoteAlertDefinition : NSObject <BSXPCCoding, BSDescriptionProviding, NSCopying>
 {
+    _Bool _forCarPlay;
     NSString *_serviceName;
-    NSString *_vcClassName;
+    NSString *_viewControllerClassName;
     NSDictionary *_userInfo;
     NSString *_impersonatedCarPlayAppIdentifier;
-    _Bool _forCarPlay;
 }
 
 @property(nonatomic, getter=isForCarPlay) _Bool forCarPlay; // @synthesize forCarPlay=_forCarPlay;
-@property(retain, nonatomic) NSString *impersonatedCarPlayAppIdentifier; // @synthesize impersonatedCarPlayAppIdentifier=_impersonatedCarPlayAppIdentifier;
-@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property(readonly, nonatomic) NSString *viewControllerClassName; // @synthesize viewControllerClassName=_vcClassName;
-@property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
+@property(copy, nonatomic) NSString *impersonatedCarPlayAppIdentifier; // @synthesize impersonatedCarPlayAppIdentifier=_impersonatedCarPlayAppIdentifier;
+@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(readonly, copy, nonatomic) NSString *viewControllerClassName; // @synthesize viewControllerClassName=_viewControllerClassName;
+@property(readonly, copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

@@ -8,12 +8,9 @@
 
 @interface EKSharee (CalClassAdditions)
 + (id)calUI_shareeWithAddress:(id)arg1 name:(id)arg2;
-+ (id)shareeForString:(id)arg1 inAddressBook:(id)arg2;
-+ (id)personForString:(id)arg1 inAddressBook:(id)arg2;
++ (id)shareeForString:(id)arg1;
 + (id)shareeFromDictionary:(id)arg1;
-+ (id)shareeFromPerson:(id)arg1 distributionIdentifier:(id)arg2;
-+ (id)shareeFromPerson:(id)arg1;
-- (id)newPersonWithAddressBook:(id)arg1;
++ (id)shareeFromContact:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)displayString;
 @end

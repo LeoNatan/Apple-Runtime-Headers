@@ -13,10 +13,12 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTableViewDataSource : NSArrayController <NSTableViewDataSource>
 {
-    FI_TTableView *_tableView;
+    struct TNSWeakPtr<FI_TTableView, void> _weakTableView;
+    struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _keyValueBinders;
 }
 
-@property(nonatomic) FI_TTableView *tableView; // @synthesize tableView=_tableView;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (BOOL)tableView:(id)arg1 acceptDrop:(id)arg2 row:(long long)arg3 dropOperation:(unsigned long long)arg4;
 - (unsigned long long)tableView:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long)arg3 proposedDropOperation:(unsigned long long)arg4;
 - (void)clear;
@@ -24,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)replaceObject:(id)arg1 withObject:(id)arg2;
 - (void)unbindFromTableColumn:(id)arg1;
 - (void)bindToTableColumn:(id)arg1;
+@property(nonatomic) __weak FI_TTableView *tableView; // @dynamic tableView;
 - (void)dealloc;
 - (void)awakeCommon;
 - (void)initCommon;

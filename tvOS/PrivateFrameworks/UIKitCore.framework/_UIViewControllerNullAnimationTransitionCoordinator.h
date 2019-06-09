@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (id)_alongsideCompletions:(_Bool)arg1;
 - (id)_alongsideAnimations:(_Bool)arg1;
 - (_Bool)animateAlongsideTransition:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)_animateAlongsideTransitionInView:(id)arg1 systemCompletion:(_Bool)arg2 animation:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)_animateAlongsideTransitionInView:(id)arg1 systemAnimation:(_Bool)arg2 systemCompletion:(_Bool)arg3 animation:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 @property(readonly, nonatomic) struct CGAffineTransform targetTransform;
 - (_Bool)isRotating;
 - (id)viewForKey:(id)arg1;

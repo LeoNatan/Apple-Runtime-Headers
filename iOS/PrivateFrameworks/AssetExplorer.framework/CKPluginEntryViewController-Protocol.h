@@ -16,6 +16,7 @@
 @property(readonly) _Bool loadedContentView;
 @property(readonly) _Bool wantsEdgeToEdgeLayout;
 @property(readonly) _Bool wantsClearButton;
+@property(nonatomic) __weak id <CKPluginEntryViewControllerDelegate> entryViewDelegate;
 - (NSArray *)framesOfVisibleContentViewInCoordinateSpace:(id <UICoordinateSpace>)arg1;
 - (void)performHostAppSuspend;
 - (void)performHostAppResume;

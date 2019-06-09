@@ -8,7 +8,6 @@
 
 @class GEOURLWithHeaders, NSMutableDictionary, NSURL, NSURLComponents;
 
-__attribute__((visibility("hidden")))
 @interface GEOURLComponentsWithHeaders : NSObject
 {
     NSURLComponents *_URLComponents;

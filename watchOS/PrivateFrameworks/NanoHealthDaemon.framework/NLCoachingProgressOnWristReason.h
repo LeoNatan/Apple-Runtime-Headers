@@ -12,7 +12,6 @@
 }
 
 @property(nonatomic) double timeIntervalAfterOnWrist; // @synthesize timeIntervalAfterOnWrist=_timeIntervalAfterOnWrist;
-- (_Bool)isScheduled;
 - (id)nextFireDateWithModel:(id)arg1;
 
 @end

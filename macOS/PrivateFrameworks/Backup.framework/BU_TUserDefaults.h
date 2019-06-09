@@ -73,7 +73,7 @@ __attribute__((visibility("hidden")))
 - (id)_finderObjectForKey:(id)arg1;
 - (void)showAllExtensionsPrefsChangedByLaunchServices;
 - (void)preferencesNeedToBeSynced;
-- (id)initWithUser:(id)arg1;
+- (id)init;
 
 @end
 

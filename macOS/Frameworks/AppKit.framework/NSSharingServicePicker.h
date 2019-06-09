@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CALayer, NSArray, NSMenu, NSView;
+@class CALayer, NSArray, NSDictionary, NSMenu, NSView;
 @protocol NSSharingServicePickerDelegate;
 
 @interface NSSharingServicePicker : NSObject
@@ -18,6 +18,9 @@
     NSView *owner;
     NSArray *shareServices;
     NSArray *mainServices;
+    NSArray *_applicationServices;
+    NSArray *_excludedSharingServiceNames;
+    NSDictionary *_shareKitInfo;
 }
 
 + (void)openAppExtensionsPrefPane;
@@ -37,6 +40,7 @@
 - (void)_uppercaseString:(id)arg1;
 - (void)_updateRolloverMenu:(id)arg1;
 - (id)menuItemFromService:(id)arg1;
+- (BOOL)displaysAsPopUpMenu;
 - (id)_alternateItemIdentifierFromRepresentedObject:(id)arg1;
 - (id)_serviceFromRepresentedObject:(id)arg1;
 - (id)_representedObjectForService:(id)arg1 alternateItemIdentifier:(id)arg2;
@@ -46,6 +50,9 @@
 - (id)_prepareSHKSharingServicePicker;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
+@property(copy) NSDictionary *shareKitInfo;
+@property(copy) NSArray *excludedSharingServiceNames;
+@property(copy) NSArray *applicationServices;
 
 @end
 

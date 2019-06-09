@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSDictionary, NSString, TLAccessQueue;
+@protocol NSCopying;
 
 @interface TLToneManager : NSObject
 {
@@ -15,16 +16,18 @@
     NSDictionary *_toneIdentifiersBySyncIdentifier;
     NSDictionary *_alertTonesByIdentifier;
     NSDictionary *_toneIdentifierAliasMap;
+    id <NSCopying> _contentProtectionStateObserverToken;
     BOOL _shouldUseServiceToAccessTonePreferences;
     NSDictionary *_cachedTonePreferences;
     BOOL _shouldIgnoreNextToneDidChangeNotification;
 }
 
-+ (BOOL)_checkForFileExistenceAtPath:(id)arg1 allowingTCCPreflight:(BOOL)arg2;
++ (BOOL)_ensureTCCAccessPreflightAndCheckForFileExistenceAtPath:(id)arg1;
 + (id)_defaultToneIdentifierForAlertType:(long long)arg1 topic:(id)arg2;
 + (id)_systemWideTonePreferenceKeyForAlertType:(long long)arg1;
 + (id)sharedToneManager;
 - (void).cxx_destruct;
+- (void)_handleProtectionContentUnlockedEvent;
 - (void)_handleTonePreferencesChangedNotificationForPreferencesKinds:(unsigned long long)arg1;
 - (void)_didSetTonePreferenceSuccessfullyWithKey:(id)arg1 inDomain:(id)arg2 usingPreferencesOfKind:(unsigned long long)arg3;
 - (BOOL)_ensureDirectoryExistsAtPath:(id)arg1;
@@ -80,7 +83,7 @@
 - (void)_reloadTones;
 - (void)_reloadTonesAfterExternalChange;
 - (id)_tonesFromManifestPath:(id)arg1 mediaDirectoryPath:(id)arg2;
-- (void)_loadITunesRingtoneInfoPlistAtPath:(id)arg1;
+- (BOOL)_loadITunesRingtoneInfoPlistAtPath:(id)arg1;
 @property(readonly, nonatomic) NSString *_systemRingtoneDirectory;
 @property(readonly, nonatomic) NSString *_iTunesRingtoneInformationPlist;
 @property(readonly, nonatomic) NSString *_iTunesRingtoneDirectory;

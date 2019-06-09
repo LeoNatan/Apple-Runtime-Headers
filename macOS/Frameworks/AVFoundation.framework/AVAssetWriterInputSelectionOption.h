@@ -49,7 +49,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)_hasEqualValueForKey:(id)arg1 asObject:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;
 - (id)initWithAssetWriterInput:(id)arg1;

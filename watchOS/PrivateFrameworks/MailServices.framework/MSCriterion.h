@@ -19,6 +19,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)criteria;
 - (id)qualifier;
 - (id)type;
@@ -27,7 +28,6 @@
 - (id)initWithCriteria:(id)arg1 allRequired:(_Bool)arg2;
 - (id)initWithType:(id)arg1 qualifier:(id)arg2 expression:(id)arg3;
 - (id)description;
-- (void)dealloc;
 - (id)_initWithType:(id)arg1 qualifier:(id)arg2 criteria:(id)arg3;
 - (id)init;
 

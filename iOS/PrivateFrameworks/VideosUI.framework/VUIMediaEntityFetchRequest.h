@@ -8,11 +8,11 @@
 
 #import <VideosUI/NSCopying-Protocol.h>
 
-@class NSArray, NSDictionary, NSPredicate, NSSet, NSString, VUIMediaEntityType;
+@class NSArray, NSDictionary, NSPredicate, NSSet, NSString;
 
 @interface VUIMediaEntityFetchRequest : NSObject <NSCopying>
 {
-    VUIMediaEntityType *_mediaEntityType;
+    NSSet *_mediaEntityTypes;
     NSPredicate *_predicate;
     NSArray *_sortDescriptors;
     NSSet *_properties;
@@ -40,6 +40,8 @@
 + (id)_resolutionPredicateWithResolution:(id)arg1;
 + (id)_anyHDRColorCapabilityPredicate;
 + (id)_isLocalPredicate;
++ (id)_isInPredicateWithAdamId:(id)arg1;
++ (id)_isEqualPredicateWithAdamId:(id)arg1;
 + (id)_seasonIdentifierPredicateWithIdentifier:(id)arg1;
 + (id)_showIdentifierPredicateWithIdentifier:(id)arg1;
 + (id)_identifierPredicateWithIdentifier:(id)arg1;
@@ -69,7 +71,7 @@
 @property(copy, nonatomic) NSSet *properties; // @synthesize properties=_properties;
 @property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
-@property(copy, nonatomic) VUIMediaEntityType *mediaEntityType; // @synthesize mediaEntityType=_mediaEntityType;
+@property(copy, nonatomic) NSSet *mediaEntityTypes; // @synthesize mediaEntityTypes=_mediaEntityTypes;
 - (void).cxx_destruct;
 - (id)_manualSortDescriptorsWithMediaEntityKind:(id)arg1 propertiesRequiredForSort:(id *)arg2;
 - (_Bool)_shouldGenerateGroupingSortIndexes;
@@ -85,8 +87,12 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
+- (id)initWithMediaEntityTypes:(id)arg1;
 - (id)initWithMediaEntityType:(id)arg1;
 - (void)_addPredicate:(id)arg1;
+- (void)addAdamIdsPredicate:(id)arg1;
+- (void)addAdamIdPredicate:(id)arg1;
+- (void)addDownloadStatePredicateForStates:(unsigned long long)arg1;
 - (void)addIsLocalPredicate;
 - (void)addHDRColorCapabilityOr4KResolutionPredicate;
 - (void)add4KResolutionPredicate;

@@ -6,9 +6,23 @@
 
 #import <Foundation/NSError.h>
 
-@interface NSError (BSFuture)
+#import <BaseBoard/BSDescriptionProviding-Protocol.h>
+
+@class NSString;
+
+@interface NSError (BSFuture) <BSDescriptionProviding>
 + (id)bs_timeoutError;
 - (_Bool)bs_isTimeoutError;
 - (_Bool)bs_isCancelledError;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
+- (id)succinctDescriptionBuilder;
+- (id)succinctDescription;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

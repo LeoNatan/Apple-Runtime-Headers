@@ -6,55 +6,63 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotosUICore/PXCMMSuggestionViewDelegate-Protocol.h>
 #import <PhotosUICore/PXDiagnosticsEnvironment-Protocol.h>
 #import <PhotosUICore/PXGadget-Protocol.h>
 
-@class NSString, PXCMMSuggestionView, PXGadgetSpec, PXPersonFaceTileImageCombiner, UIColor, UILongPressGestureRecognizer;
-@protocol PXCMMSuggestion, PXGadgetDelegate;
+@class NSString, PXCMMSuggestionView, PXCMMSuggestionViewModel, PXGadgetSpec, PXPersonFaceTileImageCombiner;
+@protocol PXCMMSuggestion, PXCMMWorkflowPresenting, PXGadgetDelegate;
 
-@interface PXCMMSuggestionGadget : NSObject <PXDiagnosticsEnvironment, PXGadget>
+@interface PXCMMSuggestionGadget : NSObject <PXCMMSuggestionViewDelegate, PXDiagnosticsEnvironment, PXGadget>
 {
+    id <PXCMMSuggestion> _suggestion;
+    _Bool _didLoadSuggestion;
+    PXCMMSuggestionViewModel *_suggestionViewModel;
     PXCMMSuggestionView *_suggestionView;
-    UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    struct CGSize _requestedPosterImageSize;
+    double _requestedWidth;
+    _Bool _didRequestCachingOfPosterImage;
     PXPersonFaceTileImageCombiner *_faceTileImageCombiner;
     PXGadgetSpec *_gadgetSpec;
     id <PXGadgetDelegate> _delegate;
-    id <PXCMMSuggestion> _suggestion;
-    UIColor *_backgroundColor;
+    id <PXCMMWorkflowPresenting> _workflowPresenter;
 }
 
-@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
++ (id)_imageRequestOptions;
 @property(retain, nonatomic) id <PXCMMSuggestion> suggestion; // @synthesize suggestion=_suggestion;
+@property(readonly, nonatomic) id <PXCMMWorkflowPresenting> workflowPresenter; // @synthesize workflowPresenter=_workflowPresenter;
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 - (void).cxx_destruct;
+- (void)presentDetailViewForSuggestionView:(id)arg1 animated:(_Bool)arg2;
+- (void)suggestionViewSizeThatFitsDidChange:(id)arg1;
+- (void)dynamicUserInterfaceTraitDidChange;
 - (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
-- (void)_longPressGesture:(id)arg1;
-- (void)_updateLongPressGestureRecognizer;
-- (void)commitPreviewViewController:(id)arg1;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2 outSourceRect:(out struct CGRect *)arg3;
-- (void)_contentSizeCategoryDidChange:(id)arg1;
-- (void)_tapGesture:(id)arg1;
-- (void)_presentSuggestion:(id)arg1 animated:(_Bool)arg2 pptConfigurationBlock:(CDUnknownBlockType)arg3;
+- (void)_clearPosterImageCache;
+- (void)_cachePosterImageWithWidth:(double)arg1;
+- (void)_presentDetailViewAnimated:(_Bool)arg1 pptConfigurationBlock:(CDUnknownBlockType)arg2;
 - (void)_setCombinedFaceTileImage:(id)arg1;
-- (void)_updatePeopleSuggestionFaceTileImagesForPersons:(id)arg1;
-- (void)_changeViewConfiguration:(CDUnknownBlockType)arg1;
-- (void)_loadSuggestion:(id)arg1;
+- (void)_updatePeopleSuggestionFaceTileImagesForPersons:(id)arg1 mutableViewModel:(id)arg2;
+- (void)_loadSuggestionIfNecessary;
+- (void)commitPreviewViewController:(id)arg1;
+- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
+- (struct NSObject *)targetPreviewViewForLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
+- (void)prefetchDuringScrollingForWidth:(double)arg1;
 - (void)contentHasBeenSeen;
 - (id)uniqueGadgetIdentifier;
-@property(readonly, nonatomic) _Bool supportsSelection;
 @property(readonly, nonatomic) _Bool supportsHighlighting;
 - (void)gadgetControllerHasAppeared;
-- (struct NSObject *)contentView;
+- (void)prepareCollectionViewItem:(struct UICollectionViewCell *)arg1;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) _Bool hasContentToDisplay;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 - (void)ppt_presentComposeRecipientViewAfterDelay:(double)arg1;
-- (void)ppt_presentDetailView;
 - (void)presentDetailViewAnimated:(_Bool)arg1;
+- (id)initWithWorkflowPresenter:(id)arg1;
+- (id)init;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
 @property(readonly, copy) NSString *debugDescription;
@@ -65,6 +73,7 @@
 @property(nonatomic) long long priority;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) _Bool supportsAssetsDrop;
+@property(readonly, nonatomic) _Bool supportsSelection;
 @property(nonatomic) struct CGRect visibleContentRect;
 
 @end

@@ -22,7 +22,7 @@
 - (id)description;
 - (id)descriptionForProduct:(id)arg1;
 - (void)dealloc;
-- (void)registerProduct:(id)arg1;
+- (BOOL)registerProduct:(id)arg1;
 - (void)unregisterExtraPackageReference:(id)arg1 forProductKey:(id)arg2;
 - (void)registerExtraPackageReference:(id)arg1 forProductKey:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;

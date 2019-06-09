@@ -45,6 +45,7 @@
     _Bool _dragInteractionEnabled;
 }
 
++ (id)excludedElementsForHTML;
 @property(nonatomic, getter=isDragInteractionEnabled) _Bool dragInteractionEnabled; // @synthesize dragInteractionEnabled=_dragInteractionEnabled;
 @property(nonatomic) __weak id <UITextContentViewDelegate> delegate; // @synthesize delegate=m_delegate;
 @property(nonatomic) _Bool scrollsSelectionOnWebDocumentChanges; // @synthesize scrollsSelectionOnWebDocumentChanges=m_scrollsSelectionOnWebDocumentChanges;
@@ -79,6 +80,8 @@
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (id)textInRange:(id)arg1;
 - (id)metadataDictionariesForDictationResults;
+- (void)removeTextPlaceholder:(id)arg1;
+- (id)insertTextPlaceholderWithSize:(struct CGSize)arg1;
 - (struct CGRect)frameForDictationResultPlaceholder:(id)arg1;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(_Bool)arg2;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;

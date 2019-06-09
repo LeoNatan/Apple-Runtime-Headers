@@ -6,40 +6,64 @@
 
 #import <PersonalizationPortrait/PPTopicStore.h>
 
+@class PPMObjectsDeletion, PPMTopicDonation, PPMTopicDonationError, PPTopicStorage, _PASLock;
+
 @interface PPLocalTopicStore : PPTopicStore
 {
+    unsigned long long _hardFetchLimit;
+    _PASLock *_lock;
+    PPMTopicDonationError *_errorTracker;
+    PPMTopicDonation *_donationTracker;
+    PPMObjectsDeletion *_deletionTracker;
+    PPTopicStorage *_storage;
 }
 
++ (id)getScoredTopicsFeaturesWithTopicId:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(BOOL)arg5 scoreInterpreter:(id)arg6;
++ (BOOL)_yesWithProbability:(double)arg1;
++ (id)ppFeedbackItemToPPPBFeedbackItem:(id)arg1;
++ (id)recordsForTopics:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 decayRate:(double)arg4;
 + (id)_topicTransformForId:(id)arg1;
++ (void)calibrate:(id)arg1;
++ (void)sortAndTruncate:(id)arg1 queryLimit:(unsigned long long)arg2;
++ (id)scoreTopics:(id)arg1 scoringDate:(id)arg2 overrideDecayRate:(BOOL)arg3 decayRate:(double)arg4 strictFiltering:(BOOL)arg5;
++ (id)aggregateRecords:(id)arg1 overrideDecayRate:(BOOL)arg2 decayRate:(double)arg3;
 + (id)defaultStore;
-- (BOOL)clearWithError:(id *)arg1;
-- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 error:(id *)arg4;
-- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 error:(id *)arg2;
-- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 error:(id *)arg3;
-- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 error:(id *)arg3;
-- (BOOL)deleteAllTopicsWithTopicId:(id)arg1 error:(id *)arg2;
-- (BOOL)_deleteAllTopicsWithPredicate:(id)arg1 loggingBundleId:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
-- (BOOL)_deleteAllExtractionsWithPredicate:(id)arg1 fromStreams:(id)arg2 deletedCount:(unsigned long long *)arg3 namedEntitiesRemoved:(id)arg4 error:(id *)arg5;
-- (BOOL)donateTopics:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(BOOL)arg4 decayRate:(double)arg5 error:(id *)arg6;
-- (void)feedbackMappedTopicsOverallEngagement:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackMappedTopicsOverallEngagement:(id)arg1 forMapping:(id)arg2 clientIdentifier:(id)arg3;
-- (void)feedbackTopicsOverallEngagement:(id)arg1;
-- (void)feedbackTopicsOverallEngagement:(id)arg1 clientIdentifier:(id)arg2;
-- (void)feedbackEngagedMappedTopics:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackEngagedMappedTopics:(id)arg1 forMapping:(id)arg2 clientIdentifier:(id)arg3;
-- (void)feedbackEngagedTopics:(id)arg1;
-- (void)feedbackEngagedTopics:(id)arg1 clientIdentifier:(id)arg2;
-- (void)feedbackUsedMappedTopics:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackUsedMappedTopics:(id)arg1 forMapping:(id)arg2 clientIdentifier:(id)arg3;
-- (void)feedbackUsedTopics:(id)arg1;
-- (void)feedbackUsedTopics:(id)arg1 clientIdentifier:(id)arg2;
+@property(readonly, nonatomic) PPTopicStorage *storage; // @synthesize storage=_storage;
+- (void).cxx_destruct;
+- (BOOL)_logFeedbackSessionsWithFeedback:(id)arg1 error:(id *)arg2;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_logDonationForTopics:(id)arg1 bundleId:(id)arg2 algorithm:(unsigned long long)arg3;
+- (void)disableSyncForBundleIds:(id)arg1;
+- (void)logDonationErrorForReason:(struct PPMTopicDonationErrorReason_)arg1;
+- (BOOL)clearWithError:(id *)arg1 deletedCount:(unsigned long long *)arg2;
+- (BOOL)cloudSyncWithError:(id *)arg1;
+- (BOOL)deleteAllTopicsOlderThanDate:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 algorithm:(unsigned long long)arg3 olderThan:(id)arg4 deletedCount:(unsigned long long *)arg5 error:(id *)arg6;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 algorithm:(unsigned long long)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 algorithm:(unsigned long long)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 algorithm:(unsigned long long)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
+- (BOOL)deleteAllTopicsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)deleteAllTopicsWithTopicId:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
+- (BOOL)flushDonationsWithError:(id *)arg1;
+- (BOOL)donateTopics:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(BOOL)arg4 sentimentScore:(double)arg5 error:(id *)arg6;
+- (id)_filterBlacklistedScoredTopics:(id)arg1;
+- (void)_filterBlacklistedTopicRecords:(id)arg1;
+- (id)_coalesceScoredTopics:(id)arg1;
 - (id)topicRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (BOOL)iterTopicRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (id)unmapMappedTopicIdentifier:(id)arg1 mappingIdentifier:(id)arg2 error:(id *)arg3;
+- (id)scoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3 clientProcessName:(id)arg4;
 - (id)scoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3;
 - (BOOL)iterScoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
+- (id)rankedTopicsWithQuery:(id)arg1 error:(id *)arg2 clientProcessName:(id)arg3;
 - (id)rankedTopicsWithQuery:(id)arg1 error:(id *)arg2;
-- (BOOL)iterRankedTopicsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (id)_init;
+- (id)_topicRecordsForRankedQuery:(id)arg1 error:(id *)arg2;
+- (id)sourceStatsExcludedAlgorithms:(id)arg1;
+- (id)init;
+- (id)initWithStorage:(id)arg1 recordFetchLimit:(unsigned long long)arg2;
 
 @end
 

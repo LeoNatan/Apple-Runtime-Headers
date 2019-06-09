@@ -13,9 +13,12 @@
 
 @interface PXPlacesSnapshotFactory : NSObject <PHPhotoLibraryChangeObserver>
 {
-    NSString *_cachedFilePath;
-    UIImage *_cachedSnapshotImage;
+    NSString *_cachedFilePathLight;
+    NSString *_cachedFilePathDark;
+    UIImage *_cachedSnapshotImageLight;
+    UIImage *_cachedSnapshotImageDark;
     NSString *_cachedSnapshotImageIdentifier;
+    long long currentUserInterfaceStyle;
     UIImage *_placeholderImage;
     long long _cachedCount;
     NSMutableArray *_requestedCompletionBlocks;
@@ -46,7 +49,7 @@
 - (void)photoLibraryDidChange:(id)arg1;
 - (_Bool)_imageExistsWithLocalIdentifier:(id)arg1;
 - (void)_saveImage:(id)arg1 ofAsset:(id)arg2 atPath:(id)arg3;
-- (void)removePreviousCachedImage;
+- (void)removePreviousCachedImages;
 - (id)_latestAssetWithLocation;
 - (id)_placeHolderImageForExtendedTraitCollection:(id)arg1;
 - (void)requestAssetCountWithForcedRefresh:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

@@ -13,11 +13,11 @@
 __attribute__((visibility("hidden")))
 @interface _HKSampleCountQueryServerConfiguration : HKQueryServerConfiguration <NSSecureCoding>
 {
-    NSSet *_sampleTypes;
+    NSSet *_sampleQueryDescriptions;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSSet *sampleTypes; // @synthesize sampleTypes=_sampleTypes;
+@property(copy, nonatomic) NSSet *sampleQueryDescriptions; // @synthesize sampleQueryDescriptions=_sampleQueryDescriptions;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

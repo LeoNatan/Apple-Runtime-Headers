@@ -17,7 +17,7 @@
     NSURL *_baseURL;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)baseURL;
 - (id)encodingName;

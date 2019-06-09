@@ -7,25 +7,34 @@
 #import <objc/NSObject.h>
 
 #import <NanoWeatherKit/NWKConnection-Protocol.h>
+#import <NanoWeatherKit/NWKLocationObservable-Protocol.h>
 
 @class NSString, NSXPCConnection, NWKXPCConnectionWrapper;
+@protocol NWKLocationConnectionDelegate;
 
-@interface NWKLocationConnection : NSObject <NWKConnection>
+@interface NWKLocationConnection : NSObject <NWKLocationObservable, NWKConnection>
 {
     CDUnknownBlockType _onResumeBlock;
+    id <NWKLocationConnectionDelegate> _delegate;
     NWKXPCConnectionWrapper *_connectionWrapper;
 }
 
 @property(retain, nonatomic) NWKXPCConnectionWrapper *connectionWrapper; // @synthesize connectionWrapper=_connectionWrapper;
+@property(nonatomic) __weak id <NWKLocationConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) CDUnknownBlockType onResumeBlock; // @synthesize onResumeBlock=_onResumeBlock;
 - (void).cxx_destruct;
-- (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)locationServerUpdatedStaticLocations:(id)arg1;
+- (void)locationServerUpdatedSelectedLocation:(id)arg1;
+- (void)locationServerUpdatedLocation:(id)arg1 updatedTimeZone:(id)arg2;
+- (void)locationServerUpdatedLocation:(id)arg1 updatedDisplayName:(id)arg2;
+- (void)locationServerUpdatedLocalLocation:(id)arg1;
 - (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)cleanup;
 - (void)removeLocationFromList:(id)arg1;
 - (void)addLocationToList:(id)arg1;
 @property(readonly, nonatomic) NSXPCConnection *connection;
-- (id)initWithObserver:(id)arg1;
-- (id)init;
+- (id)initWithDelegate:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

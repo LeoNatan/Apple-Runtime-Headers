@@ -42,6 +42,7 @@
 - (void)dealloc;
 - (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 deallocator:(CDUnknownBlockType)arg3;
 - (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 shouldDeallocate:(_Bool)arg3;
+- (id)initWithByteVector:(char *)arg1 count:(unsigned int)arg2 trusted:(unsigned char)arg3 deallocator:(CDUnknownBlockType)arg4;
 - (void)enumerateQueryResults:(unsigned long long)arg1 stringCache:(CDStruct_6130f9a9 *)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (_Bool)enumerateQueryResults:(unsigned long long)arg1 attributeSize:(unsigned long long)arg2 stringCache:(CDStruct_6130f9a9 *)arg3 usingBlock:(CDUnknownBlockType)arg4;
 

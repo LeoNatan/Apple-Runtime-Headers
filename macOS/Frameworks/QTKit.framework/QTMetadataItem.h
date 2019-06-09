@@ -10,38 +10,20 @@
 #import <QTKit/NSCopying-Protocol.h>
 #import <QTKit/NSMutableCopying-Protocol.h>
 
-@class NSData, NSDate, NSDictionary, NSLocale, NSNumber, NSString, QTMetadataItemInternal;
-@protocol NSCopying;
-
 @interface QTMetadataItem : NSObject <NSCopying, NSMutableCopying, NSCoding>
 {
-    QTMetadataItemInternal *_priv;
 }
 
-+ (void)initialize;
 + (id)metadataItemsFromArray:(id)arg1 withKey:(id)arg2 keySpace:(id)arg3;
++ (void)initialize;
 + (id)metadataItemsFromArray:(id)arg1 withLocale:(id)arg2;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithKey:(id)arg1 keySpace:(id)arg2 locale:(id)arg3 time:(CDStruct_2ec95fd7)arg4 value:(id)arg5 extraAttributes:(id)arg6;
+- (id)initWithAttributes:(id)arg1 value:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly, copy) NSDictionary *extraAttributes;
-@property(readonly, copy) id <NSCopying> value;
-@property(readonly) CDStruct_900afa40 time;
-@property(readonly, copy) NSLocale *locale;
-@property(readonly, copy) NSString *keySpace;
-@property(readonly, copy) id <NSCopying> key;
-- (id)description;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-- (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
-- (id)initWithAttributes:(id)arg1 value:(id)arg2;
-- (id)initWithKey:(id)arg1 keySpace:(id)arg2 locale:(id)arg3 time:(CDStruct_900afa40)arg4 value:(id)arg5 extraAttributes:(id)arg6;
 - (id)init;
-@property(readonly) NSData *dataValue;
-@property(readonly) NSDate *dateValue;
-@property(readonly) NSNumber *numberValue;
-@property(readonly) NSString *stringValue;
 
 @end
 

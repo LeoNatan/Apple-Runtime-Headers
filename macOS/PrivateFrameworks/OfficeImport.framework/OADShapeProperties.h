@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADGraphicProperties.h>
 
+__attribute__((visibility("hidden")))
 @interface OADShapeProperties : OADGraphicProperties
 {
     BOOL mIsTextBox;

@@ -22,6 +22,7 @@
     NSArray *_sortDescriptors;
     unsigned long long _batchSize;
     unsigned long long _fetchLimit;
+    unsigned long long _allocationSize;
     NSArray *_relationshipKeyPathsForPrefetching;
     struct _fetchRequestFlags {
         unsigned int distinctValuesOnly:1;
@@ -35,7 +36,8 @@
         unsigned int refreshesRefetched:1;
         unsigned int propertiesValidated:1;
         unsigned int disableCaching:1;
-        unsigned int _RESERVED:19;
+        unsigned int allocationType:3;
+        unsigned int _RESERVED:16;
     } _flags;
 }
 
@@ -61,6 +63,10 @@
 @property(nonatomic) BOOL includesPendingChanges;
 @property(nonatomic) unsigned long long resultType;
 @property(nonatomic) BOOL includesPropertyValues;
+- (void)setAllocationSize:(unsigned long long)arg1;
+- (unsigned long long)allocationSize;
+- (void)setAllocationType:(unsigned long long)arg1;
+- (unsigned long long)allocationType;
 @property(nonatomic) BOOL includesSubentities;
 @property(nonatomic) BOOL returnsObjectsAsFaults;
 @property(copy, nonatomic) NSArray *relationshipKeyPathsForPrefetching;

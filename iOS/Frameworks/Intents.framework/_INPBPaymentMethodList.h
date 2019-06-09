@@ -19,6 +19,7 @@
     NSArray *_paymentMethods;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)paymentMethodsType;
 @property(copy, nonatomic) NSArray *paymentMethods; // @synthesize paymentMethods=_paymentMethods;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)paymentMethodsAtIndex:(unsigned long long)arg1;

@@ -8,6 +8,7 @@
 
 @class WDDocument, WDListLevel;
 
+__attribute__((visibility("hidden")))
 @interface WDListLevelOverride : NSObject
 {
     WDDocument *mDocument;

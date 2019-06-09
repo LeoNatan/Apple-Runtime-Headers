@@ -13,19 +13,21 @@
     struct __MDAppRankEvaluator *_appRankEvaluator;
     NSString *_filterQuery;
     NSArray *_rankingPatterns;
+    BOOL _isFuzzy;
     NSString *_queryString;
     SPMetadataPattern *_queryPattern;
 }
 
 + (id)getAppleApps;
 + (id)appResultForPath:(id)arg1;
-+ (id)_applicationsQueryResults;
-+ (id)getUnsupportedAppBundleIds;
-+ (id)_applicationQueryUpdateDisplayNamesForResult:(struct __MDItem *)arg1 withAttributes:(id)arg2;
-+ (void)_applicationsQueryDidUpdateNotification:(id)arg1;
-+ (void)_applicationsQueryDidFinishNotification:(id)arg1;
++ (id)_applicationQueryUpdateDisplayNamesForResult:(id)arg1 withAttributes:(id)arg2;
++ (void)updateWithNewResults:(id)arg1;
++ (void)handleFoundItems:(id)arg1;
++ (void)handleRemovedItems:(id)arg1;
 + (void)readFlatFileForFastRetrievalAfterColdStart;
 + (void)writeAppsToFlatFileForColdStart;
++ (void)handleChangedItems:(id)arg1;
++ (void)handleQueryDidFinish;
 + (void)_displayNamePreferenceUpdated:(id)arg1;
 + (void)_createApplicationsQuery;
 + (id)appToPathMapping;
@@ -38,6 +40,7 @@
 + (void)boost;
 @property(readonly) SPMetadataPattern *queryPattern; // @synthesize queryPattern=_queryPattern;
 @property(readonly) NSString *queryString; // @synthesize queryString=_queryString;
+@property BOOL isFuzzy; // @synthesize isFuzzy=_isFuzzy;
 - (void).cxx_destruct;
 - (void)_sendResponse:(id)arg1;
 - (void)_sendFilteredResponseOfKind:(int)arg1;
@@ -45,15 +48,16 @@
 - (id)filterResultsBasedOnDisplayName:(id)arg1;
 - (BOOL)isCopyrightApple:(id)arg1;
 - (void)setRankingQueries:(id)arg1;
-- (unsigned long long)calculateScoreForResult:(id)arg1;
+-     // Error parsing type: T24@0:8@16, name: calculateScoreForResult:
 - (void)_applicationResultsDidUpdateNotification:(id)arg1;
 - (void)_unregisterForApplicationResultsUpdateNotification;
 - (void)_registerForApplicationResultsUpdateNotification;
 - (BOOL)isApplicationQuery;
 - (void)dealloc;
 - (void)cancel;
+- (void)startWithFuzzyValue:(BOOL)arg1;
 - (void)start;
-- (void)prepareQuery;
+- (void)prepareQuery:(BOOL)arg1;
 
 @end
 

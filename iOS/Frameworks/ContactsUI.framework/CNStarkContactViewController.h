@@ -19,6 +19,7 @@
 }
 
 + (_Bool)enablesTransportButtons;
++ (long long)tableViewStyle;
 @property(retain, nonatomic) CNStarkContactNameView *contactNameView; // @synthesize contactNameView=_contactNameView;
 @property(retain, nonatomic) NSArray *activatedConstraints; // @synthesize activatedConstraints=_activatedConstraints;
 @property(retain, nonatomic) CNCardiMessageEmailGroup *iMessageEmailGroup; // @synthesize iMessageEmailGroup=_iMessageEmailGroup;
@@ -26,18 +27,20 @@
 - (void).cxx_destruct;
 - (void)queryComplete;
 - (void)_initiateBestiMessagePropertyQuery;
-- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (_Bool)isScrollViewControllingHeaderResizeAnimation:(id)arg1;
 - (_Bool)tableView:(id)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(id)arg3 withSender:(id)arg4;
+- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
 - (void)setupConstraints;
 - (void)loadContactViewControllerViews;
+- (id)applyContactStyle;
+- (id)displayHeaderView;
+- (void)updateFontColors;
 - (_Bool)hasTableViewHeaderFirstSection;
 - (void)setupTableHeaderView;
 - (_Bool)shouldDisplayAvatarHeaderView;
 - (void)initializeTableViewsForHeaderHeight;
 - (_Bool)isGeminiAvailable;
-- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;

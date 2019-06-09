@@ -12,6 +12,7 @@
 @class NSArray, NSString, SKUIMenuViewController, UIButton, UILabel, UIPopoverController;
 @protocol SKUIPopupMenuDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPopupMenuHeaderView : UIView <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate>
 {
     id <SKUIPopupMenuDelegate> _delegate;

@@ -13,7 +13,6 @@
 
 @optional
 - (void)registrationControlGetRegistrationStateForRegistrationType:(long long)arg1 requestID:(NSString *)arg2;
-- (void)registrationControlGetCurrentiMessageStateWithContextForRequestID:(NSString *)arg1;
 - (void)registrationControlSetRegistrationStateForRegistrationType:(long long)arg1 toState:(long long)arg2 requestID:(NSString *)arg3;
 - (void)appleCareSignOutUserWithRequestID:(NSString *)arg1;
 - (void)appleCareSignInUserName:(NSString *)arg1 DSID:(NSString *)arg2 authToken:(NSString *)arg3 requestID:(NSString *)arg4;
@@ -58,6 +57,7 @@
 - (void)sendSessionMessage:(NSData *)arg1 toDestinations:(NSSet *)arg2 forSessionWithUniqueID:(NSString *)arg3;
 - (void)endSession:(NSString *)arg1 withData:(NSData *)arg2;
 - (void)endSession:(NSString *)arg1;
+- (void)reconnectSessionWithUniqueID:(NSString *)arg1;
 - (void)declineInvitation:(NSString *)arg1 withData:(NSData *)arg2;
 - (void)declineInvitation:(NSString *)arg1;
 - (void)acceptInvitation:(NSString *)arg1 withData:(NSData *)arg2;
@@ -90,33 +90,20 @@
 - (void)getProgressUpdateForIdentifier:(NSString *)arg1 service:(NSString *)arg2;
 - (void)cancelItemWithIdentifier:(NSString *)arg1 service:(NSString *)arg2;
 - (void)sendMessageWithSendParameters:(NSDictionary *)arg1;
+- (void)sendCertifiedDeliveryReceipt:(NSDictionary *)arg1 serviceName:(NSString *)arg2;
+- (void)cancelOpportunisticDataOnService:(NSString *)arg1 withIdentifier:(NSString *)arg2;
+- (void)sendOpportunisticData:(NSData *)arg1 onService:(NSString *)arg2 usingAccountWithUniqueID:(NSString *)arg3 withIdentifier:(NSString *)arg4 options:(NSDictionary *)arg5;
 - (void)regenerateRegisteredIdentity;
 - (void)incomingAccountSyncMessage:(NSDictionary *)arg1;
 - (void)setPairedDeviceInfo:(NSDictionary *)arg1;
 - (void)updateSubServices:(NSArray *)arg1 forService:(NSString *)arg2 deviceUniqueID:(NSString *)arg3;
 - (void)reunionSyncCompletedForServices:(NSArray *)arg1 requestID:(NSString *)arg2;
 - (void)reunionSyncStartedForServices:(NSArray *)arg1 requestID:(NSString *)arg2;
-- (void)dropAllMessagesWithoutAnyAllowedClassifierForDevice:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)setAllowedTrafficClassifiersForDevice:(NSString *)arg1 classifiers:(NSArray *)arg2 requestID:(NSString *)arg3;
-- (void)getPairedDevicesWithRequestID:(NSString *)arg1;
-- (void)getPairingDevicesWithRequestID:(NSString *)arg1;
-- (void)forgetDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)unpairDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)stopLocalPairingForDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)unpairStartForDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)deletePairedDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)redeliverMessagesForDevice:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)switchActivePairedDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)setupCompletedForPairedDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)connectPairedDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
-- (void)addPairedDeviceWithID:(NSString *)arg1 requestID:(NSString *)arg2;
 - (void)dropAllMessagesWithoutAnyAllowedClassifier;
 - (void)setAllowedTrafficClasses:(NSSet *)arg1;
 - (void)initialLocalSyncCompletedForServices:(NSArray *)arg1;
 - (void)initialLocalSyncStartedForServices:(NSArray *)arg1;
 - (void)getDeliveryStats;
-- (void)getPairedDeviceInfo;
-- (void)getLocalDeviceInfo;
 - (void)deletePairedDevice:(NSString *)arg1;
 - (void)connectPairedDevice:(NSString *)arg1;
 - (void)addPairedDevice:(NSString *)arg1;
@@ -127,8 +114,10 @@
 - (void)startLocalSetup;
 - (void)fetchPhoneUserSubscriptionSourceWithRequestUUID:(NSString *)arg1;
 - (void)setPhoneUserSubscriptionSource:(NSNumber *)arg1 withRequestUUID:(NSString *)arg2;
+- (void)requestCarrierTokenForSubscriptionSource:(NSNumber *)arg1 IMEI:(NSString *)arg2 carrierNonce:(NSString *)arg3 requestUUID:(NSString *)arg4;
 - (void)generatePhoneAuthenticationSignatureOverData:(NSData *)arg1 withRequestUUID:(NSString *)arg2;
 - (void)authenticatePhoneWithRequestUUID:(NSString *)arg1;
+- (void)setPassword:(NSString *)arg1 forUsername:(NSString *)arg2 onService:(NSString *)arg3;
 - (void)getRegisteredIdentities;
 - (void)repairAccounts;
 - (void)reRegisterWithUserID:(NSString *)arg1 action:(NSNumber *)arg2 service:(NSString *)arg3;

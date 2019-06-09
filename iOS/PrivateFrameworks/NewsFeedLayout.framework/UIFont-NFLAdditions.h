@@ -7,6 +7,7 @@
 #import <UIKit/UIFont.h>
 
 @interface UIFont (NFLAdditions)
++ (id)nfl_sfuiTextBoldForSize:(double)arg1;
 + (id)nfl_drukTextBoldForSize:(double)arg1;
 + (id)nfl_drukWideMediumForSize:(double)arg1;
 + (id)nfl_systemFontNameForWeight:(double)arg1 condensed:(_Bool)arg2;

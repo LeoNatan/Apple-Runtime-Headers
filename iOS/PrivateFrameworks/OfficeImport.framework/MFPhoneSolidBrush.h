@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)solidBrushWithColour:(id)arg1;
+- (void).cxx_destruct;
 - (void)fillPath:(id)arg1 in_path:(id)arg2;
-- (void)dealloc;
 - (id)initWithColour:(id)arg1;
 
 @end

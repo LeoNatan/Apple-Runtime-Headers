@@ -6,25 +6,9 @@
 
 #import <CFNetwork/NSURLSessionTask.h>
 
-@class AVURLAsset, NSArray, NSDictionary, NSURL, NSURLRequest, NSURLResponse;
-
 @interface AVAssetDownloadTask : NSURLSessionTask
 {
-    AVURLAsset *_URLAsset;
-    NSURL *_destinationURL;
-    NSDictionary *_options;
-    NSArray *_loadedTimeRanges;
 }
-
-@property(readonly, nonatomic) NSArray *loadedTimeRanges; // @synthesize loadedTimeRanges=_loadedTimeRanges;
-@property(readonly, nonatomic) NSDictionary *options; // @synthesize options=_options;
-@property(readonly, nonatomic) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
-@property(readonly, nonatomic) AVURLAsset *URLAsset; // @synthesize URLAsset=_URLAsset;
-
-// Remaining properties
-@property(readonly, copy) NSURLRequest *currentRequest;
-@property(readonly, copy) NSURLRequest *originalRequest;
-@property(readonly, copy) NSURLResponse *response;
 
 @end
 

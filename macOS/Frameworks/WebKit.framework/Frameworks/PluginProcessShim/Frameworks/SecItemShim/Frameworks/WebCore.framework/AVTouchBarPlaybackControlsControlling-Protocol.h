@@ -20,9 +20,9 @@
 @optional
 @property(readonly) NSURL *assetURL;
 @property(readonly) BOOL canBeginTouchBarScrubbing;
-@property AVTouchBarMediaSelectionOption *currentLegibleTouchBarMediaSelectionOption;
+@property(retain) AVTouchBarMediaSelectionOption *currentLegibleTouchBarMediaSelectionOption;
 @property(readonly) NSArray *legibleTouchBarMediaSelectionOptions;
-@property AVTouchBarMediaSelectionOption *currentAudioTouchBarMediaSelectionOption;
+@property(retain) AVTouchBarMediaSelectionOption *currentAudioTouchBarMediaSelectionOption;
 @property(readonly) NSArray *audioTouchBarMediaSelectionOptions;
 @property(readonly) NSArray *seekableTimeRanges;
 @property(readonly) BOOL canTogglePictureInPicture;
@@ -32,8 +32,7 @@
 @property(getter=isPlaying) BOOL playing;
 - (void)controlsViewDidDisappear;
 - (void)controlsViewWillAppear;
-- (void)cancelThumbnailAndAudioAmplitudeSampleGeneration;
-- (void)generateTouchBarAudioAmplitudeSamples:(long long)arg1 completionHandler:(void (^)(NSArray *))arg2;
+- (void)cancelThumbnailGeneration;
 - (void)generateTouchBarThumbnailsForTimes:(NSArray *)arg1 tolerance:(double)arg2 size:(struct CGSize)arg3 thumbnailHandler:(void (^)(NSArray *, BOOL))arg4;
 - (void)endTouchBarScrubbing;
 - (void)beginTouchBarScrubbing;

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mChildren;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithLayoutNode:(id)arg1 point:(id)arg2;
 - (void)processShape:(id)arg1 state:(struct ODILayoutNodeState *)arg2;
 - (void)processAlgorithm:(id)arg1 state:(struct ODILayoutNodeState *)arg2;

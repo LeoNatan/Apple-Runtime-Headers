@@ -10,6 +10,7 @@
 
 @class MPUBorderConfiguration, MPUBorderDrawingCache, MPUStackView, NSString, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStackedImageView : SKUIImageView <MPUStackViewDataSource>
 {
     MPUBorderConfiguration *_borderConfiguration;

@@ -18,8 +18,12 @@
     } _flags;
 }
 
-+ (long long)freeDiskSpaceThreshold;
++ (_Bool)freeSpaceBelowDesiredSpaceThresholdForPath:(id)arg1;
++ (id)mountPointForPath:(id)arg1;
++ (long long)fileSystemSizeForPath:(id)arg1;
++ (long long)diskSpaceAvailableForPath:(id)arg1;
 + (long long)diskSpaceAvailableForUse;
++ (long long)freeDiskSpaceThreshold;
 + (id)sharedInstance;
 - (long long)bytesToAutomaticallyClear;
 - (_Bool)hasEnoughDiskToTakePicture;

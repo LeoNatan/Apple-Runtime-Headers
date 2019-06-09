@@ -59,6 +59,9 @@
 @property(readonly, copy, nonatomic) NSURL *clientLibraryBaseURL; // @synthesize clientLibraryBaseURL=_clientLibraryBaseURL;
 @property(readonly, nonatomic) CPLPlatformObject *platformObject; // @synthesize platformObject=_platformObject;
 - (void).cxx_destruct;
+- (void)provideCloudResource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)provideRecordWithCloudScopeIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)provideLibraryInfoForScopeWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)componentName;
 - (void)notifyAttachedObjectsSizeOfResourcesToUploadDidChangeToSize:(unsigned long long)arg1 sizeOfOriginalResourcesToUpload:(unsigned long long)arg2 numberOfImages:(unsigned long long)arg3 numberOfVideos:(unsigned long long)arg4 numberOfOtherItems:(unsigned long long)arg5;
 - (void)notifyAttachedObjectsUploadTask:(id)arg1 didFinishWithError:(id)arg2;
@@ -69,6 +72,7 @@
 - (void)notifyAttachedObjectsHasStatusChanges;
 - (void)notifyAttachedObjectsPullQueueIsFull;
 - (void)requestAttachedLibrary;
+- (void)_performBlockOnLibrary:(CDUnknownBlockType)arg1;
 - (void)_performBlockWithLibrary:(_Bool)arg1 enumerateAttachedObjects:(CDUnknownBlockType)arg2;
 - (void)detachObject:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)attachObject:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -84,8 +88,9 @@
 - (void)updateAssetCountsFromServer:(id)arg1;
 - (void)_updateTotalAssetCountWithAssetCounts:(id)arg1;
 - (void)updateDisabledFeatures:(id)arg1;
+- (void)setLowDiskSpace:(_Bool)arg1;
 - (void)setConnectedToNetwork:(_Bool)arg1;
-- (void)setHasCellularBudget:(_Bool)arg1 hasBatteryBudget:(_Bool)arg2 isBudgetValid:(_Bool)arg3;
+- (void)setHasCellularBudget:(_Bool)arg1 hasBatteryBudget:(_Bool)arg2 isConstrainedNetwork:(_Bool)arg3 isBudgetValid:(_Bool)arg4;
 @property(nonatomic) _Bool iCloudLibraryClientVersionTooOld;
 @property(copy, nonatomic) NSDate *exitDeleteTime;
 @property(nonatomic) _Bool isExceedingQuota;

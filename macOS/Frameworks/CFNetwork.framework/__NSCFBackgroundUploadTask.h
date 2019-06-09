@@ -6,7 +6,6 @@
 
 #import <CFNetwork/__NSCFBackgroundDataTask.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSCFBackgroundUploadTask : __NSCFBackgroundDataTask
 {
 }

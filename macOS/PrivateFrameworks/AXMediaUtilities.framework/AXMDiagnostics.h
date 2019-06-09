@@ -15,12 +15,15 @@
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableArray *_queue_diagnosticMetrics;
+    NSMutableArray *_queue_visionObservations;
     BOOL _diagnosticsEnabled;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL diagnosticsEnabled; // @synthesize diagnosticsEnabled=_diagnosticsEnabled;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSArray *visionObservations;
+- (void)appendVisionObservations:(id)arg1;
 - (id)startMeasurement:(long long)arg1 name:(id)arg2;
 - (id)captureMetrics:(long long)arg1 name:(id)arg2 forTask:(CDUnknownBlockType)arg3;
 - (id)captureMetrics:(long long)arg1 name:(id)arg2 forTask:(CDUnknownBlockType)arg3 signpostStartBlock:(CDUnknownBlockType)arg4 signpostEndBlock:(CDUnknownBlockType)arg5;

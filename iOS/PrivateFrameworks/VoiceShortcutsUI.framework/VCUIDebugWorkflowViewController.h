@@ -9,12 +9,12 @@
 #import <VoiceShortcutsUI/WFLActionUserInterface-Protocol.h>
 #import <VoiceShortcutsUI/WFLWorkflowControllerDelegate-Protocol.h>
 
-@class NSString, UIProgressView, UITextView, WFLWorkflow, WFLWorkflowController;
+@class NSString, UIProgressView, UITextView, WFLWorkflowController, WFWorkflow;
 @protocol VCUIDebugWorkflowViewControllerDelegate;
 
 @interface VCUIDebugWorkflowViewController : UIViewController <WFLWorkflowControllerDelegate, WFLActionUserInterface>
 {
-    WFLWorkflow *_workflow;
+    WFWorkflow *_workflow;
     id <VCUIDebugWorkflowViewControllerDelegate> _delegate;
     UIProgressView *_progressView;
     UITextView *_outputView;
@@ -25,7 +25,7 @@
 @property(nonatomic) __weak UITextView *outputView; // @synthesize outputView=_outputView;
 @property(nonatomic) __weak UIProgressView *progressView; // @synthesize progressView=_progressView;
 @property(nonatomic) __weak id <VCUIDebugWorkflowViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) WFLWorkflow *workflow; // @synthesize workflow=_workflow;
+@property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
 - (void).cxx_destruct;
 - (void)promptConfirmationForIntent:(id)arg1 proceedHandler:(CDUnknownBlockType)arg2 cancelationHandler:(CDUnknownBlockType)arg3;
 - (void)promptAuthenticationForIntent:(id)arg1 proceedHandler:(CDUnknownBlockType)arg2 cancelationHandler:(CDUnknownBlockType)arg3;

@@ -13,6 +13,7 @@
     JSVirtualMachine *m_virtualMachine;
     struct OpaqueJSContext *m_context;
     struct Strong<JSC::JSObject> m_exception;
+    struct WeakObjCPtr<id<JSModuleLoaderDelegate>> m_moduleLoaderDelegate;
     CDUnknownBlockType _exceptionHandler;
 }
 
@@ -24,6 +25,8 @@
 @property(copy) CDUnknownBlockType exceptionHandler; // @synthesize exceptionHandler=_exceptionHandler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setModuleLoaderDelegate:(id)arg1;
+- (id)moduleLoaderDelegate;
 - (void)_setDebuggerRunLoop:(struct __CFRunLoop *)arg1;
 - (struct __CFRunLoop *)_debuggerRunLoop;
 - (void)_setIncludesNativeCallStackWhenReportingExceptions:(_Bool)arg1;
@@ -33,8 +36,8 @@
 @property(copy) NSString *name;
 @property(readonly) JSVirtualMachine *virtualMachine;
 @property(readonly) JSValue *globalObject;
-- (id)wrapperMap;
 @property(retain) JSValue *exception;
+- (id)evaluateJSScript:(id)arg1;
 - (id)evaluateScript:(id)arg1 withSourceURL:(id)arg2;
 - (id)evaluateScript:(id)arg1;
 - (void)dealloc;
@@ -45,6 +48,7 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)wrapperForJSObject:(struct OpaqueJSValue *)arg1;
+- (id)wrapperMap;
 - (id)wrapperForObjCObject:(id)arg1;
 - (void)endCallbackWithData:(struct CallbackData *)arg1;
 - (void)beginCallbackWithData:(struct CallbackData *)arg1 calleeValue:(struct OpaqueJSValue *)arg2 thisValue:(struct OpaqueJSValue *)arg3 argumentCount:(unsigned long)arg4 arguments:(const struct OpaqueJSValue **)arg5;

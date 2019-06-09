@@ -9,9 +9,14 @@
 @class NSArray, NSDate, NSString;
 
 @protocol ICSearchIndexableNote <ICSearchIndexable>
+@property(readonly, nonatomic) NSArray *noteCellKeyPaths;
 @property(readonly, nonatomic) _Bool isModernNote;
+- (NSString *)identifier;
 - (NSString *)accountName;
+- (NSString *)folderNameForNoteList;
 - (NSString *)folderName;
+- (_Bool)isSharedReadOnly;
+- (_Bool)isSharedViaICloudFolder;
 - (_Bool)isSharedViaICloud;
 - (NSDate *)dateForCurrentSortType;
 - (NSString *)contentInfoText;
@@ -19,6 +24,5 @@
 - (NSString *)trimmedTitle;
 - (NSString *)title;
 - (_Bool)isPasswordProtected;
-- (NSArray *)searchableContentKeyPaths;
 @end
 

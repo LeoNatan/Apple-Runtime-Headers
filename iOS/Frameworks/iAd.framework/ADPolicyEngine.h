@@ -47,6 +47,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *policyEngineQueue; // @synthesize policyEngineQueue=_policyEngineQueue;
 @property(nonatomic) double nextPrerollPlaybackTime; // @synthesize nextPrerollPlaybackTime=_nextPrerollPlaybackTime;
 @property(nonatomic) double nextInterstitialPresentationTime; // @synthesize nextInterstitialPresentationTime=_nextInterstitialPresentationTime;
+- (void).cxx_destruct;
 - (void)bannerViewActionDidFinish:(id)arg1;
 - (_Bool)bannerViewActionShouldBegin:(id)arg1 willLeaveApplication:(_Bool)arg2;
 - (void)bannerView:(id)arg1 didFailToReceiveAdWithError:(id)arg2;
@@ -68,7 +69,6 @@
 - (void)enablePolicyEngine;
 - (void)_enablePolicyEngineWithReason:(id)arg1;
 - (id)init;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

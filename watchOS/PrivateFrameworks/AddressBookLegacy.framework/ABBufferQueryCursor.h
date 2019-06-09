@@ -65,7 +65,6 @@
 - (void)dealloc;
 - (void)fetchNextBatchWithReply:(CDUnknownBlockType)arg1;
 - (id)initWithQuery:(id)arg1 batchSize:(unsigned int)arg2 managedConfiguration:(id)arg3;
-- (id)initWithAddressBook:(void *)arg1 query:(id)arg2 queryBinder:(CDUnknownBlockType)arg3 propertyIdentifierSet:(struct __CFSet *)arg4 includeLinkedContacts:(_Bool)arg5 sortOrder:(unsigned int)arg6 suggestedContactsPerBatch:(unsigned int)arg7 managedConfiguration:(id)arg8;
 - (id)initWithAddressBook:(void *)arg1 predicate:(id)arg2 propertyIdentifierSet:(struct __CFSet *)arg3 includeLinkedContacts:(_Bool)arg4 sortOrder:(unsigned int)arg5 suggestedContactsPerBatch:(unsigned int)arg6 managedConfiguration:(id)arg7;
 
 @end

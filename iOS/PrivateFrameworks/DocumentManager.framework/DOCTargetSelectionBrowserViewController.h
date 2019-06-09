@@ -6,25 +6,35 @@
 
 #import <UIKitCore/UINavigationController.h>
 
-#import <DocumentManager/DOCAppearanceProtocol-Protocol.h>
+#import <DocumentManager/DOCAppearanceCustomization-Protocol.h>
 #import <DocumentManager/DOCHostTargetSelectionBrowserViewControllerProxy-Protocol.h>
+#import <DocumentManager/DOCKeyCommandDismissible-Protocol.h>
 #import <DocumentManager/DOCRemoteViewControllerDelegate-Protocol.h>
 
-@class DOCAppearance, DOCConfiguration, NSArray, NSString, UIViewController, _UIResilientRemoteViewContainerViewController;
+@class DOCAppearance, DOCConfiguration, NSArray, NSString, NSURL, UIViewController, _UIResilientRemoteViewContainerViewController;
 @protocol DOCRemoteAppearanceInterface, DOCServiceTargetSelectionBrowserViewControllerProxy, DOCTargetSelectionBrowserViewControllerDelegate;
 
-@interface DOCTargetSelectionBrowserViewController : UINavigationController <DOCHostTargetSelectionBrowserViewControllerProxy, DOCAppearanceProtocol, DOCRemoteViewControllerDelegate>
+@interface DOCTargetSelectionBrowserViewController : UINavigationController <DOCKeyCommandDismissible, DOCHostTargetSelectionBrowserViewControllerProxy, DOCAppearanceCustomization, DOCRemoteViewControllerDelegate>
 {
+    id <DOCTargetSelectionBrowserViewControllerDelegate> _targetSelectionDelegate;
+    NSURL *_directoryURLToReveal;
     _UIResilientRemoteViewContainerViewController *_remoteViewController;
     UIViewController<DOCRemoteAppearanceInterface> *_localViewController;
-    DOCConfiguration *_configuration;
     id <DOCServiceTargetSelectionBrowserViewControllerProxy> _serviceProxy;
-    NSArray *_urls;
     NSArray *_items;
+    NSArray *_urls;
     DOCAppearance *_lastAppearance;
-    id <DOCTargetSelectionBrowserViewControllerDelegate> _targetSelectionDelegate;
+    DOCConfiguration *_configuration;
 }
 
+@property(retain, nonatomic) DOCConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain, nonatomic) DOCAppearance *lastAppearance; // @synthesize lastAppearance=_lastAppearance;
+@property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
+@property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
+@property(retain, nonatomic) id <DOCServiceTargetSelectionBrowserViewControllerProxy> serviceProxy; // @synthesize serviceProxy=_serviceProxy;
+@property(retain, nonatomic) UIViewController<DOCRemoteAppearanceInterface> *localViewController; // @synthesize localViewController=_localViewController;
+@property(retain, nonatomic) _UIResilientRemoteViewContainerViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+@property(copy, nonatomic) NSURL *directoryURLToReveal; // @synthesize directoryURLToReveal=_directoryURLToReveal;
 @property(nonatomic) __weak id <DOCTargetSelectionBrowserViewControllerDelegate> targetSelectionDelegate; // @synthesize targetSelectionDelegate=_targetSelectionDelegate;
 - (void).cxx_destruct;
 - (void)remoteViewController:(id)arg1 didTerminateViewServiceWithError:(id)arg2;
@@ -34,19 +44,22 @@
 - (void)filesExportedAtURLs:(id)arg1;
 - (void)cancelPresentation;
 - (void)dismissViewController;
-- (void)updateAppearance:(id)arg1;
+- (void)effectiveAppearanceDidChange:(id)arg1;
 - (void)_cancelButtonPressed:(id)arg1;
 - (void)_updateNavigationBar;
 - (void)viewDidLoad;
 - (id)remoteInterface;
-- (id)remoteViewController;
+- (id)initForPickingFolderWithConfiguration:(id)arg1;
 - (id)initWithConfiguration:(id)arg1 urls:(id)arg2;
 - (id)initWithConfiguration:(id)arg1 items:(id)arg2;
 - (id)initForExportingWithConfiguration:(id)arg1;
+- (void)dismissWithKeyCommand:(id)arg1;
+- (_Bool)canDismissWithKeyCommand;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) DOCAppearance *effectiveAppearance; // @dynamic effectiveAppearance;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

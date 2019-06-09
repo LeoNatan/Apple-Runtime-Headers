@@ -10,6 +10,7 @@
 
 @class CKMediaObject, CSLSAlertSuppressionAssertion, NSString, UIView;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoMediaPresenter : CKViewController <CKNanoMediaPresentingViewController>
 {
     CSLSAlertSuppressionAssertion *_alertSuppressionAssertion;

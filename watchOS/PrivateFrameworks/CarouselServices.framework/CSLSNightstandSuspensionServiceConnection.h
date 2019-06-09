@@ -13,6 +13,8 @@
 @interface CSLSNightstandSuspensionServiceConnection : NSObject <CSLSNightstandSuspensionService>
 {
     NSXPCConnection *_connection;
+    _Bool _assertionTaken;
+    struct os_unfair_recursive_lock_s _lock;
 }
 
 + (id)log;
@@ -22,8 +24,9 @@
 - (void)connect:(CDUnknownBlockType)arg1;
 - (void)releaseNightstandSuspensionAssertion:(CDUnknownBlockType)arg1;
 - (void)takeNightstandSuspensionAssertion:(CDUnknownBlockType)arg1;
-- (id)_synchronousRemoteObjectProxy;
-- (id)_remoteObjectProxy;
+- (void)_withLock:(CDUnknownBlockType)arg1;
+- (id)_remoteObjectProxy:(CDUnknownBlockType)arg1;
+- (void)_retakeAssertionIfNecessary;
 - (id)_init;
 
 // Remaining properties

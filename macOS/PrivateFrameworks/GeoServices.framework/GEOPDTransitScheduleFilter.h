@@ -8,22 +8,24 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDDeparturePredicate, PBUnknownFields;
+@class GEOPDDeparturePredicate, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDTransitScheduleFilter : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    struct GEOPDTimeRange _operatingHoursRange;
     GEOPDDeparturePredicate *_departurePredicateCountdown;
     GEOPDDeparturePredicate *_departurePredicateStamp;
-    CDStruct_65124bb5 _has;
+    struct GEOPDTimeRange _operatingHoursRange;
+    BOOL _includeRealTimeDepartures;
+    CDStruct_34971647 _flags;
 }
 
-@property(nonatomic) struct GEOPDTimeRange operatingHoursRange; // @synthesize operatingHoursRange=_operatingHoursRange;
-@property(retain, nonatomic) GEOPDDeparturePredicate *departurePredicateStamp; // @synthesize departurePredicateStamp=_departurePredicateStamp;
-@property(retain, nonatomic) GEOPDDeparturePredicate *departurePredicateCountdown; // @synthesize departurePredicateCountdown=_departurePredicateCountdown;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,11 +34,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIncludeRealTimeDepartures;
+@property(nonatomic) BOOL includeRealTimeDepartures;
 @property(nonatomic) BOOL hasOperatingHoursRange;
+@property(nonatomic) struct GEOPDTimeRange operatingHoursRange;
+@property(retain, nonatomic) GEOPDDeparturePredicate *departurePredicateStamp;
 @property(readonly, nonatomic) BOOL hasDeparturePredicateStamp;
+- (void)_readDeparturePredicateStamp;
+@property(retain, nonatomic) GEOPDDeparturePredicate *departurePredicateCountdown;
 @property(readonly, nonatomic) BOOL hasDeparturePredicateCountdown;
+- (void)_readDeparturePredicateCountdown;
 
 @end
 

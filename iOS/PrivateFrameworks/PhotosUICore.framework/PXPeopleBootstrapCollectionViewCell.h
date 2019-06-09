@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class PXPersonImageRequest, PXRoundedCornerOverlayView, UIImage, UIImageView;
+@class PXPersonImageRequest, PXRoundedCornerOverlayView, UIImage, UIImageView, UIView;
 
 @interface PXPeopleBootstrapCollectionViewCell : UICollectionViewCell
 {
@@ -16,22 +16,19 @@
     unsigned long long _presentationStatus;
     PXPersonImageRequest *_imageRequest;
     PXRoundedCornerOverlayView *_roundCornerOverlay;
-    UIImageView *_checkmark;
+    UIView *_selectedCheckmarkView;
+    UIView *_unselectedCheckmarkView;
     UIImageView *_badgeView;
     UIImageView *_imageView;
-    UIImage *_confirmedImage;
-    UIImage *_unconfirmedImage;
     struct CGSize _checkmarkImageSize;
 }
 
 + (id)cloudErrorBadgeImage;
-+ (id)cloudBadgeImage;
-@property(readonly, nonatomic) UIImage *unconfirmedImage; // @synthesize unconfirmedImage=_unconfirmedImage;
-@property(readonly, nonatomic) UIImage *confirmedImage; // @synthesize confirmedImage=_confirmedImage;
 @property(readonly, nonatomic) struct CGSize checkmarkImageSize; // @synthesize checkmarkImageSize=_checkmarkImageSize;
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UIImageView *badgeView; // @synthesize badgeView=_badgeView;
-@property(readonly, nonatomic) UIImageView *checkmark; // @synthesize checkmark=_checkmark;
+@property(readonly, nonatomic) UIView *unselectedCheckmarkView; // @synthesize unselectedCheckmarkView=_unselectedCheckmarkView;
+@property(readonly, nonatomic) UIView *selectedCheckmarkView; // @synthesize selectedCheckmarkView=_selectedCheckmarkView;
 @property(readonly, nonatomic) PXRoundedCornerOverlayView *roundCornerOverlay; // @synthesize roundCornerOverlay=_roundCornerOverlay;
 @property(nonatomic) _Bool isVerified; // @synthesize isVerified=_isVerified;
 @property(nonatomic) _Bool isMergeCandidate; // @synthesize isMergeCandidate=_isMergeCandidate;

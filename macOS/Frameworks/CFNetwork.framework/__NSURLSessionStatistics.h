@@ -15,10 +15,10 @@
     NSArray *_externallyVisibleConnectionUUIDs;
 }
 
-+ (void)fillCFNetworkTransactionMetricStruct:(CDStruct_a2c7495a *)arg1 from:(id)arg2 forTaskUUID:(unsigned char [16])arg3;
++ (void)fillCFNetworkTransactionMetricStruct:(CDStruct_46ef296f *)arg1 from:(id)arg2;
 + (int)getNetworkProtocol:(id)arg1;
 + (int)getTaskType:(id)arg1;
-+ (CDStruct_2615cf90 *)createCFNetworkTaskMetrics_s:(id)arg1;
++ (CDStruct_61067874 *)createCFNetworkTaskMetrics_s:(id)arg1;
 + (void)reportMetricsToSymptoms:(id)arg1;
 @property(retain) NSArray *externallyVisibleConnectionUUIDs; // @synthesize externallyVisibleConnectionUUIDs=_externallyVisibleConnectionUUIDs;
 @property(retain) NSUUID *externallyVisibleNwActivity; // @synthesize externallyVisibleNwActivity=_externallyVisibleNwActivity;
@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) PBCodable *awdReport;
 @property(readonly, nonatomic) unsigned int awdMetricID;
 @property(readonly, nonatomic) NSArray *connectionUUIDS;
+@property(readonly, nonatomic) NSUUID *taskUUID;
 @property(readonly, nonatomic) NSUUID *nwActivity;
 - (void)dealloc;
 - (id)initWithCFNetworkReport:(void *)arg1 length:(long long)arg2;

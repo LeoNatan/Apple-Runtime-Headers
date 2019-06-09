@@ -21,10 +21,15 @@
 @property(retain, nonatomic) NSArray *tabInfos; // @synthesize tabInfos=_tabInfos;
 - (void).cxx_destruct;
 - (id)tabbedLibraryViewController:(id)arg1 tabBarItemForContentMode:(int)arg2;
+- (_Bool)_ppt_shouldShowNilTab;
+- (_Bool)_ppt_shouldShowBlankTab;
 - (_Bool)_shouldShowSharedTabForTabbedLibraryViewController:(id)arg1;
 - (_Bool)_shouldShowSearchTabForTabbedLibraryViewController:(id)arg1;
 - (_Bool)_shouldShowForYouTabForTabbedLibraryViewController:(id)arg1;
 - (_Bool)_shouldShowMemoriesTabForTabbedLibraryViewController:(id)arg1;
+- (_Bool)_shouldShowAllPhotosTabForTabbedLibraryViewController:(id)arg1;
+- (_Bool)_shouldShowPhotosTabForTabbedLibraryViewController:(id)arg1;
+- (_Bool)_shouldShowCuratedLibraryTabForTabbedLibraryViewController:(id)arg1;
 - (_Bool)tabbedLibraryViewController:(id)arg1 shouldShowTabForContentMode:(int)arg2;
 - (id)tabInfoForContentMode:(int)arg1;
 - (id)initWithSettings:(id)arg1 preloadScheduler:(id)arg2;

@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _workBlock;
 }
 
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (BOOL)isWritingRequest;
 - (void)dealloc;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 context:(id)arg2 sqlCore:(id)arg3;

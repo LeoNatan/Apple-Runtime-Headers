@@ -13,8 +13,6 @@
 @interface MPPlaybackContext : NSObject <NSSecureCoding>
 {
     MPAVItem *_playerCurrentItem;
-    _Bool _requireFinalTracklist;
-    _Bool _shouldRestartPlayback;
     int _startIndex;
     int _actionAfterQueueLoad;
     int _shuffleType;
@@ -35,18 +33,17 @@
 @property(copy, nonatomic) NSString *playActivityFeatureName; // @synthesize playActivityFeatureName=_playActivityFeatureName;
 @property(nonatomic) int repeatType; // @synthesize repeatType=_repeatType;
 @property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
-@property(nonatomic) _Bool shouldRestartPlayback; // @synthesize shouldRestartPlayback=_shouldRestartPlayback;
-@property(nonatomic) _Bool requireFinalTracklist; // @synthesize requireFinalTracklist=_requireFinalTracklist;
 @property(nonatomic) int actionAfterQueueLoad; // @synthesize actionAfterQueueLoad=_actionAfterQueueLoad;
 @property(nonatomic) int startIndex; // @synthesize startIndex=_startIndex;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=isSupported) _Bool supported;
 - (id)description;
 - (id)descriptionComponents;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldBecomeActive;
+@property(readonly, nonatomic) _Bool containsTransportableContent;
 - (id)init;
-@property(retain, nonatomic) MPAVItem *playerCurrentItem;
 
 @end
 

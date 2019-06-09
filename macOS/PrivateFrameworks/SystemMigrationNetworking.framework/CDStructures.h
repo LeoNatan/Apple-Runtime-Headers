@@ -78,6 +78,19 @@ typedef struct {
 } CDStruct_f9f9ee5f;
 
 typedef struct {
+    struct {
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+    } _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+} CDStruct_1210889d;
+
+typedef struct {
     union {
         struct {
             unsigned int :1;

@@ -9,16 +9,14 @@
 
 @protocol _LSDOpenProtocol
 - (void)failedToOpenApplication:(NSString *)arg1 withURL:(NSURL *)arg2;
-- (void)getAppLinkOpenStrategyForBundleIdentifier:(NSString *)arg1 completionHandler:(void (^)(_Bool, long long, NSError *))arg2;
-- (void)setAppLinkOpenStrategy:(long long)arg1 forBundleIdentifier:(NSString *)arg2;
 - (void)openAppLink:(LSAppLink *)arg1 state:(_LSAppLinkOpenState *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
 - (void)resolveAppLinksForURL:(NSURL *)arg1 limit:(unsigned long long)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
 - (void)getiCloudHostNamesWithCompletionHandler:(void (^)(NSSet *))arg1;
-- (void)getURLOverrideForURL:(NSURL *)arg1 completionHandler:(void (^)(NSURL *, NSError *))arg2;
+- (void)getURLOverrideForURL:(NSURL *)arg1 newsOnly:(_Bool)arg2 completionHandler:(void (^)(NSURL *, NSError *))arg3;
 - (void)canOpenURL:(NSURL *)arg1 publicSchemes:(_Bool)arg2 privateSchemes:(_Bool)arg3 completionHandler:(void (^)(_Bool, NSError *))arg4;
 - (void)openUserActivityWithUniqueIdentifier:(NSUUID *)arg1 activityData:(NSData *)arg2 activityType:(NSString *)arg3 bundleIdentifier:(NSString *)arg4 options:(NSDictionary *)arg5 completionHandler:(void (^)(_Bool, NSError *))arg6;
 - (void)openURL:(NSURL *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
-- (void)openApplicationWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
+- (void)openApplicationWithIdentifier:(NSString *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(_Bool, NSError *))arg3;
 - (void)performOpenOperationWithURL:(NSURL *)arg1 applicationIdentifier:(NSString *)arg2 documentIdentifier:(NSString *)arg3 isContentManaged:(_Bool)arg4 sourceAuditToken:(const CDStruct_4c969caf *)arg5 userInfo:(NSDictionary *)arg6 options:(NSDictionary *)arg7 delegate:(id <LSOpenResourceOperationDelegate>)arg8 completionHandler:(void (^)(_Bool, NSError *))arg9;
 @end
 

@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class UIImage;
+@class TSUOnce, UIImage;
 
 __attribute__((visibility("hidden")))
 @interface OITSUImage : NSObject
 {
     struct CGImage *mCachedSliceableImage;
     struct __CFDictionary *mImageSlices;
-    long long mImageSliceCacheLock;
+    TSUOnce *mImageSlicesOnce;
     id mCachedSystemImage;
-    long long mCachedImageLock;
+    TSUOnce *mCachedImageOnce;
 }
 
 + (id)imageWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 orientation:(long long)arg3;

@@ -21,8 +21,6 @@
 @property(readonly, nonatomic) HMTrigger *trigger; // @synthesize trigger=_trigger;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (void).cxx_destruct;
-- (id)_uniqueServiceGroupForServices:(id)arg1;
-- (id)_descriptionForTrigger:(id)arg1 effectivelyEnabled:(_Bool)arg2;
 - (id)_subclass_updateWithOptions:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)init;

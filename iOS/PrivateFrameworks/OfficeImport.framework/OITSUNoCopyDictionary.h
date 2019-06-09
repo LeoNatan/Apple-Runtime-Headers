@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (id)objectEnumerator;
 - (id)allValues;
 - (id)objectForKey:(id)arg1;
+- (void)getObjects:(id *)arg1 andKeys:(id *)arg2 count:(unsigned long long)arg3;
 - (void)getObjects:(id *)arg1 andKeys:(id *)arg2;
 - (unsigned long long)count;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

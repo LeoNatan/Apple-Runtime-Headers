@@ -11,6 +11,7 @@
 
 @class AVCaptureController, AVCaptureView, NSMenu, NSString, NSTouchBar;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureControlsViewController : AVControlsViewController <NSMenuDelegate, NSTouchBarProvider>
 {
     id _menuDidCompleteNotificationToken;

@@ -11,6 +11,7 @@
 @class NSArray, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, SKUIAttributedStringLayout, UIColor;
 @protocol SKUILinkHandler;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAttributedStringView : UIView <SKUIReusableView>
 {
     double _calculatedTopInset;

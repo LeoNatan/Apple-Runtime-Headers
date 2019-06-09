@@ -19,16 +19,17 @@
 - (void)loadSchemaCategories;
 - (void)loadStandardEffectDefinitions;
 - (void)loadTemplateRenderingModeConstants;
+- (void)loadGlyphWeightConstants;
+- (void)loadGlyphSizeConstants;
+- (void)_loadConstantForEntity:(id)arg1 withDescriptor:(const struct _themeconstant *)arg2;
 - (void)loadEffectConstants;
 - (void)loadMetafontSizes;
 - (void)loadMetafontSelectors;
 - (void)loadArtworkDraftTypes;
 - (void)loadColorStatuses;
 - (void)loadColorNames;
-- (void)loadZeroCodeArtworkInfo;
 - (void)loadRenditionSubtypes;
 - (void)loadRenditionTypes;
-- (void)loadThemeDefaultLook;
 - (void)loadIterationTypes;
 - (void)loadThemeUISizeClasses;
 - (void)loadThemeGraphicsFeatureSetClasses;
@@ -51,6 +52,7 @@
 - (void)sanityCheckAndUpdateDocumentIfNecessary;
 - (void)_sanityCheckSchemaAssets;
 - (_Bool)_renditionKey:(const struct _renditionkeytoken *)arg1 isEqualToKeyIgnoringLook:(const struct _renditionkeytoken *)arg2;
+- (void)_sanityCheckMicaRenditionsAndUpdateIfNecessary;
 - (void)_sanityCheckEffectRenditionsAndUpdateIfNecessary;
 - (void)_sanityCheckSchemaDefinitionsAndUpdateIfNecessary;
 - (void)_sanityCheckSchemaCategoriesAndUpdateIfNecessary;

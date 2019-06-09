@@ -33,6 +33,8 @@
 - (void)updateRefreshState;
 - (void)recenterLocation;
 - (void)selectHandle:(id)arg1;
+- (void)_cleanFMFMapViewController;
+- (void)_setupFMFMapViewController;
 - (void)loadView;
 
 // Remaining properties

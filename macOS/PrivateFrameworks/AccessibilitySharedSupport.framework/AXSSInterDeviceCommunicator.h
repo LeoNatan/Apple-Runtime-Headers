@@ -49,9 +49,9 @@
 @property(readonly, nonatomic) MCPeerID *localPeerID; // @synthesize localPeerID=_localPeerID;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
-@property(nonatomic) id <AXSSInterDeviceSearchObserver> searchObserver; // @synthesize searchObserver=_searchObserver;
-@property(nonatomic) id <AXSSInterDeviceActionReceiver> actionReceiver; // @synthesize actionReceiver=_actionReceiver;
-@property(nonatomic) id <AXSSInterDeviceConnectionListener> connectionListener; // @synthesize connectionListener=_connectionListener;
+@property(nonatomic) __weak id <AXSSInterDeviceSearchObserver> searchObserver; // @synthesize searchObserver=_searchObserver;
+@property(nonatomic) __weak id <AXSSInterDeviceActionReceiver> actionReceiver; // @synthesize actionReceiver=_actionReceiver;
+@property(nonatomic) __weak id <AXSSInterDeviceConnectionListener> connectionListener; // @synthesize connectionListener=_connectionListener;
 - (void).cxx_destruct;
 - (void)advertiser:(id)arg1 didNotStartAdvertisingPeer:(id)arg2;
 - (void)advertiser:(id)arg1 didReceiveInvitationFromPeer:(id)arg2 withContext:(id)arg3 invitationHandler:(CDUnknownBlockType)arg4;

@@ -6,6 +6,7 @@
 
 #import <Foundation/NSURL.h>
 
+__attribute__((visibility("hidden")))
 @interface _MSTempURL : NSURL
 {
 }

@@ -52,8 +52,10 @@ __attribute__((visibility("hidden")))
 - (void)_didFailFetchingReadingListItem:(id)arg1 pageFetchResult:(int)arg2;
 - (void)_didUpdateReadingListItem:(id)arg1 readingListFetcherInfo:(id)arg2;
 - (id)_archiveURLIfOnDiskForReadingListItem:(id)arg1 pageNumber:(unsigned long long)arg2;
+- (id)_thumbnailFileURLForReadingListItemUUID:(id)arg1;
 - (id)_thumbnailFileURLForReadingListItem:(id)arg1;
 - (id)_archiveFolderURLForReadingListItem:(id)arg1;
+- (id)_archiveFolderURLForReadingListItemUUID:(id)arg1;
 - (void)_stopObservingNetworkChangeNotifications;
 - (void)_didReceiveNetworkChangeNotification;
 - (void)_beginObservingNetworkChangeNotifications;
@@ -83,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (void)fetcher:(struct ReadingListFetcher *)arg1 willFetchItem:(id)arg2;
 - (void)getReadingListItem:(id *)arg1 outPageNumber:(unsigned long long *)arg2 forBackForwardItem:(const struct BackForwardListItem *)arg3;
 - (void)setReadingListItem:(id)arg1 pageNumber:(unsigned long long)arg2 forBackForwardItem:(const struct BackForwardListItem *)arg3;
+- (void)thumbnailImageForUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)thumbnailImageForItem:(id)arg1;
 - (void)fetchInfoForItem:(id)arg1;
 - (void)dequeuePendingNonUserInitiatedFetches;
@@ -91,6 +94,7 @@ __attribute__((visibility("hidden")))
 - (void)removeArchiveForReadingListItem:(id)arg1;
 - (BOOL)isFetchInProgress;
 - (id)itemForURLString:(id)arg1;
+- (id)itemForUUID:(id)arg1;
 - (unsigned long long)itemCount;
 - (id)allItems;
 - (void)markItem:(id)arg1 asUnread:(BOOL)arg2;

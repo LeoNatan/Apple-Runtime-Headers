@@ -6,32 +6,24 @@
 
 #import <objc/NSObject.h>
 
-#import <PineBoardServices/FBSApplicationDataStoreObserver-Protocol.h>
 #import <PineBoardServices/PBSAppDepotProxyProtocol-Protocol.h>
+#import <PineBoardServices/PBSAppInfoControllerObserver-Protocol.h>
 
-@class FBSApplicationDataStoreMonitor, NSArray, NSDictionary, NSString;
-@protocol OS_dispatch_queue;
+@class NSArray, NSDictionary, NSString;
 
-@interface PBSAppDepotProxy : NSObject <FBSApplicationDataStoreObserver, PBSAppDepotProxyProtocol>
+@interface PBSAppDepotProxy : NSObject <PBSAppInfoControllerObserver, PBSAppDepotProxyProtocol>
 {
     NSDictionary *_appState;
     NSArray *_provisionedAppIdentifiers;
-    NSObject<OS_dispatch_queue> *_appStateMonitorQueue;
-    FBSApplicationDataStoreMonitor *_monitor;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) FBSApplicationDataStoreMonitor *monitor; // @synthesize monitor=_monitor;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *appStateMonitorQueue; // @synthesize appStateMonitorQueue=_appStateMonitorQueue;
 - (void).cxx_destruct;
-- (void)_updateAppState;
-- (void)_setNeedsUpdateAppState;
 - (void)_queue_setProvisionedAppIdentifiers:(id)arg1;
 @property(readonly, copy) NSArray *provisionedAppIdentifiers; // @synthesize provisionedAppIdentifiers=_provisionedAppIdentifiers;
-- (id)appStateForAppIdentifier:(id)arg1;
 @property(readonly, copy) NSDictionary *appState; // @synthesize appState=_appState;
-- (void)dataStoreMonitor:(id)arg1 didInvalidateApplication:(id)arg2;
-- (void)dataStoreMonitor:(id)arg1 didUpdateApplication:(id)arg2 forKey:(id)arg3;
+- (id)appStateForAppIdentifier:(id)arg1;
+- (void)appInfoController:(id)arg1 didUpdate:(id)arg2;
 - (void)dealloc;
 - (id)_init;
 - (id)init;

@@ -9,6 +9,14 @@
 @interface NSError (KCJoiningError)
 + (id)errorWithJoiningError:(int)arg1 format:(id)arg2;
 + (id)errorWithJoiningError:(int)arg1 format:(id)arg2 arguments:(char *)arg3;
++ (id)errorWithCoreCryptoStatus:(int)arg1 description:(id)arg2 args:(char *)arg3;
++ (id)errorWithCoreCryptoStatus:(int)arg1 userInfo:(id)arg2;
++ (id)errorWithOSStatus:(long)arg1 description:(id)arg2 args:(char *)arg3;
++ (id)errorWithOSStatus:(long)arg1 userInfo:(id)arg2;
 - (id)initWithJoiningError:(int)arg1 userInfo:(id)arg2;
+- (id)initWithCoreCryptoStatus:(int)arg1 description:(id)arg2 args:(char *)arg3;
+- (id)initWithCoreCryptoStatus:(int)arg1 userInfo:(id)arg2;
+- (id)initWithOSStatus:(long)arg1 description:(id)arg2 args:(char *)arg3;
+- (id)initWithOSStatus:(long)arg1 userInfo:(id)arg2;
 @end
 

@@ -61,8 +61,10 @@
 @property(readonly) BOOL providesControlForAllVolumeFeatures;
 - (void)removeOutputDevice:(id)arg1;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1;
 @property(readonly) NSArray *outputDevices;
+@property(readonly) BOOL supportsMultipleBluetoothOutputDevices;
 @property(readonly) BOOL supportsMultipleOutputDevices;
 - (void)outputContextDidChangeApplicationProcessID:(id)arg1;
 - (void)setOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -71,7 +73,7 @@
 - (void)_systemPickerVideoRouteChanged;
 - (void)_routeConfigUpdateEndedWithID:(struct __CFString *)arg1 reason:(struct __CFString *)arg2;
 - (void)_routeConfigUpdateStartedWithID:(struct __CFString *)arg1;
-- (void)_routeConfigUpdatedWithID:(struct __CFString *)arg1 reason:(struct __CFString *)arg2;
+- (void)_routeConfigUpdatedWithID:(struct __CFString *)arg1 reason:(struct __CFString *)arg2 initiator:(const struct __CFString *)arg3;
 - (void)_groupConfigurationChanged;
 - (void)_currentRouteChanged;
 - (void)_routeChangeEndedWithID:(id)arg1 reason:(struct __CFString *)arg2;

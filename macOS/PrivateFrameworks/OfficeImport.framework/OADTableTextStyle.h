@@ -8,6 +8,7 @@
 
 @class OADColor, OADFontReference;
 
+__attribute__((visibility("hidden")))
 @interface OADTableTextStyle : NSObject
 {
     OADFontReference *mFontReference;

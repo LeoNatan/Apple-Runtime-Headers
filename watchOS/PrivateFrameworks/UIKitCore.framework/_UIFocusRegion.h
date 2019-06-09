@@ -40,6 +40,8 @@
 - (int)_preferredDistanceComparisonType;
 - (unsigned int)_boundariesBlockingFocusMovementRequest:(id)arg1;
 - (unsigned int)_focusableBoundaries;
+- (id)_focusedItemForLinearSorting:(id)arg1 inMap:(id)arg2;
+- (_Bool)_shouldUseNextFocusedItemForLinearSorting;
 - (id)_nextFocusedItemForFocusMovementRequest:(id)arg1 inMap:(id)arg2;
 - (id)_defaultFocusItem;
 - (_Bool)_shouldCropRegionToSearchArea;

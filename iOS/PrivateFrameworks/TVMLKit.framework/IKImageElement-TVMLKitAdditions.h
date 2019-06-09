@@ -9,10 +9,14 @@
 @class TVImageProxy, UIImage;
 
 @interface IKImageElement (TVMLKitAdditions)
-- (void)_imageProxy:(id *)arg1 andScaleToSize:(struct CGSize *)arg2;
+- (id)tv_associatedViewElement;
+- (id)tv_urlWithLayout:(id)arg1;
+- (id)tv_urlWithSize:(struct CGSize)arg1 focusSizeIncrease:(double)arg2;
+- (id)tv_urlWithSize:(struct CGSize)arg1 focusSizeIncrease:(double)arg2 centerGrowth:(_Bool)arg3 cropCode:(id)arg4;
 @property(readonly, nonatomic) long long tv_imageType;
 @property(readonly, nonatomic) struct CGSize tv_imageScaleToSize;
 @property(readonly, nonatomic) TVImageProxy *tv_imageProxy;
+- (id)tv_imageProxyWithLayout:(id)arg1;
 @property(readonly, nonatomic) UIImage *tv_resourceImage;
 @property(readonly, nonatomic) _Bool tv_isResource;
 @end

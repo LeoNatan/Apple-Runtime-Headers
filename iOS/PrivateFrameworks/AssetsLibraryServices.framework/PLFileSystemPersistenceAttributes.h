@@ -13,6 +13,7 @@
     NSDictionary *_attributes;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)stringForKey:(id)arg1;
 - (_Bool)getUInt64:(unsigned long long *)arg1 forKey:(id)arg2;

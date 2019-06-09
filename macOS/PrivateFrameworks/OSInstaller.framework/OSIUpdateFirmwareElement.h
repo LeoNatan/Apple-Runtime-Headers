@@ -15,6 +15,7 @@
     OSIPersonalizedManifests *_personalizedManifests;
 }
 
++ (id)getFirmwareUpdateLauncherStatistics;
 + (BOOL)shouldUpdateFirmware;
 + (BOOL)cookieExists;
 @property(retain) OSIPersonalizedManifests *personalizedManifests; // @synthesize personalizedManifests=_personalizedManifests;
@@ -29,6 +30,7 @@
 - (id)nextProgressPhaseAfterCompletion;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
+- (BOOL)okayToSkip;
 - (id)createTempDirectoryAtMutableProductURL:(id)arg1;
 - (id)createTempDirectoryForMountPoint:(id)arg1;
 - (BOOL)runReturningError:(id *)arg1;

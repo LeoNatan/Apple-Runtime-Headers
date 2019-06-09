@@ -9,7 +9,7 @@
 #import <SceneKit/SCNSceneRenderer-Protocol.h>
 #import <SceneKit/SCNTechniqueSupport-Protocol.h>
 
-@class AVAudioEngine, AVAudioEnvironmentNode, EAGLContext, NSString, SCNAuthoringEnvironment, SCNMTLRenderContext, SCNNode, SCNRecursiveLock, SCNRendererTransitionContext, SCNScene, SCNTechnique, SKScene, UIColor, __SKSCNRenderer;
+@class AVAudioEngine, AVAudioEnvironmentNode, EAGLContext, NSArray, NSString, SCNAuthoringEnvironment, SCNMTLRenderContext, SCNNode, SCNRecursiveLock, SCNRendererTransitionContext, SCNScene, SCNTechnique, SKScene, UIColor, __SKSCNRenderer;
 @protocol MTLTexture, OS_dispatch_queue, SCNSceneRenderer, SCNSceneRendererDelegate;
 
 @interface SCNRenderer : NSObject <SCNSceneRenderer, SCNTechniqueSupport>
@@ -27,6 +27,7 @@
         struct CGSize drawableSize;
     } _framebufferInfo;
     id <MTLTexture> _mtlTexture;
+    NSArray *_viewPoints;
     _Bool _pointOfViewWasSet;
     unsigned int _shouldDeleteFramebuffer:1;
     unsigned int _rendersContinuously:1;
@@ -58,6 +59,7 @@
     EAGLContext *_glContext;
     SCNMTLRenderContext *_renderContext;
     unsigned int _jitteringEnabled:1;
+    unsigned int _temporalAntialiasingEnabled:1;
     unsigned int _frozen:1;
     unsigned int _privateRendererShouldForwardSceneRendererDelegationMessagesToOwner:1;
     CDStruct_f76d274b _privateRendererOwnerDelegationConformance;
@@ -97,6 +99,9 @@
 - (struct CGImage *)createSnapshot:(double)arg1;
 - (void)_installGLContextAndSetViewport;
 - (void)render;
+- (void)renderWithViewpoints:(id)arg1 events:(id)arg2;
+- (void)renderAtTime:(double)arg1 commandBuffer:(id)arg2 viewPoints:(id)arg3;
+- (void)renderWithCommandBuffer:(id)arg1 viewPoints:(id)arg2;
 - (void)renderAtTime:(double)arg1 viewport:(struct CGRect)arg2 encoder:(id)arg3 passDescriptor:(id)arg4 commandQueue:(id)arg5;
 - (void)_renderAtTime:(double)arg1 viewport:(struct CGRect)arg2 encoder:(id)arg3 passDescriptor:(id)arg4 commandQueue:(id)arg5 commandBuffer:(id)arg6;
 - (void)renderAtTime:(double)arg1 viewport:(struct CGRect)arg2 commandBuffer:(id)arg3 passDescriptor:(id)arg4;
@@ -113,12 +118,15 @@
 - (_Bool)_drawSceneWithNewRenderer:(struct __C3DScene *)arg1;
 - (void)_renderSceneWithEngineContext:(struct __C3DEngineContext *)arg1 sceneTime:(double)arg2;
 - (void)_drawWithJitteringPresentationMode;
+- (id)MTLTexture;
 @property(retain, nonatomic) SCNNode *audioListener;
 @property(readonly, nonatomic) AVAudioEnvironmentNode *audioEnvironmentNode;
 @property(readonly, nonatomic) AVAudioEngine *audioEngine;
 - (void)set_drawableSafeAreaInsets: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: 8@0:4, name: _drawableSafeAreaInsets
 - (void)set_viewport:(struct SCNVector4)arg1;
+- (struct CGRect)viewport;
+@property(readonly, nonatomic) struct CGRect currentViewport;
 - (struct SCNVector4)_viewport;
 - (id)_authoringEnvironment;
 - (void)setupAuthoringEnvironement;
@@ -127,11 +135,14 @@
 - (id)_compilationErrors;
 - (void)set_collectCompilationErrors:(_Bool)arg1;
 - (_Bool)_collectCompilationErrors;
+- (void)set_enableARMode:(_Bool)arg1;
+- (_Bool)_enableARMode;
 - (void)set_disableLinearRendering:(_Bool)arg1;
 - (_Bool)_disableLinearRendering;
 - (void)set_enablesDeferredShading:(_Bool)arg1;
 - (_Bool)_enablesDeferredShading;
 - (void)_reloadDebugOptions;
+@property(nonatomic) _Bool usesReverseZ;
 @property(nonatomic) unsigned int debugOptions;
 - (void)_presentFramebuffer;
 - (void)_runningInExtension;
@@ -141,6 +152,8 @@
 - (id)_copyPerformanceStatistics;
 - (void)setFrozen:(_Bool)arg1;
 - (_Bool)frozen;
+- (_Bool)temporalAntialiasingEnabled;
+@property(nonatomic, getter=isTemporalAntialiasingEnabled) _Bool temporalAntialiasingEnabled;
 - (_Bool)jitteringEnabled;
 @property(nonatomic, getter=isJitteringEnabled) _Bool jitteringEnabled;
 @property(nonatomic) _Bool loops;
@@ -162,7 +175,7 @@
 - (void)_updateWithSystemTime:(double)arg1;
 - (void)_update:(struct __C3DScene *)arg1;
 - (void)_set_watchAppInForeground:(_Bool)arg1;
-@property(readonly, nonatomic) void *context;
+- (void *)context;
 - (void)setContext:(id)arg1;
 - (void)set_deltaTime:(double)arg1;
 - (void)set_systemTime:(double)arg1;
@@ -178,7 +191,7 @@
 - (void)updateCurrentTimeIfPlayingWithSystemTime:(double)arg1;
 - (void)set_privateRendererShouldForwardSceneRendererDelegationMessagesToOwner:(_Bool)arg1;
 - (_Bool)_privateRendererShouldForwardSceneRendererDelegationMessagesToOwner;
-@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 - (void)_updateEngineCallbacks;
 - (id)programWithNode:(id)arg1 withMaterial:(id)arg2;
 - (void)prepareObjects:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -192,8 +205,6 @@
 - (void)set_recordWithoutExecute:(_Bool)arg1;
 - (_Bool)_recordWithoutExecute;
 - (void)_renderGraphFrameRecordingAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (_Bool)_renderGraphEnabled;
-- (void)set_renderGraphEnabled:(_Bool)arg1;
 - (id)_copyRenderGraphDescription;
 - (id)_copyPassDescription;
 @property(copy, nonatomic) SCNTechnique *technique;
@@ -201,6 +212,8 @@
 - (void)_overlaysDidUpdate:(id)arg1;
 - (id)_prepareSKRenderer;
 - (id)_setupSKRendererIfNeeded;
+- (id)metalDevice;
+- (id)metalLayer;
 - (void)setDisableOverlays:(_Bool)arg1;
 - (_Bool)disableOverlays;
 - (void)setBackgroundColor:(id)arg1;
@@ -223,7 +236,7 @@
 - (struct SCNVector3)_unprojectPoint:(struct SCNVector3)arg1 viewport:(struct SCNVector4)arg2;
 - (struct SCNVector3)_projectPoint:(struct SCNVector3)arg1 viewport:(struct SCNVector4)arg2;
 - (void)_projectPoints:(struct SCNVector3 *)arg1 count:(unsigned int)arg2 viewport:(struct SCNVector4)arg3;
--     // Error parsing type: 24@0:48, name: viewportWithLetterboxingIfNeeded:
+-     // Error parsing type: 24@0:48, name: adjustViewportForRendering:
 - (id)pointOfCulling;
 - (void)setPointOfCulling:(id)arg1;
 @property(retain, nonatomic) SCNNode *pointOfView;
@@ -239,6 +252,8 @@
 - (void)set_aspectRatio:(float)arg1;
 - (float)_superSamplingFactor;
 - (void)set_superSamplingFactor:(float)arg1;
+- (void)set_preparePixelFormat:(unsigned int)arg1;
+- (unsigned int)_preparePixelFormat;
 - (void)set_antialiasingMode:(unsigned int)arg1;
 - (unsigned int)_antialiasingMode;
 - (unsigned int)_sampleCount;
@@ -261,6 +276,9 @@
 - (id)_renderingQueue;
 - (void)unlock;
 - (void)lock;
+- (unsigned int)stencilPixelFormat;
+- (unsigned int)depthPixelFormat;
+- (unsigned int)colorPixelFormat;
 - (id)commandQueue;
 - (id)device;
 - (id)currentRenderCommandEncoder;

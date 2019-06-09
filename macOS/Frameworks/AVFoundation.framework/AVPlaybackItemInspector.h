@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, getter=_playbackItem, setter=_setPlaybackItem:) struct OpaqueFigPlaybackItem *playbackItem;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithPlaybackItem:(struct OpaqueFigPlaybackItem *)arg1 trackIDs:(id)arg2;
 

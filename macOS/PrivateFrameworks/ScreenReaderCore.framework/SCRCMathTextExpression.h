@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (id)latexDescriptionInMathMode:(BOOL)arg1;
 - (id)mathMLString;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(long long)arg1 arePausesAllowed:(BOOL)arg2;
 
 @end
 

@@ -13,5 +13,6 @@
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
 - (id)_gkMapWithBlock:(CDUnknownBlockType)arg1;
+- (id)_gkDescriptionWithChildren:(int)arg1;
 @end
 

@@ -10,7 +10,6 @@
 
 @class NSString, NSURLAuthenticationChallenge;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLProtocolClient_NS : NSObject <NSURLProtocolClient>
 {
     struct URLProtocolClient *_cf;

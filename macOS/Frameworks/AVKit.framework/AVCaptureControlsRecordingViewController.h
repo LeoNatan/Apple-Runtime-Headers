@@ -8,6 +8,7 @@
 
 @class AVTouchBarRecordingControlsProvider, NSButton, NSImage;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureControlsRecordingViewController : AVCaptureControlsViewController
 {
     AVTouchBarRecordingControlsProvider *_touchBarRecordingControlsProvider;

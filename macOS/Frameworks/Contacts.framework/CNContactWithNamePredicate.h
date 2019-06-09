@@ -6,12 +6,13 @@
 
 #import <Contacts/CNPredicate.h>
 
+#import <Contacts/CNMAIDPredicate-Protocol.h>
 #import <Contacts/CNSuggestedContactPredicate-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface CNContactWithNamePredicate : CNPredicate <CNSuggestedContactPredicate>
+@interface CNContactWithNamePredicate : CNPredicate <CNMAIDPredicate, CNSuggestedContactPredicate>
 {
     NSString *_name;
     unsigned long long _options;
@@ -19,19 +20,22 @@ __attribute__((visibility("hidden")))
 
 + (id)descriptionForOptions:(unsigned long long)arg1;
 + (BOOL)supportsSecureCoding;
++ (BOOL)doesPerson:(id)arg1 matchName:(id)arg2;
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithName:(id)arg1;
+- (id)contactsFromCLSDataStore:(id)arg1;
 - (id)sgContactMatchesWithSortOrder:(long long)arg1 mutableObjects:(BOOL)arg2 service:(id)arg3 error:(id *)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)fillCatagory:(id)arg1;
+- (void).cxx_destruct;
 - (void)applyCachedDrawableStyle:(id)arg1 toTextBodyProperties:(id)arg2;
 - (void)applyCachedDrawableStyle:(id)arg1 toParagraphProperties:(id)arg2;
 - (void)applyCachedDrawableStyle:(id)arg1 toGraphicProperties:(id)arg2;

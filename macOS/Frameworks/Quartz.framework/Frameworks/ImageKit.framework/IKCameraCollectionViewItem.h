@@ -6,15 +6,51 @@
 
 #import <AppKit/NSCollectionViewItem.h>
 
+#import <ImageKit/ICCameraDeviceDownloadDelegate-Protocol.h>
+
+@class CALayer, NSClickGestureRecognizer, NSImageView, NSString;
+
 __attribute__((visibility("hidden")))
-@interface IKCameraCollectionViewItem : NSCollectionViewItem
+@interface IKCameraCollectionViewItem : NSCollectionViewItem <ICCameraDeviceDownloadDelegate>
 {
+    NSImageView *_imageView;
+    NSClickGestureRecognizer *_clickGestureRecognizer;
+    NSClickGestureRecognizer *_doubleClick;
+    CALayer *_selectedLayer;
+    CALayer *_downloadedLayer;
 }
 
-- (void)openImageFile:(id)arg1;
-- (void)mouseDown:(id)arg1;
-- (void)setSelected:(BOOL)arg1;
+@property(retain, nonatomic) CALayer *downloadedLayer; // @synthesize downloadedLayer=_downloadedLayer;
+@property(retain, nonatomic) CALayer *selectedLayer; // @synthesize selectedLayer=_selectedLayer;
+@property(retain, nonatomic) NSClickGestureRecognizer *doubleClick; // @synthesize doubleClick=_doubleClick;
+@property(retain, nonatomic) NSClickGestureRecognizer *clickGestureRecognizer; // @synthesize clickGestureRecognizer=_clickGestureRecognizer;
+- (id)draggingImageComponents;
+- (void)prepareForReuse;
+- (void)removeBadgeOnLayer:(unsigned long long)arg1;
+- (void)badgeIconWithImage:(id)arg1 onLayer:(unsigned long long)arg2;
+- (void)updateBadgeLocation;
 - (void)setHighlightState:(long long)arg1;
+- (void)uninstallGestureRecognizer;
+- (void)installGestureRecognizer;
+- (id)animationForKey:(id)arg1;
+- (BOOL)isSelected;
+- (BOOL)isDownloaded;
+- (void)updateDownloadBadge;
+- (void)setSelected:(BOOL)arg1;
+- (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void *)arg4;
+- (void)onDoubleClick:(id)arg1;
+- (void)disableDoubleClick;
+- (void)enableDoubleClick;
+- (void)toggleSelection:(id)arg1;
+- (BOOL)isSelectable;
+- (void)dealloc;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

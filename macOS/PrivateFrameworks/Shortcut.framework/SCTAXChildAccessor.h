@@ -10,6 +10,7 @@
 
 @class NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SCTAXChildAccessor : NSObject <NSCoding>
 {
     NSString *mAttribute;

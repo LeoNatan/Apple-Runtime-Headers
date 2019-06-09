@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 @interface UIViewController (RCAdditions)
++ (id)recursiveDescription;
 - (void)rc_configurePopoverControllerWithSource:(id)arg1;
 - (void)rc_applicationWillEnterForeground;
 - (void)rc_applicationDidEnterBackground;
@@ -23,5 +24,7 @@
 - (void)rc_addChildViewWithViewController:(id)arg1 toView:(id)arg2;
 - (void)rc_addChildViewWithViewController:(id)arg1;
 - (void)rc_runAutomatedDebuggingTestsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)recursiveDescription;
+- (id)_recursiveDescriptionWithInset:(id)arg1;
 @end
 

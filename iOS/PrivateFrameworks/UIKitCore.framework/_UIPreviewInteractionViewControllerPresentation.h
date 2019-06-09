@@ -16,6 +16,7 @@
     _Bool _shouldUpdateFromViewBeforePresentation;
     _Bool _shouldPresentAutomatically;
     UIViewController *_viewController;
+    UIView *_customContainerView;
     UIPreviewPresentationController *_presentationController;
     id <_UIPreviewInteractionViewControllerTransition> _appearanceTransition;
     id <_UIPreviewInteractionViewControllerTransition> _disappearanceTransition;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) id <_UIPreviewInteractionViewControllerTransition> disappearanceTransition; // @synthesize disappearanceTransition=_disappearanceTransition;
 @property(retain, nonatomic) id <_UIPreviewInteractionViewControllerTransition> appearanceTransition; // @synthesize appearanceTransition=_appearanceTransition;
 @property(retain, nonatomic) UIPreviewPresentationController *presentationController; // @synthesize presentationController=_presentationController;
+@property(retain, nonatomic) UIView *customContainerView; // @synthesize customContainerView=_customContainerView;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
 - (void)_completeViewControllerPresentationImmediately;

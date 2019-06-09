@@ -8,6 +8,7 @@
 
 @class AVDurationTimeFormatter, NSLayoutConstraint, NSString, NSTimer, UIButton, UIFocusGuide, UILabel, UITapGestureRecognizer;
 
+__attribute__((visibility("hidden")))
 @interface AVStandardContentProposalViewController : AVContentProposalViewController
 {
     UIFocusGuide *_mainLayoutGuide;

@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 networkActivity:(CDUnknownBlockType)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isCancelled) BOOL cancelled;
+@property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

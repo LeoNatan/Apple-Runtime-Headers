@@ -18,6 +18,9 @@
     _DKDataProtectionStateMonitor *_dataProtectionMonitor;
     NSFileManager *_fm;
     NSCloudKitMirroringDelegate *_mirroringDelegate;
+    BOOL _isManagedDatabase;
+    BOOL _isDatabaseManager;
+    BOOL _maintenanceRunning;
     BOOL _readOnly;
     BOOL _localOnly;
     BOOL _sync;
@@ -82,7 +85,12 @@
 - (void)removePersistentStoresInCoordinator:(id)arg1;
 - (void)invalidateManagedObjectContextAndPersistentStoreCoordinatorFor:(id)arg1;
 - (void)handleDataProtectionChangeFor:(id)arg1 willBeAvailable:(BOOL)arg2;
-- (BOOL)isDatabaseOwner;
+- (struct __CFString *)clientNeedsHelpNotification;
+- (void)handleClientCallForHelp;
+- (id)databaseManagerName;
+- (void)_unregisterForClientHelpNotifications;
+- (void)_registerForClientHelpNotifications;
+- (void)dealloc;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(BOOL)arg4 localOnly:(BOOL)arg5 sync:(BOOL)arg6;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 sync:(BOOL)arg4;
 - (id)initWithDirectory:(id)arg1 databaseName:(id)arg2 modelURL:(id)arg3 readOnly:(BOOL)arg4 localOnly:(BOOL)arg5;

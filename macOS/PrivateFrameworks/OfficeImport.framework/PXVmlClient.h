@@ -8,6 +8,7 @@
 
 #import <OfficeImport/OAVReadClient-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface PXVmlClient : NSObject <OAVReadClient>
 {
 }

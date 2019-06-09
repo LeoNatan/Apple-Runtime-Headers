@@ -18,6 +18,7 @@
 - (_Bool)reverseSortOrder;
 - (_Bool)isCurated;
 - (_Bool)wantsCuration;
+- (long long)keyAssetIndex;
 - (id)keyAssetsFetchResult;
 - (id)curatedFetchResult;
 - (id)fetchResult;

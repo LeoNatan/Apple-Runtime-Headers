@@ -9,32 +9,44 @@
 #import <AnnotationKit/UITableViewDataSource-Protocol.h>
 #import <AnnotationKit/UITableViewDelegate-Protocol.h>
 
-@class NSString, UITableView;
+@class NSArray, NSString, UITableView;
 @protocol AKToolsListViewControllerDelegate;
 
 @interface AKToolsListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
+    _Bool _supportsOpacityEditing;
     id <AKToolsListViewControllerDelegate> _delegate;
     UITableView *_tableView;
+    NSArray *_cellItemTypes;
 }
 
++ (id)defaultCellItemTypes;
+@property(copy, nonatomic) NSArray *cellItemTypes; // @synthesize cellItemTypes=_cellItemTypes;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-@property __weak id <AKToolsListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool supportsOpacityEditing; // @synthesize supportsOpacityEditing=_supportsOpacityEditing;
+@property(nonatomic) __weak id <AKToolsListViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (long long)_shapesCellIndexRow;
+- (void)_reloadCellItemTypes;
 - (id)_buttonViewWithImage:(id)arg1 title:(id)arg2;
 - (void)addRowView:(id)arg1 toCellView:(id)arg2;
+- (id)_buttonViewForOpacity;
 - (id)_buttonViewForShapes;
 - (id)_buttonViewForLoupe;
 - (id)_buttonViewForSignature;
 - (id)_buttonViewForText;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (_Bool)_canShowWhileLocked;
 - (void)_shapeButtonPressed:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

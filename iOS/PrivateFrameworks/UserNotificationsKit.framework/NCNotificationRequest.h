@@ -20,6 +20,7 @@
     NSString *_categoryIdentifier;
     NSSet *_subSectionIdentifiers;
     NSString *_highestPrioritySubSectionIdentifier;
+    NSArray *_intentIdentifiers;
     NSArray *_peopleIdentifiers;
     NSString *_parentSectionIdentifier;
     _Bool _uniqueThreadIdentifier;
@@ -53,6 +54,7 @@
 + (id)notificationRequest;
 + (id)notificationRequestWithTimestamp:(id)arg1;
 + (id)notificationRequestWithNotificationId:(id)arg1 threadId:(id)arg2;
++ (id)notificationRequestWithNotificationId:(id)arg1 sectionId:(id)arg2 threadId:(id)arg3;
 + (id)notificationRequestWithNotificationId:(id)arg1 threadId:(id)arg2 timestamp:(id)arg3;
 + (id)notificationRequestWithThreadId:(id)arg1;
 + (id)notificationRequestWithThreadId:(id)arg1 timestamp:(id)arg2;
@@ -91,6 +93,7 @@
 @property(readonly, nonatomic, getter=isUniqueThreadIdentifier) _Bool uniqueThreadIdentifier; // @synthesize uniqueThreadIdentifier=_uniqueThreadIdentifier;
 @property(readonly, copy, nonatomic) NSString *parentSectionIdentifier; // @synthesize parentSectionIdentifier=_parentSectionIdentifier;
 @property(readonly, copy, nonatomic) NSArray *peopleIdentifiers; // @synthesize peopleIdentifiers=_peopleIdentifiers;
+@property(readonly, copy, nonatomic) NSArray *intentIdentifiers; // @synthesize intentIdentifiers=_intentIdentifiers;
 @property(readonly, copy, nonatomic) NSString *highestPrioritySubSectionIdentifier; // @synthesize highestPrioritySubSectionIdentifier=_highestPrioritySubSectionIdentifier;
 @property(readonly, copy, nonatomic) NSSet *subSectionIdentifiers; // @synthesize subSectionIdentifiers=_subSectionIdentifiers;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;

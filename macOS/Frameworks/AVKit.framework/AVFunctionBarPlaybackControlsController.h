@@ -12,9 +12,10 @@
 #import <AVKit/AVFunctionBarTrackControlling-Protocol.h>
 #import <AVKit/AVTimeControlling-Protocol.h>
 
-@class AVFunctionBarMediaSelectionOption, AVThumbnailGenerator, AVValueTiming, AVWaveformGenerator, NSArray, NSString;
+@class AVFunctionBarMediaSelectionOption, AVThumbnailGenerator, AVValueTiming, NSArray, NSString;
 @protocol AVFunctionBarPlaybackControlsControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarPlaybackControlsController : NSObject <AVFunctionBarMediaSelectionControlling, AVFunctionBarPlaybackControlsControllingInternal, AVFunctionBarScrubberControlling, AVFunctionBarTrackControlling, AVTimeControlling>
 {
     id <AVFunctionBarPlaybackControlsControlling> _externalFunctionBarPlaybackControlsController;
@@ -41,7 +42,6 @@
         char _controlsViewDidDisappear;
     } _externalControllerRespondsTo;
     AVThumbnailGenerator *_thumbnailGenerator;
-    AVWaveformGenerator *_waveformGenerator;
 }
 
 + (id)keyPathsForValuesAffectingHasEnabledVideo;

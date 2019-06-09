@@ -9,24 +9,25 @@
 #import <GeoServices/GEOCompanionManeuverStep-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 @interface GEOCompanionWalkStep : PBCodable <GEOCompanionManeuverStep, NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     struct GEOJunctionElement *_junctionElements;
     unsigned long long _junctionElementsCount;
     unsigned long long _junctionElementsSpace;
-    int _junctionType;
     NSMutableArray *_maneuverNames;
-    int _maneuverType;
     NSMutableArray *_signposts;
-    CDStruct_efbf2325 _has;
+    int _junctionType;
+    int _maneuverType;
+    CDStruct_6da46726 _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)signpostType;
 + (Class)maneuverNameType;
-@property(retain, nonatomic) NSMutableArray *signposts; // @synthesize signposts=_signposts;
-@property(retain, nonatomic) NSMutableArray *maneuverNames; // @synthesize maneuverNames=_maneuverNames;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -35,30 +36,39 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 - (void)setJunctionElements:(struct GEOJunctionElement *)arg1 count:(unsigned long long)arg2;
 - (struct GEOJunctionElement)junctionElementAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsJunctionElement:(struct GEOJunctionElement)arg1;
 - (void)addJunctionElement:(struct GEOJunctionElement)arg1;
 - (void)clearJunctionElements;
 @property(readonly, nonatomic) struct GEOJunctionElement *junctionElements;
 @property(readonly, nonatomic) unsigned long long junctionElementsCount;
+- (void)_readJunctionElements;
 - (int)StringAsJunctionType:(id)arg1;
 - (id)junctionTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasJunctionType;
-@property(nonatomic) int junctionType; // @synthesize junctionType=_junctionType;
+@property(nonatomic) int junctionType;
 - (id)signpostAtIndex:(unsigned long long)arg1;
 - (unsigned long long)signpostsCount;
+- (void)_addNoFlagsSignpost:(id)arg1;
 - (void)addSignpost:(id)arg1;
 - (void)clearSignposts;
+@property(retain, nonatomic) NSMutableArray *signposts;
+- (void)_readSignposts;
 - (id)maneuverNameAtIndex:(unsigned long long)arg1;
 - (unsigned long long)maneuverNamesCount;
+- (void)_addNoFlagsManeuverName:(id)arg1;
 - (void)addManeuverName:(id)arg1;
 - (void)clearManeuverNames;
+@property(retain, nonatomic) NSMutableArray *maneuverNames;
+- (void)_readManeuverNames;
 - (int)StringAsManeuverType:(id)arg1;
 - (id)maneuverTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasManeuverType;
-@property(nonatomic) int maneuverType; // @synthesize maneuverType=_maneuverType;
+@property(nonatomic) int maneuverType;
 - (void)dealloc;
 @property(readonly, nonatomic) int transportType;
 

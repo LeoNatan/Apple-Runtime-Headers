@@ -15,8 +15,6 @@
     AnalyticsWorkspace *workspace;
     NSObject<OS_dispatch_queue> *queue;
     ImpoExpoService *ieService;
-    unsigned long long slotSize;
-    unsigned int numberOfSlotsInDay;
     int wifiPredictionLogic;
     int cellPredictionLogic;
     int weightStrategy;
@@ -111,7 +109,7 @@
 - (id)_createHeaderDataForSavedPredictionsName:(id)arg1 hasComplementaryPrediction:(_Bool)arg2 interfaceType:(long long)arg3;
 - (id)_getComplementaryPredictionNameForInterface:(long long)arg1;
 - (id)_getSavedPredictionHeaderNameForInterface:(long long)arg1;
-- (id)_getPredictionJournalNameWithPrefix:(id)arg1 forInterface:(long long)arg2 slotSize:(unsigned long long)arg3;
+- (id)_getPredictionJournalNameWithPrefix:(id)arg1 forInterface:(long long)arg2 slotSizeMinutes:(unsigned long long)arg3;
 - (BOOL)_isLegacyJournal:(id)arg1;
 - (void)_processJournalData:(id)arg1 startFrom:(long long)arg2 endAt:(long long)arg3 rawWifiStateSet:(id)arg4 rawCellStateSet:(id)arg5;
 - (void)_processNetworkState:(CDStruct_7fe6219a *)arg1 toStateSet:(id)arg2 stateStartTimeInfo:(CDStruct_d20431f8)arg3 stateEndTimeInfo:(CDStruct_d20431f8)arg4 effectiveNetworkId:(id)arg5;

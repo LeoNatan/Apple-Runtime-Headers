@@ -6,11 +6,14 @@
 
 #import <PackageKit/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, PKInstallSandbox;
 
 @protocol PKInstallServiceClient <NSObject>
 - (void)installDidEndForToken:(NSString *)arg1;
 - (void)installDidBeginCommitForToken:(NSString *)arg1;
 - (void)installDidBeginForToken:(NSString *)arg1;
+
+@optional
+- (void)installWillProceedForState:(int)arg1 withSandbox:(PKInstallSandbox *)arg2 forToken:(NSString *)arg3 completion:(void (^)(void))arg4;
 @end
 

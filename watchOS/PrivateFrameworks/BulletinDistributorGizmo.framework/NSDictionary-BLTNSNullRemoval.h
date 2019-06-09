@@ -10,5 +10,7 @@
 - (id)objectSentinelNull;
 - (id)objectWithNSNulls:(id)arg1;
 - (id)objectWithNoNSNulls:(id *)arg1;
+- (id)idsMetadataFileKey;
+- (int)idsMetadataFileURLType;
 @end
 

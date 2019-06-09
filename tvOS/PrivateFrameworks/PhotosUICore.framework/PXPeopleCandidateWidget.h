@@ -7,18 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
-#import <PhotosUICore/PXWidget-Protocol.h>
+#import <PhotosUICore/PXUIWidget-Protocol.h>
 
-@class NSLayoutConstraint, NSString, PHPerson, PXPhotosDetailsContext, PXSectionedSelectionManager, PXTilingController, PXUIPeopleSuggestionDataSource, PXWidgetSpec, UIButton, UILabel, UIView;
+@class NSLayoutConstraint, NSString, PHPerson, PXOneUpPresentation, PXPeopleSuggestionDataSource, PXPhotosDetailsContext, PXSectionedSelectionManager, PXTilingController, PXWidgetSpec, UIButton, UILabel, UIView;
 @protocol PXWidgetDelegate, PXWidgetUnlockDelegate;
 
-@interface PXPeopleCandidateWidget : NSObject <PXChangeObserver, PXWidget>
+@interface PXPeopleCandidateWidget : NSObject <PXChangeObserver, PXUIWidget>
 {
     _Bool _dismissed;
     PXPhotosDetailsContext *_context;
     PXWidgetSpec *_spec;
     id <PXWidgetDelegate> _widgetDelegate;
-    PXUIPeopleSuggestionDataSource *_dataSource;
+    PXPeopleSuggestionDataSource *_dataSource;
     UIView *_contentView;
     UILabel *_label;
     PHPerson *_person;
@@ -34,7 +34,7 @@
 @property(retain, nonatomic) PHPerson *person; // @synthesize person=_person;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
-@property(retain, nonatomic) PXUIPeopleSuggestionDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) PXPeopleSuggestionDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(nonatomic) __weak id <PXWidgetDelegate> widgetDelegate; // @synthesize widgetDelegate=_widgetDelegate;
 @property(retain, nonatomic) PXWidgetSpec *spec; // @synthesize spec=_spec;
 @property(retain, nonatomic) PXPhotosDetailsContext *context; // @synthesize context=_context;
@@ -50,6 +50,7 @@
 - (double)preferredContentHeightForWidth:(double)arg1;
 - (void)unloadContentData;
 @property(readonly, nonatomic) _Bool hasContentForCurrentInput;
+- (void)controllerTraitCollectionDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)loadContentData;
 
@@ -67,6 +68,7 @@
 @property(readonly, nonatomic) NSString *localizedDisclosureTitle;
 @property(readonly, nonatomic) NSString *localizedSubtitle;
 @property(readonly, nonatomic) NSString *localizedTitle;
+@property(retain, nonatomic) PXOneUpPresentation *oneUpPresentation;
 @property(nonatomic, getter=isSelecting) _Bool selecting;
 @property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager;
 @property(readonly) Class superclass;

@@ -27,6 +27,7 @@
     BOOL _invalidateDone;
     struct LogCategory *_ucat;
     unsigned int _flags;
+    unsigned int _statusFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_label;
     CDUnknownBlockType _bluetoothAddressChangedHandler;
@@ -45,6 +46,7 @@
 @property(copy, nonatomic) CDUnknownBlockType deviceDisconnectedHandler; // @synthesize deviceDisconnectedHandler=_deviceDisconnectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceConnectedHandler; // @synthesize deviceConnectedHandler=_deviceConnectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothAddressChangedHandler; // @synthesize bluetoothAddressChangedHandler=_bluetoothAddressChangedHandler;
+@property(nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;

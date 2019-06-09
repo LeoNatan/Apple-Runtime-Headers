@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKNanoSiriRequestHandler.h>
 
+__attribute__((visibility("hidden")))
 @interface CKNanoSiriContextRequestHandler : CKNanoSiriRequestHandler
 {
 }

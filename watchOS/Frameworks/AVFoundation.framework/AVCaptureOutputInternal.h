@@ -9,6 +9,7 @@
 @class AVCaptureSession, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureOutputInternal : NSObject
 {
     NSObject<OS_dispatch_queue> *figCaptureSessionSyncQueue;

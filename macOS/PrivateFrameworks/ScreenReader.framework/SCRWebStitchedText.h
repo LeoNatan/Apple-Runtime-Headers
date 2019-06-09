@@ -24,6 +24,15 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRWebStitchedTextContent *_stitchedTextContent; // @synthesize _stitchedTextContent=__stitchedTextContent;
 @property(copy, nonatomic) NSAttributedString *_stitchedAttributedValueDescription; // @synthesize _stitchedAttributedValueDescription=__stitchedAttributedValueDescription;
 @property(copy, nonatomic) NSString *_stitchedTextValueDescription; // @synthesize _stitchedTextValueDescription=__stitchedTextValueDescription;
+- (void).cxx_destruct;
+- (BOOL)moveToPreviousParagraphWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToNextParagraphWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToPreviousSentenceWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToNextSentenceWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToNextWordWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)moveToPreviousWordWithOutputRequest:(id)arg1 event:(id)arg2;
+- (BOOL)interactRightWithEvent:(id)arg1 request:(id)arg2;
+- (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)elementRepresentsUIElement:(id)arg1;
 - (BOOL)shouldNavigate;
 - (BOOL)shouldMap;
@@ -48,9 +57,8 @@ __attribute__((visibility("hidden")))
 - (id)value;
 - (id)role;
 - (BOOL)isValid;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (BOOL)isEqual:(id)arg1;
-- (void)dealloc;
 - (void)_initializeStitchingData;
 - (id)initWithUIElements:(id)arg1 parent:(id)arg2;
 

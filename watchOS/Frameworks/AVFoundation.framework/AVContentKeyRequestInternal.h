@@ -13,10 +13,9 @@ __attribute__((visibility("hidden")))
 {
     AVContentKeySession *session;
     id identifier;
-    NSData *sinfDefaultKeyIdentifier;
+    NSData *keyIDFromInitializationData;
     NSData *initializationData;
     int status;
-    id customURLProviderContext;
     int responseInfoSent;
     _Bool providesPersistableKey;
     NSDictionary *preloadingRequestOptions;
@@ -25,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *requestInfo;
     unsigned long long customURLRequestID;
     struct OpaqueFigCustomURLHandler *customURLHandler;
+    _Bool isRenewalRequest;
     NSString *cryptorUUID;
     unsigned long long cryptorKeyRequestID;
 }

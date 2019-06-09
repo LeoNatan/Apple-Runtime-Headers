@@ -45,17 +45,25 @@
     NSNumber *_boxedAllowsAutomaticRemovalFromLockScreen;
     NSNumber *_boxedAllowsAddingToLockScreenWhenUnlocked;
     NSNumber *_boxedPrioritizeAtTopOfLockScreen;
-    NSNumber *_boxedPreemptsPresentedAlert;
     NSNumber *_boxedRevealsAdditionalContentOnPresentation;
     NSNumber *_boxedPrivacySettings;
     NSNumber *_boxedShouldDismissBulletinWhenClosed;
+    NSNumber *_boxedAllowsPersistentBannersInCarPlay;
+    NSNumber *_boxedAllowsSupplementaryActionsInCarPlay;
+    NSNumber *_boxedPlaysMediaWhenRaised;
+    NSNumber *_boxedSuppressDelayForForwardedBulletins;
+    NSNumber *_boxedHideDismissActionInCarPlay;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSNumber *boxedHideDismissActionInCarPlay; // @synthesize boxedHideDismissActionInCarPlay=_boxedHideDismissActionInCarPlay;
+@property(retain, nonatomic) NSNumber *boxedSuppressDelayForForwardedBulletins; // @synthesize boxedSuppressDelayForForwardedBulletins=_boxedSuppressDelayForForwardedBulletins;
+@property(retain, nonatomic) NSNumber *boxedPlaysMediaWhenRaised; // @synthesize boxedPlaysMediaWhenRaised=_boxedPlaysMediaWhenRaised;
+@property(retain, nonatomic) NSNumber *boxedAllowsSupplementaryActionsInCarPlay; // @synthesize boxedAllowsSupplementaryActionsInCarPlay=_boxedAllowsSupplementaryActionsInCarPlay;
+@property(retain, nonatomic) NSNumber *boxedAllowsPersistentBannersInCarPlay; // @synthesize boxedAllowsPersistentBannersInCarPlay=_boxedAllowsPersistentBannersInCarPlay;
 @property(retain, nonatomic) NSNumber *boxedShouldDismissBulletinWhenClosed; // @synthesize boxedShouldDismissBulletinWhenClosed=_boxedShouldDismissBulletinWhenClosed;
 @property(retain, nonatomic) NSNumber *boxedPrivacySettings; // @synthesize boxedPrivacySettings=_boxedPrivacySettings;
 @property(retain, nonatomic) NSNumber *boxedRevealsAdditionalContentOnPresentation; // @synthesize boxedRevealsAdditionalContentOnPresentation=_boxedRevealsAdditionalContentOnPresentation;
-@property(retain, nonatomic) NSNumber *boxedPreemptsPresentedAlert; // @synthesize boxedPreemptsPresentedAlert=_boxedPreemptsPresentedAlert;
 @property(retain, nonatomic) NSNumber *boxedPrioritizeAtTopOfLockScreen; // @synthesize boxedPrioritizeAtTopOfLockScreen=_boxedPrioritizeAtTopOfLockScreen;
 @property(retain, nonatomic) NSNumber *boxedAllowsAddingToLockScreenWhenUnlocked; // @synthesize boxedAllowsAddingToLockScreenWhenUnlocked=_boxedAllowsAddingToLockScreenWhenUnlocked;
 @property(retain, nonatomic) NSNumber *boxedAllowsAutomaticRemovalFromLockScreen; // @synthesize boxedAllowsAutomaticRemovalFromLockScreen=_boxedAllowsAutomaticRemovalFromLockScreen;
@@ -93,6 +101,11 @@
 - (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+@property(nonatomic) _Bool hideDismissActionInCarPlay;
+@property(nonatomic) _Bool suppressDelayForForwardedBulletins;
+@property(nonatomic) _Bool playsMediaWhenRaised;
+@property(nonatomic) _Bool allowsSupplementaryActionsInCarPlay;
+@property(nonatomic) _Bool allowsPersistentBannersInCarPlay;
 @property(nonatomic) _Bool shouldDismissBulletinWhenClosed;
 @property(nonatomic) unsigned long long privacySettings;
 @property(nonatomic) _Bool revealsAdditionalContentOnPresentation;

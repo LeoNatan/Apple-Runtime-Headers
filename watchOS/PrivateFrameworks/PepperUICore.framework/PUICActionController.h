@@ -9,7 +9,7 @@
 #import <PepperUICore/ORBTapGestureRecognizerDelegate-Protocol.h>
 #import <PepperUICore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSString, ORBTapGestureRecognizer, PUICActionGroup, UIWindow;
+@class CSLSSuspendSystemGestureAssertion, NSArray, NSString, ORBTapGestureRecognizer, PUICActionGroup, UIWindow;
 @protocol PUICActionControllerDelegate;
 
 @interface PUICActionController : NSObject <UIGestureRecognizerDelegate, ORBTapGestureRecognizerDelegate>
@@ -17,6 +17,7 @@
     ORBTapGestureRecognizer *_orbGestureRecognizer;
     float _progress;
     _Bool _isVisible;
+    CSLSSuspendSystemGestureAssertion *_suspendSystemGestureAssertion;
     PUICActionGroup *_actionGroup;
     id <PUICActionControllerDelegate> _delegate;
     UIWindow *_actionWindow;

@@ -67,7 +67,7 @@
 + (id)milliseconds;
 + (id)secondUnit;
 + (id)secondUnitWithMetricPrefix:(long long)arg1;
-+ (id)decibelSPLUnit;
++ (id)decibelAWeightedSoundPressureLevelUnit;
 + (id)atmosphereUnit;
 + (id)centimeterOfWaterUnit;
 + (id)millimeterOfMercuryUnit;
@@ -109,9 +109,9 @@
 - (double)_convertToBaseUnit:(double)arg1;
 - (double)_reducedProportionalSize;
 - (id)_baseUnitReduction;
-- (id)_baseUnitReductionAndProportionalSize:(out double *)arg1 withCycleSet:(id)arg2;
+- (id)_baseUnitReductionAndProportionalSize:(double *)arg1 withCycleSet:(id)arg2;
 - (void)_reduceIfNecessaryWithCycleSet:(id)arg1;
-- (id)_computeBaseUnitReductionAndProportionalSize:(out double *)arg1 withCycleSet:(id)arg2;
+- (id)_computeBaseUnitReductionAndProportionalSize:(double *)arg1 withCycleSet:(id)arg2;
 @property(readonly, nonatomic) _HKFactorization *_baseUnits;
 - (id)_dimensionReduction;
 - (_Bool)_isCompatibleWithDimension:(id)arg1;

@@ -6,24 +6,25 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface USSSceneActiveRequest : NSObject <USSXPCEncodable>
+@interface USSSceneActiveRequest : NSObject <NSSecureCoding>
 {
     BOOL _isForegroundApp;
     BOOL _isActiveApp;
     NSString *_identifier;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)sceneActiveRequestForScene:(id)arg1 isForegroundApp:(BOOL)arg2 isActiveApp:(BOOL)arg3;
 @property(nonatomic) BOOL isActiveApp; // @synthesize isActiveApp=_isActiveApp;
 @property(nonatomic) BOOL isForegroundApp; // @synthesize isForegroundApp=_isForegroundApp;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initCommon;
 
 @end

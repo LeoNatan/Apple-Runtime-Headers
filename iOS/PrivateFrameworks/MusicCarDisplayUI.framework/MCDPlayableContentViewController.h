@@ -8,7 +8,7 @@
 
 #import <MusicCarDisplayUI/UINavigationControllerDelegate-Protocol.h>
 
-@class MCDPCContainer, MCDPCModel, NSArray, NSString;
+@class MCDPCContainer, MCDPCModel, NSArray, NSOperationQueue, NSString;
 
 @interface MCDPlayableContentViewController : UINavigationController <UINavigationControllerDelegate>
 {
@@ -19,14 +19,15 @@
     _Bool _hasSectionedContent;
     _Bool _hasLoaded;
     NSString *_bundleID;
+    NSOperationQueue *_modelInvalidationQueue;
 }
 
+@property(retain, nonatomic) NSOperationQueue *modelInvalidationQueue; // @synthesize modelInvalidationQueue=_modelInvalidationQueue;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
 - (id)currentStack;
 - (void)_populateStack;
 - (void)_modelDidInvalidate:(id)arg1;
-- (void)_updateStackForPlaying:(_Bool)arg1;
 - (void)refreshNavigationStackForLaunch;
 - (void)setViewControllers:(id)arg1 animated:(_Bool)arg2;
 - (void)_setupView;

@@ -56,6 +56,7 @@
     id <SCRCGestureFactoryCallback> _gutterUpDelegate;
     id <SCRCGestureFactoryCallback> _splitTapDelegate;
     id <SCRCGestureFactoryCallback> _canSplitTapDelegate;
+    id <SCRCGestureFactoryCallback> _didBeginSplitGestureDelegate;
     SCRCTargetSelectorTimer *_trackingTimer;
     struct {
         _Bool isFingerCurrentlyDown;
@@ -80,6 +81,7 @@
         _Bool tapDead;
         _Bool timedOut;
         _Bool active;
+        _Bool didNotify;
         unsigned int fingerIdentifier;
         double fingerDownTime;
         struct CGPoint startTapLocation;
@@ -116,6 +118,7 @@
 - (int)gestureState;
 - (float)directionalSlope;
 - (CDStruct_f471ea72)captureCurrentState;
+- (void)_resetSplit;
 - (void)reset;
 - (void)_up;
 - (void)_drag:(id)arg1;

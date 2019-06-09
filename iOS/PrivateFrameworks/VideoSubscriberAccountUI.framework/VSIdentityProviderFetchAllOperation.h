@@ -6,15 +6,17 @@
 
 #import <VideoSubscriberAccount/VSAsyncOperation.h>
 
-@class NSOperationQueue, VSAuditToken, VSOptional;
+@class NSOperationQueue, VSAuditToken, VSDevice, VSOptional;
 
 @interface VSIdentityProviderFetchAllOperation : VSAsyncOperation
 {
     VSAuditToken *_auditToken;
     VSOptional *_result;
     NSOperationQueue *_subqueue;
+    VSDevice *_currentDevice;
 }
 
+@property(retain, nonatomic) VSDevice *currentDevice; // @synthesize currentDevice=_currentDevice;
 @property(retain, nonatomic) NSOperationQueue *subqueue; // @synthesize subqueue=_subqueue;
 @property(retain, nonatomic) VSOptional *result; // @synthesize result=_result;
 @property(copy, nonatomic) VSAuditToken *auditToken; // @synthesize auditToken=_auditToken;

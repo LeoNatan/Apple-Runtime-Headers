@@ -6,10 +6,13 @@
 
 #import <QuickLook/QLMediaItemBaseViewController.h>
 
-@class NSLayoutConstraint, NSMutableDictionary, NSTimer, UILabel, UIScrollView, UIView;
+#import <QuickLook/QLMediaScrubberGestureDelegate-Protocol.h>
+#import <QuickLook/UIGestureRecognizerDelegate-Protocol.h>
+
+@class NSLayoutConstraint, NSMutableDictionary, NSNumber, NSString, NSTimer, QLMediaScrubberGesture, UILabel, UIScrollView, UITapGestureRecognizer, UIView;
 
 __attribute__((visibility("hidden")))
-@interface QLMediaItemViewController : QLMediaItemBaseViewController
+@interface QLMediaItemViewController : QLMediaItemBaseViewController <UIGestureRecognizerDelegate, QLMediaScrubberGestureDelegate>
 {
     NSMutableDictionary *_playingInfo;
     UIView *_timeLabelBackground;
@@ -19,11 +22,26 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_timeLabelConstraintY;
     NSTimer *_playbackTimeHiddenTimer;
     long long _playbackTimeFormat;
+    _Bool _wasPlayingBeforeStartScrubbing;
+    NSNumber *_isSeeking;
+    QLMediaScrubberGesture *_scrubGesture;
+    UITapGestureRecognizer *_tapToPlayGesture;
 }
 
+@property(retain, nonatomic) UITapGestureRecognizer *tapToPlayGesture; // @synthesize tapToPlayGesture=_tapToPlayGesture;
+@property(retain, nonatomic) QLMediaScrubberGesture *scrubGesture; // @synthesize scrubGesture=_scrubGesture;
 - (void).cxx_destruct;
+- (void)scrubber:(id)arg1 didChangeValue:(float)arg2;
+- (void)scrubberDidStartScrubbing:(id)arg1;
+- (void)scrubberDidEndScrubbing:(id)arg1;
+- (void)handlePerformedKeyCommandIfNeeded:(id)arg1;
+- (id)registeredKeyCommands;
+- (void)tapToPlayGestureChanged:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_updateCommandCenterPlayingInfoWithCurrentPlaybackTimeInformation;
-- (void)userScrubbedInControlCenter:(id)arg1;
+- (long long)userScrubbedInControlCenter:(id)arg1;
+- (long long)userTappedPauseInControlCenter:(id)arg1;
+- (long long)userTappedPlayInControlCenter:(id)arg1;
 - (void)_unregisterForCommandCenterHandlers;
 - (void)_registerForCommandCenterHandlers;
 - (id)_playingInfoWithPlaybackDuration:(double)arg1 elapsedTime:(double)arg2;
@@ -49,6 +67,13 @@ __attribute__((visibility("hidden")))
 - (void)previewWillDisappear:(_Bool)arg1;
 - (void)previewDidAppear:(_Bool)arg1;
 - (void)previewIsAppearingWithProgress:(double)arg1;
+- (void)loadPreviewControllerWithContents:(id)arg1 context:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

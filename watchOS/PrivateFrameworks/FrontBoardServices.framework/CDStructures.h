@@ -4,11 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Blocks
+#pragma mark Function Pointers and Blocks
+
+typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
 #pragma mark Named Structures
+
+struct CATransform3D {
+    float m11;
+    float m12;
+    float m13;
+    float m14;
+    float m21;
+    float m22;
+    float m23;
+    float m24;
+    float m31;
+    float m32;
+    float m33;
+    float m34;
+    float m41;
+    float m42;
+    float m43;
+    float m44;
+};
 
 struct CGPoint {
     float x;

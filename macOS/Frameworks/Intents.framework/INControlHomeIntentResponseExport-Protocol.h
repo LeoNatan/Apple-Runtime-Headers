@@ -7,7 +7,10 @@
 #import <Intents/JSExport-Protocol.h>
 #import <Intents/NSObject-Protocol.h>
 
+@class NSArray;
+
 @protocol INControlHomeIntentResponseExport <NSObject, JSExport>
+@property(copy) NSArray *entityResponses;
 @property(readonly) long long code;
 @end
 

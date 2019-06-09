@@ -35,19 +35,20 @@
 @property BOOL isResizeAvailible; // @synthesize isResizeAvailible=_isResizeAvailible;
 @property BOOL isButtonBarShown; // @synthesize isButtonBarShown=_isButtonBarShown;
 @property struct CGSize contentSize; // @synthesize contentSize=_contentSize;
-@property(retain, nonatomic) NSLayoutConstraint *buttonBarHeight; // @synthesize buttonBarHeight=_buttonBarHeight;
+@property(nonatomic) __weak NSLayoutConstraint *buttonBarHeight; // @synthesize buttonBarHeight=_buttonBarHeight;
 @property(retain, nonatomic) MMWebViewButtonBar *buttonBar; // @synthesize buttonBar=_buttonBar;
-@property(retain, nonatomic) NSView *buttonBarContainer; // @synthesize buttonBarContainer=_buttonBarContainer;
-@property(retain, nonatomic) NSView *webView; // @synthesize webView=_webView;
-@property(retain, nonatomic) NSView *webViewContentView; // @synthesize webViewContentView=_webViewContentView;
-@property(retain, nonatomic) NSButton *loadingCancelButton; // @synthesize loadingCancelButton=_loadingCancelButton;
-@property(retain, nonatomic) NSView *loadingView; // @synthesize loadingView=_loadingView;
-@property(retain, nonatomic) NSProgressIndicator *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
-@property(retain, nonatomic) NSView *windowContentView; // @synthesize windowContentView=_windowContentView;
+@property(nonatomic) __weak NSView *buttonBarContainer; // @synthesize buttonBarContainer=_buttonBarContainer;
+@property(nonatomic) __weak NSView *webView; // @synthesize webView=_webView;
+@property(nonatomic) __weak NSView *webViewContentView; // @synthesize webViewContentView=_webViewContentView;
+@property(nonatomic) __weak NSButton *loadingCancelButton; // @synthesize loadingCancelButton=_loadingCancelButton;
+@property(nonatomic) __weak NSView *loadingView; // @synthesize loadingView=_loadingView;
+@property(nonatomic) __weak NSProgressIndicator *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
+@property(nonatomic) __weak NSView *windowContentView; // @synthesize windowContentView=_windowContentView;
 @property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(copy, nonatomic) CDUnknownBlockType passwordChangeCompletionHandler; // @synthesize passwordChangeCompletionHandler=_passwordChangeCompletionHandler;
 @property(retain, nonatomic) MMICAWebKitViewController *icaWebKitVC; // @synthesize icaWebKitVC=_icaWebKitVC;
+- (void).cxx_destruct;
 - (void)button3Pressed:(id)arg1;
 - (void)button2Pressed:(id)arg1;
 - (void)button1Pressed:(id)arg1;
@@ -75,7 +76,6 @@
 - (void)showPasswordChangeSheet:(id)arg1 accountID:(id)arg2;
 - (void)_handleGSTokenUpdateError:(id)arg1;
 - (void)runPasswordChangeSheetForWindow:(id)arg1 accountID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

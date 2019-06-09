@@ -35,29 +35,37 @@
     NSMutableArray *_frequentsSearchResults;
     NSMutableArray *_eventsSearchResults;
     NSMutableArray *_contactsSearchResults;
+    unsigned int _supportedSearchTypes;
     NSArray *_mapCompletionSearchResults;
+    NSArray *_textualSearchResults;
     id <EKUILocationSearchModelDelegate> _delegate;
 }
 
 @property(nonatomic) id <EKUILocationSearchModelDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) NSArray *textualSearchResults; // @synthesize textualSearchResults=_textualSearchResults;
 @property(readonly, nonatomic) NSArray *eventsSearchResults; // @synthesize eventsSearchResults=_eventsSearchResults;
 @property(readonly, nonatomic) NSArray *frequentsSearchResults; // @synthesize frequentsSearchResults=_frequentsSearchResults;
 @property(readonly, nonatomic) NSArray *recentsSearchResults; // @synthesize recentsSearchResults=_recentsSearchResults;
 @property(readonly, nonatomic) NSArray *contactsSearchResults; // @synthesize contactsSearchResults=_contactsSearchResults;
 @property(readonly, nonatomic) NSArray *mapCompletionSearchResults; // @synthesize mapCompletionSearchResults=_mapCompletionSearchResults;
 @property(retain, nonatomic) EKStructuredLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
+@property(nonatomic) unsigned int supportedSearchTypes; // @synthesize supportedSearchTypes=_supportedSearchTypes;
 - (void).cxx_destruct;
-- (_Bool)removeRecentLocation:(id)arg1;
 - (void)selectCurrentLocation;
 - (void)selectLocation:(id)arg1;
 - (void)selectMapSearchCompletion:(id)arg1;
+- (_Bool)removeRecentLocation:(id)arg1;
+- (void)addConferenceRoomToRecents:(id)arg1 fromSource:(id)arg2;
 - (void)addLocationToRecents:(id)arg1 addressString:(id)arg2;
 - (void)_handleAvailabilityResults:(id)arg1 forOperation:(id)arg2;
+- (void)updateConferenceRoomAvailability:(id)arg1 duringEvent:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)availabilityRequestForConferenceRooms:(id)arg1 duringEvent:(id)arg2 resultsBlock:(CDUnknownBlockType)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_addDiscoveredConferenceRooms:(id)arg1;
 - (void)_processDirectorySearchResultSet:(id)arg1 forOperation:(id)arg2;
 - (void)searchConferenceRooms:(id)arg1;
 @property(readonly, nonatomic) NSArray *conferenceRoomSearchResults;
 - (void)updateEventLocations:(id)arg1;
+- (id)splitEventLocations:(id)arg1;
 - (void)searchFrequentLocations:(id)arg1;
 - (void)updateRecents:(id)arg1;
 - (void)_updateContactsSearchWithResults:(id)arg1 forToken:(id)arg2;

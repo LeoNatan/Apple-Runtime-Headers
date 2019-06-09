@@ -4,28 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppSupportUI/NUIContainerStackView.h>
+#import <UIKit/UIStackView.h>
 
-#import <NanoMediaUI/NUIContainerStackViewDelegate-Protocol.h>
-
-@class NSString;
-
-__attribute__((visibility("hidden")))
-@interface NMUTableHeaderFooterStackView : NUIContainerStackView <NUIContainerStackViewDelegate>
+@interface NMUTableHeaderFooterStackView : UIStackView
 {
 }
 
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)dealloc;
-- (id)initWithArrangedSubviews:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

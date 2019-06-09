@@ -8,23 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEOLogMsgStateApplicationIdentifier : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_appIdentifier;
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
     BOOL _appDarkMode;
     struct {
-        unsigned int appDarkMode:1;
-    } _has;
+        unsigned int has_appDarkMode:1;
+        unsigned int read_appIdentifier:1;
+        unsigned int read_appMajorVersion:1;
+        unsigned int read_appMinorVersion:1;
+        unsigned int wrote_appIdentifier:1;
+        unsigned int wrote_appMajorVersion:1;
+        unsigned int wrote_appMinorVersion:1;
+        unsigned int wrote_appDarkMode:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL appDarkMode; // @synthesize appDarkMode=_appDarkMode;
-@property(retain, nonatomic) NSString *appMinorVersion; // @synthesize appMinorVersion=_appMinorVersion;
-@property(retain, nonatomic) NSString *appMajorVersion; // @synthesize appMajorVersion=_appMajorVersion;
-@property(retain, nonatomic) NSString *appIdentifier; // @synthesize appIdentifier=_appIdentifier;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,12 +39,20 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasAppDarkMode;
+@property(nonatomic) BOOL appDarkMode;
+@property(retain, nonatomic) NSString *appMinorVersion;
 @property(readonly, nonatomic) BOOL hasAppMinorVersion;
+- (void)_readAppMinorVersion;
+@property(retain, nonatomic) NSString *appMajorVersion;
 @property(readonly, nonatomic) BOOL hasAppMajorVersion;
+- (void)_readAppMajorVersion;
+@property(retain, nonatomic) NSString *appIdentifier;
 @property(readonly, nonatomic) BOOL hasAppIdentifier;
+- (void)_readAppIdentifier;
 
 @end
 

@@ -7,6 +7,11 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (WBSFaviconProviderNSStringExtras)
++ (id)safari_stringByBase64EncodingData:(id)arg1;
++ (id)safari_stringWithUTF8Bytes:(const void *)arg1 length:(unsigned long long)arg2;
++ (id)safari_localizedStringFromComponents:(id)arg1 usingConjunctionForFinalJoiner:(_Bool)arg2;
++ (id)safari_stringWithJSValue:(struct OpaqueJSValue *)arg1 context:(struct OpaqueJSContext *)arg2;
++ (id)safari_stringWithJSValue:(struct OpaqueJSValue *)arg1 context:(struct OpaqueJSContext *)arg2 nullStringPolicy:(long long)arg3;
 - (id)_safari_variantsOfURLStringInFaviconFormat:(_Bool)arg1;
 - (id)safari_stringByFormattingForIconControllerDatabase;
 - (id)safari_stringByFormattingForFaviconDatabase;
@@ -14,5 +19,38 @@
 - (id)safari_domainURLStringPrefixVariantsForFaviconDatabase;
 - (id)safari_domainFaviconURLStringVariantsForFaviconDatabase;
 - (id)safari_urlStringVariantsForFaviconDatabase;
+@property(readonly, copy, nonatomic) NSString *safari_userVisibleTitleIgnoringFullURLString;
+@property(readonly, copy, nonatomic) NSString *safari_stringByRemovingParenthesizedDomain;
+- (_Bool)safari_looksLikeObscuredPassword;
+@property(readonly, copy, nonatomic) NSString *safari_stringByRemovingExcessWhitespace;
+- (id)safari_stringWithFont:(id)arg1 forWidth:(double)arg2 lineBreakMode:(long long)arg3;
+- (id)safari_containedURLs;
+@property(readonly, nonatomic) _Bool safari_isPDFMIMEType;
+- (id)safari_sha256Hash;
+- (id)safari_md5Hash;
+- (_Bool)safari_isVisualDuplicateOfURLString:(id)arg1;
+- (id)safari_canonicalURLForFrequentlyVisitedSites;
+- (id)safari_canonicalURLStringForFrequentlyVisitedSites;
+- (void)safari_enumerateSubdomainRangesInHostUsingBlock:(CDUnknownBlockType)arg1;
+- (id)safari_scriptIfJavaScriptURLString;
+- (_Bool)safari_isJavaScriptURLString;
+- (_Bool)safari_isPathExtensionAllowedForAnalytics;
+- (id)safari_stringBySubstitutingHTMLEntitiesForAmpersandAndAngleBrackets;
+- (id)safari_stringBySubstitutingAmpersandAndAngleBracketsForHTMLEntities;
+- (_Bool)safari_hasDirectionalPrefix;
+- (id)safari_stringByRemovingDirectionalPrefix;
+- (id)safari_stringEncodedAsURLQueryParameter;
+- (id)safari_stringByFoldingWideCharactersAndNormalizing;
+- (id)safari_userVisibleURL;
+- (id)safari_bestURLStringForUserTypedString;
+- (id)safari_bestLanguageTag;
+- (id)safari_bestURLForUserTypedString;
+- (id)safari_stringByDeletingTrailingSlash;
+- (id)safari_stringByDeletingStartingSlash;
+- (id)safari_fixedStringByExpandingTildeInPathToUserHomeDirectory;
+- (id)safari_stringByRemovingUnnecessaryCharactersFromUserTypedURLString;
+- (id)safari_stringByRemovingTopLevelDomainFromHost;
+- (id)safari_possibleTopLevelDomainCorrectionForUserTypedString;
+- (id)safari_normalizedParsecInputString;
 @end
 

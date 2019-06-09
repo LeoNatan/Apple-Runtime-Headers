@@ -10,11 +10,13 @@
 
 @interface PXMemoriesSpec : PXFeatureSpec
 {
+    BOOL _feedShouldAllowHeaders;
+    BOOL _alwaysShowFavoritesBadge;
     BOOL _shouldRemoveHighlightOnScroll;
     struct NSColor *_feedBackgroundColor;
     struct NSColor *_selectionHighlightColor;
     long long _feedHeroPosition;
-    long long _feedScrollDirection;
+    long long _feedAxis;
     unsigned long long _feedMemoriesPerRow;
     double _feedEntryHeaderHeight;
     double _firstFeedEntryHeaderHeight;
@@ -29,15 +31,21 @@
     double _tabTopContentPadding;
     struct NSColor *_borderColor;
     double _borderWidth;
+    double _orbPreviewSize;
     unsigned long long __style;
     double __displayScale;
+    double __columnWidth;
+    struct CGSize _favoriteBadgeSize;
     struct CGPoint _highlightedSectionHeaderOffset;
     struct CGPoint _borderOffset;
     struct NSEdgeInsets _feedEntryEdgeInsets;
+    struct NSEdgeInsets _favoriteBadgeInset;
 }
 
+@property(readonly, nonatomic) double _columnWidth; // @synthesize _columnWidth=__columnWidth;
 @property(readonly, nonatomic) double _displayScale; // @synthesize _displayScale=__displayScale;
 @property(readonly, nonatomic) unsigned long long _style; // @synthesize _style=__style;
+@property(readonly, nonatomic) double orbPreviewSize; // @synthesize orbPreviewSize=_orbPreviewSize;
 @property(readonly, nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(readonly, nonatomic) struct CGPoint borderOffset; // @synthesize borderOffset=_borderOffset;
 @property(readonly, nonatomic) NSColor *borderColor; // @synthesize borderColor=_borderColor;
@@ -48,15 +56,19 @@
 @property(readonly, nonatomic) double feedAdditionalContentThreshold; // @synthesize feedAdditionalContentThreshold=_feedAdditionalContentThreshold;
 @property(readonly, nonatomic) BOOL shouldRemoveHighlightOnScroll; // @synthesize shouldRemoveHighlightOnScroll=_shouldRemoveHighlightOnScroll;
 @property(readonly, nonatomic) struct CGPoint highlightedSectionHeaderOffset; // @synthesize highlightedSectionHeaderOffset=_highlightedSectionHeaderOffset;
+@property(readonly, nonatomic) struct NSEdgeInsets favoriteBadgeInset; // @synthesize favoriteBadgeInset=_favoriteBadgeInset;
+@property(readonly, nonatomic) struct CGSize favoriteBadgeSize; // @synthesize favoriteBadgeSize=_favoriteBadgeSize;
+@property(readonly, nonatomic) BOOL alwaysShowFavoritesBadge; // @synthesize alwaysShowFavoritesBadge=_alwaysShowFavoritesBadge;
 @property(readonly, nonatomic) double feedHeroImageAspectRatio; // @synthesize feedHeroImageAspectRatio=_feedHeroImageAspectRatio;
 @property(readonly, nonatomic) long long idiom; // @synthesize idiom=_idiom;
 @property(readonly, nonatomic) double feedInteritemSpacing; // @synthesize feedInteritemSpacing=_feedInteritemSpacing;
 @property(readonly, nonatomic) double distanceBetweenHeaderBaselineAndImageTop; // @synthesize distanceBetweenHeaderBaselineAndImageTop=_distanceBetweenHeaderBaselineAndImageTop;
 @property(readonly, nonatomic) double firstFeedEntryHeaderHeight; // @synthesize firstFeedEntryHeaderHeight=_firstFeedEntryHeaderHeight;
 @property(readonly, nonatomic) double feedEntryHeaderHeight; // @synthesize feedEntryHeaderHeight=_feedEntryHeaderHeight;
+@property(readonly, nonatomic) BOOL feedShouldAllowHeaders; // @synthesize feedShouldAllowHeaders=_feedShouldAllowHeaders;
 @property(readonly, nonatomic) struct NSEdgeInsets feedEntryEdgeInsets; // @synthesize feedEntryEdgeInsets=_feedEntryEdgeInsets;
 @property(readonly, nonatomic) unsigned long long feedMemoriesPerRow; // @synthesize feedMemoriesPerRow=_feedMemoriesPerRow;
-@property(readonly, nonatomic) long long feedScrollDirection; // @synthesize feedScrollDirection=_feedScrollDirection;
+@property(readonly, nonatomic) long long feedAxis; // @synthesize feedAxis=_feedAxis;
 @property(readonly, nonatomic) long long feedHeroPosition; // @synthesize feedHeroPosition=_feedHeroPosition;
 @property(readonly, nonatomic) NSColor *selectionHighlightColor; // @synthesize selectionHighlightColor=_selectionHighlightColor;
 @property(readonly, nonatomic) NSColor *feedBackgroundColor; // @synthesize feedBackgroundColor=_feedBackgroundColor;

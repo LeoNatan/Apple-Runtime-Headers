@@ -22,8 +22,6 @@
 - (id)mf_traversePreviousNode;
 - (id)mf_traverseNextSiblingStayingWithin:(id)arg1;
 - (id)mf_traverseNextNodeStayingWithin:(id)arg1;
-- (void)mf_fixParagraphsAndQuotesFromMicrosoft;
-- (void)_fixParagraphsAndQuotesFromMicrosoftNodesToRemove:(id)arg1;
 - (void)recursivelyRemoveMailAttributes;
 - (id)mf_commonAncestorWithNode:(id)arg1;
 - (_Bool)mf_isQuoteOrWithinQuote;
@@ -31,5 +29,8 @@
 - (_Bool)mf_containsRichText;
 @property(readonly) _Bool mf_isAttachment;
 @property(readonly) _Bool mf_isBody;
+- (id)mf_lastSibling;
+- (id)mf_firstSibling;
+- (id)mf_childNodeAtIndex:(int)arg1;
 @end
 

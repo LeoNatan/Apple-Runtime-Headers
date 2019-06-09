@@ -12,6 +12,7 @@
 {
 }
 
++ (id)csAccountTypeString;
 + (id)accountTypeString;
 + (id)outboxPathRelativeToLegacyAccountPath:(id)arg1 legacyOutboxPath:(id)arg2;
 + (id)localAccount;
@@ -43,6 +44,7 @@
 - (BOOL)isWillingToGoOnline;
 - (void)setIsOffline:(BOOL)arg1;
 - (BOOL)isOffline;
+- (BOOL)isLocalAccount;
 - (BOOL)shouldAutoFetch;
 - (BOOL)canFetch;
 - (void)setPassword:(id)arg1;

@@ -79,6 +79,7 @@
 - (void)sendSessionMessage:(id)arg1;
 - (void)endSessionWithData:(id)arg1;
 - (void)endSession;
+- (void)reconnectSession;
 - (void)declineInvitationWithData:(id)arg1;
 - (void)declineInvitation;
 - (void)acceptInvitationWithData:(id)arg1;

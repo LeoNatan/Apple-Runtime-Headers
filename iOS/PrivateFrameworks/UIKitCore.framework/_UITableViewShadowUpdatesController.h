@@ -71,6 +71,10 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)indexPathForElementWithModelIdentifier:(id)arg1 inView:(id)arg2;
 - (id)modelIdentifierForElementAtIndexPath:(id)arg1 inView:(id)arg2;
+- (void)tableView:(id)arg1 willCommitMenuWithAnimator:(id)arg2;
+- (id)tableView:(id)arg1 previewForDismissingContextMenuWithConfiguration:(id)arg2;
+- (id)tableView:(id)arg1 previewForHighlightingContextMenuWithConfiguration:(id)arg2;
+- (id)tableView:(id)arg1 contextMenuConfigurationForRowAtIndexPath:(id)arg2 point:(struct CGPoint)arg3;
 - (id)indexPathForPreferredFocusedItemForTableView:(id)arg1;
 - (_Bool)tableView:(id)arg1 shouldUpdateFocusFromRowAtIndexPath:(id)arg2 toView:(id)arg3 heading:(unsigned long long)arg4;
 - (void)tableView:(id)arg1 didUnfocusRowAtIndexPath:(id)arg2;
@@ -86,8 +90,6 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 titleForSwipeAccessoryButtonForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 backgroundColorForSwipeAccessoryButtonForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 backgroundColorForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 swipeAccessoryButtonForRowAtIndexPath:(id)arg2;
-- (id)tableView:(id)arg1 deleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didCancelReorderingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndReorderingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willBeginReorderingRowAtIndexPath:(id)arg2;
@@ -155,6 +157,7 @@ __attribute__((visibility("hidden")))
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 cancelPrefetchingForRowsAtIndexPaths:(id)arg2;
 - (void)tableView:(id)arg1 prefetchRowsAtIndexPaths:(id)arg2;
+- (_Bool)_tableView:(id)arg1 dragSessionSupportsSystemDrag:(id)arg2;
 - (long long)_tableView:(id)arg1 dataOwnerForDragSession:(id)arg2 atIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 dragSessionIsRestrictedToDraggingApplication:(id)arg2;
 - (_Bool)tableView:(id)arg1 dragSessionAllowsMoveOperation:(id)arg2;

@@ -21,6 +21,7 @@
 
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
++ (id)internalStateDictionary;
 + (float)appPolicyDenialsScore;
 @property(readonly) long long fallbackAdvice; // @synthesize fallbackAdvice=_fallbackAdvice;
 @property(readonly) BOOL wifiCallUnderway; // @synthesize wifiCallUnderway=_wifiCallUnderway;
@@ -29,8 +30,10 @@
 - (void)generateInfoForId:(unsigned long long)arg1 context:(const char *)arg2 uuid:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
 - (int)configureInstance:(id)arg1;
+- (id)internalStateDictionary;
 - (void)postMotionDetector:(unsigned int)arg1;
 - (void)postHasAdviceNotification:(BOOL)arg1;
+- (void)postUpwards:(long long)arg1 appsWithStates:(id)arg2 always:(BOOL)arg3;
 - (void)postUpwards:(long long)arg1;
 
 // Remaining properties

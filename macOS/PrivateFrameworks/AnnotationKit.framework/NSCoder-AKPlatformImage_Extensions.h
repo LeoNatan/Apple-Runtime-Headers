@@ -9,5 +9,7 @@
 @interface NSCoder (AKPlatformImage_Extensions)
 - (id)akDecodeImageForKey:(id)arg1;
 - (void)akEncodeImage:(id)arg1 forKey:(id)arg2;
+- (id)akDecodeColorForKey:(id)arg1;
+- (void)akEncodeColor:(id)arg1 forKey:(id)arg2;
 @end
 

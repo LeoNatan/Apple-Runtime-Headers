@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)onTimerFired:(double)arg1;
 - (void)_deleteLayerRenderBuffer;
 - (_Bool)_createLayerRenderBuffer;
+- (void)_createTexture;
 - (void)layoutSublayers;
 - (void)dealloc;
 - (id)initWithDevice:(shared_ptr_2063da68)arg1;

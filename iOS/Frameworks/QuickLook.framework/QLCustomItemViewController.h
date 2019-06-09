@@ -28,8 +28,10 @@
 - (void)getFrameWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)presentationModeDidChange:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)setAppearance:(id)arg1 animated:(_Bool)arg2;
+- (void)forwardMessageToHost:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setFullScreen:(_Bool)arg1;
 - (void)didDismissActivityViewController;
+- (void)presentActivityViewControllerFromView:(id)arg1 withURL:(id)arg2;
 - (void)presentActivityViewControllerFromView:(id)arg1;
 - (void)dismissPreviewController;
 

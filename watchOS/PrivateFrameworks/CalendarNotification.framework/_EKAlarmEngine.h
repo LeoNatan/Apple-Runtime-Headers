@@ -37,6 +37,8 @@
     EKTimedEventStorePurger *_timedEventStorePurger;
 }
 
++ (void)logUnexpectedRemindersCall:(const char *)arg1;
++ (_Bool)remindersNotificationsEnabled;
 + (id)_publisherBulletinIDForTaskUniqueIdentifier:(id)arg1;
 + (id)_publisherBulletinIDForReminder:(id)arg1;
 + (id)_publisherBulletinIDForTask:(void *)arg1;
@@ -81,6 +83,7 @@
 - (id)_alertInfoAlarmIDFromSideAlarm:(id)arg1;
 - (void)_timerFired;
 - (void)_notifyAlarmsFired:(id)arg1;
+- (void)_installTimerWithFireDate:(id)arg1;
 - (void)_rescheduleTimer;
 - (id)_dateFormatter;
 - (void)_killTimer;
@@ -95,8 +98,8 @@
 - (id)_eventStore;
 - (_Bool)_isDataProtected;
 - (void)_protectedDataDidBecomeAvailable;
+- (void)receivedAlarmNamed:(id)arg1;
 - (void)handleDarwinNotification:(id)arg1;
-- (void)handleBTAJob:(id)arg1 named:(const char *)arg2;
 - (void)start;
 - (void)dealloc;
 - (id)init;

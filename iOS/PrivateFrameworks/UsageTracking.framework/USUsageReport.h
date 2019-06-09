@@ -25,15 +25,15 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) NSDate *lastEventDate; // @synthesize lastEventDate=_lastEventDate;
-@property(readonly) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
-@property(readonly) NSDateInterval *interval; // @synthesize interval=_interval;
-@property(readonly) NSDate *firstPickup; // @synthesize firstPickup=_firstPickup;
+@property(readonly, copy) NSDate *lastEventDate; // @synthesize lastEventDate=_lastEventDate;
+@property(readonly, copy) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
+@property(readonly, copy) NSDateInterval *interval; // @synthesize interval=_interval;
+@property(readonly, copy) NSDate *firstPickup; // @synthesize firstPickup=_firstPickup;
 @property(readonly) unsigned long long pickupsWithoutApplicationUsage; // @synthesize pickupsWithoutApplicationUsage=_pickupsWithoutApplicationUsage;
 @property(readonly, copy) NSDictionary *pickupsByBundleIdentifier; // @synthesize pickupsByBundleIdentifier=_pickupsByBundleIdentifier;
 @property(readonly, copy) NSDictionary *userNotificationsByBundleIdentifier; // @synthesize userNotificationsByBundleIdentifier=_userNotificationsByBundleIdentifier;
 @property(readonly, copy) NSArray *categoryUsage; // @synthesize categoryUsage=_categoryUsage;
-@property(readonly) NSDateInterval *longestSession; // @synthesize longestSession=_longestSession;
+@property(readonly, copy) NSDateInterval *longestSession; // @synthesize longestSession=_longestSession;
 @property(readonly) double screenTime; // @synthesize screenTime=_screenTime;
 - (void).cxx_destruct;
 - (id)description;

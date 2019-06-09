@@ -4,24 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Photos/PHChangeRequest.h>
 
 #import <Photos/PHInsertChangeRequest-Protocol.h>
 #import <Photos/PHUpdateChangeRequest-Protocol.h>
 
-@class NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableSet, NSString, PHChangeRequestHelper, PHObjectPlaceholder, PHPerson, PHRelationshipChangeRequestHelper;
+@class NSDictionary, NSManagedObjectID, NSMutableArray, NSMutableSet, NSString, PHObjectPlaceholder, PHPerson, PHRelationshipChangeRequestHelper;
 
-@interface PHPersonChangeRequest : NSObject <PHInsertChangeRequest, PHUpdateChangeRequest>
+@interface PHPersonChangeRequest : PHChangeRequest <PHInsertChangeRequest, PHUpdateChangeRequest>
 {
-    _Bool _clientEntitled;
-    NSString *_clientName;
-    int _clientProcessID;
     NSMutableArray *_personUUIDsToMerge;
     NSString *_nominalMergeTargetUUID;
     NSMutableSet *_faceUUIDsRequiringFaceCropGeneration;
     NSMutableSet *_rejectedMergeCandidatePersonUUIDs;
     NSMutableSet *_graphDedupePersonUUIDs;
-    PHChangeRequestHelper *_helper;
     PHPerson *_targetPerson;
     NSString *_identifier;
     PHRelationshipChangeRequestHelper *_facesHelper;
@@ -46,10 +42,6 @@
 @property(readonly, nonatomic) PHRelationshipChangeRequestHelper *facesHelper; // @synthesize facesHelper=_facesHelper;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) PHPerson *targetPerson; // @synthesize targetPerson=_targetPerson;
-@property(readonly, nonatomic) PHChangeRequestHelper *helper; // @synthesize helper=_helper;
-@property(readonly, nonatomic) int clientProcessID; // @synthesize clientProcessID=_clientProcessID;
-@property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
-@property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled; // @synthesize clientEntitled=_clientEntitled;
 - (void).cxx_destruct;
 - (void)_setGraphDedupePersons:(id)arg1;
 - (void)addInvalidMergeCandidatePersons:(id)arg1;
@@ -63,6 +55,7 @@
 - (void)addRejectedFaces:(id)arg1 forCluster:(_Bool)arg2;
 - (void)setKeyFace:(id)arg1;
 - (void)setKeyFace:(id)arg1 forCluster:(_Bool)arg2;
+- (void)setKeyFaceForUserPick:(id)arg1 forCluster:(_Bool)arg2;
 - (void)setKeyFaceForUserPick:(id)arg1;
 - (void)_setKeyFace:(id)arg1 forCluster:(_Bool)arg2 pickSource:(short)arg3;
 - (void)removeFaces:(id)arg1;
@@ -79,25 +72,19 @@
 - (id)_noMinimumFaceCountPersonFetchOptions;
 - (id)_existentRejectedFaceObjectIDs;
 - (id)_existentFaceObjectIDs;
-- (id)_existentObjectIDsUsingQuery:(id)arg1;
-- (void)didMutate;
-@property(readonly, nonatomic) NSManagedObjectID *objectID;
-@property(readonly, nonatomic) NSString *uuid;
-@property(readonly, getter=isMutated) _Bool mutated;
-@property(readonly, getter=isNew) _Bool new;
-- (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
-- (_Bool)applyMutationsToManagedObject:(id)arg1 error:(id *)arg2;
+- (_Bool)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
 - (_Bool)_shouldPromotePerson:(id)arg1 toVerifiedType:(int *)arg2;
-- (_Bool)validateInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
 - (_Bool)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;
 - (_Bool)_hasMutationForVerifiedType:(int *)arg1;
 - (_Bool)_containsUserMutations;
-- (_Bool)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) NSString *managedEntityName;
 @property(nonatomic, getter=isVerified) _Bool verified;
 @property(nonatomic) short keyFacePickSource;
 @property(copy, nonatomic) NSDictionary *contactMatchingDictionary;
+@property(nonatomic) unsigned short genderType;
+@property(nonatomic) unsigned short ageType;
+@property(nonatomic) long long questionType;
 @property(nonatomic) long long verifiedType;
 @property(nonatomic, getter=isInPersonNamingModel) _Bool inPersonNamingModel;
 @property(copy, nonatomic) NSString *personUri;
@@ -111,14 +98,19 @@
 - (_Bool)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
 - (_Bool)prepareForServicePreflightCheck:(id *)arg1;
 - (void)encodeToXPCDict:(id)arg1;
-- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initForNewObject;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled;
+@property(readonly, nonatomic) NSString *clientName;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) _Bool isNewRequest;
+@property(readonly, getter=isMutated) _Bool mutated;
+@property(readonly, nonatomic) NSManagedObjectID *objectID;
 @property(readonly) Class superclass;
 
 @end

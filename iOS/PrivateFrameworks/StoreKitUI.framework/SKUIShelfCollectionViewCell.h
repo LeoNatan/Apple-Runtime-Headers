@@ -10,6 +10,7 @@
 
 @class NSString, UICollectionView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShelfCollectionViewCell : SKUICollectionViewCell <SKUIPerspectiveView>
 {
     UICollectionView *_collectionView;

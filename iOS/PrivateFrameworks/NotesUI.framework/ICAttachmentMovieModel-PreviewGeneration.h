@@ -7,6 +7,9 @@
 #import <NotesShared/ICAttachmentMovieModel.h>
 
 @interface ICAttachmentMovieModel (PreviewGeneration)
-- (void)generatePreviewsInOperation:(id)arg1;
+- (_Bool)generatePreviewsInOperation:(id)arg1;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
+- (CDUnknownBlockType)genericBrickThumbnailCreator;
+- (CDUnknownBlockType)genericListThumbnailCreator;
 @end
 

@@ -15,6 +15,7 @@
 - (void)avatarViewControllerDidFinishSaving:(CNAvatarViewController *)arg1;
 - (void)avatarViewController:(CNAvatarViewController *)arg1 isSavingLikeness:(PRLikeness *)arg2;
 - (void)avatarViewControllerWantsEdit:(CNAvatarViewController *)arg1;
+- (void)avatarViewControllerDidRefresh:(CNAvatarViewController *)arg1;
 - (void)avatarViewController:(CNAvatarViewController *)arg1 contactAvatarDidChange:(CNContact *)arg2;
 - (void)avatarViewControllerDidFinishEditing:(CNAvatarViewController *)arg1 cancelled:(BOOL)arg2;
 - (BOOL)avatarViewControllerShouldPersistChanges:(CNAvatarViewController *)arg1;

@@ -30,7 +30,9 @@
 - (void).cxx_destruct;
 - (void)invalidate;
 - (id)description;
+- (id)_remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1 isSynchronous:(_Bool)arg2;
 - (id)_remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (void)performRemoteBlock:(CDUnknownBlockType)arg1 withErrorHandler:(CDUnknownBlockType)arg2 isSynchronous:(_Bool)arg3;
 - (void)performRemoteBlock:(CDUnknownBlockType)arg1 withErrorHandler:(CDUnknownBlockType)arg2;
 - (void)performRemoteBlock:(CDUnknownBlockType)arg1;
 - (void)_retryConnectionWithRecover:(_Bool)arg1;

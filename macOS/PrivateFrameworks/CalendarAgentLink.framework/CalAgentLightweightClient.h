@@ -13,7 +13,6 @@
 }
 
 - (void)agentUpdatedCache:(id)arg1;
-- (void)calMeCardChanged;
 - (void)calPersistanceNotification:(id)arg1 userInfo:(id)arg2;
 - (void)calDavSharedUIDChanged:(id)arg1;
 

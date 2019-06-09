@@ -10,6 +10,9 @@
 @protocol WBSHistoryPredicate;
 
 @protocol WBSHistoryServiceDatabaseProtocol <NSObject>
+- (void)setTitle:(NSString *)arg1 ofTagWithID:(long long)arg2 completionHandler:(void (^)(BOOL, NSError *))arg3;
+- (void)assignHistoryItemWithID:(long long)arg1 toTopicTagsWithIDs:(WBSSetInt64 *)arg2 completionHandler:(void (^)(BOOL, NSError *))arg3;
+- (void)createTagsForIdentifiers:(NSArray *)arg1 withTitles:(NSArray *)arg2 type:(unsigned long long)arg3 level:(long long)arg4 completionHandler:(void (^)(NSArray *, NSError *))arg5;
 - (void)updateDatabaseAfterSuccessfulSyncWithGeneration:(long long)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)visitsAndTombstonesNeedingSyncWithVisitSyncWindow:(double)arg1 completionHandler:(void (^)(NSSet *, NSSet *, long long, NSError *))arg2;
 - (void)resetCloudHistoryDataWithCompletionHandler:(void (^)(NSError *))arg1;
@@ -36,6 +39,7 @@
 - (void)updateVisitWithIdentifier:(WBSHistoryVisitIdentifier *)arg1 removeAttributes:(unsigned long long)arg2 addAttributes:(unsigned long long)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)recordVisitWithIdentifier:(WBSHistoryVisitIdentifier *)arg1 sourceVisit:(WBSHistoryVisitIdentifier *)arg2 title:(NSString *)arg3 wasHTTPNonGet:(BOOL)arg4 loadSuccessful:(BOOL)arg5 origin:(long long)arg6 attributes:(unsigned long long)arg7 completionHandler:(void (^)(NSError *))arg8;
 - (void)addAutocompleteTrigger:(NSString *)arg1 forURL:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)vacuumHistoryWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)performMaintenanceWithAgeLimit:(double)arg1 itemCountLimit:(unsigned long long)arg2 completionHandler:(void (^)(NSError *, unsigned long long, unsigned long long))arg3;
 - (void)recomputeItemScoresWithCompletionHandler:(void (^)(WBSSetInt64 *, NSError *))arg1;
 - (void)expireOldVisits:(double)arg1 completionHandler:(void (^)(NSError *))arg2;

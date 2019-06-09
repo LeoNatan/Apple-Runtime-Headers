@@ -8,6 +8,7 @@
 
 @class UIColor, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPagePlaceholderView : UIView
 {
     UIImageView *_imageView;

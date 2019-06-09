@@ -6,22 +6,16 @@
 
 #import <TimeAppServices/NSObject-Protocol.h>
 
-@class BBBulletin, NSDate, NSString, NTSFiringAlert;
-@protocol CUISBulletinAlternativeAlertProvider, NTSAlertable;
+@class NSDate, NSString;
 
 @protocol NTSAlertable <NSObject>
-+ (NTSFiringAlert *)firingAlertForBulletin:(BBBulletin *)arg1 withAlertProvider:(id <CUISBulletinAlternativeAlertProvider>)arg2;
-+ (_Bool)supportsBulletin:(BBBulletin *)arg1;
-+ (NSString *)removalNotificationName;
-@property(readonly, nonatomic) NSDate *firedDate;
-@property(readonly, copy, nonatomic) NSString *displayTitle;
-@property(readonly, copy, nonatomic) NSString *repeatActionIdentifier;
-@property(readonly, copy, nonatomic) NSString *snoozeActionIdentifier;
+@property(readonly, copy, nonatomic) NSString *otherActionIdentifier;
 @property(readonly, copy, nonatomic) NSString *dismissActionIdentifier;
 @property(readonly, nonatomic) _Bool isFiring;
 @property(readonly, nonatomic) _Bool isRepeatable;
 @property(readonly, nonatomic) _Bool isSnoozeable;
+@property(readonly, nonatomic) NSDate *firedDate;
+@property(readonly, copy, nonatomic) NSString *displayTitle;
 @property(readonly, copy, nonatomic) NSString *alertID;
-- (int)compare:(id <NTSAlertable>)arg1;
 @end
 

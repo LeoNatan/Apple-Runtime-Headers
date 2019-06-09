@@ -15,12 +15,14 @@ __attribute__((visibility("hidden")))
 @interface _MTLIOAccelMTLEvent : IOAccelMTLEvent <MTLEvent>
 {
     MTLIOAccelDevice<MTLDevice> *_device;
-    NSString *_label;
     unsigned long long _labelTraceID;
+    NSString *_label;
+    struct os_unfair_lock_s _labelLock;
 }
 
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
-@property(copy) NSString *label;
+@property(copy) NSString *label; // @dynamic label;
+- (id)retainedLabel;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1;
 

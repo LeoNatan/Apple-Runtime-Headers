@@ -14,15 +14,13 @@
     unsigned int _componentValueIndex;
     unsigned int _problematicDepartureSequenceIndex;
     struct {
-        unsigned int componentIndex:1;
-        unsigned int componentValueIndex:1;
-        unsigned int problematicDepartureSequenceIndex:1;
-    } _has;
+        unsigned int has_componentIndex:1;
+        unsigned int has_componentValueIndex:1;
+        unsigned int has_problematicDepartureSequenceIndex:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int problematicDepartureSequenceIndex; // @synthesize problematicDepartureSequenceIndex=_problematicDepartureSequenceIndex;
-@property(nonatomic) unsigned int componentValueIndex; // @synthesize componentValueIndex=_componentValueIndex;
-@property(nonatomic) unsigned int componentIndex; // @synthesize componentIndex=_componentIndex;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -30,11 +28,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasProblematicDepartureSequenceIndex;
+@property(nonatomic) unsigned int problematicDepartureSequenceIndex;
 @property(nonatomic) _Bool hasComponentValueIndex;
+@property(nonatomic) unsigned int componentValueIndex;
 @property(nonatomic) _Bool hasComponentIndex;
+@property(nonatomic) unsigned int componentIndex;
 
 @end
 

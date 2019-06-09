@@ -11,6 +11,7 @@
 }
 
 + (id)normalizationMap;
++ (id)_normalizationMap;
 + (id)normalizeComponent:(id)arg1;
 + (id)prepareStringForNormalization:(id)arg1;
 + (id)normalizeAddress:(id)arg1;

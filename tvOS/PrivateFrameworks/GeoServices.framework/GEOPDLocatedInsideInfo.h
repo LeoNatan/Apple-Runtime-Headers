@@ -17,13 +17,14 @@ __attribute__((visibility("hidden")))
     unsigned long long _muid;
     int _featureType;
     struct {
-        unsigned int muid:1;
-        unsigned int featureType:1;
-    } _has;
+        unsigned int has_muid:1;
+        unsigned int has_featureType:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,13 +33,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsFeatureType:(id)arg1;
 - (id)featureTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasFeatureType;
-@property(nonatomic) int featureType; // @synthesize featureType=_featureType;
+@property(nonatomic) int featureType;
 @property(nonatomic) _Bool hasMuid;
+@property(nonatomic) unsigned long long muid;
 
 @end
 

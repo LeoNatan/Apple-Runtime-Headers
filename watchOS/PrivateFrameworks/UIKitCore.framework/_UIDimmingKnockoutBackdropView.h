@@ -14,8 +14,10 @@
 __attribute__((visibility("hidden")))
 @interface _UIDimmingKnockoutBackdropView : UIView <UIInterfaceActionVisualBackgroundDisplaying, UIInterfaceActionVisualGroupBackgroundDisplaying>
 {
-    UIVisualEffectView *backdropView;
     UIView *dimmingKnockoutView;
+    UIVisualEffectView *backdropView;
+    float _alpha;
+    float _currentCornerRadius;
     float _cornerRadius;
     int _style;
 }
@@ -25,14 +27,17 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)setPressed:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)_updateCornerRadius;
 - (void)setRoundedCornerPosition:(unsigned int)arg1;
 - (void)_setContinuousCornerRadius:(float)arg1;
+- (void)setBounds:(struct CGRect)arg1;
 - (void)setAlpha:(float)arg1;
 - (id)_dimmingKnockoutBackgroundColorForBackdropStyle:(int)arg1;
-- (id)_filterForBackdropStyle:(int)arg1;
+- (id)_dimmingKnockoutFilterForBackdropStyle:(int)arg1;
+- (id)_vibrancyEffectForStyle:(int)arg1;
 - (id)_visualEffectForStyle:(int)arg1;
+- (void)_updateBackdropViewWithStyle:(int)arg1 alpha:(float)arg2;
 - (void)_configureViewsWithStyle:(int)arg1;
-- (void)layoutSubviews;
 - (id)initWithStyle:(int)arg1;
 
 // Remaining properties

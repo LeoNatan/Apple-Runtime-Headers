@@ -11,39 +11,35 @@
 @interface HKElectrocardiogramInfoView : UIStackView
 {
     UIButton *_detailButton;
-    UILabel *_titleLabel;
     UILabel *_heartRateLabel;
     UILabel *_bodyLabel;
-    NSLayoutConstraint *_titleFirstBaselineConstraint;
-    NSLayoutConstraint *_titleLastBaselineConstraint;
     NSLayoutConstraint *_heartRateLabelLeadingConstraint;
-    NSMutableArray *_bodyFirstBaselineConstraints;
-    NSMutableArray *_bodyLastBaselineConstraints;
-    NSMutableArray *_regularTextConstraints;
-    NSMutableArray *_accessibilityTextConstraints;
+    NSLayoutConstraint *_heartRateFirstBaselineConstraint;
+    NSLayoutConstraint *_heartRateLastBaselineConstraint;
+    NSLayoutConstraint *_bodyFirstBaselineConstraint;
+    NSLayoutConstraint *_bodyLastBaselineConstraint;
+    NSMutableArray *_regularHeartRateLabelConstraints;
+    NSMutableArray *_accessibilityHeartRateLabelConstraints;
 }
 
-@property(retain, nonatomic) NSMutableArray *accessibilityTextConstraints; // @synthesize accessibilityTextConstraints=_accessibilityTextConstraints;
-@property(retain, nonatomic) NSMutableArray *regularTextConstraints; // @synthesize regularTextConstraints=_regularTextConstraints;
-@property(retain, nonatomic) NSMutableArray *bodyLastBaselineConstraints; // @synthesize bodyLastBaselineConstraints=_bodyLastBaselineConstraints;
-@property(retain, nonatomic) NSMutableArray *bodyFirstBaselineConstraints; // @synthesize bodyFirstBaselineConstraints=_bodyFirstBaselineConstraints;
+@property(retain, nonatomic) NSMutableArray *accessibilityHeartRateLabelConstraints; // @synthesize accessibilityHeartRateLabelConstraints=_accessibilityHeartRateLabelConstraints;
+@property(retain, nonatomic) NSMutableArray *regularHeartRateLabelConstraints; // @synthesize regularHeartRateLabelConstraints=_regularHeartRateLabelConstraints;
+@property(retain, nonatomic) NSLayoutConstraint *bodyLastBaselineConstraint; // @synthesize bodyLastBaselineConstraint=_bodyLastBaselineConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *bodyFirstBaselineConstraint; // @synthesize bodyFirstBaselineConstraint=_bodyFirstBaselineConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *heartRateLastBaselineConstraint; // @synthesize heartRateLastBaselineConstraint=_heartRateLastBaselineConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *heartRateFirstBaselineConstraint; // @synthesize heartRateFirstBaselineConstraint=_heartRateFirstBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *heartRateLabelLeadingConstraint; // @synthesize heartRateLabelLeadingConstraint=_heartRateLabelLeadingConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *titleLastBaselineConstraint; // @synthesize titleLastBaselineConstraint=_titleLastBaselineConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *titleFirstBaselineConstraint; // @synthesize titleFirstBaselineConstraint=_titleFirstBaselineConstraint;
 @property(retain, nonatomic) UILabel *bodyLabel; // @synthesize bodyLabel=_bodyLabel;
 @property(retain, nonatomic) UILabel *heartRateLabel; // @synthesize heartRateLabel=_heartRateLabel;
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIButton *detailButton; // @synthesize detailButton=_detailButton;
 - (void).cxx_destruct;
 - (id)_bodyView;
 - (id)_heartRateView;
-- (id)_titleInfoView;
 - (void)_addSubviews;
 - (void)updateConstraints;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(retain, nonatomic) NSString *bodyText;
 @property(retain, nonatomic) NSString *heartRateText;
-@property(retain, nonatomic) NSString *titleText;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

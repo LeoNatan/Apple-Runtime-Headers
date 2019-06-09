@@ -60,7 +60,7 @@
 @property(nonatomic) unsigned int readBufferSize;
 - (BOOL)executeNamespace:(id)arg1;
 - (BOOL)executeAppend:(id)arg1;
-- (BOOL)executeUIDCopy:(id)arg1;
+- (BOOL)executeUIDCopyOrMove:(id)arg1;
 - (id)_responseFromSendingCommand:(id)arg1 tryCreate:(char *)arg2 receivedExists:(char *)arg3;
 - (BOOL)executeUIDStore:(id)arg1;
 - (BOOL)executeUIDSearch:(id)arg1;
@@ -89,7 +89,7 @@
 - (BOOL)executeStartTLS:(id)arg1;
 - (BOOL)_startTLS;
 - (BOOL)executeAuthenticate:(id)arg1;
-- (BOOL)_authenticateWithSaslClient:(id)arg1;
+- (BOOL)_authenticateWithSASLClient:(id)arg1;
 - (void)_enableCapabilities;
 - (BOOL)authenticate;
 - (id)authenticationMechanisms;

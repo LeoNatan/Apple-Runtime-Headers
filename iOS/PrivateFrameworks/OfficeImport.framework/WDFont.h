@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (int)cpFontClassFromWdFontFamily:(int)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)init;
 - (void)setPitch:(int)arg1;

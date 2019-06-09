@@ -13,6 +13,7 @@
 
 @property(retain, nonatomic) UIViewController *managedViewController; // @synthesize managedViewController=_managedViewController;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)getRotationContentSettings:(CDStruct_e950349b *)arg1 forWindow:(id)arg2;
 - (void)viewDidLoad;

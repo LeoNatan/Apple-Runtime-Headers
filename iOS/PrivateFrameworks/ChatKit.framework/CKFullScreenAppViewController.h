@@ -90,9 +90,12 @@
 - (void)hideDimmingView;
 - (void)animateBrowserViewToTargetRect:(struct CGRect)arg1 grabberView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)animateBrowserViewFromSourceRect:(struct CGRect)arg1 interactive:(_Bool)arg2 grabberView:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (struct CGRect)leftRightSafeAreaInsetRect:(struct CGRect)arg1;
 - (struct CGRect)finalContentViewFrame;
+- (void)updateGrabberTitleAndIconForPlugin:(id)arg1;
 - (double)topAreaHeight;
 - (void)addNewGrabberView;
+- (id)traitCollection;
 - (void)viewDidLayoutSubviews;
 - (void)loadView;
 - (id)initWithConversation:(id)arg1 plugin:(id)arg2;
@@ -110,6 +113,8 @@
 @property(readonly, nonatomic) IMBalloonPlugin *balloonPlugin;
 @property(nonatomic) __weak NSObject<CKBrowserViewControllerSendDelegate> *sendDelegate;
 @property(retain, nonatomic) UIViewController *presentationViewController;
+@property(nonatomic) _Bool isPrimaryViewController;
+@property(readonly, nonatomic, getter=isDismissing) _Bool dismissing;
 @property(readonly, nonatomic) _Bool shouldSuppressEntryView;
 @property(readonly, nonatomic) _Bool mayBeKeptInViewHierarchy;
 @property(readonly, nonatomic) _Bool supportsQuickView;
@@ -127,7 +132,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) struct CGRect horizontalSwipeExclusionRect;
-@property(nonatomic) _Bool isPrimaryViewController;
 @property(readonly, nonatomic) long long parentModalPresentationStyle;
 @property(readonly, nonatomic) __weak id <UIViewControllerTransitioningDelegate> parentTransitioningDelegate;
 @property(retain, nonatomic) NSArray *recipients;

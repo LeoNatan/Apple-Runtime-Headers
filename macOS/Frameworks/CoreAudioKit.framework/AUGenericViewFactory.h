@@ -8,6 +8,7 @@
 
 #import <CoreAudioKit/AUCocoaUIBase-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface AUGenericViewFactory : NSObject <AUCocoaUIBase>
 {
 }

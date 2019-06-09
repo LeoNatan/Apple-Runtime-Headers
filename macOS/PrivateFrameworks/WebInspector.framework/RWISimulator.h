@@ -18,6 +18,7 @@
 
 @property(readonly, nonatomic) long long deviceClass; // @synthesize deviceClass=_deviceClass;
 - (void).cxx_destruct;
+- (id)underlyingSimDevice;
 - (void)refreshSimDeviceState;
 @property(readonly, nonatomic) NSString *connectionSocketPath;
 @property(readonly, nonatomic) unsigned short legacyTCPPort;
@@ -26,6 +27,7 @@
 - (BOOL)isIOS;
 - (BOOL)isSimulator;
 - (id)displayName;
+- (BOOL)supportsWebDriver;
 - (BOOL)supportsAutomaticInspection;
 - (id)buildVersion;
 - (id)productVersion;

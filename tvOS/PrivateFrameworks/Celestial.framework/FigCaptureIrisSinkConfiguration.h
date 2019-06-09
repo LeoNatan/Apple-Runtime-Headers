@@ -6,7 +6,7 @@
 
 #import <Celestial/FigCaptureSinkConfiguration.h>
 
-@class FigCaptureIrisPreparedSettings;
+@class FigCaptureIrisPreparedSettings, NSArray;
 
 @interface FigCaptureIrisSinkConfiguration : FigCaptureSinkConfiguration
 {
@@ -19,12 +19,18 @@
     _Bool _quadraHighResCaptureEnabled;
     _Bool _depthDataDeliveryEnabled;
     _Bool _portraitEffectsMatteDeliveryEnabled;
+    NSArray *_enabledSemanticSegmentationMatteURNs;
     _Bool _filterRenderingEnabled;
-    _Bool _bravoDualPhotoDeliveryEnabled;
+    _Bool _bravoConstituentPhotoDeliveryEnabled;
+    int _maxQualityPrioritization;
+    _Bool _irisFrameHarvestingEnabled;
 }
 
-@property(nonatomic) _Bool bravoDualPhotoDeliveryEnabled; // @synthesize bravoDualPhotoDeliveryEnabled=_bravoDualPhotoDeliveryEnabled;
+@property(nonatomic) _Bool irisFrameHarvestingEnabled; // @synthesize irisFrameHarvestingEnabled=_irisFrameHarvestingEnabled;
+@property(nonatomic) int maxQualityPrioritization; // @synthesize maxQualityPrioritization=_maxQualityPrioritization;
+@property(nonatomic) _Bool bravoConstituentPhotoDeliveryEnabled; // @synthesize bravoConstituentPhotoDeliveryEnabled=_bravoConstituentPhotoDeliveryEnabled;
 @property(nonatomic) _Bool filterRenderingEnabled; // @synthesize filterRenderingEnabled=_filterRenderingEnabled;
+@property(retain, nonatomic) NSArray *enabledSemanticSegmentationMatteURNs; // @synthesize enabledSemanticSegmentationMatteURNs=_enabledSemanticSegmentationMatteURNs;
 @property(nonatomic) _Bool portraitEffectsMatteDeliveryEnabled; // @synthesize portraitEffectsMatteDeliveryEnabled=_portraitEffectsMatteDeliveryEnabled;
 @property(nonatomic) _Bool depthDataDeliveryEnabled; // @synthesize depthDataDeliveryEnabled=_depthDataDeliveryEnabled;
 @property(nonatomic) _Bool quadraHighResCaptureEnabled; // @synthesize quadraHighResCaptureEnabled=_quadraHighResCaptureEnabled;

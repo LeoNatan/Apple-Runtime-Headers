@@ -6,22 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSXPCConnection;
+@class NSString, NSXPCConnection;
 
 @interface CSLSNotificationCenterService : NSObject
 {
     NSXPCConnection *_connection;
+    NSString *_plistPath;
+    _Bool _disableAlerts;
+    struct os_unfair_recursive_lock_s _lock;
 }
 
 + (id)sharedNotificationCenterService;
 - (void).cxx_destruct;
 - (void)_connectIfNecessary;
+- (void)_reestablishState;
 - (void)_disconnect;
 - (void)restoreToStateInPList:(id)arg1 withDisabledAlerts:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)restoreToStateInPList:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)restoreToDefaultF5StateWithDisabledAlerts:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)restoreToDefaultF5StateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (id)init;
 
 @end

@@ -6,18 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class AVMetadataMachineReadableCodeObject, NSString;
+#import <CameraUI/CAMMetadataObjectResult-Protocol.h>
 
-@interface CAMMachineReadableCodeResult : NSObject
+@class AVMetadataMachineReadableCodeObject, AVMetadataObject, NSString;
+
+@interface CAMMachineReadableCodeResult : NSObject <CAMMetadataObjectResult>
 {
+    NSString *_uniqueIdentifier;
     AVMetadataMachineReadableCodeObject *_underlyingMachineReadableCodeObject;
 }
 
 @property(readonly, nonatomic) AVMetadataMachineReadableCodeObject *underlyingMachineReadableCodeObject; // @synthesize underlyingMachineReadableCodeObject=_underlyingMachineReadableCodeObject;
+@property(readonly, copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) AVMetadataObject *underlyingMetadataObject;
+@property(readonly, copy, nonatomic) NSString *metadataType;
 @property(readonly, nonatomic) NSString *symbolString;
 - (_Bool)isOfSignificantSize;
 - (id)initWithMachineReadableCodeObject:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

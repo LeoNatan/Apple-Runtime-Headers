@@ -16,7 +16,6 @@
     UIView *_contentView;
     UIView *_backgroundView;
     UIView *_selectedBackgroundView;
-    _UIFloatingContentView *_focusedFloatingContentView;
     UILongPressGestureRecognizer *_menuGesture;
     id _selectionSegueTemplate;
     id _highlightingSupport;
@@ -33,12 +32,14 @@
     _Bool _highlighted;
     _Bool _isLayoutEngineSuspended;
     _Bool _dragging;
+    _UIFloatingContentView *_focusedFloatingContentView;
     long long _focusStyle;
 }
 
 + (Class)_contentViewClass;
 @property(nonatomic, getter=isDragging) _Bool dragging; // @synthesize dragging=_dragging;
 @property(nonatomic, getter=_focusStyle, setter=_setFocusStyle:) long long focusStyle; // @synthesize focusStyle=_focusStyle;
+@property(readonly, nonatomic, getter=_focusedFloatingContentView) _UIFloatingContentView *focusedFloatingContentView; // @synthesize focusedFloatingContentView=_focusedFloatingContentView;
 @property(nonatomic, getter=_isLayoutEngineSuspended, setter=_setLayoutEngineSuspended:) _Bool _layoutEngineSuspended; // @synthesize _layoutEngineSuspended=_isLayoutEngineSuspended;
 @property(retain, nonatomic) UIView *selectedBackgroundView; // @synthesize selectedBackgroundView=_selectedBackgroundView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
@@ -50,6 +51,7 @@
 - (_Bool)_canFocusProgrammatically;
 - (void)_updateFocusedFloatingContentControlStateInContext:(id)arg1 withAnimationCoordinator:(id)arg2 animated:(_Bool)arg3;
 - (void)_updateFocusedFloatingContentControlStateAnimated:(_Bool)arg1;
+- (void)_configureFocusedFloatingContentView:(id)arg1;
 - (void)_ensureFocusedFloatingContentView;
 - (void)setEditing:(_Bool)arg1;
 - (_Bool)isEditing;
@@ -93,10 +95,10 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_encodableSubviews;
+@property(readonly, nonatomic, getter=_contentViewInset) struct UIEdgeInsets contentViewInset;
 - (void)_setContentView:(id)arg1 addToHierarchy:(_Bool)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (struct CGRect)_contentViewFrame;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

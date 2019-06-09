@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) CKRecord *userRecord; // @synthesize userRecord=_userRecord;
 - (void).cxx_destruct;
+- (id)analyticsPayload;
 - (void)main;
 - (void)fetchRecordsWithIDs:(id)arg1 andFullRecords:(id)arg2;
 

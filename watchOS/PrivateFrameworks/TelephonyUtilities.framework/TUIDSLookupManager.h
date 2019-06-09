@@ -36,7 +36,7 @@
 @property(readonly, nonatomic) id <TUIDSIDQueryController> queryController; // @synthesize queryController=_queryController;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (void)idStatusUpdatedForDestinations:(id)arg1 service:(id)arg2;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (void)beginQueryWithDestinations:(id)arg1;
 - (void)cancelQueries;
 - (_Bool)isFaceTimeMultiwayAvailableForAnyDestinationInDestinations:(id)arg1;

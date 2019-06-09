@@ -6,10 +6,12 @@
 
 #import <UIKitCore/_UIDragDropSessionPrivate-Protocol.h>
 
-@class _UIDraggingSession;
+@class NSArray;
+@protocol _UIDraggingInfo;
 
 @protocol _UIDragDropSessionInternal <_UIDragDropSessionPrivate>
 @property(readonly, nonatomic, getter=_allowsItemsToUpdate) _Bool _allowsItemsToUpdate;
-- (_UIDraggingSession *)_draggingSession;
+- (void)_itemsNeedUpdate:(NSArray *)arg1;
+- (id <_UIDraggingInfo>)_internalSession;
 @end
 

@@ -6,8 +6,8 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class NSSet, PXAssetActionManager, PXAssetReference, PXAssetsDataSourceManager, PXGestureProvider, PXOneUpPresentation, PXPhotosDetailsContext, PXRegionOfInterest, PXUIMediaProvider, UIImage;
-@protocol PXImportStatusManager;
+@class NSSet, PXAssetActionManager, PXAssetReference, PXAssetsDataSourceManager, PXGestureProvider, PXOneUpPresentation, PXPhotosDetailsContext, PXRegionOfInterest, PXUIMediaProvider, UIImage, UIScrollView;
+@protocol PXAssetImportStatusManager;
 
 @protocol PXOneUpPresentationDelegate <NSObject>
 - (long long)oneUpPresentationOrigin:(PXOneUpPresentation *)arg1;
@@ -15,7 +15,8 @@
 - (PXAssetsDataSourceManager *)oneUpPresentationDataSourceManager:(PXOneUpPresentation *)arg1;
 
 @optional
-- (id <PXImportStatusManager>)oneUpPresentationImportStatusManager:(PXOneUpPresentation *)arg1;
+- (UIScrollView *)oneUpPresentationHelperScrollView:(PXOneUpPresentation *)arg1;
+- (id <PXAssetImportStatusManager>)oneUpPresentationImportStatusManager:(PXOneUpPresentation *)arg1;
 - (PXGestureProvider *)oneUpPresentationGestureProvider:(PXOneUpPresentation *)arg1;
 - (long long)oneUpPresentationActionContext:(PXOneUpPresentation *)arg1;
 - (PXAssetActionManager *)oneUpPresentationActionManagerForPreviewing:(PXOneUpPresentation *)arg1;
@@ -24,6 +25,7 @@
 - (void)oneUpPresentation:(PXOneUpPresentation *)arg1 scrollAssetReferenceToVisible:(PXAssetReference *)arg2;
 - (PXRegionOfInterest *)oneUpPresentation:(PXOneUpPresentation *)arg1 regionOfInterestForAssetReference:(PXAssetReference *)arg2;
 - (UIImage *)oneUpPresentation:(PXOneUpPresentation *)arg1 currentImageForAssetReference:(PXAssetReference *)arg2;
+- (_Bool)oneUpPresentationShouldPreventShowInAllPhotosAction:(PXOneUpPresentation *)arg1;
 - (_Bool)oneUpPresentationShouldAutoPlay:(PXOneUpPresentation *)arg1;
 - (PXAssetReference *)oneUpPresentationInitialAssetReference:(PXOneUpPresentation *)arg1;
 - (PXPhotosDetailsContext *)oneUpPresentationPhotosDetailsContext:(PXOneUpPresentation *)arg1;

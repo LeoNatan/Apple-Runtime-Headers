@@ -35,7 +35,9 @@
 - (void)_refetchOffer;
 @property(retain, nonatomic) ICQOffer *cachedOffer;
 - (void)_getOfferForAccount:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_getOfferForAccount:(id)arg1 bundleIdentifier:(id)arg2 offerContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_shouldUseOffer:(id)arg1 forBundleIdentifier:(id)arg2;
+- (void)getOfferForBundleIdentifier:(id)arg1 offerContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getOfferForBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getOfferWithCompletion:(CDUnknownBlockType)arg1;
 - (id)currentOfferForBundleIdentifier:(id)arg1;

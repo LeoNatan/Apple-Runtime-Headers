@@ -30,6 +30,7 @@
 
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
++ (id)valueForSpecifier:(id)arg1 isSingleItemTitleContext:(_Bool)arg2;
 + (id)valueForSpecifier:(id)arg1;
 + (id)_configurationSpecifiersForBundle:(id)arg1 specifierTarget:(id)arg2;
 + (id)configurationSpecifiersForBundlesInPath:(id)arg1 specifierTarget:(id)arg2 bundleEnumerator:(CDUnknownBlockType)arg3;
@@ -61,6 +62,7 @@
 - (id)specifierForID:(id)arg1;
 - (id)specifierAtIndexPath:(id)arg1;
 - (id)specifierAtIndex:(int)arg1;
+- (_Bool)_checkSpecifierCapabilityRequirements:(id)arg1;
 - (id)_generateSpecifiersGroupNumbersArrayForSpecifiers:(id)arg1;
 - (id)_generateSpecifiersGroupIndicesArrayForSpecifiers:(id)arg1;
 - (id)_generateGroupSpecifierIndicesArrayForSpecifiers:(id)arg1;

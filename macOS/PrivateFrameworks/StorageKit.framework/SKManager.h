@@ -33,6 +33,7 @@
 + (id)sharedManager;
 + (id)sharedManagerWithBindingsSafety:(BOOL)arg1;
 - (void).cxx_destruct;
+- (BOOL)_DEBUG_sanityCheckDiskType:(id)arg1;
 - (void)managerResumed;
 - (void)managerStalled;
 - (void)disksChanged:(id)arg1;
@@ -79,6 +80,7 @@
 - (id)visibleRoles;
 - (void)setVisibleRoles:(id)arg1;
 - (BOOL)isBusy;
+- (id)allDisksSet;
 - (id)allDisks;
 - (id)initWithBindingSafety:(BOOL)arg1;
 

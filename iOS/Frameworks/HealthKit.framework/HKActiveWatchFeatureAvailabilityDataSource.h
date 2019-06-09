@@ -24,6 +24,7 @@
 - (CDStruct_f6aba300)_operatingSystemVersionForWatchOSVersion:(unsigned int)arg1;
 - (CDStruct_f6aba300)watchElectrocardiogramVersion;
 - (CDStruct_f6aba300)watchAtrialFibrillationDetectionVersion;
+- (id)watchCompanionDevicePlatform;
 - (id)watchOSBuildVersion;
 - (id)watchProductType;
 - (id)watchBuildType;

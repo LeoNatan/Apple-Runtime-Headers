@@ -8,7 +8,6 @@
 
 @class CAAttenuationView, CASurroundPannerView, NSScrollView, NSTextField, NSView;
 
-__attribute__((visibility("hidden")))
 @interface AUPannerViewPriv : AUPannerView
 {
     struct ComponentInstanceRecord *mAudioUnit;

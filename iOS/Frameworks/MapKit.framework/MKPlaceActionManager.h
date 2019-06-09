@@ -13,10 +13,13 @@
 @interface MKPlaceActionManager : NSObject <MKPlaceActionManagerProtocol>
 {
     MKPlaceCardActionItem *_favoriteActionItem;
+    MKPlaceCardActionItem *_homeActionItem;
+    MKPlaceCardActionItem *_collectionActionItem;
     MKPlaceCardActionItem *_callActionItem;
     MKPlaceCardActionItem *_brandStoreActionItem;
     TUCallProvider *_callProvider;
     _Bool _placeInBookmarks;
+    _Bool _placeInShortcuts;
     _Bool _showContactActions;
     _Bool _isCurrentLocation;
     id _placeCardDelegate;
@@ -27,20 +30,30 @@
 @property(nonatomic) __weak id placeCardDelegate; // @synthesize placeCardDelegate=_placeCardDelegate;
 @property(nonatomic) _Bool isCurrentLocation; // @synthesize isCurrentLocation=_isCurrentLocation;
 @property(nonatomic) _Bool showContactActions; // @synthesize showContactActions=_showContactActions;
+@property(nonatomic) _Bool placeInShortcuts; // @synthesize placeInShortcuts=_placeInShortcuts;
 @property(nonatomic) _Bool placeInBookmarks; // @synthesize placeInBookmarks=_placeInBookmarks;
 - (void).cxx_destruct;
 - (void)openURL:(id)arg1;
 - (void)performAction:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)_isCurrentLocationOrDroppedPin;
 - (void)_canMakeCalls:(CDUnknownBlockType)arg1;
 - (void)_launchMaps;
+- (id)reportAProblemAddPlaceFooterAction;
 - (id)reportAProblemFooterAction;
 - (id)shortPlacecardFooterActions;
 - (id)createFooterActions;
 - (void)addLayoutInfoIfNeeded:(id)arg1;
 - (void)_enableStoreAction;
 - (id)createRowActions;
-- (id)favoriteItemForFooter:(_Bool)arg1;
+- (id)addtoHomeItem;
+- (id)collectionItemForFooter:(_Bool)arg1;
+- (id)favoriteItemForFooter;
+- (_Bool)_showHomeShortcutItem;
+- (_Bool)_showCollectionItem;
+- (_Bool)_showAddPlaceEdit;
+- (_Bool)_showSuggestAnEdit;
 - (_Bool)_showReportAProblem;
+- (_Bool)_showMapItemIdentifier;
 - (unsigned long long)options;
 - (id)placeItem;
 - (id)mapItem;

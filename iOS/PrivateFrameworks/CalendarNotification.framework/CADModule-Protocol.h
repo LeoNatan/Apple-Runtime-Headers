@@ -5,8 +5,11 @@
 //
 
 #import <CalendarNotification/CalActivatable-Protocol.h>
+#import <CalendarNotification/CalAlarmReceiver-Protocol.h>
+#import <CalendarNotification/CalBackgroundTaskAgentReceiver-Protocol.h>
 #import <CalendarNotification/CalDarwinNotificationReceiver-Protocol.h>
+#import <CalendarNotification/CalDataProtectionObservable-Protocol.h>
 
-@protocol CADModule <CalActivatable, CalDarwinNotificationReceiver>
+@protocol CADModule <CalActivatable, CalDarwinNotificationReceiver, CalAlarmReceiver, CalBackgroundTaskAgentReceiver, CalDataProtectionObservable>
 @end
 

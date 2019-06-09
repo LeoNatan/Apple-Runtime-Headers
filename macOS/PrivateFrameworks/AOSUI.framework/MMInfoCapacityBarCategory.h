@@ -26,23 +26,23 @@
     NSLayoutConstraint *_leadingLayoutConstraint;
 }
 
-@property(retain) NSLayoutConstraint *leadingLayoutConstraint; // @synthesize leadingLayoutConstraint=_leadingLayoutConstraint;
-@property(retain) NSLayoutConstraint *widthLayoutConstraint; // @synthesize widthLayoutConstraint=_widthLayoutConstraint;
-@property(retain) NSByteCountFormatter *byteCountFormatter; // @synthesize byteCountFormatter=_byteCountFormatter;
-@property(retain) NSString *sizeDescription; // @synthesize sizeDescription=_sizeDescription;
+@property(retain, nonatomic) NSLayoutConstraint *leadingLayoutConstraint; // @synthesize leadingLayoutConstraint=_leadingLayoutConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *widthLayoutConstraint; // @synthesize widthLayoutConstraint=_widthLayoutConstraint;
+@property(retain, nonatomic) NSByteCountFormatter *byteCountFormatter; // @synthesize byteCountFormatter=_byteCountFormatter;
+@property(retain, nonatomic) NSString *sizeDescription; // @synthesize sizeDescription=_sizeDescription;
 @property(readonly) NSColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) NSTextField *label; // @synthesize label=_label;
 @property(readonly, nonatomic) CALayer *layer; // @synthesize layer=_layer;
 @property(nonatomic) BOOL showsSizeInLabel; // @synthesize showsSizeInLabel=_showsSizeInLabel;
-@property(retain) NSString *toolTipLabel; // @synthesize toolTipLabel=_toolTipLabel;
+@property(retain, nonatomic) NSString *toolTipLabel; // @synthesize toolTipLabel=_toolTipLabel;
 @property(copy) NSArray *alternateDisplayNames; // @synthesize alternateDisplayNames=_alternateDisplayNames;
 @property(copy) NSString *accessibilityDescription; // @synthesize accessibilityDescription=_accessibilityDescription;
 @property(copy) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property unsigned long long sizeInBytes; // @synthesize sizeInBytes=_sizeInBytes;
-@property(nonatomic) unsigned long long textAlignment;
+- (void).cxx_destruct;
+@property(nonatomic) long long textAlignment;
 - (id)allDisplayNames;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -8,6 +8,7 @@
 
 @class OADFill;
 
+__attribute__((visibility("hidden")))
 @interface OADFillOverlayEffect : OADEffect
 {
     int mBlendMode;

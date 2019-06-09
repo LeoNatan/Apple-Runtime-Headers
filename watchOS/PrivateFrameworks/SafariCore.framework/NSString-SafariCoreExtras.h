@@ -16,7 +16,8 @@
 @property(readonly, copy, nonatomic) NSString *safari_domainFromHost;
 - (unsigned int)safari_countOfString:(id)arg1;
 - (id)safari_stringByRedactingBookmarkDAVServerID;
-- (_Bool)safari_looksLikeEmailAddress;
+@property(readonly, nonatomic) _Bool safari_looksLikeEmailAddress;
+@property(readonly, nonatomic) _Bool safari_looksLikeIPAddress;
 - (id)safari_stringByRepeatingWithCount:(unsigned int)arg1 joinedByString:(id)arg2;
 - (id)safari_setOfAllSubstringsWithMinimumLength:(unsigned int)arg1;
 - (_Bool)safari_containsAllCharactersInString:(id)arg1;

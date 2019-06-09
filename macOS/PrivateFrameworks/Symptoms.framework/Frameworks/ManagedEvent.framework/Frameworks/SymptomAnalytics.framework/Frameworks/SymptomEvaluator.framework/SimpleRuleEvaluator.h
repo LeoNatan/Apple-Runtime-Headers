@@ -11,6 +11,7 @@
 @class NSMutableArray, NSString, SimpleSyndromeHandler;
 @protocol AdditionalInfoProtocol;
 
+__attribute__((visibility("hidden")))
 @interface SimpleRuleEvaluator : NSObject <ConfigurableObjectProtocol>
 {
     NSMutableArray *_conditionsToCheck;

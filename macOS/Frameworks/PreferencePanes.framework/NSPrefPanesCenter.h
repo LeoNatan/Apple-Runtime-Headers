@@ -50,7 +50,8 @@
 - (void)_checkHWForPreferences:(id)arg1;
 - (id)_verifyAndReadCache;
 - (id)_verifyAndReadSystemCacheSynchronous:(BOOL)arg1;
-- (void)_writeCache:(id)arg1 isSystemCache:(BOOL)arg2;
+- (void)_writeCache:(id)arg1 isSystemCache:(BOOL)arg2 synchronous:(BOOL)arg3;
+- (id)_currentLanguage;
 @property(readonly) NSString *serialNumber; // @dynamic serialNumber;
 
 @end

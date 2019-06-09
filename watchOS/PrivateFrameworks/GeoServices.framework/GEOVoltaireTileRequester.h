@@ -9,12 +9,11 @@
 #import <GeoServices/GEOResourceManifestTileGroupObserver-Protocol.h>
 #import <GeoServices/GEOTileRequesterDelegate-Protocol.h>
 
-@class GEOVoltaireSimpleTileRequester, NSMutableArray, NSString, NSTimer;
+@class GEOVoltaireSimpleTileRequester, NSString, NSTimer;
 
 @interface GEOVoltaireTileRequester : GEOTileRequester <GEOTileRequesterDelegate, GEOResourceManifestTileGroupObserver>
 {
     NSTimer *_activeTileGroupTimeoutTimer;
-    NSMutableArray *_errors;
     GEOVoltaireSimpleTileRequester *_simpleRequester;
 }
 
@@ -25,8 +24,8 @@
 + (unsigned char)tileProviderIdentifier;
 - (void).cxx_destruct;
 - (void)tileRequesterFinished:(id)arg1;
-- (void)tileRequester:(id)arg1 receivedError:(id)arg2;
-- (void)tileRequester:(id)arg1 receivedData:(id)arg2 tileEdition:(unsigned int)arg3 tileSet:(unsigned int)arg4 etag:(id)arg5 forKey:(struct _GEOTileKey)arg6 userInfo:(id)arg7;
+- (void)tileRequester:(id)arg1 receivedError:(id)arg2 forKey:(struct _GEOTileKey)arg3;
+- (void)tileRequester:(id)arg1 receivedData:(id)arg2 tileEdition:(unsigned int)arg3 tileSetDB:(unsigned int)arg4 tileSet:(id)arg5 etag:(id)arg6 forKey:(struct _GEOTileKey)arg7 userInfo:(id)arg8;
 - (void)tryFinish;
 - (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2;
 - (void)cancelKey:(const struct _GEOTileKey *)arg1;
@@ -37,6 +36,7 @@
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)_failedToReceiveActiveTileGroup:(id)arg1;
 - (void)start;
+- (id)activeTileSetForKey:(const struct _GEOTileKey *)arg1;
 - (unsigned int)tileSetForKey:(const struct _GEOTileKey *)arg1;
 - (void)dealloc;
 

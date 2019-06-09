@@ -7,6 +7,7 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (NSDictionary)
++ (id)newWithContentsOf:(id)arg1 immutable:(_Bool)arg2 error:(id *)arg3;
 + (id)newWithContentsOf:(id)arg1 immutable:(_Bool)arg2;
 + (id)dictionaryWithContentsOfURL:(id)arg1 error:(id *)arg2;
 + (id)dictionaryWithContentsOfURL:(id)arg1;
@@ -23,5 +24,30 @@
 - (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)fileGroupOwnerAccountID;
+- (id)fileOwnerAccountID;
+- (id)fileCreationDate;
+- (_Bool)fileIsAppendOnly;
+- (_Bool)fileIsImmutable;
+- (unsigned int)fileHFSTypeCode;
+- (unsigned int)fileHFSCreatorCode;
+- (_Bool)fileExtensionHidden;
+- (unsigned long long)fileSystemFileNumber;
+- (long long)fileSystemNumber;
+- (unsigned long long)fileGroupOwnerAccountNumber;
+- (id)fileGroupOwnerAccountName;
+- (unsigned long long)fileOwnerAccountNumber;
+- (id)fileOwnerAccountName;
+- (unsigned long long)filePosixPermissions;
+- (id)fileType;
+- (id)fileModificationDate;
+- (unsigned long long)fileSize;
+- (id)valueForKeyPath:(id)arg1;
+- (id)valueForKey:(id)arg1;
+- (id)_web_objectForMIMEType:(id)arg1;
+- (id)_web_numberForKey:(id)arg1;
+- (id)_web_stringForKey:(id)arg1;
+- (int)_web_intForKey:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
 @end
 

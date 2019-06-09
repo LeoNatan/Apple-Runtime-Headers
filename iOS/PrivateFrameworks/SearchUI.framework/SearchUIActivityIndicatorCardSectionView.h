@@ -17,7 +17,7 @@
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) TLKActivityIndicatorView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) TLKActivityIndicatorView *contentView; // @dynamic contentView;
 
 @end
 

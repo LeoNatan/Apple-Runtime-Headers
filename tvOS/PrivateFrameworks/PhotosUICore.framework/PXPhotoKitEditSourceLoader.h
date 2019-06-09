@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXEditSourceLoader-Protocol.h>
 
-@class NSDate, NSError, NSNumber, NSProgress, NSString, NSURL, PHAsset, PLEditSource, PLPhotoEditModel;
+@class NSDate, NSError, NSNumber, NSProgress, NSString, NSURL, PHAsset, PLEditSource;
 @protocol OS_dispatch_queue;
 
 @interface PXPhotoKitEditSourceLoader : NSObject <PXEditSourceLoader>
@@ -23,7 +23,6 @@
     NSProgress *_editSourceCreationProgress;
     NSObject<OS_dispatch_queue> *_loadingQueue;
     PLEditSource *_editSource;
-    PLPhotoEditModel *_editModel;
     NSProgress *_progress;
     NSError *_error;
     long long _baseVersion;
@@ -38,13 +37,12 @@
 @property(readonly, nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
-@property(readonly, copy, nonatomic) PLPhotoEditModel *editModel; // @synthesize editModel=_editModel;
 @property(readonly, nonatomic) PLEditSource *editSource; // @synthesize editSource=_editSource;
 - (void).cxx_destruct;
 - (void)_createEditSourceIfPossible;
 - (void)_handleAdjustmentDataInfo:(id)arg1;
 - (void)_handleVideoURLResult:(id)arg1 info:(id)arg2;
-- (void)_handleImageURLResult:(id)arg1 info:(id)arg2;
+- (void)_handleImageURLResultWithInfo:(id)arg1;
 - (void)_handleCancellation;
 - (void)beginLoading;
 @property(readonly, copy, nonatomic) NSString *contentIdentifier;

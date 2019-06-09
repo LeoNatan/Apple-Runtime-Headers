@@ -11,6 +11,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface LibtraceSymptomHandler : NSObject <ConfigurableObjectProtocol, SymptomAdditionalProtocol>
 {
 }

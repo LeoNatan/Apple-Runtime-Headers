@@ -7,6 +7,8 @@
 #import <BulletinBoard/BBSectionInfo.h>
 
 @interface BBSectionInfo (PBConversions)
+- (_Bool)blt_overrideSendToNotificationCenter;
+- (_Bool)blt_overrideShowsAlerts;
 - (void)updateAlertingStatusForGizmoWithAlertsEnabled:(_Bool)arg1 NCEnabled:(_Bool)arg2;
 - (void)enableAlertsForGizmo:(_Bool)arg1;
 - (id)dataProviderIDs;
@@ -16,5 +18,6 @@
 - (void)setSubsections:(id)arg1;
 - (void)setIcon:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)bltApplyNotificationLevel:(unsigned long long)arg1;
 @end
 

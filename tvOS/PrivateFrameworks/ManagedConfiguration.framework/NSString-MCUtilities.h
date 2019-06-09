@@ -17,5 +17,7 @@
 - (id)MCHashedIdentifier;
 - (id)MCHashedFilenameWithPrefix:(id)arg1 extension:(id)arg2;
 - (id)MCHashedFilenameWithExtension:(id)arg1;
+- (id)MCRemoveAppExternalVersionIDParameter;
+- (id)MCAppendGreenteaSuffix;
 @end
 

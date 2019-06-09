@@ -8,6 +8,7 @@
 
 @interface NSCharacterSet (SafariSharedExtras)
 + (id)safari_obscuredPasswordCharacterSets;
++ (id)safari_asciiDigitCharacterSet;
 + (id)safari_lockRelatedEmojiCharacterSet;
 @end
 

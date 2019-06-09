@@ -6,23 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSNumber, NSString, WLKArtworkVariantListing;
+@class NSArray, NSNumber, NSString, NSURL, WLKArtworkVariantListing;
 
 @interface WLKBasicContentMetadata : NSObject
 {
+    NSString *_contentTypeString;
     _Bool _isEvod;
     unsigned long long _contentType;
     NSString *_canonicalID;
+    NSURL *_tvAppDeeplinkURL;
     NSString *_title;
     NSString *_shortTitle;
     NSString *_descriptiveText;
     WLKArtworkVariantListing *_images;
     NSNumber *_commonSenseBeginsAge;
     NSArray *_categories;
+    NSArray *_genres;
 }
 
 + (Class)_classForContentType:(unsigned long long)arg1;
 + (unsigned long long)contentTypeForString:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *genres; // @synthesize genres=_genres;
 @property(readonly, copy, nonatomic) NSArray *categories; // @synthesize categories=_categories;
 @property(readonly, nonatomic) NSNumber *commonSenseBeginsAge; // @synthesize commonSenseBeginsAge=_commonSenseBeginsAge;
 @property(readonly, nonatomic) WLKArtworkVariantListing *images; // @synthesize images=_images;
@@ -30,10 +34,12 @@
 @property(readonly, copy, nonatomic) NSString *shortTitle; // @synthesize shortTitle=_shortTitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) _Bool isEvod; // @synthesize isEvod=_isEvod;
+@property(readonly, copy, nonatomic) NSURL *tvAppDeeplinkURL; // @synthesize tvAppDeeplinkURL=_tvAppDeeplinkURL;
 @property(readonly, copy, nonatomic) NSString *canonicalID; // @synthesize canonicalID=_canonicalID;
 @property(readonly, nonatomic) unsigned long long contentType; // @synthesize contentType=_contentType;
 - (void).cxx_destruct;
 - (id)init;
+- (id)description;
 - (id)initWithDictionary:(id)arg1;
 
 @end

@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface ML3MigrationDirectives : NSObject
 {
     _Bool _needsToRecreateIndexes;

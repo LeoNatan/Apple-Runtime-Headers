@@ -8,24 +8,27 @@
 
 #import <MediaControls/UIGestureRecognizerDelegate-Protocol.h>
 
-@class MPVolumeSlider, MediaControlsRelativeVolumeStepper, NSString;
+@class MTVisualStylingProvider, MediaControlsRelativeVolumeStepper, MediaControlsVolumeSlider, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsVolumeContainerView : UIView <UIGestureRecognizerDelegate>
 {
     _Bool _transitioning;
     _Bool _onScreen;
     unsigned int _volumeCapabilities;
-    MPVolumeSlider *_volumeSlider;
+    MediaControlsVolumeSlider *_volumeSlider;
     long long _style;
+    MTVisualStylingProvider *_visualStylingProvider;
     MediaControlsRelativeVolumeStepper *_volumeStepper;
 }
 
 @property(nonatomic) unsigned int volumeCapabilities; // @synthesize volumeCapabilities=_volumeCapabilities;
 @property(retain, nonatomic) MediaControlsRelativeVolumeStepper *volumeStepper; // @synthesize volumeStepper=_volumeStepper;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic, getter=isOnScreen) _Bool onScreen; // @synthesize onScreen=_onScreen;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
-@property(retain, nonatomic) MPVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
+@property(retain, nonatomic) MediaControlsVolumeSlider *volumeSlider; // @synthesize volumeSlider=_volumeSlider;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateVolumeCapabilities;

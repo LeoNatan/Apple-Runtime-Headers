@@ -10,12 +10,12 @@
 {
 }
 
-+ (struct OpaqueSecPolicyRef *)createSMIMEPolicyForAddress:(id)arg1 keyUsage:(void *)arg2;
++ (struct __SecPolicy *)createSMIMEPolicyForAddress:(id)arg1 keyUsage:(void *)arg2;
 + (BOOL)canEncryptMessagesToAddresses:(id)arg1 sender:(id)arg2;
 + (BOOL)canEncryptMessagesToAddress:(id)arg1;
 + (BOOL)canSignMessagesFromAddress:(id)arg1;
-+ (struct OpaqueSecCertificateRef *)copyEncryptionCertificateForAddress:(id)arg1;
-+ (struct OpaqueSecIdentityRef *)copySigningIdentityForAddress:(id)arg1;
++ (struct __SecCertificate *)copyEncryptionCertificateForAddress:(id)arg1;
++ (struct __SecIdentity *)copySigningIdentityForAddress:(id)arg1;
 + (BOOL)configureTLSCertificatesPopUp:(id)arg1 usingPersistentReference:(BOOL)arg2 withOldIdentity:(id)arg3 newIdentity:(id *)arg4;
 + (id)_copyTlsClientIdentities;
 + (id)sessionTrustedCertificatesForHost:(id)arg1;

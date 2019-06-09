@@ -19,7 +19,7 @@
     NSArray *_recipients;
     NSDate *_date;
     NSDate *_dateRead;
-    NSDate *_lastReadDate;
+    NSDate *_dateForLastReadMessageInChat;
     IMSPIHandle *_sender;
     long long _messageID;
     NSArray *_attachments;
@@ -27,6 +27,7 @@
     _Bool _isRead;
     _Bool _isAudioMessage;
     _Bool _isGroupChat;
+    _Bool _hasDataDetectedResults;
     long long _itemType;
     NSString *_groupID;
     NSString *_chatIdentifier;
@@ -40,13 +41,14 @@
     PKCurrencyAmount *_peerPaymentAmount;
 }
 
+@property _Bool hasDataDetectedResults; // @synthesize hasDataDetectedResults=_hasDataDetectedResults;
 @property(retain) PKCurrencyAmount *peerPaymentAmount; // @synthesize peerPaymentAmount=_peerPaymentAmount;
 @property(retain) LPLinkMetadata *richLinkMetadata; // @synthesize richLinkMetadata=_richLinkMetadata;
 @property(retain) NSString *displayAppName; // @synthesize displayAppName=_displayAppName;
 @property long long messageType; // @synthesize messageType=_messageType;
 @property(retain) NSString *bundleId; // @synthesize bundleId=_bundleId;
 @property(retain) IMSPIMessage *referencedMessage; // @synthesize referencedMessage=_referencedMessage;
-@property(retain) NSDate *lastReadDate; // @synthesize lastReadDate=_lastReadDate;
+@property(retain) NSDate *dateForLastReadMessageInChat; // @synthesize dateForLastReadMessageInChat=_dateForLastReadMessageInChat;
 @property(retain) NSDate *dateRead; // @synthesize dateRead=_dateRead;
 @property(retain) NSString *service; // @synthesize service=_service;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;
@@ -69,9 +71,11 @@
 @property long long messageID; // @synthesize messageID=_messageID;
 @property(retain) NSString *guid; // @synthesize guid=_guid;
 - (void).cxx_destruct;
+@property(readonly) NSDate *lastReadDate;
 @property(readonly) NSURL *url;
 - (id)description;
 - (void)dealloc;
+@property(readonly) _Bool allowedByScreenTime;
 
 @end
 

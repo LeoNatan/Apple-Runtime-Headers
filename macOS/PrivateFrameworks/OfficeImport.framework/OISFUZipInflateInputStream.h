@@ -11,6 +11,7 @@
 @class NSString;
 @protocol OISFUBufferedInputStream;
 
+__attribute__((visibility("hidden")))
 @interface OISFUZipInflateInputStream : NSObject <SFUInputStream>
 {
     struct z_stream_s mStream;

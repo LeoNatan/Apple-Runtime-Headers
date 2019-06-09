@@ -19,13 +19,14 @@ __attribute__((visibility("hidden")))
 
 + (id)queryForApplicationsAvailableForOpeningURL:(id)arg1;
 + (id)sharedManager;
++ (struct BindingEvaluator)bindingEvaluatorForScheme:(id)arg1;
+- (void).cxx_destruct;
 - (void)resetSchemeQueryLimitForApplicationWithIdentifier:(id)arg1;
 - (int)schemeTypeOfScheme:(id)arg1;
 - (_Bool)canOpenURL:(id)arg1 publicSchemes:(_Bool)arg2 privateSchemes:(_Bool)arg3 XPCConnection:(id)arg4 error:(id *)arg5;
-- (void)dealloc;
 - (id)init;
-- (_Bool)legacy_isBundleID:(unsigned int)arg1 bundleData:(const LSBundleData_7942beea *)arg2 context:(struct LSContext *)arg3 allowedToCheckScheme:(id)arg4 error:(id *)arg5;
-- (_Bool)isBundleID:(unsigned int)arg1 bundleData:(const LSBundleData_7942beea *)arg2 context:(struct LSContext *)arg3 allowedToCheckScheme:(id)arg4 error:(id *)arg5;
+- (_Bool)legacy_isBundleID:(unsigned int)arg1 bundleData:(const struct LSBundleData *)arg2 context:(struct LSContext *)arg3 allowedToCheckScheme:(id)arg4 error:(id *)arg5;
+- (_Bool)isBundleID:(unsigned int)arg1 bundleData:(const struct LSBundleData *)arg2 context:(struct LSContext *)arg3 allowedToCheckScheme:(id)arg4 error:(id *)arg5;
 - (_Bool)findApplicationBundleID:(unsigned int *)arg1 bundleData:(const struct LSBundleData **)arg2 context:(struct LSContext *)arg3 forXPCConnection:(id)arg4;
 - (_Bool)isXPCConnection:(id)arg1 allowedToCheckScheme:(id)arg2 error:(id *)arg3;
 - (void)getIsURL:(id)arg1 alwaysCheckable:(_Bool *)arg2 hasHandler:(_Bool *)arg3;

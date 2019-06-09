@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <TVMLKit/AVPlayerViewControllerDelegate-Protocol.h>
-#import <TVMLKit/TVPlayingInternal-Protocol.h>
+#import <TVMLKit/AVPlayerViewControllerPlaybackDelegate-Protocol.h>
+#import <TVMLKit/TVPlaying-Protocol.h>
 
-@class AVPlayer, AVPlayerItem, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, TVMediaItem, TVPlaylist;
-@protocol TVPlayerBridging;
+@class AVPlayer, AVPlayerItem, NSDate, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, TVMediaItem, TVPlaylist;
+@protocol TVPlayerBridging, TVPlayerInternalDelegate;
 
-@interface TVPlayer : NSObject <AVPlayerViewControllerDelegate, TVPlayingInternal>
+@interface TVPlayer : NSObject <TVPlaying, AVPlayerViewControllerDelegate, AVPlayerViewControllerPlaybackDelegate>
 {
     long long _state;
     TVPlaylist *_playlist;
@@ -20,23 +21,41 @@
     NSMutableSet *_observedTimedMetadataKeys;
     NSMutableDictionary *_observedTimeIntervalMap;
     NSMutableDictionary *_observedTimeBoundaryMap;
+    struct {
+        _Bool respondsToShouldStartPlaybackAtTime;
+    } _internalDelegateFlags;
+    _Bool _isInternalPlayer;
     _Bool _currentMediaItemHasVideoContent;
-    _Bool _pausesOnHDCPProtectionDown;
+    long long _resumeMenuBehavior;
+    NSDictionary *userInfo;
     TVMediaItem *_currentMediaItem;
     id <TVPlayerBridging> _bridge;
+    id <TVPlayerInternalDelegate> _internalDelegate;
     AVPlayer *_player;
     AVPlayerItem *_currentPlayerItem;
 }
 
-+ (long long)ikStateForTVPlaybackState:(long long)arg1;
++ (id)internalPlayer;
 @property(readonly, nonatomic) AVPlayerItem *currentPlayerItem; // @synthesize currentPlayerItem=_currentPlayerItem;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
+@property(nonatomic) __weak id <TVPlayerInternalDelegate> internalDelegate; // @synthesize internalDelegate=_internalDelegate;
 @property(nonatomic) __weak id <TVPlayerBridging> bridge; // @synthesize bridge=_bridge;
 @property(readonly, nonatomic) TVMediaItem *currentMediaItem; // @synthesize currentMediaItem=_currentMediaItem;
-@property(nonatomic) _Bool pausesOnHDCPProtectionDown; // @synthesize pausesOnHDCPProtectionDown=_pausesOnHDCPProtectionDown;
 @property(nonatomic) _Bool currentMediaItemHasVideoContent; // @synthesize currentMediaItemHasVideoContent=_currentMediaItemHasVideoContent;
+@property(readonly, nonatomic) _Bool isInternalPlayer; // @synthesize isInternalPlayer=_isInternalPlayer;
+@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo;
+@property(nonatomic) long long resumeMenuBehavior; // @synthesize resumeMenuBehavior=_resumeMenuBehavior;
 - (void).cxx_destruct;
+- (void)_startPlaybackAtResumeTime;
 - (void)playerViewController:(id)arg1 willTransitionToVisibilityOfTransportBar:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
+- (void)skipToPreviousItemForPlayerViewController:(id)arg1;
+- (void)skipToNextItemForPlayerViewController:(id)arg1;
+- (void)shouldChangeMediaInDirection:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)playerViewController:(id)arg1 shouldScanAtRate:(double)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)playerViewController:(id)arg1 shouldPauseWithCompletion:(CDUnknownBlockType)arg2;
+- (void)playerViewController:(id)arg1 shouldPlayFromTime:(double)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)playerViewController:(id)arg1 shouldSeekToDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)playerViewController:(id)arg1 shouldSeekToTime:(double)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)previous;
 - (void)next;
 - (void)changeToMediaItemAtIndex:(long long)arg1;
@@ -45,41 +64,44 @@
 - (void)setCurrentMediaItem:(id)arg1;
 @property(readonly, nonatomic) TVMediaItem *previousMediaItem;
 @property(readonly, nonatomic) TVMediaItem *nextMediaItem;
+- (id)nextMediaItemInDirection:(long long)arg1;
 - (void)_updateTimeBoundaryObserversWithIntervals:(id)arg1;
 - (void)_updateTimeIntervalObserversWithIntervals:(id)arg1;
 - (void)stopObservingEvent:(id)arg1;
 - (void)startObservingEvent:(id)arg1 extraInfo:(id)arg2;
+- (void)presentWithAnimation:(_Bool)arg1;
 - (void)pause;
 @property(nonatomic, getter=isMuted) _Bool muted;
 @property(nonatomic) double scanRate;
 - (void)stop;
 - (void)play;
+@property(retain, nonatomic) NSDate *elapsedDate;
 @property(nonatomic) double elapsedTime;
 @property(readonly, nonatomic) double duration;
 - (void)setState:(long long)arg1;
 @property(readonly, nonatomic) long long state;
+@property(readonly, nonatomic) AVPlayer *avPlayer;
 - (id)errorLogs;
 - (id)accessLogs;
 - (id)playbackDate;
 - (void)reset;
 @property(nonatomic) _Bool preventsSleepDuringVideoPlayback;
-@property(nonatomic) _Bool updatesMediaRemoteInfoAutomatically;
 - (void)_processTimedMetadata:(id)arg1;
 - (void)_updatePlayingStateForRate:(float)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)playerItemStalled:(id)arg1;
 - (void)playerItemPlayDidEnd:(id)arg1;
 - (void)dispatchEvent:(id)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
+@property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1;
 - (id)init;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool showsResumeMenu;
 @property(readonly) Class superclass;
-@property(retain, nonatomic) NSDictionary *userInfo;
 
 @end
 

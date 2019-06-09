@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 @class NSXPCConnection;
-@protocol OS_dispatch_queue;
 
 @interface CSLSShutdownForEcoModeClient : NSObject
 {
     NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_recursive_lock_s _lock;
 }
 
 + (id)sharedInstance;
@@ -20,6 +19,7 @@
 - (void)_dropConnection;
 - (id)_createConnectionIfNecessary;
 - (void)shutdownForEcoMode:(id)arg1;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
 

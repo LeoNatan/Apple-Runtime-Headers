@@ -20,8 +20,10 @@
     unsigned int _flags;
     VMUClassInfo *_destinationLayout;
     NSMutableArray *_subFieldArray;
+    void *_swiftTyperef;
 }
 
+@property(readonly) void *swiftTyperef; // @synthesize swiftTyperef=_swiftTyperef;
 @property(readonly, nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(readonly) unsigned int stride; // @synthesize stride=_stride;
 @property(readonly) unsigned int scannableSize; // @synthesize scannableSize=_scannable;
@@ -64,12 +66,14 @@
 - (id)initWithName:(id)arg1 type:(id)arg2 scan:(unsigned int)arg3 offset:(unsigned int)arg4 size:(unsigned int)arg5;
 - (id)initStorageEntryFieldWithName:(id)arg1 type:(id)arg2 kind:(unsigned int)arg3 scan:(unsigned int)arg4 offset:(unsigned int)arg5 size:(unsigned int)arg6 stride:(unsigned int)arg7 subFieldArray:(id)arg8;
 - (id)initStorageInfoFieldWithName:(id)arg1 type:(id)arg2 kind:(unsigned int)arg3 scan:(unsigned int)arg4 offset:(unsigned int)arg5 size:(unsigned int)arg6 stride:(unsigned int)arg7 subFieldArray:(id)arg8;
-- (id)initWithName:(id)arg1 type:(id)arg2 kind:(unsigned int)arg3 scan:(unsigned int)arg4 offset:(unsigned int)arg5 size:(unsigned int)arg6 stride:(unsigned int)arg7 subFieldArray:(id)arg8;
+- (void)dealloc;
+- (id)initWithName:(id)arg1 type:(id)arg2 kind:(unsigned int)arg3 scan:(unsigned int)arg4 offset:(unsigned int)arg5 size:(unsigned int)arg6 stride:(unsigned int)arg7 subFieldArray:(id)arg8 swiftTyperef:(void *)arg9;
 - (id)initWithObjcIvar:(struct objc_ivar *)arg1 size:(unsigned int)arg2 isARC:(_Bool)arg3 is64Bit:(_Bool)arg4;
 - (id)mutableCopy;
 @property(readonly) NSString *typedDescription;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (void)initializeSubFieldArray;
 @property(readonly, nonatomic) NSArray *subFieldArray;
 
 @end

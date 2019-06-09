@@ -44,7 +44,7 @@
 - (void)_didStepBackward;
 - (unsigned long long)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
-- (void)_wrappingUpOnboarding;
+- (void)_wrapUpOnboardingWithAtrialFibrillationDetectionEnabled:(_Bool)arg1;
 - (void)_advancingToOnboardingPageNumber:(long long)arg1;
 - (void)notNowTapped;
 - (void)stepForward;

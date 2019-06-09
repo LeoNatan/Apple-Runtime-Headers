@@ -23,14 +23,11 @@
 + (id)dateFromICSString:(id)arg1 timeZone:(id)arg2;
 + (id)dateFromICSDateValue:(id)arg1 timeZone:(id)arg2;
 + (id)dateFromICSDate:(id)arg1 timeZone:(id)arg2;
-+ (id)dateFromIsoString:(id)arg1;
 + (id)dateWithDatePartFrom:(id)arg1 withTimePartFrom:(id)arg2 withTimeZone:(id)arg3;
 + (id)dateWithDatePartFrom:(id)arg1 withTimePartFrom:(id)arg2;
 + (id)dateWithDate:(id)arg1;
 + (id)distantPast;
 + (id)distantFuture;
-+ (id)dateWithString:(id)arg1;
-+ (id)dateWithString:(id)arg1 calendarFormat:(id)arg2;
 + (id)dateWithTimeIntervalSince1970:(double)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)alloc;
@@ -56,8 +53,6 @@
 - (BOOL)isEqualToDateAsLocaltime:(id)arg1;
 - (long long)offsetFromGMTForTimeZone:(id)arg1;
 - (long long)offsetFromGMT;
-- (id)initWithString:(id)arg1;
-- (id)initWithString:(id)arg1 calendarFormat:(id)arg2;
 - (id)initWithTimeInterval:(double)arg1 sinceDate:(id)arg2;
 - (id)isoStringRepresentation;
 - (id)dateWithHour:(long long)arg1 minute:(long long)arg2 second:(long long)arg3;

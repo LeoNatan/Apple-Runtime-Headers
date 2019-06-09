@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSArray, NSMutableDictionary;
 
 __attribute__((visibility("hidden")))
 @interface _SCRUIElementCache : NSObject
 {
     struct __AXUIElement *_axElement;
     long long _populationLevel;
+    NSArray *_accessibilityRows;
     NSMutableDictionary *__attributeToValueCache;
 }
 
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)cacheForAXUIElementRef:(struct __AXUIElement *)arg1;
 + (void)invalidateAll;
 @property(retain, nonatomic) NSMutableDictionary *_attributeToValueCache; // @synthesize _attributeToValueCache=__attributeToValueCache;
+@property(retain, nonatomic) NSArray *accessibilityRows; // @synthesize accessibilityRows=_accessibilityRows;
 @property(nonatomic) long long populationLevel; // @synthesize populationLevel=_populationLevel;
 - (void).cxx_destruct;
 - (id)canSetAttribute:(id)arg1;

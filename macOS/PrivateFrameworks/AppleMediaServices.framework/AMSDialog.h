@@ -33,13 +33,6 @@
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(copy) NSArray *buttons; // @synthesize buttons=_buttons;
 - (void).cxx_destruct;
-- (void)_removeKeyWindow:(id)arg1;
-- (void)_finishWithButtonIndex:(long long)arg1;
-- (BOOL)_currentProcessLinksAppKit;
-- (BOOL)_currentProcessLinksUIKit;
-- (id)_createWindowAndMakeVisible;
-- (void)_presentMacDialogFromWindow:(id)arg1;
-- (BOOL)_presentiOSDialogFromViewController:(id)arg1;
 - (void)presentSystemDialog;
 - (void)presentSheetFromWindow:(id)arg1;
 - (void)presentFromViewController:(id)arg1;

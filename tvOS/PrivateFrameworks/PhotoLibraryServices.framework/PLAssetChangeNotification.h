@@ -15,11 +15,11 @@
 
 + (id)notificationWithChangedAssets:(id)arg1;
 @property(copy, nonatomic) NSSet *updatedAssets; // @synthesize updatedAssets=_updatedAssets;
+- (void).cxx_destruct;
 - (id)description;
 - (id)userInfo;
 - (id)object;
 - (id)name;
-- (void)dealloc;
 - (id)_initWithChangedObjects:(id)arg1;
 - (id)_init;
 

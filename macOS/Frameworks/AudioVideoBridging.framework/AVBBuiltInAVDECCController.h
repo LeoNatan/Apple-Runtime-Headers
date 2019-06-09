@@ -37,6 +37,7 @@
 - (void)controllerRequestToChangeEntity:(id)arg1 sensorClusterWithIndex:(unsigned short)arg2 toSamplingRate:(id)arg3 forTargetEntityID:(unsigned long long)arg4;
 - (void)controllerRequestToChangeEntity:(id)arg1 videoClusterWithIndex:(unsigned short)arg2 toSamplingRate:(id)arg3 forTargetEntityID:(unsigned long long)arg4;
 - (void)controllerRequestToChangeEntity:(id)arg1 audioUnitWithIndex:(unsigned short)arg2 toSamplingRate:(id)arg3 forTargetEntityID:(unsigned long long)arg4;
+- (id)bestAudioMatchForStreamFormat:(id)arg1 inStreamFormats:(id)arg2 withSamplingRate:(id)arg3;
 - (void)controllerRequestToChangeEntity:(id)arg1 toAssociationID:(unsigned long long)arg2 forTargetEntityID:(unsigned long long)arg3;
 - (void)controllerRequestToChangeEntity:(id)arg1 descriptorOfType:(unsigned short)arg2 withIndex:(unsigned short)arg3 configurationIndex:(unsigned short)arg4 nameIndex:(unsigned short)arg5 toName:(id)arg6 forTargetEntityID:(unsigned long long)arg7;
 - (void)controllerRequestToChangeEntity:(id)arg1 setVideoClusterWithIndex:(unsigned short)arg2 toFormatSpecific:(id)arg3 aspectRatio:(id)arg4 colorSpace:(unsigned short)arg5 andFrameSize:(id)arg6 forTargetEntityID:(unsigned long long)arg7;

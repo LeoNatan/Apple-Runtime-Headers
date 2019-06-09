@@ -8,11 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class NSMutableArray, PBDataReader, PBUnknownFields;
+
 @interface GEOTransitClusterArtworkSet : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     CDStruct_9f2792e4 _artworkIndexs;
+    NSMutableArray *_artworkItems;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_artworkIndexs:1;
+        unsigned int read_artworkItems:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_artworkIndexs:1;
+        unsigned int wrote_artworkItems:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
++ (Class)artworkItemType;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -20,14 +39,24 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)artworkItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)artworkItemsCount;
+- (void)_addNoFlagsArtworkItem:(id)arg1;
+- (void)addArtworkItem:(id)arg1;
+- (void)clearArtworkItems;
+@property(retain, nonatomic) NSMutableArray *artworkItems;
+- (void)_readArtworkItems;
 - (void)setArtworkIndexs:(unsigned int *)arg1 count:(unsigned long long)arg2;
 - (unsigned int)artworkIndexAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsArtworkIndex:(unsigned int)arg1;
 - (void)addArtworkIndex:(unsigned int)arg1;
 - (void)clearArtworkIndexs;
 @property(readonly, nonatomic) unsigned int *artworkIndexs;
 @property(readonly, nonatomic) unsigned long long artworkIndexsCount;
+- (void)_readArtworkIndexs;
 - (void)dealloc;
 
 @end

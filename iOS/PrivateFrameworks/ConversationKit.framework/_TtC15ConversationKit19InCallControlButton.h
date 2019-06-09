@@ -6,17 +6,21 @@
 
 #import <UIKit/UIControl.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit19InCallControlButton : UIControl
 {
+    // Error parsing type: , name: discBackgroundEffectView
+    // Error parsing type: , name: discBackgroundFlatView
     // Error parsing type: , name: imageView
-    // Error parsing type: , name: toggledConstraints
     // Error parsing type: , name: paragraphStyle
+    // Error parsing type: , name: isUsingVisualEffects
+    // Error parsing type: , name: imageWidthConstraint
+    // Error parsing type: , name: imageHeightConstraint
     // Error parsing type: , name: style
     // Error parsing type: , name: label
     // Error parsing type: , name: discView
     // Error parsing type: , name: image
     // Error parsing type: , name: colorConfiguration
+    // Error parsing type: , name: contentAlpha
 }
 
 - (void).cxx_destruct;

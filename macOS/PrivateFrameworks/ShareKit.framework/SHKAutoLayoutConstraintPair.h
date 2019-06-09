@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint;
 
+__attribute__((visibility("hidden")))
 @interface SHKAutoLayoutConstraintPair : NSObject
 {
     NSLayoutConstraint *_firstConstraint;

@@ -9,6 +9,7 @@
 @class AVThumbnailGenerationRequest, NSArray, NSMutableDictionary, NSTimer;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AVThumbnailGenerator : NSObject
 {
     NSObject<OS_dispatch_queue> *_thumbnailGenerationQueue;

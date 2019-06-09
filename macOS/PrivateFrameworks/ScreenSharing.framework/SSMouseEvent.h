@@ -8,14 +8,13 @@
 
 @interface SSMouseEvent : SSInputEvent
 {
-    struct SSPoint mCoordinates;
-    void *mReservedForInstanceVariablesMouse;
+    struct SSPoint _coordinates;
     struct CGPoint _mV2Coordinates;
 }
 
 + (id)mouseEventWithCoordinates:(struct SSPoint)arg1;
 @property struct CGPoint mV2Coordinates; // @synthesize mV2Coordinates=_mV2Coordinates;
-@property(readonly) struct SSPoint coordinates; // @synthesize coordinates=mCoordinates;
+@property struct SSPoint coordinates; // @synthesize coordinates=_coordinates;
 - (id)initWithCoordinates:(struct SSPoint)arg1;
 
 @end

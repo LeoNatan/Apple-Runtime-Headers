@@ -8,6 +8,7 @@
 
 @class AnalyticsWorkspace, ArbitratorExpertSystemState, DiagnosticCaseUsageAnalytics, NSArray, SystemSettingsRelay;
 
+__attribute__((visibility("hidden")))
 @interface ArbitratorExpertSystemHandler : ExpertSystemHandlerCore
 {
     ArbitratorExpertSystemState *currentState;
@@ -23,25 +24,25 @@
 
 + (void)resetAllForCustomerBuilds;
 + (id)internalStateDictionary;
-+ (long long)dampenedIPSLimit;
 + (BOOL)disableResourceNotifyDampening;
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
 + (void)setInitializeAsHelper:(BOOL)arg1;
 @property unsigned long long externalStepper; // @synthesize externalStepper=_externalStepper;
 - (void).cxx_destruct;
+- (void)_removeAllReportRecords;
+- (void)_removeReportRecordForKey:(id)arg1;
+- (void)_saveReportRecord:(id)arg1;
+- (void)_addReportRecordWithKey:(id)arg1 count:(long long)arg2 lastSeen:(double)arg3;
+- (id)_retrieveReportRecordForDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 process:(id)arg4;
+- (id)_reportRecordKeyForDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 process:(id)arg4;
 - (void)resetAll;
 - (void)resetDiagnosticCaseUsage;
 - (long long)_removeAllDiagnosticCaseUsageFor:(id)arg1;
-- (long long)_removeDiagnosticCaseUsageMatchingDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 process:(id)arg4;
 - (void)_purgeDiagnosticCaseUsage;
-- (id)_createDiagnosticCaseUsageForDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 process:(id)arg4;
-- (id)_retrieveDiagnosticCaseUsageForDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 process:(id)arg4 onOrAfter:(id)arg5 create:(BOOL)arg6;
-- (id)_retrieveDiagnosticCaseUsageForDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 process:(id)arg4;
-- (void)_updateDiagnosticCaseUsageForDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 process:(id)arg4 lastSeen:(id)arg5 shouldIncrement:(BOOL)arg6;
-- (void)getDiagnosticCaseUsageStatistics:(CDUnknownBlockType)arg1;
 - (id)internalStateDictionary;
-- (void)recordReportForSignature:(id)arg1 trigger:(unsigned long long)arg2;
+- (void)triggerABCSnapshotWithSignature:(id)arg1 events:(id)arg2 uuid:(id)arg3;
+- (void)recordReportForSignature:(id)arg1 aggregateReport:(id)arg2 specificReport:(id)arg3;
 - (BOOL)shouldGenerateReportForSignature:(id)arg1 trigger:(unsigned long long)arg2;
 - (void)handleResourceNotifyOfType:(unsigned long long)arg1 event:(id)arg2;
 - (_Bool)noteSymptom:(id)arg1;
@@ -51,9 +52,6 @@
 - (BOOL)_arbitratorReady;
 - (void)_administrativeDisable;
 - (void)_administrativeEnable;
-- (void)_bringStateToCompleted;
-- (void)_bringStateToAlerted;
-- (void)_bringStateToIdle;
 - (void)_completeInitialization:(BOOL)arg1;
 - (void)_scheduleMaintenanceActivity;
 - (BOOL)_initializeWorkspace;

@@ -8,6 +8,7 @@
 
 @class AVCaptureDevice, AVCaptureDeviceInput, AVCaptureSession, NSMapTable, NSMutableSet, NSSet;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceSelectionController : NSObject
 {
     AVCaptureSession *_captureSession;

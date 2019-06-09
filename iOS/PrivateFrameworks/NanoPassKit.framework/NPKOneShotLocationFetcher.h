@@ -9,7 +9,7 @@
 #import <NanoPassKit/CLLocationManagerDelegate-Protocol.h>
 
 @class CLInUseAssertion, CLLocationManager, NSString;
-@protocol OS_dispatch_source;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface NPKOneShotLocationFetcher : NSObject <CLLocationManagerDelegate>
 {
@@ -17,8 +17,10 @@
     NSObject<OS_dispatch_source> *_locationFixTimeout;
     CLLocationManager *_locationManager;
     CLInUseAssertion *_inUseAssertion;
+    NSObject<OS_dispatch_queue> *_locationManagerQueue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *locationManagerQueue; // @synthesize locationManagerQueue=_locationManagerQueue;
 @property(retain, nonatomic) CLInUseAssertion *inUseAssertion; // @synthesize inUseAssertion=_inUseAssertion;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *locationFixTimeout; // @synthesize locationFixTimeout=_locationFixTimeout;
@@ -29,6 +31,7 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)fetchLocationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

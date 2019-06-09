@@ -32,6 +32,7 @@
         _Bool bluetoothDisplayLoadFailed;
         _Bool tableLoadFailed;
         _Bool displayModeChanged;
+        _Bool copyStringToClipboard;
         _Bool startEditing;
         _Bool insertUntranslatedText;
         _Bool deleteUntranslatedText;
@@ -41,6 +42,7 @@
 - (void).cxx_destruct;
 - (void)handlePlayCommandNotSupportedSound;
 - (void)handlePlayBorderHitSound;
+- (void)handleCopyStringToClipboard:(id)arg1;
 - (void)handleDisplayModeChanged:(id)arg1;
 - (void)handleBrailleTableFailedToLoad:(id)arg1;
 - (void)handleFailedToLoadBluetoothDevice:(id)arg1;

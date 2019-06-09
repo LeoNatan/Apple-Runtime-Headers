@@ -37,6 +37,7 @@
 - (id)popToViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)popViewControllerAnimated:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 
 @end
 

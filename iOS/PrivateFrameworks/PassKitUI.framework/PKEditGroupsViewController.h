@@ -10,12 +10,11 @@
 #import <PassKitUI/PKEditTableViewControllerCachingDelegate-Protocol.h>
 #import <PassKitUI/PKGroupDelegate-Protocol.h>
 #import <PassKitUI/PKGroupsControllerDelegate-Protocol.h>
-#import <PassKitUI/UIViewControllerPreviewingDelegate-Protocol.h>
+#import <PassKitUI/_UIContextMenuInteractionDelegate-Protocol.h>
 
 @class NSMutableArray, NSString, PKGroup, PKGroupsController, PKPass, UITableView;
-@protocol UIViewControllerPreviewing;
 
-@interface PKEditGroupsViewController : PKEditTableViewController <PKGroupsControllerDelegate, PKGroupDelegate, PKEditTableViewControllerCachingDelegate, PKEditGroupViewControllerDelegate, UIViewControllerPreviewingDelegate>
+@interface PKEditGroupsViewController : PKEditTableViewController <PKGroupsControllerDelegate, PKGroupDelegate, PKEditTableViewControllerCachingDelegate, PKEditGroupViewControllerDelegate, _UIContextMenuInteractionDelegate>
 {
     _Bool _editingMode;
     PKGroupsController *_groupsController;
@@ -23,7 +22,6 @@
     PKGroup *_viewingGroup;
     PKGroup *_deletingGroup;
     UITableView *_tableView;
-    id <UIViewControllerPreviewing> _previewingContext;
     NSMutableArray *_actions;
     struct CGSize _imageSizeNeeded;
 }
@@ -35,9 +33,11 @@
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
+- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
+- (_Bool)shouldShowPreviewForRowAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (void)configureCell:(id)arg1 atIndexPath:(id)arg2 withGroup:(id)arg3;

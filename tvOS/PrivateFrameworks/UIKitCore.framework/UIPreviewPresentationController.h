@@ -17,13 +17,11 @@
     id <UIPreviewPresentationControllerDelegate> _previewPresentationDelegate;
     UITapGestureRecognizer *_dismissGestureRecognizer;
     UIVisualEffectView *_presentationContainerEffectView;
-    UIWindow *_statusBarWindow;
-    UIView *_statusBarSnapshotView;
+    UIView *_localStatusBar;
     NSArray *_keyboardSnapshotters;
     NSHashTable *_keyboardWindows;
     UIResponder *_currentPinnedResponder;
     UIWindow *_presentationWindow;
-    CDUnknownBlockType _containerSuperviewFactoryBlock;
     CDUnknownBlockType _containerViewConfigurationBlock;
     CDUnknownBlockType _dismissalTransitionDidEndBlock;
 }
@@ -33,13 +31,11 @@
 + (id)_backgroundEffectForTraitCollection:(id)arg1 interactive:(_Bool)arg2;
 @property(copy, nonatomic) CDUnknownBlockType dismissalTransitionDidEndBlock; // @synthesize dismissalTransitionDidEndBlock=_dismissalTransitionDidEndBlock;
 @property(copy, nonatomic) CDUnknownBlockType containerViewConfigurationBlock; // @synthesize containerViewConfigurationBlock=_containerViewConfigurationBlock;
-@property(copy, nonatomic) CDUnknownBlockType containerSuperviewFactoryBlock; // @synthesize containerSuperviewFactoryBlock=_containerSuperviewFactoryBlock;
 @property(nonatomic) __weak UIWindow *presentationWindow; // @synthesize presentationWindow=_presentationWindow;
 @property(nonatomic) __weak UIResponder *currentPinnedResponder; // @synthesize currentPinnedResponder=_currentPinnedResponder;
 @property(copy, nonatomic) NSHashTable *keyboardWindows; // @synthesize keyboardWindows=_keyboardWindows;
 @property(copy, nonatomic) NSArray *keyboardSnapshotters; // @synthesize keyboardSnapshotters=_keyboardSnapshotters;
-@property(retain, nonatomic) UIView *statusBarSnapshotView; // @synthesize statusBarSnapshotView=_statusBarSnapshotView;
-@property(retain, nonatomic) UIWindow *statusBarWindow; // @synthesize statusBarWindow=_statusBarWindow;
+@property(retain, nonatomic) UIView *localStatusBar; // @synthesize localStatusBar=_localStatusBar;
 @property(retain, nonatomic) UIVisualEffectView *presentationContainerEffectView; // @synthesize presentationContainerEffectView=_presentationContainerEffectView;
 @property(nonatomic) _Bool appliesVisualEffectsToPresentingView; // @synthesize appliesVisualEffectsToPresentingView=_appliesVisualEffectsToPresentingView;
 @property(retain, nonatomic) UITapGestureRecognizer *dismissGestureRecognizer; // @synthesize dismissGestureRecognizer=_dismissGestureRecognizer;
@@ -65,7 +61,7 @@
 - (void)_prepareStatusBarForPresentationTransition;
 - (_Bool)_shouldBlurStatusBar;
 - (void)_prepareContainerViewForPresentationTransition;
-- (id)_fullscreenPresentationSuperview;
+- (_Bool)_allowsAutorotation;
 - (struct CGRect)_frameForTransitionViewInPresentationSuperview:(id)arg1;
 - (_Bool)_shouldSavePresentedViewControllerForStateRestoration;
 - (_Bool)_keyboardShouldAnimateAlongsideForInteractiveTransitions;
@@ -76,6 +72,7 @@
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionDidEnd:(_Bool)arg1;
 - (void)presentationTransitionWillBegin;
+- (long long)presentationStyle;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 
 // Remaining properties

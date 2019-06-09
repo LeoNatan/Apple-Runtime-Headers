@@ -25,10 +25,8 @@
 + (id)cancelledDeclinedColorBarColor;
 + (double)tentativeStripeBackgroundAlpha;
 + (id)tentativeStripeColor;
-+ (id)tentativeBackgroundColor;
 + (double)needsReplyStripeBackgroundAlpha;
 + (id)needsReplyStripeColor;
-+ (id)needsReplyBackgroundColor;
 + (id)normalBackgroundColor;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

@@ -6,9 +6,17 @@
 
 #import <ViewBridge/NSServiceViewController.h>
 
+@class NSExtensionContext;
+
 @interface ScreenSaverConfigurationViewController : NSServiceViewController
 {
+    NSExtensionContext *_extensionContext;
 }
+
+@property(retain) NSExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
+- (void)configureSheetWillPresent;
+- (void)configureSheetDidEnd;
+- (unsigned long long)awakeFromRemoteView;
 
 @end
 

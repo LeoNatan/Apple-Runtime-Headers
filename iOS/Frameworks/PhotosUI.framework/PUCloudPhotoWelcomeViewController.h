@@ -4,59 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUWelcomeViewController.h>
+#import <PhotosUICore/PXCloudPhotoWelcomeViewController.h>
 
-#import <PhotosUI/AAUIGenericTermsRemoteUIDelegate-Protocol.h>
-#import <PhotosUI/PSCloudStorageOffersManagerDelegate-Protocol.h>
-#import <PhotosUI/PXCloudPhotoWelcomeNavigationControllerDismissDelegate-Protocol.h>
-#import <PhotosUI/PXCloudPhotoWelcomeViewDelegate-Protocol.h>
+#import <PhotosUI/PUWelcomeProtocol-Protocol.h>
 
-@class AAUIGenericTermsRemoteUI, NSString, PSCloudStorageOffersManager, PXCloudPhotoWelcomeView;
+@class NSString;
 
-@interface PUCloudPhotoWelcomeViewController : PUWelcomeViewController <PXCloudPhotoWelcomeViewDelegate, PSCloudStorageOffersManagerDelegate, AAUIGenericTermsRemoteUIDelegate, PXCloudPhotoWelcomeNavigationControllerDismissDelegate>
+@interface PUCloudPhotoWelcomeViewController : PXCloudPhotoWelcomeViewController <PUWelcomeProtocol>
 {
-    PSCloudStorageOffersManager *_offersManager;
-    AAUIGenericTermsRemoteUI *_termsManager;
-    _Bool _requireStorageUpgrade;
-    _Bool _enableOnAppear;
-    PXCloudPhotoWelcomeView *_welcomeView;
     CDUnknownBlockType __completionHandler;
 }
 
-+ (_Bool)_isPhotoStreamEnabled;
-+ (void)_showWithPresentingViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)resetLastPresentationInfo;
 + (void)presentIfNecessaryFromViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic, setter=_setCompletionHandler:) CDUnknownBlockType _completionHandler; // @synthesize _completionHandler=__completionHandler;
-@property(retain, nonatomic) PXCloudPhotoWelcomeView *welcomeView; // @synthesize welcomeView=_welcomeView;
 - (void).cxx_destruct;
-- (void)_handleEnableError:(id)arg1;
-- (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
-- (void)managerDidCancel:(id)arg1;
-- (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
-- (void)manager:(id)arg1 willPresentViewController:(id)arg2;
-- (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
-- (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
-- (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
-- (id)presentingViewControllerTraitCollection;
-- (void)_handleGoButtonTapped;
-- (void)_continueWithoutStoragePurchase:(id)arg1;
-- (void)_enableCPLDataClass;
-- (void)_enableCloudPhotoLibrary;
-- (void)_dismiss;
-- (void)_presentStoragePurchaseController;
-- (void)_enableButtons;
-- (void)navigationControllerDidDismissViewController:(id)arg1;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (struct CGSize)preferredContentSize;
-- (_Bool)shouldAutorotate;
-- (long long)preferredInterfaceOrientationForPresentation;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)_updateCurrentActivity;
-- (void)viewWillLayoutSubviews;
-- (void)viewWillAppear:(_Bool)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
-- (void)viewDidLoad;
+- (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)initWithDefaultTitle;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,14 +8,14 @@
 
 @interface SFCertAuthorityInvitationSigner : NSObject
 {
-    struct OpaqueSecIdentityRef *_signingIdentity;
+    struct __SecIdentity *_signingIdentity;
 }
 
 - (int)signInvitationFile:(id)arg1 outPath:(id)arg2;
-- (void)_setSigningIdentity:(struct OpaqueSecIdentityRef *)arg1;
+- (void)_setSigningIdentity:(struct __SecIdentity *)arg1;
 - (id)_copyAvailableSigningIdentities;
-- (int)verifyInvitationFile:(id)arg1 invitationDictionary:(id *)arg2 trustRefOnErr:(struct __SecTrust **)arg3 signerIdentity:(struct OpaqueSecIdentityRef **)arg4;
-- (int)verifyInvitation:(id)arg1 invitationDictionary:(id *)arg2 trustRefOnErr:(struct __SecTrust **)arg3 signerIdentity:(struct OpaqueSecIdentityRef **)arg4;
+- (int)verifyInvitationFile:(id)arg1 invitationDictionary:(id *)arg2 trustRefOnErr:(struct __SecTrust **)arg3 signerIdentity:(struct __SecIdentity **)arg4;
+- (int)verifyInvitation:(id)arg1 invitationDictionary:(id *)arg2 trustRefOnErr:(struct __SecTrust **)arg3 signerIdentity:(struct __SecIdentity **)arg4;
 - (void)dealloc;
 - (void)finalize;
 

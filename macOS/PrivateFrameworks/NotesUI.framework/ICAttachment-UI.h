@@ -6,20 +6,24 @@
 
 #import <NotesShared/ICAttachment.h>
 
+#import <NotesUI/DCScanDataDelegate-Protocol.h>
 #import <NotesUI/NSPasteboardWriting-Protocol.h>
 
-@class ICNotePasteboardData, NSImage, NSString;
+@class ICDocCamImageQuad, ICNotePasteboardData, NSImage, NSString;
 
-@interface ICAttachment (UI) <NSPasteboardWriting>
-+ (id)imageCache;
+@interface ICAttachment (UI) <NSPasteboardWriting, DCScanDataDelegate>
++ (struct NSCache *)imageCache;
 + (id)imageLoadingOperationQueue;
 + (id)thumbnailOperationQueue;
+- (void)notifyDocCamFrameworkAttachmentWasDeleted;
 - (id)pasteboardPropertyListForType:(id)arg1;
 - (unsigned long long)writingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 - (id)writableTypesForPasteboard:(id)arg1;
-- (BOOL)fetchThumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 cache:(id)arg3 cacheKey:(id)arg4 processingBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6 fallbackBlock:(CDUnknownBlockType)arg7 aboutToLoadHandler:(CDUnknownBlockType)arg8;
+- (BOOL)fetchThumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceInfo:(id)arg3 cache:(id)arg4 cacheKey:(id)arg5 processingBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7 fallbackBlock:(CDUnknownBlockType)arg8 aboutToLoadHandler:(CDUnknownBlockType)arg9;
+- (BOOL)thumbnailImage:(struct NSImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 appearanceType:(unsigned long long)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(char *)arg6 isMovie:(char *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8;
 - (BOOL)thumbnailImage:(struct NSImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 imageScaling:(unsigned long long *)arg4 showAsFileIcon:(char *)arg5 isMovie:(char *)arg6 movieDuration:(CDStruct_1b6d18a9 *)arg7;
-- (id)updateAttachmentPreviewImageWithImage:(struct NSImage *)arg1 scale:(double)arg2 scaleWhenDrawing:(BOOL)arg3 metadata:(id)arg4 sendNotification:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (id)updateAttachmentPreviewImageWithImage:(struct NSImage *)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 scaleWhenDrawing:(BOOL)arg4 metadata:(id)arg5 sendNotification:(BOOL)arg6;
+- (id)updateAttachmentPreviewImageWithImage:(struct NSImage *)arg1 scale:(double)arg2 scaleWhenDrawing:(BOOL)arg3 metadata:(id)arg4 sendNotification:(BOOL)arg5;
 @property(readonly, nonatomic) NSString *movieDurationForSpeaking;
 @property(readonly, nonatomic) NSString *modificationDateForSpeaking;
 - (id)activityItems;
@@ -29,9 +33,13 @@
 - (void)setCachedImage:(struct NSImage *)arg1;
 - (CDUnknownBlockType)loadImage:(CDUnknownBlockType)arg1 aboutToLoadHandler:(CDUnknownBlockType)arg2 forceFullSizeImage:(BOOL)arg3;
 - (CDUnknownBlockType)loadImage:(CDUnknownBlockType)arg1;
+@property(copy, nonatomic) ICDocCamImageQuad *croppingQuad;
 @property(readonly, nonatomic) NSImage *unprocessedDocumentImage;
 @property(readonly, nonatomic) NSImage *image;
 @property(readonly, nonatomic) BOOL isUnsupportedOnCurrentPlatform;
+@property(readonly, nonatomic) long long docCamPDFVersion;
+- (id)dataForTypeIdentifier:(id)arg1;
+- (id)fileURLForTypeIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

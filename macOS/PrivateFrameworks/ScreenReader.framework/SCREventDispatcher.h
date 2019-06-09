@@ -17,16 +17,16 @@ __attribute__((visibility("hidden")))
     SCRCIndexMap *_taggedKeyTargets;
 }
 
-- (void)dispatchEvent:(id)arg1 withInfo:(void *)arg2 guideTarget:(id)arg3;
+- (void).cxx_destruct;
+- (void)dispatchEvent:(id)arg1 withInfo:(id)arg2 guideTarget:(id)arg3;
 - (BOOL)someoneHandlesEndingEvent:(id)arg1;
 - (void)lock;
-- (void)removeTagEvent:(int)arg1;
-- (void)setTagEventTarget:(id)arg1 selector:(SEL)arg2 tag:(int)arg3 forCommand:(id)arg4;
-- (void)setTagEventTarget:(id)arg1 selector:(SEL)arg2 tag:(int)arg3;
-- (void)setGuideEventTarget:(id)arg1 selector:(SEL)arg2 guideTag:(int)arg3;
+- (void)removeTagEvent:(long long)arg1;
+- (void)setTagEventTarget:(id)arg1 selector:(SEL)arg2 tag:(long long)arg3 forCommand:(id)arg4;
+- (void)setTagEventTarget:(id)arg1 selector:(SEL)arg2 tag:(long long)arg3;
+- (void)setGuideEventTarget:(id)arg1 selector:(SEL)arg2 guideTag:(long long)arg3;
 - (void)setActivatorEventTarget:(id)arg1 selector:(SEL)arg2 forCommand:(id)arg3;
 - (void)setActivatorEventTarget:(id)arg1 selector:(SEL)arg2 forCommand:(id)arg3 forEndingEvent:(BOOL)arg4;
-- (void)dealloc;
 - (id)init;
 
 @end

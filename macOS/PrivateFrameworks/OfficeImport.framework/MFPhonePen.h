@@ -6,6 +6,7 @@
 
 #import <OfficeImport/MFPen.h>
 
+__attribute__((visibility("hidden")))
 @interface MFPhonePen : MFPen
 {
     float m_PixelSize;

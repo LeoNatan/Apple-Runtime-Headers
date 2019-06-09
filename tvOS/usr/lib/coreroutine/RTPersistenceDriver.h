@@ -7,58 +7,71 @@
 #import <objc/NSObject.h>
 
 #import <coreroutine/RTPersistenceDelegate-Protocol.h>
+#import <coreroutine/RTPersistenceMetricsDelegate-Protocol.h>
+#import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSManagedObjectContext, NSString, RTAccount, RTAccountManager, RTDataProtectionManager, RTDefaultsManager, RTDeviceMO, RTKeepAliveTransaction, RTKeychainManager, RTLifeCycleManager, RTMemoryTransaction, RTMetricManager, RTPersistenceManager, RTPlatform;
-@protocol OS_dispatch_queue;
+@class NSManagedObjectContext, NSPersistentHistoryToken, NSString, RTAccount, RTAccountManager, RTDataProtectionManager, RTDefaultsManager, RTDeviceMO, RTKeychainManager, RTLifeCycleManager, RTPersistenceManager, RTPlatform;
+@protocol OS_dispatch_queue, OS_os_transaction, RTPersistenceMetricsDelegate;
 
-@interface RTPersistenceDriver : NSObject <RTPersistenceDelegate>
+@interface RTPersistenceDriver : NSObject <RTPersistenceMetricsDelegate, RTPersistenceDelegate, RTPurgable>
 {
     RTDeviceMO *_resetSyncCurrentDevice;
     NSManagedObjectContext *_resetSyncContext;
+    NSPersistentHistoryToken *_resetSyncHistoryToken;
     _Bool _requiresDirtyTransaction;
     _Bool _requiresSetupTransaction;
     RTPersistenceManager *_persistenceManager;
     RTDataProtectionManager *_dataProtectionManager;
     RTAccountManager *_accountManager;
     RTPlatform *_currentPlatform;
-    RTMetricManager *_metricManager;
     RTKeychainManager *_keychainManager;
     RTDefaultsManager *_defaultsManager;
     RTLifeCycleManager *_lifecycleManager;
     NSObject<OS_dispatch_queue> *_queue;
-    RTKeepAliveTransaction *_keepAliveTransaction;
-    RTMemoryTransaction *_memoryTransaction;
+    NSObject<OS_os_transaction> *_setupTransaction;
     long long _cloudSyncAuthorization;
     long long _encryptedDataAvailability;
     RTAccount *_currentAccount;
+    id <RTPersistenceMetricsDelegate> _metricsDelegate;
 }
 
+@property __weak id <RTPersistenceMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 @property(retain) RTAccount *currentAccount; // @synthesize currentAccount=_currentAccount;
 @property long long encryptedDataAvailability; // @synthesize encryptedDataAvailability=_encryptedDataAvailability;
 @property long long cloudSyncAuthorization; // @synthesize cloudSyncAuthorization=_cloudSyncAuthorization;
 @property _Bool requiresSetupTransaction; // @synthesize requiresSetupTransaction=_requiresSetupTransaction;
 @property _Bool requiresDirtyTransaction; // @synthesize requiresDirtyTransaction=_requiresDirtyTransaction;
-@property(retain) RTMemoryTransaction *memoryTransaction; // @synthesize memoryTransaction=_memoryTransaction;
-@property(retain) RTKeepAliveTransaction *keepAliveTransaction; // @synthesize keepAliveTransaction=_keepAliveTransaction;
+@property(retain) NSObject<OS_os_transaction> *setupTransaction; // @synthesize setupTransaction=_setupTransaction;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain) RTLifeCycleManager *lifecycleManager; // @synthesize lifecycleManager=_lifecycleManager;
 @property(retain) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 @property(readonly) RTKeychainManager *keychainManager; // @synthesize keychainManager=_keychainManager;
-@property(readonly) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(readonly) RTPlatform *currentPlatform; // @synthesize currentPlatform=_currentPlatform;
 @property(readonly) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(readonly) RTDataProtectionManager *dataProtectionManager; // @synthesize dataProtectionManager=_dataProtectionManager;
 @property(readonly) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
 - (void).cxx_destruct;
+- (id)prepareForDatabaseRekey:(id *)arg1;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)persistenceStore:(id)arg1 willBeginMirroringWithOptions:(id)arg2;
+- (void)persistenceMigrator:(id)arg1 didFinishMigratingStore:(id)arg2 withModelProvider:(id)arg3;
+- (void)persistenceMigrator:(id)arg1 didStartMigratingStore:(id)arg2 withModelProvider:(id)arg3;
 - (unsigned long long)persistenceDeviceClassForPlatform;
-- (void)persistenceManagerDidFinishResetSync:(id)arg1;
-- (void)persistenceManagerWillStartResetSync:(id)arg1;
+- (void)_updatePersistenceContexts:(id)arg1 deviceObjectID:(id)arg2;
+- (void)_updatePersistenceStoresWithDeviceObjectID:(id)arg1;
+- (void)persistenceManagerDidFinishResetSync:(id)arg1 userInfo:(id)arg2;
+- (void)persistenceManagerWillStartResetSync:(id)arg1 userInfo:(id)arg2 context:(id)arg3;
+- (_Bool)persistenceMirroringManagerDidFinishZonePurge:(id)arg1 store:(id)arg2 context:(id)arg3 error:(id *)arg4;
+- (void)persistenceManager:(id)arg1 didFinishSetup:(_Bool)arg2;
 - (_Bool)purgeExpiredRecordsFromPersistenceStore:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (_Bool)backupPersistenceStore:(id)arg1 error:(id *)arg2;
 - (void)persistenceStore:(id)arg1 encounteredCriticalError:(id)arg2;
 - (void)persistenceStore:(id)arg1 failedWithError:(id)arg2;
 - (_Bool)prepareStore:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
+- (_Bool)persistCurrentDeviceRecordInStore:(id)arg1 context:(id)arg2 error:(id *)arg3;
+- (id)persistCurrentDeviceInStore:(id)arg1 context:(id)arg2 error:(id *)arg3;
 - (void)cleanupOlderPersistentStores;
+- (id)remoteServerOptionsForStoreWithType:(unsigned long long)arg1;
 - (id)mirroringOptionsForStoreWithType:(unsigned long long)arg1;
 - (id)optionsForStoreWithType:(unsigned long long)arg1 error:(id *)arg2;
 - (id)appleIDsForStore:(id)arg1;
@@ -72,11 +85,18 @@
 - (void)onCloudSyncAuthorizationChange:(id)arg1;
 - (void)_onDataProtectionChange:(id)arg1;
 - (void)onDataProtectionChange:(id)arg1;
+- (void)_shutdown;
 - (void)shutdown;
 - (void)dealloc;
 - (void)start;
-- (id)initWithPersistenceManager:(id)arg1 dataProtectionManager:(id)arg2 accountManager:(id)arg3 platform:(id)arg4 metricManager:(id)arg5 keychainManager:(id)arg6 defaultsManager:(id)arg7 lifecycleManager:(id)arg8;
+- (id)initWithPersistenceManager:(id)arg1 dataProtectionManager:(id)arg2 accountManager:(id)arg3 platform:(id)arg4 keychainManager:(id)arg5 defaultsManager:(id)arg6 lifecycleManager:(id)arg7;
 - (id)init;
+- (void)persistenceDriver:(id)arg1 persistenceStore:(id)arg2 willBeginMirroringWithOptions:(id)arg3;
+- (void)persistenceDriver:(id)arg1 persistenceMigrator:(id)arg2 didFinishMigratingStore:(id)arg3 withModelProvider:(id)arg4;
+- (void)persistenceDriver:(id)arg1 persistenceMigrator:(id)arg2 didStartMigratingStore:(id)arg3 withModelProvider:(id)arg4;
+- (void)persistenceStoreResetSyncWithUserInfo:(id)arg1;
+- (void)persistenceStoreFailedWithError:(id)arg1;
+- (void)persistenceStore:(id)arg1 didPrepareWithContext:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

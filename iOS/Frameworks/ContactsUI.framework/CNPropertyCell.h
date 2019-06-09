@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)updateValueWithPropertyItem:(id)arg1;
 - (void)updateWithPropertyItem:(id)arg1;
 - (void)tintColorDidChange;
+@property(readonly, nonatomic) _Bool supportsValueColorUsesLabelColor;
 @property(readonly, nonatomic) _Bool supportsTintColorValue;
 - (void)copy:(id)arg1;
 - (id)valueString;

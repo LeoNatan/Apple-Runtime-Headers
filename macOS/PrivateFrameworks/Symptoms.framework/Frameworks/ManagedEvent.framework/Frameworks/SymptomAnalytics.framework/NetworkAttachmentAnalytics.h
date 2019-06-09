@@ -10,7 +10,6 @@
 {
 }
 
-- (id)networkAttachmentsWithSSID:(id)arg1;
 - (id)networkAttachmentsWithIdInSet:(id)arg1;
 - (id)networkAttachmentsWithId:(id)arg1;
 - (id)initWithWorkspace:(id)arg1 withCache:(BOOL)arg2;

@@ -10,19 +10,23 @@
 {
 }
 
++ (id)autoloopStabilizedVideoFilter;
 + (id)applyOrientationFilter;
 + (id)stopAtTagIncludeOrientationFilter:(id)arg1;
 + (id)stopAtTagIncludeGeometryFilter:(id)arg1;
 + (id)postGeometryFilter;
 + (id)preGeometryFilter;
++ (id)perspectiveStraightenWithoutCropFilter;
 + (id)noGeometryFilter;
 + (id)noCropFilter;
 + (id)noMuteFilter;
 + (id)noTrimFilter;
 + (id)noRedEyeFilter;
 + (id)sushiLevel1Filter;
-+ (id)sourceFilterIncludingOrientation:(BOOL)arg1;
++ (id)sourceFilterNoOrientation;
++ (id)rawSourceFilterIncludingOrientation;
 + (id)rawFaceBalanceFilter;
++ (id)exifOrientationAndCropStraightenOnly;
 + (id)autoCropFilter;
 
 @end

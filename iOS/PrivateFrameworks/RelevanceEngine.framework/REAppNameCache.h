@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)localizedNameForApplicationWithIdentifier:(id)arg1;
-- (id)init;
+- (id)_init;
 
 @end
 

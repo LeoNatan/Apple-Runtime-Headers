@@ -8,27 +8,33 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 @interface GEOLogMsgStateSuggestions : PBCodable <NSCopying>
 {
-    int _acSequenceNumber;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_displayedResults;
-    int _searchFieldType;
     NSString *_searchString;
+    int _acSequenceNumber;
+    int _searchFieldType;
     int _selectedIndex;
     struct {
-        unsigned int acSequenceNumber:1;
-        unsigned int searchFieldType:1;
-        unsigned int selectedIndex:1;
-    } _has;
+        unsigned int has_acSequenceNumber:1;
+        unsigned int has_searchFieldType:1;
+        unsigned int has_selectedIndex:1;
+        unsigned int read_displayedResults:1;
+        unsigned int read_searchString:1;
+        unsigned int wrote_displayedResults:1;
+        unsigned int wrote_searchString:1;
+        unsigned int wrote_acSequenceNumber:1;
+        unsigned int wrote_searchFieldType:1;
+        unsigned int wrote_selectedIndex:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)displayedResultType;
-@property(nonatomic) int acSequenceNumber; // @synthesize acSequenceNumber=_acSequenceNumber;
-@property(nonatomic) int selectedIndex; // @synthesize selectedIndex=_selectedIndex;
-@property(retain, nonatomic) NSMutableArray *displayedResults; // @synthesize displayedResults=_displayedResults;
-@property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,19 +43,27 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasAcSequenceNumber;
+@property(nonatomic) int acSequenceNumber;
 - (int)StringAsSearchFieldType:(id)arg1;
 - (id)searchFieldTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasSearchFieldType;
-@property(nonatomic) int searchFieldType; // @synthesize searchFieldType=_searchFieldType;
+@property(nonatomic) int searchFieldType;
 @property(nonatomic) BOOL hasSelectedIndex;
+@property(nonatomic) int selectedIndex;
 - (id)displayedResultAtIndex:(unsigned long long)arg1;
 - (unsigned long long)displayedResultsCount;
+- (void)_addNoFlagsDisplayedResult:(id)arg1;
 - (void)addDisplayedResult:(id)arg1;
 - (void)clearDisplayedResults;
+@property(retain, nonatomic) NSMutableArray *displayedResults;
+- (void)_readDisplayedResults;
+@property(retain, nonatomic) NSString *searchString;
 @property(readonly, nonatomic) BOOL hasSearchString;
+- (void)_readSearchString;
 
 @end
 

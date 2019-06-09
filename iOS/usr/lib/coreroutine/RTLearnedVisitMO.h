@@ -6,15 +6,20 @@
 
 #import <coreroutine/RTCloudManagedObject.h>
 
-@class NSDate, NSNumber, RTLearnedPlaceMO, RTLearnedTransitionMO;
+@class NSDate, NSDateInterval, NSNumber, RTLearnedPlaceMO, RTLearnedTransitionMO;
 
 @interface RTLearnedVisitMO : RTCloudManagedObject
 {
+    NSDateInterval *_interval;
 }
 
 + (id)managedObjectWithVisit:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)managedObjectWithVisit:(id)arg1 place:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)fetchRequest;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
+- (_Bool)overlapsWithVisit:(id)arg1;
+- (_Bool)intersectsWithVisit:(id)arg1 distanceCalculator:(id)arg2;
 
 // Remaining properties
 @property(copy, nonatomic) NSNumber *confidence; // @dynamic confidence;

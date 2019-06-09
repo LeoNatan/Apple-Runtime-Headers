@@ -6,10 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+#import <RelevanceEngine/NSCopying-Protocol.h>
 
-@interface REFeatureTransformer : NSObject
+@class NSString, REPriorityQueue, REUpNextTimer;
+@protocol REFeatureTransformerInvalidationDelegate;
+
+@interface REFeatureTransformer : NSObject <NSCopying>
 {
+    REPriorityQueue *_scheduledUpdates;
+    REUpNextTimer *_updateTimer;
+    id <REFeatureTransformerInvalidationDelegate> _invalidationDelegate;
     NSString *_name;
 }
 
@@ -17,6 +23,10 @@
 + (id)customTransformerWithName:(id)arg1 outputType:(unsigned int)arg2 block:(CDUnknownBlockType)arg3;
 + (id)customCategoricalTransformerWithName:(id)arg1 featureCount:(unsigned int)arg2 transformation:(CDUnknownBlockType)arg3;
 + (id)customCategoricalTransformerWithName:(id)arg1 block:(CDUnknownBlockType)arg2;
++ (id)recentTransformerWithCount:(unsigned int)arg1;
++ (id)maskAndShiftTransformWithStartIndex:(unsigned int)arg1 endIndex:(unsigned int)arg2;
++ (id)changedTransformWithImpulseDuration:(double)arg1;
++ (id)changedTransform;
 + (id)maskTransformWithWidth:(unsigned int)arg1;
 + (id)hashTransform;
 + (id)roundTransformer;
@@ -24,8 +34,23 @@
 + (id)logTransformerWithBase:(id)arg1;
 + (id)bucketTransformerWithBitWidth:(unsigned int)arg1;
 + (id)bucketTransformerWithCount:(unsigned int)arg1 minValue:(id)arg2 maxValue:(id)arg3;
++ (id)featureTransformerClasses;
++ (id)functionName;
++ (_Bool)supportsInvalidation;
++ (_Bool)supportsPersistence;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)_invalidate;
+- (void)_performAndScheduleTimer;
+- (void)invalidateWithContext:(id)arg1;
+- (id)invalidationDelegate;
+- (void)setInvalidationDelegate:(id)arg1;
+- (id)_invalidationQueue;
+- (void)configureWithInvocation:(id)arg1;
+- (id)init;
+- (_Bool)readFromURL:(id)arg1 error:(id *)arg2;
+- (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
 
 @end
 

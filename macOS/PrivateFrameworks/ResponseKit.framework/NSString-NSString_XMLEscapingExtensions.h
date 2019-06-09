@@ -9,5 +9,8 @@
 @interface NSString (NSString_XMLEscapingExtensions)
 @property(readonly) NSString *stringByUnescapingXMLEntities;
 @property(readonly) NSString *stringByEscapingXMLEntities;
+- (BOOL)consistsOfCharactersFromSet:(id)arg1 options:(unsigned long long)arg2;
+- (id)uppercaseFirstWordString;
+- (id)lowercaseFirstWordString;
 @end
 

@@ -6,38 +6,42 @@
 
 #import <objc/NSObject.h>
 
-@class UIInputViewController, UIKeyboard, UIResponder, UIView;
+@class UIInputViewController, UIKBRenderConfig, UIKeyboard, UIResponder, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIInputViewSet : NSObject
 {
-    UIView *_inputView;
-    UIView *_inputAccessoryView;
-    UIView *_inputAssistantView;
     _Bool _isSplit;
     double _splitHeightDelta;
     UIResponder *_restorableResponder;
+    UIKBRenderConfig *_restorableRenderConfig;
     UIResponder *_accessoryViewNextResponder;
     _Bool _restoreUsingBecomeFirstResponder;
+    UIView *_inputView;
+    UIView *_inputAccessoryView;
+    UIView *_inputAssistantView;
+    UIInputViewController *_inputViewController;
+    UIInputViewController *_accessoryViewController;
+    UIInputViewController *_assistantViewController;
     _Bool _isNullInputView;
     _Bool _isCustomInputView;
     _Bool _isRemoteKeyboard;
-    UIInputViewController *_inputViewController;
-    UIInputViewController *_assistantViewController;
-    UIInputViewController *_accessoryViewController;
     struct CGRect _inputAssistantViewBounds;
 }
 
 + (id)emptyInputSet;
++ (id)inputSetWithOriginalInputSet:(id)arg1 duplicateInputView:(_Bool)arg2 duplicateInputAccessoryView:(_Bool)arg3 duplicateInputAssistantView:(_Bool)arg4;
 + (id)inputSetWithPlaceholderAndAccessoryView:(id)arg1;
 + (id)inputSetWithKeyboardAndAccessoryView:(id)arg1;
++ (id)inputSetWithKeyboardAndAccessoryView:(id)arg1 assistantView:(id)arg2;
 + (id)inputSetWithInputView:(id)arg1 accessoryView:(id)arg2;
 + (id)inputSetWithInputView:(id)arg1 accessoryView:(id)arg2 assistantView:(id)arg3;
 @property(nonatomic) _Bool isRemoteKeyboard; // @synthesize isRemoteKeyboard=_isRemoteKeyboard;
 @property(nonatomic) _Bool isCustomInputView; // @synthesize isCustomInputView=_isCustomInputView;
 @property(readonly, nonatomic) struct CGRect inputAssistantViewBounds; // @synthesize inputAssistantViewBounds=_inputAssistantViewBounds;
 @property(readonly, nonatomic) _Bool isNullInputView; // @synthesize isNullInputView=_isNullInputView;
-@property(nonatomic) UIResponder *accessoryViewNextResponder; // @synthesize accessoryViewNextResponder=_accessoryViewNextResponder;
+@property(nonatomic) __weak UIResponder *accessoryViewNextResponder; // @synthesize accessoryViewNextResponder=_accessoryViewNextResponder;
+@property(retain, nonatomic) UIKBRenderConfig *restorableRenderConfig; // @synthesize restorableRenderConfig=_restorableRenderConfig;
 @property(nonatomic) __weak UIResponder *restorableResponder; // @synthesize restorableResponder=_restorableResponder;
 @property(nonatomic) double splitHeightDelta; // @synthesize splitHeightDelta=_splitHeightDelta;
 @property(retain, nonatomic) UIInputViewController *accessoryViewController; // @synthesize accessoryViewController=_accessoryViewController;
@@ -54,6 +58,7 @@ __attribute__((visibility("hidden")))
 - (id)_splittableInputAccessoryView;
 - (id)_themableInputAccessoryView;
 - (_Bool)setAccessoryViewVisible:(_Bool)arg1 delay:(double)arg2;
+- (_Bool)hierarchyContainsView:(id)arg1;
 - (void)refreshPresentation;
 - (struct CGRect)_rightInputViewSetFrame;
 - (struct CGRect)_leftInputViewSetFrame;
@@ -77,9 +82,9 @@ __attribute__((visibility("hidden")))
 - (id)description;
 - (_Bool)isStrictSupersetOfViewSet:(id)arg1;
 - (_Bool)containsResponder:(id)arg1;
-- (_Bool)visible;
+@property(readonly, nonatomic) _Bool visible;
 - (_Bool)_inputViewIsVisible;
-- (_Bool)usesKeyClicks;
+@property(readonly, nonatomic) _Bool usesKeyClicks;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)containsView:(id)arg1;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
@@ -88,7 +93,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *splitExemptSubview;
 @property(readonly, nonatomic) UIView *layeringView;
 - (void)_setRenderConfig:(id)arg1;
-- (id)normalisePlaceholders;
+- (id)normalizePlaceholders;
 - (id)inputSetWithInputAccessoryViewFromInputSet:(id)arg1;
 - (id)inputSetWithInputAccessoryViewOnly;
 - (void)setKeyboardAssistantBar:(id)arg1;

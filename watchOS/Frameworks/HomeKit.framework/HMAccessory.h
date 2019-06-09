@@ -14,7 +14,7 @@
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMAccessoryCategory, HMAccessorySettings, HMApplicationData, HMDevice, HMFPairingIdentity, HMFSoftwareVersion, HMFUnfairLock, HMFWiFiNetworkInfo, HMHome, HMMutableArray, HMRemoteLoginHandler, HMRoom, HMSoftwareUpdateController, HMSymptomsHandler, NSArray, NSNumber, NSString, NSUUID, _HMContext;
+@class HMAccessoryCategory, HMAccessorySettings, HMApplicationData, HMDevice, HMFPairingIdentity, HMFSoftwareVersion, HMFUnfairLock, HMFWiFiNetworkInfo, HMHome, HMMutableArray, HMRemoteLoginHandler, HMRoom, HMSoftwareUpdateController, HMSymptomsHandler, NSArray, NSDictionary, NSNumber, NSString, NSUUID, _HMContext;
 @protocol HMAccessoryDelegate, OS_dispatch_queue;
 
 @interface HMAccessory : NSObject <HMFLogging, NSSecureCoding, HMFMessageReceiver, HMObjectMerge, HMMutableApplicationData, HMAccessorySettingsContainer, HMControllable>
@@ -27,14 +27,13 @@
     _Bool _firmwareUpdateAvailable;
     _Bool _reachable;
     _Bool _bridgedAccessory;
-    _Bool _blocked;
     _Bool _controllable;
     _Bool _supportsMediaAccessControl;
     _Bool _supportsTargetControl;
     _Bool _supportsTargetController;
     _Bool _targetControllerHardwareSupport;
+    _Bool _supportsMultiUser;
     _Bool _paired;
-    _Bool _needsReprovisioning;
     NSUUID *_uniqueIdentifier;
     id <HMAccessoryDelegate> _delegate;
     NSString *_name;
@@ -75,12 +74,15 @@
 + (id)logCategory;
 + (_Bool)supportsSecureCoding;
 + (id)_televisionProfilesForAccessoryServices:(id)arg1;
++ (id)_networkRouterProfilesForAccessoryProfiles:(id)arg1;
++ (id)accessoryWithAccessoryReference:(id)arg1 home:(id)arg2;
++ (id)accessoryWithSerializedDictionaryRepresentation:(id)arg1 home:(id)arg2;
 + (id)_cameraProfilesForAccessoryProfiles:(id)arg1;
++ (id)_networkConfigurationProfilesForCoder:(id)arg1 accessoryIdentifier:(id)arg2;
 + (id)_mediaProfilesForAccessoryProfiles:(id)arg1;
 @property(retain, nonatomic) HMMutableArray *accessoryProfiles; // @synthesize accessoryProfiles=_accessoryProfiles;
 @property(retain) HMRemoteLoginHandler *remoteLoginHandler; // @synthesize remoteLoginHandler=_remoteLoginHandler;
 @property(nonatomic) unsigned int accessoryReprovisionState; // @synthesize accessoryReprovisionState=_accessoryReprovisionState;
-@property(nonatomic) _Bool needsReprovisioning; // @synthesize needsReprovisioning=_needsReprovisioning;
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(copy, nonatomic) HMMutableArray *currentServices; // @synthesize currentServices=_currentServices;
 @property(nonatomic) _Bool paired; // @synthesize paired=_paired;
@@ -92,6 +94,8 @@
 @property(nonatomic) unsigned int transportTypes; // @synthesize transportTypes=_transportTypes;
 @property(nonatomic) _Bool firmwareUpdateAvailable; // @synthesize firmwareUpdateAvailable=_firmwareUpdateAvailable;
 - (void).cxx_destruct;
+- (void)_handleMultiUserSupportUpdatedMessage:(id)arg1;
+- (void)_notifyClientsOfMultiUserSupportUpdate;
 - (void)_handleTargetControlSupportUpdatedMessage:(id)arg1;
 - (void)_handleControlTargetsUpdatedMessage:(id)arg1;
 - (void)resetControlTargetsWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -158,6 +162,7 @@
 - (void)_updateAuthorizationData:(id)arg1 forService:(id)arg2 characteristic:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_updateAssociatedServiceType:(id)arg1 forService:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_findCharacteristic:(id)arg1 forService:(id)arg2;
+- (id)_findServiceWithUniqueIdentifier:(id)arg1;
 - (id)_findService:(id)arg1;
 - (void)_copyFrom:(id)arg1;
 - (void)_setNotifyValue:(_Bool)arg1 forCharacteristic:(id)arg2;
@@ -170,7 +175,7 @@
 @property(nonatomic) int certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 - (void)setApplicationData:(id)arg1;
 @property(readonly, nonatomic) HMApplicationData *applicationData;
-@property(nonatomic, getter=isBlocked) _Bool blocked; // @synthesize blocked=_blocked;
+@property(readonly, nonatomic, getter=isBlocked) _Bool blocked;
 @property(readonly, copy, nonatomic) NSArray *services;
 - (void)queryAdvertisementInformationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setControllable:(_Bool)arg1;
@@ -200,6 +205,7 @@
 - (void)removeControlTargetUUIDs:(id)arg1;
 - (void)addControlTargetUUIDs:(id)arg1;
 @property(copy, nonatomic) NSArray *controlTargetUUIDs; // @synthesize controlTargetUUIDs=_controlTargetUUIDs;
+@property(nonatomic) _Bool supportsMultiUser; // @synthesize supportsMultiUser=_supportsMultiUser;
 @property(nonatomic) _Bool targetControllerHardwareSupport; // @synthesize targetControllerHardwareSupport=_targetControllerHardwareSupport;
 @property(nonatomic) _Bool supportsTargetController; // @synthesize supportsTargetController=_supportsTargetController;
 @property(nonatomic) _Bool supportsTargetControl; // @synthesize supportsTargetControl=_supportsTargetControl;
@@ -230,7 +236,10 @@
 - (void)dealloc;
 - (id)init;
 @property(readonly, copy, nonatomic) NSArray *televisionProfiles;
+- (id)networkRouterProfile;
+@property(readonly, copy) NSDictionary *serializedDictionaryRepresentation;
 @property(readonly, copy, nonatomic) NSArray *cameraProfiles;
+- (id)networkConfigurationProfile;
 - (id)mediaProfile;
 
 // Remaining properties

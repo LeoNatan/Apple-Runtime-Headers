@@ -12,14 +12,13 @@
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDelayedBlock, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer;
+@class NSArray, NSDate, NSDateFormatter, NSString, NTKAstronomyLocationDot, NTKAstronomyRotationModel, NTKAstronomyVistaView, NTKColoringLabel, NTKDelayedBlock, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
 
 @interface NTKAstronomyFaceView : NTKDigitalFaceView <NTKTimeView, NTKAstronomyRotationModelObserver, NTKAstronomyVistaViewObserver, UIGestureRecognizerDelegate, PUICCrownInputSequencerDelegate>
 {
     NTKDigitialUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKDigitalTimeLabelStyle *_digitalTimeLabelDefaultStyle;
     NTKDigitalTimeLabelStyle *_digitalTimeLabelSmallInUpperRightCornerStyle;
-    NTKDigitalTimeLabel *_digitalTimeLabel;
     struct CGPoint _digitalTimeLabelZoomEndingCenter;
     PUICClientSideAnimation *_poseInterpolationAnimation;
     PUICCrownInputSequencer *_crownSequencer;
@@ -49,6 +48,8 @@
     int _animatingToViewMode;
     unsigned int _vista;
     NSArray *_editingAnimations[3];
+    UIView *_borrowedCircleView;
+    UIView *_borrowedHandsView;
     unsigned int _isAnimatingViewMode:1;
     unsigned int _isContentLoaded:1;
     unsigned int _isLocationCurrent:1;
@@ -57,7 +58,7 @@
 
 - (void).cxx_destruct;
 - (_Bool)_wantsMinorDetents;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
@@ -70,6 +71,7 @@
 - (void)_applyFromVista:(unsigned int)arg1 toVista:(unsigned int)arg2 fraction:(float)arg3;
 - (void)_applyVista:(unsigned int)arg1;
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
+- (_Bool)_shouldHandleHardwareEvents;
 - (_Bool)_canEnterInteractiveMode;
 - (void)_disableCrown;
 - (void)_enableCrownForAstronomyVista:(unsigned int)arg1;
@@ -85,6 +87,10 @@
 - (_Bool)_usesCustomZoom;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
+- (_Bool)_timeLabelUsesLegibility;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
+- (unsigned int)_timeLabelOptions;
+- (void)_setupAstronomyVistaView;
 - (unsigned int)_detentTypeForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (void)_becameInactiveFace;
 - (void)_becameActiveFace;
@@ -96,18 +102,15 @@
 - (void)_hideLocationDot;
 - (void)_showLocationDotIfNeeded;
 - (void)layoutSubviews;
-- (void)_updateDigitalTimeLabelStylesForBounds:(struct CGRect)arg1;
 - (void)_layoutSpheroidLabel:(int)arg1;
 - (void)_layoutPhaseLabel;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)_unloadSnapshotContentViews;
-- (void)_bringForegroundViewsToFront;
 - (void)_layoutForegroundContainerView;
 - (_Bool)_needsForegroundContainerView;
 - (void)_loadSnapshotContentViews;
 - (void)_applyDataModeAnimated:(_Bool)arg1;
 - (void)_applyDataMode;
-- (id)_digitalTimeLabelStyle:(int)arg1;
 - (void)astronomyVistaViewContentsAnimationFinished:(id)arg1;
 - (void)astronomyVistaViewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (void)rotationModelStoppedByDecelerating:(id)arg1;
@@ -124,6 +127,7 @@
 - (void)_applyViewMode:(int)arg1;
 - (void)setViewMode:(int)arg1;
 - (void)_setIsAnimatingViewMode:(_Bool)arg1;
+- (void)_animateTransitionToViewMode:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_animateTransitionToViewMode:(int)arg1;
 - (id)_date;
 - (void)_interpolateFromPose:(const struct NTKAstronomyFaceViewAnimationPose *)arg1 toPose:(const struct NTKAstronomyFaceViewAnimationPose *)arg2 progress:(float)arg3;

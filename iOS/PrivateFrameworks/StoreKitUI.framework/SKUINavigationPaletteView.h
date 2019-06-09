@@ -10,6 +10,7 @@
 
 @class NSHashTable, NSMapTable, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUINavigationPaletteView : SKUIViewReuseView <SKUIViewElementView>
 {
     NSHashTable *_artworkRelatedChildViewElementViews;

@@ -8,17 +8,22 @@
 
 @interface _PXValueAnimation : NSObject
 {
-    double _startTime;
     double _duration;
+    double _startTime;
+    double _currentMediaTime;
     struct _PXValueAnimationSpec _spec;
 }
 
+@property(nonatomic) double currentMediaTime; // @synthesize currentMediaTime=_currentMediaTime;
+@property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) struct _PXValueAnimationSpec spec; // @synthesize spec=_spec;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) _Bool completed;
 @property(readonly, nonatomic) double currentValue;
+- (double)remainingTime;
 - (double)elapsedTime;
-- (id)initWithDuration:(double)arg1 spec:(struct _PXValueAnimationSpec)arg2;
+- (id)description;
+- (id)initWithDuration:(double)arg1 currentMediaTime:(double)arg2 spec:(struct _PXValueAnimationSpec)arg3;
 - (id)init;
 
 @end

@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, QLDisplayBundle, QLPreviewPasswordViewController, QLPreviewView;
+@class NSString, QLDisplayBundle, QLPreview, QLPreviewPasswordViewController, QLPreviewView;
 @protocol QLPreviewItem;
 
 __attribute__((visibility("hidden")))
 @interface QLPreviewDocumentReserved : NSObject
 {
     id <QLPreviewItem> item;
-    // Error parsing type: ^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}^v{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLGenerator}^{__QLServer}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCCC^{?}^{__QLPreviewRequest}}, name: preview
     unsigned long long state;
     QLDisplayBundle *loadingDisplayBundle;
     QLDisplayBundle *displayBundle;
@@ -21,10 +20,14 @@ __attribute__((visibility("hidden")))
     BOOL externalDocument;
     QLPreviewPasswordViewController *passwordViewController;
     NSString *password;
+    QLPreview *_preview;
     long long initialEditMode;
     BOOL wasEdited;
     BOOL observingDocumentDirty;
 }
+
+@property(retain) QLPreview *preview; // @synthesize preview=_preview;
+- (void)dealloc;
 
 @end
 

@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) _Bool performanceModeEnabled;
 @property(readonly, nonatomic) _Bool designModeEnabled;
 - (id)defaultHyperlinkURL;
+- (_Bool)openURL:(id)arg1 sourceDocumentRoot:(id)arg2;
 - (_Bool)openURL:(id)arg1;
 - (id)validURLSchemes;
 - (id)invalidURLSchemes;

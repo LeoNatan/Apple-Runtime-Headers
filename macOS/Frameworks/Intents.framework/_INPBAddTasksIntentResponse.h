@@ -19,6 +19,7 @@
     _INPBTaskList *_modifiedTaskList;
 }
 
++ (BOOL)supportsSecureCoding;
 + (Class)addedTasksType;
 @property(retain, nonatomic) _INPBTaskList *modifiedTaskList; // @synthesize modifiedTaskList=_modifiedTaskList;
 @property(copy, nonatomic) NSArray *addedTasks; // @synthesize addedTasks=_addedTasks;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasModifiedTaskList;

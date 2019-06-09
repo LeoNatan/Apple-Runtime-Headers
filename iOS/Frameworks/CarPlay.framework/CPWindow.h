@@ -6,10 +6,11 @@
 
 #import <UIKit/UIWindow.h>
 
-@class NSLayoutConstraint, UILayoutGuide;
+@class CPTemplateApplicationScene, NSLayoutConstraint, UILayoutGuide, UIWindowScene;
 
 @interface CPWindow : UIWindow
 {
+    CPTemplateApplicationScene *_templateApplicationScene;
     UILayoutGuide *_mapButtonSafeAreaLayoutGuide;
     NSLayoutConstraint *_topConstraint;
     NSLayoutConstraint *_bottomConstraint;
@@ -22,9 +23,13 @@
 @property(retain, nonatomic) NSLayoutConstraint *bottomConstraint; // @synthesize bottomConstraint=_bottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *topConstraint; // @synthesize topConstraint=_topConstraint;
 @property(readonly, nonatomic) UILayoutGuide *mapButtonSafeAreaLayoutGuide; // @synthesize mapButtonSafeAreaLayoutGuide=_mapButtonSafeAreaLayoutGuide;
+@property(nonatomic) __weak CPTemplateApplicationScene *templateApplicationScene; // @synthesize templateApplicationScene=_templateApplicationScene;
 - (void).cxx_destruct;
 - (void)updateLayoutGuideWithInsets:(struct UIEdgeInsets)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 templateScene:(id)arg2;
+
+// Remaining properties
+@property(nonatomic) __weak UIWindowScene *windowScene;
 
 @end
 

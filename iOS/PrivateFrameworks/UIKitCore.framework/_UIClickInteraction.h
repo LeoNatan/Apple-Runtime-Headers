@@ -10,14 +10,13 @@
 #import <UIKitCore/UIInteraction_Private-Protocol.h>
 #import <UIKitCore/_UIClickInteractionDriverDelegate-Protocol.h>
 
-@class NSString, UIView, _UIClickFeedbackGenerator;
+@class NSString, UIGestureRecognizer, UIView, _UIClickFeedbackGenerator;
 @protocol UIInteractionEffect, _UIClickInteractionDelegate, _UIClickInteractionDriving;
 
 @interface _UIClickInteraction : NSObject <_UIClickInteractionDriverDelegate, UIInteraction_Private, UIInteraction>
 {
-    _Bool _latching;
-    _Bool _selected;
     _Bool _delaysOtherPanRecognizers;
+    _Bool _hapticsEnabled;
     UIView *_view;
     id <UIInteractionEffect> _interactionEffect;
     id <_UIClickInteractionDelegate> _delegate;
@@ -27,27 +26,28 @@
     Class _overrideDriverClass;
 }
 
+@property(nonatomic) _Bool hapticsEnabled; // @synthesize hapticsEnabled=_hapticsEnabled;
 @property(nonatomic) _Bool delaysOtherPanRecognizers; // @synthesize delaysOtherPanRecognizers=_delaysOtherPanRecognizers;
 @property(nonatomic, setter=_setOverrideDriverClass:) Class overrideDriverClass; // @synthesize overrideDriverClass=_overrideDriverClass;
 @property(retain, nonatomic) _UIClickFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(retain, nonatomic) id <_UIClickInteractionDriving> driver; // @synthesize driver=_driver;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
-@property(nonatomic, getter=isSelected) _Bool selected; // @synthesize selected=_selected;
-@property(nonatomic, getter=isLatching) _Bool latching; // @synthesize latching=_latching;
 @property(nonatomic) __weak id <_UIClickInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id <UIInteractionEffect> interactionEffect; // @synthesize interactionEffect=_interactionEffect;
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (_Bool)clickDriver:(id)arg1 shouldDelayGestureRecognizer:(id)arg2;
 - (void)clickDriver:(id)arg1 didUpdateHighlightProgress:(double)arg2;
-- (void)clickDriver:(id)arg1 didPerformStateChange:(unsigned long long)arg2;
+- (void)clickDriver:(id)arg1 didPerformEvent:(unsigned long long)arg2;
 - (_Bool)clickDriverShouldBegin:(id)arg1;
+- (void)_viewTraitCollectionDidChange:(id)arg1;
+@property(readonly, nonatomic) double touchDuration;
+@property(readonly, nonatomic) UIGestureRecognizer *driverPrimaryGestureRecognizer;
 - (void)_createFeedbackGenerator;
 - (Class)_driverClass;
 - (void)_updateDriver;
 - (void)_endInteraction;
 - (void)_beginInteraction;
-- (void)_viewTraitCollectionDidChange:(id)arg1;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;

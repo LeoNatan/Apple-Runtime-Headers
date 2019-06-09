@@ -22,5 +22,6 @@
 - (id)na_flatMap:(CDUnknownBlockType)arg1;
 - (id)na_map:(CDUnknownBlockType)arg1;
 - (id)na_reduceWithInitialValue:(id)arg1 reducer:(CDUnknownBlockType)arg2;
+- (_Bool)na_safeContainsObject:(id)arg1;
 @end
 

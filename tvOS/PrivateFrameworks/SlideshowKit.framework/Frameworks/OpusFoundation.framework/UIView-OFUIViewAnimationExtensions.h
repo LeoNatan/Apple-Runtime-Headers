@@ -7,5 +7,11 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (OFUIViewAnimationExtensions)
+- (id)ancestorViewOfInstance:(id)arg1;
+- (id)ancestorViewOfClass:(Class)arg1;
+- (id)layerFromSnapshot;
+- (id)layerFromSnapshot:(_Bool)arg1;
+- (id)snapshot;
+- (id)snapshot:(_Bool)arg1;
 @end
 

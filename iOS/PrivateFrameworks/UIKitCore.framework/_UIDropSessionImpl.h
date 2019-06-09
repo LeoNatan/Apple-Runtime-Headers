@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_allowsItemsToUpdate) _Bool _allowsItemsToUpdate;
 - (void)_itemsNeedUpdate:(id)arg1;
 - (id)_createItemsOfClass:(Class)arg1 synchronouslyIfPossible:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)_draggingSession;
+- (id)_internalSession;
 @property(readonly, nonatomic, getter=_operationMask) unsigned long long operationMask;
 - (id)loadObjectsOfClass:(Class)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)canLoadObjectsOfClass:(Class)arg1;

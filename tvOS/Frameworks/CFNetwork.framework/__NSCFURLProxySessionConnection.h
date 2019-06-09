@@ -13,7 +13,6 @@
 
 @class NSArray, NSCachedURLResponse, NSString, NSURLRequest, NSURLSessionTask;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLProxySessionConnection : __NSCFURLSessionConnection <NSURLSessionDataDelegate, NSURLSessionDataDelegatePrivate, NSURLSessionTaskDelegatePrivate, NSURLSessionDataDelegate_Internal>
 {
     NSURLSessionTask *_proxyTask;
@@ -43,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
 - (void)setIsDownload:(_Bool)arg1;
 - (void)_deliverDidCompleteWithError:(id)arg1;
+- (void)setExpectedProgressTarget:(unsigned long long)arg1;
 - (void)setPriorityHint:(float)arg1;
 - (void)setPoolPriority:(long long)arg1;
 - (void)resume;

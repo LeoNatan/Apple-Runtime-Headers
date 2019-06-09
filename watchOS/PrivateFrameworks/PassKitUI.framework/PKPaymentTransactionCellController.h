@@ -6,23 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class PKPeerPaymentContactResolver;
+@class NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, PKPeerPaymentContactResolver;
+@protocol OS_dispatch_queue;
 
 @interface PKPaymentTransactionCellController : NSObject
 {
+    NSMutableDictionary *_iconCache;
+    NSMutableArray *_iconCacheKeys;
+    NSMutableOrderedSet *_highPriorityIconRequests;
+    NSMutableOrderedSet *_lowPriorityIconRequests;
+    _Bool _processingRequest;
+    NSObject<OS_dispatch_queue> *_queueIcons;
+    struct os_unfair_lock_s _lockRequests;
     PKPeerPaymentContactResolver *_contactResolver;
 }
 
 + (id)secondaryFundingSourceDescriptionForTransaction:(id)arg1 includeBankAccountSuffix:(_Bool)arg2 useGenericNameIfNoDescriptionAvailable:(_Bool)arg3;
 + (id)_statusAnnotationForTransaction:(id)arg1;
 + (id)_relativeDateForTransaction:(id)arg1;
++ (id)_billPaymentFundingSourceForTransaction:(id)arg1;
 + (id)paymentMethodNameForTransaction:(id)arg1;
-+ (id)presentationInformationForTransaction:(id)arg1 pass:(id)arg2 deviceName:(id)arg3 context:(unsigned int)arg4;
++ (id)presentationInformationForTransaction:(id)arg1 pass:(id)arg2 account:(id)arg3 deviceName:(id)arg4 context:(unsigned int)arg5;
 @property(readonly, nonatomic) PKPeerPaymentContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
 - (void).cxx_destruct;
+- (id)_iconCacheKeyForPaymentTransaction:(id)arg1 size:(struct CGSize)arg2 transparent:(_Bool)arg3 imageOut:(id *)arg4;
+- (id)_iconForCacheKey:(id)arg1;
+- (void)queue_processNextIconRequest;
+- (void)iconForTransaction:(id)arg1 size:(struct CGSize)arg2 requestType:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)cachedIconRequiresStrokeForTransaction:(id)arg1 size:(struct CGSize)arg2;
+- (id)cachedIconForTransaction:(id)arg1 size:(struct CGSize)arg2;
 - (void)_updatePrimaryLabelOnTransactionCell:(id)arg1 withPeerPaymentCounterpartHandle:(id)arg2 contact:(id)arg3;
 - (void)_updateAvatarOnTransactionCell:(id)arg1 withTransaction:(id)arg2 contact:(id)arg3;
-- (void)configureCell:(id)arg1 forTransaction:(id)arg2 paymentPass:(id)arg3 detailStyle:(int)arg4 deviceName:(id)arg5;
+- (void)configureCell:(id)arg1 forTransaction:(id)arg2 paymentPass:(id)arg3 account:(id)arg4 detailStyle:(int)arg5 deviceName:(id)arg6;
 - (id)initWithContactResolver:(id)arg1;
 
 @end

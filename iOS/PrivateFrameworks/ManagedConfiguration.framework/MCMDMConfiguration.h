@@ -11,11 +11,14 @@
 
 @interface MCMDMConfiguration : NSObject
 {
+    _Bool _isUserEnrollment;
     _Bool _memberQueueUseDevelopmentAPNS;
     _Bool _memberQueueSignMessage;
     int _memberQueueAccessRights;
-    NSObject<OS_dispatch_queue> *_memberQueue;
     NSString *_memberQueueManagingProfileIdentifier;
+    NSString *_personaID;
+    NSString *_easEnrollmentID;
+    NSObject<OS_dispatch_queue> *_memberQueue;
     struct __SecIdentity *_memberQueueIdentity;
     NSString *_memberQueueTopic;
     NSURL *_memberQueueServerURL;
@@ -36,8 +39,11 @@
 @property(retain, nonatomic) NSURL *memberQueueServerURL; // @synthesize memberQueueServerURL=_memberQueueServerURL;
 @property(retain, nonatomic) NSString *memberQueueTopic; // @synthesize memberQueueTopic=_memberQueueTopic;
 @property(nonatomic) struct __SecIdentity *memberQueueIdentity; // @synthesize memberQueueIdentity=_memberQueueIdentity;
-@property(retain, nonatomic) NSString *memberQueueManagingProfileIdentifier; // @synthesize memberQueueManagingProfileIdentifier=_memberQueueManagingProfileIdentifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *memberQueue; // @synthesize memberQueue=_memberQueue;
+@property(retain, nonatomic) NSString *easEnrollmentID; // @synthesize easEnrollmentID=_easEnrollmentID;
+@property(retain, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
+@property(nonatomic) _Bool isUserEnrollment; // @synthesize isUserEnrollment=_isUserEnrollment;
+@property(retain, nonatomic) NSString *memberQueueManagingProfileIdentifier; // @synthesize memberQueueManagingProfileIdentifier=_memberQueueManagingProfileIdentifier;
 - (void).cxx_destruct;
 - (void)memberQueueForgetCurrentConfiguration;
 - (_Bool)readConfigurationOutError:(id *)arg1;

@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) TSPData *tspData; // @synthesize tspData=_tspData;
 - (void)setIsAudioOnly:(_Bool)arg1;
 - (_Bool)isAudioOnly;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

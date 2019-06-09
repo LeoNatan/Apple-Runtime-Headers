@@ -4,23 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUICore/PXSectionedDataSourceManager.h>
+#import <PhotosUICore/PXDataSectionManager.h>
 
-@class PXNavigationListDataSource;
+@class PHPhotoLibrary;
 @protocol PXNavigationRoot;
 
-@interface PXNavigationRootDataSourceManager : PXSectionedDataSourceManager
+@interface PXNavigationRootDataSourceManager : PXDataSectionManager
 {
     id <PXNavigationRoot> _navigationRoot;
+    PHPhotoLibrary *_photoLibrary;
 }
 
+@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(readonly, nonatomic) id <PXNavigationRoot> navigationRoot; // @synthesize navigationRoot=_navigationRoot;
 - (void).cxx_destruct;
-- (id)createInitialDataSource;
-- (id)initWithNavigationRoot:(id)arg1;
-
-// Remaining properties
-@property(readonly, nonatomic) PXNavigationListDataSource *dataSource; // @dynamic dataSource;
+- (id)createDataSection;
+- (id)initWithChildDataSectionManagers:(id)arg1;
+- (id)initWithNavigationRoot:(id)arg1 photoLibrary:(id)arg2;
 
 @end
 

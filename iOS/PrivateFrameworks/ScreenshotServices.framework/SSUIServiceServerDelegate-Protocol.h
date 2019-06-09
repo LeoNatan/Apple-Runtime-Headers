@@ -7,6 +7,6 @@
 @class SSUIServiceRequest, SSUIServiceServer;
 
 @protocol SSUIServiceServerDelegate
-- (void)server:(SSUIServiceServer *)arg1 receivedRequest:(SSUIServiceRequest *)arg2;
+- (void)server:(SSUIServiceServer *)arg1 handleRequest:(SSUIServiceRequest *)arg2 withCompletion:(void (^)(void))arg3;
 @end
 

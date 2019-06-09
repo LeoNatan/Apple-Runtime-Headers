@@ -29,11 +29,13 @@
     NSData *_appMetricsData;
     int _artworkDataHeightDeprecated;
     int _artworkDataWidthDeprecated;
+    NSString *_artworkFileURL;
     NSString *_artworkIdentifier;
     NSString *_artworkMIMEType;
     NSString *_artworkURL;
     NSData *_artworkURLTemplatesData;
     NSString *_assetURLString;
+    NSString *_brandIdentifier;
     int _chapterCount;
     NSString *_collectionIdentifier;
     NSData *_collectionInfoData;
@@ -144,6 +146,8 @@
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSString *brandIdentifier; // @synthesize brandIdentifier=_brandIdentifier;
+@property(retain, nonatomic) NSString *artworkFileURL; // @synthesize artworkFileURL=_artworkFileURL;
 @property(nonatomic) int episodeType; // @synthesize episodeType=_episodeType;
 @property(nonatomic) long long legacyUniqueIdentifier; // @synthesize legacyUniqueIdentifier=_legacyUniqueIdentifier;
 @property(retain, nonatomic) NSData *artworkURLTemplatesData; // @synthesize artworkURLTemplatesData=_artworkURLTemplatesData;
@@ -232,6 +236,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasBrandIdentifier;
+@property(readonly, nonatomic) _Bool hasArtworkFileURL;
 @property(nonatomic) _Bool hasEpisodeType;
 @property(nonatomic) _Bool hasLegacyUniqueIdentifier;
 @property(readonly, nonatomic) _Bool hasArtworkURLTemplatesData;

@@ -4,10 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WeatherFoundation/WFForecastDataParser.h>
+#import <objc/NSObject.h>
+
+#import <WeatherFoundation/WFForecastDataParser-Protocol.h>
+
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WFWeatherUndergroundParser : WFForecastDataParser
+@interface WFWeatherUndergroundParser : NSObject <WFForecastDataParser>
 {
 }
 
@@ -22,7 +26,14 @@ __attribute__((visibility("hidden")))
 - (id)sanitizedNumberForKeyPath:(id)arg1 dict:(id)arg2;
 - (void)logParsingErrorAtKeyPath:(id)arg1 error:(id *)arg2;
 - (id)parseHistoricalForecast:(id)arg1 date:(id)arg2 error:(id *)arg3;
-- (id)parseForecastData:(id)arg1 date:(id)arg2 error:(id *)arg3;
+- (id)parseForecastData:(id)arg1 types:(unsigned int)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6 rules:(id)arg7;
+- (id)parseForecastData:(id)arg1 types:(unsigned int)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

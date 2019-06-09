@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTextAttachment.h>
 
+__attribute__((visibility("hidden")))
 @interface MKEmptyTextAttachment : NSTextAttachment
 {
     double _width;

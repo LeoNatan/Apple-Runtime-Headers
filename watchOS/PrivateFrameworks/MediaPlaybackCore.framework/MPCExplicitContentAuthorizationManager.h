@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSError;
+@class ICAgeVerificationState, NSError;
 @protocol MPCExplicitContentAuthorizationDelegate;
 
 @interface MPCExplicitContentAuthorizationManager : NSObject
@@ -14,10 +14,12 @@
     id <MPCExplicitContentAuthorizationDelegate> _delegate;
     int _status;
     NSError *_authorizationError;
+    ICAgeVerificationState *_lastKnownAgeVerificationState;
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSError *authorizationError; // @synthesize authorizationError=_authorizationError;
+@property(copy, nonatomic) ICAgeVerificationState *lastKnownAgeVerificationState; // @synthesize lastKnownAgeVerificationState=_lastKnownAgeVerificationState;
+@property(copy, nonatomic) NSError *authorizationError; // @synthesize authorizationError=_authorizationError;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(nonatomic) __weak id <MPCExplicitContentAuthorizationDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -28,6 +30,8 @@
 - (void)_setupWithAgeGateForItem:(id)arg1;
 - (void)_updateAuthorizationStatusWithAuthorizationState:(id)arg1 forItem:(id)arg2;
 - (id)_retrieveAgeVerificationState;
+- (void)_handleAgeVerificationStateDidChangeNotification:(id)arg1;
+- (void)_setupNotifications;
 @property(readonly, nonatomic) int authorizationReason;
 - (id)_init;
 - (_Bool)isItemAuthorized:(id)arg1 shouldAskForAuthorization:(_Bool)arg2;

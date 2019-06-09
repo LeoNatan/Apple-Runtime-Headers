@@ -6,11 +6,22 @@
 
 #import <NeutrinoCore/NUAutoCalculator.h>
 
-@interface PISmartToneAutoCalculator : NUAutoCalculator
+#import <PhotoImaging/NUTimeBased-Protocol.h>
+
+@class NSString;
+
+@interface PISmartToneAutoCalculator : NUAutoCalculator <NUTimeBased>
 {
 }
 
-- (void)calculate:(CDUnknownBlockType)arg1;
+- (void)submit:(CDUnknownBlockType)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(nonatomic) CDStruct_1b6d18a9 time;
 
 @end
 

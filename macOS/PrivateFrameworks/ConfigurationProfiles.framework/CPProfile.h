@@ -61,6 +61,8 @@
 @property(readonly, retain) NSString *signerName;
 - (id)firstInvalidSignerCertificateData;
 @property(readonly) int verificationState;
+- (BOOL)hidden;
+- (BOOL)priv_ShouldBeHidden;
 - (BOOL)adminRemovalDisallowed;
 - (BOOL)removalPasswordMatches:(id)arg1;
 - (BOOL)haveRemovalPassword;
@@ -68,6 +70,7 @@
 @property(readonly, nonatomic) NSDate *effectiveRemovalDate;
 - (id)signerCertificatesInfo;
 @property(readonly, retain) NSDictionary *consentText;
+@property(readonly) long long targetDeviceType;
 @property(readonly, retain) NSString *profileScope;
 - (BOOL)payloadDisabled:(id)arg1;
 @property(readonly, nonatomic) BOOL payloadIsExpired;
@@ -80,7 +83,6 @@
 @property(readonly, nonatomic) BOOL wasEncrypted;
 - (void)setAuthorizationFromData:(id)arg1;
 @property(nonatomic) struct AuthorizationOpaqueRef *authorizationRef;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithConfigurationProfileDictionary:(id)arg1 error:(id *)arg2;
 - (id)initForProvisioningProfile:(id)arg1;

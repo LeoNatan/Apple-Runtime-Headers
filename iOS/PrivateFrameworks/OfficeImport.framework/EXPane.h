@@ -12,7 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)edPaneFromXMLPaneElement:(struct _xmlNode *)arg1;
-+ (void)initialize;
++ (id)paneStateEnumMap;
++ (id)activePaneTypeEnumMap;
 + (int)edActivePaneEnumFromString:(id)arg1;
 
 @end

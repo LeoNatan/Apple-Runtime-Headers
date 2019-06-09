@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString, NetDiagnosticsShim;
 
+__attribute__((visibility("hidden")))
 @interface NetDiagnosticProbe : TestProbe <NetDiagnosticsShimDelegate>
 {
     NetDiagnosticsShim *_netDiags;

@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (id)standardConfig;
 - (unsigned char)requestCounterInfoTypeForRequest:(id)arg1;
-- (int)dataRequestKindForRequest:(id)arg1;
+- (CDStruct_d1a7ebee)dataRequestKindForRequest:(id)arg1 traits:(id)arg2;
 - (unsigned int)urlType;
 
 @end

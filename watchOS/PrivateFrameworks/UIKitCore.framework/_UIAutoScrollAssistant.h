@@ -14,11 +14,12 @@ __attribute__((visibility("hidden")))
 {
     _Bool _started;
     UIScrollView *_scrollView;
+    int _mode;
     unsigned int _allowedDirections;
     CADisplayLink *_displayLink;
     id <_UIAutoScrollBehavior> _behavior;
-    double _repeatInterval;
     struct CGPoint _point;
+    struct CGPoint _referenceContentOffsetForPoint;
     double _lastTimestamp;
     struct UIEdgeInsets _touchInsets;
 }
@@ -26,16 +27,19 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <_UIAutoScrollBehavior> behavior; // @synthesize behavior=_behavior;
 @property(nonatomic) _Bool started; // @synthesize started=_started;
 @property(nonatomic) double lastTimestamp; // @synthesize lastTimestamp=_lastTimestamp;
-@property(nonatomic) struct CGPoint point; // @synthesize point=_point;
+@property(nonatomic) struct CGPoint referenceContentOffsetForPoint; // @synthesize referenceContentOffsetForPoint=_referenceContentOffsetForPoint;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 @property(nonatomic) unsigned int allowedDirections; // @synthesize allowedDirections=_allowedDirections;
 @property(nonatomic) struct UIEdgeInsets touchInsets; // @synthesize touchInsets=_touchInsets;
-@property(nonatomic) double repeatInterval; // @synthesize repeatInterval=_repeatInterval;
+@property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) __weak UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) struct CGPoint point; // @synthesize point=_point;
+- (void)setPoint:(struct CGPoint)arg1 forContentOffset:(struct CGPoint)arg2;
+- (void)_adjustPointToCurrentContentOffset;
 - (void)_handleAutoScrollerWithContentOffset:(struct CGPoint)arg1 direction:(unsigned int)arg2;
 - (void)displayLinkFired:(id)arg1;
-- (double)_interval;
+- (_Bool)_scrollContinuous;
 @property(readonly, nonatomic, getter=isActive) _Bool active;
 - (void)stop;
 - (void)autoScrollFromPoint:(struct CGPoint)arg1;

@@ -11,6 +11,7 @@
 
 @interface LAUIPearlGlyphView : UIView
 {
+    _Bool _inApplicationContext;
     _Bool _hideFace;
     _Bool _paused;
     _Bool _feedbackEnabled;
@@ -36,6 +37,7 @@
 @property(readonly, nonatomic) _Bool hideFace; // @synthesize hideFace=_hideFace;
 @property(readonly, nonatomic) UIColor *finishedColor; // @synthesize finishedColor=_finishedColor;
 @property(readonly, nonatomic) long long style; // @synthesize style=_style;
+@property(nonatomic) _Bool inApplicationContext; // @synthesize inApplicationContext=_inApplicationContext;
 - (void).cxx_destruct;
 - (id)initWithStyle:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

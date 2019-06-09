@@ -28,7 +28,7 @@
 - (void)withdrawBulletinsNotInList:(id)arg1;
 - (void)withdrawAllBulletins;
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
-- (void)addBulletin:(id)arg1 publicationDate:(id)arg2 sectionDisplayName:(id)arg3 attachment:(id)arg4 forDestinations:(unsigned int)arg5 updateType:(unsigned int)arg6 updateAttachment:(_Bool)arg7 sectionInfoStore:(id)arg8 universalSectionID:(id)arg9 replaceBulletinDidRepublish:(CDUnknownBlockType)arg10;
+- (void)addBulletin:(id)arg1 sectionDisplayName:(id)arg2 attachment:(id)arg3 forDestinations:(unsigned int)arg4 updateType:(unsigned int)arg5 updateAttachment:(_Bool)arg6 sectionInfoStore:(id)arg7 universalSectionID:(id)arg8 replaceBulletinDidRepublish:(CDUnknownBlockType)arg9;
 - (id)_dataProviderForSectionID:(id)arg1 withSectionDisplayName:(id)arg2 sectionInfoStore:(id)arg3 universalSectionID:(id)arg4;
 - (void)_handleSectionIconUpdated:(id)arg1;
 - (void)_removeDataProviderForSectionID:(id)arg1;

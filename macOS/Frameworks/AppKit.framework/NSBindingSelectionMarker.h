@@ -12,6 +12,8 @@
 {
 }
 
++ (id)defaultPlaceholderForMarker:(id)arg1 onClass:(Class)arg2 withBinding:(id)arg3;
++ (void)setDefaultPlaceholder:(id)arg1 forMarker:(id)arg2 onClass:(Class)arg3 withBinding:(id)arg4;
 + (id)notApplicableSelectionMarker;
 + (id)noSelectionMarker;
 + (id)multipleValuesSelectionMarker;

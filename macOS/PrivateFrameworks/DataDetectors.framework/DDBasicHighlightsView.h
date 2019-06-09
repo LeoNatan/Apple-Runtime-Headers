@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class CAMediaTimingFunction, DDHighlightButton, NSDate, NSString, NSTimer;
+@class CAMediaTimingFunction, DDHighlightButton, DDHighlightObject, NSDate, NSString, NSTimer;
 
 __attribute__((visibility("hidden")))
 @interface DDBasicHighlightsView : NSView
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     struct __DDHighlight *_highlight;
     DDHighlightButton *_button;
     int _state;
-    id _highlightObject;
+    DDHighlightObject *_highlightObject;
     unsigned long long _highlightStyle;
     struct CGRect _globalVisibleRect;
     NSString *_toolTipString;
@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL layerOnly; // @synthesize layerOnly=_layerOnly;
 @property(retain, nonatomic) NSString *toolTipString; // @synthesize toolTipString=_toolTipString;
 @property(nonatomic) unsigned long long highlightStyle; // @synthesize highlightStyle=_highlightStyle;
-@property(retain, nonatomic) id highlightObject; // @synthesize highlightObject=_highlightObject;
+@property(retain, nonatomic) DDHighlightObject *highlightObject; // @synthesize highlightObject=_highlightObject;
 - (void).cxx_destruct;
 - (void)highlight:(BOOL)arg1;
 - (void)drawRect:(struct CGRect)arg1;

@@ -4,25 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OfficeImport/WDRun.h>
+#import <OfficeImport/WDRunWithCharacterProperties.h>
 
-@class NSDate, WDCharacterProperties;
+@class NSDate;
 
 __attribute__((visibility("hidden")))
-@interface WDDateTime : WDRun
+@interface WDDateTime : WDRunWithCharacterProperties
 {
-    WDCharacterProperties *mProperties;
     NSDate *mDate;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (int)runType;
 - (id)date;
-- (void)clearProperties;
-- (void)setProperties:(id)arg1;
-- (id)properties;
 - (id)initWithParagraph:(id)arg1 date:(id)arg2;
-- (void)dealloc;
 
 @end
 

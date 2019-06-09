@@ -8,6 +8,7 @@
 
 @class CAGradientLayer;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGridViewGradientDecorationBackgroundView : UIView
 {
 }

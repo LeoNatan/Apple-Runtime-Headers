@@ -8,6 +8,7 @@
 
 @class AVOutputDeviceDiscoverySession, AVOutputDeviceDiscoverySessionAvailableOutputDevices;
 
+__attribute__((visibility("hidden")))
 @interface AVOutputDeviceDiscoverySessionController : NSObject
 {
     AVOutputDeviceDiscoverySession *_outputDeviceDiscoverySession;

@@ -8,7 +8,6 @@
 
 #import <PhotosUI/NSCopying-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface PUBadgeInfoPromise : NSObject <NSCopying>
 {
     CDUnknownBlockType _countProvider;

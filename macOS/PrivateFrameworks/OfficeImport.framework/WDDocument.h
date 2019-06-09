@@ -8,6 +8,7 @@
 
 @class NSDate, NSMutableArray, NSMutableSet, NSString, OADBackground, OADColorMap, WDCitationTable, WDFontTable, WDListDefinitionTable, WDListTable, WDRevisionAuthorTable, WDStyleSheet, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WDDocument : OCDDocument
 {
     WDStyleSheet *mStyleSheet;

@@ -6,12 +6,12 @@
 
 #import <RelevanceEngine/RERelevanceEngineSubsystem.h>
 
-#import <RelevanceEngine/RELoggable-Protocol.h>
+#import <RelevanceEngine/REDataSourceManagerProperties-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSSet, NSString, REConcurrentDictionary, REDataSourceLoader;
+@class NSArray, NSDictionary, NSMutableArray, NSSet, REConcurrentDictionary, REDataSourceLoader;
 @protocol REDataSourceManagerObserver;
 
-@interface REDataSourceManager : RERelevanceEngineSubsystem <RELoggable>
+@interface REDataSourceManager : RERelevanceEngineSubsystem <REDataSourceManagerProperties>
 {
     NSMutableArray *_dataSourceControllers;
     unsigned int _dataSourceState;
@@ -20,8 +20,10 @@
     NSDictionary *_identifierDataSourceMap;
     NSDictionary *_identifierApplicationIdentifierMap;
     NSDictionary *_identifierOperatingSystemVersionMap;
+    NSDictionary *_unmanagedDataSourcesMap;
     NSSet *_elementGroupSupportingConfigurations;
     REConcurrentDictionary *_elementGroupMap;
+    _Bool _ignoreAppInstallation;
     _Bool _completedFirstElementLoad;
     REDataSourceLoader *_loader;
     NSSet *_availableDataSourceIdentifiers;
@@ -39,7 +41,9 @@
 @property(retain) NSSet *availableDataSourceIdentifiers; // @synthesize availableDataSourceIdentifiers=_availableDataSourceIdentifiers;
 @property(readonly, nonatomic) REDataSourceLoader *loader; // @synthesize loader=_loader;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSSet *disabledDataSources;
+@property(readonly, nonatomic) NSArray *dataSourceControllers;
+@property(readonly, nonatomic) NSSet *unrestirctedDataSourceIdentifiers;
 - (void)_queue_availableDataSourcesDidChange;
 - (void)_handleApplicationStateChange;
 - (void)_queue_updateAvailableDataSourceIdentifiers;
@@ -55,12 +59,6 @@
 - (id)initWithRelevanceEngine:(id)arg1 dataSourceLoader:(id)arg2 withDelegate:(id)arg3;
 - (id)elementGroupForIdentifier:(id)arg1;
 - (Class)classForDataSourceIdentifier:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

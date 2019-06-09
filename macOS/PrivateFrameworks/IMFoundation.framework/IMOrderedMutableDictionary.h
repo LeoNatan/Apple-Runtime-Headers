@@ -6,20 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class IMDoubleLinkedList, NSMutableDictionary;
+#import <IMFoundation/NSFastEnumeration-Protocol.h>
 
-@interface IMOrderedMutableDictionary : NSObject
+@class NSArray, NSMutableDictionary, NSMutableOrderedSet;
+
+@interface IMOrderedMutableDictionary : NSObject <NSFastEnumeration>
 {
     NSMutableDictionary *_dictionary;
-    IMDoubleLinkedList *_linkedList;
+    NSMutableOrderedSet *_mutableOrderedSet;
+    NSArray *_orderedItems;
 }
 
+- (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (BOOL)containsKey:(id)arg1;
 - (BOOL)containsOrderedObject:(id)arg1;
 - (id)orderedObjects;
 - (void)removeOrderedObjectForKey:(id)arg1;
 - (id)orderedObjectForKey:(id)arg1;
 - (void)setOrderedObject:(id)arg1 forKey:(id)arg2;
+@property(readonly) unsigned long long count;
 - (void)dealloc;
 - (id)init;
 

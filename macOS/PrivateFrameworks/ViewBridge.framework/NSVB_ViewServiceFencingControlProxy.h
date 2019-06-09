@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)proxyWithTarget:(id)arg1 fencingController:(id)arg2 exportedProtocol:(id)arg3;
 - (void)__forgetFencingMessages;
 - (void)__endFencingMessagesForSendRight:(id)arg1;
-- (void)__beginFencingMessagesWithSendRight:(id)arg1;
+- (void)__beginFencingMessagesWithSendRight:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)dealloc;
 

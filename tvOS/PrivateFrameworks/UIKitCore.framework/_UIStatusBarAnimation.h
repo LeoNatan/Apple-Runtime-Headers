@@ -7,15 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/NSCopying-Protocol.h>
+#import <UIKitCore/_UIStatusBarPrioritized-Protocol.h>
 
 @class NSMutableArray, NSSet, NSString, _UIStatusBarIdentifier;
 
 __attribute__((visibility("hidden")))
-@interface _UIStatusBarAnimation : NSObject <NSCopying>
+@interface _UIStatusBarAnimation : NSObject <NSCopying, _UIStatusBarPrioritized>
 {
     _Bool _delaysAnimatingItems;
     _Bool _delaysDependentItems;
     _Bool _enabled;
+    long long _priority;
     _UIStatusBarIdentifier *_displayItemIdentifier;
     NSString *_identifier;
     NSString *_exclusivityGroupIdentifier;
@@ -23,7 +25,6 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _prepareBlock;
     NSSet *_delayedItemIdentifiers;
     NSSet *_delayedDisplayItemPlacements;
-    long long _priority;
     NSMutableArray *_subAnimations;
     _UIStatusBarAnimation *_parentAnimation;
     CDUnknownBlockType _animationBlock;
@@ -40,7 +41,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType animationBlock; // @synthesize animationBlock=_animationBlock;
 @property(nonatomic) __weak _UIStatusBarAnimation *parentAnimation; // @synthesize parentAnimation=_parentAnimation;
 @property(retain, nonatomic) NSMutableArray *subAnimations; // @synthesize subAnimations=_subAnimations;
-@property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(nonatomic) _Bool delaysDependentItems; // @synthesize delaysDependentItems=_delaysDependentItems;
 @property(nonatomic) _Bool delaysAnimatingItems; // @synthesize delaysAnimatingItems=_delaysAnimatingItems;
 @property(copy, nonatomic) NSSet *delayedDisplayItemPlacements; // @synthesize delayedDisplayItemPlacements=_delayedDisplayItemPlacements;
@@ -50,6 +50,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *exclusivityGroupIdentifier; // @synthesize exclusivityGroupIdentifier=_exclusivityGroupIdentifier;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy, nonatomic) _UIStatusBarIdentifier *displayItemIdentifier; // @synthesize displayItemIdentifier=_displayItemIdentifier;
+@property(nonatomic) long long priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
 - (id)description;
 - (id)_dependentItemIdentifiersEnabledOnly:(_Bool)arg1;

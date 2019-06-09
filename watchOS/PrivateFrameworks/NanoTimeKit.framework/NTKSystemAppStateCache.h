@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <NanoTimeKit/LSApplicationWorkspaceObserverProtocol-Protocol.h>
+#import <NanoTimeKit/NTKSystemAppStateCache-Protocol.h>
 
 @class NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NTKSystemAppStateCache : NSObject <LSApplicationWorkspaceObserverProtocol>
+@interface NTKSystemAppStateCache : NSObject <LSApplicationWorkspaceObserverProtocol, NTKSystemAppStateCache>
 {
     NSMutableSet *_restrictedSystemApps;
     NSMutableSet *_removedSystemApps;

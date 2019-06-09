@@ -6,7 +6,7 @@
 
 #import <Photos/NSObject-Protocol.h>
 
-@class IPAMetadata, NSDate, NSMutableDictionary, NSSet, NSString, NSURL;
+@class IPAMetadata, NSArray, NSDate, NSMutableDictionary, NSSet, NSString, NSURL, PHPhotoLibrary;
 @protocol PHImportDuplicateCheckerItem;
 
 @protocol PHImportDuplicateCheckerItem <NSObject>
@@ -29,7 +29,7 @@
 @property(readonly) NSURL *url;
 @property(readonly) id uuid;
 - (void)loadMetadataSync;
-- (NSSet *)duplicateAssetsForLibrary:(NSString *)arg1;
+- (NSArray *)duplicateAssetsForLibrary:(PHPhotoLibrary *)arg1;
 - (void)setDuplicates:(NSSet *)arg1 forLibrary:(NSString *)arg2;
 @end
 

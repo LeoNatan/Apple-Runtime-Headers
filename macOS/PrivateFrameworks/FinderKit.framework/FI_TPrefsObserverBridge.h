@@ -6,14 +6,21 @@
 
 #import <objc/NSObject.h>
 
+#import <FinderKit/TMarkTornDown-Protocol.h>
+
+@class NSString;
+
 __attribute__((visibility("hidden")))
-@interface FI_TPrefsObserverBridge : NSObject
+@interface FI_TPrefsObserverBridge : NSObject <TMarkTornDown>
 {
     struct IPrefsObserver *_observer;
-    struct set<TString, std::__1::less<TString>, std::__1::allocator<TString>> _globalKeysBeingObserved;
-    struct set<UDefaults::RegistryID, std::__1::less<UDefaults::RegistryID>, std::__1::allocator<UDefaults::RegistryID>> _regIDsBeingObserved;
+    struct map<TString, TNotificationCenterObserver, std::__1::less<TString>, std::__1::allocator<std::__1::pair<const TString, TNotificationCenterObserver>>> _globalKeysToObserverMap;
+    struct map<UDefaults::RegistryID, TNotificationCenterObserver, std::__1::less<UDefaults::RegistryID>, std::__1::allocator<std::__1::pair<const UDefaults::RegistryID, TNotificationCenterObserver>>> _regIDsToObserverMap;
+    struct TNotificationCenterObserver _finderPrefsResetObserver;
+    _Bool _isTornDown;
 }
 
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)stopObservingAllPrefsChanges;
@@ -27,6 +34,12 @@ __attribute__((visibility("hidden")))
 - (void)startObservingRegIDChanges:(int)arg1;
 - (void)aboutToTearDown;
 - (id)initWithObserver:(struct IPrefsObserver *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

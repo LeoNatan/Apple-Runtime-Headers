@@ -8,5 +8,15 @@
 
 @interface NSComboBox (ASKContainerName)
 + (id)containerName_ask;
+- (void)removeFromComboBoxItemsAtIndex:(unsigned long long)arg1;
+- (void)removeComboBoxItem:(id)arg1;
+- (void)insertInComboBoxItems:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)addInComboBoxItems:(id)arg1;
+- (id)comboBoxItemAtIndex:(unsigned long long)arg1;
+- (id)comboBoxItems;
+- (void)setIntercellSpacing_ask:(id)arg1;
+- (id)intercellSpacing_ask;
+- (void)setIndexOfSelectedItem_ask:(long long)arg1;
+- (long long)indexOfSelectedItem_ask;
 @end
 

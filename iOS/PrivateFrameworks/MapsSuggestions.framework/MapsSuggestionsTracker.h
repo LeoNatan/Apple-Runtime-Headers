@@ -8,8 +8,8 @@
 
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 
-@class CLLocation, GEOAutomobileOptions, GEOLocationShifter, MapsSuggestionsCanKicker, MapsSuggestionsDonater, MapsSuggestionsETARequester, MapsSuggestionsETARequirements, MapsSuggestionsManager, MapsSuggestionsMutableWeakEntries, MapsSuggestionsNetworkRequester, NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@class CLLocation, GEOAutomobileOptions, GEOLocationShifter, MapsSuggestionsCanKicker, MapsSuggestionsDonater, MapsSuggestionsETARequester, MapsSuggestionsETARequirements, MapsSuggestionsFlightUpdater, MapsSuggestionsManager, MapsSuggestionsMutableWeakEntries, MapsSuggestionsNetworkRequester, MapsSuggestionsPredictor, NSMutableDictionary, NSString;
+@protocol MapsSuggestionsFlightRequester, OS_dispatch_queue, OS_dispatch_source;
 
 @interface MapsSuggestionsTracker : NSObject <MapsSuggestionsObject>
 {
@@ -27,15 +27,20 @@
     MapsSuggestionsDonater *_donater;
     MapsSuggestionsCanKicker *_currentLocationWiper;
     NSMutableDictionary *_previousETAs;
+    id _transportTypeChangedListener;
+    id <MapsSuggestionsFlightRequester> _flightRequester;
+    MapsSuggestionsFlightUpdater *_flightUpdater;
     int _mapType;
     MapsSuggestionsETARequirements *_requirements;
     GEOAutomobileOptions *_automobileOptions;
     CLLocation *_currentLocation;
     MapsSuggestionsMutableWeakEntries *_trackedEntries;
     MapsSuggestionsNetworkRequester *_networkRequester;
+    MapsSuggestionsPredictor *_predictor;
 }
 
 + (_Bool)_isLocationShiftRequiredForLocation:(id)arg1;
+@property(retain, nonatomic) MapsSuggestionsPredictor *predictor; // @synthesize predictor=_predictor;
 @property(retain, nonatomic) MapsSuggestionsNetworkRequester *networkRequester; // @synthesize networkRequester=_networkRequester;
 @property(retain, nonatomic) MapsSuggestionsMutableWeakEntries *trackedEntries; // @synthesize trackedEntries=_trackedEntries;
 @property(retain) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
@@ -55,6 +60,7 @@
 - (void)_refresh;
 - (void)_scheduleRefreshIfCurrentLocationIsMuchBetterThanLocation:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)_requestFlightInfo;
 - (void)_requestETAs;
 - (void)_requestDistances;
 - (void)_decorateEntry:(id)arg1 eta:(id)arg2;

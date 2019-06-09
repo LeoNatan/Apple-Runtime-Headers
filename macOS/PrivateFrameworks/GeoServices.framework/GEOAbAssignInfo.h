@@ -13,18 +13,20 @@
 @interface GEOAbAssignInfo : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
+    NSString *_abAssignId;
     unsigned long long _createdAtTimestamp;
     unsigned long long _relativeTimestamp;
-    NSString *_abAssignId;
     struct {
-        unsigned int createdAtTimestamp:1;
-        unsigned int relativeTimestamp:1;
-    } _has;
+        unsigned int has_createdAtTimestamp:1;
+        unsigned int has_relativeTimestamp:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned long long relativeTimestamp; // @synthesize relativeTimestamp=_relativeTimestamp;
-@property(retain, nonatomic) NSString *abAssignId; // @synthesize abAssignId=_abAssignId;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hasCreatedAtTimestamp;
+@property(nonatomic) unsigned long long createdAtTimestamp;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,15 +35,16 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasRelativeTimestamp;
+@property(nonatomic) unsigned long long relativeTimestamp;
+@property(retain, nonatomic) NSString *abAssignId;
 @property(readonly, nonatomic) BOOL hasAbAssignId;
 - (void)refreshRelativeTimeStampWithEventTime:(double)arg1;
 - (void)refreshRelativeTimeStamp;
 - (id)initWithAbAssignId:(id)arg1 createdAtDate:(id)arg2;
-@property(nonatomic) BOOL hasCreatedAtTimestamp;
-@property(nonatomic) unsigned long long createdAtTimestamp;
 
 @end
 

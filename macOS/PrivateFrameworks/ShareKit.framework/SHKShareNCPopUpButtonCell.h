@@ -6,6 +6,7 @@
 
 #import <ShareKit/SHKSharePopUpButtonCell.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKShareNCPopUpButtonCell : SHKSharePopUpButtonCell
 {
 }

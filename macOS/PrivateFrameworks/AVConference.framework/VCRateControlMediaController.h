@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     BOOL _isBasebandFlushing;
     BOOL _isAudioStall;
     BOOL _isInThrottlingMode;
+    BOOL _allowVideoStop;
     int _audioFractionTier;
     double _lastAudioFractionChangeTime;
     double _lastAudioEnoughRateTime;
@@ -68,6 +69,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int afrcRemoteEstimatedBandwidth; // @synthesize afrcRemoteEstimatedBandwidth=_afrcRemoteEstimatedBandwidth;
 @property(nonatomic) BOOL shouldDisableLargeFrameRequestsWhenInitialRampUp; // @synthesize shouldDisableLargeFrameRequestsWhenInitialRampUp=_shouldDisableLargeFrameRequestsWhenInitialRampUp;
 @property(nonatomic) BOOL isRateLimitedMaxTimeExceeded; // @synthesize isRateLimitedMaxTimeExceeded=_isRateLimitedMaxTimeExceeded;
+@property(nonatomic) BOOL allowVideoStop; // @synthesize allowVideoStop=_allowVideoStop;
 @property(readonly, nonatomic) BOOL isInThrottlingMode; // @synthesize isInThrottlingMode=_isInThrottlingMode;
 @property(nonatomic) BOOL isAudioOnly; // @synthesize isAudioOnly=_isAudioOnly;
 @property(nonatomic) BOOL isSenderProbingEnabled; // @synthesize isSenderProbingEnabled=_isSenderProbingEnabled;
@@ -89,6 +91,7 @@ __attribute__((visibility("hidden")))
 - (void)increaseBasebandFlushCountInternallyWithSuggestion:(struct VCRateControlMediaSuggestion *)arg1;
 - (BOOL)increaseFlushCountForVideoRefresh:(int)arg1 transactionID:(unsigned short)arg2;
 - (void)recordVideoRefreshFrameWithTimestamp:(unsigned int)arg1 payloadType:(unsigned char)arg2 packetCount:(unsigned int)arg3 isKeyFrame:(BOOL)arg4;
+- (void)resetAFRCVideoSendingBitrate;
 - (void)scheduleProbingSequenceWithFrameSize:(unsigned int)arg1 paddingBytes:(unsigned int)arg2 isProbingSequenceScheduled:(char *)arg3;
 @property(readonly, nonatomic) unsigned int probingSequencePacketSize; // @synthesize probingSequencePacketSize=_probingSequencePacketSize;
 @property(readonly, nonatomic) unsigned int probingSequencePacketCount; // @synthesize probingSequencePacketCount=_probingSequencePacketCount;
@@ -101,8 +104,8 @@ __attribute__((visibility("hidden")))
 - (void)resumeVideoByVCRateControl;
 - (void)stopVideoByVCRateControl;
 - (void)pauseVideoByUser:(BOOL)arg1;
-- (void)updateBasebandSuggestionWithStatistics:(CDStruct_48a7b5a5)arg1;
-- (void)computePacketLossWithTimestamp:(unsigned short)arg1 totalRemoteReceivedPackets:(unsigned int)arg2 packetBurstLoss:(unsigned int)arg3 packetLossRate:(double *)arg4 mostBurstLoss:(unsigned int *)arg5;
+- (void)updateBasebandSuggestionWithStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)computePacketLossWithRemoteInfo:(struct VCRCMediaPLPFromRemoteInfo *)arg1;
 - (void)getMediaQueueRateChangeCounter:(unsigned int *)arg1 rateChangeTime:(double *)arg2;
 - (void)getMediaQueueInVideoBitrate:(double *)arg1 outVideoBitrate:(double *)arg2 inAudioBitrate:(double *)arg3 outAudioBitrate:(double *)arg4;
 - (void)enableBasebandLogDump:(void *)arg1;

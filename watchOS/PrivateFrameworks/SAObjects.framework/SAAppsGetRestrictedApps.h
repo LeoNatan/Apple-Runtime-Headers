@@ -6,7 +6,7 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
-@class NSArray;
+@class NSArray, NSString;
 
 @interface SAAppsGetRestrictedApps : SABaseClientBoundCommand
 {
@@ -16,6 +16,7 @@
 + (id)getRestrictedApps;
 - (_Bool)mutatingCommand;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *executionEnvironment;
 @property(copy, nonatomic) NSArray *appIds;
 - (id)encodedClassName;
 - (id)groupIdentifier;

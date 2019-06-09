@@ -51,9 +51,12 @@
 - (id)_prepareServiceGroupPayload;
 - (void)_updateCameraProfilesTable:(id)arg1;
 - (void)_updateAssociatedServicesTable:(id)arg1;
-- (id)_updateAssociatedService:(id)arg1 associatedCameras:(id)arg2;
-- (id)_gatherServices;
-- (void)configureBulletinNotification:(CDUnknownBlockType)arg1;
+- (void)_updateAssociatedServices:(id)arg1 associatedCameras:(id)arg2;
+- (void)_configureServices;
+- (id)_cameraNotificationGeneratingServicesForAccessory:(id)arg1;
+- (id)_accessoriesInRoom:(id)arg1 ofHome:(id)arg2;
+- (_Bool)_isDefaultRoom:(id)arg1 ofHome:(id)arg2;
+- (void)configureBulletinNotification;
 - (_Bool)_isNotificationGeneratingService:(id)arg1;
 - (_Bool)_isAlarmService:(id)arg1;
 - (_Bool)_isSupportedAssociationService:(id)arg1;

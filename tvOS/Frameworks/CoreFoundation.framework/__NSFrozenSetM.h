@@ -15,7 +15,9 @@ __attribute__((visibility("hidden")))
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (void)getObjects:(id *)arg1 count:(unsigned long long)arg2;
 - (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
@@ -23,6 +25,8 @@ __attribute__((visibility("hidden")))
 - (double)clumpingInterestingThreshold;
 - (double)clumpingFactor;
 - (id)objectEnumerator;
+- (unsigned long long)countForObject:(id)arg1;
+- (_Bool)containsObject:(id)arg1;
 - (id)member:(id)arg1;
 - (unsigned long long)count;
 

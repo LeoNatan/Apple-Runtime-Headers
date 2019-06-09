@@ -8,17 +8,29 @@
 
 #import <FileProvider/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class NSError, NSString;
 
 @interface NSFileProviderDomain : NSObject <NSSecureCoding>
 {
+    _Bool _disconnected;
+    _Bool _hidden;
+    _Bool _containsPhotos;
     NSString *_identifier;
     NSString *_displayName;
     NSString *_pathRelativeToDocumentStorage;
+    NSString *_symLinkName;
+    NSError *_error;
+    NSString *_personaIdentifier;
 }
 
 + (id)domainFromPlistDictionary:(id)arg1 identifier:(id)arg2;
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSString *personaIdentifier; // @synthesize personaIdentifier=_personaIdentifier;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(nonatomic) _Bool containsPhotos; // @synthesize containsPhotos=_containsPhotos;
+@property(copy, nonatomic) NSString *symLinkName; // @synthesize symLinkName=_symLinkName;
+@property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
+@property(getter=isDisconnected) _Bool disconnected; // @synthesize disconnected=_disconnected;
 @property(readonly, copy) NSString *pathRelativeToDocumentStorage; // @synthesize pathRelativeToDocumentStorage=_pathRelativeToDocumentStorage;
 @property(readonly, copy) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy) NSString *identifier; // @synthesize identifier=_identifier;
@@ -27,6 +39,7 @@
 - (id)plistDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 displayName:(id)arg2 pathRelativeToDocumentStorage:(id)arg3 hidden:(_Bool)arg4;
 - (id)initWithIdentifier:(id)arg1 displayName:(id)arg2 pathRelativeToDocumentStorage:(id)arg3;
 
 @end

@@ -18,9 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (CDStruct_d1a7ebee)dataRequestKind;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 auditToken:(id)arg2 timeout:(int)arg3 networkActivity:(CDUnknownBlockType)arg4;
 - (id)description;
 - (id)initWithComponents:(id)arg1 identifier:(id)arg2 resultProviderID:(int)arg3 contentProvider:(id)arg4 traits:(id)arg5;
+- (id)initWithTraits:(id)arg1;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class PSSpecifier;
 
+__attribute__((visibility("hidden")))
 @interface STIncludeWebsiteDataGroupSpecifierProvider : STRootGroupSpecifierProvider
 {
     PSSpecifier *_toggleIncludeWebsiteDataSpecifier;

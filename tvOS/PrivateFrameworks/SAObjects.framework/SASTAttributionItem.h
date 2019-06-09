@@ -19,7 +19,8 @@
 + (id)attributionItem;
 @property(copy, nonatomic) NSString *text;
 @property(retain, nonatomic) SAUINanoImageResource *imageResource;
-@property(retain, nonatomic) id <SASTTemplateAction> action; // @dynamic action;
+@property(copy, nonatomic) NSString *attributionPosition;
+@property(retain, nonatomic) id <SASTTemplateAction> action;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

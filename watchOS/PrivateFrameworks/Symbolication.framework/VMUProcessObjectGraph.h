@@ -28,7 +28,6 @@
     VMURangeToStringMap *_regionSymbolNameRanges;
     _Bool _gotObjcClassStructureRanges;
     _Bool _showRawClassNames;
-    _Bool _javaScriptCoreUsingPoisoning;
     NSDictionary *_pthreadOffsets;
     VMUNodeToStringMap *_nodeLabels;
     void *_userMarked;
@@ -40,7 +39,6 @@
 }
 
 @property(nonatomic) _Bool showsPhysFootprint; // @synthesize showsPhysFootprint=_showsPhysFootprint;
-@property(nonatomic) _Bool javaScriptCoreUsingPoisoning; // @synthesize javaScriptCoreUsingPoisoning=_javaScriptCoreUsingPoisoning;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
 @property(nonatomic) unsigned long long physicalFootprintPeak; // @synthesize physicalFootprintPeak=_physicalFootprintPeak;
 @property(nonatomic) unsigned long long physicalFootprint; // @synthesize physicalFootprint=_physicalFootprint;
@@ -52,7 +50,9 @@
 @property(readonly, nonatomic) unsigned int vmPageSize; // @synthesize vmPageSize=_kernPageSize;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
-- (void)markReachableNodesFromRoots:(void *)arg1 inMap:(void *)arg2 showLeakedVMregions:(_Bool)arg3;
+- (_Bool)nodeDetailIsAutoreleasePoolContentPage:(CDStruct_599faf0f)arg1;
+- (_Bool)nodeIsAutoreleasePoolContentPage:(unsigned int)arg1;
+- (void)markReachableNodesFromRoots:(void *)arg1 inMap:(void *)arg2 options:(unsigned int)arg3;
 - (void)markReachableNodesFromRoots:(void *)arg1 inMap:(void *)arg2;
 - (void)refineEdges:(unsigned int)arg1 withOptions:(unsigned int)arg2 markingInvalid:(void *)arg3;
 - (void)refineTypesWithOverlay:(id)arg1;
@@ -100,7 +100,7 @@
 - (void)setThreadName:(id)arg1 forRange:(struct _VMURange)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned int)arg2;
-- (id)initWithArchived:(id)arg1 version:(int)arg2 options:(unsigned int)arg3;
+- (id)initWithArchived:(id)arg1 version:(int)arg2 options:(unsigned int)arg3 diskLogs:(id)arg4;
 - (void)dealloc;
 - (id)initWithPid:(int)arg1 nodes:(struct _VMUBlockNode *)arg2 nodeCount:(unsigned int)arg3 zoneNames:(id)arg4 classInfoMap:(id)arg5 regions:(id)arg6 pthreadOffsets:(id)arg7 userMarked:(void *)arg8;
 

@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mColorAdjustMap;
 }
 
+- (void).cxx_destruct;
 - (id)ensureColorAdjustWithType:(int)arg1;
 - (id)colorAdjustWithType:(int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

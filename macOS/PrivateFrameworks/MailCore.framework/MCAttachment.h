@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MCFileWrapper, MCStationeryCompositeImage, NSData, NSDate, NSError, NSImage, NSNumber, NSProgress, NSString, NSURL;
+@class ECAngleBracketIDHash, MCFileWrapper, NSData, NSDate, NSError, NSImage, NSNumber, NSProgress, NSString, NSURL;
 @protocol MCAttachmentDataSource;
 
 @interface MCAttachment : NSObject
@@ -20,7 +20,6 @@
     BOOL _isAutoArchiveAttachment;
     NSURL *_remoteURL;
     struct CGSize _resizedImageSize;
-    BOOL _isPlayableByQTKit;
     BOOL _isMailDropImageArchive;
     BOOL _isMailDropImageThumbnail;
     BOOL _isMailDropIndividualImage;
@@ -47,8 +46,6 @@
     NSNumber *_mimeEncodedContentLength;
     NSString *_mimeType;
     NSString *_extension;
-    NSString *_mailSpecialHandlingType;
-    MCStationeryCompositeImage *_stationeryCompositeImage;
     NSData *_resizedData;
     NSString *_originalFilename;
     NSString *_originalMimeType;
@@ -62,8 +59,6 @@
 @property(copy, nonatomic) NSString *originalFilename; // @synthesize originalFilename=_originalFilename;
 @property(readonly, copy, nonatomic) NSData *resizedData; // @synthesize resizedData=_resizedData;
 @property(nonatomic) BOOL isCalendarInvitation; // @synthesize isCalendarInvitation=_isCalendarInvitation;
-@property(retain, nonatomic) MCStationeryCompositeImage *stationeryCompositeImage; // @synthesize stationeryCompositeImage=_stationeryCompositeImage;
-@property(copy, nonatomic) NSString *mailSpecialHandlingType; // @synthesize mailSpecialHandlingType=_mailSpecialHandlingType;
 @property(nonatomic) BOOL shouldHideExtension; // @synthesize shouldHideExtension=_shouldHideExtension;
 @property(copy, nonatomic) NSString *extension; // @synthesize extension=_extension;
 @property(nonatomic) unsigned int creator; // @synthesize creator=_creator;
@@ -82,7 +77,6 @@
 @property(nonatomic) BOOL isMailDropIndividualImage; // @synthesize isMailDropIndividualImage=_isMailDropIndividualImage;
 @property(nonatomic) BOOL isMailDropImageThumbnail; // @synthesize isMailDropImageThumbnail=_isMailDropImageThumbnail;
 @property(nonatomic) BOOL isMailDropImageArchive; // @synthesize isMailDropImageArchive=_isMailDropImageArchive;
-@property(nonatomic) BOOL isPlayableByQTKit; // @synthesize isPlayableByQTKit=_isPlayableByQTKit;
 @property(copy, nonatomic) NSString *cloudKitRecordName; // @synthesize cloudKitRecordName=_cloudKitRecordName;
 @property(retain, nonatomic) NSError *downloadError; // @synthesize downloadError=_downloadError;
 @property(retain, nonatomic) NSDate *downloadURLExpiration; // @synthesize downloadURLExpiration=_downloadURLExpiration;
@@ -107,14 +101,11 @@
 - (id)fileWrapperForAccessLevel:(long long)arg1 error:(id *)arg2;
 @property(retain, nonatomic) MCFileWrapper *cachedFetchedFileWrapper;
 @property(readonly, nonatomic) BOOL couldConfuseWindowsClients;
-- (void)takeNewDataFromPath:(id)arg1;
-@property(nonatomic) BOOL isPartOfStationery;
 @property(readonly, nonatomic) BOOL isRemotelyAccessed;
 - (void)isImage:(char *)arg1 isPDF:(char *)arg2 bestMimeType:(id *)arg3;
 - (BOOL)isAnimatedImageForAccessLevel:(long long)arg1;
 @property(readonly, nonatomic) BOOL isPDF;
 @property(readonly, nonatomic) BOOL isImage;
-@property(readonly, nonatomic) BOOL isStationeryCompositeImage;
 @property(readonly, nonatomic) BOOL isAudio;
 @property(readonly, nonatomic) BOOL isVideo;
 - (void)getTypeIdentifier:(id *)arg1 andPedigree:(id *)arg2;
@@ -130,7 +121,7 @@
 @property(readonly, nonatomic) BOOL isFullSize;
 - (void)revertToOriginalData;
 - (void)setResizedData:(id)arg1 imageSize:(struct CGSize)arg2;
-@property(readonly, copy, nonatomic) NSString *contentIDHash;
+@property(readonly, copy, nonatomic) ECAngleBracketIDHash *contentIDHash;
 @property(retain, nonatomic) NSURL *remoteURL;
 - (id)_cleanImageMetadataFromData:(id)arg1;
 - (id)_privateImageMetadataDescriptors;
@@ -140,7 +131,6 @@
 - (id)init;
 - (id)initWithFileURL:(id)arg1;
 - (id)initWithMimePart:(id)arg1;
-- (id)initWithStationeryCompositeImage:(id)arg1;
 - (id)initWithFileWrapper:(id)arg1;
 - (id)initWithMailInternalData:(id)arg1;
 - (id)initWithData:(id)arg1;

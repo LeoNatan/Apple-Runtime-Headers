@@ -9,31 +9,47 @@
 #import <PepperUICore/PUICCollectionViewSection-Protocol.h>
 
 @class NSArray, NSString;
+@protocol PUICEmojiSectionDelegate;
 
 @interface PUICEmojiSection : NSObject <PUICCollectionViewSection>
 {
     NSArray *_frequentlyUsedEmojiArray;
+    NSArray *_recentAnimojiStickers;
+    NSArray *_recentStickers;
+    int _recentAnimojiStickersStartIndex;
+    int _recentStickersStartIndex;
+    int _recentsChangedToken;
     _Bool _showHeader;
+    _Bool _showStickers;
     NSString *_categoryIdentifier;
     NSString *_language;
+    unsigned int _recentCount;
+    id <PUICEmojiSectionDelegate> _delegate;
 }
 
 + (id)headerReuseIdentifier;
 + (Class)headerClass;
 + (id)cellReuseIdentifier;
 + (Class)cellClass;
+@property(nonatomic) __weak id <PUICEmojiSectionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) unsigned int recentCount; // @synthesize recentCount=_recentCount;
+@property(nonatomic) _Bool showStickers; // @synthesize showStickers=_showStickers;
 @property(nonatomic) _Bool showHeader; // @synthesize showHeader=_showHeader;
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(readonly, copy, nonatomic) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 - (void).cxx_destruct;
+- (void)_updateWithRecents:(id)arg1;
+- (void)_loadRecents;
 - (void)_populateFrequentlyUsedList;
 - (void)configureHeaderView:(id)arg1;
 - (void)configureCell:(id)arg1 forItem:(int)arg2;
 - (int)numberOfItems;
 - (id)indexItem;
+- (id)emojiOrStickerAtIndex:(int)arg1;
 - (id)displayEmojiStringAtIndex:(int)arg1;
 - (id)emojiAtIndex:(int)arg1;
-- (id)initWithCategoryIdentifier:(id)arg1 withHeader:(_Bool)arg2;
+- (void)dealloc;
+- (id)initWithDelegate:(id)arg1 categoryIdentifier:(id)arg2 withHeader:(_Bool)arg3 showStickers:(_Bool)arg4;
 - (id)initWithCategoryIdentifier:(id)arg1;
 
 // Remaining properties

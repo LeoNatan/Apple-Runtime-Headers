@@ -10,6 +10,7 @@
 @class INSpeakableString;
 
 @protocol INCreateTimerIntentExport <NSObject, JSExport>
+@property long long type;
 @property double duration;
 @property(copy) INSpeakableString *label;
 - (id)init;

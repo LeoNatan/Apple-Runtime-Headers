@@ -11,7 +11,7 @@
 #import <AppKit/NSPasteboardWriting-Protocol.h>
 #import <AppKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSColor, NSData, NSString, _NSImageAuxiliary;
+@class NSArray, NSColor, NSData, NSImageRep, NSString;
 @protocol NSImageDelegate;
 
 @interface NSImage : NSObject <NSCopying, NSSecureCoding, NSPasteboardReading, NSPasteboardWriting>
@@ -43,7 +43,14 @@
         unsigned int reserved1:8;
     } _flags;
     id _reps;
-    _NSImageAuxiliary *_imageAuxiliary;
+    id _imageAuxiliary;
+    NSColor *_backgroundColor;
+    id <NSImageDelegate> _imageDelegate;
+    struct CGRect _alignmentRectInNormalizedCoordinates;
+    NSImageRep *_cachedRep;
+    NSString *_accessibilityDescriptionBacking;
+    struct NSEdgeInsets _capInsets;
+    long long _resizingMode;
 }
 
 + (id)imageUnfilteredPasteboardTypes;
@@ -54,7 +61,6 @@
 + (id)imageTypes;
 + (void)_invalidateImageTypeCaches;
 + (id)readableTypesForPasteboard:(id)arg1;
-+ (BOOL)_requireDefaultEndianPremultipliedLastForTIFFDataFromSnapshotReps;
 + (id)imageWithSize:(struct CGSize)arg1 drawHandler:(CDUnknownBlockType)arg2;
 + (id)imageWithSize:(struct CGSize)arg1 drawingIsFlipped:(BOOL)arg2 drawHandler:(CDUnknownBlockType)arg3;
 + (id)imageWithSize:(struct CGSize)arg1 flipped:(BOOL)arg2 drawingHandler:(CDUnknownBlockType)arg3;
@@ -76,6 +82,7 @@
 + (id)_templateImageWithImage:(id)arg1;
 + (id)_emblemForCount:(long long)arg1;
 @property(retain, setter=_setReps:) id _reps; // @synthesize _reps;
+- (void).cxx_destruct;
 - (id)layerContentsForContentsScale:(double)arg1;
 - (double)recommendedLayerContentsScale:(double)arg1;
 - (id)pasteboardPropertyListForType:(id)arg1;
@@ -103,6 +110,7 @@
 - (void)_dispatchImageDidNotDraw:(id)arg1;
 - (id)_imageDidNotDrawHandlerRep;
 - (struct CGImage *)CGImageForProposedRect:(struct CGRect *)arg1 context:(id)arg2 hints:(id)arg3;
+- (void)_drawMappingAlignmentRectToRect:(struct CGRect)arg1 withState:(unsigned long long)arg2 backgroundStyle:(int)arg3 tintColor:(id)arg4 operation:(unsigned long long)arg5 fraction:(double)arg6 flip:(BOOL)arg7 hints:(id)arg8;
 - (void)_drawMappingAlignmentRectToRect:(struct CGRect)arg1 withState:(unsigned long long)arg2 backgroundStyle:(int)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5 flip:(BOOL)arg6 hints:(id)arg7;
 - (void)drawInRect:(struct CGRect)arg1;
 - (void)drawInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4 respectFlipped:(BOOL)arg5 hints:(id)arg6;
@@ -124,7 +132,6 @@
 @property struct CGRect alignmentRect;
 - (void)_setAlignmentRectInNormalizedCoordinates:(struct CGRect)arg1;
 - (struct CGRect)_alignmentRectInNormalizedCoordinates;
-- (BOOL)_hasMultipleStates;
 @property(getter=isTemplate) BOOL template;
 - (BOOL)hasAlpha;
 - (BOOL)_antialiased;
@@ -139,8 +146,6 @@
 @property struct CGSize size;
 @property __weak id <NSImageDelegate> delegate;
 @property(copy) NSColor *backgroundColor;
-- (void)_imageLevel_setBackgroundColor:(id)arg1;
-- (id)_imageLevel_backgroundColor;
 - (id)name;
 - (BOOL)setName:(id)arg1;
 - (void)cancelIncrementalLoad;
@@ -149,9 +154,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (void)_deallocAuxiliaryStorage;
-- (void)_allocAuxiliaryStorage;
-- (void)_failsafeAllocAuxiliaryStorage;
 - (id)initWithISIcon:(id)arg1;
 - (id)_initWithIconRef:(struct OpaqueIconRef *)arg1 includeThumbnail:(BOOL)arg2;
 - (id)initWithIconRef:(struct OpaqueIconRef *)arg1;
@@ -190,8 +192,7 @@
 - (void)_usingRepresentationsPerformBlock:(CDUnknownBlockType)arg1;
 - (void)_usingRepProviderPerformBlock:(CDUnknownBlockType)arg1;
 - (void)_setRepProvider:(id)arg1;
-- (id)_processedHintsForHints:(id)arg1 includeOnlyIfAvailable:(BOOL)arg2;
-- (id)_defaultImageHintsAndOnlyIfAvailable:(BOOL)arg1;
+- (id)_defaultImageHints;
 - (id)_snapshotRepForRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
 - (id)_newSnapshotRepForRep:(id)arg1 rect:(struct CGRect)arg2 context:(id)arg3 processedHints:(id)arg4;
 - (id)_newSnapshotRepForCGImage:(struct CGImage *)arg1 drawingRect:(struct CGRect)arg2 applicableForRect:(struct CGRect)arg3 context:(id)arg4 processedHints:(id)arg5;

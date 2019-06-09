@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedManager;
+- (void).cxx_destruct;
 - (long long)_setCache:(id)arg1 ifMatchesHash:(long long *)arg2;
 - (long long)_setCache:(id)arg1;
 - (id)_cacheWithHash:(long long *)arg1;

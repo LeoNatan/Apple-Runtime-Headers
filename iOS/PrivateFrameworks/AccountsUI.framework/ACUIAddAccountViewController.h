@@ -35,6 +35,11 @@
 - (id)_specifierForCustomControlledAccountWithName:(id)arg1 accountTypeID:(id)arg2;
 - (id)_specifierForGmailAccount;
 - (id)_specifierForExchangeAccount;
+- (void)_dismissAndBecomeFirstResponder;
+- (void)signInControllerDidCancel;
+- (void)signInControllerDidCompleteWithSuccess:(_Bool)arg1 error:(id)arg2;
+- (void)_presentPrimaryAppleIDSignInController:(id)arg1;
+- (id)_specifierForPrimaryiCloudAccount;
 - (id)_specifierForiCloudAccount;
 - (id)specifiers;
 - (_Bool)shouldAddSpecifierForAccountTypeID:(id)arg1;

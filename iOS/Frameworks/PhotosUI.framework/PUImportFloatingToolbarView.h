@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *backdropViewGroupName; // @synthesize backdropViewGroupName=_backdropViewGroupName;
 @property(nonatomic) _Bool shouldBlurBackground; // @synthesize shouldBlurBackground=_shouldBlurBackground;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateBackdropViewGroupName;
 - (void)_updateBackground;
 - (void)setItems:(id)arg1 animated:(_Bool)arg2;

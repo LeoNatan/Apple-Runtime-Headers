@@ -21,6 +21,7 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (float)floatForKey:(id)arg1;
 - (id)objectForKey:(id)arg1;
+- (id)objectForKey:(id)arg1 defaultValue:(id)arg2;
 - (id)init;
 
 // Remaining properties

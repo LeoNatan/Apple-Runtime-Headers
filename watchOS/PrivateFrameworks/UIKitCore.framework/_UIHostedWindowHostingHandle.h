@@ -10,6 +10,7 @@
 
 @interface _UIHostedWindowHostingHandle : NSObject <NSSecureCoding>
 {
+    int _pid;
     unsigned int _contextID;
     struct CGAffineTransform _rootLayerTransform;
     struct CGRect _rootLayerFrame;
@@ -20,6 +21,7 @@
 @property(readonly, nonatomic) struct CGRect rootLayerFrame; // @synthesize rootLayerFrame=_rootLayerFrame;
 @property(readonly, nonatomic) struct CGAffineTransform rootLayerTransform; // @synthesize rootLayerTransform=_rootLayerTransform;
 @property(readonly, nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
+@property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

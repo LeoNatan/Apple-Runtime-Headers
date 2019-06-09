@@ -10,7 +10,8 @@
 #import <AVFoundation/AVKeyPathDependencyHost-Protocol.h>
 #import <AVFoundation/AVWeakObservable-Protocol.h>
 
-@class AVAssetWriterInputMediaDataRequester, AVAssetWriterInputPassDescription, AVFigAssetWriterTrack, AVKeyPathDependencyManager, NSString;
+@class AVAssetWriterInputMediaDataRequester, AVAssetWriterInputPassDescription, AVFigAssetWriterTrack, AVKeyPathDependencyManager, NSObject, NSString;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AVAssetWriterInputWritingHelper : AVAssetWriterInputHelper <AVAssetWriterInputMediaDataRequesterDelegate, AVWeakObservable, AVKeyPathDependencyHost>
@@ -21,6 +22,8 @@ __attribute__((visibility("hidden")))
     struct __CVPixelBufferPool *_pixelBufferPool;
     AVAssetWriterInputPassDescription *_currentPassDescription;
     AVKeyPathDependencyManager *_keyPathDependencyManager;
+    NSObject<OS_dispatch_queue> *_mediaDataRequesterSerialQueue;
+    NSObject<OS_dispatch_queue> *_readyForMoreMediaDataObserverSerialQueue;
 }
 
 @property(retain, nonatomic) AVAssetWriterInputPassDescription *currentPassDescription; // @synthesize currentPassDescription=_currentPassDescription;
@@ -37,16 +40,16 @@ __attribute__((visibility("hidden")))
 - (void)beginPassIfAppropriate;
 - (void)didStartInitialSession;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_detachFromMediaDataRequester:(id)arg1;
-- (void)_attachToMediaDataRequester:(id)arg1;
-- (_Bool)mediaDataRequesterShouldRequestMediaData:(id)arg1;
-- (void)_nudgeMediaDataRequesterIfAppropriate;
+- (void)_stopObservingReadyForMoreMediaDataKeyPath;
+- (void)_startObservingReadyForMoreMediaDataKeyPath;
+- (_Bool)mediaDataRequesterShouldRequestMediaData;
+- (void)_nudgeMediaDataRequesterIfAppropriate:(id)arg1;
+- (void)stopRequestingMediaData;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)isReadyForMoreMediaData;
 - (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 - (_Bool)canPerformMultiplePasses;
 - (long long)status;
-- (void)finalize;
 - (void)dealloc;
 - (void)addCallbackToCancelDuringDeallocation:(id)arg1;
 - (id)initWithConfigurationState:(id)arg1 assetWriterTrack:(id)arg2 error:(id *)arg3;

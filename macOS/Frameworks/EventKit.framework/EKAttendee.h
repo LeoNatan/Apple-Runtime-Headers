@@ -25,6 +25,9 @@
 - (BOOL)_hasAllowableChanges;
 @property(readonly, nonatomic) NSDate *lastModifiedParticipationStatus;
 - (id)displayString;
+- (id)lastName;
+- (id)firstName;
+- (void)markAsForward;
 
 // Remaining properties
 @property(nonatomic) long long participantRole; // @dynamic participantRole;

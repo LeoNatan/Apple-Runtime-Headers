@@ -6,6 +6,7 @@
 
 #import <UIKit/NSConcreteTextStorage.h>
 
+__attribute__((visibility("hidden")))
 @interface CKTextStorage : NSConcreteTextStorage
 {
 }

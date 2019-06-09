@@ -27,6 +27,7 @@
 - (void)_sendSilentSMSRequestWithMessage:(id)arg1 number:(id)arg2 preflightResponse:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_sendPreflightRequestWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_sendEnrichmentRequestWithURL:(id)arg1 preflightResponse:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)_newDefaultRequestBodyDictionaryWithResponseCode:(int)arg1 error:(id)arg2;
 - (id)_newDefaultRequestBodyDictionary;
 - (void)_finishEnrichmentWithBodyDictionary:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)execute;

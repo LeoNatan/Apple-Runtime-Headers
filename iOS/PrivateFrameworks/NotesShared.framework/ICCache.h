@@ -6,18 +6,26 @@
 
 #import <Foundation/NSCache.h>
 
-@class NSObject;
+@class NSMutableSet, NSObject, NSSet;
 @protocol OS_dispatch_source;
 
 @interface ICCache : NSCache
 {
     NSObject<OS_dispatch_source> *_memoryWarningEventSource;
+    NSMutableSet *_mutableKeys;
 }
 
 + (void)purgeAllCaches;
 + (id)cacheCollection;
+@property(retain, nonatomic) NSMutableSet *mutableKeys; // @synthesize mutableKeys=_mutableKeys;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryWarningEventSource; // @synthesize memoryWarningEventSource=_memoryWarningEventSource;
 - (void).cxx_destruct;
+- (void)removeObjectsWithKeyContainingString:(id)arg1;
+@property(readonly, nonatomic) NSSet *allKeys;
+- (void)removeAllObjects;
+- (void)removeObjectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned long long)arg3;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)receivedMemoryWarning;
 - (void)unregisterForMemoryWarnings;
 - (void)registerForMemoryWarnings;

@@ -6,16 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-@class UIImageView, UILabel;
+@class MTVisualStylingProvider, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface MRMediaControlsVideoPickerHeaderView : UIView
 {
+    MTVisualStylingProvider *_visualStylingProvider;
     UIImageView *_airPlayIconImageView;
     UILabel *_titleLabel;
 }
 
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic) UIImageView *airPlayIconImageView; // @synthesize airPlayIconImageView=_airPlayIconImageView;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateStyle;

@@ -6,35 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class SFSearchResult, SearchUITableViewCell, UIView;
-@protocol SearchUIFeedbackDelegate;
+#import <SearchUI/SearchUIDetailedRowComponent-Protocol.h>
 
-@interface SearchUIAccessoryViewController : NSObject
+@class NSString, SearchUIDetailedRowModel, UIView;
+@protocol SearchUIAccessoryViewDelegate, SearchUIFeedbackDelegate;
+
+@interface SearchUIAccessoryViewController : NSObject <SearchUIDetailedRowComponent>
 {
-    UIView *_view;
-    id <SearchUIFeedbackDelegate> _feedbackDelegate;
-    SearchUITableViewCell *_cell;
-    SFSearchResult *_resultForFeedback;
+    SearchUIDetailedRowModel *rowModel;
+    UIView *view;
+    id <SearchUIFeedbackDelegate> feedbackDelegate;
+    id <SearchUIAccessoryViewDelegate> _delegate;
 }
 
-+ (_Bool)supportsResult:(id)arg1;
-+ (Class)accessoryViewClassForResult:(id)arg1;
-@property(retain) SFSearchResult *resultForFeedback; // @synthesize resultForFeedback=_resultForFeedback;
-@property __weak SearchUITableViewCell *cell; // @synthesize cell=_cell;
-@property __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
-@property(retain) UIView *view; // @synthesize view=_view;
++ (_Bool)supportsRowModel:(id)arg1;
++ (Class)accessoryViewClassForRowModel:(id)arg1;
+@property __weak id <SearchUIAccessoryViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate;
+@property(retain, nonatomic) UIView *view; // @synthesize view;
+@property(retain, nonatomic) SearchUIDetailedRowModel *rowModel; // @synthesize rowModel;
 - (void).cxx_destruct;
+- (void)updateWithContacts:(id)arg1;
+@property(readonly) unsigned long long type;
 - (_Bool)shouldTopAlignForAccessibilityContentSizes;
-- (_Bool)isPrimarilyTextView;
 - (void)buttonPressed;
-- (void)updateWithResult:(id)arg1;
-- (void)updateWithResult:(id)arg1 resultForFeedback:(id)arg2;
-- (id)viewControllerForPresenting;
-- (void)didEngageAction:(unsigned long long)arg1 destination:(unsigned long long)arg2 actionPerformed:(_Bool)arg3;
-- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (void)hide;
+- (void)updateWithRowModel:(id)arg1;
+- (void)didEngageAction:(unsigned long long)arg1 destination:(unsigned long long)arg2;
+- (id)setupView;
 - (id)controlInView:(id)arg1;
-- (id)initWithUIStyle:(unsigned long long)arg1 cell:(id)arg2;
+- (id)init;
 - (_Bool)shouldVerticallyCenter;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

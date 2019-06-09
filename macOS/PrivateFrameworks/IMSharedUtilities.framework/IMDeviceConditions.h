@@ -12,7 +12,6 @@
 
 + (id)sharedInstance;
 @property(readonly) BOOL isDeviceCharging;
-- (id)_batteryStatus;
 @property(readonly) BOOL isDeviceOnWifi;
 
 @end

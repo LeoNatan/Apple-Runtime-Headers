@@ -88,6 +88,7 @@ struct sqlite3_module {
     CDUnknownFunctionPointerType _field21;
     CDUnknownFunctionPointerType _field22;
     CDUnknownFunctionPointerType _field23;
+    CDUnknownFunctionPointerType _field24;
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<long long, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<long long, void *>*>*>>> {

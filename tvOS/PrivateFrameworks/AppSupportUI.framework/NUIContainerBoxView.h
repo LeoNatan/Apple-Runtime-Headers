@@ -9,34 +9,31 @@
 #import <AppSupportUI/_NUIBoxArrangementContainer-Protocol.h>
 
 @class NSString;
-@protocol NUIContainerBoxViewDelegate;
 
 @interface NUIContainerBoxView : NUIContainerView <_NUIBoxArrangementContainer>
 {
-    struct _NUIBoxArrangement _visibleArrangement;
-    struct {
-        unsigned int delegateHorizontal:1;
-        unsigned int delegateVertical:1;
-    } _boxFlags;
-    long long _horizontalAlignment;
-    long long _verticalAlignment;
+    struct _NUIBoxArrangement _arrangement;
+    CDStruct_e0b918f9 _boxFlags;
 }
 
-@property(nonatomic) long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
-@property(nonatomic) long long horizontalAlignment; // @synthesize horizontalAlignment=_horizontalAlignment;
++ (id)containerBoxViewWithArrangedSubviews:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)debugDictionary;
 - (id)arrangedDescription;
 - (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
 - (struct CGSize)calculateArrangedSizeFittingSize:(struct CGSize)arg1;
-- (_Bool)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(_Bool)arg1;
+- (_Bool)setNeedsInvalidation:(long long)arg1;
 - (void)populateBoxArrangementCells:(vector_eb457d57 *)arg1;
-- (long long)_effectiveVerticalAlignmentForArrangedSubview:(id)arg1;
-- (long long)_effectiveHorizontalAlignmentForArrangedSubview:(id)arg1;
-- (void)setBaselineRelativeArrangement:(_Bool)arg1;
+- (long long)_effectiveAlignmentForArrangedSubview:(id)arg1 inAxis:(long long)arg2;
+- (id)calculateViewForLastBaselineLayout;
+- (id)calculateViewForFirstBaselineLayout;
+@property(nonatomic) long long verticalAlignment;
+@property(nonatomic) long long horizontalAlignment;
 - (void)dealloc;
 - (id)initWithArrangedSubviews:(id)arg1;
-@property(nonatomic) __weak id <NUIContainerBoxViewDelegate> delegate; // @dynamic delegate;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (_Bool)needsBaselineDebugBoundingBoxesForArrangedSubview:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

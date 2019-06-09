@@ -7,6 +7,8 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (ShareKitAdditions)
+- (unsigned long long)SHKFileTypeForFile:(id)arg1;
+- (void)SHKWriteToFileWithLabel:(id)arg1;
 - (id)SHKFlippedImageHorizontally:(BOOL)arg1 accountForBackingScale:(BOOL)arg2;
 @end
 

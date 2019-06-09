@@ -8,6 +8,7 @@
 
 @class HMCharacteristic;
 
+__attribute__((visibility("hidden")))
 @interface _HMCameraSettingsControl : _HMCameraControl
 {
     HMCharacteristic *_nightVision;

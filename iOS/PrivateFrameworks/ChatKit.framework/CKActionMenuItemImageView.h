@@ -10,6 +10,7 @@
 
 @class NSString, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface CKActionMenuItemImageView : UIImageView <CKActionMenuItemView>
 {
     UIColor *_unhighlightedTintColor;

@@ -51,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (unsigned short *)keyAtIndex:(unsigned int)arg1;
 - (unsigned int)indexForBytes:(char *)arg1 length:(unsigned int)arg2;
 - (unsigned int)indexForKey:(unsigned short *)arg1 length:(unsigned int)arg2;
-- (id)newKeySetWithKeys:(id)arg1 encoding:(unsigned long)arg2;
 - (id)allKeys;
 - (unsigned int)maximumIndex;
 - (_Bool)isEmpty;

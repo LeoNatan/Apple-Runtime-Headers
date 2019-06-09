@@ -6,21 +6,26 @@
 
 #import <objc/NSObject.h>
 
-#import <PreferencePanes/PreferencePaneProtocol-Protocol.h>
+#import <PreferencePanes/PreferencePaneLegacyProtocol-Protocol.h>
 
-@class NSPreferencePane, NSXPCConnection;
+@class NSPreferencePane, NSString, NSXPCConnection;
 
-@interface PreferencePaneDispatch : NSObject <PreferencePaneProtocol>
+@interface PreferencePaneDispatch : NSObject <PreferencePaneLegacyProtocol>
 {
     NSPreferencePane *_prefPaneObject;
     CDUnknownBlockType _replyToShouldUnselectBlock;
     NSXPCConnection *_connection;
     unsigned long long _savedReplyToShouldUnselect;
+    NSString *_legacyPreferencePanePath;
+    BOOL allowLegacyInteface;
 }
 
 + (id)sharedDispatch;
 @property(retain) NSPreferencePane *prefPaneObject; // @synthesize prefPaneObject=_prefPaneObject;
+@property BOOL allowLegacyInteface; // @synthesize allowLegacyInteface;
 - (void).cxx_destruct;
+@property(readonly) NSString *legacyPreferencePanePath; // @dynamic legacyPreferencePanePath;
+- (oneway void)setLegacyPreferencePanePath:(id)arg1;
 - (void)authorizationViewDidDismissAgent;
 - (void)authorizationViewWillShowAgent;
 - (oneway void)handleOpenAEData:(id)arg1;

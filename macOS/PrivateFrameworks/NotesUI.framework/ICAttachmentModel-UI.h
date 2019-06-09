@@ -23,12 +23,23 @@
 - (unsigned long long)writingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 - (id)writableTypesForPasteboard:(id)arg1;
 @property(readonly, nonatomic) BOOL requiresFilePromiseForDrags;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
 - (struct NSImage *)fileIconWithPreferredSize:(struct CGSize)arg1;
 - (id)activityItems;
 @property(readonly, nonatomic) NSArray *quicklookPreviewItems;
 - (id)itemProvider;
+@property(readonly, nonatomic) CDUnknownBlockType genericBrickLargeThumbnailCreator;
 @property(readonly, nonatomic) CDUnknownBlockType genericBrickThumbnailCreator;
 @property(readonly, nonatomic) CDUnknownBlockType genericListThumbnailCreator;
+@property(readonly, nonatomic) BOOL needToPostProcessAttachment;
+- (void)didCancelPreviewGeneratorOperation;
+@property(readonly, nonatomic) BOOL requiresNetworkToGeneratePreview;
+@property(readonly, nonatomic) BOOL generatePreviewsDuringCloudActivity;
+@property(readonly, nonatomic) BOOL generateAsynchronousPreviews;
+@property(readonly, nonatomic) BOOL needToGeneratePreviews;
+- (void)classifyImageInOperation:(id)arg1;
+- (void)generateOCRInOperation:(id)arg1;
+- (BOOL)generatePreviewsInOperation:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

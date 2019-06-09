@@ -19,6 +19,7 @@
 - (BOOL)dumpState:(void *)arg1 withSize:(unsigned long long)arg2 hints:(struct os_state_hints_s *)arg3;
 - (void)updateState:(CDUnknownBlockType)arg1;
 @property(nonatomic) BOOL courtesyPromptNeeded;
+@property(nonatomic) BOOL groundAltitudeEnabled;
 @property(nonatomic) BOOL matchInfoEnabled;
 @property(nonatomic) BOOL updatingVehicleHeading;
 @property(nonatomic) BOOL updatingVehicleSpeed;
@@ -27,14 +28,13 @@
 @property(nonatomic) BOOL showsBackgroundLocationIndicator;
 @property(nonatomic) BOOL allowsBackgroundLocationUpdates;
 @property(nonatomic) BOOL paused;
-@property(nonatomic) int pausesLocationUpdatesAutomatically;
+@property int pausesLocationUpdatesAutomatically;
 @property(nonatomic) long long activityType;
 @property(nonatomic) int previousAuthorizationStatus;
 @property(nonatomic) BOOL previousAuthorizationStatusValid;
 @property(nonatomic) BOOL dynamicAccuracyReductionEnabled;
 @property(nonatomic) BOOL allowsAlteredAccessoryLocations;
 @property(nonatomic) BOOL allowsLocationPrompts;
-@property(nonatomic) BOOL persistentMonitoringEnabled;
 @property(nonatomic) double headingFilter;
 @property(nonatomic) BOOL updatingHeading;
 @property(nonatomic) BOOL updatingRanging;

@@ -9,14 +9,19 @@
 @interface NMUArtworkFormat : NSObject
 {
     float _scale;
+    float _cornerRadius;
     struct CGSize _size;
 }
 
-+ (id)menuArtworkFormat;
++ (id)deviceListArtworkFormat;
++ (id)smallCollectionHeaderArtworkFormat;
++ (id)largeCollectionHeaderArtworkFormat;
++ (id)collectionListArtworkFormat;
++ (id)itemListArtworkFormat;
 + (id)listArtworkFormat;
-+ (id)trackListHeaderArtworkFormat;
 + (id)gridArtworkFormat;
 + (id)stackArtworkFormat;
+@property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 

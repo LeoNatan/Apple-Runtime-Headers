@@ -9,20 +9,19 @@
 #import <FrontBoard/FBApplicationProcessLaunchTransactionObserver-Protocol.h>
 #import <FrontBoard/FBUpdateSceneTransactionObserver-Protocol.h>
 
-@class FBApplicationProcess, FBApplicationProcessLaunchTransaction, NSMutableArray, NSString;
+@class FBApplicationProcess, FBApplicationProcessLaunchTransaction, NSMutableArray, NSString, RBSProcessIdentity;
 
 @interface FBApplicationUpdateScenesTransaction : FBSynchronizedTransactionGroup <FBApplicationProcessLaunchTransactionObserver, FBUpdateSceneTransactionObserver>
 {
+    RBSProcessIdentity *_identity;
     FBApplicationProcessLaunchTransaction *_processLaunchTransaction;
     _Bool _processLaunched;
     _Bool _waitsForSceneCommits;
-    NSString *_bundleID;
     NSMutableArray *_updateSceneTransactions;
     NSMutableArray *_pendingUpdateSceneBlocks;
 }
 
 @property(nonatomic) _Bool waitsForSceneCommits; // @synthesize waitsForSceneCommits=_waitsForSceneCommits;
-@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
 - (void)updateSceneTransactionDidCommitUpdate:(id)arg1;
 - (void)updateSceneTransactionWillCommitUpdate:(id)arg1;
@@ -44,11 +43,14 @@
 - (void)_willAddChildTransaction:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)_updateSceneWithIdentifier:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
-- (void)updateSceneWithIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 initialClientSettingsProvider:(CDUnknownBlockType)arg5;
+- (void)_updateSceneWithIdentity:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
+- (void)updateSceneWithIdentity:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
 - (void)updateSceneWithIdentifier:(id)arg1 parameters:(id)arg2 transitionContext:(id)arg3;
-@property(readonly, nonatomic) FBApplicationProcess *process; // @dynamic process;
+@property(readonly, nonatomic) FBApplicationProcess *process;
+@property(readonly, nonatomic) NSString *bundleID;
+- (id)initWithProcessIdentity:(id)arg1 executionContextProvider:(CDUnknownBlockType)arg2;
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(CDUnknownBlockType)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

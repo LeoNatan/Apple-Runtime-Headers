@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)__transferNew:(id *)arg1:(unsigned int)arg2:(unsigned long)arg3;
-+ (id)__new:(const id *)arg1:(char *)arg2:(unsigned int)arg3:(_Bool)arg4;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (unsigned int)indexOfObjectIdenticalTo:(id)arg1;
 - (void)getObjects:(id *)arg1 range:(struct _NSRange)arg2;

@@ -42,8 +42,9 @@
 - (void)stopRedirectTimer;
 - (BOOL)startRedirectTimer;
 - (BOOL)checkRedirectCount;
-- (BOOL)chooseNextServerOrRedirectedResolvedAddress;
-- (void)setServerOrRedirectedResolvedAddress:(id)arg1;
+- (id)chooseNextServerOrRedirectedResolvedAddress;
+- (void)setServerOrRedirectedResolvedAddress:(id)arg1 defaultPath:(id)arg2;
+- (id)normalizeServerAddress:(id)arg1 defaultPath:(id)arg2;
 - (id)getServerOrRedirectedAddress;
 
 // Remaining properties

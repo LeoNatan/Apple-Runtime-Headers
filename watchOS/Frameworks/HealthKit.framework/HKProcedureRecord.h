@@ -6,12 +6,13 @@
 
 #import <HealthKit/HKMedicalRecord.h>
 
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKMedicalCoding, HKMedicalDate, HKProcedureRecordType, NSArray;
+@class HKConcept, HKMedicalCoding, HKMedicalDate, HKProcedureRecordType, NSArray, NSLocale, NSString, NSUUID;
 
-@interface HKProcedureRecord : HKMedicalRecord <NSSecureCoding, NSCopying>
+@interface HKProcedureRecord : HKMedicalRecord <HKConceptIndexable, NSSecureCoding, NSCopying>
 {
     NSArray *_procedureCodings;
     NSArray *_performers;
@@ -26,13 +27,25 @@
     NSArray *_complicationsCodings;
     NSArray *_followUpsCodings;
     NSArray *_bodySitesCodings;
+    HKConcept *_procedure;
+    HKConcept *_status;
+    HKConcept *_category;
+    HKConcept *_reason;
+    NSArray *_reasonsNotPerformed;
+    HKConcept *_outcome;
+    NSArray *_complications;
+    NSArray *_followUps;
+    NSArray *_bodySites;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)procedureRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 procedureCodings:(id)arg10 performers:(id)arg11 executionStartDate:(id)arg12 executionEndDate:(id)arg13 notPerformed:(_Bool)arg14 statusCoding:(id)arg15 categoryCodings:(id)arg16 reasonCodings:(id)arg17 reasonsNotPerformedCodings:(id)arg18 outcomeCodings:(id)arg19 complicationsCodings:(id)arg20 followUpsCodings:(id)arg21 bodySitesCodings:(id)arg22;
++ (id)_newProcedureRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 procedureCodings:(id)arg11 performers:(id)arg12 executionStartDate:(id)arg13 executionEndDate:(id)arg14 notPerformed:(_Bool)arg15 statusCoding:(id)arg16 categoryCodings:(id)arg17 reasonCodings:(id)arg18 reasonsNotPerformedCodings:(id)arg19 outcomeCodings:(id)arg20 complicationsCodings:(id)arg21 followUpsCodings:(id)arg22 bodySitesCodings:(id)arg23 config:(CDUnknownBlockType)arg24;
++ (id)procedureRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 procedureCodings:(id)arg11 performers:(id)arg12 executionStartDate:(id)arg13 executionEndDate:(id)arg14 notPerformed:(_Bool)arg15 statusCoding:(id)arg16 categoryCodings:(id)arg17 reasonCodings:(id)arg18 reasonsNotPerformedCodings:(id)arg19 outcomeCodings:(id)arg20 complicationsCodings:(id)arg21 followUpsCodings:(id)arg22 bodySitesCodings:(id)arg23;
 + (id)defaultDisplayString;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
 + (id)statusCodingPreferredSystems;
 + (id)reasonsNotPerformedCodingsPreferredSystems;
 + (id)reasonCodingsPreferredSystems;
@@ -42,10 +55,28 @@
 + (id)complicationsCodingsPreferredSystems;
 + (id)categoryCodingsPreferredSystems;
 + (id)bodySitesCodingsPreferredSystems;
-+ (id)procedureRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 procedureCodings:(id)arg9 performers:(id)arg10 executionStartDate:(id)arg11 executionEndDate:(id)arg12 notPerformed:(_Bool)arg13 statusCoding:(id)arg14 categoryCodings:(id)arg15 reasonCodings:(id)arg16 reasonsNotPerformedCodings:(id)arg17 outcomeCodings:(id)arg18 complicationsCodings:(id)arg19 followUpsCodings:(id)arg20 bodySitesCodings:(id)arg21;
++ (id)procedureRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 procedureCodings:(id)arg10 performers:(id)arg11 executionStartDate:(id)arg12 executionEndDate:(id)arg13 notPerformed:(_Bool)arg14 statusCoding:(id)arg15 categoryCodings:(id)arg16 reasonCodings:(id)arg17 reasonsNotPerformedCodings:(id)arg18 outcomeCodings:(id)arg19 complicationsCodings:(id)arg20 followUpsCodings:(id)arg21 bodySitesCodings:(id)arg22;
 - (void).cxx_destruct;
 @property(readonly, copy) HKProcedureRecordType *procedureRecordType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setBodySites:(id)arg1;
+@property(readonly, copy) NSArray *bodySites;
+- (void)_setFollowUps:(id)arg1;
+@property(readonly, copy) NSArray *followUps;
+- (void)_setComplications:(id)arg1;
+@property(readonly, copy) NSArray *complications;
+- (void)_setOutcome:(id)arg1;
+@property(readonly, copy) HKConcept *outcome;
+- (void)_setReasonsNotPerformed:(id)arg1;
+@property(readonly, copy) NSArray *reasonsNotPerformed;
+- (void)_setReason:(id)arg1;
+@property(readonly, copy) HKConcept *reason;
+- (void)_setCategory:(id)arg1;
+@property(readonly, copy) HKConcept *category;
+- (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKConcept *status;
+- (void)_setProcedure:(id)arg1;
+@property(readonly, copy) HKConcept *procedure;
 - (void)_setBodySitesCodings:(id)arg1;
 @property(readonly, copy) NSArray *bodySitesCodings;
 - (void)_setFollowUpsCodings:(id)arg1;
@@ -72,15 +103,35 @@
 @property(readonly, copy) NSArray *performers;
 - (void)_setProcedureCodings:(id)arg1;
 @property(readonly, copy) NSArray *procedureCodings;
+- (id)bodySitesCodingsContexts;
+- (id)bodySitesCodingsCollection;
+- (id)followUpsCodingsContexts;
+- (id)followUpsCodingsCollection;
+- (id)complicationsCodingsContexts;
+- (id)complicationsCodingsCollection;
+- (id)outcomeCodingsContext;
+- (id)outcomeCodingsCollection;
+- (id)reasonsNotPerformedCodingsContexts;
+- (id)reasonsNotPerformedCodingsCollection;
+- (id)reasonCodingsContext;
+- (id)reasonCodingsCollection;
+- (id)categoryCodingsContext;
+- (id)categoryCodingsCollection;
+- (id)statusCodingContext;
+- (id)statusCodingCollection;
+- (id)procedureCodingsContext;
+- (id)procedureCodingsCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
 - (id)indexKeywords;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 - (id)statusCodingTasks;
 - (id)reasonsNotPerformedCodingsTasks;
 - (id)reasonCodingsTasks;
@@ -90,6 +141,13 @@
 - (id)complicationsCodingsTasks;
 - (id)categoryCodingsTasks;
 - (id)bodySitesCodingsTasks;
+
+// Remaining properties
+@property(readonly) NSUUID *UUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly, copy, nonatomic) NSLocale *locale;
+@property(readonly) Class superclass;
 
 @end
 

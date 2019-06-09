@@ -7,10 +7,13 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (dd_private)
++ (id)dd_URLWithPotentiallyInvalidURLString:(id)arg1;
+- (id)dd_rdarLinkFromTelScheme;
 - (id)dd_emailFromMailtoScheme;
 - (id)dd_phoneNumberFromTelSchemeAndExtractBody:(id *)arg1;
 - (id)dd_phoneNumberFromTelScheme;
 - (_Bool)dd_isAnySimpleTelephonyScheme;
 - (_Bool)dd_isMaps:(_Bool)arg1;
+- (id)dd_formattedPhoneNumber;
 @end
 

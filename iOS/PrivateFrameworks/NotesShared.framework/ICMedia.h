@@ -8,22 +8,23 @@
 
 #import <NotesShared/ICCloudObject-Protocol.h>
 
-@class ICAttachment, NSData, NSString;
+@class ICAccount, ICAttachment, NSData, NSString;
 
 @interface ICMedia : ICCloudSyncingObject <ICCloudObject>
 {
+    ICAccount *placeholderAccount;
 }
 
++ (id)keyPathsForValuesAffectingIsSharedViaICloud;
 + (id)keyPathsForValuesAffectingParentCloudObject;
-+ (id)exportableMediaURLForMediaWithIdentifier:(id)arg1 filename:(id)arg2;
-+ (id)mediaURLForMediaWithIdentifier:(id)arg1 filename:(id)arg2;
-+ (id)exportableContainerDirectoryURLForMediaWithIdentifier:(id)arg1;
-+ (id)containerDirectoryURLForMediaWithIdentifier:(id)arg1;
-+ (id)exportableMediaDirectoryURL;
++ (id)exportableMediaURLForMediaWithIdentifier:(id)arg1 filename:(id)arg2 account:(id)arg3;
++ (id)mediaURLForMediaWithIdentifier:(id)arg1 filename:(id)arg2 account:(id)arg3;
++ (id)exportableContainerDirectoryURLForMediaWithIdentifier:(id)arg1 account:(id)arg2;
++ (id)containerDirectoryURLForMediaWithIdentifier:(id)arg1 account:(id)arg2;
 + (id)mediaDirectoryURL;
-+ (void)purgeMediaFilesForIdentifiers:(id)arg1;
-+ (id)newCloudObjectForRecord:(id)arg1 context:(id)arg2;
-+ (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
++ (void)purgeMediaFilesForIdentifiers:(id)arg1 account:(id)arg2;
++ (id)newCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
++ (id)existingCloudObjectForRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 + (id)allMediaInContext:(id)arg1;
 + (id)mediaIdentifiersForAccount:(id)arg1;
 + (id)mediaWithIdentifier:(id)arg1 context:(id)arg2;
@@ -36,7 +37,11 @@
 + (id)newMediaWithAttachment:(id)arg1 forFileWrapper:(id)arg2 context:(id)arg3 error:(id *)arg4;
 + (id)newMediaWithAttachment:(id)arg1 forData:(id)arg2 filename:(id)arg3 context:(id)arg4 error:(id *)arg5;
 + (id)newMediaWithAttachment:(id)arg1 context:(id)arg2;
-+ (id)newMediaWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)newMediaWithIdentifier:(id)arg1 attachment:(id)arg2;
++ (id)newMediaWithIdentifier:(id)arg1 account:(id)arg2;
+@property(nonatomic) __weak ICAccount *placeholderAccount; // @synthesize placeholderAccount;
+- (void).cxx_destruct;
+- (id)parentCloudObjectForMinimumSupportedVersionPropagation;
 - (id)parentCloudObject;
 - (_Bool)shouldFallBackToCheckAllCryptoKeys;
 - (void)saveAndClearDecryptedData;
@@ -51,6 +56,7 @@
 - (id)mediaArchiveURL;
 - (id)mediaTarArchiveURL;
 - (id)mediaURL;
+- (id)containerAccount;
 - (id)exportableContainerDirectoryURL;
 - (id)containerDirectoryURL;
 - (_Bool)makeSureExportableMediaDirectoryExists:(id *)arg1;
@@ -61,15 +67,16 @@
 - (id)dataWithoutImageMarkupMetadata:(_Bool)arg1;
 - (id)data;
 - (void)writeDataFromItemProvider:(id)arg1 checkForMarkupData:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (_Bool)writeDataFromAsset:(id)arg1 isArchivedDirectory:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)writeDataFromAsset:(id)arg1 accountID:(id)arg2 isArchivedDirectory:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)writeDataFromFileURL:(id)arg1 error:(id *)arg2;
-- (void)updateFlagToExcludeFromBackupTouchFileIfNecessary:(_Bool)arg1;
-- (void)updateFlagToExcludeFromBackup;
+- (void)updateFlagToExcludeFromCloudBackup;
 - (_Bool)isArchivedDirectory;
 - (_Bool)hasFile;
 - (_Bool)isValid;
+- (_Bool)shouldSyncMinimumSupportedNotesVersion;
 @property(retain, nonatomic) ICAttachment *attachment; // @dynamic attachment;
 - (void)prepareForDeletion;
+- (void)accountWillChangeToAccount:(id)arg1;
 - (void)resetUniqueIdentifier;
 - (_Bool)supportsDeletionByTTL;
 - (id)objectsToBeDeletedBeforeThisObject;
@@ -77,9 +84,11 @@
 - (_Bool)isInICloudAccount;
 - (_Bool)hasAllMandatoryFields;
 - (void)fixBrokenReferences;
+- (void)objectWasPushedToCloudWithOperation:(id)arg1 serverRecord:(id)arg2;
 - (_Bool)needsToBePushedToCloud;
+- (id)newlyCreatedRecordWithObfuscator:(id)arg1;
 - (id)newlyCreatedRecord;
-- (void)mergeDataFromRecord:(id)arg1;
+- (void)mergeDataFromRecord:(id)arg1 accountID:(id)arg2;
 - (id)recordType;
 - (id)recordZoneName;
 

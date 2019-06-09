@@ -8,6 +8,7 @@
 
 @class NSArray, ODDColorTransform, ODDNodePoint, ODDStyleDefinition;
 
+__attribute__((visibility("hidden")))
 @interface ODDDiagram : OADDrawable
 {
     ODDNodePoint *mDocumentPoint;

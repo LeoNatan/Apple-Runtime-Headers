@@ -6,6 +6,7 @@
 
 #import <UIKit/UIGestureRecognizer.h>
 
+__attribute__((visibility("hidden")))
 @interface AVExternalGestureRecognizerPreventer : UIGestureRecognizer
 {
 }

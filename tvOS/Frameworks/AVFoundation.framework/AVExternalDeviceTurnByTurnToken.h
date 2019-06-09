@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     AVExternalDevice *_externalDevice;
 }
 
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithExternalDevice:(id)arg1;

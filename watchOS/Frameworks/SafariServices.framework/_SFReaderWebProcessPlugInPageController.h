@@ -23,6 +23,7 @@
 - (id)printingMailingFrame;
 - (id)collectReaderContentFromPrintAndMailingFrame;
 - (id)isolatedWorldForNextPageDetection;
+- (void)setReaderIsActive:(_Bool)arg1;
 - (void)setConfiguration:(id)arg1;
 - (void)reloadArticle;
 - (void)loadNewArticle;

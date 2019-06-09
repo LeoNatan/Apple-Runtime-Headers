@@ -52,6 +52,7 @@
 - (id)_copyWithOverrideSize:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, nonatomic) float scale;
+@property(readonly, nonatomic) struct CGSize nativePixelSize;
 @property(readonly, nonatomic) struct CGSize pixelSize;
 - (id)_initWithWidth:(unsigned long)arg1 height:(unsigned long)arg2 preferredScale:(unsigned long)arg3 scaleOverride:(float)arg4 refreshRate:(double)arg5 gamut:(int)arg6 hdr:(int)arg7 rotation:(int)arg8 virtual:(_Bool)arg9 validityCheck:(int)arg10;
 - (id)_initWithWidth:(unsigned long)arg1 height:(unsigned long)arg2 scale:(unsigned long)arg3 refreshRate:(double)arg4 gamut:(int)arg5 hdr:(int)arg6;

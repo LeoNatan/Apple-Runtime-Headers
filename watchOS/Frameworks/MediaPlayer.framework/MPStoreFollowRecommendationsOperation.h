@@ -16,15 +16,14 @@
     CDUnknownBlockType _responseHandler;
 }
 
-+ (id)activeDSID;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(copy, nonatomic) MPStoreFollowRecommendationsRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
 - (id)_resultsDictionaryFromURLValue:(id)arg1;
 - (id)_followRecommendationsFromPlatformValue:(id)arg1;
-- (void)_finishWithResponse:(id)arg1 error:(id)arg2;
 - (void)_enqueueOperationWithURL:(id)arg1 bagDictionary:(id)arg2;
-- (id)_reccomendedArtistsURLFromBag:(id)arg1 accountDSID:(id)arg2;
+- (id)_recommendedArtistsURLFromBag:(id)arg1 accountDSID:(id)arg2;
+- (void)_finishWithResponse:(id)arg1 error:(id)arg2;
 - (void)execute;
 
 @end

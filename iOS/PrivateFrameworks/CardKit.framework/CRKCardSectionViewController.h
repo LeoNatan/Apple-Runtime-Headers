@@ -12,7 +12,7 @@
 #import <CardKit/SFFeedbackListener-Protocol.h>
 
 @class CRKCardSectionViewConfiguration, CRKOverlayButton, INUIRemoteViewController, NSArray, NSString, UIView;
-@protocol CRCardSection, CRKCardSectionView, CRKCardSectionViewControllerDataSource, CRKCardSectionViewControllerDelegate;
+@protocol CRCardSection, CRKCardSectionView, CRKCardSectionViewControllerDelegate;
 
 @interface CRKCardSectionViewController : UIViewController <CRKCardSectionViewControllingDelegate, SFFeedbackListener, CRKFeedbackDelegate, CRKEventResponding>
 {
@@ -23,16 +23,13 @@
     NSArray *_extraCommands;
     INUIRemoteViewController *__remoteViewController;
     CRKCardSectionViewConfiguration *_viewConfiguration;
-    id <CRKCardSectionViewControllerDataSource> _dataSource;
 }
 
 + (void)_registerWithCardKit;
 + (id)cardSectionViewControllerForViewConfiguration:(id)arg1;
 + (void)registerCardSectionViewController;
 + (id)cardSectionClasses;
-+ (id)cardSectionViewControllerForCardSection:(id)arg1 dataSource:(id)arg2;
 + (id)cardSectionViewControllerForCardSection:(id)arg1;
-@property(nonatomic) __weak id <CRKCardSectionViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CRKCardSectionViewConfiguration *viewConfiguration; // @synthesize viewConfiguration=_viewConfiguration;
 @property(readonly, nonatomic) INUIRemoteViewController *_remoteViewController; // @synthesize _remoteViewController=__remoteViewController;
 @property(retain, nonatomic, getter=_extraCommands, setter=_setExtraCommands:) NSArray *extraCommands; // @synthesize extraCommands=_extraCommands;
@@ -89,7 +86,6 @@
 - (_Bool)_expectsSearchUIView;
 - (_Bool)_hasCorrespondingSearchUIView;
 - (void)_performCommand:(id)arg1;
-- (id)_initWithCardSection:(id)arg1 dataSource:(id)arg2;
 - (id)_initWithCardSection:(id)arg1;
 - (void)cardEventDidOccur:(unsigned long long)arg1 withIdentifier:(id)arg2 userInfo:(id)arg3;
 

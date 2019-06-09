@@ -14,8 +14,8 @@
 
 + (id)entityName;
 - (_Bool)shouldBeRemovedFromPhotoLibrary:(id)arg1;
-@property(readonly, nonatomic) NSMutableOrderedSet *mutableEntryComments;
-@property(readonly, nonatomic) NSMutableOrderedSet *mutableEntryLikeComments;
+@property(readonly, nonatomic) __weak NSMutableOrderedSet *mutableEntryComments;
+@property(readonly, nonatomic) __weak NSMutableOrderedSet *mutableEntryLikeComments;
 
 // Remaining properties
 @property(retain, nonatomic) NSString *entryCloudAssetGUID; // @dynamic entryCloudAssetGUID;

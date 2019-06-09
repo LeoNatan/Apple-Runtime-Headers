@@ -9,6 +9,7 @@
 #import <SignpostSupport/SignpostCARenderServerFrameMetadata-Protocol.h>
 
 @class NSDictionary, NSSet, SignpostContextInfo, SignpostFrameLatencyInterval, SignpostHIDLatencyInterval, SignpostRenderServerRenderInterval;
+@protocol SignpostSupportTimeInterval;
 
 @interface SignpostFrameLifetimeInterval : SignpostAnimationSubInterval <SignpostCARenderServerFrameMetadata>
 {
@@ -16,6 +17,7 @@
     unsigned int _frameSeed;
     unsigned int _swapID;
     unsigned long long _displayRefreshIntervalDurationMachTime;
+    unsigned long long _previousFramePresentationMCT;
     NSDictionary *_pidToContextInfoArrayDict;
     SignpostHIDLatencyInterval *_hidLatencyInterval;
     SignpostRenderServerRenderInterval *_renderInterval;
@@ -31,14 +33,20 @@
 @property(readonly, nonatomic) SignpostRenderServerRenderInterval *renderInterval; // @synthesize renderInterval=_renderInterval;
 @property(readonly, nonatomic) SignpostHIDLatencyInterval *hidLatencyInterval; // @synthesize hidLatencyInterval=_hidLatencyInterval;
 @property(readonly, nonatomic) NSDictionary *pidToContextInfoArrayDict; // @synthesize pidToContextInfoArrayDict=_pidToContextInfoArrayDict;
+@property(readonly, nonatomic) unsigned long long previousFramePresentationMCT; // @synthesize previousFramePresentationMCT=_previousFramePresentationMCT;
 @property(readonly, nonatomic) unsigned char bufferCount; // @synthesize bufferCount=_bufferCount;
 @property(readonly, nonatomic) unsigned long long displayRefreshIntervalDurationMachTime; // @synthesize displayRefreshIntervalDurationMachTime=_displayRefreshIntervalDurationMachTime;
 @property(readonly, nonatomic) unsigned int swapID; // @synthesize swapID=_swapID;
 @property(readonly, nonatomic) unsigned int frameSeed; // @synthesize frameSeed=_frameSeed;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) id <SignpostSupportTimeInterval> previousFrameOnScreenInterval;
+@property(readonly, nonatomic) id <SignpostSupportTimeInterval> frameOverrunInactiveDisplayInterval;
+@property(readonly, nonatomic) id <SignpostSupportTimeInterval> frameOverrunInterval;
+- (unsigned long long)_overrunBeginMCT;
 @property(readonly, nonatomic) unsigned long long missedVBLCount;
 @property(readonly, nonatomic) unsigned int displayID;
 @property(readonly, nonatomic) NSSet *contributingPIDs;
+@property(readonly, nonatomic) BOOL mayBeFirstFrame;
 @property(readonly, nonatomic) BOOL frameLatencyIsLong;
 @property(readonly, nonatomic) BOOL renderIntervalIsLong;
 @property(readonly, nonatomic) BOOL hidLatencyIsLong;

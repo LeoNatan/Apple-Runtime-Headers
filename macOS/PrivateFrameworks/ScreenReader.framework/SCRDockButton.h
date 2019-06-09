@@ -6,17 +6,11 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class SCRBrailleLineManager;
-
 __attribute__((visibility("hidden")))
 @interface SCRDockButton : SCRElement
 {
-    SCRBrailleLineManager *__brailleLineManager;
 }
 
-@property(retain, nonatomic, setter=_setBrailleLineManager:) SCRBrailleLineManager *_brailleLineManager; // @synthesize _brailleLineManager=__brailleLineManager;
-- (void).cxx_destruct;
-- (id)brailleLineManager;
 - (id)description;
 - (BOOL)handleSyncToTrackedGestureItemWithEvent:(id)arg1 request:(id)arg2;
 - (id)stringForCommand:(id)arg1 withExtension:(id)arg2;

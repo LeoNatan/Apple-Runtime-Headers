@@ -9,6 +9,8 @@
 @class BLTPBSectionIcon, BLTPBSectionInfo, NSString;
 
 @protocol BLTSettingSyncing <NSObject>
+- (void)setNotificationsCriticalAlertEnabled:(int)arg1 sectionID:(NSString *)arg2;
+- (void)setNotificationsSoundEnabled:(int)arg1 sectionID:(NSString *)arg2;
 - (void)setNotificationsGrouping:(int)arg1 sectionID:(NSString *)arg2;
 - (void)setNotificationsLevel:(unsigned long long)arg1 sectionID:(NSString *)arg2 mirror:(_Bool)arg3;
 - (void)removeSectionWithSectionID:(NSString *)arg1;

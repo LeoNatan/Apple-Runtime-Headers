@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)executeEpilogue;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 
 @end
 

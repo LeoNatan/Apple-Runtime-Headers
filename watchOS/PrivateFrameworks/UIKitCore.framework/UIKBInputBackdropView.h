@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
     _UIVisualEffectBackdropView *_captureView;
 }
 
-+ (_Bool)_retroactivelyRequiresConstraintBasedLayout;
++ (_Bool)requiresConstraintBasedLayout;
 @property(retain, nonatomic) _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
 @property(retain, nonatomic) UIKBBackdropView *inputBackdropRightView; // @synthesize inputBackdropRightView=_inputBackdropRightView;
 @property(retain, nonatomic) UIKBBackdropView *inputBackdropLeftView; // @synthesize inputBackdropLeftView=_inputBackdropLeftView;
@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_setFrame:(struct CGRect)arg1 leftOffset:(float)arg2 gapWidth:(float)arg3 progress:(float)arg4 innerCorners:(unsigned int)arg5;
 - (void)_setFrame:(struct CGRect)arg1 leftOffset:(float)arg2 gapWidth:(float)arg3 progress:(float)arg4;
 - (void)layoutInputBackdropToFullWithRect:(struct CGRect)arg1;
-- (void)layoutInputBackdropToSplitWithLeftViewRect:(struct CGRect)arg1 andRightViewRect:(struct CGRect)arg2 innerCorners:(int)arg3;
+- (void)layoutInputBackdropToSplitWithLeftViewRect:(struct CGRect)arg1 andRightViewRect:(struct CGRect)arg2 innerCorners:(unsigned int)arg3;
 - (void)restoreFromSnapshotting;
 - (void)prepareForSnapshotting;
 - (void)transitionToStyle:(int)arg1 isSplit:(_Bool)arg2;

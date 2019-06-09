@@ -9,6 +9,7 @@
 @class NSString, UILabel, UIView;
 @protocol _SKUIStatusBarAlertViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIStatusBarAlertViewController : UIViewController
 {
     UILabel *_label;

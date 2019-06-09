@@ -13,7 +13,6 @@
     NSString *_path;
 }
 
-+ (id)sideTableContextWithPath:(id)arg1;
 + (id)sideTableContext;
 - (void).cxx_destruct;
 - (id)_persistentStoreCoordinator;
@@ -33,8 +32,7 @@
 - (id)insertNewAlarm;
 - (void)deleteAllAlarms;
 - (id)_alarmsMatchingPredicate:(id)arg1;
-- (id)initWithPath:(id)arg1;
-- (id)init;
+- (id)initWithConcurrencyType:(unsigned long long)arg1;
 
 @end
 

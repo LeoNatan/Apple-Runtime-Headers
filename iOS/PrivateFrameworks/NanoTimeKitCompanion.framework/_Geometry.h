@@ -8,14 +8,10 @@
 
 @interface _Geometry : NSObject
 {
-    unsigned int _vao;
-    unsigned int _vbo;
+    unsigned long long _mtlBufOffset;
 }
 
-@property(nonatomic) unsigned int vbo; // @synthesize vbo=_vbo;
-@property(nonatomic) unsigned int vao; // @synthesize vao=_vao;
-- (void)createGeometry:(const float *)arg1 count:(unsigned long long)arg2 useWeights:(_Bool)arg3;
-- (void)createGeometry:(const float *)arg1 count:(unsigned long long)arg2;
+@property(nonatomic) unsigned long long mtlBufOffset; // @synthesize mtlBufOffset=_mtlBufOffset;
 
 @end
 

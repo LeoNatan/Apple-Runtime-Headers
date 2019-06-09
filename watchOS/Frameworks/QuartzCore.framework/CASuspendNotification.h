@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)willUnsuspend:(id)arg1;
 - (void)willSuspend:(id)arg1;
 
 @end

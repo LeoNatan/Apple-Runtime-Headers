@@ -6,6 +6,7 @@
 
 #import <UIKit/UISegmentedControl.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageSegmentedControl : UISegmentedControl
 {
 }

@@ -18,8 +18,12 @@ __attribute__((visibility("hidden")))
     _UIStatusBarDisplayItemPlacement *_timePlacement;
 }
 
++ (id)pillSmallFont;
++ (id)pillFont;
 + (id)expandedFont;
 + (id)normalFont;
++ (struct CGSize)smallPillSize;
++ (struct CGSize)pillSize;
 + (double)baselineOffset;
 + (struct NSDirectionalEdgeInsets)expandedEdgeInsets;
 + (struct NSDirectionalEdgeInsets)edgeInsets;
@@ -43,7 +47,8 @@ __attribute__((visibility("hidden")))
 - (void)avoidanceFrameUpdatedFromFrame:(struct CGRect)arg1;
 - (void)_updateConstraintsForAvoidanceFrame:(struct CGRect)arg1;
 - (void)actionable:(id)arg1 highlighted:(_Bool)arg2 initialPress:(_Bool)arg3;
-- (id)styleAttributes;
+- (id)overriddenStyleAttributesForDisplayItemWithIdentifier:(id)arg1;
+- (id)styleAttributesForStyle:(long long)arg1;
 - (id)displayItemIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)regionIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;

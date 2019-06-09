@@ -10,10 +10,7 @@
 {
 }
 
-+ (id)workflowByDeserializingDictionary:(id)arg1 error:(out id *)arg2;
-+ (id)dictionaryBySerializingWorkflow:(id)arg1 error:(out id *)arg2;
-+ (id)workflowByDeserializingData:(id)arg1 error:(out id *)arg2;
-+ (id)dataBySerializingWorkflow:(id)arg1 error:(out id *)arg2;
++ (id)workflowByDeserializingLegacyData:(id)arg1 keyImageData:(id)arg2 error:(id *)arg3;
 
 @end
 

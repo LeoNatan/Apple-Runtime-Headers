@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <TelephonyUtilities/NSCopying-Protocol.h>
-#import <TelephonyUtilities/NSSecureCoding-Protocol.h>
 #import <TelephonyUtilities/TUPubliclyAccessibleCopying-Protocol.h>
+#import <TelephonyUtilities/TUSecureCoding-Protocol.h>
 
 @class NSData, NSString, NSURL, TUCTCapabilityInfo;
 
-@interface TUCTCapabilitiesState : NSObject <NSSecureCoding, NSCopying, TUPubliclyAccessibleCopying>
+@interface TUCTCapabilitiesState : NSObject <NSCopying, TUPubliclyAccessibleCopying, TUSecureCoding>
 {
     _Bool _provisioningURLInvalid;
     _Bool _supported;
@@ -27,6 +27,8 @@
     NSData *_provisioningPostData;
 }
 
++ (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
++ (id)unarchivedObjectClasses;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic, getter=isEmergencyCurrentlyAvailable) _Bool emergencyCurrentlyAvailable; // @synthesize emergencyCurrentlyAvailable=_emergencyCurrentlyAvailable;
 @property(nonatomic, getter=isEmergencySupported) _Bool emergencySupported; // @synthesize emergencySupported=_emergencySupported;
@@ -40,18 +42,22 @@
 @property(copy, nonatomic) NSURL *provisioningURL; // @synthesize provisioningURL=_provisioningURL;
 @property(nonatomic) int provisioningStatus; // @synthesize provisioningStatus=_provisioningStatus;
 - (void).cxx_destruct;
+- (id)archivedDataWithError:(id *)arg1;
 - (id)publiclyAccessibleCopyWithZone:(struct _NSZone *)arg1;
 - (id)publiclyAccessibleCopy;
+- (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isEqualToCapabilitiesState:(id)arg1;
 - (void)invalidateProvisioningURL;
-@property(readonly, copy) NSString *description;
+- (id)initWithCapabilityInfo:(id)arg1;
 @property(readonly, copy, nonatomic) TUCTCapabilityInfo *ctCapabilityInfo;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

@@ -8,14 +8,14 @@
 
 #import <PhotoLibraryServices/PLNotificationUNCenterDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, PLNotificationUNCenter;
+@class CNContactStore, NSMutableDictionary, NSString, PLNotificationUNCenter;
 @protocol OS_dispatch_queue;
 
 @interface PLNotificationManager : NSObject <PLNotificationUNCenterDelegate>
 {
     _Bool _badgeCountIsInvalid;
     _Bool _enableTemporaryDebugMode;
-    void *_addressBook;
+    CNContactStore *_contactStore;
     int _alertFiltrationEnabled;
     NSObject<OS_dispatch_queue> *_isolationQueue;
     NSMutableDictionary *_waitingAssetsAddNotifications;
@@ -24,7 +24,7 @@
 
 + (id)_bestDateForDeliveringNotificationWithError:(id *)arg1;
 + (id)_notificationDeliveryDate;
-+ (struct NSObject *)filteredAlbumListForContentMode:(int)arg1;
++ (struct NSObject *)filteredAlbumListForContentMode:(int)arg1 library:(id)arg2;
 + (id)sharedManager;
 @property(retain, nonatomic) PLNotificationUNCenter *UNCenter; // @synthesize UNCenter=_UNCenter;
 - (void).cxx_destruct;
@@ -32,7 +32,7 @@
 - (_Bool)_alertFiltrationEnabled;
 - (_Bool)_isMyEmailAddress:(id)arg1;
 - (_Bool)_shouldAllowAlertsFromContactWithEmail:(id)arg1;
-- (void *)addressBook;
+- (id)contactStore;
 - (void)reportAsJunkPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg1;
 - (void)sendResponse:(_Bool)arg1 toPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg2;
 - (void)discardAllNotifications;
@@ -47,7 +47,7 @@
 - (unsigned int)currentAppBadgeCountForNotificationUNCenter:(id)arg1;
 - (void)postNotificationForExpiringCMMsWithUUIDs:(id)arg1 thumbnailImageData:(id)arg2 notificationTitle:(id)arg3 notificationSubtitle:(id)arg4;
 - (void)removeNotificationForSuggestedCMMWithUUID:(id)arg1;
-- (void)postNotificationForSuggestedCMMWithUUID:(id)arg1 notificationDeliveryDate:(id)arg2;
+- (void)postNotificationForSuggestedCMMWithUUID:(id)arg1 library:(id)arg2 notificationDeliveryDate:(id)arg3;
 - (void)_deleteNotificationsForAssetWithUUID:(id)arg1 shouldDeleteCommentsOrLikeNotifications:(_Bool)arg2 shouldDeletePhotosAddedToAlbumNotifications:(_Bool)arg3;
 - (_Bool)_notificationType:(long long)arg1 matchesCommentsOrLikeNotifications:(_Bool)arg2 andPhotosAddedToAlbumNotifications:(_Bool)arg3;
 - (void)_deleteNotificationsForAlbumWithUUID:(id)arg1 notificationTypes:(id)arg2;
@@ -58,15 +58,15 @@
 - (id)_generateMemoryNotificationRepresentationWithMemoryUUID:(id)arg1 keyAssetUUID:(id)arg2 notificationTitle:(id)arg3 notificationSubtitle:(id)arg4 notificationDeliveryDate:(id)arg5;
 - (id)_memoryNotificationFromDictionaryRepresentation:(id)arg1;
 - (void)userViewedNotificationWithAlbumCloudGUID:(id)arg1;
-- (void)noteUserDidChangeStatusForMomentShare:(id)arg1;
+- (void)noteUserDidChangeStatusForMomentShare:(id)arg1 photoLibrary:(id)arg2;
 - (void)noteUserDidChangeStatusForSuggestedCMMWithUUID:(id)arg1;
 - (void)noteUserDidLeavePhotosApplication;
 - (void)noteUserDidDeleteSharedAssetsWithUUIDs:(id)arg1;
 - (void)noteUserDidDeleteSharedAlbumWithUUID:(id)arg1;
-- (void)noteUserDidReadCommentOnSharedAsset:(id)arg1;
-- (void)noteUserDidNavigateAwayFromSharedAlbum:(id)arg1;
-- (void)noteUserDidNavigateIntoSharedAlbum:(id)arg1;
-- (void)noteUserDidViewCloudFeedContent:(int)arg1;
+- (void)noteUserDidReadCommentOnSharedAsset:(id)arg1 photoLibrary:(id)arg2;
+- (void)noteUserDidNavigateAwayFromSharedAlbum:(id)arg1 photoLibrary:(id)arg2;
+- (void)noteUserDidNavigateIntoSharedAlbum:(id)arg1 photoLibrary:(id)arg2;
+- (void)noteUserDidViewCloudFeedContent:(int)arg1 photoLibrary:(id)arg2;
 - (void)noteUserAssetsAreReadyForMomentShare:(id)arg1;
 - (void)noteDidReceiveExpiringCMMInvitationsWithMomentShares:(id)arg1;
 - (void)noteDidReceiveCMMInvitationWithMomentShare:(id)arg1;

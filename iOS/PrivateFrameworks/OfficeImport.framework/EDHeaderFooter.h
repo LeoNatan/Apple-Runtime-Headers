@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)headerFooter;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setFooterString:(id)arg1;
 - (id)footerString;
 - (void)setHeaderString:(id)arg1;
 - (id)headerString;
-- (void)dealloc;
 
 @end
 

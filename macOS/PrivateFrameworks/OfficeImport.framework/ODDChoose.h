@@ -8,6 +8,7 @@
 
 @class NSMutableArray, ODDOtherwise;
 
+__attribute__((visibility("hidden")))
 @interface ODDChoose : ODDLayoutObject
 {
     NSMutableArray *mWhens;

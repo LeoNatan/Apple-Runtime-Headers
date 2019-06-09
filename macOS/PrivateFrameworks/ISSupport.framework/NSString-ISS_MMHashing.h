@@ -7,6 +7,15 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (ISS_MMHashing)
++ (id)ISS_IANACharSetNameFromEncoding:(unsigned long long)arg1;
++ (unsigned long long)ISS_encodingForIANACharSetName:(id)arg1;
 - (id)sha1Hash;
+- (BOOL)containsString:(id)arg1 options:(unsigned int)arg2;
+- (BOOL)containsString:(id)arg1;
+- (id)ISS_mimeAnalysis;
+- (id)ISS_stringByURLUnquoting;
+- (id)ISS_stringByURLQuoting;
+- (id)ISS_stringByURLQuotingWithCharactersToEscape:(id)arg1;
+- (id)ISS_stringByXMLQuoting;
 @end
 

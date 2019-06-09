@@ -7,24 +7,27 @@
 #import <objc/NSObject.h>
 
 #import <FinderKit/NSPopoverDelegate-Protocol.h>
+#import <FinderKit/TMarkTornDown-Protocol.h>
 
 @class FI_TPopover, FI_TPopoverContentViewController, NSAppearance, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TPopoverController : NSObject <NSPopoverDelegate>
+@interface FI_TPopoverController : NSObject <NSPopoverDelegate, TMarkTornDown>
 {
     FI_TPopoverContentViewController *_contentViewController;
     FI_TPopover *_popover;
     struct TNSRef<NSArray, void> _topLevelNibObjects;
-    _Bool _releasedWhenClosed;
+    struct TNSRef<FI_TPopoverController, void> _selfReference;
+    _Bool tornDown;
 }
 
-@property(nonatomic) _Bool releasedWhenClosed; // @synthesize releasedWhenClosed=_releasedWhenClosed;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property(readonly, retain, nonatomic) FI_TPopover *popover; // @synthesize popover=_popover;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(nonatomic) double width; // @dynamic width;
 @property(retain, nonatomic) NSAppearance *appearance;
+@property(nonatomic) _Bool releasedWhenClosed; // @dynamic releasedWhenClosed;
 @property(nonatomic) long long behavior; // @dynamic behavior;
 @property(readonly, nonatomic) _Bool isShown; // @dynamic isShown;
 - (void)popoverWillClose:(id)arg1;

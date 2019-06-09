@@ -31,6 +31,7 @@
 - (id)videoEnhancementFilterOptions;
 - (void)setLoudnessInfo:(id)arg1;
 - (void)_transferLoudnessInfoToFig;
+- (id)effectiveLoudnessInfo;
 - (id)loudnessInfo;
 @property(readonly, nonatomic) float currentVideoFrameRate;
 - (id)fallbackTrack;
@@ -43,7 +44,6 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem *)arg1 readyForInspection:(_Bool)arg2 trackID:(int)arg3 asset:(id)arg4 playerItem:(id)arg5;
 

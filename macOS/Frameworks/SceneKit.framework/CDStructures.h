@@ -393,6 +393,48 @@ struct SCNMTLBufferPool {
     unsigned long long _field11;
 };
 
+struct SCNMTLComputeCommandEncoder {
+    id _buffers[31];
+    unsigned long long _offsets[31];
+    id _textures[128];
+    id _samplers[16];
+    id _computePipelineState;
+    id _encoder;
+    id _commandBuffer;
+    struct SCNMTLBufferPool *_bufferPool;
+    unsigned int _features;
+    unsigned long long _texturesToBind[2];
+    unsigned long long _buffersToBind[1];
+};
+
+struct SCNMTLRenderCommandEncoder {
+    _Bool _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    _Bool _field6;
+    _Bool _field7;
+    _Bool _field8;
+    _Bool _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    _Bool _field12;
+    _Bool _field13;
+    CDStruct_deec94a8 _field14[31];
+    id _field15[128];
+    id _field16[16];
+    CDStruct_deec94a8 _field17[31];
+    id _field18[128];
+    id _field19[16];
+    id _field20;
+    id _field21;
+    id _field22;
+    struct SCNMTLBufferPool *_field23;
+    unsigned long long _field24[2];
+    unsigned long long _field25[2];
+};
+
 struct SCNMTLTexturePool {
     id _field1;
     id _field2;
@@ -1402,6 +1444,7 @@ struct _CGLContextObject {
         CDUnknownFunctionPointerType _field972;
         CDUnknownFunctionPointerType _field973;
         CDUnknownFunctionPointerType _field974;
+        CDUnknownFunctionPointerType _field975;
     } _field2;
     struct _CGLPrivateObject *_field3;
     void *_field4;
@@ -2225,23 +2268,24 @@ typedef struct {
 } CDStruct_4cea7480;
 
 typedef struct {
-    id _field1;
-    id _field2;
-    unsigned int _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    unsigned char _field9;
-} CDStruct_c3e9b8dc;
+    id buffer;
+    unsigned long long offset;
+} CDStruct_deec94a8;
 
 typedef struct {
     unsigned char renderSliceIndex;
     unsigned char eyeCount;
     unsigned char renderMode;
+    _Bool isMainPass;
     _Bool isFinalTechnique;
-} CDStruct_b491a7a6;
+} CDStruct_7e4e619b;
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+} CDStruct_a06f635e;
 
 typedef struct {
     unsigned char format;
@@ -2268,11 +2312,11 @@ typedef struct {
 } CDStruct_d65e47c4;
 
 typedef struct {
-    unsigned long long colorFormat[4];
+    unsigned long long colorFormat[8];
     unsigned long long depthFormat;
     unsigned long long stencilFormat;
     unsigned char sampleCount;
-} CDStruct_b93dc639;
+} CDStruct_8f3d16ac;
 
 typedef struct {
     char *memory;
@@ -2406,18 +2450,6 @@ typedef struct {
 } CDStruct_65434d98;
 
 typedef struct {
-    struct __C3DFXPass *_field1;
-    struct __C3DFXTechnique *_field2;
-    void *_field3;
-    struct __C3DEngineContext *_field4;
-    struct __C3DFXProgramObject *_field5;
-    double _field6;
-    void *_field7;
-    struct __C3DRendererElement *_field8;
-    long long _field9;
-} CDStruct_b9d91b93;
-
-typedef struct {
     struct __C3DFXProgram *weakProgram;
     unsigned int baseIndex;
     unsigned int baseVertex;
@@ -2426,7 +2458,7 @@ typedef struct {
     unsigned int allocatedIndicesSize;
     struct __C3DImage *textureImage;
     struct __C3DTexture *texture;
-    unsigned int drawMode;
+    unsigned char drawMode;
     _Bool orthographic;
     _Bool clearDepthBuffer;
     _Bool enableDepthTest;
@@ -2446,7 +2478,7 @@ typedef struct {
     NSMutableSet *_freeMeshes;
     NSMutableSet *_usedMeshElements;
     NSMutableSet *_freeMeshElements;
-} CDStruct_4aabc75a;
+} CDStruct_5d7f1bfa;
 
 typedef struct {
     struct __C3DFXProgram *_field1;
@@ -2468,6 +2500,20 @@ typedef struct {
         CDUnknownBlockType _field2;
     } _field15;
 } CDStruct_089bc920;
+
+typedef struct {
+    struct __C3DMesh *_field1;
+    id _field2;
+    struct __C3DMeshElement *_field3;
+    id _field4;
+    unsigned int _field5;
+    id _field6;
+    id _field7;
+    id _field8;
+    id _field9;
+    id _field10;
+    unsigned char _field11;
+} CDStruct_d07ba996;
 
 typedef struct {
     long long _field1;
@@ -2516,9 +2562,9 @@ typedef struct {
 typedef struct {
     CDStruct_089bc920 _field1;
     id _field2;
-    CDStruct_b93dc639 _field3;
+    CDStruct_8f3d16ac _field3;
     struct __C3DBlendStates *_field4;
-    unsigned long long _field5[4];
+    unsigned long long _field5[8];
     unsigned char _field6;
     id _field7;
     id _field8;
@@ -2529,7 +2575,7 @@ typedef struct {
     _Bool _field13;
     _Bool _field14;
     _Bool _field15;
-} CDStruct_0fd8ad93;
+} CDStruct_2e1f3d1e;
 
 typedef struct {
     struct {

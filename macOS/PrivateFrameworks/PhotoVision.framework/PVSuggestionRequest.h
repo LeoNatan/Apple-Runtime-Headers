@@ -6,30 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class CVMLRequest, NSArray, NSString, PVCanceler;
+@class NSArray, NSMutableDictionary, NSString, VNCanceller;
 
-__attribute__((visibility("hidden")))
 @interface PVSuggestionRequest : NSObject
 {
     long long _type;
     NSString *_requestId;
+    NSMutableDictionary *_clusterFlagByClusterId;
     NSArray *_csns;
     NSArray *_cflags;
     CDUnknownBlockType _updateHandler;
-    CVMLRequest *_cvmlRequest;
-    PVCanceler *_canceller;
+    VNCanceller *_canceller;
 }
 
-+ (id)requestWithFaceCSNs:(id)arg1 withFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
-@property(readonly) PVCanceler *canceller; // @synthesize canceller=_canceller;
-@property(retain) CVMLRequest *cvmlRequest; // @synthesize cvmlRequest=_cvmlRequest;
++ (id)requestWithFaceClusterIds:(id)arg1 clusterFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
+@property(readonly) VNCanceller *canceller; // @synthesize canceller=_canceller;
 @property(copy) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly) NSArray *cflags; // @synthesize cflags=_cflags;
 @property(readonly) NSArray *csns; // @synthesize csns=_csns;
+@property(readonly) NSMutableDictionary *clusterFlagByClusterId; // @synthesize clusterFlagByClusterId=_clusterFlagByClusterId;
 @property(readonly) NSString *requestId; // @synthesize requestId=_requestId;
 @property(readonly) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
-- (id)initWithFaceCSNs:(id)arg1 withFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
+- (id)initWithFaceClusterIds:(id)arg1 clusterFlags:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
 
 @end
 

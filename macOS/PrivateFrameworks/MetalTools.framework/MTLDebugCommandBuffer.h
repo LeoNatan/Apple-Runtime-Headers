@@ -20,6 +20,8 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void *)debugBufferContentsWithLength:(unsigned long long *)arg1;
+- (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
 - (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)encodeSignalEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)executeSynchronizationNotifications:(int)arg1 scope:(unsigned long long)arg2 resources:(const id *)arg3 count:(unsigned long long)arg4;
@@ -36,6 +38,7 @@
 - (id)computeCommandEncoderWithDispatchType:(unsigned long long)arg1;
 - (id)computeCommandEncoder;
 - (id)renderCommandEncoderWithDescriptor:(id)arg1;
+- (void)addCompletedHandler:(CDUnknownBlockType)arg1;
 - (void)trackRenderPassDescriptor:(id)arg1;
 - (void)_trackRenderPassAttachmentDescriptor:(id)arg1;
 - (void)_trackTexture:(id)arg1;

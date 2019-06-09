@@ -12,14 +12,19 @@
 
 @interface VNCreateFaceprintRequest : VNImageBasedRequest <VNFaceObservationAccepting>
 {
+    BOOL _forceFaceprintCreation;
 }
 
++ (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
++ (void)recordDefaultOptionsInDictionary:(id)arg1;
 + (const CDStruct_d47b9615 *)dependentRequestCompatability;
 + (const CDStruct_7d93034e *)revisionAvailability;
+@property(nonatomic) BOOL forceFaceprintCreation; // @synthesize forceFaceprintCreation=_forceFaceprintCreation;
 - (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (void)_determineFacesToProcessFrom:(id)arg1 outputFacesThatNeedNoProcessing:(id)arg2 outputFacesThatNeedAlignment:(id)arg3 outputFacesThatNeedFaceprints:(id)arg4;
 - (long long)dependencyProcessingOrdinality;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
+- (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

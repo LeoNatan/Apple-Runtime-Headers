@@ -17,7 +17,6 @@
 - (void)fetchCarKitConnectedStateWithHandler:(CDUnknownBlockType)arg1;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
-- (_Bool)interestedInDeviceType:(id)arg1;
 
 @end
 

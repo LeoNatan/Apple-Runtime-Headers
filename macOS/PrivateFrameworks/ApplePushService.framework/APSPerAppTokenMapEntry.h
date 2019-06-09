@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL flag; // @synthesize flag=_flag;
 @property(retain, nonatomic) NSData *perAppToken; // @synthesize perAppToken=_perAppToken;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

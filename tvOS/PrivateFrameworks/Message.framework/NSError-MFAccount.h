@@ -9,5 +9,11 @@
 @interface NSError (MFAccount)
 - (_Bool)mf_isInaccessibleAccountCredentialError;
 - (_Bool)mf_isMissingAccountCredentialError;
+- (_Bool)mf_shouldFailDownload;
+- (id)mf_shortDescription;
+- (id)mf_moreInfo;
+- (_Bool)mf_shouldBeReportedToUser;
+- (_Bool)mf_isSMIMEError;
+- (_Bool)mf_isUserCancelledError;
 @end
 

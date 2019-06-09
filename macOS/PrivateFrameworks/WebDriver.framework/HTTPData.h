@@ -6,23 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSFileHandle;
+@class NSData;
 
 @interface HTTPData : NSObject
 {
-    NSFileHandle *file;
-    unsigned long long offset;
     unsigned long long length;
     NSData *data;
 }
 
 @property(retain) NSData *data; // @synthesize data;
 @property unsigned long long length; // @synthesize length;
-@property unsigned long long offset; // @synthesize offset;
-@property(retain) NSFileHandle *file; // @synthesize file;
 - (void).cxx_destruct;
 - (id)initWithData:(id)arg1;
-- (id)initWithSendfile:(id)arg1 offset:(long long)arg2 length:(long long)arg3;
 
 @end
 

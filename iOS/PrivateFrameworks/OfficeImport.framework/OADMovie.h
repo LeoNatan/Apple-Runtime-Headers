@@ -25,8 +25,8 @@ __attribute__((visibility("hidden")))
 @property _Bool isAudioOnly; // @synthesize isAudioOnly=mIsAudioOnly;
 @property(retain) NSString *name; // @synthesize name=mName;
 @property(retain) NSData *data; // @synthesize data=mData;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

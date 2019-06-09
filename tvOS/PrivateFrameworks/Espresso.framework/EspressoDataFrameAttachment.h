@@ -10,6 +10,7 @@
 
 @interface EspressoDataFrameAttachment : NSObject
 {
+    _Bool _disabled;
     NSString *_filePath;
     void *_rawPointer;
     unsigned long long _offset;
@@ -21,6 +22,7 @@
 @property unsigned long long offset; // @synthesize offset=_offset;
 @property void *rawPointer; // @synthesize rawPointer=_rawPointer;
 @property(retain) NSString *filePath; // @synthesize filePath=_filePath;
+@property _Bool disabled; // @synthesize disabled=_disabled;
 - (void).cxx_destruct;
 - (void)loadFromDict:(id)arg1 frameStorage:(id)arg2;
 

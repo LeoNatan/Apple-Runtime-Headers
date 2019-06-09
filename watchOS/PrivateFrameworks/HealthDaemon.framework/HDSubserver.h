@@ -8,21 +8,21 @@
 
 #import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 
-@class HDDaemon, HDHealthStoreServer, HDProfile, HDXPCClient, NSString;
+@class HDDaemon, HDHealthStoreClient, HDHealthStoreServer, HDProfile, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HDSubserver : NSObject <HDDiagnosticObject>
 {
     HDDaemon *_daemon;
     HDHealthStoreServer *_server;
-    HDXPCClient *_client;
+    HDHealthStoreClient *_client;
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) HDProfile *profile; // @synthesize profile=_profile;
-@property(readonly, nonatomic) HDXPCClient *client; // @synthesize client=_client;
+@property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) __weak HDHealthStoreServer *server; // @synthesize server=_server;
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;

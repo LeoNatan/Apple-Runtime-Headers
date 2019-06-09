@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class VKFootprint, VKViewVolume;
+@class VKCameraRegionRestriction, VKFootprint, VKViewVolume;
 
 __attribute__((visibility("hidden")))
 @interface VKCamera : NSObject
@@ -35,26 +35,27 @@ __attribute__((visibility("hidden")))
     double _horizontalOffset;
     double _ndcZNear;
     double _aspectRatio;
-    double _verticalFieldOfView;
+    Unit_3d259e8a _verticalFieldOfView;
     double _near;
     double _far;
     double _width;
     double _height;
-    RigidTransform_271c3a39 _transform;
+    RigidTransform_b9386d13 _transform;
     Matrix_08d701e4 _scaledViewMatrix;
-    Matrix_08d701e4 _scaledSkewedViewMatrix;
     Matrix_08d701e4 _scaledProjectionMatrix;
     Matrix_08d701e4 _scaledViewProjectionMatrix;
-    Matrix_08d701e4 _scaledSkewedViewProjectionMatrix;
     Matrix_08d701e4 _unscaledViewMatrix;
     Matrix_08d701e4 _unscaledProjectionMatrix;
-    Matrix_08d701e4 _unscaledViewProjectionMatrix;
-    Matrix_08d701e4 _unscaledProjectionMatrixWithoutOffset;
-    Matrix_08d701e4 _viewProjectionMatrixWithoutOffset;
     Matrix_08d701e4 _worldMatrix;
     double _maxHeightNoPitch;
+    VKCameraRegionRestriction *_regionRestriction;
+    double _minDistanceToGround;
+    double _maxDistanceToGround;
 }
 
+@property(nonatomic) double maxDistanceToGround; // @synthesize maxDistanceToGround=_maxDistanceToGround;
+@property(nonatomic) double minDistanceToGround; // @synthesize minDistanceToGround=_minDistanceToGround;
+@property(retain, nonatomic) VKCameraRegionRestriction *regionRestriction; // @synthesize regionRestriction=_regionRestriction;
 @property(nonatomic) double ndcZNear; // @synthesize ndcZNear=_ndcZNear;
 @property(nonatomic) double horizontalOffset; // @synthesize horizontalOffset=_horizontalOffset;
 @property(nonatomic) double canonicalPitch; // @synthesize canonicalPitch=_canonicalPitch;
@@ -70,16 +71,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (View_fc0baec4)view:(struct ViewSize)arg1;
-- (Matrix_6e1d3589)projectWorldSpaceToClipSpace:(const Mercator3_40a88dec *)arg1;
+- (CameraFrame_406dbd31)cameraFrame;
+- (View_a667aa2f)view:(struct ViewSize)arg1;
 @property(readonly, nonatomic) const Matrix_08d701e4 *unscaledProjectionMatrix;
-@property(readonly, nonatomic) const Matrix_08d701e4 *unscaledViewProjectionMatrix;
 @property(readonly, nonatomic) const Matrix_08d701e4 *unscaledViewMatrix;
 @property(readonly, nonatomic) const Matrix_08d701e4 *scaledViewMatrix;
 @property(readonly, nonatomic) const Matrix_08d701e4 *scaledProjectionMatrix;
-@property(readonly, nonatomic) const Matrix_08d701e4 *unscaledProjectionMatrixWithoutOffset;
-@property(readonly, nonatomic) const Matrix_08d701e4 *viewProjectionMatrixWithoutOffset;
-@property(readonly, nonatomic) const Matrix_08d701e4 *scaledSkewedViewProjectionMatrix;
 @property(readonly, nonatomic) const Matrix_08d701e4 *scaledViewProjectionMatrix;
 - (void)adjustClipPlanes;
 - (float)zoomAtCentrePoint;
@@ -96,7 +93,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isOuterWorldBoundsVisible;
 - (_Bool)isWorldSpaceRectVisible:(const Box_3d7e3c2c *)arg1;
 - (float)maximumStyleZForRect:(const Box_3d7e3c2c *)arg1;
-- (_Bool)hasChangedState:(struct VKCameraState *)arg1;
 @property(nonatomic) struct VKCameraState cameraState;
 @property(readonly, nonatomic) double yaw;
 @property(readonly, nonatomic) double pitch;
@@ -111,11 +107,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double tanHalfHorizFOV;
 @property(readonly, nonatomic) double nearClipDistance;
 @property(readonly, nonatomic) double farClipDistance;
-@property(readonly, nonatomic) float horizontalFieldOfView;
-@property(nonatomic) float verticalFieldOfView;
+@property(readonly, nonatomic) Unit_3d259e8a horizontalFieldOfView;
+@property(nonatomic) Unit_3d259e8a verticalFieldOfView;
 @property(nonatomic) const Quaternion_febf9140 *orientation;
 @property(readonly, nonatomic) CDStruct_7a7719de frustum;
 @property(nonatomic) const Matrix_6e1d3589 *position;
+- (Mercator3_d8bb135c)mercatorPosition;
+- (void)setMercatorPosition:(const Mercator3_d8bb135c *)arg1;
 - (void)_setPosition:(const Matrix_6e1d3589 *)arg1;
 - (id)descriptionDictionaryRepresentation;
 - (id)description;

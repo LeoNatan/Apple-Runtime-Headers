@@ -29,11 +29,13 @@
     NSDate *_createdDate;
     NSString *_sourceName;
     NSString *_predicate;
+    NSString *_gracePredicate;
     NSString *_valueExpression;
     NSString *_progressExpression;
     NSString *_goalExpression;
     unsigned int _triggers;
     NSString *_visibilityPredicate;
+    NSString *_graceVisibilityPredicate;
     NSString *_availabilityPredicate;
     NSArray *_availableCountryCodes;
     NSString *_alertabilityPredicate;
@@ -41,9 +43,11 @@
     unsigned int _duplicateRemovalCalendarUnit;
     HKUnit *_canonicalUnit;
     unsigned int _displayOrder;
+    NSArray *_availableSuffixes;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSArray *availableSuffixes; // @synthesize availableSuffixes=_availableSuffixes;
 @property(nonatomic) _Bool displaysEarnedInstanceCount; // @synthesize displaysEarnedInstanceCount=_displaysEarnedInstanceCount;
 @property(nonatomic) unsigned int displayOrder; // @synthesize displayOrder=_displayOrder;
 @property(retain, nonatomic) HKUnit *canonicalUnit; // @synthesize canonicalUnit=_canonicalUnit;
@@ -54,12 +58,14 @@
 @property(retain, nonatomic) NSString *alertabilityPredicate; // @synthesize alertabilityPredicate=_alertabilityPredicate;
 @property(retain, nonatomic) NSArray *availableCountryCodes; // @synthesize availableCountryCodes=_availableCountryCodes;
 @property(retain, nonatomic) NSString *availabilityPredicate; // @synthesize availabilityPredicate=_availabilityPredicate;
+@property(retain, nonatomic) NSString *graceVisibilityPredicate; // @synthesize graceVisibilityPredicate=_graceVisibilityPredicate;
 @property(retain, nonatomic) NSString *visibilityPredicate; // @synthesize visibilityPredicate=_visibilityPredicate;
 @property(nonatomic) unsigned char earnLimit; // @synthesize earnLimit=_earnLimit;
 @property(nonatomic) unsigned int triggers; // @synthesize triggers=_triggers;
 @property(retain, nonatomic) NSString *goalExpression; // @synthesize goalExpression=_goalExpression;
 @property(retain, nonatomic) NSString *progressExpression; // @synthesize progressExpression=_progressExpression;
 @property(retain, nonatomic) NSString *valueExpression; // @synthesize valueExpression=_valueExpression;
+@property(retain, nonatomic) NSString *gracePredicate; // @synthesize gracePredicate=_gracePredicate;
 @property(retain, nonatomic) NSString *predicate; // @synthesize predicate=_predicate;
 @property(retain, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;
 @property(nonatomic) unsigned char creatorDevice; // @synthesize creatorDevice=_creatorDevice;
@@ -79,7 +85,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)_displayStringForAvailableCountryCodes:(id)arg1;
+- (id)_displayStringForStringValues:(id)arg1;
 - (id)_displayStringForAlertDates:(id)arg1;
 - (id)debugDescription;
 - (id)description;

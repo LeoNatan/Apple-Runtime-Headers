@@ -15,6 +15,7 @@
 }
 
 + (id)inputModesForIdentifiers:(id)arg1;
+@property(readonly, nonatomic) NSArray *userPreferredLanguages;
 @property(readonly, nonatomic) NSArray *userEnabledInputModes;
 @property(readonly, nonatomic) TIInputMode *preferredSecondaryInputMode;
 

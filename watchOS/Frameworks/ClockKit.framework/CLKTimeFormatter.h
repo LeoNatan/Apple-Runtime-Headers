@@ -35,6 +35,7 @@
     struct NSNumber *_minutesUpdateToken;
     _Bool _useNarrowDesignatorTextForGerman;
     _Bool _suppressesDesignatorWhitespace;
+    _Bool _includeSeparatorInTimeSubstringFromSeparatorText;
     _Bool _showSeconds;
     _Bool _forcesLatinNumbers;
     NSTimeZone *_timeZone;
@@ -46,6 +47,7 @@
 @property(nonatomic) __weak id <CLKTimeFormatterDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _Bool forcesLatinNumbers; // @synthesize forcesLatinNumbers=_forcesLatinNumbers;
 @property(nonatomic) _Bool showSeconds; // @synthesize showSeconds=_showSeconds;
+@property(nonatomic) _Bool includeSeparatorInTimeSubstringFromSeparatorText; // @synthesize includeSeparatorInTimeSubstringFromSeparatorText=_includeSeparatorInTimeSubstringFromSeparatorText;
 @property(retain, nonatomic) NSDate *overrideDate; // @synthesize overrideDate=_overrideDate;
 @property(nonatomic) _Bool suppressesDesignatorWhitespace; // @synthesize suppressesDesignatorWhitespace=_suppressesDesignatorWhitespace;
 @property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;

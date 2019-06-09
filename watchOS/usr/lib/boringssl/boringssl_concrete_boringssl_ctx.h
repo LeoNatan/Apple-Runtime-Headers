@@ -8,8 +8,8 @@
 
 #import <boringssl/OS_boringssl_ctx-Protocol.h>
 
-@class NSString, boringssl_concrete_nw_protocol_boringssl;
-@protocol OS_dispatch_queue, OS_nw_array, OS_nw_context, OS_nw_protocol_metadata, OS_xpc_object;
+@class NSString, boringssl_concrete_boringssl_identity, boringssl_concrete_nw_protocol_boringssl;
+@protocol OS_dispatch_data, OS_dispatch_queue, OS_nw_array, OS_nw_association, OS_nw_context, OS_nw_protocol_metadata, OS_nw_protocol_options, OS_xpc_object;
 
 __attribute__((visibility("hidden")))
 @interface boringssl_concrete_boringssl_ctx : NSObject <OS_boringssl_ctx>
@@ -17,22 +17,22 @@ __attribute__((visibility("hidden")))
     struct boringssl_legacy_ctx *legacy_context;
     boringssl_concrete_nw_protocol_boringssl *boringssl_handle;
     NSObject<OS_nw_context> *async_context;
-    CDStruct_d1057fba ssl_psk_identity;
-    CDStruct_d1057fba ssl_psk_secret;
-    CDStruct_d1057fba ssl_alpn_data_selected;
-    CDStruct_d1057fba ssl_alpn_data_supported;
-    CDStruct_d1057fba ssl_peer_npn_data;
-    CDStruct_d1057fba ssl_npn_data_advertised;
-    CDStruct_d1057fba ssl_session_key;
+    NSObject<OS_nw_association> *association;
+    CDStruct_d1057fba selected_alpn_data;
+    NSObject<OS_dispatch_data> *psk_identity;
+    NSObject<OS_dispatch_data> *psk_secret;
     CDStruct_d1057fba ssl_ocsp_response;
-    int ssl_max_version_allowed;
+    int max_allowed_tls_version;
+    int max_allowed_dtls_version;
+    int min_allowed_tls_version;
+    int min_allowed_dtls_version;
     int ssl_max_version;
     int ssl_min_version;
     int config;
     NSObject<OS_xpc_object> *alpn_protocols;
     NSObject<OS_nw_array> *callbacks;
     char *subject_name;
-    // Error parsing type: ^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v}, name: ssl_private_key_ref
+    boringssl_concrete_boringssl_identity *identity;
     NSObject<OS_dispatch_queue> *client_queue;
     NSObject<OS_dispatch_queue> *metrics_queue;
     CDUnknownBlockType boringssl_message_block;
@@ -42,7 +42,13 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *challenge_queue;
     CDUnknownBlockType key_update_block;
     NSObject<OS_dispatch_queue> *key_update_queue;
-    struct nw_protocol_boringssl_private_key_methods ssl_private_key_methods;
+    CDUnknownBlockType session_update_block;
+    NSObject<OS_dispatch_queue> *session_update_queue;
+    NSObject<OS_dispatch_queue> *private_key_queue;
+    CDUnknownBlockType private_key_sign_block;
+    CDUnknownBlockType private_key_decrypt_block;
+    CDUnknownBlockType alert_callback;
+    CDUnknownBlockType connected_callback;
     int ssl_state;
     _Bool message_callback_in_progress;
     int callback_message_type;
@@ -51,16 +57,32 @@ __attribute__((visibility("hidden")))
     NSObject<OS_nw_array> *pending_handshake_callbacks;
     int peer_trust;
     unsigned long handshake_timer_fires;
+    unsigned short certificate_compression_algorithm;
     struct SSLCertificate *ssl_peer_certs;
     // Error parsing type: ^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v}, name: peer_public_key
     struct __CFArray *peer_cert_chain;
     struct __SecTrust *peer_trust_ref;
     struct __CFArray *acceptable_domain_name_list;
+    NSObject<OS_dispatch_data> *session_state;
     struct ssl_st *ssl_session;
     struct ssl_ctx_st *ssl_ctx;
+    CDUnknownBlockType handshake_state_callback;
     unsigned long long handshake_start;
     unsigned long long handshake_end;
+    unsigned long long current_flight_time;
+    unsigned long long total_flight_time;
+    unsigned short round_trips;
+    unsigned long long outbound_byte_count;
+    unsigned long long inbound_byte_count;
+    unsigned long write_stalls;
+    unsigned long read_stalls;
+    unsigned long async_count;
+    NSObject<OS_nw_protocol_options> *options;
     NSObject<OS_nw_protocol_metadata> *metadata;
+    unsigned long minimum_rsa_key_size;
+    unsigned long minimum_ecdsa_key_size;
+    unsigned int minimum_signature_algorithm;
+    unsigned int started_flight:1;
     unsigned int cancelled:1;
     unsigned int sct_enable:1;
     unsigned int ocsp_enable:1;
@@ -76,13 +98,21 @@ __attribute__((visibility("hidden")))
     unsigned int npn_enabled:1;
     unsigned int alpn_enabled:1;
     unsigned int resumed:1;
+    unsigned int renewed:1;
+    unsigned int flight_direction:1;
     unsigned int peer_verified:1;
     unsigned int peer_verification_in_progress:1;
     unsigned int received_certificate_request:1;
     unsigned int recovered_session:1;
     unsigned int tried_resumption:1;
+    unsigned int offered_ticket:1;
+    unsigned int early_data_enabled:1;
     unsigned int enforce_ev:1;
     unsigned int is_probe:1;
+    unsigned int ats_enforced:1;
+    unsigned int trust_evaluation_complete:1;
+    unsigned int certificate_compression_enabled:1;
+    unsigned int certificate_compression_used:1;
 }
 
 - (void).cxx_destruct;

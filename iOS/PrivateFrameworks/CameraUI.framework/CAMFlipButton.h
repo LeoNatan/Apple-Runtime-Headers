@@ -15,10 +15,12 @@
     long long _layoutStyle;
     long long _orientation;
     UIImageView *__imageView;
+    UIImageView *__circleBackgroundView;
     struct UIEdgeInsets _tappableEdgeInsets;
 }
 
 + (id)flipButtonWithLayoutStyle:(long long)arg1;
+@property(retain, nonatomic) UIImageView *_circleBackgroundView; // @synthesize _circleBackgroundView=__circleBackgroundView;
 @property(readonly, nonatomic) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) struct UIEdgeInsets tappableEdgeInsets; // @synthesize tappableEdgeInsets=_tappableEdgeInsets;

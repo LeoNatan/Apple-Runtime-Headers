@@ -23,6 +23,7 @@
 - (void)statusBarWillAnimateByHeight:(double)arg1;
 - (void)willBecomeActive;
 - (void)willResignActive;
+- (void)handleURL:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleURL:(id)arg1;
 - (void)showController:(id)arg1 animate:(_Bool)arg2;
 - (void)showController:(id)arg1;

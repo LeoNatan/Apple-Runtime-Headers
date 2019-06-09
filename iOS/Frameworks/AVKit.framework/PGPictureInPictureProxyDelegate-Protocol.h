@@ -6,7 +6,7 @@
 
 #import <AVKit/NSObject-Protocol.h>
 
-@class NSError, PGPictureInPictureProxy;
+@class NSError, PGPictureInPictureProxy, UIWindow;
 
 @protocol PGPictureInPictureProxyDelegate <NSObject>
 
@@ -19,6 +19,7 @@
 - (void)pictureInPictureProxy:(PGPictureInPictureProxy *)arg1 failedToStartPictureInPictureWithAnimationType:(long long)arg2 error:(NSError *)arg3;
 - (void)pictureInPictureProxy:(PGPictureInPictureProxy *)arg1 didStartPictureInPictureWithAnimationType:(long long)arg2;
 - (void)pictureInPictureProxy:(PGPictureInPictureProxy *)arg1 willStartPictureInPictureWithAnimationType:(long long)arg2;
+- (UIWindow *)pictureInPictureProxyViewControllerWindowForTransitionAnimation:(PGPictureInPictureProxy *)arg1;
 - (struct CGRect)pictureInPictureProxyViewFrameForTransitionAnimation:(PGPictureInPictureProxy *)arg1;
 - (long long)pictureInPictureProxyInterfaceOrientationForTransitionAnimation:(PGPictureInPictureProxy *)arg1;
 @end

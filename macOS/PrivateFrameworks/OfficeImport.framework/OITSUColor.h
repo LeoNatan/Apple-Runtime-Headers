@@ -11,6 +11,7 @@
 
 @class NSColor, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OITSUColor : NSObject <NSCopying, NSPasteboardReading>
 {
     struct CGColor *mCGColor;

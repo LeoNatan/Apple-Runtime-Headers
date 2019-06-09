@@ -14,6 +14,7 @@
     NSDictionary *_providerConfiguration;
     NSString *_providerBundleIdentifier;
     NSString *_pluginType;
+    NSString *_designatedRequirement;
     NSString *_authenticationPluginType;
     NSDictionary *_vendorInfo;
     long long _authenticationMethod;
@@ -25,6 +26,7 @@
 @property long long authenticationMethod; // @synthesize authenticationMethod=_authenticationMethod;
 @property(copy) NSDictionary *vendorInfo; // @synthesize vendorInfo=_vendorInfo;
 @property(copy) NSString *authenticationPluginType; // @synthesize authenticationPluginType=_authenticationPluginType;
+@property(copy) NSString *designatedRequirement; // @synthesize designatedRequirement=_designatedRequirement;
 @property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
 @property(copy) NSString *providerBundleIdentifier; // @synthesize providerBundleIdentifier=_providerBundleIdentifier;
 @property(copy) NSDictionary *providerConfiguration; // @synthesize providerConfiguration=_providerConfiguration;

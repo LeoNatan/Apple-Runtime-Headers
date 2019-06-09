@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <HealthDaemon/HDHealthDaemonReadyObserver-Protocol.h>
 #import <HealthDaemon/HDPeriodicActivityDelegate-Protocol.h>
 
 @class HDAssertion, HDPeriodicActivity, HDProfile, NSString, _HDWorkoutCondenserAnalyticsAccumulator;
 @protocol OS_dispatch_queue;
 
-@interface HDWorkoutCondenser : NSObject <HDHealthDaemonReadyObserver, HDPeriodicActivityDelegate>
+@interface HDWorkoutCondenser : NSObject <HDPeriodicActivityDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
     HDPeriodicActivity *_periodicActivity;
@@ -29,28 +28,29 @@
 + (_Bool)_updateCondenserVersionForWorkout:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 + (id)_dataOriginProvenanceForQuantitySampleEntity:(id)arg1 configuration:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
 + (_Bool)_deleteSamplesWithUUIDS:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
-+ (_Bool)_finishSeries:(id)arg1 workout:(id)arg2 sampleUUIDsToDelete:(id)arg3 configuration:(id)arg4 transaction:(id)arg5 error:(id *)arg6;
++ (id)_requiredMetadataForEntity:(id)arg1 quantityType:(id)arg2 workout:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
++ (_Bool)_finishSeries:(id)arg1 quantityType:(id)arg2 workout:(id)arg3 sampleUUIDsToDelete:(id)arg4 configuration:(id)arg5 transaction:(id)arg6 error:(id *)arg7;
 + (id)_insertValuesForSeries:(id)arg1 quantityType:(id)arg2 startTime:(double)arg3 values:(id)arg4 provenance:(id)arg5 configuration:(id)arg6 transaction:(id)arg7 countOut:(int *)arg8 error:(id *)arg9;
 + (_Bool)_createSeriesForIdentifier:(id)arg1 workout:(id)arg2 quantityType:(id)arg3 startTime:(double)arg4 values:(id)arg5 sampleUUIDsToDelete:(id)arg6 provenance:(id)arg7 configuration:(id)arg8 transaction:(id)arg9 error:(id *)arg10;
-+ (_Bool)_finalizeSeriesCreationForWorkout:(id)arg1 seriesIdentifier:(id)arg2 quantityType:(id)arg3 dataProvenance:(id)arg4 datumBuffer:(id)arg5 includedSeriesUUIDs:(id)arg6 includedSampleUUIDs:(id)arg7 seriesStartTime:(double)arg8 values:(id)arg9 configuration:(id)arg10 transaction:(id)arg11 error:(id *)arg12;
-+ (_Bool)_insertValuesAndFinishSeriesIfNecessaryForWorkout:(id)arg1 seriesIdentifierInOut:(id *)arg2 quantityType:(id)arg3 dataProvenance:(id)arg4 includedSampleUUIDs:(id)arg5 seriesStartTime:(double)arg6 values:(id)arg7 configuration:(id)arg8 transaction:(id)arg9 error:(id *)arg10;
++ (void)_addDatumToBuffer:(id)arg1 buffer:(id)arg2;
 + (_Bool)_processSamplesWithQuantityType:(id)arg1 workout:(id)arg2 predicate:(id)arg3 configuration:(id)arg4 transaction:(id)arg5 error:(id *)arg6;
-+ (_Bool)_hasMoreThanMinimumNumberOfSingleValueSamplesWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
-+ (_Bool)_hasSamplesThatOverlapInTimeWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
-+ (_Bool)_requiresProcessingWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
++ (int)_hasMoreThanMinimumNumberOfSingleValueSamplesWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
++ (int)_hasSamplesThatOverlapInTimeWithEntity:(id)arg1 enumerationPredicate:(id)arg2 configuration:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
++ (int)_requiresProcessingWithEntity:(id)arg1 quantityType:(id)arg2 enumerationPredicate:(id)arg3 configuration:(id)arg4 transaction:(id)arg5 error:(id *)arg6;
 + (_Bool)_condenseSamplesWithQuantityType:(id)arg1 workout:(id)arg2 entity:(id)arg3 predicate:(id)arg4 configuration:(id)arg5 transaction:(id)arg6 error:(id *)arg7;
++ (id)_condenserPredicateForQuantityType:(id)arg1 workout:(id)arg2 entity:(id)arg3 configuration:(id)arg4;
 + (_Bool)_condenseWorkout:(id)arg1 entity:(id)arg2 configuration:(id)arg3 error:(id *)arg4;
 + (_Bool)_condenseAndUpdateWorkout:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
 + (_Bool)_condenseWorkouts:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
-+ (id)_workoutEntitiesRequiringCondensationWithPredicate:(id)arg1 limit:(int)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4 transaction:(id)arg5 error:(id *)arg6;
++ (id)_workoutEntitiesRequiringCondensationWithPredicate:(id)arg1 limit:(int)arg2 orderingTerms:(id)arg3 transaction:(id)arg4 error:(id *)arg5;
 + (id)_workoutEntitiesRequiringCondensationWithProfile:(id)arg1 limit:(int)arg2 allowRecondensation:(_Bool)arg3 analyticsAccumulator:(id)arg4 error:(id *)arg5;
++ (id)seriesSyncIdentifierForEntity:(id)arg1 workout:(id)arg2 transaction:(id)arg3 error:(id *)arg4;
 + (id)workoutEntitiesRequiringCondensationWithProfile:(id)arg1 limit:(int)arg2 allowRecondensation:(_Bool)arg3 error:(id *)arg4;
 @property(readonly, nonatomic) _HDWorkoutCondenserAnalyticsAccumulator *analyticsAccumulator; // @synthesize analyticsAccumulator=_analyticsAccumulator;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
 - (void)performPeriodicActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)periodicActivity:(id)arg1 configureXPCActivityCriteria:(id)arg2;
-- (void)daemonReady:(id)arg1;
 - (void)_queue_submitAnalyticEventForReason:(int)arg1 batchSize:(int)arg2 success:(_Bool)arg3 duration:(double)arg4 analyticsAccumulator:(id)arg5 error:(id)arg6;
 - (void)_queue_popTTRPromptIfRequiredWithReason:(int)arg1 success:(_Bool)arg2 error:(id)arg3;
 - (_Bool)_queue_condenseWorkoutsWithAccessibilityAssertion:(id)arg1 batchLimit:(int)arg2 analyticsAccumulator:(id)arg3 error:(id *)arg4;

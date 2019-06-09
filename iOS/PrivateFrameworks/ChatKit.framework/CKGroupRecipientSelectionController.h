@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (void)_frecencySearch;
 - (void)_updateNavigationButton;
+- (double)topInsetForNavBar;
 - (struct UIEdgeInsets)navigationBarInsetsForRecipientSelectionController:(id)arg1;
 - (void)recipientSelectionController:(id)arg1 didFinishAvailaiblityLookupForRecipient:(id)arg2;
 - (void)recipientSelectionControllerDidPushABViewController:(id)arg1;

@@ -9,5 +9,9 @@
 @interface UINavigationController (SUTabBarControllerAdditions)
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
+- (void)_setStoreBarStyle:(long long)arg1 clientInterface:(id)arg2;
+- (void)invalidate;
+- (unsigned long long)indexOfViewController:(id)arg1;
+- (id)firstViewController;
 @end
 

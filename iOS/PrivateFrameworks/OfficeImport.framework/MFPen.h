@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
 
 + (id)penWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double *)arg4;
 + (id)pen;
+- (void).cxx_destruct;
 - (int)getStyle;
 - (int)getWidth;
 - (id)getColor;
 - (int)selectInto:(id)arg1;
-- (void)dealloc;
 - (id)initWithStyle:(int)arg1 width:(int)arg2 colour:(id)arg3 styleArray:(double *)arg4;
 - (id)init;
 

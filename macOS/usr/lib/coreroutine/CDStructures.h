@@ -18,24 +18,24 @@ struct CGSize {
 };
 
 struct CLLocationCoordinate2D {
-    double latitude;
-    double longitude;
-};
-
-struct NSArray {
-    Class _field1;
+    double _field1;
+    double _field2;
 };
 
 struct NSMapTable {
     Class _field1;
 };
 
-#pragma mark Typedef'd Structures
+struct RTPair {
+    Class _field1;
+};
 
-typedef struct {
-    unsigned int _field1;
-    float _field2;
-} CDStruct_f48a8b00;
+struct _NSRange {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
+#pragma mark Typedef'd Structures
 
 typedef struct {
     double _field1;

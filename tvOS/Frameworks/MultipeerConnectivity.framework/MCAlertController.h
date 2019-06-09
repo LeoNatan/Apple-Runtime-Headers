@@ -8,6 +8,7 @@
 
 @class UIWindow;
 
+__attribute__((visibility("hidden")))
 @interface MCAlertController : UIAlertController
 {
     CDUnknownBlockType _viewWillAppearHandler;

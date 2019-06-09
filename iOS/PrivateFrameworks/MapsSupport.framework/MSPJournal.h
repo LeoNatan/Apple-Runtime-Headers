@@ -9,7 +9,6 @@
 @class NSFileHandle, NSISO8601DateFormatter, NSString;
 @protocol MSPJournaling, OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface MSPJournal : NSObject
 {
     NSString *_path;

@@ -17,8 +17,8 @@
 }
 
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
-@property(retain) TLKSimpleRowView *rowView; // @synthesize rowView=_rowView;
-@property(retain) SearchUIButton *button; // @synthesize button=_button;
+@property(retain, nonatomic) TLKSimpleRowView *rowView; // @synthesize rowView=_rowView;
+@property(retain, nonatomic) SearchUIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
 - (void)buttonPressed;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
@@ -28,8 +28,8 @@
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) NUIContainerStackView *contentView; // @dynamic contentView;
-@property(retain) SearchUIWatchListCardRowModel *rowModel; // @dynamic rowModel;
+@property(retain, nonatomic) NUIContainerStackView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) SearchUIWatchListCardRowModel *rowModel; // @dynamic rowModel;
 
 @end
 

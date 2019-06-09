@@ -6,48 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, OS_dispatch_source;
-
 __attribute__((visibility("hidden")))
 @interface AirPlayReceiverContext : NSObject
 {
-    // Error parsing type: ^{AirPlayReceiverSessionPrivate={__CFRuntimeBase=QAQ}@^{AirPlayReceiverServerPrivate}^{OpaqueAPReceiverRequestProcessor}^{APReceiverSessionManagerOpaque}^v{?=^v^v^?^?^?^?^?^?}[32c][17c]^{OpaqueAPReceiverStatsCollector}@I(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})[16C]iQ[6C]CC^{__CFString}^{__CFString}QIQQI{?=^{_CCCryptor}[16C]}^{?}[16C][16C]CCCC^{OpaqueAPSNetworkClock}CCC^{HTTPClientPrivate}iii^{APPairingServicesPrivate}IIQQQQi^{APReceiverAudioSessionPrivate}I^{OpaqueFigValeria}^{OpaqueAPReceiverUIController}I^{OpaqueAPReceiverScreenSession}dCCIC^{__CFString}CCCCQ^{__CFDictionary}ii^{__CFArray}}, name: _session
+    // Error parsing type: ^{AirPlayReceiverSessionPrivate={__CFRuntimeBase=QAQ}@^{AirPlayReceiverServerPrivate}^{OpaqueAPReceiverRequestProcessor}^{APReceiverSessionManagerOpaque}^v{?=^v^v^?^?^?^?^?^?}[32c][17c]^{OpaqueAPReceiverStatsCollector}@I(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})(?={sockaddr=CC[14c]}{sockaddr_in=CCS{in_addr=I}[8c]}{sockaddr_in6=CCSI{in6_addr=(?=[16C][8S][4I])}I})[16C]iQ[6C]CC^{__CFString}^{__CFString}^{__CFString}^{__CFString}QIQQ{?=^{_CCCryptor}[16C]}^{?}[16C][16C]CCC^{OpaqueAPSNetworkClock}CCC^{HTTPClientPrivate}iii^{APPairingServicesPrivate}IIQQQQi^{__CFDictionary}^{APReceiverAudioSessionPrivate}I^{OpaqueFigValeria}^{OpaqueAPReceiverUIController}I^{OpaqueAPReceiverScreenSession}dCCIC^{__CFString}CCCCQ^{__CFDictionary}ii^{__CFArray}}, name: _session
+    struct __CFArray *_audioSessions;
     unsigned char _receiverUIStarted;
     unsigned int _receiverUISessionID;
-    unsigned char _sessionStarted;
-    struct {
-        unsigned int type;
-        unsigned long long format;
-        unsigned char loopback;
-        unsigned char varispeed;
-        unsigned char voice;
-        unsigned char movieAudioMode;
-        unsigned char volumeControl;
-        struct __CFString *timingProtocol;
-        unsigned int activeType;
-        struct AirPlayReceiverSessionPrivate *session;
-        struct APReceiverAudioSessionPrivate *audioSession;
-        struct AudioStreamBasicDescription asbd;
-        struct opaqueCMFormatDescription *formatDescription;
-        struct OpaqueFigValeria *consumer;
-        NSObject<OS_dispatch_queue> *consumerQueue;
-        NSObject<OS_dispatch_source> *consumerTimer;
-        unsigned long long sampleTimeStart;
-        unsigned long long sampleTimeLast;
-        int samplePTSAdjustment;
-        int converterNode;
-        struct ComponentInstanceRecord *converterUnit;
-        NSObject<OS_dispatch_source> *ducker;
-        struct OpaqueAUGraph *graph;
-        int mixerNode;
-        struct ComponentInstanceRecord *mixerUnit;
-        int outputNode;
-        struct ComponentInstanceRecord *outputUnit;
-        unsigned char outputStarted;
-        float outputVolume;
-        int varispeedNode;
-        struct ComponentInstanceRecord *varispeedUnit;
-    } _mainAudioCtx;
+    float _outputVolume;
     unsigned int _powerAssertion;
 }
 

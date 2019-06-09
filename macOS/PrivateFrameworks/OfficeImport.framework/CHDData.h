@@ -8,6 +8,7 @@
 
 @class CHDDataValuesCollection, CHDFormula, EDResources;
 
+__attribute__((visibility("hidden")))
 @interface CHDData : NSObject
 {
     CHDDataValuesCollection *mDataValues;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     int bytesPerRow;
     struct __CFData *dataPtr;
     struct __CVBuffer *pixelBuffer;
+    struct __IOSurface *ioSurf;
 }
 
 @property int bytesPerRow; // @synthesize bytesPerRow;
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property int width; // @synthesize width;
 - (struct __CVBuffer *)pixelBuffer;
 - (void)dealloc;
+- (id)initWithIOSurface:(struct __IOSurface *)arg1 maxDimension:(int)arg2;
 - (id)initWithCGImage:(struct CGImage *)arg1 maxDimension:(int)arg2;
 - (void)convertRGBAToYUV420:(char *)arg1 rgbaBytesPerRow:(int)arg2;
 

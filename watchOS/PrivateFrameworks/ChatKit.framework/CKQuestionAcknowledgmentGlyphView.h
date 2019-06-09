@@ -8,6 +8,7 @@
 
 @class UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface CKQuestionAcknowledgmentGlyphView : CKAcknowledgmentGlyphView
 {
     UIImageView *_glyph;

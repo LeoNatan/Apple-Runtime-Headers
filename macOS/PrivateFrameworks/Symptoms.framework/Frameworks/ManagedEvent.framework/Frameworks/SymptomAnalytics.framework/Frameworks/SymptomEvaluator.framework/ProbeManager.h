@@ -14,11 +14,10 @@
 @class CoreTelephonyDumpProbe, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue, ProbeManagerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface ProbeManager : NSObject <BonjourProbeDelegate, ICMPPingProbeDelegate, AWDLPeerProbeDelegate, CoreTelephonyDumpProbeDelegate>
 {
     unsigned long long probeSequenceNumber;
-    BOOL _isInternalBuild;
-    BOOL _isCarrierSeedBuild;
     id <ProbeManagerDelegate> _delegate;
     NSMutableDictionary *_probes;
     id _probeDetails;
@@ -53,6 +52,8 @@
 - (void)startTCPDumpForDiagSession:(id)arg1 duration:(id)arg2;
 - (void)startTestHTTPForDiagSession:(id)arg1 url:(id)arg2 timeout:(id)arg3 interfaceName:(id)arg4 userAgent:(id)arg5;
 - (void)startTestTCPConnectionForDiagSession:(id)arg1 url:(id)arg2 host:(id)arg3 port:(id)arg4 interfaceName:(id)arg5 timeout:(id)arg6;
+- (id)dateTimeStringFromCTDumpFolderPrefix:(id)arg1;
+- (BOOL)enableCoreTelephonyLoggingForCustomerSeed:(BOOL)arg1;
 - (void)finalizeCoreTelephonyDumps;
 - (void)initializeCoreTelephonyDumps;
 - (void)cancelAllProbes;

@@ -6,27 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class PLGatekeeperClient, PLManagedObjectContext, PLPhotoLibrary;
+@class NSMutableDictionary, PLPhotoLibraryPathManager;
+@protocol OS_dispatch_queue;
 
 @interface PLKeywordManager : NSObject
 {
-    PLPhotoLibrary *_photoLibrary;
-    PLManagedObjectContext *_libraryContext;
-    PLGatekeeperClient *_assetsdClient;
+    PLPhotoLibraryPathManager *_pathManager;
+    NSObject<OS_dispatch_queue> *_writeQueue;
+    NSMutableDictionary *_keywordCache;
 }
 
-+ (id)_writeQueue;
-+ (void)_invalidateKeywordCache;
-+ (void)_inq_loadKeywordsUsingContextIfNecessary:(id)arg1;
-- (_Bool)_assetsdSetKeywords:(id)arg1 forAssetUUID:(id)arg2;
-- (id)_inq_keywordObjectsForKeywords:(id)arg1;
-- (_Bool)setKeywords:(id)arg1 forAssetUUID:(id)arg2;
-- (id)_keywordsForAsset:(id)arg1;
-- (id)keywordsForAssets:(id)arg1;
-- (id)keywordsForAsset:(id)arg1;
-- (id)keywordsForAssetWithUUID:(id)arg1;
-- (void)dealloc;
-- (id)initWithPhotoLibrary:(id)arg1;
++ (id)_keywordsForAsset:(id)arg1;
++ (id)keywordsForAssets:(id)arg1;
++ (id)keywordsForAsset:(id)arg1;
++ (id)keywordsForAssetWithUUID:(id)arg1 managedObjectContext:(id)arg2;
+- (void).cxx_destruct;
+- (_Bool)_setKeywords:(id)arg1 forAsset:(id)arg2 managedObjectContext:(id)arg3;
+- (id)_inq_keywordObjectsForKeywords:(id)arg1 managedObjectContext:(id)arg2;
+- (void)_invalidateKeywordCache;
+- (void)_inq_loadKeywordsUsingContextIfNecessaryInManagedObjectContext:(id)arg1;
+- (_Bool)setKeywords:(id)arg1 forAsset:(id)arg2;
+- (_Bool)setKeywords:(id)arg1 forAssetUUID:(id)arg2 managedObjectContext:(id)arg3;
+- (id)initWithPathManager:(id)arg1;
 
 @end
 

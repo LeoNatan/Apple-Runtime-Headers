@@ -8,6 +8,7 @@
 
 @class NSArray, NSString, SKUIClientContext, SKUIReviewList, SKUIReviewsHistogramView, UIControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewsHistogramViewController : UIViewController
 {
     SKUIClientContext *_clientContext;

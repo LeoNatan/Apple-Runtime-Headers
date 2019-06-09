@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 + (id)objectInArray:(id)arg1 withPossiblyOutOfRangeIndex:(unsigned long long)arg2 defaultValue:(id)arg3;
 @property(copy, nonatomic) NSString *name; // @synthesize name=mName;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEmpty;
 - (void)validateStyleMatrix;
@@ -39,7 +40,6 @@ __attribute__((visibility("hidden")))
 - (id)fillAtIndex:(unsigned long long)arg1;
 - (unsigned long long)fillCount;
 - (void)addFill:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

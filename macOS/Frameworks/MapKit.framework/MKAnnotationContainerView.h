@@ -12,6 +12,7 @@
 @class MKAnnotationView, MKPinAnnotationView, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString;
 @protocol MKAnnotationContainerViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKAnnotationContainerView : NSView <VKCustomFeatureDataSource, _MKPinAnnotationViewDelegate>
 {
     NSMutableOrderedSet *_annotationViews;
@@ -33,7 +34,7 @@
     double _annotationViewsRotationRadians;
     struct CGAffineTransform _mapTransform;
     BOOL _suppressCallout;
-    NSMutableSet *_viewsToAnimate;
+    NSMutableArray *_pinsToAnimate;
     double _mapPitchRadians;
     CDStruct_51745937 _mapDisplayStyle;
     BOOL _suppress;
@@ -52,16 +53,16 @@
 - (void)_updateCollidableAnnotationViews;
 - (void)_updateClusterableAnnotationViews:(id)arg1 withID:(id)arg2;
 - (id)_existingClusterViewsForClusterID:(id)arg1;
-- (void)_updateAnnotationViewPositions;
+- (BOOL)_updateAnnotationViewPositions;
 - (void)stopSuppressingUpdates;
 - (void)suppressUpdates;
-- (void)_updateAnnotationViews:(id)arg1;
+- (BOOL)_updateAnnotationViews:(id)arg1;
 - (void)_updateAnnotationView:(id)arg1;
 - (id)menuForEvent:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (CDStruct_02837cd9)_mapRectWithFraction:(double)arg1 ofVisible:(CDStruct_02837cd9)arg2;
-- (void)transitionFrom:(long long)arg1 to:(long long)arg2 duration:(double)arg3;
+- (void)transitionTo:(long long)arg1;
 - (void)cursorUpdate:(id)arg1;
 - (void)annotationViewDidChangeCenterOffset:(id)arg1;
 - (void)_updateZPositionForAnnotationView:(id)arg1 inBounds:(struct CGRect)arg2;
@@ -71,8 +72,7 @@
 - (void)selectAnnotationView:(id)arg1 animated:(BOOL)arg2;
 - (void)dropPinsIfNeeded;
 - (void)removeAnnotationView:(id)arg1;
-- (void)finishRemovingAnnotationViews;
-- (void)finishAddingAnnotationViews;
+- (void)finishAddingAndRemovingAnnotationViews;
 - (void)addAnnotationView:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)_willRemoveInternalAnnotationView:(id)arg1;
 - (void)_dropPinsIfNeeded:(BOOL)arg1;
@@ -94,13 +94,6 @@
 - (void)_liftForDragging:(id)arg1 mouseDownPoint:(struct CGPoint)arg2;
 - (id)annotationViewForPoint:(struct CGPoint)arg1;
 - (id)_annotationViewForSelectionAtPoint:(struct CGPoint)arg1 avoidCurrent:(BOOL)arg2 maxDistance:(double)arg3;
-- (void)updateAnnotationLocationsDuringAnimation:(BOOL)arg1;
-- (struct CGPoint)convertCoordinate:(struct CLLocationCoordinate2D)arg1 toPointToView:(id)arg2;
-- (void)_updateOrientationOfViews:(id)arg1;
-- (void)_updateOrientationOfViews:(id)arg1 relative:(id)arg2 projectionView:(id)arg3;
-- (void)_updateOrientationOfViewsFast:(id)arg1 relative:(id)arg2 projectionView:(id)arg3;
-- (void)_updateOrientationOfViewsCorrect:(id)arg1 relative:(id)arg2 projectionView:(id)arg3;
-- (void)_findNextView:(id *)arg1 orientation:(int *)arg2 context:(id)arg3;
 @property(readonly, nonatomic) NSMutableOrderedSet *annotationViews;
 - (void)updateUserLocationView;
 - (void)updateAnnotationView:(id)arg1;

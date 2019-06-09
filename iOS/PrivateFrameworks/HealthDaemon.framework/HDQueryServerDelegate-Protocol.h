@@ -6,13 +6,11 @@
 
 #import <HealthDaemon/HDTaskServerDelegate-Protocol.h>
 
-@class HDQueryServer, HDReadAuthorizationStatus, HKObjectType, NSArray;
+@class HDQueryServer, NSArray;
 
 @protocol HDQueryServerDelegate <HDTaskServerDelegate>
-- (unsigned int)clientSDKVersionForQueryServer:(HDQueryServer *)arg1;
 - (void)queryServerDidFinish:(HDQueryServer *)arg1;
 - (void)queryServer:(HDQueryServer *)arg1 shouldStartWithCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)queryServer:(HDQueryServer *)arg1 requestsAuthorizationForSamples:(NSArray *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
-- (HDReadAuthorizationStatus *)readAuthorizationStatusForQueryServer:(HDQueryServer *)arg1 type:(HKObjectType *)arg2 error:(id *)arg3;
 @end
 

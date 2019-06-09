@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureSynchronizedDataInternal : NSObject
 {
     CDStruct_1b6d18a9 timestamp;

@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)createDebugMenu;
 - (void)_populateDebugMenu;
+- (id)_tabOrderManagmentSubmenuItem;
 - (id)_worldLeaksSubmenuItem;
 - (id)_internalDebugFeaturesSubmenuItem;
 - (id)_miscellaneousFlagsSubmenuItem;

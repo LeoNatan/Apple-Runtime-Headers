@@ -10,6 +10,7 @@
 
 @interface HDDemoDataPerson : NSObject
 {
+    _Bool _createHighFidelityData;
     _Bool _sexualActivityIsTryingToConceive;
     _Bool _useContinuousGlucoseMonitoring;
     NSString *_firstName;
@@ -258,6 +259,7 @@
 @property(nonatomic) double wristCircumferenceInInches; // @synthesize wristCircumferenceInInches=_wristCircumferenceInInches;
 @property(nonatomic) double waistCircumferenceInInches; // @synthesize waistCircumferenceInInches=_waistCircumferenceInInches;
 @property(nonatomic) double uvIndexSampleFrequency; // @synthesize uvIndexSampleFrequency=_uvIndexSampleFrequency;
+@property(nonatomic) _Bool createHighFidelityData; // @synthesize createHighFidelityData=_createHighFidelityData;
 @property(nonatomic) double genericSampleTimeNoiseStdDev; // @synthesize genericSampleTimeNoiseStdDev=_genericSampleTimeNoiseStdDev;
 @property(nonatomic) double sunsetTime; // @synthesize sunsetTime=_sunsetTime;
 @property(nonatomic) double dawnTime; // @synthesize dawnTime=_dawnTime;

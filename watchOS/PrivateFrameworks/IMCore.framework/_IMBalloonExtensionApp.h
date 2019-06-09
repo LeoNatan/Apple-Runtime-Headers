@@ -21,11 +21,11 @@
 - (id)plugin;
 - (void)setIsEnabled:(_Bool)arg1;
 - (_Bool)isEnabled;
+- (_Bool)showInBrowser;
+- (id)applicationType;
 - (_Bool)isBetaPlugin;
 - (_Bool)isStickerPackOnly;
 - (id)itemID;
-- (id)proxyWithErrorHandle:(CDUnknownBlockType)arg1;
-- (id)extensionConnection;
 - (id)version;
 - (id)initWithPluginBundle:(id)arg1 extension:(id)arg2 pluginKitProxyClass:(Class)arg3 proxy:(id)arg4;
 - (id)initWithPluginBundle:(id)arg1 extension:(id)arg2;

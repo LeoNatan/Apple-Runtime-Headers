@@ -36,9 +36,7 @@
 - (void)_disableMonitorMode;
 - (void)_enableMonitorModeWithDelegate:(id)arg1;
 - (void)removeHandlerForEntityID:(unsigned long long)arg1;
-- (void)removeHandlerForGUID:(unsigned long long)arg1;
 - (BOOL)setHandler:(id)arg1 forEntityID:(unsigned long long)arg2;
-- (BOOL)setHandler:(id)arg1 forGUID:(unsigned long long)arg2;
 - (id)initWithInterfaceName:(id)arg1;
 
 @end

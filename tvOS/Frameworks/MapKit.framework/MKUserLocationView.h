@@ -4,114 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapKit/MKAnnotationView.h>
+#import <MapKit/_MKPuckAnnotationView.h>
 
-#import <MapKit/VKPuckAnimatorTarget-Protocol.h>
-
-@class CALayer, CLLocation, NSString, VKNavigationPuck;
-@protocol MKUserLocationHeadingIndicator;
-
-@interface MKUserLocationView : MKAnnotationView <VKPuckAnimatorTarget>
+@interface MKUserLocationView : _MKPuckAnnotationView
 {
-    CALayer *_puckLayer;
-    CALayer *_accuracyContainerLayer;
-    VKNavigationPuck *_navigationPuckMarker;
-    long long _zoomDirection;
-    CALayer *_pulseLayer;
-    CALayer *_accuracyLayer;
-    _Bool _allowsPulse;
-    _Bool _shouldPulse;
-    _Bool _allowsHeadingIndicator;
-    _Bool _shouldDisplayHeading;
-    _Bool _shouldDisplayInaccurateHeading;
-    double _heading;
-    double _headingAccuracy;
-    CALayer<MKUserLocationHeadingIndicator> *_headingLayer;
-    _Bool _allowsAccuracyRing;
-    _Bool _stale;
-    _Bool _effectsEnabled;
-    double _maxRadiusToShowAccuracyRing;
-    double _presentationCourse;
-    double _locationAccuracy;
-    CLLocation *_lastLocation;
-    _Bool _forcesConeIndicator;
-    long long _headingIndicatorStyle;
 }
 
-+ (unsigned long long)_selectedZIndex;
-+ (unsigned long long)_zIndex;
-+ (double)accuracyDiameter:(double)arg1;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
-@property(nonatomic) _Bool forcesConeIndicator; // @synthesize forcesConeIndicator=_forcesConeIndicator;
-@property(nonatomic) long long headingIndicatorStyle; // @synthesize headingIndicatorStyle=_headingIndicatorStyle;
-@property(readonly, nonatomic) CLLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
-@property(readonly, nonatomic) double locationAccuracy; // @synthesize locationAccuracy=_locationAccuracy;
-@property(nonatomic) double presentationCourse; // @synthesize presentationCourse=_presentationCourse;
-@property(nonatomic, getter=isEffectsEnabled) _Bool effectsEnabled; // @synthesize effectsEnabled=_effectsEnabled;
-@property(nonatomic, getter=isStale, setter=setStale:) _Bool stale; // @synthesize stale=_stale;
-@property(nonatomic) double maxRadiusToShowAccuracyRing; // @synthesize maxRadiusToShowAccuracyRing=_maxRadiusToShowAccuracyRing;
-@property(nonatomic) _Bool allowsAccuracyRing; // @synthesize allowsAccuracyRing=_allowsAccuracyRing;
-@property(nonatomic) double headingAccuracy; // @synthesize headingAccuracy=_headingAccuracy;
-@property(nonatomic) double heading; // @synthesize heading=_heading;
-@property(nonatomic) _Bool shouldDisplayInaccurateHeading; // @synthesize shouldDisplayInaccurateHeading=_shouldDisplayInaccurateHeading;
-@property(nonatomic) _Bool shouldDisplayHeading; // @synthesize shouldDisplayHeading=_shouldDisplayHeading;
-@property(nonatomic) _Bool allowsHeadingIndicator; // @synthesize allowsHeadingIndicator=_allowsHeadingIndicator;
-@property(nonatomic) _Bool allowsPulse; // @synthesize allowsPulse=_allowsPulse;
-@property(nonatomic) long long zoomDirection; // @synthesize zoomDirection=_zoomDirection;
-- (void).cxx_destruct;
-- (void)setAnimatingToCoordinate:(_Bool)arg1;
-- (void)setPresentationCoordinate:(CDStruct_c3b9c2ee)arg1;
-- (_Bool)_tracking;
-- (void)_setTracking:(_Bool)arg1;
-- (void)setZoomDirection:(long long)arg1 deltaScale:(double)arg2;
-- (void)_setPresentationCoordinate:(struct CLLocationCoordinate2D)arg1;
-- (void)_setAnimatingToCoordinate:(_Bool)arg1;
-- (id)_vkNavigationPuckMarker;
-- (void)_setVKNavigationPuckMarker:(id)arg1;
-- (void)_updateLayers;
-- (void)locationManagerFailedToUpdateLocation;
-- (void)updateStateFromLocation:(id)arg1 duration:(double)arg2;
-- (_Bool)_isLocationStale:(id)arg1;
-- (_Bool)_shouldPulseForLocation:(id)arg1;
-- (void)setLocationAccuracy:(double)arg1 duration:(double)arg2;
-- (void)_resetLayerToMatchAccuracyRing;
-- (id)_layerToMatchAccuracyRing;
-- (id)_accuracyAnimation:(double)arg1;
-@property(nonatomic) double accuracyRingAlpha;
-- (void)setPuckScale:(double)arg1;
-@property(nonatomic) double puckAlpha;
-@property(nonatomic) float opacity;
-- (void)_updateShowHeadingLayer:(_Bool)arg1 animatedIfPossible:(_Bool)arg2;
-- (void)_updateShowHeadingLayerAnimatedIfPossible:(_Bool)arg1;
-- (void)_updateShowHeadingLayer;
-- (void)_updateHeadingLayerForStyleChange;
-- (long long)_enforcedHeadingIndicatorStyle;
-- (id)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint *)arg2;
-- (id)_baseLayer;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
-- (struct CGRect)_mapkit_visibleRect;
-- (void)didMoveToWindow;
-- (void)_updatePulse;
-- (void)_removePulse;
-- (void)_pausePulse;
-- (void)_resumePulse;
-- (id)_pulseAnimation;
-- (id)_animationToSynchronizePulse:(id *)arg1;
-- (id)_pulseLayer;
-- (void)_setMapPitchRadians:(double)arg1;
-- (_Bool)_shouldShowAccuracyRing;
-- (_Bool)_hideLargeAccuracyRing;
-- (void)_updateHideLargeAccuracyRing;
-- (void)_updateFromMap;
-- (void)layoutSubviews;
+- (unsigned long long)_innerPulseFrameWhenDisabled:(unsigned long long)arg1;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

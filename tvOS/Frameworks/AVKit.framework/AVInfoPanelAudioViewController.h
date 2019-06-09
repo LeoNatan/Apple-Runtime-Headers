@@ -8,9 +8,10 @@
 
 #import <AVKit/AVInfoPanelMediaOptionSelectionDelegate-Protocol.h>
 
-@class AVInfoPanelAudioCollectionViewController, AVKeyValueObservationController, AVSpeakerManager, NSLayoutConstraint, NSString, UIView;
+@class AVInfoPanelAudioCollectionViewController, AVObservationController, AVSpeakerManager, NSLayoutConstraint, NSString, UIView;
 @protocol AVInfoPanelLanguageDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelAudioViewController : AVInfoPanelContentViewController <AVInfoPanelMediaOptionSelectionDelegate>
 {
     AVInfoPanelAudioCollectionViewController *_languageCollectionViewController;
@@ -27,7 +28,7 @@
     NSLayoutConstraint *_speakerCollectionViewHeightConstraint;
     _Bool _hasSetupColumnWidthConstraints;
     _Bool _hasSetupColumnHeightConstraints;
-    AVKeyValueObservationController *_kvoController;
+    AVObservationController *_kvoController;
     int _lateNightModeNotificationToken;
     _Bool _isSpeakerRefreshPending;
     id <AVInfoPanelLanguageDelegate> _delegate;
@@ -42,21 +43,30 @@
 @property(nonatomic) unsigned long long selectedLanguageOptionIndex; // @synthesize selectedLanguageOptionIndex=_selectedLanguageOptionIndex;
 @property(nonatomic) __weak id <AVInfoPanelLanguageDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (long long)_textAlignmentForUserInterfaceLayout;
 - (id)_newHeaderViewWithTitle:(id)arg1;
 - (void)_updateAvailableSpeakers;
+- (void)_updateAvailableSpeakersOnlyAdding;
 - (void)_updateSpeakerSelection;
 - (void)_scheduleAvailableSpeakersUpdate;
 - (void)_updateSelectedSoundOption;
 - (void)_createOrUpdateColumnWidthConstraints;
 - (void)_createOrUpdateColumnHeightConstraints;
+- (struct CGSize)contentSizeForWidth:(double)arg1;
+- (double)_headerViewHeight;
 - (double)_largestColumnHeight;
+- (double)_preferredSpeakersColumnHeightForCellHeight:(double)arg1;
+- (double)_preferredSoundColumnHeightForCellHeight:(double)arg1;
+- (double)_preferredLanguageColumnHeightForCellHeight:(double)arg1;
+- (double)_preferredCellHeight;
 - (void)_setupSpeakerColumn;
 - (void)_setupSoundColumn;
 - (void)_setupLanguageColumn;
 - (void)mediaOptionCollectionViewController:(id)arg1 didSelectMediaOption:(id)arg2;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)willMoveToParentViewController:(id)arg1;
+- (void)_viewWillAppearSoon;
 - (void)loadView;
-- (long long)_textAlignmentForUserInterfaceLayout;
 - (_Bool)hasContent;
 - (void)setAudibleMediaSelectionOptions:(id)arg1;
 - (void)dealloc;

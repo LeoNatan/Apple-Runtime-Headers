@@ -18,11 +18,11 @@
 - (void)cancel;
 - (void)saveLivePhotoToOutput:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)prepareLivePhotoForPlaybackWithTargetSize:(struct CGSize)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly) unsigned int orientation;
 @property float audioVolume;
 @property(copy) CDUnknownBlockType frameProcessor;
 @property(readonly) CDStruct_1b6d18a9 photoTime;
 @property(readonly) CDStruct_1b6d18a9 duration;
-@property(readonly) unsigned int orientation;
 @property(readonly) CIImage *fullSizeImage;
 - (id)initWithLivePhotoEditingInput:(id)arg1;
 - (id)init;

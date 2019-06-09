@@ -65,9 +65,6 @@
 - (void)_updateInfoTextColorsForState:(unsigned int)arg1;
 - (void)_updateShadowOffsetWithAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (struct CGSize)_defaultTitleShadowOffsetForState:(unsigned int)arg1;
-- (id)_defaultTitleShadowColorForState:(unsigned int)arg1;
-- (id)_defaultTitleColorForState:(unsigned int)arg1;
-- (_Bool)_useSilverLook;
 - (void)setBarStyle:(int)arg1;
 - (void)setToolbarTintColor:(id)arg1;
 - (_Bool)_useBarHeight;
@@ -111,7 +108,6 @@
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)dealloc;
 - (id)initWithImage:(id)arg1 pressedImage:(id)arg2 label:(id)arg3 labelHeight:(float)arg4 withBarStyle:(int)arg5 withStyle:(int)arg6 withInsets:(struct UIEdgeInsets)arg7 possibleTitles:(id)arg8 possibleSystemItems:(id)arg9 withToolbarTintColor:(id)arg10 bezel:(_Bool)arg11 imageInsets:(struct UIEdgeInsets)arg12 glowInsets:(struct UIEdgeInsets)arg13 landscape:(_Bool)arg14;
-- (id)_newButton;
 - (void)_setInTopBar:(_Bool)arg1;
 
 @end

@@ -18,19 +18,21 @@
     struct CGRect _frame;
     double _level;
     long long _interfaceOrientation;
-    BOOL _backgrounded;
+    BOOL _foreground;
+    BSSettings *_otherSettings;
+    BSSettings *_transientLocalSettings;
+    BOOL _prefersProcessTaskSuspensionWhileSceneForeground;
+    long long _isOccluded;
     BOOL _occluded;
     BOOL _occludedHasBeenCalculated;
     NSSet *_ignoreOcclusionReasons;
     NSArray *_occlusions;
-    BSSettings *_otherSettings;
-    BSSettings *_transientLocalSettings;
 }
 
 + (BOOL)_isMutable;
 + (id)settings;
 @property(readonly, copy, nonatomic) NSArray *occlusions; // @synthesize occlusions=_occlusions;
-@property(readonly, nonatomic, getter=isBackgrounded) BOOL backgrounded; // @synthesize backgrounded=_backgrounded;
+@property(readonly, nonatomic, getter=isForeground) BOOL foreground; // @synthesize foreground=_foreground;
 @property(readonly, nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(readonly, nonatomic) double level; // @synthesize level=_level;
 @property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
@@ -50,11 +52,14 @@
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (void)setPrefersProcessTaskSuspensionWhileSceneForeground:(BOOL)arg1;
+- (BOOL)prefersProcessTaskSuspensionWhileSceneForeground;
 - (id)transientLocalSettings;
 - (BOOL)isIgnoringOcclusions;
 - (id)ignoreOcclusionReasons;
 - (id)otherSettings;
 - (BOOL)isOccluded;
+@property(readonly, nonatomic, getter=isBackgrounded) BOOL backgrounded;
 - (struct CGRect)bounds;
 @property(readonly, copy, nonatomic) FBSDisplayIdentity *displayIdentity;
 - (void)dealloc;

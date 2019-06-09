@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIWebSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 @property(readonly, nonatomic) _UIKeyboardTextSelectionController *textSelectionController; // @synthesize textSelectionController=_textSelectionController;
+- (void)addGestureRecognizersToView:(id)arg1;
 - (void)showSelectionCommands;
 - (void)updateSelectionRects:(_Bool)arg1;
 - (void)configureForHighlightMode;

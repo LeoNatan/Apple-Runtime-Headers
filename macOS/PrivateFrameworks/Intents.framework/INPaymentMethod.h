@@ -7,13 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <Intents/INCacheableContainer-Protocol.h>
+#import <Intents/INCodableAttributeRelationComparing-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/INKeyImageProducing-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class INImage, NSString;
 
-@interface INPaymentMethod : NSObject <INCacheableContainer, INKeyImageProducing, NSCopying, NSSecureCoding>
+@interface INPaymentMethod : NSObject <INCodableAttributeRelationComparing, INCacheableContainer, INKeyImageProducing, INJSONSerializable, NSCopying, NSSecureCoding>
 {
     long long _type;
     NSString *_name;
@@ -21,22 +23,25 @@
     NSString *_identificationHint;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (BOOL)supportsSecureCoding;
 + (id)applePayPaymentMethod;
 @property(readonly, copy) NSString *identificationHint; // @synthesize identificationHint=_identificationHint;
-@property(readonly, copy) INImage *icon; // @synthesize icon=_icon;
+@property(copy) INImage *icon; // @synthesize icon=_icon;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 @property(readonly) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)initWithType:(long long)arg1 name:(id)arg2 identificationHint:(id)arg3 icon:(id)arg4;
+- (BOOL)_intents_compareValue:(id)arg1 relation:(unsigned long long)arg2;
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;

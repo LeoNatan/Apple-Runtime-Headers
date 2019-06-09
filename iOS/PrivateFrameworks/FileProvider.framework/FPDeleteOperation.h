@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)presendNotifications;
-- (void)mainWithExtensionProxy:(id)arg1;
+- (void)actionMain;
 - (id)initWithItems:(id)arg1;
 - (id)replicateForItems:(id)arg1;
 

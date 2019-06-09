@@ -19,7 +19,6 @@
 - (id)tabBarItem;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)loadView;
 - (long long)ITunesStoreUIBarStyle;
 - (void)didMoveToParentViewController:(id)arg1;
 - (void)dealloc;

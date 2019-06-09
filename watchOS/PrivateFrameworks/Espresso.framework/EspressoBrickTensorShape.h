@@ -13,8 +13,10 @@
     int _channels;
     int _batch;
     int _sequence;
+    int _rank;
 }
 
+@property int rank; // @synthesize rank=_rank;
 @property int sequence; // @synthesize sequence=_sequence;
 @property int batch; // @synthesize batch=_batch;
 @property int channels; // @synthesize channels=_channels;

@@ -21,9 +21,10 @@
 + (_Bool)isEnabled;
 @property(readonly, nonatomic) NSString *uniqueName; // @synthesize uniqueName=_uniqueName;
 - (void).cxx_destruct;
-- (id)currentBestLocation;
-- (unsigned long long)deleteMyEntries:(struct NSArray *)arg1;
-- (unsigned long long)addOrUpdateMySuggestionEntries:(struct NSArray *)arg1 deleteMissing:(_Bool)arg2;
+- (unsigned long long)addOrUpdateMySuggestionEntries:(struct NSArray *)arg1;
+- (void)feedbackForContact:(id)arg1 action:(long long)arg2;
+- (void)feedbackForMapItem:(id)arg1 action:(long long)arg2;
+- (void)feedbackForEntry:(id)arg1 action:(long long)arg2;
 - (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (_Bool)canProduceEntriesOfType:(long long)arg1;
 - (double)updateSuggestionEntriesOfType:(long long)arg1;

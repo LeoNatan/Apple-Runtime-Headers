@@ -35,7 +35,7 @@
 - (void)_registerURL:(id)arg1 mimeType:(id)arg2 textEncoding:(id)arg3;
 - (void)computePreviewInThread;
 - (void)startComputingPreview;
-- (void)computePreview;
+- (void)computePreview:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 
 @end

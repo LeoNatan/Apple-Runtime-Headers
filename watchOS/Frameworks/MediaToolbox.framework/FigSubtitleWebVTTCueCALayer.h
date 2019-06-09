@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface FigSubtitleWebVTTCueCALayer : FigSubtitleBackdropCALayer <CALayerDelegate>
 {
     struct OpaqueFigSubtitleWebVTTCueCALayerInternal *layerInternal;
@@ -26,7 +27,6 @@
 - (struct CGRect)getSuggestedBounds:(unsigned char)arg1;
 - (void)setCuePosition:(struct CGPoint)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 // Remaining properties

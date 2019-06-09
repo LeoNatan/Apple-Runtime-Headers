@@ -6,10 +6,11 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class UIViewController;
+@class UIView, UIViewController;
 
 @interface _TVStackCollectionViewCell : UICollectionViewCell
 {
+    UIView *_cellContentView;
     UIViewController *_viewController;
 }
 

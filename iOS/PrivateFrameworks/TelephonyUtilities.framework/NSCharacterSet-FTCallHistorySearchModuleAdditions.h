@@ -8,5 +8,6 @@
 
 @interface NSCharacterSet (FTCallHistorySearchModuleAdditions)
 + (id)phoneNumberSeparatorCharacterSet;
++ (id)phoneNumberSeparatorCharacterSet;
 @end
 

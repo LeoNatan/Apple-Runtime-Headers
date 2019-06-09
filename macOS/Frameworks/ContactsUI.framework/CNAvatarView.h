@@ -22,6 +22,7 @@
     NSTrackingArea *_editOverlayTrackingArea;
 }
 
++ (id)log;
 @property(retain) NSTrackingArea *editOverlayTrackingArea; // @synthesize editOverlayTrackingArea=_editOverlayTrackingArea;
 @property(retain) NSView *editOverlayView; // @synthesize editOverlayView=_editOverlayView;
 @property(retain) NSMutableArray *iconViews; // @synthesize iconViews=_iconViews;

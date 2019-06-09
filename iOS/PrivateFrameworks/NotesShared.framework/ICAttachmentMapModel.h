@@ -11,11 +11,13 @@
 }
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
+- (_Bool)shouldSyncPreviewImageToCloud:(id)arg1;
 - (_Bool)canConvertToHTMLForSharing;
 - (id)attributesForSharingHTMLWithTagName:(id *)arg1 textContent:(id *)arg2;
 - (void)addLocation;
 - (id)MKMapItem;
 - (_Bool)hasPreviews;
+- (_Bool)previewsSupportMultipleAppearances;
 
 @end
 

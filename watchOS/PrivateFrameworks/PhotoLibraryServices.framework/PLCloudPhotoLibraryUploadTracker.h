@@ -25,6 +25,7 @@
 @property unsigned long long totalSizeOfUnpushedOriginals; // @synthesize totalSizeOfUnpushedOriginals=_totalSizeOfUnpushedOriginals;
 @property unsigned long long totalNumberOfUploadedMasters; // @synthesize totalNumberOfUploadedMasters=_totalNumberOfUploadedMasters;
 @property unsigned long long totalNumberOfUnpushedMasters; // @synthesize totalNumberOfUnpushedMasters=_totalNumberOfUnpushedMasters;
+- (void).cxx_destruct;
 - (void)reset;
 - (void)resetIfNeeded;
 - (void)setupFromCPLManager:(id)arg1;

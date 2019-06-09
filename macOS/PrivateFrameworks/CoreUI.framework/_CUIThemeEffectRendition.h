@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     float _minimumShadowSpread;
 }
 
-+ (id)_filteredCSIDataFromBaseCSIData:(id)arg1;
 - (void)_setStructuredThemeStore:(id)arg1;
 - (id)effectPreset;
 - (void)dealloc;

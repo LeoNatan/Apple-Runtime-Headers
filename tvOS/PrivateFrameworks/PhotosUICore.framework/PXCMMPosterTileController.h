@@ -10,13 +10,13 @@
 #import <PhotosUICore/PXReusableObject-Protocol.h>
 #import <PhotosUICore/PXUIViewBasicTile-Protocol.h>
 
-@class NSString, PXCMMAssetsProgressListener, PXCMMPosterHeaderView, PXCMMViewModel, UIView;
+@class NSString, PXCMMPosterHeaderView, PXCMMViewModel, PXMomentShareStatusPresentation, UIView;
 
 @interface PXCMMPosterTileController : NSObject <PXChangeObserver, PXUIViewBasicTile, PXReusableObject>
 {
     unsigned long long _activityType;
     PXCMMViewModel *_viewModel;
-    PXCMMAssetsProgressListener *_assetsProgressListener;
+    PXMomentShareStatusPresentation *_momentShareStatusPresentation;
     PXCMMPosterHeaderView *_posterHeaderView;
 }
 
@@ -25,12 +25,11 @@
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_updateStatusString;
 - (void)_updateContent;
-- (void)_udpateTitles;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;
 @property(readonly, nonatomic) UIView *view;
-- (id)initWithActivityType:(unsigned long long)arg1 viewModel:(id)arg2 assetsProgressListener:(id)arg3;
+- (id)initWithActivityType:(unsigned long long)arg1 viewModel:(id)arg2 momentShareStatusPresentation:(id)arg3;
 - (id)init;
 
 // Remaining properties

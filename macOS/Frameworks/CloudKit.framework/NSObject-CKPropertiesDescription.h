@@ -7,10 +7,13 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (CKPropertiesDescription)
++ (id)CKSQLiteClassName;
 - (id)hashedDescription;
 - (id)CKDescription;
 - (id)CKPropertiesDescriptionStringFromProperties:(id)arg1;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)CKPropertiesDescription;
+- (void)CKAssignToContainerWithID:(id)arg1;
+- (id)CKStatusReport;
 @end
 

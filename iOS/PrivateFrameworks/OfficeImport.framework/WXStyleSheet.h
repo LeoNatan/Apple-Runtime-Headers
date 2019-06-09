@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)initialize;
++ (id)styleTypeEnumMap;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class WDDocument, WDTablePropertiesValues;
 
+__attribute__((visibility("hidden")))
 @interface WDTableProperties : NSObject <NSCopying>
 {
     unsigned int mOriginal:1;

@@ -22,20 +22,21 @@
     BOOL _earlyExit;
 }
 
-+ (id)_sortedKeysForCategories:(id)arg1;
-+ (id)_summarizedCategoriesForCategories:(id)arg1 summarize:(BOOL)arg2 outTotal:(CDStruct_8346b022 *)arg3;
++ (void)_totalForCategories:(id)arg1 outTotal:(CDStruct_8346b022 *)arg2;
 + (id)installCancelHandler:(CDUnknownBlockType)arg1;
++ (void)setSharingAnalysisDisabled:(BOOL)arg1;
++ (BOOL)isSharingAnalysisDisabled;
 + (void)setBreakDownPhysFootprint:(BOOL)arg1;
 + (BOOL)breakDownPhysFootprint;
-@property(readonly) NSArray *processes; // @synthesize processes=_processes;
+@property(readonly, nonatomic) NSArray *processes; // @synthesize processes=_processes;
 - (void).cxx_destruct;
 - (id)_getProcessListSortedByFootprint;
 - (id)_getProcessListSortedByPidDesc;
 - (void)_buildProcessToFootprintMap;
 - (unsigned long long)_calculateFootprintForProcess:(id)arg1;
-- (id)_categoriesForObjects:(id)arg1;
+- (id)_categoriesForObjects:(id)arg1 viewedByProcess:(id)arg2 hasProcessView:(char *)arg3 summarize:(BOOL)arg4;
 - (id)_sharingData;
-- (id)_categoriesForAllProcesses;
+- (id)_categoriesForAllProcessesShouldSummarize:(BOOL)arg1;
 - (void)printVmmapLikeOutputForProcesses:(id)arg1;
 - (void)printOutputVerbose:(BOOL)arg1 summarize:(BOOL)arg2;
 - (void)addOutputFormatter:(id)arg1;

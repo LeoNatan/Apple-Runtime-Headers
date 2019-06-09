@@ -11,8 +11,10 @@
     struct OpaqueFigCDSCALayerOutputNodeLayerInternal *layerInternal;
 }
 
+- (void)setContents:(id)arg1;
+- (void)setPosition:(struct CGPoint)arg1;
+- (void)setBounds:(struct CGRect)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

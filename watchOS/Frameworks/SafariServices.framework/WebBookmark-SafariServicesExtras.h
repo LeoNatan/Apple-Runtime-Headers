@@ -9,6 +9,7 @@
 @class UIColor, UIImage;
 
 @interface WebBookmark (SafariServicesExtras)
++ (id)_sf_actionsForBookmark:(id)arg1 inCollection:(id)arg2 withUserInfo:(id)arg3 handler:(id)arg4;
 @property(readonly, nonatomic) UIImage *_sf_icon;
 @property(retain, nonatomic, setter=_sf_setIconKeyColor:) UIColor *_sf_iconKeyColor;
 @end

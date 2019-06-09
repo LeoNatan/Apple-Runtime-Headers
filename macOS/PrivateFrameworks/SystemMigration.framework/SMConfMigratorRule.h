@@ -67,7 +67,7 @@
 - (void)executePlugin;
 - (double)estimateTime;
 - (BOOL)defaultedCopyRule;
-- (BOOL)supportedFromSystem:(id)arg1 toSystem:(id)arg2 duringUpgrade:(BOOL)arg3;
+- (BOOL)supportedFromSystem:(id)arg1 toSystem:(id)arg2 ofType:(unsigned long long)arg3;
 - (id)description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

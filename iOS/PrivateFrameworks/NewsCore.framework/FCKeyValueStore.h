@@ -53,10 +53,10 @@
 - (id)fc_jsonEncodableDictionary;
 - (id)fc_jsonEncodableDictionaryWithDictionary:(id)arg1;
 - (id)jsonEncodableObject;
-- (void)setOptionBackupEnabled:(_Bool)arg1;
+- (void)setCloudBackupEnabled:(_Bool)arg1;
 - (_Bool)_threadSafe;
 - (_Bool)_persistOnlyInMemoryEnabled;
-- (_Bool)_isBackupEnabled;
+- (_Bool)_isCloudBackupEnabled;
 - (_Bool)_shouldMigrateOnUpgrade;
 - (void)_clearStore;
 - (id)_initializeStoreDirectoryWithName:(id)arg1;
@@ -73,6 +73,7 @@
 - (void)saveWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSDictionary *asDictionary;
 - (void)addAllEntriesToDictionary:(id)arg1;
+- (id)keysOfEntriesPassingTest:(CDUnknownBlockType)arg1;
 - (id)allKeys;
 - (_Bool)boolValueForKey:(id)arg1;
 - (void)setBoolValue:(_Bool)arg1 forKey:(id)arg2;

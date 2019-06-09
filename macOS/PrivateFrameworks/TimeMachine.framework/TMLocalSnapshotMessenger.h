@@ -19,7 +19,6 @@
 + (id)thinLocalSnapshotsForDisk:(id)arg1 purgeAmount:(unsigned long long)arg2 urgency:(int)arg3;
 + (id)deleteLocalSnapshotsForDates:(id)arg1;
 + (id)mountedLocalSnapshotsForDisk:(id)arg1;
-+ (id)disksWithMountedLocalSnapshots;
 + (id)localSnapshotDatesForDisk:(id)arg1;
 + (id)localSnapshotDates;
 + (id)createLocalSnapshots;

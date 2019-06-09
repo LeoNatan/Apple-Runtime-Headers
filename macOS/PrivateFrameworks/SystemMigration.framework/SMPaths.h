@@ -11,7 +11,6 @@
 
 @interface SMPaths : NSObject
 {
-    BOOL _osUpgrade;
     BOOL _collectDataForBackgroundMigrations;
     BOOL _processedUserHomes;
     BOOL _cancel;
@@ -20,6 +19,7 @@
     SMPathsCache *_cache;
     SMSystem_Daemon *_system;
     SMSystem_Daemon *_comparisonSystem;
+    unsigned long long _migrationType;
     SMPathsBundleScanner *_bundleScanner;
     SMConfMigrator *_confMigrator;
     SMCollectIncompatibleApps *_incompatibleAppsData;
@@ -57,7 +57,7 @@
 @property(retain, nonatomic) SMConfMigrator *confMigrator; // @synthesize confMigrator=_confMigrator;
 @property(nonatomic) BOOL collectDataForBackgroundMigrations; // @synthesize collectDataForBackgroundMigrations=_collectDataForBackgroundMigrations;
 @property(retain, nonatomic) SMPathsBundleScanner *bundleScanner; // @synthesize bundleScanner=_bundleScanner;
-@property(nonatomic) BOOL osUpgrade; // @synthesize osUpgrade=_osUpgrade;
+@property(nonatomic) unsigned long long migrationType; // @synthesize migrationType=_migrationType;
 @property(retain, nonatomic) SMSystem_Daemon *comparisonSystem; // @synthesize comparisonSystem=_comparisonSystem;
 @property(retain, nonatomic) SMSystem_Daemon *system; // @synthesize system=_system;
 @property(retain, nonatomic) SMPathsCache *cache; // @synthesize cache=_cache;
@@ -122,6 +122,8 @@
 - (void)enumerateFilesystem;
 - (BOOL)shouldContainOnlyUserData:(id)arg1;
 - (void)processUserHomes;
+- (id)allFirmlinkPaths;
+- (id)allSafariUserPaths;
 @property(readonly, nonatomic) NSSet *allConfMigratorClaimedPaths;
 @property(readonly, nonatomic) NSSet *allConfMigratorKeepPaths;
 @property(readonly, nonatomic) NSSet *allConfMigratorUserPaths;
@@ -153,7 +155,7 @@
 - (void)addPreliminarySizeDelegate:(id)arg1 forPathGroup:(unsigned long long)arg2;
 - (void)removePreliminaryUserSizeDelegate:(id)arg1;
 - (void)addPreliminaryUserSizeDelegate:(id)arg1;
-- (id)initWithSystem:(id)arg1 andComparisonSystem:(id)arg2;
+- (id)initWithSystem:(id)arg1 andComparisonSystem:(id)arg2 forMigrationType:(unsigned long long)arg3;
 @property(readonly, nonatomic) unsigned long long totalCountOfIncompatibleAppPaths;
 @property(readonly, nonatomic) unsigned long long totalSizeOfIncompatibleAppPaths;
 @property(readonly, nonatomic) NSSet *allIncompatiblePaths;

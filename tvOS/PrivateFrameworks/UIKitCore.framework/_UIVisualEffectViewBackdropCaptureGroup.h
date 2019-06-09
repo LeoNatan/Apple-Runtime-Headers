@@ -23,8 +23,8 @@
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 - (void).cxx_destruct;
 - (id)description;
-- (_Bool)_allowInPlaceFiltering;
-- (void)_applyScaleHint:(double)arg1;
+- (_Bool)allowInPlaceFiltering;
+- (void)applyScaleHint:(double)arg1;
 - (void)updateAllBackdropViews;
 - (void)removeBackdrop:(id)arg1 update:(_Bool)arg2;
 - (void)addBackdrop:(id)arg1 update:(_Bool)arg2;

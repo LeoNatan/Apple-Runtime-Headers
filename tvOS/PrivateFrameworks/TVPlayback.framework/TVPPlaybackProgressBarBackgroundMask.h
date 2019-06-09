@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSSet, TVPSliderContentView, UIColor;
+@class CAShapeLayer, NSArray, TVPProgressBarShapeView, UIColor;
 
 __attribute__((visibility("hidden")))
 @interface TVPPlaybackProgressBarBackgroundMask : UIView
@@ -18,12 +18,16 @@ __attribute__((visibility("hidden")))
     double _minPlayheadProgress;
     double _maxPlayheadProgress;
     NSArray *_adMarkers;
-    NSSet *_progressBarShapeViews;
-    TVPSliderContentView *_bufferingSliderContentView;
+    TVPProgressBarShapeView *_pillView;
+    TVPProgressBarShapeView *_rectangleView;
+    CAShapeLayer *_pillMask;
+    CAShapeLayer *_rectangleMask;
 }
 
-@property(retain, nonatomic) TVPSliderContentView *bufferingSliderContentView; // @synthesize bufferingSliderContentView=_bufferingSliderContentView;
-@property(copy, nonatomic) NSSet *progressBarShapeViews; // @synthesize progressBarShapeViews=_progressBarShapeViews;
+@property(readonly, nonatomic) CAShapeLayer *rectangleMask; // @synthesize rectangleMask=_rectangleMask;
+@property(readonly, nonatomic) CAShapeLayer *pillMask; // @synthesize pillMask=_pillMask;
+@property(readonly, nonatomic) TVPProgressBarShapeView *rectangleView; // @synthesize rectangleView=_rectangleView;
+@property(readonly, nonatomic) TVPProgressBarShapeView *pillView; // @synthesize pillView=_pillView;
 @property(copy, nonatomic) NSArray *adMarkers; // @synthesize adMarkers=_adMarkers;
 @property(nonatomic) double maxPlayheadProgress; // @synthesize maxPlayheadProgress=_maxPlayheadProgress;
 @property(nonatomic) double minPlayheadProgress; // @synthesize minPlayheadProgress=_minPlayheadProgress;
@@ -32,9 +36,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double borderWidth; // @synthesize borderWidth=_borderWidth;
 @property(nonatomic) UIColor *fillColor; // @synthesize fillColor=_fillColor;
 - (void).cxx_destruct;
+- (void)_updateMasks;
 - (void)layoutSubviews;
 - (void)setMinPlayheadProgress:(double)arg1 maxPlayheadProgress:(double)arg2;
 - (void)setMinBufferingProgress:(double)arg1 maxBufferingProgress:(double)arg2;
+- (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -12,7 +12,7 @@
 @protocol GEORoutePreloadSession <NSObject>
 @property(readonly, nonatomic) NSObject<OS_os_log> *preloaderLog;
 @property(nonatomic) unsigned long long networkQuality;
-@property __weak id <GEORoutePreloadSessionDelegate> delegate;
+@property(nonatomic) __weak id <GEORoutePreloadSessionDelegate> delegate;
 @property(readonly, nonatomic) GEOComposedRoute *route;
 - (void)setTraits:(GEOMapServiceTraits *)arg1;
 - (void)updateWithRouteMatch:(GEORouteMatch *)arg1;

@@ -13,7 +13,6 @@
 - (void)switchServerOfType:(NSString *)arg1 toEnvironment:(NSString *)arg2 withCompletionBlock:(void (^)(BOOL))arg3;
 - (void)setHardwareWarrantyCookie:(void (^)(BOOL))arg1;
 - (void)requestConfigurationFinalizationForUserUUID:(NSUUID *)arg1 reply:(void (^)(BOOL, NSError *))arg2;
-- (void)requestBridgedProfileWithAuthorization:(NSDictionary *)arg1 reply:(void (^)(BOOL, NSData *, NSDictionary *, NSError *))arg2;
 - (void)requestCachedActivationRecordWithReply:(void (^)(BOOL, NSDictionary *, NSError *))arg1;
 - (void)abortActivationStatusRequest;
 - (void)requestBridgedActivationRecordWithReply:(void (^)(BOOL, NSDictionary *, NSError *))arg1;
@@ -29,8 +28,9 @@
 - (void)removeMigrationCookie:(void (^)(BOOL))arg1;
 - (void)setMigrationCookie:(void (^)(BOOL))arg1;
 - (void)setMacBuddyDoneCookie:(void (^)(BOOL))arg1;
+- (void)healEOSHandlingProgressForUUID:(NSUUID *)arg1 withCompletionBlock:(void (^)(BOOL, NSError *, NSString *))arg2;
 - (void)setAutoTimeZoneEnabled:(void (^)(BOOL))arg1;
-- (void)fmmIsEnabled:(void (^)(BOOL))arg1;
+- (void)fmmIsEnabled:(void (^)(BOOL, NSString *))arg1;
 - (void)setOSVersioniCloudCreatedForUser:(NSString *)arg1 withCompletionBlock:(void (^)(BOOL))arg2;
 - (void)saveDocumentationData:(NSData *)arg1 withLocalizedName:(NSString *)arg2 forLocale:(NSString *)arg3 toFileNamed:(NSString *)arg4 completionBlock:(void (^)(BOOL))arg5;
 - (void)removeIncompatibleApplicationDataFileAtRoot:(NSURL *)arg1 reply:(void (^)(BOOL))arg2;
@@ -41,6 +41,7 @@
 - (void)createTeslaUsersWithInfo:(NSArray *)arg1 completionBlock:(void (^)(BOOL, BOOL))arg2;
 - (void)createUserWithInfo:(NSDictionary *)arg1 completionBlock:(void (^)(unsigned int))arg2;
 - (void)writeMachineDefaults:(NSDictionary *)arg1 toApplicationID:(NSString *)arg2 withCompletionHandler:(void (^)(BOOL))arg3;
+- (void)setPasswordPolicy:(long long)arg1 withCompletion:(void (^)(BOOL))arg2;
 - (void)removeBuddyUserHome:(void (^)(BOOL))arg1;
 - (void)tellBuddyAppToQuit:(void (^)(BOOL))arg1;
 - (void)terminateBuddySessionTransitioningToUID:(unsigned int)arg1 withCompletionBlock:(void (^)(BOOL))arg2;

@@ -15,9 +15,12 @@
 }
 
 - (void).cxx_destruct;
-- (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (id)fp_prettyDescription;
 - (void)presendNotifications;
-- (void)mainWithExtensionProxy:(id)arg1;
+- (void)finishWithResult:(id)arg1 error:(id)arg2;
+- (void)actionMain;
+- (id)initWithItem:(id)arg1 newDisplayName:(id)arg2;
+- (id)initWithItem:(id)arg1 newFileName:(id)arg2;
 - (id)initWithItem:(id)arg1 newName:(id)arg2;
 
 @end

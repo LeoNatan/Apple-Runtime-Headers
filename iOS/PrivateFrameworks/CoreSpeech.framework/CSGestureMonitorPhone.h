@@ -16,8 +16,11 @@
 }
 
 - (void).cxx_destruct;
+- (void)_didReceiveSleepGesture;
+- (void)_didReceiveWakeGesture;
 - (void)wakeGestureManager:(id)arg1 didUpdateWakeGesture:(long long)arg2;
-- (void)startObserving;
+- (void)_stopMonitoring;
+- (void)_startMonitoringWithQueue:(id)arg1;
 - (id)init;
 
 // Remaining properties

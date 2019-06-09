@@ -6,23 +6,26 @@
 
 #import <GeoServices/GEONavdPeer.h>
 
-@class MNNavigationServiceLocalProxy, NSString;
+@class GEOApplicationAuditToken, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MNNavigationServicePeer : GEONavdPeer
 {
-    MNNavigationServiceLocalProxy *_proxy;
     NSString *_peerIdentifier;
     int _processIdentifier;
+    GEOApplicationAuditToken *_auditToken;
 }
 
++ (const char *)logCategory;
++ (id)peerForConnection:(id)arg1;
+@property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 @property(readonly, nonatomic) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly, nonatomic) NSString *peerIdentifier; // @synthesize peerIdentifier=_peerIdentifier;
-@property(readonly, nonatomic) MNNavigationServiceLocalProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
+- (const char *)logCategory;
 - (void)dealloc;
 - (void)clearConnectionHandlers;
-- (id)initWithServiceInterfaceProxy:(id)arg1 connection:(id)arg2 peerIdentifier:(id)arg3 processIdentifier:(int)arg4;
+- (id)initWithConnection:(id)arg1 peerIdentifier:(id)arg2 processIdentifier:(int)arg3;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class ReporterFilter;
 
+__attribute__((visibility("hidden")))
 @interface TransportHandler : NSObject
 {
     struct _transport_connection_s *_connection;

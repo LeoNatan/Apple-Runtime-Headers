@@ -38,7 +38,7 @@
 - (void)logEventBackwardPStates:(id)arg1 Qos:(id)arg2;
 - (void)logEventBackwardPerCoreStats:(id)arg1;
 - (void)logEventBackwardPkgStats:(id)arg1;
-- (void)logEventForwardDiscreteGPUState:(_Bool)arg1;
+- (void)logEventForwardDiscreteGPUState:(_Bool)arg1 withService:(unsigned int)arg2 withReason:(int)arg3;
 - (void)log;
 - (void)initOperatorDependancies;
 - (id)init;

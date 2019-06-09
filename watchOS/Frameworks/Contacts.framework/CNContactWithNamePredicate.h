@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

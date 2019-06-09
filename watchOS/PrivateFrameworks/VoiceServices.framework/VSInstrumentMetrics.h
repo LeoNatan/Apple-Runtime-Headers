@@ -14,6 +14,7 @@
 {
     _Bool _isWarmStart;
     _Bool _isServerTTS;
+    _Bool _isServerStreamTTS;
     _Bool _isServerTimeout;
     _Bool _isServerTTSRacing;
     _Bool _canUseServerTTS;
@@ -24,6 +25,7 @@
     NSString *_voiceAssetKey;
     NSString *_voiceResourceAssetKey;
     int _promptCount;
+    int _sourceOfTTS;
     long long _requestCreatedTimestamp;
     long long _eagerRequestCreatedTimeStampDiffs;
     long long _synthesisBeginTimestamp;
@@ -42,10 +44,12 @@
 @property long long waitForSynthesisToFinishTimeDelay; // @synthesize waitForSynthesisToFinishTimeDelay=_waitForSynthesisToFinishTimeDelay;
 @property long long synthesisToSpeechTimeGap; // @synthesize synthesisToSpeechTimeGap=_synthesisToSpeechTimeGap;
 @property _Bool isSpeechRequest; // @synthesize isSpeechRequest=_isSpeechRequest;
+@property int sourceOfTTS; // @synthesize sourceOfTTS=_sourceOfTTS;
 @property int promptCount; // @synthesize promptCount=_promptCount;
 @property _Bool canUseServerTTS; // @synthesize canUseServerTTS=_canUseServerTTS;
 @property _Bool isServerTTSRacing; // @synthesize isServerTTSRacing=_isServerTTSRacing;
 @property _Bool isServerTimeout; // @synthesize isServerTimeout=_isServerTimeout;
+@property _Bool isServerStreamTTS; // @synthesize isServerStreamTTS=_isServerStreamTTS;
 @property _Bool isServerTTS; // @synthesize isServerTTS=_isServerTTS;
 @property _Bool isWarmStart; // @synthesize isWarmStart=_isWarmStart;
 @property double audioDuration; // @synthesize audioDuration=_audioDuration;

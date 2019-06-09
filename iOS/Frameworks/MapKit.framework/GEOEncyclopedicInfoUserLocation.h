@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithMapItem:(id)arg1;
 @property(readonly, nonatomic) NSArray *factoids;
+@property(readonly, nonatomic) _Bool hasStandAloneFactoids;
 @property(readonly, nonatomic) _Bool hasPairOfFactoids;
 @property(readonly, nonatomic) GEOMapItemAttribution *encyclopedicAttribution;
 @property(readonly, nonatomic) NSString *textBlockText;

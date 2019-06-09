@@ -10,7 +10,7 @@
 #import <AVFoundation/NSMutableCopying-Protocol.h>
 #import <AVFoundation/NSSecureCoding-Protocol.h>
 
-@class AVCaptionLength, AVCaptionPosition, AVCaptionRegionInternal;
+@class AVCaptionLength, AVCaptionPosition, AVCaptionRegionInternal, NSString;
 
 @interface AVCaptionRegion : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
@@ -23,19 +23,30 @@
 + (id)appleiTTBottom;
 + (id)appleiTTTop;
 + (BOOL)supportsSecureCoding;
+- (void)_setWritingMode:(long long)arg1;
+- (void)_setDisplayAlignment:(long long)arg1;
 - (void)_setScroll:(long long)arg1;
 - (void)_setHeight:(id)arg1;
+- (void)_setEndPosition:(id)arg1;
 - (void)_setPosition:(id)arg1;
-- (struct OpaqueFigCaptionRegion *)_figMutableCaptionRegion;
+- (int)_updateFigCaptionRegion;
+- (int)_updateExtentPropertiesOfFigCaptionRegionWithPosition:(id)arg1 endPosition:(id)arg2;
+- (int)_updatePositionPropertyOfFigCaptionRegionWithPosition:(id)arg1;
 @property(readonly, nonatomic) const struct OpaqueFigCaptionRegion *_figCaptionRegion;
+@property(readonly, nonatomic) long long writingMode;
+@property(readonly, nonatomic) long long displayAlignment;
 @property(readonly, nonatomic) long long scroll;
 @property(readonly, nonatomic) AVCaptionLength *height;
+@property(readonly, nonatomic) AVCaptionPosition *endPosition;
+- (id)_endPosition;
 @property(readonly, nonatomic) AVCaptionPosition *position;
+- (id)_position;
+@property(nonatomic, setter=_setPredefinedRegionPositionShouldBeNil:) BOOL _predefinedRegionPositionShouldBeNil;
+@property(readonly, nonatomic) NSString *identifier;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

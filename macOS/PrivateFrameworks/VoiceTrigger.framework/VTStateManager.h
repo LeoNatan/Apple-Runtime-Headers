@@ -6,11 +6,17 @@
 
 #import <objc/NSObject.h>
 
+@class VTCoreSpeechKeepAliveHandler;
+
 @interface VTStateManager : NSObject
 {
+    VTCoreSpeechKeepAliveHandler *_coreSpeechKeepAliveHandler;
 }
 
++ (BOOL)iPhoneShouldStartVoiceTriggerInCoreSpeech;
 + (void)notifyVoiceTrigger;
++ (void)setCurrentBuiltInRTModelDictionary:(id)arg1;
++ (id)requestCurrentBuiltInRTModelDictionary;
 + (void)requestCurrentVoiceTriggerAssetDictionaryWithReply:(CDUnknownBlockType)arg1;
 + (id)requestCurrentVoiceTriggerAssetDictionary;
 + (void)requestAudioCapture:(double)arg1;
@@ -28,6 +34,8 @@
 + (void)requestRaiseToSpeakBypassing:(BOOL)arg1 timeout:(double)arg2;
 + (void)requestPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
 + (void)requestVoiceTriggerEnabled:(BOOL)arg1 forReason:(id)arg2;
+@property(retain, nonatomic) VTCoreSpeechKeepAliveHandler *coreSpeechKeepAliveHandler; // @synthesize coreSpeechKeepAliveHandler=_coreSpeechKeepAliveHandler;
+- (void).cxx_destruct;
 
 @end
 

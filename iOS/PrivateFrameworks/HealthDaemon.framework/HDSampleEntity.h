@@ -16,6 +16,7 @@
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (CDUnknownBlockType)objectInsertionFilterForProfile:(id)arg1;
 + (long long)preferredEntityType;
++ (id)minimumSampleStartDateForProfile:(id)arg1 error:(id *)arg2;
 + (id)anySampleOfType:(id)arg1 profile:(id)arg2 encodingOptions:(id)arg3 predicate:(id)arg4 error:(id *)arg5;
 + (id)sampleTypesForSamplesMatchingPredicate:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)populatedSampleTypes:(id)arg1 inDateInterval:(id)arg2 profile:(id)arg3 error:(id *)arg4;
@@ -32,7 +33,7 @@
 + (id)maxAnchorForSamplesWithType:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)oldestSampleWithType:(id)arg1 profile:(id)arg2 encodingOptions:(id)arg3 predicate:(id)arg4 error:(id *)arg5;
 + (id)mostRecentSampleWithType:(id)arg1 profile:(id)arg2 encodingOptions:(id)arg3 predicate:(id)arg4 anchor:(id *)arg5 error:(id *)arg6;
-+ (id)columnNameForSortIdentifier:(id)arg1;
++ (id)orderingTermForSortDescriptor:(id)arg1;
 + (_Bool)requiresSampleTypePredicate;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
 + (Class)_deletedEntityClass;

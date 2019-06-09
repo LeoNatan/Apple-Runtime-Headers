@@ -10,7 +10,7 @@
 
 @interface PKMutableSignedContainer : PKSignedContainer
 {
-    struct OpaqueSecIdentityRef *_identity;
+    struct __SecIdentity *_identity;
     NSArray *_intermediateCertificates;
     NSMutableArray *_pathsToAdd;
     BOOL _useTSA;
@@ -24,7 +24,7 @@
 - (BOOL)addFileAtPath:(id)arg1 error:(id *)arg2;
 @property unsigned long long fileSystemCompressionFormat;
 - (void)dealloc;
-- (id)initForWritingContainerWithIdentity:(struct OpaqueSecIdentityRef *)arg1 supportingCertificates:(id)arg2;
+- (id)initForWritingContainerWithIdentity:(struct __SecIdentity *)arg1 supportingCertificates:(id)arg2;
 
 @end
 

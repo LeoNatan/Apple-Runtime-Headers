@@ -46,6 +46,10 @@
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(readonly, copy, nonatomic) NSString *adamID; // @synthesize adamID=_adamID;
 - (void).cxx_destruct;
+- (id)appIconURLForSize:(struct CGSize)arg1;
+- (id)appAdamIDs;
+- (id)appBundleIDs;
+- (id)name;
 @property(readonly, copy) NSString *description;
 - (void)applicationsDidFailToUninstall:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;

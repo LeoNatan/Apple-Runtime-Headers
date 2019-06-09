@@ -21,6 +21,7 @@
     UIImageView *_imageView;
     UILabel *_textLabel;
     UILabel *_detailTextLabel;
+    UIImageView *_chevronRightImageView;
     NSLayoutConstraint *_textLeadingConstraintToView;
     NSLayoutConstraint *_textLeadingConstraintToImageView;
     NSLayoutConstraint *_textLabelFirstBaselineConstraint;
@@ -50,6 +51,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *textLabelFirstBaselineConstraint; // @synthesize textLabelFirstBaselineConstraint=_textLabelFirstBaselineConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *textLeadingConstraintToImageView; // @synthesize textLeadingConstraintToImageView=_textLeadingConstraintToImageView;
 @property(retain, nonatomic) NSLayoutConstraint *textLeadingConstraintToView; // @synthesize textLeadingConstraintToView=_textLeadingConstraintToView;
+@property(retain, nonatomic) UIImageView *chevronRightImageView; // @synthesize chevronRightImageView=_chevronRightImageView;
 @property(retain, nonatomic) UILabel *detailTextLabel; // @synthesize detailTextLabel=_detailTextLabel;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;

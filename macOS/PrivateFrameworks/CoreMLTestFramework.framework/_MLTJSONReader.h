@@ -6,36 +6,75 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSNumberFormatter, NSString, _MLTPerfTrace;
+@class NSArray, NSDictionary, NSNumberFormatter, NSString;
 
 @interface _MLTJSONReader : NSObject
 {
     BOOL _finishedReading;
+    BOOL _isReaderForInferenceTest;
+    BOOL _isReaderForGradientTest;
     NSString *_datafilePath;
     NSArray *_featureNames;
     unsigned long long _skippedSamples;
     unsigned long long _currentSampleIdx;
+    unsigned long long _trainingDataSamples;
+    unsigned long long _validationDataSamples;
+    NSString *_inferenceTestCaseNameKey;
+    NSString *_inferenceTestCaseOutputKey;
+    NSString *_inferenceTestCaseInputKey;
+    NSString *_modelUpdateInputFeatureKey;
+    NSString *_modelUpdateTrueLabelKey;
     NSArray *_jsonTestDataArray;
     NSNumberFormatter *_numFormatter;
     unsigned long long _batchSize;
-    _MLTPerfTrace *_perfLogger;
+    NSArray *_trainingData;
+    NSArray *_validationData;
+    NSDictionary *_gradientTestData;
 }
 
-@property(retain) _MLTPerfTrace *perfLogger; // @synthesize perfLogger=_perfLogger;
++ (id)inferenceTestConfigurationFromFile:(id)arg1 error:(id *)arg2;
++ (id)modelUpdateTestConfigurationFromFile:(id)arg1 error:(id *)arg2;
++ (id)readConfigurationFromFile:(id)arg1 forTest:(id)arg2 error:(id *)arg3;
++ (id)readJSONFile:(id)arg1 error:(id *)arg2;
+@property(retain) NSDictionary *gradientTestData; // @synthesize gradientTestData=_gradientTestData;
+@property(retain) NSArray *validationData; // @synthesize validationData=_validationData;
+@property(retain) NSArray *trainingData; // @synthesize trainingData=_trainingData;
+@property BOOL isReaderForGradientTest; // @synthesize isReaderForGradientTest=_isReaderForGradientTest;
+@property BOOL isReaderForInferenceTest; // @synthesize isReaderForInferenceTest=_isReaderForInferenceTest;
 @property unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(retain) NSNumberFormatter *numFormatter; // @synthesize numFormatter=_numFormatter;
 @property(copy) NSArray *jsonTestDataArray; // @synthesize jsonTestDataArray=_jsonTestDataArray;
+@property(readonly, copy, nonatomic) NSString *modelUpdateTrueLabelKey; // @synthesize modelUpdateTrueLabelKey=_modelUpdateTrueLabelKey;
+@property(readonly, copy, nonatomic) NSString *modelUpdateInputFeatureKey; // @synthesize modelUpdateInputFeatureKey=_modelUpdateInputFeatureKey;
+@property(readonly, copy, nonatomic) NSString *inferenceTestCaseInputKey; // @synthesize inferenceTestCaseInputKey=_inferenceTestCaseInputKey;
+@property(readonly, copy, nonatomic) NSString *inferenceTestCaseOutputKey; // @synthesize inferenceTestCaseOutputKey=_inferenceTestCaseOutputKey;
+@property(readonly, copy, nonatomic) NSString *inferenceTestCaseNameKey; // @synthesize inferenceTestCaseNameKey=_inferenceTestCaseNameKey;
+@property unsigned long long validationDataSamples; // @synthesize validationDataSamples=_validationDataSamples;
+@property unsigned long long trainingDataSamples; // @synthesize trainingDataSamples=_trainingDataSamples;
 @property unsigned long long currentSampleIdx; // @synthesize currentSampleIdx=_currentSampleIdx;
 @property BOOL finishedReading; // @synthesize finishedReading=_finishedReading;
-@property unsigned long long skippedSamples; // @synthesize skippedSamples=_skippedSamples;
+@property(nonatomic) unsigned long long skippedSamples; // @synthesize skippedSamples=_skippedSamples;
 @property(copy, nonatomic) NSArray *featureNames; // @synthesize featureNames=_featureNames;
 @property(copy, nonatomic) NSString *datafilePath; // @synthesize datafilePath=_datafilePath;
 - (void).cxx_destruct;
-- (id)getNextDataDict;
+- (id)trainingDataSampleForModelUpdateGradientTest:(id *)arg1;
+- (id)biasGradientsForLayerName:(id)arg1 error:(id *)arg2;
+- (id)weightGradientsForLayerName:(id)arg1 error:(id *)arg2;
+- (id)layerNamesForModelUpdateGradientTest:(id *)arg1;
+- (id)initForModelUpdateGradientTestFromFile:(id)arg1 error:(id *)arg2;
+- (id)validationDataAtIndex:(unsigned long long)arg1 error:(id *)arg2;
+- (id)trainingDataAtIndex:(unsigned long long)arg1 error:(id *)arg2;
+- (id)modelUpdateDataSampleAtIndex:(unsigned long long)arg1 sampleClass:(id)arg2 error:(id *)arg3;
+- (id)nextInferenceDataSetWithError:(id *)arg1;
+- (id)outputFeatureDictForInferenceTestFromDict:(id)arg1 error:(id *)arg2;
+- (id)inputFeatureDictForInferenceTestFromDict:(id)arg1 error:(id *)arg2;
+- (id)MLFeatureValueFromDict:(id)arg1 error:(id *)arg2;
+- (id)nextDataDict;
 - (id)nextDataSet;
 - (id)getEmptyFeatureDictionary;
 - (id)processDatum:(id)arg1;
-- (id)initWithLocation:(id)arg1 batchSize:(unsigned long long)arg2;
+- (id)initForModelUpdateTestFromFile:(id)arg1 error:(id *)arg2;
+- (id)initForInferenceTestFromFile:(id)arg1 batchSize:(unsigned long long)arg2 error:(id *)arg3;
 
 @end
 

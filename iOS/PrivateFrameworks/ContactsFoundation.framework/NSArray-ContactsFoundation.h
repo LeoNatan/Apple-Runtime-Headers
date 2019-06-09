@@ -17,6 +17,7 @@
 - (id)_cn_zip:(id)arg1;
 - (id)_cn_indexBy:(CDUnknownBlockType)arg1;
 - (id)_cn_groupBy:(CDUnknownBlockType)arg1;
+- (id)_cn_takeLast:(unsigned long long)arg1;
 - (id)_cn_take:(unsigned long long)arg1;
 - (id)_cn_sortedArrayUsingAuxiliarySortOrder:(id)arg1 transform:(CDUnknownBlockType)arg2;
 - (id)_cn_skipLast:(unsigned long long)arg1;
@@ -37,6 +38,8 @@
 - (id)_cn_slicesWithMaximumCount:(unsigned long long)arg1;
 - (id)_cn_partition:(CDUnknownBlockType)arg1;
 - (id)_cn_filter:(CDUnknownBlockType)arg1;
+- (id)_cn_compactMap:(CDUnknownBlockType)arg1;
+- (id)_cn_concurrentMap:(CDUnknownBlockType)arg1;
 - (id)_cn_map:(CDUnknownBlockType)arg1;
 - (id)_cn_joinWithBlock:(CDUnknownBlockType)arg1;
 - (id)_cn_join:(id)arg1;

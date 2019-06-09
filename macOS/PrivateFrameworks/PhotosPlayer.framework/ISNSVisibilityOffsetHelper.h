@@ -6,6 +6,7 @@
 
 #import <PhotosPlayer/ISVisibilityOffsetHelper.h>
 
+__attribute__((visibility("hidden")))
 @interface ISNSVisibilityOffsetHelper : ISVisibilityOffsetHelper
 {
 }

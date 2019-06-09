@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (int)placeCardTypeForAnalytics;
 - (void)updateCellTitleLabelTextColor;
 - (void)contentSizeCategoryDidChange:(id)arg1;

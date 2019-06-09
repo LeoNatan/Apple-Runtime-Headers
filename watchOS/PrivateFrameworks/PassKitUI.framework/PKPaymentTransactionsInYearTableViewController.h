@@ -8,7 +8,7 @@
 
 #import <PassKitUI/UIViewControllerPreviewingDelegate-Protocol.h>
 
-@class NSArray, NSCalendar, NSDate, NSDateFormatter, NSString, PKPaymentPass, PKPaymentTransactionCellController, PKPeerPaymentContactResolver, PKPeerPaymentController;
+@class NSArray, NSCalendar, NSDate, NSDateFormatter, NSString, PKDashboardTransactionFetcher, PKPaymentPass, PKPaymentTransactionCellController, PKPaymentTransactionDetailsFactory, PKPeerPaymentContactResolver, PKPeerPaymentController;
 @protocol PKPaymentDataProvider;
 
 @interface PKPaymentTransactionsInYearTableViewController : UITableViewController <UIViewControllerPreviewingDelegate>
@@ -23,6 +23,8 @@
     PKPeerPaymentController *_peerPaymentController;
     NSDateFormatter *_transactionMonthFormatter;
     int _detailViewStyle;
+    PKDashboardTransactionFetcher *_transactionFetcher;
+    PKPaymentTransactionDetailsFactory *_transactionDetailsFactory;
 }
 
 - (void).cxx_destruct;
@@ -30,8 +32,6 @@
 - (id)_transactionMonthFormatter;
 - (id)_transactionsInYearTitleString;
 - (id)_transactionDetailViewControllerForTransaction:(id)arg1;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

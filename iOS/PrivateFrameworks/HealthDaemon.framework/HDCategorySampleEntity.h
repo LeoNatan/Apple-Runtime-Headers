@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isConcreteEntity;
 + (_Bool)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(long long)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (id)codableObjectsFromObjectCollection:(id)arg1;

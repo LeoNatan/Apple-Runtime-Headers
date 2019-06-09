@@ -6,6 +6,7 @@
 
 #import <SymptomEvaluator/BonjourProbe.h>
 
+__attribute__((visibility("hidden")))
 @interface AirDropBonjourProbe : BonjourProbe
 {
 }

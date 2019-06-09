@@ -10,7 +10,7 @@
 - (void)permanentStorageIDForHandle:(NSFileHandle *)arg1 reply:(void (^)(unsigned long long, NSError *))arg2;
 - (void)permanentStoragePrefixForHandle:(NSFileHandle *)arg1 reply:(void (^)(NSString *, NSError *))arg2;
 - (void)hintDocIDCreationForFileHandle:(NSFileHandle *)arg1;
-- (void)getFileIdForDocumentId:(unsigned long long)arg1 onDevice:(int)arg2 reply:(void (^)(unsigned long long, int))arg3;
+- (void)getFileIdForDocumentId:(unsigned long long)arg1 onDevice:(int)arg2 reply:(void (^)(unsigned long long, long long, int))arg3;
 - (void)requestFreeSpace:(unsigned long long)arg1 forVolume:(NSURL *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)setAdditionNameSpaceInStorage:(long long)arg1 nameSpace:(NSString *)arg2 additionName:(NSString *)arg3 value:(NSString *)arg4 completionHandler:(void (^)(NSDictionary *, NSError *))arg5;
 - (void)setAdditionDisplayNameInStorage:(long long)arg1 nameSpace:(NSString *)arg2 additionName:(NSString *)arg3 value:(NSString *)arg4 reply:(void (^)(_Bool, NSError *))arg5;

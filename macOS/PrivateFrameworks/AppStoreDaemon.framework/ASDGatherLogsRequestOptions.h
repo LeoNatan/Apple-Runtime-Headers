@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppStoreDaemon/ASDRequestOptions.h>
+#import <objc/NSObject.h>
 
-@interface ASDGatherLogsRequestOptions : ASDRequestOptions
+#import <AppStoreDaemon/NSCopying-Protocol.h>
+
+@interface ASDGatherLogsRequestOptions : NSObject <NSCopying>
 {
     BOOL _verbose;
 }

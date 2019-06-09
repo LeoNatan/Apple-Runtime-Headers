@@ -17,11 +17,12 @@
     _Bool _fadesHorizontally;
     _Bool _fadesVertically;
     _Bool _hidesSourceView;
-    _Bool _textMode;
+    _Bool _avoidAnimation;
     NSDictionary *_springboardParameters;
     UIColor *_backgroundColor;
     UIBezierPath *_outline;
     double _originalRotation;
+    long long _previewMode;
     struct CGPoint _contentOffset;
     struct CGSize _contentSize;
     struct CGPoint _originalCenter;
@@ -33,8 +34,9 @@
 + (id)defaultPreviewWithFrame:(struct CGRect)arg1;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) struct CGSize viewScaleFactor; // @synthesize viewScaleFactor=_viewScaleFactor;
+@property(nonatomic) _Bool avoidAnimation; // @synthesize avoidAnimation=_avoidAnimation;
 @property(nonatomic) struct CGPoint liftAnchorPoint; // @synthesize liftAnchorPoint=_liftAnchorPoint;
-@property(nonatomic) _Bool textMode; // @synthesize textMode=_textMode;
+@property(nonatomic) long long previewMode; // @synthesize previewMode=_previewMode;
 @property(nonatomic) double originalRotation; // @synthesize originalRotation=_originalRotation;
 @property(nonatomic) struct CGPoint originalCenter; // @synthesize originalCenter=_originalCenter;
 @property(copy, nonatomic) UIBezierPath *outline; // @synthesize outline=_outline;
@@ -53,6 +55,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) struct CGSize croppedScaledSize;
 @property(readonly, nonatomic) struct CGPoint croppedScaledAnchorPoint;
+@property(nonatomic) _Bool textMode;
 - (double)_topOffset;
 @property(readonly, nonatomic) struct CGSize unscaledSize;
 @property(readonly, nonatomic) struct CGPoint unscaledAnchorPoint;

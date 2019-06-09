@@ -8,6 +8,7 @@
 
 @class NSProgressIndicator;
 
+__attribute__((visibility("hidden")))
 @interface AVLoadingIndicatorView : NSView
 {
     NSProgressIndicator *_progressIndicator;

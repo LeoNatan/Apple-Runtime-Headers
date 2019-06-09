@@ -6,19 +6,20 @@
 
 #import <NanoTimeKitCompanion/NTKRichComplicationCornerBaseCircularView.h>
 
-@class UIImageView;
+@class NTKRichComplicationImageView;
 
 @interface NTKRichComplicationCornerCircularImageView : NTKRichComplicationCornerBaseCircularView
 {
-    UIImageView *_imageView;
+    NTKRichComplicationImageView *_imageView;
 }
 
 + (_Bool)supportsComplicationFamily:(long long)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 - (void).cxx_destruct;
-- (void)_updateBackgroundColor:(id)arg1;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
+- (void)setPaused:(_Bool)arg1;
 - (id)_circularView;
 
 @end

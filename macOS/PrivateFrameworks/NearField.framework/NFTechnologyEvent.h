@@ -11,8 +11,8 @@
 @interface NFTechnologyEvent : NSObject <NSSecureCoding>
 {
     unsigned char _valueAddedServiceMode;
-    unsigned char _vasSupported;
-    unsigned char _touchIDRequired;
+    BOOL _vasSupported;
+    BOOL _touchIDRequired;
     unsigned short _systemCode;
     unsigned int _technology;
     unsigned int _terminalType;
@@ -20,8 +20,8 @@
 
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned int terminalType; // @synthesize terminalType=_terminalType;
-@property(readonly, nonatomic) unsigned char touchIDRequired; // @synthesize touchIDRequired=_touchIDRequired;
-@property(readonly, nonatomic) unsigned char vasSupported; // @synthesize vasSupported=_vasSupported;
+@property(readonly, nonatomic) BOOL touchIDRequired; // @synthesize touchIDRequired=_touchIDRequired;
+@property(readonly, nonatomic) BOOL vasSupported; // @synthesize vasSupported=_vasSupported;
 @property(readonly, nonatomic) unsigned short systemCode; // @synthesize systemCode=_systemCode;
 @property(readonly, nonatomic) unsigned char valueAddedServiceMode; // @synthesize valueAddedServiceMode=_valueAddedServiceMode;
 @property(readonly, nonatomic) unsigned int technology; // @synthesize technology=_technology;

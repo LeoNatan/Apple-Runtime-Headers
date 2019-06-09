@@ -8,18 +8,24 @@
 
 #import <PhotoLibraryServices/PLResourceDataStore-Protocol.h>
 
-@class NSString;
+@class NSString, PLPhotoLibraryPathManager;
 
 @interface PLResourceDataStore : NSObject <PLResourceDataStore>
 {
     // Error parsing type: AQ, name: _nextLocalAvailabilityRequestID
+    PLPhotoLibraryPathManager *_pathManager;
 }
 
 + (id)supportedRecipes;
++ (_Bool)keyDataIsValid:(id)arg1;
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
-+ (unsigned int)storeID;
++ (unsigned int)storeClassID;
++ (_Bool)isMasterThumbRecipeID:(unsigned int)arg1;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager; // @synthesize pathManager=_pathManager;
+- (void).cxx_destruct;
 - (_Bool)verifyAndFixLocalAvailabilityForResource:(id)arg1 asset:(id)arg2 managedObjectContext:(id)arg3;
 - (unsigned long long)nextLocalAvailabilityRequestID;
+- (id)guessUTIForExternalResource:(id)arg1 forAssetKind:(short)arg2 managedObjectContext:(id)arg3;
 - (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 inContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)canStreamResource:(id)arg1;
 - (_Bool)videoResource:(id)arg1 matchesOrExceedsQualityLevel:(unsigned int)arg2;
@@ -35,6 +41,7 @@
 - (id)keyFromKeyStruct:(const void *)arg1;
 - (id)descriptionForSubtype:(long long)arg1;
 - (id)name;
+- (id)initWithPathManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

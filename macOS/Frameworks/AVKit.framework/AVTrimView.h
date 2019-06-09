@@ -37,14 +37,12 @@
     NSArray *_trackViewControllers;
     id <AVTrimViewDelegate> _delegate;
     unsigned long long _focusedPart;
-    unsigned long long _trackedPart;
     double _offsetOnTrimHandle;
     unsigned long long _scrollDirection;
     BOOL _needsLayoutSubviews;
     BOOL _isFirstResponder;
     BOOL _isScrolling;
     BOOL _zoomOutWhenScrollFinishes;
-    NSTimer *_stopTrackingTimer;
     NSTimer *_scrollTimer;
     NSTimer *_zoomInTimer;
     id <NSObject><NSCopying> _identityOfTrackedTouch;
@@ -52,9 +50,13 @@
     double _nominalFrameRate;
     double _zoomFactor;
     double _offset;
+    unsigned long long _trackedPart;
+    NSTimer *_stopTrackingTimer;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) NSTimer *stopTrackingTimer; // @synthesize stopTrackingTimer=_stopTrackingTimer;
+@property(nonatomic) unsigned long long trackedPart; // @synthesize trackedPart=_trackedPart;
 @property(nonatomic) double offset; // @synthesize offset=_offset;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;
 @property(nonatomic) double nominalFrameRate; // @synthesize nominalFrameRate=_nominalFrameRate;
@@ -92,6 +94,7 @@
 - (void)_fireStopTrackingTimer:(id)arg1;
 - (void)_stopTrackingWithPart:(unsigned long long)arg1 afterDelay:(double)arg2;
 - (void)_stopTrackingWithPart:(unsigned long long)arg1;
+- (void)_stopTrackingImmediately;
 - (void)_startTrackingWithPart:(unsigned long long)arg1;
 - (BOOL)_canStartTracking;
 - (BOOL)_isTracking;
@@ -101,6 +104,7 @@
 - (void)_zoomOutAndStopScrollingForLocation:(struct CGPoint)arg1;
 - (unsigned long long)_partForLocation:(struct CGPoint)arg1 shouldJumpToLocation:(char *)arg2;
 - (void)_touchesEndedOrCancelledWithEvent:(id)arg1;
+- (unsigned short)_keyForEvent:(id)arg1;
 - (void)touchesCancelledWithEvent:(id)arg1;
 - (void)touchesEndedWithEvent:(id)arg1;
 - (void)touchesMovedWithEvent:(id)arg1;
@@ -111,6 +115,8 @@
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
 - (void)keyDown:(id)arg1;
+- (void)handleEvent:(id)arg1;
+- (BOOL)canHandleEvent:(id)arg1;
 - (unsigned int)_CAViewFlags;
 - (BOOL)mouseDownCanMoveWindow;
 - (void)setFrameSize:(struct CGSize)arg1;

@@ -10,11 +10,12 @@
 {
 }
 
-+ (id)_processName;
-+ (id)_sandboxProfileName;
-- (char *)_getCacheDirectory;
-- (char *)_getTempDirectory;
-- (char *)_getHomeDirectory;
++ (id)processName;
++ (id)sandboxProfileName;
++ (BOOL)isSandboxDisabled;
+- (char *)getCacheDirectory;
+- (char *)getTempDirectory;
+- (char *)getHomeDirectory;
 - (BOOL)enter;
 
 @end

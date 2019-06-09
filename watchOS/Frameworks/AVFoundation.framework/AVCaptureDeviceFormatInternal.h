@@ -8,6 +8,7 @@
 
 @class FigCaptureSourceFormat, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceFormatInternal : NSObject
 {
     FigCaptureSourceFormat *sourceFormat;

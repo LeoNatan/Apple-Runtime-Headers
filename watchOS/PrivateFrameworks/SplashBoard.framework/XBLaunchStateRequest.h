@@ -16,6 +16,7 @@
     FBSDisplayConfiguration *_displayConfiguration;
     NSString *_groupID;
     int _interfaceOrientation;
+    int _userInterfaceStyle;
     unsigned int _statusBarState;
     NSString *_urlSchemeName;
     NSString *_launchInterfaceIdentifier;
@@ -26,6 +27,7 @@
 @property(copy, nonatomic) NSString *launchInterfaceIdentifier; // @synthesize launchInterfaceIdentifier=_launchInterfaceIdentifier;
 @property(copy, nonatomic) NSString *urlSchemeName; // @synthesize urlSchemeName=_urlSchemeName;
 @property(nonatomic) unsigned int statusBarState; // @synthesize statusBarState=_statusBarState;
+@property(nonatomic) int userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(nonatomic) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) struct CGSize naturalSize; // @synthesize naturalSize=_naturalSize;
 @property(nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;

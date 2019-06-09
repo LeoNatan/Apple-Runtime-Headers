@@ -8,6 +8,7 @@
 
 @class NSAttributedString, UITextView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPinnedFooterView : UITableViewHeaderFooterView
 {
     NSAttributedString *_attributedText;

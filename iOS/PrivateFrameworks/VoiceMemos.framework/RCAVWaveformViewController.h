@@ -6,24 +6,20 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <VoiceMemos/RCCaptureSessionObserver-Protocol.h>
-#import <VoiceMemos/RCPreviewControllerObserver-Protocol.h>
+#import <VoiceMemos/RCTimeObserver-Protocol.h>
 #import <VoiceMemos/RCWaveformViewDelegate-Protocol.h>
 
-@class NSString, NSTimer, RCAVState, RCCaptureSession, RCCompositionController, RCHitTestForwardingView, RCLayoutMetrics, RCPreviewController, RCWaveformDataSource, RCWaveformViewController;
-@protocol RCAVWaveformViewControllerDelegate;
+@class NSString, RCHitTestForwardingView, RCLayoutMetrics, RCWaveformDataSource, RCWaveformViewController;
+@protocol RCAVWaveformViewControllerDelegate, RCTimeController;
 
-@interface RCAVWaveformViewController : UIViewController <RCWaveformViewDelegate, RCPreviewControllerObserver, RCCaptureSessionObserver>
+@interface RCAVWaveformViewController : UIViewController <RCWaveformViewDelegate, RCTimeObserver>
 {
     double _defaultVisibleDuration;
     long long _batchUpdatingDisplayableTimesCount;
     _Bool _needsUpdateDisplayableTime;
     _Bool _showingSelectionOverlayEnabled;
     _Bool _didJumpTime;
-    RCPreviewController *_activePreviewController;
-    RCCaptureSession *_activeCaptureSession;
-    RCCompositionController *_activeCaptureCompositionController;
-    NSTimer *_autoscrollPlaybackTimer;
+    id <RCTimeController> _activeTimeController;
     RCHitTestForwardingView *_leftForwardingView;
     RCHitTestForwardingView *_rightForwardingView;
     _Bool _currentTimeTracksCapturedEndPoint;
@@ -36,7 +32,6 @@
     RCWaveformDataSource *_waveformDataSource;
     id <RCAVWaveformViewControllerDelegate> _delegate;
     RCWaveformViewController *_waveformViewController;
-    RCAVState *_AVState;
     double _nextPreviewStartTime;
     double _currentTime;
     double _duration;
@@ -58,9 +53,7 @@
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(nonatomic) CDStruct_73a5d3ca highlightTimeRange; // @synthesize highlightTimeRange=_highlightTimeRange;
 @property(readonly, nonatomic) double nextPreviewStartTime; // @synthesize nextPreviewStartTime=_nextPreviewStartTime;
-@property(readonly, nonatomic) RCAVState *AVState; // @synthesize AVState=_AVState;
-@property(retain, nonatomic) RCPreviewController *activePreviewController; // @synthesize activePreviewController=_activePreviewController;
-@property(retain, nonatomic) RCCaptureSession *activeCaptureSession; // @synthesize activeCaptureSession=_activeCaptureSession;
+@property(retain, nonatomic) id <RCTimeController> activeTimeController; // @synthesize activeTimeController=_activeTimeController;
 @property(retain, nonatomic) RCWaveformViewController *waveformViewController; // @synthesize waveformViewController=_waveformViewController;
 @property(nonatomic) __weak id <RCAVWaveformViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) RCWaveformDataSource *waveformDataSource; // @synthesize waveformDataSource=_waveformDataSource;
@@ -68,7 +61,7 @@
 - (id)_selectionOverlay;
 - (void)_endShowingSelectionOverlayWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)_beginShowingSelectionOverlayAndEnableInsertMode:(_Bool)arg1;
-- (void)_updateInterfaceForAVState;
+- (void)_updateInterfaceForTimeControllerState:(long long)arg1;
 - (unsigned long long)_currentTimeDisplayOptionsIgnoringSelectionOverlayState:(_Bool)arg1;
 - (unsigned long long)_currentTimeDisplayOptions;
 - (void)_setSelectionOverlayEnabled:(_Bool)arg1;
@@ -76,15 +69,11 @@
 - (void)_didUpdateDisplayableTime;
 - (void)_updateCurrentTimeForCapturedInputAtTime:(double)arg1;
 - (void)_setWaveformDataSource:(id)arg1 initialTime:(double)arg2;
-- (void)captureSession:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
-- (void)captureSession:(id)arg1 rateDidChangeToRate:(float)arg2;
-- (void)captureSession:(id)arg1 destinationFragmentDurationDidChangeToDuration:(double)arg2 captureTime:(double)arg3 usingDisplayLinkSmoothing:(_Bool)arg4;
-- (void)previewController:(id)arg1 playbackTimeDidUpdateToCurrentTime:(double)arg2;
-- (void)previewController:(id)arg1 playbackTimeDidUpdateToCurrentTime:(double)arg2 didJumpTime:(_Bool)arg3;
-- (void)previewController:(id)arg1 playbackDidStopPlayingWithError:(id)arg2;
-- (void)previewController:(id)arg1 playbackTimeDidJumpWithPreviousTime:(double)arg2;
-- (void)triggerWaveformAutoScroll:(id)arg1;
-- (void)previewController:(id)arg1 playbackDidBeginWithRate:(float)arg2;
+- (void)timeController:(id)arg1 didChangeCurrentTime:(double)arg2 didChangeDuration:(double)arg3;
+- (void)timeController:(id)arg1 didChangeCurrentTime:(double)arg2 didJumpTime:(_Bool)arg3;
+- (void)timeController:(id)arg1 didChangeCurrentTime:(double)arg2;
+- (void)timeController:(id)arg1 didChangeState:(long long)arg2;
+- (void)timeController:(id)arg1 didChangeRate:(float)arg2;
 - (void)waveformViewController:(id)arg1 didChangeToSelectedTimeRange:(CDStruct_73a5d3ca)arg2;
 - (void)waveformViewControllerDidEndEditingSelectedTimeRange:(id)arg1;
 - (void)waveformViewControllerWillBeginEditingSelectedTimeRange:(id)arg1;
@@ -101,8 +90,8 @@
 - (CDStruct_73a5d3ca)setHighlightTimeRange;
 @property(nonatomic) CDStruct_73a5d3ca visibleTimeRange;
 @property(readonly, nonatomic) CDStruct_73a5d3ca nextPreviewTimeRange;
-- (void)setAVState:(id)arg1;
 - (void)reloadWaveformDataSource:(id)arg1 initialTime:(double)arg2;
+- (void)reloadWaveformDataSource:(id)arg1 withActiveTimeController:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

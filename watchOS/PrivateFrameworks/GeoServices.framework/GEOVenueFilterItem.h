@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)initWithFilterElementInfo:(id)arg1;
 - (id)initWithLabel:(id)arg1 filterID:(id)arg2;
+- (id)init;
 
 @end
 

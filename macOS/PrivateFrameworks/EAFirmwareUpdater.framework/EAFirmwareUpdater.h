@@ -9,7 +9,7 @@
 #import <EAFirmwareUpdater/NSStreamDelegate-Protocol.h>
 #import <EAFirmwareUpdater/iAUPServerDelegate-Protocol.h>
 
-@class EAAccessory, EASession, NSDate, NSMutableData, NSNumber, NSObject, NSString, NSTimer, NSURL, iAUPServer;
+@class EAAccessory, EASession, NSArray, NSDate, NSDictionary, NSMutableData, NSNumber, NSObject, NSString, NSTimer, NSURL, iAUPServer;
 @protocol OS_dispatch_queue;
 
 @interface EAFirmwareUpdater : MobileAssetUpdater <NSStreamDelegate, iAUPServerDelegate>
@@ -21,6 +21,7 @@
     NSString *_appProtocol;
     NSString *_multiassetAppProtocol;
     NSString *_deviceClass;
+    NSDictionary *_deviceOptions;
     unsigned long long _firmwareVersionMajor;
     unsigned long long _firmwareVersionMinor;
     unsigned long long _firmwareVersionRelease;
@@ -42,7 +43,16 @@
     CDUnknownBlockType _applyCompletion;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _updateHandler;
+    CDUnknownBlockType _personalizationRequestHandler;
+    NSArray *_buildIdentities;
+    NSDictionary *_manifestIDs;
+    NSArray *_manifestList;
+    unsigned int _manifestIndex;
     NSMutableData *_outputData;
+    struct _opaque_pthread_mutex_t {
+        long long __sig;
+        char __opaque[56];
+    } _flushOutputLock;
     iAUPServer *_iAUPServer;
     NSObject<OS_dispatch_queue> *_eaNotificationDispatchQueue;
     BOOL _firmwareUpdateComplete;
@@ -52,16 +62,20 @@
     BOOL _skipDFUMode;
     BOOL _isMultiAssetSession;
     BOOL _byteEscape;
+    BOOL _skipReconnect;
     NSString *_multiAssetAppProtocol;
     NSString *_updateBundleFilename;
     NSURL *_updateBundleURL;
     NSNumber *_cumulativeCloak;
+    NSString *_serialNumber;
 }
 
-+ (id)findAccessoryWithProtocolString:(id)arg1;
++ (id)findAccessoryWithProtocolString:(id)arg1 serialNum:(id)arg2;
 + (id)multiAssetAppProtocolStringWithEAID:(id)arg1;
 + (id)appProtocolStringWithEAID:(id)arg1;
 + (id)bootloaderProtocolStringWithEAID:(id)arg1;
+@property(retain, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(copy, nonatomic) NSDictionary *manifestIDs; // @synthesize manifestIDs=_manifestIDs;
 @property(retain, nonatomic) NSNumber *currentSessionTimeTaken; // @synthesize currentSessionTimeTaken=_currentSessionTimeTaken;
 @property(retain, nonatomic) NSNumber *cumulativeCloak; // @synthesize cumulativeCloak=_cumulativeCloak;
 @property(retain, nonatomic) NSNumber *cumulativeTimeTaken; // @synthesize cumulativeTimeTaken=_cumulativeTimeTaken;
@@ -89,6 +103,7 @@
 - (id)flushOutput;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (void)updateComplete:(id)arg1 error:(id)arg2;
+- (unsigned char)getPersonalizationID;
 - (void)firmwareUpdateComplete:(id)arg1 error:(id)arg2;
 - (void)handleFirmwareUpdateStatus:(id)arg1;
 - (id)createEndOfUpdateEventDict:(id)arg1 error:(id)arg2;
@@ -97,19 +112,24 @@
 - (id)writeData:(id)arg1;
 - (void)closeSession;
 - (id)openSession;
-- (id)applyFirmware:(CDUnknownBlockType)arg1 progress:(CDUnknownBlockType)arg2 update:(CDUnknownBlockType)arg3;
+- (id)applyFirmware:(CDUnknownBlockType)arg1 progress:(CDUnknownBlockType)arg2 update:(CDUnknownBlockType)arg3 personalization:(CDUnknownBlockType)arg4;
+- (void)handleSessionError:(unsigned int)arg1 message:(id)arg2;
+- (void)personalizationResponse:(id)arg1 error:(id)arg2;
+- (BOOL)stitchManifestInSuperBinary:(id)arg1 withManifest:(id)arg2 withId:(unsigned int)arg3;
+- (void)processPersonalizationInfoFromAccessory:(id)arg1;
+- (BOOL)updateRequiresPersonalization;
 - (id)validateAsset;
 - (id)validateAssetAttributes:(id)arg1;
 - (id)assetWithMaxVersion:(id)arg1;
 - (id)queryPredicate;
-- (id)overrideQueryPredicateFromDict:(id)arg1;
 - (id)supportedProtocolForAccessory:(id)arg1;
+- (void)setFirmwareBundle:(id)arg1 withManifest:(id)arg2;
 - (void)reconnectTimerDidFire:(id)arg1;
 - (void)stopReconnectTimer;
 - (void)startReconnectTimer:(int)arg1;
 - (BOOL)findAccessory;
 - (void)dealloc;
-- (id)initWithDeviceClass:(id)arg1 assetType:(id)arg2 skipDFU:(BOOL)arg3 byteEscape:(BOOL)arg4;
+- (id)initWithDeviceClass:(id)arg1 assetType:(id)arg2 skipDFU:(BOOL)arg3 byteEscape:(BOOL)arg4 skipReconnect:(BOOL)arg5 options:(id)arg6 serialNum:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

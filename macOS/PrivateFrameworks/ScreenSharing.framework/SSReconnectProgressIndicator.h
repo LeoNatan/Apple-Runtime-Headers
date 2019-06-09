@@ -29,6 +29,10 @@
 - (void)viewWillResignOverlay;
 - (void)viewDidBecomeOverlay;
 - (void)viewDidMoveToSuperview;
+- (void)viewDidChangeEffectiveAppearance;
+- (void)setupColorsForAppearance:(id)arg1;
+- (void)deallocColors;
+- (BOOL)allowsVibrancy;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

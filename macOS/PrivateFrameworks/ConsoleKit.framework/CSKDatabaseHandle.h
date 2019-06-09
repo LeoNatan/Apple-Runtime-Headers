@@ -67,7 +67,6 @@
 - (id)_stringRowsForQuery:(id)arg1;
 - (void)_reportErrorInFunction:(const char *)arg1;
 - (struct sqlite3 *)_databaseHandle;
-- (BOOL)passesIntegrityCheck;
 - (id)stringColumnDataForQuery:(id)arg1 withArguments:(id)arg2;
 - (id)arrayForQuery:(id)arg1 arguments:(id)arg2;
 - (BOOL)runStatement:(id)arg1 arguments:(id)arg2;

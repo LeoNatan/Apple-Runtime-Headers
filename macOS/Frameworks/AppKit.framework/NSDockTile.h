@@ -22,7 +22,6 @@
     } _dFlags;
     struct CGSize _dockTileSize;
     id _miniViewController;
-    id reserved[4];
 }
 
 - (void).cxx_destruct;

@@ -4,59 +4,53 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <AppConduit/ACXRemoteApplication.h>
 
+#import <AppConduit/ACXSyncedApp-Protocol.h>
+#import <AppConduit/NSCopying-Protocol.h>
 #import <AppConduit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, NSURL;
+@class NSArray, NSString, NSURL, NSUUID;
 
-@interface ACXApplication : NSObject <NSSecureCoding>
+@interface ACXApplication : ACXRemoteApplication <ACXSyncedApp, NSSecureCoding, NSCopying>
 {
-    _Bool _isBetaApp;
-    _Bool _isProfileValidated;
-    _Bool _isBuiltIn;
-    NSString *_bundleIdentifier;
-    NSString *_watchKitVersion;
-    NSString *_bundleVersion;
-    NSString *_applicationName;
-    NSString *_companionAppBundleID;
-    NSURL *_watchKitAppURL;
-    NSString *_teamID;
-    NSString *_complicationPrincipalClass;
-    NSArray *_supportedComplicationFamilies;
-    NSMutableArray *_clockFaceExtensionPaths;
-    NSString *_bundleShortVersion;
+    NSURL *_watchAppURL;
     unsigned int _lsSequenceNumber;
-    NSString *_watchKitAppExtensionBundleID;
+    NSArray *_clockFaceExtensionPaths;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) NSString *watchKitAppExtensionBundleID; // @synthesize watchKitAppExtensionBundleID=_watchKitAppExtensionBundleID;
-@property(readonly) unsigned int lsSequenceNumber; // @synthesize lsSequenceNumber=_lsSequenceNumber;
-@property(readonly) NSString *bundleShortVersion; // @synthesize bundleShortVersion=_bundleShortVersion;
-@property(readonly) NSMutableArray *clockFaceExtensionPaths; // @synthesize clockFaceExtensionPaths=_clockFaceExtensionPaths;
-@property(readonly) NSArray *supportedComplicationFamilies; // @synthesize supportedComplicationFamilies=_supportedComplicationFamilies;
-@property(readonly) NSString *complicationPrincipalClass; // @synthesize complicationPrincipalClass=_complicationPrincipalClass;
-@property(readonly) NSString *teamID; // @synthesize teamID=_teamID;
-@property(readonly) NSURL *watchKitAppURL; // @synthesize watchKitAppURL=_watchKitAppURL;
-@property(readonly) NSString *companionAppBundleID; // @synthesize companionAppBundleID=_companionAppBundleID;
-@property(readonly) _Bool isBuiltIn; // @synthesize isBuiltIn=_isBuiltIn;
-@property(readonly) _Bool isProfileValidated; // @synthesize isProfileValidated=_isProfileValidated;
-@property(readonly) _Bool isBetaApp; // @synthesize isBetaApp=_isBetaApp;
-@property(readonly) NSString *applicationName; // @synthesize applicationName=_applicationName;
-@property(readonly) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
-@property(readonly) NSString *watchKitVersion; // @synthesize watchKitVersion=_watchKitVersion;
-@property(readonly) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(readonly, copy, nonatomic) NSArray *clockFaceExtensionPaths; // @synthesize clockFaceExtensionPaths=_clockFaceExtensionPaths;
+@property(readonly, nonatomic) unsigned int lsSequenceNumber; // @synthesize lsSequenceNumber=_lsSequenceNumber;
+@property(readonly, nonatomic) NSURL *watchAppURL; // @synthesize watchAppURL=_watchAppURL;
 - (void).cxx_destruct;
-- (id)_watchKitApplicationNameFromWKAppInfoPlist:(id)arg1 containerProxy:(id)arg2;
-- (id)_URLsOfExtensionsInBundleURL:(id)arg1 mayNotExist:(_Bool)arg2;
-- (id)_mostCurrentWKAppURLInCompanionAppProxy:(id)arg1 versionFound:(id *)arg2;
-- (id)_URLOfFirstItemWithExtension:(id)arg1 inDirectory:(id)arg2;
-- (id)_infoPlistForPluginBundle:(id)arg1;
-@property(readonly) _Bool hasClockfaces;
-@property(readonly) _Bool hasComplication;
+- (id)_localizedAppNameFromProxy:(id)arg1;
+- (id)_storeMetadataWithError:(id *)arg1;
+- (id)initWithApplicationProxy:(id)arg1 databaseUUID:(id)arg2 sequenceNumber:(unsigned int)arg3 expectPlaceholder:(_Bool)arg4;
+- (id)initWithApplicationProxy:(id)arg1 databaseUUID:(id)arg2 sequenceNumber:(unsigned int)arg3;
+- (void)_populateStoreMetadata;
+- (id)_buildLocalizedInfoPlistStringsDictForAppBundleURL:(id)arg1 watchKitExtensionURL:(id)arg2;
+@property(readonly, copy) NSString *description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)serializeAsRemoteApplication;
+- (id)serialize;
+- (id)initWithSerializedDictionary:(id)arg1;
+- (id)initWithBundleID:(id)arg1 databaseUUID:(id)arg2 sequenceNumber:(unsigned int)arg3;
+- (id)init;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, nonatomic) unsigned int applicationType;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier;
+@property(readonly, copy, nonatomic) NSArray *counterpartIdentifiers;
+@property(readonly, nonatomic) NSUUID *databaseUUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly, nonatomic) _Bool isDeletable;
+@property(readonly, nonatomic) _Bool isSystemApp;
+@property(readonly, nonatomic) unsigned int sequenceNumber;
+@property(readonly) Class superclass;
 
 @end
 

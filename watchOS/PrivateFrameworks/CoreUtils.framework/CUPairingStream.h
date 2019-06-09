@@ -14,10 +14,12 @@
     unsigned char _decryptNonce[12];
     struct CryptoAEADPrivate *_encryptAEAD;
     unsigned char _encryptNonce[12];
+    unsigned long _authTagLength;
     NSString *_name;
 }
 
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) unsigned long authTagLength; // @synthesize authTagLength=_authTagLength;
 - (void).cxx_destruct;
 - (_Bool)decryptInputBytes:(const void *)arg1 inputLength:(unsigned long)arg2 inputAADBytes:(const void *)arg3 inputAADLength:(unsigned long)arg4 inputAuthTagPtr:(const void *)arg5 inputAuthTagLength:(unsigned long)arg6 outputBytes:(void *)arg7 error:(id *)arg8;
 - (_Bool)encryptInputBytes:(const void *)arg1 inputLength:(unsigned long)arg2 inputAADBytes:(const void *)arg3 inputAADLength:(unsigned long)arg4 outputBytes:(void *)arg5 outputAuthTagBytes:(void *)arg6 outputAuthTagLength:(unsigned long)arg7 error:(id *)arg8;
@@ -26,9 +28,9 @@
 - (id)encryptData:(id)arg1 aadBytes:(const void *)arg2 aadLength:(unsigned long)arg3 error:(id *)arg4;
 - (id)encryptData:(id)arg1 aadData:(id)arg2 error:(id *)arg3;
 - (_Bool)prepareWithName:(id)arg1 isClient:(_Bool)arg2 pskData:(id)arg3 error:(id *)arg4;
-@property(readonly, nonatomic) unsigned long authTagLength;
 - (void)_cleanup;
 - (void)dealloc;
+- (id)init;
 
 @end
 

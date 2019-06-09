@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKUIBehavior.h>
 
+__attribute__((visibility("hidden")))
 @interface CKUIBehaviorNano : CKUIBehavior
 {
 }
@@ -137,8 +138,11 @@
 - (id)readPinnedImage;
 - (id)unreadPinnedImage;
 - (id)unreadDNDImage;
+- (id)unDNDActionImage;
+- (id)dndActionImage;
 - (id)readDNDImage;
 - (id)unreadImage;
+- (id)newComposeImage;
 - (id)conversationListGroupCountFont;
 - (id)conversationListDateFont;
 - (id)conversationListSummaryFont;

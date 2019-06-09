@@ -4,20 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUActivity.h>
+#import <PhotosUICore/PXActivity.h>
+
+#import <PhotosUI/PXFeedbackImageQualityUIViewControllerDelegate-Protocol.h>
+
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface PUInternalImageQualityFeedbackActivity : PUActivity
+@interface PUInternalImageQualityFeedbackActivity : PXActivity <PXFeedbackImageQualityUIViewControllerDelegate>
 {
 }
 
 + (long long)activityCategory;
-- (void)performActivity;
+- (void)feedbackImageQualityUIViewController:(id)arg1 didFinish:(_Bool)arg2;
+- (id)activityViewController;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)assets;
-- (id)_activityBundleImageConfiguration;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

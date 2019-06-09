@@ -12,6 +12,6 @@
 - (void)createKaleidoscopeFaceFromPath:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)createUserPhotoFaceFromPath:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)clockFaceCounts:(void (^)(unsigned int, unsigned int))arg1;
-- (void)userPhotoFaceDirectory:(void (^)(NSString *))arg1;
+- (void)userPhotoFaceDirectory:(void (^)(NSString *, NSString *))arg1;
 @end
 

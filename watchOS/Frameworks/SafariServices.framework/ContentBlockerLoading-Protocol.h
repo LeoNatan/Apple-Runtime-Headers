@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol ContentBlockerLoading
+- (void)reloadTrackerBlockerIfNeeded:(void (^)(_Bool))arg1;
 - (void)getStateOfContentBlockerWithIdentifier:(NSString *)arg1 reply:(void (^)(SFContentBlockerState *, NSError *))arg2;
 - (void)removeContentBlockerWithIdentifier:(NSString *)arg1;
 - (void)loadContentBlockerWithIdentifier:(NSString *)arg1 reply:(void (^)(NSError *))arg2;

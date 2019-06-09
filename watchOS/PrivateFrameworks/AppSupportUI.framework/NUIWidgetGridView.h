@@ -40,8 +40,8 @@
 - (float)labelMinSpacing;
 - (float)labelOutset;
 - (void)generateItems;
-- (CDStruct_cc988be4)borrowableSpaceForCellAtIndex:(unsigned int)arg1;
-- (CDStruct_cc988be4)entitledExtraSpaceForCellAtIndex:(unsigned int)arg1;
+- (CDStruct_b2fbf00d)borrowableSpaceForCellAtIndex:(unsigned int)arg1;
+- (CDStruct_b2fbf00d)entitledExtraSpaceForCellAtIndex:(unsigned int)arg1;
 - (unsigned int)maxNumberOfItems;
 - (unsigned int)itemsPerRow;
 - (id)cellForGridViewItemAtIndex:(int)arg1;

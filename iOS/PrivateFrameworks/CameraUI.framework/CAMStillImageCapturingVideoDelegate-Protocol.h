@@ -9,9 +9,7 @@
 @protocol CAMStillImageCapturingVideoDelegate <NSObject>
 
 @optional
-- (void)stopShowingLivePhotoIndicator;
-- (void)startShowingLivePhotoIndicator;
-- (void)didCompleteCapturingVideoForStillImageRequests;
-- (void)willStartCapturingVideoForStillImageRequests;
+- (void)stillImageRequestsDidCompleteCapturingLivePhotoVideo;
+- (void)stillImageRequestsWillStartCapturingLivePhotoVideo;
 @end
 

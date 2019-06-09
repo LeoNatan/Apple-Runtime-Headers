@@ -6,7 +6,7 @@
 
 #import <Safari/WebBookmark.h>
 
-@class NSString, NSURL;
+@class NSArray, NSString, NSURL;
 
 @interface WebBookmarkLeaf : WebBookmark
 {
@@ -18,6 +18,7 @@
     NSString *_threadUnsafePreviewText;
     NSString *_threadUnsafeURLString;
     NSString *_threadUnsafeSiteName;
+    NSArray *_threadUnsafeTopicQIDs;
 }
 
 - (void).cxx_destruct;
@@ -39,6 +40,7 @@
 - (void)_setPreviewText:(id)arg1 interactive:(BOOL)arg2;
 @property(copy, nonatomic) NSString *previewText; // @synthesize previewText=_threadUnsafePreviewText;
 @property(retain, nonatomic) NSURL *imageURL; // @synthesize imageURL=_threadUnsafeImageURL;
+@property(copy, nonatomic) NSArray *topicQIDs; // @synthesize topicQIDs=_threadUnsafeTopicQIDs;
 @property(nonatomic) BOOL shouldNeverFetchMetadata; // @synthesize shouldNeverFetchMetadata=_threadUnsafeShouldNeverFetchMetadata;
 - (BOOL)canOpenInTabs;
 - (BOOL)isUserVisiblyEqualToBookmark:(id)arg1;

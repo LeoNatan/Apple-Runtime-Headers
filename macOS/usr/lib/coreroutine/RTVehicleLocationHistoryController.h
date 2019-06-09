@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_deleteVehicleEventsBeforeDate:(id)arg1;
 - (id)_getAllVehicleEventsFromHistory;
 - (BOOL)_persistVehicleEventToHistory:(id)arg1;

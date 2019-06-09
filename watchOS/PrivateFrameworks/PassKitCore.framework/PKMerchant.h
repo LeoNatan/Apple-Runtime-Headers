@@ -13,9 +13,10 @@
 
 @interface PKMerchant : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
-    _Bool _hasFallbackPOIType;
     NSString *_displayName;
     NSURL *_originURL;
+    NSString *_webMerchantIdentifier;
+    NSString *_webMerchantName;
     int _adamIdentifier;
     int _industryCode;
     NSString *_industryCategory;
@@ -32,7 +33,6 @@
     int _cleanConfidenceLevel;
     int _fallbackcategory;
     NSString *_fallbackDetailedCategory;
-    int _fallbackPOIType;
     PKMapsMerchant *_mapsMerchant;
     PKMapsBrand *_mapsBrand;
 }
@@ -40,8 +40,6 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) PKMapsBrand *mapsBrand; // @synthesize mapsBrand=_mapsBrand;
 @property(retain, nonatomic) PKMapsMerchant *mapsMerchant; // @synthesize mapsMerchant=_mapsMerchant;
-@property(nonatomic) int fallbackPOIType; // @synthesize fallbackPOIType=_fallbackPOIType;
-@property(nonatomic) _Bool hasFallbackPOIType; // @synthesize hasFallbackPOIType=_hasFallbackPOIType;
 @property(copy, nonatomic) NSString *fallbackDetailedCategory; // @synthesize fallbackDetailedCategory=_fallbackDetailedCategory;
 @property(nonatomic) int fallbackcategory; // @synthesize fallbackcategory=_fallbackcategory;
 @property(nonatomic) int cleanConfidenceLevel; // @synthesize cleanConfidenceLevel=_cleanConfidenceLevel;
@@ -58,10 +56,12 @@
 @property(copy, nonatomic) NSString *industryCategory; // @synthesize industryCategory=_industryCategory;
 @property(nonatomic) int industryCode; // @synthesize industryCode=_industryCode;
 @property(nonatomic) int adamIdentifier; // @synthesize adamIdentifier=_adamIdentifier;
+@property(copy, nonatomic) NSString *webMerchantName; // @synthesize webMerchantName=_webMerchantName;
+@property(copy, nonatomic) NSString *webMerchantIdentifier; // @synthesize webMerchantIdentifier=_webMerchantIdentifier;
 @property(copy, nonatomic) NSURL *originURL; // @synthesize originURL=_originURL;
 - (void).cxx_destruct;
+- (id)uniqueIdentifier;
 - (void)_regenerateDisplayName;
-@property(readonly, nonatomic) int poiType;
 @property(readonly, nonatomic) NSString *detailedCategory;
 @property(readonly, nonatomic) int category;
 @property(readonly, nonatomic) _Bool isValid;

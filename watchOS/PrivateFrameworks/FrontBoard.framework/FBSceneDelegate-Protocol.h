@@ -4,13 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoard/NSObject-Protocol.h>
+#import <FrontBoard/FBSceneObserver-Protocol.h>
 
-@class FBSSceneClientSettings, FBSSceneClientSettingsDiff, FBSSceneSettings, FBSSceneTransitionContext, FBScene, NSSet;
+@class FBScene, NSSet;
 
-@protocol FBSceneDelegate <NSObject>
+@protocol FBSceneDelegate <FBSceneObserver>
 - (void)scene:(FBScene *)arg1 didReceiveActions:(NSSet *)arg2;
-- (void)scene:(FBScene *)arg1 didUpdateClientSettingsWithDiff:(FBSSceneClientSettingsDiff *)arg2 oldClientSettings:(FBSSceneClientSettings *)arg3 transitionContext:(FBSSceneTransitionContext *)arg4;
-- (void)scene:(FBScene *)arg1 handleUpdateToSettings:(FBSSceneSettings *)arg2 withTransitionContext:(FBSSceneTransitionContext *)arg3 completion:(void (^)(_Bool))arg4;
 @end
 

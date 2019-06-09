@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftValidationResponse : NSObject
 {
     NSString *_errorString;

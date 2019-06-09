@@ -11,7 +11,7 @@
 }
 
 + (id)responseHeaderForRequestHeader:(id)arg1 status:(unsigned short)arg2;
-+ (id)requestHeaderForProtocol:(id)arg1 topic:(id)arg2 identifier:(unsigned long long)arg3;
++ (id)requestHeaderForProtocol:(id)arg1 topic:(id)arg2 identifier:(id)arg3;
 + (id)eventHeaderForProtocol:(id)arg1 topic:(id)arg2;
 + (_Bool)readHeaderFromPartialData:(const char *)arg1 length:(unsigned long long)arg2 frameType:(unsigned char *)arg3 payloadLength:(unsigned long long *)arg4;
 + (_Bool)readHeaderFromPartialData:(id)arg1 frameType:(unsigned char *)arg2 payloadLength:(unsigned long long *)arg3;

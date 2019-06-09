@@ -6,8 +6,18 @@
 
 #import <Photos/PHPhotoLibrary.h>
 
+@class PXPhotoLibraryLocalDefaults;
+
 @interface PHPhotoLibrary (PhotosUICore)
 + (id)px_appPhotoLibrary;
+- (id)px_collectionListWithLocalIdentifier:(id)arg1;
+- (id)px_collectionListWithTransientIdentifier:(id)arg1;
+- (id)px_assetCollectionWithTransientIdentifier:(id)arg1;
+- (id)px_memoryWithLocalIdentifier:(id)arg1;
+- (id)px_assetCollectionWithLocalIdentifier:(id)arg1;
+- (id)px_assetCollectionForSmartAlbumWithSubtype:(long long)arg1;
+- (_Bool)px_fetchHasNoVisibleAssets;
+@property(readonly) PXPhotoLibraryLocalDefaults *px_localDefaults;
 - (void)px_endPausingChanges:(id)arg1;
 - (id)px_beginPausingChangesWithTimeout:(double)arg1;
 - (void)px_unregisterChangeObserver:(id)arg1;

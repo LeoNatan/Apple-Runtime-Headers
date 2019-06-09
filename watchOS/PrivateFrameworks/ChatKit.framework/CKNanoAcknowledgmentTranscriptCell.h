@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKAggregateAcknowledgmentTranscriptCell.h>
 
+__attribute__((visibility("hidden")))
 @interface CKNanoAcknowledgmentTranscriptCell : CKAggregateAcknowledgmentTranscriptCell
 {
 }

@@ -6,10 +6,10 @@
 
 #import <UserActivity/NSObject-Protocol.h>
 
-@class NSFileHandle;
+@class NSFileHandle, NSURL;
 
 @protocol UASharedPasteboardManagerResponseProtocol <NSObject>
 - (void)tellClientDebuggingEnabled:(_Bool)arg1 logFileHandle:(NSFileHandle *)arg2;
-- (void)writeLocalPasteboardToFile:(NSFileHandle *)arg1 withCompletion:(void (^)(UASharedPasteboardInfo *, NSError *))arg2;
+- (void)writeLocalPasteboardToFile:(NSFileHandle *)arg1 itemDir:(NSURL *)arg2 withCompletion:(void (^)(UASharedPasteboardInfo *, NSError *))arg3;
 @end
 

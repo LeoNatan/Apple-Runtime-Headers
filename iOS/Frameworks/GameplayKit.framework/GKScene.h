@@ -19,10 +19,10 @@
     id <GKSceneRootNodeType> _rootNode;
 }
 
-+ (_Bool)supportsSecureCoding;
 + (id)sceneWithFileNamed:(id)arg1;
 + (id)sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;
 + (id)_sceneWithFileNamed:(id)arg1 rootNode:(id)arg2;
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) id <GKSceneRootNodeType> rootNode; // @synthesize rootNode=_rootNode;
 @property(readonly, nonatomic) NSDictionary *graphs; // @synthesize graphs=_graphs;
 @property(readonly, nonatomic) NSArray *entities; // @synthesize entities=_entities;

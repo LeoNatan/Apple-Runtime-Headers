@@ -20,6 +20,7 @@
     int _interfaceAlignment;
     int _verticalInterfaceAlignment;
     NSString *_actionValue;
+    id _actionTarget;
     NSDictionary *_segueValue;
     float _width;
     float _widthAdjustment;
@@ -44,6 +45,7 @@
 @property(nonatomic) float widthAdjustment; // @synthesize widthAdjustment=_widthAdjustment;
 @property(nonatomic) float width; // @synthesize width=_width;
 @property(copy, nonatomic) NSDictionary *segueValue; // @synthesize segueValue=_segueValue;
+@property(nonatomic) __weak id actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(copy, nonatomic) NSString *actionValue; // @synthesize actionValue=_actionValue;
 @property(nonatomic) int verticalInterfaceAlignment; // @synthesize verticalInterfaceAlignment=_verticalInterfaceAlignment;
 @property(nonatomic) int interfaceAlignment; // @synthesize interfaceAlignment=_interfaceAlignment;
@@ -53,6 +55,7 @@
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 @property(retain, nonatomic) NSDictionary *itemDescriptionForIB; // @synthesize itemDescriptionForIB=_itemDescriptionForIB;
 - (void).cxx_destruct;
+- (void)setWKInterfaceObject:(id)arg1;
 - (void)doButton;
 - (void)setTarget:(id)arg1 forInterfaceItemAction:(SEL)arg2;
 - (void)layoutSubviews;

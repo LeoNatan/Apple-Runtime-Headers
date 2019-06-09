@@ -13,9 +13,11 @@ __attribute__((visibility("hidden")))
 {
     NSMutableDictionary *_cellForAttendee;
     NSArray *_attendeesWithProposedTimes;
+    _Bool _visibilityChanged;
 }
 
 - (void).cxx_destruct;
+- (_Bool)detailItemVisibilityChanged;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (id)attendeeForIndex:(unsigned long long)arg1;
 - (_Bool)hasDetailViewControllerAtIndex:(unsigned long long)arg1;

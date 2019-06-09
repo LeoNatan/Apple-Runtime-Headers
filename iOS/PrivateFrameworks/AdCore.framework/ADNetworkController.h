@@ -27,7 +27,9 @@
 - (void).cxx_destruct;
 - (void)_checkForNetworkAndNotify;
 - (void)_checkForNetwork;
-- (int)dataIndicatorToConnection:(id)arg1;
+- (id)getDataContext:(id)arg1;
+- (int)cellNetworkType;
+- (int)dataIndicatorToConnection:(int)arg1;
 - (int)networkType;
 - (void)start;
 - (void)_updateStatus:(_Bool)arg1;

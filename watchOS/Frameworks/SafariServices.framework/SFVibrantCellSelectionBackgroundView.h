@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <UIKit/UIVisualEffectView.h>
 
 __attribute__((visibility("hidden")))
-@interface SFVibrantCellSelectionBackgroundView : UIView
+@interface SFVibrantCellSelectionBackgroundView : UIVisualEffectView
 {
-    UIView *_overlayView;
-    UIView *_plusDView;
 }
 
-- (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (id)_selectionEffect;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

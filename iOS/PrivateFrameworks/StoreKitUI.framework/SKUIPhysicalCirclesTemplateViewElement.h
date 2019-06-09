@@ -8,6 +8,7 @@
 
 @class NSArray, SKUILabelViewElement, SKUIPaletteViewElement, SKUIPhysicalCirclesTemplateDOMFeature;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPhysicalCirclesTemplateViewElement : SKUIViewElement
 {
     SKUIPhysicalCirclesTemplateDOMFeature *_scriptInterface;

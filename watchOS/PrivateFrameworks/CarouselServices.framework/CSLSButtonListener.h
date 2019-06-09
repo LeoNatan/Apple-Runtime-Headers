@@ -13,6 +13,7 @@
 @interface CSLSButtonListener : NSObject <CSLSButtonListenerClientInterface>
 {
     NSXPCConnection *_connection;
+    struct os_unfair_recursive_lock_s _lock;
     CSLSButtonListenerCache *_handlerCache;
 }
 
@@ -22,6 +23,8 @@
 - (void)removeHandlerForButtons:(unsigned int)arg1 event:(unsigned int)arg2;
 - (void)setHandlerForButtons:(unsigned int)arg1 event:(unsigned int)arg2 handlerWithTimestamps:(CDUnknownBlockType)arg3;
 - (void)setHandlerForButtons:(unsigned int)arg1 event:(unsigned int)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_resendButtonHandlersFromCache;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
 

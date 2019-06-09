@@ -8,5 +8,6 @@
 
 @interface DOMNode (DDCleanupExtensions)
 - (void)dd_removeResultLinks;
+- (_Bool)dd_searchForLinkRemovingExistingDDLinksWithEndNode:(id)arg1 didModifyDOM:(_Bool *)arg2;
 @end
 

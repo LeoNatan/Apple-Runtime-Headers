@@ -16,6 +16,8 @@
 
 // Remaining properties
 @property(nonatomic) int globalContentPreviewSetting; // @dynamic globalContentPreviewSetting;
+@property(nonatomic) int globalSpokenNotificationSetting; // @dynamic globalSpokenNotificationSetting;
+@property(nonatomic, getter=isSpokenNotificationsSupported) _Bool spokenNotificationsSupported; // @dynamic spokenNotificationsSupported;
 
 @end
 

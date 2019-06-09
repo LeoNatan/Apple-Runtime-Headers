@@ -27,7 +27,6 @@
     unsigned int _deletedMessageCount;
     unsigned int _attachmentCount;
     BOOL _isThreadOpen;
-    BOOL _showDateInSubject;
 }
 
 + (id)sendersStringForMessages:(id)arg1 primaryIndexes:(id)arg2;
@@ -39,7 +38,6 @@
 + (id)findNewestReceivedMessageInMessages:(id)arg1;
 + (id)findNewestMessageInMessages:(id)arg1;
 + (id)messagesByExpandingThreads:(id)arg1;
-@property BOOL showDateInSubject; // @synthesize showDateInSubject=_showDateInSubject;
 @property BOOL isThreadOpen; // @synthesize isThreadOpen=_isThreadOpen;
 - (void).cxx_destruct;
 - (CDUnknownBlockType)_threadComparator;
@@ -81,6 +79,7 @@
 @property(readonly, copy) NSString *formattedUnreadMessageCount;
 - (id)_numberFormatter;
 - (void)updateSubjectEtc;
+- (BOOL)conversationFlagsHaveChanged;
 - (BOOL)flagsHaveChanged;
 - (BOOL)commitPendingChangesForTaskID:(id)arg1;
 - (void)messageBecamePrimary:(id)arg1;
@@ -88,6 +87,7 @@
 - (id)_invertedIndexes:(id)arg1 count:(unsigned long long)arg2;
 - (id)deleteMessages:(id)arg1;
 - (id)addMessages:(id)arg1 secondaryMessages:(id)arg2;
+@property(readonly) unsigned long long conversationFlags;
 @property(readonly) long long conversationID;
 - (id)_changeDictionaryForTaskID:(id)arg1 toModify:(BOOL)arg2;
 - (id)appliedFlagColors;

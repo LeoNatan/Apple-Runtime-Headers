@@ -31,8 +31,9 @@
 - (void)getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2 outIconImage:(id *)arg3 updateBlock:(CDUnknownBlockType)arg4;
 - (id)_getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2;
 - (void)_setCachedIcon:(id)arg1 forIconVariant:(int)arg2 inBundleID:(id)arg3;
-- (void)_getLocalIconForBundleID:(id)arg1 iconVariant:(int)arg2 block:(CDUnknownBlockType)arg3;
-- (void)getRemoteIconForBundleIDBypassingCache:(id)arg1 iconVariant:(int)arg2 block:(CDUnknownBlockType)arg3 timeout:(double)arg4;
+- (void)_getPhoneIconForBundleID:(id)arg1 iconVariant:(int)arg2 timeout:(double)arg3 block:(CDUnknownBlockType)arg4;
+- (void)_getPhoneLocalIconForBundleID:(id)arg1 iconVariant:(int)arg2 block:(CDUnknownBlockType)arg3;
+- (void)_getRemoteIconForBundleIDBypassingCache:(id)arg1 iconVariant:(int)arg2 block:(CDUnknownBlockType)arg3 timeout:(double)arg4;
 - (void)getIconForBundleID:(id)arg1 iconVariant:(int)arg2 queue:(id)arg3 block:(CDUnknownBlockType)arg4 timeout:(double)arg5;
 - (void)getIconForBundleID:(id)arg1 iconVariant:(int)arg2 block:(CDUnknownBlockType)arg3 timeout:(double)arg4;
 - (id)init;

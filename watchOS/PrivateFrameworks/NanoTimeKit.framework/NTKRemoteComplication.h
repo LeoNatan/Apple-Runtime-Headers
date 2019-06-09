@@ -30,7 +30,9 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)customDailySnapshotKey;
 - (id)description;
+- (id)localizedRichDetailText;
 - (id)localizedDetailText;
+- (id)localizedRichKeylineLabelText;
 - (id)localizedKeylineLabelText;
 - (id)initWithComplicationType:(unsigned int)arg1;
 

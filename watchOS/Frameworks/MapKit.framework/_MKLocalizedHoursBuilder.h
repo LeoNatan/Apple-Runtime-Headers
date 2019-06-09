@@ -47,6 +47,7 @@
 @property(readonly, nonatomic) UIColor *hoursStateLabelColor; // @synthesize hoursStateLabelColor=_hoursStateLabelColor;
 @property(readonly, nonatomic) NSString *localizedOpenState; // @synthesize localizedOpenState=_localizedOpenState;
 @property(readonly, nonatomic) NSString *localizedOperatingHours; // @synthesize localizedOperatingHours=_localizedOperatingHours;
+- (void)_resetLocalizedStrings:(_Bool)arg1;
 - (void)_resetLocalizedBuilder:(_Bool)arg1;
 - (void)_commonInit;
 - (id)initWithMapItemForMessageForBusiness:(id)arg1 localizedHoursStringOptions:(unsigned int)arg2;

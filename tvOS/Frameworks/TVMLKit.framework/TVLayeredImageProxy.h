@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL, _TVURLSessionDownloadTaskWrapper;
+@class NSString, NSURL, _TVURLSessionDownloadTaskWrapper;
 
 @interface TVLayeredImageProxy : NSObject
 {
@@ -14,21 +14,25 @@
     _Bool _cancelled;
     NSURL *_url;
     long long _groupType;
+    NSString *_assetKey;
 }
 
 + (id)_loadingQueue;
 @property(getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
+@property(readonly, copy, nonatomic) NSString *assetKey; // @synthesize assetKey=_assetKey;
 @property(readonly, nonatomic) long long groupType; // @synthesize groupType=_groupType;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
 - (id)_assetPathWithAssetKey:(id)arg1;
-- (id)_assetKey;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isImageAvailable;
 - (_Bool)isLoading;
 - (void)cancel;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)description;
 - (void)dealloc;
+- (id)initWithURL:(id)arg1 groupType:(long long)arg2 assetKey:(id)arg3;
 - (id)initWithURL:(id)arg1 groupType:(long long)arg2;
 - (id)initWithURL:(id)arg1;
 

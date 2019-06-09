@@ -14,6 +14,8 @@
 + (id)operationQueueSchedulerWithMaxConcurrentOperationCount:(long long)arg1;
 + (id)serialDispatchQueueSchedulerWithName:(id)arg1;
 + (id)inlineScheduler;
++ (id)offMainThreadSchedulerWithBackgroundScheduler:(id)arg1;
++ (id)offMainThreadScheduler;
 + (id)mainThreadScheduler;
 + (id)globalAsyncScheduler;
 + (id)immediateScheduler;

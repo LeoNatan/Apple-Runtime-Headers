@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)usesCloudKitAuthToken;
 - (BOOL)allowsAuthedAccount;
 - (BOOL)allowsAnonymousAccount;
-- (BOOL)requiresSignature;
 - (BOOL)requiresDeviceID;
 - (BOOL)requiresConfiguration;
 - (id)initWithContainerIdentifier:(id)arg1;

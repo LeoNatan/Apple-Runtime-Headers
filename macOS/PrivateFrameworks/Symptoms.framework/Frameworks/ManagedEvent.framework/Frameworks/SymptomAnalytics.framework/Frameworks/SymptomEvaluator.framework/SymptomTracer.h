@@ -6,18 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSDateFormatter;
-
+__attribute__((visibility("hidden")))
 @interface SymptomTracer : NSObject
 {
-    NSDateFormatter *fmt;
 }
 
 + (void)traceBasicSymptom:(id)arg1;
 + (void)initialize;
-- (void).cxx_destruct;
 - (void)traceBasicSymptom:(id)arg1;
-- (void)setFmt;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIPanOrFlickGestureRecognizerDelegate-Protocol.h>
 
-@class NSMapTable, NSString, NSTimer, UITapGestureRecognizer, _UIKeyboardTextSelectionGestureController, _UIPanOrFlickGestureRecognizer;
+@class NSMapTable, NSString, NSTimer, _UIKeyboardTextSelectionGestureController, _UIPanOrFlickGestureRecognizer, _UITouchesObservingGestureRecognizer;
 
 __attribute__((visibility("hidden")))
 @interface _UIKeyboardTextSelectionInteraction : UITextInteraction <_UIPanOrFlickGestureRecognizerDelegate>
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     _UIKeyboardTextSelectionGestureController *_owner;
     NSMapTable *_weakMap;
     id _deallocToken;
-    UITapGestureRecognizer *_activeTap;
+    _UITouchesObservingGestureRecognizer *_addedTouchRecognizer;
     NSTimer *_touchPadTimer;
     CDUnknownBlockType _touchPadTimerCompletion;
     _UIPanOrFlickGestureRecognizer *_activePress;
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_cancelTouchPadTimer;
 - (void)_startTouchPadTimerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)panningGesture:(id)arg1;
-- (void)panningGestureTap:(id)arg1;
+- (void)panningGestureAddedTouch:(id)arg1;
 - (void)twoFingerTap:(id)arg1;
 - (void)oneFingerForcePan:(id)arg1;
 - (void)_logTapCounts:(id)arg1;
@@ -77,7 +77,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (id)owner;
 - (void)_configureLongPressRecognizer:(id)arg1;
-- (void)_configureLongPressTapRecognizer:(id)arg1;
+- (void)_configureLongPressAddedTouchRecognizer:(id)arg1;
 - (void)_configureTwoFingerTapGestureRecognizer:(id)arg1;
 - (void)_configureTwoFingerPanGestureRecognizer:(id)arg1;
 - (void)_configureOneFingerForcePressRecognizer:(id)arg1;

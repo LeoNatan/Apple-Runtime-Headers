@@ -9,5 +9,6 @@
 @interface NSMutableArray (TVServices)
 - (void)tvs_addObjectIfNotNil:(id)arg1;
 - (void)tvs_shuffle;
+- (id)pbs_popFirst;
 @end
 

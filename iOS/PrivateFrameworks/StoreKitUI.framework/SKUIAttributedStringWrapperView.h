@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIAttributedStringView.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIAttributedStringWrapperView : SKUIAttributedStringView
 {
     SKUIAttributedStringView *_delegateView;

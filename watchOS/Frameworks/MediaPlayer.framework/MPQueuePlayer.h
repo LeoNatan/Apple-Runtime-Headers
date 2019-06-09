@@ -46,7 +46,6 @@
 - (void)_setUserVolume:(float)arg1;
 - (void)_setStoppingFadeOutDuration:(float)arg1;
 - (void)_setPreferredLanguageList:(id)arg1;
-- (void)_setPreparesItemsForPlaybackAsynchronously:(_Bool)arg1;
 - (void)_setExpectedAssetTypes:(id)arg1;
 @property(copy, nonatomic) NSString *externalPlaybackVideoGravity;
 - (void)_setEQPreset:(int)arg1;

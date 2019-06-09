@@ -29,8 +29,6 @@
 @property(readonly, retain) struct OpaqueCMTimebase *timebase;
 - (_Bool)isMuted;
 - (void)setMuted:(_Bool)arg1;
-- (id)scheduledAudioParameters;
-- (void)setScheduledAudioParameters:(id)arg1;
 - (float)volume;
 - (void)setVolume:(float)arg1;
 @property(copy, nonatomic) NSString *audioTimePitchAlgorithm;
@@ -39,7 +37,6 @@
 @property(readonly, nonatomic) int status;
 - (void)_transitionToFailedStatusWithOSStatus:(long)arg1;
 - (void)_transitionToStatus:(int)arg1 error:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (void)_uninstallNotificationHandlers;

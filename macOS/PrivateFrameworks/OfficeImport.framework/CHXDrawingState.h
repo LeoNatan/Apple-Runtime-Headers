@@ -8,6 +8,7 @@
 
 @class CHXReadState;
 
+__attribute__((visibility("hidden")))
 @interface CHXDrawingState : OAXDrawingState
 {
     CHXReadState *mCHXState;

@@ -18,11 +18,8 @@
 @property(nonatomic) unsigned long long operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 - (void).cxx_destruct;
-- (void)service:(id)arg1 didScheduleRetryOfSyncOperation:(id)arg2 forError:(id)arg3;
-- (void)service:(id)arg1 didFailSyncOperation:(id)arg2 withError:(id)arg3;
-- (void)service:(id)arg1 didCompleteSyncOperation:(id)arg2;
-- (void)service:(id)arg1 didBeginSyncOperation:(id)arg2;
-- (void)service:(id)arg1 didRequestSyncOperation:(id)arg2;
+- (void)logSyncFailedWithError:(id)arg1;
+- (void)logSyncCompleted;
 - (void)logTimerRepeated;
 - (void)logTimerDismissed;
 - (void)logTimerUpdated;
@@ -33,8 +30,6 @@
 - (void)logAlarmUpdated:(_Bool)arg1;
 - (void)logAlarmDeleted:(_Bool)arg1;
 - (void)logAlarmAdded:(_Bool)arg1;
-- (void)logSyncingDisabled;
-- (void)logSyncingEnabled;
 - (id)init;
 
 @end

@@ -9,7 +9,10 @@
 @class CALayer, ISLivePhotoUIView;
 
 @protocol PXMutableImageLayerModulator <NSObject>
+@property(nonatomic) _Bool displayingVideoComplement;
 @property(retain, nonatomic) ISLivePhotoUIView *livePhotoView;
 @property(retain, nonatomic) CALayer *layer;
+- (void)removeFilterFromUnownedLayer:(CALayer *)arg1;
+- (void)animateChangesWithDuration:(double)arg1;
 @end
 

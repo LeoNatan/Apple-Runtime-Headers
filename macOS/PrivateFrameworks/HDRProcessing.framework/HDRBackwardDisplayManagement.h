@@ -83,6 +83,7 @@
     id <MTLTexture> _outputTextureMetadata;
     id <MTLTexture> _intermediateTexture;
     id <MTLTexture> _uiTexture;
+    float _uiEDRFactor;
     float _inputScaleFactor;
     unsigned int _displayMaxBrightnessInNits;
     unsigned int _displayMaxBrightnessInNitsForSDR;
@@ -115,7 +116,7 @@
 - (void)drawMetaWithEncoder:(id)arg1 widthScale:(int)arg2 dmPayLoadLength:(int)arg3;
 - (void)generateMetaAndConfig:(id)arg1 inputSurface:(struct __IOSurface *)arg2 outputSurface:(struct __IOSurface *)arg3 payLoad:(struct **)arg4 dmCfg:(struct **)arg5;
 - (BOOL)updateConfigFromMetadata:(CDStruct_096ecdcf *)arg1 uiScaleFactor:(float)arg2 width:(int)arg3 background:(CDStruct_d2b197d1 *)arg4 hdrVideoOnly:(BOOL)arg5 hdr10TV:(BOOL)arg6 sdrOnly:(BOOL)arg7;
-- (void)updateUniformUIScaleForVideo:(BOOL)arg1 forTV:(BOOL)arg2 videoPeakBrightnessInNits:(int)arg3;
+- (void)updateUniformUIScaleForVideo:(BOOL)arg1 forTV:(BOOL)arg2 videoPeakBrightnessInNits:(int)arg3 uiHWDegamma:(BOOL)arg4;
 - (void)updateVertices:(CDStruct_8e61eb45)arg1 videoInput:(struct __IOSurface *)arg2 videoDstRegion:(CDStruct_8e61eb45)arg3 videoSrcRegion:(CDStruct_8e61eb45)arg4 uiInput:(struct __IOSurface *)arg5 uiDstRegion:(CDStruct_8e61eb45)arg6 uiSrcRegion:(CDStruct_8e61eb45)arg7 dstWidth:(int)arg8 dstHeight:(int)arg9 videoSrcWidth:(int)arg10 videoSrcHeight:(int)arg11 index:(int)arg12 scale:(int)arg13;
 - (void)createMetadataVertexBuffer;
 - (void)createMetadataTexture;

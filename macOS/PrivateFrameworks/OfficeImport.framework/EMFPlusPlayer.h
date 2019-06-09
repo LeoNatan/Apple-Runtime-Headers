@@ -8,6 +8,7 @@
 
 @class EMFPlayer, MFPEffect, MFPGraphics, NSMutableData;
 
+__attribute__((visibility("hidden")))
 @interface EMFPlusPlayer : NSObject
 {
     MFPGraphics *mGraphics;

@@ -25,6 +25,7 @@
 + (id)entityEncoderForProfile:(id)arg1 database:(id)arg2 purpose:(int)arg3 encodingOptions:(id)arg4 authorizationFilter:(CDUnknownBlockType)arg5;
 + (CDUnknownBlockType)objectInsertionFilterForProfile:(id)arg1;
 + (_Bool)participatesInInsertion;
++ (_Bool)isConcreteEntity;
 + (_Bool)isBackedByTable;
 + (int)preferredEntityType;
 + (id)mergeDataObject:(id)arg1 provenance:(id)arg2 profile:(id)arg3 database:(id)arg4 error:(id *)arg5 insertHandler:(CDUnknownBlockType)arg6;
@@ -34,7 +35,7 @@
 + (id)_insertBaseDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 error:(id *)arg4;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id *)arg5;
 + (id)_insertDataObject:(id)arg1 withProvenanceID:(id)arg2 inDatabase:(id)arg3 error:(id *)arg4;
-+ (id)columnNameForSortIdentifier:(id)arg1;
++ (id)orderingTermForSortDescriptor:(id)arg1;
 + (_Bool)requiresSampleTypePredicate;
 + (id)predicateMatchingPreferredEntityTypeIfRequiredWithPredicate:(id)arg1;
 + (Class)_deletedEntityClass;
@@ -47,12 +48,13 @@
 + (int)protectionClass;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)joinClausesForProperty:(id)arg1;
-+ (_Bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange)arg3 maxEncodedBytesPerMessage:(int)arg4 profile:(id)arg5 error:(id *)arg6 handler:(CDUnknownBlockType)arg7;
++ (_Bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange)arg3 maxEncodedBytesPerMessage:(int)arg4 profile:(id)arg5 messageHandler:(id)arg6 error:(id *)arg7;
 + (id)_objectWithPredicate:(id)arg1 encodingOptions:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)objectWithID:(id)arg1 encodingOptions:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)objectWithUUID:(id)arg1 encodingOptions:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)predicateForObjectsFromLocalSourceWithBundleIdentifier:(id)arg1 profile:(id)arg2 error:(id *)arg3;
 + (id)predicateForObjectsFromAppleWatchSources:(_Bool)arg1 profile:(id)arg2 error:(id *)arg3;
++ (id)predicateForObjectsWithSourcePredicate:(id)arg1 matchSource:(_Bool)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)sourceIDForObjectID:(id)arg1 type:(int)arg2 profile:(id)arg3 errorOut:(id *)arg4;
 + (id)sourceIDsForObjectsOfType:(int)arg1 profile:(id)arg2 predicate:(id)arg3 error:(id *)arg4;
 + (id)entityEnumeratorWithProfile:(id)arg1;

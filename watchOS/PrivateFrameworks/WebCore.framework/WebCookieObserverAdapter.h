@@ -9,11 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface WebCookieObserverAdapter : NSObject
 {
-    // Error parsing type: ^{CookieStorageObserver={atomic<unsigned int>=AI}{RetainPtr<NSHTTPCookieStorage>=^v}B{RetainPtr<WebCookieObserverAdapter>=^v}{Function<void ()>={unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void ()>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >=^{CallableWrapperBase}}}}}, name: observer
+    // Error parsing type: ^{CookieStorageObserver={atomic<unsigned int>=AI}{RetainPtr<NSHTTPCookieStorage>=^v}B{RetainPtr<WebCookieObserverAdapter>=^v}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}, name: observer
 }
 
 - (void)cookiesChangedNotificationHandler:(id)arg1;
--     // Error parsing type: @12@0:4^{CookieStorageObserver={atomic<unsigned int>=AI}{RetainPtr<NSHTTPCookieStorage>=^v}B{RetainPtr<WebCookieObserverAdapter>=^v}{Function<void ()>={unique_ptr<WTF::Function<void ()>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void ()>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void ()>::CallableWrapperBase> >=^{CallableWrapperBase}}}}}8, name: initWithObserver:
+-     // Error parsing type: @12@0:4^{CookieStorageObserver={atomic<unsigned int>=AI}{RetainPtr<NSHTTPCookieStorage>=^v}B{RetainPtr<WebCookieObserverAdapter>=^v}{Function<void ()>={unique_ptr<WTF::Detail::CallableWrapperBase<void>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void> > >=^{CallableWrapperBase<void>}}}}}8, name: initWithObserver:
 
 @end
 

@@ -6,7 +6,12 @@
 
 #import <CalendarPersistence/CalManagedCalendar.h>
 
-@interface CalManagedSubscriptionCalendar : CalManagedCalendar
+#import <CalendarPersistence/SubscribedCalendarModelProtocol-Protocol.h>
+
+@class NSDate, NSDictionary, NSManagedObjectID, NSSet, NSString, NSURL;
+@protocol CalendarSourceModelProtocol;
+
+@interface CalManagedSubscriptionCalendar : CalManagedCalendar <SubscribedCalendarModelProtocol>
 {
 }
 
@@ -14,13 +19,12 @@
 + (BOOL)hasSubscriptionCalendarWithSubscriptionID:(id)arg1 subscriptionURL:(id)arg2 inContext:(id)arg3;
 + (id)singletonContainerSource;
 + (id)entityName;
-- (id)subscriptionURL;
-- (BOOL)allowsScheduling;
+@property(readonly, nonatomic) BOOL allowsScheduling;
 - (void)setSharees:(id)arg1;
 - (id)sharees;
-- (BOOL)isSubscribedHolidayCalendar;
-- (BOOL)isSubscribed;
-- (id)containerSource;
+@property(readonly, nonatomic) BOOL isSubscribedHolidayCalendar;
+@property(readonly, nonatomic) BOOL isSubscribed;
+@property(readonly, copy, nonatomic) id <CalendarSourceModelProtocol> containerSource;
 - (void)willSave;
 - (id)defaultAlarmsWithIsAllDayEvent:(BOOL)arg1 fromServer:(BOOL)arg2;
 - (id)defaultAlarmsWithIsAllDayEvent:(BOOL)arg1;
@@ -35,6 +39,61 @@
 - (void)refreshSession;
 - (void)activateSession;
 - (BOOL)wantsSession;
+
+// Remaining properties
+@property(readonly, nonatomic) BOOL allowEvents;
+@property(readonly, nonatomic) BOOL allowReminders;
+@property(readonly, nonatomic) BOOL allowsContentModifications;
+@property(readonly, nonatomic) BOOL cachedHasSharees;
+@property(readonly, nonatomic) NSString *calendarIdentifier;
+@property(readonly, nonatomic) BOOL canBeConvertedToFullObject;
+@property(readonly, copy, nonatomic) NSString *colorString;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) NSSet *defaultAlarmsForAllDayEvents;
+@property(readonly, nonatomic) NSSet *defaultAlarmsForTimedEvents;
+@property(readonly, nonatomic) NSURL *defaultOrganizerAddressForNewItems;
+@property(readonly, nonatomic) NSString *defaultOrganizerEmailForNewItems;
+@property(readonly, nonatomic) NSString *defaultOrganizerEncodedLikenessDataForNewItems;
+@property(readonly, nonatomic) BOOL defaultOrganizerIsMeForNewItems;
+@property(readonly, nonatomic) NSString *defaultOrganizerNameForNewItems;
+@property(readonly, nonatomic) NSString *defaultOrganizerPhoneNumberForNewItems;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL ignoreAlarms;
+@property(readonly, nonatomic) BOOL isAffectingAvailability;
+@property(readonly, nonatomic) BOOL isBirthday;
+@property(readonly, nonatomic) BOOL isDefaultSchedulingCalendar;
+@property(readonly, nonatomic) BOOL isDistinguishedExchangeCalendar;
+@property(readonly, nonatomic) BOOL isFacebookBirthdayCalendar;
+@property(readonly, nonatomic) BOOL isFamilyCalendar;
+@property(readonly) BOOL isMarkedImmutableSharees;
+@property(readonly) BOOL isMarkedUndeletable;
+@property(readonly, nonatomic) BOOL isNaturalLanguageSuggestedEventCalendar;
+@property(readonly, nonatomic) BOOL isPartialObject;
+@property(readonly, nonatomic) BOOL isShareable;
+@property(readonly, nonatomic) BOOL isSuggestedEventCalendar;
+@property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
+@property(readonly) long long maxAttendees;
+@property(readonly, copy, nonatomic) NSString *notes;
+@property(readonly, nonatomic) NSString *path;
+@property(readonly, nonatomic) NSDictionary *preFrozenRelationshipObjects;
+@property(readonly, nonatomic) NSURL *prePublishURL;
+@property(readonly, copy, nonatomic) NSURL *publishURL;
+@property(readonly, nonatomic) NSDate *refreshDate; // @dynamic refreshDate;
+@property(readonly, nonatomic) double refreshInterval; // @dynamic refreshInterval;
+@property(readonly, nonatomic) BOOL removeAlarms; // @dynamic removeAlarms;
+@property(readonly, nonatomic) BOOL removeAttachments; // @dynamic removeAttachments;
+@property(readonly, nonatomic) NSString *serverPath;
+@property(readonly, nonatomic) NSString *sharedOwnerAddress;
+@property(readonly, nonatomic) NSSet *sharedOwnerAddresses;
+@property(readonly, nonatomic) NSString *sharedOwnerName;
+@property(readonly, nonatomic) NSString *sharingStatusString;
+@property(readonly, nonatomic) NSString *subscriptionID; // @dynamic subscriptionID;
+@property(readonly, nonatomic) NSString *subscriptionNotes; // @dynamic subscriptionNotes;
+@property(readonly, nonatomic) NSString *subscriptionTitle; // @dynamic subscriptionTitle;
+@property(readonly, nonatomic) NSURL *subscriptionURL;
+@property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) NSString *symbolicColorName;
 
 @end
 

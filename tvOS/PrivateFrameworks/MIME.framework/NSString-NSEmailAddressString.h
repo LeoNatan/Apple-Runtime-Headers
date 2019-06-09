@@ -10,6 +10,7 @@
 + (id)mf_partialSurnames;
 + (id)mf_nameExtensions;
 + (id)mf_formattedAddressWithName:(id)arg1 email:(id)arg2 useQuotes:(_Bool)arg3;
++ (id)mf_stringWithData:(id)arg1 encoding:(unsigned long long)arg2;
 - (id)mf_trimCommasSpacesQuotes;
 - (_Bool)mf_appearsToBeAnInitial;
 - (void)__mf_firstName:(id *)arg1 middleName:(id *)arg2 lastName:(id *)arg3 extension:(id *)arg4;
@@ -30,5 +31,23 @@
 - (id)mf_uncommentedAddressRespectingGroups;
 - (id)mf_uncommentedAddress;
 - (id)mf_copyUncommentedAddress;
+- (id)mf_bestMimeCharsetForMessageDeliveryUsingSubtype:(id)arg1;
+- (id)mf_bestMimeCharsetUsingHint:(unsigned int)arg1;
+- (id)_mf_bestMimeCharset:(id)arg1;
+- (id)mf_bestMimeCharset;
+- (id)mf_decodeMimeHeaderValueWithCharsetHint:(id)arg1;
+- (id)mf_decodeMimeHeaderValueWithEncodingHint:(unsigned int)arg1;
+- (id)mf_encodedHeaderDataWithEncodingHint:(unsigned int)arg1;
+- (id)mf_copyStringByEncodingIDNA;
+- (id)mf_copyStringByDecodingIDNA;
+- (id)mf_copyStringByEncodingIDNAInRange:(struct _NSRange)arg1;
+- (id)mf_copyStringByDecodingIDNAInRange:(struct _NSRange)arg1;
+- (id)mf_messageIDSubstring;
+- (id)mf_SHA1Digest;
+- (id)mf_MD5Digest;
+- (id)mf_dataUsingEncoding:(unsigned long long)arg1 allowLossyConversion:(_Bool)arg2;
+- (id)mf_dataUsingEncoding:(unsigned long long)arg1;
+- (long long)mf_caseInsensitiveCompareExcludingXDash:(id)arg1;
+- (const void *)mf_lossyDefaultCStringBytes;
 @end
 

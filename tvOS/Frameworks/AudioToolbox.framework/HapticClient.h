@@ -6,75 +6,103 @@
 
 #import <objc/NSObject.h>
 
+#import <AudioToolbox/CHHapticClientInterface-Protocol.h>
 #import <AudioToolbox/NSXPCListenerDelegate-Protocol.h>
 
 @class NSArray, NSString, NSXPCConnection;
-@protocol ServerInterface;
 
 __attribute__((visibility("hidden")))
-@interface HapticClient : NSObject <NSXPCListenerDelegate>
+@interface HapticClient : NSObject <NSXPCListenerDelegate, CHHapticClientInterface>
 {
     NSXPCConnection *_connection;
-    struct unique_ptr<ClientSyncCaller, std::__1::default_delete<ClientSyncCaller>> _syncCaller;
     struct HapticSharedMemory _sharedBuffer;
     unsigned long long _uniqueID;
     int _serverTimeout;
+    CDUnknownBlockType _completionCallback;
     CDUnknownBlockType _connectionCallback;
+    struct mutex _mapMutex;
+    struct map<unsigned long, SequenceEntry *, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, SequenceEntry *>>> _sequenceEntryMap;
     _Bool _prewarmed;
     _Bool _running;
     _Bool _connected;
     int _serverProcessID;
-    id <ServerInterface> _serverDelegate;
     unsigned long long _clientID;
     NSArray *_channelKeys;
+    CDUnknownBlockType _asyncStopCallback;
 }
 
+@property(copy) CDUnknownBlockType asyncStopCallback; // @synthesize asyncStopCallback=_asyncStopCallback;
 @property int serverProcessID; // @synthesize serverProcessID=_serverProcessID;
 @property(copy) CDUnknownBlockType connectionCallback; // @synthesize connectionCallback=_connectionCallback;
+@property(copy) CDUnknownBlockType completionCallback; // @synthesize completionCallback=_completionCallback;
 @property _Bool connected; // @synthesize connected=_connected;
 @property(readonly) _Bool running; // @synthesize running=_running;
 @property(readonly) _Bool prewarmed; // @synthesize prewarmed=_prewarmed;
 @property(readonly) NSArray *channelKeys; // @synthesize channelKeys=_channelKeys;
 @property(readonly) unsigned long long clientID; // @synthesize clientID=_clientID;
-@property(retain) id <ServerInterface> serverDelegate; // @synthesize serverDelegate=_serverDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)clientStoppedWithError:(id)arg1;
+- (void)clientCompletedWithError:(id)arg1;
+- (void)sequenceFinished:(unsigned long long)arg1 error:(id)arg2;
 - (void)destroySharedMemory;
+- (unsigned int)calculateHapticCommandParamCurveMemorySize:(unsigned int)arg1;
 - (int)setupSharedMemory:(id)arg1 size:(unsigned int)arg2;
 - (void)handleServerConnectionInvalidation;
 - (void)handleServerConnectionInterruption;
-- (_Bool)setNumberOfChannels:(unsigned long long)arg1 error:(id *)arg2;
+- (_Bool)removeAssignedChannelID:(unsigned long long)arg1 error:(id *)arg2;
+- (_Bool)requestAssignedChannels:(unsigned long long)arg1 error:(id *)arg2;
+- (void)clearAssignedChannels;
 - (_Bool)setPlayerBehavior:(unsigned long long)arg1 error:(id *)arg2;
 - (void)setChannelKeys:(id)arg1;
 - (void)disconnect;
+- (id)getSyncDelegateForMethod:(SEL)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)getAsyncDelegateForMethod:(SEL)arg1 errorHandler:(CDUnknownBlockType)arg2;
-- (_Bool)setupConnectionAndReturnError:(id *)arg1;
+- (_Bool)setupConnectionWithSessionID:(unsigned int)arg1 isShared:(_Bool)arg2 error:(id *)arg3;
 - (void)doInit;
 - (void)releaseResources;
-- (_Bool)detachHapticSequence:(unsigned long long)arg1 atTime:(double)arg2;
-- (_Bool)setSequenceParameter:(unsigned long long)arg1 atTime:(double)arg2 value:(float)arg3 sequenceID:(unsigned long long)arg4 channel:(unsigned long long)arg5;
+- (void)detachHapticSequence:(unsigned long long)arg1;
+- (_Bool)clearSequenceEvents:(unsigned long long)arg1 atTime:(double)arg2;
+- (_Bool)setSequenceChannelParameter:(unsigned long long)arg1 atTime:(double)arg2 value:(float)arg3 sequenceID:(unsigned long long)arg4 channel:(unsigned long long)arg5;
+- (_Bool)seekHapticSequence:(unsigned long long)arg1 toTime:(double)arg2;
+- (_Bool)resumeHapticSequence:(unsigned long long)arg1 atTime:(double)arg2;
+- (_Bool)pauseHapticSequence:(unsigned long long)arg1 atTime:(double)arg2;
 - (_Bool)stopHapticSequence:(unsigned long long)arg1 atTime:(double)arg2;
 - (_Bool)startHapticSequence:(unsigned long long)arg1 atTime:(double)arg2 withOffset:(double)arg3;
+- (_Bool)setSequencePlaybackRate:(unsigned long long)arg1 rate:(float)arg2 error:(id *)arg3;
+- (_Bool)setSequenceLoopLength:(unsigned long long)arg1 length:(float)arg2 error:(id *)arg3;
 - (_Bool)enableSequenceLooping:(unsigned long long)arg1 enable:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)prepareHapticSequence:(unsigned long long)arg1 error:(id *)arg2;
-- (_Bool)loadHapticPattern:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (_Bool)loadHapticSequence:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)detachSequenceEntryforID:(unsigned long long)arg1;
+- (void)setRunStateForSequenceEntryWithID:(unsigned long long)arg1 running:(_Bool)arg2;
+- (CDUnknownBlockType)getSequenceFinishedHandlerForID:(unsigned long long)arg1;
+- (void)setSequenceFinishedHandlerForID:(unsigned long long)arg1 finishedHandler:(CDUnknownBlockType)arg2;
+- (_Bool)loadAndPrepareHapticSequenceFromVibePattern:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)loadAndPrepareHapticSequenceFromEvents:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)loadAndPrepareHapticSequenceFromData:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)scheduleParameterCurve:(unsigned long long)arg1 curve:(id)arg2 atTime:(double)arg3 channel:(unsigned long long)arg4 error:(id *)arg5;
 - (_Bool)setParameter:(unsigned long long)arg1 atTime:(double)arg2 value:(float)arg3 channel:(unsigned long long)arg4;
 - (_Bool)clearEventsFromTime:(double)arg1 channel:(unsigned long long)arg2;
 - (_Bool)stopEventWithToken:(unsigned long long)arg1 atTime:(double)arg2 channel:(unsigned long long)arg3;
 - (_Bool)sendEvents:(id)arg1 atTime:(double)arg2 channel:(unsigned long long)arg3 outToken:(unsigned long long *)arg4 error:(id *)arg5;
+- (_Bool)doScheduleParamCurveWithMemoryReserve:(unsigned long long)arg1 atTime:(double)arg2 curveRelativeTime:(double)arg3 channel:(unsigned long long)arg4 memoryReserve:(struct AddressReserve *)arg5 paramCurve:(id)arg6 error:(id *)arg7;
+- (_Bool)doScheduleParamCurve:(unsigned long long)arg1 atTime:(double)arg2 channel:(unsigned long long)arg3 paramCurve:(id)arg4 error:(id *)arg5;
+- (_Bool)doSendEvents:(id)arg1 atTime:(double)arg2 channel:(unsigned long long)arg3 outToken:(unsigned long long *)arg4 error:(id *)arg5;
 - (_Bool)startEventAndReturnToken:(unsigned long long)arg1 type:(unsigned long long)arg2 atTime:(double)arg3 channel:(unsigned long long)arg4 eventToken:(unsigned long long *)arg5;
 - (_Bool)setChannelEventBehavior:(unsigned long long)arg1 channel:(unsigned long long)arg2;
 - (_Bool)finish:(CDUnknownBlockType)arg1;
+- (void)stopRunning:(CDUnknownBlockType)arg1;
 - (void)stopRunning;
 - (void)startRunning:(CDUnknownBlockType)arg1;
 - (void)stopPrewarm;
 - (void)prewarm:(CDUnknownBlockType)arg1;
+- (_Bool)removeCustomAudioEvent:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)createCustomAudioEvent:(id)arg1 format:(id)arg2 frames:(unsigned long long)arg3 options:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (_Bool)loadHapticEvent:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)allocateResources:(CDUnknownBlockType)arg1;
 @property(readonly) double hapticLatency;
 - (void)dealloc;
-- (id)initAndReturnError:(id *)arg1;
+- (id)initWithSessionID:(unsigned int)arg1 isShared:(_Bool)arg2 error:(id *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

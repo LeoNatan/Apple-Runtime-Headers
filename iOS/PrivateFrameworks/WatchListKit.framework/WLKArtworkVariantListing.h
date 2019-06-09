@@ -15,6 +15,7 @@
 
 @property(readonly, copy, nonatomic) NSArray *artworkVariants; // @synthesize artworkVariants=_artworkVariants;
 - (void).cxx_destruct;
+- (id)artworkVariantOfType:(long long)arg1;
 - (id)bestArtworkVariantOfType:(long long)arg1 forSize:(struct CGSize)arg2;
 - (id)bestArtworkVariantForSize:(struct CGSize)arg1;
 - (id)initWithArtworkDictionary:(id)arg1;

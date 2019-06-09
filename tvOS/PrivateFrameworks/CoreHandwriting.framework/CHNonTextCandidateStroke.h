@@ -16,10 +16,9 @@
 {
     NSMutableDictionary *_supportByStrokeIdentifier;
     double _support;
-    _Bool _active;
     id <CHStrokeIdentifier> _strokeIdentifier;
+    long long _classificationAsNonText;
     long long _substrokesCount;
-    long long _classification;
     double _lineError;
     double _containerScore;
     double _lineOrientationAngle;
@@ -29,9 +28,6 @@
     struct CGRect _rotatedBounds;
 }
 
-@property(readonly, nonatomic) _Bool active; // @synthesize active=_active;
-@property(readonly, nonatomic) double support; // @synthesize support=_support;
-@property(readonly, retain, nonatomic) NSDictionary *supportByStrokeIdentifier; // @synthesize supportByStrokeIdentifier=_supportByStrokeIdentifier;
 @property(readonly, nonatomic) struct CGRect rotatedBounds; // @synthesize rotatedBounds=_rotatedBounds;
 @property(readonly, nonatomic) struct CGRect enlargedBounds; // @synthesize enlargedBounds=_enlargedBounds;
 @property(readonly, nonatomic) double boundsDiagonal; // @synthesize boundsDiagonal=_boundsDiagonal;
@@ -39,14 +35,17 @@
 @property(readonly, nonatomic) double lineOrientationAngle; // @synthesize lineOrientationAngle=_lineOrientationAngle;
 @property(readonly, nonatomic) double containerScore; // @synthesize containerScore=_containerScore;
 @property(readonly, nonatomic) double lineError; // @synthesize lineError=_lineError;
-@property(readonly, nonatomic) long long classification; // @synthesize classification=_classification;
+@property(readonly, retain, nonatomic) NSDictionary *supportByStrokeIdentifier; // @synthesize supportByStrokeIdentifier=_supportByStrokeIdentifier;
 @property(readonly, nonatomic) long long substrokesCount; // @synthesize substrokesCount=_substrokesCount;
+@property(readonly, nonatomic) long long classificationAsNonText; // @synthesize classificationAsNonText=_classificationAsNonText;
+@property(readonly, nonatomic) double support; // @synthesize support=_support;
 @property(readonly, retain, nonatomic) id <CHStrokeIdentifier> strokeIdentifier; // @synthesize strokeIdentifier=_strokeIdentifier;
+@property(readonly, nonatomic) long long effectiveClassification;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithStrokeIdentifier:(id)arg1 substrokesCount:(long long)arg2 classification:(long long)arg3 lineOrientation:(double)arg4 lineError:(double)arg5 containerScore:(double)arg6 bounds:(struct CGRect)arg7 boundsDiagonal:(double)arg8 enlargedBounds:(struct CGRect)arg9 rotatedBounds:(struct CGRect)arg10 supportByStrokeIdentifier:(id)arg11 support:(double)arg12 active:(_Bool)arg13;
-- (id)initWithStroke:(id)arg1 consistingOfSubstrokes:(id)arg2 classification:(long long)arg3 lineOrientation:(double)arg4 lineError:(double)arg5 containerScore:(double)arg6;
+- (id)initWithStrokeIdentifier:(id)arg1 substrokesCount:(long long)arg2 classificationAsNonText:(long long)arg3 lineOrientation:(double)arg4 lineError:(double)arg5 containerScore:(double)arg6 bounds:(struct CGRect)arg7 boundsDiagonal:(double)arg8 enlargedBounds:(struct CGRect)arg9 rotatedBounds:(struct CGRect)arg10 supportByStrokeIdentifier:(id)arg11 support:(double)arg12;
+- (id)initWithStroke:(id)arg1 consistingOfSubstrokes:(id)arg2 classificationAsNonText:(long long)arg3 lineOrientation:(double)arg4 lineError:(double)arg5 containerScore:(double)arg6;
 
 @end
 

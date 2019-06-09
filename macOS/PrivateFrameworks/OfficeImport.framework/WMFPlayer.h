@@ -8,6 +8,7 @@
 
 @class MFGraphicsDevice;
 
+__attribute__((visibility("hidden")))
 @interface WMFPlayer : NSObject
 {
     MFGraphicsDevice *m_gdi;

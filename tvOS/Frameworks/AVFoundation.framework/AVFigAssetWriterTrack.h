@@ -59,7 +59,6 @@ __attribute__((visibility("hidden")))
 - (void)_refreshAboveHighWaterLevel;
 - (void)_figAssetWriterDidDropBelowLowWaterLevelForTrackID:(int)arg1;
 @property(readonly, nonatomic) struct __CVPixelBufferPool *pixelBufferPool;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter *)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 formatSpecification:(id)arg4 sourcePixelBufferAttributes:(id)arg5 multiPass:(_Bool)arg6 error:(id *)arg7;
 - (id)init;

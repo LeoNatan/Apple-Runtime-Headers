@@ -6,7 +6,32 @@
 
 #import <PhotoLibraryServices/NSObject-Protocol.h>
 
+@class NSArray, NSData, NSDictionary, NSSet, NSString;
+
 @protocol PLAssetsdLibraryInternalServiceProtocol <NSObject>
+- (void)invalidateBehavioralScoreOnAllAssetsWithReply:(void (^)(_Bool, NSError *))arg1;
+- (void)deleteiTunesSyncedContentWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
+- (void)getBackgroundJobServiceBundlesInQueueDictionaryWithReply:(void (^)(NSDictionary *))arg1;
+- (void)getBackgroundJobServiceStateWithReply:(void (^)(unsigned int))arg1;
+- (void)registerBackgroundJobServiceIfNecessaryOnLibraryPath:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
+- (void)invalidateReverseLocationDataOnAllAssetsWithReply:(void (^)(_Bool, NSError *))arg1;
+- (void)setAssetKeywords:(NSSet *)arg1 forAssetUUID:(NSString *)arg2 reply:(void (^)(_Bool))arg3;
+- (void)applyGraphUpdates:(NSDictionary *)arg1 supportingData:(NSData *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
+- (void)applySearchIndexUpdates:(NSDictionary *)arg1 reply:(void (^)(void))arg2;
+- (void)waitForSearchIndexExistenceWithReply:(void (^)(_Bool, NSError *))arg1;
+- (void)getSearchIndexProgressWithReply:(void (^)(unsigned int))arg1;
+- (void)markPersonAsNeedingKeyFaceWithPersonUUID:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
+- (void)resetPendingAnalysisStatesWithReply:(void (^)(_Bool, NSError *))arg1;
+- (void)markAnalysisStatesProcessedForWorkerType:(unsigned int)arg1 reply:(void (^)(_Bool, NSError *))arg2;
+- (void)removeAnalysisRecordsForDeletedAssetsWithUUIDs:(NSArray *)arg1 workerType:(unsigned int)arg2;
+- (void)reloadMomentGenerationOptions;
+- (void)repairMemoriesWithUUIDs:(NSArray *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)previewAssetLocalIdentifiersWithReply:(void (^)(NSArray *))arg1;
+- (void)previewRenderedContentURLAtIndex:(unsigned int)arg1 reply:(void (^)(_Bool, NSURL *, NSError *))arg2;
+- (void)previewRenderedContentURLCountWithReply:(void (^)(unsigned int))arg1;
+- (void)updateAssetLocationDataWithUUID:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)getSizeOfResourcesToUploadByCPLWithReply:(void (^)(_Bool, long long, NSError *))arg1;
+- (void)getLibrarySizesFromDB:(_Bool)arg1 reply:(void (^)(_Bool, NSDictionary *, NSError *))arg2;
 - (void)getAssetCountsWithReply:(void (^)(unsigned int, unsigned int, NSError *))arg1;
 @end
 

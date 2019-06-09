@@ -6,21 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class QTHUDMediaTimelineTrackPreview, QTHUDMediaTimelineView;
-
 @interface QTHUDMediaTimelineTrack : NSObject
 {
-    id _identifier;
-    QTHUDMediaTimelineView *_timelineView;
-    id _representedObject;
-    QTHUDMediaTimelineTrackPreview *_preview;
 }
 
-@property(retain, nonatomic) id representedObject; // @synthesize representedObject=_representedObject;
-@property(nonatomic) QTHUDMediaTimelineView *timelineView; // @synthesize timelineView=_timelineView;
-@property(readonly, nonatomic) id identifier; // @synthesize identifier=_identifier;
-@property(retain, nonatomic) QTHUDMediaTimelineTrackPreview *preview; // @dynamic preview;
-- (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
 - (id)init;
 

@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (id)dateOfLatestImportedVisitForBundleIdentifier:(id)arg1;
 - (id)insertImportedVisitWithURLString:(id)arg1 forTestDrive:(BOOL)arg2 title:(id)arg3 onDate:(id)arg4 sourceBrowser:(id)arg5;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(BOOL)arg4 wasFailure:(BOOL)arg5 increaseVisitCount:(BOOL)arg6 origin:(long long)arg7 attributes:(unsigned long long)arg8;
+- (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2;
 - (void)clearHistory;
 - (BOOL)shouldOmitURLString:(id)arg1;
 - (void)_removeAllVisitedLinks;

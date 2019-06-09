@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class BrightnessSystemClientExportedObj, NSCondition, NSMutableArray, NSXPCConnection;
+@protocol OS_os_log;
 
 @interface BrightnessSystemClientInternal : NSObject
 {
@@ -16,6 +17,7 @@
     NSMutableArray *_clientProperties;
     NSCondition *copyPropertyForKeyWaitCondition;
     BOOL copyPropertyForKeyCompleted;
+    NSObject<OS_os_log> *_logHandle;
 }
 
 - (void)removeKeyFromClientProperties:(id)arg1;

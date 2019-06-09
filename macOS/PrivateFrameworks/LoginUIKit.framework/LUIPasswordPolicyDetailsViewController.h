@@ -16,6 +16,7 @@
     NSLayoutConstraint *_bottomConstraint;
 }
 
++ (id)policyDetailsFromPolicyDictionary:(id)arg1;
 + (id)policyDetailsFromError:(id)arg1;
 @property NSTextField *passwordMustTextField; // @synthesize passwordMustTextField=_passwordMustTextField;
 - (void)dealloc;

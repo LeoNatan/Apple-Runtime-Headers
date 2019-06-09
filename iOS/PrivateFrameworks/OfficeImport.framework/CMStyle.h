@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSMutableString;
 
+__attribute__((visibility("hidden")))
 @interface CMStyle : NSObject <NSCopying>
 {
     NSMutableDictionary *properties;

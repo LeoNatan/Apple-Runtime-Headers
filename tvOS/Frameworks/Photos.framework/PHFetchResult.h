@@ -9,7 +9,7 @@
 #import <Photos/NSCopying-Protocol.h>
 #import <Photos/NSFastEnumeration-Protocol.h>
 
-@class NSArray, NSFetchRequest, NSNumber, NSSet, NSString, PHBatchFetchingArray, PHQuery, _PHFetchRequestWrapper;
+@class NSArray, NSFetchRequest, NSNumber, NSSet, NSString, PHBatchFetchingArray, PHFetchOptions, PHPhotoLibrary, PHQuery, _PHFetchRequestWrapper;
 @protocol OS_dispatch_queue;
 
 @interface PHFetchResult : NSObject <NSCopying, NSFastEnumeration>
@@ -20,6 +20,9 @@
     _Bool _registeredForChangeNotificationDeltas;
     NSString *_fetchType;
     NSSet *_fetchPropertySets;
+    unsigned long long _albumsCount;
+    unsigned long long _sharedAlbumsCount;
+    unsigned long long _foldersCount;
     unsigned long long _photosCount;
     unsigned long long _videosCount;
     unsigned long long _audiosCount;
@@ -30,6 +33,8 @@
     long long _chunkSizeForFetch;
 }
 
++ (id)_typesToCountForListCollections;
++ (id)_typesToCountForAssetCollections;
 + (id)_batchFetchingArrayForObjectIDs:(id)arg1 fetchResult:(id)arg2;
 + (id)filteredOIDsFrom:(id)arg1 usingEntityName:(id)arg2 withPhotoLibrary:(id)arg3;
 + (id)cleanedAndSortedOIDsFrom:(id)arg1 usingFetchOptions:(id)arg2;
@@ -37,10 +42,10 @@
 + (id)fetchObjectCount:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)fetchObjectIDsForCombinableFetchResults:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)pl_fetchResultForStandInAssetCollection:(id)arg1;
-+ (id)pl_fetchResultForAssetContainerList:(id)arg1;
++ (id)pl_fetchResultForAssetContainerList:(id)arg1 photoLibrary:(id)arg2;
 + (id)pl_filterPredicateForAssetContainer:(id)arg1;
-+ (id)pl_fetchResultContainingAssetContainer:(id)arg1 includeTrash:(_Bool)arg2;
-+ (id)pl_fetchResultContainingAssetContainer:(id)arg1;
++ (id)pl_fetchResultContainingAssetContainer:(id)arg1 photoLibrary:(id)arg2 includeTrash:(_Bool)arg3;
++ (id)pl_fetchResultContainingAssetContainer:(id)arg1 photoLibrary:(id)arg2;
 @property(nonatomic) _Bool preventsClearingOIDCache; // @synthesize preventsClearingOIDCache=_preventsClearingOIDCache;
 @property long long chunkSizeForFetch; // @synthesize chunkSizeForFetch=_chunkSizeForFetch;
 @property(readonly) NSSet *fetchPropertySets; // @synthesize fetchPropertySets=_fetchPropertySets;
@@ -53,6 +58,10 @@
 - (void)getMediaTypeCounts;
 - (unsigned long long)countOfAssetsWithMediaType:(long long)arg1;
 - (unsigned long long)cachedCountOfAssetsWithMediaType:(long long)arg1;
+- (void)getCountOfCollectionsWithCollectionTypes:(id)arg1;
+- (unsigned long long)cachedCountOfCollectionsWithCollectionTypes:(id)arg1;
+- (unsigned long long)countOfCollectionsLists;
+- (unsigned long long)countOfAssetCollections;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
@@ -78,15 +87,17 @@
 - (id)containerIdentifier;
 - (long long)collectionFetchType;
 - (id)fetchedObjectsUsingManagedObjectContext:(id)arg1;
+@property(readonly, nonatomic) PHFetchOptions *fetchOptions;
 @property(readonly) NSArray *fetchedObjects;
 @property(readonly) NSFetchRequest *fetchRequest;
 - (id)changeHandlingValueUsingSeedOids:(id)arg1 withChange:(id)arg2 usingManagedObjectContext:(id)arg3;
 - (id)changeHandlingKey;
 - (void)prefetchObjectsAtIndexes:(id)arg1;
-- (id)photoLibrary;
+@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary;
 - (id)copyWithOptions:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
+- (id)initWithExistingFetchResult:(id)arg1 filteredObjectIDs:(id)arg2;
 - (id)init;
 - (id)initWithQuery:(id)arg1;
 - (id)initWithQuery:(id)arg1 oids:(id)arg2 registerIfNeeded:(_Bool)arg3 usingManagedObjectContext:(id)arg4;

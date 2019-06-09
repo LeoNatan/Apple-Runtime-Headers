@@ -8,5 +8,6 @@
 
 @interface NSHTTPURLResponse (GKCachingAdditions)
 - (double)_maxAge;
+- (id)getSAPSignature;
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSArray, NSCache, NSLocale, NSLock, NSMutableArray, NSMutableDictionary, NSString, NSTimeZone, OITSUDateParserLibrary;
 
+__attribute__((visibility("hidden")))
 @interface OITSULocale : NSObject
 {
     NSLocale *_locale;

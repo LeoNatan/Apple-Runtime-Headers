@@ -11,31 +11,35 @@
 #import <CoreWLANKit/NSTableViewDelegate-Protocol.h>
 #import <CoreWLANKit/NSTextFieldDelegate-Protocol.h>
 
-@class CWInterface, CWNetwork, CWNetworkProfile, NSArray, NSButton, NSImageView, NSPopUpButton, NSProgressIndicator, NSScrollView, NSSecureTextField, NSString, NSTableView, NSTextField, NSView, SFCertificateView;
+@class CWDisplayedScanResult, NSArray, NSButton, NSData, NSImageView, NSPopUpButton, NSProgressIndicator, NSScrollView, NSSecureTextField, NSString, NSTableView, NSTextField, NSView, SFCertificateView;
 
 @interface CWManualJoinDialog_SL : NSWindowController <NSCollectionViewDelegate, NSTextFieldDelegate, NSTableViewDataSource, NSTableViewDelegate>
 {
-    CWInterface *interface_;
-    BOOL remember_;
-    SFCertificateView *certificateView;
-    id delegate_;
+    id _delegate;
     BOOL installerContext_;
     BOOL _showingOpen;
     BOOL _showingPassword;
     BOOL _showingPSK;
     BOOL _showingEnterprise;
-    BOOL showingCertificateSelector_;
+    BOOL _showingCertificateSelector;
     BOOL _showingCertificate;
     BOOL _showingManual;
-    BOOL optionKey_;
-    BOOL showingNetworkBrowser_;
+    BOOL _optionKey;
+    BOOL _showingNetworkBrowser;
+    BOOL _joinInProgress;
+    long long _prevSelectedRow;
+    long long _selectedRow;
     BOOL _showingAutomaticEAP;
     BOOL _showingEAPTLS;
     BOOL _certificatesAvailable;
-    CWNetwork *network_;
-    CWNetworkProfile *profile_;
-    NSArray *scanResults_;
+    CWDisplayedScanResult *_scanResult;
+    NSArray *_scanResults;
     BOOL _autoJoinPrompt;
+    NSString *_username;
+    NSString *_password;
+    NSData *_identityData;
+    BOOL _remember;
+    SFCertificateView *certificateView;
     NSTextField *windowTitleLabel;
     NSTextField *windowDescriptionLabel;
     NSButton *okButton;
@@ -72,23 +76,22 @@
     NSScrollView *tableScrollView;
     NSImageView *imageView;
     NSTextField *pskHintText;
-    BOOL _joinInProgress;
-    long long _prevSelectedRow;
-    long long _selectedRow;
 }
 
-+ (id)manualJoinDialogWithInterface:(id)arg1 displayedScanResults:(id)arg2;
-+ (id)autoJoinPromptWithInterface:(id)arg1 displayedScanResults:(id)arg2;
-@property(copy) CWNetworkProfile *profile; // @synthesize profile=profile_;
++ (id)manualJoinDialogWithScanResults:(id)arg1 remember:(BOOL)arg2;
++ (id)autoJoinPromptWithScanResults:(id)arg1 remember:(BOOL)arg2;
 @property BOOL autoJoinPrompt; // @synthesize autoJoinPrompt=_autoJoinPrompt;
-@property(copy) CWNetwork *network; // @synthesize network=network_;
-@property(copy) NSArray *scanResults; // @synthesize scanResults=scanResults_;
-@property BOOL remember; // @synthesize remember=remember_;
-@property id delegate; // @synthesize delegate=delegate_;
-@property(retain) CWInterface *interface; // @synthesize interface=interface_;
+@property(copy) NSData *identityData; // @synthesize identityData=_identityData;
+@property(copy) NSString *password; // @synthesize password=_password;
+@property(copy) NSString *username; // @synthesize username=_username;
+@property BOOL remember; // @synthesize remember=_remember;
+@property(copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
+@property(copy) NSArray *scanResults; // @synthesize scanResults=_scanResults;
+@property id delegate; // @synthesize delegate=_delegate;
 - (BOOL)eapCertificatesAvailable;
 - (void)tableViewSelectionDidChange:(id)arg1;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (BOOL)selectionShouldChangeInTableView:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
@@ -102,9 +105,10 @@
 - (void)resetSecurityEntries;
 - (id)errorStringForErrorCode:(long long)arg1;
 - (void)setSecurityTypeViewForTag:(long long)arg1;
+- (long long)getDefaultTag;
 - (id)localizedStringForKey:(id)arg1;
-- (void)scanCompletedWithDisplayedScanResults:(id)arg1;
-- (void)scanStarted;
+- (void)updateWithScanResults:(id)arg1;
+- (void)updateScanUI:(BOOL)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (void)onEAPModePopUpButton:(id)arg1;
 - (void)onCertificatePopUpButton:(id)arg1;
@@ -142,7 +146,7 @@
 - (void)removeOpenView:(struct CGRect *)arg1;
 - (void)expandFrameForOpenView:(struct CGRect *)arg1;
 - (void)associationStart;
-- (id)initWithInterface:(id)arg1 displayedScanResults:(id)arg2;
+- (id)initWithScanResults:(id)arg1 remember:(BOOL)arg2;
 - (id)prepareScanResults:(id)arg1;
 - (void)dealloc;
 

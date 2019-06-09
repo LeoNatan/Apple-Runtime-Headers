@@ -15,6 +15,7 @@
     UITextView *_dummyToReclaimFirstResponder;
 }
 
++ (id)sharedEffectsWindowAboveStatusBarForView:(id)arg1;
 + (id)sharedEffectsWindowAboveStatusBar;
 - (void)pDidChangeStatusBarOrientation:(id)arg1;
 - (void)p_updateForOrientation:(long long)arg1;

@@ -10,9 +10,9 @@
 @protocol PBSystemServiceNowPlayingDelegate;
 
 @protocol PBSystemServiceInterface <NSObject>
-@property(readonly, nonatomic) _Bool screenSaverActive;
 @property(readonly, nonatomic) _Bool hiliteModeActive;
 - (void)listen;
+- (void)getPictureInPictureServiceProxyWithReply:(void (^)(id <PBSPictureInPictureServiceInterface>))arg1;
 - (void)getDisplayManagerServiceProxyWithReply:(void (^)(id <PBSDisplayManagerServiceInterface>))arg1;
 - (void)getVideoSubscriberAccountServiceProxyWithReply:(void (^)(id <PBSVideoSubscriberAccountServiceInterface>))arg1;
 - (void)getUserPresentationServiceProxyWithReply:(void (^)(id <PBSUserPresentationServiceInterface>))arg1;
@@ -22,6 +22,7 @@
 - (void)getOSUpdateServiceProxyWithReply:(void (^)(id <PBSOSUpdateServiceInterface>))arg1;
 - (void)getDiagnosticLogsServiceProxyWithReply:(void (^)(id <PBSDiagnosticLogsServiceInterface>))arg1;
 - (void)getBulletinServiceProxyWithReply:(void (^)(id <PBSBulletinServiceInterface>))arg1;
+- (void)getAppInfoServiceProxyWithReply:(void (^)(id <PBSAppInfoServiceInterface>))arg1;
 - (void)endpointForProviderType:(NSString *)arg1 withIdentifier:(NSString *)arg2 responseBlock:(void (^)(NSXPCListenerEndpoint *, NSError *))arg3;
 - (void)registerServiceProviderEndpoint:(NSXPCListenerEndpoint *)arg1 forProviderType:(NSString *)arg2;
 - (void)getStoreFrontCountryCodeWithReply:(void (^)(NSString *))arg1;
@@ -39,7 +40,6 @@
 - (void)startSiriListening;
 - (void)activateSiri;
 - (void)setMinimumBackgroundFetchInterval:(double)arg1;
-- (void)setIconName:(NSString *)arg1 forBundleIdentifier:(NSString *)arg2;
 - (void)setKioskAppBundleIdentifier:(NSString *)arg1;
 - (void)kioskAppBundleIdentifierWithReply:(void (^)(NSString *))arg1;
 - (void)setSystemAppearance:(long long)arg1;
@@ -54,6 +54,12 @@
 - (void)sleepTimeoutWithReply:(void (^)(double))arg1;
 - (void)setSleepTimeout:(double)arg1;
 - (void)purgeTopShelfContentForApplicationIdentifiers:(NSArray *)arg1;
+- (void)dismissSoftwareUpdateWindowWithCompletion:(void (^)(_Bool))arg1;
+- (void)presentSoftwareUpdateWithOptions:(NSDictionary *)arg1 completion:(void (^)(_Bool))arg2;
+- (void)dismissEventMaskingWindowWithCompletion:(void (^)(_Bool))arg1;
+- (void)presentEventMaskingWindowWithCompletion:(void (^)(_Bool))arg1;
+- (void)dismissThermalAlertWithCompletion:(void (^)(_Bool))arg1;
+- (void)presentThermalAlertWithCompletion:(void (^)(_Bool))arg1;
 - (void)presentNowPlayingWithOptions:(NSDictionary *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)presentSystemRoutingUIWithOptions:(NSDictionary *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)launchCRDApp;

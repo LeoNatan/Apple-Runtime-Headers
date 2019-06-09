@@ -75,6 +75,7 @@
 @property(nonatomic) __weak id <SiriCoreSiriConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_recordConnectionMethodForMetrics:(id)arg1;
+- (void)siriBackgroundConnection:(id)arg1 willStartConnectionWithHTTPHeader:(id)arg2;
 - (void)siriBackgroundConnection:(id)arg1 didEncounterIntermediateError:(id)arg2;
 - (void)siriBackgroundConnection:(id)arg1 didEncounterError:(id)arg2 analysisInfo:(id)arg3;
 - (void)siriBackgroundConnectionDidClose:(id)arg1;

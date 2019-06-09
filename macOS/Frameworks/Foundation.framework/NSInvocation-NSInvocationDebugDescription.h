@@ -8,5 +8,8 @@
 
 @interface NSInvocation (NSInvocationDebugDescription)
 - (id)debugDescription;
+- (BOOL)_hasBlockArgument;
+- (void)setUserInfo:(id)arg1;
+- (id)userInfo;
 @end
 

@@ -8,20 +8,17 @@
 
 #import <ScreenReader/SCRWebElementAutoDrillAndAnnounceNavigationProtocol-Protocol.h>
 
-@class NSMutableArray, SCRBrailleLineManager;
-
 __attribute__((visibility("hidden")))
 @interface SCRWebDomList : SCRElement <SCRWebElementAutoDrillAndAnnounceNavigationProtocol>
 {
     SCRElement *_firstNavigableElement;
     SCRElement *_lastNavigableElement;
     long long _childIndex;
-    NSMutableArray *_brailleLineChildren;
-    SCRBrailleLineManager *_brailleLineManager;
     SCRElement *_readContentsElement;
 }
 
 + (void)addWebListDescription:(id)arg1 toRequest:(id)arg2;
+- (void).cxx_destruct;
 - (BOOL)trackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (id)childrenInReadContentsOrder;
 - (id)readContentsElement;
@@ -30,10 +27,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)readContentsElementCount;
 - (void)_setReadContentsElement:(id)arg1;
 - (void)addContentToRequest:(id)arg1 visibleOnly:(BOOL)arg2;
-- (id)_brailleLineChildren;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (id)brailleLineManager;
 - (void)scrollToElement;
 - (void)_rebuildElementOnSameLevel;
 - (BOOL)moveToLastVisibleElementWithEvent:(id)arg1 request:(id)arg2;
@@ -76,11 +69,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)isInteractive;
 - (void)focusOntoAutoDrillAndAnnouceWebElement:(id)arg1;
 - (BOOL)shouldNavigate;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
-- (id)brailleLineElementForUIElement:(id)arg1;
 - (BOOL)isWebDomList;
-- (void)dealloc;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 
 @end

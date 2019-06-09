@@ -13,10 +13,10 @@ __attribute__((visibility("hidden")))
     id mNext;
 }
 
+- (void).cxx_destruct;
 - (id)next;
 - (_Bool)hasNext;
 - (_Bool)test:(id)arg1;
-- (void)dealloc;
 - (id)initWithIterator:(id)arg1;
 
 @end

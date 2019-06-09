@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class SGMContactConfirmed, SGMContactDetailConfirmed, SGMContactDetailRejected, SGMContactDetailUsed, SGMContactInBanner, SGMContactRejected, SGMEventBannerConfirmed, SGMEventBannerRejected, SGMEventInBanner, SGMMaybeInformationShown, SGMUnknownContactInformationShown;
+@class SGMContactConfirmed, SGMContactDetailConfirmed, SGMContactDetailConversationTurn, SGMContactDetailRejected, SGMContactDetailUsed, SGMContactInBanner, SGMContactRejected, SGMEventBannerConfirmed, SGMEventBannerRejected, SGMEventInBanner, SGMMaybeInformationShown, SGMUnknownContactInformationShown;
 
 @interface SGSuggestedActionMetrics : NSObject
 {
@@ -21,17 +21,20 @@
     SGMEventBannerRejected *_eventBannerRejected;
     SGMMaybeInformationShown *_maybeInformationShown;
     SGMUnknownContactInformationShown *_unknownContactInformationShown;
+    SGMContactDetailConversationTurn *_contactDetailConversationTurn;
 }
 
++ (void)recordConversationTurnWithContact:(id)arg1 received:(BOOL)arg2 curated:(BOOL)arg3 throughApp:(id)arg4 withDetailName:(id)arg5;
 + (void)recordContactDetailUsage:(id)arg1 withApp:(id)arg2;
-+ (void)recordContactDetailEngagementWithResolution:(long long)arg1 detailType:(struct SGMContactDetailType_)arg2 extractionType:(unsigned long long)arg3;
++ (void)recordContactDetailEngagementWithResolution:(long long)arg1 detailType:(struct SGMContactDetailType_)arg2 extractionType:(unsigned long long)arg3 modelVersion:(id)arg4;
 + (void)recordBannerRejectedWithEvent:(id)arg1 inApp:(struct SGMBannerDisplayApp_)arg2;
 + (void)recordBannerConfirmedWithEvent:(id)arg1 proposedEKEvent:(id)arg2 confirmedEKEvent:(id)arg3 inApp:(struct SGMBannerDisplayApp_)arg4;
 + (void)recordBannerRejectedWithContact:(id)arg1 inApp:(struct SGMBannerDisplayApp_)arg2;
 + (void)recordBannerConfirmedWithContact:(id)arg1 proposedCNContact:(id)arg2 confirmedCNContact:(id)arg3 inApp:(struct SGMBannerDisplayApp_)arg4;
 + (void)recordBannerShownWithContacts:(id)arg1 events:(id)arg2 inApp:(struct SGMBannerDisplayApp_)arg3;
-+ (void)recordMaybeContactFrom:(unsigned long long)arg1;
++ (void)recordMaybeContactFrom:(unsigned long long)arg1 withVersion:(id)arg2;
 + (id)instance;
+@property(retain, nonatomic) SGMContactDetailConversationTurn *contactDetailConversationTurn; // @synthesize contactDetailConversationTurn=_contactDetailConversationTurn;
 @property(retain, nonatomic) SGMUnknownContactInformationShown *unknownContactInformationShown; // @synthesize unknownContactInformationShown=_unknownContactInformationShown;
 @property(retain, nonatomic) SGMMaybeInformationShown *maybeInformationShown; // @synthesize maybeInformationShown=_maybeInformationShown;
 @property(retain, nonatomic) SGMEventBannerRejected *eventBannerRejected; // @synthesize eventBannerRejected=_eventBannerRejected;

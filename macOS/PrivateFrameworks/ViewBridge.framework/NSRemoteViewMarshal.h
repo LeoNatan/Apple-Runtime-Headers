@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSRemoteView *_spawnedBy;
     NSRemoteView *_view;
     struct NSObject *_delegate;
-    NSString *_resizeTransactionInProgress;
+    NSString *_frameRequestTransactionInProgress;
     double _accessoryViewVerticalOffset;
     double _mostRecentlyReportedScaleFactor;
     struct CGSRegionObject *_serviceWindowDragRegion;
@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_childWindowQueue;
     NSMutableSet *_friendlyKeyFocusThieves;
     NSObject *_clientExportedObject;
+    struct CGPoint _requestedOrigin;
     int _privateEventLoopKind;
     NSProxy<NSXPCProxyCreating> *_serviceViewControllerProxyWithAnimationSyncInterface;
     NSProxy<NSXPCProxyCreating> *_serviceViewControllerProxyWithClientInterface;
@@ -56,8 +57,8 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
     NSAppearance *_mostRecentlySentAppearance;
     NSString *_serviceName;
-    NSString *_serviceSubclassIdentifier;
-    NSString *_serviceSubclassName;
+    NSString *_serviceViewControllerIdentifier;
+    NSString *_serviceViewControllerClassName;
     NSTrackingArea *_trackingArea;
     unsigned long long _wrappedModifySubviewsInProgress;
     NSVBAccessoryWindow *_accessoryWindow;
@@ -88,14 +89,12 @@ __attribute__((visibility("hidden")))
     unsigned int _frameOfServiceWindowChanging:1;
     unsigned int _hasSheetsBeginning:1;
     unsigned int _hostWindowIsKnownToBeKey:1;
-    unsigned int _ignoreFontSmoothingBackgroundColor:1;
     unsigned int _invalid:1;
     unsigned int _isSettingViewFrame:1;
     unsigned int _isSettingWindowStyleMask:1;
     unsigned int _isSheetBeginning:1;
     unsigned int _knownToBeContentView:1;
     unsigned int _refuseFirstResponder:1;
-    unsigned int _registeredForAppNotifications:1;
     unsigned int _registeredForAppWideNotifications:1;
     unsigned int _serviceDisclosedAccessoryView:1;
     unsigned int _serviceWindowIsKey:1;
@@ -107,6 +106,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)nsxpcInterface:(id)arg1;
++ (void)_addFreeWindow:(id)arg1 parameters:(const CDStruct_5d2c0651 *)arg2 listenerEndpoint:(id)arg3 reply:(CDUnknownBlockType)arg4;
 @property(retain) NSArray *touchBarsDescription; // @synthesize touchBarsDescription=_touchBarsDescription;
 @property(copy) NSDictionary *remoteAccessibilityChildren; // @synthesize remoteAccessibilityChildren=_remoteAccessibilityChildren;
 @property(readonly) NSViewBridge *bridge; // @synthesize bridge=_bridge;
@@ -127,8 +127,8 @@ __attribute__((visibility("hidden")))
 - (void)dragWindowRelativeToMouseDown:(struct CGPoint)arg1;
 - (void)remoteViewControllerProxy:(CDUnknownBlockType)arg1;
 - (void)retreatToConfigPhase;
-- (void)endModalSession:(id)arg1;
-- (void)beginModalSession:(id)arg1 title:(id)arg2 size:(struct CGSize)arg3 withReply:(CDUnknownBlockType)arg4;
+- (void)endAppModalSession:(id)arg1;
+- (void)beginAppModalSession:(id)arg1 parameters:(CDStruct_9fbe0e86)arg2 withReply:(CDUnknownBlockType)arg3;
 - (BOOL)_topmostAppModalSessionHasRendezvousWindowIdentifier:(id)arg1;
 - (void)serviceWindowOrderedWithMode:(long long)arg1 relativeTo:(unsigned int)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)serviceAccessoryViewBecameFirstResponder:(unsigned long long)arg1;
@@ -152,6 +152,7 @@ __attribute__((visibility("hidden")))
 - (void)hasValidKeyViewInDirection:(unsigned long long)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)serviceWindowHasDragRegion:(id)arg1;
 - (void)lastCallImpliedByAdvancingToPhase:(unsigned char)arg1;
+- (void)matchBootstrapFrameOfWindow:(id)arg1;
 - (void)dealloc;
 - (oneway void)release;
 - (void)__vbSuperRelease;

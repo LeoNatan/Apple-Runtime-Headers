@@ -8,15 +8,12 @@
 
 @interface NSString (HealthKit)
 + (id)hk_randomStringOfLength:(int)arg1;
-- (id)hk_MD2Hash;
-- (id)hk_MD4Hash;
 - (id)hk_MD5HashAsUUID;
 - (id)hk_MD5Hash;
 - (id)hk_SHA512Hash;
 - (id)hk_SHA384Hash;
 - (id)hk_SHA256Hash;
 - (id)hk_SHA224Hash;
-- (id)hk_SHA1Hash;
 - (_Bool)hk_isBetweenLowerBuildVersion:(id)arg1 upperBuildVersion:(id)arg2;
 - (int)hk_compareBuildVersionWithString:(id)arg1;
 - (_Bool)hk_isBase64;

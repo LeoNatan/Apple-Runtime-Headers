@@ -6,7 +6,7 @@
 
 #import <Sharing/NSObject-Protocol.h>
 
-@class NSDictionary;
+@class NSArray, NSDictionary, NSString;
 
 @protocol SFAirDropActivityViewControllerDelegate <NSObject>
 - (void)airDropActivityDidSuccessfullyStartTransfer;
@@ -14,6 +14,9 @@
 - (void)airDropActivityRequestingSharedItemsWithCompletionHandler:(void (^)(void))arg1;
 
 @optional
+- (void)airDropActivityDidReceiveInitialPeopleList;
+- (void)nodePressedWithRecipients:(NSArray *)arg1;
+- (void)nodePressedWithGUID:(NSString *)arg1 groupName:(NSString *)arg2 recipients:(NSArray *)arg3;
 - (void)airDropActivityDidFailToStartTransfer;
 - (void)airDropActivityRequestingSharedItemsWithOptions:(NSDictionary *)arg1 completionHandler:(void (^)(void))arg2;
 - (void)airDropActivityDoneButtonPressed;

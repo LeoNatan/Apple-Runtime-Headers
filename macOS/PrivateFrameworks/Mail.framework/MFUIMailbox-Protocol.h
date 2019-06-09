@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) BOOL isContainer;
 @property(readonly, copy, nonatomic) NSString *extendedDisplayName;
 @property(readonly, copy, nonatomic) NSString *displayName;
-@property(readonly, copy, nonatomic) NSString *persistentID;
+@property(readonly, copy, nonatomic) NSString *persistentUIIdentifier;
 @property(readonly) BOOL isVisibleFlaggedMailbox;
 @property int mailboxType;
 - (BOOL)isDescendantOfMailboxWithType:(int)arg1;

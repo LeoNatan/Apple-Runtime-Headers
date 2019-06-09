@@ -14,6 +14,7 @@
     unsigned int _tilesPerRow;
     NSString *_title;
     unsigned int _numberOfTiles;
+    unsigned int _previousNumberOfTiles;
     NSMutableIndexSet *_indexesToReload;
     struct CGSize _pageSize;
     struct CGSize _outerTileSize;
@@ -26,6 +27,7 @@
 @property(readonly, nonatomic) struct UIEdgeInsets tileInsets; // @synthesize tileInsets=_tileInsets;
 @property(readonly, nonatomic) struct UIEdgeInsets sectionInsets; // @synthesize sectionInsets=_sectionInsets;
 @property(readonly, nonatomic) struct CGSize outerTileSize; // @synthesize outerTileSize=_outerTileSize;
+@property(readonly, nonatomic) unsigned int previousNumberOfTiles; // @synthesize previousNumberOfTiles=_previousNumberOfTiles;
 @property(readonly, nonatomic) unsigned int numberOfTiles; // @synthesize numberOfTiles=_numberOfTiles;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) _Bool configured; // @synthesize configured=_configured;

@@ -17,11 +17,13 @@
     BOOL _multipathRequested;
     NSData *_sourceAppUniqueIdentifier;
     NSString *_sourceAppSigningIdentifier;
+    NSData *_sourceAppAuditToken;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(readonly) BOOL multipathRequested; // @synthesize multipathRequested=_multipathRequested;
 @property(readonly) BOOL fastOpenRequested; // @synthesize fastOpenRequested=_fastOpenRequested;
+@property(readonly) NSData *sourceAppAuditToken; // @synthesize sourceAppAuditToken=_sourceAppAuditToken;
 @property(readonly) NSString *sourceAppSigningIdentifier; // @synthesize sourceAppSigningIdentifier=_sourceAppSigningIdentifier;
 @property(readonly) NSData *sourceAppUniqueIdentifier; // @synthesize sourceAppUniqueIdentifier=_sourceAppUniqueIdentifier;
 - (void).cxx_destruct;
@@ -31,7 +33,7 @@
 - (id)description;
 - (id)initWithProcessUUID:(id)arg1 signingIdentifier:(id)arg2;
 - (id)initFromFlow:(struct _NEFlow *)arg1;
-- (id)initWithUniqueIdentifier:(id)arg1 signingIdentifier:(id)arg2 fastOpenRequested:(BOOL)arg3 multipathRequested:(BOOL)arg4;
+- (id)initWithUniqueIdentifier:(id)arg1 signingIdentifier:(id)arg2 fastOpenRequested:(BOOL)arg3 multipathRequested:(BOOL)arg4 audit_token:(id)arg5;
 
 @end
 

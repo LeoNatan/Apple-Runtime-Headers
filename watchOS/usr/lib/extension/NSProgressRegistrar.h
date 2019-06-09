@@ -12,6 +12,7 @@
 @class NSFileAccessNode, NSMutableDictionary, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface NSProgressRegistrar : NSObject <NSXPCListenerDelegate, NSProgressRegistrar>
 {
     NSObject<OS_dispatch_queue> *_queue;

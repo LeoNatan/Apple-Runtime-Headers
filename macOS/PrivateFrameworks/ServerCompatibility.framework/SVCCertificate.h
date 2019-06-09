@@ -36,7 +36,7 @@
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSImage *icon;
-- (id)initWithSecCertificateRef:(struct OpaqueSecCertificateRef *)arg1;
+- (id)initWithSecCertificateRef:(struct __SecCertificate *)arg1;
 
 @end
 

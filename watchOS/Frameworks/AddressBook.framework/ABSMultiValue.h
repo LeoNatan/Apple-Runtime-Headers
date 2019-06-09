@@ -15,6 +15,7 @@
     NSMutableArray *_values;
 }
 
++ (void)initialize;
 @property(readonly, nonatomic) NSMutableArray *values; // @synthesize values=_values;
 @property(readonly, nonatomic) _Bool mutable; // @synthesize mutable=_mutable;
 @property(readonly, nonatomic) unsigned int propertyType; // @synthesize propertyType=_propertyType;

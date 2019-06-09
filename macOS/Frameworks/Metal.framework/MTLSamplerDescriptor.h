@@ -32,7 +32,9 @@
 @property(nonatomic) unsigned long long minFilter; // @dynamic minFilter;
 @property(nonatomic) unsigned long long mipFilter; // @dynamic mipFilter;
 @property(nonatomic) BOOL normalizedCoordinates; // @dynamic normalizedCoordinates;
+@property(nonatomic) unsigned long long pixelFormat; // @dynamic pixelFormat;
 @property(nonatomic) unsigned long long rAddressMode; // @dynamic rAddressMode;
+@property(nonatomic) unsigned long long reductionMode; // @dynamic reductionMode;
 @property(nonatomic) unsigned long long resourceIndex; // @dynamic resourceIndex;
 @property(nonatomic) unsigned long long sAddressMode; // @dynamic sAddressMode;
 @property(nonatomic) BOOL supportArgumentBuffers; // @dynamic supportArgumentBuffers;

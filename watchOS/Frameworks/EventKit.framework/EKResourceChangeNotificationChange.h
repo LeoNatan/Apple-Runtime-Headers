@@ -6,10 +6,11 @@
 
 #import <EventKit/EKNotificationChange.h>
 
-__attribute__((visibility("hidden")))
 @interface EKResourceChangeNotificationChange : EKNotificationChange
 {
 }
+
++ (int)entityType;
 
 @end
 

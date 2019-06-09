@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSFetchRequest, NSManagedObjectContext, NSString;
+@class NSArray, NSFetchRequest, NSManagedObjectContext, NSPredicate, NSString;
 @protocol NSFetchedResultsControllerDelegate;
 
 @interface NSFetchedResultsController : NSObject
@@ -16,20 +16,24 @@
     NSString *_sectionNameKeyPath;
     NSString *_sectionNameKey;
     NSString *_cacheName;
-    void *_cache;
+    NSPredicate *_remappedPredicate;
+    NSPredicate *_originalPredicate;
+    id _cachePath;
     struct _fetchResultsControllerFlags {
+        unsigned int _changedResultsSinceLastSave:1;
+        unsigned int _hasBatchedArrayResults:1;
+        unsigned int _hasMutableFetchedResults:1;
+        unsigned int _hasSections:1;
+        unsigned int _includesSubentities:1;
+        unsigned int _sendDidChangeContentDiffNotifications:1;
+        unsigned int _sendDidChangeContentNotifications:1;
+        unsigned int _sendDidChangeContentSnapshotNotifications:1;
         unsigned int _sendObjectChangeNotifications:1;
         unsigned int _sendSectionChangeNotifications:1;
-        unsigned int _sendDidChangeContentNotifications:1;
-        unsigned int _sendWillChangeContentNotifications:1;
         unsigned int _sendSectionIndexTitleForSectionName:1;
-        unsigned int _changedResultsSinceLastSave:1;
-        unsigned int _hasMutableFetchedResults:1;
-        unsigned int _hasBatchedArrayResults:1;
-        unsigned int _hasSections:1;
+        unsigned int _sendWillChangeContentNotifications:1;
         unsigned int _usesNonpersistedProperties:1;
-        unsigned int _includesSubentities:1;
-        unsigned int _reservedFlags:21;
+        unsigned int _reservedFlags:19;
     } _flags;
     id _delegate;
     id _sortKeys;
@@ -59,7 +63,7 @@
 - (id)_fetchedObjects;
 - (void)_recursivePerformBlockAndWait:(CDUnknownBlockType)arg1 withContext:(id)arg2;
 - (BOOL)performFetch:(id *)arg1;
-@property(nonatomic) id <NSFetchedResultsControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) id <NSFetchedResultsControllerDelegate> delegate;
 - (void)dealloc;
 - (id)initWithFetchRequest:(id)arg1 managedObjectContext:(id)arg2 sectionNameKeyPath:(id)arg3 cacheName:(id)arg4;
 - (BOOL)_keyPathContainsNonPersistedProperties:(id)arg1;
@@ -71,6 +75,7 @@
 - (BOOL)_updateCachedStoreInfo;
 - (void)_appendAffectedStoreInfoToData:(id)arg1 adjustedOffset:(long long *)arg2;
 - (void)_managedObjectContextDidChange:(id)arg1;
+- (void)_managedObjectContextDidMutateObjectIDs:(id)arg1;
 - (void)_managedObjectContextDidChangeObjectIDs:(id)arg1;
 - (void)_core_managedObjectContextDidChange:(id)arg1;
 - (void)_lowerMoveOperationsToUpdatesForSection:(id)arg1 withInsertedObjects:(id)arg2 deletedObjects:(id)arg3 updatedObjects:(id)arg4;

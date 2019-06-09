@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 
 + (id)initForPlugInKit;
 + (id)_initForPlugInKit;
-+ (BOOL)dictionary:(id)arg1 hasAdditionalService:(id)arg2;
 - (void)beginUsing:(id)arg1 withBundle:(id)arg2;
+- (void)_beginUsing:(id)arg1 withBundle:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

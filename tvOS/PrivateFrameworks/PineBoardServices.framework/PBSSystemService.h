@@ -21,7 +21,6 @@
 - (void)fetchPairedAppleRemoteStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)launchKioskApp;
 - (void)setMinimumBackgroundFetchInterval:(double)arg1;
-- (void)setIconName:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)setKioskAppBundleIdentifier:(id)arg1;
 - (void)kioskAppBundleIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setSystemAppearance:(long long)arg1;

@@ -48,6 +48,7 @@
     BOOL _isProjector;
     BOOL _isAirPlayDisplay;
     BOOL _is4K;
+    BOOL _isSidecarDisplay;
     BOOL _hasMultipleRates;
     BOOL _hasZeroRate;
     BOOL _uiProjectorOverride;
@@ -58,11 +59,9 @@
 @property(retain) MPDisplayMode *defaultMode; // @synthesize defaultMode=_defaultMode;
 @property(retain) MPDisplayMode *nativeMode; // @synthesize nativeMode=_nativeMode;
 @property(retain) MPDisplayMode *currentMode; // @synthesize currentMode=_currentMode;
-@property(readonly) struct CGRect displayResolutionPreviewRect; // @synthesize displayResolutionPreviewRect=_displayResolutionPreviewRect;
-@property(readonly) NSImage *displayResolutionPreviewIcon; // @synthesize displayResolutionPreviewIcon=_displayResolutionPreviewIcon;
-@property(readonly) NSImage *displayIcon; // @synthesize displayIcon=_displayIcon;
 @property(readonly) BOOL hasZeroRate; // @synthesize hasZeroRate=_hasZeroRate;
 @property(readonly) BOOL hasMultipleRates; // @synthesize hasMultipleRates=_hasMultipleRates;
+@property(readonly) BOOL isSidecarDisplay; // @synthesize isSidecarDisplay=_isSidecarDisplay;
 @property(readonly) BOOL isAirPlayDisplay; // @synthesize isAirPlayDisplay=_isAirPlayDisplay;
 @property(readonly) BOOL isProjector; // @synthesize isProjector=_isProjector;
 @property(readonly) BOOL is4K; // @synthesize is4K=_is4K;
@@ -79,6 +78,12 @@
 @property unsigned int userFlags; // @synthesize userFlags=_userFlags;
 @property(readonly) int aliasID; // @synthesize aliasID=_aliasID;
 @property(readonly) int displayID; // @synthesize displayID=_displayID;
+- (void)_loadPreviewIconFromServiceDictionary:(id)arg1;
+- (id)_imageAndRect:(struct CGRect *)arg1 fromDictionary:(id)arg2 forOrientation:(long long)arg3;
+- (id)_iconAtPath:(id)arg1;
+@property(readonly) struct CGRect displayResolutionPreviewRect;
+@property(readonly) NSImage *displayResolutionPreviewIcon;
+@property(readonly) NSImage *displayIcon;
 @property(readonly) NSUUID *uuid;
 @property(readonly) struct CGRect hardwareBounds;
 @property(readonly) int mirrorMasterDisplayID;

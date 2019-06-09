@@ -8,7 +8,14 @@
 
 @interface JSOCFunctionPointer : JSOCPointer
 {
-    struct ffi_cif _cif;
+    struct {
+        int abi;
+        unsigned int nargs;
+        struct _ffi_type **arg_types;
+        struct _ffi_type *rtype;
+        unsigned int bytes;
+        unsigned int flags;
+    } _cif;
     unsigned int _numberOfArguments;
     struct _ffi_type *_retType;
     struct _ffi_type **_argTypes;

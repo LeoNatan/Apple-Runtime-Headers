@@ -6,26 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+@class VCPCNNFastGestureRecognition;
 
 @interface VCPPriorityAnalysis : NSObject
 {
-    struct LandmarkDetector *_landmarkDetector;
-    struct Rotator *_rotator;
-    NSMutableArray *_mouthRatioArray;
-    float _faceBounds[4];
+    BOOL _buttonPressed;
+    BOOL _light;
+    float _accumulateScore;
+    int _frameInd;
     int _rotationAngle;
-    float _detectedLandMarks[136];
-    float _smoothedMAD;
+    int _sendStopSignalKTimes;
+    struct Rotator *_rotator;
+    struct EncodeStats *_stats;
+    VCPCNNFastGestureRecognition *_fastGestureDetector;
 }
 
 + (id)priorityAnalysis;
 - (void).cxx_destruct;
-- (int)calculatePriorityScore:(float *)arg1 ofPixelBuffer:(struct __CVBuffer *)arg2 withMetadata:(id)arg3;
-- (int)calculateMADofAspectRatio:(struct __CVBuffer *)arg1;
-- (void)parseFaceBoundsWithMetadata:(id)arg1 inPixelBuffer:(struct __CVBuffer *)arg2;
-- (void)detectLandmark:(float *)arg1 ofImage:(char *)arg2 withWidth:(unsigned int)arg3 height:(unsigned int)arg4 stride:(unsigned int)arg5 faceBounds:(float *)arg6 andPreviousResult:(float *)arg7;
 - (void)dealloc;
+- (int)calculatePriorityScore:(float *)arg1 ofPixelBuffer:(struct __CVBuffer *)arg2 withMetadata:(id)arg3;
+- (int)fastSignLanguageDetection:(float *)arg1 ofPixelBuffer:(struct __CVBuffer *)arg2 withMetadata:(id)arg3;
 - (id)init;
 
 @end

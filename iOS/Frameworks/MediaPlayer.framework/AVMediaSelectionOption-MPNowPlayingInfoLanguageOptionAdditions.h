@@ -9,5 +9,7 @@
 @interface AVMediaSelectionOption (MPNowPlayingInfoLanguageOptionAdditions)
 - (id)_languageOptionIdentifier;
 - (id)makeNowPlayingInfoLanguageOption;
+@property(readonly, nonatomic) _Bool mpIsSDH;
+@property(readonly, nonatomic) _Bool mpIsOnlyAC3;
 @end
 

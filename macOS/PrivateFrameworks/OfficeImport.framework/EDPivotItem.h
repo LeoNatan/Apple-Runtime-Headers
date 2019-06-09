@@ -8,6 +8,7 @@
 
 @class EDCollection;
 
+__attribute__((visibility("hidden")))
 @interface EDPivotItem : NSObject
 {
     unsigned int mRepeatedItemCounts;

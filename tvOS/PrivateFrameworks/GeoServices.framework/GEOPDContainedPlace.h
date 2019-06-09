@@ -8,26 +8,37 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDLinkedPlace, NSMutableArray, PBUnknownFields;
+@class GEOPDLinkedPlace, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDContainedPlace : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned long long _featureId;
     NSMutableArray *_childPlaces;
+    unsigned long long _featureId;
     GEOPDLinkedPlace *_parentPlace;
     NSMutableArray *_siblingPlaces;
-    CDStruct_b1448a5c _has;
+    struct {
+        unsigned int has_featureId:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_childPlaces:1;
+        unsigned int read_parentPlace:1;
+        unsigned int read_siblingPlaces:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_childPlaces:1;
+        unsigned int wrote_featureId:1;
+        unsigned int wrote_parentPlace:1;
+        unsigned int wrote_siblingPlaces:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)siblingPlaceType;
 + (Class)childPlaceType;
-@property(retain, nonatomic) NSMutableArray *siblingPlaces; // @synthesize siblingPlaces=_siblingPlaces;
-@property(nonatomic) unsigned long long featureId; // @synthesize featureId=_featureId;
-@property(retain, nonatomic) NSMutableArray *childPlaces; // @synthesize childPlaces=_childPlaces;
-@property(retain, nonatomic) GEOPDLinkedPlace *parentPlace; // @synthesize parentPlace=_parentPlace;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,18 +47,28 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)siblingPlaceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)siblingPlacesCount;
+- (void)_addNoFlagsSiblingPlace:(id)arg1;
 - (void)addSiblingPlace:(id)arg1;
 - (void)clearSiblingPlaces;
+@property(retain, nonatomic) NSMutableArray *siblingPlaces;
+- (void)_readSiblingPlaces;
 @property(nonatomic) _Bool hasFeatureId;
+@property(nonatomic) unsigned long long featureId;
 - (id)childPlaceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)childPlacesCount;
+- (void)_addNoFlagsChildPlace:(id)arg1;
 - (void)addChildPlace:(id)arg1;
 - (void)clearChildPlaces;
+@property(retain, nonatomic) NSMutableArray *childPlaces;
+- (void)_readChildPlaces;
+@property(retain, nonatomic) GEOPDLinkedPlace *parentPlace;
 @property(readonly, nonatomic) _Bool hasParentPlace;
+- (void)_readParentPlace;
 
 @end
 

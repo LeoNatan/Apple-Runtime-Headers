@@ -6,17 +6,23 @@
 
 #import <SpringBoardServices/SBSApplicationShortcutIcon.h>
 
+@class NSString;
+
 @interface SBSApplicationShortcutSystemIcon : SBSApplicationShortcutIcon
 {
     int _type;
+    NSString *_systemImageName;
 }
 
+@property(readonly, nonatomic) NSString *systemImageName; // @synthesize systemImageName=_systemImageName;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)_initForSubclass;
+- (id)initWithSystemImageName:(id)arg1;
 - (id)initWithType:(int)arg1;
 
 @end

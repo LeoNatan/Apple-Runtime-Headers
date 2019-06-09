@@ -8,6 +8,7 @@
 
 @class CHDChart, OADDrawingTheme;
 
+__attribute__((visibility("hidden")))
 @interface CHAutoStyling : NSObject
 {
     CHDChart *mChart;

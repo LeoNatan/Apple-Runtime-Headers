@@ -12,6 +12,7 @@
 {
     unsigned long long _startTimestamp;
     unsigned long long _timestamp;
+    unsigned int _seCounterMeasureLevel;
     unsigned int _totalAPNReceived;
     unsigned int _totalAccessTransaction;
     unsigned int _totalAuthECommerce;
@@ -27,6 +28,10 @@
     unsigned int _totalFelicaEMoneyTransaction;
     unsigned int _totalFelicaTransitTransaction;
     unsigned int _totalGenericAExpressTransaction;
+    unsigned int _totalLPEMCounter;
+    unsigned int _totalPTDatabaseCorruption;
+    unsigned int _totalPTKeyDeletionFailed;
+    unsigned int _totalPTKeys;
     unsigned int _totalPeerPaymentRequest;
     unsigned int _totalPeerPaymentRequestFailure;
     unsigned int _totalPlasticCardModeEnable;
@@ -46,6 +51,7 @@
     struct {
         unsigned int startTimestamp:1;
         unsigned int timestamp:1;
+        unsigned int seCounterMeasureLevel:1;
         unsigned int totalAPNReceived:1;
         unsigned int totalAccessTransaction:1;
         unsigned int totalAuthECommerce:1;
@@ -61,6 +67,10 @@
         unsigned int totalFelicaEMoneyTransaction:1;
         unsigned int totalFelicaTransitTransaction:1;
         unsigned int totalGenericAExpressTransaction:1;
+        unsigned int totalLPEMCounter:1;
+        unsigned int totalPTDatabaseCorruption:1;
+        unsigned int totalPTKeyDeletionFailed:1;
+        unsigned int totalPTKeys:1;
         unsigned int totalPeerPaymentRequest:1;
         unsigned int totalPeerPaymentRequestFailure:1;
         unsigned int totalPlasticCardModeEnable:1;
@@ -80,6 +90,11 @@
     } _has;
 }
 
+@property(nonatomic) unsigned int seCounterMeasureLevel; // @synthesize seCounterMeasureLevel=_seCounterMeasureLevel;
+@property(nonatomic) unsigned int totalLPEMCounter; // @synthesize totalLPEMCounter=_totalLPEMCounter;
+@property(nonatomic) unsigned int totalPTKeyDeletionFailed; // @synthesize totalPTKeyDeletionFailed=_totalPTKeyDeletionFailed;
+@property(nonatomic) unsigned int totalPTDatabaseCorruption; // @synthesize totalPTDatabaseCorruption=_totalPTDatabaseCorruption;
+@property(nonatomic) unsigned int totalPTKeys; // @synthesize totalPTKeys=_totalPTKeys;
 @property(nonatomic) unsigned int totalCEEnabledWithMissingTransactionEndEvent; // @synthesize totalCEEnabledWithMissingTransactionEndEvent=_totalCEEnabledWithMissingTransactionEndEvent;
 @property(nonatomic) unsigned int totalCEEnabledWithNoFieldDetected; // @synthesize totalCEEnabledWithNoFieldDetected=_totalCEEnabledWithNoFieldDetected;
 @property(nonatomic) unsigned int totalDynamicRFParametersUpdate; // @synthesize totalDynamicRFParametersUpdate=_totalDynamicRFParametersUpdate;
@@ -122,6 +137,11 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasSeCounterMeasureLevel;
+@property(nonatomic) BOOL hasTotalLPEMCounter;
+@property(nonatomic) BOOL hasTotalPTKeyDeletionFailed;
+@property(nonatomic) BOOL hasTotalPTDatabaseCorruption;
+@property(nonatomic) BOOL hasTotalPTKeys;
 @property(nonatomic) BOOL hasTotalCEEnabledWithMissingTransactionEndEvent;
 @property(nonatomic) BOOL hasTotalCEEnabledWithNoFieldDetected;
 @property(nonatomic) BOOL hasTotalDynamicRFParametersUpdate;

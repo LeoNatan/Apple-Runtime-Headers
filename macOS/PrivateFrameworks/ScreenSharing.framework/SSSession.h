@@ -79,6 +79,7 @@
         unsigned short _field3;
         char _field4[0];
     } *mUnverifiedServerHostKey;
+    NSObject<OS_dispatch_semaphore> *mScaleFactorSemaphore;
     BOOL hasUnfulfilledPasteboardPromises;
     BOOL _assistModeEnabled;
     BOOL _assistModeWasEnabled;
@@ -93,14 +94,13 @@
     unsigned int _assistModeFlags;
     unsigned int _AVConferenceVideoWidth;
     unsigned int _AVConferenceVideoHeight;
-    MessageTracerInfo *messageTracerInfo;
     NWConnectionManager *_datagramConnectionManager;
     NSString *_mUnverifiedServerHostLabel;
+    MessageTracerInfo *_messageTracerInfo;
     double _connectTimeout;
     long long _displayInfo2Version;
     NSDate *_lastContactDate;
     NSTimer *_udpLivenessTimer;
-    NSObject<OS_dispatch_semaphore> *_scaleFactorSemaphore;
     struct CGPoint mLastCursorPercent;
 }
 
@@ -108,13 +108,13 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)registerForDisplayChanges;
 @property BOOL scaleFactorEnqueued; // @synthesize scaleFactorEnqueued=_scaleFactorEnqueued;
-@property NSObject<OS_dispatch_semaphore> *scaleFactorSemaphore; // @synthesize scaleFactorSemaphore=_scaleFactorSemaphore;
 @property unsigned short lastY; // @synthesize lastY=_lastY;
 @property unsigned short lastX; // @synthesize lastX=_lastX;
 @property(retain) NSTimer *udpLivenessTimer; // @synthesize udpLivenessTimer=_udpLivenessTimer;
 @property(retain) NSDate *lastContactDate; // @synthesize lastContactDate=_lastContactDate;
 @property long long displayInfo2Version; // @synthesize displayInfo2Version=_displayInfo2Version;
 @property double connectTimeout; // @synthesize connectTimeout=_connectTimeout;
+@property(retain) MessageTracerInfo *messageTracerInfo; // @synthesize messageTracerInfo=_messageTracerInfo;
 @property BOOL mUnverifiedServerMessageDisplayed; // @synthesize mUnverifiedServerMessageDisplayed=_mUnverifiedServerMessageDisplayed;
 @property(retain) NSString *mUnverifiedServerHostLabel; // @synthesize mUnverifiedServerHostLabel=_mUnverifiedServerHostLabel;
 @property BOOL encodingsWereSet; // @synthesize encodingsWereSet=_encodingsWereSet;
@@ -126,7 +126,6 @@
 @property BOOL canToggleCurtainMode; // @synthesize canToggleCurtainMode=_canToggleCurtainMode;
 @property BOOL assistModeWasEnabled; // @synthesize assistModeWasEnabled=_assistModeWasEnabled;
 @property BOOL hasUnfulfilledPasteboardPromises; // @synthesize hasUnfulfilledPasteboardPromises;
-@property(retain) MessageTracerInfo *messageTracerInfo; // @synthesize messageTracerInfo;
 @property(copy) NSArray *localFilePaths; // @synthesize localFilePaths=mLocalFilePaths;
 @property(retain) NSObject<SSDragDelegate> *dragDelegate; // @synthesize dragDelegate=mDragDelegate;
 @property(copy) NSImage *remoteDragImage; // @synthesize remoteDragImage=mRemoteDragImage;
@@ -206,6 +205,8 @@
 - (void)dtDelegateOnConsoleChanged;
 - (void)delegateOnConsoleChanged;
 - (void)dtDelegateVirtualDisplayStateChanged;
+- (void)dtDelegateTouchEvent:(id)arg1;
+- (void)delegateTouchEvent:(id)arg1;
 - (void)delegateVirtualDisplayStateChanged;
 - (void)dtDelegateUserPictureChanged;
 - (void)delegateUserPictureChanged;
@@ -227,6 +228,7 @@
 - (BOOL)recordRemotePasteboardData:(id)arg1 toLocalPasteboard:(id)arg2 uncompressedSize:(unsigned int)arg3;
 - (BOOL)validateAndAdjustMouseCoordinatesForServer:(struct SSPoint)arg1 withXOut:(unsigned short *)arg2 withYOut:(unsigned short *)arg3;
 - (void)setFrameBuffer:(id)arg1;
+- (void)handleTouchEvent:(CDStruct_13724557 *)arg1;
 - (void)handleUserRequestResponse:(CDStruct_250aeff3 *)arg1;
 - (void)handleFileTransferResultInfo:(CDStruct_c0c3f3c9 *)arg1;
 - (void)handleFileTransferProgressInfo:(CDStruct_e4886f83 *)arg1;
@@ -342,7 +344,7 @@
 - (void)resumeFileCopy:(id)arg1;
 - (void)pauseFileCopy:(id)arg1;
 - (id)activeFileCopies;
-- (id)fileCopyRemotePath:(id)arg1 toLocalPath:(id)arg2;
+- (id)fileCopyRemotePath:(id)arg1 toLocalPath:(id)arg2 withFileName:(id)arg3;
 - (id)fileCopyLocalPath:(id)arg1 toRemotePath:(id)arg2;
 - (void)requestSystemInfo:(int)arg1 args:(id)arg2;
 - (void)requestSystemInfo:(int)arg1 args:(id)arg2 senderToken:(unsigned int)arg3;

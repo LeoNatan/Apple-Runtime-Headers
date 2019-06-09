@@ -14,6 +14,7 @@
 }
 
 - (void).cxx_destruct;
+- (double)sentimentScore;
 - (id)description;
 - (id)mostRelevantRecord;
 - (id)copyWithZone:(struct _NSZone *)arg1;

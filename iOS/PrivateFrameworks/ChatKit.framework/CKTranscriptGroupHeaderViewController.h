@@ -8,6 +8,7 @@
 
 @class UIButton;
 
+__attribute__((visibility("hidden")))
 @interface CKTranscriptGroupHeaderViewController : CKTranscriptHeaderViewController
 {
 }

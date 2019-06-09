@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_blockedExtensions;
     NSMutableDictionary *_extensionIdentifierToStateMap;
     NSMutableDictionary *_extensionUniqueIdentifierToExtensionDataMap;
+    NSMutableDictionary *_contentBlockerToAssociatedAppExtensionMap;
     id _keyBagLockStatusObservationToken;
     BOOL _shouldReadFromKeychainAfterKeyBagIsUnlocked;
     BOOL _allowUnsignedExtensions;
@@ -67,6 +68,8 @@ __attribute__((visibility("hidden")))
 - (void)reloadPage:(id)arg1;
 - (void)dispatchMessageWithName:(id)arg1 fromExtensionWithUUID:(id)arg2 toPage:(id)arg3 userInfo:(id)arg4;
 - (void)verifyExtensionResourceAtExtensionURL:(id)arg1 fileURL:(id)arg2;
+- (void)browserViewController:(id)arg1 willNavigateToURL:(id)arg2;
+- (void)contentBlockerWithIdentifier:(id)arg1 blockedResourceWithURL:(id)arg2 inBrowserViewController:(id)arg3;
 - (void)getExtensionHeadersForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)canAnyExtensionsAddHeadersToURL:(id)arg1;
 - (BOOL)_canExtension:(id)arg1 addHeadersToURL:(id)arg2;
@@ -84,6 +87,7 @@ __attribute__((visibility("hidden")))
 - (void)_connectToExtension:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)completeRequestToExtensionWithUUID:(id)arg1 withRequestIdentifier:(id)arg2;
 - (void)loadPopoverForExtensionWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_loadAssociatedContentBlockersForExtension:(id)arg1;
 - (id)_localizedContextMenuItemLabelForLocalizedInfoDictionary:(id)arg1 withCommand:(id)arg2;
 - (void)_loadContextMenuForExtension:(id)arg1;
 - (id)_contextMenuForExtensionDictionary:(id)arg1 localizedInfoDictionary:(id)arg2 extensionUUID:(id)arg3;
@@ -97,7 +101,6 @@ __attribute__((visibility("hidden")))
 - (void)_connectContextToSessionWithRequestIdentifier:(id)arg1 remoteViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)_extensionHasPopover:(id)arg1;
 - (void)_validateAndLoadExtensionIfNecessary:(id)arg1;
-- (void)_replaceLegacyExtensionsWithAppExtension:(id)arg1 andDeveloperIdentifier:(id)arg2;
 - (void)_updateExtensionStateIfWebsiteAccessIncreased:(id)arg1;
 - (id)_cdHashForCodeSigningDictionary:(id)arg1;
 - (id)enabledExtensions;
@@ -125,6 +128,7 @@ __attribute__((visibility("hidden")))
 - (void)resetExtensionsState;
 - (void)disableUnsignedExtensionsIfNecessary;
 - (void)_writeExtensionsStateToKeychain;
+@property(readonly, nonatomic) BOOL hasAnyEnabledExtensions;
 - (BOOL)_hasAnyEnabledExtensionsInKeychain;
 - (void)appExtensionBlacklistDidChange;
 - (void)findExtensions;

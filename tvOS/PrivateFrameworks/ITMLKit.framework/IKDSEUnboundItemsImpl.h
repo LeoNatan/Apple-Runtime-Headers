@@ -8,22 +8,20 @@
 
 #import <ITMLKit/IKDataSourceElementImplementing-Protocol.h>
 
-@class IKDataSourceElement, IKElementChangeSet, NSArray, NSString;
+@class IKChangeSet, IKDataSourceElement, NSArray, NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface IKDSEUnboundItemsImpl : NSObject <IKDataSourceElementImplementing>
 {
     IKDataSourceElement *_dataSourceElement;
     NSArray *_itemElements;
-    IKElementChangeSet *_itemsChangeset;
+    IKChangeSet *_itemsChangeSet;
 }
 
-@property(retain, nonatomic) IKElementChangeSet *itemsChangeset; // @synthesize itemsChangeset=_itemsChangeset;
+@property(retain, nonatomic) IKChangeSet *itemsChangeSet; // @synthesize itemsChangeSet=_itemsChangeSet;
 @property(copy, nonatomic) NSArray *itemElements; // @synthesize itemElements=_itemElements;
 @property(readonly, nonatomic) __weak IKDataSourceElement *dataSourceElement; // @synthesize dataSourceElement=_dataSourceElement;
 - (void).cxx_destruct;
-- (long long)indexOfItemForChildElement:(id)arg1;
-- (id)actualElementForProxyElement:(id)arg1;
 - (void)resetUpdates;
 - (void)updateStylesUsingUpdater:(CDUnknownBlockType)arg1;
 - (void)applyUpdatesWithImplementation:(id)arg1 usingUpdater:(CDUnknownBlockType)arg2;
@@ -32,9 +30,12 @@ __attribute__((visibility("hidden")))
 - (void)initializeWithElementFactory:(id)arg1;
 - (void)unloadIndex:(long long)arg1;
 - (void)loadIndex:(long long)arg1;
+@property(readonly, copy, nonatomic) NSDictionary *indexTitles;
+- (long long)indexOfItemForElement:(id)arg1;
 - (id)elementForItemAtIndex:(long long)arg1;
 - (id)prototypeForItemAtIndex:(long long)arg1;
 - (long long)numberOfItems;
+@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
 @property(readonly, nonatomic) NSArray *prototypes;
 - (id)initWithDataSourceElement:(id)arg1;
 

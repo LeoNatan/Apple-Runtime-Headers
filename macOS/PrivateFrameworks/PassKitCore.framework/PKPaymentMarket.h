@@ -37,6 +37,7 @@
 - (id)_geoFenceWithDictionary:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (double)shortestDistanceFromLocation:(id)arg1;
 - (BOOL)containsLocation:(id)arg1;
 @property(readonly, copy) NSString *name; // @dynamic name;
 - (void)encodeWithCoder:(id)arg1;

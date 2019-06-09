@@ -37,3 +37,7 @@ struct nw_protocol_callbacks;
 
 struct nw_protocol_identifier;
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+

@@ -14,6 +14,8 @@
 }
 
 @property(retain, nonatomic) APSIncomingMessageCheckpointTrace *checkpointTrace; // @synthesize checkpointTrace=_checkpointTrace;
+- (void).cxx_destruct;
+@property(nonatomic) unsigned long long pushType;
 @property(copy, nonatomic) NSData *tracingUUID;
 @property(nonatomic, getter=isTracingEnabled) _Bool tracingEnabled;
 @property(nonatomic) long long priority;
@@ -22,7 +24,6 @@
 @property(copy, nonatomic) NSData *token;
 @property(copy, nonatomic) NSDate *timestamp;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 
 @end

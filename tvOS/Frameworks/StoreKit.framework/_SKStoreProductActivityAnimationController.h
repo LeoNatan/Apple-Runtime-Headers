@@ -11,6 +11,7 @@
 @class NSString;
 @protocol UIViewControllerContextTransitioning;
 
+__attribute__((visibility("hidden")))
 @interface _SKStoreProductActivityAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 {
     id <UIViewControllerContextTransitioning> _transitionContext;

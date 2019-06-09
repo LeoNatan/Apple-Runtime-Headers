@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *contentInformationCachingQueue;
     NSMutableDictionary *contentInformationCache;
     _Bool preloadsEligibleContentKeys;
-    long long makeResourceLoaderURLSessionSupportStuffOnlyOnce;
     NSURLSession *URLSession;
     AVAssetCustomURLBridgeForNSURLSession *bridgeBetweenHandlerAndSession;
     NSOperationQueue *URLSessionOperationQueue;

@@ -13,10 +13,13 @@
     RTMapItemMO *cachedMapItem;
 }
 
++ (id)managedObjectWithLocationOfInterest:(id)arg1 managedObject:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)managedObjectWithLocationOfInterest:(id)arg1 inManagedObjectContext:(id)arg2;
++ (id)fetchRequestSortedByCreation;
 + (id)fetchRequest;
 @property(retain, nonatomic) RTMapItemMO *cachedMapItem; // @synthesize cachedMapItem;
 - (void).cxx_destruct;
+- (void)updateWithLearnedLocation:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (id)mapItem;
 

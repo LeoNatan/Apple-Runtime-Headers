@@ -10,9 +10,48 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGPoint {
+    double _field1;
+    double _field2;
+};
+
+struct CGRect {
+    struct CGPoint _field1;
+    struct CGSize _field2;
+};
+
+struct CGSize {
+    double width;
+    double height;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
+};
+
+struct flock {
+    long long _field1;
+    long long _field2;
+    int _field3;
+    short _field4;
+    short _field5;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
+struct tagPLImageTableMemoryPool {
+    struct {
+        void *_field1;
+        long long _field2;
+    } _field1;
+    unsigned long long _field2;
+    int _field3;
+    void *_field4;
+    void *_field5;
+    unsigned long long _field6;
 };
 
 #pragma mark Typedef'd Structures
@@ -39,4 +78,22 @@ typedef struct {
 typedef struct {
     unsigned int _field1[8];
 } CDStruct_6ad76789;
+
+typedef struct {
+    int _field1;
+    int _field2;
+} CDStruct_1ef3fb1f;
+
+typedef struct {
+    int _field1;
+    struct CGSize _field2;
+    struct CGRect _field3;
+    struct CGRect _field4;
+    unsigned int _field5;
+    int _field6;
+    int _field7;
+    double _field8[4];
+    double _field9[4];
+    unsigned int _field10;
+} CDStruct_e5ce1f5a;
 

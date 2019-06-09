@@ -26,6 +26,8 @@
 - (void)didReceiveDismissalAction:(void (^)(void))arg1;
 - (void)displayUtteranceWithTitle:(NSString *)arg1 subtitle:(NSString *)arg2;
 - (BOOL)supportsSpeechSynthesis;
+- (void)siriDidStopSpeakingWithIdentifier:(NSString *)arg1 speechQueueIsEmpty:(BOOL)arg2;
+- (void)siriDidStartSpeakingWithIdentifier:(NSString *)arg1;
 - (void)acousticIDRequestDidFinishWithSuccess:(BOOL)arg1;
 - (void)acousticIDRequestWillStart;
 - (void)siriDidDetectMusic;

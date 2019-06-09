@@ -31,6 +31,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAnchor:(id)arg1;
 - (id)description;
+-     // Error parsing type: @248@0:8@16{ARTexturedPlane={array<unsigned char, 16>=[16C]}Q{?=[4]}{array<float __attribute__((ext_vector_type(3))), 4>=[4]}{set<std::__1::array<unsigned char, 16>, std::__1::less<std::__1::array<unsigned char, 16> >, std::__1::allocator<std::__1::array<unsigned char, 16> > >={__tree<std::__1::array<unsigned char, 16>, std::__1::less<std::__1::array<unsigned char, 16> >, std::__1::allocator<std::__1::array<unsigned char, 16> > >=^{__tree_end_node<std::__1::__tree_node_base<void *> *>}{__compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::array<unsigned char, 16>, void *> > >={__tree_end_node<std::__1::__tree_node_base<void *> *>=^{__tree_node_base<void *>}}}{__compressed_pair<unsigned long, std::__1::less<std::__1::array<unsigned char, 16> > >=Q}}}@}24, name: initWithIdentifier:onPlane:
 -     // Error parsing type: @104@0:8@16{?=[4]}2488, name: initWithIdentifier:transform:extent:
 -     // Error parsing type: @104@0:8@16{?=[4]}2488, name: initWithName:transform:extent:
 -     // Error parsing type: @96@0:8{?=[4]}1680, name: initWithTransform:extent:

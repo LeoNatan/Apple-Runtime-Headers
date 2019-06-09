@@ -8,6 +8,7 @@
 
 @class NSArray, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface SLOpenGraphNode : NSObject
 {
     _Bool _likedByMe;

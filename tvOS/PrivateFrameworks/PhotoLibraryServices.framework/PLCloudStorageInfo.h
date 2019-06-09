@@ -8,18 +8,21 @@
 
 @interface PLCloudStorageInfo : NSObject
 {
+    _Bool _hasMaxQuotaTier;
     long long _totalBytes;
     long long _availableBytes;
     long long _usedBytes;
     long long _cameraRollBackupBytes;
 }
 
-+ (id)storageInfoWithTotal:(long long)arg1 available:(long long)arg2 used:(long long)arg3 cameraRollBackupBytes:(long long)arg4;
++ (id)storageInfoWithTotal:(long long)arg1 available:(long long)arg2 used:(long long)arg3 cameraRollBackupBytes:(long long)arg4 hasMaxQuotaTier:(_Bool)arg5;
+@property(nonatomic) _Bool hasMaxQuotaTier; // @synthesize hasMaxQuotaTier=_hasMaxQuotaTier;
 @property(nonatomic) long long cameraRollBackupBytes; // @synthesize cameraRollBackupBytes=_cameraRollBackupBytes;
 @property(nonatomic) long long usedBytes; // @synthesize usedBytes=_usedBytes;
 @property(nonatomic) long long availableBytes; // @synthesize availableBytes=_availableBytes;
 @property(nonatomic) long long totalBytes; // @synthesize totalBytes=_totalBytes;
-- (id)initWithTotalQuotaBytes:(long long)arg1 totalAvailableBytes:(long long)arg2 totalUsedBytes:(long long)arg3 cameraRollBackupBytes:(long long)arg4;
+- (id)description;
+- (id)initWithTotalQuotaBytes:(long long)arg1 totalAvailableBytes:(long long)arg2 totalUsedBytes:(long long)arg3 cameraRollBackupBytes:(long long)arg4 hasMaxQuotaTier:(_Bool)arg5;
 
 @end
 

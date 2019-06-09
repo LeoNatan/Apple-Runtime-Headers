@@ -11,6 +11,7 @@
 @class NSString, SKUIRedeemTextField, UIImage, _UIBackdropView;
 @protocol SKUIRedeemCameraViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIFullscreenRedeemCameraView : UIView <UITextFieldDelegate>
 {
     id <SKUIRedeemCameraViewDelegate> _delegate;

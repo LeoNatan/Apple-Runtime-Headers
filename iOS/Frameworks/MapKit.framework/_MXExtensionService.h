@@ -54,9 +54,9 @@
 - (void)setIntentResponseObserverProxy:(id)arg1;
 - (void)stopSendingUpdatesForIntent:(id)arg1;
 - (id)startSendingUpdatesForIntent:(id)arg1 toObserver:(id)arg2;
-- (void)_completeOrCancelTransaction:(_Bool)arg1;
-- (void)cancelTransactionDueToTimeout;
-- (void)completeTransaction;
+- (void)_completeOrCancelTransaction:(_Bool)arg1 withIntentIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)cancelTransactionDueToTimeoutWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)completeTransactionWithIntentIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_handleOrConfirmIntent:(id)arg1 expectResponseClass:(Class)arg2 isHandle:(_Bool)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (id)handleIntent:(id)arg1 expectResponseClass:(Class)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)confirmIntent:(id)arg1 expectResponseClass:(Class)arg2 withCompletion:(CDUnknownBlockType)arg3;

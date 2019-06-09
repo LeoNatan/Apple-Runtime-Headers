@@ -24,18 +24,19 @@
 }
 
 @property(readonly, retain, nonatomic) struct __CFArray *movedFromIndexes; // @synthesize movedFromIndexes=_movedFromIndexes;
-@property(readonly, retain, nonatomic) NSIndexSet *movedIndexes; // @synthesize movedIndexes=_movedIndexes;
+@property(readonly, nonatomic) NSIndexSet *movedIndexes; // @synthesize movedIndexes=_movedIndexes;
+- (void).cxx_destruct;
 - (unsigned int)snapshotIndexForContainedObject:(id)arg1;
-@property(readonly, retain, nonatomic) NSArray *changedObjects;
-@property(readonly, retain, nonatomic) NSArray *insertedObjects;
-@property(readonly, retain, nonatomic) NSArray *deletedObjects;
+@property(readonly, nonatomic) NSArray *changedObjects;
+@property(readonly, nonatomic) NSArray *insertedObjects;
+@property(readonly, nonatomic) NSArray *deletedObjects;
 @property(readonly, nonatomic) _Bool countDidChange;
-@property(readonly, retain, nonatomic) NSIndexSet *changedIndexesRelativeToSnapshot;
-@property(readonly, retain, nonatomic) NSIndexSet *changedIndexes;
+@property(readonly, nonatomic) NSIndexSet *changedIndexesRelativeToSnapshot;
+@property(readonly, nonatomic) NSIndexSet *changedIndexes;
 @property(readonly, nonatomic) _Bool hasMoves;
 - (void)enumerateMovesWithBlock:(CDUnknownBlockType)arg1;
-@property(readonly, retain, nonatomic) NSIndexSet *insertedIndexes;
-@property(readonly, retain, nonatomic) NSIndexSet *deletedIndexes;
+@property(readonly, nonatomic) NSIndexSet *insertedIndexes;
+@property(readonly, nonatomic) NSIndexSet *deletedIndexes;
 @property(readonly, nonatomic) _Bool shouldReload;
 - (id)name;
 - (id)object;

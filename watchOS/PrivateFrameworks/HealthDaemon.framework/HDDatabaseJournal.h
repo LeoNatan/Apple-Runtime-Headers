@@ -6,16 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSFileHandle, NSLock, NSString;
+@class NSFileHandle, NSLock, NSProgress, NSString;
 
 @interface HDDatabaseJournal : NSObject
 {
+    struct os_unfair_lock_s _progressLock;
     int _type;
     NSString *_path;
     NSLock *_journalLock;
     NSFileHandle *_fileHandle;
+    NSProgress *_parentProgress;
 }
 
+@property(retain, nonatomic) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property(retain, nonatomic) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
 @property(retain, nonatomic) NSLock *journalLock; // @synthesize journalLock=_journalLock;
 @property(copy, nonatomic) NSString *path; // @synthesize path=_path;
@@ -41,7 +44,8 @@
 - (_Bool)_processJournalFile:(id)arg1 profile:(id)arg2 accessibilityAssertion:(id)arg3;
 - (_Bool)_processJournalFilesWithProfile:(id)arg1;
 - (_Bool)mergeWithProfile:(id)arg1;
-- (_Bool)performMergeTransactionWithProfile:(id)arg1 transactionContext:(id)arg2 options:(unsigned int)arg3 error:(id *)arg4 block:(CDUnknownBlockType)arg5;
+- (id)progressForJournalMerge;
+- (_Bool)performMergeTransactionWithProfile:(id)arg1 transactionContext:(id)arg2 error:(id *)arg3 block:(CDUnknownBlockType)arg4;
 - (_Bool)addJournalEntries:(id)arg1 error:(id *)arg2;
 - (void)unlock;
 - (void)lock;

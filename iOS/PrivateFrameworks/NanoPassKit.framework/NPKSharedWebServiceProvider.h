@@ -28,6 +28,8 @@
 @property(retain, nonatomic) NPKPaymentWebServiceCompanionTargetDevice *targetDevice; // @synthesize targetDevice=_targetDevice;
 @property(retain, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
 - (void).cxx_destruct;
+- (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
+- (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;
 - (void)checkCompanionPeerPaymentRegistrationState;
 - (void)handleDownloadAllPaymentPasses;
 - (void)handleUpdatedPeerPaymentWebServiceContext:(id)arg1 account:(id)arg2;

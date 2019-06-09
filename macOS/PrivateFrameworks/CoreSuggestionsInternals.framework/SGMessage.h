@@ -23,11 +23,13 @@
     NSString *_domainIdentifier;
     NSArray *_attachments;
     NSArray *_accountHandles;
+    NSString *_accountType;
 }
 
 + (id)fromDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)messageWithSearchableItem:(id)arg1;
+@property(copy, nonatomic) NSString *accountType; // @synthesize accountType=_accountType;
 @property(nonatomic) BOOL isSent; // @synthesize isSent=_isSent;
 @property(copy, nonatomic) NSArray *accountHandles; // @synthesize accountHandles=_accountHandles;
 @property(readonly, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;

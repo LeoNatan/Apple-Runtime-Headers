@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class EDResources, OADGraphicProperties;
+@class EDResources, EDString, OADGraphicProperties;
 
 __attribute__((visibility("hidden")))
 @interface CHDDataLabel : NSObject
 {
     EDResources *mResources;
-    unsigned long long mStringIndex;
+    EDString *mString;
     unsigned long long mContentFormatId;
     int mPosition;
     _Bool mShowLeaderLines;
@@ -28,17 +28,23 @@ __attribute__((visibility("hidden")))
     _Bool mExtensionDetected;
     double mRotation;
     OADGraphicProperties *mGraphicProperties;
+    OADGraphicProperties *mLeaderlineGraphicProperties;
 }
 
 + (id)dataLabelWithResources:(id)arg1;
+@property(retain, nonatomic) EDString *string; // @synthesize string=mString;
+- (void).cxx_destruct;
 - (void)setRotationAngle:(double)arg1;
 - (double)rotationAngle;
 - (_Bool)isPositionAffineTransform;
 - (void)setIsPositionAffineTransform:(_Bool)arg1;
+- (void)setLeaderlineGraphicProperties:(id)arg1;
+- (id)leaderlineGraphicProperties;
 - (void)setGraphicProperties:(id)arg1;
 - (id)graphicProperties;
 - (_Bool)isCustomLabelBlockingVisibility;
 - (void)setExtensionDetected:(_Bool)arg1;
+- (_Bool)isLabelVisible;
 - (_Bool)isExtensionDetected;
 - (void)setDeleted:(_Bool)arg1;
 - (_Bool)isDeleted;
@@ -55,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)setShowCategoryName:(_Bool)arg1;
 - (_Bool)isShowCategoryName;
 - (void)setShowLeaderLines:(_Bool)arg1;
+- (_Bool)hasLeaderLinesGraphics;
 - (_Bool)isShowLeaderLines;
 - (void)setPosition:(int)arg1;
 - (int)position;
@@ -62,15 +69,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)isContentFormatDerivedFromDataPoints;
 - (void)setContentFormat:(id)arg1;
 - (id)contentFormat;
-- (void)setString:(id)arg1;
-- (id)string;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (id)description;
 - (void)setContentFormatId:(unsigned long long)arg1;
 - (unsigned long long)contentFormatId;
-- (void)setStringIndex:(unsigned long long)arg1;
-- (unsigned long long)stringIndex;
 
 @end
 

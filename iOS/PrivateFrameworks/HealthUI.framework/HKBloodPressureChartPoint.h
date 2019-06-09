@@ -24,6 +24,7 @@
 @property(retain, nonatomic) HKHealthChartPoint *systolicChartPoint; // @synthesize systolicChartPoint=_systolicChartPoint;
 @property(retain, nonatomic) id <HKGraphSeriesBlockCoordinateInfo> userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (id)maxYValue;
 - (id)minYValue;
 - (id)allYValues;
@@ -36,7 +37,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

@@ -6,34 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class QTCaptureSession;
-
 @interface QTCaptureOutput : NSObject
 {
-    QTCaptureSession *_session;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
-- (BOOL)getAudioMixerNode:(int *)arg1 andUnitElement:(unsigned int *)arg2 forConnection:(id)arg3;
-- (id)videoDecompressionAttributesForVideoConnection:(id)arg1;
-- (int)videoDecompressionRequirementForConnection:(id)arg1;
-- (void)graphWillStopForSession:(id)arg1 dueToError:(id)arg2;
-- (void)graphWillStartForSession:(id)arg1;
-- (unsigned int)connectionUnitInputNumberForConnection:(id)arg1;
-- (int)connectionGraphNodeForConnection:(id)arg1;
-- (void)removeOutputUnitsForConnection:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
-- (BOOL)addOutputUnitsForConnection:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
-- (void)removeConnection:(id)arg1;
-- (id)addConnection:(id)arg1 error:(id *)arg2;
-- (id)notReadyError;
-- (BOOL)prefersMixedAudio;
-- (id)connections;
-- (BOOL)canAddConnectionForMediaType:(id)arg1;
-- (id)connectionMediaTypes;
-- (void)_setSession:(id)arg1;
-- (id)session;
 - (id)init;
 
 @end

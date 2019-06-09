@@ -85,6 +85,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)targetEdgesForScreenGestureRecognition;
 - (void)setDisableTouchInput:(_Bool)arg1;
 - (_Bool)diacriticForwardCompose;
+- (_Bool)supportsContinuousPath;
 - (_Bool)isAlphabeticPlane;
 - (_Bool)ignoresShiftState;
 - (_Bool)usesAutoShift;

@@ -13,11 +13,11 @@
 __attribute__((visibility("hidden")))
 @interface _SFLInternalItem : NSObject <SFLInternalItem>
 {
-    id _identifier;
-    id _listIdentifier;
-    id _name;
-    id _bookmark;
-    id _properties;
+    NSUUID *_identifier;
+    NSString *_listIdentifier;
+    NSString *_name;
+    SFLBookmark *_bookmark;
+    NSDictionary *_properties;
     unsigned long long _seed;
 }
 

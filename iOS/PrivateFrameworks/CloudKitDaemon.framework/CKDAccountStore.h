@@ -11,7 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)sharedAccountStoreWithEffectiveBundleID:(id)arg1;
++ (id)personaAwarePrimaryAppleAccountFromAccounts:(id)arg1 defaultPrimaryAccount:(id)arg2;
++ (id)sharedAccountStore;
 - (id)init;
 
 @end

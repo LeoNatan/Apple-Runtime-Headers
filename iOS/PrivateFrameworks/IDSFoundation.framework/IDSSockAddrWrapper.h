@@ -17,6 +17,7 @@
 + (id)wrapperWithAddressString:(id)arg1 withPortHostOrder:(unsigned short)arg2;
 + (id)wrapperWithAddressString:(id)arg1 withPortHostOrder:(unsigned short)arg2 withInterfaceName:(id)arg3;
 + (id)wrapperWithSockAddr:(const struct sockaddr *)arg1;
+- (void)updateLocalPort:(unsigned short)arg1;
 - (void)copySockAddr:(struct sockaddr *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

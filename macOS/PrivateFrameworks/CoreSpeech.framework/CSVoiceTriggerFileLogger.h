@@ -8,16 +8,14 @@
 
 #import <CoreSpeech/CSVoiceTriggerDelegate-Protocol.h>
 
-@class CSAudioCircularBuffer, NSString;
+@class NSString;
 @protocol OS_dispatch_queue;
 
 @interface CSVoiceTriggerFileLogger : NSObject <CSVoiceTriggerDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    CSAudioCircularBuffer *_audioBuffer;
 }
 
-@property(nonatomic) __weak CSAudioCircularBuffer *audioBuffer; // @synthesize audioBuffer=_audioBuffer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)_clearOldLoggingFiles;
@@ -28,7 +26,7 @@
 - (id)_metaFilenameWithPrefix:(id)arg1;
 - (id)_timeStampString;
 - (id)_audioLogDirectory;
-- (id)initWithAudioBuffer:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

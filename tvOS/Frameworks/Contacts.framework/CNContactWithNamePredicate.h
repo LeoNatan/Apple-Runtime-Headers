@@ -6,12 +6,10 @@
 
 #import <Contacts/CNPredicate.h>
 
-#import <Contacts/CNSuggestedContactPredicate-Protocol.h>
-
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface CNContactWithNamePredicate : CNPredicate <CNSuggestedContactPredicate>
+@interface CNContactWithNamePredicate : CNPredicate
 {
     NSString *_name;
     unsigned long long _options;
@@ -22,17 +20,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithName:(id)arg1;
-- (id)sgContactMatchesWithSortOrder:(long long)arg1 mutableObjects:(_Bool)arg2 service:(id)arg3 error:(id *)arg4;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

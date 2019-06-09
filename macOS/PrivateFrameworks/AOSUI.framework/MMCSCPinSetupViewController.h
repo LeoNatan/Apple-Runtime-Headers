@@ -14,23 +14,23 @@
 
 @interface MMCSCPinSetupViewController : NSViewController <NSTouchBarProvider, MMPinFieldViewDelegate>
 {
+    MMPinFieldView *_pinViewPinFieldView;
+    NSString *_initialPassPhrase;
+    NSString *_passPhrase;
+    long long _currentState;
+    BOOL _usingNumericPassphrase;
+    int _numericPassphraseLength;
     id <MMCSCPinSetupViewControllerDelegate> _delegate;
     NSImageView *_pinViewImageView;
     NSTextField *_pinViewTitle;
     NSTextField *_pinViewMessage;
     NSView *_pinViewPinFieldPlaceholder;
     NSLayoutConstraint *_pinViewPinFieldWidthConstraint;
-    MMPinFieldView *_pinViewPinFieldView;
     NSTextField *_pinViewEnterLabelText;
     NSButton *_pinViewHelpButton;
-    NSButton *_pinViewConfirmButton;
     NSButton *_pinViewCancelButton;
     NSButton *_pinViewAdvancedButton;
-    NSString *_initialPassPhrase;
-    NSString *_passPhrase;
-    long long _currentState;
-    BOOL _usingNumericPassphrase;
-    int _numericPassphraseLength;
+    NSButton *_pinViewConfirmButton;
     iCloudTouchBarController *_touchBarController;
 }
 
@@ -39,18 +39,19 @@
 @property(copy) NSString *initialPassPhrase; // @synthesize initialPassPhrase=_initialPassPhrase;
 @property BOOL usingNumericPassphrase; // @synthesize usingNumericPassphrase=_usingNumericPassphrase;
 @property int numericPassphraseLength; // @synthesize numericPassphraseLength=_numericPassphraseLength;
-@property NSButton *pinViewConfirmButton; // @synthesize pinViewConfirmButton=_pinViewConfirmButton;
-@property NSButton *pinViewAdvancedButton; // @synthesize pinViewAdvancedButton=_pinViewAdvancedButton;
-@property NSButton *pinViewCancelButton; // @synthesize pinViewCancelButton=_pinViewCancelButton;
-@property NSButton *pinViewHelpButton; // @synthesize pinViewHelpButton=_pinViewHelpButton;
-@property NSTextField *pinViewEnterLabelText; // @synthesize pinViewEnterLabelText=_pinViewEnterLabelText;
+@property __weak NSButton *pinViewConfirmButton; // @synthesize pinViewConfirmButton=_pinViewConfirmButton;
+@property __weak NSButton *pinViewAdvancedButton; // @synthesize pinViewAdvancedButton=_pinViewAdvancedButton;
+@property __weak NSButton *pinViewCancelButton; // @synthesize pinViewCancelButton=_pinViewCancelButton;
+@property __weak NSButton *pinViewHelpButton; // @synthesize pinViewHelpButton=_pinViewHelpButton;
+@property __weak NSTextField *pinViewEnterLabelText; // @synthesize pinViewEnterLabelText=_pinViewEnterLabelText;
 @property(retain) MMPinFieldView *pinViewPinFieldView; // @synthesize pinViewPinFieldView=_pinViewPinFieldView;
-@property NSLayoutConstraint *pinViewPinFieldWidthConstraint; // @synthesize pinViewPinFieldWidthConstraint=_pinViewPinFieldWidthConstraint;
-@property NSView *pinViewPinFieldPlaceholder; // @synthesize pinViewPinFieldPlaceholder=_pinViewPinFieldPlaceholder;
-@property NSTextField *pinViewMessage; // @synthesize pinViewMessage=_pinViewMessage;
-@property NSTextField *pinViewTitle; // @synthesize pinViewTitle=_pinViewTitle;
-@property NSImageView *pinViewImageView; // @synthesize pinViewImageView=_pinViewImageView;
+@property __weak NSLayoutConstraint *pinViewPinFieldWidthConstraint; // @synthesize pinViewPinFieldWidthConstraint=_pinViewPinFieldWidthConstraint;
+@property __weak NSView *pinViewPinFieldPlaceholder; // @synthesize pinViewPinFieldPlaceholder=_pinViewPinFieldPlaceholder;
+@property __weak NSTextField *pinViewMessage; // @synthesize pinViewMessage=_pinViewMessage;
+@property __weak NSTextField *pinViewTitle; // @synthesize pinViewTitle=_pinViewTitle;
+@property __weak NSImageView *pinViewImageView; // @synthesize pinViewImageView=_pinViewImageView;
 @property id <MMCSCPinSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)pinFieldViewTextDidChange:(id)arg1;
 - (id)_passphraseFromSecureEntryView;
 - (void)clearSecureEntryView;
@@ -63,7 +64,6 @@
 - (void)confirmButtonClicked:(id)arg1;
 - (void)setup:(BOOL)arg1;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

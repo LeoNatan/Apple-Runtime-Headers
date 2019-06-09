@@ -4,25 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSOperation.h>
+#import <WatchListKit/WLKNetworkRequestOperation.h>
 
-@class NSDictionary, NSError;
+@class NSDictionary;
 
-@interface WLKSettingsRequestOperation : NSOperation
+@interface WLKSettingsRequestOperation : WLKNetworkRequestOperation
 {
-    NSError *_error;
     NSDictionary *_response;
-    CDUnknownBlockType _requestCompletionBlock;
 }
 
-+ (id)URLBagKey;
-@property(copy, nonatomic) CDUnknownBlockType requestCompletionBlock; // @synthesize requestCompletionBlock=_requestCompletionBlock;
++ (id)_requestURL:(id *)arg1;
 @property(readonly, nonatomic) NSDictionary *response; // @synthesize response=_response;
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 - (void).cxx_destruct;
-- (id)_runNetworkOperationAndReturnError:(id *)arg1;
-- (id)requestProperties;
-- (void)main;
+- (void)processResponse;
+- (void)prepareURLRequest:(CDUnknownBlockType)arg1;
+- (id)init;
 
 @end
 

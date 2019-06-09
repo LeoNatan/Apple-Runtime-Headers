@@ -10,7 +10,6 @@
 
 @class NSMutableArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLLocalStreamTaskFromDataTask : __NSCFURLLocalStreamTask <SessionConnectionDelegate>
 {
     struct __CFReadStream *_myReadToHisWrite;
@@ -24,6 +23,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_myWriteToHisReadWork;
 }
 
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)connection:(id)arg1 didReceiveTCPConnection:(shared_ptr_8da4e70b)arg2 extraBytes:(id)arg3;
 - (void)connection:(id)arg1 needConnectedSocketToHost:(id)arg2 port:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)connection:(id)arg1 didReceiveSocketInputStream:(id)arg2 outputStream:(id)arg3;
 - (void)connection:(id)arg1 _conditionalRequirementsChanged:(BOOL)arg2;

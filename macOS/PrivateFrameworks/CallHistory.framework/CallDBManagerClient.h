@@ -8,6 +8,7 @@
 
 @class NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface CallDBManagerClient : CallDBManager
 {
     NSXPCConnection *_helperConnection;

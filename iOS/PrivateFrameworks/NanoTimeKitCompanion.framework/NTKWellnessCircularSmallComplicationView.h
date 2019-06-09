@@ -15,15 +15,14 @@
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 - (void).cxx_destruct;
 - (void)_updateColors;
-- (void)_setLayoutEmptyRingsNoDot;
+- (void)_setLayoutEmptyRings;
 - (void)_updateForTemplateChange;
 - (void)layoutSubviews;
-- (void)setSecondaryForegroundColor:(id)arg1;
 - (void)setUsesMultiColor:(_Bool)arg1;
 - (void)setForegroundColor:(id)arg1;
+- (double)_overlapStrokeWidth;
 - (double)_ringGapWidth;
 - (double)_ringStrokeWidth;
 - (double)_ringDiameter;

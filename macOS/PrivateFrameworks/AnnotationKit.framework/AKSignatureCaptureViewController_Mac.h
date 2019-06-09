@@ -6,7 +6,7 @@
 
 #import <AppKit/NSViewController.h>
 
-@class AKController, AKSignatureCameraCaptureViewController_Mac, AKSignatureGestureCaptureViewController_Mac, NSSegmentedControl, NSView;
+@class AKController, AKSignatureCameraCaptureViewController_Mac, AKSignatureGestureCaptureViewController_Mac, AKSignatureSidecarCaptureViewController_Mac, NSSegmentedControl, NSView;
 @protocol AKSignatureCaptureViewControllerDelegate;
 
 @interface AKSignatureCaptureViewController_Mac : NSViewController
@@ -14,12 +14,14 @@
     long long _captureMode;
     AKSignatureCameraCaptureViewController_Mac *_cameraCaptureController;
     AKSignatureGestureCaptureViewController_Mac *_trackpadCaptureController;
+    AKSignatureSidecarCaptureViewController_Mac *_sidecarCaptureController;
     id <AKSignatureCaptureViewControllerDelegate> _delegate;
     AKController *_controller;
     NSSegmentedControl *_segmentedControl;
     NSView *_captureViewHolder;
 }
 
++ (BOOL)isSidecarAvailable;
 + (BOOL)isTrackpadAvailable;
 + (BOOL)isCameraAvailable;
 + (BOOL)isSignatureCaptureAvailable;
@@ -28,6 +30,7 @@
 @property __weak AKController *controller; // @synthesize controller=_controller;
 @property __weak id <AKSignatureCaptureViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_setupSidecarCapture;
 - (void)_setupTrackpadCapture;
 - (void)_setupCameraCapture;
 - (void)_switchToCaptureMode:(long long)arg1;

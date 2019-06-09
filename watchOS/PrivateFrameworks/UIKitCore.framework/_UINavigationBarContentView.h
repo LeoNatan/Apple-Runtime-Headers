@@ -11,13 +11,12 @@
 #import <UIKitCore/_UINavigationBarTitleViewDataSource-Protocol.h>
 #import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, UIBarButtonItem, UIColor, UIImage, UIView, _UINavigationBarContentViewLayout, _UINavigationBarTransitionContext;
+@class NSArray, NSDictionary, NSMutableArray, NSString, UIBarButtonItem, UIColor, UIImage, UIView, _UIBarButtonItemData, _UINavBackButtonAppearanceData, _UINavigationBarContentViewLayout, _UINavigationBarTransitionContext;
 @protocol _UINavigationBarContentViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarContentView : _UIBarContentView <_UIBarButtonItemViewOwner, _UINavigationBarTitleViewDataSource, _UINavigationBarTransitionContextParticipant, _UIButtonBarButtonChangeObserver>
 {
-    _UINavigationBarContentViewLayout *_layout;
     _UINavigationBarTransitionContext *_transitionContext;
     _Bool _deferResolvedSizeChange;
     _Bool _outstandingDeferredResolvedSizeChange;
@@ -33,27 +32,30 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_currentCompletions;
     _Bool _backButtonHidden;
     _Bool _leadingItemsSupplementBackItem;
-    int _barMetrics;
     id <_UINavigationBarContentViewDelegate> _delegate;
     UIBarButtonItem *_backButtonItem;
     NSArray *_leadingBarButtonItems;
     NSArray *_trailingBarButtonItems;
     NSString *_title;
     UIView *_titleView;
-    float _titleViewAlpha;
+    float _inlineTitleViewAlpha;
     NSDictionary *_titleAttributes;
-    float _titleVerticalPositionAdjustment;
     UIColor *_textColor;
     float _overrideSize;
     int _requestedContentSize;
+    int _barMetrics;
+    _UINavigationBarContentViewLayout *_layout;
+    struct UIOffset _titlePositionAdjustment;
 }
 
+@property(readonly, nonatomic) _UINavigationBarContentViewLayout *layout; // @synthesize layout=_layout;
+@property(nonatomic) int barMetrics; // @synthesize barMetrics=_barMetrics;
 @property(nonatomic) int requestedContentSize; // @synthesize requestedContentSize=_requestedContentSize;
 @property(nonatomic) float overrideSize; // @synthesize overrideSize=_overrideSize;
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
-@property(nonatomic) float titleVerticalPositionAdjustment; // @synthesize titleVerticalPositionAdjustment=_titleVerticalPositionAdjustment;
+@property(nonatomic) struct UIOffset titlePositionAdjustment; // @synthesize titlePositionAdjustment=_titlePositionAdjustment;
 @property(copy, nonatomic) NSDictionary *titleAttributes; // @synthesize titleAttributes=_titleAttributes;
-@property(nonatomic) float titleViewAlpha; // @synthesize titleViewAlpha=_titleViewAlpha;
+@property(nonatomic) float inlineTitleViewAlpha; // @synthesize inlineTitleViewAlpha=_inlineTitleViewAlpha;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(copy, nonatomic) NSArray *trailingBarButtonItems; // @synthesize trailingBarButtonItems=_trailingBarButtonItems;
@@ -63,9 +65,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIBarButtonItem *backButtonItem; // @synthesize backButtonItem=_backButtonItem;
 @property(nonatomic) __weak id <_UINavigationBarContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (id)_accessibility_controlToActivateForHUDGestureLiftAtPoint:(struct CGPoint)arg1;
 - (id)_accessibility_barButtonItemAtPoint:(struct CGPoint)arg1;
 - (id)_accessibility_HUDItemForPoint:(struct CGPoint)arg1;
+- (void)_itemDidChangeSecondaryActionState:(id)arg1;
+- (void)_itemDidChangeSecondaryActions:(id)arg1;
+- (void)_itemDidChangeEnabledState:(id)arg1;
 - (void)_itemDidChangeHiddenState:(id)arg1;
 - (void)_itemDidChangeSelectionState:(id)arg1;
 - (void)_itemDidChangeWidth:(id)arg1;
@@ -73,11 +79,24 @@ __attribute__((visibility("hidden")))
 - (void)_itemCustomViewDidChange:(id)arg1 fromView:(id)arg2;
 - (void)titleViewChangedMaximumBackButtonWidth:(id)arg1;
 - (void)titleViewChangedPreferredDisplaySize:(id)arg1;
+- (void)titleViewChangedDisplayItemAlpha:(id)arg1;
 - (void)titleViewChangedStandardDisplayItems:(id)arg1;
+- (void)titleViewChangedLayout:(id)arg1;
 - (void)titleViewChangedHeight:(id)arg1;
 - (void)titleViewChangedUnderlayContent:(id)arg1;
+- (float)titleViewContentBaseHeight:(id)arg1;
+- (float)titleViewContentBaselineOffsetFromTop:(id)arg1;
+- (CDStruct_b2fbf00d)titleViewLargeTitleHeightRange:(id)arg1;
+- (float)titleViewLargeTitleHeight:(id)arg1;
 - (void)titleView:(id)arg1 needsUpdatedContentOverlayRects:(id)arg2;
+- (id)_layoutForAugmentedTitleView:(id)arg1;
 - (struct CGRect)_overlayRectForView:(id)arg1 inTargetView:(id)arg2;
+- (void)backButtonAppearanceChanged;
+@property(retain, nonatomic) _UINavBackButtonAppearanceData *backButtonAppearance;
+- (void)doneItemAppearanceChanged;
+@property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance;
+- (void)plainItemAppearanceChanged;
+@property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance;
 - (void)_appearanceChanged;
 - (void)backButtonTitleDidChange;
 @property(nonatomic, setter=_setBackButtonMaximumWidth:) float backButtonMaximumWidth;
@@ -110,26 +129,21 @@ __attribute__((visibility("hidden")))
 - (float)_intrinsicHeight;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_setupTitleViewAnimated:(_Bool)arg1;
-- (_Bool)__setupTitleViewCanSkipUpdates;
 - (void)_applyTitleAttributesToLabel:(id)arg1 withString:(id)arg2;
-- (id)defaultFontDescriptor;
-- (id)_defaultInlineTitleAttributes;
 - (void)_setupTrailingButtonBarAnimated:(_Bool)arg1;
 - (void)_setupLeadingButtonBarAnimated:(_Bool)arg1;
 - (void)setNeedsBackButtonUpdate;
 - (void)_setupBackButtonAnimated:(_Bool)arg1;
 - (void)__backButtonAction:(id)arg1;
 @property(readonly, nonatomic) float currentHeight;
-@property(nonatomic) int barMetrics; // @synthesize barMetrics=_barMetrics;
+- (_Bool)compactMetrics;
 @property(readonly, nonatomic) int currentContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
 - (id)_newLayout;
 - (int)_currentContentSize;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

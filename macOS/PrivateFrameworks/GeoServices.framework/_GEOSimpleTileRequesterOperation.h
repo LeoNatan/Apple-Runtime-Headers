@@ -37,8 +37,10 @@ __attribute__((visibility("hidden")))
     // Error parsing type: AI, name: _priority
     GEODataSession *_dataSession;
     unsigned long long _signpostID;
+    BOOL _shouldDownloadToDisk;
 }
 
+@property(nonatomic) BOOL shouldDownloadToDisk; // @synthesize shouldDownloadToDisk=_shouldDownloadToDisk;
 @property(readonly, nonatomic, getter=isExistingCachedDataCurrent) BOOL existingCachedDataCurrent; // @synthesize existingCachedDataCurrent=_existingCachedDataCurrent;
 @property(retain, nonatomic) GEOClientMetrics *clientMetrics; // @synthesize clientMetrics=_clientMetrics;
 @property(retain, nonatomic) NSString *responseEtag; // @synthesize responseEtag=_responseEtag;
@@ -48,11 +50,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL finished; // @synthesize finished=_finished;
 @property(retain, nonatomic) _GEOSimpleTileRequesterOperation *localizationTile; // @synthesize localizationTile=_localizationTile;
 @property(retain, nonatomic) _GEOSimpleTileRequesterOperation *baseTile; // @synthesize baseTile=_baseTile;
-@property unsigned int tileEdition; // @synthesize tileEdition=_tileEdition;
+@property(nonatomic) unsigned int tileEdition; // @synthesize tileEdition=_tileEdition;
 @property(retain, nonatomic) NSString *editionHeader; // @synthesize editionHeader=_editionHeader;
 @property(retain, nonatomic) GEODataSessionTask *task; // @synthesize task=_task;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-@property struct _GEOTileKey key; // @synthesize key=_key;
+@property(nonatomic) struct _GEOTileKey key; // @synthesize key=_key;
 @property(retain, nonatomic) NSObject<OS_os_activity> *parentTileActivity; // @synthesize parentTileActivity=_parentTileActivity;
 @property(retain, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
 @property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
@@ -63,6 +65,8 @@ __attribute__((visibility("hidden")))
 - (void)taskFailed:(id)arg1 withError:(id)arg2;
 - (BOOL)validateTileIntegrityForTask:(id)arg1;
 - (void)dataSession:(id)arg1 didCompleteTask:(id)arg2;
+@property(readonly, nonatomic) NSURL *downloadedFileURL;
+- (const struct _GEOTileKey *)keyPtr;
 @property(readonly, nonatomic) BOOL responseIsCacheable;
 @property(readonly, nonatomic) long long responseSource;
 @property(readonly, nonatomic) int httpResponseStatusCode;

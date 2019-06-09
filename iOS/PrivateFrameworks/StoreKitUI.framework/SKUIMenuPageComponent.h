@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, NSString, SKUISegmentedControlViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuPageComponent : SKUIPageComponent
 {
     NSMutableArray *_childrenComponents;

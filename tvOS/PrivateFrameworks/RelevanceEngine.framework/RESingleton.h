@@ -14,6 +14,7 @@
 + (void)_incrementSingletonCache;
 + (id)_classKey;
 + (id)sharedInstance;
+- (id)_init;
 
 @end
 

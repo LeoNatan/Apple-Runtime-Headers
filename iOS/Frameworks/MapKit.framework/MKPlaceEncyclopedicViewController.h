@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <MKPlaceCardEncyclopedicControllerDelegate> encyclopedicControllerDelegate; // @synthesize encyclopedicControllerDelegate=_encyclopedicControllerDelegate;
 @property(retain, nonatomic) id <GEOEncyclopedicInfo> encyclopedicInfo; // @synthesize encyclopedicInfo=_encyclopedicInfo;
 - (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (id)_textBlockText;
 - (id)_textBlockTitle;

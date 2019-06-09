@@ -8,6 +8,9 @@
 
 #import <FinderKit/TShrinkToFitDelegateProtocol-Protocol.h>
 
+@class NSObject, NSString;
+@protocol TableView_Common_Delegate;
+
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserTableView : NSBrowserTableView <TShrinkToFitDelegateProtocol>
 {
@@ -15,17 +18,12 @@ __attribute__((visibility("hidden")))
     _Bool _itemHitOnMouseDown;
     struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
     struct TNotificationCenterObserver _clipViewBoundsChangedObserver;
-    _Bool _showingAnyColorTags;
-    _Bool _showICloudDriveContent;
-    unordered_set_931aff12 _nodesWithBadgeImages;
     long long _disabledTrackingRow;
     struct TNSRef<FI_TBrowserImmediateActionGestureRecognizerDelegate, void> _immediateActionGestureRecognizerDelegate;
     struct TNSRef<NSImmediateActionGestureRecognizer, void> _quickLookImmediateActionGestureRecognizer;
     struct TNSRef<NSImmediateActionGestureRecognizer, void> _renameImmediateActionGestureRecognizer;
 }
 
-@property(nonatomic) _Bool showICloudDriveContent; // @synthesize showICloudDriveContent=_showICloudDriveContent;
-@property(nonatomic) _Bool showingAnyColorTags; // @synthesize showingAnyColorTags=_showingAnyColorTags;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_setUpImmediateActionGestureRecognizers;
@@ -63,7 +61,6 @@ __attribute__((visibility("hidden")))
 - (void)invalidateThumbnailForKeyNodes:(const struct TFENodeVector *)arg1;
 - (void)selectRowIndexes:(id)arg1 byExtendingSelection:(BOOL)arg2;
 - (void)scrollSelectedRowToVisible;
-- (void)dragImage:(id)arg1 at:(struct CGPoint)arg2 offset:(struct CGSize)arg3 event:(id)arg4 pasteboard:(id)arg5 source:(id)arg6 slideBack:(BOOL)arg7;
 - (_Bool)_wantsLiveResizeToUseCachedImage;
 - (id)menuForEvent:(id)arg1;
 - (void)quickLookWithEvent:(id)arg1;
@@ -72,14 +69,9 @@ __attribute__((visibility("hidden")))
 - (void)mouseDown:(id)arg1;
 - (_Bool)_typeSelectInterpretKeyEvent:(id)arg1;
 - (void)mouseDragged:(id)arg1;
-- (_Bool)commonMouseDownAndEarlyReturn:(id)arg1 controller:(id)arg2;
-- (void)_trackDisabledClickWithEvent:(id)arg1 controller:(id)arg2;
-@property long long disabledTrackingRow;
-- (void)setForceSpaceForBadgeImagesOnCellViews:(_Bool)arg1;
-- (void)removeNodesWithoutBadgeImages:(const struct TFENodeVector *)arg1;
-- (void)updateNode:(const struct TFENode *)arg1 withBadgeImage:(_Bool)arg2;
-- (void)updateBadgeImageForCellView:(id)arg1 node:(const struct TFENode *)arg2;
-@property(readonly, nonatomic) _Bool showingAnyBadgeImages; // @dynamic showingAnyBadgeImages;
+- (_Bool)commonMouseDownAndEarlyReturn:(id)arg1;
+- (void)_trackDisabledClickWithEvent:(id)arg1;
+@property long long disabledTrackingRow; // @synthesize disabledTrackingRow=_disabledTrackingRow;
 - (_Bool)handleUnicodeTextInput:(id)arg1 atTime:(double)arg2;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
@@ -88,13 +80,19 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)becomeFirstResponder;
+@property(readonly) __weak NSObject<TableView_Common_Delegate> *tvcDelegate;
 - (BOOL)acceptsFirstResponder;
 - (void)dealloc;
 - (struct TFENode)targetNode;
-- (id)viewController;
 - (id)columnViewController;
 - (BOOL)_supportsTrackingAreasForCells;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

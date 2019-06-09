@@ -12,5 +12,6 @@
 - (void)_af_extractDialogInfo:(CDUnknownBlockType)arg1;
 - (id)_af_dialogIdentifier;
 - (id)_af_dialogPhase;
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
 @end
 

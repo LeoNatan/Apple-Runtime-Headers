@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class FPMemoryObject, NSString;
+@class FPMemoryObject, FPRangeList, NSString;
 
 @interface FPMemoryRegion : NSObject
 {
+    unsigned int _wired:1;
+    unsigned int _inSharedCache:1;
+    unsigned int _unusedSharedCacheRegion:1;
+    unsigned int _purgeableNonVolatile:1;
     unsigned char _segment;
     unsigned char _share_mode;
-    BOOL _inSharedCache;
-    BOOL _unusedSharedCacheRegion;
-    BOOL _purgeableNonVolatile;
     unsigned int _user_tag;
     FPMemoryObject *_memoryObject;
     NSString *_name;
@@ -26,32 +27,40 @@
     unsigned long long _reclaimableSize;
     unsigned long long _swappedSize;
     unsigned long long _cleanNonSpecSize;
-    unsigned long long _wiredSize;
     unsigned long long _object_id;
+    FPRangeList *_subrangeList;
 }
 
 + (id)categoryNameForTag:(unsigned int)arg1;
-@property(nonatomic) BOOL purgeableNonVolatile; // @synthesize purgeableNonVolatile=_purgeableNonVolatile;
-@property(nonatomic) BOOL unusedSharedCacheRegion; // @synthesize unusedSharedCacheRegion=_unusedSharedCacheRegion;
-@property(nonatomic) BOOL inSharedCache; // @synthesize inSharedCache=_inSharedCache;
-@property unsigned char share_mode; // @synthesize share_mode=_share_mode;
-@property unsigned long long object_id; // @synthesize object_id=_object_id;
-@property unsigned int user_tag; // @synthesize user_tag=_user_tag;
-@property unsigned long long wiredSize; // @synthesize wiredSize=_wiredSize;
-@property unsigned long long cleanNonSpecSize; // @synthesize cleanNonSpecSize=_cleanNonSpecSize;
-@property unsigned long long swappedSize; // @synthesize swappedSize=_swappedSize;
-@property unsigned long long reclaimableSize; // @synthesize reclaimableSize=_reclaimableSize;
-@property unsigned long long dirtySize; // @synthesize dirtySize=_dirtySize;
+@property(retain, nonatomic) FPRangeList *subrangeList; // @synthesize subrangeList=_subrangeList;
+@property(nonatomic) unsigned char share_mode; // @synthesize share_mode=_share_mode;
+@property(nonatomic) unsigned long long object_id; // @synthesize object_id=_object_id;
+@property(nonatomic) unsigned int user_tag; // @synthesize user_tag=_user_tag;
+@property(nonatomic) unsigned long long cleanNonSpecSize; // @synthesize cleanNonSpecSize=_cleanNonSpecSize;
+@property(nonatomic) unsigned long long swappedSize; // @synthesize swappedSize=_swappedSize;
+@property(nonatomic) unsigned long long reclaimableSize; // @synthesize reclaimableSize=_reclaimableSize;
+@property(nonatomic) unsigned long long dirtySize; // @synthesize dirtySize=_dirtySize;
 @property(nonatomic) unsigned char segment; // @synthesize segment=_segment;
-@property unsigned long long size; // @synthesize size=_size;
-@property unsigned long long start; // @synthesize start=_start;
-@property unsigned long long offset; // @synthesize offset=_offset;
-@property(copy) NSString *detailedName; // @synthesize detailedName=_detailedName;
-@property(copy) NSString *name; // @synthesize name=_name;
-@property __weak FPMemoryObject *memoryObject; // @synthesize memoryObject=_memoryObject;
+@property(nonatomic) unsigned long long size; // @synthesize size=_size;
+@property(nonatomic) unsigned long long start; // @synthesize start=_start;
+@property(nonatomic) unsigned long long offset; // @synthesize offset=_offset;
+@property(copy, nonatomic) NSString *detailedName; // @synthesize detailedName=_detailedName;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(nonatomic) FPMemoryObject *memoryObject; // @synthesize memoryObject=_memoryObject;
 - (void).cxx_destruct;
+- (BOOL)eligibleForSubrangesUsingPageSize:(unsigned long long)arg1;
+@property(readonly, nonatomic) BOOL eligibleForProcessView;
+@property(readonly, nonatomic) NSString *fullName;
+- (void)freeSubrangeList;
+- (void)addSubrange:(struct _NSRange)arg1 memoryTotal:(CDStruct_8346b022 *)arg2 pageSize:(unsigned long long)arg3;
+@property(readonly, nonatomic) BOOL ownedExclusivelyByParentProcess;
+@property(readonly, nonatomic) unsigned long long wiredSize;
 - (long long)compare:(id)arg1;
-@property unsigned long long end;
+@property(nonatomic) unsigned long long end;
+@property(nonatomic) BOOL purgeableNonVolatile;
+@property(nonatomic) BOOL unusedSharedCacheRegion;
+@property(nonatomic) BOOL inSharedCache;
+@property(nonatomic) BOOL wired;
 
 @end
 

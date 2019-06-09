@@ -12,21 +12,25 @@ __attribute__((visibility("hidden")))
 @interface NSWidgetView : NSView
 {
     NSDictionary *_widgetDefinition;
+    NSDictionary *_maskWidgetDefinition;
 }
 
 + (id)keyPathsForValuesInvalidatingIntrinsicContentSize;
 + (id)keyPathsForValuesInvalidatingDisplay;
+@property(copy) NSDictionary *maskWidgetDefinition; // @synthesize maskWidgetDefinition=_maskWidgetDefinition;
 @property(copy) NSDictionary *widgetDefinition; // @synthesize widgetDefinition=_widgetDefinition;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
 - (id)_queryWidgetMetrics:(id)arg1;
 @property(readonly) unsigned long long scalableAxes;
+@property(readonly) struct CGSize widgetSize;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (struct CGSize)intrinsicContentSize;
 - (int)_vibrancyBlendMode;
 - (BOOL)allowsVibrancy;
 - (void)drawFocusRingMask;
 - (struct CGRect)focusRingMaskBounds;
+- (void)layout;
 - (void)updateLayer;
 - (void)drawRect:(struct CGRect)arg1;
 - (BOOL)wantsUpdateLayer;

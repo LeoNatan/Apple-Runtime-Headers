@@ -8,6 +8,7 @@
 
 @class ACAccountStore;
 
+__attribute__((visibility("hidden")))
 @interface ACRemoteCommandHandler : NSObject
 {
     ACAccountStore *_accountStore;

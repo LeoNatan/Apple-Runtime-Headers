@@ -9,5 +9,6 @@
 @interface NSButton (AppKit_SiriUIFrameworkAdditions)
 - (void)setTextColor:(id)arg1;
 - (void)setSelected:(BOOL)arg1;
+- (void)vtui_setTitleColor:(id)arg1;
 @end
 

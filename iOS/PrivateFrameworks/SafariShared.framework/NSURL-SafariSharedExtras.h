@@ -25,6 +25,7 @@
 - (id)safari_originalDataAsString;
 - (id)safari_displayNameWithTitle:(id)arg1;
 - (_Bool)safari_hasCharactersBeyondPath;
+@property(readonly, nonatomic) NSURL *safari_canonicalURLForStartPage;
 - (id)safari_canonicalURL;
 - (id)safari_URLByDeletingUserAndPassword;
 - (_Bool)safari_hasUserOrPassword;

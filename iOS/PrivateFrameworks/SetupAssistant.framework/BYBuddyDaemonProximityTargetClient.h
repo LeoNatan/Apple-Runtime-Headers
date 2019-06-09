@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <SetupAssistant/BYBuddyDaemonProximityTargetProtocol-Protocol.h>
-#import <SetupAssistant/BYDaemonProximityTargetProtocol-Protocol.h>
 
 @class NSString, NSXPCConnection;
 @protocol BYBuddyDaemonProximityTargetProtocol;
 
-@interface BYBuddyDaemonProximityTargetClient : NSObject <BYDaemonProximityTargetProtocol, BYBuddyDaemonProximityTargetProtocol>
+@interface BYBuddyDaemonProximityTargetClient : NSObject <BYBuddyDaemonProximityTargetProtocol>
 {
     id <BYBuddyDaemonProximityTargetProtocol> _delegate;
     NSXPCConnection *_connection;
@@ -22,13 +21,17 @@
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <BYBuddyDaemonProximityTargetProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)receivedLanguages:(id)arg1 locale:(id)arg2 model:(id)arg3 deviceClass:(id)arg4;
+- (void)receivedLanguages:(id)arg1 locale:(id)arg2 model:(id)arg3 deviceClass:(id)arg4 accessibilitySettings:(id)arg5;
+- (void)proximityConnectionReconnected;
 - (void)proximityConnectionTerminated;
 - (void)proximityConnectionInitiated;
 - (void)proximityConnectionPreparing:(id)arg1;
 - (void)dismissProximityPinCode;
 - (void)displayProximityPinCode:(id)arg1 visual:(_Bool)arg2;
 - (void)proximititySetupCompleted:(id)arg1;
+- (void)suspendConnectionForSoftwareUpdate:(CDUnknownBlockType)arg1;
+- (void)endDeviceToDeviceMigration;
+- (id)beginDeviceToDeviceMigration;
 - (void)storeHandshake:(id)arg1;
 - (void)storeInformation:(id)arg1;
 - (void)resumeProximitySetup:(CDUnknownBlockType)arg1;

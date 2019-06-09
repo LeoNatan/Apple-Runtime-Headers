@@ -21,5 +21,8 @@
 - (BOOL)_abComparePrefixMatch:(id)arg1 options:(unsigned long long)arg2;
 - (BOOL)_abCompareContainsSubString:(id)arg1 options:(unsigned long long)arg2;
 - (long long)_abCompare:(id)arg1 ascending:(BOOL)arg2 options:(unsigned long long)arg3;
+- (id)abDictionaryWithValuesForKeyPaths:(id)arg1;
+- (void)abRemoveObserverIgnoringExceptions:(id)arg1 forKeyPath:(id)arg2;
+- (BOOL)abCaseInsensitiveIsEqual:(id)arg1;
 @end
 

@@ -13,9 +13,20 @@
 + (id)hk_invalidProfileError;
 + (id)hk_featureUnavailableForProfileError;
 + (id)hk_protectedDataInaccessibilityError;
++ (id)hk_healthDataUnavailableError;
 + (id)hk_error:(int)arg1 format:(id)arg2;
 + (id)hk_error:(int)arg1 description:(id)arg2 underlyingError:(id)arg3;
 + (id)hk_error:(int)arg1 description:(id)arg2;
++ (id)_hk_OAuth2_errorFromResponseData:(id)arg1 defaultError:(id)arg2 parseError:(out id *)arg3;
++ (id)_hk_OAuth2_errorForBadRequestStatusWithResponse:(id)arg1 data:(id)arg2;
++ (id)_hk_OAuth2_errorForUnauthorizedStatusWithRequest:(id)arg1 response:(id)arg2;
++ (id)_hk_OAuth2_rawErrorForRequest:(id)arg1 response:(id)arg2 data:(id)arg3;
++ (id)hk_OAuth2_errorForRequest:(id)arg1 response:(id)arg2 data:(id)arg3;
++ (id)hk_OAuth2_errorFromErrorValue:(id)arg1;
++ (id)_hk_OAuth2_defaultDescriptionForErrorCode:(int)arg1;
++ (id)_hk_OAuth2_error:(int)arg1 userInfo:(id)arg2 underlyingError:(id)arg3;
++ (id)hk_OAuth2_error:(int)arg1 underlyingError:(id)arg2;
++ (id)hk_OAuth2_error:(int)arg1;
 - (id)hk_errorByAddingEntriesToUserInfo:(id)arg1;
 - (id)hk_sanitizedError;
 - (id)hk_underlyingErrorWithDomain:(id)arg1;
@@ -34,5 +45,10 @@
 - (_Bool)hk_isDatabaseAccessibilityError;
 - (_Bool)hk_isHealthKitErrorWithCode:(int)arg1;
 - (_Bool)hk_isHealthKitError;
+- (id)_hk_OAuth2_errorByAddingItemsToUserInfo:(id)arg1;
+- (_Bool)hk_OAuth2_isBearerAuthenticationError;
+- (_Bool)hk_OAuth2_isAccessDeniedError;
+- (_Bool)hk_OAuth2_isOAuth2ErrorWithCode:(int)arg1;
+- (_Bool)hk_OAuth2_isOAuth2Error;
 @end
 

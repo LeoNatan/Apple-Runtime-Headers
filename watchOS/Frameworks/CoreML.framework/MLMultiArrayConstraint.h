@@ -8,22 +8,26 @@
 
 #import <CoreML/MLFeatureValueConstraint-Protocol.h>
 #import <CoreML/NSCopying-Protocol.h>
+#import <CoreML/NSSecureCoding-Protocol.h>
 
 @class MLMultiArrayShapeConstraint, NSArray;
 
-@interface MLMultiArrayConstraint : NSObject <MLFeatureValueConstraint, NSCopying>
+@interface MLMultiArrayConstraint : NSObject <MLFeatureValueConstraint, NSCopying, NSSecureCoding>
 {
     NSArray *_shape;
     int _dataType;
     MLMultiArrayShapeConstraint *_shapeConstraint;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)constraintWithShape:(id)arg1 dataType:(int)arg2;
 + (id)constraintWithShape:(id)arg1 dataType:(int)arg2 shapeConstraint:(id)arg3;
 @property(readonly, nonatomic) MLMultiArrayShapeConstraint *shapeConstraint; // @synthesize shapeConstraint=_shapeConstraint;
 @property(readonly, nonatomic) int dataType; // @synthesize dataType=_dataType;
 @property(readonly, nonatomic) NSArray *shape; // @synthesize shape=_shape;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isAllowedValue:(id)arg1 error:(id *)arg2;

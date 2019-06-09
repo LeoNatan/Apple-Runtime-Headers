@@ -40,6 +40,7 @@
 @property(retain, nonatomic) PXSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
 - (void)settings:(id)arg1 changedValueForKeyPath:(id)arg2;
+@property(readonly, copy) NSString *description;
 - (void)prepareValueViewForReuse:(id)arg1;
 - (void)updateValueView:(id)arg1;
 - (id)createValueView;
@@ -57,7 +58,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

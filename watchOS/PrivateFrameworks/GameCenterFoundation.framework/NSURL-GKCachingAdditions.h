@@ -8,5 +8,10 @@
 
 @interface NSURL (GKCachingAdditions)
 - (id)cacheKeyRepresentation;
+- (id)_gkQueryDictionary;
+- (id)_gkURLByReplacingSchemeWithScheme:(id)arg1;
+- (id)_gkURLByAddingQueryParameters:(id)arg1;
+- (_Bool)_gkIsSecure;
+- (_Bool)_gkIsValidServerURL;
 @end
 

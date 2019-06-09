@@ -7,7 +7,6 @@
 #import <Foundation/NSCharacterSet.h>
 
 @interface NSCharacterSet (ICNFMCMailCoreAdditions)
-+ (id)replacementCharacterSet;
-+ (id)unsafeDomainNameCharacterSet;
++ (id)ic_unsafeDomainNameCharacterSet;
 @end
 

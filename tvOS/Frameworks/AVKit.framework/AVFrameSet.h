@@ -9,6 +9,7 @@
 @class AVAsset, AVAssetImageGenerator, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSURL;
 @protocol AVFrameSetDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVFrameSet : NSObject
 {
     struct os_unfair_lock_s _unfairLock;

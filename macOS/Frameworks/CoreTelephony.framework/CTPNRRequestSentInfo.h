@@ -29,6 +29,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToCTPNRRequestSentInfo:(id)arg1;
 - (id)init;
+- (id)description;
 
 @end
 

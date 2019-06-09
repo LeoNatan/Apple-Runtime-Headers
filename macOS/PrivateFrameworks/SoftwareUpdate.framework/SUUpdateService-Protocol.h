@@ -24,6 +24,7 @@
 - (void)preparationRequiredForProductKeys:(NSArray *)arg1 reply:(void (^)(BOOL, BOOL, BOOL))arg2;
 - (void)combinedStatusForUpdatesWithProductKeys:(NSArray *)arg1 reply:(void (^)(SUUpdateStatus *, NSDictionary *))arg2;
 - (void)statusForUpdateWithProductKey:(NSString *)arg1 reply:(void (^)(SUUpdateStatus *))arg2;
+- (void)rebootForPostLogoutUpdatesAfterSuccess:(BOOL)arg1 nightInstall:(BOOL)arg2 shouldShutDown:(BOOL)arg3 reply:(void (^)(BOOL))arg4;
 - (void)takeRequestsToInstallAfterPostLogoutUpdatesWithReply:(void (^)(NSArray *, BOOL))arg1;
 - (void)registerRequestsToInstallAfterPostLogoutUpdates:(NSArray *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)configureProgressPhasesEnablingFLO:(NSDictionary *)arg1 finishBlock:(void (^)(void))arg2;
@@ -62,14 +63,12 @@
 - (void)installedUpdateJournalPrunedAndSortedWithReply:(void (^)(NSArray *))arg1;
 - (void)installedUpdateJournalWithReply:(void (^)(NSArray *))arg1;
 - (void)installStatus:(SUUpdateStatus *)arg1 didChangeExternallyForProductKey:(NSString *)arg2;
-- (void)currentDevKeyModeWithReply:(void (^)(NSString *, SUDevKey *))arg1;
+- (void)currentDevKeyModeWithReply:(void (^)(NSString *))arg1;
 - (void)clearInvalidationForIdentifier:(NSString *)arg1 version:(NSString *)arg2 forReason:(int)arg3;
 - (void)fetchMajorOSInfoForProductKey:(NSString *)arg1 reply:(void (^)(SUMajorProduct *))arg2;
-- (void)remainingPackageIdentifiersToInstallForProductKey:(NSString *)arg1 reply:(void (^)(NSArray *))arg2;
-- (void)packageReferenceForMatchingIdentifier:(NSString *)arg1 productKey:(NSString *)arg2 invalidatingPrevious:(BOOL)arg3 reply:(void (^)(NSDictionary *))arg4;
 - (void)availableUpdatesOfType:(long long)arg1 withState:(long long)arg2 filteredByState:(unsigned long long)arg3 filterDeferred:(BOOL)arg4 filterDuplicates:(BOOL)arg5 reply:(void (^)(NSArray *, NSArray *, BOOL))arg6;
 - (void)endTransactions;
-- (void)takeInstallNotificationsOfType:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;
+- (void)takeInstallNotificationsOfType:(NSString *)arg1 withReply:(void (^)(NSDictionary *, NSArray *))arg2;
 - (void)authorizeForManagingDaemonWithExternalFormData:(NSData *)arg1 reply:(void (^)(BOOL))arg2;
 - (void)authorizeForUpdatingWithExternalFormData:(NSData *)arg1 additionalTransactions:(unsigned long long)arg2 reply:(void (^)(BOOL))arg3;
 @end

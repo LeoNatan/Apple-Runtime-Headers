@@ -8,6 +8,7 @@
 
 @class MediaControlsRoutingButtonPackageView;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsRoutingButtonView : MPButton
 {
     long long _currentMode;

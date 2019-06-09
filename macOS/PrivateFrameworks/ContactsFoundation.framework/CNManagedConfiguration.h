@@ -15,7 +15,7 @@
     id <CNManagedProfileConnection> _profileConnection;
 }
 
-+ (id)bundleIdentifierForAuditToken:(CDStruct_6ad76789 *)arg1;
++ (id)bundleIdentifierForAuditToken:(CDStruct_4c969caf *)arg1;
 + (id)os_log;
 @property(readonly, nonatomic) id <CNManagedProfileConnection> profileConnection; // @synthesize profileConnection=_profileConnection;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
@@ -33,7 +33,7 @@
 - (BOOL)canReadFromLocalAccount;
 - (BOOL)deviceHasManagementRestrictions;
 - (id)initWithBundleIdentifier:(id)arg1 managedProfileConnection:(id)arg2;
-- (id)initWithAuditToken:(CDStruct_6ad76789)arg1 managedProfileConnection:(id)arg2;
+- (id)initWithAuditToken:(CDStruct_4c969caf)arg1 managedProfileConnection:(id)arg2;
 
 @end
 

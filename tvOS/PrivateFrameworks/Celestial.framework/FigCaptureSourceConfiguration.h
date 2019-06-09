@@ -20,6 +20,8 @@
     FigCaptureSourceVideoFormat *_requiredFormat;
     float _requiredMaxFrameRate;
     float _requiredMinFrameRate;
+    float _maxFrameRateClientOverride;
+    float _maxGainClientOverride;
     _Bool _hasSetVideoZoomFactorOnCaptureSource;
     float _videoZoomFactor;
     float _videoZoomRampAcceleration;
@@ -36,6 +38,8 @@
     _Bool _lowLightVideoCaptureEnabled;
 }
 
++ (id)stringForSourceDeviceType:(int)arg1;
++ (id)stringForSourcePosition:(int)arg1;
 + (int)sourceTypeForString:(id)arg1;
 + (id)stringForSourceType:(int)arg1;
 @property(nonatomic) _Bool lowLightVideoCaptureEnabled; // @synthesize lowLightVideoCaptureEnabled=_lowLightVideoCaptureEnabled;
@@ -52,17 +56,19 @@
 @property(nonatomic) float videoZoomRampAcceleration; // @synthesize videoZoomRampAcceleration=_videoZoomRampAcceleration;
 @property(nonatomic) float videoZoomFactor; // @synthesize videoZoomFactor=_videoZoomFactor;
 @property(nonatomic) _Bool hasSetVideoZoomFactorOnCaptureSource; // @synthesize hasSetVideoZoomFactorOnCaptureSource=_hasSetVideoZoomFactorOnCaptureSource;
+@property(nonatomic) float maxGainClientOverride; // @synthesize maxGainClientOverride=_maxGainClientOverride;
+@property(nonatomic) float maxFrameRateClientOverride; // @synthesize maxFrameRateClientOverride=_maxFrameRateClientOverride;
 @property(nonatomic) float requiredMinFrameRate; // @synthesize requiredMinFrameRate=_requiredMinFrameRate;
 @property(nonatomic) float requiredMaxFrameRate; // @synthesize requiredMaxFrameRate=_requiredMaxFrameRate;
 @property(retain, nonatomic) FigCaptureSourceVideoFormat *requiredFormat; // @synthesize requiredFormat=_requiredFormat;
 @property(copy, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;
-- (int)_deviceType;
 - (id)_sourceUID;
 - (int)_sourceToken;
 - (_Bool)_isMicSource;
 - (_Bool)_isCameraSource;
 - (id)_sourceAttributes;
 @property(readonly, nonatomic) struct OpaqueFigCaptureSource *source;
+@property(readonly, nonatomic) int sourceDeviceType;
 @property(readonly, nonatomic) int sourceType;
 @property(readonly, nonatomic) int sourcePosition;
 - (_Bool)isEqual:(id)arg1;

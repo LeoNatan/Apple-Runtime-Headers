@@ -8,17 +8,19 @@
 
 #import <CloudDocsDaemon/BRCOperationSubclass-Protocol.h>
 
-@class NSString;
+@class BRCAccountSession, NSString;
 
 __attribute__((visibility("hidden")))
 @interface BRCSharingFetchUserRecordIDOperation : _BRCOperation <BRCOperationSubclass>
 {
+    BRCAccountSession *_session;
 }
 
+- (void).cxx_destruct;
 - (void)main;
 - (_Bool)shouldRetryForError:(id)arg1;
 - (id)createActivity;
-- (id)initWithSyncContext:(id)arg1;
+- (id)initWithSession:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

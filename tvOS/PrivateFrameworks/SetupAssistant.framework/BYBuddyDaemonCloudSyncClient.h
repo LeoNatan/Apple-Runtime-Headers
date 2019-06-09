@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <SetupAssistant/BYClientDaemonCloudSyncProtocol-Protocol.h>
-#import <SetupAssistant/BYDaemonCloudSyncProtocol-Protocol.h>
 
 @class NSString, NSXPCConnection;
 @protocol BYClientDaemonCloudSyncProtocol;
 
-@interface BYBuddyDaemonCloudSyncClient : NSObject <BYDaemonCloudSyncProtocol, BYClientDaemonCloudSyncProtocol>
+@interface BYBuddyDaemonCloudSyncClient : NSObject <BYClientDaemonCloudSyncProtocol>
 {
     id <BYClientDaemonCloudSyncProtocol> _delegate;
     NSXPCConnection *_connection;
@@ -24,9 +23,11 @@
 - (void).cxx_destruct;
 - (void)syncCompletedWithErrors:(id)arg1;
 - (void)syncProgress:(double)arg1;
+- (void)connectToDaemon;
+- (void)cloudSyncProgressUpdate:(long long)arg1 completedClients:(long long)arg2 errors:(id)arg3;
+- (void)cancelSync;
 - (void)startSync;
 - (void)needsToSync:(CDUnknownBlockType)arg1;
-- (void)connectToDaemon;
 - (id)init;
 
 // Remaining properties

@@ -11,7 +11,7 @@
 
 @interface CUIRenditionKey : NSObject <NSCopying, NSCoding>
 {
-    struct _renditionkeytoken _stackKey[18];
+    struct _renditionkeytoken _stackKey[22];
     struct _renditionkeytoken *_key;
     unsigned short _highwaterKeyCount;
 }
@@ -22,52 +22,32 @@
 - (id)descriptionBasedOnKeyFormat:(const struct _renditionkeyfmt *)arg1;
 - (id)nameOfAttributeName:(int)arg1;
 - (id)description;
-- (int)themeDeploymentTarget;
-- (void)setThemeDeploymentTarget:(int)arg1;
-- (int)themeDisplayGamut;
-- (void)setThemeDisplayGamut:(int)arg1;
-- (int)themeAppearance;
-- (void)setThemeAppearance:(int)arg1;
-- (int)themeIdentifier;
-- (void)setThemeIdentifier:(int)arg1;
-- (int)themeGraphicsClass;
-- (void)setThemeGraphicsClass:(int)arg1;
-- (int)themeMemoryClass;
-- (void)setThemeMemoryClass:(int)arg1;
-- (int)themeSizeClassVertical;
-- (void)setThemeSizeClassVertical:(int)arg1;
-- (int)themeSizeClassHorizontal;
-- (void)setThemeSizeClassHorizontal:(int)arg1;
-- (int)themeSubtype;
-- (void)setThemeSubtype:(int)arg1;
-- (int)themeIdiom;
-- (void)setThemeIdiom:(int)arg1;
-- (int)themeScale;
-- (void)setThemeScale:(int)arg1;
-- (int)themeLayer;
-- (void)setThemeLayer:(int)arg1;
-- (int)themePresentationState;
-- (void)setThemePresentationState:(int)arg1;
-- (int)themePreviousState;
-- (void)setThemePreviousState:(int)arg1;
-- (int)themeState;
-- (void)setThemeState:(int)arg1;
-- (int)themeDimension2;
-- (void)setThemeDimension2:(int)arg1;
-- (int)themeDimension1;
-- (void)setThemeDimension1:(int)arg1;
-- (int)themePreviousValue;
-- (void)setThemePreviousValue:(int)arg1;
-- (int)themeValue;
-- (void)setThemeValue:(int)arg1;
-- (int)themeDirection;
-- (void)setThemeDirection:(int)arg1;
-- (int)themeSize;
-- (void)setThemeSize:(int)arg1;
-- (int)themePart;
-- (void)setThemePart:(int)arg1;
-- (int)themeElement;
-- (void)setThemeElement:(int)arg1;
+@property(nonatomic) int themeGlyphWeight;
+@property(nonatomic) int themeGlyphSize;
+@property(nonatomic) int themeDeploymentTarget;
+@property(nonatomic) int themeDisplayGamut;
+@property(nonatomic) int themeLocalization;
+@property(nonatomic) int themeAppearance;
+@property(nonatomic) int themeIdentifier;
+@property(nonatomic) int themeGraphicsClass;
+@property(nonatomic) int themeMemoryClass;
+@property(nonatomic) int themeSizeClassVertical;
+@property(nonatomic) int themeSizeClassHorizontal;
+@property(nonatomic) int themeSubtype;
+@property(nonatomic) int themeIdiom;
+@property(nonatomic) int themeScale;
+@property(nonatomic) int themeLayer;
+@property(nonatomic) int themePresentationState;
+@property(nonatomic) int themePreviousState;
+@property(nonatomic) int themeState;
+@property(nonatomic) int themeDimension2;
+@property(nonatomic) int themeDimension1;
+@property(nonatomic) int themePreviousValue;
+@property(nonatomic) int themeValue;
+@property(nonatomic) int themeDirection;
+@property(nonatomic) int themeSize;
+@property(nonatomic) int themePart;
+@property(nonatomic) int themeElement;
 - (id)initWithThemeElement:(int)arg1 themePart:(int)arg2 themeSize:(int)arg3 themeDirection:(int)arg4 themeValue:(int)arg5 themeDimension1:(int)arg6 themeDimension2:(int)arg7 themeState:(int)arg8 themePresentationState:(int)arg9 themeLayer:(int)arg10 themeScale:(int)arg11 themeIdentifier:(int)arg12;
 - (const struct _renditionkeytoken *)keyList;
 - (void)removeValueForKeyTokenIdentifier:(int)arg1;
@@ -80,7 +60,6 @@
 - (id)initWithKeyList:(const struct _renditionkeytoken *)arg1;
 - (id)init;
 - (void)_expandKeyIfNecessaryForCount:(int)arg1;
-- (unsigned short)_systemTokenCount;
 
 @end
 

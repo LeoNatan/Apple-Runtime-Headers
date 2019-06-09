@@ -13,17 +13,17 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)setPreferenceValue:(id)arg1 forKey:(id)arg2 forApplicationAtURL:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)garbageCollectDatabaseWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)removeTranslocatedContainer:(unsigned int)arg1;
+- (void)removeContainer:(unsigned int)arg1;
 - (void)resetServerStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeHandlerForURLScheme:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 forURLScheme:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)setHandler:(id)arg1 version:(struct LSVersionNumber)arg2 forURLScheme:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)removeHandlerForContentType:(id)arg1 roles:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setHandlerOptions:(unsigned int)arg1 forContentType:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setHandler:(id)arg1 version:(unsigned long long)arg2 roles:(unsigned int)arg3 forContentType:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)setHandler:(id)arg1 version:(struct LSVersionNumber)arg2 roles:(unsigned int)arg3 forContentType:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)registerSelf;
-- (void)unregisterExtensionPoint:(id)arg1 withVersion:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)registerExtensionPoint:(id)arg1 withInfo:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)unregisterExtensionPoint:(id)arg1 platform:(unsigned int)arg2 withVersion:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)registerExtensionPoint:(id)arg1 platform:(unsigned int)arg2 withInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)updateContainerUnit:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)registerContainerURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)unregisterBundleUnit:(unsigned int)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;

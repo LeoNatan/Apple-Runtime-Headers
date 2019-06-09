@@ -8,7 +8,6 @@
 
 @class PVFace;
 
-__attribute__((visibility("hidden")))
 @interface PVFacePair : NSObject
 {
     PVFace *_face1;

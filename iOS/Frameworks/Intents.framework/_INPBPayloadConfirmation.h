@@ -14,18 +14,34 @@
 
 @interface _INPBPayloadConfirmation : PBCodable <_INPBPayloadConfirmation, NSSecureCoding, NSCopying>
 {
-    struct _has;
+    struct {
+        unsigned int reason:1;
+        unsigned int addTasksIntentTargetTaskListConfirmationReason:1;
+    } _has;
+    int _reason;
+    int _addTasksIntentTargetTaskListConfirmationReason;
     _INPBSelectionItem *_confirmationItem;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(nonatomic) int addTasksIntentTargetTaskListConfirmationReason; // @synthesize addTasksIntentTargetTaskListConfirmationReason=_addTasksIntentTargetTaskListConfirmationReason;
+@property(nonatomic) int reason; // @synthesize reason=_reason;
 @property(retain, nonatomic) _INPBSelectionItem *confirmationItem; // @synthesize confirmationItem=_confirmationItem;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (int)StringAsAddTasksIntentTargetTaskListConfirmationReason:(id)arg1;
+- (id)addTasksIntentTargetTaskListConfirmationReasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasAddTasksIntentTargetTaskListConfirmationReason;
+- (int)StringAsReason:(id)arg1;
+- (id)reasonAsString:(int)arg1;
+@property(nonatomic) _Bool hasReason;
 @property(readonly, nonatomic) _Bool hasConfirmationItem;
 
 // Remaining properties

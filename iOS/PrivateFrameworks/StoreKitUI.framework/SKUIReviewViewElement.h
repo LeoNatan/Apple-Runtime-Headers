@@ -8,6 +8,7 @@
 
 @class SKUIDialogTemplateViewElement, SKUIResponseViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewViewElement : SKUIViewElement
 {
 }

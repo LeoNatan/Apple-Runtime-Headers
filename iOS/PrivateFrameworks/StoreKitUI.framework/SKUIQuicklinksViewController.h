@@ -12,6 +12,7 @@
 @class NSArray, NSString, SKUIColorScheme, SKUIQuicklinksView, UICollectionView;
 @protocol SKUIQuicklinksViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIQuicklinksViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 {
     UICollectionView *_collectionView;

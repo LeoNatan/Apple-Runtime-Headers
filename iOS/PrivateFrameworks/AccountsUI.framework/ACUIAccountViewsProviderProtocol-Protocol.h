@@ -16,6 +16,7 @@
 - (NSArray *)supportedAccountTypeIdentifiers;
 
 @optional
+- (_Bool)setDelegate:(id)arg1 forSignInController:(id)arg2;
 - (Class)controllerClassForCreatingAccountWithType:(NSString *)arg1;
 @end
 

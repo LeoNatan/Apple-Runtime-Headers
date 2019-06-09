@@ -21,6 +21,8 @@
 @property(retain, nonatomic) REUISiriActionsPerformer *performer; // @synthesize performer=_performer;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)siriActionsPerformerWantsToSuppressDismissal:(id)arg1;
+- (_Bool)siriActionsPerformer:(id)arg1 wantsToDismissViewController:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)siriActionsPerformer:(id)arg1 wantsToPresentViewController:(id)arg2;
 - (void)siriActionsPerformer:(id)arg1 didFailWithError:(id)arg2;
 - (void)siriActionsPerformerDidSucceed:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue;
 
 @interface CMOnBodyStatusManager : NSObject
 {
@@ -14,7 +14,6 @@
     _Bool fSubscribedToOnBodyStatusDetection;
     NSObject<OS_dispatch_queue> *fOnBodyStatusQueue;
     CDUnknownBlockType fOnBodyStatusHandler;
-    NSObject<OS_dispatch_source> *fWatchdogTimer;
     NSObject<OS_dispatch_queue> *fPrivateQueue;
 }
 
@@ -22,8 +21,6 @@
 + (_Bool)isOnBodyStatusDetectionAvailable;
 - (void)stopOnBodyStatusDetectionPrivate;
 - (void)startOnBodyStatusDetectionPrivateToQueue:(id)arg1 withParameters:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)stopWatchdogCheckinsPrivate;
-- (void)startWatchdogCheckinsPrivate;
 - (void)disconnect;
 - (void)connect;
 - (void)setPropertiesWithDictionary:(id)arg1;

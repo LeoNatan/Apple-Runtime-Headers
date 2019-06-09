@@ -8,6 +8,7 @@
 
 @class NSArray, NSIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsDescriptionUpdate : NSObject
 {
     NSArray *_indexPaths;

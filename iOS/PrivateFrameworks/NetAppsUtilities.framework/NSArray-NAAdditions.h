@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (NAAdditions)
++ (id)na_arrayWithTerminator:(id)arg1 nullableObjects:(id)arg2;
 + (id)na_arrayWithSafeObject:(id)arg1;
 + (id)na_arrayByRepeatingWithCount:(unsigned long long)arg1 generatorBlock:(CDUnknownBlockType)arg2;
 - (id)na_dictionaryByBucketingObjectsUsingKeyGenerator:(CDUnknownBlockType)arg1;
@@ -21,5 +22,6 @@
 - (id)na_arrayWithResultsOfBlock:(CDUnknownBlockType)arg1;
 - (id)na_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)na_reduceWithInitialValue:(id)arg1 reducer:(CDUnknownBlockType)arg2;
+- (_Bool)na_safeContainsObject:(id)arg1;
 @end
 

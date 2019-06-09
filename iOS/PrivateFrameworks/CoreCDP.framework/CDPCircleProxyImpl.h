@@ -8,42 +8,52 @@
 
 #import <CoreCDP/CDPDCircleProxy-Protocol.h>
 
-@class CDPContext, NSString;
+@class CDPContext, NSString, OTClique;
 
 @interface CDPCircleProxyImpl : NSObject <CDPDCircleProxy>
 {
+    OTClique *_clique;
     CDPContext *_cdpContext;
 }
 
-+ (_Bool)canAuthenticate;
-+ (_Bool)tryRegisteringCredentialsFromContext:(id)arg1;
-+ (_Bool)registerCredentialsFromContext:(id)arg1 force:(_Bool)arg2;
-+ (_Bool)registerCredentialsFromContext:(id)arg1;
-@property(retain, nonatomic) CDPContext *cdpContext; // @synthesize cdpContext=_cdpContext;
+@property(readonly, nonatomic) CDPContext *cdpContext; // @synthesize cdpContext=_cdpContext;
 - (void).cxx_destruct;
-- (_Bool)_performSOSCBlock:(CDUnknownBlockType)arg1 error:(id *)arg2;
+- (id)_pairingChannelContext;
+- (id)pairingChannelAcceptor:(id *)arg1;
+- (id)pairingChannelInitiator:(id *)arg1;
+- (_Bool)canAuthenticate;
+- (_Bool)tryRegisteringCredentials;
+- (_Bool)_registerCredentialsOnlyIfNeeded:(_Bool)arg1;
+- (_Bool)registerCredentials;
+- (_Bool)registerCredentialsIfMissing;
 - (_Bool)setViewsWithEnableSet:(id)arg1 disableSet:(id)arg2;
 - (_Bool)isLastBackupMakingPeer:(id *)arg1;
 - (_Bool)removeNonViewAwarePeers:(id *)arg1;
 - (_Bool)hasNonViewAwarePeers;
 - (_Bool)anyPeerHasEnabledViewsInSet:(id)arg1 error:(id *)arg2;
-- (_Bool)_viewMemberForView:(struct __CFString *)arg1 error:(id *)arg2;
 - (_Bool)viewMemberForAutofillPasswords:(id *)arg1;
-- (_Bool)viewMemberForPCSMaster:(id *)arg1;
 - (_Bool)requestToResetCloudKitDataForReason:(id)arg1 error:(id *)arg2;
 - (_Bool)requestToResetCircle:(id *)arg1;
 - (_Bool)requestToJoinCircleAfterRestore:(id *)arg1;
 - (_Bool)requestToJoinCircle:(id *)arg1;
 - (_Bool)removeThisDeviceFromCircle:(id *)arg1;
 - (_Bool)synchronizeCircleViews;
-- (id)generateVerifierWithRcoveryKey:(id)arg1 error:(id *)arg2;
+- (_Bool)waitForInitialSync:(id *)arg1;
+- (id)generateVerifierWithRecoveryKey:(id)arg1 error:(id *)arg2;
 - (id)generateRecoveryKeyWithInfo:(id)arg1 error:(id *)arg2;
 - (id)peerDeviceNamesByPeerID;
 - (unsigned long long)peerCount;
 - (id)peerId;
-- (int)_authenticatedCircleStatus:(id *)arg1;
-- (int)_circleStatus:(id *)arg1;
-- (int)circleStatus:(id *)arg1;
+- (int)_sos_circleStatus:(id *)arg1;
+- (int)_sos_authenticatedCircleStatus:(id *)arg1;
+- (int)sos_circleStatus:(id *)arg1;
+- (long long)_authenticatedCircleStatus:(id *)arg1;
+- (long long)_circleStatus:(id *)arg1;
+- (unsigned long long)cdpStatusFromOT:(long long)arg1;
+- (unsigned long long)cdpStatusFromSOS:(int)arg1;
+- (unsigned long long)circleStatus:(id *)arg1;
+- (unsigned long long)cachedCircleStatus:(id *)arg1;
+- (void)didJoinCircleAfterRecovery:(id)arg1;
 - (id)initWithContext:(id)arg1;
 
 // Remaining properties

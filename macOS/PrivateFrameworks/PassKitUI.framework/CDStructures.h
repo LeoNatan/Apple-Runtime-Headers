@@ -36,23 +36,6 @@ struct NSEdgeInsets {
 
 struct NSViewController {
     Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :28;
-    unsigned int :0;
 };
 
 struct PKAutocompleteRowInfo {

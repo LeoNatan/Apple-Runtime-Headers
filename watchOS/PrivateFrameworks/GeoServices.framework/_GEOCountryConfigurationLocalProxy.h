@@ -19,11 +19,11 @@ __attribute__((visibility("hidden")))
     id <_GEOCountryConfigurationServerProxyDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_dispatch_source> *_scheduledUpdateTimer;
+    id _countryCodeOverrideChangeListener;
 }
 
 - (void).cxx_destruct;
 - (void)didChangePairedDeviceReachability:(_Bool)arg1;
-- (void)didChangeActiveTileGroup:(id)arg1;
 - (void)updateCountryCodeWithCallbackQueue:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)_updateCountryCodeWithCallbackQueue:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)_determineCurrentCountryCode:(CDUnknownBlockType)arg1;

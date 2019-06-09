@@ -8,5 +8,6 @@
 
 @interface NSString (ImageCaptureCoreAdditions)
 + (id)stringFromOSType:(unsigned int)arg1;
+- (id)asciiString;
 @end
 

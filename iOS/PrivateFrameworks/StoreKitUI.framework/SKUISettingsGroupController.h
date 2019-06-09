@@ -9,6 +9,7 @@
 @class NSMutableArray, SKUISettingsGroupDescription;
 @protocol SKUISettingsGroupControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsGroupController : NSObject
 {
     id <SKUISettingsGroupControllerDelegate> _delegate;

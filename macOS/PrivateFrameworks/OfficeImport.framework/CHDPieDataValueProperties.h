@@ -6,6 +6,7 @@
 
 #import <OfficeImport/CHDDataValueProperties.h>
 
+__attribute__((visibility("hidden")))
 @interface CHDPieDataValueProperties : CHDDataValueProperties
 {
     int mExplosion;

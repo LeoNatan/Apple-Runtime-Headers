@@ -6,16 +6,18 @@
 
 #import <PepperUICore/PUICQuickboardModalNavigationContainerController.h>
 
+#import <PepperUICore/PUICAnimojiStickerViewDelegate-Protocol.h>
 #import <PepperUICore/PUICQuickboardController-Protocol.h>
 #import <PepperUICore/PUICQuickboardPickerViewDelegate-Protocol.h>
 #import <PepperUICore/PUICRecentEmojiViewDelegate-Protocol.h>
 #import <PepperUICore/PUICRecentsViewDelegate-Protocol.h>
 
-@class NSString, PUICQuickboardLanguageController, PUICQuickboardPunchoutView, UIButton;
+@class NSString, PUICQuickboardLanguageController, PUICQuickboardPunchoutView, PUICQuickboardTransitionCoordinator, UIButton;
 @protocol PUICQuickboardEmojiViewControllerDelegate, PUICQuickboardViewControllerDelegate;
 
-@interface PUICQuickboardEmojiViewController : PUICQuickboardModalNavigationContainerController <PUICRecentEmojiViewDelegate, PUICRecentsViewDelegate, PUICQuickboardPickerViewDelegate, PUICQuickboardController>
+@interface PUICQuickboardEmojiViewController : PUICQuickboardModalNavigationContainerController <PUICAnimojiStickerViewDelegate, PUICRecentEmojiViewDelegate, PUICRecentsViewDelegate, PUICQuickboardPickerViewDelegate, PUICQuickboardController>
 {
+    _Bool _shouldShowAnimojiStickersAlertSheet;
     _Bool _supportsRecentItemPayloads;
     unsigned int _quickboardType;
     id <PUICQuickboardEmojiViewControllerDelegate> _emojiViewControllerDelegate;
@@ -25,9 +27,11 @@
     unsigned int _confirmationType;
     UIButton *_acceptButton;
     PUICQuickboardPunchoutView *_punchoutView;
+    PUICQuickboardTransitionCoordinator *_emojiTransitionCoordinator;
 }
 
 + (void)resetLastSelectedEmojiTypeForTesting;
+@property(retain, nonatomic) PUICQuickboardTransitionCoordinator *emojiTransitionCoordinator; // @synthesize emojiTransitionCoordinator=_emojiTransitionCoordinator;
 @property(retain, nonatomic) PUICQuickboardPunchoutView *punchoutView; // @synthesize punchoutView=_punchoutView;
 @property(readonly, nonatomic) UIButton *acceptButton; // @synthesize acceptButton=_acceptButton;
 @property(nonatomic) unsigned int confirmationType; // @synthesize confirmationType=_confirmationType;
@@ -38,12 +42,17 @@
 @property(nonatomic) unsigned int quickboardType; // @synthesize quickboardType=_quickboardType;
 @property(nonatomic) _Bool supportsRecentItemPayloads; // @synthesize supportsRecentItemPayloads=_supportsRecentItemPayloads;
 - (void).cxx_destruct;
+- (void)disableAnimojiStickerDisclosureAlert;
 - (void)selectEmojiForTesting;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) _Bool animatesSelectionToDestinationView;
 - (void)createFallbackLanguageController;
 @property(readonly, nonatomic) NSString *primaryLanguage;
 @property(readonly, nonatomic) unsigned int inputType;
+- (void)_pushNewAnimojiStickerPackViewControllerForIdentifier:(id)arg1;
+- (void)animojiView:(id)arg1 didSelectSticker:(id)arg2 preview:(id)arg3;
+- (void)animojiView:(id)arg1 didSelectStickerPack:(id)arg2;
+- (void)recentEmojiView:(id)arg1 didSelectSticker:(id)arg2 preview:(id)arg3;
 - (void)recentEmojiView:(id)arg1 didSelectEmojiString:(id)arg2;
 - (void)recentEmojiView:(id)arg1 didSelectEmojiCategory:(id)arg2;
 @property(readonly, nonatomic) _Bool supportsAnimatedEmoji; // @dynamic supportsAnimatedEmoji;

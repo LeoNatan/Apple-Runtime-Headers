@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
 @property(readonly, nonatomic) SFSafariExtensionViewController *extensionViewController;
+- (void)page:(id)arg1 willNavigateToURL:(id)arg2;
+- (void)contentBlockerWithIdentifier:(id)arg1 blockedResourcesWithURLs:(id)arg2 onPage:(id)arg3;
 - (void)additionalRequestHeadersForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)messageReceivedFromContainingAppWithName:(id)arg1 userInfo:(id)arg2;
 - (void)popoverDidCloseInWindow:(id)arg1;

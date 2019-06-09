@@ -9,7 +9,7 @@
 @class FI_TColumnView;
 
 @protocol TColumnViewDelegate <NSBrowserDelegate>
-- (void)columnView:(FI_TColumnView *)arg1 willStopUsingNode:(const struct TFENode *)arg2 forColumn:(long long)arg3;
-- (void)columnView:(FI_TColumnView *)arg1 willStartUsingNode:(const struct TFENode *)arg2 forColumn:(long long)arg3;
+- (void)columnView:(FI_TColumnView *)arg1 willStopUsingItem:(id)arg2 forColumn:(long long)arg3;
+- (void)columnView:(FI_TColumnView *)arg1 willStartUsingItem:(id)arg2 forColumn:(long long)arg3;
 @end
 

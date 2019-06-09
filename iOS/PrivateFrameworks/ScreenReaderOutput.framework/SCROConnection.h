@@ -8,22 +8,23 @@
 
 #import <ScreenReaderOutput/NSSecureCoding-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface SCROConnection : NSObject <NSSecureCoding>
 {
-    _Bool _isConnectionStarted;
     unsigned int _pingPort;
     struct __CFRunLoopSource *_pingSource;
     struct __CFRunLoopSource *_invalidationSource;
     unsigned int _identifier;
     int _handlerType;
     id _delegate;
+    // Error parsing type: AB, name: _isConnectionStarted
 }
 
 + (_Bool)supportsSecureCoding;
 + (void)_addConnectionToRunLoop:(id)arg1;
 + (void)_unconfigServerAndRetry:(_Bool)arg1;
++ (void)_configServerWithMachServiceName:(char *)arg1;
 + (void)_configServer;
++ (_Bool)_inUnitTests;
 + (void)_createConnectionRunLoop;
 + (void)initialize;
 - (void).cxx_destruct;

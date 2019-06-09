@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)_prepareContextForReuse:(struct CGContext *)arg1;
 - (struct CGContext *)_dequeueContextForReuse;
+- (void)_enqueueContextForReuse:(struct CGContext *)arg1;
 - (_Bool)runDrawingActions:(CDUnknownBlockType)arg1 completionActions:(CDUnknownBlockType)arg2 format:(id)arg3 error:(id *)arg4;
 - (_Bool)runDrawingActions:(CDUnknownBlockType)arg1 completionActions:(CDUnknownBlockType)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) _Bool allowsImageOutput;

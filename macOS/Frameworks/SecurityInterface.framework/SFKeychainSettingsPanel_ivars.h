@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
     id _clientDelegate;
     void *_clientContextInfo;
     unsigned long long _lockIntervalVal;
-    struct OpaqueSecKeychainRef *_keychainRef;
+    struct __SecKeychain *_keychainRef;
     BOOL _lockOnSleepVal;
     BOOL _syncVal;
     struct SecKeychainSettings _settings;

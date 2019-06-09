@@ -6,12 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreRoutine/NSCopying-Protocol.h>
-#import <CoreRoutine/NSSecureCoding-Protocol.h>
-
 @class NSUUID, RTApplication, RTSource;
 
-@interface RTPredictedApplication : NSObject <NSSecureCoding, NSCopying>
+@interface RTPredictedApplication : NSObject
 {
     RTApplication *_application;
     long long _reason;
@@ -20,21 +17,14 @@
     NSUUID *_identifier;
 }
 
-+ (_Bool)supportsSecureCoding;
-+ (id)reasonToString:(long long)arg1;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(retain, nonatomic) RTSource *source; // @synthesize source=_source;
 @property(readonly, nonatomic) long long reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) RTApplication *application; // @synthesize application=_application;
 - (void).cxx_destruct;
-- (unsigned long long)hash;
-- (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithApplication:(id)arg1 reason:(long long)arg2 confidence:(double)arg3 source:(id)arg4 identifier:(id)arg5;
+- (id)init;
 
 @end
 

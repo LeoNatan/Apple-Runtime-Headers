@@ -12,7 +12,7 @@
 #import <AppKit/NSCopying-Protocol.h>
 #import <AppKit/NSUserInterfaceItemIdentification-Protocol.h>
 
-@class NSArray, NSFont, NSMenuItem, NSString, NSURL;
+@class NSArray, NSFont, NSMenuItem, NSString, NSURL, NSView;
 @protocol NSMenuDelegate;
 
 @interface NSMenu : NSObject <NSCopying, NSCoding, NSUserInterfaceItemIdentification, NSAccessibilityElement, NSAccessibility>
@@ -40,9 +40,8 @@
         unsigned int noTopPadding:1;
         unsigned int noBottomPadding:1;
         unsigned int hasNCStyle:1;
-        unsigned int delegateIsUnsafeUnretained:1;
         unsigned int avoidUsingCache:1;
-        unsigned int RESERVED:10;
+        unsigned int RESERVED:11;
     } _mFlags;
     NSString *_uiid;
 }
@@ -99,11 +98,14 @@
 - (void)_menuItem:(id)arg1 didChangeAccessibilityOverriddenAttribute:(id)arg2 from:(id)arg3 to:(id)arg4;
 - (void)_menuItem:(id)arg1 didChangeSeparatorStatusFrom:(BOOL)arg2 to:(BOOL)arg3;
 - (void)_menuItem:(id)arg1 didChangeHiddenFrom:(BOOL)arg2 to:(BOOL)arg3;
-- (void)_menuItem:(id)arg1 didChangeCustomViewHandlesEventsFrom:(BOOL)arg2 to:(BOOL)arg3;
+- (void)_menuItem:(id)arg1 didChangeCustomViewIsDrawingOnlyFrom:(BOOL)arg2 to:(BOOL)arg3 viewDidWantHIView:(BOOL)arg4;
+- (void)_menuItem:(id)arg1 didChangeCustomViewHandlesEventsFrom:(BOOL)arg2 to:(BOOL)arg3 viewDidWantHIView:(BOOL)arg4;
 - (void)_menuItem:(id)arg1 didChangeCustomViewFrom:(id)arg2 to:(id)arg3;
 - (void)_menuItem:(id)arg1 didChangeTooltipFrom:(id)arg2 to:(id)arg3;
 - (void)_menuItem:(id)arg1 didChangeIndentFrom:(long long)arg2 to:(long long)arg3;
 - (void)_menuItem:(id)arg1 didChangeNextItemIsAlternateFrom:(BOOL)arg2 to:(BOOL)arg3;
+- (void)_menuItem:(id)arg1 didChangeSubmenuParentItemUnchoosableFrom:(BOOL)arg2 to:(BOOL)arg3;
+- (void)_menuItem:(id)arg1 didChangeShowsBlockedByScreenTimeFrom:(BOOL)arg2 to:(BOOL)arg3;
 - (void)_menuItem:(id)arg1 didChangeDestructiveFrom:(BOOL)arg2 to:(BOOL)arg3;
 - (void)_menuItem:(id)arg1 didChangeAlternateFrom:(BOOL)arg2 to:(BOOL)arg3;
 - (void)_menuItem:(id)arg1 didChangeKeyEquivalentModifierMaskFrom:(unsigned long long)arg2 to:(unsigned long long)arg3;
@@ -195,10 +197,12 @@
 - (void)_setIsContextualMenu:(BOOL)arg1;
 - (BOOL)_isContextualMenu;
 - (void)_image:(id *)arg1 frame:(struct CGRect *)arg2 forPopUpMenuPositioningItem:(id)arg3 atLocation:(struct CGPoint)arg4 inView:(id)arg5 appearance:(id)arg6;
+- (BOOL)_popUpMenuRelativeToRect:(struct CGRect)arg1 inView:(id)arg2 preferredEdge:(unsigned long long)arg3;
 - (BOOL)popUpMenuPositioningItem:(id)arg1 atLocation:(struct CGPoint)arg2 inView:(id)arg3 appearance:(id)arg4;
 - (BOOL)popUpMenuPositioningItem:(id)arg1 atLocation:(struct CGPoint)arg2 inView:(id)arg3;
 - (void)_popUpContextMenu:(id)arg1 withEvent:(id)arg2 forView:(id)arg3 withFont:(id)arg4;
 - (void)_popUpContextMenu:(id)arg1 withEvent:(id)arg2 forView:(id)arg3;
+@property(readonly) NSView *_presentingView;
 - (BOOL)_servicesMenuItemsAreForContextMenu;
 - (id)_insertItemInSortedOrderWithTitle:(id)arg1 action:(SEL)arg2 keyEquivalent:(id)arg3;
 - (void)_internalPerformActionForItemAtIndex:(long long)arg1;
@@ -232,6 +236,8 @@
 - (void)_enableItems;
 - (void)_enableItem:(id)arg1;
 - (BOOL)performKeyEquivalent:(id)arg1;
+- (void)_setAllowsKeyboardAdjustedShortcuts:(BOOL)arg1;
+- (BOOL)_allowsKeyboardAdjustedShortcuts;
 - (void)_setAvoidUsingCache:(BOOL)arg1;
 - (void)_performActionWithHighlightingForItemAtIndex:(long long)arg1;
 - (void)_performActionWithHighlightingForItemAtIndex:(long long)arg1 sendAccessibilityNotification:(BOOL)arg2;

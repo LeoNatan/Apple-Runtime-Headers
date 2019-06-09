@@ -8,7 +8,7 @@
 
 #import <WeatherFoundation/NSCopying-Protocol.h>
 
-@class NSMutableDictionary, NSURL, NSURLSession, NWPathEvaluator, WFAggregateDictionary;
+@class NSString, NSURL, NSURLSession, NWPathEvaluator, WFAggregateDictionary, WFNetworkRetryManager, WFSettingsManager;
 
 @interface WFWeatherStoreServiceConfiguration : NSObject <NSCopying>
 {
@@ -16,39 +16,40 @@
     NSURLSession *_session;
     WFAggregateDictionary *_aggDictionary;
     NSURL *_cacheURL;
-    NSMutableDictionary *_requestFormatterForForecastType;
-    NSMutableDictionary *_requestParserForForecastType;
-    Class _airQualityRequestFormatterClass;
-    Class _airQualityParserClass;
     Class _cacheClass;
+    WFNetworkRetryManager *_retryManager;
+    CDUnknownBlockType _switchNetworkCallback;
     NSURL *_serviceConnectivityEvaluationURL;
+    WFSettingsManager *_settingsManager;
 }
 
 + (id)generateUserAgent;
 + (id)defaultConfiguration;
 + (id)defaultConfigurationWithSourceBundleIdentifier:(id)arg1;
+@property(retain, nonatomic) WFSettingsManager *settingsManager; // @synthesize settingsManager=_settingsManager;
 @property(retain, nonatomic) NSURL *serviceConnectivityEvaluationURL; // @synthesize serviceConnectivityEvaluationURL=_serviceConnectivityEvaluationURL;
+@property(copy, nonatomic) CDUnknownBlockType switchNetworkCallback; // @synthesize switchNetworkCallback=_switchNetworkCallback;
+@property(retain, nonatomic) WFNetworkRetryManager *retryManager; // @synthesize retryManager=_retryManager;
 @property(retain, nonatomic) Class cacheClass; // @synthesize cacheClass=_cacheClass;
-@property(retain, nonatomic) Class airQualityParserClass; // @synthesize airQualityParserClass=_airQualityParserClass;
-@property(retain, nonatomic) Class airQualityRequestFormatterClass; // @synthesize airQualityRequestFormatterClass=_airQualityRequestFormatterClass;
-@property(retain, nonatomic) NSMutableDictionary *requestParserForForecastType; // @synthesize requestParserForForecastType=_requestParserForForecastType;
-@property(retain, nonatomic) NSMutableDictionary *requestFormatterForForecastType; // @synthesize requestFormatterForForecastType=_requestFormatterForForecastType;
 @property(copy, nonatomic) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
 @property(retain, nonatomic) WFAggregateDictionary *aggDictionary; // @synthesize aggDictionary=_aggDictionary;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
-- (id)parseAirQualityData:(id)arg1 location:(id)arg2 locale:(id)arg3 error:(id *)arg4;
-- (id)airQualityRequestForLocation:(id)arg1 locale:(id)arg2 error:(id *)arg3;
-- (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 date:(id)arg3 error:(id *)arg4;
-- (id)forecastRequestForType:(unsigned long long)arg1 location:(id)arg2 date:(id)arg3 error:(id *)arg4;
-- (void)setAirQualityParser:(Class)arg1;
-- (void)setAirQualityFormatter:(Class)arg1;
-- (void)setRequestParser:(id)arg1 forForecastType:(unsigned long long)arg2;
-- (void)setRequestFormatter:(Class)arg1 forForecastType:(unsigned long long)arg2;
+- (_Bool)usesRemoteAppSettings;
+- (void)reactToRequestFailure:(id)arg1;
+- (void)reactToRequestSuccess;
+- (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 apiVersion:(id)arg6 error:(id *)arg7;
+- (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
+- (id)forecastRequestForTypes:(unsigned long long)arg1 location:(id)arg2 date:(id)arg3 apiVersion:(id)arg4 error:(id *)arg5;
+- (id)forecastRequestForTypes:(unsigned long long)arg1 location:(id)arg2 date:(id)arg3 error:(id *)arg4;
 @property(readonly, nonatomic) _Bool isValid;
 @property(readonly, nonatomic) _Bool isServiceAvailable;
 @property(readonly, nonatomic) NWPathEvaluator *serviceConnectivityEvaluator; // @synthesize serviceConnectivityEvaluator=_serviceConnectivityEvaluator;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)switchNetwork:(_Bool)arg1;
+- (id)apiConfigurationForAPIVersion:(id)arg1;
+- (id)apiConfiguration;
+@property(readonly, nonatomic) NSString *apiVersion;
 - (id)init;
 
 @end

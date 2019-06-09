@@ -20,6 +20,7 @@
 @property(nonatomic) long long layoutStyle; // @synthesize layoutStyle=_layoutStyle;
 @property(nonatomic, getter=isActive) _Bool active;
 - (void)setOrientation:(long long)arg1 animated:(_Bool)arg2;
+- (void)setHighlighted:(_Bool)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)alignmentRectInsets;

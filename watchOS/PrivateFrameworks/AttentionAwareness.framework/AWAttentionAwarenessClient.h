@@ -20,15 +20,15 @@
     _Bool _invalidated;
     NSObject<OS_dispatch_queue> *_clientQueue;
     CDUnknownBlockType _clientBlock;
-    int _clientState;
     AWAttentionAwarenessConfiguration *_configuration;
+    int _clientState;
+    _Bool _unitTestMode;
 }
 
 + (void)initialize;
-@property(copy, nonatomic) AWAttentionAwarenessConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (id)unitTestSampler;
-- (void)useUnitTestSampling:(_Bool)arg1;
+- (void)setUnitTestMode:(_Bool)arg1;
 - (void)notifyPollEventType:(unsigned long long)arg1 event:(id)arg2;
 - (void)notifyEvent:(id)arg1;
 - (_Bool)invalidateWithError:(id *)arg1;
@@ -44,7 +44,9 @@
 @property(readonly, retain, nonatomic) AWAttentionEvent *lastEvent;
 - (_Bool)invokeRequiringClient:(_Bool)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)_invokeRequiringClient:(_Bool)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+@property(copy, nonatomic) AWAttentionAwarenessConfiguration *configuration;
 - (void)setConfiguration:(id)arg1 shouldReset:(_Bool)arg2;
+- (_Bool)setConfiguration:(id)arg1 shouldReset:(_Bool)arg2 error:(id *)arg3;
 - (id)init;
 
 // Remaining properties

@@ -8,5 +8,6 @@
 
 @interface NSNumber (SCRSpeechSynthesizerPointer)
 + (id)numberWithPointer:(unsigned long long)arg1;
+- (id)fourCharCodeAsString;
 @end
 

@@ -17,9 +17,10 @@
 
 @interface PLExpandedPlatterView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate, PLExpandedPlatter, PLTitled, PLContentSizeCategoryAdjusting>
 {
+    MTMaterialView *_headerBackgroundView;
+    UIView *_headerTintView;
     PLPlatterHeaderContentView *_headerContentView;
-    UIView *_headerDivider;
-    UIView *_contentView;
+    UIView *_scrollViewContentView;
     UIView *_topRubberbandingView;
     UIView *_customContentView;
     MTMaterialView *_actionsBackgroundView;
@@ -43,7 +44,6 @@
 @property(nonatomic) struct CGSize customContentSize; // @synthesize customContentSize=_customContentSize;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
@@ -51,25 +51,27 @@
 - (void)forwardInvocation:(id)arg1;
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (void)_layoutActionsView;
-- (void)_layoutContentView;
+- (void)_layoutMainContentView;
+- (void)_layoutScrollViewContentView;
 - (void)_layoutTopRubberbandingView;
 - (void)_layoutScrollView;
+- (struct UIEdgeInsets)_scrollViewContentInset;
 - (void)_layoutHeader;
 - (void)_layoutDismissControl;
 - (void)_configureActionViewIfNecessaryWithActions:(id)arg1;
 - (void)_configureActionsBackgroundViewIfNecessaryWithActions:(id)arg1;
 - (void)_configureCustomContentViewIfNecessary;
-- (void)_configureContentViewIfNecessary;
+- (void)_configureScrollViewContentViewIfNecessary;
 - (void)_configureScrollViewIfNecessary;
 - (void)_configureHeaderContentViewIfNecessary;
 - (void)_configureDismissControlIfNecessary;
 @property(readonly, nonatomic) UIView *customContentView; // @synthesize customContentView=_customContentView;
 - (struct CGSize)_actionsSizeThatFits:(struct CGSize)arg1 includingPadding:(_Bool)arg2;
 - (struct CGSize)_sizeThatFitsContentExcludingActionsWithSize:(struct CGSize)arg1;
-- (struct CGRect)_boundsInsetFromDismissControlIfNecessary;
+- (struct CGRect)_boundsInsetHorizontallyFromDismissControlIfNecessary;
 - (struct UIEdgeInsets)_dismissControlTotalOutset;
 @property(retain, nonatomic) NSArray *interfaceActions;
-- (struct CGRect)_contentViewFrame;
+- (struct CGRect)_scrollViewContentViewFrame;
 - (struct CGRect)scrollViewFrame;
 - (struct CGRect)platterFrameForFrame:(struct CGRect)arg1;
 - (struct CGRect)frameForPlatterFrame:(struct CGRect)arg1;
@@ -95,14 +97,15 @@
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_layoutCustomContentView;
-- (void)_layoutMainContentView;
 - (struct CGSize)_contentViewSize;
+- (struct CGRect)_mainContentViewFrame;
 - (struct CGRect)_actionsViewFrame;
 - (void)_configureCustomContentView;
 - (void)_configureMainContentViewIfNecessary;
 - (struct CGSize)_contentSizeThatFitsContentWithSizeExcludingActions:(struct CGSize)arg1;
 - (void)_layoutMainContentViewIfNecessary;
 - (struct CGSize)_flexibleAreaSizeForBounds:(struct CGRect)arg1;
+- (struct CGRect)_effectiveMainContentViewFrame;
 @property(readonly, nonatomic, getter=_headerContentView) UIView *headerContentView;
 
 // Remaining properties

@@ -12,6 +12,7 @@
 @class NSString, SKUIClientContext, SKUISlideshowImageScrollView, UIImage, UIView;
 @protocol SKUISlideshowItemViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISlideshowItemViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegatePrivate>
 {
     SKUIClientContext *_clientContext;

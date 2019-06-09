@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class IKJSRWIDependencyDomain, IKJSRWIDependencyDomainType, NSString;
+@class IKJSRWIDependencyDomain, IKJSRWIDependencyDomainType, NSArray, NSString;
 
 @interface IKJSRWIDependencyDomainProperty : NSObject
 {
     NSString *_reference;
+    NSArray *_enumOptions;
     _Bool _required;
     NSString *_name;
     NSString *_purpose;

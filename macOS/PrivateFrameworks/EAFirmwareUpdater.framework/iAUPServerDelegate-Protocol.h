@@ -7,6 +7,10 @@
 @class NSData, NSDictionary, NSError, NSString;
 
 @protocol iAUPServerDelegate
+- (unsigned char)getPersonalizationID;
+- (void)handleSessionError:(unsigned int)arg1 message:(NSString *)arg2;
+- (BOOL)updateRequiresPersonalization;
+- (void)processPersonalizationInfoFromAccessory:(NSDictionary *)arg1;
 - (void)updateProgress:(double)arg1;
 - (void)firmwareUpdateComplete:(NSDictionary *)arg1 error:(NSError *)arg2;
 - (void)handleFirmwareUpdateStatus:(NSDictionary *)arg1;

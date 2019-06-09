@@ -51,6 +51,7 @@
 - (_Bool)removeSpecifiersInGroupAtGroupIndex:(unsigned long long)arg1;
 - (_Bool)removeSpecifierAtIndexPath:(id)arg1;
 - (_Bool)removeSpecifiersInRange:(struct _NSRange)arg1;
+- (_Bool)_removeOneSpecifierOnlyAtIndex:(unsigned long long)arg1;
 - (_Bool)removeSpecifierAtIndex:(unsigned long long)arg1;
 - (_Bool)removeSpecifiersWithIDs:(id)arg1;
 - (_Bool)removeSpecifierWithID:(id)arg1;

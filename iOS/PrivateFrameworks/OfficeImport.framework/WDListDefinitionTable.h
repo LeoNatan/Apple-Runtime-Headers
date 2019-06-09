@@ -19,13 +19,13 @@ __attribute__((visibility("hidden")))
     WDListDefinition *mDefaultListDefinition;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)resolvedDefinitionWithDefinitionId:(int)arg1;
 - (id)definitionWithStyleId:(id)arg1;
 - (id)definitionWithDefinitionId:(int)arg1;
 - (id)addDefinitionWithDefinitionId:(int)arg1 styleId:(id)arg2;
 - (id)definitions;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 
 @end

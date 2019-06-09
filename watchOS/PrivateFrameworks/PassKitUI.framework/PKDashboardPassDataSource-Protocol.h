@@ -9,7 +9,7 @@
 @class PKPassGroupView, PKPassPresentationContext, PKPassView;
 
 @protocol PKDashboardPassDataSource <PKDashboardDataSource>
-- (id)initWithGroupView:(PKPassGroupView *)arg1;
+- (id)initWithGroupView:(PKPassGroupView *)arg1 context:(PKPassPresentationContext *)arg2;
 
 @optional
 - (void)groupViewDidChangeFrontmostPassView:(PKPassView *)arg1 withContext:(PKPassPresentationContext *)arg2;

@@ -14,6 +14,7 @@
 }
 
 @property(readonly) IACastleAutoSetupView *setupView; // @synthesize setupView=_setupView;
+- (void).cxx_destruct;
 
 @end
 

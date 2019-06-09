@@ -15,6 +15,6 @@
 - (void)mergeLocalDataIntoParentAccountWithID:(NSString *)arg1 reply:(void (^)(BOOL))arg2;
 - (void)discoverPropertiesForAccount:(ABACAccount *)arg1 withCompletionHandler:(void (^)(ABACAccount *, NSError *))arg2;
 - (void)getAccountWithABAccountIdentifier:(NSString *)arg1 withCompletionHandler:(void (^)(ABACAccount *, NSError *))arg2;
-- (void)getAllContactsAccountsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
+- (void)getContactsAccountsWithFetchOptions:(unsigned long long)arg1 completionHandler:(void (^)(NSArray *, NSError *))arg2;
 @end
 

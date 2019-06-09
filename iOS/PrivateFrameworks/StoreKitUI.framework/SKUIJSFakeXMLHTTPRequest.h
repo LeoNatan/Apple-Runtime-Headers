@@ -10,6 +10,7 @@
 
 @class IKJSXMLDocument, NSData, NSDictionary, NSHTTPURLResponse, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSFakeXMLHTTPRequest : IKJSObject <SKUIJSFakeXMLHTTPRequest>
 {
     NSData *_data;

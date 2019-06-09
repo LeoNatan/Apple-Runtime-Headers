@@ -14,6 +14,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isAnonymousPlayer;
 - (id)alias;
+- (id)teamPlayerID;
+- (id)gamePlayerID;
 - (id)playerID;
 
 @end

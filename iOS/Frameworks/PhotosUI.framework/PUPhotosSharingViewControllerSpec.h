@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long selectionBadgeCorner;
 @property(readonly, nonatomic) struct UIOffset selectionBadgeOffset;
 @property(readonly, nonatomic) struct CGSize selectionBadgeSize;
+- (double)interItemSpacingForWidth:(double)arg1;
 @property(readonly, nonatomic) double interItemSpacing;
 - (_Bool)maximizeImageHeightForBounds:(struct CGRect)arg1;
 

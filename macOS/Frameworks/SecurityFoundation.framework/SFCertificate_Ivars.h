@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *subject;
     NSString *issuerName;
     NSData *serialNumber;
-    struct OpaqueSecCertificateRef *secCertificate;
+    struct __SecCertificate *secCertificate;
 }
 
 - (void).cxx_destruct;

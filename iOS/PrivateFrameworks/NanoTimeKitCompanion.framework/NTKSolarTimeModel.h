@@ -19,10 +19,14 @@
     NSDate *_localSolarMidnightDate;
     double _effectiveSolarDayLength;
     GEOAlmanac *_sunriseSunsetSolarAlmanac;
-    GEOAlmanac *_dawnDuskSolarAlmanac;
+    GEOAlmanac *_civilTwilightSolarAlmanac;
+    GEOAlmanac *_nauticalTwilightSolarAlmanac;
+    GEOAlmanac *_astronomicalTwilightSolarAlmanac;
 }
 
-@property(retain, nonatomic) GEOAlmanac *dawnDuskSolarAlmanac; // @synthesize dawnDuskSolarAlmanac=_dawnDuskSolarAlmanac;
+@property(retain, nonatomic) GEOAlmanac *astronomicalTwilightSolarAlmanac; // @synthesize astronomicalTwilightSolarAlmanac=_astronomicalTwilightSolarAlmanac;
+@property(retain, nonatomic) GEOAlmanac *nauticalTwilightSolarAlmanac; // @synthesize nauticalTwilightSolarAlmanac=_nauticalTwilightSolarAlmanac;
+@property(retain, nonatomic) GEOAlmanac *civilTwilightSolarAlmanac; // @synthesize civilTwilightSolarAlmanac=_civilTwilightSolarAlmanac;
 @property(retain, nonatomic) GEOAlmanac *sunriseSunsetSolarAlmanac; // @synthesize sunriseSunsetSolarAlmanac=_sunriseSunsetSolarAlmanac;
 @property(nonatomic) _Bool dependentValuesNeedUpdate; // @synthesize dependentValuesNeedUpdate=_dependentValuesNeedUpdate;
 @property(nonatomic) double effectiveSolarDayLength; // @synthesize effectiveSolarDayLength=_effectiveSolarDayLength;

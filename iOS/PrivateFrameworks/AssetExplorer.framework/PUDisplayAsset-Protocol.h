@@ -11,6 +11,7 @@
 @protocol PUDisplayAsset;
 
 @protocol PUDisplayAsset <NSObject, NSCopying>
+@property(readonly, nonatomic) unsigned long long deferredLogInfo;
 @property(readonly, nonatomic) _Bool hasPhotoColorAdjustments;
 @property(readonly, nonatomic) CDStruct_198678f7 photoIrisVideoDuration;
 @property(readonly, nonatomic) CDStruct_198678f7 photoIrisStillDisplayTime;
@@ -25,6 +26,7 @@
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) double aspectRatio;
 @property(readonly, nonatomic) NSDate *modificationDate;
+@property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 @property(readonly, nonatomic) double duration;

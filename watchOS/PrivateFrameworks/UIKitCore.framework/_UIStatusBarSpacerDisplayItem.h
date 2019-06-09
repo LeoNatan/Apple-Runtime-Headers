@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)_applyConstraintsIfNeeded;
 - (void)setContainerView:(id)arg1;
 - (void)applyUpdate:(id)arg1;
+- (id)initWithIdentifier:(id)arg1 item:(id)arg2;
 
 @end
 

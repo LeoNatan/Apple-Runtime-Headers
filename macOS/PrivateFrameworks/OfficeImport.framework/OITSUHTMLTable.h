@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OITSUHTMLTable : NSObject
 {
     NSMutableDictionary *_columnAttributes;

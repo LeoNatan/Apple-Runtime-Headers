@@ -87,6 +87,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithRemotePaymentRequest:(id)arg1;
 - (id)init;

@@ -8,5 +8,31 @@
 
 @interface NSURL (SLYoukuAdditions)
 + (id)SLYoukuAccessTokenURL;
++ (id)SLTudouAccessTokenURLWithQueryStringParameters:(id)arg1;
++ (id)SLTwitterDirectMessageURL;
++ (id)SLTwitterRetweetURLForTweetID:(id)arg1;
++ (id)SLTwitterAccountGenerateURL;
++ (id)SLTwitterUsersLookupURL;
++ (id)SLTwitterAccountSettingsURL;
++ (id)SLTwitterUserInfoURL;
++ (id)SLTwitterAccessTokenURL;
++ (id)SLTwitterRequestTokenURL;
++ (id)SLTwitterCleanupPushDestinationsURL;
++ (id)SLTwitterVerifyCredentialsURL;
++ (id)SLTwitterImageLimitsURL;
++ (id)SLTwitterTCoLengthURL;
++ (id)SLTwitterFriendsURL;
++ (id)SLTwitterFriendshipsURL;
++ (id)SLTwitterNearbyPlacesURL;
++ (id)SLTwitterUpdateMultiPartStatusURL;
++ (id)SLTwitterUpdateStatusURL;
++ (id)URLForFacebookPageAtPath:(id)arg1;
++ (id)URLForFacebookGraphAPIWithDomain:(id)arg1 path:(id)arg2;
++ (id)URLForFacebookGraphAPIWithPath:(id)arg1;
++ (id)URLForFacebookRESTMethod:(id)arg1;
++ (BOOL)_isBetaSwitchEnabledForKey:(struct __CFString *)arg1;
+- (BOOL)isAssetURL;
+- (BOOL)isAppStoreURL;
+- (BOOL)isMusicStoreURL;
 @end
 

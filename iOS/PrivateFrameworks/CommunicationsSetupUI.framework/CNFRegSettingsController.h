@@ -33,11 +33,15 @@
         unsigned int showEnableSwitch:1;
         unsigned int refreshingCallerIdValues:1;
     } _settingsFlags;
+    _Bool _showDeviceAliases;
+    _Bool _hideAppleIDLogin;
     _Bool _showReceiveRelayCalls;
 }
 
 + (_Bool)_shouldForwardViewWillTransitionToSize;
 @property(readonly, nonatomic) _Bool showReceiveRelayCalls; // @synthesize showReceiveRelayCalls=_showReceiveRelayCalls;
+@property(nonatomic) _Bool hideAppleIDLogin; // @synthesize hideAppleIDLogin=_hideAppleIDLogin;
+@property(nonatomic) _Bool showDeviceAliases; // @synthesize showDeviceAliases=_showDeviceAliases;
 - (void).cxx_destruct;
 - (void)_handleAccountRegistrarChanged;
 - (void)_handleOutgoingRelayCallerIDChanged;
@@ -82,6 +86,7 @@
 - (void)refreshFaceTimePhotosSettingsAnimated:(_Bool)arg1;
 - (void)showFaceTimePhotosSettings:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_showAliasValidationError:(id)arg1;
+- (void)_showRemoveAlertForAlias:(id)arg1 specifier:(id)arg2;
 - (void)setAliasSelected:(id)arg1;
 - (id)createSpecifierForAlias:(id)arg1;
 - (_Bool)_canDeselectAlias:(id)arg1;
@@ -166,6 +171,8 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLoad;
+- (void)doneButtonTapped:(id)arg1;
 - (_Bool)shouldReloadSpecifiersOnResume;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)specifierList;

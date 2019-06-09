@@ -11,7 +11,7 @@
 #import <UserNotificationsServer/UNSNotificationRepositoryObserver-Protocol.h>
 #import <UserNotificationsServer/UNSNotificationTopicRepositoryObserver-Protocol.h>
 
-@class BBDataProviderProxy, BBSectionIcon, BBSectionInfo, BSCFBundle, NSMutableDictionary, NSString, UNSApplicationLauncher, UNSAttachmentsService, UNSDaemonLauncher, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationSourceDescription, UNSNotificationTopicRepository;
+@class BBDataProviderProxy, BBSectionIcon, BBSectionInfo, BSCFBundle, NSMutableDictionary, NSString, UNSApplicationLauncher, UNSAttachmentsService, UNSDaemonLauncher, UNSLocalizationService, UNSNotificationCategoryRepository, UNSNotificationRepository, UNSNotificationSourceDescription, UNSNotificationTopicRepository;
 @protocol OS_dispatch_queue;
 
 @interface UNSDefaultDataProvider : NSObject <UNSNotificationRepositoryObserver, UNSNotificationCategoryRepositoryObserver, UNSNotificationTopicRepositoryObserver, BBRemoteDataProvider>
@@ -26,6 +26,7 @@
     UNSNotificationCategoryRepository *_categoryRepository;
     UNSNotificationTopicRepository *_topicRepository;
     UNSAttachmentsService *_attachmentsService;
+    UNSLocalizationService *_localizationService;
     BBDataProviderProxy *_proxy;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_primaryAttachments;
@@ -38,7 +39,7 @@
 @property(retain, nonatomic) BBDataProviderProxy *proxy; // @synthesize proxy=_proxy;
 - (void).cxx_destruct;
 - (id)_sectionIconForNotificationSourceDescription:(id)arg1;
-- (id)_sectionIconVariantForImageName:(id)arg1 bundlePath:(id)arg2 format:(long long)arg3;
+- (id)_sectionIconVariantForImageName:(id)arg1 bundlePath:(id)arg2 format:(long long)arg3 precomposed:(_Bool)arg4;
 - (id)primaryAttachmentDataForRecordID:(id)arg1;
 - (id)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2;
 - (float)attachmentAspectRatioForRecordID:(id)arg1;
@@ -50,11 +51,13 @@
 - (void)topicRepository:(id)arg1 didChangeTopicsForBundleIdentifier:(id)arg2;
 - (void)categoryRepository:(id)arg1 didChangeCategoriesForBundleIdentifier:(id)arg2;
 - (void)notificationRepository:(id)arg1 didPerformUpdates:(id)arg2 forBundleIdentifier:(id)arg3;
+- (void)notificationRepository:(id)arg1 didDiscoverContentOnFirstUnlockForBundleIdentifier:(id)arg2;
 - (_Bool)syncsBulletinDismissal;
 - (id)_unarchiveNotificationFromData:(id)arg1;
 - (void)_handleBulletinActionResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)handleBulletinActionResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)sectionIdentifier;
+- (void)noteSectionInfoDidChange:(id)arg1;
 - (id)sortDescriptors;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
 - (id)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(unsigned long long)arg1 lastClearedInfo:(id)arg2;
@@ -71,6 +74,7 @@
 - (id)_defaultActionWithNotification:(id)arg1;
 - (_Bool)_isResourceValidForPath:(id)arg1 withContainerPath:(id)arg2;
 - (id)_pathForSoundName:(id)arg1;
+- (id)_soundsDirectoryPathForContainerBasePath:(id)arg1;
 - (id)_queue_applicableSectionInfosForSubsectionIDs:(id)arg1;
 - (_Bool)_queue_supportsCriticalAlertsForSubsectionIDs:(id)arg1;
 - (id)_queue_bulletinForNotification:(id)arg1;
@@ -83,13 +87,12 @@
 - (id)sectionIcon;
 - (id)sectionParameters;
 - (id)_localizeClientString:(id)arg1 inBundle:(id)arg2;
-- (_Bool)_isPushDataProvider;
 - (void)invalidate;
 - (void)uninstall;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (void)setNotificationSourceDescription:(id)arg1;
-- (id)initWithNotificationSourceDescription:(id)arg1 applicationLauncher:(id)arg2 daemonLauncher:(id)arg3 categoryRepository:(id)arg4 notificationRepository:(id)arg5 topicRepository:(id)arg6 attachmentsService:(id)arg7 queue:(id)arg8;
+- (id)initWithNotificationSourceDescription:(id)arg1 applicationLauncher:(id)arg2 daemonLauncher:(id)arg3 categoryRepository:(id)arg4 notificationRepository:(id)arg5 topicRepository:(id)arg6 attachmentsService:(id)arg7 localizationService:(id)arg8 queue:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

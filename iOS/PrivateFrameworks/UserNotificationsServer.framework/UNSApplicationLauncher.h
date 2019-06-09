@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class FBSSystemService, NSMutableDictionary, UNSLocationMonitor;
+@class NSMutableDictionary, UNSLocationMonitor;
 @protocol OS_dispatch_queue;
 
 @interface UNSApplicationLauncher : NSObject
 {
-    FBSSystemService *_systemService;
     UNSLocationMonitor *_locationMonitor;
     NSMutableDictionary *_bundleIdentifierToAssertions;
     NSObject<OS_dispatch_queue> *_queue;
@@ -29,10 +28,10 @@
 - (id)_queue_actionForNotificationResponse:(id)arg1 bundleIdentifier:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (void)_queue_backgroundLaunchApplication:(id)arg1 withResponse:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)backgroundLaunchApplication:(id)arg1 withResponse:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_queue_foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_queue_foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4 endpoint:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)foregroundLaunchApplication:(id)arg1 withResponse:(id)arg2 launchImageName:(id)arg3 origin:(id)arg4 endpoint:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)dealloc;
-- (id)initWithSystemService:(id)arg1 locationMonitor:(id)arg2;
+- (id)initWithLocationMonitor:(id)arg1;
 
 @end
 

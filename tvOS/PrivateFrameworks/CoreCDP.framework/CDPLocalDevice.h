@@ -6,11 +6,29 @@
 
 #import <objc/NSObject.h>
 
+@protocol CDPLocalDeviceSecretProxy;
+
 @interface CDPLocalDevice : NSObject
 {
+    id <CDPLocalDeviceSecretProxy> _localSecretProxy;
 }
 
 + (_Bool)hasLocalSecret;
++ (id)sharedInstance;
+- (void).cxx_destruct;
+- (_Bool)_isHomePod;
+- (_Bool)_currentProcessHasEntitlement:(id)arg1;
+- (_Bool)_currentProcessCreatesDaemonTypeProxy;
+- (id)deviceName;
+- (id)serialNumber;
+- (id)deviceClass;
+- (id)osVersion;
+- (id)modelVersion;
+- (id)hardwareModel;
+- (id)marketingModel;
+- (_Bool)supportsSecureBackupRecovery;
+- (_Bool)hasLocalSecret;
+- (id)init;
 
 @end
 

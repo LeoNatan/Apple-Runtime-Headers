@@ -15,8 +15,7 @@
     _Bool _returnsDistinctEntities;
     Class _entityClass;
     long long _limitCount;
-    NSArray *_orderingDirections;
-    NSArray *_orderingProperties;
+    NSArray *_orderingTerms;
     HDSQLitePredicate *_predicate;
     NSString *_groupBy;
     NSArray *_preferredEntityJoinOrder;
@@ -26,8 +25,7 @@
 @property(copy, nonatomic) NSString *groupBy; // @synthesize groupBy=_groupBy;
 @property(copy, nonatomic) HDSQLitePredicate *predicate; // @synthesize predicate=_predicate;
 @property(nonatomic) _Bool returnsDistinctEntities; // @synthesize returnsDistinctEntities=_returnsDistinctEntities;
-@property(copy, nonatomic) NSArray *orderingProperties; // @synthesize orderingProperties=_orderingProperties;
-@property(copy, nonatomic) NSArray *orderingDirections; // @synthesize orderingDirections=_orderingDirections;
+@property(copy, nonatomic) NSArray *orderingTerms; // @synthesize orderingTerms=_orderingTerms;
 @property(nonatomic) long long limitCount; // @synthesize limitCount=_limitCount;
 @property(nonatomic) Class entityClass; // @synthesize entityClass=_entityClass;
 - (void).cxx_destruct;

@@ -9,8 +9,8 @@
 #import <SearchUI/SearchUIFeedbackDelegateInternal-Protocol.h>
 #import <SearchUI/SearchUITableViewTesting-Protocol.h>
 
-@class NSString, SearchUIPeekDelegate, SearchUITableModel, SearchUITableView, TLKTableViewScrollTester;
-@protocol SFFeedbackListener, SearchUIResultViewDelegate, UIViewControllerPreviewing;
+@class NSString, SearchUIPeekDelegate, SearchUITableModel, SearchUITableView, TLKTableViewScrollTester, _UIContextMenuInteraction;
+@protocol SFFeedbackListener, SearchUIResultsViewDelegate, UIViewControllerPreviewing;
 
 @interface SearchUITableViewController : SearchUIKeyboardableTableViewController <SearchUITableViewTesting, SearchUIFeedbackDelegateInternal>
 {
@@ -19,23 +19,28 @@
     CDUnknownBlockType tableViewDidUpdateHandler;
     CDUnknownBlockType cellWillDisplayHandler;
     id <SFFeedbackListener> _feedbackListener;
-    id <SearchUIResultViewDelegate> _resultViewDelegate;
+    id <SearchUIResultsViewDelegate> _resultsViewDelegate;
     SearchUITableModel *_tableModel;
     SearchUIPeekDelegate *_peekDelegate;
+    _UIContextMenuInteraction *_contextInteraction;
     id <UIViewControllerPreviewing> _previewingContext;
     long long _preferredPunchoutIndex;
+    SearchUITableModel *_stateRestoredTableModel;
     TLKTableViewScrollTester *_scrollTester;
+    struct CGPoint _stateRestoredScrollPoint;
 }
 
 + (void)applySeparatorStyleToCell:(id)arg1 forCurrentRowModel:(id)arg2 nextRowModel:(id)arg3;
-+ (double)layoutMarginWidthForOrientation:(long long)arg1;
-@property(retain) TLKTableViewScrollTester *scrollTester; // @synthesize scrollTester=_scrollTester;
-@property long long preferredPunchoutIndex; // @synthesize preferredPunchoutIndex=_preferredPunchoutIndex;
-@property(retain) id <UIViewControllerPreviewing> previewingContext; // @synthesize previewingContext=_previewingContext;
-@property(retain) SearchUIPeekDelegate *peekDelegate; // @synthesize peekDelegate=_peekDelegate;
-@property(retain) SearchUITableModel *tableModel; // @synthesize tableModel=_tableModel;
+@property(retain, nonatomic) TLKTableViewScrollTester *scrollTester; // @synthesize scrollTester=_scrollTester;
+@property(nonatomic) struct CGPoint stateRestoredScrollPoint; // @synthesize stateRestoredScrollPoint=_stateRestoredScrollPoint;
+@property(retain, nonatomic) SearchUITableModel *stateRestoredTableModel; // @synthesize stateRestoredTableModel=_stateRestoredTableModel;
+@property(nonatomic) long long preferredPunchoutIndex; // @synthesize preferredPunchoutIndex=_preferredPunchoutIndex;
+@property(retain, nonatomic) id <UIViewControllerPreviewing> previewingContext; // @synthesize previewingContext=_previewingContext;
+@property(retain, nonatomic) _UIContextMenuInteraction *contextInteraction; // @synthesize contextInteraction=_contextInteraction;
+@property(retain, nonatomic) SearchUIPeekDelegate *peekDelegate; // @synthesize peekDelegate=_peekDelegate;
+@property(retain, nonatomic) SearchUITableModel *tableModel; // @synthesize tableModel=_tableModel;
 @property(nonatomic) _Bool shouldUseInsetRoundedSections; // @synthesize shouldUseInsetRoundedSections=_shouldUseInsetRoundedSections;
-@property __weak id <SearchUIResultViewDelegate> resultViewDelegate; // @synthesize resultViewDelegate=_resultViewDelegate;
+@property __weak id <SearchUIResultsViewDelegate> resultsViewDelegate; // @synthesize resultsViewDelegate=_resultsViewDelegate;
 @property(nonatomic) __weak id <SFFeedbackListener> feedbackListener; // @synthesize feedbackListener=_feedbackListener;
 @property(copy, nonatomic) CDUnknownBlockType cellWillDisplayHandler; // @synthesize cellWillDisplayHandler;
 @property(copy, nonatomic) CDUnknownBlockType tableViewDidUpdateHandler; // @synthesize tableViewDidUpdateHandler;
@@ -44,25 +49,27 @@
 - (_Bool)respondsToSelector:(SEL)arg1;
 - (_Bool)forwardFeedbackForSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)toggleShowMoreForSection:(unsigned long long)arg1;
+- (struct CGRect)scrollToIndexPath:(id)arg1;
 - (void)tapAtIndexPath:(id)arg1;
 - (id)currentTableModel;
 - (_Bool)updateMustAccountForLayout;
 - (void)performScrollTestWithHandlerForFirstScrollCompletion:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)performScrollTestWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)updateContentScrolledOffScreenStatus;
 - (double)offScreenContentScrollDistance;
-- (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
-- (struct _NSRange)enumerateSelectableCellsForIndexPath:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (void)deselectRowsForIndexPath:(id)arg1 animated:(_Bool)arg2;
+- (void)deselectSelectedRows;
+- (void)purgeMemory;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)scrollViewDidScroll:(id)arg1;
-- (void)presentViewController:(id)arg1;
 - (void)updateViewControllerTitle:(id)arg1;
 - (void)cardSectionViewDidSelectPreferredPunchoutIndex:(long long)arg1;
+- (void)updateSeparators;
 - (void)cardSectionViewDidInvalidateSize:(id)arg1 animate:(_Bool)arg2;
 - (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateTableForNewCellHeightAnimated:(_Bool)arg1;
@@ -71,27 +78,29 @@
 - (id)punchoutsForIndexPath:(id)arg1;
 - (id)nextCardForIndexPath:(id)arg1;
 - (void)resignTextField;
-- (id)preferredViewControllerForIndexPath:(id)arg1 isPreview:(_Bool)arg2;
-- (void)roundNecessaryCornersForTableCellSelectedBackground:(id)arg1;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)cellForIndexPath:(id)arg1 reuseIfPossible:(_Bool)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)willDismissViewController:(id)arg1;
 - (void)showViewController:(id)arg1;
-- (void)presentViewController:(id)arg1 animated:(_Bool)arg2;
-- (void)requestAuthIfNecessaryAndPresentViewController:(id)arg1 animated:(_Bool)arg2;
+- (void)presentViewController:(id)arg1 animated:(_Bool)arg2 forceModalPresentation:(_Bool)arg3;
+- (void)presentViewController:(id)arg1;
+- (void)requestAuthIfNecessaryAndPresentViewController:(id)arg1 animated:(_Bool)arg2 forceModalPresentation:(_Bool)arg3;
 - (unsigned long long)handleSelectionAtIndexPath:(id)arg1 wasPop:(_Bool)arg2;
+- (void)sendFeedbackForCardSectionEngagement:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (id)cardSectionForIndexPath:(id)arg1;
 - (id)resultForIndexPath:(id)arg1;
+- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)fallbackPeekViewControllerForIndexPath:(id)arg1;
 - (id)viewControllerForIndexPath:(id)arg1 isPeek:(_Bool)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateWithTableModel:(id)arg1;
-@property(nonatomic) unsigned long long style;
-- (void)updateLayoutMarginsForOrientation:(long long)arg1;
-- (void)viewSafeAreaInsetsDidChange;
+@property(nonatomic) _Bool threeDTouchEnabled;
+- (void)updateLayoutMarginsWithSize:(struct CGSize)arg1 orientation:(long long)arg2;
+- (void)updateLayoutMargins;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)addOrbInteractionIfNeeded;
 - (id)init;
 
 // Remaining properties
@@ -99,7 +108,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
-@property(retain) SearchUITableView *tableView; // @dynamic tableView;
+@property(retain, nonatomic) SearchUITableView *tableView; // @dynamic tableView;
 
 @end
 

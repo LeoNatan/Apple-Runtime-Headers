@@ -6,12 +6,15 @@
 
 #import <MMCS/NSObject-Protocol.h>
 
-@class NSArray, NSDate, NSMutableSet;
+@class NSArray, NSDate, NSMutableDictionary, NSMutableSet;
 @protocol MMCSOperationStateTimeRange;
 
 @protocol MMCSOperationMetric <NSObject>
 @property(readonly) NSArray *rangesCopy;
 @property(readonly) NSMutableSet *requestUUIDs;
+@property(readonly) NSMutableDictionary *fileCountByChunkProfile;
+@property(readonly) NSMutableDictionary *chunkCountByChunkProfile;
+@property(readonly) NSMutableDictionary *totalBytesByChunkProfile;
 @property unsigned long long connectionsCreated;
 @property unsigned long long connections;
 @property unsigned long long bytesDownloaded;

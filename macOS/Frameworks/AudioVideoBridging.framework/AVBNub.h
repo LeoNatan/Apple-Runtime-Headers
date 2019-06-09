@@ -14,7 +14,6 @@
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (id)avbNub;
 + (id)sharedNub;
-+ (void)loadAVBNub;
 + (void)notifyWhenNubIsAvailable:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (void)finalize;

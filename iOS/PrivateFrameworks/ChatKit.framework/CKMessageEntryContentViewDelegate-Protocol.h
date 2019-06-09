@@ -21,5 +21,6 @@
 - (_Bool)messageEntryContentViewShouldBeginEditing:(CKMessageEntryContentView *)arg1;
 - (void)messageEntryContentViewShelfDidChange:(CKMessageEntryContentView *)arg1;
 - (void)messageEntryContentViewDidChange:(CKMessageEntryContentView *)arg1;
+- (void)messageEntryContentViewDidReturn:(CKMessageEntryContentView *)arg1;
 @end
 

@@ -6,37 +6,28 @@
 
 #import <objc/NSObject.h>
 
-#import <VideosUI/TVInterfaceCreating-Protocol.h>
-#import <VideosUI/_TVInterfaceCreatingPrivate-Protocol.h>
-
-@class NSDictionary, NSString;
-
-@interface VUIMLFactory : NSObject <TVInterfaceCreating, _TVInterfaceCreatingPrivate>
+@interface VUIMLFactory : NSObject
 {
-    NSDictionary *_elementTypeLookup;
 }
 
++ (id)_urlForStyleSheetName:(id)arg1;
++ (void)_registerIOStyleSheets;
++ (void)_registerStylesheets;
 + (void)_registerStyles;
 + (void)_registerElements;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSDictionary *elementTypeLookup; // @synthesize elementTypeLookup=_elementTypeLookup;
-- (void).cxx_destruct;
-- (void)_parseAppConfigurationForElement:(id)arg1;
+- (id)_URLForResource:(id)arg1 inBundle:(id)arg2;
 - (id)_styleSheetURLForTemplate:(id)arg1;
-- (id)_imageProxyForElement:(id)arg1;
+- (id)navigationControllerForTabIdentifier:(id)arg1;
+- (id)styleSheetURLForTemplate:(id)arg1;
+- (void)parseAppConfigurationForElement:(id)arg1;
 - (id)imageForResource:(id)arg1;
+- (id)URLForResource:(id)arg1;
+- (id)imageProxyForElement:(id)arg1 withLayout:(id)arg2;
 - (Class)collectionViewCellClassForElement:(id)arg1;
 - (id)viewControllerForElement:(id)arg1 existingViewController:(id)arg2;
-- (id)navigationControllerForTabIdentifier:(id)arg1;
 - (id)viewForElement:(id)arg1 existingView:(id)arg2;
-- (unsigned long long)vuiElementTypeForElement:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

@@ -6,7 +6,6 @@
 
 #import <CFNetwork/NSURLCredentialStorage.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSCFMemoryURLCredentialStorage : NSURLCredentialStorage
 {
 }

@@ -11,6 +11,7 @@
 @class MKTransitInfoLabelView, NSButton, NSString, _MKUILabel;
 @protocol GEOTransitConnectionInfo, _MKTransitConnectionCellDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _MKTransitConnectionCell : MKCustomSeparatorTableViewCell <MKMultiLineLabelContainer>
 {
     _MKUILabel *_nameLabel;

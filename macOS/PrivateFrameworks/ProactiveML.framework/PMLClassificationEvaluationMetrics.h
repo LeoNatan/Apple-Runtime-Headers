@@ -10,6 +10,7 @@
 {
 }
 
++ (void)setReportSamplingRate:(unsigned int)arg1;
 + (float)roundFloatToSigFigs:(float)arg1 sigFigs:(int)arg2;
 + (void)addScoresForOutcomes:(id)arg1 predictions:(id)arg2 predicate:(CDUnknownBlockType)arg3 metrics:(id)arg4;
 + (unsigned long long)falseNegatives:(id)arg1 predictions:(id)arg2 predicate:(CDUnknownBlockType)arg3;

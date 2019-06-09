@@ -35,6 +35,7 @@
 - (_Bool)canPerformEditOperation:(long long)arg1;
 - (_Bool)collectionHasFixedOrder;
 - (id)localizedSharedByLabelAllowsEmail:(_Bool)arg1;
+- (_Bool)isMultipleContributorCloudSharedAlbum;
 - (_Bool)isOwnedCloudSharedAlbum;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;

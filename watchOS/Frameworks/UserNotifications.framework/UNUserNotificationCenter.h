@@ -10,19 +10,29 @@
 #import <UserNotifications/UNUserNotificationServiceConnectionObserver-Protocol.h>
 
 @class NSString;
-@protocol UNUserNotificationCenterDelegate;
+@protocol OS_dispatch_queue, UNUserNotificationCenterDelegate, UNUserNotificationCenterDelegatePrivate;
 
 @interface UNUserNotificationCenter : NSObject <UNUserNotificationServiceConnectionObserver, UNUserNotificationCenterDelegateConnectionListenerDelegate>
 {
     id <UNUserNotificationCenterDelegate> _delegate;
     NSString *_bundleIdentifier;
+    NSObject<OS_dispatch_queue> *_queue;
+    id <UNUserNotificationCenterDelegatePrivate> _privateDelegate;
 }
 
 + (_Bool)supportsContentExtensions;
 + (id)currentNotificationCenter;
+@property(nonatomic) __weak id <UNUserNotificationCenterDelegatePrivate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(nonatomic) __weak id <UNUserNotificationCenterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)notificationSettingsForTopics;
+- (void)getNotificationSettingsForTopicsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)notificationTopics;
+- (void)getNotificationTopicsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setNotificationTopics:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)didChangeSettings:(id)arg1;
 - (void)didReceiveNotificationResponse:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)setBadgeString:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)setBadgeNumber:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -31,6 +41,7 @@
 - (void)removeAllDeliveredNotifications;
 - (void)removeDeliveredNotificationsWithIdentifiers:(id)arg1;
 - (void)getDeliveredNotificationsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)deliveredNotifications;
 - (void)removeAllPendingNotificationRequests;
 - (void)removeSimilarNotificationRequests:(id)arg1;
 - (void)removePendingNotificationRequestsWithIdentifiers:(id)arg1;
@@ -48,8 +59,8 @@
 - (void)requestAuthorizationWithOptions:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setWantsNotificationResponsesDelivered;
 @property(readonly, nonatomic) _Bool supportsContentExtensions;
+- (id)initWithBundleIdentifier:(id)arg1 queue:(id)arg2;
 - (id)initWithBundleIdentifier:(id)arg1;
-- (id)initWithBundleProxy:(id)arg1;
 - (id)init;
 
 // Remaining properties

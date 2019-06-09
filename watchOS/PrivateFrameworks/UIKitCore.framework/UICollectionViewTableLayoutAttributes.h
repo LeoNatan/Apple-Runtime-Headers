@@ -20,6 +20,7 @@
     _Bool _insetsContentViewsToSafeArea;
     _Bool _drawsSeparatorAtTopOfSection;
     _Bool _drawsSeparatorAtBottomOfSection;
+    _Bool _preferredAttributesCached;
     _Bool _isHeader;
     _Bool _floating;
     int _separatorStyle;
@@ -32,7 +33,6 @@
     float _defaultLeadingCellMarginWidth;
     float _defaultTrailingCellMarginWidth;
     float _indexBarExtentFromEdge;
-    float _sectionBorderWidth;
     int _indentationLevel;
     float _maxTitleWidth;
     int _textAlignment;
@@ -48,10 +48,10 @@
 @property(nonatomic) struct UIEdgeInsets margins; // @synthesize margins=_margins;
 @property(nonatomic) float maxTitleWidth; // @synthesize maxTitleWidth=_maxTitleWidth;
 @property(nonatomic) _Bool isHeader; // @synthesize isHeader=_isHeader;
+@property(nonatomic) _Bool preferredAttributesCached; // @synthesize preferredAttributesCached=_preferredAttributesCached;
 @property(nonatomic) _Bool drawsSeparatorAtBottomOfSection; // @synthesize drawsSeparatorAtBottomOfSection=_drawsSeparatorAtBottomOfSection;
 @property(nonatomic) _Bool drawsSeparatorAtTopOfSection; // @synthesize drawsSeparatorAtTopOfSection=_drawsSeparatorAtTopOfSection;
 @property(nonatomic) int indentationLevel; // @synthesize indentationLevel=_indentationLevel;
-@property(nonatomic) float sectionBorderWidth; // @synthesize sectionBorderWidth=_sectionBorderWidth;
 @property(nonatomic) struct UIEdgeInsets backgroundInset; // @synthesize backgroundInset=_backgroundInset;
 @property(nonatomic) float indexBarExtentFromEdge; // @synthesize indexBarExtentFromEdge=_indexBarExtentFromEdge;
 @property(nonatomic) float defaultTrailingCellMarginWidth; // @synthesize defaultTrailingCellMarginWidth=_defaultTrailingCellMarginWidth;

@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ICDDeviceProfileHandler : NSObject
 {
     NSString *_name;

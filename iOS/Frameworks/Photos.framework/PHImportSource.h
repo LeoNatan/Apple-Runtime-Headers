@@ -6,11 +6,15 @@
 
 #import <Photos/PHImportExceptionRecorder.h>
 
-@class NSDateFormatter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, PHImportDuplicateChecker, PHImportOptions;
+@class NSDateFormatter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, NSURL, PHImportDuplicateChecker, PHImportOptions;
 @protocol OS_dispatch_queue, PHImportSourceDelegate;
 
 @interface PHImportSource : PHImportExceptionRecorder
 {
+    NSMutableDictionary *_assetsByImportIdentifier;
+    NSMutableDictionary *_representationsByImportIdentifier;
+    _Bool _ejecting;
+    _Bool _canAutolaunch;
     unsigned char _sourceAccessState;
     _Bool _rampBatchInterval;
     _Bool _open;
@@ -20,6 +24,7 @@
     unsigned long long _batchSize;
     double _batchInterval;
     id <PHImportSourceDelegate> _delegate;
+    NSURL *_autolaunchApplicationURL;
     unsigned long long _currentItemIndex;
     unsigned long long _nextItemIndex;
     unsigned long long _inFlight;
@@ -29,8 +34,6 @@
     NSObject<OS_dispatch_queue> *_batchQueue;
     NSObject<OS_dispatch_queue> *_dupPathCollectionQueue;
     CDUnknownBlockType _completion;
-    NSMutableDictionary *_assetsByOriginalName;
-    NSMutableSet *_renderedAssets;
     NSMutableArray *_duplicateAssets;
     NSObject<OS_dispatch_queue> *_processingQueue;
     NSObject<OS_dispatch_queue> *_itemProcessingQueue;
@@ -41,15 +44,18 @@
     NSMutableArray *_processed;
     double _batchStart;
     unsigned long long _batchCount;
+    NSMutableDictionary *_importIdentifierToLivePhotoStateMap;
     NSMutableArray *_items;
+    NSMutableSet *_folders;
     NSMutableArray *_errors;
     PHImportOptions *_options;
     NSMutableArray *_assets;
     NSProgress *_progress;
     long long _assetLoadOrder;
+    NSString *_prefix;
 }
 
-+ (id)baseFileNameByRemovingRenderMarkerInFileName:(id)arg1;
+@property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(nonatomic) long long assetLoadOrder; // @synthesize assetLoadOrder=_assetLoadOrder;
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSMutableArray *assets; // @synthesize assets=_assets;
@@ -58,7 +64,9 @@
 @property(readonly) _Bool canShowProgress; // @synthesize canShowProgress=_canShowProgress;
 @property(nonatomic) _Bool open; // @synthesize open=_open;
 @property(retain) NSMutableArray *errors; // @synthesize errors=_errors;
+@property(retain, nonatomic) NSMutableSet *folders; // @synthesize folders=_folders;
 @property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
+@property(retain, nonatomic) NSMutableDictionary *importIdentifierToLivePhotoStateMap; // @synthesize importIdentifierToLivePhotoStateMap=_importIdentifierToLivePhotoStateMap;
 @property(nonatomic) _Bool rampBatchInterval; // @synthesize rampBatchInterval=_rampBatchInterval;
 @property(nonatomic) unsigned long long batchCount; // @synthesize batchCount=_batchCount;
 @property(nonatomic) double batchStart; // @synthesize batchStart=_batchStart;
@@ -70,8 +78,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *itemProcessingQueue; // @synthesize itemProcessingQueue=_itemProcessingQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSMutableArray *duplicateAssets; // @synthesize duplicateAssets=_duplicateAssets;
-@property(retain, nonatomic) NSMutableSet *renderedAssets; // @synthesize renderedAssets=_renderedAssets;
-@property(retain, nonatomic) NSMutableDictionary *assetsByOriginalName; // @synthesize assetsByOriginalName=_assetsByOriginalName;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dupPathCollectionQueue; // @synthesize dupPathCollectionQueue=_dupPathCollectionQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *batchQueue; // @synthesize batchQueue=_batchQueue;
@@ -81,10 +87,14 @@
 @property(nonatomic) unsigned long long inFlight; // @synthesize inFlight=_inFlight;
 @property(nonatomic) unsigned long long nextItemIndex; // @synthesize nextItemIndex=_nextItemIndex;
 @property(nonatomic) unsigned long long currentItemIndex; // @synthesize currentItemIndex=_currentItemIndex;
+@property(copy, nonatomic) NSURL *autolaunchApplicationURL; // @synthesize autolaunchApplicationURL=_autolaunchApplicationURL;
 @property(nonatomic) unsigned char sourceAccessState; // @synthesize sourceAccessState=_sourceAccessState;
+@property(readonly, nonatomic) _Bool canAutolaunch; // @synthesize canAutolaunch=_canAutolaunch;
+@property(readonly, nonatomic, getter=isEjecting) _Bool ejecting; // @synthesize ejecting=_ejecting;
 @property(nonatomic) __weak id <PHImportSourceDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+@property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+- (id)assetsDescription;
 - (id)generatePPTData;
 - (void)dispatchAssetDataRequestAsync:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)cancelAssetLoading;
@@ -93,8 +103,16 @@
 - (id)additionalQueues;
 - (void)checkForDuplicates:(id)arg1 considerItemsInTrash:(_Bool)arg2 forEach:(CDUnknownBlockType)arg3 atEnd:(CDUnknownBlockType)arg4;
 - (id)checkForDuplicate:(id)arg1 considerItemsInTheTrash:(_Bool)arg2;
-- (void)processAsset:(id)arg1 withProcessed:(id)arg2 atEnd:(CDUnknownBlockType)arg3;
-- (void)addAsset:(id)arg1 toRemovedAssets:(id)arg2;
+- (void)loadSidecarsFor:(id)arg1;
+- (_Bool)confirmAsset:(id)arg1 isSidecarOfAsset:(id)arg2;
+- (_Bool)confirmAsset:(id)arg1 isBaseOf:(id)arg2;
+- (_Bool)confirmAsset:(id)arg1 isRenderOf:(id)arg2;
+- (void)setIsLivePhotoForImportIdentifier:(id)arg1;
+- (_Bool)isLivePhotoForImportIdentifier:(id)arg1;
+- (void)addRepresentationsForAsset:(id)arg1;
+- (void)processResource:(id)arg1;
+- (void)processRepresentation:(id)arg1;
+- (id)processAssets:(id)arg1;
 - (_Bool)processPotentialJpegAsset:(id)arg1 plusRawAsset:(id)arg2;
 - (_Bool)date:(id)arg1 matchesDate:(id)arg2;
 - (_Bool)pathForAsset:(id)arg1 matchesAsset:(id)arg2;
@@ -110,24 +128,27 @@
 - (void)incrementInFlight;
 - (void)endWork;
 - (void)endBatch;
-- (id)processItem:(id)arg1 applyingBlock:(CDUnknownBlockType)arg2;
+- (id)assetsByProcessingItem:(id)arg1;
 - (void)processNextItems;
 - (void)beginWork;
 - (id)loadAssetsForLibrary:(id)arg1 allowDuplicates:(_Bool)arg2 order:(long long)arg3 batchSize:(unsigned long long)arg4 batchInterval:(double)arg5 atEnd:(CDUnknownBlockType)arg6;
 - (id)loadAssetsForLibrary:(id)arg1 allowDuplicates:(_Bool)arg2 order:(long long)arg3 batchInterval:(double)arg4 atEnd:(CDUnknownBlockType)arg5;
 - (id)loadAssetsForLibrary:(id)arg1 allowDuplicates:(_Bool)arg2 order:(long long)arg3 batchSize:(unsigned long long)arg4 atEnd:(CDUnknownBlockType)arg5;
 - (id)loadAssetsForLibrary:(id)arg1 allowDuplicates:(_Bool)arg2 order:(long long)arg3 atEnd:(CDUnknownBlockType)arg4;
+@property(readonly) _Bool canReference;
 @property(readonly, nonatomic) _Bool canDeleteContent;
 - (id)requestDeleteAssetsForRecords:(id)arg1;
 - (void)eject;
-@property(readonly) NSString *volumePath;
-@property(readonly) _Bool isAvailable;
-@property(readonly) _Bool canEject;
-@property(readonly) _Bool isAppleDevice;
-@property(readonly) _Bool isCamera;
-@property(readonly) NSString *path;
-@property(readonly) NSString *productKind;
-@property(readonly) NSString *name;
+@property(readonly, nonatomic) NSString *volumePath;
+@property(readonly, nonatomic) _Bool isAvailable;
+@property(readonly, nonatomic) _Bool isConnectedDevice;
+@property(readonly, nonatomic) _Bool canEject;
+@property(readonly, nonatomic) _Bool isAppleDevice;
+@property(readonly, nonatomic) _Bool isCamera;
+@property(readonly, nonatomic) struct CGImage *icon;
+@property(readonly, nonatomic) NSString *path;
+@property(readonly, nonatomic) NSString *productKind;
+@property(readonly, nonatomic) NSString *name;
 - (id)init;
 
 @end

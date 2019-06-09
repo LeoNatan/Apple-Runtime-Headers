@@ -6,7 +6,7 @@
 
 #import <Foundation/NSOperation.h>
 
-@class BRCSyncContext, BRCThrottle, CKOperationGroup, NSDate, NSError, NSMutableArray, NSObject, NSUUID;
+@class BRCSyncContext, BRCThrottle, CKOperationGroup, NSDate, NSError, NSHashTable, NSMutableArray, NSObject, NSUUID;
 @protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source, OS_os_activity, OS_os_transaction;
 
 __attribute__((visibility("hidden")))
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     long long _throttleHash;
     NSObject<OS_dispatch_source> *_retryTimer;
     NSObject<OS_dispatch_group> *_group;
+    NSHashTable *_subOperations;
     id _pmAssertionID;
     NSObject<OS_os_activity> *_Activity;
     NSMutableArray *_associatedEventMetrics;
@@ -60,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (void)start;
 - (void)schedule;
+- (id)allowsCellularAccess;
 - (void)_scheduleExecutionWithPreviousError:(id)arg1;
 - (void)_executeWithPreviousError:(id)arg1;
 - (void)_main;
@@ -72,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)descriptionWithContext:(id)arg1;
 - (id)subclassableDescriptionWithContext:(id)arg1;
 - (id)stateWithContext:(id)arg1;
+- (BOOL)isAsynchronous;
 - (BOOL)isConcurrent;
 @property(readonly, nonatomic) BOOL usesBackgroundSession;
 - (void)dealloc;

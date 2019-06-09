@@ -22,6 +22,9 @@
     REIdentifier *_donationIdentifier;
     id <REDonatedActionIdentifierProviding> _actionTypeIdentifier;
     id <REDonatedActionIdentifierProviding> _simplifiedActionTypeIdentifier;
+    struct NSString *_eventLevelIdentifier;
+    struct NSString *_appLevelIdentifier;
+    unsigned long long _filteredShortcutType;
     unsigned long long _relevanceProvidersHash;
     NSArray *_relevanceProviders;
     NSString *_intentTypeName;
@@ -37,6 +40,9 @@
 @property(readonly, nonatomic) NSString *intentTypeName; // @synthesize intentTypeName=_intentTypeName;
 @property(readonly, nonatomic) NSArray *relevanceProviders; // @synthesize relevanceProviders=_relevanceProviders;
 @property(readonly, nonatomic) unsigned long long relevanceProvidersHash; // @synthesize relevanceProvidersHash=_relevanceProvidersHash;
+@property(readonly, nonatomic) unsigned long long filteredShortcutType; // @synthesize filteredShortcutType=_filteredShortcutType;
+@property(readonly, nonatomic) NSString *appLevelIdentifier; // @synthesize appLevelIdentifier=_appLevelIdentifier;
+@property(readonly, nonatomic) NSString *eventLevelIdentifier; // @synthesize eventLevelIdentifier=_eventLevelIdentifier;
 @property(readonly, nonatomic, getter=isLocalDonation) _Bool localDonation; // @synthesize localDonation=_localDonation;
 @property(readonly, nonatomic) id <REDonatedActionIdentifierProviding> simplifiedActionTypeIdentifier; // @synthesize simplifiedActionTypeIdentifier=_simplifiedActionTypeIdentifier;
 @property(readonly, nonatomic) id <REDonatedActionIdentifierProviding> actionTypeIdentifier; // @synthesize actionTypeIdentifier=_actionTypeIdentifier;
@@ -60,6 +66,9 @@
 - (id)initWithEvent:(id)arg1 filtered:(_Bool)arg2;
 - (unsigned long long)_hashRelevanceProviders:(id)arg1;
 - (id)description;
+- (void)_loadShortcutIdentifiersFromUserActivity:(id)arg1;
+- (void)_loadShortcutIdentifiersFromIntent:(id)arg1;
+- (id)_shortcutFilter;
 - (id)_initRelevantShortcutWithEvent:(id)arg1 filtered:(_Bool)arg2;
 - (id)_initUserActivityWithEvent:(id)arg1 filtered:(_Bool)arg2;
 - (id)_initInteractionWithEvent:(id)arg1 filtered:(_Bool)arg2;

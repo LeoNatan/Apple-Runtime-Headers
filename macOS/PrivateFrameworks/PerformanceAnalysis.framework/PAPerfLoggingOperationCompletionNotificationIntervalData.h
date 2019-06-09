@@ -20,8 +20,6 @@
     unsigned long long _trailingDelayInMachAbsTime;
 }
 
-+ (void)addIntervalData:(id)arg1 toXPCDictionary:(id)arg2;
-+ (id)newIntervalTypeToIntervalDataDictionaryForXPCIntervalDictionary:(id)arg1;
 @property(readonly) unsigned long long trailingDelayInMachAbsTime; // @synthesize trailingDelayInMachAbsTime=_trailingDelayInMachAbsTime;
 @property(readonly) unsigned long long initialDelayInMachAbsTime; // @synthesize initialDelayInMachAbsTime=_initialDelayInMachAbsTime;
 @property(readonly) unsigned long long durationStandardDeviationInMachAbsTime; // @synthesize durationStandardDeviationInMachAbsTime=_durationStandardDeviationInMachAbsTime;
@@ -34,8 +32,6 @@
 @property(readonly) double initialDelayInMs;
 @property(readonly) double durationStandardDeviationInMs;
 @property(readonly) double averageDurationInMs;
-- (void)dealloc;
-- (id)initWithXPCDictionary:(id)arg1;
 
 @end
 

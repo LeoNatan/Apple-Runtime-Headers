@@ -13,6 +13,7 @@
     NSRemoteTitlebarRenamingSession *_session;
 }
 
+- (void).cxx_destruct;
 - (id)accessibilityFocusedUIElement;
 - (BOOL)accessibilityIsIgnored;
 - (void)resignKeyWindow;

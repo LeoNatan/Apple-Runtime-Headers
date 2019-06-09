@@ -78,6 +78,7 @@
 @property(readonly) BOOL isPidSuspended;
 @property(readonly) BOOL isTerminatedSnapshot;
 @property(readonly) BOOL isTaskResourceFlagged;
+@property(readonly) BOOL isSuspended;
 - (unsigned long long)sampleCountInSampleIndexRangeStart:(unsigned long long)arg1 end:(unsigned long long)arg2;
 - (id)debugDescriptionWithTask:(id)arg1;
 - (void)applyPAStyleSampleTimestamp:(id)arg1;

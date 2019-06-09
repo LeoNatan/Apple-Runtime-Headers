@@ -23,7 +23,7 @@
 - (void)_storePerformAction:(id)arg1 date:(id)arg2 remote:(_Bool)arg3;
 - (void)didPerformAction:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 
 @end
 

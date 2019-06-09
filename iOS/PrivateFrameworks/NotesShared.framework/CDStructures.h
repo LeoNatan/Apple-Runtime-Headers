@@ -12,11 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AVAsset {
-    Class _field1;
-    id _field2;
-};
-
 struct Array {
     CDUnknownFunctionPointerType *_field1;
     basic_string_a1f69cfb _field2;
@@ -223,6 +218,30 @@ struct Location;
 
 struct Media;
 
+struct NoteAccountObject {
+    Class _field1;
+    id _field2;
+    id _field3;
+};
+
+struct NoteContext {
+    Class _field1;
+    id _field2;
+    id _field3;
+    id _field4;
+    id _field5;
+    id _field6;
+    id _field7;
+    id _field8;
+    id _field9;
+    unsigned long long _field10;
+    _Bool _field11;
+    _Bool _field12;
+    _Bool _field13;
+    _Bool _field14;
+    id _field15;
+};
+
 struct ObjectID {
     CDUnknownFunctionPointerType *_field1;
     basic_string_a1f69cfb _field2;
@@ -290,8 +309,9 @@ struct PreviewImage {
     _Bool _field7;
     _Bool _field8;
     basic_string_a1f69cfb *_field9;
-    long long _field10;
+    int _field10;
     int _field11;
+    long long _field12;
 };
 
 struct Rectangle;
@@ -676,6 +696,11 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    char *_field1;
+    char *_field2;
+} CDStruct_91a0c811;
 
 typedef struct {
     double baseAlpha;

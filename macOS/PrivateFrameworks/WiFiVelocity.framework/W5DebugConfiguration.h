@@ -12,6 +12,8 @@
 @interface W5DebugConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
     long long _wifi;
+    long long _megaWiFiProfile;
+    long long _noLoggingWiFiProfile;
     long long _eapol;
     long long _bluetooth;
 }
@@ -19,6 +21,8 @@
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) long long bluetooth; // @synthesize bluetooth=_bluetooth;
 @property(nonatomic) long long eapol; // @synthesize eapol=_eapol;
+@property(nonatomic) long long noLoggingWiFiProfile; // @synthesize noLoggingWiFiProfile=_noLoggingWiFiProfile;
+@property(nonatomic) long long megaWiFiProfile; // @synthesize megaWiFiProfile=_megaWiFiProfile;
 @property(nonatomic) long long wifi; // @synthesize wifi=_wifi;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

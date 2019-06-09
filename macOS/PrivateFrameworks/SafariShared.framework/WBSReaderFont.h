@@ -6,22 +6,26 @@
 
 #import <objc/NSObject.h>
 
+#import <SafariShared/NSCopying-Protocol.h>
+
 @class NSString;
 
-@interface WBSReaderFont : NSObject
+@interface WBSReaderFont : NSObject <NSCopying>
 {
     NSString *_familyName;
     NSString *_displayName;
     NSString *_localizedName;
     BOOL _hasCalculatedLocalizedName;
-    BOOL _systemFont;
+    long long _type;
 }
 
 + (id)fontWithFamilyName:(id)arg1 displayName:(id)arg2;
++ (id)systemSerifFont;
++ (id)systemFontWithDisplayName:(id)arg1;
 + (id)systemFont;
-@property(readonly, nonatomic, getter=isSystemFont) BOOL systemFont; // @synthesize systemFont=_systemFont;
 @property(readonly, nonatomic) NSString *familyName; // @synthesize familyName=_familyName;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -30,7 +34,8 @@
 - (id)fontOfSize:(double)arg1;
 @property(readonly, nonatomic, getter=isInstalled) BOOL installed;
 @property(readonly, nonatomic) NSString *displayName;
-- (id)_initWithFamilyName:(id)arg1 displayName:(id)arg2 isSystemFont:(BOOL)arg3;
+@property(readonly, nonatomic) NSString *familyNameForWebContent;
+- (id)_initWithFamilyName:(id)arg1 displayName:(id)arg2 type:(long long)arg3;
 
 @end
 

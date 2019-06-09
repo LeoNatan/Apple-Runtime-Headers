@@ -20,7 +20,7 @@
     NSString *_airportCode;
     NSData *_handle;
     NSString *_label;
-    unsigned long long _locationType;
+    int _locationType;
     struct {
         unsigned int accuracy:1;
         unsigned int latitude:1;
@@ -38,7 +38,7 @@
 @property(nonatomic) double latitude; // @synthesize latitude=_latitude;
 @property(retain, nonatomic) NSString *address; // @synthesize address=_address;
 @property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-@property(nonatomic) unsigned long long locationType; // @synthesize locationType=_locationType;
+@property(nonatomic) int locationType; // @synthesize locationType=_locationType;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -57,8 +57,8 @@
 @property(nonatomic) _Bool hasLatitude;
 @property(readonly, nonatomic) _Bool hasAddress;
 @property(readonly, nonatomic) _Bool hasLabel;
-- (unsigned long long)StringAsLocationType:(id)arg1;
-- (id)locationTypeAsString:(unsigned long long)arg1;
+- (int)StringAsLocationType:(id)arg1;
+- (id)locationTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasLocationType;
 
 @end

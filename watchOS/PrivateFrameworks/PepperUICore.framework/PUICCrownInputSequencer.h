@@ -102,6 +102,7 @@
 - (void)_deviceOrientationInvertedDidChangeNotification:(id)arg1;
 - (void)_updateCrownInvertedSetting;
 - (void)checkIntegrityOfNotches;
+- (_Bool)addNotchFrom:(float)arg1 withEdgeType:(unsigned int)arg2 strength:(int)arg3 to:(float)arg4 withEdgeType:(unsigned int)arg5 strength:(int)arg6 restingPosition:(float)arg7;
 - (_Bool)addNotchFrom:(float)arg1 withEdgeType:(unsigned int)arg2 strength:(int)arg3 to:(float)arg4 withEdgeType:(unsigned int)arg5 strength:(int)arg6;
 - (_Bool)addNotchFrom:(float)arg1 withEdgeType:(unsigned int)arg2 to:(float)arg3 withEdgeType:(unsigned int)arg4 strength:(int)arg5;
 - (_Bool)addNotchFrom:(float)arg1 to:(float)arg2 withStrength:(int)arg3;

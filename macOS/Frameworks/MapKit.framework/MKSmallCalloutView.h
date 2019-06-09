@@ -9,6 +9,7 @@
 @class NSArray, NSLayoutConstraint, NSLayoutGuide, NSString, _MKSmallCalloutPassthroughButton, _MKUILabel;
 @protocol _MKCalloutAccessoryView;
 
+__attribute__((visibility("hidden")))
 @interface MKSmallCalloutView : NSView
 {
     _MKUILabel *_titleLabel;

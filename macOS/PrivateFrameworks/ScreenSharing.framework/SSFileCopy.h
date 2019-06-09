@@ -8,7 +8,6 @@
 
 @class NSDate, NSString, SSSession;
 
-__attribute__((visibility("hidden")))
 @interface SSFileCopy : NSObject
 {
     SSSession *session;

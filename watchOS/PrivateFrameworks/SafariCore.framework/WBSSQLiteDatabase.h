@@ -22,7 +22,6 @@
 + (id)_errorWithErrorCode:(int)arg1;
 + (id)privateOnDiskDatabaseURL;
 + (id)inMemoryDatabaseURL;
-+ (void)setUpLogCollection;
 + (void)initialize;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;

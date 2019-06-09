@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (const char *)_cStringFromData:(CDStruct_1916f467 *)arg1;
++ (const char *)_cStringFromData:(CDStruct_0942cde0 *)arg1;
 
 @end
 

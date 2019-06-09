@@ -8,6 +8,7 @@
 
 @class ODDIteratorSpecification;
 
+__attribute__((visibility("hidden")))
 @interface ODDForEach : ODDLayoutObjectList
 {
     ODDIteratorSpecification *mIteratorSpecification;

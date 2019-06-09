@@ -4,15 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSButton.h>
+#import <AppKit/NSRolloverButton.h>
 
 __attribute__((visibility("hidden")))
-@interface NSVisualTabPickerButton : NSButton
+@interface NSVisualTabPickerButton : NSRolloverButton
 {
 }
 
 + (void)initialize;
-- (void)drawRect:(struct CGRect)arg1;
 - (BOOL)allowsVibrancy;
 @property(nonatomic) BOOL useExternalHitTesting;
 

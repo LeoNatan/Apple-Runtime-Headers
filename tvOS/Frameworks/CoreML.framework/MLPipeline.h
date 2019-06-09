@@ -17,9 +17,12 @@
 
 + (id)compiledVersionForSpecification:(struct _MLModelSpecification *)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)compileSpecification:(struct _MLModelSpecification *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 error:(id *)arg4;
-+ (id)compileWithModels:(const RepeatedPtrField_f3160e5f *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 error:(id *)arg4;
-@property(readonly) NSArray *models; // @synthesize models=_models;
++ (id)compileWithModels:(const RepeatedPtrField_f3160e5f *)arg1 toArchive:(struct _MLModelOutputArchiver *)arg2 options:(id)arg3 updatable:(_Bool)arg4 error:(id *)arg5;
++ (void)archivePipelineUpdateParameterForModels:(const RepeatedPtrField_f3160e5f *)arg1 to:(struct _MLModelOutputArchiver *)arg2 updatable:(_Bool)arg3;
+@property(retain) NSArray *models; // @synthesize models=_models;
 - (void).cxx_destruct;
+- (_Bool)writeToURL:(id)arg1 error:(id *)arg2;
+- (void)replaceModelAtIndex:(unsigned long long)arg1 with:(id)arg2;
 - (id)predictionFromFeatures:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)predictionsFromBatch:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)initModelFromMetadataAndArchive:(struct _MLModelInputArchiver *)arg1 versionInfo:(id)arg2 interface:(id)arg3 metadata:(id)arg4 configuration:(id)arg5 error:(id *)arg6;

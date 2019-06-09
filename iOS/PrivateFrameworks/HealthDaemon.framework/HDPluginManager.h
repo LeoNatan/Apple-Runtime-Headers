@@ -13,10 +13,12 @@
     NSArray *_plugins;
     NSArray *_legacyPlugins;
     HDDaemon *_daemon;
+    NSArray *_allowablePluginDirectoryPaths;
     NSDictionary *_legacyPluginsByIdentifier;
 }
 
 @property(retain, nonatomic) NSDictionary *legacyPluginsByIdentifier; // @synthesize legacyPluginsByIdentifier=_legacyPluginsByIdentifier;
+@property(copy, nonatomic) NSArray *allowablePluginDirectoryPaths; // @synthesize allowablePluginDirectoryPaths=_allowablePluginDirectoryPaths;
 @property(nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;
 - (Class)_loadPrincipalClassConformingToProtocols:(id)arg1 fromBundleAtPath:(id)arg2;
@@ -33,7 +35,7 @@
 - (id)_pluginClasses;
 - (id)_principalClassProtocols;
 - (id)_pluginDirectoryPaths;
-- (id)_internalPluginsDirectoryPath;
+- (id)_internalPluginsDirectoryPaths;
 - (id)_pluginsDirectoryPath;
 - (id)initWithDaemon:(id)arg1;
 - (id)_builtInPluginClasses;

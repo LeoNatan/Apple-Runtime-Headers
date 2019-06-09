@@ -9,6 +9,7 @@
 @class NSObject;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface OITSUFakeProgress : OITSUBasicProgress
 {
     NSObject<OS_dispatch_queue> *_accessQueue;

@@ -6,9 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class NTKColoringLabel, UIImageView, UILayoutGuide;
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKUpNextMatchupUpcomingView : UIView
+@class NSString, NTKColoringLabel, UIImageView, UILayoutGuide;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKUpNextMatchupUpcomingView : UIView <CLKMonochromeComplicationView>
 {
     UIImageView *_homeLogoImageView;
     UIImageView *_awayLogoImageView;
@@ -17,12 +20,22 @@
     UILayoutGuide *_homeLogoLayoutGuide;
     UILayoutGuide *_awayLogoLayoutGuide;
     _Bool _paused;
+    id <CLKMonochromeFilterProvider> _filterProvider;
 }
 
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)configureWithMatchup:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

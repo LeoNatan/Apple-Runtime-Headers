@@ -8,7 +8,7 @@
 
 #import <DoNotDisturbServer/DNDSAssertionSyncManager-Protocol.h>
 
-@class DNDSModeAssertion, NPSDomainAccessor, NPSManager, NSDate, NSHashTable, NSString;
+@class DNDSClientDetailsProvider, NPSDomainAccessor, NPSManager, NSString;
 @protocol DNDSAssertionSyncManagerDelegate, DNDSLegacyAssertionSyncManagerDataSource, OS_dispatch_queue;
 
 @interface DNDSLegacyAssertionSyncManager : NSObject <DNDSAssertionSyncManager>
@@ -16,10 +16,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     NPSManager *_npsManager;
     NPSDomainAccessor *_accessor;
-    NSHashTable *_observers;
-    DNDSModeAssertion *_gizmoToggleAssertion;
-    DNDSModeAssertion *_gizmoWorkoutAssertion;
-    NSDate *_lastInvalidationDate;
+    DNDSClientDetailsProvider *_clientDetailsProvider;
     id <DNDSLegacyAssertionSyncManagerDataSource> _dataSource;
     id <DNDSAssertionSyncManagerDelegate> _delegate;
 }
@@ -28,29 +25,19 @@
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSLegacyAssertionSyncManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (void)_queue_updateGizmoAssertionSync;
-- (void)_queue_updateCompanionAssertionMirroringForLocalAssertions:(id)arg1;
-- (void)_queue_updateCompanionToggleSyncForLocalAssertions:(id)arg1 gizmoUpdateDate:(id)arg2;
-- (void)_queue_updateGizmoToggleSyncForLocalAssertions:(id)arg1 companionUpdateDate:(id)arg2 reason:(unsigned int)arg3;
+- (void)_queue_updateGizmoAssertionSyncWithModeAssertionUpdateContext:(id)arg1;
+- (void)_queue_updateCompanionAssertionMirroringForState:(id)arg1;
+- (void)_queue_updateCompanionToggleSyncForGizmoUpdateDate:(id)arg1 modeAssertionUpdateContext:(id)arg2;
+- (void)_queue_updateGizmoToggleSyncForState:(id)arg1 companionUpdateDate:(id)arg2 reason:(unsigned int)arg3;
 - (id)_queue_gizmoUpdateDate;
-- (void)_queue_updateToggleSyncForLocalAssertions:(id)arg1 lastUpdateDate:(id)arg2 reason:(unsigned int)arg3;
-- (void)_sendUpdateToAllObserversForAssertionInvalidations:(id)arg1;
-- (void)_sendUpdateToAllObserversForTakenAssertions:(id)arg1;
-- (id)_queue_allModeAssertionsWithError:(id *)arg1;
-- (id)_queue_assertionWithUUID:(id)arg1 error:(id *)arg2;
-- (id)_queue_invalidateAllModeAssertionsTakenBeforeDate:(id)arg1 forReason:(unsigned int)arg2;
+- (void)_queue_updateToggleSyncForReason:(unsigned int)arg1;
 - (void)_endMonitoringForChanges;
 - (void)_beginMonitoringForChanges;
-- (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1;
-- (id)allModeAssertionsWithError:(id *)arg1;
-- (id)assertionWithUUID:(id)arg1 error:(id *)arg2;
-- (void)invalidateAllModeAssertionsTakenBeforeDate:(id)arg1 forReason:(unsigned int)arg2;
 - (void)_updateGizmoAssertionSync;
 - (void)updateForReason:(unsigned int)arg1;
 - (void)resume;
 - (void)dealloc;
-- (id)init;
+- (id)initWithClientDetailsProvider:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

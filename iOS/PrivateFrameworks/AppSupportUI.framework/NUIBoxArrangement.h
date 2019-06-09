@@ -32,7 +32,8 @@
 - (struct CGSize)layoutSizeFittingSize:(struct CGSize)arg1;
 - (void)populateBoxArrangementCells:(vector_eb457d57 *)arg1;
 - (void)reloadData;
-@property(nonatomic, getter=isBaselineRelativeArrangement) _Bool baselineRelativeArrangement;
+- (void)setBaselineRelativeArrangement:(_Bool)arg1;
+- (_Bool)isBaselineRelativeArrangement;
 @property(readonly, nonatomic) __weak id <NUIBoxArrangementDataSource> dataSource;
 @property(readonly, nonatomic) __weak id <NUIArrangementContainer> container;
 - (void)dealloc;

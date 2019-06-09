@@ -15,7 +15,6 @@
     NSMutableString *_descriptionString;
 }
 
-+ (id)lightDescriptionForObject:(id)arg1;
 + (id)descriptionForObject:(id)arg1 keys:(id)arg2;
 + (id)descriptionForObject:(id)arg1 namesAndObjects:(id)arg2;
 + (id)descriptionBuilderWithObject:(id)arg1;

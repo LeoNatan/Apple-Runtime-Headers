@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSFont, NSMutableParagraphStyle, NSString;
+@class NSFont, NSMapTable, NSMutableParagraphStyle, NSString, NSTextContainer, NSTextRange;
 
 #pragma mark Function Pointers and Blocks
 
@@ -215,17 +215,18 @@ struct _NSRunBlock {
 struct _NSStoredContainerUsage {
     struct CGRect _field1;
     struct CGRect _field2;
-    struct {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :29;
-    } _field3;
+    CDStruct_1f053566 _field3;
     struct CGRect _field4;
     struct _NSRange _field5;
 };
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    id _field1;
+    id _field2;
+    id _field3;
+} CDStruct_0f015c83;
 
 typedef struct {
     unsigned long long _field1;
@@ -234,9 +235,27 @@ typedef struct {
 } CDStruct_f03de906;
 
 typedef struct {
+    unsigned int _usesScreenFonts:1;
+    unsigned int _syncAlignmentToDirection:1;
+    unsigned int _mirrorsTextAlignment:1;
+    unsigned int _reserved:29;
+} CDStruct_1f053566;
+
+typedef struct {
     long long location;
     long long length;
 } CDStruct_627e0f85;
+
+typedef struct {
+    NSTextContainer *textContainer;
+    NSTextRange *textRange;
+    NSMapTable *layoutFragmentTable;
+    struct CGRect usageBounds;
+    id *layoutFragments;
+    id *layoutFragmentsHint;
+    unsigned long long layoutFragmentsCount;
+    unsigned long long layoutFragmentsSize;
+} CDStruct_80f920e0;
 
 typedef struct {
     id _field1;

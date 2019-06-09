@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (id)_getLockScreenPredictionIndices:(id)arg1;
 - (id)actionsWithLimit:(int)arg1 shouldFilterRecentEngagements:(_Bool)arg2;
-- (id)actionsWithLimit:(int)arg1;
+- (id)_predicateForInstalledAndNonEngagedPredictions:(id)arg1;
 - (id)actionsWithConsumerSubType:(unsigned char)arg1 limit:(int)arg2;
 - (unsigned int)chunkCount;
 - (id)initWithChunks:(id)arg1;

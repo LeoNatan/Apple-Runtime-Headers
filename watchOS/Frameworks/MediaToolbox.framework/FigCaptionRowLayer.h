@@ -6,6 +6,7 @@
 
 #import <MediaToolbox/FigBaseCALayer.h>
 
+__attribute__((visibility("hidden")))
 @interface FigCaptionRowLayer : FigBaseCALayer
 {
 }

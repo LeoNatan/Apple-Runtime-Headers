@@ -27,7 +27,7 @@
 - (id)styleTextAsMessage:(id)arg1 boundingSize:(struct CGSize)arg2;
 - (id)styleTitleText:(id)arg1 styleType:(unsigned long long)arg2 boundingSize:(struct CGSize)arg3;
 - (void)updateWithTextColor:(id)arg1;
-- (id)initWithTextColor:(id)arg1 textAlignment:(long long)arg2;
+- (id)initWithTextAlignment:(long long)arg1;
 - (id)init;
 
 // Remaining properties

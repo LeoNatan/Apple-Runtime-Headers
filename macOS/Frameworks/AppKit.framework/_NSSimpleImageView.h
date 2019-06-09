@@ -6,23 +6,22 @@
 
 #import <AppKit/NSView.h>
 
-@class NSColor, NSImage;
+@class NSImage;
+@protocol NSContentStyle;
 
 __attribute__((visibility("hidden")))
 @interface _NSSimpleImageView : NSView
 {
 }
 
+@property(readonly, copy, nonatomic) id <NSContentStyle> imageContentStyle;
 - (void)updateLayer;
 - (void)performBlockWithLayerContents:(CDUnknownBlockType)arg1;
-@property(readonly, copy, nonatomic) NSColor *tintColor;
 - (BOOL)wantsUpdateLayer;
 - (void)drawRect:(struct CGRect)arg1;
 
 // Remaining properties
-@property(readonly, nonatomic) int backgroundStyle; // @dynamic backgroundStyle;
 @property(readonly, nonatomic) NSImage *image; // @dynamic image;
-@property(readonly, nonatomic) unsigned long long state; // @dynamic state;
 
 @end
 

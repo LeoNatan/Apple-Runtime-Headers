@@ -11,6 +11,7 @@
 @class AVTouchBarCaptureInputSourceItem, NSArray, NSNumber, NSString;
 @protocol AVTouchBarRecordingControlsControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarRecordingControlsController : NSObject <AVTouchBarRecordingControlsControllingInternal>
 {
     id <AVTouchBarRecordingControlsControlling> _externalTouchBarRecordingControlsController;
@@ -55,8 +56,8 @@
 + (BOOL)automaticallyNotifiesObserversOfRecordedTime;
 - (void).cxx_destruct;
 @property(readonly) BOOL canAssociateAudioAndVideoDevices;
-- (void)stopDiscovingWirelessCaptureDevices;
-- (void)startDiscovingWirelessCaptureDevices;
+- (void)stopDiscoveringWirelessCaptureDevices;
+- (void)startDiscoveringWirelessCaptureDevices;
 - (void)selectTouchBarInputSourceItem:(id)arg1;
 - (void)stopRecording;
 - (void)resumeRecording;

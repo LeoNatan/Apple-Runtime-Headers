@@ -6,22 +6,22 @@
 
 #import <FileProvider/FPActionOperation.h>
 
-@class NSFileProviderDomain, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface FPFetchDefaultContainerOperation : FPActionOperation
 {
-    NSString *_appName;
+    NSString *_defaultName;
     NSString *_appIdentifier;
-    NSFileProviderDomain *_domain;
+    NSString *_domainIdentifier;
     CDUnknownBlockType _fetchCompletionBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionBlock; // @synthesize fetchCompletionBlock=_fetchCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (void)mainWithExtensionProxy:(id)arg1;
-- (id)initForApplicationProxy:(id)arg1 provider:(id)arg2;
+- (void)actionMain;
+- (id)initForApplicationProxy:(id)arg1 providerDomain:(id)arg2;
 
 @end
 

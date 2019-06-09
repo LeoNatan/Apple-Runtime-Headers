@@ -8,7 +8,7 @@
 
 #import <NanoTimeKitCompanion/NTKCFaceDetailComplicationPickerCellDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, NTKCFaceDetailComplicationPickerCell, NTKCFaceDetailComplicationsHiddenCell, NTKFaceView;
+@class NSMutableArray, NSSet, NSString, NTKCFaceDetailComplicationPickerCell, NTKCFaceDetailComplicationsHiddenCell, NTKFaceView;
 @protocol NTKCFaceDetailComplicationSectionDelegate;
 
 @interface NTKCFaceDetailComplicationSectionController : NTKCFaceDetailSectionController <NTKCFaceDetailComplicationPickerCellDelegate>
@@ -18,9 +18,11 @@
     NTKCFaceDetailComplicationPickerCell *_pickerCell;
     NTKCFaceDetailComplicationPickerCell *_dismissingPickerCell;
     NTKCFaceDetailComplicationsHiddenCell *_hiddenCell;
+    NSSet *_richComplicationSlots;
 }
 
 + (_Bool)hasComplicationsForFace:(id)arg1;
+@property(retain, nonatomic) NSSet *richComplicationSlots; // @synthesize richComplicationSlots=_richComplicationSlots;
 @property(retain, nonatomic) NTKCFaceDetailComplicationsHiddenCell *hiddenCell; // @synthesize hiddenCell=_hiddenCell;
 @property(retain, nonatomic) NTKCFaceDetailComplicationPickerCell *dismissingPickerCell; // @synthesize dismissingPickerCell=_dismissingPickerCell;
 @property(retain, nonatomic) NTKCFaceDetailComplicationPickerCell *pickerCell; // @synthesize pickerCell=_pickerCell;

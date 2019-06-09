@@ -44,7 +44,7 @@
 @property(nonatomic) unsigned long long incrementalPersonProcessingStage; // @synthesize incrementalPersonProcessingStage=_incrementalPersonProcessingStage;
 - (void).cxx_destruct;
 - (void)generateFaceIDModelShouldForce:(_Bool)arg1 progress:(id)arg2 extendTimeoutBlock:(CDUnknownBlockType)arg3;
-- (_Bool)deletePersonModel;
+- (_Bool)deletePersonModelWithError:(id *)arg1;
 - (_Bool)persistPersonModel:(id)arg1;
 - (id)personModelPath;
 - (void)markLastBackgroundFaceIDModelRebuildJobDate;
@@ -122,7 +122,6 @@
 - (void)_didPerformFaceClustering;
 - (void)_willPerformFaceClustering;
 - (_Bool)_resetFaceClusteringStateWithContext:(id)arg1 error:(id *)arg2;
-- (_Bool)_renderFaceTilesForFaceLocalIdentifiers:(id)arg1 inAssetWithLocalIdentifier:(id)arg2 error:(id *)arg3;
 - (id)_suggestionsForPersonWithLocalIdentifier:(id)arg1 toBeConfirmedPersonSuggestions:(id)arg2 toBeRejectedPersonSuggestions:(id)arg3 operation:(id)arg4 error:(id *)arg5;
 - (void)_finalizeSuggestionsLog;
 - (void)_logFaceToSuggestionsLog:(id)arg1;
@@ -139,7 +138,6 @@
 - (void)interruptPhotoVision;
 - (void)terminatePhotoVision;
 - (id)_photoVisionAllowingCreation:(_Bool)arg1 syncClusterCache:(_Bool)arg2 error:(id *)arg3;
-- (_Bool)_synchronouslyGenerateFaceTilesForFaces:(id)arg1 fromAsset:(id)arg2 assetImage:(id)arg3 error:(id *)arg4;
 - (id)_suggestionsForPersonLocalIdentifier:(id)arg1 clusterSequenceNumbers:(id)arg2 excludePersonLocalIdentifiers:(id)arg3 operation:(id)arg4 context:(id)arg5 error:(id *)arg6;
 - (void)_logAnalysisStatistics;
 - (void)_resetAnalysisStatistics;

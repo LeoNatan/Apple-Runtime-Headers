@@ -38,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)reloadWithNumberOfPreviewItems:(unsigned long long)arg1;
 - (void)_commonInit;
-- (id)initWithContentsOfURL:(id)arg1;
+- (id)initWithItemsOfDirectoryAtURL:(id)arg1;
 - (id)initWithPreviewItems:(id)arg1;
 - (id)init;
 

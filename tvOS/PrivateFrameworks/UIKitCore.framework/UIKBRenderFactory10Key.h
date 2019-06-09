@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)controlKeyTraits;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (void)modifyTraitsForDetachedInputSwitcher:(id)arg1 withKey:(id)arg2;
-- (int)roundCornersForKey:(id)arg1 onKeyplane:(id)arg2;
+- (unsigned long long)roundCornersForKey:(id)arg1 onKeyplane:(id)arg2;
 - (_Bool)useRoundCorner;
 - (_Bool)shouldShowTopRowEdge;
 - (_Bool)shouldShowBottomRowEdge;

@@ -17,9 +17,11 @@
 
 // Remaining properties
 @property(retain, nonatomic) PLManagedAsset *asset; // @dynamic asset;
+@property(nonatomic) float behavioralScore; // @dynamic behavioralScore;
 @property(nonatomic) float failureScore; // @dynamic failureScore;
 @property(nonatomic) float harmoniousColorScore; // @dynamic harmoniousColorScore;
 @property(nonatomic) float immersivenessScore; // @dynamic immersivenessScore;
+@property(nonatomic) float interactionScore; // @dynamic interactionScore;
 @property(nonatomic) float interestingSubjectScore; // @dynamic interestingSubjectScore;
 @property(nonatomic) float intrusiveObjectPresenceScore; // @dynamic intrusiveObjectPresenceScore;
 @property(nonatomic) float livelyColorScore; // @dynamic livelyColorScore;

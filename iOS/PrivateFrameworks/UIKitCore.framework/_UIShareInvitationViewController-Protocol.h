@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class CKContainerID, CKShare, FPSandboxingURLWrapper, NSData, NSDictionary, NSString, UIColor, UIImage, UITraitCollection;
+@class CKContainerID, CKContainerSetupInfo, CKShare, FPSandboxingURLWrapper, NSData, NSDictionary, NSString, UIColor, UIImage, UITraitCollection;
 
 @protocol _UIShareInvitationViewController <NSObject>
 - (void)_setSecondaryAuxiliarySwitchState:(_Bool)arg1;
@@ -26,6 +26,8 @@
 - (void)_setInitialHeaderSubtitle:(NSString *)arg1;
 - (void)_setMailSubject:(NSString *)arg1 template:(NSString *)arg2;
 - (void)_setAuxiliaryActionTitle:(NSString *)arg1;
+- (void)_setCloudKitContainerSetupInfo:(CKContainerSetupInfo *)arg1;
+- (void)_setIsInPopoverMode:(_Bool)arg1;
 - (void)_setCloudKitThumbnail:(NSData *)arg1 title:(NSString *)arg2 type:(NSString *)arg3;
 - (void)_setAvailablePermissions:(unsigned long long)arg1;
 - (void)_setCloudKitShare:(CKShare *)arg1 containerID:(CKContainerID *)arg2;

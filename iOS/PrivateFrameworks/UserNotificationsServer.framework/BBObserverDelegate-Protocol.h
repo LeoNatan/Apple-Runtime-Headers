@@ -6,7 +6,7 @@
 
 #import <UserNotificationsServer/NSObject-Protocol.h>
 
-@class BBAttachmentMetadata, BBBulletin, BBObserver, BBSectionInfo, BBSectionParameters, BBThumbnailSizeConstraints, NSData, NSSet, NSString, UIImage;
+@class BBAttachmentMetadata, BBBulletin, BBGlobalSettings, BBObserver, BBSectionInfo, BBSectionParameters, BBThumbnailSizeConstraints, NSData, NSSet, NSString, UIImage;
 
 @protocol BBObserverDelegate <NSObject>
 
@@ -26,6 +26,7 @@
 - (void)observer:(BBObserver *)arg1 noteInvalidatedBulletinIDs:(NSSet *)arg2;
 - (void)observer:(BBObserver *)arg1 purgeReferencesToBulletinID:(NSString *)arg2;
 - (void)observer:(BBObserver *)arg1 noteSectionParametersChanged:(BBSectionParameters *)arg2 forSectionID:(NSString *)arg3;
+- (void)observer:(BBObserver *)arg1 updateGlobalSettings:(BBGlobalSettings *)arg2;
 - (void)observer:(BBObserver *)arg1 removeSection:(NSString *)arg2;
 - (void)observer:(BBObserver *)arg1 updateSectionInfo:(BBSectionInfo *)arg2;
 - (void)observer:(BBObserver *)arg1 removeBulletin:(BBBulletin *)arg2;

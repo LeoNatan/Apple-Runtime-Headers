@@ -30,6 +30,7 @@
 + (id)sharedInstance;
 + (id)sanitizeAirportName:(id)arg1;
 - (void).cxx_destruct;
+- (id)airportCodeForAirportName:(id)arg1 flightCarrier:(id)arg2 flightNumber:(unsigned short)arg3 otherKnownFlightsToAirport:(id)arg4 outputInfos:(id)arg5;
 - (id)airportCodeForAirportName:(id)arg1 flightCarrier:(id)arg2 flightNumber:(unsigned short)arg3 outputInfos:(id)arg4;
 - (id)airportsServicedByCarrier:(id)arg1 flightNumber:(unsigned short)arg2;
 - (id)airportsServicedByCarrier:(id)arg1 flightNumber:(unsigned short)arg2 withDataOffset:(id)arg3 andFileHandle:(id)arg4;

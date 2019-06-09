@@ -19,7 +19,6 @@
 - (id)imageNamed:(id)arg1;
 - (id)__imageNamed:(id)arg1;
 - (void)clearCache;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

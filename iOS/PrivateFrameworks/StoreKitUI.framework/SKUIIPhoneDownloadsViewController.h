@@ -12,6 +12,7 @@
 @class NSArray, NSString, SKUIClientContext, UITableView, _UIContentUnavailableView;
 @protocol SKUIDownloadsChildViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPhoneDownloadsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     UITableView *_tableView;

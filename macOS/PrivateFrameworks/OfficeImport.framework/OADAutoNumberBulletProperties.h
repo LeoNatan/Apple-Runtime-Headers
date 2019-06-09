@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADBulletProperties.h>
 
+__attribute__((visibility("hidden")))
 @interface OADAutoNumberBulletProperties : OADBulletProperties
 {
     int mSchemeType;

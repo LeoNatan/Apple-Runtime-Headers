@@ -133,7 +133,7 @@
 - (id)_transactionWithServiceIdentifierLocked:(id)arg1;
 - (id)_transactionWithIdentifierLocked:(id)arg1;
 - (id)_transactionsWithCloudKitArchivedState:(_Bool)arg1;
-- (id)_transactionsForUniqueIDLocked:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(unsigned long long)arg4;
+- (id)_transactionsForUniqueIDLocked:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 orderByDate:(long long)arg6 limit:(unsigned long long)arg7;
 - (void)_trimTransactionsForPassWithUniqueIDLocked:(id)arg1 withPaymentCredentialType:(long long)arg2;
 - (void)_removeTransactionWithIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_removeTransactionWithServiceIdentifierLocked:(id)arg1 forPassWithUniqueID:(id)arg2;
@@ -164,7 +164,7 @@
 - (id)passUniqueIDForTransactionWithIdentifier:(id)arg1;
 - (id)transactionWithServiceIdentifier:(id)arg1;
 - (id)transactionWithIdentifier:(id)arg1;
-- (id)transactionsForPassWithUniqueID:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 limit:(unsigned long long)arg4;
+- (id)transactionsForPassWithUniqueID:(id)arg1 withTransactionSource:(unsigned long long)arg2 withBackingData:(unsigned long long)arg3 startDate:(id)arg4 endDate:(id)arg5 orderedByDate:(long long)arg6 limit:(long long)arg7;
 - (void)removeTransactionWithIdentifier:(id)arg1 forPassWithUniqueID:(id)arg2;
 - (void)_saveTransaction:(id)arg1 forPassWithUniqueID:(id)arg2 withPaymentCredentialType:(long long)arg3 shouldTrim:(_Bool)arg4;
 - (void)saveTransaction:(id)arg1 forPass:(id)arg2;
@@ -195,7 +195,7 @@
 - (struct sqlite3_stmt *)selectPassUniqueIDAsssociateToTransactionWithIdentifierStatement;
 @property(readonly) struct sqlite3_stmt *selectTransactionWithServiceIdentifierStatement;
 @property(readonly) struct sqlite3_stmt *selectTransactionWithIdentifierStatement;
-- (struct sqlite3_stmt *)selectTransactionsStatementWithTransactionSource:(unsigned long long)arg1;
+- (struct sqlite3_stmt *)selectTransactionsStatementWithTransactionSource:(unsigned long long)arg1 orderByDate:(long long)arg2;
 - (struct sqlite3_stmt *)removeTransactionWithServiceIdentifierStatement;
 - (struct sqlite3_stmt *)removeTransactionStatement;
 - (struct sqlite3_stmt *)insertTransactionStatement;

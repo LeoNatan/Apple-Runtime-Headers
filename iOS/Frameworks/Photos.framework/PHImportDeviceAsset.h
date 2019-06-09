@@ -14,12 +14,10 @@
 }
 
 + (void)validateCameraFile:(id)arg1;
-+ (id)assetFileForFile:(id)arg1;
-+ (id)UTIForCameraFile:(id)arg1;
++ (id)assetFileForFile:(id)arg1 source:(id)arg2;
 - (void).cxx_destruct;
 - (id)assetId;
 - (id)originatingAssetID;
-- (id)makeImportErrorforPath:(id)arg1 errorCode:(long long)arg2 userInfo:(id)arg3 file:(char *)arg4 line:(unsigned long long)arg5;
 - (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void *)arg4;
 - (void)downloadToPathAsync:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSArray *cameraFiles;
@@ -27,7 +25,6 @@
 - (void)loadMetadataAsync:(CDUnknownBlockType)arg1;
 - (void)loadMetadataSync;
 - (id)createMetadataFromCameraFile:(id)arg1;
-- (void)_loadSidecarFiles;
 - (id)duration;
 - (id)mediaGroupId;
 - (int)burstPickType;
@@ -38,7 +35,8 @@
 - (_Bool)hasAdjustments;
 - (_Bool)isTagged;
 - (_Bool)performAdditionalLivePhotoChecksWithImageAsset:(id)arg1;
-- (_Bool)isRendered;
+- (_Bool)isBase;
+- (_Bool)isRender;
 - (_Bool)isSloMo;
 - (_Bool)hasAudioAttachment;
 - (_Bool)isLivePhoto;
@@ -46,11 +44,10 @@
 - (_Bool)canDelete;
 - (_Bool)canReference;
 - (id)parentFolderPath;
-- (id)source;
 - (_Bool)canPreserveFolderStructure;
 - (id)representedObject;
 - (_Bool)containsDateKey:(id)arg1;
-- (id)initWithCameraFile:(id)arg1 uti:(id)arg2 supportedType:(unsigned char)arg3;
+- (id)initWithSource:(id)arg1 cameraFile:(id)arg2 uti:(id)arg3 supportedType:(unsigned char)arg4;
 
 @end
 

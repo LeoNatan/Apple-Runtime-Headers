@@ -6,9 +6,9 @@
 
 #import <HealthKit/NSObject-Protocol.h>
 
-@class HKServerConfiguration;
+@class HKHealthStoreConfiguration;
 
 @protocol HDHealthStoreEndpointInterface <NSObject>
-- (void)remote_serverForConfiguration:(HKServerConfiguration *)arg1 completion:(void (^)(id <HDHealthStoreServerInterface>, NSError *))arg2;
+- (void)remote_serverForConfiguration:(HKHealthStoreConfiguration *)arg1 completion:(void (^)(id <HDHealthStoreServerInterface>, NSError *))arg2;
 @end
 

@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_accessoryViewFrameDidChange:(id)arg1;
 - (id)nextResponder;
 - (void)updateConstraintsIfNeeded;
+- (BOOL)_runningDocModal;
 - (void)dealloc;
 - (id)initWithContentRect:(struct CGRect)arg1 forRemoteView:(id)arg2;
 - (void)invalidate;

@@ -8,6 +8,7 @@
 
 @class NSCharacterSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OISFUJsonScanner : NSObject
 {
     NSString *mString;

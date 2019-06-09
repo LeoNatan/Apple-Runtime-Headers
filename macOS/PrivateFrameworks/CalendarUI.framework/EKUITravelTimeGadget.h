@@ -53,6 +53,7 @@
 - (void)durationChosen:(id)arg1;
 - (void)popUpButtonClicked:(id)arg1;
 - (id)_menuItemWithDuration:(long long)arg1 andTitle:(id)arg2;
+- (id)_formattedStringForTimeInterval:(double)arg1;
 - (void)_addCustomItemIfNeeded;
 - (void)_updateRoutesSectionWithValidResults;
 - (id)_validRouteMenuItems;

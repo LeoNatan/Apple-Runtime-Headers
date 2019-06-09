@@ -24,12 +24,13 @@
 @property(nonatomic) float minNotchViewY; // @synthesize minNotchViewY=_minNotchViewY;
 @property _Bool pendingChangesStillInflight; // @synthesize pendingChangesStillInflight=_pendingChangesStillInflight;
 - (void).cxx_destruct;
-- (void)removeNotch:(CDStruct_51c09d0b)arg1;
+- (void)removeNotch:(CDStruct_b31d0695)arg1;
 - (void)addNotches:(id)arg1 toNotches:(id)arg2;
-- (_Bool)addNotch:(CDStruct_51c09d0b)arg1;
+- (_Bool)addNotch:(CDStruct_b31d0695)arg1;
 - (void)reloadData;
 - (void)resetNotches;
 - (void)configureMinorDetents;
+- (struct UIEdgeInsets)adjustedSafeAreaInsetForNotchesTriggerPoint:(struct UIEdgeInsets)arg1;
 - (void)checkAndUpdateMaxNotchViewY:(float)arg1;
 - (void)checkAndUpdateMinNotchViewY:(float)arg1;
 - (void)generateNotches;

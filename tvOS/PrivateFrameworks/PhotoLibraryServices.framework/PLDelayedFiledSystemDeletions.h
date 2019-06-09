@@ -17,6 +17,7 @@
 + (void)appendDescriptionForEvent:(id)arg1 toComponents:(id)arg2;
 + (void)waitForAllDelayedDeletionsToFinish;
 + (id)filesystemDeletionQueue;
+- (void).cxx_destruct;
 - (id)initWithFilesystemDeletionInfos:(id)arg1;
 - (void)deleteAllRemainingFilesAndThumbnailsWithPhotoLibrary:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)appendToXPCMessage:(id)arg1 managedObjectContext:(id)arg2;

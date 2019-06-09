@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) OSLogEventLiveSource *source; // @synthesize source=_source;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *diagdconn; // @synthesize diagdconn=_diagdconn;
 - (void).cxx_destruct;
+- (void)invalidate;
 - (void)activate;
 - (void)_activateLiveStream;
 - (void)_handleStreamedObject:(id)arg1 usingProxy:(id)arg2;

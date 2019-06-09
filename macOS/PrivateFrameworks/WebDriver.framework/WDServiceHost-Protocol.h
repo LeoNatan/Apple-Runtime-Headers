@@ -10,7 +10,8 @@
 @protocol WDSessionHost;
 
 @protocol WDServiceHost <NSObject>
-- (void)fetchAttributesForLocalFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
+- (void)fetchContentsOfLocalFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
+- (void)fetchAttributesOfLocalFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
 - (void)launchApplication:(NSBundle *)arg1 forHost:(id <WDSessionHost>)arg2 completionHandler:(void (^)(int, NSError *))arg3;
 @end
 

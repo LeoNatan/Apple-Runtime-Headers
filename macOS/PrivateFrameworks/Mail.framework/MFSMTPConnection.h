@@ -49,7 +49,7 @@
 - (void)quit;
 - (id)_makeInvalidCredentialsError;
 - (id)_getErrorFromFailedAuthentication;
-- (BOOL)_authenticateWithSaslClient:(id)arg1;
+- (BOOL)_authenticateWithSASLClient:(id)arg1;
 - (BOOL)authenticate;
 - (id)authenticationMechanisms;
 - (BOOL)_completeConnectionWithResult:(BOOL)arg1;

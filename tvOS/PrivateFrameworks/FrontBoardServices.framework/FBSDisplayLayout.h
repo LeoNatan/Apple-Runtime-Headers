@@ -15,24 +15,20 @@
 {
     NSMutableArray *_elements;
     FBSDisplayConfiguration *_displayConfiguration;
-    long long _displayType;
-    long long _backlightLevel;
     long long _interfaceOrientation;
-    struct CGRect _bounds;
-    struct CGRect _referenceBounds;
+    long long _backlightLevel;
     NSDate *_timestamp;
 }
 
 @property(readonly, nonatomic) NSDate *timestamp; // @synthesize timestamp=_timestamp;
-@property(copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
-@property(readonly, nonatomic) struct CGRect referenceBounds; // @synthesize referenceBounds=_referenceBounds;
-@property(nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
-@property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
+@property(readonly, copy, nonatomic) NSArray *elements; // @synthesize elements=_elements;
 @property(nonatomic) long long displayBacklightLevel; // @synthesize displayBacklightLevel=_backlightLevel;
-@property(nonatomic) long long displayType; // @synthesize displayType=_displayType;
+@property(nonatomic) long long interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(retain, nonatomic) FBSDisplayConfiguration *displayConfiguration; // @synthesize displayConfiguration=_displayConfiguration;
 - (void).cxx_destruct;
+- (struct CGRect)referenceBounds;
 - (id)display;
+- (long long)displayType;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -42,7 +38,8 @@
 - (void)_sortElements;
 - (void)finalizeLayout;
 - (void)removeElement:(id)arg1;
-- (void)addElement:(id)arg1;
+- (id)addElement:(id)arg1;
+@property(readonly, nonatomic) struct CGRect bounds; // @dynamic bounds;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)init;

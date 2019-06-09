@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol NPKTransientPassAssertionServerProtocol
+- (void)setDisableCardSelection:(_Bool)arg1;
 - (void)setServiceModeRequested:(_Bool)arg1;
 - (void)setTransientPassUniqueID:(NSString *)arg1;
 @end

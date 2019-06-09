@@ -12,5 +12,26 @@
 - (void)settingsView:(id)arg1 clearSettingForKey:(id)arg2;
 - (void)settingsView:(id)arg1 setSetting:(id)arg2 forKey:(id)arg3;
 - (id)settingsView:(id)arg1 settingForKey:(id)arg2;
+- (id)resolveForwardingConflictWithPreviousMetadata:(id)arg1 forKey:(id)arg2;
+- (id)createImageWithOptions:(id)arg1;
+- (id)createOptimizedProviderWithTransformation:(id)arg1 cropping:(struct CGRect)arg2;
+- (void)compositionParameterView:(id)arg1 didChangeParameterWithKey:(id)arg2;
+- (BOOL)compositionParameterView:(id)arg1 shouldDisplayParameterWithKey:(id)arg2 attributes:(id)arg3;
+- (BOOL)compositionPickerView:(id)arg1 keyDown:(id)arg2;
+- (BOOL)compositionPickerView:(id)arg1 performDragOperationOnComposition:(id)arg2 sender:(id)arg3;
+- (unsigned long long)compositionPickerView:(id)arg1 draggingEnteredComposition:(id)arg2 sender:(id)arg3;
+- (void)compositionPickerViewWillStopAnimating:(id)arg1;
+- (void)compositionPickerViewDidStartAnimating:(id)arg1;
+- (void)compositionPickerView:(id)arg1 didSelectComposition:(id)arg2;
+- (void)compositionPickerView:(id)arg1 willSelectComposition:(id)arg2;
+- (void)compositionPickerView:(id)arg1 didLoadComposition:(id)arg2;
+- (BOOL)renderWithCGLContext:(struct _CGLContextObject *)arg1 forBounds:(struct CGRect)arg2;
+- (BOOL)canRenderWithCGLContext:(struct _CGLContextObject *)arg1;
+- (void)releaseRenderedTexture:(unsigned int)arg1 forCGLContext:(struct _CGLContextObject *)arg2;
+- (unsigned int)copyRenderedTextureForCGLContext:(struct _CGLContextObject *)arg1 pixelFormat:(id)arg2 bounds:(struct CGRect)arg3 isFlipped:(char *)arg4;
+- (id)supportedRenderedTexturePixelFormats;
+- (BOOL)renderToBuffer:(void *)arg1 withBytesPerRow:(unsigned long long)arg2 pixelFormat:(id)arg3 forBounds:(struct CGRect)arg4;
+- (id)supportedBufferPixelFormats;
+- (BOOL)shouldColorMatch;
 @end
 

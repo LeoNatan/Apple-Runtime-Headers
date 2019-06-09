@@ -9,7 +9,7 @@
 @class FMDIdentitySigningRequest, NSDictionary;
 
 @protocol FindMyDeviceIdentityXPCInterface <NSObject>
-- (oneway void)attestIdentityForSigningRequest:(FMDIdentitySigningRequest *)arg1 type:(unsigned long long)arg2 completion:(void (^)(NSObject<FMDIdentityAttesting> *, NSError *))arg3;
+- (oneway void)baaIdentityAttestationForSigningRequest:(FMDIdentitySigningRequest *)arg1 completion:(void (^)(FMDBAAAttestation *, NSError *))arg2;
 - (oneway void)identityForPasscodeActivationUnlockWithContext:(NSDictionary *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 @end
 

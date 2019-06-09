@@ -6,14 +6,14 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UIAccessibilityHUDItem, UIImageView, UILabel, UIVibrancyEffect, UIVisualEffectView;
+@class UIAccessibilityHUDItem, UIBlurEffect, UIImageView, UILabel, UIVisualEffectView;
 
 @interface UIAccessibilityHUDView : UIView
 {
     UIAccessibilityHUDItem *_item;
     UIView *_transformContainer;
     UIVisualEffectView *_effectView;
-    UIVibrancyEffect *_vibrancyEffect;
+    UIBlurEffect *_blurEffect;
     UIImageView *_imageView;
     UILabel *_titleLabel;
     UIView *_customView;
@@ -33,6 +33,8 @@
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)layoutManager;
+- (void)_updateLabelForItem;
+- (id)_contentEffectsForItem:(id)arg1;
 - (id)initWithHUDItem:(id)arg1;
 
 @end

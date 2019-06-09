@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedCache;
+- (void).cxx_destruct;
 - (void)save;
 - (void)clearAllIdentifiersOfType:(int)arg1;
 - (void)clearIdentifiersForUninstallationWithVendorName:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)getIdentifierOfType:(int)arg1 vendorName:(id)arg2 bundleIdentifier:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)dealloc;
 - (id)init;
 - (struct NSMutableDictionary *)identifiersOfTypeNotDispatched:(int)arg1;
 - (struct NSDictionary *)allIdentifiersNotDispatched;

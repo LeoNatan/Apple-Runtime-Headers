@@ -48,7 +48,7 @@
 - (void)writePersistedData;
 @property(readonly, nonatomic) _Bool isRootFolder;
 - (id)initWithPersistedDataAtURL:(id)arg1;
-- (id)initWithPLManagedFolder:(id)arg1;
+- (id)initWithPLManagedFolder:(id)arg1 pathManager:(id)arg2;
 - (id)init;
 
 @end

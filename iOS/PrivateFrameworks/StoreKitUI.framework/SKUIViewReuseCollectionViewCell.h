@@ -8,6 +8,7 @@
 
 @class NSArray, NSMapTable, SKUIViewReusePool;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewReuseCollectionViewCell : SKUICollectionViewCell
 {
     NSMapTable *_allViewTextProperties;

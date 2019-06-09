@@ -4,29 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <SettingsFoundation/SFRestrictionsPasscodeController.h>
 
-@interface PSRestrictionsPasscodeController : NSObject
+@interface PSRestrictionsPasscodeController : SFRestrictionsPasscodeController
 {
 }
-
-+ (void)removePasswordForHashAndSaltLegacyRestrictions;
-+ (id)passwordForHashAndSaltLegacyRestrictions;
-+ (id)saltForHashAndSaltLegacyRestrictions;
-+ (id)newHashDataForPassword:(id)arg1 andSalt:(id)arg2;
-+ (id)_restrictionPasswordDictionary;
-+ (id)_generateSalt;
-+ (_Bool)legacyRestrictionsInEffect;
-+ (id)pinFromHashAndSaltLegacyPassword;
-+ (_Bool)hasHashAndSaltLegacyPassword;
-+ (void)_setKeychainPasswordForRestrictions:(id)arg1;
-+ (id)_keychainPasswordForRestrictions;
-+ (void)_removeKeychainPasswordForRestrictions;
-+ (_Bool)validatePIN:(id)arg1;
-+ (_Bool)settingEnabled;
-+ (void)setPIN:(id)arg1;
-+ (void)migrateRestrictionsPasscode;
-+ (void)_migrateRestrictionsPasscodeIfNeeded;
 
 @end
 

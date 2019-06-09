@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSMutableSet, NetworkAnalyticsStateRelay;
 
+__attribute__((visibility("hidden")))
 @interface NOIAnalyticsEngine : AnalyticsEngineCore
 {
     NSMutableDictionary *liveClients;
@@ -19,8 +20,10 @@
     id _cellStateChangeObserver;
     id _cellStateCapabilityObserver;
     id _cellFallbackObserver;
+    id _considerAlternateUpdateObserver;
     id _primaryObserver;
     int notifyToken;
+    BOOL xpcShutdown;
     NSMutableSet *_predictionQueryClients;
     unsigned long long _predictionQueryCount;
     unsigned long long _startConnectionTimestamp;
@@ -45,6 +48,7 @@
 + (void)resetQueryStatistics;
 + (id)queue;
 - (void).cxx_destruct;
+- (void)clientTransactionsRelease;
 - (void)_resetQueryStatistics;
 - (void)_getQueryStatistics:(CDStruct_4bcfbbae *)arg1;
 - (void)canUseOnAlternate:(id)arg1 options:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -63,6 +67,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_observeStateRelays;
 - (void)_bottomUpNOIEvent:(id)arg1 withInfo:(id)arg2;
+- (void)_updateRrcStateChangeTimestamp:(long long)arg1 forRrcState:(int)arg2;
 - (id)_clientNOIEvent:(id)arg1 forNOIs:(id)arg2 isAddEvent:(BOOL)arg3;
 - (void)clientEvent:(id)arg1 isAddEvent:(BOOL)arg2;
 - (void)_dumpClientStructure;

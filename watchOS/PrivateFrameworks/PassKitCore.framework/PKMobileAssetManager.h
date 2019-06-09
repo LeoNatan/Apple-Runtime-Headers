@@ -15,10 +15,21 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)sortDescriptorsForEducationVideoWithPeerPaymentCard:(_Bool)arg1;
-- (id)predicateForEducationVideo;
-- (void)fetchEducationVideoWithPeerPaymentCard:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)fetchNeededAssetsForThisDeviceWithPeerPaymentCard:(_Bool)arg1;
+- (id)_downloadOptionsWithUserInitiation:(_Bool)arg1;
+- (void)_downloadAsset:(id)arg1 userInitiated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_executeQueries:(id)arg1 currentIndex:(unsigned int)arg2 userInitiated:(_Bool)arg3 sortDescriptors:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_retrieveAssetWithQueries:(id)arg1 userInitiated:(_Bool)arg2 sortDescriptors:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_queriesForCityCodeStationProvider:(id)arg1;
+- (id)_queriesForMarketIdentifer:(id)arg1;
+- (id)_queriesForEducationVideo;
+- (id)sortDescriptorsForCityCode;
+- (id)sortDescriptorsForMarkets;
+- (void)fetchCityStationProviderAssetForBaseProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchAssetsForMarketWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_sortDescriptorWithPreferredFeatureKey:(id)arg1 isFeaturePreferred:(_Bool)arg2 keyPath:(id)arg3;
+- (id)sortDescriptorsForEducationVideoWithPreferredFeatures:(unsigned int)arg1;
+- (void)fetchEducationVideoWithPreferredFeatures:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchNeededAssetsForThisDeviceWithPreferredFeatures:(unsigned int)arg1;
 - (id)init;
 
 @end

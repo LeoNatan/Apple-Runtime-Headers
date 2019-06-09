@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     BOOL _isCombined;
     BOOL _allowsSafari;
+    NSString *_displayLanguage;
     NSStackView *_stack;
     NSImage *_icon;
     NSString *_mainTitle;
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSImage *icon; // @synthesize icon=_icon;
 @property(retain) NSStackView *stack; // @synthesize stack=_stack;
 @property(nonatomic) BOOL isCombined; // @synthesize isCombined=_isCombined;
+@property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 - (void).cxx_destruct;
 - (id)flipImage:(id)arg1;
 - (void)setViewDefaults;

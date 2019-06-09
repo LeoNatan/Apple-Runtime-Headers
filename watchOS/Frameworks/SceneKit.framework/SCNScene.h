@@ -24,6 +24,10 @@
     float _fogEndDistance;
     float _fogDensityExponent;
     id _fogColor;
+    _Bool _wantsScreenSpaceReflection;
+    int _screenSpaceReflectionSampleCount;
+    float _screenSpaceReflectionMaxRayDistance;
+    float _screenSpaceReflectionStride;
     _Bool _paused;
     NSURL *_sourceURL;
     _Bool _pausedForEditing;
@@ -77,6 +81,12 @@
 - (void)unlock;
 - (void)lock;
 - (_Bool)writeToURL:(id)arg1 options:(id)arg2 delegate:(id)arg3 progressHandler:(CDUnknownBlockType)arg4;
+@property(nonatomic) float screenSpaceReflectionStride;
+@property(nonatomic) float screenSpaceReflectionMaximumDistance;
+- (void)setScreenSpaceReflectionDepthThreshold:(float)arg1;
+- (float)screenSpaceReflectionDepthThreshold;
+@property(nonatomic) int screenSpaceReflectionSampleCount;
+@property(nonatomic) _Bool wantsScreenSpaceReflection;
 @property(nonatomic) float fogStartDistance;
 @property(nonatomic) float fogDensityExponent;
 @property(nonatomic) float fogEndDistance;

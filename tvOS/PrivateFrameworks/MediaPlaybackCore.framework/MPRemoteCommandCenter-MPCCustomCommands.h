@@ -9,6 +9,7 @@
 @class MPRemoteCommand;
 
 @interface MPRemoteCommandCenter (MPCCustomCommands)
+@property(readonly, nonatomic) MPRemoteCommand *stagePlaybackSessionCommand;
 @property(readonly, nonatomic) MPRemoteCommand *disableQueueModificationsCommand;
 @property(readonly, nonatomic) MPRemoteCommand *startPictureInPictureCommand;
 @end

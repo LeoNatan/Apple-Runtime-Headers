@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioFormat, AVAudioInputNode, AVAudioMixerNode, AVAudioOutputNode;
+@class AVAudioFormat, AVAudioInputNode, AVAudioMixerNode, AVAudioOutputNode, NSSet;
 
 @interface AVAudioEngine : NSObject
 {
     void *_impl;
 }
 
+@property(readonly, copy) NSSet *attachedNodes;
 - (void)disconnectMIDIOutput:(id)arg1;
 - (void)disconnectMIDIInput:(id)arg1;
 - (void)disconnectMIDI:(id)arg1 fromNodes:(id)arg2;

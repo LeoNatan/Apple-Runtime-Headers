@@ -16,6 +16,7 @@
     int _nearby;
     NSMutableArray *_paymentInstruments;
     unsigned int _protocolVersion;
+    NSMutableArray *_supportedSetupFeatures;
     BOOL _deviceDisabled;
     BOOL _locked;
     BOOL _supportsFaceID;
@@ -31,7 +32,9 @@
     } _has;
 }
 
++ (Class)supportedSetupFeaturesType;
 + (Class)paymentInstrumentsType;
+@property(retain, nonatomic) NSMutableArray *supportedSetupFeatures; // @synthesize supportedSetupFeatures=_supportedSetupFeatures;
 @property(nonatomic) BOOL supportsFaceID; // @synthesize supportsFaceID=_supportsFaceID;
 @property(nonatomic) unsigned int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(nonatomic) BOOL deviceDisabled; // @synthesize deviceDisabled=_deviceDisabled;
@@ -49,6 +52,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)supportedSetupFeaturesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)supportedSetupFeaturesCount;
+- (void)addSupportedSetupFeatures:(id)arg1;
+- (void)clearSupportedSetupFeatures;
 @property(nonatomic) BOOL hasSupportsFaceID;
 @property(nonatomic) BOOL hasProtocolVersion;
 - (int)StringAsNearby:(id)arg1;

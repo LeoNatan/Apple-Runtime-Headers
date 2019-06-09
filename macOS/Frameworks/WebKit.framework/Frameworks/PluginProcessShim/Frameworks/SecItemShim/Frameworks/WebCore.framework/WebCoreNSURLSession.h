@@ -54,7 +54,7 @@
 @property(retain) id <NSURLSessionTaskDelegate> delegate; // @dynamic delegate;
 - (void)task:(id)arg1 didReceiveResponseFromOrigin:(Ref_4cc64869 *)arg2;
 - (void)task:(id)arg1 didReceiveCORSAccessCheckResult:(BOOL)arg2;
-- (void)addDelegateOperation:(Function_701386c1 *)arg1;
+- (void)addDelegateOperation:(Function_15535652 *)arg1;
 - (void)taskCompleted:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;

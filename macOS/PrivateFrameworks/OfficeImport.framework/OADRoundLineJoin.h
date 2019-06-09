@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADLineJoin.h>
 
+__attribute__((visibility("hidden")))
 @interface OADRoundLineJoin : OADLineJoin
 {
 }

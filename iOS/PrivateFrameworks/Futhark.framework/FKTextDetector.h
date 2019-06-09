@@ -7,10 +7,12 @@
 #import <objc/NSObject.h>
 
 @class NSString;
+@protocol OS_dispatch_queue;
 
 @interface FKTextDetector : NSObject
 {
     struct FKSession *_sessions[8];
+    struct recognizer *_recognizer;
     struct CGSize _size;
     struct CGRect _roi;
     unsigned int _timeDownscale[8];
@@ -18,21 +20,35 @@
     unsigned int _timeConcomps[8];
     unsigned int _timeSequences[8];
     unsigned int _timeRecognizer[8];
+    struct {
+        unsigned long long scaleBuffer;
+        unsigned long long binarizer;
+        unsigned long long linesegs;
+        unsigned long long concomps;
+        unsigned long long sequences;
+        unsigned long long total;
+    } _memoryUsage[8];
     _Bool _detectDiacritics;
     _Bool _returnSubFeatures;
     _Bool _minimizeFalseDetections;
     _Bool _createFeaturesForAllConcomps;
     _Bool _enableBinarizerFiltering;
+    _Bool _colorSplits;
     int _minimumCharacterHeight;
     int _binarizerLimit;
+    int _contrastLimit;
     long long _thresholdingAlgorithm;
     NSString *_recognitionLanguage;
+    NSObject<OS_dispatch_queue> *_multiThreadingQueue;
     CDStruct_74dcf1ab _mergeSettings;
 }
 
+@property(nonatomic) int contrastLimit; // @synthesize contrastLimit=_contrastLimit;
 @property(nonatomic) CDStruct_74dcf1ab mergeSettings; // @synthesize mergeSettings=_mergeSettings;
+@property(nonatomic) _Bool colorSplits; // @synthesize colorSplits=_colorSplits;
 @property(nonatomic) _Bool enableBinarizerFiltering; // @synthesize enableBinarizerFiltering=_enableBinarizerFiltering;
 @property(nonatomic) _Bool createFeaturesForAllConcomps; // @synthesize createFeaturesForAllConcomps=_createFeaturesForAllConcomps;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *multiThreadingQueue; // @synthesize multiThreadingQueue=_multiThreadingQueue;
 @property(nonatomic) _Bool minimizeFalseDetections; // @synthesize minimizeFalseDetections=_minimizeFalseDetections;
 @property(nonatomic) _Bool returnSubFeatures; // @synthesize returnSubFeatures=_returnSubFeatures;
 @property(copy, nonatomic) NSString *recognitionLanguage; // @synthesize recognitionLanguage=_recognitionLanguage;
@@ -40,6 +56,8 @@
 @property(nonatomic) long long thresholdingAlgorithm; // @synthesize thresholdingAlgorithm=_thresholdingAlgorithm;
 @property(nonatomic) int minimumCharacterHeight; // @synthesize minimumCharacterHeight=_minimumCharacterHeight;
 @property(nonatomic) _Bool detectDiacritics; // @synthesize detectDiacritics=_detectDiacritics;
+- (unsigned long long)getMemoryUsageOfLastOperation;
+- (id)detectCharacterInBoundingBox:(struct CGRect)arg1 error:(id *)arg2;
 - (id)detectFeaturesInBuffer:(struct __CVBuffer *)arg1 error:(id *)arg2;
 - (id)detectFeaturesInBuffer:(struct __CVBuffer *)arg1 withRegionOfInterest:(struct CGRect)arg2 error:(id *)arg3;
 - (void)resetTimers;
@@ -52,6 +70,7 @@
 - (void)dealloc;
 - (void)resetOptions;
 - (id)initWithDimensions:(struct CGSize)arg1;
+- (_Bool)disableMultithreading;
 
 @end
 

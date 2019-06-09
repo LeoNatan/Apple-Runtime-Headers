@@ -44,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)viewDidLoad;
 - (id)initWithPrintPanelViewController:(id)arg1;
 

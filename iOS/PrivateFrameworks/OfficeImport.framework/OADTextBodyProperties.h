@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultEscherWordArtProperties;
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -114,7 +115,6 @@ __attribute__((visibility("hidden")))
 - (void)setRespectLastFirstLineSpacing:(_Bool)arg1;
 - (_Bool)respectLastFirstLineSpacing;
 - (_Bool)hasRespectLastFirstLineSpacing;
-- (void)dealloc;
 - (id)initWithDefaults;
 - (id)init;
 

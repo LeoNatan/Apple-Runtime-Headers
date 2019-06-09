@@ -21,27 +21,20 @@
     _Bool _speedLimitEnabled;
     _Bool _trafficEnabled;
     struct {
-        unsigned int navVoiceVolume:1;
-        unsigned int preferredTransportMode:1;
-        unsigned int avoidHighways:1;
-        unsigned int avoidTolls:1;
-        unsigned int findMyCarEnabled:1;
-        unsigned int headingEnabled:1;
-        unsigned int labelEnabled:1;
-        unsigned int pauseSpokenAudioEnabled:1;
-        unsigned int speedLimitEnabled:1;
-        unsigned int trafficEnabled:1;
-    } _has;
+        unsigned int has_navVoiceVolume:1;
+        unsigned int has_preferredTransportMode:1;
+        unsigned int has_avoidHighways:1;
+        unsigned int has_avoidTolls:1;
+        unsigned int has_findMyCarEnabled:1;
+        unsigned int has_headingEnabled:1;
+        unsigned int has_labelEnabled:1;
+        unsigned int has_pauseSpokenAudioEnabled:1;
+        unsigned int has_speedLimitEnabled:1;
+        unsigned int has_trafficEnabled:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool labelEnabled; // @synthesize labelEnabled=_labelEnabled;
-@property(nonatomic) _Bool trafficEnabled; // @synthesize trafficEnabled=_trafficEnabled;
-@property(nonatomic) _Bool findMyCarEnabled; // @synthesize findMyCarEnabled=_findMyCarEnabled;
-@property(nonatomic) _Bool pauseSpokenAudioEnabled; // @synthesize pauseSpokenAudioEnabled=_pauseSpokenAudioEnabled;
-@property(nonatomic) _Bool speedLimitEnabled; // @synthesize speedLimitEnabled=_speedLimitEnabled;
-@property(nonatomic) _Bool headingEnabled; // @synthesize headingEnabled=_headingEnabled;
-@property(nonatomic) _Bool avoidHighways; // @synthesize avoidHighways=_avoidHighways;
-@property(nonatomic) _Bool avoidTolls; // @synthesize avoidTolls=_avoidTolls;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -49,24 +42,33 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasLabelEnabled;
+@property(nonatomic) _Bool labelEnabled;
 @property(nonatomic) _Bool hasTrafficEnabled;
+@property(nonatomic) _Bool trafficEnabled;
 @property(nonatomic) _Bool hasFindMyCarEnabled;
+@property(nonatomic) _Bool findMyCarEnabled;
 @property(nonatomic) _Bool hasPauseSpokenAudioEnabled;
+@property(nonatomic) _Bool pauseSpokenAudioEnabled;
 - (int)StringAsNavVoiceVolume:(id)arg1;
 - (id)navVoiceVolumeAsString:(int)arg1;
 @property(nonatomic) _Bool hasNavVoiceVolume;
-@property(nonatomic) int navVoiceVolume; // @synthesize navVoiceVolume=_navVoiceVolume;
+@property(nonatomic) int navVoiceVolume;
 @property(nonatomic) _Bool hasSpeedLimitEnabled;
+@property(nonatomic) _Bool speedLimitEnabled;
 @property(nonatomic) _Bool hasHeadingEnabled;
+@property(nonatomic) _Bool headingEnabled;
 @property(nonatomic) _Bool hasAvoidHighways;
+@property(nonatomic) _Bool avoidHighways;
 @property(nonatomic) _Bool hasAvoidTolls;
+@property(nonatomic) _Bool avoidTolls;
 - (int)StringAsPreferredTransportMode:(id)arg1;
 - (id)preferredTransportModeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPreferredTransportMode;
-@property(nonatomic) int preferredTransportMode; // @synthesize preferredTransportMode=_preferredTransportMode;
+@property(nonatomic) int preferredTransportMode;
 
 @end
 

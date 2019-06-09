@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface AVCVideoStreamConfig : NSObject
 {
     int _txCodecType;
@@ -16,22 +18,42 @@
     unsigned int _txMinBitrate;
     unsigned int _rxMaxBitrate;
     unsigned int _rxMinBitrate;
+    NSString *_txCodecFeatureListString;
+    NSString *_rxCodecFeatureListString;
     unsigned int _keyFrameInterval;
     int _remoteVideoInitialOrientation;
     _Bool _enableCVO;
     unsigned int _cvoExtensionID;
     _Bool _isVideoProtected;
+    int _videoStreamMode;
+    int _captureSource;
+    unsigned int _screenDisplayID;
+    unsigned int _customWidth;
+    unsigned int _customHeight;
+    unsigned int _tilesPerFrame;
 }
 
++ (int)videoStreamTypeFromClientVideoStreamMode:(int)arg1;
++ (int)clientVideoStreamModeFromVideoStreamType:(int)arg1;
++ (int)videoCaptureSourceFromClientCaptureSource:(int)arg1;
++ (int)clientVideoCaptureSourceFromCaptureSource:(int)arg1;
 + (int)clientVideoResolutionFromResolution:(int)arg1;
 + (int)videoResolutionFromClientResolution:(int)arg1;
 + (int)clientCodecTypeWithCodecType:(int)arg1;
 + (int)codecTypeWithClientCodecType:(int)arg1;
+@property(nonatomic) unsigned int tilesPerFrame; // @synthesize tilesPerFrame=_tilesPerFrame;
+@property(nonatomic) unsigned int customHeight; // @synthesize customHeight=_customHeight;
+@property(nonatomic) unsigned int customWidth; // @synthesize customWidth=_customWidth;
+@property(nonatomic) unsigned int screenDisplayID; // @synthesize screenDisplayID=_screenDisplayID;
+@property(nonatomic) int captureSource; // @synthesize captureSource=_captureSource;
+@property(nonatomic) int videoStreamMode; // @synthesize videoStreamMode=_videoStreamMode;
 @property(nonatomic) _Bool isVideoProtected; // @synthesize isVideoProtected=_isVideoProtected;
 @property(nonatomic) unsigned int cvoExtensionID; // @synthesize cvoExtensionID=_cvoExtensionID;
 @property(nonatomic) _Bool enableCVO; // @synthesize enableCVO=_enableCVO;
 @property(nonatomic) int remoteVideoInitialOrientation; // @synthesize remoteVideoInitialOrientation=_remoteVideoInitialOrientation;
 @property(nonatomic) unsigned int keyFrameInterval; // @synthesize keyFrameInterval=_keyFrameInterval;
+@property(retain, nonatomic) NSString *rxCodecFeatureListString; // @synthesize rxCodecFeatureListString=_rxCodecFeatureListString;
+@property(retain, nonatomic) NSString *txCodecFeatureListString; // @synthesize txCodecFeatureListString=_txCodecFeatureListString;
 @property(nonatomic) unsigned int rxMinBitrate; // @synthesize rxMinBitrate=_rxMinBitrate;
 @property(nonatomic) unsigned int rxMaxBitrate; // @synthesize rxMaxBitrate=_rxMaxBitrate;
 @property(nonatomic) unsigned int txMinBitrate; // @synthesize txMinBitrate=_txMinBitrate;
@@ -43,6 +65,8 @@
 - (id)dictionary;
 - (void)setUpWithDictionary:(id)arg1;
 - (_Bool)isValid;
+- (void)dealloc;
+- (id)init;
 
 @end
 

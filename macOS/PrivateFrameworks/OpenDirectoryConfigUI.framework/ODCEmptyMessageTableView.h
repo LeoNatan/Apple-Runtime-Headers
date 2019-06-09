@@ -8,6 +8,7 @@
 
 @class NSAttributedString;
 
+__attribute__((visibility("hidden")))
 @interface ODCEmptyMessageTableView : NSTableView
 {
     NSAttributedString *_emptyListMsg;

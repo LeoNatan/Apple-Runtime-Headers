@@ -8,15 +8,16 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit22ConversationController : NSObject
 {
     // Error parsing type: , name: localParticipant
     // Error parsing type: , name: remoteParticipants
     // Error parsing type: , name: includeLocalParticipantInVisibleParticipants
     // Error parsing type: , name: audioFrequencyController
+    // Error parsing type: , name: momentsController
     // Error parsing type: , name: audioCallbackQueue
     // Error parsing type: , name: recentPresentationContexts
+    // Error parsing type: , name: scheduledIsChangingMirroredVideoResetDates
     // Error parsing type: , name: conversationState
     // Error parsing type: , name: deviceOrientation
     // Error parsing type: , name: broadcastingState
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: participantsMediaPrioritiesDidChange
     // Error parsing type: , name: participantAudioPowerDidChange
     // Error parsing type: , name: audioRouteDidChange
+    // Error parsing type: , name: cameraZoomAvailabiltyDidChange
     // Error parsing type: , name: carPlayConnectedDidChange
     // Error parsing type: , name: didUpdateLocalParticipant
     // Error parsing type: , name: didStartVideoForLocalParticipant
@@ -37,11 +39,11 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: callCenter
     // Error parsing type: , name: call
     // Error parsing type: , name: conversationUUID
-    // Error parsing type: , name: availableParticipantColors
 }
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)dealloc;
 @property(nonatomic, readonly) NSString *description;
 
 @end

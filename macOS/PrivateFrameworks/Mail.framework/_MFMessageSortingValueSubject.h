@@ -6,16 +6,14 @@
 
 #import <Mail/MFMessageSortingValue.h>
 
-@class NSString;
+@class ECSubject;
 
 @interface _MFMessageSortingValueSubject : MFMessageSortingValue
 {
-    unsigned char _subjectPrefixLength;
-    NSString *_subject;
+    ECSubject *_subject;
 }
 
-@property(nonatomic) unsigned char subjectPrefixLength; // @synthesize subjectPrefixLength=_subjectPrefixLength;
-@property(copy, nonatomic) NSString *subject; // @synthesize subject=_subject;
+@property(copy, nonatomic) ECSubject *subject; // @synthesize subject=_subject;
 - (id)description;
 - (void)dealloc;
 

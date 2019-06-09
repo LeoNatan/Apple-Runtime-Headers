@@ -7,20 +7,45 @@
 #import <objc/NSObject.h>
 
 #import <CoreML/NSCopying-Protocol.h>
+#import <CoreML/NSSecureCoding-Protocol.h>
 
-@interface MLModelConfiguration : NSObject <NSCopying>
+@class NSDictionary, NSURL;
+@protocol MTLDevice;
+
+@interface MLModelConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _allowBackgroundGPUComputeSetting;
     _Bool _useWatchSPIForScribble;
+    _Bool _allowLowPrecisionAccumulationOnGPU;
+    _Bool _enableTestVectorMode;
     int _computeUnits;
+    id <MTLDevice> _preferredMetalDevice;
+    NSDictionary *_updateParameters;
+    NSDictionary *_modelParameters;
+    NSURL *_rootModelURL;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)defaultConfiguration;
+@property(retain) NSURL *rootModelURL; // @synthesize rootModelURL=_rootModelURL;
+@property(retain) NSDictionary *modelParameters; // @synthesize modelParameters=_modelParameters;
+@property(retain) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
+@property(nonatomic) _Bool enableTestVectorMode; // @synthesize enableTestVectorMode=_enableTestVectorMode;
+@property(retain, nonatomic) id <MTLDevice> preferredMetalDevice; // @synthesize preferredMetalDevice=_preferredMetalDevice;
+@property _Bool allowLowPrecisionAccumulationOnGPU; // @synthesize allowLowPrecisionAccumulationOnGPU=_allowLowPrecisionAccumulationOnGPU;
 @property(nonatomic) _Bool useWatchSPIForScribble; // @synthesize useWatchSPIForScribble=_useWatchSPIForScribble;
+@property _Bool allowBackgroundGPUComputeSetting; // @synthesize allowBackgroundGPUComputeSetting=_allowBackgroundGPUComputeSetting;
 @property int computeUnits; // @synthesize computeUnits=_computeUnits;
+- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqualToModelConfiguration:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) _Bool allowBackgroundGPUCompute;
+@property(retain, nonatomic) id <MTLDevice> preferredMTLDevice;
+@property(nonatomic) _Bool allowFloat16AccumulationOnGPU;
 - (id)init;
 - (id)initWithComputeUnits:(int)arg1;
 

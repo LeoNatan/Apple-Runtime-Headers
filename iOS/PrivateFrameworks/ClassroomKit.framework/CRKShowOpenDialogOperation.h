@@ -20,12 +20,12 @@
     NSString *mSourceBundleIdentifier;
     NSString *mFilesDescription;
     NSSet *mAirDropItems;
-    SFAirDropClassroomTransferManager *mTransferManager;
     NSString *mTransferIdentifier;
     CRKAirDropTransferInfo *mTransferInfo;
     _Bool mTransferAccepted;
     _Bool mTransferFinished;
     NSURL *mTransferDirectoryURL;
+    SFAirDropClassroomTransferManager *mTransferManager;
 }
 
 + (id)fakeBundleID;

@@ -7,6 +7,8 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (HealthKit)
++ (id)hk_dateWithNanosecondsSince1970:(long long)arg1;
+- (long long)hk_nanosecondsSince1970;
 - (id)hk_truncateToDay;
 - (id)hk_nearestDate:(id)arg1;
 - (id)hk_rfc3339String;

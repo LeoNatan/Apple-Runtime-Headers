@@ -14,7 +14,8 @@
     id <UISplitViewControllerImpl> _impl;
 }
 
-+ (_Bool)doesOverrideSupportedInterfaceOrientations;
++ (long long)_forcedImpl;
++ (void)_setForcedImpl:(long long)arg1;
 + (_Bool)doesOverridePreferredInterfaceOrientationForPresentation;
 + (_Bool)_automaticDisplayModeOnPhoneUsesOverlayInLandscapeDefaultValue;
 + (_Bool)_devicePrefersOverlayInRegularWidth;
@@ -23,12 +24,13 @@
 - (_Bool)_disableAutomaticKeyboardBehavior;
 - (id)_primaryContentResponder;
 - (void)_didChangeToFirstResponder:(id)arg1;
+- (id)_super_traitCollectionForChildEnvironment:(id)arg1;
+- (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (_Bool)_handlesCounterRotationForPresentation;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (id)_super_childViewControllersToSendViewWillTransitionToSize;
 - (id)_childViewControllersToSendViewWillTransitionToSize;
 - (void)_getRotationContentSettings:(CDStruct_8bdd0ba6 *)arg1;
-- (_Bool)_shouldSynthesizeSupportedOrientations;
 - (double)_contentMarginForChildViewController:(id)arg1;
 - (void)_updateChildContentMargins;
 - (void)_marginInfoForChild:(id)arg1 leftMargin:(double *)arg2 rightMargin:(double *)arg3;
@@ -36,9 +38,10 @@
 - (_Bool)_optsOutOfPopoverControllerHierarchyCheck;
 - (_Bool)_shouldPersistViewWhenCoding;
 - (struct CGRect)_frameForChildContentContainer:(id)arg1;
+- (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (long long)_preferredModalPresentationStyle;
 - (void)_super_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (void)purgeMemoryForReason:(int)arg1;
 - (void)unloadViewForced:(_Bool)arg1;
 - (void)_super_removeChildViewController:(id)arg1;
 - (void)removeChildViewController:(id)arg1;
@@ -51,6 +54,12 @@
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (id)_super_childViewControllerForStatusBarStyle;
+- (id)childViewControllerForStatusBarStyle;
+- (long long)preferredTrailingStatusBarStyle;
+- (long long)preferredLeadingStatusBarStyle;
+- (_Bool)_shouldUseSeparateStatusBarStyles;
+- (_Bool)_shouldUseNewStatusBarBehavior;
 - (_Bool)_super_shouldUpdateFocusInContext:(id)arg1;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)_super_preferredFocusEnvironments;
@@ -66,13 +75,17 @@
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGSize)_super_sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
+- (void)addChildViewController:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
+@property(nonatomic) long long primaryBackgroundStyle;
 - (void)toggleMasterVisible:(id)arg1;
+- (void)_updateScrollEdgeBehaviorForDetailNavigationContoller;
+- (void)_enumerateAncestorViewControllersUntilStop:(_Bool *)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_layoutPrimaryOnRight;
 - (_Bool)_iPhoneShouldUseOverlayInCurrentEnvironment;
 - (void)_didEndSnapshotSession;
@@ -93,8 +106,8 @@
 @property(copy, nonatomic, setter=_setDisplayModeButtonItemTitle:) NSString *_displayModeButtonItemTitle;
 @property(nonatomic) _Bool hidesMasterViewInPortrait;
 @property(nonatomic) float gutterWidth;
-@property(nonatomic) float masterColumnWidth;
 @property(nonatomic) long long primaryEdge;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)showDetailViewController:(id)arg1 sender:(id)arg2;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
 @property(readonly, nonatomic) double primaryColumnWidth;
@@ -122,9 +135,6 @@
 @property(readonly, nonatomic) NSArray *possibleStates;
 @property(readonly, nonatomic) UISlidingBarState *currentState;
 @property(copy, nonatomic) UISlidingBarConfiguration *configuration;
-@property(retain, nonatomic) UIViewController *trailingViewController;
-@property(retain, nonatomic) UIViewController *mainViewController;
-@property(retain, nonatomic) UIViewController *leadingViewController;
 - (_Bool)_usesPanelImpl;
 - (id)_panelImpl;
 

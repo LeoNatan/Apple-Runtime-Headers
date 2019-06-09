@@ -30,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)updateUIWithAnimation:(_Bool)arg1;
+- (void)prepareForReuse;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 // Remaining properties

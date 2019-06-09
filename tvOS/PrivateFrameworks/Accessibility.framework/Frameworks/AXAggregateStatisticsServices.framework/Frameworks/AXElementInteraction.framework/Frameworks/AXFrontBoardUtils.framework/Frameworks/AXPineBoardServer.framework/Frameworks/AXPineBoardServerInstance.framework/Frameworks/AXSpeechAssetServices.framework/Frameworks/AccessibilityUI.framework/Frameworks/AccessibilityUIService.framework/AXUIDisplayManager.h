@@ -53,6 +53,7 @@
 - (void)_activeInterfaceOrientationDidChange:(long long)arg1 duration:(double)arg2;
 - (_Bool)_serviceWantsToPreventAutorotation:(id)arg1;
 - (void)_attemptToInitializeActiveInterfaceOrientation;
+- (void)cancelNubbitFade:(id)arg1;
 - (void)_handleMoveNubbitGestureRecognizer:(id)arg1;
 - (id)_gravityBehaviorForNubbit:(id)arg1 velocity:(struct CGPoint)arg2 boundingView:(id)arg3;
 - (void)pinNubbitToEdge:(id)arg1;
@@ -85,6 +86,7 @@
 - (void)unregisterNubbit:(id)arg1;
 - (void)registerNubbit:(id)arg1 delegate:(id)arg2;
 - (void)hideAlertWithIdentifier:(id)arg1 forService:(id)arg2;
+- (id)showAlertWithText:(id)arg1 subtitleText:(id)arg2 iconImage:(id)arg3 type:(unsigned long long)arg4 priority:(unsigned long long)arg5 duration:(double)arg6 userInfo:(id)arg7 forService:(id)arg8;
 - (id)showAlertWithText:(id)arg1 subtitleText:(id)arg2 iconImage:(id)arg3 type:(unsigned long long)arg4 priority:(unsigned long long)arg5 duration:(double)arg6 forService:(id)arg7;
 - (id)showAlertWithText:(id)arg1 subtitleText:(id)arg2 iconImage:(id)arg3 type:(unsigned long long)arg4 forService:(id)arg5;
 - (void)removeContentViewController:(id)arg1 withUserInteractionEnabled:(_Bool)arg2 forService:(id)arg3 context:(void *)arg4 completion:(CDUnknownBlockType)arg5;

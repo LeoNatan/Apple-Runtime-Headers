@@ -8,7 +8,7 @@
 
 #import <CameraUI/CAMBurstIdentifierProvider-Protocol.h>
 #import <CameraUI/CAMBurstRequest-Protocol.h>
-#import <CameraUI/CAMEffectFilterTypeProvider-Protocol.h>
+#import <CameraUI/CAMCaptureAdjustmentProvider-Protocol.h>
 #import <CameraUI/CAMIrisRequest-Protocol.h>
 #import <CameraUI/CAMTimelapseRequest-Protocol.h>
 #import <CameraUI/NSCopying-Protocol.h>
@@ -17,7 +17,7 @@
 @class NSArray, NSString, NSURL;
 @protocol CAMStillImageCaptureRequestDelegate;
 
-@interface CAMStillImageCaptureRequest : CAMCaptureRequest <CAMEffectFilterTypeProvider, CAMBurstIdentifierProvider, NSCopying, NSMutableCopying, CAMBurstRequest, CAMIrisRequest, CAMTimelapseRequest>
+@interface CAMStillImageCaptureRequest : CAMCaptureRequest <CAMCaptureAdjustmentProvider, CAMBurstIdentifierProvider, NSCopying, NSMutableCopying, CAMBurstRequest, CAMIrisRequest, CAMTimelapseRequest>
 {
     NSString *_EV0PersistenceUUID;
     NSString *_timelapseIdentifier;
@@ -30,7 +30,7 @@
     _Bool _wantsPortraitEffect;
     NSArray *_adjustmentFilters;
     NSArray *_originalFilters;
-    _Bool _usesStillImageStabilization;
+    long long _photoQualityPrioritization;
     _Bool _wantsAutoDualCameraFusion;
     _Bool _wantsAudioForCapture;
     _Bool _wantsSquareCrop;
@@ -70,7 +70,7 @@
 @property(readonly, nonatomic) _Bool wantsSquareCrop; // @synthesize wantsSquareCrop=_wantsSquareCrop;
 @property(readonly, nonatomic) _Bool wantsAudioForCapture; // @synthesize wantsAudioForCapture=_wantsAudioForCapture;
 @property(readonly, nonatomic) _Bool wantsAutoDualCameraFusion; // @synthesize wantsAutoDualCameraFusion=_wantsAutoDualCameraFusion;
-@property(readonly, nonatomic) _Bool usesStillImageStabilization; // @synthesize usesStillImageStabilization=_usesStillImageStabilization;
+@property(readonly, nonatomic) long long photoQualityPrioritization; // @synthesize photoQualityPrioritization=_photoQualityPrioritization;
 @property(readonly, nonatomic) NSArray *originalFilters; // @synthesize originalFilters=_originalFilters;
 @property(readonly, nonatomic) NSArray *adjustmentFilters; // @synthesize adjustmentFilters=_adjustmentFilters;
 @property(readonly, nonatomic) _Bool wantsPortraitEffect; // @synthesize wantsPortraitEffect=_wantsPortraitEffect;
@@ -78,7 +78,8 @@
 @property(readonly, nonatomic) long long hdrMode; // @synthesize hdrMode=_hdrMode;
 @property(readonly, nonatomic) long long flashMode; // @synthesize flashMode=_flashMode;
 - (void).cxx_destruct;
-- (_Bool)shouldPersistToLivePhotoDirectory;
+- (_Bool)hasAdjustments;
+@property(readonly, nonatomic) _Bool shouldPersistToLivePhotoDirectory;
 - (_Bool)isEV0LocalVideoDestinationURL:(id)arg1;
 - (id)irisLocalVideoDestinationURLForEV0:(_Bool)arg1;
 - (id)irisVideoPersistenceUUIDForEV0:(_Bool)arg1;

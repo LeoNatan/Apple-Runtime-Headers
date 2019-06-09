@@ -22,7 +22,6 @@
 - (int)_auxiliaryTrackID;
 - (id)_auxiliaryTrackLayer;
 - (_Bool)_hasLayerAsAuxiliaryTrack;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithMagicTrackID:(int)arg1 animationLayer:(id)arg2 videoLayers:(id)arg3;
 

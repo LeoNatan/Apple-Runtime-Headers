@@ -6,14 +6,9 @@
 
 #import <AppleMediaServices/NSObject-Protocol.h>
 
-@class ACAccount, NSHTTPURLResponse, NSNumber, NSString, NSURLRequest;
+@class ACAccount, NSString;
 
 @protocol AMSCommerceService <NSObject>
-- (void)ams_secureTokenForAccountWithDSID:(NSNumber *)arg1 storeClientIdentifier:(NSString *)arg2 replyBlock:(void (^)(NSString *))arg3;
-- (void)ams_saveAccount:(ACAccount *)arg1 storeClientIdentifier:(NSString *)arg2 replyBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)ams_removeDeviceOffer:(NSString *)arg1 storeClientIdentifier:(NSString *)arg2 account:(ACAccount *)arg3 logKey:(NSString *)arg4;
-- (void)ams_processResponse:(NSHTTPURLResponse *)arg1 forRequest:(NSURLRequest *)arg2 storeClient:(NSString *)arg3 replyBlock:(void (^)(BOOL, NSError *))arg4;
-- (void)ams_authenticateAccountWithUsername:(NSString *)arg1 authenticationType:(unsigned long long)arg2 forBundleID:(NSString *)arg3 storeClientIdentifier:(NSString *)arg4 replyBlock:(void (^)(ACAccount *, NSError *))arg5;
-- (void)ams_accountsWithStoreClientIdentifier:(NSString *)arg1 replyBlock:(void (^)(NSArray *))arg2;
 @end
 

@@ -8,6 +8,7 @@
 
 @class Filter, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface SymptomFilter : NSObject
 {
     unsigned int _targetSymptomId;

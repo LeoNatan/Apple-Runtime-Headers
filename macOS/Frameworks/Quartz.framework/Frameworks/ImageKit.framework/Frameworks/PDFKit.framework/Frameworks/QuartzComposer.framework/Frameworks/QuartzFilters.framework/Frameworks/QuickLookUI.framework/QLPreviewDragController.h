@@ -16,7 +16,8 @@
     id <QLPreviewDragDelegate> _delegate;
 }
 
-@property id <QLPreviewDragDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak id <QLPreviewDragDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)_setupDragPasteboad:(id)arg1;
 - (void)_getDefaultDragImageAndFrame:(CDUnknownBlockType)arg1;

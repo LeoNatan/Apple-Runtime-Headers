@@ -6,11 +6,16 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class AVVCAudioBuffer, AVVoiceController, NSDictionary, NSError;
+@class AVVCAudioBuffer, AVVoiceController, NSArray, NSDictionary, NSError;
 
 @protocol AVVoiceControllerRecordDelegate <NSObject>
 
 @optional
+- (void)voiceControllerStreamInvalidated:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2;
+- (void)voiceControllerAudioCallback:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2 buffer:(AVVCAudioBuffer *)arg3;
+- (void)voiceControllerDidStopRecording:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2 forReason:(long long)arg3;
+- (void)voiceControllerDidStartRecording:(AVVoiceController *)arg1 forStream:(unsigned long long)arg2 successfully:(_Bool)arg3 error:(NSError *)arg4;
+- (void)voiceControllerWirelessSplitterRouteAvailable:(_Bool)arg1 devices:(NSArray *)arg2;
 - (void)voiceControllerLPCMRecordBufferAvailable:(AVVoiceController *)arg1 buffer:(AVVCAudioBuffer *)arg2;
 - (void)voiceControllerRecordBufferAvailable:(AVVoiceController *)arg1 buffer:(AVVCAudioBuffer *)arg2;
 - (void)voiceControllerDidSetAudioSessionActive:(AVVoiceController *)arg1 isActivated:(_Bool)arg2;

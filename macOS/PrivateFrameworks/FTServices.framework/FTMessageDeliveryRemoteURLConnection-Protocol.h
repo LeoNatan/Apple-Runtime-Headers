@@ -18,7 +18,6 @@
 @property int concurrentConnections;
 @property BOOL shouldUsePipelining;
 @property(retain) NSString *bundleIdentifierForDataUsage;
-@property BOOL alwaysForceCellular;
 @property BOOL forceCellularIfPossible;
 @property BOOL requireIDSHost;
 - (void)cancel;

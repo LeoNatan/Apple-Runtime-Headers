@@ -15,6 +15,7 @@
     double _SDRModulationIntensity;
     double _videoComplementModulationIntensity;
     long long _EDRHeadroomRequestScheme;
+    long long _EDRHeadroomUsageScheme;
     double _manualEDRHeadroomRequestStops;
     double _EDRHeadroomRequestHDRThreshold;
     double _EDRHeadroomRequestSustainDuration;
@@ -31,6 +32,7 @@
 @property(nonatomic) double EDRHeadroomRequestSustainDuration; // @synthesize EDRHeadroomRequestSustainDuration=_EDRHeadroomRequestSustainDuration;
 @property(nonatomic) double EDRHeadroomRequestHDRThreshold; // @synthesize EDRHeadroomRequestHDRThreshold=_EDRHeadroomRequestHDRThreshold;
 @property(nonatomic) double manualEDRHeadroomRequestStops; // @synthesize manualEDRHeadroomRequestStops=_manualEDRHeadroomRequestStops;
+@property(nonatomic) long long EDRHeadroomUsageScheme; // @synthesize EDRHeadroomUsageScheme=_EDRHeadroomUsageScheme;
 @property(nonatomic) long long EDRHeadroomRequestScheme; // @synthesize EDRHeadroomRequestScheme=_EDRHeadroomRequestScheme;
 @property(nonatomic) double videoComplementModulationIntensity; // @synthesize videoComplementModulationIntensity=_videoComplementModulationIntensity;
 @property(nonatomic) double SDRModulationIntensity; // @synthesize SDRModulationIntensity=_SDRModulationIntensity;

@@ -56,6 +56,7 @@
 - (void)flashCrownIndicator;
 @property(readonly, nonatomic, getter=puic_crownInputSequencer) PUICCrownInputSequencer *crownInputSequencer;
 @property(readonly, nonatomic, getter=puic_existingCrownInputSequencer) PUICCrownInputSequencer *existingCrownInputSequencer;
+@property(nonatomic, getter=puic_minorDetentsRegionDisabled, setter=puic_setMinorDetentsRegionDisabled:) _Bool minorDetentRegionDisabled;
 - (_Bool)puic_hasEnoughContentToPlayDetents;
 - (_Bool)puic_scrollViewContentsRequireScrolling;
 @property(nonatomic, getter=puic_minorDetentsEndEdge, setter=puic_setMinorDetentsEndEdge:) float minorDetentsEndEdge;
@@ -66,6 +67,7 @@
 @property(nonatomic, getter=puic_crownInputScrollDirection, setter=puic_setCrownInputScrollDirection:) int crownInputScrollDirection;
 @property(nonatomic, getter=puic_isMechanizedScrollingEnabled, setter=puic_setMechanizedScrollingEnabled:) _Bool mechanizedScrollingEnabled;
 - (void)_puic_setDelegate:(id)arg1;
+- (void)_puic_safeAreaInsetsDidChange;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

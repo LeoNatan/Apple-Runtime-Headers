@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, OBPrivacyCombinedController, OBPrivacySplashController, UIViewController;
+@class NSArray, NSString, OBPrivacyCombinedController, OBPrivacySplashController, UIViewController;
 
 @interface OBPrivacyPresenter : NSObject
 {
@@ -16,6 +16,7 @@
     CDUnknownBlockType _dismissHandler;
     OBPrivacySplashController *_splashController;
     OBPrivacyCombinedController *_combinedController;
+    NSString *_displayLanguage;
     UIViewController *_presentingViewController;
     long long _modalPresentationStyle;
     unsigned long long _supportedInterfaceOrientations;
@@ -26,8 +27,10 @@
 
 + (id)presenterForPrivacyUnifiedAboutWithIdentifiers:(id)arg1;
 + (id)presenterForPrivacyUnifiedAbout;
++ (id)presenterForPrivacySplashWithBundleAtPath:(id)arg1;
 + (id)presenterForPrivacySplashWithIdentifer:(id)arg1;
 + (id)presenterForPrivacySplashWithIdentifier:(id)arg1;
++ (id)presenterForPrivacySplashWithBundle:(id)arg1;
 @property(nonatomic) _Bool animatePresentAndDismiss; // @synthesize animatePresentAndDismiss=_animatePresentAndDismiss;
 @property(copy) CDUnknownBlockType presentationCompletionHandler; // @synthesize presentationCompletionHandler=_presentationCompletionHandler;
 @property(retain) NSArray *presentedIdentifiers; // @synthesize presentedIdentifiers=_presentedIdentifiers;
@@ -37,6 +40,7 @@
 @property(nonatomic) _Bool usesFullScreenPresentation; // @synthesize usesFullScreenPresentation=_usesFullScreenPresentation;
 @property(nonatomic) _Bool darkMode; // @synthesize darkMode=_darkMode;
 @property __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
+@property(retain, nonatomic) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property(retain) OBPrivacyCombinedController *combinedController; // @synthesize combinedController=_combinedController;
 @property(retain) OBPrivacySplashController *splashController; // @synthesize splashController=_splashController;
 @property(copy) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;

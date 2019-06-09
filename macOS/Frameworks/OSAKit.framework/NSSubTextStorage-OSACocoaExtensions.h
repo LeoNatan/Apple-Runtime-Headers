@@ -8,5 +8,6 @@
 
 @interface NSSubTextStorage (OSACocoaExtensions)
 - (struct _NSRange)range;
+- (struct _NSRange)range;
 @end
 

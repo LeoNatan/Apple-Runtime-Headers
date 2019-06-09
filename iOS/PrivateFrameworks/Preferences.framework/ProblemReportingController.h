@@ -39,6 +39,10 @@
 - (void)setShouldShareHealthData:(id)arg1 specifier:(id)arg2;
 - (id)shouldShareHealthDataForSpecifier:(id)arg1;
 @property(readonly) NSArray *healthDataSpecifiers; // @synthesize healthDataSpecifiers=_healthDataSpecifiers;
+- (void)setAutomatedFeedbackEnabled:(id)arg1 specifier:(id)arg2;
+- (id)automatedFeedbackEnabled:(id)arg1;
+- (void)automatedFeedbackLinkTapped;
+- (id)automatedFeedbackSpecifiers;
 - (id)iCloudSpecifiers;
 - (_Bool)shouldShowiCloudSpecifiersForAccount:(id)arg1;
 - (void)setShouldShareiCloudAnalytics:(id)arg1 specifier:(id)arg2;

@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)_canShowWhileLocked;
 - (void)dismiss;
 - (id)init;
 

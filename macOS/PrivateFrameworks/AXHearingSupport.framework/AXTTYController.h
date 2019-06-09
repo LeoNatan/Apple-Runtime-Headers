@@ -7,11 +7,10 @@
 #import <objc/NSObject.h>
 
 #import <AXHearingSupport/TTYCallDelegate-Protocol.h>
-#import <AXHearingSupport/TUCallCapabilitiesDelegate-Protocol.h>
 
 @class NSMutableArray, NSString;
 
-@interface AXTTYController : NSObject <TTYCallDelegate, TUCallCapabilitiesDelegate>
+@interface AXTTYController : NSObject <TTYCallDelegate>
 {
     NSMutableArray *_ttyCalls;
 }
@@ -19,7 +18,7 @@
 + (id)sharedController;
 @property(retain, nonatomic) NSMutableArray *ttyCalls; // @synthesize ttyCalls=_ttyCalls;
 - (void).cxx_destruct;
-- (void)ttyCall:(id)arg1 didReceiveString:(id)arg2 forUtterance:(id)arg3;
+- (void)ttyCall:(id)arg1 didReceiveCharacter:(unsigned short)arg2 forUtterance:(id)arg3;
 - (id)handleIncomingNotificationSuppressionChange:(id)arg1;
 - (id)displayCallPrompt:(id)arg1;
 - (id)handleSettingsRequest:(id)arg1;
@@ -32,9 +31,6 @@
 - (void)handleUpdatedCalls:(id)arg1;
 - (void)callDidConnect:(id)arg1;
 - (void)telephonySupportDidChange:(id)arg1;
-- (void)didChangeFaceTimeVideoCallingSupport;
-- (void)didChangeFaceTimeAudioCallingSupport;
-- (void)didChangeTelephonyCallingSupport;
 - (id)init;
 
 // Remaining properties

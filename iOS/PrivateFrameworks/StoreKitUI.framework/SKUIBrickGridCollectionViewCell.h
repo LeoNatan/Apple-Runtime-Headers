@@ -8,6 +8,7 @@
 
 @class NSString, SKUIEditorialCellLayout, UIImage, UIImageView, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBrickGridCollectionViewCell : UICollectionViewCell
 {
     NSString *_accessibilityLabel;

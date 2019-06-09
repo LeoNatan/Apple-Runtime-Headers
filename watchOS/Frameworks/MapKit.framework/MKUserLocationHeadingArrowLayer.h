@@ -9,18 +9,21 @@
 #import <MapKit/MKUserLocationHeadingAnimatableIndicator-Protocol.h>
 #import <MapKit/MKUserLocationHeadingIndicator-Protocol.h>
 
-@class MKUserLocationView, NSString;
+@class NSString, _MKPuckAnnotationView;
 
 __attribute__((visibility("hidden")))
 @interface MKUserLocationHeadingArrowLayer : CAShapeLayer <MKUserLocationHeadingIndicator, MKUserLocationHeadingAnimatableIndicator>
 {
+    float _baseRadius;
+    float _tipRadius;
+    float _baseHalfAngle;
     double _maxUncertaintyAngleToShowArrow;
-    MKUserLocationView *_userLocationView;
+    _MKPuckAnnotationView *_userLocationView;
     float _headingRadians;
 }
 
 @property(nonatomic) float headingRadians; // @synthesize headingRadians=_headingRadians;
-@property(readonly, nonatomic) __weak MKUserLocationView *userLocationView; // @synthesize userLocationView=_userLocationView;
+@property(readonly, nonatomic) __weak _MKPuckAnnotationView *userLocationView; // @synthesize userLocationView=_userLocationView;
 - (void).cxx_destruct;
 - (float)_tipRadiusWhenVisible:(_Bool)arg1;
 - (float)_baseRadiusWhenVisible:(_Bool)arg1;

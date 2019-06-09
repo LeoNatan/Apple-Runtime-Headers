@@ -27,9 +27,10 @@
 @property struct CGRect imageCropRect; // @synthesize imageCropRect=_imageCropRect;
 @property(retain) NSImage *cachedImage; // @synthesize cachedImage=_cachedImage;
 @property(retain) NSMutableDictionary *suppressedFailures; // @synthesize suppressedFailures=_suppressedFailures;
-@property(retain) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
+@property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) NSDictionary *context; // @synthesize context=_context;
 @property(retain) NSArray *services; // @synthesize services=_services;
+- (void).cxx_destruct;
 - (void)DSEEnable:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_setProgressStringForAccount:(id)arg1 service:(id)arg2 starting:(BOOL)arg3;
 - (void)_handleEndMigrationNotification:(id)arg1;

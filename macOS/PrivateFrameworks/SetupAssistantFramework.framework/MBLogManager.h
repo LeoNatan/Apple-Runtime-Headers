@@ -8,6 +8,7 @@
 
 @protocol OS_os_log;
 
+__attribute__((visibility("hidden")))
 @interface MBLogManager : NSObject
 {
     BOOL _legacyLoggingEnabled;

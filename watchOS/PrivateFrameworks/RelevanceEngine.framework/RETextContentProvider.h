@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <RelevanceEngine/NSCoding-Protocol.h>
 #import <RelevanceEngine/NSCopying-Protocol.h>
+#import <RelevanceEngine/NSSecureCoding-Protocol.h>
 #import <RelevanceEngine/REContentEncodable-Protocol.h>
 
 @class NSString;
 
-@interface RETextContentProvider : NSObject <REContentEncodable, NSCopying, NSCoding>
+@interface RETextContentProvider : NSObject <REContentEncodable, NSCopying, NSSecureCoding>
 {
 }
 
 + (id)contentProviderFromAttributedString:(id)arg1;
 + (id)contentProviderFromClockKitTextProvider:(id)arg1;
++ (_Bool)supportsSecureCoding;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

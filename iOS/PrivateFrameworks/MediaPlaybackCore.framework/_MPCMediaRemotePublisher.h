@@ -15,6 +15,8 @@
 {
     MPLibraryAddStatusObserver *_libraryAddStatusObserver;
     NSString *_lastContextID;
+    _Bool _isLastKnownSubscriptionStatusTypeEnabled;
+    NSString *_hashedDSID;
     _Bool _initializedSupportedCommands;
     _Bool _engineRestoringState;
     MPCPlaybackEngine *_playbackEngine;
@@ -23,19 +25,23 @@
 }
 
 @property(readonly, nonatomic) MPRemoteCommandCenter *commandCenter; // @synthesize commandCenter=_commandCenter;
-@property(readonly, nonatomic) MPNowPlayingInfoCenter *infoCenter; // @synthesize infoCenter=_infoCenter;
 @property(nonatomic, getter=isEngineRestoringState) _Bool engineRestoringState; // @synthesize engineRestoringState=_engineRestoringState;
+@property(readonly, nonatomic) MPNowPlayingInfoCenter *infoCenter; // @synthesize infoCenter=_infoCenter;
 @property(nonatomic, getter=hasInitializedSupportedCommands) _Bool initializedSupportedCommands; // @synthesize initializedSupportedCommands=_initializedSupportedCommands;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void).cxx_destruct;
 - (void)_performCommandEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_updateUpNextItemCount;
 - (void)_updateSupportedCommands;
+- (void)_updateSubscriptionStatus;
+- (void)_updateLaunchCommands;
 - (void)_enqueueFallbackIntentIfNeededForCommandEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_copySupportedSessionTypes;
 - (void)_becomeActiveIfNeededWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_disableQueueModificationsChangedNotification:(id)arg1;
+- (void)_userIdentityStoreChangedNotification:(id)arg1;
+- (void)_subscriptionStatusChangedNotification:(id)arg1;
 - (void)_likedStateChangedNotification:(id)arg1;
 - (void)_durationAvailableNotification:(id)arg1;
+- (void)_disableQueueModificationsChangedNotification:(id)arg1;
 - (void)nowPlayingInfoCenter:(id)arg1 didEndLyricsEvent:(id)arg2;
 - (void)nowPlayingInfoCenter:(id)arg1 didBeginLyricsEvent:(id)arg2;
 - (void)engineDidEndStateRestoration:(id)arg1;
@@ -51,10 +57,14 @@
 @property(readonly, nonatomic) MPCPlayerPath *playerPath;
 - (void)becomeActive;
 - (id)initWithPlaybackEngine:(id)arg1;
+- (void)_nowPlayingInfoCenter:(id)arg1 getTransportablePlaybackSessionRepresentationWithCompletion:(CDUnknownBlockType)arg2;
+- (void)nowPlayingInfoCenter:(id)arg1 getTransportablePlaybackSessionRepresentationWithCompletion:(CDUnknownBlockType)arg2;
 - (id)nowPlayingInfoCenter:(id)arg1 lyricsForContentItem:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)nowPlayingInfoCenter:(id)arg1 artworkCatalogForContentItem:(id)arg2;
 - (id)nowPlayingInfoCenter:(id)arg1 artworkForContentItem:(id)arg2 size:(struct CGSize)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)nowPlayingInfoCenter:(id)arg1 contentItemForID:(id)arg2;
+- (id)nowPlayingInfoCenter:(id)arg1 contentItemIDsFromOffset:(long long)arg2 toOffset:(long long)arg3 nowPlayingIndex:(long long *)arg4;
+- (_Bool)respondsToSelector:(SEL)arg1;
 - (id)nowPlayingInfoCenter:(id)arg1 contentItemIDForOffset:(long long)arg2;
 - (id)playbackQueueIdentifierForNowPlayingInfoCenter:(id)arg1;
 

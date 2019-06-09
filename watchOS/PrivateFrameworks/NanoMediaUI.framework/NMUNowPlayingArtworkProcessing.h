@@ -12,11 +12,12 @@
 
 + (id)_touchHighlightCachePath;
 + (id)_processedArtworkCachePath;
-+ (void)_getCachePathsForItemWithPersistentID:(id)arg1 processedArtworkImageCachePath:(id *)arg2 touchHighlightImageCachePath:(id *)arg3;
-+ (void)_getProcessedImagesForSourceImage:(id)arg1 processedArtworkImage:(id *)arg2 touchHighlightImage:(id *)arg3 optionalItemPersistentIDForCaching:(id)arg4;
++ (void)_getCachePathsForItemWithPersistentID:(id)arg1 processedArtworkImageCachePath:(id *)arg2;
++ (void)_getProcessedImageForSourceImage:(id)arg1 processedArtworkImage:(id *)arg2 optionalItemPersistentIDForCaching:(id)arg3;
 + (void)_clearCachedBackgroundArtworkIfNecessary;
 + (id)placeholderArtworkWithTemplateImageName:(id)arg1;
 + (void)processArtworkRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)artworkCatalogForItemWithDeviceLibraryPersistentID:(long long)arg1;
 
 @end
 

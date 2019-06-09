@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     OITSUColor *mColor;
 }
 
+- (void).cxx_destruct;
 - (void)fillPath:(id)arg1 evenOddRule:(_Bool)arg2;
 - (void)setColor:(id)arg1;
 - (id)color;
-- (void)dealloc;
 - (id)initWithColor:(id)arg1;
 
 @end

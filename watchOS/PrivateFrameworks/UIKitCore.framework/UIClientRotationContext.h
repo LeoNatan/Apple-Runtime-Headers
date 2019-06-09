@@ -23,15 +23,12 @@ __attribute__((visibility("hidden")))
     _Bool _contentWasHidden;
     _Bool _snapshotTargetWasHidden;
     _Bool _orderKeyboardInAfterRotating;
-    _Bool _skipFooterRotation;
-    _Bool _skipHeaderRotation;
     int _fromOrientation;
     int _toOrientation;
     double _duration;
     UISnapshotView *_headerSnapshotViewStart;
     UISnapshotView *_footerSnapshotViewStart;
     UISnapshotView *_contentSnapshotViewStart;
-    float _contentTopAdjustmentStart;
     id _rotatingClient;
     CDStruct_3af65568 _rotationSettings;
     float contentBottomInset;
@@ -51,7 +48,6 @@ __attribute__((visibility("hidden")))
 - (void)setupRotationOrderingKeyboardInAfterRotation:(_Bool)arg1;
 - (_Bool)_isFooterTranslucent;
 - (_Bool)_isHeaderTranslucent;
-- (void)_slideFooterWithStartSnapshot:(id)arg1 endSnapshot:(id)arg2 duration:(double)arg3;
 - (void)_positionHeaderView:(id)arg1 andFooterView:(id)arg2 outsideContentViewForInterfaceOrientation:(int)arg3;
 - (void)slideHeaderViewAndFooterViewOffScreen:(_Bool)arg1 forInterfaceOrientation:(int)arg2;
 - (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(_Bool)arg3 forInterfaceOrientation:(int)arg4;

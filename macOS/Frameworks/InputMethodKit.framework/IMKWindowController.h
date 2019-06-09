@@ -8,15 +8,13 @@
 
 #import <InputMethodKit/NSWindowDelegate-Protocol.h>
 
-@class IMKCandidateController, IMKClipView, NSAppearance, NSString;
+@class IMKClipView, NSAppearance, NSString;
 
 @interface IMKWindowController : NSWindowController <NSWindowDelegate>
 {
     IMKClipView *_clipView;
-    IMKCandidateController *_controller;
 }
 
-@property(readonly) IMKCandidateController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) IMKClipView *clipView; // @synthesize clipView=_clipView;
 @property(nonatomic) long long windowLevel;
 @property(retain, nonatomic) NSAppearance *appearance;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class NSArray, NSDate, NSString, UIButton, UIImageView, UILabel, UIView, _UIBackdropView;
+@class NSArray, NSDate, NSString, UIButton, UIImageView, UILabel, UIView, UIVisualEffectView;
 @protocol PUPhotosSectionHeaderViewDelegate;
 
 @interface PUPhotosSectionHeaderView : UICollectionReusableView
@@ -23,7 +23,7 @@
     _Bool _highlightViewVisible;
     _Bool _inLayoutTransition;
     _Bool _performingBatchDateDependentUpdate;
-    _UIBackdropView *_backdropView;
+    UIVisualEffectView *_visualEffectView;
     _Bool _usingBackgroundBlur;
     UIView *_highlightView;
     _Bool _useYearOnlyForDefaultTitle;
@@ -99,7 +99,6 @@
 - (_Bool)_usingDateAsTitle;
 @property(readonly, nonatomic) NSString *synthesizedSectionTitle;
 - (void)_setUsingBackgroundBlur:(_Bool)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

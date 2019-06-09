@@ -8,16 +8,10 @@
 
 #import <ScreenReader/SCRWebElementAutoDrillAndAnnounceNavigationProtocol-Protocol.h>
 
-@class NSMutableArray, SCRBrailleLineManager;
-
 __attribute__((visibility("hidden")))
 @interface SCRWebAreaBookendGroup : SCRElement <SCRWebElementAutoDrillAndAnnounceNavigationProtocol>
 {
-    BOOL _justLandedOnGroup;
-    BOOL _arrivedAtStart;
     long long _childIndex;
-    SCRBrailleLineManager *_brailleLineManager;
-    NSMutableArray *_brailleLineChildren;
     SCRElement *_readContentsElement;
 }
 
@@ -31,10 +25,6 @@ __attribute__((visibility("hidden")))
 - (void)_setReadContentsElement:(id)arg1;
 - (void)addContentToRequest:(id)arg1 visibleOnly:(BOOL)arg2;
 - (void)addItemNameToRequest:(id)arg1;
-- (id)_brailleLineChildren;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (id)brailleLineManager;
 - (void)scrollToElement;
 - (void)_rebuildElementOnSameLevel;
 - (BOOL)moveToLastVisibleElementWithEvent:(id)arg1 request:(id)arg2;
@@ -53,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)childInAXOrderForward:(BOOL)arg1 horizontal:(BOOL)arg2 visibleOnly:(BOOL)arg3 wrapped:(char *)arg4 didHitBoundary:(char *)arg5 startElement:(id)arg6;
 - (BOOL)canWrapWhileNavigating;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
+- (BOOL)_treatAsEmptyGroup;
 - (BOOL)shouldSpeakItemCountWhenFocusingIn;
 - (void)addItemDescriptionForInteractionToRequest:(id)arg1;
 - (void)addItemDescriptionToRequest:(id)arg1;
@@ -65,8 +56,9 @@ __attribute__((visibility("hidden")))
 - (id)firstChildForFocusing;
 - (void)addBorderCrossedDescriptionToRequest:(id)arg1 forDirection:(long long)arg2;
 - (void)addStartBookendToRequest:(id)arg1;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (void)addEndBookendToRequest:(id)arg1;
+- (id)typeDescription;
 - (BOOL)isDepthLevelElement;
 - (BOOL)allowFocusThroughSingleChild;
 - (void)beginFocusFromElement:(id)arg1 withEvent:(id)arg2;
@@ -75,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (void)focusOntoAutoDrillAndAnnouceWebElement:(id)arg1;
 - (BOOL)shouldNavigate;
 - (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
-- (id)brailleLineElementForUIElement:(id)arg1;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 
 @end

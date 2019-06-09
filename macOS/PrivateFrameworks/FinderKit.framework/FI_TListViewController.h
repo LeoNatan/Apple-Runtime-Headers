@@ -11,11 +11,14 @@
 #import <FinderKit/NSScrollViewDelegate-Protocol.h>
 #import <FinderKit/NSTableViewDelegate-Protocol.h>
 #import <FinderKit/NSWindowDelegate-Protocol.h>
+#import <FinderKit/TListNameFieldDelegate-Protocol.h>
+#import <FinderKit/TListRowViewDelegate-Protocol.h>
+#import <FinderKit/TListViewDelegate-Protocol.h>
 
-@class FI_TListHeaderRowView, FI_TListNameCellView, NSDictionary, NSString;
+@class FI_TBrowserViewDataSource, FI_TListHeaderRowView, FI_TListNameCellView, NSDictionary, NSEvent, NSLayoutGuide, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TListViewController : FI_TBrowserViewController <NSOutlineViewDelegate, NSTableViewDelegate, NSOutlineViewDataSource, NSWindowDelegate, NSScrollViewDelegate>
+@interface FI_TListViewController : FI_TBrowserViewController <NSOutlineViewDelegate, NSTableViewDelegate, NSOutlineViewDataSource, NSWindowDelegate, NSScrollViewDelegate, TListNameFieldDelegate, TListRowViewDelegate, TListViewDelegate>
 {
     shared_ptr_2ccd00e6 _dateFormatterSelector;
     _Bool _showDateModified;
@@ -38,7 +41,6 @@ __attribute__((visibility("hidden")))
     _Bool _isRecursivelyCollapsing;
     _Bool _ignoreIncomingCollapses;
     _Bool _updatingColumns;
-    _Bool _unbindingViewSettings;
     _Bool _nodesBeingDraggedAreAllAtTheRootLevel;
     _Bool _editing;
     struct TNSRef<FI_TListNameCellView, void> _originalEditedNameCellView;
@@ -50,11 +52,26 @@ __attribute__((visibility("hidden")))
     struct TFENode _fakeHeaderRowNode;
     struct TFENode _nodeBeingReloaded;
     struct TNotificationCenterObserver _dateTimeFormattersChangedObserver;
-    struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _viewSettingsBinders;
-    struct TNSRef<NSLayoutGuide, void> _nameCellViewMasterLayoutGuide;
+    NSLayoutGuide *_nameCellViewMasterLayoutGuide;
     struct TKeyValueObserver _nameCellViewMasterLayoutGuideFrameDidChangeObserver;
 }
 
++ (void)updateTagsForCellView:(id)arg1 node:(const struct TFENode *)arg2;
++ (void)updateTagsForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
++ (void)updateProperty:(int)arg1 cellView:(id)arg2 node:(const struct TFENode *)arg3;
++ (void)updateKindForCellView:(id)arg1 node:(const struct TFENode *)arg2;
++ (void)updateProgressForSizeCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2 isVisible:(_Bool)arg3;
++ (void)updateProgressForICloudStatusCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2 isVisible:(_Bool)arg3;
++ (void)updateProgressForNameCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2 isVisible:(_Bool)arg3;
++ (void)updateVendorBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 scaleFactor:(double)arg3 isInFileProvider:(_Bool)arg4 darkBackground:(_Bool)arg5;
++ (void)updateScreenTimeBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
++ (void)updateSyncBadgeForICloudStatusCellView:(id)arg1 node:(const struct TFENode *)arg2 font:(id)arg3;
++ (void)updateSyncBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 isVisible:(_Bool)arg3;
++ (void)updateEjectButtonForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
++ (void)updateTitleForNameCellView:(id)arg1 node:(const struct TFENode *)arg2 font:(id)arg3 isInFileProvider:(_Bool)arg4 showSize:(_Bool)arg5;
++ (struct TString)firstAuthorOfNode:(const struct TFENode *)arg1;
++ (void)updateMasterLayoutGuide:(id)arg1 containerView:(id)arg2;
+@property(nonatomic) struct TFENode nodeBeingReloaded; // @synthesize nodeBeingReloaded=_nodeBeingReloaded;
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) _Bool nodesBeingDraggedAreAllAtTheRootLevel; // @synthesize nodesBeingDraggedAreAllAtTheRootLevel=_nodesBeingDraggedAreAllAtTheRootLevel;
 @property(nonatomic) _Bool updatingColumns; // @synthesize updatingColumns=_updatingColumns;
@@ -99,7 +116,6 @@ __attribute__((visibility("hidden")))
 - (id)outlineView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
 - (BOOL)outlineView:(id)arg1 shouldAutoExpandItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 writeItems:(id)arg2 toPasteboard:(id)arg3;
-- (_Bool)checkForTEFFilesInContainer:(const struct TFENode *)arg1;
 - (BOOL)outlineView:(id)arg1 shouldReorderColumn:(long long)arg2 toColumn:(long long)arg3;
 - (void)outlineView:(id)arg1 didDragTableColumn:(id)arg2;
 - (void)outlineViewColumnDidMove:(id)arg1;
@@ -119,7 +135,6 @@ __attribute__((visibility("hidden")))
 - (void)outlineViewItemWillExpand:(id)arg1;
 - (struct TFENode)parentForNotificationHelper:(id)arg1;
 - (_Bool)isNodeBeingReloaded:(const struct TFENode *)arg1;
-- (struct TFENode *)nodeBeingReloaded;
 - (void)outlineViewSelectionDidChange:(id)arg1;
 - (BOOL)outlineView:(id)arg1 isGroupItem:(id)arg2;
 - (void)outlineView:(id)arg1 didRemoveRowView:(id)arg2 forRow:(long long)arg3;
@@ -133,26 +148,14 @@ __attribute__((visibility("hidden")))
 - (void)menuNeedsUpdate:(id)arg1;
 - (_Bool)isGroupNode:(const struct TFENode *)arg1;
 - (void)refreshNodeSettings:(_Bool)arg1;
-- (void)updateTagsForCellView:(id)arg1 node:(const struct TFENode *)arg2;
-- (void)updateTagsForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
-- (void)updateProperty:(int)arg1 cellView:(id)arg2 node:(const struct TFENode *)arg3;
-- (void)updateKindForCellView:(id)arg1 node:(const struct TFENode *)arg2;
 - (void)updateSizeForSizeCellView:(id)arg1 node:(const struct TFENode *)arg2;
-- (void)updateProgressForSizeCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2;
-- (void)updateProgressForICloudStatusCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2;
-- (void)updateProgressForNameCellView:(id)arg1 progressStatus:(const struct TNodeProgressStatus *)arg2;
 - (void)updateProgressForRowView:(id)arg1 node:(const struct TFENode *)arg2;
-- (void)updateBadgeForICloudStatusCellView:(id)arg1 node:(const struct TFENode *)arg2;
-- (void)updateBadgeForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
-- (void)updateBadgeForRowView:(id)arg1 node:(const struct TFENode *)arg2;
-- (void)updateTitleForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
-- (struct TString)firstAuthorOfNode:(const struct TFENode *)arg1;
+- (void)updateSyncBadgeForRowView:(id)arg1 node:(const struct TFENode *)arg2;
 - (void)updateIconForNameCellView:(id)arg1 node:(const struct TFENode *)arg2;
 - (void)resetICloudMode:(_Bool)arg1;
 - (void)resizeColumnFromRight:(id)arg1 withEvent:(id)arg2;
 - (void)setResizeCursorForColumn:(id)arg1;
 - (void)addSpotlightColumnWithColumnPropertyIfNeeded:(int)arg1 withSettings:(id)arg2;
-- (void)unbindViewSettings;
 - (void)privateBindSettings;
 - (void)cmdDecreaseIconSize:(id)arg1;
 - (void)cmdIncreaseIconSize:(id)arg1;
@@ -234,7 +237,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)itemCount;
 - (_Bool)setSelectedNodeIfAllowed:(struct TFENode)arg1;
 - (unsigned long long)getSelectedNodesFromView:(struct TFENodeVector *)arg1 upTo:(unsigned long long)arg2;
-- (void)setDataSource:(id)arg1;
+@property(retain, nonatomic) FI_TBrowserViewDataSource *dataSource;
 - (int)viewStyle;
 - (void)reloadIconsInView;
 - (id)nibName;
@@ -256,8 +259,12 @@ __attribute__((visibility("hidden")))
 @property(setter=_setWantsPageAlignedVerticalAxis:) BOOL _wantsPageAlignedVerticalAxis;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isGrouping) _Bool grouping;
 @property(readonly) unsigned long long hash;
+@property(retain, nonatomic) NSEvent *mouseDownEventForDrag;
+@property struct TFENode nodeToDoubleClick;
 @property(readonly) Class superclass;
+@property(getter=isTornDown) _Bool tornDown;
 
 @end
 

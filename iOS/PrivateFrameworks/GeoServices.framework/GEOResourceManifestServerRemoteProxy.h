@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEOResourceManifestServerProxy-Protocol.h>
 
-@class GEOActiveTileGroup, GEOResourceManifestConfiguration, NSLock, NSString;
+@class GEOActiveTileGroup, GEOResourceManifestConfiguration, NSString;
 @protocol GEOResourceManifestServerProxyDelegate, OS_dispatch_queue, OS_xpc_object;
 
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy>
@@ -22,7 +22,7 @@
     _Bool _isLoadingResources;
     NSObject<OS_dispatch_queue> *_serverQueue;
     GEOResourceManifestConfiguration *_configuration;
-    NSLock *_authTokenLock;
+    struct os_unfair_lock_s _authTokenLock;
     NSString *_authToken;
     int _activeTileGroupChangedNotificationToken;
 }
@@ -43,6 +43,7 @@
 - (void)forceUpdate:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateIfNecessary:(CDUnknownBlockType)arg1;
 - (oneway void)resetActiveTileGroup;
+- (void)setActiveTileGroupIdentifier:(id)arg1 updateType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)closeConnection;
 - (void)openConnection;

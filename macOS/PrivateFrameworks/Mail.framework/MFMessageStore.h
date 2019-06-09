@@ -35,15 +35,12 @@
 }
 
 + (void)_autosaveMessageStore:(id)arg1;
-+ (long long)copyMessages:(id)arg1 toMailbox:(id)arg2 shouldDelete:(BOOL)arg3;
 + (id)succesfulMessagesFromMessages:(id)arg1 missedMessages:(id)arg2;
 + (BOOL)createEmptyStoreIfNeededForPath:(id)arg1 notIndexable:(BOOL)arg2;
 + (void)removeStoreFromCache:(id)arg1;
-+ (void)registerAvailableStore:(id)arg1 forMailbox:(id)arg2;
 + (id)currentlyAvailableStoresForAccount:(id)arg1;
 + (id)currentlyAvailableStoreForMailbox:(id)arg1;
-+ (id)_copyRawAvailableStoreForMailbox:(id)arg1 wantsCreate:(BOOL)arg2 shouldCreate:(char *)arg3;
-+ (id)_storeCreationMarker;
++ (id)_copyRawAvailableStoreForMailbox:(id)arg1 creationBlock:(CDUnknownBlockType)arg2;
 + (id)descriptionOfOpenStores;
 + (unsigned long long)numberOfCurrentlyOpenStores;
 + (void)initialize;
@@ -57,7 +54,10 @@
 - (void)setNumberOfAttachments:(unsigned int)arg1 isSigned:(BOOL)arg2 isEncrypted:(BOOL)arg3 forMessage:(id)arg4;
 - (id)attachmentsDirectoryForMessage:(id)arg1 partNumber:(id)arg2;
 - (id)attachmentsDirectoryForMessage:(id)arg1;
+- (void)muteConversationForMessages:(id)arg1;
+- (void)unmuteConversationForMessages:(id)arg1;
 - (BOOL)_updateFlagColor:(BOOL)arg1 forMessage:(id)arg2;
+- (BOOL)_updateConversationFlags:(unsigned long long)arg1 forMessage:(id)arg2;
 - (BOOL)_updateFlagForMessage:(id)arg1 key:(id)arg2 value:(BOOL)arg3;
 - (void)messagesWereAdded:(id)arg1 secondaryMessages:(id)arg2 duringOpen:(BOOL)arg3;
 - (void)_setFlagsAndColorForMessages:(id)arg1;
@@ -96,8 +96,8 @@
 - (void)setFlagWithKey:(id)arg1 state:(BOOL)arg2 forMessages:(id)arg3;
 - (void)async_setFlagWithKey:(id)arg1 state:(BOOL)arg2 forMessages:(id)arg3;
 - (id)async_setLocalFlagsForMessages:(id)arg1;
-- (id)setGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
-- (void)async_setGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
+- (id)setPrimitiveConversationFlags:(unsigned long long)arg1 forMessages:(id)arg2;
+- (id)setPersistenceConversationFlags:(unsigned long long)arg1 forMessages:(id)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)async_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (id)setPrimitiveFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
@@ -110,14 +110,13 @@
 - (id)bodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2 fetchIfNotAvailable:(BOOL)arg3 allowPartial:(BOOL)arg4;
 - (id)bodyDataForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
 - (id)headerDataForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
-- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(id)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7;
+- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(id)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7 skipSignatureVerification:(BOOL)arg8;
 - (unsigned long long)_numberOfMessagesToCache;
 - (id)messageForMessageID:(id)arg1;
 - (id)messagesForDocumentID:(id)arg1;
 - (id)recentMessageWithValue:(id)arg1 forHeader:(id)arg2;
-- (long long)appendMessages:(id)arg1 missedMessages:(id)arg2 newMessages:(id)arg3 newDocumentIDsByOld:(id)arg4 flagsToSet:(id)arg5 appendReason:(long long)arg6 userInitiated:(BOOL)arg7 error:(id *)arg8;
 - (long long)updateMessages:(id)arg1 withLibraryIDs:(id)arg2 newMessages:(id)arg3;
-- (long long)undoAppendOfLibraryIDs:(id)arg1;
+- (id)moveMessages:(id)arg1 destinationMailboxURL:(id)arg2 userInitiated:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL allowsDeleteInPlace;
 @property(readonly, nonatomic) BOOL allowsOverwrite;
 @property(readonly, nonatomic) BOOL allowsAppend;

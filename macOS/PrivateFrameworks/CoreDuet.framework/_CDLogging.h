@@ -16,6 +16,7 @@
 + (id)communicatorChannel;
 + (id)admissionCheckChannel;
 + (id)dataCollectionChannel;
++ (id)contentProviderChannel;
 + (id)contextChannel;
 + (id)autoSUChannel;
 + (id)instrumentationChannel;

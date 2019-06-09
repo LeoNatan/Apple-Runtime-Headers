@@ -18,11 +18,9 @@
     NSMapTable *_conversationsByIdentifier;
     id <_MSMessageComposeExtensionImplProtocol> _containingContext;
     MSConversation *_activeConversation;
-    id <_MSMessageComposeHostImplProtocol> _hostContext;
 }
 
 + (id)activeExtensionContext;
-@property(retain, nonatomic) id <_MSMessageComposeHostImplProtocol> hostContext; // @synthesize hostContext=_hostContext;
 @property(readonly, nonatomic) MSConversation *activeConversation; // @synthesize activeConversation=_activeConversation;
 @property(retain, nonatomic) id <_MSMessageComposeExtensionImplProtocol> containingContext; // @synthesize containingContext=_containingContext;
 - (void).cxx_destruct;
@@ -62,6 +60,7 @@
 - (id)updatedConversationForConversationState:(id)arg1;
 @property(nonatomic) unsigned long long presentationStyle;
 @property(nonatomic) unsigned long long presentationContext;
+@property(retain, nonatomic) id <_MSMessageComposeHostImplProtocol> hostContext;
 - (void)_releaseKeepAliveContext;
 - (void)_keepContextAlive;
 - (id)initWithAppContext:(id)arg1;

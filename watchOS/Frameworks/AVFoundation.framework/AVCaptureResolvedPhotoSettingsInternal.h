@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureResolvedPhotoSettingsInternal : NSObject
 {
     long long uniqueID;
@@ -23,7 +24,6 @@
     _Bool adjustedPhotoFiltersEnabled;
     _Bool EV0PhotoDeliveryEnabled;
     _Bool stillImageStabilizationEnabled;
-    _Bool dualCameraFusionEnabled;
     _Bool squareCropEnabled;
     NSArray *photoManifest;
 }

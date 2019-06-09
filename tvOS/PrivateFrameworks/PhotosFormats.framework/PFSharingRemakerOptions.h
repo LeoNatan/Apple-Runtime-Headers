@@ -8,23 +8,29 @@
 
 #import <PhotosFormats/NSCopying-Protocol.h>
 
-@class NSString, NSURL;
+@class CLLocation, NSDate, NSString, NSURL;
 
 @interface PFSharingRemakerOptions : NSObject <NSCopying>
 {
     _Bool _shouldStripLocation;
     _Bool _shouldStripAllMetadata;
     _Bool _shouldConvertToSRGB;
+    CLLocation *_customLocation;
+    NSDate *_customDate;
     NSString *_customAccessibilityLabel;
     NSURL *_outputDirectoryURL;
     NSString *_outputFilename;
     NSString *_exportPreset;
+    NSString *_exportFileType;
 }
 
+@property(copy, nonatomic) NSString *exportFileType; // @synthesize exportFileType=_exportFileType;
 @property(copy, nonatomic) NSString *exportPreset; // @synthesize exportPreset=_exportPreset;
 @property(copy, nonatomic) NSString *outputFilename; // @synthesize outputFilename=_outputFilename;
 @property(copy, nonatomic) NSURL *outputDirectoryURL; // @synthesize outputDirectoryURL=_outputDirectoryURL;
 @property(copy, nonatomic) NSString *customAccessibilityLabel; // @synthesize customAccessibilityLabel=_customAccessibilityLabel;
+@property(copy, nonatomic) NSDate *customDate; // @synthesize customDate=_customDate;
+@property(copy, nonatomic) CLLocation *customLocation; // @synthesize customLocation=_customLocation;
 @property(nonatomic) _Bool shouldConvertToSRGB; // @synthesize shouldConvertToSRGB=_shouldConvertToSRGB;
 @property(nonatomic) _Bool shouldStripAllMetadata; // @synthesize shouldStripAllMetadata=_shouldStripAllMetadata;
 @property(nonatomic) _Bool shouldStripLocation; // @synthesize shouldStripLocation=_shouldStripLocation;

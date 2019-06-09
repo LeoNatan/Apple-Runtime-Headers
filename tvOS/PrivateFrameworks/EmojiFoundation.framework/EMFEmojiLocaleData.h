@@ -24,6 +24,7 @@
 - (void)enumerateSearchResultsInText:(id)arg1 range:(struct _NSRange)arg2 options:(unsigned long long)arg3 searchType:(int)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (unsigned long long)cfCompareFlagsFromNSOptions:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *emojiTokens;
+- (id)description;
 - (void)dealloc;
 - (id)initWithLocaleIdentifier:(id)arg1;
 - (id)initWithCEMEmojiLocaleData:(struct __EmojiLocaleDataWrapper *)arg1;

@@ -17,14 +17,14 @@ __attribute__((visibility("hidden")))
     struct GEOPDTimeRange _timeRange;
     unsigned int _numAdditionalDepartures;
     struct {
-        unsigned int timeRange:1;
-        unsigned int numAdditionalDepartures:1;
-    } _has;
+        unsigned int has_timeRange:1;
+        unsigned int has_numAdditionalDepartures:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int numAdditionalDepartures; // @synthesize numAdditionalDepartures=_numAdditionalDepartures;
-@property(nonatomic) struct GEOPDTimeRange timeRange; // @synthesize timeRange=_timeRange;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,10 +33,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasNumAdditionalDepartures;
+@property(nonatomic) unsigned int numAdditionalDepartures;
 @property(nonatomic) _Bool hasTimeRange;
+@property(nonatomic) struct GEOPDTimeRange timeRange;
 - (id)initWithTraitsTransitModeFilter:(id)arg1;
 
 @end

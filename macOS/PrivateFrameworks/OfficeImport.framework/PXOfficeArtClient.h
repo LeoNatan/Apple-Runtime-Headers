@@ -8,6 +8,7 @@
 
 @class PXPresentationState;
 
+__attribute__((visibility("hidden")))
 @interface PXOfficeArtClient : OAXClient
 {
     PXPresentationState *mPresentationState;

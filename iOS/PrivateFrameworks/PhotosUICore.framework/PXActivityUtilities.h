@@ -18,6 +18,7 @@
 + (void)requestImageFromPeopleAlbumForPerson:(id)arg1 targetSize:(struct CGSize)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)requestContactMatchingEmail:(id)arg1 orPhone:(id)arg2 withFirstName:(id)arg3 lastName:(id)arg4 keysToFetch:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
 + (void)requestMeContactWithCompletion:(CDUnknownBlockType)arg1;
++ (id)sharedWorkQueue;
 
 @end
 

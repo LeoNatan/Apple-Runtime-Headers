@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)_getRotationContentSettings:(CDStruct_8bdd0ba6 *)arg1 forWindow:(id)arg2;
 - (void)_suspendAnimationStarted:(id)arg1;
 - (void)_applicationDidFinishLaunching:(id)arg1;
-- (void)_zoomOrientationAnimationFinished:(id)arg1 finished:(_Bool)arg2 context:(void *)arg3;
+- (void)_zoomOrientationAnimationFinished;
 - (void)_zoomOrientationChange:(id)arg1;
 - (void)loadView;
 - (void)_setupPositioningAndRotationForInterfaceOrientation:(long long)arg1 offscreen:(_Bool)arg2;

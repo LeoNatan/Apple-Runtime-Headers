@@ -10,6 +10,9 @@
 
 @protocol _DASActivitySchedulerIntrospecting <NSObject>
 - (void)pauseWithParameters:(NSDictionary *)arg1;
+- (void)enterTestModeWithParameters:(NSDictionary *)arg1;
+- (NSArray *)blockingPoliciesWithParameters:(NSDictionary *)arg1;
+- (NSArray *)policies;
 - (void)setBalance:(double)arg1 forBudgetWithName:(NSString *)arg2;
 - (double)remainingBalanceForBudgetWithName:(NSString *)arg1;
 - (NSDictionary *)currentPredictions;
@@ -17,6 +20,7 @@
 - (NSDictionary *)activityRunStatistics;
 - (NSArray *)scoresForActivityWithName:(NSString *)arg1;
 - (NSArray *)runningGroupActivities;
+- (NSArray *)delayedRunningActivities;
 - (NSArray *)runningActivities;
 - (NSArray *)submittedActivities;
 @end

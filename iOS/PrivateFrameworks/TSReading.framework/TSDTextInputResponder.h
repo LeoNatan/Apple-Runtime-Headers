@@ -127,7 +127,6 @@
 - (id)editingTextReps;
 - (void)forceDelayedResponderChange;
 - (void)cancelDelayedResponderChange;
-- (void)changeFirstResponderIfNecessary;
 - (void)resumeEditing;
 - (void)clearEditorAndResignFirstResponder;
 - (void)endIgnoringKeyboardInput;
@@ -143,6 +142,7 @@
 - (void)teardown;
 - (void)dealloc;
 - (id)initWithNextResponder:(id)arg1;
+@property(nonatomic) long long keyboardType;
 
 // Remaining properties
 @property(nonatomic) long long autocapitalizationType;
@@ -152,7 +152,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;
 @property(nonatomic) long long keyboardAppearance;
-@property(nonatomic) long long keyboardType;
 @property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
 @property(nonatomic) long long selectionAffinity;
 @property(nonatomic) long long smartDashesType;

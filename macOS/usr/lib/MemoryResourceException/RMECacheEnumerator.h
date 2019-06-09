@@ -21,7 +21,6 @@
 @property(retain, nonatomic) NSString *volume; // @synthesize volume=_volume;
 @property(copy, nonatomic) NSDirectoryEnumerator *internalEnumerator; // @synthesize internalEnumerator=_internalEnumerator;
 - (void).cxx_destruct;
-- (id)newestToOldestLogPathsIncludeLastHour:(BOOL)arg1 includeOnlyFromPrefs:(id)arg2;
 - (id)nextValidURL;
 - (id)initCacheEnumerator;
 - (id)initCacheEnumeratorWithVolume:(id)arg1;

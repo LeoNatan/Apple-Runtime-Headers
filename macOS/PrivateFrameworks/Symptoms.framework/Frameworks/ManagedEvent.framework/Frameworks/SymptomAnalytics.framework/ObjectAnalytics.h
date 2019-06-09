@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)_fetch:(id)arg1 sortDesc:(id)arg2 limit:(unsigned long long)arg3;
 - (id)_fetch:(id)arg1 sortDesc:(id)arg2;
 - (unsigned long long)updateEntitiesMatching:(id)arg1 properties:(id)arg2;
 - (long long)removeEntitiesMatching:(id)arg1;
@@ -32,9 +33,11 @@
 - (id)lastHappened;
 - (id)firstHappened;
 - (id)_firstLastHappened:(BOOL)arg1;
+- (id)fetchEntityDictionariesWithProperties:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 limit:(unsigned long long)arg4;
 - (id)fetchEntityDictionariesWithProperties:(id)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3;
 - (id)fetchEntityDictionariesWithProperties:(id)arg1 predicate:(id)arg2;
 - (id)fetchAllEntityDictionariesWithProperties:(id)arg1;
+- (id)fetchEntitiesFreeForm:(id)arg1 sortDesc:(id)arg2 limit:(unsigned long long)arg3;
 - (id)fetchEntitiesFreeForm:(id)arg1 sortDesc:(id)arg2;
 - (id)initWithWorkspace:(id)arg1 entityName:(id)arg2 withCache:(BOOL)arg3;
 

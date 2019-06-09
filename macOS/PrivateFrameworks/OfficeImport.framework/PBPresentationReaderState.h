@@ -9,6 +9,7 @@
 @class ESDContainer, ESDObject, ESDRoot, NSMutableArray, NSMutableDictionary, OITSUNoCopyDictionary, PBOfficeArtReaderState, PBOutlineBulletDictionary, PBSlideState, PDPresentation, PDSlideBase;
 @protocol TCCancelDelegate;
 
+__attribute__((visibility("hidden")))
 @interface PBPresentationReaderState : NSObject
 {
     struct PptBinaryReader *mPptBinaryReader;

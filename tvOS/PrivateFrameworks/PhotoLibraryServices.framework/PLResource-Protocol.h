@@ -6,11 +6,15 @@
 
 #import <PhotoLibraryServices/PLResourceIdentity-Protocol.h>
 
-@protocol PLAssetID, PLCodecIdentity, PLColorSpaceIdentity, PLResourceDataStore, PLResourceDataStoreKey;
+@class NSDate;
+@protocol PLAssetID, PLCodecIdentity, PLResourceDataStore, PLResourceDataStoreKey;
 
 @protocol PLResource <PLResourceIdentity>
+@property(readonly, nonatomic) NSDate *trashedDate;
+@property(readonly, nonatomic) short trashedState;
+@property(readonly, nonatomic) long long estimatedDataLength;
+@property(readonly, nonatomic) long long dataLength;
 @property(readonly, nonatomic) id <PLCodecIdentity> codecID;
-@property(readonly, nonatomic) id <PLColorSpaceIdentity> colorSpaceID;
 @property(readonly, nonatomic) int qualitySortValue;
 @property(readonly, nonatomic) short remoteAvailabilityTarget;
 @property(readonly, nonatomic) short remoteAvailability;
@@ -22,10 +26,14 @@
 @property(readonly, nonatomic) id <PLResourceDataStore> dataStore;
 @property(readonly, nonatomic) unsigned long long cplType;
 @property(readonly, copy, nonatomic) id <PLAssetID> assetID;
+@property(readonly, nonatomic) float scale;
 @property(readonly, nonatomic) long long orientedHeight;
 @property(readonly, nonatomic) long long orientedWidth;
+@property(readonly, nonatomic) long long unorientedHeight;
+@property(readonly, nonatomic) long long unorientedWidth;
+@property(readonly, nonatomic) unsigned int orientation;
+- (_Bool)isPlayableVideo;
 - (_Bool)isDerivative;
 - (_Bool)isDefaultOrientation;
-- (_Bool)isPrimaryUTI;
 @end
 

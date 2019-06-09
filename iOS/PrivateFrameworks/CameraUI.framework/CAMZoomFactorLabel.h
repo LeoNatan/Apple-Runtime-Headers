@@ -22,6 +22,7 @@
 - (void)layoutSubviews;
 - (struct UIEdgeInsets)_labelInsets;
 - (struct CGSize)intrinsicContentSize;
+- (id)description;
 - (void)_updateFont;
 - (id)initWithFrame:(struct CGRect)arg1;
 

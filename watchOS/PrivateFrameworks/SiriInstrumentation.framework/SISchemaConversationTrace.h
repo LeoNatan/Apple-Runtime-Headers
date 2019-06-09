@@ -6,27 +6,31 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaConversationTrace-Protocol.h>
 
-@class NSData;
+@class NSData, NSString;
 
-@interface SISchemaConversationTrace : PBCodable <NSCopying>
+@interface SISchemaConversationTrace : PBCodable <SISchemaConversationTrace, NSSecureCoding>
 {
     NSData *_previousTurnID;
 }
 
-@property(retain, nonatomic) NSData *previousTurnID; // @synthesize previousTurnID=_previousTurnID;
+@property(copy, nonatomic) NSData *previousTurnID; // @synthesize previousTurnID=_previousTurnID;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasPreviousTurnID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

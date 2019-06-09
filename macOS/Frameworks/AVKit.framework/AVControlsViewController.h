@@ -25,6 +25,8 @@
 @property(readonly) CDStruct_83cd8af5 controlsContentViewMargin;
 @property(readonly) struct CGSize intrinsicControlsContentViewSize;
 @property(readonly) long long layoutStyle;
+@property(readonly) long long preferredEffectMaterial;
+@property(readonly) long long preferredBlendingMode;
 @property(readonly) NSImage *backgroundBackdropViewMaskImage;
 @property(readonly) NSString *controlsStyleIdentifier;
 @property(readonly) double layoutWidth;

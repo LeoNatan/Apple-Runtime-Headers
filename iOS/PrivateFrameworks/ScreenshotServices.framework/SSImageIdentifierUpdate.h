@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <ScreenshotServices/BSXPCCoding-Protocol.h>
+#import <ScreenshotServices/SSLoggable-Protocol.h>
 
 @class BSSettings, NSString;
 
-@interface SSImageIdentifierUpdate : NSObject <BSXPCCoding>
+@interface SSImageIdentifierUpdate : NSObject <BSXPCCoding, SSLoggable>
 {
     NSString *_imageIdentifier;
     NSString *_environmentDescriptionIdentifier;
@@ -19,7 +20,7 @@
 @property(copy, nonatomic) NSString *environmentDescriptionIdentifier; // @synthesize environmentDescriptionIdentifier=_environmentDescriptionIdentifier;
 @property(copy, nonatomic) NSString *imageIdentifier; // @synthesize imageIdentifier=_imageIdentifier;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *briefDescription;
+@property(readonly, nonatomic) NSString *loggableDescription;
 @property(readonly, nonatomic) BSSettings *bsSettings;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;

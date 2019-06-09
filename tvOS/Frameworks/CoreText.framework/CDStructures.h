@@ -56,7 +56,7 @@ struct os_unfair_lock_s {
 };
 
 struct type {
-    unsigned char __lx[224];
+    unsigned char __lx[16];
 };
 
 #pragma mark Typedef'd Structures

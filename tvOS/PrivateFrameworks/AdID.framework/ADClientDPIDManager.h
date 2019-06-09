@@ -15,6 +15,7 @@
     _Bool _isTest;
     _Bool _updateInProgress;
     _Bool _sandboxEnvironment;
+    _Bool _supportsDeviceToDeviceEncryption;
     unsigned long long _dpidReconcileState;
     NSDate *_dpidReconcileStartDate;
     CKRecordZoneID *_zoneID;
@@ -27,6 +28,7 @@
 
 + (id)DPIDOperationTypeToString:(unsigned long long)arg1;
 + (id)sharedInstance;
+@property(nonatomic) _Bool supportsDeviceToDeviceEncryption; // @synthesize supportsDeviceToDeviceEncryption=_supportsDeviceToDeviceEncryption;
 @property(nonatomic) _Bool sandboxEnvironment; // @synthesize sandboxEnvironment=_sandboxEnvironment;
 @property(retain, nonatomic) NSMutableArray *operationsInProgress; // @synthesize operationsInProgress=_operationsInProgress;
 @property(nonatomic) _Bool updateInProgress; // @synthesize updateInProgress=_updateInProgress;
@@ -41,23 +43,30 @@
 - (void).cxx_destruct;
 - (void)syncDPIDWithiCloud:(CDUnknownBlockType)arg1;
 - (void)saveDPIDtoiCloud:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)handleCloudKitError:(id)arg1;
 - (void)removeDPIDfromiCloud:(CDUnknownBlockType)arg1;
 - (void)fetchDPIDfromiCloud:(CDUnknownBlockType)arg1;
 - (void)teardowniCloudSubscription:(CDUnknownBlockType)arg1;
 - (void)setupiCloudSubscription:(CDUnknownBlockType)arg1;
+- (void)resetEncryptedZone:(CDUnknownBlockType)arg1;
 - (void)retryIfNeeded:(CDUnknownBlockType)arg1;
 - (_Bool)canGenerateDPID;
 - (_Bool)shouldSyncDPID;
 - (id)generateDPID;
 - (void)setupLocalDPID;
+- (id)containerWithIDString:(id)arg1;
 - (void)finishOperation:(unsigned long long)arg1;
 - (void)startOperation:(unsigned long long)arg1;
 - (id)operationQueueLog;
 - (void)setiCloudAccountSubscribed:(_Bool)arg1;
 - (_Bool)iCloudAccountSubscribed;
+- (id)subscriptionIdentifier;
 - (void)writeDPIDtoKeychain;
 - (_Bool)limitAdTrackingEnabled;
 - (_Bool)isRestrictedByApple;
+- (unsigned long long)primaryiCloudAccountSecurityLevel;
+- (id)primaryiCloudAccountAltDSID;
+- (_Bool)isAccountManateeEnabled;
 - (_Bool)isLoggedIntoiTunes;
 - (void)resetDPID:(CDUnknownBlockType)arg1;
 - (void)handlePushNotification:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

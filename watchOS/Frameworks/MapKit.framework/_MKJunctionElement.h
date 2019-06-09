@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     float _angle;
 }
 
-@property float angle; // @synthesize angle=_angle;
-@property struct CGPoint rightBasePoint; // @synthesize rightBasePoint=_rightBasePoint;
-@property struct CGPoint leftBasePoint; // @synthesize leftBasePoint=_leftBasePoint;
+@property(nonatomic) float angle; // @synthesize angle=_angle;
+@property(nonatomic) struct CGPoint rightBasePoint; // @synthesize rightBasePoint=_rightBasePoint;
+@property(nonatomic) struct CGPoint leftBasePoint; // @synthesize leftBasePoint=_leftBasePoint;
 - (struct CGPoint)rightEdgePointAtDistanceFromBase:(float)arg1;
 - (struct CGPoint)leftEdgePointAtDistanceFromBase:(float)arg1;
 

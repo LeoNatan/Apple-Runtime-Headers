@@ -23,6 +23,7 @@
 + (CDUnknownBlockType)executeUpdatedContacts:(id)arg1 inAddressBook:(id)arg2;
 + (CDUnknownBlockType)executeAddedPerson:(id)arg1 inAddressBook:(id)arg2 accountIdentifier:(id)arg3;
 + (id)executeAddedPeople:(id)arg1 inAddressBook:(id)arg2;
+- (void).cxx_destruct;
 - (id)fetchDistributionListIdentifierWithProperty:(id)arg1 contactIdentifier:(id)arg2 groupIdentifier:(id)arg3;
 - (id)fetchGroupsWithCoreDataRequest:(id)arg1 error:(id *)arg2;
 - (id)fetchGroupsMatchingPredicate:(id)arg1 error:(id *)arg2;
@@ -52,7 +53,6 @@
 - (id)fetchContactsWithIdentifiers:(id)arg1 unify:(BOOL)arg2 error:(id *)arg3;
 - (id)fetchContactsWithIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)fetchContactsMatchingPredicate:(id)arg1 error:(id *)arg2;
-- (void)dealloc;
 - (id)initWithAddressBook:(id)arg1;
 - (id)init;
 

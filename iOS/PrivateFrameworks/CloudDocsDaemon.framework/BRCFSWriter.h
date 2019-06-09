@@ -21,6 +21,7 @@
 }
 
 + (_Bool)_isPathMatchIdle:(const CDStruct_177058d5 *)arg1;
++ (_Bool)_shouldForceApplyForItem:(id)arg1;
 @property(readonly, nonatomic) BRCAccountSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) brc_task_tracker *taskTracker; // @synthesize taskTracker=_taskTracker;
 @property(readonly, nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
@@ -34,7 +35,8 @@
 - (void)fixupItemsAtStartup;
 - (void)writeUnderCoordinationFromURL:(id)arg1 toURL:(id)arg2 canDelete:(_Bool)arg3;
 - (void)_writeUnderCoordinationFromURL:(id)arg1 toURL:(id)arg2 canDelete:(_Bool)arg3;
-- (void)applyChangesForServerItem:(id)arg1 localItem:(id)arg2 rank:(long long)arg3 zone:(id)arg4 activity:(id)arg5 hasFinished:(_Bool *)arg6;
+- (void)applyChangesForServerItem:(id)arg1 localItem:(id)arg2 rank:(long long)arg3 zone:(id)arg4 activity:(id)arg5 forceCreate:(_Bool)arg6 hasFinished:(_Bool *)arg7;
+- (_Bool)_handleApplyingDeletedUnlistedDirectoryIfNecessary:(id)arg1 localItem:(id)arg2 parent:(id)arg3;
 - (void)_applyChangesForServerAlias:(id)arg1 localAlias:(id)arg2 jobID:(long long)arg3 zone:(id)arg4 diffs:(unsigned long long)arg5;
 - (void)_stageCreationOfSymlink:(id)arg1;
 - (void)_stageCreationOfDirectory:(id)arg1;

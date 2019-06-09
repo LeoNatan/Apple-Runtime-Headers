@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)deviceIsIPad;
 + (_Bool)deviceSupportsFaceID;
 + (_Bool)deviceSupportsTouchID;
 + (_Bool)shouldOnlyDrawWithPencil;

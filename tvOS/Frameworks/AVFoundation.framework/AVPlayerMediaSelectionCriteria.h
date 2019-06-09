@@ -18,13 +18,14 @@
 - (_Bool)preferMultichannelAudio;
 - (id)precludedMediaSubTypes;
 - (id)preferredMediaSubTypes;
+@property(readonly, nonatomic) NSArray *principalMediaCharacteristics;
 @property(readonly, nonatomic) NSArray *preferredMediaCharacteristics;
 @property(readonly, nonatomic) NSArray *preferredLanguages;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 fallbackPreferredLanguages:(id)arg3 fallbackPreferredMediaCharacteristics:(id)arg4 captionDisplayType:(long long)arg5;
 - (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4 preferMultichannelAudio:(_Bool)arg5 precludeMultichannelAudio:(_Bool)arg6;
 - (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4;
+- (id)initWithPrincipalMediaCharacteristics:(id)arg1 preferredLanguages:(id)arg2 preferredMediaCharacteristics:(id)arg3;
 - (id)initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2;
 - (id)init;
 - (id)initWithFigDictionary:(id)arg1;

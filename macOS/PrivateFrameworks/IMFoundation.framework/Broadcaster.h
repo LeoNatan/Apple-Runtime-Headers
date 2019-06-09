@@ -6,9 +6,11 @@
 
 #import <Foundation/NSProxy.h>
 
-@class IMMessageContext, IMRemoteObjectBroadcaster, NSArray, Protocol;
+#import <IMFoundation/IDSSendXPCProtocol-Protocol.h>
 
-@interface Broadcaster : NSProxy
+@class IMMessageContext, IMRemoteObjectBroadcaster, NSArray, NSString, Protocol;
+
+@interface Broadcaster : NSProxy <IDSSendXPCProtocol>
 {
     NSArray *_targets;
     IMRemoteObjectBroadcaster *_parent;
@@ -26,6 +28,12 @@
 - (id)initWithNotifier:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3 targets:(id)arg4 priority:(int)arg5 completion:(CDUnknownBlockType)arg6;
 - (id)initWithNotifier:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3 targets:(id)arg4 priority:(int)arg5;
 - (id)initWithNotifier:(id)arg1 messageContext:(id)arg2 protocol:(id)arg3 targets:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

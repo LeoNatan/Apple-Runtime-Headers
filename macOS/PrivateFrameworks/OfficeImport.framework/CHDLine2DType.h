@@ -6,6 +6,7 @@
 
 #import <OfficeImport/CHDLineType.h>
 
+__attribute__((visibility("hidden")))
 @interface CHDLine2DType : CHDLineType
 {
     _Bool mShowMarker;

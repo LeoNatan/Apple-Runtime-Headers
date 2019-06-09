@@ -182,7 +182,7 @@
 - (void)createBatch:(id)arg1;
 @property(readonly) BOOL shouldConfirmCancel;
 @property(readonly) NSString *progressDescription;
-@property(readonly) double progress;
+@property(readonly) double progressPercentage;
 - (unsigned long long)childCount;
 - (void)removeChildren;
 - (void)removeChild:(id)arg1;

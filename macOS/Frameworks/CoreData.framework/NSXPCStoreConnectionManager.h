@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSXPCStore;
+@class NSArray, NSMutableArray;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 __attribute__((visibility("hidden")))
 @interface NSXPCStoreConnectionManager : NSObject
 {
-    NSXPCStore *_store;
     NSMutableArray *_availableConnections;
     NSMutableArray *_allConnections;
     unsigned long long _maxConnections;

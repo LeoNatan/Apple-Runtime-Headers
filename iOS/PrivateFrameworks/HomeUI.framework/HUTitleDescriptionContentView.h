@@ -6,15 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, UIFont, UILabel, UIStackView;
+@class NSArray, UIColor, UIFont, UILabel, UIStackView;
 @protocol HFStringGenerator;
 
 @interface HUTitleDescriptionContentView : UIView
 {
     _Bool _disabled;
-    id <HFStringGenerator> _titleText;
-    id <HFStringGenerator> _descriptionText;
     UILabel *_titleLabel;
+    id <HFStringGenerator> _titleText;
+    UIColor *_titleTextColor;
+    id <HFStringGenerator> _descriptionText;
+    UIColor *_descriptionTextColor;
     UILabel *_descriptionLabel;
     UIStackView *_stackView;
     NSArray *_verticalLabelConstraints;
@@ -25,10 +27,12 @@
 @property(retain, nonatomic) NSArray *verticalLabelConstraints; // @synthesize verticalLabelConstraints=_verticalLabelConstraints;
 @property(readonly, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(readonly, nonatomic) UILabel *descriptionLabel; // @synthesize descriptionLabel=_descriptionLabel;
-@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic, getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
+@property(retain, nonatomic) UIColor *descriptionTextColor; // @synthesize descriptionTextColor=_descriptionTextColor;
 @property(retain, nonatomic) id <HFStringGenerator> descriptionText; // @synthesize descriptionText=_descriptionText;
+@property(retain, nonatomic) UIColor *titleTextColor; // @synthesize titleTextColor=_titleTextColor;
 @property(retain, nonatomic) id <HFStringGenerator> titleText; // @synthesize titleText=_titleText;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (void)_updateLabel:(id)arg1 withContent:(id)arg2;
 - (void)_setupDescriptionLabel;

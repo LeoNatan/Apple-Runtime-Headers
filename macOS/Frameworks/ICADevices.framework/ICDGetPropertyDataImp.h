@@ -6,6 +6,7 @@
 
 #import <ICADevices/ICDBaseCommandImp.h>
 
+__attribute__((visibility("hidden")))
 @interface ICDGetPropertyDataImp : ICDBaseCommandImp
 {
     struct ICD_GetPropertyDataPB _getPropertyDataPB;

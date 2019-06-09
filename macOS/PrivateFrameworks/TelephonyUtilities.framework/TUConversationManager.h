@@ -21,6 +21,7 @@
 
 + (BOOL)supportsEffects;
 + (BOOL)allowsVideo;
++ (BOOL)isAddPersonEnabled;
 + (BOOL)supportsConversations;
 @property(readonly, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(readonly, nonatomic) id <TUConversationManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;

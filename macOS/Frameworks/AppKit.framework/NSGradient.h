@@ -17,9 +17,6 @@
     NSColorSpace *_colorSpace;
     void *_functionRef;
     void *_componentArray;
-    void *_reserved1;
-    void *_reserved2;
-    void *_reserved3;
 }
 
 + (BOOL)supportsSecureCoding;

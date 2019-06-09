@@ -16,7 +16,7 @@
 #import <TVPlayback/TVPRelatedContentViewControllerDelegate-Protocol.h>
 #import <TVPlayback/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class AVPlayerViewController, AVTransportBarViewController, NSDate, NSDictionary, NSMutableDictionary, NSObject, NSString, NSTimer, TVPInteractionGestureRecognizer, TVPMainVideoViewController, TVPPlaybackInterruption, TVPPlayer, TVPRelatedContentLoader, TVPRelatedContentViewController, TVPVideoView, TVSStateMachine, UIActivityIndicatorView, UIAlertController, UIButton, UIDigitizerTapGestureRecognizer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@class AVPlayerViewController, AVTransportBarViewController, NSDate, NSDictionary, NSMutableDictionary, NSObject, NSString, NSTimer, TVPInteractionGestureRecognizer, TVPMainVideoViewController, TVPPlaybackInterruption, TVPPlayer, TVPRelatedContentLoader, TVPRelatedContentViewController, TVPStateMachine, TVPVideoView, UIActivityIndicatorView, UIAlertController, UIButton, UIDigitizerTapGestureRecognizer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 @protocol TVPAVFPlayback, TVPVideoPlayerViewControllerDelegate;
 
 @interface TVPVideoPlayerViewController : UIViewController <TVPMainVideoViewControllerDelegate, TVPRelatedContentLoaderDelegate, TVPRelatedContentViewControllerDelegate, TVPPlaybackInterruptable, TVPMediaCacheManagerResponder, UIViewControllerTransitioningDelegate, AVPlayerViewControllerDelegate, AVPlayerViewControllerPlaybackDelegate, AVScanningDelegate>
@@ -27,6 +27,9 @@
     _Bool _allowDefaultMenuButtonBehavior;
     _Bool _allowsVideoPlaybackWithoutVisuals;
     _Bool _presentsNowPlayingVideoWithoutAnimations;
+    _Bool _showsInfoMetadataSubpanel;
+    _Bool _startPlaybackWhenViewAppears;
+    _Bool _requiresLinearPlayback;
     _Bool _invalidatePlayerWhenDone;
     _Bool _dismissed;
     _Bool _loadingInitialItem;
@@ -46,11 +49,12 @@
     _Bool _initialMediaItemLoadedObserverAdded;
     _Bool _bumperTextBeingSpoken;
     _Bool _appDeactivated;
+    _Bool _interactiveRestrictionsValidationCompleted;
     NSObject<TVPAVFPlayback> *_player;
     id <TVPVideoPlayerViewControllerDelegate> _delegate;
     long long _resumeMenuOption;
     double _startTime;
-    TVSStateMachine *_stateMachine;
+    TVPStateMachine *_stateMachine;
     UIButton *_resumePlayingButton;
     UIButton *_startFromBeginningButton;
     AVPlayerViewController *_avPlayerViewController;
@@ -66,6 +70,7 @@
     UILabel *_timeUntilReadyToPlayLabel;
     NSDate *_dateOfLastTimeUntilReadyToPlayUpdate;
     NSDate *_dateOfUsersLastInteractionDuringLoading;
+    UITapGestureRecognizer *_menuButtonRecognizer;
     UITapGestureRecognizer *_selectButtonRecognizer;
     TVPInteractionGestureRecognizer *_playPauseButtonRecognizer;
     NSTimer *_spinnerDelayTimer;
@@ -84,10 +89,13 @@
     UIImageView *_bumperLogoImageView;
     NSTimer *_bumperTextTimer;
     UIView *_videoBlockingView;
+    unsigned long long _restrictionsValidationResult;
 }
 
 + (struct CGSize)bumperLogoSize;
 + (void)initialize;
+@property(nonatomic) unsigned long long restrictionsValidationResult; // @synthesize restrictionsValidationResult=_restrictionsValidationResult;
+@property(nonatomic) _Bool interactiveRestrictionsValidationCompleted; // @synthesize interactiveRestrictionsValidationCompleted=_interactiveRestrictionsValidationCompleted;
 @property(nonatomic) _Bool appDeactivated; // @synthesize appDeactivated=_appDeactivated;
 @property(retain, nonatomic) UIView *videoBlockingView; // @synthesize videoBlockingView=_videoBlockingView;
 @property(nonatomic) _Bool bumperTextBeingSpoken; // @synthesize bumperTextBeingSpoken=_bumperTextBeingSpoken;
@@ -121,6 +129,7 @@
 @property(nonatomic) _Bool shouldPlayAfterAppBecomesActive; // @synthesize shouldPlayAfterAppBecomesActive=_shouldPlayAfterAppBecomesActive;
 @property(retain, nonatomic) TVPInteractionGestureRecognizer *playPauseButtonRecognizer; // @synthesize playPauseButtonRecognizer=_playPauseButtonRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *selectButtonRecognizer; // @synthesize selectButtonRecognizer=_selectButtonRecognizer;
+@property(retain, nonatomic) UITapGestureRecognizer *menuButtonRecognizer; // @synthesize menuButtonRecognizer=_menuButtonRecognizer;
 @property(retain, nonatomic) NSDate *dateOfUsersLastInteractionDuringLoading; // @synthesize dateOfUsersLastInteractionDuringLoading=_dateOfUsersLastInteractionDuringLoading;
 @property(retain, nonatomic) NSDate *dateOfLastTimeUntilReadyToPlayUpdate; // @synthesize dateOfLastTimeUntilReadyToPlayUpdate=_dateOfLastTimeUntilReadyToPlayUpdate;
 @property(retain, nonatomic) UILabel *timeUntilReadyToPlayLabel; // @synthesize timeUntilReadyToPlayLabel=_timeUntilReadyToPlayLabel;
@@ -140,7 +149,10 @@
 @property(nonatomic) _Bool invalidatePlayerWhenDone; // @synthesize invalidatePlayerWhenDone=_invalidatePlayerWhenDone;
 @property(retain, nonatomic) UIButton *startFromBeginningButton; // @synthesize startFromBeginningButton=_startFromBeginningButton;
 @property(retain, nonatomic) UIButton *resumePlayingButton; // @synthesize resumePlayingButton=_resumePlayingButton;
-@property(retain, nonatomic) TVSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(nonatomic) _Bool requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
+@property(nonatomic) _Bool startPlaybackWhenViewAppears; // @synthesize startPlaybackWhenViewAppears=_startPlaybackWhenViewAppears;
+@property(nonatomic) _Bool showsInfoMetadataSubpanel; // @synthesize showsInfoMetadataSubpanel=_showsInfoMetadataSubpanel;
 @property(nonatomic) _Bool presentsNowPlayingVideoWithoutAnimations; // @synthesize presentsNowPlayingVideoWithoutAnimations=_presentsNowPlayingVideoWithoutAnimations;
 @property(nonatomic) _Bool allowsVideoPlaybackWithoutVisuals; // @synthesize allowsVideoPlaybackWithoutVisuals=_allowsVideoPlaybackWithoutVisuals;
 @property(nonatomic) _Bool allowDefaultMenuButtonBehavior; // @synthesize allowDefaultMenuButtonBehavior=_allowDefaultMenuButtonBehavior;
@@ -153,6 +165,7 @@
 @property(readonly, nonatomic) NSObject<TVPAVFPlayback> *player; // @synthesize player=_player;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
+- (void)_updateAVPlayerViewControllerWithActiveAVPlayer;
 - (_Bool)_isRunningInViewService;
 - (void)_bumperTextDidFinishSpeaking:(id)arg1;
 - (void)_bumperTextTimerFired:(id)arg1;
@@ -196,6 +209,7 @@
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
 - (void)_handlePrepPlayerMediaItemPreparedNotification:(id)arg1;
 - (void)_handleMainPlayerMediaItemPreparedNotification:(id)arg1;
+- (void)_updateRequiresLinearPlayback;
 - (void)_updateAVPlayerViewControllerSkippingBehavior;
 - (void)_currentMediaItemDidChange:(id)arg1;
 - (void)_handlePlaybackStateChangeNotification:(id)arg1;

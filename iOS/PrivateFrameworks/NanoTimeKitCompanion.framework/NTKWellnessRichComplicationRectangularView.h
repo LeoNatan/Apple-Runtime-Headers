@@ -6,23 +6,37 @@
 
 #import <NanoTimeKitCompanion/NTKRichComplicationRectangularBaseView.h>
 
-@class NTKColoringLabel, NTKWellnessRichComplicationChartView;
+@class NSArray, NTKColoringLabel, NTKWellnessRichComplicationChartView, UIImageView;
 
 @interface NTKWellnessRichComplicationRectangularView : NTKRichComplicationRectangularBaseView
 {
     NTKColoringLabel *_titleLabel;
     NTKColoringLabel *_moveLabel;
+    UIImageView *_moveGlyphView;
     NTKColoringLabel *_exerciseLabel;
+    UIImageView *_exerciseGlyphView;
     NTKColoringLabel *_standLabel;
+    UIImageView *_standGlyphView;
     NTKWellnessRichComplicationChartView *_chartView;
+    NSArray *_flatViews;
+    NSArray *_accentViews;
 }
 
+@property(retain, nonatomic) NSArray *accentViews; // @synthesize accentViews=_accentViews;
+@property(retain, nonatomic) NSArray *flatViews; // @synthesize flatViews=_flatViews;
 @property(retain, nonatomic) NTKWellnessRichComplicationChartView *chartView; // @synthesize chartView=_chartView;
+@property(retain, nonatomic) UIImageView *standGlyphView; // @synthesize standGlyphView=_standGlyphView;
 @property(retain, nonatomic) NTKColoringLabel *standLabel; // @synthesize standLabel=_standLabel;
+@property(retain, nonatomic) UIImageView *exerciseGlyphView; // @synthesize exerciseGlyphView=_exerciseGlyphView;
 @property(retain, nonatomic) NTKColoringLabel *exerciseLabel; // @synthesize exerciseLabel=_exerciseLabel;
+@property(retain, nonatomic) UIImageView *moveGlyphView; // @synthesize moveGlyphView=_moveGlyphView;
 @property(retain, nonatomic) NTKColoringLabel *moveLabel; // @synthesize moveLabel=_moveLabel;
 @property(retain, nonatomic) NTKColoringLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
+- (void)_setAccentViewsVisibilityWithActivitySetupCompleted:(_Bool)arg1;
+- (void)_updateViews:(id)arg1 withFilter:(id)arg2;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)_setupViews;
 - (id)init;

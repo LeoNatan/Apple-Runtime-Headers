@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString, WDDocument;
 
+__attribute__((visibility("hidden")))
 @interface WDListDefinition : NSObject <NSCopying>
 {
     WDDocument *mDocument;

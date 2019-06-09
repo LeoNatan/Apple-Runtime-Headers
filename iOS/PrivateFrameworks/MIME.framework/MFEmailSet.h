@@ -29,6 +29,7 @@
 - (_Bool)intersectsSet:(id)arg1;
 - (id)member:(id)arg1;
 - (unsigned long long)count;
+- (id)serializedRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;

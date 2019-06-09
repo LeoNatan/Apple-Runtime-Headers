@@ -6,31 +6,34 @@
 
 #import <PreferencePanes/NSPreferencePane.h>
 
-#import <PreferencePanes/NSRemoteViewDelegate-Protocol.h>
 #import <PreferencePanes/PreferencePaneHostProtocol-Protocol.h>
 
-@class NSRemoteView, NSString, NSXPCConnection;
+@class NSObject, NSPrefPaneBundle, NSString, NSXPCConnection;
+@protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface NSProxyPreferencePane : NSPreferencePane <PreferencePaneHostProtocol, NSRemoteViewDelegate>
+@interface NSProxyPreferencePane : NSPreferencePane <PreferencePaneHostProtocol>
 {
-    NSString *_remoteViewClass;
-    NSString *_path;
-    NSString *_bundleIdentifier;
-    NSXPCConnection *_connection;
-    NSRemoteView *_remoteView;
+    NSString *path;
+    NSString *bundleIdentifier;
+    NSPrefPaneBundle *ppBundle;
+    NSXPCConnection *connection;
+    NSObject<OS_dispatch_queue> *_commConnectionQueue;
+    NSObject<OS_dispatch_semaphore> *_commConnectionQueueSema;
 }
 
-@property(retain) NSRemoteView *remoteView; // @synthesize remoteView=_remoteView;
-@property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-@property(retain) NSString *path; // @synthesize path=_path;
-@property(retain) NSString *remoteViewClass; // @synthesize remoteViewClass=_remoteViewClass;
++ (BOOL)isDebug;
+@property(retain) NSObject<OS_dispatch_semaphore> *commConnectionQueueSema; // @synthesize commConnectionQueueSema=_commConnectionQueueSema;
+@property(retain) NSObject<OS_dispatch_queue> *commConnectionQueue; // @synthesize commConnectionQueue=_commConnectionQueue;
+@property(retain) NSXPCConnection *connection; // @synthesize connection;
+@property(retain) NSPrefPaneBundle *ppBundle; // @synthesize ppBundle;
+@property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier;
+@property(retain) NSString *path; // @synthesize path;
 - (void).cxx_destruct;
 - (void)toggleTouchBarControlStripCustomizationPalette;
 - (void)switchToPanel:(id)arg1 anchor:(id)arg2;
 - (void)switchToPanel:(id)arg1;
 - (void)setSuddenTerminationEnabled:(BOOL)arg1;
 - (void)handleOpenParameter:(const struct AEDesc *)arg1;
-@property(retain) NSXPCConnection *connection; // @dynamic connection;
 - (void)authorize;
 - (void)openDocumentAtPath:(id)arg1;
 - (void)revealElementForKey:(id)arg1;
@@ -50,14 +53,13 @@
 - (void)didSelect;
 - (void)willSelect;
 - (void)willSelectWithReply:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
+@property(readonly) BOOL hasConnection; // @dynamic hasConnection;
 - (void)assignMainView;
 - (id)mainNibName;
+- (void)reloadMainView;
 - (id)loadMainView;
-- (void)loadMainViewWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)assignConnection:(id)arg1;
 - (id)initWithPrefPaneBundle:(id)arg1;
-
-// Remaining properties
-@property(readonly) BOOL shouldRetainExportedObject;
 
 @end
 

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)adjustAxesPositionForHorizontalChart;
+- (id)axisAtPosition:(int)arg1;
 - (id)axesAtPosition:(int)arg1;
 
 @end

@@ -18,9 +18,9 @@
 @property(readonly, nonatomic) id <ABCardViewDataSourceProvider> dataSourceProvider; // @synthesize dataSourceProvider=_dataSourceProvider;
 @property(readonly, nonatomic) unsigned long long updatedStyle; // @synthesize updatedStyle=_updatedStyle;
 @property(readonly, nonatomic) unsigned long long oldStyle; // @synthesize oldStyle=_oldStyle;
+- (void).cxx_destruct;
 - (void)executeUndo;
 - (void)execute;
-- (void)dealloc;
 - (id)initWithDataSourceProvider:(id)arg1 oldStyle:(unsigned long long)arg2 updatedStyle:(unsigned long long)arg3;
 
 @end

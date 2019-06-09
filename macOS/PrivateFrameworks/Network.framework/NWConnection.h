@@ -46,6 +46,7 @@
 - (void)forceCancel;
 - (void)cancel;
 - (int)getConnectedSocket;
+- (id)description;
 - (id)initWithInternalConnection:(id)arg1;
 - (id)initWithConnectedSocket:(int)arg1;
 - (id)initWithEndpoint:(id)arg1 parameters:(id)arg2;

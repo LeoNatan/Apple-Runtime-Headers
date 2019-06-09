@@ -17,10 +17,10 @@
 }
 
 + (id)sharedController;
+- (void).cxx_destruct;
 - (id)copyDiagnosticInformation;
 - (void)removeDiagnosticsGenerator:(id)arg1;
 - (void)addDiagnosticsGenerator:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

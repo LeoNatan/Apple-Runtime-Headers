@@ -40,7 +40,7 @@
 - (id)description;
 @property(readonly) NSString *destinationProduct;
 @property(readonly) NSString *destinationID;
-- (id)chldItemWithID:(id)arg1;
+- (id)childItemWithID:(id)arg1;
 
 @end
 

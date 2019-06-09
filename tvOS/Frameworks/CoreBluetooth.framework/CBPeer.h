@@ -31,6 +31,11 @@
 @property(nonatomic) unsigned long long mtuLength; // @synthesize mtuLength=_mtuLength;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (_Bool)hasTag:(id)arg1;
+- (void)untag:(id)arg1;
+- (void)tag:(id)arg1;
+- (void)sendInternalMsg:(int)arg1 args:(id)arg2;
+- (id)sendInternalSyncMsg:(int)arg1 args:(id)arg2;
 - (void)handleLinkEncryptionChanged:(id)arg1;
 - (void)handleHostStateUpdated:(id)arg1;
 - (void)handleMTUChanged:(id)arg1;

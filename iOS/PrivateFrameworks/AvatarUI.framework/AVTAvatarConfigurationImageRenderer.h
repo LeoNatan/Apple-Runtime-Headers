@@ -19,11 +19,11 @@
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *snapshotBuilderQueue; // @synthesize snapshotBuilderQueue=_snapshotBuilderQueue;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
-@property(readonly, nonatomic) AVTSnapshotBuilder *snapshotBuilder; // @synthesize snapshotBuilder=_snapshotBuilder;
-@property(readonly, nonatomic) AVTMemoji *avatar; // @synthesize avatar=_avatar;
+@property(retain, nonatomic) AVTSnapshotBuilder *snapshotBuilder; // @synthesize snapshotBuilder=_snapshotBuilder;
 - (void).cxx_destruct;
 - (id)nts_imageForAvatarConfiguration:(id)arg1 scope:(id)arg2;
 - (id)imageForAvatarConfiguration:(id)arg1 scope:(id)arg2;
+@property(readonly, nonatomic) AVTMemoji *avatar; // @synthesize avatar=_avatar;
 - (id)initWithSnapshotBuilder:(id)arg1 avatar:(id)arg2 lockProvider:(CDUnknownBlockType)arg3 logger:(id)arg4;
 - (id)initWithLockProvider:(CDUnknownBlockType)arg1 logger:(id)arg2;
 - (id)initWithEnvironment:(id)arg1;

@@ -6,8 +6,9 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSString;
+@class CAGradientLayer, NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVGradientView : UIView
 {
 }
@@ -18,7 +19,7 @@
 @property(copy, nonatomic) NSString *type;
 @property(copy, nonatomic) NSArray *locations;
 @property(copy, nonatomic) NSArray *colors;
-- (id)_gradientLayer;
+@property(readonly, nonatomic) CAGradientLayer *_gradientLayer;
 
 @end
 

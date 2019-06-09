@@ -11,6 +11,7 @@
 
 @class NSOperationQueue, NSRegularExpression, NSString, SKUISettingValueStore, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditProfileSettingDescription : SKUISettingDescription <SKUIProfileImagePickerDelegate, SKUISuggestedHandlesSettingsHeaderFooterDescriptionDelegate>
 {
     CDUnknownBlockType _commitBlock;

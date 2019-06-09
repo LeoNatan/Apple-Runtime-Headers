@@ -49,6 +49,7 @@
 - (id)accountForModelIdentifier:(id)arg1;
 - (id)accountForHandle:(id)arg1;
 - (id)accountForIdentifier:(id)arg1;
+- (void)reset;
 - (void)stop;
 - (void)start;
 @property(readonly, copy, nonatomic) NSArray *attributeDescriptions;

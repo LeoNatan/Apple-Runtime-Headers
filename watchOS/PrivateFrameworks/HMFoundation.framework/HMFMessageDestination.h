@@ -6,25 +6,33 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class NSUUID;
+#import <HMFoundation/HMFObject-Protocol.h>
+#import <HMFoundation/NSCopying-Protocol.h>
 
-@interface HMFMessageDestination : HMFObject
+@class NSArray, NSString, NSUUID;
+
+@interface HMFMessageDestination : HMFObject <HMFObject, NSCopying>
 {
     NSUUID *_target;
 }
 
-+ (id)shortDescription;
 + (id)allMessageDestinations;
 @property(readonly, copy, nonatomic) NSUUID *target; // @synthesize target=_target;
 - (void).cxx_destruct;
-- (id)description;
-- (id)debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy, nonatomic) NSArray *attributeDescriptions;
+@property(readonly, copy) NSString *shortDescription;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (id)initWithTarget:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *privateDescription;
+@property(readonly, copy) NSString *propertyDescription;
+@property(readonly) Class superclass;
 
 @end
 

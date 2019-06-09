@@ -13,7 +13,7 @@
 - (_Bool)hasExitStationManeuver;
 - (_Bool)hasEnterStationManeuver;
 - (_Bool)isTransfer;
-- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange)arg2 transitStepRange:(struct _NSRange)arg3 pointRange:(struct _NSRange)arg4;
+- (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 stepRange:(struct _NSRange)arg3 transitStepRange:(struct _NSRange)arg4 pointRange:(struct _NSRange)arg5;
 
 @end
 

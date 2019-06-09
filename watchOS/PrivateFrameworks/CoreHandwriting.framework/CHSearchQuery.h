@@ -17,8 +17,10 @@
 - (id)debugName;
 @property(copy, nonatomic, setter=_setFoundItems:) NSArray *foundItems; // @synthesize foundItems=_foundItems;
 @property(copy, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;
-- (struct _NSRange)_tokenIndexRangeForStringRange:(struct _NSRange)arg1 inResult:(id)arg2;
-- (void)_enumerateMatchingRangesForStrokeGroupResult:(id)arg1 locales:(id)arg2 searchString:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
+- (_Bool)_isMatchStringForToken:(id)arg1 queryString:(id)arg2 fromIndex:(int)arg3 requirePrefixMatch:(_Bool)arg4 matchedLength:(int *)arg5;
+- (_Bool)_isMatchSeparatorBeforeToken:(id)arg1 atLocation:(CDStruct_77932685)arg2 inResult:(id)arg3 queryString:(id)arg4 fromIndex:(int)arg5 matchedLength:(int *)arg6;
+- (_Bool)_findMatchingTokenPathInResult:(id)arg1 initialTokenLocation:(CDStruct_77932685)arg2 queryString:(id)arg3 fromIndex:(int)arg4 coveredStrokeIndexes:(id)arg5 reverseMatchedTokens:(id *)arg6;
+- (void)_enumerateMatchesForStrokeGroupResult:(id)arg1 locales:(id)arg2 queryString:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (id)q_foundItemsForSearchString:(id)arg1 sessionResult:(id)arg2;
 - (void)q_updateQueryResult;
 - (void)stop;

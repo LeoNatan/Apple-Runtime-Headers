@@ -14,6 +14,7 @@
 - (BOOL)shouldGroupWindowMovement;
 - (BOOL)candidateShouldShowInputCode:(id)arg1;
 - (void)didHandleCandidateSelectionChanged:(id)arg1 candidateController:(id)arg2;
+- (BOOL)handlePunctuationAndSymbolsAndUppercaseLetters:(unsigned short)arg1;
 - (BOOL)handleReturn;
 - (BOOL)handleSpaceForNormalInlineStateWithDynamicPrompt;
 - (void)commitPinyinInline;

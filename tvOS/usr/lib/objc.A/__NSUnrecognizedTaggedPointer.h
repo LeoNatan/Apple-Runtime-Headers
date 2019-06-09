@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)load;
 - (id)autorelease;
 - (oneway void)release;
 - (id)retain;

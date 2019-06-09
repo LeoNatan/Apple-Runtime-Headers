@@ -97,6 +97,7 @@
     NSString *_fileProviderDomainIdentifier;
     NSString *_fbr;
     NSString *_srf;
+    NSData *_entityData;
     double _serverScore;
     double _personalizationScore;
     unsigned long long _queryId;
@@ -104,6 +105,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSData *entityData; // @synthesize entityData=_entityData;
 @property(nonatomic) unsigned long long blockId; // @synthesize blockId=_blockId;
 @property(nonatomic) _Bool doNotFold; // @synthesize doNotFold=_doNotFold;
 @property(copy, nonatomic) NSString *srf; // @synthesize srf=_srf;

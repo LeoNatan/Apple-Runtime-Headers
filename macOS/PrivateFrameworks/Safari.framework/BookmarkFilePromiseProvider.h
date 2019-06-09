@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
 - (id)initWithBookmark:(id)arg1 collection:(id)arg2;
 - (BOOL)_isBookmarkFirstObjectInCollection;
+- (id)_internalQueue;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

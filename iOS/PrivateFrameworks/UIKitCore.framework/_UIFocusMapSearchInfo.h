@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, _UIFocusSearchInfo;
 
 __attribute__((visibility("hidden")))
 @interface _UIFocusMapSearchInfo : NSObject
@@ -14,8 +14,10 @@ __attribute__((visibility("hidden")))
     _Bool _didFindFocusBlockingBoundary;
     NSMutableArray *_mutableSnapshots;
     NSMutableArray *_mutableDestinationRegions;
+    _UIFocusSearchInfo *_searchInfo;
 }
 
+@property(retain, nonatomic) _UIFocusSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
 @property(retain, nonatomic) NSMutableArray *mutableDestinationRegions; // @synthesize mutableDestinationRegions=_mutableDestinationRegions;
 @property(retain, nonatomic) NSMutableArray *mutableSnapshots; // @synthesize mutableSnapshots=_mutableSnapshots;
 @property(nonatomic) _Bool didFindFocusBlockingBoundary; // @synthesize didFindFocusBlockingBoundary=_didFindFocusBlockingBoundary;

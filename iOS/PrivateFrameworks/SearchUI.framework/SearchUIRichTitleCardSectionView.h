@@ -20,7 +20,7 @@
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) TLKHeaderView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) TLKHeaderView *contentView; // @dynamic contentView;
 
 @end
 

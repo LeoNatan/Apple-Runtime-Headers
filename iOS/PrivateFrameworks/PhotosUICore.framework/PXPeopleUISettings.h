@@ -15,12 +15,14 @@
     _Bool _displayConfirmAdditionalSuggestionType;
     _Bool _displayConfirmationPhotoDate;
     _Bool _debugBlurredCells;
-    _Bool _debugMaybeContact;
+    _Bool _showContactSuggestions;
+    _Bool _showMaybeContact;
 }
 
-+ (id)settingsControllerModule;
 + (id)sharedInstance;
-@property(nonatomic, getter=shouldDebugMaybeContact) _Bool debugMaybeContact; // @synthesize debugMaybeContact=_debugMaybeContact;
++ (id)settingsControllerModule;
+@property(nonatomic, getter=shouldShowMaybeContact) _Bool showMaybeContact; // @synthesize showMaybeContact=_showMaybeContact;
+@property(nonatomic, getter=shouldShowContactSuggestions) _Bool showContactSuggestions; // @synthesize showContactSuggestions=_showContactSuggestions;
 @property(nonatomic, getter=shouldDebugBlurredCells) _Bool debugBlurredCells; // @synthesize debugBlurredCells=_debugBlurredCells;
 @property(nonatomic, getter=shouldDisplayConfirmationPhotoDate) _Bool displayConfirmationPhotoDate; // @synthesize displayConfirmationPhotoDate=_displayConfirmationPhotoDate;
 @property(nonatomic, getter=shouldDisplayConfirmAdditionalSuggestionType) _Bool displayConfirmAdditionalSuggestionType; // @synthesize displayConfirmAdditionalSuggestionType=_displayConfirmAdditionalSuggestionType;

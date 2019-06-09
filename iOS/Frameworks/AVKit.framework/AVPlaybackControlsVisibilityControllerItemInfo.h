@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVPlaybackControlsVisibilityControllerItemInfo : NSObject
 {
     _Bool _initiallyHidden;

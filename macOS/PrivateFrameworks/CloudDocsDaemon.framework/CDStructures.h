@@ -29,6 +29,7 @@ struct BRCDirectoryItem {
     unsigned long long _field16;
     unsigned long long _field17;
     unsigned long long _field18;
+    id _field19;
 };
 
 struct CC_SHA1state_st {
@@ -66,19 +67,13 @@ struct RootItemObject {
 struct _BRCFrameworkOperation {
     Class _field1;
     id _field2;
-    int _field3;
-    int _field4;
-    id _field5;
-    unsigned char _field6[16];
+    unsigned char _field3[16];
 };
 
 struct _BRCOperation {
     Class _field1;
     id _field2;
-    int _field3;
-    int _field4;
-    id _field5;
-    unsigned char _field6[16];
+    unsigned char _field3[16];
 };
 
 struct _UUIDItemObject_OLD {

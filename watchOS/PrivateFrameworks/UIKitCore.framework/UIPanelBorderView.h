@@ -23,11 +23,6 @@
 - (void).cxx_destruct;
 - (id)_cachedBackdropGroupName;
 - (void)layoutSubviews;
-- (void)_statusBarTimeDidChange:(id)arg1;
-- (void)_updateObservationOfTime;
-- (void)didMoveToWindow;
-- (void)setCenter:(struct CGPoint)arg1;
-- (void)dealloc;
 
 @end
 

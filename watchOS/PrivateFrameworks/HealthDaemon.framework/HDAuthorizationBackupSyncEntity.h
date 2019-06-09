@@ -10,10 +10,11 @@
 {
 }
 
++ (_Bool)supportsSyncStore:(id)arg1;
 + (id)excludedSyncStoresForSession:(id)arg1;
 + (int)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (void)didGenerateCodableSourceAuthorizationsForSyncSession:(id)arg1;
-+ (_Bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange)arg3 maxEncodedBytesPerMessage:(int)arg4 profile:(id)arg5 error:(id *)arg6 handler:(CDUnknownBlockType)arg7;
++ (_Bool)generateSyncObjectsForSession:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange)arg2 profile:(id)arg3 messageHandler:(id)arg4 error:(id *)arg5;
 + (id)syncEntityIdentifier;
 + (id)backupInfoUserDefaultsKey;
 + (void)_setBackupInfo:(id)arg1;

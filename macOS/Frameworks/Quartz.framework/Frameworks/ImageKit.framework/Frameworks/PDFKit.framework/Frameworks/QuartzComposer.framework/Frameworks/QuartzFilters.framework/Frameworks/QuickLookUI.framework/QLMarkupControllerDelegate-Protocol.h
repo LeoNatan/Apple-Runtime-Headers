@@ -7,7 +7,9 @@
 @class NSURL, NSView, QLMarkupViewController;
 
 @protocol QLMarkupControllerDelegate
+@property(readonly) NSURL *savedCopyURL;
 @property(readonly) NSURL *urlForMarkup;
+- (void)didSave:(BOOL)arg1 toURL:(NSURL *)arg2;
 - (void)editOccuredOnPage:(long long)arg1;
 - (void)markupBecameDirty:(BOOL)arg1;
 - (NSView *)replaceContentWithMarkupViewController:(QLMarkupViewController *)arg1;

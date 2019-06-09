@@ -26,9 +26,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIStatusBarStringView *shortTimeView; // @synthesize shortTimeView=_shortTimeView;
 @property(retain, nonatomic) _UIStatusBarStringView *timeView; // @synthesize timeView=_timeView;
 - (void).cxx_destruct;
-- (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)viewForIdentifier:(id)arg1;
-- (id)createDisplayItemForIdentifier:(id)arg1;
+- (void)_create_dateView;
+- (void)_create_pillTimeView;
+- (void)_create_shortTimeView;
+- (void)_create_timeView;
+- (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)dependentEntryKeys;
 
 @end

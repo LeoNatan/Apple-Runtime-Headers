@@ -15,10 +15,10 @@
 }
 
 + (id)_languageChangeNotification;
-- (id)handledLiveDarwinNotifications;
-- (void)handleNotification:(id)arg1;
+- (id)liveDarwinNotifications;
+- (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleLanguageChanged;
-- (_Bool)handlesNotification:(id)arg1;
+- (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

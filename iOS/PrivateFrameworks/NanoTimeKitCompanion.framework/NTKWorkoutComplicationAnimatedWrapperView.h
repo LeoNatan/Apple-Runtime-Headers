@@ -27,7 +27,7 @@
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateState;
-- (void)_applyAnimationForPauseState:(_Bool)arg1;
+- (void)_applyAnimationForPauseState:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateTint;
 - (id)initWithAnimationImages:(id)arg1;
 

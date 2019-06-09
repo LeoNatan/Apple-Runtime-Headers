@@ -9,6 +9,7 @@
 @class AVCaptureConnection, AVCaptureSession, AVWeakReference, CALayer, NSArray, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureVideoPreviewLayerInternal : NSObject
 {
     NSString *sinkID;

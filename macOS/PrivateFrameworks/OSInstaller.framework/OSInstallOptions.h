@@ -10,7 +10,7 @@
 
 @interface OSInstallOptions : NSObject
 {
-    NSString *_alternateBlessVolumePath;
+    BOOL _isIngenuine;
     BOOL _isAutomated;
     BOOL _isEraseInstall;
     BOOL _hadToMountBaseSystemDMG;
@@ -19,25 +19,32 @@
     BOOL _enableSUFLO;
     BOOL _didRequestEraseInstall;
     BOOL _isAppleInternal;
+    BOOL _doROSVInstall;
     NSString *_alternateBlessVolumeUUID;
     NSString *_baseSystemMountPoint;
     NSString *_payloadImageMountPoint;
-    SKDisk *_target;
+    SKDisk *_dataTarget;
+    SKDisk *_systemTarget;
     long long _installType;
     NSString *_volumeUUIDToErase;
+    NSString *_targetVolumeName;
     NSURL *_distributionURL;
     NSURL *_choiceChangesURL;
     NSURL *_baseSystemURL;
     NSURL *_payloadImageURL;
     NSURL *_appleDiagnosticsURL;
+    NSString *_alternateBlessVolumePath;
 }
 
 + (BOOL)isBeingInstalledInternally;
+@property(retain) NSString *alternateBlessVolumePath; // @synthesize alternateBlessVolumePath=_alternateBlessVolumePath;
 @property(retain) NSURL *appleDiagnosticsURL; // @synthesize appleDiagnosticsURL=_appleDiagnosticsURL;
 @property(retain) NSURL *payloadImageURL; // @synthesize payloadImageURL=_payloadImageURL;
 @property(retain) NSURL *baseSystemURL; // @synthesize baseSystemURL=_baseSystemURL;
 @property(retain) NSURL *choiceChangesURL; // @synthesize choiceChangesURL=_choiceChangesURL;
 @property(retain) NSURL *distributionURL; // @synthesize distributionURL=_distributionURL;
+@property(retain) NSString *targetVolumeName; // @synthesize targetVolumeName=_targetVolumeName;
+@property BOOL doROSVInstall; // @synthesize doROSVInstall=_doROSVInstall;
 @property(retain) NSString *volumeUUIDToErase; // @synthesize volumeUUIDToErase=_volumeUUIDToErase;
 @property BOOL isAppleInternal; // @synthesize isAppleInternal=_isAppleInternal;
 @property BOOL didRequestEraseInstall; // @synthesize didRequestEraseInstall=_didRequestEraseInstall;
@@ -47,8 +54,10 @@
 @property BOOL hadToMountBaseSystemDMG; // @synthesize hadToMountBaseSystemDMG=_hadToMountBaseSystemDMG;
 @property BOOL isEraseInstall; // @synthesize isEraseInstall=_isEraseInstall;
 @property BOOL isAutomated; // @synthesize isAutomated=_isAutomated;
+@property BOOL isIngenuine; // @synthesize isIngenuine=_isIngenuine;
 @property long long installType; // @synthesize installType=_installType;
-@property(retain) SKDisk *target; // @synthesize target=_target;
+@property(retain) SKDisk *systemTarget; // @synthesize systemTarget=_systemTarget;
+@property(retain) SKDisk *dataTarget; // @synthesize dataTarget=_dataTarget;
 @property(retain) NSString *payloadImageMountPoint; // @synthesize payloadImageMountPoint=_payloadImageMountPoint;
 @property(retain) NSString *baseSystemMountPoint; // @synthesize baseSystemMountPoint=_baseSystemMountPoint;
 @property(retain) NSString *alternateBlessVolumeUUID; // @synthesize alternateBlessVolumeUUID=_alternateBlessVolumeUUID;
@@ -61,7 +70,7 @@
 @property(retain) NSString *baseSystemPath;
 @property(retain) NSString *choiceChangesPath;
 @property(retain) NSString *distributionPath;
-- (void)_resolveTargetWithPath:(id)arg1 name:(id)arg2 orUUID:(id)arg3;
+- (id)_resolveTargetWithPath:(id)arg1 name:(id)arg2 orUUID:(id)arg3;
 - (id)alternateBlessTarget;
 - (id)initWithDefaultSettings;
 - (id)initWithFile:(id)arg1;

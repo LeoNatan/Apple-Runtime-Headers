@@ -45,5 +45,6 @@ struct route_stats_stuct {
     double _field21;
     double _field22;
     double _field23;
+    double _field24;
 };
 

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSMutableDictionary *propertyMap; // @synthesize propertyMap=mPropertyMap;
+- (void).cxx_destruct;
 - (_Bool)hasProperties;
 - (void)setTransition:(int)arg1;
 - (int)transition;
 - (_Bool)hasTransition;
-- (void)dealloc;
 - (id)init;
 
 @end

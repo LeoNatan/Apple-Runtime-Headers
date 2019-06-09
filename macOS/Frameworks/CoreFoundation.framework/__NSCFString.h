@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)smallestEncoding;
 - (unsigned long long)fastestEncoding;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)getLineStart:(unsigned long long *)arg1 end:(unsigned long long *)arg2 contentsEnd:(unsigned long long *)arg3 forRange:(struct _NSRange)arg4;
 - (BOOL)hasSuffix:(id)arg1;

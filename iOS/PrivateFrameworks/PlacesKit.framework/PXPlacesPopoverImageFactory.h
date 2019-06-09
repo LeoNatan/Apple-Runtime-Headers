@@ -7,18 +7,15 @@
 #import <objc/NSObject.h>
 
 @class NSCache, UIColor;
-@protocol NSObject;
 
 @interface PXPlacesPopoverImageFactory : NSObject
 {
     NSCache *_cachedBackgroundImages;
     UIColor *_defaultBackgroundColor;
-    id <NSObject> _memoryWarningObserver;
 }
 
 + (id)sharedInstance;
 + (struct CGSize)backgroundImageSizeForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
-@property(retain, nonatomic) id <NSObject> memoryWarningObserver; // @synthesize memoryWarningObserver=_memoryWarningObserver;
 @property(retain, nonatomic) UIColor *defaultBackgroundColor; // @synthesize defaultBackgroundColor=_defaultBackgroundColor;
 @property(retain, nonatomic) NSCache *cachedBackgroundImages; // @synthesize cachedBackgroundImages=_cachedBackgroundImages;
 - (void).cxx_destruct;
@@ -32,7 +29,6 @@
 - (id)annotationPlaceHolderImageUsingTraitCollection:(id)arg1;
 - (id)createAlbumPlaceHolderImageUsingTraitCollection:(id)arg1;
 - (id)createPopoverImageForGeotaggable:(id)arg1 withImage:(struct CGImage *)arg2 imageType:(unsigned long long)arg3 usingTraitCollection:(id)arg4;
-- (void)dealloc;
 - (id)init;
 
 @end

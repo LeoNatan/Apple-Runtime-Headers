@@ -6,6 +6,7 @@
 
 #import <UIKit/UIButton.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIMessageBannerCloseButton : UIButton
 {
 }

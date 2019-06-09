@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class FBApplicationInfo, NSArray;
+@class FBSApplicationInfo, NSArray;
 @protocol OS_dispatch_queue;
 
 @interface FBApplicationTrustData : NSObject
 {
-    FBApplicationInfo *_appInfo;
+    FBSApplicationInfo *_appInfo;
     _Bool _hasUniversalProvisioningProfile;
     _Bool _hasFreeDeveloperProvisioningProfile;
     _Bool _isManaged;

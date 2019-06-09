@@ -47,6 +47,7 @@
 - (void)_invisiblePropertiesDidChange:(id)arg1;
 - (void)_dynamicPropertiesDidChange:(id)arg1;
 - (void)_libraryEntitiesAddedOrRemoved:(id)arg1;
+- (void)_libraryPathDidChange:(id)arg1;
 - (void)_libraryContentsDidChange:(id)arg1;
 - (_Bool)_dataProviderSupportsEntityChangeTracking;
 - (void)_postEvents;
@@ -63,6 +64,7 @@
 - (id)_adjustedItemPropertyEpisodeNumberOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyMovieInfoOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyFilePathOfEntity:(id)arg1 withDefaultValue:(id)arg2;
+- (id)_adjustedItemNonnullDateOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemDateOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyRatingOfEntity:(id)arg1 withDefaultValue:(id)arg2;
 - (id)_adjustedItemPropertyVolumeAdjustmentOfEntity:(id)arg1 withDefaultValue:(id)arg2;
@@ -120,7 +122,7 @@
 - (void)addGlobalPlaylistWithID:(id)arg1 andAddToCloudLibrary:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)importOriginalArtworkFromImageData:(id)arg1 withArtworkToken:(id)arg2 artworkType:(int)arg3 sourceType:(int)arg4 mediaType:(unsigned int)arg5;
 - (void)importArtworkTokenForEntityPersistentID:(unsigned long long)arg1 entityType:(int)arg2 artworkToken:(id)arg3 artworkType:(int)arg4 sourceType:(int)arg5;
-- (void)_importStoreItemElements:(id)arg1 andAddTracksToCloudLibrary:(_Bool)arg2 usingCloudAdamID:(long long)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)_importStoreItemElements:(id)arg1 withReferralObject:(id)arg2 andAddTracksToCloudLibrary:(_Bool)arg3 usingCloudAdamID:(long long)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)addPlaylistStoreItemsForLookupItems:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)performStoreItemLibraryImport:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_storePlatformRequestContext;

@@ -4,21 +4,43 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoLibraryServices/PLAbstractLibraryServicesManagerService.h>
 
 #import <PhotoLibraryServices/PLAssetsdCloudInternalServiceProtocol-Protocol.h>
 
 @class NSString;
 
-@interface PLAssetsdCloudInternalService : NSObject <PLAssetsdCloudInternalServiceProtocol>
+@interface PLAssetsdCloudInternalService : PLAbstractLibraryServicesManagerService <PLAssetsdCloudInternalServiceProtocol>
 {
 }
 
+- (void)forceSyncMomentShareWithUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)queryUserIdentitiesWithEmails:(id)arg1 phoneNumbers:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)acceptMomentShareWithUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)fetchMomentShareWithURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)publishMomentShareWithUUID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)overrideSystemBudgetsForSyncSession:(_Bool)arg1 systemBudgets:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)getSystemBudgetsWithReply:(CDUnknownBlockType)arg1;
+- (void)getCurrentTransferProgress:(CDUnknownBlockType)arg1;
+- (void)rampingRequestForResourceType:(unsigned long long)arg1 numRequested:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)setCloudPhotoLibraryPauseState:(_Bool)arg1 reason:(short)arg2;
+- (void)setCloudPhotoLibraryEnabledState:(_Bool)arg1;
+- (void)syncCloudPhotoLibrary;
+- (void)isReadyForCloudPhotoLibraryWithReply:(CDUnknownBlockType)arg1;
+- (void)setPersonInfoDictionary:(id)arg1 forPersonID:(id)arg2;
+- (void)personInfoDictionaryForPersonID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)emailAddressForKey:(long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)keyForEmailAddress:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)cloudSharingSpaceManagementRequestWithType:(unsigned long long)arg1 optionalBytesToPurge:(unsigned long long)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)updateSharedAlbumsCachedServerConfigurationLimits;
+- (void)enablePhotostreamsWithStreamID:(id)arg1;
+- (void)createPhotostreamAlbumWithStreamID:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+
 @end
 

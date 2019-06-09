@@ -15,23 +15,26 @@
     struct CGRect _hitTestBounds;
     int _hitTestShape;
     struct CGRect _hitTestShapeFrame;
-    UIColor *_platterTextColor;
+    _Bool _interactive;
+    UIColor *_bezelTextColor;
     float _bezelTextWidthInRadius;
     float _bezelTextAlpha;
     id <NTKRichComplicationBezelViewDelegate> _delegate;
 }
 
 + (id)_createHitTestPathWithViewBounds:(struct CGRect)arg1 shape:(int)arg2 shapeFrame:(struct CGRect)arg3 forDevice:(id)arg4;
-+ (void)startDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 bezelTextUpdateHandler:(CDUnknownBlockType)arg4 completionBlock:(CDUnknownBlockType)arg5;
++ (void)updateCustomDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 animationType:(unsigned int)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6 bezelTextUpdateHandler:(CDUnknownBlockType)arg7;
++ (void)prepareCustomDataAnimation:(id)arg1 fromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4;
 + (id)viewWithLegacyComplicationType:(unsigned int)arg1;
 + (struct CGAffineTransform)transformForState:(int)arg1;
 + (id)layoutRuleForState:(int)arg1 faceBounds:(struct CGRect)arg2 dialDiameter:(float)arg3 forDevice:(id)arg4;
 + (id)keylineViewForDevice:(id)arg1;
 + (id)keylineImageWithFilled:(_Bool)arg1 forDevice:(id)arg2;
 @property(nonatomic) __weak id <NTKRichComplicationBezelViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) _Bool interactive; // @synthesize interactive=_interactive;
 @property(nonatomic) float bezelTextAlpha; // @synthesize bezelTextAlpha=_bezelTextAlpha;
 @property(nonatomic) float bezelTextWidthInRadius; // @synthesize bezelTextWidthInRadius=_bezelTextWidthInRadius;
-@property(retain, nonatomic) UIColor *platterTextColor; // @synthesize platterTextColor=_platterTextColor;
+@property(retain, nonatomic) UIColor *bezelTextColor; // @synthesize bezelTextColor=_bezelTextColor;
 - (void).cxx_destruct;
 - (void)_setLayoutTransformToView:(id)arg1 origin:(struct CGPoint)arg2 rotationInDegree:(float)arg3 centerScale:(float)arg4;
 - (void)_updateHitTestShape:(int)arg1 frame:(struct CGRect)arg2;

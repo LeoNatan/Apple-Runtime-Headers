@@ -6,37 +6,38 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class CNContact, CNContactFormatter, CNContactMatchInfo;
-@protocol ABStyleProvider, CNCancelable;
+@class CNContact, CNContactFormatter, CNContactListStyleApplier, CNContactMatchInfo;
+@protocol CNCancelable;
 
 __attribute__((visibility("hidden")))
 @interface CNContactListTableViewCell : UITableViewCell
 {
     _Bool _isMeCard;
     _Bool _enabled;
-    id <ABStyleProvider> _styleProvider;
-    CNContactFormatter *_contactFormatter;
+    _Bool _isEmergencyContact;
     CNContact *_contact;
     CNContactMatchInfo *_contactMatchInfo;
+    CNContactFormatter *_contactFormatter;
+    CNContactListStyleApplier *_contactListStyleApplier;
     CDUnknownBlockType _selectedBackgroundViewConfiguration;
     id <CNCancelable> _summaryCancelationToken;
 }
 
 @property(retain, nonatomic) id <CNCancelable> summaryCancelationToken; // @synthesize summaryCancelationToken=_summaryCancelationToken;
 @property(copy, nonatomic) CDUnknownBlockType selectedBackgroundViewConfiguration; // @synthesize selectedBackgroundViewConfiguration=_selectedBackgroundViewConfiguration;
+@property(nonatomic) _Bool isEmergencyContact; // @synthesize isEmergencyContact=_isEmergencyContact;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) _Bool isMeCard; // @synthesize isMeCard=_isMeCard;
+@property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
+@property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(retain, nonatomic) CNContactMatchInfo *contactMatchInfo; // @synthesize contactMatchInfo=_contactMatchInfo;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
-@property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
-@property(readonly, nonatomic) id <ABStyleProvider> styleProvider; // @synthesize styleProvider=_styleProvider;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)prepareForReuse;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
-- (void)_cnui_applyContactStyle;
 
 @end
 

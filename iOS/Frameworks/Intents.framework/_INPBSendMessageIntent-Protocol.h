@@ -6,11 +6,11 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, NSString, _INPBContact, _INPBDataString, _INPBIntentMetadata, _INPBMessageAttachment, _INPBString;
+@class NSArray, NSString, _INPBContact, _INPBDataString, _INPBIntentMetadata, _INPBSendMessageAttachment, _INPBString;
 
 @protocol _INPBSendMessageIntent <NSObject>
 + (Class)recipientType;
-+ (Class)attachmentType;
++ (Class)attachmentsType;
 @property(readonly, nonatomic) _Bool hasSpeakableGroupName;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName;
 @property(readonly, nonatomic) _Bool hasServiceName;
@@ -19,10 +19,14 @@
 @property(retain, nonatomic) _INPBContact *sender;
 @property(readonly, nonatomic) unsigned long long recipientsCount;
 @property(copy, nonatomic) NSArray *recipients;
+@property(nonatomic) _Bool hasMessageType;
+@property(nonatomic) int messageType;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata;
 @property(readonly, nonatomic) _Bool hasGroupName;
 @property(retain, nonatomic) _INPBString *groupName;
+@property(nonatomic) _Bool hasEffect;
+@property(nonatomic) int effect;
 @property(readonly, nonatomic) _Bool hasConversationIdentifier;
 @property(copy, nonatomic) NSString *conversationIdentifier;
 @property(readonly, nonatomic) _Bool hasContent;
@@ -32,8 +36,12 @@
 - (_INPBContact *)recipientAtIndex:(unsigned long long)arg1;
 - (void)addRecipient:(_INPBContact *)arg1;
 - (void)clearRecipients;
-- (_INPBMessageAttachment *)attachmentAtIndex:(unsigned long long)arg1;
-- (void)addAttachment:(_INPBMessageAttachment *)arg1;
+- (int)StringAsMessageType:(NSString *)arg1;
+- (NSString *)messageTypeAsString:(int)arg1;
+- (int)StringAsEffect:(NSString *)arg1;
+- (NSString *)effectAsString:(int)arg1;
+- (_INPBSendMessageAttachment *)attachmentsAtIndex:(unsigned long long)arg1;
+- (void)addAttachments:(_INPBSendMessageAttachment *)arg1;
 - (void)clearAttachments;
 @end
 

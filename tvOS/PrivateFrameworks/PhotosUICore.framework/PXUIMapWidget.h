@@ -80,6 +80,7 @@
 - (void)_updateFooterTitle;
 - (void)_updateHeight;
 - (void)_updateFooterHeight;
+- (void)controllerTraitCollectionDidChangeFrom:(id)arg1 to:(id)arg2;
 @property(readonly, nonatomic) UIFont *footerFont; // @synthesize footerFont=_footerFont;
 @property(readonly, nonatomic) _Bool allowUserInteractionWithSubtitle;
 @property(readonly, nonatomic) NSString *localizedDisclosureTitle;

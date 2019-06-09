@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) unsigned long long usageCount; // @synthesize usageCount=mUsageCount;
+- (void).cxx_destruct;
 - (long long)compareUsageCount:(id)arg1;
 - (void)incrementUsageCount;
 - (id)feature;

@@ -6,13 +6,17 @@
 
 #import <AppKit/NSGestureRecognizer.h>
 
+@class _NSGestureRecognizerTransformAnalyzer;
+
 @interface NSMagnificationGestureRecognizer : NSGestureRecognizer
 {
     struct CGPoint _location;
-    struct CGPoint _reserved1;
-    long long _mflags;
+    struct CGPoint _translation;
     double _magnification;
-    id _reserved2;
+    id _touchID1;
+    id _touchID2;
+    double _initialTouchDistance;
+    _NSGestureRecognizerTransformAnalyzer *_transformAnalyzer;
 }
 
 @property double magnification; // @synthesize magnification=_magnification;

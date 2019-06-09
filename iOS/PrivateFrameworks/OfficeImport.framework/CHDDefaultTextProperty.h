@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultTextPropertyWithResources:(id)arg1;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setIsShowSeriesLabel:(_Bool)arg1;
 - (_Bool)isShowSeriesLabel;
@@ -46,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (id)runs;
 - (void)setDefaultTextType:(int)arg1;
 - (int)defaultTextType;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setContentFormatId:(unsigned long long)arg1;
 - (unsigned long long)contentFormatId;

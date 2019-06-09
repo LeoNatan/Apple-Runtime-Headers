@@ -15,7 +15,7 @@
     GEORouteDetails *_routeDetails;
 }
 
-@property(retain, nonatomic) GEORouteDetails *routeDetails; // @synthesize routeDetails=_routeDetails;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -24,8 +24,10 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEORouteDetails *routeDetails;
 @property(readonly, nonatomic) _Bool hasRouteDetails;
 
 @end

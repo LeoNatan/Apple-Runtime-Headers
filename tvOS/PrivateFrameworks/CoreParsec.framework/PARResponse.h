@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 @property(readonly, nonatomic) PARReply *reply; // @synthesize reply=_reply;
 - (void).cxx_destruct;
+- (id)initWithReply:(id)arg1 factory:(id)arg2 responseV2:(id)arg3;
 - (id)initWithReply:(id)arg1;
 
 @end

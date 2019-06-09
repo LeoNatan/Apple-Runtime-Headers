@@ -15,7 +15,13 @@
     NTKCurvedColoringLabel *_rightLabel;
 }
 
++ (int)progressFillStyle;
++ (_Bool)isMeteredProgressView;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)_editingDidEnd;
+- (void)_enumerateLabelsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_updateLabelMaxWidths;
 - (void)_layoutSubviewsWithoutAnimation;
 - (float)_layoutLabel:(id)arg1 withLabelCenter:(struct CGPoint)arg2 labelWidthInRadius:(float)arg3 leftInRadius:(float)arg4;

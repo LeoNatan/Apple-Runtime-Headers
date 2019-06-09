@@ -26,6 +26,7 @@
 - (void)createSearchIndexForPrefPaneBundles:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)loadSearchTermsForPath:(id)arg1 key:(id)arg2;
 
 @end
 

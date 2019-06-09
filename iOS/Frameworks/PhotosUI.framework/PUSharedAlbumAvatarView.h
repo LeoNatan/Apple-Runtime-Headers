@@ -6,7 +6,7 @@
 
 #import <UIKit/UIImageView.h>
 
-@class CAShapeLayer, CNMonogrammer, NSObject, PHAssetCollection, PXViewLayoutHelper, UIGraphicsImageRenderer, UIImage;
+@class CAShapeLayer, CNMonogrammer, NSObject, PHAssetCollection, UIGraphicsImageRenderer, UIImage;
 @protocol OS_os_log;
 
 __attribute__((visibility("hidden")))
@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     PHAssetCollection *_sharedAlbumCollection;
     CNMonogrammer *_monogrammer;
     UIGraphicsImageRenderer *_imageRenderer;
-    PXViewLayoutHelper *_layoutHelper;
     UIImage *_firstAvatar;
     UIImage *_secondAvatar;
     UIImage *_thirdAvatar;
@@ -29,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIImage *thirdAvatar; // @synthesize thirdAvatar=_thirdAvatar;
 @property(retain, nonatomic) UIImage *secondAvatar; // @synthesize secondAvatar=_secondAvatar;
 @property(retain, nonatomic) UIImage *firstAvatar; // @synthesize firstAvatar=_firstAvatar;
-@property(retain, nonatomic) PXViewLayoutHelper *layoutHelper; // @synthesize layoutHelper=_layoutHelper;
 @property(retain, nonatomic) UIGraphicsImageRenderer *imageRenderer; // @synthesize imageRenderer=_imageRenderer;
 @property(retain, nonatomic) CNMonogrammer *monogrammer; // @synthesize monogrammer=_monogrammer;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
@@ -50,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)_sizeForNumberOfAvatars:(unsigned long long)arg1;
 - (void)embedInView:(id)arg1;
 - (void)prepareForReuse;
+- (void)setSharedAlbumCollection:(id)arg1 forceLayoutSubscriberAvatars:(_Bool)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

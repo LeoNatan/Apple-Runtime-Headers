@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSError, NSString, _LSDatabase;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -20,15 +22,80 @@ struct AEKeyDesc {
     struct AEDesc descContent;
 };
 
-struct Data {
-    unsigned int _field1;
-    unsigned char _field2;
-    unsigned char _field3;
-    unsigned short _field4;
+struct Binding {
+    CDUnknownFunctionPointerType *_field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    int _field5;
+    struct __CFData *_field6;
+    struct Binding *_field7;
+    unsigned long long _field8;
+};
+
+struct BindingEvaluator {
+    id _field1;
+    id _field2;
+    id _field3;
+    id _field4;
     unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    struct Table _field8;
+    id _field6;
+    struct LSVersionNumber _field7;
+    char _field8;
+    unsigned long long _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> _field12;
+    CDUnknownBlockType _field13;
+    id _field14;
+    CDUnknownBlockType _field15;
+    id _field16;
+};
+
+struct CSMap {
+    unsigned int table;
+    struct CSMapCallbacks cb;
+    struct CSMapContext *context;
+    struct os_unfair_lock_s _lock;
+    unsigned int _generation;
+    struct _CSMapHeader *_header;
+    unsigned int *_keys;
+    unsigned int *_values;
+};
+
+struct CSMapCallbacks {
+    CDUnknownFunctionPointerType retainKey;
+    CDUnknownFunctionPointerType releaseKey;
+    CDUnknownFunctionPointerType getKeyHash;
+    CDUnknownFunctionPointerType keyMatchesData;
+    CDUnknownFunctionPointerType retainValue;
+    CDUnknownFunctionPointerType releaseValue;
+};
+
+struct CSMapContext;
+
+struct Context {
+    struct LSContext *_contextPointer;
+    struct LSContext _contextStorage;
+    unsigned char _created;
+    NSError *_error;
+};
+
+struct ExtendedBinding {
+    unsigned int _field1;
+    struct LSBundleData *_field2;
+    unsigned int _field3;
+    CDStruct_183601bc *_field4;
+    id _field5;
+    id _field6;
+    char _field7;
+    char _field8;
+    id _field9;
+    id _field10;
+    char _field11;
+    id _field12;
+    struct optional<signed char> _field13;
+    struct optional<signed char> _field14;
 };
 
 struct ExtendedFileInfo {
@@ -65,6 +132,8 @@ struct FolderInfo {
     unsigned short _field4;
 };
 
+struct Item;
+
 struct LSApplicationParameters_V1 {
     long long _field1;
     unsigned int _field2;
@@ -78,63 +147,54 @@ struct LSApplicationParameters_V1 {
     struct ProcessSerialNumber *_field10;
 };
 
+struct LSBinding {
+    unsigned int bundle;
+    struct LSBundleData *bundleData;
+    unsigned int claim;
+    CDStruct_183601bc *claimData;
+    id userInfo;
+    NSString *reason;
+};
+
 struct LSBundleData {
     unsigned int _clas;
     unsigned long long _bundleFlags;
     unsigned int _plistContentFlags;
     unsigned int _itemFlags;
     unsigned char _iconFlags;
-    unsigned char _highResFlags;
-    unsigned char _appNapFlags;
+    unsigned char highResFlags;
+    unsigned char appNapFlags;
     unsigned char eGPUFlags;
     unsigned short _archFlags;
+    unsigned int platform;
     unsigned int _hfsType;
     unsigned int _hfsCreator;
     unsigned long long _inoBundle;
     unsigned long long _inoExec;
     int _mtime;
     int _rtime;
-    unsigned long long _version;
-    unsigned long long _minSystemVersion;
-    unsigned long long _maxSystemVersion;
-    unsigned long long _execSDKVersion;
-    unsigned long long _execMinOSVersion;
-    unsigned int machOUUIDs[4];
+    struct LSVersionNumber _version;
+    struct LSVersionNumber _minSystemVersion;
+    struct LSVersionNumber _maxSystemVersion;
+    struct LSVersionNumber _execSDKVersion;
+    struct LSVersionNumber _execMinOSVersion;
+    unsigned int machOUUIDs;
     unsigned long long sequenceNumber;
-    unsigned long long compatibilityState;
-    unsigned long long installFailureReason;
-    unsigned int deviceFamilies;
-    unsigned int installType;
     unsigned int teamID;
     unsigned int identifier;
     unsigned int exactIdentifier;
     unsigned int name;
     unsigned int displayName;
-    unsigned int companionAppID;
     unsigned int counterpartIdentifiers;
     unsigned int categoryType;
     unsigned int secondaryCategoryType;
     unsigned int filename;
     unsigned int bundleVersion;
     unsigned int shortVersionString;
-    unsigned int signerIdentity;
-    unsigned int codeInfoIdentifier;
-    unsigned int signerOrganization;
-    unsigned int appType;
-    unsigned long long staticDiskUsage;
-    unsigned long long purchaserDSID;
-    unsigned long long downloaderDSID;
-    unsigned long long familyID;
-    unsigned int vendorName;
-    unsigned int itemName;
-    unsigned long long storefront;
-    unsigned long long versionIdentifier;
     unsigned long long ratingRank;
     unsigned int ratingLabel;
     unsigned long long genreID;
     unsigned int genre;
-    unsigned int sourceAppIdentifier;
-    unsigned int appVariant;
     unsigned int primaryIconName;
     unsigned int iconsDict;
     unsigned int iconFileNames;
@@ -148,28 +208,91 @@ struct LSBundleData {
     unsigned int plugins;
     unsigned int extensionPoints;
     unsigned int activityTypes;
-    unsigned int schemesWhitelist;
+    unsigned int bgPermittedIDs;
     unsigned int alias;
     unsigned int appContainerAlias;
     unsigned int dataContainerAlias;
     unsigned int container;
     unsigned char revision;
     unsigned char retries;
-    unsigned char _reserved3;
+    unsigned char containingDirectoryClass;
     unsigned char _reserved4;
     unsigned int plistRarities;
     unsigned int commonPlistEntries;
     unsigned int entitlements;
     unsigned int groupContainers;
     unsigned int sandboxEnvironmentVariables;
+    unsigned int localizedDisplayName;
+    unsigned int localizedShortDisplayName;
+    unsigned int localizedNameWithContext[0];
+    unsigned int managedPersonas;
     unsigned int _reserved5;
 };
 
 struct LSContext {
-    struct LSDatabase *db;
+    _LSDatabase *db;
 };
 
-struct LSDatabase;
+struct LSExtensionPointData;
+
+struct LSPluginData {
+    int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    struct LSVersionNumber _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    unsigned int _field12;
+    unsigned int _field13;
+    unsigned int _field14;
+    unsigned int _field15;
+    unsigned int _field16;
+    struct LSVersionNumber _field17;
+    struct LSVersionNumber _field18;
+    unsigned int _field19;
+    unsigned int _field20;
+    unsigned int _field21;
+    unsigned int _field22;
+    unsigned int _field23;
+    unsigned char _field24;
+    unsigned int _field25;
+    unsigned int _field26;
+};
+
+struct LSSchema {
+    unsigned int headerTable;
+    unsigned int bundleTable;
+    unsigned int claimTable;
+    unsigned int serviceTable;
+    unsigned int utypeTable;
+    struct {
+        struct CSMap map;
+    } bindableKeyMap;
+    struct {
+        struct CSMap map;
+        unsigned int bindingClass;
+        unsigned char isCaseInsensitive;
+    } bindingMaps[14];
+    unsigned int handlerPrefTable;
+    unsigned int containerTable;
+    unsigned int aliasTable;
+    unsigned int pluginTable;
+    unsigned int extensionPointTable;
+    unsigned int bindingListTable;
+    unsigned int propertyListTable;
+    unsigned int localizedStringTable;
+    unsigned int canonicalStringTable;
+    struct _LSSchemaCache *_cache;
+};
+
+struct LSVersionNumber {
+    unsigned char _opaque[32];
+};
 
 struct NSMutableDictionary {
     Class _field1;
@@ -198,7 +321,6 @@ struct NSXPCConnection {
     id _field16;
     id _field17;
     id _field18;
-    id _field19;
 };
 
 struct OpaqueAEDataStorageType;
@@ -206,6 +328,17 @@ struct OpaqueAEDataStorageType;
 struct Point {
     short _field1;
     short _field2;
+};
+
+struct PrefsCapabilityInfo {
+    long long _field1;
+    id _field2;
+    id _field3;
+    char _field4;
+    char _field5;
+    char *_field6;
+    struct __CFString *_field7;
+    struct __CFString *_field8;
 };
 
 struct ProcessSerialNumber {
@@ -220,21 +353,15 @@ struct Rect {
     short _field4;
 };
 
-struct Store;
+struct _CSMapHeader;
 
-struct Table {
-    struct Unit _field1;
-    char _field2[64];
+struct _FSInternetLocatorTypeInfo {
+    id _field1;
+    id _field2;
     unsigned int _field3;
-    unsigned int _field4;
 };
 
-struct Unit {
-    unsigned int :30;
-    unsigned int :2;
-    unsigned int _field1;
-    char _field2[0];
-};
+struct _LSSchemaCache;
 
 struct _NSRange {
     unsigned long long _field1;
@@ -243,18 +370,67 @@ struct _NSRange {
 
 struct __CFArray;
 
+struct __CFString;
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*> *_field1;
+};
+
 struct __hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*> *_field1;
+};
+
+struct optional<LSBinding> {
+    union {
+        char _field1;
+        struct LSBinding _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<LaunchServices::BindingEvaluator> {
+    union {
+        char _field1;
+        struct BindingEvaluator _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<audit_token_t> {
+    union {
+        char __null_state_;
+        CDStruct_4c969caf __val_;
+    } ;
+    _Bool __engaged_;
+};
+
+struct optional<signed char> {
+    union {
+        char _field1;
+        char _field2;
+    } _field1;
+    _Bool _field2;
 };
 
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
 
-struct unique_ptr<CSStore2::Store, std::__1::default_delete<CSStore2::Store>> {
-    struct __compressed_pair<CSStore2::Store *, std::__1::default_delete<CSStore2::Store>> {
-        struct Store *__value_;
+struct unique_ptr<LaunchServices::OpenWithMenu::State, std::__1::default_delete<LaunchServices::OpenWithMenu::State>> {
+    struct __compressed_pair<LaunchServices::OpenWithMenu::State *, std::__1::default_delete<LaunchServices::OpenWithMenu::State>> {
+        struct State *__value_;
     } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*> **_field1;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*>> {
+                unsigned long long _field1;
+            } _field1;
+        } _field2;
+    } _field1;
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*>>> {
@@ -265,6 +441,21 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::bas
                 unsigned long long _field1;
             } _field1;
         } _field2;
+    } _field1;
+};
+
+struct unordered_map<OpaqueMappedResourceFileRef *, NSData *, std::__1::hash<OpaqueMappedResourceFileRef *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, std::__1::allocator<std::__1::pair<OpaqueMappedResourceFileRef *const, NSData *>>> {
+    struct __hash_table<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::__unordered_map_hasher<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::hash<OpaqueMappedResourceFileRef *>, true>, std::__1::__unordered_map_equal<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, true>, std::__1::allocator<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::hash<OpaqueMappedResourceFileRef *>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, true>> {
+            float _field1;
+        } _field4;
     } _field1;
 };
 
@@ -283,11 +474,51 @@ struct unordered_set<std::__1::basic_string<char>, std::__1::hash<std::__1::basi
     } _field1;
 };
 
+struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> {
+    unsigned int *_field1;
+    unsigned int *_field2;
+    struct __compressed_pair<LSBundleClass *, std::__1::allocator<LSBundleClass>> {
+        unsigned int *_field1;
+    } _field3;
+};
+
+struct vector<LaunchServices::BindingEvaluation::ExtendedBinding, std::__1::allocator<LaunchServices::BindingEvaluation::ExtendedBinding>> {
+    struct ExtendedBinding *_field1;
+    struct ExtendedBinding *_field2;
+    struct __compressed_pair<LaunchServices::BindingEvaluation::ExtendedBinding *, std::__1::allocator<LaunchServices::BindingEvaluation::ExtendedBinding>> {
+        struct ExtendedBinding *_field1;
+    } _field3;
+};
+
+struct vector<LaunchServices::OpenWithMenu::Item, std::__1::allocator<LaunchServices::OpenWithMenu::Item>> {
+    struct Item *_field1;
+    struct Item *_field2;
+    struct __compressed_pair<LaunchServices::OpenWithMenu::Item *, std::__1::allocator<LaunchServices::OpenWithMenu::Item>> {
+        struct Item *_field1;
+    } _field3;
+};
+
 struct vector<ProcessSerialNumber, std::__1::allocator<ProcessSerialNumber>> {
     struct ProcessSerialNumber *__begin_;
     struct ProcessSerialNumber *__end_;
     struct __compressed_pair<ProcessSerialNumber *, std::__1::allocator<ProcessSerialNumber>> {
         struct ProcessSerialNumber *__value_;
+    } __end_cap_;
+};
+
+struct vector<const LSExtensionPointData *, std::__1::allocator<const LSExtensionPointData *>> {
+    struct LSExtensionPointData **__begin_;
+    struct LSExtensionPointData **__end_;
+    struct __compressed_pair<const LSExtensionPointData **, std::__1::allocator<const LSExtensionPointData *>> {
+        struct LSExtensionPointData **__value_;
+    } __end_cap_;
+};
+
+struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *__begin_;
+    unsigned int *__end_;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *__value_;
     } __end_cap_;
 };
 
@@ -307,13 +538,61 @@ typedef struct {
     unsigned int _field11;
     unsigned int _field12;
     unsigned int _field13;
-} CDStruct_2b3aadc0;
+    unsigned int _field14;
+    unsigned int _field15;
+} CDStruct_3253f94e;
+
+typedef struct {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+} CDStruct_32a7f38a;
+
+typedef struct {
+    unsigned long long _field1;
+    id *_field2;
+    unsigned long long *_field3;
+    unsigned long long _field4[5];
+} CDStruct_70511ce9;
 
 typedef struct {
     unsigned int val[8];
 } CDStruct_4c969caf;
 
+typedef struct CDStruct_183601bc;
+
 // Template types
+typedef struct optional<LSBinding> {
+    union {
+        char _field1;
+        struct LSBinding _field2;
+    } _field1;
+    _Bool _field2;
+} optional_430a8fae;
+
+typedef struct optional<LaunchServices::BindingEvaluator> {
+    union {
+        char _field1;
+        struct BindingEvaluator _field2;
+    } _field1;
+    _Bool _field2;
+} optional_a0013cf8;
+
+typedef struct unordered_map<OpaqueMappedResourceFileRef *, NSData *, std::__1::hash<OpaqueMappedResourceFileRef *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, std::__1::allocator<std::__1::pair<OpaqueMappedResourceFileRef *const, NSData *>>> {
+    struct __hash_table<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::__unordered_map_hasher<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::hash<OpaqueMappedResourceFileRef *>, true>, std::__1::__unordered_map_equal<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, true>, std::__1::allocator<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>*>>> _field1;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, void *>*> _field1;
+        } _field2;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::hash<OpaqueMappedResourceFileRef *>, true>> {
+            unsigned long long _field1;
+        } _field3;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<OpaqueMappedResourceFileRef *, std::__1::__hash_value_type<OpaqueMappedResourceFileRef *, NSData *>, std::__1::equal_to<OpaqueMappedResourceFileRef *>, true>> {
+            float _field1;
+        } _field4;
+    } _field1;
+} unordered_map_69d95cdf;
+
 typedef struct unordered_set<std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
     struct __hash_table<std::__1::basic_string<char>, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::basic_string<char>, void *>*>*>>> _field1;

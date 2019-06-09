@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <ContactsUI/UIItemProviderReading-Protocol.h>
-#import <ContactsUI/UIItemProviderWriting-Protocol.h>
+#import <ContactsUI/NSItemProviderReading-Protocol.h>
+#import <ContactsUI/NSItemProviderWriting-Protocol.h>
 
 @class CNContactStore, NSArray, NSString;
 
-@interface CNUIDraggingContacts : NSObject <UIItemProviderWriting, UIItemProviderReading>
+@interface CNUIDraggingContacts : NSObject <NSItemProviderWriting, NSItemProviderReading>
 {
     NSArray *_draggingContacts;
     CNContactStore *_contactStore;

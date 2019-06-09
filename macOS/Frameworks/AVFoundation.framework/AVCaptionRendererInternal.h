@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     NSArray *_captions;
     struct CGRect _bounds;
+    NSArray *_sortedCaptions;
     struct OpaqueFigCDSSession *_cdsSession;
 }
 

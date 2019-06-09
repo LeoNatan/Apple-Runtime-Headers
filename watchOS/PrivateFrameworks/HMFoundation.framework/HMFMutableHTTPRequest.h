@@ -19,7 +19,7 @@
 - (id)initWithInternalRequest:(id)arg1;
 
 // Remaining properties
-@property(retain, nonatomic) NSDictionary *headerFields; // @dynamic headerFields;
+@property(copy, nonatomic) NSDictionary *headerFields; // @dynamic headerFields;
 @property(nonatomic) double timeoutInterval; // @dynamic timeoutInterval;
 
 @end

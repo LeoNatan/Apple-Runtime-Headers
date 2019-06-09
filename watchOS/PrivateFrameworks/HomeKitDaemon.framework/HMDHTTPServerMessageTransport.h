@@ -22,6 +22,7 @@
 }
 
 + (id)shortDescription;
++ (id)maximumSupportedProtocolVersion;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property __weak id <HMDHTTPServerMessageTransportDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HMFHTTPServer *server; // @synthesize server=_server;

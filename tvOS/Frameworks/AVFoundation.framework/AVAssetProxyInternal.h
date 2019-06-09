@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class AVAssetInspectorLoader, NSArray;
+@class AVAssetInspectorLoader, AVDispatchOnce, NSArray;
 
 __attribute__((visibility("hidden")))
 @interface AVAssetProxyInternal : NSObject
 {
     AVAssetInspectorLoader *loader;
     NSArray *tracks;
-    long long makeTracksArrayOnce;
+    AVDispatchOnce *makeTracksArrayOnce;
 }
 
 @end

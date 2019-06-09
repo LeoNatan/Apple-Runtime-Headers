@@ -9,6 +9,7 @@
 @class NSMutableArray, UIToolbar;
 @protocol SKUISlideshowGalleryBarViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISlideshowGalleryBarView : UIView
 {
     UIToolbar *_toolbarView;

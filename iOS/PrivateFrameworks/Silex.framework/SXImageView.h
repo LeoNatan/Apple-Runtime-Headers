@@ -57,8 +57,8 @@
 @property(retain, nonatomic) NSMapTable *interestTable; // @synthesize interestTable=_interestTable;
 @property(nonatomic) unsigned long long highQualityInterest; // @synthesize highQualityInterest=_highQualityInterest;
 @property(nonatomic) unsigned long long preferredQualityInterest; // @synthesize preferredQualityInterest=_preferredQualityInterest;
-@property(retain, nonatomic) UIImage *highQualityImage; // @synthesize highQualityImage=_highQualityImage;
-@property(retain, nonatomic) UIImage *preferredQualityImage; // @synthesize preferredQualityImage=_preferredQualityImage;
+@property(nonatomic) __weak UIImage *highQualityImage; // @synthesize highQualityImage=_highQualityImage;
+@property(nonatomic) __weak UIImage *preferredQualityImage; // @synthesize preferredQualityImage=_preferredQualityImage;
 @property(nonatomic) struct CGSize preferredQualityLoadingImageSize; // @synthesize preferredQualityLoadingImageSize=_preferredQualityLoadingImageSize;
 @property(copy, nonatomic) CDUnknownBlockType highQualityImageRequestCancelHandler; // @synthesize highQualityImageRequestCancelHandler=_highQualityImageRequestCancelHandler;
 @property(copy, nonatomic) CDUnknownBlockType preferredQualityImageRequestCancelHandler; // @synthesize preferredQualityImageRequestCancelHandler=_preferredQualityImageRequestCancelHandler;

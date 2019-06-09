@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 @property(retain) IDSBatchIDQueryController *idQueryController; // @synthesize idQueryController=_idQueryController;
 @property SSContactsTokenField *tokenField; // @synthesize tokenField=_tokenField;
 - (void)idStatusUpdatedForDestinations:(id)arg1;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (void)dismissCompletionWindow:(id)arg1;
 - (BOOL)_textViewContainsToken:(id)arg1;
 - (void)_closeCompletionWindow;

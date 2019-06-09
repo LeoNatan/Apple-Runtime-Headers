@@ -8,6 +8,7 @@
 
 @class ODIState;
 
+__attribute__((visibility("hidden")))
 @interface ODIHorizonalList3 : NSObject
 {
     unsigned int mMaxPointCount;

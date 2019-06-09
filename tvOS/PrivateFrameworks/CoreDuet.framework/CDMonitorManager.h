@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, NSMutableSet;
+@class NSMutableDictionary, NSMutableSet;
 @protocol OS_dispatch_queue;
 
 @interface CDMonitorManager : NSObject
 {
-    NSArray *_monitorManagers;
     NSMutableDictionary *_monitors;
     NSMutableSet *_lazyMonitorNames;
     CDUnknownBlockType _generalInstantHandler;
@@ -24,7 +23,7 @@
     NSObject<OS_dispatch_queue> *_monitorWorkQueue;
 }
 
-+ (id)monitorManagerForEventStreams:(id)arg1;
++ (id)monitorManagerForEventStreams:(id)arg1 domain:(unsigned long long)arg2;
 - (void).cxx_destruct;
 - (_Bool)hasMonitor:(id)arg1;
 - (_Bool)_hasMonitorForStreamName:(id)arg1;
@@ -61,9 +60,8 @@
 - (id)_allMonitors;
 - (id)_allStreamNames;
 - (id)_monitorForStreamName:(id)arg1;
-- (id)initWithEventStreams:(id)arg1;
-- (id)init;
-- (id)_createMonitorManagers;
+- (id)initWithEventStreams:(id)arg1 domain:(unsigned long long)arg2;
+- (void)loadMonitorManagers;
 
 @end
 

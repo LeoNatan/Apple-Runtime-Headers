@@ -28,6 +28,7 @@
 - (void)pcsMigrationFailed;
 - (void)pcsMigrationSucceeded;
 - (void)didRemoveLocalSecret;
+- (void)didAttemptEscrowPreRecord;
 - (void)didChangeLocalSecret;
 
 @end

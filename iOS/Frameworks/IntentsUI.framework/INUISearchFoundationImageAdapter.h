@@ -24,6 +24,8 @@
 - (void)setSize:(struct CGSize)arg1;
 - (int)source;
 - (id)payloadImage;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithIntentsImage:(id)arg1;
 - (id)initWithPayloadImage:(id)arg1;
 

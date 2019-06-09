@@ -22,6 +22,9 @@ __attribute__((visibility("hidden")))
     UIKeyboardEmojiGraphicsTraits *_emojiGraphicsTraits;
     _Bool _isDraggingInputView;
     unsigned int _currentSection;
+    _Bool _inputDelegateCanSupportAnimoji;
+    _Bool _hasShownAnimojiFirstTimeExperience;
+    _Bool _shouldRetryFetchingAnimojiRecents;
     CDUnknownBlockType _completionBlock;
     UIResponder<UIKBEmojiHitTestResponder> *_hitTestResponder;
 }
@@ -47,10 +50,13 @@ __attribute__((visibility("hidden")))
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (_Bool)_showingAnimojiUnsupportedOverlayView;
+- (_Bool)_shouldShowRecentlyUsedMedia;
 - (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shouldDismissModalDisplayView:(id)arg1;
 - (int)didInputSubTree:(id)arg1;

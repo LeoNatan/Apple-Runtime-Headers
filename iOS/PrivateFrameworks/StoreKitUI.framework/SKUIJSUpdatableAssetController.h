@@ -10,6 +10,7 @@
 
 @class SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSUpdatableAssetController : IKJSObject <SKUIJSUpdatableAssetController>
 {
     SKUIClientContext *_clientContext;

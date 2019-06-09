@@ -12,6 +12,7 @@
 {
     UIKeyboardAssistantBar *_owner;
     _Bool _allowsHidingShortcuts;
+    _Bool _showsBarButtonItemsInline;
     _Bool _independentGroupSizes;
     NSArray *_leadingBarButtonGroups;
     NSArray *_trailingBarButtonGroups;
@@ -29,6 +30,7 @@
 @property(nonatomic, getter=_marginOverride, setter=_setMarginOverride:) double marginOverride; // @synthesize marginOverride=_marginOverride;
 @property(nonatomic, getter=_independentGroupSizes, setter=_setIndependentGroupSizes:) _Bool independentGroupSizes; // @synthesize independentGroupSizes=_independentGroupSizes;
 @property(copy, nonatomic, getter=_centerBarButtonGroups, setter=_setCenterBarButtonGroups:) NSArray *centerBarButtonGroups; // @synthesize centerBarButtonGroups=_centerBarButtonGroups;
+@property(nonatomic, getter=_showsBarButtonItemsInline, setter=_setShowsBarButtonItemsInline:) _Bool showsBarButtonItemsInline; // @synthesize showsBarButtonItemsInline=_showsBarButtonItemsInline;
 @property(copy, nonatomic) NSArray *trailingBarButtonGroups; // @synthesize trailingBarButtonGroups=_trailingBarButtonGroups;
 @property(copy, nonatomic) NSArray *leadingBarButtonGroups; // @synthesize leadingBarButtonGroups=_leadingBarButtonGroups;
 @property(nonatomic) _Bool allowsHidingShortcuts; // @synthesize allowsHidingShortcuts=_allowsHidingShortcuts;

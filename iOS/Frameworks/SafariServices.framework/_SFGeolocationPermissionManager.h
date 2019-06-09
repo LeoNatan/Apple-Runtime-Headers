@@ -4,20 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <WebUI/WBSGeolocationPreferenceManager.h>
 
-@class UIWebGeolocationPolicyDecider;
-
-@interface _SFGeolocationPermissionManager : NSObject
+@interface _SFGeolocationPermissionManager : WBSGeolocationPreferenceManager
 {
-    UIWebGeolocationPolicyDecider *_policyDecider;
 }
 
 + (id)sharedManager;
-- (void).cxx_destruct;
 - (void)_showDialogRequestingPermissionForURL:(id)arg1 frame:(id)arg2 dialogPresenter:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)requestPermissionForURL:(id)arg1 frame:(id)arg2 dialogPresenter:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (id)init;
 
 @end
 

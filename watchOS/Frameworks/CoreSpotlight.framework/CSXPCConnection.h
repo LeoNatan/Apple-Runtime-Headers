@@ -13,10 +13,12 @@
 {
     _Bool _machService;
     _Bool _listener;
+    _Bool _nonLaunching;
     NSString *_uuid;
     NSString *_serviceName;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_xpc_object> *_connection;
+    unsigned int _user;
 }
 
 + (id)appIdentifierFromTeamAppTuple:(id)arg1;
@@ -25,9 +27,12 @@
 + (void)dictionary:(id)arg1 setStringArray:(id)arg2 forKey:(const char *)arg3;
 + (id)copyNSStringSetFromXPCArray:(id)arg1;
 + (id)copyNSStringArrayFromXPCArray:(id)arg1;
++ (id)copyNSDataForKey:(const char *)arg1 fromXPCDictionary:(id)arg2;
 + (id)copyNSStringForKey:(const char *)arg1 fromXPCDictionary:(id)arg2;
 + (void)initialize;
+@property(nonatomic) unsigned int user; // @synthesize user=_user;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
+@property(nonatomic) _Bool nonLaunching; // @synthesize nonLaunching=_nonLaunching;
 @property(readonly, nonatomic) _Bool listener; // @synthesize listener=_listener;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
@@ -44,6 +49,7 @@
 - (_Bool)addClientConnectionIfAllowedForConfiguration:(id)arg1;
 - (_Bool)handleMessage:(id)arg1 type:(struct _xpc_type_s *)arg2 connection:(id)arg3;
 - (_Bool)handleCommand:(const char *)arg1 info:(id)arg2 connection:(id)arg3;
+- (void)_setUser:(unsigned int)arg1;
 - (id)initMachServiceListenerWithName:(id)arg1;
 - (id)initListenerWithName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 machService:(_Bool)arg2;

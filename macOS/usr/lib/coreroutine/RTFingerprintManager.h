@@ -43,10 +43,11 @@
 - (void)onStoreAvailabilityDidChangeNotification:(id)arg1;
 - (void)fetchWifiAccessPointsForFingerprint:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchFingerprintsBetweenStartDate:(id)arg1 endDate:(id)arg2 filteredBySettledState:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)fetchFingerprintsInDateInterval:(id)arg1 filteredBySettledState:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)initWithDefaultsManager:(id)arg1 fingerprintStore:(id)arg2 scenarioTriggerManager:(id)arg3 wifiManager:(id)arg4;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
-- (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_shutdown;
 - (void)_setup;
 

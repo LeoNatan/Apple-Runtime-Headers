@@ -20,6 +20,7 @@
 }
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
+- (void).cxx_destruct;
 - (id)_changedObjects;
 - (_Bool)_getOldSet:(id *)arg1 newSet:(id *)arg2;
 - (id)_diffDescription;
@@ -28,7 +29,6 @@
 - (_Bool)shouldReload;
 - (id)albumList;
 - (id)object;
-- (void)dealloc;
 - (id)initWithFilteredAlbumList:(id)arg1 albumListChangeNotification:(id)arg2;
 - (id)init;
 - (_Bool)shouldIncludeObjectAtIndex:(unsigned long long)arg1;

@@ -10,7 +10,7 @@
 #import <Suggestions/NSTableViewDelegate-Protocol.h>
 #import <Suggestions/SGTInputDelegate-Protocol.h>
 
-@class NSArray, NSMapTable, NSString, SGTQueryGenius, SGTSearchFieldReserved, SGTSuggestion;
+@class NSArray, NSDictionary, NSMapTable, NSString, SGTQueryGenius, SGTSearchFieldReserved, SGTSuggestion;
 @protocol SGTSearchFieldDelegate, SGTSearchFieldQueryScopeDelegate;
 
 @interface SGTSearchField : NSSearchField <SGTInputDelegate, NSTableViewDataSource, NSTableViewDelegate>
@@ -39,6 +39,7 @@
 - (BOOL)suggesterCanGenerateTopHits:(id)arg1;
 - (id)_accessibilityCompletionMenu;
 @property(readonly) NSString *searchPhrase;
+@property(readonly) NSDictionary *displayCriteria;
 @property(readonly) NSArray *queryScopes;
 @property(readonly) NSString *queryString;
 - (void)_toggleSuggestionsWindow:(id)arg1;
@@ -140,6 +141,7 @@
 @property unsigned long long maximumEffectiveInputLength;
 @property BOOL useTokens;
 @property(copy) NSArray *suggesters;
+@property long long searchQueryIndex;
 @property BOOL highlightsMatches;
 @property BOOL ignoreWindowResizeNotifications;
 @property(readonly) BOOL queryStringChangesAreTransient;

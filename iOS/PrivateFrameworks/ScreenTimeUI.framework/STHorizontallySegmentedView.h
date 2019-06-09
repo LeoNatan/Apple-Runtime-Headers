@@ -10,9 +10,11 @@
 
 @interface STHorizontallySegmentedView : UIView
 {
-    _Bool _isWidget;
+    _Bool _useVibrancy;
+    _Bool _truncateLabels;
     NSArray *_segmentItems;
     NSNumber *_numberOfLines;
+    unsigned long long _maximumNumberOfLines;
     double _previousWidth;
     NSMutableArray *_segmentViews;
     NSArray *_segmentConstraints;
@@ -21,14 +23,18 @@
 @property(copy, nonatomic) NSArray *segmentConstraints; // @synthesize segmentConstraints=_segmentConstraints;
 @property(readonly, nonatomic) NSMutableArray *segmentViews; // @synthesize segmentViews=_segmentViews;
 @property(nonatomic) double previousWidth; // @synthesize previousWidth=_previousWidth;
-@property(readonly, nonatomic) _Bool isWidget; // @synthesize isWidget=_isWidget;
+@property(readonly) _Bool truncateLabels; // @synthesize truncateLabels=_truncateLabels;
+@property(readonly) _Bool useVibrancy; // @synthesize useVibrancy=_useVibrancy;
+@property(readonly) unsigned long long maximumNumberOfLines; // @synthesize maximumNumberOfLines=_maximumNumberOfLines;
 @property(retain, nonatomic) NSNumber *numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 @property(copy, nonatomic) NSArray *segmentItems; // @synthesize segmentItems=_segmentItems;
 - (void).cxx_destruct;
 - (void)_setUpConstraints;
 - (void)layoutSubviews;
-- (id)initForWidget:(_Bool)arg1;
 - (id)init;
+- (void)_stHorizontallySegmentedViewCommonInit;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithVibrancy:(_Bool)arg1 maximumNumberOfLines:(unsigned long long)arg2 truncateLabels:(_Bool)arg3;
 
 @end
 

@@ -6,9 +6,10 @@
 
 #import <PepperUICore/PUICQuickboardController-Protocol.h>
 
-@class NSString, PUICClassicEmojiView;
+@class IMSticker, NSString, PUICClassicEmojiView, UIView;
 
 @protocol PUICRecentEmojiViewDelegate <PUICQuickboardController>
+- (void)recentEmojiView:(PUICClassicEmojiView *)arg1 didSelectSticker:(IMSticker *)arg2 preview:(UIView *)arg3;
 - (void)recentEmojiView:(PUICClassicEmojiView *)arg1 didSelectEmojiCategory:(NSString *)arg2;
 - (void)recentEmojiView:(PUICClassicEmojiView *)arg1 didSelectEmojiString:(NSString *)arg2;
 @end

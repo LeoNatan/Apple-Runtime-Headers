@@ -10,6 +10,7 @@
 
 @optional
 - (void)replaySensorDidFinishReplayingData;
+- (void)replaySensorDidFinishLoadingWithStartTimestamp:(double)arg1 endTimestamp:(double)arg2;
 - (void)replaySensorDidFinishLoadingFrames:(unsigned long long)arg1;
 @end
 

@@ -6,7 +6,6 @@
 
 #import <UIKit/UIViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit29ParticipantGridViewController : UIViewController
 {
     // Error parsing type: , name: participants
@@ -23,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)forceBumpPriority;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithCoder:(id)arg1;

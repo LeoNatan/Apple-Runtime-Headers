@@ -8,31 +8,24 @@
 
 #import <RelevanceEngine/NSCopying-Protocol.h>
 #import <RelevanceEngine/NSMutableCopying-Protocol.h>
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/REAutomaticExportedInterface-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, NSURL, REDataSourceLoader, REFeatureSet, RELocationManager;
+@class NSArray, NSMutableDictionary, NSString, NSURL, REDataSourceLoader, REFeatureSet, RELocationManager, RERelevanceProviderManagerLoader;
+@protocol OS_dispatch_queue, RERelevanceEngineMetricsRecorder;
 
-@interface RERelevanceEngineConfiguration : NSObject <REIndentedDescription, NSCopying, NSMutableCopying>
+@interface RERelevanceEngineConfiguration : NSObject <REAutomaticExportedInterface, NSCopying, NSMutableCopying>
 {
-    NSURL *_modelFileURL;
-    NSURL *_baseModelFileURL;
-    _Bool _allowsUpdatingModelFile;
-    REDataSourceLoader *_dataSourceLoader;
-    unsigned long long _trainingBehavior;
-    unsigned long long _modelStorageBehavior;
-    RELocationManager *_locationManager;
-    NSMutableArray *_sectionDescriptions;
-    NSMutableArray *_interactionDescriptions;
-    REFeatureSet *_featureSet;
-    _Bool _wantsImmutableContent;
-    NSString *_preferenceDomain;
-    _Bool _allowsRemoteTraining;
-    _Bool _wantsBackup;
-    _Bool _ignoreDeviceLockState;
+    NSMutableDictionary *_values;
 }
 
 + (id)defaultConfiguration;
++ (id)_defaultModelFileURL;
++ (id)sampleUpNextConfiguration;
++ (id)defaultUpNextConfiguration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool ignoresInstalledApplications;
+@property(readonly, nonatomic) id <RERelevanceEngineMetricsRecorder> metricsRecorder;
+@property(readonly, nonatomic) _Bool allowsDiagnosticExtension;
 @property(readonly, nonatomic) _Bool ignoreDeviceLockState;
 @property(readonly, nonatomic) _Bool wantsBackup;
 @property(readonly, nonatomic) _Bool allowsRemoteTraining;
@@ -44,21 +37,24 @@
 @property(readonly, copy, nonatomic) NSArray *sectionDescriptors;
 @property(readonly, nonatomic) unsigned long long modelStorageBehavior;
 @property(readonly, nonatomic) unsigned long long trainingBehavior;
+@property(readonly, copy, nonatomic) RERelevanceProviderManagerLoader *relevanceProviderManagerLoader;
 @property(readonly, copy, nonatomic) REDataSourceLoader *dataSourceLoader;
 @property(readonly, nonatomic) _Bool allowsUpdatingModelFile;
+@property(readonly, nonatomic) unsigned long long modelVersion;
 @property(readonly, copy, nonatomic) NSURL *baseModelFileURL;
 @property(readonly, copy, nonatomic) NSURL *modelFileURL;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *observerQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *engineQueue;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionWithIndent:(unsigned long long)arg1;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
+- (id)description;
+- (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithModelFileURL:(id)arg1 baseModelFileURL:(id)arg2 allowsUpdatingModelFile:(_Bool)arg3 dataSourceLoader:(id)arg4 trainingBehavior:(unsigned long long)arg5 modelStorageBehavior:(unsigned long long)arg6 sectionDescriptions:(id)arg7 locationManager:(id)arg8 featureSet:(id)arg9 wantsImmutableContent:(_Bool)arg10 preferenceDomain:(id)arg11 interactionDescriptions:(id)arg12 allowsRemoteTraining:(_Bool)arg13 wantsBackup:(_Bool)arg14 ignoreDeviceLockState:(_Bool)arg15;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
+- (void)setValue:(id)arg1 forKey:(id)arg2 ofClass:(Class)arg3;
+- (id)valueForKey:(id)arg1 ofClass:(Class)arg2 defaultValue:(id)arg3;
+- (id)initWithDictionary:(id)arg1;
+- (id)init;
 
 @end
 

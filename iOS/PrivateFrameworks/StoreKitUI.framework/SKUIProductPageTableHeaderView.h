@@ -8,6 +8,7 @@
 
 @class NSString, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageTableHeaderView : UIView
 {
     struct UIEdgeInsets _contentInsets;

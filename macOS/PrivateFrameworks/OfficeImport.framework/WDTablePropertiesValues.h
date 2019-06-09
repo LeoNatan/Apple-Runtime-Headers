@@ -8,6 +8,7 @@
 
 @class NSDate, WDBorder, WDShading, WDStyle;
 
+__attribute__((visibility("hidden")))
 @interface WDTablePropertiesValues : NSObject
 {
     unsigned int mBaseStyleOverridden:1;

@@ -45,7 +45,6 @@
 @property(copy) NSTimeZone *timeZone;
 @property(copy) NSCalendar *calendar;
 @property(copy) NSLocale *locale;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

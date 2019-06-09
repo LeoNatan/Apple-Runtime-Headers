@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (BOOL)openPassWithURL:(id)arg1 hostWindow:(id)arg2 error:(id *)arg3;
++ (BOOL)openPassWithURL:(id)arg1 forDownload:(id)arg2 inWindow:(id)arg3 error:(id *)arg4;
 + (BOOL)isPassMIMEType:(id)arg1;
 + (BOOL)canLoadPassKit;
 

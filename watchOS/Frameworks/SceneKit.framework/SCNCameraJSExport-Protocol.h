@@ -18,6 +18,11 @@
 @property(nonatomic) double xFov;
 @property(nonatomic) unsigned int categoryBitMask;
 @property(readonly, nonatomic) SCNMaterialProperty *colorGrading;
+@property(nonatomic) float whiteBalanceTint;
+@property(nonatomic) float whiteBalanceTemperature;
+@property(nonatomic) float grainIsColored;
+@property(nonatomic) float grainScale;
+@property(nonatomic) float grainIntensity;
 @property(nonatomic) float contrast;
 @property(nonatomic) float saturation;
 @property(nonatomic) float colorFringeIntensity;
@@ -26,6 +31,7 @@
 @property(nonatomic) float vignettingPower;
 @property(nonatomic) float bloomBlurRadius;
 @property(nonatomic) float bloomIntensity;
+@property(nonatomic) unsigned int bloomIterationSpread;
 @property(nonatomic) unsigned int bloomIteration;
 @property(nonatomic) float bloomThreshold;
 @property(nonatomic) float maximumExposure;

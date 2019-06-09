@@ -9,6 +9,7 @@
 @class NSImage, NSMutableArray, NSString;
 @protocol AVTouchBarAudioCaptureDeviceSelectionButtonViewControllerDelegate, AVTouchBarRecordingControlsControllingInternal;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarAudioCaptureDeviceSelectionButtonViewController : NSViewController
 {
     NSMutableArray *_bindings;

@@ -14,6 +14,8 @@
 + (id)confirmationRequiredWithMessageAttributeOptionsToConfirm:(unsigned int)arg1;
 + (id)successWithResolvedValue:(unsigned int)arg1;
 + (id)successWithResolvedMessageAttributeOptions:(unsigned int)arg1;
+- (id)_vocabularyValueForObject:(id)arg1 slotDescription:(id)arg2;
+- (id)_intentSlotValueForObject:(id)arg1 slotDescription:(id)arg2;
 
 @end
 

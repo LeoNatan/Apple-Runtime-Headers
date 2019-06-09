@@ -22,7 +22,6 @@
 - (float)angleInDegreesBetweenFaceDirectionAndImageXAxisForFace:(id)arg1;
 - (long long)_expressionTypeFromExpressionString:(id)arg1;
 - (struct CGPoint)centroidForLandmarkRegion:(id)arg1;
-- (struct CGRect)rectForLandmarkRegion:(id)arg1;
 - (void)configureRequest:(id)arg1;
 - (id)initWithContext:(id)arg1 visionIntegration:(id)arg2;
 

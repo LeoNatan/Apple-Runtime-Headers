@@ -16,12 +16,16 @@ __attribute__((visibility("hidden")))
     PBUnknownFields *_unknownFields;
     unsigned long long _featureId;
     GEOLatLng *_location;
-    CDStruct_b1448a5c _has;
+    int _formattedAddressType;
+    struct {
+        unsigned int has_featureId:1;
+        unsigned int has_formattedAddressType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOLatLng *location; // @synthesize location=_location;
-@property(nonatomic) unsigned long long featureId; // @synthesize featureId=_featureId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,10 +34,17 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsFormattedAddressType:(id)arg1;
+- (id)formattedAddressTypeAsString:(int)arg1;
+@property(nonatomic) _Bool hasFormattedAddressType;
+@property(nonatomic) int formattedAddressType;
+@property(retain, nonatomic) GEOLatLng *location;
 @property(readonly, nonatomic) _Bool hasLocation;
 @property(nonatomic) _Bool hasFeatureId;
+@property(nonatomic) unsigned long long featureId;
 
 @end
 

@@ -8,5 +8,6 @@
 
 @interface NSObject (WebDescriptionCategory)
 - (id)_web_description;
+- (void)releaseOnMainThread;
 @end
 

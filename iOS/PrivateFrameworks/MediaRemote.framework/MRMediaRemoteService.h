@@ -22,7 +22,8 @@ __attribute__((visibility("hidden")))
         CDUnknownFunctionPointerType _field7;
         CDUnknownFunctionPointerType _field8;
         CDUnknownFunctionPointerType _field9;
-        void *_field10;
+        CDUnknownFunctionPointerType _field10;
+        void *_field11;
     } *clientModule;
     const struct {
         void *_field1;

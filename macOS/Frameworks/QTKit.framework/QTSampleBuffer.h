@@ -6,46 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class QTSampleBufferInternal;
-
 @interface QTSampleBuffer : NSObject
 {
-    QTSampleBufferInternal *_internal;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
 + (id)sampleBufferWithFigSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
-- (id)valueForUndefinedKey:(id)arg1;
-- (id)_hostTime;
-- (id)_sceneChangeType;
-- (id)_dateRecorded;
-- (BOOL)_getDVVideoInfo:(CDStruct_e4d4557c *)arg1 fromFigSampleBuffer:(struct opaqueCMSampleBuffer *)arg2;
-- (id)_SMPTETime;
-- (long long)sceneChangeType;
-- (id)dateRecorded;
-- (struct SMPTETime)SMPTETime;
-- (id)attributeForKey:(id)arg1;
-- (id)sampleBufferAttributes;
-- (unsigned long long)numberOfSamples;
-- (CDStruct_900afa40)presentationTime;
-- (CDStruct_900afa40)decodeTime;
-- (CDStruct_900afa40)duration;
-- (id)formatDescription;
-- (void)_cacheCVImageBufferAsCVPixelBufferIfNecessary:(struct __CVBuffer *)arg1;
-- (unsigned long long)lengthForAllSamples;
-- (void *)bytesForAllSamples;
-- (struct opaqueCMSampleBuffer *)retainedFigSampleBuffer;
-- (void)finalize;
-- (void)dealloc;
-- (id)init;
 - (id)initWithFigSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
-- (void)decrementSampleUseCount;
-- (void)incrementSampleUseCount;
-- (unsigned long long)sampleUseCount;
-- (BOOL)getAudioStreamPacketDescriptions:(struct AudioStreamPacketDescription *)arg1 inRange:(struct _NSRange)arg2;
-- (struct AudioBufferList *)audioBufferListWithOptions:(unsigned long long)arg1;
+- (id)init;
 
 @end
 

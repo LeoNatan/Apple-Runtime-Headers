@@ -14,6 +14,7 @@
     NSDictionary *_appleAccount;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *HSAData;
 @property(readonly, nonatomic) NSString *HSAAction;
 @property(readonly, nonatomic) NSString *altDSID;

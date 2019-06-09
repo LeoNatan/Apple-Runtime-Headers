@@ -16,13 +16,13 @@
 {
     NSObject<OS_dispatch_queue> *_requestProcessingQueue;
     WBSParsecDFeedbackDispatcher *_feedbackDispatcher;
-    GEOUserSessionEntity *_geoUserSessionEntity;
-    _Bool _valid;
+    GEOUserSessionEntity *_threadUnsafeGEOUserSessionEntity;
+    struct os_unfair_lock_s _geoUserSessionLock;
     _Bool _skipAutoFillDataUpdates;
-    id <WBSParsecSearchSessionDelegate> _delegate;
-    WBSCompletionQuery *_currentQuery;
-    double _uiScale;
-    PARSession *_parsecdSession;
+    double _threadUnsafeUIScale;
+    WBSCompletionQuery *_threadUnsafeCurrentQuery;
+    id <WBSParsecSearchSessionDelegate> _threadUnsafeDelegate;
+    PARSession *_threadUnsafeParsecdSession;
     unsigned long long _currentQueryID;
 }
 
@@ -32,17 +32,16 @@
 + (id)sharedDomainPolicyProvider;
 + (id)sharedPARSession;
 @property unsigned long long currentQueryID; // @synthesize currentQueryID=_currentQueryID;
-@property(retain, nonatomic) PARSession *parsecdSession; // @synthesize parsecdSession=_parsecdSession;
 @property(readonly, nonatomic) _Bool skipAutoFillDataUpdates; // @synthesize skipAutoFillDataUpdates=_skipAutoFillDataUpdates;
-@property(nonatomic, setter=setUIScale:) double uiScale; // @synthesize uiScale=_uiScale;
-@property(readonly, nonatomic, getter=isValid) _Bool valid; // @synthesize valid=_valid;
-@property(retain, nonatomic) WBSCompletionQuery *currentQuery; // @synthesize currentQuery=_currentQuery;
-@property(nonatomic) __weak id <WBSParsecSearchSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_startUpdatingAutoFillDataInBackgroundIfPossibleForSession:(id)arg1;
 - (void)session:(id)arg1 bag:(id)arg2 didLoadWithError:(id)arg3;
 @property(readonly, nonatomic) id <WBSParsecFeedbackDispatcher> feedbackDispatcher;
 - (void)_didReceiveResponse:(id)arg1 error:(id)arg2 forTask:(id)arg3 query:(id)arg4;
+@property(retain, nonatomic) WBSCompletionQuery *currentQuery; // @synthesize currentQuery=_threadUnsafeCurrentQuery;
+@property(nonatomic, setter=setUIScale:) double uiScale; // @synthesize uiScale=_threadUnsafeUIScale;
+@property(retain, nonatomic) PARSession *parsecdSession; // @synthesize parsecdSession=_threadUnsafeParsecdSession;
+@property(nonatomic) __weak id <WBSParsecSearchSessionDelegate> delegate; // @synthesize delegate=_threadUnsafeDelegate;
 - (id)initWithParsecdSession:(id)arg1 skipAutoFillDataUpdates:(_Bool)arg2;
 
 // Remaining properties

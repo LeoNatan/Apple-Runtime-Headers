@@ -14,6 +14,7 @@
     _Bool _shouldIgnoreGlobalModalUIDisplayPolicy;
 }
 
++ (id)allowDownloadDialogWithDownload:(id)arg1 initiatingURL:(id)arg2 allowViewAction:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 + (id)increaseApplicationCacheQuotaDialogForOrigin:(id)arg1 newQuota:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)increaseDatabaseQuotaDialogForOrigin:(id)arg1 newQuota:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)requestStorageAccessDialogForDomain:(id)arg1 underCurrentDomain:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -27,6 +28,7 @@
 + (id)redirectDialogWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)noFeedAppDialogWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)formSubmissionDialogWithMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)_dialogWithTitle:(id)arg1 message:(id)arg2 acceptAction:(id)arg3 secondaryAction:(id)arg4 cancelAction:(id)arg5 applicationModal:(_Bool)arg6 completionHandler:(CDUnknownBlockType)arg7;
 + (id)_dialogWithTitle:(id)arg1 message:(id)arg2 primaryAction:(id)arg3 secondaryAction:(id)arg4 applicationModal:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 + (id)dialogWithWebUIAlert:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (id)telephonyNavigationDialogWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -40,6 +42,7 @@
 - (id)newViewControllerRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)newDialogViewRepresentation;
 @property(readonly, nonatomic) int presentationStyle;
+@property(readonly, nonatomic) _Bool canceledOnApplicationBackground;
 @property(readonly, copy, nonatomic) NSArray *additionalCancellationExemptions;
 - (void)completeWithResponse:(id)arg1;
 @property(readonly, nonatomic) _Bool completionHandlerBlocksWebProcess;

@@ -6,7 +6,7 @@
 
 #import <AvatarUI/NSObject-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSError, NSString;
 
 @protocol AVTUILogger <NSObject>
 - (void)logCarouselEndsDraggingWithVelocity:(double)arg1 willSwitchIndexPathInsteadOfScrollBack:(_Bool)arg2 forHighVelocity:(_Bool)arg3;
@@ -36,6 +36,10 @@
 - (void)logCarouselChangesCenterItemTo:(NSString *)arg1;
 - (void)logCarouselChangingToMultiMode;
 - (void)logCarouselChangingToSingleMode;
+- (void)logRenderingStickerEnd:(NSString *)arg1;
+- (void)logRenderingStickerStart:(NSString *)arg1;
+- (void)logPaddleViewVideoPlayerFailed:(NSError *)arg1;
+- (void)logStickerGeneratorPoolDidntHaveAvailableGenerator:(long long)arg1 maxCount:(long long)arg2;
 - (void)logDeduplicateRecordWithIdentifier:(NSString *)arg1 toNewRecordWithIdentifier:(NSString *)arg2;
 - (void)logDiscoveredDuplicates:(NSString *)arg1 count:(unsigned long long)arg2;
 - (void)logMaintenanceCompleted;
@@ -78,6 +82,8 @@
 - (void)logTearingDownCoreDataStack:(NSString *)arg1;
 - (void)logDidResetZoneWithSuccess:(_Bool)arg1 error:(NSString *)arg2;
 - (void)logWillResetZone;
+- (void)logDeletingStickerRecents;
+- (void)deletingStickerRecentsForRemoteChanges:(void (^)(void (^)(void)))arg1;
 - (void)logSchedulingUpdateThumbnails;
 - (void)logSchedulingImport;
 - (void)logUpdatingThumbnails;
@@ -162,8 +168,11 @@
 - (void)logImageStoreCacheMiss:(NSString *)arg1;
 - (void)logCreatingImageStoreForPath:(NSString *)arg1;
 - (void)logFileSystemError:(NSString *)arg1;
-- (void)logRecordNotFoundInRecordStore:(NSString *)arg1;
-- (void)logRecordNotFoundInPuppetStore:(NSString *)arg1;
+- (void)logErrorFetchingRecentStickers:(NSString *)arg1;
+- (void)logErrorSavingRecentSticker:(NSString *)arg1;
+- (void)logRecordsNotFoundInRecordStore:(NSString *)arg1;
+- (void)logRecordsNotFoundInPuppetStore:(NSString *)arg1;
+- (void)logRecordsNotFoundInAnyStore:(NSString *)arg1;
 - (void)logReadingError:(NSString *)arg1;
 - (void)logSavingError:(NSString *)arg1;
 - (void)logFetchedRecords:(unsigned long long)arg1 criteria:(long long)arg2;

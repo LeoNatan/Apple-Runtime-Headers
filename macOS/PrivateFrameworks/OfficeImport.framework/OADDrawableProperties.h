@@ -8,6 +8,7 @@
 
 @class NSString, OADHyperlink, OADOrientedBounds;
 
+__attribute__((visibility("hidden")))
 @interface OADDrawableProperties : OADProperties
 {
     OADOrientedBounds *mOrientedBounds;

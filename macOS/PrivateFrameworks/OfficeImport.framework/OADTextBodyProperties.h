@@ -8,6 +8,7 @@
 
 @class OADTextBodyAutoFit, OADTextWarp;
 
+__attribute__((visibility("hidden")))
 @interface OADTextBodyProperties : OADProperties
 {
     OADTextBodyAutoFit *mAutoFit;

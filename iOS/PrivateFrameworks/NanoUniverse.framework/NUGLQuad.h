@@ -20,7 +20,7 @@
 @property(retain, nonatomic) NUScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
 - (void)encodeGLforSize:(struct CLKUIQuadSize)arg1;
-- (void)prepare;
+- (void)setupForQuadView:(id)arg1;
 - (id)initWithResources:(id)arg1;
 
 @end

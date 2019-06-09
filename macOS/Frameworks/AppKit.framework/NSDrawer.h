@@ -64,7 +64,6 @@
 - (void)openOnEdge:(unsigned long long)arg1;
 - (void)open;
 @property unsigned long long preferredEdge;
-- (void)_moveByOffset:(struct CGSize)arg1;
 @property(retain) NSView *contentView;
 - (BOOL)_allowsImplicitRemovalFromMovementGroup;
 @property NSWindow *parentWindow;

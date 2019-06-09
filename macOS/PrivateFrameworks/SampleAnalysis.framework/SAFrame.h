@@ -19,6 +19,8 @@
     NSMutableSet *_childFrames;
 }
 
++ (void)fixupInstructionsInFrameTree:(id)arg1 binaryLoadInfos:(id)arg2 libraryCache:(id)arg3;
++ (void)enumerateFrameTree:(id)arg1 block:(CDUnknownBlockType)arg2;
 + (id)addStack:(id)arg1 toSetOfRootFrames:(id)arg2;
 + (id)frameWithAddress:(unsigned long long)arg1 binaryLoadInfo:(id)arg2 parent:(id)arg3 symbolicationOffByOne:(BOOL)arg4;
 + (id)frameWithPAStyleSerializedFrame:(const CDStruct_1a4856f2 *)arg1;

@@ -22,12 +22,14 @@
     unsigned int _style;
     float _topPadding;
     float _bottomPadding;
+    float _minimumHeight;
 }
 
 @property(readonly, nonatomic) PKCheckGlyphLayer *checkmarkLayer; // @synthesize checkmarkLayer=_checkmarkLayer;
 @property(readonly, nonatomic) UIActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) _Bool accessoryViewsDisabled; // @synthesize accessoryViewsDisabled=_accessoryViewsDisabled;
+@property(nonatomic) float minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(nonatomic) float bottomPadding; // @synthesize bottomPadding=_bottomPadding;
 @property(nonatomic) float topPadding; // @synthesize topPadding=_topPadding;
 @property(nonatomic) _Bool shouldResizeImageToFit; // @synthesize shouldResizeImageToFit=_shouldResizeImageToFit;
@@ -48,8 +50,7 @@
 @property(readonly, nonatomic) UILabel *titleLabel;
 - (void)_updateImageView;
 - (void)setImageViewImage:(id)arg1 withSize:(struct CGSize)arg2 animated:(_Bool)arg3;
-- (void)setPassSnapshotUsingDefaultSize:(id)arg1 animated:(_Bool)arg2;
-- (void)setPassSnapshotUsingDefaultSize:(id)arg1;
+- (void)setPassSnapshotUsingDefaultSize:(id)arg1 animated:(_Bool)arg2 needsCorners:(_Bool)arg3;
 - (void)dealloc;
 
 @end

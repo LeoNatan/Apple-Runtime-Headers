@@ -10,7 +10,6 @@
 
 @protocol NFContactlessSessionInterface <NFSessionInterface>
 - (oneway void)stopCardEmulation:(void (^)(NSError *))arg1;
-- (oneway void)startHostCardEmulation:(void (^)(NSError *))arg1;
 - (oneway void)startCardEmulation:(void (^)(NSError *))arg1;
 - (oneway void)setActiveApplet:(NFApplet *)arg1 callback:(void (^)(NFApplet *, NSError *))arg2;
 - (oneway void)getApplets:(void (^)(NSArray *, NFApplet *, NSError *))arg1;

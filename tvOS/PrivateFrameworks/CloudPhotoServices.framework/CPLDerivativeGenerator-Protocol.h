@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CPLAdjustments, CPLResource, NSError, NSURL;
+@class CPLAdjustments, CPLDerivativesFilter, CPLResource, NSError, NSURL;
 
 @protocol CPLDerivativeGenerator
 + (_Bool)isUnsupportedOriginalFormatError:(NSError *)arg1;
-+ (void)generateDerivativeResourcesFromInputResource:(CPLResource *)arg1 withAdjustments:(CPLAdjustments *)arg2 destinationDirectory:(NSURL *)arg3 completionHandler:(void (^)(NSArray *, NSError *))arg4;
++ (void)generateDerivativeResourcesFromInputResource:(CPLResource *)arg1 withAdjustments:(CPLAdjustments *)arg2 destinationDirectory:(NSURL *)arg3 derivativesFilter:(CPLDerivativesFilter *)arg4 completionHandler:(void (^)(NSArray *, NSError *))arg5;
 @end
 

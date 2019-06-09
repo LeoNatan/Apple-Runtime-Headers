@@ -26,8 +26,19 @@
 @property(retain) NSString *phoneMapping; // @synthesize phoneMapping=_phoneMapping;
 @property(retain) NSString *targetMapping; // @synthesize targetMapping=_targetMapping;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToEntityMatchingTransformer:(id)arg1;
+- (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (id)toPlistWithChunks:(id)arg1;
+- (id)extendMatchArray:(id)arg1 withTarget:(id)arg2;
 - (id)transform:(id)arg1;
 - (id)initWithTargetMapping:(id)arg1 phoneMapping:(id)arg2 emailMapping:(id)arg3 addressMapping:(id)arg4 andDateMapping:(id)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -14,6 +14,7 @@
 }
 
 + (_Bool)passwordLooksLikePasswordManagerGeneratedPassword:(id)arg1;
++ (id)requirementsForPasswordRuleSet:(id)arg1 respectingMinLength:(id)arg2 maxLength:(id)arg3;
 @property(copy, nonatomic) NSDictionary *passwordRequirementsByDomain; // @synthesize passwordRequirementsByDomain=_passwordRequirementsByDomain;
 - (void).cxx_destruct;
 - (_Bool)passwordGenerationIsDisallowedByRequirements:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class EDTable;
 
+__attribute__((visibility("hidden")))
 @interface EPTableStyleFlattener : EPStyleFlattener
 {
     EDTable *mTable;

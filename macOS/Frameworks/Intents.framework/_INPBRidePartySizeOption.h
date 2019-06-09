@@ -20,6 +20,7 @@
     NSString *_sizeDescription;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSString *sizeDescription; // @synthesize sizeDescription=_sizeDescription;
 @property(retain, nonatomic) _INPBPriceRangeValue *priceRange; // @synthesize priceRange=_priceRange;
 @property(retain, nonatomic) _INPBRangeValue *partySizeRange; // @synthesize partySizeRange=_partySizeRange;
@@ -28,6 +29,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasSizeDescription;

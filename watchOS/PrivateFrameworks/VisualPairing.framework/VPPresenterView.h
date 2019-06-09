@@ -6,17 +6,26 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString;
+@class AVPlayer, CALayer, NSArray, NSObject, NSString;
+@protocol OS_dispatch_source;
 
 @interface VPPresenterView : UIView
 {
+    AVPlayer *_moviePlayer;
+    _Bool _started;
+    CALayer *_watermarkLayer;
+    NSArray *_watermarkPixelBuffers;
+    unsigned int _watermarkStepIndex;
+    NSObject<OS_dispatch_source> *_watermarkStepTimer;
     NSString *_verificationCode;
 }
 
 @property(copy, nonatomic) NSString *verificationCode; // @synthesize verificationCode=_verificationCode;
 - (void).cxx_destruct;
+- (void)_watermarkStep;
 - (void)stop;
 - (void)start;
+- (void)layoutSubviews;
 
 @end
 

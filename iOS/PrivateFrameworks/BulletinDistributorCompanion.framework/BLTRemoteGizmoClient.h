@@ -9,15 +9,18 @@
 #import <BulletinDistributorCompanion/BLTBulletinSendQueueDelegate-Protocol.h>
 #import <BulletinDistributorCompanion/BLTGizmoClient-Protocol.h>
 
-@class BLTBulletinSendQueuePassthrough, NSString;
+@class BLTBulletinSendQueuePassthrough, BLTGizmoLegacyMap, NSMutableDictionary, NSString;
 @protocol BLTCompanionServer;
 
 @interface BLTRemoteGizmoClient : BLTRemoteObject <BLTBulletinSendQueueDelegate, BLTGizmoClient>
 {
     BLTBulletinSendQueuePassthrough *_bulletinSendQueue;
+    NSMutableDictionary *_gizmoToPhonePublisherBulletinIDMap;
     id <BLTCompanionServer> _server;
+    BLTGizmoLegacyMap *_gizmoLegacyMap;
 }
 
+@property(retain, nonatomic) BLTGizmoLegacyMap *gizmoLegacyMap; // @synthesize gizmoLegacyMap=_gizmoLegacyMap;
 @property(nonatomic) __weak id <BLTCompanionServer> server; // @synthesize server=_server;
 - (void).cxx_destruct;
 - (void)queuePendingRequests;
@@ -31,6 +34,8 @@
 - (void)handleDismissActionRequest:(id)arg1;
 - (void)handleSnoozeActionRequest:(id)arg1;
 - (void)handleAcknowledgeActionRequest:(id)arg1;
+- (id)_phonePublisherBulletinIDForGizmoPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
+- (id)_phonePublisherBulletinIDForGizmoPublisherMatchID:(id)arg1 sectionID:(id)arg2;
 - (void)_pingPairedDeviceWithRetry:(unsigned long long)arg1;
 - (void)_pingPairedDevice;
 - (void)setLastKnownConnectionStatus:(unsigned long long)arg1;

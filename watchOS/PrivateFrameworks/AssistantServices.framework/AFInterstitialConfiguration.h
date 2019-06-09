@@ -20,10 +20,12 @@
     NSString *_languageCode;
     int _gender;
     NSString *_recordRoute;
+    unsigned long long _speechEndHostTime;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)newWithBuilder:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) unsigned long long speechEndHostTime; // @synthesize speechEndHostTime=_speechEndHostTime;
 @property(readonly, nonatomic) _Bool isTwoShot; // @synthesize isTwoShot=_isTwoShot;
 @property(readonly, nonatomic) _Bool isDucking; // @synthesize isDucking=_isDucking;
 @property(readonly, nonatomic) _Bool isVoiceTrigger; // @synthesize isVoiceTrigger=_isVoiceTrigger;
@@ -39,7 +41,7 @@
 - (unsigned int)hash;
 - (id)_descriptionWithIndent:(unsigned int)arg1;
 - (id)description;
-- (id)initWithStyle:(int)arg1 languageCode:(id)arg2 gender:(int)arg3 recordRoute:(id)arg4 isVoiceTrigger:(_Bool)arg5 isDucking:(_Bool)arg6 isTwoShot:(_Bool)arg7;
+- (id)initWithStyle:(int)arg1 languageCode:(id)arg2 gender:(int)arg3 recordRoute:(id)arg4 isVoiceTrigger:(_Bool)arg5 isDucking:(_Bool)arg6 isTwoShot:(_Bool)arg7 speechEndHostTime:(unsigned long long)arg8;
 - (id)mutatedCopyWithMutator:(CDUnknownBlockType)arg1;
 
 @end

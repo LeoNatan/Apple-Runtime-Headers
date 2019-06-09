@@ -8,6 +8,7 @@
 
 @class SKUISettingsGroupDescription, SKUIViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingDescription : NSObject
 {
     SKUIViewElement *_viewElement;

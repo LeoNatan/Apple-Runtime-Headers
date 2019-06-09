@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_regionInfoDictionary;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *displayedHostname;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionary:(id)arg1;

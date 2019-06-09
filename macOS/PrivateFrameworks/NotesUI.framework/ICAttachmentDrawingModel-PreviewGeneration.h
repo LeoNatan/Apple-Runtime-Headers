@@ -6,9 +6,27 @@
 
 #import <NotesShared/ICAttachmentDrawingModel.h>
 
+@class NSImage;
+
 @interface ICAttachmentDrawingModel (PreviewGeneration)
-- (void)generatePreviewsInOperation:(id)arg1;
+- (struct NSImage *)generateImageUsingFullscreenRenderer;
+- (BOOL)generatePreviewsInOperation:(id)arg1;
 - (BOOL)needToGeneratePreviews;
 - (BOOL)generatePreviewsDuringCloudActivity;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
+- (BOOL)canConvertToHTMLForSharing;
+- (id)attributesForSharingHTMLWithTagName:(id *)arg1 textContent:(id *)arg2;
+- (id)dataForTypeIdentifier:(id)arg1;
+- (id)fileURLForTypeIdentifier:(id)arg1;
+- (id)providerFileTypes;
+- (id)providerDataTypes;
+- (id)activityItems;
+- (id)activityItem;
+@property(readonly, nonatomic) NSImage *imageForActivityItem;
+- (id)pasteboardPropertyListForType:(id)arg1;
+- (id)writableTypesForPasteboard:(id)arg1;
+- (void)saveDrawing:(id)arg1 withImage:(struct NSImage *)arg2 forImageDrawing:(id)arg3;
+- (CDUnknownBlockType)genericBrickThumbnailCreator;
+- (CDUnknownBlockType)genericListThumbnailCreator;
 @end
 

@@ -11,8 +11,12 @@
 }
 
 + (id)thePastDateFormatter;
++ (id)thePastDateFormatterNoTime;
 + (id)thisYearDateFormatter;
++ (id)thisYearDateFormatterNoTime;
++ (id)thisWeekRelativeDateFormatterNoTime;
 + (id)thisWeekRelativeDateFormatter;
++ (id)relativeDateOnlyFormatterFromDate:(id)arg1 toDate:(id)arg2;
 + (id)relativeDateFormatterFromDate:(id)arg1 toDate:(id)arg2;
 
 @end

@@ -17,7 +17,7 @@
     id <HFMediaProfileContainer> _sourceMediaProfileContainer;
     HMHome *_home;
     HFUserItem *_sourceItem;
-    HFItemProvider *_devicesItemProvider;
+    HFItemProvider *_personalRequestsDevicesProvider;
     HFItem *_footerItem;
     HFItem *_personalRequestsToggleItem;
     HULocationDeviceManager *_locationDeviceManager;
@@ -26,7 +26,7 @@
 @property(readonly, nonatomic) HULocationDeviceManager *locationDeviceManager; // @synthesize locationDeviceManager=_locationDeviceManager;
 @property(readonly, nonatomic) HFItem *personalRequestsToggleItem; // @synthesize personalRequestsToggleItem=_personalRequestsToggleItem;
 @property(readonly, nonatomic) HFItem *footerItem; // @synthesize footerItem=_footerItem;
-@property(readonly, nonatomic) HFItemProvider *devicesItemProvider; // @synthesize devicesItemProvider=_devicesItemProvider;
+@property(retain, nonatomic) HFItemProvider *personalRequestsDevicesProvider; // @synthesize personalRequestsDevicesProvider=_personalRequestsDevicesProvider;
 @property(readonly, nonatomic) HFUserItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) id <HFMediaProfileContainer> sourceMediaProfileContainer; // @synthesize sourceMediaProfileContainer=_sourceMediaProfileContainer;
@@ -37,8 +37,8 @@
 - (id)updateLocationDeviceToThisDevice;
 @property(readonly, nonatomic) NAFuture *activeLocationDeviceFuture;
 @property(copy, nonatomic) NSArray *personalRequestsHomePods;
+- (void)turnOnAllPersonalRequestsDevices;
 - (void)toggleAllPersonalRequestsDevices;
-@property(nonatomic, getter=isPersonalRequestsEnabled) _Bool personalRequestsEnabled;
 - (_Bool)isItemPersonalRequestsFooter:(id)arg1;
 - (_Bool)isItemPersonalRequestsDevice:(id)arg1;
 - (_Bool)isItemPersonalRequestsToggle:(id)arg1;

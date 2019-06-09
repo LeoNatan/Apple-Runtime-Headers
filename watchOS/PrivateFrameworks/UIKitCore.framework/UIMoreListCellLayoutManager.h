@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (float)setWidestImageWidthFromViewControllers:(id)arg1;
+- (struct CGRect)standardLayoutImageViewFrameForCell:(id)arg1 forSizing:(_Bool)arg2;
 - (void)layoutSubviewsOfCell:(id)arg1;
 
 @end

@@ -63,8 +63,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)pkui_navigationBarTintColor;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (id)initWithController:(id)arg1 setupDelegate:(id)arg2 pickerField:(id)arg3 footerText:(id)arg4;
 - (id)initWithController:(id)arg1 pickerField:(id)arg2 footerText:(id)arg3;
 

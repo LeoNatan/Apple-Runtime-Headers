@@ -41,6 +41,7 @@
 @property(nonatomic) __weak id <HUControlViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)_updateUIToReachable;
 - (id)_defaultStepValue;
 - (id)_defaultMinValue;
 - (id)_defaultMaxValue;

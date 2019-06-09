@@ -6,27 +6,44 @@
 
 #import <PhotoLibraryServices/_PLFetchingAlbum.h>
 
+#import <PhotoLibraryServices/PLCloudDeletable-Protocol.h>
+#import <PhotoLibraryServices/PLFileSystemAlbumMetadataPersistence-Protocol.h>
+
 @class NSArray, NSData, NSFetchRequest, NSOrderedSet, NSPredicate, NSString;
 
-@interface PLFetchingAlbum : _PLFetchingAlbum
+@interface PLFetchingAlbum : _PLFetchingAlbum <PLCloudDeletable, PLFileSystemAlbumMetadataPersistence>
 {
     unsigned int _countForDisplay;
     unsigned int _photosCount;
     unsigned int _videosCount;
     int _emptyState;
     NSArray *_cachedKeyAssets;
+    _Bool _needsPersistenceUpdate;
     NSPredicate *_ALAssetsGroupFilterPredicate;
     unsigned int _batchSize;
 }
 
++ (int)cloudDeletionTypeForTombstone:(id)arg1;
++ (id)cloudUUIDKeyForDeletion;
++ (id)validKindsForPersistence;
 + (id)sortDescriptorsForAlbumKind:(int)arg1;
 + (id)predicateForAlbumKind:(int)arg1;
 + (id)_panoramasAlbumPredicate;
 + (_Bool)contextShouldIgnoreChangesForALAssetsGroupFilterPredicate;
 + (_Bool)contextShouldIgnoreChangesForFetchRequest;
 + (_Bool)contextShouldIgnoreChangesForFetchedAssets;
+@property(nonatomic) _Bool needsPersistenceUpdate; // @synthesize needsPersistenceUpdate=_needsPersistenceUpdate;
 @property(nonatomic) unsigned int batchSize; // @synthesize batchSize=_batchSize;
 @property(retain, nonatomic) NSPredicate *ALAssetsGroupFilterPredicate; // @synthesize ALAssetsGroupFilterPredicate=_ALAssetsGroupFilterPredicate;
+- (void).cxx_destruct;
+- (void)prepareForDeletion;
+@property(readonly) int cloudDeletionType;
+@property(readonly, copy) NSString *cloudUUIDForDeletion;
+- (_Bool)isValidForPersistence;
+- (void)removePersistedFileSystemDataWithPathManager:(id)arg1;
+- (void)persistMetadataToFileSystemWithPathManager:(id)arg1;
+- (void)didSave;
+- (void)willSave;
 - (_Bool)mayHaveAssetsInCommon:(id)arg1;
 - (id)fastPointerAccessSetForAssets:(id)arg1;
 @property(readonly, nonatomic) _Bool hasAssetsCache;
@@ -51,18 +68,24 @@
 - (id)assets;
 - (id)_performFetchWithRequest:(id)arg1;
 - (id)primitiveAssets;
-@property(readonly, retain, nonatomic) NSPredicate *extraFilterPredicate;
+@property(readonly, nonatomic) NSPredicate *extraFilterPredicate;
 @property(retain, nonatomic) NSFetchRequest *fetchRequest;
 - (void)setupFetchRequest;
 - (void)didTurnIntoFault;
 - (void)awakeFromInsert;
 - (void)awakeFromFetch;
-- (void)dealloc;
+- (_Bool)validForPersistenceChangedForChangedKeys:(id)arg1;
+- (id)payloadForChangedKeys:(id)arg1;
 
 // Remaining properties
+@property(nonatomic) short cloudDeleteState;
 @property(retain, nonatomic) NSData *customQueryParameters; // @dynamic customQueryParameters;
 @property(retain, nonatomic) NSString *customQueryType; // @dynamic customQueryType;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(retain, nonatomic) NSOrderedSet *fetchedAssets; // @dynamic fetchedAssets;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

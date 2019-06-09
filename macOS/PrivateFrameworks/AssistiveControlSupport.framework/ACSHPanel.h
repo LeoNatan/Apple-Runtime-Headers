@@ -69,6 +69,8 @@
 @property(nonatomic) BOOL hidesAssistiveDock; // @synthesize hidesAssistiveDock=_hidesAssistiveDock;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (id)resolvedDisplayColor;
 - (void)mergePanel:(id)arg1 withRelativePosition:(unsigned long long)arg2 orientation:(unsigned long long)arg3 panelDistance:(double)arg4;
 @property(readonly, nonatomic) BOOL hasGroupAsTopLevelElement;
 @property(readonly, nonatomic) ACSHKeyboardData *keyboardDataBasedOnPanelMetadata;
@@ -102,6 +104,8 @@
 - (void)setMinimizeButton:(BOOL)arg1;
 - (void)_configureWithPlistDictionary:(id)arg1;
 @property(readonly, nonatomic) struct CGSize windowPadding;
+- (void)dealloc;
+- (id)initWithUndoManager:(id)arg1;
 
 @end
 

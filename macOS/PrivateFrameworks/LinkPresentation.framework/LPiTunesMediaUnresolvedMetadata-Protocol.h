@@ -9,7 +9,7 @@
 @class LPSpecializationMetadata, NSArray;
 
 @protocol LPiTunesMediaUnresolvedMetadata <NSObject>
-- (NSArray *)assetsToResolve;
+- (NSArray *)assetsToFetch;
 - (LPSpecializationMetadata *)resolve;
 @end
 

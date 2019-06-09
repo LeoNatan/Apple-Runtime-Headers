@@ -7,30 +7,27 @@
 #import <PhotoLibraryServices/_PLManagedAlbum.h>
 
 #import <PhotoLibraryServices/PLCloudDeletable-Protocol.h>
-#import <PhotoLibraryServices/PLSearchableAssetCollection-Protocol.h>
+#import <PhotoLibraryServices/PLDeletableManagedObject-Protocol.h>
+#import <PhotoLibraryServices/PLFileSystemAlbumMetadataPersistence-Protocol.h>
 #import <PhotoLibraryServices/PLUserEditableAlbumProtocol-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSSet, NSString, NSURL, PLManagedAsset, UIImage;
+@class NSArray, NSDate, NSMutableOrderedSet, NSNumber, NSObject, NSOrderedSet, NSSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
 
-@interface PLManagedAlbum : _PLManagedAlbum <PLSearchableAssetCollection, PLUserEditableAlbumProtocol, PLCloudDeletable>
+@interface PLManagedAlbum : _PLManagedAlbum <PLUserEditableAlbumProtocol, PLCloudDeletable, PLFileSystemAlbumMetadataPersistence, PLDeletableManagedObject>
 {
     _Bool _albumShouldBeAutomaticallyDeleted;
     _Bool _needsPersistenceUpdate;
 }
 
 + (void)clearAssetOrderByAbumUUIDs;
-+ (id)assetOrderByAbumUUIDs;
-+ (id)pathToAssetAlbumOrderStructure;
++ (id)validKindsForPersistence;
 + (id)keyPathsForValuesAffectingVideosCount;
 + (id)keyPathsForValuesAffectingPhotosCount;
 + (id)keyPathsForValuesAffectingApproximateCount;
-+ (id)validKindsForPersistence;
 + (id)cloudUUIDKeyForDeletion;
 + (int)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)childKeyForOrdering;
 + (id)albumSupportsAssetOrderKeysPredicate;
-+ (id)searchIndexAllowedPredicate;
-+ (id)baseSearchIndexPredicate;
 @property(nonatomic) _Bool needsPersistenceUpdate; // @synthesize needsPersistenceUpdate=_needsPersistenceUpdate;
 @property(nonatomic) _Bool albumShouldBeAutomaticallyDeleted; // @synthesize albumShouldBeAutomaticallyDeleted=_albumShouldBeAutomaticallyDeleted;
 - (void)refreshAssets;
@@ -39,8 +36,10 @@
 - (void)sortAssetsUsingiTunesAlbumOrder;
 - (id)_assetOrderByAssetUUID;
 - (id)_orderComparisonValueForAsset:(id)arg1 iTunesLookupOrder:(id)arg2;
-- (void)removePersistedFileSystemData;
-- (void)persistMetadataToFileSystem;
+- (id)assetOrderByAbumUUIDs;
+- (void)removePersistedFileSystemDataWithPathManager:(id)arg1;
+- (void)persistMetadataToFileSystemWithPathManager:(id)arg1;
+- (_Bool)isValidForPersistence;
 - (void)recalculateCachedCounts;
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
 - (void)removeAssetsAtIndexes:(id)arg1;
@@ -59,17 +58,15 @@
 - (id)_expectedKeyAssets:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)removeInternalUserEditableAssetsAtIndexes:(id)arg1;
-- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 trimmedVideoPathInfo:(id)arg3 commentText:(id)arg4;
+- (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2 customExportsInfo:(id)arg3 trimmedVideoPathInfo:(id)arg4 commentText:(id)arg5;
 - (void)insertInternalUserEditableAssets:(id)arg1 atIndexes:(id)arg2;
 - (id)internalUserEditableAssetsAtIndexes:(id)arg1;
-- (void)getInternalUserEditableAssets:(id *)arg1 range:(struct _NSRange)arg2;
 - (id)objectInInternalUserEditableAssetsAtIndex:(unsigned int)arg1;
 - (unsigned int)indexInInternalUserEditableAssetsOfObject:(id)arg1;
 - (unsigned int)countOfInternalUserEditableAssets;
 @property(readonly, retain, nonatomic) NSMutableOrderedSet *userEditableAssets;
 - (void)didSave;
 - (void)willSave;
-- (_Bool)isValidKindForPersistence;
 @property(readonly, copy) NSString *cloudUUIDForDeletion;
 @property(readonly) int cloudDeletionType;
 - (void)prepareForDeletion;
@@ -77,17 +74,10 @@
 - (id)childKeyForOrdering;
 - (_Bool)supportsAssetOrderKeys;
 - (_Bool)_shouldCopyAssetToCameraRollBeforeAdding:(id)arg1;
+- (_Bool)canPerformDeleteOperation;
 - (_Bool)canPerformEditOperation:(unsigned int)arg1;
 - (id)descriptionOfAssetOrderValues;
-- (id)assetUUIDsForPreviewWithCount:(unsigned int)arg1;
-- (unsigned int)searchIndexCategory;
-- (id)searchIndexContents;
-@property(readonly, nonatomic) NSDate *keyAssetCreationDate;
-@property(readonly, nonatomic) NSString *keyAssetUUID;
-@property(readonly, nonatomic) unsigned int numberOfAssets;
-@property(readonly, nonatomic) NSDate *searchableEndDate;
-@property(readonly, nonatomic) NSDate *searchableStartDate;
-@property(readonly, nonatomic) NSString *subtitle;
+- (id)payloadForChangedKeys:(id)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSSet *assetOrders; // @dynamic assetOrders;
@@ -126,10 +116,10 @@
 @property(readonly, copy, nonatomic) NSString *name;
 @property(nonatomic) int pendingItemsCount;
 @property(nonatomic) int pendingItemsType;
-@property(readonly, retain, nonatomic) UIImage *posterImage;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
+@property(readonly, retain, nonatomic) NSObject *posterImage;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset;
 @property(readonly, nonatomic) _Bool shouldDeleteWhenEmpty;
-@property(retain, nonatomic) NSDictionary *slideshowSettings;
 @property(readonly, copy, nonatomic) CDUnknownBlockType sortingComparator;
 @property(readonly, retain, nonatomic) NSDate *startDate;
 @property(readonly) Class superclass;

@@ -10,6 +10,7 @@
 
 @class DiagnosticCaseManager, DiagnosticCaseStorage, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSUUID;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticCase : NSObject <NSCoding>
 {
     BOOL eventsDirty;
@@ -35,9 +36,16 @@
     DiagnosticCaseManager *_manager;
 }
 
++ (id)signatureForCaseStorageDictionary:(id)arg1;
++ (id)signatureForCaseStorage:(id)arg1;
++ (id)generateCaseSummaryFromCaseStorageDictionary:(id)arg1;
++ (id)generateCaseSummaryDictionaryFromCaseStorage:(id)arg1;
 + (id)attachmentsFromStringRepresentation:(id)arg1;
 + (id)stringRepresentationOfAttachments:(id)arg1;
++ (id)_arrayObjectRepresentationOfJSONString:(id)arg1;
 + (id)_stringRepresentationOfJSONObject:(id)arg1 prettyPrint:(BOOL)arg2;
++ (id)_closureTypeString:(short)arg1;
++ (id)_caseDampeningTypeString:(short)arg1;
 @property(retain, nonatomic) DiagnosticCaseManager *manager; // @synthesize manager=_manager;
 @property(nonatomic) BOOL readyToEndSession; // @synthesize readyToEndSession=_readyToEndSession;
 @property(nonatomic) double preferredDuration; // @synthesize preferredDuration=_preferredDuration;
@@ -92,7 +100,6 @@
 - (void)removeRequiredAttachmentType:(id)arg1 pattern:(id)arg2;
 - (void)addRequiredAttachmentType:(id)arg1 pattern:(id)arg2;
 - (void)addRequiredAction:(id)arg1 option:(id)arg2 attachmentType:(id)arg3 pattern:(id)arg4;
-- (id)closureTypeString:(short)arg1;
 - (id)caseClosureTypeString;
 - (short)caseStateFromString:(id)arg1;
 - (id)caseStateString:(short)arg1;
@@ -108,7 +115,6 @@
 @property(readonly, nonatomic, getter=isRemoteTrigger) BOOL remoteTrigger;
 @property(readonly, nonatomic, getter=wantsRemote) BOOL wantsRemote;
 @property(readonly, nonatomic, getter=isSnapshot) BOOL snapshot; // @dynamic snapshot;
-- (id)_caseDampeningTypeString:(short)arg1;
 - (id)caseDampeningTypeString;
 - (void)setDampeningType:(short)arg1;
 @property(readonly, nonatomic) short dampeningType;

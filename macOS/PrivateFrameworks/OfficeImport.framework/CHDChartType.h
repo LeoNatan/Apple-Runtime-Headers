@@ -8,6 +8,7 @@
 
 @class CHDChart, CHDDataLabel, CHDSeriesCollection, EDCollection;
 
+__attribute__((visibility("hidden")))
 @interface CHDChartType : NSObject
 {
     CHDChart *mChart;

@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSOperation, NSOperationQueue, SKUIClientContext, SKUITrendingSearchPage;
 
+__attribute__((visibility("hidden")))
 @interface SKUITrendingSearchProvider : NSObject
 {
     SKUIClientContext *_clientContext;

@@ -8,12 +8,14 @@
 
 #import <NewsCore/FCNetworkReachabilityType-Protocol.h>
 
-@class CTTelephonyNetworkInfo, NFReachability, NSHashTable, NSString;
+@class NFLazy, NSHashTable, NSString;
 
 @interface FCNetworkReachability : NSObject <FCNetworkReachabilityType>
 {
     _Bool _isNetworkReachable;
     _Bool _isNetworkReachableViaWiFi;
+    _Bool _isLowDataModeEnabled;
+    _Bool _isNetworkUsageExpensive;
     _Bool _isNetworkReachableViaCellular;
     _Bool _isCloudKitAccessAllowed;
     _Bool _accessRestrictedBecauseOfAppVersion;
@@ -21,26 +23,22 @@
     _Bool _accessRestrictedBecauseOfCountry;
     _Bool _accessRestrictedBecauseOfDeviceAbandoned;
     long long _offlineReason;
-    CTTelephonyNetworkInfo *_networkInfo;
     NSHashTable *_observers;
-    long long _currentRadioAccessTechnology;
-    NSString *_currentCellularCarrierName;
-    NFReachability *_internetReachability;
+    NFLazy *_networkInfo;
 }
 
 + (id)sharedNetworkReachability;
-@property(retain, nonatomic) NFReachability *internetReachability; // @synthesize internetReachability=_internetReachability;
-@property(retain, nonatomic) NSString *currentCellularCarrierName; // @synthesize currentCellularCarrierName=_currentCellularCarrierName;
-@property(nonatomic) long long currentRadioAccessTechnology; // @synthesize currentRadioAccessTechnology=_currentRadioAccessTechnology;
+@property(retain, nonatomic) NFLazy *networkInfo; // @synthesize networkInfo=_networkInfo;
 @property(nonatomic) _Bool accessRestrictedBecauseOfDeviceAbandoned; // @synthesize accessRestrictedBecauseOfDeviceAbandoned=_accessRestrictedBecauseOfDeviceAbandoned;
 @property(nonatomic) _Bool accessRestrictedBecauseOfCountry; // @synthesize accessRestrictedBecauseOfCountry=_accessRestrictedBecauseOfCountry;
 @property(nonatomic) _Bool accessRestrictedBecauseOfOSVersion; // @synthesize accessRestrictedBecauseOfOSVersion=_accessRestrictedBecauseOfOSVersion;
 @property(nonatomic) _Bool accessRestrictedBecauseOfAppVersion; // @synthesize accessRestrictedBecauseOfAppVersion=_accessRestrictedBecauseOfAppVersion;
 @property(nonatomic) _Bool isCloudKitAccessAllowed; // @synthesize isCloudKitAccessAllowed=_isCloudKitAccessAllowed;
-@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
-@property(retain, nonatomic) CTTelephonyNetworkInfo *networkInfo; // @synthesize networkInfo=_networkInfo;
-@property(nonatomic) long long offlineReason; // @synthesize offlineReason=_offlineReason;
 @property(nonatomic) _Bool isNetworkReachableViaCellular; // @synthesize isNetworkReachableViaCellular=_isNetworkReachableViaCellular;
+@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(nonatomic) long long offlineReason; // @synthesize offlineReason=_offlineReason;
+@property(nonatomic) _Bool isNetworkUsageExpensive; // @synthesize isNetworkUsageExpensive=_isNetworkUsageExpensive;
+@property(nonatomic) _Bool isLowDataModeEnabled; // @synthesize isLowDataModeEnabled=_isLowDataModeEnabled;
 @property(nonatomic) _Bool isNetworkReachableViaWiFi; // @synthesize isNetworkReachableViaWiFi=_isNetworkReachableViaWiFi;
 @property(nonatomic) _Bool isNetworkReachable; // @synthesize isNetworkReachable=_isNetworkReachable;
 - (void).cxx_destruct;
@@ -53,7 +51,6 @@
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_updateReachability;
 @property(readonly, nonatomic) _Bool isNetworkOnlyReachableViaCellular;
-@property(readonly, nonatomic) NSString *cellularCarrierName;
 @property(readonly, nonatomic) long long cellularRadioAccessTechnology;
 - (void)dealloc;
 - (id)init;

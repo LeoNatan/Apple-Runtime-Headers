@@ -10,10 +10,15 @@
 {
     unsigned long long _count;
     double _maxIntervalBetweenLocations;
+    double _spread;
 }
 
+@property(nonatomic) double spread; // @synthesize spread=_spread;
 @property(nonatomic) double maxIntervalBetweenLocations; // @synthesize maxIntervalBetweenLocations=_maxIntervalBetweenLocations;
 @property(nonatomic) unsigned long long count; // @synthesize count=_count;
+- (id)description;
+- (id)initWithCount:(unsigned long long)arg1 maxIntervalBetweenLocations:(double)arg2 spread:(double)arg3;
+- (id)init;
 
 @end
 

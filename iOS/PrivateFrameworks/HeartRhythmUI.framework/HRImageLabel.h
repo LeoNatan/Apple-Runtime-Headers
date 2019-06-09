@@ -17,9 +17,13 @@
     UIImage *_image;
     NSString *_text;
     NSLayoutConstraint *_imageTextAlignmentConstraint;
+    long long _currentUserInterfaceStyle;
+    CDUnknownBlockType _userInterfaceStyleChanged;
     struct CGSize _imageSize;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType userInterfaceStyleChanged; // @synthesize userInterfaceStyleChanged=_userInterfaceStyleChanged;
+@property(nonatomic) long long currentUserInterfaceStyle; // @synthesize currentUserInterfaceStyle=_currentUserInterfaceStyle;
 @property(retain, nonatomic) NSLayoutConstraint *imageTextAlignmentConstraint; // @synthesize imageTextAlignmentConstraint=_imageTextAlignmentConstraint;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
@@ -38,9 +42,12 @@
 - (void)_setUpUI;
 - (id)viewForLastBaselineLayout;
 - (id)viewForFirstBaselineLayout;
+- (void)_updateCurrentUserInterfaceStyleIfNeeded;
+- (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWIthImage:(id)arg1 text:(id)arg2;
 - (id)initWithImage:(id)arg1 size:(struct CGSize)arg2 text:(id)arg3;
+- (id)initWithImage:(id)arg1 size:(struct CGSize)arg2 text:(id)arg3 userInterfaceStyleChanged:(CDUnknownBlockType)arg4;
 
 @end
 

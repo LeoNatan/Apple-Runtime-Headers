@@ -22,26 +22,30 @@
 @property(retain, nonatomic) IDSPhoneCertificateVendor *strongSelfReference; // @synthesize strongSelfReference=_strongSelfReference;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (id)_scheduleTimeoutForPhoneSubscriptionSourceCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)_scheduleTimeoutForCarrierTokenCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)_scheduleTimeoutForPhoneAuthenticationCertificateRequestCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)_scheduleTimeoutForPhoneAuthenticationSignatureRequestCompletionBlock:(CDUnknownBlockType)arg1;
 - (long long)_subscriptionSourceForContext:(id)arg1;
 - (long long)_subscriptionSourceFromIntegerValue:(long long)arg1;
-- (void)didFetchPhoneUserSubscriptionSource:(id)arg1 requestUUID:(id)arg2 error:(id)arg3;
-- (void)didSetPhoneUserSubscriptionSource:(id)arg1 requestUUID:(id)arg2 error:(id)arg3;
-- (void)didGeneratePhoneAuthenticationSignature:(id)arg1 nonce:(id)arg2 certificate:(id)arg3 inputData:(id)arg4 requestUUID:(id)arg5 error:(id)arg6;
+- (void)didRequestCarrierTokenString:(id)arg1 requestUUID:(id)arg2 error:(id)arg3;
+- (void)didGeneratePhoneAuthenticationSignature:(id)arg1 nonce:(id)arg2 certificates:(id)arg3 labelIDs:(id)arg4 inputData:(id)arg5 requestUUID:(id)arg6 error:(id)arg7;
 - (void)didAuthenticatePhoneWithAuthenticationCertificateData:(id)arg1 requestUUID:(id)arg2 error:(id)arg3;
 - (id)_clientErrorForCode:(long long)arg1 underlyingError:(id)arg2;
 - (id)_debugDescriptionForErrorCode:(long long)arg1;
 - (_Bool)_isPhoneCertificateVendorSupported;
 - (void)_updateSelfRetentionBasedOnInFlightRequestCount;
-- (long long)currentPhoneUserSubscriptionSourceWithError:(id *)arg1;
-- (void)requestCurrentPhoneUserSubscriptionSourceWithCompletion:(CDUnknownBlockType)arg1;
-- (void)setCurrentPhoneUserSubscriptionSource:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestCarrierTokenWithParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)generatePhoneAuthenticationSignatureOverData:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)authenticatePhoneWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
+- (void)didFetchPhoneUserSubscriptionSource:(id)arg1 requestUUID:(id)arg2 error:(id)arg3;
+- (void)didSetPhoneUserSubscriptionSource:(id)arg1 requestUUID:(id)arg2 error:(id)arg3;
+- (id)_scheduleTimeoutForPhoneSubscriptionSourceCompletionBlock:(CDUnknownBlockType)arg1;
+- (long long)currentPhoneUserSubscriptionSourceWithError:(id *)arg1;
+- (void)requestCurrentPhoneUserSubscriptionSourceWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setCurrentPhoneUserSubscriptionSource:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestCarrierTokenWithMessageBody:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

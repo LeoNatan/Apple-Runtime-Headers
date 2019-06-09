@@ -17,6 +17,7 @@
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoGravity;
++ (id)keyPathsForValuesAffectingPlayerLayer;
 + (Class)layerClass;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isVideoScaled) _Bool videoScaled;

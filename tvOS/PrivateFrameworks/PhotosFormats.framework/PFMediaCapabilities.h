@@ -29,12 +29,16 @@
 @property(retain) NSDictionary *capabilitiesInformation; // @synthesize capabilitiesInformation=_capabilitiesInformation;
 - (void).cxx_destruct;
 - (id)description;
+- (long long)userDefaultsPeerAssetBundleSupportOverrideValue;
+- (long long)supportValueByApplyingUserDefaultsPeerAssetBundleSupportOverrideToValue:(long long)arg1 selector:(SEL)arg2;
 - (long long)userDefaultsPeerOverrideValue;
 - (long long)supportValueByApplyingUserDefaultsPeerOverrideToValue:(long long)arg1 selector:(SEL)arg2;
 - (id)opaqueRepresentation;
 - (_Bool)supportsTranscodeChoice;
 - (long long)supportForAVAsset:(id)arg1;
 - (long long)supportForFormatDescription:(struct opaqueCMFormatDescription *)arg1;
+- (long long)supportForAdjustmentBaseResources;
+- (long long)supportForAssetBundleVersion:(id)arg1;
 - (long long)supportForLivePhotoVersion:(id)arg1;
 - (long long)supportForContainerTypeIdentifier:(id)arg1;
 - (long long)supportForCodec:(unsigned int)arg1;

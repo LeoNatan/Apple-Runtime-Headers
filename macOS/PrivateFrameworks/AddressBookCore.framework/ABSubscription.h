@@ -18,7 +18,6 @@
 - (id)remoteLocation;
 - (id)nts_Description;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (BOOL)nts_IsAll;
 - (BOOL)_isAll;

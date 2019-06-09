@@ -10,6 +10,7 @@
 
 @interface NSFontPanel : NSPanel
 {
+    id _familyToFaceConstraint;
     NSFontManager *_manager;
     NSArray *_collectionNames;
     id _selection;
@@ -74,7 +75,6 @@
     int _sizeStyle;
     id _fontPanelToolbar;
     id _fontPanelContentView;
-    id _familyToFaceConstraint;
 }
 
 + (id)_createFontPanelSizeRep;
@@ -131,6 +131,7 @@
 - (BOOL)_inMiniMode;
 - (void)_chooseSizeFromList:(id)arg1;
 - (void)_changeSizeStyle:(id)arg1;
+- (void)_changeSizeStyle:(id)arg1 animated:(BOOL)arg2;
 - (void)_resetSizeList:(id)arg1;
 - (void)_removeSizeFromList:(id)arg1;
 - (void)_addSizeToList:(id)arg1;

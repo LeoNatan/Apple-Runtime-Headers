@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
     double _bottomSpacingForSpinner;
 }
 
+@property(readonly, nonatomic) long long columnBItems; // @synthesize columnBItems=_columnBItems;
+@property(readonly, nonatomic) long long columnAItems; // @synthesize columnAItems=_columnAItems;
 @property(nonatomic) double bottomSpacingForSpinner; // @synthesize bottomSpacingForSpinner=_bottomSpacingForSpinner;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(nonatomic) _Bool groupsNames; // @synthesize groupsNames=_groupsNames;
@@ -46,10 +48,11 @@ __attribute__((visibility("hidden")))
 - (void)drawNames:(id)arg1;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setup;
-- (id)generateAttributedStringsFromNames:(id)arg1 glyph:(id)arg2 displayCount:(long long)arg3;
+- (id)generateAttributedStringsFromDisplayParticipants:(id)arg1 glyph:(id)arg2 displayCount:(long long)arg3;
 - (void)finalizeInviteNames;
 - (double)_calculateHeightForSpinnerDisplayMode;
 - (double)calculatedHeight;
+- (void)recalculateHeight;
 - (double)_calculateHeightForItemCounts:(long long [4])arg1;
 - (double)maxColumnHeight;
 - (double)maxHeight;

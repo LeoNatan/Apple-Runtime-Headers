@@ -16,10 +16,16 @@ __attribute__((visibility("hidden")))
     _Bool mReferencePopertiesFixed;
     WDAnnotationData *mData;
     WDAnnotation *mOtherEndOfRangedAnnotation;
+    _Bool isResolved;
+    WDAnnotation *parent;
 }
 
+@property WDAnnotation *parent; // @synthesize parent;
+@property _Bool isResolved; // @synthesize isResolved;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
+- (unsigned long long)lastParagraphId;
+- (id)paragraphIds;
 - (void)setOtherEndOfRangedAnnotation:(id)arg1;
 - (id)otherEndOfRangedAnnotation;
 - (void)useDataFromOtherEnd;

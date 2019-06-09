@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OCXState.h>
 
+__attribute__((visibility("hidden")))
 @interface OCXReadState : OCXState
 {
 }

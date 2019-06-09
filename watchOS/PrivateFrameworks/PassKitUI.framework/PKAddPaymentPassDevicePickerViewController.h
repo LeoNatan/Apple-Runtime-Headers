@@ -28,6 +28,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
+- (void)reloadContentFromWebServices;
 - (void)dealloc;
 - (id)initWithPaymentWebServices:(id)arg1 configuration:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

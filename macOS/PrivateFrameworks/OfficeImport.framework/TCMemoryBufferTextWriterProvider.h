@@ -8,6 +8,7 @@
 
 @class NSMutableData;
 
+__attribute__((visibility("hidden")))
 @interface TCMemoryBufferTextWriterProvider : TCXmlTextWriterProvider
 {
     NSMutableData *_memoryBuffer;

@@ -10,5 +10,7 @@
 - (_Bool)containsString:(id)arg1 ignoringCase:(_Bool)arg2;
 - (_Bool)containsString:(id)arg1;
 - (id)SHA256;
+- (id)_cf_camelCase;
+- (id)_cf_fixCase:(_Bool)arg1;
 @end
 

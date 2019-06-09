@@ -59,6 +59,7 @@
 - (void)vitalityBehaviorDidBeginPlaying:(id)arg1;
 - (void)livePhotoSettleBehaviorDidFinish:(id)arg1;
 - (void)livePhotoPlaybackBehaviorDidFinish:(id)arg1;
+- (void)livePhotoPlaybackBehaviorWillTransitionToPhoto:(id)arg1;
 - (void)livePhotoPlaybackBehaviorDidBeginPlaying:(id)arg1;
 - (void)didPerformChanges;
 - (void)_fadeInAudio;

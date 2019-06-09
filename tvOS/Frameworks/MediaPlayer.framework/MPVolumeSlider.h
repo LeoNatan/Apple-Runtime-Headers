@@ -81,6 +81,7 @@
 - (void)setVolumeDataSource:(id)arg1;
 @property(retain, nonatomic) MPAVRoute *route;
 @property(readonly, copy, nonatomic) NSString *volumeControlLabel;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)setHidden:(_Bool)arg1;
 - (void)setAlpha:(double)arg1;

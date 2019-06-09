@@ -6,6 +6,7 @@
 
 #import <QuartzCore/CALayer.h>
 
+__attribute__((visibility("hidden")))
 @interface MKCompassLayer : CALayer
 {
     CALayer *_discLayer;
@@ -30,6 +31,8 @@
 - (void)setHeading:(double)arg1;
 - (void)setPitch:(double)arg1 allowsPitch:(BOOL)arg2;
 - (void)layoutSublayers;
+- (void)_unloadResources;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -68,7 +68,8 @@
 - (struct TopoSubstring *)splitTopoSubstring:(struct TopoSubstring *)arg1 atIndex:(unsigned int)arg2;
 - (BOOL)selection:(id)arg1 wasModifiedAfter:(id)arg2;
 - (BOOL)textEitherSideOfSelectionAnchor:(struct TopoID)arg1 wasModifiedAfter:(id)arg2;
-- (void)enumerateRangesModifiedAfter:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateRangesModifiedAfter:(id)arg1 includingAttributes:(BOOL)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (long long)substring:(struct TopoSubstring *)arg1 modifiedAfter:(id)arg2 includeAttributes:(BOOL)arg3;
 - (long long)substring:(struct TopoSubstring *)arg1 modifiedAfter:(id)arg2;
 - (void)enumerateSubstrings:(CDUnknownBlockType)arg1;
 - (unsigned long long)getCharacterIndexForCharID:(struct TopoID)arg1;

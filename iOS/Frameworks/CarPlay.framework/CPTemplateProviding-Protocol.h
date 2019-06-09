@@ -10,16 +10,11 @@
 @protocol CPAlertDelegate, CPGridTemplateClientDelegate, CPListClientTemplateDelegate, CPMapClientTemplateDelegate, CPSearchClientTemplateDelegate, CPVoiceControlTemplateDelegate;
 
 @protocol CPTemplateProviding <NSObject>
-- (void)presentVoiceTemplate:(CPVoiceControlTemplate *)arg1 animated:(NSNumber *)arg2;
-- (void)requestVoiceControlProviderForTemplate:(CPVoiceControlTemplate *)arg1 withProxyDelegate:(id <CPVoiceControlTemplateDelegate>)arg2 reply:(void (^)(id <CPVoiceTemplateProviding>))arg3;
-- (void)pushSearchTemplate:(CPSearchTemplate *)arg1 animated:(NSNumber *)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestSearchTemplateProviderForTemplate:(CPSearchTemplate *)arg1 withProxyDelegate:(id <CPSearchClientTemplateDelegate>)arg2 reply:(void (^)(id <CPSearchTemplateProviding>))arg3;
-- (void)pushMapTemplate:(CPMapTemplate *)arg1 animated:(NSNumber *)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestMapTemplateProviderForTemplate:(CPMapTemplate *)arg1 withProxyDelegate:(id <CPMapClientTemplateDelegate>)arg2 reply:(void (^)(id <CPMapTemplateProviding>))arg3;
-- (void)pushListTemplate:(CPListTemplate *)arg1 animated:(NSNumber *)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestListTemplateProviderForTemplate:(CPListTemplate *)arg1 withProxyDelegate:(id <CPListClientTemplateDelegate>)arg2 reply:(void (^)(id <CPListTemplateProviding>))arg3;
-- (void)pushGridTemplate:(CPGridTemplate *)arg1 animated:(NSNumber *)arg2 presentationStyle:(unsigned long long)arg3;
-- (void)requestGridTemplateProviderForInterface:(CPGridTemplate *)arg1 withProxyDelegate:(id <CPGridTemplateClientDelegate>)arg2 reply:(void (^)(id <CPGridTemplateProviding>))arg3;
+- (void)presentVoiceTemplate:(CPVoiceControlTemplate *)arg1 withProxyDelegate:(id <CPVoiceControlTemplateDelegate>)arg2 animated:(NSNumber *)arg3 reply:(void (^)(id <CPVoiceTemplateProviding>))arg4;
+- (void)pushSearchTemplate:(CPSearchTemplate *)arg1 withProxyDelegate:(id <CPSearchClientTemplateDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPSearchTemplateProviding>))arg5;
+- (void)pushMapTemplate:(CPMapTemplate *)arg1 withProxyDelegate:(id <CPMapClientTemplateDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPMapTemplateProviding>))arg5;
+- (void)pushListTemplate:(CPListTemplate *)arg1 withProxyDelegate:(id <CPListClientTemplateDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPListTemplateProviding>))arg5;
+- (void)pushGridTemplate:(CPGridTemplate *)arg1 withProxyDelegate:(id <CPGridTemplateClientDelegate>)arg2 animated:(NSNumber *)arg3 presentationStyle:(unsigned long long)arg4 reply:(void (^)(id <CPGridTemplateProviding>))arg5;
 - (void)requestBannerProviderWithReply:(void (^)(id <CPBannerProviding>))arg1;
 - (void)dismissAlertAnimated:(_Bool)arg1;
 - (void)presentAlertTemplate:(CPAlertTemplate *)arg1 withProxyDelegate:(id <CPAlertDelegate>)arg2;
@@ -32,5 +27,6 @@
 - (void)popToRootTemplateAnimated:(NSNumber *)arg1;
 - (void)popToTemplate:(CPTemplate *)arg1 animated:(NSNumber *)arg2;
 - (void)containsTemplate:(CPTemplate *)arg1 reply:(void (^)(_Bool))arg2;
+- (void)setHostPrefersDarkUserInterfaceStyle:(_Bool)arg1;
 @end
 

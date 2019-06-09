@@ -20,9 +20,8 @@
     UIView *_sourceView;
     NSString *_groupName;
     long long _materialRecipe;
-    unsigned long long _backgroundMaterialOptions;
-    unsigned long long _overlayMaterialOptions;
     id <NCPreviewInteractionPresenterDelegate> _delegate;
+    long long _overrideUserInterfaceStyle;
     UIPreviewInteraction *_previewInteraction;
     UIView *_containerView;
     NCPreviewInteractionPresenterContentView *_contentView;
@@ -40,10 +39,9 @@
 @property(readonly, nonatomic, getter=_contentView) NCPreviewInteractionPresenterContentView *contentView; // @synthesize contentView=_contentView;
 @property(readonly, nonatomic, getter=_containerView) UIView *containerView; // @synthesize containerView=_containerView;
 @property(readonly, nonatomic, getter=_previewInteraction) UIPreviewInteraction *previewInteraction; // @synthesize previewInteraction=_previewInteraction;
+@property(nonatomic) long long overrideUserInterfaceStyle; // @synthesize overrideUserInterfaceStyle=_overrideUserInterfaceStyle;
 @property(nonatomic, getter=isPresented, setter=_setPresented:) _Bool presented; // @synthesize presented=_presented;
 @property(nonatomic) __weak id <NCPreviewInteractionPresenterDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) unsigned long long overlayMaterialOptions; // @synthesize overlayMaterialOptions=_overlayMaterialOptions;
-@property(readonly, nonatomic) unsigned long long backgroundMaterialOptions; // @synthesize backgroundMaterialOptions=_backgroundMaterialOptions;
 @property(readonly, nonatomic) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
 @property(copy, nonatomic) NSString *groupName; // @synthesize groupName=_groupName;
 @property(nonatomic) struct CGRect sourceViewVisibleRect; // @synthesize sourceViewVisibleRect=_sourceViewVisibleRect;
@@ -77,7 +75,7 @@
 - (void)addTarget:(id)arg1 action:(SEL)arg2;
 @property(readonly, copy, nonatomic) NSString *title;
 - (void)dealloc;
-- (id)initWithTitle:(id)arg1 sourceView:(id)arg2 materialRecipe:(long long)arg3 backgroundMaterialOptions:(unsigned long long)arg4 overlayMaterialOptions:(unsigned long long)arg5;
+- (id)initWithTitle:(id)arg1 sourceView:(id)arg2 materialRecipe:(long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

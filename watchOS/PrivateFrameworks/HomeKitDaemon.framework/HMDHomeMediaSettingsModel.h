@@ -18,9 +18,9 @@
 + (id)modelNamespace;
 
 // Remaining properties
-@property(retain, nonatomic) NSString *mediaPassword; // @dynamic mediaPassword;
-@property(retain, nonatomic) NSNumber *mediaPeerToPeerEnabled; // @dynamic mediaPeerToPeerEnabled;
-@property(retain, nonatomic) NSNumber *minimumMediaUserPrivilege; // @dynamic minimumMediaUserPrivilege;
+@property(copy, nonatomic) NSString *mediaPassword; // @dynamic mediaPassword;
+@property(copy, nonatomic) NSNumber *mediaPeerToPeerEnabled; // @dynamic mediaPeerToPeerEnabled;
+@property(copy, nonatomic) NSNumber *minimumMediaUserPrivilege; // @dynamic minimumMediaUserPrivilege;
 
 @end
 

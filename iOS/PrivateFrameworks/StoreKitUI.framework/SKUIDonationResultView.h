@@ -8,6 +8,7 @@
 
 @class NSString, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDonationResultView : UIView
 {
     UIImageView *_imageView;

@@ -23,12 +23,12 @@ __attribute__((visibility("hidden")))
     double _paletteScaleFactor;
     id _target;
     SEL _action;
-    unsigned int _isActive:1;
-    unsigned int _hasAcceleration:1;
-    unsigned int _hasAccelerationCached:1;
-    unsigned int _darkened:1;
-    unsigned int _debugMode:1;
-    unsigned int _pressed:1;
+    BOOL _isActive;
+    BOOL _hasAcceleration;
+    BOOL _hasAccelerationCached;
+    BOOL _darkened;
+    BOOL _debugMode;
+    BOOL _pressed;
 }
 
 @property double paletteScaleFactor; // @synthesize paletteScaleFactor=_paletteScaleFactor;

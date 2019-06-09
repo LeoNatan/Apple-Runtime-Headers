@@ -7,6 +7,8 @@
 #import <HealthKit/HKCodableQuantitySeriesDatum.h>
 
 @interface HKCodableQuantitySeriesDatum (HDQuantitySampleEntity)
++ (id)datumWithStartTime:(double)arg1 value:(double)arg2 endTime:(double)arg3;
++ (id)datumWithTimestamp:(double)arg1 value:(double)arg2 duration:(float)arg3;
 + (id)datumWithValue:(double)arg1 timeInterval:(double)arg2;
 @end
 

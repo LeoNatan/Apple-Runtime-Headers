@@ -35,6 +35,7 @@
 @property GKVoiceChatService *wrapperService; // @synthesize wrapperService;
 @property int state; // @synthesize state;
 @property(nonatomic) id client; // @synthesize client;
+@property(readonly, nonatomic) long long outputAudioPowerSpectrumToken;
 - (id)remoteDisplayNameForCallID:(unsigned int)arg1;
 - (id)localDisplayNameForCallID:(unsigned int)arg1;
 @property(readonly) double remoteBitrate;

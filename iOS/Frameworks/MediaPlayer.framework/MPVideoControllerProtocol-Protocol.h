@@ -35,7 +35,7 @@
 @property(retain, nonatomic) UIColor *backstopColor;
 @property(readonly, nonatomic) UIView *backgroundView;
 @property(nonatomic) _Bool attemptAutoPlayWhenControlsHidden;
-@property(nonatomic) int artworkImageStyle;
+@property(nonatomic) long long artworkImageStyle;
 @property(nonatomic) _Bool alwaysAllowHidingControlsOverlay;
 @property(nonatomic) _Bool allowsWirelessPlayback;
 @property(nonatomic) _Bool allowsDetailScrubbing;

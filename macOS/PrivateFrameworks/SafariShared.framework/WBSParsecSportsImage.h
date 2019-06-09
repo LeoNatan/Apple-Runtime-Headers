@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) WBSParsecImageRepresentation *imageRepresentation; // @synthesize imageRepresentation=_imageRepresentation;
 @property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
 - (void).cxx_destruct;
+- (id)initWithSFSportsTeam:(id)arg1 alignment:(long long)arg2;
 - (id)initWithDictionary:(id)arg1;
 
 @end

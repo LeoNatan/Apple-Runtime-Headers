@@ -6,12 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <AVKit/AVPictureInPictureContentSource-Protocol.h>
+#import <AVKit/AVPictureInPictureControllerDelegate-Protocol.h>
 #import <AVKit/_AVFocusContainerDelegate-Protocol.h>
 
-@class AVAudioOnlyIndicatorView, AVContentProposalViewController, AVDelegateManager, AVDigitizerTouchGestureRecognizer, AVGestureRecognizerDelegate, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVNonDigitizerTapRecognizer, AVNowPlayingPlaybackControlsViewController, AVPermissiveSwipeGestureRecognizer, AVPlayer, AVPlayerController, AVPlayerLayerView, AVPlayerViewControllerTransition, AVTimeRangeCollection, AVTransportBarViewController, NSArray, NSDictionary, NSLayoutConstraint, NSObject, NSString, NSTimer, NSURL, UIAlertController, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UITapGestureRecognizer, UIView;
+@class AVBehaviorStorage, AVContentProposalViewController, AVContentRestrictionsViewController, AVControlItem, AVDelegateManager, AVDigitizerTouchGestureRecognizer, AVGestureRecognizerDelegate, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVNonDigitizerTapRecognizer, AVNowPlayingPlaybackControlsViewController, AVPermissiveSwipeGestureRecognizer, AVPictureInPictureController, AVPlayer, AVPlayerController, AVPlayerLayerView, AVPlayerViewControllerTransition, AVTransportBarViewController, AVxCustomOverlayHostViewController, NSArray, NSDictionary, NSLayoutConstraint, NSObject, NSString, NSTimer, NSURL, UIAlertController, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILayoutGuide, UIPanGestureRecognizer, UITapGestureRecognizer, UIView, UIWindow;
 @protocol AVPlayerViewControllerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface AVPlayerViewController : UIViewController <_AVFocusContainerDelegate>
+@interface AVPlayerViewController : UIViewController <AVPictureInPictureContentSource, AVPictureInPictureControllerDelegate, _AVFocusContainerDelegate>
 {
     _Bool _showsPlaybackControls;
     _Bool _playbackControlsViewControllerShouldShowLoadingIndicator;
@@ -32,9 +34,7 @@
     NSString *_videoGravity;
     AVKeyValueObserverCollection *_keyValueObservers;
     AVDelegateManager *_delegateManager;
-    AVAudioOnlyIndicatorView *_audioOnlyIndicatorView;
     UIView *_contentContainerView;
-    AVPlayerLayerView *_playerLayerView;
     UIView *_contentOverlayView;
     UIView *_iAdPrerollView;
     UIView *_HDCPObscuringView;
@@ -42,6 +42,9 @@
     NSArray *_constraintsForContentProposal;
     AVNowPlayingPlaybackControlsViewController *_playbackControlsViewController;
     AVInternalPlaybackOptions *_playbackOptions;
+    AVControlItem *_customOverlayControlItem;
+    AVxCustomOverlayHostViewController *_customOverlayHostViewController;
+    AVContentRestrictionsViewController *_contentRestrictionsViewController;
     AVContentProposalViewController *_contentProposalViewController;
     id _mediaServicesWereResetObserver;
     id _willAddDeactivationReasonObserver;
@@ -49,6 +52,7 @@
     id _applicationWillResignActiveObserver;
     id _applicationDidBecomeActiveObserver;
     id _playerItemDidPlayToEndObserver;
+    id _playerItemBlockedDueToRestrictionsObserver;
     id _contentProposalBoundaryTimeObserver;
     AVPlayer *_playerForContentProposalBoundaryTimeObserver;
     NSTimer *_loadingIndicatorTimer;
@@ -61,6 +65,7 @@
     AVNonDigitizerTapRecognizer *_b39ArrowGestureRecognizer;
     AVNonDigitizerTapRecognizer *_b39SelectGestureRecognizer;
     AVPermissiveSwipeGestureRecognizer *_swipeDownGestureRecognizer;
+    AVPermissiveSwipeGestureRecognizer *_swipeUpGestureRecognizer;
     UIDigitizerTapGestureRecognizer *_selectDigitizerTapRecognizer;
     UIDigitizerLongPressGestureRecognizer *_selectLongPressRecognizer;
     UITapGestureRecognizer *_menuTapRecognizerDismissal;
@@ -69,8 +74,8 @@
     UITapGestureRecognizer *_independentTouchRecognizer;
     UITapGestureRecognizer *_singleTouchRecognizer;
     UITapGestureRecognizer *_doubleTouchRecognizer;
-    AVTimeRangeCollection *_advertisementTimeRangeCollection;
     double _timeRemainingForCurrentAdvertisements;
+    double _timeIntervalOfLastSwitchToFullScreen;
     NSURL *_alternateThumbnailStreamURL;
     NSArray *_allowedSubtitleLanguages;
     NSArray *_customInfoViewControllers;
@@ -84,21 +89,31 @@
     UIAlertController *_HDCPAlertController;
     NSDictionary *_pixelBufferAttributes;
     _Bool _presentingContentProposal;
+    AVPictureInPictureController *_pictureInPictureController;
     UIView *__placeholderViewDuringPresentation;
+    AVBehaviorStorage *__behaviorStorage;
+    AVPlayerLayerView *_playerLayerView;
 }
 
++ (id)keyPathsForValuesAffectingVideoBounds;
 + (id)keyPathsForValuesAffectingReadyForDisplay;
 + (id)keyPathsForValuesAffectingVideoGravity;
++ (void)setActivePictureInPictureController:(id)arg1;
++ (id)activePictureInPictureController;
 + (id)keyPathsForValuesAffectingAlternateThumbnailStreamURL;
+@property(retain, nonatomic) AVPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
+@property(readonly, nonatomic) AVBehaviorStorage *_behaviorStorage; // @synthesize _behaviorStorage=__behaviorStorage;
 @property(nonatomic, getter=isPresentingContentProposal, setter=_setPresentingContentProposal:) _Bool presentingContentProposal; // @synthesize presentingContentProposal=_presentingContentProposal;
 @property(retain, nonatomic) UIView *_placeholderViewDuringPresentation; // @synthesize _placeholderViewDuringPresentation=__placeholderViewDuringPresentation;
+@property(readonly, nonatomic) AVPictureInPictureController *pictureInPictureController; // @synthesize pictureInPictureController=_pictureInPictureController;
 @property(readonly, nonatomic) AVInternalPlaybackOptions *playbackOptions; // @synthesize playbackOptions=_playbackOptions;
 @property(copy, nonatomic) NSString *videoGravity; // @synthesize videoGravity=_videoGravity;
 - (void).cxx_destruct;
 - (void)_didSelectMediaSelectionOption:(id)arg1 withMediaCharacteristic:(id)arg2;
 - (void)togglePlayback:(id)arg1;
 - (_Bool)_canDismiss;
-- (void)doneButtonTapped:(id)arg1;
+- (void)dismissAction:(id)arg1;
+- (void)_dismissUsingExternalGestureRecognizerIfNecessary:(_Bool)arg1;
 - (void)_outputObscuredDueToInsufficientExternalProtectionDidChange;
 - (void)_stopSpinningAndPlay;
 - (void)_cancelHDCPTimer;
@@ -128,13 +143,14 @@
 - (void)_updatePlaybackControlsViewController;
 - (void)viewWillLayoutSubviews;
 - (void)_updateUnobscuredContentGuide;
-- (void)_updateAudioOnlyIndicatorView;
 - (void)_didResetMediaServices;
 - (_Bool)_isAudioOnlyContent;
 - (void)_fireLoadingIndicatorTimer:(id)arg1;
 - (_Bool)canBecomeFirstResponder;
 - (void)updateViewConstraints;
 - (void)_didChangeFullScreen;
+- (void)_showCustomOverlayHintIfApplicable;
+- (void)_hideCustomOverlayHintTimeout;
 - (_Bool)_considerDisplayModeSwitchFinishedIfPlaying;
 - (void)_updatePreferredDisplayCriteria;
 - (void)_updatePreferredDisplayCriteriaForAsset:(id)arg1;
@@ -150,6 +166,7 @@
 - (void)focusContainerView:(id)arg1 willMoveToWindow:(id)arg2;
 - (void)didUpdateFocusToFocusContainerView:(id)arg1;
 - (void)didUpdateFocusFromFocusContainerView:(id)arg1;
+- (_Bool)shouldUpdateFocusToFocusContainerView:(id)arg1;
 - (id)preferredFocusEnvironments;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)_updateUXState;
@@ -173,10 +190,24 @@
 - (void)navigateUp:(id)arg1;
 - (void)scrubbingGesture:(id)arg1;
 - (void)panningGesture:(id)arg1;
+- (void)_swipeUpGesture:(id)arg1;
 - (void)_swipeDownGesture:(id)arg1;
+- (void)avkitDidDismissOverlayViewController;
+- (void)avkitWillDismissOverlayViewController;
+- (void)avkitDidArrowUp:(id)arg1;
+- (void)_presentCustomOverlayViewController;
+- (_Bool)isPresentingInteractiveOverlay;
+- (void)_presentInteractiveOverlayViewController;
+- (void)_updateInteractiveOverylayControls;
+- (id)interactiveOverlayViewController;
 - (id)nowPlayingPlaybackControlsViewController;
 - (struct CGSize)preferredContentSize;
 - (void)loadView;
+@property(readonly, nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive;
+@property(readonly, nonatomic) struct CGRect videoBounds;
+- (void)setAllowsPictureInPicturePlayback:(_Bool)arg1;
+- (_Bool)allowsPictureInPicturePlayback;
+- (void)_ensureBehaviorStorage;
 @property(copy, nonatomic) NSDictionary *pixelBufferAttributes;
 - (void)updateNowPlayingInfoFull;
 - (void)updateNowPlayingInfo;
@@ -187,6 +218,8 @@
 - (id)_containerView;
 @property(readonly, nonatomic) UILayoutGuide *unobscuredContentGuide;
 @property(readonly, nonatomic) UIView *contentOverlayView;
+- (void)_layoutContentOverlayViewIfLoaded;
+- (void)_loadContentOverlayViewIfNeeded;
 @property(nonatomic) _Bool requiresLinearPlayback;
 @property(readonly, nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay;
 @property(nonatomic) _Bool appliesPreferredDisplayCriteriaAutomatically;
@@ -199,6 +232,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)_customOverlayControlItem;
 @property(readonly, nonatomic) UIView *iAdPrerollView;
 - (void)didChangePlayerController;
 @property(retain, nonatomic) AVPlayerController *playerController;
@@ -211,6 +245,7 @@
 - (void)_didDismissViewController:(id)arg1;
 - (void)_willDismissViewController:(id)arg1;
 - (void)_didPresentViewController:(id)arg1;
+- (void)_willPresentViewController:(id)arg1;
 - (void)_internalWillResumePlaybackAfterUserNavigatedFromTime:(CDStruct_1b6d18a9)arg1 toTime:(CDStruct_1b6d18a9)arg2;
 - (void)dismissContentProposalAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentContentProposal:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
@@ -232,8 +267,10 @@
 @property(nonatomic) _Bool requiresFullSubtitles;
 - (void)setAlternateThumbnailStreamURL:(id)arg1;
 - (id)alternateThumbnailStreamURL;
+@property(nonatomic) _Bool allowInfoMetadataSubpanel; // @dynamic allowInfoMetadataSubpanel;
 @property(retain, nonatomic) NSString *infoHint;
 @property(retain, nonatomic) NSArray *customInfoViewControllers;
+@property(retain, nonatomic) UIViewController *customOverlayViewController;
 @property(retain, nonatomic) UIViewController *customInfoViewController;
 @property(nonatomic) _Bool playbackControlsIncludeInfoViews;
 @property(nonatomic) _Bool playbackControlsIncludeTransportBar;
@@ -241,6 +278,24 @@
 - (void)_presentTransportBarViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dismissTransportBarViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) AVTransportBarViewController *transportBarViewController;
+- (void)pictureInPictureController:(id)arg1 restoreUserInterfaceForPictureInPictureStopWithCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)pictureInPictureControllerDidStopPictureInPicture:(id)arg1;
+- (void)pictureInPictureControllerWillStopPictureInPicture:(id)arg1;
+- (void)pictureInPictureController:(id)arg1 failedToStartPictureInPictureWithError:(id)arg2;
+- (void)pictureInPictureControllerDidStartPictureInPicture:(id)arg1;
+- (void)pictureInPictureControllerWillStartPictureInPicture:(id)arg1;
+- (void)avkit_stopRoutingVideoToPictureInPictureViewController:(id)arg1;
+- (void)avkit_startRoutingVideoToPictureInPictureViewController:(id)arg1;
+- (id)avkit_pictureInPictureViewController;
+- (id)avkit_makePlayerControllerIfNeeded:(id)arg1;
+@property(readonly, nonatomic) struct CGRect avkit_videoRectInWindow;
+@property(readonly, nonatomic) _Bool avkit_isVisible;
+@property(readonly, nonatomic) UIWindow *avkit_window;
+- (void)stopPictureInPicture;
+- (void)startPictureInPicture;
+@property(readonly, nonatomic) NSArray *behaviors;
+- (void)removeBehavior:(id)arg1;
+- (void)addBehavior:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

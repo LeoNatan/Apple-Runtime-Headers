@@ -20,7 +20,6 @@
 - (void)setContent:(struct __CFDictionary *)arg1;
 - (struct __CFString *)getContentID;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 @end

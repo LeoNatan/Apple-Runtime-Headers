@@ -18,12 +18,17 @@
     NSObject<OS_dispatch_queue> *_mergeQueue;
 }
 
++ (void)purgeHandwritingSummariesInContext:(id)arg1;
++ (void)generateMissingOrOutdatedHandwritingSummariesInContext:(id)arg1;
++ (id)missingOrOutdatedHandwritingSummaryAttachmentsInContext:(id)arg1;
++ (id)handwritingSummaryAttachmentsInContext:(id)arg1;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mergeQueue; // @synthesize mergeQueue=_mergeQueue;
 @property(nonatomic) unsigned long long numberOfChanges; // @synthesize numberOfChanges=_numberOfChanges;
 @property(retain, nonatomic) PKDrawing *latestDrawing; // @synthesize latestDrawing=_latestDrawing;
 @property(retain, nonatomic) ICSelectorDelayer *processChangesSelectorDelayer; // @synthesize processChangesSelectorDelayer=_processChangesSelectorDelayer;
 @property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
+- (void)updateVersionIfNeededForAttachment:(id)arg1 withDrawing:(id)arg2;
 - (void)processIndexableContent;
 - (void)mergeDrawingWithDrawing:(id)arg1;
 - (id)retrieveAndClearLatestDrawingToMerge;

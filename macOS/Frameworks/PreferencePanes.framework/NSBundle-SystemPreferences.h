@@ -8,5 +8,6 @@
 
 @interface NSBundle (SystemPreferences)
 - (id)systempreferences_imageForFileResourceWithBaseName:(id)arg1;
+- (id)locStringForKey:(id)arg1 defaultValue:(id)arg2;
 @end
 

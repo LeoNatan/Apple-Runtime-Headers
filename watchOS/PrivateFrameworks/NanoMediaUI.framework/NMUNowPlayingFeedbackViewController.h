@@ -8,7 +8,7 @@
 
 #import <NanoMediaUI/PUICActionSheetControllerDelegate-Protocol.h>
 
-@class NMUFeedbackActionSheetHeaderView, NSArray, NSString;
+@class NMUTitlesActionSheetHeaderView, NSArray, NSString;
 @protocol NMUNowPlayingFeedbackViewControllerDelegate;
 
 @interface NMUNowPlayingFeedbackViewController : PUICActionSheetController <PUICActionSheetControllerDelegate>
@@ -17,7 +17,7 @@
     NSArray *_allActionItems;
     _Bool _forFirstPartyMusicApp;
     _Bool _cancelled;
-    NMUFeedbackActionSheetHeaderView *_trackTitlesView;
+    NMUTitlesActionSheetHeaderView *_trackTitlesView;
     int _likeCommandPresentationStyle;
     id <NMUNowPlayingFeedbackViewControllerDelegate> _feedbackActionSheetControllerDelegate;
 }
@@ -33,7 +33,7 @@
 - (void)actionContentControllerCancel:(id)arg1;
 - (void)reloadActionSheet;
 - (void)_updateActionItems;
-@property(readonly, nonatomic) NMUFeedbackActionSheetHeaderView *trackTitlesView; // @synthesize trackTitlesView=_trackTitlesView;
+@property(readonly, nonatomic) NMUTitlesActionSheetHeaderView *trackTitlesView; // @synthesize trackTitlesView=_trackTitlesView;
 @property(copy, nonatomic) NSString *artistText; // @dynamic artistText;
 @property(copy, nonatomic) NSString *titleText; // @dynamic titleText;
 - (void)viewDidDisappear:(_Bool)arg1;

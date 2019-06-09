@@ -32,6 +32,9 @@
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic, getter=willDisableLongCoverGesture) _Bool disableLongCoverGesture;
+@property(readonly, nonatomic, getter=shouldIgnoreCoverGesture) _Bool ignoreCoverGesture;
+@property(readonly, nonatomic, getter=shouldEnableCoverGesture) _Bool enableCoverGesture;
 @property(readonly, nonatomic, getter=shouldTouchlock) _Bool touchlock;
 @property(readonly, nonatomic, getter=shouldBlankScreen) _Bool blankScreen;
 @property(readonly, nonatomic, getter=willPreventUnblank) _Bool preventUnblank;
@@ -39,6 +42,7 @@
 @property(readonly, nonatomic) _Bool doesTimeoutWhenDisplayOff;
 @property(readonly, nonatomic, getter=isUserInitiated) _Bool userInitiated;
 @property(readonly, nonatomic, getter=shouldRestartUserIdleTimer) _Bool restartUserIdleTimer;
+@property(readonly, nonatomic, getter=willDisableWristRaiseGestures) _Bool disableWristRaiseGestures;
 @property(readonly, nonatomic, getter=willDisableWristLowerGestures) _Bool disableWristLowerGestures;
 @property(readonly, nonatomic, getter=willForceDisplayOn) _Bool forceDisplayOn;
 @property(readonly, nonatomic, getter=willKeepScreenOn) _Bool keepDisplayOn;

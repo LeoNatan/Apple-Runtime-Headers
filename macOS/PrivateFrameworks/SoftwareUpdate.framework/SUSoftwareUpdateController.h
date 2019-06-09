@@ -45,8 +45,8 @@
 }
 
 @property BOOL didSendAuth; // @synthesize didSendAuth=_didSendAuth;
-@property NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
-@property NSXPCConnection *connection; // @synthesize connection=_connection;
+@property(retain) NSObject<OS_dispatch_queue> *updateQueue; // @synthesize updateQueue=_updateQueue;
+@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) unsigned long long totalSize; // @synthesize totalSize=_totalSize;
 @property(readonly) unsigned long long downloadedSize; // @synthesize downloadedSize=_downloadedSize;
 @property(readonly) long long currentState; // @synthesize currentState=_currentState;
@@ -104,6 +104,7 @@
 - (void)catalogAndScanInfoWithReply:(CDUnknownBlockType)arg1;
 - (void)queryForAvailableUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)initiateBackgroundScanIfNecessary:(BOOL)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
+- (void)_fetchMajorOSInfoForProductKey:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_queryForAvailableUpdatesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_setAvailableUpdates:(id)arg1 currentStatus:(id)arg2;
 

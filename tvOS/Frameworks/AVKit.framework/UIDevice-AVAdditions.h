@@ -7,9 +7,6 @@
 #import <UIKit/UIDevice.h>
 
 @interface UIDevice (AVAdditions)
-- (id)userDeviceName;
-- (_Bool)supportsMediaSelection;
-- (_Bool)hasRemoteControl;
-- (_Bool)_isDevice2;
+- (id)_avUserDeviceName;
 @end
 

@@ -60,6 +60,7 @@
 - (void)_cancelButtonInAlertTapped:(id)arg1;
 - (void)_saveButtonTapped:(id)arg1;
 - (void)_cancelButtonTapped:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

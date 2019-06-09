@@ -20,7 +20,7 @@
     float _contentSpecificAnimationDuration;
 }
 
-+ (void)_genericComplicationAnimationWithDuration:(float)arg1 applier:(CDUnknownBlockType)arg2;
++ (id)_genericComplicationAnimationWithDuration:(float)arg1 applier:(CDUnknownBlockType)arg2;
 @property(nonatomic) float contentSpecificAnimationDuration; // @synthesize contentSpecificAnimationDuration=_contentSpecificAnimationDuration;
 @property(nonatomic) float alpha; // @synthesize alpha=_alpha;
 @property(retain, nonatomic) UIColor *platterColor; // @synthesize platterColor=_platterColor;
@@ -30,6 +30,7 @@
 @property(copy, nonatomic) CDUnknownBlockType foregroundColorProviderBlock; // @synthesize foregroundColorProviderBlock=_foregroundColorProviderBlock;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+- (id)createComplicationContentSpecificAttributesAnimationWithAttributes:(unsigned int)arg1 faceView:(id)arg2 forSlots:(id)arg3;
 - (void)applyComplicationContentSpecificAttributesAnimated:(_Bool)arg1 attributes:(unsigned int)arg2 faceView:(id)arg3;
 - (void)applyComplicationContentSpecificAttributesAnimated:(_Bool)arg1 faceView:(id)arg2;
 - (void)setAlpha:(float)arg1 faceView:(id)arg2;

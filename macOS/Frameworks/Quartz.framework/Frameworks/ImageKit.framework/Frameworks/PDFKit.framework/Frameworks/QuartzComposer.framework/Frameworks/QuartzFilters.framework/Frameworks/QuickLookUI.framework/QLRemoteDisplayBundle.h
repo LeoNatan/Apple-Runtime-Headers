@@ -4,15 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <QuickLookUI/QLDisplayBundle.h>
+#import <QuickLookUI/QLUIServiceBaseDisplayBundle.h>
 
 #import <QuickLookUI/QLUIServiceHostViewControllerDelegate-Protocol.h>
 
-@class CALayerHost, NSDictionary, NSMutableArray, NSString, NSURL, QLUIServiceEditToolbarHostViewController, QLUIServiceHostViewController;
+@class CALayerHost, NSDictionary, NSMutableArray, NSString, NSURL, QLUIServiceEditToolbarHostViewController;
 @protocol QLUIServiceEditToolbarViewControllerProtocol, QLUIServiceViewControllerProtocol;
 
 __attribute__((visibility("hidden")))
-@interface QLRemoteDisplayBundle : QLDisplayBundle <QLUIServiceHostViewControllerDelegate>
+@interface QLRemoteDisplayBundle : QLUIServiceBaseDisplayBundle <QLUIServiceHostViewControllerDelegate>
 {
     NSString *_displayBundleID;
     CALayerHost *_layer;
@@ -65,15 +65,12 @@ __attribute__((visibility("hidden")))
     BOOL _markupSupported;
     BOOL _rotateSupported;
     QLUIServiceEditToolbarHostViewController *_editToolbarViewController;
-    QLUIServiceHostViewController *_remoteViewController;
 }
 
 + (id)keyPathsForValuesAffectingTouchBar;
 + (id)windowUnsupportedError;
-+ (id)genericServiceCrashError;
-+     // Error parsing type: @40@0:8^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}^v{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLGenerator}^{__QLServer}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCCC^{?}^{__QLPreviewRequest}}16@24@32, name: remoteDisplayBundleWithPreview:displayBundleID:owner:
++ (id)remoteDisplayBundleWithPreview:(id)arg1 displayBundleID:(id)arg2 owner:(id)arg3;
 @property(retain) NSMutableArray *connectionMadeObservers; // @synthesize connectionMadeObservers=_connectionMadeObservers;
-@property(retain) QLUIServiceHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(retain) QLUIServiceEditToolbarHostViewController *editToolbarViewController; // @synthesize editToolbarViewController=_editToolbarViewController;
 @property(retain) NSString *displayBundleID; // @synthesize displayBundleID=_displayBundleID;
 @property(retain) NSURL *launchURL; // @synthesize launchURL=_launchURL;
@@ -134,13 +131,10 @@ __attribute__((visibility("hidden")))
 - (void)windowKeyDidChange;
 - (void)set_QLBundleAppearance:(id)arg1;
 - (void)backingScaleFactorDidChange;
+- (void)saveModeDidChange;
 - (void)modeDidChange;
 - (void)updatePropertiesFromDictionary:(id)arg1;
-- (id)responder;
-- (id)contentLayer;
-- (id)quickLookLayer;
-- (id)quickLookView;
-@property(readonly) id <QLUIServiceViewControllerProtocol> serviceViewController;
+@property(readonly) id <QLUIServiceViewControllerProtocol> remoteServiceViewController;
 - (void)setQuickLookFrame:(struct CGRect)arg1;
 - (void)refreshSynchronously;
 - (void)setOverlayControlOverlayFrame:(struct CGRect)arg1 rollOverFrame:(struct CGRect)arg2;
@@ -151,6 +145,7 @@ __attribute__((visibility("hidden")))
 - (void)willHide;
 - (void)didOpen;
 - (void)willOpen;
+- (void)refreshQuickLookFrame;
 - (void)didLoad;
 - (void)discard;
 - (void)deactivate;
@@ -166,8 +161,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) id <QLUIServiceEditToolbarViewControllerProtocol> serviceEditToolbarViewController;
 - (id)markupControls;
 - (void)revertMarkup:(CDUnknownBlockType)arg1;
-- (void)_exitMarkupIfNeeded;
+- (void)_exitMarkupIfNeededWaitingForSave:(BOOL)arg1;
 - (void)exitMarkup:(long long)arg1;
+- (void)didSaveEdit:(BOOL)arg1 toURL:(id)arg2;
 - (void)didEnterMarkup;
 - (void)enterMarkup;
 - (void)zoomWithAction:(long long)arg1;
@@ -177,9 +173,7 @@ __attribute__((visibility("hidden")))
 - (void)_stopObserving;
 - (void)_startObserving;
 - (id)_propertiesToForward;
-- (void)doubleClickOnPreviewContent;
 - (id)touchBar;
-- (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)showPasswordUI;
 - (void)remotePreviewDesistedWithHints:(id)arg1;
 - (void)remotePreviewSizingUpdated;
@@ -190,7 +184,7 @@ __attribute__((visibility("hidden")))
 - (void)performBlockOnMainThread:(CDUnknownBlockType)arg1;
 - (void)_performBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;
--     // Error parsing type: @32@0:8^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}^v{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLGenerator}^{__QLServer}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCCC^{?}^{__QLPreviewRequest}}16@24, name: initWithPreview:owner:
+- (id)initWithPreview:(id)arg1 owner:(id)arg2;
 - (void)resetAccessibility;
 
 // Remaining properties

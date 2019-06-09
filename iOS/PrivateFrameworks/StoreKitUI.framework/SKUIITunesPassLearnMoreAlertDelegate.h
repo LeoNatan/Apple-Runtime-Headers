@@ -10,6 +10,7 @@
 
 @class NSString, SKUIClientContext, SKUIRedeemConfiguration, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIITunesPassLearnMoreAlertDelegate : NSObject <UIAlertViewDelegate>
 {
     SKUIClientContext *_clientContext;

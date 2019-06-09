@@ -8,6 +8,7 @@
 
 @class IMHandle;
 
+__attribute__((visibility("hidden")))
 @interface CKIMSimulatedAccount : IMAccount
 {
     IMHandle *_loginHandle;

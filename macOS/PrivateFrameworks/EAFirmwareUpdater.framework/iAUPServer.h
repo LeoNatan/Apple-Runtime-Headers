@@ -28,9 +28,13 @@
     unsigned short _accessoryCapabilities;
     unsigned int _totalBytesDownloadedInCurrentSession;
     BOOL _startEventSent;
+    unsigned char _iAUPVersion;
+    unsigned char _currentAsset;
     NSObject<OS_dispatch_queue> *_dispatchQ;
 }
 
+@property(nonatomic) unsigned char currentAsset; // @synthesize currentAsset=_currentAsset;
+@property(nonatomic) unsigned char iAUPVersion; // @synthesize iAUPVersion=_iAUPVersion;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQ; // @synthesize dispatchQ=_dispatchQ;
 @property(nonatomic) int parserState; // @synthesize parserState=_parserState;
 @property(nonatomic) int serverState; // @synthesize serverState=_serverState;
@@ -47,8 +51,11 @@
 - (void)processRequestDownloadCommand:(char *)arg1 length:(unsigned int)arg2;
 - (void)processIdentifyCommand:(char *)arg1 length:(unsigned int)arg2;
 - (void)setResumeInfo:(char *)arg1 length:(unsigned int)arg2;
+- (BOOL)personalizationComplete;
+- (void)processPersonalizationInfo:(char *)arg1 length:(unsigned int)arg2;
+- (id)processManifestProperties:(char *)arg1 length:(unsigned int)arg2;
 - (void)setBootloaderEntry;
-- (void)sendCommand:(unsigned char)arg1 payload:(char *)arg2 payload_length:(unsigned short)arg3;
+- (id)sendCommand:(unsigned char)arg1 payload:(char *)arg2 payload_length:(unsigned short)arg3;
 - (unsigned char)appendByteWithEscaping:(unsigned char)arg1 toObject:(id *)arg2;
 - (void)processInTelegram;
 - (void)processInByte:(unsigned char)arg1;

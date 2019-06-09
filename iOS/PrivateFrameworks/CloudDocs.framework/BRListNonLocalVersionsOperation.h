@@ -25,9 +25,10 @@
     CDUnknownBlockType _fetchingVersionsDoneBlock;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) CDUnknownBlockType fetchingVersionsDoneBlock; // @synthesize fetchingVersionsDoneBlock=_fetchingVersionsDoneBlock;
 @property(nonatomic) _Bool includeCachedVersions; // @synthesize includeCachedVersions=_includeCachedVersions;
-@property(readonly, nonatomic) NSMutableArray *versions; // @synthesize versions=_versions;
+@property(readonly, copy, nonatomic) NSMutableArray *versions; // @synthesize versions=_versions;
 @property(nonatomic, getter=isExecuting) _Bool executing; // @synthesize executing=_executing;
 @property(nonatomic, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 - (void).cxx_destruct;
@@ -44,6 +45,7 @@
 - (_Bool)__finishIfCancelled;
 - (void)cancel;
 - (void)_senderInvalidate;
+- (_Bool)isAsynchronous;
 - (_Bool)isConcurrent;
 - (void)dealloc;
 - (id)initWithDocumentURL:(id)arg1;

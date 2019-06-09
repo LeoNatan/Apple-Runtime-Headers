@@ -10,9 +10,9 @@
 {
 }
 
-+ (id)locationsOfInterestVisitiedBetweenStartDate:(id)arg1 endDate:(id)arg2;
-+ (void)fetchLocationsOfInterestMapItemsVisitiedBetweenStartDate:(id)arg1 endDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-+ (void)importCoreRoutineData;
++ (id)fetchLocationOfInterestByType:(long long)arg1;
++ (id)locationsOfInterestVisitedBetweenStartDate:(id)arg1 endDate:(id)arg2;
++ (void)importCoreRoutineDataWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
 

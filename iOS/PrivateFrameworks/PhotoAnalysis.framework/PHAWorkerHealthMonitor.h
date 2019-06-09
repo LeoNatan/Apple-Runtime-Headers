@@ -10,6 +10,7 @@
 
 @interface PHAWorkerHealthMonitor : NSObject
 {
+    struct os_unfair_lock_s _lock;
     double _maxScoreRecentnessInterval;
     NSMutableDictionary *_scoresByWorkerType;
     NSMutableDictionary *_cachedAverageScoresByWorkerType;
@@ -26,6 +27,8 @@
 - (void)reset;
 - (void)recordResultsFromWorkerJob:(id)arg1;
 - (float)averageScoreForWorkerType:(short)arg1;
+- (_Bool)_isHealthyForWorkerType:(short)arg1;
+- (float)_averageScoreForWorkerType:(short)arg1;
 - (id)init;
 - (float)_calculateAverageScoreForWorkerType:(short)arg1;
 - (void)_trimScoresForWorkerType:(short)arg1;

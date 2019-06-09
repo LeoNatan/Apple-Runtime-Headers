@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ViewBridge/NSVBClientAuxiliaryConnection.h>
+#import <ViewBridge/NSVBHasClientAuxiliaryConnection.h>
 
 __attribute__((visibility("hidden")))
-@interface NSVBHostAppAuxiliaryConnection : NSVBClientAuxiliaryConnection
+@interface NSVBHostAppAuxiliaryConnection : NSVBHasClientAuxiliaryConnection
 {
     BOOL _accepted;
     int _auxServicePID;

@@ -27,8 +27,10 @@
     NSArray *weeksOfTheYear;
 }
 
++ (Class)alternateUniverseClass;
++ (long long)_ekWeekdayFromICSWeekday:(long long)arg1;
 + (id)ruleWithRule:(id)arg1 allDay:(BOOL)arg2 floating:(BOOL)arg3;
-+ (long long)ekFrequencyFromICSFrequency:(int)arg1;
++ (long long)ekFrequencyFromICSFrequency:(unsigned long long)arg1;
 + (int)intervalFromICSDate:(id)arg1 inTimezone:(id)arg2;
 + (Class)meltedClass;
 @property BOOL floating; // @synthesize floating=_floating;

@@ -23,7 +23,6 @@
 - (void)scanManager:(id)arg1 lostDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 foundDeviceWithDevice:(id)arg2;
 - (void)scanManager:(id)arg1 receivedAdvertisement:(id)arg2;
-- (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)activityPayloadFromDevice:(id)arg1 forAdvertisementPayload:(id)arg2 command:(id)arg3 timeout:(long long)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 - (void)scanForTypes:(unsigned long long)arg1;
 @property(readonly) id <SFActivityScannerDelegate> delegate; // @synthesize delegate=_delegate;

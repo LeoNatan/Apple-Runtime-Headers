@@ -7,7 +7,8 @@
 @class NSArray, NSURL;
 
 @protocol WDXPCServiceClient
-- (void)fetchAttributesForFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
+- (void)fetchContentsOfFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
+- (void)fetchAttributesOfFiles:(NSArray *)arg1 completionHandler:(void (^)(NSError *, NSArray *))arg2;
 - (void)launchApplication:(NSURL *)arg1 usingArguments:(NSArray *)arg2 completionHandler:(void (^)(int, NSError *))arg3;
 - (void)serverStopped;
 - (void)serverStarted;

@@ -6,39 +6,33 @@
 
 #import <UIKitCore/UIView.h>
 
-#import <UIKitCore/_UIVisualEffectSubviewSource-Protocol.h>
+#import <UIKitCore/_UIVisualEffectViewParticipating-Protocol.h>
 
 @class NSArray, NSString, _UIVisualEffectViewBackdropCaptureGroup;
-@protocol _UIVisualEffectViewSubviewMonitoring;
+@protocol _UIVisualEffectViewParticipating, _UIVisualEffectViewSubviewMonitoring;
 
-__attribute__((visibility("hidden")))
-@interface _UIVisualEffectSubview : UIView <_UIVisualEffectSubviewSource>
+@interface _UIVisualEffectSubview : UIView <_UIVisualEffectViewParticipating>
 {
     _UIVisualEffectViewBackdropCaptureGroup *_primaryCaptureGroup;
-    id <_UIVisualEffectViewSubviewMonitoring> _subviewMonitor;
+    UIView<_UIVisualEffectViewParticipating> *_containedView;
     NSArray *_viewEffects;
     NSArray *_filters;
+    id <_UIVisualEffectViewSubviewMonitoring> _subviewMonitor;
 }
 
-@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
-@property(readonly, copy, nonatomic) NSArray *viewEffects; // @synthesize viewEffects=_viewEffects;
 @property(nonatomic) __weak id <_UIVisualEffectViewSubviewMonitoring> subviewMonitor; // @synthesize subviewMonitor=_subviewMonitor;
+@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
+@property(copy, nonatomic) NSArray *viewEffects; // @synthesize viewEffects=_viewEffects;
+@property(retain, nonatomic) UIView<_UIVisualEffectViewParticipating> *containedView; // @synthesize containedView=_containedView;
 @property(retain, nonatomic) _UIVisualEffectViewBackdropCaptureGroup *primaryCaptureGroup; // @synthesize primaryCaptureGroup=_primaryCaptureGroup;
 - (void).cxx_destruct;
 - (id)_initialValueForLayer:(id)arg1 keyPath:(id)arg2 usePresentationValue:(_Bool)arg3;
-- (_Bool)_applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2;
+- (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)layoutSubviews;
 - (void)applyIdentityFilterEffects;
 - (void)applyRequestedFilterEffects;
-- (void)_applyFilterValues:(id)arg1 baseName:(id)arg2 toLayer:(id)arg3;
-- (void)removeViewEffects;
 - (void)applyIdentityViewEffects;
 - (void)applyRequestedViewEffects;
-- (void)addViewEffects:(id)arg1;
-- (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
-- (id)asBackdropView;
-- (id)asImageView;
-- (id)asView;
-- (id)asLayer;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)willMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

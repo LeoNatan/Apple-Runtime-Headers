@@ -10,6 +10,7 @@
 
 @class IKColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGridViewGradientLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying>
 {
     IKColor *_gradientColor;

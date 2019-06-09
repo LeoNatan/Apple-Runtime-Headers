@@ -11,7 +11,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegatePrivate-Protocol.h>
 #import <UIKitCore/_UIBarPositioningInternal-Protocol.h>
 
-@class NSArray, NSString, UIAccessibilityHUDGestureManager, UIColor, _UIToolbarVisualProvider;
+@class NSArray, NSString, UIAccessibilityHUDGestureManager, UIBarButtonItem, UIColor, UIToolbarAppearance, _UIToolbarVisualProvider;
 @protocol UIToolbarDelegate;
 
 @interface UIToolbar : UIView <UIAccessibilityHUDGestureDelegate, _UIBarPositioningInternal, UIGestureRecognizerDelegatePrivate, UIBarPositioning>
@@ -30,31 +30,38 @@
     _UIToolbarVisualProvider *_visualProvider;
     UIAccessibilityHUDGestureManager *_axHUDGestureManager;
     unsigned int _disableAutolayoutWarnings;
+    _Bool _autoHidesToolbarInFullscreen;
     _Bool __wantsLetterpressContent;
     _Bool _centerTextButtons;
     UIView *_shadowView;
     int _barPosition;
+    UIToolbarAppearance *_standardAppearance;
+    UIToolbarAppearance *_compactAppearance;
+    UIBarButtonItem *_centerItem;
     NSArray *_backgroundEffects;
 }
 
 + (float)defaultHeightForBarSize:(int)arg1;
 + (float)defaultHeight;
 + (id)defaultButtonFont;
++ (id)_visualProviderForToolbar:(id)arg1;
 + (_Bool)_forceLegacyVisualProvider;
 @property(nonatomic) _Bool centerTextButtons; // @synthesize centerTextButtons=_centerTextButtons;
 @property(nonatomic, setter=_setWantsLetterpressContent:) _Bool _wantsLetterpressContent; // @synthesize _wantsLetterpressContent=__wantsLetterpressContent;
 @property(copy, nonatomic) NSArray *backgroundEffects; // @synthesize backgroundEffects=_backgroundEffects;
+@property(nonatomic) _Bool autoHidesToolbarInFullscreen; // @synthesize autoHidesToolbarInFullscreen=_autoHidesToolbarInFullscreen;
+@property(retain, nonatomic) UIBarButtonItem *centerItem; // @synthesize centerItem=_centerItem;
+@property(copy, nonatomic) UIToolbarAppearance *compactAppearance; // @synthesize compactAppearance=_compactAppearance;
 @property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) int barPosition; // @synthesize barPosition=_barPosition;
 @property(retain, nonatomic, setter=_setShadowView:) UIView *_shadowView; // @synthesize _shadowView;
 @property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 - (void).cxx_destruct;
+- (void)_46877859;
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
 - (id)initInView:(id)arg1 withFrame:(struct CGRect)arg2 withItemList:(id)arg3;
 - (void)_setForceTopBarAppearance:(_Bool)arg1;
 @property(nonatomic, getter=_isLocked, setter=_setLocked:) _Bool _locked;
-- (void)setCenter:(struct CGPoint)arg1;
-- (void)_frameOrCenterChanged;
 - (void)drawRect:(struct CGRect)arg1;
 - (_Bool)_subclassImplementsDrawRect;
 @property(nonatomic, setter=_setDisableBlurTinting:) _Bool _disableBlurTinting;
@@ -79,10 +86,9 @@
 - (void)invalidateIntrinsicContentSize;
 - (struct CGSize)intrinsicContentSize;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedHeight;
-- (void)removeConstraint:(id)arg1;
-- (void)addConstraint:(id)arg1;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(_Bool)arg1;
 - (struct CGSize)defaultSizeForOrientation:(int)arg1;
+- (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_setupAXHUDGestureIfNecessary;
 - (id)_itemAtPoint:(struct CGPoint)arg1;
@@ -94,9 +100,12 @@
 - (void)_customViewChangedForButtonItem:(id)arg1;
 - (void)setItems:(id)arg1 animated:(_Bool)arg2;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
+@property(copy, nonatomic) UIToolbarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
+- (void)_installDefaultAppearance;
+@property(nonatomic, setter=_setItemDistribution:) int _itemDistribution;
 @property(readonly, nonatomic) _Bool _shouldStretchDuringCrossfadeTransition;
 - (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(int)arg2;
-@property(retain, nonatomic, getter=_backdropViewLayerGroupName, setter=_setBackdropViewLayerGroupName:) NSString *_backdropViewLayerGroupName;
+@property(copy, nonatomic, getter=_backdropViewLayerGroupName, setter=_setBackdropViewLayerGroupName:) NSString *_backdropViewLayerGroupName;
 @property(nonatomic, getter=isTranslucent) _Bool translucent;
 @property(readonly, nonatomic) int _barTranslucence;
 @property(nonatomic) int barStyle;

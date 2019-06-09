@@ -8,6 +8,7 @@
 
 @class Filter;
 
+__attribute__((visibility("hidden")))
 @interface FilterActions : NSObject
 {
     unsigned int _triggerSymptomId;

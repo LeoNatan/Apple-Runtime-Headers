@@ -12,6 +12,7 @@
 
 + (id)identifier;
 + (id)registerPhotosSchema;
++ (id)registeredPhotosSchemaIdentifier;
 + (id)photosCompositionSchema;
 + (id)photosSchema;
 + (id)selectiveColorSchema;
@@ -31,11 +32,14 @@
 + (id)depthEffectSchema;
 + (id)highResFusionSchema;
 + (id)autoLoopSchema;
++ (id)videoPosterFrameSchema;
 + (id)muteSchema;
 + (id)livePhotoKeyFrameSchema;
++ (id)slomoSchema;
 + (id)trimSchema;
 + (id)cropSchema;
 + (id)sharpenSchema;
++ (id)grainSchema;
 + (id)smartBlackAndWhiteSchema;
 + (id)smartColorSchema;
 + (id)smartToneSchema;

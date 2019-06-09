@@ -9,7 +9,7 @@
 #import <NeutrinoKit/NUAVPlayerControllerDelegate-Protocol.h>
 
 @class NSArray, NSString, NUAVPlayerView, NUComposition, NUMediaViewRenderer, NURenderView, NUScrollView;
-@protocol NUMediaViewDelegate;
+@protocol NUMediaPlayer, NUMediaViewDelegate;
 
 @interface NUMediaView : NSView <NUAVPlayerControllerDelegate>
 {
@@ -29,10 +29,10 @@
         char hasIsReadyForVideoPlayback;
         char hasDidStartPreparingVideo;
         char hasDidFinishPreparingVideo;
+        char hasWillBeginLivePhotoPlayback;
+        char hasDidEndLivePhotoPlayback;
     } _delegateFlags;
-    BOOL _loopsVideo;
     BOOL _centerContent;
-    BOOL _muted;
     BOOL _videoPlayerVisible;
     BOOL _debugEnabled;
     BOOL _scrollUpdatesSuppressed;
@@ -46,7 +46,6 @@
 @property(nonatomic) BOOL scrollUpdatesSuppressed; // @synthesize scrollUpdatesSuppressed=_scrollUpdatesSuppressed;
 @property(nonatomic, getter=isDebugEnabled) BOOL debugEnabled; // @synthesize debugEnabled=_debugEnabled;
 @property(nonatomic, getter=isVideoPlayerVisible) BOOL videoPlayerVisible; // @synthesize videoPlayerVisible=_videoPlayerVisible;
-@property(nonatomic, getter=isMuted) BOOL muted; // @synthesize muted=_muted;
 @property(nonatomic) BOOL centerContent; // @synthesize centerContent=_centerContent;
 @property(nonatomic) double angle; // @synthesize angle=_angle;
 @property(nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
@@ -57,22 +56,27 @@
 - (void)playerController:(id)arg1 didUpdateElapsedTime:(double)arg2 duration:(double)arg3;
 - (void)playerControllerDidFinishPlaying:(id)arg1 duration:(double)arg2;
 - (void)playerViewReadyForDisplayDidChange:(id)arg1;
+- (id)snapshotImage;
 - (id)_viewRecursiveDescription;
 - (id)_layerRecursiveDescription;
 - (void)_updateVideoPlayerAlpha;
-- (void)_stopLoopPlayback;
-- (void)_startLoopPlayback;
+- (void)_stopVideoPlayback;
+- (void)_startVideoPlayback;
+@property(nonatomic, getter=isMuted) BOOL muted;
 @property(nonatomic) BOOL loopsVideoPlayback;
 - (void)_withComposition:(id)arg1 visitRenderClient:(CDUnknownBlockType)arg2;
 - (void)_setLayerFilters:(id)arg1;
 - (id)_geometry;
 - (id)_renderView;
 - (id)_scrollView;
+- (void)_livephotoPlaybackDidEnd;
+- (void)_livephotoPlaybackWillBegin;
 - (void)_rendererDidFinishPreparingVideo;
 - (void)_rendererDidStartPreparingVideo;
 - (void)_rendererDidUpdateLivePhoto;
 - (void)_rendererDidFinishWithStatistics:(id)arg1;
 - (void)_rendererDidCreateAVPlayerController:(id)arg1;
+- (id)_videoPlayerController;
 - (id)_videoPlayerViewWithoutControls;
 - (id)_videoPlayerView;
 - (id)_livePhotoView;
@@ -101,12 +105,14 @@
 - (void)willStartScrolling:(id)arg1;
 - (void)didEndZooming:(id)arg1;
 - (void)willBeginZooming:(id)arg1;
+- (void)viewDidChangeBackingProperties;
 @property(nonatomic) struct NSEdgeInsets edgeInsets;
 @property(readonly, nonatomic) struct CGRect imageFrame;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromSpace:(id)arg2 toView:(id)arg3;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromView:(id)arg2 toSpace:(id)arg3;
 - (struct CGPoint)convertPointFromImage:(struct CGPoint)arg1;
 - (struct CGPoint)convertPointToImage:(struct CGPoint)arg1;
+@property(readonly) id <NUMediaPlayer> player;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

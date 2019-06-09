@@ -35,7 +35,6 @@
 - (id)stringFromCMTime:(CDStruct_1b6d18a9)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

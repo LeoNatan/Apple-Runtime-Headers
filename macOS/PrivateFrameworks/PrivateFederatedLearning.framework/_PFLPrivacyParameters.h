@@ -11,7 +11,6 @@
 @interface _PFLPrivacyParameters : NSObject
 {
     NSString *_identifier;
-    double _gamma;
     double _rho;
     double _precision;
     double _minCDProduct;
@@ -28,7 +27,6 @@
 @property(nonatomic) double minCDProduct; // @synthesize minCDProduct=_minCDProduct;
 @property(nonatomic) double precision; // @synthesize precision=_precision;
 @property(nonatomic) double rho; // @synthesize rho=_rho;
-@property(nonatomic) double gamma; // @synthesize gamma=_gamma;
 - (void).cxx_destruct;
 - (BOOL)populateFromFile:(id)arg1;
 - (BOOL)populateFromDefaultFile;

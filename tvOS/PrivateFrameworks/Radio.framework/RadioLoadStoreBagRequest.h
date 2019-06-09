@@ -11,14 +11,7 @@
     _Bool _ignoresRadioDiskCache;
 }
 
-+ (void)_writeStoreBagToDiskCache:(id)arg1;
-+ (id)_pathForCachedStoreBags;
-+ (id)_cachedStoreBagForActiveAccount;
-+ (id)_cachedBagFilenameForActiveAccount;
-+ (id)_accessQueue;
-+ (void)_urlBagDidLoadNotification:(id)arg1;
 @property(nonatomic) _Bool ignoresRadioDiskCache; // @synthesize ignoresRadioDiskCache=_ignoresRadioDiskCache;
-- (void)_handleFinishedLoadingBag:(id)arg1 withError:(id)arg2 didLoadFromNonDiskCache:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)loadStoreBagWithOptions:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

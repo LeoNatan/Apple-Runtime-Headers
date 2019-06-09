@@ -38,6 +38,7 @@
 - (void)_notifyComplete:(id)arg1;
 - (void)_notifyProgress:(id)arg1;
 - (void)_postUpdatesForCurrentlyPausedDownloadsForObserver:(id)arg1;
+- (void)_sendCancelCompletionNotificationForDownloadWithDownloadID:(id)arg1;
 - (void)_sendInitialProgressNotificationForDownloadWithStoreID:(id)arg1 orPermlink:(id)arg2 downloadID:(id)arg3 isPaused:(_Bool)arg4 isAudiobook:(_Bool)arg5 targetObserver:(id)arg6;
 - (id)_downloadStatusStoreID:(id)arg1 orPermLink:(id)arg2 downloadID:(id)arg3 isPaused:(_Bool)arg4 isAudiobook:(_Bool)arg5;
 - (id)_downloadStatusFromDictionary:(id)arg1 outParamNewlyTrackedDownload:(_Bool *)arg2;

@@ -10,6 +10,7 @@
 
 @class SKUIViewElement;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIDynamicGridSizeCacheKey : NSObject <NSCopying>
 {
     long long _position;

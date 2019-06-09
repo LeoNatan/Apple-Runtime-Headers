@@ -25,7 +25,7 @@
 - (id)humanReadableDictionaryRepresentation;
 - (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;
-- (id)serializeableDictionary;
+- (id)serializeableDictionaryWithShouldRedact:(BOOL)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

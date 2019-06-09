@@ -18,11 +18,13 @@ __attribute__((visibility("hidden")))
         struct ObjectStorage<API::Number<bool, API::Object::Type::Boolean>> _boolean;
         struct ObjectStorage<API::Number<double, API::Object::Type::Double>> _double;
         struct ObjectStorage<API::Number<unsigned long long, API::Object::Type::UInt64>> _uint64;
+        struct ObjectStorage<API::Number<long long, API::Object::Type::Int64>> _int64;
     } _number;
 }
 
 @property(readonly) struct Object *_apiObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (long long)longLongValue;
 - (unsigned long long)unsignedLongLongValue;
 - (double)doubleValue;
 - (BOOL)charValue;

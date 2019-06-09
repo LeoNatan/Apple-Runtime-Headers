@@ -11,6 +11,7 @@
 - (id)_cplSafeUserInfoForXPCDidChange:(char *)arg1;
 - (id)cplShortDomainDescription;
 - (id)cplUnderlyingPOSIXError;
+- (BOOL)isCPLOperationDeferredError;
 - (BOOL)isCPLOperationCancelledError;
 - (BOOL)isCPLError;
 - (BOOL)isCPLErrorWithCode:(long long)arg1;

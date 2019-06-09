@@ -18,7 +18,8 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)isTypeAudioOnly:(id)arg1;
 + (id)privateUTIFromFileName:(id)arg1;
-+ (id)UTIForFileName:(id)arg1;
++ (_Bool)_shouldOverrideUTIForZip;
++ (id)UTIForURL:(id)arg1;
 + (id)removeSpacesFromString:(id)arg1;
 + (id)knownExtensions;
 @property(readonly) NSString *contentType; // @synthesize contentType=_contentType;
@@ -26,7 +27,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isAudioOnly;
-- (id)initWithFileName:(id)arg1;
+- (id)initWithURL:(id)arg1;
 - (id)initWithContentType:(id)arg1;
 
 @end

@@ -42,6 +42,7 @@
 @property(retain, nonatomic) NSArray *moreViewControllers;
 - (void)_willChangeToIdiom:(long long)arg1 onScreen:(id)arg2;
 - (void)_updateEditButton;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_layoutCells;
 - (id)table;
 - (id)init;

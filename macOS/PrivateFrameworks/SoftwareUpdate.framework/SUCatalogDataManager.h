@@ -37,7 +37,7 @@
 - (id)_cachePathForURL:(id)arg1 inProduct:(id)arg2;
 - (id)_cachePathForProduct:(id)arg1;
 - (void)invalidateResourcesForProduct:(id)arg1;
-- (void)retrieveIntegrityDataForProduct:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)retrieveIntegrityInformationForProduct:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)retrievePKMDataForProduct:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)undoRetrieveDistributionDataForProduct:(id)arg1;
 - (void)retrieveDistributionDataForProduct:(id)arg1 preferredLocalizations:(id)arg2 withHandler:(CDUnknownBlockType)arg3;

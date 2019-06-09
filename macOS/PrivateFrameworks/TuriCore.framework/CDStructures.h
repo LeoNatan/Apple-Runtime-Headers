@@ -4,3 +4,80 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#pragma mark Blocks
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
+#pragma mark Named Structures
+
+struct CGAffineTransform {
+    double a;
+    double b;
+    double c;
+    double d;
+    double tx;
+    double ty;
+};
+
+struct CGPoint {
+    double x;
+    double y;
+};
+
+struct CGRect {
+    struct CGPoint origin;
+    struct CGSize size;
+};
+
+struct CGSize {
+    double width;
+    double height;
+};
+
+struct NSArray {
+    Class _field1;
+};
+
+struct OptimizerOptions {
+    _Bool useSGD;
+    float learningRate;
+    float gradientClipping;
+    float weightDecay;
+    float sgdMomentum;
+    float adamBeta1;
+    float adamBeta2;
+    float adamEpsilon;
+};
+
+struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>> {
+    struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>::__rep, std::__1::allocator<char>> {
+        struct __rep {
+            union {
+                struct __long {
+                    unsigned long long __cap_;
+                    unsigned long long __size_;
+                    char *__data_;
+                } __l;
+                struct __short {
+                    union {
+                        unsigned char __size_;
+                        char __lx;
+                    } ;
+                    char __data_[23];
+                } __s;
+                struct __raw {
+                    unsigned long long __words[3];
+                } __r;
+            } ;
+        } __value_;
+    } __r_;
+};
+
+struct vector<float, std::__1::allocator<float>> {
+    float *__begin_;
+    float *__end_;
+    struct __compressed_pair<float *, std::__1::allocator<float>> {
+        float *__value_;
+    } __end_cap_;
+};
+

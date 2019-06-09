@@ -10,6 +10,7 @@
 
 @protocol _CPUsageSinceLookback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(nonatomic) int totalEngagements;
 @property(nonatomic) int activeDaysInCollectionPeriod;
 @property(nonatomic) int configuredLookbackTimeInDays;
 @property(retain, nonatomic) _CPDeviceContext *context;

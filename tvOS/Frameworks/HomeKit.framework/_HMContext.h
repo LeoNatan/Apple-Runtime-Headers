@@ -18,6 +18,7 @@
     HMFMessageDispatcher *_messageDispatcher;
 }
 
++ (id)contextWithName:(id)arg1 delegateCaller:(id)arg2;
 + (id)contextWithName:(id)arg1;
 @property(readonly, nonatomic) HMFMessageDispatcher *messageDispatcher; // @synthesize messageDispatcher=_messageDispatcher;
 @property(readonly, nonatomic) HMDelegateCaller *delegateCaller; // @synthesize delegateCaller=_delegateCaller;

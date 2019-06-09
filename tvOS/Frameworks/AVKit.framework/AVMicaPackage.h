@@ -11,6 +11,7 @@
 
 @class CALayer, CAStateController, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVMicaPackage : NSObject <CAMLParserDelegate, CAStateControllerDelegate>
 {
     NSString *_state;
@@ -23,6 +24,7 @@
 }
 
 + (id)classSubstitions;
++ (void)asynchronouslyPrepareMicaPackageWithName:(id)arg1 layoutDirection:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 @property(retain, nonatomic) CALayer *rootLayer; // @synthesize rootLayer=_rootLayer;
 @property(nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(readonly, nonatomic) CAStateController *stateController; // @synthesize stateController=_stateController;
@@ -31,15 +33,18 @@
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 @property(readonly, copy, nonatomic) NSString *state; // @synthesize state=_state;
 - (void).cxx_destruct;
+- (void)_loadRootLayerIfNeeded;
 - (id)sublayerWithName:(id)arg1;
 - (id)availableStatesOnLayer:(id)arg1;
 - (id)availableStates;
 - (void)transitionToStateWithName:(id)arg1 onLayer:(id)arg2;
 - (void)transitionToStateWithName:(id)arg1;
+- (void)_recursivelyRemoveCompositingFiltersWithName:(id)arg1 rootLayer:(id)arg2;
 - (void)_recursivelySetFillColor:(struct CGColor *)arg1 rootLayer:(id)arg2;
 - (id)_recursivelyFindSublayerWithName:(id)arg1 rootLayer:(id)arg2;
 - (void)_setState:(id)arg1;
 - (Class)CAMLParser:(id)arg1 didFailToFindClassWithName:(id)arg2;
+- (void)removeCompositingFiltersWithName:(id)arg1;
 - (void)setState:(id)arg1 color:(struct CGColor *)arg2;
 - (id)initWithPackageName:(id)arg1 layoutDirection:(long long)arg2;
 

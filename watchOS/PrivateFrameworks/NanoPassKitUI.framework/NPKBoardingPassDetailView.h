@@ -18,6 +18,8 @@
 @property(retain, nonatomic) UILabel *tripSummaryLabel; // @synthesize tripSummaryLabel=_tripSummaryLabel;
 @property(retain, nonatomic) UIImageView *transitIconImageView; // @synthesize transitIconImageView=_transitIconImageView;
 - (void).cxx_destruct;
+- (float)_configureTripSummaryLabelWithMaxSize:(struct CGSize)arg1;
+- (id)_fieldLabelAttributes;
 - (void)layoutSubviews;
 - (_Bool)labelOnTopForPrimaryFields;
 - (id)attributesForPrimaryValues;

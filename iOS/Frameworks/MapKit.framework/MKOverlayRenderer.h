@@ -22,10 +22,14 @@
 
 @property(readonly, nonatomic) id <MKOverlay> overlay; // @synthesize overlay=_overlay;
 - (void).cxx_destruct;
+- (void)_updateRenderColors;
+- (id)vectorDataForOverlay:(id)arg1;
+- (_Bool)overlayCanProvideVectorData:(id)arg1;
 - (void)drawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(double)arg2 inContext:(struct CGContext *)arg3;
 - (_Bool)canDrawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(double)arg2;
 - (void)overlay:(id)arg1 drawKey:(const CDStruct_7523a67d *)arg2 inContext:(struct CGContext *)arg3;
 - (_Bool)overlay:(id)arg1 canDrawKey:(const CDStruct_7523a67d *)arg2;
+- (void)_forEachMapRectForKey:(const CDStruct_7523a67d *)arg1 withContext:(struct CGContext *)arg2 performBlock:(CDUnknownBlockType)arg3;
 - (_Bool)_mayExtendOutsideBounds;
 - (void)set_renderer:(id)arg1;
 - (id)_renderer;

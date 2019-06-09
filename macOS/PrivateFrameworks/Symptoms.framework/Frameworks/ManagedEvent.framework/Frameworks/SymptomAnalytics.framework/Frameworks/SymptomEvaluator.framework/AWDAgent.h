@@ -9,6 +9,7 @@
 @class AWDServerConnection, NSSet;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AWDAgent : NSObject
 {
     id dropboxObserver;

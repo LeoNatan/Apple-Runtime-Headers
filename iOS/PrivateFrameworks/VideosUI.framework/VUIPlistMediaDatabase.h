@@ -52,7 +52,12 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)saveToFileURL:(id)arg1 error:(out id *)arg2;
+- (_Bool)_saveWithError:(out id *)arg1;
+- (id)itemForIdentifier:(id)arg1;
+- (void)removeDownloadedMediaForIdentifier:(id)arg1;
+- (id)entityForIdentifier:(id)arg1;
 - (void)updateEntityWithIdentifier:(id)arg1 propertyName:(id)arg2 propertyValue:(id)arg3;
+- (void)updateEntity:(id)arg1 propertyName:(id)arg2 propertyValue:(id)arg3;
 - (void)removeEntityWithIdentifier:(id)arg1;
 - (void)addEntity:(id)arg1 showIdentifier:(id)arg2 seasonIdentifier:(id)arg3;
 @property(readonly, nonatomic) NSArray *episodes;

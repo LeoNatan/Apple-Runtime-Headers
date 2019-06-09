@@ -6,10 +6,11 @@
 
 #import <VisualVoicemail/VMAccountManagerXPCServer-Protocol.h>
 #import <VisualVoicemail/VMGreetingManagerXPCServer-Protocol.h>
+#import <VisualVoicemail/VMMessageManagerXPCServer-Protocol.h>
 
 @class NSArray, NSProgress;
 
-@protocol VMServerXPCProtocol <VMAccountManagerXPCServer, VMGreetingManagerXPCServer>
+@protocol VMServerXPCProtocol <VMAccountManagerXPCServer, VMGreetingManagerXPCServer, VMMessageManagerXPCServer>
 - (void)obliterate;
 - (void)reportTranscriptionRatedAccurate:(_Bool)arg1 forIdentifier:(int)arg2;
 - (void)reportTranscriptionProblemForIdentifier:(int)arg1;

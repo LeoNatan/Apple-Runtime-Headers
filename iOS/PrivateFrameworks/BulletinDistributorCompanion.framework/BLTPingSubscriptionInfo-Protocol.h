@@ -9,6 +9,7 @@
 @class NSString;
 
 @protocol BLTPingSubscriptionInfo <NSObject>
+@property(readonly, nonatomic) _Bool canAckOnLocalConnection;
 @property(readonly, nonatomic) _Bool canAck;
 @property(readonly, nonatomic) _Bool forBulletin;
 @property(readonly, copy, nonatomic) NSString *sectionID;

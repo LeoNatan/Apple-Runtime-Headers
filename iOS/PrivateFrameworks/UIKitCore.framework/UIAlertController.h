@@ -11,7 +11,7 @@
 #import <UIKitCore/UIPreviewInteractionControllerDelegate-Protocol.h>
 #import <UIKitCore/_UIAlertControllerTextFieldViewControllerContaining-Protocol.h>
 
-@class NSArray, NSAttributedString, NSIndexSet, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject, NSPointerArray, NSSet, NSString, UIAlertAction, UIAlertControllerVisualStyle, UIGestureRecognizer, UIPopoverController, UIPreviewInteractionController, UITapGestureRecognizer, UIView, _UIAlertControllerShimPresenter, _UIAlertControllerTextFieldViewController, _UIAnimationCoordinator;
+@class NSArray, NSAttributedString, NSIndexSet, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject, NSPointerArray, NSSet, NSString, UIAlertAction, UIAlertControllerStackManager, UIAlertControllerVisualStyle, UIGestureRecognizer, UIPopoverController, UIPreviewInteractionController, UITapGestureRecognizer, UIView, _UIAlertControllerShimPresenter, _UIAlertControllerTextFieldViewController, _UIAnimationCoordinator;
 @protocol UIAlertControllerCoordinatedActionPerforming, UIAlertControllerSystemProvidedPresentationDelegate, UIAlertControllerVisualStyleProviding;
 
 @interface UIAlertController : UIViewController <UIAlertControllerContaining, _UIAlertControllerTextFieldViewControllerContaining, UIPreviewInteractionControllerDelegate, UIAlertControllerVisualStyleProviding>
@@ -32,9 +32,11 @@
     id _ownedTransitioningDelegate;
     _Bool _addContentViewControllerToViewHierarchyNeeded;
     _Bool _isInSupportedInterfaceOrientations;
+    _Bool _isInRecomputePreferredContentSize;
     long long _batchActionChangesInProgressCount;
     _UIAlertControllerShimPresenter *_presenter;
     NSPointerArray *_actionsWithInvokedHandlers;
+    UIAlertControllerStackManager *_alertControllerStackManager;
     _Bool _hidden;
     _Bool _springLoaded;
     _Bool __shouldFlipFrameForShimDismissal;
@@ -42,6 +44,7 @@
     _Bool _hasPreservedInputViews;
     NSMutableArray *_actions;
     UIViewController *_headerContentViewController;
+    UIViewController *_separatedHeaderContentViewController;
     NSObject<UIAlertControllerVisualStyleProviding> *_styleProvider;
     UIAlertAction *_preferredAction;
     _UIAnimationCoordinator *_temporaryAnimationCoordinator;
@@ -84,6 +87,7 @@
 @property(nonatomic, getter=_isHidden, setter=_setHidden:) _Bool _hidden; // @synthesize _hidden;
 @property(nonatomic, getter=_styleProvider, setter=_setStyleProvider:) __weak NSObject<UIAlertControllerVisualStyleProviding> *styleProvider; // @synthesize styleProvider=_styleProvider;
 @property(readonly) long long _resolvedStyle; // @synthesize _resolvedStyle;
+@property(retain, nonatomic, setter=_setSeparatedHeaderContentViewController:) UIViewController *_separatedHeaderContentViewController; // @synthesize _separatedHeaderContentViewController;
 @property(retain, nonatomic, setter=_setHeaderContentViewController:) UIViewController *_headerContentViewController; // @synthesize _headerContentViewController;
 @property(readonly) UIAlertAction *_cancelAction; // @synthesize _cancelAction;
 @property(readonly) NSMutableArray *_actions; // @synthesize _actions;
@@ -137,7 +141,6 @@
 - (_Bool)_shouldSizeToFillSuperview;
 - (id)_alertControllerContainer;
 - (_Bool)_viewControllerIsPresentedInModalPresentationContext:(id)arg1;
-- (_Bool)_isPresentedAsPopoverWithLegacyUI;
 - (_Bool)_isPresentedAsPopover;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_flipFrameForShimDismissalIfNecessary;
@@ -175,6 +178,7 @@
 - (void)_installBackGestureRecognizer;
 - (long long)_buttonTypeForBackGestureForIdiom:(long long)arg1;
 - (_Bool)_idiomSupportsBackGesture:(long long)arg1;
+- (long long)overrideUserInterfaceStyle;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_resolvedStyleChanged;
 - (id)_currentDescriptor;
@@ -182,7 +186,6 @@
 - (void)_updateProvidedStyleWithTraitCollection:(id)arg1;
 - (void)_reevaluateResolvedStyle;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-- (id)_requiredNotificationsForRemoteServices;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)_recomputePreferredContentSize;
@@ -200,10 +203,9 @@
 - (_Bool)shouldAutorotate;
 - (void)dealloc;
 - (void)setTextFieldsCanBecomeFirstResponder:(_Bool)arg1;
-@property(setter=_setTextFieldsHidden:) _Bool _textFieldsHidden;
 - (void)_didParentTextFieldViewController;
 - (void)_willParentTextFieldViewController;
-- (id)_textFieldContainingViewWithTextField:(id)arg1;
+- (id)_textFieldContainingViewWithTextField:(id)arg1 position:(long long)arg2;
 - (void)_returnKeyPressedInLastTextField;
 - (_Bool)_shouldSupportReturnKeyPresses;
 @property(readonly) _UIAlertControllerTextFieldViewController *_textFieldViewController;

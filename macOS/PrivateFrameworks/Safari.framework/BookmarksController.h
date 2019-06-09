@@ -92,6 +92,7 @@
 - (void)_didReceiveNetworkChangeNotification:(id)arg1;
 - (void)_beginObservingNetworkChangeNotifications;
 - (BOOL)_shouldTryToFetchMetadataForBookmarkLeaf:(id)arg1;
+- (void)_handleBookmarkSummaryResponse:(id)arg1 forBookmark:(id)arg2;
 - (void)fetchMetadataForBookmark:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)bookmarkGroupForUndoController:(id)arg1;
 - (void)handleCommand1Through9ActionForIndex:(unsigned long long)arg1;

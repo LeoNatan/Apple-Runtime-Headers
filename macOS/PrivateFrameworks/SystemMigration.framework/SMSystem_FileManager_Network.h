@@ -8,7 +8,7 @@
 
 #import <SystemMigration/SMSystem_FileManagerProtocol-Protocol.h>
 
-@class NSMutableDictionary, NSURL, SMSystem_Daemon_Network;
+@class NSMutableDictionary, NSString, NSURL, SMSystem_Daemon_Network;
 
 @interface SMSystem_FileManager_Network : NSObject <SMSystem_FileManagerProtocol>
 {
@@ -29,8 +29,11 @@
 - (id)transformLegacyAttributeResults:(id)arg1;
 - (id)pathToRemoteFile:(id)arg1 exists:(char *)arg2 makeAvailable:(BOOL)arg3;
 - (id)determinePathToRemoteFile:(id)arg1 exists:(char *)arg2 makeAvailable:(BOOL)arg3;
+@property(readonly) NSURL *userHomeRoot;
+@property(readonly) NSURL *userContentRoot;
 @property(readonly) NSURL *slash;
 - (BOOL)activate;
+@property(readonly) NSString *productVersion;
 - (void)dealloc;
 - (id)initWithSystem:(id)arg1;
 

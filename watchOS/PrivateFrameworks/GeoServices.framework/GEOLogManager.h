@@ -35,7 +35,6 @@
 - (void)removeAllLogAdators;
 - (void)removeLogAdaptor:(id)arg1;
 - (void)addLogAdaptor:(id)arg1;
-- (void)waitForEmptyLoggingQueue:(CDUnknownBlockType)arg1;
 - (void)updateAdaptorPolicyConfiguration:(id)arg1;
 - (void)unregisterLogMsgStateOfType:(int)arg1;
 - (void)registerLogMsgState:(id)arg1;

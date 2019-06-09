@@ -8,21 +8,24 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDFactoid : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_text;
     NSString *_title;
+    CDStruct_3e4cc335 _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)factoidsForPlaceData:(id)arg1;
 + (_Bool)factoidPairAvailableForPlaceData:(id)arg1;
-@property(retain, nonatomic) NSString *text; // @synthesize text=_text;
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,10 +34,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *text;
 @property(readonly, nonatomic) _Bool hasText;
+- (void)_readText;
+@property(retain, nonatomic) NSString *title;
 @property(readonly, nonatomic) _Bool hasTitle;
+- (void)_readTitle;
 
 @end
 

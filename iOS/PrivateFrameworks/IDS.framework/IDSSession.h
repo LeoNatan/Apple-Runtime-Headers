@@ -11,13 +11,17 @@
 @interface IDSSession : NSObject
 {
     _IDSSession *_internal;
+    NSString *_uniqueID;
+    struct os_unfair_lock_s _uniqueIDLock;
 }
 
+@property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 - (void).cxx_destruct;
 - (unsigned long long)MTUForAddressFamily:(unsigned long long)arg1;
 - (_Bool)shouldUseSocketForTransport;
 - (void)setPreferences:(id)arg1;
 @property(readonly, nonatomic) unsigned int sessionEndedReason;
+- (void)reconnectSession;
 @property(nonatomic) long long invitationTimeOut;
 - (_Bool)sendData:(id)arg1 error:(id *)arg2;
 @property(nonatomic) _Bool isMuted;
@@ -49,8 +53,8 @@
 @property(readonly, nonatomic) NSString *sessionID;
 @property(readonly, nonatomic) int socket;
 - (void)dealloc;
-- (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3;
 - (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3 uniqueID:(id)arg4;
+- (id)initWithAccount:(id)arg1 destinations:(id)arg2 options:(id)arg3;
 - (id)initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(long long)arg3;
 
 @end

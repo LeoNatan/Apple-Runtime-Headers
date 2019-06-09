@@ -20,7 +20,6 @@
     NSUndoManager *_undoManager;
     _Bool _isInSTBMode;
     _Bool _signingIn;
-    _Bool _shouldAskForTVAppConsent;
     _Bool _notifyDelegateFromActivation;
     id <VSSetupFlowControllerDelegate> _delegate;
     VSPreferences *_preferences;
@@ -39,7 +38,6 @@
 @property(copy, nonatomic) CDUnknownBlockType goingBackActivationCompletionBlock; // @synthesize goingBackActivationCompletionBlock=_goingBackActivationCompletionBlock;
 @property(nonatomic) _Bool notifyDelegateFromActivation; // @synthesize notifyDelegateFromActivation=_notifyDelegateFromActivation;
 @property(retain, nonatomic) VSIdentityProviderRequestManager *requestManager; // @synthesize requestManager=_requestManager;
-@property(nonatomic) _Bool shouldAskForTVAppConsent; // @synthesize shouldAskForTVAppConsent=_shouldAskForTVAppConsent;
 @property(retain, nonatomic) NSString *providerAccountUsername; // @synthesize providerAccountUsername=_providerAccountUsername;
 @property(retain, nonatomic) VSAppDescription *appDescription; // @synthesize appDescription=_appDescription;
 @property(nonatomic, getter=isSigningIn) _Bool signingIn; // @synthesize signingIn=_signingIn;
@@ -83,7 +81,7 @@
 - (void)_presentViewController:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_requestAccessWithViewController:(id)arg1;
 - (void)_pickProviderWithViewController:(id)arg1;
-- (void)_offerAuthenticationForSTBProvider:(id)arg1 msoAppDescription:(id)arg2 providerAccountUsername:(id)arg3 shouldAskForTVAppConsent:(_Bool)arg4;
+- (void)_offerAuthenticationForSTBProvider:(id)arg1 msoAppDescription:(id)arg2 providerAccountUsername:(id)arg3;
 - (void)_offerAuthenticationForProvider:(id)arg1 withSupportedAppsButton:(_Bool)arg2 msoAppDescription:(id)arg3;
 - (void)_offerAuthenticationWithSupportedAppsButton:(_Bool)arg1;
 - (void)_didStartLoading;

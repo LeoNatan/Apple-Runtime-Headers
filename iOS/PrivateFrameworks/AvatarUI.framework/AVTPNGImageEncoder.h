@@ -17,6 +17,7 @@
 - (id)fileExtension;
 - (id)dataFromImage:(id)arg1;
 - (id)imageFromData:(id)arg1 error:(id *)arg2;
+- (id)imageFromURL:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

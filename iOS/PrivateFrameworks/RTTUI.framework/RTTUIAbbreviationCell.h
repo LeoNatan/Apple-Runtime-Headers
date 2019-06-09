@@ -26,6 +26,7 @@
 - (id)abbreviationText;
 - (void)setAbbreviationData:(id)arg1;
 - (void)layoutSubviews;
+- (_Bool)accessibilityIgnoresInvertColors;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

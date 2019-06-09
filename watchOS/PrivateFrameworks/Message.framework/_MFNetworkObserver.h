@@ -14,8 +14,8 @@
     CDUnknownBlockType _block;
 }
 
+- (void).cxx_destruct;
 - (void)execute;
-- (void)dealloc;
 - (id)initWithBlock:(CDUnknownBlockType)arg1 queue:(id)arg2;
 
 @end

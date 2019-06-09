@@ -9,45 +9,54 @@
 #import <TVMLKit/TVAppTemplateImpressionable-Protocol.h>
 #import <TVMLKit/TVCarouselViewDataSource-Protocol.h>
 #import <TVMLKit/TVCarouselViewDelegate-Protocol.h>
-#import <TVMLKit/TVFocusDirectionCollectionViewCellDelegate-Protocol.h>
+#import <TVMLKit/TVCollectionViewLockupCellDelegate-Protocol.h>
 
-@class IKCollectionElement, NSString, TVCarouselView;
+@class IKCollectionElement, NSString, TVCarouselLayout, _TVCarouselView;
 
 __attribute__((visibility("hidden")))
-@interface _TVCarouselViewController : UIViewController <TVCarouselViewDataSource, TVCarouselViewDelegate, TVFocusDirectionCollectionViewCellDelegate, TVAppTemplateImpressionable>
+@interface _TVCarouselViewController : UIViewController <TVCarouselViewDataSource, TVCarouselViewDelegate, TVCollectionViewLockupCellDelegate, TVAppTemplateImpressionable>
 {
-    struct TVCellMetrics _cellMetrics;
+    TVCarouselLayout *_carouselLayout;
     IKCollectionElement *_collectionElement;
-    TVCarouselView *_carouselView;
-    _Bool _didAppear;
-    _Bool _isFlowcaseAtTop;
+    _TVCarouselView *_carouselView;
+    struct {
+        _Bool didAppear;
+        _Bool indexesDirty;
+    } _flags;
 }
 
-@property(readonly, nonatomic) struct TVCellMetrics cellMetrics; // @synthesize cellMetrics=_cellMetrics;
 - (void).cxx_destruct;
+- (void)_updateLayoutAndReload;
 - (void)_updateLayout;
 - (void)_updateAutoScrollInterval;
-- (void)updateWithViewElement:(id)arg1 cellMetrics:(struct TVCellMetrics)arg2;
-- (void)_dispatchEventOfType:(unsigned long long)arg1 forItemAtIndex:(unsigned long long)arg2;
+- (void)updateWithViewElement:(id)arg1 layout:(id)arg2;
+- (void)_dispatchEvent:(id)arg1 forItemAtIndex:(unsigned long long)arg2 cell:(id)arg3;
+- (void)_applicationWillResignActive:(id)arg1;
+- (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_selectButtonAction:(id)arg1;
 - (void)_playButtonAction:(id)arg1;
 - (id)layeredImageContainerLayerWithinCollectionViewCell:(id)arg1;
-- (void)collectionViewCellDidUnfocus:(id)arg1;
-- (void)collectionViewCellDidChangeFocusDirection:(id)arg1;
+- (void)collectionViewCellDidSelect:(id)arg1;
 - (id)impressionableElementsContainedInDocument:(id)arg1;
 - (void)_recordImpressionsForVisibleView;
 - (void)_cancelImpressionsUpdate;
 - (void)_updateImpressions;
+- (void)carouselView:(id)arg1 didEndDisplayingItemAtIndex:(unsigned long long)arg2;
+- (void)carouselView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndex:(unsigned long long)arg3;
+- (void)carouselView:(id)arg1 willDisplayItemAtIndex:(unsigned long long)arg2;
+- (void)carouselView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndex:(unsigned long long)arg3;
 - (void)carouselView:(id)arg1 didFocusItemAtIndex:(unsigned long long)arg2;
 - (void)carouselViewDidScroll:(id)arg1;
 - (id)carouselView:(id)arg1 cellForItemAtIndex:(unsigned long long)arg2;
+- (void)_registerCellClasses;
 - (unsigned long long)numberOfItemsInCarouselView:(id)arg1;
+- (_Bool)_needsDefaultCarouselCells;
 - (id)preferredFocusEnvironments;
 - (struct CGSize)viewSizeThatFits:(struct CGSize)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

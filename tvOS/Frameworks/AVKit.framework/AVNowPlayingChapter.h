@@ -8,6 +8,7 @@
 
 @class NSString, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVNowPlayingChapter : NSObject
 {
     double _startTime;

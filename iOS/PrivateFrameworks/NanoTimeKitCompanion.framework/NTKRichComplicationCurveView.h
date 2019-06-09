@@ -24,9 +24,10 @@
 - (const struct CGPath *)_generatePath;
 - (id)_normalizeGradientLocations:(id)arg1;
 - (struct CGPoint)_pointAtProgress:(float)arg1;
+- (double)_angleAtProgress:(float)arg1;
 - (double)_shapeLineWidth;
 - (void)_setupGradientLayer:(id)arg1;
-- (id)initWithCurveWidth:(double)arg1 padding:(double)arg2 beginAngle:(double)arg3 endAngle:(double)arg4 forDevice:(id)arg5;
+- (id)initWithCurveWidth:(double)arg1 padding:(double)arg2 beginAngle:(double)arg3 endAngle:(double)arg4 forDevice:(id)arg5 withFilterStyle:(long long)arg6;
 
 @end
 

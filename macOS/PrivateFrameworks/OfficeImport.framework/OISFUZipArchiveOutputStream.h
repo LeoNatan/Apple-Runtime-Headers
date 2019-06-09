@@ -11,6 +11,7 @@
 @class NSData, NSMutableArray, NSString, OISFUCryptoKey, OISFUMoveableFileOutputStream, OISFUZipFreeSpaceEntry, OISFUZipOutputEntry;
 @protocol SFUOutputStream;
 
+__attribute__((visibility("hidden")))
 @interface OISFUZipArchiveOutputStream : NSObject <SFUSimpleOutputStream>
 {
     OISFUMoveableFileOutputStream *mOutputStream;

@@ -71,11 +71,8 @@ struct Matrix<double, 2, 1> {
     double _e[2];
 };
 
-struct NSDirectionalEdgeInsets {
-    double _field1;
-    double _field2;
-    double _field3;
-    double _field4;
+struct NSArray {
+    Class _field1;
 };
 
 struct UIEdgeInsets {
@@ -92,6 +89,17 @@ struct UIOffset {
 
 struct UIViewController {
     Class _field1;
+};
+
+struct _GEOFlyoverKey {
+    unsigned int z:6;
+    unsigned int x:26;
+    unsigned int y:26;
+    unsigned int h:8;
+    unsigned int region:24;
+    unsigned int type:14;
+    unsigned int pixelSize:8;
+    unsigned int textScale:8;
 };
 
 struct _GEOGenericContainer<geo::_retain_ptr<_MKPinAnnotationViewImageCacheKey *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, NSDictionary *, std::__1::hash<geo::_retain_ptr<_MKPinAnnotationViewImageCacheKey *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>>, std::__1::equal_to<geo::_retain_ptr<_MKPinAnnotationViewImageCacheKey *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>>, geo::GEOGenericContainerStrongReferenceTag, 64, 2097152, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> {
@@ -114,17 +122,64 @@ struct _GEOGenericContainer<geo::_retain_ptr<_MKPinAnnotationViewImageCacheKey *
     unsigned long long _currentCount;
 };
 
-struct _GEOTileKey {
-    unsigned int z:6;
-    unsigned int x:26;
-    unsigned int y:26;
+struct _GEOIdentifiedResourceKey {
+    unsigned int identifier;
+    unsigned char levelOfDetail;
+    unsigned char type;
+};
+
+struct _GEORegionalResourceKey {
+    unsigned int index:32;
+    unsigned int scenarios:8;
     unsigned int type:6;
     unsigned int pixelSize:8;
     unsigned int textScale:8;
-    unsigned int provider:8;
+};
+
+struct _GEOSputnikMetadataKey {
+    unsigned int part:32;
+    unsigned int region:24;
+    unsigned int type:14;
+    unsigned int pixelSize:8;
+};
+
+struct _GEOStandardTileKey {
+    unsigned int reserved:40;
+    unsigned int z:6;
+    unsigned int x:26;
+    unsigned int y:26;
+    unsigned int type:14;
+    unsigned int pixelSize:4;
+    unsigned int textScale:4;
+};
+
+struct _GEOTileKey {
+    unsigned int provider:7;
     unsigned int expires:1;
-    unsigned int reserved1:7;
-    unsigned char reserved2[4];
+    union {
+        struct _GEOStandardTileKey standard;
+        struct _GEORegionalResourceKey regional;
+        struct _GEOSputnikMetadataKey sputnikMetadata;
+        struct _GEOFlyoverKey flyover;
+        struct _GEOTransitLineSelectionKey transitLineSelection;
+        struct _GEOTileOverlayKey tileOverlay;
+        struct _GEOIdentifiedResourceKey identifiedResource;
+    } ;
+};
+
+struct _GEOTileOverlayKey {
+    unsigned int z:6;
+    unsigned int x:26;
+    unsigned int y:26;
+    unsigned int contentScale:8;
+    unsigned int providerId:32;
+};
+
+struct _GEOTransitLineSelectionKey {
+    unsigned int z:6;
+    unsigned int x:25;
+    unsigned int y:25;
+    unsigned int muid:64;
 };
 
 struct _NSRange {
@@ -143,10 +198,6 @@ struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<geo::_
 struct __list_node_base<geo::detail::_CacheItem<geo::_retain_ptr<_MKPinAnnotationViewImageCacheKey *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, NSDictionary *, _value_ptr>, void *> {
     struct __list_node_base<geo::detail::_CacheItem<geo::_retain_ptr<_MKPinAnnotationViewImageCacheKey *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, NSDictionary *, _value_ptr>, void *> *__prev_;
     struct __list_node_base<geo::detail::_CacheItem<geo::_retain_ptr<_MKPinAnnotationViewImageCacheKey *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, NSDictionary *, _value_ptr>, void *> *__next_;
-};
-
-struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
-    struct __tree_node_base<void *> *_field1;
 };
 
 struct __va_list_tag {
@@ -178,23 +229,15 @@ struct list<geo::detail::_CacheItem<geo::_retain_ptr<_MKPinAnnotationViewImageCa
     } __size_alloc_;
 };
 
-struct multimap<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>>> {
-    struct __tree<std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, std::__1::less<unsigned int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
 struct mutex {
     struct _opaque_pthread_mutex_t {
         long long __sig;
         char __opaque[56];
     } __m_;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<_MKAnnotationViewPair, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<_MKAnnotationViewPair, void *>*>*>>> {
@@ -260,6 +303,14 @@ struct vector<MKAnnotationView *, std::__1::allocator<MKAnnotationView *>> {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    _Bool abbreviatedUnits;
+    long long distanceDetailLevel;
+    _Bool spoken;
+    _Bool dropTimestampAMPM;
+    _Bool rightToLeft;
+} CDStruct_c28249a0;
+
+typedef struct {
     _Bool _field1;
 } CDStruct_b31ca263;
 
@@ -277,6 +328,11 @@ typedef struct {
     unsigned int _field3;
     unsigned int _field4;
 } CDStruct_7523a67d;
+
+typedef struct {
+    unsigned int _field1;
+    void *_field2;
+} CDStruct_35640fce;
 
 typedef struct {
     unsigned long long _field1;
@@ -313,10 +369,7 @@ typedef struct {
 } CDStruct_089f5ccb;
 
 typedef struct {
-    struct {
-        double x;
-        double y;
-    } origin;
+    CDStruct_34734122 origin;
     CDStruct_8caa76fc size;
 } CDStruct_02837cd9;
 
@@ -356,10 +409,7 @@ typedef struct {
 
 typedef struct {
     struct CLLocationCoordinate2D center;
-    struct {
-        double latitudeDelta;
-        double longitudeDelta;
-    } span;
+    CDStruct_951efa70 span;
 } CDStruct_b7cb895d;
 
 // Ambiguous groups
@@ -374,19 +424,17 @@ typedef struct {
 } CDStruct_2c43369c;
 
 typedef struct {
+    double latitudeDelta;
+    double longitudeDelta;
+} CDStruct_951efa70;
+
+typedef struct {
     double width;
     double height;
 } CDStruct_8caa76fc;
 
-typedef struct multimap<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>>> {
-    struct __tree<std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<URS::RouteShare, std::__1::allocator<URS::RouteShare>>>, std::__1::less<unsigned int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-} multimap_e5545ed7;
+typedef struct {
+    double x;
+    double y;
+} CDStruct_34734122;
 

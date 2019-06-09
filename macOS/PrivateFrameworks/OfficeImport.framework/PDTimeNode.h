@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSMutableArray, NSString, PDIterate;
 
+__attribute__((visibility("hidden")))
 @interface PDTimeNode : NSObject
 {
     NSMutableArray *mStartTimeConditions;

@@ -8,10 +8,9 @@
 
 @interface PFMutualExclusionAssertion : NSObject
 {
-    long long _criticalSectionCount;
+    BOOL _inCriticalSection;
 }
 
-@property long long criticalSectionCount; // @synthesize criticalSectionCount=_criticalSectionCount;
 - (void)performCriticalSection:(CDUnknownBlockType)arg1;
 - (void)leaveCriticalSection;
 - (void)enterCriticalSection;

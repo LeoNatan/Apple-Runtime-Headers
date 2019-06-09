@@ -14,11 +14,11 @@
     BOOL _hasPeersWithCDPBackupRecords;
     BOOL _requiresEscrowRecordsFetch;
     BOOL _requiresInitialSync;
-    int _circleStatus;
     unsigned long long _remotePeeriCKState;
+    unsigned long long _circleStatus;
 }
 
-@property int circleStatus; // @synthesize circleStatus=_circleStatus;
+@property unsigned long long circleStatus; // @synthesize circleStatus=_circleStatus;
 @property unsigned long long remotePeeriCKState; // @synthesize remotePeeriCKState=_remotePeeriCKState;
 @property BOOL requiresInitialSync; // @synthesize requiresInitialSync=_requiresInitialSync;
 @property BOOL requiresEscrowRecordsFetch; // @synthesize requiresEscrowRecordsFetch=_requiresEscrowRecordsFetch;

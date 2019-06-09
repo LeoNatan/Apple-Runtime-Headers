@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *idsQueue; // @synthesize idsQueue=_idsQueue;
 @property(copy, nonatomic) NSDictionary *customIDSOptions; // @synthesize customIDSOptions=_customIDSOptions;
 - (void).cxx_destruct;
+- (void)messageCenter:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)messageCenter:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)messageCenter:(id)arg1 activeDeviceChanged:(id)arg2 acknowledgement:(CDUnknownBlockType)arg3;
 - (void)messageCenter:(id)arg1 failedToSendMessageWithIdentifier:(id)arg2 error:(id)arg3 userInfo:(id)arg4;
@@ -55,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)beginSession;
 - (void)suspend;
 - (_Bool)resume:(id *)arg1;
+- (_Bool)targetConnected;
 - (_Bool)targetIsNearby;
 - (id)messageCenter;
 - (id)initWithService:(id)arg1 queue:(id)arg2;

@@ -8,32 +8,46 @@
 
 #import <NotesShared/ICNoteContainer-Protocol.h>
 
-@class ICAccount, NSString;
+@class ICAccount, ICFolderCustomNoteSortType, NSArray, NSData, NSManagedObjectContext, NSString;
 
 @interface ICAccountProxy : NSObject <ICNoteContainer>
 {
     ICAccount *_account;
 }
 
++ (id)keyPathsForValuesAffectingVisibleNotesCount;
 + (id)accountProxyWithAccount:(id)arg1;
 @property(retain) ICAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (BOOL)canBeSharedViaICloud;
+- (id)customNoteSortTypeValue;
+- (BOOL)mergeWithSubFolderMergeableData:(id)arg1;
+- (void)updateSubFolderMergeableDataChangeCount;
+- (void)saveSubFolderMergeableDataIfNeeded;
+@property(retain, nonatomic) NSData *subFolderOrderMergeableData;
+@property(readonly, nonatomic) NSArray *visibleSubFolders;
+@property(readonly, nonatomic) BOOL isTrashFolder;
+- (BOOL)isModernCustomFolder;
+@property(readonly, nonatomic) BOOL isAllNotesContainer;
+@property(readonly, nonatomic) BOOL canBeSharedViaICloud;
+@property(readonly, nonatomic) BOOL isSharedViaICloud;
 - (BOOL)isDeleted;
 - (id)noteVisibilityTestingForSearchingAccount;
-- (BOOL)supportsEditingNotes;
+@property(readonly, nonatomic) BOOL supportsEditingNotes;
 - (id)visibleNoteContainerChildren;
+- (id)detailForTableViewCell;
 - (id)titleForTableViewCell;
 - (id)titleForNavigationBar;
 - (BOOL)noteIsVisible:(id)arg1;
 - (unsigned long long)visibleNotesCount;
 - (id)visibleNotes;
+@property(readonly, nonatomic) ICFolderCustomNoteSortType *customNoteSortType;
 - (id)predicateForSearchableAttachments;
 - (id)predicateForSearchableNotes;
 - (id)predicateForPinnedNotes;
 - (id)predicateForVisibleNotes;
 - (BOOL)supportsVisibilityTestingType:(long long)arg1;
 - (id)accountName;
+@property(readonly) NSManagedObjectContext *managedObjectContext;
 @property(readonly, nonatomic) ICAccount *noteContainerAccount;
 - (BOOL)isLeaf;
 - (long long)compare:(id)arg1;

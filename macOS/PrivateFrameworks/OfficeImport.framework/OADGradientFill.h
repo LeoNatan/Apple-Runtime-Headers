@@ -8,6 +8,7 @@
 
 @class NSArray, OADRelativeRect, OADShade;
 
+__attribute__((visibility("hidden")))
 @interface OADGradientFill : OADFill
 {
     NSArray *mStops;

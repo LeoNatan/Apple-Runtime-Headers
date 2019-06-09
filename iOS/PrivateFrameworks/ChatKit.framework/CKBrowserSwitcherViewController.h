@@ -52,6 +52,7 @@
     IMScheduledUpdater *_scrollUpdater;
     IMBalloonPlugin *_currentVisiblePlugin;
     CKAppGrabberView *_grabberView;
+    UIView *_shadowView;
     id _cancelTouchesToken;
     IMBalloonPlugin *_balloonPlugin;
     NSArray *_gutterDividerViews;
@@ -75,6 +76,7 @@
 @property(nonatomic, getter=isInDragAndDrop) _Bool inDragAndDrop; // @synthesize inDragAndDrop=_inDragAndDrop;
 @property(nonatomic) _Bool inManualContentOffsetChange; // @synthesize inManualContentOffsetChange=_inManualContentOffsetChange;
 @property(nonatomic) _Bool insertedViaCollapse; // @synthesize insertedViaCollapse=_insertedViaCollapse;
+@property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
 @property(retain, nonatomic) CKAppGrabberView *grabberView; // @synthesize grabberView=_grabberView;
 @property(retain, nonatomic) IMBalloonPlugin *currentVisiblePlugin; // @synthesize currentVisiblePlugin=_currentVisiblePlugin;
 @property(retain, nonatomic) IMScheduledUpdater *scrollUpdater; // @synthesize scrollUpdater=_scrollUpdater;
@@ -115,9 +117,11 @@
 - (void)_removeBrowserFromViewHierarchy:(id)arg1;
 - (void)_removeBrowserWithPluginIdentifierFromViewHierarchy:(id)arg1;
 - (void)_updateBrowserViewPositionForPluginAndInsertIfNecessary:(id)arg1;
+- (void)_updateActiveBrowserAlphaStateOnInsertForCurrentController:(id)arg1 currentView:(id)arg2;
 - (void)_insertCurrentBrowserAndRemoveOldBrowsersIfNeeded;
 - (_Bool)_currentPluginIsJellyfish;
 - (_Bool)shouldAutorotate;
+- (unsigned long long)supportedInterfaceOrientations;
 - (void)_transitionSnapshotViewToBrowserView;
 - (void)_handleRemoteViewControllerConnectionInterrupted:(id)arg1;
 - (void)_transitionSnapshotViewToBrowserViewAfterViewDidPrepareForDisplay:(id)arg1;
@@ -127,6 +131,8 @@
 - (id)currentSwitcherCell;
 - (void)_snapshotCurrentViewController;
 - (void)_updateGutterDividerViewsForCurrentVisibleBrowser;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateGrabberTitleAndIconForPlugin:(id)arg1;
 - (void)_updateAppNameAndPageForOffset:(struct CGPoint)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;

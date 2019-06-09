@@ -7,6 +7,9 @@
 #import <Foundation/NSXPCConnection.h>
 
 @interface NSXPCConnection (UserNotificationsServer)
+- (_Bool)uns_hasEntitlement:(id)arg1 capability:(id)arg2;
+- (_Bool)uns_isAllowedToWriteSettings;
+- (_Bool)uns_isAllowedToReadSettings;
 - (_Bool)uns_isAllowedToRequestUserNotificationsForBundleIdentifier:(id)arg1;
 - (id)uns_clientBundleProxy;
 @end

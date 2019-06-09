@@ -12,6 +12,14 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct HMDNetworkRouterFallbackLANRuleDefinition {
+    id _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned short _field4;
+    unsigned short _field5;
+};
+
 struct NSArray {
     Class _field1;
 };

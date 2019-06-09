@@ -18,9 +18,9 @@
 @property(retain, nonatomic) NSArray *mixedContent; // @synthesize mixedContent=_mixedContent;
 @property(retain, nonatomic) MFPlainTextDocument *plaintextAlternative; // @synthesize plaintextAlternative=_plaintextAlternative;
 @property(nonatomic) _Bool textPartsAreHTML; // @synthesize textPartsAreHTML=_textPartsAreHTML;
+- (void).cxx_destruct;
 - (id)richtextContent;
 - (id)copy;
-- (void)dealloc;
 
 @end
 

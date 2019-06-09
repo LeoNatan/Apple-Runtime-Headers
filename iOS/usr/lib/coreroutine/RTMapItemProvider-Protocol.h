@@ -6,9 +6,9 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class NSArray, NSDate, RTLocation;
+@class NSArray, RTPlaceInferenceOptions;
 
 @protocol RTMapItemProvider <NSObject>
-- (NSArray *)mapItemsWithinDistance:(double)arg1 location:(RTLocation *)arg2 startDate:(NSDate *)arg3 endDate:(NSDate *)arg4 error:(id *)arg5;
+- (NSArray *)mapItemsWithOptions:(RTPlaceInferenceOptions *)arg1 error:(id *)arg2;
 @end
 

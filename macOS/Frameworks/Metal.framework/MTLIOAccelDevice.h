@@ -6,8 +6,8 @@
 
 #import <Metal/_MTLDevice.h>
 
-@class MTLIOAccelDeviceShmemPool, MTLIOAccelService, MTLResourceListPool, NSObject;
-@protocol OS_dispatch_queue;
+@class MTLIOAccelDeviceShmemPool, MTLIOAccelService, MTLIOMemoryInfo, MTLResourceListPool, NSObject;
+@protocol MTLDeviceSPI, OS_dispatch_queue, OS_dispatch_source;
 
 @interface MTLIOAccelDevice : _MTLDevice
 {
@@ -34,6 +34,9 @@
     unsigned long long _segmentByteThreshold;
     struct MTLIOAccelBufferHeap _bufferHeaps[16];
     NSObject<OS_dispatch_queue> *_device_dispatch_queue;
+    NSObject<OS_dispatch_queue> *_device_pool_cleanup_queue;
+    NSObject<OS_dispatch_source> *_device_pool_cleanup_source;
+    _Bool _device_pool_cleanup_scheduled;
     unsigned int _fenceAllocatedCount;
     unsigned int _fenceMaximumCount;
     unsigned int _fenceBitmapSearchStart;
@@ -41,12 +44,20 @@
     unsigned long long *_fenceAllocationBitmap;
     Class _bufferClass;
     unsigned long long _registryID;
+    id <MTLDeviceSPI> _deviceWrapper;
 }
 
 + (void)registerDevices;
 + (void)registerAcceleratorService:(id)arg1;
 @property(readonly) unsigned int acceleratorPort; // @synthesize acceleratorPort=_acceleratorPort;
 @property(readonly) int numCommandBuffers; // @synthesize numCommandBuffers=_numCommandBuffers;
+- (void).cxx_destruct;
+@property(readonly) MTLIOMemoryInfo *memoryInfo; // @dynamic memoryInfo;
+- (BOOL)setResourcesPurgeableState:(id *)arg1 newState:(unsigned long long)arg2 oldState:(unsigned long long *)arg3 count:(int)arg4;
+- (id)_deviceWrapper;
+- (void)_setDeviceWrapper:(id)arg1;
+- (void)updateResourcePoolPurgeability;
+- (void)kickCleanupQueue;
 - (unsigned long long)maxBufferLength;
 - (id)newEvent;
 - (void)_removeResource:(id)arg1;
@@ -60,6 +71,7 @@
 - (id)indirectArgumentBufferDecodingData;
 - (id)newIndirectCommandBufferWithDescriptor:(id)arg1 maxCommandCount:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newIndirectArgumentEncoderWithLayout:(id)arg1;
+- (id)newArgumentEncoderWithLayout:(id)arg1;
 - (id)newIndirectArgumentBufferLayoutWithStructType:(id)arg1;
 - (void)releaseFenceIndex:(unsigned int)arg1;
 - (id)newFence;
@@ -68,6 +80,7 @@
 - (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(unsigned long long)arg3 heapIndex:(short *)arg4 bufferIndex:(short *)arg5 bufferOffset:(unsigned long long *)arg6;
 - (short)heapIndexWithOptions:(unsigned long long)arg1;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
+@property(readonly) BOOL hasUnifiedMemory;
 @property(readonly, getter=isRemovable) BOOL removable;
 @property(readonly, getter=isHeadless) BOOL headless;
 @property(readonly, getter=isLowPower) BOOL lowPower;

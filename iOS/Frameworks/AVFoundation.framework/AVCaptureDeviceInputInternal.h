@@ -9,15 +9,18 @@
 @class AVCaptureDevice, AVWeakReference, NSArray;
 @protocol AVCallbackCancellation;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceInputInternal : NSObject
 {
     AVCaptureDevice *device;
     NSArray *ports;
-    _Bool ready;
-    _Bool builtInMicrophoneStereoAudioCaptureEnabled;
-    float simulatedAperture;
+    NSArray *multiCamPorts;
     _Bool unifiedAutoExposureDefaultsEnabled;
+    _Bool builtInMicrophoneStereoAudioCaptureEnabled;
     _Bool visionDataDeliveryEnabled;
+    float simulatedAperture;
+    float maxGainOverride;
+    _Bool ready;
     AVWeakReference *weakReference;
     id <AVCallbackCancellation> deviceOpenCallbackInvoker;
 }

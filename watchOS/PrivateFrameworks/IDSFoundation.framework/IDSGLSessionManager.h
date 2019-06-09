@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)recvZUDPData:(char *)arg1 dataLength:(unsigned long)arg2 linkID:(BOOL)arg3;
-- (long)sendZUDPData:(char *)arg1 dataLength:(unsigned long)arg2 linkID:(BOOL)arg3;
+- (long)sendZUDPData:(char *)arg1 dataLength:(long)arg2 linkID:(BOOL)arg3;
 - (void)recvGenericData:(char *)arg1 dataLength:(unsigned long)arg2 linkID:(BOOL)arg3;
 - (long)sendGenericData:(char *)arg1 dataLength:(unsigned long)arg2 linkID:(BOOL)arg3;
 - (void)_sendServerBufferedData;

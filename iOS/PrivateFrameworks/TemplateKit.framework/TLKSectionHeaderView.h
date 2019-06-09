@@ -6,33 +6,23 @@
 
 #import <TemplateKit/TLKView.h>
 
-#import <TemplateKit/NUIContainerBoxViewDelegate-Protocol.h>
+@class TLKLabel, TLKMultilineText, TLKProminenceView;
 
-@class NSString, TLKMultilineText, UILabel, UIView;
-
-@interface TLKSectionHeaderView : TLKView <NUIContainerBoxViewDelegate>
+@interface TLKSectionHeaderView : TLKView
 {
     TLKMultilineText *_headerText;
-    UILabel *_headerTextLabel;
-    UIView *_backgroundView;
+    TLKLabel *_headerTextLabel;
+    TLKProminenceView *_backgroundView;
 }
 
-@property(retain) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(retain) UILabel *headerTextLabel; // @synthesize headerTextLabel=_headerTextLabel;
+@property(retain, nonatomic) TLKProminenceView *backgroundView; // @synthesize backgroundView=_backgroundView;
+@property(retain, nonatomic) TLKLabel *headerTextLabel; // @synthesize headerTextLabel=_headerTextLabel;
 @property(retain, nonatomic) TLKMultilineText *headerText; // @synthesize headerText=_headerText;
 - (void).cxx_destruct;
 - (id)headerLabelText;
-- (long long)containerBoxView:(id)arg1 verticalAlignmentForArrangedSubview:(id)arg2;
-- (long long)containerBoxView:(id)arg1 horizontalAlignmentForArrangedSubview:(id)arg2;
 - (void)observedPropertiesChanged;
-- (void)styleDidChange:(unsigned long long)arg1;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (_Bool)usesDefaultInsets;
+- (id)setupContentView;
 
 @end
 

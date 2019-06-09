@@ -21,6 +21,7 @@
     long long __nextRegime;
     long long __nextRegimeCount;
     struct CGPoint _scrollVelocity;
+    struct CGPoint _lastScrollDirection;
     struct CGPoint _scrollAcceleration;
     struct CGRect __lastVisibleRect;
 }
@@ -32,6 +33,7 @@
 @property(retain, nonatomic, setter=_setTimeoutTimer:) NSTimer *_timeoutTimer; // @synthesize _timeoutTimer=__timeoutTimer;
 @property(nonatomic, setter=_setLastTime:) double _lastTime; // @synthesize _lastTime=__lastTime;
 @property(nonatomic, setter=_setLastVisibleRect:) struct CGRect _lastVisibleRect; // @synthesize _lastVisibleRect=__lastVisibleRect;
+@property(nonatomic) struct CGPoint lastScrollDirection; // @synthesize lastScrollDirection=_lastScrollDirection;
 @property(readonly, nonatomic) long long previousRegime; // @synthesize previousRegime=_previousRegime;
 @property(readonly, nonatomic) long long regime; // @synthesize regime=_regime;
 @property(nonatomic) struct CGPoint scrollVelocity; // @synthesize scrollVelocity=_scrollVelocity;

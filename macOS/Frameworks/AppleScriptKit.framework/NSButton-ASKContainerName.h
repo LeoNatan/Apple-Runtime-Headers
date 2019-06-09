@@ -8,5 +8,13 @@
 
 @interface NSButton (ASKContainerName)
 + (id)containerName_ask;
+- (void)setImagePosition_ask:(unsigned long long)arg1;
+- (unsigned long long)imagePosition_ask;
+- (void)setButtonType_ask:(unsigned long long)arg1;
+- (unsigned long long)buttonType_ask;
+- (void)setBezelStyle_ask:(unsigned long long)arg1;
+- (unsigned long long)bezelStyle_ask;
+- (void)setIsTransparent:(BOOL)arg1;
+- (void)setIsBordered:(BOOL)arg1;
 @end
 

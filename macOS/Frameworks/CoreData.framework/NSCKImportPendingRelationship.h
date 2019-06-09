@@ -4,37 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreData/NSManagedObject.h>
 
 @class NSCKImportOperation, NSNumber, NSString;
 
 __attribute__((visibility("hidden")))
-@interface NSCKImportPendingRelationship : NSObject
+@interface NSCKImportPendingRelationship : NSManagedObject
 {
-    BOOL _isDeleted;
-    NSString *_recordName;
-    NSString *_entityName;
-    NSString *_relatedRecordName;
-    NSString *_relatedEntityName;
-    NSString *_relationshipName;
-    NSCKImportOperation *_operation;
-    NSNumber *_fetchedPKNum;
 }
 
-@property(readonly, nonatomic) NSNumber *fetchedPKNum; // @synthesize fetchedPKNum=_fetchedPKNum;
-@property(readonly, nonatomic) __weak NSCKImportOperation *operation; // @synthesize operation=_operation;
-@property(readonly, nonatomic) BOOL isDeleted; // @synthesize isDeleted=_isDeleted;
-@property(readonly, nonatomic) NSString *relationshipName; // @synthesize relationshipName=_relationshipName;
-@property(readonly, nonatomic) NSString *relatedEntityName; // @synthesize relatedEntityName=_relatedEntityName;
-@property(readonly, nonatomic) NSString *relatedRecordName; // @synthesize relatedRecordName=_relatedRecordName;
-@property(readonly, nonatomic) NSString *entityName; // @synthesize entityName=_entityName;
-@property(readonly, nonatomic) NSString *recordName; // @synthesize recordName=_recordName;
-- (void).cxx_destruct;
-- (void)setBindValue:(id)arg1;
-- (id)description;
-- (void)dealloc;
-- (id)initWithFetchResult:(id)arg1 operationsByPk:(id)arg2 andSQLEntity:(id)arg3;
-- (id)initWithFailedRelationship:(id)arg1 andOperation:(id)arg2;
++ (id)entityPath;
++ (id)insertPendingRelationshipForFailedRelationship:(id)arg1 forOperation:(id)arg2 inStore:(id)arg3 withManagedObjectContext:(id)arg4;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *cdEntityName; // @dynamic cdEntityName;
+@property(retain, nonatomic) NSNumber *needsDelete; // @dynamic needsDelete;
+@property(retain, nonatomic) NSCKImportOperation *operation; // @dynamic operation;
+@property(retain, nonatomic) NSString *recordName; // @dynamic recordName;
+@property(retain, nonatomic) NSString *relatedEntityName; // @dynamic relatedEntityName;
+@property(retain, nonatomic) NSString *relatedRecordName; // @dynamic relatedRecordName;
+@property(retain, nonatomic) NSString *relationshipName; // @dynamic relationshipName;
 
 @end
 

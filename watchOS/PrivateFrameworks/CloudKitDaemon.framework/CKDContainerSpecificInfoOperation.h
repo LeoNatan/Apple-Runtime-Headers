@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CKDContainerInfo *containerInfo; // @synthesize containerInfo=_containerInfo;
 @property(nonatomic) _Bool requireUserIDs; // @synthesize requireUserIDs=_requireUserIDs;
 - (void).cxx_destruct;
-- (_Bool)canBeUsedForOperation:(id)arg1;
 - (void)main;
 - (void)setCompletionBlock:(CDUnknownBlockType)arg1;
 - (_Bool)shouldCheckAppVersion;

@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (void)aboutToTearDown;
 - (void)viewDidLoad;
 - (BOOL)_viewControllerSupports10_10Features;
-- (id)init;
 - (id)initWithFrame:(const struct CGRect *)arg1;
 
 // Remaining properties

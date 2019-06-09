@@ -6,10 +6,12 @@
 
 #import <ChatKit/CKTranscriptMessageCell.h>
 
+#import <ChatKit/CKLayerDelegate-Protocol.h>
+
 @class CALayer, CKTypingView;
 @protocol IMTypingIndicatorLayerProtocol;
 
-@interface CKTranscriptTypingIndicatorCell : CKTranscriptMessageCell
+@interface CKTranscriptTypingIndicatorCell : CKTranscriptMessageCell <CKLayerDelegate>
 {
     CKTypingView *_typingView;
 }
@@ -21,14 +23,12 @@
 - (void)startPulseAnimation;
 - (void)startGrowAnimation;
 @property(retain, nonatomic) CALayer<IMTypingIndicatorLayerProtocol> *indicatorLayer;
-- (void)_applicationDidEnterBackground:(id)arg1;
-- (void)_applicationWillEnterForeground:(id)arg1;
+- (void)ckLayerDidBecomeVisible:(_Bool)arg1;
 - (void)performRemoval:(CDUnknownBlockType)arg1;
 - (void)performInsertion:(CDUnknownBlockType)arg1;
 - (void)layoutSubviewsForAlignmentContents;
 - (void)setOrientation:(BOOL)arg1;
 - (void)prepareForReuse;
-- (void)didMoveToWindow;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;
 - (void)configureForChatItem:(id)arg1;

@@ -14,9 +14,11 @@
     id _readSharingACL;
 }
 
++ (id)contactMembershipPredicateWithUniqueIds:(id)arg1;
 + (id)contactMembershipPredicateWithUniqueId:(id)arg1;
 + (id)_table;
 + (id)abEntityName;
+- (void).cxx_destruct;
 - (id)membersIncludingMembersOfSubgroups:(BOOL)arg1;
 - (id)affectedStoresInMembershipPredicate;
 - (id)contactMembershipRecursivePredicate;

@@ -16,8 +16,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly) int frequency; // @synthesize frequency=_frequency;
-@property(readonly) unsigned int interval; // @synthesize interval=_interval;
+@property(readonly, nonatomic) int frequency; // @synthesize frequency=_frequency;
+@property(readonly, nonatomic) unsigned int interval; // @synthesize interval=_interval;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 - (id)description;

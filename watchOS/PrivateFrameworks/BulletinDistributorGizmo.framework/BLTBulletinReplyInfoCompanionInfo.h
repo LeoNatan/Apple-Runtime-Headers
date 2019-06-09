@@ -10,15 +10,12 @@
 
 @interface BLTBulletinReplyInfoCompanionInfo : NSObject
 {
-    _Bool _localBulletin;
     _Bool _gizmoWillPlayLightsAndSirens;
     _Bool _trafficRestricted;
     _Bool _turnsOnDisplay;
     _Bool _overridesDND;
     _Bool _hasGizmoWillPlayLightsAndSirens;
-    NSDate *_receptionDate;
     NSDate *_expiration;
-    NSDate *_companionPublicationDate;
     NSString *_matchID;
     unsigned int _shouldPlayLightsAndSirensState;
     NSDate *_transmissionDate;
@@ -33,11 +30,8 @@
 @property(retain, nonatomic) NSDate *transmissionDate; // @synthesize transmissionDate=_transmissionDate;
 @property(nonatomic) unsigned int shouldPlayLightsAndSirensState; // @synthesize shouldPlayLightsAndSirensState=_shouldPlayLightsAndSirensState;
 @property(readonly, nonatomic) _Bool gizmoWillPlayLightsAndSirens; // @synthesize gizmoWillPlayLightsAndSirens=_gizmoWillPlayLightsAndSirens;
-@property(nonatomic) _Bool localBulletin; // @synthesize localBulletin=_localBulletin;
 @property(copy, nonatomic) NSString *matchID; // @synthesize matchID=_matchID;
-@property(retain, nonatomic) NSDate *companionPublicationDate; // @synthesize companionPublicationDate=_companionPublicationDate;
 @property(retain, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
-@property(retain, nonatomic) NSDate *receptionDate; // @synthesize receptionDate=_receptionDate;
 - (void).cxx_destruct;
 - (void)_computeGizmoWillPlayLightsAndSirensWithShouldPlayLightsAndSirens:(unsigned int)arg1 isConnected:(_Bool)arg2 isWristDetectDisabled:(_Bool)arg3 isAlertable:(_Bool)arg4;
 - (id)init;

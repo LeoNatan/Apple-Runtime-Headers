@@ -13,19 +13,19 @@
 
 @interface FBProcessState : NSObject <BSDescriptionProviding, NSCopying>
 {
-    int _pid;
     _Bool _running;
     _Bool _foreground;
+    _Bool _debugging;
+    int _pid;
     int _taskState;
     int _visibility;
-    int _effectiveVisibility;
 }
 
-@property(nonatomic) int effectiveVisibility; // @synthesize effectiveVisibility=_effectiveVisibility;
+@property(nonatomic, getter=isDebugging) _Bool debugging; // @synthesize debugging=_debugging;
 @property(nonatomic) int visibility; // @synthesize visibility=_visibility;
 @property(nonatomic) int taskState; // @synthesize taskState=_taskState;
-@property(nonatomic, getter=isForeground) _Bool foreground; // @synthesize foreground=_foreground;
-@property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
+@property(readonly, nonatomic, getter=isForeground) _Bool foreground; // @synthesize foreground=_foreground;
+@property(readonly, nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

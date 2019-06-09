@@ -16,7 +16,7 @@
     BOOL _fixed;
     BOOL _underline;
     short _fontDelta;
-    unsigned long long _alignment;
+    long long _alignment;
     NSString *_fontFamily;
     NSColor *_color;
 }
@@ -28,7 +28,7 @@
 @property(nonatomic) BOOL fixed; // @synthesize fixed=_fixed;
 @property(nonatomic) BOOL italic; // @synthesize italic=_italic;
 @property(nonatomic) BOOL bold; // @synthesize bold=_bold;
-@property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned char excerptLevel; // @synthesize excerptLevel=_excerptLevel;
 - (void).cxx_destruct;
 

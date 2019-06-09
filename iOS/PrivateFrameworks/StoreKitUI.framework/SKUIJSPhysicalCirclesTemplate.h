@@ -10,6 +10,7 @@
 
 @class SKUIPhysicalCirclesTemplateDOMFeature;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSPhysicalCirclesTemplate : IKJSObject <SKUIJSPhysicalCirclesTemplate>
 {
     SKUIPhysicalCirclesTemplateDOMFeature *_feature;

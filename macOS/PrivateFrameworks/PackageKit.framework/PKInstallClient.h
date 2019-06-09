@@ -21,6 +21,7 @@
     BOOL _isInitialized;
 }
 
++ (BOOL)_inProcessInstall;
 + (id)_connectToDaemonForAuthLevel:(int)arg1 privileged:(BOOL)arg2 recursiveInstall:(BOOL)arg3 silent:(BOOL)arg4 forInstance:(id)arg5;
 + (BOOL)isCurrentlyStagedInstallRequest:(id)arg1 purgeableSize:(id *)arg2;
 + (double)estimatedTimeForInstallRequest:(id)arg1;
@@ -31,6 +32,7 @@
 + (unsigned long long)purgeableSpaceForOrphanedSandboxesOnVolume:(id)arg1;
 + (unsigned long long)purgeSandboxesOnVolume:(id)arg1 purgeAmountNeeded:(unsigned long long)arg2 systemSandboxes:(BOOL)arg3;
 + (unsigned long long)estimateOfPurgeableSpaceForSandboxesOnVolume:(id)arg1 systemSandboxes:(BOOL)arg2;
+- (void)installWillProceedForState:(int)arg1 withSandbox:(id)arg2 forToken:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)installDidEndForToken:(id)arg1;
 - (void)installDidBeginCommitForToken:(id)arg1;
 - (void)installDidBeginForToken:(id)arg1;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)kindCategory;
 + (id)tagCategory;
 + (id)applicationsCategory;
++ (id)folderCategory;
 + (id)filenameCategory;
 + (id)filenameTypingScopeCategory;
 + (id)displayNameForScope:(long long)arg1;

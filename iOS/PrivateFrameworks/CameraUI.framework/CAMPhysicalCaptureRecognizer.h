@@ -6,12 +6,13 @@
 
 #import <UIKit/UIGestureRecognizer.h>
 
-@class NSArray;
+@class NSArray, NSSet;
 
 @interface CAMPhysicalCaptureRecognizer : UIGestureRecognizer
 {
     _Bool _suspended;
-    long long _activeButton;
+    NSSet *_activeButtons;
+    long long _lastActiveButton;
     NSArray *_desiredButtons;
     long long _pressType;
 }
@@ -19,7 +20,8 @@
 @property(nonatomic) long long pressType; // @synthesize pressType=_pressType;
 @property(nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
 @property(copy, nonatomic) NSArray *desiredButtons; // @synthesize desiredButtons=_desiredButtons;
-@property(nonatomic) long long activeButton; // @synthesize activeButton=_activeButton;
+@property(nonatomic) long long lastActiveButton; // @synthesize lastActiveButton=_lastActiveButton;
+@property(copy, nonatomic) NSSet *activeButtons; // @synthesize activeButtons=_activeButtons;
 - (void).cxx_destruct;
 - (long long)_captureButtonForPressType:(long long)arg1;
 - (void)reset;

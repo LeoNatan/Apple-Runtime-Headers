@@ -10,6 +10,7 @@
 
 @class NSString, UIView;
 
+__attribute__((visibility("hidden")))
 @interface CKDetailsMapViewCell : CKDetailsCell <CKDetailsCell>
 {
     UIView *_mapView;

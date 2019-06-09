@@ -13,7 +13,7 @@
 
 - (double)columnWidthForColumnSpan:(long long)arg1;
 - (struct UIEdgeInsets)contentInsets;
-- (id)initWithTraitCollection:(id)arg1 scrollDirection:(long long)arg2;
+- (id)initWithTraitCollection:(id)arg1 scrollAxis:(long long)arg2;
 
 @end
 

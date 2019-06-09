@@ -9,20 +9,22 @@
 #import <MapsSuggestions/MapsSuggestionsLocationUpdater-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsLocationVisitUpdaterDelegate-Protocol.h>
 
-@class CLLocation, CLVisit, NSHashTable, NSString;
+@class CLLocation, CLVisit, MapsSuggestionsObservers, NSString;
 @protocol MapsSuggestionsLocationUpdater;
 
 @interface MapsSuggestionsVisitTrackingLocationUpdater : NSObject <MapsSuggestionsLocationUpdater, MapsSuggestionsLocationVisitUpdaterDelegate>
 {
+    struct unique_ptr<MSg::Queue, std::__1::default_delete<MSg::Queue>> _queue;
     id <MapsSuggestionsLocationUpdater> _wrappedLocationUpdater;
     CLLocation *_latestLocation;
     CLVisit *_currentVisit;
-    NSHashTable *_locationObservers;
-    NSHashTable *_visitObservers;
+    MapsSuggestionsObservers *_locationObservers;
+    MapsSuggestionsObservers *_visitObservers;
     double _distanceBuffer;
 }
 
 + (_Bool)_isDefinitelyOutsideOfVisit:(id)arg1 location:(id)arg2 allowingBuffer:(double)arg3;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)visitLeft:(id)arg1;
 - (void)visitEntered:(id)arg1;

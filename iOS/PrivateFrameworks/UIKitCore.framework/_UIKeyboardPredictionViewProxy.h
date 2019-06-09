@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)enabled;
 - (_Bool)show;
 - (struct CGSize)size;
+- (id)_window;
 - (void)removeFromSuperview;
 - (id)superview;
 - (_Bool)respondsToSelector:(SEL)arg1;

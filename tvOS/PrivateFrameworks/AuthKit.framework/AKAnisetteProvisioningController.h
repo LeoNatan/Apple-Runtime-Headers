@@ -22,6 +22,7 @@
 @property(retain, nonatomic) AKDevice *targetDevice; // @synthesize targetDevice=_targetDevice;
 - (void).cxx_destruct;
 - (id)_anisetteServiceConnection;
+- (void)fetchAttestationForRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)legacyAnisetteDataForDSID:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAnisetteDataAndProvisionIfNecessary:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)fetchAnisetteDataAndProvisionIfNecessary:(_Bool)arg1 error:(id *)arg2;

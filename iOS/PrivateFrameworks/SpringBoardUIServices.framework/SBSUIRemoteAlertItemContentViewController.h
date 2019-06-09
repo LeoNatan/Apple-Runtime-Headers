@@ -8,6 +8,8 @@
 
 #import <SpringBoardUIServices/SBSUIRemoteAlertItemContentServiceInterface-Protocol.h>
 
+@class NSString;
+
 @interface SBSUIRemoteAlertItemContentViewController : UIViewController <SBSUIRemoteAlertItemContentServiceInterface>
 {
 }
@@ -18,6 +20,12 @@
 - (void)viewDidLayoutSubviews;
 - (void)invalidatePreferredContentSize;
 - (void)viewDidLoad;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

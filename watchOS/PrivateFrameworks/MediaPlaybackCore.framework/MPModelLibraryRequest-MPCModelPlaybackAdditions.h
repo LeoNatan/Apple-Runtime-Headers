@@ -13,8 +13,6 @@
 
 @interface MPModelLibraryRequest (MPCModelPlaybackAdditions) <MPCModelPlaybackRequesting, MPCModelRequestRTCReporting>
 @property(readonly, copy, nonatomic) NSString *rtcReportingPlayQueueSourceIdentifier;
-- (_Bool)shouldExcludeNonShuffleItems;
-- (void)setShouldExcludeNonShuffleItems:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

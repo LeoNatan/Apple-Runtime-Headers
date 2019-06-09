@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OADDrawingTheme, OADGroup, OADOrientedBounds, OADShapeStyle, ODDDiagram;
 
+__attribute__((visibility("hidden")))
 @interface ODIState : NSObject
 {
     ODDDiagram *mDiagram;

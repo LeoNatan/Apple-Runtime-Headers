@@ -59,6 +59,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)setCurrentIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setActiveScrollWheel;
 - (void)reloadData;

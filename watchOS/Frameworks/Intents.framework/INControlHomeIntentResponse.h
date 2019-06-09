@@ -8,11 +8,10 @@
 
 #import <Intents/INControlHomeIntentResponseExport-Protocol.h>
 
-@class NSString, _INPBControlHomeIntentResponse;
+@class NSArray, NSString;
 
 @interface INControlHomeIntentResponse : INIntentResponse <INControlHomeIntentResponseExport>
 {
-    _INPBControlHomeIntentResponse *_responseMessagePBRepresentation;
 }
 
 + (_Bool)_appLaunchRequestedFromCode:(int)arg1;
@@ -20,11 +19,11 @@
 + (int)_typeFromCode:(int)arg1;
 + (int)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(_Bool)arg3;
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
-- (id)_responseMessagePBRepresentation;
+@property(copy, nonatomic) NSArray *entityResponses;
+- (int)_codeWithName:(id)arg1;
 - (int)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

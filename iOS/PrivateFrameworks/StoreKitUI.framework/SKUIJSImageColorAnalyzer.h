@@ -11,6 +11,7 @@
 
 @class NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, SKUIResourceLoader;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSImageColorAnalyzer : IKJSObject <SKUIArtworkRequestDelegate, SKUIJSImageColorAnalyzer>
 {
     SKUIClientContext *_clientContext;

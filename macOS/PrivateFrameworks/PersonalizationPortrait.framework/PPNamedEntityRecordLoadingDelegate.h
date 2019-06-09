@@ -4,14 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PersonalizationPortrait/PPRecordLoadingDelegate.h>
 
-@class NSDate, NSString;
-
-@interface PPNamedEntityRecordLoadingDelegate : NSObject
+@interface PPNamedEntityRecordLoadingDelegate : PPRecordLoadingDelegate
 {
-    NSString *_name;
-    NSDate *_loadEntitiesDetectedSince;
     CDUnknownBlockType _namedEntityRecordsSetup;
     CDUnknownBlockType _namedEntityRecordsHandler;
     CDUnknownBlockType _namedEntityRecordsCompletion;
@@ -28,9 +24,14 @@
 @property(copy, nonatomic) CDUnknownBlockType namedEntityRecordsCompletion; // @synthesize namedEntityRecordsCompletion=_namedEntityRecordsCompletion;
 @property(copy, nonatomic) CDUnknownBlockType namedEntityRecordsHandler; // @synthesize namedEntityRecordsHandler=_namedEntityRecordsHandler;
 @property(copy, nonatomic) CDUnknownBlockType namedEntityRecordsSetup; // @synthesize namedEntityRecordsSetup=_namedEntityRecordsSetup;
-@property(retain, nonatomic) NSDate *loadEntitiesDetectedSince; // @synthesize loadEntitiesDetectedSince=_loadEntitiesDetectedSince;
-@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)resetRecordData;
+- (void)recentRecordLoadingCompletion;
+- (unsigned char)recentRecordLoadingHandler:(id)arg1;
+- (unsigned char)recentRecordLoadingSetup;
+- (void)recordLoadingCompletion;
+- (unsigned char)recordLoadingHandler:(id)arg1;
+- (unsigned char)recordLoadingSetup;
 - (id)description;
 - (id)initWithName:(id)arg1;
 

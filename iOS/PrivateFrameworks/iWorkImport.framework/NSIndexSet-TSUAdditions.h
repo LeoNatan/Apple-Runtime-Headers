@@ -25,5 +25,7 @@
 - (id)tsu_indexSetByAddingIndexes:(id)arg1;
 - (id)tsu_indexSetByAddingIndex:(unsigned long long)arg1;
 - (id)tsu_initWithIndices:(unsigned long long *)arg1 count:(unsigned long long)arg2;
+-     // Error parsing type: @24@0:8r^{IndexSet=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}}16, name: tsp_initWithMessage:
+-     // Error parsing type: v24@0:8^{IndexSet=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSP::Range>=^{Arena}ii^{Rep}}}16, name: tsp_saveToMessage:
 @end
 

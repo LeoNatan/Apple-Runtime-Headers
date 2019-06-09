@@ -21,6 +21,8 @@
 @property(readonly) unsigned long long channelNumber; // @synthesize channelNumber=_channelNumber;
 @property(readonly) NSString *owningPortUID; // @synthesize owningPortUID=_owningPortUID;
 @property(readonly) NSString *channelName; // @synthesize channelName=_channelName;
+- (void).cxx_destruct;
+- (id)initWithName:(id)arg1 OwningPort:(id)arg2 ChannelNumber:(unsigned long long)arg3 ChannelLabel:(unsigned int)arg4;
 
 @end
 

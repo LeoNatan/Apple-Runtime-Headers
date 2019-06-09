@@ -6,12 +6,11 @@
 
 #import <TSReading/TSKApplicationDelegate.h>
 
-@class NSArray, NSString, TSADocumentRoot;
+@class NSArray, NSString;
 @protocol TSADownloadDelegate;
 
 @interface TSABaseApplicationDelegate : TSKApplicationDelegate
 {
-    TSADocumentRoot *mDocumentRoot;
     id <TSADownloadDelegate> _downloadDelegate;
 }
 
@@ -19,10 +18,9 @@
 + (void)resetSharedConfigurations;
 + (id)sharedDelegate;
 @property(retain, nonatomic) id <TSADownloadDelegate> downloadDelegate; // @synthesize downloadDelegate=_downloadDelegate;
-@property(nonatomic) TSADocumentRoot *documentRoot; // @synthesize documentRoot=mDocumentRoot;
 - (id)existingNestedDocumentPathForPath:(id)arg1;
 - (_Bool)URLIsValidForImportedHyperlink:(id)arg1;
-- (_Bool)openURL:(id)arg1;
+- (_Bool)openURL:(id)arg1 sourceDocumentRoot:(id)arg2;
 - (id)validURLSchemes;
 - (id)invalidURLSchemes;
 - (double)maximumAspectRatioForPreviewImage;

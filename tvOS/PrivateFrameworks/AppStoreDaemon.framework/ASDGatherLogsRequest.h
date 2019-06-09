@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppStoreDaemon/ASDEphemeralRequest.h>
+#import <objc/NSObject.h>
 
-@class ASDGatherLogsRequestOptions, NSObject, NSXPCConnection;
+@class ASDGatherLogsRequestOptions, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
-@interface ASDGatherLogsRequest : ASDEphemeralRequest
+@interface ASDGatherLogsRequest : NSObject
 {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_calloutQueue;

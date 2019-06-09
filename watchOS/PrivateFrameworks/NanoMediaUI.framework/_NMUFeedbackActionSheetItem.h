@@ -8,13 +8,12 @@
 
 #import <NanoMediaUI/NMUFeedbackActionItem-Protocol.h>
 
-@class NMUNowPlayingFeedbackViewController, NSString, UIColor;
+@class NMUNowPlayingFeedbackViewController, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _NMUFeedbackActionSheetItem : PUICActionSheetItem <NMUFeedbackActionItem>
 {
     _Bool _visible;
-    UIColor *_accessoryViewActiveTintColor;
     NMUNowPlayingFeedbackViewController *_controller;
     int _representedFeedbackAction;
 }
@@ -22,7 +21,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int representedFeedbackAction; // @synthesize representedFeedbackAction=_representedFeedbackAction;
 @property(nonatomic) __weak NMUNowPlayingFeedbackViewController *controller; // @synthesize controller=_controller;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
-@property(copy, nonatomic) UIColor *accessoryViewActiveTintColor; // @synthesize accessoryViewActiveTintColor=_accessoryViewActiveTintColor;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSString *title;
 @property(nonatomic, getter=isActive) _Bool active; // @dynamic active;

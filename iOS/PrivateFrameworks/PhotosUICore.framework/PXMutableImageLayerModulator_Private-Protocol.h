@@ -7,7 +7,6 @@
 #import <PhotosUICore/PXMutableImageLayerModulator-Protocol.h>
 
 @protocol PXMutableImageLayerModulator_Private <PXMutableImageLayerModulator>
-@property(nonatomic, getter=isDisplayingVideoComplement) _Bool displayingVideoComplement;
 @property(nonatomic) double intensity;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
 - (void)prepareForReuse;

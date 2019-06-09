@@ -6,14 +6,14 @@
 
 #import <FrontBoard/NSObject-Protocol.h>
 
-@class FBSWorkspaceSceneActionsEvent, FBSWorkspaceSceneClientSettingsChangedEvent, FBSWorkspaceSceneLayerEvent, FBSWorkspaceSceneMessageEvent;
+@class FBSSceneClientSettingsDiff, FBSSceneLayer, FBSSceneMessage, FBSSceneTransitionContext, NSSet;
 
 @protocol FBWorkspaceServerSceneEventHandler <NSObject>
-- (void)sceneDidReceiveMessage:(FBSWorkspaceSceneMessageEvent *)arg1 withCompletion:(void (^)(FBSWorkspaceSceneMessageEvent *))arg2;
-- (void)sceneDidReceiveActions:(FBSWorkspaceSceneActionsEvent *)arg1;
-- (void)sceneDidUpdateClientSettings:(FBSWorkspaceSceneClientSettingsChangedEvent *)arg1;
-- (void)sceneDetachLayer:(FBSWorkspaceSceneLayerEvent *)arg1;
-- (void)sceneUpdateLayer:(FBSWorkspaceSceneLayerEvent *)arg1;
-- (void)sceneAttachLayer:(FBSWorkspaceSceneLayerEvent *)arg1;
+- (void)sceneDidReceiveMessage:(FBSSceneMessage *)arg1 withCompletion:(void (^)(FBSSceneMessage *))arg2;
+- (void)sceneDidReceiveActions:(NSSet *)arg1;
+- (void)sceneDidUpdateClientSettings:(FBSSceneClientSettingsDiff *)arg1 transitionContext:(FBSSceneTransitionContext *)arg2;
+- (void)sceneDetachLayer:(FBSSceneLayer *)arg1;
+- (void)sceneUpdateLayer:(FBSSceneLayer *)arg1;
+- (void)sceneAttachLayer:(FBSSceneLayer *)arg1;
 @end
 

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct PptTextRulerAtom *mTextRuler;
 }
 
+- (void).cxx_destruct;
 - (struct PptSpecialInfoRun *)specialInfoRunAtIndex:(int)arg1;
 - (int)specialInfoRunCount;
 - (struct PptCharRun *)characterRunAtIndex:(int)arg1;
@@ -36,7 +37,6 @@ __attribute__((visibility("hidden")))
 - (int)textType;
 - (void)writeTextBlock:(id)arg1;
 - (void)readTextBlock:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)readMetaCharacterFieldsBookmarksAndHyperlinks:(id)arg1;
 - (void)readSpecialInfo:(id)arg1;

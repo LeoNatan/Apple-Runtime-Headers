@@ -4,28 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ProtocolBuffer/PBRequest.h>
+#import <ProtocolBuffer/PBCodable.h>
 
 #import <GeoServices/NSCopying-Protocol.h>
 
 @class GEOMapItemStorage;
 
-@interface GEORouteHypothesisRequest : PBRequest <NSCopying>
+@interface GEORouteHypothesisRequest : PBCodable <NSCopying>
 {
     double _arrivalDate;
-    double _expirationDate;
     GEOMapItemStorage *_destinationLocation;
+    double _expirationDate;
     int _transportType;
     struct {
-        unsigned int arrivalDate:1;
-        unsigned int expirationDate:1;
-        unsigned int transportType:1;
-    } _has;
+        unsigned int has_arrivalDate:1;
+        unsigned int has_expirationDate:1;
+        unsigned int has_transportType:1;
+    } _flags;
 }
 
-@property(nonatomic) double expirationDate; // @synthesize expirationDate=_expirationDate;
-@property(retain, nonatomic) GEOMapItemStorage *destinationLocation; // @synthesize destinationLocation=_destinationLocation;
-@property(nonatomic) double arrivalDate; // @synthesize arrivalDate=_arrivalDate;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,15 +32,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasExpirationDate;
+@property(nonatomic) double expirationDate;
 - (int)StringAsTransportType:(id)arg1;
 - (id)transportTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasTransportType;
-@property(nonatomic) int transportType; // @synthesize transportType=_transportType;
+@property(nonatomic) int transportType;
+@property(retain, nonatomic) GEOMapItemStorage *destinationLocation;
 @property(readonly, nonatomic) BOOL hasDestinationLocation;
 @property(nonatomic) BOOL hasArrivalDate;
+@property(nonatomic) double arrivalDate;
 
 @end
 

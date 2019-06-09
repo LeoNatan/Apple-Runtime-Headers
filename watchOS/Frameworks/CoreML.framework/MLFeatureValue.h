@@ -29,11 +29,18 @@
 + (id)featureValueWithDouble:(double)arg1;
 + (id)featureValueWithInt64:(long long)arg1;
 + (id)undefinedFeatureValueWithType:(int)arg1;
++ (id)featureValueWithCGImage:(struct CGImage *)arg1 constraint:(id)arg2 options:(id)arg3 error:(id *)arg4;
++ (id)featureValueWithCGImage:(struct CGImage *)arg1 pixelsWide:(int)arg2 pixelsHigh:(int)arg3 pixelFormatType:(unsigned long)arg4 options:(id)arg5 error:(id *)arg6;
++ (id)featureValueWithImageAtURL:(id)arg1 constraint:(id)arg2 options:(id)arg3 error:(id *)arg4;
++ (id)featureValueWithImageAtURL:(id)arg1 pixelsWide:(int)arg2 pixelsHigh:(int)arg3 pixelFormatType:(unsigned long)arg4 options:(id)arg5 error:(id *)arg6;
++ (struct CGRect)cropRectFromOptions:(id)arg1;
++ (unsigned int)visionCropAndScaleOptionFromOptions:(id)arg1;
 @property(retain, nonatomic) NSObject *objectValue; // @synthesize objectValue=_objectValue;
 @property(retain) id value; // @synthesize value=_value;
 @property(readonly, nonatomic, getter=isUndefined) _Bool undefined; // @synthesize undefined=_undefined;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (id)getFeatureSize:(id *)arg1 ndArrayMode:(_Bool)arg2;
 - (id)getFeatureSize:(id *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;

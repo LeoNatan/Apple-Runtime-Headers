@@ -8,12 +8,13 @@
 
 #import <HealthDaemon/NSCopying-Protocol.h>
 
-@class NSString, NSUUID;
+@class NSArray, NSString, NSUUID;
 
 @interface HDMockIDSDevice : NSObject <NSCopying>
 {
     _Bool _isActive;
     _Bool _supportsCinnamonHW;
+    _Bool _supportsCinnamonAntimonyGloryF;
     NSUUID *_nanoRegistryPairingID;
     NSUUID *_nsuuid;
     NSString *_uniqueIDOverride;
@@ -25,14 +26,17 @@
     NSString *_modelNumber;
     NSString *_systemVersion;
     NSString *_regionCode;
+    NSArray *_identities;
     NSString *_electrocardiogramVersion;
     NSString *_backgroundAtrialFibrillationVersion;
 }
 
+@property(nonatomic) _Bool supportsCinnamonAntimonyGloryF; // @synthesize supportsCinnamonAntimonyGloryF=_supportsCinnamonAntimonyGloryF;
 @property(nonatomic) _Bool supportsCinnamonHW; // @synthesize supportsCinnamonHW=_supportsCinnamonHW;
 @property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(copy, nonatomic) NSString *backgroundAtrialFibrillationVersion; // @synthesize backgroundAtrialFibrillationVersion=_backgroundAtrialFibrillationVersion;
 @property(copy, nonatomic) NSString *electrocardiogramVersion; // @synthesize electrocardiogramVersion=_electrocardiogramVersion;
+@property(copy, nonatomic) NSArray *identities; // @synthesize identities=_identities;
 @property(copy, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 @property(copy, nonatomic) NSString *systemVersion; // @synthesize systemVersion=_systemVersion;
 @property(copy, nonatomic) NSString *modelNumber; // @synthesize modelNumber=_modelNumber;
@@ -51,6 +55,7 @@
 - (id)hd_deviceIdentifier;
 @property(readonly, nonatomic) _Bool isDefaultPairedDevice;
 @property(readonly, nonatomic) _Bool isLocallyPaired;
+- (unsigned int)relationship;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

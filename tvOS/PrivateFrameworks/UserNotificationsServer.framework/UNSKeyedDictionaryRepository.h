@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, UNSBundleLibrarian;
 
 @interface UNSKeyedDictionaryRepository : NSObject
 {
     NSString *_directory;
     NSString *_fileName;
     NSString *_pathExtension;
+    UNSBundleLibrarian *_librarian;
 }
 
 - (void).cxx_destruct;
@@ -26,7 +27,7 @@
 - (void)setDictionary:(id)arg1 forKey:(id)arg2;
 - (id)dictionaryForKey:(id)arg1;
 - (id)allKeys;
-- (id)initWithDirectory:(id)arg1 fileName:(id)arg2 pathExtension:(id)arg3;
+- (id)initWithDirectory:(id)arg1 fileName:(id)arg2 pathExtension:(id)arg3 librarian:(id)arg4;
 
 @end
 

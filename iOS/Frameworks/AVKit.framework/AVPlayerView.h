@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <AVKit/AVPresentationContainerView.h>
 
 @class AVPlayerViewControllerContentView;
 
-@interface AVPlayerView : UIView
+__attribute__((visibility("hidden")))
+@interface AVPlayerView : AVPresentationContainerView
 {
     _Bool _needsInitialLayout;
     AVPlayerViewControllerContentView *_contentView;
@@ -18,7 +19,6 @@
 @property(readonly, nonatomic) AVPlayerViewControllerContentView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (void)setClipsToBounds:(_Bool)arg1;
 - (void)beginManagingContentView;
 - (id)initWithFrame:(struct CGRect)arg1 contentView:(id)arg2;
 

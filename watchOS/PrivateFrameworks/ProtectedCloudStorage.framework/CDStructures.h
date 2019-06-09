@@ -14,6 +14,13 @@ struct NSString {
     Class _field1;
 };
 
+struct PCSAttributes {
+    unsigned int _field1;
+    struct PCSTypeValue *_field2;
+};
+
+struct PCSTypeValue;
+
 struct __sFILE {
     char *_field1;
     int _field2;

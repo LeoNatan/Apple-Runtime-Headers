@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 @interface UIViewController (WebViewHandler)
++ (void)softLinkSafariServicesIfNecessary;
 - (id)presentBrowserViewControllerForURL:(id)arg1 inViewController:(id)arg2;
 @end
 

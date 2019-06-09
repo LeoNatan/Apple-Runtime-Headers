@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVOutputDeviceInternal, NSData, NSString;
+@class AVOutputDeviceInternal;
 
 @interface AVOutputDevice : NSObject
 {
@@ -27,6 +27,10 @@
 - (void)updateFrecencyScore;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setCurrentBluetoothListeningMode:(id)arg1;
+- (id)currentBluetoothListeningMode;
+- (id)availableBluetoothListeningModes;
+- (BOOL)supportsBluetoothSharing;
 - (BOOL)presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 - (BOOL)canFetchMediaDataFromSender;
 - (BOOL)canPlayEncryptedProgressiveDownloadAssets;
@@ -60,16 +64,17 @@
 - (id)modelSpecificInformation;
 - (float)batteryLevel;
 - (BOOL)hasBatteryLevel;
-@property(readonly, nonatomic) NSData *identifyingMACAddress;
-@property(readonly, nonatomic) NSString *firmwareVersion;
-@property(readonly, nonatomic) NSString *serialNumber;
-@property(readonly, nonatomic) NSString *modelID;
-@property(readonly, nonatomic) NSString *manufacturer;
-@property(readonly, nonatomic) long long deviceSubType;
-@property(readonly, nonatomic) long long deviceType;
+- (id)identifyingMACAddress;
+- (id)firmwareVersion;
+- (id)serialNumber;
+- (id)modelID;
+- (id)manufacturer;
+- (long long)deviceSubType;
+- (long long)deviceType;
 - (id)ID;
-@property(readonly, nonatomic) NSString *deviceID;
-@property(readonly, nonatomic) NSString *name;
+- (id)deviceID;
+- (id)deviceName;
+- (id)name;
 - (id)impl;
 - (id)description;
 - (unsigned long long)hash;

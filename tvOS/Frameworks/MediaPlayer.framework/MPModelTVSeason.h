@@ -12,6 +12,7 @@
 {
 }
 
++ (id)__downloadedDate_KEY;
 + (id)__artworkCatalogBlock_KEY;
 + (id)__representativeEpisode_KEY;
 + (id)__show_KEY;
@@ -35,6 +36,7 @@
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;
 @property(copy, nonatomic) NSString *descriptionText; // @dynamic descriptionText;
+@property(readonly, copy, nonatomic) NSDate *downloadedDate; // @dynamic downloadedDate;
 @property(nonatomic) long long episodesCount; // @dynamic episodesCount;
 @property(nonatomic) _Bool hasCleanContent; // @dynamic hasCleanContent;
 @property(nonatomic) _Bool hasExplicitContent; // @dynamic hasExplicitContent;

@@ -8,6 +8,7 @@
 
 @class MKBlurBackingLayer;
 
+__attribute__((visibility("hidden")))
 @interface MKBlurBackingView : NSView
 {
     MKBlurBackingLayer *_blurLayer;

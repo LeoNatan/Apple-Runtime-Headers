@@ -97,8 +97,8 @@
 - (double)heightToKeepVisible;
 - (double)minimumVerticalContentOffset;
 - (struct CGRect)rectOfInterestForRotation;
-- (void)updateBoundariesOfScrollView:(id)arg1 withScales:(CDStruct_57d825b2)arg2;
-- (CDStruct_57d825b2)scalesForContainerSize:(struct CGSize)arg1;
+- (void)updateBoundariesOfScrollView:(id)arg1 withScales:(CDStruct_39925896)arg2;
+- (CDStruct_39925896)scalesForContainerSize:(struct CGSize)arg1;
 @property(nonatomic) _Bool alwaysDispatchesScrollEvents;
 - (void)webView:(id)arg1 didFirstVisuallyNonEmptyLayoutInFrame:(id)arg2;
 - (id)_absoluteUrlRelativeToDocumentURL:(id)arg1;

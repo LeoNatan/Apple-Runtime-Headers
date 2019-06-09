@@ -16,7 +16,6 @@
 
 - (id)removeRecordsFromGroup;
 - (id)addRecordsToGroup;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1 records:(id)arg2 addressBook:(id)arg3;
 

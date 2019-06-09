@@ -12,6 +12,7 @@
 @interface HDCloudSyncManager : NSObject
 {
     HDAssertion *_preparedDatabaseAccessibilityAssertion;
+    _Bool _supportsRebase;
     _Bool _shouldResync;
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
@@ -23,19 +24,19 @@
 @property(nonatomic) _Bool shouldResync; // @synthesize shouldResync=_shouldResync;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
+@property(readonly, nonatomic) _Bool supportsRebase; // @synthesize supportsRebase=_supportsRebase;
 @property(retain) HDAssertion *preparedDatabaseAccessibilityAssertion; // @synthesize preparedDatabaseAccessibilityAssertion=_preparedDatabaseAccessibilityAssertion;
 - (void).cxx_destruct;
+- (void)unitTest_setSupportsRebase:(_Bool)arg1;
 - (id)lastPushForwardProgressDate;
 - (void)_addFinalProgressUpdateWithTaskTree:(id)arg1 progress:(id)arg2;
-- (void)_cloudSyncRepositoriesForProfile:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_primaryContainerIdentifiersForCurrentAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_containerIdentifiersForCurrentAccountWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_primaryiCloudAccountAltDSID;
-- (unsigned int)_primaryiCloudAccountSecurityLevel;
-- (_Bool)_isAccountManateeEnabled;
 - (id)_containerWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)queue_cloudSyncRepositoriesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)disableAndDeleteAllSyncDataWithTaskTree:(id)arg1;
 - (void)disableSyncLocallyWithTaskTree:(id)arg1;
+- (void)fetchCloudKitEmailAddressWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSyncStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (id)fetchDescriptionWithOptions:(unsigned int)arg1 reason:(int)arg2 taskTree:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
 - (id)resetWithOptions:(unsigned int)arg1 reason:(int)arg2 taskTree:(id)arg3;
@@ -45,6 +46,8 @@
 - (id)syncSessionForSyncStore:(id)arg1 reason:(id)arg2 delegate:(id)arg3 accessibilityAssertion:(id)arg4 excludedStores:(id)arg5;
 - (void)requestImmediateResync;
 - (void)prepareForSync;
+@property(readonly) int bytesPerChangeRecordAssetThresholdHardLimit;
+@property(readonly) int bytesPerChangeRecordAssetThreshold;
 - (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 

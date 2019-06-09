@@ -10,6 +10,8 @@
 {
 }
 
+- (int)getBlinkFrameFor15sTime:(float)arg1;
+- (float)_getBlinkDuration;
 - (id)initWithLoader:(id)arg1;
 
 @end

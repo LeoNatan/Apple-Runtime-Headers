@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSLayoutItem-Protocol.h>
 
-@class NSISEngine, NSISVariable, NSLayoutConstraint, NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMutableArray, NSObservation;
+@class NSISEngine, NSISVariable, NSLayoutConstraint, NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMutableArray, NSObservation, NSString;
 
 @protocol _UILayoutItem <NSLayoutItem>
 @property(readonly, nonatomic) NSLayoutYAxisAnchor *centerYAnchor;
@@ -31,6 +31,7 @@
 - (void)_uili_stashLayoutVariableObservation:(NSObservation *)arg1 forVariable:(NSISVariable *)arg2;
 - (NSMutableArray *)_uili_existingBaseFrameVariables;
 - (NSMutableArray *)_uili_existingObservationEligibleLayoutVariables;
+- (_Bool)nsli_defaultResolvedValue:(double *)arg1 forSymbolicConstant:(NSString *)arg2 inConstraint:(NSLayoutConstraint *)arg3 error:(id *)arg4;
 - (NSISVariable *)nsli_heightVariable;
 - (NSISVariable *)nsli_boundsHeightVariable;
 - (NSISVariable *)nsli_widthVariable;

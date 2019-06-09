@@ -9,7 +9,7 @@
 #import <ChatKit/NSTextStorageDelegate-Protocol.h>
 #import <ChatKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CKComposition, NSMutableDictionary, NSString, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class NSMutableDictionary, NSString, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol CKMessageEntryRichTextViewDelegate;
 
 @interface CKMessageEntryRichTextView : CKMessageEntryTextView <NSTextStorageDelegate, UIGestureRecognizerDelegate>
@@ -19,7 +19,6 @@
     NSMutableDictionary *_mediaObjects;
     NSMutableDictionary *_pluginDisplayContainers;
     NSMutableDictionary *_composeImages;
-    CKComposition *_pasteboardComposition;
     UITapGestureRecognizer *_tapGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
 }
@@ -27,7 +26,6 @@
 @property(nonatomic) _Bool allowCalloutActions; // @synthesize allowCalloutActions=_allowCalloutActions;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
-@property(retain, nonatomic) CKComposition *pasteboardComposition; // @synthesize pasteboardComposition=_pasteboardComposition;
 @property(retain, nonatomic) NSMutableDictionary *composeImages; // @synthesize composeImages=_composeImages;
 @property(retain, nonatomic) NSMutableDictionary *pluginDisplayContainers; // @synthesize pluginDisplayContainers=_pluginDisplayContainers;
 @property(retain, nonatomic) NSMutableDictionary *mediaObjects; // @synthesize mediaObjects=_mediaObjects;

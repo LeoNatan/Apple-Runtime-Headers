@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface TSUEncodedBlockInfoInternal : NSObject <TSUEncodedBlockInfo>
 {
     unsigned long long _encodedLength;

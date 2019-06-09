@@ -27,7 +27,6 @@
     struct CGSize _cellSize;
     struct CGSize _intercell;
     id _font;
-    id _protoCell;
     id _cellClass;
     NSColor *_backgroundColor;
     id _private;
@@ -63,11 +62,13 @@
         unsigned int radioMode:1;
         unsigned int highlightMode:1;
     } _mFlags;
+    id _protoCell;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
 + (id)_dropHighlightColor;
-+ (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
++ (BOOL)_controlClassSupportsNoCell;
 + (void)initialize;
 + (BOOL)accessibilityIsSingleCelled;
 - (void).cxx_destruct;
@@ -112,7 +113,6 @@
 - (BOOL)_performKeyEquivalent:(id)arg1 conditionally:(BOOL)arg2;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (BOOL)_keyEquivalentModifierMask:(unsigned long long)arg1 matchesModifierFlags:(unsigned long long)arg2;
-- (void)_allowAnimationInCells:(BOOL)arg1;
 - (void)mouseDown:(id)arg1;
 @property(readonly) long long mouseDownFlags;
 - (void)_mouseLoop:(id)arg1:(id)arg2:(long long)arg3:(long long)arg4:(struct _SelectionAnchor *)arg5:(BOOL)arg6;
@@ -208,7 +208,6 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)_drawCellAtRow:(long long)arg1 column:(long long)arg2 inFrame:(struct CGRect)arg3;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
-- (void)_propagateDownNeedsDisplayInRect:(struct CGRect)arg1;
 - (void)_getRowRange:(struct _NSRange *)arg1 andColumnRange:(struct _NSRange *)arg2 intersectingRect:(struct CGRect)arg3;
 - (BOOL)_selectFirstEnabledCell;
 - (long long)_firstSelectableRow;
@@ -326,7 +325,6 @@
 - (void)_maintainCell;
 - (void)_setSelectedCell:(id)arg1;
 - (void)_setSelectedCell:(id)arg1 atRow:(long long)arg2 column:(long long)arg3;
-- (void)_setFont:(id)arg1 forCell:(id)arg2;
 - (void)_allocAndInitPrivateIvars;
 - (void)setErrorAction:(SEL)arg1;
 - (SEL)errorAction;

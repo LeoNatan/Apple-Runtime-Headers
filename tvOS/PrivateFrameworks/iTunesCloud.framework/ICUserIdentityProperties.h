@@ -10,7 +10,7 @@
 #import <iTunesCloud/NSMutableCopying-Protocol.h>
 #import <iTunesCloud/NSSecureCoding-Protocol.h>
 
-@class ICDelegateToken, NSDate, NSNumber, NSString;
+@class ICDelegateToken, NSArray, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface ICUserIdentityProperties : NSObject <NSMutableCopying, NSCopying, NSSecureCoding>
 {
@@ -29,15 +29,24 @@
     _Bool _subscriptionStatusEnabled;
     NSString *_username;
     NSDate *_ageVerificationExpirationDate;
+    NSNumber *_mergeToCloudLibraryPreference;
+    NSArray *_homeUserIdentifiers;
+    NSDictionary *_cloudLibraryStateReason;
+    NSNumber *_privateListeningEnabled;
+    _Bool _activeLocker;
+    _Bool _active;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic, setter=setICloudPersonID:) NSString *iCloudPersonID; // @synthesize iCloudPersonID=_iCloudPersonID;
 @property(readonly, nonatomic, getter=isDelegated) _Bool delegated; // @synthesize delegated=_delegated;
 @property(nonatomic, getter=isCloudBackupEnabled) _Bool cloudBackupEnabled; // @synthesize cloudBackupEnabled=_cloudBackupEnabled;
+@property(readonly, copy, nonatomic) NSNumber *privateListeningEnabled; // @synthesize privateListeningEnabled=_privateListeningEnabled;
 @property(readonly, nonatomic, getter=isSubscriptionStatusEnabled) _Bool subscriptionStatusEnabled; // @synthesize subscriptionStatusEnabled=_subscriptionStatusEnabled;
 @property(readonly, nonatomic, getter=isSandboxed) _Bool sandboxed; // @synthesize sandboxed=_sandboxed;
 @property(readonly, nonatomic, getter=isManagedAppleID) _Bool managedAppleID; // @synthesize managedAppleID=_managedAppleID;
+@property(readonly, nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
+@property(readonly, nonatomic, getter=isActiveLocker) _Bool activeLocker; // @synthesize activeLocker=_activeLocker;
 @property(readonly, copy, nonatomic) NSNumber *DSID; // @synthesize DSID=_dsid;
 @property(readonly, copy, nonatomic) ICDelegateToken *delegateToken; // @synthesize delegateToken=_delegateToken;
 - (void).cxx_destruct;
@@ -45,6 +54,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy, nonatomic) NSArray *homeUserIdentifiers;
+@property(readonly, copy, nonatomic) NSDictionary *cloudLibraryStateReason;
+@property(readonly, copy, nonatomic) NSNumber *mergeToCloudLibraryPreference;
 @property(readonly, copy, nonatomic) NSDate *ageVerificationExpirationDate;
 @property(readonly, copy, nonatomic) NSString *username;
 @property(readonly, copy, nonatomic) NSString *storefrontIdentifier;

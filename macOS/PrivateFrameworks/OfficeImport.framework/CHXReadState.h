@@ -9,6 +9,7 @@
 @class CHDChart, CHDChartType, CHDSeries, EDResources, EXOfficeArtState, OADParagraphProperties, OCPPackagePart;
 @protocol CHAutoStyling;
 
+__attribute__((visibility("hidden")))
 @interface CHXReadState : NSObject
 {
     EXOfficeArtState *mDrawingState;

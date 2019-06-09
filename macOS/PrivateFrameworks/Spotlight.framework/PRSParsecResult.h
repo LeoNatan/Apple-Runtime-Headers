@@ -45,13 +45,13 @@
     NSString *resultBundleID;
     PRSRankingItem *rankingItem;
     long long placement;
-    NSString *fbr;
     NSString *_sourceDisplayName;
     NSURL *_url;
     NSNumber *_groupId;
     NSString *_textContent;
     NSString *_keyWordContent;
     NSString *_headerDisplayName;
+    NSString *_fbr;
 }
 
 + (id)sortedArray:(id)arg1;
@@ -63,6 +63,7 @@
 + (id)convertCardSectionsForSFSearchResult:(id)arg1;
 + (id)convertSFSearchResult:(id)arg1 cardSection:(id)arg2;
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSString *fbr; // @synthesize fbr=_fbr;
 @property(retain, nonatomic) NSString *headerDisplayName; // @synthesize headerDisplayName=_headerDisplayName;
 @property BOOL enablePlayButton; // @synthesize enablePlayButton=_enablePlayButton;
 @property(readonly) BOOL isFlight; // @synthesize isFlight=_isFlight;
@@ -72,7 +73,6 @@
 @property(readonly) NSNumber *groupId; // @synthesize groupId=_groupId;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property(readonly) NSString *sourceDisplayName; // @synthesize sourceDisplayName=_sourceDisplayName;
-@property(retain, nonatomic) NSString *fbr; // @synthesize fbr;
 @property(nonatomic) long long placement; // @synthesize placement;
 - (void)setRankingItem:(id)arg1;
 - (id)rankingItem;

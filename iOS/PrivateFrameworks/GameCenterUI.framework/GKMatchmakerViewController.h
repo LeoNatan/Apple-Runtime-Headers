@@ -15,7 +15,7 @@
 @interface GKMatchmakerViewController : UINavigationController <GKMatchDelegate, GKExtensionParentViewControllerProtocol>
 {
     _Bool _hosted;
-    id <GKMatchmakerViewControllerDelegate> _matchmakerDelegateWeak;
+    id <GKMatchmakerViewControllerDelegate> matchmakerDelegate;
     GKMatchRequest *_matchRequest;
     GKMatchmakerHostViewController *_remoteViewController;
     GKInvite *_acceptedInvite;
@@ -31,7 +31,9 @@
 @property(retain, nonatomic) GKInvite *acceptedInvite; // @synthesize acceptedInvite=_acceptedInvite;
 @property(retain, nonatomic) GKMatchmakerHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic, getter=isHosted) _Bool hosted; // @synthesize hosted=_hosted;
-@property(readonly, retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
+@property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
+@property(nonatomic) id <GKMatchmakerViewControllerDelegate> matchmakerDelegate; // @synthesize matchmakerDelegate;
+- (void).cxx_destruct;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)authenticationChanged:(id)arg1;
 - (void)playersToInvite:(id)arg1;
@@ -58,7 +60,6 @@
 - (void)addPlayersToMatch:(id)arg1;
 - (void)setHostedPlayer:(id)arg1 connected:(_Bool)arg2;
 - (void)setHostedPlayer:(id)arg1 didConnect:(_Bool)arg2;
-@property(nonatomic) id <GKMatchmakerViewControllerDelegate> matchmakerDelegate; // @synthesize matchmakerDelegate=_matchmakerDelegateWeak;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;

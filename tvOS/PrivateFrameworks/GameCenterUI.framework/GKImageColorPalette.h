@@ -24,6 +24,7 @@
 }
 
 @property(retain) NSArray *bubbleColors; // @synthesize bubbleColors=_bubbleColors;
+- (void).cxx_destruct;
 - (id)initWithImage:(id)arg1;
 - (_Bool)analyzeImage:(struct CGImage *)arg1;
 - (void)findBrightColors;
@@ -34,7 +35,6 @@
 - (void)clearSaturationAndBrightnessHistograms;
 - (void)clearMainHistograms;
 - (void)reset;
-- (void)dealloc;
 
 @end
 

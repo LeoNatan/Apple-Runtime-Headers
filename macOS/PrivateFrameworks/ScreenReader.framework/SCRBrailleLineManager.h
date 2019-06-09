@@ -6,38 +6,39 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet, SCRElement;
+@class NSMutableDictionary, NSOrderedSet, NSSet, SCRElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRBrailleLineManager : NSObject
 {
-    SCRElement *_containerElement;
-    struct __CFArray *_orderedLine;
-    struct __CFDictionary *_uiElementToElementDict;
-    long long _focusedElementIndex;
     BOOL _focusThrough;
-    BOOL _lineNeedsRefresh;
-    NSSet *_retainedElements;
+    BOOL __lineNeedsRefresh;
     int _lineFocus;
+    SCRElement *__containerElement;
+    long long __focusedElementIndex;
+    NSOrderedSet *__orderedLine;
+    NSSet *__retainedElements;
+    NSMutableDictionary *__uiElementToElementDict;
 }
 
-+ (id)simpleBrailleRequestForElement:(id)arg1 hasBrailleFocus:(BOOL)arg2;
+@property(retain, nonatomic) NSMutableDictionary *_uiElementToElementDict; // @synthesize _uiElementToElementDict=__uiElementToElementDict;
+@property(copy, nonatomic) NSSet *_retainedElements; // @synthesize _retainedElements=__retainedElements;
+@property(retain, nonatomic) NSOrderedSet *_orderedLine; // @synthesize _orderedLine=__orderedLine;
+@property(nonatomic) BOOL _lineNeedsRefresh; // @synthesize _lineNeedsRefresh=__lineNeedsRefresh;
+@property(nonatomic) long long _focusedElementIndex; // @synthesize _focusedElementIndex=__focusedElementIndex;
+@property(nonatomic) __weak SCRElement *_containerElement; // @synthesize _containerElement=__containerElement;
 @property(nonatomic) int lineFocus; // @synthesize lineFocus=_lineFocus;
 @property(nonatomic) BOOL focusThrough; // @synthesize focusThrough=_focusThrough;
-- (void)setBrailleLineNeedsRebuild;
-- (BOOL)brailleLineNeedsRefresh;
-- (BOOL)isLineEmpty;
-- (BOOL)isLineValid;
-- (BOOL)isLineEqualToUIElements:(id)arg1;
-- (id)elementForUIElement:(id)arg1;
-- (BOOL)doesLineContainElement:(id)arg1;
-- (void)setLineFocus:(int)arg1 forElement:(id)arg2 andPrepareBrailleItemDescriptionForRequest:(id)arg3 hasBrailleFocus:(BOOL)arg4;
-- (id)brailleLineRequest;
-- (void)sendBrailleLineRequest;
+- (void).cxx_destruct;
+- (void)_addDescriptionForElement:(id)arg1 request:(id)arg2 focused:(BOOL)arg3 onlyElementInLine:(BOOL)arg4;
 - (id)_deepestFocusedThroughElement;
-@property(nonatomic) SCRElement *focusedElement; // @dynamic focusedElement;
-- (void)setLine:(id)arg1 withFocusedElement:(id)arg2 retainedElements:(id)arg3;
-- (void)dealloc;
+- (id)_focusedElement;
+- (BOOL)isLineEqualToUIElements:(id)arg1;
+- (id)brailleLineRequest;
+- (void)setBrailleLineNeedsRebuild;
+- (BOOL)setFocusedElement:(id)arg1;
+- (BOOL)isLineValid;
+- (void)setLine:(id)arg1 focusedElement:(id)arg2 retainedElements:(id)arg3;
 - (id)initWithContainerElement:(id)arg1;
 
 @end

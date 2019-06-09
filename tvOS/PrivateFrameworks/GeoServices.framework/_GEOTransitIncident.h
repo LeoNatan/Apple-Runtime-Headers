@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isBlockingIncident) _Bool blockingIncident;
 @property(readonly, nonatomic) NSDate *lastUpdated;
 @property(readonly, nonatomic) NSDate *creationDate;
-@property(readonly, nonatomic) long long iconType;
+@property(readonly, nonatomic) int iconType;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
 @property(readonly, nonatomic) NSString *messageForNonRoutable;
@@ -35,12 +35,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *summary;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) unsigned long long muid;
+@property(readonly, copy) NSString *debugDescription;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIncident:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) Class superclass;
 

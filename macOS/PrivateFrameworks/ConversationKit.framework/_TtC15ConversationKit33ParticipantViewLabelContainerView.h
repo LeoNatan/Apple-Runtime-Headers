@@ -6,10 +6,14 @@
 
 #import <AppKit/NSView.h>
 
-__attribute__((visibility("hidden")))
+@class _TtC15ConversationKit13PlatformLabel;
+
 @interface _TtC15ConversationKit33ParticipantViewLabelContainerView : NSView
 {
     // Error parsing type: , name: label
+    // Error parsing type: , name: centerAlignedConstraints
+    // Error parsing type: , name: leadingAlignedConstraints
+    // Error parsing type: , name: isCentered
 }
 
 - (void).cxx_destruct;
@@ -17,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic, readonly) _TtC15ConversationKit13PlatformLabel *label; // @synthesize label;
 
 @end
 

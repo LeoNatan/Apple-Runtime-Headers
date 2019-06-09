@@ -58,12 +58,9 @@
 - (void)_addSlicesForHTMLSection:(id)arg1 toSliceArray:(id)arg2;
 - (void)_addSlicesForWebCardSection:(id)arg1 toSliceArray:(id)arg2;
 - (void)_addSlicesForStockChartCardSection:(id)arg1 toSliceArray:(id)arg2;
-- (void)_addSlicesForTwitterUserCardSection:(id)arg1 toSliceArray:(id)arg2;
 - (void)_addSlicesForMovieListCardSection:(id)arg1 toSliceArray:(id)arg2;
 - (void)_addSlicesForMovies:(id)arg1 toSliceArray:(id)arg2 forSection:(id)arg3;
 - (void)_addSlicesForLinkTableCardSection:(id)arg1 toSliceArray:(id)arg2;
-- (void)_addSlicesForFUSEAlbumListCardSection:(id)arg1 toSliceArray:(id)arg2;
-- (void)_addSlicesForFUSETrackListCardSection:(id)arg1 toSliceArray:(id)arg2;
 - (void)_addSlicesForTrackListCardSection:(id)arg1 toSliceArray:(id)arg2;
 - (void)_addSlicesForTrailersCardSection:(id)arg1 toSliceArray:(id)arg2;
 - (void)_addSlicesForSportsSummaryScoreCardSection:(id)arg1 toSliceArray:(id)arg2;
@@ -76,7 +73,7 @@
 - (void)_addSlicesForGenericDescriptionCardSection:(id)arg1 toSliceArray:(id)arg2;
 - (unsigned long long)normalizeImageAlignment:(unsigned long long)arg1;
 - (void)_addSlicesForTitleCardSection:(id)arg1 toSliceArray:(id)arg2;
-- (void)_addSliceForTextString:(id)arg1 font:(id)arg2 color:(id)arg3 alignment:(unsigned long long)arg4 gapAbove:(double)arg5 toSliceArray:(id)arg6;
+- (void)_addSliceForTextString:(id)arg1 font:(id)arg2 color:(id)arg3 alignment:(long long)arg4 gapAbove:(double)arg5 toSliceArray:(id)arg6;
 - (void)_addSliceForTextString:(id)arg1 font:(id)arg2 color:(id)arg3 toSliceArray:(id)arg4;
 - (void)replaceSlice:(id)arg1 withSlice:(id)arg2;
 - (id)getTableView;

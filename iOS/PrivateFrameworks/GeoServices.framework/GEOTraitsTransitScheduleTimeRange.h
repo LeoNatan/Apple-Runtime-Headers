@@ -15,12 +15,15 @@
     PBUnknownFields *_unknownFields;
     double _duration;
     double _startTime;
-    CDStruct_beabc505 _has;
+    struct {
+        unsigned int has_duration:1;
+        unsigned int has_startTime:1;
+    } _flags;
 }
 
-@property(nonatomic) double duration; // @synthesize duration=_duration;
-@property(nonatomic) double startTime; // @synthesize startTime=_startTime;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,10 +32,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasDuration;
+@property(nonatomic) double duration;
 @property(nonatomic) _Bool hasStartTime;
+@property(nonatomic) double startTime;
 
 @end
 

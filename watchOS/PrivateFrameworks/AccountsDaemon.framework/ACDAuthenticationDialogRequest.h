@@ -8,6 +8,7 @@
 
 @class ACAccount, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface ACDAuthenticationDialogRequest : NSObject
 {
     _Bool _confirmationRequired;

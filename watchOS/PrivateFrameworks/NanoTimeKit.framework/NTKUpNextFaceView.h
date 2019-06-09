@@ -6,6 +6,7 @@
 
 #import <NanoTimeKit/NTKDigitalFaceView.h>
 
+#import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
 #import <NanoTimeKit/CSLSBacklightObserver-Protocol.h>
 #import <NanoTimeKit/NTKFrameNotchProviding-Protocol.h>
 #import <NanoTimeKit/NTKSensitiveUIStateObserver-Protocol.h>
@@ -16,16 +17,15 @@
 #import <NanoTimeKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView;
+@class NSArray, NSMutableArray, NSOrderedSet, NSSet, NSString, NSTimer, NTKDigitalTimeLabelStyle, NTKUpNextCollectionView, NTKUpNextCollectionViewFlowLayout, NTKUtilityComplicationFactory, PUICFrameNotchProvider, REUIRelevanceEngineController, REUpNextScheduler, UIImage, UITapGestureRecognizer, UIView;
 
-@interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, CSLSBacklightObserver, NTKFrameNotchProviding>
+@interface NTKUpNextFaceView : NTKDigitalFaceView <REUIRelevanceEngineControllerDelegate, REElementActionDelegate, REUIElementIntentActionDelegate, NTKSensitiveUIStateObserver, CLKMonochromeFilterProvider, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, CSLSBacklightObserver, NTKFrameNotchProviding>
 {
     PUICFrameNotchProvider *_notchProvider;
-    NTKDigitalTimeLabel *_timeLabel;
     NTKDigitalTimeLabelStyle *_timeLabelDefaultStyle;
     NTKDigitalTimeLabelStyle *_timeLabelSmallInUpperRightCornerStyle;
     NTKUtilityComplicationFactory *_utilityComplicationFactory;
-    NTKUpNextCollectionView *_contentView;
+    NTKUpNextCollectionView *_collectionView;
     NTKUpNextCollectionViewFlowLayout *_layout;
     REUIRelevanceEngineController *_engineController;
     UITapGestureRecognizer *_viewModeTapGesture;
@@ -63,17 +63,21 @@
     _Bool _scrollingStoppedTransition;
     int _previousDataMode;
     unsigned int _faceColor;
-    _Bool _hasPerformedAnyBatchUpdates;
+    _Bool _engineInitiallyLoaded;
     NSMutableArray *_snapshotCallbacks;
 }
 
++ (float)suggestedCellHeightForDevice:(id)arg1;
 - (void).cxx_destruct;
 - (void)addNotchForFrame:(struct CGRect)arg1;
 - (void)resetNotches;
 - (void)_deviceOrientationInvertedDidChangeNotification:(id)arg1;
 - (void)_updateCrownInvertedSetting;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
+- (unsigned int)_timeLabelOptions;
 - (void)_applyFraction:(float)arg1 fromFaceColor:(unsigned int)arg2 toFaceColor:(unsigned int)arg3 onCell:(id)arg4;
 - (void)_cleanupAfterEditing;
+- (void)_prepareForEditing;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (void)_setSiriBlurColor;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
@@ -94,11 +98,11 @@
 - (void)updateTimeLabelBackground;
 - (void)_layoutTimeLabelForViewMode:(int)arg1;
 - (void)_layoutTimeLabelPlatterViewMode:(int)arg1;
-- (id)_timeLabelStyleForViewMode:(int)arg1;
 - (void)_allowContentViewInteractive:(_Bool)arg1;
 - (void)_cleanupAfterSettingViewMode:(int)arg1 scroll:(_Bool)arg2 targetOffset:(struct CGPoint)arg3 needsLayout:(_Bool)arg4;
 - (void)_setViewMode:(int)arg1 scroll:(_Bool)arg2 scrollToPoint:(struct CGPoint)arg3 secondaryPoint:(struct CGPoint)arg4 force:(_Bool)arg5 velocity:(float)arg6 animated:(_Bool)arg7;
 - (struct CGPoint)_defaultPointForDefaultMode;
+- (void)engineControllerDidFinishUpdatingRelevance:(id)arg1;
 - (_Bool)engineController:(id)arg1 isElementAtIndexPathVisible:(id)arg2;
 - (void)engineController:(id)arg1 didMoveContent:(id)arg2 fromIndexPath:(id)arg3 toIndexPath:(id)arg4;
 - (void)engineController:(id)arg1 didInsertContent:(id)arg2 atIndexPath:(id)arg3;
@@ -161,9 +165,13 @@
 - (void)_updateApplicationIdentifiersAndLocationAuthorization;
 - (id)_sectionEnumerationOrder;
 - (void)_availableDataSourcesDidChange;
+- (void)_ensureContentLoadedWithCompletion:(CDUnknownBlockType)arg1;
+- (void)performScrollTestNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_switchViewModeToDefault;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
+- (void)_unloadContentViews;
 - (void)_unloadSnapshotContentViews;
+- (void)_loadContentViews;
 - (void)_loadSnapshotContentViews;
 - (_Bool)_needsForegroundContainerView;
 - (float)_verticalPaddingForStatusBar;

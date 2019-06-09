@@ -29,7 +29,7 @@
 - (void)dealloc;
 - (id)clockName;
 - (void)_handleInterestNotification:(unsigned int)arg1 withArgument:(void *)arg2;
-- (_Bool)deregisterAsyncDCLCallback;
+- (_Bool)deregisterAsyncCallback;
 - (_Bool)registerAsyncCallback;
 - (void)_handleNotification:(unsigned int)arg1 withArg1:(unsigned long long)arg2 andArg2:(unsigned long long)arg3;
 - (void)setServiceIsAlive:(_Bool)arg1;

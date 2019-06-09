@@ -27,12 +27,14 @@
 - (void)_invalidateConnection;
 - (id)_remoteInterfaceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_remoteInterface;
+- (void)setPasscodePolicy:(unsigned long long)arg1;
 - (void)simulateComingFromOTAUpdate;
 - (void)reboot:(_Bool)arg1;
 - (void)toggleSettingsBadge:(_Bool)arg1;
 - (void)showEmergencyCallUIWithOptions:(unsigned long long)arg1 result:(CDUnknownBlockType)arg2;
 - (void)showAuthenticationUIWithOptions:(unsigned long long)arg1 result:(CDUnknownBlockType)arg2;
-- (void)showMiniAlert:(unsigned long long)arg1 usingFakeData:(_Bool)arg2;
+- (void)showFollowUp:(unsigned long long)arg1;
+- (void)showMiniAlert:(unsigned long long)arg1 usingFakeData:(_Bool)arg2 errorCode:(id)arg3;
 - (void)dealloc;
 - (void)invalidate;
 - (id)initWithDelegate:(id)arg1;

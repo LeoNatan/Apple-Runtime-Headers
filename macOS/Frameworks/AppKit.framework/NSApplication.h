@@ -19,6 +19,7 @@
 
 @interface NSApplication : NSResponder <NSAppearanceCustomization, NSTouchBarProviderContainer, NSAppearanceCustomizationInternal, NSUserInterfaceValidations, NSMenuItemValidation, NSAccessibilityElement, NSAccessibility>
 {
+    NSAppearance *_appearance;
     NSEvent *_currentEvent;
     id _windowList;
     id _keyWindow;
@@ -30,6 +31,9 @@
     void *_appleEventSuspensionID;
     NSWindow *_previousKeyWindowX;
     short _unusedApp;
+    id _openWindows;
+    id _eventDelegate;
+    struct NSThreadPrivate *_threadingSupport;
     short _running;
     struct __appFlags {
         unsigned int _hidden:1;
@@ -58,19 +62,16 @@
         unsigned int _openStatus:2;
         unsigned int _batchOrdering:1;
         unsigned int _waitingForTerminationReply:1;
-        unsigned int _windowMoveDisabled:1;
+        unsigned int _unused:1;
         unsigned int _enumeratingMemoryPressureHandlers:1;
         unsigned int _didTryRestoringPersistentState:1;
-        unsigned int _reservedN:1;
+        unsigned int _windowDragging:1;
         unsigned int _mightBeSwitching:1;
     } _appFlags;
     id _mainMenu;
-    id _openWindows;
-    NSAppearance *_appearance;
-    id _eventDelegate;
-    struct NSThreadPrivate *_threadingSupport;
 }
 
++ (long long)_defaultUserInterfaceLayoutDirection;
 + (void)_resetCurrentDeferredActivation;
 + (BOOL)_isCurrentActivationDeferred;
 + (void)_startDrawingThread:(id)arg1;
@@ -88,7 +89,9 @@
 + (id)_urlsWithWithPathOrPaths:(id)arg1 itWasPaths:(char *)arg2;
 + (id)_URLsWithEvent:(id)arg1;
 + (id)_fileURLsWithEvent:(id)arg1;
-+ (id)_logicalURLsForRawURLs:(id)arg1 event:(id)arg2;
++ (id)_fixedUpURLsForURLs:(id)arg1 event:(id)arg2;
++ (BOOL)automaticallyNotifiesObserversOf_lockoutEngaged;
++ (void)_loadLockoutUIFrameworkIfNeeded;
 + (BOOL)willRestoreState;
 - (void).cxx_destruct;
 @property __weak id accessibilityParent; // @dynamic accessibilityParent;
@@ -131,6 +134,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)_kitBundle;
 - (BOOL)validateMenuItem:(id)arg1;
+- (void)_unhighlightMenu;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)_isNSDocumentBased;
 - (void)showGuessPanel:(id)arg1;
@@ -160,8 +164,6 @@
 - (id)_addWindow:(id)arg1;
 - (id)_removeWindow:(id)arg1;
 - (long long)_indexOfWindow:(id)arg1;
-- (BOOL)_windowMoveDisabled;
-- (void)_setWindowMoveDisabled:(BOOL)arg1;
 - (struct __CFArray *)_createDockMenu:(BOOL)arg1;
 - (struct __CFArray *)_flattenMenu:(id)arg1;
 - (struct __CFArray *)_flattenMenu:(id)arg1 flatList:(id)arg2;
@@ -189,8 +191,9 @@
 - (void)_dockRestarted;
 @property(readonly) NSDockTile *dockTile;
 @property(retain) NSImage *applicationIconImage;
-- (id)_iconImageIfSet;
 - (id)_iconImage;
+- (void)_updateDockTileImage;
+- (void)_updateIconImageFromOriginal;
 - (void)_setApplicationIconImage:(id)arg1 setDockImage:(BOOL)arg2;
 - (void)_dockDied;
 - (void)_cycleUtilityWindowsReversed:(BOOL)arg1;
@@ -286,6 +289,7 @@
 - (void)_postEventHandling;
 - (void)_preEventHandling;
 - (void)_endRunMethod;
+- (void)_beginRunning;
 - (void)_startRunMethod;
 - (BOOL)_didNSOpenOrPrint;
 - (void)finishLaunching;
@@ -399,7 +403,6 @@
 - (void)_removeSystemUIModeHandler;
 - (void)_registerWithDock;
 - (void)_installAutoreleasePoolsOnCurrentThreadIfNecessary;
-- (void)_cleanUpForCarbonAppTermination;
 - (void)_postExtendedLaunchSignposts;
 - (void)_postBasicLaunchSignposts;
 - (void)_postSignpostsForCurrentPhase;
@@ -448,6 +451,31 @@
 - (void)_customizeMainMenu;
 - (void)_addTextInputMenuItems:(id)arg1;
 - (id)_bestAppearanceCustomizationTargetForAction:(SEL)arg1 to:(id)arg2;
+- (void)performActivateDeactivateTestUsingTestName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)performResizeTestOnWindow:(id)arg1 usingTestName:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)performScrollTestOnScrollView:(id)arg1 usingTestName:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)installCACommitCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)finishedSubTest:(id)arg1 forTest:(id)arg2 waitForCommit:(BOOL)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void)finishedSubTest:(id)arg1 forTest:(id)arg2;
+- (void)startedSubTest:(id)arg1 forTest:(id)arg2 withMetrics:(id)arg3;
+- (void)startedSubTest:(id)arg1 forTest:(id)arg2;
+- (void)failedTest:(id)arg1 withFailure:(id)arg2 withResults:(id)arg3;
+- (void)failedTest:(id)arg1 withResults:(id)arg2;
+- (void)failedTest:(id)arg1 withFailure:(id)arg2;
+- (void)failedTest:(id)arg1;
+- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3 withTeardownBlock:(CDUnknownBlockType)arg4;
+- (void)finishedTest:(id)arg1 waitForCommit:(BOOL)arg2 extraResults:(id)arg3;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(CDUnknownBlockType)arg4;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2 withTeardownBlock:(CDUnknownBlockType)arg3;
+- (void)finishedTest:(id)arg1 extraResults:(id)arg2;
+- (void)finishedTest:(id)arg1;
+- (void)startedTest:(id)arg1;
+- (BOOL)runTest:(id)arg1 options:(id)arg2;
+- (BOOL)isRunningQuitTest;
+- (BOOL)isRunningTest:(id)arg1;
+- (BOOL)isRunningTest;
+- (BOOL)isLaunchedForTesting;
 - (void)importFromDevice:(id)arg1;
 - (void)_customizeImportFromDeviceMenuItem;
 - (id)accessibilityFunctionRowTopLevelElementsAttribute;
@@ -461,6 +489,8 @@
 - (id)accessibilityActionDescription:(id)arg1;
 - (id)accessibilityActionNames;
 - (id)accessibilityAttributeValue:(id)arg1 forParameter:(id)arg2;
+- (id)_accessibilityFocusRingHandleInfo:(id)arg1;
+- (BOOL)_accessibilityFocusRingMoveForElement:(id)arg1;
 - (id)_accessibilityPopovers;
 - (void)accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;
@@ -499,6 +529,7 @@
 - (id)accessibilityAttributeNames;
 - (void)accessibilityWorkaroundRemoveExtraWindow:(id)arg1;
 - (void)accessibilityWorkaroundAddExtraWindow:(id)arg1;
+- (void)_accessibilityFocusRingHide;
 - (BOOL)accessibilityMayContainProtectedContent;
 - (void)accessibilitySetMayContainProtectedContent:(BOOL)arg1;
 - (id)_accessibilityCompatibilityHitTest:(struct CGPoint)arg1;
@@ -559,6 +590,20 @@
 - (void)toggleTouchBarControlStripCustomizationPalette:(id)arg1;
 - (BOOL)_validateTouchBarCustomizationPaletteItem:(id)arg1;
 - (void)orderFrontPreferencesPanel:(id)arg1;
+- (id)_lockoutWindowForWindow:(id)arg1;
+- (id)_engagedLockoutWindowForWindow:(id)arg1;
+- (void)_lockoutMiniaturizedOverlayDisengaged:(id)arg1;
+- (void)_disengageLockoutUIWithDuration:(double)arg1;
+- (void)_disengageLockoutUI:(id)arg1;
+- (void)_engageLockoutUIWithDuration:(double)arg1;
+- (void)_engageLockoutUI:(id)arg1;
+- (void)_lockoutUIChanged:(id)arg1;
+- (BOOL)_lockoutEngaged;
+- (void)_setLockoutEngaged:(BOOL)arg1;
+- (BOOL)_isInLockoutTransition;
+- (id)_activeLockoutWindows;
+- (id)_lockoutUIForWindow:(id)arg1;
+- (void)_initializeLockoutUI;
 - (BOOL)_handleCursorRectEvent:(id)arg1;
 - (BOOL)areCursorRectsEnabled;
 - (void)enableCursorRects;
@@ -605,8 +650,6 @@
 - (void)discardEventsMatchingMask:(unsigned long long)arg1 beforeEvent:(id)arg2;
 @property(readonly) NSEvent *currentEvent;
 - (void)sendEvent:(id)arg1;
-- (void)_removeKeyOverrideWindow:(id)arg1;
-- (void)_addKeyOverrideWindow:(id)arg1;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;
 - (id)targetForAction:(SEL)arg1 to:(id)arg2 from:(id)arg3;
@@ -619,7 +662,6 @@
 - (void)_setAutomaticCustomizeTouchBarMenuItemEnabled:(id)arg1;
 @property(getter=isAutomaticCustomizeTouchBarMenuItemEnabled) BOOL automaticCustomizeTouchBarMenuItemEnabled;
 - (void)toggleTouchBarCustomizationPalette:(id)arg1;
-- (id)_responsibleDelegateForSelector:(SEL)arg1;
 - (void)setAppleMenu:(id)arg1;
 - (void)_restoreMiniaturizedWindow;
 - (void)_makeModalWindowsPerform:(SEL)arg1;

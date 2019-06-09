@@ -9,7 +9,7 @@
 #import <CloudKitDaemon/NSStreamDelegate-Protocol.h>
 
 @class NSData, NSFileHandle, NSInputStream, NSMutableArray, NSOutputStream, NSString;
-@protocol CKDProtobufMessageSigningDelegate, OS_dispatch_queue;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface CKDProtobufStreamWriter : NSObject <NSStreamDelegate>
@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
     BOOL _haveFinishedCompression;
     BOOL _haveFinishedStreaming;
     unsigned long long _bufferSize;
-    id <CKDProtobufMessageSigningDelegate> _signingDelegate;
     CDUnknownBlockType _logRequestObjectBlock;
     NSFileHandle *_binaryLogFileHandle;
 }
@@ -37,16 +36,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL hasInitedCompression; // @synthesize hasInitedCompression=_hasInitedCompression;
 @property(retain, nonatomic) NSFileHandle *binaryLogFileHandle; // @synthesize binaryLogFileHandle=_binaryLogFileHandle;
 @property(copy, nonatomic) CDUnknownBlockType logRequestObjectBlock; // @synthesize logRequestObjectBlock=_logRequestObjectBlock;
-@property(nonatomic) __weak id <CKDProtobufMessageSigningDelegate> signingDelegate; // @synthesize signingDelegate=_signingDelegate;
 @property(nonatomic) unsigned long long bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(nonatomic) BOOL shouldCompress; // @synthesize shouldCompress=_shouldCompress;
 - (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
 - (long long)_streamNextObject:(id)arg1;
-- (void)_prepareObjectForStreaming:(id)arg1 shouldSign:(BOOL)arg2;
+- (void)_prepareObjectForStreaming:(id)arg1;
 - (id)_dataForMessage:(id)arg1;
 - (long long)_writeDataToStream:(id)arg1;
-- (id)_prepareMescalSignature:(id)arg1;
 - (BOOL)_finishStreaming:(id)arg1;
 - (id)_compressBodyData:(id)arg1 shouldFlush:(BOOL)arg2;
 - (id)open;

@@ -11,8 +11,7 @@
 }
 
 + (id)notificationQueue;
-+ (id)asset;
-+ (void)initialize;
++ (id)commonAsset;
 
 @end
 

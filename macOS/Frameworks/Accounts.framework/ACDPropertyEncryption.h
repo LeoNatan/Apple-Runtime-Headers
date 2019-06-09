@@ -13,7 +13,7 @@
 + (id)_decryptableDataForStoredProperty:(id)arg1;
 + (id)decryptProperty:(id)arg1;
 + (id)encryptProperty:(id)arg1;
-+ (struct OpaqueSecKeyRef *)accountPropertyCryptoKeyCreatingIfNecessary:(BOOL)arg1;
++ (struct __SecKey *)accountPropertyCryptoKeyCreatingIfNecessary:(BOOL)arg1;
 
 @end
 

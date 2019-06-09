@@ -8,7 +8,8 @@
 
 #import <FileProvider/NSFileProviderItem_Private-Protocol.h>
 
-@class FPItem, NSArray, NSData, NSDate, NSDictionary, NSError, NSNumber, NSPersonNameComponents, NSString, NSURL;
+@class FPItem, NSData, NSDate, NSDictionary, NSError, NSFileProviderItemVersion, NSNumber, NSPersonNameComponents, NSSet, NSString, NSURL;
+@protocol NSFileProviderItemFlags;
 
 __attribute__((visibility("hidden")))
 @interface FPXEnumeratorAlternateContentsItem : NSObject <NSFileProviderItem_Private>
@@ -20,19 +21,20 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSDate *contentModificationDate;
 @property(readonly, copy, nonatomic) NSNumber *documentSize;
-@property(readonly) _Bool fp_isContainer;
-@property(readonly, copy) NSString *fp_appContainerBundleIdentifier;
+- (id)cloudContainerIdentifier;
+- (_Bool)isContainerPristine;
+- (_Bool)isContainer;
 @property(readonly, copy) NSString *fp_domainIdentifier;
 @property(readonly, copy) NSString *fp_spotlightDomainIdentifier;
 @property(readonly, copy) NSString *sharingPermissions;
-@property(readonly, copy) NSString *providerIdentifier;
-@property(readonly, getter=isHidden) _Bool hidden;
+- (id)providerID;
 @property(readonly, copy, getter=isDownloadRequested) NSNumber *downloadRequested;
 @property(readonly, copy) NSString *containerDisplayName;
 @property(readonly, copy) NSNumber *hasUnresolvedConflicts;
 @property(readonly, nonatomic) NSDictionary *userInfo;
-@property(readonly, nonatomic) NSPersonNameComponents *ownerNameComponents;
 @property(readonly, nonatomic) NSPersonNameComponents *mostRecentEditorNameComponents;
+@property(readonly, nonatomic) NSPersonNameComponents *ownerNameComponents;
+@property(readonly, nonatomic, getter=fp_isLastModifiedByCurrentUser) _Bool fp_lastModifiedByCurrentUser;
 @property(readonly, nonatomic, getter=isSharedByCurrentUser) _Bool sharedByCurrentUser;
 @property(readonly, nonatomic, getter=isShared) _Bool shared;
 @property(readonly, nonatomic, getter=isMostRecentVersionDownloaded) _Bool mostRecentVersionDownloaded;
@@ -59,13 +61,26 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic, getter=isExcludedFromSync) _Bool excludedFromSync;
+@property(readonly, nonatomic) NSDictionary *extendedAttributes;
 @property(readonly, copy) NSURL *fileURL;
+@property(readonly, nonatomic) id <NSFileProviderItemFlags> flags;
+@property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) _Bool fp_addedByCurrentUser;
+@property(readonly, nonatomic) NSPersonNameComponents *fp_addedByNameComponents;
+@property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;
+@property(readonly, copy) NSString *fp_cloudContainerIdentifier;
+@property(readonly) _Bool fp_isContainer;
+@property(readonly) _Bool fp_isContainerPristine;
+@property(readonly, copy) NSString *fp_parentDomainIdentifier;
 @property(readonly, getter=fp_isUbiquitous) _Bool fp_ubiquitous;
 @property(readonly) unsigned long long hash;
+@property(readonly, getter=isHidden) _Bool hidden;
+@property(readonly, nonatomic) NSFileProviderItemVersion *itemVersion;
 @property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
 @property(readonly, nonatomic) NSString *preformattedOwnerName;
+@property(readonly, copy) NSString *providerIdentifier;
 @property(readonly) Class superclass;
-@property(readonly, copy) NSArray *tags;
+@property(readonly, nonatomic, getter=isTopLevelSharedItem) _Bool topLevelSharedItem;
 @property(readonly, nonatomic) NSData *versionIdentifier;
 
 @end

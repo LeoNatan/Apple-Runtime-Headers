@@ -14,5 +14,7 @@
 - (_Bool)_nmu_inSameYearAs:(id)arg1;
 - (_Bool)_nmu_isThisYear;
 - (id)nmu_nanoFriendlyDisplayString;
+- (_Bool)nmu_isAfterDate:(id)arg1;
+- (_Bool)nmu_isBeforeDate:(id)arg1;
 @end
 

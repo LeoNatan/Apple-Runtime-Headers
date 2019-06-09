@@ -10,6 +10,7 @@
 
 @class NSString, TSUBufferedReadChannel;
 
+__attribute__((visibility("hidden")))
 @interface TSUBufferedReadChannelHelper : NSObject <TSUStreamReadChannel>
 {
     TSUBufferedReadChannel *_bufferedReadChannel;

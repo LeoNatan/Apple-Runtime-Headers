@@ -14,7 +14,7 @@
 
 + (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)_calculateDiffs;
-@property(readonly, retain, nonatomic) PLChangeNotificationCenter *changeNotificationCenter;
+@property(readonly, nonatomic) PLChangeNotificationCenter *changeNotificationCenter;
 
 @end
 

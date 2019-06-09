@@ -9,8 +9,8 @@
 
 @protocol NUIWidgetGridViewCell
 @property(readonly, nonatomic) unsigned int index;
-- (CDStruct_cc988be4)donatableSpaceAllowRemeasure:(_Bool)arg1;
-- (CDStruct_cc988be4)donatableSpace;
+- (CDStruct_b2fbf00d)donatableSpaceAllowRemeasure:(_Bool)arg1;
+- (CDStruct_b2fbf00d)donatableSpace;
 - (id)initWithWidgetGridView:(NUIWidgetGridView *)arg1 item:(id <NUIWidgetGridViewItem>)arg2 index:(unsigned int)arg3;
 @end
 

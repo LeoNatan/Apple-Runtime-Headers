@@ -12,6 +12,7 @@
 @class CKMessagePartChatItem, CKNanoStickerListTableViewCell, NSArray, NSString, UITableView;
 @protocol CKNanoStickerListViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoStickerListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     id <CKNanoStickerListViewControllerDelegate> _delegate;

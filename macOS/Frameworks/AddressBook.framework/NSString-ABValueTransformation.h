@@ -9,5 +9,8 @@
 @interface NSString (ABValueTransformation)
 - (id)localizedPropertyOrLabelWithCapitals;
 - (id)localizedPropertyOrLabel;
+- (unsigned long long)abEndOfParagraphStartingAtIndex:(unsigned long long)arg1;
+- (id)abEllipsizeWithFont:(id)arg1 withWidth:(double)arg2 reverseForRightToLeft:(BOOL)arg3;
+- (id)abEllipsizeWithFont:(id)arg1 withWidth:(double)arg2;
 @end
 

@@ -11,6 +11,7 @@
 @class NSArray, NSError, NSString;
 @protocol OS_dispatch_data, OS_dispatch_queue, TSUReadChannel, TSUStreamReadChannel;
 
+__attribute__((visibility("hidden")))
 @interface TSUBufferedReadChannel : NSObject <TSUReadChannel>
 {
     NSObject<OS_dispatch_queue> *_readQueue;

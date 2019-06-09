@@ -13,6 +13,7 @@
     GEOMapURLBuilder *_realBuilder;
 }
 
++ (id)URLForCollectionStorage:(id)arg1;
 + (id)URLForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 useWebPlaceCard:(BOOL)arg6 mapItemData:(id)arg7;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 useWebPlaceCard:(BOOL)arg6;

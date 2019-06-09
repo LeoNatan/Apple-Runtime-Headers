@@ -15,7 +15,6 @@
     NSDictionary *_userPresenceMap;
 }
 
-+ (id)presenceRemoteWithDictionary:(id)arg1 presenceIdentifierDict:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *userPresenceMap; // @synthesize userPresenceMap=_userPresenceMap;
 - (void).cxx_destruct;
 - (_Bool)isAnyUserAtHome;
@@ -26,9 +25,8 @@
 - (_Bool)isUserAtHome:(id)arg1;
 - (id)regionForUser:(id)arg1;
 - (id)description;
-- (void)_initializeWithPresenceMap:(id)arg1;
-- (void)_initializeWithPresenceIdentifierMap:(id)arg1;
-- (id)initWithDictionary:(id)arg1 presenceIdentifierDict:(id)arg2;
+- (id)initWithPresenceByPairingIdentity:(id)arg1;
+- (id)initWithPresenceByUserId:(id)arg1;
 
 @end
 

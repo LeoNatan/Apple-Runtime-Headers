@@ -6,26 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary;
+@class NSArray;
 
 @interface _HDCachedSourceOrder : NSObject
 {
     _Bool _userOrdered;
     _Bool _isDefaultSourceOrder;
-    NSArray *_sources;
-    NSArray *_sourceIDs;
-    NSDictionary *_sourcesByID;
+    vector_f9051771 _orderedSources;
+    unordered_map_0fc8d213 _sourcesByID;
 }
 
 @property(readonly, nonatomic) _Bool isDefaultSourceOrder; // @synthesize isDefaultSourceOrder=_isDefaultSourceOrder;
 @property(readonly, nonatomic) _Bool userOrdered; // @synthesize userOrdered=_userOrdered;
-@property(readonly, copy, nonatomic) NSDictionary *sourcesByID; // @synthesize sourcesByID=_sourcesByID;
-@property(readonly, copy, nonatomic) NSArray *sourceIDs; // @synthesize sourceIDs=_sourceIDs;
-@property(readonly, copy, nonatomic) NSArray *sources; // @synthesize sources=_sources;
+@property(nonatomic) unordered_map_0fc8d213 sourcesByID; // @synthesize sourcesByID=_sourcesByID;
+@property(nonatomic) vector_f9051771 orderedSources; // @synthesize orderedSources=_orderedSources;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithSources:(id)arg1 sourceIDs:(id)arg2 sourcesByID:(id)arg3 userOrdered:(_Bool)arg4 isDefaultOrder:(_Bool)arg5;
+@property(readonly, copy, nonatomic) NSArray *sourceIDs;
+@property(readonly, copy, nonatomic) NSArray *sources;
+- (id)initWithSources:(vector_f9051771)arg1 userOrdered:(_Bool)arg2 isDefaultOrder:(_Bool)arg3;
 - (id)init;
 
 @end

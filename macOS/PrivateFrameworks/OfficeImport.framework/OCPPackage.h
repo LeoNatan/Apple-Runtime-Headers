@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, OCPPackageProperties, OCPPackageRelationshipCollection;
 
+__attribute__((visibility("hidden")))
 @interface OCPPackage : NSObject
 {
     OCPPackageRelationshipCollection *mRelationships;

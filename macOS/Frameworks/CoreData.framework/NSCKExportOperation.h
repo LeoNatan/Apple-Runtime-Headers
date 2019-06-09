@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)entityPath;
 @property(nonatomic) unsigned long long status;
 
 // Remaining properties

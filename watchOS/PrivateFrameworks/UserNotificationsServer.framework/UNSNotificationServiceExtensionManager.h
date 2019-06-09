@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (void)_stopMonitoringExtensions;
 - (void)_startMonitoringExtensions;
-- (id)extensionForNotificationSourceDescription:(id)arg1 error:(id *)arg2;
+- (id)extensionForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 - (id)init;
 

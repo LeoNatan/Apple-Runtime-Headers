@@ -8,7 +8,6 @@
 
 @class UIColor;
 
-__attribute__((visibility("hidden")))
 @interface PUFilmStripViewIndicatorInfo : NSObject
 {
     double _normalizedLocation;

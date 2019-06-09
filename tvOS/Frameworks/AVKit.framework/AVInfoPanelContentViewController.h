@@ -8,6 +8,7 @@
 
 @class UIView, UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelContentViewController : UIViewController
 {
     _Bool _hasContent;
@@ -15,12 +16,13 @@
     UIVisualEffectView *_backdropView;
 }
 
++ (void)setCornerRadius:(double)arg1;
++ (double)cornerRadius;
 @property(readonly, nonatomic) _Bool hasContent; // @synthesize hasContent=_hasContent;
 @property(readonly, nonatomic) UIVisualEffectView *backdropView; // @synthesize backdropView=_backdropView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
-- (_Bool)_tvTabBarShouldAutohide;
-- (_Bool)_tvTabBarShouldOverlap;
+- (struct CGSize)contentSizeForWidth:(double)arg1;
 - (void)loadView;
 
 @end

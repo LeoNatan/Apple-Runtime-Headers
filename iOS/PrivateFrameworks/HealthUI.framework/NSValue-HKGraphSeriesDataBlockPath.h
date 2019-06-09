@@ -8,6 +8,14 @@
 
 @interface NSValue (HKGraphSeriesDataBlockPath)
 + (id)valueWithHKGraphSeriesDataBlockPath:(CDStruct_6ca94699)arg1;
++ (id)valueWithHKLinearTransform:(struct HKLinearTransform)arg1;
 - (CDStruct_6ca94699)HKGraphSeriesDataBlockPathValue;
+- (id)_hk_CGPointMidPointToValue:(id)arg1 percentage:(double)arg2;
+- (id)_hk_HKLinearTransformMidPointToValue:(id)arg1 percentage:(double)arg2;
+- (id)hk_midPointToValue:(id)arg1 percentage:(double)arg2;
+- (_Bool)_hk_isHKLinearTransform;
+- (_Bool)_hk_isCGPoint;
+- (_Bool)hk_animatable;
+- (struct HKLinearTransform)HKLinearTransformValue;
 @end
 

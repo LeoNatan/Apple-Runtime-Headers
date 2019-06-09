@@ -9,6 +9,7 @@
 @class IDSProtobuf;
 
 @protocol PBBridgeGizmoProtocol <NSObject>
+- (void)handleRenameDeviceRequest:(IDSProtobuf *)arg1;
 - (void)handleWarrantySentinelRequest:(IDSProtobuf *)arg1;
 - (void)popToControllerType:(IDSProtobuf *)arg1;
 - (void)pushControllerType:(IDSProtobuf *)arg1;

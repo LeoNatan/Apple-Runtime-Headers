@@ -8,5 +8,16 @@
 
 @interface BBSectionInfo (BLTSettingSyncLevel)
 - (void)bltApplyNotificationLevel:(unsigned int)arg1;
+- (_Bool)blt_overrideSendToNotificationCenter;
+- (_Bool)blt_overrideShowsAlerts;
+- (void)updateAlertingStatusForGizmoWithAlertsEnabled:(_Bool)arg1 NCEnabled:(_Bool)arg2;
+- (void)enableAlertsForGizmo:(_Bool)arg1;
+- (id)dataProviderIDs;
+- (void)setDataProviderIDs:(id)arg1;
+- (id)factorySectionID;
+- (void)setFactorySectionID:(id)arg1;
+- (void)setSubsections:(id)arg1;
+- (void)setIcon:(id)arg1;
+- (void)setDisplayName:(id)arg1;
 @end
 

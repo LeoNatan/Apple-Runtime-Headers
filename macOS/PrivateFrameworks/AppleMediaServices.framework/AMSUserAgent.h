@@ -6,31 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class AMSLRUCache, NSString;
+@class AMSMappedBundleInfo, AMSProcessInfo, NSString;
 
-__attribute__((visibility("hidden")))
 @interface AMSUserAgent : NSObject
 {
-    AMSLRUCache *_cache;
+    AMSMappedBundleInfo *_bundleInfo;
+    AMSProcessInfo *_processInfo;
 }
 
-+ (id)shared;
++ (id)userAgentForProcessInfo:(id)arg1;
++ (void)cacheUserAgent:(id)arg1 forBundleIdentifier:(id)arg2;
++ (id)cachedUserAgentForBundleIdentifier:(id)arg1;
++ (id)_sharedCache;
+@property(readonly) AMSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
+@property(readonly) AMSMappedBundleInfo *bundleInfo; // @synthesize bundleInfo=_bundleInfo;
 - (void).cxx_destruct;
+- (id)_sharedComponentParentheticalWithFairPlayDeviceType:(id)arg1;
 - (id)_sharedComponentFrameworkVersion;
+- (id)_sharedComponentFairPlayDeviceType;
+- (id)_compileAndShouldCache:(char *)arg1;
 - (id)_macComponentWebKitVersionString;
 - (id)_macComponentParenthetical;
-- (id)_macComponentClientInfoWithBundleID:(id)arg1;
+- (id)_macComponentClientInfo;
 - (id)_macComponentAccountMediaType;
-- (id)_loadAppStoreBundleVersion;
-- (id)userAgentForBundleIdentifier:(id)arg1 additionalComponents:(id)arg2 addAccountMediaTypeComponent:(BOOL)arg3;
-- (id)userAgentForBundleIdentifier:(id)arg1 additionalComponents:(id)arg2;
-- (id)clientVersionForBundleIdentifier:(id)arg1;
-- (id)clientNameForBundleIdentifier:(id)arg1;
-- (void)cacheUserAgent:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)cachedUserAgentForBundleIdentifier:(id)arg1;
-@property(readonly, copy) NSString *clientVersion;
-@property(readonly, copy) NSString *clientName;
-- (id)init;
+- (id)compile;
+@property(retain) NSString *clientVersion;
+@property(retain) NSString *clientName;
+- (id)initWithProcessInfo:(id)arg1;
 
 @end
 

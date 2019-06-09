@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSArray *usageItems; // @synthesize usageItems=_usageItems;
 - (void)updateSectionViewImages;
 - (void)updateConstraints;
+- (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (id)capImageWithHeight:(double)arg1 leadingLineCap:(int)arg2 trailingLineCap:(int)arg3;
 

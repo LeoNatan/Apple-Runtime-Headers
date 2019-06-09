@@ -12,11 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AVAsset {
-    Class _field1;
-    id _field2;
-};
-
 struct Array {
     CDUnknownFunctionPointerType *_field1;
     basic_string_a1f69cfb _field2;
@@ -229,34 +224,6 @@ struct NFAccount {
 
 struct NSImage {
     Class _field1;
-    id _field2;
-    struct CGSize _field3;
-    struct __imageFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :2;
-        unsigned int :3;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :8;
-    } _field4;
-    id _field5;
-    id _field6;
 };
 
 struct NSManagedObjectContext {
@@ -265,98 +232,13 @@ struct NSManagedObjectContext {
 
 struct NSWindow {
     Class _field1;
-    id _field2;
-    struct CGRect _field3;
+    struct CGRect _field2;
+    id _field3;
     id _field4;
     id _field5;
     id _field6;
     id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    int _field11;
-    long long _field12;
-    int _field13;
-    id _field14;
-    id _field15;
-    unsigned char _field16;
-    unsigned char _field17;
-    unsigned char _field18;
-    unsigned int :1;
-    unsigned int :7;
-    void *_field19;
-    void *_field20;
-    id _field21;
-    int _field22;
-    id _field23;
-    id _field24;
-    struct CGSize *_field25;
-    id _field26;
-    id _field27;
-    struct __wFlags {
-        unsigned int :2;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :4;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :2;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-    } _field28;
-    id _field29;
-    id _field30;
-    id _field31;
+    int _field8;
 };
 
 struct ObjectID {
@@ -426,8 +308,9 @@ struct PreviewImage {
     _Bool _field7;
     _Bool _field8;
     basic_string_a1f69cfb *_field9;
-    long long _field10;
+    int _field10;
     int _field11;
+    long long _field12;
 };
 
 struct Rectangle;
@@ -816,6 +699,11 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    char *_field1;
+    char *_field2;
+} CDStruct_91a0c811;
 
 typedef struct {
     double baseAlpha;

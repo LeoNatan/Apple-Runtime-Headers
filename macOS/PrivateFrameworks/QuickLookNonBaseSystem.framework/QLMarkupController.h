@@ -14,6 +14,7 @@
 
 @interface QLMarkupController : NSObject <NSFilePresenter, QLMarkupViewControllerDelegate>
 {
+    BOOL _saveInPlace;
     QLMarkupViewController *_markupViewController;
     id <QLMarkupControllerDelegate> _delegate;
     NSURL *_shareItemURL;
@@ -21,6 +22,7 @@
 }
 
 @property(retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
+@property BOOL saveInPlace; // @synthesize saveInPlace=_saveInPlace;
 @property(retain) NSURL *shareItemURL; // @synthesize shareItemURL=_shareItemURL;
 @property __weak id <QLMarkupControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) QLMarkupViewController *markupViewController; // @synthesize markupViewController=_markupViewController;
@@ -31,11 +33,13 @@
 - (void)editOccuredOnPage:(long long)arg1;
 - (void)markupBecameDirty:(BOOL)arg1;
 - (void)revertMarkup;
-- (void)exitMarkup:(long long)arg1;
+- (void)exitMarkup:(long long)arg1 needsSave:(char *)arg2;
+- (void)_save;
 - (void)_teardownFileForSharingDirtyEdits;
 - (void)_setupFileForSharingDirtyEdits;
 - (void)enterMarkup;
 - (void)cleanupForTeardown;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

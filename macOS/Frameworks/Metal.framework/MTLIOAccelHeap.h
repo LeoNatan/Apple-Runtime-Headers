@@ -4,37 +4,42 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Metal/_MTLHeap.h>
 
 @class MTLIOAccelDevice, MTLIOAccelResource, NSString;
 @protocol MTLDevice;
 
-@interface MTLIOAccelHeap : NSObject
+@interface MTLIOAccelHeap : _MTLHeap
 {
     MTLIOAccelResource *_resource;
     MTLIOAccelDevice<MTLDevice> *_device;
     struct MTLRangeAllocator _allocator;
     struct _opaque_pthread_mutex_t _mutex;
     unsigned long long _size;
-    NSString *_label;
 }
 
-@property(copy) NSString *label; // @synthesize label=_label;
+- (id)newSubResourceAtOffset:(unsigned long long)arg1 withLength:(unsigned long long)arg2 alignment:(unsigned long long)arg3 options:(unsigned long long)arg4;
 @property(readonly) unsigned long long currentAllocatedSize;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 - (void)deallocHeapSubResource;
 - (void)unpinMemoryAtOffset:(unsigned long long)arg1 withLength:(unsigned long long)arg2;
 - (id)newSubResourceWithLength:(unsigned long long)arg1 alignment:(unsigned long long)arg2 options:(unsigned long long)arg3 offset:(unsigned long long *)arg4;
 - (void)dealloc;
+- (id)initWithDevice:(id)arg1 size:(unsigned long long)arg2 options:(unsigned long long)arg3 args:(struct IOAccelNewResourceArgs *)arg4 argsSize:(unsigned int)arg5 desc:(id)arg6;
 - (id)initWithDevice:(id)arg1 size:(unsigned long long)arg2 options:(unsigned long long)arg3 args:(struct IOAccelNewResourceArgs *)arg4 argsSize:(unsigned int)arg5;
-@property(readonly) unsigned long long storageMode;
-@property(readonly) unsigned long long cpuCacheMode;
 - (unsigned long long)maxAvailableSizeWithAlignment:(unsigned long long)arg1;
-- (id)description;
-- (id)formattedDescription:(unsigned long long)arg1;
 @property(readonly) unsigned long long usedSize;
 @property(readonly) unsigned long long size;
 @property(readonly) id <MTLDevice> device;
+
+// Remaining properties
+@property(readonly) unsigned long long cpuCacheMode; // @dynamic cpuCacheMode;
+@property(readonly) unsigned long long hazardTrackingMode; // @dynamic hazardTrackingMode;
+@property(copy) NSString *label; // @dynamic label;
+@property(readonly) unsigned long long resourceOptions; // @dynamic resourceOptions;
+@property(readonly) unsigned long long storageMode; // @dynamic storageMode;
+@property(readonly) long long type; // @dynamic type;
+@property(readonly) unsigned long long unfilteredResourceOptions; // @dynamic unfilteredResourceOptions;
 
 @end
 

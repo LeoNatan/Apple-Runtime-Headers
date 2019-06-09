@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <RelevanceEngine/RERelevanceProviderManagerProperties-Protocol.h>
+
 @class NSArray, NSDictionary, NSHashTable, NSString, REFeatureSet, REPriorityQueue, RERelevanceProviderEnvironment, REUpNextTimer;
 @protocol OS_dispatch_queue;
 
-@interface RERelevanceProviderManager : NSObject
+@interface RERelevanceProviderManager : NSObject <RERelevanceProviderManagerProperties>
 {
     RERelevanceProviderEnvironment *_environment;
     NSHashTable *_providers;
@@ -18,6 +20,8 @@
     NSArray *_effectiveFeatures;
     NSDictionary *_inflectionValues;
     _Bool _dataStoresOpened;
+    _Bool _hasSeperateRelevanceQueue;
+    _Bool _implementsPrepareForUpdate;
     NSObject<OS_dispatch_queue> *_relevanceQueue;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSString *_loggingHeader;
@@ -26,6 +30,7 @@
 
 + (_Bool)supportsHistoricProviders;
 + (_Bool)_supportsHistoricProviders;
++ (_Bool)_wantsSeperateRelevanceQueue;
 + (_Bool)_requiresLocationServices;
 + (_Bool)_wantsDelayedUpdate;
 + (id)_dependencyClasses;
@@ -33,20 +38,25 @@
 + (Class)_relevanceProviderClass;
 + (id)providerManagerClasses;
 + (void)setProviderManagerClassesLoadingBlock:(CDUnknownBlockType)arg1;
-+ (id)_sharedProviderQueue;
 @property(retain, nonatomic) REFeatureSet *supportedFeatures; // @synthesize supportedFeatures=_supportedFeatures;
 - (void).cxx_destruct;
 - (void)_loadLoggingHeader;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) unsigned long long scheduledUpdatesCount;
+@property(readonly, nonatomic) _Bool dataSourcesOpened;
+@property(readonly, nonatomic) NSArray *allRelevanceProviders;
+- (id)description;
 - (void)_prepareForUpdateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_queue_resetTimer;
 - (void)_queue_performPendingUpdatesAndScheduleTimerIfNeeded;
 - (void)_queue_performUpdate:(id)arg1;
 - (void)_removeAllPendingUpdates;
+- (void)_queue_scheduleUpdate:(id)arg1;
 - (void)_scheduleUpdate:(id)arg1;
 - (void)_handleSignificantTimeChange;
-- (void)pause;
-- (void)resume;
+- (void)pauseWithCompletion:(CDUnknownBlockType)arg1;
+- (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)finishFetchingData;
+- (void)beginFetchingData;
 - (void)_enumerateProviders:(CDUnknownBlockType)arg1;
 - (void)_prepareForUpdate;
 - (void)_removeProvider:(id)arg1;
@@ -55,10 +65,14 @@
 - (_Bool)_dataSourcesOpened;
 - (void)_closeDataStoresAndObserveChanges;
 - (void)_openDataStoresAndObserveChanges;
+- (void)resume;
+- (void)pause;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_isValidProvider:(id)arg1;
 - (void)enumerateInflectionFeatureValues:(CDUnknownBlockType)arg1;
+- (void)endActivity:(id)arg1;
+- (void)beginActivity:(id)arg1;
 @property(nonatomic) __weak RERelevanceProviderEnvironment *environment;
 - (void)relevanceForHistoricProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)isProviderHistoric:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -66,12 +80,13 @@
 - (id)relevanceForProvider:(id)arg1 context:(id)arg2;
 - (void)relevanceForProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)containsProvider:(id)arg1;
-- (void)removeProvider:(id)arg1;
-- (void)addProvider:(id)arg1;
+- (void)removeProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)addProvider:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSArray *effectiveFeatures;
 - (id)_valueForHistoricProvider:(id)arg1 feature:(id)arg2;
 - (float)_relevanceForHistoricProvider:(id)arg1;
 - (_Bool)_isHistoricProvider:(id)arg1;
+- (id)_valuesForProvider:(id)arg1 context:(id)arg2 features:(id)arg3;
 - (id)_valueForProvider:(id)arg1 context:(id)arg2 feature:(id)arg3;
 - (id)_valueForProvider:(id)arg1 feature:(id)arg2;
 - (float)_relevanceForProvider:(id)arg1;

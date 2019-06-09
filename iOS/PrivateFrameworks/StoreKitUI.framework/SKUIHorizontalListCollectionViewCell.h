@@ -10,6 +10,7 @@
 
 @class NSString, SKUIHorizontalListView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIHorizontalListCollectionViewCell : SKUICollectionViewCell <SKUIViewElementView>
 {
     struct UIEdgeInsets _contentInset;

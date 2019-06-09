@@ -18,11 +18,10 @@
 + (id)_features;
 + (Class)_relevanceProviderClass;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
 - (void)_prepareForUpdate;
 - (void)_handleSignificantTimeChange;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (void)_scheduleUpdatesForActionProvider:(id)arg1;
 - (void)_removeProvider:(id)arg1;
 - (void)_addedProvider:(id)arg1;

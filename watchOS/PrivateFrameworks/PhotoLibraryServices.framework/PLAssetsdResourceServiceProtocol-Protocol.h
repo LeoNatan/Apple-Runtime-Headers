@@ -4,8 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotoLibraryServices/NSObject-Protocol.h>
+#import <PhotoLibraryServices/PLAssetsdResourceWriteOnlyServiceProtocol-Protocol.h>
 
-@protocol PLAssetsdResourceServiceProtocol <NSObject>
+@class NSArray, NSData, NSDictionary, NSProgress, NSString, NSURL;
+
+@protocol PLAssetsdResourceServiceProtocol <PLAssetsdResourceWriteOnlyServiceProtocol>
+- (void)updateInternalResourcePath:(NSString *)arg1 objectURI:(NSURL *)arg2 sandboxExtension:(NSData *)arg3 reply:(void (^)(_Bool, NSError *))arg4;
+- (NSProgress *)consolidateAssets:(NSArray *)arg1 reply:(void (^)(NSDictionary *))arg2;
+- (void)generateOnDemandResourcesForAsset:(NSURL *)arg1 reply:(void (^)(void))arg2;
+- (void)downloadCloudSharedAsset:(NSURL *)arg1 wantedPlaceholderkind:(short)arg2 shouldPrioritize:(_Bool)arg3 shouldExtendTimer:(_Bool)arg4 reply:(void (^)(_Bool, NSURL *, NSError *))arg5;
+- (void)estimatedFileLengthOfVideo:(NSURL *)arg1 fallbackFilePath:(NSString *)arg2 exportPreset:(NSString *)arg3 exportProperties:(NSDictionary *)arg4 reply:(void (^)(long long))arg5;
+- (void)asynchronousAdjustmentDataForAsset:(NSURL *)arg1 networkAccessAllowed:(_Bool)arg2 withDataBlob:(_Bool)arg3 reply:(void (^)(NSString *, NSString *, int, _Bool, PLXPCFileDescriptor *, PLXPCFileDescriptor *, NSError *))arg4;
+- (void)asynchronousVideoURLForAsset:(NSURL *)arg1 format:(unsigned short)arg2 networkAccessAllowed:(_Bool)arg3 streamingAllowed:(_Bool)arg4 trackCPLDownload:(_Bool)arg5 restrictToPlayable:(_Bool)arg6 reply:(void (^)(NSURL *, unsigned short, NSString *, _Bool, NSString *, NSString *, NSError *))arg7;
+- (void)getSandboxExtensionForFileSystemBookmark:(NSURL *)arg1 reply:(void (^)(_Bool, NSURL *, NSString *, NSError *))arg2;
+- (void)getSandboxExtensionForAssetResourcePath:(NSString *)arg1 reply:(void (^)(_Bool, NSString *, NSError *))arg2;
+- (void)imageDataForAssetWithObjectURI:(NSURL *)arg1 formatID:(unsigned short)arg2 allowPlaceholder:(_Bool)arg3 wantURLOnly:(_Bool)arg4 networkAccessAllowed:(_Bool)arg5 trackCPLDownload:(_Bool)arg6 reply:(void (^)(PLXPCGenericObject *, NSNumber *, int, _Bool, NSURL *, NSString *, NSString *, int, NSString *, NSString *, NSError *))arg7;
+- (void)fileDescriptorForPersistentURL:(NSURL *)arg1 withAdjustments:(_Bool)arg2 reply:(void (^)(_Bool, PLXPCFileDescriptor *, NSString *, NSError *))arg3;
+- (void)filePathForPersistentURL:(NSURL *)arg1 withAdjustments:(_Bool)arg2 reply:(void (^)(_Bool, NSURL *, NSError *))arg3;
+- (void)addAssetWithURL:(NSURL *)arg1 toAlbum:(NSString *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
+- (void)addAssetGroupWithName:(NSString *)arg1 reply:(void (^)(_Bool, NSURL *))arg2;
 @end
 

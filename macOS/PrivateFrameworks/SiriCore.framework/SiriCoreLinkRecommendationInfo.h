@@ -13,6 +13,7 @@
     double _timeTaken;
 }
 
+- (void)fetchLinkMetrics:(CDUnknownBlockType)arg1;
 - (void)resetLinkMetrics;
 - (id)linkMetrics;
 - (void)setLinkMetrics:(id)arg1;
@@ -22,6 +23,7 @@
 - (BOOL)wifiPreference;
 - (void)setBTPreference:(BOOL)arg1;
 - (BOOL)btPreference;
+- (id)initWithQueue:(id)arg1;
 - (id)initWithPreferences:(BOOL)arg1 wifiPreference:(BOOL)arg2 timeTaken:(double)arg3 metrics:(id)arg4;
 
 @end

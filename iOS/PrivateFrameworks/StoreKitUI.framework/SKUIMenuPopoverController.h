@@ -12,6 +12,7 @@
 @class NSArray, NSString, SKUIMenuViewController, UIPopoverController;
 @protocol SKUIMenuPopoverDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuPopoverController : NSObject <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate>
 {
     id <SKUIMenuPopoverDelegate> _delegate;

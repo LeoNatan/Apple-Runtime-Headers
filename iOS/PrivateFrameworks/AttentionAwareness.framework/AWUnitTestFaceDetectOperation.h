@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (void)awDeliverFaceFound;
 - (void)awFinishWithReason:(long long)arg1;
+- (void)startWithReply:(CDUnknownBlockType)arg1;
 - (_Bool)startWithError:(id *)arg1;
 - (long long)state;
 - (void)dealloc;

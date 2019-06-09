@@ -6,12 +6,11 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSArray, UIColor;
+@class NSArray;
 @protocol SKUIMenuViewControllerDelegate;
 
 @interface SKUIMenuViewController : UITableViewController
 {
-    UIColor *_borderColor;
     id <SKUIMenuViewControllerDelegate> _delegate;
     long long _indexOfCheckedTitle;
     NSArray *_menuTitles;
@@ -25,12 +24,12 @@
 @property(readonly, nonatomic) NSArray *menuTitles; // @synthesize menuTitles=_menuTitles;
 @property(nonatomic) __weak id <SKUIMenuViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_reloadViewStyling;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)loadView;
+- (long long)preferredUserInterfaceStyle;
 - (id)initWithMenuTitles:(id)arg1;
 - (id)initWithMenuTitles:(id)arg1 images:(id)arg2;
 

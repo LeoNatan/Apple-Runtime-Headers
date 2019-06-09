@@ -10,6 +10,7 @@
 
 @protocol _INUIRemoteViewControllerServing <NSObject>
 - (void)queryRepresentedPropertiesWithCompletion:(void (^)(NSArray *))arg1;
+- (void)desiresInteractivity:(void (^)(_Bool))arg1;
 - (void)viewWasCancelled;
 - (void)configureForParameters:(NSSet *)arg1 ofInteraction:(INInteraction *)arg2 interactiveBehavior:(unsigned long long)arg3 context:(unsigned long long)arg4 completion:(void (^)(_Bool, NSSet *, struct CGSize, NSError *))arg5;
 @end

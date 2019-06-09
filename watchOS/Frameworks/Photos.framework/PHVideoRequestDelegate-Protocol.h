@@ -6,10 +6,9 @@
 
 #import <Photos/PHMediaRequestDelegate-Protocol.h>
 
-@class NSDictionary, NSError, NSURL, PDVideoRequest;
+@class PHVideoRequest;
 
 @protocol PHVideoRequestDelegate <PHMediaRequestDelegate>
-- (void)videoRequest:(PDVideoRequest *)arg1 didFinishLoadingVideoURL:(NSURL *)arg2 info:(NSDictionary *)arg3 error:(NSError *)arg4;
-- (void)videoRequest:(PDVideoRequest *)arg1 isRequestingVideoChoosingForSize:(struct CGSize)arg2;
+- (void)videoRequest:(PHVideoRequest *)arg1 isRequestingVideoChoosingForSize:(struct CGSize)arg2;
 @end
 

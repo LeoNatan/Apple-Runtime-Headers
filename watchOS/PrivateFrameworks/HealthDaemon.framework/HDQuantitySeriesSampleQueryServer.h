@@ -6,23 +6,39 @@
 
 #import <HealthDaemon/HDQueryServer.h>
 
-@class HKQuantitySample;
+@class HKQuantitySample, NSDate, NSUUID;
 
 @interface HDQuantitySeriesSampleQueryServer : HDQueryServer
 {
     HKQuantitySample *_sample;
     int _batchThreshold;
     int _lastDatumIndex;
+    int _mode;
+    unsigned int _options;
+    NSDate *_maximumDeliveredStartDate;
+    NSUUID *_latestDeliveredUUID;
+    NSDate *_latestDeliveredSampleStartDate;
     CDUnknownBlockType _unitTest_batchWillDeliver;
 }
 
++ (_Bool)_enumerateQuantityValuesForPredicate:(id)arg1 orderBySamples:(_Bool)arg2 profile:(id)arg3 error:(id *)arg4 handler:(CDUnknownBlockType)arg5;
++ (_Bool)_shouldDeliverQuantityWithStartTime:(double)arg1 UUID:(id)arg2 maximumDeliveredStartDate:(id)arg3 latestDeliveredUUID:(id)arg4 orderBySamples:(_Bool)arg5;
 + (id)requiredEntitlements;
 + (Class)queryClass;
 @property(copy, nonatomic) CDUnknownBlockType unitTest_batchWillDeliver; // @synthesize unitTest_batchWillDeliver=_unitTest_batchWillDeliver;
 - (void).cxx_destruct;
+- (void)_deliverEnumerationResults:(id)arg1 isFinal:(_Bool)arg2;
+- (_Bool)_deliverEnumerationResults:(id)arg1 latestUUID:(id)arg2 latestSampleStartTime:(double)arg3 sampleIDsToLookup:(id)arg4 isFinal:(_Bool)arg5 error:(id *)arg6;
+- (id)_predicateForEnumerationWithError:(id *)arg1;
+- (void)_queue_startEnumerationMode;
+- (void)_deliverQuantitySeries:(id)arg1 seriesAnchor:(int)arg2 isFinal:(_Bool)arg3;
+- (void)_queue_startSingleSeriesMode;
+- (id)_clientProxy;
+- (void)_deliverEmptyResults;
+- (void)_deliverError:(id)arg1;
 - (void)_queue_start;
 - (void)unitTest_setBatchThreshold:(int)arg1;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 @end
 

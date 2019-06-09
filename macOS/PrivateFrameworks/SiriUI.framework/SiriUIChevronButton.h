@@ -8,7 +8,6 @@
 
 @class NSImageView, NSView, SiriUIKeyline;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIChevronButton : NSButton
 {
     NSImageView *_chevronImageView;

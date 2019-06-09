@@ -8,6 +8,7 @@
 
 @class NSString, NSURL, SKUIReportAConcernReason;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReportAConcernMetadata : NSObject
 {
     NSURL *_reportConcernURL;

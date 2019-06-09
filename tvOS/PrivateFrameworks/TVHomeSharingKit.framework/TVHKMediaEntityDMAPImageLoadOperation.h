@@ -11,25 +11,18 @@
 __attribute__((visibility("hidden")))
 @interface TVHKMediaEntityDMAPImageLoadOperation : TVHKImageLoadParamsOperation
 {
+    _Bool _imageWillBeCropped;
     unsigned long long _DAAPDatabaseID;
     unsigned long long _DPAPDatabaseID;
     TVHKMediaServerRequestOperation *_imageRequestOperation;
 }
 
 @property(retain, nonatomic) TVHKMediaServerRequestOperation *imageRequestOperation; // @synthesize imageRequestOperation=_imageRequestOperation;
+@property(nonatomic) _Bool imageWillBeCropped; // @synthesize imageWillBeCropped=_imageWillBeCropped;
 @property(nonatomic) unsigned long long DPAPDatabaseID; // @synthesize DPAPDatabaseID=_DPAPDatabaseID;
 @property(nonatomic) unsigned long long DAAPDatabaseID; // @synthesize DAAPDatabaseID=_DAAPDatabaseID;
 - (void).cxx_destruct;
-- (id)_DPAPImageRequest;
-- (id)_DAAPGroupsArtworkRequestAction;
-- (id)_DAAPCollectionImageRequest;
-- (id)_DAAPItemImageRequest;
-- (id)_DAAPImageRequest;
 - (void)_handleResponse:(id)arg1;
-- (struct CGSize)_imageRequestScaleToSize;
-- (_Bool)_imageRequestCropToFit;
-- (void)_setScalingArgumentsForRequest:(id)arg1;
-- (id)_imageRequest;
 - (id)_mediaEntityImageLoadParams;
 - (void)cancel;
 - (void)executionDidBegin;

@@ -6,24 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL, NSURLSessionDownloadTask;
+@class NSString, NSURL, NSURLSessionDownloadTask;
 
 @interface TVArchivedLayeredImageProxy : NSObject
 {
     NSURLSessionDownloadTask *_downloadTask;
     NSURL *_archiveURL;
     long long _groupType;
+    NSString *_assetKey;
 }
 
+@property(readonly, copy, nonatomic) NSString *assetKey; // @synthesize assetKey=_assetKey;
 @property(readonly, nonatomic) long long groupType; // @synthesize groupType=_groupType;
 @property(readonly, copy, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
 - (void).cxx_destruct;
 - (id)_assetPathWithAssetKey:(id)arg1;
-- (id)_assetKey;
 - (void)loadWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isImageAvailable;
 - (void)cancel;
 - (void)dealloc;
+- (id)initWithArchiveURL:(id)arg1 groupType:(long long)arg2 assetKey:(id)arg3;
 - (id)initWithArchiveURL:(id)arg1 groupType:(long long)arg2;
 - (id)initWithArchiveURL:(id)arg1;
 

@@ -8,12 +8,13 @@
 
 #import <AssistantServices/AFExperimentForSiriVOXSounds-Protocol.h>
 #import <AssistantServices/AFExperimentForSiriVOXTapToSiriBehavior-Protocol.h>
+#import <AssistantServices/AFInvocationFeedbackExperiment-Protocol.h>
 #import <AssistantServices/NSCopying-Protocol.h>
 #import <AssistantServices/NSSecureCoding-Protocol.h>
 
 @class NSDictionary, NSString;
 
-@interface AFExperiment : NSObject <AFExperimentForSiriVOXSounds, AFExperimentForSiriVOXTapToSiriBehavior, NSCopying, NSSecureCoding>
+@interface AFExperiment : NSObject <AFExperimentForSiriVOXSounds, AFExperimentForSiriVOXTapToSiriBehavior, AFInvocationFeedbackExperiment, NSCopying, NSSecureCoding>
 {
     NSString *_configurationIdentifier;
     NSString *_configurationVersion;
@@ -44,6 +45,12 @@
 - (id)mutatedCopyWithMutator:(CDUnknownBlockType)arg1;
 - (void)logExperimentExposureForTapToSiriBehavior;
 @property(readonly, nonatomic) _Bool playsSound;
+- (_Bool)isFeatureGroupFourEnabled;
+- (_Bool)isFeatureGroupThreeEnabled;
+- (_Bool)isFeatureGroupTwoEnabled;
+- (_Bool)isFeatureGroupOneEnabled;
+- (void)logExperimentExposureForInvocationFeedbacks;
+@property(readonly, nonatomic) unsigned long long featureGroups;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

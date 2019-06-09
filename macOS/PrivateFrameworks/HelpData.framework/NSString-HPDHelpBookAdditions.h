@@ -9,5 +9,9 @@
 @interface NSString (HPDHelpBookAdditions)
 - (id)addSSLAsNecessary;
 - (id)fileURL;
+- (unsigned long long)indexOfDifferenceWithString:(id)arg1 options:(unsigned long long)arg2;
+- (id)stringByUnescapingXMLEntities;
+- (id)stringByEscapingXMLEntities;
+- (id)URLByEscapingString;
 @end
 

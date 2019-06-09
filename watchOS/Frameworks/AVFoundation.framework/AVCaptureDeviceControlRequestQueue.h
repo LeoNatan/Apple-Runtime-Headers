@@ -9,6 +9,7 @@
 @class NSMutableArray;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceControlRequestQueue : NSObject
 {
     NSObject<OS_dispatch_queue> *_serialQueue;

@@ -10,6 +10,7 @@
 {
 }
 
++ (int)_intents_valueType;
 + (_Bool)allowsReverseTransformation;
 + (Class)reverseTransformedValueClass;
 + (Class)transformedValueClass;

@@ -10,6 +10,7 @@
 
 @class NSDate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface DDEventComponents : NSObject <NSSecureCoding>
 {
     NSString *_title;

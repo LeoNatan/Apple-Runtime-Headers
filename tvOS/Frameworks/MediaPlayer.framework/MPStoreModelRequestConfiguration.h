@@ -10,7 +10,7 @@
 
 @interface MPStoreModelRequestConfiguration : NSObject
 {
-    NSURLRequest *_URLRequest;
+    NSArray *_URLRequests;
     NSArray *_requestedItemIdentifiers;
     unsigned long long _itemMetadataRequestReason;
     long long _type;
@@ -19,9 +19,11 @@
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) unsigned long long itemMetadataRequestReason; // @synthesize itemMetadataRequestReason=_itemMetadataRequestReason;
 @property(readonly, nonatomic) NSArray *requestedItemIdentifiers; // @synthesize requestedItemIdentifiers=_requestedItemIdentifiers;
-@property(readonly, nonatomic) NSURLRequest *URLRequest; // @synthesize URLRequest=_URLRequest;
+@property(readonly, copy, nonatomic) NSArray *URLRequests; // @synthesize URLRequests=_URLRequests;
 - (void).cxx_destruct;
 - (id)initWithRequestedItemIdentifiers:(id)arg1 reason:(unsigned long long)arg2;
+@property(readonly, copy, nonatomic) NSURLRequest *URLRequest;
+- (id)initWithURLRequests:(id)arg1;
 - (id)initWithURLRequest:(id)arg1;
 
 @end

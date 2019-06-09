@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, TVPPlaybackProgressBarBackgroundMask;
+@class TVPPlaybackProgressBarBackgroundMask;
 
 __attribute__((visibility("hidden")))
 @interface TVPProgressBarView : UIView
@@ -16,22 +16,17 @@ __attribute__((visibility("hidden")))
     UIView *_barView;
     double _minProgress;
     double _maxProgress;
-    _Bool _alwaysAllowFocus;
-    double _minPlayheadLocation;
-    double _maxPlayheadLocation;
+    double _playheadStart;
+    double _playheadEnd;
 }
 
-@property(nonatomic) _Bool alwaysAllowFocus; // @synthesize alwaysAllowFocus=_alwaysAllowFocus;
 @property(readonly, nonatomic) UIView *barView; // @synthesize barView=_barView;
-@property(nonatomic) double maxPlayheadLocation; // @synthesize maxPlayheadLocation=_maxPlayheadLocation;
-@property(nonatomic) double minPlayheadLocation; // @synthesize minPlayheadLocation=_minPlayheadLocation;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (_Bool)canBecomeFocused;
-@property(copy, nonatomic) NSArray *adMarkers;
-- (void)setMinPlayheadLocation:(double)arg1 maxPlayheadLocation:(double)arg2;
+- (void)setPlayheadStart:(double)arg1 playheadEnd:(double)arg2;
+- (void)_updatePlayheadRange;
 - (void)setMinProgress:(double)arg1 maxProgress:(double)arg2 animated:(_Bool)arg3;
-- (_Bool)_isEligibleForFocusInteraction;
 - (id)_initWithFrame:(struct CGRect)arg1 barView:(id)arg2;
 - (id)initWithBarView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

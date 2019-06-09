@@ -6,7 +6,7 @@
 
 #import <UXKit/UXCollectionViewCell.h>
 
-@class NSImage, PXPersonImageRequest, UXImageView;
+@class NSImage, PXPersonImageRequest, UXImageView, UXView;
 
 @interface PXPeopleBootstrapCollectionViewCell : UXCollectionViewCell
 {
@@ -15,22 +15,20 @@
     BOOL _isVerified;
     unsigned long long _presentationStatus;
     PXPersonImageRequest *_imageRequest;
-    UXImageView *_checkmark;
+    UXView *_selectedCheckmarkView;
+    UXView *_unselectedCheckmarkView;
     UXImageView *_badgeView;
     UXImageView *_imageView;
-    NSImage *_confirmedImage;
-    NSImage *_unconfirmedImage;
     struct CGSize _checkmarkImageSize;
 }
 
 + (id)cloudErrorBadgeImage;
 + (id)cloudBadgeImage;
-@property(readonly, nonatomic) NSImage *unconfirmedImage; // @synthesize unconfirmedImage=_unconfirmedImage;
-@property(readonly, nonatomic) NSImage *confirmedImage; // @synthesize confirmedImage=_confirmedImage;
 @property(readonly, nonatomic) struct CGSize checkmarkImageSize; // @synthesize checkmarkImageSize=_checkmarkImageSize;
 @property(readonly, nonatomic) UXImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UXImageView *badgeView; // @synthesize badgeView=_badgeView;
-@property(readonly, nonatomic) UXImageView *checkmark; // @synthesize checkmark=_checkmark;
+@property(readonly, nonatomic) UXView *unselectedCheckmarkView; // @synthesize unselectedCheckmarkView=_unselectedCheckmarkView;
+@property(readonly, nonatomic) UXView *selectedCheckmarkView; // @synthesize selectedCheckmarkView=_selectedCheckmarkView;
 @property(nonatomic) BOOL isVerified; // @synthesize isVerified=_isVerified;
 @property(nonatomic) BOOL isMergeCandidate; // @synthesize isMergeCandidate=_isMergeCandidate;
 @property(retain, nonatomic) PXPersonImageRequest *imageRequest; // @synthesize imageRequest=_imageRequest;

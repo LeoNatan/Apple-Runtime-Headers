@@ -17,9 +17,11 @@
     long long _bundleSubscriptionStatus;
     long long _channelSubscriptionStatus;
     unsigned long long _viewingLocation;
+    double _contentScaleFactor;
     struct CGSize _viewportSize;
 }
 
+@property(readonly, nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;
 @property(readonly, nonatomic) unsigned long long viewingLocation; // @synthesize viewingLocation=_viewingLocation;
 @property(readonly, nonatomic) _Bool testing; // @synthesize testing=_testing;
 @property(readonly, nonatomic) long long channelSubscriptionStatus; // @synthesize channelSubscriptionStatus=_channelSubscriptionStatus;
@@ -33,7 +35,7 @@
 - (unsigned long long)hash;
 - (unsigned long long)diffWithLayoutOptions:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithColumnLayout:(id)arg1 viewportSize:(struct CGSize)arg2 traitCollection:(id)arg3 contentSizeCategory:(id)arg4 bundleSubscriptionStatus:(long long)arg5 channelSubscriptionStatus:(long long)arg6 testing:(_Bool)arg7 viewingLocation:(unsigned long long)arg8;
+- (id)initWithColumnLayout:(id)arg1 viewportSize:(struct CGSize)arg2 traitCollection:(id)arg3 contentSizeCategory:(id)arg4 bundleSubscriptionStatus:(long long)arg5 channelSubscriptionStatus:(long long)arg6 testing:(_Bool)arg7 viewingLocation:(unsigned long long)arg8 contentScaleFactor:(double)arg9;
 
 @end
 

@@ -10,31 +10,41 @@
 {
 }
 
++ (void)resumeNotificationQueue;
++ (void)suspendNotificationQueue;
 + (id)defaultsForTests;
 + (void)setUseMLModelForSelfIdForTests:(BOOL)arg1;
 + (void)setMessagesToProcessImmediatelyForTests:(long long)arg1;
 + (void)setSyncHistoryToCloudForTests:(BOOL)arg1;
 + (void)setAllowGeocodeForTests:(BOOL)arg1;
-+ (void)setShowEventsFoundInMailForTests:(BOOL)arg1;
-+ (void)setShowContactsFoundInMailForTests:(BOOL)arg1;
 + (void)setContactsDetectionEnabledForTests:(BOOL)arg1;
++ (void)setRemindersDetectionEnabledForTests:(BOOL)arg1;
 + (void)setStructuredEventsDetectionEnabledForTests:(BOOL)arg1;
 + (void)setNLEventsDetectionEnabledForTests:(BOOL)arg1;
-+ (void)setProactiveEnabledForTests:(BOOL)arg1;
 + (void)setShowCancelledEventsForTests:(BOOL)arg1;
 + (void)setHidePastEventsForTests:(BOOL)arg1;
 + (BOOL)hidePastEventsForTests;
++ (void)setShowOperatingSystemVersionInSnippets:(BOOL)arg1;
++ (BOOL)showOperatingSystemVersionInSnippets;
++ (void)setUseManateeSaltForHistory:(BOOL)arg1;
++ (BOOL)useManateeSaltForHistory;
 + (void)setCloudKitPersistedState:(id)arg1;
 + (id)cloudKitPersistedState;
 + (BOOL)shouldHarvestEvents;
++ (void)setDetectReminders:(BOOL)arg1;
++ (void)setDetectContacts:(BOOL)arg1;
++ (void)setDetectNLEvents:(BOOL)arg1;
++ (void)setDetectStructuredEvents:(BOOL)arg1;
++ (void)updateDetection:(BOOL)arg1 forKey:(id)arg2;
++ (BOOL)detectReminders;
 + (BOOL)detectStructuredEvents;
 + (BOOL)detectNLEvents;
 + (BOOL)detectContacts;
-+ (void)setUseMLModelForSelfId:(BOOL)arg1;
 + (void)setContactSharingNegativeSamplingRate:(float)arg1;
 + (float)contactSharingNegativeSamplingRate;
 + (void)setUseMLModelForContactSharing:(BOOL)arg1;
 + (BOOL)useMLModelForContactSharing;
++ (void)setUseMLModelForSelfId:(BOOL)arg1;
 + (BOOL)useMLModelForSelfId;
 + (void)setUseMLModelForContacts:(BOOL)arg1;
 + (BOOL)useMLModelForContacts;
@@ -42,8 +52,6 @@
 + (BOOL)allowAgeBasedPruning;
 + (void)setAllowGeocode:(BOOL)arg1;
 + (BOOL)allowGeocode;
-+ (void)setShowEventsFoundInMail:(BOOL)arg1;
-+ (void)setShowContactsFoundInMail:(BOOL)arg1;
 + (void)setSyncHistoryToCloud:(BOOL)arg1;
 + (BOOL)syncHistoryToCloud;
 + (void)setMessagesToProcessImmediately:(long long)arg1;
@@ -54,8 +62,6 @@
 + (BOOL)showSuggestionsCalendar;
 + (void)setHashedSessionsLogging:(int)arg1;
 + (long long)hashedSessionsLogging;
-+ (BOOL)showEventsFoundInMail;
-+ (BOOL)showContactsFoundInMail;
 + (void)setOnlyShowSignificantNLEvents:(BOOL)arg1;
 + (BOOL)onlyShowSignificantNLEvents;
 + (void)setOnlyShowSignificantPseudoContacts:(BOOL)arg1;
@@ -68,6 +74,10 @@
 + (BOOL)showPastEvents;
 + (long long)suggestionsLogLevel;
 + (void)resetAllPreferences;
++ (void)setShowEventsFoundInMail:(BOOL)arg1;
++ (BOOL)showEventsFoundInMail;
++ (void)setShowContactsFoundInMail:(BOOL)arg1;
++ (BOOL)showContactsFoundInMail;
 
 @end
 

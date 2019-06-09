@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _Bool _showsBackgroundComponentHighlights;
     _Bool _showsBackgroundViewHighlight;
     _Bool _showsContentViewHighlight;
+    _Bool _contentExtendsOverArrow;
     _Bool _chromeHidden;
     UIActionSheet *_presentedActionSheet;
     UIPopoverController *_popoverController;
@@ -25,12 +26,14 @@ __attribute__((visibility("hidden")))
 
 + (id)popoverViewContainingView:(id)arg1;
 @property(nonatomic) _Bool chromeHidden; // @synthesize chromeHidden=_chromeHidden;
+@property(readonly, nonatomic) _Bool contentExtendsOverArrow; // @synthesize contentExtendsOverArrow=_contentExtendsOverArrow;
 @property(nonatomic) UIPopoverController *popoverController; // @synthesize popoverController=_popoverController;
 @property(retain, nonatomic) UIActionSheet *presentedActionSheet; // @synthesize presentedActionSheet=_presentedActionSheet;
 @property(nonatomic) _Bool showsContentViewHighlight; // @synthesize showsContentViewHighlight=_showsContentViewHighlight;
 @property(nonatomic) _Bool showsBackgroundViewHighlight; // @synthesize showsBackgroundViewHighlight=_showsBackgroundViewHighlight;
 @property(nonatomic) _Bool showsBackgroundComponentHighlights; // @synthesize showsBackgroundComponentHighlights=_showsBackgroundComponentHighlights;
 - (void).cxx_destruct;
+- (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (void)prepareForAnimatedTransitioningWithCoordinator:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_hideArrow;
@@ -43,8 +46,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long backgroundStyle;
 @property(nonatomic) unsigned long long arrowDirection;
 @property(nonatomic) double arrowOffset;
-- (_Bool)_backgroundNeedsSeperateBlending;
-- (void)_updateContentBlendingColor;
 - (_Bool)_allowsCustomizationOfContent;
 - (void)_setPopoverContentView:(id)arg1;
 - (struct CGRect)_snapshotBounds;
@@ -59,10 +60,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)_needsLayoutOnAnimatedFrameChangeForNewFrame:(struct CGRect)arg1;
 - (int)_style;
 - (void)layoutSubviews;
+- (struct UIEdgeInsets)safeAreaInsetsForContentView;
 - (void)_layoutToolbarShine;
 - (void)willMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 backgroundViewClass:(Class)arg2 embeddedInView:(_Bool)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 backgroundViewClass:(Class)arg2 embeddedInView:(_Bool)arg3 contentExtendsOverArrow:(_Bool)arg4;
 - (id)initWithFrame:(struct CGRect)arg1 backgroundViewClass:(Class)arg2;
 
 @end

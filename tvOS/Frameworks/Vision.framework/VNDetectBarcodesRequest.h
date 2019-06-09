@@ -25,7 +25,7 @@
 @property(copy, nonatomic) NSArray *symbologies;
 - (_Bool)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)_barcodesDetectedInImageBuffer:(id)arg1 usingACBSConfig:(struct ACBSConfig *)arg2 requestRevision:(unsigned long long)arg3 error:(id *)arg4;
-- (id)newBarcodeObservationForACBSBarcodeInfo:(id)arg1 imageWidth:(unsigned long long)arg2 imageHeight:(unsigned long long)arg3 roiCroppingPixelRect:(struct CGRect)arg4 scanConfidence:(float)arg5 requestRevision:(unsigned long long)arg6 error:(id *)arg7;
+- (id)newBarcodeObservationForACBSBarcodeInfo:(id)arg1 imageWidth:(unsigned long long)arg2 imageHeight:(unsigned long long)arg3 roiCroppingPixelRect:(struct CGRect)arg4 requestRevision:(unsigned long long)arg5 error:(id *)arg6;
 - (_Bool)_getCornerPointsFromCodeLocationPoints:(id)arg1 bottomLeft:(struct CGPoint *)arg2 topLeft:(struct CGPoint *)arg3 topRight:(struct CGPoint *)arg4 bottomRight:(struct CGPoint *)arg5;
 - (struct ACBSConfig *)_createACBSConfigAndReturnError:(id *)arg1;
 - (int)_ACBarcodeRecognizerLocateMode;

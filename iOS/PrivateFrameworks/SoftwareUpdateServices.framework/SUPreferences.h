@@ -40,13 +40,15 @@
     _Bool _autoUpdateForceOn;
     _Bool _autoUpdateForceOff;
     _Bool _automaticUpdateV2Enabled;
-    _Bool _backgroundDLKnownBuilds;
     NSNumber *_bannerDelay;
+    _Bool _autoDownloadDeletedBuild;
+    _Bool _backgroundDLKnownBuilds;
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) NSNumber *bannerDelay; // @synthesize bannerDelay=_bannerDelay;
 @property(readonly, nonatomic) _Bool backgroundDLKnownBuilds; // @synthesize backgroundDLKnownBuilds=_backgroundDLKnownBuilds;
+@property(readonly, nonatomic) _Bool autoDownloadDeletedBuild; // @synthesize autoDownloadDeletedBuild=_autoDownloadDeletedBuild;
+@property(readonly, nonatomic) NSNumber *bannerDelay; // @synthesize bannerDelay=_bannerDelay;
 @property(nonatomic, setter=enableAutomaticUpdateV2:) _Bool isAutomaticUpdateV2Enabled; // @synthesize isAutomaticUpdateV2Enabled=_automaticUpdateV2Enabled;
 @property(readonly, nonatomic) _Bool autoUpdateForceOff; // @synthesize autoUpdateForceOff=_autoUpdateForceOff;
 @property(readonly, nonatomic) _Bool autoUpdateForceOn; // @synthesize autoUpdateForceOn=_autoUpdateForceOn;

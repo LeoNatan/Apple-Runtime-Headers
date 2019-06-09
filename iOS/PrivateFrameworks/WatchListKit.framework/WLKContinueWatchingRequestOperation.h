@@ -4,13 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WatchListKit/WLKNetworkRequestOperation.h>
+#import <WatchListKit/WLKUTSNetworkRequestOperation.h>
 
-@interface WLKContinueWatchingRequestOperation : WLKNetworkRequestOperation
+@class WLKContinueWatchingResponse;
+
+@interface WLKContinueWatchingRequestOperation : WLKUTSNetworkRequestOperation
 {
+    WLKContinueWatchingResponse *_response;
 }
 
-- (id)responseProcessor;
+@property(retain, nonatomic) WLKContinueWatchingResponse *response; // @synthesize response=_response;
+- (void).cxx_destruct;
+- (void)_donateMediaItems:(id)arg1;
+- (void)processResponse;
+- (id)initWithQueryParameters:(id)arg1;
+- (id)initWithCaller:(id)arg1 options:(long long)arg2;
 - (id)init;
 
 @end

@@ -20,12 +20,16 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_group> *_recordsBeingFetchedGroup;
     NSObject<OS_dispatch_group> *_operationGroup;
     NSObject<OS_dispatch_source> *_xattrFetchingSource;
+    NSMutableArray *_recordsNeedingDeserialize;
+    NSObject<OS_dispatch_group> *_deserializeGroup;
+    NSObject<OS_dispatch_source> *_deserializeSource;
     NSError *_error;
     BOOL _isDoneFetchingRecords;
 }
 
 - (void).cxx_destruct;
 - (void)_scheduleXattrFetch;
+- (void)_scheduleDeserialize;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
 - (void)stop;
@@ -33,10 +37,12 @@ __attribute__((visibility("hidden")))
 - (void)stopWithError:(id)arg1;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 - (void)startWithParentOperation:(struct _BRCOperation *)arg1;
-- (void)waitUntilRecordsAreFetched;
+- (void)notifyWhenRecordsAreFetched:(CDUnknownBlockType)arg1;
+- (void)waitUntilRecordsAreFetchedInsideOperation:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *recordsByID; // @synthesize recordsByID=_recordsByID;
 - (void)removeAllRecords;
 - (void)removeRecordByID:(id)arg1;
+- (void)addRecordIDToDeserialize:(id)arg1;
 - (void)addRecord:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)createActivity;

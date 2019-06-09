@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsSignificantOperationalEvent : PBCodable <NSCopying>
 {
     long long _errorCode;

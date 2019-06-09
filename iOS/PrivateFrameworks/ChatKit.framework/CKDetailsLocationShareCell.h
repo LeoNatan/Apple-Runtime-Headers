@@ -10,6 +10,7 @@
 
 @class NSString, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface CKDetailsLocationShareCell : CKDetailsCell <CKDetailsCell>
 {
     _Bool _showOfferTimeRemaining;

@@ -14,6 +14,7 @@
 + (id)descriptionForNSInterval:(unsigned long long)arg1;
 + (id)descriptionForTimeInterval:(double)arg1;
 + (id)LTRString:(id)arg1;
++ (id)stringFromFourCharCode:(unsigned int)arg1;
 + (const char *)safeCString:(id)arg1;
 + (id)mapCollection:(id)arg1 transformation:(CDUnknownBlockType)arg2;
 + (id)base64ToHexMapForBase64Strings:(id)arg1;

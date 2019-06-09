@@ -23,5 +23,8 @@
 - (_Bool)pkui_setFrame:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (void)pkui_smallShakeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)pkui_shakeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+- (void)pkui_setMaskType:(unsigned int)arg1;
 @end
 

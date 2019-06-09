@@ -6,11 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+__attribute__((visibility("hidden")))
 @interface AVTouchIgnoringView : UIView
 {
 }
 
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)setHidden:(_Bool)arg1;
 
 @end
 

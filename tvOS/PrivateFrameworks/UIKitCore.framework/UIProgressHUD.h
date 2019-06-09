@@ -6,11 +6,11 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UIImageView, UILabel, UIProgressIndicator, UIWindow;
+@class UIActivityIndicatorView, UIImageView, UILabel, UIWindow;
 
 @interface UIProgressHUD : UIView
 {
-    UIProgressIndicator *_progressIndicator;
+    UIActivityIndicatorView *_progressIndicator;
     UILabel *_progressMessage;
     UIImageView *_doneView;
     UIWindow *_parentWindow;
@@ -32,7 +32,6 @@
 - (void)setShowsText:(_Bool)arg1;
 - (void)setText:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)_progressIndicator;
 - (void)show:(_Bool)arg1;
 - (id)initWithWindow:(id)arg1;
 

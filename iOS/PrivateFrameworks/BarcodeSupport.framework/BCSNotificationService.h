@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_didReceiveNotificationResponse:(id)arg1;
+- (void)didReceiveNotificationResponse:(id)arg1;
 - (void)_cancelNotificationsForCodeType:(long long)arg1;
 - (void)cancelNotificationsForCodeType:(long long)arg1;
 - (void)notifyParsedCodeWithData:(id)arg1 codePayload:(id)arg2 shouldReplacePreviousNotifications:(_Bool)arg3 reply:(CDUnknownBlockType)arg4;

@@ -15,6 +15,7 @@
 {
     _Bool _cleanUp_running;
     _Bool _testBehavior_disableAutomaticCleanup;
+    NSObject<OS_dispatch_queue> *_underlyingDelegateQueue;
     NSObject<OS_dispatch_queue> *_sessionCreation_queue;
     NSObject<OS_dispatch_queue> *_cleanUp_queue;
     C2RoutingTable *_routingTable;
@@ -31,6 +32,7 @@
 @property(nonatomic) _Bool cleanUp_running; // @synthesize cleanUp_running=_cleanUp_running;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cleanUp_queue; // @synthesize cleanUp_queue=_cleanUp_queue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *sessionCreation_queue; // @synthesize sessionCreation_queue=_sessionCreation_queue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *underlyingDelegateQueue; // @synthesize underlyingDelegateQueue=_underlyingDelegateQueue;
 - (void).cxx_destruct;
 - (void)C2Session:(id)arg1 originalHost:(id)arg2 updatedRoute:(id)arg3;
 - (void)C2Session:(id)arg1 didBecomeInvalidWithError:(id)arg2;

@@ -10,7 +10,7 @@
 #import <VideoSubscriberAccountUI/VSApplicationDelegate-Protocol.h>
 #import <VideoSubscriberAccountUI/VSStateMachineDelegate-Protocol.h>
 
-@class JSValue, NSError, NSOperationQueue, NSString, VSAppDocumentController, VSApplication, VSApplicationControllerResponseHandler, VSAuditToken, VSIdentityProvider, VSPreferences, VSStateMachine;
+@class JSValue, NSError, NSOperationQueue, NSString, NSURL, VSAppDocumentController, VSApplication, VSApplicationControllerResponseHandler, VSAuditToken, VSIdentityProvider, VSPreferences, VSStateMachine;
 @protocol VSApplicationControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     VSStateMachine *_stateMachine;
     NSError *_delegateError;
     NSError *_onLaunchError;
+    NSURL *_fetchedURL;
     NSOperationQueue *_privateQueue;
     VSApplication *_application;
     VSApplicationControllerResponseHandler *_responseHandler;
@@ -38,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VSApplicationControllerResponseHandler *responseHandler; // @synthesize responseHandler=_responseHandler;
 @property(retain) VSApplication *application; // @synthesize application=_application;
 @property(retain, nonatomic) NSOperationQueue *privateQueue; // @synthesize privateQueue=_privateQueue;
+@property(retain, nonatomic) NSURL *fetchedURL; // @synthesize fetchedURL=_fetchedURL;
 @property(retain) NSError *onLaunchError; // @synthesize onLaunchError=_onLaunchError;
 @property(retain) NSError *delegateError; // @synthesize delegateError=_delegateError;
 @property(retain, nonatomic) VSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
@@ -79,6 +81,7 @@ __attribute__((visibility("hidden")))
 - (void)transitionToNotifyingOfLaunchFailureState;
 - (void)transitionToReadyState;
 - (void)transitionToWaitingForBothLaunchCallbacksState;
+- (void)transitionToWaitingForBootUrlState;
 - (void)dealloc;
 - (id)initWithIdentityProvider:(id)arg1;
 - (id)init;

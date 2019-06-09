@@ -11,6 +11,7 @@
 @interface PLProcessMonitorAgent : PLAgent
 {
     BOOL _firstBoot;
+    BOOL _launchServiceStatsEnabled;
     NSDate *_currentCachedDate;
     NSDate *_previousCacheDate;
     double _currentCachedTotalCPUTime;
@@ -20,11 +21,13 @@
     NSMutableSet *_processes;
     NSDictionary *_lastThreadIdToKTMonitorEntryDict;
     NSDate *_lastEntryDate;
+    long long _processExitSummaryCount;
 }
 
 + (unsigned long long)PIDToCoalitionID:(int)arg1;
 + (id)defaults;
 + (id)entryEventNoneDefinitions;
++ (id)entryEventBackwardProcessExitHistogram;
 + (id)entryEventIntervalDefinitionKernelTaskMonitor;
 + (id)entryEventIntervalDefinitionProcessMonitorDiff;
 + (id)entryEventBackwardDefinitionProcessPeakMemory;
@@ -33,11 +36,13 @@
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardProcessID;
 + (id)entryEventForwardDefinitions;
-+ (id)entryEventPointDefinitionProcessMemory;
++ (id)entryEventPointProcessExit;
 + (id)entryEventPointProcessSnapshot;
 + (id)entryEventPointMemoryTracking;
 + (id)entryEventPointDefinitions;
 + (void)load;
+@property long long processExitSummaryCount; // @synthesize processExitSummaryCount=_processExitSummaryCount;
+@property BOOL launchServiceStatsEnabled; // @synthesize launchServiceStatsEnabled=_launchServiceStatsEnabled;
 @property(retain) NSDate *lastEntryDate; // @synthesize lastEntryDate=_lastEntryDate;
 @property(retain) NSDictionary *lastThreadIdToKTMonitorEntryDict; // @synthesize lastThreadIdToKTMonitorEntryDict=_lastThreadIdToKTMonitorEntryDict;
 @property(retain) NSMutableSet *processes; // @synthesize processes=_processes;
@@ -55,9 +60,11 @@
 - (void)logEventIntervalProcessMonitorIntervalUsingCache;
 - (void)logEventIntervalProcessMonitorInterval;
 - (void)logEventBackwardProcessPeakMemoryUsingCache;
-- (void)logEventPointProcessMemoryUsingCache;
 - (void)logEventBackwardProcessMonitorUsingCache;
 - (void)logEventBackwardProcessMonitor;
+- (void)logEventBackwardProcessExitHistogram:(id)arg1 withStats:(CDStruct_d790cdc7 *)arg2 withDate:(id)arg3;
+- (void)logEventPointProcessExit:(id)arg1 withLabelCount:(id)arg2 withStats:(CDStruct_d790cdc7 *)arg3 withDate:(id)arg4 withNowInSec:(unsigned long long)arg5;
+- (void)logProcessExit;
 - (void)logEventPointProcessSnapshot;
 - (void)logEventPointMemoryTracking;
 - (void)log;
@@ -67,6 +74,8 @@
 - (id)eventForwardProcessIDForPID:(int)arg1;
 - (BOOL)isCachedForProcessID:(int)arg1;
 - (BOOL)isCachedForProcessID:(int)arg1 andName:(id)arg2;
+- (void)disableProcessExitLogging;
+- (void)enableProcessExitLogging;
 - (void)initTaskOperatorDependancies;
 - (void)initOperatorDependancies;
 - (void)processesOfInterest:(id)arg1;

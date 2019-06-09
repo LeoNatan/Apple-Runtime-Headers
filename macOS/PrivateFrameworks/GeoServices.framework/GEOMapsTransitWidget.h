@@ -12,23 +12,21 @@
 
 @interface GEOMapsTransitWidget : PBCodable <NSCopying>
 {
-    int _tappedItemIndex;
     NSMutableArray *_transitIncidentItems;
+    int _tappedItemIndex;
     int _transitMessageType;
     BOOL _everExpanded;
     BOOL _initiallyExpanded;
     struct {
-        unsigned int tappedItemIndex:1;
-        unsigned int transitMessageType:1;
-        unsigned int everExpanded:1;
-        unsigned int initiallyExpanded:1;
-    } _has;
+        unsigned int has_tappedItemIndex:1;
+        unsigned int has_transitMessageType:1;
+        unsigned int has_everExpanded:1;
+        unsigned int has_initiallyExpanded:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)transitIncidentItemType;
-@property(nonatomic) BOOL everExpanded; // @synthesize everExpanded=_everExpanded;
-@property(nonatomic) BOOL initiallyExpanded; // @synthesize initiallyExpanded=_initiallyExpanded;
-@property(retain, nonatomic) NSMutableArray *transitIncidentItems; // @synthesize transitIncidentItems=_transitIncidentItems;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,20 +35,24 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasTappedItemIndex;
-@property(nonatomic) int tappedItemIndex; // @synthesize tappedItemIndex=_tappedItemIndex;
+@property(nonatomic) int tappedItemIndex;
 @property(nonatomic) BOOL hasEverExpanded;
+@property(nonatomic) BOOL everExpanded;
 @property(nonatomic) BOOL hasInitiallyExpanded;
+@property(nonatomic) BOOL initiallyExpanded;
 - (id)transitIncidentItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)transitIncidentItemsCount;
 - (void)addTransitIncidentItem:(id)arg1;
 - (void)clearTransitIncidentItems;
+@property(retain, nonatomic) NSMutableArray *transitIncidentItems;
 - (int)StringAsTransitMessageType:(id)arg1;
 - (id)transitMessageTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasTransitMessageType;
-@property(nonatomic) int transitMessageType; // @synthesize transitMessageType=_transitMessageType;
+@property(nonatomic) int transitMessageType;
 
 @end
 

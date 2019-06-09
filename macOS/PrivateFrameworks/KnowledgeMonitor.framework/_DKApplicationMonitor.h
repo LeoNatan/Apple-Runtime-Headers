@@ -24,12 +24,14 @@
 @property(nonatomic) void *lsNotificationID; // @synthesize lsNotificationID=_lsNotificationID;
 - (void).cxx_destruct;
 - (void)synchronouslyReflectCurrentValue;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
 - (void)platformSpecificStop;
 - (void)platformSpecificStart;
 - (void)obtainCurrentValue;
 - (void)registerForAppChangeNotifications;
+- (void)dealloc;
 
 @end
 

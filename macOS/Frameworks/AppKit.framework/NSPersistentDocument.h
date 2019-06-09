@@ -15,8 +15,6 @@
     id _store;
     unsigned long long _pDocFlags;
     id _relatedRequestURLs;
-    void *_reserved3;
-    void *_reserved4;
 }
 
 + (BOOL)_hasOverrideForSelector:(SEL)arg1 fromBaseClass:(Class)arg2;

@@ -6,37 +6,35 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaClientTransportEventMetadata-Protocol.h>
 
-@class NSString;
+@class NSData, NSString;
 
-@interface SISchemaClientTransportEventMetadata : PBCodable <NSCopying>
+@interface SISchemaClientTransportEventMetadata : PBCodable <SISchemaClientTransportEventMetadata, NSSecureCoding>
 {
-    long long _eventTransmittedRelativeToBootTimeTimestampNs;
-    long long _serverArrivedTimestampMs;
     NSString *_eventTransmittedTimestampRefId;
-    struct {
-        unsigned int eventTransmittedRelativeToBootTimeTimestampNs:1;
-        unsigned int serverArrivedTimestampMs:1;
-    } _has;
+    long long _eventTransmittedRelativeToBootTimeTimestampNs;
+    long long _serverArrivedTimestampNs;
 }
 
-@property(nonatomic) long long serverArrivedTimestampMs; // @synthesize serverArrivedTimestampMs=_serverArrivedTimestampMs;
+@property(nonatomic) long long serverArrivedTimestampNs; // @synthesize serverArrivedTimestampNs=_serverArrivedTimestampNs;
 @property(nonatomic) long long eventTransmittedRelativeToBootTimeTimestampNs; // @synthesize eventTransmittedRelativeToBootTimeTimestampNs=_eventTransmittedRelativeToBootTimeTimestampNs;
-@property(retain, nonatomic) NSString *eventTransmittedTimestampRefId; // @synthesize eventTransmittedTimestampRefId=_eventTransmittedTimestampRefId;
+@property(copy, nonatomic) NSString *eventTransmittedTimestampRefId; // @synthesize eventTransmittedTimestampRefId=_eventTransmittedTimestampRefId;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasServerArrivedTimestampMs;
-@property(nonatomic) _Bool hasEventTransmittedRelativeToBootTimeTimestampNs;
-@property(readonly, nonatomic) _Bool hasEventTransmittedTimestampRefId;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

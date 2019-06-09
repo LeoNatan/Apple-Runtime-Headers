@@ -6,15 +6,26 @@
 
 #import <ContactsUI/CNPropertySimpleTransportCell.h>
 
+@class UIImageView;
+
 __attribute__((visibility("hidden")))
 @interface CNPropertyPhoneNumberCell : CNPropertySimpleTransportCell
 {
+    _Bool _emergencyPhoneNumber;
+    UIImageView *_emergencyImageView;
 }
 
+@property(retain, nonatomic) UIImageView *emergencyImageView; // @synthesize emergencyImageView=_emergencyImageView;
+@property(nonatomic, getter=isEmergencyPhoneNumber) _Bool emergencyPhoneNumber; // @synthesize emergencyPhoneNumber=_emergencyPhoneNumber;
+- (void).cxx_destruct;
 - (void)copy:(id)arg1;
 - (void)updateTransportButtons;
+- (void)buildEmergencyImageView;
+- (void)updateEmergencyBadge;
 - (_Bool)shouldPerformDefaultAction;
+- (_Bool)shouldShowEmergencyBadge;
 - (void)setProperty:(id)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

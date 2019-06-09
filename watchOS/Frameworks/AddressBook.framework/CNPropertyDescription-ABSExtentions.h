@@ -9,7 +9,7 @@
 @interface CNPropertyDescription (ABSExtentions)
 - (id)CNValueFromABSValue:(void *)arg1;
 - (const void *)ABSValueFromCNValue:(id)arg1;
-- (_Bool)isValidABSValue:(void *)arg1 error:(struct __CFError **)arg2;
+- (_Bool)convertABSValue:(void *)arg1 toCNValue:(id *)arg2 error:(struct __CFError **)arg3;
 - (unsigned int)absPropertyType;
 - (_Bool)absPropertyID:(int *)arg1;
 @end

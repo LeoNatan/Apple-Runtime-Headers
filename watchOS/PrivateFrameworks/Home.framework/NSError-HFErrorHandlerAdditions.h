@@ -8,7 +8,16 @@
 
 @interface NSError (HFErrorHandlerAdditions)
 + (id)hf_errorWithCode:(int)arg1 operation:(id)arg2 options:(id)arg3;
++ (id)hf_internalErrorWithDescription:(id)arg1;
++ (id)hf_errorWithCode:(int)arg1 descriptionFormat:(id)arg2 arguments:(char *)arg3;
++ (id)hf_errorWithCode:(int)arg1 descriptionFormat:(id)arg2;
++ (id)hf_errorWithCode:(int)arg1;
 - (id)hf_errorWithOperationType:(id)arg1 failedItemName:(id)arg2;
 - (id)hf_errorWithOperationType:(id)arg1 options:(id)arg2;
+- (_Bool)hf_isHMErrorWithCodePrivate:(int)arg1;
+- (_Bool)hf_isHMErrorWithCode:(int)arg1;
+- (_Bool)hf_isHFErrorWithCode:(int)arg1;
+@property(readonly, nonatomic) _Bool hf_isHomeKitUnreachableError;
+@property(readonly, nonatomic) _Bool hf_isHomeKitNamingError;
 @end
 

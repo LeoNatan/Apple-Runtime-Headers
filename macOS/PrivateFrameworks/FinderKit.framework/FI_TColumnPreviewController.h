@@ -9,7 +9,7 @@
 #import <FinderKit/TCoalescingNodeObserverProtocol-Protocol.h>
 #import <FinderKit/TTrackingAreaOwnerProtocol-Protocol.h>
 
-@class FI_TColumnPreviewHeaderViewController, FI_TColumnPreviewInfoViewController, FI_TColumnPreviewViewController, FI_TPreviewOptions, NSLayoutConstraint, NSStackView, NSString;
+@class FI_TColumnPreviewHeaderViewController, FI_TColumnPreviewInfoViewController, FI_TColumnPreviewViewController, FI_TContainerLayoutManager, FI_TPreviewOptions, NSLayoutConstraint, NSStackView, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FI_TColumnPreviewController : FI_TViewController <TCoalescingNodeObserverProtocol, TTrackingAreaOwnerProtocol>
@@ -56,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)updateScrollStateForContent;
 - (double)columnViewHorizontalScrollerHeight:(id)arg1;
 - (id)browserScrollViewForScrollView:(id)arg1;
+@property(retain, nonatomic) FI_TContainerLayoutManager *containerLayoutManager;
 - (void)updateSubviewContentInsets:(struct NSEdgeInsets)arg1;
 - (void)updateMinHeightConstraintForView:(id)arg1;
 - (void)viewDidMoveToWindow;
@@ -67,7 +68,6 @@ __attribute__((visibility("hidden")))
 - (void)viewLoaded;
 - (void)aboutToTearDown;
 - (void)initCommon;
-- (id)init;
 - (id)initWithContainerLayoutManager:(id)arg1;
 
 // Remaining properties

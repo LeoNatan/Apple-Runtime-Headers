@@ -8,10 +8,11 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPResponseOperationResultErrorClient, CKDPResponseOperationResultErrorExtension, CKDPResponseOperationResultErrorServer, NSString;
+@class CKDPResponseOperationResultErrorAuxiliaryError, CKDPResponseOperationResultErrorClient, CKDPResponseOperationResultErrorExtension, CKDPResponseOperationResultErrorServer, NSString;
 
 @interface CKDPResponseOperationResultError : PBCodable <NSCopying>
 {
+    CKDPResponseOperationResultErrorAuxiliaryError *_auxiliaryError;
     CKDPResponseOperationResultErrorClient *_clientError;
     NSString *_errorDescription;
     NSString *_errorInternal;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) NSString *errorKey; // @synthesize errorKey=_errorKey;
 @property(retain, nonatomic) NSString *errorDescription; // @synthesize errorDescription=_errorDescription;
 @property(nonatomic) int retryAfterSeconds; // @synthesize retryAfterSeconds=_retryAfterSeconds;
+@property(retain, nonatomic) CKDPResponseOperationResultErrorAuxiliaryError *auxiliaryError; // @synthesize auxiliaryError=_auxiliaryError;
 @property(retain, nonatomic) CKDPResponseOperationResultErrorExtension *extensionError; // @synthesize extensionError=_extensionError;
 @property(retain, nonatomic) CKDPResponseOperationResultErrorServer *serverError; // @synthesize serverError=_serverError;
 @property(retain, nonatomic) CKDPResponseOperationResultErrorClient *clientError; // @synthesize clientError=_clientError;
@@ -45,6 +47,7 @@
 @property(readonly, nonatomic) _Bool hasErrorKey;
 @property(readonly, nonatomic) _Bool hasErrorDescription;
 @property(nonatomic) _Bool hasRetryAfterSeconds;
+@property(readonly, nonatomic) _Bool hasAuxiliaryError;
 @property(readonly, nonatomic) _Bool hasExtensionError;
 @property(readonly, nonatomic) _Bool hasServerError;
 @property(readonly, nonatomic) _Bool hasClientError;

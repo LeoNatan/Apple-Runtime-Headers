@@ -6,18 +6,18 @@
 
 #import <Mail/MFEWSMessageActionSyncOperation.h>
 
-@class MFEWSFlagChangeMessageAction;
+@class ECFlagChangeMessageAction;
 
 @interface MFEWSFlagChangeSyncOperation : MFEWSMessageActionSyncOperation
 {
 }
 
-- (BOOL)_batchedSetFlagsForItems:(id)arg1 inFolder:(id)arg2 messageType:(BOOL)arg3 flagChanges:(id)arg4 error:(id *)arg5;
+- (BOOL)_batchedSetFlagsForItems:(id)arg1 inFolder:(id)arg2 messageType:(BOOL)arg3 flagChange:(id)arg4 error:(id *)arg5;
 - (void)main;
 - (id)initWithMessageAction:(id)arg1;
 
 // Remaining properties
-@property(readonly, nonatomic) MFEWSFlagChangeMessageAction *messageAction; // @dynamic messageAction;
+@property(readonly, nonatomic) ECFlagChangeMessageAction *messageAction; // @dynamic messageAction;
 
 @end
 

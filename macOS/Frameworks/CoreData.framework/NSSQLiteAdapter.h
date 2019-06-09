@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (id)generateStatementForCheckingMulticolumnConstraint:(id)arg1 onObjects:(id)arg2 usingSQLCore:(id)arg3;
 + (id)generateSubselectForColumn:(id)arg1 givenObjects:(id)arg2;
-+ (id)generateStatementForCheckingUniqueAttributesOnObjects:(id)arg1 usingSQLCore:(id)arg2;
++ (id)generateStatementForCheckingUniquePropertiesOnObjects:(id)arg1 usingSQLCore:(id)arg2;
 - (id)createSQLStatementsForRTreeTriggersForLocationAttribute:(id)arg1 withSQLEntity:(id)arg2 existingRtreeTables:(id)arg3;
 - (id)createSQLStatementsForTriggerAttribute:(id)arg1 withSQLEntity:(id)arg2;
 - (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inManyToMany:(id)arg2;
@@ -38,8 +38,8 @@ __attribute__((visibility("hidden")))
 - (id)newCreateTriggersForEntity:(id)arg1 existingRtreeTables:(id)arg2;
 - (id)newCreateIndexStatementsForEntity:(id)arg1;
 - (id)newCreateIndexStatementsForEntity:(id)arg1 defaultIndicesOnly:(BOOL)arg2;
-- (id)newCreateRTreeIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
-- (id)newCreateBinaryIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
+- (id)generateRTreeIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
+- (id)generateBinaryIndexStatementsForIndex:(id)arg1 onEntity:(id)arg2;
 - (id)newCreateIndexStatementForColumns:(id)arg1 name:(id)arg2;
 - (id)newCreateIndexStatementForColumn:(id)arg1;
 - (id)newCreateIndexStatementForCorrelationTable:(id)arg1;

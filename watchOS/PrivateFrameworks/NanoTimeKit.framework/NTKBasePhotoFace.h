@@ -10,13 +10,13 @@
 {
 }
 
++ (id)_orderedComplicationSlots;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_complicationSlotDescriptors;
 + (_Bool)_customEditModeIsRows:(int)arg1 forDevice:(id)arg2;
 - (id)_resourceDirectorySnapshotKey;
 - (_Bool)_allowsEditing;
 - (id)_localizedNameForComplicationSlot:(id)arg1;
-- (id)_orderedComplicationSlots;
-- (id)_complicationSlotDescriptors;
 - (id)_complicationMigrationPaths;
 
 @end

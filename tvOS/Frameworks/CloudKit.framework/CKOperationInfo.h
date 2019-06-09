@@ -28,9 +28,15 @@
     CKOperationGroup *_group;
     CKOperationConfiguration *_perOpConfiguration;
     id _parentOperation;
+    unsigned long long _duetPreClearedMode;
+    unsigned long long _discretionaryWhenBackgroundedState;
+    unsigned long long _systemScheduler;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned long long systemScheduler; // @synthesize systemScheduler=_systemScheduler;
+@property(nonatomic) unsigned long long discretionaryWhenBackgroundedState; // @synthesize discretionaryWhenBackgroundedState=_discretionaryWhenBackgroundedState;
+@property(nonatomic) unsigned long long duetPreClearedMode; // @synthesize duetPreClearedMode=_duetPreClearedMode;
 @property(nonatomic) _Bool wantsRequestStatistics; // @synthesize wantsRequestStatistics=_wantsRequestStatistics;
 @property(nonatomic) __weak id parentOperation; // @synthesize parentOperation=_parentOperation;
 @property(nonatomic) unsigned int clientSDKVersion; // @synthesize clientSDKVersion=_clientSDKVersion;

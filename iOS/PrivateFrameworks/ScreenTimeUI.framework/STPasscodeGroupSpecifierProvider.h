@@ -8,6 +8,7 @@
 
 @class PSSpecifier;
 
+__attribute__((visibility("hidden")))
 @interface STPasscodeGroupSpecifierProvider : STRootGroupSpecifierProvider
 {
     PSSpecifier *_togglePasscodeSpecifier;

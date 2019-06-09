@@ -18,6 +18,11 @@
 @property(nonatomic) double xFov;
 @property(nonatomic) unsigned long long categoryBitMask;
 @property(readonly, nonatomic) SCNMaterialProperty *colorGrading;
+@property(nonatomic) double whiteBalanceTint;
+@property(nonatomic) double whiteBalanceTemperature;
+@property(nonatomic) double grainIsColored;
+@property(nonatomic) double grainScale;
+@property(nonatomic) double grainIntensity;
 @property(nonatomic) double contrast;
 @property(nonatomic) double saturation;
 @property(nonatomic) double colorFringeIntensity;
@@ -26,6 +31,7 @@
 @property(nonatomic) double vignettingPower;
 @property(nonatomic) double bloomBlurRadius;
 @property(nonatomic) double bloomIntensity;
+@property(nonatomic) unsigned long long bloomIterationSpread;
 @property(nonatomic) unsigned long long bloomIteration;
 @property(nonatomic) double bloomThreshold;
 @property(nonatomic) double maximumExposure;

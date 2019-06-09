@@ -8,7 +8,7 @@
 
 #import <FinderKit/NSStackViewDelegate-Protocol.h>
 
-@class FI_TButton, FI_TPopUpButton, FI_TScopeBarRadioGroupView, FI_TTextField, NSLayoutConstraint, NSStackView, NSString;
+@class FI_TButton, FI_TPopUpButton, FI_TScopeBarRadioGroupView, FI_TTextField, NSLayoutConstraint, NSObject, NSStackView, NSString;
 @protocol TSearchScopeSliceControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -24,10 +24,9 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_scopeDropdownMinWidthConstraint;
     FI_TButton *_genericRadioButton;
     struct TNSRef<FI_TButton, void> _genericRadioButtonRetainer;
-    id <TSearchScopeSliceControllerDelegate> _delegate;
+    struct TNSWeakPtr<NSObject<TSearchScopeSliceControllerDelegate>, void> _weakDelegate;
 }
 
-@property(nonatomic) id <TSearchScopeSliceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)accessibilityAttributeValue:(id)arg1;
@@ -48,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)chooseScopeButton:(id)arg1;
 - (void)stackView:(id)arg1 didReattachViews:(id)arg2;
 - (void)stackView:(id)arg1 willDetachViews:(id)arg2;
+@property(nonatomic) __weak NSObject<TSearchScopeSliceControllerDelegate> *delegate; // @dynamic delegate;
 - (void)awakeFromNib;
 
 // Remaining properties

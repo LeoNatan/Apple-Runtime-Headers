@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)appendData:(id)arg1;
 - (void)appendBytes:(const void *)arg1 length:(unsigned int)arg2;
 - (void)setLength:(unsigned int)arg1;
+- (_Bool)_canUseRealloc;
 - (void)_freeBytes;
 - (void *)mutableBytes;
 - (const void *)bytes;

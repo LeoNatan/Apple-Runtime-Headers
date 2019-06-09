@@ -6,30 +6,38 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet, UIScreen;
+@class NSMutableSet, NSSet, UIEventEnvironment, UIScreen;
 
 @interface UIEvent : NSObject
 {
     struct __GSEvent *_gsEvent;
     struct __IOHIDEvent *_hidEvent;
     UIScreen *_cachedScreen;
+    NSMutableSet *_eventObservers;
     double _timestamp;
+    UIEventEnvironment *_eventEnvironment;
     double __initialTouchTimestamp;
 }
 
 @property(readonly, nonatomic) double _initialTouchTimestamp; // @synthesize _initialTouchTimestamp=__initialTouchTimestamp;
+@property(nonatomic) __weak UIEventEnvironment *eventEnvironment; // @synthesize eventEnvironment=_eventEnvironment;
 @property(nonatomic, setter=_setTimestamp:) double timestamp; // @synthesize timestamp=_timestamp;
 - (void).cxx_destruct;
 - (void)_wasDeliveredToGestureRecognizers;
 - (_Bool)_sendEventToGestureRecognizer:(id)arg1;
 - (id)_gestureRecognizersForWindow:(id)arg1;
+- (void)_removeEventObserver:(id)arg1;
+- (void)_addEventObserver:(id)arg1;
+- (id)_eventObservers;
 - (double)_wheelVelocity;
 - (_Bool)isKeyDown;
 - (void)_cleanupAfterDispatch;
 - (void)_sendEventToResponder:(id)arg1;
 - (id)_windows;
 - (id)_screen;
+- (id)_initWithEnvironment:(id)arg1;
 - (id)_init;
+- (_Bool)_isTouchRoutingPolicyBased;
 - (struct CGPoint)_digitizerLocation;
 - (_Bool)_isKeyDown;
 - (long long)_modifierFlags;

@@ -8,6 +8,7 @@
 
 @class OISFUZipEntry;
 
+__attribute__((visibility("hidden")))
 @interface OCPZipPackagePart : OCPPackagePart
 {
     OISFUZipEntry *mEntry;

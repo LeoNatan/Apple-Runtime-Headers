@@ -6,18 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioSessionDataSourceDescription, AVAudioSessionPortDescription, AVAudioSessionRouteDescription, NSArray, NSString;
+@class AVAudioSessionDataSourceDescription, AVAudioSessionPortDescription, AVAudioSessionRouteDescription, CAReporter, NSArray, NSDictionary, NSString;
 
 @interface AVAudioSession : NSObject
 {
     void *_impl;
     BOOL _otherAudioPlaying;
-    unsigned long long _promptStyle;
+    CAReporter *_reporter;
 }
 
 + (id)sharedInstance;
-@property(readonly) unsigned long long promptStyle; // @synthesize promptStyle=_promptStyle;
++ (id)primarySession;
+@property(retain) CAReporter *reporter; // @synthesize reporter=_reporter;
 @property(readonly, getter=isOtherAudioPlaying) BOOL otherAudioPlaying; // @synthesize otherAudioPlaying=_otherAudioPlaying;
+- (void).cxx_destruct;
+@property(readonly) BOOL allowHapticsAndSystemSoundsDuringRecording;
+- (BOOL)setAllowHapticsAndSystemSoundsDuringRecording:(BOOL)arg1 error:(id *)arg2;
+@property(readonly) unsigned long long promptStyle;
 @property(readonly) NSArray *availableInputs;
 @property(readonly) BOOL secondaryAudioShouldBeSilencedHint;
 - (BOOL)otherAudioPlaying;
@@ -34,22 +39,39 @@
 @property(readonly) NSArray *availableModes;
 @property(readonly) NSArray *availableCategories;
 @property(readonly) AVAudioSessionRouteDescription *currentRoute;
+- (id)getUpdatedCurrentRoute;
 @property(readonly) unsigned long long categoryOptions;
 @property(readonly) NSString *mode;
 @property(readonly) NSString *category;
 - (BOOL)setActive:(BOOL)arg1 withOptions:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)setActive:(BOOL)arg1 error:(id *)arg2;
+- (BOOL)hasPhoneCallBehaviour;
+- (unsigned short)determineServiceType;
+- (void)setReporterState:(BOOL)arg1;
 - (BOOL)setRouteSharingPolicy:(unsigned long long)arg1 error:(id *)arg2;
 @property(readonly) unsigned long long routeSharingPolicy;
 - (unsigned long long)preferredRouteSharingPolicy;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (BOOL)canBeNowPlayingApp;
+@property(readonly) NSString *routingContextUID;
+- (id)GetFigRoutingContextUUIDForDefaultRouteSharingPolicy;
 - (void)dealloc;
-- (id)privateInitForMacOS;
+- (void)releaseAudioSessionStructure;
+- (void)updateDeviceStreamDescriptions:(unsigned int)arg1 element:(unsigned int)arg2;
+- (id)buildActiveDeviceString;
+- (void)sendActiveDeviceMessage;
+- (void)HandleRouteChange;
+- (void)HandleDeviceRestart;
+- (id)createPortsfromAggregateDevice:(unsigned int)arg1;
+- (id)getChannelsFromAU:(unsigned int)arg1 PortName:(id)arg2 PortID:(id)arg3;
+- (int)addAUIOStreamDescriptionPropertyListener;
+- (int)setAggregateDeviceAsCurrentHALDevice;
+- (int)setupAUIO;
+- (sync_guard_edae64bb)privateGetGuardOfImplementation;
+- (id)initForMacOS;
 - (BOOL)setAggregatedIOPreference:(unsigned long long)arg1 error:(id *)arg2;
-@property(readonly) double IOBufferDuration;
-@property(readonly) double outputLatency;
 @property(readonly) double inputLatency;
+@property(readonly) double outputLatency;
 @property(readonly) float outputVolume;
 @property(readonly) long long outputNumberOfChannels;
 @property(readonly) long long inputNumberOfChannels;
@@ -62,6 +84,7 @@
 @property(readonly) NSArray *inputDataSources;
 @property(readonly) float inputGain;
 - (BOOL)setInputGain:(float)arg1 error:(id *)arg2;
+- (BOOL)isOutputAvailable;
 @property(readonly, getter=isInputAvailable) BOOL inputAvailable;
 @property(readonly, getter=isInputGainSettable) BOOL inputGainSettable;
 @property(readonly) long long maximumOutputNumberOfChannels;
@@ -70,15 +93,51 @@
 - (BOOL)setPreferredOutputNumberOfChannels:(long long)arg1 error:(id *)arg2;
 @property(readonly) long long preferredInputNumberOfChannels;
 - (BOOL)setPreferredInputNumberOfChannels:(long long)arg1 error:(id *)arg2;
+@property(readonly) double IOBufferDuration;
 @property(readonly) double preferredIOBufferDuration;
 - (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id *)arg2;
 - (BOOL)setPreferredSampleRate:(double)arg1 error:(id *)arg2;
 @property(readonly) double preferredSampleRate;
+- (BOOL)selectIndependentRoutingContext:(id *)arg1;
+@property(readonly) long long reporterID;
+- (BOOL)setReporterID:(long long)arg1 error:(id *)arg2;
+@property(readonly) BOOL lastActivationStoppedNowPlayingApp;
+@property(readonly) long long interruptionPriority;
+- (BOOL)setInterruptionPriority:(long long)arg1 error:(id *)arg2;
+@property(readonly) unsigned long long sessionType;
+- (BOOL)silenceOutput:(unsigned long long)arg1 error:(id *)arg2;
+@property(readonly) unsigned long long IOBufferFrameSize;
+@property(readonly) unsigned long long preferredIOBufferFrameSize;
+- (BOOL)setPreferredIOBufferFrameSize:(unsigned long long)arg1 error:(id *)arg2;
+@property(readonly) double outputSafetyOffset;
+@property(readonly) double inputSafetyOffset;
+- (BOOL)clearInputPreferences:(id *)arg1;
+- (BOOL)setActivationContext:(id)arg1 error:(id *)arg2;
+- (BOOL)setDefaultChatMode:(id)arg1 error:(id *)arg2;
+@property(readonly, getter=isHardwareFormatFixedToMultiChannel) BOOL hardwareFormatFixedToMultiChannel;
+@property BOOL allowAllBuiltInDataSources;
+- (BOOL)setForceSoundCheck:(BOOL)arg1 error:(id *)arg2;
+@property(readonly) BOOL forceSoundCheck;
+@property(readonly) BOOL isPiPAvailable;
+@property(readonly) BOOL isEarpieceActiveNoiseCancelationEnabled;
+@property(readonly) BOOL isDolbyAtmosAvailable;
+@property(readonly) BOOL isDolbyDigitalEncoderAvailable;
+@property(readonly) long long audioFormat;
+@property(readonly) NSArray *audioFormats;
 - (id)autorelease;
 - (oneway void)release;
 - (unsigned long long)retainCount;
 - (id)retain;
 @property(readonly) BOOL isPrimary;
+
+// Remaining properties
+@property(readonly) NSArray *activeSessionDisplayIDs;
+@property(readonly) unsigned int opaqueSessionID;
+@property(readonly) NSDictionary *pickedRoute;
+@property(readonly) BOOL recordingFromRemoteInput;
+@property(readonly) BOOL requiresNoAudioResources;
+@property(readonly) double speechDetectionDeviceSampleRate;
+@property(readonly) BOOL usingLongFormAudio;
 
 @end
 

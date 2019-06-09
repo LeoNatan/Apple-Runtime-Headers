@@ -10,8 +10,8 @@
 {
 }
 
-- (id)_orderedComplicationSlots;
-- (id)_complicationSlotDescriptors;
++ (id)_orderedComplicationSlots;
++ (id)_complicationSlotDescriptors;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
 - (_Bool)_wantsUnadornedSnapshot;
 - (unsigned int)_indexOfOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;

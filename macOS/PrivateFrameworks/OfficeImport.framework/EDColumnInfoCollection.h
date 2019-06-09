@@ -8,6 +8,7 @@
 
 @class EDResources, EDWorksheet;
 
+__attribute__((visibility("hidden")))
 @interface EDColumnInfoCollection : EDSortedCollection
 {
     EDResources *mResources;

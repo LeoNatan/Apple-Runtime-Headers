@@ -8,15 +8,15 @@
 
 @interface SiriCoreWiFiManagerClient : NSObject
 {
-    int _rssi;
-    int _snr;
+    long long _rssi;
+    long long _snr;
 }
 
 - (void)registerOneShotEnabledHandler:(CDUnknownBlockType)arg1;
 - (void)acquireWiFiAssertion:(long long)arg1;
 - (void)releaseWiFiAssertion;
 - (BOOL)isWifiEnabled;
-- (BOOL)hasAssociatedNetworkWithRSSI:(int *)arg1 andSNR:(int *)arg2 andPhyMode:(id *)arg3 andChannelInfo:(id *)arg4 isCaptive:(char *)arg5;
+- (BOOL)hasAssociatedNetworkWithRSSI:(long long *)arg1 andSNR:(long long *)arg2 andPhyMode:(id *)arg3 andChannelInfo:(id *)arg4 isCaptive:(char *)arg5;
 - (void)dealloc;
 - (id)init;
 

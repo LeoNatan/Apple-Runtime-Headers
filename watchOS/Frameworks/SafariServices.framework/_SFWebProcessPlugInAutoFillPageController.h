@@ -9,8 +9,7 @@
 #import <SafariServices/SFFormAutoFiller-Protocol.h>
 #import <SafariServices/SFInjectedJavaScriptWebProcessController-Protocol.h>
 
-@class NSString, NSTimer, WKWebProcessPlugInScriptWorld, _SFFormMetadataController, _WKRemoteObjectInterface;
-@protocol _SFAutomaticBugCaptureObserver;
+@class NSString, WKWebProcessPlugInScriptWorld, _SFFormMetadataController, _WKRemoteObjectInterface;
 
 __attribute__((visibility("hidden")))
 @interface _SFWebProcessPlugInAutoFillPageController : _SFWebProcessPlugInPageController <SFFormAutoFiller, SFInjectedJavaScriptWebProcessController>
@@ -18,16 +17,11 @@ __attribute__((visibility("hidden")))
     _WKRemoteObjectInterface *_activityControllerInterface;
     _WKRemoteObjectInterface *_autoFillerInterface;
     WKWebProcessPlugInScriptWorld *_isolatedWorld;
-    id <_SFAutomaticBugCaptureObserver> _automaticBugCaptureObserver;
-    NSTimer *_deferredLoadingWatchdogTimer;
     _SFFormMetadataController *_formMetadataController;
-    unsigned int _loadDeferringReasons;
 }
 
-@property(readonly, nonatomic) unsigned int loadDeferringReasons; // @synthesize loadDeferringReasons=_loadDeferringReasons;
 @property(retain, nonatomic) _SFFormMetadataController *formMetadataController; // @synthesize formMetadataController=_formMetadataController;
 - (void).cxx_destruct;
-- (void)resumeLoadingAfterSavingFormData;
 - (void)clearAutoFillMetadata;
 - (void)collectMetadataForTextField:(id)arg1 inFrame:(id)arg2 atURL:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)collectFormMetadataForPrefillingAtURL:(id)arg1;
@@ -45,10 +39,6 @@ __attribute__((visibility("hidden")))
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didCommitLoadForFrame:(id)arg2;
 - (void)webProcessPlugInBrowserContextController:(id)arg1 didStartProvisionalLoadForFrame:(id)arg2;
 - (void)runJavaScriptForActivity:(id)arg1 withScript:(id)arg2 object:(id)arg3 invokeMethod:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)removeLoadDeferringReasons:(unsigned int)arg1;
-- (void)addLoadDeferringReasons:(unsigned int)arg1;
-- (id)_automaticBugCaptureObserver;
-- (void)_invalidateDeferredLoadingWatchdogTimer;
 - (void)willDestroyBrowserContextController:(id)arg1;
 - (id)initWithPlugIn:(id)arg1 contextController:(id)arg2;
 

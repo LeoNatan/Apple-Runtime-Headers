@@ -18,9 +18,11 @@
     NSArray *_existingMemories;
 }
 
++ (id)availableSuggestionTypeInfosWithProfile:(unsigned char)arg1;
 + (unsigned long long)_retirementDelayInDaysForSuggestionType:(unsigned short)arg1;
 @property(retain, nonatomic) NSArray *existingMemories; // @synthesize existingMemories=_existingMemories;
 - (void).cxx_destruct;
+- (id)suggestionInfosWithOptions:(id)arg1;
 - (id)collidableSuggestionsWithOptions:(id)arg1;
 - (id)generateSuggestionsWithProfile:(unsigned char)arg1 options:(id)arg2 progress:(CDUnknownBlockType)arg3;
 - (id)generateSharingSuggestionsWithOptions:(id)arg1 progress:(CDUnknownBlockType)arg2;
@@ -28,7 +30,7 @@
 - (id)collidableSuggestionsWithReferenceDate:(id)arg1 andDelay:(double)arg2 sharingSuggestionsOnly:(_Bool)arg3;
 - (id)collidableMemoriesWithReferenceDate:(id)arg1 andDelay:(double)arg2;
 - (id)commitSuggestions:(id)arg1 options:(id)arg2;
-- (id)processExistingSuggestions:(id)arg1 atDate:(id)arg2 shouldPerformChanges:(_Bool)arg3;
+- (id)existingSuggestionsInSuggestions:(id)arg1 atDate:(id)arg2 processExistingSuggestions:(_Bool)arg3;
 - (_Bool)shouldDeleteSuggestion:(id)arg1 atDate:(id)arg2;
 - (_Bool)shouldRetireSuggestion:(id)arg1 atDate:(id)arg2;
 - (void)processExistingSuggestionsWithOptions:(id)arg1;

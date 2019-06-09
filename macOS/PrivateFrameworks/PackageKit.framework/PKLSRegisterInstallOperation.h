@@ -11,6 +11,7 @@
 }
 
 + (BOOL)registerWithLaunchServices:(id)arg1;
++ (id)bundlePathToApplicationURL:(id)arg1;
 - (void)main;
 - (BOOL)_registerLaunchServicesBundlesReturningError:(id *)arg1;
 - (int)installState;

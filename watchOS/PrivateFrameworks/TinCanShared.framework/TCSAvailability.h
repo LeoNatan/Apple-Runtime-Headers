@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (id)_unavailabilityText:(_Bool)arg1;
 - (void)_postNotificationName:(id)arg1;
+- (void)_handleDeviceFirstUnlock;
 - (_Bool)_calculateShouldShowStatusIndicator;
 - (void)_setUserUnavailable:(_Bool)arg1;
 - (_Bool)_isUserUnavailable;

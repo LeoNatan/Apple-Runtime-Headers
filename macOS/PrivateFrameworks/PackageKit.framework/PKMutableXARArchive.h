@@ -22,8 +22,8 @@
 - (void)dealloc;
 - (id)initForWritingToPath:(id)arg1 error:(id *)arg2;
 - (void)setSignatureSize:(int)arg1;
-- (BOOL)addIntermediateCertificate:(struct OpaqueSecCertificateRef *)arg1;
-- (BOOL)addSignatureBySigningWithIdentity:(struct OpaqueSecIdentityRef *)arg1 algorithm:(id)arg2 usingTSAIfSupported:(BOOL)arg3;
+- (BOOL)addIntermediateCertificate:(struct __SecCertificate *)arg1;
+- (BOOL)addSignatureBySigningWithIdentity:(struct __SecIdentity *)arg1 algorithm:(id)arg2 usingTSAIfSupported:(BOOL)arg3;
 
 @end
 

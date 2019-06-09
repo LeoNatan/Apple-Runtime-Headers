@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) NSObject<CRKKeyObjectStoring> *store; // @synthesize store=_store;
 @property(readonly, copy, nonatomic) NSString *key; // @synthesize key=_key;
 - (void).cxx_destruct;
+- (void)registerDefaultValue:(id)arg1;
 @property(copy) id value;
 - (id)initWithDefaults:(id)arg1 key:(id)arg2;
 - (id)initWithStore:(id)arg1 key:(id)arg2;

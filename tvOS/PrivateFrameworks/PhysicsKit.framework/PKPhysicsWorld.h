@@ -68,7 +68,7 @@
 - (void)enumerateBodiesAtPoint:(struct CGPoint)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) struct PKCAether *aether;
 - (const struct PKDebugDrawPacket *)debugDrawPacket;
-- (void)debugDraw:(float)arg1 matrix:(union _GLSKMatrix4)arg2 showsPhysics:(_Bool)arg3 showsOutlineInterior:(_Bool)arg4 showsFields:(_Bool)arg5;
+- (void)debugDraw:(float)arg1 matrix:(union _GLKMatrix4)arg2 showsPhysics:(_Bool)arg3 showsOutlineInterior:(_Bool)arg4 showsFields:(_Bool)arg5;
 - (void)_runBlockOutsideOfTimeStep:(CDUnknownBlockType)arg1;
 - (_Bool)isEqualToWorld:(id)arg1;
 @property(nonatomic) _Bool _doSleep;

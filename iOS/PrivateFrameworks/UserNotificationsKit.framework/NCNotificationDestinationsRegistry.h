@@ -29,6 +29,7 @@
 - (id)destinationsForRequestDestinations:(id)arg1;
 - (id)destinationIdentifiersForRequestDestinations:(id)arg1;
 - (_Bool)hasActiveDestinationsForRequest:(id)arg1;
+- (void)unregisterDestinationForIdentifier:(id)arg1;
 - (void)unregisterDestination:(id)arg1;
 - (_Bool)isRegisteredDestination:(id)arg1;
 - (void)registerDestination:(id)arg1 forIdentifier:(id)arg2;

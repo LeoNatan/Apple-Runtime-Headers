@@ -15,20 +15,18 @@ __attribute__((visibility("hidden")))
 {
     UIColor *_barTintColor;
     NSMutableDictionary *_customBackgroundImages;
-    NSMutableDictionary *_generatedBackgroundImages;
     int _barPosition;
     unsigned int _searchBarStyle;
-    unsigned int _barStyle:3;
-    unsigned int _barTranslucence:3;
-    unsigned int _usesEmbeddedAppearance:1;
-    unsigned int _actingAsNavBar:1;
-    unsigned int _usesContiguousBarBackground:1;
-    unsigned int _barHasController;
+    int _barStyle;
+    int _barTranslucence;
+    _Bool _usesEmbeddedAppearance;
+    _Bool _usesContiguousBarBackground;
 }
 
 @property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
 - (void).cxx_destruct;
-- (void)_setBehavesAsIfSearchBarHasController:(_Bool)arg1;
+- (void)_dynamicUserInterfaceTraitDidChange;
+- (void)didMoveToWindow;
 - (void)_updateBackgroundImageIfPossible;
 @property(nonatomic) _Bool usesContiguousBarBackground;
 - (_Bool)_hasCustomBackgroundImage;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSString *mDefaultPivotStyleName;
 }
 
+- (void).cxx_destruct;
 - (void)setDefaultPivotStyleName:(id)arg1;
 - (id)defaultPivotStyleName;
 - (void)setDefaultTableStyleName:(id)arg1;
@@ -22,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (id)objectWithName:(id)arg1;
 - (id)defaultPivotStyle;
 - (id)defaultTableStyle;
-- (void)dealloc;
 
 @end
 

@@ -10,6 +10,8 @@
 - (BOOL)processNotificationsWithIntervalTimeoutInSeconds:(unsigned long long)arg1 shouldCalculateAnimationFramerate:(BOOL)arg2 targetQueue:(id)arg3 errorOut:(id *)arg4;
 - (void)_processStreamedOSLogEventProxy:(id)arg1 shouldCalculateFramerate:(BOOL)arg2;
 - (BOOL)processNotificationsWithIntervalTimeoutInSeconds:(unsigned long long)arg1 errorOut:(id *)arg2;
+- (BOOL)processLogArchiveWithPath:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 errorOut:(id *)arg4;
+- (void)_processOSLogEventProxy:(id)arg1;
 
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType timedOutBeginEventProcessingBlock;

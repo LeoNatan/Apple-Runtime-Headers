@@ -6,18 +6,17 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class NSString, PXNavigationListDataSourceManager, UIBarButtonItem, UINavigationController;
+@class NSString, PXNavigationListDataSectionManager, UIBarButtonItem, UINavigationController;
 @protocol PXNavigationListItem;
 
 @protocol PXNavigationRoot <NSObject>
 @property(readonly, nonatomic) UINavigationController *navigationController;
+@property(retain, nonatomic) UIBarButtonItem *navigationDisplayModeButtonItem;
 @property(readonly, nonatomic) NSString *navigationIdentifier;
 @property(readonly, nonatomic) NSString *navigationTitle;
-@property(retain, nonatomic) UIBarButtonItem *navigationDisplayModeButtonItem;
 
 @optional
-@property(readonly, nonatomic) PXNavigationListDataSourceManager *navigationListDataSourceManager;
-- (void)processNavigationListItem:(id <PXNavigationListItem>)arg1 animated:(_Bool)arg2 completion:(void (^)(_Bool))arg3;
-- (_Bool)canProcessNavigationListItem:(id <PXNavigationListItem>)arg1;
+@property(readonly, nonatomic) PXNavigationListDataSectionManager *navigationListDataSourceManager;
+- (void)selectNavigationListItem:(id <PXNavigationListItem>)arg1 hintIndex:(long long)arg2 animated:(_Bool)arg3 completion:(void (^)(_Bool))arg4;
 @end
 

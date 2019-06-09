@@ -9,19 +9,21 @@
 @interface EKUIAttendeeTokenAttachmentCell : EKUITokenAttachmentCell
 {
     BOOL _isExpanded;
-    BOOL _isConnected;
     BOOL _attendeeHasAddress;
+    BOOL _isOverAttendeeLimit;
 }
 
+@property BOOL isOverAttendeeLimit; // @synthesize isOverAttendeeLimit=_isOverAttendeeLimit;
 @property BOOL attendeeHasAddress; // @synthesize attendeeHasAddress=_attendeeHasAddress;
-@property BOOL isConnected; // @synthesize isConnected=_isConnected;
 @property BOOL isExpanded; // @synthesize isExpanded=_isExpanded;
+- (id)textColor;
 - (BOOL)shouldShowToken;
 - (BOOL)isCompletedToken;
 - (id)stringForRepresentedObject;
 - (id)imageForRepresentedObject;
 - (int)freeBusyType;
 - (void)setRepresentedObject:(id)arg1;
+- (id)tokenTintColor;
 - (id)initCellForTokenField:(id)arg1;
 
 @end

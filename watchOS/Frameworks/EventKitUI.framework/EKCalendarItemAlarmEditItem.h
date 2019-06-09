@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     CalendarEventAlarmTable *_alarmTable;
     unsigned int _disclosedSubitem;
     NSArray *_alarms;
-    int _lastSeenAllDayState;
     _Bool _userChangedAlarm;
     _Bool _hasLeaveNowAlarm;
     _Bool _canHaveLeaveNowAlarm;
@@ -29,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateAlarms;
 - (_Bool)_calendarItemHasLeaveNowAlarm;
 - (_Bool)configureForCalendarConstraints:(id)arg1;
-- (void)_updateDefaultAlarm;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (_Bool)editItemViewControllerSave:(id)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned int)arg2;

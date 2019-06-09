@@ -9,7 +9,6 @@
 @class NSColor, NSMutableArray, NSString, SiriUIAcousticIDSpinner, SiriUIContentLabel;
 @protocol SiriUISuggestionsViewDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUISuggestionsView : NSView
 {
     SiriUIContentLabel *_headerLabel;

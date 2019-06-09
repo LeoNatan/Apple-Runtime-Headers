@@ -9,6 +9,7 @@
 @class NSMutableArray, NSString;
 @protocol NSUserInterfaceItemSearching;
 
+__attribute__((visibility("hidden")))
 @interface SCTResults : NSObject
 {
     NSString *identifier;

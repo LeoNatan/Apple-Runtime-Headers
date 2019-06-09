@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSString, OCPPackagePart;
 
+__attribute__((visibility("hidden")))
 @interface OAXTableStyleCache : NSObject
 {
     OCPPackagePart *mStylesPart;

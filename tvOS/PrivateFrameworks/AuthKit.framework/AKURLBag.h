@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSURL;
+@class NSSet, NSString, NSURL;
 @protocol AKURLBagDictionaryProvider;
 
 @interface AKURLBag : NSObject
@@ -23,23 +23,30 @@
 @property(retain, nonatomic) id <AKURLBagDictionaryProvider> bagProvider; // @synthesize bagProvider=_bagProvider;
 - (void).cxx_destruct;
 - (void)_fetchURLBagWithCompletion:(CDUnknownBlockType)arg1;
-- (id)_urlBag:(id *)arg1;
-- (id)_requestConfigurationsWithError:(id *)arg1;
+- (id)_urlBagFromCache:(_Bool)arg1 withError:(id *)arg2;
+- (id)_configurationsFromCache:(_Bool)arg1 withError:(id *)arg2;
 - (id)_requestEnvironmentsWithError:(id *)arg1;
 - (id)_requestNewURLBagIfNecessaryWithError:(id *)arg1;
 - (id)_urlAtKey:(id)arg1;
 - (id)urlAtKey:(id)arg1;
 - (_Bool)requestNewURLBagIfNecessaryWithError:(id *)arg1;
 - (void)requestNewURLBagIfNecessaryWithCompletion:(CDUnknownBlockType)arg1;
+- (id)configurationAtKey:(id)arg1 fromCache:(_Bool)arg2;
 - (id)configurationAtKey:(id)arg1;
 @property(readonly, nonatomic) unsigned long long lastKnownIDMSEnvironment;
+@property(readonly, nonatomic, getter=IsInlineFlowSupportedConfig) _Bool inlineFlowSupportedConfig;
 @property(readonly, nonatomic) unsigned long long IDMSEnvironment;
 @property(readonly, nonatomic) NSString *APSEnvironment;
+@property(readonly, nonatomic) NSURL *appleIDAuthorizeHTMLResponseURL;
+@property(readonly, nonatomic) NSSet *appleIDAuthorizationURLs;
+@property(readonly, nonatomic) NSSet *appleOwnedDomains;
+@property(readonly, nonatomic) NSURL *userVerificationURL;
 @property(readonly, nonatomic) NSURL *repairURL;
 @property(readonly, nonatomic) NSURL *acsURL;
 @property(readonly, nonatomic, getter=isPhoneNumberSupportedConfig) _Bool phoneNumberSupportedConfig;
 @property(readonly, nonatomic) NSURL *storeModernRecoveryURL;
 @property(readonly, nonatomic) NSURL *fetchAuthenticationModeURL;
+@property(readonly, nonatomic) NSURL *fetchAppInfoURL;
 @property(readonly, nonatomic) NSURL *fetchUserInfoURL;
 @property(readonly, nonatomic) NSURL *fetchFollowUps;
 @property(readonly, nonatomic) NSURL *circleURL;

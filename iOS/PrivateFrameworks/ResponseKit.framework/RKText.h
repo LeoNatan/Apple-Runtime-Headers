@@ -18,8 +18,6 @@
     NSString *_processedText;
 }
 
-+ (_Bool)canClassifyPolarityForLanguageIdentifier:(id)arg1 withOptions:(unsigned long long)arg2 dataProvider:(id)arg3;
-+ (_Bool)canClassifyPolarityForLanguageIdentifier:(id)arg1 withOptions:(unsigned long long)arg2;
 + (unsigned long long)polarityTypeFromName:(id)arg1;
 + (id)polarityNameFromType:(unsigned long long)arg1;
 + (unsigned long long)annotationTypeFromName:(id)arg1;
@@ -33,8 +31,6 @@
 @property(retain) NSString *languageID; // @synthesize languageID=_languageID;
 @property(retain) NSString *string; // @synthesize string=_string;
 - (void).cxx_destruct;
-- (unsigned long long)polarityClassificationWithOptions:(unsigned long long)arg1 dataProvider:(id)arg2;
-- (unsigned long long)polarityClassificationWithOptions:(unsigned long long)arg1;
 - (id)lsmText;
 - (id)taggedText;
 - (unsigned long long)annotatedPolarity;

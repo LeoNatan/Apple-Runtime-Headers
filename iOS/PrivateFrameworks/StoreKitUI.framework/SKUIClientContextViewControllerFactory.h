@@ -6,6 +6,7 @@
 
 #import <iTunesStoreUI/SUViewControllerFactory.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIClientContextViewControllerFactory : SUViewControllerFactory
 {
 }

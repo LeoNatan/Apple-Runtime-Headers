@@ -16,10 +16,12 @@
 {
     NSMutableDictionary *_mediaQueryCache;
     _Bool _parsingDOM;
+    _Bool _isTrackingImplicitUpdates;
     NSMapTable *_viewElementRegistry;
     _Bool _isViewElementRegistryDirty;
     _Bool _updated;
     _Bool _subtreeUpdated;
+    _Bool _implicitlyUpdated;
     IKAppContext *_appContext;
     IKDOMDocument *_jsDocument;
     NSString *_identifier;
@@ -35,6 +37,7 @@
     IKViewElementStyleFactory *_styleFactory;
 }
 
+@property(readonly, nonatomic, getter=isImplicitlyUpdated) _Bool implicitlyUpdated; // @synthesize implicitlyUpdated=_implicitlyUpdated;
 @property(retain, nonatomic) IKViewElementStyleFactory *styleFactory; // @synthesize styleFactory=_styleFactory;
 @property(readonly, nonatomic) __weak IKJSObject *owner; // @synthesize owner=_owner;
 @property(retain, nonatomic) NSMutableDictionary *impressions; // @synthesize impressions=_impressions;
@@ -51,8 +54,9 @@
 @property(readonly, nonatomic) __weak IKDOMDocument *jsDocument; // @synthesize jsDocument=_jsDocument;
 @property(readonly) __weak IKAppContext *appContext; // @synthesize appContext=_appContext;
 - (void).cxx_destruct;
+- (_Bool)markImplicitlyUpdated;
+- (void)performImplicitUpdates:(CDUnknownBlockType)arg1;
 - (void)_setViewElementStylesDirtyForced:(_Bool)arg1;
-- (_Bool)_clearUpdatesForElement:(id)arg1;
 - (void)_updateWithXML:(id)arg1;
 - (id)_viewElementForNodeID:(unsigned long long)arg1;
 - (id)viewElementForNodeID:(unsigned long long)arg1;
@@ -75,6 +79,8 @@
 - (void)onImpressionsChange:(id)arg1;
 - (void)onUpdate;
 - (void)onNeedsUpdateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)onInactive;
+- (void)onActive;
 - (void)onDisappear;
 - (void)onAppear;
 - (void)onUnload;
@@ -82,6 +88,7 @@
 @property(readonly, nonatomic) __weak IKJSNavigationDocument *navigationDocument;
 @property(readonly, copy) NSString *debugDescription;
 - (void)dealloc;
+- (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3 extraInfo:(id)arg4;
 - (id)initWithAppContext:(id)arg1 document:(id)arg2 owner:(id)arg3;
 
 // Remaining properties

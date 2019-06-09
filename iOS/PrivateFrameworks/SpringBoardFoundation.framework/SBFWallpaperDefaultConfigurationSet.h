@@ -19,6 +19,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)verifiedVideoURLForBaseName:(id)arg1 inDirectory:(id)arg2;
 + (id)verifiedPNGOrJPEGURLForImageName:(id)arg1 inDirectory:(id)arg2;
 + (id)defaultWallpaperConfigurationSetFromDirectoryURL:(id)arg1;
 + (id)defaultWallpaperConfigurationFromWallpaperDictionary:(id)arg1;

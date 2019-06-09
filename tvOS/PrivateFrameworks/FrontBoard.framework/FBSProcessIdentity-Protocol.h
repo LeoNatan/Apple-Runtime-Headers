@@ -6,13 +6,11 @@
 
 #import <FrontBoard/FBSProcess-Protocol.h>
 
-@class BSMachPortTaskNameRight, FBSProcessHandle, NSString;
+@class BSMachPortTaskNameRight, BSProcessHandle, RBSProcessIdentity;
 
 @protocol FBSProcessIdentity <FBSProcess>
+@property(readonly, retain, nonatomic) RBSProcessIdentity *identity;
 @property(readonly, retain, nonatomic) BSMachPortTaskNameRight *taskNameRight;
-@property(readonly, retain, nonatomic) FBSProcessHandle *handle;
-@property(readonly, nonatomic) long long type;
-@property(readonly, copy, nonatomic) NSString *jobLabel;
-@property(readonly, copy, nonatomic) NSString *name;
+@property(readonly, retain, nonatomic) BSProcessHandle *handle;
 @end
 

@@ -21,7 +21,6 @@
 - (void).cxx_destruct;
 - (unsigned int)_cnui_likenessType;
 - (id)_cnui_likenessForSize:(struct CGSize)arg1 scale:(float)arg2;
-- (id)_cnui_likenessForSize:(struct CGSize)arg1;
 - (struct CGImage *)_cnui_roundedRectImageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (struct CGImage *)_cnui_circularImageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (struct CGImage *)renderRoundedRectImageForSilhouetteImage:(struct CGImage *)arg1 size:(struct CGSize)arg2 scale:(float)arg3;

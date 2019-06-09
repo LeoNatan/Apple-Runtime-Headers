@@ -10,16 +10,17 @@
 
 @interface IMDReplayController : NSObject
 {
-    IMDReplayStorageController *_storageController;
     IMDReplayStorageController *_suspendedStorageController;
     _Bool _isRecordingReplayDB;
     NSDictionary *_syncTaskByServiceName;
     IMDReplayStorageIterationContext *_heldDeletionContext;
     CDUnknownBlockType _automationCompletionBlock;
+    IMDReplayStorageController *_storageController;
 }
 
 + (long long)batchSize;
 + (id)sharedInstance;
+@property(retain, nonatomic) IMDReplayStorageController *storageController; // @synthesize storageController=_storageController;
 @property(copy, nonatomic) CDUnknownBlockType automationCompletionBlock; // @synthesize automationCompletionBlock=_automationCompletionBlock;
 @property(retain, nonatomic) IMDReplayStorageIterationContext *heldDeletionContext; // @synthesize heldDeletionContext=_heldDeletionContext;
 @property(retain, nonatomic) NSDictionary *syncTaskByServiceName; // @synthesize syncTaskByServiceName=_syncTaskByServiceName;

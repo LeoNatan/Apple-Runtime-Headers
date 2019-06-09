@@ -29,13 +29,15 @@
 @property(readonly, copy, nonatomic) NSURL *injectedBundleURL; // @synthesize injectedBundleURL=_injectedBundleURL;
 - (void).cxx_destruct;
 - (void)siteMetadataProvider:(id)arg1 didFinishUsingWebView:(id)arg2;
-- (id)siteMetadataProvider:(id)arg1 webViewOfSize:(struct CGSize)arg2 withConfiguration:(id)arg3;
+- (void)siteMetadataProvider:(id)arg1 getWebViewOfSize:(struct CGSize)arg2 withConfiguration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)siteMetadataProvider:(id)arg1 cancelRequestsWithTokens:(id)arg2;
 - (id)siteMetadataProvider:(id)arg1 registerOneTimeRequest:(id)arg2 priority:(int)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (id)siteMetadataProvider:(id)arg1 registerRequest:(id)arg2 priority:(int)arg3 responseHandler:(CDUnknownBlockType)arg4;
+- (void)siteMetadataProvider:(id)arg1 didReceiveResponse:(id)arg2 forRequest:(id)arg3 beginOperationUsingBlock:(CDUnknownBlockType)arg4;
 - (void)siteMetadataProvider:(id)arg1 didReceiveResponse:(id)arg2 ofType:(int)arg3 didReceiveNewData:(_Bool)arg4 forRequest:(id)arg5;
 - (void)_scheduleDelayedResponse:(id)arg1 forRequestToken:(id)arg2;
-- (void)_setUpOperationForRequest:(id)arg1 withSiteMetadataProvider:(id)arg2;
+- (id)_makeWebViewOfSize:(struct CGSize)arg1 withConfiguration:(id)arg2;
+- (void)_setUpOperationForRequest:(id)arg1 withSiteMetadataProvider:(id)arg2 usingOperationBlock:(CDUnknownBlockType)arg3;
 - (_Bool)_updateOperationForRequestIfPossible:(id)arg1;
 - (void)_reprioritizeOperationForRequest:(id)arg1;
 - (int)_highestRequestPriorityForRequest:(id)arg1;
@@ -54,7 +56,7 @@
 - (void)_internalCancelRequestWithToken:(id)arg1;
 - (void)_sendResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2 didReceiveNewData:(_Bool)arg3;
 - (void)_sendRequiresDownloadResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2;
-- (void)preloadRequest:(id)arg1 withPriority:(int)arg2;
+- (void)preloadRequest:(id)arg1 withPriority:(int)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (id)registerOneTimeRequest:(id)arg1 priority:(int)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (id)registerRequest:(id)arg1 priority:(int)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)registerSiteMetadataProvider:(id)arg1;

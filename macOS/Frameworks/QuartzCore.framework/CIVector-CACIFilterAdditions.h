@@ -10,5 +10,8 @@
 + (void)CAMLParserEndElement:(id)arg1 content:(id)arg2;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (struct Object *)CA_copyRenderValue;
+- (double)CA_distanceToValue:(id)arg1;
+- (id)CA_interpolateValue:(id)arg1 byFraction:(float)arg2;
+- (id)CA_addValue:(id)arg1 multipliedBy:(int)arg2;
 @end
 

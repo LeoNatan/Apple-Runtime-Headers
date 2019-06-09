@@ -9,9 +9,13 @@
 @class FMDLostModeInfo, NSString;
 
 @protocol FMDFMWProtocol <NSObject>
+- (oneway void)disableFMIPUsingToken:(NSString *)arg1 inContext:(unsigned int)arg2 usingCallback:(void (^)(NSError *))arg3;
+- (oneway void)enableFMIPInContext:(unsigned int)arg1 usingCallback:(void (^)(NSError *))arg2;
 - (oneway void)clearData:(unsigned int)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)soundStoppedForAccessoryIdentifier:(NSString *)arg1;
 - (oneway void)getAccessoriesWithCompletion:(void (^)(NSError *, NSArray *))arg1;
+- (oneway void)didReceiveLostModeExitAuthToken:(NSString *)arg1 usingCallback:(void (^)(NSError *))arg2;
+- (oneway void)initiateLostModeExitAuthForApp:(NSString *)arg1 idsDeviceID:(NSString *)arg2 usingCallback:(void (^)(NSError *))arg3;
 - (oneway void)initiateLostModeExitAuthForApp:(NSString *)arg1 usingCallback:(void (^)(NSError *))arg2;
 - (oneway void)isActivationLockedUsingCallback:(void (^)(_Bool, NSError *))arg1;
 - (oneway void)didChangeFMIPAccountInfo:(NSString *)arg1 usingCallback:(void (^)(NSError *))arg2;

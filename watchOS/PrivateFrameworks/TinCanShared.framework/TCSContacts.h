@@ -22,7 +22,6 @@
     NSMutableDictionary *_whitelist;
 }
 
-+ (_Bool)_isMobileKeyBagDisabledOrDeviceUnlockedSinceBoot;
 + (id)_safeContactDetailStringForLogging:(id)arg1;
 + (id)_safeContactNameStringForLogging:(id)arg1 handle:(id)arg2;
 + (id)_firstPhoneNumberOrEmailAddressFromContact:(id)arg1 formatPhoneNumber:(_Bool)arg2;
@@ -34,9 +33,10 @@
 + (id)_canonicalDestinationForString:(id)arg1;
 + (id)_canonicalPhoneNumberFromPhoneNumberString:(id)arg1;
 + (id)_canonicalPhoneNumberFromCNPhoneNumber:(id)arg1;
++ (id)_pauseCharacterSet;
 + (id)_unifiedContactWithIdentifier:(id)arg1 orDestination:(id)arg2 usingContactStore:(id)arg3 keysToFetch:(id)arg4;
 + (id)_unifiedMeContactFromContactStore:(id)arg1 keysToFetch:(id)arg2;
-+ (id)_destinationsFromWhitelistDictionary:(id)arg1;
++ (id)_destinationsFromWhitelistDictionary:(id)arg1 onlyAccepted:(_Bool)arg2;
 + (id)validatedWhitelistFromDictionary:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *whitelist; // @synthesize whitelist=_whitelist;
 @property(nonatomic) _Bool shouldObserveWhitelistDefaultChanges; // @synthesize shouldObserveWhitelistDefaultChanges=_shouldObserveWhitelistDefaultChanges;
@@ -46,6 +46,7 @@
 - (void)_deleteWhitelist;
 - (void)_resetStoreDemoContent;
 - (_Bool)_shouldHandleResetStoreDemoContent;
+- (void)_notifyObserversContactBecameAccepted:(id)arg1;
 - (void)_notifyObserversRecencyChanged;
 - (void)_notifyObserversDestinationsChanged;
 - (void)_saveWhitelist;
@@ -55,6 +56,9 @@
 - (void)_reloadWhitelist;
 - (_Bool)_generateDestinationsFromWhitelist;
 - (_Bool)_loadWhitelistFromDefaults;
+- (void)_addDestinations:(id)arg1 asType:(int)arg2;
+- (void)_loadDataFromDefaults;
+- (void)_handleDeviceFirstUnlock;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (int)stateForContact:(id)arg1;
 - (id)dateAddedForDestination:(id)arg1;
@@ -64,11 +68,16 @@
 - (void)_didInitiateCallToDestination:(id)arg1 date:(id)arg2;
 - (void)didReceiveCallFromContact:(id)arg1 date:(id)arg2;
 - (void)didInitiateCallToContact:(id)arg1 date:(id)arg2;
+- (void)setContactAsAccepted:(id)arg1;
+- (_Bool)isContactAnInviter:(id)arg1;
 - (_Bool)isContactAccepted:(id)arg1;
+- (void)setDestinationAsAccepted:(id)arg1;
+- (_Bool)isDestinationAnInviter:(id)arg1;
 - (_Bool)isDestinationAccepted:(id)arg1;
 - (_Bool)contactSupportsTinCan:(id)arg1;
 - (void)setContact:(id)arg1 supportsTinCan:(_Bool)arg2;
 - (void)removeDestinations:(id)arg1;
+- (void)addDestinationsForInviter:(id)arg1;
 - (void)addDestinations:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

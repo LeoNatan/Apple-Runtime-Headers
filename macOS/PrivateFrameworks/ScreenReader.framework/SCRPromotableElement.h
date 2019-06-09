@@ -9,7 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface SCRPromotableElement : SCRMapElement
 {
-    CDStruct_79add89a _srpeFlags;
+    struct {
+        unsigned int canWrap:1;
+        unsigned int handlingBeginFocus:1;
+    } _srpeFlags;
 }
 
 - (BOOL)allowFocusThroughSingleChild;

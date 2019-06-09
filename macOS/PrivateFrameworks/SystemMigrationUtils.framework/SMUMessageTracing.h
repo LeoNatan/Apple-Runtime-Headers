@@ -6,23 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSNumber;
-
 @interface SMUMessageTracing : NSObject
 {
-    BOOL _didMTParallelArchivingError;
-    NSNumber *_hadAtleastOneBrokenSymlink;
 }
 
-+ (void)messageTraceParallelArchivingErrorsInWriterCreation:(BOOL)arg1 writerDirectory:(long long)arg2 writerHeader:(int)arg3 exceptionDescription:(id)arg4;
 + (void)messageTraceSWAPAssociationSuccess:(BOOL)arg1 rssi:(long long)arg2 noiseValue:(long long)arg3;
 + (id)domainWithName:(id)arg1 majorVersion:(unsigned long long)arg2 minorVersion:(unsigned long long)arg3;
 + (id)domainWithName:(id)arg1 majorVersion:(unsigned long long)arg2;
-+ (id)sharedManager;
-@property BOOL didMTParallelArchivingError; // @synthesize didMTParallelArchivingError=_didMTParallelArchivingError;
-@property(retain) NSNumber *hadAtleastOneBrokenSymlink; // @synthesize hadAtleastOneBrokenSymlink=_hadAtleastOneBrokenSymlink;
-- (void).cxx_destruct;
-- (id)init;
 
 @end
 

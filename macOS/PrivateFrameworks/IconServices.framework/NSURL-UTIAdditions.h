@@ -11,11 +11,14 @@
 - (BOOL)__is_isAppExtension;
 - (BOOL)__is_isApplication;
 - (unsigned int)__is_readOSType;
+- (BOOL)__is_hasFileExtension:(id)arg1;
 - (BOOL)__is_isOnBootVolume;
 - (BOOL)__is_isBootVolume;
+- (BOOL)__has_ResourceFork;
 - (id)__is_volumeURL;
 - (BOOL)__is__isAliasFile;
 - (BOOL)__is__isVolume;
+- (long long)__is__fileSize;
 - (BOOL)__is__isDirectory;
 - (BOOL)__is__conformsToUTI:(id)arg1;
 @end

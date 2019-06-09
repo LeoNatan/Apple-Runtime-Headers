@@ -12,6 +12,7 @@
 
 @interface SPApplicationQueryResult : SPMetadataResult <NSSecureCoding>
 {
+    // Error parsing type: T, name: _score
     NSArray *_displayNameInitials;
 }
 
@@ -22,7 +23,11 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isApplicationQueryResult;
+- (void)setScore: /* Error: Ran out of types for this method. */;
+-     // Error parsing type: T16@0:8, name: score
 - (id)valueForAttribute:(id)arg1;
+- (id)groupName;
+- (id)category;
 
 @end
 

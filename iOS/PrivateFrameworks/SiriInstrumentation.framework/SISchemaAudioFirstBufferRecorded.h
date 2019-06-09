@@ -6,29 +6,30 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaAudioFirstBufferRecorded-Protocol.h>
 
-@interface SISchemaAudioFirstBufferRecorded : PBCodable <NSCopying>
+@class NSData, NSString;
+
+@interface SISchemaAudioFirstBufferRecorded : PBCodable <SISchemaAudioFirstBufferRecorded, NSSecureCoding>
 {
     int _audioInputRoute;
-    struct {
-        unsigned int audioInputRoute:1;
-    } _has;
 }
 
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(nonatomic) int audioInputRoute; // @synthesize audioInputRoute=_audioInputRoute;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-- (int)StringAsAudioInputRoute:(id)arg1;
-- (id)audioInputRouteAsString:(int)arg1;
-@property(nonatomic) _Bool hasAudioInputRoute;
-@property(nonatomic) int audioInputRoute; // @synthesize audioInputRoute=_audioInputRoute;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

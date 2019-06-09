@@ -22,7 +22,8 @@ __attribute__((visibility("hidden")))
     unsigned int tfo:1;
     unsigned int tfo_no_cookie:1;
     unsigned int no_fallback:1;
-    unsigned int use_tfo_heuristics:1;
+    unsigned int fast_open_force_enable:1;
+    unsigned int set_multipath_service:1;
     int fallback_mode;
     int multipath_service;
     int data_mode;

@@ -36,6 +36,7 @@
 - (void)startCellSimulation;
 - (void)setSimulatedCell:(id)arg1;
 - (void)clearSimulatedCells;
+- (void)simulateBeaconWithProximityUUID:(id)arg1 major:(long long)arg2 minor:(long long)arg3 eventType:(unsigned char)arg4;
 - (void)simulateFenceWithBundleID:(id)arg1 andFenceID:(id)arg2 eventType:(unsigned char)arg3 atLocation:(id)arg4;
 - (void)getFencesForBundleID:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)simulateSignificantLocationChange:(id)arg1;

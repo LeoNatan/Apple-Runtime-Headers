@@ -65,6 +65,7 @@
 @property(nonatomic) float minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_interitemSpacing;
 @property(nonatomic) float minimumLineSpacing; // @synthesize minimumLineSpacing=_lineSpacing;
 - (void).cxx_destruct;
+- (int)_layoutAxis;
 - (void)_didPerformUpdateVisibleCellsPass;
 - (void)_willPerformUpdateVisibleCellsPass;
 - (int)developmentLayoutDirection;

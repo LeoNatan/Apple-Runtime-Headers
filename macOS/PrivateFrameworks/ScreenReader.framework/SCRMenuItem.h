@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (id)insideOfDescriptionForContextualHelp;
 - (id)contextualHelpToSpeak;
 - (id)typeDescription;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (BOOL)itemDescriptionHasChanged;
 - (BOOL)monitorItemDescriptionChanges;
 - (void)addItemNameToRequest:(id)arg1;
@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactRightWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (id)_containerOfInteractiveDescendants;
 - (BOOL)_hasInteractiveDescendants;
 - (BOOL)_hasInteractiveElementsInArray:(id)arg1;

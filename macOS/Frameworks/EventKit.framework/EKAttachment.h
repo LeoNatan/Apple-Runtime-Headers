@@ -26,13 +26,16 @@
 + (id)filePathOnServerForAttachment:(id)arg1 onEvent:(id)arg2;
 + (id)filePathForAttachment:(id)arg1 event:(id)arg2;
 + (id)attachmentWithAttachment:(id)arg1;
++ (id)createTempDestinationURLWithExtension:(id)arg1;
 @property(readonly, retain) NSString *uuid; // @synthesize uuid;
 @property(readonly, retain) NSNumber *isAutoArchivedNumber; // @synthesize isAutoArchivedNumber;
 @property(readonly, retain) NSString *filenameSuggestedByServer; // @synthesize filenameSuggestedByServer;
 @property(readonly, retain) NSString *contentType; // @synthesize contentType;
 - (void).cxx_destruct;
+- (BOOL)isAttachmentLink;
 @property(retain) NSString *attachmentIDOnServer;
 @property(readonly, retain) NSURL *urlOnServer;
+@property(retain) NSString *contentTypeFromServer;
 @property(readonly, retain) NSURL *urlOnDisk;
 - (BOOL)_fileIsAutoZipped:(id)arg1;
 - (id)_fileIsAutoArchivedNumber:(id)arg1;
@@ -44,9 +47,16 @@
 - (void)setUrlOnServer:(id)arg1;
 - (void)_updateUrlOnServer:(id)arg1;
 - (BOOL)isCached;
-- (id)icon;
 - (id)initWithAttachment:(id)arg1;
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;
+- (id)localURLForSource:(id)arg1;
+@property(readonly, nonatomic) NSNumber *fileSize;
+@property(readonly, nonatomic) NSString *fileFormat;
+@property(readonly, nonatomic) NSString *fileName;
+@property(readonly, nonatomic) NSURL *URL;
+@property(readonly, nonatomic) NSURL *localURL;
+@property(readonly, nonatomic) NSURL *URLForPendingFileCopy;
+@property(readonly, nonatomic) NSString *UUID;
 
 // Remaining properties
 @property(readonly, nonatomic) BOOL canBeConvertedToFullObject;

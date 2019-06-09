@@ -33,6 +33,13 @@ typedef struct {
 typedef struct {
     unsigned long long _field1;
     unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+} CDStruct_33dcf794;
+
+typedef struct {
+    unsigned long long _field1;
+    unsigned long long _field2;
     char _field3;
     char _field4;
 } CDStruct_c53ccb4e;

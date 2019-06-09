@@ -27,6 +27,11 @@
     NSOrderedSet *_selectedChatItemGUIDs;
 }
 
++ (BOOL)classIsRegistered:(Class)arg1;
++ (id)registeredTranscriptClasses;
++ (void)setDefaultTranscriptViewControllerName:(id)arg1;
++ (id)defaultTranscriptViewControllerName;
++ (void)registerTranscriptClass:(Class)arg1;
 @property(copy, nonatomic) NSOrderedSet *selectedChatItemGUIDs; // @synthesize selectedChatItemGUIDs=_selectedChatItemGUIDs;
 @property(copy, nonatomic) NSOrderedSet *selectedMessages; // @synthesize selectedMessages=_selectedMessages;
 @property(nonatomic) SOStickerViewerController *stickerViewerController; // @synthesize stickerViewerController=_stickerViewerController;
@@ -37,6 +42,9 @@
 - (void)stickerViewerController:(id)arg1 willDeleteStickers:(id)arg2;
 - (void)showStickerViewer:(id)arg1;
 - (id)makeTouchBar;
+- (void)viewWillDisappear;
+- (void)viewDidAppear;
+- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)chatDisplayControllerDidChange:(id)arg1;
 - (void)chatDisplayControllerWillChange:(id)arg1;
@@ -62,7 +70,11 @@
 - (void)copySelectionIntoPasteboard:(id)arg1;
 - (void)highlightSearchString:(id)arg1;
 - (void)scrollToEndSmoothly:(BOOL)arg1;
+@property(readonly, nonatomic) double distanceFromBottom;
+@property(readonly, nonatomic) BOOL shouldPinToBottom;
 - (BOOL)lastMessageIsVisible;
+- (void)markAllMessagesAsRead;
+- (void)_clearUnreadMessagesIfVisible:(id)arg1;
 - (void)clearUnreadMessagesIfVisible;
 - (void)endFullScreenEffectPlayback;
 - (void)beginFullScreenEffectPlayback;
@@ -72,6 +84,9 @@
 - (void)deselectAll;
 - (void)_chatDisplayControllerChatDidChange:(id)arg1;
 - (void)_chatDisplayControllerChatWillChange:(id)arg1;
+- (void)updateAttachments;
+- (void)processChatItemChanges:(id)arg1;
+- (void)didFinishProcessingChatItemsChange;
 - (void)chatItemsDidChange:(id)arg1;
 - (void)chatDidChange:(id)arg1;
 - (void)chatWillChange:(id)arg1;
@@ -82,6 +97,7 @@
 @property(readonly, getter=isDisplayingAcknowledgmentPicker) BOOL displayingAcknowledgmentPicker;
 @property double topOverlap; // @dynamic topOverlap;
 @property(readonly) NSScrollView *scrollView; // @dynamic scrollView;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

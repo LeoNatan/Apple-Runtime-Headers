@@ -7,17 +7,19 @@
 #import <objc/NSObject.h>
 
 #import <Intents/INCacheableContainer-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class INPerson, NSString;
 
-@interface INShareDestination : NSObject <INCacheableContainer, NSCopying, NSSecureCoding>
+@interface INShareDestination : NSObject <INCacheableContainer, INJSONSerializable, NSCopying, NSSecureCoding>
 {
     INPerson *_contact;
     NSString *_deviceType;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy) NSString *deviceType; // @synthesize deviceType=_deviceType;
 @property(readonly, copy) INPerson *contact; // @synthesize contact=_contact;
@@ -25,6 +27,7 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -7,6 +7,7 @@
 #import <Contacts/CNPhoneNumbersDescription.h>
 
 @interface CNPhoneNumbersDescription (ABSExtentions)
+- (_Bool)isABSLabeledValueValue:(id)arg1 equalToValue:(id)arg2;
 - (CDUnknownBlockType)ABSMultiValueLabeledValueFromCNLabeledValueTransform;
 - (CDUnknownBlockType)CNLabeledValueFromABSMultiValueTranform;
 - (unsigned int)absPropertyType;

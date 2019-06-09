@@ -6,7 +6,7 @@
 
 #import <SpringBoardFoundation/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, UIColor, UIImage, UIView;
+@class NSArray, NSDictionary, NSString, UIColor, UIGestureRecognizer, UIImage, UIView;
 @protocol SBFProceduralWallpaperDelegate;
 
 @protocol SBFProceduralWallpaper <NSObject>
@@ -21,11 +21,12 @@
 + (NSString *)thumbnailImageName;
 + (NSArray *)presetWallpaperOptions;
 @property(nonatomic) id <SBFProceduralWallpaperDelegate> delegate;
+- (UIGestureRecognizer *)gestureRecognizer;
 - (UIColor *)averageColorForRect:(struct CGRect)arg1;
 - (void)stopComputingAverageColor;
 - (void)startComputingAverageColorForRect:(struct CGRect)arg1;
-- (void *)copySnapshotImageForRect:(inout struct CGRect *)arg1;
-- (void *)copyBlurForRect:(inout struct CGRect *)arg1;
+- (struct __IOSurface *)copySnapshotImageForRect:(inout struct CGRect *)arg1;
+- (struct __IOSurface *)copyBlurForRect:(inout struct CGRect *)arg1;
 - (void)stopGeneratingBlurs;
 - (void)startGeneratingBlursForRect:(struct CGRect)arg1;
 - (UIColor *)averageLifetimeColor;

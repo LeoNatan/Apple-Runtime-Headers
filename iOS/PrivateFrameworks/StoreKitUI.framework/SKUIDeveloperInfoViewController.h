@@ -8,6 +8,7 @@
 
 @class SKUIDeveloperInfo, SKUIDeveloperInfoView, UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDeveloperInfoViewController : SKUIViewController
 {
     SKUIDeveloperInfo *_developerInfo;

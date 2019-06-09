@@ -12,16 +12,16 @@
 {
     NSCache *_fetchedImages;
     NSMutableDictionary *_outstandingRequests;
-    NSOperationQueue *_fileOperationQueue;
     HKHealthRecordsStore *_healthRecordsStore;
+    NSOperationQueue *_fileOperationQueue;
 }
 
 + (id)_fetchOrCreateSalt;
 + (id)standardTableViewCellSpacerImage;
 + (id)imageManagerWithHealthRecordsStore:(id)arg1;
 + (double)defaultLogoDimension;
-@property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
 @property(retain) NSOperationQueue *fileOperationQueue; // @synthesize fileOperationQueue=_fileOperationQueue;
+@property(retain, nonatomic) HKHealthRecordsStore *healthRecordsStore; // @synthesize healthRecordsStore=_healthRecordsStore;
 @property(retain, nonatomic) NSMutableDictionary *outstandingRequests; // @synthesize outstandingRequests=_outstandingRequests;
 @property(retain, nonatomic) NSCache *fetchedImages; // @synthesize fetchedImages=_fetchedImages;
 - (void).cxx_destruct;
@@ -36,7 +36,7 @@
 - (void)onMainQueue:(CDUnknownBlockType)arg1;
 - (void)cacheFeaturedBrandLogosWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_scaleKeyForCurrentDevice;
-- (id)init;
+- (id)initWithHealthRecordsStore:(id)arg1;
 
 @end
 

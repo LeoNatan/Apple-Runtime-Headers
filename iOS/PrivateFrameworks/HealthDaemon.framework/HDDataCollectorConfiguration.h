@@ -12,14 +12,20 @@
 {
     unsigned long long _collectionType;
     double _collectionInterval;
+    double _collectionLatency;
 }
 
-@property(nonatomic) double collectionInterval; // @synthesize collectionInterval=_collectionInterval;
-@property(nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
++ (id)disabledConfiguration;
++ (id)configurationWithType:(unsigned long long)arg1 aggregatorConfiguration:(id)arg2;
++ (id)configurationWithType:(unsigned long long)arg1 interval:(double)arg2 latency:(double)arg3;
+@property(readonly, nonatomic) double collectionLatency; // @synthesize collectionLatency=_collectionLatency;
+@property(readonly, nonatomic) double collectionInterval; // @synthesize collectionInterval=_collectionInterval;
+@property(readonly, nonatomic) unsigned long long collectionType; // @synthesize collectionType=_collectionType;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mergedConfiguration:(id)arg1;
+- (id)initWithType:(unsigned long long)arg1 interval:(double)arg2 latency:(double)arg3;
 - (id)init;
 
 @end

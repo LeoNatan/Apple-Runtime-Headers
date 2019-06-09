@@ -9,6 +9,9 @@
 @class AVOutputDevice, NSArray, NSData, NSDictionary, NSNumber, NSString;
 
 @protocol AVOutputDeviceImpl <NSObject>
+@property(copy, nonatomic) NSString *currentBluetoothListeningMode;
+@property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
+@property(readonly, nonatomic) _Bool supportsBluetoothSharing;
 @property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property(readonly, nonatomic) _Bool canFetchMediaDataFromSender;
 @property(readonly, nonatomic) _Bool canPlayEncryptedProgressiveDownloadAssets;
@@ -35,6 +38,8 @@
 @property(readonly, copy, nonatomic) NSArray *connectedPairedDevices;
 @property(readonly, nonatomic, getter=isInUseByPairedDevice) _Bool inUseByPairedDevice;
 @property(readonly, nonatomic) NSDictionary *airPlayProperties;
+@property(readonly, nonatomic) NSNumber *isInEar;
+@property(readonly, nonatomic) NSNumber *supportsDataOverACLProtocol;
 @property(readonly, nonatomic) NSNumber *rightBatteryLevel;
 @property(readonly, nonatomic) NSNumber *leftBatteryLevel;
 @property(readonly, nonatomic) NSNumber *caseBatteryLevel;

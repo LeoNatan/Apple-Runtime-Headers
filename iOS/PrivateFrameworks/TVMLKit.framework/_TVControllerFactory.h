@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (id)_listControllerForElement:(id)arg1 existingController:(id)arg2;
 - (id)_gridControllerForElement:(id)arg1 existingController:(id)arg2;
 - (id)_shelfControllerForElement:(id)arg1 existingController:(id)arg2;
+- (id)_carouselControllerForElement:(id)arg1 layout:(id)arg2 existingController:(id)arg3;
 - (void)_registerControllerCreators;
 - (id)init;
 

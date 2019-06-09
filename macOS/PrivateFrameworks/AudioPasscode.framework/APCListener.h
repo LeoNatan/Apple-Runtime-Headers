@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class APCListenerEngine, AUPasscodeCodecConfiguration;
+@class APCListenerEngine, APCListenerResultData, AUPasscodeCodecConfiguration;
 @protocol OS_dispatch_queue;
 
 @interface APCListener : NSObject
 {
     AUPasscodeCodecConfiguration *_codecConfig;
     APCListenerEngine *_listenerEngine;
+    APCListenerResultData *_resultData;
     CDUnknownBlockType _retrievedDataHandler;
     CDUnknownBlockType _invalidationHandler;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -23,6 +24,7 @@
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType retrievedDataHandler; // @synthesize retrievedDataHandler=_retrievedDataHandler;
 - (void).cxx_destruct;
+- (BOOL)getResultData:(id *)arg1;
 - (void)stopListening;
 - (void)startListeningWithError:(id *)arg1;
 - (void)startListening;

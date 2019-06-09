@@ -6,24 +6,27 @@
 
 #import <MapKit/_MKTableViewController.h>
 
-#import <MapKit/MKDynamicTransitUIContainer-Protocol.h>
 #import <MapKit/MKStackingViewControllerPreferredSizeUse-Protocol.h>
+#import <MapKit/MKTransitItemReferenceDateUpdaterDelegate-Protocol.h>
 
-@class MKTransitItemIncidentsController, NSDate, NSString;
+@class MKTransitItemIncidentsController, MKTransitItemReferenceDateUpdater, NSDate, NSString;
 @protocol GEOTransitLineItem, MKTransitLineIncidentsViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface MKTransitLineIncidentsViewController : _MKTableViewController <MKDynamicTransitUIContainer, MKStackingViewControllerPreferredSizeUse>
+@interface MKTransitLineIncidentsViewController : _MKTableViewController <MKTransitItemReferenceDateUpdaterDelegate, MKStackingViewControllerPreferredSizeUse>
 {
     MKTransitItemIncidentsController *_incidentsController;
-    id <GEOTransitLineItem> _lineItem;
     NSDate *_referenceDate;
     id <MKTransitLineIncidentsViewControllerDelegate> _incidentsDelegate;
+    id <GEOTransitLineItem> _lineItem;
+    MKTransitItemReferenceDateUpdater *_itemUpdater;
 }
 
-@property(nonatomic) __weak id <MKTransitLineIncidentsViewControllerDelegate> incidentsDelegate; // @synthesize incidentsDelegate=_incidentsDelegate;
+@property(readonly, nonatomic) MKTransitItemReferenceDateUpdater *itemUpdater; // @synthesize itemUpdater=_itemUpdater;
 @property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
+@property(nonatomic) __weak id <MKTransitLineIncidentsViewControllerDelegate> incidentsDelegate; // @synthesize incidentsDelegate=_incidentsDelegate;
 - (void).cxx_destruct;
+- (void)transitItemReferenceDateUpdater:(id)arg1 didUpdateToReferenceDate:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -31,7 +34,6 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)_dismissTransitIncidents;
 - (void)_moreIncidentDetailsSelected;
-- (id)_headerView;
 - (id)_incidentCellForRow:(long long)arg1;
 - (id)_incidents;
 @property(readonly, copy, nonatomic) NSDate *referenceDate; // @synthesize referenceDate=_referenceDate;
@@ -40,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)transitUIReferenceTimeUpdated:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)updateTransitLineItemIfNeeded;
 - (void)viewDidLoad;
 - (id)initWithLineItem:(id)arg1;
 

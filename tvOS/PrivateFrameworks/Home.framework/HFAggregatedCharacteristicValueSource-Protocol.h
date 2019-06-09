@@ -15,6 +15,7 @@
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource;
 @property(readonly, nonatomic) HFServiceDescriptor *primaryServiceDescriptor;
 - (id)copyWithValueSource:(id <HFCharacteristicValueSource>)arg1;
+- (NSSet *)allServices;
 - (NSSet *)allCharacteristicsForCharacteristicType:(NSString *)arg1;
 - (NAFuture *)writeValuesForCharacteristicRecipes:(NSDictionary *)arg1;
 - (NAFuture *)readValuesForServiceStateRecipe:(HFServiceStateRecipe *)arg1;

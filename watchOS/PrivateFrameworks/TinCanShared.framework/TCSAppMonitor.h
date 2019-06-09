@@ -27,6 +27,8 @@
 - (void)_clearUserData;
 - (void)_clearUserDataIfNecessary;
 - (void)_updateCompanionWithAppIsInstalled:(_Bool)arg1;
+- (void)_updateUserDefaults;
+- (void)_handleDeviceFirstUnlock;
 - (_Bool)_applicationProxiesContainTinCanApp:(id)arg1;
 - (void)applicationsDidUninstall:(id)arg1;
 - (void)applicationsDidInstall:(id)arg1;

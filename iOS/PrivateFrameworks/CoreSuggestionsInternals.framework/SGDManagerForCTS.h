@@ -24,6 +24,7 @@
     NSObject<OS_dispatch_source> *_adjustActivitySource;
 }
 
++ (void)_logCallInteractions:(id)arg1;
 + (id)defaultInstance;
 + (id)sharedSingletonInstance;
 - (void).cxx_destruct;
@@ -64,6 +65,9 @@
 - (id)accountTypeForBundle:(id)arg1;
 - (struct SGMEventICSSourceType_)accountTypeFor:(id)arg1;
 - (void)_registerForCollectWeeklyStats;
+- (void)_performMobileAssetMetadataDownloadActivity:(id)arg1;
+- (void)_performModelMobileAssetMetadataDownloadActivity:(id)arg1;
+- (void)_registerMobileAssetMetadataDownloadActivity;
 - (void)registerForCTS;
 - (id)initWithHarvestStore:(id)arg1 xpcActivityManager:(id)arg2;
 

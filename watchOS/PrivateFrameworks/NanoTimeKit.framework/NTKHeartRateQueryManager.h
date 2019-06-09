@@ -18,12 +18,16 @@
     HKAnchoredObjectQuery *_heartRateQuery;
     HKHeartRateSummaryQuery *_heartRateSummaryQuery;
     NSHashTable *_observers;
+    _Bool _canUseFutureSamples;
+    _Bool _checkedDefaults;
     HKQuantitySample *_latestHeartRateSample;
     HKHeartRateSummary *_latestHeartRateSummary;
 }
 
 + (id)sharedInstance;
+@property(nonatomic, getter=hasCheckedDefaults) _Bool checkedDefaults; // @synthesize checkedDefaults=_checkedDefaults;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool canUseFutureSamples; // @synthesize canUseFutureSamples=_canUseFutureSamples;
 - (void)setHeartRateSamples:(id)arg1;
 - (void)setLatestHeartRateSummary:(id)arg1;
 @property(readonly, nonatomic) HKHeartRateSummary *latestHeartRateSummary; // @synthesize latestHeartRateSummary=_latestHeartRateSummary;
@@ -44,6 +48,8 @@
 - (void)_notifyObserversOfLatestSummary;
 - (void)_queue_stopObservingHeartRateSummary;
 - (void)_queue_startObservingHeartRateSummary;
+- (void)_queue_clearHeartRateSummaryQueryWithError:(id)arg1;
+- (void)_queue_clearHeartRateSampleQueryWithError:(id)arg1;
 - (void)_handleDeviceLockChange;
 - (void)dealloc;
 - (id)_init;

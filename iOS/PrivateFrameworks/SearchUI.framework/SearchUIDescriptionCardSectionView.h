@@ -18,13 +18,13 @@
 + (id)dragSubtitleForCardSection:(id)arg1;
 + (id)dragTitleForCardSection:(id)arg1;
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
-@property _Bool expanded; // @synthesize expanded=_expanded;
+@property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
 - (void)didPressMoreButton;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) TLKDescriptionView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) TLKDescriptionView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

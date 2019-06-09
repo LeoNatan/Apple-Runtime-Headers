@@ -18,8 +18,6 @@
 }
 
 + (id)featureForAllArticles;
-+ (id)featureForPaidCoverArt;
-+ (id)featureForCoverArt;
 + (id)featureForTopicID:(id)arg1;
 @property(readonly, nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) NSString *key; // @synthesize key=_key;

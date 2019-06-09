@@ -20,6 +20,7 @@
     id <NSObject> _facetimeObserver;
     id <NSObject> _foregroundObserver;
     id <NSObject> _preferencesObserver;
+    _Bool _supportsOnDeviceRecognition;
     NSLocale *_locale;
     id <SFSpeechRecognizerDelegate> _delegate;
     long long _defaultTaskHint;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) NSOperationQueue *queue; // @synthesize queue=_queue;
 @property(nonatomic) long long defaultTaskHint; // @synthesize defaultTaskHint=_defaultTaskHint;
 @property(nonatomic) __weak id <SFSpeechRecognizerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool supportsOnDeviceRecognition; // @synthesize supportsOnDeviceRecognition=_supportsOnDeviceRecognition;
 @property(readonly, copy, nonatomic) NSLocale *locale; // @synthesize locale=_locale;
 - (void).cxx_destruct;
 - (void)_informDelegateOfPreferencesChange;

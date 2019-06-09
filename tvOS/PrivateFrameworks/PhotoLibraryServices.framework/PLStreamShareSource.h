@@ -22,7 +22,8 @@
 @property(retain, nonatomic) NSURL *mediaURL; // @synthesize mediaURL=_mediaURL;
 @property(retain, nonatomic) NSString *fileExtension; // @synthesize fileExtension=_fileExtension;
 @property(retain, nonatomic) NSData *mediaData; // @synthesize mediaData=_mediaData;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)photoLibrary;
 - (void)cleanupResources;
 - (void)_cleanupIfNeededMediaAtURL:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

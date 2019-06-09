@@ -30,7 +30,6 @@
 @property(nonatomic) unsigned long long backgroundState; // @synthesize backgroundState=_backgroundState;
 - (void).cxx_destruct;
 - (id)_normalBackgroundColor;
-- (id)_highlightedBackgroundColor;
 - (_Bool)_shouldUsePrecomputedWallpaperContents;
 - (_Bool)_shouldUseVisualEffectStyle;
 - (_Bool)_isUsingControlCenterDisplayStyle;

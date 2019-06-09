@@ -8,17 +8,18 @@
 
 #import <AVFoundation/NSCopying-Protocol.h>
 
-@class AVAssetTrack, AVMediaSelectionOptionInternal, NSArray, NSLocale, NSString;
+@class AVMediaSelectionOptionInternal, NSArray, NSLocale, NSString;
 
 @interface AVMediaSelectionOption : NSObject <NSCopying>
 {
     AVMediaSelectionOptionInternal *_mediaSelectionOption;
 }
 
++ (id)mediaSelectionNilOptionForGroup:(id)arg1;
 + (id)mediaSelectionOptionForAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3 hasUnderlyingTrack:(_Bool)arg4;
 + (_Bool)_plistHasOptionIdentifier:(id)arg1;
 @property(readonly, nonatomic) int trackID;
-@property(readonly, nonatomic) AVAssetTrack *track;
+- (id)track;
 - (id)outOfBandIdentifier;
 - (id)outOfBandSource;
 @property(readonly, nonatomic) NSString *displayName;
@@ -31,6 +32,7 @@
 @property(readonly, nonatomic) NSArray *availableMetadataFormats;
 - (id)_title;
 @property(readonly, nonatomic) NSArray *commonMetadata;
+- (_Bool)_representsNilSelection;
 - (_Bool)displaysNonForcedSubtitles;
 - (id)fallbackIDs;
 - (id)associatedPersistentIDs;

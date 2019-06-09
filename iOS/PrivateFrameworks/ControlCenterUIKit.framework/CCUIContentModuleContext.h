@@ -26,7 +26,6 @@
 - (void).cxx_destruct;
 - (void)dismissControlCenter;
 - (void)dismissModule;
-- (void)expandedModuleDidUpdatePreferredSize;
 - (void)requestExpandModule;
 - (void)setHomeGestureDismissalAllowed:(_Bool)arg1;
 - (void)enqueueStatusUpdate:(id)arg1;

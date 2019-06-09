@@ -8,32 +8,43 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPlaceSearchResponse, NSMutableArray;
+@class GEOPlaceSearchResponse, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOETAResult : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
+    GEOPlaceSearchResponse *_placeSearchResponse;
+    NSMutableArray *_sortedETAs;
     unsigned int _distance;
     unsigned int _historicTravelTime;
     unsigned int _liveTravelTime;
-    GEOPlaceSearchResponse *_placeSearchResponse;
-    NSMutableArray *_sortedETAs;
     int _status;
     struct {
-        unsigned int distance:1;
-        unsigned int historicTravelTime:1;
-        unsigned int liveTravelTime:1;
-        unsigned int status:1;
-    } _has;
+        unsigned int has_distance:1;
+        unsigned int has_historicTravelTime:1;
+        unsigned int has_liveTravelTime:1;
+        unsigned int has_status:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_placeSearchResponse:1;
+        unsigned int read_sortedETAs:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_placeSearchResponse:1;
+        unsigned int wrote_sortedETAs:1;
+        unsigned int wrote_distance:1;
+        unsigned int wrote_historicTravelTime:1;
+        unsigned int wrote_liveTravelTime:1;
+        unsigned int wrote_status:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)sortedETAType;
-@property(retain, nonatomic) NSMutableArray *sortedETAs; // @synthesize sortedETAs=_sortedETAs;
-@property(nonatomic) unsigned int distance; // @synthesize distance=_distance;
-@property(retain, nonatomic) GEOPlaceSearchResponse *placeSearchResponse; // @synthesize placeSearchResponse=_placeSearchResponse;
-@property(nonatomic) unsigned int historicTravelTime; // @synthesize historicTravelTime=_historicTravelTime;
-@property(nonatomic) unsigned int liveTravelTime; // @synthesize liveTravelTime=_liveTravelTime;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -41,20 +52,29 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)sortedETAAtIndex:(unsigned long long)arg1;
 - (unsigned long long)sortedETAsCount;
+- (void)_addNoFlagsSortedETA:(id)arg1;
 - (void)addSortedETA:(id)arg1;
 - (void)clearSortedETAs;
+@property(retain, nonatomic) NSMutableArray *sortedETAs;
+- (void)_readSortedETAs;
 @property(nonatomic) _Bool hasDistance;
+@property(nonatomic) unsigned int distance;
+@property(retain, nonatomic) GEOPlaceSearchResponse *placeSearchResponse;
 @property(readonly, nonatomic) _Bool hasPlaceSearchResponse;
+- (void)_readPlaceSearchResponse;
 @property(nonatomic) _Bool hasHistoricTravelTime;
+@property(nonatomic) unsigned int historicTravelTime;
 @property(nonatomic) _Bool hasLiveTravelTime;
+@property(nonatomic) unsigned int liveTravelTime;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
+@property(nonatomic) int status;
 
 @end
 

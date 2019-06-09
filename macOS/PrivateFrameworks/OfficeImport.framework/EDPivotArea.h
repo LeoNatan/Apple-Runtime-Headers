@@ -8,6 +8,7 @@
 
 @class EDCollection, EDReference;
 
+__attribute__((visibility("hidden")))
 @interface EDPivotArea : NSObject
 {
     _Bool mGrandCol;

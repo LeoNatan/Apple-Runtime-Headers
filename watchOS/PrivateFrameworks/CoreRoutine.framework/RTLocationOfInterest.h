@@ -29,6 +29,7 @@
 + (id)geoMapItemSourceToString:(int)arg1;
 + (id)locationOfInterestTypeSourceToString:(int)arg1;
 + (id)locationOfInterestTypeToString:(int)arg1;
++ (_Bool)locationOfInterestTypeIsValid:(int)arg1;
 @property(readonly, nonatomic) NSString *customLabel; // @synthesize customLabel=_customLabel;
 @property(readonly, nonatomic) NSArray *visits; // @synthesize visits=_visits;
 @property(readonly, nonatomic) RTMapItem *mapItem; // @synthesize mapItem=_mapItem;

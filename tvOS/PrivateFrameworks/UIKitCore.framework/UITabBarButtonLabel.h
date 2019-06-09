@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_didChangeFromIdiom:(long long)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3;
 - (long long)_idiomForFontGivenIdiom:(long long)arg1;
+- (id)_fontForIdiom:(long long)arg1 forTabBarDisplayStyle:(long long)arg2;
 - (id)_fontForIdiom:(long long)arg1;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (id)_titleTextAttributesForState:(unsigned long long)arg1;
@@ -46,8 +47,9 @@ __attribute__((visibility("hidden")))
 - (void)setSelected:(_Bool)arg1;
 - (void)updateTextColorsForState;
 - (void)tintColorDidChange;
-- (void)sizeToFitBounds:(struct CGRect)arg1;
+- (void)resizeToFitWidth:(double)arg1;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (id)initWithTabBarDisplayStyle:(long long)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (_Bool)_shouldCeilSizeToViewScale;
 

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Message/MFSASLAuthenticator.h>
+#import <EmailCore/ECSASLAuthenticator.h>
 
 @class NSData;
 
-@interface _MFDigestMD5Authenticator : MFSASLAuthenticator
+@interface _MFDigestMD5Authenticator : ECSASLAuthenticator
 {
     unsigned int _maxbuf:16;
     unsigned int _securityLevel:2;

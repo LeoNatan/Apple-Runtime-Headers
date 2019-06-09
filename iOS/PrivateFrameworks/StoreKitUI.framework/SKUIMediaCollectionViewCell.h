@@ -8,6 +8,7 @@
 
 @class SKUIEmbeddedMediaView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaCollectionViewCell : SKUICollectionViewCell
 {
     struct UIEdgeInsets _contentInset;

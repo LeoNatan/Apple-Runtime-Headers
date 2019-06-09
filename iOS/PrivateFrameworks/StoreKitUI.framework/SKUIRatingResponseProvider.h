@@ -6,6 +6,7 @@
 
 #import <iTunesStore/ISPropertyListProvider.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIRatingResponseProvider : ISPropertyListProvider
 {
 }

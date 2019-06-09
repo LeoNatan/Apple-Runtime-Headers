@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <OADColorPalette> palette; // @synthesize palette=mPalette;
 @property(readonly, nonatomic) OADColorMap *map; // @synthesize map=mMap;
 @property(readonly, nonatomic) OADColorScheme *scheme; // @synthesize scheme=mScheme;
+- (void).cxx_destruct;
 - (void)applyThemeOverrides:(id)arg1 colorMapOverride:(id)arg2;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithScheme:(id)arg1 map:(id)arg2 palette:(id)arg3;
 
 @end

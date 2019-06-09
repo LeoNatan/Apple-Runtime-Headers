@@ -6,12 +6,10 @@
 
 #import <UIKit/UITableViewController.h>
 
-#import <WebKit/UIKeyInput-Protocol.h>
-
-@class NSString, UITextInputPasswordRules, WKContentView, WKSelectPopover;
+@class WKContentView, WKSelectPopover;
 
 __attribute__((visibility("hidden")))
-@interface WKSelectTableViewController : UITableViewController <UIKeyInput>
+@interface WKSelectTableViewController : UITableViewController
 {
     unsigned long long _singleSelectionIndex;
     unsigned long long _singleSelectionSection;
@@ -25,9 +23,6 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) WKSelectPopover *popover; // @synthesize popover=_popover;
-- (void)deleteBackward;
-- (void)insertText:(id)arg1;
-@property(readonly, nonatomic) _Bool hasText;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (struct OptionItem *)findItemAt:(id)arg1;
@@ -38,25 +33,6 @@ __attribute__((visibility("hidden")))
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithView:(id)arg1 hasGroups:(_Bool)arg2;
-
-// Remaining properties
-@property(nonatomic) long long autocapitalizationType;
-@property(nonatomic) long long autocorrectionType;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(nonatomic) _Bool enablesReturnKeyAutomatically;
-@property(readonly) unsigned long long hash;
-@property(nonatomic) long long keyboardAppearance;
-@property(nonatomic) long long keyboardType;
-@property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
-@property(nonatomic) long long returnKeyType;
-@property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
-@property(nonatomic) long long smartDashesType;
-@property(nonatomic) long long smartInsertDeleteType;
-@property(nonatomic) long long smartQuotesType;
-@property(nonatomic) long long spellCheckingType;
-@property(readonly) Class superclass;
-@property(copy, nonatomic) NSString *textContentType;
 
 @end
 

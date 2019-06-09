@@ -8,6 +8,7 @@
 
 @class EBReaderState, EXReadState;
 
+__attribute__((visibility("hidden")))
 @interface EBOfficeArtReaderState : OABReaderState
 {
     EXReadState *mXmlDocumentState;

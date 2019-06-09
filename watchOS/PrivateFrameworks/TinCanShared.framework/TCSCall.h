@@ -13,8 +13,7 @@
 @interface TCSCall : NSObject <NSSecureCoding>
 {
     TCSCallCenter *_callCenter;
-    float _lastLocalMeterLevel;
-    float _lastRemoteMeterLevel;
+    _Bool _isNilCall;
     _Bool _isConnected;
     _Bool _isOutgoing;
     _Bool _isRemoteUplinkMuted;
@@ -25,13 +24,9 @@
     int _disconnectedReason;
     NSDate *_dateAnsweredOrDialed;
     NSDate *_dateConnected;
-    int _inputAudioPowerSpectrumToken;
-    int _outputAudioPowerSpectrumToken;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) int outputAudioPowerSpectrumToken; // @synthesize outputAudioPowerSpectrumToken=_outputAudioPowerSpectrumToken;
-@property(readonly, nonatomic) int inputAudioPowerSpectrumToken; // @synthesize inputAudioPowerSpectrumToken=_inputAudioPowerSpectrumToken;
 @property(readonly, copy, nonatomic) NSDate *dateConnected; // @synthesize dateConnected=_dateConnected;
 @property(readonly, copy, nonatomic) NSDate *dateAnsweredOrDialed; // @synthesize dateAnsweredOrDialed=_dateAnsweredOrDialed;
 @property(readonly, nonatomic) int disconnectedReason; // @synthesize disconnectedReason=_disconnectedReason;
@@ -48,8 +43,6 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (float)remoteMeterLevel;
-- (float)localMeterLevel;
 @property(readonly, nonatomic) _Bool isActive;
 @property(readonly, nonatomic) _Bool isIncoming;
 - (void)setUplinkMuted:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;

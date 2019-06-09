@@ -18,6 +18,7 @@
 @property(nonatomic) _Bool cameraFirstProvisioningEnabled; // @synthesize cameraFirstProvisioningEnabled=_cameraFirstProvisioningEnabled;
 - (void).cxx_destruct;
 - (id)description;
+- (id)initWithRequestContext:(id)arg1;
 
 @end
 

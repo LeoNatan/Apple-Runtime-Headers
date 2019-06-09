@@ -7,11 +7,23 @@
 #import <AppKit/NSSpeechSynthesizer.h>
 
 @interface NSSpeechSynthesizer (NSSpeechSynthesizerExtensions)
++ (void)endSheetSavingChanges:(BOOL)arg1;
++ (void)endAlertSavingChanges:(BOOL)arg1;
++ (void)beginSheetForVoiceSettings:(id)arg1 modalDelegate:(id)arg2 modalForWindow:(id)arg3;
++ (void)beginAlertForVoiceSettings:(id)arg1 modalDelegate:(id)arg2 windowTitle:(id)arg3;
++ (id)resolveVoiceIdentifier:(id)arg1 usingVoices:(id)arg2;
++ (id)defaultVoiceFromMainstreamVoices;
++ (id)defaultVoiceFromAllVoices;
++ (id)allMainstreamVoices;
++ (id)allVoices;
++ (id)allDefaultCompactAndCustomCompactVoices;
 - (BOOL)setObject:(id)arg1 forProperty:(unsigned int)arg2 usingDataSize:(long long)arg3;
 - (id)objectForProperty:(unsigned int)arg1 usingDataSize:(long long)arg2 withRequestedObjectClass:(Class)arg3;
 - (void)setSpeechPitch:(float)arg1;
 - (float)speechPitch;
 - (void)setSpeechRate:(float)arg1;
 - (float)speechRate;
+- (struct SpeechChannelRecord *)_speechChannel;
+- (id)initWithVoiceSettings:(id)arg1;
 @end
 

@@ -6,20 +6,23 @@
 
 #import <RelevanceEngine/_REMLWeightedModel.h>
 
+#import <RelevanceEngine/_REMLSingleWeightedModelProperties-Protocol.h>
+
 @class REMLModel;
 
-@interface _REMLSingleWeightedModel : _REMLWeightedModel
+@interface _REMLSingleWeightedModel : _REMLWeightedModel <_REMLSingleWeightedModelProperties>
 {
     REMLModel *_model;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) REMLModel *model;
 - (_Bool)loadModelFromURL:(id)arg1 error:(id *)arg2;
 - (_Bool)saveModelToURL:(id)arg1 error:(id *)arg2;
 - (id)predictWithFeatures:(id)arg1;
 - (void)trainModelWithFeatureMap:(id)arg1 positiveEvent:(id)arg2;
 - (void)enumerateModels:(CDUnknownBlockType)arg1;
-- (id)initWithFeatureSet:(id)arg1;
+- (id)initWithFeatureSet:(id)arg1 priorMean:(float)arg2 biasFeature:(id)arg3;
 
 @end
 

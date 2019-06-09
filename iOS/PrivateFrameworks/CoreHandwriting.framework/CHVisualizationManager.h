@@ -25,6 +25,7 @@
     NSMutableDictionary *__strokeGroupIndexByAncestorID;
 }
 
++ (struct CGColor *)newColorForVisualizedItemAtIndex:(long long)arg1;
 + (_Bool)variableHeightForRecognitionSessionStatusKey:(id)arg1;
 + (id)localizedNameForRecognitionSessionStatusKey:(id)arg1;
 + (id)availableRecognitionSessionStatusKeys;
@@ -42,7 +43,6 @@
 @property(readonly, retain, nonatomic) CHRecognitionSession *recognitionSession; // @synthesize recognitionSession=_recognitionSession;
 - (void)recognitionSessionDidChangeStatus:(id)arg1;
 - (void)recognitionSessionDidUpdateRecognitionResult:(id)arg1;
-- (_Bool)wantsHighFrequencyNotifications;
 - (void)_updateKnownStrokeGroupIndexes;
 - (long long)visualizationIndexForStrokeGroup:(id)arg1;
 - (void)visualization:(id)arg1 needsDisplayInRect:(struct CGRect)arg2;

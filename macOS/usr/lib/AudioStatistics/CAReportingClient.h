@@ -6,31 +6,32 @@
 
 #import <objc/NSObject.h>
 
-#import <AudioStatistics/NSXPCListenerDelegate-Protocol.h>
-
-@class NSMutableDictionary, NSString, NSXPCConnection;
-@protocol CAReportingServerInterface;
+@class NSMutableDictionary, NSXPCConnection;
+@protocol CAReportingServiceProtocol;
 
 __attribute__((visibility("hidden")))
-@interface CAReportingClient : NSObject <NSXPCListenerDelegate>
+@interface CAReportingClient : NSObject
 {
     NSXPCConnection *_connection;
     NSMutableDictionary *_clientReporters;
-    id <CAReportingServerInterface> _serverDelegateAsync;
-    id <CAReportingServerInterface> _serverDelegateSync;
+    id <CAReportingServiceProtocol> _serverDelegateAsync;
+    id <CAReportingServiceProtocol> _serverDelegateSync;
 }
 
 + (id)getClient;
 + (id)sharedInstance;
-@property(retain) id <CAReportingServerInterface> serverDelegateSync; // @synthesize serverDelegateSync=_serverDelegateSync;
-@property(retain) id <CAReportingServerInterface> serverDelegateAsync; // @synthesize serverDelegateAsync=_serverDelegateAsync;
+@property(retain) id <CAReportingServiceProtocol> serverDelegateSync; // @synthesize serverDelegateSync=_serverDelegateSync;
+@property(retain) id <CAReportingServiceProtocol> serverDelegateAsync; // @synthesize serverDelegateAsync=_serverDelegateAsync;
 @property(retain) NSMutableDictionary *clientReporters; // @synthesize clientReporters=_clientReporters;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+- (void)destoryService;
 - (void)destroyClient;
+- (id)getConfigurationForReporterID:(long long)arg1;
+- (void)setConfiguration:(id)arg1 reporterID:(long long)arg2;
 - (unsigned short)getServiceTypeForReporterID:(long long)arg1;
 - (void)setServiceType:(unsigned short)arg1 reporterID:(long long)arg2;
-- (void)sendMessage:(id)arg1 category:(unsigned short)arg2 type:(unsigned short)arg3 reporters:(id)arg4;
+- (void)sendMessage:(id)arg1 category:(unsigned int)arg2 type:(unsigned short)arg3 reporters:(id)arg4;
 - (void)stopReporters:(id)arg1;
 - (void)startReporters:(id)arg1;
 - (id)listServerReporterIDs;
@@ -38,14 +39,11 @@ __attribute__((visibility("hidden")))
 - (void)destroyReporterWithID:(long long)arg1;
 - (void)addReporter:(id)arg1;
 - (id)reporterWithID:(long long)arg1;
-- (long long)createReporterID;
+- (long long)createReporterID:(unsigned int)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)disconnectReporters;
+- (void)reconnectReporters;
+- (void)reconnectReporter:(id)arg1;
 
 @end
 

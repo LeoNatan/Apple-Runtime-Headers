@@ -9,5 +9,8 @@
 @interface UIScrollView (SUAdditions)
 - (id)topExtensionViewColor;
 - (void)setTopExtensionViewColor:(id)arg1;
+- (void)runScrollTest:(id)arg1 withDelta:(float)arg2 forIterations:(int)arg3;
+- (void)scrollBy:(float)arg1 forIterations:(int)arg2;
+- (void)_testingScrollStep;
 @end
 

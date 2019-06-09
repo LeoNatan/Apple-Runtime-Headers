@@ -6,20 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet, NSTimer;
-@protocol PBSPowerManagerDelegate;
+@class NSDictionary, NSTimer;
 
 @interface PBSPowerManager : NSObject
 {
     _Bool _deviceAsleep;
     _Bool _deviceSleptManually;
     _Bool _needsDisplayWakeOnPowerOn;
-    _Bool _ignoreEvents;
     int _sleepStateNotificationToken;
-    id <PBSPowerManagerDelegate> _delegate;
     NSTimer *_powerAssertionTimer;
-    NSMutableSet *_mutableUserActivityTriggers;
-    double _currentIdleTimeInterval;
+    unsigned long long _sleepState;
+    NSDictionary *_pendingSleepWakeCommand;
 }
 
 + (_Bool)automaticallyNotifiesObserversOfDeviceAsleep;
@@ -28,40 +25,22 @@
 + (id)sharedInstance;
 + (void)load;
 @property(nonatomic) int sleepStateNotificationToken; // @synthesize sleepStateNotificationToken=_sleepStateNotificationToken;
-@property(nonatomic) _Bool ignoreEvents; // @synthesize ignoreEvents=_ignoreEvents;
-@property(nonatomic) double currentIdleTimeInterval; // @synthesize currentIdleTimeInterval=_currentIdleTimeInterval;
-@property(readonly, nonatomic) NSMutableSet *mutableUserActivityTriggers; // @synthesize mutableUserActivityTriggers=_mutableUserActivityTriggers;
+@property(retain, nonatomic) NSDictionary *pendingSleepWakeCommand; // @synthesize pendingSleepWakeCommand=_pendingSleepWakeCommand;
+@property(nonatomic) unsigned long long sleepState; // @synthesize sleepState=_sleepState;
 @property(nonatomic) _Bool needsDisplayWakeOnPowerOn; // @synthesize needsDisplayWakeOnPowerOn=_needsDisplayWakeOnPowerOn;
 @property(retain, nonatomic) NSTimer *powerAssertionTimer; // @synthesize powerAssertionTimer=_powerAssertionTimer;
 @property(nonatomic) _Bool deviceSleptManually; // @synthesize deviceSleptManually=_deviceSleptManually;
 @property(nonatomic, getter=isDeviceAsleep) _Bool deviceAsleep; // @synthesize deviceAsleep=_deviceAsleep;
-@property(nonatomic) __weak id <PBSPowerManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_dropPowerAssertions:(id)arg1;
-- (void)_handleThermalNotification;
 - (void)_handleIOPMCallbackMessage:(unsigned int)arg1 argument:(void *)arg2;
-- (void)_handleUserEventsDidUnIdle;
-- (void)_handleUserEventsDidIdle;
 - (void)_releaseSystemActivityAssertion;
 - (void)_setAllowIdleSleep:(_Bool)arg1;
 - (void)_setMachineToNormalPowerModeWithOptions:(id)arg1;
-- (void)_performUserEventWakeDevice;
-- (void)_handleUserEventDidOccur;
+- (void)_handleWillWakeForEvents:(id)arg1;
 - (void)_setMachineToLowPowerModeWithOptions:(id)arg1;
-- (void)_updateIdleTimer;
-- (void)_registerForThermalNotifications;
 - (void)_registerForPowerNotifications;
-- (void)_registerForBackBoardNotifications;
-- (void)_resetIdleTimeout:(id)arg1;
-- (void)_triggerIdleTimeout:(id)arg1;
-- (id)_triggerWithTimeoutGreaterThanTimeIntervalInSeconds:(double)arg1;
-- (void)_resetUserEventTimerWithTrigger:(id)arg1;
-- (void)resetIdleTimer;
-- (void)removeUserActivityTrigger:(id)arg1;
-- (void)addUserActivityTrigger:(id)arg1;
 - (void)_enableIdleSleepAndWatchdog;
-- (void)triggerThermalNotification;
-- (void)resetUserActivityTriggersWithReason:(id)arg1;
 - (void)wakeDeviceWithOptions:(id)arg1;
 - (void)sleepDeviceWithOptions:(id)arg1;
 - (id)init;

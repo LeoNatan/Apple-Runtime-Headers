@@ -57,6 +57,8 @@
 - (void)checkInTile:(void *)arg1 withIdentifier:(struct PXTileIdentifier)arg2;
 - (void)_getImageRequester:(id *)arg1 title:(id *)arg2 subtitle:(id *)arg3 forRelatedEntry:(id)arg4 mediaProvider:(id)arg5;
 - (void *)checkOutTileForIdentifier:(struct PXTileIdentifier)arg1 layout:(id)arg2;
+- (struct PXSimpleIndexPath)_assetIndexPathAtLocation:(struct CGPoint)arg1 padding:(struct UIEdgeInsets)arg2;
+- (id)imageViewBasicTileForPreviewingAtPoint:(struct CGPoint)arg1;
 - (id)_relatedEntryAtPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (id)_relatedEntryAtLocationOfGestureRecognizer:(id)arg1;
 - (void)_handleTouchGestureRecognizer:(id)arg1;
@@ -64,7 +66,7 @@
 - (void)_handleTapGestureRecognizer:(id)arg1;
 - (id)_scrollViewController;
 - (void)commitPreviewViewController:(id)arg1;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2 outSourceRect:(out struct CGRect *)arg3;
+- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
 - (void)_registerTileClass:(Class)arg1 forReuseIdentifier:(long long)arg2;
 - (id)extendedTraitCollection;
 - (id)createTileAnimator;

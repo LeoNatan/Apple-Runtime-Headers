@@ -6,10 +6,11 @@
 
 #import <ScreenTimeUI/NSObject-Protocol.h>
 
-@class NSDictionary, STContentPrivacyViewModel, STRestrictionItem;
+@class NSDictionary, STCommunicationLimits, STContentPrivacyViewModel, STRestrictionItem;
 
 @protocol STContentPrivacyViewModelCoordinator <NSObject>
 @property(readonly, nonatomic) STContentPrivacyViewModel *viewModel;
+- (void)saveCommunicationLimits:(STCommunicationLimits *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)saveRestrictionValue:(id)arg1 forItem:(STRestrictionItem *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)saveValuesForRestrictions:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)saveContentPrivacyEnabled:(_Bool)arg1 completionHandler:(void (^)(NSError *))arg2;

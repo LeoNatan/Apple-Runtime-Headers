@@ -16,9 +16,9 @@
     NSObject<OS_dispatch_source> *_source;
 }
 
+- (void).cxx_destruct;
 - (void)cancel;
 - (id)source;
-- (void)dealloc;
 - (id)initWithSource:(id)arg1;
 
 // Remaining properties

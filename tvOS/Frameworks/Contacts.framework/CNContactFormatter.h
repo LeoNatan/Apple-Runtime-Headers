@@ -55,7 +55,6 @@
 @property(readonly, retain) NSPersonNameComponentsFormatter *nameFormatter; // @synthesize nameFormatter=_nameFormatter;
 - (id)descriptorForRequiredKeys;
 - (id)init;
-- (id)stringFromPotentiallySuggestedContact:(id)arg1 relatedToProperty:(id)arg2;
 
 @end
 

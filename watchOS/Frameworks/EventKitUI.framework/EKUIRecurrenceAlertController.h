@@ -21,16 +21,19 @@
 + (id)_detachFutureLocalizedString;
 + (id)_detachAllLocalizedString;
 + (id)presentDetachAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 forEvent:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
++ (id)deleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 forEvent:(id)arg3 stringForDeleteButton:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 + (id)presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 forEvent:(id)arg3 stringForDeleteButton:(id)arg4 withCompletionHandler:(CDUnknownBlockType)arg5;
 + (id)presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 forEvent:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 + (id)newAlertControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(retain) UIAlertController *alertController; // @synthesize alertController=_alertController;
 - (void).cxx_destruct;
 - (void)_cleanup;
 - (void)_completeWithSelection:(int)arg1;
 - (void)cancelAnimated:(_Bool)arg1;
 - (void)_presentDetachAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 forEvent:(id)arg3;
 - (void)_presentDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 forEvent:(id)arg3 stringForDeleteButton:(id)arg4;
+- (void)setupDeleteAlertWithOptions:(unsigned int)arg1 viewController:(id)arg2 forEvent:(id)arg3 stringForDeleteButton:(id)arg4;
 - (_Bool)_useSheetForViewController:(id)arg1 options:(unsigned int)arg2;
 - (void)dealloc;
 

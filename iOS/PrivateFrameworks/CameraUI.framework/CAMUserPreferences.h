@@ -86,6 +86,7 @@
 - (long long)videoEncodingBehaviorForConfiguration:(long long)arg1;
 @property(readonly, nonatomic) _Bool shouldShowQRBanners;
 - (_Bool)shouldResetCaptureConfiguration;
+- (void)updateResetTimeoutDate;
 - (void)writePreferences;
 - (_Bool)readPreferencesWithOverrides:(id)arg1 emulationMode:(long long)arg2 callActive:(_Bool)arg3;
 - (long long)_sanitizeLightingType:(long long)arg1 forMode:(long long)arg2;

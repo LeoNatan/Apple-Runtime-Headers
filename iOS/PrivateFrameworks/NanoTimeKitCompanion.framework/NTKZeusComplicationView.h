@@ -16,6 +16,7 @@
 {
     _Bool canUseCurvedText;
     _Bool _highlighted;
+    _Bool _legibilityEnabled;
     id <NTKComplicationDisplayObserver> displayObserver;
     unsigned long long _style;
     NTKZeusColorPalette *_palette;
@@ -24,6 +25,7 @@
 
 + (id)viewForComplicationType:(unsigned long long)arg1;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(nonatomic) _Bool legibilityEnabled; // @synthesize legibilityEnabled=_legibilityEnabled;
 @property(readonly, nonatomic) NTKZeusColorPalette *palette; // @synthesize palette=_palette;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic) unsigned long long style; // @synthesize style=_style;
@@ -32,6 +34,7 @@
 - (void).cxx_destruct;
 - (void)applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (void)applyPalette:(id)arg1;
+- (void)_updateLegibility;
 - (struct CGRect)contentFrame;
 - (id)init;
 

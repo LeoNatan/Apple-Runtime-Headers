@@ -30,9 +30,14 @@
 @property(retain, setter=_setExtensionPrincipalObjects:) NSMutableDictionary *_extensionPrincipalObjects; // @synthesize _extensionPrincipalObjects=__extensionPrincipalObjects;
 @property(retain, setter=_setExtensionContexts:) NSMutableDictionary *_extensionContexts; // @synthesize _extensionContexts=__extensionContexts;
 @property(retain, setter=_setExtensionServiceConnections:) NSMutableDictionary *_extensionServiceConnections; // @synthesize _extensionServiceConnections=__extensionServiceConnections;
+- (void)_onGlobalStateQueueOnly_setPrincipalObject:(id)arg1 forUUID:(id)arg2;
 - (void)_setPrincipalObject:(id)arg1 forUUID:(id)arg2;
 - (id)_extensionContextForUUID:(id)arg1;
 - (void)_tearDownContextWithUUID:(id)arg1;
+- (void)_hostDidBecomeActiveForContextUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_hostWillResignActiveForContextUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_hostWillEnterForegroundForContextUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_hostDidEnterBackgroundForContextUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_beginRequestWithExtensionItems:(id)arg1 listenerEndpoint:(id)arg2 withContextUUID:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)_shouldCreatePrincipalObject;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

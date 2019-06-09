@@ -6,8 +6,27 @@
 
 #import <Foundation/NSString.h>
 
-@interface NSString (Readable)
+#import <Intents/INCodableAttributeRelationComparing-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
+
+@interface NSString (Readable) <INJSONSerializable, INCodableAttributeRelationComparing>
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1 fromTable:(id)arg2 bundle:(id)arg3;
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1 fromTable:(id)arg2 arguments:(struct __va_list_tag [1])arg3;
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1 fromTable:(id)arg2;
++ (id)deferredLocalizedIntentsStringWithFormat:(id)arg1;
 - (id)_intents_localizedCopyForLanguage:(id)arg1;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)localizeForLanguage:(id)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+- (id)_intents_decodeFromProto;
+- (id)_intents_encodeForProto;
+- (_Bool)_intents_compareValue:(id)arg1 relation:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

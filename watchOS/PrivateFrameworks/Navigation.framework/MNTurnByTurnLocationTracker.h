@@ -6,12 +6,15 @@
 
 #import <Navigation/MNLocationTracker.h>
 
-@class GEONavigationMapMatcher, MNLocation, NSData, NSTimer;
+#import <Navigation/MNArrivalUpdaterDelegate-Protocol.h>
+
+@class GEONavigationMapMatcher, MNArrivalUpdater, MNLocation, NSData, NSString, NSTimer;
 @protocol GEODirectionServiceTicket;
 
-@interface MNTurnByTurnLocationTracker : MNLocationTracker
+@interface MNTurnByTurnLocationTracker : MNLocationTracker <MNArrivalUpdaterDelegate>
 {
     GEONavigationMapMatcher *_mapMatcher;
+    MNArrivalUpdater *_arrivalUpdater;
     double _startTime;
     id <GEODirectionServiceTicket> _rerouteTicket;
     NSData *_serverSessionState;
@@ -29,6 +32,9 @@
 
 @property(copy, nonatomic) NSData *serverSessionState; // @synthesize serverSessionState=_serverSessionState;
 - (void).cxx_destruct;
+- (void)arrivalUpdaterDidTimeoutInArrivalRegion:(id)arg1;
+- (void)arrivalUpdaterDidEnterPreArrivalState:(id)arg1;
+- (void)arrivalUpdaterDidArrive:(id)arg1;
 - (void)forceOnRoute:(id)arg1 atLocation:(id)arg2;
 - (void)_setIsNavigatingInLowGuidance:(_Bool)arg1;
 - (id)_alternateRouteForOffRouteLocation:(id)arg1;
@@ -54,9 +60,10 @@
 - (void)_submitRerouteTicketWithHandler:(CDUnknownBlockType)arg1;
 - (id)_ticketForNewDestination:(id)arg1 fromLocation:(id)arg2 transportType:(int)arg3;
 - (id)_rerouteTicketForLocation:(id)arg1 transportType:(int)arg2 stepIndex:(unsigned int)arg3;
+- (void)_sendRouteHintForLocation:(id)arg1;
 - (_Bool)_isCameraTestMode;
 - (_Bool)_isRerouting;
-- (_Bool)_isRoadFeatureInOppositeDirection:(CDStruct_3da87dc5 *)arg1 ofCoordinate:(CDStruct_2c43369c)arg2 course:(double)arg3;
+- (_Bool)_isRoadFeatureInOppositeDirection:(CDStruct_4e2e1dc0 *)arg1 ofCoordinate:(CDStruct_c3b9c2ee)arg2 course:(double)arg3;
 - (id)_matchedLocationForMatchResult:(id)arg1 originalLocation:(id)arg2;
 - (_Bool)_shouldAdvanceGuidanceToRouteMatch:(id)arg1;
 - (void)_updateSwitchTransportTypeForLocation:(id)arg1;
@@ -66,6 +73,12 @@
 - (void)dealloc;
 - (id)initWithNavigationSession:(id)arg1;
 - (id)initForTestingWithRoute:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

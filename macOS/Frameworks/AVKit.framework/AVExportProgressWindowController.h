@@ -10,6 +10,7 @@
 
 @class AVFoundationExportSession, AVProgressEstimator, NSButton, NSError, NSProgressIndicator, NSString, NSTextField, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface AVExportProgressWindowController : NSWindowController <AVExportSessionHelperDelegate>
 {
     NSProgressIndicator *_progressIndicator;

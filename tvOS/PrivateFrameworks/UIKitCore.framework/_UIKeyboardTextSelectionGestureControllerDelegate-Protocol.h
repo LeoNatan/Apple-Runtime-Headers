@@ -14,6 +14,7 @@
 
 @optional
 @property(readonly, nonatomic) double timestampOfLastTouchesEnded;
+- (_Bool)shouldAllowTwoFingerSelectionGesture;
 - (void)setTwoFingerTapTimestamp:(double)arg1;
 - (_Bool)shouldAllowSelectionGestures:(_Bool)arg1 atPoint:(struct CGPoint)arg2 toBegin:(_Bool)arg3;
 - (void)didEndGesture;

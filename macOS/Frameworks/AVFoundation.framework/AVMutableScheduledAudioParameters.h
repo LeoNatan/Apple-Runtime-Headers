@@ -14,6 +14,7 @@
 }
 
 + (id)scheduledAudioParameters;
+- (void)setVolumeRampFromStartVolume:(float)arg1 toEndVolume:(float)arg2 timeRange:(CDStruct_e83c9415)arg3 rampMode:(long long)arg4;
 - (void)setVolume:(float)arg1 atTime:(CDStruct_1b6d18a9)arg2;
 - (void)setVolumeRampFromStartVolume:(float)arg1 toEndVolume:(float)arg2 timeRange:(CDStruct_e83c9415)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;

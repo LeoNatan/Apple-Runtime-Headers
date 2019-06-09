@@ -14,7 +14,7 @@
 {
 }
 
-+ (id)typeString;
++ (void)load;
 @property(readonly, copy) NSString *description;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFills:(struct CGSize)arg1;

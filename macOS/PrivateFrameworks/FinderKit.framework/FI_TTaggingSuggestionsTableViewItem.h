@@ -20,15 +20,16 @@ __attribute__((visibility("hidden")))
     _Bool _needsCustomSelect;
     _Bool _isMoveTag;
     NSString *_tagName;
-    FI_TLabelView *_labelColorView;
     struct TKeyValueBinder _labelColorBinder;
+    FI_TLabelView *labelColorView;
 }
 
 + (id)itemForMoveTag:(const struct TString *)arg1;
 + (id)itemForCreateNewTag:(const struct TString *)arg1 labelColorView:(id)arg2;
 + (id)showAllItem;
 + (id)itemForTag:(id)arg1 needsCustomSelect:(_Bool)arg2;
-@property(retain, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
+@property(nonatomic) __weak FI_TLabelView *labelColorView; // @synthesize labelColorView;
+@property(copy, nonatomic) NSString *tagName; // @synthesize tagName=_tagName;
 @property(readonly, nonatomic) _Bool needsCustomSelect; // @synthesize needsCustomSelect=_needsCustomSelect;
 @property(readonly, nonatomic) _Bool isMoveTag; // @synthesize isMoveTag=_isMoveTag;
 @property(readonly, nonatomic) _Bool isCreateTag; // @synthesize isCreateTag=_isCreateTag;

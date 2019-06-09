@@ -12,14 +12,14 @@
 #import <PhotosUICore/PLPhotoLibraryShouldReloadObserver-Protocol.h>
 #import <PhotosUICore/PXConfigurableFeedSectionInfosManager-Protocol.h>
 
-@class NSDate, NSMapTable, NSMutableArray, PLPhotoLibrary;
+@class NSDate, NSMutableArray, NSMutableDictionary, PLPhotoLibrary;
 @protocol PXFeedSectionInfosManagerDelegate;
 
 @interface PXFeedSectionInfosManager : NSObject <PLCloudFeedEntriesObserver, PLCloudCommentsChangeObserver, PLAssetChangeObserver, PLPhotoLibraryShouldReloadObserver, PXConfigurableFeedSectionInfosManager>
 {
     PLPhotoLibrary *_photoLibrary;
     NSMutableArray *_sectionInfos;
-    NSMapTable *_sectionInfosByCloudFeedEntry;
+    NSMutableDictionary *_sectionInfosByCloudFeedEntry;
     NSMutableArray *_pendingFeedEntriesChangeNotifications;
     NSMutableArray *_pendingCommentsChangeNotifications;
     NSMutableArray *_pendingAssetsChangeNotifications;

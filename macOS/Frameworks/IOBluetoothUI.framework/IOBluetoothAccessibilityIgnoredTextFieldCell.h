@@ -12,6 +12,7 @@
 
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;
+- (id)init;
 
 @end
 

@@ -7,8 +7,67 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (HTMLEncoding)
++ (int)_navigation_abbreviatedFromatterUnitsStyleForLocale:(id)arg1;
++ (id)_navigation_selectInstructionWithServerStringArray:(id)arg1 isSpoken:(_Bool)arg2 clientBlock:(CDUnknownBlockType)arg3;
++ (id)_navigation_selectInstructionWithServerString:(id)arg1 isSpoken:(_Bool)arg2 clientBlock:(CDUnknownBlockType)arg3;
++ (_Bool)_navigation_logIfContainsVariables:(id)arg1;
++ (_Bool)_navigation_compareServerInstructions:(id)arg1 withClientInstructions:(id)arg2;
++ (void)_navigation_logMismatchBetweenServerInstruction:(id)arg1 clientInstruction:(id)arg2;
++ (id)_navigation_addPrefixToInstructions:(id)arg1 isServer:(_Bool)arg2 isSpoken:(_Bool)arg3;
++ (id)_navigation_languageDirectionStringWithFormat:(id)arg1;
++ (id)_navigation_formattedStringForPriceValueWithAmount:(id)arg1 currencyCode:(id)arg2 showsCurrencySymbol:(_Bool)arg3;
++ (id)_navigation_formattedStringForPriceValueWithAmount:(id)arg1 currencyCode:(id)arg2;
++ (id)_navigation_formattedStringForPriceValue:(double)arg1 currencyCode:(id)arg2;
++ (id)_navigation_commaListDelimiter;
++ (id)_navigation_stringWithCountdownValue:(id)arg1 inToken:(id)arg2 options:(CDStruct_8d2218a5)arg3;
++ (id)_navigation_stringWithTimeStampValues:(id)arg1 options:(CDStruct_8d2218a5)arg2;
++ (id)_navigation_replacementForFormatToken:(id)arg1 options:(CDStruct_8d2218a5)arg2 overrideVariables:(id)arg3;
++ (id)_navigation_replacementForFormatToken:(id)arg1 abbreviatedUnits:(_Bool)arg2 detail:(int)arg3 spoken:(_Bool)arg4 overrideVariables:(id)arg5;
++ (id)_navigation_stringWithMinutes:(unsigned int)arg1 andAbbreviationType:(unsigned int)arg2;
++ (id)_navigation_stringWithSeconds:(unsigned int)arg1 andAbbreviationType:(unsigned int)arg2;
++ (id)_navigation_stringWithSeconds:(unsigned int)arg1 abbreviated:(_Bool)arg2;
++ (id)_navigation_stringForDistance:(double)arg1 formatter:(id)arg2 locale:(id)arg3;
++ (id)_navigation_localizedStringForDistance:(double)arg1 detail:(int)arg2 unitFormat:(int)arg3 locale:(id)arg4 useMetric:(unsigned int)arg5 useYards:(unsigned int)arg6;
++ (id)_navigation_localizedStringForDistance:(double)arg1 context:(int)arg2 extraDetail:(_Bool)arg3;
++ (id)_navigation_overridenTokenForToken:(id)arg1 overrideVariables:(id)arg2;
++ (id)_navigation_stringForServerFormattedString:(id)arg1 abbreviatedUnits:(_Bool)arg2 detail:(int)arg3 spoken:(_Bool)arg4 overrideVariables:(id)arg5;
++ (id)_navigation_stringForServerFormattedString:(id)arg1;
++ (id)_navigation_stringForServerFormattedString:(id)arg1 options:(CDStruct_8d2218a5)arg2 overrideVariables:(id)arg3;
++ (id)_navigation_descriptionForFrequencyRangeWithMinFrequency:(int)arg1 maxFrequency:(int)arg2;
++ (id)_navigation_descriptionForFrequencyMinuteValue:(int)arg1;
++ (id)_navigation_formattedDescriptionForLiveStatus:(int)arg1 updatedDepartureTimeString:(id)arg2;
++ (id)_navigation_formattedDescriptionForFrequency:(id)arg1;
++ (id)_frequencyStringForComponents:(id)arg1 forRange:(_Bool)arg2 forceShort:(_Bool)arg3;
++ (_Bool)_componentsWillUseShortFormat:(id)arg1;
++ (id)_navigation_stringForExpectedTravelTime:(double)arg1 dateUnitStyle:(int)arg2;
++ (id)_navigation_formattedStringForHourRanges:(id)arg1 timeZone:(id)arg2;
++ (id)_navigation_formatFloatForPrintedDistance:(float)arg1;
++ (id)_navigation_formattedStringForFloat:(float)arg1 useIncreasedPrecision:(_Bool)arg2;
++ (id)_navigation_formattedStringForFloat:(float)arg1;
++ (id)_navigation_formattedStringForInteger:(int)arg1;
++ (id)_navigation_pointerDescription:(id)arg1;
++ (id)_navigation_stringWithTime:(id)arg1;
++ (id)_navigation_stringWithAltitudeUnits;
++ (id)_navigation_stringWithAltitude:(double)arg1 accuracy:(double)arg2;
++ (id)_navigation_stringWithDirection:(double)arg1 abbreviated:(_Bool)arg2;
++ (id)_navigation_stringWithSpeedUnits;
++ (id)_navigation_stringWithSpeed:(double)arg1;
 - (id)_navigation_sanitizedStringForDisplayInHTML;
 - (id)_navigation_stringByReplacingNewLinesWithString:(id)arg1;
 - (id)_navigation_stringByEscapingHTML;
+- (unsigned int)_navigation_distanceLevenshtein:(id)arg1;
+- (_Bool)_navigation_containsVariables;
+- (_Bool)_navigation_isEqualToString:(id)arg1;
+- (id)_navigation_stripVariablesFromString;
+- (_Bool)_navigation_isPrivate;
+- (id)_navigation_stringByStrippingPrivateTag;
+- (id)_navigation_stringByMarkingAsPrivateText;
+- (id)_navigation_stripTagsFromSpokenString;
+- (id)_navigation_stripDebugPrefix;
+- (_Bool)_navigation_isCJK;
+- (id)_navigation_stringByMarkingAsNormalText;
+- (id)_navigation_stringByMarkingAsNavigationText;
+- (id)_navigation_stringByMarkingAsAddress;
+- (id)_navigation_stringByMakingPhonetic;
 @end
 

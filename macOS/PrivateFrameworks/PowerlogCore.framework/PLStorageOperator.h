@@ -23,7 +23,6 @@
 + (id)entryEventForwardDefinitionSchemaChange;
 + (id)entryEventForwardDefinitionConfiguration;
 + (id)entryEventForwardDefinitions;
-+ (id)entryEventPointDefinitionMobileAssets;
 + (id)entryEventPointDefinitionPLLog;
 + (id)entryEventPointDefinitionArchive;
 + (id)entryEventPointDefinitionTimeCorrection;
@@ -38,7 +37,6 @@
 - (void)logEventForwardTimeOffset:(id)arg1;
 - (void)logEventForwardSchemaChange:(id)arg1;
 - (void)logEventForwardConfiguration:(id)arg1;
-- (void)logEventPointMobileAssets:(id)arg1;
 - (void)logEventPointPLLog:(id)arg1;
 - (void)logEventPointArchive:(id)arg1;
 - (void)logEventPointTimeCorrection:(id)arg1;

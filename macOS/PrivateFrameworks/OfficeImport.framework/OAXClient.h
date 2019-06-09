@@ -8,6 +8,7 @@
 
 #import <OfficeImport/OAXClient-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface OAXClient : NSObject <OAXClient>
 {
 }

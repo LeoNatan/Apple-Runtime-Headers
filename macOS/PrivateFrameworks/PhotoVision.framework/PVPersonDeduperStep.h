@@ -9,7 +9,6 @@
 @class NSDictionary, NSMapTable, NSString, PVPersonClusterManager, PVPersonDeduperProfile;
 @protocol PVPersonPromoterDelegate;
 
-__attribute__((visibility("hidden")))
 @interface PVPersonDeduperStep : NSObject
 {
     BOOL _shouldStop;
@@ -29,12 +28,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSDictionary *invalidCandidatesMapping; // @synthesize invalidCandidatesMapping=_invalidCandidatesMapping;
 @property(readonly, nonatomic) PVPersonClusterManager *personClusterManager; // @synthesize personClusterManager=_personClusterManager;
 - (void).cxx_destruct;
+- (float)adjustedThreshold:(float)arg1 forMinAgeType:(unsigned short)arg2;
 - (BOOL)addPotentialMergeCandidateForPerson:(id)arg1 withOtherPerson:(id)arg2 updateBlock:(CDUnknownBlockType)arg3;
 - (id)mergeCandidatePersonsWithUpdateBlock:(CDUnknownBlockType)arg1;
 - (id)_resolveMergeCandidate:(id)arg1 forPerson:(id)arg2;
 - (BOOL)shouldStopWithUpdateBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSString *metricsKey;
-- (BOOL)isPersonSimilar:(id)arg1 withOtherPerson:(id)arg2 withDistance:(float)arg3;
+- (BOOL)isPersonSimilar:(id)arg1 withOtherPerson:(id)arg2 withDistance:(float)arg3 minAgeType:(unsigned short)arg4;
 - (void)dedupePersons:(id)arg1 withOtherPersons:(id)arg2 updateBlock:(CDUnknownBlockType)arg3 resultBlock:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) NSString *name;
 - (id)initWithPersonClusterManager:(id)arg1 invalidCandidatesMapping:(id)arg2 profile:(id)arg3;

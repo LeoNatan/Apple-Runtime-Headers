@@ -8,22 +8,39 @@
 
 #import <HealthKit/HKQuantitySeriesSampleQueryClientInterface-Protocol.h>
 
-@class HKQuantitySample, NSString;
+@class HKQuantitySample, NSData, NSDate, NSDictionary, NSMutableDictionary, NSString;
 
 @interface HKQuantitySeriesSampleQuery : HKQuery <HKQuantitySeriesSampleQueryClientInterface>
 {
-    CDUnknownBlockType _quantityHandler;
+    CDUnknownBlockType _seriesHandler;
     HKQuantitySample *_sample;
     long long _anchor;
+    double _startTime;
+    CDUnknownBlockType _enumerationHandler;
+    NSMutableDictionary *_receivedSamplesByUUID;
+    _Bool _hasMaximumReceivedStartTime;
+    double _maximumReceivedStartTime;
+    NSData *_latestReceivedUUIDData;
+    NSDate *_latestSampleStartDate;
+    _Bool _includeSample;
+    _Bool _orderByQuantitySampleStartDate;
 }
 
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+@property(nonatomic) _Bool orderByQuantitySampleStartDate; // @synthesize orderByQuantitySampleStartDate=_orderByQuantitySampleStartDate;
+@property(nonatomic) _Bool includeSample; // @synthesize includeSample=_includeSample;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *unitTest_cachedQuantitySamplesByUUID;
 - (void)queue_queryDidDeactivate:(id)arg1;
 - (void)queue_deliverError:(id)arg1;
 - (void)queue_populateConfiguration:(id)arg1;
+- (id)_quantitySampleForEnumerationResult:(id)arg1 UUID:(id)arg2;
+- (void)client_deliverEnumerationResults:(id)arg1 isFinal:(_Bool)arg2 query:(id)arg3;
 - (void)client_deliverQuantitySeries:(id)arg1 seriesAnchor:(long long)arg2 isFinal:(_Bool)arg3 query:(id)arg4;
+@property(readonly, nonatomic) CDUnknownBlockType quantityHandlerWithSample;
+@property(readonly, nonatomic) CDUnknownBlockType quantityHandlerWithoutSample;
+- (id)initWithQuantityType:(id)arg1 predicate:(id)arg2 quantityHandler:(CDUnknownBlockType)arg3;
 - (id)initWithSample:(id)arg1 quantityHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties

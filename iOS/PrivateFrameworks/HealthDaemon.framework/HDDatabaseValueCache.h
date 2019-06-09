@@ -11,6 +11,7 @@
 
 @interface HDDatabaseValueCache : NSObject
 {
+    long long _cacheScope;
     NSMutableDictionary *_cache;
     NSObject<OS_dispatch_queue> *_resourceQueue;
     NSString *_threadLocalKey;
@@ -29,6 +30,7 @@
 - (id)_resourceQueue_objectForKey:(id)arg1 database:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (id)fetchObjectForKey:(id)arg1 database:(id)arg2 error:(id *)arg3 faultHandler:(CDUnknownBlockType)arg4;
+- (id)initWithCacheScope:(long long)arg1;
 - (id)init;
 
 @end

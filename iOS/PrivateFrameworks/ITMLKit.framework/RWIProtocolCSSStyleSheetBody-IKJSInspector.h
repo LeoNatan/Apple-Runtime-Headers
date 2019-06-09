@@ -10,6 +10,7 @@
 
 @interface RWIProtocolCSSStyleSheetBody (IKJSInspector)
 + (id)ik_stylesheetBodyFromRuleList:(id)arg1 forStyleMarkup:(id)arg2 withHeader:(id)arg3;
++ (id)safe_initWithStyleSheetId:(id)arg1 rules:(id)arg2;
 @property(retain, nonatomic, setter=ik_setTextNewLineIndexSet:) NSIndexSet *ik_textNewLineIndexSet;
 @property(retain, nonatomic, setter=ik_setRuleList:) IKCSSRuleList *ik_ruleList;
 @end

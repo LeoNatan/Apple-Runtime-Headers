@@ -14,13 +14,15 @@
 
 - (void)setPreventsIdleSystemSleep:(BOOL)arg1;
 - (void)setBoundInterfaceIdentifier:(id)arg1;
-@property BOOL allowsCellularAccess;
-@property unsigned long long networkServiceType;
+@property BOOL allowsCellularAccess; // @dynamic allowsCellularAccess;
+@property unsigned long long networkServiceType; // @dynamic networkServiceType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(copy) NSURL *mainDocumentURL;
-@property double timeoutInterval;
-@property unsigned long long cachePolicy;
-@property(copy) NSURL *URL;
+@property BOOL allowsExpensiveNetworkAccess;
+@property BOOL allowsConstrainedNetworkAccess;
+@property(copy) NSURL *mainDocumentURL; // @dynamic mainDocumentURL;
+@property double timeoutInterval; // @dynamic timeoutInterval;
+@property unsigned long long cachePolicy; // @dynamic cachePolicy;
+@property(copy) NSURL *URL; // @dynamic URL;
 - (void)setContentDispositionEncodingFallbackArray:(id)arg1;
 - (void)_setPayloadTransmissionTimeout:(double)arg1;
 - (void)_setIgnoreHSTS:(BOOL)arg1;

@@ -15,10 +15,12 @@
     NSObject<OS_dispatch_queue> *_signingQueue;
     NSXPCListenerEndpoint *_listenerEndpoint;
     NSXPCConnection *_connection;
+    _Bool _isProxy;
     AKAppleIDAuthenticationController *_authenticationController;
 }
 
 @property(retain, nonatomic) AKAppleIDAuthenticationController *authenticationController; // @synthesize authenticationController=_authenticationController;
+@property(nonatomic) _Bool isProxy; // @synthesize isProxy=_isProxy;
 - (void).cxx_destruct;
 - (void)signaturesForData:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)absintheSignatureForData:(id)arg1 completion:(CDUnknownBlockType)arg2;

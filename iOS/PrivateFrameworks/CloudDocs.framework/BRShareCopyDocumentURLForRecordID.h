@@ -15,6 +15,7 @@
     CDUnknownBlockType _copyDocumentURLCompletionBlock;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType copyDocumentURLCompletionBlock; // @synthesize copyDocumentURLCompletionBlock=_copyDocumentURLCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

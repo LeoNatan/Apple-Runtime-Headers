@@ -8,6 +8,7 @@
 
 @class SKUISettingsHeaderFooterDescriptionView;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsTableHeaderFooterView : UITableViewHeaderFooterView
 {
     SKUISettingsHeaderFooterDescriptionView *_settingsHeaderFooterDescriptionView;

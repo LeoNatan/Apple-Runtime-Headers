@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     double _value;
 }
 
++ (id)zero;
 @property(readonly, nonatomic) double value; // @synthesize value=_value;
 - (id)_lp_HTMLAttributeText;
 - (id)_lp_CSSText;

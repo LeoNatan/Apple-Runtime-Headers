@@ -6,34 +6,62 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, NSString, _INPBDataString, _INPBIntentMetadata, _INPBMediaItemValue, _INPBTimestamp;
+@class NSArray, NSString, _INPBDataString, _INPBIntentMetadata, _INPBMediaItemValue, _INPBMediaSearch, _INPBString, _INPBTimestamp;
 
 @protocol _INPBPlayMediaIntent <NSObject>
 + (Class)mediaItemsType;
++ (Class)hashedRouteUIDsType;
 + (Class)bucketType;
+@property(readonly, nonatomic) _Bool hasShowTitle;
+@property(retain, nonatomic) _INPBString *showTitle;
 @property(nonatomic) _Bool hasResumePlayback;
 @property(nonatomic) _Bool resumePlayback;
 @property(readonly, nonatomic) _Bool hasRecoID;
 @property(copy, nonatomic) NSString *recoID;
+@property(readonly, nonatomic) _Bool hasProxiedBundleIdentifier;
+@property(copy, nonatomic) NSString *proxiedBundleIdentifier;
+@property(readonly, nonatomic) _Bool hasPlaylistTitle;
+@property(retain, nonatomic) _INPBString *playlistTitle;
+@property(nonatomic) _Bool hasPlaybackSpeed;
+@property(nonatomic) double playbackSpeed;
 @property(nonatomic) _Bool hasPlaybackRepeatMode;
 @property(nonatomic) int playbackRepeatMode;
+@property(nonatomic) _Bool hasPlaybackQueueLocation;
+@property(nonatomic) int playbackQueueLocation;
 @property(nonatomic) _Bool hasPlayShuffled;
 @property(nonatomic) _Bool playShuffled;
+@property(readonly, nonatomic) _Bool hasMusicArtistName;
+@property(retain, nonatomic) _INPBString *musicArtistName;
+@property(readonly, nonatomic) _Bool hasMediaUserContext;
+@property(retain, nonatomic) _INPBString *mediaUserContext;
+@property(readonly, nonatomic) _Bool hasMediaSearch;
+@property(retain, nonatomic) _INPBMediaSearch *mediaSearch;
 @property(readonly, nonatomic) unsigned long long mediaItemsCount;
 @property(copy, nonatomic) NSArray *mediaItems;
 @property(readonly, nonatomic) _Bool hasMediaContainer;
 @property(retain, nonatomic) _INPBMediaItemValue *mediaContainer;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata;
+@property(readonly, nonatomic) unsigned long long hashedRouteUIDsCount;
+@property(copy, nonatomic) NSArray *hashedRouteUIDs;
 @property(readonly, nonatomic) _Bool hasExpirationDate;
 @property(retain, nonatomic) _INPBTimestamp *expirationDate;
 @property(readonly, nonatomic) unsigned long long bucketsCount;
 @property(copy, nonatomic) NSArray *buckets;
+@property(readonly, nonatomic) _Bool hasAudiobookTitle;
+@property(retain, nonatomic) _INPBString *audiobookTitle;
+@property(readonly, nonatomic) _Bool hasAudiobookAuthor;
+@property(retain, nonatomic) _INPBString *audiobookAuthor;
 - (int)StringAsPlaybackRepeatMode:(NSString *)arg1;
 - (NSString *)playbackRepeatModeAsString:(int)arg1;
+- (int)StringAsPlaybackQueueLocation:(NSString *)arg1;
+- (NSString *)playbackQueueLocationAsString:(int)arg1;
 - (_INPBMediaItemValue *)mediaItemsAtIndex:(unsigned long long)arg1;
 - (void)addMediaItems:(_INPBMediaItemValue *)arg1;
 - (void)clearMediaItems;
+- (_INPBString *)hashedRouteUIDsAtIndex:(unsigned long long)arg1;
+- (void)addHashedRouteUIDs:(_INPBString *)arg1;
+- (void)clearHashedRouteUIDs;
 - (_INPBDataString *)bucketAtIndex:(unsigned long long)arg1;
 - (void)addBucket:(_INPBDataString *)arg1;
 - (void)clearBuckets;

@@ -26,6 +26,7 @@
     long long _secondOfMinute;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) long long secondOfMinute; // @synthesize secondOfMinute=_secondOfMinute;
 @property(nonatomic) long long minuteOfHour; // @synthesize minuteOfHour=_minuteOfHour;
 @property(nonatomic) long long millisOfSecond; // @synthesize millisOfSecond=_millisOfSecond;
@@ -34,6 +35,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasSecondOfMinute;

@@ -8,11 +8,13 @@
 
 #import <MediaPlaybackCore/MPCExplicitContentAuthorizationDelegate-Protocol.h>
 
-@class MPCPlaybackIntent, MPCPlayerPath, MPProtocolProxy, NSString, UIView, _MPCAVController, _MPCLeaseManager, _MPCMediaRemotePublisher, _MPCReportingController;
+@class MPCAudioSpectrumAnalyzer, MPCPlaybackIntent, MPCPlayerPath, MPProtocolProxy, NSString, UIView, _MPCAVController, _MPCLeaseManager, _MPCMediaRemotePublisher, _MPCPlaybackEngineSessionManager, _MPCReportingController;
 @protocol MPCPlaybackEngineDelegate, MPCPlaybackEngineEventObserving;
 
 @interface MPCPlaybackEngine : NSObject <MPCExplicitContentAuthorizationDelegate>
 {
+    _Bool _shouldConnectToAVPlayer;
+    MPCAudioSpectrumAnalyzer *_audioAnalyzer;
     _Bool _pictureInPictureSupported;
     _Bool _videoSupported;
     _Bool _stateRestorationSupported;
@@ -25,15 +27,19 @@
     _MPCAVController *_implementation;
     _MPCMediaRemotePublisher *_mediaRemotePublisher;
     _MPCReportingController *_reportingController;
+    _MPCPlaybackEngineSessionManager *_sessionManager;
     _MPCLeaseManager *_leaseManager;
     NSString *_audioSessionCategory;
+    unsigned int _audioSessionOptions;
 }
 
 + (_Bool)requiresMainThread;
 + (void)preheatPlayback;
+@property(nonatomic) unsigned int audioSessionOptions; // @synthesize audioSessionOptions=_audioSessionOptions;
 @property(copy, nonatomic) NSString *audioSessionCategory; // @synthesize audioSessionCategory=_audioSessionCategory;
 @property(nonatomic, getter=isSystemMusicApplication) _Bool systemMusicApplication; // @synthesize systemMusicApplication=_systemMusicApplication;
 @property(readonly, nonatomic) _MPCLeaseManager *leaseManager; // @synthesize leaseManager=_leaseManager;
+@property(readonly, nonatomic) _MPCPlaybackEngineSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) _MPCReportingController *reportingController; // @synthesize reportingController=_reportingController;
 @property(readonly, nonatomic) _MPCMediaRemotePublisher *mediaRemotePublisher; // @synthesize mediaRemotePublisher=_mediaRemotePublisher;
 @property(readonly, nonatomic) _MPCAVController *implementation; // @synthesize implementation=_implementation;
@@ -47,11 +53,11 @@
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 - (void).cxx_destruct;
 - (void)requestAuthorizationForExplicitItem:(id)arg1 reason:(int)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_restorePlaybackStateWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_preservePlaybackStateImmediately;
 - (void)_initializePlaybackStack;
 - (void)schedulePlaybackStatePreservation;
 @property(readonly, nonatomic) UIView *videoView;
+- (void)_playerDidBecomeReady:(id)arg1;
+@property(readonly, nonatomic) MPCAudioSpectrumAnalyzer *audioAnalyzer;
 @property(readonly, nonatomic) MPCPlayerPath *playerPath;
 - (void)reportUserSeekFromTime:(double)arg1 toTime:(double)arg2;
 - (void)removeEngineObserver:(id)arg1;
@@ -61,6 +67,7 @@
 - (void)restoreStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)becomeActive;
 - (void)start;
+- (id)initWithPlayerID:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithPlayerID:(id)arg1;
 
 // Remaining properties

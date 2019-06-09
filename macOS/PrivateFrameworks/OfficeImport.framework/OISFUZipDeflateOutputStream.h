@@ -11,6 +11,7 @@
 @class NSString;
 @protocol SFUOutputStream;
 
+__attribute__((visibility("hidden")))
 @interface OISFUZipDeflateOutputStream : NSObject <SFUOutputStream>
 {
     id <SFUOutputStream> mOutputStream;

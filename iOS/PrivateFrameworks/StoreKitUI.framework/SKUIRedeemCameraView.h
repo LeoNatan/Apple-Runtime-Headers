@@ -11,6 +11,7 @@
 @class NSString, SKUIClientContext, SKUIITunesPassConfiguration, SKUIRedeemCameraLandingView, SKUIRedeemITunesPassLockup, SKUIRedeemTextField, UIButton, UIImage;
 @protocol SKUIRedeemCameraViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemCameraView : UIView <UITextFieldDelegate>
 {
     SKUIClientContext *_clientContext;

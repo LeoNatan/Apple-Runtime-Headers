@@ -8,6 +8,7 @@
 
 @class UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDeveloperInfoLineItemView : UIView
 {
     struct UIEdgeInsets _contentInset;

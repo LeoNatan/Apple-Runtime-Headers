@@ -20,8 +20,12 @@
 
 + (unsigned int)mapWheelchairUserActivityType:(unsigned int)arg1 isWheelchairUser:(_Bool)arg2;
 + (id)possibleActivityTypesForIdentifier:(unsigned int)arg1 locationType:(int)arg2 swimmingLocationType:(int)arg3 wheelchairUser:(_Bool)arg4;
++ (id)swimmingOtherActivityTypes;
++ (id)swimmingOptimizedActivityTypes;
 + (id)wheelchairActivityTypes;
-+ (id)supportedActivityTypesWithIsWheelchairUser:(_Bool)arg1;
++ (id)unsupportedActivityTypesWithIsWheelchairUser:(_Bool)arg1 isSwimmingSupported:(_Bool)arg2;
++ (id)optimizedActivityTypesWithIsWheelchairUser:(_Bool)arg1 isSwimmingSupported:(_Bool)arg2;
++ (id)defaultActivityTypesWithIsWheelchairUser:(_Bool)arg1 isSwimmingSupported:(_Bool)arg2;
 + (_Bool)supportsSecureCoding;
 + (id)activityTypeWithWorkout:(id)arg1;
 + (id)activityTypeWithHKWorkoutActivityTypeIdentifier:(unsigned int)arg1 isIndoor:(_Bool)arg2 metadata:(id)arg3;
@@ -35,6 +39,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
+@property(readonly, nonatomic) _Bool isWaterLockActivity;
 - (id)activityTypeByAddingLapLength:(double)arg1;
 - (id)localizedNameComponents;
 - (id)localizedName;

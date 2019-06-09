@@ -8,6 +8,7 @@
 
 @class EntityMapCache;
 
+__attribute__((visibility("hidden")))
 @interface NWEntityMapperDynamicLaunchServices : NWEntityMapperNEHelper
 {
     EntityMapCache *_entityMap;

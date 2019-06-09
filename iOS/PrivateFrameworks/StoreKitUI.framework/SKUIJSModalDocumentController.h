@@ -10,6 +10,7 @@
 
 @class NSArray, SKUIModalDocumentController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSModalDocumentController : IKJSObject <SKUIJSModalDocumentController>
 {
     SKUIModalDocumentController *_modalDocumentController;

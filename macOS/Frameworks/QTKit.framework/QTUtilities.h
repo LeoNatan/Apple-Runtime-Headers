@@ -11,31 +11,7 @@
 }
 
 + (id)qtUtilities;
-- (long long)textEncodingFromLanguageCode:(short)arg1;
-- (void)setProcessProperty:(unsigned int)arg1 value:(BOOL)arg2;
-- (void)openControlPanel:(unsigned int)arg1;
-- (short)languageFromQTPreferences;
-- (long long)connectionSpeedFromQTPreferences;
-- (long long)applicationTextEncoding;
-- (short)systemDirection;
-- (id)fontNameForNumber:(short)arg1;
-- (short)fontNumberForName:(id)arg1;
-- (BOOL)isHardwareHighAudioQualityRenderCapable;
-- (BOOL)isCoreImageAvailable;
-- (short)preferredLanguage;
-- (void)clearDownloadCache;
-- (void)clearDownloadCacheForSite:(id)arg1;
-- (id)sitesInDownloadCache;
-- (void)setTransportProtocol:(int)arg1 andPort:(int)arg2;
-- (int)transportPort;
-- (int)transportProtocol;
-- (void)setIsAutoTransport:(BOOL)arg1;
-- (BOOL)isAutoTransport;
-- (void)setLegacyCodecsEnabled:(BOOL)arg1;
-- (BOOL)legacyCodecsEnabled;
-- (BOOL)validateQuickTimeProForVersion:(int)arg1 withName:(id)arg2 andCode:(id)arg3;
-- (BOOL)isQuickTimeProForVersion:(int)arg1;
-- (BOOL)isQuickTimePro;
+- (id)init;
 
 @end
 

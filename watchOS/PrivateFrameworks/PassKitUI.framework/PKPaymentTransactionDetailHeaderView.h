@@ -19,8 +19,10 @@
     NSString *_amountText;
     NSString *_subtitleText;
     NSString *_secondarySubtitleText;
+    NSString *_tertiarySubtitleText;
 }
 
+@property(copy, nonatomic) NSString *tertiarySubtitleText; // @synthesize tertiarySubtitleText=_tertiarySubtitleText;
 @property(copy, nonatomic) NSString *secondarySubtitleText; // @synthesize secondarySubtitleText=_secondarySubtitleText;
 @property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
 @property(copy, nonatomic) NSString *amountText; // @synthesize amountText=_amountText;

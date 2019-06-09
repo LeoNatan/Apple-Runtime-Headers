@@ -16,6 +16,7 @@
 @property(copy) NSSet *domainsIneligibleForPasswordAuditing; // @synthesize domainsIneligibleForPasswordAuditing=_domainsIneligibleForPasswordAuditing;
 - (void).cxx_destruct;
 - (id)initWithDomainsIneligibleForPasswordAuditing:(id)arg1;
+- (id)init;
 
 @end
 

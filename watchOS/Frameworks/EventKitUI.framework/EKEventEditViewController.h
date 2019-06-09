@@ -56,6 +56,7 @@
 @property(retain, nonatomic) EKEvent *event;
 @property(retain, nonatomic) EKEventStore *eventStore;
 - (void)dealloc;
+- (_Bool)isModalInPopover;
 - (_Bool)shouldAutorotate;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

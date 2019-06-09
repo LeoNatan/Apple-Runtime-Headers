@@ -16,6 +16,7 @@
 + (BOOL)isValidItem:(id)arg1;
 @property(readonly, nonatomic) NSURL *tableOfContentsFile; // @synthesize tableOfContentsFile=_tableOfContentsFile;
 - (void).cxx_destruct;
+- (id)_headerDigestForHeaders:(id)arg1 key:(id)arg2;
 - (BOOL)exportMessagesToURL:(id)arg1 error:(id *)arg2;
 - (id)messagesForImporter;
 - (id)initWithContentsOfURL:(id)arg1 error:(id *)arg2;

@@ -7,16 +7,18 @@
 #import <UIKit/UIView.h>
 
 #import <HealthUI/HKGraphRenderDelegate-Protocol.h>
+#import <HealthUI/HKGraphSeriesOverlayDelegate-Protocol.h>
 #import <HealthUI/HKGraphTileDrawingDelegate-Protocol.h>
+#import <HealthUI/HKInteractiveChartRangeProvider-Protocol.h>
 #import <HealthUI/HKMultiTouchPressGestureRecognizerDelegate-Protocol.h>
 #import <HealthUI/HKScrollPerformanceTestable-Protocol.h>
 #import <HealthUI/HKSeriesDelegate-Protocol.h>
 #import <HealthUI/UIScrollViewDelegate-Protocol.h>
 
-@class HKAxis, HKBorderLineView, HKGraphViewSelectionStyle, HKMultiTouchPressGestureRecognizer, HKOutsideViewTapDetector, HKPropertyAnimationApplier, HKValueRange, NSArray, NSMutableArray, NSMutableDictionary, NSSet, NSString, UIColor, UIImage, UIScrollView;
+@class HKAxis, HKBorderLineView, HKGraphViewSelectionStyle, HKMultiTouchPressGestureRecognizer, HKOutsideViewTapDetector, HKPropertyAnimationApplier, HKValueRange, NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSSet, NSString, NSTimer, UIColor, UIImage, UIScrollView, _HKGraphViewOverlayView;
 @protocol HKGraphRenderer, HKGraphViewDelegate;
 
-@interface HKGraphView : UIView <UIScrollViewDelegate, HKSeriesDelegate, HKGraphRenderDelegate, HKMultiTouchPressGestureRecognizerDelegate, HKGraphTileDrawingDelegate, HKScrollPerformanceTestable>
+@interface HKGraphView : UIView <UIScrollViewDelegate, HKSeriesDelegate, HKGraphRenderDelegate, HKMultiTouchPressGestureRecognizerDelegate, HKGraphTileDrawingDelegate, HKGraphSeriesOverlayDelegate, HKScrollPerformanceTestable, HKInteractiveChartRangeProvider>
 {
     NSMutableArray *_seriesGroupRows;
     _Bool _needsUpdateGraphViewConfiguration;
@@ -48,6 +50,7 @@
     _Bool _tileScrollingOverride;
     _Bool _tilesTransientDisabled;
     _Bool _tilesWaitingForInitialRender;
+    _Bool _measuringStartupTime;
     id <HKGraphViewDelegate> _delegate;
     HKAxis *_xAxis;
     float _xAxisSpace;
@@ -85,13 +88,26 @@
     CDUnknownBlockType _tileMarkDirtyCompletion;
     int _tileInitialRedrawCount;
     float _lastSingleSelectionXValue;
+    _HKGraphViewOverlayView *_overlayView;
+    int _previousOverlayType;
+    NSMapTable *_overlayInteractiveViews;
+    NSTimer *_startupTimer;
     struct CGPoint _contentOffset;
     struct CGPoint _tileContentOffsetOverride;
+    double _startTime;
+    double _lastEndTime;
     struct UIEdgeInsets _axisInset;
 }
 
 + (id)_rangeFromModelCoordinateMin:(float)arg1 max:(float)arg2 axis:(id)arg3;
 + (float)_modelCoordinateSpanForRange:(id)arg1 axis:(id)arg2;
+@property(retain, nonatomic) NSTimer *startupTimer; // @synthesize startupTimer=_startupTimer;
+@property(nonatomic) double lastEndTime; // @synthesize lastEndTime=_lastEndTime;
+@property(nonatomic) double startTime; // @synthesize startTime=_startTime;
+@property(nonatomic) _Bool measuringStartupTime; // @synthesize measuringStartupTime=_measuringStartupTime;
+@property(retain, nonatomic) NSMapTable *overlayInteractiveViews; // @synthesize overlayInteractiveViews=_overlayInteractiveViews;
+@property(nonatomic) int previousOverlayType; // @synthesize previousOverlayType=_previousOverlayType;
+@property(retain, nonatomic) _HKGraphViewOverlayView *overlayView; // @synthesize overlayView=_overlayView;
 @property(nonatomic) float lastSingleSelectionXValue; // @synthesize lastSingleSelectionXValue=_lastSingleSelectionXValue;
 @property(nonatomic) int tileInitialRedrawCount; // @synthesize tileInitialRedrawCount=_tileInitialRedrawCount;
 @property(nonatomic) _Bool tilesWaitingForInitialRender; // @synthesize tilesWaitingForInitialRender=_tilesWaitingForInitialRender;
@@ -147,6 +163,15 @@
 @property(copy, nonatomic) HKAxis *xAxis; // @synthesize xAxis=_xAxis;
 @property(nonatomic) __weak id <HKGraphViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_overlayViewsForOverlayData:(id)arg1 overlayView:(id)arg2;
+- (void)_drawOverlaysIfNeeded:(id)arg1;
+- (int)_overlayEnvironmentType;
+- (int)_overlayTypeForOverlaySeriesData:(id)arg1;
+- (int)_ordinalForOverlayType:(int)arg1;
+- (id)_overlappingOverlaySeriesData:(id)arg1;
+- (id)_nonOverlappingOverlaySeriesData:(id)arg1;
+- (void)overlayNeedsRedisplay;
+- (void)_layoutOverlayView;
 - (void)enumerateVisibleCoordinatesForSeries:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_showTiles;
 - (void)_hideTiles;
@@ -166,6 +191,7 @@
 - (void)setPreviousDateZoom:(int)arg1;
 - (id)primarySeries;
 - (id)findVisibleBlockCoordinatesForPrimarySeries;
+- (void)testScrollPerformanceWithTestName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4;
 - (void)testScrollPerformanceWithTestName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 options:(id)arg4;
 - (void)_notifyDelegateOfTapOnYAxis;
 - (void)_notifyDelegateSeriesUpdate:(id)arg1 newDataArrived:(_Bool)arg2;
@@ -313,12 +339,16 @@
 - (_Bool)_seriesGroupHasLegendEntries:(id)arg1;
 - (void)_createLegendsIfNecessary;
 - (_Bool)_graphViewIsConfigured;
+- (void)_recordLastRenderTime;
+- (void)_startupTimerCallback:(id)arg1;
+- (void)willMoveToWindow:(id)arg1;
 - (void)layoutSubviews;
 - (void)_loadFeatheringImages;
 - (void)_loadScrollView;
 @property(readonly, nonatomic) _Bool isScrollViewDecelerating;
 @property(readonly, nonatomic) NSArray *allSeries;
 - (void)_updateScene;
+- (struct CGRect)_overlayAreaRect;
 - (struct CGRect)_dataAreaRect;
 - (struct UIEdgeInsets)_dataAreaInsets;
 - (struct CGRect)_verticalAxisRect;
@@ -335,6 +365,9 @@
 - (int)_groupRowForSeries:(id)arg1;
 - (void)_walkAllSeries:(CDUnknownBlockType)arg1;
 - (_Bool)_axisRangeIsDateRange;
+- (void)resetAndRedraw;
+- (void)_dynamicUserInterfaceTraitDidChange;
+- (_Bool)_measureStartupFlagFromEnvironment;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

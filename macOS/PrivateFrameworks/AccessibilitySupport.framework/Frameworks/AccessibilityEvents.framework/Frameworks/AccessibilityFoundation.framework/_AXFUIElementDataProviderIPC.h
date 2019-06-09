@@ -16,6 +16,9 @@
 
 @property(retain, nonatomic) NSMutableSet *_supportedAttributes; // @synthesize _supportedAttributes=__supportedAttributes;
 - (void).cxx_destruct;
+- (id)_convertOutgoingValue:(id)arg1;
+- (id)convertOutgoingValueForAttribute:(id)arg1 value:(id)arg2;
+- (id)outgoingRepresentation;
 - (BOOL)isIPCDataProvider;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -35,7 +38,7 @@
 - (id)copyAXFUIElementsForParameterizedAttribute:(id)arg1 parameter:(void *)arg2;
 - (id)copyAXFUIElementForParameterizedAttribute:(id)arg1 parameter:(void *)arg2;
 - (id)copyAXFUIElementForAttribute:(id)arg1;
-- (struct __AXUIElement *)copyAXUIElementRefAtPoint:(struct CGPoint)arg1 includeIgnored:(BOOL)arg2;
+- (const struct __AXUIElement *)copyAXUIElementRefAtPoint:(struct CGPoint)arg1 includeIgnored:(BOOL)arg2;
 - (struct __AXUIElement *)copyAXUIElementRefForParameterizedAttribute:(id)arg1 parameter:(void *)arg2;
 - (struct __AXUIElement *)copyAXUIElementRefForAttribute:(id)arg1;
 - (void)performAction:(id)arg1;
@@ -45,15 +48,15 @@
 - (BOOL)canSetAttributeValue:(id)arg1;
 - (id)copyArrayForAttribute:(id)arg1 range:(struct _NSRange)arg2;
 - (unsigned long long)countForAttribute:(id)arg1;
-- (void *)copyParameterizedAttributeValue:(id)arg1 parameter:(void *)arg2;
-- (void *)copyAttributeValue:(id)arg1;
+- (const void *)copyParameterizedAttributeValue:(id)arg1 parameter:(void *)arg2;
+- (const void *)copyAttributeValue:(id)arg1;
 - (BOOL)supportsAttribute:(id)arg1;
 - (id)copyParameterizedAttributeNames;
 - (id)copyAttributeNames;
 - (BOOL)_checkError:(int)arg1;
 - (struct __AXUIElement *)_elementForIsEqualAndHash;
-- (struct __AXUIElement *)elementRefForObserver;
-- (struct __AXUIElement *)elementRef;
+- (const struct __AXUIElement *)elementRefForObserver;
+- (const struct __AXUIElement *)elementRef;
 - (void)dealloc;
 - (id)initWithTransportData:(id)arg1 applicationIdentifier:(id)arg2;
 - (id)initWithElementRef:(struct __AXUIElement *)arg1 applicationIdentifier:(id)arg2;

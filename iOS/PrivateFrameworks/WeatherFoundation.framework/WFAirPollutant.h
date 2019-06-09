@@ -6,26 +6,32 @@
 
 #import <objc/NSObject.h>
 
+#import <WeatherFoundation/NSCopying-Protocol.h>
 #import <WeatherFoundation/NSSecureCoding-Protocol.h>
 
-@class NSLocale, NSString;
+@class NSString;
 
-@interface WFAirPollutant : NSObject <NSSecureCoding>
+@interface WFAirPollutant : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _isPrimary;
-    NSLocale *_locale;
     NSString *_localizedName;
     NSString *_localizedDescription;
-    double _concentration;
+    double _amount;
+    NSString *_unit;
+    NSString *_localizedCategoryDescription;
+    unsigned long long _categoryIndex;
+    unsigned long long _index;
 }
 
 + (_Bool)supportsSecureCoding;
-@property _Bool isPrimary; // @synthesize isPrimary=_isPrimary;
-@property double concentration; // @synthesize concentration=_concentration;
-@property(copy) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
-@property(copy) NSString *localizedName; // @synthesize localizedName=_localizedName;
-@property(copy) NSLocale *locale; // @synthesize locale=_locale;
+@property(nonatomic) unsigned long long index; // @synthesize index=_index;
+@property(nonatomic) unsigned long long categoryIndex; // @synthesize categoryIndex=_categoryIndex;
+@property(retain, nonatomic) NSString *localizedCategoryDescription; // @synthesize localizedCategoryDescription=_localizedCategoryDescription;
+@property(retain, nonatomic) NSString *unit; // @synthesize unit=_unit;
+@property(nonatomic) double amount; // @synthesize amount=_amount;
+@property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
+@property(copy, nonatomic) NSString *localizedName; // @synthesize localizedName=_localizedName;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

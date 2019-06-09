@@ -12,6 +12,7 @@
     float _textLabelLeftInset;
 }
 
++ (_Bool)requiresLegacyLayout;
 @property(nonatomic) float textLabelLeftInset; // @synthesize textLabelLeftInset=_textLabelLeftInset;
 @property(nonatomic) float topInset; // @synthesize topInset=_topInset;
 - (struct CGRect)contentEndingRectForCell:(id)arg1 forDisplayOfDeleteConfirmation:(_Bool)arg2;

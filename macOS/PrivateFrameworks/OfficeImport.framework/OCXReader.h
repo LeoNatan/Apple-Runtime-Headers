@@ -8,6 +8,7 @@
 
 @class OCPZipPackage;
 
+__attribute__((visibility("hidden")))
 @interface OCXReader : OCDEncryptedReader
 {
     OCPZipPackage *mZipPackage;

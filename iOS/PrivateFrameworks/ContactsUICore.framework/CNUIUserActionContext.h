@@ -8,7 +8,7 @@
 
 #import <ContactsUICore/CNUIUserActionContext-Protocol.h>
 
-@class NSString;
+@class BSServiceConnectionEndpoint, NSString;
 @protocol CNUIUserActionCurator, CNUIUserActionDialRequestOpener, CNUIUserActionRecorder, CNUIUserActionURLOpener, CNUIUserActionUserActivityOpener;
 
 @interface CNUIUserActionContext : NSObject <CNUIUserActionContext>
@@ -19,11 +19,13 @@
     id <CNUIUserActionRecorder> _actionRecorder;
     id <CNUIUserActionCurator> _actionCurator;
     NSString *_channelIdentifier;
+    BSServiceConnectionEndpoint *_connectionEndpoint;
 }
 
 + (id)makeDefaultContext;
 + (id)contextWithExtensionContext:(id)arg1;
 + (id)defaultContext;
+@property(copy, nonatomic) BSServiceConnectionEndpoint *connectionEndpoint; // @synthesize connectionEndpoint=_connectionEndpoint;
 @property(copy, nonatomic) NSString *channelIdentifier; // @synthesize channelIdentifier=_channelIdentifier;
 @property(retain, nonatomic) id <CNUIUserActionCurator> actionCurator; // @synthesize actionCurator=_actionCurator;
 @property(retain, nonatomic) id <CNUIUserActionRecorder> actionRecorder; // @synthesize actionRecorder=_actionRecorder;

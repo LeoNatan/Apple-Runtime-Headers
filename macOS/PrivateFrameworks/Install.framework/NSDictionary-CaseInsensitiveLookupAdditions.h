@@ -7,6 +7,9 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (CaseInsensitiveLookupAdditions)
++ (id)versionDictionaryFromBundleAtPath:(id)arg1;
 - (id)_objectForCaseInsensitiveKey:(id)arg1;
+- (id)versionString;
+- (id)_initWithBundleAtPath:(id)arg1;
 @end
 

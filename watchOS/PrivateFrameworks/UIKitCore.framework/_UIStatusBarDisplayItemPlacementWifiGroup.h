@@ -13,8 +13,10 @@ __attribute__((visibility("hidden")))
 {
     _UIStatusBarDisplayItemPlacement *_signalStrengthPlacement;
     _UIStatusBarDisplayItemPlacement *_iconPlacement;
+    _UIStatusBarDisplayItemPlacement *_rawPlacement;
 }
 
+@property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *rawPlacement; // @synthesize rawPlacement=_rawPlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *iconPlacement; // @synthesize iconPlacement=_iconPlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *signalStrengthPlacement; // @synthesize signalStrengthPlacement=_signalStrengthPlacement;
 - (void).cxx_destruct;

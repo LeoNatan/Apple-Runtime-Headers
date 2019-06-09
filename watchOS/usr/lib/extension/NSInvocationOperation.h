@@ -6,13 +6,12 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSInvocation;
+@class NSException, NSInvocation;
 
 @interface NSInvocationOperation : NSOperation
 {
-    id _inv;
-    id _exception;
-    void *_reserved2;
+    NSInvocation *_inv;
+    NSException *_exception;
 }
 
 @property(readonly, retain) id result;

@@ -11,7 +11,7 @@
 #import <PhotoAnalysis/PHAServiceOperationHandling-Protocol.h>
 #import <PhotoAnalysis/PLPhotoAnalysisServiceProtocol-Protocol.h>
 
-@class NSLock, NSMapTable, NSMutableArray, NSString, NSXPCConnection, PHAExecutive, PHAManager;
+@class NSLock, NSMapTable, NSMutableArray, NSString, NSXPCConnection, PFDispatchQueue, PHAExecutive, PHAManager;
 @protocol OS_dispatch_group, OS_dispatch_semaphore;
 
 @interface PHAServiceClientHandler : NSObject <NSXPCConnectionDelegate, PHAServiceOperationHandling, PHAGraphRegistration, PLPhotoAnalysisServiceProtocol>
@@ -21,6 +21,7 @@
     NSMutableArray *_clientHandlers;
     unsigned long long _graphLoadCount;
     NSObject<OS_dispatch_group> *_graphReady;
+    PFDispatchQueue *_graphLoadQueue;
     PHAManager *_photoAnalysisManager;
     NSXPCConnection *_xpcConnection;
     PHAExecutive *_executive;
@@ -45,6 +46,7 @@
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(_Bool)arg3;
 - (void)submitBlockToExecutiveStateQueue:(CDUnknownBlockType)arg1;
 - (void)shutdown;
+- (void)setJobProcessingConstraintsWithValues:(id)arg1 mask:(id)arg2 context:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)unloadGraphWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)loadGraphWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)graphUpdateMadeProgress:(double)arg1;

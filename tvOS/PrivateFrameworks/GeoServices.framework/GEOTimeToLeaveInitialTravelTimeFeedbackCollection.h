@@ -12,9 +12,10 @@ __attribute__((visibility("hidden")))
 @interface GEOTimeToLeaveInitialTravelTimeFeedbackCollection : PBCodable <NSCopying>
 {
     int _travelTime;
-    CDStruct_36597415 _has;
+    CDStruct_b5054928 _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -22,12 +23,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsTravelTime:(id)arg1;
 - (id)travelTimeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTravelTime;
-@property(nonatomic) int travelTime; // @synthesize travelTime=_travelTime;
+@property(nonatomic) int travelTime;
 
 @end
 

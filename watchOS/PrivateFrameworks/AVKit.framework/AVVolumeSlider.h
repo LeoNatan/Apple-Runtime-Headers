@@ -6,6 +6,7 @@
 
 #import <PepperUICore/PUICSlider.h>
 
+__attribute__((visibility("hidden")))
 @interface AVVolumeSlider : PUICSlider
 {
 }

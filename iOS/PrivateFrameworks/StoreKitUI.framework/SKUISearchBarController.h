@@ -11,6 +11,7 @@
 
 @class NSString, SKUIClientContext, SKUIFocusedTouchGestureRecognizer, SKUISearchBarViewElement, SKUISearchFieldController, UISearchBar, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUISearchBarController : NSObject <SKUISearchFieldDelegate, UISearchBarDelegate>
 {
     SKUIFocusedTouchGestureRecognizer *_cancelTouchGestureRecognizer;

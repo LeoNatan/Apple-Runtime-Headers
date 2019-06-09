@@ -6,17 +6,14 @@
 
 #import <Foundation/NSUserActivity.h>
 
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/REUserActivityProperties-Protocol.h>
 
 @class NSString;
 
-@interface NSUserActivity (RELogging) <REIndentedDescription>
-- (id)descriptionWithIndent:(unsigned int)arg1;
+@interface NSUserActivity (RELogging) <REUserActivityProperties>
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property(readonly, nonatomic) NSString *activityType;
+@property(readonly, nonatomic) NSString *title;
 @end
 

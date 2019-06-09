@@ -22,6 +22,7 @@
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(retain) UITextLabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+- (id)selectedTextColor;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)init;
 - (id)initWithBackgroundColor:(id)arg1;

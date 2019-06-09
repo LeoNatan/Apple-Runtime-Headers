@@ -22,7 +22,8 @@ __attribute__((visibility("hidden")))
         unsigned int _unique:1;
         unsigned int _constrained:1;
         unsigned int _backedByTrigger:1;
-        unsigned int _reservedFlags:12;
+        unsigned int _isDerivedAttribute:1;
+        unsigned int _reservedFlags:11;
     } _flags;
 }
 
@@ -33,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (id)entity;
 - (id)propertyDescription;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isUnique;
+@property(nonatomic, getter=isConstrained) BOOL constrained;
 - (BOOL)isManyToMany;
 - (BOOL)isToMany;
 - (BOOL)isToOne;

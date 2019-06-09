@@ -8,10 +8,13 @@
 
 @interface NSURL (LPExtras)
 + (id)_lp_URLWithUserTypedString:(id)arg1 relativeToURL:(id)arg2;
++ (id)_lp_URLWithData:(id)arg1 baseURL:(id)arg2;
 - (id)_lp_highLevelDomain;
 - (BOOL)_lp_userVisibleStringUsesEncodedHost;
 - (id)_lp_userVisibleString;
 - (id)_lp_simplifiedDisplayString;
 - (BOOL)_lp_isHTTPFamilyURL;
+- (id)_lp_simplifiedStringForDisplayOnly:(BOOL)arg1;
+- (id)_lp_originalData;
 @end
 

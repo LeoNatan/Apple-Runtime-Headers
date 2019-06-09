@@ -14,10 +14,14 @@
 + (id)fetchRemoteDiagnosticIDsWithError:(id *)arg1;
 + (id)fetchDiagnosticIDFromDeviceSource:(unsigned long long)arg1 WithMaxCount:(unsigned long long)arg2 withError:(id *)arg3;
 + (BOOL)cancelActiveSysdiagnoseWithError:(id *)arg1;
++ (BOOL)isSysdiagnoseInProgressWithError:(id *)arg1;
++ (id)sysdiagnoseWithMetadata:(id)arg1 withError:(id *)arg2 withProgressHandler:(CDUnknownBlockType)arg3;
 + (id)sysdiagnoseWithMetadata:(id)arg1 withError:(id *)arg2 andProgressHandler:(CDUnknownBlockType)arg3;
++ (void)sysdiagnoseWithMetadata:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 + (id)sysdiagnoseWithMetadata:(id)arg1 withError:(id *)arg2;
 + (id)sysdiagnoseWithMetadata:(id)arg1 withMetrics:(id *)arg2 withError:(id *)arg3;
 + (id)sysdiagnoseWithMetadata:(id)arg1 withMetrics:(id *)arg2 withError:(id *)arg3 withProgressHandler:(CDUnknownBlockType)arg4;
++ (id)sysdiagnoseWithMetadata:(id)arg1 withMetrics:(id *)arg2 withError:(id *)arg3 withProgressCallback:(CDUnknownBlockType)arg4;
 + (id)sendSysdiagnoseRequest:(id)arg1 withMetrics:(id *)arg2 withError:(id *)arg3 withProgressHandler:(CDUnknownBlockType)arg4;
 + (BOOL)verifyReply:(id)arg1 withExpectedType:(struct _xpc_type_s *)arg2 forError:(id *)arg3;
 + (void)createMetrics:(id *)arg1 fromResponse:(id)arg2;

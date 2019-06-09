@@ -25,7 +25,7 @@
 - (id)_detailColor;
 - (id)_textColor;
 - (void)_updateTitleAccessories;
-- (void)_updateAccessories;
+- (void)_updateAccessoryColors;
 - (void)_updateDetailLabels;
 - (void)_updateTextLabels;
 - (void)registerTitleAccessoryForAppearanceUpdates:(id)arg1 selector:(SEL)arg2;

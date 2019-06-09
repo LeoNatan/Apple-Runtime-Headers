@@ -13,16 +13,17 @@
 __attribute__((visibility("hidden")))
 @interface FI_TFloatingInputWindowController : NSWindowController <NSWindowDelegate>
 {
+    struct TNotificationCenterObserver _keyboardInputSourceChangedObserver;
 }
 
-+ (void)finalize;
 + (id)singleton;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)windowWillClose:(id)arg1;
 - (id)inputContext;
 - (_Bool)preProcessedByInputMethod:(id)arg1 forDelegate:(id)arg2;
 - (void)dealloc;
-- (id)init;
-- (void)keyboardInputSourceChanged:(id)arg1;
+- (id)_initWithWindow:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

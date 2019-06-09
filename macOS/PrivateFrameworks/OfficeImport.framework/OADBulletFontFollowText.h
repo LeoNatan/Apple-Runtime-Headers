@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADBulletFont.h>
 
+__attribute__((visibility("hidden")))
 @interface OADBulletFontFollowText : OADBulletFont
 {
 }

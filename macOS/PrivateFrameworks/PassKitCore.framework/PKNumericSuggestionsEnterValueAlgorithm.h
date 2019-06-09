@@ -49,6 +49,7 @@
 - (BOOL)_amountIsValid:(id)arg1;
 - (void)setUseBuiltInDefaults:(BOOL)arg1;
 - (id)suggestionsWithAmount:(id)arg1;
+- (BOOL)_lastInputExistsInGeneratedSuggestions:(id)arg1 withLastInput:(id)arg2;
 - (id)init;
 - (id)initWithLastInput:(id)arg1;
 

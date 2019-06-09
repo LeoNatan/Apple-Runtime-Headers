@@ -6,30 +6,28 @@
 
 #import <objc/NSObject.h>
 
-#import <SoftwareUpdate/PKURLAuthenticationHandler-Protocol.h>
+@class NSLock, NSMutableDictionary, NSMutableSet, NSURLCredential;
 
-@class NSMutableDictionary, NSMutableSet, NSURLCredential;
-@protocol OS_dispatch_queue;
-
-@interface SUSharedAuthenticationHandler : NSObject <PKURLAuthenticationHandler>
+@interface SUSharedAuthenticationHandler : NSObject
 {
     NSMutableDictionary *_certValidatedByHost;
-    NSObject<OS_dispatch_queue> *_updateQueue;
     BOOL _evCheckingDisabledByPref;
     NSMutableSet *_disabledHosts;
     NSURLCredential *_stashedURLCredential;
+    NSLock *_stateLock;
 }
 
 + (id)sharedAuthenticationHandler;
-@property(retain) NSURLCredential *stashedURLCredential; // @synthesize stashedURLCredential=_stashedURLCredential;
-- (void)didReceiveAuthenticationChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)promptForAuthenticationChallenge:(id)arg1;
+@property(retain, nonatomic) NSLock *stateLock; // @synthesize stateLock=_stateLock;
 - (BOOL)evValidatedForURL:(id)arg1;
 - (void)_setCertValidated:(BOOL)arg1 forHost:(id)arg2;
 - (BOOL)certValidatedForURL:(id)arg1;
 - (BOOL)isHostDiabledForEVCheck:(id)arg1;
 - (void)enableHostForEVCheck:(id)arg1;
 - (void)disableHostForEVCheck:(id)arg1;
+@property(retain) NSURLCredential *stashedURLCredential; // @synthesize stashedURLCredential=_stashedURLCredential;
+- (CDUnknownBlockType)challengeBlock;
+- (CDUnknownBlockType)extendedChallengeBlock;
 - (id)init;
 - (void)dealloc;
 

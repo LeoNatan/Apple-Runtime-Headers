@@ -19,6 +19,14 @@
 + (id)sharedManager;
 + (void)useProxyClass:(Class)arg1;
 - (void).cxx_destruct;
+- (void)initiateUploadOfType:(int)arg1;
+- (void)flushEvalData;
+- (void)setEvalMode:(BOOL)arg1;
+- (void)reportLogMsgType:(int)arg1 eventType:(int)arg2 logMsg:(id)arg3 completion:(CDUnknownBlockType)arg4 completionQueue:(id)arg5;
+- (void)logToDiagAndUsageUnderBugId:(id)arg1 filePrefix:(id)arg2 logData:(id)arg3;
+- (BOOL)PlatformDiagAndUsage;
+- (BOOL)GEOMapsLocationAuth;
+- (BOOL)GEOImproveMaps;
 - (void)setShortSessionValues:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)shortSessionValuesWithCompletion:(CDUnknownBlockType)arg1;
 - (id)init;

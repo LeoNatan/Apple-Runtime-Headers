@@ -22,10 +22,13 @@
 
 @property(readonly, nonatomic) PKPaymentService *paymentService; // @synthesize paymentService=_paymentService;
 - (void).cxx_destruct;
+- (void)_notifyDelegateOfUpdatedTransitPassInfoForModel:(id)arg1;
 - (void)_updatePassTransitPassesInfoManagerForPassUiniqueID:(id)arg1 updateBlock:(CDUnknownBlockType)arg2;
 - (void)_fetchMostRecentTransitPropertiesForPass:(id)arg1;
+- (void)_fetchMostRecentBalancesForPass:(id)arg1;
+- (void)_loadPassContentIfNeeded:(id)arg1;
 - (void)_fetchMostRecentInfoForPass:(id)arg1;
-- (id)_transitBalanceModelWithPass:(id)arg1 transitPassBalanceModelsMap:(id)arg2;
+- (id)_transitPassBalanceModelWithPass:(id)arg1 currentModel:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;
 @property __weak id <NPKTransitPassesInfoManagerDelegate> delegate; // @synthesize delegate=_delegate;

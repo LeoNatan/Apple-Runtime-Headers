@@ -23,6 +23,7 @@
     id <PXWidgetUnlockDelegate> _widgetUnlockDelegate;
     PXPeopleStripCollectionViewController *_collectionViewController;
     PXSharingSuggestionDataSource *_dataSource;
+    unsigned long long _options;
     unsigned long long _sharingStream;
     double _cellMinInteritemSpacing;
     double _cellMinLineSpacing;
@@ -37,6 +38,7 @@
 @property(nonatomic) struct CGSize cellSize; // @synthesize cellSize=_cellSize;
 @property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
 @property(nonatomic) unsigned long long sharingStream; // @synthesize sharingStream=_sharingStream;
+@property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(retain, nonatomic) PXSharingSuggestionDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) PXPeopleStripCollectionViewController *collectionViewController; // @synthesize collectionViewController=_collectionViewController;
 @property(nonatomic) __weak id <PXWidgetUnlockDelegate> widgetUnlockDelegate; // @synthesize widgetUnlockDelegate=_widgetUnlockDelegate;
@@ -71,8 +73,7 @@
 @property(readonly, nonatomic) _Bool hasContentForCurrentInput;
 - (void)unloadContentData;
 - (void)loadContentData;
-- (id)initWithSharingStream:(unsigned long long)arg1;
-- (id)init;
+- (id)initWithSharingStream:(unsigned long long)arg1 options:(unsigned long long)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) _Bool allowUserInteractionWithSubtitle;

@@ -8,7 +8,7 @@
 
 #import <AVFoundation/AVCaptureOperationDescriptor-Protocol.h>
 
-@class NSArray, NSError, NSString, NSURL;
+@class AVWeakReference, NSArray, NSError, NSString, NSURL;
 @protocol AVCaptureFileOutputRecordingDelegate;
 
 __attribute__((visibility("hidden")))
@@ -18,19 +18,18 @@ __attribute__((visibility("hidden")))
     NSError *_stopError;
     BOOL _didStartWriting;
     BOOL _paused;
-    struct os_unfair_lock_s _pausedLock;
-    id <AVCaptureFileOutputRecordingDelegate> _delegate;
+    AVWeakReference *_weakReferenceDelegate;
     NSArray *_connections;
 }
 
 + (id)recordingOperationDescriptorWithOutputFileURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
+@property(getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(copy) NSError *stopError; // @synthesize stopError=_stopError;
-@property(readonly) NSArray *connections; // @synthesize connections=_connections;
-@property(readonly) NSURL *outputFileURL; // @synthesize outputFileURL=_outputFileURL;
-@property(readonly) id <AVCaptureFileOutputRecordingDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) NSArray *connections; // @synthesize connections=_connections;
+@property(readonly, nonatomic) NSURL *outputFileURL; // @synthesize outputFileURL=_outputFileURL;
 - (id)operationDescriptorCoalescedWithExistingOperationDescriptor:(id)arg1;
 - (BOOL)setDidStartWritingIfNotAlreadyStarted;
-@property(getter=isPaused) BOOL paused;
+@property(readonly, nonatomic) id <AVCaptureFileOutputRecordingDelegate> delegate;
 - (void)dealloc;
 - (id)initWithOutputFileURL:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
 - (id)init;

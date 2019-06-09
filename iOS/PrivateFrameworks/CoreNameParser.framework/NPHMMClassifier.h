@@ -20,7 +20,9 @@
 
 @property CDStruct_a720a2d7 stateProbabilities; // @synthesize stateProbabilities=_stateProbabilities;
 - (void).cxx_destruct;
-- (id)coumpoundsFromName:(id)arg1;
+- (unsigned long long)genderMajorityForGivenName:(id)arg1;
+- (id)compoundsFromName:(id)arg1 includeSpaceAsDelimiter:(_Bool)arg2;
+- (id)compoundsFromName:(id)arg1;
 - (_Bool)isParticle:(id)arg1;
 - (_Bool)formCompoundFamilyName:(id)arg1;
 - (_Bool)formCompoundGivenName:(id)arg1;
@@ -41,6 +43,7 @@
 - (unsigned long long)extractMetricForType:(unsigned long long)arg1;
 - (void)dealloc;
 - (unsigned long long)frequencyForName:(id)arg1 type:(unsigned long long)arg2;
+- (unsigned long long)payloadForName:(id)arg1 type:(unsigned long long)arg2;
 - (id)initWithHMMProbabilities:(CDStruct_a720a2d7)arg1 nameComponentsDate:(id)arg2;
 
 @end

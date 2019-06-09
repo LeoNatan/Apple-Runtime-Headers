@@ -20,6 +20,8 @@
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntent;
 @property(readonly, nonatomic) unsigned int stepsCount;
 @property(copy, nonatomic) NSArray *steps;
+@property(nonatomic) _Bool hasRequestsIntentExecution;
+@property(nonatomic) _Bool requestsIntentExecution;
 @property(nonatomic) _Bool hasContinueRunning;
 @property(nonatomic) _Bool continueRunning;
 - (_INPBVoiceCommandStepInfo *)stepAtIndex:(unsigned int)arg1;

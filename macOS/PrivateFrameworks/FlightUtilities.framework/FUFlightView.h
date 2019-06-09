@@ -100,6 +100,7 @@
 - (id)arrivalCamera;
 - (void)cleanupView;
 - (void)addTrack:(id)arg1;
+- (void)updateMargins;
 - (void)updateBackForwardButtons:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setAbsoluteIndex:(unsigned long long)arg1 animated:(BOOL)arg2;
 - (void)updateMapArcs;

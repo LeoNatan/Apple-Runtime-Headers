@@ -14,6 +14,7 @@
 }
 
 @property(readonly) IACastleServicesView *servicesView; // @synthesize servicesView=_servicesView;
+- (void).cxx_destruct;
 
 @end
 

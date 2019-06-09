@@ -8,6 +8,7 @@
 
 #import <AVKit/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface AVProgressEstimator : NSObject <NSCopying>
 {
     double _memory;

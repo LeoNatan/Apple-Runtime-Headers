@@ -8,7 +8,7 @@
 
 #import <LaunchServices/NSSecureCoding-Protocol.h>
 
-@class LSApplicationProxy, NSURL;
+@class LSApplicationProxy, NSDictionary, NSURL;
 
 @interface LSAppLink : NSObject <NSSecureCoding>
 {
@@ -17,23 +17,44 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (void)openWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (BOOL)areEnabledByDefault;
 + (void)getAppLinksWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)getAppLinkWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (void)getAppLinksWithURL:(id)arg1 limit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (id)appLinksWithURL:(id)arg1 limit:(unsigned long long)arg2 error:(id *)arg3;
++ (void)openWithURL:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)openWithURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (BOOL)removeAllSettingsReturningError:(id *)arg1;
++ (void)_openAppLink:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)_openWithAppLink:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (id)_appLinkWithURL:(id)arg1 applicationProxy:(id)arg2 plugInClass:(Class)arg3;
++ (id)_appLinksWithState:(id)arg1 context:(struct LSContext *)arg2 limit:(unsigned long long)arg3 requireEntitlement:(BOOL)arg4 error:(id *)arg5;
++ (id)_appLinksWithState:(id)arg1 limit:(unsigned long long)arg2 requireEntitlement:(BOOL)arg3 error:(id *)arg4;
++ (BOOL)_URLIsValidForAppLinks:(id)arg1 error:(id *)arg2;
++ (id)_dispatchQueue;
++ (id)_appLinksWithState:(id)arg1 context:(struct LSContext *)arg2 limit:(unsigned long long)arg3 URLComponents:(id)arg4 error:(id *)arg5;
++ (BOOL)URLComponentsAreValidForAppLinks:(id)arg1 error:(id *)arg2;
 @property(retain) LSApplicationProxy *targetApplicationProxy; // @synthesize targetApplicationProxy=_targetApplicationProxy;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (BOOL)setEnabled:(BOOL)arg1 error:(id *)arg2;
+@property(nonatomic, getter=isEnabled) BOOL enabled; // @dynamic enabled;
+- (void)openWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)openWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)dealloc;
+- (BOOL)removeSettingsReturningError:(id *)arg1;
+- (BOOL)setBrowserSettings:(id)arg1 error:(id *)arg2;
+@property(retain, nonatomic) NSDictionary *browserSettings;
 - (void)openInWebBrowser:(BOOL)arg1 setOpenStrategy:(long long)arg2 webBrowserState:(id)arg3 configuration:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)openInWebBrowser:(BOOL)arg1 setOpenStrategy:(long long)arg2 webBrowserState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)openInWebBrowser:(BOOL)arg1 setAppropriateOpenStrategyAndWebBrowserState:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property long long openStrategy; // @dynamic openStrategy;
+- (id)_appleEventWithState:(id)arg1 preserveReferrerURL:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)_validateReturningError:(id *)arg1;
+- (id)_userActivityWithState:(id)arg1 error:(id *)arg2;
 
 @end
 

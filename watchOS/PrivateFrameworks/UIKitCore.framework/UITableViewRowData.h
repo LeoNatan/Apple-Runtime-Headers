@@ -15,19 +15,15 @@ __attribute__((visibility("hidden")))
 @interface UITableViewRowData : NSObject <NSCopying>
 {
     id <UITable_RowDataSource> _tableView;
+    UITableViewHeaderFooterView *_headerFooterViewUsedForMeasurements;
+    float _tableViewWidth;
     int _numSections;
+    _Bool _estimatesHeights;
     int _sectionRowDataCapacity;
     id *_sectionRowData;
-    UITableViewHeaderFooterView *_headerFooterViewUsedForMeasurements;
-    float _minimumRowHeight;
-    float _rowSpacing;
-    float _tableViewWidth;
     float _tableHeaderHeight;
     float _tableFooterHeight;
     float _heightForTableHeaderViewHiding;
-    float _tableTopPadding;
-    float _tableBottomPadding;
-    float _tableSidePadding;
     struct {
         unsigned int tableHeaderHeightValid:1;
         unsigned int tableFooterHeightValid:1;
@@ -35,6 +31,11 @@ __attribute__((visibility("hidden")))
         unsigned int usesVariableMargins:1;
         unsigned int pinsTableHeaderView:1;
     } _rowDataFlags;
+    float _minimumRowHeight;
+    float _rowSpacing;
+    float _tableTopPadding;
+    float _tableBottomPadding;
+    float _tableSidePadding;
     NSIndexPath *_gapIndexPath;
     NSIndexPath *_reorderedIndexPath;
     NSIndexPath *_draggedIndexPath;
@@ -89,6 +90,9 @@ __attribute__((visibility("hidden")))
 - (int)sectionLocationForReorderedRow:(int)arg1 inSection:(int)arg2;
 - (int)sectionLocationForRow:(int)arg1 inSection:(int)arg2;
 - (void)setHeight:(float)arg1 forRowAtIndexPath:(id)arg2;
+- (void)setHeight:(float)arg1 forFooterInSection:(int)arg2;
+- (void)setHeight:(float)arg1 forHeaderInSection:(int)arg2;
+- (id)_indexPathsBelowIndexPath:(id)arg1;
 - (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(_Bool)arg3 adjustForReorderedRow:(_Bool)arg4;
 - (float)heightForRow:(int)arg1 inSection:(int)arg2 canGuess:(_Bool)arg3;
 - (float)heightForFooterInSection:(int)arg1 canGuess:(_Bool)arg2;

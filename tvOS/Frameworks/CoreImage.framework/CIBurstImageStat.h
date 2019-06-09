@@ -55,11 +55,13 @@ __attribute__((visibility("hidden")))
     int _version;
     NSString *imageId;
     NSMutableArray *faceStatArray;
+    struct __IOSurface *_fullsizeJpegData;
     struct CGRect facesRoiRect;
 }
 
 @property int version; // @synthesize version=_version;
 @property int fullsizeJpegSize; // @synthesize fullsizeJpegSize=_fullsizeJpegSize;
+@property struct __IOSurface *fullsizeJpegData; // @synthesize fullsizeJpegData=_fullsizeJpegData;
 @property int AEDelta; // @synthesize AEDelta=_AEDelta;
 @property float roiSize; // @synthesize roiSize;
 @property _Bool isGarbage; // @synthesize isGarbage;

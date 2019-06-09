@@ -11,17 +11,23 @@
 @interface AVCaptureVideoPreviewLayer : CALayer
 {
     AVCaptureVideoPreviewLayerInternal *_internal;
+    _Bool _previewing;
 }
 
 + (id)layerWithSessionWithNoConnection:(id)arg1;
 + (id)layerWithSession:(id)arg1;
 + (void)initialize;
+@property(readonly, nonatomic, getter=isPreviewing) _Bool previewing; // @synthesize previewing=_previewing;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
+- (void)didUpdatePreviewImageQueueSlot:(unsigned int)arg1 imageQueue:(id)arg2 rotationDegrees:(double)arg3 size:(struct CGSize)arg4;
+- (void)didUpdatePreviewFormatDescription:(struct opaqueCMFormatDescription *)arg1;
 - (_Bool)_setVideoPreviewFilters:(id)arg1 checkForExceptionalInput:(_Bool)arg2 exceptionReason:(id *)arg3;
 - (_Bool)_filtersAreOptimized:(id)arg1 exceptionReason:(id *)arg2;
 - (void)_updateDepthDataDeliverySupported;
 - (void)_updatePreviewTransforms;
+- (struct CGAffineTransform)captureDeviceTransformForSensorSize:(struct CGSize)arg1 previewSize:(struct CGSize)arg2 sensorToPreviewVTScalingMode:(id)arg3;
 - (void)_updateCaptureDeviceTransform;
+- (void)setCaptureDeviceTransformNeedsUpdate;
 - (void)_setSensorAndEstimatedPreviewSizes;
 - (struct CGRect)rectForMetadataOutputRectOfInterest:(struct CGRect)arg1;
 - (struct CGRect)metadataOutputRectOfInterestForRect:(struct CGRect)arg1;
@@ -29,13 +35,17 @@
 - (id)_input;
 - (struct CGPoint)pointForCaptureDevicePointOfInterest:(struct CGPoint)arg1;
 - (struct CGPoint)captureDevicePointOfInterestForPoint:(struct CGPoint)arg1;
+- (id)weakReference;
 - (void)setSinkID:(id)arg1;
 - (id)sinkID;
+- (void)performFigCaptureSessionOperationSafelyUsingBlock:(CDUnknownBlockType)arg1;
+- (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)detachFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
+- (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)attachToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)bumpChangeSeed;
 - (int)changeSeed;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id *)arg2;
 - (id)connectionMediaTypes;

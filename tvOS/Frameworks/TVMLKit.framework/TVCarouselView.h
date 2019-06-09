@@ -73,6 +73,7 @@
 - (void)reloadData;
 - (void)registerClass:(Class)arg1 forCellWithReuseIdentifier:(id)arg2;
 - (unsigned long long)indexForCell:(id)arg1;
+- (id)focusedCell;
 - (id)dequeueReusableCellWithReuseIdentifier:(id)arg1 forIndex:(unsigned long long)arg2;
 - (id)_cellForItemAtIndex:(unsigned long long)arg1;
 - (void)_handlePlayGesture:(id)arg1;

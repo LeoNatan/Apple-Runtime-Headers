@@ -25,6 +25,8 @@
         unsigned int useViewControllerAppearanceCallbacks:1;
         unsigned int shouldRestoreFromViewAlpha:1;
         unsigned int shouldRestoreGroupOpacity:1;
+        unsigned int groupOpacityToRestoreForFromView:1;
+        unsigned int groupOpacityToRestoreForToView:1;
         unsigned int shouldRasterize:1;
         unsigned int enableRotationAfterTransition:1;
         unsigned int removeFromView:1;
@@ -38,9 +40,15 @@
 @property(nonatomic) _Bool ignoreDirectTouchEvents; // @synthesize ignoreDirectTouchEvents=_ignoreDirectTouchEvents;
 @property(nonatomic) long long animationTimingCurve; // @synthesize animationTimingCurve=_animationTimingCurve;
 - (void).cxx_destruct;
+- (void)layoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)safeAreaInsetsDidChange;
+- (void)setFrame:(struct CGRect)arg1;
+- (void)setBounds:(struct CGRect)arg1;
+- (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)_shouldDisableGroupOpacityOnAlphaTransitions;
-- (void)_transitionDidStop:(id)arg1 finished:(id)arg2;
+- (void)_transitionDidStopFinished:(_Bool)arg1;
 - (void)_startTransition:(int)arg1 withDuration:(double)arg2;
 - (void)setIgnoresInteractionEvents:(_Bool)arg1;
 - (_Bool)ignoresInteractionEvents;
@@ -63,7 +71,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (double)_curlUpRevealedHeight;
+@property(readonly, nonatomic) double _curlUpRevealedHeight;
 
 @end
 

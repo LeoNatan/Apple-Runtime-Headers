@@ -10,7 +10,7 @@
 
 @protocol VisualTabPickerThumbnailDataSource <NSObject>
 - (NSImage *)siteIconForVisualTabPickerThumbnailView:(VisualTabPickerThumbnailView *)arg1;
-- (int)muteButtonStateForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1;
+- (long long)muteButtonStateForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1;
 - (BOOL)shouldShowMuteButtonForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1;
 - (struct CGRect)visibleBoundsForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1;
 - (NSView *)viewForVisualTabPickerTileThumbnailView:(VisualTabPickerThumbnailView *)arg1 lowResolution:(BOOL)arg2;

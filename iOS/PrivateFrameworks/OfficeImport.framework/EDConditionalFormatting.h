@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)conditionalFormatting;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isApplyToDate;
 - (void)addRange:(id)arg1;
@@ -26,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (void)addRule:(id)arg1;
 - (id)ruleAtIndex:(unsigned long long)arg1;
 - (unsigned long long)ruleCount;
-- (void)dealloc;
 - (id)init;
 
 @end

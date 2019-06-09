@@ -25,7 +25,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithNearbyScanDuration:(double)arg1 nearbyScanEnabled:(BOOL)arg2 nearbyScanWhileAuthenticated:(BOOL)arg3 deviceNameSyncInterval:(id)arg4 deviceNameSyncEnabled:(BOOL)arg5;
 @property(nonatomic, readonly) BOOL deviceNameSyncEnabled; // @synthesize deviceNameSyncEnabled;
-@property(nonatomic, readonly) NSDateComponents *deviceNameSyncInterval; // @synthesize deviceNameSyncInterval;
+@property(nonatomic, readonly) NSDateComponents *deviceNameSyncInterval;
 @property(nonatomic, readonly) BOOL nearbyScanWhileAuthenticated; // @synthesize nearbyScanWhileAuthenticated;
 @property(nonatomic, readonly) BOOL nearbyScanEnabled; // @synthesize nearbyScanEnabled;
 @property(nonatomic, readonly) double nearbyScanDuration; // @synthesize nearbyScanDuration;

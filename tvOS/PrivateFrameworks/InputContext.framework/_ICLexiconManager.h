@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <InputContext/_ICFeedbackAccepting-Protocol.h>
 #import <InputContext/_ICLexiconManaging-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableDictionary, _ICNamedEntityStore;
 @protocol OS_dispatch_queue;
 
-@interface _ICLexiconManager : NSObject <_ICLexiconManaging>
+@interface _ICLexiconManager : NSObject <_ICLexiconManaging, _ICFeedbackAccepting>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
     struct _opaque_pthread_mutex_t _contactsCallbackLock;
@@ -29,6 +30,7 @@
 @property int namedEntityLoadState; // @synthesize namedEntityLoadState=_namedEntityLoadState;
 @property int contactLoadState; // @synthesize contactLoadState=_contactLoadState;
 - (void).cxx_destruct;
+- (void)provideFeedbackForString:(id)arg1 type:(unsigned char)arg2 style:(unsigned char)arg3;
 - (int)debugEntityLoadState;
 - (unsigned long long)getContactCount;
 - (void)printLexiconToNSLog:(struct _LXLexicon *)arg1;

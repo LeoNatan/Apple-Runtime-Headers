@@ -11,6 +11,7 @@
 @class NSString;
 @protocol SKCloudServiceSetupRemoteViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKCloudServiceSetupRemoteViewController : _UIRemoteViewController <SKCloudServiceSetupExtensionClientInterface>
 {
     id <SKCloudServiceSetupRemoteViewControllerDelegate> _delegate;

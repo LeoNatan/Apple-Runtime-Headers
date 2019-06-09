@@ -11,7 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)isTopLevelFunctionRow;
 - (BOOL)shouldNavigate;
+- (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 
 @end
 

@@ -7,30 +7,45 @@
 #import <objc/NSObject.h>
 
 #import <IconServices/NSCopying-Protocol.h>
+#import <IconServices/NSSecureCoding-Protocol.h>
 
-@interface ISImageDescriptor : NSObject <NSCopying>
+@class NSString;
+
+@interface ISImageDescriptor : NSObject <NSSecureCoding, NSCopying>
 {
     struct CGSize _size;
     double _scale;
     unsigned long long _variantOptions;
     unsigned long long _badgeOptions;
     unsigned long long _backgroundStyle;
+    _Bool _preferExtendedColorResources;
+    NSString *_preferedResourceName;
 }
 
++ (_Bool)supportsSecureCoding;
++ (id)imageDescriptorNamed:(id)arg1;
++ (id)icnsImageDescriptors;
+@property _Bool preferExtendedColorResources; // @synthesize preferExtendedColorResources=_preferExtendedColorResources;
 @property(nonatomic) unsigned long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(nonatomic) unsigned long long badgeOptions; // @synthesize badgeOptions=_badgeOptions;
+@property(retain) NSString *preferedResourceName; // @synthesize preferedResourceName=_preferedResourceName;
 @property(nonatomic) unsigned long long variantOptions; // @synthesize variantOptions=_variantOptions;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
+- (void).cxx_destruct;
 - (id)description;
 @property(readonly) double sanitizedScale;
 @property(readonly) struct CGSize sanitizedSize;
+@property(nonatomic) _Bool drawBadge;
 @property(nonatomic) _Bool drawBorder;
 @property(nonatomic) _Bool shouldApplyMask;
+@property(readonly, nonatomic) double continuousCornerRadius;
 @property(nonatomic) unsigned long long shape;
 @property(nonatomic) _Bool selectedVariant;
 @property(nonatomic) _Bool templateVariant;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)init;
 

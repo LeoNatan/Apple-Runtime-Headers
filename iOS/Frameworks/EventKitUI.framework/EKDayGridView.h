@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
     UIView *_gridContainerView;
     NSMutableDictionary *_gridParentViews;
     double _cachedWidthForOffMainThreadWork;
+    long long _sizeClass;
     _Bool _rightBorderInsetsOccurrences;
     _Bool _showsTimeLine;
     _Bool _showsTimeMarker;
@@ -94,10 +95,11 @@ __attribute__((visibility("hidden")))
 - (double)bottomPadding;
 @property(readonly, nonatomic) double topPadding;
 - (void)setOrientation:(long long)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 backgroundColor:(id)arg2 opaque:(_Bool)arg3 numberOfDaysToDisplay:(unsigned long long)arg4;
+- (long long)_sizeClass;
+- (id)initWithFrame:(struct CGRect)arg1 sizeClass:(long long)arg2 backgroundColor:(id)arg3 opaque:(_Bool)arg4 numberOfDaysToDisplay:(unsigned long long)arg5;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

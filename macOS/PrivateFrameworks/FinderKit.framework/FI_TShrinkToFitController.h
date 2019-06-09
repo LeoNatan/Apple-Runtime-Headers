@@ -8,40 +8,35 @@
 
 #import <FinderKit/NSWindowDelegate-Protocol.h>
 
-@class FI_TRenameOperation, FI_TShrinkToFitTextView, NSFont, NSString, NSTimer, NSWindow;
+@class FI_TRenameOperation, FI_TShrinkToFitTextView, NSFont, NSString, NSWindow;
 @protocol TShrinkToFitDelegateProtocol;
 
 __attribute__((visibility("hidden")))
 @interface FI_TShrinkToFitController : NSObject <NSWindowDelegate>
 {
-    FI_TShrinkToFitTextView *_stfTextView;
-    NSWindow *_parentWindow;
-    NSTimer *_delayTimer;
-    NSString *_initialText;
-    NSFont *_font;
+    struct TNSRef<FI_TShrinkToFitTextView, void> _stfTextView;
+    struct TNSRef<NSWindow, void> _parentWindow;
+    struct TNSRef<NSTimer, void> _delayTimer;
+    struct TString _initialText;
+    struct TNSRef<NSFont, void> _font;
     struct _NSRange _selectionRange;
     struct CGRect _maxGlobalFrame;
     unsigned long long _maxUniChars;
     long long _maxNumLines;
-    unsigned long long _alignment;
+    long long _alignment;
     long long _baseWritingDirection;
     _Bool _disableDeepClickLookUp;
     _Bool _textGrowsUpwards;
     struct TFENode _configuredNode;
-    FI_TRenameOperation *_renameOp;
-    id <TShrinkToFitDelegateProtocol> _delegate;
+    struct TNSRef<FI_TRenameOperation, void> _renameOp;
+    struct TNSWeakPtr<NSObject<TShrinkToFitDelegateProtocol>, void> _weakDelegate;
 }
 
 @property(nonatomic) _Bool disableDeepClickLookUp; // @synthesize disableDeepClickLookUp=_disableDeepClickLookUp;
-@property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(nonatomic) long long baseWritingDirection; // @synthesize baseWritingDirection=_baseWritingDirection;
-@property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned long long maxUniChars; // @synthesize maxUniChars=_maxUniChars;
 @property(nonatomic) struct CGRect maxGlobalFrame; // @synthesize maxGlobalFrame=_maxGlobalFrame;
-@property(nonatomic) id <TShrinkToFitDelegateProtocol> delegate; // @synthesize delegate=_delegate;
-@property(readonly, retain, nonatomic) FI_TRenameOperation *renameOp; // @synthesize renameOp=_renameOp;
-@property(readonly, retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
-@property(readonly, retain, nonatomic) FI_TShrinkToFitTextView *stfTextView; // @synthesize stfTextView=_stfTextView;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct TFENode)nodeForEditing;
@@ -59,6 +54,11 @@ __attribute__((visibility("hidden")))
 - (int)editingSelectionType;
 - (void)setText:(id)arg1 selectionRange:(const struct _NSRange *)arg2;
 - (void)configureForNode:(const struct TFENode *)arg1;
+@property(retain, nonatomic) NSFont *font; // @dynamic font;
+@property(nonatomic) __weak NSObject<TShrinkToFitDelegateProtocol> *delegate; // @dynamic delegate;
+@property(readonly, retain, nonatomic) FI_TRenameOperation *renameOp; // @dynamic renameOp;
+@property(readonly, retain, nonatomic) NSWindow *parentWindow; // @dynamic parentWindow;
+@property(readonly, retain, nonatomic) FI_TShrinkToFitTextView *stfTextView; // @dynamic stfTextView;
 - (void)dealloc;
 - (id)initWithParentWindow:(id)arg1 renameOp:(id)arg2 delegate:(id)arg3;
 - (id)init;

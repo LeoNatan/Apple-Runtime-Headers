@@ -9,7 +9,7 @@
 #import <AppKit/NSCoding-Protocol.h>
 #import <AppKit/NSCopying-Protocol.h>
 
-@class NSImage, NSImageView, NSMenu, NSSegmentItemView, NSSegmentedCell, NSString;
+@class NSImage, NSImageView, NSMenu, NSMutableArray, NSSegmentItemView, NSSegmentedCell, NSString;
 
 @interface NSSegmentItem : NSObject <NSCopying, NSCoding>
 {
@@ -41,6 +41,13 @@
     long long _toolTipTag;
     NSImage *_alternateImage;
     NSSegmentedCell *_owningCell;
+    NSMutableArray *_segmentItems;
+    long long _selectedSegment;
+    long long _keySegment;
+    struct CGRect _lastBounds;
+    CDStruct_bdbd3e0b _seFlags;
+    id _segmentTrackingInfo;
+    id _menuUniquer;
 }
 
 @property long long toolTipTag; // @synthesize toolTipTag=_toolTipTag;
@@ -50,7 +57,7 @@
 @property(copy) NSString *toolTip; // @synthesize toolTip=_toolTip;
 @property long long tag; // @synthesize tag=_tag;
 - (id)description;
-@property unsigned long long alignment;
+@property long long alignment;
 - (void)_setToolTipTag:(long long)arg1;
 - (long long)_toolTipTag;
 - (BOOL)disabled;

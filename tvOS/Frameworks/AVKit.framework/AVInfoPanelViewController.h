@@ -6,14 +6,16 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <AVKit/AVInfoMenuDelegate-Protocol.h>
 #import <AVKit/UITabBarControllerDelegate-Protocol.h>
 
-@class AVInfoPanelAudioViewController, AVInfoPanelDescriptionViewController, AVInfoPanelMetadataViewController, AVInfoPanelNavigationCollectionViewController, AVInfoPanelSubtitlesViewController, NSArray, NSLayoutConstraint, NSString, UITabBarController, UIVisualEffectView, _UIVisualEffectBackdropView;
+@class AVInfoMenuController, AVInfoPanelAudioViewController, AVInfoPanelDescriptionViewController, AVInfoPanelMetadataViewController, AVInfoPanelNavigationCollectionViewController, AVInfoPanelSubtitlesViewController, NSArray, NSLayoutConstraint, NSString, UIVisualEffectView, _UIVisualEffectBackdropView;
 @protocol AVInfoPanelViewControllerDelegate;
 
-@interface AVInfoPanelViewController : UIViewController <UITabBarControllerDelegate>
+__attribute__((visibility("hidden")))
+@interface AVInfoPanelViewController : UIViewController <UITabBarControllerDelegate, AVInfoMenuDelegate>
 {
-    UITabBarController *_tabBarController;
+    AVInfoMenuController *_tabBarController;
     AVInfoPanelMetadataViewController *_metadataViewController;
     AVInfoPanelSubtitlesViewController *_subtitlesViewController;
     AVInfoPanelAudioViewController *_audioViewController;
@@ -31,12 +33,13 @@
 - (void).cxx_destruct;
 - (void)_playPauseButtonGestureDetected:(id)arg1;
 - (void)_menuButtonGestureDetected:(id)arg1;
+- (void)_upArrowGestureDetected:(id)arg1;
 - (void)_swipeUpGestureDetected:(id)arg1;
 - (void)_dismiss;
 - (void)_setupTabs;
-- (id)tabBarController:(id)arg1 animationControllerForTransitionFromViewController:(id)arg2 toViewController:(id)arg3;
-- (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (void)infoMenuController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+@property(nonatomic) _Bool suppressDescriptionSubpanel;
 @property(readonly) AVInfoPanelNavigationCollectionViewController *navigationViewController;
 @property(readonly) AVInfoPanelDescriptionViewController *descriptionViewController;
 - (void)viewWillDisappear:(_Bool)arg1;

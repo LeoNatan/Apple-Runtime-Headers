@@ -20,7 +20,6 @@
     id _lastCell;
     struct CGRect _lastCellFrame;
     char *_autoCompleteCancel;
-    id _reserved[6];
     struct {
         unsigned int _style:4;
         unsigned int _invalidCache:1;
@@ -84,7 +83,7 @@
 - (void)setControlSize:(unsigned long long)arg1;
 - (void)setFont:(id)arg1;
 - (void)setWraps:(BOOL)arg1;
-- (void)setAlignment:(unsigned long long)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)setScrollable:(BOOL)arg1;
 - (BOOL)allowsEditingTokens;
 - (BOOL)allowsEditingTextAttributes;

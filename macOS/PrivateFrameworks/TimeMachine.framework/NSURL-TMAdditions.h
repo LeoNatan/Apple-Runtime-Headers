@@ -7,12 +7,18 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (TMAdditions)
+- (id)tm_recomputeCRC32Checksum;
+- (id)tm_computeCRC32Checksum;
+- (id)tm_name;
+- (unsigned int)tm_itemType;
 - (BOOL)tm_compareToItem:(id)arg1 options:(unsigned long long)arg2 itemsMatch:(out char *)arg3 error:(out id *)arg4;
 - (id)tm_physicalBlocksError:(id *)arg1;
 - (void)tm_unlockAndRelockWithAccessor:(CDUnknownBlockType)arg1;
 - (BOOL)tm_removeExtendedAttribute:(id)arg1 options:(int)arg2 error:(out id *)arg3;
 - (BOOL)tm_setDataValue:(id)arg1 forExtendedAttribute:(id)arg2 options:(int)arg3 error:(out id *)arg4;
 - (BOOL)tm_getDataValue:(out id *)arg1 forExtendedAttribute:(id)arg2 options:(int)arg3 error:(out id *)arg4;
+- (BOOL)tm_setStringValue:(id)arg1 forExtendedAttribute:(id)arg2;
+- (BOOL)tm_setStringValue:(id)arg1 forExtendedAttribute:(id)arg2 error:(out id *)arg3;
 - (BOOL)tm_setStringValue:(id)arg1 forExtendedAttribute:(id)arg2 terminate:(BOOL)arg3 options:(int)arg4 error:(out id *)arg5;
 - (BOOL)tm_getStringValue:(out id *)arg1 forExtendedAttribute:(id)arg2 options:(int)arg3 error:(out id *)arg4;
 - (id)tm_stringValueForExtendedAttribute:(id)arg1;
@@ -44,6 +50,7 @@
 - (BOOL)tm_isUserImmutable;
 - (unsigned long long)tm_fileSize;
 - (unsigned short)tm_linkCount;
+- (unsigned long long)tm_fileID;
 - (BOOL)tm_isPackage;
 - (BOOL)tm_isSymbolicLink;
 - (BOOL)tm_isDirectory;

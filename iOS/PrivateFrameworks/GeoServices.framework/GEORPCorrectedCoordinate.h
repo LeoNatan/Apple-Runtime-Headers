@@ -8,16 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng;
+@class GEOLatLng, PBDataReader;
 
 @interface GEORPCorrectedCoordinate : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOLatLng *_correctedCoordinate;
     GEOLatLng *_originalCoordinate;
+    struct {
+        unsigned int read_correctedCoordinate:1;
+        unsigned int read_originalCoordinate:1;
+        unsigned int wrote_correctedCoordinate:1;
+        unsigned int wrote_originalCoordinate:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOLatLng *correctedCoordinate; // @synthesize correctedCoordinate=_correctedCoordinate;
-@property(retain, nonatomic) GEOLatLng *originalCoordinate; // @synthesize originalCoordinate=_originalCoordinate;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,10 +33,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLatLng *correctedCoordinate;
 @property(readonly, nonatomic) _Bool hasCorrectedCoordinate;
+- (void)_readCorrectedCoordinate;
+@property(retain, nonatomic) GEOLatLng *originalCoordinate;
 @property(readonly, nonatomic) _Bool hasOriginalCoordinate;
+- (void)_readOriginalCoordinate;
 
 @end
 

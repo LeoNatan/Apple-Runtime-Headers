@@ -12,7 +12,6 @@
 
 @class NSMutableDictionary, NSString, NSURLCredential, NSURLSession, NSURLSessionConfiguration;
 
-__attribute__((visibility("hidden")))
 @interface TLSTestHarness : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate>
 {
     NSURLSessionConfiguration *_sessionConfig;

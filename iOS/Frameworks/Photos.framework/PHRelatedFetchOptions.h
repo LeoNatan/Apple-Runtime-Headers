@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, PHAsset;
+@class NSArray, PHAsset, PHPhotoLibrary;
 
 @interface PHRelatedFetchOptions : NSObject
 {
@@ -15,9 +15,11 @@
     NSArray *_excludedAssetCollections;
     PHAsset *_referenceAsset;
     unsigned long long _fetchLimit;
+    PHPhotoLibrary *_photoLibrary;
 }
 
 @property(nonatomic, getter=isDebugInfoEnabled) _Bool debugInfoEnabled; // @synthesize debugInfoEnabled=_debugInfoEnabled;
+@property(retain, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic) _Bool enableDiversity; // @synthesize enableDiversity=_enableDiversity;
 @property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(retain, nonatomic) PHAsset *referenceAsset; // @synthesize referenceAsset=_referenceAsset;

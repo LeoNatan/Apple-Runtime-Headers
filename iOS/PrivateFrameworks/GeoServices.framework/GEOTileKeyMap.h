@@ -6,7 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@interface GEOTileKeyMap : NSObject
+#import <GeoServices/NSCopying-Protocol.h>
+
+@interface GEOTileKeyMap : NSObject <NSCopying>
 {
     long long _type;
     void *_map;
@@ -19,6 +21,7 @@
 - (id)contentsDescription;
 - (void)reserveCapacity:(unsigned long long)arg1;
 - (void)dealloc;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMapType:(long long)arg1;
 - (id)init;
 

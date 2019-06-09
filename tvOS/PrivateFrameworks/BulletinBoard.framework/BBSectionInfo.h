@@ -26,9 +26,7 @@
     BBSectionInfo *_parentSection;
     NSString *_factorySectionID;
     NSArray *_dataProviderIDs;
-    NSArray *_filters;
     _Bool _suppressFromSettings;
-    _Bool _displaysCriticalBulletins;
     _Bool _hideWeeApp;
     NSString *_appName;
     long long _subsectionPriority;
@@ -39,7 +37,6 @@
 + (_Bool)supportsSecureCoding;
 + (id)defaultSectionInfoForType:(long long)arg1;
 + (id)defaultSectionInfoForSection:(id)arg1;
-@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(nonatomic) unsigned long long version; // @synthesize version=_version;
 @property(copy, nonatomic) NSArray *dataProviderIDs; // @synthesize dataProviderIDs=_dataProviderIDs;
 @property(copy, nonatomic) NSString *factorySectionID; // @synthesize factorySectionID=_factorySectionID;
@@ -48,7 +45,6 @@
 @property(nonatomic) long long subsectionPriority; // @synthesize subsectionPriority=_subsectionPriority;
 @property(nonatomic) __weak BBSectionInfo *parentSection; // @synthesize parentSection=_parentSection;
 @property(copy, nonatomic) NSArray *subsections; // @synthesize subsections=_subsections;
-@property(nonatomic) _Bool displaysCriticalBulletins; // @synthesize displaysCriticalBulletins=_displaysCriticalBulletins;
 @property(copy, nonatomic) BBSectionIcon *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *appName; // @synthesize appName=_appName;
@@ -85,11 +81,10 @@
 - (void)_configureWithDefaultsForSectionType:(long long)arg1;
 - (id)initWithDefaultsForSectionType:(long long)arg1;
 - (id)init;
-- (id)effectiveSectionInfoWithFactoryInfo:(id)arg1 defaultContentPreviewSetting:(long long)arg2;
+- (id)effectiveSectionInfoWithFactoryInfo:(id)arg1 defaultContentPreviewSetting:(long long)arg2 globalSpokenNotificationSetting:(long long)arg3;
 - (long long)disabledSettingForSetting:(long long)arg1;
-- (id)effectiveSectionInfoWithDefaultContentPreviewSetting:(long long)arg1;
+- (id)effectiveSectionInfoWithDefaultContentPreviewSetting:(long long)arg1 globalSpokenNotificationSetting:(long long)arg2;
 - (void)updateWithDefaultSectionInfo:(id)arg1;
-- (void)updateWithDefaultFilters:(id)arg1;
 - (id)copyFromManagedSettings;
 @property(readonly, nonatomic) BBSectionInfoSettings *writableSettings;
 @property(readonly, nonatomic) BBSectionInfoSettings *readableSettings;
@@ -106,6 +101,7 @@
 @property(nonatomic) _Bool showsOnExternalDevices;
 @property(nonatomic) long long bulletinGroupingSetting;
 @property(nonatomic) long long criticalAlertSetting;
+@property(nonatomic) long long spokenNotificationSetting;
 @property(nonatomic) long long carPlaySetting;
 @property(nonatomic) unsigned long long pushSettings;
 @property(nonatomic) unsigned long long alertType;

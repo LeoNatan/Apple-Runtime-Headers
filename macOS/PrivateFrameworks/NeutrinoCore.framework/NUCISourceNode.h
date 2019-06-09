@@ -15,11 +15,9 @@
 }
 
 - (void).cxx_destruct;
-- (id)_evaluateImageProperties:(out id *)arg1;
-- (CDStruct_912cb5d2)pixelSize;
 - (id)_evaluateImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
+- (CDStruct_912cb5d2)pixelSizeWithSourceOptions:(id)arg1;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
-- (id)_evaluateImage:(out id *)arg1;
 - (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (BOOL)supportsPipelineState:(id)arg1 error:(out id *)arg2;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;

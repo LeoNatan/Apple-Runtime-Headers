@@ -18,10 +18,15 @@
     double _memoryGroupingInterval;
     double _additionalContentThreshold;
     unsigned long long _groupsPerBatch;
+    long long _favoriteMemoriesSortOrder;
+    long long _sharingBehavior;
 }
 
 + (id)sharedInstance;
++ (id)_resetRejectedMemories;
 + (id)settingsControllerModule;
+@property(nonatomic) long long sharingBehavior; // @synthesize sharingBehavior=_sharingBehavior;
+@property(nonatomic) long long favoriteMemoriesSortOrder; // @synthesize favoriteMemoriesSortOrder=_favoriteMemoriesSortOrder;
 @property(nonatomic) unsigned long long groupsPerBatch; // @synthesize groupsPerBatch=_groupsPerBatch;
 @property(nonatomic) double additionalContentThreshold; // @synthesize additionalContentThreshold=_additionalContentThreshold;
 @property(nonatomic) double memoryGroupingInterval; // @synthesize memoryGroupingInterval=_memoryGroupingInterval;

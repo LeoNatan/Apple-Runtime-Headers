@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)executeWithSlowStatementRadar:(id)arg1 sql:(id)arg2;
 - (BOOL)executeWithExpectedIndex:(id)arg1 sql:(id)arg2;
 - (id)fetchWithSlowStatementRadar:(id)arg1 objectOfClass:(Class)arg2 sql:(id)arg3;
+- (id)fetchWithExpectedIndex:(id)arg1 sql:(id)arg2;
 - (id)fetchWithSlowStatementRadar:(id)arg1 sql:(id)arg2;
 - (void)setProfilingHook:(CDUnknownBlockType)arg1;
 - (void)flushToMakeEditsVisibleToIPCReaders;

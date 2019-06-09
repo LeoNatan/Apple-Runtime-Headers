@@ -32,6 +32,7 @@
 - (BOOL)sendCommand:(id)arg1 toMACAddress:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)sendVendorUniqueResponse:(id)arg1 toMACAddress:(id)arg2 error:(id *)arg3;
 - (BOOL)sendVendorUniqueCommand:(id)arg1 toMACAddress:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (BOOL)sendVendorUniqueMessage:(id)arg1 toMACAddress:(id)arg2 isResponse:(BOOL)arg3 error:(id *)arg4;
 - (BOOL)sendLegacyAVCResponse:(id)arg1 toMACAddress:(id)arg2 error:(id *)arg3;
 - (BOOL)sendLegacyAVCCommand:(id)arg1 toMACAddress:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)sendLegacyAVCSyncCommand:(id)arg1 toMACAddress:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -52,14 +53,10 @@
 - (BOOL)sendAEMMessage:(id)arg1 toMACAddress:(id)arg2 isResponse:(BOOL)arg3 error:(id *)arg4;
 - (void)_disableMonitorMode;
 - (void)_enableMonitorModeWithDelegate:(id)arg1;
-- (void)removeHandlerForEntityID:(unsigned long long)arg1;
-- (void)removeHandlerForGUID:(unsigned long long)arg1;
 - (void)removeResponseHandlerForControllerEntityID:(unsigned long long)arg1;
 - (BOOL)setResponseHandler:(id)arg1 forControllerEntityID:(unsigned long long)arg2;
 - (void)removeCommandHandlerForEntityID:(unsigned long long)arg1;
 - (BOOL)setCommandHandler:(id)arg1 forEntityID:(unsigned long long)arg2;
-- (BOOL)setHandler:(id)arg1 forEntityID:(unsigned long long)arg2;
-- (BOOL)setHandler:(id)arg1 forGUID:(unsigned long long)arg2;
 - (id)initWithInterfaceName:(id)arg1;
 
 @end

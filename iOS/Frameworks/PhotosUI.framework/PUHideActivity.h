@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUActivity.h>
+#import <PhotosUICore/PXActivity.h>
 
 @class PUAssetHidingHelper;
 
 __attribute__((visibility("hidden")))
-@interface PUHideActivity : PUActivity
+@interface PUHideActivity : PXActivity
 {
     PUAssetHidingHelper *_assetHidingHelper;
 }
@@ -18,8 +18,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)_activityImageName;
-- (id)_activityBundleImageConfiguration;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 - (void)setItemSourceController:(id)arg1;

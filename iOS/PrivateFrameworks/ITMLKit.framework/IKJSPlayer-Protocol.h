@@ -6,12 +6,18 @@
 
 #import <ITMLKit/JSExport-Protocol.h>
 
-@class IKDOMDocument, IKJSMediaItem, IKJSPlaylist, NSDate, NSNumber, NSString;
+@class IKDOMDocument, IKJSMediaItem, IKJSPlaylist, NSArray, NSDate, NSDictionary, NSNumber, NSString;
 
 @protocol IKJSPlayer <JSExport>
+@property(retain, nonatomic) NSDictionary *userInfo;
+@property(nonatomic) _Bool showsResumeMenu;
+@property(copy, nonatomic) NSDictionary *contextMenuData;
+@property(readonly, nonatomic) NSArray *currentMediaItemErrorLogs;
+@property(readonly, nonatomic) NSArray *currentMediaItemAccessLogs;
 @property(nonatomic) _Bool interactiveOverlayDismissable;
 @property(retain, nonatomic) IKDOMDocument *interactiveOverlayDocument;
 @property(retain, nonatomic) IKDOMDocument *overlayDocument;
+@property(nonatomic) _Bool muted;
 @property(nonatomic) double playbackRate;
 @property(readonly, nonatomic) NSDate *currentMediaItemDate;
 @property(readonly, nonatomic) NSNumber *currentMediaItemDuration;

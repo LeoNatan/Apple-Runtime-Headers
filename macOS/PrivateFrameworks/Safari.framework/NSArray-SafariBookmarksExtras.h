@@ -9,5 +9,6 @@
 @interface NSArray (SafariBookmarksExtras)
 - (id)safari_arrayByRemovingRedundantDescendantBookmarks;
 - (BOOL)safari_containsAnyAncestorOfBookmark:(id)arg1;
+- (BOOL)containsBookmarkOrAnyAncestor:(id)arg1;
 @end
 

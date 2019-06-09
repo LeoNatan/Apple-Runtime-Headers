@@ -12,6 +12,8 @@
 {
 }
 
++ (id)__providerName_KEY;
++ (id)__attributionLabel_KEY;
 + (id)__type_KEY;
 + (id)__allowsItemLiking_KEY;
 + (id)__artworkCatalogBlock_KEY;
@@ -28,10 +30,12 @@
 // Remaining properties
 @property(nonatomic) _Bool allowsItemLiking; // @dynamic allowsItemLiking;
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;
+@property(copy, nonatomic) NSString *attributionLabel; // @dynamic attributionLabel;
 @property(nonatomic, getter=isBeats1) _Bool beats1; // @dynamic beats1;
 @property(copy, nonatomic) NSString *editorNotes; // @dynamic editorNotes;
 @property(nonatomic) _Bool hasExplicitContent; // @dynamic hasExplicitContent;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) NSString *providerName; // @dynamic providerName;
 @property(copy, nonatomic) NSString *shortEditorNotes; // @dynamic shortEditorNotes;
 @property(nonatomic) long long type; // @dynamic type;
 

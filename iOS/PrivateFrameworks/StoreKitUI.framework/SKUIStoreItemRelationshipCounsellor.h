@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSRecursiveLock;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStoreItemRelationshipCounsellor : NSObject
 {
     NSMutableDictionary *_relationshipsDictionary;

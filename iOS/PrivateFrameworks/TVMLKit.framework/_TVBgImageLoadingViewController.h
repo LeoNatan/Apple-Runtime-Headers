@@ -8,11 +8,11 @@
 
 #import <TVMLKit/TVAppTemplateController-Protocol.h>
 
-@class IKViewElement, NSString, TVImageProxy, UIView;
+@class IKViewElement, NSString, UIView;
 
 @interface _TVBgImageLoadingViewController : UIViewController <TVAppTemplateController>
 {
-    TVImageProxy *_bgImageProxy;
+    id _imageProxy;
     _Bool _loaded;
     UIView *_rightLargeTitleButton;
     struct {
@@ -23,6 +23,7 @@
         _Bool respondsToBlurEffectStyle;
         _Bool respondsToPurgeBgImages;
         _Bool respondsToConfigureBgImageBackdropImage;
+        _Bool respondsToShouldLoadBackgroundImageAsynchronously;
     } _bgImageLoadingOptions;
     _Bool _appliedNavigationItem;
     IKViewElement *_navigationItemElement;
@@ -32,6 +33,7 @@
 @property(nonatomic) _Bool appliedNavigationItem; // @synthesize appliedNavigationItem=_appliedNavigationItem;
 @property(retain, nonatomic) IKViewElement *navigationItemElement; // @synthesize navigationItemElement=_navigationItemElement;
 - (void).cxx_destruct;
+- (id)_stackViewWithMinSpacing:(double)arg1 layoutMargin:(struct UIEdgeInsets)arg2;
 - (void)_updateNavigationItem;
 - (void)_updateNavigationBarPadding;
 - (void)_reparentNavigationItem:(id)arg1;
@@ -46,6 +48,7 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)updateWithViewElement:(id)arg1;
 - (long long)preferredStatusBarStyle;
+- (_Bool)_shouldLoadBackgroundImageAsynchronously;
 - (long long)_blurEffectStyle;
 - (struct CGSize)_backgroundImageProxySize;
 - (_Bool)_isBackdropNeeded;

@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
+@class CIContext, NSDictionary;
 
 @interface NSGraphicsContext : NSObject
 {
 }
 
-+ (void)setGraphicsState:(long long)arg1;
 + (void)restoreGraphicsState;
 + (void)saveGraphicsState;
++ (id)_popGraphicsContext;
++ (void)_pushGraphicsContext:(id)arg1;
 + (void)configureGraphicsContextForCALayer:(id)arg1 withCGContext:(struct CGContext *)arg2 andRenderWithHandler:(CDUnknownBlockType)arg3;
 + (id)graphicsContextWithCGContext:(struct CGContext *)arg1 forCALayer:(id)arg2;
-+ (id)graphicsContextWithGraphicsPort:(void *)arg1 flipped:(BOOL)arg2;
 + (id)graphicsContextWithCGContext:(struct CGContext *)arg1 flipped:(BOOL)arg2;
 + (id)graphicsContextWithBitmapImageRep:(id)arg1;
 + (id)graphicsContextWithWindow:(id)arg1;
@@ -26,29 +26,26 @@
 + (BOOL)currentContextDrawingToScreen;
 + (void)setCurrentContext:(id)arg1;
 + (id)currentContext;
-+ (id)_lastOnScreenContext;
++ (id)graphicsContextWithGraphicsPort:(void *)arg1 flipped:(BOOL)arg2;
++ (void)setGraphicsState:(long long)arg1;
 + (id)colorFactory;
+- (unsigned int)contextID;
 - (void)_releaseCIContext;
-- (id)CIContext;
-- (void)setColorRenderingIntent:(long long)arg1;
-- (long long)colorRenderingIntent;
-- (unsigned long long)compositingOperation;
-- (void)setCompositingOperation:(unsigned long long)arg1;
-- (struct CGPoint)patternPhase;
-- (void)setPatternPhase:(struct CGPoint)arg1;
-- (unsigned long long)imageInterpolation;
-- (void)setImageInterpolation:(unsigned long long)arg1;
-- (BOOL)shouldAntialias;
-- (void)setShouldAntialias:(BOOL)arg1;
 @property(readonly, getter=isFlipped) BOOL flipped;
 @property(readonly) struct CGContext *CGContext;
-- (void *)graphicsPort;
+@property(readonly) void *graphicsPort;
 - (void)flushGraphics;
 - (void)restoreGraphicsState;
 - (void)saveGraphicsState;
 @property(readonly, getter=isDrawingToScreen) BOOL drawingToScreen;
 @property(readonly, copy) NSDictionary *attributes;
 - (id)CALayer;
+@property long long colorRenderingIntent;
+@property unsigned long long compositingOperation;
+@property struct CGPoint patternPhase;
+@property unsigned long long imageInterpolation;
+@property BOOL shouldAntialias;
+@property(readonly) CIContext *CIContext;
 - (void)setFocusStack:(id)arg1;
 - (id)focusStack;
 - (id)colorFactory;

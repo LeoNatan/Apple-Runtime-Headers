@@ -8,7 +8,7 @@
 
 #import <NanoMailKitClient/WKURLSchemeHandler-Protocol.h>
 
-@class NNMKMessage, NSMutableArray, NSMutableDictionary, NSString;
+@class NNMKMessage, NSMutableDictionary, NSMutableSet, NSString;
 @protocol NNMKMessageContentWebViewDelegate;
 
 @interface NNMKMessageContentWebView : WKWebView <WKURLSchemeHandler>
@@ -17,10 +17,10 @@
     NNMKMessage *_message;
     id <NNMKMessageContentWebViewDelegate> _delegate;
     struct NSMutableDictionary *_urlLoadingTasks;
-    NSMutableArray *_locallyIntroducedSubviews;
+    NSMutableSet *_locallyIntroducedSubviews;
 }
 
-@property(retain, nonatomic) NSMutableArray *locallyIntroducedSubviews; // @synthesize locallyIntroducedSubviews=_locallyIntroducedSubviews;
+@property(retain, nonatomic) NSMutableSet *locallyIntroducedSubviews; // @synthesize locallyIntroducedSubviews=_locallyIntroducedSubviews;
 @property(retain, nonatomic) NSMutableDictionary *urlLoadingTasks; // @synthesize urlLoadingTasks=_urlLoadingTasks;
 @property(nonatomic) _Bool blockRemoteImagesEnabled; // @synthesize blockRemoteImagesEnabled=_blockRemoteImagesEnabled;
 @property(nonatomic) __weak id <NNMKMessageContentWebViewDelegate> delegate; // @synthesize delegate=_delegate;

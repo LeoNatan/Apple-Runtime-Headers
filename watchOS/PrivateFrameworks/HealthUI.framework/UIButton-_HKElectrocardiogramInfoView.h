@@ -8,5 +8,12 @@
 
 @interface UIButton (_HKElectrocardiogramInfoView)
 + (id)_hkecg_detailButton;
++ (id)hk_multiLineLowContrastRoundRectButtonWithTitle:(id)arg1 target:(id)arg2 action:(SEL)arg3;
++ (id)hk_multiLineRoundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)hk_roundRectButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)hk_buttonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)hk_buddyButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)hk_roundedRectBuddyButtonTintedWithColor:(id)arg1 title:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (float)hk_buddyButtonHorizontalMargin;
 @end
 

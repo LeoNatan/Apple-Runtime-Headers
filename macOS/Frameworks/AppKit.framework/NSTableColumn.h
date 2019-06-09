@@ -13,11 +13,11 @@
 
 @interface NSTableColumn : NSObject <NSCoding, NSUserInterfaceItemIdentification>
 {
+    NSTableView *_tableView;
     id _identifier;
     double _width;
     double _minWidth;
     double _maxWidth;
-    NSTableView *_tableView;
     NSCell *_headerCell;
     NSCell *_dataCell;
     struct __colFlags {
@@ -28,7 +28,8 @@
         unsigned int userResizingAllowed:1;
         unsigned int autoResizingAllowed:1;
         unsigned int hidden:1;
-        unsigned int RESERVED:18;
+        unsigned int isOutlineTableColumn:1;
+        unsigned int RESERVED:17;
     } _cFlags;
     id _tcAuxiliaryStorage;
 }
@@ -51,9 +52,12 @@
 @property(retain) NSTableHeaderCell *headerCell;
 @property double maxWidth;
 @property double minWidth;
+- (double)_outlineIndetantionSafeMinWidth;
 @property double width;
 @property(copy) NSString *identifier;
 @property(copy) NSSortDescriptor *sortDescriptorPrototype;
+- (void)_setIsOutlineTableColumn:(BOOL)arg1;
+- (BOOL)_isOutlineTableColumn;
 @property __weak NSTableView *tableView;
 - (BOOL)_canUseReorderResizeImageCache;
 - (void)_setCanUseReorderResizeImageCache:(BOOL)arg1;

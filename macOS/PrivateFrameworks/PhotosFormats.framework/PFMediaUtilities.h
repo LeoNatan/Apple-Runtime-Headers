@@ -10,9 +10,24 @@
 {
 }
 
++ (id)mainVideoTrackForAsset:(id)arg1;
++ (BOOL)isPdfUTI:(id)arg1;
++ (BOOL)isPsdUTI:(id)arg1;
++ (BOOL)isPngUTI:(id)arg1;
++ (BOOL)isHeifUTI:(id)arg1;
++ (BOOL)isGifUTI:(id)arg1;
++ (BOOL)isTiffUTI:(id)arg1;
++ (BOOL)isRawUTI:(id)arg1;
++ (BOOL)isJpeg2000UTI:(id)arg1;
++ (BOOL)isJpegUTI:(id)arg1;
++ (BOOL)isImageUTI:(id)arg1;
++ (BOOL)isMovieUTI:(id)arg1;
++ (BOOL)isAudioUTI:(id)arg1;
 + (BOOL)UTIRequiresRasterizationDPI:(id)arg1;
 + (BOOL)isValidExtension:(id)arg1 forUTI:(id)arg2;
++ (id)UTIForURL:(id)arg1;
 + (id)UTIForHFSType:(unsigned int)arg1;
++ (id)resourceModelUTIForExtension:(id)arg1;
 + (id)UTIForExtension:(id)arg1;
 + (id)preferredExtensionForUTI:(id)arg1;
 

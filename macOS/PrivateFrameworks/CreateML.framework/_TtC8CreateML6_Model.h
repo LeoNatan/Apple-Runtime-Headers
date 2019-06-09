@@ -11,7 +11,7 @@
     // Error parsing type: , name: impl
     // Error parsing type: , name: model
     // Error parsing type: , name: type
-    // Error parsing type: , name: attributes.storage
+    // Error parsing type: , name: $__lazy_storage_$_attributes
 }
 
 @end

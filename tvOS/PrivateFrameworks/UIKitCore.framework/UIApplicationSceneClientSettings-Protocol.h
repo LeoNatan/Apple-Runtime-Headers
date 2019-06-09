@@ -6,9 +6,11 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class FBSDisplayConfigurationRequest, FBSDisplayMode, NSArray, NSString;
+@class FBSDisplayConfigurationRequest, FBSDisplayMode, NSArray, NSData, NSDictionary, NSString;
 
 @protocol UIApplicationSceneClientSettings <NSObject>
+@property(readonly, nonatomic) NSData *activationConditionsData;
+@property(readonly, copy, nonatomic) NSString *canvasTitle;
 @property(readonly, nonatomic) _Bool disablesMirroring;
 @property(readonly, nonatomic) double brightnessLevel;
 @property(readonly, nonatomic) NSArray *audioCategoriesDisablingVolumeHUD;
@@ -38,7 +40,10 @@
 @property(readonly, nonatomic) long long defaultStatusBarStyle;
 @property(readonly, nonatomic) unsigned int statusBarContextID;
 @property(readonly, nonatomic, getter=isStatusBarForegroundTransparent) _Bool statusBarForegroundTransparent;
+@property(readonly, nonatomic) double statusBarAlpha;
 @property(readonly, nonatomic) _Bool statusBarHidden;
+@property(readonly, copy, nonatomic) NSDictionary *statusBarPartStyles;
+@property(readonly, nonatomic) long long statusBarModernStyle;
 @property(readonly, nonatomic) long long statusBarStyle;
 @end
 

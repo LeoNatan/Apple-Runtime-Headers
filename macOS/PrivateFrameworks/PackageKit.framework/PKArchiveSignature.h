@@ -13,7 +13,7 @@
     struct __SecTrust *_verifyTrustRef;
 }
 
-- (BOOL)_hasSigningCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (BOOL)_hasSigningCertificate:(struct __SecCertificate *)arg1;
 - (id)signatureDataReturningAlgorithm:(id *)arg1;
 - (id)signedDataReturningAlgorithm:(id *)arg1;
 @property(readonly) NSString *algorithmType;

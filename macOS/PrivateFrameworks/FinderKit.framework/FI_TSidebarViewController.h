@@ -19,9 +19,9 @@ __attribute__((visibility("hidden")))
 @interface FI_TSidebarViewController : FI_TViewController <NSOutlineViewDataSource, TSidebarViewDelegate, NSMenuDelegate, ISpawnOriginDelegateProtocol, QLSeamlessCloserDelegate, TMarkTornDown>
 {
     FI_TSidebarView *_sidebarView;
-    FI_TBrowserContainerController *_containerController;
-    struct vector<TSidebarZone, std::__1::allocator<TSidebarZone>> _localDataSourceCopyZones;
-    struct map<TSidebarZone, TFENodeVector, std::__1::less<TSidebarZone>, std::__1::allocator<std::__1::pair<const TSidebarZone, TFENodeVector>>> _localDataSourceCopy;
+    struct TNSWeakPtr<FI_TBrowserContainerController, void> _weakContainerController;
+    vector_5db024cf _localDataSourceCopyZones;
+    map_25537475 _localDataSourceCopy;
     _Bool _observingShared;
     _Bool _repopulating;
     _Bool _suppressSelectionUpdate;
@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<FI_TICloudProgressObserver, void> _iCloudObserver;
     struct TKeyValueBinder _iCloudStatusBinder;
     double _iCloudCompletionPercentage;
-    FI_TContainerLayoutManager *_containerLayoutManager;
+    struct TNSRef<FI_TContainerLayoutManager, void> _containerLayoutManager;
     struct TKeyValueObserver _contentInsetsDidChangeObserver;
     _Bool _recentlyOnActiveSpaceCache;
     double _recentlyOnActiveSpaceCacheLastCheck;
@@ -62,10 +62,9 @@ __attribute__((visibility("hidden")))
 + (void)removeFromAnimationTimerQueue:(id)arg1;
 + (void)addToAnimationTimerQueue:(id)arg1;
 + (double)defaultSidebarWidth;
-@property(readonly, getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(nonatomic) double iCloudCompletionPercentage; // @synthesize iCloudCompletionPercentage=_iCloudCompletionPercentage;
 @property(nonatomic) _Bool restoringExpandedState; // @synthesize restoringExpandedState=_restoringExpandedState;
-@property(readonly, nonatomic) FI_TBrowserContainerController *containerController; // @synthesize containerController=_containerController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)preferencesUpdated:(id)arg1;
@@ -118,7 +117,8 @@ __attribute__((visibility("hidden")))
 - (void)repopulateReadZoneOrderFromPrefs:(_Bool)arg1;
 - (void)unloadContentsForZone:(int)arg1;
 - (void)unloadContents;
-- (int)zoneIndex:(int)arg1;
+- (int)zoneIndexInDataSourceCopy:(int)arg1;
+- (int)zoneIndexInController:(int)arg1;
 - (void)loadContentsReadZoneOrderFromPrefs:(_Bool)arg1;
 - (void)reloadContentsReadZoneOrderFromPrefs:(_Bool)arg1 zone:(int)arg2;
 - (void)updateZoneListToMatchPrefs:(_Bool)arg1;
@@ -138,7 +138,9 @@ __attribute__((visibility("hidden")))
 - (struct TFENode)nodeForItemAt:(long long)arg1 inZone:(int)arg2;
 - (struct TFENode)nodeForItem:(id)arg1;
 - (void)sharedSectionVisibilityChanged;
-- (id)buttonImage:(id)arg1 forActionKind:(int)arg2 mouseState:(int)arg3;
+- (id)buttonImage:(id)arg1 forActionKind:(int)arg2 mouseState:(int)arg3 node:(const struct TFENode *)arg4;
+- (id)indeterminateProgressImage;
+- (void)setProgressPercentage:(double)arg1 ifApplies:(const function_88e6fc60 *)arg2 initial:(_Bool)arg3;
 - (void)finishUpdatingCellAndAddProgressIfNeeded:(id)arg1 forAction:(int)arg2 progress:(float)arg3;
 - (_Bool)isZoneHidden:(int)arg1;
 @property(nonatomic) struct TFENode selectedNode;
@@ -168,6 +170,7 @@ __attribute__((visibility("hidden")))
 - (id)window;
 - (id)zoomImageForNode:(const struct TFENode *)arg1 contentRect:(struct CGRect *)arg2;
 - (struct CGRect)globalZoomRectForNode:(const struct TFENode *)arg1;
+- (BOOL)validateMenuItem:(id)arg1;
 - (_Bool)privateDrag;
 - (struct TFENode)sidebarNode:(const struct TFENode *)arg1 inZone:(int)arg2;
 - (_Bool)canTarget:(id)arg1;
@@ -177,6 +180,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool isBackupBrowser;
 - (struct TFENode)nodeForClick;
 - (void)startOrStopAnimations;
+- (map_25537475 *)localDataSourceCopy;
+- (vector_5db024cf *)localZones;
 - (void)updateAnimationStateForNode:(const struct TFENode *)arg1 startOnly:(_Bool)arg2;
 - (void)startAnimating:(const struct TFENode *)arg1;
 - (void)nextAnimationFrame;
@@ -190,6 +195,9 @@ __attribute__((visibility("hidden")))
 - (void)removeOverlayWindowAtIndex:(unsigned long long)arg1;
 - (_Bool)shouldAnimateOverlay;
 - (_Bool)nodeShouldAnimate:(const struct TFENode *)arg1;
+@property(retain, nonatomic) FI_TContainerLayoutManager *containerLayoutManager; // @dynamic containerLayoutManager;
+- (void)setContainerController:(id)arg1;
+@property(readonly, nonatomic) __weak FI_TBrowserContainerController *containerController; // @dynamic containerController;
 - (void)updateSubviewContentInsets:(struct NSEdgeInsets)arg1;
 @property(readonly) struct TFENode containerSidebarTarget;
 - (void)updateSelectionForCurrentTarget;

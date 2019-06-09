@@ -9,14 +9,14 @@
 #import <Navigation/MNLocationProvider-Protocol.h>
 #import <Navigation/MNLocationProviderDelegate-Protocol.h>
 
-@class MNCoreLocationProvider, MNLeechedLocationProvider, NSBundle, NSString;
+@class MNCoreLocationProvider, NSBundle, NSString;
 @protocol MNLocationProviderDelegate;
 
 @interface MNHybridLocationProvider : NSObject <MNLocationProviderDelegate, MNLocationProvider>
 {
     unsigned long long _mode;
+    double _desiredAccuracy;
     MNCoreLocationProvider *_coreLocationProvider;
-    MNLeechedLocationProvider *_leechedLocationProvider;
     unsigned long long _activeServices;
     _Bool _shouldNotifyDelegate;
     id <MNLocationProviderDelegate> _delegate;
@@ -64,10 +64,10 @@
 - (void)_unsubscribeFromService:(unsigned long long)arg1;
 - (void)_subscribeToService:(unsigned long long)arg1;
 - (_Bool)_isSubscribedToService:(unsigned long long)arg1;
-- (id)_inactiveLocationProvider;
-- (id)_activeLocationProvider;
+- (void)_sharedInit;
 @property(nonatomic) unsigned long long mode;
-- (id)initWithMode:(unsigned long long)arg1;
+- (id)initWithEffectiveBundleIdentifier:(id)arg1;
+- (id)initWithEffectiveBundle:(id)arg1;
 - (id)init;
 
 // Remaining properties

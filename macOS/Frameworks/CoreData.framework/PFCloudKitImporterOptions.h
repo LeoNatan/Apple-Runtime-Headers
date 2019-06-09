@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 @interface PFCloudKitImporterOptions : NSObject
 {
     CKDatabase *_database;
-    CKRecordZone *_zone;
+    CKRecordZone *_recordZone;
     PFCloudKitStoreMonitor *_monitor;
     NSCloudKitMirroringDelegateOptions *_options;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) PFCloudKitStoreMonitor *monitor; // @synthesize monitor=_monitor;
-@property(readonly, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;
+@property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 - (id)copy;
 - (void)dealloc;

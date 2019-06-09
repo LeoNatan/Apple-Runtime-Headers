@@ -6,10 +6,13 @@
 
 #import <NeutrinoCore/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, NUColorSpace, NUPixelFormat;
 
 @protocol NUDisplay <NSObject>
+@property(readonly) NUColorSpace *colorSpace;
+@property(readonly) NUPixelFormat *pixelFormat;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size;
 @property(readonly, nonatomic) NSString *name;
+@property(readonly, nonatomic) id identifier;
 @end
 

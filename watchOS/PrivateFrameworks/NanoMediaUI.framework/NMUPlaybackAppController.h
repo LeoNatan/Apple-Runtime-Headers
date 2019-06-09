@@ -20,9 +20,11 @@
 @property(retain, nonatomic) Class nowPlayingViewControllerClass; // @synthesize nowPlayingViewControllerClass=_nowPlayingViewControllerClass;
 @property(retain, nonatomic) Class playbackIntentClass; // @synthesize playbackIntentClass=_playbackIntentClass;
 - (void).cxx_destruct;
+- (_Bool)_handleIntent:(id)arg1 userActivity:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)continueUserActivity:(id)arg1;
+- (void)handleIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)insertPlaybackIntent:(id)arg1 intoPlaybackQueueAtInsertionPosition:(unsigned int)arg2 forOrigin:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)pushNowPlayingViewControllerReplacingPlaybackQueueWithIntent:(id)arg1 preventingAutomaticPlayback:(_Bool)arg2 forOrigin:(id)arg3 pushCompletion:(CDUnknownBlockType)arg4 queueCompletion:(CDUnknownBlockType)arg5;
-- (id)pushNowPlayingViewControllerReplacingPlaybackQueueWithIntent:(id)arg1 preventingAutomaticPlayback:(_Bool)arg2 forOrigin:(id)arg3 queueCompletion:(CDUnknownBlockType)arg4;
-- (id)pushNowPlayingViewControllerReplacingPlaybackQueueWithIntent:(id)arg1 preventingAutomaticPlayback:(_Bool)arg2 forOrigin:(id)arg3 pushCompletion:(CDUnknownBlockType)arg4;
 
 @end
 

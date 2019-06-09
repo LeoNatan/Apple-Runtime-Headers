@@ -13,7 +13,7 @@
     double _pressure;
 }
 
-- (unsigned long long)type;
+- (long long)type;
 - (double)pressure;
 - (struct CGPoint)location;
 - (unsigned long long)identifier;

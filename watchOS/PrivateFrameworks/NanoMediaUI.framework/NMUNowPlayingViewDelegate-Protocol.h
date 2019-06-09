@@ -12,5 +12,6 @@
 
 @optional
 - (void)nowPlayingViewReceivedTapOnTrackTitles:(NMUNowPlayingView *)arg1;
+- (void)nowPlayingView:(NMUNowPlayingView *)arg1 didTapButtonWithActionType:(unsigned int)arg2;
 @end
 

@@ -18,8 +18,8 @@
     NSDictionary *_mstreamdInfoDictionary;
 }
 
-+ (id)directoryPathForInFlightComments:(_Bool)arg1;
 + (void)locallyProcessDeletedComments:(id)arg1 info:(id)arg2;
++ (void)assetsdLocallyProcessAddedComments:(id)arg1 assetGUID:(id)arg2 albumGUID:(id)arg3 info:(id)arg4 libraryServicesManager:(id)arg5;
 + (void)locallyProcessAddedComments:(id)arg1 assetGUID:(id)arg2 albumGUID:(id)arg3 info:(id)arg4;
 + (void)deleteSharedCommentFromServer:(id)arg1;
 + (void)publishCommentToServer:(id)arg1;
@@ -29,6 +29,7 @@
 @property(retain, nonatomic) NSString *commentGUID; // @synthesize commentGUID=_commentGUID;
 @property(retain, nonatomic) NSArray *msASComments; // @synthesize msASComments=_msASComments;
 @property(nonatomic) long long jobType; // @synthesize jobType=_jobType;
+- (void).cxx_destruct;
 - (void)executeDeleteCommentFromServer;
 - (void)executePublishCommentToServer;
 - (void)executeProcessServerNotificationOfCommentChanges;
@@ -36,9 +37,8 @@
 - (_Bool)shouldArchiveXPCToDisk;
 - (void)run;
 - (long long)daemonOperation;
-- (void)dealloc;
 - (id)description;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
 
 @end

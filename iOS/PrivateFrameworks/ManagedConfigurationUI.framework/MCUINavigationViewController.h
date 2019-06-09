@@ -6,7 +6,6 @@
 
 #import <UIKit/UINavigationController.h>
 
-__attribute__((visibility("hidden")))
 @interface MCUINavigationViewController : UINavigationController
 {
     CDUnknownBlockType _showViewControllerCompletionBlock;

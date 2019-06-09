@@ -15,6 +15,7 @@
     NSAttributedString *_attributedString;
 }
 
++ (id)textWithString:(id)arg1;
 + (id)textWithDOMElement:(id)arg1 usingParseBlock:(CDUnknownBlockType)arg2;
 @property(readonly, retain, nonatomic) NSAttributedString *attributedString; // @synthesize attributedString=_attributedString;
 - (void).cxx_destruct;

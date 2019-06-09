@@ -15,7 +15,7 @@
     int _caCertAuthorityKeySize;
     int _caCertAuthorityKeyAlgorithm;
     BOOL _caDoneCAKeyPair;
-    struct OpaqueSecAccessRef *_caSecAccessRef;
+    struct __SecAccess *_caSecAccessRef;
 }
 
 - (void)_updateKeyPairPanelToUserValues;
@@ -34,8 +34,8 @@
 - (void)_setCertAuthorityKeySize:(int)arg1;
 - (void)_setKeySize:(id)arg1;
 - (int)_keySize;
-- (void)_setAccessRef:(struct OpaqueSecAccessRef *)arg1;
-- (struct OpaqueSecAccessRef *)_accessRef;
+- (void)_setAccessRef:(struct __SecAccess *)arg1;
+- (struct __SecAccess *)_accessRef;
 - (void)_setToDefaults;
 - (void)dealloc;
 

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSString *mSoundFile;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 
 @end

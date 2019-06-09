@@ -13,7 +13,7 @@
 @property(nonatomic) __weak id <CCUIOverlayMetricsProvider> metricsProvider;
 @property(nonatomic) __weak id <CCUIOverlayViewProvider> viewProvider;
 @property(readonly, nonatomic) _Bool allowHotPocketDuringTransition;
-@property(readonly, nonatomic) unsigned long long backgroundMaterialOptions;
+@property(readonly, nonatomic, getter=isZoomEnabled) _Bool zoomEnabled;
 @property(readonly, nonatomic, getter=isPanDismissalAvailable) _Bool panDismissalAvailable;
 - (_Bool)backdropViewShouldUseAlphaTransformer;
 - (_Bool)tapAllowsDismissalForLocation:(struct CGPoint)arg1;

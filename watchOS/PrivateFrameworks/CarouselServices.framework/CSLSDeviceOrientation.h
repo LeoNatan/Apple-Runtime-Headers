@@ -6,15 +6,19 @@
 
 #import <objc/NSObject.h>
 
+@protocol OS_dispatch_queue;
+
 @interface CSLSDeviceOrientation : NSObject
 {
     _Bool _isInverted;
     unsigned int _wristOrientation;
     int _invertUINotifyToken;
     int _wristOrientationNotifyToken;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedDeviceOrientation;
+- (void).cxx_destruct;
 - (void)_updateWristOrientation;
 - (unsigned int)wristOrientation;
 - (void)_updateInvertedValue;

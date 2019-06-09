@@ -11,6 +11,8 @@
 }
 
 + (id)paddingForMessageOfSize:(long)arg1;
++ (long)_paddingForType:(int)arg1 originalSize:(long)arg2 error:(struct __CFError **)arg3;
++ (id)_randomDataWithLength:(int)arg1;
 
 @end
 

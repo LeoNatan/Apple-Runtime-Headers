@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
 - (BOOL)shouldAllowAutoFocusInto;
 - (BOOL)shouldSpeakFocusedOnlyChild;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (id)typeDescription;
 - (void)addItemNameToRequest:(id)arg1;
 - (BOOL)readyToHaveKeyboardFocus;

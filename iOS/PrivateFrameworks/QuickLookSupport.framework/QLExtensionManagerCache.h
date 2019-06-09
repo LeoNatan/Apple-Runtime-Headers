@@ -13,14 +13,16 @@
 {
     NSObject<OS_dispatch_queue> *_accessMatchingExtensionsQueue;
     NSObject<OS_dispatch_queue> *_waitForExtensionListQueue;
-    NSObject<OS_dispatch_semaphore> *_waitForExtensionsSemaphore;
     _Bool _isMatchingExtensions;
     NSDictionary *_matchingAttributes;
     id _matchingContext;
     NSMutableDictionary *_matchingExtensions;
     NSMapTable *_qlExtensions;
+    NSObject<OS_dispatch_semaphore> *_waitForExtensionsSemaphore;
 }
 
+@property(retain) NSObject<OS_dispatch_semaphore> *waitForExtensionsSemaphore; // @synthesize waitForExtensionsSemaphore=_waitForExtensionsSemaphore;
+@property(nonatomic) _Bool isMatchingExtensions; // @synthesize isMatchingExtensions=_isMatchingExtensions;
 @property(retain, nonatomic) NSMapTable *qlExtensions; // @synthesize qlExtensions=_qlExtensions;
 @property(retain, nonatomic) NSMutableDictionary *matchingExtensions; // @synthesize matchingExtensions=_matchingExtensions;
 @property(retain, nonatomic) id matchingContext; // @synthesize matchingContext=_matchingContext;
@@ -28,7 +30,9 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)_synchronouslyWaitForExtensionListIfNeeded;
-- (id)extensionWithMatchingAttributes:(id)arg1 extensionPath:(id)arg2;
+- (_Bool)_supportedContentTypesFromExtension:(id)arg1 matches:(id)arg2 allowMatchingWithParentTypes:(_Bool)arg3;
+- (id)_bestMatchingExtensionsFromSupportingExtensions:(id)arg1 includingExtensionsWithSupportingParentTypes:(_Bool)arg2 byContentType:(id)arg3;
+- (id)extensionWithMatchingAttributes:(id)arg1 allowExtensionsForParentTypes:(_Bool)arg2 extensionPath:(id)arg3;
 - (_Bool)hasExtensionWithMatchingAttributes:(id)arg1;
 - (void)_didReceiveNewMatchingExtensionList:(id)arg1;
 - (void)endMatchingExtensions;

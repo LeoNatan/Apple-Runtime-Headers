@@ -8,6 +8,7 @@
 
 @class TSUZipEntry;
 
+__attribute__((visibility("hidden")))
 @interface TSUContainedZipArchive : TSUZipArchive
 {
     TSUZipArchive *_zipArchive;

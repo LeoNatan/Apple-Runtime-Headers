@@ -15,5 +15,6 @@
 - (_Bool)_containsIdeographicCharacters;
 - (_Bool)_containsCJKSymbolsAndPunctuation;
 - (_Bool)_contentsExclusivelyInCharacterSet:(struct USet *)arg1;
+- (long long)wordCount;
 @end
 

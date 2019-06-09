@@ -18,12 +18,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)tableStyle;
+- (void).cxx_destruct;
 - (id)description;
 - (id)tableStyleElements;
 - (void)setName:(id)arg1;
 - (id)name;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,10 +6,12 @@
 
 #import <NeutrinoCore/NURenderRequest.h>
 
-@class NUColorSpace, NUPixelFormat;
+#import <NeutrinoCore/NUTimeBased-Protocol.h>
+
+@class NSString, NUColorSpace, NUPixelFormat;
 @protocol NUExtentPolicy, NUMutableImage, NURegionPolicy, NUScalePolicy;
 
-@interface NUImageRenderRequest : NURenderRequest
+@interface NUImageRenderRequest : NURenderRequest <NUTimeBased>
 {
     NUColorSpace *_colorSpace;
     id <NURegionPolicy> _regionPolicy;
@@ -18,11 +20,11 @@
     NUPixelFormat *_pixelFormat;
     id <NUMutableImage> _targetImage;
     CDStruct_d58201db _tileSize;
-    CDStruct_1b6d18a9 _time;
+    CDStruct_d58201db _borderSize;
 }
 
 @property(retain) id <NUMutableImage> targetImage; // @synthesize targetImage=_targetImage;
-@property CDStruct_1b6d18a9 time; // @synthesize time=_time;
+@property CDStruct_912cb5d2 borderSize; // @synthesize borderSize=_borderSize;
 @property CDStruct_912cb5d2 tileSize; // @synthesize tileSize=_tileSize;
 @property(retain) NUPixelFormat *pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 @property(retain) id <NUExtentPolicy> extentPolicy; // @synthesize extentPolicy=_extentPolicy;
@@ -31,9 +33,15 @@
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 - (void).cxx_destruct;
 - (long long)mediaComponentType;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithComposition:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(nonatomic) CDStruct_1b6d18a9 time;
 
 @end
 

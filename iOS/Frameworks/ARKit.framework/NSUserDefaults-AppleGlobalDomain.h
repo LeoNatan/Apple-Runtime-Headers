@@ -7,6 +7,7 @@
 #import <Foundation/NSUserDefaults.h>
 
 @interface NSUserDefaults (AppleGlobalDomain)
++ (id)appleGlobalDomainARKItDefaults;
 + (id)appleGlobalDomainARKitKeys;
 + (id)appleGlobalDomain;
 @end

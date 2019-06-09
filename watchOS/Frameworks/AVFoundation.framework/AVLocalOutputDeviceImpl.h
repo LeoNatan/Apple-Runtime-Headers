@@ -19,6 +19,9 @@ __attribute__((visibility("hidden")))
 @property __weak AVOutputDevice *parentOutputDevice; // @synthesize parentOutputDevice=_parentDevice;
 - (void).cxx_destruct;
 - (void)configureUsingBlock:(CDUnknownBlockType)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(copy, nonatomic) NSString *currentBluetoothListeningMode;
+@property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
+@property(readonly, nonatomic) _Bool supportsBluetoothSharing;
 @property(readonly, nonatomic) _Bool presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property(readonly, nonatomic) _Bool canFetchMediaDataFromSender;
 @property(readonly, nonatomic) _Bool canPlayEncryptedProgressiveDownloadAssets;
@@ -47,6 +50,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *connectedPairedDevices;
 @property(readonly, nonatomic, getter=isInUseByPairedDevice) _Bool inUseByPairedDevice;
 @property(readonly, nonatomic) NSDictionary *airPlayProperties;
+@property(readonly, nonatomic) NSNumber *isInEar;
+@property(readonly, nonatomic) NSNumber *supportsDataOverACLProtocol;
 @property(readonly, nonatomic) NSNumber *rightBatteryLevel;
 @property(readonly, nonatomic) NSNumber *leftBatteryLevel;
 @property(readonly, nonatomic) NSNumber *caseBatteryLevel;

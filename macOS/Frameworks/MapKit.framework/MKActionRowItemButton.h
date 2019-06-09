@@ -9,6 +9,7 @@
 @class MKPlaceCardActionItem;
 @protocol MKActionRowItemViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKActionRowItemButton : NSButton
 {
     id <MKActionRowItemViewDelegate> _delegate;

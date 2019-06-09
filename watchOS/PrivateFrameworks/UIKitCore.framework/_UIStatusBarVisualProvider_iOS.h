@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIStatusBarVisualProvider-Protocol.h>
 
-@class NSArray, NSString, _UIStatusBar, _UIStatusBarAnimation, _UIStatusBarDisplayItemPlacementGroup, _UIStatusBarStyleAttributes;
+@class NSArray, NSString, _UIStatusBar, _UIStatusBarAnimation, _UIStatusBarDisplayItemPlacementGroup;
 
 @interface _UIStatusBarVisualProvider_iOS : NSObject <_UIStatusBarVisualProvider>
 {
@@ -46,6 +46,7 @@
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (void)_applyToAppearingRegions:(_Bool)arg1 block:(CDUnknownBlockType)arg2;
+- (id)displayItemIdentifiersForPartWithIdentifier:(id)arg1;
 - (void)updateDataForService:(id)arg1;
 - (id)willUpdateWithData:(id)arg1;
 - (void)_createExpandedPlacements;
@@ -53,7 +54,7 @@
 - (void)modeUpdatedFromMode:(int)arg1;
 - (id)setupInContainerView:(id)arg1;
 - (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;
-@property(readonly, nonatomic) _UIStatusBarStyleAttributes *styleAttributes;
+- (id)styleAttributesForStyle:(int)arg1;
 - (id)init;
 
 // Remaining properties

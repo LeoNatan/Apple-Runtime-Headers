@@ -13,16 +13,16 @@
 __attribute__((visibility("hidden")))
 @interface RSAKeyPair : NSObject <RSAKeyPairProtocol>
 {
-    struct OpaqueSecKeyRef *rsaPublicKey;
-    struct OpaqueSecKeyRef *rsaPrivateKey;
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: rsaPublicKey
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: rsaPrivateKey
     NSData *rsaPrivateKeyData;
     NSData *rsaPublicKeyData;
 }
 
-+ (id)encryptWithKey:(struct OpaqueSecKeyRef *)arg1 data:(const char *)arg2 length:(long long)arg3;
++     // Error parsing type: @40@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16r*24q32, name: encryptWithKey:data:length:
 + (void)removeRSAPublicKeyWithLabel:(id)arg1;
-+ (struct OpaqueSecKeyRef *)retrieveRSAPublicKeyWithLabel:(id)arg1;
-+ (struct OpaqueSecKeyRef *)importRSAPublicKey:(id)arg1 label:(id)arg2;
++     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24@0:8@16, name: retrieveRSAPublicKeyWithLabel:
++     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}32@0:8@16@24, name: importRSAPublicKey:label:
 + (id)rsaPublicKeyStoragePath;
 + (id)keysPath;
 + (id)basePath;
@@ -32,15 +32,15 @@ __attribute__((visibility("hidden")))
 + (void)RaiseEUID:(const char *)arg1;
 + (id)keySubpath;
 + (id)appName;
-+ (struct OpaqueSecKeyRef *)secKeyRefFromKeyData:(id)arg1;
++     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24@0:8@16, name: secKeyRefFromKeyData:
 + (BOOL)saveRSAPublicKey:(id)arg1 label:(id)arg2;
 + (id)loadRSAPublicKeyWithLabel:(id)arg1;
 + (id)pathForRSAPublicKeyWithLabel:(id)arg1;
-+ (struct OpaqueSecKeychainRef *)privateKeyKeychain;
++ (struct __SecKeychain *)privateKeyKeychain;
 + (void)removePrivateKeychain;
-+ (struct OpaqueSecKeychainRef *)openKeychainWithPath:(const char *)arg1 private:(BOOL)arg2;
++ (struct __SecKeychain *)openKeychainWithPath:(const char *)arg1 private:(BOOL)arg2;
 + (id)privateKeychainPath;
-+ (struct OpaqueSecKeyRef *)fetchKeyFromKeychainWithName:(id)arg1 class:(id)arg2;
++     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}32@0:8@16@24, name: fetchKeyFromKeychainWithName:class:
 @property(retain) NSData *rsaPublicKeyData; // @synthesize rsaPublicKeyData;
 @property(retain) NSData *rsaPrivateKeyData; // @synthesize rsaPrivateKeyData;
 - (id)decrypt:(id)arg1;
@@ -49,18 +49,18 @@ __attribute__((visibility("hidden")))
 - (id)preferredKeySizeInBits;
 - (BOOL)makeKeysWithKeySize:(id)arg1;
 - (id)exportedRSAPublicKey;
-- (id)exportedRSAPrivateKeyNoCache:(struct OpaqueSecKeyRef *)arg1;
-- (id)exportedRSAPublicKeyNoCache:(struct OpaqueSecKeyRef *)arg1;
+-     // Error parsing type: @24@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16, name: exportedRSAPrivateKeyNoCache:
+-     // Error parsing type: @24@0:8^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16, name: exportedRSAPublicKeyNoCache:
 - (id)attributesForPrivateKey;
-- (struct OpaqueSecKeyRef *)privateKey;
-- (struct OpaqueSecKeyRef *)privateKeyFromCache;
-- (struct OpaqueSecKeyRef *)publicKey;
-- (struct OpaqueSecKeyRef *)publicKeyFromCache;
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: privateKey
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: privateKeyFromCache
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: publicKey
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: publicKeyFromCache
 - (BOOL)generateKeyPairWithKeySize:(id)arg1;
 - (void)purgeKeyPair;
 - (void)deprecateKeyPair:(int)arg1;
-- (struct OpaqueSecKeyRef *)privateKeyFromKeychain;
-- (struct OpaqueSecKeyRef *)publicKeyFromKeychain;
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: privateKeyFromKeychain
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: publicKeyFromKeychain
 - (void)freeKeys;
 - (void)dealloc;
 - (id)init;

@@ -8,6 +8,7 @@
 
 @class NSMutableArray, PDAnimationTarget;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimateBehavior : PDTimeNode
 {
     PDAnimationTarget *mTgtElement;

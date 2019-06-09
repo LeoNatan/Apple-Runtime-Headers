@@ -8,9 +8,9 @@
 @protocol OS_dispatch_queue;
 
 @protocol ROCKInvocationCustomization
+@property(readonly, nonatomic) unsigned long long rock_invocationFlags;
 
 @optional
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *rock_invocationQueue;
-@property(readonly, nonatomic) unsigned long long rock_invocationFlags;
 @end
 

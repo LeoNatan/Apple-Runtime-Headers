@@ -8,6 +8,7 @@
 
 @class NSXPCConnection, NSXPCInterface;
 
+__attribute__((visibility("hidden")))
 @interface CallDBMigrator : NSObject
 {
     NSXPCConnection *_connection;

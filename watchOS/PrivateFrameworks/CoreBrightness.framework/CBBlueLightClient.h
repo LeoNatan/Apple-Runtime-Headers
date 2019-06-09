@@ -26,7 +26,7 @@
 - (_Bool)getDefaultCCTRange:(CDStruct_869f9c67 *)arg1;
 - (void)suspendNotifications:(_Bool)arg1;
 - (void)setStatusNotificationBlock:(CDUnknownBlockType)arg1;
-- (_Bool)getBlueLightStatus:(CDStruct_adf0e7b7 *)arg1;
+- (_Bool)getBlueLightStatus:(CDStruct_7308a351 *)arg1;
 - (_Bool)setSchedule:(const CDStruct_19009447 *)arg1;
 - (_Bool)setMode:(int)arg1;
 - (_Bool)setEnabled:(_Bool)arg1;

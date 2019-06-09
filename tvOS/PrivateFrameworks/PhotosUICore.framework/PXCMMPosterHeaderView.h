@@ -6,31 +6,51 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString;
-@protocol PXDisplayAsset, PXUIImageProvider;
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@interface PXCMMPosterHeaderView : UIView
+@class NSString, PXCMMImageView, PXCMMPosterHeaderViewModel, PXCMMPosterHeaderViewSpec, PXGradientView, UIImageView, UILabel;
+
+@interface PXCMMPosterHeaderView : UIView <PXChangeObserver>
 {
-    _Bool _showStatusCheckmark;
-    _Bool _highlighted;
-    NSString *_title;
-    NSString *_subtitle;
-    NSString *_statusString;
-    id <PXDisplayAsset> _asset;
-    id <PXUIImageProvider> _mediaProvider;
+    PXCMMPosterHeaderViewSpec *_spec;
+    PXCMMImageView *_imageView;
+    PXGradientView *_topGradientView;
+    PXGradientView *_bottomGradientView;
+    UILabel *_titleLabel;
+    UILabel *_subtitleLabel;
+    UILabel *_statusLabel;
+    UIImageView *_statusCheckmark;
+    PXCMMPosterHeaderViewModel *_viewModel;
+    long long _presentationStyle;
 }
 
++ (void)preheatSharedValuesForPresentationStyle:(long long)arg1;
 + (double)preferredHeightForWidth:(double)arg1 traitCollection:(id)arg2 screen:(id)arg3;
-@property(readonly, nonatomic) id <PXUIImageProvider> mediaProvider; // @synthesize mediaProvider=_mediaProvider;
-@property(readonly, nonatomic) id <PXDisplayAsset> asset; // @synthesize asset=_asset;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted; // @synthesize highlighted=_highlighted;
-@property(nonatomic) _Bool showStatusCheckmark; // @synthesize showStatusCheckmark=_showStatusCheckmark;
-@property(copy, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
-@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(readonly, nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
+@property(retain, nonatomic) PXCMMPosterHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
-- (void)setAsset:(id)arg1 mediaProvider:(id)arg2;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
+- (_Bool)test_showStatusCheckmark;
+- (id)test_statusString;
+- (id)test_subtitle;
+- (id)test_title;
+- (void)_updateFonts;
+- (void)_updateStatusString;
+- (void)_updateSubtitle;
+- (void)_updateTitle;
+- (void)_performLayoutWithSize:(struct CGSize)arg1;
+- (void)layoutSubviews;
 - (id)initWithPresentationStyle:(long long)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class AVIterableCache;
 
+__attribute__((visibility("hidden")))
 @interface AVVideoTrackThumbnailManager : NSObject
 {
     AVIterableCache *_cachedThumbnails;

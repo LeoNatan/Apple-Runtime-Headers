@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)decrementInsetHeight:(float)arg1;
 - (void)incrementInsetHeight:(float)arg1;
 - (_Bool)isHostingRefreshControlOwnedByScrollView:(id)arg1;
-- (void)stopAnimationsAndSetToIdle;
+- (void)stopAnimationsAndTearDown;
 - (id)initWithNavigationController:(id)arg1 scrollView:(id)arg2;
 
 // Remaining properties

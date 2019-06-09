@@ -6,17 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class AMSPushHandler;
-@protocol AMSPushHandlerContract;
+@class NFLazy;
 
 @interface FCAMSPushHandler : NSObject
 {
-    id <AMSPushHandlerContract> _contract;
-    AMSPushHandler *_handler;
+    NFLazy *_lazyHandler;
 }
 
-@property(retain, nonatomic) AMSPushHandler *handler; // @synthesize handler=_handler;
-@property(readonly, nonatomic) id <AMSPushHandlerContract> contract; // @synthesize contract=_contract;
+@property(retain, nonatomic) NFLazy *lazyHandler; // @synthesize lazyHandler=_lazyHandler;
 - (void).cxx_destruct;
 - (void)handleNotificationResponse:(id)arg1;
 - (_Bool)shouldHandleNotificationResponse:(id)arg1;

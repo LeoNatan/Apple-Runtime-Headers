@@ -15,12 +15,15 @@
 
 + (id)requestSharedLockDirectoryURLWithFileServices:(id)arg1;
 + (id)sharedLockDirectoryURLWithFileServices:(id)arg1;
++ (id)initializeFileLock;
++ (id)fileLock;
 + (id)sharedInstance;
++ (id)os_log;
+- (void).cxx_destruct;
 - (id)proxyLockUrlForFileAtUrl:(id)arg1;
 - (id)sharedLockUrlWithName:(id)arg1;
 - (id)sharedLockDirectoryUrl;
 - (_Bool)isFileAtUrlOnARemoteFileSystem:(id)arg1;
-- (void)dealloc;
 - (id)initWithFileServices:(id)arg1;
 - (id)init;
 

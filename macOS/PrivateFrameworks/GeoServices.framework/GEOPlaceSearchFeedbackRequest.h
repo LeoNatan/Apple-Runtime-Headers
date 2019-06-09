@@ -20,24 +20,18 @@ __attribute__((visibility("hidden")))
     int _positionInResults;
     int _sequenceNumber;
     struct {
-        unsigned int sessionGUID:1;
-        unsigned int businessID:1;
-        unsigned int timestamp:1;
-        unsigned int feedbackType:1;
-        unsigned int localSearchProviderID:1;
-        unsigned int numberOfResults:1;
-        unsigned int positionInResults:1;
-        unsigned int sequenceNumber:1;
-    } _has;
+        unsigned int has_sessionGUID:1;
+        unsigned int has_businessID:1;
+        unsigned int has_timestamp:1;
+        unsigned int has_feedbackType:1;
+        unsigned int has_localSearchProviderID:1;
+        unsigned int has_numberOfResults:1;
+        unsigned int has_positionInResults:1;
+        unsigned int has_sequenceNumber:1;
+    } _flags;
 }
 
-@property(nonatomic) int localSearchProviderID; // @synthesize localSearchProviderID=_localSearchProviderID;
-@property(nonatomic) int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-@property(nonatomic) int positionInResults; // @synthesize positionInResults=_positionInResults;
-@property(nonatomic) int numberOfResults; // @synthesize numberOfResults=_numberOfResults;
-@property(nonatomic) long long businessID; // @synthesize businessID=_businessID;
-@property(nonatomic) struct GEOSessionID sessionGUID; // @synthesize sessionGUID=_sessionGUID;
-@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -47,19 +41,27 @@ __attribute__((visibility("hidden")))
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasLocalSearchProviderID;
+@property(nonatomic) int localSearchProviderID;
 @property(nonatomic) BOOL hasSequenceNumber;
+@property(nonatomic) int sequenceNumber;
 @property(nonatomic) BOOL hasPositionInResults;
+@property(nonatomic) int positionInResults;
 @property(nonatomic) BOOL hasNumberOfResults;
+@property(nonatomic) int numberOfResults;
 - (int)StringAsFeedbackType:(id)arg1;
 - (id)feedbackTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasFeedbackType;
-@property(nonatomic) int feedbackType; // @synthesize feedbackType=_feedbackType;
+@property(nonatomic) int feedbackType;
 @property(nonatomic) BOOL hasBusinessID;
+@property(nonatomic) long long businessID;
 @property(nonatomic) BOOL hasSessionGUID;
+@property(nonatomic) struct GEOSessionID sessionGUID;
 @property(nonatomic) BOOL hasTimestamp;
+@property(nonatomic) double timestamp;
 
 @end
 

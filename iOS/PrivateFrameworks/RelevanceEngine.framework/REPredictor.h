@@ -6,38 +6,56 @@
 
 #import <RelevanceEngine/REObservableSingleton.h>
 
-@class NSObject, REObserverStore;
+#import <RelevanceEngine/REPredictorProperties-Protocol.h>
+
+@class NSCountedSet, NSObject, REObserverStore, REUpNextScheduler;
 @protocol OS_dispatch_queue;
 
-@interface REPredictor : REObservableSingleton
+@interface REPredictor : REObservableSingleton <REPredictorProperties>
 {
     NSObject<OS_dispatch_queue> *_queue;
-    _Bool _running;
     REObserverStore *_engines;
+    REUpNextScheduler *_refreshScheduler;
+    NSCountedSet *_activities;
+    struct os_unfair_lock_s _predictorLock;
+    _Bool __isRunning;
+    long long _beginUpdatesCount;
 }
 
 + (id)supportedFeatures;
 + (double)updateInterval;
 + (id)systemPredictorsSupportingFeatureSet:(id)arg1 relevanceEngine:(id)arg2;
 + (id)availablePredictors;
+@property(nonatomic) long long beginUpdatesCount; // @synthesize beginUpdatesCount=_beginUpdatesCount;
+@property(setter=_setIsRunning:) _Bool _isRunning; // @synthesize _isRunning=__isRunning;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool running;
+- (void)_performUpdate;
+- (void)invalidate;
 - (void)update;
 - (void)resume;
 - (void)pause;
 - (id)featureValueForFeature:(id)arg1 element:(id)arg2 engine:(id)arg3 trainingContext:(id)arg4;
+- (void)finishFetchingData;
+- (void)beginFetchingData;
 - (void)enumerateInflectionFeatureValues:(CDUnknownBlockType)arg1;
 - (id)engines;
 - (void)removeRelevanceEngine:(id)arg1;
 - (void)addRelevanceEngine:(id)arg1;
 - (_Bool)isRunning;
-- (void)setRunning:(_Bool)arg1;
+- (void)_setRunning:(_Bool)arg1;
+- (void)endUpdates;
+- (void)beginUpdates;
 - (void)updateObservers;
 - (void)onQueueSync:(CDUnknownBlockType)arg1;
 - (void)onQueue:(CDUnknownBlockType)arg1;
 - (id)queue;
+- (id)description;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
+@property(readonly, nonatomic) NSCountedSet *outstandingActivities;
+- (void)finishActivity:(id)arg1;
+- (void)beginActivity:(id)arg1;
 
 @end
 

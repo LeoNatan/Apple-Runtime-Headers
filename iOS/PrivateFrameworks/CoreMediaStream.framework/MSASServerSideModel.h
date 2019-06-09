@@ -240,7 +240,6 @@
 - (_Bool)hasCommandsInGroupedCommandQueue;
 - (void)shutDownForDestruction:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)shutDown;
-- (void)dealloc;
 - (void)cancel;
 - (void)start;
 - (_Bool)dbQueueUpgradeFromDatabaseVersion:(int)arg1 currentVersion:(int)arg2;

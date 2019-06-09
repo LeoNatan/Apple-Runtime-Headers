@@ -9,31 +9,41 @@
 #import <GeoServices/GEOTransitNamedItem-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, NSMutableArray, NSString, PBUnknownFields;
+@class GEOLatLng, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOPBTransitStation : PBCodable <GEOTransitNamedItem, NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned long long _muid;
     GEOLatLng *_location;
+    unsigned long long _muid;
     NSString *_nameDisplayString;
+    NSMutableArray *_zoomNames;
     unsigned int _stationIndex;
     int _structureType;
-    NSMutableArray *_zoomNames;
     struct {
-        unsigned int muid:1;
-        unsigned int stationIndex:1;
-        unsigned int structureType:1;
-    } _has;
+        unsigned int has_muid:1;
+        unsigned int has_stationIndex:1;
+        unsigned int has_structureType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_location:1;
+        unsigned int read_nameDisplayString:1;
+        unsigned int read_zoomNames:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_location:1;
+        unsigned int wrote_muid:1;
+        unsigned int wrote_nameDisplayString:1;
+        unsigned int wrote_zoomNames:1;
+        unsigned int wrote_stationIndex:1;
+        unsigned int wrote_structureType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)zoomNameType;
-@property(retain, nonatomic) NSString *nameDisplayString; // @synthesize nameDisplayString=_nameDisplayString;
-@property(retain, nonatomic) NSMutableArray *zoomNames; // @synthesize zoomNames=_zoomNames;
-@property(retain, nonatomic) GEOLatLng *location; // @synthesize location=_location;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-@property(nonatomic) unsigned int stationIndex; // @synthesize stationIndex=_stationIndex;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -42,20 +52,30 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) NSString *nameDisplayString;
 @property(readonly, nonatomic) _Bool hasNameDisplayString;
+- (void)_readNameDisplayString;
 - (id)zoomNameAtIndex:(unsigned long long)arg1;
 - (unsigned long long)zoomNamesCount;
+- (void)_addNoFlagsZoomName:(id)arg1;
 - (void)addZoomName:(id)arg1;
 - (void)clearZoomNames;
+@property(retain, nonatomic) NSMutableArray *zoomNames;
+- (void)_readZoomNames;
 - (int)StringAsStructureType:(id)arg1;
 - (id)structureTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasStructureType;
-@property(nonatomic) int structureType; // @synthesize structureType=_structureType;
+@property(nonatomic) int structureType;
+@property(retain, nonatomic) GEOLatLng *location;
 @property(readonly, nonatomic) _Bool hasLocation;
+- (void)_readLocation;
 @property(nonatomic) _Bool hasMuid;
+@property(nonatomic) unsigned long long muid;
 @property(nonatomic) _Bool hasStationIndex;
+@property(nonatomic) unsigned int stationIndex;
 - (id)identifier;
 - (id)bestName;
 

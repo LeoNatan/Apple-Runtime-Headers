@@ -14,15 +14,23 @@
     PLNSNotificationOperatorComposition *_dailyTaskNotification;
 }
 
++ (id)entryEventPointDefinitionJetsamPriority;
++ (id)entryEventPointDefinitionAPFSFragmentation;
 + (id)entryEventPointDefinitionDiskFragmentation;
 + (id)entryEventPointDefinitionDiskUsage;
 + (id)entryEventPointDefinitionSystemMemory;
 + (id)entryEventPointDefinitions;
 + (void)load;
++ (BOOL)shouldCreateJetsamPriorityTable;
 @property(retain) PLNSNotificationOperatorComposition *dailyTaskNotification; // @synthesize dailyTaskNotification=_dailyTaskNotification;
 @property(retain) PLEntryNotificationOperatorComposition *batteryLevelChanged; // @synthesize batteryLevelChanged=_batteryLevelChanged;
 - (void).cxx_destruct;
 - (void)log;
+- (void)logEventPointAPFSFragmentationWithContainer:(const char *)arg1;
+- (void)logEventPointAPFSFragmentation;
+- (int)countMachPort:(int)arg1;
+- (int)countFD:(int)arg1;
+- (void)logEventPointJetsamPrority;
 - (void)logEventPointDiskFragmentation;
 - (void)logEventPointDiskUsage;
 - (void)logEventPointSystemMemory;

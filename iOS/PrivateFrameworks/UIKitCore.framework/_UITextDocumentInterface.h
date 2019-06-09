@@ -7,12 +7,13 @@
 #import <UIKitCore/UIInputViewControllerInterface.h>
 
 #import <UIKitCore/UITextDocumentProxy-Protocol.h>
+#import <UIKitCore/UITextDocumentProxy_Private-Protocol.h>
 
 @class NSString, NSUUID, TIDocumentState, TIKeyboardOutput, TITextInputTraits, UITextInputMode, UITextInputPasswordRules, _UIInputViewControllerOutput, _UIInputViewControllerState;
 @protocol _UITextDocumentInterfaceDelegate;
 
 __attribute__((visibility("hidden")))
-@interface _UITextDocumentInterface : UIInputViewControllerInterface <UITextDocumentProxy>
+@interface _UITextDocumentInterface : UIInputViewControllerInterface <UITextDocumentProxy, UITextDocumentProxy_Private>
 {
     id <_UITextDocumentInterfaceDelegate> _delegate;
     _UIInputViewControllerState *_controllerState;
@@ -36,10 +37,13 @@ __attribute__((visibility("hidden")))
 - (void)adjustTextPositionByCharacterOffset:(long long)arg1;
 - (_Bool)needsInputModeSwitchKey;
 @property(readonly, copy, nonatomic) NSUUID *documentIdentifier;
+@property(readonly, nonatomic) NSString *markedText;
 @property(readonly, nonatomic) NSString *selectedText;
 @property(readonly, nonatomic) UITextInputMode *documentInputMode;
 @property(readonly, nonatomic) NSString *documentContextAfterInput;
 @property(readonly, nonatomic) NSString *documentContextBeforeInput;
+- (void)unmarkText;
+- (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)deleteBackward;
 - (void)insertText:(id)arg1;
 @property(readonly, nonatomic) _Bool hasText;

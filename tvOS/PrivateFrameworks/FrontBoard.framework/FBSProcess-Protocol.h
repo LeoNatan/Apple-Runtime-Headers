@@ -4,12 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoard/NSObject-Protocol.h>
+#import <FrontBoard/BSDescriptionProviding-Protocol.h>
 
-@class NSString;
-
-@protocol FBSProcess <NSObject>
-@property(readonly, copy, nonatomic) NSString *bundleIdentifier;
+@protocol FBSProcess <BSDescriptionProviding>
 @property(readonly, nonatomic) int pid;
 @end
 

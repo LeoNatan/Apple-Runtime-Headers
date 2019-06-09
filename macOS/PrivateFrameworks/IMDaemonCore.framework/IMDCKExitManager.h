@@ -35,6 +35,7 @@
 - (void)sendCloudKitZoneFetchRequestToNoteFeatureIsOn;
 - (void)submitCloudKitAnalyticWithDictionary:(id)arg1 operationGroupName:(id)arg2 useManatee:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)submitCloudKitMetricWithData:(id)arg1 operationGroupName:(id)arg2 useManatee:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (BOOL)_canSubmitCloudKitAnalytic;
 - (BOOL)_canSubmitCloudKitMetric;
 - (void)_submitCloudKitMetricWithOperationGroupName:(id)arg1 record:(id)arg2 useManatee:(BOOL)arg3 ignoreZoneNotFoundError:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_modifiedOpGroupName:(id)arg1 useManatee:(BOOL)arg2;

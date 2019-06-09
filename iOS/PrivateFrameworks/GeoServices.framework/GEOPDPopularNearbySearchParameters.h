@@ -8,26 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDViewportInfo, NSData, PBUnknownFields;
+@class GEOPDViewportInfo, NSData, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDPopularNearbySearchParameters : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned int _maxResults;
-    int _searchType;
     NSData *_suggestionEntryMetadata;
     GEOPDViewportInfo *_viewportInfo;
+    unsigned int _maxResults;
+    int _searchType;
     struct {
-        unsigned int maxResults:1;
-        unsigned int searchType:1;
-    } _has;
+        unsigned int has_maxResults:1;
+        unsigned int has_searchType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_suggestionEntryMetadata:1;
+        unsigned int read_viewportInfo:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_suggestionEntryMetadata:1;
+        unsigned int wrote_viewportInfo:1;
+        unsigned int wrote_maxResults:1;
+        unsigned int wrote_searchType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSData *suggestionEntryMetadata; // @synthesize suggestionEntryMetadata=_suggestionEntryMetadata;
-@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo; // @synthesize viewportInfo=_viewportInfo;
-@property(nonatomic) unsigned int maxResults; // @synthesize maxResults=_maxResults;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,15 +45,21 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsSearchType:(id)arg1;
 - (id)searchTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSearchType;
-@property(nonatomic) int searchType; // @synthesize searchType=_searchType;
+@property(nonatomic) int searchType;
+@property(retain, nonatomic) NSData *suggestionEntryMetadata;
 @property(readonly, nonatomic) _Bool hasSuggestionEntryMetadata;
+- (void)_readSuggestionEntryMetadata;
+@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo;
 @property(readonly, nonatomic) _Bool hasViewportInfo;
+- (void)_readViewportInfo;
 @property(nonatomic) _Bool hasMaxResults;
+@property(nonatomic) unsigned int maxResults;
 
 @end
 

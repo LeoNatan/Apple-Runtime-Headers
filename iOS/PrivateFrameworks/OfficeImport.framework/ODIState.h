@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     OADDrawingTheme *mDrawingTheme;
 }
 
+- (void).cxx_destruct;
 - (id)drawingTheme;
 - (void)setTextStyle:(id)arg1;
 - (id)textStyle;
@@ -43,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)logicalBounds;
 - (id)diagramOrientedBounds;
 - (id)diagram;
-- (void)dealloc;
 - (id)initWithDiagram:(id)arg1 group:(id)arg2 drawingTheme:(id)arg3;
 
 @end

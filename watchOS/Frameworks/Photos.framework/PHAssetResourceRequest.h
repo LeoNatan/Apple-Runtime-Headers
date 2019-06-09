@@ -4,34 +4,64 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSOperation.h>
+#import <objc/NSObject.h>
 
-@class NSError, NSObject, PHAssetResourceRequestOptions, PHInternalAssetResource;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+#import <Photos/PHAssetResourceRequest-Protocol.h>
+#import <Photos/PHResourceAvailabilityChangeRequestDelegate-Protocol.h>
 
-@interface PHAssetResourceRequest : NSOperation
+@class NSDictionary, NSProgress, NSString, PHAssetResource, PHAssetResourceRequestOptions, PHResourceAvailabilityJob;
+@protocol PHAssetResourceRequestDelegate;
+
+@interface PHAssetResourceRequest : NSObject <PHResourceAvailabilityChangeRequestDelegate, PHAssetResourceRequest>
 {
-    int _cloudResourceRequestID;
-    PHInternalAssetResource *_assetResource;
+    PHResourceAvailabilityJob *_availabilityJob;
+    struct os_unfair_lock_s _lock;
+    _Bool _cancelled;
+    NSProgress *_availabilityProgress;
+    NSProgress *_fileStreamProgress;
+    NSProgress *_totalProgress;
+    _Bool _loadURLOnly;
+    PHAssetResource *_assetResource;
     PHAssetResourceRequestOptions *_options;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_semaphore> *_cloudResourceDownloadWaitSemaphore;
-    struct os_unfair_lock_s _dataHandlerLock;
-    CDUnknownBlockType _dataHandler;
     int _requestID;
-    NSError *_error;
+    id <PHAssetResourceRequestDelegate> _delegate;
+    CDUnknownBlockType _completionHandler;
+    NSDictionary *_info;
+    NSString *_taskIdentifier;
+    CDUnknownBlockType _dataHandler;
+    unsigned long long _managerID;
 }
 
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-@property(readonly, copy, nonatomic) PHAssetResourceRequestOptions *options; // @synthesize options=_options;
++ (id)_globalFileIOQueue;
+@property(copy, nonatomic) CDUnknownBlockType dataHandler; // @synthesize dataHandler=_dataHandler;
+@property(nonatomic) _Bool loadURLOnly; // @synthesize loadURLOnly=_loadURLOnly;
+@property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
+@property(readonly, nonatomic) NSDictionary *info; // @synthesize info=_info;
+@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(readonly, nonatomic) __weak id <PHAssetResourceRequestDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) unsigned long long managerID; // @synthesize managerID=_managerID;
 @property(readonly, nonatomic) int requestID; // @synthesize requestID=_requestID;
+@property(readonly, nonatomic) PHAssetResourceRequestOptions *options; // @synthesize options=_options;
+@property(readonly, nonatomic) PHAssetResource *assetResource; // @synthesize assetResource=_assetResource;
 - (void).cxx_destruct;
+- (void)resourceAvailabilityChangeRequest:(id)arg1 didFinishWithSuccess:(_Bool)arg2 url:(id)arg3 data:(id)arg4 info:(id)arg5 error:(id)arg6;
+- (void)resourceAvailabilityChangeRequest:(id)arg1 didReportProgress:(double)arg2 completed:(_Bool)arg3 error:(id)arg4;
+- (void)_updateAssetResourceWithLocallyAvailable:(_Bool)arg1 fileURL:(id)arg2;
+- (void)_streamDataAtURL:(id)arg1 dataHandler:(CDUnknownBlockType)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_finishAsyncWithLocallyAvailableResourceAtURL:(id)arg1;
+- (void)_reportProgress;
+- (void)_setupProgressIfNeeded;
+- (id)_initialValidationError;
+- (void)startRequest;
 - (void)cancel;
-- (void)main;
-- (_Bool)_downloadResourceForAssetWithLocalIdentifier:(id)arg1 progress:(CDUnknownBlockType)arg2 error:(id *)arg3;
-- (int)_streamDataAtURL:(id)arg1 progress:(CDUnknownBlockType)arg2 dataHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
-- (void)_onQueueSync:(CDUnknownBlockType)arg1;
-- (id)initWithRequestID:(int)arg1 assetResource:(id)arg2 options:(id)arg3 dataHandler:(CDUnknownBlockType)arg4;
+@property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
+- (id)initWithAssetResource:(id)arg1 options:(id)arg2 requestID:(int)arg3 managerID:(unsigned long long)arg4 delegate:(id)arg5 dataReceivedHandler:(CDUnknownBlockType)arg6 completionHandler:(CDUnknownBlockType)arg7;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -14,6 +14,8 @@
 - (long long)hoursDifferenceFromDate:(id)arg1;
 - (long long)differenceFromDate:(id)arg1;
 - (BOOL)isToday;
+- (long long)__im_nanosecondTimeIntervalSinceEpochTime;
 - (long long)__im_nanosecondTimeInterval;
+- (BOOL)isArchivable_im;
 @end
 

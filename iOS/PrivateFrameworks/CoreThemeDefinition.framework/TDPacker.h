@@ -25,6 +25,8 @@
 - (id)_findNode:(id)arg1 ofSize:(struct CGSize)arg2;
 - (struct CGPoint)fitPositionOfObjectAtIndex:(long long)arg1;
 - (_Bool)objectAtIndexFit:(long long)arg1;
+@property(readonly, nonatomic) unsigned long long countOfEmptyNodes;
+- (void)_countOfEmptyNodes:(id)arg1 count:(unsigned long long *)arg2;
 - (struct CGSize)enclosingSize;
 - (void)pack;
 @property(retain, nonatomic) NSArray *objectsToPack;

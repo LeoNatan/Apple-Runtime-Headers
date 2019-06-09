@@ -11,10 +11,12 @@
 
 @class NSMutableArray, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CertificateErrorHandler : NSObject <ConfigurableObjectProtocol, SymptomAdditionalProtocol>
 {
     NSMutableDictionary *_banned;
     NSMutableArray *_store;
+    _Bool _disabled;
     id _resetObserver;
     unsigned int _maxAge;
     unsigned int _maxCount;

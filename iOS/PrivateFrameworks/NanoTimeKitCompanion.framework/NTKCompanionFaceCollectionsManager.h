@@ -6,12 +6,21 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary, NSUUID;
+
 @interface NTKCompanionFaceCollectionsManager : NSObject
 {
+    NSUUID *_activeDeviceUUID;
+    NSMutableDictionary *_faceCollectionsForCollectionIdentifier;
+    int _pairedDeviceVersionChangeNotificationToken;
 }
 
-+ (id)sharedLibraryFaceCollectionsForAllDevices;
-+ (id)sharedFaceCollectionForDevice:(id)arg1 forCollectionIdentifier:(id)arg2;
++ (id)sharedInstance;
+- (void).cxx_destruct;
+- (id)sharedLibraryFaceCollectionsForAllDevices;
+- (id)sharedFaceCollectionForDevice:(id)arg1 forCollectionIdentifier:(id)arg2;
+- (void)dealloc;
+- (id)init;
 
 @end
 

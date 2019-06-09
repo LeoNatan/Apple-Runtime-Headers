@@ -20,10 +20,12 @@
 + (void)initialize;
 @property BOOL ignoresOffscreenGroups;
 @property BOOL disablesOccludedBackdropBlurs;
+@property(getter=isInverseMeshed) BOOL inverseMeshed;
 @property BOOL windowServerAware;
 @property double bleedAmount;
 @property double statisticsInterval;
 @property(copy) NSString *statisticsType;
+@property BOOL ignoresScreenClip;
 @property BOOL reducesCaptureBitDepth;
 @property BOOL allowsInPlaceFiltering;
 @property BOOL captureOnly;

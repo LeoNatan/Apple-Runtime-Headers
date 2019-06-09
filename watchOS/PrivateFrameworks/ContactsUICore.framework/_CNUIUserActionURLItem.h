@@ -20,6 +20,7 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+- (id)performActionWithContext:(id)arg1 shouldCurateIfPerformed:(_Bool)arg2;
 - (id)performActionWithContext:(id)arg1;
 - (id)initWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 url:(id)arg4 isSensitive:(_Bool)arg5 group:(int)arg6 options:(unsigned int)arg7;
 - (id)initWithType:(id)arg1 contactProperty:(id)arg2 bundleIdentifier:(id)arg3 url:(id)arg4 group:(int)arg5 options:(unsigned int)arg6;

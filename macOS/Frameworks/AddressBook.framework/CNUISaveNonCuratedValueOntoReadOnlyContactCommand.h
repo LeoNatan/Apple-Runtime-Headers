@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)executeUndoWithCNSaveRequest:(id)arg1;
 - (void)executeWithCNSaveRequest:(id)arg1;
+- (id)copyOfContactWithNameValuesAndChangesOnly:(id)arg1 containingNonCuratedValueToSave:(id)arg2 forKey:(id)arg3;
 - (id)initWithContactStore:(id)arg1 contact:(id)arg2 nonCuratedValueToSave:(id)arg3 forKey:(id)arg4;
 - (id)initWithContactStore:(id)arg1;
 

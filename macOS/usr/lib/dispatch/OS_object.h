@@ -10,7 +10,6 @@
 {
 }
 
-- (void)_dispose;
 - (void)_xref_dispose;
 - (BOOL)allowsWeakReference;
 - (BOOL)retainWeakReference;

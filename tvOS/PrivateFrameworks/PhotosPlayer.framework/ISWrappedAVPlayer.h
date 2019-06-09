@@ -24,6 +24,7 @@
     float _ivarQueue_rate;
     float _ivarQueue_volume;
     _Bool _ivarQueue_loopingEnabled;
+    CDStruct_e83c9415 _ivarQueue_loopTimeRange;
     _Bool _ivarQueue_audioEnabled;
     long long _ivarQueue_itemStatus;
     NSError *_ivarQueue_itemError;
@@ -50,6 +51,7 @@
 - (void)seekToTime:(CDStruct_1b6d18a9)arg1 toleranceBefore:(CDStruct_1b6d18a9)arg2 toleranceAfter:(CDStruct_1b6d18a9)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1;
 - (void)replaceCurrentItemWithPlayerItem:(id)arg1 thenCall:(CDUnknownBlockType)arg2;
+- (void)enumeratePlayerItemsWithBlock:(CDUnknownBlockType)arg1;
 - (void)setDimensionsOfReservedVideoMemory:(struct CGSize)arg1;
 - (void)pause;
 - (void)setRate:(float)arg1;
@@ -58,6 +60,9 @@
 - (void)setActionAtItemEnd:(long long)arg1;
 - (void)playToTime:(CDStruct_1b6d18a9)arg1 withInitialRate:(float)arg2 overDuration:(double)arg3 progressHandler:(CDUnknownBlockType)arg4;
 - (void)setRate:(float)arg1 time:(CDStruct_1b6d18a9)arg2 atHostTime:(CDStruct_1b6d18a9)arg3;
+- (void)_playerQueue_applyLoopTimeRange:(CDStruct_e83c9415)arg1 toPlayerItem:(id)arg2 isCurrentItem:(_Bool)arg3;
+- (void)setLoopTimeRange:(CDStruct_e83c9415)arg1;
+- (void)setLoopingEnabled:(_Bool)arg1 withTemplateItem:(id)arg2 attemptCompletingCurrentLoop:(_Bool)arg3;
 - (void)setLoopingEnabled:(_Bool)arg1 withTemplateItem:(id)arg2;
 - (void)setLoopingEnabled:(_Bool)arg1;
 - (_Bool)isAudioEnabled;
@@ -78,6 +83,7 @@
 - (CDStruct_1b6d18a9)currentItemDuration;
 - (long long)currentItemStatus;
 - (long long)status;
+- (CDStruct_e83c9415)loopTimeRange;
 - (_Bool)isLoopingEnabled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)_nilOrValue:(id)arg1;
@@ -88,7 +94,6 @@
 - (id)addBoundaryTimeObserverForTimes:(id)arg1 queue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)addPeriodicTimeObserverForInterval:(CDStruct_1b6d18a9)arg1 queue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)_nextObserverUID;
-- (void)prepareForReuseWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setItemBlendsVideoFrames:(_Bool)arg1;
 - (void)setItemForwardEndPlaybackTime:(CDStruct_1b6d18a9)arg1;
 - (void)attachToPlayerLayerIfNeeded:(id)arg1;

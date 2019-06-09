@@ -30,6 +30,7 @@
 - (void)removeSessionDelegate:(id)arg1;
 - (void)addSessionDelegate:(id)arg1;
 - (void)_applyLocalTextOperations:(id)arg1 toDocumentState:(id)arg2;
+- (void)applyLocalTextOperations:(id)arg1 toDocumentState:(id)arg2;
 - (void)flushOperations;
 @property(readonly, nonatomic) RTITextOperations *_textOperations;
 - (void)_createTextOperationsIfNecessary;

@@ -4,7 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class BKSAnimationFenceHandle, BSAnimationSettings, NSArray, NSData, NSString, NSValue, UIColor, UIFocusMovementAction, _UITextServiceSessionContext;
+@class BKSAnimationFenceHandle, BSAnimationSettings, NSArray, NSData, NSString, NSValue, UIFocusMovementAction, _UITextServiceSessionContext;
+@protocol UITimingCurveProvider;
 
 @protocol _UIRemoteViewController_ViewControllerOperatorInterface
 - (void)__handleFocusMovementAction:(UIFocusMovementAction *)arg1;
@@ -13,6 +14,9 @@
 - (void)__viewServiceDidUpdatePreferredUserInterfaceStyle:(long long)arg1;
 - (void)__viewServiceDidUpdatePrefersHomeIndicatorAutoHidden:(_Bool)arg1;
 - (void)__viewServiceDidUpdatePreferredScreenEdgesDeferringSystemGestures:(long long)arg1;
+- (void)__viewServiceCompleteInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id <UITimingCurveProvider>)arg4;
+- (void)__viewServiceUpdateInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)__viewServiceStartInteractiveSheetTransitionInHostWithProgress:(double)arg1;
 - (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(long long)arg1 animationSettings:(BSAnimationSettings *)arg2;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(long long)arg1 preferredStatusBarVisibility:(int)arg2 updateAnimation:(long long)arg3 currentAnimationSettings:(BSAnimationSettings *)arg4;
 - (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize)arg1 fence:(BKSAnimationFenceHandle *)arg2;
@@ -24,7 +28,6 @@
 - (void)__showServiceForText:(NSString *)arg1 selectedTextRangeValue:(NSValue *)arg2 type:(long long)arg3 fromRectValue:(NSValue *)arg4 replyHandler:(void (^)(id, NSError *))arg5;
 - (void)__showServiceForText:(NSString *)arg1 type:(long long)arg2 fromRectValue:(NSValue *)arg3 replyHandler:(void (^)(id, NSError *))arg4;
 - (void)__showServiceForType:(long long)arg1 withContext:(_UITextServiceSessionContext *)arg2 replyHandler:(void (^)(id, NSError *))arg3;
-- (void)__viewServiceDidUpdateTintColor:(UIColor *)arg1 duration:(double)arg2;
 - (void)__setSupportedInterfaceOrientations:(NSArray *)arg1;
 - (void)__viewServiceDidUnregisterScrollToTopView;
 - (void)__viewServiceDidRegisterScrollToTopView;

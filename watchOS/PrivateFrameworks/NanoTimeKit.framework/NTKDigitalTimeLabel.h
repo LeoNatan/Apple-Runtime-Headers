@@ -24,11 +24,17 @@
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+- (void)layoutSubviews;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 @property(readonly, nonatomic) UIColor *contentColor;
+- (id)_labelColorFromFaceColor:(unsigned int)arg1 device:(id)arg2;
+- (void)_enumerateUnderlyingLabelsWithBlock:(CDUnknownBlockType)arg1;
+- (void)applyFaceFromColor:(unsigned int)arg1 toColor:(unsigned int)arg2 fraction:(float)arg3 device:(id)arg4;
+- (void)applyFaceColor:(unsigned int)arg1 device:(id)arg2;
 - (void)setShadowColor:(id)arg1;
 - (id)_newUnderlyingLabel:(_Bool)arg1;
+@property(copy, nonatomic) NTKDigitalTimeLabelStyle *style; // @dynamic style;
 - (void)animateToStyle:(id)arg1 duration:(double)arg2 timingFunction:(id)arg3 additionalAnimation:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)setFrameUsingCurrentStyle;
 
@@ -36,7 +42,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
-@property(copy, nonatomic) NTKDigitalTimeLabelStyle *style; // @dynamic style;
 @property(readonly) Class superclass;
 
 @end

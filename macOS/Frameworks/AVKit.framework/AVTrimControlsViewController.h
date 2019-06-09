@@ -64,6 +64,7 @@
 - (void)updateTrimButtonState;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)viewDidLayout;
+- (void)keyDown:(id)arg1;
 - (void)loadView;
 - (BOOL)isRevertButtonEnabled;
 @property(readonly, getter=isTrimButtonEnabled) BOOL trimButtonEnabled;

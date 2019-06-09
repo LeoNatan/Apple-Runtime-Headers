@@ -11,7 +11,6 @@
 __attribute__((visibility("hidden")))
 @interface OCDDocument : NSObject
 {
-    OCDReader *mReader;
     OCDWriter *mWriter;
     OCDSummary *mSummary;
     OADBlipCollection *mBlips;
@@ -22,6 +21,7 @@ __attribute__((visibility("hidden")))
     OADTextListStyle *mDefaultTextStyle;
     OADGraphicStyleCache *mGraphicStyleCache;
     NSData *mEncryptionInfo;
+    OCDReader *mReader;
 }
 
 @property(retain, nonatomic) OADGraphicStyleCache *graphicStyleCache; // @synthesize graphicStyleCache=mGraphicStyleCache;
@@ -33,6 +33,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) OCDSummary *summary; // @synthesize summary=mSummary;
 @property(retain, nonatomic) OCDWriter *writer; // @synthesize writer=mWriter;
 @property(retain, nonatomic) OCDReader *reader; // @synthesize reader=mReader;
+- (void).cxx_destruct;
+- (id)bulletBlips;
 - (void)setTheme:(id)arg1;
 - (id)theme;
 - (void)removeUnnecessaryOverrides;
@@ -40,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (void)setEncryptionInfo:(id)arg1;
 - (id)encryptionInfo;
 - (_Bool)isFromBinaryFile;
-- (void)dealloc;
 - (id)init;
 
 @end

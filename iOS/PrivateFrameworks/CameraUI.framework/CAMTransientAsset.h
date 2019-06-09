@@ -67,6 +67,9 @@
 - (id)init;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) NSDate *localCreationDate;
+- (id)creationDateUsingLocalTimeZone;
+@property(readonly, nonatomic) unsigned long long deferredLogInfo;
 @property(readonly, nonatomic, getter=isLivePhoto) _Bool livePhoto;
 @property(readonly, nonatomic) _Bool isAnimatedImage;
 @property(readonly, nonatomic) CLLocation *location;

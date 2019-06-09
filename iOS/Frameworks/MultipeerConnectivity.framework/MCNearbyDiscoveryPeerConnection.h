@@ -11,6 +11,7 @@
 @class NSInputStream, NSMutableArray, NSMutableData, NSOutputStream, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface MCNearbyDiscoveryPeerConnection : NSObject <NSStreamDelegate>
 {
     NSString *_remoteServiceName;

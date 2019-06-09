@@ -31,6 +31,9 @@ __attribute__((visibility("hidden")))
     unsigned int _retries;
     NSMutableSet *_requestUUIDs;
     NSMutableDictionary *_requestOperationCountsByType;
+    NSMutableDictionary *_totalBytesByChunkProfile;
+    NSMutableDictionary *_chunkCountByChunkProfile;
+    NSMutableDictionary *_fileCountByChunkProfile;
     NSMutableArray *_ranges;
     double _duration;
     double _queueing;
@@ -39,6 +42,9 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSMutableArray *ranges; // @synthesize ranges=_ranges;
+@property(retain, nonatomic) NSMutableDictionary *fileCountByChunkProfile; // @synthesize fileCountByChunkProfile=_fileCountByChunkProfile;
+@property(retain, nonatomic) NSMutableDictionary *chunkCountByChunkProfile; // @synthesize chunkCountByChunkProfile=_chunkCountByChunkProfile;
+@property(retain, nonatomic) NSMutableDictionary *totalBytesByChunkProfile; // @synthesize totalBytesByChunkProfile=_totalBytesByChunkProfile;
 @property(retain, nonatomic) NSMutableDictionary *requestOperationCountsByType; // @synthesize requestOperationCountsByType=_requestOperationCountsByType;
 @property(readonly) NSMutableSet *requestUUIDs; // @synthesize requestUUIDs=_requestUUIDs;
 @property unsigned int retries; // @synthesize retries=_retries;

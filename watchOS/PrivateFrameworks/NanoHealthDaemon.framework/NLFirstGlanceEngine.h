@@ -6,37 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@protocol NLCoachingSubmanagerDelegate, NLFirstGlanceEngineDataSource;
+@protocol NLCoachingSubmanagerDelegate, NLFirstGlanceAchievementDataProvider, NLFirstGlanceActivityDataProvider, NLFirstGlanceActivitySharingDataProvider, NLFirstGlanceEngineDataSource, NLFirstGlanceWorkoutDataProvider;
 
 @interface NLFirstGlanceEngine : NSObject
 {
-    id <NLFirstGlanceEngineDataSource> _dataSource;
+    id <NLFirstGlanceAchievementDataProvider> _achievementDataProvider;
+    id <NLFirstGlanceActivityDataProvider> _activityDataProvider;
+    id <NLFirstGlanceActivitySharingDataProvider> _activitySharingDataProvider;
+    id <NLFirstGlanceWorkoutDataProvider> _workoutDataProvider;
     id <NLCoachingSubmanagerDelegate> _coachingSubmanagerDelegate;
+    id <NLFirstGlanceEngineDataSource> _dataSource;
 }
 
-@property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate=_coachingSubmanagerDelegate;
 @property(retain, nonatomic) id <NLFirstGlanceEngineDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate=_coachingSubmanagerDelegate;
+@property(retain, nonatomic) id <NLFirstGlanceWorkoutDataProvider> workoutDataProvider; // @synthesize workoutDataProvider=_workoutDataProvider;
+@property(retain, nonatomic) id <NLFirstGlanceActivitySharingDataProvider> activitySharingDataProvider; // @synthesize activitySharingDataProvider=_activitySharingDataProvider;
+@property(retain, nonatomic) id <NLFirstGlanceActivityDataProvider> activityDataProvider; // @synthesize activityDataProvider=_activityDataProvider;
+@property(retain, nonatomic) id <NLFirstGlanceAchievementDataProvider> achievementDataProvider; // @synthesize achievementDataProvider=_achievementDataProvider;
 - (void).cxx_destruct;
-- (id)_achievementLocalizationBundleFromAchievement:(id)arg1;
-- (void)_firstAchievementFromAchievements:(id)arg1 passingMilestoneTest:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)_canCoachForProgressWithProgress:(double)arg1 goal:(double)arg2;
-- (id)_dateComponentsForYesterday;
-- (id)_dateIntervalForYesterday;
-- (int)_daysRemainingInFitnessWeek;
-- (id)friendsWithCurrentCompetitions;
-- (double)recommendedGoalInCalories;
-- (id)bestCompletedActivitySummaryThisWeek;
-- (id)yesterdayActivitySummary;
-- (id)longestWorkoutYesterdayLongerThan60Minutes;
-- (id)bestWorkoutYesterdayLongerThan15Minutes;
-- (id)completedAchievementForYesterday;
-- (id)yesterdayLocalizationKeyForAchievement:(id)arg1;
-- (id)progressLocalizationKeyForAchievement:(id)arg1 progressMilestone:(id)arg2;
-- (void)progressAchievementAndMilestoneWithCompletion:(CDUnknownBlockType)arg1;
-- (id)weeklySummaryInfo;
 - (unsigned int)firstGlanceTypeForToday;
 - (id)initWithDataSource:(id)arg1 coachingSubmanagerDelegate:(id)arg2;
-- (id)initWithProfile:(id)arg1 coachingSubmanagerDelegate:(id)arg2 typicaDayModel:(id)arg3;
+- (id)initWithProfile:(id)arg1 coachingSubmanagerDelegate:(id)arg2 typicalDayModel:(id)arg3;
 
 @end
 

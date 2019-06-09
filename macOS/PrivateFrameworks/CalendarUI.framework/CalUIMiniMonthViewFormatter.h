@@ -30,7 +30,7 @@
     NSFont *_monthNameFont;
     NSColor *_monthNameColor;
     double _monthNameHeight;
-    unsigned long long _monthNameTextAlignment;
+    long long _monthNameTextAlignment;
     NSFont *_todayHighlightFont;
     NSColor *_todayHighlightColor;
     NSColor *_todayBackgroundColor;
@@ -43,13 +43,13 @@
     NSFont *_weekdayTextFont;
     NSColor *_weekdayTextColor;
     double _weekdayHeight;
-    unsigned long long _weekdayTextAlignment;
+    long long _weekdayTextAlignment;
     NSColor *_weekdayNameSeparatorColor;
     double _heightBetweenWeekdaysAndDayNumbers;
     double _heightBetweenMonthAndDayNumbers;
     NSFont *_dayNumberTextFont;
     NSColor *_dayNumberTextColor;
-    unsigned long long _dayNumberTextAlignment;
+    long long _dayNumberTextAlignment;
     NSFont *_previousAndNextMonthDayNumberFont;
     NSColor *_previousAndNextMonthDayNumberColor;
     NSColor *_weekendDayNumberColor;
@@ -69,7 +69,7 @@
     double _weekNumbersHeight;
     NSFont *_weekNumbersFont;
     NSColor *_weekNumbersColor;
-    unsigned long long _weekNumbersHorizontalAlignment;
+    long long _weekNumbersHorizontalAlignment;
     double _weekNumbersXOffset;
     double _weekNumbersYOffset;
     NSColor *_weekNumberSeparatorColor;
@@ -98,7 +98,7 @@
 @property BOOL drawWeekNumbersSeparator; // @synthesize drawWeekNumbersSeparator=_drawWeekNumbersSeparator;
 @property double weekNumbersYOffset; // @synthesize weekNumbersYOffset=_weekNumbersYOffset;
 @property double weekNumbersXOffset; // @synthesize weekNumbersXOffset=_weekNumbersXOffset;
-@property unsigned long long weekNumbersHorizontalAlignment; // @synthesize weekNumbersHorizontalAlignment=_weekNumbersHorizontalAlignment;
+@property long long weekNumbersHorizontalAlignment; // @synthesize weekNumbersHorizontalAlignment=_weekNumbersHorizontalAlignment;
 @property(retain) NSColor *weekNumbersColor; // @synthesize weekNumbersColor=_weekNumbersColor;
 @property(retain) NSFont *weekNumbersFont; // @synthesize weekNumbersFont=_weekNumbersFont;
 @property double weekNumbersHeight; // @synthesize weekNumbersHeight=_weekNumbersHeight;
@@ -118,7 +118,7 @@
 @property(retain) NSColor *weekendDayNumberColor; // @synthesize weekendDayNumberColor=_weekendDayNumberColor;
 @property(retain) NSColor *previousAndNextMonthDayNumberColor; // @synthesize previousAndNextMonthDayNumberColor=_previousAndNextMonthDayNumberColor;
 @property(retain) NSFont *previousAndNextMonthDayNumberFont; // @synthesize previousAndNextMonthDayNumberFont=_previousAndNextMonthDayNumberFont;
-@property unsigned long long dayNumberTextAlignment; // @synthesize dayNumberTextAlignment=_dayNumberTextAlignment;
+@property long long dayNumberTextAlignment; // @synthesize dayNumberTextAlignment=_dayNumberTextAlignment;
 @property(retain) NSColor *dayNumberTextColor; // @synthesize dayNumberTextColor=_dayNumberTextColor;
 @property(retain) NSFont *dayNumberTextFont; // @synthesize dayNumberTextFont=_dayNumberTextFont;
 @property double heightBetweenMonthAndDayNumbers; // @synthesize heightBetweenMonthAndDayNumbers=_heightBetweenMonthAndDayNumbers;
@@ -126,7 +126,7 @@
 @property(retain) NSColor *weekdayNameSeparatorColor; // @synthesize weekdayNameSeparatorColor=_weekdayNameSeparatorColor;
 @property BOOL drawWeekdayNameSeparator; // @synthesize drawWeekdayNameSeparator=_drawWeekdayNameSeparator;
 @property BOOL useExtraShortWeekdaySymbols; // @synthesize useExtraShortWeekdaySymbols=_useExtraShortWeekdaySymbols;
-@property unsigned long long weekdayTextAlignment; // @synthesize weekdayTextAlignment=_weekdayTextAlignment;
+@property long long weekdayTextAlignment; // @synthesize weekdayTextAlignment=_weekdayTextAlignment;
 @property double weekdayHeight; // @synthesize weekdayHeight=_weekdayHeight;
 @property(retain) NSColor *weekdayTextColor; // @synthesize weekdayTextColor=_weekdayTextColor;
 @property(retain) NSFont *weekdayTextFont; // @synthesize weekdayTextFont=_weekdayTextFont;
@@ -139,7 +139,7 @@
 @property(retain) NSColor *todayBackgroundColor; // @synthesize todayBackgroundColor=_todayBackgroundColor;
 @property(retain) NSColor *todayHighlightColor; // @synthesize todayHighlightColor=_todayHighlightColor;
 @property(retain) NSFont *todayHighlightFont; // @synthesize todayHighlightFont=_todayHighlightFont;
-@property unsigned long long monthNameTextAlignment; // @synthesize monthNameTextAlignment=_monthNameTextAlignment;
+@property long long monthNameTextAlignment; // @synthesize monthNameTextAlignment=_monthNameTextAlignment;
 @property double monthNameHeight; // @synthesize monthNameHeight=_monthNameHeight;
 @property(retain) NSColor *monthNameColor; // @synthesize monthNameColor=_monthNameColor;
 @property(retain) NSFont *monthNameFont; // @synthesize monthNameFont=_monthNameFont;

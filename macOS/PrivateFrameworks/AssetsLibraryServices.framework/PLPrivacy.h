@@ -23,8 +23,6 @@
 - (int)photosTCCAccessStatus;
 - (BOOL)isPhotosTCCAccessNotAllowed;
 - (BOOL)isPhotosTCCAccessAllowed;
-- (BOOL)isPhotoLibraryReadAccessAllowed;
-- (BOOL)isPhotoLibrarySharingOrModificationAllowed;
 - (BOOL)isPhotosAccessAllowedWithScope:(long long)arg1 promptIfNeededWithHandler:(CDUnknownBlockType)arg2;
 - (void)isPhotosAccessAllowedWithScope:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)_isPhotosAccessAllowedWithScope:(long long)arg1 forceHandler:(BOOL)arg2 accessAllowedHandler:(CDUnknownBlockType)arg3;

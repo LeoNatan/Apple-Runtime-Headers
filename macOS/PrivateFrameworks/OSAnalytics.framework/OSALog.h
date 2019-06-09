@@ -18,10 +18,15 @@
     NSString *_bugType;
 }
 
++ (void)setBridgeDelegate:(id)arg1;
++ (void)iterateLogsWithOptions:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (void)purgeLogs:(id)arg1;
 + (unsigned int)scanLogs:(id)arg1 from:(id)arg2;
 + (id)scanProxies:(id)arg1;
 + (void)cleanupRetired:(id)arg1;
++ (void)markDescriptor:(int)arg1 withPairs:(id)arg2 andOptions:(id)arg3;
++ (void)markDescriptor:(int)arg1 forKey:(id)arg2 withObj:(id)arg3;
++ (id)createForSubmission:(id)arg1 metadata:(id)arg2 options:(id)arg3 error:(id *)arg4 writing:(CDUnknownBlockType)arg5;
 @property(readonly) NSString *bugType; // @synthesize bugType=_bugType;
 @property BOOL deleteOnRetire; // @synthesize deleteOnRetire=_deleteOnRetire;
 @property(readonly) NSString *filepath; // @synthesize filepath=_filepath;
@@ -31,11 +36,14 @@
 - (void)retire:(const char *)arg1;
 - (void)markWithKey:(const char *)arg1 value:(const char *)arg2;
 - (BOOL)isReasonableSize:(long long)arg1 forRouting:(id)arg2;
+- (void)rename:(id)arg1;
+- (id)initWithType:(id)arg1 filepath:(id)arg2 metadata:(id)arg3 options:(id)arg4 at:(double)arg5 error:(id *)arg6;
 - (void)dealloc;
 - (void)closeFileStream;
 - (id)description;
 - (id)initWithPath:(id)arg1 forRouting:(id)arg2 options:(id)arg3;
-- (id)getFilenames;
+- (id)initWithPath:(id)arg1 forRouting:(id)arg2 options:(id)arg3 error:(id *)arg4;
+- (id)initWithPath:(id)arg1 forRouting:(id)arg2 usingConfig:(id)arg3 options:(id)arg4 error:(id *)arg5;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <UIKit/UIControl.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIOverlayContainerView : UIControl
 {
 }

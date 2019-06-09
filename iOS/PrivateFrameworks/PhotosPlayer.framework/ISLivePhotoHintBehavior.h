@@ -6,6 +6,7 @@
 
 #import <PhotosPlayer/ISBehavior.h>
 
+__attribute__((visibility("hidden")))
 @interface ISLivePhotoHintBehavior : ISBehavior
 {
     _Bool _playDuringHint;

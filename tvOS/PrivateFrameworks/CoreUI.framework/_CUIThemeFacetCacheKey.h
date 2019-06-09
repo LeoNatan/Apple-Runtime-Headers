@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface _CUIThemeFacetCacheKey : NSObject
 {
-    struct _renditionkeytoken keyList[18];
+    struct _renditionkeytoken keyList[22];
     long long themeIndex;
     unsigned long long hashPrecalc;
 }

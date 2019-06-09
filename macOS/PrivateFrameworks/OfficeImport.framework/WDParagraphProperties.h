@@ -10,6 +10,7 @@
 
 @class WDCharacterProperties, WDDocument, WDParagraphPropertiesValues;
 
+__attribute__((visibility("hidden")))
 @interface WDParagraphProperties : NSObject <NSCopying>
 {
     WDCharacterProperties *mCharacterProperties;

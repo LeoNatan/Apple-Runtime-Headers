@@ -15,7 +15,6 @@
     UIView<NTKComplicationImageView> *_imageView;
 }
 
-+ (void)load;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
 @property(retain, nonatomic) UIView<NTKComplicationImageView> *imageView; // @synthesize imageView=_imageView;
 - (void).cxx_destruct;

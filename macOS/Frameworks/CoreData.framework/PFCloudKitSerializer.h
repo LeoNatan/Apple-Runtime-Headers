@@ -6,22 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class CKRecordZone, NSArray, NSCloudKitMirroringDelegateOptions, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PFCloudKitMirroredRelationshipCache;
+@class CKRecordZone, NSArray, NSCloudKitMirroringDelegateOptions, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, PFCloudKitMetadataCache;
 @protocol PFCloudKitSerializerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitSerializer : NSObject
 {
-    CKRecordZone *_zone;
-    NSMutableDictionary *_objectIDToCKRecordName;
+    CKRecordZone *_recordZone;
     NSMutableDictionary *_manyToManyRecordNameToRecord;
     NSString *_recordNamePrefix;
     NSCloudKitMirroringDelegateOptions *_mirroringOptions;
     NSObject<PFCloudKitSerializerDelegate> *_delegate;
     NSMutableArray *_writtenAssetURLs;
-    PFCloudKitMirroredRelationshipCache *_relCache;
+    PFCloudKitMetadataCache *_metadataCache;
 }
 
++ (id)mtmKeyForObjectWithRecordName:(id)arg1 relatedToObjectWithRecordName:(id)arg2 byRelationship:(id)arg3 withInverse:(id)arg4;
 + (BOOL)shouldTrackProperty:(id)arg1;
 + (BOOL)shouldTrackRelationship:(id)arg1;
 + (BOOL)shouldTrackAttribute:(id)arg1;
@@ -44,29 +44,26 @@ __attribute__((visibility("hidden")))
 + (id)ckAssetAttributeNameForAttributeName:(id)arg1;
 + (id)generateCKAssetFileURLForObjectInStore:(id)arg1;
 + (id)assetStorageDirectoryURLForStore:(id)arg1;
-+ (id)newSerializerForOptions:(id)arg1 withZone:(id)arg2 recordNamePrefix:(id)arg3;
 @property(nonatomic) __weak NSObject<PFCloudKitSerializerDelegate> *delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSString *recordNamePrefix; // @synthesize recordNamePrefix=_recordNamePrefix;
-@property(readonly, nonatomic) PFCloudKitMirroredRelationshipCache *relCache; // @synthesize relCache=_relCache;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
-@property(readonly, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;
+@property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
 - (void).cxx_destruct;
-- (id)getRecordNameForObject:(id)arg1;
-- (id)getValuesFromRecord:(id)arg1;
-- (id)getValueFromRecord:(id)arg1 forKey:(id)arg2;
-- (void)setValue:(id)arg1 forKey:(id)arg2 onRecord:(id)arg3;
-- (void)updateAttributes:(id)arg1 andRelationships:(id)arg2 onManagedObject:(id)arg3 fromRecord:(id)arg4 importContext:(id)arg5;
+- (BOOL)shouldEncryptValueForAttribute:(id)arg1;
+- (id)getRecordMetadataForObject:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
+- (id)getValueStoreForRecord:(id)arg1;
+- (id)getValueFromRecord:(id)arg1 forKey:(id)arg2 isEncrypted:(BOOL)arg3;
+- (void)setValue:(id)arg1 forKey:(id)arg2 usingEncryption:(BOOL)arg3 onRecord:(id)arg4;
+- (void)updateAttributes:(id)arg1 andRelationships:(id)arg2 onManagedObject:(id)arg3 fromRecord:(id)arg4 withRecordMetadata:(id)arg5 importContext:(id)arg6;
 - (BOOL)applyUpdatedRecords:(id)arg1 deletedRecordIDs:(id)arg2 toStore:(id)arg3 inManagedObjectContext:(id)arg4 onlyUpdatingAttributes:(id)arg5 andRelationships:(id)arg6 error:(id *)arg7;
 - (BOOL)applyUpdatedRecords:(id)arg1 deletedRecordIDs:(id)arg2 toStore:(id)arg3 inManagedObjectContext:(id)arg4 error:(id *)arg5;
-- (id)newCKRecordsFromObject:(id)arg1 fullyMaterializeRecords:(BOOL)arg2;
+- (id)newCKRecordsFromObject:(id)arg1 fullyMaterializeRecords:(BOOL)arg2 error:(id *)arg3;
 - (void)addURLToWrittenAssetURLs:(id)arg1;
 @property(readonly, nonatomic) NSArray *writtenAssetURLs;
 - (void)setMtmRecord:(id)arg1 toMtmRecordName:(id)arg2;
 @property(readonly, nonatomic) NSDictionary *manyToManyRecordNameToRecord;
-- (void)setObjectID:(id)arg1 toCKRecordName:(id)arg2;
-@property(readonly, nonatomic) NSDictionary *objectIDToCKRecordName;
 - (void)dealloc;
-- (id)initWithZone:(id)arg1 mirroringOptions:(id)arg2 recordNamePrefix:(id)arg3;
+- (id)initWithZone:(id)arg1 mirroringOptions:(id)arg2 metadataCache:(id)arg3 recordNamePrefix:(id)arg4;
 - (id)init;
 
 @end

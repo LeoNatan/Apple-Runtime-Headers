@@ -12,6 +12,7 @@
 @class NSString, SKUIClientContext, UIImagePickerController, UILabel, UIScrollView, UIView;
 @protocol SKUIProfileImagePickerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProfileImagePicker : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     SKUIClientContext *_clientContext;

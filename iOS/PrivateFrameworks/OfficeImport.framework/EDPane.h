@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pane;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setPaneState:(int)arg1;
 - (int)paneState;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (double)ySplitPosition;
 - (void)setXSplitPosition:(double)arg1;
 - (double)xSplitPosition;
-- (void)dealloc;
 - (id)init;
 
 @end

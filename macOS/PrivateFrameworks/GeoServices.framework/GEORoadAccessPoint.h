@@ -13,23 +13,24 @@
 @interface GEORoadAccessPoint : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    int _drivingDirection;
     GEOLatLng *_location;
+    int _drivingDirection;
     unsigned int _significance;
+    int _transitDirection;
     int _walkingDirection;
     BOOL _isApproximate;
     struct {
-        unsigned int drivingDirection:1;
-        unsigned int significance:1;
-        unsigned int walkingDirection:1;
-        unsigned int isApproximate:1;
-    } _has;
+        unsigned int has_drivingDirection:1;
+        unsigned int has_significance:1;
+        unsigned int has_transitDirection:1;
+        unsigned int has_walkingDirection:1;
+        unsigned int has_isApproximate:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int significance; // @synthesize significance=_significance;
-@property(nonatomic) BOOL isApproximate; // @synthesize isApproximate=_isApproximate;
-@property(retain, nonatomic) GEOLatLng *location; // @synthesize location=_location;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -38,18 +39,26 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasSignificance;
+@property(nonatomic) unsigned int significance;
+- (int)StringAsTransitDirection:(id)arg1;
+- (id)transitDirectionAsString:(int)arg1;
+@property(nonatomic) BOOL hasTransitDirection;
+@property(nonatomic) int transitDirection;
 - (int)StringAsDrivingDirection:(id)arg1;
 - (id)drivingDirectionAsString:(int)arg1;
 @property(nonatomic) BOOL hasDrivingDirection;
-@property(nonatomic) int drivingDirection; // @synthesize drivingDirection=_drivingDirection;
+@property(nonatomic) int drivingDirection;
 - (int)StringAsWalkingDirection:(id)arg1;
 - (id)walkingDirectionAsString:(int)arg1;
 @property(nonatomic) BOOL hasWalkingDirection;
-@property(nonatomic) int walkingDirection; // @synthesize walkingDirection=_walkingDirection;
+@property(nonatomic) int walkingDirection;
 @property(nonatomic) BOOL hasIsApproximate;
+@property(nonatomic) BOOL isApproximate;
+@property(retain, nonatomic) GEOLatLng *location;
 @property(readonly, nonatomic) BOOL hasLocation;
 
 @end

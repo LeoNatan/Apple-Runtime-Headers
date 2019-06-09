@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)_usesBezeledSelectionStyle;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 - (struct __CFString *)_coreUIWidgetName;
 

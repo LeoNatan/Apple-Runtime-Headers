@@ -14,6 +14,7 @@
 @interface NSExtension : NSObject <_NSExtensionContextHosting>
 {
     struct os_unfair_lock_s _unfairLock;
+    BOOL _observingHostAppStateChanges;
     NSString *_identifier;
     NSString *_version;
     NSDictionary *_attributes;
@@ -48,10 +49,19 @@
 + (id)extensionsWithMatchingAttributes:(id)arg1 error:(id *)arg2;
 + (BOOL)_shouldLogExtensionDiscovery;
 + (void)initialize;
++ (BOOL)_evaluateActivationRule:(id)arg1 withDictionaryIfItMatchesActiveWebPageAlternative:(id)arg2 matchResult:(out long long *)arg3;
++ (BOOL)_evaluateActivationRule:(id)arg1 withInputItemsIfTheyMatchActiveWebPageAlternative:(id)arg2 matchResult:(out long long *)arg3;
++ (id)_dictionaryIncludingOnlyItemsWithRegisteredTypeIdentifier:(id)arg1 fromMatchingDictionary:(id)arg2;
++ (BOOL)_genericValuesMatchActiveWebPageAlternativeWithExtensionItems:(id)arg1 attachmentsLens:(CDUnknownBlockType)arg2 registeredTypeIdentifiersLens:(CDUnknownBlockType)arg3 isActiveWebPageAttachmentCheck:(CDUnknownBlockType)arg4;
++ (BOOL)_inputItemsMatchActiveWebPageAlternative:(id)arg1;
++ (BOOL)_matchingDictionaryMatchesActiveWebPageAlternative:(id)arg1;
++ (id)_inputItemsByApplyingActiveWebPageAlternative:(id)arg1 ifNeededByActivationRule:(id)arg2;
 + (id)predicateForActivationRule:(id)arg1;
++ (BOOL)_evaluateActivationRuleWithoutWorkarounds:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
 + (BOOL)evaluateActivationRule:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
 + (void)initializeFiltering;
 @property(copy) NSUUID *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
+@property(nonatomic, getter=_isObservingHostAppStateChanges, setter=_setObservingHostAppStateChanges:) BOOL observingHostAppStateChanges; // @synthesize observingHostAppStateChanges=_observingHostAppStateChanges;
 @property(copy, setter=_setAllowedErrorClasses:) NSSet *_allowedErrorClasses; // @synthesize _allowedErrorClasses=__allowedErrorClasses;
 @property(retain, setter=_setExtensionContexts:) NSMutableDictionary *_extensionContexts; // @synthesize _extensionContexts=__extensionContexts;
 @property(retain, setter=_setExtensionServiceConnections:) NSMutableDictionary *_extensionServiceConnections; // @synthesize _extensionServiceConnections=__extensionServiceConnections;
@@ -72,6 +82,10 @@
 @property(copy) NSDictionary *attributes; // @synthesize attributes=_attributes;
 @property(copy) NSString *version; // @synthesize version=_version;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
+- (void)_hostDidBecomeActiveNote:(id)arg1;
+- (void)_hostWillResignActiveNote:(id)arg1;
+- (void)_hostDidEnterBackgroundNote:(id)arg1;
+- (void)_hostWillEnterForegroundNote:(id)arg1;
 - (void)_dropAssertion;
 - (id)extensionContexts;
 - (void)_kill:(int)arg1;
@@ -123,6 +137,7 @@
 - (void)_didShowExtensionManagementInterface;
 @property(readonly, getter=_isMarkedNew) BOOL _markedNew;
 @property(copy, getter=_extensionState, setter=_setExtensionState:) NSDictionary *_extensionState; // @dynamic _extensionState;
+- (id)_inputItemsByApplyingActiveWebPageAlternativeIfNeeded:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

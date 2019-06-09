@@ -6,24 +6,40 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary;
+@class NSDictionary, NSMutableDictionary, NSUserDefaults;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AppletConfigurationData : NSObject
 {
-    NSDictionary *internal;
+    NSObject<OS_dispatch_queue> *queue;
+    NSUserDefaults *userDefaults;
+    NSDictionary *config;
+    NSMutableDictionary *pluginCache;
+    unsigned long long maErrorCount;
+    BOOL retryInProgress;
+    double maMetadataQueryInterval;
 }
 
 + (struct os_state_data_s *)dumpState;
 + (void)registerStateHandler;
-+ (BOOL)isValidConfigData:(id)arg1 error:(id *)arg2;
-+ (BOOL)setConfiguration:(id)arg1 error:(id *)arg2;
++ (void)init;
++ (BOOL)isValidConfigData:(id)arg1;
++ (BOOL)setConfiguration:(id)arg1;
++ (id)getWuluSettings;
++ (id)getNFCSettings;
 + (id)extraDebugScriptForModule:(id)arg1;
 + (id)plasticCardScriptForModule:(id)arg1;
 + (id)scriptForModule:(id)arg1;
 + (id)dataHash;
++ (id)pluginDecoderForMid:(id)arg1;
++ (id)getConfig;
 + (id)getInstance;
-+ (id)GetStaticConfigurationData;
++ (id)getOverrideConfig;
++ (id)getStaticWuluSettings;
++ (id)getStaticNFCSettings;
++ (id)getStaticConfig;
+- (id)pluginDecoderForMid:(id)arg1 depth:(int)arg2;
 - (id)init;
 
 @end

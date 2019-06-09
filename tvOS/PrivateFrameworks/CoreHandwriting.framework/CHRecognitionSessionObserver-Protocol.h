@@ -13,6 +13,6 @@
 
 @optional
 - (void)recognitionSessionDidChangeStatus:(CHRecognitionSession *)arg1;
-- (_Bool)wantsHighFrequencyNotifications;
+- (double)preferredRecognitionResultUpdatesInterval;
 @end
 

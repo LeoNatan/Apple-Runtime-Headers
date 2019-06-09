@@ -13,20 +13,18 @@ __attribute__((visibility("hidden")))
 {
     NSString *_migrationKey;
     CKQueryCursor *_continuationCursor;
-    NSMutableArray *_recordsWithShareID;
-    NSMutableArray *_sharedIDsToFetch;
-    NSMutableArray *_shares;
+    NSMutableArray *_shareIDsToFetch;
 }
 
 + (id)allMigrationKeysOrdered;
-+ (id)sharesMigrationKey;
++ (id)folderSharesMigrationKey;
++ (id)documentSharesMigrationKey;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)main;
-- (void)_saveQueryRecords:(id)arg1;
-- (void)_performAfterFetchShares:(CDUnknownBlockType)arg1;
-- (void)_performAfterQueryingForShareIDs:(CDUnknownBlockType)arg1;
-- (void)_performQuery:(id)arg1 recordFetchedBlock:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_performAfterQueryingForShareIDsOfFolders:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_performQuery:(id)arg1 recordFetchedBlock:(CDUnknownBlockType)arg2 cursorUpdatedBlock:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)_updatedContinuationCursor:(id)arg1 error:(id *)arg2;
 - (_Bool)shouldRetryForError:(id)arg1;
 - (id)initWithServerZone:(id)arg1 migrationKey:(id)arg2 continuationCursor:(id)arg3;
 

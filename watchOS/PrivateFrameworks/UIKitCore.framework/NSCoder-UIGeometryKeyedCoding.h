@@ -6,6 +6,8 @@
 
 #import <Foundation/NSCoder.h>
 
+@class UIStoryboardDecodingContext;
+
 @interface NSCoder (UIGeometryKeyedCoding)
 - (struct UIOffset)decodeUIOffsetForKey:(id)arg1;
 - (struct NSDirectionalEdgeInsets)decodeDirectionalEdgeInsetsForKey:(id)arg1;
@@ -23,5 +25,13 @@
 - (void)encodeCGSize:(struct CGSize)arg1 forKey:(id)arg2;
 - (void)encodeCGVector:(struct CGVector)arg1 forKey:(id)arg2;
 - (void)encodeCGPoint:(struct CGPoint)arg1 forKey:(id)arg2;
+- (void)_initializeClassSwapperWithCurrentDecodingViewControllerIfNeeded:(id)arg1;
+- (id)_decodeObjectsAndTrackChildViewControllerIndexWithParent:(id)arg1 forKey:(id)arg2;
+- (id)_decodeObjectsWithSourceSegueTemplate:(id)arg1 creator:(CDUnknownBlockType)arg2 sender:(id)arg3 forKey:(id)arg4;
+- (void)_createStoryboardDecodingContextIfNeeded;
+@property(readonly, nonatomic) UIStoryboardDecodingContext *_storyboardDecodingContext;
+- (id)_ui_decodeTextAttributesForKey:(id)arg1;
+- (void)_ui_encodeTextAttributes:(id)arg1 forKey:(id)arg2;
+- (_Bool)_ui_isInterprocess;
 @end
 

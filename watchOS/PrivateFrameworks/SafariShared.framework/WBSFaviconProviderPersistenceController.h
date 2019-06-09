@@ -42,6 +42,7 @@
 - (void)_iconForIconUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)iconForIconURLString:(id)arg1 includingPrivateData:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)iconForPageURLString:(id)arg1 includingPrivateData:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)removeIconFilesNotReferencedInDatabaseWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeIconsWithURLStringsNotFoundIn:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAllIconsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removeIconWithPageURLString:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

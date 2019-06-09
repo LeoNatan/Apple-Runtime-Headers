@@ -19,7 +19,7 @@
 + (id)stateWithThread:(id)arg1 threadStateIndex:(unsigned long long)arg2;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_b1ad6422 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;
-@property(readonly) unsigned long long threadStateIndex; // @synthesize threadStateIndex=_threadStateIndex;
+@property unsigned long long threadStateIndex; // @synthesize threadStateIndex=_threadStateIndex;
 @property(readonly) SAThread *thread; // @synthesize thread=_thread;
 - (void).cxx_destruct;
 - (id)debugDescriptionWithDispatchQueue:(id)arg1;

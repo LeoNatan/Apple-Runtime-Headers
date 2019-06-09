@@ -25,6 +25,10 @@
 @property(nonatomic) __weak id <NCEBulletinsLiaisonPostDelegate> postDelegate; // @synthesize postDelegate=_postDelegate;
 @property(nonatomic) __weak id <NCEBulletinsLiaisonTriggerDelegate> triggerDelegate; // @synthesize triggerDelegate=_triggerDelegate;
 - (void).cxx_destruct;
+- (id)celebrationNameForNotificationName:(struct __CFString *)arg1;
+- (struct __CFString *)darwinNotificationNameForCelebrationName:(id)arg1;
+- (void)registerForDarwinNotifications;
+- (void)handleBulletinTriggerRequestForCelebrationName:(id)arg1;
 - (void)handleBulletinTriggeredForCelebrationName:(id)arg1;
 - (void)dismissAllCelebrationsNames;
 - (void)postCelebrationName:(id)arg1;

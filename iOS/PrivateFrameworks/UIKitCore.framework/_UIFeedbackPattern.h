@@ -9,14 +9,14 @@
 #import <UIKitCore/_UIFeedbackContinuousPlayable-Protocol.h>
 #import <UIKitCore/_UIFeedbackDiscretePlayable-Protocol.h>
 
-@class NSArray, NSString, NSTimer;
+@class NSMutableArray, NSString, NSTimer;
 
 @interface _UIFeedbackPattern : _UIFeedback <_UIFeedbackDiscretePlayable, _UIFeedbackContinuousPlayable>
 {
     _Bool _highPriority;
     _Bool _isRepeating;
     double _duration;
-    NSArray *_feedbacks;
+    NSMutableArray *_feedbacks;
     NSTimer *_repeatTimer;
 }
 
@@ -26,7 +26,7 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSTimer *repeatTimer; // @synthesize repeatTimer=_repeatTimer;
 @property(readonly, nonatomic) _Bool isRepeating; // @synthesize isRepeating=_isRepeating;
-@property(retain, nonatomic) NSArray *feedbacks; // @synthesize feedbacks=_feedbacks;
+@property(retain, nonatomic) NSMutableArray *feedbacks; // @synthesize feedbacks=_feedbacks;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic, getter=isHighPriority) _Bool highPriority; // @synthesize highPriority=_highPriority;
 - (void).cxx_destruct;
@@ -38,7 +38,7 @@
 - (void)play;
 - (id)_allSystemSoundIDs;
 - (id)_allEventTypes;
-- (id)_allFeedbacks;
+- (id)_individualFeedbacks;
 - (unsigned long long)_effectivePlayableFeedbackTypes;
 - (void)addFeedback:(id)arg1 atTime:(double)arg2;
 - (id)_playableProtocol;

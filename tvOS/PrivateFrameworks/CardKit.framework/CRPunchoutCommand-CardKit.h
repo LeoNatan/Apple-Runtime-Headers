@@ -8,5 +8,6 @@
 
 @interface CRPunchoutCommand (CardKit)
 - (id)crk_backingPunchout;
+- (_Bool)handleForCardViewController:(id)arg1;
 @end
 

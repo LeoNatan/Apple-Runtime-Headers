@@ -8,7 +8,6 @@
 
 @class NSInputStream;
 
-__attribute__((visibility("hidden")))
 @interface _NSHTTPBodyStreamWrapper : NSObject
 {
     NSInputStream *bodyStream;
@@ -21,7 +20,6 @@ __attribute__((visibility("hidden")))
 - (void)setSpoolPath:(id)arg1;
 - (id)originalBodyStream;
 - (id)requestStreamForTransmission;
-- (void)finalize;
 - (void)dealloc;
 - (void)invalidate;
 - (id)initWithStream:(id)arg1;

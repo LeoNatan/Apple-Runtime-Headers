@@ -9,7 +9,6 @@
 #import <Notes/ICNFIMAPAccount-Protocol.h>
 
 @class ICNFIMAPConnectionPool, ICNFIMAPGateway, ICNFIMAPMailboxProxy, ICNFMCAuthScheme, NSArray, NSData, NSDictionary, NSLock, NSMapTable, NSMutableDictionary, NSOperationQueue, NSString, NSURL;
-@protocol ICNFIMAPOfflineCache;
 
 @interface ICNFIMAPAccountProxy : ICNFMCConnectionBasedAccountProxy <ICNFIMAPAccount>
 {
@@ -71,7 +70,6 @@
 - (id)IMAPMailboxForMailboxName:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (void)setServerPathPrefix:(id)arg1 permanently:(BOOL)arg2;
 - (id)serverPathPrefix;
-@property(readonly) id <ICNFIMAPOfflineCache> offlineCache;
 @property long long gmailCapabilitiesSupport;
 @property BOOL useIDLEIfAvailable;
 - (void)presentOverQuotaAlert;

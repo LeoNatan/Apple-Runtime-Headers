@@ -17,6 +17,10 @@
 }
 
 + (BOOL)supportsSecureCoding;
+- (id)description;
+@property(readonly, nonatomic) long long unitType;
+@property(readonly, nonatomic) float relativeToEnclosingRegionY;
+@property(readonly, nonatomic) float relativeToEnclosingRegionX;
 @property(readonly, nonatomic) long long cellY;
 @property(readonly, nonatomic) long long cellX;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -25,6 +29,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithRelativeToEnclosingRegionX:(float)arg1 andY:(float)arg2;
 - (id)initWithCellPositionX:(long long)arg1 andY:(long long)arg2;
 - (id)init;
 

@@ -22,6 +22,7 @@
     PHChangeRequestHelper *_changeRequestHelper;
 }
 
++ (id)existentObjectIDsUsingQuery:(id)arg1;
 + (id)objectIDsOrUUIDsFromPHObjects:(id)arg1;
 + (id)_offsetsFromSourceOIDs:(id)arg1 toManagedObjects:(id)arg2;
 @property(retain, nonatomic) PHChangeRequestHelper *changeRequestHelper; // @synthesize changeRequestHelper=_changeRequestHelper;

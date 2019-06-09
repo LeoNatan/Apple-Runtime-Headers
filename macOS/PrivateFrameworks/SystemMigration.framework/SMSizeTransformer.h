@@ -11,11 +11,11 @@
 @interface SMSizeTransformer : NSValueTransformer
 {
     SMSizeFormatter *sizeFormatter;
-    unsigned long long textAlignment;
+    long long textAlignment;
 }
 
 + (Class)transformedValueClass;
-@property unsigned long long textAlignment; // @synthesize textAlignment;
+@property long long textAlignment; // @synthesize textAlignment;
 @property(retain) SMSizeFormatter *sizeFormatter; // @synthesize sizeFormatter;
 - (void).cxx_destruct;
 - (id)transformedValue:(id)arg1;

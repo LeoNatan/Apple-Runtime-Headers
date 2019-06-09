@@ -23,7 +23,6 @@
 - (void).cxx_destruct;
 - (void)performInitialization;
 - (void)addConfigurationClass:(Class)arg1;
-- (unsigned long long)initializationTrigger;
 - (id)description;
 - (id)initWithClass:(Class)arg1 mainThread:(BOOL)arg2;
 

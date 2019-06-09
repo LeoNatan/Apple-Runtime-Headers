@@ -14,9 +14,11 @@
     BOOL _supportsBrightnessAdjustments;
     BOOL _allowsSystemTintColors;
     BOOL _allowsCustomTintColors;
+    BOOL _supportsMultipleAppearancesForEffects;
 }
 
 - (id)dictionaryForArchiving;
+@property(nonatomic) BOOL supportsMultipleAppearancesForEffects;
 @property(nonatomic) BOOL allowsCustomTintColors;
 @property(nonatomic) BOOL allowsSystemTintColors;
 @property(nonatomic) BOOL supportsBrightnessAdjustments;

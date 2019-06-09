@@ -67,6 +67,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)updateActionsViewBackgroundColor;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)updateActionsControllerHeightConstraint;
 - (void)didAddActionsViewToHierarchy;

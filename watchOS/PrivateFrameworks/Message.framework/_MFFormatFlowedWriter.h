@@ -19,12 +19,12 @@
 }
 
 + (id)newWithPlainTextDocument:(id)arg1 encoding:(unsigned long)arg2;
+- (void).cxx_destruct;
 - (_Bool)addedTrailingSpaces;
 - (id)quotedString;
 - (id)outputString;
 - (void)_outputQuotedParagraph:(id)arg1 range:(struct _NSRange)arg2 withQuoteLevel:(unsigned int)arg3;
 - (unsigned int)_findLineBreakInRange:(struct _NSRange)arg1 maxCharWidthCount:(unsigned int)arg2 endIsURL:(_Bool)arg3;
-- (void)dealloc;
 
 @end
 

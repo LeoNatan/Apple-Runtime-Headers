@@ -11,6 +11,7 @@
 @class NSString;
 @protocol OS_dispatch_data, TSUReadChannel;
 
+__attribute__((visibility("hidden")))
 @interface TSUReadChannelInputStreamAdapter : NSObject <SFUInputStream>
 {
     id <TSUReadChannel> _readChannel;

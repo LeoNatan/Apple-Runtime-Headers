@@ -8,6 +8,7 @@
 
 @class NSString, UIColor, _UIBackdropView, _UINavigationBarAppearanceStorage;
 
+__attribute__((visibility("hidden")))
 @interface SKUITabBarBackgroundView : UIView
 {
     _UIBackdropView *_backdropView;

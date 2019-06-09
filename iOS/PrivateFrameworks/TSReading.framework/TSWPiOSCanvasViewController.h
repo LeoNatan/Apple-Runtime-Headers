@@ -7,11 +7,13 @@
 #import <TSReading/TSDiOSCanvasViewController.h>
 
 #import <TSReading/UIDragInteractionDelegate-Protocol.h>
+#import <TSReading/UITextInteractionDelegate-Protocol.h>
+#import <TSReading/UITextLinkInteraction-Protocol.h>
 #import <TSReading/_UINonEditableTextSelectionForceGestureDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, TSUColor, TSWPHardPressGestureRecognizer, TSWPInteractiveCanvasController, TSWPLongPressGestureRecognizer, TSWPSwipeGestureRecognizer, TSWPTwoPartAction, UIGestureRecognizer, UITapGestureRecognizer;
+@class NSMutableArray, NSString, TSUColor, TSWPHardPressGestureRecognizer, TSWPHyperlinkField, TSWPInteractiveCanvasController, TSWPLongPressGestureRecognizer, TSWPRep, TSWPSwipeGestureRecognizer, TSWPTwoPartAction, UIGestureRecognizer, UITapGestureRecognizer, UITextInteraction;
 
-@interface TSWPiOSCanvasViewController : TSDiOSCanvasViewController <_UINonEditableTextSelectionForceGestureDelegate, UIDragInteractionDelegate>
+@interface TSWPiOSCanvasViewController : TSDiOSCanvasViewController <UITextInteractionDelegate, UITextLinkInteraction, UIDragInteractionDelegate, _UINonEditableTextSelectionForceGestureDelegate>
 {
     UIGestureRecognizer *_hyperlinkGestureRecognizer;
     TSWPSwipeGestureRecognizer *_rightSwipeGestureRecognizer;
@@ -19,16 +21,40 @@
     TSWPLongPressGestureRecognizer *_longPressGestureRecognizer;
     TSWPTwoPartAction *_delayedTapAction;
     NSMutableArray *_gestureRecognizers;
+    _Bool _isInteractingWithHyperLink;
+    _Bool _linkInteractionIsLongPress;
+    TSWPHyperlinkField *_interactionHyperlinkField;
+    TSWPRep *_interactionHyperLinkRep;
     UITapGestureRecognizer *_secondarySingleTapGestureRecognizer;
     TSWPHardPressGestureRecognizer *_hardPressGesture;
+    UITextInteraction *_textInteraction;
 }
 
+@property(retain, nonatomic) UITextInteraction *textInteraction; // @synthesize textInteraction=_textInteraction;
 @property(retain, nonatomic) TSWPHardPressGestureRecognizer *hardPressGesture; // @synthesize hardPressGesture=_hardPressGesture;
 @property(readonly, nonatomic) TSWPLongPressGestureRecognizer *longPressGestureRecognizer; // @synthesize longPressGestureRecognizer=_longPressGestureRecognizer;
 @property(readonly, nonatomic) UIGestureRecognizer *hyperlinkGestureRecognizer; // @synthesize hyperlinkGestureRecognizer=_hyperlinkGestureRecognizer;
 @property(readonly, nonatomic) UITapGestureRecognizer *secondarySingleTapGestureRecognizer; // @synthesize secondarySingleTapGestureRecognizer=_secondarySingleTapGestureRecognizer;
 @property(readonly, nonatomic) TSWPSwipeGestureRecognizer *textRightSwipeGestureRecognizer; // @synthesize textRightSwipeGestureRecognizer=_rightSwipeGestureRecognizer;
 @property(readonly, nonatomic) TSWPSwipeGestureRecognizer *textLeftSwipeGestureRecognizer; // @synthesize textLeftSwipeGestureRecognizer=_leftSwipeGestureRecognizer;
+- (_Bool)willInteractWithLinkAtPoint:(struct CGPoint)arg1;
+- (void)startLongInteractionWithLinkAtPoint:(struct CGPoint)arg1;
+- (void)cancelInteractionWithLink;
+- (void)validateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
+- (void)updateInteractionWithLinkAtPoint:(struct CGPoint)arg1;
+- (void)startInteractionWithLinkAtPoint:(struct CGPoint)arg1;
+- (_Bool)isInteractingWithLink;
+- (void)tapLinkAtPoint:(struct CGPoint)arg1;
+- (_Bool)mightHaveLinks;
+- (void)_resetLinkInteraction;
+- (void)interactionDidEnd:(id)arg1;
+- (void)interactionWillBegin:(id)arg1;
+- (_Bool)interactionShouldBegin:(id)arg1 atPoint:(struct CGPoint)arg2;
+- (_Bool)interactionShouldSuppressSystemUI:(id)arg1;
+- (_Bool)interactionShouldBegin:(id)arg1;
+- (id)_hyperLinkFieldAtPoint:(struct CGPoint)arg1;
+- (id)_hitRepAtPoint:(struct CGPoint)arg1;
+- (_Bool)_shouldAllowInteractionAtPoint:(struct CGPoint)arg1;
 - (id)p_newSwipeGestureRecognizerWithDirection:(int)arg1 numberOfTouchesRequired:(unsigned int)arg2;
 - (void)p_addSwipeGestureRecognizer:(id)arg1 failRequiredFor:(id)arg2;
 @property(readonly) TSWPInteractiveCanvasController *interactiveCanvasController;
@@ -66,6 +92,8 @@
 - (void)setUpGestureRecognizers;
 - (void)dealloc;
 - (void)teardown;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 
 // Remaining properties

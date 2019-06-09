@@ -23,10 +23,15 @@
     struct _NSRange _rightDocumentContextCorrespondingToCandidatesRange;
 }
 
++ (void)loadMobileAssetContentsForInputModes:(id)arg1 assetContentTypes:(id)arg2 onQueue:(id)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 + (void)loadMobileAssetContentsForInputModes:(id)arg1 assetContentTypes:(id)arg2 inMecabra:(struct __Mecabra *)arg3 onQueue:(id)arg4;
++ (void)loadMobileAssetContentsForInputModes:(id)arg1 onQueue:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 + (void)loadMobileAssetContentsForInputModes:(id)arg1 inMecabra:(struct __Mecabra *)arg2 onQueue:(id)arg3;
 + (void)removeMobileAssetListener:(id)arg1;
++ (id)loadMobileAssetContentsWhenMobileAssetChangesForCHRecognizer:(id)arg1 inputModes:(id)arg2 onQueue:(id)arg3 oldMobileAssetChangeListener:(id)arg4;
 + (id)loadMobileAssetContentsWhenMobileAssetChangesForMecabra:(struct __Mecabra *)arg1 inputModes:(id)arg2 onQueue:(id)arg3 oldMobileAssetChangeListener:(id)arg4;
++ (int)maxNumberOfDrawSamples;
++ (id)baseLayout;
 @property(retain, nonatomic) NSMutableArray *candidatesToDelete; // @synthesize candidatesToDelete=_candidatesToDelete;
 @property(nonatomic) struct _NSRange rightDocumentContextCorrespondingToCandidatesRange; // @synthesize rightDocumentContextCorrespondingToCandidatesRange=_rightDocumentContextCorrespondingToCandidatesRange;
 @property(nonatomic) struct _NSRange leftDocumentContextCorrespondingToCandidatesRange; // @synthesize leftDocumentContextCorrespondingToCandidatesRange=_leftDocumentContextCorrespondingToCandidatesRange;
@@ -54,8 +59,10 @@
 - (void)setShuangpinType:(int)arg1;
 - (void)setAppContext:(id)arg1;
 - (void)addStringCandidateToContextInternal:(id)arg1;
+- (void)setKeyboardLayout:(id)arg1;
 - (void)setGeometryModel:(void *)arg1 modelData:(struct __CFArray *)arg2;
 - (_Bool)predictionAnalyzeWithOptions:(unsigned long long)arg1 maxNumberOfCandidates:(unsigned long long)arg2;
+- (_Bool)analyzeInput:(id)arg1 options:(unsigned long long)arg2;
 - (_Bool)analyzeString:(id)arg1 options:(unsigned long long)arg2;
 @property(readonly, nonatomic) struct __Mecabra *mecabra;
 - (id)initWithMecabraEngine:(struct __Mecabra *)arg1 language:(int)arg2;

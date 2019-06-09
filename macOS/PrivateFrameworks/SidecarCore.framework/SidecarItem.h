@@ -20,6 +20,8 @@
 - (id)debugDescription;
 - (id)description;
 - (_Bool)conformsToType:(id)arg1;
+@property(readonly, copy) id objectValue;
+- (id)initWithObject:(id)arg1 type:(id)arg2;
 - (id)initWithData:(id)arg1 type:(id)arg2;
 
 @end

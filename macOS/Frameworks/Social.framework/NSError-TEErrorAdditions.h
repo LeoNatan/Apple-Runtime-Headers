@@ -15,6 +15,12 @@
 + (id)APILimitErrorFromErrorCode:(long long)arg1;
 + (id)APIParameterErrorFromErrorCode:(long long)arg1;
 + (id)errorFromTencentWeiboAPIResponseErrorWithType:(long long)arg1 code:(long long)arg2;
++ (id)SLYoukuAuthErrorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)SLTudouAuthErrorWithCode:(int)arg1 userInfo:(id)arg2;
+- (id)encodeableError;
+- (id)encodeableError;
+- (id)encodeableError;
+- (id)encodeableError;
 - (id)encodeableError;
 @end
 

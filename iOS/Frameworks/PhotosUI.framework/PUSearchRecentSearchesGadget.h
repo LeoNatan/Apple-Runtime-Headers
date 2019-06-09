@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 - (void).cxx_destruct;
 - (void)resetLineSeparatorInsets;
-- (void)userDidSelectAccessoryButton:(id)arg1;
+- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
 - (struct NSObject *)contentViewController;
 @property(readonly, nonatomic) NSString *localizedTitle;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -51,8 +51,8 @@ __attribute__((visibility("hidden")))
 - (id)init;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

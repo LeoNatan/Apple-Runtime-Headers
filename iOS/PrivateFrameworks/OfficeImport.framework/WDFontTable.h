@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mFontsInOrderOfInsertion;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)fontAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfFont:(id)arg1;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)fontWithName:(id)arg1;
 - (void)clear;
 - (unsigned long long)count;
-- (void)dealloc;
 - (id)init;
 
 @end

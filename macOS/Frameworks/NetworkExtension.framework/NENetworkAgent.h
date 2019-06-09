@@ -21,6 +21,7 @@
     NSUUID *agentUUID;
     NSString *agentDescription;
     NSUUID *_internalUUID;
+    NSString *_name;
     CDUnknownBlockType _internalStartHandler;
     NSString *_configurationName;
 }
@@ -31,6 +32,7 @@
 @property int lastStatus; // @synthesize lastStatus=_lastStatus;
 @property(copy) NSString *configurationName; // @synthesize configurationName=_configurationName;
 @property(copy) CDUnknownBlockType internalStartHandler; // @synthesize internalStartHandler=_internalStartHandler;
+@property(retain) NSString *name; // @synthesize name=_name;
 @property int internalSessionType; // @synthesize internalSessionType=_internalSessionType;
 @property(copy) NSUUID *internalUUID; // @synthesize internalUUID=_internalUUID;
 @property(nonatomic, getter=isVoluntary) BOOL voluntary; // @synthesize voluntary;
@@ -45,7 +47,8 @@
 @property(readonly) int sessionType;
 @property(readonly, copy) NSUUID *configurationUUID;
 - (id)copyAgentData;
-- (id)initWithConfigUUID:(id)arg1 sessionType:(int)arg2;
+- (BOOL)matchesFileHandle:(id)arg1;
+- (id)initWithConfigUUID:(id)arg1 sessionType:(int)arg2 name:(id)arg3;
 
 // Remaining properties
 @property(nonatomic, getter=isNetworkProvider) BOOL networkProvider;
@@ -53,6 +56,8 @@
 @property(nonatomic) BOOL requiresAssert;
 @property(nonatomic, getter=isSpecificUseOnly) BOOL specificUseOnly;
 @property(nonatomic) BOOL supportsBrowseRequests;
+@property(nonatomic) BOOL supportsResolveRequests;
+@property(nonatomic) BOOL updateClientsImmediately;
 
 @end
 

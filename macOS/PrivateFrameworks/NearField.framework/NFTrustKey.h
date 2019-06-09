@@ -6,7 +6,7 @@
 
 #import <NearField/NFTrustObject.h>
 
-@class NSArray, NSNumber, NSString;
+@class NSArray, NSData, NSNumber, NSString;
 
 @interface NFTrustKey : NFTrustObject
 {
@@ -16,10 +16,12 @@
     NSNumber *_counterLimit;
     NSNumber *_counterValue;
     NSArray *_localValidations;
+    NSData *_publicKey;
 }
 
 + (id)keyWithIdentifier:(id)arg1;
 + (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) NSData *publicKey; // @synthesize publicKey=_publicKey;
 @property(retain, nonatomic) NSArray *localValidations; // @synthesize localValidations=_localValidations;
 @property(retain, nonatomic) NSNumber *counterValue; // @synthesize counterValue=_counterValue;
 @property(retain, nonatomic) NSNumber *counterLimit; // @synthesize counterLimit=_counterLimit;

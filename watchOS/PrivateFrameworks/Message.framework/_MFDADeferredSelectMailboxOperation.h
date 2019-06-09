@@ -4,23 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Message/MFOfflineCacheOperation.h>
-
-#import <Message/MFDAOfflineCacheOperation-Protocol.h>
+#import <Message/_MFOfflineCacheOperation.h>
 
 @class NSString;
 
-@interface _MFDADeferredSelectMailboxOperation : MFOfflineCacheOperation <MFDAOfflineCacheOperation>
+@interface _MFDADeferredSelectMailboxOperation : _MFOfflineCacheOperation
 {
     NSString *_folderID;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)description;
-- (_Bool)performWithAccount:(id)arg1 offlineCache:(id)arg2;
+- (_Bool)translateToLocalActionWithConnection:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithMailbox:(id)arg1;
 
 @end
 

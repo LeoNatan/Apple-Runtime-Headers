@@ -19,6 +19,7 @@
 @property(copy, nonatomic) UIApplicationShortcutIcon *icon; // @dynamic icon;
 @property(copy, nonatomic) NSString *localizedSubtitle; // @dynamic localizedSubtitle;
 @property(copy, nonatomic) NSString *localizedTitle; // @dynamic localizedTitle;
+@property(copy, nonatomic) id targetContentIdentifier;
 @property(copy, nonatomic) NSString *type; // @dynamic type;
 @property(copy, nonatomic) NSDictionary *userInfo; // @dynamic userInfo;
 

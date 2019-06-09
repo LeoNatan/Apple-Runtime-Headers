@@ -8,30 +8,27 @@
 
 #import <NewsCore/FCPaidAccessCheckerType-Protocol.h>
 
-@class FCPurchaseController;
-@protocol FCBundleSubscriptionManagerType, FCCoreConfigurationManager;
+@protocol FCBundleSubscriptionProviderType, FCCoreConfigurationManager, FCPurchaseProviderType;
 
 @interface FCPaidAccessChecker : NSObject <FCPaidAccessCheckerType>
 {
-    FCPurchaseController *_purchaseController;
-    id <FCBundleSubscriptionManagerType> _bundleSubscriptionManager;
+    id <FCPurchaseProviderType> _purchaseProvider;
+    id <FCBundleSubscriptionProviderType> _bundleSubscriptionProvider;
     id <FCCoreConfigurationManager> _configurationManager;
 }
 
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
-@property(readonly, nonatomic) id <FCBundleSubscriptionManagerType> bundleSubscriptionManager; // @synthesize bundleSubscriptionManager=_bundleSubscriptionManager;
-@property(readonly, nonatomic) FCPurchaseController *purchaseController; // @synthesize purchaseController=_purchaseController;
+@property(readonly, nonatomic) id <FCBundleSubscriptionProviderType> bundleSubscriptionProvider; // @synthesize bundleSubscriptionProvider=_bundleSubscriptionProvider;
+@property(readonly, nonatomic) id <FCPurchaseProviderType> purchaseProvider; // @synthesize purchaseProvider=_purchaseProvider;
 - (void).cxx_destruct;
 - (_Bool)_canGetBundleSubscriptionToChannel:(id)arg1;
 - (_Bool)_canGetALaCarteSubscriptionToChannel:(id)arg1;
-- (_Bool)_hasBundleSubscriptionToChannelID:(id)arg1;
-- (_Bool)_hasALaCarteSubscriptionToChannelID:(id)arg1;
 - (void)prepareForUseWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)isPreparedForUse;
+- (_Bool)canGetBundleSubscriptionToChannel:(id)arg1;
 - (_Bool)canGetSubscriptionToChannel:(id)arg1;
 - (_Bool)canGetAccessToItemPaid:(_Bool)arg1 bundlePaid:(_Bool)arg2 channel:(id)arg3;
-- (_Bool)hasAccessToItemPaid:(_Bool)arg1 bundlePaid:(_Bool)arg2 channelID:(id)arg3;
-- (id)initWithPurchaseController:(id)arg1 bundleSubscriptionManager:(id)arg2 configurationManager:(id)arg3;
+- (id)initWithPurchaseProvider:(id)arg1 bundleSubscriptionProvider:(id)arg2 configurationManager:(id)arg3;
 
 @end
 

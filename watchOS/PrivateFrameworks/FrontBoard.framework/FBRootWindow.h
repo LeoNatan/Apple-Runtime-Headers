@@ -13,7 +13,6 @@
 @interface FBRootWindow : _UIRootWindow <FBSceneTransformTarget>
 {
     UIView *_sceneContainerView;
-    UIView *_systemGestureView;
     NSHashTable *_transforms;
     CALayer *_bezelLayer;
     CALayer *_maskLayer;
@@ -23,11 +22,9 @@
 - (void).cxx_destruct;
 - (void)transformDidInvalidate:(id)arg1;
 - (void)transformDidUpdate:(id)arg1;
-- (id)_systemGestureView;
 - (void)_updateTransforms;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (id)_focusResponder;
 - (_Bool)_canBecomeKeyWindow;
 - (_Bool)_shouldPrepareScreenForWindow;
 - (_Bool)_appearsInLoupe;

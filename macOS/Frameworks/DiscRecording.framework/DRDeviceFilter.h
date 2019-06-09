@@ -9,8 +9,6 @@
 #import <DiscRecording/NSCoding-Protocol.h>
 #import <DiscRecording/NSCopying-Protocol.h>
 
-@protocol DRDeviceFilterDelegate;
-
 @interface DRDeviceFilter : NSObject <NSCopying, NSCoding>
 {
     id _delegate;
@@ -20,7 +18,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(nonatomic) id <DRDeviceFilterDelegate> delegate;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 - (id)bestDeviceFromAvailableDevices:(id)arg1;
 - (BOOL)deviceIsSuitable:(id)arg1;
 

@@ -14,11 +14,13 @@
 {
 }
 
+- (_Bool)_canShowWhileLocked;
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)viewDidAppear:(_Bool)arg1;
-@property(retain) SearchUIConfirmationHUDView *view; // @dynamic view;
+@property(retain, nonatomic) SearchUIConfirmationHUDView *view; // @dynamic view;
 - (void)setTitle:(id)arg1;
+- (long long)preferredUserInterfaceStyle;
 - (id)init;
 
 // Remaining properties

@@ -22,7 +22,7 @@
 + (id)viewServiceBundleID;
 + (unsigned long long)cachedStateForPolicy:(long long)arg1;
 + (unsigned long long)_currentStateForMechanisms:(id)arg1;
-+ (unsigned long long)currentStateForAccessControl:(struct OpaqueSecAccessControlRef *)arg1;
++ (unsigned long long)currentStateForAccessControl:(struct __SecAccessControl *)arg1;
 + (unsigned long long)currentStateForPolicy:(long long)arg1;
 + (void)resetSharedRootContextWithCompletion:(CDUnknownBlockType)arg1;
 + (void)preheatAuthenticator;

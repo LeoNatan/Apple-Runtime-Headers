@@ -32,7 +32,6 @@
 @property(readonly, nonatomic) unsigned long long assetCount;
 - (void)cancelLoading;
 - (id)_inspectorLoader;
-- (void)finalize;
 - (void)dealloc;
 - (void)_willDeallocOrFinalize;
 - (struct OpaqueFigAsset *)_copyFigAssetForURL:(id)arg1 options:(id)arg2 figErr:(int *)arg3;

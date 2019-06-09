@@ -11,6 +11,7 @@
 
 @protocol INStartAudioCallIntentExport <NSObject, JSExport>
 @property(nonatomic, setter=setTTYType:) long long ttyType;
+@property(nonatomic) long long recordTypeForRedialing;
 @property(copy, nonatomic) NSArray *contacts;
 @property(nonatomic) long long preferredCallProvider;
 @property(nonatomic) long long destinationType;

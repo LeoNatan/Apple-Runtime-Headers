@@ -16,23 +16,23 @@
     NSImageView *_icon;
     int _rowViewType;
     NSMutableDictionary *_appDict;
-    id <MMMobileDocumentsTableRowDelegate> _delegate;
     NSLayoutConstraint *_leadingWidth;
     NSTextField *_progressField;
     NSProgressIndicator *_spinner;
     NSLayoutConstraint *_progressLargeServiceSpacer;
+    id <MMMobileDocumentsTableRowDelegate> _delegate;
 }
 
 + (id)createFromNib;
-@property int rowViewType; // @synthesize rowViewType=_rowViewType;
-@property id <MMMobileDocumentsTableRowDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) int rowViewType; // @synthesize rowViewType=_rowViewType;
+@property(nonatomic) id <MMMobileDocumentsTableRowDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)setRowEnabled:(BOOL)arg1;
 - (void)enableServicePressed:(id)arg1;
 - (void)setEnabledState:(BOOL)arg1;
 - (void)setProgressString:(id)arg1;
 - (void)updateImageAndName;
 - (void)setAppDict:(id)arg1;
-- (void)dealloc;
 
 @end
 

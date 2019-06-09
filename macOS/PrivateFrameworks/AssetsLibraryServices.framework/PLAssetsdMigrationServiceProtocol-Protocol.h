@@ -9,6 +9,6 @@
 @protocol PLAssetsdMigrationServiceProtocol <NSObject>
 - (void)moveiPhotoLibraryMediaWithReply:(void (^)(BOOL, NSError *))arg1;
 - (void)dataMigrationWillFinishWithReply:(void (^)(void))arg1;
-- (void)cleanupModelForDataMigrationWithReply:(void (^)(void))arg1;
+- (void)cleanupModelForDataMigrationForRestoreType:(long long)arg1 reply:(void (^)(void))arg2;
 @end
 

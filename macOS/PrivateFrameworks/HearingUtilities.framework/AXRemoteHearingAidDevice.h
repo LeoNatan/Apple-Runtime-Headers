@@ -36,6 +36,7 @@
     short _leftMixedVolumeSteps;
     short _rightMixedVolumeSteps;
     int availableEars;
+    unsigned long long _deviceType;
     double _rightMicrophoneVolume;
     double _leftMicrophoneVolume;
     double _rightStreamVolume;
@@ -67,6 +68,7 @@
     AXHearingAidMode *_leftSelectedStreamingProgram;
     AXHearingAidMode *_rightSelectedStreamingProgram;
     NSString *_deviceUUID;
+    unsigned long long _requiredProperties;
     unsigned long long _loadedProperties;
     unsigned long long _pendingPropertyWrites;
     unsigned long long _leftAvailableProperties;
@@ -77,6 +79,7 @@
 @property(nonatomic) unsigned long long leftAvailableProperties; // @synthesize leftAvailableProperties=_leftAvailableProperties;
 @property(nonatomic) unsigned long long pendingPropertyWrites; // @synthesize pendingPropertyWrites=_pendingPropertyWrites;
 @property(nonatomic) unsigned long long loadedProperties; // @synthesize loadedProperties=_loadedProperties;
+@property(nonatomic) unsigned long long requiredProperties; // @synthesize requiredProperties=_requiredProperties;
 @property(retain, nonatomic) NSString *deviceUUID; // @synthesize deviceUUID=_deviceUUID;
 @property(retain, nonatomic) AXHearingAidMode *rightSelectedStreamingProgram; // @synthesize rightSelectedStreamingProgram=_rightSelectedStreamingProgram;
 @property(retain, nonatomic) AXHearingAidMode *leftSelectedStreamingProgram; // @synthesize leftSelectedStreamingProgram=_leftSelectedStreamingProgram;
@@ -130,8 +133,10 @@
 @property(nonatomic) double leftMicrophoneVolume; // @synthesize leftMicrophoneVolume=_leftMicrophoneVolume;
 @property(nonatomic) double rightMicrophoneVolume; // @synthesize rightMicrophoneVolume=_rightMicrophoneVolume;
 @property(nonatomic) BOOL keepInSync; // @synthesize keepInSync=_keepInSync;
+@property(nonatomic) unsigned long long deviceType; // @synthesize deviceType=_deviceType;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (double)combinedVolumeForProperty:(unsigned long long)arg1;
 - (id)valueForProperty:(unsigned long long)arg1;
 - (id)_valueForProperty:(unsigned long long)arg1;
 - (void)setValue:(id)arg1 forProperty:(unsigned long long)arg2;

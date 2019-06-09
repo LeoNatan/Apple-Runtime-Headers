@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)updateFramerate;
 @property(readonly, nonatomic, getter=isTrackingHeading) BOOL trackingHeading;
 - (void)dealloc;
-- (id)init;
+- (id)initWithMapDataAccess:(struct MapDataAccess *)arg1 animationRunner:(struct AnimationRunner *)arg2 runLoopController:(struct RunLoopController *)arg3 cameraDelegate:(id)arg4;
 
 @end
 

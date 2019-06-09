@@ -21,11 +21,12 @@ __attribute__((visibility("hidden")))
 
 + (Class)detectorClassForConfigurationOptions:(id)arg1 error:(id *)arg2;
 + (struct _Geometry2D_point2D_)_computeCentroidUsingPoints:(const struct _Geometry2D_point2D_ *)arg1 indicies:(const int *)arg2 numberOfIndicies:(int)arg3;
++ (const struct _LandmarkDetector_faceMeshParts_ *)landmarksMeshPartsForConstellation:(unsigned long long)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)detectBlinkOnFaceImage:(const struct vImage_Buffer *)arg1 faceObservation:(id)arg2 lumaRec2DInImageCoordinates:(struct _Geometry2D_rect2D_ *)arg3 landmarks:(const void *)arg4 options:(id)arg5 warningRecorder:(id)arg6 error:(id *)arg7;
 - (id)computeLandmarksScoreOnImage:(const struct vImage_Buffer *)arg1 withFaceBoundingBox:(const struct _Geometry2D_rect2D_ *)arg2 andLandmarks:(const void *)arg3 error:(id *)arg4;
-- (struct __CVBuffer *)createLumaPixelBufferFrom:(id)arg1 scaleToSize:(struct CGSize)arg2 forFaceBBox:(struct _Geometry2D_rect2D_)arg3 initializeVImage:(struct vImage_Buffer *)arg4 initializeRect2D:(struct _Geometry2D_rect2D_ *)arg5 initializeIgnoreCropAndScaleFlag:(_Bool *)arg6 initializeLumaScaleFromOriginal:(float *)arg7 options:(id)arg8 error:(id *)arg9;
+- (struct __CVBuffer *)createLumaPixelBufferFrom:(id)arg1 forFaceBBox:(struct _Geometry2D_rect2D_)arg2 initializeVImage:(struct vImage_Buffer *)arg3 initializeRect2D:(struct _Geometry2D_rect2D_ *)arg4 initializeIgnoreCropAndScaleFlag:(_Bool *)arg5 initializeLumaScaleFromOriginal:(float *)arg6 options:(id)arg7 error:(id *)arg8;
 - (void)dealloc;
 - (_Bool)completeInitializationAndReturnError:(id *)arg1;
 @property(readonly) void *faceAttributesPupilRefiner;

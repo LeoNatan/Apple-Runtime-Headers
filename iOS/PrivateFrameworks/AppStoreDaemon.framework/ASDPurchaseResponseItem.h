@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) _Bool cancelsPurchaseBatch; // @synthesize cancelsPurchaseBatch=_cancelsPurchaseBatch;
 - (void).cxx_destruct;
 - (void)_setTransactionIDs:(id)arg1;
+- (void)_setSuccess:(_Bool)arg1;
 - (void)_setResponseMetrics:(id)arg1;
 - (void)_setPurchase:(id)arg1;
 - (void)_setError:(id)arg1;

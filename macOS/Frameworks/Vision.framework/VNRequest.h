@@ -10,27 +10,28 @@
 #import <Vision/VNSequencedRequestSupporting-Protocol.h>
 #import <Vision/VNWarningRecorder-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, VNProcessingDevice, VNRequestConfiguration, VNWarningRecorder;
+@class NSArray, NSDictionary, NSString, VNCanceller, VNProcessingDevice, VNRequestConfiguration, VNWarningRecorder;
 @protocol MTLDevice, OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface VNRequest : NSObject <VNWarningRecorder, VNSequencedRequestSupporting, NSCopying>
 {
-    NSString *_requestName;
     CDUnknownBlockType _completionHandler;
     VNRequestConfiguration *_configuration;
     NSDictionary *_options;
     VNWarningRecorder *_warningRecorder;
+    VNCanceller *_canceller;
     NSObject<OS_dispatch_semaphore> *_cancellationSemaphore;
     NSObject<OS_dispatch_queue> *_cancellationQueue;
     unsigned long long _revision;
     BOOL _dumpIntermediateImages;
-    BOOL _cancellationTriggered;
     NSArray *_results;
 }
 
 + (unsigned long long)compatibleRevisionForDependentRequestOfClass:(Class)arg1 beingPerformedByRevision:(unsigned long long)arg2;
 + (const CDStruct_d47b9615 *)dependentRequestCompatability;
 + (unsigned long long)resolvedRevisionForRevision:(unsigned long long)arg1;
++ (id)descriptionForPrivateRevision:(unsigned long long)arg1;
++ (BOOL)supportsPrivateRevision:(unsigned long long)arg1;
 + (const CDStruct_7d93034e *)revisionAvailability;
 + (unsigned long long)currentRevision;
 + (unsigned long long)defaultRevision;
@@ -48,32 +49,33 @@
 + (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 + (BOOL)defaultRequestInstanceWarmUpPerformer:(id)arg1 error:(id *)arg2;
 + (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
-+ (id)requestWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-+ (id)requestWithName:(id)arg1 options:(id)arg2;
 + (id)newConfigurationInstance;
 + (Class)configurationClass;
 + (void)recordDefaultOptionsInDictionary:(id)arg1;
 + (void)initialize;
 @property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
-@property(readonly, copy, nonatomic) NSString *requestName; // @synthesize requestName=_requestName;
-@property BOOL cancellationTriggered; // @synthesize cancellationTriggered=_cancellationTriggered;
 @property(retain) NSObject<OS_dispatch_semaphore> *cancellationSemaphore; // @synthesize cancellationSemaphore=_cancellationSemaphore;
 @property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, copy, nonatomic) NSArray *results; // @synthesize results=_results;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (unsigned long long)compatibleRevisionForDependentRequest:(id)arg1;
 - (unsigned long long)resolvedRevision;
 @property(nonatomic) unsigned long long revision; // @synthesize revision=_revision;
+- (BOOL)setPrivateRevision:(unsigned long long)arg1 error:(id *)arg2;
+- (void)_setResolvedRevision:(unsigned long long)arg1;
 - (BOOL)validateImageBuffer:(id)arg1 ofNonZeroWidth:(unsigned long long *)arg2 andHeight:(unsigned long long *)arg3 error:(id *)arg4;
 @property(nonatomic) unsigned long long detectionLevel;
 @property(copy, nonatomic) VNProcessingDevice *processingDevice;
 @property(nonatomic) unsigned long long metalContextPriority;
 @property(nonatomic) BOOL usesCPUOnly;
-@property(nonatomic) BOOL disallowsGPUUse;
 @property(retain, nonatomic) id <MTLDevice> preferredMetalContext;
 @property(nonatomic) BOOL dumpIntermediateImages;
 @property(nonatomic) unsigned long long modelFileBackingStore;
 @property(nonatomic) BOOL preferBackgroundProcessing;
+- (BOOL)cancellationTriggeredAndReturnError:(id *)arg1;
+@property(readonly) BOOL cancellationTriggered;
+- (id)cancellerAndReturnError:(id *)arg1;
 - (void)cancel;
 - (id)warnings;
 - (id)valueForWarning:(id)arg1;
@@ -97,7 +99,6 @@
 - (void)setValue:(id)arg1 forRequestOption:(id)arg2;
 - (id)valueForPrivateOption:(id)arg1;
 - (void)setValue:(id)arg1 forPrivateOption:(id)arg2;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)sequencedRequestPreviousObservationsKey;
@@ -111,7 +112,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

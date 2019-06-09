@@ -6,15 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class CALayer, CATransformLayer, NSArray, UIImage;
+#import <ChatKit/CKLayerDelegate-Protocol.h>
+
+@class CATransformLayer, CKBaseLayer, NSArray, UIImage;
 @protocol CKGradientReferenceView;
 
-@interface CKGradientView : UIView
+@interface CKGradientView : UIView <CKLayerDelegate>
 {
     UIView<CKGradientReferenceView> *_referenceView;
     NSArray *_colors;
     UIImage *_maskImage;
-    CALayer *_gradientLayer;
+    CKBaseLayer *_gradientLayer;
     CATransformLayer *_trackingLayer;
     struct CGRect _gradientFrame;
 }
@@ -22,7 +24,7 @@
 + (id)gradientViews;
 @property(retain, nonatomic) CATransformLayer *trackingLayer; // @synthesize trackingLayer=_trackingLayer;
 @property(nonatomic) struct CGRect gradientFrame; // @synthesize gradientFrame=_gradientFrame;
-@property(retain, nonatomic) CALayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
+@property(retain, nonatomic) CKBaseLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 @property(retain, nonatomic) UIImage *maskImage; // @synthesize maskImage=_maskImage;
 @property(retain, nonatomic) NSArray *colors; // @synthesize colors=_colors;
 @property(nonatomic) __weak UIView<CKGradientReferenceView> *referenceView; // @synthesize referenceView=_referenceView;
@@ -30,6 +32,7 @@
 @property(readonly, nonatomic) UIImage *gradient;
 - (void)updateGradientImage;
 - (void)updateAnimation;
+- (void)ckLayerDidBecomeVisible:(_Bool)arg1;
 - (void)_removeAllAnimations:(_Bool)arg1;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;

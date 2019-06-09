@@ -8,19 +8,16 @@
 
 #import <Safari/AuthenticationSessionNavigationHandling-Protocol.h>
 
-@class BrowserDocument, _ASWebAuthenticationSessionRequest;
-@protocol AuthenticationSessionDelegate;
+@class ASWebAuthenticationSessionRequest, BrowserDocument;
 
 __attribute__((visibility("hidden")))
 @interface AuthenticationSession : NSObject <AuthenticationSessionNavigationHandling>
 {
     BrowserDocument *_document;
-    _ASWebAuthenticationSessionRequest *_request;
-    id <AuthenticationSessionDelegate> _delegate;
+    ASWebAuthenticationSessionRequest *_request;
 }
 
-@property(nonatomic) __weak id <AuthenticationSessionDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) _ASWebAuthenticationSessionRequest *request; // @synthesize request=_request;
+@property(readonly, nonatomic) ASWebAuthenticationSessionRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
 - (void)_windowWillClose:(id)arg1;
 - (void)_tearDown;

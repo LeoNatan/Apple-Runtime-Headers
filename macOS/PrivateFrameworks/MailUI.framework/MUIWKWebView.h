@@ -6,7 +6,6 @@
 
 #import <WebKit/WKWebView.h>
 
-#import <MailUI/NSDraggingDestination-Protocol.h>
 #import <MailUI/NSDraggingSource-Protocol.h>
 #import <MailUI/QLPreviewPanelDataSource-Protocol.h>
 #import <MailUI/QLPreviewPanelDelegate-Protocol.h>
@@ -15,12 +14,12 @@
 
 @class MUISelectionAndClickInformation, MUIWKWebViewController, NSArray, NSDraggingSession, NSEvent, NSResponder, NSString;
 
-@interface MUIWKWebView : WKWebView <NSDraggingDestination, NSDraggingSource, QLPreviewPanelDataSource, QLPreviewPanelDelegate, QLSeamlessCloserDelegate, QLSeamlessOpenerDelegate>
+@interface MUIWKWebView : WKWebView <NSDraggingSource, QLPreviewPanelDataSource, QLPreviewPanelDelegate, QLSeamlessCloserDelegate, QLSeamlessOpenerDelegate>
 {
+    BOOL _acceptsScrollWheelChangedPhase;
     BOOL _isDragging;
     BOOL _isDraggingAttachments;
     MUIWKWebViewController *_controller;
-    double _draggingRestoreBoundary;
     NSDraggingSession *_dragSession;
     NSArray *_attachmentControllersToQuicklook;
     NSEvent *_attachmentMouseDownEvent;
@@ -33,7 +32,6 @@
 @property(retain, nonatomic) NSEvent *attachmentMouseDownEvent; // @synthesize attachmentMouseDownEvent=_attachmentMouseDownEvent;
 @property(retain, nonatomic) NSArray *attachmentControllersToQuicklook; // @synthesize attachmentControllersToQuicklook=_attachmentControllersToQuicklook;
 @property(retain, nonatomic) NSDraggingSession *dragSession; // @synthesize dragSession=_dragSession;
-@property(nonatomic) double draggingRestoreBoundary; // @synthesize draggingRestoreBoundary=_draggingRestoreBoundary;
 @property(nonatomic) BOOL isDraggingAttachments; // @synthesize isDraggingAttachments=_isDraggingAttachments;
 @property(nonatomic) BOOL isDragging; // @synthesize isDragging=_isDragging;
 @property(nonatomic) __weak MUIWKWebViewController *controller; // @synthesize controller=_controller;
@@ -51,6 +49,7 @@
 - (void)beginPreviewPanelControl:(id)arg1;
 - (BOOL)acceptsPreviewPanelControl:(id)arg1;
 - (void)keyDown:(id)arg1;
+- (BOOL)performKeyEquivalent:(id)arg1;
 - (void)quickLookWithEvent:(id)arg1;
 - (BOOL)quickLookAttachmentControllers:(id)arg1;
 - (void)_displayAlertForUndownloadedAttachments:(id)arg1;
@@ -59,10 +58,6 @@
 - (void)mouseMoved:(id)arg1;
 - (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
-- (void)draggingEnded:(id)arg1;
-- (unsigned long long)draggingUpdated:(id)arg1;
-- (unsigned long long)draggingEntered:(id)arg1;
-- (BOOL)performDragOperation:(id)arg1;
 - (void)mouseUp:(id)arg1;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
 - (BOOL)acceptsFirstMouse:(id)arg1;
@@ -82,6 +77,7 @@
 - (BOOL)canBecomeKeyView;
 - (id)defaultStringForToolTip:(long long)arg1 view:(id)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
+- (void)unhandledScrollWheel:(id)arg1;
 - (void)scrollWheel:(id)arg1;
 - (id)supplementalTargetForAction:(SEL)arg1 sender:(id)arg2;
 - (void)awakeFromNib;

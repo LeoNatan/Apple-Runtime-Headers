@@ -38,11 +38,10 @@ __attribute__((visibility("hidden")))
         unsigned int queryGenerationInitializationFailed:1;
         unsigned int persistentHistoryTracking:1;
         unsigned int hasAncillaryModels:1;
-        unsigned int createdAncillaryModelTables:1;
         unsigned int postRemoteNotify:1;
         unsigned int hasFileBackedFutures:1;
         unsigned int isInMemory:1;
-        unsigned int _RESERVED:16;
+        unsigned int _RESERVED:17;
     } _sqlCoreFlags;
     NSSQLiteConnection *_queryGenerationTrackingConnection;
     NSDictionary *_ancillaryModels;
@@ -55,6 +54,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)dropPersistentHistoryforPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
++ (BOOL)_rekeyPersistentStoreAtURL:(id)arg1 options:(id)arg2 withKey:(id)arg3 error:(id *)arg4;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id *)arg5;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)cachedModelForPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
@@ -64,10 +64,13 @@ __attribute__((visibility("hidden")))
 + (id)metadataForPersistentStoreWithURL:(id)arg1 error:(id *)arg2;
 + (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (BOOL)sanityCheckFileAtURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
++ (id)_databaseKeyFromValue:(id)arg1;
 + (id)databaseKeyFromOptionsDictionary:(id)arg1;
 + (Class)migrationManagerClass;
 + (Class)rowCacheClass;
 + (void)initialize;
++ (id)newStringFrom:(id)arg1 usingUnicodeTransforms:(unsigned long long)arg2;
++ (long long)bufferedAllocationsOverride;
 + (BOOL)useConcurrentFetching;
 + (BOOL)coloredLoggingDefault;
 + (int)debugDefault;
@@ -83,8 +86,6 @@ __attribute__((visibility("hidden")))
 - (void)_dropHistoryTables;
 - (id)dbKey;
 - (void)_setHasAncillaryModels:(BOOL)arg1;
-- (void)setCreatedAncillaryModelTables:(BOOL)arg1;
-- (BOOL)hasCreatedAncillaryModelTables;
 - (BOOL)hasAncillaryModels;
 - (id)ancillarySQLModels;
 @property(readonly, nonatomic) NSDictionary *ancillaryModels; // @synthesize ancillaryModels=_ancillaryModels;
@@ -94,15 +95,6 @@ __attribute__((visibility("hidden")))
 - (id)_allOrderKeysForDestination:(id)arg1 inRelationship:(id)arg2 error:(id *)arg3;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id *)arg4;
 - (id)processCloudKitMirroringRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
-- (void)_checkAndRepairCloudKitMetadata:(id)arg1;
-- (void)purgeCloudKitMetadataTables;
-- (void)updateMirroredRelationshipsByAddingRelationships:(id)arg1 updatingRelationships:(id)arg2 andDeletingRelationships:(id)arg3;
-- (id)fetchMirroredRelationshipsByCKRecordID:(id)arg1;
-- (id)fetchMirroredRelationshipsWithRecordNames:(id)arg1;
-- (void)evictResolvedRelationships:(id)arg1;
-- (id)processCloudMetadataRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
-- (id)fetchOutstandingImportOperations;
-- (void)writeImportOperation:(id)arg1;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property(readonly, copy) NSURL *presentedItemURL;
@@ -160,7 +152,7 @@ __attribute__((visibility("hidden")))
 - (id)reopenQueryGenerationWithIdentifier:(id)arg1 error:(id *)arg2;
 - (void)freeQueryGenerationWithIdentifier:(id)arg1;
 - (id)currentQueryGeneration;
-- (int)_registerNewQueryGenerationSnapshot:(id)arg1 pointerResponsibility:(unsigned long long)arg2;
+- (int)_registerNewQueryGenerationSnapshot:(id)arg1;
 - (BOOL)_isQueryGenerationSupportActive;
 - (BOOL)supportsGenerationalQuerying;
 - (void)_initializeQueryGenerationTrackingConnection;
@@ -185,9 +177,11 @@ __attribute__((visibility("hidden")))
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (BOOL)_prepareForExecuteRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (id)obtainPermanentIDsForObjects:(id)arg1 error:(id *)arg2;
+- (id)_obtainPermanentIDsForObjects:(id)arg1 withNotification:(id *)arg2 error:(id *)arg3;
 - (id)processFetchRequest:(id)arg1 inContext:(id)arg2;
 - (id)processBatchUpdate:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)processBatchDelete:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)processBatchInsert:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)processChangeRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)processRefreshObjects:(id)arg1 inContext:(id)arg2;
 - (id)processSaveChanges:(id)arg1 forContext:(id)arg2;
@@ -226,7 +220,7 @@ __attribute__((visibility("hidden")))
 - (struct _NSScalarObjectID *)newForeignKeyID:(long long)arg1 entity:(id)arg2;
 - (id)_newObjectIDForEntityDescription:(id)arg1 pk:(long long)arg2;
 - (struct _NSScalarObjectID *)newObjectIDForEntity:(id)arg1 pk:(long long)arg2;
-- (Class)newObjectIDFactoryForPersistentHistoryEntity:(id)arg1;
+- (Class)objectIDFactoryForPersistentHistoryEntity:(id)arg1;
 - (Class)objectIDFactoryForSQLEntity:(id)arg1;
 - (Class)objectIDFactoryForEntity:(id)arg1;
 - (Class)_objectIDClass;

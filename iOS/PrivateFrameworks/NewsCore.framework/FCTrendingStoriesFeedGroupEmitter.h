@@ -13,10 +13,8 @@
 @interface FCTrendingStoriesFeedGroupEmitter : NSObject <FCFeedGroupEmitting>
 {
     unsigned long long _minPrecedingTopicGroups;
-    long long _desiredArticlesCount;
 }
 
-@property(nonatomic) long long desiredArticlesCount; // @synthesize desiredArticlesCount=_desiredArticlesCount;
 @property(nonatomic) unsigned long long minPrecedingTopicGroups; // @synthesize minPrecedingTopicGroups=_minPrecedingTopicGroups;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, nonatomic) _Bool emitsSingletonGroups;
@@ -26,7 +24,7 @@
 - (_Bool)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (_Bool)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
-- (id)initWithMinPrecedingTopicGroups:(unsigned long long)arg1 desiredArticlesCount:(long long)arg2;
+- (id)initWithMinPrecedingTopicGroups:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

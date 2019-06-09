@@ -11,9 +11,9 @@
 @class NSString;
 
 @interface UIView (SearchUIAutoLayout) <SearchUIAutoLayoutItem>
-- (_Bool)isContainedByItem:(id)arg1;
-- (id)containingView;
-- (id)view;
+- (_Bool)searchui_isContainedByItem:(id)arg1;
+- (id)searchui_containingView;
+- (id)searchui_view;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

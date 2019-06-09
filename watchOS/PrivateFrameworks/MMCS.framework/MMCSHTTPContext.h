@@ -14,7 +14,7 @@
 #import <MMCS/NSURLSessionTaskDelegate-Protocol.h>
 #import <MMCS/NSURLSessionTaskDelegatePrivate-Protocol.h>
 
-@class MMCSBoundedQueue, NSDictionary, NSInputStream, NSOutputStream, NSString, NSURLSession, NSURLSessionDataTask;
+@class NSDictionary, NSInputStream, NSOutputStream, NSString, NSURLSession, NSURLSessionDataTask;
 
 __attribute__((visibility("hidden")))
 @interface MMCSHTTPContext : NSObject <C2RequestDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionTaskDelegatePrivate, NSURLSessionDataDelegatePrivate, NSStreamDelegate>
@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     NSURLSessionDataTask *_dataTask;
-    MMCSBoundedQueue *_boundedQueue;
     NSDictionary *_timingData;
     struct os_activity_s *_activityMarker;
 }
@@ -41,7 +40,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isValid; // @synthesize isValid=_isValid;
 @property(nonatomic) _Bool didOpen; // @synthesize didOpen=_didOpen;
 @property(retain, nonatomic) NSDictionary *timingData; // @synthesize timingData=_timingData;
-@property(retain, nonatomic) MMCSBoundedQueue *boundedQueue; // @synthesize boundedQueue=_boundedQueue;
 @property(retain, nonatomic) NSURLSessionDataTask *dataTask; // @synthesize dataTask=_dataTask;
 @property(retain, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(retain, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;

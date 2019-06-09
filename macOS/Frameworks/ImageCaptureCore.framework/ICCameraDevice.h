@@ -6,15 +6,42 @@
 
 #import <ImageCaptureCore/ICDevice.h>
 
-@class NSArray, NSNumber, NSObject, NSString;
+@class ICCameraProperties, NSArray, NSNumber, NSObject, NSProgress, NSString;
 @protocol OS_dispatch_queue;
 
 @interface ICCameraDevice : ICDevice
 {
-    id _cameraProperties;
+    BOOL _ejectable;
+    BOOL _accessRestrictedAppleDevice;
+    BOOL _locked;
+    BOOL _batteryLevelAvailable;
+    BOOL _allowsSyncingClock;
+    BOOL _beingEjected;
+    ICCameraProperties *_cameraProperties;
+    double _timeOffset;
+    unsigned long long _batteryLevel;
+    unsigned long long _numberOfDownloadableItems;
+    NSObject<OS_dispatch_queue> *_deviceNotificationQueue;
+    NSObject<OS_dispatch_queue> *_deviceCommandQueue;
+    long long _enumerationOrder;
+    NSProgress *_progress;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
+@property(nonatomic) long long enumerationOrder; // @synthesize enumerationOrder=_enumerationOrder;
+@property(nonatomic) BOOL beingEjected; // @synthesize beingEjected=_beingEjected;
+@property(nonatomic) BOOL allowsSyncingClock; // @synthesize allowsSyncingClock=_allowsSyncingClock;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *deviceCommandQueue; // @synthesize deviceCommandQueue=_deviceCommandQueue;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *deviceNotificationQueue; // @synthesize deviceNotificationQueue=_deviceNotificationQueue;
+@property(readonly, nonatomic) unsigned long long numberOfDownloadableItems; // @synthesize numberOfDownloadableItems=_numberOfDownloadableItems;
+@property(nonatomic) unsigned long long batteryLevel; // @synthesize batteryLevel=_batteryLevel;
+@property(nonatomic) BOOL batteryLevelAvailable; // @synthesize batteryLevelAvailable=_batteryLevelAvailable;
+@property(nonatomic, getter=isLocked) BOOL locked; // @synthesize locked=_locked;
+@property(nonatomic) double timeOffset; // @synthesize timeOffset=_timeOffset;
+@property(nonatomic, getter=isAccessRestrictedAppleDevice) BOOL accessRestrictedAppleDevice; // @synthesize accessRestrictedAppleDevice=_accessRestrictedAppleDevice;
+@property(nonatomic) ICCameraProperties *cameraProperties; // @synthesize cameraProperties=_cameraProperties;
+@property(nonatomic, getter=isEjectable) BOOL ejectable; // @synthesize ejectable=_ejectable;
 - (void)finishedSerializedOperation;
 - (char *)operationName:(unsigned long long)arg1;
 - (void)signalOperationComplete;
@@ -25,15 +52,7 @@
 - (BOOL)updateMediaPresentation;
 @property unsigned long long mediaPresentation;
 - (BOOL)setDefaultMediaPresentation:(unsigned long long)arg1;
-- (void)createMediaCatalog;
-- (void)saveAsMediaCatalog;
 - (void)didDownloadFile:(id)arg1 error:(id)arg2 options:(id)arg3 contextInfo:(void *)arg4;
-- (void)retrieveDataForFiles;
-- (void)requestThumbnailsForFiles:(id)arg1;
-- (void)requestMetadataForFiles:(id)arg1;
-- (void)requestDataForFiles:(id)arg1 withProperties:(id)arg2 options:(id)arg3;
-- (void)addToGetMetadataQueue:(id)arg1;
-- (void)addToGetThumbnailQueue:(id)arg1;
 - (void)registerForNotifications:(id)arg1 options:(id)arg2;
 - (long long)cameraFilesContentSizeInBytes;
 - (void)popMediaFiles:(id)arg1;
@@ -58,9 +77,9 @@
 - (void)requestUploadFile:(id)arg1 options:(id)arg2 uploadDelegate:(id)arg3 didUploadSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)cancelDownload;
 - (void)requestDownloadFile:(id)arg1 options:(id)arg2 downloadDelegate:(id)arg3 didDownloadSelector:(SEL)arg4 contextInfo:(void *)arg5;
-- (void)requestEject;
-- (void)requestEjectOrDisconnect;
 - (void)cancelDelete;
+- (void)dispatchAsyncForOperationType:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
+- (id)requestDeleteFiles:(id)arg1 deleteFailed:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestDeleteFiles:(id)arg1;
 - (void)requestUnpairDevice;
 - (void)requestPairDevice;
@@ -68,16 +87,16 @@
 - (void)requestEnableTethering;
 - (void)requestTakePicture;
 - (void)requestSyncClock;
+- (void)requestCloseSessionWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestCloseSession;
+- (void)requestOpenSessionWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestOpenSessionWithOptions:(id)arg1;
 - (void)requestOpenSession;
-- (void)handleImageCaptureEventNotification:(id)arg1;
-- (void)flushDataArrayForOperation:(unsigned long long)arg1 withFiles:(id)arg2;
 - (void)updateMediaPresentationPreference:(id)arg1;
-- (void)updateThumbnailsForFiles:(id)arg1;
-- (void)updateMetadataForFiles:(id)arg1;
-- (void)processImageCaptureNotification:(id)arg1;
+- (void)handleImageCaptureEventNotification:(id)arg1;
 - (id)relateMedia:(id)arg1;
 - (id)relateGroupedMedia:(id)arg1;
+- (id)relateLegacyMedia:(id)arg1;
 - (void)grindMedia:(id [10])arg1 index:(int *)arg2 file:(id)arg3;
 - (void)blendMedia:(id [10])arg1 ofLength:(int)arg2 withMedia:(id [10])arg3 ofLength:(int)arg4;
 - (long long)stitchMedia:(id)arg1 withMedia:(id)arg2;
@@ -86,9 +105,8 @@
 - (void)registerForImageCaptureEventNotifications:(id)arg1;
 - (void)handleContent:(id)arg1;
 - (void)updateMediaFilesCount:(id)arg1;
-- (void)displayVirtualCameraCreationWithCount;
-- (void)displayEnumerationNotificationIfNeeded;
-- (void)displayLockedNotificationIfNeeded;
+- (void)updateEnumeratingErrorStatus;
+- (void)updateLockedErrorStatus;
 - (BOOL)updateAppleProperties:(id)arg1;
 - (BOOL)handleCommandCompletion:(id)arg1;
 - (id)filesOfType:(id)arg1;
@@ -99,12 +117,12 @@
 - (BOOL)legacyDevice;
 - (void)setAppleRelatedUUIDSupport:(unsigned long long)arg1;
 - (BOOL)supportsMediaFormatCatalog;
-@property(readonly) NSArray *mediaFiles;
-@property(readonly) NSArray *contents;
+@property(readonly, nonatomic) NSArray *mediaFiles;
+@property(readonly, nonatomic) NSArray *contents;
 - (void)setTetheredCaptureEnabled:(BOOL)arg1;
 - (void)setEstimatedCountOfMediafiles:(unsigned long long)arg1;
 - (void)setContentCatalogPercentCompleted:(unsigned long long)arg1;
-@property(readonly) BOOL iCloudPhotosEnabled;
+@property(readonly, nonatomic) BOOL iCloudPhotosEnabled;
 @property(readonly) NSArray *supportedSidecarFiles;
 @property(readonly) NSString *productVersion;
 @property(readonly) NSString *productType;
@@ -113,22 +131,18 @@
 @property(readonly) NSString *deviceColor;
 @property(readonly) NSString *deviceClass;
 @property(readonly) NSString *buildVersion;
-@property(readonly) BOOL tetheredCaptureEnabled;
+@property(readonly, nonatomic) BOOL tetheredCaptureEnabled;
 @property(readonly) BOOL isEnumeratingContent;
-- (void)clearAccessRestriction;
+- (void)resetAccessRestriction;
 - (void)setAccessRestriction:(unsigned long long)arg1;
 - (void)updateAccessRestriction;
-@property(readonly) BOOL isAccessRestrictedAppleDevice;
 @property(readonly) unsigned long long estimatedNumberOfDownloadableItems;
 - (BOOL)automaticallyRetrieveData;
 @property(readonly) unsigned long long estimatedCountOfMediafiles;
-@property(readonly) double timeOffset;
-- (BOOL)isLocked;
 - (BOOL)hasTemporaryStore;
-@property(readonly) unsigned long long batteryLevel;
-@property(readonly) BOOL batteryLevelAvailable;
-@property(readonly) unsigned long long contentCatalogPercentCompleted;
-@property(readonly) NSString *mountPoint;
+@property(readonly, nonatomic) unsigned long long contentCatalogPercentCompleted;
+@property(nonatomic) BOOL preheatMetadata;
+@property(readonly, nonatomic) NSString *mountPoint;
 - (void)dealloc;
 - (id)init;
 - (id)description;
@@ -141,7 +155,6 @@
 - (BOOL)teardownPhase;
 - (void)initializeCameraProperties:(id)arg1;
 - (void)cleanupDeviceWithErrorCode:(id)arg1;
-- (void)logCamera:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 // Remaining properties

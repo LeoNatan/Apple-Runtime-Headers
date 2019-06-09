@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
+#import <VectorKit/NSSecureCoding-Protocol.h>
+
 @protocol VKCustomFeatureDataSource;
 
-@interface VKCustomFeature : NSObject
+@interface VKCustomFeature : NSObject <NSSecureCoding>
 {
     shared_ptr_e9082761 _feature;
     id <VKCustomFeatureDataSource> _dataSource;
 }
 
++ (BOOL)supportsSecureCoding;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isInjectedFeature;
@@ -43,10 +46,13 @@
 - (void)setFeatureID:(unsigned long long)arg1;
 - (id)dataSource;
 - (void)setDataSource:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)_initInternalFeatureWithCoordinate:(CDStruct_c3b9c2ee)arg1;
 - (id)init;
+- (id)initWithCoordinate:(CDStruct_c3b9c2ee)arg1 elevation:(double)arg2;
 - (id)initWithCoordinate:(CDStruct_c3b9c2ee)arg1;
-- (id)_initWithCoordinate:(CDStruct_c3b9c2ee)arg1 isInjected:(_Bool)arg2;
+- (id)_initWithCoordinate:(CDStruct_071ac149)arg1 isInjected:(_Bool)arg2;
 
 @end
 

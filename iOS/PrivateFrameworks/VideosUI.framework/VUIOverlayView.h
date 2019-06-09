@@ -6,40 +6,37 @@
 
 #import <UIKit/UIView.h>
 
-#import <VideosUI/VUIOverlayViewProtocol-Protocol.h>
-
-@class NSString, TVViewElement, UIImage, VUIOverlayLayout, _TVImageView, _TVProgressView;
+@class CAGradientLayer, IKViewElement, NSArray, VUILabel, VUIOverlayLayout, VUITextBadgeView, _TVProgressView;
 
 __attribute__((visibility("hidden")))
-@interface VUIOverlayView : UIView <VUIOverlayViewProtocol>
+@interface VUIOverlayView : UIView
 {
-    UIImage *_backgroundImageForMaterialRendering;
+    CAGradientLayer *_gradientLayer;
     VUIOverlayLayout *_overlayLayout;
-    TVViewElement *_viewElement;
+    IKViewElement *_viewElement;
+    VUILabel *_titleLabel;
+    IKViewElement *_titleElement;
+    VUITextBadgeView *_textBadge;
+    IKViewElement *_textBadgeElement;
+    NSArray *_badgeViewWrappers;
     _TVProgressView *_progressView;
-    TVViewElement *_progressViewElement;
-    _TVImageView *_appImageView;
-    TVViewElement *_appImageElement;
+    UIView *_gradientView;
 }
 
 + (id)overlayViewFromElement:(id)arg1 overlayLayout:(id)arg2 existingView:(id)arg3;
-@property(retain, nonatomic) TVViewElement *appImageElement; // @synthesize appImageElement=_appImageElement;
-@property(retain, nonatomic) _TVImageView *appImageView; // @synthesize appImageView=_appImageView;
-@property(retain, nonatomic) TVViewElement *progressViewElement; // @synthesize progressViewElement=_progressViewElement;
+@property(retain, nonatomic) UIView *gradientView; // @synthesize gradientView=_gradientView;
 @property(retain, nonatomic) _TVProgressView *progressView; // @synthesize progressView=_progressView;
-@property(retain, nonatomic) TVViewElement *viewElement; // @synthesize viewElement=_viewElement;
+@property(retain, nonatomic) NSArray *badgeViewWrappers; // @synthesize badgeViewWrappers=_badgeViewWrappers;
+@property(retain, nonatomic) IKViewElement *textBadgeElement; // @synthesize textBadgeElement=_textBadgeElement;
+@property(retain, nonatomic) VUITextBadgeView *textBadge; // @synthesize textBadge=_textBadge;
+@property(retain, nonatomic) IKViewElement *titleElement; // @synthesize titleElement=_titleElement;
+@property(retain, nonatomic) VUILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 @property(retain, nonatomic) VUIOverlayLayout *overlayLayout; // @synthesize overlayLayout=_overlayLayout;
-@property(retain, nonatomic) UIImage *backgroundImageForMaterialRendering; // @synthesize backgroundImageForMaterialRendering=_backgroundImageForMaterialRendering;
+@property(retain, nonatomic) CAGradientLayer *gradientLayer; // @synthesize gradientLayer=_gradientLayer;
 - (void).cxx_destruct;
-- (void)backgroundImageSizeDidChange:(struct CGSize)arg1;
 - (void)reset;
 - (void)layoutSubviews;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

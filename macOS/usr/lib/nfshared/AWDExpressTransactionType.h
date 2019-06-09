@@ -12,15 +12,18 @@
 
 @interface AWDExpressTransactionType : PBCodable <NSCopying>
 {
+    unsigned int _appletType;
     unsigned int _count;
     NSData *_ridAndPix;
     unsigned int _spid;
     struct {
+        unsigned int appletType:1;
         unsigned int count:1;
         unsigned int spid:1;
     } _has;
 }
 
+@property(nonatomic) unsigned int appletType; // @synthesize appletType=_appletType;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(nonatomic) unsigned int spid; // @synthesize spid=_spid;
 @property(retain, nonatomic) NSData *ridAndPix; // @synthesize ridAndPix=_ridAndPix;
@@ -33,6 +36,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasAppletType;
 @property(nonatomic) BOOL hasCount;
 @property(nonatomic) BOOL hasSpid;
 @property(readonly, nonatomic) BOOL hasRidAndPix;

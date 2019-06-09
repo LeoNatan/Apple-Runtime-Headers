@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSVisualEffectView.h>
+#import <AppKit/NSView.h>
 
 @class PopupWindowUnifiedField;
 
 __attribute__((visibility("hidden")))
-@interface PopupWindowUnifiedFieldContainerView : NSVisualEffectView
+@interface PopupWindowUnifiedFieldContainerView : NSView
 {
     PopupWindowUnifiedField *_unifiedField;
 }

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 @interface VNPersonsModelData : NSObject <VNPersonsModelDataSource, VNPersonsModelFaceModelDataProvider>
 {
     unsigned long long _maximumIdentities;
+    unsigned long long _faceprintRequestRevision;
     NSMutableArray *_personUniqueIdentifiers;
     NSMutableDictionary *_personUniqueIdentifierToSerialNumberMapping;
     NSMutableDictionary *_serialNumberToFaceObservationsMapping;
@@ -24,6 +25,8 @@ __attribute__((visibility("hidden")))
     id <VNPersonsModelDataDelegate> _delegate;
 }
 
+@property(readonly, nonatomic) unsigned long long faceprintRequestRevision; // @synthesize faceprintRequestRevision=_faceprintRequestRevision;
+@property(readonly, nonatomic) NSDate *lastModificationDate; // @synthesize lastModificationDate=_lastModificationDate;
 @property(nonatomic) __weak id <VNPersonsModelDataDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)faceModelFaceObservationAtIndex:(unsigned long long)arg1 forPersonAtIndex:(unsigned long long)arg2;
@@ -40,14 +43,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)removeAllFaceObservationsFromPersonWithUniqueIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)removeFaceObservations:(id)arg1 fromPersonWithUniqueIdentifier:(id)arg2 error:(id *)arg3;
 - (_Bool)addFaceObservations:(id)arg1 toPersonWithUniqueIdentifier:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) NSDate *lastModificationDate;
 - (id)_accessToMutableFaceObservationsForPersonAtIndex:(unsigned long long)arg1;
 - (void)_removeExistingFaceObservations:(id)arg1 fromPersonWithUniqueIdentifier:(id)arg2;
 - (void)_removeExistingFaceObservations:(id)arg1 fromIdentityWithSerialNumber:(id)arg2;
 - (void)_removePersonWithUniqueIdentifier:(id)arg1;
 - (void)_removeAllFaceObservationsFromIdentityWithSerialNumber:(id)arg1;
 - (_Bool)_addUniqueFaceObservations:(id)arg1 toPersonWithUniqueIdentifier:(id)arg2 error:(id *)arg3;
-- (id)_uniqueFaceObservationsWithRegistrationState:(_Bool)arg1 forFaceObservations:(id)arg2 ofPersonWithUniqueIdentifier:(id)arg3 error:(id *)arg4;
+- (id)_uniqueFaceObservationsWithRegistrationState:(_Bool)arg1 forFaceObservations:(id)arg2 withExpectedFaceprintRequestRevision:(unsigned long long)arg3 ofPersonWithUniqueIdentifier:(id)arg4 error:(id *)arg5;
 - (id)_requestNewIdentitySerialNumberAndReturnError:(id *)arg1;
 - (void)_modelWasModified;
 - (id)initWithConfiguration:(id)arg1;

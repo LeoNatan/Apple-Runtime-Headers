@@ -20,8 +20,8 @@
 @property(retain, nonatomic) NSString *key; // @synthesize key;
 @property(retain, nonatomic) NSString *property; // @synthesize property;
 @property(retain, nonatomic) NSString *title; // @synthesize title;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 
 @end
 

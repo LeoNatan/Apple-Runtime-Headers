@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableDictionary, NSString, SKUIClientContext, SKUIColorScheme, SKUIStarRatingControl, UIButton, UIControl, UIImageView, UILabel, UISegmentedControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewsHistogramView : UIView
 {
     UIButton *_appSupportButton;

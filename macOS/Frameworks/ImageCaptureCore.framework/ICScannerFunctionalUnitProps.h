@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
     BOOL _usesThresholdForBlackAndWhiteScanning;
     unsigned char _defaultThresholdForBlackAndWhiteScanning;
     unsigned char _thresholdForBlackAndWhiteScanning;
-    unsigned int _state;
+    unsigned long long _state;
     ICScannerImageRep *_overviewImageBufferRep;
     struct CGDataProvider *_overviewImageDataProvider;
     struct CGImage *_overviewImage;
@@ -63,7 +63,7 @@ __attribute__((visibility("hidden")))
 @property struct CGSize minimumScanSizeInInches; // @synthesize minimumScanSizeInInches=_minimumScanSizeInInches;
 @property struct CGSize physicalSizeInInches; // @synthesize physicalSizeInInches=_physicalSizeInInches;
 @property(retain) ICScannerImageRep *overviewImageBufferRep; // @synthesize overviewImageBufferRep=_overviewImageBufferRep;
-@property unsigned int state; // @synthesize state=_state;
+@property unsigned long long state; // @synthesize state=_state;
 @property unsigned char thresholdForBlackAndWhiteScanning; // @synthesize thresholdForBlackAndWhiteScanning=_thresholdForBlackAndWhiteScanning;
 @property BOOL usesThresholdForBlackAndWhiteScanning; // @synthesize usesThresholdForBlackAndWhiteScanning=_usesThresholdForBlackAndWhiteScanning;
 @property unsigned char defaultThresholdForBlackAndWhiteScanning; // @synthesize defaultThresholdForBlackAndWhiteScanning=_defaultThresholdForBlackAndWhiteScanning;

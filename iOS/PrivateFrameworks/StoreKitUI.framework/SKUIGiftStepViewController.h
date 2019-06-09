@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, SKUIGift, SKUIGiftConfiguration, SSVLoadURLOperation;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftStepViewController : UIViewController
 {
     SKUIGift *_gift;

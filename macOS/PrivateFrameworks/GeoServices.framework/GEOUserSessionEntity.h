@@ -18,10 +18,10 @@
     double _sessionRelativeTimestamp;
 }
 
-@property(readonly) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
-@property(readonly) double sessionRelativeTimestamp; // @synthesize sessionRelativeTimestamp=_sessionRelativeTimestamp;
-@property double sessionCreationTime; // @synthesize sessionCreationTime=_sessionCreationTime;
-@property(readonly) struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
+@property(readonly, nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(readonly, nonatomic) double sessionRelativeTimestamp; // @synthesize sessionRelativeTimestamp=_sessionRelativeTimestamp;
+@property(nonatomic) double sessionCreationTime; // @synthesize sessionCreationTime=_sessionCreationTime;
+@property(readonly, nonatomic) struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)updateSessionIDFromUUIDString:(id)arg1;
 - (void)updateWithSessionEntityString:(id)arg1;

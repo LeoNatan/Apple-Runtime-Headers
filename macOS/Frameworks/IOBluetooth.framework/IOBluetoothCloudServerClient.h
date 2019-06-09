@@ -10,12 +10,14 @@
 {
 }
 
++ (void)upgradeToManatee:(id)arg1 accessoryKey:(id)arg2;
++ (void)deleteOldContainer;
 + (void)deleteManateeAccessoryZone;
 + (void)readNewContainer;
 + (void)readOldContainer;
 + (void)uploadHSA2Key:(id)arg1;
 + (void)fetchHSA2Key;
-+ (void)checkHSA2Support;
++ (void)checkManateeAccountSupport;
 + (void)keymismatch:(id)arg1;
 + (void)sendCloudpairingRetry:(id)arg1;
 + (void)getSignInStatus;

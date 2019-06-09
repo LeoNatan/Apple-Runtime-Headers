@@ -14,11 +14,12 @@
 
 - (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
 - (void)updateWithRowModel:(id)arg1;
+- (void)setDelegate:(id)arg1;
 @property(readonly) SearchUICardSectionView *cardSectionView;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;
 
 // Remaining properties
-@property(retain) SearchUICardSectionView *sizingContainer; // @dynamic sizingContainer;
+@property(retain, nonatomic) SearchUICardSectionView *sizingContainer; // @dynamic sizingContainer;
 
 @end
 

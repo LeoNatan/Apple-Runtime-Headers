@@ -66,7 +66,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isValid; // @synthesize isValid=_isValid;
 - (void).cxx_destruct;
 - (int)_doNLRegularizationWithCommandBuffer:(id)arg1 in_uv_tex:(id)arg2 join_tex:(id)arg3 w_tex:(id)arg4 out_uv_tex:(id)arg5;
-- (int)_doSolverWithCommandBuffer:(id)arg1 scale:(int)arg2 scale_factor:(id)arg3 in_uv_tex:(id)arg4 out_uv_tex:(id)arg5 out_w_tex: /* Error: Ran out of types for this method. */;
+- (int)_doSolverWithCommandBuffer:(id)arg1 scale:(int)arg2 scale_xy_inv:(id)arg3 coeff:(id)arg4 in_uv_tex:(id)arg5 out_uv_tex:out_w_tex: /* Error: Ran out of types for this method. */;
 - (int)_computeFeaturesDerivativesWithCommandBuffer:(id)arg1 in_tex:(id)arg2 out_tex:(id)arg3;
 - (int)_computeFeaturesWithCommandBuffer:(id)arg1 in_tex:(id)arg2 out_tex:(id)arg3;
 - (int)_downscale2XWithCommandBuffer:(id)arg1 in_u32_alias_tex:(id)arg2 out_u32_alias_tex:(id)arg3;
@@ -77,8 +77,8 @@ __attribute__((visibility("hidden")))
 - (void)_setupPipelines;
 - (BOOL)_initMemory:(int)arg1 height:(int)arg2 nscales:(int)arg3 error:(id *)arg4;
 - (void)_setDefaultParameters;
-- (int)estimateFlowStream:(struct __CVBuffer *)arg1;
-- (int)estimateFlowFromReference:(struct __CVBuffer *)arg1 target:(struct __CVBuffer *)arg2;
+- (int)estimateFlowStream:(struct __CVBuffer *)arg1 error:(id *)arg2;
+- (int)estimateFlowFromReference:(struct __CVBuffer *)arg1 target:(struct __CVBuffer *)arg2 error:(id *)arg3;
 - (BOOL)setOutputUV:(struct __CVBuffer *)arg1 error:(id *)arg2;
 - (void)setPreset:(long long)arg1;
 - (void)waitUntilCompleted;

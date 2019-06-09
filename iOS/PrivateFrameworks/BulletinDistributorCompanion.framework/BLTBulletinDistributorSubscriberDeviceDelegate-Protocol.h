@@ -9,6 +9,7 @@
 @class BLTPBBulletinSummary, NSSet, NSString;
 
 @protocol BLTBulletinDistributorSubscriberDeviceDelegate <NSObject>
+- (_Bool)isLocallyConnectedToRemote;
 - (void)sendBulletinSummary:(BLTPBBulletinSummary *)arg1;
 - (void)getWillNanoPresentNotificationForSectionID:(NSString *)arg1 subsectionIDs:(NSSet *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)getWillNanoPresentNotificationForSectionID:(NSString *)arg1 completion:(void (^)(_Bool))arg2;

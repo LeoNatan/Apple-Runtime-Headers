@@ -7,6 +7,9 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (CalAutoArchivePathExtensions)
++ (id)mdTaskQueryStringWithSearchString:(id)arg1 property:(id)arg2;
++ (id)mdEventQueryStringWithSearchString:(id)arg1 property:(id)arg2;
 - (id)stringWithAutoArchiveExtensionRemoved;
+- (id)dateFromRepresentationID;
 @end
 

@@ -14,11 +14,15 @@ __attribute__((visibility("hidden")))
     int _savedNumberOfLines;
     float _firstParagraphFirstLineHeadIndent;
     NSAttributedString *_shadowAttributedText;
+    _Bool _usingDefaultFont;
     UITableViewCell *_tableCell;
 }
 
+@property(readonly, nonatomic) _Bool usingDefaultFont; // @synthesize usingDefaultFont=_usingDefaultFont;
 @property(nonatomic) __weak UITableViewCell *tableCell; // @synthesize tableCell=_tableCell;
 - (void).cxx_destruct;
+- (void)setFont:(id)arg1;
+- (void)_setDefaultFont:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)_setFirstParagraphFirstLineHeadIndent:(float)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -7,7 +7,7 @@
 #import <FinderKit/NSObject-Protocol.h>
 
 @protocol TMarkTornDown <NSObject>
-@property(readonly, getter=isTornDown) _Bool tornDown;
+@property(getter=isTornDown) _Bool tornDown;
 
 @optional
 - (void)aboutToTearDown;

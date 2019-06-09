@@ -6,21 +6,25 @@
 
 #import <PepperUICore/PUICTableViewController.h>
 
+#import <MapKit/MKTransitDeparturesDataSourceHosting-Protocol.h>
 #import <MapKit/_MKNanoPlaceCardAttributionDataDelegate-Protocol.h>
 #import <MapKit/_MKNanoPlaceCardBusinessDataDelegate-Protocol.h>
 #import <MapKit/_MKNanoPlaceCardMapDataDelegate-Protocol.h>
-#import <MapKit/_MKNanoPlaceCardSectionDataDelegate-Protocol.h>
+#import <MapKit/_MKNanoPlaceCardSectionProvidingDelegate-Protocol.h>
 
-@class MKMapItem, NSArray, NSString;
+@class MKMapItem, NSArray, NSMapTable, NSMutableDictionary, NSMutableSet, NSString;
 @protocol NSObject, _MKNanoPlaceCardViewControllerDelegate;
 
-@interface _MKNanoPlaceCardViewController : PUICTableViewController <_MKNanoPlaceCardBusinessDataDelegate, _MKNanoPlaceCardMapDataDelegate, _MKNanoPlaceCardSectionDataDelegate, _MKNanoPlaceCardAttributionDataDelegate>
+@interface _MKNanoPlaceCardViewController : PUICTableViewController <_MKNanoPlaceCardBusinessDataDelegate, _MKNanoPlaceCardMapDataDelegate, _MKNanoPlaceCardSectionProvidingDelegate, _MKNanoPlaceCardAttributionDataDelegate, MKTransitDeparturesDataSourceHosting>
 {
     NSArray *_sections;
     _Bool _showsAddressInline;
     unsigned int _mapType;
     _Bool _needsUpdate;
     _Bool _nextUpdateIsAnimated;
+    NSMutableSet *_sectionsForNextUpdate;
+    NSMutableDictionary *_sectionsByIndex;
+    NSMapTable *_indicesBySection;
     id <NSObject> _attributionNotificationToken;
     MKMapItem *_mapItem;
     id <_MKNanoPlaceCardViewControllerDelegate> _delegate;
@@ -30,24 +34,44 @@
 @property(nonatomic) _Bool showsAddressInline; // @synthesize showsAddressInline=_showsAddressInline;
 @property(nonatomic) __weak id <_MKNanoPlaceCardViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)cellForRow:(unsigned int)arg1 inSection:(id)arg2;
+- (void)transitDeparturesDataSource:(id)arg1 didSelectConnectionInformation:(id)arg2;
+- (void)transitDeparturesDataSource:(id)arg1 showIncidents:(id)arg2;
+- (void)transitDeparturesDataSource:(id)arg1 didSelectTransitLine:(id)arg2 fromCell:(id)arg3;
+- (void)transitDeparturesDataSourceDidReload:(id)arg1;
+- (id)separatorColorForTransitDeparturesDataSource:(id)arg1;
+- (struct UIEdgeInsets)separatorInsetsForTransitDeparturesDataSource:(id)arg1;
+- (id)traitsForTransitDeparturesDataSource:(id)arg1;
+- (id)adjustedIndexSet:(id)arg1 forSection:(id)arg2;
+- (id)cellForRowAtIndexPath:(id)arg1 forSection:(id)arg2;
 - (void)placeCardSectionTappedMap:(id)arg1;
 - (void)placeCardSection:(id)arg1 selectedPhoneNumber:(id)arg2;
 - (void)placeCardSectionSelectedAttribution:(id)arg1;
+- (void)_getDeletions:(id)arg1 reloads:(id)arg2 insertions:(id)arg3 fromSections:(id)arg4 toSections:(id)arg5;
+- (id)_indicesForDataSources:(id)arg1;
+- (void)setNeedsUpdateDataSources:(id)arg1 animated:(_Bool)arg2;
 - (void)setNeedsUpdateAnimated:(_Bool)arg1;
 - (void)_addAttributionSectionIfNeeded:(id)arg1 animated:(_Bool)arg2;
-- (id)createSectionsForMapItem:(id)arg1;
 - (void)_updateWithMapItem:(id)arg1 animated:(_Bool)arg2;
 - (void)updateWithMapItem:(id)arg1;
 - (void)updateWithMapItem:(id)arg1 animated:(_Bool)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (unsigned int)tableView:(id)arg1 notchBehaviorForCellAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
+- (int)_localSectionIndexForGlobalSectionIndex:(int)arg1;
+- (id)_globalIndexPathForLocalIndexPath:(id)arg1 inSection:(id)arg2;
+- (id)_localIndexPathForGlobalIndexPath:(id)arg1;
+- (int)_firstSectionIndexForDataSource:(id)arg1;
+- (id)_dataSourceForGlobalSectionIndex:(int)arg1;
+- (void)_countSections;
+- (id)createSectionsForMapItem:(id)arg1;
 - (void)textSizeChanged;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

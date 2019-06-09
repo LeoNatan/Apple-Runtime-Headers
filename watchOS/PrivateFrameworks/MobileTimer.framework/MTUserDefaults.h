@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 - (void).cxx_destruct;
+- (void)_cleanupObserversForNotification:(id)arg1;
 - (void)unregisterNotification:(id)arg1 observer:(id)arg2;
 - (void)distributedNotificationPosted:(id)arg1;
 - (void)registerNotification:(id)arg1 observer:(id)arg2;

@@ -10,13 +10,9 @@
 {
 }
 
-+ (void)composeEmailTo:(id)arg1 withCCRecipients:(id)arg2 withSubject:(id)arg3 withBody:(id)arg4 from:(id)arg5;
-+ (void)composeEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 from:(id)arg4 withAttachment:(id)arg5 andAttachmentFilename:(id)arg6 delegate:(id)arg7;
-+ (void)composeEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 from:(id)arg4 withAttachment:(id)arg5 andAttachmentFilename:(id)arg6;
++ (void)sendEmailFromAddress:(id)arg1 toRecipients:(id)arg2 withSubject:(id)arg3 withBody:(id)arg4 withAttachment:(id)arg5 andAttachmentFilename:(id)arg6 delegate:(id)arg7;
 + (void)sendEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 withAttachment:(id)arg4 andAttachmentFilename:(id)arg5 delegate:(id)arg6;
 + (void)sendEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 withAttachment:(id)arg4 andAttachmentFilename:(id)arg5;
-+ (void)composeEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 from:(id)arg4 delegate:(id)arg5;
-+ (void)composeEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 from:(id)arg4;
 + (void)sendEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 delegate:(id)arg4;
 + (void)sendEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3;
 

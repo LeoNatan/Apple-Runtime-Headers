@@ -27,6 +27,7 @@
 - (void)_hidebusyWorkUI;
 - (void)_setPasswordFieldHidden:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_provideDelegateWithAuthResults:(id)arg1 error:(id)arg2;
+- (void)_authenticateWithContext:(id)arg1;
 - (void)_beginAuthenticationIfPossibleWithOption:(unsigned long long)arg1 withUsername:(id)arg2 password:(id)arg3;
 - (_Bool)_canBeginAuthenticationWithOption:(unsigned long long)arg1;
 - (_Bool)_isAccountModificationRestricted;

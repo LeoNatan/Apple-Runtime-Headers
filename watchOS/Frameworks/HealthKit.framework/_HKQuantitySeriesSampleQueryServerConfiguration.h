@@ -6,16 +6,26 @@
 
 #import <HealthKit/HKQueryServerConfiguration.h>
 
-@class HKQuantitySample;
+@class HKQuantitySample, NSDate, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface _HKQuantitySeriesSampleQueryServerConfiguration : HKQueryServerConfiguration
 {
     HKQuantitySample *_quantitySample;
     int _seriesAnchor;
+    int _mode;
+    unsigned int _options;
+    NSDate *_maximumStartDate;
+    NSUUID *_latestUUID;
+    NSDate *_latestSampleStartDate;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSDate *latestSampleStartDate; // @synthesize latestSampleStartDate=_latestSampleStartDate;
+@property(copy, nonatomic) NSUUID *latestUUID; // @synthesize latestUUID=_latestUUID;
+@property(copy, nonatomic) NSDate *maximumStartDate; // @synthesize maximumStartDate=_maximumStartDate;
+@property(nonatomic) unsigned int options; // @synthesize options=_options;
+@property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(nonatomic) int seriesAnchor; // @synthesize seriesAnchor=_seriesAnchor;
 @property(copy, nonatomic) HKQuantitySample *quantitySample; // @synthesize quantitySample=_quantitySample;
 - (void).cxx_destruct;

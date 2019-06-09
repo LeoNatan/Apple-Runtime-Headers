@@ -7,30 +7,41 @@
 #import <SIMSetupSupport/TSSIMSetupFlow.h>
 
 #import <SIMSetupSupport/TSCellularPlanManagerCacheDelegate-Protocol.h>
+#import <SIMSetupSupport/TSEntitlementJSHandlerDelegate-Protocol.h>
 #import <SIMSetupSupport/TSSIMSetupFlowDelegate-Protocol.h>
 
 @class NSError, NSMutableArray, NSString, UIBarButtonItem, UIViewController;
 @protocol TSSetupFlowItem;
 
-@interface TSActivationFlowWithSimSetupFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSCellularPlanManagerCacheDelegate>
+@interface TSActivationFlowWithSimSetupFlow : TSSIMSetupFlow <TSSIMSetupFlowDelegate, TSCellularPlanManagerCacheDelegate, TSEntitlementJSHandlerDelegate>
 {
     _Bool _requireSetup;
     _Bool _isPreinstallingViewControllerActive;
+    _Bool _confirmationCodeRequired;
+    _Bool _isTransferCapable;
     NSError *_planInstallError;
     NSMutableArray *_danglingPlanItems;
+    NSMutableArray *_transferItems;
     NSString *_name;
     unsigned long long _userConsentType;
     UIBarButtonItem *_cancelButton;
+    long long _signupConsentResponse;
     UIViewController<TSSetupFlowItem> *_currentViewController;
 }
 
 - (void).cxx_destruct;
+- (void)_requestPendingInstallItems;
+- (void)_requestTransferPlanList;
+- (void)_maybeShowPreinstallConsentOnViewController:(id)arg1;
+- (void)accountPendingRelease;
+- (void)accountCancelled;
+- (void)didTransferPlanSuccessfullyWithEid:(id)arg1 imei:(id)arg2 meid:(id)arg3 iccid:(id)arg4 alternateSDMP:(id)arg5 state:(id)arg6;
+- (void)didPurchasePlanSuccessfullyWithEid:(id)arg1 imei:(id)arg2 meid:(id)arg3 iccid:(id)arg4 alternateSDMP:(id)arg5;
 - (void)planItemsUpdated:(id)arg1 planListError:(id)arg2;
 - (void)popViewController:(id)arg1;
 - (long long)signupUserConsentResponse;
 - (void)setDefaultNavigationItems:(id)arg1;
 - (void)viewControllerDidComplete:(id)arg1;
-- (_Bool)isPhoneFlow;
 - (id)nextViewControllerFrom:(id)arg1;
 - (void)firstViewController:(CDUnknownBlockType)arg1;
 - (id)firstViewController;

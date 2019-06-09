@@ -13,7 +13,11 @@
 + (_Bool)handleExistsInContactStoreForHandle:(id)arg1 withHandleType:(id)arg2;
 + (void)clearCache;
 + (_Bool)enumerateContactsMatchingName:(id)arg1 withKeysToFetch:(id)arg2 usingContactStore:(id)arg3 error:(id *)arg4 usingBlock:(CDUnknownBlockType)arg5;
++ (_Bool)enumerateContactsWithFetchRequest:(id)arg1 usingContactStore:(id)arg2 error:(id *)arg3 usingBlock:(CDUnknownBlockType)arg4;
++ (id)identifiersPredicateFromCacheForPredicate:(id)arg1 isCached:(_Bool *)arg2;
 + (id)unifiedMeContactWithKeysToFetch:(id)arg1 usingContactStore:(id)arg2 error:(id *)arg3;
++ (id)unifiedContactWithIdentifier:(id)arg1 keysToFetch:(id)arg2 usingContactStore:(id)arg3 error:(id *)arg4;
++ (id)unifiedContactsMatchingPredicate:(id)arg1 keysToFetch:(id)arg2 usingContactStore:(id)arg3 error:(id *)arg4;
 + (void)initialize;
 
 @end

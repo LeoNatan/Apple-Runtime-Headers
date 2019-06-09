@@ -25,7 +25,6 @@
     IMKInputController *_currentController;
     NSBundle *_bundle;
     BOOL _hasKeys;
-    id _keyBindingState;
     id _keybindings;
     NSMutableArray *_runLoopInvocations;
     NSMutableDictionary *_eventDictionaries;
@@ -47,7 +46,7 @@
 @property(retain, nonatomic) NSXPCListenerEndpoint *functionRowItemViewServiceXPCEndpoint; // @synthesize functionRowItemViewServiceXPCEndpoint=_functionRowItemViewServiceXPCEndpoint;
 @property(readonly) NSString *_bundleIdentifier; // @synthesize _bundleIdentifier;
 @property BOOL _stopping; // @synthesize _stopping;
-@property(nonatomic) IMKCandidates *_candidates; // @synthesize _candidates;
+@property(retain, nonatomic) IMKCandidates *_candidates; // @synthesize _candidates;
 - (void)replyWaitCount_decrementWithLocking;
 - (void)replyWaitCount_incrementWithLocking;
 - (void)replyWaitCount_unlock;

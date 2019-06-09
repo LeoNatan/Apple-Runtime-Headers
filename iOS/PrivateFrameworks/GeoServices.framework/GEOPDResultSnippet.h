@@ -8,34 +8,50 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDPriceDescription, GEOPDRating, NSMutableArray, NSString, PBUnknownFields;
+@class GEOPDPriceDescription, GEOPDRating, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDResultSnippet : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_category;
+    NSMutableArray *_childItems;
     NSMutableArray *_childPlaces;
-    unsigned int _distanceDisplayThreshold;
     NSString *_locationString;
     NSString *_name;
     GEOPDPriceDescription *_priceDescription;
     GEOPDRating *_priceRange;
+    unsigned int _distanceDisplayThreshold;
     struct {
-        unsigned int distanceDisplayThreshold:1;
-    } _has;
+        unsigned int has_distanceDisplayThreshold:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_category:1;
+        unsigned int read_childItems:1;
+        unsigned int read_childPlaces:1;
+        unsigned int read_locationString:1;
+        unsigned int read_name:1;
+        unsigned int read_priceDescription:1;
+        unsigned int read_priceRange:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_category:1;
+        unsigned int wrote_childItems:1;
+        unsigned int wrote_childPlaces:1;
+        unsigned int wrote_locationString:1;
+        unsigned int wrote_name:1;
+        unsigned int wrote_priceDescription:1;
+        unsigned int wrote_priceRange:1;
+        unsigned int wrote_distanceDisplayThreshold:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
++ (Class)childItemType;
 + (Class)childPlaceType;
 + (id)resultSnippetForPlaceData:(id)arg1;
-@property(retain, nonatomic) GEOPDPriceDescription *priceDescription; // @synthesize priceDescription=_priceDescription;
-@property(retain, nonatomic) NSMutableArray *childPlaces; // @synthesize childPlaces=_childPlaces;
-@property(nonatomic) unsigned int distanceDisplayThreshold; // @synthesize distanceDisplayThreshold=_distanceDisplayThreshold;
-@property(retain, nonatomic) NSString *locationString; // @synthesize locationString=_locationString;
-@property(retain, nonatomic) GEOPDRating *priceRange; // @synthesize priceRange=_priceRange;
-@property(retain, nonatomic) NSString *category; // @synthesize category=_category;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -44,18 +60,40 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)childItemAtIndex:(unsigned long long)arg1;
+- (unsigned long long)childItemsCount;
+- (void)_addNoFlagsChildItem:(id)arg1;
+- (void)addChildItem:(id)arg1;
+- (void)clearChildItems;
+@property(retain, nonatomic) NSMutableArray *childItems;
+- (void)_readChildItems;
+@property(retain, nonatomic) GEOPDPriceDescription *priceDescription;
 @property(readonly, nonatomic) _Bool hasPriceDescription;
+- (void)_readPriceDescription;
 - (id)childPlaceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)childPlacesCount;
+- (void)_addNoFlagsChildPlace:(id)arg1;
 - (void)addChildPlace:(id)arg1;
 - (void)clearChildPlaces;
+@property(retain, nonatomic) NSMutableArray *childPlaces;
+- (void)_readChildPlaces;
 @property(nonatomic) _Bool hasDistanceDisplayThreshold;
+@property(nonatomic) unsigned int distanceDisplayThreshold;
+@property(retain, nonatomic) NSString *locationString;
 @property(readonly, nonatomic) _Bool hasLocationString;
+- (void)_readLocationString;
+@property(retain, nonatomic) GEOPDRating *priceRange;
 @property(readonly, nonatomic) _Bool hasPriceRange;
+- (void)_readPriceRange;
+@property(retain, nonatomic) NSString *category;
 @property(readonly, nonatomic) _Bool hasCategory;
+- (void)_readCategory;
+@property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
 
 @end
 

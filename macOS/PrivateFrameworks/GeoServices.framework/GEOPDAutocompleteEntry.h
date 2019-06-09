@@ -8,11 +8,13 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAutocompleteEntryAddress, GEOPDAutocompleteEntryBrandProfile, GEOPDAutocompleteEntryBusiness, GEOPDAutocompleteEntryCategory, GEOPDAutocompleteEntryClientResolved, GEOPDAutocompleteEntryDirectionIntent, GEOPDAutocompleteEntryHighlightLine, GEOPDAutocompleteEntryQuery, GEOPDRetainedSearchMetadata, PBUnknownFields;
+@class GEOPDAutocompleteEntryAddress, GEOPDAutocompleteEntryBrandProfile, GEOPDAutocompleteEntryBusiness, GEOPDAutocompleteEntryCategory, GEOPDAutocompleteEntryClientResolved, GEOPDAutocompleteEntryDirectionIntent, GEOPDAutocompleteEntryHighlightLine, GEOPDAutocompleteEntryOfflineArea, GEOPDAutocompleteEntryQuery, GEOPDParsecRankingFeatures, GEOPDRetainedSearchMetadata, GEOPDServerResultScoreMetadata, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteEntry : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDAutocompleteEntryAddress *_address;
     GEOPDAutocompleteEntryBrandProfile *_brandProfile;
@@ -22,28 +24,61 @@ __attribute__((visibility("hidden")))
     GEOPDAutocompleteEntryDirectionIntent *_directionIntent;
     GEOPDAutocompleteEntryHighlightLine *_highlightExtra;
     GEOPDAutocompleteEntryHighlightLine *_highlightMain;
+    GEOPDAutocompleteEntryOfflineArea *_offlineArea;
+    GEOPDParsecRankingFeatures *_parsecRankingFeatures;
+    NSString *_queryAcceleratorCompletionString;
     GEOPDAutocompleteEntryQuery *_query;
     GEOPDRetainedSearchMetadata *_retainSearch;
+    GEOPDServerResultScoreMetadata *_serverResultScoreMetadata;
+    int _autocompleteResultCellType;
     int _sortPriority;
     int _type;
+    BOOL _enableQueryAcceleratorAffordance;
     struct {
-        unsigned int sortPriority:1;
-        unsigned int type:1;
-    } _has;
+        unsigned int has_autocompleteResultCellType:1;
+        unsigned int has_sortPriority:1;
+        unsigned int has_type:1;
+        unsigned int has_enableQueryAcceleratorAffordance:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_address:1;
+        unsigned int read_brandProfile:1;
+        unsigned int read_business:1;
+        unsigned int read_category:1;
+        unsigned int read_clientResolved:1;
+        unsigned int read_directionIntent:1;
+        unsigned int read_highlightExtra:1;
+        unsigned int read_highlightMain:1;
+        unsigned int read_offlineArea:1;
+        unsigned int read_parsecRankingFeatures:1;
+        unsigned int read_queryAcceleratorCompletionString:1;
+        unsigned int read_query:1;
+        unsigned int read_retainSearch:1;
+        unsigned int read_serverResultScoreMetadata:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_address:1;
+        unsigned int wrote_brandProfile:1;
+        unsigned int wrote_business:1;
+        unsigned int wrote_category:1;
+        unsigned int wrote_clientResolved:1;
+        unsigned int wrote_directionIntent:1;
+        unsigned int wrote_highlightExtra:1;
+        unsigned int wrote_highlightMain:1;
+        unsigned int wrote_offlineArea:1;
+        unsigned int wrote_parsecRankingFeatures:1;
+        unsigned int wrote_queryAcceleratorCompletionString:1;
+        unsigned int wrote_query:1;
+        unsigned int wrote_retainSearch:1;
+        unsigned int wrote_serverResultScoreMetadata:1;
+        unsigned int wrote_autocompleteResultCellType:1;
+        unsigned int wrote_sortPriority:1;
+        unsigned int wrote_type:1;
+        unsigned int wrote_enableQueryAcceleratorAffordance:1;
+    } _flags;
 }
 
-@property(nonatomic) int sortPriority; // @synthesize sortPriority=_sortPriority;
-@property(retain, nonatomic) GEOPDRetainedSearchMetadata *retainSearch; // @synthesize retainSearch=_retainSearch;
-@property(retain, nonatomic) GEOPDAutocompleteEntryDirectionIntent *directionIntent; // @synthesize directionIntent=_directionIntent;
-@property(retain, nonatomic) GEOPDAutocompleteEntryClientResolved *clientResolved; // @synthesize clientResolved=_clientResolved;
-@property(retain, nonatomic) GEOPDAutocompleteEntryBrandProfile *brandProfile; // @synthesize brandProfile=_brandProfile;
-@property(retain, nonatomic) GEOPDAutocompleteEntryCategory *category; // @synthesize category=_category;
-@property(retain, nonatomic) GEOPDAutocompleteEntryAddress *address; // @synthesize address=_address;
-@property(retain, nonatomic) GEOPDAutocompleteEntryBusiness *business; // @synthesize business=_business;
-@property(retain, nonatomic) GEOPDAutocompleteEntryQuery *query; // @synthesize query=_query;
-@property(retain, nonatomic) GEOPDAutocompleteEntryHighlightLine *highlightExtra; // @synthesize highlightExtra=_highlightExtra;
-@property(retain, nonatomic) GEOPDAutocompleteEntryHighlightLine *highlightMain; // @synthesize highlightMain=_highlightMain;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -52,23 +87,63 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *queryAcceleratorCompletionString;
+@property(readonly, nonatomic) BOOL hasQueryAcceleratorCompletionString;
+- (void)_readQueryAcceleratorCompletionString;
+@property(nonatomic) BOOL hasEnableQueryAcceleratorAffordance;
+@property(nonatomic) BOOL enableQueryAcceleratorAffordance;
+@property(retain, nonatomic) GEOPDServerResultScoreMetadata *serverResultScoreMetadata;
+@property(readonly, nonatomic) BOOL hasServerResultScoreMetadata;
+- (void)_readServerResultScoreMetadata;
+- (int)StringAsAutocompleteResultCellType:(id)arg1;
+- (id)autocompleteResultCellTypeAsString:(int)arg1;
+@property(nonatomic) BOOL hasAutocompleteResultCellType;
+@property(nonatomic) int autocompleteResultCellType;
 @property(nonatomic) BOOL hasSortPriority;
+@property(nonatomic) int sortPriority;
+@property(retain, nonatomic) GEOPDParsecRankingFeatures *parsecRankingFeatures;
+@property(readonly, nonatomic) BOOL hasParsecRankingFeatures;
+- (void)_readParsecRankingFeatures;
+@property(retain, nonatomic) GEOPDRetainedSearchMetadata *retainSearch;
 @property(readonly, nonatomic) BOOL hasRetainSearch;
+- (void)_readRetainSearch;
+@property(retain, nonatomic) GEOPDAutocompleteEntryDirectionIntent *directionIntent;
 @property(readonly, nonatomic) BOOL hasDirectionIntent;
+- (void)_readDirectionIntent;
+@property(retain, nonatomic) GEOPDAutocompleteEntryClientResolved *clientResolved;
 @property(readonly, nonatomic) BOOL hasClientResolved;
+- (void)_readClientResolved;
+@property(retain, nonatomic) GEOPDAutocompleteEntryOfflineArea *offlineArea;
+@property(readonly, nonatomic) BOOL hasOfflineArea;
+- (void)_readOfflineArea;
+@property(retain, nonatomic) GEOPDAutocompleteEntryBrandProfile *brandProfile;
 @property(readonly, nonatomic) BOOL hasBrandProfile;
+- (void)_readBrandProfile;
+@property(retain, nonatomic) GEOPDAutocompleteEntryCategory *category;
 @property(readonly, nonatomic) BOOL hasCategory;
+- (void)_readCategory;
+@property(retain, nonatomic) GEOPDAutocompleteEntryAddress *address;
 @property(readonly, nonatomic) BOOL hasAddress;
+- (void)_readAddress;
+@property(retain, nonatomic) GEOPDAutocompleteEntryBusiness *business;
 @property(readonly, nonatomic) BOOL hasBusiness;
+- (void)_readBusiness;
+@property(retain, nonatomic) GEOPDAutocompleteEntryQuery *query;
 @property(readonly, nonatomic) BOOL hasQuery;
+- (void)_readQuery;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
+@property(retain, nonatomic) GEOPDAutocompleteEntryHighlightLine *highlightExtra;
 @property(readonly, nonatomic) BOOL hasHighlightExtra;
+- (void)_readHighlightExtra;
+@property(retain, nonatomic) GEOPDAutocompleteEntryHighlightLine *highlightMain;
 @property(readonly, nonatomic) BOOL hasHighlightMain;
+- (void)_readHighlightMain;
 
 @end
 

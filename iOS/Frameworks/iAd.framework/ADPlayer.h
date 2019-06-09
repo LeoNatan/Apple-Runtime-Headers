@@ -13,8 +13,8 @@
 
 @interface ADPlayer : NSObject <ADBannerViewInternalDelegate>
 {
-    id <ADPlayerDelegate> _delegate;
     _Bool _playbackHasBegun;
+    id <ADPlayerDelegate> _delegate;
     ADBannerView *_videoAd;
     AVPlayerItem *_avPlayerItem;
     AVPlayer *_avPlayer;
@@ -28,6 +28,8 @@
 @property(retain, nonatomic) AVPlayerItem *avPlayerItem; // @synthesize avPlayerItem=_avPlayerItem;
 @property(nonatomic) _Bool playbackHasBegun; // @synthesize playbackHasBegun=_playbackHasBegun;
 @property(retain, nonatomic) ADBannerView *videoAd; // @synthesize videoAd=_videoAd;
+@property(nonatomic) __weak id <ADPlayerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)_networkOptimalVideoURLForAd:(id)arg1;
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;
@@ -54,7 +56,6 @@
 - (_Bool)_beginLoadingVideoFromURL:(id)arg1;
 - (_Bool)prepareForPlayackOfInterstitialWithURL:(id)arg1;
 - (_Bool)prepareForPlayback;
-@property(nonatomic) __weak id <ADPlayerDelegate> delegate;
 - (id)init;
 - (void)dealloc;
 

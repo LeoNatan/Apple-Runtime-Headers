@@ -24,13 +24,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <VSSpeechConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)forwardStreamObject:(id)arg1;
 - (void)getTTSServerVoicesWithFilter:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)getLogToFile:(CDUnknownBlockType)arg1;
 - (void)setLogToFile:(_Bool)arg1;
 - (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(long long)arg2 gender:(long long)arg3 type:(long long)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)getVoiceResourceForLanguage:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)getAutoDownloadedVoiceAssets:(CDUnknownBlockType)arg1;
-- (void)setAutoDownloadedVoiceAssets:(id)arg1;
+- (void)getAutoDownloadedVoiceAssetsWithClientID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)setAutoDownloadedVoiceAssets:(id)arg1 withClientID:(id)arg2;
 - (void)getLocalVoiceResources:(CDUnknownBlockType)arg1;
 - (void)getLocalVoiceAssets:(CDUnknownBlockType)arg1;
 - (oneway void)cleanUnusedAssets:(CDUnknownBlockType)arg1;

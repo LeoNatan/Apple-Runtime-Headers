@@ -4,13 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AvatarUI/AVTARFrameConsumer-Protocol.h>
 #import <AvatarUI/AVTObjectViewController-Protocol.h>
 
 @class NSString;
 @protocol AVTAvatarRecord, AVTUIViewSnapshotProvider;
 
-@protocol AVTCarouselController <AVTObjectViewController, AVTARFrameConsumer>
+@protocol AVTCarouselController <AVTObjectViewController>
 @property(nonatomic) _Bool allowsCreate;
 @property(nonatomic) _Bool singleAvatarMode;
 @property(nonatomic) double decelerationRate;

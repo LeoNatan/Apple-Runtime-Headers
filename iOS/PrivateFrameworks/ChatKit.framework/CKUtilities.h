@@ -10,6 +10,7 @@
 {
 }
 
++ (id)deviceSpecificNameForKey:(id)arg1;
 + (_Bool)isIpad;
 + (_Bool)carrierDefaultBoolForKey:(id)arg1 defaultValue:(_Bool)arg2;
 + (_Bool)userDefaultBoolForKey:(id)arg1;

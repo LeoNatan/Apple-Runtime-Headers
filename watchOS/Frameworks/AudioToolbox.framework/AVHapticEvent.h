@@ -6,33 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@interface AVHapticEvent : NSObject
+#import <AudioToolbox/NSSecureCoding-Protocol.h>
+
+@class AVHapticPlayerParameterCurve;
+
+@interface AVHapticEvent : NSObject <NSSecureCoding>
 {
     double _time;
     double _duration;
     _Bool _isParameter;
+    unsigned int _eventCategory;
     union {
         unsigned int _eventType;
         unsigned int _paramType;
     } _u;
-    struct AVHapticPlayerFixedParameter _fixedParams[5];
+    struct AVHapticPlayerFixedParameter _fixedParams[8];
+    AVHapticPlayerParameterCurve *_paramCurve;
     int _fixedParamCount;
     float _value;
 }
 
++ (_Bool)supportsSecureCoding;
++ (id)eventWithParameterCurve:(id)arg1;
 + (id)eventWithParameter:(unsigned int)arg1 value:(float)arg2 time:(double)arg3;
 + (id)eventWithEventType:(unsigned int)arg1 time:(double)arg2 parameters:(const struct AVHapticPlayerFixedParameter *)arg3 count:(int)arg4 duration:(double)arg5;
 + (id)eventWithEventType:(unsigned int)arg1 time:(double)arg2 parameters:(const struct AVHapticPlayerFixedParameter *)arg3 count:(int)arg4;
 + (id)eventWithEventType:(unsigned int)arg1 time:(double)arg2 duration:(double)arg3;
 + (id)eventWithEventType:(unsigned int)arg1 time:(double)arg2;
-@property(readonly) int fixedParamCount; // @synthesize fixedParamCount=_fixedParamCount;
 @property(readonly) float value; // @synthesize value=_value;
+@property(readonly) int fixedParamCount; // @synthesize fixedParamCount=_fixedParamCount;
+@property(readonly) unsigned int eventCategory; // @synthesize eventCategory=_eventCategory;
 @property(readonly) _Bool isParameter; // @synthesize isParameter=_isParameter;
 @property(readonly) double duration; // @synthesize duration=_duration;
 @property(readonly) double time; // @synthesize time=_time;
-@property(readonly) struct AVHapticPlayerFixedParameter *fixedParams; // @dynamic fixedParams;
-@property(readonly) unsigned int paramType; // @dynamic paramType;
-@property(readonly) unsigned int eventType; // @dynamic eventType;
+- (void).cxx_destruct;
+@property(readonly) AVHapticPlayerParameterCurve *parameterCurve;
+@property(readonly) struct AVHapticPlayerFixedParameter *fixedParams;
+@property(readonly) unsigned int paramType;
+@property(readonly) unsigned int eventType;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithParameterCurve:(id)arg1;
 - (id)initWithParameter:(unsigned int)arg1 value:(float)arg2 time:(double)arg3;
 - (id)initWithEventType:(unsigned int)arg1 time:(double)arg2 parameters:(const struct AVHapticPlayerFixedParameter *)arg3 count:(int)arg4 duration:(double)arg5;
 - (id)initWithEventType:(unsigned int)arg1 time:(double)arg2 duration:(double)arg3;

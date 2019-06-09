@@ -6,20 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
-
-__attribute__((visibility("hidden")))
 @interface NSURLCacheInternal : NSObject
 {
     unsigned long long memoryCapacity;
     unsigned long long diskCapacity;
-    NSString *diskPath;
-    unsigned long long currentMemoryUsage;
-    unsigned long long currentDiskUsage;
     // Error parsing type: ^{_CFURLCache={__CFRuntimeBase=QAQ}{shared_ptr<__CFURLCache>=^{__CFURLCache}^{__shared_weak_count}}}, name: _cacheRef
 }
 
-- (void)finalize;
 - (void)dealloc;
 
 @end

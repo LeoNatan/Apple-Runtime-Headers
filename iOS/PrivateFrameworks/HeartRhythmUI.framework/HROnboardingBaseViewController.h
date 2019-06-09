@@ -38,6 +38,7 @@
 - (void)_setUpNavigationBar;
 - (id)_skipButton;
 - (id)_closeButton;
+- (id)_cancelButton;
 - (id)_onboardingAtrialFibrillationDetectionCancelButton;
 - (id)_onboardingElectrocardiogramCancelButton;
 - (id)_buttonForButtonType:(long long)arg1;
@@ -51,6 +52,9 @@
 - (void)setFooterView:(id)arg1 insets:(struct NSDirectionalEdgeInsets)arg2;
 - (void)setUpConstraints;
 - (void)setUpUI;
+- (void)updateUserInterfaceForStyle:(long long)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initForOnboarding:(_Bool)arg1;

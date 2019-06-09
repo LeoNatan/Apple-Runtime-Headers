@@ -14,13 +14,13 @@ __attribute__((visibility("hidden")))
     BOOL _textIsBold;
     BOOL _textIsItalic;
     BOOL _textIsUnderlined;
-    unsigned long long _currentTextAlignment;
+    long long _currentTextAlignment;
     struct RetainPtr<NSColor> _textColor;
     struct RetainPtr<WebTextListTouchBarViewController> _textListTouchBarViewController;
     WebView *_webView;
 }
 
-@property(nonatomic) unsigned long long currentTextAlignment; // @synthesize currentTextAlignment=_currentTextAlignment;
+@property(nonatomic) long long currentTextAlignment; // @synthesize currentTextAlignment=_currentTextAlignment;
 @property(nonatomic) BOOL textIsUnderlined; // @synthesize textIsUnderlined=_textIsUnderlined;
 @property(nonatomic) BOOL textIsItalic; // @synthesize textIsItalic=_textIsItalic;
 @property(nonatomic) BOOL textIsBold; // @synthesize textIsBold=_textIsBold;

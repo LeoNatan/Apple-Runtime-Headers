@@ -14,7 +14,6 @@
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 @property(readonly, nonatomic) NTKColoringLabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
 - (void)_enumerateColoringViewsWithBlock:(CDUnknownBlockType)arg1;

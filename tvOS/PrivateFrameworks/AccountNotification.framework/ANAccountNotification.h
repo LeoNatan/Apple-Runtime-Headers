@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <AccountNotification/ANCachedDictionaryRepresentationProtocol-Protocol.h>
 #import <AccountNotification/NSSecureCoding-Protocol.h>
 
 @class ANNotificationAction, NSDate, NSDictionary, NSString;
 
-@interface ANAccountNotification : NSObject <NSSecureCoding>
+@interface ANAccountNotification : NSObject <NSSecureCoding, ANCachedDictionaryRepresentationProtocol>
 {
     NSString *_identifier;
     NSString *_accountTypeID;
@@ -18,10 +19,8 @@
     NSString *_message;
     NSDate *_date;
     NSString *_activateButtonTitle;
-    NSString *_dismissButtonTitle;
     ANNotificationAction *_activateAction;
     ANNotificationAction *_dismissAction;
-    ANNotificationAction *_clearAction;
     NSDictionary *_userInfo;
     NSString *_eventIdentifier;
     long long _destinations;
@@ -35,10 +34,8 @@
 @property(nonatomic) long long destinations; // @synthesize destinations=_destinations;
 @property(copy, nonatomic) NSString *eventIdentifier; // @synthesize eventIdentifier=_eventIdentifier;
 @property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property(retain, nonatomic) ANNotificationAction *clearAction; // @synthesize clearAction=_clearAction;
 @property(retain, nonatomic) ANNotificationAction *dismissAction; // @synthesize dismissAction=_dismissAction;
 @property(retain, nonatomic) ANNotificationAction *activateAction; // @synthesize activateAction=_activateAction;
-@property(copy, nonatomic) NSString *dismissButtonTitle; // @synthesize dismissButtonTitle=_dismissButtonTitle;
 @property(copy, nonatomic) NSString *activateButtonTitle; // @synthesize activateButtonTitle=_activateButtonTitle;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
@@ -46,11 +43,18 @@
 @property(readonly, nonatomic) NSString *accountTypeID; // @synthesize accountTypeID=_accountTypeID;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)dictionaryRepresentation;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithManagedObject:(id)arg1;
 - (id)initForAccountWithType:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

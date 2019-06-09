@@ -16,12 +16,14 @@
     NSMutableDictionary *_performActionLog;
     _Bool _usesCarriageReturnAsLinesSeparator;
     NSMutableDictionary *_attributes;
+    CDUnknownBlockType _handleActionBlock;
     CDUnknownBlockType _cacheUpdatedCallback;
 }
 
 + (id)uiElementAtCoordinate:(struct CGPoint)arg1;
 + (void)applyElementAttributeCacheScheme:(unsigned int)arg1;
 @property(copy, nonatomic) CDUnknownBlockType cacheUpdatedCallback; // @synthesize cacheUpdatedCallback=_cacheUpdatedCallback;
+@property(copy, nonatomic) CDUnknownBlockType handleActionBlock; // @synthesize handleActionBlock=_handleActionBlock;
 @property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
 @property(nonatomic) _Bool usesCarriageReturnAsLinesSeparator; // @synthesize usesCarriageReturnAsLinesSeparator=_usesCarriageReturnAsLinesSeparator;
 - (void).cxx_destruct;
@@ -49,6 +51,7 @@
 - (id)uiElementsWithAttribute:(long)arg1 parameter:(void *)arg2 fetchAttributes:(_Bool)arg3;
 - (id)nextElementsWithCount:(unsigned int)arg1;
 - (id)previousElementsWithCount:(unsigned int)arg1;
+- (_Bool)performAXAction:(int)arg1 withValue:(id)arg2 fencePort:(unsigned int)arg3;
 - (_Bool)performAXAction:(int)arg1 withValue:(id)arg2;
 - (_Bool)performAXAction:(int)arg1;
 - (id)uiElementsWithAttribute:(long)arg1 parameter:(void *)arg2;

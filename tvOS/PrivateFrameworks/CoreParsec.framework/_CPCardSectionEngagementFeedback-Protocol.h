@@ -10,6 +10,7 @@
 
 @protocol _CPCardSectionEngagementFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(nonatomic) int actionTarget;
 @property(copy, nonatomic) NSString *resultId;
 @property(copy, nonatomic) NSString *cardSectionId;
 @property(copy, nonatomic) NSString *parPunchoutActionTarget;

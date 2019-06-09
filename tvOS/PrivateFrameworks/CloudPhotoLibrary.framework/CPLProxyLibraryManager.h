@@ -20,6 +20,7 @@
     NSMutableDictionary *_inMemoryDownloadTasks;
     NSMutableDictionary *_uploadTasks;
     NSMutableDictionary *_forceSyncTasks;
+    NSMutableDictionary *_vouchersPerTaskIdentifier;
     _Bool _diagnosticsEnabled;
     unsigned long long _foregroundCalls;
     NSCountedSet *_disablingReasons;
@@ -39,6 +40,12 @@
 + (id)daemonProtocolInterface;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)_dropVoucherForTaskWithIdentifier:(id)arg1;
+- (void)_storeVoucher:(id)arg1 forTaskWithIdentifier:(id)arg2;
+- (void)_withVoucherForTaskWithIdentifier:(id)arg1 do:(CDUnknownBlockType)arg2;
+- (void)provideCloudResource:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)provideRecordWithCloudScopeIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)provideLibraryInfoForScopeWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)unblockEngineElementOnce:(id)arg1;
 - (void)unblockEngineElement:(id)arg1;
 - (void)blockEngineElement:(id)arg1;
@@ -58,6 +65,7 @@
 - (void)cancelSyncTask:(id)arg1;
 - (void)cancelTask:(id)arg1;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(_Bool)arg3;
+- (void)provideLocalResource:(id)arg1 recordClassString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)forceSyncDidFinishForTask:(id)arg1 withErrors:(id)arg2;
 - (void)libraryManagerHasStatusChanges;
 - (void)libraryManagerDidUpdateSizeOfResourcesToUploadToSize:(unsigned long long)arg1 sizeOfOriginalResourcesToUpload:(unsigned long long)arg2 numberOfImages:(unsigned long long)arg3 numberOfVideos:(unsigned long long)arg4 numberOfOtherItems:(unsigned long long)arg5;
@@ -95,6 +103,7 @@
 - (void)noteClientReceivedNotificationOfServerChanges;
 - (void)startSyncSession;
 - (void)resetStatus;
+- (void)checkResourcesAreSafeToPrune:(id)arg1 checkServerIfNecessary:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)deleteResources:(id)arg1 checkServerIfNecessary:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setDiagnosticsEnabled:(_Bool)arg1;
 - (_Bool)diagnosticsEnabled;

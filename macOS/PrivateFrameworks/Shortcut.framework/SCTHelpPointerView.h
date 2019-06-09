@@ -10,6 +10,7 @@
 
 @class NSShadow;
 
+__attribute__((visibility("hidden")))
 @interface SCTHelpPointerView : NSView <SCTAnimatable>
 {
     struct CGRect mInitialBounds;

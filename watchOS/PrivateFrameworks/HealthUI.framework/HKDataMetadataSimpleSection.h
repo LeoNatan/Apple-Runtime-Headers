@@ -6,9 +6,11 @@
 
 #import <HealthUI/HKDataMetadataSection.h>
 
+#import <HealthUI/HKDataMetadataSectionDataReceiver-Protocol.h>
+
 @class NSMutableArray, NSString;
 
-@interface HKDataMetadataSimpleSection : HKDataMetadataSection
+@interface HKDataMetadataSimpleSection : HKDataMetadataSection <HKDataMetadataSectionDataReceiver>
 {
     NSString *_title;
     NSMutableArray *_rows;

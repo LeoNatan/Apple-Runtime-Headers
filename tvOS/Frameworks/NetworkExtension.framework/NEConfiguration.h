@@ -56,7 +56,6 @@
 - (void).cxx_destruct;
 - (void)copyPasswordsFromSystemKeychain;
 @property(readonly) NSString *pluginType;
-- (id)copyProfileDictionary;
 - (void)clearUserKeychain;
 - (void)clearSystemKeychain;
 - (void)clearKeychainInDomain:(long long)arg1;
@@ -79,8 +78,14 @@
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithDNSProxyPayload:(id)arg1 configurationName:(id)arg2 grade:(long long)arg3;
 - (id)initWithPathControllerPayload:(id)arg1 configurationName:(id)arg2 grade:(long long)arg3;
+- (_Bool)setRestrictDomains:(_Bool)arg1;
+- (_Bool)setContactsDomains:(id)arg1;
+- (_Bool)setCalendarDomains:(id)arg1;
+- (_Bool)setMailDomains:(id)arg1;
+- (_Bool)setSMBDomains:(id)arg1;
 - (_Bool)setAppLayerVPNUUID:(id)arg1 andSafariDomains:(id)arg2;
 - (_Bool)setAppLayerVPNRuleSettings:(id)arg1 withAppIdentifier:(id)arg2;
+- (id)mergeArray:(id)arg1 withArray:(id)arg2;
 - (_Bool)setProfileInfo:(id)arg1;
 - (_Bool)setPayloadInfoCommon:(id)arg1 payloadOrganization:(id)arg2;
 - (_Bool)setPayloadInfoIdentity:(id)arg1;

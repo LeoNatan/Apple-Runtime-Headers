@@ -32,17 +32,20 @@
     NSString *_appPlaceholderPath;
     NSArray *_lockApplicationsDuringInstall;
     NSFileHandle *_translocationFileHandle;
+    BOOL _bypassSystemVolumeEnforcementChecker;
     BOOL _isOSInstall;
+    BOOL _isSoftwareUpdateOSInstall;
+    BOOL _isOSInstaller;
     NSString *_masterBOMPath;
     unsigned long long _packageExtractorSpeed;
     BOOL _disableAFSC;
+    BOOL _isMDMManagedAppInstall;
     NSDictionary *_untrustedEnvironment;
     NSMachPort *_clientBootstrapPort;
     NSMachPort *_clientSecuritySessionPort;
     int _clientUID;
     int _clientGID;
     CDStruct_4c969caf _clientAuditToken;
-    BOOL _shouldSetResponsibility;
     CDStruct_166d2db6 *_authorizationEnvironment;
     struct AuthorizationOpaqueRef *_defaultAuthorization;
     struct AuthorizationOpaqueRef *_overrideAuthorization;
@@ -54,11 +57,12 @@
     int _evaluatedTrustLevel;
     NSArray *_certificateChain;
     struct __SecTrust *_trustRef;
+    BOOL _userConsentedInstall;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)requestWithPackages:(id)arg1 destination:(id)arg2;
-@property BOOL shouldSetResponsibility; // @synthesize shouldSetResponsibility=_shouldSetResponsibility;
+@property BOOL userConsentedInstall; // @synthesize userConsentedInstall=_userConsentedInstall;
 @property(readonly) CDStruct_4c969caf clientAuditToken; // @synthesize clientAuditToken=_clientAuditToken;
 @property long long installPhases; // @synthesize installPhases=_installPhases;
 @property(retain) NSString *destinationPath; // @synthesize destinationPath=_destinationPath;
@@ -74,6 +78,8 @@
 - (int)_restartAction;
 - (void)_setAppStoreReceiptData:(id)arg1;
 - (id)_appStoreReceiptData;
+- (BOOL)_bypassReadOnlyEnforcementChecker;
+- (void)_setBypassReadOnlyEnforcementChecker:(BOOL)arg1;
 - (void)_setTranslocationFileHandle:(id)arg1;
 - (void)_setLockApplicationsDuringInstall:(id)arg1;
 - (id)_lockApplicationsDuringInstall;
@@ -107,6 +113,10 @@
 - (id)_untrustedEnvironment;
 - (id)_installSandboxName;
 - (void)_setInstallSandboxName:(id)arg1;
+- (BOOL)_isOSInstaller;
+- (void)_setIsOSInstaller:(BOOL)arg1;
+- (void)_setIsSoftwareUpdateOSInstall:(BOOL)arg1;
+- (BOOL)_isSoftwareUpdateOSInstall;
 - (BOOL)_isOSInstall;
 - (void)_setIsOSInstall:(BOOL)arg1;
 - (id)_clientProcessName;
@@ -162,6 +172,8 @@
 - (unsigned long long)totalSizeRequired;
 - (void)_resolveInstallPathsReplacingPriorResults:(BOOL)arg1;
 - (BOOL)checkLocalPackagesReturningError:(id *)arg1;
+- (BOOL)_isMDMManagedAppInstall;
+- (void)_setIsMDMManagedAppInstall:(BOOL)arg1;
 
 @end
 

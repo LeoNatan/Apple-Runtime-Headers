@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsNetworkDiagnosticFrameworkSessionState : PBCodable <NSCopying>
 {
     unsigned long long _stateHeldForSecs;

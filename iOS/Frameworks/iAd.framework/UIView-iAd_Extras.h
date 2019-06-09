@@ -7,6 +7,7 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (iAd_Extras)
+- (void)_iAd_removeConstraintsReferencingView:(id)arg1 constrainedView:(id)arg2;
 - (struct CGRect)_iAd_screenFrame;
 - (_Bool)_iAd_isFeldsparClientVisibleFastInSize:(struct CGSize)arg1;
 - (_Bool)_iAd_isFeldsparClientVisibleFast;

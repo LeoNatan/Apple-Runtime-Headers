@@ -6,23 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableOrderedSet, NSString, SCRCTargetSelectorTimer, SCRCThreadKey, SCRElement, SCRVisualsManager;
+@class NSMutableOrderedSet, NSString, SCRCTargetSelectorTimer, SCRCThreadKey, SCRCUserDefaults, SCRElement, SCRVisualsManager;
 
 __attribute__((visibility("hidden")))
 @interface SCRElementRotorManager : NSObject
 {
-    NSMutableOrderedSet *_activeRotors;
-    SCRCTargetSelectorTimer *_hideVisualsTimer;
-    SCRCThreadKey *_threadKey;
     NSString *_currentRotorType;
     SCRElement *_currentElement;
+    NSMutableOrderedSet *__activeRotors;
+    SCRCTargetSelectorTimer *__hideVisualsTimer;
+    SCRCThreadKey *__threadKey;
+    SCRCUserDefaults *__userDefaults;
     SCRVisualsManager *__visualsManager;
 }
 
-+ (id)sharedManager;
-@property(readonly, retain, nonatomic) SCRVisualsManager *_visualsManager; // @synthesize _visualsManager=__visualsManager;
+@property(readonly, nonatomic) SCRVisualsManager *_visualsManager; // @synthesize _visualsManager=__visualsManager;
+@property(readonly, nonatomic) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
+@property(readonly, nonatomic) SCRCThreadKey *_threadKey; // @synthesize _threadKey=__threadKey;
+@property(readonly, nonatomic) SCRCTargetSelectorTimer *_hideVisualsTimer; // @synthesize _hideVisualsTimer=__hideVisualsTimer;
+@property(readonly, nonatomic) NSMutableOrderedSet *_activeRotors; // @synthesize _activeRotors=__activeRotors;
 @property(retain, nonatomic) SCRElement *currentElement; // @synthesize currentElement=_currentElement;
 @property(retain, nonatomic) NSString *currentRotorType; // @synthesize currentRotorType=_currentRotorType;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *currentChooserCustomName;
 @property(readonly, nonatomic) BOOL isCurrentChooserCustom;
 - (void)removeRotorForType:(id)arg1;
@@ -35,12 +40,11 @@ __attribute__((visibility("hidden")))
 - (void)delayHideVisuals;
 - (void)updateQuickNavOverridesSelection;
 - (id)rotorIdentifierForAXRotorType:(long long)arg1;
-- (unsigned long long)searchKeyForRotorType:(id)arg1;
-- (id)rotorTypeForSearchKey:(unsigned long long)arg1;
+- (long long)searchKeyForRotorType:(id)arg1;
+- (id)rotorTypeForSearchKey:(long long)arg1;
 - (BOOL)isRotorShownInGuides:(id)arg1;
 - (id)titleForRotorType:(id)arg1;
 - (id)activeRotors:(BOOL)arg1;
-- (id)_hideVisualsTimer;
 - (void)_delayedHideVisualsCallback;
 - (BOOL)_currentTypeAndElementSupportSelection;
 - (long long)_indexOfCurrentRotor;
@@ -49,7 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateRotors;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (id)init;
+- (id)initWithUserDefaults:(id)arg1 visualsManager:(id)arg2;
 
 @end
 

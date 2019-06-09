@@ -17,20 +17,14 @@
     BOOL _isAudioMessage;
     BOOL _willFillBubble;
     BOOL _didTrimEmotePrefix;
-    BOOL _displayBigEmoji;
-    BOOL _checkForBigEmoji;
     IMMessageChatItem *_chatItem;
     IMMessage *_message;
     TranscriptDOMController *_controller;
     DOMHTMLElement *_messageElement;
     DOMHTMLElement *_containerElement;
-    unsigned long long _totalEmojiCount;
 }
 
-@property BOOL checkForBigEmoji; // @synthesize checkForBigEmoji=_checkForBigEmoji;
-@property unsigned long long totalEmojiCount; // @synthesize totalEmojiCount=_totalEmojiCount;
 @property(retain, nonatomic) DOMHTMLElement *containerElement; // @synthesize containerElement=_containerElement;
-@property BOOL displayBigEmoji; // @synthesize displayBigEmoji=_displayBigEmoji;
 @property BOOL didTrimEmotePrefix; // @synthesize didTrimEmotePrefix=_didTrimEmotePrefix;
 @property BOOL willFillBubble; // @synthesize willFillBubble=_willFillBubble;
 @property BOOL isAudioMessage; // @synthesize isAudioMessage=_isAudioMessage;

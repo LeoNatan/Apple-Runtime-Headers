@@ -12,25 +12,36 @@
 @interface PXNSScrollView : NSScrollView
 {
     struct CGPoint _newVisibleOrigin;
+    struct CGSize _contentSizeForNewVisibleOrigin;
     NSView *_contentRootView;
     BOOL _layoutInProgress;
     BOOL _didLayout;
+    BOOL _deferContentOffsetUpdates;
+    BOOL _layoutOnBoundsChanges;
     id <PXNSScrollViewDelegate> _px_delegate;
+    struct CGRect _deferredContentBounds;
 }
 
+@property(nonatomic) BOOL layoutOnBoundsChanges; // @synthesize layoutOnBoundsChanges=_layoutOnBoundsChanges;
+@property(nonatomic) struct CGRect deferredContentBounds; // @synthesize deferredContentBounds=_deferredContentBounds;
+@property(nonatomic) BOOL deferContentOffsetUpdates; // @synthesize deferContentOffsetUpdates=_deferContentOffsetUpdates;
 @property(readonly, nonatomic) NSView *contentRootView; // @synthesize contentRootView=_contentRootView;
 @property(nonatomic, setter=px_setDelegate:) __weak id <PXNSScrollViewDelegate> px_delegate; // @synthesize px_delegate=_px_delegate;
 - (void).cxx_destruct;
-- (void)_continualScrollUpdateNotification:(id)arg1;
-- (void)_frameDidChange:(id)arg1;
+- (void)_contentViewBoundsDidChange:(id)arg1;
+- (void)_contentViewFrameDidChange:(id)arg1;
+- (void)_scrollViewFrameDidChange:(id)arg1;
 - (void)_clearVisibleOriginRequirement;
+- (void)scrollToEdge:(unsigned int)arg1;
+- (struct CGPoint)contentOffsetForEdge:(unsigned int)arg1;
 @property(nonatomic) struct CGRect contentBounds;
 - (void)addContentSubview:(id)arg1;
 @property(readonly, nonatomic) struct CGRect activeRect;
 @property(readonly, nonatomic) struct CGRect contentVisibleRect;
-- (id)description;
+- (void)_scrollViewDidScroll;
 - (void)_layoutScrollView;
 - (void)layout;
+- (id)description;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -65,10 +65,10 @@
 - (id)dateComponents;
 - (void)setDelegate:(id)arg1;
 @property(nonatomic, getter=_useCurrentDateDuringDecoding, setter=_setUseCurrentDateDuringDecoding:) _Bool useCurrentDateDuringDecoding;
+@property(retain, nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor;
 @property(retain, nonatomic, getter=_textShadowColor, setter=_setTextShadowColor:) UIColor *textShadowColor;
 @property(retain, nonatomic, getter=_textColor, setter=_setTextColor:) UIColor *textColor;
 @property(retain, nonatomic, getter=_highlightColor, setter=_setHighlightColor:) UIColor *highlightColor;
-@property(nonatomic, getter=_usesModernStyle, setter=_setUsesModernStyle:) _Bool _usesModernStyle;
 @property(nonatomic, getter=_allowsZeroTimeInterval, setter=_setAllowsZeroTimeInterval:) _Bool allowsZeroTimeInterval; // @dynamic allowsZeroTimeInterval;
 @property(nonatomic, getter=_allowsZeroCountDownDuration, setter=_setAllowsZeroCountDownDuration:) _Bool allowsZeroCountDownDuration; // @dynamic allowsZeroCountDownDuration;
 @property(nonatomic, getter=_drawsBackground, setter=_setDrawsBackground:) _Bool drawsBackground; // @dynamic drawsBackground;

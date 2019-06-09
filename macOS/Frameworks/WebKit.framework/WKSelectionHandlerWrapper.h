@@ -9,13 +9,13 @@
 __attribute__((visibility("hidden")))
 @interface WKSelectionHandlerWrapper : NSObject
 {
-    Function_89d21b48 _selectionHandler;
+    Function_15535652 _selectionHandler;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)executeSelectionHandler;
-- (id)initWithSelectionHandler:(Function_89d21b48 *)arg1;
+- (id)initWithSelectionHandler:(Function_15535652 *)arg1;
 
 @end
 

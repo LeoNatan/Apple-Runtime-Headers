@@ -23,11 +23,12 @@
 @property(retain, nonatomic) NSDate *upNextStartTime;
 @property(retain, nonatomic) NSString *upNextTitle;
 @property(nonatomic) _Bool upNextSimpleModeEnabled;
-@property(retain, nonatomic) NSArray *deselectedCalendarSyncHashes;
+@property(readonly, nonatomic) NSArray *deselectedCalendarSyncHashes;
 @property(nonatomic) _Bool eventAutocompleteEnabled;
 @property(nonatomic) _Bool enableAvatars;
 @property(nonatomic) _Bool disableTodayPushes;
 @property(nonatomic, getter=isShortResumeToTodayTimeout) _Bool shortResumeToTodayTimeout;
+@property(nonatomic) _Bool enableMultiwindowAsserts;
 @property(nonatomic) _Bool hideInlineDayViewInEventDetails;
 @property(nonatomic) _Bool showWindowDebugButton;
 @property(nonatomic) _Bool largeListViewDisclosingEventDetails;
@@ -45,9 +46,11 @@
 @property(nonatomic) _Bool immediateAlarmCreation;
 @property(nonatomic) _Bool showMonthDividedListView;
 @property(nonatomic) _Bool showListView;
+@property(nonatomic) _Bool weekViewStartsOnToday;
 @property(nonatomic) _Bool showWeekNumbers;
 @property(retain, nonatomic) NSString *overlayCalendarID;
 @property(retain, nonatomic) NSString *searchString;
+@property(retain, nonatomic) NSString *sourceIdentifierForSelectedIdentity;
 @property(retain, nonatomic) NSNumber *weekViewHourScale;
 @property(retain, nonatomic) NSNumber *dayViewHourScale;
 @property(retain, nonatomic) NSNumber *lastSuspendTime;

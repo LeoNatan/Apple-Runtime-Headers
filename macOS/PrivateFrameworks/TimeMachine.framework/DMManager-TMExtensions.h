@@ -8,6 +8,9 @@
 
 @interface DMManager (TMExtensions)
 + (id)managerForThread;
+- (struct __DADisk *)tm_containerForMountPoint:(id)arg1 error:(id *)arg2;
+- (struct __DADisk *)tm_diskForMountPoint:(id)arg1 error:(id *)arg2;
+- (struct __DADisk *)tm_diskForUUID:(id)arg1 error:(id *)arg2;
 - (BOOL)forciblyUnmountAndEjectWholeDiskOfDisk:(struct __DADisk *)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)ejectDisk:(struct __DADisk *)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)unmountDisk:(struct __DADisk *)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;

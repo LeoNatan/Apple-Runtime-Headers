@@ -8,7 +8,7 @@
 
 #import <AnnotationKit/PKCanvasViewDelegate-Protocol.h>
 
-@class AKPageController, NSHashTable, NSString, PKCanvasView, PKInk;
+@class AKPageController, NSHashTable, PKCanvasView, PKInk;
 @protocol AKInkOverlayViewDelegate;
 
 @interface AKInkOverlayView : NSView <PKCanvasViewDelegate>
@@ -30,10 +30,12 @@
 @property __weak id drawingUndoTarget; // @synthesize drawingUndoTarget=_drawingUndoTarget;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (void).cxx_destruct;
-- (void)canvasView:(id)arg1 drawingDidChange:(id)arg2;
-- (void)canvasViewDidCancelStroke:(id)arg1;
-- (void)canvasViewDidEndStroke:(id)arg1;
-- (void)canvasViewDidBeginNewStroke:(id)arg1;
+- (void)canvasViewDrawingDidChange:(id)arg1;
+- (void)_canvasView:(id)arg1 cancelledStroke:(id)arg2;
+- (void)_canvasView:(id)arg1 endedStroke:(id)arg2;
+- (void)_canvasView:(id)arg1 beganStroke:(id)arg2;
+- (void)canvasViewDidEndDrawing:(id)arg1;
+- (void)canvasViewDidBeginDrawing:(id)arg1;
 - (void)_calculateFixedPixelSize:(struct CGSize *)arg1 drawingScale:(double *)arg2;
 - (void)setupInkView;
 - (void)viewDidMoveToSuperview;
@@ -47,12 +49,6 @@
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithPageController:(id)arg1 drawingUndoTarget:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

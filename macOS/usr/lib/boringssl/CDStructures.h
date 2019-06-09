@@ -45,13 +45,6 @@ struct nw_protocol {
     void *output_handler_context;
 };
 
-struct nw_protocol_boringssl_private_key_methods {
-    CDUnknownFunctionPointerType type;
-    CDUnknownFunctionPointerType max_signature_len;
-    CDUnknownFunctionPointerType sign;
-    CDUnknownFunctionPointerType decrypt;
-};
-
 struct nw_protocol_callbacks;
 
 struct nw_protocol_identifier;

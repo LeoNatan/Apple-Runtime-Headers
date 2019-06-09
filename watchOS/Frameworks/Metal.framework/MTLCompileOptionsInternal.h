@@ -20,8 +20,11 @@ __attribute__((visibility("hidden")))
     unsigned int _languageVersion;
     _Bool _compileTimeStatisticsEnabled;
     NSString *_additionalCompilerArguments;
+    unsigned char _sourceLanguage;
 }
 
+- (void)setSourceLanguage:(unsigned char)arg1;
+- (unsigned char)sourceLanguage;
 - (void)setCompileTimeStatisticsEnabled:(_Bool)arg1;
 - (_Bool)compileTimeStatisticsEnabled;
 - (void)setTracingEnabled:(_Bool)arg1;
@@ -33,6 +36,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)debuggingEnabled;
 - (void)setFastMathEnabled:(_Bool)arg1;
 - (_Bool)fastMathEnabled;
+- (void)importDictionary:(id)arg1;
+- (id)exportDictionary;
 - (id)description;
 - (id)formattedDescription:(unsigned int)arg1;
 - (void)setLanguageVersion:(unsigned int)arg1;

@@ -9,12 +9,13 @@
 @interface NWStatisticsTCPSource : NWStatisticsSource
 {
     struct nstat_tcp_descriptor _descriptor;
+    unsigned long long _eventFlags;
 }
 
 - (id)initWithManager:(id)arg1 local:(const struct sockaddr *)arg2 remote:(const struct sockaddr *)arg3;
 - (id)description;
 - (id)_currentSnapshot;
-- (int)handleDescriptor:(void *)arg1 length:(unsigned long long)arg2;
+- (int)handleDescriptor:(void *)arg1 length:(unsigned long long)arg2 events:(unsigned long long)arg3;
 
 @end
 

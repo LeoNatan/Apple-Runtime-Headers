@@ -20,9 +20,12 @@
 @property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
 @property(nonatomic) int state; // @synthesize state=_state;
 - (id)_stopwatchTimeTextProviderWithSubseconds:(_Bool)arg1;
+- (id)_newSignatureRectangularTemplate;
+- (id)_newSignatureCircularTemplate;
 - (id)_newSignatureBezelTemplate;
 - (id)_newSignatureCornerTemplate;
 - (id)_newExtraLargeTemplate;
+- (id)_newSimpleTextTemplate;
 - (id)_newLargeUtilityTemplate;
 - (id)_newSmallUtilityTemplate;
 - (id)_newCircularMediumTemplate;

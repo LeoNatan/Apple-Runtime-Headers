@@ -4,17 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITableViewCell.h>
+#import <ScreenTimeUI/STTableCell.h>
 
-@class STDailyAverageView;
+@class STDailyAverageView, STHorizontallySegmentedView, STUsageGraphViewController, STUsageSummaryTitleView;
 
-@interface STDailyAverageSummaryTableViewCell : UITableViewCell
+__attribute__((visibility("hidden")))
+@interface STDailyAverageSummaryTableViewCell : STTableCell
 {
     STDailyAverageView *_dailyAverageView;
+    STUsageSummaryTitleView *_titleView;
+    STUsageGraphViewController *_usageGraphViewController;
+    STHorizontallySegmentedView *_topItemsView;
 }
 
+@property(readonly) STHorizontallySegmentedView *topItemsView; // @synthesize topItemsView=_topItemsView;
+@property(readonly) STUsageGraphViewController *usageGraphViewController; // @synthesize usageGraphViewController=_usageGraphViewController;
+@property(readonly) STUsageSummaryTitleView *titleView; // @synthesize titleView=_titleView;
 @property(readonly) STDailyAverageView *dailyAverageView; // @synthesize dailyAverageView=_dailyAverageView;
 - (void).cxx_destruct;
+- (void)_layoutDidChangeFrom:(_Bool)arg1 to:(_Bool)arg2;
+- (void)_numberOfLinesDidChangeFrom:(unsigned long long)arg1 to:(unsigned long long)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)dealloc;
 - (id)initWithUsageReport:(id)arg1;
 
 @end

@@ -20,7 +20,9 @@
 + (void)uninstallApp:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 + (void)launchMessagesExtensionForApp:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
 + (long long)launchMessagesExtensionForApp:(id)arg1;
++ (void)launchApp:(id)arg1 onPairedDevice:(id)arg2 withResultHandler:(CDUnknownBlockType)arg3;
 + (void)launchApp:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
++ (long long)launchApp:(id)arg1 onPairedDevice:(id)arg2;
 + (long long)launchApp:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;

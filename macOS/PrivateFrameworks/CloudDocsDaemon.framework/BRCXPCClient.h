@@ -7,14 +7,16 @@
 #import <objc/NSObject.h>
 
 #import <CloudDocsDaemon/BRCForegroundClient-Protocol.h>
+#import <CloudDocsDaemon/BRCListOperationDelegate-Protocol.h>
 #import <CloudDocsDaemon/BRCNotificationPipeDelegate-Protocol.h>
 #import <CloudDocsDaemon/BRCProcessMonitorDelegate-Protocol.h>
+#import <CloudDocsDaemon/FPProviderObserver-Protocol.h>
 
-@class BRCAccountSession, BRCClientPrivilegesDescriptor, BRMangledID, NSCountedSet, NSOperationQueue, NSSet, NSString, NSXPCConnection, brc_task_tracker;
+@class BRCAccountSession, BRCClientPrivilegesDescriptor, BRMangledID, NSCountedSet, NSHashTable, NSOperationQueue, NSSet, NSString, NSXPCConnection, brc_task_tracker;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface BRCXPCClient : NSObject <BRCProcessMonitorDelegate, BRCForegroundClient, BRCNotificationPipeDelegate>
+@interface BRCXPCClient : NSObject <BRCProcessMonitorDelegate, BRCForegroundClient, BRCListOperationDelegate, FPProviderObserver, BRCNotificationPipeDelegate>
 {
     BRCClientPrivilegesDescriptor *_clientPriviledgesDescriptor;
     NSCountedSet *_appLibraries;
@@ -27,6 +29,9 @@ __attribute__((visibility("hidden")))
     BOOL _dieOnInvalidate;
     unsigned int _isForeground:1;
     unsigned int _invalidated:1;
+    unsigned int _isMonitoringProcess:1;
+    NSHashTable *_listOperations;
+    NSHashTable *_recursiveListOperations;
     BOOL _isUsingUbiquity;
     NSXPCConnection *_connection;
 }
@@ -37,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) BRCClientPrivilegesDescriptor *clientPriviledgesDescriptor; // @synthesize clientPriviledgesDescriptor=_clientPriviledgesDescriptor;
 - (void).cxx_destruct;
+- (void)listOperation:(id)arg1 wasReplacedByOperation:(id)arg2;
 - (void)_t_resetAllZones:(id)arg1 waitUntilIdle:(BOOL)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)_startSharingOperationAfterAcceptation:(struct _BRCFrameworkOperation *)arg1 client:(id)arg2 item:(id)arg3;
 - (id)_sharingOperationItemFromLookup:(id)arg1 url:(id)arg2 allowDirectory:(BOOL)arg3 error:(id *)arg4;
@@ -67,13 +73,15 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canCreateAppLibraryWithID:(id)arg1 error:(id *)arg2;
 - (BOOL)_hasAccessToAppLibraryID:(id)arg1 error:(id *)arg2;
 - (BOOL)cloudEnabledStatus;
-- (void)notificationPipe:(id)arg1 didObserveAppLibrary:(id)arg2;
+- (void)notificationPipe:(id)arg1 finishedObservingAppLibrary:(id)arg2;
 - (void)notificationPipe:(id)arg1 willObserveAppLibrary:(id)arg2;
 - (void)_stopMonitoringProcess;
 - (void)removeAppLibrary:(id)arg1;
 - (void)addAppLibrary:(id)arg1;
 - (void)_startMonitoringProcessIfNeeded;
 - (void)process:(int)arg1 didBecomeForeground:(BOOL)arg2;
+- (void)providerDidEnterBackground:(id)arg1;
+- (void)providerDidEnterForeground:(id)arg1;
 @property(readonly, nonatomic) NSString *identifier;
 - (void)addOperation:(id)arg1;
 - (void)dumpToContext:(id)arg1;

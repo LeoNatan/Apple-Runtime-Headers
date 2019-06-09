@@ -14,6 +14,9 @@
 {
 }
 
++ (id)entityDescriptionWithContext:(id)arg1;
++ (id)entityDescription;
++ (id)fetchRequest;
 + (BOOL)supportsSecureCoding;
 - (id)objectIDNotification;
 @property(readonly, copy) NSString *author;

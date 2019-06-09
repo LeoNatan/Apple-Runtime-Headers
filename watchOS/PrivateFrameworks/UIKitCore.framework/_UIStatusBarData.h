@@ -9,7 +9,7 @@
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
-@class _UIStatusBarDataActivityEntry, _UIStatusBarDataBackgroundActivityEntry, _UIStatusBarDataBatteryEntry, _UIStatusBarDataBluetoothEntry, _UIStatusBarDataBoolEntry, _UIStatusBarDataCellularEntry, _UIStatusBarDataEntry, _UIStatusBarDataIntegerEntry, _UIStatusBarDataLocationEntry, _UIStatusBarDataLockEntry, _UIStatusBarDataStringEntry, _UIStatusBarDataTetheringEntry, _UIStatusBarDataThermalEntry, _UIStatusBarDataWifiEntry;
+@class NSSet, _UIStatusBarDataActivityEntry, _UIStatusBarDataBackgroundActivityEntry, _UIStatusBarDataBatteryEntry, _UIStatusBarDataBluetoothEntry, _UIStatusBarDataBoolEntry, _UIStatusBarDataCellularEntry, _UIStatusBarDataEntry, _UIStatusBarDataIntegerEntry, _UIStatusBarDataLocationEntry, _UIStatusBarDataLockEntry, _UIStatusBarDataStringEntry, _UIStatusBarDataTetheringEntry, _UIStatusBarDataThermalEntry, _UIStatusBarDataVoiceControlEntry, _UIStatusBarDataWifiEntry;
 
 @interface _UIStatusBarData : NSObject <NSCopying, NSSecureCoding>
 {
@@ -29,6 +29,7 @@
     _UIStatusBarDataLockEntry *_lockEntry;
     _UIStatusBarDataBoolEntry *_quietModeEntry;
     _UIStatusBarDataBoolEntry *_electronicTollCollectionEntry;
+    _UIStatusBarDataBoolEntry *_radarEntry;
     _UIStatusBarDataEntry *_rotationLockEntry;
     _UIStatusBarDataEntry *_airplaneModeEntry;
     _UIStatusBarDataEntry *_ttyEntry;
@@ -37,6 +38,7 @@
     _UIStatusBarDataEntry *_studentEntry;
     _UIStatusBarDataEntry *_vpnEntry;
     _UIStatusBarDataEntry *_liquidDetectionEntry;
+    _UIStatusBarDataVoiceControlEntry *_voiceControlEntry;
     _UIStatusBarDataEntry *_airPlayEntry;
     _UIStatusBarDataEntry *_carPlayEntry;
     _UIStatusBarDataEntry *_alarmEntry;
@@ -55,6 +57,7 @@
 @property(copy, nonatomic) _UIStatusBarDataEntry *alarmEntry; // @synthesize alarmEntry=_alarmEntry;
 @property(copy, nonatomic) _UIStatusBarDataEntry *carPlayEntry; // @synthesize carPlayEntry=_carPlayEntry;
 @property(copy, nonatomic) _UIStatusBarDataEntry *airPlayEntry; // @synthesize airPlayEntry=_airPlayEntry;
+@property(copy, nonatomic) _UIStatusBarDataVoiceControlEntry *voiceControlEntry; // @synthesize voiceControlEntry=_voiceControlEntry;
 @property(copy, nonatomic) _UIStatusBarDataEntry *liquidDetectionEntry; // @synthesize liquidDetectionEntry=_liquidDetectionEntry;
 @property(copy, nonatomic) _UIStatusBarDataEntry *vpnEntry; // @synthesize vpnEntry=_vpnEntry;
 @property(copy, nonatomic) _UIStatusBarDataEntry *studentEntry; // @synthesize studentEntry=_studentEntry;
@@ -63,6 +66,7 @@
 @property(copy, nonatomic) _UIStatusBarDataEntry *ttyEntry; // @synthesize ttyEntry=_ttyEntry;
 @property(copy, nonatomic) _UIStatusBarDataEntry *airplaneModeEntry; // @synthesize airplaneModeEntry=_airplaneModeEntry;
 @property(copy, nonatomic) _UIStatusBarDataEntry *rotationLockEntry; // @synthesize rotationLockEntry=_rotationLockEntry;
+@property(copy, nonatomic) _UIStatusBarDataBoolEntry *radarEntry; // @synthesize radarEntry=_radarEntry;
 @property(copy, nonatomic) _UIStatusBarDataBoolEntry *electronicTollCollectionEntry; // @synthesize electronicTollCollectionEntry=_electronicTollCollectionEntry;
 @property(copy, nonatomic) _UIStatusBarDataBoolEntry *quietModeEntry; // @synthesize quietModeEntry=_quietModeEntry;
 @property(copy, nonatomic) _UIStatusBarDataLockEntry *lockEntry; // @synthesize lockEntry=_lockEntry;
@@ -83,9 +87,11 @@
 - (void)makeUpdateFromData:(id)arg1;
 - (id)updateFromData:(id)arg1;
 - (id)dataByApplyingUpdate:(id)arg1 keys:(id)arg2;
+- (id)dataByApplyingOverlay:(id)arg1;
 - (void)applyUpdate:(id)arg1;
 - (void)_applyUpdate:(id)arg1 keys:(id)arg2;
 - (id)description;
+@property(readonly, nonatomic) NSSet *existingEntryKeys;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;

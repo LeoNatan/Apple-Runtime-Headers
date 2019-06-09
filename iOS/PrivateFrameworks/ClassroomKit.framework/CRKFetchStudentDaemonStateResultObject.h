@@ -6,15 +6,15 @@
 
 #import "CATTaskResultObject.h"
 
-@class NSString;
+@class NSDictionary;
 
 @interface CRKFetchStudentDaemonStateResultObject : CATTaskResultObject
 {
-    NSString *_stateDescription;
+    NSDictionary *_stateDictionary;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *stateDescription; // @synthesize stateDescription=_stateDescription;
+@property(copy, nonatomic) NSDictionary *stateDictionary; // @synthesize stateDictionary=_stateDictionary;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

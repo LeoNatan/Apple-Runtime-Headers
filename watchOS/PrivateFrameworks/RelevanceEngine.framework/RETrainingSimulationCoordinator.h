@@ -25,6 +25,7 @@
 - (void)elementAction:(id)arg1 wantsViewControllerDisplayed:(id)arg2;
 - (void)elementAction:(id)arg1 wantsToPerformTapActionForComplicationSlot:(id)arg2;
 - (void)elementAction:(id)arg1 didFinishTask:(_Bool)arg2;
+- (void)relevanceEngine:(id)arg1 encodedObjectAtPath:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)relevanceEngine:(id)arg1 runActionOfElementWithDescription1:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)gatherDiagnosticLogsForRelevanceEngine:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAllElementsInRelevanceEngine:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -33,10 +34,11 @@
 - (void)relevanceEngine:(id)arg1 performCommand:(id)arg2 withOptions:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)relevanceEngine:(id)arg1 createElementFromDescription:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_unavailableEngineWithNameError:(id)arg1;
+- (void)_accesssEngineWithName:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_engineWithName:(id)arg1;
 - (void)_relevanceEnginesDidChange;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

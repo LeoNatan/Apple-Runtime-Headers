@@ -6,6 +6,7 @@
 
 #import <CoreWLANKit/APFormatter.h>
 
+__attribute__((visibility("hidden")))
 @interface UTF8Formatter : APFormatter
 {
     unsigned long long _maxByteCount;

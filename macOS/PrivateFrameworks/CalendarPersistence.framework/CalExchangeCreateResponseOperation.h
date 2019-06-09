@@ -24,6 +24,8 @@
     BOOL _suppressNotification;
 }
 
++ (id)stringWithAutoCommentRemoved:(id)arg1;
++ (BOOL)stringHasAutoCommentPrefix:(id)arg1;
 + (BOOL)supportsSecureCoding;
 - (id)messageTracerUUID;
 - (id)messageTracerName;

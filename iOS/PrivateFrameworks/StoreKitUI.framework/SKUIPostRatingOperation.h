@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSString, SKUIReviewConfiguration;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPostRatingOperation : ISOperation
 {
     NSDictionary *_responseDictionary;

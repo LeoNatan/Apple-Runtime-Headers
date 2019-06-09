@@ -11,17 +11,18 @@
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 #import <HomeKitDaemon/IDSServiceDelegate-Protocol.h>
 
-@class HMDAccountRegistry, HMFNetMonitor, HMFTimer, IDSService, NSArray, NSMapTable, NSObject, NSString;
-@protocol HMDRemoteDeviceMonitorDelegate, OS_dispatch_queue;
+@class HMDAccountRegistry, HMFNetMonitor, HMFTimer, IDSService, NSArray, NSMapTable, NSObject, NSOperationQueue, NSString;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDRemoteDeviceMonitor : HMFObject <HMFLogging, HMFNetMonitorDelegate, HMFTimerDelegate, IDSServiceDelegate>
 {
+    id <HMFLocking> _lock;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSOperationQueue *_operationQueue;
     NSMapTable *_devices;
     _Bool _reachable;
-    id <HMDRemoteDeviceMonitorDelegate> _delegate;
+    _Bool _started;
     HMDAccountRegistry *_accountRegistry;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     IDSService *_service;
     HMFNetMonitor *_netMonitor;
     HMFTimer *_deviceHealthTimer;
@@ -32,13 +33,10 @@
 @property(readonly, nonatomic) HMFTimer *deviceHealthTimer; // @synthesize deviceHealthTimer=_deviceHealthTimer;
 @property(readonly, nonatomic) HMFNetMonitor *netMonitor; // @synthesize netMonitor=_netMonitor;
 @property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(readonly, nonatomic) HMDAccountRegistry *accountRegistry; // @synthesize accountRegistry=_accountRegistry;
-@property __weak id <HMDRemoteDeviceMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(_Bool)arg4 error:(id)arg5 context:(id)arg6;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4 context:(id)arg5;
+- (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)timerDidFire:(id)arg1;
 - (void)networkMonitorIsUnreachable:(id)arg1;
 - (void)networkMonitorIsReachable:(id)arg1;
@@ -54,14 +52,16 @@
 - (void)handleRemovedDeviceInformation:(id)arg1;
 - (void)stopMonitoringDevice:(id)arg1;
 - (void)handleAddedDeviceInformation:(id)arg1;
+- (void)_startMonitoringDevice:(id)arg1;
 - (void)startMonitoringDevice:(id)arg1;
 - (id)_deviceInformationForDevice:(id)arg1;
-- (id)deviceInformationForDevice:(id)arg1;
 @property(readonly) NSArray *unreachableDevices;
 - (id)devices;
 - (void)setReachable:(_Bool)arg1;
 @property(readonly, getter=isReachable) _Bool reachable; // @synthesize reachable=_reachable;
 - (void)start;
+- (void)setStarted:(_Bool)arg1;
+@property(readonly, getter=isStarted) _Bool started; // @synthesize started=_started;
 - (void)dealloc;
 - (id)dumpState;
 - (id)initWithAccountRegistry:(id)arg1;

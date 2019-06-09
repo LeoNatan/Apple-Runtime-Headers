@@ -28,7 +28,6 @@
 - (BOOL)isSymbolicLink;
 - (BOOL)isDirectory;
 - (BOOL)isRegularFile;
-- (unsigned int)approximateSize;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2 updateFilenames:(BOOL)arg3;
 - (id)initWithData:(id)arg1 archiveType:(int)arg2;
 - (void)finalize;

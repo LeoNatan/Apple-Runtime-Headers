@@ -10,12 +10,14 @@
 
 @interface PHAssetDescriptionProperties : PHAssetPropertySet
 {
+    NSString *_title;
     NSString *_assetDescription;
 }
 
 + (id)propertiesToFetch;
 + (id)propertySetName;
 @property(readonly, copy, nonatomic) NSString *assetDescription; // @synthesize assetDescription=_assetDescription;
+@property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 

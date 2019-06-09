@@ -9,6 +9,7 @@
 @class NSData, NSMutableArray, NSString;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface ReporterFilter : NSObject
 {
     NSObject<OS_dispatch_source> *_finalTimer;

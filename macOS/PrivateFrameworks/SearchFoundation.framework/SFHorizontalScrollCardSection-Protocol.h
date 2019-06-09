@@ -11,6 +11,7 @@
 @protocol SFHorizontalScrollCardSection <SFCardSection>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(nonatomic) unsigned long long numberOfRows;
 @property(copy, nonatomic) NSArray *cardSections;
 @property(retain, nonatomic) SFColor *backgroundColor;
 @property(nonatomic) int separatorStyle;

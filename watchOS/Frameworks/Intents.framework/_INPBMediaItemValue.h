@@ -10,37 +10,57 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBMediaItemValue-Protocol.h>
 
-@class NSString, _INPBImageValue, _INPBValueMetadata;
+@class NSArray, NSString, _INPBImageValue, _INPBValueMetadata;
 
 @interface _INPBMediaItemValue : PBCodable <_INPBMediaItemValue, NSSecureCoding, NSCopying>
 {
     CDStruct_f953fb60 _has;
+    NSString *_artist;
     _INPBImageValue *_artwork;
     NSString *_identifier;
+    NSArray *_namedEntities;
     NSString *_title;
+    NSArray *_topics;
     int _type;
     _INPBValueMetadata *_valueMetadata;
 }
 
++ (_Bool)supportsSecureCoding;
++ (Class)topicsType;
++ (Class)namedEntitiesType;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) int type; // @synthesize type=_type;
+@property(copy, nonatomic) NSArray *topics; // @synthesize topics=_topics;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(copy, nonatomic) NSArray *namedEntities; // @synthesize namedEntities=_namedEntities;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) _INPBImageValue *artwork; // @synthesize artwork=_artwork;
+@property(copy, nonatomic) NSString *artist; // @synthesize artist=_artist;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasValueMetadata;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
+- (id)topicsAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int topicsCount;
+- (void)addTopics:(id)arg1;
+- (void)clearTopics;
 @property(readonly, nonatomic) _Bool hasTitle;
+- (id)namedEntitiesAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) unsigned int namedEntitiesCount;
+- (void)addNamedEntities:(id)arg1;
+- (void)clearNamedEntities;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 @property(readonly, nonatomic) _Bool hasArtwork;
+@property(readonly, nonatomic) _Bool hasArtist;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

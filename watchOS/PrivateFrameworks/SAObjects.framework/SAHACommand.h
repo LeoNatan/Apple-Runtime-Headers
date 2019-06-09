@@ -22,6 +22,7 @@
 @property(retain, nonatomic) SAHAFilter *filter;
 @property(copy, nonatomic) NSNumber *commandTimeout;
 @property(copy, nonatomic) NSArray *actions;
+@property(copy, nonatomic) NSArray *actionRequests;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

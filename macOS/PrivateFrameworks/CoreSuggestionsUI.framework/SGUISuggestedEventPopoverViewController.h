@@ -8,7 +8,7 @@
 
 #import <CoreSuggestionsUI/EKViewWindowController-Protocol.h>
 
-@class CalUIDayViewGadgetController, EKEventViewController, NSArray, NSLayoutConstraint, NSStackView, NSString, NSView, SGUISuggestedEventDayViewAppearanceDelegate;
+@class CalUIDayViewGadgetController, EKEventViewController, NSLayoutConstraint, NSStackView, NSString, NSView, SGRealtimeEvent, SGUISuggestedEventDayViewAppearanceDelegate;
 @protocol SuggestedEventPopoverControllerDelegate;
 
 @interface SGUISuggestedEventPopoverViewController : NSViewController <EKViewWindowController>
@@ -29,22 +29,16 @@
     NSStackView *_detailsStackView;
     NSView *_summaryNavigationView;
     NSView *_detailNavigationView;
-    unsigned long long _currentEventIndex;
     NSLayoutConstraint *_detailsWidthConstraint;
     NSLayoutConstraint *_eventHeaderHeightConstraint;
     NSLayoutConstraint *_stackWidthFixedConstraint;
-    NSArray *_realtimeEvents;
 }
 
 + (double)_detailsAnimationDuration;
-+ (id)keyPathsForValuesAffectingHasMultipleEvents;
-+ (id)keyPathsForValuesAffectingHasNextEvent;
-+ (id)keyPathsForValuesAffectingHasPreviousEvent;
-+ (id)keyPathsForValuesAffectingPagingTitle;
 + (id)keyPathsForValuesAffectingIsActionable;
-@property(copy, nonatomic) NSArray *realtimeEvents; // @synthesize realtimeEvents=_realtimeEvents;
++ (id)eventKitEventForRealtimeEvent:(id)arg1;
++ (id)_eventStore;
 @property(retain, nonatomic) NSLayoutConstraint *stackWidthFixedConstraint; // @synthesize stackWidthFixedConstraint=_stackWidthFixedConstraint;
-@property(nonatomic) unsigned long long currentEventIndex; // @synthesize currentEventIndex=_currentEventIndex;
 @property(nonatomic) BOOL isNewEvent; // @synthesize isNewEvent=_isNewEvent;
 @property(nonatomic) BOOL showingDetails; // @synthesize showingDetails=_showingDetails;
 @property(nonatomic) __weak NSView *detailNavigationView; // @synthesize detailNavigationView=_detailNavigationView;
@@ -73,18 +67,10 @@
 - (void)ignoreEvent:(id)arg1;
 - (void)commitEvent:(id)arg1;
 - (void)dismissController:(id)arg1;
-- (void)selectNextEvent:(id)arg1;
-- (void)selectPreviousEvent:(id)arg1;
-@property(readonly, nonatomic) BOOL hasMultipleEvents;
-@property(readonly, nonatomic) BOOL hasNextEvent;
-@property(readonly, nonatomic) BOOL hasPreviousEvent;
-@property(readonly, nonatomic) NSString *pagingTitle;
 @property(readonly, nonatomic) BOOL isActionable;
 - (void)viewDidLoad;
 - (id)nibBundle;
-- (void)_updateCurrentEventIndex;
-- (id)representedObject;
-- (void)setRepresentedObject:(id)arg1;
+@property(retain) SGRealtimeEvent *representedObject;
 @property(readonly, nonatomic) SGUISuggestedEventDayViewAppearanceDelegate *dayViewAppearanceDelegate; // @synthesize dayViewAppearanceDelegate=_dayViewAppearanceDelegate;
 @property(readonly, nonatomic) CalUIDayViewGadgetController *dayViewGadgedController; // @synthesize dayViewGadgedController=_dayViewGadgedController;
 - (id)_detailedViewControllerSettings;

@@ -33,6 +33,7 @@
 - (void)_updateStylingForTitleLabel:(id)arg1;
 - (void)_configureIconButtonsForIcons:(id)arg1;
 - (id)_iconShadowImageForIcon:(id)arg1;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (double)_headerHeightForWidth:(double)arg1;
 - (double)_iconTrailingPadding;

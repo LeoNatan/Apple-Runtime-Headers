@@ -6,9 +6,9 @@
 
 #import <IMAP/NSObject-Protocol.h>
 
-@class IMAPPersistFlagChangesOperation, NSIndexSet;
+@class IMAPPersistFlagChangesOperation, NSArray;
 
 @protocol IMAPPersistFlagChangesOperationDelegate <NSObject>
-- (void)persistFlagChangesOperation:(IMAPPersistFlagChangesOperation *)arg1 persistedFlagChangesForUIDs:(NSIndexSet *)arg2;
+- (void)persistFlagChangesOperation:(IMAPPersistFlagChangesOperation *)arg1 persistedFlagChangesForRemoteIDs:(NSArray *)arg2;
 @end
 

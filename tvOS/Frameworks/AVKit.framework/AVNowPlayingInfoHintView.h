@@ -6,12 +6,19 @@
 
 #import <UIKit/UIView.h>
 
+@class CATextLayer;
+
+__attribute__((visibility("hidden")))
 @interface AVNowPlayingInfoHintView : UIView
 {
+    CATextLayer *_textLayer;
 }
 
++ (id)imageForHintArrow:(long long)arg1;
+- (void).cxx_destruct;
+- (id)description;
 - (void)setHidden:(_Bool)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 arrow:(long long)arg3;
 
 @end
 

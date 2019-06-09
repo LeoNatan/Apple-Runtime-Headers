@@ -24,12 +24,12 @@
 @property(nonatomic) float currentTotal; // @synthesize currentTotal;
 @property(retain, nonatomic) NSMutableArray *multipliers; // @synthesize multipliers;
 @property(nonatomic) float currentMultiplier; // @synthesize currentMultiplier;
-@property(nonatomic) id delegate; // @synthesize delegate;
+@property(nonatomic) __weak id delegate; // @synthesize delegate;
+- (void).cxx_destruct;
 - (id)archiveToDictionary;
 - (void)setCurrentMediaPath:(id)arg1;
 - (void)popAndUpdate;
 - (void)updateProgress:(float)arg1;
-- (void)dealloc;
 - (float)totalProgress:(float)arg1;
 - (void)pop;
 - (void)push:(float)arg1;

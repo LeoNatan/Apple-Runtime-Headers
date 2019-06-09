@@ -15,14 +15,14 @@
 
 + (void)updateAlbumMetadata:(id)arg1;
 @property(retain, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+- (void).cxx_destruct;
 - (id)_argumentsDictionaryFromXPCEvent:(id)arg1;
 - (id)_argumentsDictionaryAsData:(id)arg1;
 - (void)runDaemonSide;
 - (void)run;
 - (long long)daemonOperation;
 - (id)description;
-- (void)dealloc;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
 
 @end

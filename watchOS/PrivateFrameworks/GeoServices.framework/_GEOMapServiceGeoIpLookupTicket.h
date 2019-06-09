@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 - (void)cancel;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 auditToken:(id)arg2 networkActivity:(CDUnknownBlockType)arg3 handlerQueue:(id)arg4;
 - (id)initWithIpAddress:(id)arg1;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

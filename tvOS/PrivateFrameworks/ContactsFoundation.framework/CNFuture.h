@@ -9,38 +9,39 @@
 #import <ContactsFoundation/CNFuture-Protocol.h>
 #import <ContactsFoundation/CNPromise-Protocol.h>
 
-@class CNFutureCompletionBlocks, CNFutureResult, NSConditionLock, NSString;
+@class NSMutableArray, NSString;
+@protocol CNFutureImpl;
 
 @interface CNFuture : NSObject <CNFuture, CNPromise>
 {
-    NSConditionLock *_stateLock;
-    CNFutureResult *_futureResult;
-    CNFutureCompletionBlocks *_completionBlocks;
+    id <CNFutureImpl> _impl;
+    NSMutableArray *_calculationDependencies;
 }
 
 + (id)join:(id)arg1;
 + (id)sequence:(id)arg1;
 + (id)chain:(id)arg1;
 + (void)finishPromise:(id)arg1 withFuture:(id)arg2;
-+ (id)recover:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-+ (id)flatMap:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (id)recover:(id)arg1 withBlock:(CDUnknownBlockType)arg2 schedulerProvider:(id)arg3;
++ (id)flatMap:(id)arg1 withBlock:(CDUnknownBlockType)arg2 schedulerProvider:(id)arg3;
 + (id)lazyFutureWithBlock:(CDUnknownBlockType)arg1;
++ (id)futureWithBlock:(CDUnknownBlockType)arg1 scheduler:(id)arg2 schedulerProvider:(id)arg3;
++ (id)futureWithBlock:(CDUnknownBlockType)arg1 schedulerProvider:(id)arg2;
 + (id)futureWithBlock:(CDUnknownBlockType)arg1 scheduler:(id)arg2;
 + (id)futureWithBlock:(CDUnknownBlockType)arg1;
 + (id)futureWithError:(id)arg1;
 + (id)futureWithResult:(id)arg1;
 + (id)future;
 + (id)promiseFuture;
+- (void).cxx_destruct;
+- (id)recover:(CDUnknownBlockType)arg1 schedulerProvider:(id)arg2;
 - (id)recover:(CDUnknownBlockType)arg1;
+- (id)flatMap:(CDUnknownBlockType)arg1 schedulerProvider:(id)arg2;
 - (id)flatMap:(CDUnknownBlockType)arg1;
-- (void)_flushCompletionBlocks;
-- (id)futureResult;
-- (void)addCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)addFailureBlock:(CDUnknownBlockType)arg1 scheduler:(id)arg2;
 - (void)addFailureBlock:(CDUnknownBlockType)arg1;
 - (void)addSuccessBlock:(CDUnknownBlockType)arg1 scheduler:(id)arg2;
 - (void)addSuccessBlock:(CDUnknownBlockType)arg1;
-- (_Bool)_nts_isFinished;
 - (CDUnknownBlockType)errorOnlyCompletionHandlerAdapter;
 - (CDUnknownBlockType)boolErrorCompletionHandlerAdapter;
 - (CDUnknownBlockType)completionHandlerAdapterWithDefaultValue:(id)arg1;
@@ -50,18 +51,20 @@
 - (_Bool)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)didCancel;
 - (_Bool)cancel;
-- (_Bool)nts_isFinished;
 @property(readonly, getter=isCancelled) _Bool cancelled;
 @property(readonly, getter=isFinished) _Bool finished;
 - (id)resultBeforeDate:(id)arg1 error:(id *)arg2;
 - (id)resultWithTimeout:(double)arg1 error:(id *)arg2;
 - (id)result:(id *)arg1;
-- (void)dealloc;
+- (void)addCalculationDependency:(id)arg1;
+@property(readonly, copy) NSString *description;
+- (id)initWithImpl:(id)arg1;
+- (id)initWithSchedulerProvider:(id)arg1;
 - (id)init;
+- (void)_flushCompletionBlocks;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

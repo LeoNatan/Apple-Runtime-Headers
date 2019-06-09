@@ -10,7 +10,7 @@
 {
 }
 
-- (id)initWithResult:(id)arg1;
+- (id)initWithDetailedRowModel:(id)arg1;
 
 @end
 

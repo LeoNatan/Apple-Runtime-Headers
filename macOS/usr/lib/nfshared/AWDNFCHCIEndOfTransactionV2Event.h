@@ -22,6 +22,7 @@
     unsigned int _currencyCode;
     unsigned int _expressType;
     unsigned int _informative;
+    unsigned int _localValidation;
     unsigned int _maxRSSIValue;
     unsigned int _minRSSIValue;
     unsigned int _spid;
@@ -48,6 +49,7 @@
         unsigned int currencyCode:1;
         unsigned int expressType:1;
         unsigned int informative:1;
+        unsigned int localValidation:1;
         unsigned int maxRSSIValue:1;
         unsigned int minRSSIValue:1;
         unsigned int spid:1;
@@ -64,6 +66,7 @@
 }
 
 @property(retain, nonatomic) NSData *transactionId; // @synthesize transactionId=_transactionId;
+@property(nonatomic) unsigned int localValidation; // @synthesize localValidation=_localValidation;
 @property(nonatomic) unsigned int minRSSIValue; // @synthesize minRSSIValue=_minRSSIValue;
 @property(nonatomic) unsigned int maxRSSIValue; // @synthesize maxRSSIValue=_maxRSSIValue;
 @property(nonatomic) unsigned int avgRSSIValue; // @synthesize avgRSSIValue=_avgRSSIValue;
@@ -99,6 +102,7 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(readonly, nonatomic) BOOL hasTransactionId;
+@property(nonatomic) BOOL hasLocalValidation;
 @property(nonatomic) BOOL hasMinRSSIValue;
 @property(nonatomic) BOOL hasMaxRSSIValue;
 @property(nonatomic) BOOL hasAvgRSSIValue;

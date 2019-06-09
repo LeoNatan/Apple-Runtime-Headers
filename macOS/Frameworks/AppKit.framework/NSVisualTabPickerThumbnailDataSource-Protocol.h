@@ -6,9 +6,11 @@
 
 #import <AppKit/NSObject-Protocol.h>
 
-@class NSString, NSView, NSVisualTabPickerThumbnailView;
+@class NSImage, NSString, NSView, NSVisualTabPickerThumbnailView;
 
 @protocol NSVisualTabPickerThumbnailDataSource <NSObject>
+- (BOOL)highlightStateForVisualTabPickerTileThumbnailView:(NSVisualTabPickerThumbnailView *)arg1;
+- (NSImage *)imageForVisualTabPickerTileThumbnailView:(NSVisualTabPickerThumbnailView *)arg1;
 - (NSView *)viewForVisualTabPickerTileThumbnailView:(NSVisualTabPickerThumbnailView *)arg1;
 - (NSString *)titleForNSVisualTabPickerThumbnailView:(NSVisualTabPickerThumbnailView *)arg1;
 @end

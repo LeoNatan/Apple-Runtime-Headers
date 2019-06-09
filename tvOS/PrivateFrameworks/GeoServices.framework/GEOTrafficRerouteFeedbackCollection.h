@@ -8,39 +8,46 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray;
+@class NSData, NSMutableArray, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOTrafficRerouteFeedbackCollection : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSData *_directionResponseID;
-    unsigned int _oldRouteHistoricTravelTime;
     NSData *_oldRouteID;
     NSMutableArray *_oldRouteIncidents;
+    NSData *_reroutedRouteID;
+    unsigned int _oldRouteHistoricTravelTime;
     unsigned int _oldRouteTravelTime;
     unsigned int _reroutedRouteHistoricTravelTime;
-    NSData *_reroutedRouteID;
     unsigned int _reroutedRouteTravelTime;
     _Bool _oldRouteBlocked;
     struct {
-        unsigned int oldRouteHistoricTravelTime:1;
-        unsigned int oldRouteTravelTime:1;
-        unsigned int reroutedRouteHistoricTravelTime:1;
-        unsigned int reroutedRouteTravelTime:1;
-        unsigned int oldRouteBlocked:1;
-    } _has;
+        unsigned int has_oldRouteHistoricTravelTime:1;
+        unsigned int has_oldRouteTravelTime:1;
+        unsigned int has_reroutedRouteHistoricTravelTime:1;
+        unsigned int has_reroutedRouteTravelTime:1;
+        unsigned int has_oldRouteBlocked:1;
+        unsigned int read_directionResponseID:1;
+        unsigned int read_oldRouteID:1;
+        unsigned int read_oldRouteIncidents:1;
+        unsigned int read_reroutedRouteID:1;
+        unsigned int wrote_directionResponseID:1;
+        unsigned int wrote_oldRouteID:1;
+        unsigned int wrote_oldRouteIncidents:1;
+        unsigned int wrote_reroutedRouteID:1;
+        unsigned int wrote_oldRouteHistoricTravelTime:1;
+        unsigned int wrote_oldRouteTravelTime:1;
+        unsigned int wrote_reroutedRouteHistoricTravelTime:1;
+        unsigned int wrote_reroutedRouteTravelTime:1;
+        unsigned int wrote_oldRouteBlocked:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)oldRouteIncidentsType;
-@property(retain, nonatomic) NSData *reroutedRouteID; // @synthesize reroutedRouteID=_reroutedRouteID;
-@property(retain, nonatomic) NSData *oldRouteID; // @synthesize oldRouteID=_oldRouteID;
-@property(retain, nonatomic) NSData *directionResponseID; // @synthesize directionResponseID=_directionResponseID;
-@property(retain, nonatomic) NSMutableArray *oldRouteIncidents; // @synthesize oldRouteIncidents=_oldRouteIncidents;
-@property(nonatomic) _Bool oldRouteBlocked; // @synthesize oldRouteBlocked=_oldRouteBlocked;
-@property(nonatomic) unsigned int reroutedRouteHistoricTravelTime; // @synthesize reroutedRouteHistoricTravelTime=_reroutedRouteHistoricTravelTime;
-@property(nonatomic) unsigned int oldRouteHistoricTravelTime; // @synthesize oldRouteHistoricTravelTime=_oldRouteHistoricTravelTime;
-@property(nonatomic) unsigned int reroutedRouteTravelTime; // @synthesize reroutedRouteTravelTime=_reroutedRouteTravelTime;
-@property(nonatomic) unsigned int oldRouteTravelTime; // @synthesize oldRouteTravelTime=_oldRouteTravelTime;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -49,20 +56,35 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSData *reroutedRouteID;
 @property(readonly, nonatomic) _Bool hasReroutedRouteID;
+- (void)_readReroutedRouteID;
+@property(retain, nonatomic) NSData *oldRouteID;
 @property(readonly, nonatomic) _Bool hasOldRouteID;
+- (void)_readOldRouteID;
+@property(retain, nonatomic) NSData *directionResponseID;
 @property(readonly, nonatomic) _Bool hasDirectionResponseID;
+- (void)_readDirectionResponseID;
 - (id)oldRouteIncidentsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)oldRouteIncidentsCount;
+- (void)_addNoFlagsOldRouteIncidents:(id)arg1;
 - (void)addOldRouteIncidents:(id)arg1;
 - (void)clearOldRouteIncidents;
+@property(retain, nonatomic) NSMutableArray *oldRouteIncidents;
+- (void)_readOldRouteIncidents;
 @property(nonatomic) _Bool hasOldRouteBlocked;
+@property(nonatomic) _Bool oldRouteBlocked;
 @property(nonatomic) _Bool hasReroutedRouteHistoricTravelTime;
+@property(nonatomic) unsigned int reroutedRouteHistoricTravelTime;
 @property(nonatomic) _Bool hasOldRouteHistoricTravelTime;
+@property(nonatomic) unsigned int oldRouteHistoricTravelTime;
 @property(nonatomic) _Bool hasReroutedRouteTravelTime;
+@property(nonatomic) unsigned int reroutedRouteTravelTime;
 @property(nonatomic) _Bool hasOldRouteTravelTime;
+@property(nonatomic) unsigned int oldRouteTravelTime;
 
 @end
 

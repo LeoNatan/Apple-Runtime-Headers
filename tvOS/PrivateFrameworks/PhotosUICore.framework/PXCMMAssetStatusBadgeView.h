@@ -4,21 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIImageView.h>
+#import <UIKit/UIView.h>
 
 #import <PhotosUICore/PXReusableObject-Protocol.h>
 #import <PhotosUICore/PXUIViewBasicTile-Protocol.h>
 
-@class NSString, UIView;
+@class NSString;
 
-@interface PXCMMAssetStatusBadgeView : UIImageView <PXUIViewBasicTile, PXReusableObject>
+@interface PXCMMAssetStatusBadgeView : UIView <PXUIViewBasicTile, PXReusableObject>
 {
-    CDStruct_637f5cce _needsUpdateFlags;
+    struct {
+        _Bool imageView;
+    } _needsUpdateFlags;
     long long _status;
+    UIView *_glyphView;
 }
 
 + (struct CGSize)preferredSize;
+@property(retain, nonatomic) UIView *glyphView; // @synthesize glyphView=_glyphView;
 @property(nonatomic) long long status; // @synthesize status=_status;
+- (void).cxx_destruct;
 - (void)_updateImageViewIfNeeded;
 - (void)_invalidateImageView;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;

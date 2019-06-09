@@ -8,6 +8,7 @@
 
 @class CKNavbarCanvasViewController;
 
+__attribute__((visibility("hidden")))
 @interface CKBusinessChatController : CKChatController
 {
     CKNavbarCanvasViewController *_navbarCanvasViewController;

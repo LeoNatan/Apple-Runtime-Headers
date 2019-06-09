@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, NSString, SKUIClientContext, SKUIItemState, SSLookupItemOffer, UIButton, UIControl, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBannerView : UIView
 {
     UILabel *_artistNameLabel;

@@ -13,7 +13,6 @@
     VNImageSpecifier *_targetedImageSpecifier;
 }
 
-+ (id)optionNameForTargetedImageSpecifyingObject;
 - (void).cxx_destruct;
 - (id)newDefaultRequestInstance;
 - (id)sequencedRequestPreviousObservationsKey;
@@ -51,7 +50,6 @@
 - (id)initWithTargetedCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
 - (id)initWithTargetedCVPixelBuffer:(struct __CVBuffer *)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithTargetedCVPixelBuffer:(struct __CVBuffer *)arg1;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithTargetedImageSpecifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 @end

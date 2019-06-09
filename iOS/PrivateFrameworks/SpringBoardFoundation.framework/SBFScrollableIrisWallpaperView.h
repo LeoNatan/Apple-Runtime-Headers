@@ -34,9 +34,7 @@
 @property(readonly, nonatomic) _Bool isIrisInteracting;
 @property(readonly, nonatomic) long long irisPlaybackState;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 wallpaperImage:(id)arg2 wallpaperVideo:(id)arg3 stillTimeInVideo:(double)arg4 variant:(long long)arg5 wallpaperSettingsProvider:(id)arg6;
-- (id)initWithFrame:(struct CGRect)arg1 wallpaperImage:(id)arg2 cacheGroup:(id)arg3 variant:(long long)arg4 options:(unsigned long long)arg5 wallpaperSettingsProvider:(id)arg6;
-- (id)initWithFrame:(struct CGRect)arg1 wallpaperImage:(id)arg2 variant:(long long)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 wallpaperVideo:(id)arg3 variant:(long long)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

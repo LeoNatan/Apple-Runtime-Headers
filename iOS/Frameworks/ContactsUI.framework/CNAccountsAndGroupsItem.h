@@ -36,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (long long)localizedCompare:(id)arg1;
 - (id)arrayForDisplay:(_Bool)arg1;
-- (void)_setSelected:(_Bool)arg1;
+- (void)_setSelected:(_Bool)arg1 affectingChildren:(_Bool)arg2;
 - (id)initWithType:(long long)arg1 nameProvider:(CDUnknownBlockType)arg2;
 
 @end

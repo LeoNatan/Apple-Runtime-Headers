@@ -25,13 +25,6 @@ struct CGSize {
     double height;
 };
 
-struct PLImageTableEntryFooter_s {
-    CDStruct_bd2f613f _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    int _field4;
-};
-
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;

@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)isAvailable;
 - (id)alertActions;
+- (id)icon;
+- (id)callProviderActions;
 
 @end
 

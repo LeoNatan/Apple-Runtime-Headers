@@ -9,6 +9,7 @@
 @class PUICRemoteStatusBar;
 
 @protocol PUICRemoteStatusBarGlobalContextDelegate <NSObject>
+- (void)remoteStatusBarRequestsStateRefresh:(PUICRemoteStatusBar *)arg1;
 - (void)remoteStatusBar:(PUICRemoteStatusBar *)arg1 receivedNewWidth:(double)arg2;
 @end
 

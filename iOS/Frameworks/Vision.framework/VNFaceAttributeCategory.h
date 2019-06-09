@@ -30,7 +30,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRequestRevision:(unsigned long long)arg1;
-- (void)computeLabel;
+- (void)_computeLabel;
 
 @end
 

@@ -12,19 +12,17 @@
 {
     NSProcessInfo *_processInfo;
     NSDictionary *_systemVersionDictionary;
-    HPDEnvironment *_environment;
     CDStruct_f6aba300 _osVersionSystem;
 }
 
 + (id)sharedContext;
-@property(retain) HPDEnvironment *environment; // @synthesize environment=_environment;
 @property(retain) NSDictionary *systemVersionDictionary; // @synthesize systemVersionDictionary=_systemVersionDictionary;
 @property CDStruct_f6aba300 osVersionSystem; // @synthesize osVersionSystem=_osVersionSystem;
 @property(retain) NSProcessInfo *processInfo; // @synthesize processInfo=_processInfo;
 - (void).cxx_destruct;
+- (id)description;
 @property(readonly) NSString *acEnvironmentName;
 @property(readonly) NSString *environmentName;
-- (id)description;
 @property(readonly) long long osVersionPatch;
 @property(readonly) long long osVersionMinor;
 @property(readonly) long long osVersionMajor;
@@ -34,8 +32,10 @@
 @property(readonly) NSString *osVersionString;
 @property(readonly) NSString *platform;
 @property(readonly) NSString *hardware;
-- (id)preferedLocalizationsFromLanguages:(id)arg1;
+- (id)preferredLocalizationsFromLanguages:(id)arg1;
 @property(readonly) NSString *languages;
+@property(readonly) HPDEnvironment *environment;
+@property(readonly) BOOL isInternalBuild;
 - (id)init;
 
 @end

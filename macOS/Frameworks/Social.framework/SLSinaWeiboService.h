@@ -6,6 +6,7 @@
 
 #import <Social/SLService.h>
 
+__attribute__((visibility("hidden")))
 @interface SLSinaWeiboService : SLService
 {
 }

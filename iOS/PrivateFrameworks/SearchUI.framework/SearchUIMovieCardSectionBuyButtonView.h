@@ -4,22 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SearchUI/SearchUIWidthLimitedStackView.h>
+#import <TemplateKit/TLKStackView.h>
 
-@class SFPunchout, SKUIItemOfferButton, SearchUIMovieCardSectionView, SearchUIVibrantLabel;
+@class SFPunchout, SearchUILabel, SearchUIMovieCardSectionView, SearchUIOfferButtonView;
 
-@interface SearchUIMovieCardSectionBuyButtonView : SearchUIWidthLimitedStackView
+@interface SearchUIMovieCardSectionBuyButtonView : TLKStackView
 {
-    SearchUIVibrantLabel *_subtitleLabel;
-    SKUIItemOfferButton *_button;
+    SearchUILabel *_subtitleLabel;
+    SearchUIOfferButtonView *_button;
     SFPunchout *_punchout;
     SearchUIMovieCardSectionView *_cardSectionView;
 }
 
-@property __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
-@property(retain) SFPunchout *punchout; // @synthesize punchout=_punchout;
-@property(retain) SKUIItemOfferButton *button; // @synthesize button=_button;
-@property(retain) SearchUIVibrantLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
+@property(nonatomic) __weak SearchUIMovieCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
+@property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
+@property(retain, nonatomic) SearchUIOfferButtonView *button; // @synthesize button=_button;
+@property(retain, nonatomic) SearchUILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 - (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)buttonPressed;

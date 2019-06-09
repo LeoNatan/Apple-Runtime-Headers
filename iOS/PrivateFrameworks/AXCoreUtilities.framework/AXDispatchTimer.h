@@ -39,6 +39,7 @@
 - (void)_reallyCancel;
 - (void)afterDelay:(double)arg1 processBlock:(CDUnknownBlockType)arg2 cancelBlock:(CDUnknownBlockType)arg3;
 - (void)afterDelay:(double)arg1 processBlock:(CDUnknownBlockType)arg2;
+- (void)_afterDelay:(double)arg1 processBlock:(CDUnknownBlockType)arg2 cancelBlock:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)initWithTargetSerialQueue:(id)arg1;
 - (id)init;

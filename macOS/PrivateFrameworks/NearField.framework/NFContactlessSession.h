@@ -22,8 +22,6 @@
 @property(readonly) NFApplet *activeApplet; // @synthesize activeApplet=_activeApplet;
 - (BOOL)stopCardEmulation:(id *)arg1;
 - (BOOL)stopCardEmulation;
-- (BOOL)startHostCardEmulation:(id *)arg1;
-- (BOOL)startHostCardEmulation;
 - (BOOL)startCardEmulation:(id *)arg1;
 - (BOOL)startCardEmulation;
 - (BOOL)setActiveApplet:(id)arg1 error:(id *)arg2;

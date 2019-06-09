@@ -6,12 +6,22 @@
 
 #import <MediaPlayer/MPVolumeSlider.h>
 
-@interface MediaControlsVolumeSlider : MPVolumeSlider
+#import <MediaControls/MTVisualStylingProviderObservingPrivate-Protocol.h>
+
+@class MTVisualStylingProvider, NSString;
+
+__attribute__((visibility("hidden")))
+@interface MediaControlsVolumeSlider : MPVolumeSlider <MTVisualStylingProviderObservingPrivate>
 {
+    MTVisualStylingProvider *_visualStylingProvider;
 }
 
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)_updateStyle;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
+- (void).cxx_destruct;
+- (void)providedStylesDidChangeForProvider:(id)arg1;
+- (void)setThumbVisualStyling:(id)arg1;
+- (void)setMaximumTrackVisualStyling:(id)arg1;
+- (void)setMinimumTrackVisualStyling:(id)arg1;
 - (id)_thumbImageForStyle:(long long)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGRect)maximumValueImageRectForBounds:(struct CGRect)arg1;
@@ -19,8 +29,13 @@
 - (struct CGRect)trackRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)thumbRectForBounds:(struct CGRect)arg1 trackRect:(struct CGRect)arg2 value:(float)arg3;
 - (id)createThumbView;
-- (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

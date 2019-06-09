@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 @interface _UIViewControllerTransitionCoordinator : NSObject <UIViewControllerTransitionCoordinator>
 {
     _UIViewControllerTransitionContext *__mainContext;
+    NSMutableArray *__systemAlongsideAnimations;
     NSMutableArray *__alongsideAnimations;
     NSMutableArray *__alongsideAnimationViews;
     NSMutableArray *__alongsideCompletions;
@@ -24,16 +25,18 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setAlongsideCompletions:) NSMutableArray *_alongsideCompletions; // @synthesize _alongsideCompletions=__alongsideCompletions;
 @property(retain, nonatomic, setter=_setAlongsideAnimationViews:) NSMutableArray *_alongsideAnimationViews; // @synthesize _alongsideAnimationViews=__alongsideAnimationViews;
 @property(retain, nonatomic, setter=_setAlongsideAnimations:) NSMutableArray *_alongsideAnimations; // @synthesize _alongsideAnimations=__alongsideAnimations;
+@property(retain, nonatomic, setter=_setSystemAlongsideAnimations:) NSMutableArray *_systemAlongsideAnimations; // @synthesize _systemAlongsideAnimations=__systemAlongsideAnimations;
 @property(nonatomic, setter=_setMainContext:) _UIViewControllerTransitionContext *_mainContext; // @synthesize _mainContext=__mainContext;
 - (void).cxx_destruct;
 - (void)notifyWhenInteractionEndsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)notifyWhenInteractionChangesUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)animateAlongsideTransition:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)animateAlongsideTransitionInView:(id)arg1 animation:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)_animateAlongsideTransitionInView:(id)arg1 systemCompletion:(_Bool)arg2 animation:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)_animateAlongsideTransitionInView:(id)arg1 systemAnimation:(_Bool)arg2 systemCompletion:(_Bool)arg3 animation:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(CDUnknownBlockType)arg2;
 - (id)_alongsideCompletions:(_Bool)arg1;
 - (id)_alongsideAnimations:(_Bool)arg1;
+- (id)_systemAlongsideAnimations:(_Bool)arg1;
 - (id)_interactiveChangeHandlers:(_Bool)arg1;
 @property(readonly, nonatomic) struct CGAffineTransform targetTransform;
 - (struct CGAffineTransform)affineTransform;

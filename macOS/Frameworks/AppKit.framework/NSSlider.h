@@ -18,6 +18,7 @@
     NSDictionary *_tickMarkLayoutPoints;
 }
 
++ (id)defaultAnimationForKey:(id)arg1;
 + (void)initialize;
 + (id)verticalSliderWithMinValue:(double)arg1 maxValue:(double)arg2 initialValue:(double)arg3 target:(id)arg4 action:(SEL)arg5;
 + (id)horizontalSliderWithMinValue:(double)arg1 maxValue:(double)arg2 initialValue:(double)arg3 target:(id)arg4 action:(SEL)arg5;
@@ -78,6 +79,7 @@
 - (void)moveUp:(id)arg1;
 - (void)moveLeft:(id)arg1;
 - (void)moveDown:(id)arg1;
+- (BOOL)_wantsKeyDownForEvent:(id)arg1;
 - (void)moveRight:(id)arg1;
 - (void)_moveInDirection:(unsigned long long)arg1;
 - (void)setEnabled:(BOOL)arg1;

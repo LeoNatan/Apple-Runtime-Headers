@@ -16,14 +16,18 @@
 + (_Bool)consolidateMovieFragmentsInFile:(id)arg1 error:(id *)arg2;
 + (_Bool)updateMovieMetadataInFile:(id)arg1 withMetadata:(id)arg2 error:(id *)arg3;
 + (id)new;
-+ (long long)nextMovieFileSettingsID;
++ (long long)uniqueID;
 + (void)initialize;
+- (void)_updateBravoCameraSelectionBehaviorForSourceDevice:(id)arg1;
 - (void)_updateAvailableVideoCodecTypesForSourceDevice:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (int)_stopRecording;
 - (void)_startRecording:(id)arg1;
 - (void)handleNotification:(id)arg1 payload:(id)arg2;
+- (void)handleDidResumeRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2;
+- (void)handleDidPauseRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2;
 - (void)handleDidStopRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2 demoof:(_Bool)arg3 addMetadata:(_Bool)arg4;
+- (void)handleDidStartRecordingNotificationForWrapper:(id)arg1 withPayload:(id)arg2;
 - (void)_removeRecordingDelegateWrapper:(id)arg1;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
@@ -52,7 +56,7 @@
 - (_Bool)_recordingInProgress;
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id *)arg2;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 - (void)dealloc;
 - (id)init;

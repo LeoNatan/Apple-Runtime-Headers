@@ -35,6 +35,7 @@
 - (void)setVibrancyEffect:(id)arg1;
 - (_Bool)wantsManagedVibrancyEffect;
 - (void)setDisableContinuousAnimation:(_Bool)arg1;
+- (_Bool)shouldFlipForRTL;
 - (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)setIconSize:(unsigned long long)arg1;
 - (void)layoutSubviews;

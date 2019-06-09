@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     _Bool _didBroadcastWillSwitchToUser;
     _Bool _didSendTasks;
     _Bool _didBroadcastUploadContent;
+    _Bool _didRegisterPersonaStakeholder;
     unsigned int _interruptionRetryCount;
     id _stakeholder;
     unsigned long long _stakeholderType;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
     NSData *_passcodeData;
     NSData *_contextData;
     NSDictionary *_preferencesDict;
+    NSDictionary *_personaProfileDict;
     CDUnknownBlockType _registrationCompletionHandler;
     CDUnknownBlockType _switchCompletionHandler;
     CDUnknownBlockType _suspendQuotasCompletionHandler;
@@ -44,9 +46,14 @@ __attribute__((visibility("hidden")))
     unsigned long long _willSwitchToUserAddedTaskCount;
     NSXPCConnection *_xpcConnection;
     NSXPCListener *_xpcListener;
+    id _personaStakeholder;
+    CDUnknownBlockType _personaRegistrationCompletionHandler;
 }
 
 + (id)sharedServer;
+@property(nonatomic) _Bool didRegisterPersonaStakeholder; // @synthesize didRegisterPersonaStakeholder=_didRegisterPersonaStakeholder;
+@property(copy, nonatomic) CDUnknownBlockType personaRegistrationCompletionHandler; // @synthesize personaRegistrationCompletionHandler=_personaRegistrationCompletionHandler;
+@property(nonatomic) __weak id personaStakeholder; // @synthesize personaStakeholder=_personaStakeholder;
 @property(nonatomic) unsigned int interruptionRetryCount; // @synthesize interruptionRetryCount=_interruptionRetryCount;
 @property(retain, nonatomic) NSXPCListener *xpcListener; // @synthesize xpcListener=_xpcListener;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
@@ -67,6 +74,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType suspendQuotasCompletionHandler; // @synthesize suspendQuotasCompletionHandler=_suspendQuotasCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType switchCompletionHandler; // @synthesize switchCompletionHandler=_switchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType registrationCompletionHandler; // @synthesize registrationCompletionHandler=_registrationCompletionHandler;
+@property(retain, nonatomic) NSDictionary *personaProfileDict; // @synthesize personaProfileDict=_personaProfileDict;
 @property(retain, nonatomic) NSDictionary *preferencesDict; // @synthesize preferencesDict=_preferencesDict;
 @property(retain, nonatomic) NSData *contextData; // @synthesize contextData=_contextData;
 @property(retain, nonatomic) NSData *passcodeData; // @synthesize passcodeData=_passcodeData;
@@ -77,9 +85,23 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long stakeholderType; // @synthesize stakeholderType=_stakeholderType;
 @property(nonatomic) __weak id stakeholder; // @synthesize stakeholder=_stakeholder;
 - (void).cxx_destruct;
-- (void)_abortIfWeDoNotHaveASyncStakeholder;
-- (void)_abortIfWeDoNotHaveAStakeholder;
+- (void)registerPersonaListUpdateObserver:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_registerPersonaListObserver:(id)arg1;
+- (void)personaLogoutWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)personaLoginWithUserODuuid:(id)arg1 withUid:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchMultiPersonaBundleIdentifierWithcompletionHandler:(CDUnknownBlockType)arg1;
+- (void)setMultiPersonaBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchBundleIdentifierForPersona:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)setBundlesIdentifiers:(id)arg1 forUniquePersona:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchPersonaSynchronous:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchPersona:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchListOfPersonasSynchronousWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)fetchListOfPersonasWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)deleteUserPersona:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)createUserPersona:(id)arg1 passcodeData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)personaListDidUpdateCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_broadcastpersonaListDidUpdate;
 - (void)bubbleDidPop;
 - (void)uploadContentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deviceLoginSessionStateDidUpdate;
@@ -96,6 +118,7 @@ __attribute__((visibility("hidden")))
 - (void)_tearDownConnectionToUMServer;
 - (void)_setUpXPCConnectionToUMServerIfNeeded;
 - (void)_setUpUMServerXPCConnectionIfNeeded:(id)arg1;
+- (id)_syncServer;
 - (id)_server;
 - (int)_pid;
 - (void)_registerStakeholder:(id)arg1;
@@ -118,6 +141,8 @@ __attribute__((visibility("hidden")))
 - (void)registerCriticalUserSwitchStakeHolder:(id)arg1;
 - (void)registerUserSwitchStakeHolder:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)registerUserSwitchStakeHolder:(id)arg1;
+- (void)_abortIfWeDoNotHaveASyncStakeholder;
+- (void)_abortIfWeDoNotHaveAStakeholder;
 - (id)init;
 
 // Remaining properties

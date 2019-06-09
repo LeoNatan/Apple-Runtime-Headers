@@ -85,8 +85,6 @@
 - (void)_resignActive;
 - (void)_ensureActive;
 - (void)_setMoviePlayer:(id)arg1;
-- (id)_nowPlayingMovie;
-- (void)_setNowPlayingMovie:(id)arg1;
 - (id)_movieOptions;
 - (id)_movies;
 - (void)_setMovies:(id)arg1;
@@ -96,7 +94,7 @@
 - (void)_cacheAccessAndErrorLogs;
 - (_Bool)useApplicationAudioSession;
 - (void)setUseApplicationAudioSession:(_Bool)arg1;
-- (void)setMovieControlMode:(int)arg1;
+- (void)setMovieControlMode:(long long)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (unsigned int)_hostedWindowContextID;
 - (id)_hostedWindow;

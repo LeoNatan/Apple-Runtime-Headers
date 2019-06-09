@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, _UIStatusBarTimeStringServerCache;
+@class NSMutableArray, NSMutableDictionary;
 @protocol OS_dispatch_mach, OS_dispatch_workloop;
 
 __attribute__((visibility("hidden")))
@@ -16,23 +16,21 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_publishers;
     NSObject<OS_dispatch_workloop> *_workloop;
     NSObject<OS_dispatch_mach> *_channel;
-    CDStruct_1916f467 _statusBarData;
-    CDStruct_1916f467 _composedStatusBarData;
-    CDStruct_308dc736 _overrides;
+    CDStruct_0942cde0 _statusBarData;
+    CDStruct_0942cde0 _composedStatusBarData;
+    CDStruct_f9a79af9 _overrides;
     struct __CFDictionary *_doubleHeightStatusStrings;
     struct __CFDictionary *_glowAnimationStates;
     NSMutableDictionary *_glowAnimationEndTimes;
     _Bool _composedStatusBarDataValid;
-    _UIStatusBarTimeStringServerCache *_ioSurfaceCache;
 }
 
 + (id)sharedInstance;
-@property(readonly, nonatomic) _UIStatusBarTimeStringServerCache *ioSurfaceCache; // @synthesize ioSurfaceCache=_ioSurfaceCache;
 - (void).cxx_destruct;
 - (void)_removeStatusBarItem:(int)arg1 forPublisher:(id)arg2;
 - (void)_addStatusBarItem:(int)arg1 forPublisher:(id)arg2;
 - (_Bool)_permanentizeStatusBarOverrideData;
-- (void)_postStatusBarOverrideData:(CDStruct_308dc736 *)arg1;
+- (void)_postStatusBarOverrideData:(CDStruct_f9a79af9 *)arg1;
 - (void)_postDoubleHeightStatus:(char *)arg1 forStyle:(long long)arg2;
 - (id)_doubleHeightStatusStringForStyle:(long long)arg1;
 - (void)_postGlowAnimationState:(_Bool)arg1 forStyle:(long long)arg2;
@@ -44,10 +42,10 @@ __attribute__((visibility("hidden")))
 - (void)_addStyleOverrides:(int)arg1 forPublisher:(id)arg2;
 - (void)_broadcastStyleOverrides;
 - (int)_styleOverrides;
-- (void)_postStatusBarData:(CDStruct_1916f467 *)arg1 actions:(int)arg2 animated:(_Bool)arg3;
+- (void)_postStatusBarData:(CDStruct_0942cde0 *)arg1 actions:(int)arg2 animated:(_Bool)arg3;
 - (void)_broadcastStatusBarDataWithActions:(int)arg1 animated:(_Bool)arg2;
-- (CDStruct_308dc736 *)_statusBarOverrideData;
-- (CDStruct_1916f467 *)_statusBarData;
+- (CDStruct_f9a79af9 *)_statusBarOverrideData;
+- (CDStruct_0942cde0 *)_statusBarData;
 - (void)_removePublisher:(struct __CFMachPort *)arg1;
 - (id)_publisherForPort:(unsigned int)arg1;
 - (void)_removeClient:(struct __CFMachPort *)arg1;

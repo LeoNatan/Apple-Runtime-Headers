@@ -28,6 +28,7 @@
 + (id)genericObjectWithModelObject:(id)arg1;
 + (id)kindWithRelationshipKinds:(id)arg1;
 + (id)requiredStoreLibraryPersonalizationProperties;
+- (id)artworkCatalog;
 - (long long)type;
 - (id)flattenedGenericObject;
 - (id)anyObject;

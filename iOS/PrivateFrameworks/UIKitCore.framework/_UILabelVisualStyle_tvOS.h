@@ -13,9 +13,9 @@ __attribute__((visibility("hidden")))
 
 - (_Bool)shouldDisableUpdateTextColorOnTraitCollectionChangeForAttributedString:(id)arg1 attributes:(id)arg2;
 - (_Bool)shouldDelayStartMarquee;
-- (_Bool)supportsUserInterfaceStyle;
+- (_Bool)updatesTextColorOnUserInterfaceStyleChanges;
 - (void)actionsForDeallocationOfLabel:(id)arg1;
-- (void)actionsForInitializitionOfLabel:(id)arg1;
+- (void)actionsForInitializationOfLabel:(id)arg1;
 - (id)defaultFont;
 
 @end

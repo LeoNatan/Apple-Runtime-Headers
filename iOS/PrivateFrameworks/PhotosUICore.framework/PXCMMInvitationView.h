@@ -4,40 +4,54 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <UIKit/UICollectionViewCell.h>
 
-@class NSAttributedString, PXCMMPosterHeaderView, PXRoundedCornerOverlayView, UIColor, UIFont, UILabel;
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@interface PXCMMInvitationView : UIView
+@class NSString, PXCMMInvitationViewModel, PXCMMPosterHeaderView, PXRoundedCornerOverlayView, UILabel, UIView;
+@protocol PXCMMInvitationViewDelegate;
+
+@interface PXCMMInvitationView : UICollectionViewCell <PXChangeObserver>
 {
+    PXCMMPosterHeaderView *_headerView;
     UILabel *_titleLabel;
     UILabel *_subtitle1Label;
     UILabel *_subtitle2Label;
     PXRoundedCornerOverlayView *_roundedCornerOverlayView;
-    NSAttributedString *_attributedTitle;
-    UIFont *_titleFont;
-    long long _titleTextStyle;
-    NSAttributedString *_attributedSubtitle1;
-    UIFont *_subtitle1Font;
-    long long _subtitle1TextStyle;
-    NSAttributedString *_attributedSubtitle2;
-    UIFont *_subtitle2Font;
-    long long _subtitle2TextStyle;
-    PXCMMPosterHeaderView *_headerView;
-    UIColor *_opaqueAncestorBackgroundColor;
+    id <PXCMMInvitationViewDelegate> _delegate;
+    PXCMMInvitationViewModel *_viewModel;
 }
 
-@property(copy, nonatomic) UIColor *opaqueAncestorBackgroundColor; // @synthesize opaqueAncestorBackgroundColor=_opaqueAncestorBackgroundColor;
-@property(readonly, nonatomic) PXCMMPosterHeaderView *headerView; // @synthesize headerView=_headerView;
++ (struct CGSize)posterHeaderViewSizeForSize:(struct CGSize)arg1 scale:(double)arg2;
++ (struct CGSize)posterImageSizeThatFits:(struct CGSize)arg1 scale:(double)arg2;
++ (struct CGSize)sizeThatFits:(struct CGSize)arg1 viewModel:(id)arg2;
+@property(retain, nonatomic) PXCMMInvitationViewModel *viewModel; // @synthesize viewModel=_viewModel;
+@property(nonatomic) __weak id <PXCMMInvitationViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (_Bool)test_selected;
+- (id)test_subtitle2;
+- (id)test_subtitle1;
+- (id)test_title;
+- (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)_tapGesture:(id)arg1;
+- (void)_updateOpaqueAncestorBackgroundColor;
+- (_Bool)_updateSubtitle2;
+- (_Bool)_updateSubtitle1;
+- (_Bool)_updateTitle;
+- (void)_updateHeaderView;
 - (struct CGSize)_performLayoutInWidth:(double)arg1 updateSubviewFrames:(_Bool)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted;
-- (void)setAttributedSubtitle2:(id)arg1 withFont:(id)arg2 textStyle:(long long)arg3;
-- (void)setAttributedSubtitle1:(id)arg1 withFont:(id)arg2 textStyle:(long long)arg3;
-- (void)setAttributedTitle:(id)arg1 withFont:(id)arg2 textStyle:(long long)arg3;
+@property(readonly, nonatomic) UIView *previewView;
+@property(readonly, nonatomic) struct CGRect headerViewBounds;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

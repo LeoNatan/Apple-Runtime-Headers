@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSSet;
 
+__attribute__((visibility("hidden")))
 @interface SKUILoadItemsResponse : NSObject
 {
     NSDictionary *_loadedItems;

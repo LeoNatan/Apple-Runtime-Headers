@@ -14,11 +14,13 @@
 @interface NSURLResponse : NSObject <NSSecureCoding, NSCopying>
 {
     NSURLResponseInternal *_internal;
+    struct URLResponse *__cf_resp_data;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)getObjectKeyWithIndex:(long long)arg1;
-+ (id)_responseWithCFURLResponse:(struct _CFURLResponse *)arg1;
++ (id)_responseWithCFURLResponse:(id)arg1;
+@property struct URLResponse *_cf_resp_data; // @synthesize _cf_resp_data=__cf_resp_data;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *suggestedFilename;
 @property(readonly) long long expectedContentLength;
@@ -30,7 +32,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithURL:(id)arg1 MIMEType:(id)arg2 expectedContentLength:(long long)arg3 textEncodingName:(id)arg4;
-- (id)_initWithCFURLResponse:(struct _CFURLResponse *)arg1;
+- (id)_initWithCFURLResponse:(id)arg1;
+- (id)_initWithInternal:(id)arg1;
+- (struct URLResponse *)_inner;
 - (id)_peerCertificateChain;
 - (void)dealloc;
 - (double)_calculatedExpiration;
@@ -39,7 +43,7 @@
 - (id)_lastModifiedDate;
 - (void)_setMIMEType:(id)arg1;
 - (void)_setExpectedContentLength:(long long)arg1;
-- (struct _CFURLResponse *)_CFURLResponse;
+- (id)_CFURLResponse;
 
 @end
 

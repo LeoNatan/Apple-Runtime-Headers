@@ -15,6 +15,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_updateLabelWithTemplate:(id)arg1;
 - (void)_updateRingWithTemplate:(id)arg1;
 - (void)_showEmptyViewsWithString:(id)arg1 shortText:(id)arg2;

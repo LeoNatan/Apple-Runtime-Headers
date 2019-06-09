@@ -29,6 +29,7 @@
 - (BOOL)doesAliasResource:(id)arg1;
 - (void)makeAliasable;
 - (BOOL)isAliasable;
+@property(readonly) unsigned long long heapOffset;
 @property(readonly) id <MTLHeap> heap;
 - (struct __CFArray *)copyAnnotations;
 - (void)annotateResource:(struct __CFDictionary *)arg1;
@@ -36,6 +37,7 @@
 @property(readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
 @property(readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
+@property(readonly) unsigned long long protectionOptions;
 @property(readonly, nonatomic) unsigned long long resourceSize;
 @property(readonly, nonatomic) unsigned int resourceID;
 @property(readonly, nonatomic) unsigned long long gpuAddress;
@@ -50,9 +52,13 @@
 - (BOOL)isPurgeable;
 @property(readonly) struct __IOAccelResource *resourceRef;
 @property int responsibleProcess;
+@property(readonly) unsigned long long hazardTrackingMode;
+@property(readonly) unsigned long long unfilteredResourceOptions;
+@property(readonly) unsigned long long resourceOptions;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) unsigned long long cpuCacheMode;
 @property(copy) NSString *label;
+- (id)retainedLabel;
 - (void)setAllocationInfoShared:(id)arg1 andCached:(id)arg2;
 
 // Remaining properties

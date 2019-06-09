@@ -7,20 +7,19 @@
 #import <FrontBoardServices/FBSSceneSettings.h>
 
 #import <UIKitCore/UIApplicationSceneSettings-Protocol.h>
-#import <UIKitCore/_UIDisplayEdgeInfoProviding-Protocol.h>
+#import <UIKitCore/_UIDisplayInfoProviding-Protocol.h>
 
-@class BSCornerRadiusConfiguration, NSNumber, NSString;
+@class BSCornerRadiusConfiguration, FBSDisplayConfiguration, NSNumber, NSString;
 
-@interface UIApplicationSceneSettings : FBSSceneSettings <_UIDisplayEdgeInfoProviding, UIApplicationSceneSettings>
+@interface UIApplicationSceneSettings : FBSSceneSettings <_UIDisplayInfoProviding, UIApplicationSceneSettings>
 {
 }
 
-- (Class)canvasClass;
 - (_Bool)isUISubclass;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) unsigned int artworkSubtype;
+@property(nonatomic) unsigned int artworkSubtype;
 @property(readonly, nonatomic) int deviceOrientation;
 @property(readonly, nonatomic) _Bool statusBarDisabled;
 @property(readonly, nonatomic) _Bool idleModeEnabled;
@@ -33,6 +32,8 @@
 @property(readonly, nonatomic) float homeAffordanceOverlayAllowance;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsPortrait;
 @property(readonly, nonatomic) float systemMinimumMargin;
+- (float)defaultStatusBarHeightForOrientation:(int)arg1;
+@property(readonly, nonatomic) float statusBarHeight;
 @property(readonly, nonatomic) struct CGRect statusBarAvoidanceFrame;
 @property(readonly, nonatomic) int statusBarParts;
 @property(readonly, nonatomic) struct UIEdgeInsets peripheryInsets;
@@ -42,10 +43,12 @@
 @property(readonly, nonatomic) unsigned int deactivationReasons;
 @property(readonly, nonatomic) int statusBarStyleOverridesToSuppress;
 @property(readonly, nonatomic) _Bool underLock;
+@property(readonly, nonatomic) NSString *persistenceIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) FBSDisplayConfiguration *displayConfiguration;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

@@ -17,11 +17,14 @@
     double _nextWeek;
     double _lastAttemptedResetTime;
     double _lastSuccessfulResetTime;
+    BOOL _isResetting;
 }
 
 + (id)sharedInstance;
 - (id)description;
 - (void)_resetAndConfigureAndPostNotification:(BOOL)arg1;
+- (double)_currentAbsoluteTime;
+- (struct __CFCalendar *)_copyCurrentCalendar;
 - (void)_resetAndConfigure;
 - (void)_resetAndConfigureIfNecessary;
 - (BOOL)isWithinNextWeek:(double)arg1;

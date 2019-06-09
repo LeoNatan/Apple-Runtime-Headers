@@ -8,10 +8,12 @@
 
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, NSURL;
+@class NSArray, NSString, NSURL, NSUUID;
 
 @interface PKPaymentWebServiceRegion : NSObject <NSSecureCoding>
 {
+    BOOL _hasAccounts;
+    BOOL _hasApplications;
     BOOL _hasPeerPaymentAccount;
     NSString *_lastUpdatedTag;
     NSArray *_certificates;
@@ -24,14 +26,30 @@
     NSString *_trustedServiceManagerPushTopic;
     long long _consistencyCheckBackoffLevel;
     NSString *_userNotificationPushTopic;
-    NSURL *_peerPaymentServiceURL;
+    long long _outstandingCheckInAction;
+    NSString *_lastDeviceCheckInBuildVersion;
     NSString *_deviceCheckInPushTopic;
+    NSUUID *_deviceCheckInIdentifier;
+    NSURL *_accountServiceURL;
+    NSString *_accountServicePushTopic;
+    NSURL *_applyServiceURL;
+    NSString *_applyServicePushTopic;
+    NSURL *_peerPaymentServiceURL;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) NSString *deviceCheckInPushTopic; // @synthesize deviceCheckInPushTopic=_deviceCheckInPushTopic;
 @property(nonatomic) BOOL hasPeerPaymentAccount; // @synthesize hasPeerPaymentAccount=_hasPeerPaymentAccount;
 @property(retain, nonatomic) NSURL *peerPaymentServiceURL; // @synthesize peerPaymentServiceURL=_peerPaymentServiceURL;
+@property(nonatomic) BOOL hasApplications; // @synthesize hasApplications=_hasApplications;
+@property(retain, nonatomic) NSString *applyServicePushTopic; // @synthesize applyServicePushTopic=_applyServicePushTopic;
+@property(retain, nonatomic) NSURL *applyServiceURL; // @synthesize applyServiceURL=_applyServiceURL;
+@property(nonatomic) BOOL hasAccounts; // @synthesize hasAccounts=_hasAccounts;
+@property(retain, nonatomic) NSString *accountServicePushTopic; // @synthesize accountServicePushTopic=_accountServicePushTopic;
+@property(retain, nonatomic) NSURL *accountServiceURL; // @synthesize accountServiceURL=_accountServiceURL;
+@property(retain, nonatomic) NSUUID *deviceCheckInIdentifier; // @synthesize deviceCheckInIdentifier=_deviceCheckInIdentifier;
+@property(copy, nonatomic) NSString *deviceCheckInPushTopic; // @synthesize deviceCheckInPushTopic=_deviceCheckInPushTopic;
+@property(copy, nonatomic) NSString *lastDeviceCheckInBuildVersion; // @synthesize lastDeviceCheckInBuildVersion=_lastDeviceCheckInBuildVersion;
+@property(nonatomic) long long outstandingCheckInAction; // @synthesize outstandingCheckInAction=_outstandingCheckInAction;
 @property(retain, nonatomic) NSString *userNotificationPushTopic; // @synthesize userNotificationPushTopic=_userNotificationPushTopic;
 @property(nonatomic) long long consistencyCheckBackoffLevel; // @synthesize consistencyCheckBackoffLevel=_consistencyCheckBackoffLevel;
 @property(retain, nonatomic) NSString *trustedServiceManagerPushTopic; // @synthesize trustedServiceManagerPushTopic=_trustedServiceManagerPushTopic;

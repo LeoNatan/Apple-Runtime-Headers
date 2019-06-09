@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSString *_priceDescription;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (id)priceDescriptionForPlaceData:(id)arg1;
-@property(retain, nonatomic) NSString *priceDescription; // @synthesize priceDescription=_priceDescription;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,8 +29,10 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *priceDescription;
 @property(readonly, nonatomic) BOOL hasPriceDescription;
 
 @end

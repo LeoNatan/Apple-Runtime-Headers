@@ -10,7 +10,6 @@
 {
     struct CGPoint _location;
     struct CGPoint _reserved1;
-    long long _rflags;
     double _rotation;
 }
 

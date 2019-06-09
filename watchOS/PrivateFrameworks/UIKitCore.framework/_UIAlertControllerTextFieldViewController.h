@@ -34,10 +34,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool textFieldsCanBecomeFirstResponder;
 - (void)removeAllTextFields;
 - (int)numberOfTextFields;
+- (id)textFieldContainerViews;
 - (id)textFieldAtIndex:(int)arg1;
 - (void)_updatePreferredContentSize;
 - (void)_returnKeyPressedInTextField:(id)arg1;
-- (id)addTextFieldWithPlaceholder:(id)arg1 isSecure:(_Bool)arg2;
+- (id)addTextFieldWithPlaceholder:(id)arg1;
 - (float)_bottomMarginForTextFields;
 @property(nonatomic) UIAlertControllerVisualStyle *visualStyle;
 - (void)viewWillLayoutSubviews;

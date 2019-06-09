@@ -21,10 +21,13 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)resourceIndex;
 - (void)setForceResourceIndex:(BOOL)arg1;
 - (BOOL)forceResourceIndex;
+@property(nonatomic) unsigned long long reductionMode;
 - (void)setSupportArgumentBuffers:(BOOL)arg1;
 - (BOOL)supportArgumentBuffers;
 - (void)setCompareFunction:(unsigned long long)arg1;
 - (unsigned long long)compareFunction;
+- (unsigned long long)pixelFormat;
+- (void)setPixelFormat:(unsigned long long)arg1;
 - (void)setLodBias:(float)arg1;
 - (float)lodBias;
 - (void)setLodMaxClamp:(float)arg1;
@@ -33,6 +36,12 @@ __attribute__((visibility("hidden")))
 - (float)lodMinClamp;
 - (void)setNormalizedCoordinates:(BOOL)arg1;
 - (BOOL)normalizedCoordinates;
+@property(nonatomic) BOOL forceSeamsOnCubemapFiltering;
+@property(nonatomic) unsigned int customBorderColorValue_3;
+@property(nonatomic) unsigned int customBorderColorValue_2;
+@property(nonatomic) unsigned int customBorderColorValue_1;
+@property(nonatomic) unsigned int customBorderColorValue_0;
+@property(nonatomic) unsigned long long borderColorSPI;
 - (void)setBorderColor:(unsigned long long)arg1;
 - (unsigned long long)borderColor;
 - (void)setRAddressMode:(unsigned long long)arg1;

@@ -9,5 +9,7 @@
 @interface NSXPCInterface (HMSetupRemoteProtocols)
 + (id)hm_setupRemoteHostInterface;
 + (id)hm_setupRemoteServiceInterface;
++ (id)hm_userManagementRemoteHostInterface;
++ (id)hm_userManagementRemoteServiceInterface;
 @end
 

@@ -8,23 +8,27 @@
 
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 
-@class CNAccountsAndGroupsDataSource, NSString;
-@protocol CNAccountsAndGroupsViewControllerDelegate;
+@class CNAccountsAndGroupsDataSource, CNContactListStyleApplier, NSString;
+@protocol CNAccountsAndGroupsViewControllerDelegate, NSObject;
 
 __attribute__((visibility("hidden")))
 @interface CNAccountsAndGroupsViewController : UITableViewController <UITableViewDelegate>
 {
-    CNAccountsAndGroupsDataSource *_dataSource;
     _Bool _needsReload;
     _Bool _tableViewNeedsReloadAfterResume;
+    CNContactListStyleApplier *_contactListStyleApplier;
+    CNAccountsAndGroupsDataSource *_dataSource;
     id <CNAccountsAndGroupsViewControllerDelegate> _delegate;
+    id <NSObject> _contactStoreDidChangeNotificationToken;
 }
 
+@property(retain, nonatomic) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
+@property(nonatomic) _Bool tableViewNeedsReloadAfterResume; // @synthesize tableViewNeedsReloadAfterResume=_tableViewNeedsReloadAfterResume;
+@property(nonatomic) _Bool needsReload; // @synthesize needsReload=_needsReload;
 @property(nonatomic) __weak id <CNAccountsAndGroupsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNAccountsAndGroupsDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
 - (void).cxx_destruct;
-- (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(long long)arg3;
-- (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
@@ -36,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)applyStyle;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)contactStoreDidChangeWithNotification:(id)arg1;
 - (void)reloadData;

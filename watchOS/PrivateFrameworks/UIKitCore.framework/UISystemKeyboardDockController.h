@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIKeyboardDockViewDelegate-Protocol.h>
 
-@class NSString, UIKeyboardDockItem, UIKeyboardDockView;
+@class NSString, UIButton, UIKeyboardDockItem, UIKeyboardDockView;
 
 __attribute__((visibility("hidden")))
 @interface UISystemKeyboardDockController : UIViewController <UIKeyboardDockViewDelegate>
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     UIKeyboardDockItem *_globeDockItem;
     UIKeyboardDockItem *_dictationDockItem;
     UIKeyboardDockItem *_keyboardDockItem;
+    UIButton *_stopDictationButton;
     UIKeyboardDockView *_dockView;
 }
 
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)setKeyboardDockItem;
 - (void)viewDidLoad;
 - (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 
 // Remaining properties

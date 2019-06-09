@@ -6,12 +6,13 @@
 
 #import <CoreDuet/_DKQuery.h>
 
+#import <CoreDuet/NSCopying-Protocol.h>
 #import <CoreDuet/_DKExecutableQuery-Protocol.h>
 
-@class NSArray, NSObject, NSPredicate;
+@class NSArray, NSObject, NSPredicate, NSSet;
 @protocol OS_dispatch_queue;
 
-@interface _DKEventQuery : _DKQuery <_DKExecutableQuery>
+@interface _DKEventQuery : _DKQuery <_DKExecutableQuery, NSCopying>
 {
     NSObject<OS_dispatch_queue> *_defaultQueue;
     BOOL _readMetadata;
@@ -21,6 +22,7 @@
     NSArray *_sortDescriptors;
     unsigned long long _limit;
     unsigned long long _offset;
+    NSSet *_deviceIDs;
     long long _resultType;
     NSArray *_groupByProperties;
     CDUnknownBlockType _resultsHandler;
@@ -32,9 +34,11 @@
 + (id)expressionForEventDuration;
 + (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 sortDescriptors:(id)arg5;
 + (id)eventQueryWithPredicate:(id)arg1 eventStreams:(id)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 sortDescriptors:(id)arg5 resultHandler:(CDUnknownBlockType)arg6;
++ (void)load;
 @property(copy) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler=_resultsHandler;
 @property(retain) NSArray *groupByProperties; // @synthesize groupByProperties=_groupByProperties;
 @property long long resultType; // @synthesize resultType=_resultType;
+@property(retain) NSSet *deviceIDs; // @synthesize deviceIDs=_deviceIDs;
 @property BOOL deduplicateValues; // @synthesize deduplicateValues=_deduplicateValues;
 @property BOOL readMetadata; // @synthesize readMetadata=_readMetadata;
 @property unsigned long long offset; // @synthesize offset=_offset;
@@ -44,6 +48,7 @@
 @property(retain) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
 - (id)description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)handleResults:(id)arg1 error:(id)arg2;

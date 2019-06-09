@@ -22,8 +22,10 @@
         unsigned int initiatedFromReloadData:1;
         unsigned int retainExistingSizingInfoForEstimates:1;
     } _invalidationContextFlags;
+    long long _intent;
 }
 
+@property(nonatomic, getter=_intent, setter=_setIntent:) long long intent; // @synthesize intent=_intent;
 - (void).cxx_destruct;
 @property struct CGSize contentSizeAdjustment;
 @property struct CGPoint contentOffsetAdjustment;

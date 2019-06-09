@@ -6,18 +6,24 @@
 
 #import <FileProvider/NSFileProviderItem-Protocol.h>
 
-@class NSArray, NSNumber, NSString, NSURL;
+@class NSNumber, NSPersonNameComponents, NSSet, NSString, NSURL;
 
 @protocol NSFileProviderItem_Private <NSFileProviderItem>
 
 @optional
 @property(readonly, nonatomic) NSString *preformattedMostRecentEditorName;
 @property(readonly, nonatomic) NSString *preformattedOwnerName;
+@property(readonly, nonatomic) NSPersonNameComponents *fp_addedByNameComponents;
+@property(readonly, nonatomic, getter=fp_isAddedByCurrentUser) _Bool fp_addedByCurrentUser;
+@property(readonly, nonatomic, getter=fp_isLastModifiedByCurrentUser) _Bool fp_lastModifiedByCurrentUser;
+@property(readonly, nonatomic, getter=isTopLevelSharedItem) _Bool topLevelSharedItem;
 @property(readonly, copy, nonatomic) NSString *displayName;
+@property(readonly, copy) NSSet *fp_cloudContainerClientBundleIdentifiers;
+@property(readonly, copy) NSString *fp_cloudContainerIdentifier;
+@property(readonly) _Bool fp_isContainerPristine;
 @property(readonly) _Bool fp_isContainer;
-@property(readonly, copy) NSString *fp_appContainerBundleIdentifier;
-@property(readonly, copy) NSArray *tags;
 @property(readonly, getter=fp_isUbiquitous) _Bool fp_ubiquitous;
+@property(readonly, copy) NSString *fp_parentDomainIdentifier;
 @property(readonly, copy) NSString *fp_domainIdentifier;
 @property(readonly, copy) NSString *fp_spotlightDomainIdentifier;
 @property(readonly, copy) NSString *sharingPermissions;

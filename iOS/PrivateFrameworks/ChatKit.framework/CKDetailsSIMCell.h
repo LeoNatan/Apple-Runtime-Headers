@@ -10,6 +10,7 @@
 
 @class NSString, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface CKDetailsSIMCell : CKDetailsCell <CKDetailsCell>
 {
     UILabel *_simTitleLabel;

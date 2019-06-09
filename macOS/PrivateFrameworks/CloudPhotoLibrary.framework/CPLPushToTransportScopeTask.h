@@ -6,7 +6,7 @@
 
 #import <CloudPhotoLibrary/CPLEngineScopedTask.h>
 
-@class CPLBatchExtractionStrategy, CPLChangeBatch, CPLEnginePushRepository, CPLEngineScheduler, CPLEngineScopeStorage, CPLEngineTransport, CPLExtractedBatch, NSArray, NSDate, NSError, NSMutableDictionary, NSMutableSet, NSObject, NSString;
+@class CPLBatchExtractionStrategy, CPLChangeBatch, CPLDerivativesFilter, CPLEnginePushRepository, CPLEngineScheduler, CPLEngineScopeStorage, CPLEngineTransport, CPLExtractedBatch, NSArray, NSDate, NSDictionary, NSError, NSMutableDictionary, NSMutableSet, NSObject, NSString;
 @protocol CPLEngineTransportCheckRecordsExistenceTask, CPLEngineTransportGroup, CPLEngineTransportUploadBatchTask, OS_dispatch_queue;
 
 @interface CPLPushToTransportScopeTask : CPLEngineScopedTask
@@ -21,11 +21,14 @@
     CPLChangeBatch *_uploadBatch;
     CPLChangeBatch *_batchToCommit;
     NSError *_preparationError;
+    CPLDerivativesFilter *_derivativesFilter;
     NSArray *_uploadResourceTasks;
+    NSDictionary *_recordsWithGeneratedResources;
     NSMutableDictionary *_recordsWithSparseResources;
     NSMutableDictionary *_recordsWithForwardCompatibilityCheck;
     NSMutableDictionary *_recordsWithUntrustedCloudCache;
     NSMutableDictionary *_recordsWithResourcesToLookAhead;
+    NSMutableDictionary *_recordsCopyingDerivativesFromSource;
     NSMutableDictionary *_recordsToCheckForExistence;
     NSMutableSet *_recordsNeedingToBeFullyFetched;
     NSMutableDictionary *_additionalTransportScopes;
@@ -54,6 +57,7 @@
     NSString *_currentTaskKey;
     NSDate *_taskStartDate;
     unsigned long long _recordCount;
+    BOOL _didExtractOneBatch;
     BOOL _highPriority;
 }
 
@@ -65,6 +69,9 @@
 - (void)cancel:(BOOL)arg1;
 - (void)launch;
 - (void)_doOneIteration;
+- (void)_generateNeededDerivatives;
+- (void)_generateDerivativesForNextRecord:(id)arg1;
+- (void)_deleteGeneratedResourcesAfterError:(id)arg1;
 - (void)_uploadBatch;
 - (void)_prepareUploadBatchWithTransaction:(id)arg1 andStore:(id)arg2;
 - (void)_checkForRecordExistence;
@@ -79,9 +86,9 @@
 - (void)_requireExistenceCheckForRecords:(id)arg1;
 - (void)_updateQuotaStrategyAfterSuccessInTransaction:(id)arg1;
 - (void)_popNextBatchAndContinue;
-- (void)_didFinishTaskWithKey:(id)arg1 error:(BOOL)arg2;
+- (void)_didFinishTaskWithKey:(id)arg1 error:(BOOL)arg2 cancelled:(BOOL)arg3;
 - (void)_didStartTaskWithKey:(id)arg1 recordCount:(unsigned long long)arg2;
-- (id)initWithEngineLibrary:(id)arg1 clientCacheIdentifier:(id)arg2 scope:(id)arg3 transportScope:(id)arg4;
+- (id)initWithEngineLibrary:(id)arg1 session:(id)arg2 clientCacheIdentifier:(id)arg3 scope:(id)arg4 transportScope:(id)arg5;
 
 @end
 

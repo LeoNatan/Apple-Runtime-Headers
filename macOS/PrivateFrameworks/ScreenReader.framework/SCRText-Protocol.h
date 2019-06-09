@@ -6,15 +6,23 @@
 
 #import <ScreenReader/NSObject-Protocol.h>
 
-@class SCROutputRequest, SCRUIElement;
+@class SCREvent, SCROutputRequest, SCRUIElement;
 
 @protocol SCRText <NSObject>
+- (BOOL)moveToNextParagraphWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
+- (BOOL)moveToPreviousParagraphWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
+- (BOOL)moveToNextLineWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
+- (BOOL)moveToPreviousLineWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
+- (BOOL)moveToNextSentenceWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
+- (BOOL)moveToPreviousSentenceWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
+- (BOOL)moveToNextWordWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
+- (BOOL)moveToPreviousWordWithOutputRequest:(SCROutputRequest *)arg1 event:(SCREvent *)arg2;
 - (void)addLastWordToOutputRequest:(SCROutputRequest *)arg1;
 - (void)addFirstWordToOutputRequest:(SCROutputRequest *)arg1;
 - (void)addReachedEndOfTextDescriptionToOutputRequest:(SCROutputRequest *)arg1;
 - (void)addReachedBeginningOfTextDescriptionToOutputRequest:(SCROutputRequest *)arg1;
 - (void)addReachedBoundarySoundToOutputRequest:(SCROutputRequest *)arg1;
-- (void)addTextBoundaryToOutputRequest:(SCROutputRequest *)arg1 uiElement:(SCRUIElement *)arg2 edge:(int)arg3;
+- (void)addTextBoundaryToOutputRequest:(SCROutputRequest *)arg1 uiElement:(SCRUIElement *)arg2 edge:(long long)arg3;
 - (BOOL)isSelectedTextRangeSettable;
 - (BOOL)isTextElement;
 @end

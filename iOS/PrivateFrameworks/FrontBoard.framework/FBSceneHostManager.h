@@ -16,8 +16,6 @@
     FBSceneLayerManager *_layerManager;
     FBScene *_scene;
     NSString *_identifier;
-    long long _contentState;
-    _Bool _contentStateIsChanging;
     UIColor *_defaultBackgroundColorWhileHosting;
     UIColor *_defaultBackgroundColorWhileNotHosting;
     unsigned long long _defaultHostedLayerTypes;
@@ -39,7 +37,6 @@
     struct CGAffineTransform _defaultHostViewTransform;
 }
 
-@property(readonly, nonatomic) long long contentState; // @synthesize contentState=_contentState;
 @property(readonly, nonatomic) FBScene *scene; // @synthesize scene=_scene;
 @property(copy, nonatomic) NSString *defaultMinificationFilterName; // @synthesize defaultMinificationFilterName=_defaultMinificationFilterName;
 @property(nonatomic) unsigned long long defaultRenderingMode; // @synthesize defaultRenderingMode=_defaultRenderingMode;
@@ -61,18 +58,14 @@
 - (id)_hostViewForRequester:(id)arg1;
 - (id)_activeHostRequester;
 - (void)_updateActiveHostRequester;
-- (void)_setContentState:(long long)arg1;
 - (void)_callOutToObservers:(CDUnknownBlockType)arg1;
-- (struct CGImage *)snapshotCGImageRefForFrame:(struct CGRect)arg1 excludingContexts:(id)arg2 opaque:(_Bool)arg3 outTransform:(struct CGAffineTransform *)arg4;
-- (id)snapshotUIImageForFrame:(struct CGRect)arg1 excludingContexts:(id)arg2 opaque:(_Bool)arg3 outTransform:(struct CGAffineTransform *)arg4;
-- (id)snapshotViewWithFrame:(struct CGRect)arg1 excludingContexts:(id)arg2 opaque:(_Bool)arg3;
+- (void)setContextId:(unsigned int)arg1 hidden:(_Bool)arg2 forRequester:(id)arg3;
 - (id)snapshotViewForSnapshot:(id)arg1;
 - (id)snapshotViewWithContext:(id)arg1;
 - (id)snapshotContextForRequester:(id)arg1;
 - (id)disableHostingForReason:(id)arg1;
 - (void)setLayer:(id)arg1 hidden:(_Bool)arg2 forRequester:(id)arg3;
 - (void)setLayer:(id)arg1 alpha:(double)arg2 forRequester:(id)arg3;
-- (void)setContextId:(unsigned int)arg1 hidden:(_Bool)arg2 forRequester:(id)arg3;
 - (void)orderRequesterFront:(id)arg1;
 - (void)disableHostingForRequester:(id)arg1;
 - (void)invalidate;

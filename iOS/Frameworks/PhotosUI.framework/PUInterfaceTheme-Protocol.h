@@ -9,11 +9,6 @@
 @class NSAttributedString, NSDictionary, NSString, PUFeedTextCell, PUPhotoDecoration, PUStackView, UIButton, UIColor, UIFont, UIFontDescriptor, UIImage, UILabel, UINavigationController, UIProgressView, UISwitch, UITableView, UITableViewCell, UITextField, UITextView;
 
 @protocol PUInterfaceTheme <NSObject>
-@property(readonly, nonatomic) UIColor *slideshowMusicHeaderTextColor;
-@property(readonly, nonatomic) UIColor *slideshowMusicHeaderBackgroundColor;
-@property(readonly, nonatomic) struct UIEdgeInsets slideshowSeparatorInset;
-@property(readonly, nonatomic) UIColor *slideshowSeparatorColor;
-@property(readonly, nonatomic) UIColor *slideshowChromeBarTintColor;
 @property(readonly, nonatomic) double searchSubtitleBottomBaselineDistance;
 @property(readonly, nonatomic) double searchTitleSubtitleBaselineDistance;
 @property(readonly, nonatomic) double searchTitleTopBaselineDistance;
@@ -27,8 +22,6 @@
 @property(readonly, nonatomic) UIFont *searchTitleLabelFont;
 @property(readonly, nonatomic) UIColor *searchRecentLabelTextColor;
 @property(readonly, nonatomic) UIFont *searchRecentLabelFont;
-@property(readonly, nonatomic) UIColor *searchTableViewBackgroundColor;
-@property(readonly, nonatomic) long long defaultKeyboardAppearance;
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardAlbumTitleFont;
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardButtonFont;
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardTextFont;
@@ -53,7 +46,14 @@
 @property(readonly, nonatomic) UIColor *videoEditingToolbarMainButtonColor;
 @property(readonly, nonatomic) UIFont *videoEditingToolbarButtonNormalFont;
 @property(readonly, nonatomic) UIColor *videoEditingBackgroundColor;
+@property(readonly, nonatomic) UIFont *topToolbarToolLabelFont;
+@property(readonly, nonatomic) UIColor *topToolbarToolLabelButtonColor;
 @property(readonly, nonatomic) UIColor *photoEditingKeyPhotoSelectionNormalColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarUnderlineColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarDarkGradientEndColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarDarkGradientStartColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarLightGradientEndColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarLightGradientStartColor;
 @property(readonly, nonatomic) UIColor *photoEditingDepthBadgeDisabledTextColor;
 @property(readonly, nonatomic) UIColor *photoEditingDepthBadgeEnabledTextColor;
 @property(readonly, nonatomic) UIColor *photoEditingDepthBadgeDisabledColor;
@@ -83,6 +83,7 @@
 @property(readonly, nonatomic) UIFont *photoEditingAdjustmentsModePickerValueFont;
 @property(readonly, nonatomic) UIFont *photoEditingAdjustmentsModePickerFont;
 @property(readonly, nonatomic) UIFont *photoEditingAdjustmentsModeLabelFont;
+@property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarSuggestedMarkerColor;
 @property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarOriginalPositionMarkerColor;
 @property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarCurrentPositionMarkerColor;
 @property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarDisabledColor;
@@ -156,8 +157,6 @@
 @property(readonly, nonatomic) UIFont *albumListSubtitleLabelFont;
 @property(readonly, nonatomic) UIFont *albumListTitleLabelFont;
 @property(readonly, nonatomic) UIColor *albumListBackgroundColor;
-@property(readonly, nonatomic) UIColor *emptyPlaceholderViewBackgroundColor;
-@property(readonly, nonatomic) unsigned long long emptyPlaceholderStyle;
 @property(readonly, nonatomic) double photoCollectionToolbarIconToTextSpacerWidth;
 @property(readonly, nonatomic) double photoCollectionToolbarTextTitleSpacerWidth;
 @property(readonly, nonatomic) int photoCollectionViewBackgroundColorValue;
@@ -170,8 +169,6 @@
 @property(readonly, nonatomic) NSDictionary *sectionHeaderNotTappableTextAttributes;
 - (void)configureImportHeaderSubtitleLabel:(UILabel *)arg1;
 - (void)configureImportHeaderTitleLabel:(UILabel *)arg1;
-- (void)configureSlideshowMusicHeaderTitleLabel:(UILabel *)arg1;
-- (UIFont *)cloudWelcomeViewTitleLabelFontForSize:(double)arg1;
 - (NSDictionary *)searchDimmedAttributes;
 - (NSDictionary *)searchItalicTitleAttributes;
 - (NSDictionary *)searchDefaultAttributes;

@@ -9,6 +9,8 @@
 @class MFEWSFetchMessageMetadataOperation, MFEWSMailboxItemsBatch;
 
 @protocol MFEWSFetchMessageMetadataOperationDelegate <NSObject>
++ (id)new;
 - (void)fetchMessageMetadataOperation:(MFEWSFetchMessageMetadataOperation *)arg1 didPopulateBatch:(MFEWSMailboxItemsBatch *)arg2;
+- (id)init;
 @end
 

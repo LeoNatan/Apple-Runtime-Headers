@@ -21,9 +21,11 @@
 + (id)globalQueueWithQualityOfService:(long long)arg1;
 + (id)globalQueue;
 + (id)mainQueue;
++ (void)assertNotQueue:(id)arg1;
 + (void)assertQueue:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_queue; // @synthesize _queue=__queue;
 - (void).cxx_destruct;
+@property(readonly) NSObject<OS_dispatch_queue> *underlyingQueue;
 - (void)executeAfterDelay:(long long)arg1 workItem:(id)arg2;
 - (void)executeAfterDelay:(long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)executeWorkItemAsynchronously:(id)arg1;

@@ -17,6 +17,7 @@
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+- (id)extensionPoint;
 - (void)setTunnelConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestSocket:(_Bool)arg1 interface:(id)arg2 local:(id)arg3 remote:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)fetchVirtualInterfaceTypeWithCompletionHandler:(CDUnknownBlockType)arg1;

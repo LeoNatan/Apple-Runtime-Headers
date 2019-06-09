@@ -14,10 +14,11 @@ __attribute__((visibility("hidden")))
     CDStruct_56d48c16 _placeDataComponents;
     int _actionComponent;
     struct {
-        unsigned int actionComponent:1;
-    } _has;
+        unsigned int has_actionComponent:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setPlaceDataComponents:(int *)arg1 count:(unsigned int)arg2;
@@ -36,7 +38,7 @@ __attribute__((visibility("hidden")))
 - (int)StringAsActionComponent:(id)arg1;
 - (id)actionComponentAsString:(int)arg1;
 @property(nonatomic) _Bool hasActionComponent;
-@property(nonatomic) int actionComponent; // @synthesize actionComponent=_actionComponent;
+@property(nonatomic) int actionComponent;
 - (void)dealloc;
 
 @end

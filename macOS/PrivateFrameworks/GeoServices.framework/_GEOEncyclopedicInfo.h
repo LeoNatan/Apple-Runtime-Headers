@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL hasStandAloneFactoids;
 @property(readonly, nonatomic) GEOMapItemAttribution *encyclopedicAttribution;
 @property(readonly, nonatomic) NSArray *factoids;
 @property(readonly, nonatomic) BOOL hasPairOfFactoids;

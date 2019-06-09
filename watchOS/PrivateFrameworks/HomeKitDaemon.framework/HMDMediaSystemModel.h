@@ -18,8 +18,8 @@
 - (id)dependentUUIDs;
 
 // Remaining properties
-@property(retain, nonatomic) NSString *configuredName; // @dynamic configuredName;
-@property(retain, nonatomic) NSArray *mediaSystemComponents; // @dynamic mediaSystemComponents;
+@property(copy, nonatomic) NSString *configuredName; // @dynamic configuredName;
+@property(copy, nonatomic) NSArray *mediaSystemComponents; // @dynamic mediaSystemComponents;
 @property(retain, nonatomic) NSString *name; // @dynamic name;
 @property(retain, nonatomic) NSData *symptoms; // @dynamic symptoms;
 

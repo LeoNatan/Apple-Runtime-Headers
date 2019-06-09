@@ -11,6 +11,7 @@
 @class APSConnection, NSData, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface ApplePushNotificationHandler : NSObject <APSConnectionDelegate>
 {
     BOOL _apsEnabled;

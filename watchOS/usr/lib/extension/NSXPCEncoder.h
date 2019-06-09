@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property NSXPCConnection *_connection; // @synthesize _connection;
 - (void)encodeConditionalObject:(id)arg1 forKey:(id)arg2;
 - (void)encodeXPCObject:(id)arg1 forKey:(id)arg2;
+- (unsigned long long)_addOOLXPCObject:(id)arg1;
 - (void)_encodeCString:(const char *)arg1 length:(unsigned long)arg2 forKey:(id)arg3;
 - (void)encodeBytes:(const char *)arg1 length:(unsigned int)arg2 forKey:(id)arg3;
 - (void)encodeInteger:(int)arg1 forKey:(id)arg2;

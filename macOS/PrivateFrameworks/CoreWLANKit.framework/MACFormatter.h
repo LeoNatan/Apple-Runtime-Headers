@@ -8,6 +8,7 @@
 
 @class NSCharacterSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MACFormatter : APFormatter
 {
     NSCharacterSet *_possibleSeparators;
@@ -26,7 +27,6 @@
 - (id)possibleSeparators;
 - (void)setPossibleSeparators:(id)arg1;
 - (BOOL)isPartialStringValid:(id *)arg1 proposedSelectedRange:(struct _NSRange *)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange)arg4 errorDescription:(id *)arg5;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

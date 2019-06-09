@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface PFCloudKitSchemaGenerator : NSObject
 {
     NSManagedObjectModel *_model;
-    CKRecordZone *_zone;
+    CKRecordZone *_recordZone;
     NSString *_configurationName;
     NSCloudKitMirroringDelegateOptions *_mirroringOptions;
     NSPersistentStore *_store;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)newRepresentativeRecordForStaticFieldsInEntity:(id)arg1;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
 @property(readonly, nonatomic) NSString *configurationName; // @synthesize configurationName=_configurationName;
-@property(readonly, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;
+@property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
 @property(readonly, nonatomic) NSManagedObjectModel *model; // @synthesize model=_model;
 @property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(readonly, nonatomic) __weak NSPersistentStore *store; // @synthesize store=_store;
@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)populateRelationshipsOnObject:(id)arg1 withCache:(id)arg2;
 - (void)populateValuesOnObject:(id)arg1;
 - (id)representativeObjectForEntity:(id)arg1 withManagedObjectContext:(id)arg2 cache:(id)arg3 populate:(BOOL)arg4;
-- (id)newRepresentativeRecords;
+- (id)newRepresentativeRecords:(id *)arg1;
 - (void)dealloc;
 - (id)initWithObservedStore:(id)arg1 zone:(id)arg2 mirroringOptions:(id)arg3;
 - (id)init;

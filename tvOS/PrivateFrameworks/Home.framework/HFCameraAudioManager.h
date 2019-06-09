@@ -24,12 +24,12 @@
 - (id)_enableAudioIfNecessaryForAudioControl:(id)arg1 minVolume:(float)arg2;
 - (id)enableRemoteMicrophoneIfNecessary;
 - (id)enableRemoteSpeakerIfNecessary;
-- (id)_updateAudioStreamSetting:(unsigned long long)arg1;
+- (id)updateAudioStreamSetting:(unsigned long long)arg1;
 - (id)setIncomingAudioEnabled:(_Bool)arg1;
 - (id)setOutgoingAudioEnabled:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isIncomingAudioEnabled) _Bool incomingAudioEnabled;
 @property(readonly, nonatomic, getter=isOutgoingAudioEnabled) _Bool outgoingAudioEnabled;
-- (unsigned long long)audioStreamSetting;
+@property(readonly, nonatomic) unsigned long long audioStreamSetting;
 - (id)initWithCameraProfile:(id)arg1 cameraStream:(id)arg2 valueManager:(id)arg3;
 
 @end

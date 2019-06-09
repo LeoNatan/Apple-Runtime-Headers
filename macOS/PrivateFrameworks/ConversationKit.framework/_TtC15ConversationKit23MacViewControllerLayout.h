@@ -11,7 +11,7 @@
     // Error parsing type: , name: stateConstraints
     // Error parsing type: , name: participantListHeightConstraint
     // Error parsing type: , name: currentConstraints
-    // Error parsing type: , name: floatingControlsConstraints
+    // Error parsing type: , name: floatingControlsView
 }
 
 @end

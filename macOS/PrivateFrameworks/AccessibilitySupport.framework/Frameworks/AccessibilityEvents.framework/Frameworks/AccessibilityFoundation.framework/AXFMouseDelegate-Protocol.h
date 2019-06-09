@@ -6,11 +6,15 @@
 
 #import <AccessibilityFoundation/NSObject-Protocol.h>
 
+@class AXFMouseCursorImage;
+
 @protocol AXFMouseDelegate <NSObject>
 @property(nonatomic) BOOL accumulateClickCount;
 @property(readonly, nonatomic) long long currentDownButton;
 @property(readonly, nonatomic) struct CGSize cursorImageSize;
-@property(readonly, nonatomic) float cursorScale;
+@property(readonly, nonatomic) AXFMouseCursorImage *cursorImage;
+@property(nonatomic) BOOL keepCursorImageSynchronizedWithSystem;
+@property(nonatomic) double cursorScale;
 @property(nonatomic) struct CGPoint currentLocation;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 markupHandler:(void (^)(struct __CGEvent *))arg3 withCompletion:(void (^)(void))arg4;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 withCompletion:(void (^)(void))arg3;
@@ -26,6 +30,7 @@
 - (void)moveToLocation:(struct CGPoint)arg1 delta:(struct CGSize)arg2 eventType:(unsigned long long)arg3;
 - (void)moveToLocation:(struct CGPoint)arg1 markupHandler:(void (^)(struct __CGEvent *))arg2;
 - (void)moveToLocation:(struct CGPoint)arg1;
+- (void)setSystemCursorType:(unsigned long long)arg1;
 - (void)setCursorType:(int)arg1;
 - (void)hideCursor;
 - (void)showCursor;

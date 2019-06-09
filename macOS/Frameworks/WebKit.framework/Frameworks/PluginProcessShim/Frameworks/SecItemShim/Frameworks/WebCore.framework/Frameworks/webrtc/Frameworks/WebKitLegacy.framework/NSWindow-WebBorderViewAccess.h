@@ -8,5 +8,7 @@
 
 @interface NSWindow (WebBorderViewAccess)
 - (id)_web_borderView;
+- (void)makeResponder:(id)arg1 firstResponderIfDescendantOfView:(id)arg2;
+- (void)centerOverMainWindow;
 @end
 

@@ -16,13 +16,16 @@ __attribute__((visibility("hidden")))
     long long _mtime;
 }
 
-@property(readonly, nonatomic) long long mtime; // @synthesize mtime=_mtime;
+@property(nonatomic) long long mtime; // @synthesize mtime=_mtime;
 - (id)asShareableItem;
 - (_Bool)startDownloadInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (_Bool)evictInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (void)prepareForSyncUpInZone:(id)arg1;
 - (_Bool)_deleteFromDB:(id)arg1 keepAliases:(_Bool)arg2;
 - (_Bool)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (_Bool)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
+- (_Bool)_updateRecursiveProperties;
+- (_Bool)_insertRecursiveProperties;
 - (void)_retryPostponedIfNeededForDiffs:(unsigned long long)arg1;
 - (void)markRemovedFromFilesystemForServerEdit:(_Bool)arg1;
 - (void)_markLostDirectoryAsAlmostDead;
@@ -31,10 +34,16 @@ __attribute__((visibility("hidden")))
 - (id)clientZonesChildrenNeedingSyncUpAreIn;
 - (_Bool)hasPendingLostChildren;
 - (_Bool)hasLostChildren;
-- (unsigned long long)childItemCount;
+- (id)childItemCount;
 - (_Bool)hasLiveChildren;
 - (_Bool)hasDeadChildren;
 - (void)transformIntoFSRoot;
+- (_Bool)containsPendingUploadOrSyncUp;
+- (_Bool)containsPendingDownload;
+- (_Bool)containsDirFault;
+- (_Bool)containsFault;
+- (_Bool)containsOverQuotaItems;
+- (_Bool)possiblyContainsSharedItem;
 - (_Bool)changedAtRelativePath:(id)arg1 scanPackage:(_Bool)arg2;
 - (void)updateItemMetadataFromServerItem:(id)arg1 appliedSharingPermission:(_Bool)arg2;
 - (_Bool)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
@@ -44,8 +53,10 @@ __attribute__((visibility("hidden")))
 - (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id *)arg4;
 - (_Bool)hasShareIDAndIsOwnedByMe;
 @property(readonly, nonatomic) BRCDirectoryItem *asDirectory;
+- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 sharingOptions:(unsigned long long)arg4 markLost:(_Bool)arg5;
 - (unsigned long long)diffAgainstServerItem:(id)arg1;
 - (_Bool)isDirectoryWithPackageName;
+- (_Bool)isDirectoryFault;
 - (_Bool)isDirectory;
 
 // Remaining properties

@@ -14,7 +14,7 @@
 - (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequestsFromDate:(NSDate *)arg2 toDate:(NSDate *)arg3 inSections:(NSSet *)arg4;
 - (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequests:(NSSet *)arg2 fromDestinations:(NSSet *)arg3;
 - (void)destination:(id <NCNotificationDestination>)arg1 requestsClearingNotificationRequests:(NSSet *)arg2;
-- (void)destination:(id <NCNotificationDestination>)arg1 executeAction:(NCNotificationAction *)arg2 forNotificationRequest:(NCNotificationRequest *)arg3 requestAuthentication:(_Bool)arg4 withParameters:(NSDictionary *)arg5 completion:(void (^)(_Bool, _Bool))arg6;
+- (void)destination:(id <NCNotificationDestination>)arg1 executeAction:(NCNotificationAction *)arg2 forNotificationRequest:(NCNotificationRequest *)arg3 requestAuthentication:(_Bool)arg4 withParameters:(NSDictionary *)arg5 completion:(void (^)(_Bool))arg6;
 - (void)destination:(id <NCNotificationDestination>)arg1 requestPermissionToExecuteAction:(NCNotificationAction *)arg2 forNotificationRequest:(NCNotificationRequest *)arg3 withParameters:(NSDictionary *)arg4 completion:(void (^)(_Bool))arg5;
 
 @optional

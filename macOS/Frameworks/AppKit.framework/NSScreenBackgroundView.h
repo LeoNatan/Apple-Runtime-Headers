@@ -15,7 +15,6 @@
 - (BOOL)wantsUpdateLayer;
 - (struct __CFDictionary *)_createUnderDesktopCUIOptionsDictionary;
 - (BOOL)isOpaque;
-- (unsigned int)_CAViewFlags;
 
 @end
 

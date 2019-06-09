@@ -6,14 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UIImage, VSFontCenter;
+@class NSString, UIButton, UIFont, UIImage, UIStackView, VSFontCenter;
 @protocol VSSetupViewDelegate;
 
 @interface VSSetupView : UIView
 {
     _Bool _shouldShowAppsButton;
     _Bool _shouldShowAboutButton;
-    _Bool _shouldShowTvAppGdprButton;
+    _Bool _shouldOverrideSkipButtonStyle;
     id <VSSetupViewDelegate> _delegate;
     UIImage *_image;
     NSString *_appName;
@@ -28,8 +28,22 @@
     UIView *_tvAppPrivacyButtonContainer;
     NSString *_footer;
     VSFontCenter *_fontCenter;
+    UIFont *_defaultSkipButtonFont;
+    UIFont *_skipButtonFont;
+    double _defaultSkipButtonSpacing;
+    UIStackView *_stackView;
+    UIButton *_beginButton;
+    UIButton *_skipButton;
+    UIButton *_appsButton;
 }
 
+@property(retain, nonatomic) UIButton *appsButton; // @synthesize appsButton=_appsButton;
+@property(retain, nonatomic) UIButton *skipButton; // @synthesize skipButton=_skipButton;
+@property(retain, nonatomic) UIButton *beginButton; // @synthesize beginButton=_beginButton;
+@property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
+@property(nonatomic) double defaultSkipButtonSpacing; // @synthesize defaultSkipButtonSpacing=_defaultSkipButtonSpacing;
+@property(retain, nonatomic) UIFont *skipButtonFont; // @synthesize skipButtonFont=_skipButtonFont;
+@property(retain, nonatomic) UIFont *defaultSkipButtonFont; // @synthesize defaultSkipButtonFont=_defaultSkipButtonFont;
 @property(retain, nonatomic) VSFontCenter *fontCenter; // @synthesize fontCenter=_fontCenter;
 @property(copy, nonatomic) NSString *footer; // @synthesize footer=_footer;
 @property(readonly, nonatomic) UIView *tvAppPrivacyButtonContainer; // @synthesize tvAppPrivacyButtonContainer=_tvAppPrivacyButtonContainer;
@@ -37,7 +51,7 @@
 @property(copy, nonatomic) NSString *appsButtonTitle; // @synthesize appsButtonTitle=_appsButtonTitle;
 @property(copy, nonatomic) NSString *skipButtonTitle; // @synthesize skipButtonTitle=_skipButtonTitle;
 @property(copy, nonatomic) NSString *beginButtonTitle; // @synthesize beginButtonTitle=_beginButtonTitle;
-@property(nonatomic) _Bool shouldShowTvAppGdprButton; // @synthesize shouldShowTvAppGdprButton=_shouldShowTvAppGdprButton;
+@property(nonatomic) _Bool shouldOverrideSkipButtonStyle; // @synthesize shouldOverrideSkipButtonStyle=_shouldOverrideSkipButtonStyle;
 @property(nonatomic) _Bool shouldShowAboutButton; // @synthesize shouldShowAboutButton=_shouldShowAboutButton;
 @property(nonatomic) _Bool shouldShowAppsButton; // @synthesize shouldShowAppsButton=_shouldShowAppsButton;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
@@ -52,6 +66,7 @@
 - (void)_appsButtonPressed:(id)arg1;
 - (void)_skipButtonPressed:(id)arg1;
 - (void)_beginButtonPressed:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

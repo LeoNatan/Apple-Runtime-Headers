@@ -16,6 +16,7 @@
 @interface PXPhotosDetailsContext : PXObservable <PXMutablePhotosDetailsContext, PXPhotosDataSourceChangeObserver, PXChangeObserver, PXHierarchicalContext>
 {
     _Bool _shouldShowMovieHeader;
+    _Bool _hasLocation;
     _Bool _shouldUseKeyFace;
     PXPhotosDataSource *_photosDataSource;
     PXDisplayTitleInfo *_displayTitleInfo;
@@ -23,6 +24,7 @@
     PHFetchResult *_keyAssetsFetchResult;
     unsigned long long _viewSourceOrigin;
     PXPhotosDetailsViewModel *_viewModel;
+    unsigned long long _contextHierarchyDepth;
     PHFetchResult *_assetCollections;
     NSDictionary *_assetsByCollection;
     PHFetchResult *_people;
@@ -31,9 +33,13 @@
     NSString *_titleFontName;
 }
 
++ (id)photosDetailsContextForAsset:(id)arg1 parentContext:(id)arg2;
++ (id)photosDetailsContextForMemory:(id)arg1 enableCuration:(_Bool)arg2 enableKeyAssets:(_Bool)arg3;
 + (id)photosDetailsContextForMemory:(id)arg1;
-+ (id)photosDetailsContextForSection:(long long)arg1 inPhotosDataSource:(id)arg2 viewSourceOrigin:(unsigned long long)arg3;
++ (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 keyAssets:(id)arg3 enableCuration:(_Bool)arg4 enableKeyAssets:(_Bool)arg5 viewSourceOrigin:(unsigned long long)arg6;
++ (id)photosDetailsContextForAssetCollection:(id)arg1 assets:(id)arg2 viewSourceOrigin:(unsigned long long)arg3;
 @property(readonly, nonatomic) _Bool shouldUseKeyFace; // @synthesize shouldUseKeyFace=_shouldUseKeyFace;
+@property(readonly, nonatomic) _Bool hasLocation; // @synthesize hasLocation=_hasLocation;
 @property(readonly, nonatomic) _Bool shouldShowMovieHeader; // @synthesize shouldShowMovieHeader=_shouldShowMovieHeader;
 @property(readonly, copy, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;
 @property(readonly, copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
@@ -41,6 +47,7 @@
 @property(readonly, nonatomic) PHFetchResult *people; // @synthesize people=_people;
 @property(readonly, copy, nonatomic) NSDictionary *assetsByCollection; // @synthesize assetsByCollection=_assetsByCollection;
 @property(readonly, nonatomic) PHFetchResult *assetCollections; // @synthesize assetCollections=_assetCollections;
+@property(readonly, nonatomic) unsigned long long contextHierarchyDepth; // @synthesize contextHierarchyDepth=_contextHierarchyDepth;
 @property(readonly, nonatomic) PXPhotosDetailsViewModel *viewModel; // @synthesize viewModel=_viewModel;
 @property(readonly, nonatomic) unsigned long long viewSourceOrigin; // @synthesize viewSourceOrigin=_viewSourceOrigin;
 @property(readonly, nonatomic) PHFetchResult *keyAssetsFetchResult; // @synthesize keyAssetsFetchResult=_keyAssetsFetchResult;
@@ -50,8 +57,10 @@
 - (void).cxx_destruct;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
+- (void)setPhotosDataSource:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (void)setViewSourceOrigin:(unsigned long long)arg1;
+- (void)setHasLocation:(_Bool)arg1;
 - (void)setShouldShowMovieHeader:(_Bool)arg1;
 - (void)setTitleFontName:(id)arg1;
 - (void)setLocalizedSubtitle:(id)arg1;

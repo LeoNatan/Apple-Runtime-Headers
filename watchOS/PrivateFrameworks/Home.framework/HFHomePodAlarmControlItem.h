@@ -6,7 +6,7 @@
 
 #import <Home/HFControlItem.h>
 
-@class HFMediaProfileContainerSettingsValueManager;
+@class HFHomeKitSettingsValueManager;
 @protocol HFMediaProfileContainer;
 
 @interface HFHomePodAlarmControlItem : HFControlItem
@@ -21,7 +21,7 @@
 - (id)valueForCharacteristicValues:(id)arg1;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)readValueAndPopulateStandardResults;
-@property(readonly, nonatomic) HFMediaProfileContainerSettingsValueManager *valueManager;
+@property(readonly, nonatomic) HFHomeKitSettingsValueManager *valueManager;
 - (id)copyWithCharacteristicOptions:(id)arg1 valueSource:(id)arg2;
 - (id)initWithValueSource:(id)arg1 characteristicOptions:(id)arg2 displayResults:(id)arg3;
 - (id)initWithMediaProfileContainer:(id)arg1 displayResults:(id)arg2;

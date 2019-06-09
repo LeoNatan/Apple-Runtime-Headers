@@ -9,6 +9,7 @@
 @class NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface DiagCollectionClient : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;

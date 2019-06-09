@@ -8,12 +8,14 @@
 
 @interface CADisplayAttributes : NSObject
 {
+    _Bool _legacyHDMIEDID;
     int _dolbyVision;
     int _pqEOTF;
     int _hdrStaticMetadataType1;
     int _bt2020YCC;
 }
 
+@property(readonly) _Bool legacyHDMIEDID; // @synthesize legacyHDMIEDID=_legacyHDMIEDID;
 @property(readonly) int bt2020YCC; // @synthesize bt2020YCC=_bt2020YCC;
 @property(readonly) int hdrStaticMetadataType1; // @synthesize hdrStaticMetadataType1=_hdrStaticMetadataType1;
 @property(readonly) int pqEOTF; // @synthesize pqEOTF=_pqEOTF;

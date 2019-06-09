@@ -13,7 +13,14 @@ __attribute__((visibility("hidden")))
 
 + (float)scaleFromPrinterSettings:(id)arg1;
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)initialize;
++ (id)chapterNumberSeparatorEnumMap;
++ (id)verticalJustificationEnumMap;
++ (id)lineNumberRestartEnumMap;
++ (id)pageBorderOffsetEnumMap;
++ (id)pageBorderDisplayEnumMap;
++ (id)pageBorderDepthEnumMap;
++ (id)pageOrientationEnumMap;
++ (id)sectionBreakEnumMap;
 + (void)mapProperties:(struct _xmlNode *)arg1 toSection:(id)arg2 state:(id)arg3;
 + (void)mapPrinterSettings:(struct _xmlNode *)arg1 toSection:(id)arg2 state:(id)arg3;
 + (void)mapFooter:(struct _xmlNode *)arg1 toSection:(id)arg2 state:(id)arg3;

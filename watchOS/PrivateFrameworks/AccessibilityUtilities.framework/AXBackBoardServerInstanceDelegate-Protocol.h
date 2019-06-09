@@ -12,7 +12,6 @@
 - (void)setCapsLockLightOn:(_Bool)arg1;
 - (void)setLockScreenDimTimerEnabled:(_Bool)arg1;
 - (void)zoomListenerRegistered;
-- (void)setVoiceOverItemChooserVisible:(_Bool)arg1;
 - (void)setSiriViewServicePid:(int)arg1;
 - (int)accessibilityUIServerPid;
 - (void)setAccessibilityUIServerPid:(int)arg1;

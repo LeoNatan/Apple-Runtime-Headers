@@ -11,46 +11,27 @@
 
 @interface QTDataReference : NSObject <NSCoding, NSSecureCoding>
 {
-    int _proxy;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
-+ (BOOL)supportsSecureCoding;
-+ (id)dataReferenceWithProxy:(int)arg1;
 + (id)dataReferenceWithReferenceToData:(id)arg1 name:(id)arg2 MIMEType:(id)arg3;
++ (id)dataReferenceWithProxy:(int)arg1;
++ (id)dataReferenceWithDataRefData:(id)arg1 type:(id)arg2;
++ (id)dataReferenceWithDataRef:(char **)arg1 type:(id)arg2;
 + (id)dataReferenceWithReferenceToData:(id)arg1;
 + (id)dataReferenceWithReferenceToURL:(id)arg1;
 + (id)dataReferenceWithReferenceToFile:(id)arg1;
-+ (id)dataReferenceWithDataRefData:(id)arg1 type:(id)arg2;
-+ (id)dataReferenceWithDataRef:(char **)arg1 type:(id)arg2;
++ (BOOL)supportsSecureCoding;
 + (void)initialize;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (int)proxy;
-- (void)setDataRefType:(id)arg1;
-- (void)setDataRef:(char **)arg1;
-- (unsigned long long)hash;
-- (BOOL)isEqual:(id)arg1;
-- (id)description;
-- (id)MIMEType;
-- (id)name;
-- (id)referenceData;
-- (id)referenceURL;
-- (id)referenceFile;
-- (id)dataRefType;
-- (id)dataRefData;
-- (char **)dataRef;
-- (void)dealloc;
-- (void)finalize;
+- (id)initWithProxy:(int)arg1;
 - (id)initWithReferenceToData:(id)arg1 name:(id)arg2 MIMEType:(id)arg3;
 - (id)initWithReferenceToData:(id)arg1;
 - (id)initWithReferenceToURL:(id)arg1;
 - (id)initWithReferenceToFile:(id)arg1;
 - (id)initWithDataRefData:(id)arg1 type:(id)arg2;
 - (id)initWithDataRef:(char **)arg1 type:(id)arg2;
-- (id)initWithProxy:(int)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

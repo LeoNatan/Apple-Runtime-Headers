@@ -74,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)_menuItemTitleOfSaveToDownloadsFolderForImageLink:(BOOL)arg1;
 - (BOOL)_downloadPathIsDesktop;
 - (id)_downloadPath;
+- (id)_getQRPayloadURLFromUserInfo:(id)arg1;
 - (void)_openURLInNewTab:(id)arg1;
 - (void)_openFrameInNewWindowFromUserInfo:(id)arg1 windowPolicy:(long long)arg2;
 - (void)_openURLInNewWindow:(id)arg1 windowPolicy:(long long)arg2;
@@ -99,7 +100,9 @@ __attribute__((visibility("hidden")))
 - (void)_addLinkToReadingList:(id)arg1;
 - (void)_addLinkToBookmarks:(id)arg1;
 - (void)_downloadMediaAs:(id)arg1;
+- (void)_downloadMedia:(id)arg1;
 - (void)_downloadLinkedFileAs:(id)arg1;
+- (void)_downloadFileAtURL:(id)arg1 suggestedFileName:(id)arg2;
 - (void)_downloadLinkedFile:(id)arg1;
 - (void)_saveImageAs:(id)arg1;
 - (void)_saveImageToDownloadsFolder:(id)arg1;
@@ -108,7 +111,10 @@ __attribute__((visibility("hidden")))
 - (void)_saveLinkedFileToDownloadsFolder:(id)arg1;
 - (void)_openLinkWithQuickTimePlayer:(id)arg1;
 - (void)_openLinkWithITunes:(id)arg1;
-- (void)_openInDashboard:(id)arg1;
+- (void)_openQRCodePayloadURLInNewTab:(id)arg1;
+- (void)_openQRCodePayloadURLInNewAutomationWindow:(id)arg1;
+- (void)_openQRCodePayloadURLInNewPrivateWindow:(id)arg1;
+- (void)_openQRCodePayloadURLInNewNonPrivateWindow:(id)arg1;
 - (void)_goToAddressInNewTab:(id)arg1;
 - (void)_goToAddressInNewAutomationWindow:(id)arg1;
 - (void)_goToAddressInNewPrivateWindow:(id)arg1;
@@ -126,6 +132,8 @@ __attribute__((visibility("hidden")))
 - (void)_openFrameInNewPrivateWindow:(id)arg1;
 - (void)_openFrameInNewNonPrivateWindow:(id)arg1;
 - (void)_openFrameInNewTab:(id)arg1;
+- (void)_openLinkInCurrentTab:(id)arg1;
+- (void)_openLinkInApp:(id)arg1;
 - (void)_openLinkInNewTab:(id)arg1;
 - (void)_openLinkInNewAutomationWindow:(id)arg1;
 - (void)_openLinkInNewPrivateWindow:(id)arg1;
@@ -137,9 +145,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)_appendOpenMediaInNewWindowAndTabMenuItemsToMenu:(id)arg1 openMediaInNewWindowExistingMenuItem:(id)arg2 mediaType:(unsigned int)arg3 userInfo:(id)arg4;
 - (void)_appendImageMenuItemsToMenu:(id)arg1 proposedMenu:(id)arg2 imageURL:(id)arg3 userInfo:(id)arg4;
 - (void)_appendOpenImageInNewWindowAndTabMenuItemsToMenu:(id)arg1 openImageInNewWindowExistingMenuItem:(id)arg2 userInfo:(id)arg3;
+- (void)_appendOpenQRCodePayloadURLInNewWindowAndTabMenuItemsToMenu:(id)arg1 userInfo:(id)arg2;
 - (void)_appendNewWindowAndTabMenuItemsToMenu:(id)arg1 newWindowTitle:(id)arg2 newWindowAction:(SEL)arg3 newTabTitle:(id)arg4 newTabAction:(SEL)arg5 alternativeNewWindowTitle:(id)arg6 alternativeNewWindowAction:(SEL)arg7 enableNewWindowMenuItems:(BOOL)arg8 userInfo:(id)arg9;
 - (void)_appendNewWindowAndTabMenuItemsToMenu:(id)arg1 prefixString:(id)arg2 newNonPrivateWindowAction:(SEL)arg3 newPrivateWindowAction:(SEL)arg4 newAutomationWindowAction:(SEL)arg5 newTabAction:(SEL)arg6 userInfo:(id)arg7;
 - (void)_appendSaveAndDownloadMenuItemsToMenu:(id)arg1 downloadLinkToDiskExistingMenuItem:(id)arg2 userInfo:(id)arg3;
+- (void)_appendOpenInAppMenuItemsToMenu:(id)arg1 userInfo:(id)arg2;
 - (void)_appendOpenLinkInNewWindowAndTabMenuItemsToMenu:(id)arg1 openLinkInNewWindowExistingMenuItem:(id)arg2 userInfo:(id)arg3;
 - (id)_contextMenuForEditableAreaFromProposedMenu:(id)arg1 contextMenuItemsFromExtensions:(const Vector_b61c989e *)arg2 contextMenuItemsFromAppExtensions:(id)arg3 userInfo:(id)arg4;
 - (BOOL)_proposedMenuIsForEditableElement:(id)arg1;

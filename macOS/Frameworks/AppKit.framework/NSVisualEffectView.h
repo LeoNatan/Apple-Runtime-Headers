@@ -6,11 +6,23 @@
 
 #import <AppKit/NSView.h>
 
-@class CALayer, NSImage, NSString;
+@class CALayer, CAProxyLayer, NSCGSWindowBackdrop, NSDictionary, NSImage, NSString;
 
 @interface NSVisualEffectView : NSView
 {
-    struct NSVisualEffectViewInternal *_NSVisualEffectViewInternal;
+    NSCGSWindowBackdrop *_cgsWindowBackdrop;
+    CALayer *_materialLayerActive;
+    CALayer *_materialLayerInactive;
+    CAProxyLayer *_proxyLayer;
+    long long _material;
+    long long _internalMaterialType;
+    long long _blendingMode;
+    long long _state;
+    NSImage *_cachedFillMaskImage;
+    NSString *_groupName;
+    NSDictionary *_coreUIOptions;
+    NSDictionary *_coreUIMetadata;
+    unsigned long long _zOrderDidChangeNotificationToken;
     CALayer *_darkenLayer;
     CALayer *_colorCopyLayer;
     CALayer *_backdropLayer;
@@ -27,7 +39,6 @@
 + (void)endFreezingInWindow:(id)arg1;
 + (void)beginFreezingInWindow:(id)arg1;
 + (id)_representativeColorForMaterial:(long long)arg1 isActive:(BOOL)arg2;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)keyPathsForValuesAffecting_effectiveGroupName;
 - (id)_stringValueForIntrospectorPropertyKey:(id)arg1;
 - (id)_propertyKeysForIntrospector;
@@ -37,8 +48,6 @@
 - (id)_generateMaskImageWithCurrentFillColor;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)_freeCachedMaskImages;
-- (id)fontSmoothingBackgroundColor;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (BOOL)_needsDarkening;
 - (BOOL)_needsProxyLayer;
 - (BOOL)_needsWindowBackdrop;
@@ -85,7 +94,7 @@
 @property(setter=_setNeedsClearProxyLayer:) BOOL _needsClearProxyLayer;
 @property(getter=_isClear, setter=_setClear:) BOOL _clear;
 @property(setter=_setInternalMaterialType:) long long _internalMaterialType;
-- (void)_reactToMaterialChangeDiscardingMaterialLayers:(BOOL)arg1 invalidatingForFSBC:(BOOL)arg2 invalidatingPreferredAppearance:(BOOL)arg3;
+- (void)_reactToMaterialChangeDiscardingMaterialLayers:(BOOL)arg1 invalidatingPreferredAppearance:(BOOL)arg2;
 - (id)_currentMaterialName;
 - (void)_markDirty;
 @property long long state;

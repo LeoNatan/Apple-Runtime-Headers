@@ -6,14 +6,12 @@
 
 #import <AppKit/NSTableRowView.h>
 
-@class FI_TListView, FI_TListViewController;
+@class NSObject;
 @protocol TListHeaderRowViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface FI_TListHeaderRowView : NSTableRowView
 {
-    FI_TListView *_listView;
-    FI_TListViewController *_listViewController;
     struct TFENode _node;
     long long _columnBeingDragged;
     struct TNSRef<FI_TListHeaderCellView, void> _cellViewForDrag;
@@ -22,13 +20,11 @@ __attribute__((visibility("hidden")))
     _Bool _isSortAscending;
     struct TNSRef<NSTrackingArea, void> _headerTrackingArea;
     _Bool _isCursorOverDivider;
-    id <TListHeaderRowViewDelegate> _delegate;
+    struct TNSWeakPtr<NSObject<TListHeaderRowViewDelegate>, void> _weakDelegate;
 }
 
 @property(nonatomic, getter=isSortAscending) _Bool sortAscending; // @synthesize sortAscending=_isSortAscending;
 @property(nonatomic) long long sortColumnIndex; // @synthesize sortColumnIndex=_sortColumnIndex;
-@property(readonly, nonatomic) FI_TListView *listView; // @synthesize listView=_listView;
-@property(readonly, nonatomic) FI_TListViewController *listViewController; // @synthesize listViewController=_listViewController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)setNeedsDisplayForColumn:(long long)arg1 draggedDelta:(double)arg2;
@@ -52,11 +48,11 @@ __attribute__((visibility("hidden")))
 - (void)updateNextFloatingHeader;
 - (_Bool)isGroupHeader;
 - (void)setNode:(const struct TFENode *)arg1;
+- (void)setDelegate:(id)arg1;
+@property(readonly, nonatomic) __weak NSObject<TListHeaderRowViewDelegate> *delegate; // @dynamic delegate;
 - (void)dealloc;
-- (id)initAsGroupHeader:(struct CGRect)arg1 controller:(id)arg2 node:(const struct TFENode *)arg3 delegate:(id)arg4;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 controller:(id)arg2 delegate:(id)arg3;
+- (id)initAsGroupHeader:(struct CGRect)arg1 node:(const struct TFENode *)arg2 delegate:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 delegate:(id)arg2;
 
 @end
 

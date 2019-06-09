@@ -18,6 +18,7 @@
 + (id)currentQueryGenerationToken;
 + (id)unpinnedQueryGenerationToken;
 + (void)initialize;
+- (BOOL)_isEnabled;
 - (id)_storeIdentifier;
 - (BOOL)_isUnmoored;
 - (id)persistentStoreCoordinator;

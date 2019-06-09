@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (int)readPlaceholderBoundsTrackFromNode:(struct _xmlNode *)arg1;
 + (int)readPlaceholderTypeFromNode:(struct _xmlNode *)arg1;
+- (void).cxx_destruct;
 - (_Bool)chartAutoStrokeIsHollow;
 - (_Bool)chartAutoFillIsHollow;
 - (void)readBlipExtWithURI:(id)arg1 fromNode:(struct _xmlNode *)arg2 toDrawable:(id)arg3 state:(id)arg4;
@@ -25,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)readClientDataFromGraphicalFramePropertiesNode:(struct _xmlNode *)arg1 toDrawable:(id)arg2 state:(id)arg3;
 - (void)readClientDataFromPictureNode:(struct _xmlNode *)arg1 toImage:(id)arg2 state:(id)arg3;
 - (void)readClientDataFromShapeNode:(struct _xmlNode *)arg1 toShape:(id)arg2 state:(id)arg3;
-- (id)presentationState;
+@property(readonly) __weak PXPresentationState *presentationState; // @synthesize presentationState=mPresentationState;
 - (id)initWithState:(id)arg1;
 
 @end

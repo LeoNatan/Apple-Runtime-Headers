@@ -6,12 +6,15 @@
 
 #import <DataDetectorsUI/DDAction.h>
 
+__attribute__((visibility("hidden")))
 @interface DDClientAction : DDAction
 {
 }
 
 + (_Bool)clientCanPerformActionWithUrl:(id)arg1;
+- (id)viewController;
 - (void)performFromView:(id)arg1;
+- (id)icon;
 - (id)localizedName;
 
 @end

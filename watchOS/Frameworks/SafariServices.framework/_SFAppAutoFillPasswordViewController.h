@@ -28,7 +28,7 @@
 - (void)viewDidLoad;
 - (id)_connectToServiceWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_setUpServiceProxyIfNeeded;
-- (void)_applicationDidEnterBackground:(id)arg1;
+- (void)_sceneDidEnterBackground:(id)arg1;
 - (id)init;
 
 @end

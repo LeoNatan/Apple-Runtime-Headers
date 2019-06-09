@@ -24,6 +24,7 @@
 @property(copy, nonatomic) CDUnknownBlockType hostAppBlock; // @synthesize hostAppBlock=_hostAppBlock;
 - (void).cxx_destruct;
 - (id)initWithAMSBag:(id)arg1 containerId:(id)arg2 pageURLBlock:(CDUnknownBlockType)arg3 resourceRevNumBlock:(CDUnknownBlockType)arg4 hostAppBlock:(CDUnknownBlockType)arg5;
+- (id)initWithAMSBag:(id)arg1;
 - (id)init;
 
 // Remaining properties

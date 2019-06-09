@@ -27,6 +27,7 @@
 - (unsigned long long)_stackedPlatterCountCoalescedNotificationCount:(unsigned long long)arg1;
 - (struct CGSize)contentSizeForSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;
+- (void)invalidateStackedPlattersRecipe;
 - (void)layoutSubviews;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

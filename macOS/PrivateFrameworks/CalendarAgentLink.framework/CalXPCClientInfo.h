@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 @class NSString, NSXPCConnection;
+@protocol CalendarAgentClient;
 
 @interface CalXPCClientInfo : NSObject
 {
     NSXPCConnection *_connection;
-    id _clientLink;
+    id <CalendarAgentClient> _clientLink;
     int _processID;
     NSString *_processName;
 }
@@ -19,7 +20,7 @@
 + (id)clientInfoForConnection:(id)arg1 clientLink:(id)arg2;
 @property(copy, nonatomic) NSString *processName; // @synthesize processName=_processName;
 @property(nonatomic) int processID; // @synthesize processID=_processID;
-@property(retain, nonatomic) id clientLink; // @synthesize clientLink=_clientLink;
+@property(retain, nonatomic) id <CalendarAgentClient> clientLink; // @synthesize clientLink=_clientLink;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (BOOL)isEqual:(id)arg1;

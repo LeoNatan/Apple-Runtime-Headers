@@ -15,6 +15,7 @@
 
 @property(retain) NSMutableDictionary *capabilitiesInformation; // @synthesize capabilitiesInformation=_capabilitiesInformation;
 - (void).cxx_destruct;
+- (void)addAssetBundleInformationToDictionary:(id)arg1;
 - (void)addLivePhotoInformationToDictionary:(id)arg1;
 - (void)addTranscodeChoiceWithOptions:(id)arg1;
 - (void)addVendorSpecificInformation;

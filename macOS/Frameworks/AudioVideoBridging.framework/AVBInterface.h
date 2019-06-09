@@ -59,10 +59,10 @@
 + (BOOL)isAVBCapableInterfaceNamed:(id)arg1;
 + (BOOL)isAVBEnabledOnInterfaceNamed:(id)arg1;
 + (unsigned long long)myEntityID;
-+ (unsigned long long)myGUID;
 + (id)macAddressForInterfaceNamed:(id)arg1;
 + (id)allInterfaces;
 + (id)supportedInterfaces;
++ (id)iokitMatchingDictionaryForAnyInterface;
 + (id)iokitMatchingDictionaryForNetworkController;
 + (id)iokitMatchingDictionaryForInterfaceName:(id)arg1;
 @property(readonly, nonatomic) unsigned long long linkSpeed;

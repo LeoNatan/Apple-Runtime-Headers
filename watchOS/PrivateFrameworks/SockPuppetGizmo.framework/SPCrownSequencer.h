@@ -8,17 +8,17 @@
 
 #import <SockPuppetGizmo/PUICCrownInputSequencerDelegate-Protocol.h>
 
-@class NSString, PUICCrownInputSequencer, SPInterfaceViewController;
+@class NSString, PUICCrownInputSequencer, SPViewController;
 
 @interface SPCrownSequencer : NSObject <PUICCrownInputSequencerDelegate>
 {
     _Bool _wasFocusCalled;
     _Bool _useMinorDetents;
     PUICCrownInputSequencer *_puicSequencer;
-    SPInterfaceViewController *_interfaceViewController;
+    SPViewController *_viewController;
 }
 
-@property(nonatomic) __weak SPInterfaceViewController *interfaceViewController; // @synthesize interfaceViewController=_interfaceViewController;
+@property(nonatomic) __weak SPViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) PUICCrownInputSequencer *puicSequencer; // @synthesize puicSequencer=_puicSequencer;
 - (void).cxx_destruct;
 - (void)_crownInputSequencer:(id)arg1 offsetDidChangeByDelta:(double)arg2;
@@ -27,7 +27,7 @@
 - (void)updateWithCrownReplyData:(id)arg1;
 - (_Bool)crownFocused;
 - (void)updateWithCrownInputEvent:(id)arg1;
-- (id)initWithInterfaceController:(id)arg1;
+- (id)initWithViewController:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

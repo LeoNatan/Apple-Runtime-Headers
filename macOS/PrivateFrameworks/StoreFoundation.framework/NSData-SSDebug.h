@@ -7,6 +7,10 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (SSDebug)
++ (id)dataWithAuthorizationRef:(struct AuthorizationOpaqueRef *)arg1;
++ (id)dataForNVRAMKey:(id)arg1;
 - (id)dictionaryFromData;
+- (id)hexAddressDescription;
+- (id)nvramDescription;
 @end
 

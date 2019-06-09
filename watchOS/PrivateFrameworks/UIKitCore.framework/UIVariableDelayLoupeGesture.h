@@ -17,7 +17,10 @@ __attribute__((visibility("hidden")))
 
 @property UIResponder<UITextInput> *textView; // @synthesize textView=_textView;
 - (void)startTimer;
+- (_Bool)shouldUseLegacyBehavior;
+- (_Bool)isWithinRecentTap;
 - (_Bool)isCloseToCaret;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)invalidate;
 
 @end

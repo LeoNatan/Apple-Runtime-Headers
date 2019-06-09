@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface SKPrivacyController : NSObject
 {
 }
 
 + (id)sharedInstance;
++ (void)validatePermissionsExpiryWithCompletion:(CDUnknownBlockType)arg1;
 - (void)requestAuthorization:(CDUnknownBlockType)arg1;
 - (long long)authorizationStatus;
 

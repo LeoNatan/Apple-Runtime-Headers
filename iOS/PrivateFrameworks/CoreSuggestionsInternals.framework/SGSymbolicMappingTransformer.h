@@ -22,8 +22,18 @@
 @property(retain) NSString *characterMapping; // @synthesize characterMapping=_characterMapping;
 @property(retain) NSString *numericMapping; // @synthesize numericMapping=_numericMapping;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToSymbolicMappingTransformer:(id)arg1;
+- (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (id)toPlistWithChunks:(id)arg1;
 - (id)transform:(id)arg1;
 - (id)initWithNumericMapping:(id)arg1 andSymbolicMapping:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

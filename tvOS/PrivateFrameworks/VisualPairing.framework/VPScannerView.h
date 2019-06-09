@@ -6,27 +6,8 @@
 
 #import <UIKit/UIView.h>
 
-#import <VisualPairing/AVCaptureVideoDataOutputSampleBufferDelegate-Protocol.h>
-
-@class AVCaptureDevice, AVCaptureSession, AVCaptureVideoPreviewLayer, CAShapeLayer, NSObject, NSString;
-@protocol OS_dispatch_queue;
-
-@interface VPScannerView : UIView <AVCaptureVideoDataOutputSampleBufferDelegate>
+@interface VPScannerView : UIView
 {
-    AVCaptureDevice *_avCaptureDevice;
-    NSObject<OS_dispatch_queue> *_avCaptureQueue;
-    AVCaptureSession *_avCaptureSession;
-    AVCaptureVideoPreviewLayer *_avPreviewLayer;
-    struct HCImagePerspectiveReader *_reader;
-    unsigned long long _readerWidth;
-    unsigned long long _readerHeight;
-    unsigned long long _readerRowBytes;
-    unsigned long long _readerLastWatermarkTicks;
-    unsigned long long _readerResetTicks;
-    float _readerLastProgress;
-    _Bool _scanning;
-    CAShapeLayer *_viewfinderBorderLayer;
-    CAShapeLayer *_viewfinderRevealLayer;
     long long _autoFocusRangeRestriction;
     long long _focusMode;
     CDUnknownBlockType _scannedCodeHandler;
@@ -36,26 +17,8 @@
 @property(nonatomic) long long focusMode; // @synthesize focusMode=_focusMode;
 @property(nonatomic) long long autoFocusRangeRestriction; // @synthesize autoFocusRangeRestriction=_autoFocusRangeRestriction;
 - (void).cxx_destruct;
-- (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
-- (void)_handleCaptureSessionInterruptionEnded:(id)arg1;
-- (void)_handleCaptureSessionInterrupted:(id)arg1;
-- (void)_handleCaptureSessionRuntimeError:(id)arg1;
-- (void)_handleCaptureSessionStopped:(id)arg1;
-- (void)_handleCaptureSessionStarted:(id)arg1;
-- (id)_setupDevice:(id)arg1;
-- (id)_setupCapture;
 - (void)stop;
 - (void)start;
-- (void)layoutSubviews;
-- (void)_initCommon;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

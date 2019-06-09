@@ -11,7 +11,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface StrictSecurityURLSessionDelegate : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate>
 {
     CDUnknownBlockType _xctAssert;

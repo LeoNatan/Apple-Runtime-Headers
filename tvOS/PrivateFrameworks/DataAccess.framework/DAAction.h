@@ -36,15 +36,7 @@
 - (id)stringForItemChangeType:(unsigned long long)arg1;
 - (id)initWithItemChangeType:(unsigned long long)arg1 changedItem:(id)arg2 serverId:(id)arg3 instanceId:(id)arg4;
 - (id)initWithItemChangeType:(unsigned long long)arg1 changedItem:(id)arg2 serverId:(id)arg3;
-- (struct ASEvent *)event;
-- (id)deletedEventID;
-- (struct ASContact *)contact;
-- (id)deletedContactID;
 - (id)message;
-- (struct ASToDo *)toDo;
-- (id)deletedToDoID;
-- (struct ASNote *)note;
-- (id)deletedNoteID;
 
 @end
 

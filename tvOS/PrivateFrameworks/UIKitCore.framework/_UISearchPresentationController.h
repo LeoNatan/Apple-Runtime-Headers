@@ -52,7 +52,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_shouldKeepCurrentFirstResponder;
 - (_Bool)shouldPresentInFullscreen;
 - (_Bool)_shouldRespectDefinesPresentationContext;
-- (_Bool)shouldRemovePresentersView;
 - (_Bool)_shouldDisableInteractionDuringTransitions;
 - (double)_visibleRefreshControlHeightForTableView:(id)arg1;
 - (void)_placeSearchBarBackIntoOriginalContext;
@@ -67,6 +66,14 @@ __attribute__((visibility("hidden")))
 - (void)dismissalTransitionWillBegin;
 - (void)presentationTransitionDidEnd:(_Bool)arg1;
 - (void)presentationTransitionWillBegin;
+- (void)_dismissalTransitionWithSearchBarHostedByNavBarDidEnd:(_Bool)arg1;
+- (void)_dismissalTransitionWithSearchBarHostedByNavBarWillBegin;
+- (void)_presentationTransitionWithSearchBarHostedByNavBarDidEnd:(_Bool)arg1;
+- (void)_presentationTransitionWithSearchBarHostedByNavBarWillBegin;
+- (void)_dismissalTransitionWithSearchBarNotHostedByNavBarDidEnd:(_Bool)arg1;
+- (void)_dismissalTransitionWithSearchBarNotHostedByNavBarWillBegin;
+- (void)_presentationTransitionWithSearchBarNotHostedByNavBarDidEnd:(_Bool)arg1;
+- (void)_presentationTransitionWithSearchBarNotHostedByNavBarWillBegin;
 - (void)hideBackgroundObscuringView;
 - (void)showBackgroundObscuringView;
 @property(readonly, nonatomic) UIView *backgroundObscuringView;

@@ -41,6 +41,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithUsername:(id)arg1 userIdentifier:(id)arg2 service:(id)arg3 teamIdentifier:(id)arg4 bundleIdentifiers:(id)arg5;
 - (id)initWithUsername:(id)arg1 service:(id)arg2;
+- (id)init;
 - (id)dictionaryRepresentation;
 
 // Remaining properties

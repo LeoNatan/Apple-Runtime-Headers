@@ -12,10 +12,10 @@
 
 + (void)primeResponseKitIfNeeded;
 + (id)_cannedRepliesForLanguage:(id)arg1;
-+ (void)_contextualRepliesForMessage:(id)arg1 recipients:(id)arg2 languageCode:(id)arg3 loadAsync:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
-+ (void)_repliesForMessage:(id)arg1 recipients:(id)arg2 languageCode:(id)arg3 loadAsync:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
-+ (void)repliesForMessage:(id)arg1 recipients:(id)arg2 languageCode:(id)arg3 completion:(CDUnknownBlockType)arg4;
-+ (id)repliesForMessage:(id)arg1 recipients:(id)arg2 languageCode:(id)arg3;
++ (void)_contextualRepliesForMessage:(id)arg1 recipients:(id)arg2 time:(id)arg3 languageCode:(id)arg4 loadAsync:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)_repliesForMessage:(id)arg1 recipients:(id)arg2 time:(id)arg3 languageCode:(id)arg4 loadAsync:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
++ (void)repliesForMessage:(id)arg1 recipients:(id)arg2 time:(id)arg3 languageCode:(id)arg4 completion:(CDUnknownBlockType)arg5;
++ (id)repliesForMessage:(id)arg1 recipients:(id)arg2 time:(id)arg3 languageCode:(id)arg4;
 
 @end
 

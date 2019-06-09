@@ -10,12 +10,12 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface SFBlockBasedCAAnimationDelegate : NSObject <CAAnimationDelegate>
 {
     CDUnknownBlockType _animationDidStopBlock;
 }
 
++ (id)animationDelegateWithDidStopBlock:(CDUnknownBlockType)arg1;
 @property(copy, nonatomic) CDUnknownBlockType animationDidStopBlock; // @synthesize animationDidStopBlock=_animationDidStopBlock;
 - (void).cxx_destruct;
 - (void)associateLifetimeWithAnimation:(id)arg1;

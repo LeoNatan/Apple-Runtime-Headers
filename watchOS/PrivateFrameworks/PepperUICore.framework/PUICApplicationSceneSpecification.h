@@ -11,6 +11,7 @@
 }
 
 + (void)setHostAgentClass:(Class)arg1;
+- (id)baseSceneComponentClassDictionary;
 - (Class)transitionContextClass;
 - (Class)clientSettingsClass;
 - (Class)settingsClass;

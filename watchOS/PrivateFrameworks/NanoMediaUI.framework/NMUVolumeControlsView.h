@@ -17,15 +17,13 @@
     UIView *_warningView;
     float _mutedValue;
     _Bool _muted;
-    _Bool _ignoresValueChangesDuringTracking;
     _Bool _shouldBecomeFirstResponder;
     float _EUVolumeLimit;
     double _durationForIgnoredValueChangesAfterTracking;
 }
 
-@property(nonatomic) _Bool shouldBecomeFirstResponder; // @synthesize shouldBecomeFirstResponder=_shouldBecomeFirstResponder;
 @property(nonatomic) double durationForIgnoredValueChangesAfterTracking; // @synthesize durationForIgnoredValueChangesAfterTracking=_durationForIgnoredValueChangesAfterTracking;
-@property(nonatomic) _Bool ignoresValueChangesDuringTracking; // @synthesize ignoresValueChangesDuringTracking=_ignoresValueChangesDuringTracking;
+@property(nonatomic) _Bool shouldBecomeFirstResponder; // @synthesize shouldBecomeFirstResponder=_shouldBecomeFirstResponder;
 @property(nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
 - (void).cxx_destruct;

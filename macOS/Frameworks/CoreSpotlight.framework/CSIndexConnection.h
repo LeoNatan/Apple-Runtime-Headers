@@ -6,23 +6,14 @@
 
 #import <CoreSpotlight/CSXPCConnection.h>
 
-@class NSMutableDictionary;
-
 @interface CSIndexConnection : CSXPCConnection
 {
     BOOL _previouslyInitialized;
-    NSMutableDictionary *_indexMap;
 }
 
 + (id)sharedConnection;
 @property(readonly, nonatomic) BOOL previouslyInitialized; // @synthesize previouslyInitialized=_previouslyInitialized;
-@property(readonly, nonatomic) NSMutableDictionary *indexMap; // @synthesize indexMap=_indexMap;
-- (void).cxx_destruct;
 - (void)sendMessageAsync:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)indexForID:(unsigned int)arg1;
-- (void)addIndex:(id)arg1 forID:(unsigned int)arg2;
-- (void)dropIndexID:(unsigned int)arg1;
-- (void)handleReply:(id)arg1;
 - (void)handleError:(id)arg1;
 
 @end

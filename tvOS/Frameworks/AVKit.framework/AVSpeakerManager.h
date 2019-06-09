@@ -10,6 +10,7 @@
 
 @class MPAVRoutingController, NSArray, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVSpeakerManager : NSObject <MPAVRoutingControllerDelegate>
 {
     _Bool _fetchingRoutes;
@@ -26,7 +27,8 @@
 - (void)routingController:(id)arg1 pickedRouteDidChange:(id)arg2;
 - (void)routingController:(id)arg1 pickedRoutesDidChange:(id)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
-- (_Bool)selectRoute:(id)arg1 withPassword:(id)arg2;
+- (long long)compareRoute:(id)arg1 toRoute:(id)arg2;
+- (void)selectRoute:(id)arg1 withPassword:(id)arg2;
 @property(readonly, nonatomic) _Bool supportsMultipleRouteSelection;
 - (void)dealloc;
 - (id)init;

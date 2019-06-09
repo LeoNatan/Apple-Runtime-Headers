@@ -8,10 +8,10 @@
 
 @interface CWLocationChannel : CWChannel
 {
-    long long _scanResultsCount;
+    unsigned long long _scanResultsCount;
 }
 
-@property(nonatomic) long long scanResultsCount; // @synthesize scanResultsCount=_scanResultsCount;
+@property(nonatomic) unsigned long long scanResultsCount; // @synthesize scanResultsCount=_scanResultsCount;
 - (id)description;
 
 @end

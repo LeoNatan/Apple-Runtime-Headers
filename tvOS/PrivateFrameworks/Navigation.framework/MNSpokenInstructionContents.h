@@ -11,7 +11,6 @@
 @class NSArray, NSString;
 @protocol GEOServerFormattedString;
 
-__attribute__((visibility("hidden")))
 @interface MNSpokenInstructionContents : MNListInstructionContents <MNInstructionContents>
 {
     CDStruct_61a83fd4 _options;

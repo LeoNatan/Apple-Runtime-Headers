@@ -9,6 +9,7 @@
 @class NSDictionary, NSString;
 
 @interface ACAccount (CloudKitAdditions)
+@property(readonly, nonatomic) NSString *ck_personaIdentifier;
 @property(readonly, nonatomic) NSDictionary *ck_dataclassProperties;
 @property(readonly, nonatomic) NSDictionary *ck_accountProperties;
 @property(readonly, nonatomic) NSString *ck_identifier;

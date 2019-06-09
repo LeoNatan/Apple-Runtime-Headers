@@ -8,11 +8,13 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDPhoto, NSString, PBUnknownFields;
+@class GEOPDPhoto, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDCaptionedPhoto : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_author;
     NSString *_caption;
@@ -22,20 +24,29 @@ __attribute__((visibility("hidden")))
     _Bool _displayFullPhotoInline;
     _Bool _useGallery;
     struct {
-        unsigned int displayFullPhotoInline:1;
-        unsigned int useGallery:1;
-    } _has;
+        unsigned int has_displayFullPhotoInline:1;
+        unsigned int has_useGallery:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_author:1;
+        unsigned int read_caption:1;
+        unsigned int read_licenseDescription:1;
+        unsigned int read_licenseUrl:1;
+        unsigned int read_photo:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_author:1;
+        unsigned int wrote_caption:1;
+        unsigned int wrote_licenseDescription:1;
+        unsigned int wrote_licenseUrl:1;
+        unsigned int wrote_photo:1;
+        unsigned int wrote_displayFullPhotoInline:1;
+        unsigned int wrote_useGallery:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)captionedPhotosForPlaceData:(id)arg1;
-@property(nonatomic) _Bool useGallery; // @synthesize useGallery=_useGallery;
-@property(nonatomic) _Bool displayFullPhotoInline; // @synthesize displayFullPhotoInline=_displayFullPhotoInline;
-@property(retain, nonatomic) GEOPDPhoto *photo; // @synthesize photo=_photo;
-@property(retain, nonatomic) NSString *licenseUrl; // @synthesize licenseUrl=_licenseUrl;
-@property(retain, nonatomic) NSString *licenseDescription; // @synthesize licenseDescription=_licenseDescription;
-@property(retain, nonatomic) NSString *author; // @synthesize author=_author;
-@property(retain, nonatomic) NSString *caption; // @synthesize caption=_caption;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -44,15 +55,28 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasUseGallery;
+@property(nonatomic) _Bool useGallery;
 @property(nonatomic) _Bool hasDisplayFullPhotoInline;
+@property(nonatomic) _Bool displayFullPhotoInline;
+@property(retain, nonatomic) GEOPDPhoto *photo;
 @property(readonly, nonatomic) _Bool hasPhoto;
+- (void)_readPhoto;
+@property(retain, nonatomic) NSString *licenseUrl;
 @property(readonly, nonatomic) _Bool hasLicenseUrl;
+- (void)_readLicenseUrl;
+@property(retain, nonatomic) NSString *licenseDescription;
 @property(readonly, nonatomic) _Bool hasLicenseDescription;
+- (void)_readLicenseDescription;
+@property(retain, nonatomic) NSString *author;
 @property(readonly, nonatomic) _Bool hasAuthor;
+- (void)_readAuthor;
+@property(retain, nonatomic) NSString *caption;
 @property(readonly, nonatomic) _Bool hasCaption;
+- (void)_readCaption;
 
 @end
 

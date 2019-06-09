@@ -6,18 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage;
-@protocol OS_dispatch_queue;
+@class AVCaptureDataOutputDelegateCallbackHelper, AVWeakReference;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureVisionDataOutputInternal : NSObject
 {
+    AVCaptureDataOutputDelegateCallbackHelper *delegateCallbackHelper;
     AVWeakReference *weakReference;
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    AVWeakReferencingDelegateStorage *delegateOverrideStorage;
-    NSObject<OS_dispatch_queue> *queue;
-    struct OpaqueFigSimpleMutex *queueMutex;
-    void *remoteQueueReceiver;
-    void *localQueue;
     CDStruct_1b6d18a9 minFrameDuration;
     CDStruct_1b6d18a9 minBurstFrameDuration;
     CDStruct_1b6d18a9 maxBurstDuration;

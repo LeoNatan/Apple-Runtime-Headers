@@ -11,11 +11,10 @@
 }
 
 - (void)contextWillSave:(id)arg1;
-- (id)objectForSearchableItemIdentifier:(id)arg1 context:(id)arg2;
-- (id)allIndexableObjectIdentifiersByObjectID;
-- (id)indexableObjectIDsWithIdentifiers:(id)arg1;
+- (id)allIndexableObjectIDsInReversedReindexingOrder;
 - (id)newManagedObjectContext;
 - (id)persistentStoreCoordinator;
+- (unsigned long long)indexingPriority;
 - (id)dataSourceIdentifier;
 
 @end

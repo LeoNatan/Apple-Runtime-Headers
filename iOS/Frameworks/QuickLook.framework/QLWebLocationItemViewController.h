@@ -17,11 +17,10 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_rightConstraint;
 }
 
-+ (_Bool)shouldBeRemoteForContentType:(id)arg1;
-+ (id)supportedContentTypes;
-+ (Class)transformerClass;
 - (void).cxx_destruct;
 - (void)_updateConstraintConstants:(_Bool)arg1;
+- (_Bool)canPinchToDismiss;
+- (_Bool)canSwipeToDismiss;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (_Bool)automaticallyUpdateScrollViewIndicatorInset;
 - (_Bool)automaticallyUpdateScrollViewContentInset;

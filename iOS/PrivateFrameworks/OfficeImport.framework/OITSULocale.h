@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface OITSULocale : NSObject
 {
     NSLocale *_locale;
-    struct __CFLocale *_gregorianCalendarLocale;
+    NSLocale *_gregorianCalendarLocale;
     NSString *_languageCode;
     NSString *_localeIdentifier;
     NSString *_documentLanguageIdentifier;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
     NSString *_currencyGroupingSeparator;
     NSString *_listSeparator;
     NSString *_percentSymbol;
-    int _dateComponentOrdering;
+    long long _dateComponentOrdering;
     NSArray *_monthSymbols;
     NSArray *_standaloneMonthSymbols;
     NSArray *_weekdaySymbols;
@@ -53,11 +53,20 @@ __attribute__((visibility("hidden")))
     NSCache *_cachedLocalizedStrings;
     NSString *_trueString;
     NSString *_falseString;
+    NSString *_amString;
+    NSString *_pmString;
 }
 
 + (void)saveLocaleForReuse:(id)arg1;
 + (id)localeForLocaleIdentifier:(id)arg1 documentLanguageIdentifier:(id)arg2;
-+ (_Bool)localeIsAutoUpdating:(struct __CFLocale *)arg1;
++ (_Bool)localeIsAutoUpdating:(id)arg1;
++ (id)allSupportedTemplatePickerLanguages;
++ (id)allSupportedTier3Languages;
++ (id)allSupportedTier1Languages;
++ (id)displayNameForCode:(id)arg1 ofType:(id)arg2 displayStandalone:(_Bool)arg3;
++ (id)simplifiedDisplayNameForLocaleID:(id)arg1 displayStandalone:(_Bool)arg2;
++ (id)localeIDWithoutDefaultRegionCode:(id)arg1 avoidAmbiguousCases:(_Bool)arg2;
++ (id)localeIDWithDefaultRegionCode:(id)arg1;
 + (id)deducedScriptForLocale:(id)arg1;
 + (id)canonicalizeLocaleIdentifierWithLanguageScriptAndRegionOnly:(id)arg1;
 + (id)canonicalizeLocaleIdentifierWithLanguageAndScriptOnly:(id)arg1;
@@ -65,12 +74,15 @@ __attribute__((visibility("hidden")))
 + (id)canonicalizeLocaleIdentifierWithLanguageOnly:(id)arg1;
 + (id)canonicalizeLocaleIdentifier:(id)arg1;
 + (id)applicationLocale;
++ (id)preferredLocale;
 + (id)currentLocale;
 + (id)preferredLanguages;
-+ (id)cacheKeyForCFLocale:(struct __CFLocale *)arg1;
++ (id)cacheKeyForLocale:(id)arg1;
 + (unsigned long long)autoupdatingCurrentLocaleChangeCount;
 + (void)setLocalizedStringBundle:(struct __CFBundle *)arg1;
 + (void)initialize;
+@property(readonly) NSString *pmString; // @synthesize pmString=_pmString;
+@property(readonly) NSString *amString; // @synthesize amString=_amString;
 @property(readonly) OITSUDateParserLibrary *dateParserLibrary; // @synthesize dateParserLibrary=_dateParserLibrary;
 @property(readonly) NSString *falseString; // @synthesize falseString=_falseString;
 @property(readonly) NSString *trueString; // @synthesize trueString=_trueString;
@@ -82,8 +94,8 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSArray *weekdaySymbols; // @synthesize weekdaySymbols=_weekdaySymbols;
 @property(readonly) NSArray *standaloneMonthSymbols; // @synthesize standaloneMonthSymbols=_standaloneMonthSymbols;
 @property(readonly) NSArray *monthSymbols; // @synthesize monthSymbols=_monthSymbols;
-@property(readonly) int dateComponentOrdering; // @synthesize dateComponentOrdering=_dateComponentOrdering;
-@property(readonly) struct __CFLocale *cfGregorianCalendarLocale; // @synthesize cfGregorianCalendarLocale=_gregorianCalendarLocale;
+@property(readonly) long long dateComponentOrdering; // @synthesize dateComponentOrdering=_dateComponentOrdering;
+@property(readonly) NSLocale *gregorianCalendarLocale; // @synthesize gregorianCalendarLocale=_gregorianCalendarLocale;
 @property(readonly) NSString *percentSymbol; // @synthesize percentSymbol=_percentSymbol;
 @property(readonly) unsigned long long groupingSize; // @synthesize groupingSize=_groupingSize;
 @property(readonly) NSString *listSeparator; // @synthesize listSeparator=_listSeparator;
@@ -105,6 +117,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)localizedCaseInsensitiveIsEqual:(id)arg1 toString:(id)arg2;
 - (long long)localizedCaseInsensitiveCompare:(id)arg1 toString:(id)arg2;
 - (long long)localizedCompare:(id)arg1 toString:(id)arg2;
+- (id)localizedStringWithFormat:(id)arg1;
 - (void)setLocaleSpecificStorage:(id)arg1 forKey:(id)arg2;
 - (id)localeSpecificStorageForKey:(id)arg1;
 - (id)numberFormatterStringFromDouble:(double)arg1 withFormat:(id)arg2 useDecimalPlaces:(_Bool)arg3 minDecimalPlaces:(unsigned short)arg4 decimalPlaces:(unsigned short)arg5 showThousandsSeparator:(_Bool)arg6 currencyCode:(id)arg7 suppressMinusSign:(_Bool)arg8;
@@ -114,10 +127,10 @@ __attribute__((visibility("hidden")))
 - (void)returnNumberFormatter:(struct __CFNumberFormatter *)arg1;
 - (struct __CFNumberFormatter *)checkoutNumberFormatter;
 @property(readonly) NSString *arrayRowSeparator;
-@property(readonly) NSLocale *gregorianCalendarLocale;
+@property(readonly) struct __CFLocale *cfGregorianCalendarLocale;
 @property(readonly) struct __CFLocale *cfLocale;
-- (id)displayLanguageName;
-- (id)simplifiedDisplayName;
+- (id)displayLanguageNameWithStandalone:(_Bool)arg1;
+- (id)simplifiedDisplayNameWithStandalone:(_Bool)arg1;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

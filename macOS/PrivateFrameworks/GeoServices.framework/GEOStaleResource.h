@@ -8,23 +8,31 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOResource, PBUnknownFields;
+@class GEOResource, PBDataReader, PBUnknownFields;
 
 @interface GEOStaleResource : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    double _originalTimestamp;
     GEOResource *_desiredResource;
     GEOResource *_fallbackResource;
+    double _originalTimestamp;
     struct {
-        unsigned int originalTimestamp:1;
-    } _has;
+        unsigned int has_originalTimestamp:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_desiredResource:1;
+        unsigned int read_fallbackResource:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_desiredResource:1;
+        unsigned int wrote_fallbackResource:1;
+        unsigned int wrote_originalTimestamp:1;
+    } _flags;
 }
 
-@property(nonatomic) double originalTimestamp; // @synthesize originalTimestamp=_originalTimestamp;
-@property(retain, nonatomic) GEOResource *fallbackResource; // @synthesize fallbackResource=_fallbackResource;
-@property(retain, nonatomic) GEOResource *desiredResource; // @synthesize desiredResource=_desiredResource;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,11 +41,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasOriginalTimestamp;
+@property(nonatomic) double originalTimestamp;
+@property(retain, nonatomic) GEOResource *fallbackResource;
 @property(readonly, nonatomic) BOOL hasFallbackResource;
+- (void)_readFallbackResource;
+@property(retain, nonatomic) GEOResource *desiredResource;
 @property(readonly, nonatomic) BOOL hasDesiredResource;
+- (void)_readDesiredResource;
 
 @end
 

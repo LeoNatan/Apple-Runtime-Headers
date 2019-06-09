@@ -29,6 +29,7 @@
     float _scaleSizeIncrease;
     float _pressedScaleAdjustment;
     float _cornerRadius;
+    float _continuousCornerRadiusEnabled;
     float _specularHighlightHorizontalPositionSensitivity;
     float _specularHighlightVerticalPosition;
     float _specularHighlightVerticalPositionSensitivity;
@@ -105,6 +106,7 @@
 @property(nonatomic) float specularHighlightVerticalPosition; // @synthesize specularHighlightVerticalPosition=_specularHighlightVerticalPosition;
 @property(nonatomic) float specularHighlightHorizontalPositionSensitivity; // @synthesize specularHighlightHorizontalPositionSensitivity=_specularHighlightHorizontalPositionSensitivity;
 @property(nonatomic) _Bool flatImageContainsCornerRadius; // @synthesize flatImageContainsCornerRadius=_flatImageContainsCornerRadius;
+@property(nonatomic, getter=isContinuousCornerRadiusEnabled) float continuousCornerRadiusEnabled; // @synthesize continuousCornerRadiusEnabled=_continuousCornerRadiusEnabled;
 @property(nonatomic) float cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 @property(nonatomic) struct CGPoint translationOffset; // @synthesize translationOffset=_translationOffset;
 @property(nonatomic) float pressedScaleAdjustment; // @synthesize pressedScaleAdjustment=_pressedScaleAdjustment;

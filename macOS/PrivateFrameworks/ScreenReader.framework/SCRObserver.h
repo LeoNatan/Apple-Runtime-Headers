@@ -14,20 +14,24 @@ __attribute__((visibility("hidden")))
 @interface SCRObserver : SCRCTargetSelector <NSCopying>
 {
     struct __AXUIElement *_axElement;
-    BOOL _isValid;
-    NSMutableArray *_firingCopies;
+    BOOL __isValid;
     unsigned int _cancelMask;
+    NSDictionary *_userInfo;
     SCRUIElement *_origUIElement;
     NSString *_name;
-    NSDictionary *_userInfo;
+    SCRUIElement *_uiElement;
+    NSMutableArray *__firingCopies;
 }
 
-@property(readonly, retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
-@property(readonly, nonatomic) unsigned int cancelMask; // @synthesize cancelMask=_cancelMask;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, retain, nonatomic) SCRUIElement *origUIElement; // @synthesize origUIElement=_origUIElement;
+@property(retain, nonatomic, setter=_setFiringCopies:) NSMutableArray *_firingCopies; // @synthesize _firingCopies=__firingCopies;
+@property(nonatomic, setter=_setValid:) BOOL _isValid; // @synthesize _isValid=__isValid;
+@property(retain, nonatomic) SCRUIElement *uiElement; // @synthesize uiElement=_uiElement;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(retain, nonatomic) SCRUIElement *origUIElement; // @synthesize origUIElement=_origUIElement;
+@property(nonatomic) unsigned int cancelMask; // @synthesize cancelMask=_cancelMask;
+@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+- (void).cxx_destruct;
 - (const struct __AXUIElement *)axElement;
-@property(readonly, retain, nonatomic) SCRUIElement *uiElement;
 - (void)_setAXElement:(struct __AXUIElement *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;

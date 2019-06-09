@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSValue, _DUIPreview, _UIPlatterShadowView, _UIPortalView, _UIShapeView;
+@class NSValue, _DUIPreview, _UIPlatterSoftShadowView, _UIPortalView, _UIShapeView;
 
 @interface _UIPlatterView : UIView
 {
@@ -16,6 +16,7 @@
     _Bool _shadowVisible;
     _Bool _appliesOriginalRotation;
     _Bool _constrainSizeWhenNotLifted;
+    _Bool _transformAppliedExternally;
     _Bool _flipped;
     _Bool _precisionMode;
     _DUIPreview *_preview;
@@ -25,12 +26,11 @@
     double _stackRotation;
     NSValue *_anchorPointValueToAdjustToOnMoveToWindow;
     UIView *_backgroundView;
-    _UIPlatterShadowView *_diffuseShadowView;
     _UIShapeView *_platterMaskView;
     _UIShapeView *_portalMaskView;
     _UIPortalView *_portalView;
     UIView *_portalWrapperView;
-    _UIPlatterShadowView *_rimShadowView;
+    _UIPlatterSoftShadowView *_shadowView;
     struct CGPoint _offset;
     struct CGSize _overrideSize;
     struct CGSize _contentSize;
@@ -42,16 +42,16 @@
 
 @property(nonatomic) struct CGAffineTransform containerCounterRotationTransform; // @synthesize containerCounterRotationTransform=_containerCounterRotationTransform;
 @property(nonatomic) struct CGAffineTransform containerCounterScaleTransform; // @synthesize containerCounterScaleTransform=_containerCounterScaleTransform;
-@property(readonly, nonatomic) _UIPlatterShadowView *rimShadowView; // @synthesize rimShadowView=_rimShadowView;
+@property(readonly, nonatomic) _UIPlatterSoftShadowView *shadowView; // @synthesize shadowView=_shadowView;
 @property(readonly, nonatomic) UIView *portalWrapperView; // @synthesize portalWrapperView=_portalWrapperView;
 @property(retain, nonatomic) _UIPortalView *portalView; // @synthesize portalView=_portalView;
 @property(readonly, nonatomic) _UIShapeView *portalMaskView; // @synthesize portalMaskView=_portalMaskView;
 @property(readonly, nonatomic) _UIShapeView *platterMaskView; // @synthesize platterMaskView=_platterMaskView;
-@property(readonly, nonatomic) _UIPlatterShadowView *diffuseShadowView; // @synthesize diffuseShadowView=_diffuseShadowView;
 @property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(nonatomic) _Bool precisionMode; // @synthesize precisionMode=_precisionMode;
 @property(nonatomic, getter=isFlipped) _Bool flipped; // @synthesize flipped=_flipped;
 @property(readonly, nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
+@property(nonatomic) _Bool transformAppliedExternally; // @synthesize transformAppliedExternally=_transformAppliedExternally;
 @property(nonatomic) struct CGAffineTransform additionalTransform; // @synthesize additionalTransform=_additionalTransform;
 @property(nonatomic) _Bool constrainSizeWhenNotLifted; // @synthesize constrainSizeWhenNotLifted=_constrainSizeWhenNotLifted;
 @property(retain, nonatomic) NSValue *anchorPointValueToAdjustToOnMoveToWindow; // @synthesize anchorPointValueToAdjustToOnMoveToWindow=_anchorPointValueToAdjustToOnMoveToWindow;
@@ -76,13 +76,16 @@
 - (void)didMoveToWindow;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)takeCounterTransformsToAddToContainer:(id)arg1;
-- (struct CATransform3D)targetTransform;
+@property(readonly, nonatomic) struct CATransform3D targetTransform;
 - (struct CATransform3D)scaleTransform;
 @property(nonatomic) __weak UIView *sourceView;
 - (double)scaleFactor;
 - (void)setComponentViews:(id)arg1;
 @property(readonly, nonatomic) struct CGPoint contentOffset;
 @property(readonly, nonatomic) struct CGPoint badgeLocation;
+- (id)initWithDroppedItem:(id)arg1;
+- (id)initWithPreview:(id)arg1;
+- (id)initWithDUIPreview:(id)arg1 imageComponent:(id)arg2;
 - (id)initWithDUIPreview:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <HeartRhythmUI/HRStackedButtonViewDelegate-Protocol.h>
 
-@class HRStackedButtonView, NSArray, NSLayoutConstraint, NSString, UILabel, UIStackView, UIView;
+@class HRStackedButtonView, NSArray, NSHashTable, NSLayoutConstraint, NSString, UILabel, UIStackView, UIView;
 
 @interface HROnboardingBulletPointViewController : HROnboardingBaseViewController <HRStackedButtonViewDelegate>
 {
@@ -18,8 +18,10 @@
     HRStackedButtonView *_stackedButtonView;
     UIView *_lastBulletPointView;
     NSLayoutConstraint *_contentViewBottomConstraint;
+    NSHashTable *_bulletPointBodyLabels;
 }
 
+@property(retain, nonatomic) NSHashTable *bulletPointBodyLabels; // @synthesize bulletPointBodyLabels=_bulletPointBodyLabels;
 @property(retain, nonatomic) NSLayoutConstraint *contentViewBottomConstraint; // @synthesize contentViewBottomConstraint=_contentViewBottomConstraint;
 @property(retain, nonatomic) UIView *lastBulletPointView; // @synthesize lastBulletPointView=_lastBulletPointView;
 @property(retain, nonatomic) HRStackedButtonView *stackedButtonView; // @synthesize stackedButtonView=_stackedButtonView;
@@ -44,7 +46,9 @@
 - (void)setUpConstraints;
 - (void)_setupBulletPointViews;
 - (void)setUpUI;
+- (void)updateUserInterfaceForStyle:(long long)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 
 @end

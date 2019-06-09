@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     long long mVolume;
 }
 
+- (void).cxx_destruct;
 - (void)setVolume:(long long)arg1;
 - (long long)volume;
 - (void)setNumberOfSlides:(long long)arg1;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isMuted;
 - (void)setTarget:(id)arg1;
 - (id)target;
-- (void)dealloc;
 - (id)init;
 
 @end

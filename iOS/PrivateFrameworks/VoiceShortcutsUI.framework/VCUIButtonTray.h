@@ -12,6 +12,7 @@
 @interface VCUIButtonTray : UIView
 {
     _Bool _showButtonDescription;
+    _Bool _scrollsUnder;
     id <VCUIButtonTrayDelegate> _delegate;
     VCUIRecordButton *_recordButton;
     UIButton *_typeToSiriButton;
@@ -20,6 +21,7 @@
     NSLayoutConstraint *_buttonDescriptionLayoutConstraint;
 }
 
+@property(nonatomic) _Bool scrollsUnder; // @synthesize scrollsUnder=_scrollsUnder;
 @property(retain, nonatomic) NSLayoutConstraint *buttonDescriptionLayoutConstraint; // @synthesize buttonDescriptionLayoutConstraint=_buttonDescriptionLayoutConstraint;
 @property(retain, nonatomic) _UIBackdropView *trayBackdrop; // @synthesize trayBackdrop=_trayBackdrop;
 @property(retain, nonatomic) UILabel *buttonDescriptionLabel; // @synthesize buttonDescriptionLabel=_buttonDescriptionLabel;
@@ -29,7 +31,10 @@
 @property(nonatomic) __weak id <VCUIButtonTrayDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)updateConstraintsForButtonDescription;
+- (long long)backdropStyleForScrollingUnder:(_Bool)arg1;
+- (void)updateForContentScrollingUnder:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)updateForContentScrollingUnder:(_Bool)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithDelegate:(id)arg1 buttonDescription:(id)arg2;
 
 @end

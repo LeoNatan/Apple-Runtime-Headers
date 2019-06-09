@@ -28,8 +28,8 @@
 - (BOOL)shouldRetryConnectionWithoutCertificateCheckingAfterError:(id)arg1 host:(id)arg2 didPromptUser:(char *)arg3;
 - (id)acAccount;
 @property(retain) ICNFMCAuthScheme *preferredAuthScheme;
-- (void)setTLSIdentity:(struct OpaqueSecIdentityRef *)arg1;
-- (struct OpaqueSecIdentityRef *)copyTLSIdentity;
+- (void)setTLSIdentity:(struct __SecIdentity *)arg1;
+- (struct __SecIdentity *)copyTLSIdentity;
 @property long long securityLayerType;
 @property long long portNumber;
 @property(copy) NSString *hostname;

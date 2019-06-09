@@ -19,17 +19,16 @@
 
 @interface NSTabBar : NSView <NSDetachedTabDraggingImageToWindowTransitionControllerDelegate, NSMorphingDragImageControllerDragSource, NSAnimationDelegate, NSDraggingDestination, NSTabButtonDelegate, NSTabBarSyncedButtonDelegate, NSTabDraggingDestination>
 {
-    long long _numberOfGroupUpdates;
     NSTrackingArea *_trackingArea;
     NSTabButton *_tabButtonUnderMouse;
     NSScrollView *_scrollView;
     NSView *_scrollViewDocumentView;
-    NSView *_selectedTabContainerView;
     NSView *_tabContainer;
     NSMutableArray *_tabBarViewItems;
     NSMutableArray *_tabButtons;
     NSMapTable *_tabBarViewItemsToTabButtons;
     unsigned long long _selectedTabButtonIndex;
+    unsigned long long _draggingTabButtonIndex;
     unsigned long long _firstInsertedTabButtonIndex;
     NSTabButton *_draggedTabButton;
     struct CGPoint _mouseOffsetOnSelectedTab;
@@ -48,11 +47,9 @@
     double _selectedButtonSlowingFactor;
     double _slowingDistance;
     NSView *_backgroundView;
-    NSView *_maskingContainerView;
     CABackdropLayer *_backdropLayer;
     NSBackgroundColorView *_backgroundColorView;
     NSTitlebarSeparatorView *_topBorderSeparatorView;
-    NSView *_pinnedTabsContainer;
     unsigned long long _numberOfPinnedTabs;
     unsigned long long _numberOfPinnedTabsForLayout;
     double _timeOfLastHoveredIndexChange;
@@ -80,6 +77,7 @@
     unsigned int _isInteractivelyClosingTabs:1;
     unsigned int _isScrollingToRevealAddedTab:1;
     unsigned int _useModalCollapsedLayout:1;
+    unsigned int _didScheduleAnimatedLayout:1;
 }
 
 + (id)accessibilityLabelForNumberOfTabs:(unsigned long long)arg1 andNumberOfPinnedTabs:(unsigned long long)arg2;
@@ -139,6 +137,7 @@
 - (struct CGPoint)_mouseLocationInDragImageForTabButton:(id)arg1;
 - (BOOL)_shouldDetachTabForMouseEvent:(id)arg1;
 - (BOOL)_canDetachTab;
+- (unsigned long long)_numberOfUnpinnedTabs;
 - (void)_cancelReorderingRestrictionsAfterPinning;
 - (void)_startReorderingRestrictionsAfterPinning;
 - (void)_autoscrollButtonsForStackingRegion:(unsigned long long)arg1;
@@ -211,9 +210,11 @@
 - (struct CGRect)_unstackedFrameForButtonAtIndex:(unsigned long long)arg1;
 - (unsigned long long)_calculateStackingRegions;
 - (double)_buttonWidthForNumberOfButtons:(unsigned long long)arg1 inWidth:(double)arg2 remainderWidth:(double *)arg3;
+- (double)_buttonWidthForDrag;
 - (void)_updateButtonWidthAndRemainingWidthInTabBarToDivideAmongButtons;
 - (void)_recalculateLayout;
 - (double)_layoutBoundsWidth;
+- (struct CGRect)_layoutBounds;
 - (void)_updateNewTabButton;
 - (void)_addNewTabButton;
 - (void)_newTabWithinWindow:(id)arg1;
@@ -237,7 +238,6 @@
 - (void)_animateButtonLayout:(id)arg1;
 - (double)_titleCenterOffsetForButton:(id)arg1;
 - (double)_windowCenterX;
-- (void)_moveButtonToExpectedContainerView:(id)arg1;
 - (void)_layOutDraggedButtonAnimated:(BOOL)arg1;
 - (void)_recalculateLayoutAndUpdateContainerViewFrames;
 - (double)_offsetFromLeftEdge;
@@ -252,14 +252,13 @@
 - (void)_updateButtonsAndLayOutAnimated:(BOOL)arg1;
 - (void)_endAnimationGrouping;
 - (void)_beginAnimationGrouping;
+- (void)_scheduleButtonLayOutAnimated:(BOOL)arg1;
 - (BOOL)_shouldLayOutButtonsNow;
 - (void)_clipViewBoundsChanged:(id)arg1;
 - (struct CGRect)_contentBounds;
 - (BOOL)isOpaque;
 - (BOOL)allowsVibrancy;
 - (BOOL)_isInFullscreenToolbarWindow;
-- (void)endGroupUpdatesAnimated:(BOOL)arg1;
-- (void)beginGroupUpdates;
 - (void)setNextKeyView:(id)arg1;
 - (void)dealloc;
 @property BOOL useModalCollapsedLayout; // @dynamic useModalCollapsedLayout;

@@ -11,7 +11,6 @@
 
 @interface ATXRecentActionEngagementCache : NSObject
 {
-    NSString *_recentEngagementCachePath;
     NSString *_recentMLEngagementCachePath;
     NSString *_recentHeuristicEngagementCachePath;
     NSObject<OS_dispatch_queue> *_queue;

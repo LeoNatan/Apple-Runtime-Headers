@@ -40,7 +40,6 @@
 
 @property(nonatomic) unsigned long long duplicateServicesMask; // @synthesize duplicateServicesMask=_duplicateServicesMask;
 - (void)dealloc;
-- (BOOL)_finishQualifingEntries:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)qualifyEntries:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)_concurrentPortionOfQualifyEntriesWithEntriesNeedingURLTypechecking:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_preconcurrentPortionOfQualifyEntries:(id)arg1 returningEntriesNeedingURLTypecheckingIntoSet:(id)arg2;
@@ -68,7 +67,6 @@
 - (void)filterEntriesByWidthForm:(id)arg1;
 - (void)filterEntriesByWordLimit:(id)arg1;
 - (void)filterEntriesByCharacterLimit:(id)arg1;
-- (void)filterEntriesByFileType:(id)arg1;
 - (void)filterEntriesByMenuLocation:(id)arg1;
 - (void)filterEntriesByBundleID:(id)arg1;
 - (BOOL)_stringContainsFilePath:(id)arg1 inRange:(struct _NSRange)arg2;

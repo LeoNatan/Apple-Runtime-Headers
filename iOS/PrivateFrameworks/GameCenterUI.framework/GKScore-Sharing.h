@@ -7,6 +7,7 @@
 #import <GameCenterFoundation/GKScore.h>
 
 @interface GKScore (Sharing)
++ (void)reportScores:(id)arg1 withEligibleChallenges:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_gkSetSharingInfo:(id)arg1;
 - (id)_gkSharingInfo;
 - (id)activityViewControllerOperation:(id)arg1;
@@ -17,5 +18,8 @@
 - (id)activityViewControllerPlaceholderItems:(id)arg1;
 - (_Bool)canBeShared;
 - (id)fetchSharingInfo;
+- (void)issueChallengeToPlayers:(id)arg1 message:(id)arg2;
+- (id)challengeComposeControllerWithPlayers:(id)arg1 message:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)challengeComposeControllerWithMessage:(id)arg1 players:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @end
 

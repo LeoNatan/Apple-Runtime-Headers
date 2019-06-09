@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)drawRect:(struct CGRect)arg1;
 - (void)displayAggregateInvalidRect;
 - (void)redrawStrokesInRect:(struct CGRect)arg1;
+- (CDStruct_86c70518)viewPointFromDataPoint:(CDStruct_86c70518)arg1;
 - (void)clearRect:(struct CGRect)arg1;
 - (void)addTrapezoidFromFirstPoint:(CDStruct_86c70518)arg1 secondPoint:(CDStruct_86c70518)arg2;
 - (void)addHandwritingPoint:(CDStruct_86c70518)arg1;

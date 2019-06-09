@@ -16,15 +16,23 @@
     NSArray *_minorFormattedInstruction;
     NSArray *_tertiaryFormattedInstruction;
     id <GEOServerFormattedString> _departureBarInstruction;
+    int _departureBarStyle;
     id <GEOServerFormattedString> _countStopsFormattedString;
+    id <GEOServerFormattedString> _expandableListFormattedString;
+    id <GEOServerFormattedString> _primaryTimeInstruction;
+    id <GEOServerFormattedString> _secondaryTimeinstruction;
 }
 
 + (id)instructionForUncertainArrivalToStationStep:(id)arg1 context:(int)arg2;
+@property(retain, nonatomic) id <GEOServerFormattedString> secondaryTimeinstruction; // @synthesize secondaryTimeinstruction=_secondaryTimeinstruction;
+@property(retain, nonatomic) id <GEOServerFormattedString> primaryTimeInstruction; // @synthesize primaryTimeInstruction=_primaryTimeInstruction;
+@property(retain, nonatomic) id <GEOServerFormattedString> expandableListFormattedString; // @synthesize expandableListFormattedString=_expandableListFormattedString;
 @property(retain, nonatomic) id <GEOServerFormattedString> countStopsFormattedString; // @synthesize countStopsFormattedString=_countStopsFormattedString;
+@property(nonatomic) int departureBarStyle; // @synthesize departureBarStyle=_departureBarStyle;
 @property(retain, nonatomic) id <GEOServerFormattedString> departureBarInstruction; // @synthesize departureBarInstruction=_departureBarInstruction;
-@property(copy) NSArray *tertiaryFormattedInstruction; // @synthesize tertiaryFormattedInstruction=_tertiaryFormattedInstruction;
-@property(copy) NSArray *minorFormattedInstruction; // @synthesize minorFormattedInstruction=_minorFormattedInstruction;
-@property(copy) NSArray *majorFormattedInstruction; // @synthesize majorFormattedInstruction=_majorFormattedInstruction;
+@property(copy, nonatomic) NSArray *tertiaryFormattedInstruction; // @synthesize tertiaryFormattedInstruction=_tertiaryFormattedInstruction;
+@property(copy, nonatomic) NSArray *minorFormattedInstruction; // @synthesize minorFormattedInstruction=_minorFormattedInstruction;
+@property(copy, nonatomic) NSArray *majorFormattedInstruction; // @synthesize majorFormattedInstruction=_majorFormattedInstruction;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (id)formattedInstructionForType:(int)arg1;

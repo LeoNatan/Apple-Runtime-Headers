@@ -6,22 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class UITabBar;
+@class NSString, UITabBar;
 
 __attribute__((visibility("hidden")))
 @interface _UITabBarVisualProvider : NSObject
 {
     UITabBar *_tabBar;
-    _Bool _usesLegacyUI;
+    NSString *_backdropGroupName;
 }
 
+@property(copy, nonatomic) NSString *backdropGroupName; // @synthesize backdropGroupName=_backdropGroupName;
 @property(readonly, nonatomic) UITabBar *tabBar; // @synthesize tabBar=_tabBar;
+- (void).cxx_destruct;
 - (double)defaultAnimationDuration;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusedView;
 - (_Bool)wantsFocus;
 - (void)setSemanticContentAttribute:(long long)arg1;
+- (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)tabBarSizeChanged:(struct CGSize)arg1;
 - (void)layoutSubviews;
@@ -29,20 +32,25 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)intrinsicContentSizeGivenSize:(struct CGSize)arg1;
 - (void)updateArchivedSubviews:(id)arg1;
 - (id)createViewForTabBarItem:(id)arg1;
+@property(nonatomic) double minimumWidthForHorizontalLayout;
+@property(nonatomic) _Bool useModernAppearance;
+- (void)updateBackgroundGroupName;
 - (void)changeLayout;
 - (void)changeAppearance;
 - (void)changeSelectedItem:(id)arg1 fromItem:(id)arg2;
 - (id)exchangeItem:(id)arg1 withItem:(id)arg2;
 - (void)changeItemsTo:(id)arg1 removingItems:(id)arg2 selectedItem:(id)arg3 animate:(_Bool)arg4;
+- (void)changeItemsTo:(id)arg1 removingItems:(id)arg2 selectedItem:(id)arg3 oldSelectedItem:(id)arg4 animate:(_Bool)arg5;
 - (void)teardown;
 - (void)prepare;
 - (id)initWithTabBar:(id)arg1;
 - (void)_shim_updateTabBarItemView:(id)arg1;
 - (void)_shim_layoutItemsOnly;
-- (void)_shim_setBackdropGroupName:(id)arg1;
-- (id)_shim_backdropGroupName;
-- (void)_shim_updateBackdropView;
 - (void)_shim_updateFocusHighlightVisibility;
+- (void)_shim_setShadowHidden:(_Bool)arg1;
+- (_Bool)_shim_shadowHidden;
+- (void)_shim_setShadowAlpha:(double)arg1;
+- (double)_shim_shadowAlpha;
 - (id)_shim_shadowView;
 - (id)_shim_accessoryView;
 - (void)_shim_setAccessoryView:(id)arg1;

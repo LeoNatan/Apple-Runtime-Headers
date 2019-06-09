@@ -8,7 +8,6 @@
 @property(nonatomic) _Bool drawsSeparatorAtBottomOfSection;
 @property(nonatomic) _Bool drawsSeparatorAtTopOfSection;
 @property(nonatomic) long long indentationLevel;
-@property(nonatomic) double sectionBorderWidth;
 @property(nonatomic) struct UIEdgeInsets backgroundInset;
 @property(nonatomic) double indexBarExtentFromEdge;
 @property(nonatomic) double defaultTrailingCellMarginWidth;

@@ -6,26 +6,31 @@
 
 #import <WatchKit/WKInterfaceObject.h>
 
-@class CAContext, UIView;
+#import <WatchKit/WKInterfaceObjectDynamicCreatable-Protocol.h>
 
-@interface WKInterfaceHMCamera : WKInterfaceObject
+@class CAContext, HMCameraView, NSString;
+
+@interface WKInterfaceHMCamera : WKInterfaceObject <WKInterfaceObjectDynamicCreatable>
 {
-    UIView *_containerView;
-    UIView *_cameraView;
+    HMCameraView *_cameraView;
     CAContext *_context;
     struct CGSize _containerViewSize;
 }
 
 @property(nonatomic) struct CGSize containerViewSize; // @synthesize containerViewSize=_containerViewSize;
 @property(retain, nonatomic) CAContext *context; // @synthesize context=_context;
-@property(retain, nonatomic) UIView *cameraView; // @synthesize cameraView=_cameraView;
-@property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
+@property(retain, nonatomic) HMCameraView *cameraView; // @synthesize cameraView=_cameraView;
 - (void).cxx_destruct;
-- (void)updateContainerViewSize;
-- (void)remoteSetHeight:(float)arg1;
-- (void)remoteSetWidth:(float)arg1;
+- (id)interfaceDescriptionForDynamicCreation;
 - (void)setCameraSource:(id)arg1;
 - (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(int)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

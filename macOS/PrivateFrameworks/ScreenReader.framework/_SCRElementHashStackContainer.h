@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     unsigned long long roleHash;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

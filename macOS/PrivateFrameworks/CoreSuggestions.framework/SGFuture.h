@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSError;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SGFuture : NSObject
 {
@@ -15,18 +15,26 @@
     NSError *_error;
     struct _opaque_pthread_mutex_t _lock;
     NSObject<OS_dispatch_queue> *_callbacks;
+    NSObject<OS_dispatch_source> *_timeoutTimer;
+    BOOL _alwaysUseCallbacksQueue;
     BOOL _yoDontLeaveMeHangingBro;
     BOOL _isComplete;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 + (void)waitForFuturesToComplete:(id)arg1 withCallback:(CDUnknownBlockType)arg2;
++ (id)createWithImmediateError:(id)arg1;
++ (id)createWithImmediateResult:(id)arg1;
 + (id)createWithImmediateResult:(id)arg1 error:(id)arg2;
 + (id)createAfter:(id)arg1 onCreate:(CDUnknownBlockType)arg2;
 + (id)futureForObject:(id)arg1 withKey:(void *)arg2 onCreate:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) BOOL isComplete; // @synthesize isComplete=_isComplete;
 - (void).cxx_destruct;
+- (id)waitWithTimeout:(double)arg1;
+- (void)_clearTimeoutNonThreadSafe;
+- (void)clearTimeout;
+- (void)setTimeout:(double)arg1;
 - (BOOL)_finishWithResult:(id)arg1 orError:(id)arg2;
 - (CDUnknownBlockType)completer;
 - (BOOL)completeWithResult:(id)arg1 error:(id)arg2;
@@ -34,8 +42,10 @@
 - (BOOL)succeed:(id)arg1;
 - (id)error;
 - (id)result;
+- (void)_wait:(CDUnknownBlockType)arg1 forSyncAPI:(BOOL)arg2;
 - (void)wait:(CDUnknownBlockType)arg1;
 - (id)wait;
+- (void)setTargetQueue:(id)arg1 useAfterCompletion:(BOOL)arg2;
 - (void)dealloc;
 - (id)init;
 

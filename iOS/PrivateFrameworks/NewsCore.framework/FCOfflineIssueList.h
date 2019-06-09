@@ -22,8 +22,10 @@
 - (void)removeAllIssues;
 - (void)removeIssueIDs:(id)arg1;
 @property(readonly, nonatomic) NSArray *issueIDs;
+- (id)dateRemovedForIssueID:(id)arg1;
 - (id)dateAddedForIssueID:(id)arg1;
 - (long long)sourceForIssueID:(id)arg1;
+- (_Bool)everContainedIssueID:(id)arg1;
 - (_Bool)containsIssueID:(id)arg1;
 - (void)addIssueID:(id)arg1 source:(long long)arg2;
 - (id)init;

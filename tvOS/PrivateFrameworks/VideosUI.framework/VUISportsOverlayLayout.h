@@ -4,43 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <TVMLKit/TVViewLayout.h>
 
-#import <VideosUI/VUIOverlayLayoutProtocol-Protocol.h>
-
-@class NSString, VUIImageLayout, VUIScoreboardLayout, VUITextBadgeLayout;
+@class TVImageLayout, VUIScoreboardLayout, VUITextBadgeLayout;
 
 __attribute__((visibility("hidden")))
-@interface VUISportsOverlayLayout : NSObject <VUIOverlayLayoutProtocol>
+@interface VUISportsOverlayLayout : TVViewLayout
 {
     VUIScoreboardLayout *_scoreboardLayout;
     VUITextBadgeLayout *_textBadgeLayout;
-    VUITextBadgeLayout *_timeBadgeLayout;
-    VUITextBadgeLayout *_liveBadgeLayout;
-    VUIImageLayout *_logoImageLayout;
-    struct UIEdgeInsets _padding;
+    TVImageLayout *_logoImageLayout;
 }
 
-+ (int)_textBlendMode;
-+ (id)_textColorForTextBadge:(long long)arg1;
-+ (id)_sportsOverlayCLayout;
-+ (id)_sportsOverlayBLayout:(long long)arg1;
-+ (id)_sportsOverlayALayout:(long long)arg1;
-+ (id)overlayLayoutForScoreboardType:(long long)arg1 interfaceIdiom:(long long)arg2;
-@property(retain, nonatomic) VUIImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
-@property(retain, nonatomic) VUITextBadgeLayout *liveBadgeLayout; // @synthesize liveBadgeLayout=_liveBadgeLayout;
-@property(retain, nonatomic) VUITextBadgeLayout *timeBadgeLayout; // @synthesize timeBadgeLayout=_timeBadgeLayout;
++ (id)_sportsOverlayCLayoutWithElement:(id)arg1;
++ (id)_sportsOverlayBLayoutWithElement:(id)arg1;
++ (id)_sportsOverlayALayoutWithElement:(id)arg1;
++ (long long)_scoreboardTypeForElement:(id)arg1;
++ (id)overlayLayoutForElement:(id)arg1 cardLayoutType:(long long)arg2;
+@property(retain, nonatomic) TVImageLayout *logoImageLayout; // @synthesize logoImageLayout=_logoImageLayout;
 @property(retain, nonatomic) VUITextBadgeLayout *textBadgeLayout; // @synthesize textBadgeLayout=_textBadgeLayout;
 @property(retain, nonatomic) VUIScoreboardLayout *scoreboardLayout; // @synthesize scoreboardLayout=_scoreboardLayout;
-@property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) long long type;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

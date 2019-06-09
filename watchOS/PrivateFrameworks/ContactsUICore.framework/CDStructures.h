@@ -15,6 +15,12 @@ struct CGSize {
     float height;
 };
 
+struct CNPair {
+    Class _field1;
+    id _field2;
+    id _field3;
+};
+
 struct NSDictionary {
     Class _field1;
 };

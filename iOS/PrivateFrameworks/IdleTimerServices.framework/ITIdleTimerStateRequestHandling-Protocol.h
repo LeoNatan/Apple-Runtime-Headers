@@ -6,9 +6,11 @@
 
 #import <IdleTimerServices/NSObject-Protocol.h>
 
-@class NSString;
+@class ITIdleTimerConfiguration, NSString;
 
 @protocol ITIdleTimerStateRequestHandling <NSObject>
-- (void)setIdleTimerDisabled:(_Bool)arg1 forReason:(NSString *)arg2;
+- (void)removeIdleTimerConfiguration:(ITIdleTimerConfiguration *)arg1 forReason:(NSString *)arg2;
+- (void)addIdleTimerConfiguration:(ITIdleTimerConfiguration *)arg1 forReason:(NSString *)arg2;
+- (_Bool)isIdleTimerServiceAvailable;
 @end
 

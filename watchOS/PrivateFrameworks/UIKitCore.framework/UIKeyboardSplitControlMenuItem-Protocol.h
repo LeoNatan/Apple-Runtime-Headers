@@ -6,11 +6,12 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSString, UIKeyboardSplitControlMenu;
+@class NSString;
+@protocol _UIInputSwitcherSplitMenu;
 
 @protocol UIKeyboardSplitControlMenuItem <NSObject>
 @property(readonly) _Bool visible;
 @property(readonly, retain) NSString *label;
-- (void)actionForMenu:(UIKeyboardSplitControlMenu *)arg1;
+- (void)actionForMenu:(id <_UIInputSwitcherSplitMenu>)arg1;
 @end
 

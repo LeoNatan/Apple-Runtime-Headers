@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class EMIMDFREmojiListMatrixView, NSBox, NSButton, NSImageView, NSLayoutConstraint, NSMutableArray;
+@class EMIMDFREmojiListMatrixView, NSBox, NSButton, NSLayoutConstraint, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface EMIMDFREmojiListSkinToneView : NSView
@@ -23,10 +23,8 @@ __attribute__((visibility("hidden")))
     long long _selectedCharacterIndex;
     long long _highlightedCharacterIndex;
     EMIMDFREmojiListMatrixView *_sourceMatrixView;
-    NSImageView *_prereleaseStamp;
 }
 
-@property NSImageView *prereleaseStamp; // @synthesize prereleaseStamp=_prereleaseStamp;
 @property EMIMDFREmojiListMatrixView *sourceMatrixView; // @synthesize sourceMatrixView=_sourceMatrixView;
 @property long long highlightedCharacterIndex; // @synthesize highlightedCharacterIndex=_highlightedCharacterIndex;
 @property long long selectedCharacterIndex; // @synthesize selectedCharacterIndex=_selectedCharacterIndex;

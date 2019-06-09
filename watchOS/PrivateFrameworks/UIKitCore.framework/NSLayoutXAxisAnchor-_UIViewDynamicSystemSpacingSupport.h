@@ -11,5 +11,8 @@
 - (id)constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:(id)arg1;
 - (id)constraintEqualToSystemSpacingAfterAnchor:(id)arg1;
 - (id)_constraintAfterAnchor:(id)arg1 relation:(int)arg2 multiplier:(float)arg3;
+- (id)constraintLessThanOrEqualToSystemSpacingAfterAnchor:(id)arg1 multiplier:(float)arg2;
+- (id)constraintGreaterThanOrEqualToSystemSpacingAfterAnchor:(id)arg1 multiplier:(float)arg2;
+- (id)constraintEqualToSystemSpacingAfterAnchor:(id)arg1 multiplier:(float)arg2;
 @end
 

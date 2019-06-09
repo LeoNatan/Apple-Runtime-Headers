@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     VKTimedAnimation *_zoomAnimation;
 }
 
+- (Matrix_6e1d3589)positionClampedToCameraRestriction:(Matrix_6e1d3589)arg1;
 - (_Bool)isPitchIncreasing;
 - (void)updatePitch:(struct CGPoint)arg1 translation:(double)arg2;
 - (void)beginPitch:(struct CGPoint)arg1;

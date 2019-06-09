@@ -42,6 +42,7 @@
 // Remaining properties
 @property(retain, nonatomic) NSString *alignmentRectString; // @dynamic alignmentRectString;
 @property(nonatomic) _Bool allowsCompactCompression; // @dynamic allowsCompactCompression;
+@property(nonatomic) _Bool allowsDeepmap2Compression; // @dynamic allowsDeepmap2Compression;
 @property(nonatomic) _Bool allowsDeepmapCompression; // @dynamic allowsDeepmapCompression;
 @property(nonatomic) _Bool allowsHevcCompression; // @dynamic allowsHevcCompression;
 @property(nonatomic) _Bool allowsMultiPassEncoding; // @dynamic allowsMultiPassEncoding;

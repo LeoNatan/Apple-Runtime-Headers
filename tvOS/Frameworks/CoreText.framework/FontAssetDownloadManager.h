@@ -11,31 +11,28 @@
 __attribute__((visibility("hidden")))
 @interface FontAssetDownloadManager : NSObject
 {
-    // Error parsing type: {TCFRef<const __CFArray *>="fRef"{TAtomicPtr<const __CFArray *>="__a_"A^{__CFArray}}}, name: fDescriptors
-    // Error parsing type: {TCFRef<const __CFSet *>="fRef"{TAtomicPtr<const __CFSet *>="__a_"A^{__CFSet}}}, name: fMandatoryAttributes
+    // Error parsing type: {TCFRef<const __CFArray *>="fRef"{atomic<const __CFArray *>="__a_"A^{__CFArray}}}, name: fDescriptors
+    // Error parsing type: {TCFRef<const __CFSet *>="fRef"{atomic<const __CFSet *>="__a_"A^{__CFSet}}}, name: fMandatoryAttributes
     CDUnknownBlockType fProgressCallbackBlock;
     NSMutableDictionary *fProgressParams;
     NSMutableDictionary *fDownloadOptions;
     NSMutableDictionary *fAssetToDescriptors;
 }
 
++ (_Bool)fontAssetIsAvailableForUse:(id)arg1;
 + (id)availableFontAttributesArrayMatchingRequests:(id)arg1 options:(unsigned long long)arg2;
 + (id)attributesFromFontInfo:(id)arg1 assetDesignLanguages:(id)arg2;
-+ (id)enabledKeyboardLanguages;
-+ (Class)getASAssetQueryClass;
++ (Class)getMAAssetClass;
 + (_Bool)activateFontsFromAssetURL:(id)arg1;
 + (unsigned long long)calculateDownloadSize:(id)arg1;
 + (id)availableMobileAssetsWithOptions:(unsigned int)arg1 manager:(id)arg2 error:(id *)arg3;
-+ (unsigned int)defaultQueryOptions;
 + (_Bool)shouldRetryWithServer;
-+ (_Bool)shouldTryServer;
 + (_Bool)fontInfo:(id)arg1 andAssetDesignLanguages:(id)arg2 matchesRequest:(id)arg3;
 + (id)availableMobileAssetsWithOptions:(unsigned int)arg1 error:(id *)arg2;
++ (id)errorWithCode:(long long)arg1 description:(id)arg2;
 + (_Bool)shouldIgnoreFontAssetWithAttributes:(id)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)preciousFontLanguages;
-- (void)setGarbageCollectionBehaviorForAsset:(id)arg1;
 - (id)doFinalMatching;
 - (_Bool)executeDownloadingFontAssets:(id)arg1;
 - (_Bool)downloadAllowed;

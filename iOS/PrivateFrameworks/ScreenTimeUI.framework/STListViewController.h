@@ -26,12 +26,14 @@
 - (void)specifierProvider:(id)arg1 presentViewController:(id)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)specifierProvider:(id)arg1 popToViewControllerAnimated:(_Bool)arg2;
 - (void)specifierProvider:(id)arg1 showConfirmationViewForSpecifier:(id)arg2;
+- (void)specifierProvider:(id)arg1 reloadSectionHeaderFootersWithAnimation:(long long)arg2;
 - (void)specifierProvider:(id)arg1 reloadSpecifier:(id)arg2 animated:(_Bool)arg3;
 - (void)specifierProvider:(id)arg1 dismissViewControllerAnimated:(_Bool)arg2;
 - (void)specifierProvider:(id)arg1 presentViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)specifierProvider:(id)arg1 showController:(id)arg2 animated:(_Bool)arg3;
 - (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)removeObserversForSpecifierProvider:(id)arg1;
 - (void)addObserversForSpecifierProvider:(id)arg1;

@@ -18,6 +18,7 @@
 - (void)markedTextDidChange;
 - (void)insertPastedText:(id)arg1;
 - (void)paste:(id)arg1;
+- (BOOL)performDragOperation:(id)arg1;
 - (void)insertNewlineIgnoringFieldEditor:(id)arg1;
 - (void)insertNewline:(id)arg1;
 - (void)abShadowTextInsertNewline:(id)arg1;

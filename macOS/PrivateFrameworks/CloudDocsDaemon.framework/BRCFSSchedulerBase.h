@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)signal;
 - (void)signalWithDeadline:(long long)arg1;
 - (void)deleteExpiredJobs;
-- (void)resetBackoffForJobWithID:(id)arg1;
+- (void)resetBackoffForJobsMatching:(id)arg1;
 - (void)deleteJobsMatching:(id)arg1;
 - (BOOL)setState:(int)arg1 forJobsMatching:(id)arg2;
 - (BOOL)setState:(int)arg1 forJobID:(id)arg2;

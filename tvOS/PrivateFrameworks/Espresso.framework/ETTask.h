@@ -10,6 +10,7 @@
 
 @interface ETTask : NSObject
 {
+    shared_ptr_d082c67d network;
     _Bool _dumpData;
     ETModelDef *_model;
     ETOptimizerDef *_optimizer;
@@ -17,13 +18,25 @@
 }
 
 @property(nonatomic) _Bool dumpData; // @synthesize dumpData=_dumpData;
-@property(nonatomic) ETImageDescriptorExtractor *extractor; // @synthesize extractor=_extractor;
-@property(nonatomic) ETOptimizerDef *optimizer; // @synthesize optimizer=_optimizer;
-@property(nonatomic) ETModelDef *model; // @synthesize model=_model;
+@property(retain, nonatomic) ETImageDescriptorExtractor *extractor; // @synthesize extractor=_extractor;
+@property(retain, nonatomic) ETOptimizerDef *optimizer; // @synthesize optimizer=_optimizer;
+@property(retain, nonatomic) ETModelDef *model; // @synthesize model=_model;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (_Bool)moveToGPU:(int)arg1 error:(id *)arg2;
+- (void)saveNetwork:(id)arg1 revertToInferenceMode:(_Bool)arg2;
 - (void)saveNetwork:(id)arg1;
+- (_Bool)runInference:(id)arg1 outputNames:(id)arg2 batchCallback:(CDUnknownBlockType)arg3;
+- (_Bool)fit:(id)arg1 numberOfEpochs:(int)arg2 outputNames:(id)arg3 batchCallback:(CDUnknownBlockType)arg4;
+- (_Bool)fit:(id)arg1 numberOfBatches:(unsigned int)arg2 outputNames:(id)arg3 batchCallback:(CDUnknownBlockType)arg4;
+- (_Bool)runBatches:(id)arg1 numberOfBatches:(unsigned int)arg2 outputNames:(id)arg3 batchCallback:(CDUnknownBlockType)arg4;
 - (id)evaluate:(id)arg1;
 - (float)fit:(id)arg1 numberOfBatches:(unsigned int)arg2 withProgress:(CDUnknownBlockType)arg3;
 - (float)fit:(id)arg1 numberOfEpochs:(int)arg2 withProgress:(CDUnknownBlockType)arg3;
+- (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 lossConfig:(id)arg3 extractor:(id)arg4;
+- (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 lossConfig:(id)arg3;
+- (vector_ebb6ef3e)reinitializeVariables;
+- (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3 needWeightsInitialization:(_Bool)arg4;
 - (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3;
 - (id)init;
 

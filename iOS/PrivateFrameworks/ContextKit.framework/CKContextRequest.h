@@ -8,16 +8,20 @@
 
 #import <ContextKit/NSSecureCoding-Protocol.h>
 
-@class NSNumber, NSString;
+@class CKContextClient, NSDictionary, NSNumber, NSString;
 
 @interface CKContextRequest : NSObject <NSSecureCoding>
 {
+    CKContextClient *_client;
     _Bool _textIsRaw;
     _Bool _includeHigherLevelTopics;
     _Bool _prepareOnly;
     _Bool _debug;
     _Bool _dontSkip;
     _Bool _timing;
+    _Bool _incPending;
+    int _overrideConstellationMinCount;
+    int _overrideConstellationMinWeight;
     unsigned int _topk;
     NSString *_text;
     NSString *_title;
@@ -26,12 +30,16 @@
     NSString *_contentAuthor;
     NSString *_url;
     NSString *_languageTag;
+    NSDictionary *_itemIds;
+    long long _maxConstellationTopics;
     NSNumber *_overrideBlendAlpha;
     NSNumber *_overrideBlendBeta;
     NSNumber *_overrideBlendGamma;
     unsigned long long _type;
 }
 
++ (id)frameworkStartDate;
++ (id)requestServiceSemaphore;
 + (void)logTransactionSuccessfulForResponseId:(id)arg1 inputLength:(unsigned long long)arg2 completionLength:(unsigned long long)arg3 requestType:(unsigned long long)arg4 logType:(unsigned long long)arg5;
 + (void)logEngagementForResponseId:(id)arg1 result:(id)arg2 rank:(unsigned long long)arg3 inputLength:(unsigned long long)arg4 completionLength:(unsigned long long)arg5 requestType:(unsigned long long)arg6 logType:(unsigned long long)arg7;
 + (void)logResultsShownForResponseId:(id)arg1 shown:(unsigned long long)arg2 couldHaveShown:(unsigned long long)arg3 serverOverride:(_Bool)arg4 inputLength:(unsigned long long)arg5 requestType:(unsigned long long)arg6 logType:(unsigned long long)arg7;
@@ -53,8 +61,12 @@
 + (void)findResultsForText:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 + (void)setDefaultRequestType:(unsigned long long)arg1;
 + (void)initialize;
++ (id)new;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
+@property(nonatomic) _Bool incPending; // @synthesize incPending=_incPending;
 @property(nonatomic) unsigned int topk; // @synthesize topk=_topk;
+@property(nonatomic) int overrideConstellationMinWeight; // @synthesize overrideConstellationMinWeight=_overrideConstellationMinWeight;
+@property(nonatomic) int overrideConstellationMinCount; // @synthesize overrideConstellationMinCount=_overrideConstellationMinCount;
 @property(retain, nonatomic) NSNumber *overrideBlendGamma; // @synthesize overrideBlendGamma=_overrideBlendGamma;
 @property(retain, nonatomic) NSNumber *overrideBlendBeta; // @synthesize overrideBlendBeta=_overrideBlendBeta;
 @property(retain, nonatomic) NSNumber *overrideBlendAlpha; // @synthesize overrideBlendAlpha=_overrideBlendAlpha;
@@ -62,6 +74,8 @@
 @property(nonatomic) _Bool dontSkip; // @synthesize dontSkip=_dontSkip;
 @property(nonatomic) _Bool debug; // @synthesize debug=_debug;
 @property(nonatomic) _Bool prepareOnly; // @synthesize prepareOnly=_prepareOnly;
+@property(nonatomic) long long maxConstellationTopics; // @synthesize maxConstellationTopics=_maxConstellationTopics;
+@property(retain, nonatomic) NSDictionary *itemIds; // @synthesize itemIds=_itemIds;
 @property(nonatomic) _Bool includeHigherLevelTopics; // @synthesize includeHigherLevelTopics=_includeHigherLevelTopics;
 @property(retain, nonatomic) NSString *languageTag; // @synthesize languageTag=_languageTag;
 @property(retain, nonatomic) NSString *url; // @synthesize url=_url;
@@ -81,6 +95,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)capabilitiesWithReply:(CDUnknownBlockType)arg1;
+- (id)init;
 
 @end
 

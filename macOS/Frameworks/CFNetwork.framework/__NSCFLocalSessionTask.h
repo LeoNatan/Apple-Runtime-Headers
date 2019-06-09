@@ -11,10 +11,9 @@
 #import <CFNetwork/NSURLSessionUploadTaskSubclass-Protocol.h>
 #import <CFNetwork/SessionConnectionDelegate-Protocol.h>
 
-@class NSInputStream, NSNumber, NSObject, NSOperationQueue, NSOutputStream, NSString, NSURL, __NSCFURLSessionConnection, __NSURLSessionLocal;
+@class NSInputStream, NSObject, NSOperationQueue, NSOutputStream, NSString, NSURL, __NSCFURLSessionConnection;
 @protocol OS_dispatch_data, OS_dispatch_source;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFLocalSessionTask : __NSCFURLSessionTask <NSURLSessionTaskSubclass, NSURLSessionDataTaskSubclass, NSURLSessionUploadTaskSubclass, SessionConnectionDelegate>
 {
     __NSCFURLSessionConnection *_cfConn;
@@ -22,11 +21,9 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_data> *_dataTaskData;
     CDUnknownBlockType _dataTaskCompletion;
     NSObject<OS_dispatch_data> *_pendingResponseBytes;
-    __NSURLSessionLocal *_localSession;
     unsigned long long _suspendCount;
     CDUnknownBlockType _async_initialization;
     NSObject<OS_dispatch_source> *_resourceTimeout;
-    NSNumber *_connectedSocket;
     struct HTTPConnectionCacheKey *_connKey;
     double _startTimeoutTime;
     NSObject<OS_dispatch_source> *_startTimeoutTimer;
@@ -34,7 +31,8 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_willSendRequestTimer;
     NSInputStream *_socketReadStreamForUpgrade;
     NSOutputStream *_socketWriteStreamForUpgrade;
-    shared_ptr_f0c1381f _connectionForUpgrade;
+    shared_ptr_8da4e70b _connectionForUpgrade;
+    NSObject<OS_dispatch_data> *_extraBytes;
     NSOperationQueue *_connectionWorkQueue;
     int _connectionWorkQueueSuspensionCount;
     BOOL _pendingResponseDisposition;
@@ -50,7 +48,6 @@ __attribute__((visibility("hidden")))
 @property BOOL didIssueWaitingForConnectivity; // @synthesize didIssueWaitingForConnectivity=_didIssueWaitingForConnectivity;
 @property(copy) CDUnknownBlockType async_initialization; // @synthesize async_initialization=_async_initialization;
 @property unsigned long long suspendCount; // @synthesize suspendCount=_suspendCount;
-@property(retain) __NSURLSessionLocal *localSession; // @synthesize localSession=_localSession;
 @property BOOL pendingResponseDisposition_didFinish; // @synthesize pendingResponseDisposition_didFinish=_pendingResponseDisposition_didFinish;
 @property BOOL pendingResponseDisposition; // @synthesize pendingResponseDisposition=_pendingResponseDisposition;
 @property(copy) CDUnknownBlockType dataTaskCompletion; // @synthesize dataTaskCompletion=_dataTaskCompletion;
@@ -59,7 +56,7 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)connection:(id)arg1 needConnectedSocketToHost:(id)arg2 port:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)connection:(id)arg1 didReceiveTCPConnection:(shared_ptr_f0c1381f)arg2;
+- (void)connection:(id)arg1 didReceiveTCPConnection:(shared_ptr_8da4e70b)arg2 extraBytes:(id)arg3;
 - (void)connection:(id)arg1 didReceiveSocketInputStream:(id)arg2 outputStream:(id)arg3;
 - (void)connection:(id)arg1 _conditionalRequirementsChanged:(BOOL)arg2;
 - (void)connection:(id)arg1 waitingWithReason:(long long)arg2;
@@ -81,6 +78,9 @@ __attribute__((visibility("hidden")))
 - (void)_onqueue_startPayloadTransmissionTimer;
 - (void)_onqueue_startStartTimer;
 - (void)_onqueue_startResourceTimer;
+- (void)_onqueue_restartResourceTimer:(double)arg1;
+- (void)set_timeoutIntervalForResource:(double)arg1;
+- (void)_onqueue_startResourceTimer:(double)arg1;
 - (void)_onqueue_startTimer:(id)arg1 withTimeoutInNanos:(long long)arg2 streamErrorCode:(int)arg3;
 - (void)startResourceTimer;
 - (void)setConnection:(id)arg1;
@@ -95,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (void)_askForConnectedSocketLater;
 - (void)cancel_with_error:(id)arg1;
 - (void)_onSessionQueue_disavow;
+- (void)_onqueue_expectedProgressTargetChanged;
 - (void)_onqueue_adjustBytesPerSecondLimit:(long long)arg1;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
 - (void)_onqueue_adjustLoadingPoolPriority;
@@ -117,17 +118,20 @@ __attribute__((visibility("hidden")))
 - (void)_onqueue_willCacheResponse:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_onqueue_didReceiveResponse:(id)arg1 redirectRequest:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)_onqueue_setupNextEffectiveConfigurationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_private_onqueue_didReceiveResponse:(id)arg1;
 - (void)_private_onqueue_didReceiveResponseDisposition:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_private_onqueue_becomeStreamTaskWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)localSession;
 - (void)_finishBecomeStream:(id)arg1 forConnection:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_finishBecomeDownload:(id)arg1;
 - (void)_finishAllow;
 - (id)_onqueue_strippedMutableRequest;
 - (void)_onqueue_didReceiveResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
-- (id)initWithTask:(id)arg1;
-- (id)initWithOriginalRequest:(id)arg1 updatedRequest:(id)arg2 ident:(unsigned long long)arg3 session:(id)arg4;
+- (id)initWithBackgroundTaskInfo:(id)arg1 taskGroup:(id)arg2;
+- (id)initWithLocalTask:(id)arg1;
+- (id)initWithOriginalRequest:(id)arg1 ident:(unsigned long long)arg2 taskGroup:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

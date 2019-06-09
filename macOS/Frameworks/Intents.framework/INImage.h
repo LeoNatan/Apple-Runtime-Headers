@@ -9,13 +9,14 @@
 #import <Intents/INCacheableObject-Protocol.h>
 #import <Intents/INImageExport-Protocol.h>
 #import <Intents/INImageProxyInjecting-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/INKeyImageProducing-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class NSData, NSString, NSURL;
 
-@interface INImage : NSObject <INKeyImageProducing, INCacheableObject, INImageProxyInjecting, INImageExport, NSCopying, NSSecureCoding>
+@interface INImage : NSObject <INJSONSerializable, INKeyImageProducing, INCacheableObject, INImageProxyInjecting, INImageExport, NSCopying, NSSecureCoding>
 {
     NSString *_identifier;
     CDStruct_8caa76fc _imageSize;
@@ -30,6 +31,7 @@
 + (id)imageWithURL:(id)arg1;
 + (void)registerImageLoadersOnce;
 + (void)initialize;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(nonatomic, setter=_setImageSize:) CDStruct_8caa76fc _imageSize; // @synthesize _imageSize;
 @property(copy, nonatomic, setter=_setIdentifier:) NSString *_identifier; // @synthesize _identifier;
@@ -59,7 +61,8 @@
 - (id)_initWithData:(id)arg1;
 - (id)_initWithIdentifier:(id)arg1;
 - (id)init;
-- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (long long)_compareSubProducerOne:(id)arg1 subProducerTwo:(id)arg2;
 @property(readonly) INImage *_keyImage;
 @property(readonly, copy, nonatomic) NSString *cacheIdentifier;

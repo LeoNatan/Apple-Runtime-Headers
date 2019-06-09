@@ -24,6 +24,8 @@ __attribute__((visibility("hidden")))
 - (void)_setIsAssociatedWithFragmentMinder:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isAssociatedWithFragmentMinder) BOOL associatedWithFragmentMinder;
 @property(nonatomic, getter=_fragmentMindingInterval, setter=_setFragmentMindingInterval:) double fragmentMindingInterval;
+@property(readonly, nonatomic) long long fragmentCount;
+@property(readonly, nonatomic) long long firstFragmentSequenceNumber;
 @property(readonly, nonatomic, getter=_isStreaming) BOOL streaming;
 @property(readonly, nonatomic) BOOL hasProtectedContent;
 @property(readonly, nonatomic) unsigned long long downloadToken;

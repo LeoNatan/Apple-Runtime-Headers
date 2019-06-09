@@ -6,6 +6,7 @@
 
 #import <OfficeImport/PDEightDirectionOptions.h>
 
+__attribute__((visibility("hidden")))
 @interface PDRevealOptions : PDEightDirectionOptions
 {
     BOOL mIsThroughBlack;

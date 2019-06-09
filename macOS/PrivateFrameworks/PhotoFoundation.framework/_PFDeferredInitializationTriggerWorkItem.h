@@ -4,11 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotoFoundation/PFInitializationClassWorkItem.h>
+#import <PhotoFoundation/_PFTriggeredWorkItem.h>
 
-@class NSMutableArray;
-
-@interface _PFDeferredInitializationTriggerWorkItem : PFInitializationClassWorkItem
+@interface _PFDeferredInitializationTriggerWorkItem : _PFTriggeredWorkItem
 {
     struct __CFRunLoopObserver *_runLoopWakeObserver;
     struct __CFRunLoopObserver *_runLoopSleepObserver;
@@ -18,19 +16,16 @@
     unsigned long long _wakePercent;
     unsigned long long _targetPercent;
     CDUnknownBlockType _timerFired;
-    NSMutableArray *_deferredWorkItems;
-    struct _opaque_pthread_mutex_t _deferredWorkItemsLock;
 }
 
 - (void).cxx_destruct;
+- (BOOL)runsWorkItemsConcurrently;
 - (void)runLoopSleep;
 - (void)runLoopWake;
 - (void)timerFired;
 - (void)endMonitoring;
 - (void)beginMonitoring;
 - (void)startTimer;
-- (void)_doOneDeferredWorkItem;
-- (BOOL)addDeferredWorkItem:(id)arg1;
 - (id)init;
 
 @end

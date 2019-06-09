@@ -23,6 +23,7 @@
 - (id)initWithSettingsDictionary:(id)arg1;
 - (id)initWithOperation:(id)arg1;
 - (id)initWithTimeRange:(CDStruct_e83c9415)arg1 rate:(float)arg2;
+- (BOOL)isMigratable;
 - (id)internalRepresentation;
 
 @end

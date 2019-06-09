@@ -19,6 +19,7 @@
 
 + (id)sharedReachabilityMonitor;
 + (_Bool)isNetworkReachableForFlags:(unsigned int)arg1;
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) unsigned int reachabilityFlags; // @synthesize reachabilityFlags=_reachabilityFlags;
 - (void).cxx_destruct;
 - (void)invalidate;

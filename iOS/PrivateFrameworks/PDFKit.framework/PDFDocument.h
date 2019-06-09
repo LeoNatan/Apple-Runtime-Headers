@@ -23,8 +23,7 @@
 - (void)setDocumentHasBurnInAnnotations:(_Bool)arg1;
 - (Class)annotationSubclassForType:(id)arg1;
 - (id)findPageWithCGPDFDictionaryPageRef:(struct CGPDFDictionary *)arg1;
-- (struct __CFDictionary *)gcCreateInfoDictionary;
-- (struct __DDScanner *)dataDetector;
+- (struct __CFDictionary *)_createInfoDictionary;
 - (id)annotationsForFieldName:(id)arg1;
 - (void)setFormData:(id)arg1;
 - (id)formData;
@@ -34,10 +33,7 @@
 - (void)coreFindStrings:(id)arg1;
 - (void)coreFindString:(id)arg1;
 - (void)normalizeFindOptions:(unsigned long long)arg1;
-- (void)enqueueLayoutThreadForPage:(id)arg1 forPDFView:(id)arg2;
-- (void)enqueueDataDetectionForPage:(id)arg1 forPDFView:(id)arg2;
-- (id)dataDetectorQueue;
-- (id)pageLayoutThreadQueue;
+- (void)enqueueLayoutThreadForPage:(id)arg1;
 - (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint)arg2 toPage:(id)arg3 atPoint:(struct CGPoint)arg4 type:(int)arg5;
 - (_Bool)viewPreferenceRightToLeft;
 - (void)resetPageAnnotationChanges;
@@ -62,6 +58,7 @@
 - (id)selectionFromPage:(id)arg1 atCharacterIndex:(unsigned long long)arg2 toPage:(id)arg3 atCharacterIndex:(unsigned long long)arg4;
 - (id)selectionFromPage:(id)arg1 atPoint:(struct CGPoint)arg2 toPage:(id)arg3 atPoint:(struct CGPoint)arg4;
 @property(readonly, nonatomic) PDFSelection *selectionForEntireDocument;
+- (void)asyncFindString:(id)arg1 withDelegate:(id)arg2 onQueue:(id)arg3;
 - (void)cancelFindString;
 @property(readonly, nonatomic) _Bool isFinding;
 - (void)didMatchString:(id)arg1;
@@ -118,8 +115,8 @@
 - (void)enableDocumentMRUMode:(_Bool)arg1;
 - (id)akDocumentAdaptor;
 - (struct __CFData *)newXMPFromData:(id)arg1 preserveExistingXMPMetadata:(_Bool)arg2;
-- (void)setDocumentCatalogMetadata:(id)arg1 withNSpace:(id)arg2 prefix:(id)arg3 rootPath:(id)arg4;
-- (id)documentCatalogMetadataForRootPath:(id)arg1 withKeys:(id)arg2;
+- (void)_setDocumentCatalogMetadata:(id)arg1 withNSpace:(id)arg2 prefix:(id)arg3 rootPath:(id)arg4;
+- (id)_documentCatalogMetadataForRootPath:(id)arg1 withKeys:(id)arg2;
 - (struct CGPDFAnnotation *)_createCGPDFAnnotationForAnnotation:(id)arg1;
 - (_Bool)_writeAppendMode:(struct CGDataConsumer *)arg1;
 - (_Bool)writeToConsumer:(struct CGDataConsumer *)arg1 withOptions:(id)arg2;

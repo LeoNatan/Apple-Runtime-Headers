@@ -21,6 +21,7 @@
     double _startTime;
     double _endTime;
     // Error parsing type: , name: _upAxis
+    float _metersPerUnit;
     _Bool _isSceneKitBridged;
     NSMapTable *_components;
     NSURL *_temporaryFolderURL;
@@ -35,6 +36,10 @@
 + (_Bool)canImportFileExtension:(id)arg1;
 + (_Bool)canExportFileExtension:(id)arg1;
 + (id)placeLightProbesWithDensity:(float)arg1 heuristic:(long long)arg2 usingIrradianceDataSource:(id)arg3;
++ (void)convertToUSDZ:(id)arg1 writeToURL:(id)arg2;
++ (_Bool)isValidUSDZResource:(id)arg1;
++ (void)convertToUSDZWithURL:(id)arg1;
+@property(nonatomic) float metersPerUnit; // @synthesize metersPerUnit=_metersPerUnit;
 @property(retain, nonatomic) NSUnitLength *unitLength; // @synthesize unitLength=_unitLength;
 @property(nonatomic) double _timeCodesPerSecond; // @synthesize _timeCodesPerSecond=__timeCodesPerSecond;
 @property(readonly, retain, nonatomic) MDLVertexDescriptor *vertexDescriptor; // @synthesize vertexDescriptor=_vertexDescriptor;

@@ -14,10 +14,8 @@
 {
 }
 
-+ (id)imageResourceVariantNameForImageStyle:(long long)arg1;
-+ (id)imageResourceBaseNameForActionType:(id)arg1;
-+ (id)imageResourceNameForActionType:(id)arg1 style:(long long)arg2;
-+ (id)templateImageForActionType:(id)arg1 imageStyle:(long long)arg2;
++ (id)symbolImageNameForActionType:(id)arg1;
++ (id)imageResourceNameForActionType:(id)arg1;
 + (id)imageForActionType:(id)arg1 imageStyle:(long long)arg2;
 
 // Remaining properties

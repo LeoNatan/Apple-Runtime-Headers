@@ -6,6 +6,7 @@
 
 #import <UIKit/UIView.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageTableSeparatorView : UIView
 {
     UIView *_separatorView;

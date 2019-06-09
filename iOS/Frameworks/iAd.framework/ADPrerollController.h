@@ -9,15 +9,14 @@
 #import <iAd/ADPlayerDelegate-Protocol.h>
 #import <iAd/ADPrerollViewDelegate-Protocol.h>
 
-@class ADPlayer, ADPrerollView, AVPlayerViewController, MPMoviePlayerController, NSString;
+@class ADPlayer, ADPrerollView, MPMoviePlayerController, NSString;
 
 @interface ADPrerollController : NSObject <ADPrerollViewDelegate, ADPlayerDelegate>
 {
-    AVPlayerViewController *_avPlayerViewController;
-    MPMoviePlayerController *_moviePlayerController;
     _Bool _setupInProgress;
     _Bool _isObservingThirdPartyAVPlayer;
     unsigned long long _type;
+    MPMoviePlayerController *_moviePlayerController;
     ADPrerollView *_view;
     ADPlayer *_adPlayer;
     CDUnknownBlockType _completionHandler;
@@ -28,15 +27,15 @@
 @property(nonatomic) _Bool setupInProgress; // @synthesize setupInProgress=_setupInProgress;
 @property(retain, nonatomic) ADPlayer *adPlayer; // @synthesize adPlayer=_adPlayer;
 @property(retain, nonatomic) ADPrerollView *view; // @synthesize view=_view;
+@property(nonatomic) __weak MPMoviePlayerController *moviePlayerController; // @synthesize moviePlayerController=_moviePlayerController;
 @property(readonly, nonatomic) unsigned long long type; // @synthesize type=_type;
+- (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_appWillResignActive;
 - (void)_handlePlaybackCompletion:(_Bool)arg1;
 - (_Bool)_beginPlayback;
 - (void)_addAccessibilityIdentifier:(id)arg1;
 - (id)_advertisementView;
-@property(nonatomic) __weak MPMoviePlayerController *moviePlayerController;
-@property(nonatomic) __weak AVPlayerViewController *avPlayerViewController;
 - (void)adPlayerDidBeginAction:(id)arg1;
 - (id)viewControllerForActionFromAdPlayer:(id)arg1;
 - (void)adPlayerDidFinishPlayback:(id)arg1;
@@ -58,7 +57,6 @@
 - (void)cancel;
 - (void)playPrerollAdWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithMoviePlayerController:(id)arg1;
-- (id)initWithAVPlayerViewController:(id)arg1;
 - (id)init;
 - (void)dealloc;
 

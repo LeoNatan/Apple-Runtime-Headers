@@ -8,7 +8,7 @@
 
 #import <CameraUI/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSError, NSString, NSURL;
+@class NSData, NSDate, NSError, NSString, NSURL;
 
 @interface CAMVideoLocalPersistenceResult : NSObject <NSSecureCoding>
 {
@@ -19,6 +19,7 @@
     NSString *_localPersistenceUUID;
     NSString *_stillPersistenceUUID;
     NSDate *_creationDate;
+    NSData *_adjustmentsData;
     NSError *_error;
     CDStruct_1b6d18a9 _duration;
     CDStruct_1b6d18a9 _stillDisplayTime;
@@ -26,6 +27,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+@property(readonly, nonatomic) NSData *adjustmentsData; // @synthesize adjustmentsData=_adjustmentsData;
 @property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 stillDisplayTime; // @synthesize stillDisplayTime=_stillDisplayTime;
 @property(readonly, copy, nonatomic) NSString *stillPersistenceUUID; // @synthesize stillPersistenceUUID=_stillPersistenceUUID;
@@ -38,7 +40,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithURL:(id)arg1 filteredLocalDestinationURL:(id)arg2 linkedURL:(id)arg3 filteredLinkedURL:(id)arg4 UUID:(id)arg5 duration:(CDStruct_1b6d18a9)arg6 stillPersistenceUUID:(id)arg7 stillDisplayTime:(CDStruct_1b6d18a9)arg8 creationDate:(id)arg9 error:(id)arg10;
+- (id)initWithURL:(id)arg1 filteredLocalDestinationURL:(id)arg2 linkedURL:(id)arg3 filteredLinkedURL:(id)arg4 UUID:(id)arg5 duration:(CDStruct_1b6d18a9)arg6 stillPersistenceUUID:(id)arg7 stillDisplayTime:(CDStruct_1b6d18a9)arg8 creationDate:(id)arg9 adjustmentsData:(id)arg10 error:(id)arg11;
 
 @end
 

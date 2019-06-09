@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)initialize;
+- (void)unlock;
+- (void)lock;
 - (void)removeDataSource:(void *)arg1;
 - (void *)addDataSource:(CDUnknownBlockType)arg1;
 - (void)dealloc;

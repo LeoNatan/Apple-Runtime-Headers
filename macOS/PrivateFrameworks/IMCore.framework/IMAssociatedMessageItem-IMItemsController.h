@@ -11,5 +11,8 @@
 - (BOOL)isTypingOrCancelTypingMessage;
 - (BOOL)isCancelTypingMessage;
 - (BOOL)isIncomingTypingMessage;
+- (BOOL)shouldGenerateTopLevelChatItem;
+- (id)_newChatItemsWithFilteredChat:(BOOL)arg1 isBusiness:(BOOL)arg2 parentChatIsSpam:(BOOL)arg3 hasKnownParticipants:(BOOL)arg4;
+- (id)_newChatItems;
 @end
 

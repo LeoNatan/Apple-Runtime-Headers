@@ -6,34 +6,49 @@
 
 #import <UIKit/UIView.h>
 
-@class UIButton, UIImage;
+@class NSLayoutConstraint, NSString, UIButton, UIImage;
 
 @interface MCDTransportControlView : UIView
 {
     _Bool _progressActive;
+    unsigned long long _controlStyle;
     UIButton *_leftButton;
     UIButton *_playPauseButton;
     UIButton *_fastForwardButton;
-    UIImage *_playImage;
-    UIImage *_pauseImage;
+    NSString *_playButtonImageName;
+    NSString *_pauseButtonImageName;
     UIImage *_defaultLeftButtonImage;
     UIImage *_defaultFastForwardButtonImage;
+    UIImage *_playImage;
+    UIImage *_pauseImage;
+    NSLayoutConstraint *_leftButtonWidthConstraint;
+    NSLayoutConstraint *_playButtonWidthConstraint;
+    NSLayoutConstraint *_fastForwardButtonWidthConstraint;
+    struct CGSize _buttonSize;
 }
 
-@property(retain, nonatomic) UIImage *defaultFastForwardButtonImage; // @synthesize defaultFastForwardButtonImage=_defaultFastForwardButtonImage;
-@property(retain, nonatomic) UIImage *defaultLeftButtonImage; // @synthesize defaultLeftButtonImage=_defaultLeftButtonImage;
+@property(retain, nonatomic) NSLayoutConstraint *fastForwardButtonWidthConstraint; // @synthesize fastForwardButtonWidthConstraint=_fastForwardButtonWidthConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *playButtonWidthConstraint; // @synthesize playButtonWidthConstraint=_playButtonWidthConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *leftButtonWidthConstraint; // @synthesize leftButtonWidthConstraint=_leftButtonWidthConstraint;
 @property(retain, nonatomic) UIImage *pauseImage; // @synthesize pauseImage=_pauseImage;
 @property(retain, nonatomic) UIImage *playImage; // @synthesize playImage=_playImage;
+@property(retain, nonatomic) UIImage *defaultFastForwardButtonImage; // @synthesize defaultFastForwardButtonImage=_defaultFastForwardButtonImage;
+@property(retain, nonatomic) UIImage *defaultLeftButtonImage; // @synthesize defaultLeftButtonImage=_defaultLeftButtonImage;
+@property(retain, nonatomic) NSString *pauseButtonImageName; // @synthesize pauseButtonImageName=_pauseButtonImageName;
+@property(retain, nonatomic) NSString *playButtonImageName; // @synthesize playButtonImageName=_playButtonImageName;
 @property(nonatomic) _Bool progressActive; // @synthesize progressActive=_progressActive;
 @property(readonly, nonatomic) UIButton *fastForwardButton; // @synthesize fastForwardButton=_fastForwardButton;
 @property(readonly, nonatomic) UIButton *playPauseButton; // @synthesize playPauseButton=_playPauseButton;
 @property(readonly, nonatomic) UIButton *leftButton; // @synthesize leftButton=_leftButton;
+@property(nonatomic) struct CGSize buttonSize; // @synthesize buttonSize=_buttonSize;
+@property(nonatomic) unsigned long long controlStyle; // @synthesize controlStyle=_controlStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double glyphSize;
 - (id)_defaultImageForIdentifier:(id)arg1;
 - (void)_updateProgressActive;
 - (struct CGSize)intrinsicContentSize;
-- (void)_addConstraints;
-- (void)_createSubviews;
+- (void)updateConstraints;
+- (void)setupConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

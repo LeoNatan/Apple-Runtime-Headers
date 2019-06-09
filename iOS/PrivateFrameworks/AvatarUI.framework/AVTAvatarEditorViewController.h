@@ -8,11 +8,12 @@
 
 #import <AvatarUI/AVTAvatarAttributeEditorViewControllerDelegate-Protocol.h>
 #import <AvatarUI/AVTSplashScreenViewControllerDelegate-Protocol.h>
+#import <AvatarUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 
 @class AVTAvatarAttributeEditorViewController, AVTAvatarRecord, AVTSplashScreenViewController, AVTUIEnvironment, AVTViewSessionProvider, NSString, UIBarButtonItem;
 @protocol AVTAvatarEditorViewControllerDelegate, AVTAvatarStoreInternal, AVTUILogger;
 
-@interface AVTAvatarEditorViewController : UIViewController <AVTSplashScreenViewControllerDelegate, AVTAvatarAttributeEditorViewControllerDelegate>
+@interface AVTAvatarEditorViewController : UIViewController <AVTSplashScreenViewControllerDelegate, AVTAvatarAttributeEditorViewControllerDelegate, UIAdaptivePresentationControllerDelegate>
 {
     _Bool _isCreating;
     id <AVTAvatarEditorViewControllerDelegate> _delegate;
@@ -43,6 +44,8 @@
 @property(retain, nonatomic) AVTAvatarRecord *initialAvatarRecord; // @synthesize initialAvatarRecord=_initialAvatarRecord;
 @property(nonatomic) __weak id <AVTAvatarEditorViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)confirmCancel;
+- (void)presentationControllerDidAttemptToDismiss:(id)arg1;
 - (void)attributeEditorDidMakeFirstSelection:(id)arg1;
 - (void)splashScreenViewControllerDidFinish:(id)arg1;
 - (void)finish:(id)arg1;
@@ -54,8 +57,12 @@
 - (id)visibleLayout;
 - (void)applyLayout:(id)arg1;
 - (void)prepareForAnimatedTransitionWithLayout:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (_Bool)isModalInPresentation;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (id)initWithAvatarRecord:(id)arg1 avtViewSessionProvider:(id)arg2 store:(id)arg3 enviroment:(id)arg4 isCreating:(_Bool)arg5;
+- (void)configurePPTMemoji;
+- (void)prepareForPresetsScrollTestOnCategory:(id)arg1 readyHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

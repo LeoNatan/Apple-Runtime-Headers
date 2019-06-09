@@ -9,7 +9,7 @@
 #import <PhotoLibraryServices/PLAlbumProtocol-Protocol.h>
 #import <PhotoLibraryServices/PLIndexMappingCache-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSString, NSURL, PLManagedAsset, UIImage;
+@class NSArray, NSDate, NSMutableOrderedSet, NSNumber, NSOrderedSet, NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
 @protocol NSObject><NSCopying, PLAlbumProtocol;
 
 @interface PLShuffledAlbum : NSObject <PLIndexMappingCache, PLAlbumProtocol>
@@ -24,11 +24,11 @@
 + (struct NSObject *)unshuffledAlbum:(struct NSObject *)arg1;
 + (struct NSObject *)shuffledAlbum:(struct NSObject *)arg1 startingAsset:(id)arg2;
 @property(retain, nonatomic) NSMutableOrderedSet *_assets; // @synthesize _assets;
+- (void).cxx_destruct;
 - (void)batchFetchAssets:(id)arg1;
 @property(readonly, copy, nonatomic) CDUnknownBlockType sortingComparator;
 @property(readonly, retain, nonatomic) NSURL *groupURL;
 @property(retain, nonatomic) NSString *importSessionID;
-@property(retain, nonatomic) NSDictionary *slideshowSettings;
 @property(readonly, nonatomic) _Bool shouldDeleteWhenEmpty;
 - (_Bool)canPerformEditOperation:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSArray *localizedLocationNames;
@@ -49,7 +49,7 @@
 @property(readonly, nonatomic) _Bool isPanoramasAlbum;
 @property(readonly, nonatomic) _Bool isCameraAlbum;
 @property(readonly, nonatomic) _Bool isLibrary;
-@property(readonly, retain, nonatomic) UIImage *posterImage;
+@property(readonly, retain, nonatomic) NSObject *posterImage;
 @property(retain, nonatomic) PLManagedAsset *tertiaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset;
@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) int kindValue;
 @property(readonly, retain, nonatomic) NSNumber *kind;
 @property(readonly, retain, nonatomic) NSString *uuid;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (void)dealloc;
 - (id)init;
 @property(readonly, retain, nonatomic) PLManagedAsset *startingAsset;

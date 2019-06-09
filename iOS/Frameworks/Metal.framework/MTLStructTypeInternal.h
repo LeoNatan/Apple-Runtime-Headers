@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 - (id)formattedDescription:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)memberByName:(id)arg1;
+- (void)setMembers:(id *)arg1 count:(unsigned long long)arg2;
+- (id)init;
 - (id)initWithMembers:(id *)arg1 count:(unsigned long long)arg2;
 
 @end

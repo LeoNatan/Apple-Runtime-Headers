@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 - (float)defaultPathWeight;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (_Bool)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
+- (float)variantAnnotationTextFontSize;
+- (struct CGPoint)variantAnnotationTextOffset;
 - (float)skinnyKeyThreshold;
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;

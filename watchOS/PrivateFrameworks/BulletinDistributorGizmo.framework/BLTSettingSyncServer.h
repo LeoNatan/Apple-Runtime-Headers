@@ -25,6 +25,9 @@
 @property(nonatomic) __weak id <BLTSettingSyncingClient> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1;
+- (void)handleSetRemoteGlobalSpokenSettingEnabledRequest:(id)arg1;
+- (void)handleSetNotificationsCriticalAlertRequest:(id)arg1;
+- (void)handleSetNotificationsSoundRequest:(id)arg1;
 - (void)handleSetNotificationsGroupingRequest:(id)arg1;
 - (void)handleSetNotificationsAlertLevelRequest:(id)arg1;
 - (void)handleSetSectionSubtypeParametersIconResponse:(id)arg1;
@@ -32,6 +35,9 @@
 - (void)handleSetSectionSubtypeParametersIconRequest:(id)arg1;
 - (void)handleSetSectionInfoResponse:(id)arg1;
 - (void)handleSetSectionInfoRequest:(id)arg1;
+- (void)sendRemoteGlobalSpokenSettingEnabled:(_Bool)arg1 date:(id)arg2;
+- (void)setNotificationsCriticalAlertEnabled:(int)arg1 sectionID:(id)arg2;
+- (void)setNotificationsSoundEnabled:(int)arg1 sectionID:(id)arg2;
 - (void)setNotificationsGrouping:(int)arg1 sectionID:(id)arg2 spoolToFile:(_Bool)arg3;
 - (void)setNotificationsGrouping:(int)arg1 sectionID:(id)arg2;
 - (void)setNotificationsLevel:(unsigned int)arg1 sectionID:(id)arg2 mirror:(_Bool)arg3 spoolToFile:(_Bool)arg4;

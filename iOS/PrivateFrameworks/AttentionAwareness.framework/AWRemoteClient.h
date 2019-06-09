@@ -8,7 +8,7 @@
 
 #import <AttentionAwareness/AWRemoteClient-Protocol.h>
 
-@class AWAttentionAwarenessConfiguration, AWAttentionEvent, AWScheduler, NSArray, NSString, NSXPCConnection;
+@class AWAttentionAwarenessClientState, AWAttentionAwarenessConfiguration, AWScheduler, NSArray, NSSet, NSString, NSXPCConnection;
 @protocol AWFrameworkClient, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -18,53 +18,51 @@ __attribute__((visibility("hidden")))
     AWScheduler *_scheduler;
     id <AWFrameworkClient> _proxy;
     NSXPCConnection *_connection;
-    unsigned long long _lastPositiveEventTime;
-    unsigned long long _lastPositiveNonSampledEventTime;
-    unsigned long long _pollingStartTime;
-    unsigned long long _pollingDeadline;
-    _Bool _sentPollInitialized;
-    _Bool _lastAttentionState;
-    AWAttentionEvent *_lastEvent;
     unsigned long long _tagIndex;
     unsigned long long _eventMask;
-    _Bool _samplingClient;
-    int _supportedEventsNotify;
+    unsigned long long _attentionLostEventMask;
+    _Bool _sampleWhileAbsent;
     AWAttentionAwarenessConfiguration *_lastConfig;
-    double _lastNegativeEventTimeoutValueSec;
     NSArray *_attentionLostTimeoutsSec;
+    NSSet *_allowedHIDEventsForRemoteEvent;
+    AWAttentionAwarenessClientState *_clientState;
     _Bool _invalid;
-    _Bool _unitTestSampling;
     NSString *_identifier;
     unsigned long long _samplingInterval;
     unsigned long long _samplingDelay;
 }
 
-@property(nonatomic) _Bool unitTestSampling; // @synthesize unitTestSampling=_unitTestSampling;
+@property(readonly, nonatomic) AWAttentionAwarenessClientState *clientState; // @synthesize clientState=_clientState;
 @property(nonatomic) _Bool invalid; // @synthesize invalid=_invalid;
 @property(readonly, nonatomic) unsigned long long samplingDelay; // @synthesize samplingDelay=_samplingDelay;
 @property(readonly, nonatomic) unsigned long long samplingInterval; // @synthesize samplingInterval=_samplingInterval;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)useUnitTestSampling:(_Bool)arg1;
-- (unsigned long long)nextTimerForTime:(unsigned long long)arg1 attentionSampler:(id)arg2;
-- (void)updateDeadlinesForTime:(unsigned long long)arg1 attentionSampler:(id)arg2;
-- (unsigned long long)nextSampleTimeForSampler:(id)arg1;
+- (void)pingWithReply:(CDUnknownBlockType)arg1;
+- (unsigned long long)nextTimerForTime:(unsigned long long)arg1;
+- (void)updateDeadlinesForTime:(unsigned long long)arg1;
+- (unsigned long long)nextSampleTime;
 - (unsigned long long)nextAttentionLostTime:(_Bool *)arg1;
 - (void)pollWithTimeout:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)resetAttentionLostTimer;
+- (void)resetAttentionLostTimerWithReply:(CDUnknownBlockType)arg1;
 - (void)_resetAttentionLostTimer;
 - (void)getLastEvent:(CDUnknownBlockType)arg1;
+- (_Bool)_interestedInHIDEvent:(struct __IOHIDEvent *)arg1 mask:(unsigned long long)arg2 metadata:(CDUnion_4b9e79fd *)arg3;
+- (void)notifyHIDEvent:(struct __IOHIDEvent *)arg1 mask:(unsigned long long)arg2 timestamp:(unsigned long long)arg3;
 - (void)notifyEvent:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
+- (void)notifyEvent:(unsigned long long)arg1 timestamp:(unsigned long long)arg2 metadata:(CDUnion_4b9e79fd *)arg3;
 - (void)updateEventTimesForMask:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
 - (void)deliverPollEventType:(unsigned long long)arg1 event:(id)arg2;
 - (void)deliverEvent:(id)arg1;
-- (void)setClientConfig:(id)arg1 shouldReset:(_Bool)arg2;
-- (void)_reevaluateConfig;
-- (void)_setClientConfig:(id)arg1 shouldReset:(_Bool)arg2;
+- (void)setClientConfig:(id)arg1 shouldReset:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)reevaluateConfig;
+- (_Bool)_setClientConfig:(id)arg1 shouldReset:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)_isSamplingClient;
+- (unsigned long long)_activeEventMask;
 - (void)invalidate;
 - (id)connection;
 - (id)description;
-- (id)initWithProxy:(id)arg1 connection:(id)arg2 clientConfig:(id)arg3 error:(id *)arg4;
+- (id)initWithProxy:(id)arg1 connection:(id)arg2 clientConfig:(id)arg3 clientState:(id)arg4 scheduler:(id)arg5 error:(id *)arg6;
 
 @end
 

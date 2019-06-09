@@ -4,14 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OfficeImport/WDRun.h>
-
-@class WDCharacterProperties;
+#import <OfficeImport/WDRunWithCharacterProperties.h>
 
 __attribute__((visibility("hidden")))
-@interface WDSpecialCharacter : WDRun
+@interface WDSpecialCharacter : WDRunWithCharacterProperties
 {
-    WDCharacterProperties *mProperties;
     int mType;
 }
 
@@ -20,9 +17,6 @@ __attribute__((visibility("hidden")))
 - (void)setCharacterType:(int)arg1;
 - (int)characterType;
 - (int)runType;
-- (void)clearProperties;
-- (id)properties;
-- (void)dealloc;
 
 @end
 

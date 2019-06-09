@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HealthKit/HKQuantitySample.h>
+#import <HealthKit/HKCumulativeQuantitySample.h>
 
 @class HKQuantity;
 
-@interface HKCumulativeQuantitySeriesSample : HKQuantitySample
+@interface HKCumulativeQuantitySeriesSample : HKCumulativeQuantitySample
 {
 }
 
-+ (_Bool)supportsSecureCoding;
-+ (_Bool)_isConcreteObjectClass;
-@property(copy, nonatomic, setter=_setSum:) HKQuantity *sum;
+@property(readonly, copy) HKQuantity *sum;
 
 @end
 

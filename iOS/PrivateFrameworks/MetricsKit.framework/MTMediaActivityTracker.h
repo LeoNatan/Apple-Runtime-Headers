@@ -20,6 +20,7 @@
     MTMediaTimeTracker *_timeTracker;
 }
 
++ (CDUnknownBlockType)playlistItemComparator;
 @property(retain, nonatomic) MTMediaTimeTracker *timeTracker; // @synthesize timeTracker=_timeTracker;
 @property(retain, nonatomic) NSMutableArray *eventData; // @synthesize eventData=_eventData;
 @property(retain, nonatomic) MTMediaActivity *seekActivity; // @synthesize seekActivity=_seekActivity;

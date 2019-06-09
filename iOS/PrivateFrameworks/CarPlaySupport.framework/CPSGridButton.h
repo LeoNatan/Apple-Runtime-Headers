@@ -23,6 +23,8 @@
 @property(retain, nonatomic) UIView *focusView; // @synthesize focusView=_focusView;
 @property(retain, nonatomic) CPSAbridgableLabel *customTitleLabel; // @synthesize customTitleLabel=_customTitleLabel;
 - (void).cxx_destruct;
+- (void)_updateLabelColor;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;

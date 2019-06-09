@@ -13,7 +13,6 @@
 {
     unsigned long long _draggingSourceOperationMaskForLocal;
     unsigned long long _draggingSourceOperationMaskForNonLocal;
-    long long _reserved;
     id _delegate;
     id _pathAux;
 }

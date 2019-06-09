@@ -42,13 +42,14 @@
 @property(getter=isCloudTracked) _Bool cloudTracked; // @synthesize cloudTracked=_cloudTracked;
 @property(getter=isLocallyTracked) _Bool locallyTracked; // @synthesize locallyTracked=_locallyTracked;
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) NSUUID *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelIdentifier; // @synthesize modelIdentifier=_modelIdentifier;
 - (void).cxx_destruct;
 - (_Bool)isBackingStorageEqual:(id)arg1;
 - (id)modelBackedObjects;
 - (id)backingStoreObjectsWithChangeType:(unsigned int)arg1 version:(int)arg2;
 - (id)modelObjectWithChangeType:(unsigned int)arg1 version:(int)arg2;
-@property(readonly, nonatomic) NSUUID *modelParentIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelParentIdentifier;
+@property(readonly) Class modelClass;
 - (void)__updateDeviceWithActions:(id)arg1;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;

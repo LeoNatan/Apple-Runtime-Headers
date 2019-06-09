@@ -16,18 +16,15 @@
     BOOL _hasNoOptInRequest;
     BOOL _hasSupportForIdsBasedNotifications;
     struct {
-        unsigned int transitMarketSupport:1;
-        unsigned int hasConstrainedProblemStatusSize:1;
-        unsigned int hasFeatureHandle:1;
-        unsigned int hasNoOptInRequest:1;
-        unsigned int hasSupportForIdsBasedNotifications:1;
-    } _has;
+        unsigned int has_transitMarketSupport:1;
+        unsigned int has_hasConstrainedProblemStatusSize:1;
+        unsigned int has_hasFeatureHandle:1;
+        unsigned int has_hasNoOptInRequest:1;
+        unsigned int has_hasSupportForIdsBasedNotifications:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL hasSupportForIdsBasedNotifications; // @synthesize hasSupportForIdsBasedNotifications=_hasSupportForIdsBasedNotifications;
-@property(nonatomic) BOOL hasFeatureHandle; // @synthesize hasFeatureHandle=_hasFeatureHandle;
-@property(nonatomic) BOOL hasNoOptInRequest; // @synthesize hasNoOptInRequest=_hasNoOptInRequest;
-@property(nonatomic) BOOL hasConstrainedProblemStatusSize; // @synthesize hasConstrainedProblemStatusSize=_hasConstrainedProblemStatusSize;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -35,16 +32,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsTransitMarketSupport:(id)arg1;
 - (id)transitMarketSupportAsString:(int)arg1;
 @property(nonatomic) BOOL hasTransitMarketSupport;
-@property(nonatomic) int transitMarketSupport; // @synthesize transitMarketSupport=_transitMarketSupport;
+@property(nonatomic) int transitMarketSupport;
 @property(nonatomic) BOOL hasHasSupportForIdsBasedNotifications;
+@property(nonatomic) BOOL hasSupportForIdsBasedNotifications;
 @property(nonatomic) BOOL hasHasFeatureHandle;
+@property(nonatomic) BOOL hasFeatureHandle;
 @property(nonatomic) BOOL hasHasNoOptInRequest;
+@property(nonatomic) BOOL hasNoOptInRequest;
 @property(nonatomic) BOOL hasHasConstrainedProblemStatusSize;
+@property(nonatomic) BOOL hasConstrainedProblemStatusSize;
 
 @end
 

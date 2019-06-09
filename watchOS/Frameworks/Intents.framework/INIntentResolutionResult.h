@@ -9,28 +9,25 @@
 #import <Intents/INIntentResolutionResultDataProviding-Protocol.h>
 #import <Intents/INIntentResolutionResultExport-Protocol.h>
 
-@class NSArray, NSString;
+@class INIntent, NSArray, NSString;
 
 @interface INIntentResolutionResult : NSObject <INIntentResolutionResultExport, INIntentResolutionResultDataProviding>
 {
     int _resolutionResultCode;
     NSArray *_disambiguationItems;
     NSArray *_alternatives;
-    NSString *_conflictingParameterKeyPath;
-    NSArray *_incompleteParameterKeyPaths;
-    NSArray *_neededParameterKeyPaths;
     id _resolvedValue;
-    id _incompleteValue;
     id _itemToConfirm;
     unsigned int _unsupportedReason;
+    unsigned int _confirmationReason;
+    INIntent *_intentToExecute;
 }
 
-+ (id)unsupportedWithReason:(unsigned int)arg1;
++ (id)_resolutionResultWithData:(id)arg1 slotDescription:(id)arg2;
 + (id)_dataForResolutionMethodUnimplemented;
++ (id)requiresExecutionOfIntent:(id)arg1;
 + (id)resolutionResultNotRequired;
-+ (id)resolutionResultNeedsValueForParameters:(id)arg1;
 + (id)resolutionResultNeedsValue;
-+ (id)resolutionResultUnsupportedDueToConflictWithParameter:(id)arg1 alternateItems:(id)arg2;
 + (id)resolutionResultUnsupportedWithReason:(unsigned int)arg1 alternativeItems:(id)arg2;
 + (id)resolutionResultUnsupportedWithReason:(unsigned int)arg1;
 + (id)resolutionResultConfirmationRequiredWithItemToConfirm:(id)arg1;
@@ -39,13 +36,13 @@
 + (id)unsupported;
 + (id)notRequired;
 + (id)needsValue;
++ (id)confirmationRequiredWithItemToConfirm:(id)arg1 forReason:(int)arg2;
++ (id)unsupportedWithReason:(int)arg1;
+@property(retain, nonatomic) INIntent *intentToExecute; // @synthesize intentToExecute=_intentToExecute;
+@property(nonatomic) unsigned int confirmationReason; // @synthesize confirmationReason=_confirmationReason;
 @property(nonatomic) unsigned int unsupportedReason; // @synthesize unsupportedReason=_unsupportedReason;
 @property(retain, nonatomic) id itemToConfirm; // @synthesize itemToConfirm=_itemToConfirm;
-@property(retain, nonatomic) id incompleteValue; // @synthesize incompleteValue=_incompleteValue;
 @property(retain, nonatomic) id resolvedValue; // @synthesize resolvedValue=_resolvedValue;
-@property(retain, nonatomic) NSArray *neededParameterKeyPaths; // @synthesize neededParameterKeyPaths=_neededParameterKeyPaths;
-@property(retain, nonatomic) NSArray *incompleteParameterKeyPaths; // @synthesize incompleteParameterKeyPaths=_incompleteParameterKeyPaths;
-@property(retain, nonatomic) NSString *conflictingParameterKeyPath; // @synthesize conflictingParameterKeyPath=_conflictingParameterKeyPath;
 @property(retain, nonatomic) NSArray *alternatives; // @synthesize alternatives=_alternatives;
 @property(retain, nonatomic) NSArray *disambiguationItems; // @synthesize disambiguationItems=_disambiguationItems;
 @property(nonatomic) int resolutionResultCode; // @synthesize resolutionResultCode=_resolutionResultCode;
@@ -54,12 +51,14 @@
 - (id)_stringForResultCode:(int)arg1;
 - (id)descriptionAtIndent:(unsigned int)arg1;
 @property(readonly, copy) NSString *description;
+- (id)_JSONDictionaryRepresentationForIntent:(id)arg1 parameterName:(id)arg2;
 - (id)_initWithIntentSlotResolutionResult:(id)arg1 slotDescription:(id)arg2;
 - (id)_initWithResolutionResult:(id)arg1;
 - (id)_vocabularyValueForObject:(id)arg1 slotDescription:(id)arg2;
 - (id)_intentSlotValueForObject:(id)arg1 slotDescription:(id)arg2;
 - (id)_buildIntentSlotResolutionResultWithIntentSlotDescription:(id)arg1;
 - (id)_dataForIntentSlotDescription:(id)arg1;
+- (void)transformResolutionResultForIntent:(id)arg1 intentSlotDescription:(id)arg2 withOptionsProvider:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)resolutionResultDataForIntent:(id)arg1 intentSlotDescription:(id)arg2 error:(id *)arg3;
 - (id)_initWithResultCode:(int)arg1;
 - (id)_objectForIntentSlotValue:(id)arg1 slotDescription:(id)arg2;

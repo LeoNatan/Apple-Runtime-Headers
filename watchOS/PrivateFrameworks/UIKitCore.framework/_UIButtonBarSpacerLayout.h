@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)description;
 - (void)_addConstraintsToActivate:(id)arg1 toDeactivate:(id)arg2;
+- (_Bool)suppressSpacing;
 - (void)_addLayoutViews:(id)arg1;
 - (void)_configure;
 - (id)_item;

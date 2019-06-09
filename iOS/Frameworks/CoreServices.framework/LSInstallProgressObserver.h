@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)installationFailedForApplication:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)installationEndedForApplication:(id)arg1 withState:(unsigned long long)arg2;
 - (void)sendNotification:(int)arg1 forApplications:(id)arg2 withPlugins:(_Bool)arg3;
-- (void)createInstallProgressForApplication:(id)arg1 withPhase:(unsigned long long)arg2 andPublishingString:(id)arg3;
+- (void)createInstallProgressForApplication:(id)arg1 withPhase:(unsigned long long)arg2 andPublishingString:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)_lsPing:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)removeObserver;
 - (void)addObserver;

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (id)addNumber:(id)arg1;
 - (id)addString:(id)arg1;
 - (id)addData:(id)arg1;
+- (id)addData:(void *)arg1 withLength:(unsigned long long)arg2;
 - (id)getHash;
 - (id)init;
 

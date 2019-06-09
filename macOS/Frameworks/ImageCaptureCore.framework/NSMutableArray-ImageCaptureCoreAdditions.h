@@ -9,5 +9,6 @@
 @interface NSMutableArray (ImageCaptureCoreAdditions)
 - (void)addItemsMatchingTypes:(id)arg1 fromFolder:(id)arg2;
 - (void)addItemsMatchingType:(id)arg1 fromFolder:(id)arg2;
+- (void)addTruth:(BOOL)arg1 code:(long long)arg2;
 @end
 

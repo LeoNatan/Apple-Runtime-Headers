@@ -57,7 +57,7 @@
 - (void).cxx_destruct;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (id)initTextCellWithDate:(id)arg1 calendar:(id)arg2 isActive:(BOOL)arg3 font:(id)arg4 textColor:(id)arg5 alignment:(unsigned long long)arg6;
+- (id)initTextCellWithDate:(id)arg1 calendar:(id)arg2 isActive:(BOOL)arg3 font:(id)arg4 textColor:(id)arg5 alignment:(long long)arg6;
 
 @end
 

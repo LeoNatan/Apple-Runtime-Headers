@@ -15,6 +15,7 @@
     unsigned long long _timeDeltaFromReference;
     unsigned long long _timestamp;
     unsigned int _cardValidationStatus;
+    unsigned int _sPID;
     unsigned int _sessionStatus;
     unsigned int _spStatusCode;
     unsigned int _state;
@@ -24,6 +25,7 @@
         unsigned int timeDeltaFromReference:1;
         unsigned int timestamp:1;
         unsigned int cardValidationStatus:1;
+        unsigned int sPID:1;
         unsigned int sessionStatus:1;
         unsigned int spStatusCode:1;
         unsigned int state:1;
@@ -31,6 +33,7 @@
     } _has;
 }
 
+@property(nonatomic) unsigned int sPID; // @synthesize sPID=_sPID;
 @property(nonatomic) unsigned int sessionStatus; // @synthesize sessionStatus=_sessionStatus;
 @property(nonatomic) unsigned int cardValidationStatus; // @synthesize cardValidationStatus=_cardValidationStatus;
 @property(nonatomic) unsigned int spStatusCode; // @synthesize spStatusCode=_spStatusCode;
@@ -48,6 +51,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasSPID;
 @property(nonatomic) BOOL hasSessionStatus;
 @property(nonatomic) BOOL hasCardValidationStatus;
 @property(nonatomic) BOOL hasSpStatusCode;

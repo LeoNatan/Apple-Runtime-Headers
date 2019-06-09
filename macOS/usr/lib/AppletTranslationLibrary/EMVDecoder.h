@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <AppletTranslationLibrary/ATLDecoder-Protocol.h>
+
 __attribute__((visibility("hidden")))
-@interface EMVDecoder : NSObject
+@interface EMVDecoder : NSObject <ATLDecoder>
 {
 }
 
-+ (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;
 + (_Bool)isEMVLegacy:(id)arg1;
 + (_Bool)isXenon:(id)arg1;
 + (_Bool)isNeon:(id)arg1;
@@ -21,8 +22,10 @@ __attribute__((visibility("hidden")))
 + (id)DecodeEndE1TLV:(const CDStruct_b9c9288f *)arg1 withModule:(id)arg2 withLegacy:(_Bool)arg3 withType:(unsigned short *)arg4 error:(id *)arg5;
 + (id)parseEndEvent:(id)arg1 withApplet:(id)arg2 withModule:(id)arg3 withLegacy:(_Bool)arg4 error:(id *)arg5;
 + (id)parseStartEvent:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
-+ (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
-+ (id)parseHCIEvent:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withTransceiver:(id)arg5 withError:(id *)arg6;
+- (id)processEndOfTransaction:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
+- (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;
+- (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
+- (id)parseHCIEvent:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withTransceiver:(id)arg5 withError:(id *)arg6;
 
 @end
 

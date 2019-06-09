@@ -53,6 +53,10 @@ struct HistoryURLCompletionItem;
 
 struct KeyValuePair<OpaqueFormAutoFillFrame *, std::__1::unique_ptr<SafariShared::FrameMetadata, std::__1::default_delete<SafariShared::FrameMetadata>>>;
 
+struct NSMapTable {
+    Class _field1;
+};
+
 struct NSMutableArray {
     Class _field1;
 };
@@ -156,6 +160,10 @@ struct duration<long long, std::__1::ratio<1, 1000000000>> {
 
 struct duration<long long, std::__1::ratio<1, 1000>> {
     long long __rep_;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000>>> {
@@ -293,6 +301,10 @@ typedef struct {
     unsigned long long *_field3;
     unsigned long long _field4[5];
 } CDStruct_70511ce9;
+
+typedef struct {
+    unsigned int val[8];
+} CDStruct_4c969caf;
 
 typedef struct {
     int webProcessID;

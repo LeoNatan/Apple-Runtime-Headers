@@ -19,7 +19,7 @@
 @property(retain, nonatomic) NSMutableSet *requests; // @synthesize requests=_requests;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *privacyManagerQueue; // @synthesize privacyManagerQueue=_privacyManagerQueue;
 - (void).cxx_destruct;
-- (void)_resetPrivacySettingsForAppContainerTuple:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_resetPrivacySettingsForAppContainerAccountTuple:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetPrivacySettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_init;
 - (id)init;

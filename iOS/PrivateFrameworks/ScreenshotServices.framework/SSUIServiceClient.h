@@ -14,7 +14,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)sendRequest:(id)arg1;
+- (void)sendRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end

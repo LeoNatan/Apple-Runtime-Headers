@@ -19,6 +19,7 @@
 + (id)knownRelationshipSingleValueKeys;
 - (id)_generateNewUniqueID;
 - (void)_willCommit;
+- (_Bool)_validateDeletable:(id *)arg1;
 - (void)_updateModifiedAlarmByAcknowledging;
 - (void)updateWithAppLink:(id)arg1 usedSelectedText:(_Bool *)arg2;
 - (void)_deletePersistentItemAndDetachedItems:(id)arg1 forCommittingItem:(id)arg2;
@@ -79,6 +80,7 @@
 - (id)sharedItemCreatedByDisplayName;
 - (void)setOrganizer:(id)arg1;
 - (id)organizer;
+- (id)attendeeMatchingEmailAddress:(id)arg1;
 - (id)participantMatchingContact:(id)arg1;
 - (int)selfParticipantStatus;
 - (int)selfParticipantStatusRaw;
@@ -91,6 +93,7 @@
 - (void)addAttendee:(id)arg1;
 - (void)setAttendees:(id)arg1;
 - (id)filterAttendeesPendingDeletion:(id)arg1;
+- (id)attendeesRaw;
 @property(readonly, nonatomic) NSArray *attendees;
 - (void)_updateHasAttendeesIfNeeded;
 - (_Bool)_hadAttendees;
@@ -141,6 +144,8 @@
 - (id)externalData;
 - (void)setExternalModificationTag:(id)arg1;
 - (id)externalModificationTag;
+- (void)setExternalScheduleID:(id)arg1;
+- (id)externalScheduleID;
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
 - (void)setDefaultAlarmWasDeleted:(_Bool)arg1;
@@ -155,6 +160,9 @@
 - (id)startTimeZoneName;
 @property(copy, nonatomic) NSTimeZone *timeZone;
 @property(retain, nonatomic) EKCalendar *calendar;
+- (void)_updateDefaultAlarms;
+- (void)_addDefaultAlarms;
+- (void)_removeDefaultAlarms;
 @property(copy, nonatomic) NSURL *URL;
 - (void)setAppLink:(id)arg1;
 - (id)appLink;

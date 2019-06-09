@@ -16,13 +16,10 @@
     id <CRSCardServing> _cardService;
 }
 
-+ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (unsigned long long)servicePriorityForRequest:(id)arg1;
 - (_Bool)canSatisfyCardRequest:(id)arg1;
 - (void)requestCard:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
 - (void)_initializeCardServiceWithClass:(Class)arg1;
 - (id)underlyingService;
 

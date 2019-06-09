@@ -22,6 +22,7 @@
 + (void)_postParticipantScreenAttributesChangeNotification:(id)arg1 cameraChanged:(_Bool)arg2 orientationChanged:(_Bool)arg3 aspectChanged:(_Bool)arg4 cameraWillSwitch:(_Bool)arg5 camera:(unsigned int)arg6 orentation:(unsigned int)arg7 aspect:(struct CGSize)arg8;
 + (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(_Bool)arg2 orientationChanged:(_Bool)arg3 aspectChanged:(_Bool)arg4 contentRectChanged:(_Bool)arg5 cameraWillSwitch:(_Bool)arg6 camera:(unsigned int)arg7 orentation:(unsigned int)arg8 aspect:(struct CGSize)arg9 contentRect:(struct CGRect)arg10;
 + (_Bool)_useMultipleAVConference;
+- (void).cxx_destruct;
 - (void)updateAVChat:(id)arg1 withCallMetadata:(id)arg2 isFinalUpdate:(_Bool)arg3;
 - (_Bool)_submitEndCallMetric:(id)arg1 forCallID:(int)arg2;
 - (_Bool)_submitLoggingInformation:(id)arg1 forChat:(id)arg2;

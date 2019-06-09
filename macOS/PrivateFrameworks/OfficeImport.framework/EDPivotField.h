@@ -8,6 +8,7 @@
 
 @class EDCollection;
 
+__attribute__((visibility("hidden")))
 @interface EDPivotField : NSObject
 {
     int mAxis;

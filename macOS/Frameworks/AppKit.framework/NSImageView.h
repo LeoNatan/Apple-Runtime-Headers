@@ -62,7 +62,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)shouldBeTreatedAsInkEvent:(id)arg1;
-- (BOOL)_shouldTrackWithNonEditableCell;
+- (BOOL)_shouldTrackMouseWithEvent:(id)arg1;
 @property BOOL animates;
 - (BOOL)isOpaque;
 - (SEL)action;

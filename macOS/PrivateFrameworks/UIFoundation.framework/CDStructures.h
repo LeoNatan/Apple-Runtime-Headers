@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSFont, NSMutableParagraphStyle, NSString;
+@class NSFont, NSMapTable, NSMutableParagraphStyle, NSString, NSTextContainer, NSTextRange;
 
 #pragma mark Function Pointers and Blocks
 
@@ -58,8 +58,15 @@ struct CGSize {
 };
 
 struct CGVector {
-    double _field1;
-    double _field2;
+    double dx;
+    double dy;
+};
+
+struct NSDirectionalEdgeInsets {
+    double top;
+    double leading;
+    double bottom;
+    double trailing;
 };
 
 struct NSEdgeInsets {
@@ -197,6 +204,15 @@ struct _NSLayoutTree {
     double offsetPerLineEstimate;
 };
 
+struct _NSOrderedRangeIndexerImpl;
+
+struct _NSOrthogonalScrollingContentInsets {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
 struct _NSRTFPriv {
     void *reader;
     char *rtfInput;
@@ -231,6 +247,8 @@ struct _NSRTFPriv {
     int groupState;
 };
 
+struct _NSRTreeContainerNode;
+
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
@@ -254,6 +272,8 @@ struct _NSStoredContainerUsage {
     struct _NSRange _field5;
 };
 
+struct __shared_weak_count;
+
 struct _xmlNode {
     void *_field1;
     int _field2;
@@ -275,7 +295,23 @@ struct _xmlNode {
 
 struct _xmlNs;
 
+struct shared_ptr<_NSOrderedRangeIndexerImpl> {
+    struct _NSOrderedRangeIndexerImpl *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<_NSRTreeContainerNode> {
+    struct _NSRTreeContainerNode *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    id _field1;
+    id _field2;
+    id _field3;
+} CDStruct_0f015c83;
 
 typedef struct {
     unsigned long long _field1;
@@ -293,6 +329,17 @@ typedef struct {
     long long location;
     long long length;
 } CDStruct_627e0f85;
+
+typedef struct {
+    NSTextContainer *textContainer;
+    NSTextRange *textRange;
+    NSMapTable *layoutFragmentTable;
+    struct CGRect usageBounds;
+    id *layoutFragments;
+    id *layoutFragmentsHint;
+    unsigned long long layoutFragmentsCount;
+    unsigned long long layoutFragmentsSize;
+} CDStruct_80f920e0;
 
 typedef struct {
     id _field1;

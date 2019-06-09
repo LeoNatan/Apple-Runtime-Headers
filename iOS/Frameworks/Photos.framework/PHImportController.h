@@ -8,39 +8,40 @@
 
 #import <Photos/ICDeviceBrowserDelegate-Protocol.h>
 
-@class ICDeviceBrowser, NSMutableDictionary, NSString, NSXPCConnection, PFDispatchQueue;
-@protocol OS_os_log, PHImportDelegate;
+@class ICDeviceBrowser, NSHashTable, NSMutableDictionary, NSString;
 
 @interface PHImportController : NSObject <ICDeviceBrowserDelegate>
 {
     struct os_unfair_lock_s _sourceListLock;
-    PFDispatchQueue *_queue;
-    NSObject<OS_os_log> *_log;
-    NSXPCConnection *_connection;
+    struct os_unfair_lock_s _importInProgressLock;
+    _Bool _importInProgress;
     ICDeviceBrowser *_deviceBrowser;
-    NSMutableDictionary *_importSourcesByDevice;
-    id <PHImportDelegate> _delegate;
+    NSMutableDictionary *_importDeviceSources;
+    NSHashTable *_importSourceObservers;
+    id _processInfoActivityToken;
 }
 
++ (id)importSourceForUrls:(id)arg1;
 + (id)sharedInstance;
-@property(nonatomic) struct os_unfair_lock_s sourceListLock; // @synthesize sourceListLock=_sourceListLock;
-@property(nonatomic) __weak id <PHImportDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) NSMutableDictionary *importSourcesByDevice; // @synthesize importSourcesByDevice=_importSourcesByDevice;
+@property(retain, nonatomic) id processInfoActivityToken; // @synthesize processInfoActivityToken=_processInfoActivityToken;
+@property(nonatomic) _Bool importInProgress; // @synthesize importInProgress=_importInProgress;
+@property(retain, nonatomic) NSHashTable *importSourceObservers; // @synthesize importSourceObservers=_importSourceObservers;
+@property(retain, nonatomic) NSMutableDictionary *importDeviceSources; // @synthesize importDeviceSources=_importDeviceSources;
 @property(retain, nonatomic) ICDeviceBrowser *deviceBrowser; // @synthesize deviceBrowser=_deviceBrowser;
-@property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-@property(readonly) PFDispatchQueue *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
 - (void)deviceBrowser:(id)arg1 didRemoveDevice:(id)arg2 moreGoing:(_Bool)arg3;
 - (void)deviceBrowser:(id)arg1 didAddDevice:(id)arg2 moreComing:(_Bool)arg3;
-- (id)filterDuplicates:(id)arg1 onSource:(id)arg2 options:(id)arg3 library:(id)arg4;
 - (id)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibrary:(id)arg3 withOptions:(id)arg4 delegate:(id)arg5 performanceDelegate:(id)arg6 atEnd:(CDUnknownBlockType)arg7;
-- (id)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibrary:(id)arg3 withOptions:(id)arg4 delegate:(id)arg5 atEnd:(CDUnknownBlockType)arg6;
+- (id)importAssets:(id)arg1 fromImportSource:(id)arg2 withOptions:(id)arg3 delegate:(id)arg4 atEnd:(CDUnknownBlockType)arg5;
 - (id)importUrls:(id)arg1 intoLibrary:(id)arg2 withOptions:(id)arg3 delegate:(id)arg4 performanceDelegate:(id)arg5 atEnd:(CDUnknownBlockType)arg6;
-- (id)importUrls:(id)arg1 intoLibrary:(id)arg2 withOptions:(id)arg3 delegate:(id)arg4 atEnd:(CDUnknownBlockType)arg5;
-- (id)importSourceForUrls:(id)arg1;
-- (_Bool)sourceIsConnected:(id)arg1;
+- (void)importEnding;
+- (void)importStarting;
+- (id)filterDuplicates:(id)arg1 onSource:(id)arg2 library:(id)arg3 options:(id)arg4 delegate:(id)arg5;
 - (void)accessSourceList:(CDUnknownBlockType)arg1;
+- (id)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibraryAtURL:(id)arg3 withOptions:(id)arg4 delegate:(id)arg5 performanceDelegate:(id)arg6 atEnd:(CDUnknownBlockType)arg7;
+- (id)importUrls:(id)arg1 withOptions:(id)arg2 delegate:(id)arg3 atEnd:(CDUnknownBlockType)arg4;
+- (_Bool)sourceIsConnected:(id)arg1;
+- (void)addImportSourceObserver:(id)arg1;
 - (id)init;
 
 // Remaining properties

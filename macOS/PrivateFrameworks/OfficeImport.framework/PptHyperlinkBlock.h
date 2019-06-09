@@ -8,6 +8,7 @@
 
 @class ESDContainer, ESDObject;
 
+__attribute__((visibility("hidden")))
 @interface PptHyperlinkBlock : NSObject
 {
     ESDContainer *mInteractiveInfoContainerHolder;

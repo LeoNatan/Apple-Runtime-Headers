@@ -11,8 +11,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)immutablePlaceholder;
-+ (void)initialize;
 - (id)nextDaylightSavingTimeTransitionAfterDate:(id)arg1;
 - (double)daylightSavingTimeOffsetForDate:(id)arg1;
 - (_Bool)isDaylightSavingTimeForDate:(id)arg1;

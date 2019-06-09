@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     _Bool mLoaded;
 }
 
+- (void).cxx_destruct;
 - (_Bool)load;
 - (void)setLoaded:(_Bool)arg1;
 - (_Bool)isLoaded;
 - (id)delayedContext;
 - (void)setDelayedContext:(id)arg1;
-- (void)dealloc;
 
 @end
 

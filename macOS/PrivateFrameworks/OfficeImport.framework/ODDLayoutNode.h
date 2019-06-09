@@ -8,6 +8,7 @@
 
 @class ODDLayoutVariablePropertySet;
 
+__attribute__((visibility("hidden")))
 @interface ODDLayoutNode : ODDLayoutObjectList
 {
     ODDLayoutVariablePropertySet *mVariableList;

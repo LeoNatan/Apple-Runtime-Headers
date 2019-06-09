@@ -10,7 +10,6 @@
 
 @class NSError, NSString;
 
-__attribute__((visibility("hidden")))
 @interface myDeli2 : NSObject <NSURLSessionTaskDelegate>
 {
     NSError *_errorResult;

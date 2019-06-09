@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)globeButtonPressed:(id)arg1 withEvent:(id)arg2 location:(struct CGPoint)arg3;
 - (void)globeButtonPressed:(id)arg1 withEvent:(id)arg2;
 - (void)updateLanguageLabel;
-- (void)keyboardButtonPressed;
+- (void)keyboardButtonPressed:(id)arg1;
 - (id)darkGrayColor;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

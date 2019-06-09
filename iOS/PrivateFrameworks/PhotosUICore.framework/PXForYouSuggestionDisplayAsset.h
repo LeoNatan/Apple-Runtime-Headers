@@ -26,8 +26,8 @@
 @property(readonly, nonatomic) NSString *adjustedContentIdentifier; // @synthesize adjustedContentIdentifier=_adjustedContentIdentifier;
 @property(readonly, nonatomic) PHAsset *photoKitAsset; // @synthesize photoKitAsset=_photoKitAsset;
 - (void).cxx_destruct;
-- (id)_computedPortraitEffectSettingsForEditModel:(id)arg1 editSource:(id)arg2;
-- (id)applyAdjustmentsToEditModel:(id)arg1 editSource:(id)arg2 renderer:(id)arg3;
+- (id)_computedPortraitEffectSettingsForCompositionController:(id)arg1;
+- (id)applyAdjustmentsToCompositionController:(id)arg1 renderer:(id)arg2;
 @property(readonly, nonatomic) _Bool wantsAdjustments;
 @property(readonly, nonatomic) _Bool isAnimatedImage;
 @property(readonly, nonatomic) _Bool canPlayPhotoIris;
@@ -43,24 +43,33 @@
 - (_Bool)isEqualToSuggestionDisplayAsset:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, nonatomic) _Bool representsBurst;
+@property(readonly, nonatomic) Class defaultImageProviderClass;
+@property(readonly, nonatomic) unsigned long long thumbnailIndex;
+@property(readonly, nonatomic) unsigned long long pixelHeight;
+@property(readonly, nonatomic) unsigned long long pixelWidth;
+@property(readonly, nonatomic) _Bool isEligibleForAutoPlayback;
 @property(readonly, nonatomic) _Bool isInCloud;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) long long mediaType;
-@property(readonly, nonatomic) NSString *uniformTypeIdentifier;
 @property(readonly, nonatomic) _Bool isApplied;
 - (id)inverseSuggestionAsset;
 - (id)initWithSuggestion:(id)arg1 keyAsset:(id)arg2 shouldRevert:(_Bool)arg3;
 - (id)initWithSuggestion:(id)arg1 keyAsset:(id)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) unsigned long long burstSelectionTypes;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) float hdrGain;
+@property(readonly, nonatomic) NSDate *importDate;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) unsigned long long thumbnailVersion;
+@property(readonly, nonatomic) NSString *uuid;
 
 @end
 

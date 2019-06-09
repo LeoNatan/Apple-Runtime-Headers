@@ -21,7 +21,6 @@
 }
 
 + (id)participantForSortingWithEKParticipant:(id)arg1;
-+ (id)contactStore;
 @property(nonatomic) _Bool isPhone; // @synthesize isPhone=_isPhone;
 @property(nonatomic) _Bool isEmail; // @synthesize isEmail=_isEmail;
 @property(copy, nonatomic) NSString *cachedDisplayName; // @synthesize cachedDisplayName=_cachedDisplayName;
@@ -30,6 +29,9 @@
 @property(nonatomic) __weak EKParticipant *participant; // @synthesize participant=_participant;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (long long)compareByContactNames:(id)arg1;
+- (long long)compareByEmailThenByContactName:(id)arg1;
+- (_Bool)participantIsOptional:(id)arg1;
 - (long long)compare:(id)arg1;
 - (id)displayName;
 - (id)description;

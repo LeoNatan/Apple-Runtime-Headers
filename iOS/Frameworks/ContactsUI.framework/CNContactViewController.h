@@ -8,12 +8,11 @@
 
 #import <ContactsUI/CNContactViewHostProtocol-Protocol.h>
 
-@class CNContact, CNContactContentViewController, CNContactFormatter, CNContactStore, CNContainer, CNGroup, CNPolicy, NSArray, NSString, UIView, _UIAccessDeniedView;
+@class CNContact, CNContactContentViewController, CNContactFormatter, CNContactRecentsReference, CNContactStore, CNContainer, CNGroup, CNPolicy, NSArray, NSString, UIView, _UIAccessDeniedView;
 @protocol CNContactContentViewController, CNContactViewControllerDelegate, CNContactViewControllerPPTDelegate, CNContactViewControllerPrivateDelegate;
 
 @interface CNContactViewController : UIViewController <CNContactViewHostProtocol>
 {
-    void *_addressBook;
     long long _mode;
     _Bool _ignoreViewWillBePresented;
     _Bool _shouldShowLinkedContacts;
@@ -22,6 +21,7 @@
     _Bool _showingMeContact;
     _Bool _allowsDisplayModePickerActions;
     _Bool _allowsEditPhoto;
+    _Bool _ignoresParentalRestrictions;
     CNContact *_contact;
     NSArray *_displayedPropertyKeys;
     id <CNContactViewControllerDelegate> _delegate;
@@ -45,7 +45,9 @@
     long long _editMode;
     long long _actions;
     CNContactFormatter *_contactFormatter;
+    CNContactRecentsReference *_recentsData;
     NSString *_primaryPropertyKey;
+    NSString *_importantMessage;
     UIView *_contactHeaderView;
     UIViewController *_contactHeaderViewController;
 }
@@ -57,9 +59,12 @@
 + (id)descriptorForRequiredKeys;
 @property(retain, nonatomic) UIViewController *contactHeaderViewController; // @synthesize contactHeaderViewController=_contactHeaderViewController;
 @property(retain, nonatomic) UIView *contactHeaderView; // @synthesize contactHeaderView=_contactHeaderView;
+@property(copy, nonatomic) NSString *importantMessage; // @synthesize importantMessage=_importantMessage;
+@property(nonatomic) _Bool ignoresParentalRestrictions; // @synthesize ignoresParentalRestrictions=_ignoresParentalRestrictions;
 @property(nonatomic) _Bool allowsEditPhoto; // @synthesize allowsEditPhoto=_allowsEditPhoto;
 @property(nonatomic) _Bool allowsDisplayModePickerActions; // @synthesize allowsDisplayModePickerActions=_allowsDisplayModePickerActions;
 @property(retain, nonatomic) NSString *primaryPropertyKey; // @synthesize primaryPropertyKey=_primaryPropertyKey;
+@property(retain, nonatomic) CNContactRecentsReference *recentsData; // @synthesize recentsData=_recentsData;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(nonatomic) long long actions; // @synthesize actions=_actions;
 @property(nonatomic) long long editMode; // @synthesize editMode=_editMode;
@@ -89,6 +94,7 @@
 @property(copy, nonatomic) NSArray *displayedPropertyKeys; // @synthesize displayedPropertyKeys=_displayedPropertyKeys;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 - (void).cxx_destruct;
+- (void)didExecuteClearRecentsDataAction;
 - (void)viewDidAppear;
 - (void)didChangePreferredContentSize:(struct CGSize)arg1;
 - (void)isPresentingEditingController:(_Bool)arg1;

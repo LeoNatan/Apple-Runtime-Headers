@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDURLRequest.h>
 
-@class NSData, NSString;
+@class NSArray, NSData, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKDCodeFunctionInvokeURLRequest : CKDURLRequest
@@ -15,8 +15,12 @@ __attribute__((visibility("hidden")))
     NSString *_serviceName;
     NSString *_functionName;
     NSData *_serializedParameters;
+    NSData *_attestationEntropy;
+    NSArray *_pccWrappedInvocationKeys;
 }
 
+@property(copy, nonatomic) NSArray *pccWrappedInvocationKeys; // @synthesize pccWrappedInvocationKeys=_pccWrappedInvocationKeys;
+@property(retain, nonatomic) NSData *attestationEntropy; // @synthesize attestationEntropy=_attestationEntropy;
 @property(retain, nonatomic) NSData *serializedParameters; // @synthesize serializedParameters=_serializedParameters;
 @property(copy, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
@@ -29,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (id)requestOperationClasses;
 - (int)operationType;
 - (BOOL)allowsAnonymousAccount;
-- (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3;
+- (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3 attestationEntropy:(id)arg4 pccWrappedInvocationKeys:(id)arg5;
 
 @end
 

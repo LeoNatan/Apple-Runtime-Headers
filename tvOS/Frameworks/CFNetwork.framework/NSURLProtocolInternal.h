@@ -6,20 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSCachedURLResponse, NSLock, NSURLRequest;
+@class NSCachedURLResponse, NSURLRequest;
 @protocol NSURLProtocolClient;
 
-__attribute__((visibility("hidden")))
 @interface NSURLProtocolInternal : NSObject
 {
     id <NSURLProtocolClient> client;
     NSURLRequest *request;
     NSCachedURLResponse *cachedResponse;
-    NSLock *mutex;
 }
 
 - (void)dealloc;
-- (id)init;
 
 @end
 

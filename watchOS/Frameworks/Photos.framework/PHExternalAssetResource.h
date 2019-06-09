@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Photos/PHAssetResource.h>
+#import <objc/NSObject.h>
 
 #import <Photos/PHCPLAssetResource-Protocol.h>
 
-@class NSData, PHAssetResourceCreationOptions;
+@class NSData, NSString, NSURL, PHAssetResourceCreationOptions;
 
-@interface PHExternalAssetResource : PHAssetResource <PHCPLAssetResource>
+@interface PHExternalAssetResource : NSObject <PHCPLAssetResource>
 {
     _Bool _duplicateAllowsReadAccess;
     _Bool _isLibraryAssetResource;
@@ -18,20 +18,27 @@
     PHAssetResourceCreationOptions *_creationOptions;
     unsigned int _cplResourceType;
     NSData *_data;
+    NSURL *_fileURL;
+    long long _pixelWidth;
+    long long _pixelHeight;
 }
 
 + (id)assetResourceForDuplicatingAssetResource:(id)arg1 asData:(_Bool)arg2 error:(id *)arg3;
 + (unsigned int)probableCPLResourceTypeFromAssetResourceType:(int)arg1;
+@property(nonatomic) long long pixelHeight; // @synthesize pixelHeight=_pixelHeight;
+@property(nonatomic) long long pixelWidth; // @synthesize pixelWidth=_pixelWidth;
+@property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(readonly, nonatomic) _Bool isLibraryAssetResource; // @synthesize isLibraryAssetResource=_isLibraryAssetResource;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
 @property(readonly, nonatomic) unsigned int cplResourceType; // @synthesize cplResourceType=_cplResourceType;
 @property(copy, nonatomic) PHAssetResourceCreationOptions *creationOptions; // @synthesize creationOptions=_creationOptions;
-- (int)type;
+@property(readonly, nonatomic) int type; // @synthesize type=_resourceType;
 - (void).cxx_destruct;
-- (id)uniformTypeIdentifier;
-- (id)originalFilename;
+@property(readonly, nonatomic) NSString *uniformTypeIdentifier;
+@property(readonly, nonatomic) NSString *originalFilename;
 @property(nonatomic, setter=_setDuplicateAllowsReadAccess:) _Bool duplicateAllowsReadAccess; // @synthesize duplicateAllowsReadAccess=_duplicateAllowsReadAccess;
 - (id)propertyListRepresentation;
+- (id)init;
 - (id)initWithPropertyListRepresentation:(id)arg1;
 - (id)initWithResourceType:(int)arg1;
 

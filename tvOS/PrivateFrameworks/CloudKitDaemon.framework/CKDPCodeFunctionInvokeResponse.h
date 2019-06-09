@@ -8,14 +8,16 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class NSData;
+@class CKDPCodeFunctionInvokeResponseAttestationResponse, NSData;
 
 __attribute__((visibility("hidden")))
 @interface CKDPCodeFunctionInvokeResponse : PBCodable <NSCopying>
 {
+    CKDPCodeFunctionInvokeResponseAttestationResponse *_attestationResponse;
     NSData *_serializedResult;
 }
 
+@property(retain, nonatomic) CKDPCodeFunctionInvokeResponseAttestationResponse *attestationResponse; // @synthesize attestationResponse=_attestationResponse;
 @property(retain, nonatomic) NSData *serializedResult; // @synthesize serializedResult=_serializedResult;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAttestationResponse;
 @property(readonly, nonatomic) _Bool hasSerializedResult;
 
 @end

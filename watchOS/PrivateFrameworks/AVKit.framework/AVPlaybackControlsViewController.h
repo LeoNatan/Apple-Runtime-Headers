@@ -8,6 +8,7 @@
 
 @class AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerViewController, AVTimeFormatter, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVPlaybackControlsViewController : UIViewController
 {
     AVPlayerController *_playerController;

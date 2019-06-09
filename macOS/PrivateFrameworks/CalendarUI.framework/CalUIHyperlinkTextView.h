@@ -15,10 +15,10 @@
     id _target;
     SEL _action;
     NSFont *_defaultFont;
-    unsigned long long _defaultAlignment;
+    long long _defaultAlignment;
 }
 
-@property unsigned long long defaultAlignment; // @synthesize defaultAlignment=_defaultAlignment;
+@property long long defaultAlignment; // @synthesize defaultAlignment=_defaultAlignment;
 @property(retain) NSFont *defaultFont; // @synthesize defaultFont=_defaultFont;
 @property SEL action; // @synthesize action=_action;
 @property __weak id target; // @synthesize target=_target;
@@ -26,7 +26,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (BOOL)textView:(id)arg1 clickedOnLink:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)configureWithText:(id)arg1 linkRange:(struct _NSRange)arg2;
-- (id)initWithFont:(id)arg1 alignment:(unsigned long long)arg2;
+- (id)initWithFont:(id)arg1 alignment:(long long)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

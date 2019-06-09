@@ -75,6 +75,7 @@
 - (void)removeAllButtons;
 - (void)addButtonWithTitle:(id)arg1 style:(long long)arg2 action:(CDUnknownBlockType)arg3;
 - (void)setTitle:(id)arg1;
+- (long long)preferredUserInterfaceStyle;
 @property(retain, nonatomic) NSString *iconAccessibilityLabel;
 @property(nonatomic) struct CGSize iconSize;
 @property(retain, nonatomic) UIImage *icon;

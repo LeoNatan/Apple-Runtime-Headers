@@ -4,9 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray;
+@class NSArray, NSString, NSURL;
 
 @protocol NSOpenAndSavePanelRemoteViewExportedToServiceProtocol
+- (void)delegateValidateURLs:(NSArray *)arg1 withReply:(void (^)(BOOL))arg2;
+- (void)delegateCustomActionInvoked:(NSString *)arg1 forURLs:(NSArray *)arg2;
+- (void)delegateShouldCreateNewDocumentAtURL:(NSURL *)arg1;
+- (void)delegateRequestNewDocumentNameWithReply:(void (^)(NSString *))arg1;
 - (void)requestAppEnabledStateForItems:(NSArray *)arg1 replyToken:(unsigned long long)arg2;
 - (void)_documentWindowFrameForPanelRunningAsASheetInService:(void (^)(struct CGRect))arg1;
 @end

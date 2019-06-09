@@ -7,19 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <AVConference/VCAudioIOControllerDelegate-Protocol.h>
-#import <AVConference/VCAudioIOControllerSink-Protocol.h>
-#import <AVConference/VCAudioIOControllerSource-Protocol.h>
 
 @class NSString, VCAudioIOControllerClient;
-@protocol VCAudioIOControllerControl, VCAudioIODelegate><VCAudioIOSource><VCAudioIOSink;
+@protocol VCAudioIOControllerControl;
 
 __attribute__((visibility("hidden")))
-@interface VCAudioIO : NSObject <VCAudioIOControllerSource, VCAudioIOControllerSink, VCAudioIOControllerDelegate>
+@interface VCAudioIO : NSObject <VCAudioIOControllerDelegate>
 {
     id <VCAudioIOControllerControl> _audioIOController;
     VCAudioIOControllerClient *_controllerClient;
     id _delegate;
-    id <VCAudioIODelegate><VCAudioIOSource><VCAudioIOSink> _loadedDelegate;
+    id _sourceDelegate;
+    id _sinkDelegate;
     struct AudioStreamBasicDescription _clientFormat;
     unsigned int _clientSamplesPerFrame;
     _Bool _isMuted;
@@ -28,28 +27,24 @@ __attribute__((visibility("hidden")))
     unsigned int _controllerSamplesPerFrame;
     _Bool _isControllerAudioFormatValid;
     _Bool _isControllerReset;
-    _Bool _isConverterNeeded;
     struct _opaque_pthread_mutex_t _stateMutex;
     unsigned int _state;
     CDUnknownBlockType _startCompletionBlock;
     CDUnknownBlockType _stopCompletionBlock;
     struct _VCAudioEndpointData _sourceData;
     struct _VCAudioEndpointData _sinkData;
-    unsigned int _pullAudioSamplesCount;
 }
 
 + (id)controllerForDeviceRole:(int)arg1;
-@property(readonly, nonatomic) unsigned int pullAudioSamplesCount; // @synthesize pullAudioSamplesCount=_pullAudioSamplesCount;
 @property(readonly, nonatomic) struct AudioStreamBasicDescription controllerFormat; // @synthesize controllerFormat=_controllerFormat;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) _Bool isGKVoiceChat; // @synthesize isGKVoiceChat=_isGKVoiceChat;
-@property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_isMuted;
 @property(readonly, nonatomic) struct AudioStreamBasicDescription clientAudioFormat; // @synthesize clientAudioFormat=_clientFormat;
 @property(readonly, nonatomic) unsigned int samplesPerFrame; // @synthesize samplesPerFrame=_clientSamplesPerFrame;
-- (void)pullAudioSamples:(struct opaqueVCAudioBufferList *)arg1 controllerTime:(const struct _VCAudioIOControllerTime *)arg2;
-- (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1 controllerTime:(const struct _VCAudioIOControllerTime *)arg2;
 - (void)stopWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)spatialAudioSourceIDChanged:(unsigned long long)arg1;
+- (void)didUpdateBasebandCodec:(const struct _VCRemoteCodecInfo *)arg1;
 - (void)didResume;
 - (void)didSuspend;
 - (void)controllerFormatChanged:(struct AudioStreamBasicDescription)arg1;
@@ -58,9 +53,9 @@ __attribute__((visibility("hidden")))
 - (void)setClientFormat:(struct AudioStreamBasicDescription)arg1;
 - (void)releaseConverters;
 - (_Bool)createConverterForSource:(_Bool)arg1 error:(id *)arg2;
-- (unsigned int)computeTimestampForControllerTime:(const struct _VCAudioIOControllerTime *)arg1 hostTime:(double)arg2 endpoint:(struct _VCAudioEndpointData *)arg3;
+@property(readonly, nonatomic) unsigned int pullAudioSamplesCount;
 @property(nonatomic) unsigned char direction;
-- (void)setMute:(_Bool)arg1;
+@property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_isMuted;
 @property(nonatomic, getter=isOutputMeteringEnabled) _Bool outputMeteringEnabled;
 @property(nonatomic, getter=isInputMeteringEnabled) _Bool inputMeteringEnabled;
 - (void)setRemoteCodecType:(unsigned int)arg1 sampleRate:(double)arg2;
@@ -69,7 +64,7 @@ __attribute__((visibility("hidden")))
 - (void)forceCleanup;
 - (void)dealloc;
 - (_Bool)reconfigureWithOperatingMode:(int)arg1 deviceRole:(int)arg2 direction:(unsigned char)arg3 allowAudioRecording:(_Bool)arg4;
-- (id)initWithOperatingMode:(int)arg1 deviceRole:(int)arg2 direction:(unsigned char)arg3 allowAudioRecording:(_Bool)arg4 delegate:(id)arg5 clientPid:(int)arg6;
+- (id)initWithConfiguration:(struct _VCAudioIOInitConfiguration *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

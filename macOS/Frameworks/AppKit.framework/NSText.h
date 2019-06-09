@@ -54,7 +54,7 @@
 - (void)setTextColor:(id)arg1 range:(struct _NSRange)arg2;
 @property(getter=isFieldEditor) BOOL fieldEditor;
 @property long long baseWritingDirection;
-@property unsigned long long alignment;
+@property long long alignment;
 @property BOOL drawsBackground;
 @property(copy) NSColor *backgroundColor;
 @property(copy) NSColor *textColor;

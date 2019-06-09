@@ -9,5 +9,9 @@
 @interface NSData (WebKitExtras)
 - (id)_webkit_guessedMIMEType;
 - (id)_webkit_guessedMIMETypeForXML;
+- (long long)_web_locationAfterFirstBlankLine;
+- (_Bool)_web_startsWithBlankLine;
+- (id)_webkit_parseRFC822HeaderFields;
+- (_Bool)_web_isCaseInsensitiveEqualToCString:(const char *)arg1;
 @end
 

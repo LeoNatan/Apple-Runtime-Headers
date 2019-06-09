@@ -26,9 +26,11 @@
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
 @property(readonly) BOOL supportsAttributeKeyPathAnalysis;
 @property(readonly) BOOL supportsRemoteEvaluation;
+- (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

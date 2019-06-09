@@ -8,6 +8,7 @@
 
 @class EDResources, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDConditionalFormattingRule : NSObject
 {
     EDResources *mResources;

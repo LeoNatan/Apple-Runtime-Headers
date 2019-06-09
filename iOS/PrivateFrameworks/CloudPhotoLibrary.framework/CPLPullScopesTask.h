@@ -29,7 +29,7 @@
 - (void)_handleChangedOrNewScopes:(id)arg1 deletedScopeIdentifiers:(id)arg2 newScopeListSyncAnchor:(struct NSData *)arg3;
 - (_Bool)_checkShouldHandleBatchInTransaction:(id)arg1;
 - (id)taskIdentifier;
-- (id)initWithEngineLibrary:(id)arg1;
+- (id)initWithEngineLibrary:(id)arg1 session:(id)arg2;
 
 @end
 

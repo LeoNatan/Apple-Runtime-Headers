@@ -20,10 +20,12 @@
     NSString *_bundlePath;
     NSString *_sandboxPath;
     NSString *_bundleContainerPath;
+    NSString *_defaultGroupIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)compatibilityInfoForAppInfo:(id)arg1;
+@property(copy, nonatomic) NSString *defaultGroupIdentifier; // @synthesize defaultGroupIdentifier=_defaultGroupIdentifier;
 @property(copy, nonatomic) NSString *bundleContainerPath; // @synthesize bundleContainerPath=_bundleContainerPath;
 @property(nonatomic) _Bool launchesOpaque; // @synthesize launchesOpaque=_launchesOpaque;
 @property(copy, nonatomic) NSString *sandboxPath; // @synthesize sandboxPath=_sandboxPath;

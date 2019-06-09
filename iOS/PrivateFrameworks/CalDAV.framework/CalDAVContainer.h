@@ -40,10 +40,12 @@
     NSString *_locationCode;
     NSString *_languageCode;
     NSString *_alarms;
+    long long _maxAttendees;
 }
 
 + (id)copyPropertyMappingsForParser;
 @property(nonatomic) _Bool overrideSupportsFreebusy; // @synthesize overrideSupportsFreebusy=_overrideSupportsFreebusy;
+@property(nonatomic) long long maxAttendees; // @synthesize maxAttendees=_maxAttendees;
 @property(retain, nonatomic) NSString *alarms; // @synthesize alarms=_alarms;
 @property(nonatomic) _Bool autoprovisioned; // @synthesize autoprovisioned=_autoprovisioned;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;

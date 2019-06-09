@@ -11,6 +11,7 @@
 + (id)MSErrorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3 underlyingError:(id)arg4;
 + (id)MSErrorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3 suggestion:(id)arg4;
 + (id)MSErrorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
++ (id)MMCSErrorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
 - (id)MSMMCSRetryAfterDate;
 - (BOOL)MSIsRegistrationError;
 - (BOOL)MSIsQuotaError;
@@ -28,5 +29,12 @@
 - (id)MSMakePrimaryError;
 - (id)MSVerboseDescription;
 - (id)_MSVerboseDescriptionRecursionCount:(int)arg1;
+- (id)MMCSRetryAfterDate;
+- (BOOL)MMCSIsFatalError;
+- (BOOL)MMCSIsAuthorizationError;
+- (BOOL)MMCSIsNetworkConditionsError;
+- (BOOL)MMCSIsCancelError;
+- (void)_MMCSApplyBlock:(CDUnknownBlockType)arg1;
+- (int)MMCSErrorType;
 @end
 

@@ -4,20 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ARKit/ARTechnique.h>
+#import <ARKit/ARImageBasedTechnique.h>
 
-@class NSArray;
+@class NSArray, NSDictionary;
 
-@interface ARObjectDetectionTechnique : ARTechnique
+@interface ARObjectDetectionTechnique : ARImageBasedTechnique
 {
     _Bool _finishedLoadingObjects;
+    NSDictionary *_referenceObjecteMap;
     NSArray *_detectionObjects;
 }
 
 @property(readonly, nonatomic) NSArray *detectionObjects; // @synthesize detectionObjects=_detectionObjects;
 @property(readonly) _Bool finishedLoadingObjects; // @synthesize finishedLoadingObjects=_finishedLoadingObjects;
+@property(readonly) NSDictionary *referenceObjecteMap; // @synthesize referenceObjecteMap=_referenceObjecteMap;
 - (void).cxx_destruct;
-- (id)initWithTrackingTechnique:(id)arg1 detectionObjects:(id)arg2;
+- (id)initWithDetectionObjects:(id)arg1;
 
 @end
 

@@ -12,9 +12,8 @@ __attribute__((visibility("hidden")))
     BOOL _isInsideIconContainer;
 }
 
+@property(nonatomic) BOOL isInsideIconContainer; // @synthesize isInsideIconContainer=_isInsideIconContainer;
 - (BOOL)shouldAnnounceArrival;
-- (void)setIsInsideIconContainer:(BOOL)arg1;
-- (BOOL)isInsideIconContainer;
 
 @end
 

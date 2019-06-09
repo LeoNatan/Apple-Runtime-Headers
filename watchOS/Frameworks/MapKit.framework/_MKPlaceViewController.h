@@ -27,6 +27,7 @@
     _Bool _showOpenInSkyline;
     _Bool _showOpenInPinpoint;
     _Bool _placeInBookmarks;
+    _Bool _placeInShortcuts;
     id <_MKPlaceItem> _placeItem;
     NSString *_headerTitle;
     id <_MKPlaceViewControllerDelegate> _placeViewControllerDelegate;
@@ -41,13 +42,12 @@
     GEOAutomobileOptions *_automobileOptions;
     GEOTransitOptions *_transitOptions;
     float _headerSecondaryNameLabelPadding;
-    _MKPlaceActionButtonController *_headerTertiaryButtonController;
     CLLocation *_location;
 }
 
 + (float)headerHeightInMinimalMode;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
-@property(retain, nonatomic) _MKPlaceActionButtonController *headerTertiaryButtonController; // @synthesize headerTertiaryButtonController=_headerTertiaryButtonController;
+@property(nonatomic) _Bool placeInShortcuts; // @synthesize placeInShortcuts=_placeInShortcuts;
 @property(readonly, nonatomic) float headerSecondaryNameLabelPadding; // @synthesize headerSecondaryNameLabelPadding=_headerSecondaryNameLabelPadding;
 @property(retain, nonatomic) GEOTransitOptions *transitOptions; // @synthesize transitOptions=_transitOptions;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
@@ -78,6 +78,7 @@
 @property(nonatomic) _Bool showShareActionsButton; // @synthesize showShareActionsButton=_showShareActionsButton;
 - (void).cxx_destruct;
 - (void)placeCardWillCloseFromClientType:(unsigned int)arg1;
+- (void)updateMaskAlpha:(float)arg1 onHeight:(float)arg2 withOffset:(float)arg3;
 - (void)hideTitle:(_Bool)arg1;
 - (_Bool)_showReportAProblem;
 - (void)errorLoadingMapItemUpdate:(id)arg1;

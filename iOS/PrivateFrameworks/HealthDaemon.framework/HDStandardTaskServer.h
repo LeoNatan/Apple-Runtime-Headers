@@ -9,21 +9,21 @@
 #import <HealthDaemon/HDTaskServer-Protocol.h>
 #import <HealthDaemon/HKUnitTestingTaskServerInterface-Protocol.h>
 
-@class HDProfile, HDXPCClient, NSString, NSUUID;
+@class HDHealthStoreClient, HDProfile, NSString, NSUUID;
 @protocol HDTaskServerDelegate;
 
 @interface HDStandardTaskServer : NSObject <HDTaskServer, HKUnitTestingTaskServerInterface>
 {
     NSUUID *_taskUUID;
     HDProfile *_profile;
-    HDXPCClient *_client;
+    HDHealthStoreClient *_client;
     id <HDTaskServerDelegate> _delegate;
 }
 
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
 @property(readonly, nonatomic) __weak id <HDTaskServerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) HDXPCClient *client; // @synthesize client=_client;
+@property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 @property(readonly, copy, nonatomic) NSUUID *taskUUID; // @synthesize taskUUID=_taskUUID;
 - (void).cxx_destruct;
@@ -31,7 +31,8 @@
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

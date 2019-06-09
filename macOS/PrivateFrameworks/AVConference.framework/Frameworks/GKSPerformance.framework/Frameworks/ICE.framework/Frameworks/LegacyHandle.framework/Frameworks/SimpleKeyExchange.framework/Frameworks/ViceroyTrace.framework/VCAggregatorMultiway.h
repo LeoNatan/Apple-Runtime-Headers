@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
     unsigned int _lastReportedUplinkBytesSent;
     double _sessionCreatedTime;
     BOOL _isFullsizeUI;
+    BOOL _isDuplicationEnabled;
 }
 
 - (double)timeWeightedNumberOfParticipants;
@@ -67,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSegment:(id)arg1 TBR:(int)arg2 ISBTR:(int)arg3 SATXBR:(int)arg4 SARBR:(int)arg5 BWE:(int)arg6;
 - (int)adaptiveLearningState;
 - (void)processEventWithCategory:(unsigned short)arg1 type:(unsigned short)arg2 payload:(id)arg3;
+- (BOOL)isDuplicationChanged:(BOOL)arg1;
 - (void)processUISizeEventForParticipant:(id)arg1 isFullSize:(BOOL)arg2;
 - (void)processInternalErrorDetectedWithCode:(id)arg1;
 - (void)processVideoDegraded:(BOOL)arg1 participantID:(id)arg2;
@@ -91,6 +93,7 @@ __attribute__((visibility("hidden")))
 - (void)finalizeCall:(id)arg1;
 - (void)videoEnabled:(id)arg1;
 - (void)audioEnabled:(id)arg1;
+- (BOOL)isParticipantLive:(id)arg1;
 - (void)addNewCall:(id)arg1;
 - (void)startDownlinkSegment;
 - (void)resetDownlinkSegment;

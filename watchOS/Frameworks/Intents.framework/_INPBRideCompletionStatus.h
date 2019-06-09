@@ -32,6 +32,7 @@
     _INPBCurrencyAmountValue *_paymentAmount;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)defaultTippingOptionsType;
 @property(retain, nonatomic) _INPBCurrencyAmountValue *paymentAmount; // @synthesize paymentAmount=_paymentAmount;
 @property(nonatomic) _Bool outstanding; // @synthesize outstanding=_outstanding;
@@ -46,6 +47,9 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasPaymentAmount;

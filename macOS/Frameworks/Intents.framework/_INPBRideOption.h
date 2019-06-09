@@ -31,6 +31,7 @@
     _INPBUserActivity *_userActivityForBookingInApplication;
 }
 
++ (BOOL)supportsSecureCoding;
 + (Class)fareLineItemsType;
 + (Class)availablePartySizeOptionsType;
 @property(nonatomic) BOOL usesMeteredFare; // @synthesize usesMeteredFare=_usesMeteredFare;
@@ -50,6 +51,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(nonatomic) BOOL hasUsesMeteredFare;

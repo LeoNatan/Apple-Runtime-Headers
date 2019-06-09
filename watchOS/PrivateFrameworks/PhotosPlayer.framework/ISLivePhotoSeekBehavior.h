@@ -6,6 +6,7 @@
 
 #import <PhotosPlayer/ISBehavior.h>
 
+__attribute__((visibility("hidden")))
 @interface ISLivePhotoSeekBehavior : ISBehavior
 {
     _Bool _isSeeking;

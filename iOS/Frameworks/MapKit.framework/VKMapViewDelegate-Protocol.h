@@ -6,19 +6,15 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@class NSError, NSString, VKLabelMarker, VKMapView, VKVenueBuildingFeatureMarker, VKVenueFeatureMarker;
-@protocol VKTrackableAnnotation, VKTrackableAnnotationPresentation;
+@class NSError, NSString, VKLabelMarker, VKMapView, VKMuninJunction, VKMuninRoad, VKVenueBuildingFeatureMarker, VKVenueFeatureMarker;
 
 @protocol VKMapViewDelegate <NSObject>
 
 @optional
+- (void)mapLayer:(VKMapView *)arg1 nearestJunctionDidChange:(VKMuninJunction *)arg2 currentRoad:(VKMuninRoad *)arg3;
 - (void)mapLayer:(VKMapView *)arg1 venueWithFocusDidChange:(VKVenueFeatureMarker *)arg2 building:(VKVenueBuildingFeatureMarker *)arg3;
-- (void)mapLayerNavigationCameraDidReturnToDefaultZoom:(VKMapView *)arg1;
-- (void)mapLayerNavigationCameraDidLeaveDefaultZoom:(VKMapView *)arg1;
-- (void)mapLayerNavigationCameraHasStoppedPanning:(VKMapView *)arg1;
-- (void)mapLayerNavigationCameraHasStartedPanning:(VKMapView *)arg1;
 - (void)mapLayer:(VKMapView *)arg1 didUpdateVerticalYawTo:(double)arg2;
-- (void)mapLayer:(VKMapView *)arg1 willTransitionFrom:(long long)arg2 to:(long long)arg3 duration:(double)arg4;
+- (void)mapLayer:(VKMapView *)arg1 willTransitionTo:(long long)arg2;
 - (void)mapLayerLabelsDidLayout:(VKMapView *)arg1;
 - (void)mapLayer:(VKMapView *)arg1 labelMarkerDidChangeState:(VKLabelMarker *)arg2;
 - (void)mapLayer:(VKMapView *)arg1 selectedLabelMarkerDidChangeState:(VKLabelMarker *)arg2;
@@ -39,19 +35,9 @@
 - (void)mapLayerWillEnterAR:(VKMapView *)arg1;
 - (void)mapLayer:(VKMapView *)arg1 canShowFlyoverDidChange:(_Bool)arg2;
 - (void)mapLayer:(VKMapView *)arg1 showingFlyoverDidChange:(_Bool)arg2;
-- (void)mapLayer:(VKMapView *)arg1 canZoomOutDidChange:(_Bool)arg2;
-- (void)mapLayer:(VKMapView *)arg1 canZoomInDidChange:(_Bool)arg2;
-- (void)mapLayer:(VKMapView *)arg1 canEnter3DModeDidChange:(_Bool)arg2;
-- (void)mapLayer:(VKMapView *)arg1 didBecomePitched:(_Bool)arg2;
-- (id <VKTrackableAnnotationPresentation>)mapLayer:(VKMapView *)arg1 presentationForAnnotation:(id <VKTrackableAnnotation>)arg2;
-- (void)mapLayerDidBecomeFullyDrawn:(VKMapView *)arg1 hasFailedTiles:(_Bool)arg2;
-- (void)mapLayerDidBecomePartiallyDrawn:(VKMapView *)arg1;
+- (void)mapLayerDidChangeSceneState:(VKMapView *)arg1 withState:(unsigned long long)arg2;
 - (void)mapLayerDidReloadStylesheet:(VKMapView *)arg1;
-- (void)mapLayerDidFinishInitialTrackingAnimation:(VKMapView *)arg1;
-- (void)mapLayer:(VKMapView *)arg1 didChangeRegionAnimated:(_Bool)arg2;
-- (void)mapLayer:(VKMapView *)arg1 willChangeRegionAnimated:(_Bool)arg2;
 - (void)mapLayerDidDraw:(VKMapView *)arg1;
-- (void)mapLayerDidChangeVisibleRegion:(VKMapView *)arg1;
 - (void)mapLayerDidFailLoadingTiles:(VKMapView *)arg1 withError:(NSError *)arg2;
 - (void)mapLayerDidFinishLoadingTiles:(VKMapView *)arg1;
 - (void)mapLayerDidStartLoadingTiles:(VKMapView *)arg1;

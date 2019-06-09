@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)runWithResources:(id)arg1;
 + (id)runWithCharIndex:(unsigned long long)arg1 fontIndex:(unsigned long long)arg2 effects:(id)arg3 resources:(id)arg4;
 + (id)runWithCharIndex:(unsigned long long)arg1 fontIndex:(unsigned long long)arg2 resources:(id)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)effects;
 - (id)font;
@@ -35,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToRun:(id)arg1;
-- (void)dealloc;
 - (id)initWithCharIndex:(unsigned long long)arg1 font:(id)arg2 effects:(id)arg3 resources:(id)arg4;
 - (id)initWithCharIndex:(unsigned long long)arg1 font:(id)arg2 resources:(id)arg3;
 - (id)initWithResources:(id)arg1;

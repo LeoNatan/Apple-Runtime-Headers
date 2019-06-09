@@ -8,6 +8,7 @@
 
 @class AVTimeFormatter, NSArray, NSMenu, NSMenuItem, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AVChapterMenuController : NSObject
 {
     NSArray *_chapters;

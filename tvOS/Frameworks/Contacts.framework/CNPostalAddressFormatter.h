@@ -20,6 +20,8 @@
 + (id)specificationForCountry:(id)arg1;
 + (id)singleLineStringFromPostalAddress:(id)arg1 addCountryName:(_Bool)arg2;
 + (id)addressValueForFormatKey:(id)arg1 postalAddress:(id)arg2;
++ (id)_postalToFormatMap;
++ (id)formatPropertyKeyForPostalAddressPropertyKey:(id)arg1;
 + (id)postalAddressPropertyKeyForFormatPropertyKey:(id)arg1;
 + (id)getCountryCodeFromPostalAddress:(id)arg1;
 + (id)attributedStringFromPostalAddress:(id)arg1 style:(long long)arg2 withDefaultAttributes:(id)arg3;

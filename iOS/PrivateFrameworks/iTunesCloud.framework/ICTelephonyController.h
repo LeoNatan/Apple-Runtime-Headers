@@ -29,8 +29,8 @@
 - (_Bool)_ensureTelephonyHandlesAreReady;
 - (void)phoneNumberChanged:(id)arg1;
 - (void)phoneNumberAvailable:(id)arg1;
-- (void)subscriptionInfoDidChange;
-- (_Bool)sendSMSWithText:(id)arg1 toPhoneNumber:(id)arg2;
+- (void)activeSubscriptionsDidChange;
+- (_Bool)sendSMSWithText:(id)arg1 toPhoneNumber:(id)arg2 error:(id *)arg3;
 @property(readonly, copy, nonatomic) NSString *IMEI;
 @property(readonly, copy, nonatomic) NSString *mobileSubscriberNetworkCode;
 @property(readonly, copy, nonatomic) NSString *mobileSubscriberCountryCode;

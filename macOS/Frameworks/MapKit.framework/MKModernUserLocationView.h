@@ -6,57 +6,9 @@
 
 #import <MapKit/MKUserLocationView.h>
 
-@class CALayer, NSImage;
-
 @interface MKModernUserLocationView : MKUserLocationView
 {
-    CALayer *_innerCircleLayer;
-    BOOL _isShowingStaleColor;
-    BOOL _shouldInnerPulse;
-    BOOL _shouldShowOuterRing;
-    NSImage *_innerImageMask;
-    BOOL _rotateInnerImageToMatchCourse;
-    CALayer *_baseLayer;
-    CALayer *_baseDimmingLayer;
 }
-
-+ (double)outerRingWidth;
-+ (double)innerDiameter;
-+ (double)baseDiameter;
-@property(nonatomic) BOOL rotateInnerImageToMatchCourse; // @synthesize rotateInnerImageToMatchCourse=_rotateInnerImageToMatchCourse;
-@property(retain, nonatomic) NSImage *innerImageMask; // @synthesize innerImageMask=_innerImageMask;
-@property(nonatomic) BOOL shouldShowOuterRing; // @synthesize shouldShowOuterRing=_shouldShowOuterRing;
-@property(nonatomic) BOOL shouldInnerPulse; // @synthesize shouldInnerPulse=_shouldInnerPulse;
-- (void).cxx_destruct;
-- (void)_setPresentationCourse:(double)arg1;
-- (void)_setMapRotationRadians:(double)arg1;
-- (void)_updateInnerCourseRotation;
-- (void)viewDidChangeBackingProperties;
-- (void)updateLayer;
-- (void)_updateAccuracyColors;
-- (void)_updateLayers;
-- (void)animateGemPop;
-- (void)setEffectsEnabled:(BOOL)arg1;
-- (void)_setupLayers;
-- (void)_updateInnerImage;
-- (void)_updateBaseImage;
-- (void)_resetLayerToMatchAccuracyRing;
-- (id)_layerToMatchAccuracyRing;
-- (id)_pulseAnimation;
-- (void)_setMapDisplayStyle:(CDStruct_51745937)arg1;
-- (void)_setMapType:(unsigned long long)arg1;
-- (id)_pulseLayer;
-- (void)_updatePulseColor;
-- (void)_updateInnerMaskLayer;
-- (void)viewDidMoveToWindow;
-- (id)_animationToSynchronizePulse:(id *)arg1;
-- (void)_updatePulseAnimation;
-- (id)_innerPulseAnimation;
-- (id)_baseDimmingLayer;
-- (id)_baseLayer;
-- (void)_dealloc;
-- (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
-- (struct CGColor *)_accuracyFillColor;
 
 @end
 

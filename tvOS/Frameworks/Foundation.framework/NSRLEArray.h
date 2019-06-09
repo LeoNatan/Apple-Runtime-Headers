@@ -20,7 +20,6 @@
 - (id)objectAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2 runIndex:(unsigned long long *)arg3;
 - (id)objectAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
 - (void)_makeNewListFrom:(struct _NSRefCountedRunArray *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

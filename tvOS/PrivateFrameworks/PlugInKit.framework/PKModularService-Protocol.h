@@ -6,13 +6,14 @@
 
 #import <PlugInKit/NSObject-Protocol.h>
 
-@class NSBundle;
+@class NSBundle, NSDictionary;
 @protocol PKModularService, PKSubsystemServicePersonality;
 
 @protocol PKModularService <NSObject>
-+ (id <PKModularService>)initForPlugInKit;
 
 @optional
++ (id <PKModularService>)initForPlugInKitWithOptions:(NSDictionary *)arg1;
++ (id <PKModularService>)initForPlugInKit;
 - (void)communicationsFailed:(id <PKSubsystemServicePersonality>)arg1;
 - (void)endUsing:(id <PKSubsystemServicePersonality>)arg1;
 - (void)beginUsing:(id <PKSubsystemServicePersonality>)arg1 withBundle:(NSBundle *)arg2;

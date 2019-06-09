@@ -6,9 +6,11 @@
 
 #import <Preferences/PSRootController.h>
 
-@class NSMutableArray, NSMutableDictionary, UIColor;
+#import <SetupAssistantUI/UINavigationControllerDelegate-Protocol.h>
 
-@interface BFFNavigationController : PSRootController
+@class NSMutableArray, NSMutableDictionary, NSString, UIColor;
+
+@interface BFFNavigationController : PSRootController <UINavigationControllerDelegate>
 {
     NSMutableArray *_observers;
     NSMutableDictionary *_appearanceHandlers;
@@ -22,6 +24,7 @@
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)removeDelegateObserver:(id)arg1;
+- (_Bool)respondsToSelector:(SEL)arg1;
 - (void)addDelegateObserver:(id)arg1;
 - (void)_reapObservers;
 - (void)setDelegate:(id)arg1;
@@ -37,6 +40,12 @@
 - (_Bool)_usesTransitionController;
 - (unsigned long long)supportedInterfaceOrientations;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

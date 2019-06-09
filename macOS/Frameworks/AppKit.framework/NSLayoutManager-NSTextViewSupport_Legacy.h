@@ -7,6 +7,7 @@
 #import <UIFoundation/NSLayoutManager.h>
 
 @interface NSLayoutManager (NSTextViewSupport_Legacy)
++ (Class)_rulerHelperClass;
 - (void)spellCheckerDidChangeDashSubstitution:(id)arg1;
 - (void)spellCheckerDidChangeQuoteSubstitution:(id)arg1;
 - (void)spellCheckerDidChangeReplacement:(id)arg1;
@@ -16,5 +17,32 @@
 - (void)spellCheckerDidLearnWord:(id)arg1;
 - (void)showPackedGlyphs:(char *)arg1 length:(unsigned long long)arg2 glyphRange:(struct _NSRange)arg3 atPoint:(struct CGPoint)arg4 font:(id)arg5 color:(id)arg6 printingAdjustment:(struct CGSize)arg7;
 - (BOOL)layoutManagerOwnsFirstResponderInWindow:(id)arg1;
+- (id)rulerAccessoryViewForTextView:(id)arg1 paragraphStyle:(id)arg2 ruler:(id)arg3 enabled:(BOOL)arg4;
+- (id)_rulerAccViewDecimalTabWell;
+- (id)_rulerAccViewCenterTabWell;
+- (id)_rulerAccViewRightTabWell;
+- (id)_rulerAccViewLeftTabWell;
+- (id)rulerMarkersForTextView:(id)arg1 paragraphStyle:(id)arg2 ruler:(id)arg3;
+- (void)_rulerAccViewStylesAction:(id)arg1;
+- (void)_rulerAccViewSpacingAction:(id)arg1;
+- (void)_rulerAccViewListsAction:(id)arg1;
+- (void)_rulerAccViewAlignmentAction:(id)arg1;
+- (void)_doUserSetListMarkerFormat:(id)arg1 options:(unsigned long long)arg2;
+- (void)_doUserSetListMarkerFormat:(id)arg1 options:(unsigned long long)arg2 startingItemNumber:(long long)arg3;
+- (void)_doUserSetListMarkerFormat:(id)arg1 options:(unsigned long long)arg2 startingItemNumber:(long long)arg3 forceStartingItemNumber:(BOOL)arg4;
+- (unsigned long long)_markerLevelForRange:(struct _NSRange)arg1;
+- (void)_doUserSetListMarkerFormat:(id)arg1 options:(unsigned long long)arg2 startingItemNumber:(long long)arg3 inRange:(struct _NSRange)arg4 level:(unsigned long long)arg5;
+- (void)_doUserRemoveMarkerFormatInRange:(struct _NSRange)arg1;
+- (void)_doUserSetAttributes:(id)arg1;
+- (void)_doUserSetAttributes:(id)arg1 removeAttributes:(id)arg2;
+- (void)_doUserParagraphStyleLineHeightMultiple:(double)arg1 min:(double)arg2 max:(double)arg3 lineSpacing:(double)arg4 paragraphSpacingBefore:(double)arg5 after:(double)arg6 isFinal:(BOOL)arg7;
+- (void)_rulerAccViewPullDownAction:(id)arg1;
+- (void)_rulerAccViewUpdatePullDown:(id)arg1;
+- (void)_rulerAccViewFixedLineHeightAction:(id)arg1;
+- (void)_rulerAccViewIncrementLineHeightAction:(id)arg1;
+- (void)controlTextDidEndEditing:(id)arg1;
+- (void)_doUserParagraphStyleLineHeight:(double)arg1 fixed:(BOOL)arg2;
+- (void)_rulerAccViewSetUpLists;
+- (void)_rulerAccViewUpdateStyles:(id)arg1;
 @end
 

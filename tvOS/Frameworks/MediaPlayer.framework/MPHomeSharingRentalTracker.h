@@ -22,7 +22,6 @@
 - (void)removeRentalWithItemID:(unsigned long long)arg1;
 - (void)addRentalWithItemID:(unsigned long long)arg1 databaseID:(id)arg2;
 - (id)_init;
-- (id)init;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSString, OADBaseStyles, OADDrawableDefaults;
 
+__attribute__((visibility("hidden")))
 @interface OADTheme : NSObject
 {
     NSString *mName;

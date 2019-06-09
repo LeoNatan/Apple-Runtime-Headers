@@ -10,10 +10,9 @@
 {
 }
 
++ (id)cadRouteHypothesisForEKTravelEngineHypothesis:(id)arg1;
 + (double)minimumAllowableTravelTime;
 + (double)maximumAllowableTravelTime;
-+ (id)effectiveTravelAdvisoryTravelTimeDateForHypothesis:(id)arg1;
-+ (double)effectiveTravelAdvisoryTravelTimeForHypothesis:(id)arg1;
 + (_Bool)date:(id)arg1 representsImmediateDepartureForHypothesis:(id)arg2;
 + (_Bool)date:(id)arg1 representsLatenessForHypothesis:(id)arg2;
 + (_Bool)date:(id)arg1 representsApproachingDepartureDateForHypothesis:(id)arg2;

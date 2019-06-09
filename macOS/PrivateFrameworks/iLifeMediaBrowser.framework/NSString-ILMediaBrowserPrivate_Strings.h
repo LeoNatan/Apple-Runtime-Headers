@@ -8,5 +8,6 @@
 
 @interface NSString (ILMediaBrowserPrivate_Strings)
 - (long long)_ILMediaObjectiTunesStringCompare:(id)arg1;
+- (long long)ilmbVersionStringCompare:(id)arg1;
 @end
 

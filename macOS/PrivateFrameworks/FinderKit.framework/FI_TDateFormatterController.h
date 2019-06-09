@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (id)mediumDateTimeFormatter:(_Bool)arg1;
 - (id)shortDateTimeFormatter:(_Bool)arg1;
 - (id)shortDateOnlyFormatter:(_Bool)arg1;
-- (id)init;
+- (id)_init;
 
 @end
 

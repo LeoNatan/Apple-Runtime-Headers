@@ -11,6 +11,7 @@
 @class NSArray, NSMapTable, NSMutableArray, NSString, SKUIButtonViewElement, SKUIClientContext, SKUINavigationBarButtonsController, SKUINavigationBarContext, SKUINavigationBarViewElement, SKUINavigationPaletteController, UIView, UIViewController;
 @protocol SKUINavigationBarControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUINavigationBarController : NSObject <SKUILayoutCacheDelegate>
 {
     SKUINavigationBarButtonsController *_buttonsController;

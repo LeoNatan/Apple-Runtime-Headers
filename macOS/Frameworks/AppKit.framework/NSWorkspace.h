@@ -24,6 +24,7 @@
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (id)_getKVOHelperForKeyPath:(id)arg1 creating:(BOOL)arg2;
 - (id)_URLForDuplicatingFileAtURL:(id)arg1;
+- (id)_firstMatchingTypeFromTypes:(id)arg1 conformingToTypes:(id)arg2;
 - (BOOL)type:(id)arg1 conformsToType:(id)arg2;
 - (BOOL)fileNameExtension:(id)arg1 isValidForType:(id)arg2;
 - (id)preferredFileNameExtensionForType:(id)arg1;
@@ -34,12 +35,6 @@
 - (id)_copyApplicationDictionaryFromLSDictionary:(struct __CFDictionary *)arg1 constructingAppFromCorpse:(BOOL)arg2;
 @property(readonly, copy) NSArray *fileLabels;
 @property(readonly, copy) NSArray *fileLabelColors;
-- (oneway void)resetProfiling;
-- (oneway void)writeProfilingDataToPath:(id)arg1;
-- (oneway void)stopProfiling;
-- (oneway void)startProfiling;
-- (void)unhideApplication;
-- (BOOL)openFile:(id)arg1 operation:(int)arg2;
 - (BOOL)unmountAndEjectDeviceAtURL:(id)arg1 error:(id *)arg2;
 - (BOOL)unmountAndEjectDeviceAtPath:(id)arg1;
 - (BOOL)_volumeIsEjectableForRefNum:(short)arg1;
@@ -80,8 +75,6 @@
 - (BOOL)isFilePackageAtPath:(id)arg1;
 - (BOOL)getInfoForFile:(id)arg1 application:(id *)arg2 type:(id *)arg3;
 - (BOOL)setIcon:(id)arg1 forFile:(id)arg2 options:(unsigned long long)arg3;
-- (BOOL)_sendFinderAppleEvent:(unsigned int)arg1 class:(unsigned int)arg2 file:(id)arg3;
-- (BOOL)_sendFinderAppleEvent:(unsigned int)arg1 class:(unsigned int)arg2 URLs:(id)arg3 followSymlinks:(BOOL)arg4;
 - (id)_iconForURL:(id)arg1;
 - (id)iconForFile:(id)arg1;
 - (id)_iconForOSType:(unsigned int)arg1;
@@ -91,11 +84,13 @@
 - (id)launchApplicationAtURL:(id)arg1 options:(unsigned long long)arg2 configuration:(id)arg3 error:(id *)arg4;
 - (BOOL)launchApplication:(id)arg1 showIcon:(BOOL)arg2 autolaunch:(BOOL)arg3;
 - (BOOL)launchApplication:(id)arg1;
-- (BOOL)_launchService:(id)arg1 andWait:(BOOL)arg2;
 - (BOOL)openFile:(id)arg1 fromImage:(id)arg2 at:(struct CGPoint)arg3 inView:(id)arg4;
 - (BOOL)openTempFile:(id)arg1;
 - (BOOL)openFile:(id)arg1 withApplication:(id)arg2 andDeactivate:(BOOL)arg3;
-- (BOOL)_openFile:(id)arg1 withApplication:(id)arg2 asService:(BOOL)arg3 andWait:(BOOL)arg4 andDeactivate:(BOOL)arg5;
+- (BOOL)_openFile:(id)arg1 withApplication:(id)arg2 andDeactivate:(BOOL)arg3;
+- (void)openApplicationAtURL:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)openURLs:(id)arg1 withApplicationAtURL:(id)arg2 configuration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)openURL:(id)arg1 configuration:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)openURL:(id)arg1;
 - (void)dealloc;
 - (void)_fileOperationCompleted:(long long)arg1;

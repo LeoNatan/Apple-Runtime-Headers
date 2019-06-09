@@ -8,48 +8,44 @@
 
 #import <QTKit/QTImageConsumerDelegateHelper-Protocol.h>
 
-@class NSString, QTCaptureViewInternal;
+@class NSString;
 
 @interface QTCaptureView : NSView <QTImageConsumerDelegateHelper>
 {
-    QTCaptureViewInternal *_internal;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
 + (void)initialize;
-- (void)formatDidChange:(id)arg1;
-- (void)_applyDelegateHelperToRenderer;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
-- (void)setVideoPreviewConnection:(id)arg1;
-- (id)videoPreviewConnection;
-- (void)setAvailableVideoPreviewConnections:(id)arg1;
-- (id)availableVideoPreviewConnections;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_updateVideoPreviewConnectionFromVideoPreviewOutput;
-- (void)setCaptureSession:(id)arg1;
-- (id)captureSession;
 - (void)setPreservesAspectRatio:(BOOL)arg1;
 - (BOOL)preservesAspectRatio;
+- (void)finalize;
+- (id)captureSession;
+- (void)setCaptureSession:(id)arg1;
+- (void)_setCaptureViewDoesNeedLayoutOnMainThread;
+- (void)setAvailableVideoPreviewConnections:(id)arg1;
+- (void)setVideoPreviewConnection:(id)arg1;
+- (void)_updateVideoPreviewConnectionFromVideoPreviewOutput;
+- (void)_updateRendererView;
+- (void)_setCaptureViewNeedsLayout:(BOOL)arg1;
+- (struct CGRect)previewBounds;
+- (void)_drawIBPreviewInRect:(struct CGRect)arg1;
+- (id)videoPreviewConnection;
+- (id)availableVideoPreviewConnections;
+- (id)_alteredImageForImage:(id)arg1;
+- (void)_applyDelegateHelperToRenderer;
+- (void)formatDidChange:(id)arg1;
+- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)setFillColor:(id)arg1;
 - (id)fillColor;
 - (BOOL)isOpaque;
-- (void)_updateRendererView;
-- (void)setLayer:(id)arg1;
-- (struct CGRect)previewBounds;
-- (void)_drawIBPreviewInRect:(struct CGRect)arg1;
-- (void)_setCaptureViewDoesNeedLayoutOnMainThread;
-- (void)_setCaptureViewNeedsLayout:(BOOL)arg1;
-- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)dealloc;
-- (void)finalize;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (void)setLayer:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)_alteredImageForImage:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (void)dealloc;
+- (void)setDelegate:(id)arg1;
+- (id)delegate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

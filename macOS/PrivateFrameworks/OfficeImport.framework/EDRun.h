@@ -10,6 +10,7 @@
 
 @class EDResources, NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDRun : NSObject <EDKeyedObject>
 {
     EDResources *mResources;

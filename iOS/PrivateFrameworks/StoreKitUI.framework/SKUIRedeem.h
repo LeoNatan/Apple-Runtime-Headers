@@ -11,6 +11,7 @@
 @class NSArray, NSDictionary, NSString, NSURL, UIImage;
 @protocol SKUIArtworkProviding;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeem : NSObject <NSSecureCoding>
 {
     _Bool _hideItemView;

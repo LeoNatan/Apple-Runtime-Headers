@@ -8,27 +8,27 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray;
+@class NSMutableArray, PBUnknownFields;
 
 @interface GEOLaneInfo : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     NSMutableArray *_arrows;
     BOOL _hov;
     BOOL _preferredForMultipleManeuvers;
     BOOL _supportsManeuver;
     struct {
-        unsigned int hov:1;
-        unsigned int preferredForMultipleManeuvers:1;
-        unsigned int supportsManeuver:1;
-    } _has;
+        unsigned int has_hov:1;
+        unsigned int has_preferredForMultipleManeuvers:1;
+        unsigned int has_supportsManeuver:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)arrowType;
-@property(retain, nonatomic) NSMutableArray *arrows; // @synthesize arrows=_arrows;
-@property(nonatomic) BOOL hov; // @synthesize hov=_hov;
-@property(nonatomic) BOOL preferredForMultipleManeuvers; // @synthesize preferredForMultipleManeuvers=_preferredForMultipleManeuvers;
-@property(nonatomic) BOOL supportsManeuver; // @synthesize supportsManeuver=_supportsManeuver;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -36,15 +36,20 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)arrowAtIndex:(unsigned long long)arg1;
 - (unsigned long long)arrowsCount;
 - (void)addArrow:(id)arg1;
 - (void)clearArrows;
+@property(retain, nonatomic) NSMutableArray *arrows;
 @property(nonatomic) BOOL hasHov;
+@property(nonatomic) BOOL hov;
 @property(nonatomic) BOOL hasPreferredForMultipleManeuvers;
+@property(nonatomic) BOOL preferredForMultipleManeuvers;
 @property(nonatomic) BOOL hasSupportsManeuver;
+@property(nonatomic) BOOL supportsManeuver;
 
 @end
 

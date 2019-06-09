@@ -7,6 +7,9 @@
 #import <Foundation/NSAttributedString.h>
 
 @interface NSAttributedString (IMKUIAdditions)
++ (id)noteMarkForFontSize:(double)arg1 UIType:(long long)arg2;
++ (id)dictionarySignForFontSize:(double)arg1 UIType:(long long)arg2;
 - (id)truncatedAttributedString:(double)arg1 isVerticallyAligned:(BOOL)arg2 attributes:(id)arg3;
+- (id)mutableCopyWithColor:(id)arg1;
 @end
 

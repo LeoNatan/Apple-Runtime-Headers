@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _callback;
     int _width;
     int _height;
-    struct _VCPCompressionSession *_compressionSession;
+    struct OpaqueVTCompressionSession *_compressionSession;
     struct __CVPixelBufferPool *_pixelBufferPool;
     unsigned long long _mode;
     struct H264BitstreamParser _h264BitstreamParser;

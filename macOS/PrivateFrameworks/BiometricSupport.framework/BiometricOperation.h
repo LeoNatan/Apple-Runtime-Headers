@@ -6,25 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class BiometricKitXPCExportedClientObject, NSDictionary;
+@class BiometricKitXPCExportedClientObject;
 
 @interface BiometricOperation : NSObject
 {
-    int _operationType;
-    int _operationStatus;
-    long long _operationPriority;
-    NSDictionary *_params;
+    int _status;
+    unsigned int _cancelledMessage;
     BiometricKitXPCExportedClientObject *_client;
-    unsigned long long _absoluteTime;
+    long long _priority;
 }
 
-@property(nonatomic) unsigned long long absoluteTime; // @synthesize absoluteTime=_absoluteTime;
-@property(nonatomic) int operationStatus; // @synthesize operationStatus=_operationStatus;
+@property(readonly, nonatomic) unsigned int cancelledMessage; // @synthesize cancelledMessage=_cancelledMessage;
+@property(nonatomic) long long priority; // @synthesize priority=_priority;
+@property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) BiometricKitXPCExportedClientObject *client; // @synthesize client=_client;
-@property(retain, nonatomic) NSDictionary *params; // @synthesize params=_params;
-@property(nonatomic) long long operationPriority; // @synthesize operationPriority=_operationPriority;
-@property(nonatomic) int operationType; // @synthesize operationType=_operationType;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned int taskResumeFailedMessage;
+@property(readonly, nonatomic) unsigned int taskResumedMessage;
+@property(readonly, nonatomic) unsigned int taskPausedMessage;
+@property(readonly, nonatomic) int type;
 - (id)description;
 - (id)init;
 

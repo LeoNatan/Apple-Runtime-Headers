@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface SCRDrawer : SCRMapElement
 {
-    int _windowEdge;
+    long long _windowEdge;
 }
 
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;

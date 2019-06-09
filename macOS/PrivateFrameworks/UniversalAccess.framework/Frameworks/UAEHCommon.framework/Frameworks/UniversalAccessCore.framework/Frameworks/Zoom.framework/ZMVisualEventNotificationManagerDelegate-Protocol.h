@@ -6,9 +6,9 @@
 
 #import <Zoom/NSObject-Protocol.h>
 
-@class AXFUIElement;
+@class AXKElementController;
 
 @protocol ZMVisualEventNotificationManagerDelegate <NSObject>
-- (void)notableWindowAppeared:(AXFUIElement *)arg1;
+- (void)notableWindowAppeared:(AXKElementController *)arg1;
 @end
 

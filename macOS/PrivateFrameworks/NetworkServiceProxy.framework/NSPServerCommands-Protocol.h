@@ -6,7 +6,7 @@
 
 #import <NetworkServiceProxy/NSObject-Protocol.h>
 
-@class NPWaldo, NSData, NSDate, NSDictionary, NSPAppRule, NSPConfiguration, NSString, NetworkServiceProxyConnectionStats, NetworkServiceProxyRequestStats;
+@class NPUsageReport, NPWaldo, NSDate, NSDictionary, NSPAppRule, NSPConfiguration, NSString;
 
 @protocol NSPServerCommands <NSObject>
 
@@ -14,13 +14,8 @@
 - (void)setTestLatencyMap:(NSDictionary *)arg1 completionHandler:(void (^)(BOOL))arg2;
 - (void)fetchStateForClient:(NSString *)arg1 withPeerEndpoint:(NSString *)arg2 completionHandler:(void (^)(NSDictionary *, NSString *, NSURL *))arg3;
 - (void)setCurrentLatitude:(double)arg1 longitude:(double)arg2 timestamp:(NSDate *)arg3 forClient:(NSString *)arg4;
-- (void)addConnectionMetrics:(NetworkServiceProxyConnectionStats *)arg1;
-- (void)addRequestMetrics:(NetworkServiceProxyRequestStats *)arg1;
-- (void)updateKeyBagData:(NSData *)arg1 usageData:(NSData *)arg2 fromClient:(NSString *)arg3;
+- (void)reportUsage:(NPUsageReport *)arg1 fromClient:(NSString *)arg2;
 - (void)refreshWaldoNowWithCompletionHandler:(void (^)(BOOL, NSString *))arg1;
-- (void)reportMetricsNowWithCompletionHandler:(void (^)(BOOL))arg1;
-- (void)resetCurrentMetricsWithCompletionHandler:(void (^)(void))arg1;
-- (void)fetchCurrentMetricsWithCompletionHandler:(BOOL)arg1 completionHandler:(void (^)(NSDictionary *))arg2;
 - (void)establishTrustWithEdgeSetForIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSString *))arg2;
 - (void)setAppRule:(NSPAppRule *)arg1 forLabel:(NSString *)arg2 completionHandler:(void (^)(NSString *))arg3;
 - (void)fetchAppRuleForLabel:(NSString *)arg1 completionHandler:(void (^)(NSArray *))arg2;

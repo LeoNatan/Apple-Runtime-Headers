@@ -22,6 +22,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)dealloc;
 - (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct CLLocationCoordinate2D)arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(_Bool)arg6 matchDataArray:(id)arg7;
 
 @end

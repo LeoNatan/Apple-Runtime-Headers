@@ -6,13 +6,22 @@
 
 #import <EventKit/EKParticipantChange.h>
 
-@interface EKAttendeeChange : EKParticipantChange
+#import <EventKit/EKOwnerIDProviding-Protocol.h>
+
+@class EKObjectID;
+
+@interface EKAttendeeChange : EKParticipantChange <EKOwnerIDProviding>
 {
+    EKObjectID *_ownerID;
 }
 
 + (void)fetchAttendeeChangesInCalendar:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchAttendeeChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchAttendeeChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (int)entityType;
+@property(readonly, nonatomic) EKObjectID *ownerID; // @synthesize ownerID=_ownerID;
+- (void).cxx_destruct;
+- (id)initWithChangeProperties:(id)arg1;
 
 @end
 

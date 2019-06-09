@@ -10,6 +10,7 @@
 {
 }
 
+- (id)submitSynchronous:(out id *)arg1;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (long long)mediaComponentType;
 - (id)newRenderJob;

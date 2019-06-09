@@ -7,10 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/NSCoding-Protocol.h>
+#import <UIKitCore/_UICollectionViewLayoutOrthogonalScrolling-Protocol.h>
 
-@class NSArray, NSIndexSet, NSMutableDictionary, NSMutableIndexSet, UICollectionView, UICollectionViewLayoutInvalidationContext, UIDynamicAnimator, _UICollectionViewCompositionLayout;
+@class NSArray, NSIndexSet, NSMutableDictionary, NSMutableIndexSet, NSString, UICollectionView, UICollectionViewLayoutInvalidationContext, UIDynamicAnimator, _UICollectionViewCompositionLayout;
 
-@interface UICollectionViewLayout : NSObject <NSCoding>
+@interface UICollectionViewLayout : NSObject <_UICollectionViewLayoutOrthogonalScrolling, NSCoding>
 {
     UICollectionView *_collectionView;
     struct CGSize _collectionViewBoundsSize;
@@ -50,6 +51,30 @@
 + (Class)layoutAttributesClass;
 @property(nonatomic, getter=_sublayoutType, setter=_setSublayoutType:) int sublayoutType; // @synthesize sublayoutType=_sublayoutType;
 - (void).cxx_destruct;
+- (_Bool)_orthogonalScrollingElementShouldAppearAboveForAttributes:(id)arg1;
+- (struct CGRect)_orthogonalFrameWithOffsetElidedForItemWithLayoutAttributes:(id)arg1 frame:(struct CGRect)arg2;
+- (_Bool)_shouldOrthogonalScrollingSectionDecorationScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
+- (_Bool)_shouldOrthogonalScrollingSectionSupplementaryScrollWithContentForIndexPath:(id)arg1 elementKind:(id)arg2;
+- (float)_orthogonalScrollingDecelerationRateForSection:(int)arg1;
+- (int)_orthogonalScrollingAxis;
+- (struct CGPoint)_orthogonalScrollingTargetContentOffsetForOffset:(struct CGPoint)arg1 section:(int)arg2;
+- (_Bool)_orthogonalScrollingUsesTargetContentOffsetForSection:(int)arg1;
+- (_Bool)_orthogonalScrollingShouldCenterCustomPagingSizeForSection:(int)arg1;
+- (float)_orthogonalScrollingPagingDimensionForSection:(int)arg1;
+- (id)_extendedAttributesQueryIncludingOrthogonalScrollingRegions:(struct CGRect)arg1;
+- (struct NSDirectionalEdgeInsets)_orthogonalScrollingContentInsetsForSection:(int)arg1;
+- (struct CGRect)_orthogonalScrollingContentRectForSection:(int)arg1;
+- (struct CGRect)_orthogonalScrollingLayoutRectForSection:(int)arg1;
+- (_Bool)_shouldConfigureForPagingForOrthogonalScrollingSection:(int)arg1;
+- (struct CGVector)_scrollingUnitVectorForOrthogonalScrollingSection:(int)arg1;
+- (struct CGPoint)_offsetForOrthogonalScrollingSection:(int)arg1;
+- (void)_setOffset:(struct CGPoint)arg1 forOrthogonalScrollingSection:(int)arg2;
+- (id)_orthogonalScrollingSections;
+- (_Bool)_hasOrthogonalScrollingSections;
+- (int)_layoutAxis;
+- (_Bool)_preparedForBoundsChanges;
+- (_Bool)_wantsUntrackedAnimationCleanupForAuxillaryItems;
+- (void)_traitCollectionDidChangeFromPreviousCollection:(id)arg1 newTraitCollection:(id)arg2;
 - (_Bool)flipsHorizontallyInOppositeLayoutDirection;
 - (int)developmentLayoutDirection;
 - (id)_layoutAttributesForElementsInProjectedRect:(struct CGRect)arg1 withProjectionVector:(struct CGVector)arg2 projectionDistance:(float)arg3;
@@ -67,10 +92,12 @@
 - (id)_invalidationContextForReorderingTargetPosition:(struct CGPoint)arg1 targetIndexPaths:(id)arg2 withPreviousPosition:(struct CGPoint)arg3 previousIndexPaths:(id)arg4;
 - (id)_layoutAttributesForReorderedItemAtIndexPath:(id)arg1 withTargetPosition:(struct CGPoint)arg2;
 - (id)_reorderingTargetItemIndexPathForPosition:(struct CGPoint)arg1 withPreviousIndexPath:(id)arg2;
+- (void)_prepareForPreferredAttributesQueryForView:(id)arg1 withLayoutAttributes:(id)arg2;
 - (void)_didPerformUpdateVisibleCellsPass;
 - (void)_willPerformUpdateVisibleCellsPass;
 - (struct CGSize)_fallbackItemSize;
 - (_Bool)_cellsShouldConferWithAutolayoutEngineForSizingInfo;
+- (_Bool)_estimatesSupplementaryItems;
 - (_Bool)_estimatesSizes;
 @property(nonatomic, getter=_isPrepared, setter=_setPrepared:) _Bool prepared;
 - (struct CGRect)convertRect:(struct CGRect)arg1 fromLayout:(id)arg2;
@@ -85,6 +112,7 @@
 @property(copy, nonatomic, getter=_sections, setter=_setSections:) NSIndexSet *sections;
 - (struct CGRect)_dynamicReferenceBounds;
 - (struct CGRect)_bounds;
+- (struct CGRect)bounds;
 @property(nonatomic, getter=_frame, setter=_setFrame:) struct CGRect frame;
 - (void)setEditing:(_Bool)arg1;
 - (_Bool)isEditing;
@@ -130,6 +158,7 @@
 - (void)registerClass:(Class)arg1 forDecorationViewOfKind:(id)arg2;
 - (id)snapshottedLayoutAttributeForItemAtIndexPath:(id)arg1;
 - (void)finalizeCollectionViewUpdates;
+- (void)_prepareForCollectionViewUpdates:(id)arg1 withDataSourceTranslator:(id)arg2;
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (struct CGSize)collectionViewContentSize;
 - (CDUnknownBlockType)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
@@ -151,6 +180,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

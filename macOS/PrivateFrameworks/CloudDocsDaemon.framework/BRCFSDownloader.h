@@ -28,9 +28,10 @@ __attribute__((visibility("hidden")))
 - (void)_transferStreamOfSyncContext:(id)arg1 didBecomeReadyWithMaxRecordsCount:(unsigned long long)arg2 sizeHint:(unsigned long long)arg3 priority:(long long)arg4;
 - (void)_sendLosersBatch:(id)arg1 sizeHint:(long long)arg2 maxRecordsCount:(unsigned long long)arg3;
 - (void)_postponeLoserForWinner:(long long)arg1 etag:(id)arg2;
-- (void)_sendContentsBatch:(id)arg1 sizeHint:(long long)arg2 maxRecordsCount:(unsigned long long)arg3;
+- (void)_sendContentsBatch:(id)arg1 sizeHint:(unsigned long long)arg2 maxRecordsCount:(unsigned long long)arg3;
 - (unsigned long long)inFlightSize;
 - (void)_sendThumbnailsBatch:(id)arg1 sizeHint:(long long)arg2 maxRecordsCount:(unsigned long long)arg3;
+- (BOOL)handleWaitForShareAcceptIfNecessaryForItem:(id)arg1 jobID:(id)arg2;
 - (void)schedule;
 - (void)performFirstSchedulingAfterStartupInDB:(id)arg1;
 - (BOOL)applyThumbnailToItem:(id)arg1 serverItem:(id)arg2 atURL:(id)arg3 applySchedulerState:(int *)arg4;
@@ -54,9 +55,9 @@ __attribute__((visibility("hidden")))
 - (void)cancelAndCleanupItemDownload:(id)arg1 kind:(int)arg2 etag:(id)arg3;
 - (void)_finishDownloadCleanup:(id)arg1;
 - (void)_cancelJobs:(id)arg1 state:(int)arg2;
+- (void)rescheduleJobsPendingFavoritesFetchInZone:(id)arg1;
 - (void)rescheduleJobsForPendingDiskSpaceWithAvailableSpace:(unsigned long long)arg1;
 - (void)rescheduleJobsPendingWinnerForItem:(id)arg1;
-- (void)rescheduleJobsPendingInitialSyncInZone:(id)arg1;
 - (void)_finishedDownload:(id)arg1 syncContext:(id)arg2 operationID:(id)arg3 error:(id)arg4;
 - (id)_sanitizeRecord:(id)arg1;
 - (id)_appLibraryForDownload:(id)arg1 kind:(int)arg2 operationID:(id)arg3;

@@ -11,13 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface NSSliderTrack : NSView
 {
-    CDStruct_5a39c0a2 _drawingState;
+    CDStruct_c9beae75 _drawingState;
     NSSliderKnob *_knobMaskView;
 }
 
 - (void)drawRect:(struct CGRect)arg1;
 @property struct CGRect knobMaskFrame;
-@property CDStruct_5a39c0a2 drawingState;
+@property CDStruct_c9beae75 drawingState;
 - (BOOL)isFlipped;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -10,10 +10,7 @@
 
 @interface PVImage : NSObject
 {
-    struct CGImage *_CGImage;
-    CIImage *_CIImage;
-    NSURL *_imageURL;
-    NSData *_imageData;
+    unsigned int _orientation;
     unsigned long long _assetWidth;
     unsigned long long _assetHeight;
     unsigned long long _width;
@@ -21,19 +18,25 @@
     unsigned long long _orientedWidth;
     unsigned long long _orientedHeight;
     unsigned long long _bytesPerRow;
-    unsigned long long _orientation;
-    long long _modelId;
-    NSString *_adjustmentVersion;
+    id _adjustmentVersion;
+    NSString *_groupingIdentifier;
+    CIImage *_CIImage;
+    struct CGImage *_CGImage;
+    NSURL *_imageURL;
+    NSData *_imageData;
 }
 
-+ (id)imageWithData:(id)arg1 imageCreationOptions:(id)arg2 assetWidth:(unsigned long long)arg3 assetHeight:(unsigned long long)arg4;
-+ (id)imageWithURL:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 imageCreationOptions:(id)arg4;
-+ (id)imageWithCIImage:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 orientation:(unsigned long long)arg4;
-+ (id)imageWithCGImage:(struct CGImage *)arg1 orientation:(unsigned long long)arg2;
-+ (id)imageWithCGImage:(struct CGImage *)arg1 orientation:(unsigned long long)arg2 modelId:(long long)arg3 adjustmentVersion:(id)arg4;
-@property(copy, nonatomic) NSString *adjustmentVersion; // @synthesize adjustmentVersion=_adjustmentVersion;
-@property(readonly, nonatomic) long long modelId; // @synthesize modelId=_modelId;
-@property(readonly, nonatomic) unsigned long long orientation; // @synthesize orientation=_orientation;
++ (id)imageWithData:(id)arg1 imageCreationOptions:(id)arg2 assetWidth:(unsigned long long)arg3 assetHeight:(unsigned long long)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
++ (id)imageWithURL:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 imageCreationOptions:(id)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
++ (id)imageWithCIImage:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 orientation:(unsigned int)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
++ (id)imageWithCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 adjustmentVersion:(id)arg3 creationDate:(id)arg4;
+@property(readonly, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
+@property(readonly, copy, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
+@property(readonly, nonatomic) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;
+@property(readonly, nonatomic) CIImage *CIImage; // @synthesize CIImage=_CIImage;
+@property(readonly, nonatomic) NSString *groupingIdentifier; // @synthesize groupingIdentifier=_groupingIdentifier;
+@property(readonly, copy, nonatomic) id adjustmentVersion; // @synthesize adjustmentVersion=_adjustmentVersion;
+@property(readonly, nonatomic) unsigned int orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) unsigned long long bytesPerRow; // @synthesize bytesPerRow=_bytesPerRow;
 @property(readonly, nonatomic) unsigned long long orientedHeight; // @synthesize orientedHeight=_orientedHeight;
 @property(readonly, nonatomic) unsigned long long orientedWidth; // @synthesize orientedWidth=_orientedWidth;
@@ -41,17 +44,13 @@
 @property(readonly, nonatomic) unsigned long long width; // @synthesize width=_width;
 @property(readonly, nonatomic) unsigned long long assetHeight; // @synthesize assetHeight=_assetHeight;
 @property(readonly, nonatomic) unsigned long long assetWidth; // @synthesize assetWidth=_assetWidth;
-@property(readonly, retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
-@property(readonly, retain, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 - (void).cxx_destruct;
 - (struct CGRect)imageRectForNormalizedRect:(struct CGRect)arg1;
-@property(readonly, nonatomic) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;
-@property(readonly, retain, nonatomic) CIImage *CIImage; // @synthesize CIImage=_CIImage;
 - (void)dealloc;
-- (id)initWithURL:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 imageCreationOptions:(id)arg4;
-- (id)initWithData:(id)arg1 imageCreationOptions:(id)arg2 assetWidth:(unsigned long long)arg3 assetHeight:(unsigned long long)arg4;
-- (id)initWithCIImage:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 orientation:(unsigned long long)arg4;
-- (id)initWithCGImage:(struct CGImage *)arg1 orientation:(unsigned long long)arg2 modelId:(long long)arg3 adjustmentVersion:(id)arg4;
+- (id)initWithURL:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 imageCreationOptions:(id)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
+- (id)initWithData:(id)arg1 imageCreationOptions:(id)arg2 assetWidth:(unsigned long long)arg3 assetHeight:(unsigned long long)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
+- (id)initWithCIImage:(id)arg1 assetWidth:(unsigned long long)arg2 assetHeight:(unsigned long long)arg3 orientation:(unsigned int)arg4 adjustmentVersion:(id)arg5 creationDate:(id)arg6;
+- (id)initWithCGImage:(struct CGImage *)arg1 orientation:(unsigned int)arg2 adjustmentVersion:(id)arg3 creationDate:(id)arg4;
 
 @end
 

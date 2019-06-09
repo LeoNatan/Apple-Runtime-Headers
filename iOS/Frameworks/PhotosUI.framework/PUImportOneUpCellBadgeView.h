@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class UIActivityIndicatorView, UIImageView;
+@class UIActivityIndicatorView, UIView;
 
 __attribute__((visibility("hidden")))
 @interface PUImportOneUpCellBadgeView : UICollectionReusableView
@@ -15,14 +15,16 @@ __attribute__((visibility("hidden")))
     _Bool _inUpdateBlock;
     _Bool _needsBadgeUpdate;
     long long _badgeType;
-    UIImageView *_badgeImageView;
+    UIView *_badgeContainerView;
+    UIView *_badgeView;
     UIActivityIndicatorView *_spinner;
 }
 
 @property(nonatomic) _Bool needsBadgeUpdate; // @synthesize needsBadgeUpdate=_needsBadgeUpdate;
 @property(nonatomic) _Bool inUpdateBlock; // @synthesize inUpdateBlock=_inUpdateBlock;
 @property(retain, nonatomic) UIActivityIndicatorView *spinner; // @synthesize spinner=_spinner;
-@property(retain, nonatomic) UIImageView *badgeImageView; // @synthesize badgeImageView=_badgeImageView;
+@property(retain, nonatomic) UIView *badgeView; // @synthesize badgeView=_badgeView;
+@property(retain, nonatomic) UIView *badgeContainerView; // @synthesize badgeContainerView=_badgeContainerView;
 @property(nonatomic) _Bool selectable; // @synthesize selectable=_selectable;
 @property(nonatomic) long long badgeType; // @synthesize badgeType=_badgeType;
 - (void).cxx_destruct;
@@ -33,7 +35,6 @@ __attribute__((visibility("hidden")))
 - (void)prepareForReuse;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
-- (id)badgeView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

@@ -14,5 +14,7 @@
 + (id)_mapkit_formattedStringForFloatingPointNumber:(id)arg1;
 + (id)_mapkit_formattedStringForFloat:(float)arg1;
 - (id)_mapkit_componentsSeparatedFromCommaDelimitedList;
+- (float)_mapkit_cgFloatValue;
+- (id)mkServerFormattedString;
 @end
 

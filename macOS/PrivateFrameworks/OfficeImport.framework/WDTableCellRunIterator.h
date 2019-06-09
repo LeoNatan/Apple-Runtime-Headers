@@ -6,6 +6,7 @@
 
 #import <OfficeImport/WDCombinedIterator.h>
 
+__attribute__((visibility("hidden")))
 @interface WDTableCellRunIterator : WDCombinedIterator
 {
 }

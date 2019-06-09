@@ -6,6 +6,7 @@
 
 #import <ICADevices/ICDBaseObjectImp.h>
 
+__attribute__((visibility("hidden")))
 @interface ICDAudioObjectImp : ICDBaseObjectImp
 {
 }

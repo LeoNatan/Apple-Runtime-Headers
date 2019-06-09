@@ -8,12 +8,12 @@
 
 #import <Navigation/MNNavigationSessionObserver-Protocol.h>
 
-@class GEONavigationProxy, NSString;
+@class GEONavigationProxy, MNCompanionNavigationAdapter, NSString;
 
-__attribute__((visibility("hidden")))
 @interface MNNavigationProxyUpdater : NSObject <MNNavigationSessionObserver>
 {
     GEONavigationProxy *_navigationProxy;
+    MNCompanionNavigationAdapter *_companionNavigationAdapter;
 }
 
 - (void).cxx_destruct;
@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)setDisplayedStepIndex:(unsigned long long)arg1;
 - (void)navigationSessionStopped:(id)arg1;
 - (void)navigationSessionStarted:(id)arg1;
+- (void)enteredRoutePreviewWithTransportType:(int)arg1;
 - (id)init;
 
 // Remaining properties

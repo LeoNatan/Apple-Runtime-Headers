@@ -19,6 +19,12 @@
     _Bool _btCentralManagerNeeded;
     CBPeripheralManager *_btPeripheralManager;
     _Bool _btPeripheralManagerNeeded;
+    struct {
+        CDUnknownFunctionPointerType accessoryEvent;
+        CDUnknownFunctionPointerType accessorySetupCommand;
+    } _btAccessoryCallbacks;
+    _Bool _btAccessoryEventsNeeded;
+    _Bool _btAccessoryEventsRegistered;
     struct BTAccessoryManagerImpl *_btAccessoryManager;
     _Bool _btConnectionDevicesInitialized;
     _Bool _btConnectionEventsNeeded;
@@ -50,6 +56,7 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     unsigned int _flags;
     NSString *_label;
+    unsigned int _statusFlags;
     CDUnknownBlockType _bluetoothAddressChangedHandler;
     CDUnknownBlockType _deviceConnectedHandler;
     CDUnknownBlockType _deviceDisconnectedHandler;
@@ -66,10 +73,12 @@
 @property(copy, nonatomic) CDUnknownBlockType deviceDisconnectedHandler; // @synthesize deviceDisconnectedHandler=_deviceDisconnectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType deviceConnectedHandler; // @synthesize deviceConnectedHandler=_deviceConnectedHandler;
 @property(copy, nonatomic) CDUnknownBlockType bluetoothAddressChangedHandler; // @synthesize bluetoothAddressChangedHandler=_bluetoothAddressChangedHandler;
+@property(nonatomic) unsigned int statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)updateStatusFlags;
 - (void)updateDevice:(id)arg1 btDevice:(struct BTDeviceImpl *)arg2;
 - (void)peripheralManagerDidUpdateState:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -80,6 +89,7 @@
 - (void)_handleBluetoothAddressChanged;
 - (id)_createCUBluetoothDeviceWithBTDevice:(struct BTDeviceImpl *)arg1;
 - (void)centralManagerDidUpdateState:(id)arg1;
+- (void)_btAccessoryPlacementChanged:(struct BTAccessoryManagerImpl *)arg1 device:(struct BTDeviceImpl *)arg2;
 - (void)_btEnsureStopped;
 - (void)_btEnsureStarted;
 - (void)_processFindDeviceRequests;

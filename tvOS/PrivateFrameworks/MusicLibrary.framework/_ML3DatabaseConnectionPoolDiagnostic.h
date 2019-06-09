@@ -10,7 +10,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface _ML3DatabaseConnectionPoolDiagnostic : NSObject <NSMutableCopying>
 {
     NSArray *_readerAvailableConnections;

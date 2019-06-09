@@ -6,8 +6,19 @@
 
 #import <WeatherFoundation/WFAirQualityConditions.h>
 
+@class NSString;
+
 @interface WFAirQualityConditions (NWKDisplayState)
++ (id)_nwm_v2AirQualityConditionsDescriptionKeyForCategory:(unsigned int)arg1 atLocation:(id)arg2;
++ (id)_nwm_descriptionForAirQualityConditions:(id)arg1 atLocation:(id)arg2 withExtension:(id)arg3;
++ (id)nwm_titleForAirQualityConditions:(id)arg1 atLocation:(id)arg2;
++ (id)nwm_shortDescriptionForAirQualityConditions:(id)arg1 atLocation:(id)arg2;
++ (id)nwm_longDescriptionForAirQualityConditions:(id)arg1 atLocation:(id)arg2;
 @property(readonly, nonatomic) _Bool nwkAirQualityStringIsLong;
 @property(readonly, nonatomic) _Bool nwkAirQualityIsNoteworthy;
+- (_Bool)nwk_isExpiredWithBufferedExpirationDate:(id)arg1;
+- (id)nwk_bufferedExpirationDateWithDownloadDate:(id)arg1;
+@property(readonly, nonatomic) NSString *nwm_localizedDescriptionShort;
+@property(readonly, nonatomic) NSString *nwm_localizedDescriptionLong;
 @end
 

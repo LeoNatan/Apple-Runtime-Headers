@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class HDDataProvenanceCache, HDEntityEncoder, HDProfile, HDSQLiteDatabase, HDSyncSession, NSArray;
+@protocol HDSyncMessageHandler;
 
 @interface _HDDataEntitySyncMessageBuilder : NSObject
 {
@@ -15,7 +16,7 @@
     Class _entityClass;
     HDDataProvenanceCache *_provenanceCache;
     HDEntityEncoder *_entityEncoder;
-    CDUnknownBlockType _handler;
+    id <HDSyncMessageHandler> _messageHandler;
     int _currentEncodedBytes;
     _Bool _hasSentObject;
     _Bool _didSendFinal;
@@ -34,7 +35,7 @@
 - (_Bool)_sendCurrentCollectionWithAnchor:(long long)arg1 final:(_Bool)arg2 error:(id *)arg3;
 - (int)addEntity:(id)arg1 properties:(id)arg2 row:(struct HDSQLiteRow *)arg3 anchor:(long long)arg4 index:(unsigned int)arg5 error:(id *)arg6;
 - (id)_provenanceForID:(long long)arg1 error:(id *)arg2;
-- (id)initWithProfile:(id)arg1 database:(id)arg2 entityClass:(Class)arg3 bytesPerMessage:(int)arg4 syncSession:(id)arg5 handler:(CDUnknownBlockType)arg6;
+- (id)initWithProfile:(id)arg1 database:(id)arg2 entityClass:(Class)arg3 bytesPerMessage:(int)arg4 syncSession:(id)arg5 messageHandler:(id)arg6;
 
 @end
 

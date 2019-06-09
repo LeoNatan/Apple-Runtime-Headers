@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSSet, NSString, SGTInput, _SGTSpotlightSuggesterTiming;
+@class NSArray, NSSet, NSString, SGTInput, SGTSearchQueryContext;
 
 __attribute__((visibility("hidden")))
 @interface _SGTQueryContext : NSObject
@@ -19,8 +19,7 @@ __attribute__((visibility("hidden")))
     struct _NSRange NLRange;
     BOOL isNLSearch;
     long long NLScope;
-    _SGTSpotlightSuggesterTiming *timing;
-    BOOL hasFilterQuery;
+    SGTSearchQueryContext *originalQueryContext;
 }
 
 - (void).cxx_destruct;

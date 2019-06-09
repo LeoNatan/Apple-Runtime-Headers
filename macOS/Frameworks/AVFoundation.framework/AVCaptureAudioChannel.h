@@ -13,9 +13,7 @@
     AVCaptureAudioChannelInternal *_internal;
 }
 
-- (void)_updateEnabled:(BOOL)arg1;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
-- (void)_updateVolume:(float)arg1;
 @property(nonatomic) float volume;
 @property(readonly, nonatomic) float peakHoldLevel;
 @property(readonly, nonatomic) float averagePowerLevel;

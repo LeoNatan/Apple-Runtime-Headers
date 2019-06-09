@@ -16,8 +16,8 @@
     NSMutableDictionary *_components;
 }
 
-+ (_Bool)supportsSecureCoding;
 + (id)entity;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;

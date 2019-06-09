@@ -6,15 +6,24 @@
 
 #import <NanoTimeKit/NTKRichComplicationRectangularBaseView.h>
 
-@class NTKCalendarRichComplicationContentView;
+@class NSArray, NTKCalendarRichComplicationContentView;
 
 @interface NTKCalendarRichComplicationView : NTKRichComplicationRectangularBaseView
 {
     NTKCalendarRichComplicationContentView *_contentView;
+    NSArray *_flatViews;
+    NSArray *_accentViews;
+    NSArray *_desaturateViews;
 }
 
+@property(retain, nonatomic) NSArray *desaturateViews; // @synthesize desaturateViews=_desaturateViews;
+@property(retain, nonatomic) NSArray *accentViews; // @synthesize accentViews=_accentViews;
+@property(retain, nonatomic) NSArray *flatViews; // @synthesize flatViews=_flatViews;
 @property(retain, nonatomic) NTKCalendarRichComplicationContentView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (void)_updateViews:(id)arg1 withFilter:(id)arg2;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (id)init;
 

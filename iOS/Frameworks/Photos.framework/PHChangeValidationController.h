@@ -43,6 +43,9 @@
 @property(readonly, nonatomic) NSOrderedSet *insertRequests; // @synthesize insertRequests=_insertRequests;
 - (void).cxx_destruct;
 - (_Bool)validateWithError:(id *)arg1;
+- (_Bool)_validateSimpleDeletionsWithValidators:(id)arg1 requestsByObjectID:(id)arg2 error:(id *)arg3;
+- (_Bool)_recordObjectID:(id)arg1 withSimpleDeleteValidators:(id)arg2;
+- (id)_simpleDeleteValidatorsWithManagedObjectContext:(id)arg1;
 - (_Bool)_prepareWithError:(id *)arg1;
 - (id)initWithInsertRequests:(id)arg1 updateRequests:(id)arg2 deleteRequests:(id)arg3 context:(id)arg4 photoLibrary:(id)arg5;
 

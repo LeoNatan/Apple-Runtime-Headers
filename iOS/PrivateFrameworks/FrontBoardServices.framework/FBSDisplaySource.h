@@ -25,6 +25,7 @@
     struct os_unfair_lock_s _lock;
     FBSDisplayMonitor *_lock_monitor;
     FBSDisplayConfiguration *_lock_configuration;
+    _Bool _lock_allowsUnknown;
     int _lock_attachment;
     unsigned int _lock_debounceToken;
     FBSDisplayConfiguration *_lock_reportedConfiguration;
@@ -45,6 +46,7 @@
 - (void)_lock_setAttachment:(int)arg1;
 - (void)_lock_setConfiguration:(id)arg1;
 @property(readonly, copy, nonatomic) FBSDisplayConfiguration *connectedConfiguration;
+@property(nonatomic) _Bool allowsUnknown;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;

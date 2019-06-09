@@ -4,53 +4,94 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UINavigationController.h>
+#import <UIKit/UITableViewController.h>
 
+#import <ContactsUI/CNPickerControllerDelegate-Protocol.h>
+#import <ContactsUI/UISearchControllerDelegate-Protocol.h>
+#import <ContactsUI/UISearchResultsUpdating-Protocol.h>
 #import <ContactsUI/UITableViewDataSource-Protocol.h>
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 #import <ContactsUI/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSIndexPath, NSString, UITableViewController;
+@class NSArray, NSIndexPath, NSString, UISearchController, UITextField;
 @protocol CNPickerControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CNPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+@interface CNPickerController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UISearchResultsUpdating, UISearchControllerDelegate, CNPickerControllerDelegate>
 {
     _Bool _allowsDiscoveredItems;
+    _Bool _searchIncludesSupplementalItems;
     _Bool _allowsCustomItems;
+    _Bool _searchControllerActive;
     id _selectedItem;
+    id <CNPickerControllerDelegate> _delegate;
     NSArray *_discoveredItems;
+    NSArray *_promotedItems;
     NSArray *_builtinItems;
+    NSArray *_supplementalItems;
+    NSArray *_promotedSupplementalItems;
+    NSArray *_remainderSupplementalItems;
     NSArray *_customItems;
     NSString *_itemLocalizationKey;
     CDUnknownBlockType _itemLocalizationBlock;
-    UITableViewController *_tableViewController;
     NSIndexPath *_selectedIndexPath;
     long long _discoveredItemsSection;
+    long long _promotedItemsSection;
     long long _builtinItemsSection;
     long long _customItemsSection;
+    NSString *_customEditingItem;
+    UITextField *_customTextField;
+    NSArray *_filterTokens;
+    UISearchController *_searchController;
+    NSArray *_filteredDiscoveredItems;
+    NSArray *_filteredPromotedItems;
+    NSArray *_filteredBuiltinItems;
+    NSArray *_filteredCustomItems;
 }
 
+@property(nonatomic, getter=isSearchControllerActive) _Bool searchControllerActive; // @synthesize searchControllerActive=_searchControllerActive;
+@property(copy, nonatomic) NSArray *filteredCustomItems; // @synthesize filteredCustomItems=_filteredCustomItems;
+@property(copy, nonatomic) NSArray *filteredBuiltinItems; // @synthesize filteredBuiltinItems=_filteredBuiltinItems;
+@property(copy, nonatomic) NSArray *filteredPromotedItems; // @synthesize filteredPromotedItems=_filteredPromotedItems;
+@property(copy, nonatomic) NSArray *filteredDiscoveredItems; // @synthesize filteredDiscoveredItems=_filteredDiscoveredItems;
+@property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
+@property(retain, nonatomic) NSArray *filterTokens; // @synthesize filterTokens=_filterTokens;
+@property(retain, nonatomic) UITextField *customTextField; // @synthesize customTextField=_customTextField;
+@property(retain, nonatomic) NSString *customEditingItem; // @synthesize customEditingItem=_customEditingItem;
 @property(nonatomic) long long customItemsSection; // @synthesize customItemsSection=_customItemsSection;
 @property(nonatomic) long long builtinItemsSection; // @synthesize builtinItemsSection=_builtinItemsSection;
+@property(nonatomic) long long promotedItemsSection; // @synthesize promotedItemsSection=_promotedItemsSection;
 @property(nonatomic) long long discoveredItemsSection; // @synthesize discoveredItemsSection=_discoveredItemsSection;
 @property(retain, nonatomic) NSIndexPath *selectedIndexPath; // @synthesize selectedIndexPath=_selectedIndexPath;
-@property(retain, nonatomic) UITableViewController *tableViewController; // @synthesize tableViewController=_tableViewController;
 @property(copy, nonatomic) CDUnknownBlockType itemLocalizationBlock; // @synthesize itemLocalizationBlock=_itemLocalizationBlock;
 @property(copy, nonatomic) NSString *itemLocalizationKey; // @synthesize itemLocalizationKey=_itemLocalizationKey;
 @property(nonatomic) _Bool allowsCustomItems; // @synthesize allowsCustomItems=_allowsCustomItems;
 @property(copy, nonatomic) NSArray *customItems; // @synthesize customItems=_customItems;
+@property(nonatomic) _Bool searchIncludesSupplementalItems; // @synthesize searchIncludesSupplementalItems=_searchIncludesSupplementalItems;
+@property(copy, nonatomic) NSArray *remainderSupplementalItems; // @synthesize remainderSupplementalItems=_remainderSupplementalItems;
+@property(copy, nonatomic) NSArray *promotedSupplementalItems; // @synthesize promotedSupplementalItems=_promotedSupplementalItems;
+@property(copy, nonatomic) NSArray *supplementalItems; // @synthesize supplementalItems=_supplementalItems;
 @property(copy, nonatomic) NSArray *builtinItems; // @synthesize builtinItems=_builtinItems;
+@property(copy, nonatomic) NSArray *promotedItems; // @synthesize promotedItems=_promotedItems;
 @property(nonatomic) _Bool allowsDiscoveredItems; // @synthesize allowsDiscoveredItems=_allowsDiscoveredItems;
 @property(copy, nonatomic) NSArray *discoveredItems; // @synthesize discoveredItems=_discoveredItems;
+@property(nonatomic) __weak id <CNPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id selectedItem; // @synthesize selectedItem=_selectedItem;
 - (void).cxx_destruct;
-- (id)_itemAtIndexPath:(id)arg1;
+- (id)_itemAtIndexPath:(id)arg1 isPlaceholder:(_Bool *)arg2;
 - (unsigned long long)_indexForCustomItemAtIndexPath:(id)arg1;
+- (void)picker:(id)arg1 didPickItem:(id)arg2;
+- (void)pickerDidCancel:(id)arg1;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 willBeginEditingRowAtIndexPath:(id)arg2;
+- (void)textFieldDidEndEditing:(id)arg1;
 - (_Bool)textFieldShouldEndEditing:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
 - (void)textFieldDidBeginEditing:(id)arg1;
+- (_Bool)isSearching;
+- (void)didDismissSearchController:(id)arg1;
+- (void)willPresentSearchController:(id)arg1;
+- (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
@@ -60,22 +101,25 @@ __attribute__((visibility("hidden")))
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
-- (_Bool)isEditing;
+- (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_updateRightButtonItem;
 - (void)viewWillAppear:(_Bool)arg1;
+- (_Bool)isSupplementalDisclosureItemIndexPath:(id)arg1;
+- (_Bool)isAddCustomItemIndexPath:(id)arg1;
 - (void)removeCustomItem:(id)arg1;
 - (void)customLabelUpdated:(id)arg1;
+- (void)presentExtendedPicker;
 - (void)donePicker:(id)arg1;
+- (void)doneInlineEditing:(id)arg1;
 - (void)cancelPicker:(id)arg1;
+- (id)titleForSupplementalItems;
 - (id)titleForAddCustomItem;
 - (id)titleForPickerItem:(id)arg1;
 - (id)_titleForPickerItem:(id)arg1;
-- (void)dealloc;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithStyle:(long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(nonatomic) __weak id <CNPickerControllerDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

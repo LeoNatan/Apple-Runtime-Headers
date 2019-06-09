@@ -6,8 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@class AVPlayerController;
+@class AVPlayerController, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVNowPlayingInfoController : NSObject
 {
     AVPlayerController *_playerController;
@@ -16,8 +17,10 @@
     BOOL _enabled;
     BOOL _shouldOwnNowPlayingInfo;
     void *_commandHandlerIdentifier;
+    NSString *_overrideParentApplicationDisplayIdentifier;
 }
 
+@property(copy, nonatomic) NSString *overrideParentApplicationDisplayIdentifier; // @synthesize overrideParentApplicationDisplayIdentifier=_overrideParentApplicationDisplayIdentifier;
 - (void).cxx_destruct;
 - (unsigned int)_handleRemoteCommand:(unsigned int)arg1 options:(id)arg2;
 - (void)_updateRegisteredRemoteCommandEnabledStatesWithPlayerController:(id)arg1;

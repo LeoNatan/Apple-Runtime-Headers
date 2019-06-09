@@ -6,43 +6,68 @@
 
 #import <MediaPlayer/MPSectionedIdentifierList.h>
 
-@class NSString, _MPSSILImplementation;
+#import <MediaPlayer/MPShuffleableSectionedIdentifierListDelegate-Protocol.h>
 
-@interface MPShuffleableSectionedIdentifierList : MPSectionedIdentifierList
+@class NSString, _MPSSILImplementation;
+@protocol MPShuffleableSectionedIdentifierListDelegate;
+
+@interface MPShuffleableSectionedIdentifierList : MPSectionedIdentifierList <MPShuffleableSectionedIdentifierListDelegate>
 {
-    int _shuffleType;
     _MPSSILImplementation *_shuffledList;
+    int _shuffleType;
     NSString *_shuffleStartingSectionIdentifier;
     NSString *_shuffleStartingItemIdentifier;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *shuffleStartingItemIdentifier; // @synthesize shuffleStartingItemIdentifier=_shuffleStartingItemIdentifier;
 @property(copy, nonatomic) NSString *shuffleStartingSectionIdentifier; // @synthesize shuffleStartingSectionIdentifier=_shuffleStartingSectionIdentifier;
-@property(retain, nonatomic) _MPSSILImplementation *shuffledList; // @synthesize shuffledList=_shuffledList;
 @property(nonatomic) int shuffleType; // @synthesize shuffleType=_shuffleType;
 - (void).cxx_destruct;
 - (void)moveItem:(id)arg1 fromSection:(id)arg2 afterTailOfSection:(id)arg3;
 - (void)moveItem:(id)arg1 fromSection:(id)arg2 afterHeadOfSection:(id)arg3;
-- (void)addDataSource:(id)arg1 section:(id)arg2 afterTailOfSection:(id)arg3;
 - (void)addDataSource:(id)arg1 section:(id)arg2 afterHeadOfSection:(id)arg3;
+- (id)_shuffledListWithExclusiveAccessToken:(id)arg1;
+- (void)_dequeueCandidatesWithQuota:(int)arg1 withExclusiveAccessToken:(id)arg2;
+- (id)_candidateItemsWithExclusiveAccessToken:(id)arg1;
+- (void)didDequeueShuffledItemsInSectionedIdentifierList:(id)arg1;
 - (void)dataSourceReloadItem:(id)arg1 inSection:(id)arg2;
 - (void)dataSourceRemoveItem:(id)arg1 fromSection:(id)arg2;
 - (void)dataSourceInsertItemsAtTail:(id)arg1 inSection:(id)arg2;
 - (void)dataSourceInsertItems:(id)arg1 afterItem:(id)arg2 inSection:(id)arg3;
 - (void)dataSourceInsertItemsAtHead:(id)arg1 inSection:(id)arg2;
-- (int)itemCount;
+- (int)_itemCountWithExclusiveAccessToken:(id)arg1;
 - (void)removeItem:(id)arg1 fromSection:(id)arg2;
 - (void)moveItem:(id)arg1 fromSection:(id)arg2 afterItem:(id)arg3 inSection:(id)arg4;
 - (void)moveItemToEnd:(id)arg1 fromSection:(id)arg2;
 - (void)moveItemToStart:(id)arg1 fromSection:(id)arg2;
-- (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2;
-- (void)addDataSource:(id)arg1 section:(id)arg2 afterItem:(id)arg3 inSection:(id)arg4;
-- (void)addDataSourceAtStart:(id)arg1 section:(id)arg2;
+- (void)replaceDataSource:(id)arg1 forSection:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addDataSource:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3 afterTailOfSection:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)addDataSource:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3 afterItem:(id)arg4 inSection:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (void)addDataSourceAtStart:(id)arg1 section:(id)arg2 sequentially:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addDataSourceAtEnd:(id)arg1 section:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addDataSource:(id)arg1 section:(id)arg2 afterTailOfSection:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)addDataSource:(id)arg1 section:(id)arg2 afterItem:(id)arg3 inSection:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)addDataSourceAtStart:(id)arg1 section:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)enumeratorWithOptions:(unsigned int)arg1 startingAtTailOfSection:(id)arg2 withExclusiveAccessToken:(id)arg3;
+- (id)enumeratorWithOptions:(unsigned int)arg1 startingAtItem:(id)arg2 inSection:(id)arg3 withExclusiveAccessToken:(id)arg4;
+- (id)enumeratorWithOptions:(unsigned int)arg1 withExclusiveAccessToken:(id)arg2;
+- (id)enumeratorWithOptions:(unsigned int)arg1 startingAtTailOfSection:(id)arg2;
 - (id)enumeratorWithOptions:(unsigned int)arg1 startingAtItem:(id)arg2 inSection:(id)arg3;
 - (id)enumeratorWithOptions:(unsigned int)arg1;
 - (void)safelyReshuffleAfterItem:(id)arg1 inSection:(id)arg2;
 - (void)setShuffleType:(int)arg1 startingItem:(id)arg2 inSection:(id)arg3 randomSource:(id)arg4;
 - (void)setShuffleType:(int)arg1 startingItem:(id)arg2 inSection:(id)arg3;
+- (void)encodeWithCoder:(id)arg1 withExclusiveAccessToken:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSString *debugDescription;
+
+// Remaining properties
+@property(nonatomic) __weak id <MPShuffleableSectionedIdentifierListDelegate> delegate; // @dynamic delegate;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

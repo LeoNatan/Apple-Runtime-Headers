@@ -10,11 +10,13 @@
 {
     _Bool _hasPrivateEntitlement;
     _Bool _hasiTunesAPIEntitlement;
+    _Bool _hasiTunesStoreEntitlement;
     struct __SecTask *_currentTask;
 }
 
 + (id)currentProcessInfo;
 @property(nonatomic) struct __SecTask *currentTask; // @synthesize currentTask=_currentTask;
+@property(readonly, nonatomic) _Bool hasiTunesStoreEntitlement; // @synthesize hasiTunesStoreEntitlement=_hasiTunesStoreEntitlement;
 @property(readonly, nonatomic) _Bool hasiTunesAPIEntitlement; // @synthesize hasiTunesAPIEntitlement=_hasiTunesAPIEntitlement;
 @property(readonly, nonatomic) _Bool hasPrivateEntitlement; // @synthesize hasPrivateEntitlement=_hasPrivateEntitlement;
 - (_Bool)valueForEntitlement:(id)arg1 containsObject:(id)arg2;

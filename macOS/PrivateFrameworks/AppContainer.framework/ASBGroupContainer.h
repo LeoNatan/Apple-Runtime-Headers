@@ -14,13 +14,13 @@
     NSString *_containerPath;
 }
 
-+ (id)containerForApplicationGroupIdentifier:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
++ (id)containerForApplicationGroupIdentifier:(id)arg1 inBaseDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 + (id)containerURLForApplicationGroupIdentifier:(id)arg1;
 - (void).cxx_destruct;
 @property(readonly) NSURL *dataURL;
 - (BOOL)upgradeAndReturnError:(id *)arg1;
 - (BOOL)hasLatestSchema;
-- (id)initWithApplicationGroupIdentifier:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (id)initWithApplicationGroupIdentifier:(id)arg1 inBaseDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 
 @end
 

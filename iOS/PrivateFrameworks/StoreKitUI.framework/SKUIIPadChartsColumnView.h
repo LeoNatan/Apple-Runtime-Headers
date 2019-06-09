@@ -8,6 +8,7 @@
 
 @class NSArray, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPadChartsColumnView : UIView
 {
     struct UIEdgeInsets _contentInset;

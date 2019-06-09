@@ -15,7 +15,6 @@
     MTTimerManager *_timerManager;
 }
 
-+ (Class)richComplicationDisplayViewClassForType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 + (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) MTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
@@ -26,6 +25,7 @@
 - (void)_stopObserving;
 - (void)_startObserving;
 - (id)_unknownEntry;
+- (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
 - (void)resume;

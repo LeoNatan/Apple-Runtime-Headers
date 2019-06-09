@@ -12,6 +12,7 @@
 @class IKAppContext, NSString;
 @protocol SKUICollectionDOMFeatureTargetting;
 
+__attribute__((visibility("hidden")))
 @interface SKUICollectionDOMFeature : NSObject <SKUIJSDOMFeatureCollectionAppBridge, SKUIDOMFeature>
 {
     IKAppContext *_appContext;

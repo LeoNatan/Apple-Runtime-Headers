@@ -12,6 +12,7 @@
 
 @class IKColor, NSArray, NSString, SKUIGridComponent, SKUIGridViewElementPageSectionConfiguration, SKUIViewElementLayoutContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGridViewElementPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIGridViewElementPageSectionConfigurationDataSource, SKUICollectionDOMFeatureTargetting>
 {
     IKColor *_backgroundColor;

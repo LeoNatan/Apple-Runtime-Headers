@@ -8,11 +8,19 @@
 
 #import <PhotosUICore/PXAnonymousViewController-Protocol.h>
 
-@class NSString;
+@class NSString, PXExtendedTraitCollection;
 
 @interface NSViewController (PXViewController) <PXAnonymousViewController>
++ (void)_px_prepareClassForExtendedTraitCollection;
 @property(readonly, nonatomic) struct NSEdgeInsets px_layoutMargins;
 @property(readonly, nonatomic) struct NSEdgeInsets px_safeAreaInsets;
+- (void)_pxswizzled_viewControllerTraitCollection_viewWillTransitionToSize:(struct CGSize)arg1;
+- (void)_pxswizzled_viewControllerTraitCollection_viewWillLayout;
+- (void)_pxswizzled_viewControllerTraitCollection_viewDidAppear;
+- (void)_pxswizzled_viewControllerTraitCollection_viewWillAppear;
+- (void)_pxswizzled_viewControllerTraitCollection_viewDidLoad;
+@property(readonly, nonatomic) PXExtendedTraitCollection *px_extendedTraitCollection;
+- (void)px_enableExtendedTraitCollection;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

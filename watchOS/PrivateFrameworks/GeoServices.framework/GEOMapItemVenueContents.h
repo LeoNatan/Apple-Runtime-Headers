@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)initWithItemList:(id)arg1;
 - (id)initWithTitle:(id)arg1 items:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

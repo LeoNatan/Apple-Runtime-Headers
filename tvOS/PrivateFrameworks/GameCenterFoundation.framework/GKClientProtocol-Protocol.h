@@ -25,6 +25,7 @@
 - (oneway void)session:(GKGameSession *)arg1 player:(GKCloudPlayer *)arg2 didChangeConnectionState:(long long)arg3;
 - (oneway void)session:(GKGameSession *)arg1 removedPlayer:(GKCloudPlayer *)arg2;
 - (oneway void)session:(GKGameSession *)arg1 addedPlayer:(GKCloudPlayer *)arg2;
+- (oneway void)localPlayerAcceptedCustomTournamentInvite;
 - (oneway void)didReceiveData:(NSData *)arg1 reliably:(_Bool)arg2 forRecipients:(NSArray *)arg3 fromSender:(NSString *)arg4;
 - (oneway void)didDisconnectFromParticipantWithID:(NSString *)arg1;
 - (oneway void)didConnectToParticipantWithID:(NSString *)arg1;

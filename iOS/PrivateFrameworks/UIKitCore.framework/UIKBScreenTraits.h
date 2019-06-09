@@ -21,6 +21,8 @@
     struct CGRect _bounds;
 }
 
++ (id)fullScreenTraitsWithScreen:(id)arg1 orientation:(long long)arg2;
++ (id)traitsWithScreen:(id)arg1 orientation:(long long)arg2 ignoreRemoteKeyboard:(_Bool)arg3;
 + (id)traitsWithScreen:(id)arg1 orientation:(long long)arg2;
 @property(nonatomic) double keyboardBarHeight; // @synthesize keyboardBarHeight=_keyboardBarHeight;
 @property(readonly, nonatomic) _Bool isKeyboardMinorEdgeWidth; // @synthesize isKeyboardMinorEdgeWidth=_isKeyboardMinorEdgeWidth;
@@ -35,7 +37,7 @@
 - (id)description;
 - (void)updateForTextInputTraits:(id)arg1 supportedInteractionModel:(unsigned long long)arg2;
 @property(readonly, nonatomic) long long idiom;
-- (id)initWithScreen:(id)arg1 orientation:(long long)arg2;
+- (id)initWithScreen:(id)arg1 orientation:(long long)arg2 allowFloating:(_Bool)arg3 ignoreRemoteKeyboard:(_Bool)arg4;
 
 @end
 

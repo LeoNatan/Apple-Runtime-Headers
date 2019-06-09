@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <SearchableWKViewPlaybackControlsPresenter> playbackControlsPresenter; // @synthesize playbackControlsPresenter=_playbackControlsPresenter;
 @property(nonatomic) __weak id <SearchableWKViewFullScreenDelegate> fullScreenDelegate; // @synthesize fullScreenDelegate=_fullScreenDelegate;
 - (void).cxx_destruct;
+- (BOOL)performDragOperation:(id)arg1;
 - (void)_removeMediaPlaybackControlsView;
 - (void)_addMediaPlaybackControlsView:(id)arg1;
 - (id)_browserWindow;

@@ -30,7 +30,7 @@
 - (_Bool)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id *)arg2;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 - (void)triggerBurst;
 - (void)setKeypointDetectionThreshold:(float)arg1;

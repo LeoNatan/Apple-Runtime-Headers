@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long currentPageIndex; // @synthesize currentPageIndex;
 - (void)_makeRoundedCorners;
 - (void)fadeOut;
-- (void)_fadeOutAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)_fadeOutAnimationDidStop;
 - (void)showNowInSuperView:(id)arg1 atOrigin:(struct CGPoint)arg2 withText:(id)arg3 animated:(_Bool)arg4;
 - (double)_fadeOutDuration;
 - (double)_fadeOutDelay;

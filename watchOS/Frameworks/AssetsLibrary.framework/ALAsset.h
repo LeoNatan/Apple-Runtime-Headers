@@ -28,7 +28,6 @@
 - (struct CGImage *)thumbnail;
 - (id)representationForUTI:(id)arg1;
 - (id)defaultRepresentation;
-- (void)setExternalUsageIntent:(unsigned int)arg1;
 - (id)valueForProperty:(id)arg1;
 - (_Bool)isValid;
 - (id)description;

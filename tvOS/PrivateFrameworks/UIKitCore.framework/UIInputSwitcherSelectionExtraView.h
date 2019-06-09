@@ -12,13 +12,13 @@ __attribute__((visibility("hidden")))
 @interface UIInputSwitcherSelectionExtraView : UIView
 {
     double m_pointerOffset;
-    int _roundedCorners;
+    unsigned long long _roundedCorners;
     UIKeyboardMenuView *_menu;
     struct CGRect _keyRect;
 }
 
 @property(nonatomic) UIKeyboardMenuView *menu; // @synthesize menu=_menu;
-@property(nonatomic) int roundedCorners; // @synthesize roundedCorners=_roundedCorners;
+@property(nonatomic) unsigned long long roundedCorners; // @synthesize roundedCorners=_roundedCorners;
 @property(nonatomic) struct CGRect keyRect; // @synthesize keyRect=_keyRect;
 @property(nonatomic) double pointerOffset; // @synthesize pointerOffset=m_pointerOffset;
 - (void)drawRect:(struct CGRect)arg1;

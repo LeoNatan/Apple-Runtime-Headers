@@ -8,7 +8,7 @@
 
 @protocol AVTouchBarRecordingControlsControllingInternal <AVTouchBarRecordingControlsControlling>
 @property(readonly) BOOL canAssociateAudioAndVideoDevices;
-- (void)stopDiscovingWirelessCaptureDevices;
-- (void)startDiscovingWirelessCaptureDevices;
+- (void)stopDiscoveringWirelessCaptureDevices;
+- (void)startDiscoveringWirelessCaptureDevices;
 @end
 

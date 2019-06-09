@@ -6,12 +6,17 @@
 
 #import "CATTaskRequest.h"
 
+@class NSURL;
+
 @interface CRKFetchInstructorEndpointRequest : CATTaskRequest
 {
+    NSURL *_classroomAppBundleURL;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
+@property(retain, nonatomic) NSURL *classroomAppBundleURL; // @synthesize classroomAppBundleURL=_classroomAppBundleURL;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

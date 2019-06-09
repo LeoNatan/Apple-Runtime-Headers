@@ -23,6 +23,7 @@
 - (EKObject *)meltedObjectInStore:(EKEventStore *)arg1;
 - (_Bool)isPropertyUnavailable:(NSString *)arg1;
 - (EKPersistentObject_556b3b22 *)frozenObject;
+- (Class)frozenClass;
 - (EKObject *)existingMeltedObject;
 - (EKChangeSet *)changeSet;
 - (id)initWithObject:(id <EKProtocolObject>)arg1;

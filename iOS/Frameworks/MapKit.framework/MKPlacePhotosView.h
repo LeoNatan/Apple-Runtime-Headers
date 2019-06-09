@@ -9,7 +9,7 @@
 #import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <MapKit/UIScrollViewDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, UIActivityIndicatorView, UIImageView, UILabel, UINavigationBar, UINavigationItem, UIScrollView, UIVisualEffectView;
+@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, UIActivityIndicatorView, UILabel, UINavigationBar, UINavigationItem, UIScrollView, UIVisualEffectView;
 @protocol MKPlacePhotosViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
     UINavigationBar *_navBar;
     UIView *_bottomView;
     UIVisualEffectView *_bottomEffectView;
-    UIImageView *_gradientView;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
     UILabel *_licenseLabel;

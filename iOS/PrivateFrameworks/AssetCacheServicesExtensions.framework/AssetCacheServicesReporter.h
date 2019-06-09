@@ -31,7 +31,7 @@
 - (void)willStartGatheringResultsForKeyPath:(id)arg1;
 - (id)keyPath:(id)arg1 byAppendingKey:(id)arg2;
 - (void)reportReachability;
-- (void)reportPublicIPAddressRangesWithKeyPath:(id)arg1;
+- (void)reportPublicIPAddressRangesAndFavoredServerRangesWithKeyPath:(id)arg1;
 - (id)locateServersWithOptions:(id)arg1;
 - (void)reportServersWithKeyPath:(id)arg1 generateOptions:(CDUnknownBlockType)arg2;
 - (void)reportFreshServersWithKeyPath:(id)arg1;

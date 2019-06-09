@@ -68,6 +68,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setDrawsBackground:(BOOL)arg1;
 - (BOOL)drawsBackground;
+- (BOOL)shouldAddColumnForSelection;
 - (void)setAllowsEmptySelection:(BOOL)arg1;
 - (BOOL)allowsEmptySelection;
 - (void)setAllowsMultipleSelection:(BOOL)arg1;

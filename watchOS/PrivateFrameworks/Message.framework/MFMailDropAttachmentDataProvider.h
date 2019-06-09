@@ -12,7 +12,7 @@
 
 @interface MFMailDropAttachmentDataProvider : MFAttachmentLibraryDataProvider <NSURLSessionDownloadDelegate>
 {
-    NSMutableDictionary *_attachments;
+    NSMutableDictionary *_requests;
 }
 
 - (void).cxx_destruct;

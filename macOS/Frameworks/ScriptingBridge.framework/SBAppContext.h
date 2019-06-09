@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSMutableDictionary, NSString, SBAppLocator, SBApplication;
 
-__attribute__((visibility("hidden")))
 @interface SBAppContext : NSObject
 {
     SBApplication *_application;

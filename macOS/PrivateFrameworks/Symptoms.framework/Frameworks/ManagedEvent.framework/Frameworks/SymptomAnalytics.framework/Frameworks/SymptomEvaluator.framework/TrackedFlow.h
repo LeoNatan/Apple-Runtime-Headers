@@ -6,8 +6,9 @@
 
 #import <SymptomEvaluator/TrackedFlowCounts.h>
 
-@class AppTracker, NSDate, NSString, NSValue;
+@class AppTracker, FlowClassification, NSDate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TrackedFlow : TrackedFlowCounts
 {
     unsigned long long _snapshotRxWiFiBytes;
@@ -18,28 +19,34 @@
     unsigned long long _snapshotRxOOOBytes;
     unsigned long long _snapshotTxReTxBytes;
     int _snapshotTxUnacked;
-    CDStruct_c6059480 *_currentActivityMap;
     BOOL _closedOut;
     BOOL _isNiced;
     BOOL _isRNF;
+    BOOL _isForcedNonRNF;
+    BOOL _trackedAsForeground;
+    BOOL _networkActivityMapShouldNotBeCounted;
+    BOOL _networkActivityMapRolledOver;
     unsigned int _trafficMgtFlags;
     unsigned int _trafficClassFlags;
     unsigned int _ifIndex;
     int _pid;
     unsigned int _txUnacked;
     unsigned int _flags;
-    unsigned int _disposition;
     long long _ifType;
     NSString *_ownerKey;
-    NSValue *_key;
+    unsigned long long _flowId;
     AppTracker *_ultimateUser;
     AppTracker *_immediateUser;
     NSDate *_startingTimestamp;
     double _duration;
     double _wifiDownlRate;
     double _cellDownlRate;
-    AppTracker *_dispositionSource;
+    FlowClassification *_classification;
+    AppTracker *_trackerForStatistics;
     unsigned long long _backgroundCellFlowTrackingSeqNo;
+    unsigned long long _networkActivityMapStartTime;
+    unsigned long long _networkActivityMapPart1;
+    unsigned long long _networkActivityMapPart2;
 }
 
 + (void)setPolledFlowQueue:(id)arg1;
@@ -57,15 +64,23 @@
 + (id)flowForKey:(id)arg1;
 + (void)removeTrackingForKey:(id)arg1;
 + (id)startTrackingForKey:(id)arg1;
++ (unsigned long long)rnfUsageGrandTallyAfterSetting:(unsigned long long)arg1;
++ (unsigned long long)cellUsageGrandTallyAfterSetting:(unsigned long long)arg1;
 + (unsigned long long)rnfUsageGrandTallyAfterAdding:(unsigned long long)arg1;
 + (unsigned long long)cellUsageGrandTallyAfterAdding:(unsigned long long)arg1;
 + (unsigned long long)activeFlowsCountForType:(long long)arg1;
 + (unsigned long long)allActiveFlowsCount;
 + (void)initialize;
-@property(readonly) CDStruct_c6059480 *currentActivityMap; // @synthesize currentActivityMap=_currentActivityMap;
+@property(nonatomic) BOOL networkActivityMapRolledOver; // @synthesize networkActivityMapRolledOver=_networkActivityMapRolledOver;
+@property(nonatomic) BOOL networkActivityMapShouldNotBeCounted; // @synthesize networkActivityMapShouldNotBeCounted=_networkActivityMapShouldNotBeCounted;
+@property(nonatomic) unsigned long long networkActivityMapPart2; // @synthesize networkActivityMapPart2=_networkActivityMapPart2;
+@property(nonatomic) unsigned long long networkActivityMapPart1; // @synthesize networkActivityMapPart1=_networkActivityMapPart1;
+@property(nonatomic) unsigned long long networkActivityMapStartTime; // @synthesize networkActivityMapStartTime=_networkActivityMapStartTime;
 @property(nonatomic) unsigned long long backgroundCellFlowTrackingSeqNo; // @synthesize backgroundCellFlowTrackingSeqNo=_backgroundCellFlowTrackingSeqNo;
-@property(retain, nonatomic) AppTracker *dispositionSource; // @synthesize dispositionSource=_dispositionSource;
-@property(nonatomic) unsigned int disposition; // @synthesize disposition=_disposition;
+@property(retain, nonatomic) AppTracker *trackerForStatistics; // @synthesize trackerForStatistics=_trackerForStatistics;
+@property(retain, nonatomic) FlowClassification *classification; // @synthesize classification=_classification;
+@property(nonatomic) BOOL trackedAsForeground; // @synthesize trackedAsForeground=_trackedAsForeground;
+@property(nonatomic) BOOL isForcedNonRNF; // @synthesize isForcedNonRNF=_isForcedNonRNF;
 @property(nonatomic) BOOL isRNF; // @synthesize isRNF=_isRNF;
 @property(nonatomic) BOOL isNiced; // @synthesize isNiced=_isNiced;
 @property(nonatomic) double cellDownlRate; // @synthesize cellDownlRate=_cellDownlRate;
@@ -77,7 +92,7 @@
 @property(retain, nonatomic) NSDate *startingTimestamp; // @synthesize startingTimestamp=_startingTimestamp;
 @property(retain, nonatomic) AppTracker *immediateUser; // @synthesize immediateUser=_immediateUser;
 @property(retain, nonatomic) AppTracker *ultimateUser; // @synthesize ultimateUser=_ultimateUser;
-@property(retain, nonatomic) NSValue *key; // @synthesize key=_key;
+@property(nonatomic) unsigned long long flowId; // @synthesize flowId=_flowId;
 @property(nonatomic) int pid; // @synthesize pid=_pid;
 @property(retain, nonatomic) NSString *ownerKey; // @synthesize ownerKey=_ownerKey;
 @property(nonatomic) long long ifType; // @synthesize ifType=_ifType;
@@ -88,14 +103,10 @@
 @property(nonatomic) unsigned int trafficClassFlags; // @synthesize trafficClassFlags=_trafficClassFlags;
 @property(nonatomic) unsigned int trafficMgtFlags; // @synthesize trafficMgtFlags=_trafficMgtFlags;
 - (void)setActivityBitmapInfo:(id)arg1 withOwner:(id)arg2;
-- (void)resetActivityMap;
-- (void)removeActivityMap;
 - (void)inheritLateProperties:(id)arg1;
 - (_Bool)inheritEarlyProperties:(id)arg1;
-- (void)getOverheadIn:(unsigned long long *)arg1 out:(unsigned long long *)arg2;
 - (id)description;
 - (void)_decrementCounters;
-- (void)dealloc;
 - (id)init;
 
 @end

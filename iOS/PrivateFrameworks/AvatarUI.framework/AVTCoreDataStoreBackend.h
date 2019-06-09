@@ -24,7 +24,7 @@
 
 + (_Bool)fetchRequestCriteriaSupported:(long long)arg1;
 + (id)cdFetchRequestForAvatarFetchRequest:(id)arg1 recordTransformer:(id)arg2;
-+ (id)cdFetchRequestWithPredicate:(id)arg1;
++ (id)cdFetchRequestWithPredicate:(id)arg1 fetchLimit:(long long)arg2;
 @property(readonly, nonatomic) NSString *localProcessName; // @synthesize localProcessName=_localProcessName;
 @property(readonly, nonatomic) id <AVTCoreDataRemoteChangesObserver> remoteChangesObserver; // @synthesize remoteChangesObserver=_remoteChangesObserver;
 @property(readonly, nonatomic) id <AVTAvatarManagedRecordTransformer> recordTransformer; // @synthesize recordTransformer=_recordTransformer;

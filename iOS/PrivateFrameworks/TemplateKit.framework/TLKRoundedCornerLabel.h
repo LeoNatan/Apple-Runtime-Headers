@@ -4,19 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TemplateKit/TLKVibrantLabel.h>
+#import <TemplateKit/TLKLabel.h>
 
-@interface TLKRoundedCornerLabel : TLKVibrantLabel
+@class UIView;
+
+@interface TLKRoundedCornerLabel : TLKLabel
 {
     _Bool _large;
+    UIView *_borderView;
 }
 
+@property(retain, nonatomic) UIView *borderView; // @synthesize borderView=_borderView;
 @property(nonatomic) _Bool large; // @synthesize large=_large;
-- (struct CGSize)makeLabelInsets:(struct CGSize)arg1;
-- (struct CGSize)intrinsicContentSize;
-- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
-- (void)setStyle:(unsigned long long)arg1;
-- (id)init;
+- (void).cxx_destruct;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (id)initWithProminence:(unsigned long long)arg1;
 
 @end
 

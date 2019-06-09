@@ -8,39 +8,54 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOStyleAttributes, NSData, NSMutableArray, NSString, PBUnknownFields;
+@class GEOStyleAttributes, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDBrowseCategory : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    int _displayMode;
     NSString *_displayString;
     NSString *_popularDisplayToken;
     NSString *_shortDisplayString;
-    int _sortOrder;
     GEOStyleAttributes *_styleAttributes;
-    int _subCategoryType;
     NSMutableArray *_subCategorys;
     NSData *_suggestionEntryMetadata;
+    int _displayMode;
+    int _sortOrder;
+    int _subCategoryType;
     _Bool _isSubCategorySameAsTopLevel;
     struct {
-        unsigned int displayMode:1;
-        unsigned int sortOrder:1;
-        unsigned int subCategoryType:1;
-        unsigned int isSubCategorySameAsTopLevel:1;
-    } _has;
+        unsigned int has_displayMode:1;
+        unsigned int has_sortOrder:1;
+        unsigned int has_subCategoryType:1;
+        unsigned int has_isSubCategorySameAsTopLevel:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_displayString:1;
+        unsigned int read_popularDisplayToken:1;
+        unsigned int read_shortDisplayString:1;
+        unsigned int read_styleAttributes:1;
+        unsigned int read_subCategorys:1;
+        unsigned int read_suggestionEntryMetadata:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_displayString:1;
+        unsigned int wrote_popularDisplayToken:1;
+        unsigned int wrote_shortDisplayString:1;
+        unsigned int wrote_styleAttributes:1;
+        unsigned int wrote_subCategorys:1;
+        unsigned int wrote_suggestionEntryMetadata:1;
+        unsigned int wrote_displayMode:1;
+        unsigned int wrote_sortOrder:1;
+        unsigned int wrote_subCategoryType:1;
+        unsigned int wrote_isSubCategorySameAsTopLevel:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)subCategoryType;
-@property(nonatomic) _Bool isSubCategorySameAsTopLevel; // @synthesize isSubCategorySameAsTopLevel=_isSubCategorySameAsTopLevel;
-@property(retain, nonatomic) NSString *popularDisplayToken; // @synthesize popularDisplayToken=_popularDisplayToken;
-@property(retain, nonatomic) NSString *shortDisplayString; // @synthesize shortDisplayString=_shortDisplayString;
-@property(retain, nonatomic) NSMutableArray *subCategorys; // @synthesize subCategorys=_subCategorys;
-@property(retain, nonatomic) GEOStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
-@property(retain, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
-@property(retain, nonatomic) NSData *suggestionEntryMetadata; // @synthesize suggestionEntryMetadata=_suggestionEntryMetadata;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -49,30 +64,45 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasIsSubCategorySameAsTopLevel;
+@property(nonatomic) _Bool isSubCategorySameAsTopLevel;
 - (int)StringAsSubCategoryType:(id)arg1;
 - (id)subCategoryTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSubCategoryType;
-@property(nonatomic) int subCategoryType; // @synthesize subCategoryType=_subCategoryType;
+@property(nonatomic) int subCategoryType;
 - (int)StringAsDisplayMode:(id)arg1;
 - (id)displayModeAsString:(int)arg1;
 @property(nonatomic) _Bool hasDisplayMode;
-@property(nonatomic) int displayMode; // @synthesize displayMode=_displayMode;
+@property(nonatomic) int displayMode;
 - (int)StringAsSortOrder:(id)arg1;
 - (id)sortOrderAsString:(int)arg1;
 @property(nonatomic) _Bool hasSortOrder;
-@property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
+@property(nonatomic) int sortOrder;
+@property(retain, nonatomic) NSString *popularDisplayToken;
 @property(readonly, nonatomic) _Bool hasPopularDisplayToken;
+- (void)_readPopularDisplayToken;
+@property(retain, nonatomic) NSString *shortDisplayString;
 @property(readonly, nonatomic) _Bool hasShortDisplayString;
+- (void)_readShortDisplayString;
 - (id)subCategoryAtIndex:(unsigned long long)arg1;
 - (unsigned long long)subCategorysCount;
+- (void)_addNoFlagsSubCategory:(id)arg1;
 - (void)addSubCategory:(id)arg1;
 - (void)clearSubCategorys;
+@property(retain, nonatomic) NSMutableArray *subCategorys;
+- (void)_readSubCategorys;
+@property(retain, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) _Bool hasStyleAttributes;
+- (void)_readStyleAttributes;
+@property(retain, nonatomic) NSString *displayString;
 @property(readonly, nonatomic) _Bool hasDisplayString;
+- (void)_readDisplayString;
+@property(retain, nonatomic) NSData *suggestionEntryMetadata;
 @property(readonly, nonatomic) _Bool hasSuggestionEntryMetadata;
+- (void)_readSuggestionEntryMetadata;
 
 @end
 

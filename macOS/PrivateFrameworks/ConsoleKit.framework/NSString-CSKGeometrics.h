@@ -8,5 +8,8 @@
 
 @interface NSString (CSKGeometrics)
 - (double)csk_heightForWidth:(double)arg1 font:(id)arg2;
+- (id)csk_newLinesSplittedString;
+- (id)csk_newLinesSanitizedString;
+- (id)csk_leadingTrailingWhitespacesAndNewLinesSanitizedString;
 @end
 

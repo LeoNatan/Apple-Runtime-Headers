@@ -25,7 +25,7 @@
 
 @property(nonatomic) double lastBucketFill; // @synthesize lastBucketFill=_lastBucketFill;
 @property(nonatomic) double interArrivalTime; // @synthesize interArrivalTime=_interArrivalTime;
-- (void)dumpStatistics;
+- (id)dumpStatistics;
 - (void)reset;
 - (unsigned long long)countOfOperationsAllowedWithCost:(double)arg1;
 - (unsigned long long)countOfOperationsAllowed;

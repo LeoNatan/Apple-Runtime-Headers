@@ -8,5 +8,9 @@
 
 @interface NSMutableArray (HMFoundation)
 - (void)hmf_removeFirstObject;
+- (void)hmf_enqueueMultiple:(id)arg1;
+- (void)hmf_enqueue:(id)arg1;
+- (id)hmf_maybeDequeue;
+- (id)hmf_dequeue;
 @end
 

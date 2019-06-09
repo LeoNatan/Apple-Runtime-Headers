@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/NSCoding-Protocol.h>
+#import <UIKitCore/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableSet;
 @protocol UITapRecognizerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface UITapRecognizer : NSObject <NSCoding>
+@interface UITapRecognizer : NSObject <NSSecureCoding>
 {
     unsigned int _numberOfTouchesRequired;
     unsigned int _numberOfTapsRequired;
@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
     int _exclusiveDirectionalAxis;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) int exclusiveDirectionalAxis; // @synthesize exclusiveDirectionalAxis=_exclusiveDirectionalAxis;
 @property(nonatomic) double allowableTouchTimeSeparation; // @synthesize allowableTouchTimeSeparation=_allowableTouchTimeSeparation;
 @property(nonatomic) double maximumTapDuration; // @synthesize maximumTapDuration=_maximumTapDuration;

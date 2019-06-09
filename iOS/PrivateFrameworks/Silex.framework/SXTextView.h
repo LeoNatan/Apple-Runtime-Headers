@@ -47,7 +47,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (id)accessibilityElements;
-- (unsigned long long)accessibilityTraits;
+- (long long)accessibilityContainerType;
 - (id)accessibilityLabel;
 - (_Bool)isAccessibilityElement;
 - (id)accessibilityCustomRotorMembershipForRep:(id)arg1;

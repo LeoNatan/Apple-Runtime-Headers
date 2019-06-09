@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSULRUCache.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUAtomicLRUCache : OITSULRUCache
 {
 }

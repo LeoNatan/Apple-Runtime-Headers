@@ -12,6 +12,6 @@
 @protocol IKNetworkRequestLoader <NSObject>
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(copy, nonatomic) NSString *parentIdentifier;
-- (id <IKNetworkRequestRecord>)recordWithForResource:(long long)arg1 withInitiator:(long long)arg2;
+- (id <IKNetworkRequestRecord>)recordForResource:(long long)arg1 withInitiator:(long long)arg2;
 @end
 

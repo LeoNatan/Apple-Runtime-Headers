@@ -7,6 +7,8 @@
 @class NSArray;
 
 @protocol NSOpenAndSavePanelServiceExportedToRemoteViewProtocol
+- (void)retryAfterPresentingError;
+- (void)spi_setCustomActions:(NSArray *)arg1;
 - (void)setRemoteAccessoryViewDesiredSize:(struct CGSize)arg1;
 - (void)processAppRespondedEnabledStates:(NSArray *)arg1 forReplyToken:(unsigned long long)arg2;
 - (void)validateVisibleColumns;

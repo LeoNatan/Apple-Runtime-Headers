@@ -37,7 +37,6 @@
 @property(readonly, nonatomic) NSString *appLibraryOrZoneName;
 @property(readonly, nonatomic) BOOL isDocumentsMangledID;
 @property(readonly, nonatomic) BOOL isDesktopMangledID;
-@property(readonly, nonatomic) BOOL isBRTestMangledID;
 @property(readonly, nonatomic) BOOL isPassbookMangledID;
 @property(readonly, nonatomic) BOOL isCloudDocsMangledID;
 @property(readonly, nonatomic) BOOL isPrivate;

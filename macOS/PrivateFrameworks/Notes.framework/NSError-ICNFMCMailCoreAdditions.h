@@ -9,10 +9,10 @@
 @class NSString;
 
 @interface NSError (ICNFMCMailCoreAdditions)
-@property(readonly, copy, nonatomic) NSString *shortDescription;
-@property(readonly, copy, nonatomic) NSString *moreInfo;
-@property(readonly, nonatomic) BOOL isSSLCertificateError;
-@property(readonly, nonatomic) BOOL isAuthenticationError;
-@property(readonly, nonatomic) BOOL shouldBeReportedToUser;
+@property(readonly, copy, nonatomic) NSString *ic_shortDescription;
+@property(readonly, copy, nonatomic) NSString *ic_moreInfo;
+@property(readonly, nonatomic) BOOL ic_isSSLCertificateError;
+@property(readonly, nonatomic) BOOL ic_isAuthenticationError;
+- (BOOL)shouldBeReportedToUser;
 @end
 

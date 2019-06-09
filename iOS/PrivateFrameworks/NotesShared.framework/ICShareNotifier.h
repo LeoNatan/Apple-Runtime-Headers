@@ -13,13 +13,12 @@
 + (void)setShouldPreventNotifications:(_Bool)arg1 forRecordID:(id)arg2;
 + (_Bool)shouldPreventNotificationsForRecordID:(id)arg1;
 + (id)defaultsKeyForPreventingNotificationsForIdentifier:(id)arg1;
-+ (id)nameForParticipant:(id)arg1;
 + (void)showNotificationWithTitle:(id)arg1 message:(id)arg2 userInfo:(id)arg3;
 + (void)showNotificationForNote:(id)arg1 editors:(id)arg2;
 + (id)participantsWithReplicaIDs:(id)arg1 inNote:(id)arg2;
 + (id)replicaIDsThatEditedTimestamp:(id)arg1 sinceTimestamp:(id)arg2;
 + (_Bool)shouldShowNotificationForNote:(id)arg1;
-+ (void)showNotificationIfNecessaryForRecordID:(id)arg1;
++ (void)showNotificationIfNecessaryForCloudObject:(id)arg1 accountID:(id)arg2;
 + (void)clearNotificationForRecordID:(id)arg1;
 
 @end

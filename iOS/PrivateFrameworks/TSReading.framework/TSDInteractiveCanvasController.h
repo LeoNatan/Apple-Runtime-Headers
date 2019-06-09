@@ -149,7 +149,6 @@
 @property(nonatomic) _Bool allowLayoutAndRenderOnThread; // @synthesize allowLayoutAndRenderOnThread=mLayoutAndRenderOnThreadDuringScroll;
 @property(nonatomic) _Bool createRepsForOffscreenLayouts; // @synthesize createRepsForOffscreenLayouts=mCreateRepsForOffscreenLayouts;
 @property(nonatomic) _Bool preventSettingNilEditorOnTextResponder; // @synthesize preventSettingNilEditorOnTextResponder=mPreventSettingNilEditorOnTextResponder;
-@property(readonly, nonatomic) TSDTextInputResponder *textInputResponder; // @synthesize textInputResponder=mTextInputResponder;
 @property(retain, nonatomic) NSObject<TSDCanvasEditor> *canvasEditor; // @synthesize canvasEditor=mCanvasEditor;
 @property(nonatomic) _Bool resizeCanvasOnLayout; // @synthesize resizeCanvasOnLayout=mResizeCanvasOnLayout;
 @property(retain, nonatomic) id <TSDRepDirectLayerHostProvider> directLayerHostProvider; // @synthesize directLayerHostProvider=_directLayerHostProvider;
@@ -494,6 +493,7 @@
 - (id)beginEditingRep:(id)arg1 clearingSelection:(_Bool)arg2 withEditorProvider:(CDUnknownBlockType)arg3;
 - (id)beginEditingRepForInfo:(id)arg1;
 - (id)newCanvasEditor;
+@property(readonly, nonatomic) TSDTextInputResponder *textInputResponder; // @synthesize textInputResponder=mTextInputResponder;
 @property(readonly, nonatomic) TSDEditorController *editorController;
 - (void)presentErrors:(id)arg1 withLocalizedDescription:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)presentError:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -6,35 +6,32 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSString, TVImageElement, VUICardViewLayoutFactory, _TVImageView;
-@protocol VUIOverlayViewProtocol;
+@class NSArray, NSString, VUIButton, VUICardViewLayoutFactory, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUICardView : UIView
 {
-    _Bool _hasAppImage;
     VUICardViewLayoutFactory *_layoutFactory;
     _TVImageView *_imageView;
     _TVImageView *_appImageView;
     NSArray *_labelViews;
-    UIView<VUIOverlayViewProtocol> *_overlayView;
+    UIView *_overlayView;
+    VUIButton *_button;
     NSString *_debugString;
-    TVImageElement *_imageElement;
-    TVImageElement *_appImageElement;
+    struct CGSize _imageSize;
 }
 
-@property(nonatomic) _Bool hasAppImage; // @synthesize hasAppImage=_hasAppImage;
-@property(retain, nonatomic) TVImageElement *appImageElement; // @synthesize appImageElement=_appImageElement;
-@property(retain, nonatomic) TVImageElement *imageElement; // @synthesize imageElement=_imageElement;
 @property(copy, nonatomic) NSString *debugString; // @synthesize debugString=_debugString;
-@property(retain, nonatomic) UIView<VUIOverlayViewProtocol> *overlayView; // @synthesize overlayView=_overlayView;
+@property(retain, nonatomic) VUIButton *button; // @synthesize button=_button;
+@property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(copy, nonatomic) NSArray *labelViews; // @synthesize labelViews=_labelViews;
 @property(retain, nonatomic) _TVImageView *appImageView; // @synthesize appImageView=_appImageView;
 @property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
+@property(nonatomic) struct CGSize imageSize; // @synthesize imageSize=_imageSize;
 @property(readonly, nonatomic) VUICardViewLayoutFactory *layoutFactory; // @synthesize layoutFactory=_layoutFactory;
 - (void).cxx_destruct;
+- (double)_maxTextWidthForImagePosition:(long long)arg1 width:(double)arg2 appImageLayout:(id)arg3 textLayout:(id)arg4;
 - (void)_mainImageLoaded;
-- (double)_textOffset;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)prepareForCellReuse;

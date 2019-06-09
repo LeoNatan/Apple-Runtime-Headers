@@ -12,6 +12,7 @@
 - (void)configureViewForParameters:(NSSet *)arg1 ofInteraction:(INInteraction *)arg2 context:(unsigned long long)arg3 completion:(void (^)(_Bool, NSSet *, struct CGSize))arg4;
 
 @optional
+- (void)desiresInteractivity:(void (^)(_Bool))arg1;
 - (void)viewWasCancelled;
 @end
 

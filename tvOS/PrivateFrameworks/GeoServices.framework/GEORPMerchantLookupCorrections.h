@@ -12,14 +12,15 @@
 {
     _Bool _isCategoryIncorrect;
     _Bool _isMerchantIncorrect;
+    _Bool _isOtherIssue;
     struct {
-        unsigned int isCategoryIncorrect:1;
-        unsigned int isMerchantIncorrect:1;
-    } _has;
+        unsigned int has_isCategoryIncorrect:1;
+        unsigned int has_isMerchantIncorrect:1;
+        unsigned int has_isOtherIssue:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool isMerchantIncorrect; // @synthesize isMerchantIncorrect=_isMerchantIncorrect;
-@property(nonatomic) _Bool isCategoryIncorrect; // @synthesize isCategoryIncorrect=_isCategoryIncorrect;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -27,10 +28,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasIsOtherIssue;
+@property(nonatomic) _Bool isOtherIssue;
 @property(nonatomic) _Bool hasIsMerchantIncorrect;
+@property(nonatomic) _Bool isMerchantIncorrect;
 @property(nonatomic) _Bool hasIsCategoryIncorrect;
+@property(nonatomic) _Bool isCategoryIncorrect;
 
 @end
 

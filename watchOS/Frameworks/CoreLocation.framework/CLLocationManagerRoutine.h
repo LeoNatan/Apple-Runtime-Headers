@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class _CLLocationManagerRoutineProxy;
-@protocol CLLocationManagerRoutineDelegate;
+@protocol CLLocationManagerDelegate;
 
 @interface CLLocationManagerRoutine : NSObject
 {
@@ -15,14 +15,12 @@
 }
 
 @property(retain, nonatomic) _CLLocationManagerRoutineProxy *locationManagerRoutineProxy; // @synthesize locationManagerRoutineProxy=_locationManagerRoutineProxy;
-@property(nonatomic) id <CLLocationManagerRoutineDelegate> delegate;
+@property(nonatomic) id <CLLocationManagerDelegate> delegate;
 - (void)stopUpdatingLocation;
 - (void)startUpdatingLocation;
 - (void)dealloc;
+- (id)initWithQueue:(id)arg1;
 - (id)init;
-- (void)fetchPredictedApplicationsAtLocation:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)stopUpdatingPredictedApplications;
-- (void)startUpdatingPredictedApplications;
 
 @end
 

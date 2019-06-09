@@ -6,31 +6,39 @@
 
 #import <objc/NSObject.h>
 
+@protocol _UILabelContentAttributesProvider;
+
 __attribute__((visibility("hidden")))
 @interface _UILabelContent : NSObject
 {
-    CDUnknownBlockType _defaultAttributesProvider;
+    id <_UILabelContentAttributesProvider> _defaultAttributesProvider;
 }
 
-+ (id)emptyContentWithDefaultAttributesProvider:(CDUnknownBlockType)arg1;
++ (id)emptyContentWithDefaultAttributesProvider:(id)arg1;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (_Bool)_isContentEqualToContent:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (_Bool)isEqualToAttributedString:(id)arg1;
 - (_Bool)isEqualToString:(id)arg1;
 - (id)attributedString;
 - (id)string;
 - (_Bool)isNil;
+- (_Bool)isWidthVariant;
 - (_Bool)isAttributed;
 - (long long)length;
 - (id)defaultValueForAttribute:(id)arg1;
-- (id)valueForAttribute:(id)arg1 isUniform:(_Bool *)arg2;
-- (void)applyToRange:(struct _NSRange)arg1 attribute:(id)arg2 withValue:(id)arg3;
-- (void)applyToEntireRangeAttribute:(id)arg1 withValue:(id)arg2;
+- (_Bool)isAttribute:(id)arg1 uniformlyEqualToValue:(id)arg2;
+- (void)_mergeDefaultAttributes:(id)arg1;
 - (id)_defaultAttributesForString:(id)arg1;
 - (id)attributedStringContent;
+- (id)contentByApplyingAttribute:(id)arg1 value:(id)arg2 toRange:(struct _NSRange)arg3;
+- (id)contentByApplyingAttributeToEntireRange:(id)arg1 value:(id)arg2;
+- (id)widthVariantContentForView:(id)arg1;
 - (id)contentWithAttributedString:(id)arg1;
 - (id)contentWithString:(id)arg1;
-- (id)initWithDefaultAttributesProvider:(CDUnknownBlockType)arg1;
+- (id)initWithDefaultAttributesProvider:(id)arg1;
 
 @end
 

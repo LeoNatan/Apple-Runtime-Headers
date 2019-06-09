@@ -10,10 +10,11 @@
 #import <ControlCenterUI/CCUIContentModuleContextDelegate-Protocol.h>
 
 @class CCSModuleRepository, NSArray, NSHashTable, NSMutableDictionary, NSSet, NSString;
-@protocol CCUIContentModuleContextDelegate, CCUIControlCenterSystemAgent;
+@protocol CCUIContentModuleContextDelegate, CCUIControlCenterSystemAgent, OS_dispatch_queue;
 
 @interface CCUIModuleInstanceManager : NSObject <CCSModuleRepositoryObserver, CCUIContentModuleContextDelegate>
 {
+    NSObject<OS_dispatch_queue> *_queue;
     id <CCUIControlCenterSystemAgent> _systemAgent;
     CCSModuleRepository *_repository;
     NSMutableDictionary *_moduleInstanceByIdentifier;
@@ -29,7 +30,6 @@
 @property(nonatomic) __weak id <CCUIContentModuleContextDelegate> contextDelegate; // @synthesize contextDelegate=_contextDelegate;
 - (void).cxx_destruct;
 - (id)_instantiateModuleWithMetadata:(id)arg1;
-- (void)didUpdatePreferredSizeForContentModuleContext:(id)arg1;
 - (void)dismissControlCenterForContentModuleContext:(id)arg1;
 - (void)dismissExpandedViewForContentModuleContext:(id)arg1;
 - (void)requestExpandModuleForContentModuleContext:(id)arg1;
@@ -39,8 +39,11 @@
 - (void)_runBlockOnObservers:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)_loadBundlesForModuleMetadata:(id)arg1;
+- (void)_loadBundlesForModuleMetadata:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_updateModuleInstances;
 @property(readonly, nonatomic) NSArray *moduleInstances; // @dynamic moduleInstances;
+- (_Bool)loadModuleWithBundleIdentifier:(id)arg1;
 - (id)_initWithSystemAgent:(id)arg1 repository:(id)arg2;
 
 // Remaining properties

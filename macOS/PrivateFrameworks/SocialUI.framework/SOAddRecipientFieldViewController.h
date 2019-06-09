@@ -73,7 +73,7 @@
 - (void)viewDidLoad;
 - (void)chatDisplayControllerWillChange:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)idStatusUpdatedForDestinations:(id)arg1;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (id)control:(id)arg1 textView:(id)arg2 completions:(id)arg3 forPartialWordRange:(struct _NSRange)arg4 indexOfSelectedItem:(long long *)arg5;
 - (void)controlTextDidChange;
 - (void)controlTextDidChange:(id)arg1;

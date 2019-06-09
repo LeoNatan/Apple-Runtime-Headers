@@ -8,7 +8,6 @@
 
 @class AutoLoopStabilizer;
 
-__attribute__((visibility("hidden")))
 @interface StabilizeParamGenerator : NSObject
 {
     AutoLoopStabilizer *stabilizer;
@@ -20,8 +19,8 @@ __attribute__((visibility("hidden")))
 - (id)generateTrivialPassThruForFrameTimes:(vector_0821a7d5 *)arg1 totalDuration:(CDStruct_1b6d18a9)arg2;
 - (id)generatePassThruForAsset:(id)arg1 trimStart:(CDStruct_1b6d18a9)arg2 trimLength:(CDStruct_1b6d18a9)arg3;
 - (id)generateStabilizeParams;
-- (void)CopyCoordinateShiftedHomographies:(struct HomographyRecordVector *)arg1 firstIndex:(unsigned long long)arg2 lastIndex:(unsigned long long)arg3 toStabilizeParams:(id)arg4 withImageBounds:(struct CGSize)arg5;
-- (void)GenerateIdentityHomographies:(struct HomographyRecordVector *)arg1 toStabilizeParams:(id)arg2 withImageBounds:(struct CGSize)arg3 firstFrameIndex:(unsigned long long)arg4 lastFrameIndex:(unsigned long long)arg5;
+- (void)CopyCoordinateShiftedHomographies:(void *)arg1 firstIndex:(unsigned long long)arg2 lastIndex:(unsigned long long)arg3 toStabilizeParams:(id)arg4 withImageBounds:(struct CGSize)arg5;
+- (void)ICGetIdentityHomographies:(void *)arg1 toStabilizeParams:(id)arg2 withImageBounds:(struct CGSize)arg3 firstFrameIndex:(unsigned long long)arg4 lastFrameIndex:(unsigned long long)arg5;
 
 @end
 

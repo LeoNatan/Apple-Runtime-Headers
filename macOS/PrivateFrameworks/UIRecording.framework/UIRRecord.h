@@ -39,7 +39,7 @@
 
 + (BOOL)supportsSecureCoding;
 @property BOOL userCanceledPlayback; // @synthesize userCanceledPlayback=_userCanceledPlayback;
-@property BOOL isPlayingBack; // @synthesize isPlayingBack=_isPlayingBack;
+@property(nonatomic) BOOL isPlayingBack; // @synthesize isPlayingBack=_isPlayingBack;
 @property(copy) NSDictionary *playbackErrorInfo; // @synthesize playbackErrorInfo=_playbackErrorInfo;
 @property(retain) UIRAccessibilityProcess *targetApplicationElement; // @synthesize targetApplicationElement=_targetApplicationElement;
 @property(retain) UIRAccessibilityElement *systemWideElement; // @synthesize systemWideElement=_systemWideElement;

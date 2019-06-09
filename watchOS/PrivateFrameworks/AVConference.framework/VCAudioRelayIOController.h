@@ -7,14 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <AVConference/VCAudioIOControllerControl-Protocol.h>
-#import <AVConference/VCAudioIOSink-Protocol.h>
-#import <AVConference/VCAudioIOSource-Protocol.h>
 
-@class NSMutableArray, NSString, VCAudioRelay;
+@class NSMutableArray, NSString, VCAudioRelay, VCAudioRelayIOControllerSettings;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface VCAudioRelayIOController : NSObject <VCAudioIOControllerControl, VCAudioIOSource, VCAudioIOSink>
+@interface VCAudioRelayIOController : NSObject <VCAudioIOControllerControl>
 {
     unsigned int _relayType;
     unsigned int _relayIOType;
@@ -22,16 +20,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSMutableArray *_allClients;
     NSMutableArray *_startingIOClients;
-    NSMutableArray *_sourceClients;
-    NSMutableArray *_sinkClients;
-    struct AudioEventQueue_t *_sourceEventQueue;
-    struct AudioEventQueue_t *_sinkEventQueue;
-    struct opaqueVCAudioBufferList *_sourceBuffer;
     VCAudioRelay *_relay;
-    struct AudioStreamBasicDescription _format;
-    unsigned int _samplesPerFrame;
     struct _VCAudioIOControllerIOState _sinkData;
     struct _VCAudioIOControllerIOState _sourceData;
+    VCAudioRelayIOControllerSettings *_currentSettings;
 }
 
 + (id)sharedInstanceSafeViewClientFacing;
@@ -39,28 +31,31 @@ __attribute__((visibility("hidden")))
 + (id)sharedInstanceClientFacing;
 + (id)sharedInstanceRemoteFacing;
 + (void)initializeStateStrings;
-- (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
-- (void)pullAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
+- (void)didUpdateBasebandCodec:(const struct _VCRemoteCodecInfo *)arg1;
 - (void)updateClient:(id)arg1;
 - (void)stopClient:(id)arg1;
 - (void)startClient:(id)arg1;
-- (void)flushEventQueue:(struct AudioEventQueue_t *)arg1;
+- (void)flushEventQueue:(struct opaqueCMSimpleQueue *)arg1;
 - (void)processEventQueue:(struct AudioEventQueue_t *)arg1 clientList:(id)arg2;
 - (_Bool)updateStateWithClient:(id)arg1;
-- (_Bool)stateRunningWithNegotiatedFormat:(struct AudioStreamBasicDescription *)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
-- (_Bool)stateStartingWithNegotiatedFormat:(struct AudioStreamBasicDescription *)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
-- (void)addStartingClient:(id)arg1 controllerFormat:(struct AudioStreamBasicDescription *)arg2;
-- (_Bool)statePrepareWithNegotiatedFormat:(struct AudioStreamBasicDescription *)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
-- (_Bool)stateIdleWithNegotiatedFormat:(struct AudioStreamBasicDescription *)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
+- (_Bool)stateRunningWithControllerSettings:(id)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
+- (_Bool)stateStartingWithControllerSettings:(id)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
+- (void)addStartingClient:(id)arg1 controllerSettings:(id)arg2;
+- (_Bool)statePrepareWithControllerSettings:(id)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
+- (_Bool)handleTransitionPrepareToStarting;
+- (_Bool)stateIdleWithControllerSettings:(id)arg1 client:(id)arg2 newState:(unsigned int *)arg3;
+- (void)unregisterClientIO:(struct _VCAudioIOControllerClientIO *)arg1 controllerIO:(struct _VCAudioIOControllerIOState *)arg2;
+- (void)registerClientIO:(struct _VCAudioIOControllerClientIO *)arg1 controllerIO:(struct _VCAudioIOControllerIOState *)arg2;
 - (void)resetAudioTimestamps;
 - (id)newRelayIOWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)startRelayIO:(id)arg1;
-- (void)computeFormat:(struct AudioStreamBasicDescription *)arg1 newClient:(id)arg2;
+- (id)newControllerSettingsWithNewClient:(id)arg1;
 - (void)_cleanupDeadClients;
 - (_Bool)removeClient:(id)arg1;
 - (_Bool)addClient:(id)arg1;
-- (void)removeClient:(id)arg1 clientArray:(id)arg2 eventQueue:(struct AudioEventQueue_t *)arg3;
-- (void)addClient:(id)arg1 clientArray:(id)arg2 eventQueue:(struct AudioEventQueue_t *)arg3;
+- (void)removeAllClientsForIO:(struct _VCAudioIOControllerIOState *)arg1;
+- (struct _VCAudioIOControllerIOState *)sourceIO;
+- (struct _VCAudioIOControllerIOState *)sinkIO;
 - (void)unloadRelay;
 - (void)loadRelay;
 - (void)dealloc;

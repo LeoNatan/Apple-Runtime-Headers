@@ -15,8 +15,8 @@
     NSMutableArray *_targetLayouts;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)targetLayoutType;
-@property(retain, nonatomic) NSMutableArray *targetLayouts; // @synthesize targetLayouts=_targetLayouts;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,12 +25,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)targetLayoutAtIndex:(unsigned long long)arg1;
 - (unsigned long long)targetLayoutsCount;
 - (void)addTargetLayout:(id)arg1;
 - (void)clearTargetLayouts;
+@property(retain, nonatomic) NSMutableArray *targetLayouts;
 
 @end
 

@@ -16,9 +16,10 @@
     NSMutableArray *_nameInfos;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)nameInfoType;
-@property(retain, nonatomic) NSMutableArray *nameInfos; // @synthesize nameInfos=_nameInfos;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -27,12 +28,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)nameInfoAtIndex:(unsigned long long)arg1;
 - (unsigned long long)nameInfosCount;
 - (void)addNameInfo:(id)arg1;
 - (void)clearNameInfos;
+@property(retain, nonatomic) NSMutableArray *nameInfos;
 
 @end
 

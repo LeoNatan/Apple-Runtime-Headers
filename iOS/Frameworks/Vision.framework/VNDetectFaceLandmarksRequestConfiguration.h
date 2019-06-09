@@ -16,8 +16,11 @@ __attribute__((visibility("hidden")))
     _Bool _refineRightEyeRegion;
     _Bool _performBlinkDetection;
     NSNumber *_cascadeStepCount;
+    unsigned long long _constellation;
 }
 
++ (_Bool)revision:(unsigned long long)arg1 supportsConstellation:(unsigned long long)arg2;
+@property(nonatomic) unsigned long long constellation; // @synthesize constellation=_constellation;
 @property(retain, nonatomic) NSNumber *cascadeStepCount; // @synthesize cascadeStepCount=_cascadeStepCount;
 @property(nonatomic) _Bool performBlinkDetection; // @synthesize performBlinkDetection=_performBlinkDetection;
 @property(nonatomic) _Bool refineRightEyeRegion; // @synthesize refineRightEyeRegion=_refineRightEyeRegion;

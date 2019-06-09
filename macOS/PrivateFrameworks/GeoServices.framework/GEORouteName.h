@@ -8,19 +8,22 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEONameInfo;
+@class GEONameInfo, PBUnknownFields;
 
 @interface GEORouteName : PBCodable <NSCopying>
 {
-    int _lastZilchStitchedIndex;
+    PBUnknownFields *_unknownFields;
     GEONameInfo *_nameInfo;
+    int _lastZilchStitchedIndex;
     struct {
-        unsigned int lastZilchStitchedIndex:1;
-    } _has;
+        unsigned int has_lastZilchStitchedIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEONameInfo *nameInfo; // @synthesize nameInfo=_nameInfo;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -28,10 +31,12 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasLastZilchStitchedIndex;
-@property(nonatomic) int lastZilchStitchedIndex; // @synthesize lastZilchStitchedIndex=_lastZilchStitchedIndex;
+@property(nonatomic) int lastZilchStitchedIndex;
+@property(retain, nonatomic) GEONameInfo *nameInfo;
 @property(readonly, nonatomic) BOOL hasNameInfo;
 
 @end

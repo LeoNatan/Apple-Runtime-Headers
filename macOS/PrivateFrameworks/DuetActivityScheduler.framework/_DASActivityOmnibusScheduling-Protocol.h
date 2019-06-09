@@ -5,10 +5,12 @@
 //
 
 #import <DuetActivityScheduler/_DASActivityBackgroundLaunchScheduler-Protocol.h>
+#import <DuetActivityScheduler/_DASActivityBackgroundTaskSchedulerServer-Protocol.h>
 #import <DuetActivityScheduler/_DASActivityGroupScheduler-Protocol.h>
 #import <DuetActivityScheduler/_DASActivityMetering-Protocol.h>
+#import <DuetActivityScheduler/_DASActivitySchedulerClient-Protocol.h>
 #import <DuetActivityScheduler/_DASActivitySchedulerIntrospectingServer-Protocol.h>
 
-@protocol _DASActivityOmnibusScheduling <_DASActivityGroupScheduler, _DASActivitySchedulerIntrospectingServer, _DASActivityBackgroundLaunchScheduler, _DASActivityMetering>
+@protocol _DASActivityOmnibusScheduling <_DASActivityGroupScheduler, _DASActivitySchedulerClient, _DASActivitySchedulerIntrospectingServer, _DASActivityBackgroundLaunchScheduler, _DASActivityMetering, _DASActivityBackgroundTaskSchedulerServer>
 @end
 

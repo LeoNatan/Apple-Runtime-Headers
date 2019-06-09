@@ -17,6 +17,7 @@
     BOOL _scanWhenLocked;
     BOOL _activeScanning;
     BOOL _scanCache;
+    BOOL _advBuffer;
     NSNumber *_rssiThreshold;
     NSData *_blobValue;
     NSData *_maskValue;
@@ -24,10 +25,13 @@
     NSArray *_peers;
     double _updateTime;
     long long _nearbyScanMode;
+    long long _advBufferMode;
     CDStruct_9e3626a3 _scanningRates;
 }
 
 + (BOOL)supportsSecureCoding;
+@property long long advBufferMode; // @synthesize advBufferMode=_advBufferMode;
+@property BOOL advBuffer; // @synthesize advBuffer=_advBuffer;
 @property long long nearbyScanMode; // @synthesize nearbyScanMode=_nearbyScanMode;
 @property double updateTime; // @synthesize updateTime=_updateTime;
 @property(retain) NSArray *peers; // @synthesize peers=_peers;

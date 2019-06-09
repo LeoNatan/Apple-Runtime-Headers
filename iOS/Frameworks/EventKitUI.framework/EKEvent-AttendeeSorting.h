@@ -12,5 +12,7 @@
 - (id)sortedEKParticipantsDisplayStringsIgnoringNonHumans:(id)arg1;
 - (id)sortEKParticipantsIgnoringNonHumans:(id)arg1;
 - (id)_sortedEKParticipantsForSortingIgnoringNonHumans:(id)arg1;
+- (id)sortedEKAttachmentsDisplayStrings;
+- (long long)daySpan;
 @end
 

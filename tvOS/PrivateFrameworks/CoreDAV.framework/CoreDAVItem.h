@@ -32,6 +32,7 @@
 - (id)generateXMLString;
 - (void)parserSuggestsBaseURL:(id)arg1;
 - (void)setPayloadAsString:(id)arg1;
+- (long long)payloadAsNSInteger;
 - (id)payloadAsString;
 - (_Bool)validate;
 - (void)write:(id)arg1;

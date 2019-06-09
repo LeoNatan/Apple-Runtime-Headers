@@ -10,25 +10,31 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBRunWorkflowIntent-Protocol.h>
 
-@class NSString, _INPBDataString, _INPBIntentMetadata;
+@class NSString, _INPBArchivedObject, _INPBDataString, _INPBIntentMetadata;
 
 @interface _INPBRunWorkflowIntent : PBCodable <_INPBRunWorkflowIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
     _INPBIntentMetadata *_intentMetadata;
+    _INPBArchivedObject *_stepIntentResponse;
     _INPBDataString *_workflow;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBDataString *workflow; // @synthesize workflow=_workflow;
+@property(retain, nonatomic) _INPBArchivedObject *stepIntentResponse; // @synthesize stepIntentResponse=_stepIntentResponse;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasWorkflow;
+@property(readonly, nonatomic) _Bool hasStepIntentResponse;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 
 // Remaining properties

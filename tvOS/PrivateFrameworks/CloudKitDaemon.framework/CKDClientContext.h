@@ -6,18 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class CKAccountOverrideInfo, CKContainerID, CKDAccount, CKDAppContainerIntersectionMetadata, CKDAppContainerTuple, CKDApplicationMetadata, CKDCachePurger, CKDFlowControlManager, CKDKeyValueDiskCache, CKDMMCS, CKDMescalSession, CKDPCSCache, CKDPCSManager, CKDPublicIdentityLookupService, CKDServerConfiguration, CKDZoneGatekeeper, CKTimeLogger, NSHashTable, NSMutableDictionary, NSString, NSURL;
+#import <CloudKitDaemon/CKDAccountAccessInfoProvider-Protocol.h>
+#import <CloudKitDaemon/CKDContainerScopedUserIDProvider-Protocol.h>
+#import <CloudKitDaemon/CKDContextInfoProvider-Protocol.h>
+
+@class CKAccountOverrideInfo, CKContainerID, CKDAccount, CKDAppContainerIntersectionMetadata, CKDAppContainerTuple, CKDApplicationMetadata, CKDCachePurger, CKDFlowControlManager, CKDKeyValueDiskCache, CKDMMCS, CKDPCSCache, CKDPCSManager, CKDPublicIdentityLookupService, CKDServerConfiguration, CKDZoneGatekeeper, NSHashTable, NSMutableDictionary, NSString, NSURL;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
-@interface CKDClientContext : NSObject
+@interface CKDClientContext : NSObject <CKDContextInfoProvider, CKDAccountAccessInfoProvider, CKDContainerScopedUserIDProvider>
 {
     _Bool _isForClouddInternalUse;
-    _Bool _applicationIsAppExtension;
     _Bool _hasDataContainer;
     _Bool _captureResponseHTTPHeaders;
     _Bool _useZoneWidePCS;
     _Bool _returnPCSMetadata;
-    _Bool _useMMCSEncryptionV2;
     _Bool _bypassPCSEncryption;
     _Bool _forceEnableReadOnlyManatee;
     _Bool _isSiloedContext;
@@ -40,6 +42,7 @@
     CKContainerID *_containerID;
     NSString *_applicationBundleID;
     NSString *_sourceApplicationBundleID;
+    NSString *_personaID;
     NSString *_applicationVersion;
     NSURL *_applicationIcon;
     NSString *_applicationDisplayName;
@@ -51,16 +54,15 @@
     NSString *_applicationFileStagingDirectory;
     NSString *_applicationFileDownloadDirectory;
     NSString *_applicationRecordCacheDirectory;
-    NSString *_containerHardwareIDHash;
-    long long _type;
+    CKDAppContainerTuple *_appContainerTuple;
+    NSString *_hardwareID;
+    long long _contextType;
     CKDAccount *_account;
     CKAccountOverrideInfo *_accountInfoOverride;
     CKDMMCS *_MMCS;
-    CKTimeLogger *_timeLogger;
     CKDPCSCache *_pcsCache;
     CKDZoneGatekeeper *_foregroundZoneGatekeeper;
     CKDZoneGatekeeper *_backgroundZoneGatekeeper;
-    CKDMescalSession *_mescalSession;
     NSMutableDictionary *_fakeErrorsByClassName;
     NSMutableDictionary *_fakeResponseOperationLifetimeByClassName;
     NSMutableDictionary *_fakeResponseOperationResultByClassNameByItemID;
@@ -74,25 +76,25 @@
     CKDPublicIdentityLookupService *_backgroundPublicIdentityLookupService;
     CKDAppContainerIntersectionMetadata *_appContainerIntersectionMetadata;
     CKDApplicationMetadata *_applicationMetadata;
-    CKDAppContainerTuple *_appContainerTuple;
     CKDFlowControlManager *_flowControlManager;
     CKDPCSManager *_pcsManager;
+    unsigned long long _mmcsEncryptionSupport;
     NSObject<OS_dispatch_group> *_proxyPreparationGroup;
 }
 
 + (id)contextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
 + (id)applicationCachesPathForBundleID:(id)arg1;
 + (id)sharedContextForInternalUseWithAppContainerTuple:(id)arg1 unitTestingAccountInfoProvider:(id)arg2;
-+ (id)sharedContextForInternalUseWithAppContainerTuple:(id)arg1;
++ (id)sharedContextForInternalUseWithAppContainerAccountTuple:(id)arg1;
 + (id)sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
-+ (id)sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3 forInternalUse:(_Bool)arg4;
++ (id)_sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3 forInternalUse:(_Bool)arg4 addToSharedContexts:(_Bool)arg5;
 + (id)_sharedContextWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3 forInternalUse:(_Bool)arg4;
 + (id)sharedContexts;
-+ (id)applicationContainerPathForBundleID:(id)arg1 bundleURL:(id *)arg2 type:(long long *)arg3;
++ (id)applicationContainerPathForBundleID:(id)arg1 bundleURL:(id *)arg2 contextType:(long long *)arg3;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *proxyPreparationGroup; // @synthesize proxyPreparationGroup=_proxyPreparationGroup;
+@property(readonly, nonatomic) unsigned long long mmcsEncryptionSupport; // @synthesize mmcsEncryptionSupport=_mmcsEncryptionSupport;
 @property(retain, nonatomic) CKDPCSManager *pcsManager; // @synthesize pcsManager=_pcsManager;
 @property(retain, nonatomic) CKDFlowControlManager *flowControlManager; // @synthesize flowControlManager=_flowControlManager;
-@property(retain, nonatomic) CKDAppContainerTuple *appContainerTuple; // @synthesize appContainerTuple=_appContainerTuple;
 @property(retain, nonatomic) CKDApplicationMetadata *applicationMetadata; // @synthesize applicationMetadata=_applicationMetadata;
 @property(retain, nonatomic) CKDAppContainerIntersectionMetadata *appContainerIntersectionMetadata; // @synthesize appContainerIntersectionMetadata=_appContainerIntersectionMetadata;
 @property(retain, nonatomic) CKDPublicIdentityLookupService *backgroundPublicIdentityLookupService; // @synthesize backgroundPublicIdentityLookupService=_backgroundPublicIdentityLookupService;
@@ -110,26 +112,23 @@
 @property(retain, nonatomic) NSMutableDictionary *fakeResponseOperationResultByClassNameByItemID; // @synthesize fakeResponseOperationResultByClassNameByItemID=_fakeResponseOperationResultByClassNameByItemID;
 @property(retain, nonatomic) NSMutableDictionary *fakeResponseOperationLifetimeByClassName; // @synthesize fakeResponseOperationLifetimeByClassName=_fakeResponseOperationLifetimeByClassName;
 @property(retain, nonatomic) NSMutableDictionary *fakeErrorsByClassName; // @synthesize fakeErrorsByClassName=_fakeErrorsByClassName;
-@property(retain, nonatomic) CKDMescalSession *mescalSession; // @synthesize mescalSession=_mescalSession;
 @property(retain, nonatomic) CKDZoneGatekeeper *backgroundZoneGatekeeper; // @synthesize backgroundZoneGatekeeper=_backgroundZoneGatekeeper;
 @property(retain, nonatomic) CKDZoneGatekeeper *foregroundZoneGatekeeper; // @synthesize foregroundZoneGatekeeper=_foregroundZoneGatekeeper;
 @property(readonly, nonatomic) CKDPCSCache *pcsCache; // @synthesize pcsCache=_pcsCache;
-@property(retain, nonatomic) CKTimeLogger *timeLogger; // @synthesize timeLogger=_timeLogger;
 @property(retain) CKDMMCS *MMCS; // @synthesize MMCS=_MMCS;
-@property(nonatomic) _Bool isSiloedContext; // @synthesize isSiloedContext=_isSiloedContext;
+@property(readonly, nonatomic) _Bool isSiloedContext; // @synthesize isSiloedContext=_isSiloedContext;
 @property(nonatomic) unsigned int clientSDKVersion; // @synthesize clientSDKVersion=_clientSDKVersion;
-@property(nonatomic) _Bool forceEnableReadOnlyManatee; // @synthesize forceEnableReadOnlyManatee=_forceEnableReadOnlyManatee;
-@property(nonatomic) _Bool bypassPCSEncryption; // @synthesize bypassPCSEncryption=_bypassPCSEncryption;
-@property(nonatomic) _Bool useMMCSEncryptionV2; // @synthesize useMMCSEncryptionV2=_useMMCSEncryptionV2;
+@property(readonly, nonatomic) _Bool forceEnableReadOnlyManatee; // @synthesize forceEnableReadOnlyManatee=_forceEnableReadOnlyManatee;
+@property(readonly, nonatomic) _Bool bypassPCSEncryption; // @synthesize bypassPCSEncryption=_bypassPCSEncryption;
 @property(nonatomic) _Bool returnPCSMetadata; // @synthesize returnPCSMetadata=_returnPCSMetadata;
-@property(nonatomic) _Bool useZoneWidePCS; // @synthesize useZoneWidePCS=_useZoneWidePCS;
+@property(readonly, nonatomic) _Bool useZoneWidePCS; // @synthesize useZoneWidePCS=_useZoneWidePCS;
 @property(nonatomic) _Bool captureResponseHTTPHeaders; // @synthesize captureResponseHTTPHeaders=_captureResponseHTTPHeaders;
 @property(nonatomic) _Bool hasDataContainer; // @synthesize hasDataContainer=_hasDataContainer;
 @property(readonly, nonatomic) CKAccountOverrideInfo *accountInfoOverride; // @synthesize accountInfoOverride=_accountInfoOverride;
 @property(retain) CKDAccount *account; // @synthesize account=_account;
-@property(nonatomic) long long type; // @synthesize type=_type;
-@property(readonly, nonatomic) NSString *containerHardwareIDHash; // @synthesize containerHardwareIDHash=_containerHardwareIDHash;
-@property(readonly, nonatomic) _Bool applicationIsAppExtension; // @synthesize applicationIsAppExtension=_applicationIsAppExtension;
+@property(nonatomic) long long contextType; // @synthesize contextType=_contextType;
+@property(readonly, nonatomic) NSString *hardwareID; // @synthesize hardwareID=_hardwareID;
+@property(readonly, nonatomic) CKDAppContainerTuple *appContainerTuple; // @synthesize appContainerTuple=_appContainerTuple;
 @property(retain, nonatomic) NSString *applicationRecordCacheDirectory; // @synthesize applicationRecordCacheDirectory=_applicationRecordCacheDirectory;
 @property(retain, nonatomic) NSString *applicationFileDownloadDirectory; // @synthesize applicationFileDownloadDirectory=_applicationFileDownloadDirectory;
 @property(retain, nonatomic) NSString *applicationFileStagingDirectory; // @synthesize applicationFileStagingDirectory=_applicationFileStagingDirectory;
@@ -141,6 +140,7 @@
 @property(readonly, nonatomic) NSString *applicationDisplayName; // @synthesize applicationDisplayName=_applicationDisplayName;
 @property(readonly, nonatomic) NSURL *applicationIcon; // @synthesize applicationIcon=_applicationIcon;
 @property(retain, nonatomic) NSString *applicationVersion; // @synthesize applicationVersion=_applicationVersion;
+@property(readonly, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(readonly, nonatomic) NSString *sourceApplicationBundleID; // @synthesize sourceApplicationBundleID=_sourceApplicationBundleID;
 @property(readonly, nonatomic) NSString *applicationBundleID; // @synthesize applicationBundleID=_applicationBundleID;
 @property(readonly, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
@@ -161,13 +161,18 @@
 - (void)clearPILSCacheForLookupInfos:(id)arg1;
 - (void)clearContextFromMetadataCache;
 - (void)clearRecordCacheWithDatabaseScope:(long long)arg1;
+- (void)clearRecordCache;
 - (void)showAssetCacheWithDatabaseScope:(long long)arg1;
 - (void)clearAssetCacheWithDatabaseScope:(long long)arg1;
 - (void)showAssetCache;
 - (void)clearAssetCache;
+- (unsigned long long)countAssetCacheItemsWithDatabaseScope:(long long)arg1;
+- (unsigned long long)countAssetCacheItems;
 - (void)setFakeResponseOperationResult:(id)arg1 forNextRequestOfClassName:(id)arg2 forItemID:(id)arg3 withLifetime:(int)arg4;
 - (void)setFakeError:(id)arg1 forNextRequestOfClassName:(id)arg2;
+@property(nonatomic) _Bool hasAllowUnverifiedAccountEntitlement;
 @property(nonatomic) _Bool hasNonLegacyShareURLEntitlement;
+@property(retain, nonatomic) NSString *pushBundleIdentifier;
 @property(retain, nonatomic) NSString *clientPrefixEntitlement;
 @property(retain, nonatomic) NSString *applicationIdentifier;
 @property(readonly, nonatomic) NSString *encryptionServiceName;
@@ -186,12 +191,26 @@
 @property(nonatomic, setter=setHasSystemServiceEntitlement:) _Bool hasSystemServiceEntitlement;
 @property(retain, nonatomic, setter=setAPSEnvironmentString:) NSString *apsEnvironmentString;
 @property(nonatomic) _Bool allowsPowerNapScheduling;
-@property(nonatomic) long long darkWakeEnabled;
+- (_Bool)shouldUsePCSEncryption;
+@property(readonly, nonatomic) NSString *processName;
+@property(readonly, nonatomic) NSString *regionCode;
+@property(readonly, nonatomic) NSString *languageCode;
+@property(readonly, nonatomic) NSString *deviceName;
+@property(readonly, nonatomic) NSString *bundleID;
+- (void)fetchPrivateURLForServerType:(long long)arg1 operation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchDeviceIDForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchServerEnvironmentForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchImportantUserIDsForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchPublicURLForServerType:(long long)arg1 operation:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_fetchContainerInfoForOperation:(id)arg1 requireUserIDs:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchConfigurationForOperation:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)baseURLForServerType:(long long)arg1 partitionType:(long long)arg2;
+- (id)_urlBySettingCustomBaseURL:(id)arg1 onURL:(id)arg2;
 - (void)finishSetupWithClientProxy:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)startSetupWithClientProxy:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeClientProxy:(id)arg1;
 - (void)addClientProxy:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)CKPropertiesDescription;
 - (double)publicIdentitiesExpirationTimeout;
 - (void)showUserNotification:(void *)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
@@ -201,20 +220,28 @@
 - (_Bool)setupMMCSWrapperWithError:(id *)arg1;
 - (id)assetDirectoryContext;
 - (id)createAppContainerTuple;
-- (id)_issueSandboxExtensionForPath:(id)arg1 error:(id *)arg2;
+- (id)_issueSandboxExtensionForPath:(id)arg1 withAuditToken:(CDStruct_6ad76789)arg2 error:(id *)arg3;
 - (_Bool)_setupDirectoriesWithClientProxy:(id)arg1 sandboxExtensions:(id *)arg2 error:(id *)arg3;
 - (void)_determineHardwareInfo;
 - (void)_loadApplicationContainerPathAndType;
 @property(readonly, nonatomic) _Bool allowsCellularAccess;
-- (void)checkAccountAccessWithCompletion:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool canAuthWithCloudKit;
+- (_Bool)hasAccountAccessAndTCCAuth;
 @property(readonly, nonatomic) _Bool canAccessAccount;
+- (_Bool)_anyAssociatedProxyHasTCCAuthorization;
 - (_Bool)_cloudKitEnabledForCurrentClient;
 - (id)_dataclassNameForContainerIdentifier:(id)arg1;
 - (void)_reloadAccount:(_Bool)arg1;
 - (void)_cancelAllLongLivedOperations;
 - (void)dealloc;
 - (void)dropMMCS;
+- (void)_clearCaches;
 - (id)initWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

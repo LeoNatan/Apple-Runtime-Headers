@@ -6,34 +6,37 @@
 
 #import <PersonalizationPortrait/PPNamedEntityStore.h>
 
-@class NSDate, NSMapTable;
+@class NSDate, PPClientFeedbackHelper, PPRecordMonitoringHelper;
 
 @interface PPXPCNamedEntityStore : PPNamedEntityStore
 {
-    NSMapTable *_recordLoadingDelegates;
+    PPRecordMonitoringHelper *_monitoringHelper;
+    PPClientFeedbackHelper *_clientFeedbackHelper;
     NSDate *_lastCallDate;
 }
 
 - (void).cxx_destruct;
+- (void)setClientIdentifier:(id)arg1;
+- (id)clientIdentifier;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)loadNamedEntityRecordsAndMonitorChangesWithDelegate:(id)arg1 error:(id *)arg2;
 - (void)_loadNamedEntityRecordsWithDelegate:(id)arg1;
 - (void)_sendChangesToDelegates;
-- (void)_sendResetToDelegates;
-- (void)_resetNamedEntityRecordsWithDelegate:(id)arg1;
-- (BOOL)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 error:(id *)arg3;
-- (void)feedbackNamedEntitiesOverallEngagement:(id)arg1;
-- (void)feedbackEngagedNamedEntities:(id)arg1;
-- (void)feedbackUsedNamedEntities:(id)arg1;
-- (BOOL)clearWithError:(id *)arg1;
+- (void)_sendResetToAllDelegates;
+- (CDUnknownBlockType)_recordGenerator;
+- (BOOL)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 groupId:(id)arg3 error:(id *)arg4;
+- (BOOL)clearWithError:(id *)arg1 deletedCount:(unsigned long long *)arg2;
+- (BOOL)cloudSyncWithError:(id *)arg1;
 - (BOOL)removeMapItemsBeforeCutoffDate:(id)arg1 error:(id *)arg2;
 - (BOOL)removeMapItemForPlaceName:(id)arg1 error:(id *)arg2;
 - (id)mapItemForPlaceName:(id)arg1 error:(id *)arg2;
 - (BOOL)donateMapItem:(id)arg1 forPlaceName:(id)arg2 error:(id *)arg3;
-- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 error:(id *)arg4;
-- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 error:(id *)arg2;
-- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 error:(id *)arg3;
-- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 error:(id *)arg3;
+- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
+- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (BOOL)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)flushDonationsWithError:(id *)arg1;
+- (BOOL)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(BOOL)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 error:(id *)arg7;
 - (BOOL)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(BOOL)arg4 decayRate:(double)arg5 error:(id *)arg6;
 - (id)namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (BOOL)iterNamedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;

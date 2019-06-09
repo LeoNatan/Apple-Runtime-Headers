@@ -11,7 +11,7 @@
 #import <ContactsUI/CNUIObjectViewController-Protocol.h>
 #import <ContactsUI/CNUIUserActionListConsumer-Protocol.h>
 
-@class CNActionsView, CNContact, CNContactActionsController, CNUIUserActionListDataSource, NSArray, NSDictionary, NSString, UIView;
+@class CNActionsView, CNContact, CNContactActionsController, CNUIContactsEnvironment, CNUIUserActionListDataSource, NSArray, NSDictionary, NSString, UIView;
 @protocol CNContactInlineActionsViewControllerDelegate, CNCustomPresentation, CNSchedulerProvider, CNUIObjectViewControllerDelegate;
 
 @interface CNContactInlineActionsViewController : UIViewController <CNActionsViewProtocol, CNUIUserActionListConsumer, CNContactActionsControllerDelegate, CNUIObjectViewController>
@@ -31,11 +31,13 @@
     id <CNCustomPresentation> _actionsControllerPresentation;
     id <CNSchedulerProvider> _schedulerProvider;
     CNContactActionsController *_actionsController;
+    CNUIContactsEnvironment *_environment;
     CNUIUserActionListDataSource *_actionListDataSource;
 }
 
 + (id)descriptorForRequiredKeys;
 @property(retain, nonatomic) CNUIUserActionListDataSource *actionListDataSource; // @synthesize actionListDataSource=_actionListDataSource;
+@property(retain, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) CNContactActionsController *actionsController; // @synthesize actionsController=_actionsController;
 @property(retain, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
 @property(retain, nonatomic) id <CNCustomPresentation> actionsControllerPresentation; // @synthesize actionsControllerPresentation=_actionsControllerPresentation;
@@ -71,10 +73,11 @@
 - (void)viewDidLoad;
 - (void)loadView;
 @property(readonly, nonatomic) double throttleDelay;
+- (void)checkinLaunchTasksForUndiscoverableActionsForContact:(id)arg1;
 - (void)displayAllSupportedTypesDisabled;
 - (void)updateDesiredTitleFontSizeIfNeeded;
 - (void)dealloc;
-- (id)initWithActionListDataSource:(id)arg1;
+- (id)initWithActionListDataSource:(id)arg1 environment:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

@@ -9,22 +9,27 @@
 #import <PhotoAnalysis/PHAGraphRegistration-Protocol.h>
 
 @class NSDate, NSObject, NSString, PHAGraphManager;
-@protocol OS_os_transaction;
+@protocol OS_dispatch_group, OS_os_transaction;
 
 @interface PHAGraphServiceWorkerGraphUpdateJob : PHAWorkerJob <PHAGraphRegistration>
 {
     _Bool _finished;
     _Bool _isChangeProcessingJob;
     float _completionScore;
+    long long _originalExecutionContext;
     CDUnknownBlockType _updateBlock;
     CDUnknownBlockType _completionBlock;
     NSString *_label;
     NSDate *_creationDate;
     NSObject<OS_os_transaction> *_transaction;
     PHAGraphManager *_graphManager;
+    id _pgManager;
+    NSObject<OS_dispatch_group> *_completionWaitGroup;
 }
 
 + (id)graphUpdateJobWithLibrary:(id)arg1 scenario:(unsigned long long)arg2 label:(id)arg3 updateBlock:(CDUnknownBlockType)arg4;
+@property(retain) NSObject<OS_dispatch_group> *completionWaitGroup; // @synthesize completionWaitGroup=_completionWaitGroup;
+@property(retain) id pgManager; // @synthesize pgManager=_pgManager;
 @property(retain, nonatomic) PHAGraphManager *graphManager; // @synthesize graphManager=_graphManager;
 @property(retain) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
 @property(retain) NSDate *creationDate; // @synthesize creationDate=_creationDate;
@@ -32,9 +37,11 @@
 @property _Bool isChangeProcessingJob; // @synthesize isChangeProcessingJob=_isChangeProcessingJob;
 @property(copy) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 @property(copy) CDUnknownBlockType updateBlock; // @synthesize updateBlock=_updateBlock;
+@property(nonatomic) long long originalExecutionContext; // @synthesize originalExecutionContext=_originalExecutionContext;
 @property(nonatomic) float completionScore; // @synthesize completionScore=_completionScore;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
 - (void).cxx_destruct;
+- (void)_restoreGraphUpdateManagerExecutionContext;
 - (void)onGraphUpdateComplete;
 - (void)graphUpdateDidStop;
 - (void)graphUpdateIsConsistent;
@@ -42,7 +49,9 @@
 - (_Bool)wantsGraphUpdateNotifications;
 - (_Bool)wantsLiveGraphUpdates;
 - (void)updateCompletionScore:(float)arg1;
+- (void)waitUntilFinished;
 - (void)markAsFinishedWithCompletionScore:(float)arg1;
+- (_Bool)graphIsReady;
 @property(readonly, copy) NSString *description;
 - (_Bool)stopProcessingOnWorker:(id)arg1 withError:(id *)arg2;
 - (_Bool)startProcessingOnWorker:(id)arg1 withError:(id *)arg2;

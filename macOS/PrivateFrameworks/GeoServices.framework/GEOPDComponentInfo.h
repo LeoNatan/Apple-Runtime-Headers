@@ -14,26 +14,24 @@ __attribute__((visibility("hidden")))
 @interface GEOPDComponentInfo : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    unsigned int _count;
     GEOPDComponentFilter *_filter;
+    unsigned int _count;
     unsigned int _startIndex;
     int _type;
     int _urgency;
     BOOL _includeSource;
     struct {
-        unsigned int count:1;
-        unsigned int startIndex:1;
-        unsigned int type:1;
-        unsigned int urgency:1;
-        unsigned int includeSource:1;
-    } _has;
+        unsigned int has_count:1;
+        unsigned int has_startIndex:1;
+        unsigned int has_type:1;
+        unsigned int has_urgency:1;
+        unsigned int has_includeSource:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL includeSource; // @synthesize includeSource=_includeSource;
-@property(retain, nonatomic) GEOPDComponentFilter *filter; // @synthesize filter=_filter;
-@property(nonatomic) unsigned int count; // @synthesize count=_count;
-@property(nonatomic) unsigned int startIndex; // @synthesize startIndex=_startIndex;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -42,20 +40,25 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsUrgency:(id)arg1;
 - (id)urgencyAsString:(int)arg1;
 @property(nonatomic) BOOL hasUrgency;
-@property(nonatomic) int urgency; // @synthesize urgency=_urgency;
+@property(nonatomic) int urgency;
 @property(nonatomic) BOOL hasIncludeSource;
+@property(nonatomic) BOOL includeSource;
+@property(retain, nonatomic) GEOPDComponentFilter *filter;
 @property(readonly, nonatomic) BOOL hasFilter;
 @property(nonatomic) BOOL hasCount;
+@property(nonatomic) unsigned int count;
 @property(nonatomic) BOOL hasStartIndex;
+@property(nonatomic) unsigned int startIndex;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
 - (id)initWithType:(int)arg1 count:(unsigned int)arg2;
 
 @end

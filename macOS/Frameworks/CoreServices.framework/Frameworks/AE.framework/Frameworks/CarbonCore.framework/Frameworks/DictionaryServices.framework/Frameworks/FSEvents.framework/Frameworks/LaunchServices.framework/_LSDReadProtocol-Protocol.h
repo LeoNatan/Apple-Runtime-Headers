@@ -7,12 +7,14 @@
 @class NSArray, NSSet, NSString, _LSBundleIDValidationToken;
 
 @protocol _LSDReadProtocol
+- (void)getSelectedDeveloperDirectoryURLWithCompletionHandler:(void (^)(NSURL *))arg1;
+- (void)getPreferencesWithCompletionHandler:(void (^)(NSDictionary *, NSError *))arg1;
 - (void)mapPlugInBundleIdentifiersToContainingBundleIdentifiers:(NSSet *)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)mapBundleIdentifiers:(NSSet *)arg1 orMachOUUIDs:(NSSet *)arg2 completionHandler:(void (^)(NSArray *, NSArray *, NSError *))arg3;
-- (void)getLocalizationDictionaryForTypeWithIdentifier:(NSString *)arg1 unit:(unsigned int)arg2 preferredLocalizations:(NSArray *)arg3 completionHandler:(void (^)(NSDictionary *))arg4;
 - (void)getLocalizedNameWithBundleType:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 bundleUUID:(NSString *)arg3 context:(NSString *)arg4 shortNameOnly:(BOOL)arg5 preferredLocalizations:(NSArray *)arg6 validationToken:(_LSBundleIDValidationToken *)arg7 completionHandler:(void (^)(NSString *, NSError *))arg8;
 - (void)getKernelPackageExtensionsWithCompletionHandler:(void (^)(NSArray *, NSError *))arg1;
-- (void)getServerStoreWithCompletionHandler:(void (^)(id, id, NSError *))arg1;
+- (void)getServerStoreNonBlockingWithCompletionHandler:(void (^)(id, FSNode *, NSError *))arg1;
+- (void)getServerStoreWithCompletionHandler:(void (^)(id, FSNode *, NSError *))arg1;
 - (void)getServerStatusWithCompletionHandler:(void (^)(unsigned int))arg1;
 @end
 

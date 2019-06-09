@@ -15,6 +15,7 @@
 - (id)_gkAllCredentials;
 - (void)_gkSetScope:(unsigned int)arg1 forCredential:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_gkCredentialForUsername:(id)arg1 environment:(long long)arg2;
+- (id)_gkCredentialForAltDSID:(id)arg1 environment:(long long)arg2;
 - (id)_gkMapAccountsWithBlock:(CDUnknownBlockType)arg1;
 @end
 

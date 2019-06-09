@@ -37,6 +37,7 @@
 - (void).cxx_destruct;
 - (void)_showingOnOffLabelChanged;
 - (_Bool)_shouldShowOnOffLabels;
+- (void)tintColorDidChange;
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2 notifyingVisualElement:(_Bool)arg3;
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;
 - (unsigned int)_controlEventsForActionTriggered;
@@ -55,8 +56,6 @@
 - (void)_refreshVisualElementForTraitCollection:(id)arg1 populatingAPIProperties:(_Bool)arg2;
 - (void)_refreshVisualElementForTraitCollection:(id)arg1;
 - (void)_refreshVisualElement;
-- (_Bool)_shouldAlterCodedFrame;
-- (void)_encodeFrameWithCoder:(id)arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

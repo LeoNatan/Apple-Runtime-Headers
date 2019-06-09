@@ -6,11 +6,14 @@
 
 #import <Foundation/NSMutableAttributedString.h>
 
-@class NSArray, NSMutableArray;
-@protocol NSTextStorageDelegate;
+#import <UIFoundation/NSSecureCoding-Protocol.h>
 
-@interface NSTextStorage : NSMutableAttributedString
+@class NSArray, NSMutableArray;
+@protocol NSTextStorageController, NSTextStorageDelegate;
+
+@interface NSTextStorage : NSMutableAttributedString <NSSecureCoding>
 {
+    id <NSTextStorageController> _textStorageController;
     struct _NSRange _editedRange;
     long long _editedDelta;
     struct {
@@ -33,6 +36,8 @@
 - (id)cuiStyleEffects;
 - (id)cuiCatalog;
 - (BOOL)_shouldSetOriginalFontAttribute;
+- (id)textStorageController;
+- (void)setTextStorageController:(id)arg1;
 @property __weak id <NSTextStorageDelegate> delegate;
 - (void)fontSetChanged;
 - (void)_notifyEdited:(unsigned long long)arg1 range:(struct _NSRange)arg2 changeInLength:(long long)arg3 invalidatedRange:(struct _NSRange)arg4;

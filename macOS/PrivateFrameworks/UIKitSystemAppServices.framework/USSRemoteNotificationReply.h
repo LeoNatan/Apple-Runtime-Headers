@@ -6,21 +6,22 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
 @class NSDictionary;
 
-@interface USSRemoteNotificationReply : NSObject <USSXPCEncodable>
+@interface USSRemoteNotificationReply : NSObject <NSSecureCoding>
 {
     NSDictionary *_flags;
     NSDictionary *_objects;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSDictionary *objects; // @synthesize objects=_objects;
 @property(copy, nonatomic) NSDictionary *flags; // @synthesize flags=_flags;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithFlags:(id)arg1 objects:(id)arg2;
 
 @end

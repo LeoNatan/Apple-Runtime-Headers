@@ -7,22 +7,28 @@
 #import <UIKit/UITableViewController.h>
 
 #import <ChatKit/CKCloudKitSyncProgressViewControllerDelegate-Protocol.h>
+#import <ChatKit/CKContainerSearchControllerDelegate-Protocol.h>
 #import <ChatKit/CKConversationListCellDelegate-Protocol.h>
 #import <ChatKit/CKConversationResultsControllerDelegate-Protocol.h>
-#import <ChatKit/CKTranscriptPreviewControllerDelegate-Protocol.h>
+#import <ChatKit/CKOnboardingControllerDelegate-Protocol.h>
+#import <ChatKit/CNContactViewControllerDelegate-Protocol.h>
+#import <ChatKit/CNMeCardSharingPickerViewControllerDelegate-Protocol.h>
+#import <ChatKit/IMCNMeCardSharingSettingsViewControllerDelegate-Protocol.h>
 #import <ChatKit/IMCloudKitEventHandler-Protocol.h>
+#import <ChatKit/INKContentControllerObserver-Protocol.h>
 #import <ChatKit/UIActionSheetDelegate-Protocol.h>
 #import <ChatKit/UISearchBarDelegate-Protocol.h>
 #import <ChatKit/UISearchControllerDelegate-Protocol.h>
 #import <ChatKit/UITableViewDataSource-Protocol.h>
 #import <ChatKit/UITableViewDelegate-Protocol.h>
-#import <ChatKit/UITableViewDragDestinationDelegate-Protocol.h>
-#import <ChatKit/UIViewControllerPreviewingDelegate-Protocol.h>
-#import <ChatKit/UIViewControllerPreviewingDelegate_Private-Protocol.h>
+#import <ChatKit/UITableViewDelegatePrivate-Protocol.h>
+#import <ChatKit/UITableViewDragDelegate-Protocol.h>
+#import <ChatKit/UITableViewDropDelegate-Protocol.h>
+#import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationSearchResultsController, CKMessagesController, CKScheduledUpdater, NSArray, NSIndexPath, NSString, UIBarButtonItem, UISearchController, UITableView, UIView;
+@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationSearchResultsController, CKLargeTitleAccessoryView, CKMessagesController, CKNavigationBarTitleView, CKOnboardingController, CKScheduledUpdater, CKSearchViewController, CNContact, CNContactStore, INKContentController, INKContentView, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIButton, UISearchController, UITableView, UIView, _UIContextMenuInteraction;
 
-@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, CKConversationResultsControllerDelegate, CKConversationListCellDelegate, UITableViewDragDestinationDelegate, CKTranscriptPreviewControllerDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate>
+@interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, CNContactViewControllerDelegate, CKConversationResultsControllerDelegate, CKContainerSearchControllerDelegate, CKConversationListCellDelegate, UITableViewDropDelegate, UITableViewDragDelegate, _UIContextMenuInteractionDelegate, INKContentControllerObserver, CNMeCardSharingPickerViewControllerDelegate, IMCNMeCardSharingSettingsViewControllerDelegate, CKOnboardingControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate, UIActionSheetDelegate>
 {
     UITableView *_table;
     NSIndexPath *_previouslySelectedIndexPath;
@@ -31,11 +37,14 @@
     _Bool _isInitialLoad;
     _Bool _isInitialAppearance;
     _Bool _isShowingSwipeDeleteConfirmation;
+    _Bool _draggingConversation;
     _Bool _shouldUseFastPreviewText;
+    _Bool _hasJunkiMessageChats;
     CKConversationList *_conversationList;
     CKMessagesController *_messagesController;
     CKCloudKitSyncProgressViewController *_syncProgressViewController;
-    UIBarButtonItem *_currentEditButtonItem;
+    CKNavigationBarTitleView *_navigationBarTitleView;
+    CKLargeTitleAccessoryView *_largeTitleAccessoryView;
     CKScheduledUpdater *_updater;
     UIView *_noMessagesDialogView;
     NSArray *_frozenConversations;
@@ -47,15 +56,40 @@
     CKConversation *_conversationChangingPinState;
     double _conversationCellHeight;
     UISearchController *_searchController;
+    CNContact *_meContact;
     CKConversationSearchResultsController *_searchResultsController;
+    CKSearchViewController *_modernSearchResultsController;
+    _UIContextMenuInteraction *_contextMenuInteraction;
     UIBarButtonItem *_composeButton;
+    UIButton *_composeButtonView;
+    UIBarButtonItem *_optionsButtonItem;
+    UIButton *_optionsButtonView;
+    UIBarButtonItem *_spacingItem;
+    UIBarButtonItem *_doneButton;
     CDUnknownBlockType _searchCompletion;
+    CNContactStore *_contactStore;
+    INKContentController *_infoKitContentController;
+    INKContentView *_infoKitContentView;
+    CKOnboardingController *_onboardingController;
 }
 
+@property(retain, nonatomic) CKOnboardingController *onboardingController; // @synthesize onboardingController=_onboardingController;
+@property(retain, nonatomic) INKContentView *infoKitContentView; // @synthesize infoKitContentView=_infoKitContentView;
+@property(retain, nonatomic) INKContentController *infoKitContentController; // @synthesize infoKitContentController=_infoKitContentController;
+@property(nonatomic) _Bool hasJunkiMessageChats; // @synthesize hasJunkiMessageChats=_hasJunkiMessageChats;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) _Bool shouldUseFastPreviewText; // @synthesize shouldUseFastPreviewText=_shouldUseFastPreviewText;
 @property(copy, nonatomic) CDUnknownBlockType searchCompletion; // @synthesize searchCompletion=_searchCompletion;
+@property(retain, nonatomic) UIBarButtonItem *doneButton; // @synthesize doneButton=_doneButton;
+@property(retain, nonatomic) UIBarButtonItem *spacingItem; // @synthesize spacingItem=_spacingItem;
+@property(retain, nonatomic) UIButton *optionsButtonView; // @synthesize optionsButtonView=_optionsButtonView;
+@property(retain, nonatomic) UIBarButtonItem *optionsButtonItem; // @synthesize optionsButtonItem=_optionsButtonItem;
+@property(retain, nonatomic) UIButton *composeButtonView; // @synthesize composeButtonView=_composeButtonView;
 @property(retain, nonatomic) UIBarButtonItem *composeButton; // @synthesize composeButton=_composeButton;
+@property(retain, nonatomic) _UIContextMenuInteraction *contextMenuInteraction; // @synthesize contextMenuInteraction=_contextMenuInteraction;
+@property(retain, nonatomic) CKSearchViewController *modernSearchResultsController; // @synthesize modernSearchResultsController=_modernSearchResultsController;
 @property(retain, nonatomic) CKConversationSearchResultsController *searchResultsController; // @synthesize searchResultsController=_searchResultsController;
+@property(retain, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
 @property(nonatomic) double conversationCellHeight; // @synthesize conversationCellHeight=_conversationCellHeight;
 @property(retain, nonatomic) CKConversation *conversationChangingPinState; // @synthesize conversationChangingPinState=_conversationChangingPinState;
@@ -63,17 +97,22 @@
 @property(retain, nonatomic) NSArray *filteredJunkConversations; // @synthesize filteredJunkConversations=_filteredJunkConversations;
 @property(retain, nonatomic) NSArray *filteredWhitelistedConversations; // @synthesize filteredWhitelistedConversations=_filteredWhitelistedConversations;
 @property(nonatomic) long long filterMode; // @synthesize filterMode=_filterMode;
+@property(nonatomic, getter=isDraggingConversation) _Bool draggingConversation; // @synthesize draggingConversation=_draggingConversation;
 @property(nonatomic) unsigned long long filteredConversationCount; // @synthesize filteredConversationCount=_filteredConversationCount;
 @property(copy, nonatomic) NSArray *frozenConversations; // @synthesize frozenConversations=_frozenConversations;
 @property(retain, nonatomic) UIView *noMessagesDialogView; // @synthesize noMessagesDialogView=_noMessagesDialogView;
 @property(retain, nonatomic) CKScheduledUpdater *updater; // @synthesize updater=_updater;
 @property(nonatomic) _Bool isShowingSwipeDeleteConfirmation; // @synthesize isShowingSwipeDeleteConfirmation=_isShowingSwipeDeleteConfirmation;
-@property(retain, nonatomic) UIBarButtonItem *currentEditButtonItem; // @synthesize currentEditButtonItem=_currentEditButtonItem;
+@property(retain, nonatomic) CKLargeTitleAccessoryView *largeTitleAccessoryView; // @synthesize largeTitleAccessoryView=_largeTitleAccessoryView;
+@property(retain, nonatomic) CKNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(retain, nonatomic) CKCloudKitSyncProgressViewController *syncProgressViewController; // @synthesize syncProgressViewController=_syncProgressViewController;
 @property(retain, nonatomic) NSIndexPath *previouslySelectedIndexPath; // @synthesize previouslySelectedIndexPath=_previouslySelectedIndexPath;
 @property(nonatomic) __weak CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
 @property(nonatomic) __weak CKConversationList *conversationList; // @synthesize conversationList=_conversationList;
 - (void).cxx_destruct;
+- (void)contentController:(id)arg1 didFinishWithContent:(id)arg2 animated:(_Bool)arg3;
+- (void)contentController:(id)arg1 contentDidBecomeAvailable:(id)arg2 animated:(_Bool)arg3;
+- (void)_downtimeStateChanged:(id)arg1;
 - (void)cloudKitSyncProgressViewController:(id)arg1 actionButtonWasPressed:(long long)arg2 errors:(id)arg3;
 - (void)_beginAccountRepairIfNeeded;
 - (void)cloudKitEventNotificationManager:(id)arg1 syncProgressDidUpdate:(id)arg2;
@@ -86,6 +125,7 @@
 - (void)selectConversationClosestToDeletedIndex:(unsigned long long)arg1;
 - (void)selectNextSequentialConversation:(_Bool)arg1;
 - (void)selectDefaultConversationAnimated:(_Bool)arg1;
+- (void)deleteSelectedConversation;
 - (void)_selectConversationAtIndex:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (unsigned long long)_indexOfDefaultConversation;
 - (unsigned long long)_indexOfConverationClosestToDeletedIndex:(unsigned long long)arg1;
@@ -93,20 +133,28 @@
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
-- (id)_tableView:(id)arg1 dropSessionDidUpdate:(id)arg2 withDestinationIndexPath:(id)arg3;
-- (_Bool)_tableView:(id)arg1 canHandleDropSession:(id)arg2;
-- (void)_tableView:(id)arg1 performDropWithCoordinator:(id)arg2;
+- (id)tableView:(id)arg1 dropSessionDidUpdate:(id)arg2 withDestinationIndexPath:(id)arg3;
+- (_Bool)tableView:(id)arg1 canHandleDropSession:(id)arg2;
+- (void)tableView:(id)arg1 performDropWithCoordinator:(id)arg2;
+- (id)userActivityForNewSceneWithConversation:(id)arg1;
+- (id)tableView:(id)arg1 itemsForBeginningDragSession:(id)arg2 atIndexPath:(id)arg3;
 - (void)searcherDidComplete:(id)arg1;
 - (void)searcher:(id)arg1 userDidDeleteChatGUID:(id)arg2;
 - (void)searcher:(id)arg1 userDidSelectChatGUID:(id)arg2 messageGUID:(id)arg3;
 - (id)searcher:(id)arg1 conversationForChatGUID:(id)arg2;
+- (void)searchViewController:(id)arg1 requestsPushOfSearchController:(id)arg2;
+- (void)searchControllerDidBeginDragging:(id)arg1;
+- (void)searchController:(id)arg1 didSelectItem:(id)arg2 inChat:(id)arg3;
+- (id)searchController:(id)arg1 conversationForChatGUID:(id)arg2;
+- (void)searchBarCancelButtonClicked:(id)arg1;
 - (void)searchBarTextDidEndEditing:(id)arg1;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
+- (void)searchBarTextDidBeginEditing:(id)arg1;
 - (_Bool)searchBarShouldBeginEditing:(id)arg1;
 - (void)didDismissSearchController:(id)arg1;
 - (void)willDismissSearchController:(id)arg1;
 - (void)_filterCellSelectionChanged:(id)arg1;
-- (void)_dismissDetailsController:(id)arg1;
+- (void)_dismissPresentedNavController:(id)arg1;
 - (void)avatarHeaderWasTappedForConversation:(id)arg1 inCell:(id)arg2;
 - (double)tableViewSpacingForExtraSeparators:(id)arg1;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
@@ -120,6 +168,7 @@
 - (void)markAsReadButtonTappedForIndexPath:(id)arg1;
 - (void)markAsReadButtonTapped:(id)arg1;
 - (void)_cancelDeletion:(CDUnknownBlockType)arg1;
+- (id)alertTitleForDelete;
 - (void)deleteButtonTappedForIndexPath:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 cellToUpdate:(id)arg3;
 - (void)batchDeleteButtonTapped:(id)arg1;
 - (void)tableView:(id)arg1 didEndEditingRowAtIndexPath:(id)arg2;
@@ -130,10 +179,13 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
+- (_Bool)tableView:(id)arg1 shouldBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (long long)preferredStatusBarStyle;
+- (void)optionsButtonTapped:(id)arg1;
 - (void)composeButtonClicked:(id)arg1;
 - (void)_endHoldingUpdatesForBatchEditing:(_Bool)arg1;
 - (void)_updateToolbarItems;
@@ -145,10 +197,9 @@
 - (void)prepareForResume;
 - (void)prepareForSuspend;
 - (id)actionsForTranscriptPreviewController:(id)arg1;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)committedViewControllerForPreviewViewController:(id)arg1;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
-- (id)previewViewControllerForRowAtIndexPath:(id)arg1;
+- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
 @property(readonly, nonatomic) _Bool isVisible;
 - (void)applicationWillSuspend;
 - (void)viewWillDisappear:(_Bool)arg1;
@@ -160,18 +211,25 @@
 - (void)viewDidUnload;
 - (void)viewDidLoad;
 - (void)loadView;
+- (_Bool)_messageIsFromFilteredSenderIsSMS:(_Bool)arg1 isContact:(_Bool)arg2 isFiltered:(_Bool)arg3 isSpam:(_Bool)arg4 unknownFilteringEnabled:(_Bool)arg5 smsSpamFilteringEnabled:(_Bool)arg6;
+- (_Bool)_messageSpamFilteringEnabled;
+- (_Bool)_messageUnknownFilteringEnabled;
+- (_Bool)_getHasJunkiMessageUserDefault;
+- (_Bool)_messageFilteringEnabled;
 - (id)_mergeUnsentComposition:(id)arg1 withDroppedComposition:(id)arg2;
 - (void)_showConversationWithComposition:(id)arg1 atIndexPath:(id)arg2;
 - (void)performSearch:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateNonPlaceholderConverationLists;
 - (void)_updateFilteredConversationLists;
 - (void)_updateConversationFilteredFlagsAndReportSpam;
+- (_Bool)shouldCleanupFilter;
 - (void)updateNoMessagesDialog;
 - (void)updateMarginWidth;
 - (void)_updateConversationListNeedsResort:(_Bool)arg1;
 - (void)updateConversationList;
 - (id)_indexPaths:(id)arg1 containingHandleWithUID:(id)arg2;
 - (void)_reloadVisibleConversationList:(id)arg1;
+- (void)updateConversationNamesForNicknames:(id)arg1;
 - (void)updateSMSSpamConversationsDisplayName;
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
 - (void)endHoldingAllConversationListUpdatesForKey:(id)arg1;
@@ -181,13 +239,34 @@
 - (void)noteUnreadCountsChanged;
 - (void)conversationWillBeMarkedRead:(id)arg1;
 - (void)updateConversationSelection;
-- (void)updateCurrentEditButton;
-- (void)editButtonTapped:(id)arg1;
+- (void)onboardingControllerDidFinish:(id)arg1;
+- (id)presentingViewControllerForOnboardingController:(id)arg1;
+- (void)sharingSettingsViewController:(id)arg1 didUpdateWithSharingResult:(id)arg2;
+- (void)sharingSettingsViewController:(id)arg1 didSelectSharingAudience:(unsigned long long)arg2;
+- (void)sharingSettingsViewController:(id)arg1 didUpdateSharingState:(_Bool)arg2;
+- (void)sharingSettingsViewControllerDidUpdateContact:(id)arg1;
+- (void)sharingPickerDidFinish:(id)arg1;
+- (void)sharingPicker:(id)arg1 didSelectNameFormat:(unsigned long long)arg2;
+- (void)sharingPicker:(id)arg1 didSelectSharingAudience:(unsigned long long)arg2;
+- (void)sharingPicker:(id)arg1 didChangeSharingState:(_Bool)arg2;
+- (unsigned long long)_meCardSharingAudience;
+- (unsigned long long)_meCardSharingNameFormat;
+- (_Bool)_meCardSharingEnabled;
+- (id)_meCardSharingState;
+- (id)_meCardSharingNameProviderWithContact:(id)arg1;
+- (id)_meContact;
+- (id)_contactStore;
+- (id)nicknameController;
+- (void)showMeCardViewControllerWithContact:(id)arg1;
+- (void)showMeCardViewController;
+- (void)doneButtonTapped:(id)arg1;
+- (void)updateTitleViews:(_Bool)arg1;
 - (void)updateNavigationItems;
 - (_Bool)_shouldKeepSelection;
 - (void)_groupsChanged:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;
 - (void)_conversationListDidChange:(id)arg1;
+- (void)_contactStoreDidFinishLoadingNotification:(id)arg1;
 - (void)_conversationListDidFinishLoadingConversations:(id)arg1;
 - (void)_chatWatermarkDidChange:(id)arg1;
 - (void)_multiWayCallStateChanged:(id)arg1;

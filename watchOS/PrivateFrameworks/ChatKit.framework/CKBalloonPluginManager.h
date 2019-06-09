@@ -95,7 +95,9 @@
 @property(readonly, nonatomic) NSArray *allEnabledPlugins;
 @property(readonly, nonatomic) _Bool hasLoadedExtensions;
 - (_Bool)isInternalPlugin:(id)arg1;
+- (void)clearBalloonPluginCache;
 - (void)invalidateIconCache;
+- (id)pluginForAdamID:(id)arg1;
 - (id)pluginForIdentifier:(id)arg1;
 - (id)balloonPluginIdentifierForAppExtensionBundleIdentifier:(id)arg1;
 - (void)saveWithNotification:(_Bool)arg1;

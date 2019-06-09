@@ -11,13 +11,12 @@
 #import <ITMLKit/NSObject-Protocol.h>
 #import <ITMLKit/_IKJSDOMNodeProxy-Protocol.h>
 
-@class IKDOMDocument, IKDOMNodeData, IKDOMNodeList, IKJSDataItem, JSManagedValue, JSValue, NSHashTable, NSMutableDictionary, NSString;
+@class IKDOMDocument, IKDOMNodeData, IKDOMNodeList, JSManagedValue, JSValue, NSHashTable, NSMutableDictionary, NSString;
 
 @interface IKDOMNode : IKJSObject <NSObject, IKJSDOMNode, _IKJSDOMNodeProxy, IKJSDOMEventTarget>
 {
     struct _xmlNode *_nodePtr;
     JSManagedValue *_managedDataItem;
-    IKJSDataItem *_boxedDataItem;
     JSManagedValue *_managedOwnerDocument;
     JSManagedValue *_managedParent;
     JSManagedValue *_managedChildNodeList;
@@ -63,11 +62,11 @@
 - (void)removeDOMObserver:(id)arg1;
 - (void)addDOMObserver:(id)arg1;
 - (id)performDOMOperation:(unsigned long long)arg1 newNode:(id)arg2 refNode:(id)arg3;
+- (_Bool)clearUpdates;
 - (void)childrenUpdatedWithUpdatedChildNodes:(id)arg1 notify:(_Bool)arg2;
 - (void)updatedAndMark:(_Bool)arg1 notify:(_Bool)arg2;
 - (void)enumerateEventListernersForType:(id)arg1 xmlAttribute:(id)arg2 phase:(long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)enumerateEventListenersUsingBlock:(CDUnknownBlockType)arg1;
-@property(retain, nonatomic) IKJSDataItem *boxedDataItem;
 @property(readonly, retain, nonatomic) IKDOMNodeData *jsNodeData;
 - (struct _xmlNode *)nodePtr;
 - (_Bool)dispatchEvent:(id)arg1;
@@ -75,6 +74,7 @@
 - (void)addEventListener:(id)arg1:(id)arg2:(_Bool)arg3;
 @property(nonatomic) __weak JSValue *dataItem;
 - (_Bool)contains:(id)arg1;
+- (void)adoptFeatureWithName:(id)arg1 fromDOMNode:(id)arg2;
 - (id)getFeature:(id)arg1:(id)arg2;
 - (_Bool)isEqualNode:(id)arg1;
 - (_Bool)isSameNode:(id)arg1;
@@ -100,7 +100,7 @@
 - (void)dealloc;
 - (id)initWithAppContext:(id)arg1 xmlNode:(struct _xmlNode *)arg2;
 - (id)asPrivateIKJSDOMNode;
-- (id)ik_pathsForSearchQuery:(id)arg1 currentPath:(id)arg2;
+- (id)ik_pathsForSearchQuery:(id)arg1 compareOptions:(unsigned long long)arg2 currentPath:(id)arg3;
 - (id)ik_nodesWithIds:(id)arg1;
 - (id)ik_nodeWithId:(long long)arg1;
 - (id)ik_nodePath;

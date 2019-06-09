@@ -11,13 +11,15 @@
 }
 
 + (_Bool)bitAtPosition:(long long)arg1 isTrueInValue:(unsigned long long)arg2;
-+ (id)rankingRules;
++ (id)rankingRulesByMatchedField;
 + (CDUnknownBlockType)bodyOfNoteOrAttachmentMatchingRule;
 + (CDUnknownBlockType)participantNameOrEmailMatchingRule;
 + (CDUnknownBlockType)titleOfNoteOrAttachmentMatchingRule;
 + (id)initializeScoreArrayOfLength:(unsigned long long)arg1 setAllZeros:(_Bool)arg2;
-+ (id)rankingScoresForSearchableItems:(id)arg1 withRankingQueryBitDictionary:(id)arg2;
++ (unsigned long long)bucketOfTimeInterval:(double)arg1;
++ (id)rankingScoresForSearchableItems:(id)arg1 withRankingQueryBitDictionary:(id)arg2 matchedFields:(id *)arg3 isPrefixMatch:(id *)arg4;
 + (id)relevanceBitFieldForSearchableItems:(id)arg1;
++ (id)modificationDateBucketForSearchableItems:(id)arg1;
 
 @end
 

@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <AppleMediaServices/AMSBagConsumer-Protocol.h>
+
 @class NSNumber, NSSet, NSString;
 
-@interface AMSDeviceOffer : NSObject
+@interface AMSDeviceOffer : NSObject <AMSBagConsumer>
 {
     _Bool _downgrading;
     _Bool _subscribed;
@@ -16,10 +18,12 @@
     NSString *_description;
     NSSet *_serialNumbers;
     NSString *_offerIdentifier;
-    unsigned long long _productType;
 }
 
-@property(nonatomic) unsigned long long productType; // @synthesize productType=_productType;
++ (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (id)bagSubProfileVersion;
++ (id)bagSubProfile;
++ (id)bagKeySet;
 @property(nonatomic, getter=isSubscribed) _Bool subscribed; // @synthesize subscribed=_subscribed;
 @property(copy, nonatomic) NSString *offerIdentifier; // @synthesize offerIdentifier=_offerIdentifier;
 @property(nonatomic, getter=isDowngrading) _Bool downgrading; // @synthesize downgrading=_downgrading;
@@ -27,12 +31,15 @@
 @property(copy, nonatomic) NSString *description; // @synthesize description=_description;
 @property(copy, nonatomic) NSNumber *adamId; // @synthesize adamId=_adamId;
 - (void).cxx_destruct;
-- (id)initWithAdamId:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long offerType;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithOfferIdentifier:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

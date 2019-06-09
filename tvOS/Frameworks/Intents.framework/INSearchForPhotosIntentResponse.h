@@ -8,11 +8,10 @@
 
 #import <Intents/INSearchForPhotosIntentResponseExport-Protocol.h>
 
-@class NSNumber, NSString, _INPBSearchForPhotosIntentResponse;
+@class NSNumber, NSString;
 
 @interface INSearchForPhotosIntentResponse : INIntentResponse <INSearchForPhotosIntentResponseExport>
 {
-    _INPBSearchForPhotosIntentResponse *_responseMessagePBRepresentation;
 }
 
 + (_Bool)_appLaunchRequestedFromCode:(long long)arg1;
@@ -20,12 +19,11 @@
 + (int)_typeFromCode:(long long)arg1;
 + (long long)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(_Bool)arg3;
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
 @property(copy, nonatomic) NSNumber *searchResultsCount;
-- (id)_responseMessagePBRepresentation;
+- (long long)_codeWithName:(id)arg1;
 - (long long)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

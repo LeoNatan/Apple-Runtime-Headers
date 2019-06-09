@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)_configureImage:(id)arg1;
+- (void)_configureImage:(id)arg1 assumePreconfigured:(_Bool)arg2;
 - (void)_preheatBitmapData;
 
 @end

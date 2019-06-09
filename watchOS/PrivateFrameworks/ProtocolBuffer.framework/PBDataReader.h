@@ -17,8 +17,8 @@
     unsigned int _length;
 }
 
-@property unsigned int position; // @synthesize position=_pos;
-@property unsigned int length; // @synthesize length=_length;
+@property(nonatomic) unsigned int position; // @synthesize position=_pos;
+@property(nonatomic) unsigned int length; // @synthesize length=_length;
 - (id)readBigEndianShortThenString;
 - (id)readBytes:(unsigned int)arg1;
 - (void)recall:(const CDStruct_c0454aff *)arg1;

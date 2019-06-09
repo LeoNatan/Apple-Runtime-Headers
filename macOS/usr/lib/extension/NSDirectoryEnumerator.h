@@ -12,6 +12,7 @@
 {
 }
 
+@property(readonly) BOOL isEnumeratingDirectoryPostOrder;
 - (void)skipDescendants;
 - (void)skipDescendents;
 @property(readonly) unsigned long long level;

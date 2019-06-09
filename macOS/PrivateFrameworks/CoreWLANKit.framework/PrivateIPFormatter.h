@@ -6,6 +6,7 @@
 
 #import <CoreWLANKit/MinMaxIntFormatter.h>
 
+__attribute__((visibility("hidden")))
 @interface PrivateIPFormatter : MinMaxIntFormatter
 {
 }

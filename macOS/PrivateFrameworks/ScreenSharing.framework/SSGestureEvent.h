@@ -9,7 +9,6 @@
 @interface SSGestureEvent : SSMouseEvent
 {
     long long mSubType;
-    void *mReservedForInstanceVariablesGesture;
 }
 
 + (id)gestureEventWithCoordinates:(struct SSPoint)arg1 subType:(long long)arg2;

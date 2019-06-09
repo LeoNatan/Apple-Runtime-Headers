@@ -6,10 +6,11 @@
 
 #import <AXMediaUtilities/AXMEvaluationNode.h>
 
-@class NSURL;
+@class NSString, NSURL, VNCoreMLModel;
 
 @interface AXMModelDetectorNode : AXMEvaluationNode
 {
+    VNCoreMLModel *_model;
     NSURL *_modelURL;
 }
 
@@ -19,7 +20,9 @@
 @property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 - (void).cxx_destruct;
 - (void)evaluate:(id)arg1;
+- (BOOL)_loadModel:(id *)arg1;
 - (BOOL)preloadModelIfNeeded:(id *)arg1;
+@property(readonly, nonatomic) NSString *modelIdentifier;
 - (BOOL)requiresVisionFramework;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

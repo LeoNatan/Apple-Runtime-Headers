@@ -86,7 +86,7 @@
 - (void)_bookmarksWereReloaded;
 - (void)_updateDAVAttributesFromSyncData;
 - (void)_loadSyncDataFromDictionary:(id)arg1;
-- (id)_syncDataAsDictionary;
+- (id)_syncDataAsDictionaryUsingCoalescedChanges:(id)arg1;
 - (void)bookmark:(id)arg1 changedSyncServerIDFrom:(id)arg2 to:(id)arg3;
 - (void)clearDAVSyncState;
 - (BOOL)_unsafeUseCloudKitMode;
@@ -107,7 +107,7 @@
 - (id)bookmarkForSyncServerID:(id)arg1;
 - (id)bookmarkForUUID:(id)arg1;
 - (void)_clearPendingChanges;
-- (void)_removeRedundantPendingChanges;
+- (id)_mutableCoalescedChanges;
 @property(readonly, nonatomic) BOOL hasUnsavedChanges;
 - (int)_saveBookmarkGroupGutsToFilePath:(id)arg1;
 - (int)saveToFilePath:(id)arg1;

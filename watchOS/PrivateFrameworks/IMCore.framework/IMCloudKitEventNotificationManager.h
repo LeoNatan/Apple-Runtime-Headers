@@ -35,7 +35,6 @@
 - (void)fetchSyncDebuggingInfo:(id)arg1;
 - (void)_updateProgressWithState:(id)arg1;
 - (void)_sendHiddenProgressToEventListeners;
-- (void)startFetchingSyncProgress;
 - (void)_sendProgressToEventListeners:(id)arg1;
 - (void)_sendProgressToEventListenersDeferred;
 - (double)progressBroadcastDelay;
@@ -59,6 +58,7 @@
 - (void)fetchSyncStateAfterClearingErrors;
 - (void)fetchRampStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchSyncStateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)fetchSyncStateAfterFetchingAccountStatus;
 - (void)fetchSyncState;
 - (void)_syncStateDidChange:(id)arg1;
 - (void)_sendSyncStateChangedEventToEventListeners:(id)arg1;

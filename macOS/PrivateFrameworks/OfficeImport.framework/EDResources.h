@@ -8,6 +8,7 @@
 
 @class EDCollection, EDColorsCollection, EDContentFormatsCollection, EDFontsCollection, EDLinksCollection, EDStylesCollection, EDTableStylesCollection;
 
+__attribute__((visibility("hidden")))
 @interface EDResources : NSObject
 {
     EDCollection *mStrings;

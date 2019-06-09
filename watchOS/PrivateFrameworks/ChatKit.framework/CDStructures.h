@@ -75,9 +75,11 @@ struct CKBalloonDescriptor_t {
     char _field4;
     unsigned int _field5;
     char _field6;
-    _Bool _field7;
-    _Bool _field8;
+    int _field7;
+    char _field8;
     _Bool _field9;
+    _Bool _field10;
+    _Bool _field11;
 };
 
 struct CLLocationCoordinate2D {
@@ -93,6 +95,13 @@ struct IMAssociatedMessageGeometryDescriptor {
     float yScalar;
     float scale;
     float rotation;
+};
+
+struct IMPreviewConstraints {
+    float _field1;
+    struct CGSize _field2;
+    float _field3;
+    _Bool _field4;
 };
 
 struct UIEdgeInsets {

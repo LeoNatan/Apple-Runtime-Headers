@@ -8,6 +8,7 @@
 
 @class SKUIGiftConfiguration;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftTableViewSection : SKUITableViewSection
 {
     SKUIGiftConfiguration *_giftConfiguration;

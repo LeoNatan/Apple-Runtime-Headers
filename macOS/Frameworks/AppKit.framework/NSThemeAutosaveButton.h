@@ -15,13 +15,11 @@ __attribute__((visibility("hidden")))
 {
     long long _editState;
     NSError *_autosavingError;
-    double _pulseAnimationStartTime;
     id _animationCompletionBlock;
     id _showHideDelay;
     id _eventMonitor;
     id _flagsChangedEventMonitor;
     NSPopover *_documentPopover;
-    double _imageAlphaValue;
     NSError *_nonModalError;
     NSPopover *_alertPopover;
     BOOL _needsShowAlertPopover;

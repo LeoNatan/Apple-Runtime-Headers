@@ -18,8 +18,8 @@ __attribute__((visibility("hidden")))
 + (id)focusRingViewForWindow:(id)arg1;
 + (void)hideForView:(id)arg1;
 + (void)setNeedsUpdateForView:(id)arg1;
-+ (void)updateForView:(id)arg1;
 + (void)updateIfNeeded;
++ (void)showForView:(id)arg1 forceRect:(struct CGRect *)arg2 isAccessibilityRequest:(BOOL)arg3;
 + (void)showForView:(id)arg1;
 + (void)_invalidateAnimatedRingWithTimer:(id)arg1;
 + (void)_focusRingViewDidChangeGeometryInWindow:(id)arg1;

@@ -21,11 +21,13 @@
 @property(nonatomic, setter=_lockedSetManateeAvailableForLoggedInAccount:) long long manateeAvailableForLoggedInAccount; // @synthesize manateeAvailableForLoggedInAccount=_manateeAvailableForLoggedInAccount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *statusQueue; // @synthesize statusQueue=_statusQueue;
 - (void).cxx_destruct;
+- (_Bool)accountSupportsManatee:(id)arg1;
 - (_Bool)isManateeAvailable:(id *)arg1;
 - (void)statusForCurrentlyLoggedInAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_lockedFetchAndUpdateManateeAvailability;
 - (void)handleUpdateNotificationWithAvailability:(id)arg1;
 - (long long)_fetchManateeAvailability:(id *)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

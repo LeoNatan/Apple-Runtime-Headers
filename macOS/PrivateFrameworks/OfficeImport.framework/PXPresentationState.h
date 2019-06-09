@@ -9,6 +9,7 @@
 @class CXNamespace, NSMutableDictionary, OAVReadState, OAXDrawingState, OAXTableStyleCache, PDPresentation;
 @protocol TCCancelDelegate;
 
+__attribute__((visibility("hidden")))
 @interface PXPresentationState : OCXReadState
 {
     NSMutableDictionary *mModelObjects;

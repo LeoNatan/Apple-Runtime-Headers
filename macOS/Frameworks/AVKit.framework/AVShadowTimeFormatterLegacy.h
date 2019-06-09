@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVTimeFormatter.h>
 
+__attribute__((visibility("hidden")))
 @interface AVShadowTimeFormatterLegacy : AVTimeFormatter
 {
 }

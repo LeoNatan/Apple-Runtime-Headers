@@ -6,7 +6,6 @@
 
 #import <AppKit/NSView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit12MultiwayView : NSView
 {
     // Error parsing type: , name: inCallControllTrackingArea

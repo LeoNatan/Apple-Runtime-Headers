@@ -12,7 +12,7 @@
 #import <UIKitCore/UITextPasteSessionDelegate-Protocol.h>
 #import <UIKitCore/_UITextPasteProgressSupport-Protocol.h>
 
-@class NSArray, NSMapTable, NSString, NSTextStorage, UIDragInteraction, UIDragItem, UIDropInteraction, UITargetedDragPreview, UITextDraggableGeometrySameViewDropOperationResult, UITextDropProposal, UITextPasteController, UITextPosition, UITextRange, UIView, _UITextDragCaretView;
+@class NSArray, NSMapTable, NSString, NSTextStorage, UIDragInteraction, UIDragItem, UIDropInteraction, UITargetedDragPreview, UITextDraggableGeometrySameViewDropOperationResult, UITextDropProposal, UITextPasteController, UITextRange, UIView, _UITextDragCaretView;
 @protocol UIDragSession, UIDropSession, UITextDragSupporting><UITextDropSupporting, UITextDraggableGeometry, UITextDraggableGeometrySameViewDropOperation, UITextPasteSession;
 
 __attribute__((visibility("hidden")))
@@ -30,6 +30,10 @@ __attribute__((visibility("hidden")))
         unsigned int forceEditable:1;
         unsigned int delegateSupportsProposalForDrop:1;
         unsigned int delegateSupportsSessionDidUpdate:1;
+        unsigned int delegateSupportsRangeForDrop:1;
+        unsigned int delegateSupportsPositionForDrop:1;
+        unsigned int delegateSupportsWillMoveCaret:1;
+        unsigned int delegateSupportsDidMoveCaret:1;
         unsigned int viewSupportsTextStorage:1;
         unsigned int textStorageDidChange:1;
         unsigned int dropPerformed:1;
@@ -47,7 +51,7 @@ __attribute__((visibility("hidden")))
     NSTextStorage *_observingStorage;
     id <UIDropSession> _currentDropSession;
     _UITextDragCaretView *_dropCaret;
-    UITextPosition *_currentDropPosition;
+    UITextRange *_currentDropRange;
     UIDragItem *_topmostDropItem;
     UITargetedDragPreview *_topmostDropPreview;
     UITextDropProposal *_currentDropProposal;
@@ -77,14 +81,15 @@ __attribute__((visibility("hidden")))
 - (long long)_textPasteRangeBehavior;
 - (_Bool)_textPasteShouldBlockPasting;
 - (double)_textPasteBlockingTimeout;
-- (void)_performDropToPosition:(id)arg1 inSession:(id)arg2;
+- (void)_performDropToRange:(id)arg1 inSession:(id)arg2;
 - (void)_performSameViewOperation:(id)arg1;
 - (void)_prepareSameViewOperation:(unsigned long long)arg1 forItems:(id)arg2 fromRanges:(id)arg3 toRange:(id)arg4;
-- (id)_dropRangeForPosition:(id)arg1;
 - (void)_cleanupDrop;
-- (id)_suggestedProposalForPosition:(id)arg1 inSession:(id)arg2 allowCancel:(_Bool)arg3;
-- (void)_updateDropCaretToPosition:(id)arg1;
-- (id)_dropRequestWithPosition:(id)arg1 inSession:(id)arg2;
+- (id)_suggestedProposalForRequest:(id)arg1;
+- (void)_updateDropCaretToRange:(id)arg1 session:(id)arg2;
+- (void)invalidateDropCaret;
+- (id)_dropRequestWithRange:(id)arg1 suggestedProposal:(id)arg2 inSession:(id)arg3;
+- (id)_dropRequestWithRange:(id)arg1 inSession:(id)arg2;
 - (long long)_dropInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (void)dropInteraction:(id)arg1 item:(id)arg2 willAnimateDropWithAnimator:(id)arg3;
 - (id)dropInteraction:(id)arg1 previewForDroppingItem:(id)arg2 withDefault:(id)arg3;
@@ -92,7 +97,9 @@ __attribute__((visibility("hidden")))
 - (void)dropInteraction:(id)arg1 concludeDrop:(id)arg2;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
 - (void)dropInteraction:(id)arg1 sessionDidExit:(id)arg2;
-- (void)_updateDropProposalForPosition:(id)arg1 inSession:(id)arg2 allowCancel:(_Bool)arg3;
+- (_Bool)_updateCurrentDropProposalInSession:(id)arg1 usingRequest:(id)arg2;
+- (id)_rangeInSession:(id)arg1;
+- (id)_positionInSession:(id)arg1;
 - (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
 - (void)dropInteraction:(id)arg1 sessionDidEnter:(id)arg2;
 - (_Bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;

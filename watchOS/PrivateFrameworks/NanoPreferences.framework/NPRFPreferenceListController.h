@@ -6,9 +6,11 @@
 
 #import <NanoPreferences/NPRFBaseTableViewController.h>
 
+#import <NanoPreferences/_NPRFPreferenceListControllerOptionalMethods-Protocol.h>
+
 @class NPRFSpecifierSet, NSBundle, NSString, PSSpecifier, PUICDictationViewController;
 
-@interface NPRFPreferenceListController : NPRFBaseTableViewController
+@interface NPRFPreferenceListController : NPRFBaseTableViewController <_NPRFPreferenceListControllerOptionalMethods>
 {
     PUICDictationViewController *_dictationController;
     _Bool _updatingCellUIForSpecifierSetModification;
@@ -18,12 +20,17 @@
     PSSpecifier *_configurationSpecifier;
     NPRFSpecifierSet *_specifierSet;
     NSString *_specifierPlistName;
+    NSString *_localizedStringTableName;
 }
 
 + (id)readPreferenceValue:(id)arg1;
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
+@property(retain, nonatomic) NSString *localizedStringTableName; // @synthesize localizedStringTableName=_localizedStringTableName;
 @property __weak PSSpecifier *activeSpecifier; // @synthesize activeSpecifier=_activeSpecifier;
 - (void).cxx_destruct;
+- (void)navigateToSpecifierWithID:(id)arg1;
+- (id)localizedStringForKey:(id)arg1 inBundle:(id)arg2;
+- (id)localizedStringForKey:(id)arg1;
 - (void)_handleValueChangedNotificationForSpecifier:(id)arg1;
 - (void)_unsubscribeFromNotificationsForSpecifiers:(id)arg1;
 - (void)_subscribeToNotificationsForSpecifiers:(id)arg1;
@@ -34,8 +41,6 @@
 - (void)_showTableCell:(id)arg1 busyForSpecifier:(id)arg2;
 - (void)_showTableCellBusy:(id)arg1;
 - (_Bool)_workIsInProgressForSpecifier:(id)arg1;
-- (void)_didEndWorkForSpecifier:(id)arg1;
-- (void)_willBeginWorkForSpecifier:(id)arg1;
 - (void)confirmationViewCancelledForSpecifier:(id)arg1;
 - (void)confirmationViewAcceptedForSpecifier:(id)arg1;
 - (void)showConfirmationViewForSpecifier:(id)arg1;
@@ -93,6 +98,12 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(int)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

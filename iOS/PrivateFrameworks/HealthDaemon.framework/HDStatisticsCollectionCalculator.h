@@ -14,9 +14,9 @@
 
 @interface HDStatisticsCollectionCalculator : NSObject <HDStatisticsSourceOrderProvider, NSSecureCoding>
 {
-    long long _computationMethod;
     struct unique_ptr<_HDStatisticsCollectionCalculatorImplementation, std::__1::default_delete<_HDStatisticsCollectionCalculatorImplementation>> _implementation;
     CDUnknownBlockType _statisticsHandler;
+    long long _computationMethod;
     NSArray *_maskedIntervals;
     id <HDStatisticsCollectionCalculatorSourceOrderProvider> _sourceOrderProvider;
 }
@@ -28,9 +28,10 @@
 @property(nonatomic) __weak id <HDStatisticsCollectionCalculatorSourceOrderProvider> sourceOrderProvider; // @synthesize sourceOrderProvider=_sourceOrderProvider;
 @property(copy, nonatomic) CDUnknownBlockType statisticsHandler; // @synthesize statisticsHandler=_statisticsHandler;
 @property(readonly, copy, nonatomic) NSArray *maskedIntervals; // @synthesize maskedIntervals=_maskedIntervals;
+@property(readonly, nonatomic) long long computationMethod; // @synthesize computationMethod=_computationMethod;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)orderSourceIDs:(vector_bbba3654 *)arg1;
+- (void)orderSourceIDs:(vector_d87a6415 *)arg1;
 - (id)sourceForSourceID:(long long)arg1;
 - (id)bundleIdentifierForSourceID:(long long)arg1;
 - (id)archivedRepresentationWithError:(id *)arg1;

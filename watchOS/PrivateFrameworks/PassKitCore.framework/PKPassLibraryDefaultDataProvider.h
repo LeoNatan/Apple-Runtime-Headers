@@ -22,6 +22,7 @@
 - (id)passWithPassTypeIdentifier:(id)arg1 serialNumber:(id)arg2;
 - (id)paymentPasses;
 @property(readonly, nonatomic) _Bool canAddPaymentPass;
+- (id)initWithPassLibrary:(id)arg1;
 - (id)init;
 
 // Remaining properties

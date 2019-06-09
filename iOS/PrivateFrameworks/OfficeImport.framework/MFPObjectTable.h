@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mObjects;
 }
 
+- (void).cxx_destruct;
 - (void)setObject:(id)arg1 atIndex:(int)arg2;
 - (id)objectAtIndex:(int)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

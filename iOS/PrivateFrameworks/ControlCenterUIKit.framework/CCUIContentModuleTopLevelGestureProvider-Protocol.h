@@ -12,6 +12,5 @@
 
 @optional
 @property(readonly, nonatomic) NSArray *topLevelBlockingGestureRecognizers;
-@property(readonly, nonatomic) NSArray *topLevelGestureRecognizers;
 @end
 

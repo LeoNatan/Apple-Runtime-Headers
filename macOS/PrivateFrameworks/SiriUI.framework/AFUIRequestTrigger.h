@@ -8,7 +8,6 @@
 
 @class NSMapTable, SiriUIRequestOptions;
 
-__attribute__((visibility("hidden")))
 @interface AFUIRequestTrigger : NSObject
 {
     SiriUIRequestOptions *_options;

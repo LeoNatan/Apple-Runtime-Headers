@@ -6,6 +6,7 @@
 
 #import <ChatKit/_CKAudioComposition.h>
 
+__attribute__((visibility("hidden")))
 @interface _CKExternalAudioComposition : _CKAudioComposition
 {
 }

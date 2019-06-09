@@ -12,6 +12,7 @@
 @class NSLayoutConstraint, NSString;
 @protocol AVInfoPanelNavigationDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelNavigationCollectionViewController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     NSLayoutConstraint *_widthConstraint;
@@ -35,7 +36,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (void)viewDidLayoutSubviews;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)viewDidLoad;
 @property(readonly, nonatomic) _Bool hasContent;
 

@@ -8,19 +8,29 @@
 
 #import <Photos/PHFacePropertySet-Protocol.h>
 
-@class PHFace;
+@class NSString, PHFace;
 
 @interface PHFacePropertySet : NSObject <PHFacePropertySet>
 {
     PHFace *_face;
 }
 
-+ (void)fetchPropertiesForObjects:(id)arg1 photoLibrary:(id)arg2;
-+ (id)propertiesToLoadFromPhotoLibrary:(id)arg1;
-+ (id)propertySetWithObject:(id)arg1;
++ (id)propertiesToPrefetch;
++ (BOOL)isToMany;
++ (id)keyPathToPrimaryObject;
++ (id)keyPathFromPrimaryObject;
++ (id)entityName;
++ (id)propertiesToFetch;
++ (id)propertySetName;
 @property(readonly, nonatomic) __weak PHFace *face; // @synthesize face=_face;
 - (void).cxx_destruct;
-- (id)initWithFace:(id)arg1;
+- (id)initWithFetchDictionary:(id)arg1 face:(id)arg2 prefetched:(BOOL)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

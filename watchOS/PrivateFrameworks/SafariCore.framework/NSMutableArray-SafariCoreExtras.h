@@ -7,6 +7,8 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (SafariCoreExtras)
+- (void)safari_removeObjectsAtIndexes:(id)arg1 withOffset:(int)arg2 startingAtIndex:(unsigned int)arg3;
+- (void)safari_removeObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (void)safari_setObject:(id)arg1 atIndex:(unsigned int)arg2 withPaddingObject:(id)arg3;
 - (void)safari_addObjectUnlessNil:(id)arg1;
 @end

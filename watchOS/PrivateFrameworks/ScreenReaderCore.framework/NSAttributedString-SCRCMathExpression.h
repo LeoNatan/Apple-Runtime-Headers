@@ -24,5 +24,6 @@
 - (id)scrcStringByAppendingAttributedString:(id)arg1;
 - (struct _NSRange)_scrcRangeOfFormatSpecifierWithIndex:(unsigned int)arg1;
 - (struct _NSRange)_scrcRangeOfVanillaFormatSpecifier;
+- (id)scrcSplitBasedOnAttribute:(id)arg1 limit:(int)arg2;
 @end
 

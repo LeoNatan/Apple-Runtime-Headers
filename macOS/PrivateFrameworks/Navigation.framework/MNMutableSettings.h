@@ -14,12 +14,13 @@
 
 + (id)settingsWithSettings:(id)arg1;
 @property(nonatomic) BOOL shouldUseGuidanceEventManager; // @dynamic shouldUseGuidanceEventManager;
+@property(nonatomic) double simulationGPSError; // @dynamic simulationGPSError;
+@property(nonatomic) double simulationSpeed; // @dynamic simulationSpeed;
+@property(nonatomic) BOOL shouldRecordTrace; // @dynamic shouldRecordTrace;
 @property(nonatomic) BOOL isTracePlaybackCameraTestMode; // @dynamic isTracePlaybackCameraTestMode;
 @property(nonatomic) BOOL shouldLoadETAUpdatesFromTrace; // @dynamic shouldLoadETAUpdatesFromTrace;
 @property(nonatomic) BOOL shouldLoadReroutesFromTrace; // @dynamic shouldLoadReroutesFromTrace;
-@property(nonatomic) BOOL shouldLoadInitialRouteFromTrace; // @dynamic shouldLoadInitialRouteFromTrace;
 @property(nonatomic) double initialTraceSpeedMultiplier; // @dynamic initialTraceSpeedMultiplier;
-@property(nonatomic) double alightSignalTimeBuffer; // @dynamic alightSignalTimeBuffer;
 @property(nonatomic) long long fakeTrafficIncidentAlert; // @dynamic fakeTrafficIncidentAlert;
 @property(nonatomic) double backgroundTimeWindow; // @dynamic backgroundTimeWindow;
 @property(nonatomic) double initialRequestDelay; // @dynamic initialRequestDelay;
@@ -28,7 +29,6 @@
 @property(nonatomic) BOOL beepBeforeInstruction; // @dynamic beepBeforeInstruction;
 @property(nonatomic) BOOL walkingVoiceGuidance; // @dynamic walkingVoiceGuidance;
 @property(nonatomic) BOOL drivingVoiceGuidance; // @dynamic drivingVoiceGuidance;
-@property(nonatomic) BOOL isConnectedToCarplay; // @dynamic isConnectedToCarplay;
 @property(nonatomic) unsigned long long maxAlternateRoutesCount; // @dynamic maxAlternateRoutesCount;
 @property(nonatomic) BOOL speechEnabled; // @dynamic speechEnabled;
 @property(nonatomic) BOOL muteSpeechOverride; // @dynamic muteSpeechOverride;

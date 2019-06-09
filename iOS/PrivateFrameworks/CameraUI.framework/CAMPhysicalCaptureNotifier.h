@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+@class UIView;
 @protocol CAMPhysicalCaptureNotifierDelegate;
 
 @interface CAMPhysicalCaptureNotifier : NSObject
@@ -15,8 +16,10 @@
     long long _state;
     long long __volumeUpButtonState;
     long long __volumeDownButtonState;
+    UIView *__view;
 }
 
+@property(readonly, nonatomic) UIView *_view; // @synthesize _view=__view;
 @property(nonatomic, setter=_setVolumeDownButtonState:) long long _volumeDownButtonState; // @synthesize _volumeDownButtonState=__volumeDownButtonState;
 @property(nonatomic, setter=_setVolumeUpButtonState:) long long _volumeUpButtonState; // @synthesize _volumeUpButtonState=__volumeUpButtonState;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
@@ -30,7 +33,7 @@
 - (void)_handleVolumeUpButtonUpNotification:(id)arg1;
 - (void)_updateCaptureButtonNotifications;
 - (void)dealloc;
-- (id)init;
+- (id)initWithView:(id)arg1;
 
 @end
 

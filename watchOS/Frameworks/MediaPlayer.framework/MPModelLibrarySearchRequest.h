@@ -4,21 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MediaPlayer/MPModelRequest.h>
+#import <MediaPlayer/MPModelLibraryRequest.h>
 
-@class MPMediaLibrary, NSArray, NSString;
+@class NSArray, NSString;
 
-@interface MPModelLibrarySearchRequest : MPModelRequest
+@interface MPModelLibrarySearchRequest : MPModelLibraryRequest
 {
     NSArray *_scopes;
     int _maximumResultsPerScope;
-    MPMediaLibrary *_mediaLibrary;
     NSString *_searchString;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
-@property(retain, nonatomic) MPMediaLibrary *mediaLibrary; // @synthesize mediaLibrary=_mediaLibrary;
 @property(nonatomic) int maximumResultsPerScope; // @synthesize maximumResultsPerScope=_maximumResultsPerScope;
 @property(copy, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
 - (void).cxx_destruct;

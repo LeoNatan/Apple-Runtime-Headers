@@ -6,13 +6,13 @@
 
 #import <FMFUI/NSObject-Protocol.h>
 
-@class AAUIAccountManager, NSArray, NSDictionary;
+@class AIDAAccountManager, NSArray, NSDictionary;
 @protocol AAUISpecifierProviderDelegate;
 
 @protocol AAUISpecifierProvider <NSObject>
 @property(copy, nonatomic) NSArray *specifiers;
 @property(nonatomic) __weak id <AAUISpecifierProviderDelegate> delegate;
-- (id)initWithAccountManager:(AAUIAccountManager *)arg1;
+- (id)initWithAccountManager:(AIDAAccountManager *)arg1;
 
 @optional
 - (_Bool)handleURL:(NSDictionary *)arg1;

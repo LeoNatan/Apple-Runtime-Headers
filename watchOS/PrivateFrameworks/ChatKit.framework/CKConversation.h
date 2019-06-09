@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <ChatKit/NCABPersonListViewDelegate-Protocol.h>
 #import <ChatKit/_MKNanoPlaceCardViewControllerDelegate-Protocol.h>
 
-@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSNumber, NSSet, NSString;
+@class CKComposition, CKEntity, IMChat, IMService, NSArray, NSAttributedString, NSDate, NSNumber, NSSet, NSString;
 
-@interface CKConversation : NSObject <_MKNanoPlaceCardViewControllerDelegate>
+@interface CKConversation : NSObject <_MKNanoPlaceCardViewControllerDelegate, NCABPersonListViewDelegate>
 {
     NSArray *_recipients;
     NSString *_name;
@@ -24,6 +25,7 @@
     _Bool _isReportedAsSpam;
     NSArray *_pendingHandles;
     int _wasDetectedAsSMSSpam;
+    int _wasDetectedAsiMessageSpam;
     NSString *_selectedLastAddressedHandle;
     NSString *_selectedLastAddressedSIMID;
     NSSet *_pendingRecipients;
@@ -31,6 +33,7 @@
     NSArray *_suggestedReplies;
     NSString *_previewText;
     NSNumber *_businessConversation;
+    NSDate *_dateLastViewed;
 }
 
 + (_Bool)isSMSSpamFilteringEnabled;
@@ -54,6 +57,7 @@
 + (_Bool)_sms_canSendMessageWithMediaObjectTypes:(int *)arg1 phoneNumber:(id)arg2 simID:(id)arg3 errorCode:(int *)arg4;
 + (int)_sms_maxAttachmentCountForPhoneNumber:(id)arg1 simID:(id)arg2;
 + (_Bool)_sms_mediaObjectPassesRestriction:(id)arg1;
+@property(retain, nonatomic) NSDate *dateLastViewed; // @synthesize dateLastViewed=_dateLastViewed;
 @property(retain, nonatomic) NSNumber *businessConversation; // @synthesize businessConversation=_businessConversation;
 @property(nonatomic) _Bool isReportedAsSpam; // @synthesize isReportedAsSpam=_isReportedAsSpam;
 @property(nonatomic) _Bool hasLoadedAllMessages; // @synthesize hasLoadedAllMessages=_hasLoadedAllMessages;
@@ -97,6 +101,7 @@
 - (void)sendMessage:(id)arg1 onService:(id)arg2 newComposition:(_Bool)arg3;
 - (id)messagesFromComposition:(id)arg1;
 - (id)messageWithComposition:(id)arg1;
+- (void)resortMessagesIfNecessary;
 - (double)maxTrimDurationForMediaType:(int)arg1;
 - (_Bool)canSendToRecipients:(id)arg1 alertIfUnable:(_Bool)arg2;
 - (_Bool)canSendComposition:(id)arg1 error:(id *)arg2;
@@ -109,6 +114,7 @@
 - (id)shortDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)isPlaceholder;
+- (void)updateLastViewedDate;
 - (void)markAllMessagesAsRead;
 - (void)enumerateMessagesWithOptions:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)hasLoadedFromSpotlight;
@@ -132,6 +138,8 @@
 @property(readonly, nonatomic) unsigned int recipientCount;
 - (id)uniqueIdentifier;
 @property(readonly, nonatomic) int wasDetectedAsSMSSpam; // @synthesize wasDetectedAsSMSSpam=_wasDetectedAsSMSSpam;
+@property(readonly, nonatomic) int wasDetectedAsiMessageSpam; // @synthesize wasDetectedAsiMessageSpam=_wasDetectedAsiMessageSpam;
+@property(readonly, nonatomic) int wasDetectedAsSpam;
 @property(readonly, nonatomic) NSString *deviceIndependentID;
 @property(readonly, nonatomic) NSString *groupID; // @dynamic groupID;
 - (_Bool)noAvailableServices;
@@ -142,6 +150,8 @@
 - (_Bool)_handleIsForThisConversation:(id)arg1;
 @property(readonly, nonatomic) IMService *sendingService;
 - (void)refreshServiceForSending;
+- (id)orderedContactsWithMaxCount:(unsigned int)arg1 keysToFetch:(id)arg2;
+- (id)orderedContactsForAvatar3DTouchUIWithKeysToFetch:(id)arg1;
 - (id)orderedContactsForAvatarView;
 - (void)updateDisplayNameIfSMSSpam;
 - (void)removeRecipientHandles:(id)arg1;
@@ -187,10 +197,14 @@
 - (id)initWithChat:(id)arg1;
 - (id)init;
 - (void)dealloc;
+- (id)summaryTextForBlockedConversation;
+- (_Bool)shouldBeBlockedDueToDowntime;
 - (_Bool)supportsSurf;
 - (void)nanoPlaceCardViewControllerDidTapAttribution:(id)arg1;
 - (void)nanoPlaceCardViewController:(id)arg1 didSelectPhoneNumber:(id)arg2;
 - (void)nanoPlaceCardViewControllerDidTapMap:(id)arg1;
+- (_Bool)showLeaveConversation;
+- (void)leaveConversation;
 - (_Bool)_iMessage_canSendToRecipients:(id)arg1 alertIfUnable:(_Bool)arg2;
 - (_Bool)_iMessage_supportsCharacterCountForAddresses:(id)arg1;
 - (_Bool)_sms_canSendToRecipients:(id)arg1 alertIfUnable:(_Bool)arg2;

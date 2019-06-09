@@ -10,6 +10,7 @@
 
 @class ECMappingContext, EDWorkbook, EDWorksheet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDFormulaHelper : NSObject <EFHelper>
 {
     EDWorkbook *mWorkbook;

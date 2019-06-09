@@ -10,6 +10,7 @@
 
 @class OADColor;
 
+__attribute__((visibility("hidden")))
 @interface OADGradientFillStop : NSObject <NSCopying>
 {
     OADColor *mColor;

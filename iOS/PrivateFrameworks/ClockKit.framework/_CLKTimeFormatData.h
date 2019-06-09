@@ -15,6 +15,7 @@
     NSString *_formatHourMin;
     NSString *_formatMinSecSubsec;
     NSString *_formatMinSec;
+    NSString *_formatMin;
     NSNumberFormatter *_singleWidthNumberFormatter;
     NSNumberFormatter *_doubleWidthNumberFormatter;
 }
@@ -25,6 +26,7 @@
 + (void)resetTimeFormatData;
 @property(readonly, nonatomic) NSNumberFormatter *doubleWidthNumberFormatter; // @synthesize doubleWidthNumberFormatter=_doubleWidthNumberFormatter;
 @property(readonly, nonatomic) NSNumberFormatter *singleWidthNumberFormatter; // @synthesize singleWidthNumberFormatter=_singleWidthNumberFormatter;
+@property(readonly, nonatomic) NSString *formatMin; // @synthesize formatMin=_formatMin;
 @property(readonly, nonatomic) NSString *formatMinSec; // @synthesize formatMinSec=_formatMinSec;
 @property(readonly, nonatomic) NSString *formatMinSecSubsec; // @synthesize formatMinSecSubsec=_formatMinSecSubsec;
 @property(readonly, nonatomic) NSString *formatHourMin; // @synthesize formatHourMin=_formatHourMin;

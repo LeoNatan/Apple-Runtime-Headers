@@ -9,7 +9,7 @@
 #import <network/OS_nw_protocol_instance-Protocol.h>
 
 @class NSString, NWConcrete_nw_protocol_definition;
-@protocol OS_nw_array, OS_nw_endpoint, OS_nw_parameters;
+@protocol OS_nw_array, OS_nw_endpoint, OS_nw_parameters, OS_nw_path_flow_registration;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_protocol_instance : NSObject <OS_nw_protocol_instance>
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned long long reserve_header_size;
     unsigned long long reserve_footer_size;
     unsigned long long maximum_content_size;
+    unsigned int protocol_outbound_data_limit;
     void *handle;
     struct nw_frame_array_s inbound_frames;
     struct nw_frame_array_s outbound_frames;
@@ -35,19 +36,25 @@ __attribute__((visibility("hidden")))
     struct nw_hash_table *flows_table;
     struct nw_hash_table *custom_flow_mapping_table;
     unsigned long long last_accepted_flow;
+    CDUnknownBlockType wakeup;
+    NSObject<OS_nw_path_flow_registration> *flow_registration;
     unsigned int initialized:1;
     unsigned int started:1;
     unsigned int ready:1;
     unsigned int output_connected:1;
     unsigned int allow_buffering:1;
+    unsigned int limit_outbound_data:1;
     unsigned int datagram:1;
     unsigned int supports_external_data:1;
-    unsigned int flow_controlled:1;
-    unsigned int waiting_for_flow_control:1;
+    unsigned int link_flow_controlled:1;
+    unsigned int waiting_for_link_flow_control:1;
     unsigned int processing_input:1;
     unsigned int processing_output:1;
     unsigned int waiting_for_listener_accept:1;
-    unsigned int __pad_bits:4;
+    unsigned int new_flow_is_control:1;
+    unsigned int should_destroy:1;
+    unsigned int input_acknowledged:1;
+    unsigned int needs_output_available:1;
     char log_str[84];
 }
 

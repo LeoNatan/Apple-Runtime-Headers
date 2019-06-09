@@ -10,6 +10,7 @@
 
 @protocol TIUserDictionaryServing <NSObject>
 @property(readonly, copy, nonatomic) NSUUID *userDictionaryUUID;
+- (void)startServer;
 - (void)getPhraseShortcutPairs:(void (^)(NSArray *))arg1;
 - (void)removeObserver:(id)arg1;
 - (id)addObserver:(void (^)(NSArray *))arg1;

@@ -6,7 +6,6 @@
 
 #import <CFNetwork/ProxyAuthenticationURLDelegate.h>
 
-__attribute__((visibility("hidden")))
 @interface BadPasswordProxyAuthenticationURLDelegate : ProxyAuthenticationURLDelegate
 {
     long long _failureCount;

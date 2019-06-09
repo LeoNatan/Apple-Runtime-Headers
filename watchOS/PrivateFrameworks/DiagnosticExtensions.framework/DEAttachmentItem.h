@@ -24,7 +24,6 @@
 
 + (id)attachmentWithPathURL:(id)arg1;
 + (id)attachmentWithPath:(id)arg1;
-+ (id)newAttachmentWithPath:(id)arg1;
 + (id)attachmentWithPath:(id)arg1 withDisplayName:(id)arg2 modificationDate:(id)arg3 andFilesize:(id)arg4;
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSNumber *deleteOnAttach; // @synthesize deleteOnAttach=_deleteOnAttach;
@@ -39,7 +38,6 @@
 - (id)description;
 - (void)detach;
 - (id)attachToDestinationDir:(id)arg1;
-- (id)attachWithDestinationDir:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithPath:(id)arg1 withDisplayName:(id)arg2 modificationDate:(id)arg3 andFilesize:(id)arg4;

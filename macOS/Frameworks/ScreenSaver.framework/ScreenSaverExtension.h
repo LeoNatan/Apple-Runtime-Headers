@@ -14,7 +14,6 @@
 {
 }
 
-- (BOOL)needsAnimationTimer;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 
 // Remaining properties

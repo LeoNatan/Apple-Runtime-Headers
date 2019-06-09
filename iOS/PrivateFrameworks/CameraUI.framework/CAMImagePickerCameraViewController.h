@@ -74,6 +74,7 @@
 - (void)cameraViewController:(id)arg1 didCapturePhoto:(id)arg2 withProperties:(id)arg3 error:(id)arg4;
 - (void)handleReviewButtonReleased:(id)arg1;
 - (void)_createCropOverlayIfNecessary;
+- (id)_currentCancelButtonTitle;
 - (void)_updateFromEditabilityChange;
 - (void)_handleEditabilityChanged:(id)arg1;
 - (void)_stopVideoCapture;

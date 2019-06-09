@@ -8,6 +8,7 @@
 
 @class SKUIStarRatingControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewInAppRatingControlViewController : UIViewController
 {
     SKUIStarRatingControl *_ratingControl;

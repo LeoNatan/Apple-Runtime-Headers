@@ -9,6 +9,7 @@
 @class CKActionMenuGestureRecognizer, NSDate, UIButton;
 @protocol CKActionMenuGestureRecognizerButtonDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKActionMenuGestureRecognizerButton : NSObject
 {
     CKActionMenuGestureRecognizer *_gestureRecognizer;

@@ -6,7 +6,7 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSString, _INPBDataString, _INPBDateTime, _INPBSpatialEventTrigger, _INPBTemporalEventTrigger;
+@class NSString, _INPBContactEventTrigger, _INPBDataString, _INPBDateTime, _INPBSpatialEventTrigger, _INPBTemporalEventTrigger;
 
 @protocol _INPBTask <NSObject>
 @property(readonly, nonatomic) BOOL hasTitle;
@@ -15,19 +15,31 @@
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger;
 @property(nonatomic) BOOL hasTaskType;
 @property(nonatomic) int taskType;
+@property(nonatomic) BOOL hasTaskReference;
+@property(nonatomic) int taskReference;
 @property(nonatomic) BOOL hasStatus;
 @property(nonatomic) int status;
 @property(readonly, nonatomic) BOOL hasSpatialEventTrigger;
 @property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger;
+@property(nonatomic) BOOL hasPriority;
+@property(nonatomic) int priority;
+@property(readonly, nonatomic) BOOL hasParentIdentifier;
+@property(copy, nonatomic) NSString *parentIdentifier;
 @property(readonly, nonatomic) BOOL hasModifiedDateTime;
 @property(retain, nonatomic) _INPBDateTime *modifiedDateTime;
 @property(readonly, nonatomic) BOOL hasIdentifier;
 @property(copy, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) BOOL hasCreatedDateTime;
 @property(retain, nonatomic) _INPBDateTime *createdDateTime;
+@property(readonly, nonatomic) BOOL hasContactEventTrigger;
+@property(retain, nonatomic) _INPBContactEventTrigger *contactEventTrigger;
 - (int)StringAsTaskType:(NSString *)arg1;
 - (NSString *)taskTypeAsString:(int)arg1;
+- (int)StringAsTaskReference:(NSString *)arg1;
+- (NSString *)taskReferenceAsString:(int)arg1;
 - (int)StringAsStatus:(NSString *)arg1;
 - (NSString *)statusAsString:(int)arg1;
+- (int)StringAsPriority:(NSString *)arg1;
+- (NSString *)priorityAsString:(int)arg1;
 @end
 

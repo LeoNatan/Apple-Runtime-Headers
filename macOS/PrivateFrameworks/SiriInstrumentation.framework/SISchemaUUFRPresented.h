@@ -6,36 +6,35 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaUUFRPresented-Protocol.h>
 
-@class NSString, SISchemaViewContainer;
+@class NSData, NSString, SISchemaViewContainer;
 
-@interface SISchemaUUFRPresented : PBCodable <NSCopying>
+@interface SISchemaUUFRPresented : PBCodable <SISchemaUUFRPresented, NSSecureCoding>
 {
     int _errorCode;
-    NSString *_errorDomain;
     SISchemaViewContainer *_viewContainer;
-    struct {
-        unsigned int errorCode:1;
-    } _has;
+    NSString *_errorDomain;
 }
 
 @property(nonatomic) int errorCode; // @synthesize errorCode=_errorCode;
-@property(retain, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
+@property(copy, nonatomic) NSString *errorDomain; // @synthesize errorDomain=_errorDomain;
 @property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) BOOL hasErrorCode;
-@property(readonly, nonatomic) BOOL hasErrorDomain;
-@property(readonly, nonatomic) BOOL hasViewContainer;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

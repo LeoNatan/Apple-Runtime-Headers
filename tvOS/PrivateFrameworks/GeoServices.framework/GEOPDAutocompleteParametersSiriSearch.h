@@ -8,30 +8,41 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDViewportInfo, NSString, PBUnknownFields;
+@class GEOPDViewportInfo, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParametersSiriSearch : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    int _maxResults;
     NSString *_prefix;
     NSString *_query;
     GEOPDViewportInfo *_viewportInfo;
+    int _maxResults;
     _Bool _completed;
     _Bool _highlightDiff;
     struct {
-        unsigned int maxResults:1;
-        unsigned int completed:1;
-        unsigned int highlightDiff:1;
-    } _has;
+        unsigned int has_maxResults:1;
+        unsigned int has_completed:1;
+        unsigned int has_highlightDiff:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_prefix:1;
+        unsigned int read_query:1;
+        unsigned int read_viewportInfo:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_prefix:1;
+        unsigned int wrote_query:1;
+        unsigned int wrote_viewportInfo:1;
+        unsigned int wrote_maxResults:1;
+        unsigned int wrote_completed:1;
+        unsigned int wrote_highlightDiff:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool completed; // @synthesize completed=_completed;
-@property(retain, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo; // @synthesize viewportInfo=_viewportInfo;
-@property(retain, nonatomic) NSString *query; // @synthesize query=_query;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,16 +51,24 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasCompleted;
+@property(nonatomic) _Bool completed;
+@property(retain, nonatomic) NSString *prefix;
 @property(readonly, nonatomic) _Bool hasPrefix;
+- (void)_readPrefix;
 @property(nonatomic) _Bool hasHighlightDiff;
-@property(nonatomic) _Bool highlightDiff; // @synthesize highlightDiff=_highlightDiff;
+@property(nonatomic) _Bool highlightDiff;
 @property(nonatomic) _Bool hasMaxResults;
-@property(nonatomic) int maxResults; // @synthesize maxResults=_maxResults;
+@property(nonatomic) int maxResults;
+@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo;
 @property(readonly, nonatomic) _Bool hasViewportInfo;
+- (void)_readViewportInfo;
+@property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) _Bool hasQuery;
+- (void)_readQuery;
 
 @end
 

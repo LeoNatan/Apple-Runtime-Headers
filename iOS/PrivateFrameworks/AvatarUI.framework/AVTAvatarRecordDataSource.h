@@ -44,6 +44,7 @@
 - (void)store:(id)arg1 didCreateDuplicateAvatar:(id)arg2 forOriginal:(id)arg3 postCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)store:(id)arg1 didDeleteAvatarWithIdentifier:(id)arg2 postCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)store:(id)arg1 didSaveAvatar:(id)arg2 postCompletionHandler:(CDUnknownBlockType)arg3;
+- (id)indexSetForEditableRecords;
 - (unsigned long long)indexOfRecordPassingTest:(CDUnknownBlockType)arg1;
 - (id)indexesOfRecordsPassingTest:(CDUnknownBlockType)arg1;
 - (id)internalRecordStore;
@@ -61,6 +62,7 @@
 - (void)dealloc;
 - (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2 callbackQueue:(id)arg3 logger:(id)arg4 notificationCenter:(id)arg5;
 - (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2 callbackQueue:(id)arg3 environment:(id)arg4;
+- (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2 environment:(id)arg3;
 - (id)initWithRecordStore:(id)arg1 fetchRequest:(id)arg2;
 
 // Remaining properties

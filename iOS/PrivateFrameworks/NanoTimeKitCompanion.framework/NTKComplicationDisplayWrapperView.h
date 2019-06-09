@@ -8,12 +8,13 @@
 
 #import <NanoTimeKitCompanion/NTKComplicationDisplayObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKControl-Protocol.h>
+#import <NanoTimeKitCompanion/NTKSensitiveUIStateObserver-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTimeTravel-Protocol.h>
 
 @class CLKComplicationTemplate, NSDate, NSString, UIView;
-@protocol NTKComplicationDisplay, NTKComplicationDisplayWrapperViewAnimationDelegate;
+@protocol CLKMonochromeFilterProvider, NTKComplicationDisplay, NTKComplicationDisplayWrapperViewAnimationDelegate;
 
-@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKControl, NTKTimeTravel>
+@interface NTKComplicationDisplayWrapperView : UIControl <NTKComplicationDisplayObserver, NTKSensitiveUIStateObserver, NTKControl, NTKTimeTravel>
 {
     UIView<NTKComplicationDisplay> *_currentComplicationView;
     UIView<NTKComplicationDisplay> *_nextComplicationView;
@@ -43,9 +44,11 @@
     CLKComplicationTemplate *_complicationTemplate;
     double _alphaForDimmedState;
     long long _layoutOverride;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     struct CGSize _maxSize;
 }
 
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(readonly, nonatomic) long long layoutOverride; // @synthesize layoutOverride=_layoutOverride;
 @property(readonly, nonatomic) _Bool hasLegacyDisplay; // @synthesize hasLegacyDisplay=_hasLegacyDisplay;
 @property(nonatomic) double alphaForDimmedState; // @synthesize alphaForDimmedState=_alphaForDimmedState;
@@ -67,22 +70,24 @@
 - (void).cxx_destruct;
 - (_Bool)shouldCancelTouchesInScrollview;
 - (void)setHighlighted:(_Bool)arg1;
-- (void)_startDefaultNewDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 forward:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_resetComplicationViews;
-- (void)setComplicationView:(id)arg1 withComplicationAnimation:(unsigned long long)arg2;
+- (void)_timelineAnimationDidFinish;
+- (void)setComplicationView:(id)arg1 withComplicationAnimation:(unsigned long long)arg2 animationType:(unsigned long long)arg3 animationFraction:(float)arg4;
 - (void)_removeDisplay:(id)arg1;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)complicationDisplayNeedsResize:(id)arg1;
+- (void)_updateVisibilityForSensitivity:(long long)arg1;
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) struct CGSize preferredSize;
-- (void)_setDisplay:(id)arg1 withComplicationAnimation:(unsigned long long)arg2;
+- (void)_setDisplay:(id)arg1 withComplicationAnimation:(unsigned long long)arg2 animationType:(unsigned long long)arg3 animationFraction:(float)arg4;
 - (void)_setDisplayEditing:(_Bool)arg1;
 - (void)_setDisplayMaxSize:(struct CGSize)arg1;
 - (void)_tryToSetDisplayHighlighted:(_Bool)arg1;
 - (void)_invokeNeedsResizeHandler;
 - (void)needsResize;
+- (void)sensitiveUIStateChanged;
 - (void)_invokeTouchDownHandler;
 - (void)_invokeTouchUpInsideHandler;
 - (_Bool)_displayIsTappable;
@@ -90,7 +95,8 @@
 - (void)setDimmed:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_didSetDisplayFromDisplay:(id)arg1 withComplicationAnimation:(unsigned long long)arg2;
 - (void)_prepareToSetDisplay:(id)arg1 withComplicationAnimation:(inout unsigned long long *)arg2;
-- (void)_replaceDisplayWithDisplayClass:(Class)arg1 template:(id)arg2 reason:(long long)arg3 animation:(unsigned long long)arg4;
+- (void)_replaceDisplayWithDisplayClass:(Class)arg1 template:(id)arg2 reason:(long long)arg3 animation:(unsigned long long)arg4 animationType:(unsigned long long)arg5 animationFraction:(float)arg6;
+- (void)_setComplicationTemplate:(id)arg1 reason:(long long)arg2 animation:(unsigned long long)arg3 animationType:(unsigned long long)arg4 animationFraction:(float)arg5;
 - (void)setComplicationTemplate:(id)arg1 reason:(long long)arg2 animation:(unsigned long long)arg3;
 - (void)dealloc;
 - (id)initWithCustomTemplateDisplay:(id)arg1 isDetachedDisplay:(_Bool)arg2 family:(long long)arg3;

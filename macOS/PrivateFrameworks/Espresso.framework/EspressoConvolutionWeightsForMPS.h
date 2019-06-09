@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)label;
 - (BOOL)ready;
 - (float *)lookupTableForUInt8Kernel;

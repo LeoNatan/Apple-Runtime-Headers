@@ -11,6 +11,7 @@
 
 @class NSArray, NSString, SKUIClientContext, SKUIColorScheme, UIButton, UILabel, UIPopoverController, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPadCustomerReviewsHeaderView : UIControl <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate>
 {
     UIButton *_appSupportButton;

@@ -7,7 +7,8 @@
 #import <VoiceShortcutClient/VCVoiceShortcut.h>
 
 @interface VCVoiceShortcut (DictionaryRepresentation)
-- (id)dictionaryRepresentation;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithRecord:(id)arg1;
+- (id)searchableItemRepresentation;
 @end
 

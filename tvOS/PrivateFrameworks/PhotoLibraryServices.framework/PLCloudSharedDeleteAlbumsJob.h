@@ -15,12 +15,12 @@
 
 + (void)deleteLocalAlbumsForMSASAlbumGUIDs:(id)arg1;
 @property(retain, nonatomic) NSArray *albumCloudGUIDsToDelete; // @synthesize albumCloudGUIDsToDelete=_albumCloudGUIDsToDelete;
+- (void).cxx_destruct;
 - (void)runDaemonSide;
 - (void)run;
 - (long long)daemonOperation;
-- (void)dealloc;
 - (id)description;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
 
 @end

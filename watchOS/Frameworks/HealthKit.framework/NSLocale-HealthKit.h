@@ -10,6 +10,7 @@
 + (_Bool)hk_isUSLocale;
 + (id)hk_testableAutoupdatingCurrentLocale;
 + (void)hk_setTestLocale:(id)arg1;
+- (_Bool)hk_isEquivalent:(id)arg1;
 @property(readonly, nonatomic) _Bool hk_isUSLocale;
 @end
 

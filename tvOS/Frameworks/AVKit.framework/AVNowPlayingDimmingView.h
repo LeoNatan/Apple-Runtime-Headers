@@ -8,6 +8,7 @@
 
 @class AVGradientView;
 
+__attribute__((visibility("hidden")))
 @interface AVNowPlayingDimmingView : UIView
 {
     _Bool _dimsEntireBounds;

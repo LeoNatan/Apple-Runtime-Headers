@@ -15,8 +15,8 @@
     unsigned int _position;
 }
 
-@property(readonly) unsigned int position; // @synthesize position=_position;
-@property Class classOfNextMessage; // @synthesize classOfNextMessage=_classOfNextMessage;
+@property(readonly, nonatomic) unsigned int position; // @synthesize position=_position;
+@property(nonatomic) Class classOfNextMessage; // @synthesize classOfNextMessage=_classOfNextMessage;
 - (id)nextMessage;
 - (void)dealloc;
 - (id)initWithStream:(id)arg1;

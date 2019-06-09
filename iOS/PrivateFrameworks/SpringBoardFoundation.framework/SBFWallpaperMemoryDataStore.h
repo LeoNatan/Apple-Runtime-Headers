@@ -16,12 +16,14 @@
     NSMutableDictionary *_images;
     NSMutableDictionary *_originalImages;
     NSMutableDictionary *_thumbnails;
+    NSMutableDictionary *_hashes;
     NSMutableDictionary *_proceduralInfo;
     NSMutableDictionary *_videoURLs;
     NSMutableDictionary *_originalVideoURLs;
     NSMutableDictionary *_wallpaperOptions;
     NSMutableDictionary *_colors;
     NSMutableDictionary *_colorNames;
+    NSMutableDictionary *_gradients;
 }
 
 - (void).cxx_destruct;
@@ -30,14 +32,17 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (void)removeWallpaperGradientForVariants:(long long)arg1;
+- (_Bool)setWallpaperGradient:(id)arg1 forVariants:(long long)arg2;
+- (id)wallpaperGradientForVariant:(long long)arg1;
 - (void)removeWallpaperColorForVariants:(long long)arg1;
 - (_Bool)setWallpaperColorName:(id)arg1 forVariants:(long long)arg2;
 - (_Bool)setWallpaperColor:(id)arg1 forVariants:(long long)arg2;
 - (id)wallpaperColorNameForVariant:(long long)arg1;
 - (id)wallpaperColorForVariant:(long long)arg1;
 - (void)removeWallpaperOptionsForVariants:(long long)arg1;
-- (_Bool)setWallpaperOptions:(id)arg1 forVariants:(long long)arg2;
-- (id)wallpaperOptionsForVariant:(long long)arg1;
+- (_Bool)setWallpaperOptions:(id)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;
+- (id)wallpaperOptionsForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (void)removeProceduralWallpaperForVariants:(long long)arg1;
 - (_Bool)setProceduralWallpaperInfo:(id)arg1 forVariants:(long long)arg2;
 - (id)proceduralWallpaperInfoForVariant:(long long)arg1;
@@ -47,15 +52,18 @@
 - (id)verifiedOriginalVideoURLForVariant:(long long)arg1;
 - (id)verifiedVideoURLForVariant:(long long)arg1;
 - (id)unverifiedVideoURLForVariant:(long long)arg1;
+- (void)removeWallpaperImageHashDataForVariants:(long long)arg1;
+- (id)wallpaperImageHashDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (_Bool)setWallpaperImageHashData:(id)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;
 - (void)removeWallpaperImageDataTypes:(unsigned long long)arg1 forVariants:(long long)arg2;
 - (void)moveWallpaperImageDataTypes:(unsigned long long)arg1 fromVariant:(long long)arg2 toVariant:(long long)arg3;
-- (_Bool)setWallpaperThumbnailData:(id)arg1 forVariant:(long long)arg2;
-- (_Bool)setWallpaperOriginalImage:(id)arg1 forVariant:(long long)arg2;
-- (_Bool)setWallpaperImage:(id)arg1 forVariant:(long long)arg2;
-- (id)wallpaperOriginalImageForVariant:(long long)arg1;
-- (id)wallpaperThumbnailDataForVariant:(long long)arg1;
-- (_Bool)hasWallpaperImageForVariant:(long long)arg1;
-- (id)wallpaperImageForVariant:(long long)arg1;
+- (_Bool)setWallpaperThumbnailData:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setWallpaperOriginalImage:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setWallpaperImage:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (id)wallpaperOriginalImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperThumbnailDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (_Bool)hasWallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 @property(readonly, nonatomic) unsigned long long numberOfStoredImages;
 - (id)init;
 

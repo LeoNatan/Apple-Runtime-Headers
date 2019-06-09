@@ -17,6 +17,11 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)setDocument:(id)arg1;
+- (struct __CFDictionary *)createDictionaryRef;
+- (void)addNeedsAppearanceToDictionaryRef:(struct __CFDictionary *)arg1;
+- (id)fieldNamed:(id)arg1;
+- (void)_commonResetForm:(id)arg1 inclusive:(_Bool)arg2;
 - (id)description;
 - (void)resetFormExcludingFields:(id)arg1;
 - (void)resetFormForFields:(id)arg1;
@@ -32,11 +37,6 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDocument:(id)arg1;
 - (id)init;
-- (void)setDocument:(id)arg1;
-- (struct __CFDictionary *)createDictionaryRef;
-- (void)addNeedsAppearanceToDictionaryRef:(struct __CFDictionary *)arg1;
-- (id)fieldNamed:(id)arg1;
-- (void)commonResetForm:(id)arg1 inclusive:(_Bool)arg2;
 
 @end
 

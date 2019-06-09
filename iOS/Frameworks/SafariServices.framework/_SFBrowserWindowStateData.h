@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, NSUUID;
 
 @interface _SFBrowserWindowStateData : NSObject
 {
@@ -19,8 +19,10 @@
     long long _activeDocumentIndex;
     long long _activePrivateDocumentIndex;
     long long _legacyPlistFileVersion;
+    NSString *_sceneID;
 }
 
+@property(retain, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 @property(nonatomic) _Bool needsQuickUpdate; // @synthesize needsQuickUpdate=_needsQuickUpdate;
 @property(nonatomic) long long legacyPlistFileVersion; // @synthesize legacyPlistFileVersion=_legacyPlistFileVersion;
 @property(nonatomic) _Bool isTabStateSuccessfullyLoaded; // @synthesize isTabStateSuccessfullyLoaded=_isTabStateSuccessfullyLoaded;
@@ -33,6 +35,10 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isInDatabase;
 - (id)dictionaryPresentation;
+@property(retain, nonatomic) NSUUID *UUID;
+- (_Bool)isEqual:(id)arg1;
+- (id)debugDescription;
+- (id)initWithUUIDString:(id)arg1 sceneID:(id)arg2;
 - (id)initWithSQLiteRow:(id)arg1;
 - (id)initWithDictionaryPresentation:(id)arg1;
 

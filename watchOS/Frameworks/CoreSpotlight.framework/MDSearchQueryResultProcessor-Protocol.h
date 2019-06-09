@@ -4,11 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSData, NSError, NSString;
+@class NSData, NSError, NSString;
 
 @protocol MDSearchQueryResultProcessor
 - (void)didFinishWithError:(NSError *)arg1;
 - (void)didReturnResults:(int)arg1 resultsData:(NSData *)arg2 oidData:(NSData *)arg3 protectionClass:(NSString *)arg4 completionHandler:(void (^)(void))arg5;
-- (void)didResolveFriendlyAttributeNames:(NSArray *)arg1;
 @end
 

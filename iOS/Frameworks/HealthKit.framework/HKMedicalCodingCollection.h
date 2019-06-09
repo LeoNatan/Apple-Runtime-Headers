@@ -17,6 +17,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)collectionWithCoding:(id)arg1;
 + (id)collectionWithCodings:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *codings; // @synthesize codings=_codings;
 - (void).cxx_destruct;
@@ -25,6 +26,7 @@
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)description;
 - (id)initWithCodings:(id)arg1;
 - (id)init;
 

@@ -6,10 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, VSSpeechRequest;
+@class NSString, SAUIAudioData, VSSpeechRequest;
 @protocol AFUISpeechSynthesisElementDelegate;
 
-__attribute__((visibility("hidden")))
 @interface AFUISpeechSynthesisElement : NSObject
 {
     NSString *_text;
@@ -20,6 +19,8 @@ __attribute__((visibility("hidden")))
     BOOL _provisional;
     BOOL _preprationBlockCompleted;
     BOOL _durationHasElapsed;
+    SAUIAudioData *_audioData;
+    NSString *_identifier;
     VSSpeechRequest *_speechRequest;
     long long _synthesisResult;
     id <AFUISpeechSynthesisElementDelegate> _delegate;
@@ -39,13 +40,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL synthesizesWhileRecording; // @synthesize synthesizesWhileRecording=_synthesizesWhileRecording;
 @property(nonatomic) BOOL isSilent; // @synthesize isSilent=_isSilent;
 @property(nonatomic) BOOL isPhonetic; // @synthesize isPhonetic=_isPhonetic;
+@property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) SAUIAudioData *audioData; // @synthesize audioData=_audioData;
 @property(copy, nonatomic, setter=_setText:) NSString *text; // @synthesize text=_text;
 - (void).cxx_destruct;
 - (void)_updateSynthesisEligibility;
 - (void)executeCompletion;
 - (id)description;
 - (id)init;
-- (id)initWithText:(id)arg1 provisional:(BOOL)arg2 eligibleAfterDuration:(double)arg3 preparation:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5 animationIdentifier:(id)arg6;
+- (id)initWithText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 isPhonetic:(BOOL)arg4 isSilent:(BOOL)arg5 synthesizesWhileRecording:(BOOL)arg6 provisional:(BOOL)arg7 eligibleAfterDuration:(double)arg8 preparation:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10 animationIdentifier:(id)arg11;
 
 @end
 

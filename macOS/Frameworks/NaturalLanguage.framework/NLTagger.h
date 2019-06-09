@@ -17,10 +17,17 @@
     NSMutableDictionary *_customModelDictionaries;
     NSMutableDictionary *_classifierCaches;
     NSMutableDictionary *_sequenceCaches;
+    NSMutableDictionary *_customGazetteers;
+    NSMutableDictionary *_customGazetteerDictionaries;
 }
 
++ (void)requestAssetsForLanguage:(id)arg1 tagScheme:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
++ (void)registerForAssetNotifications;
++ (id)availableTagSchemesForLanguage:(id)arg1;
 + (id)availableTagSchemesForUnit:(long long)arg1 language:(id)arg2;
 - (void).cxx_destruct;
+- (id)gazetteersForTagScheme:(id)arg1;
+- (void)setGazetteers:(id)arg1 forTagScheme:(id)arg2;
 - (id)modelsForTagScheme:(id)arg1;
 - (void)setModels:(id)arg1 forTagScheme:(id)arg2;
 - (void)stringEditedInRange:(struct _NSRange)arg1 changeInLength:(long long)arg2;
@@ -31,9 +38,10 @@
 - (id)tagsInRange:(struct _NSRange)arg1 unit:(long long)arg2 scheme:(id)arg3 options:(unsigned long long)arg4 tokenRanges:(id *)arg5;
 - (id)tagAtIndex:(unsigned long long)arg1 unit:(long long)arg2 scheme:(id)arg3 tokenRange:(struct _NSRange *)arg4;
 - (void)enumerateTagsInRange:(struct _NSRange)arg1 unit:(long long)arg2 scheme:(id)arg3 options:(unsigned long long)arg4 usingBlock:(CDUnknownBlockType)arg5;
-- (id)_customTagAtIndex:(unsigned long long)arg1 unit:(long long)arg2 scheme:(id)arg3 modelDictionary:(id)arg4;
+- (id)_customTagAtIndex:(unsigned long long)arg1 unit:(long long)arg2 scheme:(id)arg3 options:(unsigned long long)arg4 modelDictionary:(id)arg5 gazetteerDictionary:(id)arg6;
 - (id)_customTagAtIndex:(unsigned long long)arg1 fromTagDictionary:(id)arg2;
-- (id)_customTagDictionaryForSentence:(id)arg1 model:(id)arg2;
+- (id)_customTagDictionaryForSentence:(id)arg1 options:(unsigned long long)arg2 model:(id)arg3 gazetteer:(id)arg4;
+- (id)_customGazetteerAtIndex:(unsigned long long)arg1 unit:(long long)arg2 gazetteerDictionary:(id)arg3;
 - (id)_customModelAtIndex:(unsigned long long)arg1 unit:(long long)arg2 modelDictionary:(id)arg3;
 - (struct _NSRange)sentenceRangeForRange:(struct _NSRange)arg1;
 @property(retain, nonatomic) NSString *string;

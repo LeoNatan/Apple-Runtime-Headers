@@ -21,6 +21,7 @@
 - (id)descriptionWithToken:(id)arg1;
 - (id)parseByReplacingTokensInRange:(struct _NSRange)arg1 withTokens:(id)arg2;
 - (id)parseByReplacingTokenAtIndex:(unsigned int)arg1 withToken:(id)arg2;
+@property(readonly, nonatomic) NSArray *datedTokens;
 - (id)tokenAtIndex:(unsigned int)arg1;
 - (void)enumerateTokensUsingBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned int numberOfTokens;

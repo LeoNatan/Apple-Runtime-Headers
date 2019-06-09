@@ -15,7 +15,7 @@
 - (void)handleCommandToggleContractedBrailleEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;
 - (void)handleCommandReturnBrailleEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;
 - (void)handleCommandTranslateForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;
-- (void)handleCommandEscapeForDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg1;
+- (void)handleCommandEscapeKeyEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;
 - (void)handleCommandForwardDeleteKeyEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;
 - (void)handleCommandDeleteKeyEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;
 - (void)handleCommandRouterKeyEvent:(SCROBrailleKey *)arg1 forDispatcher:(id <SCROBrailleDisplayCommandDispatcherProtocol>)arg2;

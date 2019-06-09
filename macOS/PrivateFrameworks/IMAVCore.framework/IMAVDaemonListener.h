@@ -16,13 +16,13 @@
 }
 
 @property(readonly, nonatomic) BOOL isSetupComplete; // @synthesize isSetupComplete=_setupComplete;
+- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;
 - (void)removeHandler:(id)arg1;
 - (void)addHandler:(id)arg1;
 - (void)_noteDisconnected;
-- (void)dealloc;
 - (id)init;
 
 @end

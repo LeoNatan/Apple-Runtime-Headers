@@ -8,6 +8,7 @@
 
 @class AVPlayerController;
 
+__attribute__((visibility("hidden")))
 @interface AVNowPlayingInfoController : NSObject
 {
     AVPlayerController *_playerController;

@@ -6,13 +6,13 @@
 
 #import <CoreSuggestionsInternals/SGDHarvestQueue.h>
 
-@class NSObject, NSString, SGDHarvestQueueFileReader, SGDHarvestQueueFileWriter, SGSqliteDatabase;
+@class NSObject, NSString, SGDHarvestQueueFileReader, SGDHarvestQueueFileWriter, SGDSqlHarvestQueueStore;
 @protocol OS_dispatch_queue;
 
 @interface SGDHarvestQueueOnDisk : SGDHarvestQueue
 {
     NSString *_dirPath;
-    SGSqliteDatabase *_db;
+    SGDSqlHarvestQueueStore *_store;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_backingQueue;
     SGDHarvestQueueFileWriter *_writerHighPriority;
@@ -31,26 +31,23 @@
 - (void)writePermafail:(id)arg1;
 - (void)_trimPermafailDirectory;
 - (void)deleteWithItemId:(long long)arg1 fileId:(int)arg2;
-- (void)markAsFailedWithId:(long long)arg1;
-- (void)_popWithStringAfterWhereClause:(id)arg1 binder:(CDUnknownBlockType)arg2 callback:(CDUnknownBlockType)arg3;
+- (void)_processPoppedItemResult:(CDStruct_08971326)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)popBySourceKey:(id)arg1 messageId:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)popByItemId:(long long)arg1 callback:(CDUnknownBlockType)arg2;
 - (void)popHighPriority:(CDUnknownBlockType)arg1;
 - (void)pop:(CDUnknownBlockType)arg1;
 - (void)_read:(CDStruct_beb4cc23)arg1 fileId:(int)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)addItemWithSourceKey:(id)arg1 messageId:(id)arg2 highPriority:(BOOL)arg3 item:(id)arg4 callback:(CDUnknownBlockType)arg5;
+- (void)_flushFilesWhileUnlocked;
 - (void)_openFilesForProcessingWhileLocked;
 - (void)_unlinkFileWithIdLocked:(int)arg1;
+- (void)markAsFailedWithId:(long long)arg1;
 - (void)_garbageCollectFilesAsync;
 - (void)close;
 @property(nonatomic) unsigned long long maxPendingWrites;
 @property(nonatomic) unsigned long long maxQueueItems;
 - (void)countHighPriorityItems:(unsigned long long *)arg1 lowPriorityItems:(unsigned long long *)arg2;
 - (unsigned long long)count;
-- (void)_initIdCounter;
-- (id)_getDb;
-- (id)_recreateDb;
-- (BOOL)_migrateDb:(id)arg1;
 - (void)dealloc;
 - (id)initWithDirectory:(id)arg1;
 

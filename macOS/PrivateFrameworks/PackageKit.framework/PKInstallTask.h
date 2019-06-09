@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSFileHandle, NSString, NSTask;
+@class NSFileHandle, NSLock, NSString, NSTask;
 
 @interface PKInstallTask : NSObject
 {
@@ -15,11 +15,12 @@
     NSFileHandle *_outputReadHandle;
     NSString *_partialLine;
     BOOL _logOnlyStandardError;
+    BOOL _logTaskOutput;
+    NSLock *_logLock;
 }
 
 @property BOOL logOnlyStandardError; // @synthesize logOnlyStandardError=_logOnlyStandardError;
 - (BOOL)_processTaskOutput:(id)arg1;
-- (void)_readTaskOutput:(id)arg1;
 - (void)_flushTaskOutput;
 - (int)run;
 - (id)task;

@@ -6,14 +6,16 @@
 
 #import <AppleMediaServices/AMSTask.h>
 
-@class AMSProcessInfo, NSString;
-@protocol AMSLookupBagContract;
+#import <AppleMediaServices/AMSBagConsumer-Protocol.h>
 
-@interface AMSLookup : AMSTask
+@class AMSProcessInfo, NSString;
+@protocol AMSBagProtocol;
+
+@interface AMSLookup : AMSTask <AMSBagConsumer>
 {
+    id <AMSBagProtocol> _bag;
     NSString *_caller;
     AMSProcessInfo *_clientInfo;
-    id <AMSLookupBagContract> _contract;
     NSString *_imageProfile;
     NSString *_keyProfile;
     NSString *_platform;
@@ -22,21 +24,34 @@
     NSString *_language;
 }
 
++ (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (id)bagSubProfileVersion;
++ (id)bagSubProfile;
++ (id)bagKeySet;
 @property(retain) NSString *language; // @synthesize language=_language;
 @property long long version; // @synthesize version=_version;
 @property long long signatureType; // @synthesize signatureType=_signatureType;
 @property(retain) NSString *platform; // @synthesize platform=_platform;
 @property(retain) NSString *keyProfile; // @synthesize keyProfile=_keyProfile;
 @property(retain) NSString *imageProfile; // @synthesize imageProfile=_imageProfile;
-@property(retain) id <AMSLookupBagContract> contract; // @synthesize contract=_contract;
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain) NSString *caller; // @synthesize caller=_caller;
+@property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 - (void).cxx_destruct;
+- (void)setContract:(id)arg1;
+- (id)contract;
+- (id)initWithBagContract:(id)arg1 caller:(id)arg2 keyProfile:(id)arg3;
+- (id)initWithBagContract:(id)arg1;
 - (id)_compileQueryParametersWithBundleIds:(id)arg1 itemIds:(id)arg2;
 - (void)_addJSSignatureToRequest:(id)arg1;
 - (id)performLookupWithBundleIdentifiers:(id)arg1 itemIdentifiers:(id)arg2;
-- (id)initWithBagContract:(id)arg1 caller:(id)arg2 keyProfile:(id)arg3;
-- (id)initWithBagContract:(id)arg1;
+- (id)initWithBag:(id)arg1 caller:(id)arg2 keyProfile:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

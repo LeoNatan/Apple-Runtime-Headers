@@ -8,6 +8,7 @@
 
 @class NSLock, SKUIClientContext, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaSocialSaveProfilePhotoOperation : SSVComplexOperation
 {
     SKUIClientContext *_clientContext;

@@ -11,7 +11,6 @@
 }
 
 + (unsigned long long)effectivePrefixLengthForSubject:(id)arg1 replyOnly:(BOOL)arg2;
-+ (id)effectiveSubjectForSubject:(id)arg1 prefix:(id *)arg2;
 + (BOOL)subjectHasReplyPrefix:(id)arg1;
 
 @end

@@ -6,51 +6,34 @@
 
 #import <coreroutine/RTService.h>
 
-#import <coreroutine/RTIORegistryEntryMatchObserver-Protocol.h>
-#import <coreroutine/RTIOServiceChangeObserver-Protocol.h>
+@class RTDarwinNotificationHelper;
 
-@class NSString, RTIONotificationPort;
-@protocol RTIOServiceStrategy;
-
-@interface RTBatteryManager : RTService <RTIORegistryEntryMatchObserver, RTIOServiceChangeObserver>
+@interface RTBatteryManager : RTService
 {
-    unsigned int _battery;
-    unsigned int _batteryInterestNotification;
     _Bool _monitorBatteryStatusChanges;
-    RTIONotificationPort *_port;
     long long _externalConnectionState;
-    id <RTIOServiceStrategy> _ioServiceStrategy;
+    RTDarwinNotificationHelper *_notificationHelper;
 }
 
++ (long long)currentExternalConnectionState;
 + (id)externalConnectionStateToString:(long long)arg1;
-@property(readonly, nonatomic) id <RTIOServiceStrategy> ioServiceStrategy; // @synthesize ioServiceStrategy=_ioServiceStrategy;
++ (_Bool)_ioDrawingUnlimitedPower;
+@property(readonly, nonatomic) RTDarwinNotificationHelper *notificationHelper; // @synthesize notificationHelper=_notificationHelper;
 @property(nonatomic) long long externalConnectionState; // @synthesize externalConnectionState=_externalConnectionState;
 @property(nonatomic) _Bool monitorBatteryStatusChanges; // @synthesize monitorBatteryStatusChanges=_monitorBatteryStatusChanges;
-@property(retain, nonatomic) RTIONotificationPort *port; // @synthesize port=_port;
 - (void).cxx_destruct;
 - (void)fetchCurrentChargerConnectionState:(CDUnknownBlockType)arg1;
-- (void)onServiceChanged:(unsigned int)arg1 messageType:(unsigned int)arg2;
-- (void)onRegistryEntriesMatched:(unsigned int)arg1;
-- (void)batteryStatusChange:(unsigned int)arg1 messageType:(unsigned int)arg2;
-- (void)updateBatteryStatus:(unsigned int)arg1;
-- (void)matchedBattery:(unsigned int)arg1;
+- (void)updateBatteryStatus:(long long)arg1;
 - (void)stopMonitoringBatteryStatusChanges;
 - (void)startMonitoringBatteryStatusChanges;
-@property(nonatomic) unsigned int batteryInterestNotification;
-@property(nonatomic) unsigned int battery;
 - (void)internalRemoveObserver:(id)arg1 name:(id)arg2;
 - (void)internalAddObserver:(id)arg1 name:(id)arg2;
 - (void)_unregisterForNotifications;
 - (void)_shutdown;
 - (void)dealloc;
+- (id)initWithQueue:(id)arg1 notificationHelper:(id)arg2;
+- (id)initWithQueue:(id)arg1;
 - (id)init;
-- (id)initWithStrategy:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

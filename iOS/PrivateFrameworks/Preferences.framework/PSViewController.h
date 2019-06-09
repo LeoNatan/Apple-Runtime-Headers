@@ -27,6 +27,7 @@
 - (void)popupViewDidDisappear;
 - (void)popupViewWillDisappear;
 - (void)handleURL:(id)arg1;
+- (void)handleURL:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)showController:(id)arg1 animate:(_Bool)arg2;
 - (void)showController:(id)arg1;
 - (void)pushController:(id)arg1 animate:(_Bool)arg2;

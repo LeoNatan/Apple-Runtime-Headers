@@ -25,6 +25,7 @@
     NSImageView *_cameraOff;
 }
 
++ (id)os_log;
 @property(retain) NSImageView *cameraOff; // @synthesize cameraOff=_cameraOff;
 @property(retain, nonatomic) CNCameraChangeWatcher *cameraWatcher; // @synthesize cameraWatcher=_cameraWatcher;
 @property BOOL sessionInited; // @synthesize sessionInited=_sessionInited;

@@ -12,12 +12,14 @@
 @protocol PVFaceProtocol;
 
 @interface PHPerson (PVPersonProtocol) <PVPersonProtocol>
+- (id)personLocalIdentifiers;
 - (void)pv_addMergeCandidatePersons:(id)arg1;
 @property(retain, nonatomic) id <PVFaceProtocol> keyFace;
 @property(nonatomic) long long manualOrder;
 @property(nonatomic) _Bool isVerified; // @dynamic isVerified;
 @property(readonly, nonatomic) _Bool favorite;
 @property(readonly, nonatomic) _Bool hidden;
+@property(readonly, nonatomic) NSString *anonymizedName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
@@ -25,7 +27,6 @@
 @property(readonly, nonatomic) unsigned long long faceCount;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSString *localIdentifier;
-@property(readonly, nonatomic) NSString *name;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) long long verifiedType;
 @end

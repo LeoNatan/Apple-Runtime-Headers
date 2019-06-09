@@ -8,21 +8,21 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapLayerDataServiceLayer, GEOMapLayerDataServiceLayerIndex, GEOMapLayerDataServiceVersion;
+@class GEOMapLayerDataServiceLayer, GEOMapLayerDataServiceLayerIndex, GEOMapLayerDataServiceVersion, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOMapLayerDataServicePatch : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOMapLayerDataServiceLayerIndex *_index;
     GEOMapLayerDataServiceLayer *_layer;
     GEOMapLayerDataServiceVersion *_sourceVersion;
     GEOMapLayerDataServiceVersion *_targetVersion;
+    CDStruct_2c11db96 _flags;
 }
 
-@property(retain, nonatomic) GEOMapLayerDataServiceLayerIndex *index; // @synthesize index=_index;
-@property(retain, nonatomic) GEOMapLayerDataServiceVersion *targetVersion; // @synthesize targetVersion=_targetVersion;
-@property(retain, nonatomic) GEOMapLayerDataServiceVersion *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
-@property(retain, nonatomic) GEOMapLayerDataServiceLayer *layer; // @synthesize layer=_layer;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,12 +31,21 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOMapLayerDataServiceLayerIndex *index;
 @property(readonly, nonatomic) BOOL hasIndex;
+- (void)_readIndex;
+@property(retain, nonatomic) GEOMapLayerDataServiceVersion *targetVersion;
 @property(readonly, nonatomic) BOOL hasTargetVersion;
+- (void)_readTargetVersion;
+@property(retain, nonatomic) GEOMapLayerDataServiceVersion *sourceVersion;
 @property(readonly, nonatomic) BOOL hasSourceVersion;
+- (void)_readSourceVersion;
+@property(retain, nonatomic) GEOMapLayerDataServiceLayer *layer;
 @property(readonly, nonatomic) BOOL hasLayer;
+- (void)_readLayer;
 
 @end
 

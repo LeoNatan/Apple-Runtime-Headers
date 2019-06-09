@@ -55,7 +55,7 @@
 @property(retain) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(retain) id <MTLDevice> device; // @synthesize device=_device;
 - (void).cxx_destruct;
-- (id)init:(int)arg1 height:(int)arg2;
+- (id)init:(int)arg1 height:(int)arg2 metalId:(unsigned long long)arg3 metalIdIsValid:(_Bool)arg4;
 - (void)deleteMetalContext;
 - (void)execute:(struct __IOSurface *)arg1 prevBuffer:(struct __IOSurface *)arg2 syncMode:(_Bool)arg3;
 - (void)waitForComplete;

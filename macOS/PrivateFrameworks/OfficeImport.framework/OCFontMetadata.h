@@ -8,6 +8,7 @@
 
 @class NSArray, OCFontPanose1, OCFontSig;
 
+__attribute__((visibility("hidden")))
 @interface OCFontMetadata : NSObject
 {
     int _charSet;

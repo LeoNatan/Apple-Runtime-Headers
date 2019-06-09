@@ -71,7 +71,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)createPlugin;
 - (void)setWindowIfNecessary;
 - (void)updateAndSetWindow;
-- (void)tellQuickTimeToChill;
 - (BOOL)isNewWindowEqualToOldWindow;
 - (void)privateBrowsingModeDidChange;
 - (void)sendModifierEventWithKeyCode:(int)arg1 character:(BOOL)arg2;
@@ -94,7 +93,6 @@ __attribute__((visibility("hidden")))
 - (void)restorePortState:(struct OpaquePortState *)arg1;
 - (struct OpaquePortState *)saveAndSetNewPortState;
 - (struct OpaquePortState *)saveAndSetNewPortStateForUpdate:(BOOL)arg1;
-- (void)fixWindowPort;
 - (short)getAuthenticationInfoWithProtocol:(const char *)arg1 host:(const char *)arg2 port:(int)arg3 scheme:(const char *)arg4 realm:(const char *)arg5 username:(char **)arg6 usernameLength:(unsigned int *)arg7 password:(char **)arg8 passwordLength:(unsigned int *)arg9;
 - (short)setVariable:(int)arg1 forURL:(const char *)arg2 value:(const char *)arg3 length:(unsigned int)arg4;
 - (short)getVariable:(int)arg1 forURL:(const char *)arg2 value:(char **)arg3 length:(unsigned int *)arg4;
@@ -122,7 +120,6 @@ __attribute__((visibility("hidden")))
 - (void)webFrame:(id)arg1 didFinishLoadWithReason:(short)arg2;
 - (void)evaluateJavaScriptPluginRequest:(id)arg1;
 - (void)_redeliverStream;
-- (id)_printedPluginBitmap;
 - (void)_destroyPlugin;
 - (short)_createPlugin;
 - (BOOL)_shouldCancelSrcStream;

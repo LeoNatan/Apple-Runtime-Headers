@@ -9,6 +9,7 @@
 @class NSArray;
 @protocol AVFocusProxyViewDelegateProtocol;
 
+__attribute__((visibility("hidden")))
 @interface AVFocusProxyView : UIView
 {
     UIView<AVFocusProxyViewDelegateProtocol> *_targetView;

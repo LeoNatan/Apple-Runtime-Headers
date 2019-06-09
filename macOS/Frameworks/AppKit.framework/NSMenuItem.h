@@ -42,14 +42,16 @@
         unsigned int keShareMode:3;
         unsigned int state:2;
         unsigned int destructive:1;
-        unsigned int RESERVED1:1;
+        unsigned int reserved:2;
         unsigned int limitedView:1;
+        unsigned int drawingOnlyView:1;
         unsigned int nextItemIsAlternate:1;
         unsigned int blockKE:1;
         unsigned int ignoredForAccessibility:1;
         unsigned int hiddenActiveKE:1;
         unsigned int noRepeatKEs:1;
-        unsigned int targetWeak:1;
+        unsigned int blockedByScreenTime:1;
+        unsigned int submenuParentUnchoosable:1;
     } _miFlags;
 }
 
@@ -75,6 +77,7 @@
 + (id)_menuItemForItem:(id)arg1 view:(id)arg2 itemFrame:(struct CGRect)arg3 aimFrame:(struct CGRect)arg4 options:(id)arg5;
 + (void)_dispatchActionBlockFor:(id)arg1;
 + (id)_menuItemWithTitle:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void).cxx_destruct;
 @property(copy) NSString *identifier;
 - (void)setUserInterfaceItemIdentifier:(id)arg1;
 - (id)userInterfaceItemIdentifier;
@@ -93,6 +96,9 @@
 - (id)_startingWindowForSendAction:(SEL)arg1;
 - (id)_menuItemViewer;
 @property(retain) NSView *view;
+- (BOOL)_viewWantsHIView;
+- (BOOL)_viewIsDrawingOnly;
+- (void)_setViewIsDrawingOnly:(BOOL)arg1;
 - (BOOL)_viewHandlesEvents;
 - (void)_setViewHandlesEvents:(BOOL)arg1;
 - (void)_setViewNeedsDisplayInRect:(struct CGRect)arg1;
@@ -108,6 +114,10 @@
 @property long long indentationLevel;
 - (void)_setNextItemIsAlternate:(BOOL)arg1;
 - (BOOL)_nextItemIsAlternate;
+- (BOOL)_submenuParentItemUnchoosable;
+- (void)_setSubmenuParentItemUnchoosable:(BOOL)arg1;
+- (BOOL)_showsBlockedByScreenTime;
+- (void)_setShowsBlockedByScreenTime:(BOOL)arg1;
 - (BOOL)isDestructive;
 - (void)setDestructive:(BOOL)arg1;
 @property(getter=isAlternate) BOOL alternate;
@@ -146,6 +156,7 @@
 - (id)_desiredKeyEquivalent;
 - (unsigned long long)_rawKeyEquivalentModifierMask;
 - (id)_rawKeyEquivalent;
+- (unsigned long long)_keyboardAwareEquivalentModifierMask;
 - (id)_keyboardAwareEquivalent;
 - (id)_rawKeyboardAwareEquivalent;
 - (BOOL)_mayBeInvolvedInMenuItemPath;
@@ -163,10 +174,11 @@
 - (unsigned long long)_applicableKeyEquivalentModifierMask;
 @property BOOL allowsKeyEquivalentWhenHidden;
 @property unsigned long long keyEquivalentModifierMask;
+- (void)_setKeyboardAwareEquivalentModifierMask:(unsigned long long)arg1;
 @property(copy) NSString *keyEquivalent;
 - (void)_cacheUserKeyEquivalentInfo:(struct NSMenuUserKeyEquivalentInfo_t)arg1;
 - (struct NSMenuUserKeyEquivalentInfo_t)_fetchFreshUserKeyEquivalentInfo;
-- (void)_setKeyboardAwareEquivalent:(id)arg1;
+- (void)_setKeyboardAwareEquivalent:(id)arg1 modifiers:(unsigned long long)arg2;
 @property(readonly, getter=isSeparatorItem) BOOL separatorItem;
 - (struct CGSize)_cachedAttributedTitleSizeForMeasuring:(BOOL)arg1 hasAttachment:(char *)arg2;
 - (struct CGSize)_computeBoundingRectSizeForTitle:(id)arg1 hasAttachment:(char *)arg2;

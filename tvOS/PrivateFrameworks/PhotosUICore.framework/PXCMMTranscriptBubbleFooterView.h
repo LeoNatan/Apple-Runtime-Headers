@@ -6,11 +6,10 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, PXViewLayoutHelper, UIImageView, UILabel;
+@class NSString, UIImageView, UILabel;
 
 @interface PXCMMTranscriptBubbleFooterView : UIView
 {
-    PXViewLayoutHelper *_layoutHelper;
     UILabel *_primaryLabel;
     UILabel *_secondaryLabel;
     UIImageView *_chevronImageView;

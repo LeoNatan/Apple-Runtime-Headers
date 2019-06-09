@@ -4,19 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/NSView.h>
+#import <WebKit/WKSafeBrowsingBox.h>
 
 #import <WebKit/NSTextViewDelegate-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WKSafeBrowsingWarning : NSView <NSTextViewDelegate>
+@interface WKSafeBrowsingWarning : WKSafeBrowsingBox <NSTextViewDelegate>
 {
-    CompletionHandler_0810ae1c _completionHandler;
+    CompletionHandler_2c34b13f _completionHandler;
     struct RefPtr<const WebKit::SafeBrowsingWarning, WTF::DumbPtrTraits<const WebKit::SafeBrowsingWarning>> _warning;
     struct WeakObjCPtr<WKSafeBrowsingTextView> _details;
-    struct WeakObjCPtr<NSView> _box;
+    struct WeakObjCPtr<WKSafeBrowsingBox> _box;
 }
 
 - (id).cxx_construct;
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)layoutText;
 - (void)showDetailsClicked;
 - (void)addContent;
-- (id)initWithFrame:(struct CGRect)arg1 safeBrowsingWarning:(const struct SafeBrowsingWarning *)arg2 completionHandler:(CompletionHandler_0810ae1c *)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 safeBrowsingWarning:(const struct SafeBrowsingWarning *)arg2 completionHandler:(CompletionHandler_2c34b13f *)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

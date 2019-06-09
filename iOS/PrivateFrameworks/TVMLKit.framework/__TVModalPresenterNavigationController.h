@@ -7,12 +7,13 @@
 #import <UIKit/UINavigationController.h>
 
 #import <TVMLKit/UIGestureRecognizerDelegate-Protocol.h>
+#import <TVMLKit/_TVApplicationInspectorDocumentProvider-Protocol.h>
 #import <TVMLKit/_TVModalPresenterFocusing-Protocol.h>
 
 @class NSArray, NSMapTable, NSString, UIView, UIViewController;
 @protocol UIFocusEnvironment, UIFocusItemContainer;
 
-@interface __TVModalPresenterNavigationController : UINavigationController <UIGestureRecognizerDelegate, _TVModalPresenterFocusing>
+@interface __TVModalPresenterNavigationController : UINavigationController <UIGestureRecognizerDelegate, _TVModalPresenterFocusing, _TVApplicationInspectorDocumentProvider>
 {
     UIViewController *_rootViewController;
     NSMapTable *_pushCompletionBlocks;
@@ -25,6 +26,7 @@
 @property(copy, nonatomic) CDUnknownBlockType dismissalBlock; // @synthesize dismissalBlock=_dismissalBlock;
 @property(retain, nonatomic) NSArray *previousViewControllers; // @synthesize previousViewControllers=_previousViewControllers;
 - (void).cxx_destruct;
+- (id)activeDocument;
 - (void)updatePreferredFocusedViewStateForFocus:(_Bool)arg1;
 - (void)_dismissForLastViewController:(_Bool)arg1;
 - (void)_dismissForLastViewController;

@@ -58,7 +58,6 @@ __attribute__((visibility("hidden")))
 - (void)_prepareDimmingViewIfNecessary;
 - (struct CGRect)_frameForTransitionViewInPresentationSuperview:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (_Bool)shouldRemovePresentersView;
 - (_Bool)_shouldRespectDefinesPresentationContext;
 - (_Bool)shouldPresentInFullscreen;
 - (void)containerViewDidLayoutSubviews;

@@ -8,11 +8,32 @@
 
 #import <ConditionInducer/COConditionProtocol-Protocol.h>
 
+@class NSArray, NSString;
+
 @interface COCondition : NSObject <COConditionProtocol>
 {
+    NSArray *_additionalArguments;
 }
 
++ (id)info;
++ (id)profileFriendlyName;
 + (id)description;
+@property(retain, nonatomic) NSArray *additionalArguments; // @synthesize additionalArguments=_additionalArguments;
+- (void).cxx_destruct;
+- (BOOL)isInternalOnlyFromDict:(id)arg1;
+- (BOOL)isDestructiveFromDict:(id)arg1;
+- (id)userFriendlyNameFromDict:(id)arg1;
+- (id)identifierNameFromDict:(id)arg1;
+- (BOOL)persistsAfterRebootFromDict:(id)arg1;
+@property(readonly) BOOL isInternalOnly;
+@property(readonly) BOOL isDestructive;
+@property(readonly) NSString *userFriendlyName;
+@property(readonly) NSString *identifierName;
+@property(readonly) BOOL persistsAfterReboot;
+- (id)getStringProperty:(id)arg1 withDefault:(id)arg2;
+- (id)getStringProperty:(id)arg1 fromDict:(id)arg2 withDefault:(id)arg3;
+- (BOOL)getBoolProperty:(id)arg1 withDefault:(BOOL)arg2;
+- (BOOL)getBoolProperty:(id)arg1 fromDict:(id)arg2 withDefault:(BOOL)arg3;
 - (void)tearDown;
 - (BOOL)setUp;
 @property(readonly) BOOL active;

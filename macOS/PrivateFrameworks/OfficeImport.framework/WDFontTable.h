@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OITSUNoCopyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface WDFontTable : NSObject
 {
     OITSUNoCopyDictionary *mFontTable;

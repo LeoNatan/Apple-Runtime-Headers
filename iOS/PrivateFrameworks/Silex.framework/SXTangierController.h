@@ -54,8 +54,8 @@
 @property(readonly, nonatomic) UIView *underRepsHost; // @synthesize underRepsHost=_underRepsHost;
 @property(readonly, nonatomic) STTangierRepDirectLayerHostProvider *directLayerHostProvider; // @synthesize directLayerHostProvider=_directLayerHostProvider;
 @property(readonly, nonatomic) STTangierTextRenderCollector *textRenderCollector; // @synthesize textRenderCollector=_textRenderCollector;
-@property(readonly, nonatomic) id <SXComponentInteractionManager> componentInteractionManager; // @synthesize componentInteractionManager=_componentInteractionManager;
-@property(readonly, nonatomic) id <SXComponentController> componentController; // @synthesize componentController=_componentController;
+@property(readonly, nonatomic) __weak id <SXComponentInteractionManager> componentInteractionManager; // @synthesize componentInteractionManager=_componentInteractionManager;
+@property(readonly, nonatomic) __weak id <SXComponentController> componentController; // @synthesize componentController=_componentController;
 @property(readonly, nonatomic) id <SXTangierDragItemProvider> dragItemProvider; // @synthesize dragItemProvider=_dragItemProvider;
 @property(readonly, nonatomic) id <SXComponentActionHandler> componentActionHandler; // @synthesize componentActionHandler=_componentActionHandler;
 @property(retain, nonatomic) STScrollView *scrollView; // @synthesize scrollView=_scrollView;

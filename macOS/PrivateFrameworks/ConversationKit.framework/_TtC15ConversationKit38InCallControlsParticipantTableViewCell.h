@@ -6,7 +6,6 @@
 
 #import <AppKit/NSCollectionViewItem.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit38InCallControlsParticipantTableViewCell : NSCollectionViewItem
 {
     // Error parsing type: , name: participantIdentifier
@@ -18,7 +17,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: infoButton
     // Error parsing type: , name: constraintsForCameraIconVisibleState
     // Error parsing type: , name: constraintsForRingButtonVisibleState
-    // Error parsing type: , name: constraintsForInfoIconVisibleState
     // Error parsing type: , name: callDelegate
     // Error parsing type: , name: delegate
 }

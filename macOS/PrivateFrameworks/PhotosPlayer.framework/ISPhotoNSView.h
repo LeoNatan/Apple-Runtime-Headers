@@ -10,6 +10,7 @@
 
 @class CALayer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ISPhotoNSView : NSView <CALayerDelegate>
 {
     CALayer *_contentLayer;
@@ -25,7 +26,6 @@
 - (void)_commonISPhotoNSViewInitialization;
 - (void)setPhoto:(struct CGImage *)arg1 inOrientation:(long long)arg2;
 - (void)layout;
-- (void)setFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

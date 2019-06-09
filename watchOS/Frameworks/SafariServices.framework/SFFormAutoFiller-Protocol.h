@@ -9,7 +9,6 @@
 @class NSArray, NSDictionary, NSString, NSURL, SFFormAutoFillFrameHandle;
 
 @protocol SFFormAutoFiller <NSObject>
-- (void)resumeLoadingAfterSavingFormData;
 - (void)clearAutoFillMetadata;
 - (void)collectMetadataForTextField:(NSString *)arg1 inFrame:(SFFormAutoFillFrameHandle *)arg2 atURL:(NSURL *)arg3 completionHandler:(void (^)(WBSFormMetadata *, WBSFormControlMetadata *))arg4;
 - (void)collectFormMetadataForPrefillingAtURL:(NSURL *)arg1;

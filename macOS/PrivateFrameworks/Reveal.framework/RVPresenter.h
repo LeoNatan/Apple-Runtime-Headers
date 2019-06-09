@@ -25,6 +25,8 @@
 - (BOOL)tryCloseAllPopoverForDDContext:(id)arg1;
 - (BOOL)revealItem:(id)arg1 documentContext:(id)arg2 presentingContext:(id)arg3 options:(id)arg4;
 - (id)menuItemsForItem:(id)arg1 documentContext:(id)arg2 presentingContext:(id)arg3 options:(id)arg4;
+- (id)lookupMenuItemTitleForText:(id)arg1;
+- (id)lookupTextForText:(id)arg1;
 - (id)taggedItems:(id)arg1;
 - (id)animationControllerForItem:(id)arg1 documentContext:(id)arg2 presentingContext:(id)arg3 options:(id)arg4;
 -     // Error parsing type: c40@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32, name: ddActionAvailableForUrl:ddResult:ddContext:

@@ -13,19 +13,19 @@
 @interface ICSByDayValue : NSObject <NSSecureCoding>
 {
     NSNumber *_number;
-    int _weekday;
+    long long _weekday;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)byDayValueFromICSString:(id)arg1;
-+ (int)weekdayFromICSString:(id)arg1;
-@property int weekday; // @synthesize weekday=_weekday;
++ (long long)weekdayFromICSString:(id)arg1;
+@property(nonatomic) long long weekday; // @synthesize weekday=_weekday;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(retain, nonatomic) NSNumber *number;
-- (id)initWithWeekday:(int)arg1 number:(id)arg2;
-- (id)initWithWeekday:(int)arg1;
+- (id)initWithWeekday:(long long)arg1 number:(id)arg2;
+- (id)initWithWeekday:(long long)arg1;
 - (long long)compare:(id)arg1;
 - (void)_ICSStringWithOptions:(unsigned long long)arg1 appendingToString:(id)arg2;
 

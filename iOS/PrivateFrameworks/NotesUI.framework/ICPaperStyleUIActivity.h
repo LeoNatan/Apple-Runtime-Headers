@@ -18,7 +18,7 @@
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (long long)activityCategory;
-- (id)activityImage;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 - (id)initWithDelegate:(id)arg1;

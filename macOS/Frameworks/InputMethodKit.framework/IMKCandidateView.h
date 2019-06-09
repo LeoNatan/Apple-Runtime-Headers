@@ -48,6 +48,7 @@
 @property(readonly, nonatomic) NSArray *visibleCandidatesFromTopLine;
 - (id)allCandidates;
 - (id)UIElementsFromDefinitionUnits:(id)arg1;
+- (id)UIElementFromDefinitionUnit:(id)arg1;
 - (id)selectedCandidateView;
 @property(readonly, nonatomic) double scrollerThickness;
 @property(readonly, nonatomic) BOOL showsLegacyScroller;

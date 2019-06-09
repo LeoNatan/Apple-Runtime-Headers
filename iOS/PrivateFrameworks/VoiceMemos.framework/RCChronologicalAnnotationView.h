@@ -10,19 +10,18 @@
 
 @interface RCChronologicalAnnotationView : UIView
 {
-    long long _lastHourComponentsUsedForMajorTickUpdate;
     double _majorTickMinimumSpacing;
     UIFont *_timeLabelFont;
     _Bool _isPlayback;
     double _contentDuration;
     RCUIConfiguration *_UIConfiguration;
     UIColor *_backgroundDebugColor;
+    unsigned long long _debugID;
     CDStruct_73a5d3ca _visibleTimeRange;
     CDStruct_73a5d3ca _markerClippingRange;
 }
 
-+ (id)_normalTimeLabelFont;
-+ (long long)_determineWidestTimeLabelDigit;
+@property(nonatomic) unsigned long long debugID; // @synthesize debugID=_debugID;
 @property(retain, nonatomic) UIColor *backgroundDebugColor; // @synthesize backgroundDebugColor=_backgroundDebugColor;
 @property(copy, nonatomic) RCUIConfiguration *UIConfiguration; // @synthesize UIConfiguration=_UIConfiguration;
 @property(nonatomic) _Bool isPlayback; // @synthesize isPlayback=_isPlayback;
@@ -32,8 +31,9 @@
 - (void).cxx_destruct;
 - (id)_timeLabelAttributes;
 - (id)_timeLabelAttributesWithFont:(id)arg1;
-- (void)_updateMajorTickMinimumSpacingForContentDuration:(double)arg1;
 - (void)drawRect:(struct CGRect)arg1;
+- (long long)tickMarksForMajorInterval:(double)arg1;
+- (double)timeLabelsMajorInterval;
 - (struct CGSize)labelsSize;
 - (id)description;
 - (id)initWithFrame:(struct CGRect)arg1;

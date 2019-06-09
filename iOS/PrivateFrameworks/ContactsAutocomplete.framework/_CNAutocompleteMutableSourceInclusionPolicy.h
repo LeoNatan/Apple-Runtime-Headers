@@ -15,6 +15,7 @@
     _Bool _includeContacts;
     _Bool _includeRecents;
     _Bool _includeSuggestions;
+    _Bool _includeLocalExtensions;
     _Bool _includeDirectoryServers;
     _Bool _includeCalendarServers;
     _Bool _includeSupplementalResults;
@@ -25,6 +26,7 @@
 @property _Bool includeSupplementalResults; // @synthesize includeSupplementalResults=_includeSupplementalResults;
 @property _Bool includeCalendarServers; // @synthesize includeCalendarServers=_includeCalendarServers;
 @property _Bool includeDirectoryServers; // @synthesize includeDirectoryServers=_includeDirectoryServers;
+@property _Bool includeLocalExtensions; // @synthesize includeLocalExtensions=_includeLocalExtensions;
 @property _Bool includeSuggestions; // @synthesize includeSuggestions=_includeSuggestions;
 @property _Bool includeRecents; // @synthesize includeRecents=_includeRecents;
 @property _Bool includeContacts; // @synthesize includeContacts=_includeContacts;

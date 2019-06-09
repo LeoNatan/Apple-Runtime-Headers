@@ -8,28 +8,31 @@
 
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDictionary, NSString;
+@class INCodableEnum, NSDictionary, NSString;
 
 @interface INCodableEnumAttribute : INCodableAttribute <NSSecureCoding>
 {
     NSDictionary *_valuesByIndex;
-    NSString *_enumName;
-    NSArray *_enumValues;
-    int _type;
+    INCodableEnum *_codableEnum;
+    NSString *_enumNamespace;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) int type; // @synthesize type=_type;
-@property(copy, nonatomic) NSArray *enumValues; // @synthesize enumValues=_enumValues;
-@property(copy, nonatomic) NSString *enumName; // @synthesize enumName=_enumName;
+@property(copy, nonatomic) NSString *enumNamespace; // @synthesize enumNamespace=_enumNamespace;
+@property(retain, nonatomic) INCodableEnum *codableEnum; // @synthesize codableEnum=_codableEnum;
 - (void).cxx_destruct;
+- (id)valueWithName:(id)arg1;
 - (id)valueForIndex:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_dictionaryRepresentation;
+- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (void)updateWithDictionary:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (Class)_relationshipValueTransformerClass;
+- (Class)resolutionResultClass;
+- (int)valueType;
 
 @end
 

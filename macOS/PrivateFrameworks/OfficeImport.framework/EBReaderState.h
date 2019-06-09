@@ -8,6 +8,7 @@
 
 @class ECColumnWidthConvertor, OABReaderState;
 
+__attribute__((visibility("hidden")))
 @interface EBReaderState : EBState
 {
     struct XlBinaryReader *mXlReader;

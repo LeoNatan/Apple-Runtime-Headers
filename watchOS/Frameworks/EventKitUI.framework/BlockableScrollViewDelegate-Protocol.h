@@ -7,6 +7,7 @@
 #import <EventKitUI/NSObject-Protocol.h>
 
 @protocol BlockableScrollViewDelegate <NSObject>
+- (void)blockableScrollViewDidChangeFrameSize;
 - (_Bool)blockableScrollViewShouldAllowScrolling;
 @end
 

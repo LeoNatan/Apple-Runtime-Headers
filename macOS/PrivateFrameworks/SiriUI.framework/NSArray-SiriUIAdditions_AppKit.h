@@ -8,5 +8,6 @@
 
 @interface NSArray (SiriUIAdditions_AppKit)
 - (id)siriui_arrayByMappingWithBlock:(CDUnknownBlockType)arg1;
+- (id)asArrayFromMapObjectsUsingBlock:(CDUnknownBlockType)arg1;
 @end
 

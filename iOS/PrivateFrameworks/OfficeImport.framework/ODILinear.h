@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 
 + (void)mapUnknownWithState:(id)arg1;
 + (_Bool)mapIdentifier:(id)arg1 state:(id)arg2;
+- (void).cxx_destruct;
 - (void)mapStyleFromTransition:(id)arg1 shape:(id)arg2;
 - (void)mapTransition:(id)arg1 pointBounds:(struct CGRect)arg2;
 - (void)mapStyleFromPoint:(id)arg1 shape:(id)arg2;

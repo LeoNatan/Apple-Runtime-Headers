@@ -6,18 +6,66 @@
 
 #import <objc/NSObject.h>
 
-@class ITLibDBContent, NSArray, NSString, NSURL;
+@class AMPArtworkClient, AMPLFrameworkClient, NSArray, NSDictionary, NSString, NSURL;
 
 @interface ITLibrary : NSObject
 {
-    void *_impl;
+    BOOL _libraryLoaded;
+    AMPLFrameworkClient *_libraryClient;
+    AMPArtworkClient *_artworkClient;
+    unsigned long long _mediaDomains;
+    NSArray *_cachedMediaItems;
+    NSArray *_cachedMusicMediaItems;
+    NSArray *_cachedPlaylists;
+    NSArray *_cachedMusicPlaylists;
+    NSArray *_cachedMoviePlaylists;
+    NSArray *_cachedTVShowPlaylists;
+    NSArray *_cachedArtists;
+    NSArray *_cachedMusicArtists;
+    NSArray *_cachedAlbums;
+    NSArray *_cachedMusicAlbums;
+    NSArray *_cachedGenres;
+    NSArray *_cachedMusicGenres;
+    NSArray *_cachedPodcastFeeds;
+    NSArray *_cachedPodcastStations;
+    NSDictionary *_cachedPodcastSettings;
+    NSDictionary *_cachedItemMap;
 }
 
++ (id)libraryWithDeviceID:(id)arg1 error:(id *)arg2;
 + (id)libraryWithAPIVersion:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 + (id)libraryWithAPIVersion:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) ITLibDBContent *dbContent; // @dynamic dbContent;
+@property(retain, nonatomic) NSDictionary *cachedItemMap; // @synthesize cachedItemMap=_cachedItemMap;
+@property(retain, nonatomic) NSDictionary *cachedPodcastSettings; // @synthesize cachedPodcastSettings=_cachedPodcastSettings;
+@property(retain, nonatomic) NSArray *cachedPodcastStations; // @synthesize cachedPodcastStations=_cachedPodcastStations;
+@property(retain, nonatomic) NSArray *cachedPodcastFeeds; // @synthesize cachedPodcastFeeds=_cachedPodcastFeeds;
+@property(retain, nonatomic) NSArray *cachedMusicGenres; // @synthesize cachedMusicGenres=_cachedMusicGenres;
+@property(retain, nonatomic) NSArray *cachedGenres; // @synthesize cachedGenres=_cachedGenres;
+@property(retain, nonatomic) NSArray *cachedMusicAlbums; // @synthesize cachedMusicAlbums=_cachedMusicAlbums;
+@property(retain, nonatomic) NSArray *cachedAlbums; // @synthesize cachedAlbums=_cachedAlbums;
+@property(retain, nonatomic) NSArray *cachedMusicArtists; // @synthesize cachedMusicArtists=_cachedMusicArtists;
+@property(retain, nonatomic) NSArray *cachedArtists; // @synthesize cachedArtists=_cachedArtists;
+@property(retain, nonatomic) NSArray *cachedTVShowPlaylists; // @synthesize cachedTVShowPlaylists=_cachedTVShowPlaylists;
+@property(retain, nonatomic) NSArray *cachedMoviePlaylists; // @synthesize cachedMoviePlaylists=_cachedMoviePlaylists;
+@property(retain, nonatomic) NSArray *cachedMusicPlaylists; // @synthesize cachedMusicPlaylists=_cachedMusicPlaylists;
+@property(retain, nonatomic) NSArray *cachedPlaylists; // @synthesize cachedPlaylists=_cachedPlaylists;
+@property(retain, nonatomic) NSArray *cachedMusicMediaItems; // @synthesize cachedMusicMediaItems=_cachedMusicMediaItems;
+@property(retain, nonatomic) NSArray *cachedMediaItems; // @synthesize cachedMediaItems=_cachedMediaItems;
+@property(nonatomic) BOOL libraryLoaded; // @synthesize libraryLoaded=_libraryLoaded;
+@property(nonatomic) unsigned long long mediaDomains; // @synthesize mediaDomains=_mediaDomains;
+@property(retain, nonatomic) AMPArtworkClient *artworkClient; // @synthesize artworkClient=_artworkClient;
+@property(retain, nonatomic) AMPLFrameworkClient *libraryClient; // @synthesize libraryClient=_libraryClient;
+- (void).cxx_destruct;
+- (id)playlistWithDistinguishedKind:(unsigned long long)arg1;
+- (id)itemsForIDs:(id)arg1;
+- (id)artworkForMediaFile:(id)arg1;
+- (id)artworkForMediaItem:(id)arg1;
+- (id)artworkForData:(id)arg1;
+- (id)readWriteURLForMediaItem:(id)arg1;
 - (unsigned long long)privateFlags;
+- (BOOL)haveMigratedPodcasts;
 - (BOOL)haveMigratedBooks;
+- (BOOL)libraryAgentPref:(struct __CFString *)arg1;
 - (BOOL)restrictExplicitBooks;
 - (BOOL)isAccountAdmin;
 - (id)parentalRestrictions;
@@ -33,24 +81,51 @@
 - (BOOL)boolPrefWithKey:(id)arg1;
 - (void)unloadData;
 - (BOOL)reloadData;
-- (void)processiCloudLoginInfo:(id)arg1;
+- (BOOL)setPodcastsHaveMigrated:(id *)arg1;
+- (void)migratedBooks:(id)arg1;
 - (void)migratedMediaItems:(id)arg1;
 - (void)downloadCloudMediaItem:(id)arg1;
-- (id)artworkForMediaFile:(id)arg1;
-@property(readonly, retain, nonatomic) NSArray *allPlaylists; // @dynamic allPlaylists;
-@property(readonly, retain, nonatomic) NSArray *allMediaItems; // @dynamic allMediaItems;
-@property(readonly, nonatomic, getter=shouldShowContentRating) BOOL showContentRating; // @dynamic showContentRating;
+- (unsigned long long)podcastFeedRemovePlayedRule;
+- (unsigned long long)podcastFeedLimitRule;
+- (unsigned long long)podcastFeedDownloadAction;
+- (double)podcastFeedRefreshInterval;
+- (id)migratedPodcastDefaultFeedSettings;
+- (id)allPodcastStations;
+- (id)allPodcastFeeds;
+- (id)allMusicGenres;
+- (id)allGenres;
+- (id)allGenresForMediaKinds:(unsigned long long)arg1;
+- (id)allMusicAlbums;
+- (id)allAlbums;
+- (id)allAlbumsForMediaKinds:(unsigned long long)arg1;
+- (id)allMusicArtists;
+- (id)allArtists;
+- (id)allArtistsForMediaKinds:(unsigned long long)arg1;
+- (id)allTVShowPlaylists;
+- (id)allMoviePlaylists;
+- (id)allMusicPlaylists;
+@property(readonly, retain, nonatomic) NSArray *allPlaylists;
+- (id)allPlaylistsForMediaKinds:(unsigned long long)arg1;
+- (id)allMusicMediaItems;
+@property(readonly, retain, nonatomic) NSArray *allMediaItems;
+- (id)itemMap;
+- (id)allMediaItemsForMediaKinds:(unsigned long long)arg1;
+@property(readonly, nonatomic, getter=shouldShowContentRating) BOOL showContentRating;
 - (id)databaseID;
 - (id)databaseURL;
-@property(readonly, copy, nonatomic) NSURL *musicFolderLocation; // @dynamic musicFolderLocation;
-@property(readonly, copy, nonatomic) NSURL *mediaFolderLocation; // @dynamic mediaFolderLocation;
-@property(readonly, nonatomic) unsigned long long apiMinorVersion; // @dynamic apiMinorVersion;
-@property(readonly, nonatomic) unsigned long long apiMajorVersion; // @dynamic apiMajorVersion;
-@property(readonly, nonatomic) unsigned long long features; // @dynamic features;
-@property(readonly, copy, nonatomic) NSString *applicationVersion; // @dynamic applicationVersion;
-- (void)dealloc;
-- (id)initWithAPIVersion:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+@property(readonly, copy, nonatomic) NSURL *musicFolderLocation;
+@property(readonly, copy, nonatomic) NSURL *mediaFolderLocation;
+@property(readonly, nonatomic) unsigned long long apiMinorVersion;
+@property(readonly, nonatomic) unsigned long long apiMajorVersion;
+@property(readonly, nonatomic) unsigned long long features;
+@property(readonly, copy, nonatomic) NSString *applicationVersion;
+- (id)initWithDomains:(unsigned long long)arg1 error:(id *)arg2;
+- (id)initWithDeviceID:(id)arg1 error:(id *)arg2;
 - (id)initWithAPIVersion:(id)arg1 error:(id *)arg2;
+- (id)initWithAPIVersion:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)configureWithDomains:(unsigned long long)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)configureWithDevice:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)loadLibrary:(id *)arg1;
 
 @end
 

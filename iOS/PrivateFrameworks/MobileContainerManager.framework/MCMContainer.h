@@ -10,9 +10,9 @@
 
 @interface MCMContainer : NSObject
 {
-    unsigned int _userId;
     NSString *_identifier;
     NSUUID *_uuid;
+    NSString *_personaUniqueString;
     long long _containerClass;
     struct container_object *_thisContainer;
 }
@@ -28,6 +28,7 @@
 - (unsigned long long)diskUsageWithError:(id *)arg1;
 @property(readonly, nonatomic) long long containerClass;
 @property(readonly, nonatomic) NSUUID *uuid; // @dynamic uuid;
+@property(readonly, nonatomic) NSString *personaUniqueString;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic, getter=isTemporary) _Bool temporary;
 @property(readonly, nonatomic) NSDictionary *info;
@@ -41,7 +42,7 @@
 - (id)init;
 - (struct container_object *)getLowLevelContainerObject;
 - (void)markDeleted;
-- (id)initWithIdentifier:(id)arg1 userId:(unsigned int)arg2 uuid:(id)arg3 error:(id *)arg4;
+- (id)initWithIdentifier:(id)arg1 uuid:(id)arg2 personaUniqueString:(id)arg3 error:(id *)arg4;
 - (void)dealloc;
 - (void)_errorOccurred;
 @property(readonly, nonatomic) struct container_object *thisContainer;

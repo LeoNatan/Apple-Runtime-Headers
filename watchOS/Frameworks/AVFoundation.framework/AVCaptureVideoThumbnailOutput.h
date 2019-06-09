@@ -18,6 +18,7 @@
 + (void)initialize;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (void)_signalInvalidationOfPropagatedContentsIfNecessary;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 - (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;

@@ -17,11 +17,11 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 + (id)queryWithBundleIdentifier:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)_requiresDatabaseMappingEntitlement;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 
 @end
 

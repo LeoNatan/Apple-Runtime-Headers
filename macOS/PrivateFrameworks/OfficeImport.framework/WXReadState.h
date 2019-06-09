@@ -9,6 +9,7 @@
 @class CXNamespace, NSMutableArray, NSMutableDictionary, OAXDrawingState, OCPPackagePart, OITSUNoCopyDictionary, WDCharacterRun, WDDocument, WXOAVReadState;
 @protocol TCCancelDelegate;
 
+__attribute__((visibility("hidden")))
 @interface WXReadState : OCXReadState
 {
     WDDocument *mDocument;

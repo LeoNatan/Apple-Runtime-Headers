@@ -20,15 +20,17 @@
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromOverlayToModelWithPageIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 
 @optional
-- (void)rotateLeft:(AKController *)arg1;
-- (void)rotateRight:(AKController *)arg1;
 - (NSIndexSet *)characterIndexesForQuadPoints:(NSArray *)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 - (NSArray *)quadPointsForCharacterIndexes:(NSIndexSet *)arg1 onPageAtIndex:(unsigned long long)arg2 forAnnotationController:(AKController *)arg3;
 - (void)setAllowsNativeRenderingOfHighlightableSelection:(_Bool)arg1 forAnnotationController:(AKController *)arg2;
 - (void)clearHighlightableSelectionForAnnotationController:(AKController *)arg1;
 - (NSIndexSet *)highlightableSelectionCharacterIndexesOnPageAtIndex:(unsigned long long)arg1 forAnnotationController:(AKController *)arg2;
+- (void)controller:(AKController *)arg1 performActionForMode:(unsigned long long)arg2 fromSender:(long long)arg3 withAttribute:(long long)arg4 onPageAtIndex:(unsigned long long)arg5;
 - (_Bool)hasHighlightableSelectionForAnnotationController:(AKController *)arg1;
+- (void)rotateLeft:(AKController *)arg1;
+- (void)rotateRight:(AKController *)arg1;
 - (NSArray *)controller:(AKController *)arg1 willSetToolbarItems:(NSArray *)arg2;
+- (void)controllerDidDismissPopover:(AKController *)arg1;
 - (void)controllerWillDismissSignatureManagerView:(AKController *)arg1;
 - (void)controllerWillShowSignatureManagerView:(AKController *)arg1;
 - (void)controllerWillDismissSignatureCaptureView:(AKController *)arg1;

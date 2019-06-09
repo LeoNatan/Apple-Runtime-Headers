@@ -6,22 +6,22 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <PhotosUICore/PXActionMenuDelegate-Protocol.h>
 #import <PhotosUICore/PXAssetsDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXCMMActionControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXCMMActionPerformerDelegate-Protocol.h>
 #import <PhotosUICore/PXCMMAssetsViewControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
+#import <PhotosUICore/PXPhotosDetailsActionMenuDelegate-Protocol.h>
 #import <PhotosUICore/PXSectionedDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXToastViewControllerDelegate-Protocol.h>
 #import <PhotosUICore/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSArray, NSProgress, NSString, PXActionMenuController, PXCMMAssetsProgressListener, PXCMMAssetsViewController, PXCMMSession, PXCMMSpecManager, PXOneUpPresentation, PXUpdater, UIActivityIndicatorView, UIBarButtonItem, UINavigationBar;
+@class NSArray, NSProgress, NSString, PXCMMAssetsViewController, PXCMMSession, PXCMMSpecManager, PXMomentShareStatusPresentation, PXOneUpPresentation, PXPhotoDetailsActionMenuController, PXUpdater, UIActivityIndicatorView, UIBarButtonItem, UINavigationBar;
 @protocol PXCMMActionControllerDelegate, PXCMMViewControllerDelegate;
 
-@interface PXCMMViewController : UIViewController <PXChangeObserver, PXCMMAssetsViewControllerDelegate, PXCMMActionControllerDelegate, PXActionMenuDelegate, UIPopoverPresentationControllerDelegate, PXSectionedDataSourceManagerObserver, PXAssetsDataSourceManagerObserver, PXToastViewControllerDelegate, PXCMMActionPerformerDelegate>
+@interface PXCMMViewController : UIViewController <PXChangeObserver, PXCMMAssetsViewControllerDelegate, PXCMMActionControllerDelegate, PXPhotosDetailsActionMenuDelegate, UIPopoverPresentationControllerDelegate, PXSectionedDataSourceManagerObserver, PXAssetsDataSourceManagerObserver, PXToastViewControllerDelegate, PXCMMActionPerformerDelegate>
 {
-    PXCMMAssetsProgressListener *_assetsProgressListener;
+    PXMomentShareStatusPresentation *_momentShareStatusPresentation;
     _Bool _hasStartedPreloadingTasks;
     _Bool _didIncrementNumberOfPresentedSendBacks;
     _Bool _showTitleInNavigationBar;
@@ -39,11 +39,11 @@
     UIActivityIndicatorView *_activityIndicatorView;
     UIBarButtonItem *_progressButton;
     UIBarButtonItem *_actionMenuButtonItem;
-    PXActionMenuController *_activeActionMenuController;
+    PXPhotoDetailsActionMenuController *_activeActionMenuController;
 }
 
 @property(nonatomic, getter=isLoadingPeopleSuggestions) _Bool loadingPeopleSuggestions; // @synthesize loadingPeopleSuggestions=_loadingPeopleSuggestions;
-@property(retain, nonatomic) PXActionMenuController *activeActionMenuController; // @synthesize activeActionMenuController=_activeActionMenuController;
+@property(retain, nonatomic) PXPhotoDetailsActionMenuController *activeActionMenuController; // @synthesize activeActionMenuController=_activeActionMenuController;
 @property(retain, nonatomic) UIBarButtonItem *actionMenuButtonItem; // @synthesize actionMenuButtonItem=_actionMenuButtonItem;
 @property(retain, nonatomic) UIBarButtonItem *progressButton; // @synthesize progressButton=_progressButton;
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
@@ -64,10 +64,10 @@
 - (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_playMovie;
+- (void)actionMenu:(id)arg1 assetCollectionActionPerformer:(id)arg2 playMovieForAssetCollection:(id)arg3;
 - (void)actionMenu:(id)arg1 actionPerformer:(id)arg2 didChangeState:(unsigned long long)arg3;
-- (_Bool)actionMenu:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)actionMenu:(id)arg1 presentViewController:(id)arg2;
+- (_Bool)actionMenu:(id)arg1 actionPerformer:(id)arg2 dismissViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (_Bool)actionMenu:(id)arg1 actionPerformer:(id)arg2 presentViewController:(id)arg3;
 - (void)_dismissViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_presentViewController:(id)arg1;
 - (id)completeMyMomentViewController:(id)arg1 performSendBackActionForSession:(id)arg2;

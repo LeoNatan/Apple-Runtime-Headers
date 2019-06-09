@@ -6,8 +6,12 @@
 
 #import <AppKit/NSImage.h>
 
+@class NSString, NSURL;
+
 @interface NSImage (IKAdditions)
 + (id)IKNSImageAdditionalPossibleExtensions;
++ (id)ikImageNamed:(id)arg1;
++ (id)ikImageNamed:(id)arg1;
 - (struct CGRect)ikFaceRect;
 - (id)ikDetectedFaces;
 - (id)ikSquareThumbnailOfSize:(double)arg1 scaleMode:(long long)arg2;
@@ -19,5 +23,15 @@
 - (id)IK_TIFFRepresentationWithCompressionFactor:(float)arg1;
 - (id)IK_PNGRepresentationWithCompressionFactor:(float)arg1;
 - (id)IK_JPEGRepresentationWithCompressionFactor:(float)arg1;
+- (id)IKIPPNGDataWithMaxSize:(double)arg1 compression:(double)arg2;
+- (id)IKIPJPEGDataWithMaxSize:(double)arg1 compression:(float)arg2;
+- (id)IKIPDataWithMaxSize:(double)arg1 type:(unsigned long long)arg2 compression:(double)arg3;
+- (id)IKIPImageWithMaxSize:(int)arg1;
+- (id)IKIPImageWithMaxSize:(int)arg1 withLeftPad:(int)arg2;
+- (void)IKIPDrawNicelyScaledInRect:(struct CGRect)arg1 inView:(id)arg2 operation:(unsigned long long)arg3 fraction:(float)arg4;
+- (void)IKIPDrawNicelyScaledInRect:(struct CGRect)arg1 operation:(unsigned long long)arg2 fraction:(float)arg3;
+- (struct CGSize)IKIPLargestRepSize;
+@property(retain, nonatomic) NSURL *ik_fullResolutionFileURL;
+@property(copy, nonatomic) NSString *ikProfilePictureAttributedImageName;
 @end
 

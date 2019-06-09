@@ -18,7 +18,7 @@
 }
 
 @property(retain, nonatomic) NSXPCConnection *adServingDaemonConnection; // @synthesize adServingDaemonConnection=_adServingDaemonConnection;
-@property(nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
 @property(retain, nonatomic) NSMutableArray *performWhenConnectedBlocks; // @synthesize performWhenConnectedBlocks=_performWhenConnectedBlocks;
 - (void)invalidate;
 - (void)_considerConnectingToAdServingDaemon;

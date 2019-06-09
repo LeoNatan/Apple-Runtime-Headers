@@ -15,12 +15,11 @@
     GEOCarInfo *_carInfo;
     _Bool _isConnected;
     struct {
-        unsigned int isConnected:1;
-    } _has;
+        unsigned int has_isConnected:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOCarInfo *carInfo; // @synthesize carInfo=_carInfo;
-@property(nonatomic) _Bool isConnected; // @synthesize isConnected=_isConnected;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,10 +28,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOCarInfo *carInfo;
 @property(readonly, nonatomic) _Bool hasCarInfo;
 @property(nonatomic) _Bool hasIsConnected;
+@property(nonatomic) _Bool isConnected;
 
 @end
 

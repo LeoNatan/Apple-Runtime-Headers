@@ -6,21 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class VCPRTLandmarkDetector;
+@class VCPCNNModelEspresso;
 
 @interface VCPCNNGazeAnalysis : NSObject
 {
-    VCPRTLandmarkDetector *_rtLandmarkDetector;
+    float *_inputData;
+    VCPCNNModelEspresso *_modelEspresso;
 }
 
-+ (id)analyzer;
++ (id)sharedModel:(id)arg1;
 - (void).cxx_destruct;
-- (int)cropAndRotateEyeImage:(struct __CVBuffer *)arg1 leftCornerX:(int)arg2 leftCornerY:(int)arg3 rightCornerX:(int)arg4 rightCornerY:(int)arg5;
 - (int)detectEyeOpennessForFace:(struct CGRect)arg1 inBuffer:(struct __CVBuffer *)arg2 eyeOpenness:(char *)arg3;
-- (int)planDestroy;
-- (int)planCreate;
-- (int)computeBlinkScore:(float *)arg1;
-- (float *)getInputBuffer;
+- (int)createInput:(float *)arg1 withBuffer:(struct __CVBuffer *)arg2 cnnInputHeight:(int)arg3 cnnInputWidth:(int)arg4 faceBounds:(struct CGRect)arg5;
+- (int)initWithImage:(float *)arg1 image:(struct __CVBuffer *)arg2;
+- (void)dealloc;
 - (id)init;
 
 @end

@@ -10,7 +10,7 @@
 
 @interface SCNPass : NSObject
 {
-    struct __C3DFXPass *_fxPass;
+    // Error parsing type: ^{__C3DFXPass={__CFRuntimeBase=IAI}^{__CFString}liB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}LL{?=^?^?^?^?^?^?^?^?^v}{?=[8{?=CCCb1b1b1b1b1b1}]{?=CCCb1b1b1b1b1b1}b3b1b1}{CGPoint=ff}[9f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}ii^{__CFDictionary}@?@?^{__CFDictionary}^v}, name: _fxPass
     SCNTechnique *_technique;
 }
 
@@ -20,7 +20,7 @@
 @property(copy, nonatomic) CDUnknownBlockType initializationHandler;
 - (void)invalidate;
 - (void)dealloc;
-- (id)initWithFXPass:(struct __C3DFXPass *)arg1 technique:(id)arg2;
+-     // Error parsing type: @16@0:4^{__C3DFXPass={__CFRuntimeBase=IAI}^{__CFString}liB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}LL{?=^?^?^?^?^?^?^?^?^v}{?=[8{?=CCCb1b1b1b1b1b1}]{?=CCCb1b1b1b1b1b1}b3b1b1}{CGPoint=ff}[9f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}ii^{__CFDictionary}@?@?^{__CFDictionary}^v}8@12, name: initWithFXPass:technique:
 
 @end
 

@@ -8,6 +8,11 @@
 
 @interface UIColor (SCNAdditions)
 + (id)scn_colorWithC3DColor:(const struct C3DColor4 *)arg1;
++ (id)color:(float)arg1:(float)arg2:(float)arg3:(float)arg4;
 - (struct C3DColor4)scn_C3DColorIgnoringColorSpace:(_Bool)arg1 success:(_Bool *)arg2;
+- (float)a;
+- (float)b;
+- (float)g;
+- (float)r;
 @end
 

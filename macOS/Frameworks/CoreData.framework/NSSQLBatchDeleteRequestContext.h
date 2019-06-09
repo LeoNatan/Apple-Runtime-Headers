@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *tempTableName; // @synthesize tempTableName=_tempTableName;
 @property(retain, nonatomic) NSArray *exernalDataReferenceStatements; // @synthesize exernalDataReferenceStatements=_externalDataReferenceTriggerStatements;
 @property(retain, nonatomic) NSArray *affectedObjectIDs; // @synthesize affectedObjectIDs=_deletedObjectIDs;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 @property(readonly, retain, nonatomic) NSArray *deleteStatements; // @synthesize deleteStatements=_deleteStatements;
 - (void)executePrologue;
 - (BOOL)isWritingRequest;

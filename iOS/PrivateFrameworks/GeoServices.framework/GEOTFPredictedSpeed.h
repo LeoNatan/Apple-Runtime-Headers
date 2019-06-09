@@ -14,13 +14,12 @@ __attribute__((visibility("hidden")))
     unsigned int _deltaMinutesInFuture;
     unsigned int _speed;
     struct {
-        unsigned int deltaMinutesInFuture:1;
-        unsigned int speed:1;
-    } _has;
+        unsigned int has_deltaMinutesInFuture:1;
+        unsigned int has_speed:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int speed; // @synthesize speed=_speed;
-@property(nonatomic) unsigned int deltaMinutesInFuture; // @synthesize deltaMinutesInFuture=_deltaMinutesInFuture;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -28,10 +27,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasSpeed;
+@property(nonatomic) unsigned int speed;
 @property(nonatomic) _Bool hasDeltaMinutesInFuture;
+@property(nonatomic) unsigned int deltaMinutesInFuture;
 
 @end
 

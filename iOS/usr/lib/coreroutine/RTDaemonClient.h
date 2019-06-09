@@ -6,36 +6,29 @@
 
 #import <objc/NSObject.h>
 
-#import <coreroutine/RTDaemonClientRegistrarActionProtocol-Protocol.h>
-#import <coreroutine/RTDaemonClientRegistrarApplicationPredictionProtocol-Protocol.h>
 #import <coreroutine/RTDaemonClientRegistrarScenarioTriggerProtocol-Protocol.h>
 #import <coreroutine/RTDaemonClientRegistrarVehicleEventProtocol-Protocol.h>
 #import <coreroutine/RTDaemonProtocol-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSSet, NSString, NSXPCConnection, RTAccountManager, RTActionManager, RTAssetManager, RTAuthorizationManager, RTDaemonClientRegistrarAction, RTDaemonClientRegistrarApplicationPrediction, RTDaemonClientRegistrarScenarioTrigger, RTDaemonClientRegistrarVehicleEvent, RTDeviceLocationPredictor, RTDiagnostics, RTEventAgentManager, RTEventModelProvider, RTFingerprintManager, RTLearnedLocationManager, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMetricManager, RTPredictedApplicationManager, RTPurgeManager, RTRouteManager, RTScenarioTriggerManager, RTVehicleLocationProvider, RTVisitManager, RTWiFiManager;
+@class NSMutableDictionary, NSSet, NSString, NSXPCConnection, RTAccountManager, RTAssetManager, RTAuthorizationManager, RTDaemonClientRegistrarScenarioTrigger, RTDaemonClientRegistrarVehicleEvent, RTDeviceLocationPredictor, RTDiagnostics, RTEventAgentManager, RTEventModelProvider, RTFingerprintManager, RTLearnedLocationManager, RTLocationManager, RTLocationStore, RTMapServiceManager, RTMetricManager, RTPlaceInferenceManager, RTPurgeManager, RTScenarioTriggerManager, RTVehicleLocationProvider, RTVisitManager, RTWiFiManager;
 @protocol OS_dispatch_queue, RTClientListenerProtocol;
 
-@interface RTDaemonClient : NSObject <RTDaemonClientRegistrarApplicationPredictionProtocol, RTDaemonClientRegistrarVehicleEventProtocol, RTDaemonClientRegistrarScenarioTriggerProtocol, RTDaemonClientRegistrarActionProtocol, RTDaemonProtocol>
+@interface RTDaemonClient : NSObject <RTDaemonClientRegistrarVehicleEventProtocol, RTDaemonClientRegistrarScenarioTriggerProtocol, RTDaemonProtocol>
 {
     _Bool _enabled;
     _Bool _supported;
     _Bool _monitorVisits;
     _Bool _leechVisits;
     _Bool _leechLowConfidenceVisits;
-    _Bool _monitorNextPredictedLocationsOfInterest;
     int _processIdentifier;
     NSXPCConnection *_xpcConnection;
     NSString *_restorationIdentifier;
     id <RTClientListenerProtocol> _clientManagerDelegate;
     NSMutableDictionary *_restorationData;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_pendingNextPredictedLocationsOfInterestInvocations;
-    RTDaemonClientRegistrarAction *_actionRegistrar;
-    RTDaemonClientRegistrarApplicationPrediction *_predictedApplicationRegistrar;
     RTDaemonClientRegistrarVehicleEvent *_vehicleEventRegistrar;
     RTDaemonClientRegistrarScenarioTrigger *_scenarioTriggerRegistrar;
     RTAccountManager *_accountManager;
-    RTActionManager *_actionManager;
     RTAssetManager *_assetManager;
     RTAuthorizationManager *_authorizationManager;
     RTDeviceLocationPredictor *_deviceLocationPredictor;
@@ -48,14 +41,14 @@
     RTLocationStore *_locationStore;
     RTMapServiceManager *_mapServiceManager;
     RTMetricManager *_metricManager;
-    RTPredictedApplicationManager *_predictedApplicationManager;
+    RTPlaceInferenceManager *_placeInferenceManager;
     RTPurgeManager *_purgeManager;
-    RTRouteManager *_routeManager;
     RTScenarioTriggerManager *_scenarioTriggerManager;
     RTVehicleLocationProvider *_vehicleLocationProvider;
     RTVisitManager *_visitManager;
     RTWiFiManager *_wifiManager;
     NSSet *_clientsAuthorizedForRestrictedSPIs;
+    NSSet *_systemExecutablesAuthorizedForRestrictedSPIs;
     NSString *_executablePath;
     NSString *_signingIdentifier;
     NSString *_bundleIdentifier;
@@ -65,14 +58,14 @@
 @property(copy, nonatomic) NSString *signingIdentifier; // @synthesize signingIdentifier=_signingIdentifier;
 @property(nonatomic) int processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(copy, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;
+@property(retain, nonatomic) NSSet *systemExecutablesAuthorizedForRestrictedSPIs; // @synthesize systemExecutablesAuthorizedForRestrictedSPIs=_systemExecutablesAuthorizedForRestrictedSPIs;
 @property(retain, nonatomic) NSSet *clientsAuthorizedForRestrictedSPIs; // @synthesize clientsAuthorizedForRestrictedSPIs=_clientsAuthorizedForRestrictedSPIs;
 @property(retain, nonatomic) RTWiFiManager *wifiManager; // @synthesize wifiManager=_wifiManager;
 @property(retain, nonatomic) RTVisitManager *visitManager; // @synthesize visitManager=_visitManager;
 @property(retain, nonatomic) RTVehicleLocationProvider *vehicleLocationProvider; // @synthesize vehicleLocationProvider=_vehicleLocationProvider;
 @property(retain, nonatomic) RTScenarioTriggerManager *scenarioTriggerManager; // @synthesize scenarioTriggerManager=_scenarioTriggerManager;
-@property(retain, nonatomic) RTRouteManager *routeManager; // @synthesize routeManager=_routeManager;
 @property(retain, nonatomic) RTPurgeManager *purgeManager; // @synthesize purgeManager=_purgeManager;
-@property(retain, nonatomic) RTPredictedApplicationManager *predictedApplicationManager; // @synthesize predictedApplicationManager=_predictedApplicationManager;
+@property(retain, nonatomic) RTPlaceInferenceManager *placeInferenceManager; // @synthesize placeInferenceManager=_placeInferenceManager;
 @property(retain, nonatomic) RTMetricManager *metricManager; // @synthesize metricManager=_metricManager;
 @property(retain, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
 @property(retain, nonatomic) RTLocationStore *locationStore; // @synthesize locationStore=_locationStore;
@@ -85,14 +78,9 @@
 @property(retain, nonatomic) RTDeviceLocationPredictor *deviceLocationPredictor; // @synthesize deviceLocationPredictor=_deviceLocationPredictor;
 @property(retain, nonatomic) RTAuthorizationManager *authorizationManager; // @synthesize authorizationManager=_authorizationManager;
 @property(retain, nonatomic) RTAssetManager *assetManager; // @synthesize assetManager=_assetManager;
-@property(retain, nonatomic) RTActionManager *actionManager; // @synthesize actionManager=_actionManager;
 @property(retain, nonatomic) RTAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(retain, nonatomic) RTDaemonClientRegistrarScenarioTrigger *scenarioTriggerRegistrar; // @synthesize scenarioTriggerRegistrar=_scenarioTriggerRegistrar;
 @property(retain, nonatomic) RTDaemonClientRegistrarVehicleEvent *vehicleEventRegistrar; // @synthesize vehicleEventRegistrar=_vehicleEventRegistrar;
-@property(retain, nonatomic) RTDaemonClientRegistrarApplicationPrediction *predictedApplicationRegistrar; // @synthesize predictedApplicationRegistrar=_predictedApplicationRegistrar;
-@property(retain, nonatomic) RTDaemonClientRegistrarAction *actionRegistrar; // @synthesize actionRegistrar=_actionRegistrar;
-@property(retain, nonatomic) NSMutableArray *pendingNextPredictedLocationsOfInterestInvocations; // @synthesize pendingNextPredictedLocationsOfInterestInvocations=_pendingNextPredictedLocationsOfInterestInvocations;
-@property(nonatomic) _Bool monitorNextPredictedLocationsOfInterest; // @synthesize monitorNextPredictedLocationsOfInterest=_monitorNextPredictedLocationsOfInterest;
 @property(nonatomic) _Bool leechLowConfidenceVisits; // @synthesize leechLowConfidenceVisits=_leechLowConfidenceVisits;
 @property(nonatomic) _Bool leechVisits; // @synthesize leechVisits=_leechVisits;
 @property(nonatomic) _Bool monitorVisits; // @synthesize monitorVisits=_monitorVisits;
@@ -104,9 +92,8 @@
 @property(copy, nonatomic) NSString *restorationIdentifier; // @synthesize restorationIdentifier=_restorationIdentifier;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+- (void)fetchStoredLocationsWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)_verifyClientUsingRestrictedSPIs:(id *)arg1;
-- (void)fetchAllRoutesForSettingsWithReply:(CDUnknownBlockType)arg1;
-- (void)sortRoutes:(id)arg1 toLocationOfInterestWithIdentifier:(id)arg2 fromLocation:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)userInteractionWithPredictedLocationOfInterest:(id)arg1 interaction:(unsigned long long)arg2 feedback:(id)arg3 geoMapItem:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)extendLifetimeOfVisitsWithIdentifiers:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)removeVisitWithIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
@@ -119,80 +106,62 @@
 - (void)addLocationOfInterestOfType:(long long)arg1 mapItemStorage:(id)arg2 customLabel:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)vehicleEventRegistrar:(id)arg1 didReceiveVehicleEvents:(id)arg2 error:(id)arg3;
 - (void)fetchAutomaticVehicleEventDetectionSupportedWithReply:(CDUnknownBlockType)arg1;
-- (void)stopMonitoringVehicleEvents;
-- (void)startMonitoringVehicleEvents;
+- (void)stopMonitoringVehicleEventsWithReply:(CDUnknownBlockType)arg1;
+- (void)startMonitoringVehicleEventsWithReply:(CDUnknownBlockType)arg1;
 - (void)_startMonitoringVehicleEvents;
-- (void)engageInVehicleEventWithIdentifier:(id)arg1;
-- (void)updateVehicleEventWithIdentifier:(id)arg1 location:(id)arg2;
-- (void)updateVehicleEventWithIdentifier:(id)arg1 geoMapItem:(id)arg2;
-- (void)updateVehicleEventWithIdentifier:(id)arg1 photo:(id)arg2;
-- (void)updateVehicleEventWithIdentifier:(id)arg1 notes:(id)arg2;
+- (void)engageInVehicleEventWithIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)updateVehicleEventWithIdentifier:(id)arg1 location:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)updateVehicleEventWithIdentifier:(id)arg1 geoMapItem:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)updateVehicleEventWithIdentifier:(id)arg1 photo:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)updateVehicleEventWithIdentifier:(id)arg1 notes:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)clearAllVehicleEventsWithReply:(CDUnknownBlockType)arg1;
 - (void)vehicleEventAtLocation:(id)arg1 notes:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)fetchLastVehicleEventsWithHandler:(CDUnknownBlockType)arg1;
-- (void)_onNextPredictedLocationsOfInterest:(id)arg1;
-- (void)stopMonitoringNextPredictedLocationsOfInterest;
-- (void)startMonitoringNextPredictedLocationsOfInterest;
-- (void)_startMonitoringNextPredictedLocationsOfInterest;
+- (void)fetchLastVehicleEventsWithReply:(CDUnknownBlockType)arg1;
 - (void)launchClient;
 - (void)restore;
 - (_Bool)hasReasonToOutliveClientConnection;
 - (id)_preflightClientConnection:(id)arg1 withEntitlements:(id)arg2;
-- (void)applicationPredictionRegistrar:(id)arg1 didReceivePredictedApplications:(id)arg2 error:(id)arg3;
-- (void)fetchPredictedApplicationsWithPredicate:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)fetchPredictedApplicationsAtLocation:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)fetchPredictedApplications:(CDUnknownBlockType)arg1;
-- (void)stopMonitoringForPredictedApplications;
-- (void)startMonitoringForPredictedApplicationsUsingPredicate:(id)arg1;
-- (void)_startMonitoringForPredictedApplicationsUsingPredicate:(id)arg1;
-- (void)fetchPredictedLocationsOfInterestBetweenStartDate:(id)arg1 endDate:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)fetchPredictedExitDatesFromLocation:(id)arg1 onDate:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)fetchPredictedLocationsOfInterestBetweenStartDate:(id)arg1 endDate:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)fetchPredictedExitDatesFromLocation:(id)arg1 onDate:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)scenarioTriggerRegistrar:(id)arg1 didReceiveScenarioTriggers:(id)arg2 error:(id)arg3;
 - (void)fetchMonitoredScenarioTriggerTypesWithReply:(CDUnknownBlockType)arg1;
-- (void)stopMonitoringScenarioTriggerOfType:(unsigned long long)arg1;
-- (void)startMonitoringScenarioTriggerOfType:(unsigned long long)arg1;
+- (void)stopMonitoringScenarioTriggerOfType:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)startMonitoringScenarioTriggerOfType:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)fetchTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)fetchLocationsOfInterestVisitedBetweenStartDate:(id)arg1 endDate:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)fetchLocationOfInterestWithIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fetchLocationOfInterestAtLocation:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)fetchLocationOfInterestWithIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)fetchLocationOfInterestAtLocation:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)shutdown;
 - (void)onRoutineEnabled:(id)arg1;
 - (void)fetchPathToDiagnosticFilesWithReply:(CDUnknownBlockType)arg1;
-- (void)onDeviceLocationPredictorNotification:(id)arg1;
+- (void)fetchStoredVisitsWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)onVisitManagerNotification:(id)arg1;
 - (void)_onVisitManagerNotification:(id)arg1;
-- (void)stopLeechingLowConfidenceVisits;
-- (void)startLeechingLowConfidenceVisits;
-- (void)stopLeechingVisits;
-- (void)startLeechingVisits;
-- (void)stopMonitoringVisits;
-- (void)startMonitoringVisits;
+- (void)stopLeechingLowConfidenceVisitsWithReply:(CDUnknownBlockType)arg1;
+- (void)startLeechingLowConfidenceVisitsWithReply:(CDUnknownBlockType)arg1;
+- (void)stopLeechingVisitsWithReply:(CDUnknownBlockType)arg1;
+- (void)startLeechingVisitsWithReply:(CDUnknownBlockType)arg1;
+- (void)stopMonitoringVisitsWithReply:(CDUnknownBlockType)arg1;
+- (void)startMonitoringVisitsWithReply:(CDUnknownBlockType)arg1;
 - (void)performBluePOIQueryLookingBack:(double)arg1 lookingAhead:(double)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)fetchCurrentPredictedLocationsOfInterestLookingBack:(double)arg1 lookingAhead:(double)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)fetchPredictedLocationsOfInterestOnDate:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fetchPredictedLocationsOfInterestAssociatedToTitle:(id)arg1 location:(id)arg2 calendarIdentifier:(id)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)fetchLocationsOfInterestAssociatedToIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fetchRoutineModeFromLocation:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fetchPredictedConditionsForAction:(id)arg1 dateInterval:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)provideFeedbackForAction:(id)arg1 engagementResult:(long long)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)actionRegistrar:(id)arg1 didReceiveActionConditions:(id)arg2 error:(id)arg3;
-- (void)stopMonitoringPredictedConditionsForAction:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)startMonitoringPredictedConditionsForAction:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)simulateApplicationPredictionWithBundleIdentifier:(id)arg1 reason:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)submitMetricWithIdentifier:(id)arg1 dictionary:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)fetchPredictedLocationsOfInterestOnDate:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)fetchPredictedLocationsOfInterestAssociatedToTitle:(id)arg1 location:(id)arg2 calendarIdentifier:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)fetchLocationsOfInterestAssociatedToIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)fetchRoutineModeFromLocation:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)updateCloudSyncProvisionedForAccount:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)fetchCloudSyncAuthorizationState:(CDUnknownBlockType)arg1;
+- (void)fetchCloudSyncAuthorizationStateWithReply:(CDUnknownBlockType)arg1;
 - (void)clearRoutineWithReply:(CDUnknownBlockType)arg1;
-- (void)setRoutineEnabled:(_Bool)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)setRoutineEnabled:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)fetchRoutineEnabledWithReply:(CDUnknownBlockType)arg1;
-- (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withReply:(CDUnknownBlockType)arg4;
+- (void)fetchPlaceInferencesWithOptions:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)fetchAllLocationsOfInterestForSettingsWithReply:(CDUnknownBlockType)arg1;
-- (void)fetchAllLocationsOfInterestWithReply:(CDUnknownBlockType)arg1;
-- (void)fetchLocationsOfInterestOfType:(long long)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fetchLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)fetchLocationsOfInterestOfType:(long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)fetchLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (_Bool)hasEntitlement:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (id)initWithQueue:(id)arg1 restorationData:(id)arg2 accountManager:(id)arg3 actionManager:(id)arg4 assetManager:(id)arg5 authorizationManager:(id)arg6 deviceLocationPredictor:(id)arg7 diagnostics:(id)arg8 eventAgentManager:(id)arg9 eventModelProvider:(id)arg10 fingerprintManager:(id)arg11 learnedLocationManager:(id)arg12 locationManager:(id)arg13 locationStore:(id)arg14 mapServiceManager:(id)arg15 metricManager:(id)arg16 predictedApplicationManager:(id)arg17 purgeManager:(id)arg18 routeManager:(id)arg19 scenarioTriggerManager:(id)arg20 vehicleLocationProvider:(id)arg21 visitManager:(id)arg22 wifiManager:(id)arg23;
+- (id)initWithQueue:(id)arg1 restorationData:(id)arg2 accountManager:(id)arg3 assetManager:(id)arg4 authorizationManager:(id)arg5 deviceLocationPredictor:(id)arg6 diagnostics:(id)arg7 eventAgentManager:(id)arg8 eventModelProvider:(id)arg9 fingerprintManager:(id)arg10 learnedLocationManager:(id)arg11 locationManager:(id)arg12 locationStore:(id)arg13 mapServiceManager:(id)arg14 metricManager:(id)arg15 placeInferenceManager:(id)arg16 purgeManager:(id)arg17 scenarioTriggerManager:(id)arg18 vehicleLocationProvider:(id)arg19 visitManager:(id)arg20 wifiManager:(id)arg21;
 - (id)init;
 
 // Remaining properties

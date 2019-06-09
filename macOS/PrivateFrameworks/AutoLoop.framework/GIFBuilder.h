@@ -8,7 +8,6 @@
 
 @class CIContext, NSDictionary;
 
-__attribute__((visibility("hidden")))
 @interface GIFBuilder : NSObject
 {
     CIContext *_ciCtx;

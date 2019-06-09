@@ -26,6 +26,7 @@
 - (id)attributesAtIndex:(unsigned long long)arg1 effectiveRange:(struct _NSRange *)arg2;
 - (id)string;
 - (id)debugDescription;
+- (id)description;
 - (id)_substringWithRange:(struct _NSRange)arg1;
 - (struct _NSRange)_stringRange;
 - (void)_evaluateIfNeeded;
@@ -36,6 +37,7 @@
 @property(readonly, nonatomic) NSLocale *locale;
 @property(nonatomic, getter=isSpeakable) _Bool speakable;
 - (void)addTag:(id)arg1 withToken:(id)arg2 range:(struct _NSRange)arg3;
+- (void)addReplacementTag:(id)arg1 withToken:(id)arg2 range:(struct _NSRange)arg3;
 - (_Bool)hasGlobalTag:(id)arg1;
 - (void)removeGlobalTag:(id)arg1;
 - (void)addGlobalTag:(id)arg1;

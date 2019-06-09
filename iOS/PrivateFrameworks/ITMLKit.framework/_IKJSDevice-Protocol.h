@@ -10,9 +10,11 @@
 @class NSNumber, NSString;
 
 @protocol _IKJSDevice <IKJSDevice, JSExport>
+@property(readonly, nonatomic) NSString *osBuildNumber;
 @property(readonly, nonatomic) _Bool runningAnInternalBuild;
 @property(readonly, nonatomic) NSNumber *pixelRatio;
 @property(readonly, nonatomic) NSString *vendorID;
+@property(readonly, nonatomic) _Bool isSeedBuild;
 @property(readonly, nonatomic) _Bool isInRetailDemoMode;
 @property(readonly, nonatomic) double lastNetworkChangedTime;
 @property(readonly, nonatomic) NSString *networkType;

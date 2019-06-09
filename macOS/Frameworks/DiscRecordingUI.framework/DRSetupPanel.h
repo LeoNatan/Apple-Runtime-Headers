@@ -10,14 +10,14 @@
 
 @interface DRSetupPanel : NSPanel
 {
-    NSButton *_ok;
-    NSButton *_cancel;
     NSButton *_eject;
-    NSTextField *_userMessage;
     NSImageView *_icon;
     id _deviceChooser;
-    id _sp_privateStorage;
     void *_reservedSetupPanel[2];
+    NSTextField *_userMessage;
+    id _sp_privateStorage;
+    NSButton *_ok;
+    NSButton *_cancel;
 }
 
 + (void)initialize;

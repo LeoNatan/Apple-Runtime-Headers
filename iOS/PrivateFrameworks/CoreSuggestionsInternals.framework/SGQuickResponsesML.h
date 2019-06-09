@@ -14,7 +14,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)trainQuickResponsesForMessage:(id)arg1 withConversationHistory:(id)arg2;
+- (void)trainQuickResponsesForMessageEntity:(id)arg1 withConversationHistory:(id)arg2;
+- (id)_dynamicLabelContentForEntity:(id)arg1 reply:(id)arg2;
 - (id)init;
 - (id)initWithTraining:(id)arg1;
 

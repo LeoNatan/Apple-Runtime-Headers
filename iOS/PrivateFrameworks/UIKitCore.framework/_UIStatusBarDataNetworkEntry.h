@@ -8,10 +8,12 @@
 
 @interface _UIStatusBarDataNetworkEntry : _UIStatusBarDataIntegerEntry
 {
+    _Bool _lowDataModeActive;
     long long _status;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool lowDataModeActive; // @synthesize lowDataModeActive=_lowDataModeActive;
 @property(nonatomic) long long status; // @synthesize status=_status;
 - (id)_ui_descriptionBuilder;
 - (_Bool)isEqual:(id)arg1;

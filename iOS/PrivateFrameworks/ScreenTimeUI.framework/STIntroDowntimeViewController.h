@@ -4,23 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ScreenTimeUI/STIntroSplashViewController.h>
+#import <UIKit/UITableViewController.h>
 
-#import <ScreenTimeUI/UITableViewDataSource-Protocol.h>
-#import <ScreenTimeUI/UITableViewDelegate-Protocol.h>
+@class NSLayoutConstraint, STDeviceBedtime;
 
-@class NSString, STDeviceBedtime, UITableView;
-
-@interface STIntroDowntimeViewController : STIntroSplashViewController <UITableViewDataSource, UITableViewDelegate>
+__attribute__((visibility("hidden")))
+@interface STIntroDowntimeViewController : UITableViewController
 {
-    UITableView *_tableView;
-    unsigned long long _datePickerVisibility;
     STDeviceBedtime *_bedtimeModel;
+    long long _datePickerVisibility;
+    NSLayoutConstraint *_heightConstraint;
 }
 
+@property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
+@property long long datePickerVisibility; // @synthesize datePickerVisibility=_datePickerVisibility;
 @property(retain) STDeviceBedtime *bedtimeModel; // @synthesize bedtimeModel=_bedtimeModel;
-@property unsigned long long datePickerVisibility; // @synthesize datePickerVisibility=_datePickerVisibility;
-@property(retain) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -28,19 +26,13 @@
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)stringForDateComponents:(id)arg1;
-- (void)datePickerChanged:(id)arg1;
+- (void)_datePickerChanged:(id)arg1;
 - (long long)tableRowForDatePicker;
-- (unsigned long long)tableRowForEndLabelRow;
-- (unsigned long long)tableRowForStartLabelRow;
+- (long long)tableRowForEndLabelRow;
+- (long long)tableRowForStartLabelRow;
 - (void)viewDidLayoutSubviews;
-- (void)viewDidAppear:(_Bool)arg1;
+- (void)updateViewConstraints;
 - (void)viewDidLoad;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

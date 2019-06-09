@@ -25,6 +25,7 @@
     CDUnknownFunctionPointerType _drawRectSubIMP;
     BOOL _subClassOverridesDrawRect;
     BOOL _deviceReset;
+    BOOL _doesNotifyOnRecommendedSizeUpdate;
     id <MTLTexture> _depthStencilTexture;
     id <MTLTexture> _multisampleColorTexture;
     BOOL _framebufferOnly;
@@ -62,6 +63,7 @@
     CDStruct_3ead2808 _clearColor;
 }
 
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (Class)layerClass;
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(nonatomic) struct CGSize drawableSize; // @synthesize drawableSize=_drawableSize;
@@ -76,6 +78,7 @@
 @property(retain, nonatomic) id <MTLDevice> device; // @synthesize device=_device;
 @property(nonatomic) __weak id <MTKViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (struct CGSize)convertSizeToBacking:(struct CGSize)arg1;
 - (struct CGSize)convertSizeFromBacking:(struct CGSize)arg1;
 - (struct CGPoint)convertPointToBacking:(struct CGPoint)arg1;
@@ -87,6 +90,8 @@
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)_resizeMetalLayerDrawable;
 - (void)_resizeDrawable;
+@property(readonly) id <MTLDevice> preferredDevice;
+@property(readonly, nonatomic) struct CGSize preferredDrawableSize;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
 - (void)displayLayer:(id)arg1;
 - (void)viewDidMoveToWindow;
@@ -117,6 +122,8 @@
 - (void)setColorPixelFormat:(unsigned long long)arg1 atIndex:(unsigned long long)arg2;
 - (void)_dumpFrameImageWithFilename:(id)arg1;
 - (void)_dumpFramerate:(double)arg1 withFilename:(id)arg2;
+- (unsigned long long)drawNumber;
+- (double)startTime;
 - (BOOL)exportToTargaAtLocation:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3 size:(unsigned long long)arg4 bytes:(void *)arg5;
 - (void)getEnvironmentSettings;
 - (void)__initCommon;

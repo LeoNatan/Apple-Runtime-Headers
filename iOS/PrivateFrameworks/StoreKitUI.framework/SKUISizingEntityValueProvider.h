@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUISizingEntityValueProvider : NSObject <IKEntityValueProviding>
 {
     NSMutableDictionary *_tallestValues;

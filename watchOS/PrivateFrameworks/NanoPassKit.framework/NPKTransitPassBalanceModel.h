@@ -27,6 +27,7 @@
 - (id)_backOfThePassBalanceFieldsWithBalancesByID:(id)arg1;
 - (id)_primaryDisplayableBalanceFieldWithBalancesByID:(id)arg1;
 - (void)_updateTransitBalanceFields;
+- (_Bool)isEqual:(id)arg1;
 - (id)initWithPass:(id)arg1;
 
 @end

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)relativePathForPath:(id)arg1 currentPath:(id)arg2;
+- (void).cxx_destruct;
 - (void)writeContentTypesToStream:(id)arg1;
 - (_Bool)isLastEntryContentType:(id)arg1;
 - (_Bool)containsContentType:(id)arg1 withKey:(id)arg2;
@@ -26,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (id)pathForContentType:(id)arg1;
 - (id)pathForKey:(id)arg1;
 - (id)addContentTypeForKey:(id)arg1 contentType:(id)arg2 path:(id)arg3;
-- (void)dealloc;
 - (id)init;
 - (id)uniquePathForPath:(id)arg1;
 - (void)addContentTypeForContentType:(id)arg1 extension:(id)arg2;

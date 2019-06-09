@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)startDateForRecurrence;
 - (id)bestDisplayAlarm;
+- (_Bool)_reset;
 - (_Bool)commit:(id *)arg1;
 - (id)_generateNewUniqueID;
 - (_Bool)validate:(id *)arg1;
@@ -56,6 +57,7 @@
 - (id)externalURI;
 - (id)reminderIdentifier;
 - (id)initWithPersistentObject:(id)arg1;
+- (void)forceUpdateFrozenCalendar:(id)arg1;
 
 // Remaining properties
 @property(nonatomic) unsigned int priority; // @dynamic priority;

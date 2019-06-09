@@ -16,9 +16,11 @@
 {
     struct {
         unsigned int continueRunning:1;
+        unsigned int requestsIntentExecution:1;
         unsigned int waitingForResume:1;
     } _has;
     _Bool _continueRunning;
+    _Bool _requestsIntentExecution;
     _Bool _waitingForResume;
     NSArray *_steps;
     _INPBArchivedObject *_underlyingIntent;
@@ -26,18 +28,22 @@
     NSString *_utterance;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)stepType;
 @property(nonatomic) _Bool waitingForResume; // @synthesize waitingForResume=_waitingForResume;
 @property(copy, nonatomic) NSString *utterance; // @synthesize utterance=_utterance;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntentResponse; // @synthesize underlyingIntentResponse=_underlyingIntentResponse;
 @property(retain, nonatomic) _INPBArchivedObject *underlyingIntent; // @synthesize underlyingIntent=_underlyingIntent;
 @property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
+@property(nonatomic) _Bool requestsIntentExecution; // @synthesize requestsIntentExecution=_requestsIntentExecution;
 @property(nonatomic) _Bool continueRunning; // @synthesize continueRunning=_continueRunning;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasWaitingForResume;
@@ -48,6 +54,7 @@
 @property(readonly, nonatomic) unsigned long long stepsCount;
 - (void)addStep:(id)arg1;
 - (void)clearSteps;
+@property(nonatomic) _Bool hasRequestsIntentExecution;
 @property(nonatomic) _Bool hasContinueRunning;
 
 // Remaining properties

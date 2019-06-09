@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *inputScale; // @synthesize inputScale;
 @property(retain, nonatomic) NSNumber *inputDither; // @synthesize inputDither;
 - (id)outputImage;
-- (id)kernel;
 
 @end
 

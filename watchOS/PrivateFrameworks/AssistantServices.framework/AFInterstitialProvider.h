@@ -24,7 +24,7 @@
 - (void)_performNextAction;
 - (void)_invalidate;
 - (void)invalidate;
-- (id)initWithStyle:(int)arg1 recordRoute:(id)arg2 isVoiceTrigger:(_Bool)arg3 isDucking:(_Bool)arg4 isTwoShot:(_Bool)arg5 context:(id)arg6 delegate:(id)arg7;
+- (id)initWithStyle:(int)arg1 recordRoute:(id)arg2 isVoiceTrigger:(_Bool)arg3 isDucking:(_Bool)arg4 isTwoShot:(_Bool)arg5 speechEndHostTime:(unsigned long long)arg6 context:(id)arg7 delegate:(id)arg8;
 - (void)dealloc;
 
 // Remaining properties

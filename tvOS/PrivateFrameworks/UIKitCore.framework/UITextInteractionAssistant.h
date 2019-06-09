@@ -29,10 +29,11 @@
     long long _previousRepeatedGranularity;
     UITextRange *_stashedTextRange;
     _Bool _didUseStashedRange;
+    _Bool _expectingCommit;
     _Bool _externalTextInput;
     _Bool _suppressSystemUI;
     UITextInteraction *_interactions;
-    long long _textInteractionSet;
+    long long _textInteractionMode;
     UITextInteraction *_externalInteractions;
 }
 
@@ -49,7 +50,11 @@
 - (_Bool)hasReplacements;
 - (void)scheduleReplacementsForRange:(id)arg1 withOptions:(unsigned long long)arg2;
 - (id)generatorForRange:(id)arg1 withOptions:(unsigned long long)arg2;
+- (void)scheduleDictationReplacementsForMultilingualAlternatives:(id)arg1 range:(id)arg2;
 - (void)scheduleDictationReplacementsForAlternatives:(id)arg1 range:(id)arg2;
+- (_Bool)handleMultilingualAlternativeWithString:(id)arg1 range:(id)arg2;
+- (_Bool)showMultilingualDictationReplacementWithRange:(id)arg1;
+- (id)attributedTextInRange:(id)arg1;
 - (id)rangeForTextReplacement:(id)arg1;
 - (void)scheduleChineseTransliteration;
 - (void)scheduleReplacementsWithOptions:(unsigned long long)arg1;
@@ -60,8 +65,10 @@
 - (void)cancelAutoscroll;
 - (void)startAutoscroll:(struct CGPoint)arg1;
 - (void)endFloatingCursor;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
+- (void)willBeginFloatingCursor:(_Bool)arg1;
 - (void)didEndSelectionInteraction;
 - (void)willBeginSelectionInteraction;
 - (_Bool)didUseStashedSelection;
@@ -73,7 +80,7 @@
 - (void)rangeSelectionCanceled;
 - (void)rangeSelectionEnded:(struct CGPoint)arg1;
 - (void)rangeSelectionStarted:(struct CGPoint)arg1;
-- (void)selectionAnimationDidStop:(id)arg1 finished:(id)arg2;
+- (void)selectionAnimationDidStop;
 - (void)updateWithMagnifierTerminalPoint:(_Bool)arg1;
 - (void)updateSelectionWithPoint:(struct CGPoint)arg1;
 - (void)notifyKeyboardSelectionChanged;
@@ -88,7 +95,7 @@
 - (void)setSelectionWithPoint:(struct CGPoint)arg1;
 - (void)rangedMagnifierWithState:(long long)arg1 atPoint:(struct CGPoint)arg2;
 - (void)loupeMagnifierWithState:(long long)arg1 atPoint:(struct CGPoint)arg2;
-- (void)loupeGestureWithState:(long long)arg1 atGesturePoint:(CDUnknownBlockType)arg2 shouldCancel:(_Bool *)arg3;
+- (void)loupeGestureWithState:(long long)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(long long)arg5 shouldCancel:(_Bool *)arg6;
 @property(readonly, nonatomic) _Bool willHandoffLoupeMagnifier;
 - (void)resetWillHandoffLoupeMagnifier;
 - (void)setWillHandoffLoupeMagnifier;
@@ -118,6 +125,7 @@
 - (_Bool)isValid;
 - (void)activate;
 - (void)invalidate;
+@property(nonatomic) _Bool expectingCommit;
 @property(readonly, nonatomic) _Bool externalTextInput;
 @property(nonatomic) struct CGPoint autoscrollUntransformedExtentPoint;
 @property(nonatomic) _Bool autoscrolled;
@@ -142,7 +150,7 @@
 - (id)_asText;
 @property(nonatomic) _Bool needsGestureUpdate;
 - (void)dealloc;
-- (id)initWithView:(id)arg1 textInteractionSet:(long long)arg2;
+- (id)initWithView:(id)arg1 textInteractionMode:(long long)arg2;
 - (id)initWithView:(id)arg1;
 
 // Remaining properties

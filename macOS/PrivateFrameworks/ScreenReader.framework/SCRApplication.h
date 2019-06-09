@@ -6,7 +6,7 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL, SCRBrailleLineManager, SCRCTargetSelectorTimer, SCRCThreadKey, SCREvent, SCRMenu, SCROutputSharedFocusManager, SCRUIElement, SCRVisionEngine;
+@class NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL, SCRCTargetSelectorTimer, SCRCThreadKey, SCREvent, SCRMenu, SCROutputSharedFocusManager, SCRUIElement, SCRVisionEngine;
 @protocol SCRApplicationDirectChildProtocol;
 
 __attribute__((visibility("hidden")))
@@ -23,11 +23,7 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *_uiElementToUIElementIDDict;
     struct __CFDictionary *_uiElementIDToCachedUIElementDict;
     unsigned int _uiElementIDCounter;
-    SCRUIElement *_deepKeyboardChildUIElement;
-    SCRMenu *_menuBar;
     SCRMenu *_extrasMenuBar;
-    SCRMenu *_focusedMenu;
-    NSMutableArray *_menuStack;
     NSMutableArray *_keyboardSynchInProgressArray;
     double _ignoreNextVOCTrackUntilTime;
     unsigned short _keyboardFocusChangeCount;
@@ -38,23 +34,15 @@ __attribute__((visibility("hidden")))
         unsigned int count;
         double interval;
     } _connectionRetry;
-    int _imageMappingLevel;
-    SCRUIElement *_previousElementUnderVOCursor;
-    SCRElement<SCRApplicationDirectChildProtocol> *_previousFocusedChild;
-    SCREvent *_currentEvent;
-    NSString *_currentTimeMachineDate;
+    long long _imageMappingLevel;
     NSString *_currentTimelineDescription;
-    NSMutableDictionary *_hotSpotElements;
-    NSMutableDictionary *_hotSpotHash;
     NSMutableSet *_windowSpotElements;
     SCRCTargetSelectorTimer *_dispatchFocusTimer;
     NSMutableDictionary *_appTrackedElements;
     SCRUIElement *_previousUIElementBeforeJump;
-    SCRBrailleLineManager *_brailleLineManager;
     struct CGSize _gestureMinElementSize;
     double _gestureMinEmptyDistance;
     SCRElement *_gestureElement;
-    SCRUIElement *_uiElementTriggeringAlternateUI;
     SCROutputSharedFocusManager *_sharedFocusManager;
     double _lastWebReloadTime;
     struct __sraFlags {
@@ -73,7 +61,12 @@ __attribute__((visibility("hidden")))
         char wasPreviousUIElementInteractingBeforeJump;
     } _sraFlags;
     struct os_unfair_lock_s _uiElementLock;
+    BOOL _isXcodeApplication;
+    SCREvent *_currentEvent;
+    SCRUIElement *_previousElementUnderVOCursor;
+    SCRUIElement *_deepKeyboardChildUIElement;
     double _applicationCreationTime;
+    SCRMenu *_menuBar;
     SCRElement *_alternateUITriggerElement;
     NSMutableSet *_searchHashSet;
     SCRCTargetSelectorTimer *__busySignalTimer;
@@ -82,6 +75,13 @@ __attribute__((visibility("hidden")))
     SCRCThreadKey *_threadKey;
     SCRVisionEngine *__visionEngine;
     double __lastAutoCorrectionTime;
+    NSString *__currentTimeMachineDate;
+    NSMutableDictionary *__hotSpotElements;
+    NSMutableDictionary *__hotSpotHash;
+    NSMutableArray *__menuStack;
+    SCRElement<SCRApplicationDirectChildProtocol> *__previousFocusedChild;
+    SCRUIElement *__uiElementTriggeringAlternateUI;
+    SCRMenu *_focusedMenu;
     struct CGRect __lastFocusedElementFrame;
 }
 
@@ -89,6 +89,13 @@ __attribute__((visibility("hidden")))
 + (id)applicationWithPSN:(struct ProcessSerialNumber)arg1;
 + (void)initialize;
 + (id)contentChooserSerialQueue;
+@property(retain, nonatomic) SCRMenu *focusedMenu; // @synthesize focusedMenu=_focusedMenu;
+@property(retain, nonatomic) SCRUIElement *_uiElementTriggeringAlternateUI; // @synthesize _uiElementTriggeringAlternateUI=__uiElementTriggeringAlternateUI;
+@property(retain, nonatomic) SCRElement<SCRApplicationDirectChildProtocol> *_previousFocusedChild; // @synthesize _previousFocusedChild=__previousFocusedChild;
+@property(retain, nonatomic) NSMutableArray *_menuStack; // @synthesize _menuStack=__menuStack;
+@property(retain, nonatomic) NSMutableDictionary *_hotSpotHash; // @synthesize _hotSpotHash=__hotSpotHash;
+@property(retain, nonatomic) NSMutableDictionary *_hotSpotElements; // @synthesize _hotSpotElements=__hotSpotElements;
+@property(copy, nonatomic) NSString *_currentTimeMachineDate; // @synthesize _currentTimeMachineDate=__currentTimeMachineDate;
 @property(nonatomic, setter=_setLastAutoCorrectionTime:) double _lastAutoCorrectionTime; // @synthesize _lastAutoCorrectionTime=__lastAutoCorrectionTime;
 @property(retain, nonatomic, setter=_setVisionEngine:) SCRVisionEngine *_visionEngine; // @synthesize _visionEngine=__visionEngine;
 @property(retain, nonatomic, setter=_setThreadKey:) SCRCThreadKey *threadKey; // @synthesize threadKey=_threadKey;
@@ -98,10 +105,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setBusySignalTimer:) SCRCTargetSelectorTimer *_busySignalTimer; // @synthesize _busySignalTimer=__busySignalTimer;
 @property(retain, nonatomic) NSMutableSet *searchHashSet; // @synthesize searchHashSet=_searchHashSet;
 @property(retain, nonatomic) SCRElement *alternateUITriggerElement; // @synthesize alternateUITriggerElement=_alternateUITriggerElement;
+@property(retain, nonatomic) SCRMenu *menuBar; // @synthesize menuBar=_menuBar;
 @property(readonly, nonatomic) double applicationCreationTime; // @synthesize applicationCreationTime=_applicationCreationTime;
+@property(readonly, nonatomic) BOOL isXcodeApplication; // @synthesize isXcodeApplication=_isXcodeApplication;
+@property(retain, nonatomic) SCRUIElement *deepKeyboardChildUIElement; // @synthesize deepKeyboardChildUIElement=_deepKeyboardChildUIElement;
+@property(retain, nonatomic) SCRUIElement *previousElementUnderVOCursor; // @synthesize previousElementUnderVOCursor=_previousElementUnderVOCursor;
+@property(retain, nonatomic) SCREvent *currentEvent; // @synthesize currentEvent=_currentEvent;
 @property(retain, nonatomic) SCRUIElement *previousUIElementBeforeJump; // @synthesize previousUIElementBeforeJump=_previousUIElementBeforeJump;
 @property(nonatomic) double gestureMinEmptyDistance; // @synthesize gestureMinEmptyDistance=_gestureMinEmptyDistance;
 @property(nonatomic) struct CGSize gestureMinElementSize; // @synthesize gestureMinElementSize=_gestureMinElementSize;
+- (void).cxx_destruct;
 - (id)_navigationPreviewSpotGuideItemsForGuide:(id)arg1;
 - (BOOL)handleRotorWindowSpotMoveInDirection:(long long)arg1 request:(id)arg2;
 - (id)_spotUIElementForElementHash:(id)arg1 frame:(struct CGRect)arg2 role:(id)arg3 title:(id)arg4 rebuild:(BOOL)arg5;
@@ -123,7 +136,6 @@ __attribute__((visibility("hidden")))
 - (void)addWindowSpot:(id)arg1;
 - (void)_reloadWindowSpots;
 - (id)_persistentWindowSpots;
-- (void)_releaseWindowSpots;
 - (void)_removeWindowSpotElements;
 - (void)_addWindowSpotElements:(id)arg1;
 - (void)_setWindowSpotElements:(id)arg1;
@@ -161,13 +173,17 @@ __attribute__((visibility("hidden")))
 - (id)dateInfoForCurrentTimeMachineWindow;
 - (void)terminateApplication;
 - (id)configurationValueForKeyPath:(id)arg1;
-- (int)imageMappingLevel;
+- (long long)imageMappingLevel;
 - (void)_setImageMappingLevel:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)persistentObjectForKey:(id)arg1;
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2;
 - (void)removePersistentObjectForKey:(id)arg1;
 - (void)handleBrailleRoutingEvent:(id)arg1 request:(id)arg2;
+- (BOOL)_handleRoutingMovesWithOffset:(long long)arg1 uiElement:(id)arg2 request:(id)arg3;
+- (void)_brailleRoutingMoveToElement:(id)arg1;
+- (BOOL)_handleBrailleRoutingWrapsWithOffset:(long long)arg1 uiElement:(id)arg2 request:(id)arg3;
+- (BOOL)_performActionFromBrailleRoutingEventWithIndex:(id)arg1 uiElement:(id)arg2 request:(id)arg3;
 - (unsigned long long)_getNextUIElementID;
 - (BOOL)canInitiallyFocusOnRole:(id)arg1;
 - (void)highlightWithScrolling:(BOOL)arg1;
@@ -182,7 +198,6 @@ __attribute__((visibility("hidden")))
 - (void)dispatchOutputFocusedWindowDescriptionIfUnchanged;
 - (void)_updatePreviousFocusedChild;
 - (void)dispatchUpdatePreviousFocusedChild;
-- (void)_setPreviousFocusedChild:(id)arg1;
 - (void)dispatchCancelDragOperation:(struct CGPoint)arg1;
 - (void)apt_dispatchCancelDragOperation:(id)arg1;
 - (void)dispatchCloseMenu;
@@ -209,13 +224,12 @@ __attribute__((visibility("hidden")))
 - (int)pid;
 - (id)description;
 - (id)focusedItemForMouseSynching;
-- (id)focusedMenu;
 - (id)applicationFunctionRows;
 - (id)applicationMenuExtraItems;
 - (void)_setFocusedMenu:(id)arg1;
-- (id)menuBar;
 - (void)_setFocusedChild:(id)arg1 outputRequest:(id)arg2 event:(id)arg3;
 - (void)_moveToElement:(id)arg1 withEvent:(id)arg2;
+- (void)_sendBrailleAlertWithString:(id)arg1;
 - (BOOL)handleTaggedOperationWithEvent:(id)arg1 request:(id)arg2;
 - (void)_addNoWindowAnnouncementToRequest:(id)arg1;
 - (BOOL)_handleSynchMouseToVirtualFocusEvent:(id)arg1 request:(id)arg2;
@@ -236,15 +250,12 @@ __attribute__((visibility("hidden")))
 - (void)_resetCursorTrackingStateIfNecessary:(id)arg1;
 - (void)_processEvent:(id)arg1 withRequest:(id)arg2;
 - (void)_processEvent:(id)arg1;
-- (id)currentEvent;
 - (void)echoCurrentSelectionWithQueueID:(id)arg1 interruptsRequests:(BOOL)arg2 excludingIdentifiers:(id)arg3;
 - (void)dispatchHandleStickyMouse;
 - (void)_handleStickyMouse;
 - (void)_setVirtualFocusToUIElement:(id)arg1 speakElement:(id)arg2 speakCommand:(id)arg3;
 - (void)dispatchSetVirtualFocusToUIElement:(id)arg1 speakElement:(BOOL)arg2 speakCommand:(BOOL)arg3;
 - (void)setFocusedChild:(id)arg1;
-- (id)previousElementUnderVOCursor;
-- (void)setPreviousElementUnderVOCursor:(id)arg1;
 - (void)_setVirtualFocusToKeyboardFocusSpeakOutput:(BOOL)arg1 autoDrillIntoContainers:(BOOL)arg2;
 - (void)_setVirtualFocusToKeyboardFocus;
 - (BOOL)shouldHighlight;
@@ -256,14 +267,12 @@ __attribute__((visibility("hidden")))
 - (id)_trackMenuBarGestureEvent:(id)arg1 request:(id)arg2;
 - (BOOL)trackMenuBarGestureEvent:(id)arg1 request:(id)arg2;
 @property(retain, nonatomic) SCRElement *gestureElement; // @dynamic gestureElement;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (id)brailleLineManager;
+- (void)setBrailleLineWithFocusedElement:(id)arg1 forceRebuild:(BOOL)arg2;
 - (void)speakDFRElement:(id)arg1;
 - (id)brailleCategoryOrderArray;
 - (id)categoryOrderArray;
 - (void)addItemTypeToRequest:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (void)addItemNameToRequest:(id)arg1;
 - (id)fullNameDescription;
 - (BOOL)isLiveRegionEnabled:(id)arg1 webArea:(id)arg2;
@@ -292,15 +301,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)isHotSpotValid:(id)arg1;
 - (id)_isHotSpotValid:(id)arg1;
 - (void)_releaseHotSpots;
-- (id)_hotSpotHash;
-- (id)_hotSpotElements;
 - (id)_buildGuideType:(id)arg1 withTitle:(id)arg2 isApplicationFocused:(id)arg3;
-- (void)buildGuide:(id)arg1 forType:(int)arg2 usedKeys:(id)arg3;
-- (void)dispatchBuildGuide:(id)arg1 forType:(int)arg2 isApplicationFocused:(BOOL)arg3 wait:(double)arg4;
+- (void)buildGuide:(id)arg1 forType:(long long)arg2 usedKeys:(id)arg3;
+- (void)dispatchBuildGuide:(id)arg1 forType:(long long)arg2 isApplicationFocused:(BOOL)arg3 wait:(double)arg4;
 - (void)_buildWindowGuide:(id)arg1 isApplicationFocused:(BOOL)arg2;
 - (id)newWindowsForGuideWithAppFocused:(BOOL)arg1;
 - (id)children;
-- (void)_buildPreferencesGuide:(id)arg1;
 - (void)setWasPreviousUIElementInteractingBeforeJump:(BOOL)arg1;
 - (BOOL)wasPreviousUIElementInteractingBeforeJump;
 - (BOOL)_isElementInMenuChain:(id)arg1;
@@ -310,7 +316,6 @@ __attribute__((visibility("hidden")))
 - (void)_setKeyEchoEnabled:(id)arg1;
 - (BOOL)isInvalid;
 - (void)_setIsInvalid:(BOOL)arg1;
-- (BOOL)shouldUpdateViewFinderForWindowChange;
 - (id)focusedElementForKBHelp;
 - (id)_focusedElementForKBHelp;
 - (id)deepFocusedChild;
@@ -321,7 +326,7 @@ __attribute__((visibility("hidden")))
 - (id)_rootUIElementForElement:(id)arg1;
 - (void)dispatchEndDnDWithStatus:(id)arg1;
 - (void)_endDnDWithStatus:(id)arg1;
-- (void)dragToHotSpot:(id)arg1 position:(int)arg2;
+- (void)dragToHotSpot:(id)arg1 position:(long long)arg2;
 - (void)_dropOnHotSpot:(id)arg1 position:(id)arg2;
 - (void)dispatchOpenDnDGuide;
 - (void)_openDnDGuide;
@@ -347,7 +352,7 @@ __attribute__((visibility("hidden")))
 - (void)_focusOntoInlineSession:(id)arg1;
 - (id)findNearestWebArea;
 - (void)_updateVOCursorAfterReloadOfWebArea:(id)arg1;
-- (id)_moveIntoWebArea:(id)arg1 options:(int *)arg2 request:(id)arg3;
+- (id)_moveIntoWebArea:(id)arg1 options:(unsigned long long *)arg2 request:(id)arg3;
 - (void)_webAreaWasLoaded:(id)arg1;
 - (void)_resetVOCursorAfterWebLoad:(id)arg1;
 - (BOOL)_moveIntoWebArea:(id)arg1 uiElement:(id)arg2;
@@ -391,7 +396,7 @@ __attribute__((visibility("hidden")))
 - (void)_elementWasDestroyed:(id)arg1;
 - (id)_addUIElement:(id)arg1;
 - (void)_elementWasCreated:(id)arg1;
-- (void)_speakAutocorrection:(id)arg1 type:(int)arg2;
+- (void)_speakAutocorrection:(id)arg1 type:(long long)arg2;
 - (void)_handlePopupItemSelectionIndex:(unsigned long long)arg1 request:(id)arg2;
 - (id)currentPopupItems;
 - (id)currentPopupItem;
@@ -416,7 +421,7 @@ __attribute__((visibility("hidden")))
 - (void)_autocorrectionReversionSelectionChanged:(id)arg1;
 - (void)_autocorrectionSelectionChanged:(id)arg1;
 - (id)trackedElementForUIElement:(id)arg1;
-- (void)_speakAutocorrectionPopupListSelection:(id)arg1 type:(int)arg2 request:(id)arg3;
+- (void)_speakAutocorrectionPopupListSelection:(id)arg1 type:(long long)arg2 request:(id)arg3;
 - (void)_updateAutocorrectionSelection:(id)arg1;
 - (void)_updateActivePopovers;
 - (void)elementWasDestroyed:(id)arg1;
@@ -424,7 +429,7 @@ __attribute__((visibility("hidden")))
 - (void)_drawerWasDestroyed:(id)arg1;
 - (void)_drawerWasCreated:(id)arg1;
 - (void)_clearSheetBit;
-- (void)_syncKeyboardChild:(id)arg1 withVirtualChild:(id)arg2 forceVOCursorInTable:(BOOL)arg3 disableTypeEchoInTable:(char *)arg4 request:(id)arg5;
+- (void)_syncKeyboardChild:(id)arg1 withVirtualChild:(id)arg2 disableTypeEchoInTable:(char *)arg3 request:(id)arg4;
 - (id)_uiElementForKeyboardFocusInWindowUIElement:(id)arg1 request:(id)arg2;
 - (id)_exclusionQueueIDsForKeyboardFocusChange;
 - (void)_setKeyboardFocusedUIElement:(id)arg1 outputRequest:(id)arg2;
@@ -459,7 +464,7 @@ __attribute__((visibility("hidden")))
 - (void)dispatchUpdateProfile;
 - (void)dispatchAddItemDescription:(id)arg1 toRequest:(id)arg2 wait:(double)arg3;
 - (id)_requestForGuideWithItemDescription:(id)arg1;
-@property(readonly, retain, nonatomic) SCROutputSharedFocusManager *sharedFocusManager; // @synthesize sharedFocusManager=_sharedFocusManager;
+@property(readonly, nonatomic) SCROutputSharedFocusManager *sharedFocusManager; // @synthesize sharedFocusManager=_sharedFocusManager;
 - (void)dispatchEchoProfileName;
 - (void)_echoProfileName;
 - (void)addProfileNameToRequest:(id)arg1;
@@ -467,7 +472,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)allowsFocusInto;
 - (void)_applicationActivated:(id)arg1;
 - (void)_layoutChanged:(id)arg1;
-- (BOOL)_isiOSApp;
+- (BOOL)_mightBeMarzipanApp;
 - (void)registerForGeneralNotifications;
 - (void)dispatchSetIsKeyboardEventHandler:(BOOL)arg1;
 - (void)setIsKeyboardEventHandler:(BOOL)arg1;
@@ -489,10 +494,12 @@ __attribute__((visibility("hidden")))
 - (void)_conditionallyMakeFrontMost;
 - (void)applicationDidInitialize;
 - (void)_registerForNonGeneralNotifications;
+- (BOOL)isApplication;
 @property(retain, setter=setUIElement:) SCRUIElement *uiElement;
 - (void)connectToApp;
 - (void)_queueConnectToApp;
 - (void)_startConnectToApp;
+- (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 - (id)initWithPSN:(struct ProcessSerialNumber)arg1 pid:(int)arg2 name:(id)arg3 bundleIdentifier:(id)arg4 bundleVersion:(id)arg5 url:(id)arg6;
 - (BOOL)_initialize;
@@ -541,15 +548,12 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)retainUIElement:(id)arg1;
 - (BOOL)isCalendarApplication;
 - (BOOL)isDFRControlStripApplication;
-- (BOOL)isDashboardApplication;
 - (BOOL)isDataDetectorsApplication;
 - (void)dispatchEchoLastDictationString;
 - (void)_echoLastDictationString;
 - (BOOL)isDictationApplication;
 - (BOOL)isDisabledApplication;
 - (BOOL)isDockApplication;
-- (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
-- (BOOL)isApplication;
 - (id)focusedWindowForUpdateChildrenWithRequest;
 - (BOOL)isFinderApplication;
 - (BOOL)isHelpViewerApplication;
@@ -568,12 +572,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)isProToolsApplication;
 - (BOOL)isSpotlightApplication;
 - (BOOL)isSystemApplication;
-- (BOOL)isSystemPreferencesApplication;
 - (BOOL)isSystemUIServerApplication;
 - (BOOL)isMicrosoftApplication;
 - (BOOL)isVOQuickStartApplication;
 - (BOOL)isVoiceOverUtilityApplication;
-- (BOOL)isXcodeApplication;
 - (BOOL)isiBooksApplication;
 - (BOOL)isSageOrEarlieriWorkApplication;
 - (BOOL)isiWorkApplication;

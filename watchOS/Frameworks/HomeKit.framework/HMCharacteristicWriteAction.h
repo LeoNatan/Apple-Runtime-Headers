@@ -19,24 +19,34 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)_actionWithInfo:(id)arg1 home:(id)arg2;
-+ (id)_lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
 - (void).cxx_destruct;
+- (id)encodeAsProtoBuf;
+- (id)initWithProtoBuf:(id)arg1 home:(id)arg2;
+- (_Bool)isKindOfAllowedTargetValueClass:(id)arg1;
+- (id)allowedTargetValueClasses;
+@property(readonly) unsigned int hash;
+- (_Bool)isEqual:(id)arg1;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)_handleUpdates:(id)arg1;
 - (id)_serializeForAdd;
+- (_Bool)requiresDeviceUnlock;
+- (_Bool)isValid;
 - (void)_updateTargetValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateTargetValue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) id targetValue; // @synthesize targetValue=_targetValue;
 @property(retain, nonatomic) HMCharacteristic *characteristic; // @synthesize characteristic=_characteristic;
+- (unsigned int)type;
 - (void)__configureWithContext:(id)arg1 actionSet:(id)arg2;
+- (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2 uuid:(id)arg3;
 - (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2;
+- (id)commonInitWith:(id)arg1 targetValue:(id)arg2;
+- (id)initWithUUID:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) NSUUID *uniqueIdentifier;
 

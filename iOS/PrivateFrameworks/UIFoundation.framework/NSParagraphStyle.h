@@ -38,6 +38,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (long long)defaultWritingDirectionForLanguage:(id)arg1;
++ (float)_defaultHyphenationFactor;
 + (long long)_defaultWritingDirection;
 + (id)defaultParagraphStyle;
 + (void)initialize;
@@ -63,6 +64,8 @@
 - (_Bool)usesOpticalAlignment;
 - (_Bool)allowsHangingPunctuation;
 - (unsigned long long)_lineBoundsOptions;
+- (long long)compositionLanguage;
+- (_Bool)usesDefaultHyphenation;
 @property(readonly, copy, nonatomic) NSArray *tabStops;
 @property(readonly, nonatomic) double tailIndent;
 @property(readonly, nonatomic) double headIndent;

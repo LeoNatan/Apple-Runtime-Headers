@@ -8,6 +8,7 @@
 
 @class AVOutputContext, AVOutputDevice, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVOutputContextController : NSObject
 {
     AVOutputContext *_outputContext;

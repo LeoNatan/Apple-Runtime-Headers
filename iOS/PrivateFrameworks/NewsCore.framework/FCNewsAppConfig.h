@@ -56,6 +56,9 @@
 - (void).cxx_destruct;
 - (id)localizedStorefrontID;
 - (id)jsonEncodableObject;
+@property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
+@property(readonly, nonatomic) long long maximumTrendingGroupSizeiPhone;
+@property(readonly, nonatomic) long long maximumTrendingGroupSizeiPad;
 @property(readonly, nonatomic) long long feedContentExposureTestMaximumInterval;
 @property(readonly, nonatomic) long long criticalStorageThreshold;
 @property(readonly, nonatomic) long long lowStorageThreshold;
@@ -111,6 +114,7 @@
 @property(readonly, nonatomic) long long autoScrollToTopFeedTimeout;
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
 @property(readonly, nonatomic) _Bool isExpired;
+@property(readonly, nonatomic) long long entitlementsCacheRecoveryAttemptDurationInSeconds;
 @property(readonly, nonatomic) long long subscriptionsGracePeriodForTokenVerificationSeconds;
 @property(readonly, nonatomic) long long subscriptionsPlacardGlobalMaximumPerDay;
 @property(readonly, nonatomic) long long subscriptionsPlacardPublisherFrequencyInSeconds;

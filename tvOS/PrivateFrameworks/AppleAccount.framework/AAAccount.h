@@ -16,9 +16,6 @@
     NSString *_protocolVersion;
 }
 
-+ (id)dataclassesBoundToSingleAccount;
-+ (id)dataclassesBoundToSyncAccount;
-+ (id)dataclassesBoundToPrimaryAccount;
 + (id)accountTypeString;
 @property(readonly, nonatomic) NSString *protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(readonly, nonatomic) NSArray *appleIDAliases; // @synthesize appleIDAliases=_appleIDAliases;

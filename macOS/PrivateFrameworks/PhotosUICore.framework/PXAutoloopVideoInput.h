@@ -6,21 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class AVAsset, NSURL, PXAutoloopVideoRecipe;
+@class AVAsset, NSURL;
 
 @interface PXAutoloopVideoInput : NSObject
 {
     AVAsset *_asset;
     NSURL *_imageURL;
-    PXAutoloopVideoRecipe *_recipe;
 }
 
-+ (id)inputWithAsset:(id)arg1 imageURL:(id)arg2 recipe:(id)arg3;
-@property(readonly, nonatomic) PXAutoloopVideoRecipe *recipe; // @synthesize recipe=_recipe;
++ (id)inputWithAsset:(id)arg1 imageURL:(id)arg2;
 @property(readonly, nonatomic) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(readonly, copy, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
-- (id)initWithAsset:(id)arg1 imageURL:(id)arg2 recipe:(id)arg3;
+- (id)initWithAsset:(id)arg1 imageURL:(id)arg2;
 
 @end
 

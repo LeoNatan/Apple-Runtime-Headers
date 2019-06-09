@@ -22,6 +22,7 @@
     NSString *_matchDesignatedRequirement;
     NSString *_matchPath;
     NSArray *_matchDomains;
+    struct __SecRequirement *_cachedRequirement;
     NSArray *_additionalExecutables;
     NSArray *_matchAccountIdentifiers;
 }
@@ -31,11 +32,13 @@
 @property(copy) NSArray *matchAccountIdentifiers; // @synthesize matchAccountIdentifiers=_matchAccountIdentifiers;
 @property BOOL noRestriction; // @synthesize noRestriction=_noRestriction;
 @property(copy) NSArray *additionalExecutables; // @synthesize additionalExecutables=_additionalExecutables;
+@property struct __SecRequirement *cachedRequirement; // @synthesize cachedRequirement=_cachedRequirement;
 @property(copy) NSArray *matchDomains; // @synthesize matchDomains=_matchDomains;
 @property(copy) NSString *matchPath; // @synthesize matchPath=_matchPath;
 @property(readonly) NSString *matchDesignatedRequirement; // @synthesize matchDesignatedRequirement=_matchDesignatedRequirement;
 @property(readonly) NSString *matchSigningIdentifier; // @synthesize matchSigningIdentifier=_matchSigningIdentifier;
 - (void).cxx_destruct;
+- (BOOL)matchesProcessWithAuditToken:(id)arg1;
 - (BOOL)signingIdentifierAllowed:(id)arg1 domainsRequired:(out char *)arg2;
 - (BOOL)overlapsWithRule:(id)arg1;
 - (id)initFromLegacyDictionary:(id)arg1;
@@ -44,6 +47,7 @@
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSigningIdentifier:(id)arg1 designatedRequirement:(id)arg2;
 - (id)initWithSigningIdentifier:(id)arg1;

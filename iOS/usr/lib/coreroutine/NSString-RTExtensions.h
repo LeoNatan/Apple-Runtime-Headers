@@ -7,9 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (RTExtensions)
-- (id)hmacSha256WithKey:(id)arg1;
 - (id)hmacSha1WithKey:(id)arg1;
-- (id)sha256;
 - (id)base64DecodedString;
 - (id)base64EncodedString;
 - (long long)levenshteinDistanceFromString:(id)arg1 withMaxCutOffDistance:(unsigned long long)arg2;

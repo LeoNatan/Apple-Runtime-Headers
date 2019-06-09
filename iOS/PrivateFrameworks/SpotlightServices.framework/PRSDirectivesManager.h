@@ -108,6 +108,7 @@
         struct __CFDictionary *mapping;
         unsigned long long numPRSRankingBundleFeatures;
         unsigned long long *PRSRankingBundleFeatureOrder;
+        CDUnknownBlockType *PRSRankingBundleFeaturePickers;
         float *score_vector;
         unsigned long long mapSize;
     } directive_local_resultset_id_values_mapping;
@@ -116,6 +117,7 @@
         unsigned long long end_idx;
         unsigned long long numFeatures;
         struct __CFDictionary *mapping;
+        CDUnknownBlockType *PRSRankingBundleFeaturePickers;
         float *score_vector;
         unsigned long long mapSize;
     } directive_parsec_resultset_id_values_mapping;
@@ -136,6 +138,7 @@
 - (void)cleanup;
 - (void)processResultSetValuesWithMap:(id)arg1 serverFeatures:(id)arg2;
 - (void)processDirectives:(id)arg1;
+- (void)getAllDirectivesArraysForTesting:(void *)arg1;
 - (unsigned long long)getDirectiveTypeFromString:(id)arg1;
 - (void)dealloc;
 - (id)init;

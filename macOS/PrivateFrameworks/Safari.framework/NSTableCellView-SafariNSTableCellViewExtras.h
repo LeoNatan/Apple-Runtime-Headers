@@ -8,7 +8,9 @@
 
 @interface NSTableCellView (SafariNSTableCellViewExtras)
 + (struct CGSize)safari_fittingSizeForCellViewInNibNamed:(id)arg1 withTextFieldValue:(id)arg2;
++ (struct CGSize)safari_fittingSizeForCellViewInNibNamed:(id)arg1 inBundle:(id)arg2 withTextFieldValue:(id)arg3;
 + (struct CGSize)safari_fittingSizeForCellViewWithConfigurationBlock:(CDUnknownBlockType)arg1;
 + (struct CGSize)safari_fittingSizeForCellViewInNibNamed:(id)arg1 configurationBlock:(CDUnknownBlockType)arg2;
++ (struct CGSize)safari_fittingSizeForCellViewInNibNamed:(id)arg1 inBundle:(id)arg2 configurationBlock:(CDUnknownBlockType)arg3;
 @end
 

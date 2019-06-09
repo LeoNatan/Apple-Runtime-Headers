@@ -6,6 +6,7 @@
 
 #import <HMFoundation/HMFObject.h>
 
+__attribute__((visibility("hidden")))
 @interface _HMFNetManagerWoWAssertion : HMFObject
 {
 }

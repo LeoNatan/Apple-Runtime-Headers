@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)fillWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEmpty;
 - (id)copyWithZone:(struct _NSZone *)arg1;

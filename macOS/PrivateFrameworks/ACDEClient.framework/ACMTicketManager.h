@@ -18,7 +18,7 @@
 - (void)setPublickKeyVersion:(id)arg1 label:(id)arg2 forRealm:(id)arg3;
 - (id)publicKeyVersionForRealm:(id)arg1;
 - (id)certificateLabelForRealm:(id)arg1;
-- (struct OpaqueSecCertificateRef *)defaultPublicKeyCertificateForRealm:(id)arg1;
+- (struct __SecCertificate *)defaultPublicKeyCertificateForRealm:(id)arg1;
 - (id)defaultPublicKeyVersionForRealm:(id)arg1;
 - (id)systemInfo;
 - (id)preferences;

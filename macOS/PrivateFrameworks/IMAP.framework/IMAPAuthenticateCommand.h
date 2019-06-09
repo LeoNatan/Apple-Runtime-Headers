@@ -6,16 +6,16 @@
 
 #import <IMAP/IMAPSingleCommand.h>
 
-@class MCSaslClient;
+@class ECSASLClient;
 
 @interface IMAPAuthenticateCommand : IMAPSingleCommand
 {
     BOOL _includeInitialResponse;
-    MCSaslClient *_saslClient;
+    ECSASLClient *_saslClient;
 }
 
 @property BOOL includeInitialResponse; // @synthesize includeInitialResponse=_includeInitialResponse;
-@property(readonly, nonatomic) MCSaslClient *saslClient; // @synthesize saslClient=_saslClient;
+@property(readonly, nonatomic) ECSASLClient *saslClient; // @synthesize saslClient=_saslClient;
 - (void).cxx_destruct;
 - (long long)maxAllowedConnectionState;
 - (long long)minRequiredConnectionState;
@@ -26,7 +26,7 @@
 - (id)activityString;
 - (id)commandTypeString;
 - (id)init;
-- (id)initWithSaslClient:(id)arg1;
+- (id)initWithSASLClient:(id)arg1;
 
 @end
 

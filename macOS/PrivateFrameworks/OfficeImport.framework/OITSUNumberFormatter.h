@@ -8,6 +8,7 @@
 
 @class NSArray, NSDictionary, NSLocale, NSMutableArray, NSMutableDictionary, NSString, OITSULocaleStructuredDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OITSUNumberFormatter : NSObject
 {
     NSLocale *_locale;

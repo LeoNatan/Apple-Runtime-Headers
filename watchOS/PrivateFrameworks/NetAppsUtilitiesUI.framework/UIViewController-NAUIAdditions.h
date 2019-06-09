@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 @interface UIViewController (NAUIAdditions)
++ (id)recursiveDescription;
 - (void)naui_applicationWillEnterForeground;
 - (void)naui_applicationDidEnterBackground;
 - (_Bool)naui_isDescendantOfViewController:(id)arg1;
@@ -17,5 +18,7 @@
 - (_Bool)naui_canAnimate;
 - (void)naui_addChildViewWithViewController:(id)arg1 toView:(id)arg2;
 - (void)naui_addChildViewWithViewController:(id)arg1;
+- (id)recursiveDescription;
+- (id)_recursiveDescriptionWithInset:(id)arg1;
 @end
 

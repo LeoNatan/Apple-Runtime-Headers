@@ -8,6 +8,7 @@
 
 @class DirectoryEditorViewController, ODSession, SFAuthorization;
 
+__attribute__((visibility("hidden")))
 @interface DirectoryEditorView : NSView
 {
     DirectoryEditorViewController *_controller;

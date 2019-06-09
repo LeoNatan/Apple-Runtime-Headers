@@ -10,6 +10,7 @@
 
 @class NSString, SKUIReportAConcernConfiguration, SKUIReportAConcernDetailsDataSource, SKUIReportAConcernMetadata, UITableView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReportAConcernDetailsViewController : UIViewController <UITableViewDelegate>
 {
     CDUnknownBlockType _completion;

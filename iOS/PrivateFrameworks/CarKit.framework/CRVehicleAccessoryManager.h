@@ -6,24 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class EAAccessoryManager, NSMutableDictionary;
 @protocol CRVehicleAccessoryManagerDelegate;
 
 @interface CRVehicleAccessoryManager : NSObject
 {
     id <CRVehicleAccessoryManagerDelegate> _vehicleAccessoryDelegate;
+    EAAccessoryManager *_accessoryManager;
     NSMutableDictionary *_vehiclesBySerialNumber;
 }
 
 + (id)_certificateSerialNumberForAccessory:(id)arg1;
 + (_Bool)_isVehicleAccessory:(id)arg1;
 + (_Bool)_isValidAccessoryMacAddress:(id)arg1;
++ (id)vehicleAccessQueue;
 @property(retain, nonatomic) NSMutableDictionary *vehiclesBySerialNumber; // @synthesize vehiclesBySerialNumber=_vehiclesBySerialNumber;
+@property(retain, nonatomic) EAAccessoryManager *accessoryManager; // @synthesize accessoryManager=_accessoryManager;
 @property(nonatomic) __weak id <CRVehicleAccessoryManagerDelegate> vehicleAccessoryDelegate; // @synthesize vehicleAccessoryDelegate=_vehicleAccessoryDelegate;
 - (void).cxx_destruct;
 - (id)vehicleAccessoryForiAPConnectionIdentifier:(unsigned long long)arg1;
 - (id)vehicleAccessoryForCertificateSerial:(id)arg1;
 - (id)connectedVehicleAccessories;
+- (id)connectedAccessories;
 - (void)handleAccessoryInformationUpdate:(id)arg1;
 - (void)handleAccessoryDisconnect:(id)arg1;
 - (void)handleAccessoryConnect:(id)arg1;

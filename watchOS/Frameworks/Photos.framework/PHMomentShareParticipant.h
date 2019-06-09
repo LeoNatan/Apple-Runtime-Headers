@@ -6,12 +6,13 @@
 
 #import <Photos/PHObject.h>
 
-@class NSString;
+@class NSPersonNameComponents, NSString;
 
 @interface PHMomentShareParticipant : PHObject
 {
     unsigned short _type;
     NSString *_emailAddress;
+    NSPersonNameComponents *_nameComponents;
     NSString *_phoneNumber;
 }
 
@@ -26,6 +27,7 @@
 + (id)managedEntityName;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 @property(readonly, copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
+@property(readonly, copy, nonatomic) NSPersonNameComponents *nameComponents; // @synthesize nameComponents=_nameComponents;
 @property(readonly, copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 @property(readonly, nonatomic) unsigned short type; // @synthesize type=_type;
 - (void).cxx_destruct;

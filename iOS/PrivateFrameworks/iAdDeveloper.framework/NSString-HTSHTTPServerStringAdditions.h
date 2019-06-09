@@ -8,5 +8,6 @@
 
 @interface NSString (HTSHTTPServerStringAdditions)
 - (id)md5;
+- (id)md5;
 @end
 

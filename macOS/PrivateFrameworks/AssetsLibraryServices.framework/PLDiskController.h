@@ -18,6 +18,7 @@
     } _flags;
 }
 
++ (BOOL)freeSpaceBelowDesiredSpaceThresholdForPath:(id)arg1;
 + (id)mountPointForPath:(id)arg1;
 + (long long)fileSystemSizeForPath:(id)arg1;
 + (long long)diskSpaceAvailableForPath:(id)arg1;

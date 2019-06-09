@@ -8,6 +8,7 @@
 
 @class OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface MFPGradientStop : NSObject
 {
     OITSUColor *mColor;

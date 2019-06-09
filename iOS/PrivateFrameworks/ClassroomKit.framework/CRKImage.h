@@ -18,6 +18,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (struct CGImage *)resizedCGImageFromImage:(struct CGImage *)arg1 newSize:(struct CGSize)arg2;
 + (id)imageWithUnderlyingImage:(id)arg1;
 + (id)imageWithCGImage:(struct CGImage *)arg1;
 + (id)imageWithData:(id)arg1;
@@ -44,6 +45,7 @@
 @property(copy, nonatomic) NSString *accessibilityDescription;
 - (_Bool)layoutIsLeftToRight;
 @property(readonly, nonatomic) CRKImage *localizedImage;
+@property(readonly, nonatomic) struct CGImage *CGImage;
 @property(readonly, nonatomic) struct CGSize size;
 @property(readonly, copy, nonatomic) NSData *PNGRepresentation;
 - (id)initWithUnderlyingImage:(id)arg1 horizontallyFlipped:(_Bool)arg2;

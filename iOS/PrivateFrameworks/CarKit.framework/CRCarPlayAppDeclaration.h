@@ -13,12 +13,14 @@
     _Bool _systemApp;
     _Bool _requiresGeoSupport;
     _Bool _launchUsingSiri;
+    _Bool _launchNotificationsUsingSiri;
     _Bool _supportsPlayableContent;
     _Bool _supportsMessaging;
     _Bool _supportsCalling;
     _Bool _supportsMaps;
     NSString *_bundleIdentifier;
     NSSet *_autoMakerProtocols;
+    unsigned long long __applicationCategory;
 }
 
 + (id)declarationForBundleIdentifier:(id)arg1 entitlements:(id)arg2 infoPlist:(id)arg3;
@@ -26,11 +28,13 @@
 + (id)declarationForBundleIdentifier:(id)arg1 info:(id)arg2 entitlements:(id)arg3;
 + (id)requiredEntitlementKeys;
 + (id)requiredInfoKeys;
+@property(nonatomic) unsigned long long _applicationCategory; // @synthesize _applicationCategory=__applicationCategory;
 @property(retain, nonatomic) NSSet *autoMakerProtocols; // @synthesize autoMakerProtocols=_autoMakerProtocols;
 @property(nonatomic) _Bool supportsMaps; // @synthesize supportsMaps=_supportsMaps;
 @property(nonatomic) _Bool supportsCalling; // @synthesize supportsCalling=_supportsCalling;
 @property(nonatomic) _Bool supportsMessaging; // @synthesize supportsMessaging=_supportsMessaging;
 @property(nonatomic) _Bool supportsPlayableContent; // @synthesize supportsPlayableContent=_supportsPlayableContent;
+@property(nonatomic) _Bool launchNotificationsUsingSiri; // @synthesize launchNotificationsUsingSiri=_launchNotificationsUsingSiri;
 @property(nonatomic) _Bool launchUsingSiri; // @synthesize launchUsingSiri=_launchUsingSiri;
 @property(nonatomic) _Bool requiresGeoSupport; // @synthesize requiresGeoSupport=_requiresGeoSupport;
 @property(nonatomic, getter=isSystemApp) _Bool systemApp; // @synthesize systemApp=_systemApp;

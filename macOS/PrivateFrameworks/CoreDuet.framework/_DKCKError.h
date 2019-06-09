@@ -21,6 +21,9 @@
 + (BOOL)isUnrecoverableDecryptionError:(id)arg1;
 + (BOOL)isPartialError:(id)arg1;
 + (BOOL)isChangeTokenExpiredError:(id)arg1;
++ (BOOL)isOperationCancelledError:(id)arg1;
++ (BOOL)isShouldDeferError:(id)arg1;
++ (BOOL)isIgnorableError:(id)arg1;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <MobileTimer/MTTimer.h>
 
-@class MTSound, NSDate, NSString;
+@class MTSound, NSDate, NSDictionary, NSString;
 
 @interface MTMutableTimer : MTTimer
 {
@@ -19,6 +19,7 @@
 @property(nonatomic) double duration; // @dynamic duration;
 @property(copy, nonatomic) NSDate *firedDate; // @dynamic firedDate;
 @property(copy, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
+@property(copy, nonatomic) NSDictionary *siriContext; // @dynamic siriContext;
 @property(copy, nonatomic) MTSound *sound; // @dynamic sound;
 @property(nonatomic) unsigned int state; // @dynamic state;
 @property(copy, nonatomic) NSString *title; // @dynamic title;

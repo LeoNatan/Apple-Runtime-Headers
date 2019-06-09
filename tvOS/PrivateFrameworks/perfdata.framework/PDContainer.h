@@ -20,6 +20,7 @@
     NSString *_primaryMetricFilter;
     NSString *_generator;
     NSDictionary *_variables;
+    NSDictionary *_labels;
     NSMutableDictionary *_perfdata;
 }
 
@@ -29,6 +30,7 @@
 + (id)containerWithPath:(id)arg1 error:(id *)arg2;
 @property(retain, nonatomic) NSMutableDictionary *perfdata; // @synthesize perfdata=_perfdata;
 @property(nonatomic) _Bool largerBetter; // @synthesize largerBetter=_largerBetter;
+@property(retain, nonatomic) NSDictionary *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) NSDictionary *variables; // @synthesize variables=_variables;
 @property(retain, nonatomic) NSString *generator; // @synthesize generator=_generator;
 @property(readonly, retain, nonatomic) NSString *primaryMetricFilter; // @synthesize primaryMetricFilter=_primaryMetricFilter;

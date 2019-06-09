@@ -6,11 +6,12 @@
 
 #import <AppKit/NSImageCell.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKImageCellNoAccessibility : NSImageCell
 {
 }
 
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 
 @end
 

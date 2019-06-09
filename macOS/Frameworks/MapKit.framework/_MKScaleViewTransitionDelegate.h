@@ -10,12 +10,13 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface _MKScaleViewTransitionDelegate : NSObject <CAAnimationDelegate>
 {
     CDUnknownBlockType _completionHandler;
 }
 
-@property(readonly, copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(readonly, copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)initWithCompletionHandler:(CDUnknownBlockType)arg1;

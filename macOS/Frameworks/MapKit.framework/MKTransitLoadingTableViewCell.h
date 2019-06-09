@@ -8,6 +8,7 @@
 
 @class NSProgressIndicator, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKTransitLoadingTableViewCell : MKCustomSeparatorTableViewCell
 {
     _MKUILabel *_loadingLabel;

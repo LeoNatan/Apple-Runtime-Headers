@@ -8,17 +8,19 @@
 
 #import <UIKitCore/NSProgressReporting-Protocol.h>
 #import <UIKitCore/_UIDataTransferMonitorDelegate-Protocol.h>
+#import <UIKitCore/_UIDraggingInfo-Protocol.h>
 
 @class NSArray, NSMutableSet, NSProgress, NSString, PBItemCollection, UIDragEvent, UIView, UIWindow, _DUIPotentialDrop, _UIApplicationModalProgressController, _UIDataTransferMonitor, _UIDragSetDownAnimation, _UIDropSessionImpl, _UIInternalDraggingSessionSource;
-@protocol _UIDraggingInfo, _UIDruidDestinationConnection;
+@protocol _UIDruidDestinationConnection;
 
 __attribute__((visibility("hidden")))
-@interface _UIInternalDraggingSessionDestination : _UIDraggingImageSlotOwner <_UIDataTransferMonitorDelegate, NSProgressReporting>
+@interface _UIInternalDraggingSessionDestination : _UIDraggingImageSlotOwner <_UIDataTransferMonitorDelegate, NSProgressReporting, _UIDraggingInfo>
 {
     unsigned int _sessionIdentifier;
     unsigned int _touchRoutingPolicyContextID;
     _UIInternalDraggingSessionSource *_sessionSource;
     _Bool _connectedToDruid;
+    _Bool _isPolicyDriven;
     _Bool _dragInteractionDidEnd;
     NSMutableSet *_enteredDestinations;
     UIView *_dropDestinationView;
@@ -32,7 +34,6 @@ __attribute__((visibility("hidden")))
     _Bool _dropWasPerformed;
     _DUIPotentialDrop *_lastPotentialDrop;
     _Bool _isAccessibilitySession;
-    id <_UIDraggingInfo> _publicSession;
     UIDragEvent *_dragEvent;
     _UIDropSessionImpl *_dropSession;
     UIWindow *_centroidWindow;
@@ -58,9 +59,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGPoint centroid; // @synthesize centroid=_centroid;
 @property(readonly, nonatomic) _UIDropSessionImpl *dropSession; // @synthesize dropSession=_dropSession;
 @property(nonatomic) __weak UIDragEvent *dragEvent; // @synthesize dragEvent=_dragEvent;
-@property(readonly, nonatomic) id <_UIDraggingInfo> publicSession; // @synthesize publicSession=_publicSession;
 @property(readonly, nonatomic) unsigned int sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long draggingSourceOperationMask;
+- (struct CGPoint)draggingLocationInCoordinateSpace:(id)arg1;
+- (void)enumerateItemsUsingBlock:(CDUnknownBlockType)arg1;
 - (unsigned long long)actualDragOperationForProposedDragOperation:(unsigned long long)arg1 destinationDataOwner:(long long)arg2 forbidden:(_Bool *)arg3;
 - (void)handOffDroppedItems:(id)arg1;
 - (void)setUpDropAnimation:(id)arg1;

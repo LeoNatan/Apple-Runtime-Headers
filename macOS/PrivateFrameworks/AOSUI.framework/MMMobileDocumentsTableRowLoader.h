@@ -15,7 +15,7 @@
 }
 
 @property(readonly) MMMobileDocumentsTableRow *rowView; // @synthesize rowView=_rowView;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

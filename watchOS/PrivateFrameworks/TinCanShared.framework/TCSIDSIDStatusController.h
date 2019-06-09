@@ -29,7 +29,7 @@
 @property(readonly, nonatomic) __weak id <TCSIDSIDStatusControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <TUIDSLookup> item; // @synthesize item=_item;
 - (void).cxx_destruct;
-- (void)idStatusUpdatedForDestinations:(id)arg1;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 @property(readonly, nonatomic) NSString *tinCanHandle;
 @property(readonly, nonatomic) NSNumber *status;
 - (void)_statusQueryTimedOut;

@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 
 @property NSXPCConnection *_connection; // @synthesize _connection;
 - (id)decodeXPCObjectOfType:(struct _xpc_type_s *)arg1 forKey:(id)arg2;
+- (id)_xpcObjectForIndex:(long long)arg1;
 - (id)decodeXPCObjectForKey:(id)arg1;
 - (const char *)_decodeCStringForKey:(id)arg1;
 - (const char *)decodeBytesForKey:(id)arg1 returnedLength:(unsigned int *)arg2;
@@ -51,6 +52,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)containsValueForKey:(id)arg1;
 - (id)decodeObject;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void *)arg2;
+- (void)_validateAllowedXPCType:(struct _xpc_type_s *)arg1 forKey:(id)arg2;
 - (void)_validateAllowedClass:(Class)arg1 forKey:(id)arg2 allowingInvocations:(_Bool)arg3;
 - (_Bool)allowsKeyedCoding;
 - (id)debugDescription;

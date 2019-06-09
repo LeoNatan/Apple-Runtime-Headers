@@ -9,6 +9,8 @@
 @class NSString, _INPBDataString;
 
 @protocol _INPBTimer <NSObject>
+@property(nonatomic) BOOL hasType;
+@property(nonatomic) int type;
 @property(nonatomic) BOOL hasState;
 @property(nonatomic) int state;
 @property(nonatomic) BOOL hasRemainingTime;
@@ -19,6 +21,8 @@
 @property(copy, nonatomic) NSString *identifier;
 @property(nonatomic) BOOL hasDuration;
 @property(nonatomic) double duration;
+- (int)StringAsType:(NSString *)arg1;
+- (NSString *)typeAsString:(int)arg1;
 - (int)StringAsState:(NSString *)arg1;
 - (NSString *)stateAsString:(int)arg1;
 @end

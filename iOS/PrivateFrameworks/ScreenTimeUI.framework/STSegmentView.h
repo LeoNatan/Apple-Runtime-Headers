@@ -8,9 +8,10 @@
 
 @class NSLayoutConstraint, STSegmentItem, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface STSegmentView : UIView
 {
-    _Bool _widget;
+    _Bool _useVibrancy;
     UILabel *_titleLabel;
     UILabel *_detailLabel;
     NSLayoutConstraint *_detailLabelLeadingConstraint;
@@ -20,7 +21,7 @@
     STSegmentItem *_item;
 }
 
-@property(readonly, getter=isWidget) _Bool widget; // @synthesize widget=_widget;
+@property(readonly) _Bool useVibrancy; // @synthesize useVibrancy=_useVibrancy;
 @property(retain, nonatomic) STSegmentItem *item; // @synthesize item=_item;
 @property(readonly, nonatomic) NSLayoutConstraint *detailImageHeightConstraint; // @synthesize detailImageHeightConstraint=_detailImageHeightConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *detailImageWidthConstraint; // @synthesize detailImageWidthConstraint=_detailImageWidthConstraint;
@@ -30,7 +31,7 @@
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithItem:(id)arg1 isWidget:(_Bool)arg2;
+- (id)initWithItem:(id)arg1 useVibrancy:(_Bool)arg2 truncateLabels:(_Bool)arg3;
 
 @end
 

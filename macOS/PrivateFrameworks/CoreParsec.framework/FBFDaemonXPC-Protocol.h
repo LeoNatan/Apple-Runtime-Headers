@@ -6,12 +6,14 @@
 
 #import <CoreParsec/NSObject-Protocol.h>
 
-@class NSFileHandle, NSURL;
+@class NSString, NSURL;
 
 @protocol FBFDaemonXPC <NSObject>
+- (void)updateWhitelists:(unsigned long long)arg1 completion:(void (^)(void))arg2;
 - (void)flushSessionEagerly:(NSURL *)arg1 completion:(void (^)(void))arg2;
+- (void)flushCustomFeedbackType:(NSString *)arg1 completion:(void (^)(void))arg2;
 - (void)flush:(void (^)(void))arg1;
-- (void)teeCohortsFeedbackTo:(NSFileHandle *)arg1 prettyPrint:(BOOL)arg2 completion:(void (^)(void))arg3;
+- (void)teeCohortsFeedbackWithCompletion:(void (^)(void))arg1;
 - (void)teeUploadsWithCompletion:(void (^)(void))arg1;
 @end
 

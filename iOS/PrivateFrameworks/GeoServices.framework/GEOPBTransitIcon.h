@@ -9,23 +9,24 @@
 #import <GeoServices/GEOTransitIconDataSource-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class GEOStyleAttributes, NSString, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPBTransitIcon : PBCodable <GEOTransitIconDataSource, NSCopying>
 {
     PBUnknownFields *_unknownFields;
+    GEOStyleAttributes *_styleAttributes;
     unsigned int _cartoId;
     unsigned int _transitTypeEnumValue;
     struct {
-        unsigned int cartoId:1;
-        unsigned int transitTypeEnumValue:1;
-    } _has;
+        unsigned int has_cartoId:1;
+        unsigned int has_transitTypeEnumValue:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int transitTypeEnumValue; // @synthesize transitTypeEnumValue=_transitTypeEnumValue;
-@property(nonatomic) unsigned int cartoId; // @synthesize cartoId=_cartoId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -34,15 +35,20 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) GEOStyleAttributes *styleAttributes;
+@property(readonly, nonatomic) _Bool hasStyleAttributes;
 @property(nonatomic) _Bool hasTransitTypeEnumValue;
+@property(nonatomic) unsigned int transitTypeEnumValue;
 @property(nonatomic) _Bool hasCartoId;
+@property(nonatomic) unsigned int cartoId;
 @property(readonly, nonatomic) unsigned int iconAttributeValue;
 @property(readonly, nonatomic) unsigned int iconAttributeKey;
 @property(readonly, nonatomic) unsigned int defaultTransitType;
 @property(readonly, nonatomic) unsigned int cartoID;
-@property(readonly, nonatomic) long long iconType;
+@property(readonly, nonatomic) int iconType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -28,6 +28,7 @@
 @property(readonly, nonatomic) BOOL _isRedirect;
 @property(readonly, nonatomic) _WKUserInitiatedAction *_userInitiatedAction;
 @property(readonly, nonatomic) BOOL _shouldOpenExternalURLs;
+@property(readonly, nonatomic) BOOL _shouldPerformDownload;
 @property(readonly, nonatomic) BOOL _shouldOpenAppLinks;
 @property(readonly, nonatomic) BOOL _shouldOpenExternalSchemes;
 @property(readonly, nonatomic) BOOL _canHandleRequest;

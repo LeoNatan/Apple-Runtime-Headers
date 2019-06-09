@@ -9,6 +9,7 @@
 @class NSString;
 @protocol NetDiagnosticsShimDelegate, OS_dispatch_queue, OS_xpc_object;
 
+__attribute__((visibility("hidden")))
 @interface NetDiagnosticsShim : NSObject
 {
     NSObject<OS_xpc_object> *_netDiagServiceConnection;

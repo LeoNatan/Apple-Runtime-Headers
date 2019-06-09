@@ -8,21 +8,23 @@
 
 #import <OfficeImport/NSCopying-Protocol.h>
 
-@class WDCharacterProperties, WDDocument;
+@class WDCharacterProperties, WDDocument, WDParagraphPropertiesValues;
 
 __attribute__((visibility("hidden")))
 @interface WDParagraphProperties : NSObject <NSCopying>
 {
-    WDDocument *mDocument;
     WDCharacterProperties *mCharacterProperties;
-    unsigned int mCharacterPropertiesOverridden:1;
+    _Bool mCharacterPropertiesOverridden;
     unsigned int mOriginal:1;
     unsigned int mTracked:1;
     unsigned int mResolved:1;
-    CDStruct_8641e206 *mOriginalProperties;
-    CDStruct_8641e206 *mTrackedProperties;
+    WDParagraphPropertiesValues *mOriginalProperties;
+    WDParagraphPropertiesValues *mTrackedProperties;
+    WDDocument *mDocument;
 }
 
+@property(readonly) __weak WDDocument *document; // @synthesize document=mDocument;
+- (void).cxx_destruct;
 - (void)copyPropertiesInto:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isContextualSpacingOverridden;
@@ -181,8 +183,8 @@ __attribute__((visibility("hidden")))
 - (void)setWidth:(long long)arg1;
 - (long long)width;
 - (_Bool)isDropCapOverridden;
-- (void)setDropCap:(CDStruct_5c52f79b)arg1;
-- (CDStruct_5c52f79b)dropCap;
+- (void)setDropCap:(CDStruct_8835774c)arg1;
+- (CDStruct_8835774c)dropCap;
 - (_Bool)isListIndexOverridden;
 - (void)setListIndex:(unsigned long long)arg1;
 - (unsigned long long)listIndex;
@@ -205,11 +207,9 @@ __attribute__((visibility("hidden")))
 - (void)setCharacterProperties:(id)arg1;
 - (id)mutableCharacterProperties;
 - (id)characterProperties;
-- (id)document;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 - (id)description;
-- (_Bool)isAnythingOverriddenIn:(CDStruct_8641e206 *)arg1;
+- (_Bool)isAnythingOverriddenIn:(id)arg1;
 
 @end
 

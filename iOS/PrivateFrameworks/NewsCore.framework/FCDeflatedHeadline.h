@@ -135,6 +135,7 @@
 
 // Remaining properties
 @property(readonly, nonatomic) NSData *backingArticleRecordData;
+@property(readonly, nonatomic) long long bodyTextLength;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool isLocalDraft;

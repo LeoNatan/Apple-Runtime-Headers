@@ -18,10 +18,8 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)mapItemForPlaceName:(id)arg1 error:(id *)arg2;
-- (void)feedbackNamedEntitiesOverallEngagement:(id)arg1;
-- (void)feedbackEngagedNamedEntities:(id)arg1;
-- (void)feedbackUsedNamedEntities:(id)arg1;
 - (BOOL)namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2 handleBatch:(CDUnknownBlockType)arg3;
 - (BOOL)rankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2 handleBatch:(CDUnknownBlockType)arg3;
 - (id)_synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;

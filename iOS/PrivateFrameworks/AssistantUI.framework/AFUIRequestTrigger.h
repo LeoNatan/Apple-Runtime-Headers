@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class AFUIRequestOptions, NSMapTable;
+@class NSMapTable, SASRequestOptions;
 
 @interface AFUIRequestTrigger : NSObject
 {
-    AFUIRequestOptions *_options;
+    SASRequestOptions *_options;
     long long _state;
     NSMapTable *_observers;
 }
 
 @property(readonly, nonatomic) long long state; // @synthesize state=_state;
-@property(readonly, nonatomic) AFUIRequestOptions *options; // @synthesize options=_options;
+@property(readonly, nonatomic) SASRequestOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (void)removeTriggerTarget:(id)arg1;
 - (void)addTriggerTarget:(id)arg1 action:(SEL)arg2;

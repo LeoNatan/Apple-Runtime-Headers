@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/HMDBackingStoreModelObject.h>
+#import <HomeKitDaemon/HMDActionModel.h>
 
 @class NSNumber, NSString;
 
-@interface HMDCharacteristicWriteActionModel : HMDBackingStoreModelObject
+@interface HMDCharacteristicWriteActionModel : HMDActionModel
 {
 }
 

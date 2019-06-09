@@ -20,14 +20,17 @@
 - (void).cxx_destruct;
 - (void)_removeSSBForPathKey:(id)arg1;
 - (void)_removeActiveURLForPathKey:(id)arg1;
+- (void)_storeSecurityScopedURL:(id)arg1 pathKey:(id)arg2;
 - (id)_resolveSecurityScopedBookmarkData:(id)arg1 error:(id *)arg2;
 - (id)_newSandboxExtensionDataForClient:(CDStruct_6ad76789)arg1 path:(id)arg2 writable:(BOOL)arg3;
 - (id)_newSecurityScopedBookmarkDataForURL:(id)arg1;
 - (id)_activeURLForClientLibraryURL:(id)arg1;
+- (void)_refreshSecurityScopedBookmarks;
 - (void)_saveToDefaults;
 - (void)_loadFromDefaults;
 - (void)_storeBookmarkForURL:(id)arg1;
 - (void)_importLithiumAccessRights;
+- (id)allKnownLibraryURLs;
 - (void)removeInvalidSSBsExcept:(id)arg1;
 - (void)removeSSBForLibraryURL:(id)arg1;
 - (id)sandboxExtensionsByPathForClient:(id)arg1 pathManager:(id)arg2;

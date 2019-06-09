@@ -10,14 +10,19 @@
 #import <FrontBoardServices/NSCopying-Protocol.h>
 
 @class NSString;
+@protocol NSCopying;
 
 @interface FBSShutdownOptions : NSObject <BSXPCCoding, NSCopying>
 {
     NSString *_reason;
     long long _rebootType;
     long long _source;
+    long long _LPEMOption;
+    id <NSCopying> _localContext;
 }
 
+@property(nonatomic) __weak id <NSCopying> localContext; // @synthesize localContext=_localContext;
+@property(nonatomic) long long LPEMOption; // @synthesize LPEMOption=_LPEMOption;
 @property(nonatomic) long long source; // @synthesize source=_source;
 @property(nonatomic) long long rebootType; // @synthesize rebootType=_rebootType;
 @property(readonly, copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
@@ -30,6 +35,9 @@
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) _Bool isUserInitiated;
+@property(readonly, nonatomic) _Bool isReboot;
+@property(readonly, nonatomic) _Bool isShutdown;
 - (id)initWithReason:(id)arg1;
 - (id)init;
 

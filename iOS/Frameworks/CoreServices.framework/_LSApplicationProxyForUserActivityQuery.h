@@ -20,13 +20,13 @@ __attribute__((visibility("hidden")))
 + (id)queryWithDomainName:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(readonly, copy, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_requiresDatabaseMappingEntitlement;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 
 @end
 

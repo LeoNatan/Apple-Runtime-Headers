@@ -6,12 +6,13 @@
 
 #import <HomeUI/HUItemTableViewController.h>
 
+#import <HomeUI/HUAccessorySettingsDetailsViewControllerProtocol-Protocol.h>
 #import <HomeUI/HUDataAnalyticsModuleControllerDelegate-Protocol.h>
 
 @class HUActivityLoadingView, HUDataAnalyticsModuleController, NSString;
 @protocol HFMediaProfileContainer;
 
-@interface HUDataAnalyticsLogListViewController : HUItemTableViewController <HUDataAnalyticsModuleControllerDelegate>
+@interface HUDataAnalyticsLogListViewController : HUItemTableViewController <HUAccessorySettingsDetailsViewControllerProtocol, HUDataAnalyticsModuleControllerDelegate>
 {
     id <HFMediaProfileContainer> _mediaProfileContainer;
     HUActivityLoadingView *_activityLoadingView;
@@ -33,6 +34,7 @@
 - (id)init;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
 - (id)initWithMediaProfileContainer:(id)arg1;
+- (id)initWithAccessoryGroupItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

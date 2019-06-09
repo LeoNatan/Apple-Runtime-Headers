@@ -6,41 +6,10 @@
 
 #import <QTKit/QTCaptureOutput.h>
 
-@class QTCaptureDecompressedVideoOutputInternal;
-
 @interface QTCaptureDecompressedVideoOutput : QTCaptureOutput
 {
-    QTCaptureDecompressedVideoOutputInternal *_internal;
-    id _delegate;
-    long long _reserved4;
-    long long _reserved5;
-    long long _reserved6;
 }
 
-- (id)videoDecompressionAttributesForVideoConnection:(id)arg1;
-- (int)videoDecompressionRequirementForConnection:(id)arg1;
-- (unsigned int)connectionUnitInputNumberForConnection:(id)arg1;
-- (int)connectionGraphNodeForConnection:(id)arg1;
-- (void)removeOutputUnitsForConnection:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
-- (BOOL)addOutputUnitsForConnection:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
-- (void)removeConnection:(id)arg1;
-- (id)addConnection:(id)arg1 error:(id *)arg2;
-- (id)connectionMediaTypes;
-- (id)connections;
-- (void)backgroundQueue:(id)arg1 invocationWasCanceled:(id)arg2;
-- (void)outputVideoFrame:(struct __CVBuffer *)arg1 withSampleBuffer:(id)arg2 fromConnection:(id)arg3;
-- (void)_outputVideoFrame:(struct __CVBuffer *)arg1 withSampleBuffer:(id)arg2 fromConnection:(id)arg3;
-- (void)setDeinterlacesVideo:(BOOL)arg1;
-- (BOOL)deinterlacesVideo;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
-- (void)setAutomaticallyDropsLateVideoFrames:(BOOL)arg1;
-- (BOOL)automaticallyDropsLateVideoFrames;
-- (void)setMinimumVideoFrameInterval:(double)arg1;
-- (double)minimumVideoFrameInterval;
-- (void)setPixelBufferAttributes:(id)arg1;
-- (id)pixelBufferAttributes;
-- (void)dealloc;
 - (id)init;
 
 @end

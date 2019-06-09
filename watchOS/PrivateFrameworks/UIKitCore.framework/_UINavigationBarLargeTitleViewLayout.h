@@ -11,33 +11,34 @@
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarLargeTitleViewLayout : NSObject
 {
+    UIView *_refreshHostContainerView;
     NSMutableDictionary *_titleHeightCache;
     NSMutableDictionary *_restingHeightCache;
     float _cachedRestingHeight;
-    _Bool _supportsTwoLines;
     _Bool _alignAccessoryViewToTitleBaseline;
+    _Bool _providesExtraSpaceForExcessiveLineHeights;
     _UINavigationBarLargeTitleView *_contentView;
     int _titleType;
     UILabel *_titleLabel;
+    unsigned int _twoLineMode;
     float _titleRestingHeight;
     UIView *_accessoryView;
     unsigned int _accessoryViewHorizontalAlignment;
     _UINavigationControllerRefreshControlHost *_refreshControlHost;
     float _restingHeightOfRefreshControl;
-    UIView *_refreshHostContainerView;
     struct NSDirectionalEdgeInsets _layoutMargins;
 }
 
-@property(retain, nonatomic) UIView *refreshHostContainerView; // @synthesize refreshHostContainerView=_refreshHostContainerView;
 @property(nonatomic) float restingHeightOfRefreshControl; // @synthesize restingHeightOfRefreshControl=_restingHeightOfRefreshControl;
 @property(readonly, nonatomic) _UINavigationControllerRefreshControlHost *refreshControlHost; // @synthesize refreshControlHost=_refreshControlHost;
 @property(nonatomic) struct NSDirectionalEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) unsigned int accessoryViewHorizontalAlignment; // @synthesize accessoryViewHorizontalAlignment=_accessoryViewHorizontalAlignment;
+@property(nonatomic) _Bool providesExtraSpaceForExcessiveLineHeights; // @synthesize providesExtraSpaceForExcessiveLineHeights=_providesExtraSpaceForExcessiveLineHeights;
 @property(nonatomic) _Bool alignAccessoryViewToTitleBaseline; // @synthesize alignAccessoryViewToTitleBaseline=_alignAccessoryViewToTitleBaseline;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(readonly, nonatomic) float titleRestingHeight; // @synthesize titleRestingHeight=_titleRestingHeight;
-@property(nonatomic) _Bool supportsTwoLines; // @synthesize supportsTwoLines=_supportsTwoLines;
-@property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(nonatomic) unsigned int twoLineMode; // @synthesize twoLineMode=_twoLineMode;
+@property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) int titleType; // @synthesize titleType=_titleType;
 @property(readonly, nonatomic) _UINavigationBarLargeTitleView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
@@ -58,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_contentLayoutBounds;
 - (struct CGRect)_contentLayoutBoundsUsingRestingTitleHeight:(_Bool)arg1;
 - (id)initWithContentView:(id)arg1;
+- (id)description;
 
 @end
 

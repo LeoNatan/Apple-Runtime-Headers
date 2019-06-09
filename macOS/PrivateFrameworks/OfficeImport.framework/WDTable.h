@@ -8,6 +8,7 @@
 
 @class NSMutableArray, WDTableProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDTable : WDBlock
 {
     WDTableProperties *mProperties;

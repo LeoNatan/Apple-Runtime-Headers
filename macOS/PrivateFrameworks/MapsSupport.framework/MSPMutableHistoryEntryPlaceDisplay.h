@@ -8,7 +8,7 @@
 
 #import <MapsSupport/MSPHistoryEntryPlaceDisplay-Protocol.h>
 
-@class NSString, NSUUID;
+@class NSDate, NSString, NSUUID;
 @protocol GEOMapItem;
 
 @interface MSPMutableHistoryEntryPlaceDisplay : MSPMutableHistoryEntry <MSPHistoryEntryPlaceDisplay>
@@ -30,6 +30,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) BOOL tracksRAPReportingOnly;
+@property(readonly, copy, nonatomic) NSDate *usageDate;
 
 @end
 

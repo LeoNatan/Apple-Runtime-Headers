@@ -16,20 +16,27 @@
 - (void)disableRemoteStateDumpWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enableRemoteStateDumpWithTimeout:(long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)requestStateDump:(unsigned int)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)countScenesForBundleIdentifier:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)setTestRunnerRecoveryApplicationBundleIdentifier:(id)arg1;
 - (void)setApplicationBundleIdentifier:(id)arg1 blockedForScreenTime:(_Bool)arg2;
 - (void)resetToHomeScreenAnimated:(_Bool)arg1;
 - (void)setOrientationLockEnabled:(_Bool)arg1;
 - (void)setIdleTimerEnabled:(_Bool)arg1;
 - (void)setAlertsEnabled:(_Bool)arg1;
 - (void)suspendAllDisplays;
+@property(nonatomic) int passcodePolicy;
 - (void)fetchHapticTypeForButtonKind:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setHapticType:(int)arg1 forButtonKind:(int)arg2;
 - (void)_handleButtonEventConsumePressMessage:(id)arg1;
+- (void)setRequestsHIDEvents:(_Bool)arg1 token:(id)arg2 forButtonKind:(int)arg3;
 - (void)setEventMask:(unsigned int)arg1 forButtonKind:(int)arg2 priority:(int)arg3;
+- (int)toggleStateForButtonKind:(int)arg1;
 - (void)setButtonEventServiceIsWaitingForServerMessages:(_Bool)arg1;
 - (void)acquireAssertionOfType:(int)arg1 forReason:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)fetchUnlockCredentialSetWithCompletion:(CDUnknownBlockType)arg1;
-- (void)requestPasscodeUnlockUIWithOptions:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)requestAppSwitcherAppearanceForHiddenApplicationWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestSuggestedApplicationWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)resetHomeScreenLayoutWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
 

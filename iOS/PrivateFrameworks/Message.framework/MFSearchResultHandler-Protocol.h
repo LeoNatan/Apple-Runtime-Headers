@@ -13,7 +13,7 @@
 - (void)setResultDateRecieved:(double)arg1;
 - (void)setResultSender:(char *)arg1;
 - (void)setResultSubject:(char *)arg1;
-- (void)beginResult:(unsigned int)arg1;
+- (void)beginResult:(long long)arg1;
 
 @optional
 - (NSObject<MFMessageIterationFilter> *)filter;

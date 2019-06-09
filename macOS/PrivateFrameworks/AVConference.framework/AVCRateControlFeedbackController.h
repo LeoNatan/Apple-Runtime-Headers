@@ -17,20 +17,22 @@ __attribute__((visibility("hidden")))
     unsigned int _remoteTotalPacketReceivedCount;
     BOOL _isFeedbackReceived;
     BOOL _didRegisterPacketReceivedHandler;
-    unsigned int _maxBurstyLossCache;
+    unsigned int _maxVideoBurstyLossCache;
+    unsigned int _maxAudioConsecutiveLossCache;
 }
 
-@property(nonatomic) unsigned int maxBurstyLossCache; // @synthesize maxBurstyLossCache=_maxBurstyLossCache;
+@property(nonatomic) unsigned int maxAudioConsecutiveLossCache; // @synthesize maxAudioConsecutiveLossCache=_maxAudioConsecutiveLossCache;
+@property(nonatomic) unsigned int maxVideoBurstyLossCache; // @synthesize maxVideoBurstyLossCache=_maxVideoBurstyLossCache;
 @property(nonatomic) unsigned int mode; // @synthesize mode=_mode;
-- (void)setPacketReceivedStatistics:(CDStruct_4c5da9d9)arg1;
-- (_Bool)detectOutOfOrderFeedbackMessage:(CDStruct_bcb9d60a)arg1;
-- (BOOL)translateMediaControlInfo:(void *)arg1 feedbackMessage:(CDStruct_bcb9d60a *)arg2;
-- (CDStruct_bcb9d60a)translateAFRCFeedbackMessage:(struct tagAFRCFB)arg1;
-- (CDStruct_bcb9d60a)translateRateControlFeedbackMessageFromData:(id)arg1;
-- (id)translateRateControlDataWithFeedbackMessage:(CDStruct_bcb9d60a)arg1;
+- (void)setPacketReceivedStatistics:(CDStruct_cbf42801)arg1;
+- (_Bool)detectOutOfOrderFeedbackMessage:(CDStruct_094a8fc2)arg1;
+- (BOOL)translateMediaControlInfo:(void *)arg1 feedbackMessage:(CDStruct_094a8fc2 *)arg2;
+- (CDStruct_094a8fc2)translateAFRCFeedbackMessage:(struct tagAFRCFB)arg1;
+- (CDStruct_094a8fc2)translateRateControlFeedbackMessageFromData:(id)arg1;
+- (id)translateRateControlDataWithFeedbackMessage:(CDStruct_094a8fc2)arg1;
 - (BOOL)processRateControlProbingMessage:(CDStruct_4c345eff)arg1 type:(unsigned int)arg2 error:(id *)arg3;
-- (BOOL)processRateControlFeedbackMessage:(CDStruct_bcb9d60a)arg1 type:(unsigned int)arg2 error:(id *)arg3;
-- (BOOL)getVCStatisticsFeedbackMessage:(CDStruct_48a7b5a5 *)arg1 time:(double)arg2;
+- (BOOL)processRateControlFeedbackMessage:(CDStruct_094a8fc2)arg1 type:(unsigned int)arg2 error:(id *)arg3;
+- (BOOL)getVCStatisticsFeedbackMessage:(CDStruct_b3eb8f4a *)arg1 time:(double)arg2;
 - (BOOL)getRateControlFeedbackMessage:(id *)arg1 type:(unsigned int)arg2 metaData:(id *)arg3 error:(id *)arg4;
 - (BOOL)processFeedbackMessage:(id)arg1 type:(unsigned int)arg2 metaData:(id)arg3 error:(id *)arg4;
 - (BOOL)getFeedbackMessage:(id *)arg1 type:(unsigned int)arg2 metaData:(id *)arg3 error:(id *)arg4;

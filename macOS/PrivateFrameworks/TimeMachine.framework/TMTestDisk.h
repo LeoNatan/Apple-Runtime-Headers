@@ -44,6 +44,7 @@
 @property(readonly) NSString *volumeName; // @synthesize volumeName=_volumeName;
 @property(readonly) TMDiskArbiter *arbiter; // @synthesize arbiter=_diskArbiter;
 - (BOOL)detach;
+- (void)forceUnmountAllVolumesAndSnapshots;
 - (BOOL)unmount;
 - (BOOL)_mountFileSystem;
 - (BOOL)constructFileSystem;

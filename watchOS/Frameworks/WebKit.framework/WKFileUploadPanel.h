@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UIViewController> _presentationViewController;
     struct RetainPtr<UIPopoverController> _presentationPopover;
     struct RetainPtr<UIDocumentMenuViewController> _documentMenuController;
+    struct RetainPtr<UIDocumentPickerViewController> _documentPickerController;
     int _mediaCaptureType;
     id <WKFileUploadPanelDelegate> _delegate;
 }
@@ -46,7 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (_Bool)_willMultipleSelectionDelegateBeCalled;
 - (void)documentPickerWasCancelled:(id)arg1;
-- (void)documentPicker:(id)arg1 didPickDocumentAtURL:(id)arg2;
+- (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
 - (void)documentMenuWasCancelled:(id)arg1;
 - (void)documentMenu:(id)arg1 didPickDocumentPicker:(id)arg2;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
@@ -58,10 +59,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)_shouldMediaCaptureOpenMediaDevice;
 - (void)_adjustMediaCaptureType;
 - (void)_showDocumentPickerMenu;
-- (id)_cameraButtonLabel;
+- (id)_cameraButtonLabelAllowingPhoto:(_Bool)arg1 allowingVideo:(_Bool)arg2;
 - (id)_photoLibraryButtonLabel;
-- (id)_documentPickerMenuMediaTypes;
 - (id)_mediaTypesForPickerSourceType:(int)arg1;
+- (id)currentAvailableActionTitles;
 - (void)_dismissDisplayAnimated:(_Bool)arg1;
 - (void)dismiss;
 - (void)presentWithParameters:(struct OpenPanelParameters *)arg1 resultListener:(struct WebOpenPanelResultListenerProxy *)arg2;

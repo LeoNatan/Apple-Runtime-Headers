@@ -9,7 +9,7 @@
 #import <CompanionSync/IDSServiceDelegate-Protocol.h>
 
 @class IDSMessageContext, IDSService, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSObject, NSString, NSURL, SYDevice, SYStartSyncSession, _SYInputStreamer, _SYOutputStreamer;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_os_transaction;
 
 __attribute__((visibility("hidden")))
 @interface SYFileTransferSyncEngine : SYSyncEngine <IDSServiceDelegate>
@@ -34,13 +34,17 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_responseMessageRows;
     NSMutableArray *_deferredIncomingSessions;
     NSMutableSet *_singleMessageUUIDs;
+    struct os_unfair_lock_s _messageMapLock;
     NSMutableDictionary *_messageIDsToSessionIDs;
+    NSObject<OS_os_transaction> *_closureTransaction;
+    NSObject<OS_os_transaction> *_responseSessionTransaction;
     NSDictionary *_customIDSOptions;
 }
 
 @property(copy, nonatomic) NSDictionary *customIDSOptions; // @synthesize customIDSOptions=_customIDSOptions;
 - (void).cxx_destruct;
 - (unsigned long)_crcChecksum:(id)arg1;
+- (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(CDUnknownBlockType)arg3;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;

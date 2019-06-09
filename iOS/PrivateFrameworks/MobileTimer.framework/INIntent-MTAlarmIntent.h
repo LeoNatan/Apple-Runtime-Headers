@@ -7,6 +7,7 @@
 #import <Intents/INIntent.h>
 
 @interface INIntent (MTAlarmIntent)
++ (id)mt_nanoAlarmBundleIDForAlarm:(id)arg1;
 + (void)mt_deleteDonationsForAlarm:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)mt_intentForAlarmDisable:(id)arg1;
 + (id)mt_intentForAlarmEnable:(id)arg1;

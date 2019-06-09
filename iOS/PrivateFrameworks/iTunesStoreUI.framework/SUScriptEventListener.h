@@ -16,10 +16,10 @@
     _Bool _useCapture;
 }
 
+- (void).cxx_destruct;
 @property _Bool shouldUseCapture; // @synthesize shouldUseCapture=_useCapture;
 @property(copy) NSString *name; // @synthesize name=_name;
 @property(retain) WebScriptObject *callback; // @synthesize callback=_callback;
-- (void)dealloc;
 - (id)init;
 
 @end

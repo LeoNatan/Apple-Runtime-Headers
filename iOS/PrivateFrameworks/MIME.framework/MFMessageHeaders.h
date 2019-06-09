@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MIME/ECMessageHeaders-Protocol.h>
 #import <MIME/NSCopying-Protocol.h>
 
-@class NSData;
+@class NSData, NSString;
 
-@interface MFMessageHeaders : NSObject <NSCopying>
+@interface MFMessageHeaders : NSObject <ECMessageHeaders, NSCopying>
 {
     NSData *_data;
     unsigned int _preferredEncoding;
@@ -24,7 +25,8 @@
 + (_Bool)isStructuredHeaderKey:(id)arg1;
 + (id)basicHeaders;
 @property(retain, nonatomic) NSData *data; // @synthesize data=_data;
-- (id)description;
+- (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)appendHeaderData:(id)arg1 andRecipients:(id)arg2;
 - (id)encodedHeaders;
 - (_Bool)messageIsFromEntourage;
@@ -32,6 +34,7 @@
 - (id)copyFirstStringValueForKey:(id)arg1;
 - (id)copyFirstNonDecodedHeaderForKey:(id)arg1;
 - (id)copyFirstHeaderForKey:(id)arg1;
+- (id)firstAddressForKey:(id)arg1;
 - (id)firstHeaderForKey:(id)arg1;
 - (id)listUnsubscribeCommands;
 - (id)references;
@@ -61,11 +64,15 @@
 @property(nonatomic) unsigned int preferredEncoding;
 - (id)headerData;
 - (id)mutableCopy;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithASCIIHeaderString:(id)arg1;
 - (id)init;
 - (id)initWithHeaderData:(id)arg1 encoding:(unsigned int)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

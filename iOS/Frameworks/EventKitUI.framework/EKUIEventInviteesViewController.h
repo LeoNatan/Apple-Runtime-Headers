@@ -66,6 +66,8 @@ __attribute__((visibility("hidden")))
 - (void)_searcherStateChanged:(long long)arg1;
 - (void)_requestDismissal;
 - (void)_refreshIfNeeded;
+- (void)prepareToReloadAttendeesSections;
+- (void)_smoothRefreshIfNeededForSections:(id)arg1;
 - (id)_sectionForIndex:(unsigned long long)arg1;
 - (long long)_indexForSection:(id)arg1;
 - (id)_viewControllerForPresentingViewControllers;
@@ -79,6 +81,7 @@ __attribute__((visibility("hidden")))
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 editActionsForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;

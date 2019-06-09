@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_nw_endpoint> *local_endpoint;
     NSObject<OS_nw_endpoint> *remote_endpoint;
     NSObject<OS_nw_array> *discovered_endpoints;
+    NSObject<OS_nw_array> *resolved_endpoints;
     struct necp_client_result_netagent nexus_agent_struct;
     struct necp_client_result_interface interface_struct;
     unsigned char tfo_cookie[16];

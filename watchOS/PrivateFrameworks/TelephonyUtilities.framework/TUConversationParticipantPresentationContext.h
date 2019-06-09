@@ -12,7 +12,7 @@
 
 @interface TUConversationParticipantPresentationContext : NSObject <NSSecureCoding>
 {
-    unsigned int _participantIdentifier;
+    unsigned long _participantIdentifier;
     unsigned int _videoQuality;
     NSNumber *_visibility;
     NSNumber *_prominence;
@@ -22,11 +22,11 @@
 @property(readonly, nonatomic) NSNumber *prominence; // @synthesize prominence=_prominence;
 @property(readonly, nonatomic) NSNumber *visibility; // @synthesize visibility=_visibility;
 @property(readonly, nonatomic) unsigned int videoQuality; // @synthesize videoQuality=_videoQuality;
-@property(readonly, nonatomic) unsigned int participantIdentifier; // @synthesize participantIdentifier=_participantIdentifier;
+@property(readonly, nonatomic) unsigned long participantIdentifier; // @synthesize participantIdentifier=_participantIdentifier;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
-- (id)initWithParticipantIdentifier:(unsigned int)arg1 videoQuality:(unsigned int)arg2 visibility:(id)arg3 prominence:(id)arg4;
+- (id)initWithParticipantIdentifier:(unsigned long)arg1 videoQuality:(unsigned int)arg2 visibility:(id)arg3 prominence:(id)arg4;
 
 @end
 

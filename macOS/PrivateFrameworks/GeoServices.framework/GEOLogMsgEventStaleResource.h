@@ -15,8 +15,8 @@
     NSMutableArray *_staleResources;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)staleResourceType;
-@property(retain, nonatomic) NSMutableArray *staleResources; // @synthesize staleResources=_staleResources;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,12 +25,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)staleResourceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)staleResourcesCount;
 - (void)addStaleResource:(id)arg1;
 - (void)clearStaleResources;
+@property(retain, nonatomic) NSMutableArray *staleResources;
 
 @end
 

@@ -19,6 +19,7 @@
 }
 
 + (_Bool)_supportsTouchContinuation;
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
 - (struct CGPoint)_digitizerLocation;

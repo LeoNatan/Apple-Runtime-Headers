@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSURectList : NSObject
 {
     vector_a9587b3d mRectList;

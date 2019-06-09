@@ -17,8 +17,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)mt_removeAllVibrantStyling;
-- (void)mt_applyVibrantStyling:(id)arg1;
+- (void)mt_removeAllVisualStyling;
+- (void)_mt_applyVisualStyling:(id)arg1;
 @property(nonatomic) long long numberOfLines;
 @property(nonatomic) long long lineBreakMode;
 @property(nonatomic) long long textAlignment;

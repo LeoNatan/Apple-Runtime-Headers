@@ -6,17 +6,18 @@
 
 #import <UserNotifications/UNNotificationSound.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class NSNumber, NSString, NSURL;
 
 @interface UNMutableNotificationSound : UNNotificationSound
 {
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(copy, nonatomic) NSDictionary *vibrationPattern; // @dynamic vibrationPattern;
+@property(copy, nonatomic) NSURL *vibrationPatternFileURL; // @dynamic vibrationPatternFileURL;
 @property(copy, nonatomic) NSString *vibrationIdentifier; // @dynamic vibrationIdentifier;
 @property(nonatomic) unsigned long long toneMediaLibraryItemIdentifier; // @dynamic toneMediaLibraryItemIdentifier;
 @property(copy, nonatomic) NSString *toneIdentifier; // @dynamic toneIdentifier;
+@property(copy, nonatomic) NSURL *toneFileURL; // @dynamic toneFileURL;
 @property(copy, nonatomic) NSString *toneFileName; // @dynamic toneFileName;
 @property(nonatomic) _Bool shouldRepeat; // @dynamic shouldRepeat;
 @property(nonatomic) _Bool shouldIgnoreRingerSwitch; // @dynamic shouldIgnoreRingerSwitch;

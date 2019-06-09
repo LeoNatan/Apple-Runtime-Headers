@@ -8,13 +8,12 @@
 
 #import <Notes/ICSearchIndexableNote-Protocol.h>
 
-@class NSData, NSDate, NSNumber, NSSet, NSString, NSURL, NoteBodyObject, NoteStoreObject;
+@class NSArray, NSData, NSDate, NSNumber, NSSet, NSString, NSURL, NoteBodyObject, NoteStoreObject;
 
 @interface NoteObject : NSManagedObject <ICSearchIndexableNote>
 {
 }
 
-+ (_Bool)didChooseToMigrateNote:(id)arg1 context:(struct NoteContext *)arg2;
 - (_Bool)belongsToCollection:(id)arg1;
 @property(nonatomic) unsigned long long sequenceNumber;
 - (_Bool)containsAttachments;
@@ -28,7 +27,7 @@
 @property(readonly, nonatomic) _Bool isMarkedForDeletion;
 - (void)markForDeletion;
 @property(nonatomic) _Bool isPlainText;
-- (id)contentAsPlainTextPreservingNewlines;
+@property(readonly, nonatomic) NSString *contentAsPlainTextPreservingNewlines;
 @property(readonly, nonatomic) NSString *contentAsPlainText;
 @property(retain, nonatomic) NSString *content;
 @property(retain, nonatomic) NSString *title; // @dynamic title;
@@ -36,12 +35,12 @@
 - (id)dataForTypeIdentifier:(id)arg1;
 - (id)searchableItemAttributeSet;
 - (id)searchDomainIdentifier;
-- (id)searchableItemIdentifier;
+- (id)contentIdentifier;
+- (id)searchIndexingIdentifier;
 - (id)dateForCurrentSortType;
 - (id)contentInfoText;
 - (id)noteAsPlainTextWithoutTitle;
-- (id)searchableContentKeyPaths;
-- (_Bool)ignoreInSearchIndexer;
+@property(readonly, nonatomic) NSArray *noteCellKeyPaths;
 - (id)authorsExcludingCurrentUser;
 - (_Bool)isHiddenFromSearch;
 - (_Bool)searchResultCanBeDeletedFromNoteContext;
@@ -50,8 +49,12 @@
 - (long long)visibilityTestingType;
 - (id)identifier;
 - (id)accountName;
+- (id)folderNameForNoteList;
 - (id)folderName;
 - (id)trimmedTitle;
+- (_Bool)isMovable;
+- (_Bool)isSharedReadOnly;
+- (_Bool)isSharedViaICloudFolder;
 - (_Bool)isSharedViaICloud;
 @property(readonly, nonatomic) _Bool isModernNote;
 - (_Bool)isPasswordProtected;

@@ -35,7 +35,7 @@
 - (id)userPanelIDsVisibleOnly:(BOOL)arg1;
 @property(readonly, copy, nonatomic) NSArray *userVisibleToolbarPanelIDs;
 @property(readonly, copy, nonatomic) NSArray *userVisibleOpenablePanelIDs;
-- (id)_usderPanelIDsVisibleOnly:(BOOL)arg1 containsDefaultKeyboard:(char *)arg2;
+- (id)_userPanelIDsVisibleOnly:(BOOL)arg1 containsDefaultKeyboard:(char *)arg2;
 @property(readonly, copy, nonatomic) NSArray *allAssociatedApplications;
 - (id)associatedPanelForApplicationWithBundleID:(id)arg1;
 - (void)associatePanel:(id)arg1 withApplication:(id)arg2;

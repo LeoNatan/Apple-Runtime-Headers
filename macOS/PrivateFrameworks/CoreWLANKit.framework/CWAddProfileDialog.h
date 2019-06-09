@@ -77,6 +77,7 @@
 - (BOOL)validateEntries;
 - (void)resetSecurityEntries;
 - (void)setSecurityTypeViewForTag:(long long)arg1;
+- (long long)getDefaultTag;
 - (id)localizedStringForKey:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
 - (void)onChooseNetworkButton:(id)arg1;

@@ -6,7 +6,7 @@
 
 #import <SiriUI/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, SAUIAudioData;
 
 @protocol AFUISpeechSynthesis <NSObject>
 @property(nonatomic) BOOL disableAudioDucking;
@@ -16,7 +16,8 @@
 - (void)skipCurrentSynthesis;
 - (void)cancel;
 - (void)enqueuePhaticWithCompletion:(void (^)(long long))arg1;
-- (void)enqueueText:(NSString *)arg1 completion:(void (^)(long long))arg2;
-- (void)enqueueText:(NSString *)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(NSString *)arg5 completion:(void (^)(long long))arg6 animationIdentifier:(NSString *)arg7;
+- (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 completion:(void (^)(long long))arg3;
+- (void)enqueueAudioData:(SAUIAudioData *)arg1 identifier:(NSString *)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 completion:(void (^)(long long))arg5;
+- (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 isPhonetic:(BOOL)arg3 provisionally:(BOOL)arg4 eligibleAfterDuration:(double)arg5 preparationIdentifier:(NSString *)arg6 completion:(void (^)(long long))arg7 animationIdentifier:(NSString *)arg8;
 @end
 

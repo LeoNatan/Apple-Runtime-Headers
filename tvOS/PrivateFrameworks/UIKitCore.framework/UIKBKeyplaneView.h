@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIKBCacheableView-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSTimer, UIKBCacheToken, UIKBKeyView, UIKBKeyViewAnimator, UIKBRenderConfig, UIKBRenderFactory, UIKBRenderingContext, UIKBTree, UIKeyboardEmojiKeyDisplayController;
+@class NSMutableDictionary, NSString, NSTimer, UIKBCacheToken, UIKBKeyView, UIKBKeyViewAnimator, UIKBRenderConfig, UIKBRenderFactory, UIKBRenderingContext, UIKBTree, UIKeyboardEmojiKeyDisplayController, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIKBKeyplaneView : UIKBSplitImageView <UIKBCacheableView>
@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
     UIKBSplitImageView *_keyBorders;
     UIKBSplitImageView *_keyBackgrounds;
     UIKBSplitImageView *_keyCaps;
+    UIView *_keyplaneMaskView;
 }
 
 @property(retain, nonatomic) UIKeyboardEmojiKeyDisplayController *emojiKeyManager; // @synthesize emojiKeyManager=_emojiKeyManager;
@@ -44,25 +45,30 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIKBCacheToken *cacheToken; // @synthesize cacheToken=_cacheToken;
 @property(retain, nonatomic) UIKBTree *defaultKeyplane; // @synthesize defaultKeyplane=_defaultKeyplane;
 @property(retain, nonatomic) UIKBTree *keyplane; // @synthesize keyplane=_keyplane;
+@property(readonly, nonatomic) UIView *keyplaneMaskView; // @synthesize keyplaneMaskView=_keyplaneMaskView;
+- (void)_updateKeyplaneMaskView;
 - (void)purgeFactory;
 - (void)purgeLayerContents;
 - (void)purgeSubviews;
 - (void)purgeKeyViews;
+- (void)purgeActiveKeyViews;
 - (void)activateKeys;
 - (void)deactivateKeys;
 - (void)deactivateKey:(id)arg1 previousState:(int)arg2;
+- (void)hideKeyCaps:(_Bool)arg1;
 - (void)dimKeys:(id)arg1;
 - (void)deactivateAdaptiveKey:(id)arg1;
 - (_Bool)shouldAnimateOutKeyView:(id)arg1;
 - (_Bool)shouldAnimateInKeyView:(id)arg1;
 - (id)viewForKey:(id)arg1 state:(int)arg2;
 - (id)viewForKey:(id)arg1;
+- (void)updateFrameForKey:(id)arg1;
 - (id)activeKeyViews;
 - (int)stateForKey:(id)arg1;
 - (void)setState:(int)arg1 forKey:(id)arg2;
 - (_Bool)_shouldAllowKey:(id)arg1;
-- (id)containingViewForKey:(id)arg1 withState:(int)arg2;
-- (int)cornerMaskForKey:(id)arg1 recursive:(_Bool)arg2;
+- (id)containingViewForKey:(id)arg1 withState:(int)arg2 wantsActiveOut:(_Bool *)arg3;
+- (unsigned long long)cornerMaskForKey:(id)arg1 recursive:(_Bool)arg2;
 - (id)cacheIdentifierForKey:(id)arg1 withState:(int)arg2;
 - (id)cacheIdentifierForKey:(id)arg1;
 - (void)removeKeyFromDelayedDeactivationSet:(id)arg1;
@@ -83,6 +89,7 @@ __attribute__((visibility("hidden")))
 - (id)cacheKeysForRenderFlags:(id)arg1;
 - (_Bool)useDefaultKeyplaneCacheTokenForRenderFlags:(long long)arg1;
 @property(readonly, nonatomic) NSString *cacheKey;
+- (void)layoutSubviews;
 - (void)willMoveToWindow:(id)arg1;
 - (void)_generateFactoryIfNeeded;
 - (void)_generateRenderingContextIfNeeded;

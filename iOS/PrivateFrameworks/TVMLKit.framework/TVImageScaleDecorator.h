@@ -11,6 +11,7 @@
 @interface TVImageScaleDecorator : TVImageDecorator
 {
     _Bool _cornerContinuous;
+    _Bool _preservesAlpha;
     long long _scaleMode;
     double _focusedSizeIncrease;
     UIColor *_bgColor;
@@ -19,6 +20,7 @@
     struct TVCornerRadii _cornerRadii;
 }
 
+@property(nonatomic) _Bool preservesAlpha; // @synthesize preservesAlpha=_preservesAlpha;
 @property(copy, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
 @property(nonatomic) _Bool cornerContinuous; // @synthesize cornerContinuous=_cornerContinuous;
 @property(nonatomic) struct TVCornerRadii cornerRadii; // @synthesize cornerRadii=_cornerRadii;

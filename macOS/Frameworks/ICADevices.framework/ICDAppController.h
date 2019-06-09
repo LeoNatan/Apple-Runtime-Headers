@@ -11,6 +11,7 @@
 @class NSString, NSXPCConnection, NSXPCListener;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface ICDAppController : NSObject <NSXPCListenerDelegate>
 {
     NSXPCConnection *_clientConnection;
@@ -30,7 +31,8 @@
 - (void)setClientWithPID:(id)arg1 usingDevice:(BOOL)arg2;
 - (id)clientUsingDevice;
 - (int)numberOfClients;
-- (int)removeClientWithPID:(id)arg1 terminateIfIdle:(BOOL)arg2;
+- (void)removeClientWithPID:(id)arg1;
+- (void)deviceIsServicingZeroClients;
 - (void)sendMessage:(id)arg1 withConnection:(id)arg2;
 - (void)queryLaunchParams;
 - (void)applicationDidFinishLaunching:(id)arg1;
@@ -38,10 +40,33 @@
 - (void)savePrefs;
 - (void)dealloc;
 - (void)messageFromClient:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)requestScannerDeviceDownloadObjectWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestScannerStatus:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestScannerDeviceChangeScanAreaSelection:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestScannerDeviceInitialize:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestScannerDeviceStart:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestScannerDeviceSetParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestScannerDeviceGetParameters:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestScannerDeviceOpenSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestDeviceDownloadObjectWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestCameraDeviceUploadObject:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)sendCameraDevicePTPCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)sendDeviceMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)copyCameraObjectData:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)copyCameraObjectThumbnail:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestCameraDeviceOpenSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestDeviceCloseSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestDeviceUnregisterClientNotifications:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestDeviceRegisterClientNotifications:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)commandName:(id)arg1;
+- (void)copyDeviceObjectPropertyData:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)copyDeviceObjectPropertyDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)processResult:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)messageFromClientDirect:(id)arg1;
 - (void)messageFromICDD:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)messageFromDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)addSelectorToInterface:(id)arg1 selectorString:(id)arg2 origin:(BOOL)arg3;
 - (void)disconnectDeviceWithDescription:(id)arg1;
 - (short)connectDeviceWithDescription:(id)arg1;
 - (BOOL)isRunningUnderDebugMode;

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSString *_storeFrontIdentifier;
     NSString *_storeIdentifier;
     NSString *_name;
+    NSString *_subtitle;
     NSString *_genre;
     NSString *_platform;
     NSNumber *_isHiddenFromSpringboard;
@@ -23,8 +24,10 @@ __attribute__((visibility("hidden")))
     LPiTunesMediaAsset *_icon;
     LPiTunesMediaAsset *_messagesAppIcon;
     NSArray *_screenshots;
+    LPiTunesMediaAsset *_previewVideo;
 }
 
+@property(retain, nonatomic) LPiTunesMediaAsset *previewVideo; // @synthesize previewVideo=_previewVideo;
 @property(retain, nonatomic) NSArray *screenshots; // @synthesize screenshots=_screenshots;
 @property(retain, nonatomic) LPiTunesMediaAsset *messagesAppIcon; // @synthesize messagesAppIcon=_messagesAppIcon;
 @property(retain, nonatomic) LPiTunesMediaAsset *icon; // @synthesize icon=_icon;
@@ -32,11 +35,12 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSNumber *isHiddenFromSpringboard; // @synthesize isHiddenFromSpringboard=_isHiddenFromSpringboard;
 @property(copy, nonatomic) NSString *platform; // @synthesize platform=_platform;
 @property(copy, nonatomic) NSString *genre; // @synthesize genre=_genre;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
 @property(copy, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
 - (void).cxx_destruct;
-- (id)assetsToResolve;
+- (id)assetsToFetch;
 - (id)resolve;
 
 // Remaining properties

@@ -104,12 +104,12 @@ __attribute__((visibility("hidden")))
 - (void)setLastCameraGUID:(unsigned long long)arg1;
 - (void)setSecurityInfoPaused:(BOOL)arg1;
 - (void)clearSecurityInfo;
-- (struct OpaqueSecCertificateRef *)getRemoteCertificateForUser:(id)arg1;
+- (struct __SecCertificate *)getRemoteCertificateForUser:(id)arg1;
 - (BOOL)isSecurityValidForUser:(id)arg1;
 - (BOOL)isSecurityEnabledForUser:(id)arg1;
 - (void)setSecurityInfoValid:(BOOL)arg1 forUser:(id)arg2;
 - (void)setSecurityInfoEnabled:(BOOL)arg1 forUser:(id)arg2;
-- (void)setSecurityInfoCertificate:(struct OpaqueSecCertificateRef *)arg1 forUser:(id)arg2;
+- (void)setSecurityInfoCertificate:(struct __SecCertificate *)arg1 forUser:(id)arg2;
 - (void)setConfStatusConnected:(BOOL)arg1;
 - (void)sendConfStatusUpdateToiChat;
 - (void)removeConfStatus:(id)arg1;

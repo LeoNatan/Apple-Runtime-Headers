@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/BKSEventFocusObserving-Protocol.h>
+#import <UIKitCore/BKSHIDEventDeliveryPolicyObserving-Protocol.h>
 #import <UIKitCore/_UIFocusMovementPerformerDelegate-Protocol.h>
 #import <UIKitCore/_UIFocusSystemDelegate-Protocol.h>
 
-@class NSString, UIFocusSystem, UIScreen, _UIFocusScrollManager;
+@class BKSHIDEventDeliveryPolicyObserver, NSString, UIFocusSystem, UIScreen, _UIFocusScrollManager;
 
 __attribute__((visibility("hidden")))
-@interface _UIScreenFocusSystemManager : NSObject <BKSEventFocusObserving, _UIFocusSystemDelegate, _UIFocusMovementPerformerDelegate>
+@interface _UIScreenFocusSystemManager : NSObject <BKSHIDEventDeliveryPolicyObserving, _UIFocusSystemDelegate, _UIFocusMovementPerformerDelegate>
 {
+    BKSHIDEventDeliveryPolicyObserver *_observer;
     _Bool _allowsForwardingFocusMovementActions;
     UIScreen *_screen;
     UIFocusSystem *_focusSystem;
@@ -26,7 +27,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
 @property(readonly, nonatomic) __weak UIScreen *screen; // @synthesize screen=_screen;
 - (void).cxx_destruct;
-- (void)focusedDeferralPropertiesDidChange:(id)arg1;
+- (void)observerDeliveryPolicyDidChange:(id)arg1;
+- (_Bool)_shouldForwardFocusMovementRequest:(id)arg1;
 - (_Bool)_handleFailedFocusMovementRequest:(id)arg1 withPerformer:(id)arg2;
 - (id)_focusItemContainerForFocusSystem:(id)arg1;
 - (id)_focusMapContainerForFocusSystem:(id)arg1;

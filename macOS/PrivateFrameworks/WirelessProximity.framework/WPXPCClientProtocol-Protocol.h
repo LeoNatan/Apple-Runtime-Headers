@@ -6,12 +6,16 @@
 
 #import <WirelessProximity/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSError, NSMutableSet, NSNumber, NSString, NSUUID, WPAdvertisingRequest, WPPeerTrackingRequest, WPScanRequest;
+@class NSArray, NSData, NSDictionary, NSError, NSMutableSet, NSNumber, NSString, NSUUID, WPAdvertisingRequest, WPPeerTrackingRequest, WPScanRequest;
 
 @protocol WPXPCClientProtocol <NSObject>
 - (void)registeredWithDaemonAndContinuingSession:(BOOL)arg1;
 
 @optional
+- (void)rangingEnabled:(BOOL)arg1 withError:(NSError *)arg2;
+- (void)receivedTestResponse:(NSDictionary *)arg1;
+- (void)receivedData:(NSData *)arg1 fromEndpoint:(NSString *)arg2 forPeripheral:(NSUUID *)arg3;
+- (void)sentData:(NSData *)arg1 toEndpoint:(NSString *)arg2 forPeripheral:(NSUUID *)arg3 withError:(NSError *)arg4;
 - (void)disconnectedDeviceOverLEPipe:(NSUUID *)arg1 withError:(NSError *)arg2;
 - (void)connectedDeviceOverLEPipe:(NSUUID *)arg1;
 - (void)bandwidthStateUpdated:(NSNumber *)arg1;
@@ -33,6 +37,7 @@
 - (void)foundPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
 - (void)stoppedTrackingPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
 - (void)startedTrackingPeer:(NSUUID *)arg1 ofType:(unsigned char)arg2;
+- (void)devicesDiscovered:(NSArray *)arg1;
 - (void)anyDiscoveredDevice:(NSDictionary *)arg1;
 - (void)deviceDiscovered:(NSDictionary *)arg1;
 - (void)scanningFailedToStart:(NSError *)arg1 ofType:(unsigned char)arg2;
@@ -41,10 +46,9 @@
 - (void)updateScanningRequest:(WPScanRequest *)arg1 withUpdate:(void (^)(WPScanRequest *))arg2;
 - (void)advertisingFailedToStart:(NSError *)arg1 ofType:(unsigned char)arg2;
 - (void)advertisingPendingOfType:(unsigned char)arg1;
-- (void)advertisingStoppedOfType:(unsigned char)arg1;
+- (void)advertisingStoppedOfType:(unsigned char)arg1 withError:(NSError *)arg2;
 - (void)advertisingStartedOfType:(unsigned char)arg1;
 - (void)updateAdvertisingRequest:(WPAdvertisingRequest *)arg1 withUpdate:(void (^)(WPAdvertisingRequest *))arg2;
-- (void)pipeStateDidChange:(long long)arg1;
 - (void)scannerStateDidChange:(long long)arg1;
 - (void)advertiserStateDidChange:(long long)arg1;
 - (void)stateDidChange:(long long)arg1;

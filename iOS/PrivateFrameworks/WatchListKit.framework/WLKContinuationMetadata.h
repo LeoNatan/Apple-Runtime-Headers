@@ -6,35 +6,39 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, WLKBasicContentMetadata, WLKPlayEvent, WLKPlayable;
+@class NSArray, NSNumber, NSString, NSURL, WLKBasicContentMetadata, WLKPlayable;
 
 @interface WLKContinuationMetadata : NSObject
 {
     _Bool _isRental;
     _Bool _isPurchase;
-    WLKPlayEvent *_playEvent;
     WLKPlayable *_playable;
     WLKBasicContentMetadata *_movieOrShowContent;
-    WLKBasicContentMetadata *_currentEpisode;
-    WLKBasicContentMetadata *_showParent;
+    NSURL *_contentTVAppDeeplinkURL;
+    long long _contextEnum;
     NSString *_context;
     NSString *_localizedContext;
     NSString *_deleteID;
+    NSNumber *_siriActionsExpirationEpochMillis;
+    NSArray *_siriActionsCategories;
 }
 
++ (long long)_contextForString:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *siriActionsCategories; // @synthesize siriActionsCategories=_siriActionsCategories;
+@property(readonly, copy, nonatomic) NSNumber *siriActionsExpirationEpochMillis; // @synthesize siriActionsExpirationEpochMillis=_siriActionsExpirationEpochMillis;
 @property(readonly, copy, nonatomic) NSString *deleteID; // @synthesize deleteID=_deleteID;
 @property(readonly, nonatomic) _Bool isPurchase; // @synthesize isPurchase=_isPurchase;
 @property(readonly, nonatomic) _Bool isRental; // @synthesize isRental=_isRental;
 @property(readonly, copy, nonatomic) NSString *localizedContext; // @synthesize localizedContext=_localizedContext;
 @property(readonly, copy, nonatomic) NSString *context; // @synthesize context=_context;
-@property(readonly, nonatomic) WLKBasicContentMetadata *showParent; // @synthesize showParent=_showParent;
-@property(readonly, nonatomic) WLKBasicContentMetadata *currentEpisode; // @synthesize currentEpisode=_currentEpisode;
+@property(readonly, nonatomic) long long contextEnum; // @synthesize contextEnum=_contextEnum;
+@property(readonly, nonatomic) NSURL *contentTVAppDeeplinkURL; // @synthesize contentTVAppDeeplinkURL=_contentTVAppDeeplinkURL;
 @property(readonly, nonatomic) WLKBasicContentMetadata *movieOrShowContent; // @synthesize movieOrShowContent=_movieOrShowContent;
 @property(readonly, nonatomic) WLKPlayable *playable; // @synthesize playable=_playable;
-@property(readonly, nonatomic) WLKPlayEvent *playEvent; // @synthesize playEvent=_playEvent;
 - (void).cxx_destruct;
+- (id)description;
 - (id)init;
-- (id)initWithDictionary:(id)arg1;
+- (id)initWithDictionary:(id)arg1 context:(id)arg2;
 
 @end
 

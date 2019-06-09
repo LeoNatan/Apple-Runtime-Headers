@@ -8,6 +8,7 @@
 
 @class SKUICellImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIItemBrowseCellContentView : UIView
 {
     UILabel *_indexNumberLabel;

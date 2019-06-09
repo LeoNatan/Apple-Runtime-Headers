@@ -9,6 +9,7 @@
 @class NSDictionary;
 
 @protocol UMXPCClient <NSObject>
+- (void)personaListDidUpdateCompletionHandler:(void (^)(void))arg1;
 - (void)bubbleDidPop;
 - (void)deviceLoginSessionStateDidUpdate;
 - (void)userSwitchTaskListDidUpdate;

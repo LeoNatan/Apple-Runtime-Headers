@@ -8,18 +8,42 @@
 
 #import <PhotosUICore/PXDisplayAssetCollection-Protocol.h>
 
-@class NSDate, NSString;
+@class NSArray, NSDate, NSString;
 
 @interface PXForYouSuggestionAssetCollection : PXBaseDisplayCollection <PXDisplayAssetCollection>
 {
+    _Bool _isEnriched;
+    _Bool _isEnrichmentComplete;
+    _Bool _isAggregation;
+    _Bool _isRecent;
+    unsigned short _px_highlightEnrichmentState;
     NSString *_localizedTitle;
     NSString *_localizedSubtitle;
+    NSString *_localizedSmartDescription;
+    NSString *_localizedDateDescription;
+    NSString *_localizedDebugDescription;
+    NSArray *_localizedLocationNames;
     NSDate *_startDate;
     NSDate *_endDate;
+    double _promotionScore;
+    unsigned long long _estimatedAssetCount;
+    long long _px_highlightKind;
 }
 
+@property(readonly, nonatomic) long long px_highlightKind; // @synthesize px_highlightKind=_px_highlightKind;
+@property(readonly, nonatomic) unsigned short px_highlightEnrichmentState; // @synthesize px_highlightEnrichmentState=_px_highlightEnrichmentState;
+@property(readonly, nonatomic) unsigned long long estimatedAssetCount; // @synthesize estimatedAssetCount=_estimatedAssetCount;
+@property(readonly, nonatomic) _Bool isRecent; // @synthesize isRecent=_isRecent;
+@property(readonly, nonatomic) double promotionScore; // @synthesize promotionScore=_promotionScore;
+@property(readonly, nonatomic) _Bool isAggregation; // @synthesize isAggregation=_isAggregation;
+@property(readonly, nonatomic) _Bool isEnrichmentComplete; // @synthesize isEnrichmentComplete=_isEnrichmentComplete;
+@property(readonly, nonatomic) _Bool isEnriched; // @synthesize isEnriched=_isEnriched;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(readonly, nonatomic) NSArray *localizedLocationNames; // @synthesize localizedLocationNames=_localizedLocationNames;
+@property(readonly, nonatomic) NSString *localizedDebugDescription; // @synthesize localizedDebugDescription=_localizedDebugDescription;
+@property(readonly, nonatomic) NSString *localizedDateDescription; // @synthesize localizedDateDescription=_localizedDateDescription;
+@property(readonly, nonatomic) NSString *localizedSmartDescription; // @synthesize localizedSmartDescription=_localizedSmartDescription;
 @property(readonly, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(readonly, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
 - (void).cxx_destruct;
@@ -31,28 +55,48 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool px_canRearrangeContent;
 @property(readonly, nonatomic) _Bool px_isAllPhotosSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isCloudMultipleContributorsEnabled;
 @property(readonly, nonatomic) _Bool px_isFavoriteMemoriesSmartFolder;
 @property(readonly, nonatomic) _Bool px_isFavoritesSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isFolder;
 @property(readonly, nonatomic) _Bool px_isHiddenSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isImportHistoryCollection;
+@property(readonly, nonatomic) _Bool px_isImportSessionCollection;
 @property(readonly, nonatomic) _Bool px_isImportedAlbum;
 @property(readonly, nonatomic) _Bool px_isMacSyncedAlbum;
 @property(readonly, nonatomic) _Bool px_isMacSyncedEventsFolder;
 @property(readonly, nonatomic) _Bool px_isMacSyncedFacesFolder;
 @property(readonly, nonatomic) _Bool px_isMediaTypeSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isMediaTypesFolder;
 @property(readonly, nonatomic) _Bool px_isMemoriesVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isMomentsVirtualCollection;
 @property(readonly, nonatomic) _Bool px_isMyPhotoStreamAlbum;
 @property(readonly, nonatomic) _Bool px_isOwnedSharedAlbum;
 @property(readonly, nonatomic) _Bool px_isPeopleVirtualCollection;
-@property(readonly, nonatomic) _Bool px_isPlacesVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isPhotosVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isPlacesSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isProject;
+@property(readonly, nonatomic) _Bool px_isProjectsFolder;
 @property(readonly, nonatomic) _Bool px_isRecentlyAddedSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isRecentlyDeletedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentlyEditedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRecentlySavedSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isRegularAlbum;
+@property(readonly, nonatomic) _Bool px_isRegularFolder;
+@property(readonly, nonatomic) _Bool px_isRootSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isScreenRecordingsSmartAlbum;
+@property(readonly, nonatomic) _Bool px_isSharedActivityVirtualCollection;
 @property(readonly, nonatomic) _Bool px_isSharedAlbum;
+@property(readonly, nonatomic) _Bool px_isSharedAlbumsFolder;
 @property(readonly, nonatomic) _Bool px_isSmartAlbum;
 @property(readonly, nonatomic) _Bool px_isSmartFolder;
 @property(readonly, nonatomic) _Bool px_isStandInAlbum;
-@property(readonly, nonatomic) _Bool px_isVirtualCollection;
+@property(readonly, nonatomic) _Bool px_isTopLevelFolder;
+@property(readonly, nonatomic) _Bool px_isTransientPlacesCollection;
+@property(readonly, nonatomic) _Bool px_isUserCreated;
+@property(readonly, nonatomic) _Bool px_isUserSmartAlbum;
 @property(readonly) Class superclass;
 
 @end

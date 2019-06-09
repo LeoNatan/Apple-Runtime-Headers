@@ -20,6 +20,8 @@
     NSString *_manufacturer;
     NSString *_modelNumber;
     NSString *_name;
+    int _primaryPlacement;
+    int _secondaryPlacement;
     unsigned int _productIdentifier;
     CDStruct_83abfce7 _address;
 }
@@ -27,6 +29,8 @@
 @property(nonatomic) _Bool present; // @synthesize present=_present;
 @property(nonatomic) _Bool supportsAACPService; // @synthesize supportsAACPService=_supportsAACPService;
 @property(nonatomic) unsigned int productIdentifier; // @synthesize productIdentifier=_productIdentifier;
+@property(nonatomic) int secondaryPlacement; // @synthesize secondaryPlacement=_secondaryPlacement;
+@property(nonatomic) int primaryPlacement; // @synthesize primaryPlacement=_primaryPlacement;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *modelNumber; // @synthesize modelNumber=_modelNumber;
 @property(copy, nonatomic) NSString *manufacturer; // @synthesize manufacturer=_manufacturer;

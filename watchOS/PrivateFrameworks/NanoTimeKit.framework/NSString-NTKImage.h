@@ -10,5 +10,7 @@
 - (id)imageWithFont:(id)arg1 border:(unsigned int)arg2 color:(id)arg3 cropped:(_Bool)arg4;
 - (id)imageWithFont:(id)arg1 border:(unsigned int)arg2 cropped:(_Bool)arg3;
 - (id)imageWithFont:(id)arg1;
+- (_Bool)ntk_containsOnlyValidMonogramCharacters;
+- (_Bool)ntk_isValidMonogram;
 @end
 

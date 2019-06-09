@@ -60,7 +60,6 @@
 @property(readonly, nonatomic) NSArray *earnedInstances; // @synthesize earnedInstances=_earnedInstances;
 @property(readonly, nonatomic) ACHTemplate *template; // @synthesize template=_template;
 - (void).cxx_destruct;
-- (id)_expandedClientRequiredURLs;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

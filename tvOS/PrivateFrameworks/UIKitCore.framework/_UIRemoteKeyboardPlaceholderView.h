@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)placeholderForView:(id)arg1;
 @property(retain, nonatomic) UIView *associatedView; // @synthesize associatedView=_associatedView;
 @property(retain, nonatomic) UIView *fallbackView; // @synthesize fallbackView=_fallbackView;
+- (void)_isPlaceholderViewSelector;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) struct CGSize fixedSize;

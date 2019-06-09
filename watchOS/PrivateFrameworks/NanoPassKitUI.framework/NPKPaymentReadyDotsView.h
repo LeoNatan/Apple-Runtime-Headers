@@ -9,18 +9,21 @@
 #import <NanoPassKitUI/CAAnimationDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKSynchronizedAnimationViewProtocol-Protocol.h>
 
-@class CALayer, NSString;
+@class CALayer, NSString, UIColor;
 
 @interface NPKPaymentReadyDotsView : UIView <CAAnimationDelegate, NPKSynchronizedAnimationViewProtocol>
 {
     CALayer *_readyDotLayer;
+    UIColor *_dotColor;
 }
 
+@property(retain, nonatomic) UIColor *dotColor; // @synthesize dotColor=_dotColor;
 @property(retain, nonatomic) CALayer *readyDotLayer; // @synthesize readyDotLayer=_readyDotLayer;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)stopAnimations;
 - (void)startAnimationsAtMediaTime:(double)arg1 repeatInterval:(double)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 dotColor:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

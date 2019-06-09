@@ -6,33 +6,29 @@
 
 #import <objc/NSObject.h>
 
-#import <NeutrinoCore/NUDepthProperties-Protocol.h>
-#import <NeutrinoCore/NUPortraitEffectsMatteProperties-Protocol.h>
+#import <NeutrinoCore/NUAuxiliaryImageProperties-Protocol.h>
 
-@class AVDepthData, AVPortraitEffectsMatte, NSDictionary, NSString;
+@class NSDictionary, NSString;
+@protocol NUAuxiliaryImage;
 
-@interface NUCGAuxiliaryImageProperties : NSObject <NUDepthProperties, NUPortraitEffectsMatteProperties>
+@interface NUCGAuxiliaryImageProperties : NSObject <NUAuxiliaryImageProperties>
 {
     id _imageSource;
-    NSString *_auxiliaryType;
-    AVDepthData *_depthData;
-    NSDictionary *_auxiliaryData;
-    AVPortraitEffectsMatte *_portraitEffectsMatte;
+    NSString *_auxiliaryImageTypeCGIdentifier;
+    NSDictionary *_auxCoreGraphicsInfoDictionary;
+    id <NUAuxiliaryImage> _auxImage;
     CDStruct_d58201db _size;
 }
 
-@property(retain) AVPortraitEffectsMatte *portraitEffectsMatte; // @synthesize portraitEffectsMatte=_portraitEffectsMatte;
-@property(retain) NSDictionary *auxiliaryData; // @synthesize auxiliaryData=_auxiliaryData;
-@property(retain) AVDepthData *depthData; // @synthesize depthData=_depthData;
+@property(retain) id <NUAuxiliaryImage> auxImage; // @synthesize auxImage=_auxImage;
+@property(retain) NSDictionary *auxCoreGraphicsInfoDictionary; // @synthesize auxCoreGraphicsInfoDictionary=_auxCoreGraphicsInfoDictionary;
 @property CDStruct_912cb5d2 size; // @synthesize size=_size;
-@property(copy) NSString *auxiliaryType; // @synthesize auxiliaryType=_auxiliaryType;
+@property(readonly) NSString *auxiliaryImageTypeCGIdentifier; // @synthesize auxiliaryImageTypeCGIdentifier=_auxiliaryImageTypeCGIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
-- (id)portraitEffectsMatte:(out id *)arg1;
-- (id)depthData:(out id *)arg1;
-- (id)auxiliaryData:(out id *)arg1;
-@property(readonly) NSString *depthType;
-- (id)initWitProperties:(id)arg1 imageSource:(struct CGImageSource *)arg2;
+- (id)auxiliaryImage:(out id *)arg1;
+- (id)auxiliaryCoreGraphicsInfoDictionary:(out id *)arg1;
+- (id)initWithCGProperties:(id)arg1 imageSource:(struct CGImageSource *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

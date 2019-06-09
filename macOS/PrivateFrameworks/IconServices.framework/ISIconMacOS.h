@@ -6,7 +6,7 @@
 
 #import <IconServices/ISIcon.h>
 
-@class NSMapTable, NSObject;
+@class NSArray, NSMapTable, NSObject;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -17,14 +17,16 @@ __attribute__((visibility("hidden")))
     NSMapTable *_bitmapIDByImageDescriptor;
     NSObject<OS_dispatch_queue> *_validationQueue;
     struct os_unfair_lock_s _bitmapIDByImageDescriptorLock;
+    NSArray *_decorations;
 }
 
 + (id)sharedValidationQueue;
-+ (id)genericAppIcon;
-+ (id)genericFolderIcon;
-+ (id)genericDocumentIcon;
-+ (id)placeholderIcon;
-+ (id)notLoadedIcon;
++ (id)genericAppIconResource;
++ (id)genericFolderIconResource;
++ (id)genericDocumentIconResource;
++ (id)placeholderIconResource;
++ (id)notLoadedIconResource;
+@property(copy, nonatomic) NSArray *decorations; // @synthesize decorations=_decorations;
 @property(readonly) struct os_unfair_lock_s bitmapIDByImageDescriptorLock; // @synthesize bitmapIDByImageDescriptorLock=_bitmapIDByImageDescriptorLock;
 @property(readonly) NSMapTable *bitmapIDByImageDescriptor; // @synthesize bitmapIDByImageDescriptor=_bitmapIDByImageDescriptor;
 @property CDStruct_cbacfc36 validationToken; // @synthesize validationToken=_validationToken;
@@ -52,7 +54,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIcon:(id)arg1;
 - (void)dealloc;
+- (id)initWithBinding:(struct _LSBinding *)arg1 decorations:(id)arg2;
 - (id)initWithBinding:(struct _LSBinding *)arg1;
+- (id)_initWithIcon:(id)arg1 decorations:(id)arg2;
 - (id)_init;
 - (id)initWithResourceProxy:(id)arg1;
 - (id)initWithContentOfURL:(id)arg1;
@@ -63,7 +67,9 @@ __attribute__((visibility("hidden")))
 - (id)initWithTypeCode:(unsigned int)arg1;
 - (id)initWithFileExtension:(id)arg1;
 - (id)initWithType:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithURL:(id)arg1;
+- (id)_initTransparent;
 
 @end
 

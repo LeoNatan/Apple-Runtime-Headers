@@ -8,6 +8,8 @@
 
 @interface _HKFilter (HealthDaemon)
 - (id)predicateWithProfile:(id)arg1;
+- (id)_filterIgnoringActivityCacheIndexFilter;
+- (id)filterIgnoringActivityCacheIndexFilter;
 - (id)_filterIgnoringPrivateMetadata;
 - (id)filterIgnoringPrivateMetadata;
 @end

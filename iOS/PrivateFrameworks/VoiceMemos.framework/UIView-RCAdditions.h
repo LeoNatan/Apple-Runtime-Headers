@@ -31,6 +31,7 @@
 - (void)rc_updateConstraintsAndLayoutSubtree;
 - (id)rc_autolayoutView;
 - (_Bool)rc_canAnimate;
+- (id)viewControllerForPresentingAXHUDView;
 - (void)rc_showAllViewBoundsRecursively:(_Bool)arg1;
 @end
 

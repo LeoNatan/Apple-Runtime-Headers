@@ -13,9 +13,11 @@
 
 @interface _SFPBMonogramImage : PBCodable <_SFPBMonogramImage, NSSecureCoding>
 {
+    int _monogramStyle;
     NSString *_monogramLetters;
 }
 
+@property(nonatomic) int monogramStyle; // @synthesize monogramStyle=_monogramStyle;
 @property(copy, nonatomic) NSString *monogramLetters; // @synthesize monogramLetters=_monogramLetters;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;

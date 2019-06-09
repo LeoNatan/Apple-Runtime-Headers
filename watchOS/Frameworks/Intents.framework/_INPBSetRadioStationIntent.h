@@ -25,6 +25,7 @@
     _INPBString *_stationName;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBString *stationName; // @synthesize stationName=_stationName;
 @property(nonatomic) int radioType; // @synthesize radioType=_radioType;
 @property(retain, nonatomic) _INPBInteger *presetNumber; // @synthesize presetNumber=_presetNumber;
@@ -36,6 +37,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasStationName;

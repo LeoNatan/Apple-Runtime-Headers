@@ -15,13 +15,16 @@ __attribute__((visibility("hidden")))
 {
     NSString *_category;
     int _originIdentifier;
+    int _volumeWarningState;
     _Bool _volumeWarningEnabled;
     struct {
         unsigned int originIdentifier:1;
+        unsigned int volumeWarningState:1;
         unsigned int volumeWarningEnabled:1;
     } _has;
 }
 
+@property(nonatomic) int volumeWarningState; // @synthesize volumeWarningState=_volumeWarningState;
 @property(nonatomic) int originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(retain, nonatomic) NSString *category; // @synthesize category=_category;
 @property(nonatomic) _Bool volumeWarningEnabled; // @synthesize volumeWarningEnabled=_volumeWarningEnabled;
@@ -35,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasVolumeWarningState;
 @property(nonatomic) _Bool hasOriginIdentifier;
 @property(readonly, nonatomic) _Bool hasCategory;
 @property(nonatomic) _Bool hasVolumeWarningEnabled;

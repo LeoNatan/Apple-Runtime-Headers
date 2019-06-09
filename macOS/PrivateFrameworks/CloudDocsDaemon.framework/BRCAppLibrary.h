@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <CloudDocsDaemon/BRCForegroundClient-Protocol.h>
+#import <CloudDocsDaemon/BRCListOperationDelegate-Protocol.h>
 
-@class BRCALRowID, BRCAccountSession, BRCFSEventsMonitor, BRCPQLConnection, BRCPrivateClientZone, BRCRelativePath, BRCSyncContext, BRCZoneRowID, BRContainer, BRMangledID, NSMutableDictionary, NSMutableSet, NSNumber, NSString, NSURL, brc_task_tracker;
+@class BRCALRowID, BRCAccountSession, BRCFSEventsMonitor, BRCListDirectoryContentsOperation, BRCPQLConnection, BRCPrivateClientZone, BRCRelativePath, BRCSyncContext, BRCZoneRowID, BRContainer, BRMangledID, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSString, NSURL, brc_task_tracker;
 @protocol BRCAppLibraryDelegate;
 
 __attribute__((visibility("hidden")))
-@interface BRCAppLibrary : NSObject <BRCForegroundClient>
+@interface BRCAppLibrary : NSObject <BRCListOperationDelegate, BRCForegroundClient>
 {
     // Error parsing type: AQ, name: _activeQueries
     // Error parsing type: AQ, name: _activeRecursiveQueries
@@ -29,6 +30,8 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_targetAppLibraries;
     NSMutableSet *_targetSharedServerZones;
     NSMutableSet *_foregroundClients;
+    BRCListDirectoryContentsOperation *_pristineFetchOp;
+    NSMutableArray *_faultsLiveBarriers;
     BOOL _needsSave;
     BOOL _containerMetadataNeedsSyncUp;
     unsigned int _state;
@@ -80,6 +83,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BRCRelativePath *documentsPath;
 - (BOOL)shouldSaveContainerMetadataServerside;
 - (void)notifyClient:(id)arg1 whenFaultingIsDone:(CDUnknownBlockType)arg2;
+- (void)signalFaultingWatchersWithError:(id)arg1;
 - (BOOL)wasMovedToCloudDocs;
 - (id)containerMetadataFilledWithTCCInfo;
 - (id)aliasByUnsaltedBookmarkData:(id)arg1;
@@ -117,15 +121,18 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasLocalChanges;
 - (BOOL)hasUbiquitousDocuments;
 - (BOOL)hasDocumentsOrDirectory;
-- (BOOL)hasInitialFaultsEverLive;
-- (BOOL)hasInitialFaultsLive;
 - (long long)throttleHashWithItemID:(id)arg1;
+- (void)listOperation:(id)arg1 wasReplacedByOperation:(id)arg2;
+- (void)fetchPristineness;
 - (void)didCreateDataScopedItem;
 - (void)didCreateDocumentScopedItem;
 - (void)didRemoveDocumentsFolder;
 - (void)didFindLostItem:(id)arg1 oldAppLibrary:(id)arg2;
 - (void)updateFromFSAtPath:(id)arg1;
 - (void)fsrootDidMoveToPath:(id)arg1;
+@property(readonly, nonatomic) NSNumber *documentsRowID;
+@property(readonly, nonatomic) NSNumber *documentsFileID;
+- (id)documentsFolder;
 - (void)setRootFileID:(unsigned long long)arg1;
 - (void)scheduleDeepScanWithReason:(id)arg1;
 - (BOOL)markChildrenLostForItemID:(id)arg1 inZone:(id)arg2 fileID:(id)arg3;
@@ -136,17 +143,16 @@ __attribute__((visibility("hidden")))
 - (void)freeFileCoordinationSlotsAfterDelayForRead:(BOOL)arg1;
 - (id)coordinatorForItem:(id)arg1 forRead:(BOOL)arg2;
 - (void)cancelWriteCoordinatorForItem:(id)arg1;
-- (struct PQLResultSet *)enumerateUserVisibleChildrenDirectoriesOfItemGlobalID:(id)arg1 db:(id)arg2;
 - (struct PQLResultSet *)enumerateUserVisibleChildrenOfItemGlobalID:(id)arg1 sortOrder:(unsigned char)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 db:(id)arg5;
-- (struct PQLResultSet *)itemsEnumeratorChildOf:(id)arg1 rankMin:(unsigned long long)arg2 rankMax:(unsigned long long)arg3 count:(unsigned long long)arg4 db:(id)arg5;
-- (struct PQLResultSet *)itemsEnumeratorWithRankMin:(unsigned long long)arg1 rankMax:(unsigned long long)arg2 namePrefix:(id)arg3 shouldIncludeFolders:(BOOL)arg4 shouldIncludeOnlyFolders:(BOOL)arg5 shouldIncludeDocumentsScope:(BOOL)arg6 shouldIncludeDataScope:(BOOL)arg7 shouldIncludeExternalScope:(BOOL)arg8 shouldIncludeTrashScope:(BOOL)arg9 count:(unsigned long long)arg10 db:(id)arg11;
+- (struct PQLResultSet *)itemsEnumeratorChildOf:(id)arg1 withDeadItems:(BOOL)arg2 rankMin:(unsigned long long)arg3 rankMax:(unsigned long long)arg4 count:(unsigned long long)arg5 db:(id)arg6;
+- (struct PQLResultSet *)itemsEnumeratorWithRankMin:(unsigned long long)arg1 rankMax:(unsigned long long)arg2 namePrefix:(id)arg3 withDeadItems:(BOOL)arg4 shouldIncludeFolders:(BOOL)arg5 shouldIncludeOnlyFolders:(BOOL)arg6 shouldIncludeDocumentsScope:(BOOL)arg7 shouldIncludeDataScope:(BOOL)arg8 shouldIncludeExternalScope:(BOOL)arg9 shouldIncludeTrashScope:(BOOL)arg10 count:(unsigned long long)arg11 db:(id)arg12;
 - (id)descriptionWithContext:(id)arg1;
 - (id)_unwrappedDescriptionWithContext:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToAppLibrary:(id)arg1;
-@property(readonly, nonatomic) BOOL isGreedy;
+- (unsigned int)greedinessPreferenceWithMtime:(id)arg1;
 - (BOOL)hasUbiquityClientsConnected;
 - (void)didUpdateDocumentScopePublic;
 - (void)clearStateBits:(unsigned int)arg1;

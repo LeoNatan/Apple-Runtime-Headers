@@ -21,9 +21,10 @@
 + (double)_referenceWidthForSpecSet:(long long)arg1 variant:(long long)arg2;
 + (double)_scaleForSpecSet:(long long)arg1 variant:(long long)arg2 width:(double)arg3;
 + (double)_fontScaleForSpecSet:(long long)arg1 variant:(long long)arg2 width:(double)arg3;
-+ (struct UIEdgeInsets)_paddingForFontSet:(long long)arg1 specSet:(long long)arg2 variant:(long long)arg3 width:(double)arg4;
-+ (double)_baselineDistanceForFontSet:(long long)arg1 specSet:(long long)arg2 variant:(long long)arg3 width:(double)arg4;
-+ (id)_textAttributesForFontSet:(long long)arg1 specSet:(long long)arg2 labelKind:(long long)arg3 withTitleFontName:(id)arg4 variant:(long long)arg5 width:(double)arg6;
++ (struct UIEdgeInsets)_paddingForFontSet:(long long)arg1 specSet:(long long)arg2 variant:(long long)arg3 horizontalMargin:(double)arg4 width:(double)arg5 shouldScale:(_Bool)arg6;
++ (double)_playButtonPaddingForFontSet:(long long)arg1 specSet:(long long)arg2 variant:(long long)arg3 deviceMargin:(double)arg4;
++ (double)_baselineDistanceForFontSet:(long long)arg1 specSet:(long long)arg2 variant:(long long)arg3 size:(struct CGSize)arg4 shouldScale:(_Bool)arg5;
++ (id)_textAttributesForFontSet:(long long)arg1 specSet:(long long)arg2 labelKind:(long long)arg3 withTitleFontName:(id)arg4 variant:(long long)arg5 size:(struct CGSize)arg6 shouldScale:(_Bool)arg7;
 + (long long)_memoryLabelKindForDescriptor:(struct PXViewSpecDescriptor)arg1;
 + (void)_getSpecSet:(out long long *)arg1 variant:(out long long *)arg2 forDescriptor:(struct PXViewSpecDescriptor)arg3 extendedTraitCollection:(id)arg4;
 + (long long)_fontSetForTitleFontName:(id)arg1;

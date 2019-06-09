@@ -23,7 +23,7 @@
 @property(retain, nonatomic) RTStarkManager *starkManager; // @synthesize starkManager=_starkManager;
 @property(retain, nonatomic) RTDataProtectionManager *dataProtectionManager; // @synthesize dataProtectionManager=_dataProtectionManager;
 @property(retain, nonatomic) NSArray *nextPredictedLocationsOfInterest; // @synthesize nextPredictedLocationsOfInterest=_nextPredictedLocationsOfInterest;
-@property(nonatomic) __weak NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <RTNextPredictedLocationsOfInterestCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 - (void).cxx_destruct;
@@ -31,7 +31,7 @@
 - (void)onStarkNotification:(id)arg1;
 - (void)handleUnlockedSinceBoot:(_Bool)arg1;
 - (void)onDataProtectionNotification:(id)arg1;
-- (void)purge;
+- (void)purgeWithReferenceDate:(id)arg1;
 - (void)clear;
 - (id)getCachedNextPredictedLocationsOfInterest;
 - (void)cacheNextPredictedLocationsOfInterest:(id)arg1;

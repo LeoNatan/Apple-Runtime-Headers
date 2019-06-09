@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class SCROutputRequest;
+@class NSString, SCROutputRequest;
 
 __attribute__((visibility("hidden")))
 @interface SCROutputQueueObject : NSObject
 {
     SCROutputRequest *_outputRequest;
-    struct __CFString *_outputIdentifier;
+    NSString *_outputIdentifier;
 }
 
-- (struct __CFString *)queueIdentifier;
-- (struct __CFString *)outputIdentifier;
-- (id)outputRequest;
-- (unsigned long long)requestID;
-- (void)dealloc;
+@property(copy, nonatomic) NSString *outputIdentifier; // @synthesize outputIdentifier=_outputIdentifier;
+@property(retain, nonatomic) SCROutputRequest *outputRequest; // @synthesize outputRequest=_outputRequest;
+- (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSString *queueIdentifier;
+@property(readonly, nonatomic) unsigned long long requestID;
 - (id)initWithOutputRequest:(id)arg1;
 
 @end

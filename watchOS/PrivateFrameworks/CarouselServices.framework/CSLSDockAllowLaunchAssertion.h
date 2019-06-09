@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <CarouselServices/BSDescriptionProviding-Protocol.h>
+#import <CarouselServices/NSCopying-Protocol.h>
 #import <CarouselServices/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface CSLSDockAllowLaunchAssertion : NSObject <NSSecureCoding, BSDescriptionProviding>
+@interface CSLSDockAllowLaunchAssertion : NSObject <NSSecureCoding, BSDescriptionProviding, NSCopying>
 {
     struct _opaque_pthread_mutex_t _lock;
     _Bool _taken;
@@ -24,6 +25,7 @@
 @property(readonly, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;

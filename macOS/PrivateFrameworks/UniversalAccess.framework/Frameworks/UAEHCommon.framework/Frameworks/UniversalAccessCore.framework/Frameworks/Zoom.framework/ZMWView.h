@@ -11,6 +11,7 @@
 
 @class CALayer, NSLock, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ZMWView : NSObject <NSCopying, CALayerDelegate>
 {
     CALayer *_rootLayer;

@@ -9,6 +9,7 @@
 @class NSObject;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface SymptomExpertSystemState : ExpertSystemStateCore
 {
     NSObject<OS_dispatch_source> *_strobe;

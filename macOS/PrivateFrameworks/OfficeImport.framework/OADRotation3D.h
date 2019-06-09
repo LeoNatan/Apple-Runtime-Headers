@@ -8,6 +8,7 @@
 
 #import <OfficeImport/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface OADRotation3D : NSObject <NSCopying>
 {
     float mLatitude;

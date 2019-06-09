@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class BSCornerRadiusConfiguration, NSNumber;
+@class BSCornerRadiusConfiguration, NSNumber, NSString;
 
 @protocol UIApplicationSceneSettings <NSObject>
 @property(readonly, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) double homeAffordanceOverlayAllowance;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsPortrait;
 @property(readonly, nonatomic) double systemMinimumMargin;
+@property(readonly, nonatomic) double statusBarHeight;
 @property(readonly, nonatomic) struct CGRect statusBarAvoidanceFrame;
 @property(readonly, nonatomic) long long statusBarParts;
 @property(readonly, nonatomic) struct UIEdgeInsets peripheryInsets;
@@ -31,5 +32,7 @@
 @property(readonly, nonatomic) unsigned long long deactivationReasons;
 @property(readonly, nonatomic) int statusBarStyleOverridesToSuppress;
 @property(readonly, nonatomic) _Bool underLock;
+@property(readonly, nonatomic) NSString *persistenceIdentifier;
+- (double)defaultStatusBarHeightForOrientation:(long long)arg1;
 @end
 

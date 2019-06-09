@@ -9,10 +9,12 @@
 #import <AccountsDaemon/IDSServiceDelegate-Protocol.h>
 
 @class ACRemoteCommandHandler, IDSService, NSLock, NSMutableDictionary, NSString;
+@protocol OS_dispatch_queue;
 
 @interface ACRemoteDeviceProxy : NSObject <IDSServiceDelegate>
 {
     IDSService *_messageSendingService;
+    NSObject<OS_dispatch_queue> *_messageSendingQueue;
     ACRemoteCommandHandler *_remoteCommandHandler;
     NSMutableDictionary *_completionHandlersByInternalMessageID;
     NSMutableDictionary *_internalMessageIDsByTransportID;
@@ -31,7 +33,6 @@
 - (BOOL)_sendMessageData:(id)arg1 toDestination:(id)arg2 withPriority:(long long)arg3 bypassDuet:(BOOL)arg4 transportID:(id *)arg5 error:(id *)arg6;
 - (void)sendCommand:(id)arg1 withAccount:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)sendCommand:(id)arg1 withAccount:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)identityServicesCommandQueue;
 - (id)init;
 
 // Remaining properties

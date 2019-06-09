@@ -24,15 +24,14 @@
 + (id)numberForFreeBusyType:(int)arg1;
 @property(readonly) NSManagedObjectID *principalID; // @synthesize principalID=_principalID;
 - (void).cxx_destruct;
-- (void)freeBusyServerRequestForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 callbackTo:(id)arg4 withSelector:(SEL)arg5;
+- (void)freeBusyServerRequestForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 withDelegate:(id)arg4;
 - (void)freeBusyOperationWithInfo:(id)arg1 spans:(id)arg2 details:(id)arg3 otherInfos:(id)arg4 error:(id)arg5;
 - (void)clearCacheExceptForSharedUIDs:(id)arg1;
 - (void)cancelCallbacksTo:(id)arg1;
 - (id)knownFreeBusyForCUAddress:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3;
-- (id)freeBusyForCUAddress:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 callbackTo:(id)arg4 withSelector:(SEL)arg5;
 - (id)knownFreeBusyAndEventDetailsForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3;
-- (id)freeBusyAndEventDetailsForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 callbackTo:(id)arg4 withSelector:(SEL)arg5;
-- (id)_freeBusyForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 requestFromServer:(BOOL)arg4 callbackTo:(id)arg5 withSelector:(SEL)arg6;
+- (id)freeBusyAndEventDetailsForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 withDelegate:(id)arg4;
+- (id)_freeBusyForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 requestFromServer:(BOOL)arg4 withDelegate:(id)arg5;
 - (id)bucketKeyDatesForStartDate:(id)arg1 endDate:(id)arg2;
 - (id)bucketKeyDateForDate:(id)arg1;
 - (void)cacheEventDetailsArray:(id)arg1 forCUAddress:(id)arg2;

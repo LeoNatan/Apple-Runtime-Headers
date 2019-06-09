@@ -9,7 +9,7 @@
 #import <Navigation/MNTimeProvider-Protocol.h>
 #import <Navigation/MNTracePlayerSchedulerDelegate-Protocol.h>
 
-@class GEOETAUpdater, MNLocation, MNTrace, MNTracePlayerETAUpdater, MNTracePlayerScheduler, MNTracePlayerTimelineStream, NSData, NSDate, NSHashTable, NSString;
+@class MNLocation, MNSessionUpdateManager, MNTrace, MNTracePlayerETAUpdater, MNTracePlayerScheduler, MNTracePlayerTimelineStream, NSData, NSDate, NSHashTable, NSString;
 
 @interface MNTracePlayer : NSObject <MNTracePlayerSchedulerDelegate, MNTimeProvider>
 {
@@ -22,7 +22,6 @@
     _Bool _isPlaying;
     _Bool _isPaused;
     double _duration;
-    int _mainTransportType;
     double _speedMultiplier;
     _Bool _forceDirectionsResponsesFromTrace;
     MNTracePlayerTimelineStream *_directionsStream;
@@ -32,10 +31,8 @@
 }
 
 @property(nonatomic) _Bool forceDirectionsResponsesFromTrace; // @synthesize forceDirectionsResponsesFromTrace=_forceDirectionsResponsesFromTrace;
-@property(readonly, nonatomic) GEOETAUpdater *etaUpdater; // @synthesize etaUpdater=_etaUpdater;
 @property(nonatomic) _Bool shouldPlayETARequests; // @synthesize shouldPlayETARequests=_shouldPlayETARequests;
 @property(nonatomic) double speedMultiplier; // @synthesize speedMultiplier=_speedMultiplier;
-@property(readonly, nonatomic) int mainTransportType; // @synthesize mainTransportType=_mainTransportType;
 @property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
 @property(readonly, nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
 @property(readonly, nonatomic) _Bool isPlaying; // @synthesize isPlaying=_isPlaying;
@@ -43,6 +40,7 @@
 - (void).cxx_destruct;
 - (id)_locationWithCurrentDate:(id)arg1;
 - (double)_responseTimeForRequestAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) MNSessionUpdateManager *sessionUpdater;
 - (void)_createTimelineStreams;
 - (void)tracePlayerScheduler:(id)arg1 didUpdatePosition:(double)arg2;
 @property(readonly, nonatomic) unsigned long long selectedRouteIndex;
@@ -63,6 +61,7 @@
 - (void)start;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly, nonatomic) int mainTransportType;
 - (void)dealloc;
 - (id)initWithTrace:(id)arg1;
 - (id)initWithPath:(id)arg1 outError:(id *)arg2;

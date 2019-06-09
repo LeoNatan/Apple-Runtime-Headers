@@ -8,6 +8,7 @@
 
 @class SKUIButtonViewElement, SKUIImageViewElement, SKUILabelViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIContentUnavailableTemplateElement : SKUIViewElement
 {
 }

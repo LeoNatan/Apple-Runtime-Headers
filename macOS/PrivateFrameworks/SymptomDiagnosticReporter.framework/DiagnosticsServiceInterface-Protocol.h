@@ -9,6 +9,9 @@
 @class NSArray, NSDictionary, NSString;
 
 @protocol DiagnosticsServiceInterface <NSObject>
+- (void)cloudKitUploadDecisionForCaseIdentifiers:(NSArray *)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)uploadRecentCases:(unsigned long long)arg1;
+- (void)uploadCasesWithIdentifiersToCloudKit:(NSArray *)arg1;
 - (void)getAutoBugCaptureConfiguration:(void (^)(NSDictionary *))arg1;
 - (void)purgeAutoBugCaptureFilesWithSubPaths:(NSArray *)arg1 reply:(void (^)(BOOL))arg2;
 - (void)getExpertSystemsStatus:(void (^)(NSDictionary *))arg1;
@@ -16,7 +19,7 @@
 - (void)resetAllWithReply:(void (^)(NSDictionary *))arg1;
 - (void)resetDiagnosticCaseUsageWithReply:(void (^)(NSDictionary *))arg1;
 - (void)resetDiagnosticCaseStorageWithReply:(void (^)(NSDictionary *))arg1;
-- (void)getAllCasesWithReply:(void (^)(NSArray *))arg1;
+- (void)getCasesListFromIdentifier:(NSString *)arg1 count:(unsigned long long)arg2 reply:(void (^)(NSArray *))arg3;
 - (void)getSessionStatisticsWithReply:(void (^)(NSArray *))arg1;
 - (void)getDiagnosticPayloadsForSignatures:(NSArray *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (void)cancelSession:(NSString *)arg1;

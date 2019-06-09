@@ -10,21 +10,21 @@
 
 @interface GEONavigationGuidanceState : PBCodable <NSCopying>
 {
-    int _guidanceLevel;
     int _guidanceLevelIgnoringTimeCriterion;
+    int _guidanceLevel;
     int _navigationState;
     int _trackedTransportType;
     BOOL _shouldSuppressCellularDataAlerts;
     struct {
-        unsigned int guidanceLevel:1;
-        unsigned int guidanceLevelIgnoringTimeCriterion:1;
-        unsigned int navigationState:1;
-        unsigned int trackedTransportType:1;
-        unsigned int shouldSuppressCellularDataAlerts:1;
-    } _has;
+        unsigned int has_guidanceLevelIgnoringTimeCriterion:1;
+        unsigned int has_guidanceLevel:1;
+        unsigned int has_navigationState:1;
+        unsigned int has_trackedTransportType:1;
+        unsigned int has_shouldSuppressCellularDataAlerts:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL shouldSuppressCellularDataAlerts; // @synthesize shouldSuppressCellularDataAlerts=_shouldSuppressCellularDataAlerts;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -32,25 +32,27 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsGuidanceLevelIgnoringTimeCriterion:(id)arg1;
 - (id)guidanceLevelIgnoringTimeCriterionAsString:(int)arg1;
 @property(nonatomic) BOOL hasGuidanceLevelIgnoringTimeCriterion;
-@property(nonatomic) int guidanceLevelIgnoringTimeCriterion; // @synthesize guidanceLevelIgnoringTimeCriterion=_guidanceLevelIgnoringTimeCriterion;
+@property(nonatomic) int guidanceLevelIgnoringTimeCriterion;
 @property(nonatomic) BOOL hasShouldSuppressCellularDataAlerts;
+@property(nonatomic) BOOL shouldSuppressCellularDataAlerts;
 - (int)StringAsGuidanceLevel:(id)arg1;
 - (id)guidanceLevelAsString:(int)arg1;
 @property(nonatomic) BOOL hasGuidanceLevel;
-@property(nonatomic) int guidanceLevel; // @synthesize guidanceLevel=_guidanceLevel;
+@property(nonatomic) int guidanceLevel;
 - (int)StringAsNavigationState:(id)arg1;
 - (id)navigationStateAsString:(int)arg1;
 @property(nonatomic) BOOL hasNavigationState;
-@property(nonatomic) int navigationState; // @synthesize navigationState=_navigationState;
+@property(nonatomic) int navigationState;
 - (int)StringAsTrackedTransportType:(id)arg1;
 - (id)trackedTransportTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasTrackedTransportType;
-@property(nonatomic) int trackedTransportType; // @synthesize trackedTransportType=_trackedTransportType;
+@property(nonatomic) int trackedTransportType;
 - (id)initWithGuidanceLevel:(int)arg1;
 - (id)initWithTransportType:(int)arg1;
 

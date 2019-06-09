@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)securelyEncodeObject:(id)arg1 forKey:(id)arg2 withCoder:(id)arg3 error:(id *)arg4;
++ (BOOL)securelyEncodeObject:(id)arg1 forKey:(id)arg2 withCoder:(id)arg3 error:(id *)arg4;
 + (id)createErrorByDecodingData:(id)arg1;
 + (id)createDataByEncodingError:(id)arg1;
 - (id)init;

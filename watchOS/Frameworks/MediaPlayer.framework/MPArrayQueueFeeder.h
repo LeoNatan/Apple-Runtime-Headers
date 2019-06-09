@@ -18,11 +18,11 @@
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)identifierAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfItemWithIdentifier:(id)arg1;
-- (int)playbackMode;
 - (id)playbackInfoForIdentifier:(id)arg1;
 - (id)pathAtIndex:(unsigned int)arg1;
 - (unsigned int)itemCount;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
+@property(readonly, nonatomic) Class itemClass;
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
 

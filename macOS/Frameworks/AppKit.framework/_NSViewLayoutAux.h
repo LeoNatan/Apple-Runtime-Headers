@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSISEngine, NSISVariable, NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMutableArray, NSObservation, _NSViewLayoutInvalidator;
+@class NSArray, NSISEngine, NSISVariable, NSLayoutDimension, NSLayoutGuide, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSMutableArray, NSObservation, _NSViewLayoutInvalidator;
 
 __attribute__((visibility("hidden")))
 @interface _NSViewLayoutAux : NSObject
@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
     NSLayoutYAxisAnchor *_centerYAnchor;
     NSLayoutYAxisAnchor *_firstBaselineAnchor;
     NSLayoutYAxisAnchor *_lastBaselineAnchor;
+    NSLayoutGuide *_safeAreaLayoutGuide;
     struct CGPoint _cachedRootOffset;
     unsigned long long _cachedOffsetChangeCount;
     NSISEngine *_cachedRootOffsetEngine;
@@ -57,7 +58,6 @@ __attribute__((visibility("hidden")))
         unsigned int _baselineOffsetMayBeReferenced:1;
         unsigned int _constraintsReferencingBaselineOffsetNeedUpdating:1;
         unsigned int _onlyNeedsUpdateConstraintsBecauseDeclaredConstraintRemoved:1;
-        unsigned int _isUpdatingAutoresizingConstraints:1;
         unsigned int _preferredSizeConstraintsNeedUpdating:1;
         unsigned int _allowsEngineHostPreferredSizeConstraints:1;
         unsigned int _viewWasAdjustedToRetinaResolution:1;

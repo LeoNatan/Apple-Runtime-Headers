@@ -8,7 +8,7 @@
 
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSDictionary, NSError, NSString, NSURL, NSURLRequest, NSURLResponse, NSURLSessionTaskMetrics;
+@class AVURLAsset, NSData, NSDate, NSDictionary, NSError, NSString, NSURL, NSURLRequest, NSURLResponse, NSUUID, __CFN_TaskMetrics;
 @protocol SZExtractor;
 
 @interface __NSCFURLSessionTaskInfo : NSObject <NSSecureCoding>
@@ -24,6 +24,8 @@
     BOOL _mayBeDemotedToDiscretionary;
     BOOL __hasSZExtractor;
     BOOL __doesSZExtractorConsumeExtractedData;
+    BOOL _startedUserInitiated;
+    BOOL _initializedWithAVAsset;
     unsigned int _qos;
     unsigned long long _identifier;
     unsigned long long _taskKind;
@@ -46,32 +48,56 @@
     unsigned long long _lowThroughputTimerRetryCount;
     long long _basePriority;
     long long _discretionaryOverride;
-    NSString *_uniqueIdentifier;
+    NSString *_personaUniqueString;
+    NSUUID *_uniqueIdentifier;
     NSString *_storagePartitionIdentifier;
     long long _bytesPerSecondLimit;
+    unsigned long long _expectedProgressTarget;
     double _loadingPriority;
     NSString *_pathToDownloadTaskFile;
     double _timeoutIntervalForResource;
     id <SZExtractor> __extractor;
+    unsigned long long _AVAssetDownloadToken;
+    NSURL *_URL;
+    NSURL *_destinationURL;
+    NSString *_assetTitle;
+    NSData *_assetArtworkData;
+    NSDictionary *_options;
+    AVURLAsset *_AVURLAsset;
+    NSURL *_AVAssetURL;
+    NSURL *_temporaryDestinationURL;
+    NSDictionary *_resolvedMediaSelectionPlist;
+    NSString *_avAssetDownloadChildDownloadSessionIdentifier;
     long long _countOfBytesReceived;
     long long _countOfBytesSent;
     long long _countOfBytesExpectedToSend;
     long long _countOfBytesExpectedToReceive;
-    NSDictionary *__backgroundTaskTimingData;
     NSDictionary *__backgroundTrailers;
-    NSURLSessionTaskMetrics *__backgroundTaskMetrics;
     NSDictionary *_additionalProperties;
+    __CFN_TaskMetrics *_taskMetrics;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(retain) __CFN_TaskMetrics *taskMetrics; // @synthesize taskMetrics=_taskMetrics;
 @property(copy) NSDictionary *additionalProperties; // @synthesize additionalProperties=_additionalProperties;
-@property(retain) NSURLSessionTaskMetrics *_backgroundTaskMetrics; // @synthesize _backgroundTaskMetrics=__backgroundTaskMetrics;
 @property(retain) NSDictionary *_backgroundTrailers; // @synthesize _backgroundTrailers=__backgroundTrailers;
-@property(copy) NSDictionary *_backgroundTaskTimingData; // @synthesize _backgroundTaskTimingData=__backgroundTaskTimingData;
 @property long long countOfBytesExpectedToReceive; // @synthesize countOfBytesExpectedToReceive=_countOfBytesExpectedToReceive;
 @property long long countOfBytesExpectedToSend; // @synthesize countOfBytesExpectedToSend=_countOfBytesExpectedToSend;
 @property long long countOfBytesSent; // @synthesize countOfBytesSent=_countOfBytesSent;
 @property long long countOfBytesReceived; // @synthesize countOfBytesReceived=_countOfBytesReceived;
+@property(copy) NSString *avAssetDownloadChildDownloadSessionIdentifier; // @synthesize avAssetDownloadChildDownloadSessionIdentifier=_avAssetDownloadChildDownloadSessionIdentifier;
+@property(copy) NSDictionary *resolvedMediaSelectionPlist; // @synthesize resolvedMediaSelectionPlist=_resolvedMediaSelectionPlist;
+@property(copy) NSURL *temporaryDestinationURL; // @synthesize temporaryDestinationURL=_temporaryDestinationURL;
+@property BOOL initializedWithAVAsset; // @synthesize initializedWithAVAsset=_initializedWithAVAsset;
+@property(copy) NSURL *AVAssetURL; // @synthesize AVAssetURL=_AVAssetURL;
+@property(retain) AVURLAsset *AVURLAsset; // @synthesize AVURLAsset=_AVURLAsset;
+@property(copy) NSDictionary *options; // @synthesize options=_options;
+@property(copy) NSData *assetArtworkData; // @synthesize assetArtworkData=_assetArtworkData;
+@property(copy) NSString *assetTitle; // @synthesize assetTitle=_assetTitle;
+@property(copy) NSURL *destinationURL; // @synthesize destinationURL=_destinationURL;
+@property(copy) NSURL *URL; // @synthesize URL=_URL;
+@property unsigned long long AVAssetDownloadToken; // @synthesize AVAssetDownloadToken=_AVAssetDownloadToken;
+@property BOOL startedUserInitiated; // @synthesize startedUserInitiated=_startedUserInitiated;
 @property(nonatomic) BOOL _doesSZExtractorConsumeExtractedData; // @synthesize _doesSZExtractorConsumeExtractedData=__doesSZExtractorConsumeExtractedData;
 @property(nonatomic) BOOL _hasSZExtractor; // @synthesize _hasSZExtractor=__hasSZExtractor;
 @property(retain, nonatomic) id <SZExtractor> _extractor; // @synthesize _extractor=__extractor;
@@ -79,9 +105,11 @@
 @property(copy) NSString *pathToDownloadTaskFile; // @synthesize pathToDownloadTaskFile=_pathToDownloadTaskFile;
 @property BOOL mayBeDemotedToDiscretionary; // @synthesize mayBeDemotedToDiscretionary=_mayBeDemotedToDiscretionary;
 @property double loadingPriority; // @synthesize loadingPriority=_loadingPriority;
+@property unsigned long long expectedProgressTarget; // @synthesize expectedProgressTarget=_expectedProgressTarget;
 @property long long bytesPerSecondLimit; // @synthesize bytesPerSecondLimit=_bytesPerSecondLimit;
 @property(copy) NSString *storagePartitionIdentifier; // @synthesize storagePartitionIdentifier=_storagePartitionIdentifier;
-@property(copy) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(copy) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(copy) NSString *personaUniqueString; // @synthesize personaUniqueString=_personaUniqueString;
 @property unsigned int qos; // @synthesize qos=_qos;
 @property long long discretionaryOverride; // @synthesize discretionaryOverride=_discretionaryOverride;
 @property(getter=isDiscretionary) BOOL discretionary; // @synthesize discretionary=_discretionary;
@@ -112,9 +140,11 @@
 @property double creationTime; // @synthesize creationTime=_creationTime;
 @property unsigned long long taskKind; // @synthesize taskKind=_taskKind;
 @property unsigned long long identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
+- (id)initWithAVAggregateAssetDownloadChildDownloadSessionIdentifier:(id)arg1 assetTitle:(id)arg2 assetArtworkData:(id)arg3 options:(id)arg4 taskIdentifier:(unsigned long long)arg5 uniqueIdentifier:(id)arg6 bundleID:(id)arg7 sessionID:(id)arg8;
+- (id)initWithAVAssetDownloadURL:(id)arg1 destinationURL:(id)arg2 assetTitle:(id)arg3 assetArtworkData:(id)arg4 options:(id)arg5 taskIdentifier:(unsigned long long)arg6 uniqueIdentifier:(id)arg7 bundleID:(id)arg8 sessionID:(id)arg9;
 - (id)initWithDownloadTask:(id)arg1 uniqueIdentifier:(id)arg2 bundleID:(id)arg3 sessionID:(id)arg4;
 - (id)initWithUploadTask:(id)arg1 uniqueIdentifier:(id)arg2 bundleID:(id)arg3 sessionID:(id)arg4;
 - (id)initWithDataTask:(id)arg1 uniqueIdentifier:(id)arg2 bundleID:(id)arg3 sessionID:(id)arg4;

@@ -29,11 +29,11 @@
 @property(readonly) long long channelBand; // @dynamic channelBand;
 @property(readonly) long long channelWidth; // @dynamic channelWidth;
 @property(readonly) long long channelNumber; // @dynamic channelNumber;
+- (void)dealloc;
 @property(readonly) unsigned long long channelProperties; // @dynamic channelProperties;
 @property(readonly) unsigned long long flags; // @dynamic flags;
 - (id)initWithChannel:(id)arg1;
 - (id)initWithInfo:(id)arg1;
-- (void)dealloc;
 
 @end
 

@@ -6,10 +6,13 @@
 
 #import <SymptomEvaluator/NetDiagnosticProbe.h>
 
+#import <SymptomEvaluator/CoreTelephonyShimDelegate-Protocol.h>
+
 @class NSMutableArray, NSObject, NSString;
 @protocol CoreTelephonyDumpProbeDelegate, OS_dispatch_source;
 
-@interface CoreTelephonyDumpProbe : NetDiagnosticProbe
+__attribute__((visibility("hidden")))
+@interface CoreTelephonyDumpProbe : NetDiagnosticProbe <CoreTelephonyShimDelegate>
 {
     BOOL _archiveDumpUponEnd;
     BOOL _deleteCTDumpFilesAfterArchive;
@@ -33,6 +36,7 @@
     NSMutableArray *_archivePaths;
 }
 
++ (id)dateTimeStringFromCTDumpFolderPrefix:(id)arg1;
 @property(nonatomic) BOOL gotFilteredOut; // @synthesize gotFilteredOut=_gotFilteredOut;
 @property(nonatomic) BOOL observingCoreTelephonyDumpEnd; // @synthesize observingCoreTelephonyDumpEnd=_observingCoreTelephonyDumpEnd;
 @property(nonatomic) BOOL observingCoreTelephonyDumpBegin; // @synthesize observingCoreTelephonyDumpBegin=_observingCoreTelephonyDumpBegin;
@@ -62,7 +66,15 @@
 - (void)startCoreTelephonyDump:(double)arg1;
 - (void)stopCoreTelephonyDumpMonitoring;
 - (BOOL)getBasebandTraceEnabledState:(char *)arg1 coreDumpEnabled:(char *)arg2;
+- (BOOL)enableCoreTelephonyLoggingForCustomerSeed:(BOOL)arg1;
+- (void)dealloc;
 - (id)initWithQueue:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

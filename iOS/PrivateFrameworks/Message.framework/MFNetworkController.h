@@ -10,7 +10,7 @@
 #import <Message/MFDiagnosticsGenerator-Protocol.h>
 #import <Message/RadiosPreferencesDelegate-Protocol.h>
 
-@class AWDMailNetworkDiagnosticsReport, CXCallObserver, CoreTelephonyClient, MFObservable, NSLock, NSMutableArray, NSMutableSet, NSString, RadiosPreferences;
+@class AWDMailNetworkDiagnosticsReport, CXCallObserver, CoreTelephonyClient, EFObservable, NSLock, NSMutableArray, NSMutableSet, NSString, RadiosPreferences;
 @protocol OS_dispatch_queue;
 
 @interface MFNetworkController : NSObject <MFDiagnosticsGenerator, RadiosPreferencesDelegate, CXCallObserverDelegate>
@@ -43,6 +43,7 @@
 
 + (id)networkAssertionWithIdentifier:(id)arg1;
 + (id)sharedInstance;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) AWDMailNetworkDiagnosticsReport *awdNetworkDiagnosticReport;
 - (id)copyDiagnosticInformation;
 - (void)airplaneModeChanged;
@@ -56,8 +57,8 @@
 - (void)removeBackgroundWifiClient:(id)arg1;
 - (void)addBackgroundWifiClient:(id)arg1;
 - (void)_updateWifiClientType;
-@property(readonly, nonatomic) MFObservable *wifiObservable;
-@property(readonly, nonatomic) MFObservable *networkObservable;
+@property(readonly, nonatomic) EFObservable *wifiObservable;
+@property(readonly, nonatomic) EFObservable *networkObservable;
 - (void)removeNetworkObserver:(id)arg1;
 - (id)addNetworkObserverBlock:(CDUnknownBlockType)arg1 queue:(id)arg2;
 - (id)copyCarrierBundleValue:(id)arg1;

@@ -104,7 +104,6 @@
 - (void)sendURLRequest:(id)arg1 method:(id)arg2 bodyObj:(id)arg3 checkServerSideConfigVersion:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)sendURLRequest:(id)arg1 bodyObj:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (CDUnknownBlockType)stopHandlerBlock;
-- (void)dealloc;
 - (void)stopCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)shutDownCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)stoppingError;

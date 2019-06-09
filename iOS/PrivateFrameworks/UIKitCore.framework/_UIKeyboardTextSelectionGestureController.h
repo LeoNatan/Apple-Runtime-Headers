@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     _Bool _isLongPressing;
     _Bool _isPanning;
     _Bool _isSpacePan;
-    _Bool _hadSpacePanTap;
+    _Bool _hadAddedTouch;
     _Bool _didFloatCursor;
     int _previousForcePressCount;
     id <_UIKeyboardTextSelectionGestureControllerDelegate> _delegate;
@@ -49,7 +49,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool didFloatCursor; // @synthesize didFloatCursor=_didFloatCursor;
 @property(retain, nonatomic) NSMutableArray *activeGestures; // @synthesize activeGestures=_activeGestures;
 @property(nonatomic) double spacePanDistance; // @synthesize spacePanDistance=_spacePanDistance;
-@property(nonatomic) _Bool hadSpacePanTap; // @synthesize hadSpacePanTap=_hadSpacePanTap;
+@property(nonatomic) _Bool hadAddedTouch; // @synthesize hadAddedTouch=_hadAddedTouch;
 @property(nonatomic) _Bool isSpacePan; // @synthesize isSpacePan=_isSpacePan;
 @property(nonatomic) _Bool isPanning; // @synthesize isPanning=_isPanning;
 @property(nonatomic) _Bool isLongPressing; // @synthesize isLongPressing=_isLongPressing;
@@ -88,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (void)removeDeallocationHandler:(id)arg1;
 - (id)addDeallocationHandler:(CDUnknownBlockType)arg1;
 - (id)init;
+- (_Bool)shouldAddForceGesture;
 - (Class)textInteractionClass;
 
 @end

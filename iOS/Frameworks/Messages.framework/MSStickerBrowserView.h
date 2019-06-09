@@ -65,6 +65,7 @@
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
 - (id)_stickerAtIndexPath:(id)arg1;
+- (void)_reloadStickersAtIndexes:(id)arg1;
 - (void)reloadData;
 - (void)animateNextCell;
 - (void)configureStickerView;

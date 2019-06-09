@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFComposeHeaderView.h>
+#import <MessageUI/MFMailComposeHeaderView.h>
 
-@class MFHeaderLabelView, NSString, UILabel;
+@class CNComposeHeaderLabelView, NSString, UILabel;
 
-@interface MFComposeMultiView : MFComposeHeaderView
+@interface MFComposeMultiView : MFMailComposeHeaderView
 {
     UILabel *_accountLabel;
-    MFHeaderLabelView *_imageSizeHeaderLabelView;
+    CNComposeHeaderLabelView *_imageSizeHeaderLabelView;
     UILabel *_imageSizeLabel;
     UILabel *_placeholderImageSizeLabel;
     _Bool _imageSizeShown;
@@ -22,6 +22,7 @@
 
 @property(nonatomic, getter=isAccountAutoselected) _Bool accountAutoselected; // @synthesize accountAutoselected=_accountAutoselected;
 @property(nonatomic) _Bool accountHasUnsafeDomain; // @synthesize accountHasUnsafeDomain=_accountHasUnsafeDomain;
+- (void).cxx_destruct;
 - (id)labelColor;
 - (void)refreshPreferredContentSize;
 - (void)layoutSubviews;
@@ -33,7 +34,6 @@
 - (id)placeholderImageSizeLabel;
 - (id)imageSizeLabel;
 - (id)accountLabel;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

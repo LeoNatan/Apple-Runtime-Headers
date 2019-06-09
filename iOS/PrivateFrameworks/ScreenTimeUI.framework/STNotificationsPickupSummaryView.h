@@ -8,6 +8,7 @@
 
 @class STUsageReport, UIStackView;
 
+__attribute__((visibility("hidden")))
 @interface STNotificationsPickupSummaryView : UIView
 {
     STUsageReport *_usageReport;

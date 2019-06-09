@@ -38,7 +38,11 @@
 @property(nonatomic, getter=isShowCloud) _Bool showCloud; // @synthesize showCloud=_showCloud;
 @property(nonatomic, getter=isShowExplicit) _Bool showExplicit; // @synthesize showExplicit=_showExplicit;
 - (void).cxx_destruct;
+- (void)_updatePlayingArtworkIfNeeded;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
+- (void)_setExplicitView:(_Bool)arg1;
 - (void)_setCloudAccessoryView:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

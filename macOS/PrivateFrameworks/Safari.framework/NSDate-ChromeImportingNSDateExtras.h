@@ -8,6 +8,8 @@
 
 @interface NSDate (ChromeImportingNSDateExtras)
 + (id)safari_dateWithChromeTime:(long long)arg1;
++ (id)safari_dateWithFirefoxTime:(long long)arg1;
 - (long long)safari_chromeTime;
+- (long long)safari_firefoxTime;
 @end
 

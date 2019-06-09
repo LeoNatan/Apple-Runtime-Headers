@@ -4,31 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CoreData/NSManagedObject.h>
+#import <objc/NSObject.h>
 
-#import <PhotoLibraryServices/PLColorSpaceIdentity-Protocol.h>
+@class NSString;
 
-@class NSSet, NSString;
-
-@interface PLColorSpace : NSManagedObject <PLColorSpaceIdentity>
+@interface PLColorSpace : NSObject
 {
+    NSString *_colorSpaceName;
 }
 
-+ (id)commonColorSpace_displaySpace_inContext:(id)arg1;
-+ (id)commonColorSpace_unspecified_inContext:(id)arg1;
-+ (id)commonColorSpace_sRGB_inContext:(id)arg1;
-+ (id)colorSpaceFromName:(id)arg1 createIfMissing:(_Bool)arg2 context:(id)arg3;
-+ (id)entityInManagedObjectContext:(id)arg1;
-+ (id)entityName;
-- (_Bool)supportsCloudUpload;
-
-// Remaining properties
-@property(copy, nonatomic) NSString *colorSpaceName; // @dynamic colorSpaceName;
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(retain, nonatomic) NSSet *resources; // @dynamic resources;
-@property(readonly) Class superclass;
++ (id)commonColorSpace_displaySpace;
++ (id)commonColorSpace_unspecified;
++ (id)commonColorSpace_sRGB;
++ (id)colorSpaceFromName:(id)arg1;
+@property(copy, nonatomic) NSString *colorSpaceName; // @synthesize colorSpaceName=_colorSpaceName;
+- (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithName:(id)arg1;
 
 @end
 

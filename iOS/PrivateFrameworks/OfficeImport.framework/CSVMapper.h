@@ -6,12 +6,11 @@
 
 #import <OfficeImport/CMMapper.h>
 
-@class CMArchiveManager, NSMutableArray, NSString;
+@class NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CSVMapper : CMMapper
 {
-    CMArchiveManager *mArchiver;
     NSMutableArray *mRows;
     NSString *mFileName;
     unsigned long long mColumnCount;

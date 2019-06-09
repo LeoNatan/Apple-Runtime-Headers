@@ -13,6 +13,6 @@
 - (NSString *)humanReadableType;
 - (NSDictionary *)humanReadableDictionaryRepresentation;
 - (id)initWithDictionary:(NSDictionary *)arg1;
-- (NSDictionary *)serializeableDictionary;
+- (NSDictionary *)serializeableDictionaryWithShouldRedact:(BOOL)arg1;
 @end
 

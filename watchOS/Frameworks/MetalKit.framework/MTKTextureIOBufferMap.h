@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface MTKTextureIOBufferMap : NSObject <TXRBufferMap>
 {
     void *_bytes;

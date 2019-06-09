@@ -6,13 +6,63 @@
 
 #import <objc/NSObject.h>
 
-@class GCController, GCControllerButtonInput, GCControllerDirectionPad;
+@class GCController, GCControllerButtonInput, GCControllerDirectionPad, GCMotion;
 
 @interface GCExtendedGamepad : NSObject
 {
+    _Bool _dpadFlippedY;
+    _Bool _leftFlippedY;
+    _Bool _rightFlippedY;
+    GCMotion *_motion;
+    GCControllerButtonInput *_button0;
+    GCControllerButtonInput *_button1;
+    GCControllerButtonInput *_button2;
+    GCControllerButtonInput *_button3;
+    GCController *_controller;
+    CDUnknownBlockType _valueChangedHandler;
+    GCControllerDirectionPad *_dpad;
+    GCControllerButtonInput *_buttonMenu;
+    GCControllerButtonInput *_buttonOptions;
+    GCControllerDirectionPad *_leftThumbstick;
+    GCControllerDirectionPad *_rightThumbstick;
+    GCControllerButtonInput *_leftShoulder;
+    GCControllerButtonInput *_rightShoulder;
+    GCControllerButtonInput *_leftTrigger;
+    GCControllerButtonInput *_rightTrigger;
+    GCControllerButtonInput *_leftThumbstickButton;
+    GCControllerButtonInput *_rightThumbstickButton;
+    GCControllerButtonInput *__buttonHome;
 }
 
-+ (_Bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
++ (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) GCControllerButtonInput *_buttonHome; // @synthesize _buttonHome=__buttonHome;
+@property(readonly, nonatomic) GCControllerButtonInput *rightThumbstickButton; // @synthesize rightThumbstickButton=_rightThumbstickButton;
+@property(readonly, nonatomic) GCControllerButtonInput *leftThumbstickButton; // @synthesize leftThumbstickButton=_leftThumbstickButton;
+@property(readonly, nonatomic) GCControllerButtonInput *rightTrigger; // @synthesize rightTrigger=_rightTrigger;
+@property(readonly, nonatomic) GCControllerButtonInput *leftTrigger; // @synthesize leftTrigger=_leftTrigger;
+@property(readonly, nonatomic) GCControllerButtonInput *rightShoulder; // @synthesize rightShoulder=_rightShoulder;
+@property(readonly, nonatomic) GCControllerButtonInput *leftShoulder; // @synthesize leftShoulder=_leftShoulder;
+@property(readonly, nonatomic) GCControllerDirectionPad *rightThumbstick; // @synthesize rightThumbstick=_rightThumbstick;
+@property(readonly, nonatomic) GCControllerDirectionPad *leftThumbstick; // @synthesize leftThumbstick=_leftThumbstick;
+@property(readonly, nonatomic) GCControllerButtonInput *buttonOptions; // @synthesize buttonOptions=_buttonOptions;
+@property(readonly, nonatomic) GCControllerButtonInput *buttonMenu; // @synthesize buttonMenu=_buttonMenu;
+@property(readonly, nonatomic) GCControllerDirectionPad *dpad; // @synthesize dpad=_dpad;
+@property(copy, nonatomic) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
+@property(readonly, nonatomic) __weak GCController *controller; // @synthesize controller=_controller;
+@property(readonly, nonatomic) GCControllerButtonInput *buttonY; // @synthesize buttonY=_button3;
+@property(readonly, nonatomic) GCControllerButtonInput *buttonX; // @synthesize buttonX=_button2;
+@property(readonly, nonatomic) GCControllerButtonInput *buttonB; // @synthesize buttonB=_button1;
+@property(readonly, nonatomic) GCControllerButtonInput *buttonA; // @synthesize buttonA=_button0;
+- (void)set_motion:(id)arg1;
+- (id)_motion;
+- (void).cxx_destruct;
+- (void)setStateFromExtendedGamepad:(id)arg1;
+- (void)setHapticMotor:(int)arg1 frequency:(float)arg2;
+- (void)setLightbarColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
+- (id)productCategory;
+- (void)setController:(id)arg1;
+- (void)setPlayerIndex:(long long)arg1;
+- (id)name;
 - (void)setAllowsRotation:(_Bool)arg1;
 - (_Bool)allowsRotation;
 - (void)setReportsAbsoluteDpadValues:(_Bool)arg1;
@@ -20,27 +70,17 @@
 - (void)setButton:(id)arg1 pressed:(_Bool)arg2;
 - (void)setButton:(id)arg1 value:(double)arg2;
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
-- (id)inputForElement:(struct __IOHIDElement *)arg1;
 - (id)saveSnapshot;
-@property(readonly, nonatomic) GCControllerButtonInput *leftThumbstickButton;
-@property(readonly, nonatomic) GCControllerButtonInput *rightThumbstickButton;
-@property(readonly, nonatomic) GCControllerButtonInput *rightTrigger;
-@property(readonly, nonatomic) GCControllerButtonInput *leftTrigger;
-@property(readonly, nonatomic) GCControllerButtonInput *rightShoulder;
-@property(readonly, nonatomic) GCControllerButtonInput *leftShoulder;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonY;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonX;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonB;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonA;
+- (void)handleEvent:(struct __IOHIDEvent *)arg1;
+- (void)handleAncillaryButtonEvent:(struct __IOHIDEvent *)arg1;
+- (void)handleLegacyAncillaryButtonEvent:(struct __IOHIDEvent *)arg1;
 - (id)button3;
 - (id)button2;
 - (id)button1;
 - (id)button0;
-@property(readonly, nonatomic) GCControllerDirectionPad *rightThumbstick;
-@property(readonly, nonatomic) GCControllerDirectionPad *leftThumbstick;
-@property(readonly, nonatomic) GCControllerDirectionPad *dpad;
-@property(copy, nonatomic) CDUnknownBlockType valueChangedHandler;
-@property(readonly, nonatomic) __weak GCController *controller;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithController:(id)arg1 initInfo:(const struct GCExtendedGamepadInitWithControllerInitInfo *)arg2;
 - (id)initWithController:(id)arg1;
 
 @end

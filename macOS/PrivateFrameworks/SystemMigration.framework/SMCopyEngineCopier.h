@@ -12,10 +12,13 @@
 {
     BOOL _repeatCopyIfCompleted;
     BOOL _tracksCompletedPaths;
+    BOOL _isParentExpectingProgress;
+    unsigned long long _copySize;
     SMCopyEngine *_engine;
     NSURL *_relativeSourcePath;
     NSURL *_relativeDestinationPath;
-    unsigned long long _copySize;
+    NSProgress *_parentProgress;
+    double _parentProgressPendingUnits;
     NSProgress *_progress;
     id _associatedObject;
     NSString *_progressString;
@@ -23,14 +26,13 @@
     double _transferRate;
     unsigned long long _lastSizeUpdate;
     NSDate *_startTime;
-    double _progressPercentage;
 }
 
 + (id)keyPathsForValuesAffectingSandboxedDestinationPath;
 + (id)keyPathsForValuesAffectingDestinationPath;
 + (id)keyPathsForValuesAffectingSourceURL;
-@property double progressPercentage; // @synthesize progressPercentage=_progressPercentage;
 @property(retain) NSDate *startTime; // @synthesize startTime=_startTime;
+@property BOOL isParentExpectingProgress; // @synthesize isParentExpectingProgress=_isParentExpectingProgress;
 @property unsigned long long lastSizeUpdate; // @synthesize lastSizeUpdate=_lastSizeUpdate;
 @property double transferRate; // @synthesize transferRate=_transferRate;
 @property BOOL tracksCompletedPaths; // @synthesize tracksCompletedPaths=_tracksCompletedPaths;
@@ -39,7 +41,8 @@
 @property(retain) id associatedObject; // @synthesize associatedObject=_associatedObject;
 @property BOOL repeatCopyIfCompleted; // @synthesize repeatCopyIfCompleted=_repeatCopyIfCompleted;
 @property(retain) NSProgress *progress; // @synthesize progress=_progress;
-@property unsigned long long copySize; // @synthesize copySize=_copySize;
+@property double parentProgressPendingUnits; // @synthesize parentProgressPendingUnits=_parentProgressPendingUnits;
+@property(retain) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property(retain) NSURL *relativeDestinationPath; // @synthesize relativeDestinationPath=_relativeDestinationPath;
 @property(retain) NSURL *relativeSourcePath; // @synthesize relativeSourcePath=_relativeSourcePath;
 @property __weak SMCopyEngine *engine; // @synthesize engine=_engine;
@@ -59,6 +62,7 @@
 @property(readonly) NSURL *destinationPath;
 @property(readonly) NSURL *sourcePath;
 - (id)description;
+@property unsigned long long copySize; // @synthesize copySize=_copySize;
 - (id)initWithCopyEngine:(id)arg1;
 
 @end

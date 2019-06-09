@@ -11,9 +11,9 @@
 @interface NSFormCell : NSActionCell
 {
     double _titleWidth;
-    id _titleCell;
     double _titleEndPoint;
     double _preferredTextFieldWidth;
+    id _titleCell;
 }
 
 + (void)initialize;
@@ -29,13 +29,12 @@
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_layoutTitleRect:(struct CGRect *)arg1 interiorChromeRect:(struct CGRect *)arg2 interiorTextRect:(struct CGRect *)arg3 withFrame:(struct CGRect)arg4 inView:(id)arg5;
 - (struct CGRect)_titleRectForCellFrame:(struct CGRect)arg1;
-- (void)_drawLiveResizeHighlightWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (struct CGSize)cellSizeForBounds:(struct CGRect)arg1;
 @property(readonly, getter=isOpaque) BOOL opaque;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setUserInterfaceLayoutDirection:(long long)arg1;
-@property unsigned long long titleAlignment;
+@property long long titleAlignment;
 @property(retain) NSFont *titleFont;
 - (void)setAttributedTitle:(id)arg1;
 - (id)attributedTitle;

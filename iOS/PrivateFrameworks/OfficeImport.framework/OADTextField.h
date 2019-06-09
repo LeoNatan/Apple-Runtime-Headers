@@ -15,13 +15,13 @@ __attribute__((visibility("hidden")))
     OADParagraphProperties *mParagraphProperties;
 }
 
+- (void).cxx_destruct;
 - (void)removeUnnecessaryOverrides;
 - (void)setText:(id)arg1;
 - (id)text;
 - (id)paragraphProperties;
 - (unsigned long long)characterCount;
 - (_Bool)isEmpty;
-- (void)dealloc;
 - (id)init;
 
 @end

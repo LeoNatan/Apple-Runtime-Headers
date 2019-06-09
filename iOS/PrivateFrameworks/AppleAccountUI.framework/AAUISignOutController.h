@@ -14,6 +14,7 @@
 @interface AAUISignOutController : UINavigationController <AAUIDataclassPickerViewControllerDelegate>
 {
     ACAccountStore *_accountStore;
+    long long _currentStyle;
     NSDictionary *_dataclassOptions;
     ACAccount *_account;
 }
@@ -41,6 +42,8 @@
 - (id)_signOutMessageSimplified:(_Bool)arg1 withConfirmation:(_Bool)arg2;
 - (id)_spinnerViewControllerForActions:(struct NSDictionary *)arg1;
 - (id)_dataclassViewController;
+- (void)_updateStyleIfNeeded;
+- (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)encodeWithCoder:(id)arg1;

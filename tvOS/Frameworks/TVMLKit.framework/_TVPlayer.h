@@ -9,7 +9,7 @@
 #import <TVMLKit/IKAppPlayer-Protocol.h>
 #import <TVMLKit/TVPlayerBridging-Protocol.h>
 
-@class IKAppDocument, IKAppPlayerBridge, NSArray, NSDate, NSDictionary, NSNumber, NSString, TVPMusicContextMenuData, TVPlayer, UINavigationController, _TVMLPlayer;
+@class IKAppDocument, IKAppPlayerBridge, NSArray, NSDate, NSDictionary, NSNumber, NSString, TVPMusicContextMenuData, UINavigationController;
 @protocol IKAppMediaItem, IKAppPlaylist, TVPlaying;
 
 __attribute__((visibility("hidden")))
@@ -35,11 +35,10 @@ __attribute__((visibility("hidden")))
         _Bool hasPausesOnHDCPProtectionDown;
         _Bool hasReset;
         _Bool hasPlaybackDate;
-        _Bool hasAccessLog;
-        _Bool hasErrorLog;
+        _Bool hasAccessLogs;
+        _Bool hasErrorLogs;
+        _Bool hasResumeBehavior;
     } _playerFlags;
-    _Bool _muted;
-    _Bool _showsResumeMenu;
     _Bool _interactiveOverlayDismissable;
     _Bool _presentsImplicitlyOnPlay;
     id <IKAppPlaylist> _playlist;
@@ -48,12 +47,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *_contextMenuData;
     IKAppPlayerBridge *_bridge;
     UINavigationController *_navigationController;
-    id <TVPlaying> _player;
+    id <TVPlaying> _playerImpl;
 }
 
-@property(readonly, nonatomic) id <TVPlaying> player; // @synthesize player=_player;
 @property(nonatomic) _Bool presentsImplicitlyOnPlay; // @synthesize presentsImplicitlyOnPlay=_presentsImplicitlyOnPlay;
-@property(readonly, nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
+@property(retain, nonatomic) id <TVPlaying> playerImpl; // @synthesize playerImpl=_playerImpl;
+@property(nonatomic) __weak UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
 @property(retain, nonatomic) IKAppPlayerBridge *bridge; // @synthesize bridge=_bridge;
 @property(copy, nonatomic) NSDictionary *contextMenuData; // @synthesize contextMenuData=_contextMenuData;
 @property(nonatomic) _Bool interactiveOverlayDismissable; // @synthesize interactiveOverlayDismissable=_interactiveOverlayDismissable;
@@ -64,13 +63,14 @@ __attribute__((visibility("hidden")))
 - (void)_present:(_Bool)arg1;
 - (id)_ikMediaItemForPublicObj:(id)arg1;
 - (void)dispatchEvent:(id)arg1 userInfo:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)presentWithAnimation:(_Bool)arg1;
 - (void)stopObservingEvent:(id)arg1;
 - (void)startObservingEvent:(id)arg1 extraInfo:(id)arg2;
 - (void)cleanup;
 - (void)scan:(double)arg1;
 - (void)setElapsedTime:(double)arg1;
-@property(nonatomic) _Bool showsResumeMenu; // @synthesize showsResumeMenu=_showsResumeMenu;
-@property(nonatomic) _Bool muted; // @synthesize muted=_muted;
+@property(nonatomic) _Bool showsResumeMenu;
+@property(nonatomic) _Bool muted;
 @property(readonly, nonatomic) double scanRate;
 @property(readonly, nonatomic) NSArray *currentMediaItemErrorLogs;
 @property(readonly, nonatomic) NSArray *currentMediaItemAccessLogs;
@@ -94,10 +94,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool preventsSleepDuringVideoPlayback;
 @property(readonly, nonatomic) _Bool currentMediaItemHasVideoContent;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-@property(readonly, nonatomic) _TVMLPlayer *tvmlPlayer;
-@property(readonly, nonatomic) TVPlayer *externalPlayer;
+@property(readonly, nonatomic) _Bool isInternalPlayerImpl;
 - (void)dealloc;
 - (id)initWithIKAppPlayer:(id)arg1 navigationController:(id)arg2;
+- (id)initWithPlayer:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,18 +13,17 @@
 @interface GEOLogMsgStateNavigation : PBCodable <NSCopying>
 {
     double _distanceToDestination;
-    int _lineType;
     GEONavCameraState *_navCameraState;
+    int _lineType;
     int _navState;
     struct {
-        unsigned int distanceToDestination:1;
-        unsigned int lineType:1;
-        unsigned int navState:1;
-    } _has;
+        unsigned int has_distanceToDestination:1;
+        unsigned int has_lineType:1;
+        unsigned int has_navState:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEONavCameraState *navCameraState; // @synthesize navCameraState=_navCameraState;
-@property(nonatomic) double distanceToDestination; // @synthesize distanceToDestination=_distanceToDestination;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,18 +32,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEONavCameraState *navCameraState;
 @property(readonly, nonatomic) BOOL hasNavCameraState;
 @property(nonatomic) BOOL hasDistanceToDestination;
+@property(nonatomic) double distanceToDestination;
 - (int)StringAsNavState:(id)arg1;
 - (id)navStateAsString:(int)arg1;
 @property(nonatomic) BOOL hasNavState;
-@property(nonatomic) int navState; // @synthesize navState=_navState;
+@property(nonatomic) int navState;
 - (int)StringAsLineType:(id)arg1;
 - (id)lineTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasLineType;
-@property(nonatomic) int lineType; // @synthesize lineType=_lineType;
+@property(nonatomic) int lineType;
 
 @end
 

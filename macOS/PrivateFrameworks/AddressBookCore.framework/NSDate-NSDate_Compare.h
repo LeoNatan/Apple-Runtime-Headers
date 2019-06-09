@@ -7,6 +7,7 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (NSDate_Compare)
++ (id)_ab_dateFromDateComponents:(id)arg1;
 - (BOOL)_abCompareNotWithinIntervalFromTodayYearless:(id)arg1;
 - (BOOL)_abCompareNotWithinIntervalFromToday:(id)arg1;
 - (BOOL)_abCompareWithinIntervalFromTodayYearless:(id)arg1;
@@ -18,5 +19,7 @@
 - (double)ab_timeIntervalFromTodayYearLess;
 - (double)ab_smallestTimeIntervalAroundTodayYearLess;
 - (double)ab_timeIntervalSinceToday;
+- (double)_ab_timeIntervalSinceJanuary1;
+- (id)_ab_componentsForJanuary1InTheSameYear;
 @end
 

@@ -8,11 +8,13 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class PBUnknownFields;
+@class PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDVenueIdentifier : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_62a50c50 _containedBys;
     CDStruct_62a50c50 _sectionIds;
@@ -22,29 +24,40 @@ __attribute__((visibility("hidden")))
     unsigned long long _geminiId;
     unsigned long long _levelId;
     unsigned long long _unitId;
+    unsigned long long _venueGeminiId;
     unsigned long long _venueId;
     int _levelOrdinal;
     struct {
-        unsigned int buildingId:1;
-        unsigned int featureId:1;
-        unsigned int fixtureId:1;
-        unsigned int geminiId:1;
-        unsigned int levelId:1;
-        unsigned int unitId:1;
-        unsigned int venueId:1;
-        unsigned int levelOrdinal:1;
-    } _has;
+        unsigned int has_buildingId:1;
+        unsigned int has_featureId:1;
+        unsigned int has_fixtureId:1;
+        unsigned int has_geminiId:1;
+        unsigned int has_levelId:1;
+        unsigned int has_unitId:1;
+        unsigned int has_venueGeminiId:1;
+        unsigned int has_venueId:1;
+        unsigned int has_levelOrdinal:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_containedBys:1;
+        unsigned int read_sectionIds:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_containedBys:1;
+        unsigned int wrote_sectionIds:1;
+        unsigned int wrote_buildingId:1;
+        unsigned int wrote_featureId:1;
+        unsigned int wrote_fixtureId:1;
+        unsigned int wrote_geminiId:1;
+        unsigned int wrote_levelId:1;
+        unsigned int wrote_unitId:1;
+        unsigned int wrote_venueGeminiId:1;
+        unsigned int wrote_venueId:1;
+        unsigned int wrote_levelOrdinal:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned long long geminiId; // @synthesize geminiId=_geminiId;
-@property(nonatomic) unsigned long long featureId; // @synthesize featureId=_featureId;
-@property(nonatomic) int levelOrdinal; // @synthesize levelOrdinal=_levelOrdinal;
-@property(nonatomic) unsigned long long fixtureId; // @synthesize fixtureId=_fixtureId;
-@property(nonatomic) unsigned long long unitId; // @synthesize unitId=_unitId;
-@property(nonatomic) unsigned long long levelId; // @synthesize levelId=_levelId;
-@property(nonatomic) unsigned long long buildingId; // @synthesize buildingId=_buildingId;
-@property(nonatomic) unsigned long long venueId; // @synthesize venueId=_venueId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -53,28 +66,43 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasVenueGeminiId;
+@property(nonatomic) unsigned long long venueGeminiId;
 @property(nonatomic) _Bool hasGeminiId;
+@property(nonatomic) unsigned long long geminiId;
 - (void)setContainedBys:(unsigned long long *)arg1 count:(unsigned long long)arg2;
 - (unsigned long long)containedByAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsContainedBy:(unsigned long long)arg1;
 - (void)addContainedBy:(unsigned long long)arg1;
 - (void)clearContainedBys;
 @property(readonly, nonatomic) unsigned long long *containedBys;
 @property(readonly, nonatomic) unsigned long long containedBysCount;
+- (void)_readContainedBys;
 @property(nonatomic) _Bool hasFeatureId;
+@property(nonatomic) unsigned long long featureId;
 @property(nonatomic) _Bool hasLevelOrdinal;
+@property(nonatomic) int levelOrdinal;
 @property(nonatomic) _Bool hasFixtureId;
+@property(nonatomic) unsigned long long fixtureId;
 @property(nonatomic) _Bool hasUnitId;
+@property(nonatomic) unsigned long long unitId;
 - (void)setSectionIds:(unsigned long long *)arg1 count:(unsigned long long)arg2;
 - (unsigned long long)sectionIdAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsSectionId:(unsigned long long)arg1;
 - (void)addSectionId:(unsigned long long)arg1;
 - (void)clearSectionIds;
 @property(readonly, nonatomic) unsigned long long *sectionIds;
 @property(readonly, nonatomic) unsigned long long sectionIdsCount;
+- (void)_readSectionIds;
 @property(nonatomic) _Bool hasLevelId;
+@property(nonatomic) unsigned long long levelId;
 @property(nonatomic) _Bool hasBuildingId;
+@property(nonatomic) unsigned long long buildingId;
 @property(nonatomic) _Bool hasVenueId;
+@property(nonatomic) unsigned long long venueId;
 - (void)dealloc;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithVenueID:(unsigned long long)arg1 businessID:(unsigned long long)arg2 componentIdentifier:(id)arg3;

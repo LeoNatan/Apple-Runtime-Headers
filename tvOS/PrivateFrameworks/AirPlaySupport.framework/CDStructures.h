@@ -4,16 +4,3 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Typedef'd Structures
-
-typedef struct {
-    unsigned int timestamp:1;
-    unsigned int duration:1;
-    unsigned int maxBPS:1;
-    unsigned int maxPhotoBytes:1;
-    unsigned int minBPS:1;
-    unsigned int minPhotoBytes:1;
-    unsigned int reason:1;
-    unsigned int totalPhotos:1;
-} CDStruct_790a38bb;
-

@@ -22,12 +22,10 @@
 - (_Bool)didReceiveNotificationRequest:(NCNotificationRequest *)arg1;
 
 @optional
-@property(nonatomic) __weak NCNotificationAction *presentationSourceAction;
 @property(readonly, nonatomic) NSString *contentExtensionIdentifier;
 - (_Bool)restoreInputViews;
 - (void)preserveInputViews;
 - (id)cancelTouches;
-- (void)playAudioMessage;
-- (void)loadAudioAccessoryView;
+- (void)playMedia;
 @end
 

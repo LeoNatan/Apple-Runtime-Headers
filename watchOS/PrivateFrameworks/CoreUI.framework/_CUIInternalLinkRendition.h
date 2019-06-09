@@ -31,8 +31,11 @@ __attribute__((visibility("hidden")))
 - (id)maskForSliceIndex:(int)arg1;
 - (id)imageForSliceIndex:(int)arg1;
 - (void)_fillOutImageSlices;
+- (id)properties;
+- (id)data;
 - (struct CGImage *)unslicedImage;
 - (struct CGImage *)_sourceImage;
+- (id)_sourceRendition;
 - (_Bool)isScaled;
 - (id)metrics;
 - (id)sliceInformation;
@@ -40,6 +43,9 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_destinationFrame;
 - (id)linkingToRendition;
 - (_Bool)isInternalLink;
+- (int)pixelFormat;
+- (_Bool)isOpaque;
+- (int)bitmapEncoding;
 - (id)_initWithCSIHeader:(const struct _csiheader *)arg1;
 - (void)_setStructuredThemeStore:(id)arg1;
 - (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken *)arg2 artworkStatus:(int)arg3;

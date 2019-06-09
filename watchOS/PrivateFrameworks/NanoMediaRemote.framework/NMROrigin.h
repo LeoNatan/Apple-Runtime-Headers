@@ -6,36 +6,45 @@
 
 #import <objc/NSObject.h>
 
-#import <NanoMediaRemote/NMROriginMediaRemoteObserverNotificationHandler-Protocol.h>
-
-@class NSNumber, NSString;
+@class MPAVRoute, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
-@interface NMROrigin : NSObject <NMROriginMediaRemoteObserverNotificationHandler>
+@interface NMROrigin : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
+    MPAVRoute *_route;
     void *_mediaRemoteOrigin;
+    unsigned int _connectionState;
     void *_deviceInfo;
     NSString *_cachedDisplayName;
 }
 
-+ (void *)_originFromNotification:(id)arg1;
+@property(readonly, nonatomic) void *deviceInfo; // @synthesize deviceInfo=_deviceInfo;
 - (void).cxx_destruct;
+- (void)_updateConnectionState;
+- (void)_handleExternalDeviceConnectionStateDidChangeNotification:(id)arg1;
+- (void)_handleRouteConnectionDidInvalidateNotification:(id)arg1;
+- (void)_handleRouteConnectionDidConnectNotification:(id)arg1;
+- (id)playerPathWithBundleID:(id)arg1 playerID:(id)arg2;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (_Bool)updateDeviceInfo:(void *)arg1;
-- (void)updateWithMROrigin:(void *)arg1;
+- (void)updateOrigin:(void *)arg1 deviceInfo:(void *)arg2;
+- (void)updateRoute:(id)arg1;
 @property(readonly, nonatomic) int logicalDeviceCount;
+@property(readonly, nonatomic) _Bool isCompanion;
 @property(readonly, nonatomic) _Bool isLocal;
 @property(readonly, nonatomic) NSNumber *uniqueIdentifier;
-@property(readonly, nonatomic) int originType;
 @property(readonly, nonatomic) NSString *displayName;
-@property(readonly, nonatomic) void *deviceInfo;
+@property(readonly, nonatomic) NSString *deviceIdentifier;
+@property(readonly, nonatomic) unsigned int connectionState;
+@property(readonly, nonatomic) unsigned int type;
 @property(readonly, nonatomic) void *mediaRemoteOrigin;
+@property(readonly, nonatomic) MPAVRoute *route;
 - (void)dealloc;
-- (id)initWithMROriginRef:(void *)arg1;
-- (_Bool)shouldHandleNotification:(id)arg1;
+- (id)initWithOrigin:(void *)arg1 deviceInfo:(void *)arg2;
+- (id)initWithRoute:(id)arg1;
+- (id)init;
 
 @end
 

@@ -49,8 +49,7 @@
 - (void)requestIconWithHandler:(CDUnknownBlockType)arg1;
 - (void)_requestIcon:(_Bool)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (id)_queue_iconWithOutlineForWidgetWithIdentifier:(id)arg1 extension:(id)arg2;
-- (int)_outlineVariantForScale:(double)arg1;
-- (id)_queue_iconWithFormat:(int)arg1 forWidgetWithIdentifier:(id)arg2 extension:(id)arg3;
+- (id)_queue_iconWithSize:(struct CGSize)arg1 scale:(double)arg2 forWidgetWithIdentifier:(id)arg3 extension:(id)arg4;
 - (id)_queue_iconFromWidgetBundleForWidgetWithIdentifier:(id)arg1 extension:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *widgetIdentifier;
 - (id)widgetInfoWithExtension:(id)arg1;

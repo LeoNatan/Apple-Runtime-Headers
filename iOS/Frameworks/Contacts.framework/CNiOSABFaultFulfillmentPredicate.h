@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *_identifier;
 }
 
++ (id)os_log;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) int legacyIdentifier; // @synthesize legacyIdentifier=_legacyIdentifier;

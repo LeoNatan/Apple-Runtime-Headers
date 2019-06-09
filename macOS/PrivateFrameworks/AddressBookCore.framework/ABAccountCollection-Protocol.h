@@ -9,6 +9,7 @@
 @class ABAccount, NSArray, NSString;
 
 @protocol ABAccountCollection <NSObject>
+@property(readonly, copy) NSArray *hiddenAccounts;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly, copy) NSArray *enabledAccounts;
 @property(readonly, copy) NSArray *allAccounts;

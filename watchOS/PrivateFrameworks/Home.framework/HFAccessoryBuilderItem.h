@@ -9,7 +9,7 @@
 #import <Home/HFItemBuilderItem-Protocol.h>
 #import <Home/HFServiceLikeItem-Protocol.h>
 
-@class HFAccessoryBuilder, NSString;
+@class HFAccessoryBuilder, NSSet, NSString;
 @protocol HFCharacteristicValueSource, HFHomeKitObject, HFServiceLikeItem;
 
 @interface HFAccessoryBuilderItem : HFItem <HFItemBuilderItem, HFServiceLikeItem>
@@ -21,9 +21,10 @@
 @property(retain, nonatomic) HFItem<HFServiceLikeItem> *accessoryItem; // @synthesize accessoryItem=_accessoryItem;
 @property(retain, nonatomic) HFAccessoryBuilder *accessoryBuilder; // @synthesize accessoryBuilder=_accessoryBuilder;
 - (void).cxx_destruct;
+- (id)namingComponentForHomeKitObject;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource;
 - (id)accessories;
-- (id)services;
+@property(readonly, nonatomic) NSSet *services;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)copyWithValueSource:(id)arg1;

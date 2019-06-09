@@ -31,12 +31,16 @@
         unsigned int _forceColorWrite:1;
         unsigned int _activeFontFeatures:1;
         unsigned int _preserveNaturalAlignment:1;
-        unsigned int _reserved:29;
+        unsigned int _textScalingNeedsConvert:1;
+        unsigned int _wroteCocoaVersion:1;
+        unsigned int _reserved:27;
     } _rwFlags;
     double _rightMargin;
     NSDictionary *_docAttrs;
     void *_layoutSections;
     NSMapTable *_attachmentData;
+    long long _textScalingConversionSource;
+    long long _textScalingConversionTarget;
 }
 
 + (void)initialize;
@@ -74,7 +78,10 @@
 - (void)writeKeywordsDocumentAttribute;
 - (void)writeDateDocumentAttribute:(id)arg1 withRTFKeyword:(const char *)arg2;
 - (void)writeStringDocumentAttribute:(id)arg1 withRTFKeyword:(const char *)arg2;
+- (void)_writeTextScalingAndRenderingHint;
 - (void)_writeVersionsAndEncodings;
+- (void)_setTextScalingConversionSource:(long long)arg1;
+- (void)_setTextScalingConversionTarget:(long long)arg1;
 - (void)writeBackgroundColor;
 - (void)writeDefaultTabInterval;
 - (void)writeHyphenation;

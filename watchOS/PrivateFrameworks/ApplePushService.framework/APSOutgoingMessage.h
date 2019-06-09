@@ -11,14 +11,21 @@
 @interface APSOutgoingMessage : APSMessage
 {
     APSOutgoingMessageCheckpointTrace *_checkpointTrace;
+    _Bool _ackReceived;
 }
 
+@property(nonatomic) _Bool ackReceived; // @synthesize ackReceived=_ackReceived;
 @property(retain, nonatomic) APSOutgoingMessageCheckpointTrace *checkpointTrace; // @synthesize checkpointTrace=_checkpointTrace;
+- (void).cxx_destruct;
+@property(nonatomic) unsigned int ackTimestamp;
+@property(nonatomic) _Bool sendRetried;
 - (id)sentTimestamp;
 - (void)setSentTimestamp:(id)arg1;
 - (id)originator;
 - (void)setOriginator:(id)arg1;
 @property(copy, nonatomic) NSString *senderTokenName;
+- (void)setPushType:(unsigned int)arg1;
+- (unsigned int)pushType;
 - (void)setPriority:(int)arg1;
 - (int)priority;
 @property(nonatomic) unsigned int payloadLength;
@@ -43,7 +50,6 @@
 - (void)setMessageID:(unsigned int)arg1;
 - (unsigned int)messageID;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 
 @end

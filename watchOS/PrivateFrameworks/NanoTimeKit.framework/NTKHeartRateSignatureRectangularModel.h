@@ -13,7 +13,7 @@
     HKHeartRateSummary *_mostRecentHeartRateSummary;
 }
 
-@property(readonly, nonatomic) HKHeartRateSummary *mostRecentHeartRateSummary; // @synthesize mostRecentHeartRateSummary=_mostRecentHeartRateSummary;
+@property(retain, nonatomic) HKHeartRateSummary *mostRecentHeartRateSummary; // @synthesize mostRecentHeartRateSummary=_mostRecentHeartRateSummary;
 - (void).cxx_destruct;
 - (void)manager:(id)arg1 receivedLatestHeartRateSummary:(id)arg2;
 

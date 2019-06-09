@@ -11,6 +11,5 @@
 @protocol FBSSceneLayerDelegate <NSObject>
 - (void)sceneLayerDidInvalidate:(FBSSceneLayer *)arg1;
 - (void)sceneLayerDidUpdate:(FBSSceneLayer *)arg1;
-- (BOOL)sceneLayerShouldObserveUpdates:(FBSSceneLayer *)arg1;
 @end
 

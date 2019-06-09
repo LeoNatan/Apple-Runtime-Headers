@@ -10,6 +10,7 @@
 
 @class NSString, SKUIFieldSettingDescription, SKUIInputViewElement, UILabel, UITextField;
 
+__attribute__((visibility("hidden")))
 @interface SKUITextFieldSettingDescriptionView : SKUIFieldSettingDescriptionView <UITextFieldDelegate>
 {
     double _aggregateLabelWidth;

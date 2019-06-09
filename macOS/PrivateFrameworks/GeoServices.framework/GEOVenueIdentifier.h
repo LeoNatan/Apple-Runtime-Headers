@@ -36,6 +36,7 @@
 - (id)initWithVenueID:(unsigned long long)arg1 businessID:(unsigned long long)arg2 componentIdentifiers:(id)arg3;
 - (id)initWithVenueID:(unsigned long long)arg1 componentIdentifiers:(id)arg2;
 - (id)initWithVenueIdentifiers:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

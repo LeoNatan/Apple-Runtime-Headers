@@ -20,6 +20,7 @@
 - (NSURL *)mediaItemURL;
 
 @optional
+- (_Bool)shouldRetryPlaybackForError:(NSError *)arg1;
 - (NSError *)replacementErrorForPlaybackError:(NSError *)arg1;
 - (void)cleanUpMediaItem;
 - (_Bool)loadResourceForRequest:(TVPResourceLoadingRequest *)arg1;

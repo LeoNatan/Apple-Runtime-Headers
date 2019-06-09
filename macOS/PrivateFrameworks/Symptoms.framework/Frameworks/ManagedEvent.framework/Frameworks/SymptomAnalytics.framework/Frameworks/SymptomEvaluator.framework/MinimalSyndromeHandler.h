@@ -10,6 +10,7 @@
 
 @class ManagedEventHandler, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MinimalSyndromeHandler : NSObject <SyndromeHandlerProtocol>
 {
     NSString *_syndromeName;

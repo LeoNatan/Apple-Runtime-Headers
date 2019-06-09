@@ -8,19 +8,19 @@
 
 #import <AVKit/AVFocusProxyViewDelegateProtocol-Protocol.h>
 
-@class AVKeyValueObservationController, AVPlayerController, NSDictionary, NSString, UIImageView, UIMotionEffectGroup, UITapGestureRecognizer;
+@class AVPlayerController, AVPlayerLayer, NSDictionary, NSString, UIImageView, UIMotionEffectGroup, UITapGestureRecognizer;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerLayerView : UIView <AVFocusProxyViewDelegateProtocol>
 {
     AVPlayerController *_playerController;
     UITapGestureRecognizer *_selectGestureRecognizer;
-    AVKeyValueObservationController *_kvoController;
     _Bool _acceptsFocus;
+    AVPlayerLayer *_playerLayer;
     CDUnknownBlockType _selectionAction;
     UIMotionEffectGroup *_stackMotionEffects;
     UIMotionEffectGroup *_highlightMotionEffects;
     UIImageView *_highlightView;
-    UIView *_blackoutCurtainView;
 }
 
 + (id)highlightViewWithSize:(struct CGSize)arg1;
@@ -29,11 +29,11 @@
 + (id)keyPathsForValuesAffectingVideoGravity;
 + (Class)layerClass;
 + (id)keyPathsForValuesAffectingVideoScaled;
-@property(retain, nonatomic) UIView *blackoutCurtainView; // @synthesize blackoutCurtainView=_blackoutCurtainView;
 @property(retain, nonatomic) UIImageView *highlightView; // @synthesize highlightView=_highlightView;
 @property(retain, nonatomic) UIMotionEffectGroup *highlightMotionEffects; // @synthesize highlightMotionEffects=_highlightMotionEffects;
 @property(retain, nonatomic) UIMotionEffectGroup *stackMotionEffects; // @synthesize stackMotionEffects=_stackMotionEffects;
 @property(copy, nonatomic) CDUnknownBlockType selectionAction; // @synthesize selectionAction=_selectionAction;
+@property(retain, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(nonatomic) _Bool acceptsFocus; // @synthesize acceptsFocus=_acceptsFocus;
 - (void).cxx_destruct;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
@@ -49,10 +49,6 @@
 @property(readonly, nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay;
 @property(copy, nonatomic) NSString *videoGravity;
 @property(retain, nonatomic) AVPlayerController *playerController;
-- (void)_updatePlayerLayerPlayerAndCurtain;
-- (void)_setBlackoutCurtainClosed:(_Bool)arg1;
-- (_Bool)_isBlackoutCurtainClosed;
-- (id)playerLayer;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(nonatomic, getter=isVideoScaled) _Bool videoScaled;

@@ -27,6 +27,7 @@
     id <CATRemoteConnectionDelegate> _delegate;
     NSString *_name;
     CATRemoteConnectionSocketOptions *_socketOptions;
+    NSArray *_customTrustEvaluationPolicies;
     NSInputStream *_inputStream;
     NSOutputStream *_outputStream;
     unsigned int _bufferSize;
@@ -38,6 +39,7 @@
 @property(nonatomic) unsigned int bufferSize; // @synthesize bufferSize=_bufferSize;
 @property(retain, nonatomic) NSOutputStream *outputStream; // @synthesize outputStream=_outputStream;
 @property(retain, nonatomic) NSInputStream *inputStream; // @synthesize inputStream=_inputStream;
+@property(copy, nonatomic) NSArray *customTrustEvaluationPolicies; // @synthesize customTrustEvaluationPolicies=_customTrustEvaluationPolicies;
 @property(copy, nonatomic) CATRemoteConnectionSocketOptions *socketOptions; // @synthesize socketOptions=_socketOptions;
 @property(nonatomic) double connectionTimeoutInterval; // @synthesize connectionTimeoutInterval=_connectionTimeoutInterval;
 @property(nonatomic) _Bool usesSSL; // @synthesize usesSSL=_usesSSL;
@@ -73,6 +75,7 @@
 - (void)connectionTimedOut;
 - (void)configureStreamSocketOptions;
 - (void)trustDecisionDidRespondWithDecisionToAllowUntrustedConnection:(_Bool)arg1;
+- (long)applyCustomEvaluationPoliciesToTrust:(struct __SecTrust *)arg1;
 - (void)tryEvaluatingPeerTrustWithStream:(id)arg1;
 - (_Bool)secureUsingIdentity:(struct __SecIdentity *)arg1 trustedCertificates:(id)arg2 isServer:(_Bool)arg3;
 - (void)unscheduleStreams;

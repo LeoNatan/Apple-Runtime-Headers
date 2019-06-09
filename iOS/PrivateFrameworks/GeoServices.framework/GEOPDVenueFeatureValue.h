@@ -8,21 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDFeatureBuilding, GEOPDFeaturePOI, GEOPDFeatureVenue, PBUnknownFields;
+@class GEOPDFeatureBuilding, GEOPDFeaturePOI, GEOPDFeatureVenue, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDVenueFeatureValue : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDFeatureBuilding *_featureBuilding;
     GEOPDFeaturePOI *_featurePoi;
     GEOPDFeatureVenue *_featureVenue;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_featureBuilding:1;
+        unsigned int read_featurePoi:1;
+        unsigned int read_featureVenue:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_featureBuilding:1;
+        unsigned int wrote_featurePoi:1;
+        unsigned int wrote_featureVenue:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDFeaturePOI *featurePoi; // @synthesize featurePoi=_featurePoi;
-@property(retain, nonatomic) GEOPDFeatureBuilding *featureBuilding; // @synthesize featureBuilding=_featureBuilding;
-@property(retain, nonatomic) GEOPDFeatureVenue *featureVenue; // @synthesize featureVenue=_featureVenue;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,11 +42,18 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDFeaturePOI *featurePoi;
 @property(readonly, nonatomic) _Bool hasFeaturePoi;
+- (void)_readFeaturePoi;
+@property(retain, nonatomic) GEOPDFeatureBuilding *featureBuilding;
 @property(readonly, nonatomic) _Bool hasFeatureBuilding;
+- (void)_readFeatureBuilding;
+@property(retain, nonatomic) GEOPDFeatureVenue *featureVenue;
 @property(readonly, nonatomic) _Bool hasFeatureVenue;
+- (void)_readFeatureVenue;
 
 @end
 

@@ -11,7 +11,7 @@
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIFloatingContentViewDelegate-Protocol.h>
 
-@class NSArray, NSAttributedString, NSString, UIColor, UIFont, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIVisualEffectView, _UIButtonMaskAnimationView, _UIFloatingContentView;
+@class NSArray, NSAttributedString, NSString, UIColor, UIFont, UIImage, UIImageSymbolConfiguration, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIVisualEffectView, _UIButtonMaskAnimationView, _UIFloatingContentView;
 
 @interface UIButton : UIControl <UIAccessibilityContentSizeCategoryImageAdjusting, UIGestureRecognizerDelegate, _UIFloatingContentViewDelegate, NSCoding>
 {
@@ -46,11 +46,13 @@
         unsigned int requiresLayoutForPropertyChange:1;
         unsigned int adjustsImageSizeForAccessibilityContentSizeCategory:1;
         unsigned int disableAutomaticTitleAnimations:1;
+        unsigned int overridesRectAccessors:1;
     } _buttonFlags;
     UIView *_effectiveContentView;
     _UIButtonMaskAnimationView *_maskAnimationView;
     UIView *_selectionView;
     UIFont *_lazyTitleViewFont;
+    _Bool _lazyTitleViewFontIsDefaultForIdiom;
     NSArray *_contentConstraints;
     int __imageContentMode;
     UIColor *__plainButtonBackgroundColor;
@@ -60,6 +62,7 @@
 + (id)_defaultImageColorForState:(unsigned int)arg1 button:(id)arg2;
 + (id)_defaultTitleColorForState:(unsigned int)arg1 button:(id)arg2;
 + (id)_defaultBackgroundImageForType:(int)arg1 andState:(unsigned int)arg2;
++ (id)_defaultSymbolConfigurationForType:(int)arg1 andState:(unsigned int)arg2;
 + (id)_defaultImageForType:(int)arg1 andState:(unsigned int)arg2;
 + (id)_xImage;
 + (id)_minusImage;
@@ -77,6 +80,8 @@
 + (id)_defaultNormalTitleShadowColor;
 + (id)_defaultNormalTitleColor;
 + (id)buttonWithType:(int)arg1;
++ (id)systemButtonWithImage:(id)arg1 target:(id)arg2 action:(SEL)arg3;
++ (id)_systemButtonWithImage:(id)arg1 target:(id)arg2 action:(SEL)arg3;
 + (_Bool)_buttonTypeIsModernUI:(int)arg1;
 + (float)_defaultNeighborSpacingForAxis:(int)arg1;
 @property(retain, nonatomic, getter=_plainButtonBackgroundColor, setter=_setPlainButtonBackgroundColor:) UIColor *_plainButtonBackgroundColor; // @synthesize _plainButtonBackgroundColor=__plainButtonBackgroundColor;
@@ -87,6 +92,7 @@
 - (_Bool)_isInCarPlay;
 - (_Bool)_isCarPlaySystemTypeButton;
 - (void)_applyCarPlaySystemButtonCustomizations;
+- (void)_updateTitleViewStyleEffectConfiguration;
 - (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)_hasImageForProperty:(id)arg1;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
@@ -97,7 +103,8 @@
 - (id)_titleColorForState:(unsigned int)arg1;
 - (id)_titleForState:(unsigned int)arg1;
 - (id)_backgroundForState:(unsigned int)arg1 usesBackgroundForNormalState:(_Bool *)arg2;
-- (id)_imageForState:(unsigned int)arg1 usesImageForNormalState:(_Bool *)arg2;
+- (id)_preferredConfigurationForState:(unsigned int)arg1;
+- (id)_imageForState:(unsigned int)arg1 applyingConfiguration:(_Bool)arg2 usesImageForNormalState:(_Bool *)arg3;
 - (void)_takeContentFromArchivableContent:(id)arg1;
 - (id)_archivableContent:(id *)arg1;
 - (id)_contentForState:(unsigned int)arg1;
@@ -130,6 +137,10 @@
 - (void)_setLineBreakMode:(int)arg1;
 - (int)_lineBreakMode;
 - (void)_setFont:(id)arg1;
+- (void)_setFont:(id)arg1 isDefaultForIdiom:(_Bool)arg2;
+- (void)_setDefaultFontForIdiom;
+- (_Bool)_fontIsDefaultForIdiom;
+- (id)_defaultFontForIdiom:(int)arg1;
 - (id)_font;
 - (void)_setLetterpressStyle:(id)arg1 forState:(unsigned int)arg2;
 - (void)crossfadeToImage:(id)arg1 forState:(unsigned int)arg2;
@@ -172,9 +183,8 @@
 - (_Bool)_shouldSkipNormalLayoutForSakeOfTemplateLayout;
 - (_Bool)_requiresLayoutForPropertyChange;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
-- (void)_layoutTitleView;
 - (void)_updateTitleView;
-- (void)_layoutImageView;
+- (void)_layoutImageAndTitleViews;
 - (void)_updateImageView;
 - (void)_layoutContentBackdropView;
 - (void)_updateContentBackdropView;
@@ -191,17 +201,21 @@
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (struct CGSize)_intrinsicSizeForTitle:(id)arg1 attributedTitle:(id)arg2 image:(id)arg3 backgroundImage:(id)arg4 titlePaddingInsets:(struct UIEdgeInsets *)arg5;
 - (struct CGSize)_roundSize:(struct CGSize)arg1;
+- (id)_viewForBaselineLayout;
 - (id)viewForLastBaselineLayout;
+- (id)viewForFirstBaselineLayout;
 - (void)updateConstraints;
 - (id)_titleOrImageViewForBaselineLayout;
 - (void)_setContentHuggingPriorities:(struct CGSize)arg1;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedHeight;
 - (_Bool)_contentHuggingDefault_isUsuallyFixedWidth;
+- (void)deriveTitleRect:(struct CGRect *)arg1 imageRect:(struct CGRect *)arg2 fromContentRect:(struct CGRect)arg3 calculatePositionForEmptyTitle:(_Bool)arg4;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)_titleRectForContentRect:(struct CGRect)arg1 calculatePositionForEmptyTitle:(_Bool)arg2;
 - (struct CGRect)contentRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)backgroundRectForBounds:(struct CGRect)arg1;
+@property(readonly, nonatomic) UIImageSymbolConfiguration *currentPreferredSymbolConfiguration;
 @property(readonly, nonatomic) NSAttributedString *currentAttributedTitle;
 @property(readonly, nonatomic) UIImage *currentBackgroundImage;
 @property(readonly, nonatomic) UIImage *currentImage;
@@ -210,12 +224,14 @@
 @property(readonly, nonatomic) UIColor *currentTitleColor;
 @property(readonly, nonatomic) NSString *currentTitle;
 - (id)attributedTitleForState:(unsigned int)arg1;
+- (id)preferredSymbolConfigurationForImageInState:(unsigned int)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1;
 - (id)imageForState:(unsigned int)arg1;
 - (id)titleShadowColorForState:(unsigned int)arg1;
 - (id)titleColorForState:(unsigned int)arg1;
 - (id)titleForState:(unsigned int)arg1;
 - (void)setAttributedTitle:(id)arg1 forState:(unsigned int)arg2;
+- (void)setPreferredSymbolConfiguration:(id)arg1 forImageInState:(unsigned int)arg2;
 - (void)setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setTitleShadowColor:(id)arg1 forState:(unsigned int)arg2;
@@ -291,7 +307,7 @@
 @property(nonatomic) struct UIEdgeInsets titleEdgeInsets; // @dynamic titleEdgeInsets;
 @property(nonatomic) struct UIEdgeInsets contentEdgeInsets; // @dynamic contentEdgeInsets;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(_Bool)arg3;
-- (void)_applyAppropriateChargeForButton;
+- (void)_applyAppropriateTouchInsetsForButton;
 - (void)_setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;
@@ -321,6 +337,7 @@
 - (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(id)arg2 nextToNeighbor:(id)arg3 edge:(int)arg4 attribute:(int)arg5 multiplier:(float)arg6;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 forAttribute:(int)arg2 inContainer:(id)arg3 isGuide:(_Bool)arg4;
 - (_Bool)_hasCustomAutolayoutNeighborSpacingForAttribute:(int *)arg1;
+- (id)_viewForLoweringBaselineLayoutAttribute:(int)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

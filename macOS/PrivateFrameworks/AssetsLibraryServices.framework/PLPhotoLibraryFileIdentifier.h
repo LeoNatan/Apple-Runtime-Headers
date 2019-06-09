@@ -31,8 +31,11 @@
 @property(readonly, nonatomic) unsigned char bundleScope; // @synthesize bundleScope=_bundleScope;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
+- (id)extension;
 - (id)description;
 - (id)initWithAssetUuid:(id)arg1 bundleScope:(unsigned char)arg2 uti:(id)arg3 resourceType:(unsigned int)arg4 resourceVersion:(unsigned int)arg5 recipeID:(unsigned int)arg6 originalFilename:(id)arg7;
+- (id)initWithAssetUuid:(id)arg1 bundleScope:(unsigned char)arg2 uti:(id)arg3 resourceVersion:(unsigned int)arg4 recipeID:(unsigned int)arg5;
+- (id)initWithAssetUuid:(id)arg1 uti:(id)arg2 resourceVersion:(unsigned int)arg3 resourceType:(unsigned int)arg4 originalFilename:(id)arg5;
 - (id)initWithAssetUuid:(id)arg1 uti:(id)arg2 resourceVersion:(unsigned int)arg3 resourceType:(unsigned int)arg4;
 - (id)initWithAssetUuid:(id)arg1 uti:(id)arg2 resourceVersion:(unsigned int)arg3 recipeID:(unsigned int)arg4 originalFilename:(id)arg5;
 - (id)initWithAssetUuid:(id)arg1 uti:(id)arg2 resourceVersion:(unsigned int)arg3 originalFilename:(id)arg4;

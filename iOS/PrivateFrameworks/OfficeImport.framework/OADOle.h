@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)isCLSIDSupported:(id)arg1;
 + (_Bool)isProgIDMathType:(id)arg1;
 + (_Bool)isProgIDChart:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setObject:(id)arg1;
 - (id)object;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (id)CLSID;
 - (void)setIconic:(_Bool)arg1;
 - (_Bool)iconic;
-- (void)dealloc;
 - (id)init;
 
 @end

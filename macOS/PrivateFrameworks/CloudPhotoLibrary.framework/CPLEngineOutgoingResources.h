@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) unsigned long long countOfOriginalVideos;
 @property(readonly, nonatomic) unsigned long long countOfOriginalImages;
 - (BOOL)shouldUploadResource:(id)arg1;
+- (unsigned long long)availableResourceSizeForUploadIdentifier:(id)arg1;
 - (id)resourceTypesToUploadForUploadIdentifier:(id)arg1;
 - (BOOL)deleteResourcesToUploadWithUploadIdentifier:(id)arg1 error:(id *)arg2;
 - (BOOL)storeResourcesToUpload:(id)arg1 withUploadIdentifier:(id)arg2 error:(id *)arg3;

@@ -21,6 +21,8 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *connectionProxyQueue; // @synthesize connectionProxyQueue=_connectionProxyQueue;
 @property(nonatomic) __weak id <WBSHistoryConnectionProxyDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)releaseCloudHistory:(CDUnknownBlockType)arg1;
+- (void)initializeCloudHistoryWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)finishClearingHistoryIfNecessaryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)disconnectWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)connectWithOptions:(id)arg1 delegate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -36,6 +38,7 @@
 - (void)ensureConnected:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_defaultProxyErrorHandlerWithSimpleReplyCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (void)_setupConnection;
 - (id)init;
 
 @end

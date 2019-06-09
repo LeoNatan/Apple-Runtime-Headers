@@ -13,13 +13,13 @@
 + (unsigned int)_numberOfInvalidDaysFromActivitySummaries:(id)arg1 forExpectedNumberOfSamples:(unsigned int)arg2;
 + (int)_numberOfDaysGoalAchievedInSummaries:(id)arg1;
 + (double)_recommendedNewWeeklyGoalForActivitySummaries:(id)arg1;
-+ (unsigned int)_numSamplesWithEnergyBurnGreaterThanTheGoalByPercent:(double)arg1 forSummaries:(id)arg2;
++ (unsigned int)_numSamplesWithMoveGreaterThanTheGoalByPercent:(double)arg1 forSummaries:(id)arg2;
 + (_Bool)_isMoveGoalAchievedForActivitySummary:(id)arg1;
 + (unsigned int)_numberOfDaysInMostRecentWinningStreakForSummariesOrderedByDate:(id)arg1;
-+ (double)_averageEnergyBurnFromActivitySummaries:(id)arg1 forNumberOfSamples:(int)arg2;
++ (double)_averageMoveFromActivitySummaries:(id)arg1 forNumberOfSamples:(int)arg2;
 + (id)_activitySummariesSortedByEnergyBurn:(id)arg1;
-+ (id)_activitySummariesByRemovingIncompleteFirstWeekIfNecessary:(id)arg1;
-+ (double)weeklyGoalRecommendationInCaloriesForDate:(id)arg1 profile:(id)arg2 error:(id *)arg3;
++ (id)_activitySummariesForWeeklyGoalRecommendationForDate:(id)arg1 profile:(id)arg2 errorOut:(id *)arg3;
++ (double)weeklyGoalRecommendationForDate:(id)arg1 profile:(id)arg2;
 
 @end
 

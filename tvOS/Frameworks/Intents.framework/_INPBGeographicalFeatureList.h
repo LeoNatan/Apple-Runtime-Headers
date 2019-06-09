@@ -19,6 +19,7 @@
     NSArray *_geographicalFeatures;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)geographicalFeatureType;
 @property(copy, nonatomic) NSArray *geographicalFeatures; // @synthesize geographicalFeatures=_geographicalFeatures;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)geographicalFeatureAtIndex:(unsigned long long)arg1;

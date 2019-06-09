@@ -22,11 +22,12 @@
 - (void)generateDAVServerIDsForExistingBookmarksWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearLocalDataIncludingMigrationState:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetToDAVDatabaseWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getCloudTabDevicesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchSyncedCloudTabDevicesAndCloseRequestsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)deleteCloudTabCloseRequestsWithUUIDStrings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteDevicesWithUUIDStrings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveCloudTabCloseRequestWithDictionaryRepresentation:(id)arg1 closeRequestUUIDString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)saveTabsForCurrentDeviceWithDictionaryRepresentation:(id)arg1 deviceUUIDString:(id)arg2;
+- (void)saveTabsForCurrentDeviceWithDictionaryRepresentation:(id)arg1 deviceUUIDString:(id)arg2 comnpletionHandler:(CDUnknownBlockType)arg3;
 - (void)collectDiagnosticsDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginMigrationFromDAV;
 - (void)observeRemoteMigrationStateForSecondaryMigration;

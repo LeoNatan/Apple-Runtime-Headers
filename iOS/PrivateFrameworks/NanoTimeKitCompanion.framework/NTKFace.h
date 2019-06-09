@@ -23,7 +23,7 @@
     NSMutableDictionary *_selectedSlotsByEditMode;
     _Bool _suppressingConfigurationChangeNotifications;
     _Bool _configurationChangedWhileSuppressingNotifications;
-    _Bool _resourceDirectoryIsHardLink;
+    _Bool _resourceDirectoryIsOwned;
     NSString *_cachedDefaultName;
     _Bool _isLibraryFace;
     _Bool _complicationExistenceInvalidatesSnapshot;
@@ -45,6 +45,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)_richComplicationSlotsForDevice:(id)arg1;
 + (_Bool)_isInternalOnlyForDevice:(id)arg1;
++ (id)_orderedComplicationSlots;
 + (unsigned long long)_dateComplicationSlotSupportedStylesForDevice:(id)arg1;
 + (id)_monogramComplicationSlotForDevice:(id)arg1;
 + (id)_dateComplicationSlotForDevice:(id)arg1;
@@ -58,6 +59,7 @@
 + (id)monogramSlotForDevice:(id)arg1;
 + (id)dateSlotForDevice:(id)arg1;
 + (id)fixedComplicationSlotsForDevice:(id)arg1;
++ (id)_complicationSlotDescriptors;
 + (id)_defaultSelectedSlotForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 + (id)_slotsForCustomEditMode:(long long)arg1 forDevice:(id)arg2;
 + (id)_sampleFaceDifferentFromFaces:(id)arg1 forDevice:(id)arg2;
@@ -67,6 +69,10 @@
 + (id)sampleFaceOfStyle:(long long)arg1 forDevice:(id)arg2 differentFromFaces:(id)arg3;
 + (id)defaultFaceOfStyle:(long long)arg1 forDevice:(id)arg2 initCustomization:(CDUnknownBlockType)arg3;
 + (id)defaultFaceOfStyle:(long long)arg1 forDevice:(id)arg2;
++ (id)allowedComplicationTypesForSlot:(id)arg1;
++ (id)allowedComplicationTypesFromDescriptors:(id)arg1 slot:(id)arg2;
++ (void)enumerateComplicationSlotsWithBlock:(CDUnknownBlockType)arg1;
++ (void)enumerateComplicationSlots:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 + (_Bool)customEditMode:(long long)arg1 hasActionForOption:(id)arg2 forDevice:(id)arg3;
 + (_Bool)customEditModeIsShowSeconds:(long long)arg1 forDevice:(id)arg2;
 + (_Bool)customEditModeIsRows:(long long)arg1 forDevice:(id)arg2;
@@ -126,8 +132,10 @@
 - (id)_defaultOptionForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (id)_customEditModes;
 - (void)incrementNumberOfCompanionEdits;
+@property(readonly, nonatomic) _Bool hasCompanionEdits;
 @property(readonly, nonatomic) NSNumber *numberOfCompanionEdits;
 - (void)incrementNumberOfGizmoEdits;
+@property(readonly, nonatomic) _Bool hasGizmoEdits;
 @property(readonly, nonatomic) NSNumber *numberOfGizmoEdits;
 @property(nonatomic) long long editedState;
 @property(retain, nonatomic) NSDate *lastEditedDate;
@@ -165,6 +173,10 @@
 - (id)possibleComplicationTypesForSlot:(id)arg1;
 - (id)allowedComplicationTypesForSlot:(id)arg1;
 - (long long)complicationFamilyForSlot:(id)arg1;
+- (_Bool)isFullscreenConfiguration;
+- (id)_allVisibleComplicationsForCurrentConfiguration;
+- (id)_allComplications;
+- (void)enumerateVisibleComplicationSlotsForCurrentConfigurationWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateComplicationSlotsWithBlock:(CDUnknownBlockType)arg1;
 - (void)setComplication:(id)arg1 forSlot:(id)arg2;
 - (id)complicationForSlot:(id)arg1;
@@ -181,6 +193,7 @@
 @property(readonly, nonatomic) _Bool wantsUnadornedSnapshot;
 - (_Bool)_complication:(id)arg1 appearsInDailySnapshotForSlot:(id)arg2;
 @property(readonly, nonatomic) NSString *dailySnapshotKey;
+- (_Bool)_shouldHideUI;
 - (void)_notifyObserversFaceUpgradeOccurred;
 - (void)_notifyObserversFaceResourceDirectoryDidChange;
 - (void)_notifyObserversOptionsDidChangeForEditMode:(long long)arg1;
@@ -188,9 +201,9 @@
 - (void)_notifyObserversThatRespondToSelector:(SEL)arg1 callSelector:(CDUnknownBlockType)arg2;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
 - (void)_setResourceDirectory:(id)arg1;
-- (void)_deleteResourceDirectoryHardLinkIfNecessary;
+- (void)_deleteResourceDirectoryIfOwned;
 - (void)setComplicationSlotDescriptors:(id)arg1;
-- (void)setResourceDirectoryByHardLinkingDirectory:(id)arg1;
+- (void)setResourceDirectoryByTransferringOwnership:(id)arg1;
 - (void)setResourceDirectory:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
@@ -200,6 +213,8 @@
 - (id)_initWithFaceStyle:(long long)arg1 forDevice:(id)arg2;
 - (void)_registerComplicationsDidChangeNotification;
 - (void)_commonInit;
+- (id)complicationSlotsHiddenByEditOption:(id)arg1;
+- (id)editOptionThatHidesAllComplications;
 - (id)_complicationMigrationPaths;
 - (long long)_editModeForOldEncodingIndex:(long long)arg1;
 - (id)_faceDescriptionKeyForExternal;

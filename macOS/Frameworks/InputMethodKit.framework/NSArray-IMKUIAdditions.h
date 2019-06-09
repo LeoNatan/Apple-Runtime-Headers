@@ -8,5 +8,12 @@
 
 @interface NSArray (IMKUIAdditions)
 - (id)differenceDictionaryWithArray:(id)arg1;
+- (BOOL)isPrefixOf:(id)arg1 withEquality:(CDUnknownBlockType)arg2;
+- (BOOL)isPrefixOf:(id)arg1;
+- (id)filteredArrayUsingBlockPredicate:(CDUnknownBlockType)arg1;
+- (id)subArrayFromIndex:(long long)arg1;
+- (id)subArrayToIndex:(long long)arg1;
+- (BOOL)IMKUI_candidatesEqualWithArray:(id)arg1;
+- (id)IMKUI_candidateSurfaces;
 @end
 

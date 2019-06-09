@@ -35,6 +35,7 @@
 + (id)indexSetWithIndex:(unsigned int)arg1;
 + (id)indexSet;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (id)_alloc;
 - (void)enumerateRangesInRange:(struct _NSRange)arg1 options:(unsigned int)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateRangesWithOptions:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateRangesUsingBlock:(CDUnknownBlockType)arg1;

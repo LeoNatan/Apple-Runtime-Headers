@@ -9,17 +9,19 @@
 #import <HealthKit/HKHealthRecordsStoreInterface-Protocol.h>
 #import <HealthKit/_HKXPCExportable-Protocol.h>
 
-@class HKHealthStore, HKPluginProxyProvider, NSHashTable, NSString;
+@class HKHealthStore, HKObserverSet, HKPluginProxyProvider, NSString;
 
 @interface HKHealthRecordsStore : NSObject <HKHealthRecordsStoreInterface, _HKXPCExportable>
 {
     HKPluginProxyProvider *_proxyProvider;
+    HKObserverSet *_ingestionStateChangeObservers;
+    HKObserverSet *_accountStateChangeObservers;
     long long _ingestionState;
-    NSHashTable *_ingestionStateChangeListeners;
 }
 
-@property(retain) NSHashTable *ingestionStateChangeListeners; // @synthesize ingestionStateChangeListeners=_ingestionStateChangeListeners;
-@property long long ingestionState; // @synthesize ingestionState=_ingestionState;
+@property(readonly, nonatomic) long long ingestionState; // @synthesize ingestionState=_ingestionState;
+@property(retain, nonatomic) HKObserverSet *accountStateChangeObservers; // @synthesize accountStateChangeObservers=_accountStateChangeObservers;
+@property(retain, nonatomic) HKObserverSet *ingestionStateChangeObservers; // @synthesize ingestionStateChangeObservers=_ingestionStateChangeObservers;
 - (void).cxx_destruct;
 - (void)connectionInvalidated;
 - (id)remoteInterface;
@@ -33,9 +35,11 @@
 - (void)notifyForNewHealthRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)badgeForNewHealthRecordsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)createStaticAccountWithTitle:(id)arg1 subtitle:(id)arg2 description:(id)arg3 onlyIfNeededForSimulatedGatewayID:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)addIngestionStateListener:(id)arg1;
-- (void)dispatchIngestionStateChange;
+- (void)clientRemote_accountDidChange:(id)arg1 changeType:(long long)arg2;
+- (void)removeAccountStateChangeListener:(id)arg1;
+- (void)addAccountStateChangeListener:(id)arg1;
 - (void)clientRemote_updateIngestionState:(long long)arg1;
+- (void)addIngestionStateListener:(id)arg1;
 - (void)fetchLogoDataForFeaturedBrandsAtScaleKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchLogoDataForBrand:(id)arg1 scaleKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchRemoteGatewayWithExternalID:(id)arg1 batchID:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -43,6 +47,7 @@
 - (void)cancelInFlightSearchQueriesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchRemoteSearchResultsPageForQuery:(id)arg1 latitude:(id)arg2 longitude:(id)arg3 from:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)resetClinicalContentAnalyticsAnchorsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)triggerHealthCloudUploadWithCompletion:(CDUnknownBlockType)arg1;
 - (void)triggerClinicalContentAnalyticsForReason:(long long)arg1 options:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchClinicalOptInDataCollectionFilePathsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resetClinicalOptInDataCollectionAnchorsWithCompletion:(CDUnknownBlockType)arg1;
@@ -51,23 +56,25 @@
 - (void)conceptForCodings:(id)arg1 preferredSystems:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)displayStringForMedicalCodingSystem:(id)arg1 code:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)displayStringForMedicalCodingSystem:(id)arg1 code:(id)arg2 version:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)fetchFHIRJSONDocumentWithAccountIdentifier:(struct NSUUID *)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)stringifyExtractionFailureReasonsForRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchFHIRJSONDocumentWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchExportedPropertiesForHealthRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchRawSourceStringForHealthRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setHealthRecordsIngestionFrequency:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHealthRecordsIngestionFrequencyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resetHealthRecordsLastExtractedRowIDWithCompletion:(CDUnknownBlockType)arg1;
-- (void)ingestHealthRecordsWithFHIRDocumentHandle:(id)arg1 accountIdentifier:(struct NSUUID *)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)ingestHealthRecordsWithFHIRDocumentHandle:(id)arg1 accountIdentifier:(struct NSUUID *)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)ingestHealthRecordsWithFHIRDocumentHandle:(id)arg1 accountIdentifier:(id)arg2 options:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)ingestHealthRecordsWithFHIRDocumentHandle:(id)arg1 accountIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)ingestHealthRecordsWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)replaceAccountWithNewAccountForAccountWithIdentifier:(struct NSUUID *)arg1 usingCredentialWithPersistentID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)replaceAccountWithNewAccountForAccountWithIdentifier:(id)arg1 usingCredentialWithPersistentID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)pruneAuthenticationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)endLoginSessionWithState:(id)arg1 code:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)beginReloginSessionForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginInitialLoginSessionForGateway:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)invalidateCredentialForAccountWithIdentifier:(struct NSUUID *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)deleteAccountWithIdentifier:(struct NSUUID *)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)accountWithIdentifier:(struct NSUUID *)arg1 setUserEnabled:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)hasHealthRecordsAccount;
+- (void)invalidateCredentialForAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)deleteAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)fetchAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAccountForSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAccountsForGateways:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAllAccountsWithCompletion:(CDUnknownBlockType)arg1;

@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface OADOrientedBounds : NSObject
 {
     struct CGRect mBounds;

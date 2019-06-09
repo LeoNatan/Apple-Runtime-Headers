@@ -6,21 +6,24 @@
 
 #import <objc/NSObject.h>
 
+#import <AppletTranslationLibrary/ATLDecoder-Protocol.h>
+
 __attribute__((visibility("hidden")))
-@interface MercuryDecoder : NSObject
+@interface MercuryDecoder : NSObject <ATLDecoder>
 {
 }
 
 + (BOOL)IsIncompatibleApplet:(unsigned int)arg1 sw:(unsigned short)arg2;
-+ (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;
 + (void)RemoveMatchedTapIns:(id)arg1 transactionsInProgress:(id)arg2;
 + (id)DecodeE456TLV:(const CDStruct_b9c9288f *)arg1 currencyExponent:(id)arg2 error:(id *)arg3;
 + (id)DecodeE1TLV:(const CDStruct_b9c9288f *)arg1 transactionInfo:(id *)arg2 error:(id *)arg3;
 + (id)parseActivityTimeout:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 + (id)parseEndEvent:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 + (id)parseStartEvent:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
-+ (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
-+ (id)parseHCIEvent:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withTransceiver:(id)arg5 withError:(id *)arg6;
+- (id)processEndOfTransaction:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
+- (id)GetAppletProperties:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3 withTransceiver:(id)arg4 withError:(id *)arg5;
+- (id)getAppletStateAndHistory:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
+- (id)parseHCIEvent:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withTransceiver:(id)arg5 withError:(id *)arg6;
 
 @end
 

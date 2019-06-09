@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)_colorForInterfaceStyle:(int)arg1;
 - (void)setPressed:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setRoundedCornerPosition:(unsigned int)arg1;

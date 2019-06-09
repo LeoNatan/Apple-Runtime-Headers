@@ -56,7 +56,7 @@
 - (void)_showPausedView;
 - (void)_performNextRequest;
 - (_Bool)_readyToPerformRequest;
-- (void)_resetRequestState;
+- (void)resetRequestState;
 - (_Bool)isPlaybackReady;
 - (void)_periodicTimeObserverChanged:(CDStruct_1b6d18a9)arg1;
 - (void)_handleDidPlayToEndTime:(id)arg1;

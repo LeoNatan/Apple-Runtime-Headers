@@ -11,19 +11,18 @@
 
 @interface NRActiveDeviceAssertion : NSObject
 {
-    _Bool _isActive;
     NSString *_identifier;
     NSObject<OS_dispatch_queue> *_queue;
     NRDevice *_device;
 }
 
 @property(retain, nonatomic) NRDevice *device; // @synthesize device=_device;
-@property(nonatomic) _Bool isActive; // @synthesize isActive=_isActive;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)_invalidate;
 - (void)invalidate;
+@property(readonly, nonatomic) _Bool isActive;
 - (id)description;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 identifier:(id)arg2;

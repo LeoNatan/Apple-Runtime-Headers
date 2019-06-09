@@ -25,11 +25,11 @@
 + (id)predicateToExcludeTrashedMomentShares;
 + (id)_momentSharesWithPredicate:(id)arg1 fetchLimit:(unsigned long long)arg2 inManagedObjectContext:(id)arg3;
 + (id)momentShareWithShareURL:(id)arg1 includeTrashed:(_Bool)arg2 inManagedObjectContext:(id)arg3;
++ (id)momentShareWithOriginatingScopeIdentifier:(id)arg1 includeTrashed:(_Bool)arg2 inManagedObjectContext:(id)arg3;
 + (id)momentShareWithScopeIdentifier:(id)arg1 includeTrashed:(_Bool)arg2 inManagedObjectContext:(id)arg3;
 + (id)momentShareWithScopedIdentifier:(id)arg1 includeTrashed:(_Bool)arg2 inManagedObjectContext:(id)arg3;
 + (id)momentShareWithUUID:(id)arg1 includeTrashed:(_Bool)arg2 inManagedObjectContext:(id)arg3;
 + (id)_andPredicateWithTrashedState:(id)arg1;
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)updateOrInsertWithCPLMomentShare:(id)arg1 inPhotoLibrary:(id)arg2;
 + (id)insertInPhotoLibrary:(id)arg1;

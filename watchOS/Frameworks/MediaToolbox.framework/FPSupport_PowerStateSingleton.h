@@ -8,6 +8,7 @@
 
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface FPSupport_PowerStateSingleton : NSObject
 {
     NSObject<OS_dispatch_queue> *_notificationQ;

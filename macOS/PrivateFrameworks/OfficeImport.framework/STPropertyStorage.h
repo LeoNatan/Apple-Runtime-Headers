@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface STPropertyStorage : NSObject
 {
     struct _SsrwPropertyStorage *m_pPropertyStorage;

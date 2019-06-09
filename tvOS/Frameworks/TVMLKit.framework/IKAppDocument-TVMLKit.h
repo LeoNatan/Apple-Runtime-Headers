@@ -7,6 +7,9 @@
 #import <ITMLKit/IKAppDocument.h>
 
 @interface IKAppDocument (TVMLKit)
+- (_Bool)tv_isPresentedModal;
+- (id)tv_featuresManager;
+- (_Bool)tv_handleEvent:(id)arg1 targetResponder:(id)arg2 viewElement:(id)arg3 extraInfo:(id *)arg4;
 - (struct CGSize)tv_adjustedWindowSize;
 @end
 

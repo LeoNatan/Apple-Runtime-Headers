@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
+- (BOOL)uiElementIsAHeader:(id)arg1;
 - (BOOL)shouldPromoteCells;
 
 @end

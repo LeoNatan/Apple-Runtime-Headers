@@ -18,11 +18,13 @@
     struct _CALayerIvars _attr;
 }
 
++ (float)cornerCurveExpansionFactor:(id)arg1;
 + (id)defaultActionForKey:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (_Bool)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (_Bool)_hasRenderLayerSubclass;
++ (void)initialize;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)layer;
 + (_Bool)needsDisplayForKey:(id)arg1;
@@ -65,7 +67,6 @@
 @property float contentsScale;
 @property _Bool contentsContainsSubtitles;
 @property _Bool cornerContentsMasksEdges;
-@property _Bool continuousCorners;
 @property struct CGRect cornerContentsCenter;
 @property struct CGRect contentsCenter;
 @property struct CGRect contentsRect;
@@ -85,6 +86,8 @@
 @property double duration;
 @property double timeOffset;
 @property double beginTime;
+@property _Bool continuousCorners;
+@property(copy) NSString *cornerCurve;
 @property unsigned int maskedCorners;
 - (void)layoutSublayers;
 - (void)layoutIfNeeded;
@@ -124,6 +127,7 @@
 - (void)addSublayer:(id)arg1;
 - (void)insertSublayer:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)removeFromSuperlayer;
+@property id <CALayerDelegate> unsafeUnretainedDelegate;
 @property __weak id <CALayerDelegate> delegate;
 @property(retain) CALayer *mask;
 @property(readonly) CALayer *superlayer;
@@ -131,6 +135,7 @@
 @property(copy) NSString *contentsScaling;
 @property(copy) NSString *contentsGravity;
 @property(copy) NSString *contentsFormat;
+@property(copy) NSString *securityMode;
 @property unsigned int disableUpdateMask;
 @property unsigned int edgeAntialiasingMask;
 @property(retain) id contents;
@@ -154,11 +159,14 @@
 - (_Bool)shouldArchiveValueForKey:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setObservationInfo:(void *)arg1;
+- (void *)observationInfo;
 - (void)setValue:(id)arg1 forKeyPath:(id)arg2;
 - (id)valueForKeyPath:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
+- (id)CA_archivingValueForKey:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (id)debugDescription;
 - (void)dealloc;
@@ -191,6 +199,7 @@
 - (void)setWantsExtendedDynamicRangeContent:(_Bool)arg1;
 - (_Bool)wantsExtendedDynamicRangeContent;
 @property _Bool allowsDisplayCompositing;
+@property _Bool createsCompositingGroup;
 @property _Bool preloadsCache;
 @property float motionBlurAmount;
 @property _Bool inheritsTiming;
@@ -218,6 +227,9 @@
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)recursiveDescription;
+@property(copy) NSArray *layoutDependents;
+- (void)removeLayoutDependent:(id)arg1;
+- (void)addLayoutDependent:(id)arg1;
 @property(copy) NSArray *presentationModifiers;
 - (void)removePresentationModifier:(id)arg1;
 - (void)addPresentationModifier:(id)arg1;
@@ -256,13 +268,10 @@
 - (struct CADoublePoint)doublePosition;
 - (id)implicitAnimationForKeyPath:(id)arg1;
 - (void)reloadValueForKeyPath:(id)arg1;
-- (void)setLights:(id)arg1;
-- (id)lights;
-@property float velocityStretch;
-@property(copy) NSArray *behaviors;
-@property float coefficientOfRestitution;
-@property float momentOfInertia;
-@property float mass;
+- (void)setBehaviors:(id)arg1;
+- (id)behaviors;
+- (void)setMass:(float)arg1;
+- (float)mass;
 - (_Bool)getRendererInfo:(struct _CARenderRendererInfo *)arg1 size:(unsigned long)arg2;
 
 // Remaining properties

@@ -4,11 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class UIView;
+@class UIEvent, UIView;
 
 @protocol WKFormControl
 - (void)controlEndEditing;
 - (void)controlBeginEditing;
 - (UIView *)controlView;
+
+@optional
+- (_Bool)controlHandleKeyEvent:(UIEvent *)arg1;
 @end
 

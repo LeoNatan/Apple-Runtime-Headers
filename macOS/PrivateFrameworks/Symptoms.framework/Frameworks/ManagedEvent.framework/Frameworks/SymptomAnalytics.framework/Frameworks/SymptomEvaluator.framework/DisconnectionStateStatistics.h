@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface DisconnectionStateStatistics : NSObject <NSSecureCoding>
 {
     NSSet *_daysOfWeek;

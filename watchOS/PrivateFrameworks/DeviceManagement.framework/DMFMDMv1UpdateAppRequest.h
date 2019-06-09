@@ -6,19 +6,21 @@
 
 #import <DeviceManagement/DMFUpdateAppRequest.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface DMFMDMv1UpdateAppRequest : DMFUpdateAppRequest
 {
     NSString *_originator;
     unsigned int _managementOptions;
     NSString *_VPNUUIDString;
+    NSArray *_associatedDomains;
     NSDictionary *_configuration;
 }
 
 + (_Bool)supportsSecureCoding;
 + (Class)whitelistedClassForResultObject;
 @property(copy, nonatomic) NSDictionary *configuration; // @synthesize configuration=_configuration;
+@property(copy, nonatomic) NSArray *associatedDomains; // @synthesize associatedDomains=_associatedDomains;
 @property(copy, nonatomic) NSString *VPNUUIDString; // @synthesize VPNUUIDString=_VPNUUIDString;
 @property(nonatomic) unsigned int managementOptions; // @synthesize managementOptions=_managementOptions;
 @property(copy, nonatomic) NSString *originator; // @synthesize originator=_originator;

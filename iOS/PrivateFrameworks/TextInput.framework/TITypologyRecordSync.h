@@ -18,8 +18,11 @@
 @property(retain, nonatomic) TIKeyboardConfiguration *keyboardConfig; // @synthesize keyboardConfig=_keyboardConfig;
 @property(retain, nonatomic) TIKeyboardState *keyboardState; // @synthesize keyboardState=_keyboardState;
 - (void).cxx_destruct;
+- (void)replaceDocumentState:(id)arg1;
 - (id)shortDescription;
 - (id)textSummary;
+- (void)removeContextFromKeyboardState;
+- (id)currentKeyboardState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)applyToStatistic:(id)arg1;

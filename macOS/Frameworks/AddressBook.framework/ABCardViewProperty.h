@@ -16,7 +16,7 @@
 }
 
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)actionForGlyphName:(id)arg1;
 - (id)actionGlyphNames;
 - (CDUnknownBlockType)multiValueEntryToLabel;

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/CHDUnsupportedType.h>
 
+__attribute__((visibility("hidden")))
 @interface CHDSurfaceType : CHDUnsupportedType
 {
 }

@@ -8,19 +8,19 @@
 
 #import <VectorKit/VKLabelNavFeature-Protocol.h>
 
-@class NSString, VKLabelNavJunction, VKLabelNavRoadLabel, VKLabelTile;
+@class NSString, VKLabelNavJunction, VKLabelNavRoadLabel;
 
 __attribute__((visibility("hidden")))
 @interface VKLabelNavRoad : NSObject <VKLabelNavFeature>
 {
-    VKLabelTile *_tile;
-    CDStruct_64195c06 *_data;
+    shared_ptr_702c344d _tile;
+    CDStruct_a190bee8 *_data;
     unsigned long long _vertexIndexA;
     unsigned long long _vertexIndexB;
     CDStruct_3b01f0aa *_junctionA;
     CDStruct_3b01f0aa *_junctionB;
     VKLabelNavJunction *_navJunctionA;
-    vector_2b358fc6 _simplifiedPoints;
+    vector_8c4749e3 _simplifiedPoints;
     Matrix_8746f91e _direction;
     _Bool _isRoadLabelUnique;
     _Bool _isOnRoute;
@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
     _Bool _isPicked;
 }
 
+@property(readonly, nonatomic) const shared_ptr_702c344d *tile; // @synthesize tile=_tile;
 @property(nonatomic) _Bool isPicked; // @synthesize isPicked=_isPicked;
 @property(readonly, nonatomic) _Bool suppressRoadSignIfShieldPresent; // @synthesize suppressRoadSignIfShieldPresent=_suppressRoadSignIfShieldPresent;
 @property(readonly, nonatomic) VKLabelNavJunction *navJunctionA; // @synthesize navJunctionA=_navJunctionA;
@@ -60,7 +61,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isStartOfRoadName; // @synthesize isStartOfRoadName=_isStartOfRoadName;
 @property(nonatomic) _Bool isOnRoute; // @synthesize isOnRoute=_isOnRoute;
 @property(nonatomic) Matrix_8746f91e direction; // @synthesize direction=_direction;
-@property(readonly, nonatomic) VKLabelTile *tile; // @synthesize tile=_tile;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -70,8 +70,8 @@ __attribute__((visibility("hidden")))
 - (id)_newLabelWithNavContext:(struct NavContext *)arg1 isShieldLabel:(_Bool)arg2 worldPoint:(Matrix_6e1d3589)arg3 alignment:(unsigned char)arg4 artworkCache:(struct VKLabelNavArtworkCache *)arg5;
 @property(readonly, nonatomic) unsigned char roadSignAlignment;
 - (_Bool)_worldPointForRoadOffset:(float)arg1 worldPoint:(Mercator3_40a88dec *)arg2;
-- (void)_worldRoadPoints:(vector_2b358fc6 *)arg1;
-- (void)appendSimplifiedWorldRoadPoints:(vector_2b358fc6 *)arg1;
+- (void)_worldRoadPoints:(vector_8c4749e3 *)arg1;
+- (void)appendSimplifiedWorldRoadPoints:(vector_8c4749e3 *)arg1;
 - (void)recreateRoadSignWithAlignment:(unsigned char)arg1 navContext:(struct NavContext *)arg2 artworkCache:(struct VKLabelNavArtworkCache *)arg3;
 - (void)createLabelWithNavContext:(struct NavContext *)arg1 isShieldLabel:(_Bool)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 minRouteDistance:(float)arg6 roadGraph:(id)arg7 artworkCache:(struct VKLabelNavArtworkCache *)arg8;
 - (_Bool)_findLabelAnchorPoint:(Mercator3_40a88dec *)arg1 isShieldLabel:(_Bool)arg2 desiredOffsetDistance:(float)arg3 maxOffsetDistance:(float)arg4 minJunctionDistance:(float)arg5 roadGraph:(id)arg6;
@@ -97,7 +97,7 @@ __attribute__((visibility("hidden")))
 - (void)clearRoadSign;
 @property(readonly, nonatomic) const char *cstrName;
 - (void)dealloc;
-- (id)initWithRoadEdge:(const CDStruct_91f75a7f *)arg1 navJunctionA:(id)arg2 routeOffset:(struct PolylineCoordinate)arg3 tile:(id)arg4;
+- (id)initWithRoadEdge:(const CDStruct_91f75a7f *)arg1 navJunctionA:(id)arg2 routeOffset:(struct PolylineCoordinate)arg3 tile:(const shared_ptr_702c344d *)arg4;
 
 @end
 

@@ -16,13 +16,13 @@
 }
 
 @property(retain, nonatomic) NSOrderedSet *containers; // @synthesize containers=_containers;
+- (void).cxx_destruct;
 - (id)containersRelationshipName;
 - (id)photoLibrary;
 - (id)managedObjectContext;
 - (_Bool)canEditContainers;
 - (_Bool)isEmpty;
 @property(readonly, nonatomic) unsigned long long containersCount;
-- (void)dealloc;
 - (id)initWithAssetContainers:(id)arg1;
 - (id)initWithAssetContainer:(id)arg1;
 

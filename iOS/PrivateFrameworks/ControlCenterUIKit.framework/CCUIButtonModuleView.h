@@ -8,13 +8,14 @@
 
 #import <ControlCenterUIKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CCUICAPackageDescription, CCUICAPackageView, NSString, UIColor, UIImage, UIImageView, UIView;
+@class CCUICAPackageDescription, CCUICAPackageView, MTVisualStylingProvider, NSString, UIColor, UIImage, UIImageView, UIView;
 
 @interface CCUIButtonModuleView : UIControl <UIGestureRecognizerDelegate>
 {
     UIView *_highlightedBackgroundView;
     UIImageView *_glyphImageView;
     CCUICAPackageView *_glyphPackageView;
+    MTVisualStylingProvider *_visualStylingProvider;
     UIImage *_glyphImage;
     UIColor *_glyphColor;
     UIImage *_selectedGlyphImage;
@@ -32,12 +33,15 @@
 @property(retain, nonatomic) UIColor *glyphColor; // @synthesize glyphColor=_glyphColor;
 @property(retain, nonatomic) UIImage *glyphImage; // @synthesize glyphImage=_glyphImage;
 - (void).cxx_destruct;
+- (void)_updateGlyphImageViewVisualStyling;
+- (id)_tintColorForSelectedState:(_Bool)arg1;
 - (void)_setGlyphState:(id)arg1;
 - (void)_setGlyphPackageDescription:(id)arg1;
 - (void)_setGlyphImage:(id)arg1;
 - (void)_updateForStateChange;
 - (void)_handlePressGesture:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (void)didMoveToWindow;
 - (void)layoutSubviews;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;

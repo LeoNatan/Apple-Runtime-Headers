@@ -8,24 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOUserPreferences;
+@class GEOUserPreferences, PBUnknownFields;
 
 @interface GEOAutomobileOptions : PBCodable <NSCopying>
 {
-    int _trafficType;
+    PBUnknownFields *_unknownFields;
     GEOUserPreferences *_userPreferences;
+    int _trafficType;
     _Bool _includeHistoricTravelTime;
     _Bool _includeStaticTravelTime;
     struct {
-        unsigned int trafficType:1;
-        unsigned int includeHistoricTravelTime:1;
-        unsigned int includeStaticTravelTime:1;
-    } _has;
+        unsigned int has_trafficType:1;
+        unsigned int has_includeHistoricTravelTime:1;
+        unsigned int has_includeStaticTravelTime:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOUserPreferences *userPreferences; // @synthesize userPreferences=_userPreferences;
-@property(nonatomic) _Bool includeHistoricTravelTime; // @synthesize includeHistoricTravelTime=_includeHistoricTravelTime;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -33,16 +35,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOUserPreferences *userPreferences;
 @property(readonly, nonatomic) _Bool hasUserPreferences;
 @property(nonatomic) _Bool hasIncludeStaticTravelTime;
-@property(nonatomic) _Bool includeStaticTravelTime; // @synthesize includeStaticTravelTime=_includeStaticTravelTime;
+@property(nonatomic) _Bool includeStaticTravelTime;
 - (int)StringAsTrafficType:(id)arg1;
 - (id)trafficTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTrafficType;
-@property(nonatomic) int trafficType; // @synthesize trafficType=_trafficType;
+@property(nonatomic) int trafficType;
 @property(nonatomic) _Bool hasIncludeHistoricTravelTime;
+@property(nonatomic) _Bool includeHistoricTravelTime;
 
 @end
 

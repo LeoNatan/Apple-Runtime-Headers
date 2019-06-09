@@ -32,6 +32,7 @@
 - (void)clearRecordCache;
 - (void)showAssetCache;
 - (void)clearAssetCache;
+- (unsigned long long)countAssetCacheItems;
 - (id)daemonWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)addOperation:(id)arg1;
 @property(readonly, nonatomic) long long databaseScope;

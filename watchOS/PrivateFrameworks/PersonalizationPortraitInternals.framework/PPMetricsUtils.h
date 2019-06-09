@@ -10,11 +10,17 @@
 {
 }
 
-+ (id)truncatedClientBundleId;
++ (id)truncatedClientBundleIdOrCurrentBundleId:(id)arg1;
++ (id)truncatedClientBundleId:(id)arg1;
 + (struct PPMTypeSafeBool_)typeSafeBoolOfCond:(_Bool)arg1;
 + (id)osBuild;
-+ (struct PPMNamedEntityAlgorithm_)mapNamedEntityAlgorithm:(unsigned int)arg1;
++ (struct PPMObjectDonationSource_)donationSourceForBundleId:(id)arg1;
++ (struct PPMLocationDonationSource_)locationSourceForBundleId:(id)arg1;
 + (struct PPMNamedEntityDonationSource_)namedEntitySourceForBundleId:(id)arg1;
++ (struct PPMTopicDonationSource_)topicSourceForBundleId:(id)arg1;
++ (struct PPMTopicAlgorithm_)mapTopicAlgorithm:(unsigned int)arg1;
++ (struct PPMLocationAlgorithm_)mapLocationAlgorithm:(unsigned short)arg1;
++ (struct PPMNamedEntityAlgorithm_)mapNamedEntityAlgorithm:(unsigned int)arg1;
 + (id)loggingQueue;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class LSAppLink, LSApplicationProxy, NSURL;
+@class LSApplicationProxy, NSURL, WBSAppLink;
 
 @interface _SFNavigationResult : NSObject
 {
@@ -15,22 +15,22 @@
     int _externalApplicationCategory;
     int _type;
     NSURL *_URL;
-    LSAppLink *_appLink;
+    WBSAppLink *_appLink;
 }
 
-+ (id)resultOfLoadingRequest:(id)arg1 isMainFrame:(_Bool)arg2 disallowRedirectToExternalApps:(_Bool)arg3 preferredApplicationBundleIdentifier:(id)arg4;
++ (id)resultOfLoadingRequest:(id)arg1 isMainFrame:(_Bool)arg2 disallowRedirectToExternalApps:(_Bool)arg3 preferredApplicationBundleIdentifier:(id)arg4 redirectDecisionHandler:(CDUnknownBlockType)arg5;
 + (id)resultWithAppLink:(id)arg1;
 + (id)resultWithRedirectToExternalURL:(id)arg1 preferredApplicationBundleIdentifier:(id)arg2;
 + (id)resultOfType:(int)arg1 withURL:(id)arg2;
 @property(nonatomic) _Bool loadWasUserDriven; // @synthesize loadWasUserDriven=_loadWasUserDriven;
-@property(readonly, nonatomic) LSAppLink *appLink; // @synthesize appLink=_appLink;
+@property(readonly, nonatomic) WBSAppLink *appLink; // @synthesize appLink=_appLink;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) int externalApplicationCategory; // @synthesize externalApplicationCategory=_externalApplicationCategory;
 @property(readonly, nonatomic) LSApplicationProxy *externalApplication; // @synthesize externalApplication=_externalApplication;
 - (void).cxx_destruct;
-- (_Bool)shouldPromptWithPolicy:(int)arg1 telephonyNavigationPolicy:(id)arg2 userAction:(id)arg3;
-@property(readonly, nonatomic) _Bool isRedirectToAppStore;
+- (_Bool)shouldPromptWithPolicy:(int)arg1 telephonyNavigationPolicy:(id)arg2 userAction:(id)arg3 inBackground:(_Bool)arg4;
+@property(readonly, nonatomic) _Bool isRedirectToAppleServices;
 @property(readonly, nonatomic) _Bool appliesOneTimeUserInitiatedActionPolicy;
 - (id)_initWithType:(int)arg1 URL:(id)arg2 externalApplication:(id)arg3 appLink:(id)arg4;
 

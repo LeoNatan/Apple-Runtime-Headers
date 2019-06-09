@@ -14,10 +14,14 @@
     unsigned int _frameSeed;
     unsigned int _displayID;
     unsigned int _offScreenPassCount;
+    int _renderServerPID;
     unsigned long long _displayRefreshIntervalMachContinuousTime;
     NSString *_renderSkipReason;
+    unsigned long long _renderServerTID;
 }
 
+@property(readonly, nonatomic) unsigned long long renderServerTID; // @synthesize renderServerTID=_renderServerTID;
+@property(readonly, nonatomic) int renderServerPID; // @synthesize renderServerPID=_renderServerPID;
 @property(readonly, nonatomic) NSString *renderSkipReason; // @synthesize renderSkipReason=_renderSkipReason;
 @property(readonly, nonatomic) unsigned int offScreenPassCount; // @synthesize offScreenPassCount=_offScreenPassCount;
 @property(readonly, nonatomic) BOOL hasOffScreenPassCount; // @synthesize hasOffScreenPassCount=_hasOffScreenPassCount;

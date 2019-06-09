@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface GEOURLWithHeaders : NSObject
 {
     NSURL *_URL;

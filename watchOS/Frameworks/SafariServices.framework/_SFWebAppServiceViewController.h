@@ -8,13 +8,12 @@
 
 #import <SafariServices/SFWebAppServiceViewControllerProtocol-Protocol.h>
 
-@class BKSApplicationStateMonitor, NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore, _SFNavigationUtilitiesManager;
+@class BKSApplicationStateMonitor, NSMutableArray, NSString, UIView, UIWebClip, WKProcessPool, WKWebsiteDataStore;
 
 @interface _SFWebAppServiceViewController : SFBrowserServiceViewController <SFWebAppServiceViewControllerProtocol>
 {
     UIWebClip *_webClip;
     UIView *_statusBarBackgroundView;
-    _SFNavigationUtilitiesManager *_navigationUtilitiesManager;
     WKProcessPool *_processPool;
     WKWebsiteDataStore *_websiteDataStore;
     NSMutableArray *_fallbackURLs;
@@ -22,7 +21,6 @@
     unsigned int _hostState;
 }
 
-+ (void)_removeCachedWebAppWithIdentifier:(id)arg1;
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 - (void).cxx_destruct;

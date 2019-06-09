@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)encryptionInfoForKey:(unsigned long long)arg1;
 + (id)newEncryptionInfoWithMasterKeyIndex:(id)arg1;
 + (id)securityKeyMaterialWithMasterKeyIndex:(id)arg1;
 + (id)newRTPSocketDictionary:(_Bool)arg1 rtpSourcePort:(short)arg2;

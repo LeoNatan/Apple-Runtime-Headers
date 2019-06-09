@@ -15,6 +15,7 @@
 + (unsigned long long)hf_locationEventTypeForPresenceEventType:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long hf_eventType;
 @property(readonly, nonatomic) unsigned long long hf_activationGranularity;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

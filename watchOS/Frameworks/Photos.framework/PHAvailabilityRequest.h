@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectID, NSString, NSXPCConnection, PLAssetsdClientServiceSender;
+@class NSManagedObjectID, NSString, NSXPCConnection, PLPhotoLibrary;
 
 @interface PHAvailabilityRequest : NSObject
 {
     // Error parsing type: AB, name: _isCancelled
+    PLPhotoLibrary *_photoLibrary;
     NSManagedObjectID *_assetObjectID;
     NSString *_taskIdentifier;
     NSXPCConnection *_clientConnection;
-    PLAssetsdClientServiceSender *_clientSender;
+    unsigned long long _signpostID;
 }
 
-@property(retain, nonatomic) PLAssetsdClientServiceSender *clientSender; // @synthesize clientSender=_clientSender;
 @property(retain, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
+@property(nonatomic) unsigned long long signpostID; // @synthesize signpostID=_signpostID;
 @property(copy, nonatomic) NSString *taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 @property(readonly, nonatomic) NSManagedObjectID *assetObjectID; // @synthesize assetObjectID=_assetObjectID;
 - (void).cxx_destruct;
@@ -27,7 +28,8 @@
 - (void)runDaemonSide;
 - (id)description;
 - (id)plistDictionary;
-- (id)initWithPlistDictionary:(id)arg1;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
+- (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
 - (id)initWithAssetObjectID:(id)arg1;
 
 @end

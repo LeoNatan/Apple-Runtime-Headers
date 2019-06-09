@@ -7,6 +7,8 @@
 #import <CoreSpeech/NSObject-Protocol.h>
 
 @protocol CSSmartSiriVolumeDelegate <NSObject>
+
+@optional
 - (void)CSSmartSiriVolumeDidReceiveTimerChanged:(long long)arg1;
 - (void)CSSmartSiriVolumeDidReceiveAlarmChanged:(long long)arg1;
 - (void)CSSmartSiriVolumeDidReceiveMusicVolumeChanged:(float)arg1;

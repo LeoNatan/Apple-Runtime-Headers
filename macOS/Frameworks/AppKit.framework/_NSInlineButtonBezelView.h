@@ -13,11 +13,11 @@ __attribute__((visibility("hidden")))
 {
     CAShapeLayer *_shapeLayer;
     long long _backgroundStyle;
-    unsigned long long _bezelState;
+    long long _bezelState;
 }
 
 + (id)keyPathsForValuesInvalidatingDisplay;
-@property unsigned long long bezelState; // @synthesize bezelState=_bezelState;
+@property long long bezelState; // @synthesize bezelState=_bezelState;
 @property long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (struct CGSize)intrinsicContentSize;

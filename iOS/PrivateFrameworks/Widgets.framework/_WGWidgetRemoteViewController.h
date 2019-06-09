@@ -40,6 +40,7 @@
 - (_Bool)_serviceHasScrollToTopView;
 - (_Bool)__shouldRemoteViewControllerFenceOperations;
 - (id)disconnect;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

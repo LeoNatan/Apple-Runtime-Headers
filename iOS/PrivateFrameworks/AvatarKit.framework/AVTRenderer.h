@@ -9,15 +9,14 @@
 #import <AvatarKit/SCNSceneRendererDelegate-Protocol.h>
 #import <AvatarKit/_SCNSceneRendererDelegateSPI-Protocol.h>
 
-@class AVTAvatar, AVTAvatarEnvironment, AVTFaceTracker, NSLock, NSObject, NSString, SCNNode;
-@protocol OS_dispatch_queue, SCNSceneRendererDelegate;
+@class AVTAvatar, AVTAvatarEnvironment, AVTFaceTracker, NSLock, NSString, SCNNode;
+@protocol SCNSceneRendererDelegate;
 
 @interface AVTRenderer : SCNRenderer <SCNSceneRendererDelegate, _SCNSceneRendererDelegateSPI>
 {
     AVTAvatarEnvironment *_environment;
     AVTAvatar *_avatar;
     SCNNode *_avatarNode;
-    NSObject<OS_dispatch_queue> *_preloadQueue;
     NSLock *_lock;
     id <SCNSceneRendererDelegate> _fwdDelegate;
     _Bool _pauseSimulation;
@@ -51,6 +50,7 @@
 - (void)faceTrackerDidUpdate:(id)arg1 trackingInfo:(id)arg2;
 @property(nonatomic) _Bool pauseSimulation;
 @property(nonatomic) _Bool arMode;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setEnableDepthMask:(_Bool)arg1 withFlippedDepth:(_Bool)arg2;
 @property(nonatomic) _Bool enableDepthMask;
 - (void)_updateFocal;

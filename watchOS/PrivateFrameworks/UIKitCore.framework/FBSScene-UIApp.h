@@ -7,6 +7,7 @@
 #import <FrontBoardServices/FBSScene.h>
 
 @interface FBSScene (UIApp)
+- (_Bool)isPersistable;
 - (void)updateUIClientSettingsWithTransitionBlock:(CDUnknownBlockType)arg1;
 - (void)updateUIClientSettingsWithBlock:(CDUnknownBlockType)arg1;
 - (id)uiClientSettings;

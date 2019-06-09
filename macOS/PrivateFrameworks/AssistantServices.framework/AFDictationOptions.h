@@ -18,6 +18,7 @@
     BOOL _secureOfflineOnly;
     BOOL _farField;
     BOOL _releaseAudioSessionOnRecordingCompletion;
+    BOOL _incremental;
     NSString *_applicationName;
     NSString *_applicationVersion;
     STSiriContext *_context;
@@ -56,6 +57,7 @@
 @property(copy, nonatomic) NSURL *originalAudioFileURL; // @synthesize originalAudioFileURL=_originalAudioFileURL;
 @property(nonatomic) long long taskHint; // @synthesize taskHint=_taskHint;
 @property(nonatomic) double maximumRecognitionDuration; // @synthesize maximumRecognitionDuration=_maximumRecognitionDuration;
+@property(nonatomic) BOOL incremental; // @synthesize incremental=_incremental;
 @property(nonatomic) BOOL releaseAudioSessionOnRecordingCompletion; // @synthesize releaseAudioSessionOnRecordingCompletion=_releaseAudioSessionOnRecordingCompletion;
 @property(nonatomic) BOOL farField; // @synthesize farField=_farField;
 @property(nonatomic) BOOL secureOfflineOnly; // @synthesize secureOfflineOnly=_secureOfflineOnly;

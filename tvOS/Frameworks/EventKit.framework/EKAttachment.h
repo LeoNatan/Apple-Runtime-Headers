@@ -12,20 +12,24 @@
 {
 }
 
++ (id)_copyFileAtURLToTemporaryDirectory:(id)arg1;
++ (id)createTempDestinationURLWithExtension:(id)arg1;
 + (Class)frozenClass;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)semanticIdentifier;
 - (long long)compareFileNames:(id)arg1;
+- (void)setURLForPendingFileCopy:(id)arg1;
+@property(readonly, nonatomic) NSURL *URLForPendingFileCopy;
 - (void)setExternalId:(id)arg1;
 - (id)externalId;
 - (void)setXPropertiesData:(id)arg1;
 - (id)XPropertiesData;
 @property(readonly, nonatomic) NSString *UUID;
+- (void)setFileSize:(id)arg1;
 @property(readonly, nonatomic) NSNumber *fileSize;
-- (void)setFileSizeRaw:(id)arg1;
-- (id)fileSizeRaw;
-- (void)setLocalURL:(id)arg1;
+- (void)setLocalRelativePath:(id)arg1;
+@property(readonly, nonatomic) NSString *localRelativePath;
 @property(readonly, nonatomic) NSURL *localURL;
 - (void)setIsBinary:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isBinary;
@@ -36,6 +40,7 @@
 - (id)fileNameRaw;
 - (void)setURL:(id)arg1;
 @property(readonly, nonatomic) NSURL *URL;
+- (id)initWithFilepath:(id)arg1;
 
 @end
 

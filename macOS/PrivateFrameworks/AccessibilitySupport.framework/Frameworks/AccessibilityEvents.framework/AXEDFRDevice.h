@@ -42,7 +42,7 @@
 - (id)_nonSyntheticDFRGestureNSEventFromCGEvent:(struct __CGEvent *)arg1;
 - (BOOL)_isNonSyntheticDFRGestureEvent:(struct __CGEvent *)arg1;
 - (void)_processNonSyntheticDFRGestureNSEvent:(id)arg1;
-- (struct __CGEvent *)processActiveEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (struct __CGEvent *)eventTapManager:(id)arg1 activelyTappedEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
 - (void)synthesizeTouchUpAtLocation:(struct CGPoint)arg1;
 - (void)synthesizeTouchMoveToLocation:(struct CGPoint)arg1;
 - (void)synthesizeTouchDownAtLocation:(struct CGPoint)arg1;

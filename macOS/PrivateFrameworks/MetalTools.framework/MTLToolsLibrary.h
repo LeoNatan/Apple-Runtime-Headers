@@ -19,7 +19,10 @@
 @property(readonly, nonatomic) MTLToolsPointerArray *functions; // @synthesize functions=_functions;
 @property(readonly) NSArray *externFunctionNames;
 @property(readonly) NSArray *functionNames;
+- (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 functionCache:(id)arg3 error:(id *)arg4;
+- (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 pipelineLibrary:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)newFunctionWithName:(id)arg1 constantValues:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 pipelineLibrary:(id)arg3 error:(id *)arg4;
 - (id)newFunctionWithName:(id)arg1 constantValues:(id)arg2 error:(id *)arg3;
 - (id)newExternFunctionWithName:(id)arg1;
 - (id)newFunctionWithName:(id)arg1;

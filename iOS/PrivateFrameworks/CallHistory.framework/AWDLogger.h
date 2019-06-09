@@ -8,6 +8,7 @@
 
 @class AWDServerConnection;
 
+__attribute__((visibility("hidden")))
 @interface AWDLogger : CHLogger
 {
     AWDServerConnection *_awdServer;

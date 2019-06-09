@@ -4,18 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSString;
+@class NSData, NSDictionary, NSString, NSUUID;
 
 @protocol CLLocationInternalServiceProtocol
+- (void)notifyPassKitPayment:(NSString *)arg1 transaction:(NSString *)arg2 info:(NSDictionary *)arg3;
 - (void)getOscarTimeSyncWithReplyBlock:(void (^)(NSError *, unsigned long long, unsigned long long))arg1;
 - (void)setBackgroundIndicatorEnabled:(_Bool)arg1 forBundleID:(NSString *)arg2 orBundlePath:(NSString *)arg3 replyBlock:(void (^)(NSError *))arg4;
 - (void)gyroCalibrationDatabaseSupportsMiniCalibrationWithReplyBlock:(void (^)(NSError *, int))arg1;
-- (void)setAuthorizationStatusByType:(int)arg1 forBundleID:(NSString *)arg2 orBundlePath:(NSString *)arg3 replyBlock:(void (^)(NSError *))arg4;
+- (void)setTemporaryAuthorizationGranted:(_Bool)arg1 forBundleID:(NSString *)arg2 orBundlePath:(NSString *)arg3 replyBlock:(void (^)(NSError *))arg4;
+- (void)setAuthorizationStatusByType:(int)arg1 withCorrectiveCompensation:(int)arg2 forBundleID:(NSString *)arg3 orBundlePath:(NSString *)arg4 replyBlock:(void (^)(NSError *))arg5;
 - (void)getActivitiesWithReplyBlock:(void (^)(NSError *, NSArray *))arg1;
-- (void)setMapMatchingRouteHint:(NSData *)arg1 replyBlock:(void (^)(NSError *))arg2;
+- (void)getPipelinedCacheWithReply:(void (^)(NSError *, NSArray *))arg1;
+- (void)setMapMatchingRouteHint:(NSData *)arg1 routingType:(int)arg2 replyBlock:(void (^)(NSError *))arg3;
 - (void)getStatusBarIconState:(void (^)(NSError *, int))arg1;
 - (void)getStatusBarIconEnabledForEntityClass:(unsigned int)arg1 replyBlock:(void (^)(NSError *, _Bool))arg2;
 - (void)setStatusBarIconEnabledForEntityClass:(unsigned int)arg1 enabled:(_Bool)arg2 replyBlock:(void (^)(NSError *))arg3;
+- (void)getArchivedAuthorizationDecisionsWithReplyBlock:(void (^)(NSError *, NSData *))arg1;
+- (void)applyArchivedAuthorizationDecisions:(NSData *)arg1 withConfirmationToken:(NSUUID *)arg2 replyBlock:(void (^)(NSError *))arg3;
 - (void)resetAllClientsWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)getLocationForBundleID:(NSString *)arg1 orBundlePath:(NSString *)arg2 dynamicAccuracyReductionEnabled:(_Bool)arg3 allowsAlteredAccessoryLocations:(_Bool)arg4 replyBlock:(void (^)(NSError *, struct))arg5;
 - (void)getMonitoredRegionsForBundleID:(NSString *)arg1 orBundlePath:(NSString *)arg2 replyBlock:(void (^)(NSError *, NSDictionary *))arg3;
@@ -30,7 +35,7 @@
 - (void)setLocationServicesEnabled:(_Bool)arg1 replyBlock:(void (^)(NSError *))arg2;
 - (void)getPrivateMode:(void (^)(NSError *, _Bool))arg1;
 - (void)setPrivateMode:(_Bool)arg1 replyBlock:(void (^)(NSError *))arg2;
-- (void)setAuthorizationStatus:(_Bool)arg1 forBundleID:(NSString *)arg2 orBundlePath:(NSString *)arg3 replyBlock:(void (^)(NSError *))arg4;
+- (void)setAuthorizationStatus:(_Bool)arg1 withCorrectiveCompensation:(int)arg2 forBundleID:(NSString *)arg3 orBundlePath:(NSString *)arg4 replyBlock:(void (^)(NSError *))arg5;
 - (void)shutdownDaemonWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)performMigrationWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)setGestureServiceEnabled:(_Bool)arg1 replyBlock:(void (^)(NSError *))arg2;

@@ -16,6 +16,7 @@
 + (long long)dataDroppedReasonFromSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 + (id)availableVideoCodecTypesForSourceDevice:(id)arg1 sourceFormat:(id)arg2 outputDimensions:(CDStruct_79c71658)arg3 fileType:(id)arg4 videoCodecTypesWhiteList:(id)arg5;
 + (void)initialize;
+- (_Bool)updateVideoSettingsForConnection:(id)arg1;
 - (id)recommendedOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodecType:(id)arg3 fileType:(id)arg4;
 - (id)_recommendedAudioOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 fileType:(id)arg3;
 - (id)_recommendedVideoOutputSettingsForConnection:(id)arg1 sourceSettings:(id)arg2 videoCodec:(id)arg3;
@@ -36,7 +37,7 @@
 - (id)_inputForConnection:(id)arg1;
 - (id)connectionWithMediaType:(id)arg1;
 @property(readonly, nonatomic) NSArray *connections;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 - (unsigned int)requiredOutputFormatForConnection:(id)arg1;
 - (_Bool)hasRequiredOutputFormatForConnection:(id)arg1;

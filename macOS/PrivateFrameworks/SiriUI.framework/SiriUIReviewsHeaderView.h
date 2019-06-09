@@ -8,7 +8,6 @@
 
 @class NSView;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIReviewsHeaderView : SiriUIReusableSubtitledHeaderView
 {
     NSView *_ratingView;

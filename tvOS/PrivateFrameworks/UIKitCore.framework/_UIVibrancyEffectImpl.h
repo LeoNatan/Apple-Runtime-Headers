@@ -13,13 +13,15 @@ __attribute__((visibility("hidden")))
 
 + (id)implementationFromCoder:(id)arg1;
 - (void)appendDescriptionTo:(id)arg1;
-- (_Bool)_needsUpdateForOption:(id)arg1;
-- (_Bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
+- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
 - (id)implementationForUserInterfaceStyle:(long long)arg1;
 - (_Bool)invertAutomaticStyle;
+- (long long)vibrancyStyle;
 - (long long)style;
 - (void)setEffect:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 
 @end

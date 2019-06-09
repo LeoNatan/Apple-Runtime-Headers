@@ -6,12 +6,14 @@
 
 #import <iTunesStoreUI/NSObject-Protocol.h>
 
-@class CKShareMetadata, INIntent, NSArray, NSCoder, NSData, NSDictionary, NSError, NSString, NSURL, NSUserActivity, UIApplication, UIApplicationShortcutItem, UILocalNotification, UIUserNotificationSettings, UIViewController, UIWindow;
+@class CKShareMetadata, INIntent, NSArray, NSCoder, NSData, NSDictionary, NSError, NSSet, NSString, NSURL, NSUserActivity, UIApplication, UIApplicationShortcutItem, UILocalNotification, UISceneConfiguration, UISceneConnectionOptions, UISceneSession, UIUserNotificationSettings, UIViewController, UIWindow;
 
 @protocol UIApplicationDelegate <NSObject>
 
 @optional
 @property(retain, nonatomic) UIWindow *window;
+- (void)application:(UIApplication *)arg1 didDiscardSceneSessions:(NSSet *)arg2;
+- (UISceneConfiguration *)application:(UIApplication *)arg1 configurationForConnectingSceneSession:(UISceneSession *)arg2 options:(UISceneConnectionOptions *)arg3;
 - (void)application:(UIApplication *)arg1 userDidAcceptCloudKitShareWithMetadata:(CKShareMetadata *)arg2;
 - (void)application:(UIApplication *)arg1 didUpdateUserActivity:(NSUserActivity *)arg2;
 - (void)application:(UIApplication *)arg1 didFailToContinueUserActivityWithType:(NSString *)arg2 error:(NSError *)arg3;

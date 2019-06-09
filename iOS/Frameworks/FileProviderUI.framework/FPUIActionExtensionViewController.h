@@ -21,16 +21,18 @@
 - (void)_browserUserInterfaceStyleDidChange;
 - (void)prepareForAuthentication;
 - (void)prepareForError:(id)arg1;
+- (void)prepareAuthenticationUsingServerURL:(id)arg1;
 - (void)prepareAuthenticationUsingURL:(id)arg1;
 - (void)prepareForServerCreation;
 - (void)prepareForActionWithIdentifier:(id)arg1 itemIdentifiers:(id)arg2;
-- (void)_setBrowserUserInterfaceStyle:(unsigned long long)arg1;
 - (void)_prepareForError:(id)arg1;
 - (void)_configureWithDomainIdentifier:(id)arg1;
+- (void)_prepareAuthenticationUsingServerURL:(id)arg1;
 - (void)_prepareAuthenticationUsingURL:(id)arg1;
 - (void)_prepareForServerCreation;
 - (void)_prepareForActionWithIdentifier:(id)arg1 items:(id)arg2;
 - (_Bool)_extensionImplementsSelector:(SEL)arg1;
+- (void)_setBrowserUserInterfaceStyle:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) FPUIActionExtensionContext *extensionContext; // @dynamic extensionContext;

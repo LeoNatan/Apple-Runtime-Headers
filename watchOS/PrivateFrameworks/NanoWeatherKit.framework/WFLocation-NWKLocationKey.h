@@ -9,8 +9,17 @@
 @class NSString;
 
 @interface WFLocation (NWKLocationKey)
++ (CDUnknownBlockType)nwk_locationKeyTestForLocationKey:(id)arg1;
 @property(readonly, nonatomic) NSString *locationKeyHashString;
 @property(readonly, nonatomic) unsigned int locationKeyHash;
 @property(readonly, nonatomic) NSString *locationKey;
+@property(readonly, nonatomic, getter=nwk_isLocalLocation) _Bool nwk_localLocation;
+@property(readonly, nonatomic) _Bool nwm_isUBACountry;
+@property(readonly, nonatomic) _Bool nwm_isDAQICountry;
+@property(readonly, nonatomic) _Bool nwm_isAQICountry;
+- (void)nwk_updateDisplayNameInformationFromLocation:(id)arg1;
+- (_Bool)nwk_isNotGeocodedButNewlocationIsGeocoded:(id)arg1;
+- (_Bool)nwk_doesNotHaveCountryAbbreviationButNewLocationDoes:(id)arg1;
+@property(readonly, nonatomic, getter=nwk_hasBeenReverseGeocoded) _Bool nwk_reverseGeocoded;
 @end
 

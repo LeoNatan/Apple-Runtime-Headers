@@ -35,12 +35,14 @@
     struct CGRect _bounds;
     struct CGPoint _renderingCenter;
     CADisplay *_caDisplay;
+    double _latency;
     struct CGSize _safeOverscanRatio;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) long long tags; // @synthesize tags=_tags;
 @property(readonly, nonatomic) unsigned int seed; // @synthesize seed=_noEqual_seed;
+@property(readonly, nonatomic) double latency; // @synthesize latency=_latency;
 @property(readonly, nonatomic) struct CGPoint renderingCenter; // @synthesize renderingCenter=_renderingCenter;
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 @property(readonly, nonatomic) struct CGSize pixelSize; // @synthesize pixelSize=_pixelSize;
@@ -78,6 +80,7 @@
 - (BOOL)wantsConnectionDebouncing;
 - (BOOL)isHiddenDisplay;
 - (id)copyForSecureRendering;
+- (BOOL)isMainRootDisplay;
 - (id)laterConfiguration:(id)arg1;
 - (id)CADisplay;
 - (long long)_nativeRotation;
@@ -96,7 +99,7 @@
 @property(readonly, nonatomic, getter=isCarDisplay) BOOL carDisplay;
 @property(readonly, nonatomic, getter=isExternal) BOOL external;
 @property(readonly, nonatomic, getter=isMainDisplay) BOOL mainDisplay;
-- (id)_initWithIdentity:(id)arg1 hardwareIdentifier:(id)arg2 name:(id)arg3 deviceName:(id)arg4 seed:(unsigned int)arg5 comparable:(BOOL)arg6 tags:(long long)arg7 currentMode:(id)arg8 preferredMode:(id)arg9 otherModes:(id)arg10 cloningSupported:(BOOL)arg11 overscanned:(BOOL)arg12 overscanCompensation:(long long)arg13 safeOverscanRatio:(struct CGSize)arg14 pixelSize:(struct CGSize)arg15 bounds:(struct CGRect)arg16 renderingCenter:(struct CGPoint)arg17 validityCheck:(long long)arg18;
+- (id)_initWithIdentity:(id)arg1 hardwareIdentifier:(id)arg2 name:(id)arg3 deviceName:(id)arg4 seed:(unsigned int)arg5 comparable:(BOOL)arg6 tags:(long long)arg7 currentMode:(id)arg8 preferredMode:(id)arg9 otherModes:(id)arg10 cloningSupported:(BOOL)arg11 overscanned:(BOOL)arg12 overscanCompensation:(long long)arg13 safeOverscanRatio:(struct CGSize)arg14 pixelSize:(struct CGSize)arg15 bounds:(struct CGRect)arg16 renderingCenter:(struct CGPoint)arg17 latency:(double)arg18 validityCheck:(long long)arg19;
 - (id)_initWithImmutableDisplay:(id)arg1 originalDisplay:(id)arg2 assertIfInvalid:(BOOL)arg3;
 - (id)initWithCADisplay:(id)arg1 isMainDisplay:(BOOL)arg2;
 - (id)initWithCADisplay:(id)arg1;

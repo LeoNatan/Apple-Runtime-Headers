@@ -23,6 +23,7 @@
     NSMutableOrderedSet *_itemQueue_typeOrder;
     NSMutableDictionary *_itemQueue_preferredRepresentationByType;
     NSMutableDictionary *_itemQueue_visibilityByType;
+    NSMutableDictionary *_itemQueue_dataAvailabilityByType;
     id _itemQueue_localUserInfo;
     id <NSObject> _itemQueue_localObject;
     NSDictionary *_itemQueue_metadata;
@@ -40,6 +41,7 @@
 @property(copy, nonatomic) NSDictionary *itemQueue_metadata; // @synthesize itemQueue_metadata=_itemQueue_metadata;
 @property(retain, nonatomic) id <NSObject> itemQueue_localObject; // @synthesize itemQueue_localObject=_itemQueue_localObject;
 @property(retain, nonatomic) id itemQueue_localUserInfo; // @synthesize itemQueue_localUserInfo=_itemQueue_localUserInfo;
+@property(retain, nonatomic) NSMutableDictionary *itemQueue_dataAvailabilityByType; // @synthesize itemQueue_dataAvailabilityByType=_itemQueue_dataAvailabilityByType;
 @property(retain, nonatomic) NSMutableDictionary *itemQueue_visibilityByType; // @synthesize itemQueue_visibilityByType=_itemQueue_visibilityByType;
 @property(retain, nonatomic) NSMutableDictionary *itemQueue_preferredRepresentationByType; // @synthesize itemQueue_preferredRepresentationByType=_itemQueue_preferredRepresentationByType;
 @property(retain, nonatomic) NSMutableOrderedSet *itemQueue_typeOrder; // @synthesize itemQueue_typeOrder=_itemQueue_typeOrder;
@@ -75,6 +77,7 @@
 - (_Bool)itemQueue_hasRepresentationConformingToType:(id)arg1;
 - (_Bool)hasRepresentationOfType:(id)arg1;
 - (long long)visibilityForType:(id)arg1;
+- (_Bool)isDataAvailableImmediatelyForType:(id)arg1;
 - (unsigned long long)preferredRepresentationForType:(id)arg1;
 - (_Bool)itemQueue_hasRepresentationOfType:(id)arg1;
 - (void)uikit_addRepresentationType:(id)arg1 loaderBlock:(CDUnknownBlockType)arg2;

@@ -9,6 +9,9 @@
 @class AVOutputDevice, NSArray, NSData, NSDictionary, NSNumber, NSString;
 
 @protocol AVOutputDeviceImpl <NSObject>
+@property(copy, nonatomic) NSString *currentBluetoothListeningMode;
+@property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
+@property(readonly, nonatomic) BOOL supportsBluetoothSharing;
 @property(readonly, nonatomic) BOOL presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property(readonly, nonatomic) BOOL canFetchMediaDataFromSender;
 @property(readonly, nonatomic) BOOL canPlayEncryptedProgressiveDownloadAssets;
@@ -35,6 +38,8 @@
 @property(readonly, copy, nonatomic) NSArray *connectedPairedDevices;
 @property(readonly, nonatomic, getter=isInUseByPairedDevice) BOOL inUseByPairedDevice;
 @property(readonly, nonatomic) NSDictionary *airPlayProperties;
+@property(readonly, nonatomic) NSNumber *isInEar;
+@property(readonly, nonatomic) NSNumber *supportsDataOverACLProtocol;
 @property(readonly, nonatomic) NSNumber *rightBatteryLevel;
 @property(readonly, nonatomic) NSNumber *leftBatteryLevel;
 @property(readonly, nonatomic) NSNumber *caseBatteryLevel;
@@ -49,7 +54,7 @@
 @property(readonly, copy, nonatomic) NSString *ID;
 @property(readonly, copy, nonatomic) NSString *name;
 @property __weak AVOutputDevice *parentOutputDevice;
-- (void)configureUsingBlock:(void (^)(id <AVOutputDeviceConfigurationModification>))arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(int, id <AVOutputDeviceConfigurationRetrieval>, NSString *, NSError *))arg3;
+- (void)configureUsingBlock:(void (^)(id <AVOutputDeviceConfigurationModification>))arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(long long, id <AVOutputDeviceConfigurationRetrieval>, NSString *, NSError *))arg3;
 - (void)setVolume:(float)arg1;
 - (void)setSecondDisplayEnabled:(BOOL)arg1;
 @end

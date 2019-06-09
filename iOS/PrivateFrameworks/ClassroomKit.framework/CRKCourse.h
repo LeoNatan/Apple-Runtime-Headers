@@ -16,7 +16,6 @@
     _Bool _requestingUnenroll;
     _Bool _studentCredentialsAreValid;
     _Bool _mustRequestUnenroll;
-    _Bool _expired;
     DMFControlGroupIdentifier *_courseIdentifier;
     NSString *_courseName;
     NSString *_courseDescription;
@@ -31,9 +30,9 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)keyPathsForValuesAffectingExpired;
 + (id)stringForType:(unsigned long long)arg1;
 + (id)new;
-@property(nonatomic, getter=isExpired) _Bool expired; // @synthesize expired=_expired;
 @property(nonatomic) _Bool mustRequestUnenroll; // @synthesize mustRequestUnenroll=_mustRequestUnenroll;
 @property(retain, nonatomic) NSSet *validTrustedCertificatePersistentIds; // @synthesize validTrustedCertificatePersistentIds=_validTrustedCertificatePersistentIds;
 @property(retain, nonatomic) NSSet *trustedCertificatePersistentIds; // @synthesize trustedCertificatePersistentIds=_trustedCertificatePersistentIds;
@@ -57,6 +56,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
+@property(readonly, nonatomic, getter=isExpired) _Bool expired;
 - (void)setManaged:(_Bool)arg1;
 @property(readonly, nonatomic, getter=isManaged) _Bool managed;
 - (id)initWithIdentifier:(id)arg1 managed:(_Bool)arg2;

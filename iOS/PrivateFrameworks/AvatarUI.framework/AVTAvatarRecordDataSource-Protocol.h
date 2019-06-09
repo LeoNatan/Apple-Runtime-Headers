@@ -10,6 +10,7 @@
 @protocol AVTAvatarRecord, AVTAvatarStore;
 
 @protocol AVTAvatarRecordDataSource <NSObject>
+- (NSIndexSet *)indexSetForEditableRecords;
 - (unsigned long long)indexOfRecordPassingTest:(_Bool (^)(id <AVTAvatarRecord>, unsigned long long, _Bool *))arg1;
 - (NSIndexSet *)indexesOfRecordsPassingTest:(_Bool (^)(id <AVTAvatarRecord>, unsigned long long, _Bool *))arg1;
 - (id <AVTAvatarStore>)recordStore;

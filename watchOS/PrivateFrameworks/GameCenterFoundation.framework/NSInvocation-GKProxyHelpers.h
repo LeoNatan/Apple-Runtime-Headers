@@ -7,6 +7,7 @@
 #import <Foundation/NSInvocation.h>
 
 @interface NSInvocation (GKProxyHelpers)
++ (id)_gkInvocationWithBlock:(id)arg1;
 - (void)_gkInvokeOnceWithTarget:(id)arg1;
 - (void)_gkInvokeOnce;
 - (void)_gkClearTarget;
@@ -18,5 +19,6 @@
 - (void)_gkClearCopiedArguments;
 - (void)_gkCopyArguments;
 - (void)_gkPrintBlockSignature;
+- (_Bool)_gkHasReplyBlock;
 @end
 

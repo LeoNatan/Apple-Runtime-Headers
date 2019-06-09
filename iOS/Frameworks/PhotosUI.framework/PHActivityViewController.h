@@ -6,11 +6,11 @@
 
 #import <UIKit/UIActivityViewController.h>
 
-#import <PhotosUI/PUActivityDataSource-Protocol.h>
+#import <PhotosUI/PXActivityDataSource-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface PHActivityViewController : UIActivityViewController <PUActivityDataSource>
+@interface PHActivityViewController : UIActivityViewController <PXActivityDataSource>
 {
     NSArray *__PHActivityItems;
 }

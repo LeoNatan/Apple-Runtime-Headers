@@ -7,23 +7,34 @@
 #import <objc/NSObject.h>
 
 #import <AppKit/NSCoding-Protocol.h>
+#import <AppKit/NSDynamicPropertyContainer-Protocol.h>
 #import <AppKit/NSTouchBarProvider-Protocol.h>
 #import <AppKit/NSTouchBarProviderContainer-Protocol.h>
 #import <AppKit/NSUIActivityProvider-Protocol.h>
 #import <AppKit/_NSQuickActionItemSource-Protocol.h>
 
-@class NSMenu, NSString, NSTouchBar, NSUserActivity;
+@class NSKeyValueDependencyInfo, NSMenu, NSString, NSTouchBar, NSUserActivity;
 @protocol NSServicesRequestor, _NSQuickActionItemSource;
 
-@interface NSResponder : NSObject <NSTouchBarProviderContainer, NSUIActivityProvider, NSTouchBarProvider, _NSQuickActionItemSource, NSCoding>
+@interface NSResponder : NSObject <NSTouchBarProviderContainer, NSUIActivityProvider, NSTouchBarProvider, _NSQuickActionItemSource, NSDynamicPropertyContainer, NSCoding>
 {
     id _nextResponder;
+    // Error parsing type: AI, name: _rc
+    NSKeyValueDependencyInfo *_dependencyInfo;
 }
 
++ (BOOL)automaticallyTracksDependenciesOnValueForKey:(id)arg1;
 + (void)initialize;
 + (id)restorableStateKeyPaths;
 + (BOOL)automaticallyNotifiesObserversOfTouchBar;
 + (BOOL)automaticallyNotifiesObserversOfServicesRequestor;
+- (unsigned long long)retainCount;
+@property(readonly) BOOL _isDeallocating;
+- (oneway void)release;
+- (BOOL)_tryRetain;
+- (id)retain;
+- (void)_dealloc;
+- (void)_detach;
 - (BOOL)_ignoreBadFirstResponders;
 - (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformShowDefaultUI;
@@ -358,6 +369,7 @@
 - (unsigned long long)gestureEventMask;
 @property(readonly) BOOL acceptsFirstResponder;
 - (void)noResponderFor:(SEL)arg1;
+- (void)changeModeWithEvent:(id)arg1;
 - (void)pressureChangeWithEvent:(id)arg1;
 - (void)navigateWithEvent:(id)arg1;
 - (void)quickLookPreviewItemsAtWindowLocation:(struct CGPoint)arg1;
@@ -402,8 +414,10 @@
 - (void)invalidateRequestor;
 - (id)validRequestorForSendType:(id)arg1 returnType:(id)arg2;
 - (BOOL)tryToPerform:(SEL)arg1 with:(id)arg2;
+@property(retain) NSKeyValueDependencyInfo *dependencyInfo;
 @property NSResponder *nextResponder;
 - (id)_nextResponderForEvent:(id)arg1;
+- (void)_swizzledSetupForwarderForClassMethodSelector:(SEL)arg1;
 - (id)colorFactory;
 - (void)setInterfaceStyle:(unsigned long long)arg1;
 - (unsigned long long)interfaceStyle;
@@ -411,6 +425,8 @@
 - (id)NS_touchBarProviders;
 - (id)_eventResponderChainDescription;
 @property(readonly) NSString *_responderDebugDescription;
+- (void)_invalidateDependenciesOnValueForKey:(id)arg1;
+- (void)_addDependencyOnValueForKey:(id)arg1;
 - (id)presentationWindowForError:(id)arg1 originatedInWindow:(id)arg2;
 - (void)_cleanUpUserActivity;
 - (void)_didRestoreUserActivity:(id)arg1;

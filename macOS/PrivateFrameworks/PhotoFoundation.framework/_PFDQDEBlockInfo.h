@@ -4,34 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoFoundation/PFDispatchQueueStatisticsBlockInfo.h>
 
-@class NSDate, _PFDQDECallSite;
+@class _PFDQDECallSite;
 
-@interface _PFDQDEBlockInfo : NSObject
+@interface _PFDQDEBlockInfo : PFDispatchQueueStatisticsBlockInfo
 {
-    unsigned long long _hash;
-    BOOL _skippedExecuting;
     _PFDQDECallSite *_callSite;
-    NSDate *_receivedDate;
-    NSDate *_enqueueDate;
-    NSDate *_dequeueDate;
-    NSDate *_executeDate;
-    NSDate *_completeDate;
 }
 
-@property BOOL skippedExecuting; // @synthesize skippedExecuting=_skippedExecuting;
-@property(retain) NSDate *completeDate; // @synthesize completeDate=_completeDate;
-@property(retain) NSDate *executeDate; // @synthesize executeDate=_executeDate;
-@property(retain) NSDate *dequeueDate; // @synthesize dequeueDate=_dequeueDate;
-@property(retain) NSDate *enqueueDate; // @synthesize enqueueDate=_enqueueDate;
-@property(retain) NSDate *receivedDate; // @synthesize receivedDate=_receivedDate;
 @property(readonly) _PFDQDECallSite *callSite; // @synthesize callSite=_callSite;
 - (void).cxx_destruct;
 - (id)backtraceWithPrefix:(id)arg1;
-- (id)initWithCallSite:(id)arg1;
-- (double)waitTime;
-- (double)executionTime;
+- (id)init;
 
 @end
 

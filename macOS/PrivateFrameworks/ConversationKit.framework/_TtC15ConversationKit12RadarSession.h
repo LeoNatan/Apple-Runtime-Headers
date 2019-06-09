@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: session
     // Error parsing type: , name: pendingTask
-    // Error parsing type: , name: encoder.storage
+    // Error parsing type: , name: $__lazy_storage_$_encoder
     // Error parsing type: , name: decoder
 }
 

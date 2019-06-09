@@ -25,5 +25,6 @@
 - (unsigned long long)navigationIndexOfSnippetViewController:(SiriUISnippetViewController *)arg1;
 - (NSSet *)siriEnabledAppListForSiriViewController:(id <SiriUIViewController>)arg1;
 - (unsigned long long)siriDeviceLockStateForSnippetViewController:(id <SiriUIViewController>)arg1;
+- (void)siriSnippetViewControllerRequestsPinning:(SiriUISnippetViewController *)arg1;
 @end
 

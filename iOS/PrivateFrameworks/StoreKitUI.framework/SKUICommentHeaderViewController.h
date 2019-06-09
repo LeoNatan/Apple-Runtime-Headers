@@ -8,6 +8,7 @@
 
 @class NSString, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUICommentHeaderViewController : UIViewController
 {
     NSString *_title;

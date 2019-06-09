@@ -10,15 +10,19 @@
 
 @interface NSURL (IC)
 + (id)ic_urlFromWeblocFileAtURL:(id)arg1;
+@property(readonly, nonatomic) BOOL ic_isURLAnInternetLocator;
+@property(readonly, nonatomic) BOOL ic_isReachable;
 @property(readonly, nonatomic) long long ic_fileSize;
 @property(readonly, nonatomic) NSString *ic_UTI;
-@property(readonly, nonatomic) BOOL isSupportedAsAttachment;
-@property(readonly, nonatomic) BOOL isWebURL;
-@property(readonly, nonatomic) BOOL isAppStoreURL;
-@property(readonly, nonatomic) BOOL isiTunesURL;
-@property(readonly, nonatomic) BOOL isNewsURL;
-@property(readonly, nonatomic) BOOL isMapURL;
-@property(readonly, nonatomic) NSURL *uniquedURL;
-- (id)dedupedURLWithProhibitedNames:(id)arg1;
+@property(readonly, nonatomic) BOOL ic_isSupportedAsAttachment;
+@property(readonly, nonatomic) BOOL ic_isWebURL;
+@property(readonly, nonatomic) BOOL ic_isAppStoreURL;
+@property(readonly, nonatomic) BOOL ic_isiTunesURL;
+@property(readonly, nonatomic) BOOL ic_isNewsURL;
+@property(readonly, nonatomic) BOOL ic_isMapURL;
+@property(readonly, nonatomic) NSURL *ic_uniquedURL;
+- (void)ic_updateFlagToExcludeFromCloudBackup:(BOOL)arg1;
+- (id)ic_dedupedURLWithProhibitedNames:(id)arg1;
+- (id)queryComponents;
 @end
 

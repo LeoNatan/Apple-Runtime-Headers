@@ -11,12 +11,17 @@
     // Error parsing type: r^, name: _points
 }
 
++ (_Bool)supportsSecureCoding;
 // Error parsing type for property points:
 // Property attributes: Tr^,V_points
 
 - (void)dealloc;
--     // Error parsing type: @64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16^48Q56, name: initWithFaceBoundingBox:points:pointCount:
 -     // Error parsing type: 24@0:8Q16, name: pointAtIndex:
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+-     // Error parsing type: @72@0:8Q16{CGRect={CGPoint=dd}{CGSize=dd}}24^56Q64, name: initWithRequestRevision:faceBoundingBox:points:pointCount:
+- (id)initWithRequestRevision:(unsigned long long)arg1 faceBoundingBox:(struct CGRect)arg2;
 
 @end
 

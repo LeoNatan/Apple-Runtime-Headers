@@ -23,6 +23,9 @@
 - (void)retrieveImageWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)storeImage:(id)arg1 scaled:(_Bool)arg2 qualityOfService:(unsigned int)arg3 storeType:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)canStoreImage:(id)arg1;
+- (id)fetchShareExtensionIntentForExtensionContextUUID:(id)arg1;
+- (_Bool)accessBundleContentForBundleIdentifiers:(id)arg1 withBlock:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (id)availableSchemasWithError:(id *)arg1;
 - (id)loadSchemasForBundleIdentifiers:(id)arg1 error:(id *)arg2;
 - (void)loadDataImageFromImage:(id)arg1 usingPortableImageLoader:(id)arg2 scaledSize:(CDStruct_8caa76fc)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)canLoadImageDataForImage:(id)arg1;

@@ -24,7 +24,6 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

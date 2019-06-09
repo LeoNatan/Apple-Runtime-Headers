@@ -6,7 +6,7 @@
 
 #import <PhotoVision/NSObject-Protocol.h>
 
-@class NSString;
+@class NSArray, NSString;
 @protocol PVFaceProtocol, PVFetchResultProtocol;
 
 @protocol PVPersonProtocol <NSObject>
@@ -14,11 +14,12 @@
 @property(nonatomic) long long manualOrder;
 @property(nonatomic) _Bool isVerified;
 @property(readonly, nonatomic) long long verifiedType;
-@property(readonly, nonatomic) NSString *name;
+@property(readonly, nonatomic) NSString *anonymizedName;
 @property(readonly, nonatomic) _Bool hidden;
 @property(readonly, nonatomic) _Bool favorite;
 @property(readonly, nonatomic) unsigned long long faceCount;
 @property(readonly, nonatomic) NSString *localIdentifier;
 - (void)pv_addMergeCandidatePersons:(id <PVFetchResultProtocol>)arg1;
+- (NSArray *)personLocalIdentifiers;
 @end
 

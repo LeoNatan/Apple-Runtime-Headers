@@ -36,9 +36,11 @@
 + (id)greenPinColor;
 + (id)redPinColor;
 + (struct CGSize)_perceivedSize;
++ (Class)_mapkitLeafClass;
 + (Class)layerClass;
 @property(nonatomic, setter=_setDelegate:) __weak id <_MKPinAnnotationViewDelegate> _delegate; // @synthesize _delegate;
 - (void).cxx_destruct;
+- (void)_updateAnchorPosition:(struct CGPoint)arg1 alignToPixels:(_Bool)arg2;
 - (int)_state;
 - (_Bool)isHighlighted;
 - (void)setHighlighted:(_Bool)arg1;
@@ -72,7 +74,7 @@
 - (id)description;
 - (void)_setMapDisplayStyle:(CDStruct_80aa614a)arg1;
 - (void)_setMapType:(unsigned long long)arg1;
-- (struct UIEdgeInsets)alignmentRectInsets;
+- (struct UIEdgeInsets)_defaultCollisionAlignmentRectInsets;
 - (struct CGRect)_significantBounds;
 @property(nonatomic) _Bool animatesDrop;
 @property(retain, nonatomic) UIColor *pinTintColor;

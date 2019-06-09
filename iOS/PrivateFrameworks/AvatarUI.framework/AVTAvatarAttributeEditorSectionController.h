@@ -34,6 +34,7 @@
 @property(nonatomic) __weak id <AVTAvatarAttributeEditorControllerSubSelectionDelegate> delegate; // @synthesize delegate;
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 - (void).cxx_destruct;
+- (_Bool)evaluateDisplayCondition:(id)arg1;
 - (void)didSelectItemAtIndex:(long long)arg1 cell:(id)arg2;
 - (void)didUnhighlightItemAtIndex:(long long)arg1 cell:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)didHighlightItemAtIndex:(long long)arg1 cell:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

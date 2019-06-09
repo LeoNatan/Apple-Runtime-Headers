@@ -68,6 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)drawYAxisGrid;
 - (void)drawXAxisGrid;
 - (void)dealloc;
+- (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)updateGraphFrame;
 

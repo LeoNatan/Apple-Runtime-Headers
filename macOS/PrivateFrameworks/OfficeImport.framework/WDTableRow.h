@@ -8,6 +8,7 @@
 
 @class NSMutableArray, WDTable, WDTableRowProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDTableRow : NSObject
 {
     unsigned long long mIndex;

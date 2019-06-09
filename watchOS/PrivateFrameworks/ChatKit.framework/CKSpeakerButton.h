@@ -6,6 +6,7 @@
 
 #import <UIKit/UIButton.h>
 
+__attribute__((visibility("hidden")))
 @interface CKSpeakerButton : UIButton
 {
     BOOL _orientation;

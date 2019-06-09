@@ -8,6 +8,7 @@
 
 @class CXNamespace, OAXDrawingState;
 
+__attribute__((visibility("hidden")))
 @interface ODXState : OCXReadState
 {
     CXNamespace *mODXDiagramNamespace;

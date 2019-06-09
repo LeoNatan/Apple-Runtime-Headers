@@ -26,6 +26,7 @@
 - (id <BSInvalidatable>)acquireMatchingAssertionWithMode:(unsigned long long)arg1 reason:(NSString *)arg2;
 - (id <BSInvalidatable>)acquireFaceDetectionWantedAssertionForReason:(NSString *)arg1;
 - (id <BSInvalidatable>)acquireFingerDetectionWantedAssertionForReason:(NSString *)arg1;
+- (id <BSInvalidatable>)acquireFingerDetectionWantedAssertionForReason:(NSString *)arg1 HIDEventsOnly:(_Bool)arg2;
 - (void)removeObserver:(id <SBUIBiometricResourceObserver>)arg1;
 - (void)addObserver:(id <SBUIBiometricResourceObserver>)arg1;
 @end

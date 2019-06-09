@@ -6,22 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSURLComponents, NSXPCConnection;
+@class NSURLComponents, _LSAppLinkOpenState;
 
+__attribute__((visibility("hidden")))
 @interface _LSAppLinkPlugIn : NSObject
 {
     NSURLComponents *_URLComponents;
     unsigned long long _limit;
-    NSXPCConnection *_XPCConnection;
+    _LSAppLinkOpenState *_state;
 }
 
 + (_Bool)canHandleURLComponents:(id)arg1;
 + (Class)plugInClasses;
-@property(retain) NSXPCConnection *XPCConnection; // @synthesize XPCConnection=_XPCConnection;
+@property(retain) _LSAppLinkOpenState *state; // @synthesize state=_state;
 @property unsigned long long limit; // @synthesize limit=_limit;
 @property(retain) NSURLComponents *URLComponents; // @synthesize URLComponents=_URLComponents;
-- (void)getAppLinksWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)appLinksWithContext:(struct LSContext *)arg1 error:(id *)arg2;
 
 @end
 

@@ -14,6 +14,7 @@
 }
 
 + (id)chainedFutureWithFutures:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (void)cancelCurrentAndRemainingFutures;
 - (void)didCancel;
@@ -23,7 +24,6 @@
 - (void)runNextFuture;
 - (void)addCompletionBlocksToSelf;
 - (void)start;
-- (void)dealloc;
 - (id)initWithFutures:(id)arg1;
 
 @end

@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/HDCloudSyncRecord.h>
 
-@class HDCloudSyncSequenceRecord, NSString, NSUUID;
+@class HDCloudSyncSequenceRecord, NSArray, NSString, NSUUID;
 
 @interface HDCloudSyncStoreRecord : HDCloudSyncRecord
 {
@@ -16,6 +16,7 @@
     NSString *_ownerIdentifier;
     NSString *_pendingOwner;
     NSUUID *_storeIdentifier;
+    HDCloudSyncSequenceRecord *_tombstoneSequenceRecord;
 }
 
 + (_Bool)hasFutureSchema:(id)arg1;
@@ -23,23 +24,34 @@
 + (_Bool)isStoreRecord:(id)arg1;
 + (id)recordIDWithZoneID:(id)arg1;
 + (id)recordWithCKRecord:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSUUID *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
-@property(retain, nonatomic) NSString *pendingOwner; // @synthesize pendingOwner=_pendingOwner;
-@property(readonly, nonatomic) NSString *ownerIdentifier; // @synthesize ownerIdentifier=_ownerIdentifier;
+@property(readonly, nonatomic) HDCloudSyncSequenceRecord *tombstoneSequenceRecord; // @synthesize tombstoneSequenceRecord=_tombstoneSequenceRecord;
+@property(readonly, copy, nonatomic) NSUUID *storeIdentifier; // @synthesize storeIdentifier=_storeIdentifier;
+@property(copy, nonatomic) NSString *pendingOwner; // @synthesize pendingOwner=_pendingOwner;
+@property(readonly, copy, nonatomic) NSString *ownerIdentifier; // @synthesize ownerIdentifier=_ownerIdentifier;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 - (void).cxx_destruct;
 - (id)_indentedSequenceRecordDescription:(id)arg1;
 - (id)description;
+- (id)sequenceRecordWithRecordID:(id)arg1;
 - (_Bool)hasSequenceWithFutureProtocolVersion;
 - (_Bool)hasActiveSequence;
 - (void)addSequenceHeaderRecord:(id)arg1;
-- (void)addNewSequenceHeaderRecordWithSyncAnchorMap:(id)arg1 includedIdentifiers:(id)arg2;
+- (id)addNewTombstoneSequenceHeaderRecordWithIncludedIdentifiers:(id)arg1;
+- (id)addNewSequenceHeaderRecordWithSyncAnchorMap:(id)arg1 includedIdentifiers:(id)arg2;
+- (id)clearTombstoneSequenceHeaderRecord;
 - (id)activeSequenceHeaderRecord;
 - (id)clearOldSequenceHeaderRecord;
 - (id)oldSequenceHeaderRecord;
 - (id)clearCurrentSequenceHeaderRecord;
 - (id)currentSequenceHeaderRecord;
+@property(nonatomic) long long requiredProtocolVersion;
+@property(nonatomic) long long supportedProtocolVersion;
+@property(readonly, copy, nonatomic) NSArray *orderedSequenceRecords;
 @property(readonly, nonatomic) HDCloudSyncSequenceRecord *sequenceRecord;
+@property(nonatomic) long long deviceMode;
+@property(copy, nonatomic) NSString *deviceName;
+@property(copy, nonatomic) NSString *systemBuildVersion;
+@property(copy, nonatomic) NSString *productType;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (long long)compare:(id)arg1;

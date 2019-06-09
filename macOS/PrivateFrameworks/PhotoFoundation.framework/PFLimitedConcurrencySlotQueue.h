@@ -24,6 +24,7 @@
 - (const char *)label;
 - (void)resume;
 - (void)suspend;
+- (void)dispatchAsyncWithQOS:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 - (void)dispatchAsync:(CDUnknownBlockType)arg1;
 - (unsigned long long)slotUseCount;
 - (unsigned long long)decrementSlotUseCount;

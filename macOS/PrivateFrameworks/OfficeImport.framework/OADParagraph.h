@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OADCharacterProperties, OADParagraphProperties;
 
+__attribute__((visibility("hidden")))
 @interface OADParagraph : NSObject
 {
     OADParagraphProperties *mProperties;

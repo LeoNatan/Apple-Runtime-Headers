@@ -7,12 +7,13 @@
 #import <HealthDaemon/NSObject-Protocol.h>
 
 @class HKQuantityType, HKUnit, NSDate, NSUUID;
+@protocol HDCoreMotionDatum;
 
 @protocol HDCoreMotionDatum <NSObject>
 - (HKUnit *)hd_unitForType:(HKQuantityType *)arg1;
 - (NSDate *)hd_epochDatestamp;
 - (NSDate *)hd_datestamp;
 - (NSUUID *)hd_sourceID;
-- (long long)hd_recordID;
+- (long long)hd_compare:(id <HDCoreMotionDatum>)arg1;
 @end
 

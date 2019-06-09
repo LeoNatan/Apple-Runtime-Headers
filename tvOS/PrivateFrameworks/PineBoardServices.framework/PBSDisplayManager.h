@@ -9,7 +9,7 @@
 #import <PineBoardServices/PBSDisplayState-Protocol.h>
 #import <PineBoardServices/PBSDisplayState_Private-Protocol.h>
 
-@class NSArray, NSHashTable, NSSet, NSString, PBSDisplayManagerServiceProxy, PBSDisplayMode;
+@class NSArray, NSDictionary, NSHashTable, NSSet, NSString, PBSDisplayManagerServiceProxy, PBSDisplayMode;
 
 @interface PBSDisplayManager : NSObject <PBSDisplayState_Private, PBSDisplayState>
 {
@@ -30,12 +30,14 @@
     long long _lastCablePollStatus;
     NSHashTable *_stateObservers;
     PBSDisplayManagerServiceProxy *_serviceProxy;
+    NSDictionary *_audioLatencies;
 }
 
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)sharedInstance;
 + (void)preheat;
-@property(retain, nonatomic) PBSDisplayManagerServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
+@property(retain, nonatomic) NSDictionary *audioLatencies; // @synthesize audioLatencies=_audioLatencies;
+@property(readonly, nonatomic) PBSDisplayManagerServiceProxy *serviceProxy; // @synthesize serviceProxy=_serviceProxy;
 @property(retain, nonatomic) NSHashTable *stateObservers; // @synthesize stateObservers=_stateObservers;
 @property(nonatomic) _Bool deemed4KCapable; // @synthesize deemed4KCapable=_deemed4KCapable;
 @property(nonatomic) long long lastCablePollStatus; // @synthesize lastCablePollStatus=_lastCablePollStatus;
@@ -70,11 +72,12 @@
 - (void)dealloc;
 - (id)_init;
 - (id)init;
+- (id)audioLatencyForDisplayMode:(id)arg1;
+- (void)setAudioLatency:(double)arg1 forDisplayMode:(id)arg2;
 - (void)presentDisplayAssistantForInvocation:(long long)arg1 destinationDisplayMode:(id)arg2 dismissHandler:(CDUnknownBlockType)arg3;
 - (void)displayAssistantDidCompleteForKind:(id)arg1;
 - (void)displayAssistantDidStartForKind:(id)arg1;
 - (void)removeCableCheckHistory;
-- (void)resetPoorCableWarnings;
 - (void)forgetDisplaysForDisplayAssistant;
 - (void)presentDisplayAssistantWithRequest:(id)arg1 dismissHandler:(CDUnknownBlockType)arg2;
 - (void)handleRegionChangeWithNewCountryCode:(id)arg1 completion:(CDUnknownBlockType)arg2;

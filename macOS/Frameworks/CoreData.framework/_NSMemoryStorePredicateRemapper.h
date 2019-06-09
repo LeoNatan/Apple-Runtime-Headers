@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultInstance;
-+ (void)initialize;
 - (void)visitPredicateExpression:(id)arg1;
 - (void)visitPredicate:(id)arg1;
 - (id)createPredicateForFetchFromPredicate:(id)arg1 withContext:(id)arg2;

@@ -38,6 +38,7 @@
 @property(readonly, retain, nonatomic) NSNumber *isPasscodeRequired; // @synthesize isPasscodeRequired=_isPasscodeRequired;
 @property(readonly, retain, nonatomic) NSNumber *isSimplePasscodeAllowed; // @synthesize isSimplePasscodeAllowed=_isSimplePasscodeAllowed;
 - (void).cxx_destruct;
+- (id)filterForUserEnrollmentOutError:(id *)arg1;
 - (id)restrictions;
 - (id)payloadDescriptionKeyValueSections;
 - (id)subtitle1Description;

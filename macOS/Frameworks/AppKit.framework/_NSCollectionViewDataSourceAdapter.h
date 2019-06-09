@@ -8,7 +8,7 @@
 
 #import <AppKit/NSCollectionViewDataSource-Protocol.h>
 
-@class NSCollectionView, NSMapTable, NSMutableArray, NSString;
+@class NSCollectionView, NSCollectionViewIndexMapper, NSMapTable, NSMutableArray, NSMutableIndexSet, NSString, _NSCollectionViewCachedWorldInfo;
 @protocol NSCollectionViewDataSource;
 
 __attribute__((visibility("hidden")))
@@ -18,18 +18,23 @@ __attribute__((visibility("hidden")))
     id <NSCollectionViewDataSource> _dataSource;
     BOOL _dataSourceImplementsObjectMethods;
     BOOL _flushCacheAtNextLayoutBecauseReloadDataWasInvoked;
-    long long _sectionCount;
-    NSMapTable *_indexToSectionInfoMap;
-    NSMapTable *_representedObjectToIndexPathMap;
+    _NSCollectionViewCachedWorldInfo *_committedState;
+    _NSCollectionViewCachedWorldInfo *_incomingState;
+    NSCollectionViewIndexMapper *_sectionIndexMapper;
+    BOOL _reportPostBatchUpdateState;
+    BOOL _finishingBatchUpdate;
     id _representedObjectForCurrentDataSourceInvocation;
-    BOOL _inBatchUpdate;
-    BOOL _batchUpdateContainsMoves;
-    BOOL _batchUpdateContainsOnlyItemMovesWithinSameSection;
-    NSMutableArray *_queuedItemMoves;
+    NSMapTable *_pushedSectionIndexesToRepresentedObjectsMap;
+    NSMapTable *_pushedSectionObjectsToItemObjectsMap;
+    NSMapTable *_sectionRepresentedObjectToQueuedInsertionIndexesMap;
+    NSMutableIndexSet *_queuedSectionDeleteIndexes;
+    NSMutableArray *_queuedSectionMoveIndexPairs;
+    NSMutableIndexSet *_queuedSectionInsertIndexes;
 }
 
 @property NSCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void)dealloc;
+@property(readonly, copy) NSString *debugDescription;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 itemForRepresentedObjectAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
@@ -38,11 +43,16 @@ __attribute__((visibility("hidden")))
 - (void)reloadItemsAtIndexPaths:(id)arg1;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
 - (void)insertItemsAtIndexPaths:(id)arg1;
+- (void)_queueInsertItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;
 - (void)moveSection:(long long)arg1 toSection:(long long)arg2;
 - (void)reloadSections:(id)arg1;
 - (void)deleteSections:(id)arg1;
 - (void)insertSections:(id)arg1;
+- (void)_noteMoveSection:(long long)arg1 toSection:(long long)arg2;
+- (void)_noteDeleteSections:(id)arg1;
+- (void)_noteInsertSections:(id)arg1;
 - (void)_insertSections:(id)arg1 representedObjects:(id)arg2;
+- (void)_stashPushedRepresentedObjects:(id)arg1 forSectionInsertsAtIndexes:(id)arg2;
 - (id)_indexPathForRepresentedObject:(id)arg1;
 - (id)_indexPathOfItemWithRepresentedObject:(id)arg1;
 - (void)_rebuildRepresentedObjectToIndexPathMap;
@@ -53,23 +63,22 @@ __attribute__((visibility("hidden")))
 - (id)_representedObjectForIndexPath:(id)arg1;
 - (id)_representedObjectForItemAtIndexPath:(id)arg1;
 - (id)_representedObjectForCurrentDataSourceInvocation;
+- (void)_invalidateEverythingNowOrLater;
 - (void)_invalidateEverything;
-- (id)_fetchSectionInfoAtIndex:(unsigned long long)arg1;
-- (id)_fetchSectionObjectAtIndex:(long long)arg1;
+- (unsigned long long)_indexOfSectionWithRepresentedObject:(id)arg1 inBatchUpdateAfterState:(BOOL)arg2;
 - (unsigned long long)_indexOfSectionWithRepresentedObject:(id)arg1;
 @property id <NSCollectionViewDataSource> dataSource;
-@property long long sectionCount;
 - (void)_endBatchUpdate;
-- (void)_allBatchUpdateChangesReceived;
-- (void)_processQueuedItemMoves;
-- (void)fetchAllNeededRepresentedObjects;
-- (void)_beginBatchUpdate;
+- (void)_finishBatchUpdateWithUpdateItems:(id)arg1 newSectionCount:(long long)arg2 newSectionSourceIndexes:(long long *)arg3 newSectionItemCounts:(long long *)arg4 newGlobalItemCount:(long long)arg5 newGlobalItemSourceIndexes:(long long *)arg6;
+- (void)_processQueuedInsertsInSectionObjects;
+- (void)_prepareForBatchUpdate;
+- (void)_beginReportingPostBatchUpdateState;
 - (void)_flushCacheIfScheduled;
 - (void)_scheduleFlushCacheAtNextLayoutBecauseReloadDataWasInvoked;
+@property(readonly) long long committedSectionCount;
 - (id)init;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

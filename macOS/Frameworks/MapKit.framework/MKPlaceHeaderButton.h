@@ -10,18 +10,16 @@
 
 @class NSLayoutConstraint, NSString, _MKPlaceActionButtonController;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceHeaderButton : NSButton <_MKPlaceActionButtonControllerProtocol>
 {
     unsigned long long _buttonType;
     BOOL _primary;
     NSLayoutConstraint *_heightConstraint;
-    BOOL _highlighted;
     _MKPlaceActionButtonController *_buttonController;
 }
 
 @property(nonatomic) __weak _MKPlaceActionButtonController *buttonController; // @synthesize buttonController=_buttonController;
-- (void)setHighlighted:(BOOL)arg1;
-- (BOOL)isHighlighted;
 - (void).cxx_destruct;
 - (void)placeActionbuttonControllerTextDidChanged:(id)arg1;
 - (void)setAttributesWithTitle:(id)arg1 subTitle:(id)arg2;
@@ -31,7 +29,7 @@
 - (id)_primaryButtonTextColor;
 - (void)buttonSelected:(id)arg1;
 - (void)applyButtonDefaultConfiguration;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_contentSizeDidChange;
 - (id)initWithPrimaryType:(unsigned long long)arg1;
 - (id)init;

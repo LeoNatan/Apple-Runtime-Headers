@@ -8,6 +8,7 @@
 
 @class NSMutableArray, ODDTransitionPoint;
 
+__attribute__((visibility("hidden")))
 @interface ODDNodePoint : ODDDataPoint
 {
     ODDNodePoint *mParent;

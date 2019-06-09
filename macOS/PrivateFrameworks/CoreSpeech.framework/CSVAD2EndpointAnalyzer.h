@@ -9,7 +9,7 @@
 #import <CoreSpeech/CSEndpointAnalyzerImpl-Protocol.h>
 
 @class NSDictionary, NSMutableData, NSString;
-@protocol CSEndpointAnalyzerDelegate, OS_dispatch_queue;
+@protocol CSEndpointAnalyzerDelegate, CSEndpointAnalyzerImplDelegate, OS_dispatch_queue;
 
 @interface CSVAD2EndpointAnalyzer : NSObject <CSEndpointAnalyzerImpl>
 {
@@ -94,7 +94,7 @@
 - (void)reset;
 - (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
 - (void)preheat;
-- (void)recordingStoppedForReason:(unsigned long long)arg1;
+- (void)recordingStoppedForReason:(long long)arg1;
 @property(readonly, nonatomic) BOOL canProcessCurrentRequest;
 - (void)dealloc;
 - (id)init;
@@ -109,6 +109,7 @@
 @property(readonly, nonatomic) double elapsedTimeWithNoSpeech;
 @property(readonly, nonatomic) NSString *endpointerModelVersion;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) __weak id <CSEndpointAnalyzerImplDelegate> implDelegate;
 @property(readonly) Class superclass;
 
 @end

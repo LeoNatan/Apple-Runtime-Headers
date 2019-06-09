@@ -4,19 +4,36 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapKit/_MKNanoPlaceCardSectionData.h>
+#import <objc/NSObject.h>
 
-@interface _MKNanoPlaceCardHeaderDataSource : _MKNanoPlaceCardSectionData
+#import <MapKit/_MKNanoPlaceCardSectionProviding-Protocol.h>
+
+@class MKMapItem, NSString;
+@protocol _MKNanoPlaceCardSectionProvidingDelegate;
+
+@interface _MKNanoPlaceCardHeaderDataSource : NSObject <_MKNanoPlaceCardSectionProviding>
 {
     _Bool _showsAddress;
+    id <_MKNanoPlaceCardSectionProvidingDelegate> _delegate;
+    MKMapItem *_mapItem;
 }
 
 @property(nonatomic) _Bool showsAddress; // @synthesize showsAddress=_showsAddress;
-- (void)notifyDelegateForActionAtRow:(unsigned int)arg1;
-- (id)cellForRow:(unsigned int)arg1 inTableView:(id)arg2;
+@property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
+@property(nonatomic) __weak id <_MKNanoPlaceCardSectionProvidingDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
+- (void)notifyDelegateForActionAtIndexPath:(id)arg1;
+- (id)cellForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
+- (int)numberOfRowsInSection:(int)arg1;
+- (int)numberOfSections;
+- (id)titleForSection:(int)arg1;
 - (id)initWithMapItem:(id)arg1 showsAddress:(_Bool)arg2;
-- (int)numberOfRows;
-- (id)title;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

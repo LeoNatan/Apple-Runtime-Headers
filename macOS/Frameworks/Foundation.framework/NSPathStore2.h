@@ -31,7 +31,9 @@ __attribute__((visibility("hidden")))
 - (id)pathComponents;
 - (BOOL)isEqualToString:(id)arg1;
 - (unsigned long long)hash;
+- (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (const unsigned short *)_fastCharacterContents;
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
 - (unsigned short)characterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)length;

@@ -10,6 +10,7 @@
 
 @class NSLayoutConstraint, NSString, UILabel, UITextView, UIVisualEffectView, _UIFloatingContentView;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelExpandingSummaryView : UIView <_UIFloatingContentViewDelegate>
 {
     UITextView *_summaryTextView;

@@ -26,12 +26,16 @@
 @property(nonatomic) _Bool wantsProgress; // @synthesize wantsProgress=_wantsProgress;
 @property(nonatomic) __weak id <PHResourceAvailabilityChangeRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_assetsdClientXPCConnectionInterruptedNotification:(id)arg1;
 - (void)_cplDownloadFinishedNotification:(id)arg1;
 - (void)_cplDownloadStatusNotification:(id)arg1;
 - (void)cancel;
 - (void)runDaemonSide;
+- (void)_handleLocalAvailabilityChangeForResource:(id)arg1 mutableInfo:(id)arg2 fileURL:(id *)arg3 uti:(id *)arg4 orientation:(unsigned int *)arg5 data:(id *)arg6;
+- (id)_availabilityRequestOptions;
+- (_Bool)_prepareForChangeRequestWithLibrary:(id)arg1 asset:(id *)arg2 resource:(id *)arg3 error:(id *)arg4;
 - (id)plistDictionary;
-- (id)initWithPlistDictionary:(id)arg1;
+- (id)initWithPlistDictionary:(id)arg1 photoLibrary:(id)arg2;
 - (id)initWithAssetObjectID:(id)arg1 resourceIdentity:(id)arg2;
 
 @end

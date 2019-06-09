@@ -7,8 +7,6 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (RTExtensions)
-+ (id)combinationsOfChoosingElementFromArrays:(id)arg1;
 - (id)flatten;
-- (BOOL)containsClass:(Class)arg1;
 @end
 

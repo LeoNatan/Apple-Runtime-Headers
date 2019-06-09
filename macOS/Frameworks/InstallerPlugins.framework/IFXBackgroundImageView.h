@@ -6,17 +6,17 @@
 
 #import <AppKit/NSView.h>
 
-@class NSImage, NSImageCell;
+@class NSImage, NSImageView, NSString;
 
 @interface IFXBackgroundImageView : NSView
 {
-    NSImageCell *_imageCell;
+    NSImageView *_imageCell;
 }
 
+@property(retain) NSString *imageAccessibilityIdentifier;
 @property unsigned long long imageScaling;
 @property unsigned long long imageAlignment;
 @property(retain) NSImage *image;
-- (void)drawRect:(struct CGRect)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

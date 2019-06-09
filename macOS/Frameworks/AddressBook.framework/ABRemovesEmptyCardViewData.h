@@ -13,6 +13,7 @@
     ABCardViewPropertyProvider *_propertyProvider;
 }
 
+- (void).cxx_destruct;
 - (id)_removeEmptyItemsFromMultiValue:(id)arg1 key:(id)arg2 itemsRemoved:(char *)arg3;
 - (void)removeEmptyItemsFromDataSource:(id)arg1;
 

@@ -11,6 +11,7 @@
 @class NSArray;
 
 @interface TSWPRep (STAccessibility) <UIAccessibilityReadingContent>
+- (_Bool)_accessibilityIsSpeakThisElement;
 - (id)sxaxNameForEditRotorAction:(id)arg1;
 @property(readonly, nonatomic) NSArray *sxaxSupportedEditRotorActions;
 - (id)_sxaxTextInputEditor;

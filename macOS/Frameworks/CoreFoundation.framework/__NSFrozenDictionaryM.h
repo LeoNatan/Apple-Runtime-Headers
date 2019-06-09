@@ -9,13 +9,15 @@
 __attribute__((visibility("hidden")))
 @interface __NSFrozenDictionaryM : NSDictionary
 {
-    CDStruct_2af495fa storage;
+    CDStruct_bc24fd1e storage;
     // Error parsing type: A^{__cow_state_t}, name: cow
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)keysOfEntriesWithOptions:(unsigned long long)arg1 passingTest:(CDUnknownBlockType)arg2;

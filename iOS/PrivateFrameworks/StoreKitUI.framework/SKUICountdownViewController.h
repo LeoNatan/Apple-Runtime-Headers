@@ -10,6 +10,7 @@
 
 @class NSString, SKUIClientContext, SKUICountdownComponent, SKUIResourceLoader;
 
+__attribute__((visibility("hidden")))
 @interface SKUICountdownViewController : UIViewController <SKUIArtworkRequestDelegate>
 {
     SKUIResourceLoader *_artworkLoader;

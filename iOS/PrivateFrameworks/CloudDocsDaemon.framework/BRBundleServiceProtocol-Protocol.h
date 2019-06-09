@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol BRBundleServiceProtocol
+- (void)enableFPFSWithReply:(void (^)(NSError *))arg1;
 - (void)extractMetadataForContainerID:(NSString *)arg1 bundleID:(NSString *)arg2 minimumBundleVersion:(NSString *)arg3 reply:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg4;
 @end
 

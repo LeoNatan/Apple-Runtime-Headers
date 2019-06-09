@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _dataSize;
     _Bool _elementIsArgumentBuffer;
     _Bool _isConstantBuffer;
+    _Bool _doRetain;
 }
 
 - (unsigned long long)dataSize;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)dataType;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (id)elementArrayType;
+- (id)structType;
 - (id)elementStructType;
 - (_Bool)elementIsIndirectArgumentBuffer;
 - (_Bool)elementIsArgumentBuffer;
@@ -36,6 +38,7 @@ __attribute__((visibility("hidden")))
 - (id)elementTypeDescription;
 - (void)dealloc;
 - (id)initWithElementType:(unsigned long long)arg1 elementTypeDescription:(id)arg2 access:(unsigned long long)arg3 alignment:(unsigned long long)arg4 dataSize:(unsigned long long)arg5 elementIsIndirectArgumentBuffer:(_Bool)arg6 isConstantBuffer:(_Bool)arg7;
+- (id)initWithElementType:(unsigned long long)arg1 elementTypeDescription:(id)arg2 access:(unsigned long long)arg3 alignment:(unsigned long long)arg4 dataSize:(unsigned long long)arg5 elementIsIndirectArgumentBuffer:(_Bool)arg6 isConstantBuffer:(_Bool)arg7 doRetain:(_Bool)arg8;
 
 @end
 

@@ -7,10 +7,9 @@
 #import <Foundation/NSAttributedString.h>
 
 @interface NSAttributedString (ICNFMCFontAdditions)
-+ (double)headerFontSize;
-+ (id)fixedPitchAttributes;
-+ (id)headerAttributes;
-+ (id)boldGrayHeaderAttributes;
-+ (void)resetMimeHeaderAttributes;
++ (double)ic_headerFontSize;
++ (id)ic_fixedPitchAttributes;
++ (id)ic_headerAttributes;
++ (id)ic_boldGrayHeaderAttributes;
 @end
 

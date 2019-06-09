@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, UIView;
 
 @interface WKInterfaceObject : NSObject
 {
     NSString *_interfaceProperty;
+    UIView *__interfaceView;
     NSString *_viewControllerID;
     NSString *_propertyIndex;
     int _tableIndex;
@@ -21,6 +22,7 @@
 @property(nonatomic) int tableIndex; // @synthesize tableIndex=_tableIndex;
 @property(retain, nonatomic) NSString *propertyIndex; // @synthesize propertyIndex=_propertyIndex;
 @property(copy, nonatomic) NSString *viewControllerID; // @synthesize viewControllerID=_viewControllerID;
+@property(retain, nonatomic) UIView *_interfaceView; // @synthesize _interfaceView=__interfaceView;
 @property(copy, nonatomic) NSString *interfaceProperty; // @synthesize interfaceProperty=_interfaceProperty;
 - (void).cxx_destruct;
 - (void)setSemanticContentAttribute:(int)arg1;
@@ -42,7 +44,9 @@
 - (void)_setImage:(id)arg1 forProperty:(id)arg2;
 - (void)_setImageReference:(id)arg1 forProperty:(id)arg2;
 - (void)didRegisterWithRemoteInterface;
+- (void)_setInterfaceController:(id)arg1;
 - (void)_setupWithDescription:(id)arg1 forController:(id)arg2;
+- (id)_initForDynamicCreationWithInterfaceProperty:(id)arg1;
 - (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(int)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5;
 - (id)init;
 - (void)setAccessibilityImageRegions:(id)arg1;

@@ -10,6 +10,7 @@
 {
 }
 
++ (void)resetTimerDefaults;
 + (id)recentCustomDurations;
 + (void)_updateCustomRecents:(double)arg1;
 + (id)defaultPresetDurations;

@@ -13,6 +13,7 @@
 + (id)customLayerErrorWithUnderlyingError:(id)arg1 withString:(id)arg2;
 + (id)IOErrorWithString:(id)arg1;
 + (id)featureTypeErrorWithString:(id)arg1;
++ (id)updateErrorWithString:(id)arg1;
 + (id)genericErrorWithString:(id)arg1;
 + (id)errorWithCode:(int)arg1 string:(id)arg2;
 + (id)errorWithCode:(int)arg1 underlyingError:(id)arg2 string:(id)arg3;

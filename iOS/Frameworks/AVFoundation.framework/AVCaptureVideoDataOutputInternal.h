@@ -6,22 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage, NSDictionary;
-@protocol OS_dispatch_queue;
+@class AVCaptureDataOutputDelegateCallbackHelper, AVWeakReference, NSArray, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureVideoDataOutputInternal : NSObject
 {
     AVWeakReference *weakReference;
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    AVWeakReferencingDelegateStorage *delegateOverrideStorage;
     NSDictionary *videoSettings;
+    NSDictionary *clientVideoSettings;
     CDStruct_1b6d18a9 deprecatedMinFrameDuration;
     _Bool alwaysDiscardsLateVideoFrames;
+    _Bool automaticallyConfiguresOutputBufferDimensions;
+    _Bool deliversPreviewSizedOutputBuffers;
     _Bool videoSettingsDimensionsOverrideEnabled;
-    NSObject<OS_dispatch_queue> *bufferQueue;
-    struct OpaqueFigSimpleMutex *queueMutex;
-    void *remoteQueueReceiver;
-    void *localQueue;
+    NSArray *availableVideoCVPixelFormatTypes;
+    AVCaptureDataOutputDelegateCallbackHelper *delegateCallbackHelper;
 }
 
 - (void)dealloc;

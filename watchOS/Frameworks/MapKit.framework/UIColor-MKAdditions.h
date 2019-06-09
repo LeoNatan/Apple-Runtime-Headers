@@ -10,8 +10,17 @@
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
++ (id)_mapkit_colorForTransitLine:(id)arg1;
++ (_Bool)_maps_getRed:(out float *)arg1 green:(out float *)arg2 blue:(out float *)arg3 fromHue:(float)arg4 saturation:(float)arg5 value:(float)arg6;
++ (_Bool)_getColorComponent:(float *)arg1 fromSubString:(id)arg2;
++ (id)_maps_colorFromHexString:(id)arg1;
++ (id)_mk_nanoPuckColor;
++ (id)_mk_nanoLightTextColor;
++ (id)_mk_nanoKeyLineColor;
++ (id)_mk_nanoBlue;
 - (id)_mapkit_blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
 - (_Bool)_mapkit_getRed:(float *)arg1 green:(float *)arg2 blue:(float *)arg3 alpha:(float *)arg4;
 - (_Bool)_mapkit_isWhite;
+- (id)_maps_hexString;
 @end
 

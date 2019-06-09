@@ -38,7 +38,6 @@
 - (void)_setTransformRamps:(id)arg1;
 - (void)setTrackID:(int)arg1;
 @property(readonly, nonatomic) int trackID;
-- (void)finalize;
 - (void)dealloc;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

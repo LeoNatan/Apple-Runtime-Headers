@@ -15,13 +15,14 @@
 + (id)truePredicate;
 + (id)falsePredicate;
 + (id)booleanPredicateWithValue:(_Bool)arg1;
++ (id)disjunctionWithPredicate:(id)arg1 otherPredicate:(id)arg2;
 + (id)compoundPredicateWithPredicate:(id)arg1 otherPredicate:(id)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isCompatibleWithPredicate:(id)arg1;
 - (id)SQLJoinClausesForEntityClass:(Class)arg1;
 - (id)SQLForEntityClass:(Class)arg1;
-- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(inout int *)arg2;
+- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(int *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -22,6 +22,7 @@
             unsigned int uploading:1;
             unsigned int waitingForUpdate:1;
             unsigned int updating:1;
+            unsigned int confirmed:1;
         } status;
         unsigned int packedStatus;
     } _status;
@@ -38,6 +39,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecord:(id)arg1 generation:(unsigned long long)arg2;
+@property(nonatomic, getter=isConfirmed) _Bool confirmed;
 @property(nonatomic, getter=isUpdating) _Bool updating;
 @property(nonatomic, getter=isWaitingForUpdate) _Bool waitingForUpdate;
 @property(nonatomic, getter=isUploading) _Bool uploading;

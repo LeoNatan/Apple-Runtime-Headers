@@ -17,6 +17,7 @@
     CDUnknownBlockType _participantTapped;
     CDUnknownBlockType _participantRemoved;
     CDUnknownBlockType _addInviteesTapped;
+    CDUnknownBlockType _participantSetRole;
     NSMutableArray *_participants;
     EKEvent *_event;
     NSString *_cachedInviteeCellReuseIdentifier;
@@ -42,6 +43,7 @@
 @property(nonatomic) _Bool canSeeAttendeeStatuses; // @synthesize canSeeAttendeeStatuses=_canSeeAttendeeStatuses;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) NSMutableArray *participants; // @synthesize participants=_participants;
+@property(copy, nonatomic) CDUnknownBlockType participantSetRole; // @synthesize participantSetRole=_participantSetRole;
 @property(copy, nonatomic) CDUnknownBlockType addInviteesTapped; // @synthesize addInviteesTapped=_addInviteesTapped;
 @property(copy, nonatomic) CDUnknownBlockType participantRemoved; // @synthesize participantRemoved=_participantRemoved;
 @property(copy, nonatomic) CDUnknownBlockType participantTapped; // @synthesize participantTapped=_participantTapped;
@@ -61,6 +63,7 @@
 - (void)_setAvailabilityType:(id)arg1 forParticipantAddress:(id)arg2;
 - (id)_lookUpAvailabilityTypeForParticipantAddress:(id)arg1;
 - (void)updateWithEvent:(id)arg1 editable:(_Bool)arg2 fromDetail:(_Bool)arg3;
+- (id)actionsForRow:(id)arg1;
 - (void)cancelOutstandingOperations;
 - (double)estimatedHeightForRow:(id)arg1;
 - (void)commitEditingStyle:(long long)arg1 forRow:(id)arg2;

@@ -13,7 +13,6 @@
 {
     NSString *_userInterfaceItemIdentifier;
     NSDockTile *dockTile;
-    struct CGRect standardFrame;
     unsigned int _rememberedFirstResponderState;
     NSViewHierarchyLock *viewHierarchyLock;
     NSUndoManager *undoManager;
@@ -46,14 +45,13 @@
         unsigned int forceActiveControls:1;
         unsigned int minimized:1;
         unsigned int keepChildrenAttached:1;
-        unsigned int restoreLocation:1;
         unsigned int explicitCollectionBehavior:1;
         unsigned int resigningKeyFocusOnly:1;
         unsigned int miniWindowTitleIsAGuess:1;
         unsigned int dontSyncSurfaceToView:1;
         unsigned int windowPositionIsStale:1;
         unsigned int handlingDisplayChanged:1;
-        unsigned int resizeCornerShown:1;
+        unsigned int screenUpdatedDuringDisplayChange:1;
         unsigned int locationIsTemporary:1;
         unsigned int canHide:1;
         unsigned int isOpaque:1;
@@ -64,7 +62,6 @@
         unsigned int omouseupPending:1;
         unsigned int borderViewHasDisplayName:1;
         unsigned int delegateReturnsFieldEditor:1;
-        unsigned int needsConstraint:1;
         unsigned int ownsRealWindow:1;
         unsigned int mightBeMovingClientSide:1;
         unsigned int defaultButtonSuppressed:1;
@@ -177,11 +174,6 @@
         unsigned int hasWeakTitleBindingToContentViewController:1;
         unsigned int titleVisibility:3;
         unsigned int autoFlatteningDisabled:1;
-        unsigned int handlingResizeInitiatedByDock:1;
-        unsigned int shadowHiddenByDock:1;
-        unsigned int respectDockResizeEdges:1;
-        unsigned int dockManagedResizeEdges:4;
-        unsigned int sendResizeNotificationsToDock:1;
         unsigned int minFullScreenContentSizeSet:1;
         unsigned int maxFullScreenContentSizeSet:1;
         unsigned int measuringMinFullScreenContentSize:1;
@@ -201,7 +193,6 @@
         unsigned int ignoreWindowStackController:1;
         unsigned int isPerformingRestoration:1;
         unsigned int hasTimeMachineDelegate:1;
-        unsigned int windowMoveDisabled:1;
         unsigned int layoutUpdateObserverScheduled:1;
         unsigned int RTLLayoutDirectionWasSet:1;
         unsigned int windowWillJoinActiveFullScreenSpace:1;

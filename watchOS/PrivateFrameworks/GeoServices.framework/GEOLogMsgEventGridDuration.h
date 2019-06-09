@@ -12,22 +12,21 @@
 
 @interface GEOLogMsgEventGridDuration : PBCodable <NSCopying>
 {
+    NSMutableArray *_endStateErrorReasons;
     int _displayType;
     unsigned int _durationMs;
     int _endState;
-    NSMutableArray *_endStateErrorReasons;
     int _previousState;
     struct {
-        unsigned int displayType:1;
-        unsigned int durationMs:1;
-        unsigned int endState:1;
-        unsigned int previousState:1;
-    } _has;
+        unsigned int has_displayType:1;
+        unsigned int has_durationMs:1;
+        unsigned int has_endState:1;
+        unsigned int has_previousState:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)endStateErrorReasonType;
-@property(retain, nonatomic) NSMutableArray *endStateErrorReasons; // @synthesize endStateErrorReasons=_endStateErrorReasons;
-@property(nonatomic) unsigned int durationMs; // @synthesize durationMs=_durationMs;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -36,25 +35,28 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsDisplayType:(id)arg1;
 - (id)displayTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasDisplayType;
-@property(nonatomic) int displayType; // @synthesize displayType=_displayType;
+@property(nonatomic) int displayType;
 - (int)StringAsPreviousState:(id)arg1;
 - (id)previousStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasPreviousState;
-@property(nonatomic) int previousState; // @synthesize previousState=_previousState;
+@property(nonatomic) int previousState;
 - (id)endStateErrorReasonAtIndex:(unsigned int)arg1;
 - (unsigned int)endStateErrorReasonsCount;
 - (void)addEndStateErrorReason:(id)arg1;
 - (void)clearEndStateErrorReasons;
+@property(retain, nonatomic) NSMutableArray *endStateErrorReasons;
 - (int)StringAsEndState:(id)arg1;
 - (id)endStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasEndState;
-@property(nonatomic) int endState; // @synthesize endState=_endState;
+@property(nonatomic) int endState;
 @property(nonatomic) _Bool hasDurationMs;
+@property(nonatomic) unsigned int durationMs;
 
 @end
 

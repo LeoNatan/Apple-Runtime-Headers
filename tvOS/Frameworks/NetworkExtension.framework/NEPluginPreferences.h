@@ -14,8 +14,6 @@
     NSString *_pluginType;
 }
 
-+ (_Bool)isEnabledForPluginType:(id)arg1 applicationRemoved:(_Bool)arg2;
-+ (_Bool)isAppInstalled:(id)arg1;
 + (id)copyIdentifiersOfInstalledVPNApps;
 + (void)removePreferencesForPluginType:(id)arg1;
 @property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
@@ -23,10 +21,7 @@
 - (void).cxx_destruct;
 - (struct __CFDictionary *)copyPersistentDataOfType:(long long)arg1 configurationIdentifier:(id)arg2;
 - (_Bool)setPreferences:(struct __CFDictionary *)arg1 ofType:(long long)arg2 configurationIdentifier:(id)arg3;
-- (_Bool)isFlagSet:(struct __CFString *)arg1;
 - (id)copyAppURL;
-- (void)setPluginTypeEnabled:(_Bool)arg1 appURLData:(id)arg2;
-- (_Bool)isPluginTypeEnabled;
 - (void)dealloc;
 - (id)initWithPluginType:(id)arg1;
 

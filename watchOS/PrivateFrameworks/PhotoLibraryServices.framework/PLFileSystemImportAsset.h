@@ -6,24 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableSet;
+@class NSMutableSet, NSSet, NSString, PLAssetJournalEntryPayload;
 @protocol PLAlbumProtocol;
 
 @interface PLFileSystemImportAsset : NSObject
 {
+    NSString *_path;
+    _Bool _pathContainsDCIM;
     NSMutableSet *_urls;
     struct NSObject *_destinationAlbum;
-    int assetKind;
+    int _assetKind;
+    PLAssetJournalEntryPayload *_assetPayload;
 }
 
-@property(nonatomic) int assetKind; // @synthesize assetKind;
+@property(readonly, nonatomic) PLAssetJournalEntryPayload *assetPayload; // @synthesize assetPayload=_assetPayload;
+@property(nonatomic) int assetKind; // @synthesize assetKind=_assetKind;
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *destinationAlbum; // @synthesize destinationAlbum=_destinationAlbum;
-@property(retain, nonatomic) NSMutableSet *urls; // @synthesize urls=_urls;
+- (void).cxx_destruct;
+- (void)addURLs:(id)arg1;
+- (void)addURL:(id)arg1;
+@property(readonly, nonatomic) NSSet *urls;
 - (id)description;
 - (int)compare:(id)arg1;
-- (void)dealloc;
 - (_Bool)isCameraKit;
-- (id)initWithURLs:(id)arg1 destinationAlbum:(struct NSObject *)arg2 assetKind:(int)arg3;
+- (id)initWithAssetPayload:(id)arg1;
+- (id)initWithDestinationAlbum:(struct NSObject *)arg1 assetKind:(int)arg2;
 
 @end
 

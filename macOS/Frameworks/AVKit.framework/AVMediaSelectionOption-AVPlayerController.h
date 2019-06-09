@@ -6,7 +6,11 @@
 
 #import <AVFoundation/AVMediaSelectionOption.h>
 
+@class NSString;
+
 @interface AVMediaSelectionOption (AVPlayerController)
++ (id)avkit_autoOption;
++ (id)avkit_offOption;
 - (long long)languageCompare:(id)arg1;
 @property(readonly, getter=isAuxiliary) BOOL auxiliary;
 @property(readonly, getter=isEasyReader) BOOL easyReader;
@@ -14,5 +18,9 @@
 @property(readonly, getter=isSDH) BOOL SDH;
 @property(readonly, getter=isMain) BOOL main;
 @property(readonly, getter=isAC3Only) BOOL AC3Only;
+- (id)avkit_title;
+@property(readonly) NSString *mediaRemoteIdentifier;
+@property(readonly) NSString *shortLocalizedDisplayName;
+@property(readonly) NSString *localizedDisplayName;
 @end
 

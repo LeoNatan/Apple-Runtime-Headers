@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
-- (id)imageNameForUpdate:(id)arg1;
+- (id)systemImageNameForUpdate:(id)arg1;
 - (id)indicatorEntryKey;
 
 @end

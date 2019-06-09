@@ -14,9 +14,11 @@
     NSImage *_cachedImage;
 }
 
-@property(readonly, nonatomic) unsigned long long imageDataFormat; // @dynamic imageDataFormat;
-@property(readonly, retain, nonatomic) NSData *imageData; // @dynamic imageData;
-@property(readonly, retain, nonatomic) NSImage *image; // @dynamic image;
+@property(retain, nonatomic) NSImage *cachedImage; // @synthesize cachedImage=_cachedImage;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) unsigned long long imageDataFormat;
+@property(readonly, retain, nonatomic) NSData *imageData;
+@property(readonly, retain, nonatomic) NSImage *image;
 - (void)dealloc;
 - (id)initWithImpl:(unique_ptr_33c325f0 *)arg1;
 

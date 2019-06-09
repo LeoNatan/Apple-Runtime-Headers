@@ -13,12 +13,14 @@
 
 @interface EKUIProposedTimeEventViewController : EKEventViewController <EKEditItemViewControllerProtocol>
 {
+    CDUnknownBlockType _completionBlock;
     EKCalendarEventInvitationNotificationAttendee *_proposedTimeAttendee;
     EKUIRecurrenceAlertController *_recurrenceAlertController;
 }
 
 @property(retain) EKUIRecurrenceAlertController *recurrenceAlertController; // @synthesize recurrenceAlertController=_recurrenceAlertController;
 @property(retain) EKCalendarEventInvitationNotificationAttendee *proposedTimeAttendee; // @synthesize proposedTimeAttendee=_proposedTimeAttendee;
+@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
 - (void)invokeAction:(int)arg1;
 - (id)_statusButtons;

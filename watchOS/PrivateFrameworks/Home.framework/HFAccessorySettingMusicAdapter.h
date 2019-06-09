@@ -14,11 +14,12 @@
 {
 }
 
-- (void)configureSection:(id)arg1 forEntity:(id)arg2;
++ (_Bool)areAllAccessoriesLoggedOut:(id)arg1;
++ (_Bool)areAllAccessoriesLoggedIntoSameAccount:(id)arg1;
 - (_Bool)shouldShowSettingsEntity:(id)arg1;
-- (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
-- (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 mode:(unsigned int)arg3 updateHandler:(CDUnknownBlockType)arg4;
-- (id)initWithMediaProfileContainer:(id)arg1 mode:(unsigned int)arg2;
+- (id)initWithHomeKitSettingsVendor:(id)arg1 keyPaths:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
+- (id)initWithHomeKitSettingsVendor:(id)arg1 keyPaths:(id)arg2 mode:(unsigned int)arg3 updateHandler:(CDUnknownBlockType)arg4;
+- (id)initWithHomeKitSettingsVendor:(id)arg1 mode:(unsigned int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

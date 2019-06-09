@@ -6,39 +6,77 @@
 
 #import <Photos/PHCollection.h>
 
-@class NSArray, NSDate, NSString;
+@class NSArray, NSDate, NSManagedObjectID, NSString, PHQuery;
 
 @interface PHCollectionList : PHCollection
 {
-    NSString *_localizedTitle;
-    NSString *_transientIdentifier;
     long long _collectionListType;
     long long _collectionListSubtype;
+    NSString *_localizedTitle;
     NSDate *_startDate;
     NSDate *_endDate;
     NSArray *_localizedLocationNames;
+    NSArray *_collections;
+    PHQuery *_query;
+    NSString *_transientIdentifier;
+    NSManagedObjectID *_parentFolderObjectID;
+    int _plAlbumKind;
+    CDUnknownBlockType _childCollectionsSortingComparator;
+    unsigned long long _unreadAssetCollectionsCount;
+    unsigned long long _estimatedChildCollectionCount;
 }
 
-+ (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2;
-+ (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2;
-+ (id)fetchMomentListsWithSubtype:(long long)arg1 options:(id)arg2;
-+ (id)fetchMomentListsWithSubtype:(long long)arg1 containingMoment:(id)arg2 options:(id)arg3;
-+ (id)fetchCollectionListsWithType:(long long)arg1 subtype:(long long)arg2 options:(id)arg3;
-+ (id)fetchCollectionListsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
-+ (id)fetchCollectionListsContainingCollection:(id)arg1 options:(id)arg2;
++ (id)transientCollectionListWithAssetCollectionsFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientCollectionListWithAssetCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientCollectionListWithAssetCollectionsFetchResult:(id)arg1 title:(id)arg2;
++ (id)transientCollectionListWithAssetCollections:(id)arg1 title:(id)arg2;
 + (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2;
++ (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2;
++ (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3 photoLibrary:(id)arg4;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
++ (id)fetchMomentListsWithSubtype:(long long)arg1 options:(id)arg2;
++ (id)fetchMomentListsWithSubtype:(long long)arg1 containingMoment:(id)arg2 options:(id)arg3;
++ (id)fetchRootProjectCollectionListWithOptions:(id)arg1;
++ (id)fetchRootAlbumCollectionListWithOptions:(id)arg1;
++ (id)fetchCollectionListsWithType:(long long)arg1 subtype:(long long)arg2 options:(id)arg3;
++ (id)fetchCollectionListsWithType:(long long)arg1 localIdentifiers:(id)arg2 options:(id)arg3;
++ (id)fetchCollectionListsWithCloudIdentifiers:(id)arg1 options:(id)arg2;
++ (id)fetchCollectionListsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)fetchCollectionListsContainingCollection:(id)arg1 options:(id)arg2;
++ (id)entityKeyMap;
 + (id)identifierCode;
++ (BOOL)managedObjectSupportsTrashedState;
++ (id)fetchType;
++ (id)managedEntityName;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
+@property(readonly, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
+@property(readonly, nonatomic) unsigned long long estimatedChildCollectionCount; // @synthesize estimatedChildCollectionCount=_estimatedChildCollectionCount;
+@property(readonly, nonatomic) unsigned long long unreadAssetCollectionsCount; // @synthesize unreadAssetCollectionsCount=_unreadAssetCollectionsCount;
+@property(readonly, copy, nonatomic) CDUnknownBlockType childCollectionsSortingComparator; // @synthesize childCollectionsSortingComparator=_childCollectionsSortingComparator;
+@property(readonly, nonatomic) PHQuery *query; // @synthesize query=_query;
+@property(readonly, nonatomic) long long collectionListSubtype; // @synthesize collectionListSubtype=_collectionListSubtype;
+@property(readonly, nonatomic) long long collectionListType; // @synthesize collectionListType=_collectionListType;
+@property(readonly, nonatomic) NSArray *collections; // @synthesize collections=_collections;
 @property(readonly, nonatomic) NSArray *localizedLocationNames; // @synthesize localizedLocationNames=_localizedLocationNames;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-@property(readonly, nonatomic) long long collectionListSubtype; // @synthesize collectionListSubtype=_collectionListSubtype;
-@property(readonly, nonatomic) long long collectionListType; // @synthesize collectionListType=_collectionListType;
 - (void).cxx_destruct;
-- (id)transientIdentifier;
-- (id)localizedTitle;
+- (id)description;
+- (id)initTransientWithCollections:(id)arg1 orQuery:(id)arg2 title:(id)arg3 identifier:(id)arg4 photoLibrary:(id)arg5;
+- (id)effectiveCustomSortKey;
+- (id)parentFolderID;
+- (BOOL)hasLocationInfo;
+@property(readonly, nonatomic) BOOL keyCollectionsAtEnd;
+- (unsigned long long)collectionFixedOrderPriority;
+- (BOOL)collectionHasFixedOrder;
+- (BOOL)canPerformEditOperation:(long long)arg1;
 - (BOOL)canContainCollections;
-- (id)initWithModel:(id)arg1 photoLibrary:(id)arg2;
+- (id)localizedTitle;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (Class)changeRequestClass;
+- (id)pl_assetContainerList;
 
 @end
 

@@ -54,6 +54,8 @@
 - (void)adjustVolumeValue:(float)arg1;
 - (void)reloadWarning;
 - (void)reload;
+- (id)_reloadQueue;
+- (id)_mediaPlaybackVolumeAudioCategory;
 - (void)updateVolumeControlCapabilities:(unsigned int)arg1;
 - (void)updateVolume:(float)arg1;
 @property(readonly, nonatomic) _Bool applicationShouldOverrideHardwareVolumeBehavior;

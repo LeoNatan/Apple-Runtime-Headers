@@ -33,12 +33,11 @@
 - (void)didSelectContactAutoFillSet:(int)arg1 hasPreviouslyCustomizedSet:(_Bool)arg2;
 - (void)didShowContactAutoFillSetsWithMeCardSets:(_Bool)arg1 showingPreviouslyCustomizedSet:(_Bool)arg2;
 - (void)didAutoFillCustomContactSetShowingMeCard:(_Bool)arg1;
-- (void)safeBrowsingUserActionAfterSeeingWarning:(int)arg1;
-- (void)safeBrowsingWarningPageShown:(int)arg1;
 - (void)didReceiveInvalidMessageFromWebProcess:(id)arg1;
 - (void)pageLoadCompleted:(unsigned int)arg1 withErrorCode:(int)arg2;
 - (void)pageLoadStarted:(unsigned int)arg1;
 - (void)pageLoadCompleted:(unsigned int)arg1;
+- (void)performOnAnalyticsQueueWithDelay:(long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)registerQueriableMetric:(unsigned long)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)initWithQueue:(id)arg1;
 

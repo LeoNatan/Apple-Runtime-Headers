@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)assertionManager:(id)arg1 assertionInvalidated:(id)arg2;
 - (id)takeMaintenanceSuspensionAssertionForOwner:(id)arg1;
+- (void)cancelAllOperations;
 - (void)enqueueMaintenanceOperation:(id)arg1;
 @property(readonly) _Bool suspended;
 - (id)init;

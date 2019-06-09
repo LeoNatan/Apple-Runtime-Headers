@@ -27,14 +27,11 @@
 + (id)nfl_sponsoredStoryTextcolor;
 + (id)nfl_subscriptionOnlyTextcolor;
 + (id)nfl_subscriptionOnlyStickercolor;
-+ (id)nfl_red;
-+ (id)nfl_gray;
-+ (id)nfl_blue;
-+ (id)nfl_green;
-+ (id)nfl_yellow;
 + (id)nfl_keyHighlightedColor;
 + (id)nfl_keyColor;
 + (id)nfl_defaultSystemTintColor;
++ (id)nfl_dynamicColor:(id)arg1 withDarkStyleVariant:(id)arg2;
++ (id)nfl_colorWithHexString:(id)arg1 darkStyleHexString:(id)arg2;
 + (id)nfl_colorWithHexString:(id)arg1;
 - (id)nfl_colorOrBlackIfTooBright;
 @property(readonly, nonatomic) double brightness;

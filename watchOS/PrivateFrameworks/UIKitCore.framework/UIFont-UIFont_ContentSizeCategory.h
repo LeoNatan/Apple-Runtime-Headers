@@ -10,5 +10,6 @@
 + (id)preferredContentSizeCategory;
 + (id)_preferredContentSizeCategory:(unsigned int)arg1;
 + (id)_normalizedContentSizeCategory:(id)arg1 default:(_Bool)arg2;
++ (id)_ui_bulletFontForFont:(id)arg1;
 @end
 

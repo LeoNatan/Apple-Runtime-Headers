@@ -15,12 +15,18 @@
     _Bool _allowsCellularAccess;
     _Bool _canUseLocalCacheServer;
     _Bool _discretionary;
+    _Bool _allowsExpensiveAccess;
+    _Bool _requiresPowerPluggedIn;
+    _Bool _prefersInfraWiFi;
     long long _timeoutIntervalForResource;
     NSMutableDictionary *_additionalServerParams;
     NSString *_sessionId;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool prefersInfraWiFi; // @synthesize prefersInfraWiFi=_prefersInfraWiFi;
+@property(nonatomic) _Bool requiresPowerPluggedIn; // @synthesize requiresPowerPluggedIn=_requiresPowerPluggedIn;
+@property(nonatomic) _Bool allowsExpensiveAccess; // @synthesize allowsExpensiveAccess=_allowsExpensiveAccess;
 @property(retain, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
 @property(nonatomic) _Bool discretionary; // @synthesize discretionary=_discretionary;
 @property(retain, nonatomic) NSMutableDictionary *additionalServerParams; // @synthesize additionalServerParams=_additionalServerParams;

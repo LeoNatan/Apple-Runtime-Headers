@@ -10,6 +10,7 @@
 
 @class NSString, SKUIClientContext, SKUIProductPageItem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftActivity : UIActivity <SKUIGiftViewControllerDelegate>
 {
     SKUIClientContext *_clientContext;

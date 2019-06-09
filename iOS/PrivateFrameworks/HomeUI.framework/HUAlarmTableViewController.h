@@ -50,7 +50,6 @@
 - (void)_numberOfItemsDidChangeAnimated:(_Bool)arg1;
 - (void)_layoutNoItemsLabel;
 - (id)backgroundView;
-- (void)_doneAction:(id)arg1;
 - (void)_editDoneAction:(id)arg1;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)alarmEditController:(id)arg1 didDeleteAlarm:(id)arg2;
@@ -58,7 +57,6 @@
 - (void)alarmEditController:(id)arg1 didAddAlarm:(id)arg2;
 - (void)alarmEditControllerDidCancel:(id)arg1;
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
-- (id)_tableView:(id)arg1 templateLayoutCellForCellsWithReuseIdentifier:(id)arg2;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)presentViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
@@ -68,6 +66,7 @@
 - (void)_showAddView:(id)arg1;
 - (_Bool)alwaysUseDeltaTableViewUpdatesAfterViewHasAppeared;
 - (_Bool)shouldHideHeaderAboveSection:(long long)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <coreroutine/RTCoreDataTransformable-Protocol.h>
+#import <coreroutine/RTCoreDataReadable-Protocol.h>
+#import <coreroutine/RTCoreDataWritable-Protocol.h>
 
 @class NSDate, NSString, NSUUID, RTMapItem;
 
-@interface RTLearnedPlace : NSObject <RTCoreDataTransformable>
+@interface RTLearnedPlace : NSObject <RTCoreDataReadable, RTCoreDataWritable>
 {
     NSUUID *_identifier;
     unsigned long long _type;
@@ -21,8 +22,14 @@
     NSDate *_expirationDate;
 }
 
++ (unsigned long long)placeTypeFromLocationOfInterestType:(long long)arg1;
 + (id)placeTypeSourceToString:(unsigned long long)arg1;
 + (id)placeTypeToString:(unsigned long long)arg1;
++ (_Bool)isTypeSourceVaild:(unsigned long long)arg1;
++ (_Bool)learnedPlaceTypeIsValid:(unsigned long long)arg1;
++ (id)createWithLearnedLocationOfInterestMO:(id)arg1;
++ (id)createWithLearnedPlaceMO:(id)arg1;
++ (id)createWithManagedObject:(id)arg1;
 + (unsigned long long)placeTypeSourceFromTypeSource:(long long)arg1;
 + (unsigned long long)placeTypeFromType:(long long)arg1;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
@@ -40,8 +47,6 @@
 - (id)init;
 - (void)updateManagedObject:(id)arg1;
 - (id)managedObjectWithContext:(id)arg1;
-- (id)initWithPlaceMO:(id)arg1;
-- (id)initWithLocationOfInterestMO:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

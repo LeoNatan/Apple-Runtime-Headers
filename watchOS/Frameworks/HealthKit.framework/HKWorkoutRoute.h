@@ -20,7 +20,7 @@
 - (_Bool)_requiresPrivateEntitlementForQueries;
 - (id)_valueDescription;
 - (id)_validateSample;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
 
 @end
 

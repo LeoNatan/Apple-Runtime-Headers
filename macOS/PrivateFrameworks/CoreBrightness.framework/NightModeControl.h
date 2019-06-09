@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
     BOOL _displayOff;
     int _logLevel;
     CDUnknownBlockType _callbackBlock;
-    CDStruct_768fa5c4 _status;
+    CDStruct_d991f265 _status;
     CDStruct_6cee55f3 _backupSchedule;
     BOOL _statusUpdated;
     NSString *_currentSunriseKey;
@@ -111,8 +111,8 @@ __attribute__((visibility("hidden")))
 - (void)updateStatusDictionaryWithValue:(id)arg1 forKey:(id)arg2;
 - (id)copyStatusDictionaryFromPrefs;
 - (void)saveStatusToPrefs:(id)arg1;
-- (id)copyDictionaryFromStatus:(CDStruct_768fa5c4 *)arg1;
-- (BOOL)parseStatusDictionary:(id)arg1 intoStruct:(CDStruct_768fa5c4 *)arg2 shouldUpdatePrefs:(char *)arg3;
+- (id)copyDictionaryFromStatus:(CDStruct_d991f265 *)arg1;
+- (BOOL)parseStatusDictionary:(id)arg1 intoStruct:(CDStruct_d991f265 *)arg2 shouldUpdatePrefs:(char *)arg3;
 
 @end
 

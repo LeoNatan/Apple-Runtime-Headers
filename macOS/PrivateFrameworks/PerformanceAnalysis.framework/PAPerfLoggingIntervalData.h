@@ -50,9 +50,6 @@
 @property(retain, nonatomic) NSString *intervalType; // @synthesize intervalType=_intervalType;
 - (void)printTimelineToMutableData:(id)arg1;
 - (void)logIntervalData:(BOOL)arg1;
-- (void)addIntervalDataToMessageTracerMessage:(struct __asl_object_s *)arg1;
-- (void)_addNSStringDataType:(id)arg1 andDoubleValue:(double)arg2 toMessageTracerMessage:(struct __asl_object_s *)arg3;
-- (char *)_newMessageTracerIntervalSpecificCStringKeyForNSStringDataType:(id)arg1;
 - (void)_logPAPerfLoggingDataValue:(double)arg1 uom:(id)arg2 doLocalLogging:(BOOL)arg3;
 - (id)description;
 - (void)finalize;

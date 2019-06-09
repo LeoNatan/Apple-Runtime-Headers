@@ -27,6 +27,7 @@
 + (id)webScriptNameForKey:(const char *)arg1;
 + (_Bool)isSelectorExcludedFromWebScript:(SEL)arg1;
 + (_Bool)isKeyExcludedFromWebScript:(const char *)arg1;
+- (void).cxx_destruct;
 - (void)finalizeForWebScript;
 @property(readonly) NSMutableArray *scriptAttributeKeys;
 - (id)_copyListenersForName:(id)arg1;

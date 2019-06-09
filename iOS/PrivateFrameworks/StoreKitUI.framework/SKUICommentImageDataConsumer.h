@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIStyledImageDataConsumer.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUICommentImageDataConsumer : SKUIStyledImageDataConsumer
 {
     CDUnknownBlockType _completionBlock;

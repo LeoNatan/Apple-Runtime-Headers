@@ -67,6 +67,8 @@
 - (id)privateDirectoryWithSubType:(unsigned char)arg1 createIfNeeded:(BOOL)arg2 error:(id *)arg3;
 - (id)privateDirectoryWithSubType:(unsigned char)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3;
 - (id)privateDirectoryWithSubType:(unsigned char)arg1;
+- (id)pathsForExternalWriters;
+- (BOOL)createPathsForNewLibrariesWithError:(id *)arg1;
 - (id)pathsForPermissionCheck;
 - (id)pathsForClientAccess:(id)arg1;
 - (id)photoDirectoryWithType:(unsigned char)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3 createIfNeeded:(BOOL)arg4 error:(id *)arg5;
@@ -78,6 +80,7 @@
 - (id)photosAsideDatabasePath;
 - (id)photosCPLDatabasePath;
 - (id)photosDatabasePath;
+- (id)baseDirectoryForBundleScope:(unsigned char)arg1;
 - (id)convertPhotoLibraryPathType:(unsigned char)arg1;
 - (BOOL)createDirectoryOnceWithPath:(id)arg1 mask:(unsigned char)arg2 type:(unsigned char)arg3 error:(id *)arg4;
 - (BOOL)updateTimeMachineExclusionAttributeForExcludePath:(id)arg1 error:(id *)arg2;

@@ -51,6 +51,7 @@
 - (id)accessibilityLocalizationBundlePath;
 - (id)accessibilityLocalizationBundleID;
 - (id)accessibilityLocalizedStringKey;
+- (_Bool)accessibilityRespondsToUserInteraction;
 - (long long)indexOfAccessibilityElement:(id)arg1;
 - (id)accessibilityElementAtIndex:(long long)arg1;
 - (long long)accessibilityElementCount;

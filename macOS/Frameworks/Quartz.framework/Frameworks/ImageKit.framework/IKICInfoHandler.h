@@ -36,8 +36,8 @@ __attribute__((visibility("hidden")))
 - (void)addProcessInfo:(id)arg1;
 - (void)addAutoLaunchInfo:(id)arg1 devices:(id)arg2;
 - (void)addCurentDeviceInfo:(id)arg1 devices:(id)arg2;
-- (void)save:(id)arg1;
-- (void)refresh:(id)arg1;
+- (void)saveICInfo:(id)arg1;
+- (void)refreshICInfo:(id)arg1;
 - (void)installInView:(id)arg1;
 - (BOOL)infoEnabled;
 

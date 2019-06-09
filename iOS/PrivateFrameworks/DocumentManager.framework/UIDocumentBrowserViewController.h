@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIViewController.h>
 
-#import <DocumentManager/DOCAppearanceProtocol-Protocol.h>
+#import <DocumentManager/DOCAppearanceCustomization-Protocol.h>
 #import <DocumentManager/DOCHostDocumentBrowserViewControllerInterface-Protocol.h>
 #import <DocumentManager/DOCKeyCommandResponder-Protocol.h>
 #import <DocumentManager/DOCRemoteViewControllerDelegate-Protocol.h>
@@ -14,19 +14,16 @@
 #import <DocumentManager/NSCoding-Protocol.h>
 
 @class DOCAppearance, DOCConfiguration, DOCDocBrowserVC_UIActivityViewController, NSArray, NSOperationQueue, NSString, UIColor, UIView, _UIResilientRemoteViewContainerViewController;
-@protocol DOCServiceBrowserViewControllerProxy, DOCServiceDocumentBrowserViewControllerInterface, UIDocumentBrowserViewControllerDelegate;
+@protocol DOCServiceDocumentBrowserViewControllerInterface, UIDocumentBrowserViewControllerDelegate;
 
-@interface UIDocumentBrowserViewController : UIViewController <DOCHostDocumentBrowserViewControllerInterface, DOCRemoteViewControllerDelegate, DOCViewServiceErrorViewControllerDelegate, DOCKeyCommandResponder, DOCAppearanceProtocol, NSCoding>
+@interface UIDocumentBrowserViewController : UIViewController <DOCHostDocumentBrowserViewControllerInterface, DOCRemoteViewControllerDelegate, DOCViewServiceErrorViewControllerDelegate, DOCKeyCommandResponder, DOCAppearanceCustomization, NSCoding>
 {
-    _UIResilientRemoteViewContainerViewController *_remoteViewController;
-    DOCDocBrowserVC_UIActivityViewController *_activityViewController;
-    id <DOCServiceBrowserViewControllerProxy> _serviceBrowserProxy;
-    id <DOCServiceDocumentBrowserViewControllerInterface> _serviceProxy;
-    NSOperationQueue *_serviceQueue;
     _Bool _isDisplayingRemoteViewController;
     UIView *_trackingViewsContainer;
+    DOCAppearance *_appearance;
     _Bool _allowsDocumentCreation;
     _Bool _allowsPickingMultipleItems;
+    _Bool _shouldShowFileExtensions;
     _Bool _shouldDelayRemoteViewController;
     id <UIDocumentBrowserViewControllerDelegate> _delegate;
     NSArray *_additionalLeadingNavigationBarButtonItems;
@@ -36,8 +33,11 @@
     NSArray *_trailingBarButtonTrackingViews;
     NSArray *_remoteAdditionalLeadingNavigationBarButtonItems;
     NSArray *_remoteAdditionalTrailingNavigationBarButtonItems;
+    _UIResilientRemoteViewContainerViewController *_remoteViewController;
+    DOCDocBrowserVC_UIActivityViewController *_activityViewController;
+    id <DOCServiceDocumentBrowserViewControllerInterface> _serviceProxy;
+    NSOperationQueue *_serviceQueue;
     DOCConfiguration *_configuration;
-    DOCAppearance *_appearance;
     UIColor *_createButtonColor;
     UIColor *_badgeTintColor;
     UIColor *_inBrowserTintColor;
@@ -54,8 +54,11 @@
 @property(copy, nonatomic) UIColor *inBrowserTintColor; // @synthesize inBrowserTintColor=_inBrowserTintColor;
 @property(copy, nonatomic) UIColor *badgeTintColor; // @synthesize badgeTintColor=_badgeTintColor;
 @property(copy, nonatomic) UIColor *createButtonColor; // @synthesize createButtonColor=_createButtonColor;
-@property(readonly, nonatomic) DOCAppearance *appearance; // @synthesize appearance=_appearance;
 @property(retain, nonatomic) DOCConfiguration *configuration; // @synthesize configuration=_configuration;
+@property(retain, nonatomic) NSOperationQueue *serviceQueue; // @synthesize serviceQueue=_serviceQueue;
+@property(retain, nonatomic) id <DOCServiceDocumentBrowserViewControllerInterface> serviceProxy; // @synthesize serviceProxy=_serviceProxy;
+@property(nonatomic) __weak DOCDocBrowserVC_UIActivityViewController *activityViewController; // @synthesize activityViewController=_activityViewController;
+@property(retain, nonatomic) _UIResilientRemoteViewContainerViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) _Bool shouldDelayRemoteViewController; // @synthesize shouldDelayRemoteViewController=_shouldDelayRemoteViewController;
 @property(retain, nonatomic) NSArray *remoteAdditionalTrailingNavigationBarButtonItems; // @synthesize remoteAdditionalTrailingNavigationBarButtonItems=_remoteAdditionalTrailingNavigationBarButtonItems;
 @property(retain, nonatomic) NSArray *remoteAdditionalLeadingNavigationBarButtonItems; // @synthesize remoteAdditionalLeadingNavigationBarButtonItems=_remoteAdditionalLeadingNavigationBarButtonItems;
@@ -64,10 +67,13 @@
 @property(retain, nonatomic) NSArray *customActions; // @synthesize customActions=_customActions;
 @property(retain, nonatomic) NSArray *additionalTrailingNavigationBarButtonItems; // @synthesize additionalTrailingNavigationBarButtonItems=_additionalTrailingNavigationBarButtonItems;
 @property(retain, nonatomic) NSArray *additionalLeadingNavigationBarButtonItems; // @synthesize additionalLeadingNavigationBarButtonItems=_additionalLeadingNavigationBarButtonItems;
+@property(nonatomic) _Bool shouldShowFileExtensions; // @synthesize shouldShowFileExtensions=_shouldShowFileExtensions;
 @property(nonatomic) _Bool allowsPickingMultipleItems; // @synthesize allowsPickingMultipleItems=_allowsPickingMultipleItems;
 @property(nonatomic) _Bool allowsDocumentCreation; // @synthesize allowsDocumentCreation=_allowsDocumentCreation;
 @property(nonatomic) __weak id <UIDocumentBrowserViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)forwardHostSceneIdentifier:(id)arg1;
+- (_Bool)supportsRemovableFileProvidersForConfiguration:(id)arg1;
 - (void)_renameDocumentAtURL:(id)arg1 newName:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_didTriggerBarButtonWithUUID:(id)arg1;
 - (void)_updateRemoteBarButtonFrames:(id)arg1 forUUID:(id)arg2;
@@ -75,19 +81,21 @@
 - (void)_didImportDocumentAtURL:(id)arg1 toDestinationItem:(id)arg2;
 - (void)_didRequestDocumentCreationWithHandler:(CDUnknownBlockType)arg1;
 - (void)_didPickItems:(id)arg1;
-- (void)_didTriggerActionWithIdentifier:(id)arg1 onItems:(id)arg2;
+- (void)_didTriggerCustomActionWithIdentifier:(id)arg1 onItems:(id)arg2;
 - (void)_commitDocumentURLPreview:(id)arg1;
-- (void)_presentActivityViewControllerForItems:(id)arg1 withPopoverTracker:(id)arg2 sourceIsManaged:(_Bool)arg3;
+- (void)_presentActivityViewControllerForItems:(id)arg1 withPopoverTracker:(id)arg2 isContentManaged:(_Bool)arg3 additionalActivities:(id)arg4 activityProxy:(id)arg5;
+- (void)dismissingKeyCommandWasPerformed:(id)arg1;
 - (void)keyCommandWasPerformed:(id)arg1;
+- (_Bool)becomeFirstResponder;
 - (_Bool)canBecomeFirstResponder;
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)keyCommands;
 - (id)_sandboxingURLWrapperForURL:(id)arg1 readonly:(_Bool)arg2 error:(id *)arg3;
-- (void)_displayActivityControllerWithItems:(id)arg1 popoverTracker:(id)arg2 barButtonItem:(id)arg3 sourceIsManaged:(_Bool)arg4;
+- (void)_displayActivityControllerWithItems:(id)arg1 popoverTracker:(id)arg2 isContentManaged:(_Bool)arg3 additionalActivities:(id)arg4 activityProxy:(id)arg5;
 - (void)addOperationToServiceQueue:(CDUnknownBlockType)arg1;
 - (id)remoteBarButtonForUUID:(id)arg1;
 - (id)trackingViewForUUID:(id)arg1;
 - (void)getTrackingViews:(id *)arg1 remoteButtons:(id *)arg2 fromBarButtons:(id)arg3;
-- (void)updateBrowserProxyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)prepareItems:(id)arg1 forMode:(unsigned long long)arg2 usingBookmark:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)prepareItems:(id)arg1 usingBookmark:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (_Bool)_delegateRespondsToSelector:(SEL)arg1;
@@ -96,11 +104,14 @@
 - (void)_clearShownViewControllers;
 - (void)clearCurrentOpenInteraction;
 @property(nonatomic) unsigned long long browserUserInterfaceStyle; // @dynamic browserUserInterfaceStyle;
+- (void)setshouldShowFileExtensions:(_Bool)arg1;
+@property(retain, nonatomic) UIColor *backgroundTintColor;
 @property(copy, nonatomic) NSString *createButtonTitle;
+@property(copy, nonatomic) NSString *localizedCreateDocumentActionTitle;
 @property(nonatomic) double createButtonAspectRatio;
+@property(nonatomic) double defaultDocumentAspectRatio;
 @property(retain, nonatomic) NSArray *additionalToolbarButtonItems; // @dynamic additionalToolbarButtonItems;
 @property(readonly, copy, nonatomic) NSArray *allowedContentTypes;
-- (long long)preferredStatusBarStyle;
 - (void)didTapTryAgainInErrorViewController:(id)arg1;
 - (void)remoteViewController:(id)arg1 didTerminateViewServiceWithError:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -115,7 +126,7 @@
 - (void)revealDocumentAtURL:(id)arg1 importIfNeeded:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)revealDocumentAtURL:(id)arg1 shouldImport:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)updateAppearance:(id)arg1;
+- (void)effectiveAppearanceDidChange:(id)arg1;
 - (void)_displayRemoteControllerIfNeeded;
 - (void)_embedViewController:(id)arg1;
 - (void)_embedDocumentBrowserViewController;
@@ -126,11 +137,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initForOpeningFilesWithContentTypes:(id)arg1;
 - (id)init;
-- (void)prepareDocumentFromURL:(id)arg1 byMoving:(_Bool)arg2 toLocation:(id)arg3 completion:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) DOCAppearance *effectiveAppearance; // @dynamic effectiveAppearance;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

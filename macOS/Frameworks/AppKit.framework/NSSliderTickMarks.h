@@ -11,13 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface NSSliderTickMarks : NSView
 {
-    CDStruct_5a39c0a2 _drawingState;
+    CDStruct_c9beae75 _drawingState;
     id <NSSliderTickMarksDelegate> _delegate;
 }
 
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-@property CDStruct_5a39c0a2 drawingState;
+@property CDStruct_c9beae75 drawingState;
 - (BOOL)isFlipped;
 @property __weak id <NSSliderTickMarksDelegate> delegate;
 

@@ -8,19 +8,18 @@
 
 #import <CarKit/CARInputDeviceTouchpadDelegate-Protocol.h>
 
-@class NSArray, NSString;
-@protocol CARSessionCommandDelegate;
+@class CARSession, NSArray, NSString;
 
 @interface CARInputDeviceManager : NSObject <CARInputDeviceTouchpadDelegate>
 {
     NSArray *_inputDevices;
-    id <CARSessionCommandDelegate> _commandDelegate;
+    CARSession *_session;
 }
 
-@property(readonly, nonatomic) __weak id <CARSessionCommandDelegate> commandDelegate; // @synthesize commandDelegate=_commandDelegate;
+@property(readonly, nonatomic) __weak CARSession *session; // @synthesize session=_session;
 @property(readonly, nonatomic) NSArray *inputDevices; // @synthesize inputDevices=_inputDevices;
 - (void).cxx_destruct;
-- (id)_initWithInputDevices:(id)arg1 commandDelegate:(id)arg2;
+- (id)_initWithInputDevices:(id)arg1 session:(id)arg2;
 - (id)_touchpadSettingsFromVehicleInformation:(id)arg1;
 - (void)_updateTouchpadSettings:(id)arg1;
 - (id)_inputDeviceWithSenderID:(unsigned long long)arg1;
@@ -31,7 +30,7 @@
 - (void)vehicleInformationChanged:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)_generateInputDevicesWithEndpointInputDevices:(id)arg1 screenIDs:(id)arg2 vehicleInformation:(id)arg3;
-- (id)initWithEndpointInputDevices:(id)arg1 screenIDs:(id)arg2 vehicleInformation:(id)arg3 commandDelegate:(id)arg4;
+- (id)initWithEndpointInputDevices:(id)arg1 screenIDs:(id)arg2 vehicleInformation:(id)arg3 session:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

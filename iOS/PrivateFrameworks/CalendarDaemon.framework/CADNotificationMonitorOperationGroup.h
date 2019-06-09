@@ -13,8 +13,6 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (void)_logNotificationCountsForNotificationTypes:(id)arg1;
-+ (id)_stringForNotificationType:(int)arg1;
 + (id)whitelistedBundles;
 + (_Bool)requiresEventOrReminderAccess;
 + (_Bool)requiresReminderAccess;
@@ -25,9 +23,8 @@ __attribute__((visibility("hidden")))
 - (void)CADCalendar:(id)arg1 setAlertedWithError:(CDUnknownBlockType)arg2;
 - (void)CADEvent:(id)arg1 setAlertedWithError:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseGetInboxRepliedSectionItems:(CDUnknownBlockType)arg1;
-- (void)CADDatabaseGetReminderNotificationItems:(CDUnknownBlockType)arg1;
-- (_Bool)_event:(void *)arg1 hasOccurrenceEndingAfterDate:(double)arg2;
-- (void)CADDatabaseGetEventNotificationItems:(CDUnknownBlockType)arg1;
+- (void)CADDatabaseGetNotificationCountForSourceWithExternalIdentifier:(id)arg1 excludingDelegateSources:(_Bool)arg2 filteredByShowsNotificationsFlag:(_Bool)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)CADDatabaseGetEventNotificationItemsFilteredByShowsNotificationsFlag:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)CADDatabaseGetInviteReplyNotifications:(CDUnknownBlockType)arg1;
 - (void)CADDatabaseGetResourceChanges:(CDUnknownBlockType)arg1;
 - (void)CADCalendarSetClearedFromNotificationCenter:(id)arg1 error:(CDUnknownBlockType)arg2;

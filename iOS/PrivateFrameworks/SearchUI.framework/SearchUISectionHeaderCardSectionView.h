@@ -12,12 +12,13 @@
 {
 }
 
++ (int)separatorStyleForCardSection:(id)arg1;
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
 - (void)updateWithRowModel:(id)arg1;
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) TLKSectionHeaderView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) TLKSectionHeaderView *contentView; // @dynamic contentView;
 
 @end
 

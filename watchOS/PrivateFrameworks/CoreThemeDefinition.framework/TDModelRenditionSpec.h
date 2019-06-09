@@ -14,12 +14,13 @@
 
 + (id)fetchRequest;
 - (id)createCSIRepresentationWithCompression:(_Bool)arg1 colorSpaceID:(unsigned int)arg2 document:(id)arg3;
-- (void)processSubModelObjectsInDocument:(id)arg1;
-- (void)processMesh:(id)arg1 withParent:(id)arg2 parentKeySpec:(id)arg3 inDocument:(id)arg4;
+- (void)processModelObjectsInDocument:(id)arg1;
+- (void)processMesh:(id)arg1 withAssetMeshIndex:(unsigned int *)arg2 assetKeySpec:(id)arg3 inDocument:(id)arg4;
 
 // Remaining properties
 @property(retain, nonatomic) TDModelAsset *asset; // @dynamic asset;
 @property(retain, nonatomic) NSSet *childRenditions; // @dynamic childRenditions;
+@property(nonatomic) int modelAssetIndex; // @dynamic modelAssetIndex;
 
 @end
 

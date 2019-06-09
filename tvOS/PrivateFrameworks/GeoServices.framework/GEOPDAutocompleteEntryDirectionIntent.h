@@ -17,8 +17,9 @@ __attribute__((visibility("hidden")))
     GEOPDDirectionIntent *_directionIntent;
 }
 
-@property(retain, nonatomic) GEOPDDirectionIntent *directionIntent; // @synthesize directionIntent=_directionIntent;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -27,8 +28,10 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDDirectionIntent *directionIntent;
 @property(readonly, nonatomic) _Bool hasDirectionIntent;
 
 @end

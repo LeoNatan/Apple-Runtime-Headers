@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class IMKUICandidateAccessibilityElement, NSArray;
+@class IMKUICandidateAccessibilityElement, NSArray, NSString;
 
 @protocol IMKUICandidateAccessibilityDelegate
+- (NSString *)identifier;
+- (long long)accessibilityOrientation;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)moveAccessibilityElementToVisibleArea:(IMKUICandidateAccessibilityElement *)arg1;
 - (NSArray *)visibleCandidateAccessibilityElements;

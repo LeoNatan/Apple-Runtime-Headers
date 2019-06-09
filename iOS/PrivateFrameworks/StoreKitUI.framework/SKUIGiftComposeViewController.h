@@ -11,9 +11,10 @@
 #import <StoreKitUI/UITableViewDelegate-Protocol.h>
 #import <StoreKitUI/UITextFieldDelegate-Protocol.h>
 
-@class NSIndexPath, NSMutableArray, NSObject, NSString, SKUIGiftAddressingSection, SKUIGiftAmountSection, SKUIGiftItemView, SKUIGiftSendDateSection, SKUIGiftTermsAndConditionsSection, SKUIGiftValidationResponse, SKUIGiftValidator, UIDatePicker, UIImage, UIPopoverController, UITableView, UIView;
+@class NSIndexPath, NSMutableArray, NSObject, NSString, SKUIGiftAddressingSection, SKUIGiftAmountSection, SKUIGiftItemView, SKUIGiftSendDateSection, SKUIGiftTermsAndConditionsSection, SKUIGiftValidationResponse, SKUIGiftValidator, UIBarButtonItem, UIDatePicker, UIImage, UIPopoverController, UITableView, UIView;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftComposeViewController : SKUIGiftStepViewController <UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
     SKUIGiftAddressingSection *_addressingSection;
@@ -34,8 +35,10 @@
     UIPopoverController *_datePickerPopover;
     UIPopoverController *_peoplePickerPopover;
     UIPopoverController *_searchResultsPopover;
+    UIBarButtonItem *_nextButton;
 }
 
+@property(retain, nonatomic) UIBarButtonItem *nextButton; // @synthesize nextButton=_nextButton;
 - (void).cxx_destruct;
 - (void)_validateGiftThrottled:(_Bool)arg1;
 - (void)_validateGift;

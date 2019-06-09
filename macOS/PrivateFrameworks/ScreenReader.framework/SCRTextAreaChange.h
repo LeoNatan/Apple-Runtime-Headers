@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 // Remaining properties
 @property(readonly, nonatomic) long long editType; // @dynamic editType;
 @property(readonly, nonatomic) unsigned long long length; // @dynamic length;
-@property(readonly, retain, nonatomic) SCRTextMarker *marker; // @dynamic marker;
+@property(readonly, nonatomic) SCRTextMarker *marker; // @dynamic marker;
 @property(readonly, nonatomic, getter=isTruncated) BOOL truncated; // @dynamic truncated;
 @property(readonly, copy, nonatomic) NSString *value; // @dynamic value;
 

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)setOn:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setOffImage:(id)arg1;
 - (void)setOnImage:(id)arg1;
+- (void)tintColorDidChange;
 - (void)setThumbTintColor:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (void)setOnTintColor:(id)arg1;

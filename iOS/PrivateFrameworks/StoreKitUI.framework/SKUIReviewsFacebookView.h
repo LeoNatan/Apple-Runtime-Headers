@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIClientContext, SKUIColorScheme, UIButton, UIControl, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewsFacebookView : UIView
 {
     SKUIClientContext *_clientContext;

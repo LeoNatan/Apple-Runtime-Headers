@@ -57,6 +57,8 @@
 - (unsigned long long)_findClosestValueFromTouchLocation:(struct CGPoint)arg1;
 - (double)_sliderValueForLocation:(struct CGPoint)arg1;
 - (CDStruct_c3b9c2ee)_rawViewValueRange;
+- (void)_animateToShrinkView;
+- (void)_animateToEnlargeView;
 - (void)_beginReceivingTouchesWithGestureRecognizer:(id)arg1 firstTouchDown:(_Bool)arg2;
 - (void)_handleControlTapGesture:(id)arg1;
 - (void)_handleControlPanGesture:(id)arg1;

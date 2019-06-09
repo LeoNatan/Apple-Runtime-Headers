@@ -210,6 +210,7 @@
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)_resetCellWithRevealedActions;
 - (void)handleEatenTouchEndStateForGestureRecognizer:(id)arg1;
 - (void)handleEatenTouchBeginStateForGestureRecognizer:(id)arg1;
 - (_Bool)shouldReceiveTouch:(id)arg1 forGestureRecognizer:(id)arg2;
@@ -239,7 +240,6 @@
 - (void)longLookWillPresentForNotificationViewController:(id)arg1;
 - (id)notificationViewController:(id)arg1 staticContentProviderForNotificationRequest:(id)arg2;
 - (void)notificationViewController:(id)arg1 requestsExpandingCoalescedBundleForNotificationRequest:(id)arg2;
-- (id)legibilitySettingsForNotificationViewController:(id)arg1;
 - (_Bool)notificationViewControllerShouldInterpretTapAsDefaultAction:(id)arg1;
 - (long long)notificationViewControllerDateFormatStyle:(id)arg1;
 - (void)collectionView:(id)arg1 performUpdatesAlongsideLayout:(id)arg2;
@@ -255,8 +255,8 @@
 - (id)notificationRequestsInSection:(unsigned long long)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (unsigned long long)currentSectionInListForNotificationRequest:(id)arg1;
 - (_Bool)isNotificationRequestInRecentsSection:(id)arg1;
-- (void)removeNotificationRequestFromRecentsSection:(id)arg1 forCoalescedNotification:(id)arg2;
-- (void)insertNotificationRequestIntoRecentsSection:(id)arg1 forCoalescedNotification:(id)arg2;
+- (void)removeNotificationRequestFromRecentsSection:(id)arg1;
+- (void)insertNotificationRequestIntoRecentsSection:(id)arg1;
 - (id)allNotificationRequests;
 - (_Bool)hasVisibleContent;
 - (_Bool)hasContent;
@@ -273,9 +273,9 @@
 - (void)hideRequestsForNotificationSectionSettings:(id)arg1;
 - (id)indexPathForNotificationRequest:(id)arg1;
 - (id)notificationRequestAtIndexPath:(id)arg1;
-- (void)removeNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
-- (_Bool)modifyNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
-- (_Bool)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
+- (void)removeNotificationRequest:(id)arg1;
+- (_Bool)modifyNotificationRequest:(id)arg1;
+- (_Bool)insertNotificationRequest:(id)arg1;
 - (void)_performRequestOperationAlongsideAnimations;
 - (void)_createRequestOperationAnimationCoordinatorForInitialContentPresentation:(_Bool)arg1;
 - (void)clearCachedSizeForCoalescedNotificationRequest:(id)arg1;
@@ -300,6 +300,8 @@
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (void)loadView;
+- (_Bool)_canShowWhileLocked;
 - (id)init;
 - (void)_testingCoalesceExpandedBundleForNotificationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_testingExpandCoalescedBundleForNotificationRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

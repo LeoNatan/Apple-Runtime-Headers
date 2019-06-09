@@ -8,6 +8,7 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVMetadataTrackedFacesObjectInternal : NSObject
 {
     NSDictionary *_payload;

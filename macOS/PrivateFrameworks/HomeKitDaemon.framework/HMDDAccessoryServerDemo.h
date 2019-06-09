@@ -34,7 +34,7 @@
 - (BOOL)tryPairingPassword:(id)arg1 error:(id *)arg2;
 - (BOOL)stopPairingWithError:(id *)arg1;
 - (void)continuePairingAfterAuthPrompt;
-- (void)startPairingWithConsentRequired:(BOOL)arg1;
+- (void)startPairingWithConsentRequired:(BOOL)arg1 config:(id)arg2 ownershipProof:(id)arg3;
 - (void)processCharacteristicWrite:(id)arg1 value:(id)arg2;
 - (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3 queue:(id)arg4;
 - (void)writeCharacteristicValues:(id)arg1 timeout:(double)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

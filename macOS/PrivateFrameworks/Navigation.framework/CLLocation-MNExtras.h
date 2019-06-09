@@ -11,6 +11,7 @@
 @interface CLLocation (MNExtras)
 + (BOOL)_navigation_isLocation:(id)arg1 equalTo:(id)arg2;
 + (id)_navigation_stringWithType:(int)arg1;
+- (id)_navigation_geoLocation;
 @property(nonatomic, getter=_navigation_gtLog, setter=_navigation_setGtLog:) BOOL gtLog;
 @property(readonly, nonatomic, getter=_navigation_detailedMatchInfo) GEONavigationMatchInfo *detailedMatchInfo;
 @property(readonly, nonatomic, getter=_navigation_rawShiftedCoordinate) struct CLLocationCoordinate2D rawShiftedCoordinate;

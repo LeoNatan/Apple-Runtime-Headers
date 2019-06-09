@@ -20,8 +20,8 @@
 }
 
 @property(nonatomic, getter=isAllocated) BOOL allocated; // @synthesize allocated=_allocated;
-@property(retain, nonatomic) ASDStreamFormat *readFormat; // @synthesize readFormat=_readFormat;
-@property(retain, nonatomic) ASDStreamFormat *writeFormat; // @synthesize writeFormat=_writeFormat;
+@property(copy, nonatomic) ASDStreamFormat *readFormat; // @synthesize readFormat=_readFormat;
+@property(copy, nonatomic) ASDStreamFormat *writeFormat; // @synthesize writeFormat=_writeFormat;
 @property(nonatomic) long long frameCapacity; // @synthesize frameCapacity=_frameCapacity;
 - (id).cxx_construct;
 - (void).cxx_destruct;

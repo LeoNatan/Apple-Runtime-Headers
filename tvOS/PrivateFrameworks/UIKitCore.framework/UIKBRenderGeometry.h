@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
 {
     _Bool _detachedVariants;
     _Bool _tallPopup;
-    int _concaveCorner;
-    int _roundRectCorners;
     int _popupBias;
+    unsigned long long _concaveCorner;
+    unsigned long long _roundRectCorners;
     double _roundRectRadius;
     long long _flickDirection;
     NSValue *_splitLeftRect;
@@ -42,9 +42,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct UIEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) int popupBias; // @synthesize popupBias=_popupBias;
 @property(nonatomic) double roundRectRadius; // @synthesize roundRectRadius=_roundRectRadius;
-@property(nonatomic) int roundRectCorners; // @synthesize roundRectCorners=_roundRectCorners;
+@property(nonatomic) unsigned long long roundRectCorners; // @synthesize roundRectCorners=_roundRectCorners;
 @property(nonatomic) struct CGSize concaveCornerOffset; // @synthesize concaveCornerOffset=_concaveCornerOffset;
-@property(nonatomic) int concaveCorner; // @synthesize concaveCorner=_concaveCorner;
+@property(nonatomic) unsigned long long concaveCorner; // @synthesize concaveCorner=_concaveCorner;
 @property(nonatomic) struct CGPoint popupSource; // @synthesize popupSource=_popupSource;
 @property(nonatomic) struct CGRect symbolFrame; // @synthesize symbolFrame=_symbolFrame;
 @property(nonatomic) struct CGRect displayFrame; // @synthesize displayFrame=_displayFrame;

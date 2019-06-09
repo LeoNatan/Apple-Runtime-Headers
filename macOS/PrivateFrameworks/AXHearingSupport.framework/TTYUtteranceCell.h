@@ -21,7 +21,7 @@
 }
 
 + (double)heightForUtterance:(id)arg1 andWidth:(double)arg2;
-@property(nonatomic) __weak id <TTYUtteranceCellDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) id <TTYUtteranceCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic, getter=isEditingUtterance) BOOL editingUtterance; // @synthesize editingUtterance=_editingUtterance;
 @property(retain, nonatomic) TTYUtterance *utterance; // @synthesize utterance=_utterance;
 - (void).cxx_destruct;

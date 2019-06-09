@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <FrontBoardServices/BSInvalidatable-Protocol.h>
 #import <FrontBoardServices/FBSOrientationObserverClientDelegate-Protocol.h>
 
 @class FBSOrientationObserverClient, NSString;
 @protocol OS_dispatch_queue;
 
-@interface FBSOrientationObserver : NSObject <FBSOrientationObserverClientDelegate>
+@interface FBSOrientationObserver : NSObject <FBSOrientationObserverClientDelegate, BSInvalidatable>
 {
     FBSOrientationObserverClient *_client;
     NSObject<OS_dispatch_queue> *_queue;

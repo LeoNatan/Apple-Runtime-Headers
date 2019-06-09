@@ -6,20 +6,27 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INCodableCoding-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString;
+@class INIntentResponseCodableDescription, NSArray, NSString;
 
-@interface INIntentResponseCodableCode : NSObject <NSSecureCoding>
+@interface INIntentResponseCodableCode : NSObject <NSSecureCoding, INCodableCoding>
 {
     _Bool _success;
     long long _value;
     NSString *_name;
     NSString *_formatString;
     NSString *_formatStringLocID;
+    NSString *_conciseFormatString;
+    NSString *_conciseFormatStringLocID;
+    INIntentResponseCodableDescription *__responseCodableDescription;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, setter=_setResponseCodableDescription:) __weak INIntentResponseCodableDescription *_responseCodableDescription; // @synthesize _responseCodableDescription=__responseCodableDescription;
+@property(copy, nonatomic) NSString *conciseFormatStringLocID; // @synthesize conciseFormatStringLocID=_conciseFormatStringLocID;
+@property(copy, nonatomic) NSString *conciseFormatString; // @synthesize conciseFormatString=_conciseFormatString;
 @property(copy, nonatomic) NSString *formatStringLocID; // @synthesize formatStringLocID=_formatStringLocID;
 @property(copy, nonatomic) NSString *formatString; // @synthesize formatString=_formatString;
 @property(nonatomic, getter=isSuccess) _Bool success; // @synthesize success=_success;
@@ -28,7 +35,19 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)updateWithDictionary:(id)arg1;
+- (id)dictionaryKeyForKeyPath:(id)arg1;
+- (id)keyPrefix;
+- (id)_parameterNamesFromString:(id)arg1;
 @property(readonly, nonatomic) NSArray *parameterNames;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

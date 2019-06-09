@@ -6,15 +6,27 @@
 
 #import <GameCenterFoundation/GKPlayer.h>
 
+@class CNContact;
+
 @interface GKPlayer (UIPrivate)
 + (void)preloadImagesForPlayers:(id)arg1 size:(long long)arg2;
++ (id)monogramQueue;
 + (long long)sizeForPhotoSize:(long long)arg1;
-- (id)placeholderImageForType:(unsigned char)arg1;
-- (id)cacheKeyForType:(unsigned char)arg1;
-- (id)imageSourceForPlaceholders;
-- (id)placeholderImageSelected;
-- (id)placeholderImage;
+- (void)loadPlayerContactForAvatarControllerWithImageSize:(long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)mutableContactFromDisplayNameComponents;
+- (void)clearInMemoryCachedAvatars;
+- (void)playerAvatarImageWithSize:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)monogramImageWithPhotoSize:(long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)renderMonogramImageWithPhotoSize:(long long)arg1 monogramString:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)avatarImageRenderer;
+- (id)renderingScopeForPhotoSize:(long long)arg1;
+- (id)placeholderImageWithPhotoSize:(long long)arg1;
+- (id)stringForMonogram;
+- (id)displayNameComponents;
 - (id)photoURLForSize:(long long)arg1;
-- (id)imageURLForPhotoSizeList;
+- (void)_loadPhotoForSize:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)loadPhotoForSize:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+@property(retain, nonatomic) CNContact *contact;
+- (id)initWithContact:(id)arg1;
 @end
 

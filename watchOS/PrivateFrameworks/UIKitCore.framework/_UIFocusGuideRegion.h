@@ -25,6 +25,8 @@
 - (int)_preferredDistanceComparisonType;
 - (unsigned int)_focusableBoundaries;
 - (id)_fallbackFocusItemForMovementRequest:(id)arg1 inFocusMap:(id)arg2;
+- (id)_focusedItemForLinearSorting:(id)arg1 inMap:(id)arg2;
+- (_Bool)_shouldUseNextFocusedItemForLinearSorting;
 - (id)_nextFocusedItemForFocusMovementRequest:(id)arg1 inMap:(id)arg2;
 - (_Bool)_canOccludeRegionsBelow;
 - (_Bool)_isEnabledForFocusedRegion:(id)arg1;

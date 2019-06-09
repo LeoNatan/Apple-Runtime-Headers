@@ -11,21 +11,23 @@
 @class NSString;
 @protocol MTLDevice;
 
-__attribute__((visibility("hidden")))
 @interface _MTLSharedEvent : IOSurfaceSharedEvent <MTLSharedEvent>
 {
-    NSString *_label;
     unsigned long long _labelTraceID;
+    NSString *_label;
+    struct os_unfair_lock_s _labelLock;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(readonly) unsigned long long labelTraceID; // @synthesize labelTraceID=_labelTraceID;
-@property(copy) NSString *label;
+@property(copy) NSString *label; // @dynamic label;
+- (id)retainedLabel;
 - (void)notifyListener:(id)arg1 atValue:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
 - (id)newSharedEventHandle;
 - (id)initWithSharedEventHandle:(id)arg1;
 @property(readonly) id <MTLDevice> device;
 - (void)dealloc;
+- (unsigned int)encodeKernelWaitEventCommandArgs:(struct IOAccelKernelCommandSignalOrWaitEventArgs *)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
 - (unsigned int)encodeKernelWaitEventCommandArgs:(struct IOAccelKernelCommandSignalOrWaitEventArgs *)arg1 value:(unsigned long long)arg2;
 - (unsigned int)encodeKernelSignalEventCommandArgs:(struct IOAccelKernelCommandSignalOrWaitEventArgs *)arg1 value:(unsigned long long)arg2;
 

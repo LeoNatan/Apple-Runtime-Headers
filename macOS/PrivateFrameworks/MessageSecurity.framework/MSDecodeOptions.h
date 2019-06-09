@@ -14,14 +14,14 @@
     BOOL _verifySigners;
     NSArray *_signerPolicies;
     NSDate *_verifyTime;
-    struct OpaqueSecIdentityRef *_identity;
+    struct __SecIdentity *_identity;
     NSData *_key;
     NSData *_LAContext;
 }
 
 @property(retain) NSData *LAContext; // @synthesize LAContext=_LAContext;
 @property(retain) NSData *key; // @synthesize key=_key;
-@property struct OpaqueSecIdentityRef *identity; // @synthesize identity=_identity;
+@property struct __SecIdentity *identity; // @synthesize identity=_identity;
 @property(retain) NSDate *verifyTime; // @synthesize verifyTime=_verifyTime;
 @property(retain) NSArray *signerPolicies; // @synthesize signerPolicies=_signerPolicies;
 @property BOOL verifySigners; // @synthesize verifySigners=_verifySigners;
@@ -29,7 +29,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDecryptionKey:(id)arg1;
-- (id)initWithDecryptionIdentity:(struct OpaqueSecIdentityRef *)arg1;
+- (id)initWithDecryptionIdentity:(struct __SecIdentity *)arg1;
 - (id)init;
 
 @end

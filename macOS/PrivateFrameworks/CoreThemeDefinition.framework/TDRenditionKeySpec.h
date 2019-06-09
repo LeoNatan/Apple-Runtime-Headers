@@ -8,7 +8,7 @@
 
 #import <CoreThemeDefinition/TDElementAttributes-Protocol.h>
 
-@class TDAppearance, TDThemeDeploymentTarget, TDThemeDirection, TDThemeDisplayGamut, TDThemeDrawingLayer, TDThemeElement, TDThemeGraphicsFeatureSetClass, TDThemeIdiom, TDThemePart, TDThemePresentationState, TDThemeSize, TDThemeState, TDThemeUISizeClass, TDThemeValue;
+@class TDAppearance, TDLocalization, TDThemeDeploymentTarget, TDThemeDirection, TDThemeDisplayGamut, TDThemeDrawingLayer, TDThemeElement, TDThemeGlyphSize, TDThemeGlyphWeight, TDThemeGraphicsFeatureSetClass, TDThemeIdiom, TDThemePart, TDThemePresentationState, TDThemeSize, TDThemeState, TDThemeUISizeClass, TDThemeValue;
 
 @interface TDRenditionKeySpec : NSManagedObject <TDElementAttributes>
 {
@@ -18,7 +18,7 @@
     unsigned int _subtype;
     unsigned int _nameIdentifier;
     unsigned int _memoryClass;
-    struct _renditionkeytoken _stackScratchKey[18];
+    struct _renditionkeytoken _stackScratchKey[22];
     struct _renditionkeytoken *_scratchKey;
 }
 
@@ -57,9 +57,12 @@
 @property(retain, nonatomic) TDThemeDirection *direction; // @dynamic direction;
 @property(retain, nonatomic) TDThemeElement *element; // @dynamic element;
 @property(retain, nonatomic) TDThemeDisplayGamut *gamut; // @dynamic gamut;
+@property(retain, nonatomic) TDThemeGlyphSize *glyphSize; // @dynamic glyphSize;
+@property(retain, nonatomic) TDThemeGlyphWeight *glyphWeight; // @dynamic glyphWeight;
 @property(retain, nonatomic) TDThemeGraphicsFeatureSetClass *graphicsFeatureSetClass; // @dynamic graphicsFeatureSetClass;
 @property(retain, nonatomic) TDThemeIdiom *idiom; // @dynamic idiom;
 @property(retain, nonatomic) TDThemeDrawingLayer *layer; // @dynamic layer;
+@property(retain, nonatomic) TDLocalization *localization; // @dynamic localization;
 @property(retain, nonatomic) TDThemePart *part; // @dynamic part;
 @property(retain, nonatomic) TDThemePresentationState *presentationState; // @dynamic presentationState;
 @property(retain, nonatomic) TDThemeState *previousState; // @dynamic previousState;

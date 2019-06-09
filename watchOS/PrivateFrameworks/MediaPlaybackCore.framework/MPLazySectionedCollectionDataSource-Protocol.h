@@ -6,7 +6,7 @@
 
 #import <MediaPlaybackCore/NSObject-Protocol.h>
 
-@class NSArray, NSIndexPath;
+@class MPIdentifierSet, NSArray, NSIndexPath;
 @protocol MPLazySectionedCollectionDataSource;
 
 @protocol MPLazySectionedCollectionDataSource <NSObject>
@@ -20,5 +20,8 @@
 - (int)indexOfSectionForSectionIndexTitleAtIndex:(int)arg1;
 - (struct _NSRange)optionalSectionIndexTitlesRange;
 - (NSArray *)sectionIndexTitles;
+- (NSIndexPath *)indexPathForItemWithIdentifiersIntersectingSet:(MPIdentifierSet *)arg1;
+- (MPIdentifierSet *)identifiersForSectionAtIndex:(int)arg1;
+- (MPIdentifierSet *)identifiersForItemAtIndexPath:(NSIndexPath *)arg1;
 @end
 

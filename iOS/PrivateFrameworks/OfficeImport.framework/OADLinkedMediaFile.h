@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property _Bool isExternal; // @synthesize isExternal=mIsExternal;
 @property(retain) NSURL *url; // @synthesize url=mUrl;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

@@ -10,11 +10,11 @@
 
 @interface ML3ComparisonPredicate : ML3PropertyPredicate
 {
-    id _value;
-    NSString *_transformFunction;
-    int _comparison;
     _Bool _caseInsensitive;
+    id _value;
+    int _comparison;
     NSString *_treatNullAsString;
+    NSString *_transformFunction;
 }
 
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
@@ -25,17 +25,17 @@
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3 caseInsensitive:(_Bool)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparison:(int)arg3;
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *transformFunction; // @synthesize transformFunction=_transformFunction;
-@property(copy, nonatomic) NSString *treatNullAsString; // @synthesize treatNullAsString=_treatNullAsString;
-@property(nonatomic) _Bool caseInsensitive; // @synthesize caseInsensitive=_caseInsensitive;
-@property(nonatomic) int comparison; // @synthesize comparison=_comparison;
-@property(retain, nonatomic) id value; // @synthesize value=_value;
+@property(readonly, copy, nonatomic) NSString *transformFunction; // @synthesize transformFunction=_transformFunction;
+@property(readonly, copy, nonatomic) NSString *treatNullAsString; // @synthesize treatNullAsString=_treatNullAsString;
+@property(readonly, nonatomic) _Bool caseInsensitive; // @synthesize caseInsensitive=_caseInsensitive;
+@property(readonly, nonatomic) int comparison; // @synthesize comparison=_comparison;
+@property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
 - (_Bool)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
 - (id)databaseStatementParameters;
 - (id)valueToBindForOperation:(int)arg1;
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
-@property(readonly, copy, nonatomic) NSString *operator;
+- (id)operator;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;

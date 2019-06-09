@@ -64,6 +64,11 @@ struct __va_list_tag {
     void *_field4;
 };
 
+struct _opaque_pthread_mutex_t {
+    long long __sig;
+    char __opaque[56];
+};
+
 struct buffer {
     char *x;
     unsigned int p;

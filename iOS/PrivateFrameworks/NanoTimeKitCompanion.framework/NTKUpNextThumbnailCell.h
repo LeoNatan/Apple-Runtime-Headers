@@ -6,9 +6,11 @@
 
 #import <NanoTimeKitCompanion/NTKUpNextBaseCell.h>
 
-@class CLKFont, NSArray, NSLayoutConstraint, NTKColoringLabel, NTKUpNextImageView, UILayoutGuide;
+#import <NanoTimeKitCompanion/CLKMonochromeFilterProvider-Protocol.h>
 
-@interface NTKUpNextThumbnailCell : NTKUpNextBaseCell
+@class CLKFont, NSArray, NSLayoutConstraint, NSString, NTKColoringLabel, NTKUpNextImageView, UILayoutGuide;
+
+@interface NTKUpNextThumbnailCell : NTKUpNextBaseCell <CLKMonochromeFilterProvider>
 {
     UILayoutGuide *_labelLayoutGuide;
     UILayoutGuide *_imageLayoutGuide;
@@ -35,10 +37,22 @@
 
 + (struct CGSize)suggestedBodyImageSizeForDevice:(id)arg1;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)prepareForReuse;
+- (id)colorForView:(id)arg1 accented:(_Bool)arg2;
+- (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)filterForView:(id)arg1 style:(long long)arg2;
 - (void)setPaused:(_Bool)arg1;
 - (void)configureWithContent:(id)arg1;
 - (void)updateConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <AppKit/NSCoding-Protocol.h>
+#import <AppKit/NSLayoutSpacingItem-Protocol.h>
 #import <AppKit/NSUserInterfaceItemIdentification-Protocol.h>
 
 @class NSISVariable, NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSString, NSView;
 
-@interface NSLayoutGuide : NSObject <NSCoding, NSUserInterfaceItemIdentification>
+@interface NSLayoutGuide : NSObject <NSLayoutSpacingItem, NSCoding, NSUserInterfaceItemIdentification>
 {
     id _owningView;
     NSString *_identifier;
@@ -31,11 +32,12 @@
     NSLayoutYAxisAnchor *_centerY;
     struct CGRect _frame;
     id _aux;
-    id _reserved2;
+    id _systemConstraints;
     unsigned int _shouldBeArchived:1;
     unsigned int _frameNeedsUpdate:1;
     unsigned int _frameIsObserved:1;
-    unsigned int _reservedFlags:29;
+    unsigned int _lockedToOwner:1;
+    unsigned int _reservedFlags:28;
 }
 
 + (void)_allowingStaleFramesPerformBlock:(CDUnknownBlockType)arg1;
@@ -88,6 +90,7 @@
 - (unsigned long long)nsli_autoresizingMask;
 - (BOOL)nsli_descriptionIncludesPointer;
 - (id)nsli_description;
+- (BOOL)nsli_defaultResolvedValue:(double *)arg1 forSymbolicConstant:(id)arg2 inConstraint:(id)arg3 error:(id *)arg4;
 - (BOOL)nsli_resolvedValue:(double *)arg1 forSymbolicConstant:(id)arg2 inConstraint:(id)arg3 error:(id *)arg4;
 - (id)nsli_ancestorSharedWithItem:(id)arg1;
 - (id)nsli_layoutRect;
@@ -116,6 +119,10 @@
 - (BOOL)nsli_lowersExpressionRelativeToConstraintContainer;
 - (BOOL)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 container:(id)arg4;
 - (BOOL)nsli_lowerAttribute:(int)arg1 intoExpression:(id)arg2 withCoefficient:(double)arg3 forConstraint:(id)arg4;
+- (void)setSystemConstraints:(id)arg1;
+- (id)systemConstraints;
+- (void)setLockedToOwningView:(BOOL)arg1;
+- (BOOL)isLockedToOwningView;
 - (void)removeFromOwningView;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

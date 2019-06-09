@@ -14,8 +14,10 @@
 }
 
 + (id)quickLookThumbnailQueue;
-@property(retain) NSURL *url; // @synthesize url=_url;
+@property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)loadImageWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (Class)classForCoder;
 - (id)initWithURL:(id)arg1;

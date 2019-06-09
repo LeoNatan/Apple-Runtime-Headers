@@ -8,6 +8,7 @@
 
 @class UIButton, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface CKPhotoTileBadgeView : UIView
 {
     _Bool _enabled;

@@ -25,7 +25,9 @@ __attribute__((visibility("hidden")))
     NSNumber *inputMinDensity;
     NSNumber *inputMaxRelDensity;
     NSNumber *inputDensityRadius;
+    NSNumber *inputMinInterDispersion;
     NSNumber *inputMaxInterDispersion;
+    NSNumber *inputMinGobalLocalMeanDiff;
     CIVector *inputMinimum;
     CIVector *inputMaxArea;
     CIVector *inputMaxAreaRatio;
@@ -44,7 +46,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CIVector *inputMaxAreaRatio; // @synthesize inputMaxAreaRatio;
 @property(retain, nonatomic) CIVector *inputMaxArea; // @synthesize inputMaxArea;
 @property(retain, nonatomic) CIVector *inputMinimum; // @synthesize inputMinimum;
+@property(retain, nonatomic) NSNumber *inputMinGobalLocalMeanDiff; // @synthesize inputMinGobalLocalMeanDiff;
 @property(retain, nonatomic) NSNumber *inputMaxInterDispersion; // @synthesize inputMaxInterDispersion;
+@property(retain, nonatomic) NSNumber *inputMinInterDispersion; // @synthesize inputMinInterDispersion;
 @property(retain, nonatomic) NSNumber *inputDensityRadius; // @synthesize inputDensityRadius;
 @property(retain, nonatomic) NSNumber *inputMaxRelDensity; // @synthesize inputMaxRelDensity;
 @property(retain, nonatomic) NSNumber *inputMinDensity; // @synthesize inputMinDensity;
@@ -58,6 +62,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CIVector *inputCenterExtentLeft; // @synthesize inputCenterExtentLeft;
 @property(retain, nonatomic) CIImage *inputCenterRight; // @synthesize inputCenterRight;
 @property(retain, nonatomic) CIImage *inputCenterLeft; // @synthesize inputCenterLeft;
+@property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage;
 - (id)outputImage;
 
 @end

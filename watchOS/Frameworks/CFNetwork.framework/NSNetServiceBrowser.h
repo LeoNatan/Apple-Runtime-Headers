@@ -17,7 +17,6 @@
 }
 
 @property _Bool includesPeerToPeer; // @synthesize includesPeerToPeer=_includesPeerToPeer;
-- (void)finalize;
 - (void)dealloc;
 - (void)_dispatchCallBack:(void *)arg1 flags:(unsigned long)arg2 error:(CDStruct_8a2887be)arg3;
 - (struct __CFNetServiceBrowser *)_internalNetServiceBrowser;

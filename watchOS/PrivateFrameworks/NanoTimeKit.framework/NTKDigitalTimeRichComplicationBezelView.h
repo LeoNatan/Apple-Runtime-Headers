@@ -14,7 +14,11 @@
 }
 
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
+- (void)updateDate;
 - (void)timeOffsetChanged;
 - (id)_createLabelViewWithFont:(id)arg1;
 - (void)dealloc;

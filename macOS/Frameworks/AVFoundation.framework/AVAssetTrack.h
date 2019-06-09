@@ -27,6 +27,8 @@
 - (BOOL)canProvideSampleCursors;
 - (id)associatedTracksOfType:(id)arg1;
 - (id)availableTrackAssociationTypes;
+- (BOOL)isAudibleBooksContentAuthorized;
+- (BOOL)hasAudibleBooksContent;
 - (BOOL)hasProtectedContent;
 - (id)_trackReferences;
 - (id)_pairedForcedOnlySubtitlesTrack;
@@ -55,9 +57,12 @@
 - (id)locale;
 - (id)extendedLanguageTag;
 - (id)languageCode;
+- (float)peakDataRate;
 - (float)estimatedDataRate;
 - (int)naturalTimeScale;
+- (BOOL)hasAudioSampleDependencies;
 - (BOOL)requiresFrameReordering;
+- (CDStruct_1b6d18a9)latentBaseDecodeTimeStampOfFirstTrackFragment;
 - (CDStruct_e83c9415)mediaDecodeTimeRange;
 - (CDStruct_e83c9415)mediaPresentationTimeRange;
 - (CDStruct_e83c9415)timeRange;
@@ -83,7 +88,6 @@
 @property(readonly, nonatomic) __weak AVAsset *asset;
 - (id)_weakReference;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_initWithAsset:(id)arg1 trackIndex:(long long)arg2;

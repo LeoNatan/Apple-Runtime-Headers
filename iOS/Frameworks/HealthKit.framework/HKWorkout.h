@@ -70,7 +70,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)_validateWorkoutEvents:(id)arg1;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned long long)arg1;
 - (id)description;
 - (id)_deepCopy;
 - (void)_enumerateTimePeriodsWithBlock:(CDUnknownBlockType)arg1;

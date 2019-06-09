@@ -4,20 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UINavigationController.h>
+#import <OnBoardingKit/OBNavigationController.h>
 
 __attribute__((visibility("hidden")))
-@interface OBPrivacyModalNavigationController : UINavigationController
+@interface OBPrivacyModalNavigationController : OBNavigationController
 {
     _Bool _darkMode;
-    unsigned long long _supportedInterfaceOrientations;
     CDUnknownBlockType _dismissButtonPressedHandler;
 }
 
 @property(copy) CDUnknownBlockType dismissButtonPressedHandler; // @synthesize dismissButtonPressedHandler=_dismissButtonPressedHandler;
-@property(nonatomic) unsigned long long supportedInterfaceOrientations; // @synthesize supportedInterfaceOrientations=_supportedInterfaceOrientations;
 @property(nonatomic, getter=isDarkMode) _Bool darkMode; // @synthesize darkMode=_darkMode;
 - (void).cxx_destruct;
+- (unsigned long long)supportedInterfaceOrientations;
+- (long long)preferredUserInterfaceStyle;
 - (void)_doneButtonPressed;
 - (void)addDismissButtonWithPressedHandler:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;

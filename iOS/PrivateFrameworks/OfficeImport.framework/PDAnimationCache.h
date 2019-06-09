@@ -59,7 +59,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int presetId; // @synthesize presetId=mPresetId;
 @property(nonatomic) int nodeType; // @synthesize nodeType=mNodeType;
 @property(retain, nonatomic) PDAnimationTarget *target; // @synthesize target=mTarget;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithAnimationInfo:(id)arg1;
 
 @end

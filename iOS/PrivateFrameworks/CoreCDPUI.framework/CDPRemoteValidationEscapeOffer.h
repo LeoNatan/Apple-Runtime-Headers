@@ -22,8 +22,8 @@
 @property(retain, nonatomic) NSString *escapeOfferName; // @synthesize escapeOfferName=_escapeOfferName;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 - (void).cxx_destruct;
-- (long long)_styleForEscapeOption:(id)arg1;
 - (void)dismissOfferAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)_styleForEscapeOption:(id)arg1;
 - (id)_actionFromEscapeOption:(id)arg1;
 - (void)handleEscapeAction:(id)arg1;
 - (id)escapeOptions;

@@ -8,6 +8,7 @@
 
 @class OITSUPointerKeyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface ECTwoPointerKeyCache : NSObject
 {
     OITSUPointerKeyDictionary *mCache;

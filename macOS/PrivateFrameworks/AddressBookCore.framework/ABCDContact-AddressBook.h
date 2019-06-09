@@ -18,9 +18,12 @@
 + (id)keyForProperty:(id)arg1 entityName:(id *)arg2 entityKey:(id *)arg3 entityWithValueSel:(SEL *)arg4 valueWithEntitySel:(SEL *)arg5;
 + (id)metadataType;
 + (void)addMappedKeysToDictionary:(id)arg1 mappedEntities:(id)arg2 mappedEntitiesMainKeys:(id)arg3 entityWithValueConverter:(struct __CFDictionary *)arg4 valueWithEntityConverter:(struct __CFDictionary *)arg5 converterKeys:(id)arg6;
++ (id)keyPathsForValuesAffectingCompletePhoneticName;
++ (id)keyPathsForValuesAffectingCompleteName;
++ (id)keyPathsForValuesAffectingContentCellObject;
 - (id)linkedContacts;
+@property(readonly, copy) NSString *description;
 - (BOOL)isDataCachedForImageReference:(id)arg1;
-- (id)imagePathOfKind:(id)arg1;
 - (id)XMLRepresentation;
 - (id)valueForKey:(id)arg1 withEntityName:(id)arg2 entityKey:(id)arg3;
 - (void)setValue:(id)arg1 forKey:(id)arg2 withEntityName:(id)arg3 entityKey:(id)arg4;
@@ -37,10 +40,43 @@
 - (id)messagingAddressValueWithEntity:(id)arg1;
 - (void)applyValues:(id)arg1 toMessagingAddressEntity:(id)arg2;
 - (id)addressValueWithEntity:(id)arg1;
+- (void)importContact:(id)arg1;
+- (void)mergeContact:(id)arg1;
+- (void)appendNote:(id)arg1;
+- (void)importUnknownProperties:(id)arg1;
+- (void)importPhotoFromContact:(id)arg1;
+- (void)importPhotoKind:(id)arg1 fromContact:(id)arg2;
+- (void)importNoteFromContact:(id)arg1 replaceValues:(BOOL)arg2;
+- (void)mergeParentGroupsFromContact:(id)arg1;
+- (unsigned long long)indexOfObject:(id)arg1 inArray:(id)arg2 equalityTest:(CDUnknownBlockType)arg3;
+- (id)valueKeyPathsForRelationshipWithName:(id)arg1;
+- (void)importRelatedProperty:(id)arg1 fromContact:(id)arg2 replaceValues:(BOOL)arg3;
+- (void)importSingleValueRelationshipProperty:(id)arg1 fromContact:(id)arg2 replaceValues:(BOOL)arg3;
+- (id)findPeer:(id)arg1 withValuesForKeys:(id)arg2;
+- (BOOL)isPeerValue:(id)arg1 equalTo:(id)arg2;
+- (id)findPeer:(id)arg1 withLabel:(id)arg2 test:(CDUnknownBlockType)arg3;
+- (void)importDisplayFlagsFromContact:(id)arg1;
+- (BOOL)shouldUsePrimitivesToSetValueForKey:(id)arg1;
+- (id)valueToImportForKey:(id)arg1;
+- (void)importValue:(id)arg1 forKeyPath:(id)arg2;
+- (void)importAttribute:(id)arg1 fromContact:(id)arg2;
+- (void)importContact:(id)arg1 replaceValues:(BOOL)arg2;
+- (void)setCompletePhoneticName:(id)arg1;
+- (id)completePhoneticName;
+- (id)orderedTokensForCompletePhoneticName;
+- (void)setCompleteName:(id)arg1;
+- (id)completeName;
+- (id)orderedTokensForCompleteName;
+- (id)completeNameWithTokens:(id)arg1;
+- (id)orderedNameTokensWithFirstNameFirstTokens:(id)arg1 lastNameFirstTokens:(id)arg2;
+- (void)_setMultiValue:(id)arg1 forEntityName:(id)arg2 valueKey:(id)arg3;
+- (void)_setMultiValueProperty:(id)arg1 forEntityName:(id)arg2 valueKey:(id)arg3;
+- (void)populateUsingDictionary:(id)arg1;
+- (id)expandedSelectionStringWithContext:(id)arg1;
+- (id)contentCellObject;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @end

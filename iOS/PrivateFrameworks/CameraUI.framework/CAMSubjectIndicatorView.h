@@ -14,6 +14,7 @@
 }
 
 + (struct CGSize)_fixedSubjectIndicatorSizeForReferenceBounds:(struct CGSize)arg1;
++ (struct CGSize)fixedSize;
 @property(readonly, nonatomic) UIImageView *_imageView; // @synthesize _imageView=__imageView;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isPulsing) _Bool pulsing;

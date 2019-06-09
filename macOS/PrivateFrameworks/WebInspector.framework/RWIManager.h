@@ -8,7 +8,7 @@
 
 #import <WebInspector/RWIBaseManagerDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSSet, NSString, RWIApplication, RWIBaseManager, RWITarget, SimDeviceSet, SimServiceContext;
+@class NSMutableDictionary, NSSet, NSString, RWIApplication, RWIBaseManager, RWINotificationManager, RWITarget, SimDeviceSet, SimServiceContext;
 @protocol OS_dispatch_queue, RWIManagerDelegate, _RWIRelayToClientMessageReceiver;
 
 @interface RWIManager : NSObject <RWIBaseManagerDelegate>
@@ -24,13 +24,21 @@
     SimDeviceSet *_simulatorDevices;
     struct Optional<unsigned long long> _simulatorDeviceSetNotificationHandler;
     id <RWIManagerDelegate> _delegate;
+    RWINotificationManager *_notificationManager;
 }
 
 + (id)sharedManager;
-+ (void)initialize;
+@property(readonly, nonatomic) RWINotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(nonatomic) __weak id <RWIManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)currentMachine;
+- (void)updateDriver:(id)arg1 toState:(BOOL)arg2;
+- (void)unmanageDriver:(id)arg1;
+- (id)manageDriver:(id)arg1 forTarget:(id)arg2;
+- (BOOL)unregisterNotificationHandler:(unsigned long long)arg1 error:(id *)arg2;
+- (unsigned long long)registerNotificationHandlerOnQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (unsigned long long)registerNotificationHandler:(CDUnknownBlockType)arg1;
 - (void)receivedData:(id)arg1 forDestination:(id)arg2;
 - (id)_drivableForDestination:(id)arg1;
 - (id)_debuggerForDestination:(id)arg1;
@@ -87,10 +95,6 @@
 - (void)_createInitialTargets;
 - (void)dealloc;
 - (id)init;
-- (id)currentMachine;
-- (void)updateDriver:(id)arg1 toState:(BOOL)arg2;
-- (void)unmanageDriver:(id)arg1;
-- (id)manageDriver:(id)arg1 forTarget:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

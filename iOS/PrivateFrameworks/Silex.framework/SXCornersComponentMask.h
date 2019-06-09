@@ -6,12 +6,15 @@
 
 #import <Silex/SXComponentMask.h>
 
+@class NSString;
+
 @interface SXCornersComponentMask : SXComponentMask
 {
 }
 
-+ (id)typeString;
++ (void)load;
 @property(readonly, nonatomic) unsigned long long cornerMask;
+- (id)curveWithValue:(id)arg1 withType:(int)arg2;
 - (_Bool)cornerWithValue:(id)arg1 withType:(int)arg2;
 - (_Bool)bottomLeftWithValue:(id)arg1 withType:(int)arg2;
 - (_Bool)bottomRightWithValue:(id)arg1 withType:(int)arg2;
@@ -21,6 +24,7 @@
 // Remaining properties
 @property(readonly, nonatomic) _Bool bottomLeft; // @dynamic bottomLeft;
 @property(readonly, nonatomic) _Bool bottomRight; // @dynamic bottomRight;
+@property(readonly, nonatomic) NSString *curve; // @dynamic curve;
 @property(readonly, nonatomic) struct _SXConvertibleValue radius; // @dynamic radius;
 @property(readonly, nonatomic) _Bool topLeft; // @dynamic topLeft;
 @property(readonly, nonatomic) _Bool topRight; // @dynamic topRight;

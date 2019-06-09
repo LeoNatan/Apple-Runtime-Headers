@@ -17,9 +17,11 @@
 - (id)__ck_statusImage;
 - (id)__ck_badgeImage;
 - (id)__ck_browserImageName:(_Bool *)arg1;
-- (id)__ck_browserImageGenerateSynchronously:(_Bool)arg1;
-- (id)__ck_browserImage;
-- (void)__ck_prefetchBrowserImage;
+- (id)__ck_browserImageGenerateSynchronously:(_Bool)arg1 interfaceStyle:(long long)arg2;
+- (id)__ck_browserImageForInterfaceStyle:(long long)arg1;
+- (void)__ck_prefetchBrowserImageForInterfaceStyle:(long long)arg1;
 - (id)iconCache;
+- (id)__ck_attributionInfo;
+- (id)_adamID;
 @end
 

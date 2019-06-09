@@ -18,8 +18,9 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)_issueCommand:(id)arg1;
 - (void)_reimportFromBundleId:(id)arg1 protectionClasses:(id)arg2 identifiers:(id)arg3;
-- (void)_executeReiportOfIdentifiers:(id)arg1;
+- (void)_executeReimportOfIdentifiers:(id)arg1;
 - (id)_reimportQueryForPersonHandle:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 requestId:(unsigned long long)arg4;
 - (id)_protectionClasses;
 - (void)_attemptToProcessRequests;

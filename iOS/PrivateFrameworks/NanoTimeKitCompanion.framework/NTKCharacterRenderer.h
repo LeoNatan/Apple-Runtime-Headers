@@ -7,9 +7,19 @@
 #import <objc/NSObject.h>
 
 @class NSCalendar, NSDate, NSString, NTKCharacterResourceLoader, UIColor, _Arms, _Background, _Body, _Foot, _Head;
+@protocol MTLBuffer, MTLDevice, MTLRenderPipelineState;
 
 @interface NTKCharacterRenderer : NSObject
 {
+    id <MTLDevice> _mtlDevice;
+    NSCalendar *_cal;
+    NSDate *_overrideDate;
+    float _overrideDateFraction;
+    double _fromHourPercent;
+    double _fromMinutePercent;
+    double _toHourPercent;
+    double _toMinutePercent;
+    float _animationFrameInterval;
     int _prevState;
     int _idealState;
     int _curState;
@@ -20,20 +30,13 @@
     int _endPose;
     float _hourHandPos;
     float _minHandPos;
-    unsigned int _curProg;
-    unsigned int _curVAO;
-    NSCalendar *_cal;
-    NSDate *_overrideDate;
-    float _overrideDateFraction;
-    double _fromHourPercent;
-    double _fromMinutePercent;
-    double _toHourPercent;
-    double _toMinutePercent;
-    float _animationFrameInterval;
+    id <MTLRenderPipelineState> _pipelines[4];
+    unsigned long long _currentPipeline;
     _Bool _animatingToNewDate;
     _Bool _animatingIntoOrb;
     _Bool _applyInstantTimeWarp;
     _Bool _sayCheese;
+    float _blinkDuration;
     float _scrubOffset;
     _Bool _inTimeTravel;
     NSDate *_timeTravelEnterDate;
@@ -41,6 +44,12 @@
     struct CharacterPoseSpecs _poseSpecs[2];
     struct CharacterStateSpecs _stateSpecs[4];
     _Bool _active;
+    _Bool _pinHandsBrightnessToMax;
+    float _characterBrightness;
+    float _glowBrightness;
+    float _numbersBrightness;
+    float _numbersScale;
+    float _numbersAlpha;
     int _modelMatrixLoc;
     int _clothingColorLoc;
     float _characterScale;
@@ -48,10 +57,9 @@
     float _curTimeMod1Sec;
     float _curTimeMod15Sec;
     NSString *_prefix;
-    double _brightness;
-    double _backgroundBrightness;
     // Error parsing type: , name: _globalOffset
     // Error parsing type: , name: _globalScale
+    id <MTLBuffer> _geometryMtlBuffer;
     _Head *_head;
     _Body *_body;
     _Foot *_foot;
@@ -59,15 +67,19 @@
     _Background *_background;
     UIColor *_clothingColor;
     double _desaturation;
-    union _GLKVector2 _neckBone;
-    union _GLKMatrix4 _headMatrix;
+    // Error parsing type: , name: _neckBone
+    // Error parsing type: {?="columns"[4]}, name: _headMatrix
 }
 
 + (id)rendererWithCharacter:(unsigned long long)arg1 loader:(id)arg2;
 @property(readonly) float curTimeMod15Sec; // @synthesize curTimeMod15Sec=_curTimeMod15Sec;
 @property(readonly) float curTimeMod1Sec; // @synthesize curTimeMod1Sec=_curTimeMod1Sec;
-@property(readonly) union _GLKVector2 neckBone; // @synthesize neckBone=_neckBone;
-@property(readonly) union _GLKMatrix4 headMatrix; // @synthesize headMatrix=_headMatrix;
+// Error parsing type for property neckBone:
+// Property attributes: T,R,V_neckBone
+
+// Error parsing type for property headMatrix:
+// Property attributes: T{?=[4]},R,V_headMatrix
+
 @property(readonly) float zoomFraction; // @synthesize zoomFraction=_zoomFraction;
 @property(readonly) float characterScale; // @synthesize characterScale=_characterScale;
 @property(readonly) int clothingColorLoc; // @synthesize clothingColorLoc=_clothingColorLoc;
@@ -79,38 +91,43 @@
 @property(retain) _Foot *foot; // @synthesize foot=_foot;
 @property(retain) _Body *body; // @synthesize body=_body;
 @property(retain) _Head *head; // @synthesize head=_head;
+@property(retain) id <MTLBuffer> geometryMtlBuffer; // @synthesize geometryMtlBuffer=_geometryMtlBuffer;
 // Error parsing type for property globalScale:
 // Property attributes: T,V_globalScale
 
 // Error parsing type for property globalOffset:
 // Property attributes: T,V_globalOffset
 
-@property(nonatomic) double backgroundBrightness; // @synthesize backgroundBrightness=_backgroundBrightness;
-@property(nonatomic) double brightness; // @synthesize brightness=_brightness;
+@property(nonatomic) _Bool pinHandsBrightnessToMax; // @synthesize pinHandsBrightnessToMax=_pinHandsBrightnessToMax;
+@property(nonatomic) float numbersAlpha; // @synthesize numbersAlpha=_numbersAlpha;
+@property(nonatomic) float numbersScale; // @synthesize numbersScale=_numbersScale;
+@property(nonatomic) float numbersBrightness; // @synthesize numbersBrightness=_numbersBrightness;
+@property(nonatomic) float glowBrightness; // @synthesize glowBrightness=_glowBrightness;
+@property(nonatomic) float characterBrightness; // @synthesize characterBrightness=_characterBrightness;
 @property(readonly, nonatomic) NTKCharacterResourceLoader *loader; // @synthesize loader=_loader;
 @property(readonly, nonatomic) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
 - (void).cxx_destruct;
 - (int)curPose;
 - (int)curState;
-- (void)_drawCharacter;
-- (void)render;
-- (void)_drawMinuteHand;
-- (void)_drawHourHand;
+- (void)_drawCharacterWithEncoder:(id)arg1;
+- (void)renderWithEncoder:(id)arg1;
+- (void)_drawMinuteHandWithEncoder:(id)arg1;
+- (void)_drawHourHandWithEncoder:(id)arg1;
 - (float)_getElbowScaleForPosition:(float)arg1;
-- (void)_drawArmFromShoulder:(union _GLKVector3)arg1 toWrist:(union _GLKVector3)arg2 withBend:(float)arg3;
-- (void)_drawHead;
-- (void)_drawTappingFoot;
+- (void)_drawArmFromShoulder:(float)arg1 toWrist:(id)arg2 withBend:withEncoder: /* Error: Ran out of types for this method. */;
+- (void)_drawHeadWithEncoder:(id)arg1;
+- (void)_drawTappingFootWithEncoder:(id)arg1;
 - (void)_lowerFootAfterBodyAnimation;
 - (void)_raiseFootForBodyAnimation;
 - (void)_updateWaitingForFootRaise;
 - (_Bool)_footIsRaisedEnoughToStartAnimation;
 - (void)_doneWaitingForFootRaise;
-- (void)_applyClothingColor;
-- (void)_drawBody;
+- (void)_applyClothingColorWithEncoder:(id)arg1;
+- (void)_drawBodyWithEncoder:(id)arg1;
 - (void)_idleBodyAfterAnimation;
-- (void)_drawBackground;
-- (void)_bindGLVAO:(unsigned int)arg1;
+- (void)_drawBackgroundWithEncoder:(id)arg1;
+- (void)bindPipelineState:(unsigned long long)arg1 withEncoder:(id)arg2;
 - (void)_updateStateAndPose;
 - (void)setScrubOffset:(float)arg1;
 - (void)scrubToDate:(id)arg1;
@@ -126,7 +143,8 @@
 - (void)loadNumbersTexture;
 - (void)loadBackgroundTextures;
 - (void)setupBodyState;
-- (void)setupVAOs;
+- (void)setupPipelineState;
+- (void)setupGeometry;
 - (void)cleanupAfterZoom;
 - (void)setZoomFraction:(double)arg1 diameter:(double)arg2;
 - (void)prepareToZoom;
@@ -134,6 +152,7 @@
 - (void)activate;
 - (void)dealloc;
 - (void)significantTimeChanged:(id)arg1;
+- (void)_setBlinkDuration:(float)arg1;
 - (void)_setStateSpecs:(struct CharacterStateSpecs [4])arg1;
 - (void)_setPoseSpecs:(struct CharacterPoseSpecs [2])arg1;
 - (id)initWithCharacter:(unsigned long long)arg1 loader:(id)arg2 prefix:(id)arg3;
@@ -144,6 +163,7 @@
 - (void)prepareToAnimateToDate:(id)arg1 forOrb:(_Bool)arg2;
 - (void)setAnimationFrameInterval:(float)arg1;
 - (void)copyStateFrom:(id)arg1;
+- (int)getBlinkFrameFor15sTime:(float)arg1;
 
 @end
 

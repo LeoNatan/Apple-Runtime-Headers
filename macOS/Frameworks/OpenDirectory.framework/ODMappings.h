@@ -28,7 +28,8 @@
 @property(readonly, copy) NSDictionary *dictionary;
 - (void)setRecordMap:(id)arg1 forStandardRecordType:(id)arg2;
 - (id)recordMapForStandardRecordType:(id)arg1;
-@property(readonly, copy) NSArray *recordTypes;
+@property(readonly, copy) NSArray *recordTypes; // @dynamic recordTypes;
+- (void)dealloc;
 - (id)init;
 
 @end

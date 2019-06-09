@@ -19,6 +19,7 @@
     NSArray *_synonyms;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)synonymsType;
 @property(copy, nonatomic) NSArray *synonyms; // @synthesize synonyms=_synonyms;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)synonymsAtIndex:(unsigned long long)arg1;

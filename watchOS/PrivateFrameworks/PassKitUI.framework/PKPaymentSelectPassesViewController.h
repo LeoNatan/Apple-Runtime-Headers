@@ -41,8 +41,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)pkui_navigationBarTintColor;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (id)initWithStyle:(int)arg1 context:(int)arg2;
 - (id)initWithPaymentPasses:(id)arg1 context:(int)arg2 delegate:(id)arg3 peerPaymentAccount:(id)arg4;
 

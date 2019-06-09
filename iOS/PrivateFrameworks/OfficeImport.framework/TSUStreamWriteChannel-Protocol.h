@@ -10,6 +10,7 @@
 @protocol OS_dispatch_data;
 
 @protocol TSUStreamWriteChannel <TSUIOChannel>
+- (void)flushWithCompletion:(void (^)(NSError *))arg1;
 - (void)writeData:(NSObject<OS_dispatch_data> *)arg1 handler:(void (^)(_Bool, NSObject<OS_dispatch_data> *, NSError *))arg2;
 @end
 

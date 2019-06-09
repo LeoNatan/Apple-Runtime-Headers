@@ -11,6 +11,7 @@
 }
 
 + (BOOL)evaluateFirenzeTrust:(struct __SecTrust *)arg1 settingResult:(unsigned int *)arg2 forDeveloper:(BOOL)arg3 isDevelopmentSigned:(char *)arg4;
++ (BOOL)evaluateDeveloperIDTrust:(struct __SecTrust *)arg1 settingResult:(unsigned int *)arg2;
 
 @end
 

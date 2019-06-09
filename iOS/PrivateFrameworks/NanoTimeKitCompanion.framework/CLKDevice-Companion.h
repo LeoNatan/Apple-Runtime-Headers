@@ -8,6 +8,7 @@
 
 @interface CLKDevice (Companion)
 + (void)setBridgeActiveNRDevice:(id)arg1;
+@property(readonly, nonatomic) _Bool isEcgPhoneComplicationEnabled;
 @property(readonly, nonatomic) _Bool isRadioPhoneComplicationEnabled;
 @property(readonly, nonatomic) _Bool isPaired;
 @property(readonly, nonatomic) _Bool canCustomize;

@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (_Bool)isNOOP;
 - (_Bool)isEqualToUpdate:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (_Bool)isRevertedUpdateOf:(id)arg1;
 - (id)revertedUpdate;
 - (int)inverseCompareIndexPaths:(id)arg1;

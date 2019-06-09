@@ -8,6 +8,7 @@
 
 #import <OfficeImport/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface PBOutlineBulletKey : NSObject <NSCopying>
 {
     unsigned int mSlideId;

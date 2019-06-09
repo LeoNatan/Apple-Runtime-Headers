@@ -11,7 +11,6 @@
 @interface SSUsernameCredentials : SSCredentials
 {
     NSString *mUsername;
-    void *mReservedForInstanceVariablesUsername;
 }
 
 + (id)askToObserveCredentialsWithUsername:(id)arg1;

@@ -8,12 +8,12 @@
 
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@class NSString, PXCMMAssetsProgressListener, UILabel, UIProgressView, UIVisualEffectView;
+@class NSString, PXMomentShareStatusPresentation, UILabel, UIProgressView, UIVisualEffectView;
 @protocol PXCMMProgressBannerViewLayoutDelegate;
 
 @interface PXCMMProgressBannerView : UIView <PXChangeObserver>
 {
-    PXCMMAssetsProgressListener *_assetsProgressListener;
+    PXMomentShareStatusPresentation *_momentShareStatusPresentation;
     UIVisualEffectView *_visualEffectView;
     UILabel *_activityLabel;
     UILabel *_pauseLabel;
@@ -34,7 +34,7 @@
 - (void)_updateActivityTitle;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithAssetsProgressListener:(id)arg1;
+- (id)initWithMomentShareStatusPresentation:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;

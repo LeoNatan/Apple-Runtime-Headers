@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)addPanelBridgeKeys:(id)arg1;
 + (void)addBridgeKeys:(id)arg1;
 + (unsigned long long)acceptableStyleMask;
 - (id)appearance;
@@ -18,10 +19,9 @@ __attribute__((visibility("hidden")))
 - (void)_viewDidChangeAppearance:(id)arg1;
 - (BOOL)_shouldNormalizeAppearance;
 - (unsigned long long)awakeFromRemoteView;
-- (void)_windowFrameDidChange;
 - (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
+- (id)requestFrame:(struct CGRect)arg1 animation:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)requestResize:(struct CGSize)arg1 animation:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (BOOL)allowsImplicitResizeRequests;
 - (BOOL)allowsWindowFrameOriginChanges;
 - (struct CGRect)_serviceWindowFrameForRemoteViewFrame:(struct CGRect)arg1;
 - (void)windowWillOrder:(long long)arg1 relativeTo:(long long)arg2;

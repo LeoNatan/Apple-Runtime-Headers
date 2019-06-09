@@ -7,12 +7,13 @@
 #import <PassKitUI/PKPeerPaymentActionViewController.h>
 
 #import <PassKitUI/PKPeerPaymentActionControllerDelegate-Protocol.h>
+#import <PassKitUI/UIScrollViewDelegate-Protocol.h>
 #import <PassKitUI/UITableViewDataSource-Protocol.h>
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSDecimalNumber, NSDecimalNumberHandler, NSNumberFormatter, NSString, PKAnimatedNavigationBarTitleView, PKEnterCurrencyAmountView, PKEnterValueNewBalanceView, PKPaymentPass, UIImageView, UILabel, UITableView;
+@class NSArray, NSDecimalNumber, NSDecimalNumberHandler, NSNumberFormatter, NSString, PKAnimatedNavigationBarTitleView, PKEnterCurrencyAmountView, PKEnterValueNewBalanceView, PKPaymentPass, UIImageView, UILabel, UIScrollView, UITableView, _UIBackdropView;
 
-@interface PKPeerPaymentActionTransferToBankViewController : PKPeerPaymentActionViewController <PKPeerPaymentActionControllerDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface PKPeerPaymentActionTransferToBankViewController : PKPeerPaymentActionViewController <PKPeerPaymentActionControllerDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 {
     NSArray *_supportedTransferActions;
     NSNumberFormatter *_currencyFormatter;
@@ -20,15 +21,20 @@
     NSDecimalNumberHandler *_roundingHandler;
     PKPaymentPass *_defaultInstantFundsOutPaymentPass;
     _Bool _isSmallPhone;
+    _Bool _usesAccessibilityLayout;
     PKAnimatedNavigationBarTitleView *_passNavbarTitleView;
     PKEnterCurrencyAmountView *_enterCurrencyAmountView;
     PKEnterValueNewBalanceView *_newBalanceView;
     UITableView *_tableView;
     UILabel *_footerTextLabel;
-    UIImageView *_passView;
+    UIImageView *_navbarPassView;
+    _UIBackdropView *_backdropView;
+    UIScrollView *_scrollView;
     NSDecimalNumber *_feePercentage;
     NSDecimalNumber *_minimumFee;
     NSDecimalNumber *_maximumFee;
+    float _backdropWeight;
+    int _backdropStyle;
 }
 
 - (void).cxx_destruct;
@@ -39,6 +45,8 @@
 - (void)_updateFooterText;
 - (id)_calculateFee;
 - (id)_indexPathForAction:(unsigned int)arg1;
+- (_Bool)_passViewInNavBar;
+- (void)_calculateBlur;
 - (_Bool)_isCurrentAmountValid;
 - (void)_currentAmountDidChangeTo:(id)arg1 shouldGenerateNewSuggestions:(_Bool)arg2;
 - (void)_updateCurrentAmount:(id)arg1 shouldGenerateNewSuggestions:(_Bool)arg2;
@@ -53,6 +61,7 @@
 - (void)setMaxBalance:(id)arg1;
 - (void)updateAccountValues;
 - (void)peerPaymentActionController:(id)arg1 hasChangedState:(unsigned int)arg2;
+- (void)scrollViewDidScroll:(id)arg1;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
@@ -61,6 +70,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
+- (void)dealloc;
 - (id)initWithPaymentPass:(id)arg1 webService:(id)arg2 context:(int)arg3;
 
 // Remaining properties

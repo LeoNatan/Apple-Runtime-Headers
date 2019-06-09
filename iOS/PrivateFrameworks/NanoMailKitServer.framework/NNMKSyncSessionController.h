@@ -14,8 +14,10 @@
     NSMutableDictionary *_notificationPayloadAcks;
     NSMutableDictionary *_syncingAccountIdentityByUsername;
     NSMutableDictionary *_standaloneStateByAccountId;
+    double _accountAuthRequestLastRequestTime;
 }
 
+@property(nonatomic) double accountAuthRequestLastRequestTime; // @synthesize accountAuthRequestLastRequestTime=_accountAuthRequestLastRequestTime;
 @property(retain, nonatomic) NSMutableDictionary *standaloneStateByAccountId; // @synthesize standaloneStateByAccountId=_standaloneStateByAccountId;
 @property(retain, nonatomic) NSMutableDictionary *syncingAccountIdentityByUsername; // @synthesize syncingAccountIdentityByUsername=_syncingAccountIdentityByUsername;
 @property(retain, nonatomic) NSMutableDictionary *notificationPayloadAcks; // @synthesize notificationPayloadAcks=_notificationPayloadAcks;

@@ -14,6 +14,7 @@
 {
 }
 
++ (id)_ams_cookiesForURL:(id)arg1;
 - (id)userType;
 - (id)userAgent;
 - (id)storeFrontHeader;

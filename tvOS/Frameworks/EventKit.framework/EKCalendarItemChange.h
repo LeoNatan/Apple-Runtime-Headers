@@ -10,6 +10,14 @@
 
 @interface EKCalendarItemChange : EKObjectChange
 {
+    _Bool _titleChanged;
+    _Bool _locationChanged;
+    _Bool _startDateChanged;
+    _Bool _startTimezoneChanged;
+    _Bool _endDateChanged;
+    _Bool _endTimezoneChanged;
+    _Bool _notesChanged;
+    _Bool _allDayChanged;
     EKObjectID *_calendarID;
     EKObjectID *_oldCalendarID;
     NSString *_externalID;
@@ -19,6 +27,15 @@
 + (void)fetchCalendarItemChangesInCalendar:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchCalendarItemChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchCalendarItemChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (int)entityType;
+@property(readonly, nonatomic) _Bool allDayChanged; // @synthesize allDayChanged=_allDayChanged;
+@property(readonly, nonatomic) _Bool notesChanged; // @synthesize notesChanged=_notesChanged;
+@property(readonly, nonatomic) _Bool endTimezoneChanged; // @synthesize endTimezoneChanged=_endTimezoneChanged;
+@property(readonly, nonatomic) _Bool endDateChanged; // @synthesize endDateChanged=_endDateChanged;
+@property(readonly, nonatomic) _Bool startTimezoneChanged; // @synthesize startTimezoneChanged=_startTimezoneChanged;
+@property(readonly, nonatomic) _Bool startDateChanged; // @synthesize startDateChanged=_startDateChanged;
+@property(readonly, nonatomic) _Bool locationChanged; // @synthesize locationChanged=_locationChanged;
+@property(readonly, nonatomic) _Bool titleChanged; // @synthesize titleChanged=_titleChanged;
 @property(readonly, nonatomic) NSString *oldExternalID; // @synthesize oldExternalID=_oldExternalID;
 @property(readonly, nonatomic) NSString *externalID; // @synthesize externalID=_externalID;
 @property(readonly, nonatomic) EKObjectID *oldCalendarID; // @synthesize oldCalendarID=_oldCalendarID;

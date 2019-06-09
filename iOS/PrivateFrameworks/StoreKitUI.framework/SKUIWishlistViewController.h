@@ -11,6 +11,7 @@
 @class NSString, SKUIItemListTableViewController, SKUISyncWishlistOperation, SKUIWishlist, UIBarButtonItem, _UIBackdropView, _UIContentUnavailableView;
 @protocol SKUIWishlistDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIWishlistViewController : SKUIViewController <SKUIItemListTableDelegate>
 {
     _UIBackdropView *_backdropView;

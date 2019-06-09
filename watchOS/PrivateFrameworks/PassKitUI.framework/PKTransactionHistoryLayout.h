@@ -15,8 +15,10 @@
     NSIndexPath *_headerIndexPath;
     _Bool _needsCustomLocation;
     _Bool _useStickyHeader;
+    _Bool _useCompactInsetForTitle;
 }
 
+@property(nonatomic) _Bool useCompactInsetForTitle; // @synthesize useCompactInsetForTitle=_useCompactInsetForTitle;
 @property(nonatomic) _Bool useStickyHeader; // @synthesize useStickyHeader=_useStickyHeader;
 - (void).cxx_destruct;
 - (_Bool)_indexPathIsHeaderIndexPath:(id)arg1;

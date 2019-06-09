@@ -28,11 +28,13 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool isInvalid;
 @property(readonly, nonatomic) unsigned short notificationState;
+@property(readonly, copy, nonatomic) NSArray *reasons;
 @property(readonly, nonatomic) unsigned short state;
 @property(readonly, nonatomic) unsigned short subtype;
 @property(readonly) Class superclass;
-@property(readonly, copy, nonatomic) NSString *title;
+@property(readonly, copy, nonatomic) NSString *title; // @dynamic title;
 @property(readonly, nonatomic) unsigned short type;
 @property(readonly, nonatomic) long long version;
 @end

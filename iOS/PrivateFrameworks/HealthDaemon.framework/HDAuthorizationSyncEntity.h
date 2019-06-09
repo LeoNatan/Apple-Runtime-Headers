@@ -15,12 +15,13 @@
 {
 }
 
++ (_Bool)supportsSyncStore:(id)arg1;
 + (id)syncEntityDependenciesForSyncProtocolVersion:(int)arg1;
 + (long long)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 error:(id *)arg4;
 + (id)decodeSyncObjectWithData:(id)arg1;
-+ (long long)nextSyncAnchorWithSession:(id)arg1 predicate:(id)arg2 startSyncAnchor:(long long)arg3 profile:(id)arg4 error:(id *)arg5;
++ (long long)nextSyncAnchorWithSession:(id)arg1 startSyncAnchor:(long long)arg2 profile:(id)arg3 error:(id *)arg4;
 + (void)didGenerateCodableSourceAuthorizationsForSyncSession:(id)arg1;
-+ (_Bool)generateSyncObjectsForSession:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange)arg3 maxEncodedBytesPerMessage:(long long)arg4 profile:(id)arg5 error:(id *)arg6 handler:(CDUnknownBlockType)arg7;
++ (_Bool)generateSyncObjectsForSession:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange)arg2 profile:(id)arg3 messageHandler:(id)arg4 error:(id *)arg5;
 + (id)syncEntityIdentifier;
 + (id)createCodableSourceAuthorizationWithSource:(id)arg1 syncSession:(id)arg2;
 + (_Bool)companionDidChangeForProfile:(id)arg1 error:(id *)arg2;

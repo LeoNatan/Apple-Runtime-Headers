@@ -30,7 +30,7 @@
 - (_Bool)isCompatibleWithPredicate:(id)arg1;
 - (id)SQLForEntityClass:(Class)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(inout int *)arg2;
+- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(int *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

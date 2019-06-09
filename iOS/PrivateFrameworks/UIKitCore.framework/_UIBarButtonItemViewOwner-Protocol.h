@@ -9,6 +9,7 @@
 @class UIBarButtonItem, UIView;
 
 @protocol _UIBarButtonItemViewOwner <NSObject>
+- (void)_itemDidChangeEnabledState:(UIBarButtonItem *)arg1;
 - (void)_itemDidChangeHiddenState:(UIBarButtonItem *)arg1;
 - (void)_itemDidChangeSelectionState:(UIBarButtonItem *)arg1;
 - (void)_itemDidChangeWidth:(UIBarButtonItem *)arg1;

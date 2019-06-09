@@ -22,6 +22,7 @@
 
 @property(readonly) unsigned int resourceArgsSize; // @synthesize resourceArgsSize=_resourceArgsSize;
 @property(readonly) struct IOAccelNewResourceArgs *resourceArgs; // @synthesize resourceArgs=_resourceArgs;
+- (_Bool)updateResourcePurgeability;
 - (void)purge;
 - (void)purgeWithLock;
 - (int)availableCount;

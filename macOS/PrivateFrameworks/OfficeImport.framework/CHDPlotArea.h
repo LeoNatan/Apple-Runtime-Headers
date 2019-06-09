@@ -8,6 +8,7 @@
 
 @class CHDAxesCollection, CHDChartTypesCollection, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDPlotArea : NSObject
 {
     CHDChartTypesCollection *mChartTypes;

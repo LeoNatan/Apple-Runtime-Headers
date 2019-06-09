@@ -31,6 +31,8 @@ struct CGSize {
     float _field2;
 };
 
+struct CachedBytecode;
+
 struct CallbackData {
     struct CallbackData *_field1;
     id _field2;
@@ -41,6 +43,8 @@ struct CallbackData {
     struct OpaqueJSValue **_field7;
     id _field8;
 };
+
+struct ClassInfo;
 
 struct InlineWatchpointSet {
     unsigned int _field1;
@@ -62,6 +66,15 @@ struct JSObject {
     unsigned int _field7;
 };
 
+struct JSSourceCode {
+    struct Structure *_field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+    unsigned char _field5;
+    struct SourceCode _field6;
+};
+
 struct JSValue {
     union EncodedValueDescriptor u;
 };
@@ -71,23 +84,60 @@ struct JSWeakValue {
     union WeakValueUnion m_value;
 };
 
+struct MappedFileData {
+    void *m_fileData;
+    unsigned int m_fileSize;
+};
+
 struct NoLock;
 
 struct OpaqueJSValue;
 
-struct Poisoned<WTF::Poison<&JSC::g_GlobalDataPoison>, const JSC::ClassInfo *, void> {
-    unsigned int _field1;
+struct OrdinalNumber {
+    int _field1;
 };
 
 struct PropertyTable;
+
+struct RefPtr<JSC::CachedBytecode, WTF::DumbPtrTraits<JSC::CachedBytecode>> {
+    struct CachedBytecode *m_ptr;
+};
 
 struct RefPtr<JSC::JSLock, WTF::DumbPtrTraits<JSC::JSLock>> {
     struct JSLock *m_ptr;
 };
 
+struct RefPtr<JSC::SourceProvider, WTF::DumbPtrTraits<JSC::SourceProvider>> {
+    struct SourceProvider *_field1;
+};
+
+struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
+    struct StringImpl *m_ptr;
+};
+
 struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl>> {
     struct UniquedStringImpl *_field1;
 };
+
+struct RetainPtr<NSURL> {
+    void *m_ptr;
+};
+
+struct SourceCode {
+    struct RefPtr<JSC::SourceProvider, WTF::DumbPtrTraits<JSC::SourceProvider>> _field1;
+    int _field2;
+    int _field3;
+    struct OrdinalNumber _field4;
+    struct OrdinalNumber _field5;
+};
+
+struct SourceProvider;
+
+struct String {
+    struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> m_impl;
+};
+
+struct StringImpl;
 
 struct Strong<JSC::JSObject> {
     struct JSValue *m_slot;
@@ -109,7 +159,7 @@ struct Structure {
     struct WriteBarrier<JSC::StructureChain, WTF::DumbPtrTraits<JSC::StructureChain>> _field13;
     struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> _field14;
     struct RefPtr<WTF::UniquedStringImpl, WTF::DumbPtrTraits<WTF::UniquedStringImpl>> _field15;
-    struct Poisoned<WTF::Poison<&JSC::g_GlobalDataPoison>, const JSC::ClassInfo *, void> _field16;
+    struct ClassInfo *_field16;
     struct StructureTransitionTable _field17;
     struct WriteBarrier<JSC::PropertyTable, WTF::DumbPtrTraits<JSC::PropertyTable>> _field18;
     struct InlineWatchpointSet _field19;
@@ -159,6 +209,10 @@ struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>;
 
 struct WeakImpl;
 
+struct WeakObjCPtr<id<JSModuleLoaderDelegate>> {
+    id m_weakReference;
+};
+
 struct WriteBarrier<JSC::JSCell, WTF::DumbPtrTraits<JSC::JSCell>> {
     struct JSCell *_field1;
 };
@@ -203,6 +257,10 @@ typedef struct {
 } CDStruct_c10b32d8;
 
 // Template types
+typedef struct RefPtr<JSC::CachedBytecode, WTF::DumbPtrTraits<JSC::CachedBytecode>> {
+    struct CachedBytecode *m_ptr;
+} RefPtr_cd332c91;
+
 typedef struct pair<JSC::JSObject *, JSC::JSObject *> {
     struct JSObject *_field1;
     struct JSObject *_field2;

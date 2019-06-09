@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIImageViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIVideoViewElement : SKUIViewElement
 {
     BOOL _enabled;

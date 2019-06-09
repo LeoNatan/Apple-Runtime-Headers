@@ -12,6 +12,9 @@ __attribute__((visibility("hidden")))
     void *_impl;
 }
 
++ (unsigned int)GetAudioDeviceWithWiredHeadset:(BOOL)arg1;
++ (unsigned int)GetDefaultAudioDevice:(BOOL)arg1;
++ (void)GetHALDeviceIdentifiersForDeviceUID:(id)arg1 outHALDeviceUID:(id *)arg2 outPluginDeviceUUID:(id *)arg3;
 + (int)setBufferSize:(int)arg1 onDevice:(id)arg2;
 + (void)setClientDescriptionKind:(unsigned int)arg1 onDevice:(unsigned int)arg2;
 + (id)findHALDeviceUIDFromUUID:(id)arg1;
@@ -24,6 +27,7 @@ __attribute__((visibility("hidden")))
 + (float)gainOnDevice:(unsigned int)arg1;
 + (void)setMute:(_Bool)arg1 onDevice:(unsigned int)arg2;
 + (_Bool)isDeviceMuted:(unsigned int)arg1;
++ (void)GetDevicesForActivationMode:(long long)arg1 outRecordDevice:(unsigned int *)arg2 outPlaybackDevice:(unsigned int *)arg3;
 @property(readonly) unsigned int outputDeviceID;
 @property(readonly) unsigned int inputDeviceID;
 - (void)selectDeviceForActivationMode:(id)arg1;

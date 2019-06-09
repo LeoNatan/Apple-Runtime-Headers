@@ -8,6 +8,7 @@
 
 @class NSCharacterSet;
 
+__attribute__((visibility("hidden")))
 @interface APFormatter : NSFormatter
 {
     NSCharacterSet *_characterSet;
@@ -39,6 +40,7 @@
 + (id)multipleIpAddressesSet;
 + (id)ipAddressSet;
 + (id)romanSet;
+@property unsigned long long maxLength; // @synthesize maxLength=_maxLength;
 - (id)invertedCharacterSet;
 - (void)setInvertedCharacterSet:(id)arg1;
 - (id)characterSet;

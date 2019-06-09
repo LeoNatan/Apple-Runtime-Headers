@@ -18,6 +18,7 @@
     NSUUID *_groupUUID;
     NSSet *_remoteMembers;
     CXHandle *_callerID;
+    NSUUID *_upgradeSessionUUID;
     NSUUID *_messagesGroupUUID;
     NSString *_messagesGroupName;
     NSDate *_dateStarted;
@@ -27,6 +28,7 @@
 @property(copy, nonatomic) NSDate *dateStarted; // @synthesize dateStarted=_dateStarted;
 @property(copy, nonatomic) NSString *messagesGroupName; // @synthesize messagesGroupName=_messagesGroupName;
 @property(copy, nonatomic) NSUUID *messagesGroupUUID; // @synthesize messagesGroupUUID=_messagesGroupUUID;
+@property(copy, nonatomic) NSUUID *upgradeSessionUUID; // @synthesize upgradeSessionUUID=_upgradeSessionUUID;
 @property(nonatomic, getter=isUpgrade) _Bool upgrade; // @synthesize upgrade=_upgrade;
 @property(nonatomic) _Bool wantsStagingArea; // @synthesize wantsStagingArea=_wantsStagingArea;
 @property(nonatomic) _Bool shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;

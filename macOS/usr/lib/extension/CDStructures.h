@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSBundle, NSDate, NSISEngine, NSIndexSet, NSMutableIndexSet, NSObject, NSString;
+@class NSArray, NSBundle, NSDate, NSISEngine, NSIndexSet, NSObject, NSString;
 
 #pragma mark Function Pointers and Blocks
 
@@ -20,13 +20,13 @@ struct AEDesc {
 };
 
 struct CGPoint {
-    double x;
-    double y;
+    double _field1;
+    double _field2;
 };
 
 struct CGRect {
-    struct CGPoint origin;
-    struct CGSize size;
+    struct CGPoint _field1;
+    struct CGSize _field2;
 };
 
 struct CGSize {
@@ -97,6 +97,17 @@ struct _NSLTToken {
 };
 
 struct _NSOrderedChange;
+
+struct _NSProgressFraction {
+    long long completed;
+    long long total;
+    char overflowed;
+};
+
+struct _NSProgressFractionTuple {
+    struct _NSProgressFraction _field1;
+    struct _NSProgressFraction _field2;
+};
 
 struct _NSRange {
     unsigned long long location;
@@ -774,11 +785,12 @@ typedef struct {
 } CDStruct_fee1177a;
 
 typedef struct {
-    CDStruct_183601bc *blocks;
-    unsigned long long blocksCount;
-    unsigned long long blocksCapacity;
-    NSMutableIndexSet *freeIndexes;
-} CDStruct_fb1e53bb;
+    CDStruct_183601bc *values;
+    unsigned int key;
+    unsigned int heap_position;
+    unsigned short count;
+    unsigned short capacity;
+} CDStruct_f13cc9bb;
 
 typedef struct {
     id objects;
@@ -792,6 +804,19 @@ typedef struct {
         unsigned long long count;
     } list;
 } CDStruct_a8bf7a6a;
+
+typedef struct {
+    CDStruct_183601bc *blocks;
+    unsigned long long blocksCount;
+    unsigned long long blocksCapacity;
+    struct {
+        union {
+            unsigned long long _data;
+            unsigned long long *_buckets;
+        } ;
+        unsigned int _bucketCount;
+    } freeIndexes;
+} CDStruct_52118125;
 
 typedef struct {
     unsigned short inline_capacity;
@@ -809,12 +834,4 @@ typedef struct {
         unsigned char padding[48];
     } data;
 } CDStruct_9ac54d62;
-
-#pragma mark Typedef'd Unions
-
-typedef union {
-    struct __MDItem *_field1;
-    id _field2;
-    id _field3;
-} CDUnion_7d5f215e;
 

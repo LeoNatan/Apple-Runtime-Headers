@@ -6,7 +6,7 @@
 
 #import <MapKit/MKAnnotationView.h>
 
-@class GEOFeatureStyleAttributes, NSString, UIColor, UIImage, UIImageView, UILabel, UIView, _MKBezierPathView;
+@class GEOFeatureStyleAttributes, MKWalletMerchantStylingInfo, NSString, UIColor, UIImage, UIImageView, UILabel, UIView, _MKBezierPathView;
 
 @interface MKMarkerAnnotationView : MKAnnotationView
 {
@@ -20,9 +20,9 @@
     _MKBezierPathView *_selectedDotView;
     UIView *_contentMaskView;
     GEOFeatureStyleAttributes *_customStyleAttributes;
+    MKWalletMerchantStylingInfo *_walletMerchantStylingInfo;
+    _Bool _isObserving;
     _Bool _animatesWhenAdded;
-    int _titleVisibility;
-    int _subtitleVisibility;
     UIColor *_markerTintColor;
     UIColor *_glyphTintColor;
     NSString *_glyphText;
@@ -33,6 +33,7 @@
 }
 
 + (float)_defaultDisplayPriority;
++ (Class)_mapkitLeafClass;
 @property(nonatomic) float markerStrokeWidth; // @synthesize markerStrokeWidth=_markerStrokeWidth;
 @property(copy, nonatomic) UIColor *markerStrokeTintColor; // @synthesize markerStrokeTintColor=_markerStrokeTintColor;
 @property(nonatomic) _Bool animatesWhenAdded; // @synthesize animatesWhenAdded=_animatesWhenAdded;
@@ -41,16 +42,14 @@
 @property(copy, nonatomic) NSString *glyphText; // @synthesize glyphText=_glyphText;
 @property(copy, nonatomic) UIColor *glyphTintColor; // @synthesize glyphTintColor=_glyphTintColor;
 @property(copy, nonatomic) UIColor *markerTintColor; // @synthesize markerTintColor=_markerTintColor;
-@property(nonatomic) int subtitleVisibility; // @synthesize subtitleVisibility=_subtitleVisibility;
-@property(nonatomic) int titleVisibility; // @synthesize titleVisibility=_titleVisibility;
 @property(retain, nonatomic, getter=_styleAttributes, setter=_setStyleAttributes:) GEOFeatureStyleAttributes *styleAttributes; // @synthesize styleAttributes=_customStyleAttributes;
 - (void).cxx_destruct;
-- (void)configureCustomFeature:(id)arg1;
+- (struct UIEdgeInsets)_defaultCollisionAlignmentRectInsets;
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (id)_effectiveSubtitlesIsCollidable:(_Bool *)arg1;
-- (id)_effectiveTitleIsCollidable:(_Bool *)arg1;
 - (_Bool)isProvidingCustomFeature;
 - (_Bool)_shouldDeselectWhenDragged;
+- (void)dealloc;
 - (void)_setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setDragState:(unsigned int)arg1 animated:(_Bool)arg2;
 - (void)_configureAnimated:(_Bool)arg1 fromState:(int)arg2 toState:(int)arg3;
@@ -69,6 +68,8 @@
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+@property(nonatomic) int subtitleVisibility; // @dynamic subtitleVisibility;
+@property(nonatomic) int titleVisibility; // @dynamic titleVisibility;
 - (void)setAnnotation:(id)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
@@ -83,6 +84,7 @@
 - (id)_effectiveMarkerTintColorForState:(int)arg1;
 - (_Bool)canShowCallout;
 - (_Bool)_hasDataRequiringCallout;
+@property(retain, nonatomic, getter=_walletMerchantStylingInfo, setter=_setWalletMerchantStylingInfo:) MKWalletMerchantStylingInfo *walletMerchantStylingInfo;
 
 @end
 

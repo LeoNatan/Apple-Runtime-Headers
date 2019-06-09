@@ -16,6 +16,7 @@
 + (_Bool)_linkedBefore7;
 + (void)disableSharedPhotoStreamsSupport;
 + (long long)authorizationStatus;
++ (id)_albumsInLibrary:(id)arg1;
 + (id)_library;
 + (struct CGImage *)_aspectRatioThumbnailForAssetURL:(id)arg1;
 + (struct CGImage *)_thumbnailForAssetURL:(id)arg1;
@@ -27,9 +28,7 @@
 + (long long)_estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
 + (id)_filePathForVideoURL:(id)arg1 outMetadata:(id *)arg2;
 @property(retain, nonatomic) ALAssetsLibraryPrivate *internal; // @synthesize internal=_internal;
-- (_Bool)hasCompletedRestorePostProcessing;
 - (id)assetsGroupsRelatedToAssetsGroup:(id)arg1;
-- (void)deleteAssetForURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)addAssetsGroupAlbumWithName:(id)arg1 resultBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (void)groupForURL:(id)arg1 resultBlock:(CDUnknownBlockType)arg2 failureBlock:(CDUnknownBlockType)arg3;
 - (id)_copyGroupForURL:(id)arg1;
@@ -46,7 +45,6 @@
 - (void)_addGroupForAlbum:(struct NSObject *)arg1 ofType:(unsigned long long)arg2 toArray:(id)arg3;
 - (id)publicErrorForPrivateDomain:(id)arg1 withPrivateCode:(long long)arg2;
 - (id)publicErrorFromPrivateError:(id)arg1;
-- (_Bool)_libraryIsAvailable;
 - (void)_performBlock:(CDUnknownBlockType)arg1;
 - (void)_performBlockAndWait:(CDUnknownBlockType)arg1;
 - (void)registerAlbum:(struct NSObject *)arg1 assetGroupPrivate:(id)arg2;

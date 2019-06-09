@@ -11,8 +11,9 @@
 @protocol NEExtensionProviderProtocol <NSObject>
 - (void)stopWithReason:(int)arg1;
 - (void)startWithOptions:(NSDictionary *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)setConfiguration:(NEConfiguration *)arg1 extensionIdentifier:(NSString *)arg2 deviceIdentifier:(NSString *)arg3;
+- (void)setConfiguration:(NEConfiguration *)arg1 extensionIdentifier:(NSString *)arg2;
 - (void)dispose;
+- (void)createWithCompletionHandler:(void (^)(_Bool))arg1;
 - (void)wake;
 - (void)sleepWithCompletionHandler:(void (^)(void))arg1;
 @end

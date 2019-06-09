@@ -7,10 +7,10 @@
 @class NSArray, WFLocation;
 
 @protocol NWKForecastServable
-- (void)setForecastTypesInterestMask:(unsigned int)arg1;
 - (void)invalidate;
 - (void)setupSnapshotForLocations:(NSArray *)arg1 onlyObserveInForegroundOnly:(_Bool)arg2;
-- (void)setLocationForUpdates:(WFLocation *)arg1 lastUpdate:(unsigned int)arg2 onlyObserveInForegroundOnly:(_Bool)arg3;
+- (void)setLocationForUpdates:(WFLocation *)arg1 forecastTypes:(unsigned int)arg2 lastUpdate:(unsigned int)arg3 onlyObserveInForegroundOnly:(_Bool)arg4;
 - (void)setLocationForCachedUpdates:(WFLocation *)arg1 lastUpdate:(unsigned int)arg2;
+- (void)setForecastTypes:(unsigned int)arg1;
 @end
 

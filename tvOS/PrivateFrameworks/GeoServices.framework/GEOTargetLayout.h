@@ -14,12 +14,13 @@
     int _layoutStyle;
     int _uiTarget;
     struct {
-        unsigned int layoutInfo:1;
-        unsigned int layoutStyle:1;
-        unsigned int uiTarget:1;
-    } _has;
+        unsigned int has_layoutInfo:1;
+        unsigned int has_layoutStyle:1;
+        unsigned int has_uiTarget:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -27,20 +28,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsLayoutStyle:(id)arg1;
 - (id)layoutStyleAsString:(int)arg1;
 @property(nonatomic) _Bool hasLayoutStyle;
-@property(nonatomic) int layoutStyle; // @synthesize layoutStyle=_layoutStyle;
+@property(nonatomic) int layoutStyle;
 - (int)StringAsLayoutInfo:(id)arg1;
 - (id)layoutInfoAsString:(int)arg1;
 @property(nonatomic) _Bool hasLayoutInfo;
-@property(nonatomic) int layoutInfo; // @synthesize layoutInfo=_layoutInfo;
+@property(nonatomic) int layoutInfo;
 - (int)StringAsUiTarget:(id)arg1;
 - (id)uiTargetAsString:(int)arg1;
 @property(nonatomic) _Bool hasUiTarget;
-@property(nonatomic) int uiTarget; // @synthesize uiTarget=_uiTarget;
+@property(nonatomic) int uiTarget;
 
 @end
 

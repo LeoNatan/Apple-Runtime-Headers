@@ -8,22 +8,34 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapRegion, GEOStyleAttributes, NSString, PBUnknownFields;
+@class GEOMapRegion, GEOStyleAttributes, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOURLExtraStorage : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOMapRegion *_mapRegion;
     NSString *_phoneNumber;
     GEOStyleAttributes *_styleAttributes;
     NSString *_url;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_mapRegion:1;
+        unsigned int read_phoneNumber:1;
+        unsigned int read_styleAttributes:1;
+        unsigned int read_url:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_mapRegion:1;
+        unsigned int wrote_phoneNumber:1;
+        unsigned int wrote_styleAttributes:1;
+        unsigned int wrote_url:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-@property(retain, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
-@property(retain, nonatomic) GEOMapRegion *mapRegion; // @synthesize mapRegion=_mapRegion;
-@property(retain, nonatomic) GEOStyleAttributes *styleAttributes; // @synthesize styleAttributes=_styleAttributes;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,12 +44,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *url;
 @property(readonly, nonatomic) _Bool hasUrl;
+- (void)_readUrl;
+@property(retain, nonatomic) NSString *phoneNumber;
 @property(readonly, nonatomic) _Bool hasPhoneNumber;
+- (void)_readPhoneNumber;
+@property(retain, nonatomic) GEOMapRegion *mapRegion;
 @property(readonly, nonatomic) _Bool hasMapRegion;
+- (void)_readMapRegion;
+@property(retain, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) _Bool hasStyleAttributes;
+- (void)_readStyleAttributes;
 
 @end
 

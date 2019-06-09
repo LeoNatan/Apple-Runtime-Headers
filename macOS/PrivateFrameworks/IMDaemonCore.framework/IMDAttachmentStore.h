@@ -22,6 +22,9 @@
 - (BOOL)_shouldEarlyReturnForWrongItemType:(id)arg1;
 - (BOOL)updateLegacyTransferGUIDIfNeeded:(id)arg1;
 - (id)attachmentWithGUID:(id)arg1;
+- (id)getAuxVideoPath:(id)arg1;
+- (void)markAttachmentPurgeable:(id)arg1;
+- (void)markFileAsPurgeable:(id)arg1;
 - (BOOL)updateAttachment:(id)arg1;
 - (BOOL)removeAttachment:(id)arg1 fromMessageWithGUID:(id)arg2;
 - (BOOL)storeAttachment:(id)arg1 associateWithMessageWithGUID:(id)arg2;

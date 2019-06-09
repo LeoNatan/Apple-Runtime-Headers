@@ -14,8 +14,8 @@
 + (_Bool)ifResultIsNo:(_Bool)arg1 setOutputError:(id *)arg2 toError:(id)arg3;
 + (id)ifResultIsNil:(id)arg1 setOutputError:(id *)arg2 withBlock:(CDUnknownBlockType)arg3;
 + (id)ifResultIsNil:(id)arg1 setOutputError:(id *)arg2 toError:(id)arg3;
-+ (id)errorWithCode:(unsigned int)arg1 underlyingError:(id)arg2;
-+ (id)errorWithCode:(unsigned int)arg1 userInfo:(id)arg2;
++ (id)errorWithCode:(int)arg1 underlyingError:(id)arg2;
++ (id)errorWithCode:(int)arg1 userInfo:(id)arg2;
 + (id)errorWithErrno:(int)arg1 userInfo:(id)arg2;
 + (id)errorWithErrnoAndUserInfo:(id)arg1;
 + (id)errorWithErrno:(int)arg1;

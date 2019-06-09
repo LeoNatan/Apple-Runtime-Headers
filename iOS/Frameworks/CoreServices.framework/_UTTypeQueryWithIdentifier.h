@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
++ (void)_precacheTypesForIdentifiers:(id)arg1;
++ (id)_typeCache;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -25,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (_Bool)_canResolveLocallyWithoutMappingDatabase;
+- (id)resolve;
 - (id)initWithIdentifier:(id)arg1;
 - (_Bool)getLocallyResolvedType:(id *)arg1 orErrorWithoutMappingDatabase:(id *)arg2;
 

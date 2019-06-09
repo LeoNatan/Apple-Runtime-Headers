@@ -6,13 +6,11 @@
 
 #import <ContactsUI/CNContactAction.h>
 
-#import <ContactsUI/CNContactActionProtocol-Protocol.h>
-
 @class CNPropertyGroupItem, NSArray;
 @protocol CNPropertyActionDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CNPropertyAction : CNContactAction <CNContactActionProtocol>
+@interface CNPropertyAction : CNContactAction
 {
     NSArray *_propertyItems;
 }
@@ -23,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)presentDisambiguationAlertWithSender:(id)arg1;
 - (void)performActionWithSender:(id)arg1;
 - (void)performActionForItem:(id)arg1 sender:(id)arg2;
-@property(readonly, nonatomic) _Bool canPerformAction;
+- (_Bool)canPerformAction;
 @property(readonly, nonatomic) CNPropertyGroupItem *propertyItem;
 - (id)initWithContact:(id)arg1 propertyItem:(id)arg2;
 - (id)initWithContact:(id)arg1 propertyItems:(id)arg2;

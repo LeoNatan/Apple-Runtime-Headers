@@ -6,27 +6,19 @@
 
 #import <Photos/PHAssetPropertySet.h>
 
-#import <Photos/PHAssetPropertySet-Protocol.h>
-
-@class PHAsset, RDVersion;
-
-@interface PHAssetPhotoIrisProperties : PHAssetPropertySet <PHAssetPropertySet>
+@interface PHAssetPhotoIrisProperties : PHAssetPropertySet
 {
-    RDVersion *_version;
+    unsigned short _photoIrisVisibilityState;
+    CDStruct_1b6d18a9 _photoIrisStillDisplayTime;
+    CDStruct_1b6d18a9 _photoIrisVideoDuration;
 }
 
-+ (void)fetchPropertiesForObjects:(id)arg1 photoLibrary:(id)arg2;
-+ (id)propertiesToLoadFromPhotoLibrary:(id)arg1;
-@property(retain, nonatomic) RDVersion *version; // @synthesize version=_version;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) unsigned char photoIrisVisibilityState;
-@property(readonly, nonatomic) CDStruct_1b6d18a9 photoIrisStillDisplayTime;
-@property(readonly, nonatomic) CDStruct_1b6d18a9 photoIrisVideoDuration;
-- (id)initWithAsset:(id)arg1 version:(id)arg2;
-- (id)initWithAsset:(id)arg1;
-
-// Remaining properties
-@property(readonly, nonatomic) __weak PHAsset *asset;
++ (id)propertiesToFetch;
++ (id)propertySetName;
+@property(readonly, nonatomic) unsigned short photoIrisVisibilityState; // @synthesize photoIrisVisibilityState=_photoIrisVisibilityState;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 photoIrisVideoDuration; // @synthesize photoIrisVideoDuration=_photoIrisVideoDuration;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 photoIrisStillDisplayTime; // @synthesize photoIrisStillDisplayTime=_photoIrisStillDisplayTime;
+- (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(BOOL)arg3;
 
 @end
 

@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)dateFromFileURL:(id)arg1;
 + (id)dateFormatter;
 + (id)candidateLogsURL;
 + (id)submittedLogsURL;

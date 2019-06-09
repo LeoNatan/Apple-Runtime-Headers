@@ -20,11 +20,13 @@
     _Bool _useModalStyle;
     _Bool _isCombined;
     NSString *_displayLanguage;
+    unsigned long long _displayDeviceType;
 }
 
 + (id)splashPageWithBundleIdentifier:(id)arg1;
 @property(nonatomic) _Bool isCombined; // @synthesize isCombined=_isCombined;
 @property _Bool useModalStyle; // @synthesize useModalStyle=_useModalStyle;
+@property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property _Bool forceLargeMargins; // @synthesize forceLargeMargins=_forceLargeMargins;
 @property _Bool useSmallTitle; // @synthesize useSmallTitle=_useSmallTitle;

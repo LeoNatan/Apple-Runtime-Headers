@@ -11,20 +11,18 @@
 #import <MediaPlayer/UITableViewDataSource-Protocol.h>
 #import <MediaPlayer/UITableViewDelegate-Protocol.h>
 
-@class MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingEmptyStateView, MPAVRoutingTableHeaderView, MPAVRoutingViewControllerUpdate, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, NSString, UIColor, UITableView, UIView;
+@class MPAVClippingTableView, MPAVEndpointRoute, MPAVRoute, MPAVRoutingController, MPAVRoutingViewControllerUpdate, MPSectionedCollection, MPVolumeGroupSliderCoordinator, MPWeakTimer, NSArray, NSMapTable, NSNumber, NSString, UIColor, UITableView;
 @protocol MPAVRoutingViewControllerDelegate, MPAVRoutingViewControllerThemeDelegate;
 
 @interface MPAVRoutingViewController : UIViewController <MPAVRoutingControllerDelegate, MPAVRoutingTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate>
 {
-    UITableView *_tableView;
-    UIView *_tableBackgroundView;
-    MPAVRoutingTableHeaderView *_tableHeaderView;
-    MPAVRoutingEmptyStateView *_emptyStateView;
+    MPAVClippingTableView *_tableView;
     MPAVRoutingViewControllerUpdate *_pendingUpdate;
     _Bool _isAnimatingUpdate;
     MPAVRoute *_displayedEndpointRoute;
-    NSArray *_cachedRoutes;
+    MPSectionedCollection *_routingViewItems;
     NSArray *_cachedPickedRoutes;
+    NSArray *_cachedDisplayableAvailableRoutes;
     NSArray *_cachedPendingPickedRoutes;
     NSArray *_cachedDisplayAsPickedRoutes;
     NSArray *_cachedVolumeCapableRoutes;
@@ -69,17 +67,16 @@
 @property(nonatomic) __weak id <MPAVRoutingViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (id)_createSectionedCollection:(id)arg1 withPickedRoutes:(id)arg2;
+- (void)_endUpdates;
 - (id)_createVolumeSlider;
 - (_Bool)_shouldDisplayRouteAsPicked:(id)arg1;
 - (double)_tableViewFooterViewHeight;
 - (double)_tableViewHeaderViewHeight;
-- (id)_tableHeaderView;
-- (unsigned long long)_tableViewNumberOfRows;
 - (void)_applyUpdate:(id)arg1;
 - (id)_createReloadUpdate;
 - (void)_enqueueUpdate:(id)arg1;
 - (void)_updateDisplayedRoutes;
-- (void)_reloadEmptyStateVisibility;
 - (id)_volumeCapableRoutesInRoutes:(id)arg1;
 - (id)_displayAsPickedRoutesInRoutes:(id)arg1;
 - (id)_displayableRoutesInRoutes:(id)arg1;
@@ -88,12 +85,11 @@
 - (void)_setNeedsRouteDiscoveryModeUpdate;
 - (void)_setRouteDiscoveryMode:(long long)arg1;
 - (void)_setupUpdateTimerIfNecessary;
-- (id)_displayedRoutes;
 - (void)_endRouteDiscovery;
 - (void)_beginRouteDiscovery;
 - (void)_unregisterNotifications;
 - (void)_registerNotifications;
-- (void)_configureCell:(id)arg1 forIndexPath:(id)arg2 withDisplayedRoutes:(id)arg3;
+- (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (double)_tableViewHeightAccordingToDataSource;
@@ -115,8 +111,11 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;

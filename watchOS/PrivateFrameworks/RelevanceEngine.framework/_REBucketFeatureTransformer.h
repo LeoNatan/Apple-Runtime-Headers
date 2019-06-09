@@ -6,25 +6,28 @@
 
 #import <RelevanceEngine/REFeatureTransformer.h>
 
-@class REFeatureValue;
-
 @interface _REBucketFeatureTransformer : REFeatureTransformer
 {
     unsigned int _count;
-    REFeatureValue *_min;
-    REFeatureValue *_max;
     int _bitCount;
+    unsigned long _min;
+    unsigned long _max;
 }
 
-- (void).cxx_destruct;
++ (id)functionName;
+@property(nonatomic) unsigned long max; // @synthesize max=_max;
+@property(nonatomic) unsigned long min; // @synthesize min=_min;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)_validateWithFeatures:(id)arg1;
-- (id)_transform:(id)arg1;
+- (unsigned long)_createTransformFromValues:(unsigned int *)arg1 count:(unsigned int)arg2;
 - (unsigned int)_featureCount;
 - (int)_bitCount;
 - (unsigned int)_outputType;
-- (id)initWithBucketCount:(unsigned int)arg1 minValue:(id)arg2 maxValue:(id)arg3;
+- (void)configureWithInvocation:(id)arg1;
+- (void)_updateConfigurationForCount:(unsigned int)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end
 

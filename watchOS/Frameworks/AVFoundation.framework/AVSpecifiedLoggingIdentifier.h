@@ -17,7 +17,6 @@
 
 @property(readonly, copy) NSString *description;
 @property(readonly) NSString *name;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithSpecifiedName:(id)arg1;
 - (id)makeDerivedIdentifier;

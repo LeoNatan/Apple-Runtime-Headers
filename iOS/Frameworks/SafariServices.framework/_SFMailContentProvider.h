@@ -19,11 +19,16 @@
 @property(nonatomic) __weak id <_SFMailContentProviderDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
-- (void)getMailComposeViewControllerWithMailToURL:(id)arg1 contentURL:(id)arg2 preferredContentType:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)prepareMailComposeViewController:(id)arg1 withMailToURL:(id)arg2 contentURL:(id)arg3 preferredContentType:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_getWebArchiveDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_getPDFDataWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_getReaderContentWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (long long)_defaultPreferredContentType;
+- (_Bool)_canProvideContentType:(long long)arg1;
 - (long long)_bestContentTypeForPreferredContentType:(long long)arg1;
 - (id)_preferentiallyOrderedAvailableContentTypes;
 - (id)_preferentiallyOrderedContentTypes;
+- (void)getMailComposeViewControllerWithMailToURL:(id)arg1 contentURL:(id)arg2 preferredContentType:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)prepareMailComposeViewController:(id)arg1 withMailToURL:(id)arg2 contentURL:(id)arg3 preferredContentType:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

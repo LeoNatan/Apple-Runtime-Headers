@@ -18,7 +18,7 @@
 - (BOOL)addCell;
 - (BOOL)addIntentTuple:(id)arg1;
 - (BOOL)addIntentTuple:(int)arg1 data:(int)arg2 intent:(int)arg3;
-- (id)newGrowableItem;
+- (id)createGrowableItem;
 - (id)growableItems;
 - (BOOL)canGrow;
 - (id)initWithFilterInfo:(id)arg1 parent:(id)arg2;

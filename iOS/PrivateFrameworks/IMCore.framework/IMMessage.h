@@ -38,6 +38,7 @@
     long long _associatedMessageType;
     NSDictionary *_messageSummaryInfo;
     NSString *_associatedBalloonBundleID;
+    NSString *_sourceApplicationID;
     NSData *_customTypingIndicatorIcon;
     NSString *_notificationIDSTokenURI;
     unsigned long long _sortID;
@@ -71,6 +72,7 @@
 @property(retain, nonatomic) NSData *customTypingIndicatorIcon; // @synthesize customTypingIndicatorIcon=_customTypingIndicatorIcon;
 @property(retain, nonatomic) NSDate *timeExpressiveSendPlayed; // @synthesize timeExpressiveSendPlayed=_timeExpressiveSendPlayed;
 @property(retain, nonatomic) NSString *expressiveSendStyleID; // @synthesize expressiveSendStyleID=_expressiveSendStyleID;
+@property(retain, nonatomic) NSString *sourceApplicationID; // @synthesize sourceApplicationID=_sourceApplicationID;
 @property(retain, nonatomic) NSString *associatedBalloonBundleID; // @synthesize associatedBalloonBundleID=_associatedBalloonBundleID;
 @property(retain, nonatomic) NSData *payloadData; // @synthesize payloadData=_payloadData;
 @property(retain, nonatomic) NSString *balloonBundleID; // @synthesize balloonBundleID=_balloonBundleID;
@@ -95,6 +97,7 @@
 @property(readonly, nonatomic) IMHandle *subject; // @synthesize subject=_subject;
 @property(retain, nonatomic, setter=_updateSender:) IMHandle *sender; // @synthesize sender=_sender;
 - (void).cxx_destruct;
+- (void)_ovverrideGUIDForTest:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (id)messagesBySeparatingRichLinks;
@@ -136,7 +139,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)descriptionForPurpose:(long long)arg1 inChat:(id)arg2;
 - (id)descriptionForPurpose:(long long)arg1;
-- (void)_ovverrideGUIDForTest:(id)arg1;
 @property(readonly, nonatomic) _Bool isAssociatedMessage;
 - (id)initWithSender:(id)arg1 time:(id)arg2 text:(id)arg3 messageSubject:(id)arg4 fileTransferGUIDs:(id)arg5 flags:(unsigned long long)arg6 error:(id)arg7 guid:(id)arg8 subject:(id)arg9 associatedMessageGUID:(id)arg10 associatedMessageType:(long long)arg11 associatedMessageRange:(struct _NSRange)arg12 associatedMessageInfo:(id)arg13;
 

@@ -8,6 +8,7 @@
 
 @class SKUIApplicationController;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIApplicationShutdownHelper : NSObject
 {
     SKUIApplicationController *_applicationController;

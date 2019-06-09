@@ -8,6 +8,7 @@
 
 @class SKUICellLayout;
 
+__attribute__((visibility("hidden")))
 @interface SKUICellLayoutView : UIView
 {
     SKUICellLayout *_layout;

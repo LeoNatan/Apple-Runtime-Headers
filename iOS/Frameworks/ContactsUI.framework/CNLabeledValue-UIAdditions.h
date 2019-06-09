@@ -16,6 +16,14 @@
 + (id)defaultLabels;
 + (id)localizedDisplayStringForLabel:(id)arg1 propertyName:(id)arg2;
 + (void *)addressBook;
++ (id)builtinLabelsForProperty:(id)arg1;
++ (void)deleteCustomLabel:(id)arg1;
++ (id)allCustomLabels;
++ (id)allLabels;
++ (id)defaultLabels;
++ (id)localizedDisplayStringForLabel:(id)arg1 propertyName:(id)arg2;
++ (void *)addressBook;
 @property(readonly, nonatomic) NSString *localizedLabel;
+- (Class)contactViewControllerCellClassForPropertyType:(id)arg1;
 @end
 

@@ -9,7 +9,7 @@
 #import <CoreData/NSPersistentStoreMirroringDelegate-Protocol.h>
 #import <CoreData/PFCloudKitExporterDelegate-Protocol.h>
 
-@class CKContainer, CKDatabase, CKRecordZone, CKRecordZoneSubscription, NSCloudKitMirroringDelegateOptions, NSError, NSPersistentStore, NSPersistentStoreCoordinator, NSSQLCore, NSString, PFCloudKitExporterOptions;
+@class CDDCloudKitClient, CKContainer, CKDatabase, CKDatabaseSubscription, CKNotificationListener, CKRecordZone, CKScheduler, NSCloudKitMirroringDelegateOptions, NSCloudKitMirroringRequestManager, NSError, NSPersistentStore, NSPersistentStoreCoordinator, NSSQLCore, NSString, PFCloudKitExporterOptions;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface NSCloudKitMirroringDelegate : NSObject <PFCloudKitExporterDelegate, NSPersistentStoreMirroringDelegate>
@@ -18,69 +18,91 @@
     NSString *_ckDatabaseName;
     NSObject<OS_dispatch_semaphore> *_cloudKitQueueSemaphore;
     NSObject<OS_dispatch_queue> *_cloudKitQueue;
-    CKRecordZone *_zone;
-    CKRecordZoneSubscription *_zoneSubscription;
+    CKRecordZone *_recordZone;
+    CKDatabaseSubscription *_databaseSubscription;
     CKContainer *_container;
     CKDatabase *_database;
+    CKScheduler *_scheduler;
+    CKNotificationListener *_notificationListener;
     NSError *_lastInitializationError;
     BOOL _hadObservedStore;
     BOOL _successfullyInitialized;
     PFCloudKitExporterOptions *_exporterOptions;
+    CDDCloudKitClient *_coredatadClient;
     NSSQLCore *_observedStore;
     NSPersistentStoreCoordinator *_observedCoordinator;
     // Error parsing type: Ai, name: _accountChangeNotificationIteration
+    NSCloudKitMirroringRequestManager *_requestManager;
 }
 
 + (void)initialize;
-+ (id)describeMetadataForStoreAtURL:(id)arg1;
++ (id)createCloudKitServerWithMachServiceName:(id)arg1 andStorageDirectoryPath:(id)arg2;
++ (id)cloudKitMachServiceName;
++ (id)cloudKitMetadataTransformerName;
++ (BOOL)checkIfContentsOfStore:(id)arg1 matchContentsOfStore:(id)arg2 error:(id *)arg3;
++ (BOOL)checkForCloudKitTablesInStoreAtURL:(id)arg1 withPersistentStoreCoordinator:(id)arg2 withConfiguration:(id)arg3;
++ (BOOL)checkAndCreateDirectoryAtURL:(id)arg1 wipeIfExists:(BOOL)arg2 error:(id *)arg3;
++ (id)makeACopyOfTheStoreAtURL:(id)arg1 withCoordinator:(id)arg2 error:(id *)arg3;
++ (void)printRepresentativeSchemaForModelAtURL:(id)arg1 orStoreAtURL:(id)arg2 withConfiguration:(id)arg3;
++ (void)printMetadataForStoreAtURL:(id)arg1 withConfiguration:(id)arg2 operateOnACopy:(BOOL)arg3;
+@property(readonly, retain, nonatomic) NSCloudKitMirroringRequestManager *requestManager; // @synthesize requestManager=_requestManager;
 @property(readonly, nonatomic) BOOL hadObservedStore; // @synthesize hadObservedStore=_hadObservedStore;
 @property(readonly, nonatomic) PFCloudKitExporterOptions *exporterOptions; // @synthesize exporterOptions=_exporterOptions;
 @property(readonly, nonatomic) BOOL successfullyInitialized; // @synthesize successfullyInitialized=_successfullyInitialized;
 @property(readonly, nonatomic) __weak NSPersistentStoreCoordinator *observedCoordinator; // @synthesize observedCoordinator=_observedCoordinator;
 @property(readonly, nonatomic) __weak NSPersistentStore *observedStore; // @synthesize observedStore=_observedStore;
 @property(readonly, nonatomic) NSError *lastInitializationError; // @synthesize lastInitializationError=_lastInitializationError;
+@property(readonly, nonatomic) CKNotificationListener *notificationListener; // @synthesize notificationListener=_notificationListener;
+@property(readonly, nonatomic) CKScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
 @property(readonly, nonatomic) CKContainer *container; // @synthesize container=_container;
-@property(readonly, nonatomic) CKRecordZoneSubscription *zoneSubscription; // @synthesize zoneSubscription=_zoneSubscription;
-@property(readonly, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;
+@property(readonly, nonatomic) CKDatabaseSubscription *databaseSubscription; // @synthesize databaseSubscription=_databaseSubscription;
+@property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cloudKitQueue; // @synthesize cloudKitQueue=_cloudKitQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *cloudKitQueueSemaphore; // @synthesize cloudKitQueueSemaphore=_cloudKitQueueSemaphore;
 @property(readonly, nonatomic) NSString *ckDatabaseName; // @synthesize ckDatabaseName=_ckDatabaseName;
 @property(readonly, copy, nonatomic) NSCloudKitMirroringDelegateOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
+- (void)fetchChangesAndUpdateObservedStore;
+- (void)checkForNewChanges;
+- (void)_setRequestManager:(id)arg1;
 - (void)_setAccountNotificationBackoffInterval:(long long)arg1;
 - (void)_setZone:(id)arg1;
 - (void)_setContainer:(id)arg1;
 - (void)_setDatabase:(id)arg1;
 - (void)_setObservedStore:(id)arg1 observedCoordinator:(id)arg2;
-- (void)logMessage:(id)arg1;
+- (void)_finishedRequest:(id)arg1 withResult:(id)arg2;
+- (void)checkAndExecuteNextRequest;
+- (id)newActivityWithIdentifier:(id)arg1;
+- (BOOL)_dateExceedsSchedulingThreshold:(id)arg1;
+- (void)checkAndScheduleImportIfNecessary;
+- (void)scheduleExportWithMonitor:(id)arg1;
+- (void)remoteStoreDidChange:(id)arg1;
+- (void)managedObjectContextSaved:(id)arg1;
 - (void)exporter:(id)arg1 willScheduleOperations:(id)arg2;
 - (id)resetNotificationUserInfoForError:(id)arg1;
 - (void)postDidResetNotificationForError:(id)arg1;
 - (void)postWillResetNotificationForError:(id)arg1;
-- (BOOL)wipeCachedIdentityInformationFromStore:(id)arg1 error:(id *)arg2;
-- (BOOL)wipeCachedZoneMetadataFromStore:(id)arg1 error:(id *)arg2;
-- (BOOL)wipeAllCloudDataAndPurgeHistoryToken:(BOOL)arg1 error:(id *)arg2;
-- (BOOL)wipeCloudMetadataFromMirroredObjects:(id *)arg1;
+- (BOOL)purgeMetadataFromStore:(id)arg1 inMonitor:(id)arg2 withOptions:(unsigned long long)arg3 forRecordZones:(id)arg4 error:(id *)arg5;
 - (BOOL)_recoverFromPartialError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)_recoverFromError:(id)arg1 withMonitor:(id)arg2;
 - (BOOL)recoverFromError:(id)arg1;
 - (void)handleErrorInResult:(id)arg1;
-- (void)fetchChangesAndUpdateObservedStore;
-- (void)checkForNewChanges;
 - (void)_requestEncounteredRecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_requestEncounteredUnrecoverableError:(id)arg1 withResult:(id)arg2;
 - (void)_requestAbortedNotInitialized:(id)arg1;
+- (void)_performMetadataResetRequest:(id)arg1;
 - (void)_performFetchRecordsRequest:(id)arg1;
 - (void)_performResetZoneRequest:(id)arg1;
 - (void)_performExportWithRequest:(id)arg1;
 - (void)_performImportWithRequest:(id)arg1;
+- (void)_performSetupRequest:(id)arg1;
+- (void)_performDelegateResetRequest:(id)arg1;
+- (void)_executeRequest:(id)arg1;
+- (void)_enqueueRequest:(id)arg1;
 - (id)executeMirroringRequest:(id)arg1 error:(id *)arg2;
-- (BOOL)pruneExternalAssetFileAtURL:(id)arg1 error:(id *)arg2;
-- (BOOL)isPrivateContextSave:(id)arg1;
 - (void)_openTransactionWithLabel:(id)arg1 andExecuteWorkBlock:(CDUnknownBlockType)arg2;
-- (void)ckIdentityChanged:(id)arg1;
-- (void)ckAccountChanged:(id)arg1;
+- (void)ckAccountOrIdentityChangedHandler:(id)arg1;
 - (void)storesDidChange:(id)arg1;
 - (void)coordinatorWillRemoveStore:(id)arg1;
 - (void)tearDown;
@@ -92,6 +114,8 @@
 - (void)persistentStoreCoordinator:(id)arg1 didSuccessfullyAddPersistentStore:(id)arg2 withDescription:(id)arg3;
 - (BOOL)validateManagedObjectModel:(id)arg1 forUseWithStoreWithDescription:(id)arg2 error:(id *)arg3;
 - (void)dealloc;
+- (void)removeNotificationRegistrations;
+- (id)initWithCloudKitContainerOptions:(id)arg1;
 - (id)initWithOptions:(id)arg1;
 
 // Remaining properties

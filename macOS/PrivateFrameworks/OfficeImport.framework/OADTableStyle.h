@@ -8,6 +8,7 @@
 
 @class NSString, OADTableBackground, OADTablePartStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADTableStyle : NSObject
 {
     NSString *mName;

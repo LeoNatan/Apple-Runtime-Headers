@@ -6,20 +6,25 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
 @class NSArray;
 
-@interface USSOpenURLRequest : NSObject <USSXPCEncodable>
+@interface USSOpenURLRequest : NSObject <NSSecureCoding>
 {
     NSArray *_urls;
+    NSArray *_sceneIdentifiers;
 }
 
++ (BOOL)supportsSecureCoding;
++ (id)requestWithURLs:(id)arg1 andSceneIdentifiers:(id)arg2;
 + (id)requestWithURLs:(id)arg1;
+@property(retain, nonatomic) NSArray *sceneIdentifiers; // @synthesize sceneIdentifiers=_sceneIdentifiers;
 @property(retain, nonatomic) NSArray *urls; // @synthesize urls=_urls;
 - (void).cxx_destruct;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithURLs:(id)arg1 andSceneIdentifiers:(id)arg2;
 - (id)initWithURLs:(id)arg1;
 
 @end

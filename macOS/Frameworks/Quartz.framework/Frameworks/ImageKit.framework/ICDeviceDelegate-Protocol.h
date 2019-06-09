@@ -6,20 +6,19 @@
 
 #import <ImageKit/NSObject-Protocol.h>
 
-@class ICDevice, NSData, NSDictionary, NSError, NSString;
+@class ICDevice, NSDictionary, NSError;
 
 @protocol ICDeviceDelegate <NSObject>
+- (void)device:(ICDevice *)arg1 didOpenSessionWithError:(NSError *)arg2;
 - (void)didRemoveDevice:(ICDevice *)arg1;
+- (void)device:(ICDevice *)arg1 didCloseSessionWithError:(NSError *)arg2;
 
 @optional
-- (void)device:(ICDevice *)arg1 didReceiveCustomNotification:(NSDictionary *)arg2 data:(NSData *)arg3;
-- (void)device:(ICDevice *)arg1 didReceiveButtonPress:(NSString *)arg2;
+- (void)deviceDidChangeSharingState:(ICDevice *)arg1;
+- (void)device:(ICDevice *)arg1 didEjectWithError:(NSError *)arg2;
 - (void)device:(ICDevice *)arg1 didEncounterError:(NSError *)arg2;
 - (void)device:(ICDevice *)arg1 didReceiveStatusInformation:(NSDictionary *)arg2;
-- (void)deviceDidChangeSharingState:(ICDevice *)arg1;
 - (void)deviceDidChangeName:(ICDevice *)arg1;
-- (void)device:(ICDevice *)arg1 didCloseSessionWithError:(NSError *)arg2;
 - (void)deviceDidBecomeReady:(ICDevice *)arg1;
-- (void)device:(ICDevice *)arg1 didOpenSessionWithError:(NSError *)arg2;
 @end
 

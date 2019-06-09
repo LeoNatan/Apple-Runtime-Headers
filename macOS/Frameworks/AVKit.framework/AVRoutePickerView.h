@@ -9,25 +9,33 @@
 #import <AVKit/AVRoutePickerViewRemoteViewControllerDelegate-Protocol.h>
 #import <AVKit/NSPopoverDelegate-Protocol.h>
 
-@class AVMicaPackage, AVRoutePickerRemoteViewController, NSButton, NSColor, NSMutableDictionary, NSPopover, NSString;
+@class AVMicaPackage, AVOutputContext, AVPlayer, AVRoutePickerRemoteViewController, NSButton, NSColor, NSMutableDictionary, NSPopover, NSString;
 @protocol AVRoutePickerViewDelegate;
 
 @interface AVRoutePickerView : NSView <NSPopoverDelegate, AVRoutePickerViewRemoteViewControllerDelegate>
 {
     NSButton *_pickerButton;
     AVMicaPackage *_pickerButtonMicaPackage;
-    struct CGSize _oldSize;
     NSColor *_defaultButtonColor;
     NSColor *_defaultActiveButtonColor;
     NSMutableDictionary *_pickerButtonColors;
     BOOL _airPlayActive;
-    BOOL _routePickerButtonBordered;
     NSPopover *_audioRoutingPopover;
     AVRoutePickerRemoteViewController *_audioRoutesRemoteViewController;
+    AVOutputContext *_outputContext;
+    double _routePickerButtonImageHorizontalInset;
+    double _routePickerButtonImageVerticalInset;
+    BOOL _routeListAlwaysHasDarkAppearance;
+    BOOL _enabled;
+    NSString *_outputContextID;
+    BOOL _routePickerButtonBordered;
+    AVPlayer *_player;
     id <AVRoutePickerViewDelegate> _delegate;
 }
 
-@property __weak id <AVRoutePickerViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <AVRoutePickerViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
+@property(nonatomic, getter=isRoutePickerButtonBordered) BOOL routePickerButtonBordered; // @synthesize routePickerButtonBordered=_routePickerButtonBordered;
 - (void).cxx_destruct;
 - (void)_setAirPlayActive:(BOOL)arg1;
 - (BOOL)_isAirPlayActive;
@@ -35,19 +43,25 @@
 - (void)_unregisterNotifications;
 - (void)_registerNotifications;
 - (void)_updateAirPlayActive;
-- (void)_updatePickerButtonEnabledState;
 - (void)_updatePickerButtonAppearance;
 - (void)_pickerButtonPressed:(id)arg1;
-- (void)routePickerRemoteViewControllerDidBecomeReadyForDisplay:(id)arg1;
 - (void)routePickerRemoteViewController:(id)arg1 viewBridgeConnectionDidFailWithError:(id)arg2;
 - (void)popoverDidClose:(id)arg1;
 - (void)popoverWillShow:(id)arg1;
-@property(getter=isRoutePickerButtonBordered) BOOL routePickerButtonBordered;
+- (void)setEnabled:(BOOL)arg1;
+- (BOOL)isEnabled;
+- (void)setOutputContextID:(id)arg1;
+- (id)outputContextID;
+- (void)setRouteListAlwaysHasDarkAppearance:(BOOL)arg1;
+- (BOOL)routeListAlwaysHasDarkAppearance;
+- (void)setRoutePickerButtonImageVerticalInset:(double)arg1;
+- (double)routePickerButtonImageVerticalInset;
+- (void)setRoutePickerButtonImageHorizontalInset:(double)arg1;
+- (double)routePickerButtonImageHorizontalInset;
 - (void)setRoutePickerButtonColor:(id)arg1 forState:(long long)arg2;
 - (id)routePickerButtonColorForState:(long long)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layout;
-- (void)viewDidMoveToWindow;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

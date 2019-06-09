@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface CSAsset : NSObject
 {
@@ -64,6 +64,7 @@
 @property(readonly, nonatomic) unsigned int SSVEnergyBufferSize;
 @property(readonly, nonatomic) unsigned long long SSVLKFSChannelBitset;
 @property(readonly, nonatomic) unsigned long long SSVNoiseLevelChannelBitset;
+- (id)configFilepathForDictationOrigin:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long VTFirstPassProcessingChannelsBitset;
 @property(readonly, nonatomic) float VTFirstPassProcessingChunkSeconds;
 @property(readonly, nonatomic) float VTFirstPassMasterChannelScoreBoost;
@@ -101,7 +102,12 @@
 @property(readonly, nonatomic) unsigned long long maxSpeakerVectorsToPersist;
 @property(readonly, nonatomic) float speakerDetectorRetrainTriggerThreshold;
 @property(readonly, nonatomic) float speakerDetectorThreshold;
+@property(readonly, nonatomic) BOOL speakerDetectorThresholdAvailable;
 @property(readonly, nonatomic) NSString *speakerDetectorNDAPIConfigPath;
+@property(readonly, nonatomic) NSString *spgConfigFile;
+@property(readonly, nonatomic) NSString *startOfSpeechDetectorConfigFile;
+@property(readonly, nonatomic) NSString *languageDetectorConfigFile;
+@property(readonly, nonatomic) NSArray *languageDetectorSupportedLocale;
 @property(readonly, nonatomic) float CVTTwoShotDecisionWaitTime;
 @property(readonly, nonatomic) float CVTTwoShotThreshold;
 @property(readonly, nonatomic) float CVTThreshold;

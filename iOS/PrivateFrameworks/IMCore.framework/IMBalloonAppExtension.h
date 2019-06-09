@@ -29,8 +29,6 @@
 @property(readonly, retain, nonatomic) id <PKPlugIn> plugin;
 - (_Bool)isBetaPlugin;
 - (id)version;
-- (id)proxyWithErrorHandle:(CDUnknownBlockType)arg1;
-- (id)extensionConnection;
 - (id)initWithPluginBundle:(id)arg1 appBundle:(id)arg2;
 - (id)_initWithPluginBundle:(id)arg1 extension:(id)arg2 pluginKitProxyClass:(Class)arg3;
 - (id)initWithPluginBundle:(id)arg1 extension:(id)arg2;

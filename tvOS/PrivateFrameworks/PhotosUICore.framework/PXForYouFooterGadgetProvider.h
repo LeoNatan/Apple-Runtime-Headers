@@ -15,7 +15,7 @@
 @property(nonatomic) _Bool attemptedToGenerateGadgets; // @synthesize attemptedToGenerateGadgets=_attemptedToGenerateGadgets;
 @property(nonatomic) long long footerState; // @synthesize footerState=_footerState;
 - (void)_generateFooterGadget;
-- (void)_handleSceneProgressCompletionWithCountDictionary:(id)arg1;
+- (void)_handleSceneProgressCompletionWithCount:(unsigned long long)arg1;
 - (void)_handleFaceProgressCompletionWithCountDictionary:(id)arg1;
 - (_Bool)_didProcessContentOvernight;
 - (id)_peaceMemoryFetchOptions;

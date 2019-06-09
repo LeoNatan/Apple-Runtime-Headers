@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <UIKitCore/NSObject-Protocol.h>
+
 @class NSArray, _DUIPotentialDrop;
 
-@protocol _UIDruidDestinationConnection
+@protocol _UIDruidDestinationConnection <NSObject>
 @property(copy, nonatomic) CDUnknownBlockType dragEndBlock;
 @property(copy, nonatomic) CDUnknownBlockType handOffDroppedItemsBlock;
 @property(copy, nonatomic) CDUnknownBlockType dropPerformBlock;
 @property(copy, nonatomic) CDUnknownBlockType itemsAddedBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemUpdateBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemDetailProviderBlock;
-@property(copy, nonatomic) CDUnknownBlockType itemImageProviderBlock;
+@property(copy, nonatomic) CDUnknownBlockType dragPreviewProviderBlock;
 @property(copy, nonatomic) CDUnknownBlockType connectionBlock;
 @property(readonly, nonatomic) unsigned int sessionIdentifier;
 - (void)enableKeyboardIfNeeded;
@@ -21,5 +21,7 @@
 - (void)takePotentialDrop:(_DUIPotentialDrop *)arg1;
 - (void)sawDragEndEvent;
 - (void)dirtyItems:(NSArray *)arg1;
+- (id)init;
+- (id)initWithSessionIdentifier:(unsigned int)arg1 systemPolicy:(_Bool)arg2;
 @end
 

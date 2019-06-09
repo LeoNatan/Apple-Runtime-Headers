@@ -14,6 +14,7 @@
 @class NSMutableArray, NSString, UINavigationBar, UITableView, UIView, UIVisualEffectView, _SKUIInspectablePropertySection;
 @protocol SKUIInspectableObject;
 
+__attribute__((visibility("hidden")))
 @interface SKUIObjectInspectorViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIViewControllerTransitioningDelegate, SKUIObjectInspector>
 {
     id <SKUIInspectableObject> _inspectableObject;

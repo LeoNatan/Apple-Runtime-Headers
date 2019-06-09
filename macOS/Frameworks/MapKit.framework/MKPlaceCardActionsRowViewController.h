@@ -11,6 +11,7 @@
 
 @class MKPlaceActionManager, MKPlaceSectionItemView, NSArray, NSLayoutGuide, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceCardActionsRowViewController : _MKUIViewController <MKActionRowItemViewDelegate, MKModuleViewControllerProtocol>
 {
     NSArray *_actionButtons;
@@ -29,7 +30,7 @@
 - (void).cxx_destruct;
 - (void)viewDidLayout;
 - (void)actionRowSelected:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)viewDidLoad;
 - (void)layoutButtons;
 - (void)createConstraints;

@@ -36,6 +36,7 @@
 @property(readonly, copy, nonatomic) NSString *UTIType; // @dynamic UTIType;
 @property(readonly, copy, nonatomic) NSString *MIMEType; // @dynamic MIMEType;
 - (id)durationsWithMaxCount:(unsigned int)arg1;
+- (id)_defaultDurationsWithMaxCount:(unsigned int)arg1;
 - (id)thumbnailsFillToSize:(struct CGSize)arg1 maxCount:(unsigned int)arg2;
 - (id)thumbnailAtIndex:(unsigned int)arg1 fillToSize:(struct CGSize)arg2 maxCount:(unsigned int)arg3;
 - (id)thumbnailsFitToSize:(struct CGSize)arg1 maxCount:(unsigned int)arg2;

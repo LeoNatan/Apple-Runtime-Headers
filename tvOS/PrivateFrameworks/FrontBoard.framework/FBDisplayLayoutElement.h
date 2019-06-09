@@ -8,15 +8,18 @@
 
 #import <FrontBoard/BSDescriptionProviding-Protocol.h>
 
-@class FBSDisplayLayoutElement, NSString;
+@class FBMainDisplayLayoutPublisher, FBSDisplayLayoutElement, NSString;
+@protocol BSInvalidatable;
 
 @interface FBDisplayLayoutElement : NSObject <BSDescriptionProviding>
 {
+    FBMainDisplayLayoutPublisher *_publisher;
     Class _elementClass;
     NSString *_identifier;
+    NSString *_key;
     FBSDisplayLayoutElement *_element;
     long long _displayType;
-    _Bool _activated;
+    id <BSInvalidatable> _activeAssertion;
 }
 
 @property(readonly, nonatomic) Class elementClass; // @synthesize elementClass=_elementClass;
@@ -35,6 +38,7 @@
 - (void)activate;
 - (void)dealloc;
 - (id)initWithDisplayType:(long long)arg1 identifier:(id)arg2 elementClass:(Class)arg3;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

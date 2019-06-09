@@ -6,6 +6,7 @@
 
 #import <MapKit/_MKUILabel.h>
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceAttributionLabel : _MKUILabel
 {
 }

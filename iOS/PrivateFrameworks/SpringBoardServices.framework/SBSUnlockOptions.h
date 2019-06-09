@@ -7,15 +7,19 @@
 #import <objc/NSObject.h>
 
 #import <SpringBoardServices/BSXPCCoding-Protocol.h>
+#import <SpringBoardServices/BSXPCSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface SBSUnlockOptions : NSObject <BSXPCCoding>
+@interface SBSUnlockOptions : NSObject <BSXPCCoding, BSXPCSecureCoding>
 {
     _Bool _aboveOtherContexts;
 }
 
++ (_Bool)supportsBSXPCSecureCoding;
 @property(nonatomic, setter=_setAboveOtherContexts:) _Bool _aboveOtherContexts; // @synthesize _aboveOtherContexts;
+- (id)initWithBSXPCCoder:(id)arg1;
+- (void)encodeWithBSXPCCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 

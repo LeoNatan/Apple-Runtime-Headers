@@ -8,24 +8,22 @@
 
 #import <ScreenTimeUI/PSHeaderFooterView-Protocol.h>
 
-@class PSSpecifier, STSingleLineDetailTextHeaderView, UILabel, UISegmentedControl;
+@class PSSpecifier, STSingleLineButtonHeaderView, UISegmentedControl;
 
+__attribute__((visibility("hidden")))
 @interface STUsageSummaryHeaderView : STTableViewHeaderFooterView <PSHeaderFooterView>
 {
     UISegmentedControl *_segmentedControl;
     PSSpecifier *_specifier;
-    UILabel *_deviceNameLabel;
-    STSingleLineDetailTextHeaderView *_singleLineHeaderView;
+    STSingleLineButtonHeaderView *_singleLineHeaderView;
 }
 
-@property(readonly, nonatomic) STSingleLineDetailTextHeaderView *singleLineHeaderView; // @synthesize singleLineHeaderView=_singleLineHeaderView;
-@property(readonly, nonatomic) UILabel *deviceNameLabel; // @synthesize deviceNameLabel=_deviceNameLabel;
+@property(readonly) STSingleLineButtonHeaderView *singleLineHeaderView; // @synthesize singleLineHeaderView=_singleLineHeaderView;
 @property(nonatomic) __weak PSSpecifier *specifier; // @synthesize specifier=_specifier;
 @property(readonly, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 - (void).cxx_destruct;
-- (void)stopAnimatingSpinner;
-- (void)startAnimatingSpinner;
-- (void)selectedSegmentIndexChanged:(id)arg1;
+- (void)_headerButtonPressed:(id)arg1;
+- (void)_selectedSegmentIndexChanged:(id)arg1;
 - (double)preferredHeightForWidth:(double)arg1;
 - (void)reloadFromSpecifier;
 - (id)initWithSpecifier:(id)arg1;

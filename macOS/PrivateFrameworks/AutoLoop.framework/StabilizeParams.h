@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface StabilizeParams : NSObject
 {
     struct vector<SP_FrameInfo, std::__1::allocator<SP_FrameInfo>> mFrameInfo;

@@ -10,6 +10,7 @@
 
 @class CALayer, NSArray, NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKMessageAcknowledgmentPickerBarView : UIView <CKPickerBarView>
 {
     CALayer *_anchorBubble;

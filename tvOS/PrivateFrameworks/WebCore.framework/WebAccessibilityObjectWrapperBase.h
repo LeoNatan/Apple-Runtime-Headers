@@ -10,24 +10,27 @@ __attribute__((visibility("hidden")))
 @interface WebAccessibilityObjectWrapperBase : NSObject
 {
     struct AccessibilityObject *m_object;
+    unsigned int _identifier;
 }
 
 + (void)accessibilitySetShouldRepostNotifications:(_Bool)arg1;
+@property(nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
 - (void)accessibilityPostedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)accessibilityPostedNotification:(id)arg1;
 - (id)accessibilityMathPrescriptPairs;
 - (id)accessibilityMathPostscriptPairs;
 - (id)accessibilityPlatformMathSuperscriptKey;
 - (id)accessibilityPlatformMathSubscriptKey;
+- (void)baseAccessibilitySetFocus:(_Bool)arg1;
 - (id)ariaLandmarkRoleDescription;
-- (struct CGPoint)convertPointToScreenSpace:(struct FloatPoint *)arg1;
+- (struct CGRect)convertRectToSpace:(struct FloatRect *)arg1 space:(int)arg2;
+- (id)_accessibilityWebDocumentView;
 - (struct CGPath *)convertPathToScreenSpace:(struct Path *)arg1;
 - (id)baseAccessibilityHelpText;
 - (id)baseAccessibilitySpeechHint;
 - (id)baseAccessibilityDescription;
+- (struct AccessibilityObjectInterface *)axBackingObject;
 - (id)baseAccessibilityTitle;
-- (_Bool)fileUploadButtonReturnsValueInTitle;
-- (_Bool)titleTagShouldBeUsedInDescriptionField;
 - (struct AccessibilityObject *)accessibilityObject;
 - (id)attachmentView;
 - (_Bool)updateObjectBackingStore;

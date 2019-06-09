@@ -4,19 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WatchListKit/WLKSettingsRequestOperation.h>
+#import <WatchListKit/WLKNetworkRequestOperation.h>
 
 @class NSDictionary;
 
-@interface WLKSettingsModificationRequestOperation : WLKSettingsRequestOperation
+@interface WLKSettingsModificationRequestOperation : WLKNetworkRequestOperation
 {
     NSDictionary *_modifications;
 }
 
-+ (id)URLBagKey;
++ (id)_requestURL:(id *)arg1;
 - (void).cxx_destruct;
 - (id)_postBody;
-- (id)requestProperties;
+- (void)prepareURLRequest:(CDUnknownBlockType)arg1;
 - (id)initWithModifications:(id)arg1;
 
 @end

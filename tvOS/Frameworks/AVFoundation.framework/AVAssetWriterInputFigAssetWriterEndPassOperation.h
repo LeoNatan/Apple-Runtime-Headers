@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
 - (void)_notifyWhetherMorePassesAreNeeded:(_Bool)arg1 timeRanges:(id)arg2 forTrackWithID:(int)arg3;
 - (void)start;
 - (_Bool)isAsynchronous;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter *)arg1 trackID:(int)arg2;
 - (id)init;

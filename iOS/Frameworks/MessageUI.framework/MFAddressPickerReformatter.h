@@ -19,6 +19,7 @@
     _Bool _attributesDisabled;
 }
 
+- (void).cxx_destruct;
 - (void)_restoreMiddleTruncationRanges:(id)arg1;
 - (id)_saveMiddleTruncationRanges;
 - (_Bool)_reformattedAddressesByDisplayedStringsAreUnique:(id)arg1;
@@ -40,7 +41,6 @@
 - (void)setAttributesDisabled:(_Bool)arg1;
 - (void)setMaximumWidth:(double)arg1;
 - (void)setAddresses:(id)arg1;
-- (void)dealloc;
 
 @end
 

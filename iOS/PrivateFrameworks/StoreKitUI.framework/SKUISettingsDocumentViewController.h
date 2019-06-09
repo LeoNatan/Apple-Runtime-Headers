@@ -16,6 +16,7 @@
 
 @class NSString, SKUIResourceLoader, SKUISettingsContext, SKUISettingsEditTransaction, SKUISettingsGroupsDescription, SKUISettingsTemplateViewElement, SKUIViewElementLayoutContext, SKUIViewElementTextLayoutCache, UIBarButtonItem, UITableView;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUISettingsDocumentViewDelegate, SKUISettingsEditTransactionDelegate, SKUISettingsGroupsDescriptionDelegate, UITableViewDataSource, UITableViewDelegate, SKUIDocumentViewController>
 {
     UIBarButtonItem *_barButtonItemCancel;

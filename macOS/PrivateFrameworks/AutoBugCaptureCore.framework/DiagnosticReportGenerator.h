@@ -9,6 +9,7 @@
 @class DiagnosticCase;
 @protocol DiagnosticReportGeneratorDelegate, OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticReportGenerator : NSObject
 {
     BOOL _reportGenerated;

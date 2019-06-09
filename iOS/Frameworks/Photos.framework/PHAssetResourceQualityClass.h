@@ -35,6 +35,8 @@
 @property(retain, nonatomic) PLImageFormat *backingImageFormat; // @synthesize backingImageFormat=_backingImageFormat;
 - (void).cxx_destruct;
 - (id)description;
+- (void)preheatDataForThumbnailIndexes:(id)arg1 inLibrary:(id)arg2;
+- (id)tableThumbnailDataForAsset:(id)arg1 dataSpecification:(struct PHAssetResourceTableDataSpecification *)arg2;
 - (long long)_compare:(id)arg1;
 - (id)initWithCPLResourceType:(unsigned long long)arg1;
 - (id)initWithThumbnailFormat:(id)arg1;

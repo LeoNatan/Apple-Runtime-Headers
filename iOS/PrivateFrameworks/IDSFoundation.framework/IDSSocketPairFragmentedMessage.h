@@ -6,9 +6,11 @@
 
 #import <IDSFoundation/IDSSocketPairMessage.h>
 
-@class NSData;
+#import <IDSFoundation/IDSSocketPairMessage-Protocol.h>
 
-@interface IDSSocketPairFragmentedMessage : IDSSocketPairMessage
+@class NSData, NSDate, NSString;
+
+@interface IDSSocketPairFragmentedMessage : IDSSocketPairMessage <IDSSocketPairMessage>
 {
     unsigned long long _offset;
     unsigned int _fragmentedMessageID;
@@ -29,6 +31,15 @@
 - (id)description;
 - (id)initWithData:(id)arg1 withFragmentedMessageID:(unsigned int)arg2 fragmentIndex:(unsigned int)arg3 totalFragmentCount:(unsigned int)arg4;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool expectsPeerResponse;
+@property(retain, nonatomic) NSDate *expiryDate;
+@property(readonly, nonatomic) NSString *messageUUID;
+@property(readonly, nonatomic) NSString *peerResponseIdentifier;
+@property(nonatomic) unsigned int sequenceNumber;
+@property(nonatomic) unsigned short streamID;
+@property(readonly, nonatomic) _Bool wantsAppAck;
 
 @end
 

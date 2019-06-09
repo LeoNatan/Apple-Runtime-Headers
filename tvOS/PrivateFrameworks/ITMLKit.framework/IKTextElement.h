@@ -34,6 +34,9 @@
 @property(readonly, nonatomic) unsigned long long alignment;
 @property(readonly, nonatomic) long long maxLines;
 @property(readonly, nonatomic) UIColor *color;
+- (id)debugDescription;
+- (id)initWithOriginalElement:(id)arg1;
+- (id)initWithPrototypeElement:(id)arg1 parent:(id)arg2 appDataItem:(id)arg3;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

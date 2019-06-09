@@ -29,9 +29,12 @@
 - (_Bool)isValidNamedEntity:(id)arg1 explanation:(id *)arg2;
 - (_Bool)areStringCharactersWhitelisted:(id)arg1;
 - (struct USet *)exemplarSetForSupportedLocales;
+- (void)updateQueueFromString:(id)arg1 newEntity:(id)arg2;
 - (void)updateQueue:(id)arg1 newEntity:(id)arg2;
-- (void)removeEntry:(id)arg1 tokenizedNewEntity:(id)arg2;
-- (void)addEntry:(id)arg1 tokenizedNewEntity:(id)arg2;
+- (void)removeEntriesBySource:(unsigned char)arg1;
+- (void)removeEntry:(id)arg1 source:(unsigned char)arg2;
+- (void)removeEntry:(id)arg1;
+- (void)addEntry:(id)arg1 tokenizedNewEntity:(id)arg2 source:(unsigned char)arg3 type:(unsigned char)arg4;
 - (id)filterWord:(id)arg1;
 - (_Bool)isFirstCandidateBetter:(id)arg1 than:(id)arg2;
 - (id)init;

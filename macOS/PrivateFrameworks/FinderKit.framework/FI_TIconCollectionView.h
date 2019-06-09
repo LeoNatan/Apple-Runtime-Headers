@@ -6,6 +6,9 @@
 
 #import <FinderKit/FI_TIconOrGalleryCollectionView.h>
 
+@class NSObject;
+@protocol TIconOrGalleryCollectionViewDelegateProtocol;
+
 __attribute__((visibility("hidden")))
 @interface FI_TIconCollectionView : FI_TIconOrGalleryCollectionView
 {
@@ -14,8 +17,7 @@ __attribute__((visibility("hidden")))
 - (id)popoverAnchorViewForNode:(const struct TFENode *)arg1;
 - (id)iconViewForNode:(const struct TFENode *)arg1;
 - (id)iconViewForIndexPath:(id)arg1;
-- (void)setCollectionViewDelegate:(id)arg1;
-- (id)collectionViewDelegate;
+@property(nonatomic) __weak NSObject<TIconOrGalleryCollectionViewDelegateProtocol> *collectionViewDelegate; // @dynamic collectionViewDelegate;
 
 @end
 

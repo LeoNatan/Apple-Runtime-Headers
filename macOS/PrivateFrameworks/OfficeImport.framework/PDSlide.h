@@ -8,6 +8,7 @@
 
 @class NSMutableArray, OITSUNoCopyDictionary, PDNotesSlide, PDSlideLayout;
 
+__attribute__((visibility("hidden")))
 @interface PDSlide : PDSlideChild
 {
     PDSlideLayout *mSlideLayout;

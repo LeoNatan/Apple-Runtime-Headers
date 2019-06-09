@@ -24,6 +24,7 @@
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)setUpConstraints;
 - (void)setupSubviews;
+- (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

@@ -22,6 +22,7 @@
 @property(readonly, copy, nonatomic) NSDictionary *nativeRecords; // @synthesize nativeRecords=_nativeRecords;
 - (void).cxx_destruct;
 - (id)filteredRecordSetWithJSONPredicate:(id)arg1;
+- (id)_anyNativeRecordUUID;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)nativeRecordDataForRecordUUID:(id)arg1 error:(id *)arg2;
 - (id)nativeRecordInfoForRecordUUID:(id)arg1;

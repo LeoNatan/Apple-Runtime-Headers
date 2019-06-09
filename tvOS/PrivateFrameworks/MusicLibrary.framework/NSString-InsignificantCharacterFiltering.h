@@ -13,5 +13,9 @@
 - (id)copyWithoutInsignificantPrefixAndCharacters;
 - (id)_copyWithoutInsignificantPrefix:(_Bool)arg1 andCharacters:(_Bool)arg2;
 - (struct _NSRange)_rangeWithoutInsignificantPrefix:(_Bool)arg1 andCharacters:(_Bool)arg2;
+- (id)sanitizedString;
+- (_Bool)ml_matchesValue:(id)arg1 usingComparison:(int)arg2;
+- (id)ml_stringValueForSQL;
+- (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt *)arg1 atPosition:(int)arg2;
 @end
 

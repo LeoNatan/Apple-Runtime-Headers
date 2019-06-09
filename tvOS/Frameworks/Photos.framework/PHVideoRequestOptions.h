@@ -6,22 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@interface PHVideoRequestOptions : NSObject
+#import <Photos/PHMediaRequestThreadingOptions-Protocol.h>
+
+@class NSString;
+@protocol OS_dispatch_queue;
+
+@interface PHVideoRequestOptions : NSObject <PHMediaRequestThreadingOptions>
 {
     _Bool _networkAccessAllowed;
     _Bool _streamingAllowed;
     _Bool _videoComplementAllowed;
     _Bool _allowMediumHighQuality;
     _Bool _restrictToPlayableOnCurrentDevice;
-    _Bool _routeToNewImageManager;
     long long _version;
     long long _deliveryMode;
     CDUnknownBlockType _progressHandler;
     long long _contentMode;
+    NSObject<OS_dispatch_queue> *_resultHandlerQueue;
     struct CGSize _targetSize;
 }
 
-@property(nonatomic) _Bool routeToNewImageManager; // @synthesize routeToNewImageManager=_routeToNewImageManager;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *resultHandlerQueue; // @synthesize resultHandlerQueue=_resultHandlerQueue;
 @property(nonatomic) _Bool restrictToPlayableOnCurrentDevice; // @synthesize restrictToPlayableOnCurrentDevice=_restrictToPlayableOnCurrentDevice;
 @property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 @property(nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
@@ -33,9 +38,15 @@
 @property(nonatomic) long long version; // @synthesize version=_version;
 @property(nonatomic, getter=isNetworkAccessAllowed) _Bool networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
+- (_Bool)isSynchronous;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

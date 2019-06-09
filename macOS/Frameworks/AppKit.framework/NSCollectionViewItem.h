@@ -25,7 +25,9 @@
         unsigned int updateAnimationCount:16;
         unsigned int dragging:1;
         unsigned int isTransientAccessibilityElement:1;
-        unsigned int reserved:6;
+        unsigned int shouldConstrainWidth:1;
+        unsigned int shouldConstrainHeight:1;
+        unsigned int reserved:4;
     } _cviFlags;
     NSData *_cachedArchive;
     id _reserved2;
@@ -69,6 +71,10 @@
 - (void)_clearUpdateAnimation;
 - (void)_addUpdateAnimation;
 - (BOOL)_isInUpdateAnimation;
+- (void)_setShouldConstrainHeight:(BOOL)arg1;
+- (void)_setShouldConstrainWidth:(BOOL)arg1;
+- (BOOL)_shouldConstrainHeight;
+- (BOOL)_shouldConstrainWidth;
 - (void)_invalidatePreferredAttributes;
 - (BOOL)_arePreferredAttributesValid;
 - (id)preferredLayoutAttributesFittingAttributes:(id)arg1;

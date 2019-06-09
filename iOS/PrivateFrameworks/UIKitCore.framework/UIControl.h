@@ -25,7 +25,7 @@
         unsigned int allowActionsToQueue:1;
         unsigned int pendingUnhighlight:1;
         unsigned int selected:1;
-        unsigned int verticalAlignment:2;
+        unsigned int verticalAlignment:3;
         unsigned int horizontalAlignment:3;
         unsigned int wasLastHighlightSuccessful:1;
         unsigned int touchHasHighlighted:1;
@@ -83,6 +83,7 @@
 @property(nonatomic, getter=isSelected) _Bool selected; // @dynamic selected;
 @property(readonly, nonatomic) long long effectiveContentHorizontalAlignment;
 @property(nonatomic) long long contentHorizontalAlignment; // @dynamic contentHorizontalAlignment;
+- (long long)effectiveContentVerticalAlignment;
 @property(nonatomic) long long contentVerticalAlignment; // @dynamic contentVerticalAlignment;
 @property(nonatomic, getter=isHighlighted) _Bool highlighted; // @dynamic highlighted;
 - (void)cancelTrackingWithEvent:(id)arg1;

@@ -17,7 +17,6 @@
 + (void)initialize;
 - (struct opaqueCMSampleBuffer *)createSampleBufferForRequest:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithAsset:(id)arg1 timebase:(struct OpaqueCMTimebase *)arg2;

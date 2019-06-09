@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, getter=isPristineDatabase) BOOL pristineDatabase; // @synthesize pristineDatabase=_pristineDatabase;
 @property(readonly) NSPersistentStore *store; // @synthesize store=_store;
 @property(readonly) NSPersistentStoreCoordinator *coordinator; // @synthesize coordinator=_coordinator;
+- (void).cxx_destruct;
 - (id)description;
-- (void)dealloc;
 - (id)initWithCoordinator:(id)arg1 store:(id)arg2 pristineDatabase:(BOOL)arg3 shouldCache:(BOOL)arg4 didMigrate:(BOOL)arg5;
 
 @end

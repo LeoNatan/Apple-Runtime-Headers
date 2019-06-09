@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSString, UIImage;
+@class CURangingMeasurement, NSDate, NSNumber, NSSet, NSString, NSUUID, UIImage;
 
 @interface SFAirDropNode : NSObject
 {
     struct __SFOperation *_sender;
+    _Bool _disabled;
     _Bool _me;
     _Bool _unknown;
     _Bool _monogram;
     _Bool _classroom;
     _Bool _classroomGroup;
     _Bool _classroomCourse;
+    _Bool _suggestion;
+    _Bool _rapport;
     _Bool _supportsCredentials;
     _Bool _supportsFMF;
     _Bool _supportsPasses;
@@ -29,6 +32,11 @@
     NSString *_displayName;
     NSString *_secondaryName;
     NSString *_model;
+    NSString *_transportBundleID;
+    NSSet *_handles;
+    NSUUID *_nodeIdentifier;
+    CURangingMeasurement *_rangingMeasurement;
+    NSNumber *_suggestionIndex;
 }
 
 + (id)nodeWithSFNode:(struct __SFNode *)arg1;
@@ -36,12 +44,20 @@
 @property(readonly) _Bool supportsPasses; // @synthesize supportsPasses=_supportsPasses;
 @property(readonly) _Bool supportsFMF; // @synthesize supportsFMF=_supportsFMF;
 @property(readonly) _Bool supportsCredentials; // @synthesize supportsCredentials=_supportsCredentials;
+@property(getter=isRapport) _Bool rapport; // @synthesize rapport=_rapport;
+@property(getter=isSuggestion) _Bool suggestion; // @synthesize suggestion=_suggestion;
 @property(getter=isClassroomCourse) _Bool classroomCourse; // @synthesize classroomCourse=_classroomCourse;
 @property(getter=isclassroomGroup) _Bool classroomGroup; // @synthesize classroomGroup=_classroomGroup;
 @property(getter=isClassroom) _Bool classroom; // @synthesize classroom=_classroom;
 @property(getter=isMonogram) _Bool monogram; // @synthesize monogram=_monogram;
 @property(getter=isUnknown) _Bool unknown; // @synthesize unknown=_unknown;
 @property(getter=isMe) _Bool me; // @synthesize me=_me;
+@property(getter=isDisabled) _Bool disabled; // @synthesize disabled=_disabled;
+@property(retain) NSNumber *suggestionIndex; // @synthesize suggestionIndex=_suggestionIndex;
+@property(retain) CURangingMeasurement *rangingMeasurement; // @synthesize rangingMeasurement=_rangingMeasurement;
+@property(retain) NSUUID *nodeIdentifier; // @synthesize nodeIdentifier=_nodeIdentifier;
+@property(retain) NSSet *handles; // @synthesize handles=_handles;
+@property(retain) NSString *transportBundleID; // @synthesize transportBundleID=_transportBundleID;
 @property(retain) NSString *model; // @synthesize model=_model;
 @property(retain) NSString *secondaryName; // @synthesize secondaryName=_secondaryName;
 @property(retain) NSString *displayName; // @synthesize displayName=_displayName;

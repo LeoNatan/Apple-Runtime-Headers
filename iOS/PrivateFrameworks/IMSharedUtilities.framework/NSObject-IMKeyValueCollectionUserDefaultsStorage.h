@@ -7,6 +7,17 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (IMKeyValueCollectionUserDefaultsStorage)
++ (_Bool)isSingleton;
++ (_Bool)replaceSingletonWithSubclass:(id)arg1;
++ (_Bool)isSingletonOverridden;
++ (id)overriddenSingleton;
++ (void)replaceSingletonWithObject:(id)arg1;
++ (void)removeSingletonOverride;
++ (void)overrideSingletonWithObject:(id)arg1;
++ (id)singletonOverride;
++ (id)_createSingleton__im;
 - (_Bool)isArchivable_im;
+- (_Bool)__isSingletonProxy__im;
+- (void)__im_performAsynchronousTest:(CDUnknownBlockType)arg1 name:(id)arg2 timeout:(double)arg3 finalizer:(CDUnknownBlockType)arg4;
 @end
 

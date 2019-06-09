@@ -6,32 +6,54 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class INSpeakableString, NSArray, NSString;
 
-@interface INHomeEntity : NSObject <NSCopying, NSSecureCoding>
+@interface INHomeEntity : NSObject <INJSONSerializable, NSCopying, NSSecureCoding>
 {
-    NSString *_name;
+    INSpeakableString *_entityName;
     long long _type;
-    long long _deviceType;
+    NSString *_entityIdentifier;
+    NSArray *_deviceTypes;
+    long long _sceneType;
+    INSpeakableString *_room;
+    INSpeakableString *_zone;
+    INSpeakableString *_home;
+    INSpeakableString *_group;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (BOOL)supportsSecureCoding;
-@property(readonly) long long deviceType; // @synthesize deviceType=_deviceType;
+@property(readonly, copy) INSpeakableString *group; // @synthesize group=_group;
+@property(readonly, copy) INSpeakableString *home; // @synthesize home=_home;
+@property(readonly, copy) INSpeakableString *zone; // @synthesize zone=_zone;
+@property(readonly, copy) INSpeakableString *room; // @synthesize room=_room;
+@property(readonly) long long sceneType; // @synthesize sceneType=_sceneType;
+@property(readonly, copy) NSArray *deviceTypes; // @synthesize deviceTypes=_deviceTypes;
+@property(readonly, copy) NSString *entityIdentifier; // @synthesize entityIdentifier=_entityIdentifier;
 @property(readonly) long long type; // @synthesize type=_type;
-@property(readonly, copy) NSString *name; // @synthesize name=_name;
+@property(readonly, copy) INSpeakableString *entityName; // @synthesize entityName=_entityName;
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
+@property(readonly) NSString *name;
+@property(readonly) long long deviceType;
 - (id)initWithName:(id)arg1 type:(long long)arg2 deviceType:(long long)arg3;
+- (id)initWithEntityName:(id)arg1 type:(long long)arg2 entityIdentifier:(id)arg3 deviceTypes:(id)arg4 sceneType:(long long)arg5 room:(id)arg6 zone:(id)arg7 home:(id)arg8 group:(id)arg9;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

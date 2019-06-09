@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL forConflictAnalysis; // @synthesize forConflictAnalysis=_forConflictAnalysis;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (id)createFetchRequestContext;
 - (id)fetchRequest;
 - (void)dealloc;

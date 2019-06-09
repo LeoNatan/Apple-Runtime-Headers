@@ -15,6 +15,7 @@
 @property(nonatomic) _Bool alreadySetUp; // @synthesize alreadySetUp=_alreadySetUp;
 - (_Bool)shouldDismissAfterSend;
 - (void)sendComposition:(id)arg1;
+- (void)insertInitialCompositionIfNeeded;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)_endInteractionSignPost;
 - (void)_beginInteractionSignPost;

@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class UIColor, UIView, UIVisualEffectView, _UITextFieldContentView;
+@class UIColor, UIView, UIVisualEffectView, _UITextFieldCanvasView;
 
 @protocol _UITextFieldVisualStyleSubject <NSObject>
 - (_Bool)_textShouldFillFieldEditorHeight;
@@ -14,7 +14,7 @@
 - (_Bool)_inVibrantContentView;
 - (_Bool)_hasFloatingFieldEditor;
 - (UIColor *)_currentTextColor;
-- (_UITextFieldContentView *)_textContentView;
+- (_UITextFieldCanvasView *)_canvasView;
 - (UIVisualEffectView *)_contentBackdropView;
 - (UIView *)_effectiveContentView;
 - (_Bool)_textShouldUseVibrancy;

@@ -7,6 +7,7 @@
 #import <Foundation/NSComparisonPredicate.h>
 
 @interface NSComparisonPredicate (_NSCoreDataSQLPredicateCategories)
+- (id)_keypathsForDerivedPropertyValidation:(id *)arg1;
 - (id)minimalFormInContext:(id)arg1;
 - (BOOL)_isForeignObjectExpression:(id)arg1 givenContext:(id)arg2;
 @end

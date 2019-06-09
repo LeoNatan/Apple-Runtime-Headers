@@ -6,9 +6,11 @@
 
 #import <AppKit/NSWindowController.h>
 
+#import <OnBoardingKit/OBPrivacyPresenting-Protocol.h>
+
 @class NSButton, NSString, OBPrivacyFlow, OBPrivacySplashView;
 
-@interface OBPrivacySplashController : NSWindowController
+@interface OBPrivacySplashController : NSWindowController <OBPrivacyPresenting>
 {
     OBPrivacyFlow *_flow;
     OBPrivacySplashView *splashView;
@@ -22,11 +24,13 @@
     BOOL _useModalStyle;
     BOOL _isCombined;
     NSString *_displayLanguage;
+    unsigned long long _displayDeviceType;
 }
 
 + (id)splashPageWithBundleIdentifier:(id)arg1;
 @property(nonatomic) BOOL isCombined; // @synthesize isCombined=_isCombined;
 @property BOOL useModalStyle; // @synthesize useModalStyle=_useModalStyle;
+@property unsigned long long displayDeviceType; // @synthesize displayDeviceType=_displayDeviceType;
 @property(retain) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property BOOL forceLargeMargins; // @synthesize forceLargeMargins=_forceLargeMargins;
 @property BOOL useSmallTitle; // @synthesize useSmallTitle=_useSmallTitle;
@@ -45,9 +49,16 @@
 - (id)imageFromImage:(id)arg1 withSize:(struct CGSize)arg2;
 - (void)prepareContentView;
 - (void)_initializeFromBundle;
+- (void)prepareToPresent;
 - (id)initWithFlow:(id)arg1;
 - (id)_defaultButtonTitle;
 - (id)initWithPrivacyIdentifier:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,12 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
-@class AVDarkModeCompatibleLabel, AVInfoPanelExpandingSummaryView, AVPlayerController, AVTomatoRatingView, NSArray, NSDate, NSDateFormatter, NSLayoutConstraint, NSURLSessionDataTask, UIImageView, UIStackView;
+@class AVDarkModeCompatibleLabel, AVInfoPanelExpandingSummaryView, AVPlayerController, AVTomatoRatingView, NSArray, NSDate, NSDateFormatter, NSLayoutConstraint, NSURLSessionDataTask, UIFocusGuide, UIImageView, UIStackView;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelDescriptionViewController : UIViewController
 {
     UIImageView *_posterView;
     UIStackView *_nextToPosterStackView;
+    UIFocusGuide *_posterFocusGuide;
     AVDarkModeCompatibleLabel *_titleLabel;
     AVDarkModeCompatibleLabel *_subtitleLabel;
     AVDarkModeCompatibleLabel *_seasonEpisodeLabel;
@@ -62,7 +64,7 @@
 - (void)_updateDynamicRangeBadge;
 - (void)_updateVideoResolutionBadge;
 @property(readonly, nonatomic) _Bool hasContent;
-- (void)viewWillAppear:(_Bool)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 - (void)loadView;
 
 @end

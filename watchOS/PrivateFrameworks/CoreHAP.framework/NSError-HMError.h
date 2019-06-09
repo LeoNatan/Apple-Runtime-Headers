@@ -16,6 +16,9 @@
 + (id)hmErrorWithCode:(int)arg1;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
++ (id)errorWithOSStatus:(long)arg1;
++ (id)hapErrorWithcode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 @property(readonly, nonatomic, getter=isHMError) _Bool hmError;
+- (_Bool)isHAPError;
 @end
 

@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mNextVmlShapeIdToTextBoxMap;
 }
 
+- (void).cxx_destruct;
 - (id)nextVmlShapeIdToTextBoxMap;
 - (void)setCurrentParagraph:(id)arg1;
 - (id)currentParagraph;
 - (id)wxReadState;
-- (void)dealloc;
 - (id)initWithWXReadState:(id)arg1;
 
 @end

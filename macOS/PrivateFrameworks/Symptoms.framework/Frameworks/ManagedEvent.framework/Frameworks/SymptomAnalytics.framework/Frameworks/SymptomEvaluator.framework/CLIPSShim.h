@@ -13,9 +13,9 @@
 {
     AnalyticsWorkspace *_clipsWorkspace;
     ImpoExpoService *_ieService;
+    NSObject<OS_dispatch_queue> *_queue;
     unsigned int _strongAddressType;
     id <CLIPSShimDelegate> _delegate;
-    NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_modules;
     void *_environment;
     NSMutableString *_dumpedString;
@@ -47,8 +47,7 @@
 @property(nonatomic) void *environment; // @synthesize environment=_environment;
 @property(nonatomic) unsigned int strongAddressType; // @synthesize strongAddressType=_strongAddressType;
 @property(readonly, nonatomic) NSMutableDictionary *modules; // @synthesize modules=_modules;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) id <CLIPSShimDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <CLIPSShimDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)slotsStringForTemplate:(id)arg1 fromDictionary:(id)arg2 moduleName:(id)arg3;
 - (id)deftemplatesMatchingPrefix:(id)arg1;
@@ -67,7 +66,7 @@
 - (void)retainFact:(void *)arg1;
 - (void)retractFact:(void *)arg1;
 - (void)executeCommand:(id)arg1 moduleName:(id)arg2;
-- (int)executeBatchCommand:(id)arg1;
+- (int)executeBatchCommand:(id)arg1 module:(id)arg2;
 - (void)setOTAUpdate:(id)arg1 version:(id)arg2 module:(id)arg3;
 - (void)deactivateModule:(id)arg1;
 - (id)loadDataSection:(id)arg1;
@@ -111,6 +110,7 @@
 - (void)clear;
 - (BOOL)initializeWorkspace;
 - (void)dealloc;
+- (void)setQueue:(id)arg1;
 - (id)init;
 
 @end

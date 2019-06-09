@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMapTable;
+@class NSMapTable;
 
 @interface GEOAddressCorrectionRequester : NSObject
 {
     NSMapTable *_pendingRequests;
-    NSLock *_pendingRequestsLock;
+    struct os_unfair_lock_s _pendingRequestsLock;
 }
 
 + (id)sharedRequester;

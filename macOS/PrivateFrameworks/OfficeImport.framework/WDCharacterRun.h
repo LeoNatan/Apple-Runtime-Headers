@@ -8,6 +8,7 @@
 
 @class NSMutableString;
 
+__attribute__((visibility("hidden")))
 @interface WDCharacterRun : WDRunWithCharacterProperties
 {
     NSMutableString *mString;

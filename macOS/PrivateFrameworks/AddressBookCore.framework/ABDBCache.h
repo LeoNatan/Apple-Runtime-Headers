@@ -72,7 +72,6 @@
 - (unsigned long long)insertionIndexForMember:(id)arg1 inSortedMembers:(id)arg2 withSortingOrder:(unsigned long long)arg3;
 - (void)nts_threaded_sortMembers:(id)arg1;
 - (void)sortMembers:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAddressBook:(id)arg1;
 - (id)init;

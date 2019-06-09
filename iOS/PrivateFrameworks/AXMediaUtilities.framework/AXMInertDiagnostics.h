@@ -12,6 +12,8 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)sharedInstance;
+- (id)visionObservations;
+- (void)appendVisionObservations:(id)arg1;
 - (id)startMeasurement:(long long)arg1 name:(id)arg2;
 - (id)captureMetrics:(long long)arg1 name:(id)arg2 forTask:(CDUnknownBlockType)arg3;
 - (void)setDiagnosticsEnabled:(_Bool)arg1;

@@ -10,7 +10,6 @@
 
 @interface BLTSectionConfigurationItem : NSObject
 {
-    _Bool _optOutOfCoordination;
     _Bool _optOutOfAttachmentTransmission;
     _Bool _alwaysSyncSettings;
     _Bool _alwaysAlert;
@@ -20,12 +19,22 @@
     _Bool _hasLegacyMapInUserInfo;
     _Bool _hasLegacyMapInContext;
     _Bool _optOutOfSubtitleRemovalForOlderWatches;
+    _Bool _shouldUsePhoneExpirationDate;
+    _Bool _optOutOfSettingsCoordination;
+    _Bool _overrideAppliesToCoordinationOptOut;
+    unsigned long long _coordinationType;
     NSArray *_whitelistedSubtypes;
     NSArray *_blacklistedCategories;
+    NSArray *_whitelistedCategories;
     NSNumber *_watchVersionThatUsesUserInfoForContext;
     NSArray *_additionalBridgeSectionIDs;
+    NSNumber *_watchVersionThatUsesAttachmentURL;
 }
 
+@property(retain, nonatomic) NSNumber *watchVersionThatUsesAttachmentURL; // @synthesize watchVersionThatUsesAttachmentURL=_watchVersionThatUsesAttachmentURL;
+@property(nonatomic) _Bool overrideAppliesToCoordinationOptOut; // @synthesize overrideAppliesToCoordinationOptOut=_overrideAppliesToCoordinationOptOut;
+@property(nonatomic) _Bool optOutOfSettingsCoordination; // @synthesize optOutOfSettingsCoordination=_optOutOfSettingsCoordination;
+@property(nonatomic) _Bool shouldUsePhoneExpirationDate; // @synthesize shouldUsePhoneExpirationDate=_shouldUsePhoneExpirationDate;
 @property(nonatomic) _Bool optOutOfSubtitleRemovalForOlderWatches; // @synthesize optOutOfSubtitleRemovalForOlderWatches=_optOutOfSubtitleRemovalForOlderWatches;
 @property(retain, nonatomic) NSArray *additionalBridgeSectionIDs; // @synthesize additionalBridgeSectionIDs=_additionalBridgeSectionIDs;
 @property(retain, nonatomic) NSNumber *watchVersionThatUsesUserInfoForContext; // @synthesize watchVersionThatUsesUserInfoForContext=_watchVersionThatUsesUserInfoForContext;
@@ -35,13 +44,16 @@
 @property(nonatomic) _Bool applyWhitelistToChildSections; // @synthesize applyWhitelistToChildSections=_applyWhitelistToChildSections;
 @property(nonatomic) _Bool optOutOfWaitForUserIdle; // @synthesize optOutOfWaitForUserIdle=_optOutOfWaitForUserIdle;
 @property(nonatomic) _Bool alwaysAlert; // @synthesize alwaysAlert=_alwaysAlert;
+@property(retain, nonatomic) NSArray *whitelistedCategories; // @synthesize whitelistedCategories=_whitelistedCategories;
 @property(retain, nonatomic) NSArray *blacklistedCategories; // @synthesize blacklistedCategories=_blacklistedCategories;
 @property(retain, nonatomic) NSArray *whitelistedSubtypes; // @synthesize whitelistedSubtypes=_whitelistedSubtypes;
 @property(nonatomic) _Bool alwaysSyncSettings; // @synthesize alwaysSyncSettings=_alwaysSyncSettings;
 @property(nonatomic) _Bool optOutOfAttachmentTransmission; // @synthesize optOutOfAttachmentTransmission=_optOutOfAttachmentTransmission;
-@property(nonatomic) _Bool optOutOfCoordination; // @synthesize optOutOfCoordination=_optOutOfCoordination;
+@property unsigned long long coordinationType; // @synthesize coordinationType=_coordinationType;
 - (void).cxx_destruct;
-- (_Bool)optOutOfCoordinationWithSubtype:(long long)arg1;
+- (_Bool)updateCoordinationType:(unsigned long long)arg1;
+- (_Bool)hasDisplayedCriticalBulletins;
+- (unsigned long long)coordinationTypeWithSubtype:(long long)arg1;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 

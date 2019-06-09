@@ -8,13 +8,14 @@
 
 @interface PFQOSMeter : NSObject
 {
-    long long _counts[4];
-    long long _total;
+    // Error parsing type: [4AQ], name: _counts
+    // Error parsing type: AQ, name: _total
 }
 
 - (id)description;
 - (BOOL)log:(long long)arg1;
 - (void)recordQOS;
+- (id)init;
 
 @end
 

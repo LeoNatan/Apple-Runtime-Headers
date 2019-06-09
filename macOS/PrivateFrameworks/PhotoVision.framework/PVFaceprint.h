@@ -11,22 +11,17 @@
 @interface PVFaceprint : PVObject
 {
     unsigned int _faceprintVersion;
-    long long _faceModelId;
     NSData *_faceprintData;
 }
 
-+ (id)faceprintWithFaceprintData:(id)arg1 fromAlgorithmVersion:(unsigned int)arg2;
-+ (id)faceprintWithFaceprintData:(id)arg1;
++ (id)faceprintWithFaceprintData:(id)arg1 faceprintVersion:(unsigned int)arg2;
 @property(retain, nonatomic) NSData *faceprintData; // @synthesize faceprintData=_faceprintData;
-@property(nonatomic) long long faceModelId; // @synthesize faceModelId=_faceModelId;
 @property(nonatomic) unsigned int faceprintVersion; // @synthesize faceprintVersion=_faceprintVersion;
 - (void).cxx_destruct;
 - (id)description;
 - (BOOL)getDistance:(float *)arg1 toOtherFaceprint:(id)arg2 error:(id *)arg3;
 - (void)_setPropertiesFrom:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithFaceprint:(id)arg1;
-- (id)initWithLocalIdentifier:(id)arg1;
 
 @end
 

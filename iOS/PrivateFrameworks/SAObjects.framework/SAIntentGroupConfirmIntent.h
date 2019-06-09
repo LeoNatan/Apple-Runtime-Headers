@@ -6,7 +6,7 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
-@class SAIntentGroupProtobufMessage;
+@class NSString, SAIntentGroupProtobufMessage;
 
 @interface SAIntentGroupConfirmIntent : SABaseClientBoundCommand
 {
@@ -15,6 +15,7 @@
 + (id)confirmIntentWithDictionary:(id)arg1 context:(id)arg2;
 + (id)confirmIntent;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *jsonEncodedIntent;
 @property(retain, nonatomic) SAIntentGroupProtobufMessage *intent;
 - (id)encodedClassName;
 - (id)groupIdentifier;

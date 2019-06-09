@@ -9,7 +9,6 @@
 @class PVCanceler;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface PVQueue : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
@@ -30,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (void)execute_sync:(CDUnknownBlockType)arg1;
 - (void)execute_after:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)execute_async:(CDUnknownBlockType)arg1;
-- (void)setTargetQueue:(id)arg1;
 - (id)initQueueWithName:(id)arg1 isSerial:(BOOL)arg2 qos_class:(unsigned int)arg3;
 
 @end

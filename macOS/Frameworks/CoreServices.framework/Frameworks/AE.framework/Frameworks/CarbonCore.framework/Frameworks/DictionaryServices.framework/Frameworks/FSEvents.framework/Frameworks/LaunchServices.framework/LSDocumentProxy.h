@@ -14,7 +14,6 @@
 {
     CDStruct_4c969caf _sourceAuditToken;
     BOOL _isContentManaged;
-    NSString *_containerOwnerApplicationIdentifier;
     NSURL *_URL;
     NSString *_name;
     NSString *_typeIdentifier;
@@ -35,6 +34,7 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic, getter=isContentManaged) BOOL contentManaged; // @synthesize contentManaged=_isContentManaged;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) const CDStruct_4c969caf *managedSourceAuditToken;
 @property(readonly, nonatomic) BOOL sourceIsManaged;
 - (id)debugDescription;
@@ -47,13 +47,12 @@
 - (id)applicationsAvailableForOpeningWithError:(id *)arg1;
 - (id)applicationsAvailableForOpeningWithHandlerRanks:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) const CDStruct_4c969caf *sourceAuditToken; // @dynamic sourceAuditToken;
-@property(readonly, nonatomic) NSString *containerOwnerApplicationIdentifier; // @synthesize containerOwnerApplicationIdentifier=_containerOwnerApplicationIdentifier;
+@property(readonly, nonatomic) NSString *containerOwnerApplicationIdentifier;
 @property(readonly, getter=isImageOrVideo) BOOL imageOrVideo;
-- (void)dealloc;
 - (id)initWithURL:(id)arg1 name:(id)arg2 type:(id)arg3 MIMEType:(id)arg4 isContentManaged:(BOOL)arg5 sourceAuditToken:(const CDStruct_4c969caf *)arg6;
 - (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
-- (id)applicationsAvailableForOpeningWithTypeDeclarer:(BOOL)arg1 style:(unsigned char)arg2 XPCConnection:(id)arg3 error:(id *)arg4;
-- (id)_boundDocumentProxy;
+- (id)applicationsAvailableForOpeningWithStyle:(unsigned char)arg1 limit:(unsigned long long)arg2 XPCConnection:(id)arg3 error:(id *)arg4;
+- (optional_a0013cf8)_bindingEvaluatorWithAuditToken:(const CDStruct_4c969caf *)arg1;
 
 @end
 

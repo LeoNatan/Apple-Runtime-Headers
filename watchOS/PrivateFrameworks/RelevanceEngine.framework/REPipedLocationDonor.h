@@ -29,7 +29,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)setConnection:(id)arg1;
-- (id)init;
+- (id)_init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

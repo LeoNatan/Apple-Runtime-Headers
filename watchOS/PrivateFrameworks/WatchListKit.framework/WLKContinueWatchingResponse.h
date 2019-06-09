@@ -6,13 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
+@class NSArray, WLKContinueWatchingCollection;
 
 @interface WLKContinueWatchingResponse : NSObject
 {
     NSArray *_items;
+    WLKContinueWatchingCollection *_featured;
 }
 
+@property(readonly, copy, nonatomic) WLKContinueWatchingCollection *featured; // @synthesize featured=_featured;
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;

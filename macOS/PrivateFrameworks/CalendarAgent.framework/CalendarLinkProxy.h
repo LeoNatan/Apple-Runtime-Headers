@@ -27,9 +27,7 @@
 - (void).cxx_destruct;
 - (void)updateClientSideCacheWithReply:(CDUnknownBlockType)arg1;
 - (void)registerWithAgent;
-- (void)broadcastToOtherClients:(id)arg1 withObject:(id)arg2 withObject:(id)arg3;
-- (void)broadcastToOtherClients:(id)arg1 withObject:(id)arg2;
-- (void)broadcastToOtherClients:(id)arg1;
+- (void)broadcastNotificationToOtherClients:(id)arg1 userInfo:(id)arg2;
 - (id)init;
 
 @end

@@ -9,13 +9,12 @@
 #import <AppKit/NSUserActivityDelegate-Protocol.h>
 
 @class NSMapTable, NSString;
-@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface NSUIActivityManager : NSObject <NSUserActivityDelegate>
 {
     NSMapTable *_infoByUserActivity;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _lock;
 }
 
 + (id)sharedManager;
@@ -30,9 +29,9 @@ __attribute__((visibility("hidden")))
 - (void)userActivityWillSave:(id)arg1;
 - (id)infoForProvider:(id)arg1;
 - (void)addProvider:(id)arg1 toUserActivity:(id)arg2 withSetter:(CDUnknownBlockType)arg3;
-- (void)queue_addProvider:(id)arg1 toUserActivity:(id)arg2;
+- (void)lock_addProvider:(id)arg1 toUserActivity:(id)arg2;
 - (void)removeProviderFromUserActivity:(id)arg1;
-- (id)queue_removeProviderFromUserActivity:(id)arg1;
+- (id)lock_removeProviderFromUserActivity:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

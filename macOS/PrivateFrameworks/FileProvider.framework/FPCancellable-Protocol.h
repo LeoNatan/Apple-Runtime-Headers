@@ -5,6 +5,6 @@
 //
 
 @protocol FPCancellable
-- (oneway void)cancel;
+- (void)cancel;
 @end
 

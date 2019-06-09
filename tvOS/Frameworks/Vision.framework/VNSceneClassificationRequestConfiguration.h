@@ -6,20 +6,20 @@
 
 #import <Vision/VNImageBasedRequestConfiguration.h>
 
-@class VNSceneClassificationCustomHierarchy, VNSceneObservation;
+@class VNClassificationCustomHierarchy, VNSceneObservation;
 
 __attribute__((visibility("hidden")))
 @interface VNSceneClassificationRequestConfiguration : VNImageBasedRequestConfiguration
 {
     VNSceneObservation *_sceneObservation;
-    VNSceneClassificationCustomHierarchy *_customHierarchy;
+    VNClassificationCustomHierarchy *_customHierarchy;
     unsigned long long _maximumLeafObservations;
     unsigned long long _maximumHierarchicalObservations;
 }
 
 @property(nonatomic) unsigned long long maximumHierarchicalObservations; // @synthesize maximumHierarchicalObservations=_maximumHierarchicalObservations;
 @property(nonatomic) unsigned long long maximumLeafObservations; // @synthesize maximumLeafObservations=_maximumLeafObservations;
-@property(retain, nonatomic) VNSceneClassificationCustomHierarchy *customHierarchy; // @synthesize customHierarchy=_customHierarchy;
+@property(retain, nonatomic) VNClassificationCustomHierarchy *customHierarchy; // @synthesize customHierarchy=_customHierarchy;
 @property(retain, nonatomic) VNSceneObservation *sceneObservation; // @synthesize sceneObservation=_sceneObservation;
 - (void).cxx_destruct;
 - (id)description;

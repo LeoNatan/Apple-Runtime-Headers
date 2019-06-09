@@ -35,7 +35,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithScopeIdentifier:(id)arg1 scopeType:(long long)arg2;
-- (id)initWithPrequeliteDictionary:(id)arg1 base:(id)arg2;
 
 @end
 

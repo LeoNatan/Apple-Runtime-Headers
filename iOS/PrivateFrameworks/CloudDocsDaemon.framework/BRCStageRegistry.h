@@ -15,8 +15,8 @@
 @interface BRCStageRegistry : NSObject <BRCModule, BRCLowDiskDelegate>
 {
     BRCAccountSession *_session;
-    NSString *_stageDirectoryPath[7];
-    unsigned long long _stageDirectoryFileID[7];
+    NSString *_stageDirectoryPath[8];
+    unsigned long long _stageDirectoryFileID[8];
     NSMutableSet *_unflushedStagedFileIDs;
     NSMutableSet *_activeUploadStageIDs;
     NSMutableSet *_activeDownloadStageIDs;
@@ -42,6 +42,8 @@
 - (void)close;
 - (void)_updatePersistedStateWithLatestGCStartTime:(long long)arg1;
 - (long long)garbageCollectSpace:(long long)arg1;
+- (void)removeDatabaseObjectsForZone:(id)arg1;
+- (unsigned long long)_processPendingListDatabaseObjects:(CDUnknownBlockType)arg1;
 - (void)garbageCollectPackages;
 - (long long)purgeGraveyardSpace:(long long)arg1 withUrgency:(int)arg2;
 - (long long)purgableSpace;
@@ -62,9 +64,13 @@
 - (void)cleanupStagedUploadWithID:(id)arg1;
 - (void)cleanupStagedSyncUpWithID:(id)arg1;
 - (_Bool)pendingFetchRecordDirExistsInStageWithStartingChangeToken:(id)arg1 recordZoneID:(id)arg2;
+- (_Bool)pendingFetchRecordDirExistsInStageWithRecordID:(id)arg1;
 - (id)createURLForUploadWithStageID:(id)arg1 name:(id)arg2;
 - (id)makePendingFetchRecordDirWithStartingChangeToken:(id)arg1 recordZoneID:(id)arg2;
+- (id)makePendingListRecordDirWithStartingChangeToken:(id)arg1;
+- (id)_anchorNameForRecordID:(id)arg1;
 - (id)_anchorNameForChangeToken:(id)arg1 recordZoneID:(id)arg2;
+- (id)_anchorNamePrefixForRecordZoneID:(id)arg1;
 - (void)associateSyncUpStageID:(id)arg1 withOperation:(id)arg2;
 - (void)applyMetadataOnFileDescriptor:(int)arg1 liveFileDescriptor:(int)arg2 clientZone:(id)arg3 statInfo:(id)arg4 version:(id)arg5 sharingOptions:(unsigned long long)arg6;
 - (_Bool)moveFromStage:(unsigned long long)arg1 toPath:(id)arg2 fileName:(id)arg3 error:(id *)arg4;

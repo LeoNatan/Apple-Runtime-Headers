@@ -8,5 +8,6 @@
 
 @interface NSData (IDSLogFormatter)
 - (id)truncatedDescription;
+- (id)subdataWithRangeNoCopy:(struct _NSRange)arg1;
 @end
 

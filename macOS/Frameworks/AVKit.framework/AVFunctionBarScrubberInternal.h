@@ -11,6 +11,7 @@
 @class AVFunctionBarScrubberKnobView, AVFunctionBarTrackView, AVPlayerLayer, NSArray, NSColor, NSDateComponentsFormatter, NSLayoutConstraint, NSString, NSTextField;
 @protocol AVFunctionBarScrubberDelegateInternal, NSObject><NSCopying;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarScrubberInternal : NSView <NSAccessibilitySlider>
 {
     NSDateComponentsFormatter *_dateComponentsFormatter;

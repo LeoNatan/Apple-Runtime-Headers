@@ -8,8 +8,8 @@
 
 #import <CloudDocsDaemon/BRCCloudDocsAppsObserver-Protocol.h>
 
-@class BRCAccountWaitOperation, BRCAnalyticsReporter, BRCApplyScheduler, BRCClientState, BRCContainerScheduler, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCDownloadTrackers, BRCFSDownloader, BRCFSReader, BRCFSUploader, BRCFSWriter, BRCFairScheduler, BRCGlobalProgress, BRCItemTransmogrifier, BRCNotificationManager, BRCPQLConnection, BRCRecentsEnumerator, BRCServerPersistedState, BRCStageRegistry, BRCSyncUpScheduler, BRCThrottle, BRCUserNotification, BRCVolume, NSHashTable, NSMutableDictionary, NSMutableSet, NSString, NSURL, br_pacer;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@class BRCAccountWaitOperation, BRCAnalyticsReporter, BRCApplyScheduler, BRCClientState, BRCContainerScheduler, BRCDeadlineScheduler, BRCDiskSpaceReclaimer, BRCDownloadTrackers, BRCFSDownloader, BRCFSReader, BRCFSUploader, BRCFSWriter, BRCFairScheduler, BRCGlobalProgress, BRCInflightProgressTracker, BRCItemTransmogrifier, BRCNotificationManager, BRCPQLConnection, BRCRecentsEnumerator, BRCServerPersistedState, BRCStageRegistry, BRCSyncDownOperation, BRCSyncUpScheduler, BRCThrottle, BRCUserNotification, BRCVolume, NSHashTable, NSMutableDictionary, NSMutableSet, NSString, NSURL, br_pacer;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_dispatch_workloop;
 
 @interface BRCAccountSession : NSObject <BRCCloudDocsAppsObserver>
 {
@@ -19,13 +19,15 @@
     NSObject<OS_dispatch_source> *_dbWatcher;
     NSObject<OS_dispatch_queue> *_dbWatcherQueue;
     NSObject<OS_dispatch_queue> *_dbCorruptionQueue;
-    NSObject<OS_dispatch_queue> *_clientTruthWorkloop;
-    NSObject<OS_dispatch_queue> *_serverTruthWorkloop;
-    NSObject<OS_dispatch_queue> *_readOnlyWorkloop;
+    NSObject<OS_dispatch_workloop> *_clientTruthWorkloop;
+    NSObject<OS_dispatch_workloop> *_serverTruthWorkloop;
+    NSObject<OS_dispatch_workloop> *_readOnlyWorkloop;
     int _cloudDocsFD;
     CDUnknownBlockType _dbProfilingHook;
     NSString *_databaseID;
     NSHashTable *_miscOperations;
+    BRCSyncDownOperation *_fullSyncDownOperation;
+    int _registerStateForFullSync;
     BRCPQLConnection *_clientDB;
     BRCPQLConnection *_serverDB;
     BRCPQLConnection *_readOnlyDB;
@@ -72,6 +74,7 @@
     BRCDownloadTrackers *_downloadTrackers;
     BRCUserNotification *_userNotification;
     BRCNotificationManager *_notificationManager;
+    BRCInflightProgressTracker *_inflightProgressTracker;
     BRCStageRegistry *_stageRegistry;
     BRCDiskSpaceReclaimer *_diskReclaimer;
     BRCRecentsEnumerator *_recentsEnumerator;
@@ -94,7 +97,9 @@
 + (_Bool)openAndValidateDatabase:(id)arg1 serverTruth:(_Bool)arg2 session:(id)arg3 baseURL:(id)arg4 skipBackupDetection:(_Bool)arg5 error:(id *)arg6;
 + (_Bool)_checkIntegrity:(id)arg1 serverTruth:(_Bool)arg2 session:(id)arg3 skipBackupDetection:(_Bool)arg4 error:(id *)arg5;
 + (void)_registerLastBootIfNeeded:(id)arg1 table:(struct NSObject *)arg2;
-+ (id)userIdentityForName:(id)arg1 db:(id)arg2;
++ (id)nameComponentsForOwnerName:(id)arg1 db:(id)arg2;
++ (id)nameComponentsForKey:(id)arg1 db:(id)arg2;
++ (id)userIdentityForOwnerName:(id)arg1 db:(id)arg2;
 + (id)userIdentityForKey:(id)arg1 db:(id)arg2;
 + (_Bool)_registerStaticDBFunctions:(id)arg1 error:(id *)arg2;
 + (_Bool)_openConnection:(id)arg1 databaseName:(id)arg2 baseURL:(id)arg3 readonly:(_Bool)arg4 error:(id *)arg5;
@@ -129,6 +134,7 @@
 @property(retain, nonatomic) NSString *appSupportDirPath; // @synthesize appSupportDirPath=_appSupportDirPath;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BRCStageRegistry *stageRegistry; // @synthesize stageRegistry=_stageRegistry;
+@property(readonly, nonatomic) BRCInflightProgressTracker *inflightProgressTracker; // @synthesize inflightProgressTracker=_inflightProgressTracker;
 @property(readonly, nonatomic) BRCNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) BRCFSWriter *fsWriter; // @synthesize fsWriter=_fsWriter;
 @property(readonly, nonatomic) BRCFSReader *fsReader; // @synthesize fsReader=_fsReader;
@@ -161,7 +167,7 @@
 - (_Bool)_setRootPathXattrValue:(id)arg1 forRootPath:(id)arg2 error:(id *)arg3;
 - (_Bool)enableSyncforSyncedFolderType:(unsigned long long)arg1 isInitialCreation:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)applySyncPolicy:(long long)arg1 forSyncedFolderType:(unsigned long long)arg2 isInitialCreation:(_Bool)arg3 error:(id *)arg4;
-@property(readonly, nonatomic) _Bool isGreedy;
+@property(readonly, nonatomic) unsigned int greedinessPreference;
 - (void)startDownloadsForGreediness;
 - (void)computeDocumentEvictableSizesForLowTime:(unsigned long long)arg1 medTime:(unsigned long long)arg2 highTime:(unsigned long long)arg3 lowSize:(unsigned long long)arg4 medSize:(unsigned long long)arg5 highSize:(unsigned long long)arg6 minRowID:(unsigned long long)arg7 minSize:(unsigned long long)arg8 batchSize:(unsigned long long)arg9 injection:(struct NSObject *)arg10 db:(id)arg11 reply:(CDUnknownBlockType)arg12;
 - (void)computeTotalEvictableSizeWithAccessLowTimeDelta:(double)arg1 medTimeDelta:(double)arg2 highTimeDelta:(double)arg3 db:(id)arg4 reply:(CDUnknownBlockType)arg5;
@@ -175,12 +181,15 @@
 @property(readonly, nonatomic) unsigned long long availableDiskSpace;
 - (void)recomputeAppSyncBlockStateForPrivateClientZone:(id)arg1;
 - (void)cloudDocsAppsListDidChange:(id)arg1;
+- (id)currentUserRecordName;
+- (void)fetchUserRecordIDWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)createAppLibraryOnDisk:(id)arg1 createdRoot:(_Bool *)arg2 createdDocuments:(_Bool *)arg3 rootFileID:(unsigned long long *)arg4;
 - (_Bool)createAppLibrariesIfNeededWithError:(id *)arg1;
 - (void)enumerateFileTypesWithFilterBlock:(CDUnknownBlockType)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
 - (void)_enumerateAccountHandlerSupportedFolderTypes:(CDUnknownBlockType)arg1;
 - (void)enumerateSupportedFolderTypes:(CDUnknownBlockType)arg1;
 - (id)getOrReserveLibraryRowIDForLibrary:(id)arg1;
+- (id)getOrCreateSharedZones:(id)arg1 shareAcceptOp:(id)arg2;
 - (id)getOrCreateSharedZones:(id)arg1;
 - (id)getOrCreateAppLibraryAndPrivateZonesIfNecessary:(id)arg1 appLibraryExists:(_Bool *)arg2;
 - (id)getOrCreateAppLibraryAndPrivateZonesIfNecessary:(id)arg1;
@@ -192,6 +201,7 @@
 - (id)__getOrCreateServerZone:(id)arg1;
 - (id)appLibraryByID:(id)arg1;
 - (id)appLibraryByMangledID:(id)arg1;
+- (void)assertNotOnZoneMutex;
 - (id)appLibraryByRowID:(id)arg1;
 - (void)destroySharedClientZone:(id)arg1;
 - (void)performBlock:(CDUnknownBlockType)arg1 whileRemovingPrivateClientZone:(id)arg2;
@@ -205,6 +215,9 @@
 - (id)cloudDocsClientZone;
 - (void)enumeratePrivateServerZones:(CDUnknownBlockType)arg1;
 - (id)privateServerZoneByID:(id)arg1;
+- (void)cancelFullSyncOperation;
+- (void)_registerForFullSyncXPC;
+- (void)_registerFullZonesSyncDownWithActivity:(id)arg1;
 - (id)fallbackAppLibraryForClientZone:(id)arg1 extension:(id)arg2;
 - (id)appLibraries;
 - (void)enumerateAppLibraries:(CDUnknownBlockType)arg1;
@@ -213,6 +226,7 @@
 - (id)serverZoneByRowID:(id)arg1;
 - (id)serverZoneByName:(id)arg1 ownerName:(id)arg2;
 - (id)serverZoneByMangledID:(id)arg1;
+- (id)sharedServerZoneRowIDsByOwnerNamePrefix:(id)arg1;
 - (id)_unloadClientZones;
 - (void)_loadClientZonesFromDisk;
 - (void)destroyLocalDataWithPristineContainerIDs:(id)arg1;
@@ -260,15 +274,15 @@
 - (_Bool)_finishServerTruthConnectionSetupWithError:(id *)arg1;
 - (_Bool)_finishClientTruthConnectionSetupWithError:(id *)arg1;
 - (void)_clearNeedsUpgradeErrors:(id)arg1 brVersion:(id)arg2;
-- (id)createUserKeyForName:(id)arg1;
-- (id)userNameForKey:(id)arg1 db:(id)arg2;
-- (id)userKeyForName:(id)arg1 db:(id)arg2;
-- (void)learnOwnerIdentityForShare:(id)arg1 forceUpdate:(_Bool)arg2;
-- (void)_setUserIdentity:(id)arg1 forName:(id)arg2;
+- (id)createUserKeyForOwnerName:(id)arg1 nameComponents:(id)arg2 overwriteComponents:(_Bool)arg3;
+- (id)userKeyForOwnerName:(id)arg1 db:(id)arg2;
+- (void)learnUserIdentitiesForShare:(id)arg1 forceUpdate:(_Bool)arg2;
+- (void)_setUserIdentity:(id)arg1 forOwnerName:(id)arg2;
 - (id)userIdentityForKey:(id)arg1;
 - (id)createDeviceKeyForNameInServerDB:(id)arg1;
 - (id)deviceKeyForName:(id)arg1 db:(id)arg2;
 - (id)pendingDownloadItemWithDocumentID:(unsigned int)arg1;
+- (struct PQLResultSet *)itemsWithSideCarInFlightDiffsEnumerator;
 - (struct PQLResultSet *)itemsNeedingIndexingEnumeratorFromNotifRank:(unsigned long long)arg1 batchSize:(unsigned long long)arg2;
 - (struct PQLResultSet *)bouncedItemsEnumerator;
 - (struct PQLResultSet *)foldersNeedingTransmogrifyEnumerator;
@@ -287,6 +301,7 @@
 - (id)newSharedClientZoneFromPQLResultSet:(id)arg1 error:(id *)arg2;
 - (_Bool)_deleteClientZone:(id)arg1;
 - (_Bool)_createClientZone:(id)arg1;
+- (id)_appLibraryByName:(id)arg1 db:(id)arg2;
 - (struct PQLResultSet *)_appLibrariesEnumerator:(id)arg1;
 - (_Bool)_createSharedAppLibrary:(id)arg1;
 - (_Bool)_createPrivateAppLibrary:(id)arg1;
@@ -294,17 +309,19 @@
 - (_Bool)_createAppLibrary:(id)arg1;
 - (id)newAppLibraryFromPQLResultSet:(id)arg1 error:(id *)arg2;
 - (_Bool)saveAppLibraryToDB:(id)arg1;
+- (_Bool)saveAppLibrary:(id)arg1 toDB:(id)arg2;
 - (id)_reserveRowIDForLibrary:(id)arg1;
 - (void)_enumerateAppLibraryRowIDs:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (_Bool)deleteServerZone:(id)arg1;
 - (_Bool)createServerZone:(id)arg1;
 - (_Bool)saveClientZoneToDB:(id)arg1;
 - (_Bool)saveServerZoneToDB:(id)arg1;
+- (_Bool)saveServerZone:(id)arg1 toDB:(id)arg2;
 - (void)preventDatabaseFromBeingReused;
 - (_Bool)_stepBackupDetector:(struct backup_detector)arg1 newState:(struct backup_detector *)arg2 error:(id *)arg3;
 - (_Bool)_setupBackupDetector:(struct backup_detector *)arg1 error:(id *)arg2;
 - (id)newConnectionWithLabel:(id)arg1 readonly:(_Bool)arg2 error:(id *)arg3;
-- (_Bool)_setupConnection:(id)arg1 readonly:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)_setupConnection:(id)arg1 readonly:(_Bool)arg2 upgradingDB:(_Bool)arg3 error:(id *)arg4;
 - (_Bool)_registerDynamicDBFunctions:(id)arg1 error:(id *)arg2;
 - (_Bool)_openConnection:(id)arg1 databaseName:(id)arg2 readonly:(_Bool)arg3 error:(id *)arg4;
 - (void)stopDBWatcher;
@@ -348,11 +365,13 @@
 - (id)sharedSyncContext;
 - (id)defaultSyncContext;
 - (id)_syncContextForContextIdentifier:(id)arg1 sourceAppIdentifier:(id)arg2 isShared:(_Bool)arg3 createIfNeeded:(_Bool)arg4;
+- (void)enumerateSideFaultsUnderParent:(id)arg1 db:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (void)enumerateItemsWithShareIDUnderParent:(id)arg1 db:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)globalID:(id)arg1 isStrictChildOfGlobalID:(id)arg2;
 - (id)itemByItemGlobalID:(id)arg1;
 - (id)itemByItemGlobalID:(id)arg1 db:(id)arg2;
 - (id)localAliasForSharedItem:(id)arg1 inZone:(id)arg2;
+- (struct PQLResultSet *)deadServerAliasesSharedItem:(id)arg1;
 - (id)serverAliasItemForSharedItem:(id)arg1 inZone:(id)arg2 db:(id)arg3;
 - (id)serverAliasItemForSharedItem:(id)arg1 inZone:(id)arg2;
 - (id)serverAliasItemForSharedItem:(id)arg1 db:(id)arg2;

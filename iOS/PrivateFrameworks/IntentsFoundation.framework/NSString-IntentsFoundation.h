@@ -7,6 +7,9 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (IntentsFoundation)
++ (id)_inf_hexStringFromData:(id)arg1;
++ (id)_inf_hexStringFromBytes:(const char *)arg1 length:(unsigned long long)arg2;
+- (id)_inf_stringByUppercasingFirstCharacter;
 - (id)_inf_stringByLowercasingFirstCharacter;
 @end
 

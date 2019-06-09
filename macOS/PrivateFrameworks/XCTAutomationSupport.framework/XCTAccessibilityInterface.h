@@ -10,6 +10,7 @@
 {
 }
 
++ (id)attributesForElement:(id)arg1 iOSAttributes:(id)arg2 error:(id *)arg3;
 + (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
 
 @end

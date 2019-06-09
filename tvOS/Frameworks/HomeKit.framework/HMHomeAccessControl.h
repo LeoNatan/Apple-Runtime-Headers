@@ -6,7 +6,7 @@
 
 #import <HomeKit/HMAccessControl.h>
 
-@class HMUserPresenceAuthorization, HMUserPresenceCompute;
+@class HMUserCameraAccess, HMUserPresenceAuthorization, HMUserPresenceCompute;
 
 @interface HMHomeAccessControl : HMAccessControl
 {
@@ -15,12 +15,16 @@
     _Bool _remoteAccessAllowed;
     HMUserPresenceAuthorization *_presenceAuthStatus;
     HMUserPresenceCompute *_presenceComputeStatus;
+    HMUserCameraAccess *_camerasAccess;
 }
 
 - (void).cxx_destruct;
+- (void)updateCamerasAccessLevel:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updatePresenceAuthorizationStatus:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateRemoteAccess:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateAdministratorAccess:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (unsigned long long)camerasAccessLevel;
+@property(retain, nonatomic) HMUserCameraAccess *camerasAccess; // @synthesize camerasAccess=_camerasAccess;
 - (unsigned long long)presenceComputationStatus;
 - (unsigned long long)presenceAuthorizationStatus;
 @property(retain, nonatomic) HMUserPresenceCompute *presenceComputeStatus; // @synthesize presenceComputeStatus=_presenceComputeStatus;
@@ -29,7 +33,7 @@
 @property(nonatomic, getter=isAdministrator) _Bool administrator; // @synthesize administrator=_administrator;
 @property(getter=isOwner) _Bool owner; // @synthesize owner=_owner;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithUser:(id)arg1 owner:(_Bool)arg2 administratorPrivilege:(_Bool)arg3 remoteAccess:(_Bool)arg4 presenceAuthStatus:(id)arg5 presenceComputeStatus:(id)arg6;
+- (id)initWithUser:(id)arg1 owner:(_Bool)arg2 administratorPrivilege:(_Bool)arg3 remoteAccess:(_Bool)arg4 presenceAuthStatus:(id)arg5 presenceComputeStatus:(id)arg6 camerasAccess:(id)arg7;
 
 @end
 

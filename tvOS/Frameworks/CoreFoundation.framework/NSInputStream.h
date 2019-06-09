@@ -8,6 +8,7 @@
 
 @interface NSInputStream : NSStream
 {
+    unsigned char _reserved[128];
 }
 
 

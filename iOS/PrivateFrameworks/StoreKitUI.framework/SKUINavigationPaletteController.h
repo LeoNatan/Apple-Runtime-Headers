@@ -8,6 +8,7 @@
 
 @class SKUINavigationBarContext, SKUINavigationPaletteView, SKUIPaletteViewElement, SKUIViewElementLayoutContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUINavigationPaletteController : SKUINavigationBarSectionController
 {
     SKUINavigationBarContext *_navigationBarContext;

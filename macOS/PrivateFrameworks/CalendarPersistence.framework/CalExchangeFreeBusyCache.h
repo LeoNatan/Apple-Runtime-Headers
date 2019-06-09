@@ -10,7 +10,7 @@
 {
 }
 
-- (void)freeBusyServerRequestForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 callbackTo:(id)arg4 withSelector:(SEL)arg5;
+- (void)freeBusyServerRequestForCUAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 withDelegate:(id)arg4;
 - (void)availabilityOperationFinished:(id)arg1;
 - (void)dealloc;
 - (id)initWithPrincipalID:(id)arg1;

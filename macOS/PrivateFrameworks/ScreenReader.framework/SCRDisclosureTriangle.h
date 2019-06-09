@@ -6,24 +6,19 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class SCRBrailleLineManager;
-
 __attribute__((visibility("hidden")))
 @interface SCRDisclosureTriangle : SCRElement
 {
-    SCRBrailleLineManager *__brailleLineManager;
 }
 
-@property(retain, nonatomic, setter=_setBrailleLineManager:) SCRBrailleLineManager *_brailleLineManager; // @synthesize _brailleLineManager=__brailleLineManager;
-- (void).cxx_destruct;
-- (id)brailleLineManager;
 - (BOOL)toggleExpandedWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)isControlElement;
+- (void)echoValueChangeToRequest:(id)arg1;
 - (void)addActionDescription:(id)arg1 toRequest:(id)arg2;
-- (void)addItemDescriptionForActionToRequest:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)_theCorrectDefaultActionDescription;
 - (id)defaultActionDescription;
+- (BOOL)ignoreValueChangeAfterAction;
 - (void)appendExpandedStatusDescription:(id)arg1;
 - (BOOL)isExpanded;
 

@@ -9,9 +9,8 @@
 #import <boringssl/OS_nw_protocol_boringssl-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue, OS_nw_association;
+@protocol OS_dispatch_queue, OS_nw_association, OS_nw_parameters;
 
-__attribute__((visibility("hidden")))
 @interface boringssl_concrete_nw_protocol_boringssl : NSObject <OS_nw_protocol_boringssl>
 {
     struct nw_protocol protocol;
@@ -23,6 +22,16 @@ __attribute__((visibility("hidden")))
     struct nw_frame_array_s read_frame_array;
     struct nw_frame_array_s finalized_output_frame_array;
     struct nw_frame_array_s output_frame_array;
+    struct nw_frame_array_s output_initial_frame_array;
+    struct nw_frame_array_s output_early_frame_array;
+    struct nw_frame_array_s output_handshake_frame_array;
+    struct nw_frame_array_s output_application_frame_array;
+    CDUnknownBlockType message_writer;
+    struct nw_protocol *initial_output_handler;
+    struct nw_protocol *early_output_handler;
+    struct nw_protocol *handshake_output_handler;
+    struct nw_protocol *application_output_handler;
+    NSObject<OS_nw_parameters> *parameters;
     void *handshake_timer;
     NSObject<OS_nw_association> *association;
     void *boringssl_ctx_handle;
@@ -32,6 +41,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType boringssl_prepare_block;
     unsigned int input_frame_byte_count;
     int stack_error;
+    unsigned int message_mode:1;
     unsigned int trust_invalid_certs:1;
     unsigned int started_negotiation:1;
     unsigned int write_ready:1;
@@ -41,11 +51,11 @@ __attribute__((visibility("hidden")))
     unsigned int input_suspended:1;
     unsigned int servicing_reads:1;
     unsigned int server:1;
-    unsigned int is_dtls:1;
     unsigned int external_frames:1;
     unsigned int early_data_enabled:1;
     unsigned int did_receive_data_once:1;
     unsigned int output_protocol_supports_early_data:1;
+    unsigned int received_connect:1;
     char log_str[84];
 }
 

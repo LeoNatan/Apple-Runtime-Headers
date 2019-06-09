@@ -22,15 +22,14 @@
     NSString *_landingPageArticleID;
 }
 
-+ (id)defaultNonTrialTextInternalTrial;
 + (id)defaultNonTrialText;
 + (id)defaultTrialText;
 + (id)defaultSubscriptionButtonText;
-+ (id)defaultIssueCoverSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultLandingPageSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultArticleSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultOsloSheetTargetSubscriptionButtonWithTemporaryAccessEnabled:(_Bool)arg1;
-+ (id)defaultLandingPageTargetSubscriptionButtonWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultIssueCoverSubscriptionButtonWithLandingPageArticleID:(id)arg1;
++ (id)defaultLandingPageSubscriptionButtonWithLandingPageArticleID:(id)arg1;
++ (id)defaultArticleSubscriptionButtonWithLandingPageArticleID:(id)arg1;
++ (id)defaultOsloSheetTargetSubscriptionButton;
++ (id)defaultLandingPageTargetSubscriptionButtonWithLandingPageArticleID:(id)arg1;
 @property(nonatomic, getter=shouldDismissLandingPagePostPurchase) _Bool dismissLandingPagePostPurchase; // @synthesize dismissLandingPagePostPurchase=_dismissLandingPagePostPurchase;
 @property(copy, nonatomic) NSString *landingPageArticleID; // @synthesize landingPageArticleID=_landingPageArticleID;
 @property(copy, nonatomic) NSURL *postPurchaseURL; // @synthesize postPurchaseURL=_postPurchaseURL;

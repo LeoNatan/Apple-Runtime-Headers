@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) double menuBarHeight; // @synthesize menuBarHeight=_menuBarHeight;
 @property(readonly, copy) NSArray *uniqueDisplays; // @synthesize uniqueDisplays=_uniqueDisplays;
 - (void)dealloc;
+- (id)description;
 - (void)_finishUpdating;
 - (id)_copyForUpdating;
 - (void)_setSystemUIOptions:(unsigned int)arg1;

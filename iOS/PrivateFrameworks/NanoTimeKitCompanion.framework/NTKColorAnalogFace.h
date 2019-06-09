@@ -10,8 +10,11 @@
 {
 }
 
++ (id)_orderedComplicationSlots;
 + (id)_monogramComplicationSlotForDevice:(id)arg1;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_complicationSlotDescriptors;
+- (id)complicationSlotsHiddenByEditOption:(id)arg1;
 - (Class)_optionClassForCustomEditMode:(long long)arg1;
 - (_Bool)_wantsUnadornedSnapshot;
 - (unsigned long long)_indexOfOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
@@ -20,8 +23,6 @@
 - (id)_defaultOptionForMissingCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (id)_defaultOptionForCustomEditMode:(long long)arg1 slot:(id)arg2;
 - (id)_customEditModes;
-- (id)_orderedComplicationSlots;
-- (id)_complicationSlotDescriptors;
 - (long long)_editModeForOldEncodingIndex:(long long)arg1;
 
 @end

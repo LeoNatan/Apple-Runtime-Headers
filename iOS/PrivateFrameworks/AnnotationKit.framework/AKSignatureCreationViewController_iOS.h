@@ -8,7 +8,7 @@
 
 #import <AnnotationKit/UINavigationBarDelegate-Protocol.h>
 
-@class AKController, AKInkSignatureView, AKSignatureBaselineView, AKSmoothPathView, NSString, UILabel, UINavigationBar;
+@class AKController, AKInkSignatureView, AKSignatureBaselineView, AKSmoothPathView, NSString, PKToolPicker, UILabel, UINavigationBar;
 @protocol AKSignatureCreationControllerDelegate;
 
 @interface AKSignatureCreationViewController_iOS : UIViewController <UINavigationBarDelegate>
@@ -20,8 +20,10 @@
     AKSignatureBaselineView *_baselineView;
     UILabel *_label;
     AKController *_controller;
+    PKToolPicker *_toolPicker;
 }
 
+@property(retain, nonatomic) PKToolPicker *toolPicker; // @synthesize toolPicker=_toolPicker;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 @property(retain, nonatomic) AKSignatureBaselineView *baselineView; // @synthesize baselineView=_baselineView;
@@ -34,10 +36,13 @@
 - (void)_done:(id)arg1;
 - (void)_clear:(id)arg1;
 - (void)_cancel:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)_validateButtons;
 - (_Bool)prefersStatusBarHidden;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+- (void)_setToolPickerVisible;
 - (void)didReceiveMemoryWarning;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithController:(id)arg1;

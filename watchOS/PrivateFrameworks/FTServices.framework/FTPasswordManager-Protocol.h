@@ -16,6 +16,7 @@
 - (NSString *)profileIDForACAccount:(ACAccount *)arg1;
 - (ACAccount *)acAccountWithProfileID:(NSString *)arg1 username:(NSString *)arg2 accountStore:(ACAccountStore *)arg3;
 - (void)cancelRequestID:(NSString *)arg1 serviceIdentifier:(NSString *)arg2;
+- (void)setAccountStatus:(NSNumber *)arg1 forProfileID:(NSString *)arg2 username:(NSString *)arg3 service:(NSString *)arg4;
 - (void)setHandlesForProfileID:(NSString *)arg1 username:(NSString *)arg2 service:(NSString *)arg3 handles:(NSArray *)arg4;
 - (_Bool)isAuthTokenReceiptTime:(double)arg1 withinGracePeriod:(double)arg2;
 - (void)removeAuthTokenAllowingGracePeriodForProfileID:(NSString *)arg1 username:(NSString *)arg2;

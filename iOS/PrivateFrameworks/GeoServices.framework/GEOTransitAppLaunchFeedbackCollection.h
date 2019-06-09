@@ -8,22 +8,21 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, NSString;
+@class GEOLatLng, NSString, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOTransitAppLaunchFeedbackCollection : PBCodable <NSCopying>
 {
-    double _timestamp;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_bundleIdentifier;
     GEOLatLng *_destination;
     GEOLatLng *_source;
-    CDStruct_b5306035 _has;
+    double _timestamp;
+    CDStruct_ea2c3af7 _flags;
 }
 
-@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-@property(retain, nonatomic) GEOLatLng *destination; // @synthesize destination=_destination;
-@property(retain, nonatomic) GEOLatLng *source; // @synthesize source=_source;
-@property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,12 +31,20 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasTimestamp;
+@property(nonatomic) double timestamp;
+@property(retain, nonatomic) GEOLatLng *destination;
 @property(readonly, nonatomic) _Bool hasDestination;
+- (void)_readDestination;
+@property(retain, nonatomic) GEOLatLng *source;
 @property(readonly, nonatomic) _Bool hasSource;
+- (void)_readSource;
+@property(retain, nonatomic) NSString *bundleIdentifier;
 @property(readonly, nonatomic) _Bool hasBundleIdentifier;
+- (void)_readBundleIdentifier;
 
 @end
 

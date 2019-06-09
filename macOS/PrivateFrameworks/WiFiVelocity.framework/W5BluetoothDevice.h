@@ -25,7 +25,7 @@
     long long _rssi;
     NSString *_afhMap;
     long long _connectionMode;
-    long long _connectionModeInterval;
+    unsigned long long _connectionModeInterval;
     long long _manufacturer;
     unsigned long long _lmpVersion;
     unsigned long long _lmpSubversion;
@@ -38,7 +38,7 @@
 @property(nonatomic) unsigned long long lmpSubversion; // @synthesize lmpSubversion=_lmpSubversion;
 @property(nonatomic) unsigned long long lmpVersion; // @synthesize lmpVersion=_lmpVersion;
 @property(nonatomic) long long manufacturer; // @synthesize manufacturer=_manufacturer;
-@property(nonatomic) long long connectionModeInterval; // @synthesize connectionModeInterval=_connectionModeInterval;
+@property(nonatomic) unsigned long long connectionModeInterval; // @synthesize connectionModeInterval=_connectionModeInterval;
 @property(nonatomic) long long connectionMode; // @synthesize connectionMode=_connectionMode;
 @property(copy, nonatomic) NSString *afhMap; // @synthesize afhMap=_afhMap;
 @property(nonatomic) long long rssi; // @synthesize rssi=_rssi;

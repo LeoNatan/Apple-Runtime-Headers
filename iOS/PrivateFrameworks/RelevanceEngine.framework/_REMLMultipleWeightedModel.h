@@ -6,16 +6,20 @@
 
 #import <RelevanceEngine/_REMLWeightedModel.h>
 
-@class NSMutableDictionary, REFeature, REFeatureSet;
+#import <RelevanceEngine/_REMLMultipleWeightedModelProperties-Protocol.h>
 
-@interface _REMLMultipleWeightedModel : _REMLWeightedModel
+@class NSDictionary, NSMutableDictionary, REFeature, REFeatureSet;
+
+@interface _REMLMultipleWeightedModel : _REMLWeightedModel <_REMLMultipleWeightedModelProperties>
 {
     REFeature *_identificationFeature;
     REFeatureSet *_featureSet;
+    float _priorMean;
     NSMutableDictionary *_models;
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *models;
 - (_Bool)loadModelFromURL:(id)arg1 error:(id *)arg2;
 - (_Bool)saveModelToURL:(id)arg1 error:(id *)arg2;
 - (id)predictWithFeatures:(id)arg1;
@@ -23,7 +27,7 @@
 - (id)_modelForKey:(id)arg1;
 - (id)_modelForFeatureMap:(id)arg1;
 - (void)enumerateModels:(CDUnknownBlockType)arg1;
-- (id)initWithFeature:(id)arg1 featureSet:(id)arg2;
+- (id)initWithFeature:(id)arg1 featureSet:(id)arg2 priorMean:(float)arg3 biasFeature:(id)arg4;
 
 @end
 

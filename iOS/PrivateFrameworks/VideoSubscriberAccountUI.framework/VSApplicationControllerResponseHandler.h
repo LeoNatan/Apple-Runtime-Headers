@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)_setSubscriptionDataWithResponse:(id)arg1 forJavascriptResponse:(id)arg2;
 - (id)_parseSAMLResponseString:(id)arg1 error:(id *)arg2;
 - (void)_handleJavascriptResponseInternal:(id)arg1 requestType:(long long)arg2 accountAuthentication:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)_accountAuthenticationWithJavascriptResponse:(id)arg1 error:(id *)arg2;

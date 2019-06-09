@@ -77,8 +77,12 @@
     _Bool _sharedItemsAvailable;
     _Bool _otherActivityViewPresented;
     _Bool _darkStyleOnLegacyApp;
+    _Bool _multipleRows;
+    _Bool _includePeopleSuggestions;
     _Bool _manuallyManageBrowsing;
     NSObject<SFAirDropActivityViewControllerDelegate> *_delegate;
+    NSArray *_urlsBeingShared;
+    NSArray *_photosAssetIDs;
     NSString *_overriddenTitleText;
     NSString *_overriddenNoWiFIBTText;
     NSString *_overriddenNoAWDLText;
@@ -93,6 +97,10 @@
 @property(copy, nonatomic) NSString *overriddenNoAWDLText; // @synthesize overriddenNoAWDLText=_overriddenNoAWDLText;
 @property(copy, nonatomic) NSString *overriddenNoWiFIBTText; // @synthesize overriddenNoWiFIBTText=_overriddenNoWiFIBTText;
 @property(copy, nonatomic) NSString *overriddenTitleText; // @synthesize overriddenTitleText=_overriddenTitleText;
+@property(nonatomic) _Bool includePeopleSuggestions; // @synthesize includePeopleSuggestions=_includePeopleSuggestions;
+@property(copy, nonatomic) NSArray *photosAssetIDs; // @synthesize photosAssetIDs=_photosAssetIDs;
+@property(copy, nonatomic) NSArray *urlsBeingShared; // @synthesize urlsBeingShared=_urlsBeingShared;
+@property(nonatomic) _Bool multipleRows; // @synthesize multipleRows=_multipleRows;
 @property(nonatomic) _Bool darkStyleOnLegacyApp; // @synthesize darkStyleOnLegacyApp=_darkStyleOnLegacyApp;
 @property(nonatomic) _Bool otherActivityViewPresented; // @synthesize otherActivityViewPresented=_otherActivityViewPresented;
 @property(nonatomic) _Bool sharedItemsAvailable; // @synthesize sharedItemsAvailable=_sharedItemsAvailable;

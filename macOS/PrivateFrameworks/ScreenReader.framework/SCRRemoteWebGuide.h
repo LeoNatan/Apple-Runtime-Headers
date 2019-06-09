@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)_handleEvent:(id)arg1 request:(id)arg2;
+- (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (BOOL)isLoadingItems;
 - (void)handleTypeAheadWithKey:(id)arg1 request:(id)arg2;
 - (void)updateSearchKeysWithRotorType:(id)arg1;

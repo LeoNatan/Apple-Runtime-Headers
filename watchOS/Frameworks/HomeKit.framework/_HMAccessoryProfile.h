@@ -13,6 +13,7 @@
 @class HMAccessory, HMFUnfairLock, HMHome, NSArray, NSString, NSUUID, _HMContext;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface _HMAccessoryProfile : NSObject <HMObjectMerge, HMFMessageReceiver, NSSecureCoding>
 {
     HMFUnfairLock *_lock;
@@ -39,6 +40,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (void)handleRuntimeStateUpdate:(id)arg1;
 - (void)_registerNotificationHandlers;
 - (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
 @property(readonly, copy) NSString *description;

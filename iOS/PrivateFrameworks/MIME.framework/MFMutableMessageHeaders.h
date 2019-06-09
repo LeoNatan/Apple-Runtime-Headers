@@ -6,15 +6,18 @@
 
 #import <MIME/MFMessageHeaders.h>
 
-@class NSMutableArray, NSMutableDictionary;
+#import <MIME/ECMutableMessageHeaders-Protocol.h>
 
-@interface MFMutableMessageHeaders : MFMessageHeaders
+@class NSMutableArray, NSMutableDictionary, NSString;
+
+@interface MFMutableMessageHeaders : MFMessageHeaders <ECMutableMessageHeaders>
 {
     NSMutableDictionary *_headersAdded;
     NSMutableArray *_headersRemoved;
 }
 
-- (id)description;
+- (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)stripInternalHeaders;
 - (void)setReferences:(id)arg1;
 - (void)setAddressListForBcc:(id)arg1;
@@ -35,8 +38,12 @@
 - (_Bool)hasHeaderForKey:(id)arg1;
 - (id)allHeaderKeys;
 - (id)headersDictionary;
-- (void)dealloc;
 - (id)mutableCopy;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -16,8 +16,8 @@
 @property(nonatomic, getter=isFooterVisible) _Bool footerVisible; // @synthesize footerVisible=_footerVisible;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+- (void).cxx_destruct;
 - (void)layoutSubviews;
-- (void)dealloc;
 
 @end
 

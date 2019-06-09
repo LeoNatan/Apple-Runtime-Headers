@@ -8,7 +8,6 @@
 
 @class AVAsset, AVAssetReader, AVAssetReaderOutput, AVAssetTrack, NSArray, NSCondition, NSError;
 
-__attribute__((visibility("hidden")))
 @interface VideoReader : NSObject
 {
     BOOL _readAheadEnable;

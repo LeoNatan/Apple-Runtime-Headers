@@ -8,6 +8,7 @@
 
 @class NSDate, NSString, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WDAnnotationData : NSObject
 {
     WDText *mText;

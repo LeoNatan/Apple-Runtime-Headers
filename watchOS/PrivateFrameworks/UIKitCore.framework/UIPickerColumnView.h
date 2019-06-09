@@ -38,6 +38,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CATransform3D perspectiveTransform; // @synthesize perspectiveTransform=_perspectiveTransform;
 @property(nonatomic) float rowHeight; // @synthesize rowHeight=_rowHeight;
 - (void).cxx_destruct;
+- (id)_viewToAddFocusLayer;
+- (id)accessibilityPath;
+- (struct CGRect)accessibilityFrame;
+- (struct CGRect)_defaultFocusRegionFrame;
+- (_Bool)canBecomeFocused;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)_visibleCellClosestToPoint:(struct CGPoint)arg1 inView:(id)arg2;

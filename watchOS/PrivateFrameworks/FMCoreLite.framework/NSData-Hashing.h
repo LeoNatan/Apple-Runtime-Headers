@@ -14,6 +14,8 @@
 @property(readonly, copy, nonatomic) NSData *fm_sha512Hash;
 @property(readonly, copy, nonatomic) NSData *fm_sha256Hash;
 @property(readonly, copy, nonatomic) NSData *fm_sha1Hash;
-@property(readonly, copy, nonatomic) NSData *fm_md5Hash;
+- (id)hexString;
+- (id)fm_MACAddressString;
+- (id)fm_hexString;
 @end
 

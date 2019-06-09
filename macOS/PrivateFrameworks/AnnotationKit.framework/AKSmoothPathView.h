@@ -6,10 +6,12 @@
 
 #import <AppKit/NSView.h>
 
-@class AKBitmapFIFO, AKController, CHBoxcarFilterPointFIFO, CHPointStrokeFIFO, CHQuadCurvePointFIFO, NSColor;
+#import <AnnotationKit/CHPointFIFODrawingTarget-Protocol.h>
+
+@class AKBitmapFIFO, AKController, CHBoxcarFilterPointFIFO, CHPointStrokeFIFO, CHQuadCurvePointFIFO, NSColor, NSString;
 @protocol AKSmoothPathViewDelegate;
 
-@interface AKSmoothPathView : NSView
+@interface AKSmoothPathView : NSView <CHPointFIFODrawingTarget>
 {
     double _cachedEffectiveStrokeWidthInModel;
     double _cachedModelToViewScale;
@@ -93,6 +95,12 @@
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithController:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

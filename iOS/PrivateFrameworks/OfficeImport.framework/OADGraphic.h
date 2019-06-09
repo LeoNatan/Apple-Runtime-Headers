@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     OADGraphic *mMasterGraphic;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)geometry;
 - (void)setMasterGraphic:(id)arg1;

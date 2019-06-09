@@ -8,5 +8,6 @@
 
 @interface UIColor (NTKCalendarColor)
 - (id)ntk_adjustedColorForBlackBackground;
+- (id)colorByBoostingSaturation:(float)arg1 lightness:(float)arg2;
 @end
 

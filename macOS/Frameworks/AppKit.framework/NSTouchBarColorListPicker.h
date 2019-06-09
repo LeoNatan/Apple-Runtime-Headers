@@ -26,9 +26,9 @@ __attribute__((visibility("hidden")))
     NSTouchBarColorListPickerPressAndHoldPopUp *_pressAndHoldPopUp;
     NSArray *_allowedColorSpaces;
     long long _scrubberHighlightCount;
-    unsigned int _continuous:1;
-    unsigned int _allowsAlpha:1;
-    unsigned int _supportsPressAndHoldVariants:1;
+    BOOL _continuous;
+    BOOL _allowsAlpha;
+    BOOL _supportsPressAndHoldVariants;
 }
 
 + (id)thumbnailWithSize:(struct CGSize)arg1 inView:(id)arg2;

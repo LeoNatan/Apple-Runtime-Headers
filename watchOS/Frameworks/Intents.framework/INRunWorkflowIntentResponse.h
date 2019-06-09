@@ -8,11 +8,10 @@
 
 #import <Intents/INRunWorkflowIntentResponseExport-Protocol.h>
 
-@class INArchivedObject, NSArray, NSNumber, NSString, _INPBRunWorkflowIntentResponse;
+@class INArchivedObject, NSArray, NSNumber, NSString;
 
 @interface INRunWorkflowIntentResponse : INIntentResponse <INRunWorkflowIntentResponseExport>
 {
-    _INPBRunWorkflowIntentResponse *_responseMessagePBRepresentation;
 }
 
 + (_Bool)_appLaunchRequestedFromCode:(int)arg1;
@@ -20,18 +19,18 @@
 + (int)_typeFromCode:(int)arg1;
 + (int)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(_Bool)arg3;
 + (_Bool)supportsSecureCoding;
-- (void).cxx_destruct;
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
+@property(copy, nonatomic) NSNumber *requestsIntentExecution;
 @property(copy, nonatomic) NSArray *steps;
 @property(copy, nonatomic) NSNumber *continueRunning;
 @property(copy, nonatomic) NSNumber *waitingForResume;
 @property(copy, nonatomic) NSString *utterance;
 @property(copy, nonatomic) INArchivedObject *underlyingIntentResponse;
 @property(copy, nonatomic) INArchivedObject *underlyingIntent;
-- (id)_responseMessagePBRepresentation;
 - (_Bool)_shouldForwardIntentToApp;
+- (int)_codeWithName:(id)arg1;
 - (int)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

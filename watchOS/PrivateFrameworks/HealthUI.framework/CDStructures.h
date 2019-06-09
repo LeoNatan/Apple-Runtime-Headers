@@ -11,12 +11,12 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGAffineTransform {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-    float _field6;
+    float a;
+    float b;
+    float c;
+    float d;
+    float tx;
+    float ty;
 };
 
 struct CGPoint {
@@ -99,6 +99,8 @@ struct _WDActivitySummaryAverages {
     double _field5;
     double _field6;
     double _field7;
+    double _field8;
+    double _field9;
 };
 
 #pragma mark Typedef'd Structures

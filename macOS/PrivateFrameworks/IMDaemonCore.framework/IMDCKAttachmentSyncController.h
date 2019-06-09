@@ -106,6 +106,7 @@
 - (void)fetchAttachmentDataForTransfers:(id)arg1 highQuality:(BOOL)arg2 perTransferProgress:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchAttachmentDataForTransfers:(id)arg1 highQuality:(BOOL)arg2 useNonHSA2ManateeDatabase:(BOOL)arg3 perTransferProgress:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)syncAttachmentsWithSyncType:(long long)arg1 deviceConditionsToCheck:(unsigned long long)arg2 activity:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (long long)_numberOfMetadataBatchesOfAttachmentsToFetchInInitialSync;
 - (void)_markAllUnsuccessFullSyncAttachmentsAsNeedingSync;
 - (BOOL)_shouldMarkAttachmentsAsNeedingReupload;
 - (long long)_numberOfBatchesOfAttachmentsToFetchInInitialSync;

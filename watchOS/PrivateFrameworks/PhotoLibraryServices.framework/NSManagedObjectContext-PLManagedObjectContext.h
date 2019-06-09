@@ -14,6 +14,7 @@
 - (id)enumerateWithIncrementalSaveUsingObjects:(id)arg1 shouldRefreshAfterSave:(_Bool)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int *)arg2 usingDefaultBatchSizeWithBlock:(CDUnknownBlockType)arg3;
 - (id)enumerateObjectsFromFetchRequest:(id)arg1 count:(unsigned int *)arg2 batchSize:(unsigned int)arg3 usingBlock:(CDUnknownBlockType)arg4;
+- (id)libraryBundle;
 - (id)pathManager;
 - (id)photoLibrary;
 - (_Bool)isUserInterfaceContext;

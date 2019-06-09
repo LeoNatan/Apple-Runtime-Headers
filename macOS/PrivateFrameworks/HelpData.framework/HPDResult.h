@@ -44,7 +44,6 @@
 - (long long)titleCompare:(id)arg1;
 - (long long)relevanceCompare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTitle:(id)arg1 andType:(id)arg2;
 

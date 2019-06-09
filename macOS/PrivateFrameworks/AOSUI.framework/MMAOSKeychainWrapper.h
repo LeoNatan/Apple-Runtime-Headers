@@ -17,6 +17,7 @@
 }
 
 + (id)keychainWrapperWithAccountName:(id)arg1 serviceName:(id)arg2;
+- (void).cxx_destruct;
 - (BOOL)userCanceledKeychainUnlock;
 - (void)setUserCanceledKeychainUnlock:(BOOL)arg1;
 - (id)lock;
@@ -29,7 +30,7 @@
 - (id)getAttributesForKeys:(id)arg1;
 - (int)addGenericPasswordWithAttributes:(id)arg1 data:(id)arg2;
 - (id)genericPassword;
-- (id)genericPasswordAndItemRef:(struct OpaqueSecKeychainItemRef **)arg1;
+- (id)genericPasswordAndItemRef:(struct __SecKeychainItem **)arg1;
 - (void)dealloc;
 - (id)initWithAccountName:(id)arg1 serviceName:(id)arg2;
 

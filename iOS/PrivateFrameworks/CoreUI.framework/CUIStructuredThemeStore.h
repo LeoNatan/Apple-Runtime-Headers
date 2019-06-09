@@ -9,14 +9,14 @@
 #import <CoreUI/CUIStructuredThemeStorage-Protocol.h>
 #import <CoreUI/CUIStructuredThemeStorage2-Protocol.h>
 
-@class CUICommonAssetStorage, NSCache, NSLock, NSMutableDictionary, NSString;
+@class CUICommonAssetStorage, NSCache, NSMutableDictionary, NSString;
 
 @interface CUIStructuredThemeStore : NSObject <CUIStructuredThemeStorage, CUIStructuredThemeStorage2>
 {
     NSMutableDictionary *_cache;
     CUICommonAssetStorage *_store;
-    NSLock *_cacheLock;
-    NSLock *_storeLock;
+    struct os_unfair_lock_s _cacheLock;
+    struct os_unfair_lock_s _storeLock;
     unsigned long long _themeIndex;
     NSString *_bundleID;
     NSCache *_namedRenditionKeyCache;
@@ -24,6 +24,9 @@
 }
 
 - (void)clearRenditionCache;
+- (id)renditionInfoForIdentifier:(unsigned short)arg1;
+- (unsigned short)localizationIdentifierForName:(id)arg1;
+- (id)localizations;
 - (id)appearances;
 - (id)nameForAppearanceIdentifier:(unsigned short)arg1;
 - (unsigned short)appearanceIdentifierForName:(id)arg1;
@@ -33,13 +36,11 @@
 - (id)renditionNameForKeyList:(struct _renditionkeytoken *)arg1;
 - (const struct _renditionkeytoken *)renditionKeyForName:(id)arg1 cursorHotSpot:(struct CGPoint *)arg2;
 - (const struct _renditionkeytoken *)renditionKeyForName:(id)arg1;
-- (id)zeroCodeGlyphList;
 - (_Bool)_canGetRenditionWithKey:(const struct _renditionkeytoken *)arg1 isFPO:(_Bool *)arg2 lookForSubstitutions:(_Bool)arg3;
 - (_Bool)canGetRenditionWithKey:(const struct _renditionkeytoken *)arg1 isFPO:(_Bool *)arg2;
 - (_Bool)canGetRenditionWithKey:(const struct _renditionkeytoken *)arg1;
 - (id)renditionWithKey:(const struct _renditionkeytoken *)arg1 usingKeySignature:(id)arg2;
 - (id)renditionWithKey:(const struct _renditionkeytoken *)arg1;
-- (id)prefilteredAssetDataForKey:(struct _renditionkeytoken *)arg1;
 - (id)lookupAssetForKey:(struct _renditionkeytoken *)arg1;
 - (id)debugDescriptionForKeyList:(const struct _renditionkeytoken *)arg1;
 - (const struct _renditionkeyfmt *)renditionKeyFormat;
@@ -52,6 +53,7 @@
 - (_Bool)getFontName:(id *)arg1 baselineOffset:(double *)arg2 forFontType:(id)arg3;
 - (_Bool)hasPhysicalColorWithName:(id)arg1;
 - (_Bool)getPhysicalColor:(struct _colordef *)arg1 withName:(id)arg2;
+- (id)defaultAppearanceName;
 - (unsigned int)authoredWithSchemaVersion;
 - (unsigned int)distilledInCoreUIVersion;
 - (unsigned int)documentFormatVersion;

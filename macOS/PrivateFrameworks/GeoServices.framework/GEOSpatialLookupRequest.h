@@ -4,26 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ProtocolBuffer/PBRequest.h>
+#import <ProtocolBuffer/PBCodable.h>
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng;
+@class GEOLatLng, PBDataReader;
 
 __attribute__((visibility("hidden")))
-@interface GEOSpatialLookupRequest : PBRequest <NSCopying>
+@interface GEOSpatialLookupRequest : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     CDStruct_95bda58d _categorys;
     GEOLatLng *_center;
     int _maxResults;
     int _radius;
     struct {
-        unsigned int maxResults:1;
-        unsigned int radius:1;
-    } _has;
+        unsigned int has_maxResults:1;
+        unsigned int has_radius:1;
+        unsigned int read_categorys:1;
+        unsigned int read_center:1;
+        unsigned int wrote_categorys:1;
+        unsigned int wrote_center:1;
+        unsigned int wrote_maxResults:1;
+        unsigned int wrote_radius:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOLatLng *center; // @synthesize center=_center;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,20 +40,25 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsCategorys:(id)arg1;
 - (id)categorysAsString:(int)arg1;
 - (void)setCategorys:(int *)arg1 count:(unsigned long long)arg2;
 - (int)categoryAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsCategory:(int)arg1;
 - (void)addCategory:(int)arg1;
 - (void)clearCategorys;
 @property(readonly, nonatomic) int *categorys;
 @property(readonly, nonatomic) unsigned long long categorysCount;
+- (void)_readCategorys;
 @property(nonatomic) BOOL hasMaxResults;
-@property(nonatomic) int maxResults; // @synthesize maxResults=_maxResults;
+@property(nonatomic) int maxResults;
 @property(nonatomic) BOOL hasRadius;
-@property(nonatomic) int radius; // @synthesize radius=_radius;
+@property(nonatomic) int radius;
+@property(retain, nonatomic) GEOLatLng *center;
+- (void)_readCenter;
 - (void)dealloc;
 
 @end

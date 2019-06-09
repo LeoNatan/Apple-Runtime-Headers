@@ -8,6 +8,7 @@
 
 @class NSArray, NSHashTable, NSMutableDictionary, NSOperationQueue, NSString, NSURL, SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftConfiguration : NSObject
 {
     NSArray *_charities;

@@ -9,11 +9,14 @@
 @interface CNVariableChangeHelper : NSObject
 {
     id _value;
+    CDUnknownBlockType _test;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType test; // @synthesize test=_test;
 @property(copy, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
 - (void)setValue:(id)arg1 andPerformBlockIfChanged:(CDUnknownBlockType)arg2;
+- (id)initWithValue:(id)arg1 test:(CDUnknownBlockType)arg2;
 - (id)initWithValue:(id)arg1;
 - (id)init;
 

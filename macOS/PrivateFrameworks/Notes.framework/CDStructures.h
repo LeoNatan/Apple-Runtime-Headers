@@ -12,16 +12,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct CGPoint {
-    double _field1;
-    double _field2;
-};
-
-struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
-};
-
 struct CGSize {
     double width;
     double height;
@@ -55,14 +45,6 @@ struct sasl_secret {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    id _field1;
-    char _field2;
-    char _field3;
-    char _field4;
-    char _field5;
-} CDStruct_8e792ae2;
-
-typedef struct {
     unsigned long long first;
     unsigned long long last;
 } CDStruct_f792af56;
@@ -92,17 +74,4 @@ typedef struct {
     long long count;
     unsigned long long size;
 } CDStruct_d3e19d9e;
-
-typedef struct {
-    unsigned short buffer[64];
-    struct __CFString *theString;
-    unsigned short *directUniCharBuffer;
-    char *directCStringBuffer;
-    struct {
-        long long location;
-        long long length;
-    } rangeToBuffer;
-    long long bufferedRangeStart;
-    long long bufferedRangeEnd;
-} CDStruct_2ada2998;
 

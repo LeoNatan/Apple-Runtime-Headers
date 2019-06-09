@@ -8,5 +8,6 @@
 
 @interface NSMutableSet (NSPredicateSupport)
 - (void)filterUsingPredicate:(id)arg1;
+- (Class)classForCoder;
 @end
 

@@ -27,6 +27,7 @@
 + (id)_fetchPeopleSuggestionsForAssetCollection:(id)arg1;
 + (id)_fetchPreviewAssetsForAssetCollection:(id)arg1;
 + (id)suggestionWithAssetCollection:(id)arg1;
++ (id)sharedCachingImageManager;
 + (id)fastSuggestionWithAssetCollection:(id)arg1;
 @property(readonly, nonatomic) PHFetchResult *peopleSuggestionsFetchResult; // @synthesize peopleSuggestionsFetchResult=_peopleSuggestionsFetchResult;
 @property(readonly, nonatomic) PHFetchResult *previewAssetsFetchResult; // @synthesize previewAssetsFetchResult=_previewAssetsFetchResult;

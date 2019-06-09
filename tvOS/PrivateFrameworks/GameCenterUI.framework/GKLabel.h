@@ -26,6 +26,7 @@
 @property(nonatomic) _Bool shouldInhibitReplay; // @synthesize shouldInhibitReplay=_shouldInhibitReplay;
 @property(readonly, nonatomic) _Bool usingAttributedText; // @synthesize usingAttributedText=_usingAttributedText;
 @property(nonatomic) _Bool shouldEnforcePreferredWidth; // @synthesize shouldEnforcePreferredWidth=_shouldEnforcePreferredWidth;
+- (void).cxx_destruct;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)updateConstraints;
 - (struct CGSize)shrinkFontToFitSize:(struct CGSize)arg1;
@@ -33,7 +34,6 @@
 - (void)applyTextStyle:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setAttributedText:(id)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 @property(retain, nonatomic) GKTextStyle *baseStyle;
 - (void)replayAndApplyStyleWithSystemContentChange:(_Bool)arg1;

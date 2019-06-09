@@ -26,6 +26,7 @@
 - (id)basePathForAccountWithIdentifier:(id)arg1;
 @property(readonly, copy) NSString *basePath;
 - (void)dealloc;
+- (id)initWithDelegateInfos:(id)arg1;
 - (id)initWithAccountCollection:(id)arg1 readOnly:(BOOL)arg2;
 
 @end

@@ -23,6 +23,7 @@
 - (oneway void)receiverXPCServerDidReplyWithIsConnected:(_Bool)arg1;
 - (oneway void)receiverXPCServerDidReplyWithFailedComposedMessageIdsAndSubjects:(NSDictionary *)arg1;
 - (oneway void)receiverXPCServerDidReplyWithComposedMessageIds:(NSDictionary *)arg1 progress:(NSDictionary *)arg2;
+- (oneway void)receiverXPCServerDidReplyWithEnabledMailboxFeatures:(NSArray *)arg1;
 - (oneway void)receiverXPCServerDidReplyWithAccounts:(NSArray *)arg1 error:(NSError *)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMailboxSelection:(NNMKMailboxSelection *)arg1;
 - (oneway void)receiverXPCServerDidFailSyncingAttachment:(NSString *)arg1 messageId:(NSString *)arg2;

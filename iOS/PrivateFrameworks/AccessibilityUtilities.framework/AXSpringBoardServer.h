@@ -12,6 +12,7 @@
 
 @interface AXSpringBoardServer : AXServer <AXSystemAppServer>
 {
+    _Bool _shouldFocusNonExclusiveSystemUI;
     AXAccessQueue *_accessQueue;
     CDUnknownBlockType _currentAlertHandler;
     NSMutableArray *_actionHandlers;
@@ -20,6 +21,7 @@
 
 + (id)server;
 @property(retain, nonatomic) NSMutableDictionary *reachabilityHandlers; // @synthesize reachabilityHandlers=_reachabilityHandlers;
+@property(nonatomic) _Bool shouldFocusNonExclusiveSystemUI; // @synthesize shouldFocusNonExclusiveSystemUI=_shouldFocusNonExclusiveSystemUI;
 @property(retain, nonatomic) NSMutableArray *actionHandlers; // @synthesize actionHandlers=_actionHandlers;
 @property(copy, nonatomic) CDUnknownBlockType currentAlertHandler; // @synthesize currentAlertHandler=_currentAlertHandler;
 @property(retain, nonatomic) AXAccessQueue *accessQueue; // @synthesize accessQueue=_accessQueue;
@@ -28,6 +30,8 @@
 - (id)focusedAppProcess;
 - (id)applicationWithIdentifier:(id)arg1;
 - (_Bool)isMagnifierVisible;
+- (void)didDismissNonExclusiveSystemUI;
+- (_Bool)isNonExclusiveSystemUIVisible;
 - (void)setLockScreenDimTimerEnabled:(_Bool)arg1;
 - (void)userEventOccurred;
 - (void)isMagnifierVisibleWithCompletion:(CDUnknownBlockType)arg1;
@@ -59,19 +63,19 @@
 - (_Bool)isSpeakThisTemporarilyDisabled;
 - (_Bool)isVoiceControlRunning;
 - (void)openVoiceControl;
-- (void)setSiriIsTalking:(_Bool)arg1;
 - (_Bool)isPasscodeLockVisible;
 - (_Bool)isReceivingAirPlay;
 - (_Bool)isSiriTalkingOrListening;
 - (_Bool)isSiriVisible;
 - (_Bool)dismissSiri;
-- (_Bool)openSiri;
 - (void)revealSpotlight;
+- (void)toggleSpotlight;
 - (void)simulateEdgePressHaptics;
 - (void)dismissAppSwitcher;
 - (void)openAppSwitcher;
 - (_Bool)isAppSwitcherVisible;
 - (_Bool)isShowingHomescreen;
+- (_Bool)isShowingNonSystemApp;
 - (_Bool)isDockVisible;
 - (void)toggleDock;
 - (void)armApplePay;
@@ -109,6 +113,7 @@
 - (void)screenLockStatus:(CDUnknownBlockType)arg1;
 - (_Bool)isScreenLockedWithPasscode:(_Bool *)arg1;
 - (void)_getPasscodeStatusImmediate:(CDUnknownBlockType)arg1;
+- (id)splashImageForAppWithBundleIdentifier:(id)arg1;
 - (void)performVoiceShortcutWithIdentifier:(id)arg1 bundleID:(id)arg2;
 - (void)activateSOSMode;
 - (_Bool)isSoftwareUpdateUIVisible;
@@ -133,11 +138,14 @@
 - (void)registerSpringBoardActionHandler:(CDUnknownBlockType)arg1 withIdentifierCallback:(CDUnknownBlockType)arg2;
 - (void)removeActionHandler:(id)arg1;
 - (void)setShowSpeechPlaybackControls:(_Bool)arg1;
-- (void)_sendRemoteViewIPCMessage:(long long)arg1 withRemoteViewType:(long long)arg2 withData:(id)arg3;
-- (void)hideRemoteView:(long long)arg1 withData:(id)arg2;
+- (void)_sendRemoteViewIPCMessage:(int)arg1 withRemoteViewType:(long long)arg2 withData:(id)arg3;
+- (id)_payloadForRemoteViewType:(long long)arg1 data:(id)arg2;
+- (_Bool)isShowingRemoteView:(long long)arg1;
+- (void)hideRemoteView:(long long)arg1;
 - (void)showRemoteView:(long long)arg1 withData:(id)arg2;
-- (void)showAlert:(long long)arg1 withHandler:(CDUnknownBlockType)arg2 withData:(id)arg3;
-- (void)showAlert:(long long)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)showAlert:(int)arg1 withHandler:(CDUnknownBlockType)arg2 withData:(id)arg3;
+- (void)showAlert:(int)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (_Bool)isShowingAXAlert;
 - (void)hideAlert;
 - (void)cleanupAlertHandler;
 - (double)volumeLevel;
@@ -150,7 +158,10 @@
 - (int)topEventPidOverride;
 - (void)startHearingAidServer;
 - (void)setHearingAidControlVisible:(_Bool)arg1;
+- (void)setCaptionPanelContextId:(unsigned int)arg1;
 - (void)setVolume:(double)arg1;
+- (void)openCommandAndControlVocabulary;
+- (void)openCommandAndControlCommands;
 - (void)openSCATCustomGestureCreation;
 - (void)openAssistiveTouchCustomGestureCreation;
 - (void)takeScreenshot;

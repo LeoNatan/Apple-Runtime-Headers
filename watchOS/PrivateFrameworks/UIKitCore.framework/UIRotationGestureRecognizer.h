@@ -24,6 +24,7 @@
     float _postRecognitionWeight;
 }
 
++ (_Bool)supportsSecureCoding;
 + (_Bool)_shouldDefaultToTouches;
 - (void).cxx_destruct;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

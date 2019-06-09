@@ -13,11 +13,14 @@
 __attribute__((visibility("hidden")))
 @interface VUICollectionView : UICollectionView <UIGestureRecognizerDelegate>
 {
+    struct UIEdgeInsets _gradientBoundsInsets;
     struct {
         unsigned int layoutBelowDisabled:1;
     } _flags;
 }
 
+@property(nonatomic) struct UIEdgeInsets gradientBoundsInsets; // @synthesize gradientBoundsInsets=_gradientBoundsInsets;
+- (void)_getGradientMaskBounds:(out struct CGRect *)arg1 startInsets:(out struct UIEdgeInsets *)arg2 endInsets:(out struct UIEdgeInsets *)arg3 intensities:(out struct UIEdgeInsets *)arg4;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (void)_performWithoutLayoutBelow:(CDUnknownBlockType)arg1;

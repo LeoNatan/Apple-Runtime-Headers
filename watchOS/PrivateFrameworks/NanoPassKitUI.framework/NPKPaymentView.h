@@ -12,7 +12,7 @@
 #import <NanoPassKitUI/NPKPickPaymentApplicationControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/UIScrollViewDelegate-Protocol.h>
 
-@class CALayer, NPKPaymentReadyView, NPKPaymentStatusView, NPKPaymentStatusViewAnimationCoordinator, NPKPaymentThreePartTopView, NPKPeerPaymentAccountManager, NPKPickPaymentApplicationController, NPKSynchronizedAnimationCoordinator, NPKTransactionAndBalanceView, NPKVASCardAppliedView, NSArray, NSObject, NSString, PUICActionController, PUICActionGroup, PUICActionItem, PUICPageIndicatorView, UIImageView, UILabel, UIScrollView;
+@class CALayer, NPKAccountPassManager, NPKPaymentReadyView, NPKPaymentStatusView, NPKPaymentStatusViewAnimationCoordinator, NPKPaymentThreePartTopView, NPKPeerPaymentAccountManager, NPKPickPaymentApplicationController, NPKSynchronizedAnimationCoordinator, NPKTransactionAndBalanceView, NPKVASCardAppliedView, NSArray, NSObject, NSString, PUICActionController, PUICActionGroup, PUICActionItem, PUICPageIndicatorView, UIImageView, UILabel, UIScrollView;
 @protocol NPKPaymentViewDataSource, NPKPaymentViewDelegate, OS_dispatch_source;
 
 @interface NPKPaymentView : UIView <UIScrollViewDelegate, NPKPaymentStatusViewAnimationCoordinatorDelegate, NPKPickPaymentApplicationControllerDelegate, NPKPassViewDelegate, CAAnimationDelegate>
@@ -76,11 +76,13 @@
     PUICActionItem *_enterServiceModeActionItem;
     NPKPickPaymentApplicationController *_pickPaymentApplicationController;
     NPKPeerPaymentAccountManager *_peerPaymentAccountManager;
+    NPKAccountPassManager *_accountPassManager;
     struct CGRect _previousLayoutRect;
     struct CGRect _topContainerViewFrame;
     struct CGRect _bottomContainerViewFrame;
 }
 
+@property(retain, nonatomic) NPKAccountPassManager *accountPassManager; // @synthesize accountPassManager=_accountPassManager;
 @property(retain, nonatomic) NPKPeerPaymentAccountManager *peerPaymentAccountManager; // @synthesize peerPaymentAccountManager=_peerPaymentAccountManager;
 @property(retain, nonatomic) NPKPickPaymentApplicationController *pickPaymentApplicationController; // @synthesize pickPaymentApplicationController=_pickPaymentApplicationController;
 @property(retain, nonatomic) PUICActionItem *enterServiceModeActionItem; // @synthesize enterServiceModeActionItem=_enterServiceModeActionItem;
@@ -152,6 +154,7 @@
 - (id)_instructionViewWithBalanceLabel:(id)arg1 valueString:(id)arg2;
 - (id)_instructionViewWithBalanceString:(id)arg1;
 - (id)_instructionViewWithBalance:(id)arg1 currencyCode:(id)arg2;
+- (id)_instructionViewWithAvailableCredit:(id)arg1 currencyCode:(id)arg2;
 - (id)_instructionViewForTransitPassProperties:(id)arg1 pass:(id)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2;
 - (id)_instructionLabelWithAttributedLabelText:(id)arg1 numberOfLines:(int)arg2 shouldConstrainWidth:(_Bool)arg3;
@@ -169,7 +172,7 @@
 - (void)_shouldAnimateOutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animateOutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)animateInWithCompletion:(CDUnknownBlockType)arg1;
-- (void)prepareToAnimateInForQuickPay:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)prepareToAnimateInForQuickPay:(_Bool)arg1;
 - (id)_shimmerAnimationIn:(_Bool)arg1;
 - (id)_cardAnimationIn:(_Bool)arg1;
 - (struct CATransform3D)_cardAnimationOffscreenTransform;

@@ -7,6 +7,6 @@
 #import <Foundation/NSPredicate.h>
 
 @interface NSPredicate (RelativeRanks)
-+ (id)_predicateForItemsWithAttribute:(id)arg1;
++ (id)_predicateForItemsWithAttribute:(int)arg1;
 @end
 

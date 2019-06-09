@@ -13,10 +13,10 @@
 
 @interface _SFLItem : NSObject <NSSecureCoding, NSCopying>
 {
-    id _identifier;
-    id _name;
-    id _bookmark;
-    id _properties;
+    NSUUID *_identifier;
+    NSString *_name;
+    NSData *_bookmark;
+    NSDictionary *_properties;
     unsigned long long _seed;
 }
 
@@ -24,8 +24,8 @@
 + (id)supportedPropertyClasses;
 @property unsigned long long seed; // @synthesize seed=_seed;
 @property(copy) NSDictionary *properties; // @synthesize properties=_properties;
-@property(copy) NSString *name; // @synthesize name=_name;
 @property(copy) NSData *bookmark; // @synthesize bookmark=_bookmark;
+@property(copy) NSString *name; // @synthesize name=_name;
 @property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)debugDescription;

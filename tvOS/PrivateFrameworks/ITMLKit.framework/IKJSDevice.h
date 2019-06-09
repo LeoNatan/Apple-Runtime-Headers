@@ -22,7 +22,9 @@
 + (id)getMobileGestaltString:(struct __CFString *)arg1;
 @property(nonatomic) __weak id <IKAppDeviceConfig> deviceConfig; // @synthesize deviceConfig=_deviceConfig;
 - (void).cxx_destruct;
+- (id)osBuildNumber;
 - (id)capacity:(id)arg1;
+- (_Bool)isSeedBuild;
 - (_Bool)isInRetailDemoMode;
 - (double)lastNetworkChangedTime;
 - (id)networkType;

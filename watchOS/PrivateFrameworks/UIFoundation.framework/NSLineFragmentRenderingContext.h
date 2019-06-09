@@ -8,7 +8,7 @@
 
 #import <UIFoundation/NSTextApplicationFrameworkContextClient-Protocol.h>
 
-@class CUICatalog, CUIStyleEffectConfiguration, NSGraphicsContext, NSString;
+@class CUICatalog, CUIStyleEffectConfiguration, NSString;
 
 @interface NSLineFragmentRenderingContext : NSObject <NSTextApplicationFrameworkContextClient>
 {
@@ -34,12 +34,10 @@
     int _resolvedAlignment;
     CUICatalog *_catalog;
     CUIStyleEffectConfiguration *_styleEffects;
-    NSGraphicsContext *_graphicsContext;
 }
 
 + (void)initialize;
 + (id)allocWithZone:(struct _NSZone *)arg1;
-@property(retain, nonatomic) NSGraphicsContext *graphicsContext; // @synthesize graphicsContext=_graphicsContext;
 @property(retain, nonatomic) CUIStyleEffectConfiguration *cuiStyleEffects; // @synthesize cuiStyleEffects=_styleEffects;
 @property(retain, nonatomic) CUICatalog *cuiCatalog; // @synthesize cuiCatalog=_catalog;
 @property int resolvedTextAlignment; // @synthesize resolvedTextAlignment=_resolvedAlignment;

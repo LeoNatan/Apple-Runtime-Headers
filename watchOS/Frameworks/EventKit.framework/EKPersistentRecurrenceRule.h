@@ -10,6 +10,8 @@
 {
 }
 
++ (Class)alternateUniverseClass;
++ (Class)meltedClass;
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 - (void)setSpecifier:(id)arg1;

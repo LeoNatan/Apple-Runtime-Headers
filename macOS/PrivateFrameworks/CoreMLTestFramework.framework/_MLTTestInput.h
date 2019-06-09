@@ -31,7 +31,7 @@
 @property(copy, nonatomic) NSString *inputDataKey; // @synthesize inputDataKey=_inputDataKey;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL dataAvailable;
-- (id)getNextDataSet;
+- (id)nextDataSet:(id *)arg1;
 - (id)initWithTestData:(id)arg1;
 
 @end

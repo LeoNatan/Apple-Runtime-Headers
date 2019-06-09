@@ -44,7 +44,8 @@
 - (id)init;
 - (void)printToCGContext:(struct CGContext *)arg1 pageWidth:(float)arg2 pageHeight:(float)arg3;
 - (int)numberOfPagesWithPageWidth:(float)arg1 pageHeight:(float)arg2;
-- (id)renderTreeAsExternalRepresentationForPrinting:(BOOL)arg1;
+- (id)renderTreeAsExternalRepresentationWithOptions:(unsigned long long)arg1;
+- (id)renderTreeAsExternalRepresentationForPrinting;
 - (void)_commitData:(id)arg1;
 - (BOOL)_canSaveAsWebArchive;
 - (BOOL)_canProvideDocumentSource;

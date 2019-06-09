@@ -6,11 +6,19 @@
 
 #import <AuthKitUI/AKInlineSignInViewController.h>
 
+@class NSButton;
+
 @interface AKShortInlineSignInViewController : AKInlineSignInViewController
 {
+    NSButton *_notNowButton;
+    NSButton *_createAccountButton;
 }
 
+@property(retain) NSButton *createAccountButton; // @synthesize createAccountButton=_createAccountButton;
+@property(retain) NSButton *notNowButton; // @synthesize notNowButton=_notNowButton;
+- (void).cxx_destruct;
 - (void)notNowButtonPressed:(id)arg1;
+- (void)awakeFromNib;
 - (id)init;
 
 @end

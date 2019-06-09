@@ -6,16 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable;
-@protocol OS_dispatch_queue;
+#import <PersonalizationPortrait/PPClientStore-Protocol.h>
+#import <PersonalizationPortrait/PPFeedbackAccepting-Protocol.h>
 
-@interface PPEventStore : NSObject
+@class NSString, PPClientFeedbackHelper, PPRecordMonitoringHelper;
+
+@interface PPEventStore : NSObject <PPFeedbackAccepting, PPClientStore>
 {
-    NSMapTable *_recordLoadingDelegates;
-    NSObject<OS_dispatch_queue> *_serialQueue;
+    PPRecordMonitoringHelper *_monitoringHelper;
+    PPClientFeedbackHelper *_clientFeedbackHelper;
 }
 
 - (void).cxx_destruct;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)sendRTCLogsWithError:(id *)arg1;
 - (_Bool)interactionSummaryMetricsError:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (void)logEventInteractionForEventWithEventIdentifier:(id)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
@@ -28,10 +32,12 @@
 - (_Bool)loadEventNameRecordsAndMonitorChangesWithDelegate:(id)arg1 error:(id *)arg2;
 - (void)_loadEventNameRecordsWithDelegate:(id)arg1;
 - (void)_sendChangesToDelegates:(id)arg1;
-- (void)_resetAllDelegates;
-- (void)_completeAndResetEventNameRecordsWithDelegate:(id)arg1;
+- (CDUnknownBlockType)_recordGenerator;
 - (_Bool)iterEventNameRecordsForClient:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)init;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *clientIdentifier; // @dynamic clientIdentifier;
 
 @end
 

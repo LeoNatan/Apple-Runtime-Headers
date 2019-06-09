@@ -125,8 +125,8 @@
 - (void)setRotationDisabled:(_Bool)arg1;
 - (float)_valueForLocatable:(id)arg1;
 - (void)_sendDelayedActions;
-- (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2;
+- (void)_sliderAnimationDidStop:(_Bool)arg1;
+- (void)_sliderAnimationWillStart;
 @property(nonatomic) double trimEndValue;
 @property(nonatomic) double trimStartValue;
 @property(nonatomic) double duration; // @dynamic duration;
@@ -151,7 +151,7 @@
 - (void)_computeTrackRectForBounds:(struct CGRect)arg1;
 - (void)setZoomAnimationDuration:(double)arg1;
 @property(nonatomic, getter=isEditing) _Bool editing;
-- (void)_trimAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)_trimAnimationDidStop:(_Bool)arg1 glassView:(id)arg2;
 - (void)animateCancelEdit;
 - (void)animateAfterEdit;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;

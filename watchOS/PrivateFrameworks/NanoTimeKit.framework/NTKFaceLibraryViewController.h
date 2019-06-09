@@ -13,7 +13,7 @@
 #import <NanoTimeKit/ORBTapGestureRecognizerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CLKDevice, CSLSSuspendSystemGestureAssertion, NSMapTable, NSMutableSet, NSString, NTKAddPageViewController, NTKDelayedBlock, NTKFace, NTKFaceCollection, NTKFaceConfiguration, NTKFaceLibraryOverlayView, NTKFaceSnapshotClient, NTKFaceViewController, NTKSwitcherViewController, NTKTaskScheduler, NTKTrackingGestureRecognizer, ORBAnimator, ORBTapGestureRecognizer;
+@class CLKDevice, CSLSSuspendSystemGestureAssertion, NSMapTable, NSMutableSet, NSString, NTKAddPageViewController, NTKDelayedBlock, NTKFace, NTKFaceCollection, NTKFaceConfiguration, NTKFaceLibraryOverlayView, NTKFaceReorderIndexIndicatorView, NTKFaceSnapshotClient, NTKFaceViewController, NTKSwitcherViewController, NTKTaskScheduler, NTKTrackingGestureRecognizer, ORBAnimator, ORBTapGestureRecognizer;
 @protocol NTKFaceLibraryViewControllerDelegate;
 
 @interface NTKFaceLibraryViewController : UIViewController <NTKPageScrollViewControllerDataSource, NTKPageScrollViewControllerDelegate, NTKAddPageViewControllerDelegate, NTKFaceCollectionObserver, UIGestureRecognizerDelegate, ORBTapGestureRecognizerDelegate>
@@ -24,6 +24,7 @@
     NTKSwitcherViewController *_switcherController;
     NTKAddPageViewController *_addFaceViewController;
     NTKFaceSnapshotClient *_snapshotController;
+    NTKFaceReorderIndexIndicatorView *_reorderIndexIndicatorView;
     NTKFaceLibraryOverlayView *_libraryOverlayView;
     _Bool _switcherControllerNeedsReload;
     unsigned int _waitingToZoomWhileScrollingToIndex;
@@ -32,7 +33,9 @@
     ORBAnimator *_faceEditingOrbAnimator;
     _Bool _faceEditingOrbZoomActive;
     _Bool _faceEditingOrbDidLatch;
+    _Bool _editHidingAnimationInProgress;
     NSMapTable *_faceViewControllersByFace;
+    NSMapTable *_snapshotControllersByFace;
     _Bool _isIncrementallyZooming;
     CDUnknownBlockType _endIncrementalZoomCompletionBlock;
     _Bool _presented;
@@ -52,19 +55,23 @@
     NTKFaceConfiguration *_originalFaceConfiguration;
     CSLSSuspendSystemGestureAssertion *_suspendSystemGestureAssertion;
     _Bool _isZoomingToLibrary;
+    int _reorderPageIndex;
     _Bool _isFaceEditing;
     _Bool _isFaceSwitching;
+    _Bool _isFaceReordering;
     id <NTKFaceLibraryViewControllerDelegate> _delegate;
     NTKFaceViewController *_selectedFaceViewController;
 }
 
 + (unsigned int)_maximumFacesAllowed;
 @property(readonly, nonatomic) _Bool faceEditingOrbZoomActive; // @synthesize faceEditingOrbZoomActive=_faceEditingOrbZoomActive;
+@property(readonly, nonatomic) _Bool isFaceReordering; // @synthesize isFaceReordering=_isFaceReordering;
 @property(readonly, nonatomic) _Bool isFaceSwitching; // @synthesize isFaceSwitching=_isFaceSwitching;
 @property(nonatomic) _Bool isFaceEditing; // @synthesize isFaceEditing=_isFaceEditing;
 @property(readonly, nonatomic) NTKFaceViewController *selectedFaceViewController; // @synthesize selectedFaceViewController=_selectedFaceViewController;
 @property(nonatomic) __weak id <NTKFaceLibraryViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)runPPTScrollAddableFacesTestNamed:(id)arg1 complection:(CDUnknownBlockType)arg2;
 - (void)PPTSelectFaceAtIndex:(unsigned int)arg1 animated:(_Bool)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_iterateOutwardFrom:(int)arg1 min:(int)arg2 max:(int)arg3 withBlock:(CDUnknownBlockType)arg4;
 - (id)_highestPriorityAddableFaceViewControllerInSnapshotMode;
@@ -85,6 +92,7 @@
 - (void)_dismissSwitcherAnimated:(_Bool)arg1 withIndex:(unsigned int)arg2 remainFrozen:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_dismissSwitcherAnimated:(_Bool)arg1 withIndex:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_adjustLibraryOverlayTransform;
+- (float)_pageCornerRadiusForZoomLevel;
 - (void)_zoomInPageAtIndex:(unsigned int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_zoomOutToLibraryAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelFaceEditingOrbZoom;
@@ -114,7 +122,7 @@
 - (void)_cleanupAfterSwitcherPageDelete;
 - (void)_animateSwitcherPageDelete;
 - (void)_prepareForSwitcherPageDelete:(unsigned int)arg1 destinationIndex:(unsigned int)arg2;
-- (void)_configureForSwitcherScrollFraction:(float)arg1 lowIndex:(int)arg2 highIndex:(int)arg3;
+- (void)_configureForSwitcherScrollFraction:(float)arg1 lowIndex:(int)arg2 highIndex:(int)arg3 reorderingIndex:(int)arg4;
 - (void)_configureForSwitcherPageIndex:(unsigned int)arg1;
 - (void)_deactivateAddFaceAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_activateAddFaceWithCompletion:(CDUnknownBlockType)arg1;
@@ -130,8 +138,12 @@
 - (void)reloadAddableFaces;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)addPageViewControllerActivationButtonPressed:(id)arg1;
+- (void)pageScrollViewController:(id)arg1 didReorderPageFromIndex:(unsigned int)arg2 toIndex:(unsigned int)arg3;
+- (void)pageScrollViewController:(id)arg1 didBeginReorderingPageAtIndex:(unsigned int)arg2;
+- (_Bool)pageScrollViewController:(id)arg1 shouldBeginReorderingPageAtIndex:(unsigned int)arg2;
 - (id)lifeCycleTrackingFaceViewControllers;
 - (void)_pruneNonAdjacentFaceViewControllers;
+- (id)_loadSnapshotControllerForFace:(id)arg1;
 - (id)_loadFaceViewControllerForFace:(id)arg1;
 - (void)_updateSwitcherScrollingLimits;
 - (void)_loadAdjacentFaceViewControllers;

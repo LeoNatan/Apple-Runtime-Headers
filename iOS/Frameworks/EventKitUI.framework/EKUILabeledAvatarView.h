@@ -32,7 +32,7 @@
 - (void).cxx_destruct;
 - (void)updateAvatarViewWithAddress:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 - (void)updateWithContacts:(id)arg1;
-- (void)updateWithParticpant:(id)arg1;
+- (void)updateWithParticipant:(id)arg1;
 - (void)updateWithAddress:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4;
 - (void)updateLabel;
 @property(retain) CNContact *contact;

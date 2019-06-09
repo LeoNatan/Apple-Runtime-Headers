@@ -41,6 +41,7 @@
 - (BOOL)isAppleRAIDDisk;
 - (BOOL)isUserDataVolume;
 - (BOOL)isMountable;
+- (BOOL)isROSVSystemVolume;
 - (id)backingDiskImageFile;
 - (BOOL)isDiskImage;
 - (BOOL)isSystemImage;

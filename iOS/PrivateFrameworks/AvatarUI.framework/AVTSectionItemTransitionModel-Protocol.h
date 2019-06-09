@@ -6,12 +6,12 @@
 
 #import <AvatarUI/AVTTransitionModel-Protocol.h>
 
-@class UIImage, UIView;
+@class CALayer, UIImage;
 
 @protocol AVTSectionItemTransitionModel <AVTTransitionModel>
 - (void)cleanupAfterTransition;
 - (void)prepareForTransitionToImage:(UIImage *)arg1;
-- (UIView *)toView;
-- (UIView *)fromView;
+- (CALayer *)toLayer;
+- (CALayer *)fromLayer;
 @end
 

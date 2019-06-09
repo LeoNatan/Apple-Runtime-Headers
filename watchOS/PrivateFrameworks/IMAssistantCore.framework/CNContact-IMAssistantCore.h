@@ -8,7 +8,7 @@
 
 @interface CNContact (IMAssistantCore)
 - (id)__im_assistant_allIMHandles;
-- (id)__im_assistant_allValidPersonOptionsWithAccount:(id)arg1;
+- (id)__im_assistant_allValidPersonOptionsWithAccountDataSource:(id)arg1;
 - (id)__im_assistant_matchingNormalizedHandlesForType:(int)arg1 andLabel:(id)arg2 forCountryCode:(id)arg3;
 - (_Bool)__im_assistant_labeledContactValue:(id)arg1 matchesPersonHandleLabel:(id)arg2;
 - (id)__im_assistant_normalizedHandleForAnonymousContactUsingCountryCode:(id)arg1;

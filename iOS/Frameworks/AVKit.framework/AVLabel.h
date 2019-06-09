@@ -8,11 +8,13 @@
 
 @class NSLayoutConstraint, NSString, UIActivityIndicatorView, UIFont, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface AVLabel : UIView
 {
     _Bool _showsLoadingIndicator;
     _Bool _collapsed;
     _Bool _included;
+    _Bool _removed;
     _Bool _hasAlternateAppearance;
     _Bool _hasFullScreenAppearance;
     UILabel *_label;
@@ -29,6 +31,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *loadingIndicatorLeftAlignmentConstraint; // @synthesize loadingIndicatorLeftAlignmentConstraint=_loadingIndicatorLeftAlignmentConstraint;
 @property(nonatomic) _Bool hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) _Bool hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
+@property(nonatomic, getter=isRemoved) _Bool removed; // @synthesize removed=_removed;
 @property(nonatomic, getter=isIncluded) _Bool included; // @synthesize included=_included;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;

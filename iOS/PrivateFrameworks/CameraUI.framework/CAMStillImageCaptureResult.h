@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class AVCapturePhoto, CAMStillImageCaptureCoordinationInfo, NSArray, NSDate, NSDictionary, NSError, NSString;
+@class AVCapturePhoto, CAMCaptureCoordinationInfo, NSArray, NSDate, NSDictionary, NSError, NSString;
 
 @interface CAMStillImageCaptureResult : NSObject
 {
-    _Bool _shouldPersistEffectFilterName;
+    _Bool _shouldPersistAdjustmentSidecar;
     _Bool _expectingPairedVideo;
     AVCapturePhoto *_capturePhoto;
     NSDate *_captureDate;
@@ -18,14 +18,14 @@
     NSError *_error;
     NSArray *_adjustmentFilters;
     NSString *_persistenceUUID;
-    CAMStillImageCaptureCoordinationInfo *_coordinationInfo;
+    CAMCaptureCoordinationInfo *_coordinationInfo;
 }
 
 @property(readonly, nonatomic, getter=isExpectingPairedVideo) _Bool expectingPairedVideo; // @synthesize expectingPairedVideo=_expectingPairedVideo;
-@property(readonly, nonatomic) CAMStillImageCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
+@property(readonly, nonatomic) CAMCaptureCoordinationInfo *coordinationInfo; // @synthesize coordinationInfo=_coordinationInfo;
 @property(readonly, copy, nonatomic) NSString *persistenceUUID; // @synthesize persistenceUUID=_persistenceUUID;
 @property(readonly, nonatomic) NSArray *adjustmentFilters; // @synthesize adjustmentFilters=_adjustmentFilters;
-@property(readonly, nonatomic) _Bool shouldPersistEffectFilterName; // @synthesize shouldPersistEffectFilterName=_shouldPersistEffectFilterName;
+@property(readonly, nonatomic) _Bool shouldPersistAdjustmentSidecar; // @synthesize shouldPersistAdjustmentSidecar=_shouldPersistAdjustmentSidecar;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
 @property(readonly, nonatomic) NSDate *captureDate; // @synthesize captureDate=_captureDate;

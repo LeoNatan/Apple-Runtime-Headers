@@ -7,13 +7,16 @@
 #import <PepperUICore/PUICTableViewController.h>
 
 @class CNContactFormatter, CNContactStore, NSArray, NSString;
+@protocol NCABPersonListViewDelegate;
 
 @interface NCABPersonListViewController : PUICTableViewController
 {
     CNContactFormatter *_defaultContactFormatter;
     NSString *_cellIdentifier;
+    NSString *_buttonIdentifier;
     CDUnknownBlockType _selectionHandler;
     CNContactFormatter *_contactFormatter;
+    id <NCABPersonListViewDelegate> _delegate;
     NSString *_senderIdentityLabel;
     NSArray *_people;
     CNContactStore *_contactStore;
@@ -22,6 +25,7 @@
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(copy, nonatomic) NSArray *people; // @synthesize people=_people;
 @property(copy, nonatomic) NSString *senderIdentityLabel; // @synthesize senderIdentityLabel=_senderIdentityLabel;
+@property(nonatomic) __weak id <NCABPersonListViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
 - (void).cxx_destruct;

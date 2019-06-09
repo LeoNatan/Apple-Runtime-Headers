@@ -10,7 +10,7 @@
 #import <MapKit/UIGestureRecognizerDelegate-Protocol.h>
 #import <MapKit/_MKUserInteractionGestureRecognizerTouchObserver-Protocol.h>
 
-@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKTwoFingerPanGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, VKCompoundAnimation, VKDynamicAnimation, _MKUserInteractionGestureRecognizer;
+@class MKBasicMapView, MKCompassView, MKRotationFilter, MKScaleView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UIGestureRecognizer, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, UITraitCollection, VKCompoundAnimation, VKDynamicAnimation, _MKOneHandedZoomGestureRecognizer, _MKUserInteractionGestureRecognizer;
 @protocol MKMapGestureControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UIPanGestureRecognizer *_panGestureRecognizer;
     UIPanGestureRecognizer *_verticalPanGestureRecognizer;
+    _MKOneHandedZoomGestureRecognizer *_oneHandedZoomGestureRecognizer;
     double _lastScale;
     VKDynamicAnimation *_pinchDecelerationAnimation;
     VKCompoundAnimation *_panDecelerationAnimationGroup;
@@ -39,12 +40,11 @@ __attribute__((visibility("hidden")))
     MKTiltGestureRecognizer *_tiltGestureRecognizer;
     VKDynamicAnimation *_tiltDecelerationAnimation;
     _Bool _didStartLongPress;
-    MKTwoFingerPanGestureRecognizer *_twoFingerPanGestureRecognizer;
     _Bool _isPanning;
     _Bool _isPinching;
+    UITraitCollection *_traitCollection;
 }
 
-@property(readonly, nonatomic) UIPanGestureRecognizer *twoFingerPanGestureRecognizer; // @synthesize twoFingerPanGestureRecognizer=_twoFingerPanGestureRecognizer;
 @property(readonly, nonatomic) UIPanGestureRecognizer *verticalPanGestureRecognizer; // @synthesize verticalPanGestureRecognizer=_verticalPanGestureRecognizer;
 @property(nonatomic) _Bool panWithMomentum; // @synthesize panWithMomentum=_panWithMomentum;
 @property(retain, nonatomic) MKRotationFilter *rotationFilter; // @synthesize rotationFilter=_rotationFilter;
@@ -68,17 +68,18 @@ __attribute__((visibility("hidden")))
 - (void)gestureRecognizerTouchesBegan:(id)arg1;
 - (void)handleTouch:(id)arg1;
 - (void)handlePan:(id)arg1;
-- (void)_handleStandardPan:(id)arg1;
 - (struct CGPoint)_snapPointToDevicePixels:(struct CGPoint)arg1;
+- (void)_updateZoomGestureForState:(long long)arg1 focusPoint:(struct CGPoint)arg2 scale:(double)arg3 velocity:(double)arg4 gestureType:(long long)arg5 configuration:(id)arg6;
+- (void)handlePanZoom:(id)arg1;
 - (void)handlePinch:(id)arg1;
 - (void)handleTwoFingerLongPress:(id)arg1;
 - (void)handleTwoFingerTap:(id)arg1;
 - (void)handleDoubleTap:(id)arg1;
 - (void)_updateRotationGestureForState:(long long)arg1 focusPoint:(struct CGPoint)arg2 rotation:(double)arg3 velocity:(double)arg4;
 - (void)handleRotation:(id)arg1;
-- (void)handleTwoFingerPan:(id)arg1;
 - (void)handleTilt:(id)arg1;
 - (void)_handleStandardTilt:(id)arg1;
+- (void)_setTraitCollection:(id)arg1;
 - (void)clearGestureRecognizersInFlight;
 - (void)_clearGesture:(id)arg1;
 - (void)stopUserInteractionFromExternalGesture;
@@ -91,6 +92,8 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 @property(nonatomic, getter=isTiltEnabled) _Bool tiltEnabled;
 @property(nonatomic, getter=isRotationEnabled) _Bool rotationEnabled;
+- (void)_setOneHandedZoomGestureConfiguration:(id)arg1;
+@property(readonly, nonatomic) UIGestureRecognizer *oneHandedZoomGestureRecognizer;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2 doubleTapTargetView:(id)arg3;
 

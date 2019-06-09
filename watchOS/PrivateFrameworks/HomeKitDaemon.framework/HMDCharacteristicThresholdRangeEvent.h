@@ -32,6 +32,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)_evaluateNewValue:(id)arg1;
+- (_Bool)_isValueInRange:(id)arg1;
 - (void)_handleUpdateRequest:(id)arg1;
 - (id)emptyModelObject;
 - (id)createPayload;

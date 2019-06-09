@@ -4,46 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PepperUICore/PUICTableViewCell.h>
+#import <CarouselUIServices/CUISNotificationNCCell.h>
 
-@class CUISNotificationCenterCellHeaderView, CUISNotificationCenterCellPlatterView, NSString, UIColor, UIImage, UIImageView, UILabel, UIView;
-
-@interface CUISNotificationCenterCell : PUICTableViewCell
+@interface CUISNotificationCenterCell : CUISNotificationNCCell
 {
-    NSString *_reuseIdentifier;
-    CUISNotificationCenterCellHeaderView *_headerView;
-    CUISNotificationCenterCellPlatterView *_platterView;
-    UILabel *_summaryLabel;
-    UIImageView *_stackedPlatter;
-    UIView *_bodyView;
-    unsigned int _bulletinCount;
-    UIColor *_summaryTextColor;
 }
 
-@property(retain, nonatomic) UIColor *summaryTextColor; // @synthesize summaryTextColor=_summaryTextColor;
-@property(nonatomic) unsigned int bulletinCount; // @synthesize bulletinCount=_bulletinCount;
-@property(retain, nonatomic) UIView *bodyView; // @synthesize bodyView=_bodyView;
-- (void).cxx_destruct;
-- (void)_handleFontSizeChange:(id)arg1;
-- (void)_layoutInFrame:(struct CGRect)arg1;
-- (struct CGRect)actionBarFrame;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (float)stackedPlatterHeight;
-- (void)layoutSubviews;
-- (void)createSubviews;
-- (void)createCoalesceLabel;
-- (void)createStackedPlatter;
-- (id)stackedPlatterImage;
-- (_Bool)isCoalesced;
++ (Class)classFactory;
+@property(nonatomic) unsigned int bulletinCount;
 @property(nonatomic) unsigned int iconStyle;
-@property(retain, nonatomic) UIImage *modifierIcon;
-@property(retain, nonatomic) UIImage *icon;
-@property(retain, nonatomic) UIColor *appNameTextColor;
-@property(copy, nonatomic) NSString *appName;
-@property(retain, nonatomic) UIColor *bodyBackgroundColor;
-@property(retain, nonatomic) UIColor *headerBackgroundColor;
-- (void)dealloc;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

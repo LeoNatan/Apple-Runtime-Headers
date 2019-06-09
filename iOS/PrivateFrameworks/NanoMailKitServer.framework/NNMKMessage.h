@@ -39,6 +39,7 @@
     unsigned long long _visibleStatus;
 }
 
++ (id)serverIdsFromMessages:(id)arg1;
 + (id)messageIdsFromMessages:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)generateConversationIdWithAccountId:(id)arg1 conversationId:(id)arg2;

@@ -26,6 +26,7 @@
 + (id)generateUnixNameUsingString:(id)arg1;
 + (id)suggestUnixNameUsingString:(id)arg1;
 + (BOOL)hasRootPasswordBeingSet;
++ (BOOL)isCurrentUserGuest;
 + (BOOL)isCurrentUserAdministrator;
 + (struct __CSIdentity *)currentUserCSIdentityRef;
 + (id)currentUser;

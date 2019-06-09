@@ -6,27 +6,49 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface _ICNamedEntityRecord : NSObject
 {
+    unsigned char _source;
+    unsigned char _type;
     unsigned char _changeType;
     NSString *_name;
-    NSString *_source;
-    NSString *_type;
+    NSString *_phoneticName;
+    NSString *_identifier;
+    double _score;
+    NSString *_languageIdentifier;
+    NSDate *_contentCreationDate;
+    NSDate *_detectionDate;
+    NSString *_sourceIdentifier;
+    NSString *_donorBundleIdentifier;
+    unsigned long long _detectionAlgorithm;
 }
 
++ (id)namedEntityRecordWithName:(id)arg1 phoneticName:(id)arg2 type:(unsigned char)arg3 languageIdentifier:(id)arg4 contentCreationDate:(id)arg5 detectionDate:(id)arg6 score:(double)arg7 source:(unsigned char)arg8 sourceIdentifier:(id)arg9 donorBundleIdentifier:(id)arg10 detectionAlgorithm:(unsigned long long)arg11;
+@property(readonly, nonatomic) unsigned long long detectionAlgorithm; // @synthesize detectionAlgorithm=_detectionAlgorithm;
+@property(readonly, nonatomic) NSString *donorBundleIdentifier; // @synthesize donorBundleIdentifier=_donorBundleIdentifier;
+@property(retain, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
+@property(readonly, nonatomic) NSDate *detectionDate; // @synthesize detectionDate=_detectionDate;
+@property(readonly, nonatomic) NSDate *contentCreationDate; // @synthesize contentCreationDate=_contentCreationDate;
+@property(readonly, nonatomic) NSString *languageIdentifier; // @synthesize languageIdentifier=_languageIdentifier;
+@property(nonatomic) double score; // @synthesize score=_score;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, nonatomic) unsigned char changeType; // @synthesize changeType=_changeType;
-@property(readonly, nonatomic) NSString *type; // @synthesize type=_type;
-@property(readonly, nonatomic) NSString *source; // @synthesize source=_source;
+@property(readonly, nonatomic) unsigned char type; // @synthesize type=_type;
+@property(readonly, nonatomic) unsigned char source; // @synthesize source=_source;
+@property(readonly, nonatomic) NSString *phoneticName; // @synthesize phoneticName=_phoneticName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)initWithName:(id)arg1 phoneticName:(id)arg2 type:(unsigned char)arg3 languageIdentifier:(id)arg4 contentCreationDate:(id)arg5 detectionDate:(id)arg6 score:(double)arg7 source:(unsigned char)arg8 sourceIdentifier:(id)arg9 donorBundleIdentifier:(id)arg10 detectionAlgorithm:(unsigned long long)arg11;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToNamedEntityRecord:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (id)description;
-- (id)initWithName:(id)arg1 source:(id)arg2 type:(id)arg3 changeType:(unsigned char)arg4;
+- (id)initWithName:(id)arg1 source:(unsigned char)arg2 type:(unsigned char)arg3 score:(double)arg4 changeType:(unsigned char)arg5;
+- (id)sourceString:(unsigned char)arg1;
+- (id)typeString:(unsigned char)arg1;
 
 @end
 

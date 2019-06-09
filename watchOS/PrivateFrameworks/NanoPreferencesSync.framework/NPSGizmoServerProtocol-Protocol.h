@@ -6,9 +6,11 @@
 
 #import <NanoPreferencesSync/NPSServerProtocol-Protocol.h>
 
-@class NSSet, NSString;
+@class NSSet, NSString, NSURL;
 
 @protocol NPSGizmoServerProtocol <NPSServerProtocol>
+- (void)loadBackupFromFile:(NSURL *)arg1 withCompletionHandler:(void (^)(NSError *))arg2;
+- (void)saveBackupToFile:(NSURL *)arg1 withCompletionHandler:(void (^)(NSError *))arg2;
 - (void)backupFileAtPath:(NSString *)arg1 withCompletionHandler:(void (^)(void))arg2;
 - (void)backupUserDefaultsDomain:(NSString *)arg1 keys:(NSSet *)arg2 container:(NSString *)arg3;
 @end

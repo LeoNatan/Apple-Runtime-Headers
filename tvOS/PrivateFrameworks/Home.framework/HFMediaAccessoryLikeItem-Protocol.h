@@ -5,12 +5,12 @@
 //
 
 #import <Home/HFGroupableItemProtocol-Protocol.h>
+#import <Home/HFHomeKitSettingsVendorProvider-Protocol.h>
 #import <Home/HFItemBuilderItem-Protocol.h>
-#import <Home/HFMediaProfileContainerVendor-Protocol.h>
 #import <Home/HFServiceLikeBuilderCreating-Protocol.h>
 #import <Home/HFServiceLikeItem-Protocol.h>
 #import <Home/HFSoftwareUpdatableItemProtocol-Protocol.h>
 
-@protocol HFMediaAccessoryLikeItem <HFServiceLikeItem, HFServiceLikeBuilderCreating, HFItemBuilderItem, HFGroupableItemProtocol, HFSoftwareUpdatableItemProtocol, HFMediaProfileContainerVendor>
+@protocol HFMediaAccessoryLikeItem <HFServiceLikeItem, HFServiceLikeBuilderCreating, HFItemBuilderItem, HFGroupableItemProtocol, HFSoftwareUpdatableItemProtocol, HFHomeKitSettingsVendorProvider>
 @end
 

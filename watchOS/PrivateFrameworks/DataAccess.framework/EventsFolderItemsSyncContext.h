@@ -12,10 +12,12 @@
     int _calRecurrenceChangeId;
     int _calAlarmChangeId;
     int _calAttendeeChangeId;
+    int _calAttachmentChangeId;
     int _highestSequenceNumber;
 }
 
 @property(nonatomic) int highestSequenceNumber; // @synthesize highestSequenceNumber=_highestSequenceNumber;
+@property(nonatomic) int calAttachmentChangeId; // @synthesize calAttachmentChangeId=_calAttachmentChangeId;
 @property(nonatomic) int calAttendeeChangeId; // @synthesize calAttendeeChangeId=_calAttendeeChangeId;
 @property(nonatomic) int calAlarmChangeId; // @synthesize calAlarmChangeId=_calAlarmChangeId;
 @property(nonatomic) int calRecurrenceChangeId; // @synthesize calRecurrenceChangeId=_calRecurrenceChangeId;

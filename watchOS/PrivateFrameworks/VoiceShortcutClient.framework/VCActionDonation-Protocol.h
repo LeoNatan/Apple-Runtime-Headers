@@ -6,11 +6,11 @@
 
 #import <VoiceShortcutClient/NSObject-Protocol.h>
 
-@class NSData, NSDate, NSString;
+@class INShortcut, NSDate, NSString;
 
 @protocol VCActionDonation <NSObject>
+@property(readonly, nonatomic) INShortcut *shortcut;
 @property(readonly, nonatomic) id uniqueProperty;
-@property(readonly, nonatomic) NSData *keyImageData;
 @property(readonly, copy, nonatomic) NSString *suggestedPhrase;
 @property(readonly, copy, nonatomic) NSString *fullDescription;
 @property(readonly, nonatomic) NSString *subtitle;
@@ -20,6 +20,5 @@
 @property(readonly, copy, nonatomic) NSString *sourceAppIdentifier;
 @property(readonly, copy, nonatomic) NSDate *date;
 @property(readonly, copy, nonatomic) NSString *identifier;
-- (void)createActionWithCompletionHandler:(void (^)(WFLAction *, NSError *))arg1;
 @end
 

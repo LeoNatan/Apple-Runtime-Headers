@@ -13,8 +13,12 @@
     NSString *_alias;
     NSString *_displayName;
     IMAccount *_account;
+    long long _givenAliasType;
+    _Bool _selectedDeviceAlias;
 }
 
+@property(nonatomic, getter=isSelectedDeviceAlias) _Bool selectedDeviceAlias; // @synthesize selectedDeviceAlias=_selectedDeviceAlias;
+@property(nonatomic) long long givenAliasType; // @synthesize givenAliasType=_givenAliasType;
 @property(retain, nonatomic) IMAccount *account; // @synthesize account=_account;
 @property(copy, nonatomic) NSString *alias; // @synthesize alias=_alias;
 - (void).cxx_destruct;
@@ -28,10 +32,12 @@
 - (long long)validationErrorReason;
 - (long long)validationStatus;
 - (_Bool)validate;
+- (_Bool)isDeviceAlias;
 - (_Bool)isPhoneNumberAliasOnPhoneNumberAccount;
 @property(readonly, nonatomic) long long type; // @dynamic type;
 @property(readonly, retain, nonatomic) NSString *identifier; // @dynamic identifier;
 - (id)initWithAccount:(id)arg1 alias:(id)arg2;
+- (id)initWithAlias:(id)arg1 type:(long long)arg2 selected:(_Bool)arg3;
 
 @end
 

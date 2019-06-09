@@ -6,15 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface VSMobileAssetsManager : NSObject
 {
-    NSObject<OS_dispatch_queue> *_cacheConcurrentQueue;
+    NSObject<OS_dispatch_queue> *_downloadQueue;
     NSObject<OS_dispatch_queue> *_assetQueryQueue;
-    NSMutableDictionary *_voiceSelectionCache;
-    NSMutableDictionary *_voiceResourceCache;
 }
 
 + (_Bool)isVoiceAssetWellDefined:(id)arg1;
@@ -28,32 +25,30 @@
 + (id)installedVoiceResources;
 + (id)installedAssetsForType:(long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long)arg4 footprint:(long)arg5;
 + (void)amendVoiceWithDefaultSettings:(id)arg1;
-+ (id)queryForVoiceResourceAsset:(id)arg1 localOnly:(_Bool)arg2;
-+ (id)queryForType:(long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long)arg4 footprint:(long)arg5 localOnly:(_Bool)arg6;
++ (id)queryForVoiceResourceAsset:(id)arg1;
++ (id)queryForType:(long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long)arg4 footprint:(long)arg5;
 + (id)preinstallAssetsDirectory;
 + (id)sharedManager;
-@property(retain, nonatomic) NSMutableDictionary *voiceResourceCache; // @synthesize voiceResourceCache=_voiceResourceCache;
-@property(retain, nonatomic) NSMutableDictionary *voiceSelectionCache; // @synthesize voiceSelectionCache=_voiceSelectionCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheConcurrentQueue; // @synthesize cacheConcurrentQueue=_cacheConcurrentQueue;
 - (void).cxx_destruct;
 - (void)populateVoiceData:(id)arg1 fromAsset:(id)arg2;
 - (id)voiceDataFromAsset:(id)arg1;
 - (id)_localVoiceForLanguage:(id)arg1 gender:(long)arg2;
 - (id)_builtInVoiceForLanguage:(id)arg1;
 - (id)legacyLocalVocalizerVoiceAssetForLanguage:(id)arg1;
-- (_Bool)_purgeAsset:(id)arg1;
-- (_Bool)purgeAsset:(id)arg1;
-- (void)_downloadAsset:(id)arg1 withOptions:(id)arg2 progressHandler:(CDUnknownBlockType)arg3;
-- (void)_downloadAsset:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_purgeAsset:(id)arg1;
+- (void)purgeAsset:(id)arg1;
+- (void)_downloadAsset:(id)arg1 options:(id)arg2 progress:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)downloadCatalog:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)downloadCatalog:(id)arg1 options:(id)arg2;
+- (id)_getResults:(id)arg1;
 - (id)voiceAssetWithName:(id)arg1 localOnly:(_Bool)arg2 outError:(id *)arg3;
 - (void)removeVoiceResource:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)downloadVoiceResource:(id)arg1 useBattery:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)downloadVoiceResource:(id)arg1 discretionary:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeVoiceAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelDownload:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)downloadVoiceAsset:(id)arg1 discretionary:(_Bool)arg2 progressUpdateHandler:(CDUnknownBlockType)arg3;
 - (void)downloadVoiceAsset:(id)arg1 useBattery:(_Bool)arg2 progressUpdateHandler:(CDUnknownBlockType)arg3;
-- (void)downloadVoiceAsset:(id)arg1 useBattery:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)selectVoiceResourceAssetForLanguage:(id)arg1;
 - (id)selectVoiceForLang:(id)arg1 type:(long)arg2 gender:(long)arg3 footprint:(long)arg4;
 - (id)installedVoiceResources;
 - (id)installedAssetsForType:(long)arg1 voicename:(id)arg2 language:(id)arg3 gender:(long)arg4 footprint:(long)arg5;
@@ -62,14 +57,15 @@
 - (id)cleanUnusedVoiceAssets;
 - (id)inactiveVoiceAssets;
 - (id)activeVoiceAssets;
-- (void)reinstallVoiceData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)amendVoiceWithDefaultSettings:(id)arg1;
-- (id)_nonCacheVoiceResourcesAssetsForLanguage:(id)arg1;
+- (id)selectVoiceResourceAssetForLanguage:(id)arg1;
 - (id)selectPreinstalledVoiceForLanguage:(id)arg1 gender:(long)arg2;
 - (id)preinstalledVoicesForLanguage:(id)arg1 gender:(long)arg2;
 - (id)voiceAssetFromPreinstallMetadata:(id)arg1;
 - (id)preinstallAssetsMetadata;
 - (id)_nonCacheVoiceSelectionForLanguage:(id)arg1 type:(long)arg2 gender:(long)arg3 footprint:(long)arg4;
+- (void)migrateAssetIfNeededWithAssetType:(id)arg1;
+- (void)migrateAssets;
 - (id)init;
 
 @end

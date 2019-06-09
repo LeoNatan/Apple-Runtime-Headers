@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *mFormula;
 }
 
+- (void).cxx_destruct;
 - (void)setFormula:(id)arg1;
 - (id)formula;
 - (void)setPercentTime:(double)arg1;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasPercentTime;
 - (void)setVariant:(id)arg1;
 - (id)variant;
-- (void)dealloc;
 - (id)init;
 
 @end

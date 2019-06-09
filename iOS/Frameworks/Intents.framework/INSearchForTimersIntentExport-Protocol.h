@@ -10,6 +10,7 @@
 @class INSpeakableString;
 
 @protocol INSearchForTimersIntentExport <NSObject, JSExport>
+@property(nonatomic) long long type;
 @property(nonatomic) long long state;
 @property(nonatomic) double duration;
 @property(copy, nonatomic) INSpeakableString *label;

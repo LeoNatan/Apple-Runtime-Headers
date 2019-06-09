@@ -9,7 +9,7 @@
 #import <PineBoardServices/NSCopying-Protocol.h>
 #import <PineBoardServices/NSMutableCopying-Protocol.h>
 
-@class FBSApplicationDataStore, NSSet, NSString, PBSBadgeValue;
+@class NSSet, NSString, PBSBadgeValue;
 
 @interface PBSAppState : NSObject <NSMutableCopying, NSCopying>
 {
@@ -21,7 +21,6 @@
     _Bool _enabled;
     long long _cacheDeleting;
     NSSet *_disabledReasons;
-    FBSApplicationDataStore *_store;
 }
 
 + (_Bool)isEnabledForApplicationWithIdentifier:(id)arg1;
@@ -31,8 +30,6 @@
 + (id)badgeValueForApplicationWithIdentifier:(id)arg1;
 + (id)iconNameForApplicationWithIdentifier:(id)arg1;
 + (void)initialize;
-@property(readonly, copy, nonatomic) NSSet *disabledReasons; // @synthesize disabledReasons=_disabledReasons;
-@property(retain, nonatomic) FBSApplicationDataStore *store; // @synthesize store=_store;
 @property(readonly, nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic, getter=isRecentlyUpdated) _Bool recentlyUpdated; // @synthesize recentlyUpdated=_recentlyUpdated;
 @property(readonly, nonatomic, getter=isBadgeEnabled) _Bool badgeEnabled; // @synthesize badgeEnabled=_badgeEnabled;

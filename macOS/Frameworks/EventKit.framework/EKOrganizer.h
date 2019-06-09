@@ -17,6 +17,9 @@
 + (id)organizerWithName:(id)arg1 url:(id)arg2;
 - (BOOL)isCurrentUserForSharing;
 - (id)initWithName:(id)arg1 url:(id)arg2 email:(id)arg3 phoneNumber:(id)arg4 encodedLikenessData:(id)arg5 isCurrentUserForScheduling:(BOOL)arg6 isCurrentUserForSharing:(BOOL)arg7;
+- (id)lastName;
+- (id)firstName;
+- (id)initWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3 address:(id)arg4 isCurrentUser:(BOOL)arg5;
 
 @end
 

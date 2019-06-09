@@ -6,12 +6,22 @@
 
 #import <objc/NSObject.h>
 
+@protocol OS_dispatch_queue;
+
 @interface MCAccountUtilities : NSObject
 {
+    NSObject<OS_dispatch_queue> *_signInQueue;
 }
 
 + (_Bool)hasManagedAccountOfDataclasses:(id)arg1;
++ (id)appStoreAccountIdentifierForPersona:(id)arg1;
 + (id)accountDataclassesForBundleID:(id)arg1;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *signInQueue; // @synthesize signInQueue=_signInQueue;
+- (void).cxx_destruct;
+- (_Bool)_signIniTunesAccountWithAuthenticationResult:(id)arg1 personaID:(id)arg2 baseViewController:(id)arg3 outError:(id *)arg4;
+- (_Bool)_signIniCloudAccountWithAuthenticationResult:(id)arg1 personaID:(id)arg2 baseViewController:(id)arg3 outError:(id *)arg4;
+- (void)signInAccountsWithTypes:(id)arg1 authenticationResult:(id)arg2 personaID:(id)arg3 baseViewController:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (id)init;
 
 @end
 

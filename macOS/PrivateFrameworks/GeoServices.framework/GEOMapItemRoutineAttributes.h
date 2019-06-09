@@ -8,10 +8,12 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, NSUUID, PBUnknownFields;
+@class NSString, NSUUID, PBDataReader, PBUnknownFields;
 
 @interface GEOMapItemRoutineAttributes : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _eventDate;
     NSString *_eventName;
@@ -19,17 +21,24 @@
     int _loiType;
     BOOL _isEventAllDay;
     struct {
-        unsigned int eventDate:1;
-        unsigned int loiType:1;
-        unsigned int isEventAllDay:1;
-    } _has;
+        unsigned int has_eventDate:1;
+        unsigned int has_loiType:1;
+        unsigned int has_isEventAllDay:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_eventName:1;
+        unsigned int read_loiIdentifierString:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_eventDate:1;
+        unsigned int wrote_eventName:1;
+        unsigned int wrote_loiIdentifierString:1;
+        unsigned int wrote_loiType:1;
+        unsigned int wrote_isEventAllDay:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *loiIdentifierString; // @synthesize loiIdentifierString=_loiIdentifierString;
-@property(nonatomic) BOOL isEventAllDay; // @synthesize isEventAllDay=_isEventAllDay;
-@property(nonatomic) double eventDate; // @synthesize eventDate=_eventDate;
-@property(retain, nonatomic) NSString *eventName; // @synthesize eventName=_eventName;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -38,16 +47,23 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *loiIdentifierString;
 @property(readonly, nonatomic) BOOL hasLoiIdentifierString;
+- (void)_readLoiIdentifierString;
 @property(nonatomic) BOOL hasIsEventAllDay;
+@property(nonatomic) BOOL isEventAllDay;
 @property(nonatomic) BOOL hasEventDate;
+@property(nonatomic) double eventDate;
+@property(retain, nonatomic) NSString *eventName;
 @property(readonly, nonatomic) BOOL hasEventName;
+- (void)_readEventName;
 - (int)StringAsLoiType:(id)arg1;
 - (id)loiTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasLoiType;
-@property(nonatomic) int loiType; // @synthesize loiType=_loiType;
+@property(nonatomic) int loiType;
 @property(retain, nonatomic) NSUUID *loiIdentifier;
 
 @end

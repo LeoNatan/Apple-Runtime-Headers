@@ -37,7 +37,6 @@
 - (void)prepareUIWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)performServiceWithOptionsDictionaryData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)title;
-- (BOOL)isInNotificationCenter;
 - (BOOL)disableWindowPresentation;
 - (BOOL)hasNarrowLayout;
 - (BOOL)serviceNeedsUserConfiguration;

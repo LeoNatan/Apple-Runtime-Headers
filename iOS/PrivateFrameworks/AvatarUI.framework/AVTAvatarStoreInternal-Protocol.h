@@ -5,10 +5,11 @@
 //
 
 #import <AvatarUI/AVTAvatarStore-Protocol.h>
+#import <AvatarUI/AVTStickerBackend-Protocol.h>
 
 @class AVTAvatarRecord, NSString;
 
-@protocol AVTAvatarStoreInternal <AVTAvatarStore>
+@protocol AVTAvatarStoreInternal <AVTAvatarStore, AVTStickerBackend>
 + (unsigned long long)maximumNumberOfFetchableAvatars;
 + (unsigned long long)maximumNumberOfSavableAvatars;
 - (void)duplicateAvatar:(AVTAvatarRecord *)arg1 completionBlock:(void (^)(_Bool, id <AVTAvatarRecord>, NSError *))arg2;

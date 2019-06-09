@@ -8,5 +8,7 @@
 
 @interface NSCalendarDate (iSync11Compatibility)
 - (id)CALDate;
+- (id)CALDateOnly;
+- (id)CALDateTime;
 @end
 

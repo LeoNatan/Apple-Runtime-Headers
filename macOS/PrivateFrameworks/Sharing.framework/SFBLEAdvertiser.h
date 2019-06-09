@@ -45,6 +45,7 @@
 - (void)nearby:(id)arg1 didConnectToPeer:(id)arg2 transport:(long long)arg3 error:(id)arg4;
 - (void)nearby:(id)arg1 didFailToStartAdvertisingOfType:(long long)arg2 withError:(id)arg3;
 - (void)nearby:(id)arg1 didDeferAdvertisingType:(long long)arg2;
+- (void)nearby:(id)arg1 didStopAdvertisingType:(long long)arg2 withError:(id)arg3;
 - (void)nearby:(id)arg1 didStartAdvertisingType:(long long)arg2;
 - (void)nearbyDidUpdateState:(id)arg1;
 - (id)_preparePayloadNearbyInfo:(int *)arg1;
@@ -59,7 +60,6 @@
 - (void)setPayloadData:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithType:(long long)arg1;
 
 // Remaining properties

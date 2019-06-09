@@ -66,7 +66,7 @@
 - (void)_fadeToCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_hideCurtainView;
 - (void)_showCurtainView;
-- (void)_handleCSLPIBacklightWillTurnOff;
+- (void)handleScreenBlanked;
 - (void)_handleScreenWake;
 - (void)_handleOrdinaryScreenWake;
 - (void)_handleWristRaiseScreenWake;
@@ -116,7 +116,7 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
 - (void)_layoutForegroundContainerView;
-- (id)_digitalTimeLabelStyle;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
 - (float)_timeTravelYAdjustment;
 @property(readonly, nonatomic) unsigned int dateAlignment; // @dynamic dateAlignment;
 - (void)layoutSubviews;

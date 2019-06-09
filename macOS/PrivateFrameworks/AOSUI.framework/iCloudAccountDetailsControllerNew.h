@@ -25,11 +25,11 @@
     NSAccountDetailsWebTabViewItem *_devicesTabViewItem;
     MM_Account *_account;
     CastlePlugin *_plugin;
-    NSWindow *_parentWindow;
     NSWindow *_sheet;
     MMWebViewButtonBar *buttonBar;
     NSView *_buttonBarView;
     iCloudAccountsDetailsGeneral *_generalController;
+    NSWindow *_parentWindow;
     NSString *_sectionToOpen;
 }
 
@@ -39,6 +39,7 @@
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) MM_Account *account; // @synthesize account=_account;
 @property(retain) CastlePlugin *plugin; // @synthesize plugin=_plugin;
+- (void).cxx_destruct;
 - (void)cancelOperation:(id)arg1;
 - (void)button3Pressed:(id)arg1;
 - (void)button2Pressed:(id)arg1;

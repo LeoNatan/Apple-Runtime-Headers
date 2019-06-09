@@ -25,7 +25,7 @@
 @property(readonly, nonatomic) BBAction *action; // @synthesize action=_action;
 @property(nonatomic) _Bool shouldForwardAction; // @synthesize shouldForwardAction=_shouldForwardAction;
 - (void).cxx_destruct;
-- (void)executeAction:(id)arg1 fromOrigin:(id)arg2 withParameters:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)executeAction:(id)arg1 fromOrigin:(id)arg2 endpoint:(id)arg3 withParameters:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)initWithAction:(id)arg1 bulletin:(id)arg2 observer:(id)arg3;
 
 // Remaining properties

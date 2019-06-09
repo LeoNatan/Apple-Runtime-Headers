@@ -7,7 +7,7 @@
 #import <MapsSupport/NSObject-Protocol.h>
 
 @protocol GEOTransitIconDataSource <NSObject>
-@property(readonly, nonatomic) long long iconType;
+@property(readonly, nonatomic) int iconType;
 
 @optional
 @property(readonly, nonatomic) unsigned int iconAttributeValue;

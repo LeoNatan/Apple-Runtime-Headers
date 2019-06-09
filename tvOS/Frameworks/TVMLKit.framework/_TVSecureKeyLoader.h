@@ -4,22 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TVPlayback/TVPSecureKeyLoader.h>
+#import <objc/NSObject.h>
 
-@class _TVMediaItem;
+#import <TVMLKit/AVContentKeySessionDelegate-Protocol.h>
 
-__attribute__((visibility("hidden")))
-@interface _TVSecureKeyLoader : TVPSecureKeyLoader
+@class AVContentKeySession, IKAppMediaItemBridge, NSArray, NSString;
+
+@interface _TVSecureKeyLoader : NSObject <AVContentKeySessionDelegate>
 {
-    _TVMediaItem *_mediaItem;
+    AVContentKeySession *_contentKeySession;
+    IKAppMediaItemBridge *_mediaItemBridge;
 }
 
-@property(readonly, nonatomic) __weak _TVMediaItem *mediaItem; // @synthesize mediaItem=_mediaItem;
+@property(readonly, nonatomic) __weak IKAppMediaItemBridge *mediaItemBridge; // @synthesize mediaItemBridge=_mediaItemBridge;
 - (void).cxx_destruct;
-- (void)startLoadingKeyResponseDataForRequest:(id)arg1;
-- (void)startLoadingContentIdentifierDataForRequest:(id)arg1;
-- (void)startLoadingCertificateDataForRequest:(id)arg1;
-- (id)initWithMediaItem:(id)arg1;
+- (void)contentKeySession:(id)arg1 contentKeyRequest:(id)arg2 didFailWithError:(id)arg3;
+- (void)contentKeySession:(id)arg1 didProvideRenewingContentKeyRequest:(id)arg2;
+- (void)contentKeySession:(id)arg1 didProvideContentKeyRequest:(id)arg2;
+- (void)_processContentKeyRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) AVContentKeySession *contentKeySession; // @synthesize contentKeySession=_contentKeySession;
+- (void)removeContentKeyRecipient:(id)arg1;
+- (void)addContentKeyRecipient:(id)arg1;
+@property(readonly) NSArray *contentKeyRecipients;
+- (id)initWithMediaItemBridge:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

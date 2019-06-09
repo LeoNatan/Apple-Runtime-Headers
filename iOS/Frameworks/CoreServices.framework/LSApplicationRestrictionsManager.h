@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isApplicationRestricted:(id)arg1 checkFlags:(unsigned long long)arg2;
 - (_Bool)isApplicationRestricted:(id)arg1;
 - (void)effectiveSettingsChanged;
+- (void)scheduleSyncTrustedSignerIdenties;
 - (_Bool)setApplication:(id)arg1 removed:(_Bool)arg2;
 - (_Bool)isRatingAllowed:(id)arg1;
 @property(readonly) NSSet *whitelistedBundleIDs;

@@ -7,11 +7,12 @@
 @class NSArray, NSData, NSString, WBSCloudHistoryConfiguration;
 
 @protocol WBSCloudHistoryDataStore
+- (void)deleteHistoryZoneWithCompletion:(void (^)(NSError *))arg1;
 - (void)replayPersistedLongLivedSaveOperationWithID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)fetchNumberOfDevicesInSyncCircleWithCompletion:(void (^)(unsigned long long, NSError *))arg1;
 - (void)fetchRecordsWithServerChangeTokenData:(NSData *)arg1 completion:(void (^)(WBSCloudHistoryFetchResult *, unsigned long long, NSError *))arg2;
 - (void)saveCloudHistoryVisits:(NSArray *)arg1 tombstones:(NSArray *)arg2 longLivedOperationPersistenceCompletion:(void (^)(NSString *))arg3 completion:(void (^)(NSError *))arg4;
 - (void)initializePushNotifications:(void (^)(NSError *))arg1;
-- (id)initWithConfiguration:(WBSCloudHistoryConfiguration *)arg1;
+- (id)initWithConfiguration:(WBSCloudHistoryConfiguration *)arg1 useManateeContainer:(_Bool)arg2;
 @end
 

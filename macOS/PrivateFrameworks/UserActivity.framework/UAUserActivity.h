@@ -146,7 +146,7 @@
 - (void)_resignCurrent;
 - (void)becomeCurrent;
 - (void)getContinuationStreamsWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property id <UAUserActivityDelegate> delegate; // @dynamic delegate;
+@property __weak id <UAUserActivityDelegate> delegate; // @dynamic delegate;
 @property BOOL supportsContinuationStreams; // @dynamic supportsContinuationStreams;
 @property(copy) NSData *streamsData;
 @property __weak NSUserActivity *parentUserActivity;

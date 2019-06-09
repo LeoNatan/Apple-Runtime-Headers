@@ -147,6 +147,7 @@
 @property(nonatomic) int selectionGranularity;
 @property(retain, nonatomic) UIColor *selectionHighlightColor;
 @property(nonatomic) int shortcutConversionType; // @dynamic shortcutConversionType;
+@property(nonatomic) _Bool showDictationButton;
 @property(nonatomic) int smartDashesType; // @dynamic smartDashesType;
 @property(nonatomic) int smartInsertDeleteType; // @dynamic smartInsertDeleteType;
 @property(nonatomic) int smartQuotesType; // @dynamic smartQuotesType;
@@ -163,6 +164,7 @@
 @property(nonatomic) struct __CFCharacterSet *textTrimmingSet; // @dynamic textTrimmingSet;
 @property(retain, nonatomic) UIColor *underlineColorForSpelling;
 @property(retain, nonatomic) UIColor *underlineColorForTextAlternatives;
+@property(nonatomic) _Bool useAutomaticEndpointing;
 @property(nonatomic) _Bool useInterfaceLanguageForLocalization;
 @property(nonatomic) struct _NSRange validTextRange;
 

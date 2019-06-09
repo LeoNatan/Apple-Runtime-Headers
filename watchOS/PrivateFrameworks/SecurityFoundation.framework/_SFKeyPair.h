@@ -17,14 +17,19 @@
 + (Class)_attributesClass;
 - (void).cxx_destruct;
 - (id)keyData;
-@property(readonly, nonatomic, getter=_secKey) struct __SecKey *secKey;
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v}8@0:4, name: _secKey
 @property(readonly, copy, nonatomic) NSString *privateKeyDomain;
 @property(readonly, nonatomic) _SFPublicKey *publicKey;
 - (id)initRandomKeyPairWithSpecifier:(id)arg1 privateKeyDomain:(struct NSString *)arg2;
 - (id)initRandomKeyPairWithSpecifier:(id)arg1;
-- (id)initWithSecKey:(struct __SecKey *)arg1;
+-     // Error parsing type: @12@0:4^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v}8, name: initWithSecKey:
 - (id)initWithData:(id)arg1 specifier:(id)arg2 error:(id *)arg3;
 - (id)initWithAttributes:(id)arg1;
+
+// Remaining properties
+// Error parsing type for property secKey:
+// Property attributes: T^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v},R,N,G_secKey
+
 
 @end
 

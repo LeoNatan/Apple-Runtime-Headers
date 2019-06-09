@@ -11,6 +11,7 @@
 
 @class EDString, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying>
 {
     EDString *mFormatString;

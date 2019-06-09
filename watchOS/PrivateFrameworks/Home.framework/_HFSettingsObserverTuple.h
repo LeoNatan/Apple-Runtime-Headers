@@ -6,17 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <Home/HMAccessorySettingsDelegate-Protocol.h>
+#import <Home/HFHomeKitSettingsObserver-Protocol.h>
 #import <Home/NAIdentifiable-Protocol.h>
 
-@class HMAccessorySetting, HMAccessorySettings, NADeallocationSentinel, NSString;
-@protocol HFAccessorySettingsObserver, _HFSettingsObserverTupleOwning;
+@class HMSetting, HMSettings, NADeallocationSentinel, NSString;
+@protocol HFHomeKitSettingsObserver, _HFSettingsObserverTupleOwning;
 
-@interface _HFSettingsObserverTuple : NSObject <HMAccessorySettingsDelegate, NAIdentifiable>
+@interface _HFSettingsObserverTuple : NSObject <HFHomeKitSettingsObserver, NAIdentifiable>
 {
-    HMAccessorySettings *_settings;
-    HMAccessorySetting *_setting;
-    id <HFAccessorySettingsObserver> _observer;
+    HMSettings *_settings;
+    HMSetting *_setting;
+    id <HFHomeKitSettingsObserver> _observer;
     id <_HFSettingsObserverTupleOwning> _owner;
     NADeallocationSentinel *_observerDeallocationSentinel;
 }
@@ -25,9 +25,9 @@
 + (id)tupleForSettings:(id)arg1 setting:(id)arg2 observer:(id)arg3 owner:(id)arg4;
 @property(retain, nonatomic) NADeallocationSentinel *observerDeallocationSentinel; // @synthesize observerDeallocationSentinel=_observerDeallocationSentinel;
 @property(nonatomic) __weak id <_HFSettingsObserverTupleOwning> owner; // @synthesize owner=_owner;
-@property(nonatomic) __weak id <HFAccessorySettingsObserver> observer; // @synthesize observer=_observer;
-@property(retain, nonatomic) HMAccessorySetting *setting; // @synthesize setting=_setting;
-@property(retain, nonatomic) HMAccessorySettings *settings; // @synthesize settings=_settings;
+@property(nonatomic) __weak id <HFHomeKitSettingsObserver> observer; // @synthesize observer=_observer;
+@property(retain, nonatomic) HMSetting *setting; // @synthesize setting=_setting;
+@property(retain, nonatomic) HMSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
 - (void)_accessorySettingReflectionStateDidUpdate:(id)arg1;
 - (void)_accessorySettingDidUpdate:(id)arg1;

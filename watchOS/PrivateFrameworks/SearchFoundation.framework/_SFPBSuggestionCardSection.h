@@ -25,8 +25,10 @@
     _SFPBColor *_backgroundColor;
     _SFPBRichText *_suggestionText;
     NSString *_scopedSearchSectionBundleIdentifier;
+    int _suggestionType;
 }
 
+@property(nonatomic) int suggestionType; // @synthesize suggestionType=_suggestionType;
 @property(copy, nonatomic) NSString *scopedSearchSectionBundleIdentifier; // @synthesize scopedSearchSectionBundleIdentifier=_scopedSearchSectionBundleIdentifier;
 @property(nonatomic) _Bool isContact; // @synthesize isContact=_isContact;
 @property(retain, nonatomic) _SFPBRichText *suggestionText; // @synthesize suggestionText=_suggestionText;

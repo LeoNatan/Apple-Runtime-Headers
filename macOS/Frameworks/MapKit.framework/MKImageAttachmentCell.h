@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTextAttachmentCell.h>
 
+__attribute__((visibility("hidden")))
 @interface MKImageAttachmentCell : NSTextAttachmentCell
 {
     double _verticalOffset;

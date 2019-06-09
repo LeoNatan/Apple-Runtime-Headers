@@ -6,26 +6,35 @@
 
 #import <TVMLKit/NSObject-Protocol.h>
 
-@class NSDictionary, NSString, TVMediaItem, TVPlaylist;
+@class AVPlayer, NSArray, NSDate, NSDictionary, NSString, TVMediaItem, TVPlaylist;
 @protocol TVPlayerBridging;
 
 @protocol TVPlaying <NSObject>
 @property(readonly, nonatomic) long long state;
 @property(readonly, nonatomic) double duration;
+@property(retain, nonatomic) NSDate *elapsedDate;
 @property(nonatomic) double elapsedTime;
 @property(retain, nonatomic) TVPlaylist *playlist;
 @property(readonly, nonatomic) TVMediaItem *currentMediaItem;
 @property(nonatomic) __weak id <TVPlayerBridging> bridge;
+@property(readonly, nonatomic) AVPlayer *avPlayer;
 - (void)stop;
 - (void)play;
 
 @optional
+@property(nonatomic) _Bool preventsSleepDuringVideoPlayback;
+@property(readonly, nonatomic) _Bool currentMediaItemHasVideoContent;
 @property(readonly, nonatomic) TVMediaItem *previousMediaItem;
 @property(readonly, nonatomic) TVMediaItem *nextMediaItem;
+@property(nonatomic) long long resumeMenuBehavior;
 @property(nonatomic) _Bool showsResumeMenu;
 @property(nonatomic, getter=isMuted) _Bool muted;
 @property(nonatomic) double scanRate;
 @property(retain, nonatomic) NSDictionary *userInfo;
+- (NSArray *)errorLogs;
+- (NSArray *)accessLogs;
+- (NSDate *)playbackDate;
+- (void)reset;
 - (void)stopObservingEvent:(NSString *)arg1;
 - (void)startObservingEvent:(NSString *)arg1 extraInfo:(NSDictionary *)arg2;
 - (void)changeToMediaItemAtIndex:(long long)arg1;

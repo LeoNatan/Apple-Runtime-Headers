@@ -30,7 +30,6 @@
 + (id)_queue;
 + (id)managerWithExtensionLookupPolicy:(id)arg1 updateHandler:(CDUnknownBlockType)arg2;
 + (id)managerWithLookupPolicy:(id)arg1 delegate:(id)arg2;
-+ (id)lookupPolicyForRideSharingExtensions;
 @property(retain, nonatomic) _MXExtensionProvider *extensionProvider; // @synthesize extensionProvider=_extensionProvider;
 @property(nonatomic) __weak id <_MXExtensionManagerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) id matchingContext; // @synthesize matchingContext=_matchingContext;

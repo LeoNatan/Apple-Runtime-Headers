@@ -20,13 +20,13 @@
 @property(nonatomic) _Bool canEncrypt; // @synthesize canEncrypt=_canEncrypt;
 @property(nonatomic) _Bool wantsEncryption; // @synthesize wantsEncryption=_wantsEncryption;
 @property(nonatomic) struct UIEdgeInsets touchInsets; // @synthesize touchInsets;
+- (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_closeLock;
 - (void)_openLock;
 - (void)_updateButtonAppearanceAnimated:(_Bool)arg1;
 - (void)_updateButtonAppearance;
 - (void)setWantsEncryption:(_Bool)arg1 canEncrypt:(_Bool)arg2 animated:(_Bool)arg3;
-- (void)dealloc;
 - (void)setEnabled:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setEnabled:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

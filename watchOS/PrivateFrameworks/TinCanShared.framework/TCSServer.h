@@ -27,8 +27,6 @@
 - (void)_addConnection:(id)arg1;
 - (void)ensureUplinkMuted;
 - (void)setClientRecordingInProgress:(_Bool)arg1;
-- (void)remoteMeterLevelForCall:(id)arg1 result:(CDUnknownBlockType)arg2;
-- (void)localMeterLevelForCall:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)setUplinkMuted:(_Bool)arg1 for:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)queryIsTinCannable:(id)arg1;
 - (void)disconnectCall:(id)arg1;

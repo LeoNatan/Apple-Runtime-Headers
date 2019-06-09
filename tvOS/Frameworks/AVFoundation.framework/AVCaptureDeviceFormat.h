@@ -11,10 +11,16 @@
 @interface AVCaptureDeviceFormat : NSObject
 {
     AVCaptureDeviceFormatInternal *_internal;
+    _Bool _highestPhotoQualitySupported;
 }
 
 + (void)initialize;
+@property(readonly, nonatomic, getter=isHighestPhotoQualitySupported) _Bool highestPhotoQualitySupported; // @synthesize highestPhotoQualitySupported=_highestPhotoQualitySupported;
 - (unsigned int)supportedRawPixelFormat;
+- (_Bool)isEquivalentToVirtualDeviceFormat:(id)arg1;
+- (int)ispPowerConsumption;
+- (int)sensorPowerConsumption;
+- (float)hardwareCost;
 - (_Bool)isStreamingDepthSupported;
 - (_Bool)isStreamingDisparitySupported;
 - (_Bool)isStillImageDepthSupported;

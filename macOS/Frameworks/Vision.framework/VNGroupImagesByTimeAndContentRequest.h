@@ -24,7 +24,6 @@
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 - (BOOL)allowsCachingOfResults;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithImageprintObservations:(id)arg1 clusteringDistanceThreshold:(float)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)initWithImageprintObservations:(id)arg1 clusteringDistanceThreshold:(float)arg2;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;

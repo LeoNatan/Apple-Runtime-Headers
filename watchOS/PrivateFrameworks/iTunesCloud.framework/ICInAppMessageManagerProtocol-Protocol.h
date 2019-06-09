@@ -9,6 +9,10 @@
 @class ICInAppMessageEntry, ICInAppMessageMetadataEntry, NSDictionary, NSString;
 
 @protocol ICInAppMessageManagerProtocol <NSObject>
+- (void)setProperty:(id)arg1 forKey:(NSString *)arg2 bundleIdentifier:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
+- (void)getPropertyForKey:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(id, NSError *))arg3;
+- (void)setGlobalProperty:(id)arg1 forKey:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)getGlobalPropertyForKey:(NSString *)arg1 completion:(void (^)(id, NSError *))arg2;
 - (void)removeMetadataForMessageIdentifier:(NSString *)arg1 bundleIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)updateMetadata:(ICInAppMessageMetadataEntry *)arg1 messageIdentifier:(NSString *)arg2 bundleIdentifier:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)getAllMetadataForBundleIdentifier:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;

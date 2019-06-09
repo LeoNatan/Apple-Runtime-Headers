@@ -10,6 +10,7 @@
 
 @class OADBackdrop, OADCamera, OADLightRig;
 
+__attribute__((visibility("hidden")))
 @interface OADScene3D : NSObject <NSCopying>
 {
     OADCamera *mCamera;

@@ -12,19 +12,17 @@
 {
     BOOL _ubiquityEnabled;
     BOOL _loggingEnabled;
-    BOOL _liveConversion;
     BOOL _fromiCloudUpdate;
     double _localTimeStamp;
     NSUbiquitousKeyValueStore *_defaultStore;
     NSTimer *_loggingTimer;
     unsigned long long _logLevel;
+    NSString *_applicationIdentifier;
     NSString *_showsAssociatedWordsDefaultsKey;
     NSString *_adjustsWordFrequencyDefaultsKey;
     NSString *_inputMode;
 }
 
-+ (void)setLiveConversion:(BOOL)arg1;
-+ (BOOL)isLiveConversion;
 + (void)setLogLevel:(unsigned long long)arg1;
 + (unsigned long long)logLevel;
 + (void)setLoggingEnabled:(BOOL)arg1;
@@ -39,7 +37,7 @@
 @property(nonatomic) BOOL fromiCloudUpdate; // @synthesize fromiCloudUpdate=_fromiCloudUpdate;
 @property(readonly, nonatomic) NSString *adjustsWordFrequencyDefaultsKey; // @synthesize adjustsWordFrequencyDefaultsKey=_adjustsWordFrequencyDefaultsKey;
 @property(readonly, nonatomic) NSString *showsAssociatedWordsDefaultsKey; // @synthesize showsAssociatedWordsDefaultsKey=_showsAssociatedWordsDefaultsKey;
-@property(nonatomic) BOOL liveConversion; // @synthesize liveConversion=_liveConversion;
+@property(readonly, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(nonatomic) unsigned long long logLevel; // @synthesize logLevel=_logLevel;
 @property(nonatomic) BOOL loggingEnabled; // @synthesize loggingEnabled=_loggingEnabled;
 @property(retain, nonatomic) NSTimer *loggingTimer; // @synthesize loggingTimer=_loggingTimer;
@@ -52,7 +50,6 @@
 - (void)postDistributedNotificationName:(id)arg1 withUserInfo:(id)arg2;
 @property(readonly, nonatomic) NSString *wubihuaKeyMappingToolTip;
 @property(readonly, nonatomic) NSString *fontSizeDefaultsKey;
-@property(readonly, nonatomic) NSString *applicationIdentifier;
 - (void)keyboardLayoutIDWithHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic) BOOL usesHalfwidthPunctuation;
 @property(nonatomic) BOOL usesLastUsedLatinKeyboardLayout;
@@ -73,7 +70,6 @@
 @property(nonatomic) BOOL fuzzyPinyinEnabled;
 @property(nonatomic) int shuangpinLayout;
 @property(nonatomic) BOOL autocorrectionEnabled;
-@property(nonatomic) BOOL addSpacesForLatinWords;
 @property(nonatomic) BOOL WBHInputKeysRemapped;
 @property(nonatomic) BOOL usesWBHTCIM;
 @property(nonatomic) BOOL usesWBHSCIM;
@@ -87,6 +83,7 @@
 @property(nonatomic) BOOL usesCangjieDynamicPrompt;
 @property(readonly, nonatomic) BOOL usesDynamicPrompt;
 @property(readonly, nonatomic) unsigned long long scriptType;
+- (unsigned long long)language;
 - (void)disableUbiquity;
 - (void)updateiCloud:(id)arg1;
 - (void)pushToCloud;

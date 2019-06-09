@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)onScreenWindowCountForConnectionID:(unsigned int)arg1;
 + (unsigned long long)onScreenWindowCount;
 + (void)orderApplicationWindowsFront;
++ (long long)windowCount;
 + (id)windowWithWindowID:(unsigned int)arg1;
 + (id)window;
 + (id)windowWithConnectionID:(unsigned int)arg1;
@@ -105,6 +106,7 @@ __attribute__((visibility("hidden")))
 @property BOOL hasMainAppearance; // @dynamic hasMainAppearance;
 @property double opacity; // @dynamic opacity;
 @property(copy) struct CGSRegionObject *opaqueShape; // @dynamic opaqueShape;
+@property(readonly) unsigned int ownerID; // @dynamic ownerID;
 @property(copy) NSDictionary *shadowProperties; // @dynamic shadowProperties;
 @property(copy) struct CGSRegionObject *shape; // @dynamic shape;
 @property BOOL useActiveShadow; // @dynamic useActiveShadow;

@@ -19,16 +19,12 @@ __attribute__((visibility("hidden")))
     SCRValueChangeMonitor *__valueChangeMonitor;
 }
 
-@property(readonly, retain, nonatomic) SCRValueChangeMonitor *_valueChangeMonitor; // @synthesize _valueChangeMonitor=__valueChangeMonitor;
+@property(readonly, nonatomic) SCRValueChangeMonitor *_valueChangeMonitor; // @synthesize _valueChangeMonitor=__valueChangeMonitor;
 @property(copy, nonatomic, setter=_setCurrentlyFocusedComponent:) NSString *_currentlyFocusedComponent; // @synthesize _currentlyFocusedComponent=__currentlyFocusedComponent;
 @property(readonly, copy, nonatomic) NSOrderedSet *_supportedDateTimeComponents; // @synthesize _supportedDateTimeComponents=__supportedDateTimeComponents;
 @property(retain, nonatomic, setter=_setCachedDateValue:) NSDate *_cachedDateValue; // @synthesize _cachedDateValue=__cachedDateValue;
 - (void).cxx_destruct;
-- (BOOL)brailleLineAllowsChildren;
-- (id)brailleLineElementForUIElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)sendBrailleLineWithElement:(id)arg1 focusThrough:(BOOL)arg2 forceRebuild:(BOOL)arg3;
+- (long long)brailleLineType;
 - (id)valueDescription;
 - (id)roleDescription;
 - (BOOL)_hasTimeComponents;
@@ -51,10 +47,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)_changeComponentWithRequest:(id)arg1 action:(long long)arg2;
 - (id)_dateTimeOrderingFromFormat:(id)arg1;
 - (id)_dateTimeComponentsFromFlags:(unsigned long long)arg1;
-@property(nonatomic, setter=_setAccessibilityDateValue:) NSDate *_accessibilityDateValue;
+@property(retain, nonatomic, setter=_setAccessibilityDateValue:) NSDate *_accessibilityDateValue;
 - (BOOL)didHandleNewValueAfterPolling:(id)arg1;
 - (BOOL)isControlElement;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)isInteractive;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 

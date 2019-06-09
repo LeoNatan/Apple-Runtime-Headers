@@ -17,7 +17,6 @@
     NSNotificationCenter *_notificationCenter;
 }
 
-+ (id)daySettingToString:(unsigned long long)arg1 longVersion:(_Bool)arg2 everyWeekdayVersion:(_Bool)arg3 showNever:(_Bool)arg4;
 + (id)_filteredAlarms:(id)arg1 afterDate:(id)arg2 maxCount:(unsigned long long)arg3 filter:(CDUnknownBlockType)arg4;
 + (id)assistantSyncNotificationName;
 + (void)warmUp;

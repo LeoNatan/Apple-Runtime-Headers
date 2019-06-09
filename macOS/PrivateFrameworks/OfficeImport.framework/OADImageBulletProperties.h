@@ -8,6 +8,7 @@
 
 @class OADBlipRef;
 
+__attribute__((visibility("hidden")))
 @interface OADImageBulletProperties : OADBulletProperties
 {
     OADBlipRef *mImage;

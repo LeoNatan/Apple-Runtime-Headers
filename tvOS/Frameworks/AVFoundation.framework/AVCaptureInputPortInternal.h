@@ -8,6 +8,7 @@
 
 @class AVCaptureInput, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureInputPortInternal : NSObject
 {
     AVCaptureInput *input;
@@ -17,6 +18,8 @@
     _Bool enabled;
     int changeSeed;
     NSString *sourceID;
+    NSString *sourceDeviceType;
+    long long sourceDevicePosition;
 }
 
 - (void)dealloc;

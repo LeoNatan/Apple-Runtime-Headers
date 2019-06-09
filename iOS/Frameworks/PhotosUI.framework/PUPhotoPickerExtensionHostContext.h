@@ -8,55 +8,43 @@
 
 #import <PhotosUI/PUPhotoPickerHostService-Protocol.h>
 
-@class NSNumber, NSString, NSUUID, PUPhotoPickerAppearance;
-@protocol PUPhotoPickerActionHandler, PUPhotoPickerHostService;
+@class NSNumber, NSString, NSUUID;
+@protocol PUPhotoPickerHostService;
 
 __attribute__((visibility("hidden")))
 @interface PUPhotoPickerExtensionHostContext : PUPhotoPickerAbstractExtensionContext <PUPhotoPickerHostService>
 {
     _Bool _cachedDidDisplayPhotoPickerPreview;
-    id <PUPhotoPickerActionHandler> _actionDisplayHandler;
     NSString *_photoPickerViewControllerTitle;
     NSString *_photoPickerViewControllerPrompt;
     NSNumber *_photoPickerNavigationBarHidden;
     id <PUPhotoPickerHostService> _delegate;
     NSUUID *_requestIdentifier;
-    NSNumber *_actionType;
-    NSString *_actionTypeDescription;
-    NSNumber *_secondaryActionType;
-    PUPhotoPickerAppearance *_photoPickerAppearance;
     NSNumber *_cachedDidDisplayPhotoPickerSourceType;
 }
 
 @property(nonatomic) _Bool cachedDidDisplayPhotoPickerPreview; // @synthesize cachedDidDisplayPhotoPickerPreview=_cachedDidDisplayPhotoPickerPreview;
 @property(retain, nonatomic) NSNumber *cachedDidDisplayPhotoPickerSourceType; // @synthesize cachedDidDisplayPhotoPickerSourceType=_cachedDidDisplayPhotoPickerSourceType;
-@property(retain, nonatomic) PUPhotoPickerAppearance *photoPickerAppearance; // @synthesize photoPickerAppearance=_photoPickerAppearance;
-@property(retain, nonatomic) NSNumber *secondaryActionType; // @synthesize secondaryActionType=_secondaryActionType;
-@property(retain, nonatomic) NSString *actionTypeDescription; // @synthesize actionTypeDescription=_actionTypeDescription;
-@property(retain, nonatomic) NSNumber *actionType; // @synthesize actionType=_actionType;
 @property(retain, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(nonatomic) __weak id <PUPhotoPickerHostService> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSNumber *photoPickerNavigationBarHidden; // @synthesize photoPickerNavigationBarHidden=_photoPickerNavigationBarHidden;
 @property(copy, nonatomic) NSString *photoPickerViewControllerPrompt; // @synthesize photoPickerViewControllerPrompt=_photoPickerViewControllerPrompt;
 @property(copy, nonatomic) NSString *photoPickerViewControllerTitle; // @synthesize photoPickerViewControllerTitle=_photoPickerViewControllerTitle;
-@property(nonatomic) __weak id <PUPhotoPickerActionHandler> actionDisplayHandler; // @synthesize actionDisplayHandler=_actionDisplayHandler;
 - (void).cxx_destruct;
 - (id)_pathExtensionFromData:(id)arg1 url:(id)arg2;
+- (id)_JPEGDataFromImage:(id)arg1;
 - (id)_JPEGDataFromImageData:(id)arg1;
 - (_Bool)_isHEIFImageFormatFromData:(id)arg1 url:(id)arg2;
+- (id)_resizeImage:(id)arg1 toMaximumDimension:(double)arg2;
+- (id)_createURLFromPath:(id)arg1 token:(id)arg2;
 - (id)_UIImagePickerControllerInfoDictionaryFromPhotoPickerInfoDictionary:(id)arg1;
 - (void)performTraitCollectionUpdateUsingData:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)performAppearanceUpdateUsingPhotoPickerAppearanceDictionary:(id)arg1;
 - (void)performPhotoPickerPreviewOfFirstAsset;
 - (void)initiatePhotoPickerSelection;
-- (void)displaySecondaryActionWithType:(id)arg1;
-- (void)displayActionTypeDescription:(id)arg1;
-- (void)displayActionWithType:(id)arg1;
 - (void)didSelectMediaWithInfoDictionary:(id)arg1;
 - (void)didSelectMultipleMediaItemsWithInfoDictionaries:(id)arg1;
 - (void)didDisplayPhotoPickerPreview;
 - (void)didDisplayPhotoPickerSourceType:(id)arg1;
-- (void)requestViewControllerFromPhotoPickerWithRequestIdentifier:(id)arg1;
 - (void)dismissCurrentViewControllerFromPhotoPickerAnimated:(id)arg1;
 - (void)invalidatePhotoPickerHostServices;
 - (void)cancelPhotoPicker;

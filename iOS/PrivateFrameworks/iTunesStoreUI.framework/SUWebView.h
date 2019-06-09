@@ -24,6 +24,7 @@
 
 @property(retain, nonatomic) UIColor *topBackgroundColor; // @synthesize topBackgroundColor=_topBackgroundColor;
 @property(nonatomic) _Bool showsTopBackgroundShadow; // @synthesize showsTopBackgroundShadow=_showsTopBackgroundShadow;
+- (void).cxx_destruct;
 - (void)view:(id)arg1 didSetFrame:(struct CGRect)arg2 oldFrame:(struct CGRect)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)_setRichTextReaderViewportSettings;
@@ -35,7 +36,6 @@
 - (_Bool)getStatusBarStyle:(long long *)arg1;
 - (void)endSynchronousLayout;
 - (void)beginSynchronousLayout;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

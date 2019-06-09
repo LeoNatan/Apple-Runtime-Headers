@@ -11,7 +11,9 @@
 @class NSString;
 
 @interface NSURL (QLPreviewConvenienceAdditions) <QLPreviewItem>
++ (id)previewItemVirtualNodeURLWithPath:(id)arg1;
 @property(readonly) NSURL *previewItemURL;
+- (BOOL)isPreviewItemVirtualNodeURL;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

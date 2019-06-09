@@ -4,21 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CommerceKit/CKItemLookupRequest.h>
+#import <AppleMediaServices/AMSLookup.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface LPiTunesMediaLookupTask : CKItemLookupRequest
+@interface LPiTunesMediaLookupTask : AMSLookup
 {
     NSString *_identifier;
     NSString *_storefrontCountryCode;
 }
 
 - (void).cxx_destruct;
-- (id)parameters;
 - (void)start:(CDUnknownBlockType)arg1;
+- (id)_compileQueryParametersWithBundleIds:(id)arg1 itemIds:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 storefrontCountryCode:(id)arg2;
+- (id)callerID;
+- (id)sharedBag;
 
 @end
 

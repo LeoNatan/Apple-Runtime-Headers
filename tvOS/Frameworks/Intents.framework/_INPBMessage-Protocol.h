@@ -6,11 +6,10 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class NSArray, NSString, _INPBContact, _INPBCurrencyAmountValue, _INPBDataString, _INPBDateTime, _INPBInteger, _INPBMessage, _INPBMessageAttachment, _INPBMessageLinkMetadata;
+@class NSArray, NSString, _INPBContact, _INPBCurrencyAmountValue, _INPBDataString, _INPBDateTime, _INPBInteger, _INPBMessage, _INPBMessageLinkMetadata;
 
 @protocol _INPBMessage <NSObject>
 + (Class)recipientType;
-+ (Class)attachmentType;
 @property(nonatomic) _Bool hasType;
 @property(nonatomic) int type;
 @property(readonly, nonatomic) _Bool hasSpeakableGroupName;
@@ -47,8 +46,6 @@
 @property(copy, nonatomic) NSString *content;
 @property(readonly, nonatomic) unsigned long long attributesCount;
 @property(readonly, nonatomic) int *attributes;
-@property(readonly, nonatomic) unsigned long long attachmentsCount;
-@property(copy, nonatomic) NSArray *attachments;
 - (int)StringAsType:(NSString *)arg1;
 - (NSString *)typeAsString:(int)arg1;
 - (_INPBContact *)recipientAtIndex:(unsigned long long)arg1;
@@ -62,8 +59,5 @@
 - (int)attributeAtIndex:(unsigned long long)arg1;
 - (void)addAttribute:(int)arg1;
 - (void)clearAttributes;
-- (_INPBMessageAttachment *)attachmentAtIndex:(unsigned long long)arg1;
-- (void)addAttachment:(_INPBMessageAttachment *)arg1;
-- (void)clearAttachments;
 @end
 

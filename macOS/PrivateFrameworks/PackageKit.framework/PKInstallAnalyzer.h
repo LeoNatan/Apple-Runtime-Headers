@@ -22,11 +22,19 @@
     NSMutableArray *_contentCachingPaths;
     long long _kextPathCount;
     long long _systemLibraryCount;
+    long long _prebootFilesCount;
     long long _xpcCachePathCount;
     NSDictionary *_bundlePathToComponentMap;
     NSMutableDictionary *_bundleIdentToXATTRMap;
+    NSMutableDictionary *_defaultPathByBundleIdentifier;
+    NSMutableDictionary *_actualPathByBundleIdentifier;
+    NSMutableDictionary *_versionByBundleIdentifier;
+    NSMutableDictionary *_downgradePathByBundleIdentifier;
+    NSMutableArray *_topBundleIdentifiers;
+    NSMutableArray *_actualFileInstallPaths;
 }
 
+- (id)_knownPrebootFileLocations;
 - (void)_findRegistrationPathsForPackageSpecifier:(id)arg1;
 - (void)_findDeferredInstallPathsForPackageSpecifier:(id)arg1;
 - (void)_findMaskPathsAndSkipComponentsForPackageSpecifier:(id)arg1;
@@ -38,7 +46,17 @@
 - (BOOL)_shouldAllowReceiptBasedFileObsoletingForPackage:(id)arg1;
 - (BOOL)_isUnsafeToObsoleteComponent:(id)arg1;
 - (id)extendedAttributesForComponent:(id)arg1;
+- (id)actualFileInstallPathsViolatingReadOnlySystemLocationsEvaluatingDestinationPath:(BOOL)arg1;
+- (id)_parseFirmlinksOnDestination;
+- (id)actualFileInstallPathsWithoutParents;
+- (id)actualFileInstallPaths;
+- (id)topBundleIdentifiers;
+- (id)downgradePathsForBundleIdentifiers;
+- (id)installedVersionForBundleIdentifiers;
+- (id)actualInstallPathForBundleIdentifiers;
+- (id)defaultInstallPathForBundleIdentifiers;
 - (BOOL)installsXPCCacheContent;
+- (BOOL)installsPrebootResources;
 - (BOOL)installsSystemLibraries;
 - (BOOL)installsKexts;
 - (id)bundlePathsForContentCaching;
@@ -51,6 +69,7 @@
 - (id)skipComponentsForPackageSpecifier:(id)arg1;
 - (id)maskPathsForPackageSpecifier:(id)arg1;
 - (void)_sanitizePackageDataForRequest;
+- (void)_computeManifestForSpecifier:(id)arg1;
 - (void)_analyzeIncludingObsoletion:(BOOL)arg1;
 - (void)dealloc;
 - (id)initWithInstallRequest:(id)arg1 includeObsoletion:(BOOL)arg2;

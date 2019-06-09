@@ -13,5 +13,6 @@
 - (void)captureController:(PKPaymentDocumentSubmissionController *)arg1 requestsPushViewController:(UIViewController *)arg2 animated:(_Bool)arg3;
 - (void)captureController:(PKPaymentDocumentSubmissionController *)arg1 requestsPresentViewController:(UIViewController *)arg2 animated:(_Bool)arg3;
 - (void)captureController:(PKPaymentDocumentSubmissionController *)arg1 didChangeStateTo:(int)arg2;
+- (void)captureController:(PKPaymentDocumentSubmissionController *)arg1 showLoading:(_Bool)arg2;
 @end
 

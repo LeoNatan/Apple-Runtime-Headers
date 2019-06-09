@@ -7,7 +7,11 @@
 #import <Intents/INImage.h>
 
 @interface INImage (IntentsUI_Private)
++ (struct CGSize)imageSizeForIntentResponse:(id)arg1;
++ (id)imageWithUIImage:(id)arg1;
++ (id)imageWithCGImage:(struct CGImage *)arg1;
 - (id)_inui_downscaledPNGImageOfSize:(CDStruct_c3b9c2ee)arg1 error:(id *)arg2;
 - (CDStruct_c3b9c2ee)_inui_fetchImageSize;
+- (void)fetchUIImageWithCompletion:(CDUnknownBlockType)arg1;
 @end
 

@@ -48,7 +48,8 @@
         unsigned int _pushSecureDelete:1;
         unsigned int _refreshAfterSave:1;
         unsigned int _allowAncillary:1;
-        unsigned int _reservedFlags:2;
+        unsigned int _generatedMutatedIDsNotification:1;
+        unsigned int _reservedFlags:1;
     } _flags;
     NSMutableSet *_unprocessedChanges;
     NSMutableSet *_unprocessedDeletes;
@@ -67,11 +68,8 @@
     double _fetchTimestamp;
     long long _referenceCallbackRegistration;
     id _referenceQueue;
-    id _reserved3;
-    id _reserved4;
     int _cd_rc;
     int _ignoreChangeNotification;
-    id _reserved6;
     NSString *_contextLabel;
     id *_additionalPrivateIvars;
 }
@@ -138,6 +136,7 @@
 - (id)existingObjectWithID:(id)arg1 error:(id *)arg2;
 - (id)objectWithID:(id)arg1;
 - (BOOL)save:(id *)arg1;
+- (void)_advanceQueryGenerationForSave;
 - (id)_generateOptLockExceptionForConstraintFailure:(id)arg1;
 - (void)_youcreatedanNSManagedObjectContextOnthemainthreadandillegallypassedittoabackgroundthread;
 - (void)_thereIsNoSadnessLikeTheDeathOfOptimism;
@@ -158,7 +157,6 @@
 @property(retain, nonatomic) NSUndoManager *undoManager;
 - (void)_setUndoManager:(id)arg1;
 @property double stalenessInterval;
-- (void)finalize;
 - (void)dealloc;
 - (void)assertOnImproperDealloc;
 - (void)_dealloc__;
@@ -176,7 +174,6 @@
 @property(nonatomic) BOOL retainsRegisteredObjects;
 - (void)_setRetainsRegisteredObjects:(BOOL)arg1;
 @property(retain) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-- (void)_setPersistentStoreCoordinator:(id)arg1;
 - (void)_setAllowAncillaryEntities:(BOOL)arg1;
 - (BOOL)_allowAncillaryEntities;
 - (void)_persistentStoreDidUpdateAdditionalRowsWithNewVersions:(id)arg1;
@@ -228,7 +225,7 @@
 - (id)_retainedRegisteredObjects;
 - (void)_resetAllChanges;
 - (id)_initWithParentObjectStore:(unsigned long long)arg1;
-- (void)_changeIDsForManagedObjects:(id)arg1 toIDs:(id)arg2;
+- (id)_changeIDsForManagedObjects:(id)arg1 toIDs:(id)arg2;
 - (void)_dispose:(BOOL)arg1;
 - (void)_disposeObjects:(id *)arg1 count:(unsigned long long)arg2 notifyParent:(BOOL)arg3;
 - (void)_performCoordinatorActionAndWait:(CDUnknownBlockType)arg1;
@@ -251,6 +248,7 @@
 - (id)performFetch:(id)arg1 error:(id *)arg2;
 - (id)_unsafeTransactionAuthor;
 - (id)_unsafeName;
+- (void)_setPersistentStoreCoordinator:(id)arg1;
 - (void)_addObjectIDsUpdatedByTriggers:(id)arg1;
 - (void)_processObjectStoreChanges:(id)arg1;
 - (void)_propagateDeletesUsingTable:(id)arg1;
@@ -305,6 +303,7 @@
 - (void)_postObjectsDidChangeNotificationWithUserInfo:(id)arg1;
 - (void)_processEndOfEventNotification:(id)arg1;
 - (void)_enqueueEndOfEventNotification;
+- (void)_registerMutatedObjectIDsNotifications;
 - (void)handlePeerContextDidSaveNotification:(id)arg1;
 - (void)_mergeChangesFromRemoteContextSave:(id)arg1;
 - (void)_stopConflictDetectionForObject:(id)arg1;

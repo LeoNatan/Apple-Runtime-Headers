@@ -73,6 +73,7 @@ __attribute__((visibility("hidden")))
 - (float)computeCameraTravelDistance;
 - (void)performEmotionalRejectionOnCluster:(id)arg1;
 - (int)computeEmotion:(id)arg1;
+- (void)addImageFromIOSurface:(struct __IOSurface *)arg1 properties:(id)arg2 identifier:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)addYUVImage:(id)arg1 properties:(id)arg2 identifier:(id)arg3 imageProps:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)processClusters:(_Bool)arg1;
 - (float)computeActionSelectionThreshold;

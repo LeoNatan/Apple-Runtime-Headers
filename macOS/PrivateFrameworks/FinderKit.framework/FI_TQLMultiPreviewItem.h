@@ -28,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (struct TString)urlString;
 @property(readonly, nonatomic) const struct TFENodeVector *nodes; // @dynamic nodes;
 - (BOOL)isEqual:(id)arg1;
-- (id)init;
 - (id)initWithNodes:(const struct TFENodeVector *)arg1;
 
 // Remaining properties

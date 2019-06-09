@@ -6,6 +6,8 @@
 
 #import <SockPuppetGizmo/SPInterfaceObject-Protocol.h>
 
+@class WKInterfaceObject;
+
 @protocol SPInterfaceItem <SPInterfaceObject>
 - (_Bool)hasIntrinsicHeight;
 - (struct CGSize)interfacePlistSize;
@@ -23,6 +25,7 @@
 - (void)setInterfaceAlignment:(int)arg1;
 
 @optional
+- (void)setWKInterfaceObject:(WKInterfaceObject *)arg1;
 - (void)willDisappearForNotificationUI;
 - (void)willAppearForNotificationUI;
 - (void)prepareInterfaceItemForIB;

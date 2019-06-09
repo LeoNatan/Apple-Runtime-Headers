@@ -9,6 +9,9 @@
 @class GEOMapRegion, VKViewportInfo;
 
 @protocol VKCameraController <NSObject>
+@property(readonly, nonatomic) struct RunLoopController *runLoopController;
+@property(readonly, nonatomic) struct AnimationRunner *animationRunner;
+@property(readonly, nonatomic) struct MapDataAccess *mapDataAccess;
 @property(readonly, nonatomic) _Bool isFullyPitched;
 @property(readonly, nonatomic) _Bool isRotated;
 @property(readonly, nonatomic) _Bool isPitched;

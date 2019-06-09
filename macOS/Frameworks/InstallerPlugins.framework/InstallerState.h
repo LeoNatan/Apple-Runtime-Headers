@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface InstallerState : NSObject
 {
@@ -24,6 +24,7 @@
 @property(readonly) BOOL licenseAgreed;
 - (void)dealloc;
 - (id)init;
+@property NSDictionary *stateDictionary;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)objectForKey:(id)arg1;
 - (void)removeChoiceDictionaries;

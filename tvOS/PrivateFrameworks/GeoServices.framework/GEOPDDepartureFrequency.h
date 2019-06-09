@@ -22,22 +22,18 @@ __attribute__((visibility("hidden")))
     unsigned int _minDepartureFrequency;
     _Bool _isEstimated;
     struct {
-        unsigned int displayDepartureFrequency:1;
-        unsigned int earliestDepartureTime:1;
-        unsigned int latestDepartureTime:1;
-        unsigned int maxDepartureFrequency:1;
-        unsigned int minDepartureFrequency:1;
-        unsigned int isEstimated:1;
-    } _has;
+        unsigned int has_displayDepartureFrequency:1;
+        unsigned int has_earliestDepartureTime:1;
+        unsigned int has_latestDepartureTime:1;
+        unsigned int has_maxDepartureFrequency:1;
+        unsigned int has_minDepartureFrequency:1;
+        unsigned int has_isEstimated:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int displayDepartureFrequency; // @synthesize displayDepartureFrequency=_displayDepartureFrequency;
-@property(nonatomic) _Bool isEstimated; // @synthesize isEstimated=_isEstimated;
-@property(nonatomic) unsigned int latestDepartureTime; // @synthesize latestDepartureTime=_latestDepartureTime;
-@property(nonatomic) unsigned int earliestDepartureTime; // @synthesize earliestDepartureTime=_earliestDepartureTime;
-@property(nonatomic) unsigned int maxDepartureFrequency; // @synthesize maxDepartureFrequency=_maxDepartureFrequency;
-@property(nonatomic) unsigned int minDepartureFrequency; // @synthesize minDepartureFrequency=_minDepartureFrequency;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
@@ -46,14 +42,21 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool hasDisplayDepartureFrequency;
+@property(nonatomic) unsigned int displayDepartureFrequency;
 @property(nonatomic) _Bool hasIsEstimated;
+@property(nonatomic) _Bool isEstimated;
 @property(nonatomic) _Bool hasLatestDepartureTime;
+@property(nonatomic) unsigned int latestDepartureTime;
 @property(nonatomic) _Bool hasEarliestDepartureTime;
+@property(nonatomic) unsigned int earliestDepartureTime;
 @property(nonatomic) _Bool hasMaxDepartureFrequency;
+@property(nonatomic) unsigned int maxDepartureFrequency;
 @property(nonatomic) _Bool hasMinDepartureFrequency;
+@property(nonatomic) unsigned int minDepartureFrequency;
 @property(readonly, nonatomic) double frequencyForSorting;
 - (_Bool)isValidAtDate:(id)arg1;
 @property(readonly, nonatomic) long long frequencyType;

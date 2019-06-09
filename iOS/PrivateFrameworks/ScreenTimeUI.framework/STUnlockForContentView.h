@@ -15,8 +15,9 @@
 
 @property(readonly, nonatomic) UILabel *unlockToViewContentLabel; // @synthesize unlockToViewContentLabel=_unlockToViewContentLabel;
 - (void).cxx_destruct;
-- (id)constraintsForBaseView:(id)arg1;
-- (id)init;
+- (void)_stUnlockForContentViewCommonInit;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

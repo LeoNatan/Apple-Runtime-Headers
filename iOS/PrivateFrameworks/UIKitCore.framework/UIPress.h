@@ -18,6 +18,7 @@
     _Bool _isDelayed;
     _Bool _sentPressesEnded;
     _Bool _longClick;
+    unsigned int _contextID;
     double _timestamp;
     long long _phase;
     long long _type;
@@ -33,6 +34,7 @@
 @property(nonatomic) unsigned long long clickCount; // @synthesize clickCount=_clickCount;
 @property(nonatomic) _Bool sentPressesEnded; // @synthesize sentPressesEnded=_sentPressesEnded;
 @property(nonatomic) _Bool isDelayed; // @synthesize isDelayed=_isDelayed;
+@property(readonly, nonatomic) unsigned int contextID; // @synthesize contextID=_contextID;
 @property(nonatomic, getter=_gameControllerComponent, setter=_setGameControllerComponent:) unsigned long long gameControllerComponent; // @synthesize gameControllerComponent=_gameControllerComponent;
 @property(nonatomic, getter=_source, setter=_setSource:) unsigned long long source; // @synthesize source=_source;
 @property(nonatomic) double force; // @synthesize force=_force;

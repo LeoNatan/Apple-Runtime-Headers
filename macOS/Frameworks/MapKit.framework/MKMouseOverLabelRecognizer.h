@@ -9,6 +9,7 @@
 @class NSTrackingArea, NSView, VKLabelMarker;
 @protocol MKMouseOverLabelRecognizerDelegate, MKMouseOverLabelTarget;
 
+__attribute__((visibility("hidden")))
 @interface MKMouseOverLabelRecognizer : NSObject
 {
     VKLabelMarker *_labelMarker;

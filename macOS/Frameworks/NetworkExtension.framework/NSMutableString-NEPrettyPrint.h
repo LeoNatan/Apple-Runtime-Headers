@@ -8,7 +8,7 @@
 
 @interface NSMutableString (NEPrettyPrint)
 - (void)appendToStringAtColumnWithContent:(int *)arg1 column:(unsigned char)arg2 content:(const char *)arg3 appendAsNewLine:(BOOL)arg4 addNewLine:(BOOL)arg5;
-- (void)appendPrettyInt:(int)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned long long)arg4;
+- (void)appendPrettyInt:(long long)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned long long)arg4;
 - (void)appendPrettyBOOL:(BOOL)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned long long)arg4;
 - (void)appendPrettyObject:(id)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned long long)arg4;
 @end

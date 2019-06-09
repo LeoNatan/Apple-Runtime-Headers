@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     NSString *_viewControllerClassName;
     NSUUID *_contextToken;
     NSArray *_serializedAppearanceCustomizations;
-    _Bool _legacyAppearance;
     id _exportedHostingObject;
     Class _remoteViewControllerClass;
     id <_UIViewServiceDeputyXPCInterface> _serviceViewControllerDeputyInterface;
@@ -30,9 +29,9 @@ __attribute__((visibility("hidden")))
     _UIAsyncInvocation *_requestCancellationInvocation;
 }
 
-+ (id)requestViewControllerWithService:(id)arg1 serializedAppearanceCustomizations:(id)arg2 legacyAppearance:(_Bool)arg3 exportedHostingObject:(id)arg4 remoteViewControllerClass:(Class)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(CDUnknownBlockType)arg7;
-+ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 legacyAppearance:(_Bool)arg4 exportedHostingObject:(id)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(CDUnknownBlockType)arg7;
-+ (id)__requestRemoteViewController:(id)arg1 service:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 serializedAppearanceCustomizations:(id)arg4 legacyAppearance:(_Bool)arg5 exportedHostingObject:(id)arg6 serviceViewControllerDeputyInterface:(id)arg7 connectionHandler:(CDUnknownBlockType)arg8;
++ (id)requestViewControllerWithService:(id)arg1 serializedAppearanceCustomizations:(id)arg2 exportedHostingObject:(id)arg3 remoteViewControllerClass:(Class)arg4 serviceViewControllerDeputyInterface:(id)arg5 connectionHandler:(CDUnknownBlockType)arg6;
++ (id)requestViewController:(id)arg1 fromServiceWithBundleIdentifier:(id)arg2 serializedAppearanceCustomizations:(id)arg3 exportedHostingObject:(id)arg4 serviceViewControllerDeputyInterface:(id)arg5 connectionHandler:(CDUnknownBlockType)arg6;
++ (id)__requestRemoteViewController:(id)arg1 service:(id)arg2 fromServiceWithBundleIdentifier:(id)arg3 serializedAppearanceCustomizations:(id)arg4 exportedHostingObject:(id)arg5 serviceViewControllerDeputyInterface:(id)arg6 connectionHandler:(CDUnknownBlockType)arg7;
 - (void).cxx_destruct;
 - (id)_cancelWithError:(id)arg1;
 - (void)_didFinishEstablishingConnection;

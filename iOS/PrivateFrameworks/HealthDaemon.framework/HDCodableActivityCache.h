@@ -14,7 +14,9 @@
 @interface HDCodableActivityCache : PBCodable <HDDecoding, NSCopying>
 {
     double _activeHours;
+    double _activeHoursGoal;
     double _briskMinutes;
+    double _briskMinutesGoal;
     long long _cacheIndex;
     double _deepBreathingDuration;
     double _energyBurned;
@@ -31,7 +33,9 @@
     HDCodableSample *_sample;
     struct {
         unsigned int activeHours:1;
+        unsigned int activeHoursGoal:1;
         unsigned int briskMinutes:1;
+        unsigned int briskMinutesGoal:1;
         unsigned int cacheIndex:1;
         unsigned int deepBreathingDuration:1;
         unsigned int energyBurned:1;
@@ -48,6 +52,8 @@
 
 + (Class)dailyBriskMinutesStatisticsType;
 + (Class)dailyEnergyBurnedStatisticsType;
+@property(nonatomic) double activeHoursGoal; // @synthesize activeHoursGoal=_activeHoursGoal;
+@property(nonatomic) double briskMinutesGoal; // @synthesize briskMinutesGoal=_briskMinutesGoal;
 @property(nonatomic) long long sequence; // @synthesize sequence=_sequence;
 @property(retain, nonatomic) NSMutableArray *dailyBriskMinutesStatistics; // @synthesize dailyBriskMinutesStatistics=_dailyBriskMinutesStatistics;
 @property(retain, nonatomic) NSMutableArray *dailyEnergyBurnedStatistics; // @synthesize dailyEnergyBurnedStatistics=_dailyEnergyBurnedStatistics;
@@ -74,6 +80,8 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(nonatomic) _Bool hasActiveHoursGoal;
+@property(nonatomic) _Bool hasBriskMinutesGoal;
 @property(nonatomic) _Bool hasSequence;
 - (id)dailyBriskMinutesStatisticsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)dailyBriskMinutesStatisticsCount;
@@ -96,6 +104,7 @@
 @property(nonatomic) _Bool hasEnergyBurned;
 @property(nonatomic) _Bool hasCacheIndex;
 @property(readonly, nonatomic) _Bool hasSample;
+- (id)_decodeCodableActivityStatisticsQuantityInfos:(id)arg1;
 - (_Bool)applyToObject:(id)arg1;
 - (id)decodedWalkingAndRunningDistanceQuantity;
 - (id)decodedEnergyBurnedGoalQuantity;

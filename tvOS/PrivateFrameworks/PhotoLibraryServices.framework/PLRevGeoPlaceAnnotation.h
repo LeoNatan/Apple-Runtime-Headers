@@ -18,9 +18,9 @@
 
 @property(retain, nonatomic) NSString *placeName; // @synthesize placeName=_placeName;
 @property(nonatomic) int placeLevel; // @synthesize placeLevel=_placeLevel;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (void)dealloc;
 - (id)initWithData:(id)arg1;
 - (id)init;
 

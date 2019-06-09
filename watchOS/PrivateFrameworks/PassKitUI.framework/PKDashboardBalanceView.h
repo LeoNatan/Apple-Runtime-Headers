@@ -4,18 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <PassKitUI/PKDashboardCollectionViewCell.h>
 
-@class NSString, UIButton, UILabel;
+@class NSString, UIButton, UIColor, UILabel;
 
-@interface PKDashboardBalanceView : UIView
+@interface PKDashboardBalanceView : PKDashboardCollectionViewCell
 {
     _Bool _isTemplateLayout;
     UILabel *_titleLabel;
     UILabel *_detailLabel;
     UIButton *_actionButton;
     _Bool _topUpEnabled;
-    NSString *_title;
     NSString *_balance;
     NSString *_topUpTitle;
     CDUnknownBlockType _topUpAction;
@@ -25,13 +24,14 @@
 @property(copy, nonatomic) CDUnknownBlockType topUpAction; // @synthesize topUpAction=_topUpAction;
 @property(copy, nonatomic) NSString *topUpTitle; // @synthesize topUpTitle=_topUpTitle;
 @property(copy, nonatomic) NSString *balance; // @synthesize balance=_balance;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_buttonPressed:(id)arg1;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
+@property(copy, nonatomic) UIColor *titleColor;
+@property(copy, nonatomic) NSString *title;
 - (void)resetFonts;
 - (void)createSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

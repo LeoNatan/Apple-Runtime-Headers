@@ -7,6 +7,7 @@
 #import <UIKit/UIViewController.h>
 
 #import <AssetExplorer/AEMessagesShelfLayoutDelegate-Protocol.h>
+#import <AssetExplorer/AEPluginEntryViewController-Protocol.h>
 #import <AssetExplorer/CKPluginEntryViewController-Protocol.h>
 #import <AssetExplorer/PUAssetExplorerReviewScreenViewControllerDelegate-Protocol.h>
 #import <AssetExplorer/PXAssetsSceneDelegate-Protocol.h>
@@ -17,10 +18,12 @@
 #import <AssetExplorer/PXTilingControllerTransitionDelegate-Protocol.h>
 #import <AssetExplorer/UIGestureRecognizerDelegate-Protocol.h>
 
-@class AEPackageTransport, AEWrappedDataSourceManager, NSMutableSet, NSString, PUReviewAssetsDataSourceManager, PUReviewAssetsMediaProvider, PUReviewDataSource, PXAssetsScene, PXBasicUIViewTileAnimator, PXScrollViewController, PXTilingController, UIColor;
+@class AEPackageTransport, AEWrappedDataSourceManager, NSMutableSet, NSString, PUAssetExplorerReviewScreenViewController, PUReviewAssetsDataSourceManager, PUReviewAssetsMediaProvider, PUReviewDataSource, PXAssetsScene, PXBasicUIViewTileAnimator, PXScrollViewController, PXTilingController, UIColor;
+@protocol CKPluginEntryViewControllerDelegate;
 
-@interface AEMessagesShelfViewController : UIViewController <PXReusableObjectPoolDelegate, PXAssetsSceneDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXTileSource, PXChangeObserver, PUAssetExplorerReviewScreenViewControllerDelegate, UIGestureRecognizerDelegate, CKPluginEntryViewController, AEMessagesShelfLayoutDelegate>
+@interface AEMessagesShelfViewController : UIViewController <AEPluginEntryViewController, PXReusableObjectPoolDelegate, PXAssetsSceneDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXTileSource, PXChangeObserver, PUAssetExplorerReviewScreenViewControllerDelegate, UIGestureRecognizerDelegate, CKPluginEntryViewController, AEMessagesShelfLayoutDelegate>
 {
+    id <CKPluginEntryViewControllerDelegate> _entryViewDelegate;
     PXTilingController *__tilingController;
     PXBasicUIViewTileAnimator *__tileAnimator;
     PXAssetsScene *__sceneController;
@@ -33,8 +36,10 @@
     NSMutableSet *__tilesInUse;
     long long __indexToScrollTo;
     UIColor *__roundedCornerOverlayFillColor;
+    PUAssetExplorerReviewScreenViewController *_presentedReviewController;
 }
 
+@property(retain, nonatomic) PUAssetExplorerReviewScreenViewController *presentedReviewController; // @synthesize presentedReviewController=_presentedReviewController;
 @property(retain, nonatomic) UIColor *_roundedCornerOverlayFillColor; // @synthesize _roundedCornerOverlayFillColor=__roundedCornerOverlayFillColor;
 @property(nonatomic, setter=_setIndexToScrollTo:) long long _indexToScrollTo; // @synthesize _indexToScrollTo=__indexToScrollTo;
 @property(readonly, nonatomic) NSMutableSet *_tilesInUse; // @synthesize _tilesInUse=__tilesInUse;
@@ -47,6 +52,7 @@
 @property(readonly, nonatomic) PXAssetsScene *_sceneController; // @synthesize _sceneController=__sceneController;
 @property(readonly, nonatomic) PXBasicUIViewTileAnimator *_tileAnimator; // @synthesize _tileAnimator=__tileAnimator;
 @property(readonly, nonatomic) PXTilingController *_tilingController; // @synthesize _tilingController=__tilingController;
+@property(nonatomic) __weak id <CKPluginEntryViewControllerDelegate> entryViewDelegate;
 - (void).cxx_destruct;
 - (id)_currentAssetsDataSource;
 - (void)_immediatelyGenerateAndStagePackageFromReviewAsset:(id)arg1 suppressLivePhoto:(_Bool)arg2 mediaOrigin:(long long)arg3;
@@ -69,6 +75,7 @@
 @property(readonly) _Bool wantsEdgeToEdgeLayout;
 - (_Bool)layoutShouldShowVideoDuration:(id)arg1;
 - (double)layout:(id)arg1 itemAtIndexPathDuration:(struct PXSimpleIndexPath)arg2;
+- (_Bool)layout:(id)arg1 itemAtIndexPathIsAnimatedImage:(struct PXSimpleIndexPath)arg2;
 - (_Bool)layout:(id)arg1 itemAtIndexPathIsLoop:(struct PXSimpleIndexPath)arg2;
 - (_Bool)layout:(id)arg1 itemAtIndexPathIsVideo:(struct PXSimpleIndexPath)arg2;
 - (long long)layout:(id)arg1 irisToggleStateForItemAtIndexPath:(struct PXSimpleIndexPath)arg2;
@@ -78,6 +85,8 @@
 - (void)_transportStagingStateDidChange;
 - (void)viewDidLoad;
 - (void)loadView;
+- (void)_dismissPresentedReviewController:(id)arg1 animated:(_Bool)arg2;
+- (void)_presentReviewViewController:(id)arg1;
 - (void)dealloc;
 - (id)initWithPackageTransport:(id)arg1;
 

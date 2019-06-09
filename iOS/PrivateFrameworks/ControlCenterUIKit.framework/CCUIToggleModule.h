@@ -8,12 +8,12 @@
 
 #import <ControlCenterUIKit/CCUIContentModule-Protocol.h>
 
-@class CCUICAPackageDescription, CCUIContentModuleContext, CCUIToggleViewController, NSString, UIColor, UIImage, UIViewController;
+@class CCUICAPackageDescription, CCUIContentModuleContext, NSHashTable, NSString, UIColor, UIImage, UIViewController;
 @protocol CCUIContentModuleBackgroundViewController, CCUIContentModuleContentViewController;
 
 @interface CCUIToggleModule : NSObject <CCUIContentModule>
 {
-    CCUIToggleViewController *_viewController;
+    NSHashTable *_contentViewControllers;
     CCUIContentModuleContext *_contentModuleContext;
     CCUICAPackageDescription *_glyphPackageDescription;
 }
@@ -21,7 +21,7 @@
 @property(readonly, copy, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
 @property(retain, nonatomic) CCUIContentModuleContext *contentModuleContext; // @synthesize contentModuleContext=_contentModuleContext;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) UIViewController<CCUIContentModuleContentViewController> *contentViewController;
+- (id)contentViewControllerForContext:(id)arg1;
 - (void)reconfigureView;
 - (void)refreshState;
 @property(readonly, copy, nonatomic) NSString *glyphState;
@@ -33,6 +33,7 @@
 
 // Remaining properties
 @property(readonly, nonatomic) UIViewController<CCUIContentModuleBackgroundViewController> *backgroundViewController;
+@property(readonly, nonatomic) UIViewController<CCUIContentModuleContentViewController> *contentViewController;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

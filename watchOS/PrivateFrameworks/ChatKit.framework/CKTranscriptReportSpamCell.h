@@ -8,6 +8,7 @@
 
 @class NSAttributedString, UIButton;
 
+__attribute__((visibility("hidden")))
 @interface CKTranscriptReportSpamCell : CKTranscriptLabelCell
 {
     _Bool _showReportSMSSpam;

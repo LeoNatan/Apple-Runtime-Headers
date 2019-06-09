@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIViewElement.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIImageDeckViewElement : SKUIViewElement
 {
     double _initialDragLeft;

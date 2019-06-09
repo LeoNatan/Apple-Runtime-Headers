@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
+#import <Message/ECAuthenticatableConnection-Protocol.h>
 #import <Message/MFDiagnosticsGenerator-Protocol.h>
 
-@class MFConnectionSettings, NSArray, NSString, _MFSocket;
-@protocol MFSASLSecurityLayer;
+@class ECNWConnectionWrapper, MFConnectionSettings, NSArray, NSString;
+@protocol ECSASLSecurityLayer;
 
-@interface MFConnection : NSObject <MFDiagnosticsGenerator>
+@interface MFConnection : NSObject <ECAuthenticatableConnection, MFDiagnosticsGenerator>
 {
-    id <MFSASLSecurityLayer> _securityLayer;
+    id <ECSASLSecurityLayer> _securityLayer;
     MFConnectionSettings *_connectionSettings;
-    _MFSocket *_socket;
+    ECNWConnectionWrapper *_socket;
     double _lastUsedTime;
     char *_buffer;
     long long _bufferRemainingBytes;
@@ -44,7 +45,11 @@
 + (void)logConnection:(id)arg1 type:(long long)arg2 data:(id)arg3;
 + (void)initialize;
 + (void)readLoggingDefaults;
+- (void).cxx_destruct;
 - (id)copyDiagnosticInformation;
+- (_Bool)_evaluateTrust:(struct __SecTrust *)arg1 errorPtr:(id *)arg2;
+- (void)_setCertificateIsTrusted:(_Bool)arg1 forAccount:(id)arg2;
+- (_Bool)_certificateIsTrustedForAccount:(id)arg1;
 - (void)setConnectionSettings:(id)arg1;
 - (id)connectionSettings;
 @property(readonly, nonatomic) double lastUsedTime;

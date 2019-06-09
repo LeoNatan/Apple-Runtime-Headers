@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
     struct nw_hash_table *associations;
     unsigned int is_local_domain:1;
     unsigned int parent_is_proxy:1;
+    unsigned int description_used:1;
+    unsigned int logging_description_used:1;
 }
 
 - (void).cxx_destruct;
@@ -37,7 +39,10 @@ __attribute__((visibility("hidden")))
 - (const char *)getLoggingDescription;
 @property(readonly, nonatomic) const char *getDescription;
 - (char *)createDescription:(_Bool)arg1;
+@property(nonatomic) unsigned short weight;
+@property(nonatomic) unsigned short priority;
 @property(readonly, nonatomic) unsigned short port;
+@property(readonly, nonatomic) const char *hostname;
 @property(readonly, nonatomic) const char *domainForPolicy;
 - (id)copyDictionary;
 @property(readonly, nonatomic) unsigned int type;

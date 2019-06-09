@@ -9,6 +9,6 @@
 @class CSAudioDecoder, NSData;
 
 @protocol CSAudioDecoderDelegate <NSObject>
-- (void)audioDecoderDidDecodePackets:(CSAudioDecoder *)arg1 buffer:(NSData *)arg2 remoteVAD:(NSData *)arg3 timestamp:(unsigned long long)arg4;
+- (void)audioDecoderDidDecodePackets:(CSAudioDecoder *)arg1 audioStreamHandleId:(unsigned int)arg2 buffer:(NSData *)arg3 remoteVAD:(NSData *)arg4 timestamp:(unsigned long long)arg5 receivedNumChannels:(unsigned int)arg6;
 @end
 

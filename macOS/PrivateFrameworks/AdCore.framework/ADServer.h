@@ -28,6 +28,7 @@
 - (void)handleRequest:(id)arg1 serverURL:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (id)serverURLForMessageClass:(Class)arg1 serverURL:(id)arg2;
 - (id)routingHeaderForClass:(Class)arg1 serverURL:(id)arg2;
+- (id)deserializeMessage:(id)arg1 error:(id *)arg2;
 - (id)serializeMessage:(id)arg1;
 - (void)restoreConfiguration;
 - (void)buildConfigurationDictionary:(id)arg1;

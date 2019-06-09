@@ -13,6 +13,8 @@
 + (_Bool)shouldFilterEmailAddress:(id)arg1;
 + (id)querySpotlightItemsWithStartDate:(id)arg1 endDate:(id)arg2 getMail:(_Bool)arg3 getMessages:(_Bool)arg4;
 + (id)collectionEventForSearchableItem:(id)arg1 userAction:(id)arg2;
++ (id)messageContextDictionaryForSearchableItem:(id)arg1;
++ (id)emailContextDictionaryForSearchableItem:(id)arg1;
 + (id)contextDictionaryForSearchableItem:(id)arg1 userAction:(id)arg2;
 + (id)knowledgeEventsForSearchableItem:(id)arg1 userAction:(id)arg2;
 + (_Bool)isLocationBasedItem:(id)arg1;
@@ -21,6 +23,7 @@
 + (id)interactionForSearchableItem:(id)arg1;
 + (id)policies;
 + (id)_contactsForEmailAddresses:(id)arg1 names:(id)arg2;
++ (_Bool)whitelistedCSSearchableItem:(id)arg1;
 + (id)_contactsForPersons:(id)arg1;
 + (id)interactionUUIDForSearchableItemWithUID:(id)arg1 bundleID:(id)arg2;
 + (long long)getInteractionMechanismForContentUTI:(id)arg1 typeTree:(id)arg2;

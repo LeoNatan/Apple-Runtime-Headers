@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)changeRequestForResettingPersons;
++ (id)resetPersonsInLibrary:(id)arg1;
 
 @end
 

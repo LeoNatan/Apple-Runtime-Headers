@@ -14,9 +14,10 @@
 {
     int _dateIndex;
     UIColor *_color;
+    int _style;
 }
 
-+ (id)configurationWithDateIndex:(int)arg1 color:(id)arg2;
++ (id)configurationWithDateIndex:(int)arg1 color:(id)arg2 style:(int)arg3;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -21,7 +21,6 @@
     } _has;
     int _effect;
     int _type;
-    NSArray *_attachments;
     NSString *_content;
     NSString *_conversationIdentifier;
     _INPBDateTime *_dateLastMessageRead;
@@ -39,8 +38,8 @@
     _INPBDataString *_speakableGroupName;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)recipientType;
-+ (Class)attachmentType;
 @property(nonatomic) int type; // @synthesize type=_type;
 @property(retain, nonatomic) _INPBDataString *speakableGroupName; // @synthesize speakableGroupName=_speakableGroupName;
 @property(retain, nonatomic) _INPBContact *sender; // @synthesize sender=_sender;
@@ -58,12 +57,14 @@
 @property(retain, nonatomic) _INPBDateTime *dateLastMessageRead; // @synthesize dateLastMessageRead=_dateLastMessageRead;
 @property(copy, nonatomic) NSString *conversationIdentifier; // @synthesize conversationIdentifier=_conversationIdentifier;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
-@property(copy, nonatomic) NSArray *attachments; // @synthesize attachments=_attachments;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (int)StringAsType:(id)arg1;
@@ -98,10 +99,6 @@
 - (void)clearAttributes;
 @property(readonly, nonatomic) int *attributes;
 - (void)setAttributes:(int *)arg1 count:(unsigned long long)arg2;
-- (id)attachmentAtIndex:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long attachmentsCount;
-- (void)addAttachment:(id)arg1;
-- (void)clearAttachments;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

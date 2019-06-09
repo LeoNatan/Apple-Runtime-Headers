@@ -13,6 +13,7 @@
     AVAssetDownloadSessionInternal *_internal;
 }
 
++ (void)registerDownloadLocation:(id)arg1 forURLAsset:(id)arg2;
 + (id)assetDownloadSessionWithAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 + (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
@@ -31,7 +32,6 @@
 - (void)stop;
 - (void)pause;
 - (void)start;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)initWithDownloadToken:(unsigned long long)arg1;

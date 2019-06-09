@@ -12,14 +12,14 @@
 {
     struct _opaque_pthread_mutex_t _lock;
     _PASLRUCache *_conversations;
-    _PASLRUCache *_conversationFeaturizations;
 }
 
 + (id)instance;
 - (void).cxx_destruct;
 - (void)clear;
+- (id)addItem:(id)arg1;
+- (id)addMessage:(id)arg1 withDetectedData:(id)arg2;
 - (id)addMessage:(id)arg1;
-- (id)conversationFeaturizationForIdentifier:(id)arg1;
 - (id)conversationForIdentifier:(id)arg1;
 - (id)init;
 

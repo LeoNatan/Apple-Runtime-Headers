@@ -7,13 +7,12 @@
 #import <AVConference/VCControlChannel.h>
 
 #import <AVConference/VCControlChannelTransactionDelegate-Protocol.h>
-#import <AVConference/VCControlChannelencryptionDelegate-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
-@interface VCControlChannelMultiWay : VCControlChannel <VCControlChannelencryptionDelegate, VCControlChannelTransactionDelegate>
+@interface VCControlChannelMultiWay : VCControlChannel <VCControlChannelTransactionDelegate>
 {
     unsigned int _transportSessionID;
     int _vfdMessage;
@@ -26,6 +25,7 @@ __attribute__((visibility("hidden")))
     _Bool _isEncryptionEnabled;
     NSMutableDictionary *_cryptors;
     void *_currentSendMKI;
+    void *_currentReceiveMKI;
     NSObject<OS_dispatch_queue> *_sequentialKeyMaterialQueue;
 }
 
@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isParticipantActive:(unsigned long long)arg1;
 - (void)addToReceivedStats:(int)arg1;
 - (void)addToSentStats:(int)arg1;
+- (void)setEncryptionWithEncryptionMaterial:(CDStruct_791df8ea *)arg1;
 - (void)addNewKeyMaterial:(id)arg1;
 - (void)scheduleAfter:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 - (void)removeAllActiveParticipants;
@@ -61,12 +62,14 @@ __attribute__((visibility("hidden")))
 - (void)start;
 - (void)dealloc;
 - (id)initWithTransportSessionID:(unsigned int)arg1 reportingAgent:(struct opaqueRTCReporting *)arg2;
+- (id)initWithTransportSessionID:(unsigned int)arg1 reportingAgent:(struct opaqueRTCReporting *)arg2 mode:(int)arg3;
 - (_Bool)decryptWithMKI:(void *)arg1 data:(char *)arg2 size:(int)arg3 sequenceNumber:(unsigned short)arg4;
 - (_Bool)encryptData:(char *)arg1 size:(int)arg2 sequenceNumber:(unsigned short)arg3;
 - (long)updateEncryption:(CDStruct_5b6da142 *)arg1 derivedSSRC:(unsigned int)arg2;
 - (long)getKeyDerivationCryptoSet:(CDStruct_5b6da142 *)arg1 withKeyMaterial:(id)arg2 derivedSSRC:(unsigned int *)arg3;
 - (void)setCurrentSendMKIWithKeyMaterial:(id)arg1;
 - (void)updateEncryptionWithKeyMaterial:(id)arg1;
+- (void)updateEncryptionWithEncryptionMaterial:(CDStruct_791df8ea *)arg1;
 - (void)initializeSRTPInfo:(struct tagSRTPINFO *)arg1;
 - (void)finalizeEncryption;
 - (void)initializeEncryption;

@@ -14,6 +14,7 @@
     unsigned long long _parentRelativeLevel;
     unsigned long long _parentRelativeSlice;
     MTLIOAccelBuffer *_buffer;
+    unsigned int _swizzle;
     MTLIOAccelBuffer *_masterBuffer;
     struct __IOSurface *_iosurface;
     unsigned long long _iosurfacePlane;
@@ -60,6 +61,7 @@
 @property(readonly) unsigned long long parentRelativeSlice; // @synthesize parentRelativeSlice=_parentRelativeSlice;
 @property(readonly) unsigned long long parentRelativeLevel; // @synthesize parentRelativeLevel=_parentRelativeLevel;
 @property(readonly) MTLIOAccelTexture *parentTexture; // @synthesize parentTexture=_parentTexture;
+- (unsigned long long)hazardTrackingMode;
 @property(readonly) unsigned long long bufferBytesPerRow;
 @property(readonly) unsigned long long bufferOffset;
 - (void)didModifyData;
@@ -68,13 +70,16 @@
 - (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 fromRegion:(CDStruct_4c83c94d)arg3 mipmapLevel:(unsigned long long)arg4;
 - (void)copyFromPixels:(const void *)arg1 rowBytes:(unsigned long long)arg2 imageBytes:(unsigned long long)arg3 toSlice:(unsigned long long)arg4 mipmapLevel:(unsigned long long)arg5 origin:(CDStruct_14f26992)arg6 size:(CDStruct_14f26992)arg7;
 - (void)copyFromSlice:(unsigned long long)arg1 mipmapLevel:(unsigned long long)arg2 origin:(CDStruct_14f26992)arg3 size:(CDStruct_14f26992)arg4 toPixels:(void *)arg5 rowBytes:(unsigned long long)arg6 imageBytes:(unsigned long long)arg7;
+@property(readonly) unsigned int swizzleKey;
+@property(readonly) CDStruct_a06f635e swizzle;
 @property(readonly) unsigned long long uniqueIdentifier;
 - (id)initWithMasterBuffer:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(unsigned long long)arg4 length:(unsigned long long)arg5 descriptor:(id)arg6 sysMemRowBytes:(unsigned long long)arg7 vidMemSize:(unsigned long long)arg8 vidMemRowBytes:(unsigned long long)arg9 args:(struct IOAccelNewResourceArgs *)arg10 argsSize:(unsigned int)arg11;
 - (id)initWithHeap:(id)arg1 resource:(id)arg2 offset:(unsigned long long)arg3 length:(unsigned long long)arg4 device:(id)arg5 descriptor:(id)arg6;
 - (id)initWithBuffer:(id)arg1 descriptor:(id)arg2 offset:(unsigned long long)arg3 bytesPerRow:(unsigned long long)arg4;
 - (id)initWithBuffer:(id)arg1 descriptor:(id)arg2 sysMemOffset:(unsigned long long)arg3 sysMemRowBytes:(unsigned long long)arg4 vidMemSize:(unsigned long long)arg5 vidMemRowBytes:(unsigned long long)arg6 args:(struct IOAccelNewResourceArgs *)arg7 argsSize:(unsigned int)arg8;
 - (id)initWithBuffer:(id)arg1 descriptor:(id)arg2 sysMemOffset:(unsigned long long)arg3 sysMemRowBytes:(unsigned long long)arg4 vidMemSize:(unsigned long long)arg5 vidMemRowBytes:(unsigned long long)arg6 args:(struct IOAccelNewResourceArgs *)arg7 argsSize:(unsigned int)arg8 isStrideTexture:(BOOL)arg9;
-- (id)initWithTextureInternal:(id)arg1 pixelFormat:(unsigned long long)arg2 textureType:(unsigned long long)arg3 levels:(struct _NSRange)arg4 slices:(struct _NSRange)arg5 compressedView:(BOOL)arg6;
+- (id)initWithTextureInternal:(id)arg1 pixelFormat:(unsigned long long)arg2 textureType:(unsigned long long)arg3 levels:(struct _NSRange)arg4 slices:(struct _NSRange)arg5 swizzle:(CDStruct_a06f635e)arg6 compressedView:(BOOL)arg7;
+- (id)initWithTexture:(id)arg1 pixelFormat:(unsigned long long)arg2 textureType:(unsigned long long)arg3 levels:(struct _NSRange)arg4 slices:(struct _NSRange)arg5 swizzle:(CDStruct_a06f635e)arg6;
 - (id)initWithTexture:(id)arg1 pixelFormat:(unsigned long long)arg2 textureType:(unsigned long long)arg3 levels:(struct _NSRange)arg4 slices:(struct _NSRange)arg5;
 - (id)initWithTexture:(id)arg1 pixelFormat:(unsigned long long)arg2;
 - (id)initWithDevice:(id)arg1 surface:(unsigned int)arg2 buffer:(unsigned int)arg3 args:(struct IOAccelNewResourceArgs *)arg4 argsSize:(unsigned int)arg5 returnData:(struct IOAccelGetResourceInfoReturnData *)arg6 returnDataSize:(unsigned int)arg7;

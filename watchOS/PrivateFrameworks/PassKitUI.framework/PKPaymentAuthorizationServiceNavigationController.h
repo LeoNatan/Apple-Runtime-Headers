@@ -22,7 +22,8 @@
 - (id)_backgroundColorForModalFormSheet;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)initWithLayoutStyle:(int)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithStyle:(unsigned int)arg1;
+- (id)init;
 
 @end
 

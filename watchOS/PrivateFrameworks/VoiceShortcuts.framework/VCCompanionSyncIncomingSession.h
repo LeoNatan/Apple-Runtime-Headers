@@ -6,22 +6,13 @@
 
 #import <VoiceShortcuts/VCCompanionSyncSession.h>
 
-@class NSDictionary, NSString;
-
 @interface VCCompanionSyncIncomingSession : VCCompanionSyncSession
 {
-    NSDictionary *_syncDataHandlers;
-    NSString *_syncServiceIdentifier;
 }
 
-@property(readonly, copy, nonatomic) NSString *syncServiceIdentifier; // @synthesize syncServiceIdentifier=_syncServiceIdentifier;
-@property(readonly, nonatomic) NSDictionary *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
-- (void).cxx_destruct;
++ (int)sessionType;
 - (void)resetDataStoreForSyncSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (int)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;
-- (int)sessionType;
-- (id)initWithSYSession:(id)arg1 syncServiceIdentifier:(id)arg2 syncDataHandlers:(id)arg3;
 
 @end
 

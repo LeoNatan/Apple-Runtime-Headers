@@ -5,7 +5,7 @@
 //
 
 @protocol FPAuxDataType
-@property(readonly) id jsonRepresentation;
-@property(readonly) BOOL isContainer;
+@property(readonly, nonatomic) id jsonRepresentation;
+@property(readonly, nonatomic) BOOL isContainer;
 @end
 

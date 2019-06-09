@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (void)awakeCommon;
 - (void)initCommon;
 - (void)awakeFromNib;
-- (id)initImageCell:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initTextCell:(id)arg1;
 

@@ -22,11 +22,6 @@ struct BookmarkAndHistoryCompletionMatch {
     float _field7;
 };
 
-struct CGPoint {
-    double _field1;
-    double _field2;
-};
-
 struct CGSize {
     double width;
     double height;
@@ -78,6 +73,10 @@ struct LatestVisitInformationMap {
     struct unordered_map<long long, SafariShared::LatestVisitInformation, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, SafariShared::LatestVisitInformation>>> _map;
 };
 
+struct NSMapTable {
+    Class _field1;
+};
+
 struct NSMutableArray {
     Class _field1;
 };
@@ -89,6 +88,11 @@ struct NSMutableSet {
 struct OpaqueJSContext;
 
 struct OpaqueJSValue;
+
+struct Optional<long long> {
+    _Bool init_;
+    union constexpr_storage_t<long long> storage_;
+};
 
 struct Ref<SafariShared::BookmarkAndHistoryCompletionMatch, WTF::DumbPtrTraits<SafariShared::BookmarkAndHistoryCompletionMatch>> {
     struct BookmarkAndHistoryCompletionMatch *_field1;
@@ -261,6 +265,10 @@ struct duration<long long, std::__1::ratio<1, 1000000000>> {
 
 struct duration<long long, std::__1::ratio<1, 1000>> {
     long long __rep_;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000>>> {
@@ -495,6 +503,10 @@ typedef struct {
 } CDStruct_70511ce9;
 
 typedef struct {
+    unsigned int val[8];
+} CDStruct_4c969caf;
+
+typedef struct {
     int webProcessID;
     unsigned long long tabID;
 } CDStruct_497cfc99;
@@ -597,6 +609,13 @@ typedef struct unordered_set<long long, std::__1::hash<long long>, std::__1::equ
         } __p3_;
     } __table_;
 } unordered_set_da619913;
+
+#pragma mark Named Unions
+
+union constexpr_storage_t<long long> {
+    unsigned char dummy_;
+    long long value_;
+};
 
 #pragma mark Typedef'd Unions
 

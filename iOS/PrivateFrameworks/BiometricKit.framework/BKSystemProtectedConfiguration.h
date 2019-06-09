@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSNumber *unlockEnabled; // @synthesize unlockEnabled=_unlockEnabled;
 @property(retain, nonatomic) NSNumber *biometryEnabled; // @synthesize biometryEnabled=_biometryEnabled;
 - (void).cxx_destruct;
+- (id)description;
 - (id)dictionary;
 - (id)initWithDictionary:(id)arg1;
 

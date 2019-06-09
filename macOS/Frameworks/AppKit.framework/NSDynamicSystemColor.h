@@ -58,6 +58,7 @@ __attribute__((visibility("hidden")))
 + (id)controlAccentRedColor;
 + (id)alternateSelectionGraphiteColor;
 + (id)alternateSelectionBlueColor;
++ (id)systemIndigoColor;
 + (id)systemTealColor;
 + (id)systemMintColor;
 + (id)systemGrayColor;
@@ -119,6 +120,7 @@ __attribute__((visibility("hidden")))
 - (void)encodeWithCoder:(id)arg1;
 - (id)colorWithAlphaComponent:(double)arg1;
 - (id)resolvedColor;
+- (struct CGColor *)CGColor;
 - (void)recacheColor;
 - (BOOL)_getSemanticallyEquivalentVisualEffectMaterial:(long long *)arg1;
 - (id)initWithSelector:(SEL)arg1 tintedWithColor:(id)arg2;

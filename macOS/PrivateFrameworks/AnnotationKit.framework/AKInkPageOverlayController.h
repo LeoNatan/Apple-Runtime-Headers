@@ -15,8 +15,8 @@
 {
     BOOL _ignoreAnnotationAndSelectionKVO;
     BOOL _onlyPencilDraws;
-    AKPageController *_pageController;
     AKInkOverlayView *_inkOverlayView;
+    AKPageController *_pageController;
     AKShapeDetectionController *_shapeDetectionController;
     CDUnknownBlockType _delayedShapeDetectionBlock;
     double _lastStrokeEndTime;
@@ -28,11 +28,11 @@
 @property BOOL onlyPencilDraws; // @synthesize onlyPencilDraws=_onlyPencilDraws;
 @property BOOL ignoreAnnotationAndSelectionKVO; // @synthesize ignoreAnnotationAndSelectionKVO=_ignoreAnnotationAndSelectionKVO;
 @property(retain) AKShapeDetectionController *shapeDetectionController; // @synthesize shapeDetectionController=_shapeDetectionController;
-@property(retain) AKInkOverlayView *inkOverlayView; // @synthesize inkOverlayView=_inkOverlayView;
 @property __weak AKPageController *pageController; // @synthesize pageController=_pageController;
 - (void).cxx_destruct;
 - (id)_convertCHDrawing:(id)arg1 fromDrawingInCanvasView:(id)arg2 toInkOverlayView:(id)arg3;
 - (struct CGRect)_convertRect:(struct CGRect)arg1 fromDrawingInCanvasView:(id)arg2 toPageControllerModelSpace:(id)arg3;
+- (struct CGSize)scaleFromDrawingInCanvasView:(id)arg1 toPageControllerModelSpace:(id)arg2;
 - (void)_tearDownGestureDependencies;
 - (void)_updateGestureDependencyPriority;
 - (void)_setupGestureDependencies;
@@ -40,6 +40,7 @@
 - (void)_controllerWillSave:(id)arg1;
 - (void)_toolStatusUpdated:(id)arg1;
 - (void)_enclosingScrollViewDidScroll:(id)arg1;
+- (void)_didToggleRulerNotification:(id)arg1;
 - (void)_inkDidChangeNotification:(id)arg1;
 - (BOOL)shapeDetectionController:(id)arg1 shouldSelectCandidateAnnotation:(id)arg2;
 - (BOOL)isWaitingToCoalesceStrokes;
@@ -52,6 +53,8 @@
 - (void)_performDelayedShapeDetection;
 - (void)inputView:(id)arg1 didCollectDrawingForAnalysis:(id)arg2;
 - (void)inputViewDidBeginStroke:(id)arg1;
+@property(retain) AKInkOverlayView *inkOverlayView; // @synthesize inkOverlayView=_inkOverlayView;
+- (void)annotationEditingDidEnd;
 - (void)_partialTeardown;
 - (void)teardown;
 - (void)_fullSetup;

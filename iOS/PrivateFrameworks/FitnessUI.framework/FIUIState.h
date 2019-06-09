@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSMutableSet, NSString;
 
 @interface FIUIState : NSObject
 {
@@ -15,15 +15,22 @@
     NSString *_label;
     CDUnknownBlockType _entry;
     CDUnknownBlockType _exit;
+    FIUIState *_parentState;
+    NSMutableSet *_childStates;
+    FIUIState *_entryState;
 }
 
 + (id)stateWithLabel:(id)arg1;
 + (id)transitionalStateFromState:(id)arg1 toState:(id)arg2 entryEvent:(long long)arg3 exitEvent:(long long)arg4;
+@property(nonatomic) __weak FIUIState *entryState; // @synthesize entryState=_entryState;
+@property(readonly, nonatomic) NSMutableSet *childStates; // @synthesize childStates=_childStates;
+@property(nonatomic) __weak FIUIState *parentState; // @synthesize parentState=_parentState;
 @property(getter=isTransitional) _Bool transitional; // @synthesize transitional=_transitional;
 @property(copy) CDUnknownBlockType exit; // @synthesize exit=_exit;
 @property(copy) CDUnknownBlockType entry; // @synthesize entry=_entry;
 @property(readonly) NSString *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+- (void)addChildStates:(id)arg1 withEntryState:(id)arg2;
 - (id)description;
 - (id)transitionForEvent:(long long)arg1;
 - (void)enumerateEvents:(CDUnknownBlockType)arg1;

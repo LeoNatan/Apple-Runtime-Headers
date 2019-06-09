@@ -22,11 +22,11 @@
 - (id)_formattedCSVString;
 - (id)_formattedString;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly, nonatomic) double oldestTimestamp;
 @property(readonly, nonatomic) unsigned char requestType;
-- (unsigned long long)recvBytesForMode:(unsigned char)arg1;
 - (unsigned long long)recvBytes;
-- (unsigned long long)xmitBytesForMode:(unsigned char)arg1;
 - (unsigned long long)xmitBytes;
+- (long long)compare:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;

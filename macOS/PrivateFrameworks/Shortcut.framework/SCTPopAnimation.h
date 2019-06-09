@@ -8,6 +8,7 @@
 
 @class SCTHelpPointerView;
 
+__attribute__((visibility("hidden")))
 @interface SCTPopAnimation : NSAnimation
 {
     SCTHelpPointerView *mAnimatedView;

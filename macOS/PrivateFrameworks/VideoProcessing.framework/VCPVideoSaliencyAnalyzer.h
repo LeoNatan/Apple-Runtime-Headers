@@ -23,7 +23,6 @@
 - (id)results;
 - (int)finishAnalysisPass:(CDStruct_e83c9415)arg1;
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 flags:(unsigned long long *)arg4;
-- (BOOL)locationChange:(id)arg1 landscape:(BOOL)arg2;
 - (float)boundDistance:(struct CGRect)arg1 relativeTo:(struct CGRect)arg2 landscape:(BOOL)arg3;
 - (id)pruneRegions:(id)arg1 withOverlapRatio:(float)arg2;
 - (BOOL)isOutOfBoundary:(struct CGRect)arg1;

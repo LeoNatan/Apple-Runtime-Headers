@@ -25,12 +25,12 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithOwnerName:(id)arg1 ownerDsid:(id)arg2 deviceName:(id)arg3 deviceClass:(id)arg4 productName:(id)arg5 productType:(id)arg6;
-@property(nonatomic, readonly) NSString *productType; // @synthesize productType;
-@property(nonatomic, readonly) NSString *productName; // @synthesize productName;
-@property(nonatomic, readonly) NSString *deviceClass; // @synthesize deviceClass;
-@property(nonatomic, readonly) NSString *deviceName; // @synthesize deviceName;
-@property(nonatomic, readonly) NSString *ownerDsid; // @synthesize ownerDsid;
-@property(nonatomic, readonly) NSString *ownerName; // @synthesize ownerName;
+@property(nonatomic, readonly) NSString *productType;
+@property(nonatomic, readonly) NSString *productName;
+@property(nonatomic, readonly) NSString *deviceClass;
+@property(nonatomic, readonly) NSString *deviceName;
+@property(nonatomic, readonly) NSString *ownerDsid;
+@property(nonatomic, readonly) NSString *ownerName;
 
 @end
 

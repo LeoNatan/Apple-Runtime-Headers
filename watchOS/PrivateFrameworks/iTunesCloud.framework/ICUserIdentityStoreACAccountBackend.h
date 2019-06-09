@@ -34,6 +34,7 @@
 - (void)_storeAccountForDSID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_primaryICloudAccountIdentityProperties;
 - (id)_newUserIdentityPropertiesForAccount:(id)arg1;
+- (void)_activeStoreAccountWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_allStoreAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_applyIdentityProperties:(id)arg1 toAccount:(id)arg2;
 - (void)_accountStoreDidChangeNotification:(id)arg1;

@@ -18,10 +18,12 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)flushDiskCache;
 - (unsigned int)locationShiftFunctionVersion;
 - (_Bool)isLocationShiftRequiredForCoordinate:(CDStruct_c3b9c2ee)arg1;
 - (_Bool)isLocationShiftEnabled;
 - (void)shiftLatLng:(id)arg1 auditToken:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue;
 - (id)init;
 
 // Remaining properties

@@ -8,10 +8,11 @@
 
 #import <ControlCenterUIKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CCUICAPackageDescription, CCUICAPackageView, NSString, UIColor, UIImage, UIImageView, UIView;
+@class CCUICAPackageDescription, CCUICAPackageView, MTVisualStylingProvider, NSString, UIColor, UIImage, UIImageView, UIView;
 
 @interface CCUIRoundButton : UIControl <UIGestureRecognizerDelegate>
 {
+    MTVisualStylingProvider *_visualStylingProvider;
     _Bool _useAlternateBackground;
     CCUICAPackageDescription *_glyphPackageDescription;
     UIImage *_glyphImage;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) UIImage *glyphImage; // @synthesize glyphImage=_glyphImage;
 @property(retain, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
 - (void).cxx_destruct;
+- (void)_updateVisualStylingOfGlyphView:(id)arg1;
 - (void)_updateForStateChange;
 - (void)_deactivateReachability:(id)arg1;
 - (void)_primaryActionPerformed:(id)arg1;
@@ -46,6 +48,7 @@
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)didMoveToWindow;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;

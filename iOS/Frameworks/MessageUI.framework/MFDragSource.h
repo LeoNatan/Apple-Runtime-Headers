@@ -39,8 +39,8 @@
 - (_Bool)dragInteraction:(id)arg1 sessionIsRestrictedToDraggingApplication:(id)arg2;
 - (_Bool)dragInteraction:(id)arg1 sessionAllowsMoveOperation:(id)arg2;
 - (_Bool)_dragInteractionAllowsDragOverridingMasterSwitch:(id)arg1;
-- (void)_api_dragInteraction:(id)arg1 session:(id)arg2 willEndWithOperation:(unsigned long long)arg3;
-- (id)_api_dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
+- (void)dragInteraction:(id)arg1 session:(id)arg2 willEndWithOperation:(unsigned long long)arg3;
+- (id)dragInteraction:(id)arg1 previewForLiftingItem:(id)arg2 session:(id)arg3;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (id)initWithView:(id)arg1 delegate:(id)arg2;
 

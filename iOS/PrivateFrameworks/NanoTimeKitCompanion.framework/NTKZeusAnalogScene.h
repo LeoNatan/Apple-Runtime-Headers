@@ -30,6 +30,7 @@
     unsigned long long _style;
     _Bool _isEditing;
     _Bool _isStatusIconVisible;
+    double _bleedZRotation;
     _Bool _scrubbing;
 }
 
@@ -46,6 +47,7 @@
 - (void)applyTransitionFraction:(double)arg1 fromDensity:(unsigned long long)arg2 toDensity:(unsigned long long)arg3;
 - (double)_secondHandAlphaForDensity:(unsigned long long)arg1 isEditing:(_Bool)arg2;
 - (void)applyDensity:(unsigned long long)arg1;
+- (id)_nodeForBleed:(unsigned long long)arg1;
 - (void)applyTransitionFraction:(double)arg1 fromPalette:(id)arg2 toPalette:(id)arg3;
 - (void)applyPalette:(id)arg1;
 - (void)applyTransitionFraction:(double)arg1 fromStyle:(unsigned long long)arg2 toStyle:(unsigned long long)arg3;

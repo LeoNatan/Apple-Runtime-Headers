@@ -11,6 +11,7 @@
     int _batterySaverModeToken;
 }
 
++ (id)deviceUUID;
 + (BOOL)shouldIncludePredictionLogs;
 + (BOOL)isDNUEnabled;
 + (BOOL)isAudioAccessory;

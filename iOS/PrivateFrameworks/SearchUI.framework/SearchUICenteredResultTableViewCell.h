@@ -13,10 +13,10 @@
 }
 
 - (void)updateWithRowModel:(id)arg1;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;
 
 // Remaining properties
-@property(retain) TLKNumericalResultView *sizingContainer; // @dynamic sizingContainer;
+@property(retain, nonatomic) TLKNumericalResultView *sizingContainer; // @dynamic sizingContainer;
 
 @end
 

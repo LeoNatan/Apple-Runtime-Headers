@@ -9,5 +9,9 @@
 @interface NSXPCConnection (ISStore)
 - (void)_ISStore_addData:(id)arg1 withUUID:(id)arg2 domain:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)_ISStore_fetchCachePathForDomain:(id)arg1 error:(id *)arg2;
+- (void)_ISIconCache_clearCacheWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_ISIconCache_syncRequestImageDataWithGenerationRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_ISIconCache_requestImageDataWithGenerationRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_ISIconCache_fetchCacheURLWithCompletion:(CDUnknownBlockType)arg1;
 @end
 

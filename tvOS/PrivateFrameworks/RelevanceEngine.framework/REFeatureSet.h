@@ -9,11 +9,11 @@
 #import <RelevanceEngine/NSCopying-Protocol.h>
 #import <RelevanceEngine/NSFastEnumeration-Protocol.h>
 #import <RelevanceEngine/NSMutableCopying-Protocol.h>
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/REFeatureSetProperties-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray;
 
-@interface REFeatureSet : NSObject <REIndentedDescription, NSCopying, NSMutableCopying, NSFastEnumeration>
+@interface REFeatureSet : NSObject <REFeatureSetProperties, NSCopying, NSMutableCopying, NSFastEnumeration>
 {
 }
 
@@ -22,10 +22,9 @@
 + (id)featureSet;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)descriptionWithIndent:(unsigned long long)arg1;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (_Bool)containsFeature:(id)arg1;
 - (id)featureWithName:(id)arg1;
@@ -39,10 +38,6 @@
 - (_Bool)isEqualToFeatureSet:(id)arg1;
 - (_Bool)intersectsFeatureSet:(id)arg1;
 - (id)initWithFeatureSet:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

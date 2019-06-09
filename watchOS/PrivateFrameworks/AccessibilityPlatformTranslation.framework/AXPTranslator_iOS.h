@@ -23,6 +23,7 @@
 }
 
 + (id)_iosParameterFromPlatformParameter:(id)arg1;
++ (id)translationObjectFromUIKitObject:(id)arg1;
 + (id)sharedInstance;
 @property(retain, nonatomic) AXUIElement *systemWideElement; // @synthesize systemWideElement=_systemWideElement;
 @property(retain, nonatomic) AXUIElement *systemAppElement; // @synthesize systemAppElement=_systemAppElement;
@@ -42,6 +43,7 @@
 - (id)processCanSetAttribute:(id)arg1;
 - (id)_processAttributeSpecialCases:(unsigned int)arg1 uiElement:(id)arg2 parameter:(id)arg3 error:(unsigned int *)arg4;
 - (id)_processCustomActionsAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
+- (id)_axArrayWithPossiblyNilArrays:(unsigned int)arg1;
 - (id)_processAttributeSpecialCases:(unsigned int)arg1 uiElement:(id)arg2 error:(unsigned int *)arg3;
 - (id)_processSubroleAttributeRequest:(id)arg1 error:(unsigned int *)arg2;
 - (id)_processStringForRangeAttributeRequest:(id)arg1 parameter:(id)arg2 error:(unsigned int *)arg3;

@@ -4,21 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <QuartzCore/CAEAGLLayer.h>
+#import <QuartzCore/CALayer.h>
 
-@class NUGLContext, NUGLRenderbuffer;
+@class NUColorSpace, NUGLContext, NUPixelFormat;
+@protocol NUSurfaceStorage;
 
-@interface NUGLLayer : CAEAGLLayer
+@interface NUGLLayer : CALayer
 {
     NUGLContext *_context;
-    NUGLRenderbuffer *_buffer;
+    id <NUSurfaceStorage> _drawingStorage;
+    id <NUSurfaceStorage> _displayStorage;
+    NUPixelFormat *_pixelFormat;
+    NUColorSpace *_colorSpace;
 }
 
+@property(readonly, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
+@property(readonly, nonatomic) NUPixelFormat *pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 - (void).cxx_destruct;
+- (void)_updateDisplay:(id)arg1;
+- (void)_updateDisplayWithIdentifier:(id)arg1;
+- (void)layerDidBecomeVisible:(_Bool)arg1;
 - (void)reset:(id)arg1;
 - (void)draw:(id)arg1;
-- (void)_drawInBuffer:(id)arg1 context:(id)arg2;
+- (void)_drawInTexture:(id)arg1 context:(id)arg2;
+- (void)_ensureDrawingStorageOfSize:(CDStruct_912cb5d2)arg1 format:(id)arg2;
 - (void)display;
+- (_Bool)contentsAreFlipped;
+- (void)_resetContents;
+- (void)dealloc;
 - (id)init;
 
 @end

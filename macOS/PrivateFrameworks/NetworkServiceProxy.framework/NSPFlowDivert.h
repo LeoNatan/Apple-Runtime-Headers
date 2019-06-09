@@ -33,6 +33,7 @@
 - (void)addPoliciesForDivertDNSOnly:(id)arg1 domainConditions:(id)arg2 divertResult:(id)arg3;
 - (id)getEffectiveAppRules:(id)arg1;
 - (id)getExecutableConditions:(id)arg1;
+- (id)getAgentResultsForSelf;
 - (id)getAgentResults:(id)arg1;
 - (BOOL)shouldInstallFlowDivert:(id)arg1;
 - (void)addPolicy:(id)arg1;

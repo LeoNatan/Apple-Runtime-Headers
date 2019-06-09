@@ -9,8 +9,6 @@
 @class NSArray;
 
 @protocol _MKInfoCardChildViewControllerAnalyticsDelegate <NSObject>
-
-@optional
 - (NSArray *)infoCardChildUnactionableUIElements;
 - (NSArray *)infoCardChildPossibleActions;
 @end

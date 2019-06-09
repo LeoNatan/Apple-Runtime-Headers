@@ -6,6 +6,7 @@
 
 #import <PhotosPlayer/ISVitalityFilter.h>
 
+__attribute__((visibility("hidden")))
 @interface ISVitalityConstantFilter : ISVitalityFilter
 {
 }

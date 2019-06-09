@@ -11,5 +11,9 @@
 @protocol MKArtworkImageSource <NSObject>
 - (UIImage *)badgeImageToDisplayWithScreenScale:(double)arg1;
 - (UIImage *)imageToDisplayWithScreenScale:(double)arg1;
+
+@optional
+@property(readonly, nonatomic) _Bool primaryImage;
+@property(readonly, nonatomic) _Bool shouldHighlight;
 @end
 

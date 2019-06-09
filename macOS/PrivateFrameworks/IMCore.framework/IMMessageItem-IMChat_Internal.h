@@ -8,10 +8,26 @@
 
 @interface IMMessageItem (IMChat_Internal)
 + (Class)contextClass;
++ (id)displayNameForAddress:(id)arg1;
++ (BOOL)isLoginAddress:(id)arg1;
++ (id)handleForAddress:(id)arg1;
++ (id)bestAccountForAddress:(id)arg1;
 - (id)_copyWithFlags:(unsigned long long)arg1;
 - (id)_copy;
 - (BOOL)_isInvitation;
 - (void)_setInivtation:(BOOL)arg1;
 - (id)message;
+- (id)descriptionForPurpose:(long long)arg1 isGroupMessage:(BOOL)arg2 messageDataSource:(CDUnknownBlockType)arg3 attachmentDataSource:(CDUnknownBlockType)arg4;
+- (id)descriptionForPurpose:(long long)arg1 isGroupMessage:(BOOL)arg2 senderDisplayName:(id)arg3 messageDataSource:(CDUnknownBlockType)arg4 attachmentDataSource:(CDUnknownBlockType)arg5;
+- (BOOL)isIncomingTypingOrCancelTypingMessage;
+- (BOOL)isTypingOrCancelTypingMessage;
+- (BOOL)isCancelTypingMessage;
+- (BOOL)isIncomingTypingMessage;
+- (BOOL)isSystemMessage;
+- (BOOL)isExtensibleMessageWithPluginPayload:(id *)arg1;
+- (id)_service;
+- (id)_newChatItemsWithFilteredChat:(BOOL)arg1 isBusiness:(BOOL)arg2 parentChatIsSpam:(BOOL)arg3 hasKnownParticipants:(BOOL)arg4;
+- (id)_newChatItems;
+- (BOOL)_hasMessageChatItem;
 @end
 

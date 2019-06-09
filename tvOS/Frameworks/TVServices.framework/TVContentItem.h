@@ -9,7 +9,7 @@
 #import <TVServices/NSCopying-Protocol.h>
 #import <TVServices/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSAttributedString, NSDate, NSItemProvider, NSMutableDictionary, NSNumber, NSString, NSURL, TVContentIdentifier;
+@class NSArray, NSAttributedString, NSDate, NSDictionary, NSItemProvider, NSMutableDictionary, NSNumber, NSString, NSURL, TVContentIdentifier;
 
 @interface TVContentItem : NSObject <NSCopying, NSSecureCoding>
 {
@@ -94,6 +94,7 @@
 @property(readonly, nonatomic) NSArray *_flattenedContentIdentifier;
 - (void)setImageURL:(id)arg1 forTraits:(unsigned long long)arg2;
 - (id)imageURLForTraits:(unsigned long long)arg1;
+@property(readonly, copy, nonatomic) NSDictionary *imageURLByTraits;
 - (id)initWithItemID:(id)arg1 shape:(long long)arg2;
 - (id)initWithContentIdentifier:(id)arg1;
 - (id)init;

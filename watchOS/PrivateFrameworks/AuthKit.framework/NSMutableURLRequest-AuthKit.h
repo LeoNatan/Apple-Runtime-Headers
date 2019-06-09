@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSMutableURLRequest.h>
+#import <CFNetwork/NSMutableURLRequest.h>
 
 @interface NSMutableURLRequest (AuthKit)
 + (id)ak_proxiedAnisetteHeadersWithData:(id)arg1;
@@ -15,23 +15,29 @@
 + (id)ak_timeZoneHeader;
 + (id)ak_localeHeader;
 + (id)ak_clientTimeHeader;
+- (void)ak_addDeviceConfigurationModeHeader;
 - (void)ak_addCFUHeader:(id)arg1;
 - (void)ak_addDeviceModel;
 - (void)ak_addShowWarranty;
+- (void)ak_addProxiedDeviceICSCIntentHeader;
+- (void)ak_addAppProvidedContext:(id)arg1;
 - (void)ak_addProxyApp:(id)arg1;
 - (void)ak_addClientApp:(id)arg1;
 - (void)ak_addAcceptedSLAHeaderWithVersion:(unsigned int)arg1;
 - (void)ak_addPhoneInformationHeaderWithValue:(id)arg1;
 - (void)ak_addPhoneNumberCertificateHeaderWithValue:(id)arg1;
 - (void)ak_addPhoneNumberHeader;
+- (void)ak_addProxiedDeviceSerialNumberHeader:(id)arg1;
 - (void)ak_addDeviceSerialNumberHeader;
 - (void)ak_addDeviceMLBHeader;
 - (void)ak_addDeviceROMHeader;
 - (void)ak_addLocalUserHasAppleIDLoginHeader;
 - (void)ak_addICSCIntentHeader;
+- (void)ak_addProxiedDevicePRKRequestHeader;
 - (void)ak_addPRKRequestHeader;
 - (void)ak_addTimeZoneHeaders;
 - (void)ak_addLocaleHeader;
+- (void)ak_addProxiedDeviceCountryHeader:(id)arg1;
 - (void)ak_addCountryHeader;
 - (void)ak_addPasswordResetKeyHeader:(id)arg1;
 - (void)ak_addContinutationKeyHeader:(id)arg1;
@@ -46,7 +52,9 @@
 - (void)ak_addICSCRecoveryHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithHeartbeatToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithServiceToken:(id)arg1 forAltDSID:(id)arg2;
+- (void)ak_addProxiedAuthorizationHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_addAuthorizationHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
+- (void)ak_addProxiedAttestationHeaders:(id)arg1;
 - (void)ak_addProxiedAnisetteHeaders:(id)arg1;
 - (void)ak_addAnisetteHeaders;
 - (void)ak_addEphemeralAuthHeader;

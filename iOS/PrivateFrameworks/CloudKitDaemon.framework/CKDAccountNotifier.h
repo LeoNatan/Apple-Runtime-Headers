@@ -23,7 +23,7 @@
 - (void)unregisterObserverForAccountChangeNotification:(id)arg1;
 - (void)registerObserver:(id)arg1 forAccountChangeNotification:(CDUnknownBlockType)arg2;
 - (void)postAccountChangedNotificationToClients;
-- (void)postAccountChangedNotification:(id)arg1;
+- (void)postAccountChangedNotificationWithAccountID:(id)arg1 changeType:(long long)arg2;
 - (void)dealloc;
 - (id)init;
 

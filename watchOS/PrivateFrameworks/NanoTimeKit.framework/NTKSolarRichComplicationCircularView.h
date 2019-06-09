@@ -6,61 +6,21 @@
 
 #import <NanoTimeKit/NTKRichComplicationCircularBaseView.h>
 
-@class CAGradientLayer, CALayer, NSDictionary, NTKBezierPathPointModel, NTKBezierPathView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation, UIView;
+@class NTKSolarRichComplicationFullColorImageView;
 
 @interface NTKSolarRichComplicationCircularView : NTKRichComplicationCircularBaseView
 {
-    struct {
-        float curveLineWidth;
-        struct CGSize curveMaxSize;
-        float lineTop;
-        float lineHeight;
-        float strokeDiskDiameter;
-        float strokeDiskBorderWidth;
-        float fillDiskDiameter;
-        float haloMinScale;
-        float haloMaxScale;
-        float backgroundGradientSunsetLayerMaxAlpha;
-    } _layoutConstants;
-    UIView *_backgroundView;
-    CAGradientLayer *_gradientLayer;
-    CALayer *_gradientAdjustmentLayer;
-    UIView *_lineView;
-    NTKBezierPathView *_pathView;
-    NTKSolarTimeModel *_solarTimeModel;
-    NTKSolarPath *_solarPath;
-    NTKBezierPathPointModel *_pointModel;
-    CALayer *_strokeDiskMaskLayer;
-    CALayer *_strokeDiskBorderLayer;
-    CALayer *_fillDiskLayer;
-    CALayer *_fillDiskHaloLayer;
-    CALayer *_belowHorizonLayer;
-    UIView *_fillDiskHaloContainerView;
-    NSDictionary *_waypoints;
-    float _horizonYInCurve;
-    float _sunsetXInCurve;
-    struct CGRect _solarPathViewRect;
-    float _prevDiskTimePercentage;
-    struct NSNumber *_clockTimerToken;
-    PUICClientSideAnimation *_diskAnimaton;
+    NTKSolarRichComplicationFullColorImageView *_solarImageView;
 }
 
 - (void).cxx_destruct;
-- (void)_didReceiveSignificantTimeChangeNotification;
-- (void)_didReceiveTimeZoneDidChangeNotification;
-- (void)_updateGradientBackgroundWithYPosition:(float)arg1 xPercentage:(float)arg2 topDistanceAboveHorizonLine:(float)arg3 bottomDistanceBelowHorizonLine:(float)arg4;
-- (void)_updateSolarDiskWithUsingIdealizedTime:(_Bool)arg1 forceUpdate:(_Bool)arg2 animated:(_Bool)arg3;
-- (void)_updateWaypoints;
-- (void)_updateSolarPathWithAnimated:(_Bool)arg1;
 - (void)_updateWithLocation:(id)arg1 useIdealizedTime:(_Bool)arg2 forceUpdate:(_Bool)arg3 animated:(_Bool)arg4;
-- (void)_dateDidUpdate;
-- (void)_stopClockUpdates;
-- (void)_startClockUpdates;
 - (_Bool)_shouldAnimateWithTemplateUpdateReason:(int)arg1;
-- (void)_applyPausedUpdate;
+- (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)init;
 
 @end

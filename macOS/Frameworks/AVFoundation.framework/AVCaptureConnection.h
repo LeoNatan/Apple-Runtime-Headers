@@ -11,31 +11,22 @@
 @interface AVCaptureConnection : NSObject
 {
     AVCaptureConnectionInternal *_internal;
-    BOOL _supportsVideoStabilization;
     BOOL _videoStabilizationEnabled;
     BOOL _enablesVideoStabilizationWhenAvailable;
-    BOOL _cameraIntrinsicMatrixDeliverySupported;
-    BOOL _cameraIntrinsicMatrixDeliveryEnabled;
-    double _videoMaxScaleAndCropFactor;
-    long long _preferredVideoStabilizationMode;
-    long long _activeVideoStabilizationMode;
 }
 
 + (id)connectionWithInputPort:(id)arg1 videoPreviewLayer:(id)arg2;
 + (id)connectionWithInputPorts:(id)arg1 output:(id)arg2;
 + (void)initialize;
-@property(nonatomic, getter=isCameraIntrinsicMatrixDeliveryEnabled) BOOL cameraIntrinsicMatrixDeliveryEnabled; // @synthesize cameraIntrinsicMatrixDeliveryEnabled=_cameraIntrinsicMatrixDeliveryEnabled;
-@property(readonly, nonatomic, getter=isCameraIntrinsicMatrixDeliverySupported) BOOL cameraIntrinsicMatrixDeliverySupported; // @synthesize cameraIntrinsicMatrixDeliverySupported=_cameraIntrinsicMatrixDeliverySupported;
 @property(nonatomic) BOOL enablesVideoStabilizationWhenAvailable; // @synthesize enablesVideoStabilizationWhenAvailable=_enablesVideoStabilizationWhenAvailable;
 @property(readonly, nonatomic, getter=isVideoStabilizationEnabled) BOOL videoStabilizationEnabled; // @synthesize videoStabilizationEnabled=_videoStabilizationEnabled;
-@property(readonly, nonatomic, getter=isVideoStabilizationSupported) BOOL supportsVideoStabilization; // @synthesize supportsVideoStabilization=_supportsVideoStabilization;
-@property(readonly, nonatomic) long long activeVideoStabilizationMode; // @synthesize activeVideoStabilizationMode=_activeVideoStabilizationMode;
-@property(nonatomic) long long preferredVideoStabilizationMode; // @synthesize preferredVideoStabilizationMode=_preferredVideoStabilizationMode;
-@property(readonly, nonatomic) double videoMaxScaleAndCropFactor; // @synthesize videoMaxScaleAndCropFactor=_videoMaxScaleAndCropFactor;
-- (void)_mixerNodeFormatDescriptionDidChangeFromPropertyListener;
-- (void)_splitterNodeFormatDescriptionDidChangeFromPropertyListener;
+@property(nonatomic, getter=isCameraIntrinsicMatrixDeliveryEnabled) BOOL cameraIntrinsicMatrixDeliveryEnabled;
+@property(readonly, nonatomic, getter=isCameraIntrinsicMatrixDeliverySupported) BOOL cameraIntrinsicMatrixDeliverySupported;
+@property(readonly, nonatomic, getter=isVideoStabilizationSupported) BOOL supportsVideoStabilization;
+@property(readonly, nonatomic) long long activeVideoStabilizationMode;
+@property(nonatomic) long long preferredVideoStabilizationMode;
 @property(nonatomic) double videoScaleAndCropFactor;
-- (double)maxVideoScaleAndCropFactor;
+@property(readonly, nonatomic) double videoMaxScaleAndCropFactor;
 @property(nonatomic) CDStruct_1b6d18a9 videoMaxFrameDuration;
 @property(readonly, nonatomic, getter=isVideoMaxFrameDurationSupported) BOOL supportsVideoMaxFrameDuration;
 @property(nonatomic) CDStruct_1b6d18a9 videoMinFrameDuration;
@@ -56,17 +47,18 @@
 @property(readonly, nonatomic) NSArray *inputPorts;
 @property(readonly, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 @property(readonly, nonatomic) AVCaptureOutput *output;
-- (struct opaqueCMFormatDescription *)copyExpandedSourceSummaryAudioFormatDescription;
-- (struct opaqueCMFormatDescription *)copySourceSummaryAudioFormatDescription;
-- (struct opaqueCMFormatDescription *)copySourceSummaryAudioFormatDescriptionWithOptionalExpansion:(BOOL)arg1;
+- (struct opaqueCMFormatDescription *)_copyExpandedSourceSummaryAudioFormatDescription;
+- (struct opaqueCMFormatDescription *)_copySourceSummaryAudioFormatDescription;
+- (struct opaqueCMFormatDescription *)_copySourceSummaryAudioFormatDescriptionWithOptionalExpansion:(BOOL)arg1;
 - (struct opaqueCMFormatDescription *)copyPostSplitSummaryAudioFormatDescription;
 - (int *)splitterAudioChannelMapWithSize:(unsigned long long *)arg1;
-- (BOOL)audioChannelsAreAllEnabled;
+- (int *)_splitterAudioChannelMapWithSize:(unsigned long long *)arg1;
+- (BOOL)_audioChannelsAreAllEnabled;
 - (void)_clearAudioPropertyListeners;
 - (float)getAvgAudioLevelForChannel:(id)arg1;
-- (void)updateAudioAvgLevelsArray;
+- (void)_updateAudioAvgLevelsArray;
 - (float)getPeakAudioLevelForChannel:(id)arg1;
-- (void)updateAudioPeakLevelsArray;
+- (void)_updateAudioPeakLevelsArray;
 - (id)_audioLevelsForPropertyID:(unsigned int)arg1;
 - (void)setVolume:(float)arg1 forChannel:(id)arg2;
 - (void)_applyVolumeFromAudioChannel:(id)arg1;
@@ -82,15 +74,9 @@
 - (void *)incrementClientSequenceIDAndRetain;
 - (unsigned int)writerElement;
 - (void)setWriterElement:(unsigned int)arg1;
-- (CDStruct_da23731b *)extendedNodeInfo;
-- (unsigned int)scope;
-- (unsigned int)element;
-- (int)node;
-- (struct OpaqueCMIOGraph *)graph;
 - (id)firstInputPort;
 - (id)firstActiveInputPort;
 - (id)mediaType;
-- (void)finalize;
 - (void)dealloc;
 - (void)detachFromAudioSplitterAndMixerNodes;
 - (void)attachToSplitterNode:(int)arg1 audioMixerNode:(int)arg2;

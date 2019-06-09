@@ -12,11 +12,13 @@
 @interface AVTSplashScreenLayout : NSObject
 {
     _Bool _wantsSecondaryVideo;
+    _Bool _constrainToContainer;
     _Bool _needsLayout;
     id <AVTSplashScreenLayoutDelegate> _delegate;
     unsigned long long _labelEdgePaddingStyle;
     NSString *_currentContentSizeCategory;
     struct CGSize _containerSize;
+    struct CGSize _unconstrainedContentSize;
     struct UIEdgeInsets _edgeInsets;
     struct CGRect _titleFrame;
     struct CGRect _subTitleFrame;
@@ -36,9 +38,14 @@
 + (id)titleFont;
 + (id)blueButton;
 + (unsigned long long)appropriateLabelEdgePaddingStyleForViewSize:(struct CGSize)arg1;
++ (struct CGSize)secondaryVideoSize;
++ (struct CGSize)primaryVideoSize;
++ (_Bool)isSmallScreen;
 @property(nonatomic) _Bool needsLayout; // @synthesize needsLayout=_needsLayout;
 @property(copy, nonatomic) NSString *currentContentSizeCategory; // @synthesize currentContentSizeCategory=_currentContentSizeCategory;
+@property(nonatomic) _Bool constrainToContainer; // @synthesize constrainToContainer=_constrainToContainer;
 @property(nonatomic) _Bool wantsSecondaryVideo; // @synthesize wantsSecondaryVideo=_wantsSecondaryVideo;
+@property(readonly, nonatomic) struct CGSize unconstrainedContentSize; // @synthesize unconstrainedContentSize=_unconstrainedContentSize;
 @property(nonatomic) struct CGRect buttonFrame; // @synthesize buttonFrame=_buttonFrame;
 @property(nonatomic) struct CGRect secondaryVideoFrame; // @synthesize secondaryVideoFrame=_secondaryVideoFrame;
 @property(nonatomic) struct CGRect primaryVideoFrame; // @synthesize primaryVideoFrame=_primaryVideoFrame;

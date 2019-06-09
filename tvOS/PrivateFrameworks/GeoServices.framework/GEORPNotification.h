@@ -8,16 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEORPNotification : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_localizedText;
     NSString *_localizedTitle;
+    struct {
+        unsigned int read_localizedText:1;
+        unsigned int read_localizedTitle:1;
+        unsigned int wrote_localizedText:1;
+        unsigned int wrote_localizedTitle:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *localizedText; // @synthesize localizedText=_localizedText;
-@property(retain, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -26,10 +33,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *localizedText;
 @property(readonly, nonatomic) _Bool hasLocalizedText;
+- (void)_readLocalizedText;
+@property(retain, nonatomic) NSString *localizedTitle;
 @property(readonly, nonatomic) _Bool hasLocalizedTitle;
+- (void)_readLocalizedTitle;
 
 @end
 

@@ -7,6 +7,6 @@
 #import <PhotosUICore/NSObject-Protocol.h>
 
 @protocol PXNavigableSharedAlbumActivityFeedHostViewController <NSObject>
-- (void)navigateToSharedAlbumActivityFeedAnimated:(_Bool)arg1 configuration:(void (^)(id <PXCloudFeedNavigating><PXNavigableCloudFeedViewController>))arg2 completion:(void (^)(UIViewController *))arg3;
+- (void)navigateToSharedAlbumActivityFeedAnimated:(_Bool)arg1 configuration:(void (^)(id <PLCloudFeedNavigating><PXNavigableCloudFeedViewController>))arg2 completion:(void (^)(UIViewController *))arg3;
 @end
 

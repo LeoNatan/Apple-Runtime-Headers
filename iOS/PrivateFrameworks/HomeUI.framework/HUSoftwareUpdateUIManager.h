@@ -32,7 +32,7 @@
 - (id)fetchAvailableUpdatesForAccessories:(id)arg1;
 - (id)fetchAvailableUpdatesForHome:(id)arg1;
 - (id)fetchAvailableUpdatesForAccessory:(id)arg1;
-- (id)startSilentBackgroundCheckForHome:(id)arg1;
+- (void)startSilentBackgroundCheckForHome:(id)arg1;
 - (id)init;
 
 // Remaining properties

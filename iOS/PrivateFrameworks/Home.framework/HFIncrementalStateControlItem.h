@@ -17,6 +17,8 @@
     NSString *_incrementalCharacteristicType;
 }
 
++ (id)optionsForPrimaryStateControlItem:(id)arg1 incrementalCharacteristicType:(id)arg2;
++ (id)readOnlyCharacteristicTypes;
 + (Class)valueClass;
 @property(readonly, copy, nonatomic) NSString *incrementalCharacteristicType; // @synthesize incrementalCharacteristicType=_incrementalCharacteristicType;
 @property(readonly, nonatomic) HFControlItem<HFPrimaryStateWriter> *primaryStateControlItem; // @synthesize primaryStateControlItem=_primaryStateControlItem;

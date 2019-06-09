@@ -34,7 +34,7 @@
 - (void)prepareContentInRect:(struct CGRect)arg1;
 - (void)prepareForReuse;
 - (BOOL)isFlipped;
-@property(readonly, nonatomic) NSViewController *viewController;
+@property(readonly, nonatomic) __weak NSViewController *viewController;
 - (void)_muiCollectionCellViewCommonInit;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;

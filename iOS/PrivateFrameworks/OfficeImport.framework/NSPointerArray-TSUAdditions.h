@@ -7,6 +7,7 @@
 #import <Foundation/NSPointerArray.h>
 
 @interface NSPointerArray (TSUAdditions)
+- (unsigned long long)tsu_indexOfPointer:(void *)arg1;
 - (void)tsu_insertRange:(struct _NSRange)arg1;
 - (void)tsu_enumerateNonNullPointersUsingBlock:(CDUnknownBlockType)arg1;
 @end

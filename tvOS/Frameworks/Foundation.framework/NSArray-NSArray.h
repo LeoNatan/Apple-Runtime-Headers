@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (NSArray)
++ (id)newWithContentsOf:(id)arg1 immutable:(_Bool)arg2 error:(id *)arg3;
 + (id)newWithContentsOf:(id)arg1 immutable:(_Bool)arg2;
 + (id)arrayWithContentsOfURL:(id)arg1 error:(id *)arg2;
 + (id)arrayWithContentsOfURL:(id)arg1;
@@ -25,5 +26,40 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
+- (id)valueForKeyPath:(id)arg1;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (id)valueForKey:(id)arg1;
+- (id)_distinctUnionOfSetsForKeyPath:(id)arg1;
+- (id)_distinctUnionOfObjectsForKeyPath:(id)arg1;
+- (id)_distinctUnionOfArraysForKeyPath:(id)arg1;
+- (id)_unionOfSetsForKeyPath:(id)arg1;
+- (id)_unionOfArraysForKeyPath:(id)arg1;
+- (id)_unionOfObjectsForKeyPath:(id)arg1;
+- (id)_minForKeyPath:(id)arg1;
+- (id)_maxForKeyPath:(id)arg1;
+- (id)_countForKeyPath:(id)arg1;
+- (id)_avgForKeyPath:(id)arg1;
+- (id)_sumForKeyPath:(id)arg1;
+- (_Bool)_validateValue:(inout id *)arg1 forKeyPath:(id)arg2 ofObjectAtIndex:(unsigned long long)arg3 error:(out id *)arg4;
+- (void)_setValue:(id)arg1 forKeyPath:(id)arg2 ofObjectAtIndex:(unsigned long long)arg3;
+- (id)_mutableSetValueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned long long)arg2;
+- (id)_mutableOrderedSetValueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned long long)arg2;
+- (id)_mutableArrayValueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned long long)arg2;
+- (id)_valueForKeyPath:(id)arg1 ofObjectAtIndex:(unsigned long long)arg2;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2 context:(void *)arg3;
+- (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
+- (void)removeObserver:(id)arg1 fromObjectsAtIndexes:(id)arg2 forKeyPath:(id)arg3;
+- (void)removeObserver:(id)arg1 fromObjectsAtIndexes:(id)arg2 forKeyPath:(id)arg3 context:(void *)arg4;
+- (void)addObserver:(id)arg1 toObjectsAtIndexes:(id)arg2 forKeyPath:(id)arg3 options:(unsigned long long)arg4 context:(void *)arg5;
+- (id)stringsByAppendingPathComponent:(id)arg1;
+- (id)pathsMatchingExtensions:(id)arg1;
+- (id)sortedArrayUsingDescriptors:(id)arg1;
+- (id)filteredArrayUsingPredicate:(id)arg1;
+- (id)replacementObjectForPortCoder:(id)arg1;
+- (id)arrayByApplyingDifference:(id)arg1;
+- (id)differenceFromArray:(id)arg1;
+- (id)differenceFromArray:(id)arg1 withOptions:(unsigned long long)arg2;
+- (id)differenceFromArray:(id)arg1 withOptions:(unsigned long long)arg2 usingEquivalenceTest:(CDUnknownBlockType)arg3;
 @end
 

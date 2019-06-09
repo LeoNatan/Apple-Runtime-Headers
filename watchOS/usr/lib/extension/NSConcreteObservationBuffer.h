@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
     _Bool _automaticallyEmitsObjects;
 }
 
-+ (void)initialize;
 - (void)setMemoryPressureSensitive:(_Bool)arg1;
 - (_Bool)isMemoryPressureSensitive;
 - (void)setAutomaticallyEmitsObjects:(_Bool)arg1;

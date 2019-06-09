@@ -11,6 +11,7 @@
 }
 
 + (id)sharedInstance;
+- (void)promptUserAndCreateDebugRecordingWithSource:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)promptUserAndCreateDebugRecordingWithSource:(id)arg1;
 - (void)startCreatingDebugContentIfRequested;
 

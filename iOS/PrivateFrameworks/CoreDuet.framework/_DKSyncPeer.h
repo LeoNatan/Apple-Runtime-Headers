@@ -10,6 +10,7 @@
 
 @interface _DKSyncPeer : NSObject
 {
+    _Bool _companion;
     _Bool _me;
     NSString *_sourceDeviceID;
     NSString *_idsDeviceIdentifier;
@@ -17,11 +18,14 @@
     NSDate *_lastSeenDate;
     NSString *_name;
     NSString *_model;
+    NSString *_version;
     NSUUID *_uuid;
 }
 
 @property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) _Bool me; // @synthesize me=_me;
+@property(copy, nonatomic) NSString *version; // @synthesize version=_version;
+@property(nonatomic, getter=isCompanion) _Bool companion; // @synthesize companion=_companion;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSDate *lastSeenDate; // @synthesize lastSeenDate=_lastSeenDate;

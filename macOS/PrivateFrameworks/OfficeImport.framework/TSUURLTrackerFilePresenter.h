@@ -11,6 +11,7 @@
 @class NSData, NSError, NSOperationQueue, NSSet, NSString, NSURL;
 @protocol OS_dispatch_queue, TSUURLTrackerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface TSUURLTrackerFilePresenter : NSObject <NSFilePresenter>
 {
     NSObject<OS_dispatch_queue> *_accessQueue;

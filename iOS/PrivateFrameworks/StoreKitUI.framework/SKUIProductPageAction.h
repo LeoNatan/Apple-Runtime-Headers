@@ -8,6 +8,7 @@
 
 @class NSString, NSURL, SKUIItem, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageAction : NSObject
 {
     long long _actionType;

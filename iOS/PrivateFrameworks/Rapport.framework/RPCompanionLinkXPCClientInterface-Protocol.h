@@ -4,9 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSError, NSString, RPCompanionLinkDevice;
+@class NSDictionary, NSError, NSString, RPCompanionLinkDevice, RPEndpoint, RPSession;
 
 @protocol RPCompanionLinkXPCClientInterface
+
+@optional
+- (void)xpcServerAcceptSession:(RPSession *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)xpcDiscoveryChangedEndpoint:(RPEndpoint *)arg1;
+- (void)xpcDiscoveryLostEndpoint:(RPEndpoint *)arg1;
+- (void)xpcDiscoveryFoundEndpoint:(RPEndpoint *)arg1;
 - (void)companionLinkReceivedRequestID:(NSString *)arg1 request:(NSDictionary *)arg2 options:(NSDictionary *)arg3 responseHandler:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg4;
 - (void)companionLinkReceivedEventID:(NSString *)arg1 event:(NSDictionary *)arg2 options:(NSDictionary *)arg3;
 - (void)companionLinkLocalDeviceUpdated:(RPCompanionLinkDevice *)arg1;

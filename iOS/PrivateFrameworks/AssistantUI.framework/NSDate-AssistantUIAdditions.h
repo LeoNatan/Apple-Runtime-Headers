@@ -7,6 +7,8 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (AssistantUIAdditions)
+- (id)_afui_dateStringUsingCurrentLocaleFromTemplate:(id)arg1;
+- (id)afui_longYearString;
 - (_Bool)afui_isTomorrow;
 - (_Bool)afui_isToday;
 - (_Bool)_afui_isSameDayAsDate:(id)arg1;

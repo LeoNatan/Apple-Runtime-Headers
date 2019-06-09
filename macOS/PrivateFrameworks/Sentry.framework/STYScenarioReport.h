@@ -39,6 +39,7 @@
 - (id)initWithLifecycleScenarioAndLatency:(id)arg1 wakeType:(id)arg2 wakeSubtype:(id)arg3 observedLatencyInMs:(float)arg4;
 - (id)convertDictionaryToString:(id)arg1;
 - (id)symptomsSignatureForReport;
+- (id)initWithSignpostEvent:(id)arg1 scenario:(id)arg2 error:(id *)arg3;
 - (id)initWithSignpostInterval:(id)arg1 scenario:(id)arg2 error:(id *)arg3;
 - (id)initWithScenario:(id)arg1;
 

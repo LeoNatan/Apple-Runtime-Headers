@@ -9,7 +9,7 @@
 #import <PersistentConnection/PCInterfaceUsabilityMonitorDelegate-Protocol.h>
 #import <PersistentConnection/PCInterfaceUsabilityMonitorProtocol-Protocol.h>
 
-@class CUTWeakReference, NSMutableArray, NSString;
+@class CUTWeakReference, NSString, PCInterfaceUsabilityMonitor;
 @protocol OS_dispatch_queue, PCInterfaceUsabilityMonitorDelegate;
 
 @interface PCNonCellularUsabilityMonitor : NSObject <PCInterfaceUsabilityMonitorProtocol, PCInterfaceUsabilityMonitorDelegate>
@@ -23,7 +23,7 @@
     BOOL _trackUsability;
     unsigned long long _thresholdOffTransitionCount;
     double _trackedTimeInterval;
-    NSMutableArray *_interfaceMonitors;
+    PCInterfaceUsabilityMonitor *_monitor;
 }
 
 - (void).cxx_destruct;
@@ -46,7 +46,7 @@
 - (void)setThresholdOffTransitionCount:(unsigned long long)arg1;
 - (void)setTrackUsability:(BOOL)arg1;
 - (void)_forwardConfigurationOnIvarQueue;
-- (void)_addMonitorWithInterfaceName:(id)arg1;
+- (void)_addMonitor;
 - (void)dealloc;
 - (id)initWithDelegateQueue:(id)arg1;
 

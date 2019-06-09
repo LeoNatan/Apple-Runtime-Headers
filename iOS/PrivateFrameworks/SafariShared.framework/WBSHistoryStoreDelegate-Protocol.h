@@ -12,6 +12,7 @@
 @protocol WBSHistoryStoreDelegate <WBSHistoryLoaderDelegate>
 - (void)historyStore:(id <WBSHistoryStore>)arg1 didRemoveVisits:(NSArray *)arg2;
 - (void)historyStore:(id <WBSHistoryStore>)arg1 didRemoveItems:(NSArray *)arg2;
+- (void)historyStore:(id <WBSHistoryStore>)arg1 didAddVisits:(NSArray *)arg2;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(id <WBSHistoryStore>)arg1;
 - (_Bool)historyStoreShouldCheckDatabaseIntegrity:(id <WBSHistoryStore>)arg1;
 - (void)historyStore:(id <WBSHistoryStore>)arg1 didPrepareToDeleteWithDeletionPlan:(WBSHistoryDeletionPlan *)arg2;

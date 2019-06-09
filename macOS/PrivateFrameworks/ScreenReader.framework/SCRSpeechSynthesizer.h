@@ -34,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRSpeechSynthesizerVars *_privateSCRSpeechSynthesizerVars; // @synthesize _privateSCRSpeechSynthesizerVars=__privateSCRSpeechSynthesizerVars;
 @property(nonatomic) struct __CFMessagePort *_speechSynthesizerConsoleRemoteMessagePort; // @synthesize _speechSynthesizerConsoleRemoteMessagePort=__speechSynthesizerConsoleRemoteMessagePort;
 @property(nonatomic) BOOL _wordCallBackRegistered; // @synthesize _wordCallBackRegistered=__wordCallBackRegistered;
+- (void).cxx_destruct;
 - (void)_handleSpeechDoneNoCallback;
 - (void)_handleDefaultVoiceChange;
 - (BOOL)_setupCallbacksSavingToFile:(BOOL)arg1;
@@ -71,13 +72,13 @@ __attribute__((visibility("hidden")))
 - (BOOL)startSpeakingString:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldPostWhenSpeechCompletes;
 @property(readonly, nonatomic) float pitchBase;
-@property(readonly, retain, nonatomic) NSArray *supportedLiteralCharacterRanges;
-@property(readonly, retain, nonatomic) NSArray *supportedCharacterRanges;
+@property(readonly, nonatomic) NSArray *supportedLiteralCharacterRanges;
+@property(readonly, nonatomic) NSArray *supportedCharacterRanges;
 @property(readonly, nonatomic) BOOL isPaused;
 @property(readonly, nonatomic) BOOL isSpeaking;
 @property(nonatomic) BOOL usesFeedbackWindow;
 @property(copy, nonatomic) NSString *voice;
-@property(nonatomic) id delegate;
+@property(nonatomic) __weak id delegate;
 - (void)dealloc;
 - (id)initWithVoice:(id)arg1;
 - (id)init;

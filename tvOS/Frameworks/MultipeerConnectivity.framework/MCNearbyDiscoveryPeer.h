@@ -8,6 +8,7 @@
 
 @class MCNearbyDiscoveryPeerConnection, MCPeerID, NSMutableArray, NSNetService;
 
+__attribute__((visibility("hidden")))
 @interface MCNearbyDiscoveryPeer : NSObject
 {
     MCPeerID *_peerID;

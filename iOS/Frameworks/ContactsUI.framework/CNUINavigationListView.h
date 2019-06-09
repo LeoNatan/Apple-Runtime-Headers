@@ -18,15 +18,21 @@ __attribute__((visibility("hidden")))
     id <CNUINavigationListViewDelegate> _navigationListViewDelegate;
     UILongPressGestureRecognizer *_selectionGestureRecognizer;
     UIGestureRecognizer *_additionalSelectionGestureRecognizer;
+    UIGestureRecognizer *_pressGestureRecognizer;
     NSIndexPath *_trackedElementIndexPath;
     UISelectionFeedbackGenerator *_retargetBehavior;
     _CNUINavigationListViewPermissiveGestureRecognizerDelegate *_selectionGestureRecognizerDelegate;
+    struct CGPoint _gestureStartLocation;
+    struct CGPoint _gestureStartLocationInWindow;
 }
 
 + (_Bool)disableHeaderAccessibilityElements;
 @property(retain, nonatomic) _CNUINavigationListViewPermissiveGestureRecognizerDelegate *selectionGestureRecognizerDelegate; // @synthesize selectionGestureRecognizerDelegate=_selectionGestureRecognizerDelegate;
 @property(retain, nonatomic) UISelectionFeedbackGenerator *retargetBehavior; // @synthesize retargetBehavior=_retargetBehavior;
+@property(nonatomic) struct CGPoint gestureStartLocationInWindow; // @synthesize gestureStartLocationInWindow=_gestureStartLocationInWindow;
+@property(nonatomic) struct CGPoint gestureStartLocation; // @synthesize gestureStartLocation=_gestureStartLocation;
 @property(retain, nonatomic) NSIndexPath *trackedElementIndexPath; // @synthesize trackedElementIndexPath=_trackedElementIndexPath;
+@property(retain, nonatomic) UIGestureRecognizer *pressGestureRecognizer; // @synthesize pressGestureRecognizer=_pressGestureRecognizer;
 @property(retain, nonatomic) UIGestureRecognizer *additionalSelectionGestureRecognizer; // @synthesize additionalSelectionGestureRecognizer=_additionalSelectionGestureRecognizer;
 @property(retain, nonatomic) UILongPressGestureRecognizer *selectionGestureRecognizer; // @synthesize selectionGestureRecognizer=_selectionGestureRecognizer;
 @property(nonatomic) __weak id <CNUINavigationListViewDelegate> navigationListViewDelegate; // @synthesize navigationListViewDelegate=_navigationListViewDelegate;
@@ -34,12 +40,14 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)clearAdditionalSelectionGestureRecognizer;
 - (void)startTrackingSelectionFromGestureRecognizer:(id)arg1;
+- (void)notifyDelegateWithSelectionEventAtIndexPath:(id)arg1;
 - (void)notifyDelegateWithSelectionEventAtPoint:(struct CGPoint)arg1 trackedElementIndexPath:(id)arg2;
 - (void)updateCellAccessoryControlState:(id)arg1 withTrackedLocation:(struct CGPoint)arg2;
 - (_Bool)location:(struct CGPoint)arg1 isInAccessoryControlTouchArea:(id)arg2;
 - (void)startTrackingElementAtIndexPath:(id)arg1;
 - (void)stopTrackingElementAtIndexPath:(id)arg1;
 - (void)handlePanGestureRecognizerUpdate:(id)arg1;
+- (void)handlePressSelection;
 - (void)handleSelectionGestureRecognizerUpdate:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 - (id)elementAtLocation:(struct CGPoint)arg1;

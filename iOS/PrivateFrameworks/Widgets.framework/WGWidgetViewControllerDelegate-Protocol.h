@@ -11,6 +11,8 @@
 @protocol WGWidgetViewControllerDelegate <NSObject>
 
 @optional
+- (void)widgetViewControllerNeedsToBeRegisteredForRefreshNotification:(WGWidgetViewController *)arg1;
+- (void)widgetViewControllerNeedsToBeUnregisteredForRefreshNotification:(WGWidgetViewController *)arg1;
 - (void)remoteViewControllerViewDidAppearForWidgetViewController:(WGWidgetViewController *)arg1;
 - (void)remoteViewControllerDidConnectForWidgetViewController:(WGWidgetViewController *)arg1;
 @end

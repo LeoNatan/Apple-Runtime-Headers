@@ -14,6 +14,8 @@
 
 @interface PUICQuickboardKeypadView : UIView <PUICQuickboardNumberPadViewDelegate, UIScrollViewDelegate>
 {
+    UILabel *_unitsLabel;
+    int _mode;
     _Bool _dialer;
     NSString *_dialedNumber;
     id <PUICQuickboardKeypadViewDelegate> _delegate;
@@ -28,21 +30,23 @@
 @property(readonly, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(readonly, nonatomic) PUICQuickboardNumberPadView *numberPadView; // @synthesize numberPadView=_numberPadView;
 @property(readonly, nonatomic, getter=isDialer) _Bool dialer; // @synthesize dialer=_dialer;
-@property(retain, nonatomic) id <PUICQuickboardKeypadViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <PUICQuickboardKeypadViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *dialedNumber; // @synthesize dialedNumber=_dialedNumber;
 - (void).cxx_destruct;
 - (void)scrollViewDidScrollToTop:(id)arg1;
+- (void)numberPadViewDidSelectDelete:(id)arg1;
 - (void)numberPadViewDidSelectOK:(id)arg1;
 - (void)numberPadView:(id)arg1 didSelectNumberPadCharacter:(int)arg2;
 - (void)numberPadView:(id)arg1 didUnhighlightNumberPadCharacter:(int)arg2;
 - (void)numberPadView:(id)arg1 didHighlightNumberPadCharacter:(int)arg2;
+- (_Bool)_isTemperatureMode;
 - (void)_updateAuxiliaryButtonsVisibility;
 - (void)backspace;
 - (void)addDialedString:(id)arg1;
 - (void)resetDialedString;
 - (void)_deleteButtonTapped:(id)arg1;
 - (void)_installConstraints;
-- (id)initWithFrame:(struct CGRect)arg1 asDialer:(_Bool)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 mode:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

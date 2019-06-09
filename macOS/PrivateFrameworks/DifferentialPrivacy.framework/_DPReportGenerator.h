@@ -18,6 +18,7 @@
 + (id)filterNonConformingRecordsFrom:(id)arg1;
 - (void)scheduleMaintenanceWithName:(id)arg1 database:(id)arg2;
 - (id)generateReportForKeys:(id)arg1 storage:(id)arg2;
+- (void)reportToPrivateCloudWithStrings:(id)arg1 forKey:(id)arg2;
 - (id)generateReportUsing:(id)arg1;
 - (BOOL)markSubmitted:(id)arg1 storage:(id)arg2;
 

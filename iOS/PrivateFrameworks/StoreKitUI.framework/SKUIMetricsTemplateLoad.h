@@ -10,6 +10,7 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMetricsTemplateLoad : NSObject <NSCopying>
 {
     _Bool _responseWasCached;

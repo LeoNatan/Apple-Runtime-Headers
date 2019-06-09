@@ -6,11 +6,18 @@
 
 #import <FindMyDevice/NSObject-Protocol.h>
 
-@class NSString, NSURL;
+@class NSArray, NSString, NSURL;
+@protocol FMDAsset;
 
 @protocol FMDAudioAccessory <NSObject>
 @property(readonly, nonatomic) _Bool playingSound;
 @property(readonly, nonatomic) NSURL *audioURL;
 @property(readonly, nonatomic) NSString *audioRoutingIdentifier;
+@property(readonly, nonatomic) unsigned long long inEar;
+- (_Bool)updatePlaybackChannels:(NSArray *)arg1;
+- (_Bool)updateAudioAsset:(id <FMDAsset>)arg1;
+
+@optional
+- (_Bool)shouldStopSoundNow;
 @end
 

@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) id accessibilityParent; // @synthesize accessibilityParent=_accessibilityParent;
+- (void).cxx_destruct;
 - (BOOL)worksWhenModal;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (BOOL)accessibilityIsIgnored;

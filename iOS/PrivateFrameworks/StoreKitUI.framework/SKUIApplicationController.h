@@ -145,6 +145,7 @@
 - (void)_assetsDidUpdate:(id)arg1;
 - (unsigned long long)tabBarControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize)arg2 withTransitionCoordinator:(id)arg3;
+- (void)setUserInterfaceOverrideOnTabBarController:(id)arg1 forViewController:(id)arg2;
 - (_Bool)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
 - (_Bool)tabBarController:(id)arg1 shouldFallbackToRootForController:(id)arg2;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;

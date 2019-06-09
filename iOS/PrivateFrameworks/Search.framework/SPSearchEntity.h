@@ -12,16 +12,23 @@
 
 @interface SPSearchEntity : NSObject <NSSecureCoding>
 {
+    _Bool _hasWords;
+    NSString *_bundleIdentifier;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)supportsSecureCoding;
+@property _Bool hasWords; // @synthesize hasWords=_hasWords;
+@property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (void).cxx_destruct;
 - (id)initWithContactIdentifier:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1 appName:(id)arg2;
 - (id)initWithQueryString:(id)arg1 tokenText:(id)arg2;
 @property(readonly) NSString *tokenText;
 @property(readonly) NSString *queryString;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly) _Bool isScopedAppSearch;
 @property(readonly) _Bool isPeopleSearch;
 
 @end

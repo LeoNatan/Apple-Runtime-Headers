@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)didSelectVisualTabPickerThumbnailView:(id)arg1;
 - (BOOL)canCloseTabInVisualTabPickerThumbnailView:(id)arg1;
 - (id)siteIconForVisualTabPickerThumbnailView:(id)arg1;
-- (int)muteButtonStateForVisualTabPickerTileThumbnailView:(id)arg1;
+- (long long)muteButtonStateForVisualTabPickerTileThumbnailView:(id)arg1;
 - (BOOL)shouldShowMuteButtonForVisualTabPickerTileThumbnailView:(id)arg1;
 - (struct CGRect)visibleBoundsForVisualTabPickerTileThumbnailView:(id)arg1;
 - (id)viewForVisualTabPickerTileThumbnailView:(id)arg1 lowResolution:(BOOL)arg2;

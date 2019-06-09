@@ -28,9 +28,12 @@
 @property(readonly, nonatomic) NSString *typeString;
 - (_Bool)isDeepEqual:(id)arg1;
 - (_Bool)isShallowEqual:(id)arg1;
+- (id)ipv4Broadcast;
+- (id)ipv4Netmask;
 @property(readonly, nonatomic) NWInterface *delegateInterface;
 @property(readonly, nonatomic) unsigned int generation;
 @property(readonly, nonatomic) int mtu;
+@property(readonly, nonatomic, getter=isConstrained) _Bool constrained;
 @property(readonly, nonatomic, getter=isExpensive) _Bool expensive;
 @property(readonly, nonatomic) int subtype;
 @property(readonly, nonatomic) int type;

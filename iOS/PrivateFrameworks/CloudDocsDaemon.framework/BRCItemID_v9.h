@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     unsigned char _uuid[16];
 }
 
++ (id)newFromSqliteStatement:(struct sqlite3_stmt *)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 - (void).cxx_destruct;
 - (id)_initAsLibraryRootWithAppLibraryRowID:(id)arg1 enclosureUUID:(id)arg2;

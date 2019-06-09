@@ -42,7 +42,9 @@
     id _NSProgressIndicatorReserved1;
 }
 
++ (id)defaultAnimationForKey:(id)arg1;
 + (void)initialize;
+- (Class)_animatorClass;
 - (id)accessibilityValue;
 - (void)viewDidUnhide;
 - (void)viewDidHide;
@@ -58,6 +60,7 @@
 - (void)heartBeat:(CDStruct_fadd2e06 *)arg1;
 - (void)_updateHeartBeat;
 - (id)makeBackingLayer;
+- (double)firstBaselineOffsetFromTop;
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
@@ -99,7 +102,6 @@
 - (BOOL)_proIsSpinning;
 - (void)_setProAnimationIndex:(unsigned long long)arg1;
 - (unsigned long long)_proAnimationIndex;
-- (void)_installHeartBeat:(BOOL)arg1;
 - (void)animate:(id)arg1;
 - (void)setAnimationDelay:(double)arg1;
 - (double)animationDelay;

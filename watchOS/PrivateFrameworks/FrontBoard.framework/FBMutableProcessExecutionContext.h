@@ -26,7 +26,6 @@
 @property(nonatomic) _Bool waitForDebugger; // @dynamic waitForDebugger;
 @property(nonatomic) double watchdogExtension; // @dynamic watchdogExtension;
 @property(retain, nonatomic) id <FBProcessWatchdogProviding> watchdogProvider; // @dynamic watchdogProvider;
-@property(nonatomic) double watchdogScaleFactor; // @dynamic watchdogScaleFactor;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class STAllowanceProgressGroupSpecifierProvider, STCategoryDetailsGroupSpecifierProvider, STDrillInItemInfoGroupSpecifierProvider, STDrillInUsageGroupSpecifierProvider, STUsageItem;
 
+__attribute__((visibility("hidden")))
 @interface STDrillInDetailListController : STPINListViewController
 {
     STUsageItem *_usageItem;

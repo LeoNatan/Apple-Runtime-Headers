@@ -10,6 +10,7 @@
 
 @class NSString, SKUIContentUnavailableView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIContentUnavailableCollectionViewCell : SKUICollectionViewCell <SKUIViewElementView>
 {
     struct UIEdgeInsets _contentInset;

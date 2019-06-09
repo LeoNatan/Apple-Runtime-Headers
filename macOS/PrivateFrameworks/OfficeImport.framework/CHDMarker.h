@@ -8,6 +8,7 @@
 
 @class OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDMarker : NSObject
 {
     unsigned int mSize;

@@ -12,7 +12,7 @@
 #import <UIKitCore/_UIClickInteractionDelegate-Protocol.h>
 #import <UIKitCore/_UIPreviewInteractionImpl-Protocol.h>
 
-@class NSString, UIPreviewInteraction, UIView, _UIClickInteraction, _UIPreviewInteractionViewControllerHelper, _UIRelationshipGestureRecognizer, _UIStateMachine;
+@class NSString, UIDragInteraction, UIPreviewInteraction, UIView, _UIClickInteraction, _UIPreviewInteractionHighlighter, _UIPreviewInteractionPresentationAssistant, _UIRelationshipGestureRecognizer, _UIStateMachine;
 @protocol UIInteractionEffect, UIPreviewInteractionDelegate, UIPreviewInteractionDelegatePrivate, _UIPreviewInteractionTouchForceProviding;
 
 __attribute__((visibility("hidden")))
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
         _Bool highlighterForPreviewTransition;
         _Bool viewControllerPresentationForPresentingViewController;
         _Bool shouldFinishTransitionToPreview;
-        _Bool shouldAutomaticallyTransitionToPreviewAfterDelay;
+        _Bool targetedPreviewForPreviewingAtLocation;
         _Bool overrideViewForCommitPhase;
     } _delegateImplements;
     id <UIPreviewInteractionDelegate> _delegate;
@@ -37,10 +37,14 @@ __attribute__((visibility("hidden")))
     _UIClickInteraction *_previewClickInteraction;
     _UIClickInteraction *_commitClickInteraction;
     _UIRelationshipGestureRecognizer *_exclusionRelationshipGestureRecognizer;
-    _UIPreviewInteractionViewControllerHelper *_viewControllerHelper;
+    _UIPreviewInteractionPresentationAssistant *_presentationAssistant;
+    _UIPreviewInteractionHighlighter *_highlighter;
+    UIDragInteraction *_associatedDragInteraction;
 }
 
-@property(retain, nonatomic) _UIPreviewInteractionViewControllerHelper *viewControllerHelper; // @synthesize viewControllerHelper=_viewControllerHelper;
+@property(nonatomic) __weak UIDragInteraction *associatedDragInteraction; // @synthesize associatedDragInteraction=_associatedDragInteraction;
+@property(retain, nonatomic) _UIPreviewInteractionHighlighter *highlighter; // @synthesize highlighter=_highlighter;
+@property(retain, nonatomic) _UIPreviewInteractionPresentationAssistant *presentationAssistant; // @synthesize presentationAssistant=_presentationAssistant;
 @property(retain, nonatomic) _UIRelationshipGestureRecognizer *exclusionRelationshipGestureRecognizer; // @synthesize exclusionRelationshipGestureRecognizer=_exclusionRelationshipGestureRecognizer;
 @property(retain, nonatomic) _UIClickInteraction *commitClickInteraction; // @synthesize commitClickInteraction=_commitClickInteraction;
 @property(retain, nonatomic) _UIClickInteraction *previewClickInteraction; // @synthesize previewClickInteraction=_previewClickInteraction;
@@ -53,11 +57,20 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)_gestureRecognizerForExclusionRelationship;
-- (void)_interactionEnded:(_Bool)arg1 notifyDelegateIfNecessary:(_Bool)arg2;
-- (void)_interactionEnded:(_Bool)arg1;
-- (void)_cancelInteractionInternal:(_Bool)arg1;
-- (void)_handleTransitionToPreview;
-- (void)_preparePreviewInteractionHighlighter;
+- (void)_toBeRemoved_CallHighlighterCompletion;
+- (void)_toBeRemoved_CreateHighlighterIfPossible;
+- (void)_delegateUpdateCommitTransitionWithProgress:(double)arg1 ended:(_Bool)arg2;
+- (void)_delegateUpdatePreviewTransitionWithProgress:(double)arg1 ended:(_Bool)arg2;
+- (void)_endInteractionEffectIfNeeded;
+- (void)_prepareInteractionEffect;
+- (void)_endInteractionDidComplete:(_Bool)arg1 wasCancelledByClient:(_Bool)arg2;
+- (unsigned long long)_handleTransitionToPossibleByEndingWithContext:(id)arg1;
+- (unsigned long long)_handleTransitionToPossibleByCommitting;
+- (void)_handleDidTransitionToPreview;
+- (unsigned long long)_handleTransitionToPreview;
+- (unsigned long long)_handleTransitionToHighlight;
+- (unsigned long long)_handleTransitionToActive;
+- (_Bool)_isPaused;
 @property(readonly, nonatomic) unsigned long long currentState;
 - (void)_prepareStateMachine;
 - (void)clickInteractionDidClickUp:(id)arg1;
@@ -65,8 +78,9 @@ __attribute__((visibility("hidden")))
 - (id)highlightEffectForClickInteraction:(id)arg1;
 - (void)clickInteractionDidEnd:(id)arg1;
 - (_Bool)clickInteractionShouldBegin:(id)arg1;
-@property(readonly, nonatomic) id <UIPreviewInteractionDelegatePrivate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
-- (void)_performPresentationIfPossible;
+@property(readonly, nonatomic) __weak id <UIPreviewInteractionDelegatePrivate> privateDelegate; // @synthesize privateDelegate=_privateDelegate;
+- (_Bool)_performPresentationIfPossible;
+- (_Bool)_canPerformPresentation;
 - (void)_startPreviewAtLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;

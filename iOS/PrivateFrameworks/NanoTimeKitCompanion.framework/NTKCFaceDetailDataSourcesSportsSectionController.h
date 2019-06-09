@@ -12,7 +12,7 @@
 
 - (void)didSelectRow:(long long)arg1;
 - (_Bool)canSelectRow:(long long)arg1;
-- (void)_buildRowsWithDataSourceIdentifiers:(id)arg1 donatedAppIdentifiers:(id)arg2;
+- (void)_buildRowsWithDataSourceEntries:(id)arg1;
 
 @end
 

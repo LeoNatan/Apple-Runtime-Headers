@@ -6,7 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
-@class GKGame, GKRemoteViewController;
+@class GKGame, GKRemoteViewServiceController;
 
 @interface GKHostedViewController : UIViewController
 {
@@ -15,7 +15,7 @@
     _Bool _isRequestingRemoteViewController;
     _Bool _gkIsDisappearing;
     GKGame *_game;
-    GKRemoteViewController *_remoteViewController;
+    GKRemoteViewServiceController *_remoteViewController;
     CDUnknownBlockType _remoteViewReadyHandler;
 }
 
@@ -24,7 +24,7 @@
 @property(copy, nonatomic) CDUnknownBlockType remoteViewReadyHandler; // @synthesize remoteViewReadyHandler=_remoteViewReadyHandler;
 @property(nonatomic) _Bool shouldPresentRemoteViewController; // @synthesize shouldPresentRemoteViewController=_shouldPresentRemoteViewController;
 @property(nonatomic) _Bool presentingRemoteViewController; // @synthesize presentingRemoteViewController=_presentingRemoteViewController;
-@property(retain, nonatomic) GKRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+@property(retain, nonatomic) GKRemoteViewServiceController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(retain, nonatomic) GKGame *game; // @synthesize game=_game;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (_Bool)shouldAutomaticallyForwardRotationMethods;

@@ -34,6 +34,7 @@
 - (void).cxx_destruct;
 - (id)_metadataDictionary;
 @property(readonly, nonatomic) long long protectionType;
+@property(readonly, copy, nonatomic) NSDictionary *responseDictionary;
 - (id)initWithFileAssetResponseDictionary:(id)arg1;
 - (id)initWithAssetURL:(id)arg1;
 

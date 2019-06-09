@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSError;
+@class NSError, NSString;
 
 @protocol LAContextCallbackXPC
+- (void)tccPreflightWithService:(NSString *)arg1 reply:(void (^)(NSNumber *))arg2;
 - (void)invalidatedWithError:(NSError *)arg1;
 @end
 

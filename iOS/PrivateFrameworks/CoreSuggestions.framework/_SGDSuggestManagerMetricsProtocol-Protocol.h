@@ -7,6 +7,7 @@
 @class NSString, SGRecordId;
 
 @protocol _SGDSuggestManagerMetricsProtocol
+- (void)logSuggestionInteractionForRecordId:(SGRecordId *)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logEventInteractionForEventWithExternalIdentifier:(NSString *)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logEventInteractionForEventWithUniqueKey:(NSString *)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;
 - (void)logMetricSearchResultsIncludedPureSuggestionWithBundleId:(NSString *)arg1;

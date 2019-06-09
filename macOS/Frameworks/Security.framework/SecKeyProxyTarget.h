@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)getBlockSizeWithReply:(CDUnknownBlockType)arg1;
 - (void)initializeWithReply:(CDUnknownBlockType)arg1;
 // Error parsing type for property key:
-// Property attributes: T^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^{__SecKey}^v},R,N
+// Property attributes: T^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v},R,N
 
 - (id)initWithKey:(id)arg1 certificate:(id)arg2;
 

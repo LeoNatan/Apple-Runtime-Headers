@@ -16,7 +16,7 @@
 - (void)setRightBarButtonTitle:(NSString *)arg1;
 - (void)setCancelButtonTitle:(NSString *)arg1;
 - (void)setShowsStoreButton:(_Bool)arg1;
-- (void)lookupItemDidLoad:(SSLookupItem *)arg1 parameters:(NSDictionary *)arg2;
+- (void)clientLookupItemDidLoad:(SSLookupItem *)arg1 parameters:(NSDictionary *)arg2;
 - (void)setupWithClientBundleID:(NSString *)arg1 bagType:(long long)arg2;
 @end
 

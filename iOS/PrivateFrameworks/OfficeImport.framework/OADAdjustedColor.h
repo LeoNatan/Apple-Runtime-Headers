@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool mGray;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)gray;
@@ -25,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (unsigned char)adjustmentParam;
 - (int)adjustmentType;
 - (id)baseColor;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBaseColor:(id)arg1 adjustmentType:(int)arg2 adjustmentParam:(unsigned char)arg3 invert:(_Bool)arg4 invert128:(_Bool)arg5 gray:(_Bool)arg6;
 

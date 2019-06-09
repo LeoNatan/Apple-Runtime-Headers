@@ -10,6 +10,7 @@
 
 @class NSMutableArray, NSString, OADBlip;
 
+__attribute__((visibility("hidden")))
 @interface OADBlipRef : NSObject <NSCopying>
 {
     int mIndex;

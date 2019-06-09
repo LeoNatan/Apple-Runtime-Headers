@@ -16,7 +16,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties
-@property(nonatomic) unsigned long long alignment; // @dynamic alignment;
+@property(nonatomic) long long alignment; // @dynamic alignment;
 @property(nonatomic) unsigned int hints; // @dynamic hints;
 @property(nonatomic) unsigned long long indent; // @dynamic indent;
 @property(nonatomic) BOOL needsListCleanup; // @dynamic needsListCleanup;

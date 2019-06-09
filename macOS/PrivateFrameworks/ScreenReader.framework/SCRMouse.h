@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, SCRCTargetSelectorTimer, SCRCThreadKey, SCRDnDInfo, SCRTextMarkerRange, SCRUIElement;
+@class NSString, SCRCTargetSelectorTimer, SCRCThreadKey, SCRCUserDefaults, SCRDnDInfo, SCRTextMarkerRange, SCRUIElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRMouse : NSObject
@@ -15,14 +15,11 @@ __attribute__((visibility("hidden")))
     SCRUIElement *_lastUIElementUnderMouse;
     SCRUIElement *_lastContainerAreaUIElement;
     double _speakUnderMouseDelayInterval;
-    double _announceContainerDelayInterval;
-    double _trackingVOCToMouseDelay;
     double _lastUserMouseMoveTime;
     NSString *_lastApplicationNameOutput;
     unsigned int _cgsConnectionID;
-    struct __AXUIElement *_systemWideAXUIElementRef;
     SCRTextMarkerRange *_lastHoverTextMarkerRange;
-    int _currentPositioningHint;
+    long long _currentPositioningHint;
     struct CGPoint _mouseDragPoint;
     struct CGPoint _mouseDropPoint;
     float _systemMouseCursorSize;
@@ -31,28 +28,28 @@ __attribute__((visibility("hidden")))
     SCRCTargetSelectorTimer *_dragAnimationTimer;
     SCRCThreadKey *_mouseHandlerThreadKey;
     SCRCThreadKey *_threadKey;
-    int _modifierKey;
+    long long _modifierKey;
     struct {
-        unsigned int mouseButton1PressedDown:1;
-        unsigned int mouseButton2PressedDown:1;
         unsigned int alreadySpokeCurrentElement:1;
         unsigned int announceMouseEnteringContainerArea:1;
-        unsigned int trackVOCToMouse:1;
-        unsigned int droppingAllowed:1;
         unsigned int dontSpeakNextElement:1;
-        unsigned int ranDraggabilityPreTest:1;
         unsigned int draggingMultipleSelection:1;
-        unsigned int windowsRemainOverlapping:1;
+        unsigned int droppingAllowed:1;
         unsigned int ignoreNotification:1;
-        unsigned int speakTextUnderMouse:1;
-        unsigned int mouseIsSliding:1;
         unsigned int includeModifierKey:1;
         unsigned int isReverseDnD:1;
-        unsigned int reserved:17;
+        unsigned int mouseButton1PressedDown:1;
+        unsigned int mouseButton2PressedDown:1;
+        unsigned int mouseIsSliding:1;
+        unsigned int ranDraggabilityPreTest:1;
+        unsigned int speakTextUnderMouse:1;
+        unsigned int trackVOCToMouse:1;
+        unsigned int windowsRemainOverlapping:1;
     } _flags;
+    SCRCUserDefaults *__userDefaults;
 }
 
-+ (id)sharedMouse;
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(retain) SCRTextMarkerRange *lastHoverTextMarkerRange; // @synthesize lastHoverTextMarkerRange=_lastHoverTextMarkerRange;
 @property(retain) SCRUIElement *lastContainerAreaUIElement; // @synthesize lastContainerAreaUIElement=_lastContainerAreaUIElement;
 @property(retain) SCRUIElement *lastUIElementUnderMouse; // @synthesize lastUIElementUnderMouse=_lastUIElementUnderMouse;
@@ -74,7 +71,7 @@ __attribute__((visibility("hidden")))
 - (void)_checkDropResult;
 - (void)dragStartedOnUIElement:(id)arg1;
 - (void)dragToElement:(id)arg1;
-- (void)startDragAndDropOntoElement:(id)arg1 withPositioningHint:(int)arg2;
+- (void)startDragAndDropOntoElement:(id)arg1 withPositioningHint:(long long)arg2;
 - (BOOL)_verifyDragItem:(id)arg1 destinationItem:(id)arg2;
 - (void)_verifyDraggabilityAfterWindowAdjustmentWithDestination:(id)arg1;
 - (void)_startDragAndDropOntoElement:(id)arg1;
@@ -120,7 +117,7 @@ __attribute__((visibility("hidden")))
 - (void)_dragPreTestEnded;
 - (void)_runDraggabilityPreTest;
 - (void)_reallyRunDraggabilityPreTest;
-- (struct CGPoint)_dragWaitingSpotForStage:(int)arg1;
+- (struct CGPoint)_dragWaitingSpotForStage:(long long)arg1;
 - (id)_dragScrollContainerUIElement;
 - (void)_retryDragFromPoint:(struct CGPoint)arg1;
 - (void)_dragFromPosition:(id)arg1;
@@ -157,13 +154,13 @@ __attribute__((visibility("hidden")))
 - (BOOL)button2Pressed;
 - (BOOL)button1Pressed;
 - (BOOL)buttonPressed;
-- (void)releaseMouseButton:(int)arg1 atPosition:(struct CGPoint)arg2 inWindowID:(unsigned int)arg3 clickCount:(long long)arg4;
-- (void)pressAndHoldDownMouseButton:(int)arg1 atPosition:(struct CGPoint)arg2 inWindowID:(unsigned int)arg3 clickCount:(long long)arg4;
-- (void)clickMouseButton:(int)arg1 atPosition:(struct CGPoint)arg2 count:(unsigned int)arg3;
-- (void)clickMouseButton:(int)arg1 atPosition:(struct CGPoint)arg2 inWindowID:(unsigned int)arg3 count:(unsigned int)arg4;
-- (void)warpMouseToUIElement:(id)arg1 positioningHint:(int)arg2 position:(struct CGPoint)arg3;
+- (void)releaseMouseButton:(long long)arg1 atPosition:(struct CGPoint)arg2 inWindowID:(unsigned int)arg3 clickCount:(long long)arg4;
+- (void)pressAndHoldDownMouseButton:(long long)arg1 atPosition:(struct CGPoint)arg2 inWindowID:(unsigned int)arg3 clickCount:(long long)arg4;
+- (void)clickMouseButton:(long long)arg1 atPosition:(struct CGPoint)arg2 count:(unsigned int)arg3;
+- (void)clickMouseButton:(long long)arg1 atPosition:(struct CGPoint)arg2 inWindowID:(unsigned int)arg3 count:(unsigned int)arg4;
+- (void)warpMouseToUIElement:(id)arg1 positioningHint:(long long)arg2 position:(struct CGPoint)arg3;
 - (void)_warpMouseToUIElement:(id)arg1 positioningHint:(id)arg2 position:(id)arg3;
-- (void)warpMouseToUIElement:(id)arg1 positioningHint:(int)arg2;
+- (void)warpMouseToUIElement:(id)arg1 positioningHint:(long long)arg2;
 - (void)warpMouseToPosition:(struct CGPoint)arg1;
 - (void)_echoMouseSummary;
 - (void)echoMouseSummary;
@@ -173,7 +170,9 @@ __attribute__((visibility("hidden")))
 - (id)threadKey;
 - (id)dndInfo;
 - (void)dealloc;
-- (id)init;
+- (void)invalidate;
+- (void)completeInitialization;
+- (id)initWithUserDefaults:(id)arg1;
 
 @end
 

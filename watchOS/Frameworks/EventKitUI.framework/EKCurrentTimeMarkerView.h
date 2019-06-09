@@ -16,7 +16,7 @@
 }
 
 + (float)_spacingAdjustmentFontSize;
-+ (id)timeMarkerFont;
++ (id)timeMarkerFontForSizeClass:(int)arg1;
 @property(retain, nonatomic) UILabel *currentTimeLabel; // @synthesize currentTimeLabel=_currentTimeLabel;
 @property(nonatomic) _Bool showsLine; // @synthesize showsLine=_showsLine;
 @property(nonatomic) _Bool showsThumb; // @synthesize showsThumb=_showsThumb;
@@ -30,6 +30,7 @@
 - (void)updateTime;
 @property(readonly, nonatomic) float markerMidHeight;
 @property(readonly, nonatomic) float markerWidth;
+- (id)initWithFrame:(struct CGRect)arg1 sizeClass:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

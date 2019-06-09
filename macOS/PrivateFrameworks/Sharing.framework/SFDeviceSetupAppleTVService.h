@@ -33,6 +33,7 @@
 - (void)_handleSessionEnded:(id)arg1;
 - (void)_handleSessionStarted:(id)arg1;
 - (void)_sfServiceStart;
+- (void)_reportProgress:(unsigned int)arg1 info:(id)arg2;
 - (void)_invalidate;
 - (void)invalidate;
 - (void)_activate;

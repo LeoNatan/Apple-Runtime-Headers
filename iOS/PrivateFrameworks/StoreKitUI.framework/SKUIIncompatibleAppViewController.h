@@ -11,6 +11,7 @@
 @class NSOperationQueue, NSString, SKUIIncompatibleAppView, SKUIItemArtworkContext, SKUIProductPageHeaderViewController, SKUIProductPageItem, SSVLoadURLOperation, UIImage, UIScrollView;
 @protocol SKUIProductPageChildViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIncompatibleAppViewController : SKUIViewController <SKUIProductPageChildViewController>
 {
     SKUIItemArtworkContext *_artworkContext;

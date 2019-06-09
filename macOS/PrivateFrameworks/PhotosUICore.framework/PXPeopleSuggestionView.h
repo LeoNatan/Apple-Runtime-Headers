@@ -36,7 +36,6 @@
 @property(nonatomic) struct CGRect faceRect; // @synthesize faceRect=_faceRect;
 @property(readonly, nonatomic) id <PXPerson> suggestion; // @synthesize suggestion=_suggestion;
 - (void).cxx_destruct;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (double)_faceScale;
 - (struct CGRect)_scaledFaceRect;
 - (void)_updateDateFieldWithSuggestion:(id)arg1;

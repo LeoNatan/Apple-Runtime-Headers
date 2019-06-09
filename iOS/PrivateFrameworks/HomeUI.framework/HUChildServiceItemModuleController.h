@@ -26,8 +26,8 @@
 - (void).cxx_destruct;
 - (void)checkmarkTappedInCell:(id)arg1 forItem:(id)arg2;
 - (void)_identifyButtonPressed:(id)arg1 forEvent:(id)arg2;
+- (id)placeholderTextForTextField:(id)arg1 item:(id)arg2;
 - (id)defaultTextForTextField:(id)arg1 item:(id)arg2;
-- (id)currentTextForTextField:(id)arg1 item:(id)arg2;
 - (void)textFieldDidEndEditing:(id)arg1 item:(id)arg2;
 - (void)textDidChange:(id)arg1 forTextField:(id)arg2 item:(id)arg3;
 - (void)textFieldDidBeginEditing:(id)arg1 item:(id)arg2;

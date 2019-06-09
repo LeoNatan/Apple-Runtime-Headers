@@ -16,6 +16,9 @@
 - (long long)_srDeleteFilesOlderThanTimeToLiveInSeconds:(double)arg1;
 - (long long)_srDeleteAllTempFiles;
 - (long long)_srSizeOfTempDir:(id *)arg1;
+- (id)trimmedOutputPath:(id)arg1;
+- (id)outputPath:(_Bool)arg1 bundleID:(id)arg2;
+- (id)dateSuffix;
 - (void)_srSetupTempDirectory;
 - (id)_srTempPath;
 @end

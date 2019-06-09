@@ -9,6 +9,7 @@
 @class NCABContactAction;
 
 @protocol NCABContactActionDelegate <NSObject>
+- (void)canWalkieTalkieChanged:(NCABContactAction *)arg1;
 - (void)canCallPossiblyChanged:(NCABContactAction *)arg1;
 @end
 

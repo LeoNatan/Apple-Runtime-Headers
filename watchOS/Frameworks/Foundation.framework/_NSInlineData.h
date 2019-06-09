@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
     unsigned short _length;
 }
 
-+ (_Bool)supportsSecureCoding;
 - (_Bool)_providesConcreteBacking;
 - (id)_createDispatchData;
 - (id)initWithCoder:(id)arg1;

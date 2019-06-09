@@ -13,6 +13,7 @@
 @interface SUDownloadMetadata : NSObject <NSSecureCoding, NSCopying, NSMutableCopying>
 {
     _Bool _autoDownload;
+    _Bool _downloadOnly;
     _Bool _enabledFor2G;
     _Bool _enabledFor3G;
     _Bool _enabledFor4G;
@@ -36,6 +37,7 @@
 @property(nonatomic) int activeDownloadPolicyType; // @synthesize activeDownloadPolicyType=_activeDownloadPolicyType;
 @property(nonatomic) int termsAndConditionsAgreementStatus; // @synthesize termsAndConditionsAgreementStatus=_termsAndConditionsAgreementStatus;
 @property(nonatomic) int downloadFeeAgreementStatus; // @synthesize downloadFeeAgreementStatus=_downloadFeeAgreementStatus;
+@property(nonatomic, getter=isDownloadOnly) _Bool downloadOnly; // @synthesize downloadOnly=_downloadOnly;
 @property(nonatomic, getter=isAutoDownload) _Bool autoDownload; // @synthesize autoDownload=_autoDownload;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

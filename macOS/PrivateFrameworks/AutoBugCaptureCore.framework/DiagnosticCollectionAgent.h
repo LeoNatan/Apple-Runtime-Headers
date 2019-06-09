@@ -8,6 +8,7 @@
 
 @class NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticCollectionAgent : NSObject
 {
     NSXPCConnection *_connection;

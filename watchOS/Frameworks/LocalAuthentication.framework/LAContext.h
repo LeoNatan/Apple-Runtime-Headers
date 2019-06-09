@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <LocalAuthentication/NSSecureCoding-Protocol.h>
+
 @class LAClient, NSData, NSNumber, NSString;
 @protocol LAPrearmContextXPC, LAUIDelegate;
 
-@interface LAContext : NSObject
+@interface LAContext : NSObject <NSSecureCoding>
 {
     LAClient *_client;
     id <LAPrearmContextXPC> _prearmContext;
-    _Bool _cancelButtonVisible;
-    _Bool _fallbackButtonVisible;
     NSNumber *_maxBiometryFailures;
     NSData *_evaluatedPolicyDomainState;
     NSString *_localizedReason;
@@ -23,10 +23,8 @@
     double _touchIDAuthenticationAllowableReuseDuration;
 }
 
-+ (id)currentContext;
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSNumber *touchIDAuthenticationRetryLimit; // @synthesize touchIDAuthenticationRetryLimit=_touchIDAuthenticationRetryLimit;
-@property(nonatomic, getter=isFallbackButtonVisible) _Bool fallbackButtonVisible; // @synthesize fallbackButtonVisible=_fallbackButtonVisible;
-@property(nonatomic, getter=isCancelButtonVisible) _Bool cancelButtonVisible; // @synthesize cancelButtonVisible=_cancelButtonVisible;
 @property(retain, nonatomic) NSData *externalizedContext; // @synthesize externalizedContext=_externalizedContext;
 @property(copy, nonatomic) NSString *localizedReason; // @synthesize localizedReason=_localizedReason;
 @property(nonatomic) double touchIDAuthenticationAllowableReuseDuration; // @synthesize touchIDAuthenticationAllowableReuseDuration=_touchIDAuthenticationAllowableReuseDuration;
@@ -34,8 +32,6 @@
 @property(retain, nonatomic) NSNumber *maxBiometryFailures; // @synthesize maxBiometryFailures=_maxBiometryFailures;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool interactionNotAllowed;
-- (void)setOptionPasswordAuthenticationReason:(id)arg1;
-- (id)optionPasswordAuthenticationReason;
 - (void)setOptionAuthenticationTitle:(id)arg1;
 - (id)optionAuthenticationTitle;
 - (void)setOptionCallerPID:(id)arg1;
@@ -46,9 +42,6 @@
 - (id)optionTimeout;
 - (void)setOptionNotInteractive:(id)arg1;
 - (id)optionNotInteractive;
-- (void)withCurrentContextExecute:(CDUnknownBlockType)arg1 queue:(id)arg2;
-- (unsigned int)hash;
-- (_Bool)isEqual:(id)arg1;
 @property(nonatomic) __weak id <LAUIDelegate> uiDelegate;
 @property(copy, nonatomic) NSString *localizedCancelTitle;
 @property(copy, nonatomic) NSString *localizedFallbackTitle;
@@ -62,6 +55,7 @@
 - (void)setCredential:(id)arg1 type:(int)arg2 reply:(CDUnknownBlockType)arg3;
 - (_Bool)setCredential:(id)arg1 type:(int)arg2 error:(id *)arg3;
 - (_Bool)setCredential:(id)arg1 type:(int)arg2;
+- (id)evaluateAccessControl:(struct __SecAccessControl *)arg1 aksOperation:(void *)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(int)arg2 options:(id)arg3 error:(id *)arg4;
 - (void)evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(int)arg2 localizedReason:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)_evaluateAccessControl:(struct __SecAccessControl *)arg1 operation:(id)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
@@ -71,7 +65,6 @@
 - (void)resetProcessedEvent:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)retryProcessedEvent:(int)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)enterPassword:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)canEvaluatePolicy:(int)arg1 error:(id *)arg2;
 - (id)evaluationMechanismsForAccessControl:(struct __SecAccessControl *)arg1 operation:(int)arg2 error:(id *)arg3;
 - (id)evaluationMechanismsForPolicy:(int)arg1 error:(id *)arg2;
@@ -82,9 +75,14 @@
 - (id)_hashWithBundleIdentifier:(id)arg1;
 - (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)invalidate;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2;
 - (id)initWithUIDelegate:(id)arg1;
+- (id)initWithExternalizedContext:(id)arg1 userSession:(unsigned int *)arg2;
 - (id)initWithExternalizedContext:(id)arg1;
 - (id)init;
 

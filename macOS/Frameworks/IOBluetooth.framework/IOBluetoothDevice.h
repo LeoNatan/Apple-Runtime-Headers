@@ -9,7 +9,7 @@
 #import <IOBluetooth/NSCoding-Protocol.h>
 #import <IOBluetooth/NSSecureCoding-Protocol.h>
 
-@class IOBluetoothRFCOMMConnection, IOBluetoothSDPServiceRecord, NSArray, NSDate, NSDictionary, NSString, NSURL;
+@class IOBluetoothRFCOMMConnection, IOBluetoothSDPServiceRecord, NSArray, NSDate, NSDictionary, NSString, NSURL, NSUUID;
 
 @interface IOBluetoothDevice : IOBluetoothObject <NSCoding, NSSecureCoding>
 {
@@ -75,7 +75,7 @@
 - (BOOL)isAppleDevice;
 - (id)getMacAttributesDictionary;
 - (BOOL)isSpecialMicrosoftMouse;
-- (BOOL)isW2;
+- (BOOL)isH1;
 - (BOOL)isKeyboardDevice;
 - (BOOL)isPointingDevice;
 - (unsigned int)lastBytesReceivedTimestamp;
@@ -143,6 +143,7 @@
 - (id)initWithAddress:(const struct BluetoothDeviceAddress *)arg1;
 - (id)initWithIOService:(unsigned int)arg1;
 - (id)initWithIOService:(unsigned int)arg1 address:(const struct BluetoothDeviceAddress *)arg2;
+- (void)initWxProperties;
 - (id)init;
 - (id)getKey;
 - (int)openL2CAPChannelAsync:(id *)arg1 withPSM:(unsigned short)arg2 withConfiguration:(id)arg3 delegate:(id)arg4;
@@ -215,8 +216,10 @@
 @property(readonly) BOOL isTBFCCapable;
 @property(readonly) BOOL isConnnectionLLREnabled;
 @property(readonly) BOOL isTBFCSuspended;
+@property(nonatomic) NSUUID *identifier;
 - (void)rename:(id)arg1;
-- (void)enableHighPower:(BOOL)arg1;
+- (void)setHighPower:(BOOL)arg1;
+- (void)setHighPriorityLink:(BOOL)arg1;
 @property(retain) NSString *accessoryFWVersion;
 @property(nonatomic) BOOL heySiriEnabled;
 @property(nonatomic) BOOL switchControlEnabled;
@@ -231,6 +234,7 @@
 @property(nonatomic) unsigned char primaryInEar;
 @property(nonatomic) BOOL inEar;
 @property(nonatomic) BOOL inEarDetect;
+@property(nonatomic, getter=encryptionKeySize) unsigned char keySize;
 @property(nonatomic) unsigned char batteryPercentCombined;
 @property(nonatomic) unsigned char batteryPercentCase;
 @property(nonatomic) unsigned char batteryPercentRight;
@@ -281,6 +285,9 @@
 - (unsigned int)getServiceClassMajor;
 - (id)getServices;
 - (unsigned int)getClassOfDevice;
+@property(readonly) BOOL isXboxGameController;
+@property(readonly) BOOL isSonyGameController;
+@property(readonly) BOOL isGameController;
 - (id)appleSupportedFeatures;
 @property(readonly) BOOL isAdvancedAppleAudioDevice;
 @property(readonly) BOOL isCATTSupported;
@@ -320,10 +327,12 @@
 @property(readonly) BOOL isDoAPSupported;
 @property(readonly) BOOL isSwitchControlSupported;
 @property(readonly) BOOL isWIAPSink;
+@property(readonly) BOOL isMicSelectionSupported;
 @property(readonly) BOOL isEnhancedDoubleTapSupported;
 @property(readonly) BOOL isFastConnectSupported;
 @property(readonly) BOOL isBasebandFastConnectSupported;
 @property(readonly) BOOL isANCSupported;
+@property(readonly) BOOL isTransparencySupported;
 @property(readonly) BOOL isInEarDetectionSupported;
 - (id)appleSupportFeaturesVersion;
 - (id)appleSupportFeatures;
@@ -347,6 +356,10 @@
 - (id)headsetDeviceServiceRecord;
 @property(readonly, getter=isHeadsetAudioGateway) BOOL headsetAudioGateway;
 - (id)headsetAudioGatewayServiceRecord;
+
+// Remaining properties
+@property(readonly) BOOL isEQSupported;
+@property(readonly) BOOL isHeadDetectionSupported;
 
 @end
 

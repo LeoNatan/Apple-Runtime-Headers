@@ -12,11 +12,11 @@
 
 @interface BTMLoginItem : NSObject <NSSecureCoding>
 {
-    id _identifier;
-    id _bookmark;
-    id _installerBookmark;
-    unsigned long long _type;
     BOOL _hidden;
+    NSUUID *_identifier;
+    NSData *_bookmark;
+    NSData *_installerBookmark;
+    unsigned long long _type;
 }
 
 + (BOOL)supportsSecureCoding;

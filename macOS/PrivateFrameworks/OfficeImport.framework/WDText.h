@@ -8,6 +8,7 @@
 
 @class NSMutableArray, WDDocument, WDTableCell;
 
+__attribute__((visibility("hidden")))
 @interface WDText : NSObject
 {
     NSMutableArray *mBlocks;

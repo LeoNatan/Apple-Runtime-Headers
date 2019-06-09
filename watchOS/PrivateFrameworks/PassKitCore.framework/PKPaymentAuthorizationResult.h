@@ -18,6 +18,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)sanitizedErrors:(id)arg1;
 @property(retain, nonatomic) PKPeerPaymentTransactionMetadata *peerPaymentTransactionMetadata; // @synthesize peerPaymentTransactionMetadata=_peerPaymentTransactionMetadata;
 @property(copy, nonatomic) NSArray *errors; // @synthesize errors=_errors;
 @property(nonatomic) int status; // @synthesize status=_status;

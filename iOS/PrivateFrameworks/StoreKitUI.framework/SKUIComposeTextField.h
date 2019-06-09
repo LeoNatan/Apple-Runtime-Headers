@@ -10,6 +10,7 @@
 
 @class NSString, SKUIComposeTextFieldConfiguration, UILabel, UITextField;
 
+__attribute__((visibility("hidden")))
 @interface SKUIComposeTextField : UIView <UITextFieldDelegate>
 {
     SKUIComposeTextFieldConfiguration *_configuration;

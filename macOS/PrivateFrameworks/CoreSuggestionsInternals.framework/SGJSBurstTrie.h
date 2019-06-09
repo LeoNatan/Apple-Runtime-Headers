@@ -4,19 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <ProactiveSupport/_PASCFBurstTrie.h>
 
 #import <CoreSuggestionsInternals/SGJSBurstTrieExports-Protocol.h>
 
-@interface SGJSBurstTrie : NSObject <SGJSBurstTrieExports>
+@interface SGJSBurstTrie : _PASCFBurstTrie <SGJSBurstTrieExports>
 {
-    struct _CFBurstTrie *_trie;
 }
 
 - (unsigned int)lookup:(id)arg1;
-- (void)dealloc;
-- (id)initWithPath:(id)arg1;
-- (id)init;
 
 @end
 

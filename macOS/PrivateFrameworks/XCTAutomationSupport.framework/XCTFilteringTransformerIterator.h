@@ -8,6 +8,7 @@
 
 @class NSEnumerator, XCTElementFilteringTransformer;
 
+__attribute__((visibility("hidden")))
 @interface XCTFilteringTransformerIterator : XCTMatchingElementIterator
 {
     NSEnumerator *_inputEnumerator;

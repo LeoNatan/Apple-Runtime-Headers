@@ -10,12 +10,10 @@
 #import <PassKitUI/PKEditTableViewControllerCachingDelegate-Protocol.h>
 #import <PassKitUI/PKGroupDelegate-Protocol.h>
 #import <PassKitUI/PKGroupsControllerDelegate-Protocol.h>
-#import <PassKitUI/UIViewControllerPreviewingDelegate-Protocol.h>
 
 @class NSMutableArray, NSString, PKGroup, PKGroupsController, PKPass, UITableView;
-@protocol UIViewControllerPreviewing;
 
-@interface PKEditGroupsViewController : PKEditTableViewController <PKGroupsControllerDelegate, PKGroupDelegate, PKEditTableViewControllerCachingDelegate, PKEditGroupViewControllerDelegate, UIViewControllerPreviewingDelegate>
+@interface PKEditGroupsViewController : PKEditTableViewController <PKGroupsControllerDelegate, PKGroupDelegate, PKEditTableViewControllerCachingDelegate, PKEditGroupViewControllerDelegate>
 {
     _Bool _editingMode;
     PKGroupsController *_groupsController;
@@ -23,7 +21,6 @@
     PKGroup *_viewingGroup;
     PKGroup *_deletingGroup;
     UITableView *_tableView;
-    id <UIViewControllerPreviewing> _previewingContext;
     NSMutableArray *_actions;
     struct CGSize _imageSizeNeeded;
 }
@@ -35,9 +32,8 @@
 - (void)tableView:(id)arg1 commitEditingStyle:(int)arg2 forRowAtIndexPath:(id)arg3;
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
+- (_Bool)shouldShowPreviewForRowAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (_Bool)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (void)configureCell:(id)arg1 atIndexPath:(id)arg2 withGroup:(id)arg3;

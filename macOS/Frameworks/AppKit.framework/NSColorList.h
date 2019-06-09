@@ -80,7 +80,7 @@
 - (unsigned long long)_indexOfKey:(id)arg1;
 - (id)description;
 - (unsigned long long)_pageForIndex:(unsigned long long)arg1;
-- (CDStruct_c75109f2)_infoForPage:(unsigned long long)arg1;
+- (CDStruct_14f26992)_infoForPage:(unsigned long long)arg1;
 - (unsigned long long)_pageCount;
 - (BOOL)_isProfileBased;
 - (BOOL)_isPaged;

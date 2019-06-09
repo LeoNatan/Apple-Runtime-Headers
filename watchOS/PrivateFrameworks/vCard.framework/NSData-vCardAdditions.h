@@ -9,6 +9,5 @@
 @interface NSData (vCardAdditions)
 + (unsigned int)_cn_maxDataLengthFittingInBase64EncodingLength:(unsigned int)arg1;
 - (id)_cn_encodeVCardBase64DataWithInitialLength:(unsigned int)arg1;
-- (id)_cn_MD5Hash;
 @end
 

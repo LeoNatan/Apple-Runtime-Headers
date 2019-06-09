@@ -10,6 +10,12 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct AudioObjectPropertyAddress {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+};
+
 struct PLPeripheralDeviceState {
     unsigned long long _field1;
     char *_field2;
@@ -45,7 +51,13 @@ struct coalition_resource_usage {
     unsigned long long _field18;
     unsigned long long _field19;
     unsigned long long _field20;
-    unsigned long long _field21[7];
+    unsigned long long _field21;
+    unsigned long long _field22;
+    unsigned long long _field23;
+    unsigned long long _field24;
+    unsigned long long _field25[7];
+    unsigned long long _field26;
+    unsigned long long _field27;
 };
 
 #pragma mark Typedef'd Structures
@@ -55,6 +67,12 @@ typedef struct {
     unsigned int _field2;
     unsigned char _field3;
 } CDStruct_7f7d6714;
+
+typedef struct {
+    id _field1;
+    struct *_field2;
+    unsigned int _field3;
+} CDStruct_d790cdc7;
 
 typedef struct {
     unsigned int _field1;

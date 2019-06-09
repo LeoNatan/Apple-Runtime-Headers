@@ -14,7 +14,7 @@
     unsigned long long _eventMask;
 }
 
-@property(nonatomic) unsigned long long eventMask; // @synthesize eventMask=_eventMask;
+@property unsigned long long eventMask; // @synthesize eventMask=_eventMask;
 @property(nonatomic) __weak id <AXEEventTapListener> listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;
 - (id)initWithListener:(id)arg1 eventMask:(unsigned long long)arg2;

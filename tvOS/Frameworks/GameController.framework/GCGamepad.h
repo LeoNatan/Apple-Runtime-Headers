@@ -6,13 +6,37 @@
 
 #import <objc/NSObject.h>
 
-@class GCController, GCControllerButtonInput, GCControllerDirectionPad;
+@class GCController, GCControllerButtonInput, GCControllerDirectionPad, GCMotion;
 
 @interface GCGamepad : NSObject
 {
+    _Bool _dpadFlippedY;
+    GCMotion *_motion;
+    GCControllerButtonInput *_button0;
+    GCControllerButtonInput *_button1;
+    GCControllerButtonInput *_button2;
+    GCControllerButtonInput *_button3;
+    GCController *_controller;
+    CDUnknownBlockType _valueChangedHandler;
+    GCControllerDirectionPad *_dpad;
+    GCControllerButtonInput *_leftShoulder;
+    GCControllerButtonInput *_rightShoulder;
 }
 
-+ (_Bool)supportsUSBInterfaceProtocol:(unsigned char)arg1;
++ (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) GCControllerButtonInput *rightShoulder; // @synthesize rightShoulder=_rightShoulder;
+@property(retain, nonatomic) GCControllerButtonInput *leftShoulder; // @synthesize leftShoulder=_leftShoulder;
+@property(retain, nonatomic) GCControllerDirectionPad *dpad; // @synthesize dpad=_dpad;
+@property(copy, nonatomic) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
+@property(nonatomic) __weak GCController *controller; // @synthesize controller=_controller;
+@property(retain, nonatomic) GCControllerButtonInput *buttonY; // @synthesize buttonY=_button3;
+@property(retain, nonatomic) GCControllerButtonInput *buttonX; // @synthesize buttonX=_button2;
+@property(retain, nonatomic) GCControllerButtonInput *buttonB; // @synthesize buttonB=_button1;
+@property(retain, nonatomic) GCControllerButtonInput *buttonA; // @synthesize buttonA=_button0;
+- (void)set_motion:(id)arg1;
+- (id)_motion;
+- (void).cxx_destruct;
+- (id)productCategory;
 - (void)setAllowsRotation:(_Bool)arg1;
 - (_Bool)allowsRotation;
 - (void)setReportsAbsoluteDpadValues:(_Bool)arg1;
@@ -20,22 +44,19 @@
 - (void)setButton:(id)arg1 pressed:(_Bool)arg2;
 - (void)setButton:(id)arg1 value:(double)arg2;
 - (void)setDpad:(id)arg1 x:(double)arg2 y:(double)arg3;
-- (id)inputForElement:(struct __IOHIDElement *)arg1;
+- (void)setPlayerIndex:(long long)arg1;
 - (id)saveSnapshot;
-@property(readonly, nonatomic) GCControllerButtonInput *rightShoulder;
-@property(readonly, nonatomic) GCControllerButtonInput *leftShoulder;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonY;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonX;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonB;
-@property(readonly, nonatomic) GCControllerButtonInput *buttonA;
+- (void)handleEvent:(struct __IOHIDEvent *)arg1;
+- (id)name;
 - (id)button3;
 - (id)button2;
 - (id)button1;
 - (id)button0;
-@property(readonly, nonatomic) GCControllerDirectionPad *dpad;
-@property(copy, nonatomic) CDUnknownBlockType valueChangedHandler;
-@property(readonly, nonatomic) __weak GCController *controller;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithController:(id)arg1 dpadFlippedY:(_Bool)arg2;
 - (id)initWithController:(id)arg1;
+- (id)init;
 
 @end
 

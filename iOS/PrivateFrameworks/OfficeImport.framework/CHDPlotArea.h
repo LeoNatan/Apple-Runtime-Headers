@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     _Bool mContainsVolumeStockType;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setContainsVolumeStockType:(_Bool)arg1;
 - (_Bool)containsVolumeStockType;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)hasSecondaryAxis;
 - (id)axes;
 - (id)chartTypes;
-- (void)dealloc;
 - (id)initWithChart:(id)arg1;
 - (_Bool)isCategoryAxesReversed:(_Bool)arg1;
 

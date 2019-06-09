@@ -6,18 +6,18 @@
 
 #import <UIKitCore/UIView.h>
 
+#import <UIKitCore/UITableConstantsHeaderFooterProviding-Protocol.h>
 #import <UIKitCore/UITableViewSubviewReusing-Protocol.h>
 
 @class NSString, UIImage, UILabel, UITableView, _UITableViewHeaderFooterViewLabel;
 @protocol UITable, UITableConstants;
 
-@interface UITableViewHeaderFooterView : UIView <UITableViewSubviewReusing>
+@interface UITableViewHeaderFooterView : UIView <UITableConstantsHeaderFooterProviding, UITableViewSubviewReusing>
 {
     long long _tableViewStyle;
     UIImage *_backgroundImage;
     struct CGRect _frame;
     long long _textAlignment;
-    id <UITable> _tableView;
     double _maxTitleWidth;
     NSString *_reuseIdentifier;
     UIView *_backgroundView;
@@ -37,6 +37,7 @@
         unsigned int didSetSectionHeader:1;
         unsigned int didSetupDefaults:1;
         unsigned int insetsContentViewsToSafeArea:1;
+        unsigned int tableViewHasBeenExplicitlySet:1;
     } _headerFooterFlags;
     id <UITable> _table;
 }
@@ -61,14 +62,16 @@
 - (void)setTintColor:(id)arg1;
 - (void)setNeedsUpdateConstraints;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+- (struct CGRect)_updatedContentViewFrameForTargetWidth:(double)arg1;
 - (_Bool)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
 - (void)layoutSubviews;
 - (void)layoutMarginsDidChange;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setOpaque:(_Bool)arg1;
 @property(nonatomic) _Bool floating;
+- (_Bool)_isFloating;
 @property(nonatomic) long long tableViewStyle;
-- (void)_updateLayerContents;
+- (void)_setTableViewStyle:(long long)arg1 updateFrame:(_Bool)arg2;
+- (void)_updateBackgroundView;
 - (struct UIEdgeInsets)_insetsToContentRect;
 - (struct UIEdgeInsets)_insetsToBounds;
 @property(nonatomic, getter=_rightMarginWidth, setter=_setRightMarginWidth:) double rightMarginWidth;
@@ -81,7 +84,6 @@
 - (struct CGRect)_contentRectForWidth:(double)arg1;
 - (struct CGRect)_backgroundRect;
 - (struct CGRect)_backgroundRectForWidth:(double)arg1;
-- (void)_setBackgroundViewColor:(id)arg1;
 @property(retain, nonatomic) UIView *backgroundView;
 - (void)_setupBackgroundView;
 - (void)_updateBackgroundImage;
@@ -97,18 +99,19 @@
 - (void)_setupLabelAppearance;
 - (void)_updateDetailLabelBackgroundColorIfNeeded;
 - (void)_updateDetailLabelBackgroundColor;
-- (void)_updateLabelBackgroundColorIfNeeeded;
-- (void)_updateLabelBackgroundColor;
 - (void)_invalidateDetailLabelBackgroundColor;
 - (void)_invalidateLabelBackgroundColor;
 - (struct CGSize)_detailTextSizeForWidth:(double)arg1;
 - (struct CGSize)_textSizeForWidth:(double)arg1;
 @property(nonatomic) long long textAlignment;
 - (void)_setupDefaultsIfNecessary;
+- (void)_setupLabelForSourceList:(id)arg1;
 @property(nonatomic) _Bool sectionHeader;
+- (void)didMoveToSuperview;
+- (id)_table;
 @property(nonatomic) __weak UITableView *tableView;
-- (struct CGRect)frame;
 - (void)setFrame:(struct CGRect)arg1;
+- (id)_defaultTextColor;
 - (void)setContentView:(id)arg1;
 - (void)prepareForReuse;
 - (void)encodeWithCoder:(id)arg1;

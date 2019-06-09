@@ -6,19 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue;
 
 @interface CMNatalimeterInternal : NSObject
 {
     struct CLConnectionClient *fLocationdConnection;
     NSObject<OS_dispatch_queue> *fInternalQueue;
-    NSObject<OS_dispatch_source> *fWatchdogTimer;
     _Bool fStartedUpdates;
     CDUnknownBlockType fHandler;
 }
 
-- (void)_stopWatchdogCheckins;
-- (void)_startWatchdogCheckins;
 - (unsigned long long)_promptsNeeded;
 - (void)_stopAbsoluteNatalimetryDataUpdates;
 - (void)_startAbsoluteNatalimetryDataUpdatesWithHandler:(CDUnknownBlockType)arg1;

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)layerClass;
 - (void).cxx_destruct;
-- (id)_debug;
+- (id)description;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (id)initWithButtonBar:(id)arg1;

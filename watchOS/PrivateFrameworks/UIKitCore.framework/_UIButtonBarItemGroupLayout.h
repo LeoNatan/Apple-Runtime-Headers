@@ -17,12 +17,14 @@ __attribute__((visibility("hidden")))
     _UIButtonBarLayout *_representativeLayout;
     _Bool _compact;
     _Bool _useGroupSizing;
+    _Bool _suppressSpacing;
     UIBarButtonItemGroup *_group;
     UILayoutGuide *_groupSizeGuide;
     CDUnknownBlockType _itemViewGenerator;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType itemViewGenerator; // @synthesize itemViewGenerator=_itemViewGenerator;
+@property(nonatomic) _Bool suppressSpacing; // @synthesize suppressSpacing=_suppressSpacing;
 @property(nonatomic) _Bool useGroupSizing; // @synthesize useGroupSizing=_useGroupSizing;
 @property(nonatomic) _Bool compact; // @synthesize compact=_compact;
 @property(readonly, nonatomic) UILayoutGuide *groupSizeGuide; // @synthesize groupSizeGuide=_groupSizeGuide;
@@ -43,7 +45,6 @@ __attribute__((visibility("hidden")))
 - (float)minimumLayoutWidthGivenMinimumSpaceWidth:(float)arg1;
 - (id)layoutsForSpacerItem:(id)arg1;
 - (id)layoutForBarButtonItem:(id)arg1;
-- (void)_updateGroupSizing;
 - (id)initWithLayoutMetrics:(id)arg1 barButtonItemGroup:(id)arg2;
 - (_Bool)shouldHoriziontallyCenterView:(id)arg1;
 - (id)initWithLayoutMetrics:(id)arg1;

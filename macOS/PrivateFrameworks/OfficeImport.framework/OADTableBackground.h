@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, OADFill;
 
+__attribute__((visibility("hidden")))
 @interface OADTableBackground : NSObject <OADEffectsParent>
 {
     OADFill *mFill;

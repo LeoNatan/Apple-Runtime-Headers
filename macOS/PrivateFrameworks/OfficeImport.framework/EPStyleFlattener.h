@@ -8,6 +8,7 @@
 
 @class ECIntToTwoIntKeyCache, EDColumnInfoCollection, EDRowBlock, EDRowBlocks, EDWorksheet, NSArray, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface EPStyleFlattener : EDProcessor
 {
     EDWorksheet *mWorksheet;

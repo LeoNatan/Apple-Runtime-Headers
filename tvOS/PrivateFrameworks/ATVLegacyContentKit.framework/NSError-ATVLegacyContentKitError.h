@@ -11,5 +11,6 @@
 + (id)errorWithATVLegacyContentKitError:(int)arg1 withDescription:(id)arg2 withReason:(id)arg3 andSuggestion:(id)arg4;
 + (id)errorWithATVLegacyContentKitError:(int)arg1 userInfo:(id)arg2;
 + (id)errorWithATVLegacyContentKitError:(int)arg1;
+- (struct OpaqueJSValue *)jsCopyObjectWithContext:(struct OpaqueJSContext *)arg1 withException:(const struct OpaqueJSValue **)arg2;
 @end
 

@@ -9,6 +9,7 @@
 @class NSURL;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface TPFileStorageManager : NSObject
 {
     _Bool _hasClearedLegacyStorage;

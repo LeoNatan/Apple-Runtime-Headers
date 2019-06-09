@@ -56,6 +56,7 @@
 - (_Bool)isWaitingToRun;
 - (void)synthesizeActivityFire;
 - (void)reset;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) long long errorCount;
 - (void)didPerformActivityWithResult:(long long)arg1 minimumRetryInterval:(double)arg2 activityStartDate:(id)arg3 error:(id)arg4;
 - (id)lastSuccessfulRunDate;
@@ -64,7 +65,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

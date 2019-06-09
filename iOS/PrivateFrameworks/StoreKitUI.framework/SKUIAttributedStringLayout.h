@@ -10,6 +10,7 @@
 
 @class NSAttributedString, NSShadow, NSString, NSStringDrawingContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAttributedStringLayout : NSObject <SKUICachedLayout>
 {
     NSAttributedString *_attributedString;

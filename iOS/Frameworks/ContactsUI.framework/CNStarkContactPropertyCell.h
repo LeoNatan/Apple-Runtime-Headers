@@ -6,24 +6,57 @@
 
 #import <ContactsUI/CNPropertyPhoneNumberCell.h>
 
+#import <ContactsUI/CNStarkActionViewDelegate-Protocol.h>
+
+@class CNStarkActionView, NSLayoutConstraint, NSString;
+
 __attribute__((visibility("hidden")))
-@interface CNStarkContactPropertyCell : CNPropertyPhoneNumberCell
+@interface CNStarkContactPropertyCell : CNPropertyPhoneNumberCell <CNStarkActionViewDelegate>
 {
+    _Bool _allowsFocus;
+    CNStarkActionView *_actionView1;
+    CNStarkActionView *_actionView2;
+    NSLayoutConstraint *_labelViewFirstBaselineAnchorConstraint;
+    NSLayoutConstraint *_valueViewFirstBaselineAnchorConstraint;
+    NSLayoutConstraint *_contentViewBottomAnchorConstraint;
     struct UIEdgeInsets _contentInsets;
 }
 
++ (double)contentViewBottomAnchorConstraintConstant;
++ (double)valueLabelFirstBaselineAnchorConstraintConstant;
++ (double)labelViewFirstBaselineAnchorConstraintConstant;
++ (double)minimumContentHeight;
 + (_Bool)wantsHorizontalLayout;
+@property(retain, nonatomic) NSLayoutConstraint *contentViewBottomAnchorConstraint; // @synthesize contentViewBottomAnchorConstraint=_contentViewBottomAnchorConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *valueViewFirstBaselineAnchorConstraint; // @synthesize valueViewFirstBaselineAnchorConstraint=_valueViewFirstBaselineAnchorConstraint;
+@property(retain, nonatomic) NSLayoutConstraint *labelViewFirstBaselineAnchorConstraint; // @synthesize labelViewFirstBaselineAnchorConstraint=_labelViewFirstBaselineAnchorConstraint;
+@property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
+@property(readonly, nonatomic) CNStarkActionView *actionView2; // @synthesize actionView2=_actionView2;
+@property(readonly, nonatomic) CNStarkActionView *actionView1; // @synthesize actionView1=_actionView1;
 @property(nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
-- (void)_cnui_applyContactStyle;
+- (void).cxx_destruct;
+- (void)performActionForMessage;
+- (long long)transportTypeForActionType:(id)arg1;
+- (void)actionViewTapped:(id)arg1;
+- (void)updateTransportButtons;
+- (_Bool)shouldShowStar;
+- (_Bool)supportsValueColorUsesLabelColor;
+- (_Bool)supportsTintColorValue;
+- (_Bool)allowsCellSelection;
+- (void)performDefaultAction;
+- (void)setSeparatorStyle:(long long)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (_Bool)canBecomeFocused;
 - (id)variableConstraints;
 - (id)constantConstraints;
-- (void)transportButtonClicked:(id)arg1;
-- (_Bool)shouldShowStar;
-- (id)standardTransportIcon;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)performDefaultAction;
+- (void)_cnui_applyContactStyle;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

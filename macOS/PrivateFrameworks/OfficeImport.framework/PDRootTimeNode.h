@@ -6,6 +6,7 @@
 
 #import <OfficeImport/PDParallelTimeNode.h>
 
+__attribute__((visibility("hidden")))
 @interface PDRootTimeNode : PDParallelTimeNode
 {
 }

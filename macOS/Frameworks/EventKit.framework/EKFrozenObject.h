@@ -28,6 +28,7 @@
 + (id)frozenObjectForObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 + (id)frozenObjectForObject:(id)arg1 createPartialObject:(BOOL)arg2;
 + (id)frozenObjectForObject:(id)arg1;
++ (Class)alternateUniverseClass;
 @property(nonatomic) unsigned long long cachedHash; // @synthesize cachedHash=_cachedHash;
 @property(retain, nonatomic) NSManagedObjectID *managedObjectID; // @synthesize managedObjectID=_managedObjectID;
 @property(nonatomic) BOOL isPartialObject; // @synthesize isPartialObject=_isPartialObject;
@@ -40,6 +41,7 @@
 @property(readonly, nonatomic) NSString *semanticIdentifier;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (Class)frozenClass;
 - (id)meltedObjectInStore:(id)arg1;
 - (id)frozenObject;
 - (id)existingMeltedObject;
@@ -49,6 +51,7 @@
 - (id)_getFrozenVersionsOfObjects:(id)arg1 withFrozenType:(Class)arg2;
 @property(readonly, nonatomic) NSDictionary *preFrozenRelationshipObjects;
 @property(readonly, nonatomic) BOOL canBeConvertedToFullObject;
+- (id)initWithAlternateUniverseObject:(id)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2 preFrozenRelationshipObjects:(id)arg3;
 - (id)initWithObject:(id)arg1 createPartialObject:(BOOL)arg2;
 - (id)initWithObject:(id)arg1;

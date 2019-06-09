@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet, NSString;
+@class NSArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CURangingSession : NSObject
@@ -15,26 +15,32 @@
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     _Bool _peersChanged;
-    NSSet *_peersRanging;
     struct LogCategory *_ucat;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    CDUnknownBlockType _errorHandler;
     unsigned int _flags;
     CDUnknownBlockType _invalidationHandler;
     NSString *_label;
     CDUnknownBlockType _measurementHandler;
-    NSSet *_peers;
+    CDUnknownBlockType _measurementHandlerEx;
+    NSArray *_peers;
 }
 
-@property(copy, nonatomic) NSSet *peers; // @synthesize peers=_peers;
+@property(copy, nonatomic) NSArray *peers; // @synthesize peers=_peers;
+@property(copy, nonatomic) CDUnknownBlockType measurementHandlerEx; // @synthesize measurementHandlerEx=_measurementHandlerEx;
 @property(copy, nonatomic) CDUnknownBlockType measurementHandler; // @synthesize measurementHandler=_measurementHandler;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
+@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
-- (void)_startStopRangingPeerID:(id)arg1 start:(_Bool)arg2;
+- (void)_updatePeers;
+- (void)_updateResponder;
+- (void)_updateInitiator;
 - (void)_update;
 - (void)_invalidated;
+- (void)_invalidate;
 - (void)invalidate;
 - (void)activate;
 - (void)dealloc;

@@ -8,6 +8,7 @@
 
 @class SKUICollectionDOMFeature;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGridViewElement : SKUIViewElement
 {
     id _persistenceKey;

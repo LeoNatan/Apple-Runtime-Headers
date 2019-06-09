@@ -31,19 +31,17 @@ __attribute__((visibility("hidden")))
     _Bool _readyToLoad;
     CDUnknownBlockType _readyToDisplay;
     CDUnknownBlockType _loadHandler;
-    _Bool _didBeginForwardingIsAppearingToHostRemoteViewController;
-    _Bool _didEndForwardingIsAppearingToHostRemoteViewController;
     QLRemotePreviewHostViewController *_remoteViewController;
 }
 
-+ (double)maxLoadingTimeForItem:(id)arg1;
-+ (Class)transformerClass;
 @property(retain, nonatomic) QLRemotePreviewHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void).cxx_destruct;
 - (void)getFrameWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)forwardMessageToHostOfCustomViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dismissQuickLook;
 - (void)setFullScreen:(_Bool)arg1;
-- (void)presentShareSheetWithPopoverTracker:(id)arg1 dismissCompletion:(CDUnknownBlockType)arg2;
+- (void)presentShareSheetWithPopoverTracker:(id)arg1 customSharedURL:(id)arg2 dismissCompletion:(CDUnknownBlockType)arg3;
+- (void)provideCurrentPageAndVisibleRectWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)pdfDataForPageAtIndex:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)prepareForDrawingPages:(struct _NSRange)arg1 ofSize:(struct CGSize)arg2;
 - (void)numberOfPagesWithSize:(struct CGSize)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -72,11 +70,6 @@ __attribute__((visibility("hidden")))
 - (void)previewWillAppear:(_Bool)arg1;
 - (void)setAppearance:(id)arg1 animated:(_Bool)arg2;
 - (id)init;
-- (void)viewDidDisappear:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
-- (void)endPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1;
-- (void)beginPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1 animated:(_Bool)arg2;
-- (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

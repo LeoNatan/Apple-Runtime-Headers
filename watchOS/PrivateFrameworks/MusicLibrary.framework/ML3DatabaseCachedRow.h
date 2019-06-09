@@ -8,7 +8,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface ML3DatabaseCachedRow : ML3DatabaseRow
 {
     NSArray *_arrayRepresentation;

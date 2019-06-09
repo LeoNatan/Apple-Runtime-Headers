@@ -10,7 +10,9 @@
 {
 }
 
++ (id)remoteClient;
 + (id)remoteClientWithMachServiceName:(id)arg1;
++ (id)_remoteClientWithMachServiceName:(id)arg1;
 
 @end
 

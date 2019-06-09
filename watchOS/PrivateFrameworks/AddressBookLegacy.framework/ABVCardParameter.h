@@ -28,7 +28,6 @@
 - (void)addTypes:(id)arg1;
 - (void)addType:(id)arg1;
 - (void)setValue:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithName:(id)arg1;
 

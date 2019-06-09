@@ -17,7 +17,6 @@
 + (id)_phFaceSortDescriptors;
 - (id)pv_lastAssetDate;
 - (id)pv_fetchInvalidAssetIdentifiersForCommonComparison;
-- (BOOL)pv_isLibraryBeingSynchronized;
 - (float)pv_faceProcessingProgress;
 - (double)_progressFromWorkerStatesDictionary:(id)arg1;
 - (id)pv_fetchFaceGroupsForPerson:(id)arg1;
@@ -36,7 +35,7 @@
 - (id)pv_fetchFacesForPerson:(id)arg1 inMoment:(id)arg2;
 - (id)pv_fetchFacesForPerson:(id)arg1;
 - (id)pv_fetchFacesWithLocalIdentifiers:(id)arg1;
-- (id)pv_fetchFaces;
+- (unsigned long long)pv_numberOfFacesWithFaceprints;
 - (id)pv_fetchPersonsGroupedByAssetLocalIdentifierForAssets:(id)arg1;
 - (id)pv_fetchInvalidCandidatePersonsForPerson:(id)arg1;
 - (id)pv_fetchCandidatePersonsForPerson:(id)arg1;

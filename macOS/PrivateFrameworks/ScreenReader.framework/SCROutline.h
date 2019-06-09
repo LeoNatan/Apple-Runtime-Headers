@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 - (void)addDescendantsToArray:(id)arg1 additionalToRetain:(id)arg2 additionalToSkip:(id)arg3;
 - (id)focusOntoUIElement:(id)arg1 withScrolling:(BOOL)arg2 withSelection:(BOOL)arg3;
 - (id)setFocusedCell:(struct SCRDataCell)arg1 scrolling:(BOOL)arg2 selection:(BOOL)arg3 request:(id)arg4 event:(id)arg5;
-- (BOOL)addRowSummaryWithRowIndex:(unsigned long long)arg1 fromColumnIndex:(unsigned long long)arg2 includeHeader:(BOOL)arg3 includeBlanks:(BOOL)arg4 toRequest:(id)arg5;
 - (void)addActionDescription:(id)arg1 toRequest:(id)arg2;
 - (void)addDescriptionForSelectedRowElement:(id)arg1 atCell:(struct SCRDataCell)arg2 toRequest:(id)arg3;
 - (void)addInteractionDescriptionForFocusedItemToRequest:(id)arg1;
@@ -24,13 +23,13 @@ __attribute__((visibility("hidden")))
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (id)_currentRowStatusDescription;
 - (id)_statusForRowAtIndex:(unsigned long long)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)typeDescription;
 - (BOOL)handleUntaggedOperationWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)toggleExpandedWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)moveToParentRowWithRequest:(id)arg1;
 - (BOOL)toggleDisclosureTriangleWithRequest:(id)arg1;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (unsigned long long)disclosureLevel;
 - (unsigned long long)numberOfDisclosedRows;
 - (void)setDisclosing:(BOOL)arg1;

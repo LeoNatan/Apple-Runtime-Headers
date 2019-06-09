@@ -6,6 +6,7 @@
 
 #import <UIKit/UICollectionViewFlowLayoutInvalidationContext.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIStorePageCollectionViewLayoutInvalidationContext : UICollectionViewFlowLayoutInvalidationContext
 {
     _Bool _invalidateItemPinningLayoutInformation;

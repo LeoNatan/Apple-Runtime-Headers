@@ -11,12 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)_activeColor;
+- (id)_activeColorForSelection:(id)arg1;
 - (void)_generateRects;
-- (void)setSelection:(id)arg1;
+- (void)addSelection:(id)arg1;
+- (void)setSelections:(id)arg1;
 - (void)update;
-- (id)selection;
-- (void)dealloc;
 - (id)initWithPDFPageLayer:(id)arg1;
 
 @end

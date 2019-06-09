@@ -6,7 +6,7 @@
 
 #import <OfficeImport/OCXReadState.h>
 
-@class CXNamespace, NSMutableArray, OAXDrawingState, OCPPackagePart, OITSUNoCopyDictionary, WDCharacterRun, WDDocument, WXOAVReadState;
+@class CXNamespace, NSMutableArray, NSMutableDictionary, OAXDrawingState, OCPPackagePart, OITSUNoCopyDictionary, WDCharacterRun, WDDocument, WXOAVReadState;
 @protocol TCCancelDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,16 +16,19 @@ __attribute__((visibility("hidden")))
     OITSUNoCopyDictionary *mTextNodesToBeAdded;
     OITSUNoCopyDictionary *mMapBookmarkIdToName;
     OITSUNoCopyDictionary *mMapAnnotationIdToAnnotation;
-    OITSUNoCopyDictionary *mMapTextBoxIdToDrawableId;
-    OITSUNoCopyDictionary *mMapDrawableIdToTextBox;
+    OITSUNoCopyDictionary *mMapAnnotationParaIdToAnnotation;
+    NSMutableDictionary *mMapFlowIdToTextBox;
     OCPPackagePart *mPackagePart;
     OCPPackagePart *mAnnotationPart;
+    OCPPackagePart *mAnnotationExtendedPart;
     struct _xmlDoc *mFootnoteDocument;
     struct _xmlNode *mFootnotes;
     struct _xmlDoc *mEndnoteDocument;
     struct _xmlNode *mEndnotes;
     struct _xmlDoc *mAnnotationDocument;
     struct _xmlNode *mAnnotations;
+    struct _xmlDoc *mAnnotationExtendedDocument;
+    struct _xmlNode *mAnnotationsExtended;
     NSMutableArray *mDeleteAuthorStack;
     NSMutableArray *mDeleteDateStack;
     NSMutableArray *mEditAuthorStack;
@@ -33,11 +36,13 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mFormatAuthorStack;
     NSMutableArray *mFormatDateStack;
     NSMutableArray *mPendingCommentNodes;
+    NSMutableArray *mPendingBookmarkNodes;
     WXOAVReadState *mWXOavState;
     OAXDrawingState *mDrawingState;
     int mCurrentOfficeArtTextType;
     WDCharacterRun *mReadSymbolTo;
     _Bool mNewSectionRequested;
+    _Bool mReadingMath;
     unsigned long long mCurrentRowCNFStyle;
     unsigned long long mCurrentCellCNFStyle;
     _Bool mCurrentTableWraps;
@@ -46,7 +51,6 @@ __attribute__((visibility("hidden")))
     CXNamespace *mWXDrawingNamespace;
     CXNamespace *mWXShapeNamespace;
     CXNamespace *mWXGroupNamespace;
-    CXNamespace *mWXMathNamespace;
     CXNamespace *mWXOOBibliographyNamespace;
     CXNamespace *mWXRelationshipNamespace;
     _Bool mIsThumbnail;
@@ -54,13 +58,14 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
 @property(nonatomic) int currentOfficeArtTextType; // @synthesize currentOfficeArtTextType=mCurrentOfficeArtTextType;
+@property(nonatomic) _Bool readingMath; // @synthesize readingMath=mReadingMath;
 @property(retain, nonatomic) CXNamespace *WXRelationshipNamespace; // @synthesize WXRelationshipNamespace=mWXRelationshipNamespace;
 @property(retain, nonatomic) CXNamespace *WXOOBibliographyNamespace; // @synthesize WXOOBibliographyNamespace=mWXOOBibliographyNamespace;
-@property(retain, nonatomic) CXNamespace *WXMathNamespace; // @synthesize WXMathNamespace=mWXMathNamespace;
 @property(retain, nonatomic) CXNamespace *WXGroupNamespace; // @synthesize WXGroupNamespace=mWXGroupNamespace;
 @property(retain, nonatomic) CXNamespace *WXShapeNamespace; // @synthesize WXShapeNamespace=mWXShapeNamespace;
 @property(retain, nonatomic) CXNamespace *WXDrawingNamespace; // @synthesize WXDrawingNamespace=mWXDrawingNamespace;
 @property(retain, nonatomic) CXNamespace *WXMainNamespace; // @synthesize WXMainNamespace=mWXMainNamespace;
+- (void).cxx_destruct;
 - (_Bool)isThumbnail;
 - (void)setIsThumbnail:(_Bool)arg1;
 - (void)setupNSForXMLFormat:(int)arg1;
@@ -75,6 +80,9 @@ __attribute__((visibility("hidden")))
 - (void)setReadSymbolTo:(id)arg1;
 - (id)readSymbolTo;
 - (id)drawingState;
+- (void)clearPendingBookmarks;
+- (id)pendingBookmarks;
+- (void)addPendingBookmark:(struct _xmlNode *)arg1;
 - (void)clearPendingComments;
 - (id)pendingComments;
 - (void)addPendingComment:(struct _xmlNode *)arg1;
@@ -92,19 +100,24 @@ __attribute__((visibility("hidden")))
 - (void)pushDeleteAuthor:(id)arg1 date:(id)arg2;
 - (id)wxoavState;
 - (void)setDocumentPart:(id)arg1;
+- (void)setAnnotationExtendedPart:(id)arg1;
+- (id)annotationExtendedPart;
 - (void)setAnnotationPart:(id)arg1;
 - (id)annotationPart;
 - (void)setPackagePart:(id)arg1;
 - (id)packagePart;
+- (struct _xmlNode *)xmlAnnotationExtendedWithParaId:(unsigned int)arg1;
 - (struct _xmlNode *)xmlAnnotationWithID:(long long)arg1;
 - (struct _xmlNode *)xmlEndnoteWithID:(long long)arg1;
 - (struct _xmlNode *)xmlFootnoteWithID:(long long)arg1;
-- (id)textBoxWithDrawableID:(long long)arg1;
-- (id)textBoxWithTextBoxID:(long long)arg1;
-- (void)addTextBoxID:(long long)arg1 drawableId:(long long)arg2 textBox:(id)arg3;
+- (void)setTextBox:(id)arg1 forFlowId:(id)arg2;
+- (id)textBoxForFlowId:(id)arg1;
+- (_Bool)hasAnnotationsExtended;
+- (id)annotationWithParaId:(unsigned int)arg1;
+- (void)addAnnotationParaId:(unsigned int)arg1 annotation:(id)arg2;
 - (_Bool)hasAnnotations;
-- (id)annotationWithID:(long long)arg1;
-- (void)addAnnotationID:(long long)arg1 annotation:(id)arg2;
+- (id)annotationWithId:(long long)arg1;
+- (void)addAnnotationId:(long long)arg1 annotation:(id)arg2;
 - (id)bookmarkName:(long long)arg1;
 - (void)addBookmarkId:(long long)arg1 name:(id)arg2;
 - (void)clearOutNodesToBeAdded:(id)arg1;

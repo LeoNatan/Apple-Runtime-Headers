@@ -6,20 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class ABCDImageHelper;
+@class ABCDLegacyFilesystemImageHelper;
 
 @interface ABPhotoHelper : NSObject
 {
-    ABCDImageHelper *_cdImageHelper;
+    ABCDLegacyFilesystemImageHelper *_cdImageHelper;
 }
 
 + (long long)imageTypeFromKind:(id)arg1;
 + (id)helperWithImagesFolder:(id)arg1 personIdentifier:(id)arg2 emailAddresses:(id)arg3;
 - (BOOL)hasCustomImageOfKind:(id)arg1;
 - (BOOL)hasCustomImage;
+- (BOOL)hasImageDataOfKind:(id)arg1;
 - (BOOL)hasImageData;
 - (id)largeImagePath;
 - (id)thumbnailImagePath;
+- (void)removeLegacyImageDataOfKind:(id)arg1;
 - (id)imageOfKind:(id)arg1;
 - (id)largeImageHashOfType:(id)arg1;
 - (id)imageDataOfKind:(id)arg1;

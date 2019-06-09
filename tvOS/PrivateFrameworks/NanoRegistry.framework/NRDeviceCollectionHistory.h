@@ -57,7 +57,6 @@
 @property(readonly, nonatomic) unsigned long long count;
 - (id)historyEntryAtIndex:(unsigned long long)arg1;
 - (void)_truncateHistory;
-- (void)purgeWorkingSet;
 - (void)pruneStateCacheItems:(unsigned long long)arg1;
 - (void)_updateHistoryCachesWithIndex:(id)arg1;
 - (id)_mostRecentStateBefore:(id)arg1;

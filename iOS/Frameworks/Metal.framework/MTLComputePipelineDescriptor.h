@@ -28,6 +28,7 @@
 @property(nonatomic) unsigned long long maxTotalThreadsPerThreadgroup; // @dynamic maxTotalThreadsPerThreadgroup;
 @property(nonatomic) unsigned long long resourceIndex; // @dynamic resourceIndex;
 @property(copy, nonatomic) MTLStageInputOutputDescriptor *stageInputDescriptor; // @dynamic stageInputDescriptor;
+@property(nonatomic) _Bool supportIndirectCommandBuffers; // @dynamic supportIndirectCommandBuffers;
 @property(nonatomic) _Bool threadGroupSizeIsMultipleOfThreadExecutionWidth; // @dynamic threadGroupSizeIsMultipleOfThreadExecutionWidth;
 
 @end

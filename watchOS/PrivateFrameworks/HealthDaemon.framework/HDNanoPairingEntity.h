@@ -13,7 +13,7 @@
     _Bool _restoreComplete;
     NSUUID *_nanoRegistryUUID;
     NSUUID *_persistentUUID;
-    NSUUID *_healthUUID;
+    NSUUID *_healthDatabaseUUID;
     NSString *_defaultSourceBundleIdentifier;
     NSString *_deviceIdentifier;
     HDNanoPairingEntity *_entity;
@@ -34,13 +34,13 @@
 @property(nonatomic) long long syncProvenance; // @synthesize syncProvenance=_syncProvenance;
 @property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(copy, nonatomic) NSString *defaultSourceBundleIdentifier; // @synthesize defaultSourceBundleIdentifier=_defaultSourceBundleIdentifier;
-@property(retain, nonatomic) NSUUID *healthUUID; // @synthesize healthUUID=_healthUUID;
-@property(retain, nonatomic) NSUUID *persistentUUID; // @synthesize persistentUUID=_persistentUUID;
-@property(retain, nonatomic) NSUUID *nanoRegistryUUID; // @synthesize nanoRegistryUUID=_nanoRegistryUUID;
+@property(copy, nonatomic) NSUUID *healthDatabaseUUID; // @synthesize healthDatabaseUUID=_healthDatabaseUUID;
+@property(copy, nonatomic) NSUUID *persistentUUID; // @synthesize persistentUUID=_persistentUUID;
+@property(copy, nonatomic) NSUUID *nanoRegistryUUID; // @synthesize nanoRegistryUUID=_nanoRegistryUUID;
 - (void).cxx_destruct;
 - (id)description;
 - (_Bool)saveWithHealthDatabase:(id)arg1 error:(id *)arg2;
-- (id)_initWithNanoRegistryUUID:(id)arg1 persistentUUID:(id)arg2 healthUUID:(id)arg3 sourceBundleIdentifier:(id)arg4 deviceIdentifier:(id)arg5 syncStoreEntity:(id)arg6 restoreComplete:(_Bool)arg7 database:(id)arg8 error:(id *)arg9;
+- (id)_initWithNanoRegistryUUID:(id)arg1 persistentUUID:(id)arg2 healthDatabaseUUID:(id)arg3 sourceBundleIdentifier:(id)arg4 deviceIdentifier:(id)arg5 syncStoreEntity:(id)arg6 restoreComplete:(_Bool)arg7 database:(id)arg8 error:(id *)arg9;
 
 @end
 

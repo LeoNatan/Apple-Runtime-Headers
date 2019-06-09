@@ -22,7 +22,6 @@
     long long _subviewIndexOfDropLine;
     id _dropLineView;
     NSViewAnimation *_currentAnimation;
-    id _unused1;
     NSString *_stringsFileName;
     id _standardLocalizer;
     id _headerLocalizer;
@@ -50,9 +49,7 @@
     Class _rowClass;
     id _boundArrayOwner;
     NSString *_boundArrayKeyPath;
-    id _ruleReserved1;
     long long _lastRow;
-    id _ruleReserved2;
 }
 
 + (BOOL)accessibilityIsSingleCelled;

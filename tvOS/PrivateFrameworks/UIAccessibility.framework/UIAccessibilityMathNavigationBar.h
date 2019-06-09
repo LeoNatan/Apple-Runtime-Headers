@@ -13,7 +13,6 @@
     UIView *_titleView;
 }
 
-+ (id)_uiaxBundle;
 - (void).cxx_destruct;
 - (id)_popNavigationItemWithTransition:(int)arg1;
 - (void)_pushNavigationItem:(id)arg1 transition:(int)arg2;

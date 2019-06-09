@@ -10,7 +10,6 @@
 
 @protocol WPHomeKitDelegate <NSObject>
 - (void)homeKit:(WPHomeKit *)arg1 foundDevice:(NSUUID *)arg2 withData:(NSDictionary *)arg3 RSSI:(NSNumber *)arg4 type:(long long)arg5;
-- (void)homeKit:(WPHomeKit *)arg1 foundDevice:(NSUUID *)arg2 withData:(NSDictionary *)arg3;
 - (void)homeKitDidUpdateState:(WPHomeKit *)arg1;
 
 @optional

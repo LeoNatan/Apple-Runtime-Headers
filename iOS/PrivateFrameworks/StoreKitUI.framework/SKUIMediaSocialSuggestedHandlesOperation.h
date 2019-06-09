@@ -8,6 +8,7 @@
 
 @class NSArray, NSLock, SKUIClientContext;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaSocialSuggestedHandlesOperation : SSVComplexOperation
 {
     SKUIClientContext *_clientContext;

@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)patternFillWithType:(int)arg1 foreColor:(id)arg2 resources:(id)arg3;
 + (id)patternFillWithType:(int)arg1 resources:(id)arg2;
 + (id)patternFillWithType:(int)arg1 foreColorReference:(id)arg2 backColorReference:(id)arg3 resources:(id)arg4;
+- (void).cxx_destruct;
 - (id)description;
 - (id)backColor;
 - (id)foreColor;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToPatternFill:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithType:(int)arg1 foreColor:(id)arg2 backColor:(id)arg3 resources:(id)arg4;
 - (id)initWithResources:(id)arg1;
 - (id)backColorReference;

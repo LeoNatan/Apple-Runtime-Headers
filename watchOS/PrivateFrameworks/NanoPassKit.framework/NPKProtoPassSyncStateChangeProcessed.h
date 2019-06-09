@@ -14,11 +14,14 @@
 {
     NSData *_acceptedChangeUUID;
     _Bool _changeAccepted;
+    _Bool _fullPassRequired;
     struct {
         unsigned int changeAccepted:1;
+        unsigned int fullPassRequired:1;
     } _has;
 }
 
+@property(nonatomic) _Bool fullPassRequired; // @synthesize fullPassRequired=_fullPassRequired;
 @property(nonatomic) _Bool changeAccepted; // @synthesize changeAccepted=_changeAccepted;
 @property(retain, nonatomic) NSData *acceptedChangeUUID; // @synthesize acceptedChangeUUID=_acceptedChangeUUID;
 - (void).cxx_destruct;
@@ -31,6 +34,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasFullPassRequired;
 @property(nonatomic) _Bool hasChangeAccepted;
 
 @end

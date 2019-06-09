@@ -17,6 +17,7 @@
 }
 
 @property(readonly, nonatomic) MTLToolsPointerArray *textures; // @synthesize textures=_textures;
+- (struct __IOSurface *)iosurface;
 - (id)newTiledTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3;
 - (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3;
 - (void)removeAllDebugMarkers;
@@ -37,8 +38,11 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long hazardTrackingMode;
 @property(readonly) id <MTLHeap> heap;
+@property(readonly) unsigned long long heapOffset;
 @property(copy) NSString *label;
+@property(readonly) unsigned long long resourceOptions;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) Class superclass;
 

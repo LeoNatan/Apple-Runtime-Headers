@@ -17,12 +17,13 @@
     NSMutableDictionary *_keylineContainers;
     _Bool _shouldBreatheOnKeylineSelection;
     _Bool _cleaningUpBreathing;
-    NSString *_selectedKey;
     UILabel *_infoLabel;
     struct CGRect _prevLayoutRect;
+    _Bool _isScrolling;
     int _editMode;
     id <_NTKFaceEditPageViewDelegate> _delegate;
     UIView *_contentView;
+    NSString *_selectedKey;
     unsigned int _numberOfLisaValues;
     unsigned int _currentLisaValue;
     float _lisaValueHeight;
@@ -32,6 +33,7 @@
     unsigned int _detentType;
 }
 
+@property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=_isScrolling;
 @property(nonatomic) unsigned int detentType; // @synthesize detentType=_detentType;
 @property(copy, nonatomic) CDUnknownBlockType discreteScrollHandler; // @synthesize discreteScrollHandler=_discreteScrollHandler;
 @property(copy, nonatomic) CDUnknownBlockType didScrollHandler; // @synthesize didScrollHandler=_didScrollHandler;
@@ -39,6 +41,7 @@
 @property(readonly, nonatomic) float lisaValueHeight; // @synthesize lisaValueHeight=_lisaValueHeight;
 @property(nonatomic) unsigned int currentLisaValue; // @synthesize currentLisaValue=_currentLisaValue;
 @property(readonly, nonatomic) unsigned int numberOfLisaValues; // @synthesize numberOfLisaValues=_numberOfLisaValues;
+@property(readonly, nonatomic) NSString *selectedKey; // @synthesize selectedKey=_selectedKey;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) __weak id <_NTKFaceEditPageViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) int editMode; // @synthesize editMode=_editMode;

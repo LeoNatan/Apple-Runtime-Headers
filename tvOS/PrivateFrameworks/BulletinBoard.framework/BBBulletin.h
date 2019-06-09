@@ -9,7 +9,7 @@
 #import <BulletinBoard/NSCopying-Protocol.h>
 #import <BulletinBoard/NSSecureCoding-Protocol.h>
 
-@class BBAccessoryIcon, BBAction, BBAttachmentMetadata, BBColor, BBContent, BBSectionIcon, BBSound, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimeZone;
+@class BBAccessoryIcon, BBAction, BBAttachmentMetadata, BBColor, BBContent, BBImage, BBSectionIcon, BBSound, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSSet, NSString, NSTimeZone;
 
 @interface BBBulletin : NSObject <NSCopying, NSSecureCoding>
 {
@@ -21,6 +21,8 @@
     _Bool _wantsFullscreenPresentation;
     _Bool _ignoresQuietMode;
     _Bool _ignoresDowntime;
+    _Bool _preemptsPresentedAlert;
+    _Bool _preemptsSTAR;
     _Bool _expiresOnPublisherDeath;
     _Bool _usesExternalSync;
     _Bool _loading;
@@ -33,7 +35,6 @@
     NSString *_categoryID;
     NSString *_threadID;
     NSArray *_peopleIDs;
-    long long _addressBookRecordID;
     long long _sectionSubtype;
     NSArray *_intentIDs;
     unsigned long long _counter;
@@ -49,6 +50,7 @@
     long long _dateFormatStyle;
     NSTimeZone *_timeZone;
     BBAccessoryIcon *_accessoryIconMask;
+    BBImage *_accessoryImage;
     BBSound *_sound;
     BBAttachmentMetadata *_primaryAttachment;
     NSArray *_additionalAttachments;
@@ -104,6 +106,8 @@
 @property(copy, nonatomic) NSArray *buttons; // @synthesize buttons=_buttons;
 @property(retain, nonatomic) NSMutableDictionary *supplementaryActionsByLayout; // @synthesize supplementaryActionsByLayout=_supplementaryActionsByLayout;
 @property(retain, nonatomic) NSMutableDictionary *actions; // @synthesize actions=_actions;
+@property(nonatomic) _Bool preemptsSTAR; // @synthesize preemptsSTAR=_preemptsSTAR;
+@property(nonatomic) _Bool preemptsPresentedAlert; // @synthesize preemptsPresentedAlert=_preemptsPresentedAlert;
 @property(nonatomic) _Bool ignoresDowntime; // @synthesize ignoresDowntime=_ignoresDowntime;
 @property(nonatomic) _Bool ignoresQuietMode; // @synthesize ignoresQuietMode=_ignoresQuietMode;
 @property(nonatomic) _Bool wantsFullscreenPresentation; // @synthesize wantsFullscreenPresentation=_wantsFullscreenPresentation;
@@ -113,6 +117,7 @@
 @property(nonatomic) _Bool turnsOnDisplay; // @synthesize turnsOnDisplay=_turnsOnDisplay;
 @property(retain, nonatomic) BBSound *sound; // @synthesize sound=_sound;
 @property(nonatomic) _Bool clearable; // @synthesize clearable=_clearable;
+@property(retain, nonatomic) BBImage *accessoryImage; // @synthesize accessoryImage=_accessoryImage;
 @property(retain, nonatomic) BBAccessoryIcon *accessoryIconMask; // @synthesize accessoryIconMask=_accessoryIconMask;
 @property(retain, nonatomic) NSTimeZone *timeZone; // @synthesize timeZone=_timeZone;
 @property(nonatomic) _Bool dateIsAllDay; // @synthesize dateIsAllDay=_dateIsAllDay;
@@ -131,7 +136,6 @@
 @property(nonatomic) unsigned long long counter; // @synthesize counter=_counter;
 @property(copy, nonatomic) NSArray *intentIDs; // @synthesize intentIDs=_intentIDs;
 @property(nonatomic) long long sectionSubtype; // @synthesize sectionSubtype=_sectionSubtype;
-@property(nonatomic) long long addressBookRecordID; // @synthesize addressBookRecordID=_addressBookRecordID;
 @property(copy, nonatomic) NSArray *peopleIDs; // @synthesize peopleIDs=_peopleIDs;
 @property(copy, nonatomic) NSString *threadID; // @synthesize threadID=_threadID;
 @property(copy, nonatomic) NSString *categoryID; // @synthesize categoryID=_categoryID;
@@ -196,10 +200,14 @@
 - (id)firstValidObserver;
 - (void)addLifeAssertion:(id)arg1;
 - (id)lifeAssertions;
+@property(readonly, nonatomic) _Bool hideDismissActionInCarPlay;
+@property(readonly, nonatomic) _Bool suppressDelayForForwardedBulletins;
+@property(readonly, nonatomic) _Bool playsMediaWhenRaised;
 @property(readonly, nonatomic) _Bool shouldDismissBulletinWhenClosed;
 @property(readonly, nonatomic) unsigned long long privacySettings;
+@property(readonly, nonatomic) _Bool allowsSupplementaryActionsInCarPlay;
+@property(readonly, nonatomic) _Bool allowsPersistentBannersInCarPlay;
 @property(readonly, nonatomic) _Bool revealsAdditionalContentOnPresentation;
-@property(readonly, nonatomic) _Bool preemptsPresentedAlert;
 @property(readonly, nonatomic) _Bool prioritizeAtTopOfLockScreen;
 @property(readonly, nonatomic) _Bool allowsAddingToLockScreenWhenUnlocked;
 @property(readonly, nonatomic) _Bool allowsAutomaticRemovalFromLockScreen;
@@ -239,7 +247,6 @@
 @property(readonly, nonatomic) _Bool usesVariableLayout;
 @property(readonly, nonatomic) unsigned long long messageNumberOfLines;
 @property(readonly, nonatomic) _Bool showsSubtitle;
-@property(readonly, nonatomic) _Bool sectionDisplaysCriticalBulletins;
 @property(readonly, nonatomic) BBSectionIcon *sectionIcon;
 @property(readonly, nonatomic) NSString *sectionDisplayName;
 - (struct CGSize)composedAttachmentImageSizeWithObserver:(id)arg1;

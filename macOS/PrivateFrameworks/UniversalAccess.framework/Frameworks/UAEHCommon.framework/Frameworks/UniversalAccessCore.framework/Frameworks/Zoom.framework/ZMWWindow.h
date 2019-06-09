@@ -8,6 +8,7 @@
 
 @class CAContext, CALayer;
 
+__attribute__((visibility("hidden")))
 @interface ZMWWindow : NSObject
 {
     unsigned int _cgsID;

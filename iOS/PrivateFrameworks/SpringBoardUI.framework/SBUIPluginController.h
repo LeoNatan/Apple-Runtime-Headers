@@ -20,24 +20,15 @@
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_isVisible;
 @property(nonatomic) __weak id <SBUIPluginControllerHost> host; // @synthesize host=_host;
 - (void).cxx_destruct;
-- (_Bool)handledMenuButtonTap;
-- (_Bool)handledMenuButtonUpEvent;
-- (_Bool)handledMenuButtonDownEvent;
-- (void)handleViewFullyRevealed;
-- (void)viewPartiallyRevealedWithPercentRevealed:(double)arg1;
 - (id)viewControllerForActivationContext:(id)arg1;
 - (_Bool)handledButtonTapFromSource:(int)arg1;
 - (_Bool)handledButtonUpEventFromSource:(int)arg1;
 - (_Bool)handledButtonDownEventFromSource:(int)arg1;
-- (_Bool)handledWiredMicButtonTap;
-- (void)handlePreheatCommand;
-- (void)handleBluetoothDismissal;
 - (_Bool)handledPasscodeUnlockWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void *)arg3;
 - (void)cancelPendingActivationEvent:(int)arg1;
 - (void)prepareForActivationEvent:(int)arg1 eventSource:(int)arg2 afterInterval:(double)arg3;
 - (_Bool)wantsActivationEvent:(int)arg1 eventSource:(int)arg2 interval:(double *)arg3;
-- (_Bool)shouldBreadcrumbLaunchedApplicationWithBundleIdentifier:(id)arg1;
 - (_Bool)supportedAndEnabled;
 - (void)registeredWithHost;
 

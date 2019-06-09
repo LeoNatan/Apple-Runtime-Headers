@@ -10,6 +10,7 @@
 
 @class CKMediaObject, NSString, PUICActivityIndicatorView, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoAttachmentView : UIView <CKAttachmentView>
 {
     CKMediaObject *_mediaObject;

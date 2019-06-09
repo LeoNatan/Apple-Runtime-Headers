@@ -16,6 +16,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (_Bool)setDelegate:(id)arg1 forSignInController:(id)arg2 forAccountWithType:(id)arg3;
 - (id)_loadAccountViewProviderPluginWithName:(id)arg1;
 - (id)_accountViewProviderPluginForAccountTypeID:(id)arg1;
 - (id)configurationInfoForViewingAccount:(id)arg1;

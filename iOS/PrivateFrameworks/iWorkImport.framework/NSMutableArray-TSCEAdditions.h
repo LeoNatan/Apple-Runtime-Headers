@@ -6,7 +6,27 @@
 
 #import <Foundation/NSMutableArray.h>
 
-@interface NSMutableArray (TSCEAdditions)
+#import <iWorkImport/TSTStrokeLayerEnumerating-Protocol.h>
+
+@interface NSMutableArray (TSCEAdditions) <TSTStrokeLayerEnumerating>
++     // Error parsing type: @32@0:8r^{ChartsNSArrayOfNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: tsch_instanceWithArchive:unarchiver:
 - (void)tsce_addObjectNonNil:(id)arg1;
+- (unsigned long long)tsu_insertObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (void)tsu_trimObjectsFromIndex:(unsigned long long)arg1;
+- (void)tsu_removeObjectsIdenticalToObjectsInArray:(id)arg1;
+- (void)tsu_addObjectsFromNonNilArray:(id)arg1;
+- (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_addObjects:(id)arg1;
+- (id)tsu_peek;
+- (id)tsu_pop;
+- (void)tsu_push:(id)arg1;
+- (id)tsu_dequeue;
+- (void)tsu_enqueue:(id)arg1;
+-     // Error parsing type: @32@0:8r^{ChartsNSArrayOfNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: tsch_initWithArchive:unarchiver:
+-     // Error parsing type: v32@0:8^{ChartsNSArrayOfNSNumberDoubleArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedField<double>=ii(Pointer=^{Arena}^{Rep})}}16@24, name: tsch_saveToArchive:archiver:
+- (void)tss_addProperty:(int)arg1;
+- (void)replaceStrokeLayerAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
+- (id)strokeLayerAtIndex:(unsigned long long)arg1;
+@property(readonly) unsigned long long strokeLayerCount;
 @end
 

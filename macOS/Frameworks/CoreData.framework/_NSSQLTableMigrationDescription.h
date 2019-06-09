@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, NSNumber, NSSQLEntity;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSSQLEntity;
 
 __attribute__((visibility("hidden")))
 @interface _NSSQLTableMigrationDescription : NSObject
@@ -23,11 +23,16 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_removedManyToManys;
     NSMutableArray *_transformedManyToManys;
     NSMutableDictionary *_tempTableNames;
-    NSNumber *_hasTransformedTableSchema;
+    NSNumber *_hasComplexSchemaTransformations;
+    NSMutableSet *_addedColumnSet;
+    NSMutableSet *_raisedColumnSet;
+    NSMutableSet *_droppedEntitySet;
+    NSMutableSet *_columnsUpgradedToMandatory;
 }
 
 @property(readonly, nonatomic) NSSQLEntity *rootEntity; // @synthesize rootEntity=_rootEntity;
 @property(readonly, nonatomic) int migrationType; // @synthesize migrationType=_migrationType;
+- (id)newCloudKitMetadataUpdateStatements;
 - (id)_sourceRootEntity;
 - (id)_tempNameForTableName:(id)arg1;
 - (id)_transformedManyToManys;
@@ -37,13 +42,17 @@ __attribute__((visibility("hidden")))
 - (id)newCopyAndInsertStatementForToOne:(id)arg1 toManyToMany:(id)arg2 fromTableName:(id)arg3 invertColumns:(BOOL)arg4 migrationContext:(struct _NSSQLMigrationContext)arg5;
 - (id)createUpdateStatementForEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (id)createFEKUpdateStatementsForEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
+- (id)createDefaultValuePopulationStatementsForAddedColumnsEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (id)createInsertStatementForEntityMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (id)createDeleteStatementForEntityMigrations:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)appendStatementsToCompleteMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)appendStatementsToPerformMigration:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)appendStatementsToCreateOrDropTables:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)appendStatementsToRenameTables:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
-- (BOOL)_hasTransformedTableSchema;
+- (BOOL)_hasComplexSchemaTransformationsInMigrationContext:(struct _NSSQLMigrationContext)arg1;
+- (void)_determineSchemaTransformationComplexityInMigrationContext:(struct _NSSQLMigrationContext)arg1;
+- (BOOL)_doRelationshipsHaveChangesRequiringCopyForMigration:(id)arg1 inContext:(struct _NSSQLMigrationContext)arg2;
+- (BOOL)_doAttributesHaveChangesRequiringCopyForMigration:(id)arg1;
 - (void)addEntityMigrationDescription:(id)arg1;
 - (id)description;
 - (void)dealloc;

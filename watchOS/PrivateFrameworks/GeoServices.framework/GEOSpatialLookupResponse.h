@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
 {
     NSMutableArray *_places;
     int _statusCode;
-    CDStruct_bcb1eac0 _has;
+    CDStruct_ade9d5f7 _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)placeType;
-@property(retain, nonatomic) NSMutableArray *places; // @synthesize places=_places;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -28,16 +28,18 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)placeAtIndex:(unsigned int)arg1;
 - (unsigned int)placesCount;
 - (void)addPlace:(id)arg1;
 - (void)clearPlaces;
+@property(retain, nonatomic) NSMutableArray *places;
 - (int)StringAsStatusCode:(id)arg1;
 - (id)statusCodeAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatusCode;
-@property(nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
+@property(nonatomic) int statusCode;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <StoreServices/SSURLConnectionRequest.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIURLConnectionRequest : SSURLConnectionRequest
 {
 }

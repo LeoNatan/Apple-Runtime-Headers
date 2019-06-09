@@ -21,7 +21,6 @@
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)_detachFromPlayerItem;
 - (_Bool)_attachToPlayerItem:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (void)_collectUncollectables;
 - (id)initWithIdentifiers:(id)arg1;

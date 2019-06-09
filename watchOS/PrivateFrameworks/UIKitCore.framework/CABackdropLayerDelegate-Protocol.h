@@ -12,5 +12,6 @@
 
 @optional
 - (void)backdropLayerStatisticsDidChange:(CABackdropLayer *)arg1;
+- (void)backdropLayer:(CABackdropLayer *)arg1 didChangeLuma:(float)arg2;
 @end
 

@@ -18,9 +18,11 @@
     long long _reason;
     long long _vioTrackingState;
     double _lastMajorRelocalizationTimestamp;
+    double _originTimestamp;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) double originTimestamp; // @synthesize originTimestamp=_originTimestamp;
 @property(nonatomic) double lastMajorRelocalizationTimestamp; // @synthesize lastMajorRelocalizationTimestamp=_lastMajorRelocalizationTimestamp;
 @property(nonatomic) long long vioTrackingState; // @synthesize vioTrackingState=_vioTrackingState;
 @property(nonatomic) _Bool poseGraphUpdated; // @synthesize poseGraphUpdated=_poseGraphUpdated;

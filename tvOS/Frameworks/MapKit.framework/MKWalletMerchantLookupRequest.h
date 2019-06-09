@@ -20,6 +20,7 @@
     NSString *_terminalId;
     NSString *_transactionCurrencyCode;
     unsigned long long _transactionType;
+    NSString *_transactionId;
     NSString *_warsawMerchantDomain;
     NSString *_warsawMerchantName;
     NSString *_warsawMerchantId;
@@ -38,10 +39,12 @@
     NSString *_merchantType;
     NSNumber *_merchantCleanConfidenceLevel;
     NSString *_merchantAdditionalData;
+    NSString *_merchantCanl;
     GEOMapServiceTraits *_traits;
 }
 
 @property(copy, nonatomic) GEOMapServiceTraits *traits; // @synthesize traits=_traits;
+@property(copy, nonatomic) NSString *merchantCanl; // @synthesize merchantCanl=_merchantCanl;
 @property(copy, nonatomic) NSString *merchantAdditionalData; // @synthesize merchantAdditionalData=_merchantAdditionalData;
 @property(copy, nonatomic) NSNumber *merchantCleanConfidenceLevel; // @synthesize merchantCleanConfidenceLevel=_merchantCleanConfidenceLevel;
 @property(copy, nonatomic) NSString *merchantType; // @synthesize merchantType=_merchantType;
@@ -60,6 +63,7 @@
 @property(copy, nonatomic) NSString *warsawMerchantId; // @synthesize warsawMerchantId=_warsawMerchantId;
 @property(copy, nonatomic) NSString *warsawMerchantName; // @synthesize warsawMerchantName=_warsawMerchantName;
 @property(copy, nonatomic) NSString *warsawMerchantDomain; // @synthesize warsawMerchantDomain=_warsawMerchantDomain;
+@property(copy, nonatomic) NSString *transactionId; // @synthesize transactionId=_transactionId;
 @property(nonatomic) unsigned long long transactionType; // @synthesize transactionType=_transactionType;
 @property(copy, nonatomic) NSString *transactionCurrencyCode; // @synthesize transactionCurrencyCode=_transactionCurrencyCode;
 @property(copy, nonatomic) NSString *terminalId; // @synthesize terminalId=_terminalId;

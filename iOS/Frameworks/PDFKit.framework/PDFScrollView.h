@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)viewForZoomingInScrollView:(id)arg1;
+- (void)setContentInset:(struct UIEdgeInsets)arg1;
+- (void)setContentInsetAdjustmentBehavior:(long long)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setForcesTopAlignment:(_Bool)arg1;

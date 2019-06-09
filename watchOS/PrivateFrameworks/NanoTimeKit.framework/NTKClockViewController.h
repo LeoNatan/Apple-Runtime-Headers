@@ -7,10 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 #import <NanoTimeKit/CSLPIButtonHandlerProtocol-Protocol.h>
-#import <NanoTimeKit/CSLSWakeGestureObserver-Protocol.h>
+#import <NanoTimeKit/CSLSScreenWakeProvider-Protocol.h>
 #import <NanoTimeKit/NCEClockCelebrationViewControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NPTOUserPhotoFaceServerDelegateProtocol-Protocol.h>
+#import <NanoTimeKit/NTKClockStatusBarViewControllerStatusObserver-Protocol.h>
 #import <NanoTimeKit/NTKClockViewDelegate-Protocol.h>
+#import <NanoTimeKit/NTKClockWakeControllerProvider-Protocol.h>
 #import <NanoTimeKit/NTKFaceCollectionObserver-Protocol.h>
 #import <NanoTimeKit/NTKFaceLibraryViewControllerDelegate-Protocol.h>
 #import <NanoTimeKit/NTKFaceViewControllerDelegate-Protocol.h>
@@ -18,9 +20,10 @@
 #import <NanoTimeKit/ORBTapGestureRecognizerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CSLPITimer, NCEClockCelebrationViewController, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKTransientFaceCollection, NTKUpNextUseMonitor, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection;
+@class CSLPITimer, NCEClockCelebrationViewController, NSLock, NSSet, NSString, NSTimer, NTKAggdReporter, NTKComplicationLocationManager, NTKFaceLibraryViewController, NTKFaceSnapshotClient, NTKFaceViewController, NTKPersistentFaceCollection, NTKTransientFaceCollection, NTKUpNextUseMonitor, ORBAnimator, ORBTapGestureRecognizer, PPTNTKBlankFaceCollection, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
+@protocol CSLSScreenWakeProviderDelegate, NTKClockWakeController;
 
-@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSWakeGestureObserver>
+@interface NTKClockViewController : UIViewController <NTKClockViewDelegate, NTKFaceViewControllerDelegate, NTKFaceLibraryViewControllerDelegate, ORBTapGestureRecognizerDelegate, CSLPIButtonHandlerProtocol, UIGestureRecognizerDelegate, NPTOUserPhotoFaceServerDelegateProtocol, NTKFaceCollectionObserver, NTKSensitiveUIStateObserver, NCEClockCelebrationViewControllerDelegate, CSLSScreenWakeProvider, NTKClockStatusBarViewControllerStatusObserver, NTKClockWakeControllerProvider>
 {
     Class _statusBarViewControllerClass;
     NTKPersistentFaceCollection *_libraryFaceCollection;
@@ -38,6 +41,8 @@
     ORBTapGestureRecognizer *_orbRecognizer;
     ORBAnimator *_orbAnimator;
     _Bool _orbZoomActive;
+    UILongPressGestureRecognizer *_speakTimeGestureRecognizer;
+    UITapGestureRecognizer *_cancelSpeakTimeGestureRecognizer;
     _Bool _haveLoadedView;
     _Bool _haveFinishedLoadingView;
     CSLPITimer *_complicationRefreshTimer;
@@ -47,6 +52,10 @@
     NTKComplicationLocationManager *_complicationLocationManager;
     _Bool _needsEvaluatePrideAvailable;
     NTKUpNextUseMonitor *_upNextUseMonitor;
+    UIView *_contentView;
+    id <NTKClockWakeController> _normalWakeController;
+    _Bool _finishedLoading;
+    NSLock *_finishedLoadingLock;
     _Bool _lockScreenBorrowed;
     NSSet *_pauseReasons;
 }
@@ -54,7 +63,16 @@
 @property(nonatomic, getter=isLockScreenBorrowed) _Bool lockScreenBorrowed; // @synthesize lockScreenBorrowed=_lockScreenBorrowed;
 @property(copy, nonatomic) NSSet *pauseReasons; // @synthesize pauseReasons=_pauseReasons;
 - (void).cxx_destruct;
+@property(readonly) _Bool wake_canPerformWristRaiseAnimation;
+@property(readonly, nonatomic) NTKFaceViewController *wake_faceViewController;
+@property(readonly, nonatomic) UIView *wake_clockContentView;
 - (struct CGRect)launchRectForComplicationApplicationIdentifier:(id)arg1;
+- (void)_preloadAddableFaces;
+- (void)_significantTimeChangeNotification;
+- (void)_localeDidChangeNotification;
+- (void)faceCollectionDidLoad:(id)arg1;
+- (void)faceCollection:(id)arg1 didSelectFace:(id)arg2 atIndex:(unsigned int)arg3;
+- (void)statusBarDidChange;
 - (_Bool)createNewCustomPhotoFaceFromFaceStyle:(int)arg1 andPath:(id)arg2;
 - (_Bool)createNewKaleidoscopeFaceFromPath:(id)arg1;
 - (_Bool)createNewUserPhotoFaceFromPath:(id)arg1;
@@ -67,11 +85,12 @@
 - (id)PPTUniqueComplicationsToSlotForCurrentFace;
 - (void)PPTRestoreLibrary;
 - (void)PPTUseBlankFaceLibrary;
+- (int)PPTFaceStyleForPPTFaceName:(id)arg1;
 - (int)PPTFaceIndexForPPTFaceName:(id)arg1;
 - (void)PPTSetupLibraryForSwitchToFacePPT:(int)arg1 isTargetFaceInDock:(_Bool)arg2;
 - (int)PPTFaceIndexForFaceStyle:(int)arg1;
-- (int)PPTFaceStyleForPPTFaceName:(id)arg1;
 - (unsigned int)PPTCurrentFaceStyle;
+- (void)PPTRunScrollTestNamed:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)PPTSwitchToFaceAtIndex:(unsigned int)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)PPTCreateFaceOfStyle:(int)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)PPTScrubToDate:(id)arg1;
@@ -96,10 +115,14 @@
 - (void)_beginOrbZoom;
 - (void)ORBTapGestureRecognizer:(id)arg1 setScaleFactor:(float)arg2;
 - (void)ORBTapGestureRecognizerDidLatch:(id)arg1;
+- (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (_Bool)_canHandleSpeakTimeGesture;
+- (void)_handleCancelSpeakTimeGesture:(id)arg1;
+- (void)_handleSpeakTimeGesture:(id)arg1;
 - (void)_removePrideFaceFromCollection:(id)arg1 reloadCollection:(CDUnknownBlockType)arg2;
 - (_Bool)_faceCollectionContainsPrideFace:(id)arg1;
-- (void)_addPrideFaceToAddableFaceCollectionIfNecessary;
-- (unsigned int)_indexForPrideFaceInAddableFaces;
+- (void)_addPrideFacesToAddableFaceCollectionIfNecessary;
+- (unsigned int)_indexForFaceInAddableFaces:(int)arg1;
 - (void)_updatePrideFaceAvailability;
 - (void)faceLibraryViewControllerDidEndSwiping:(id)arg1;
 - (void)faceLibraryViewControllerDidStartSwiping:(id)arg1;
@@ -124,6 +147,8 @@
 - (void)_showLibraryViewControllerAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_showLibraryViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_newFaceControllerForFace:(id)arg1 withConfiguration:(CDUnknownBlockType)arg2;
+- (id)currentComplicationReportingValues;
+- (id)currentFaceReportingValue;
 - (id)siriContextFaceIdentifier;
 - (id)powerLogDescription;
 - (id)currentFaceClass;
@@ -139,32 +164,35 @@
 - (id)_currentFaceCollection;
 - (void)loadView;
 - (_Bool)handleCrownPressed;
-- (void)handleOrdinaryScreenWake;
+- (void)handleScreenBlanked;
+- (void)handleScreenOffAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)handleScreenOnAnimated:(_Bool)arg1 flags:(unsigned int)arg2 brightnessRamp:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_canPerformWristRaiseAnimation;
-- (void)wakeGestureRecognized:(id)arg1;
-- (void)handleWristRaiseScreenWake;
 - (void)disableSlowMode;
 - (void)enableSlowMode;
+@property(readonly, nonatomic, getter=isFinishedLoading) _Bool finishedLoading;
 - (void)_resumeUpdates;
 - (void)_pauseUpdates;
 - (void)_ensureFaceViewControllerExists;
+- (_Bool)currentFaceIsAnalog;
 - (id)currentFace;
 - (id)lifeCycleTrackingFaceViewController;
 - (void)restoreIconZoomController;
 - (id)borrowIconZoomController;
 - (void)updateSnapshotsSynchronously;
 - (_Bool)canBecomeFirstResponder;
+- (void)_markLibraryFinishedLoading;
 - (void)_cancelLibraryTimeoutTimer;
 - (void)_libraryTimeoutTimerFired;
 - (void)_startLibraryTimeoutTimer;
 - (void)_prewarmFaceContentIfNeeded;
-- (void)faceCollectionDidLoad:(id)arg1;
 - (void)dealloc;
 - (void)sensitiveUIStateChanged;
 - (id)initWithStatusViewControllerClass:(Class)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <CSLSScreenWakeProviderDelegate> delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;

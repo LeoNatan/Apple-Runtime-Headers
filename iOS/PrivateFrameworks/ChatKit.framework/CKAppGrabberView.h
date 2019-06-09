@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CKAppChevronView, UIButton, UIImageView, UILabel;
+@class UIButton, UIImageView, UILabel, _UIGrabber;
 @protocol CKAppGrabberViewDelegate;
 
 @interface CKAppGrabberView : UIView
@@ -17,7 +17,7 @@
     UIButton *_closeButton;
     UIView *_headerView;
     UIView *_grayLine;
-    CKAppChevronView *_chevronView;
+    _UIGrabber *_chevronView;
     _Bool _showsAppTitle;
     _Bool _roundsTopCorners;
     id <CKAppGrabberViewDelegate> _delegate;
@@ -31,8 +31,6 @@
 @property(nonatomic) __weak id <CKAppGrabberViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)headerView;
-- (void)setState:(long long)arg1 animated:(_Bool)arg2;
-@property(nonatomic) long long state;
 - (void)updateHeaderFrame:(_Bool)arg1;
 - (void)closeButtonTapped:(id)arg1;
 - (void)updateAppTitle:(id)arg1 icon:(id)arg2;

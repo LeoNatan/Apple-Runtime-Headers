@@ -8,12 +8,13 @@
 
 #import <PhotosUI/PHLivePhotoViewDelegate-Protocol.h>
 #import <PhotosUI/PHLivePhotoViewDelegatePrivate-Protocol.h>
+#import <PhotosUI/PUBrowsingViewModelChangeObserver-Protocol.h>
 
-@class NSString, PHLivePhotoView;
+@class NSString, PHLivePhotoView, PUBrowsingViewModel;
 @protocol PUIrisImageTileViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface PUIrisImageTileViewController : PUImageTileViewController <PHLivePhotoViewDelegate, PHLivePhotoViewDelegatePrivate>
+@interface PUIrisImageTileViewController : PUImageTileViewController <PHLivePhotoViewDelegate, PHLivePhotoViewDelegatePrivate, PUBrowsingViewModelChangeObserver>
 {
     struct {
         _Bool respondsToDidBeginPlaying;
@@ -26,10 +27,12 @@ __attribute__((visibility("hidden")))
     } _delegateFlags;
     CDUnknownBlockType _ppt_didEndPlayingHandler;
     id <PUIrisImageTileViewControllerDelegate> _delegate;
+    PUBrowsingViewModel *_browsingViewModel;
     PHLivePhotoView *__livePhotoView;
 }
 
 @property(readonly, nonatomic) PHLivePhotoView *_livePhotoView; // @synthesize _livePhotoView=__livePhotoView;
+@property(retain, nonatomic) PUBrowsingViewModel *browsingViewModel; // @synthesize browsingViewModel=_browsingViewModel;
 @property(nonatomic) __weak id <PUIrisImageTileViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)livePhotoViewDidBeginHinting:(id)arg1;

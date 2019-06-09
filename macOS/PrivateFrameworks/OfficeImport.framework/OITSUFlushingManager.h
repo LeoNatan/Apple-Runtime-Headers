@@ -9,6 +9,7 @@
 @class NSCondition, NSThread, OITSUPointerKeyDictionary, OITSURetainedPointerKeyDictionary;
 @protocol TSUiOSMemoryWarningFlushable;
 
+__attribute__((visibility("hidden")))
 @interface OITSUFlushingManager : NSObject
 {
     OITSURetainedPointerKeyDictionary *_objects;

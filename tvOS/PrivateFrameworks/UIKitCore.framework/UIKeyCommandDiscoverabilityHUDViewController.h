@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)animateOutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)_updateVisualStyle;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)loadView;
 - (void)dealloc;

@@ -6,9 +6,11 @@
 
 #import <CloudKit/CKOperationInfo.h>
 
+#import <CloudKit/NSSecureCoding-Protocol.h>
+
 @class CKShareMetadata, NSString;
 
-@interface CKInitiateParticipantVettingOperationInfo : CKOperationInfo
+@interface CKInitiateParticipantVettingOperationInfo : CKOperationInfo <NSSecureCoding>
 {
     CKShareMetadata *_shareMetadata;
     NSString *_participantID;

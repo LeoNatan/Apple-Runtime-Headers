@@ -10,21 +10,19 @@
 
 @interface SSUsernamePasswordCredentials : SSCredentials
 {
-    NSString *mUsername;
-    NSString *mPassword;
-    NSString *mLabel;
-    BOOL mServerSupportsSRP;
-    void *mReservedForInstanceVariablesUsernamePassword;
     BOOL _serverSupportsSRP;
+    NSString *_username;
+    NSString *_password;
+    NSString *_label;
 }
 
 + (id)rsaCredentialsWithUsername:(id)arg1 withPassword:(id)arg2 label:(id)arg3 srp:(BOOL)arg4;
 + (id)srpCredentialsWithUsername:(id)arg1 withPassword:(id)arg2;
 + (id)diffieHellmanCredentialsWithUsername:(id)arg1 withPassword:(id)arg2 label:(id)arg3;
 @property BOOL serverSupportsSRP; // @synthesize serverSupportsSRP=_serverSupportsSRP;
-@property(retain) NSString *label; // @synthesize label=mLabel;
-@property(readonly) NSString *password; // @synthesize password=mPassword;
-@property(readonly) NSString *username; // @synthesize username=mUsername;
+@property(retain) NSString *label; // @synthesize label=_label;
+@property(retain) NSString *password; // @synthesize password=_password;
+@property(retain) NSString *username; // @synthesize username=_username;
 - (void)dealloc;
 - (id)initWithAuthenticationType:(id)arg1 withUsername:(id)arg2 withPassword:(id)arg3;
 

@@ -6,7 +6,7 @@
 
 #import <DoNotDisturb/NSObject-Protocol.h>
 
-@class DNDBehaviorSettings, DNDBypassSettings, DNDModeAssertionInvalidation, DNDRemoteServiceConnection, DNDScheduleSettings, DNDStateUpdate, NSString;
+@class DNDBehaviorSettings, DNDBypassSettings, DNDModeAssertion, DNDModeAssertionInvalidation, DNDRemoteServiceConnection, DNDScheduleSettings, DNDStateUpdate, NSString;
 
 @protocol DNDRemoteServiceConnectionEventListener <NSObject>
 @property(readonly, copy, nonatomic) NSString *clientIdentifier;
@@ -15,7 +15,7 @@
 - (void)remoteService:(DNDRemoteServiceConnection *)arg1 didReceiveUpdatedScheduleSettings:(DNDScheduleSettings *)arg2;
 - (void)remoteService:(DNDRemoteServiceConnection *)arg1 didReceiveUpdatedPhoneCallBypassSettings:(DNDBypassSettings *)arg2;
 - (void)remoteService:(DNDRemoteServiceConnection *)arg1 didReceiveUpdatedBehaviorSettings:(DNDBehaviorSettings *)arg2;
-- (void)remoteService:(DNDRemoteServiceConnection *)arg1 didReceiveModeAssertionInvalidation:(DNDModeAssertionInvalidation *)arg2;
+- (void)remoteService:(DNDRemoteServiceConnection *)arg1 didChangeActiveModeAssertion:(DNDModeAssertion *)arg2 invalidation:(DNDModeAssertionInvalidation *)arg3;
 - (void)remoteService:(DNDRemoteServiceConnection *)arg1 didReceiveDoNotDisturbStateUpdate:(DNDStateUpdate *)arg2;
 - (void)didReceiveConnectionInvalidatedEventForRemoteService:(DNDRemoteServiceConnection *)arg1;
 - (void)didReceiveConnectionInterruptedEventForRemoteService:(DNDRemoteServiceConnection *)arg1;

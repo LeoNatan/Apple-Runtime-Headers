@@ -8,11 +8,22 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class GEOETAServiceResponseSummary;
+
 __attribute__((visibility("hidden")))
 @interface GEOETATrafficUpdateResponseExtension : PBCodable <NSCopying>
 {
+    unsigned long long _debugServerLatencyMs;
+    GEOETAServiceResponseSummary *_etaServiceSummary;
+    CDStruct_8a83bcf8 _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL hasDebugServerLatencyMs;
+@property(nonatomic) unsigned long long debugServerLatencyMs;
+@property(retain, nonatomic) GEOETAServiceResponseSummary *etaServiceSummary;
+@property(readonly, nonatomic) BOOL hasEtaServiceSummary;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -20,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     UIViewController *_leadingViewController;
     UIViewController *_trailingViewController;
     UIViewController *_collapsedViewController;
+    UIViewController *_preservedDetailController;
     id <UIPanelControllerDelegate> _delegate;
     UISlidingBarConfiguration *_configuration;
     UISlidingBarStateRequest *_stateRequest;
@@ -25,12 +26,10 @@ __attribute__((visibility("hidden")))
     long long _externallyAnimatingAffectedSides;
     _UIPanelAnimationState *_animationState;
     long long _collapsedState;
-    long long _collapsedSecondaryIndex;
     double _keyboardAdjustment;
 }
 
 @property(nonatomic) double keyboardAdjustment; // @synthesize keyboardAdjustment=_keyboardAdjustment;
-@property(nonatomic) long long collapsedSecondaryIndex; // @synthesize collapsedSecondaryIndex=_collapsedSecondaryIndex;
 @property(nonatomic) long long collapsedState; // @synthesize collapsedState=_collapsedState;
 @property(retain, nonatomic) _UIPanelAnimationState *animationState; // @synthesize animationState=_animationState;
 @property(nonatomic) long long externallyAnimatingAffectedSides; // @synthesize externallyAnimatingAffectedSides=_externallyAnimatingAffectedSides;
@@ -38,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) UISlidingBarStateRequest *stateRequest; // @synthesize stateRequest=_stateRequest;
 @property(copy, nonatomic) UISlidingBarConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(nonatomic) __weak id <UIPanelControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) UIViewController *preservedDetailController; // @synthesize preservedDetailController=_preservedDetailController;
 @property(retain, nonatomic) UIViewController *collapsedViewController; // @synthesize collapsedViewController=_collapsedViewController;
 @property(retain, nonatomic) UIViewController *trailingViewController; // @synthesize trailingViewController=_trailingViewController;
 @property(retain, nonatomic) UIViewController *leadingViewController; // @synthesize leadingViewController=_leadingViewController;

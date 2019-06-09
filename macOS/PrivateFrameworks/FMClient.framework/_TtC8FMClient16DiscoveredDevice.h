@@ -24,8 +24,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDeviceName:(id)arg1 discoveryId:(id)arg2;
-@property(nonatomic, readonly) NSString *discoveryId; // @synthesize discoveryId;
-@property(nonatomic, readonly) NSString *deviceName; // @synthesize deviceName;
+@property(nonatomic, readonly) NSString *discoveryId;
+@property(nonatomic, readonly) NSString *deviceName;
 
 @end
 

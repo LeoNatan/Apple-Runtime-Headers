@@ -6,13 +6,13 @@
 
 #import <UIKit/UINavigationController.h>
 
-#import <PhotosUI/PLDismissableViewController-Protocol.h>
+#import <PhotosUI/PXForcedDismissableViewController-Protocol.h>
 #import <PhotosUI/UINavigationControllerDelegate-Protocol.h>
 
 @class NSString, PUAbstractNavigationBanner, UIViewController, _UINavigationControllerPalette;
 @protocol PXNavigationRoot;
 
-@interface PUNavigationController : UINavigationController <PLDismissableViewController, UINavigationControllerDelegate>
+@interface PUNavigationController : UINavigationController <PXForcedDismissableViewController, UINavigationControllerDelegate>
 {
     _Bool _pu_preventsAutorotation;
     CDUnknownBlockType _ppt_onDidShowViewControllerBlock;
@@ -40,9 +40,13 @@
 - (id)navigationController:(id)arg1 interactionControllerForAnimationController:(id)arg2;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
+- (_Bool)_canShowWhileLocked;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
+- (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
+- (void)_setNavigationBarHidden:(_Bool)arg1 edge:(unsigned long long)arg2 duration:(double)arg3;
 - (void)_setCurrentToolbarViewController:(id)arg1 animated:(_Bool)arg2;
 - (id)_extendedToolbar;
 - (void)viewController:(id)arg1 willSetupInitialBarsVisibilityOnViewWillAppearAnimated:(_Bool)arg2;
@@ -55,6 +59,7 @@
 - (void)pushViewController:(id)arg1 animated:(_Bool)arg2;
 - (void)_commonPUNavigationControllerInitialization;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithRootViewController:(id)arg1;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 
 // Remaining properties

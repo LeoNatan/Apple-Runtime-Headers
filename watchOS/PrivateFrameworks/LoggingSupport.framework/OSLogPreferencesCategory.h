@@ -18,6 +18,8 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)reset;
+@property(nonatomic) _Bool signpostPersisted;
+@property(nonatomic) _Bool signpostEnabled;
 @property(nonatomic) int persistedLevel;
 @property(nonatomic) int enabledLevel;
 - (int)defaultPersistedLevel;

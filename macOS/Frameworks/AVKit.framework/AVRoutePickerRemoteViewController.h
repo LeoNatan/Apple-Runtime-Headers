@@ -8,8 +8,10 @@
 
 #import <AVKit/AVRoutePickerViewHostInterface-Protocol.h>
 
+@class NSString;
 @protocol AVRoutePickerViewRemoteViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVRoutePickerRemoteViewController : NSRemoteViewController <AVRoutePickerViewHostInterface>
 {
     id <AVRoutePickerViewRemoteViewControllerDelegate> _delegate;
@@ -18,12 +20,13 @@
 + (void)requestViewControllerWithCompletion:(CDUnknownBlockType)arg1;
 @property(nonatomic) __weak id <AVRoutePickerViewRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)serviceReadyForDisplay;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (id)exportedInterface;
 - (id)serviceViewControllerInterface;
 - (void)stopDiscoveringAudioRoutes;
 - (void)startDiscoveringAudioRoutes;
+@property(nonatomic) BOOL useSystemAudioOutputContext;
+@property(copy, nonatomic) NSString *outputContextID;
 
 @end
 

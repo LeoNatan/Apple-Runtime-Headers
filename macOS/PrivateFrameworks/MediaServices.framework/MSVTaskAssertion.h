@@ -16,13 +16,11 @@
     int _pid;
     NSObject<OS_dispatch_source> *_invalidationTimer;
     BOOL _acquired;
-    long long _type;
     NSString *_name;
 }
 
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)_cancelInvalidationTimerWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) int pid;
@@ -32,9 +30,9 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)initWithType:(long long)arg1 bundleID:(id)arg2 name:(id)arg3 subsystem:(id)arg4;
-- (id)initWithType:(long long)arg1 pid:(int)arg2 name:(id)arg3 subsystem:(id)arg4;
-- (id)_initWithType:(long long)arg1 bundleID:(id)arg2 orPID:(int)arg3 name:(id)arg4 subsystem:(id)arg5;
+- (id)initWithName:(id)arg1 bundleID:(id)arg2 subsystem:(id)arg3 reason:(unsigned long long)arg4 flags:(unsigned long long)arg5;
+- (id)initWithName:(id)arg1 pid:(int)arg2 subsystem:(id)arg3 reason:(unsigned long long)arg4 flags:(unsigned long long)arg5;
+- (id)_initWithName:(id)arg1 bundleID:(id)arg2 pid:(int)arg3 subsystem:(id)arg4 reason:(unsigned long long)arg5 flags:(unsigned long long)arg6;
 
 @end
 

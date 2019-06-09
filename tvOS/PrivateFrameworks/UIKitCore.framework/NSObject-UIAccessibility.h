@@ -6,10 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSAttributedString, NSString, UIBezierPath;
+@class NSArray, NSAttributedString, NSString, UIBezierPath, UIDescriptionBuilder, _UITraitStorageList;
 
 @interface NSObject (UIAccessibility)
++ (void)__accessibilityRequestGuidedAccessSession:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
++ (long long)__accessibilityGuidedAccessRestrictionStateForIdentifier:(id)arg1;
++ (_Bool)__accessibilityGuidedAccessStateEnabled;
++ (void)_installAppearanceSwizzlesForSetter:(id)arg1;
 @property(copy, nonatomic) NSArray *accessibilityHeaderElements;
+@property(retain, nonatomic) NSString *accessibilityTextualContext;
+@property(copy, nonatomic) NSArray *accessibilityAttributedUserInputLabels;
+@property(retain, nonatomic) NSArray *accessibilityUserInputLabels;
+- (void)_internalSetAccessibilityAttributedUserInputLabels:(id)arg1;
+@property(nonatomic) _Bool accessibilityRespondsToUserInteraction;
 @property(nonatomic) long long accessibilityNavigationStyle;
 @property(nonatomic) _Bool shouldGroupAccessibilityChildren; // @dynamic shouldGroupAccessibilityChildren;
 @property(retain, nonatomic) NSString *accessibilityLanguage; // @dynamic accessibilityLanguage;
@@ -30,6 +39,7 @@
 - (void)_internalSetAccessibilityAttributedLabel:(id)arg1;
 @property(nonatomic) _Bool accessibilityViewIsModal; // @dynamic accessibilityViewIsModal;
 @property(nonatomic) _Bool accessibilityElementsHidden; // @dynamic accessibilityElementsHidden;
+- (id)storedAccessibilityRespondsToUserInteraction;
 - (id)storedAccessibilityActivationPoint;
 - (id)storedAccessibilityFrame;
 - (id)storedIsAccessibilityElement;
@@ -38,9 +48,65 @@
 - (id)storedAccessibilityElementsHidden;
 - (id)storedAccessibilityNavigationStyle;
 - (id)storedShouldGroupAccessibilityChildren;
+- (id)_internalAccessibilityAttributedUserInputLabels;
 - (id)accessibilityContainer;
 - (id)_internalAccessibilityAttributedHint;
 - (id)_internalAccessibilityAttributedValue;
 - (id)_internalAccessibilityAttributedLabel;
+- (id)accessibilityAssistiveTechnologyFocusedIdentifiers;
+- (_Bool)accessibilityElementIsFocused;
+- (void)accessibilityElementDidLoseFocus;
+- (void)accessibilityElementDidBecomeFocused;
+@property(retain, nonatomic) NSArray *accessibilityCustomActions;
+- (_Bool)accessibilityActivate;
+- (_Bool)accessibilityPerformMagicTap;
+- (_Bool)accessibilityPerformEscape;
+- (_Bool)accessibilityScroll:(long long)arg1;
+- (void)accessibilityDecrement;
+- (void)accessibilityIncrement;
+- (void)_accessibilityFinalize;
+- (void)accessibilitySetIdentification:(id)arg1;
+- (id)accessibilityIdentification;
+- (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
+- (_Bool)isAccessibilityElementByDefault;
+- (unsigned long long)defaultAccessibilityTraits;
+@property(copy, nonatomic) NSString *accessibilityIdentifier;
+@property(readonly, nonatomic) NSString *accessibilityLocalizedStringKey;
+- (unsigned int)_accessibilityGetContextID;
+- (struct __IOHIDEvent *)_keyboardActivateEventDown:(_Bool)arg1;
+- (void)_keyboardActivate;
+- (id)accessibilityDropPointDescriptors;
+- (void)setAccessibilityDropPointDescriptors:(id)arg1;
+- (id)accessibilityDragSourceDescriptors;
+- (void)setAccessibilityDragSourceDescriptors:(id)arg1;
+@property(nonatomic) long long accessibilityContainerType;
+- (id)storedAccessibilityContainerType;
+@property(retain, nonatomic) NSArray *accessibilityElements;
+- (long long)indexOfAccessibilityElement:(id)arg1;
+- (id)accessibilityElementAtIndex:(long long)arg1;
+- (long long)accessibilityElementCount;
+@property(retain, nonatomic) NSArray *accessibilityCustomRotors;
+- (id)_NSItemProviderTypeCoercion_coercedUIImageValueFromNSDataValue:(id)arg1 error:(id *)arg2;
+- (id)_NSItemProviderTypeCoercion_coercedUIImageValueFromNSURLValue:(id)arg1 error:(id *)arg2;
+- (id)uiPresentationManager;
+- (id)__autorotationSanityCheckObjectFromSource:(id)arg1 selector:(SEL)arg2;
+- (void)prepareForInterfaceBuilder;
+- (void)awakeFromNib;
+- (void)_connectInterfaceBuilderEventConnection:(id)arg1;
+- (void)_uikit_applyValueFromTraitStorage:(id)arg1 forKeyPath:(id)arg2;
+- (id)_uikit_valueForTraitCollection:(id)arg1;
+- (_Bool)_uikit_variesByTraitCollections;
+- (void)_applyTraitStorageRecordsForTraitCollection:(id)arg1;
+@property(retain, getter=_traitStorageList, setter=_setTraitStorageList:) _UITraitStorageList *traitStorageList;
+- (id)_shortMethodDescription;
+- (id)_methodDescription;
+- (id)__methodDescriptionForClass:(Class)arg1;
+- (id)_propertyDescription;
+- (id)__propertyDescriptionForClass:(Class)arg1;
+- (id)_ivarDescription;
+- (id)__ivarDescriptionForClass:(Class)arg1;
+@property(readonly, nonatomic) UIDescriptionBuilder *_ui_descriptionBuilder;
+- (id)className;
+- (_Bool)__isKindOfUIView;
 @end
 

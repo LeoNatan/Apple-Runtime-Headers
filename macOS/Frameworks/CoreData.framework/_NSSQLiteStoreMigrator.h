@@ -32,11 +32,16 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_attributeExtensionsToUpdate;
     NSMutableArray *_indexesToCreate;
     NSMutableArray *_indexesToDrop;
+    NSMutableArray *_derivationsToDrop;
+    NSMutableArray *_derivationsToRun;
     NSMutableDictionary *_historyMigrationPropertyDataForEntityCache;
+    NSMutableArray *_cloudKitUpdateStatements;
+    BOOL _hasCloudKitTables;
 }
 
 + (void)_setAnnotatesMigrationMetadata:(BOOL)arg1;
 + (BOOL)_annotatesMigrationMetadata;
+@property(nonatomic) BOOL hasCloudKitTables; // @synthesize hasCloudKitTables=_hasCloudKitTables;
 @property(retain, nonatomic) NSMutableDictionary *historyMigrationCache; // @synthesize historyMigrationCache=_historyMigrationPropertyDataForEntityCache;
 @property(readonly, nonatomic) NSSQLModel *srcModel; // @synthesize srcModel=_srcModel;
 @property(readonly, nonatomic) NSSQLModel *dstModel; // @synthesize dstModel=_dstModel;
@@ -55,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (void)_determineAncillaryModelIndexesForMigration;
 - (void)_determineAttributeTriggerToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
 - (void)_determineRTreeExtensionsToMigrateForAttributeNamed:(id)arg1 withSourceEntity:(id)arg2 andDestinationEntity:(id)arg3;
+- (void)_determineDerivedAttributesToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (void)_determineUniquenessConstraintsToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (void)_determineIndexesToMigrateForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;
 - (CDUnknownBlockType)_indexMigrationBlockForSourceEntity:(id)arg1 andDestinationEntity:(id)arg2;

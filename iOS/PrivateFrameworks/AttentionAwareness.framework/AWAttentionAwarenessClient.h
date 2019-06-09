@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <AttentionAwareness/AWFrameworkClient-Protocol.h>
+#import <AttentionAwareness/AWServiceObserver-Protocol.h>
 
-@class AWAttentionAwarenessConfiguration, AWAttentionEvent, AWClientPollWaiter, NSString;
+@class AWAttentionAwarenessClientState, AWAttentionAwarenessConfiguration, AWAttentionEvent, AWClientPollWaiter, NSString;
 @protocol NSXPCProxyCreating, OS_dispatch_queue;
 
-@interface AWAttentionAwarenessClient : NSObject <AWFrameworkClient>
+@interface AWAttentionAwarenessClient : NSObject <AWServiceObserver, AWFrameworkClient>
 {
     NSObject<OS_dispatch_queue> *_queue;
     AWClientPollWaiter *_pollWaiter;
@@ -20,22 +21,24 @@
     _Bool _invalidated;
     NSObject<OS_dispatch_queue> *_clientQueue;
     CDUnknownBlockType _clientBlock;
-    int _clientState;
     AWAttentionAwarenessConfiguration *_configuration;
+    _Bool _unitTestMode;
+    AWAttentionAwarenessClientState *_clientState;
 }
 
 + (void)initialize;
-@property(copy, nonatomic) AWAttentionAwarenessConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+- (void)updateClientState:(id)arg1;
+- (void)serviceInterrupted;
 - (id)unitTestSampler;
-- (void)useUnitTestSampling:(_Bool)arg1;
-- (void)notifyPollEventType:(unsigned long long)arg1 event:(id)arg2;
-- (void)notifyEvent:(id)arg1;
+- (void)setUnitTestMode:(_Bool)arg1;
+- (void)notifyPollEventType:(unsigned long long)arg1 event:(id)arg2 clientState:(id)arg3;
+- (void)notifyEvent:(id)arg1 clientState:(id)arg2;
 - (_Bool)invalidateWithError:(id *)arg1;
 - (_Bool)suspendWithError:(id *)arg1;
 - (_Bool)invalidateRemoteClientWithError:(id *)arg1;
 - (_Bool)resumeWithError:(id *)arg1;
-- (id)reconnect;
+- (id)connect:(_Bool)arg1;
 - (_Bool)cancelPollForAttentionWithError:(id *)arg1;
 - (_Bool)pollForAttentionWithTimeout:(double)arg1 event:(id *)arg2 error:(id *)arg3;
 - (_Bool)pollForAttentionWithTimeout:(double)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3 error:(id *)arg4;
@@ -44,7 +47,9 @@
 @property(readonly, retain, nonatomic) AWAttentionEvent *lastEvent;
 - (_Bool)invokeRequiringClient:(_Bool)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)_invokeRequiringClient:(_Bool)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+@property(copy, nonatomic) AWAttentionAwarenessConfiguration *configuration;
 - (void)setConfiguration:(id)arg1 shouldReset:(_Bool)arg2;
+- (_Bool)setConfiguration:(id)arg1 shouldReset:(_Bool)arg2 error:(id *)arg3;
 - (id)init;
 
 // Remaining properties

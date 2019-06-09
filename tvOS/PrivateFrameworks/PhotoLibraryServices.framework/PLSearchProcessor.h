@@ -14,11 +14,14 @@
 }
 
 + (id)searchProcessorLog;
++ (id)_scoreByCategoryMask;
 @property(readonly, nonatomic) PSIDatabase *searchIndex; // @synthesize searchIndex=_searchIndex;
 - (void).cxx_destruct;
 - (_Bool)_shouldOmitSectionForCategoryMask:(unsigned long long)arg1;
 - (_Bool)_categoryMaskIsCombinable:(unsigned long long)arg1;
 - (void)_extractSearchResultsFromGroupResults:(id)arg1 withQuery:(id)arg2 resultsHandler:(CDUnknownBlockType)arg3;
+- (id)_completionFilenameResultsForFilenameResults:(id)arg1;
+- (id)_combinedFilenameSearchResultsFromSearchResults:(id)arg1 inQuery:(id)arg2;
 - (id)_searchResultsByCategoryMasksForSearchResults:(id)arg1;
 - (id)_sortDescriptorsForCategoryMask:(unsigned long long)arg1;
 - (id)_numberOfAssetsSortDescriptors;
@@ -26,7 +29,7 @@
 - (id)_alphabeticalSortDescriptors;
 - (id)completionSuggestionsForQuery:(id)arg1 withSearchSections:(id)arg2 numberOfSuggestions:(unsigned long long)arg3;
 - (id)updatedSearchSections:(id)arg1 withTopCollectionResults:(id)arg2;
-- (id)searchResultSectionsWithAssetResults:(id)arg1 collectionResults:(id)arg2 tripResults:(id)arg3 combineAssetSections:(_Bool)arg4;
+- (id)searchResultSectionsForQuery:(id)arg1 withAssetResults:(id)arg2 collectionResults:(id)arg3 combineAssetSections:(_Bool)arg4;
 - (void)performQuery:(id)arg1 withResultsHandler:(CDUnknownBlockType)arg2;
 - (id)initWithDatabase:(id)arg1;
 

@@ -40,11 +40,12 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)updateWithSearchResult:(id)arg1;
 - (id)_makeSummaryAttributedStringWithText:(id)arg1;
+- (void)updateSummaryTextForConversation:(id)arg1 fastPreview:(_Bool)arg2 blockedForDowntime:(_Bool)arg3;
 - (void)updateSummaryTextForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1 fastPreview:(_Bool)arg2;
 - (void)updateContentsForConversation:(id)arg1;
 - (void)updateFromLabelWithText:(id)arg1;
-- (void)updateUnreadIndicatorWithImage:(id)arg1;
+- (void)updateUnreadIndicatorWithImage:(id)arg1 tintColor:(id)arg2;
 - (_Bool)showingEditControl;
 - (void)increaseContrastDidChange;
 - (void)contentSizeCategoryDidChange;

@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class MFObservable;
-@protocol MFObserver, OS_dispatch_queue;
+@class EFObservable;
+@protocol EFObserver, OS_dispatch_queue;
 
 @interface MFLockStateMonitor : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     int _token;
-    MFObservable<MFObserver> *_observable;
+    EFObservable<EFObserver> *_observable;
     _Bool _isLocked;
 }
 
@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (void)_receiveLockState:(_Bool)arg1;
 @property(readonly, getter=isLocked) _Bool locked;
-@property(readonly, nonatomic) MFObservable *lockStateObservable;
+@property(readonly, nonatomic) EFObservable *lockStateObservable;
 - (id)init;
 - (void)dealloc;
 

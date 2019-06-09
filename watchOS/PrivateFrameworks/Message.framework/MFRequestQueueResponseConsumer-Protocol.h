@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <Message/NSObject-Protocol.h>
+
 @class MFError;
 
-@protocol MFRequestQueueResponseConsumer
+@protocol MFRequestQueueResponseConsumer <NSObject>
 - (void)handleResponse:(id)arg1 error:(MFError *)arg2;
 @end
 

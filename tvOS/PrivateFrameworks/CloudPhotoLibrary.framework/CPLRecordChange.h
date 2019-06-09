@@ -17,6 +17,8 @@
     _Bool _shouldNotTrustCloudCache;
     _Bool _shouldFilterDefaultValuesForNewProperties;
     _Bool _isSparseFullChange;
+    _Bool _didCacheRealResourceSizeInStorage;
+    unsigned long long _cachedRealResourceSizeInStorage;
     _Bool _inTrash;
     _Bool _inExpunged;
     _Bool _serverRecordIsCorrupted;
@@ -107,10 +109,12 @@
 - (_Bool)applyChange:(id)arg1 copyPropertiesToFinalChange:(id)arg2 forChangeType:(unsigned long long)arg3 direction:(unsigned long long)arg4 updatedProperty:(id *)arg5;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
+- (id)redactedDescription;
 - (id)description;
 - (id)propertiesDescription;
 - (unsigned long long)originalResourceSize;
 - (unsigned long long)realResourceSize;
+- (unsigned long long)effectiveResourceSizeToUploadUsingStorage:(id)arg1;
 - (unsigned long long)totalResourceSize;
 - (id)resourceForType:(unsigned long long)arg1;
 - (void)setResources:(id)arg1;

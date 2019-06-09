@@ -6,9 +6,9 @@
 
 #import <NetworkExtension/NEExtensionAppProxyProviderProtocol-Protocol.h>
 
-@class NSData;
+@class NSArray;
 
 @protocol NEExtensionDNSProxyProviderProtocol <NEExtensionAppProxyProviderProtocol>
-- (void)setSystemDNSSettings:(NSData *)arg1;
+- (void)setSystemDNSSettings:(NSArray *)arg1;
 @end
 

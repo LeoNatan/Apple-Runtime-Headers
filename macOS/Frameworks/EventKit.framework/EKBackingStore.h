@@ -53,7 +53,6 @@
 - (BOOL)revertItems:(id)arg1;
 - (id)createNonPartialFrozenObjectForPartialObject:(id)arg1 withFrozenClass:(Class)arg2;
 - (id)createNonPartialObjectForPartialObject:(id)arg1 withMeltedClass:(Class)arg2;
-- (void)_reminderAlertFired:(id)arg1;
 - (void)_notifyErrorStateChanged;
 - (void)_notifyChangedSources:(id)arg1 changedCalendars:(id)arg2 changedItems:(id)arg3 changedNotifications:(id)arg4 changedSuggestedEvents:(BOOL)arg5;
 - (void)_notifyChangedSources:(id)arg1 changedCalendars:(id)arg2 changedItems:(id)arg3 changedNotifications:(id)arg4;
@@ -67,7 +66,6 @@
 - (BOOL)_commitAcknowledgedNotifications;
 - (BOOL)_commitCreatedNotifications;
 - (BOOL)_commitNotifications;
-- (void)_reminderBecameOverdue:(id)arg1;
 - (BOOL)_commitExceptions;
 - (BOOL)_commitDeletedItems;
 - (BOOL)_commitUpdatedItems;
@@ -150,6 +148,10 @@
 - (id)errorForSource:(id)arg1;
 - (void)_accessErrorsIfNecessary;
 - (void)refreshSources;
+- (id)_createBirthdayCalendarSource;
+- (id)birthdayCalendarSource;
+- (id)_createSubscribedCalendarSource;
+- (id)subscribedCalendarSource;
 - (id)_updatedBackingSourceWithIdentifier:(id)arg1 commit:(BOOL)arg2;
 - (id)_baseSourceWithIdentifier:(id)arg1;
 - (id)_sourceWithIdentifier:(id)arg1;
@@ -218,6 +220,7 @@
 - (id)diffFromCommittedItemForItem:(id)arg1;
 - (id)seriesForRecurrenceSetID:(id)arg1;
 - (BOOL)eventsMarkedScheduleAgentClientExistOnCalendar:(id)arg1;
+- (BOOL)shouldWhitelistOrganizerPhoneNumberFromJunkChecks:(id)arg1;
 - (BOOL)shouldWhitelistOrganizerEmailFromJunkChecks:(id)arg1;
 - (BOOL)futureScheduledEventsExistOnCalendar:(id)arg1;
 - (BOOL)eventsExistOnCalendar:(id)arg1;
@@ -230,7 +233,6 @@
 - (id)_itemWithUpdatedCalendarForItem:(id)arg1;
 - (id)_itemWithIdentifier:(id)arg1 options:(long long)arg2;
 - (id)_itemWithIdentifier:(id)arg1;
-- (id)_fetchAndRepopulateCacheWithIdentifier:(id)arg1;
 - (id)_itemsWithExternalIdentifier:(id)arg1;
 - (id)_lookupItemsWithExternalIdentifier:(id)arg1 type:(unsigned long long)arg2;
 - (id)_lookupItemsWithIdentifiers:(id)arg1 type:(unsigned long long)arg2;

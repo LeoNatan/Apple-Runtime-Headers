@@ -19,7 +19,7 @@
 - (_Bool)canReduceOutputChannels;
 @property(nonatomic) _Bool preservesRange;
 @property(nonatomic) _Bool perservesAlpha;
-- (id)_initWithReflection:(struct CIKernelReflection)arg1;
+- (id)_initWithReflection:(struct CIKernelReflection)arg1 constants:(id)arg2;
 - (id)initWithString:(id)arg1;
 -     // Error parsing type: {CGRect={CGPoint=dd}{CGSize=dd}}72@0:8^{WarpKernel=^^?{atomic<unsigned int>=AI}**B^{SerialIntArray}^{SerialStringArray}^{__CFString}ii{ISize=QQ}BBBBBB^^?}16^{SerialObjectPtrArray=iii^^v}24@32{CGRect={CGPoint=dd}{CGSize=dd}}40, name: autogenerateROI:args:arguments:extent:
 - (id)makeGridImage:(struct CGRect)arg1 nx:(int)arg2 ny:(int)arg3;

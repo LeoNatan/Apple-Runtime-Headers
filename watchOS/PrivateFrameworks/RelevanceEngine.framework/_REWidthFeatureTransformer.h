@@ -10,16 +10,17 @@
 {
     unsigned long long _mask;
     unsigned int _width;
+    unsigned int _shift;
 }
 
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)_validateWithFeatures:(id)arg1;
-- (id)_transform:(id)arg1;
+- (unsigned long)_createTransformFromValues:(unsigned int *)arg1 count:(unsigned int)arg2;
 - (unsigned int)_featureCount;
 - (int)_bitCount;
 - (unsigned int)_outputType;
-- (id)initWithWidth:(unsigned int)arg1;
+- (id)initWithWidth:(unsigned int)arg1 shift:(unsigned int)arg2;
 
 @end
 

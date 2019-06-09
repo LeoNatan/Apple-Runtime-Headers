@@ -26,7 +26,7 @@
 @property(copy, nonatomic) CLLocation *location;
 - (void)_queue_setLocation:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

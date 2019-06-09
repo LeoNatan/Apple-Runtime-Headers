@@ -22,13 +22,13 @@
 @property(nonatomic) _Bool wasSplit; // @synthesize wasSplit=_wasSplit;
 @property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) CPLChangeBatch *batch; // @synthesize batch=_batch;
+- (void).cxx_destruct;
 - (id)description;
 - (id)batchesSplitForError;
 - (id)lastAddedRecord;
 - (void)incrementRetryCount;
 - (void)addRecord:(id)arg1;
 - (unsigned int)count;
-- (void)dealloc;
 - (id)init;
 
 @end

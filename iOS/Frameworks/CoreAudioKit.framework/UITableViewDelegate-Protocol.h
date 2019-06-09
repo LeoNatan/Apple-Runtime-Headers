@@ -13,6 +13,9 @@
 @protocol UITableViewDelegate <NSObject, UIScrollViewDelegate>
 
 @optional
+- (void)tableViewDidEndMultipleSelectionInteraction:(UITableView *)arg1;
+- (void)tableView:(UITableView *)arg1 didBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)arg2;
+- (_Bool)tableView:(UITableView *)arg1 shouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)arg2;
 - (_Bool)tableView:(UITableView *)arg1 shouldSpringLoadRowAtIndexPath:(NSIndexPath *)arg2 withContext:(id <UISpringLoadedInteractionContext>)arg3;
 - (NSIndexPath *)indexPathForPreferredFocusedViewInTableView:(UITableView *)arg1;
 - (void)tableView:(UITableView *)arg1 didUpdateFocusInContext:(UITableViewFocusUpdateContext *)arg2 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg3;

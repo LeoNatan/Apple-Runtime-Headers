@@ -7,11 +7,12 @@
 #import <SpriteKit/SKView.h>
 
 #import <ARKit/ARInternalSessionObserver-Protocol.h>
+#import <ARKit/ARSessionProviding-Protocol.h>
 
 @class ARSession, NSMutableDictionary, NSObject, NSSet, NSString;
 @protocol ARSKViewDelegate;
 
-@interface ARSKView : SKView <ARInternalSessionObserver>
+@interface ARSKView : SKView <ARInternalSessionObserver, ARSessionProviding>
 {
     ARSession *_session;
     NSMutableDictionary *_nodesByAnchorIdentifier;

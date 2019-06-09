@@ -121,6 +121,8 @@ __attribute__((visibility("hidden")))
 - (void)_handlePanGesture:(id)arg1;
 - (void)_handleButtonGesture:(id)arg1;
 - (void)_handleSelectGesture:(id)arg1;
+- (_Bool)_moveInDirection:(unsigned long long)arg1 withEvaluator:(CDUnknownBlockType)arg2;
+- (_Bool)_moveInDirection:(unsigned long long)arg1 withSearchInfo:(id)arg2;
 - (_Bool)_moveInDirection:(unsigned long long)arg1;
 - (_Bool)_moveWithEvent:(id)arg1;
 - (_Bool)_didRecognizeFocusMovementRequest:(id)arg1;

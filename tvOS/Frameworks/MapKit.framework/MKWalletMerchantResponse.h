@@ -6,34 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class MKMapItem, MKWalletMerchantStylingInfo, NSString;
+@class GEOPDMerchantLookupResult, MKMapItem, MKWalletMerchantStylingInfo, NSString;
 @protocol GEOMapItem;
 
 @interface MKWalletMerchantResponse : NSObject
 {
     id <GEOMapItem> _mapItem;
-    NSString *_localizedPlaceName;
-    NSString *_localizedPlaceLanguage;
-    MKWalletMerchantStylingInfo *_walletCategoryStyling;
-    NSString *_localizedWalletCategoryName;
-    NSString *_localizedWalletCategoryLanguage;
+    GEOPDMerchantLookupResult *_merchantLookupResult;
 }
 
-@property(readonly, nonatomic) NSString *localizedWalletCategoryLanguage; // @synthesize localizedWalletCategoryLanguage=_localizedWalletCategoryLanguage;
-@property(readonly, nonatomic) NSString *localizedWalletCategoryName; // @synthesize localizedWalletCategoryName=_localizedWalletCategoryName;
-@property(readonly, nonatomic) MKWalletMerchantStylingInfo *walletCategoryStyling; // @synthesize walletCategoryStyling=_walletCategoryStyling;
-@property(readonly, nonatomic) NSString *localizedPlaceLanguage; // @synthesize localizedPlaceLanguage=_localizedPlaceLanguage;
-@property(readonly, nonatomic) NSString *localizedPlaceName; // @synthesize localizedPlaceName=_localizedPlaceName;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) MKMapItem *mapItem;
 @property(readonly, nonatomic) NSString *walletCategoryIdentifier;
 @property(readonly, nonatomic) NSString *mapsCategoryIdentifier;
-- (id)categoryLocalizedStringLocale;
-- (id)categoryLocalizedString;
-- (id)categoryStyling;
-- (id)placeLocalizedStringLocale;
-- (id)placeLocalizedString;
+@property(readonly, nonatomic) NSString *localizedWalletCategoryLanguage;
+@property(readonly, nonatomic) NSString *localizedWalletCategoryName;
+@property(readonly, nonatomic) MKWalletMerchantStylingInfo *walletCategoryStyling;
+@property(readonly, nonatomic) NSString *localizedPlaceLanguage;
+@property(readonly, nonatomic) NSString *localizedPlaceName;
 @property(readonly, nonatomic) MKWalletMerchantStylingInfo *placeStyling;
+- (id)initWithMerchantLookupResult:(id)arg1;
 - (id)initWithGEOMapItem:(id)arg1;
 
 @end

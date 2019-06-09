@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
 - (void)_updateMediaLibrariesWithSharedMPMediaLibraries:(id)arg1;
 - (id)_homeShareMediaLibraries;
 - (void)_handleAvailableMediaLibrariesDidChange:(id)arg1;
+- (void)endDiscoveringMediaLibraries;
+- (void)beginDiscoveringMediaLibraries;
 @property(readonly, copy, nonatomic) NSArray *homeShareMediaLibraries;
 - (void)dealloc;
 - (id)initWithManager:(id)arg1;

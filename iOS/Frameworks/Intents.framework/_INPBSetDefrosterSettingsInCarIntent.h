@@ -24,6 +24,7 @@
     _INPBIntentMetadata *_intentMetadata;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(nonatomic) _Bool enable; // @synthesize enable=_enable;
 @property(nonatomic) int defroster; // @synthesize defroster=_defroster;
@@ -33,6 +34,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;

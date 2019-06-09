@@ -6,48 +6,50 @@
 
 #import <objc/NSObject.h>
 
+#import <ScreenReader/SCRBrailleDescribing-Protocol.h>
+
 @class NSString, SCRCIndexMap, SCREvent, SCRGuide, SCRKeyboardKey;
 
 __attribute__((visibility("hidden")))
-@interface SCRGuideItem : NSObject
+@interface SCRGuideItem : NSObject <SCRBrailleDescribing>
 {
     BOOL _forceSpeakWrittenTitle;
-    int _tag;
     SCRGuide *_guide;
     NSString *_title;
     SCRKeyboardKey *_key;
-    long long _modifier;
-    SCRGuide *_subguide;
+    unsigned long long _modifier;
     SCRCIndexMap *_info;
+    SCRGuide *_subguide;
     id _target;
     id _action;
+    long long _tag;
     NSString *_alernativeCommandActivator;
-    NSString *_command;
+    NSString *__command;
 }
 
-@property(readonly, copy, nonatomic) NSString *command; // @synthesize command=_command;
+@property(copy, nonatomic) NSString *_command; // @synthesize _command=__command;
 @property(nonatomic) BOOL forceSpeakWrittenTitle; // @synthesize forceSpeakWrittenTitle=_forceSpeakWrittenTitle;
 @property(retain, nonatomic) NSString *alernativeCommandActivator; // @synthesize alernativeCommandActivator=_alernativeCommandActivator;
-@property(readonly, nonatomic) int tag; // @synthesize tag=_tag;
-@property(readonly, retain, nonatomic) id action; // @synthesize action=_action;
-@property(readonly, retain, nonatomic) id target; // @synthesize target=_target;
-@property(readonly, retain, nonatomic) SCRCIndexMap *info; // @synthesize info=_info;
-@property(readonly, retain, nonatomic) SCRGuide *subguide; // @synthesize subguide=_subguide;
-@property(readonly, nonatomic) long long modifier; // @synthesize modifier=_modifier;
-@property(readonly, retain, nonatomic) SCRKeyboardKey *key; // @synthesize key=_key;
+@property(readonly, nonatomic) long long tag; // @synthesize tag=_tag;
+@property(readonly, nonatomic) id action; // @synthesize action=_action;
+@property(readonly, nonatomic) id target; // @synthesize target=_target;
+@property(readonly, nonatomic) SCRGuide *subguide; // @synthesize subguide=_subguide;
+@property(readonly, copy, nonatomic) SCRCIndexMap *info; // @synthesize info=_info;
+@property(readonly, nonatomic) unsigned long long modifier; // @synthesize modifier=_modifier;
+@property(readonly, nonatomic) SCRKeyboardKey *key; // @synthesize key=_key;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) SCRGuide *guide; // @synthesize guide=_guide;
+@property(nonatomic) __weak SCRGuide *guide; // @synthesize guide=_guide;
+- (void).cxx_destruct;
 - (id)description;
 - (long long)sortDescendingByTitle:(id)arg1;
 - (long long)sortAscendingByTitle:(id)arg1;
-- (void)sendBrailleLine;
-- (id)_prependModifiers:(long long)arg1 toString:(id)arg2;
+- (void)addBrailleDescriptionToRequest:(id)arg1;
+- (id)_prependModifiers:(unsigned long long)arg1 toString:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *keyboardShortcutAsString;
 - (void)addDisplayTitleToRequest:(id)arg1;
-@property(readonly, retain, nonatomic) SCREvent *event;
-- (void)dealloc;
-- (id)initWithTitle:(id)arg1 command:(id)arg2 guide:(id)arg3 subguide:(id)arg4 target:(id)arg5 action:(id)arg6 tag:(int)arg7 info:(id)arg8;
-- (id)initWithTitle:(id)arg1 key:(id)arg2 modifier:(long long)arg3 guide:(id)arg4 subguide:(id)arg5 target:(id)arg6 action:(id)arg7 tag:(int)arg8 info:(id)arg9;
+@property(readonly, nonatomic) SCREvent *event;
+- (id)initWithTitle:(id)arg1 command:(id)arg2 guide:(id)arg3 subguide:(id)arg4 target:(id)arg5 action:(id)arg6 tag:(long long)arg7 info:(id)arg8;
+- (id)initWithTitle:(id)arg1 key:(id)arg2 modifier:(unsigned long long)arg3 guide:(id)arg4 subguide:(id)arg5 target:(id)arg6 action:(id)arg7 tag:(long long)arg8 info:(id)arg9;
 
 @end
 

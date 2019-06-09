@@ -10,6 +10,7 @@
 
 @class OITSUCustomFormatData;
 
+__attribute__((visibility("hidden")))
 @interface OITSUCustomFormatCondition : NSObject <NSCopying>
 {
     int _conditionType;

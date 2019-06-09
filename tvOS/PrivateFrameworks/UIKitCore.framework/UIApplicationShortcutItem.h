@@ -17,6 +17,7 @@
     NSString *_localizedTitle;
     NSString *_localizedSubtitle;
     UIApplicationShortcutIcon *_icon;
+    id _targetContentIdentifier;
     unsigned long long _activationMode;
     NSData *_userInfoData;
 }
@@ -26,6 +27,7 @@
 + (unsigned long long)_uiActivationModeFromSBSActivationMode:(unsigned long long)arg1;
 @property(copy, nonatomic) NSData *userInfoData; // @synthesize userInfoData=_userInfoData;
 @property(nonatomic) unsigned long long activationMode; // @synthesize activationMode=_activationMode;
+@property(copy, nonatomic) id targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(copy, nonatomic) UIApplicationShortcutIcon *icon; // @synthesize icon=_icon;
 @property(copy, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
 @property(copy, nonatomic) NSString *localizedTitle; // @synthesize localizedTitle=_localizedTitle;
@@ -37,7 +39,7 @@
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-- (id)_initWithType:(id)arg1 localizedTitle:(id)arg2 localizedSubtitle:(id)arg3 icon:(id)arg4 userInfoData:(id)arg5 activationMode:(unsigned long long)arg6;
+- (id)_initWithType:(id)arg1 localizedTitle:(id)arg2 localizedSubtitle:(id)arg3 icon:(id)arg4 userInfoData:(id)arg5 activationMode:(unsigned long long)arg6 targetContentIdentifier:(id)arg7;
 - (id)initWithType:(id)arg1 localizedTitle:(id)arg2;
 - (id)initWithType:(id)arg1 localizedTitle:(id)arg2 localizedSubtitle:(id)arg3 icon:(id)arg4 userInfo:(id)arg5;
 - (id)init;

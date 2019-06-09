@@ -11,12 +11,12 @@
 #import <HealthDaemon/HDWorkoutDataSource-Protocol.h>
 #import <HealthDaemon/HKDataFlowLinkProcessor-Protocol.h>
 
-@class HDClientDataCollectionObservationStateMonitor, HDDataCollectionAssertion, HDProfile, HDXPCClient, HKDataFlowLink, HKWorkoutConfiguration, NSLock, NSSet, NSString, NSUUID;
+@class HDClientDataCollectionObservationStateMonitor, HDDataCollectionAssertion, HDHealthStoreClient, HDProfile, HKDataFlowLink, HKWorkoutConfiguration, NSLock, NSSet, NSString, NSUUID;
 
 @interface HDWorkoutBasicDataSource : NSObject <HDDataObserver, HKDataFlowLinkProcessor, HDClientDataCollectionObservationStateMonitorDelegate, HDWorkoutDataSource>
 {
     HDProfile *_profile;
-    HDXPCClient *_client;
+    HDHealthStoreClient *_client;
     NSLock *_lock;
     HKDataFlowLink *_workoutDataFlowLink;
     NSUUID *_workoutDataProcessorUUID;
@@ -44,7 +44,7 @@
 @property(copy, nonatomic) NSSet *sampleTypesToCollect;
 - (void)_stopCollection;
 - (void)dealloc;
-- (id)initWithProfile:(id)arg1 workoutConfiguration:(id)arg2 client:(id)arg3;
+- (id)initWithConfiguration:(id)arg1 client:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

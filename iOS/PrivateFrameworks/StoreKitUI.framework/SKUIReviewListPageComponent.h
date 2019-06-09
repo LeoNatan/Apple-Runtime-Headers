@@ -8,6 +8,7 @@
 
 @class SKUIReviewListViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewListPageComponent : SKUIPageComponent
 {
 }

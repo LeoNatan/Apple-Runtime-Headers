@@ -57,98 +57,38 @@ struct NSEdgeInsets {
 
 struct NSImageView {
     Class _field1;
-    id _field2;
-    struct CGRect _field3;
-    struct CGRect _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags _field13;
-    struct __VFlags2 _field14;
-    id _field15;
-    id _field16;
-    struct __conFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :22;
-    } _field17;
-    struct __IVFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :23;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-    } _field18;
-    id _field19;
-    SEL _field20;
 };
 
 struct NSView {
     Class _field1;
-    id _field2;
+    struct CGRect _field2;
     struct CGRect _field3;
-    struct CGRect _field4;
+    id _field4;
     id _field5;
     id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags _field13;
-    struct __VFlags2 _field14;
-};
-
-struct __VFlags {
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :5;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :2;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :6;
-    unsigned int :1;
-    unsigned int :1;
-};
-
-struct __VFlags2 {
-    unsigned int :14;
-    unsigned int :14;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
+    struct __VFlags {
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :5;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :2;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :6;
+        unsigned int :1;
+        unsigned int :1;
+    } _field7;
 };
 

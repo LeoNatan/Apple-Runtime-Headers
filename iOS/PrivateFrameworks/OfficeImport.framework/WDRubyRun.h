@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     WDRubyProperties *mRubyProperties;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)rubyBase;
 - (void)appendPhoneticRunString:(id)arg1;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)rubyProperties;
 - (int)runType;
 - (id)initWithParagraph:(id)arg1;
-- (void)dealloc;
 
 @end
 

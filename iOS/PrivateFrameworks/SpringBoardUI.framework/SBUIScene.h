@@ -35,7 +35,6 @@
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)host:(id)arg1 configureWithDefinition:(id)arg2 parameters:(id)arg3;
 - (void)detachLayer:(id)arg1;
 - (void)attachLayer:(id)arg1;
 - (void)sendActions:(id)arg1;
@@ -43,6 +42,7 @@
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (void)configureWithHost:(id)arg1 initialParameters:(id)arg2;
 - (id)initWithIdentifier:(id)arg1;
 
 // Remaining properties

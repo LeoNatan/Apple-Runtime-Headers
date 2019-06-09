@@ -8,11 +8,6 @@
 
 @interface _TtC15ConversationKit8Defaults : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: demo_requiredParticipantsStep
-    // Error parsing type: , name: demo_didOriginateFromFaceTime
-    // Error parsing type: , name: demo_requiredParticipantIdentifiers
-    // Error parsing type: , name: demo_fakeParticipantIdentifiers
-    // Error parsing type: , name: demo_currentRequiredParticipantHandles
 }
 
 @end

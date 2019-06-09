@@ -6,7 +6,7 @@
 
 #import <HomeKit/_HMAccessoryProfile.h>
 
-@class NSArray, _HMCameraAudioControl, _HMCameraSettingsControl, _HMCameraSnapshotControl, _HMCameraStreamControl;
+@class HMCameraUserSettings, NSArray, _HMCameraAudioControl, _HMCameraSettingsControl, _HMCameraSnapshotControl, _HMCameraStreamControl;
 
 @interface _HMCameraProfile : _HMAccessoryProfile
 {
@@ -15,9 +15,11 @@
     _HMCameraSettingsControl *_settingsControl;
     _HMCameraAudioControl *_speakerControl;
     _HMCameraAudioControl *_microphoneControl;
+    HMCameraUserSettings *_userSettings;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) HMCameraUserSettings *userSettings; // @synthesize userSettings=_userSettings;
 @property(readonly, nonatomic) _HMCameraAudioControl *microphoneControl; // @synthesize microphoneControl=_microphoneControl;
 @property(readonly, nonatomic) _HMCameraAudioControl *speakerControl; // @synthesize speakerControl=_speakerControl;
 @property(readonly, nonatomic) _HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
@@ -26,6 +28,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)deleteAllClipsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_registerNotificationHandlers;
 - (void)__configureWithContext:(id)arg1 accessory:(id)arg2;
 - (void)_createControls:(id)arg1;

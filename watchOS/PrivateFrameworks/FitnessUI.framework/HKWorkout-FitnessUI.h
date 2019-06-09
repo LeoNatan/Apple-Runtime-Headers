@@ -39,5 +39,6 @@
 - (id)fiui_eventsOfType:(int)arg1;
 - (double)fiui_completionFactor;
 - (id)fiui_activityType;
+- (id)fiui_workoutSplitsForUserPreferredDistanceUnit:(id)arg1;
 @end
 

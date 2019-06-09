@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _archiveLength;
     TSUZipFileDescriptorWrapper *_fdWrapper;
     NSURL *_temporaryDirectoryURL;
+    NSURL *_URL;
 }
 
 + (id)zipArchiveFromURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithWriter:(id)arg1 forReadingFromURL:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (_Bool)openWithURL:(id)arg1 error:(id *)arg2;
 - (id)initForReadingFromURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (id)URL;
 
 @end
 

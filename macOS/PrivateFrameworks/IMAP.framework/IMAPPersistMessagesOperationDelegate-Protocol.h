@@ -6,9 +6,9 @@
 
 #import <IMAP/NSObject-Protocol.h>
 
-@class IMAPPersistMessagesOperation, NSMutableDictionary, NSSet;
+@class IMAPPersistMessagesOperation, NSSet;
 
 @protocol IMAPPersistMessagesOperationDelegate <NSObject>
-- (void)persistMessagesOperation:(IMAPPersistMessagesOperation *)arg1 persistedMessagesAndGotNewMessages:(NSMutableDictionary *)arg2 missedMessages:(NSSet *)arg3;
+- (void)persistMessagesOperation:(IMAPPersistMessagesOperation *)arg1 persistedMessages:(NSSet *)arg2 andGotNewMessages:(NSSet *)arg3;
 @end
 

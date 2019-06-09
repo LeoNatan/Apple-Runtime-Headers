@@ -34,7 +34,6 @@
 - (Class)_albumGadgetClassForCollection:(id)arg1;
 - (id)_newGadgetForCollection:(id)arg1;
 - (void)_reconfigureGadgets;
-- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)albumListCellContentViewHelperForLayout:(id)arg1;
 - (id)albumListCellContentViewHelperForAlbum:(id)arg1;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
@@ -44,7 +43,6 @@
 - (id)gadgetForCollection:(id)arg1;
 - (id)gadgetForIndexPath:(id)arg1;
 - (void)startLoadingRemainingData;
-@property(readonly, nonatomic) const struct __CFString *seeAllAccessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *seeAllAccessoryButtonTitle;
 @property(readonly, nonatomic) _Bool shouldShowSeeAllAccessoryButton;
 - (id)initWithAlbumListType:(unsigned long long)arg1 dataSourceManager:(id)arg2 extendedTraitCollection:(id)arg3;

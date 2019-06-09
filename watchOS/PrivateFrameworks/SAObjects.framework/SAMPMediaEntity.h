@@ -22,8 +22,11 @@
 @property(copy, nonatomic) NSString *rawPlaybackInfo;
 @property(retain, nonatomic) SAMPPlaybackInfo *playbackInfo;
 @property(copy, nonatomic) NSString *mediaType;
+@property(copy, nonatomic) NSString *externalIdentifier;
 @property(nonatomic) _Bool explicit;
 @property(retain, nonatomic) SACalendar *dateAdded;
+@property(copy, nonatomic) NSString *brandIdentifier;
+@property(copy, nonatomic) NSString *adamIdentifier;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

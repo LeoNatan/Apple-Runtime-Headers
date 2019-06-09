@@ -17,6 +17,8 @@
 }
 
 + (void)initialize;
+- (id)_createControllerForStoryboardSegueTemplate:(id)arg1 coder:(id)arg2 segueSender:(id)arg3 selectorPlaceholderIdentifier:(id)arg4;
+- (id)_createControllerForCreator:(CDUnknownBlockType)arg1 coder:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)setClassName:(id)arg1;

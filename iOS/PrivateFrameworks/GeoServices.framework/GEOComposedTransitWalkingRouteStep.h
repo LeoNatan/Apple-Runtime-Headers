@@ -21,21 +21,24 @@
     id <GEOTransitArtworkDataSource> _routeDetailsSecondaryArtwork;
 }
 
++ (_Bool)supportsSecureCoding;
 - (id)routeDetailsSecondaryArtwork;
 - (id)routeDetailsPrimaryArtwork;
 - (id)steppingArtwork;
 @property(readonly, nonatomic) id <GEOTransitRoutingIncidentMessage> routeDetailsIncidentMessage; // @synthesize routeDetailsIncidentMessage=_routeDetailsIncidentMessage;
 @property(readonly, nonatomic) id <GEOTransitRoutingIncidentMessage> steppingIncidentMessage; // @synthesize steppingIncidentMessage=_steppingIncidentMessage;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (_Bool)isArrivalStep;
 - (unsigned int)distance;
 - (id)transitStep;
-- (id)instructions;
-- (CDStruct_c3b9c2ee)endGeoCoordinate;
-- (CDStruct_c3b9c2ee)startGeoCoordinate;
+- (id)originalInstructions;
+- (CDStruct_39925896)endGeoCoordinate;
+- (CDStruct_39925896)startGeoCoordinate;
 - (void)_commonInitWithDecoderData:(id)arg1;
-- (id)initWithComposedRoute:(id)arg1 transitStep:(id)arg2 stepIndex:(unsigned long long)arg3 startCoordinate:(CDStruct_c3b9c2ee)arg4 endCoordinate:(CDStruct_c3b9c2ee)arg5 pointRange:(struct _NSRange)arg6;
-- (id)initWithComposedRoute:(id)arg1 transitStep:(id)arg2 stepIndex:(unsigned long long)arg3 geoStep:(id)arg4 pointRange:(struct _NSRange)arg5 maneuverPointRange:(struct _NSRange)arg6;
+- (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 transitStep:(id)arg3 stepIndex:(unsigned long long)arg4 startCoordinate:(CDStruct_c3b9c2ee)arg5 endCoordinate:(CDStruct_c3b9c2ee)arg6 pointRange:(struct _NSRange)arg7;
+- (id)initWithComposedRoute:(id)arg1 decoderData:(id)arg2 transitStep:(id)arg3 stepIndex:(unsigned long long)arg4 geoStep:(id)arg5 pointRange:(struct _NSRange)arg6 maneuverPointRange:(struct _NSRange)arg7;
 
 @end
 

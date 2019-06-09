@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AAGrandSlamSigner, ACAccount, ACAccountStore, AIDAServiceOwnersManager, AKAppleIDSigningController, NSData;
+@class AAGrandSlamSigner, ACAccount, ACAccountStore, AIDAServiceOwnersManager, AKAppleIDAuthenticationContext, AKAppleIDServerResourceLoadDelegate, AKAppleIDSigningController, NSData;
 
 @interface FARequestConfigurator : NSObject
 {
@@ -17,17 +17,22 @@
     AAGrandSlamSigner *_familyGrandSlamSigner;
     AIDAServiceOwnersManager *_serviceOwnersManager;
     AKAppleIDSigningController *_akSigningController;
+    AKAppleIDServerResourceLoadDelegate *_resourceLoadDelegate;
     NSData *_pushToken;
     _Bool _attachSetupHeader;
+    AKAppleIDAuthenticationContext *_authContext;
 }
 
 + (unsigned char)_isUsingV2Flows;
+@property(retain, nonatomic) AKAppleIDAuthenticationContext *authContext; // @synthesize authContext=_authContext;
 @property(nonatomic) _Bool attachSetupHeader; // @synthesize attachSetupHeader=_attachSetupHeader;
 - (void).cxx_destruct;
 - (id)_serviceOwnersManager;
 - (id)_familyTokenForGrandSlamAccount:(id)arg1 andTokenID:(id)arg2;
 - (void)_addAccountForServiceType:(id)arg1 toPayload:(id)arg2 forKey:(id)arg3;
-- (id)_fresnoPayloadWithAdditionalHeaders:(id)arg1;
+- (id)_fresnoPayloadWithAdditionalPayload:(id)arg1;
+- (id)_authContext;
+- (void)_resourceLoadDelegate:(CDUnknownBlockType)arg1;
 - (id)_akSigningController;
 - (id)_familyGrandSlamSigner;
 - (id)_grandSlamSigner;
@@ -38,9 +43,10 @@
 - (id)_urlForEventType:(id)arg1;
 - (id)requestForContext:(id)arg1;
 - (void)addPayload:(id)arg1 toRequest:(id)arg2;
-- (void)addFresnoPayloadToRequest:(id)arg1 additionalHeaders:(id)arg2;
+- (void)addFresnoPayloadToRequest:(id)arg1 additionalPayload:(id)arg2;
 - (id)_pushToken;
 - (void)addFresnoHeadersToRequest:(id)arg1;
+- (void)addFresnoHeadersToRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)initWithAccount:(id)arg1;
 
 @end

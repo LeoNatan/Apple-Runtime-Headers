@@ -8,6 +8,7 @@
 
 @class NSAttributedString, NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAttributedStringIndexBarEntry : SKUIIndexBarEntry
 {
     _Bool _hasValidSynthesizedAttributedString;

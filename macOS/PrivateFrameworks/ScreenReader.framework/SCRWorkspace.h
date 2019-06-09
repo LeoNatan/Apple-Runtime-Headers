@@ -7,16 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <ScreenReader/SCRCUserDefaultsDiskArbDelegate-Protocol.h>
+#import <ScreenReader/SCRContextualHelpHandlerProtocol-Protocol.h>
 
-@class NSDate, NSDictionary, NSLock, NSMutableDictionary, NSString, NSTimer, SCRApplicationManager, SCRCTargetSelectorTimer, SCRCThreadKey, SCRDFRFocusManager, SCRDFRManager, SCREventDispatcher, SCREventFactory, SCRFocusManager, SCRGuide, SCRSiriObserver, SCRSpeechAttributeGuide, SCRSystemKeyManager, SCRVisualsManager, SCRWorkspaceApplication;
+@class NSDate, NSDictionary, NSLock, NSMutableDictionary, NSString, NSTimer, SCRApplicationManager, SCRBrailleFocusManager, SCRCTargetSelectorTimer, SCRCThreadKey, SCRCUserDefaults, SCRContextualHelpManager, SCRDFRFocusManager, SCRDFRManager, SCRElementRotorManager, SCREventDispatcher, SCREventFactory, SCRFocusManager, SCRGestureManager, SCRGuide, SCRMouse, SCRObserverManager, SCROutputManager, SCRSiriObserver, SCRSpeechAttributeGuide, SCRSystemKeyManager, SCRVisualsManager, SCRWorkspaceApplication, _SCRWorkspaceZigZag;
 
-@interface SCRWorkspace : NSObject <SCRCUserDefaultsDiskArbDelegate>
+@interface SCRWorkspace : NSObject <SCRContextualHelpHandlerProtocol, SCRCUserDefaultsDiskArbDelegate>
 {
     NSLock *_workspaceLock;
-    SCREventFactory *_eventFactory;
-    SCRApplicationManager *_appManager;
     struct __CFRunLoop *_runLoop;
-    int __eventTag;
+    long long __eventTag;
     NSString *__eventTagCancelString;
     SCRGuide *__currentGuide;
     SCREventDispatcher *_eventDispatcher;
@@ -28,17 +27,12 @@
     NSDictionary *_virtualKeyboardCommands;
     SCRCTargetSelectorTimer *_systemZoomCoalescer;
     double _systemZoomLastChanged;
-    long long _keyboardHelpMask;
+    unsigned long long _keyboardHelpMask;
     NSMutableDictionary *_appleScriptObjects;
     double _guideRequestedTime;
     int _processExitCode;
     SCRCThreadKey *_threadKey;
-    struct {
-        int direction;
-        unsigned long long count;
-        NSString *name;
-    } _zigzag;
-    int _primaryBrailleDisplayToken;
+    _SCRWorkspaceZigZag *_zigzag;
     struct {
         unsigned int rootPort;
         struct IONotificationPort *notifyPortRef;
@@ -56,7 +50,6 @@
         char isEchoingAndStopping;
         char keyboardHelpHasSeenFirstKey;
         char keyboardPassthruEnabled;
-        char isDashboardEnabled;
         char isScreenLocked;
         char isRunningDuringInstallation;
         char isQuickStartRunning;
@@ -81,58 +74,71 @@
         char isAudioDuckingEnabled;
         char didCrashRepeatedly;
     } _srwFlags;
+    BOOL _shouldRegisterForEventHandlerTargets;
+    BOOL _shouldRegisterForNotifications;
+    BOOL _shouldRegisterForSleepWakeNotifications;
+    BOOL _shouldUpdateConsoleEnabled;
+    BOOL _shouldObserveFunctionRow;
+    BOOL _shouldUnmuteAudio;
+    BOOL _shouldInitializeHotspots;
     BOOL _isKeyboardHelpEnabled;
     BOOL _isLoggedIn;
     BOOL _isScreenCurtainEnabled;
+    unsigned char __initializationState;
+    int _primaryBrailleDisplayToken;
     unsigned int __sleepAssertionID;
     SCRSpeechAttributeGuide *_speechAttributeGuide;
+    SCRCUserDefaults *_userDefaults;
+    SCROutputManager *_outputManager;
+    SCRMouse *_mouse;
+    SCRVisualsManager *_visualsManager;
+    SCRBrailleFocusManager *_brailleFocusManager;
+    SCRContextualHelpManager *_contextualHelpManager;
+    SCRGestureManager *_gestureManager;
+    SCRElementRotorManager *_rotorManager;
+    SCRObserverManager *_observerManager;
+    SCRApplicationManager *_applicationManager;
+    SCREventFactory *_eventFactory;
+    SCRSiriObserver *_siriObserver;
+    SCRSystemKeyManager *_systemKeyManager;
     SCRDFRManager *_dfrManager;
     SCRFocusManager *_focusManager;
     NSDate *_lastFocusTimestamp;
     SCRDFRFocusManager *__dfrFocusManager;
     double __lastWorkspaceSummaryTime;
-    SCRSiriObserver *__siriObserver;
     SCRWorkspaceApplication *__workspaceApplication;
-    SCRVisualsManager *__visualsManager;
     long long __preventSleepRequestCount;
     NSTimer *__sleepAssertionFailsafeTimer;
     double __shieldWindowRaisedTime;
-    SCRSystemKeyManager *_systemKeyManager;
 }
 
-+ (void)_stopAllSound;
 + (BOOL)isVoiceOverRunning;
-+ (void)_invalidateWorkspace;
-+ (BOOL)isLicensedEchoReponse:(BOOL)arg1;
-+ (BOOL)isLicensed;
++ (id)shared;
 + (void)initialize;
 + (void)_coerceArray:(id)arg1 toColor:(id)arg2;
-+ (void)setPersistentHotSpot:(id)arg1 isActive:(BOOL)arg2;
-+ (void)removePersistentHotSpot:(id)arg1;
-+ (id)getPersistentHotSpot:(id)arg1;
-+ (id)outputQueueIDForModifierMask:(long long)arg1;
++ (id)outputQueueIDForModifierMask:(unsigned long long)arg1;
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3 forElement:(id)arg4 warnOnMissingString:(BOOL)arg5;
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3 warnOnMissingString:(BOOL)arg4;
 + (id)stringForCommand:(id)arg1 inCategory:(id)arg2 withExtension:(id)arg3;
-@property(retain, nonatomic) SCRSystemKeyManager *systemKeyManager; // @synthesize systemKeyManager=_systemKeyManager;
 @property(nonatomic) double _shieldWindowRaisedTime; // @synthesize _shieldWindowRaisedTime=__shieldWindowRaisedTime;
 @property(retain, nonatomic) NSTimer *_sleepAssertionFailsafeTimer; // @synthesize _sleepAssertionFailsafeTimer=__sleepAssertionFailsafeTimer;
 @property(nonatomic) long long _preventSleepRequestCount; // @synthesize _preventSleepRequestCount=__preventSleepRequestCount;
 @property(nonatomic) unsigned int _sleepAssertionID; // @synthesize _sleepAssertionID=__sleepAssertionID;
-@property(readonly, retain, nonatomic) SCRVisualsManager *_visualsManager; // @synthesize _visualsManager=__visualsManager;
-@property(readonly, retain, nonatomic) SCRWorkspaceApplication *_workspaceApplication; // @synthesize _workspaceApplication=__workspaceApplication;
-@property(retain, nonatomic, setter=_setSiriObserver:) SCRSiriObserver *_siriObserver; // @synthesize _siriObserver=__siriObserver;
+@property(readonly, nonatomic) SCRWorkspaceApplication *_workspaceApplication; // @synthesize _workspaceApplication=__workspaceApplication;
 @property(nonatomic, setter=_setLastWorkspaceSummaryTime:) double _lastWorkspaceSummaryTime; // @synthesize _lastWorkspaceSummaryTime=__lastWorkspaceSummaryTime;
 @property(retain, nonatomic) SCRDFRFocusManager *_dfrFocusManager; // @synthesize _dfrFocusManager=__dfrFocusManager;
 @property(retain, nonatomic) NSDate *lastFocusTimestamp; // @synthesize lastFocusTimestamp=_lastFocusTimestamp;
+@property(nonatomic, setter=_setInitializationState:) unsigned char _initializationState; // @synthesize _initializationState=__initializationState;
 @property(nonatomic) BOOL isScreenCurtainEnabled; // @synthesize isScreenCurtainEnabled=_isScreenCurtainEnabled;
 @property(retain, nonatomic) SCRFocusManager *focusManager; // @synthesize focusManager=_focusManager;
 @property(retain, nonatomic) SCRDFRManager *dfrManager; // @synthesize dfrManager=_dfrManager;
 @property(nonatomic, setter=setLoggedIn:) BOOL isLoggedIn; // @synthesize isLoggedIn=_isLoggedIn;
-@property(nonatomic, setter=setKeyboardHelpEnabled:) BOOL isKeyboardHelpEnabled; // @synthesize isKeyboardHelpEnabled=_isKeyboardHelpEnabled;
 @property(nonatomic) int primaryBrailleDisplayToken; // @synthesize primaryBrailleDisplayToken=_primaryBrailleDisplayToken;
+@property(nonatomic, setter=setKeyboardHelpEnabled:) BOOL isKeyboardHelpEnabled; // @synthesize isKeyboardHelpEnabled=_isKeyboardHelpEnabled;
+- (void).cxx_destruct;
 - (void)updateCapsLockModifierMask;
 - (BOOL)isSafeToLaunchAnotherApp;
+- (void)_setupCloudKitSync;
 - (void)_messageTraceIfNecessary;
 - (void)_messageTraceIfNecessary:(id)arg1;
 - (BOOL)_shouldMessageTraceForUser;
@@ -145,13 +151,13 @@
 - (void)_systemWillSleep;
 - (void)displayConfigurationDidChange;
 - (double)slowKeyAcceptanceDelay;
-@property(readonly, nonatomic) BOOL slowKeyEnabled; // @dynamic slowKeyEnabled;
-@property(nonatomic) BOOL quickNavOverridesSelectionEvents; // @dynamic quickNavOverridesSelectionEvents;
-@property(nonatomic) BOOL nonArrowQuickNavEnabled; // @dynamic nonArrowQuickNavEnabled;
-@property(nonatomic) BOOL quickNavTemporarilyDisabled; // @dynamic quickNavTemporarilyDisabled;
-@property(readonly, nonatomic) BOOL trackpadCommanderEnabled; // @dynamic trackpadCommanderEnabled;
-@property(readonly, nonatomic) BOOL keyboardCommanderEnabled; // @dynamic keyboardCommanderEnabled;
-@property(nonatomic) BOOL numpadCommanderEnabled; // @dynamic numpadCommanderEnabled;
+@property(readonly, nonatomic) BOOL slowKeyEnabled;
+@property(nonatomic) BOOL quickNavOverridesSelectionEvents;
+@property(nonatomic) BOOL nonArrowQuickNavEnabled;
+@property(nonatomic) BOOL quickNavTemporarilyDisabled;
+@property(readonly, nonatomic) BOOL trackpadCommanderEnabled;
+@property(readonly, nonatomic) BOOL keyboardCommanderEnabled;
+@property(nonatomic) BOOL numpadCommanderEnabled;
 - (void)updateMouseCursorState;
 - (void)_safeUpdateMouseCursorState;
 - (BOOL)isInAppFullscreenSpace;
@@ -164,7 +170,6 @@
 - (void)_safeClearApplicationModifiers;
 - (BOOL)isElementDictionaryEnabled;
 - (void)_clearModifierState;
-- (void)dismissDashboard;
 - (BOOL)isRunningDuringInstallation;
 - (void)_checkForInstallationProcess;
 - (void)_unmuteAudioIfNeeded;
@@ -172,8 +177,6 @@
 - (void)updateSecureInputState;
 - (BOOL)isExposeEnabled;
 - (void)setExposeEnabled:(BOOL)arg1;
-- (BOOL)isDashboardEnabled;
-- (void)setDashboardEnabled:(BOOL)arg1 changed:(char *)arg2;
 - (void)_systemKeyboardSettingsChanged:(id)arg1;
 - (void)_systemMouseSettingsChanged:(id)arg1;
 - (void)_systemPolarityChanged:(id)arg1;
@@ -205,15 +208,16 @@
 - (BOOL)shouldSkipRedundantLabels;
 - (void)setShouldSkipRedundantLabels:(BOOL)arg1;
 - (BOOL)toggleScreenCurtain;
+- (void)_stopAllSound;
 @property(nonatomic, getter=isPreventingSleep) BOOL preventSleep; // @dynamic preventSleep;
 - (void)_shieldWindowRaised:(id)arg1;
 - (void)_setPreventSleep:(id)arg1;
 - (void)_disablePreventSleep;
 - (void)updateSystemActivity;
 - (void)_updateSystemActivity;
-- (void)triggerVirtualKeyboardKey:(unsigned short)arg1 withModifierMask:(long long)arg2;
+- (void)triggerVirtualKeyboardKey:(unsigned short)arg1 withModifierMask:(unsigned long long)arg2;
 - (void)_triggerVirtualKeyboardKey:(id)arg1;
-- (void)triggerKeyboardKeyString:(id)arg1 withModifierMask:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)triggerKeyboardKeyString:(id)arg1 withModifierMask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_triggerKeyboardKeyString:(id)arg1;
 - (void)triggerCommand:(id)arg1 withInfo:(id)arg2 completionHandlerAfterEnqueueingOnMainThread:(CDUnknownBlockType)arg3;
 - (void)triggerCommand:(id)arg1 withInfo:(id)arg2;
@@ -234,9 +238,9 @@
 - (BOOL)isModalSessionEnabled;
 - (void)setIsModalSessionEnabled:(BOOL)arg1;
 - (void)_wst_setIsModalSessionEnabled:(id)arg1;
-- (int)eventTag;
-- (void)setEventTag:(int)arg1 withCancelString:(id)arg2;
-- (void)setEventTag:(int)arg1;
+- (long long)eventTag;
+- (void)setEventTag:(long long)arg1 withCancelString:(id)arg2;
+- (void)setEventTag:(long long)arg1;
 - (void)_wst_setEventTag:(id)arg1;
 - (BOOL)shouldGenerateBraille;
 - (BOOL)hasActiveBrailleDevice;
@@ -259,13 +263,12 @@
 - (void)diskWillEject:(id)arg1;
 - (void)_anotherDefaultsFamilyMemberLaunched:(id)arg1;
 - (void)_echoProfileChanged;
+- (void)_appleScriptEnabledStateChanged;
 - (BOOL)shouldOutputSelectionChanged;
 - (BOOL)isAppleScriptEnabled;
 - (void)_registerForAppleEvents;
 - (void)_stopAndPlayShutdownMessage:(id)arg1;
 - (void)_handleAppleScriptQuitApplicationEvent:(const struct AEDesc *)arg1;
-- (void)dealloc;
-- (void)invalidateThreadsWithWeakLinks;
 - (BOOL)isMouseDragging;
 - (void)setShouldBailWaitForElementHash:(BOOL)arg1;
 - (BOOL)shouldBailWaitForElementHash;
@@ -286,9 +289,28 @@
 - (BOOL)isScreenLocked;
 - (void)_wst_updateScreenSaverState;
 - (void)_systemSoundSettingsChanged:(id)arg1;
-- (id)eventFactory;
-- (id)applicationManager;
-@property(readonly, retain, nonatomic) SCRSpeechAttributeGuide *speechAttributeGuide; // @synthesize speechAttributeGuide=_speechAttributeGuide;
+@property(nonatomic) BOOL shouldInitializeHotspots; // @synthesize shouldInitializeHotspots=_shouldInitializeHotspots;
+@property(nonatomic) BOOL shouldUnmuteAudio; // @synthesize shouldUnmuteAudio=_shouldUnmuteAudio;
+@property(nonatomic) BOOL shouldObserveFunctionRow; // @synthesize shouldObserveFunctionRow=_shouldObserveFunctionRow;
+@property(nonatomic) BOOL shouldUpdateConsoleEnabled; // @synthesize shouldUpdateConsoleEnabled=_shouldUpdateConsoleEnabled;
+@property(nonatomic) BOOL shouldRegisterForSleepWakeNotifications; // @synthesize shouldRegisterForSleepWakeNotifications=_shouldRegisterForSleepWakeNotifications;
+@property(nonatomic) BOOL shouldRegisterForNotifications; // @synthesize shouldRegisterForNotifications=_shouldRegisterForNotifications;
+@property(nonatomic) BOOL shouldRegisterForEventHandlerTargets; // @synthesize shouldRegisterForEventHandlerTargets=_shouldRegisterForEventHandlerTargets;
+@property(retain, nonatomic) SCRSystemKeyManager *systemKeyManager; // @synthesize systemKeyManager=_systemKeyManager;
+@property(retain, nonatomic) SCRSiriObserver *siriObserver; // @synthesize siriObserver=_siriObserver;
+@property(retain, nonatomic) SCREventFactory *eventFactory; // @synthesize eventFactory=_eventFactory;
+@property(retain, nonatomic) SCRApplicationManager *applicationManager; // @synthesize applicationManager=_applicationManager;
+@property(retain, nonatomic) SCRObserverManager *observerManager; // @synthesize observerManager=_observerManager;
+@property(retain, nonatomic) SCRElementRotorManager *rotorManager; // @synthesize rotorManager=_rotorManager;
+@property(retain, nonatomic) SCRGestureManager *gestureManager; // @synthesize gestureManager=_gestureManager;
+@property(retain, nonatomic) SCRContextualHelpManager *contextualHelpManager; // @synthesize contextualHelpManager=_contextualHelpManager;
+@property(retain, nonatomic) SCRBrailleFocusManager *brailleFocusManager; // @synthesize brailleFocusManager=_brailleFocusManager;
+@property(retain, nonatomic) SCRVisualsManager *visualsManager; // @synthesize visualsManager=_visualsManager;
+@property(retain, nonatomic) SCRMouse *mouse; // @synthesize mouse=_mouse;
+@property(retain, nonatomic) SCROutputManager *outputManager; // @synthesize outputManager=_outputManager;
+@property(retain, nonatomic) SCRCUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
+@property(readonly, nonatomic) SCRSpeechAttributeGuide *speechAttributeGuide; // @synthesize speechAttributeGuide=_speechAttributeGuide;
+- (void)_completeInitializationIfReady;
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setMuteSound:(id)arg1;
@@ -315,15 +337,15 @@
 - (float)_decreaseSpeechAttributeValue:(float)arg1;
 - (float)_increaseSpeechAttributeValue:(float)arg1;
 - (void)_changeSpeechVolume:(float)arg1;
-- (void)changeSpeechRate:(float)arg1;
 - (void)_changeSpeechPitch:(float)arg1;
 - (void)_changeSpeechIntonation:(float)arg1;
+- (void)changeSpeechRate:(float)arg1;
 - (void)changeSystemVolumeEventHandler:(id)arg1;
 - (void)zigzagGestureEventHandler:(id)arg1;
 - (id)currentZigzagCommand;
 - (id)currentZigzagGestureName;
 - (void)updateZigzagStateWithEvent:(id)arg1 gestureName:(id)arg2;
-- (void)_updateZigzagStateWithDirection:(int)arg1 gestureName:(id)arg2;
+- (void)_updateZigzagStateWithDirection:(long long)arg1 gestureName:(id)arg2;
 - (void)disableGestureCommanderEventHandler:(id)arg1;
 - (void)enableGestureCommanderEventHandler:(id)arg1;
 - (void)cancelSpeakingEventHandler:(id)arg1;
@@ -404,7 +426,6 @@
 - (void)profilesGuideHandler:(id)arg1;
 - (void)windowGuideHandler:(id)arg1;
 - (void)exitFullscreeGuideHandler:(id)arg1;
-- (void)dashboardLauncherGuideHandler:(id)arg1;
 - (void)applicationGuideHandler:(id)arg1;
 - (void)routeToBrailleElementEventHandler:(id)arg1;
 - (void)releaseElementsEventHandler:(id)arg1;
@@ -413,7 +434,7 @@
 - (void)updateEventHandlerInfo:(id)arg1 request:(id)arg2 handled:(BOOL)arg3;
 - (void)registerForEventHandlerTargets;
 - (void)closeGuide;
-- (void)_openMainGuideWithOpenSubguideType:(int)arg1;
+- (void)_openMainGuideWithOpenSubguideType:(long long)arg1;
 - (void)guideDidClose;
 - (void)_openGuide:(id)arg1 selectionIndex:(unsigned long long)arg2;
 - (void)openGuideInfo:(id)arg1;
@@ -421,15 +442,13 @@
 - (BOOL)isGuideOpen;
 - (BOOL)_guideHandleEvent:(id)arg1;
 - (void)_buildWindowsGuide:(id)arg1 forApplication:(id)arg2;
-- (void)_buildDashboardLauncherGuide:(id)arg1;
-- (void)_buildDashboardWidgetsGuide:(id)arg1;
 - (void)_buildProfilesGuide:(id)arg1;
 - (void)_buildSystemDialogsGuide:(id)arg1 excludingApplication:(id)arg2;
 - (void)guideWillOpen:(id)arg1;
-- (void)_buildApplicationGuide:(id)arg1 withTag:(int)arg2;
+- (void)_buildApplicationGuide:(id)arg1 withTag:(long long)arg2;
 - (void)_threadedBuildMainGuide:(id)arg1 withOpenSubguideType:(id)arg2;
 - (void)_addToLearnSoundsGuide:(id)arg1;
-- (void)_addToCommandsGuide:(id)arg1 withOpenSubguideType:(int)arg2 mainGuide:(id)arg3;
+- (void)_addToCommandsGuide:(id)arg1 withOpenSubguideType:(long long)arg2 mainGuide:(id)arg3;
 - (void)_addNumpadCommanderToCommandsGuide:(id)arg1 mainGuide:(id)arg2;
 - (void)_addKeyboardCommanderToCommandsGuide:(id)arg1 mainGuide:(id)arg2;
 - (void)_addTrackpadCommanderToCommandsGuide:(id)arg1 mainGuide:(id)arg2;
@@ -445,7 +464,10 @@
 - (BOOL)_isHotSpotBeingWatched:(id)arg1;
 - (id)_hotSpotsBeingWatched;
 - (void)_enableHotSpotWatcher:(BOOL)arg1;
-- (void)_dragToHotSpot:(id)arg1 position:(int)arg2;
+- (void)setPersistentHotSpot:(id)arg1 isActive:(BOOL)arg2;
+- (void)removePersistentHotSpot:(id)arg1;
+- (id)getPersistentHotSpot:(id)arg1;
+- (void)_dragToHotSpot:(id)arg1 position:(long long)arg2;
 - (void)hotSpotMenu:(id)arg1;
 - (void)updateHotSpots;
 - (void)describeHotSpot:(id)arg1;
@@ -475,7 +497,7 @@
 - (BOOL)_isCommandCustomOpenCommand:(id)arg1;
 - (void)_buildVerbosityRotorGuide:(id)arg1 withOpenSubguideName:(id)arg2 startingWithKey:(id)arg3 andOpenNewGuide:(BOOL)arg4;
 - (id)_orderedRotorOptions;
-- (void)_sendBrailleLineForRotor:(id)arg1 withValue:(id)arg2;
+- (void)_sendBrailleLineForOutput:(id)arg1;
 - (void)verbosityRotorEventHandler:(id)arg1;
 - (id)_selectRotorOptionForDirection:(long long)arg1;
 - (void)_setVerbosityOption:(id)arg1 direction:(long long)arg2;
@@ -485,9 +507,15 @@
 - (void)openVerbosityRotor:(id)arg1 forFirstTime:(BOOL)arg2;
 - (id)_selectedOptionForVerbosityRotor;
 - (id)_stringKeyForVerbosityRotor;
-- (int)_eventTagForVerbosityRotor;
+- (long long)_eventTagForVerbosityRotor;
 - (void)_openVerbosityRotorGuideWithName:(id)arg1 startingWithKey:(id)arg2;
 - (void)openVerbosityRotorGuide:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -11,10 +11,12 @@
 #import <HomeKitDaemon/HMFNetServiceBrowserDelegate-Protocol.h>
 
 @class HMDHTTPDevice, HMDHTTPServerMessageTransport, HMFNetServiceBrowser, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString;
-@protocol OS_dispatch_queue;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDHTTPMessageTransport : HMDRemoteMessageTransport <HMDHTTPClientMessageTransportDelegate, HMDHTTPServerMessageTransportDelegate, HMFNetServiceBrowserDelegate>
 {
+    id <HMFLocking> _lock;
+    NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_residentDevices;
     NSMutableSet *_transientDevices;
     NSMutableDictionary *_txtRecord;
@@ -22,18 +24,16 @@
     BOOL _serverEnabled;
     HMDHTTPDevice *_currentDevice;
     HMDHTTPServerMessageTransport *_serverTransport;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMFNetServiceBrowser *_clientBrowser;
 }
 
 + (id)logCategory;
 + (id)shortDescription;
++ (BOOL)protocolVersionSupportsExtendedMessages:(id)arg1;
 + (BOOL)shouldHostMessageServer;
++ (id)protocolVersion;
 + (unsigned long long)restriction;
 @property(readonly, nonatomic) HMFNetServiceBrowser *clientBrowser; // @synthesize clientBrowser=_clientBrowser;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 - (void).cxx_destruct;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2;
 - (void)netServiceBrowser:(id)arg1 didAddService:(id)arg2;
@@ -76,6 +76,7 @@
 @property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithPointer:(BOOL)arg1;
 - (id)shortDescription;
+- (id)initWithAccountRegistry:(id)arg1 clientBrowser:(id)arg2;
 - (id)initWithAccountRegistry:(id)arg1;
 
 // Remaining properties

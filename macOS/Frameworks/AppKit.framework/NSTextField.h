@@ -15,8 +15,6 @@
 
 @interface NSTextField : NSControl <NSTextViewDelegate, NSUserInterfaceValidations, NSAccessibilityNavigableStaticText>
 {
-    id _delegate;
-    SEL _errorAction;
     double _maxLayoutWidth;
     long long _maximumNumberOfLines;
     BOOL _finishedFirstConstraintsPass;
@@ -25,14 +23,17 @@
     struct CGSize _cachedIntrinsicContentSize;
     unsigned long long _textAlignmentPolicy;
     long long _updateConstraintsPassCounter;
+    unsigned long long _lineBreakStrategy;
     struct NSEdgeInsets _cachedLanguageAwareOutsets;
     BOOL _shouldUpdateCachedLanguageAwareOutsets;
     BOOL _shouldCheckCurrentContentsForBoundsOutsets;
     BOOL _contentsRequiresBoundsOutsets;
+    SEL _errorAction;
+    id _delegate;
 }
 
 + (id)_fieldsContainingString:(id)arg1;
-+ (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (BOOL)_shouldUseBoundsOutsetsForString:(id)arg1;
 + (struct __CFCharacterSet *)_tooBigChars;
 + (BOOL)_serviceDeferredTextLayerUpdateQueue:(BOOL)arg1 forWindow:(id)arg2;
@@ -58,7 +59,6 @@
 - (BOOL)_shouldPrintByCallingDrawRect;
 - (double)baselineOffsetFromBottom;
 - (double)firstBaselineOffsetFromTop;
-- (struct __NSBaselineOffsets)_baselineOffsets;
 - (void)setAttributedStringValue:(id)arg1;
 - (void)_deriveLineBreakModeFromAttributedString:(id)arg1;
 - (BOOL)_hasExtra10_11BordersInToolbars;
@@ -75,6 +75,8 @@
 - (BOOL)_hasLayoutEngine;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (void)_updateLayoutDependentMetricsIfNeeded;
+- (unsigned long long)_lineBreakStrategyForCurrentConfiguration;
+@property unsigned long long lineBreakStrategy;
 @property long long maximumNumberOfLines;
 @property double preferredMaxLayoutWidth;
 - (void)dealloc;
@@ -131,15 +133,14 @@
 - (void)_invalidateCachedLanguageAwareOutsets;
 - (BOOL)_shouldUseBoundsOutsetsForCurrentConfig;
 - (void)_invalidateEffectiveVibrantBlendingStyle;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (BOOL)isFlipped;
+- (void)drawForegroundOfTextLayer:(id)arg1;
 - (void)displayTextLayer:(id)arg1;
 - (void)_queueForDeferredTextLayerFrameUpdate;
 - (BOOL)_shouldDeferUpdateTextLayerSize:(struct CGSize)arg1 toNewSize:(struct CGSize)arg2;
 - (id)_preferredAppearance;
 - (void)setCell:(id)arg1;
-- (void)viewDidMoveToWindow;
 - (long long)_preferredLayerContentsRedrawPolicy;
 - (id)makeBackingLayer;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -6,9 +6,8 @@
 
 #import <GameCenterUI/GKChallengeListener-Protocol.h>
 #import <GameCenterUI/GKInviteEventListener-Protocol.h>
-#import <GameCenterUI/GKSavedGameListener-Protocol.h>
 #import <GameCenterUI/GKTurnBasedEventListener-Protocol.h>
 
-@protocol GKLocalPlayerListener <GKChallengeListener, GKInviteEventListener, GKTurnBasedEventListener, GKSavedGameListener>
+@protocol GKLocalPlayerListener <GKChallengeListener, GKInviteEventListener, GKTurnBasedEventListener>
 @end
 

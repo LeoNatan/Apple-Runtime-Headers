@@ -27,6 +27,7 @@
 - (void)failedTest:(id)arg1 withFailure:(id)arg2;
 - (void)finishedTest:(id)arg1 extraResults:(id)arg2;
 - (void)finishedTest:(id)arg1;
+- (void)finishedExtendedLaunchTest;
 - (void)startedTest:(id)arg1;
 - (_Bool)isRunningTest:(id)arg1;
 - (_Bool)isRunningTest;
@@ -36,13 +37,17 @@
 - (void)scheduleSnapshotRefreshWithPreferredDate:(id)arg1 userInfo:(id)arg2 scheduledCompletion:(CDUnknownBlockType)arg3;
 - (void)scheduleBackgroundRefreshWithPreferredDate:(id)arg1 userInfo:(id)arg2 scheduledCompletion:(CDUnknownBlockType)arg3;
 @property(nonatomic, getter=isFrontmostTimeoutExtended) _Bool frontmostTimeoutExtended; // @dynamic frontmostTimeoutExtended;
+@property(readonly, nonatomic, getter=isRegisteredForRemoteNotifications) _Bool registeredForRemoteNotifications;
+- (void)unregisterForRemoteNotifications;
+- (void)registerForRemoteNotifications;
 - (void)enableWaterLock;
 @property(readonly, nonatomic, getter=isAutorotated) _Bool autorotated;
 @property(nonatomic, getter=isAutorotating) _Bool autorotating;
 @property(readonly, nonatomic) _Bool isApplicationRunningInDock; // @dynamic isApplicationRunningInDock;
 @property(readonly, nonatomic) WKInterfaceController *visibleInterfaceController;
 @property(readonly, nonatomic) WKInterfaceController *rootInterfaceController;
-@property(nonatomic) __weak id <WKExtensionDelegate> delegate;
+@property(readonly, nonatomic) __weak id <WKExtensionDelegate> delegate;
+- (void)setDelegate:(id)arg1;
 - (void)openSystemURL:(id)arg1;
 - (id)init;
 

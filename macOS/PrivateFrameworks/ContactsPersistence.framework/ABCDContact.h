@@ -6,11 +6,10 @@
 
 #import <ContactsPersistence/ABCDRecord.h>
 
-@class ABCDContactIndex, ABCDNote, NSDate, NSDateComponents, NSDictionary, NSNumber, NSSet, NSString;
+@class ABCDContactIndex, ABCDNote, NSData, NSDate, NSDateComponents, NSDictionary, NSNumber, NSSet, NSString;
 
 @interface ABCDContact : ABCDRecord
 {
-    BOOL mHasUserImageChanges;
 }
 
 + (id)keyPathsForValuesAffectingIsCompany;
@@ -19,12 +18,13 @@
 + (id)preferredNameSortDescriptors;
 + (id)_table;
 + (id)abEntityName;
-@property(nonatomic) struct CGRect cropRect;
-- (BOOL)hasLargeImageData;
-- (void)setLargeImageData:(id)arg1;
-- (id)largeImageData;
-- (void)setThumbnailImageData:(id)arg1;
-- (id)thumbnailImageData;
+@property(retain, nonatomic) NSData *cropRectHash; // @dynamic cropRectHash;
+@property(retain, nonatomic) NSString *cropRectID; // @dynamic cropRectID;
+@property(nonatomic) struct CGRect cropRect; // @dynamic cropRect;
+@property(retain, nonatomic) NSData *imageData;
+@property(retain, nonatomic) NSData *thumbnailImageData;
+- (id)imageDataCheckingLegacyImages:(BOOL)arg1;
+- (id)thumbnailImageDataCheckingLegacyImages:(BOOL)arg1;
 - (id)imageHelper;
 - (id)imageDirectory;
 - (long long)compare:(id)arg1;
@@ -36,9 +36,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)propertyHasChanged:(id)arg1;
 - (id)attributedStringValue;
-- (void)didSave;
 - (BOOL)hasUserImageChanges;
-- (void)didChangeValueForKey:(id)arg1;
 - (void)awakeFromInsert;
 - (void)willSave;
 @property(retain, nonatomic) NSDictionary *texttone;
@@ -82,6 +80,7 @@
 @property(retain, nonatomic) NSSet *alertTones; // @dynamic alertTones;
 @property(retain, nonatomic) ABCDContactIndex *contactIndex; // @dynamic contactIndex;
 @property(retain, nonatomic) NSString *department; // @dynamic department;
+@property(retain, nonatomic) NSString *downtimeWhitelist; // @dynamic downtimeWhitelist;
 @property(retain, nonatomic) NSSet *emailAddresses; // @dynamic emailAddresses;
 @property(retain, nonatomic) NSString *imageReference; // @dynamic imageReference;
 @property(retain, nonatomic) NSString *jobTitle; // @dynamic jobTitle;

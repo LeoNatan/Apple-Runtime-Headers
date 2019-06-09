@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 {
     NSString *_variantName;
     unsigned long long _flags;
+    NSDictionary *_assetCatalogReference;
     NSDictionary *_compositionInfo;
     NSURL *_baseURL;
     NSMutableDictionary *_vectorResources;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (void)loadLayers;
 - (id)recipeNamed:(id)arg1;
 - (void)loadResources;
+@property(readonly) NSDictionary *assetCatalogReference; // @synthesize assetCatalogReference=_assetCatalogReference;
 - (BOOL)addResourceWithURL:(id)arg1 error:(id *)arg2;
 - (BOOL)addResourceWithResourceURL:(id)arg1 namePrefix:(id)arg2 error:(id *)arg3;
 - (id)initWithCompositionInfo:(id)arg1 baseURL:(id)arg2 variantName:(id)arg3 flags:(unsigned long long)arg4;

@@ -18,7 +18,7 @@
     PFDispatchQueue *_queue;
     CDUnknownBlockType _block;
     NSObject<OS_dispatch_group> *_workGroup;
-    unsigned long long _status;
+    // Error parsing type: AQ, name: _status
     BOOL _executeOnDealloc;
 }
 

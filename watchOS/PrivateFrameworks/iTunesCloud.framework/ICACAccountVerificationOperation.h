@@ -10,6 +10,7 @@
 {
 }
 
+- (id)_verifyCredentialsOptionsForInteractionLevel:(int)arg1;
 - (void)execute;
 
 @end

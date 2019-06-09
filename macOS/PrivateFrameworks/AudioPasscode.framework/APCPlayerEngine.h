@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class AUPasscodeEncoder, AVAudioEngine, AVAudioPCMBuffer, AVAudioPlayerNode, AVAudioSession, AVAudioUnit;
-@protocol OS_dispatch_queue;
+@class APCPlayerEmbedInfo, AUPasscodeEncoder, AVAudioEngine, AVAudioPCMBuffer, AVAudioPlayerNode, AVAudioSession, AVAudioUnit;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface APCPlayerEngine : NSObject
@@ -20,12 +20,18 @@ __attribute__((visibility("hidden")))
     AVAudioPCMBuffer *_assetBuffer;
     BOOL _isRunning;
     float _prePlayVolume;
+    BOOL _requestingStop;
+    NSObject<OS_dispatch_source> *_callbackDispatchSrc;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    APCPlayerEmbedInfo *_embeddingInfo;
+    CDUnknownBlockType _beginningCallback;
     CDUnknownBlockType _stopEngineCompletion;
 }
 
 + (id)playerWithAssetURL:(id)arg1 codecConfig:(id)arg2 payload:(id)arg3 error:(id *)arg4;
 @property(copy, nonatomic) CDUnknownBlockType stopEngineCompletion; // @synthesize stopEngineCompletion=_stopEngineCompletion;
+@property(copy, nonatomic) CDUnknownBlockType beginningCallback; // @synthesize beginningCallback=_beginningCallback;
+@property(retain, nonatomic) APCPlayerEmbedInfo *embeddingInfo; // @synthesize embeddingInfo=_embeddingInfo;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (void)stopEngineAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -33,6 +39,12 @@ __attribute__((visibility("hidden")))
 - (void)stopEngine:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)endPasscodeEmbedding;
 - (void)_stopAudioEngineAndSession;
+- (void)startAPCPlayLoopAtTime:(unsigned long long)arg1;
+- (void)startAPCPlayLoop;
+- (void)_playbackBufferLoopCompletionHdlr;
+- (BOOL)startEngineAtTime:(unsigned long long)arg1 withBeginning:(CDUnknownBlockType)arg2 callbackTime:(unsigned long long)arg3;
+- (BOOL)startEngineAtTime:(unsigned long long)arg1 withBeginning:(CDUnknownBlockType)arg2;
+- (BOOL)startEngineAtTime:(unsigned long long)arg1;
 - (BOOL)startEngine;
 - (float)evaluateAsset;
 - (void)makeEngineConnections;

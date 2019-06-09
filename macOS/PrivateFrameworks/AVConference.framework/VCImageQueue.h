@@ -15,10 +15,13 @@ __attribute__((visibility("hidden")))
     unsigned int _slot;
     unsigned int _frameRate;
     BOOL _imageQueueProtected;
+    BOOL _isLowLatencyEnabled;
     long long _streamToken;
+    unsigned int _enqueuedFrameCount;
 }
 
 + (id)drawingContext;
+@property(nonatomic, getter=isLowLatencyEnabled) BOOL lowLatencyEnabled; // @synthesize lowLatencyEnabled=_isLowLatencyEnabled;
 @property long long streamToken; // @synthesize streamToken=_streamToken;
 @property unsigned int frameRate; // @synthesize frameRate=_frameRate;
 @property BOOL imageQueueProtected;

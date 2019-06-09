@@ -9,8 +9,8 @@
 __attribute__((visibility("hidden")))
 @interface _CFXNotificationObjcObserverRegistration : _CFXNotificationObserverRegistration
 {
-    _Bool _useFallback;
     id _object;
+    // Error parsing type: AB, name: _useFallback
 }
 
 - (void)resetObserverAndChildren:(void *)arg1;

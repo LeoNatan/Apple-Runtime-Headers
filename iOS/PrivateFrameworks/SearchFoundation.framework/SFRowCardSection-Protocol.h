@@ -21,8 +21,6 @@
 @property(nonatomic) _Bool keyNoWrap;
 @property(copy, nonatomic) NSString *key;
 @property(retain, nonatomic) SFImage *attributionImage;
-@property(copy, nonatomic) NSString *rightText;
-@property(copy, nonatomic) NSString *leftText;
 @property(retain, nonatomic) SFRichText *trailingText;
 @property(retain, nonatomic) SFRichText *leadingText;
 @property(nonatomic) _Bool imageIsRightAligned;

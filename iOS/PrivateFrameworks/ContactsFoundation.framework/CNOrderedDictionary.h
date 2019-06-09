@@ -19,15 +19,16 @@
 
 + (id)dictionaryWithObject:(id)arg1 forKey:(id)arg2;
 + (id)orderedDictionary;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
+@property(readonly, copy) NSArray *allObjects;
 @property(readonly, copy) NSArray *allKeys;
 - (id)objectForKey:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

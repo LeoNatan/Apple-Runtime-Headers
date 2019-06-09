@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreSuggestionsML/SGModelSource.h>
 
 @class NSString;
 @protocol PMLTransformerProtocol;
 
-@interface SGTransformerInstance : NSObject
+@interface SGTransformerInstance : SGModelSource
 {
-    Class _modelClass;
     unsigned long long _window;
     unsigned long long _ngrams;
     NSString *_language;
@@ -26,10 +25,9 @@
 @property(copy, nonatomic) NSString *language; // @synthesize language=_language;
 @property(nonatomic) unsigned long long ngrams; // @synthesize ngrams=_ngrams;
 @property(nonatomic) unsigned long long window; // @synthesize window=_window;
-@property(retain, nonatomic) Class modelClass; // @synthesize modelClass=_modelClass;
 - (void).cxx_destruct;
-- (id)sessionDescriptor;
 - (id)featuresOf:(id)arg1;
+- (id)sessionDescriptor;
 - (id)initWithLanguage:(id)arg1;
 
 @end

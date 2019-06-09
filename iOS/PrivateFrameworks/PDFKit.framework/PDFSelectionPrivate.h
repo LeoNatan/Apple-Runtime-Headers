@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     NSMutableArray *pageRanges;
     UIColor *activeColor;
     UIColor *inactiveColor;
-    double cornerRadius;
     _Bool forceBreaks;
     struct __CFArray *cgSelections;
     NSMutableArray *pages;

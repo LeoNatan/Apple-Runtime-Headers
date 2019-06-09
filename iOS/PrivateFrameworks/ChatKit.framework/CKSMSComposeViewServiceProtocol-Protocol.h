@@ -14,7 +14,9 @@
 - (void)forceMMS;
 - (void)forceCancelComposition;
 - (void)setTextEntryContentsVisible:(_Bool)arg1;
+- (void)showInsertedItemInEntryView;
 - (void)insertFilename:(NSString *)arg1 MIMEType:(NSString *)arg2 exportedFilename:(NSString *)arg3 options:(NSDictionary *)arg4;
+- (void)insertRemoteItemForSendingAndCalculateEntryViewFrame:(CKRemoteItemForSending *)arg1 completion:(void (^)(NSValue *))arg2;
 - (void)insertRemoteItemForSending:(CKRemoteItemForSending *)arg1;
 - (void)insertData:(NSData *)arg1 MIMEType:(NSString *)arg2 exportedFilename:(NSString *)arg3;
 - (void)insertAttachmentWithURL:(NSURL *)arg1 andDescription:(NSString *)arg2;
@@ -24,6 +26,7 @@
 - (void)setContentURLs:(NSArray *)arg1;
 - (void)setUTIs:(NSArray *)arg1;
 - (void)setUICustomizationData:(NSData *)arg1;
+- (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3 chatGUID:(NSString *)arg4 groupName:(NSString *)arg5;
 - (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3;
 - (void)disableCameraAttachments;
 - (void)setCanEditRecipients:(_Bool)arg1;

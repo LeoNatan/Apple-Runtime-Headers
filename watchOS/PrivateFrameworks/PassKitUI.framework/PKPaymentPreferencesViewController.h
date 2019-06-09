@@ -11,7 +11,7 @@
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
 #import <PassKitUI/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSIndexPath, NSString, PKPassSnapshotter, PKPaymentPass, PKPaymentPreferenceButtonCell, UITableView, UITextField;
+@class NSArray, NSIndexPath, NSString, PKPassSnapshotter, PKPaymentPass, PKPaymentPreferenceButtonCell, UISwitch, UITableView, UITextField;
 
 @interface PKPaymentPreferencesViewController : UIViewController <UITextFieldDelegate, PKAddressEditorViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 {
@@ -21,6 +21,7 @@
     PKPaymentPreferenceButtonCell *_sizingButtonCell;
     PKPaymentPass *_paymentPassForBillingErrors;
     PKPaymentPass *_currentlySelectedPaymentPass;
+    UISwitch *_peerPaymentAccountPaymentSwitch;
     NSArray *_latestPreferences;
     NSArray *_preferences;
     int _style;
@@ -76,17 +77,18 @@
 - (id)_cellOfClass:(Class)arg1;
 - (id)_cellForNamePreference:(id)arg1 row:(unsigned int)arg2;
 - (id)_cellForPreference:(id)arg1 row:(unsigned int)arg2;
+- (void)applePayCashSwitchValueChanged:(id)arg1;
 - (void)setErrors:(id)arg1 animated:(_Bool)arg2;
 - (void)setErrors:(id)arg1 otherPass:(id)arg2 animated:(_Bool)arg3;
 - (void)setErrors:(id)arg1 selectedPass:(id)arg2 animated:(_Bool)arg3;
 - (void)clearErrorsForPreference:(Class)arg1;
+- (id)_peerPaymentAccountPaymentSwitch;
 - (void)_cleanupInlineEdits;
 - (void)_startInlineEditingForPreference:(id)arg1 inSection:(unsigned int)arg2;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardDidShow:(id)arg1;
 - (void)_updateNavigationBarButtons;
-- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_updatePreferredContentSize;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;

@@ -26,6 +26,7 @@
 - (_Bool)isQuestion:(id)arg1 withLanguage:(id)arg2;
 - (void)flushDynamicData;
 - (void)resetRegisteredResponses;
+- (void)prunePersonalizedUserDatabase:(id)arg1;
 - (id)getRankLearner;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 metadata:(id)arg3 withLanguage:(id)arg4;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 forContext:(id)arg3 withEffectiveDate:(id)arg4 withLanguage:(id)arg5;

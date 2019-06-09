@@ -6,13 +6,16 @@
 
 #import <NanoMusicCore/NSObject-Protocol.h>
 
+@class INPlayMediaIntent;
+
 @protocol NMCPlayerPlaybackIntent <NSObject>
 - (void)resumePlayback;
 - (void)replacePlaybackQueueWhilePreventingAutomaticPlayback:(_Bool)arg1 completionHandler:(void (^)(NSError *))arg2;
 
 @optional
-- (void)startPlaybackWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)getRemotePlaybackQueueRepresentationWithCompletionHandler:(void (^)(MPRemotePlaybackQueue *, NSError *))arg1;
 - (void)getCompanionPlaybackQueueRepresentationWithCompletionHandler:(void (^)(MPRemotePlaybackQueue *, NSError *))arg1;
+- (id)initWithSiriPlayMediaIntent:(INPlayMediaIntent *)arg1;
+- (void)insertIntoPlaybackQueueAtInsertionPosition:(unsigned int)arg1 completionHandler:(void (^)(NSError *))arg2;
 @end
 

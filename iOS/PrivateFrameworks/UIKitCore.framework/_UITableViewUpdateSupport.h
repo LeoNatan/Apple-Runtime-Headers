@@ -74,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (double)_startOfRowAfterHeaderInSection:(long long)arg1 withRowData:(id)arg2;
 - (double)_startOfRowAfterRow:(long long)arg1 withRowData:(id)arg2;
 - (void)_setupAnimationStructures;
+- (void)_reallocateAndComputeNewGlobalRowMapWithActualNewGlobalRowCount:(long long)arg1;
 - (void)_computeRowUpdates;
 - (void)_computeSectionUpdates;
 - (void)_faultInRealHeightsOfNeededElements;

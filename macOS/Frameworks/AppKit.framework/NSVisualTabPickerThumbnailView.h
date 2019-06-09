@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)reloadData;
 - (id)_createTitleTextField;
 - (void)_setUpSubviews;
+- (void)selectedTabDidChange;
 - (void)_setUpShadows;
 - (void)_selectThumbnail;
 - (void)startTitleOpacityAnimation:(long long)arg1;

@@ -32,9 +32,11 @@
     unsigned long long _requestType;
     unsigned long long _mustPrefixMatchLength;
     NSDate *_hideCompletionsAfterDate;
+    NSDate *_responseDate;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSDate *responseDate; // @synthesize responseDate=_responseDate;
 @property(retain, nonatomic) NSDate *hideCompletionsAfterDate; // @synthesize hideCompletionsAfterDate=_hideCompletionsAfterDate;
 @property(nonatomic) unsigned long long mustPrefixMatchLength; // @synthesize mustPrefixMatchLength=_mustPrefixMatchLength;
 @property(nonatomic) _Bool resultsNeedFiltering; // @synthesize resultsNeedFiltering=_resultsNeedFiltering;

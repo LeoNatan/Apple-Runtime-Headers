@@ -23,6 +23,7 @@
 + (id)solverWithWeights:(id)arg1 andIntercept:(_Bool)arg2;
 + (id)solverWithWeights:(id)arg1;
 - (void).cxx_destruct;
+- (id)serialize;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)weights;

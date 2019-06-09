@@ -5,15 +5,15 @@
 //
 
 #import <UIKitCore/UIEditable-Protocol.h>
+#import <UIKitCore/UITableConstantsTableProviding-Protocol.h>
 
 @class UIColor, UIScrollView;
 
-@protocol UITable <UIEditable>
-@property(readonly, nonatomic) UIColor *multiselectCheckmarkColor;
+@protocol UITable <UIEditable, UITableConstantsTableProviding>
+@property(readonly, nonatomic, getter=_multiselectCheckmarkColor) UIColor *multiselectCheckmarkColor;
 @property(readonly, nonatomic, getter=_accessoryBaseColor) UIColor *accessoryBaseColor;
 @property(readonly, nonatomic, getter=_sectionContentInsetFollowsLayoutMargins) _Bool sectionContentInsetFollowsLayoutMargins;
 @property(readonly, nonatomic, getter=_sectionCornerRadius) float sectionCornerRadius;
-@property(readonly, nonatomic, getter=_sectionBorderWidth) float sectionBorderWidth;
 @property(readonly, nonatomic, getter=_rawSectionContentInset) struct UIEdgeInsets rawSectionContentInset;
 @property(readonly, nonatomic, getter=_sectionContentInset) struct UIEdgeInsets sectionContentInset;
 @property(readonly, nonatomic, getter=_indexBarExtentFromEdge) float indexBarExtentFromEdge;
@@ -22,6 +22,7 @@
 @property(readonly, nonatomic, getter=_bottomPadding) float bottomPadding;
 @property(readonly, nonatomic, getter=_topPadding) float topPadding;
 @property(readonly, nonatomic) _Bool cellLayoutMarginsFollowReadableWidth;
+@property(readonly, nonatomic, getter=_cellSafeAreaInsets) struct UIEdgeInsets cellSafeAreaInsets;
 @property(readonly, nonatomic, getter=_backgroundInset) float backgroundInset;
 @property(readonly, nonatomic) _Bool overlapsSectionHeaderViews;
 @property(readonly, nonatomic) _Bool usesVariableMargins;
@@ -37,7 +38,6 @@
 @property(readonly, nonatomic) _Bool allowsMultipleSelection;
 @property(readonly, nonatomic, getter=_numberOfSections) int numberOfSections;
 @property(readonly, nonatomic, getter=_scrollView) UIScrollView *scrollView;
-@property(readonly, nonatomic, getter=_style) int style;
 - (_Bool)_shouldHaveFooterViewForSection:(int)arg1;
 - (_Bool)_shouldHaveHeaderViewForSection:(int)arg1;
 - (int)_numberOfRowsInSection:(int)arg1;

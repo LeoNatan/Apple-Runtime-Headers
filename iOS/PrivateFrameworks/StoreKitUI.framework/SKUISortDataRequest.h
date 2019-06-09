@@ -11,6 +11,7 @@
 @class NSURL;
 @protocol SKUISortDataRequestDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISortDataRequest : SKUIResourceRequest <NSCopying>
 {
     id <SKUISortDataRequestDelegate> _delegate;

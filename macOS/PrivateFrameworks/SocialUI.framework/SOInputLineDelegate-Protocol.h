@@ -10,7 +10,6 @@
 
 @protocol SOInputLineDelegate <NSTextViewDelegate>
 - (NSDictionary *)defaultTypingAttributesForInputLine:(SOInputLine *)arg1;
-- (BOOL)inputLineUsingiMessageService:(SOInputLine *)arg1;
 - (BOOL)inputLine:(SOInputLine *)arg1 canAttachFilesAtURLs:(NSArray *)arg2;
 
 @optional

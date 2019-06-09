@@ -8,6 +8,7 @@
 
 @class ACAccountStore;
 
+__attribute__((visibility("hidden")))
 @interface ACDKeychainMigrator : NSObject
 {
     ACAccountStore *_accountStore;

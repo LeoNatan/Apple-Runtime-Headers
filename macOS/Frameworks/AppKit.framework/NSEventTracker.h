@@ -13,11 +13,6 @@
     BOOL _wantsEventCoalescing;
     BOOL _wantsPeriodicCallbacks;
     BOOL _wantsKeyboardEvents;
-    BOOL _reserved4;
-    BOOL _reserved5;
-    BOOL _reserved6;
-    BOOL _reserved7;
-    BOOL _reserved8;
     unsigned long long _deviceID;
     unsigned long long _modifierFlags;
     unsigned long long _phase;

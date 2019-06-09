@@ -11,6 +11,7 @@
 
 @class NSMutableArray, NSString, SKUIReviewInAppRatingHeaderView, SKUIStarRatingControl, UIInterfaceAction, UIStackView, UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewInAppRatingViewController : UIViewController <UIViewControllerTransitioningDelegate, UIInterfaceActionHandlerInvocationDelegate>
 {
     _Bool _disableSubmit;

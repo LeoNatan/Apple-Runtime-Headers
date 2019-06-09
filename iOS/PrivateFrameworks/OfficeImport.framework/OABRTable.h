@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     struct OABTable2DArray<OABTableCell> *mCells;
 }
 
+- (void).cxx_destruct;
 - (void)map;
 - (void)createTargetTableContents;
 - (id)readStrokeFromShape:(struct EshShape *)arg1;

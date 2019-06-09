@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)editItemViewControllerSave:(id)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (_Bool)_canChangeAvailability;
 - (_Bool)configureWithCalendar:(id)arg1 preview:(_Bool)arg2;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (void)reset;

@@ -12,7 +12,6 @@
 {
 }
 
-- (id)deferredOperation;
 @property(readonly, nonatomic) _Bool isUserRequested;
 @property(readonly, nonatomic) _Bool shouldSend;
 - (unsigned long long)generationNumber;

@@ -12,16 +12,22 @@
 {
     float _editingRotationInDegree;
     UIView *_contentView;
+    UIView *_framingView;
     int _position;
 }
 
 + (id)viewWithLegacyComplicationType:(unsigned int)arg1;
 + (struct CGAffineTransform)transformForState:(int)arg1;
++ (id)layoutRuleForState:(int)arg1 viewCenterInFaceBounds:(struct CGPoint)arg2 position:(int)arg3 editingAdjustment:(int)arg4 wide:(_Bool)arg5 forDevice:(id)arg6;
 + (id)layoutRuleForState:(int)arg1 viewCenterInFaceBounds:(struct CGPoint)arg2 position:(int)arg3 forDevice:(id)arg4;
++ (id)keylineViewForDevice:(id)arg1 wide:(_Bool)arg2 expanded:(_Bool)arg3;
 + (id)keylineViewForDevice:(id)arg1;
++ (id)keylineImageWithFilled:(_Bool)arg1 wide:(_Bool)arg2 expanded:(_Bool)arg3 forDevice:(id)arg4;
 + (id)keylineImageWithFilled:(_Bool)arg1 forDevice:(id)arg2;
-+ (void)startDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
++ (void)updateCustomDataAnimationFromEarlierView:(id)arg1 laterView:(id)arg2 isForward:(_Bool)arg3 animationType:(unsigned int)arg4 animationDuration:(double)arg5 animationFraction:(float)arg6;
++ (void)prepareCustomDataAnimation:(id)arg1 fromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4;
 @property(nonatomic) int position; // @synthesize position=_position;
+@property(readonly, nonatomic) UIView *framingView; // @synthesize framingView=_framingView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (void)_transitToHighlightState:(_Bool)arg1 fraction:(float)arg2;

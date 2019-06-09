@@ -7,12 +7,11 @@
 #import <NeutrinoCore/NSObject-Protocol.h>
 
 @class NSDictionary, NSString;
-@protocol NUDepthProperties, NUPortraitEffectsMatteProperties, NURAWImageProperties;
+@protocol NURAWImageProperties;
 
 @protocol NUImageProperties <NSObject>
 @property(readonly) id <NURAWImageProperties> rawProperties;
-@property(readonly) id <NUPortraitEffectsMatteProperties> portraitEffectsMatteProperties;
-@property(readonly) id <NUDepthProperties> depthProperties;
+@property(readonly) NSDictionary *auxiliaryImagesProperties;
 @property(readonly) long long componentInfo;
 @property(readonly) long long alphaInfo;
 @property(readonly) NSString *fileUTI;

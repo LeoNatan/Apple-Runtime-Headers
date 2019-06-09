@@ -6,17 +6,19 @@
 
 #import <PassKitUI/PKPaymentPreferenceCell.h>
 
-@class NSString, PKPassSnapshotter, PKPaymentPass, UIColor, UIImageView, UILabel, UIStackView;
+@class NSString, PKPassSnapshotter, PKPaymentPass, PKTransitBalanceModel, UIColor, UIImageView, UILabel, UIStackView;
 
 @interface PKPaymentPreferenceCardCell : PKPaymentPreferenceCell
 {
     _Bool _isRightToLeft;
     UIImageView *_cardArtView;
     UIStackView *_stackView;
+    UIColor *_subTextLabelColorOverride;
     _Bool _showBillingAddress;
     _Bool _dimCardArt;
     PKPaymentPass *_pass;
     PKPassSnapshotter *_passSnapshotter;
+    PKTransitBalanceModel *_transitBalanceModel;
     UIColor *_mainLabelColor;
     UIColor *_subTextLabelColor;
     UIColor *_disabledMainLabelColor;
@@ -24,25 +26,31 @@
     UILabel *_displayLabel;
     UILabel *_censoredPANLabel;
     NSString *_availabilityString;
+    NSString *_subTextOverrideString;
 }
 
 + (float)textOffset;
 @property(nonatomic) _Bool dimCardArt; // @synthesize dimCardArt=_dimCardArt;
 @property(nonatomic) _Bool showBillingAddress; // @synthesize showBillingAddress=_showBillingAddress;
+@property(copy, nonatomic) NSString *subTextOverrideString; // @synthesize subTextOverrideString=_subTextOverrideString;
 @property(copy, nonatomic) NSString *availabilityString; // @synthesize availabilityString=_availabilityString;
+@property(readonly, nonatomic) UIImageView *cardArtView; // @synthesize cardArtView=_cardArtView;
 @property(readonly, nonatomic) UILabel *censoredPANLabel; // @synthesize censoredPANLabel=_censoredPANLabel;
 @property(readonly, nonatomic) UILabel *displayLabel; // @synthesize displayLabel=_displayLabel;
 @property(retain, nonatomic) UIColor *disabledSubTextLabelColor; // @synthesize disabledSubTextLabelColor=_disabledSubTextLabelColor;
 @property(retain, nonatomic) UIColor *disabledMainLabelColor; // @synthesize disabledMainLabelColor=_disabledMainLabelColor;
 @property(retain, nonatomic) UIColor *subTextLabelColor; // @synthesize subTextLabelColor=_subTextLabelColor;
 @property(retain, nonatomic) UIColor *mainLabelColor; // @synthesize mainLabelColor=_mainLabelColor;
+@property(retain, nonatomic) PKTransitBalanceModel *transitBalanceModel; // @synthesize transitBalanceModel=_transitBalanceModel;
 @property(retain, nonatomic) PKPassSnapshotter *passSnapshotter; // @synthesize passSnapshotter=_passSnapshotter;
 @property(retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
 - (void)_setupConstraints;
 - (void)_updateLabelTextColors;
 - (void)_updateCellContent;
+- (void)_updateCensoredPANLabel;
 - (void)setEditing:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setUserInteractionEnabled:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setHasError:(_Bool)arg1;
 - (void)prepareForReuse;

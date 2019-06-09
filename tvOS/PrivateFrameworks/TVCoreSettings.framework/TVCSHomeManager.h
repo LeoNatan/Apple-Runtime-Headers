@@ -71,7 +71,6 @@
 - (void)startAdvertisingForProximityKeyTransfer;
 - (void)forgetHomeConfiguration:(CDUnknownBlockType)arg1;
 - (void)reloadHomeConfiguration;
-- (void)loadHomeConfiguration:(_Bool)arg1;
 - (id)_init;
 
 // Remaining properties

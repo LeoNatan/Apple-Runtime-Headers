@@ -11,6 +11,7 @@
 @class NSString;
 @protocol GKGameModel, GKRandom;
 
+__attribute__((visibility("hidden")))
 @interface GKHybridStrategist : NSObject <GKStrategist>
 {
     struct GKCHybridStrategist *_hybridStrategist;

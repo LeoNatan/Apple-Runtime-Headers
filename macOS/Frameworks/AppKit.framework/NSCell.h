@@ -11,10 +11,11 @@
 #import <AppKit/NSCoding-Protocol.h>
 #import <AppKit/NSCopying-Protocol.h>
 #import <AppKit/NSUserInterfaceItemIdentification-Protocol.h>
+#import <AppKit/_NSControlEventTrackable-Protocol.h>
 
 @class NSArray, NSFont, NSFormatter, NSImage, NSMenu, NSString, NSURL, NSView;
 
-@interface NSCell : NSObject <NSCopying, NSCoding, NSUserInterfaceItemIdentification, NSAccessibilityElement, NSAccessibility>
+@interface NSCell : NSObject <_NSControlEventTrackable, NSCopying, NSCoding, NSUserInterfaceItemIdentification, NSAccessibilityElement, NSAccessibility>
 {
     id _contents;
     struct __CFlags {
@@ -70,14 +71,21 @@
         unsigned int needsHighlightedTextHint:1;
     } _cFlags;
     id _support;
+    struct CGRect *_overrideTextBoundingRect;
 }
 
++ (id)_sharedStringDrawingContext;
++ (id)_stringDrawingContext;
 + (id)defaultMenu;
 + (id)_cuiStyleEffectsKey;
 + (id)_cuiCatalogKey;
 + (unsigned long long)defaultFocusRingType;
 + (BOOL)prefersTrackingUntilMouseUp;
 + (void)initialize;
+- (void)setNextState;
+- (long long)nextState;
+- (BOOL)allowsMixedState;
+- (void)setAllowsMixedState:(BOOL)arg1;
 - (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformShowDefaultUI;
 - (BOOL)accessibilityPerformShowAlternateUI;
@@ -254,15 +262,13 @@
 - (BOOL)isAccessibilitySelectorAllowed:(SEL)arg1;
 - (unsigned long long)textAlignmentPolicy;
 - (id)_stringDrawingContext;
-- (BOOL)_usesBezeledSelectionStyle;
-- (int)_effectiveBackgroundStyleInView:(id)arg1 forSpecifiedStyle:(long long)arg2 isTemplate:(BOOL)arg3;
-- (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
 - (void)setFieldEditorTextContainer:(id)arg1;
 - (id)fieldEditorTextContainer;
 - (void)setTitleTextContainer:(id)arg1;
 - (id)titleTextContainer;
 - (void)setStyleEffectConfiguration:(id)arg1;
 - (id)styleEffectConfiguration;
+- (id)_styleEffectContentStyle;
 - (BOOL)_allowsTextTighteningInView:(id)arg1;
 - (BOOL)_hasAppearanceTextEffectsWithAttributedString:(id)arg1;
 - (void)setAllowsAppearanceTextEffects:(BOOL)arg1;
@@ -300,7 +306,13 @@
 - (struct CGRect)_focusRingFrameForFrame:(struct CGRect)arg1 cellFrame:(struct CGRect)arg2;
 - (BOOL)keyUp:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (BOOL)keyDown:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
-- (void)_setAnimationsAllowed:(BOOL)arg1;
+@property(setter=_setInSendAction:) BOOL _inSendAction;
+- (BOOL)_shouldSendActionForEventType:(unsigned long long)arg1;
+- (BOOL)_controlContinueTrackingPressure:(id)arg1 inView:(id)arg2;
+- (void)_controlContinueTrackingPeriodically:(id)arg1 inView:(id)arg2;
+- (void)_controlStopTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 mouseIsUp:(BOOL)arg4;
+- (BOOL)_controlContinueTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3;
+- (BOOL)_controlStartTrackingAt:(struct CGPoint)arg1 inView:(id)arg2;
 - (BOOL)trackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
 - (void)cancelTrackingAt:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)touchCancelledAt:(struct CGPoint)arg1 inView:(id)arg2;
@@ -312,13 +324,8 @@
 - (id)_touchContinuousTimer;
 - (void)_setTrackingTouch:(id)arg1;
 - (id)_trackingTouch;
-- (BOOL)_MSMessengerTrackMouse:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3 untilMouseUp:(BOOL)arg4;
-- (long long)_currentEventStage;
 - (BOOL)_hitTestForTrackMouseEvent:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
-- (BOOL)_suppressMouseUpAction;
-- (BOOL)_usesDefaultContinuousBehavior;
 - (BOOL)_useHitTestInTrackMouse;
-- (BOOL)_vetoMouseDragActionDispatch;
 - (void)_displaySomeWindowsIfNeeded:(id)arg1;
 - (BOOL)_sendActionFrom:(id)arg1;
 - (void)stopTracking:(struct CGPoint)arg1 at:(struct CGPoint)arg2 inView:(id)arg3 mouseIsUp:(BOOL)arg4;
@@ -342,17 +349,25 @@
 - (void)_drawHighlightWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (id)highlightColorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_usingAlternateHighlightColorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (id)_effectiveStyleEffectConfigurationInView:(id)arg1;
+- (void)_updateAppearanceContentStyle:(id)arg1 inView:(id)arg2;
+- (id)_appearanceContentStyleInView:(id)arg1;
+- (void)_invalidateCachedAppearanceContentStyle;
+- (id)_cachedAppearanceContentStyle;
+- (void)_setCachedAppearanceContentStyle:(id)arg1;
+- (long long)_contentBacking;
+- (id)_effectiveContentStyleForTextInView:(id)arg1;
+- (id)_effectiveContentStyleForImageInView:(id)arg1;
+- (id)_effectiveContentStyleForCellInView:(id)arg1;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 - (BOOL)_allowsStyledTextForColor:(id)arg1;
 - (BOOL)_customForegroundColorInTitle:(id)arg1;
-- (unsigned long long)_interiorContentValueStateInView:(id)arg1;
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (long long)_interiorContentPresentationStateInView:(id)arg1;
+- (long long)_bezelPresentationStateInView:(id)arg1;
+- (long long)_interiorContentValueInView:(id)arg1;
+- (long long)_interiorContentStateInView:(id)arg1;
 - (double)_minimumPressDuration;
 - (BOOL)_isGuarded;
 - (void)_controlViewDidChangeEffectiveAppearance:(id)arg1;
-- (BOOL)_preferInactiveContentInView:(id)arg1;
-- (BOOL)_preferInactiveBezelArtInView:(id)arg1;
 - (id)_defaultImageHints;
 - (BOOL)_needsHighlightedTextHint;
 - (void)_setNeedsHighlightedTextHint:(BOOL)arg1;
@@ -365,8 +380,6 @@
 - (BOOL)_beginVibrantBlendGroupIfNecessaryForControlView:(id)arg1;
 - (int)_vibrancyBlendModeForControlView:(id)arg1;
 - (struct __CFString *)_coreUIWidgetName;
-- (id)_effectiveCoreUIBackgroundTypeInControlView:(id)arg1;
-- (struct __CFString *)customizedBackgroundTypeForControlView:(id)arg1;
 - (unsigned long long)fontDilationStyle;
 - (id)setUpFieldEditorAttributes:(id)arg1;
 - (void)calcDrawInfo:(struct CGRect)arg1;
@@ -375,11 +388,9 @@
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementString:(id)arg3;
 - (BOOL)_validateEntryString:(id)arg1 uiHandled:(char *)arg2;
 - (BOOL)_delegateValidation:(id)arg1 object:(id)arg2 uiHandled:(char *)arg3;
-- (BOOL)_drawingInRevealover;
-- (void)_setDrawingInRevealover:(BOOL)arg1;
 - (void)drawWithExpansionFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGRect)expansionFrameWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (id)_backgroundColorForFontSmoothing;
+- (void)_getFirstBaselineOffsetFromTop:(double *)arg1 lastBaselineOffsetFromBottom:(double *)arg2 flipped:(BOOL)arg3;
 @property(readonly) struct CGSize cellSize;
 - (struct CGRect)drawingRectForBounds:(struct CGRect)arg1;
 - (struct CGRect)titleRectForBounds:(struct CGRect)arg1;
@@ -391,8 +402,6 @@
 @property(retain) id representedObject;
 @property(retain) NSFormatter *formatter;
 @property unsigned long long controlSize;
-- (unsigned long long)controlTint;
-- (void)setControlTint:(unsigned long long)arg1;
 @property(retain) NSImage *image;
 - (id)_defaultFont;
 - (void)_invalidateFont;
@@ -424,10 +433,6 @@
 - (void)setFocusRingType:(unsigned long long)arg1;
 - (BOOL)showsFirstResponder;
 - (void)setShowsFirstResponder:(BOOL)arg1;
-- (void)setTitleWithMnemonic:(id)arg1;
-- (id)mnemonic;
-- (unsigned long long)mnemonicLocation;
-- (void)setMnemonicLocation:(unsigned long long)arg1;
 - (void)setAttributedStringValue:(id)arg1;
 @property(copy) NSString *stringValue;
 - (BOOL)_objectValue:(id *)arg1 forString:(id)arg2;
@@ -442,11 +447,10 @@
 - (id)_stringForEditing;
 - (id)_attributedStringForEditing;
 @property BOOL allowsUndo;
-- (void)_setLineBreakMode:(unsigned long long)arg1;
-- (unsigned long long)_lineBreakMode;
 @property unsigned long long lineBreakMode;
 - (long long)_typesetterBehavior;
 - (void)_setTextAttributeParaStyleNeedsRecalc;
+- (unsigned long long)_lineBreakStrategyForCurrentConfiguration;
 - (id)_textAttributes;
 - (BOOL)_textDimsWhenDisabled;
 @property(readonly) BOOL hasValidObjectValue;
@@ -463,12 +467,8 @@
 - (void)_invalidateObjectValue;
 - (BOOL)_performKeyEquivalent:(id)arg1 conditionally:(BOOL)arg2;
 @property(readonly, copy) NSString *keyEquivalent;
-- (void)setFloatingPointFormat:(BOOL)arg1 left:(unsigned long long)arg2 right:(unsigned long long)arg3;
-- (BOOL)isEntryAcceptable:(id)arg1;
-- (void)setEntryType:(long long)arg1;
-- (long long)entryType;
 @property BOOL wraps;
-@property unsigned long long alignment;
+@property long long alignment;
 - (void)_setVerticallyCentered:(BOOL)arg1;
 - (void)_setHorizontallyCentered:(BOOL)arg1;
 - (void)_setNeedsStateUpdate:(id)arg1;
@@ -487,8 +487,11 @@
 - (void)_cell_setRefusesFirstResponder:(BOOL)arg1;
 - (BOOL)acceptsFirstResponder;
 @property(getter=isContinuous) BOOL continuous;
+@property(readonly) BOOL isContinuous;
 - (long long)sendActionOn:(unsigned long long)arg1;
+@property(readonly) unsigned long long sendActionOnMask;
 @property(getter=isEnabled) BOOL enabled;
+@property(readonly) BOOL isEnabled;
 @property(readonly, getter=isOpaque) BOOL opaque;
 @property(copy) NSString *title;
 @property long long tag;
@@ -499,8 +502,6 @@
 - (BOOL)_hasTrackingGestureOverride;
 - (void)_setControlView:(id)arg1;
 @property NSView *controlView;
-- (BOOL)_usesUserKeyEquivalent;
-- (id)_useUserKeyEquivalent;
 - (BOOL)_prefersTrackingWhenDisabled;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -508,13 +509,9 @@
 - (void)_failsafeAllocAuxiliaryStorage;
 - (id)initImageCell:(id)arg1;
 - (id)initTextCell:(id)arg1;
-- (void)_commonInit;
 - (BOOL)_allowsContextMenus;
 - (void)_convertToText:(id)arg1;
 - (id)init;
-- (void)setNextState;
-@property(readonly) long long nextState;
-@property BOOL allowsMixedState;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreaWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -553,6 +550,7 @@
 - (id)accessibilityHorizontalUnitDescriptionAttribute;
 - (BOOL)accessibilityShouldSendNotification:(id)arg1;
 - (BOOL)_accessibilityIsTableViewDescendant;
+- (void)accessibilityDrawFocusRing;
 - (id)accessibilityElementWithParent:(id)arg1;
 - (void)accessibilityPostNotification:(id)arg1;
 - (BOOL)accessibilitySupportsOverriddenAttributes;
@@ -618,9 +616,19 @@
 - (BOOL)accessibilityIsValueAttributeSettable;
 - (id)accessibilityValueAttribute;
 - (id)accessibilityCurrentEditor;
-- (BOOL)_finalizeStyleTextOptions:(id)arg1;
-- (BOOL)_updateStyledTextOptions:(id)arg1 withContentAppearanceInView:(id)arg2;
-- (void)_updateCoreUIOptions:(id)arg1 withContentAppearanceInView:(id)arg2;
+- (void)setTitleWithMnemonic:(id)arg1;
+- (id)mnemonic;
+- (unsigned long long)mnemonicLocation;
+- (void)setMnemonicLocation:(unsigned long long)arg1;
+- (void)setFloatingPointFormat:(BOOL)arg1 left:(unsigned long long)arg2 right:(unsigned long long)arg3;
+- (BOOL)isEntryAcceptable:(id)arg1;
+- (void)setEntryType:(long long)arg1;
+- (long long)entryType;
+@property unsigned long long controlTint;
+- (void)_drawLiveResizeHighlightWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (id)_useUserKeyEquivalent;
+- (BOOL)_usesUserKeyEquivalent;
+@property(setter=_setLineBreakMode:) unsigned long long _lineBreakMode;
 - (BOOL)_shouldHighlightCellWhenSelected;
 - (BOOL)drawsBackground;
 - (void)setDrawsBackground:(BOOL)arg1;

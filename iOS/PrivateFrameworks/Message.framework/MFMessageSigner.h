@@ -6,21 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class MFCertificateTrustInfo, MFError;
+@class MFCertificateTrustInfo, MFError, NSString;
 
 @interface MFMessageSigner : NSObject
 {
     int _status;
     MFCertificateTrustInfo *_signingCertificateTrustInfo;
     MFCertificateTrustInfo *_encryptionCertificateTrustInfo;
+    NSString *_sender;
 }
 
+@property(readonly, nonatomic) NSString *sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) MFCertificateTrustInfo *encryptionCertificateTrustInfo; // @synthesize encryptionCertificateTrustInfo=_encryptionCertificateTrustInfo;
 @property(readonly, nonatomic) MFCertificateTrustInfo *signingCertificateTrustInfo; // @synthesize signingCertificateTrustInfo=_signingCertificateTrustInfo;
+- (void).cxx_destruct;
 - (void)reevaluateTrustWithNetworkAccessAllowed;
 @property(readonly, nonatomic) MFError *error;
 @property(readonly, nonatomic) _Bool hasSeparateSigningAndEncryptionCertificates;
-- (void)dealloc;
 - (id)initWithSender:(id)arg1 signingTrust:(struct __SecTrust *)arg2 encryptionTrust:(struct __SecTrust *)arg3 verification:(int)arg4;
 
 @end

@@ -10,7 +10,7 @@
 #import <NanoAudioControl/NACXPCInterface-Protocol.h>
 #import <NanoAudioControl/NSXPCListenerDelegate-Protocol.h>
 
-@class NACIDSClient, NPSDomainAccessor, NSMutableDictionary, NSString, NSXPCListener, TLAlert;
+@class NACIDSClient, NPSDomainAccessor, NSMutableDictionary, NSString, NSXPCListener;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface NACXPCServer : NSObject <NSXPCListenerDelegate, NACXPCInterface, NACIDSClientDelegate>
@@ -27,8 +27,8 @@
     int _hapticState;
     _Bool _systemMutedState;
     NSObject<OS_dispatch_source> *_audioRouteDeferTimer;
-    TLAlert *_alert;
     _Bool _audioAndHapticPreviewIsPlaying;
+    _Bool _defaultHapticPreviewIsPlaying;
     _Bool _prominentHapticPreviewIsPlaying;
 }
 
@@ -54,7 +54,7 @@
 - (void)_updateAudioRoutes:(id)arg1 category:(id)arg2;
 - (void)_scheduleDeferredAudioRoutesUpdate:(id)arg1 category:(id)arg2;
 - (void)client:(id)arg1 audioRoutes:(id)arg2 didChangeForCategory:(id)arg3;
-- (void)client:(id)arg1 volumeWarningEnabled:(_Bool)arg2 didChangeForTarget:(id)arg3;
+- (void)client:(id)arg1 volumeWarningEnabled:(_Bool)arg2 volumeWarningState:(int)arg3 didChangeForTarget:(id)arg4;
 - (void)client:(id)arg1 EULimit:(float)arg2 didChangeForTarget:(id)arg3;
 - (void)client:(id)arg1 systemMutedStateDidChange:(_Bool)arg2;
 - (void)client:(id)arg1 hapticStateDidChange:(int)arg2;
@@ -69,6 +69,7 @@
 - (void)beginObservingAudioRoutesForCategory:(id)arg1;
 - (void)audioRoutesForCategory:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)playProminentHapticPreview;
+- (void)playDefaultHapticPreview;
 - (void)playAudioAndHapticPreview;
 - (void)setHapticState:(int)arg1;
 - (void)setProminentHapticEnabled:(_Bool)arg1;

@@ -4,18 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <AssetsLibraryServices/PLAssetFormatsCore.h>
 
-@interface DCIMAssetFormats : NSObject
+@interface DCIMAssetFormats : PLAssetFormatsCore
 {
 }
 
 + (int)masterThumbnailFormat;
 + (int)wildcatStackFormat;
-+ (_Bool)formatSizeIsShortSide:(int)arg1;
-+ (struct CGRect)centeredRectForSourceSize:(struct CGSize)arg1 destinationSize:(struct CGSize)arg2;
-+ (struct CGSize)scaledSizeForSize:(struct CGSize)arg1 format:(int)arg2 capLength:(_Bool)arg3;
-+ (struct CGSize)sizeForFormat:(int)arg1;
 
 @end
 

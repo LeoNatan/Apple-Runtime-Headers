@@ -6,16 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class FLFollowUpController, NSNumber, NSURLSession;
+@class FLFollowUpController, NSNumber, NSURLSession, _ICQAccountManager;
 
 @interface ICQDaemonOfferManager : NSObject
 {
     NSURLSession *_sharedURLSession;
     FLFollowUpController *_followUpController;
+    _ICQAccountManager *_accountManager;
 }
 
 + (id)ckBackupDeviceID;
 + (id)sharedDaemonOfferManager;
+@property(readonly) NSURLSession *sharedURLSession; // @synthesize sharedURLSession=_sharedURLSession;
+@property(readonly) _ICQAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 - (void).cxx_destruct;
 @property(nonatomic, getter=isLegacyDeviceStorageLevelNotificationEnabled) _Bool legacyDeviceStorageLevelNotificationEnabled;
 @property(retain, nonatomic) NSNumber *simulatedPhotosLibrarySize;
@@ -43,7 +46,7 @@
 - (void)_fetchDaemonOfferStubsForAccount:(id)arg1 isForBuddy:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_fetchDaemonOfferForAccount:(id)arg1 stub:(id)arg2 notificationID:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_updateQuotaForAccount:(id)arg1 withServerDictionary:(id)arg2;
-- (void)_fetchDictionaryForAccount:(id)arg1 quotaKey:(id)arg2 stub:(id)arg3 notificationID:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_fetchDictionaryForAccount:(id)arg1 quotaKey:(id)arg2 stub:(id)arg3 notificationID:(id)arg4 contextDictionary:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (_Bool)_isBackupEnabledForAccount:(id)arg1;
 - (void)_addEntriesToPostDictionary:(id)arg1 forStub:(id)arg2;
 - (_Bool)_attemptSetRequest:(id)arg1 toPostWithJSONDict:(id)arg2;
@@ -68,6 +71,7 @@
 - (void)processPushNotificationDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)daemonBuddyOfferDictionaryForAccount:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)daemonOfferDictionaryForAccount:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)initWithAccountManager:(id)arg1;
 - (id)init;
 
 @end

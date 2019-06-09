@@ -8,6 +8,7 @@
 
 @class NSMutableArray, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIOnboardingInstructionsView : UIView
 {
     struct UIEdgeInsets _contentInset;

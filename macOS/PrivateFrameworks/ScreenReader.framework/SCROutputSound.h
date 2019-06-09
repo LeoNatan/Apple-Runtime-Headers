@@ -11,21 +11,17 @@
 __attribute__((visibility("hidden")))
 @interface SCROutputSound : NSObject
 {
+    id _delegate;
     id _owner;
     SCROutputAction *_action;
     NSString *_category;
-    id _delegate;
 }
 
-- (id)category;
-- (void)setCategory:(id)arg1;
-- (id)action;
-- (void)setAction:(id)arg1;
-- (id)owner;
-- (void)setOwner:(id)arg1;
-- (void)dealloc;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+@property(copy, nonatomic) NSString *category; // @synthesize category=_category;
+@property(retain, nonatomic) SCROutputAction *action; // @synthesize action=_action;
+@property(retain, nonatomic) id owner; // @synthesize owner=_owner;
+@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 
 @end
 

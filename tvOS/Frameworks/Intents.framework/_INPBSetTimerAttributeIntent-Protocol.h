@@ -6,9 +6,11 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class _INPBIntentMetadata, _INPBTimer;
+@class _INPBDataString, _INPBIntentMetadata, _INPBTimer;
 
 @protocol _INPBSetTimerAttributeIntent <NSObject>
+@property(readonly, nonatomic) _Bool hasToLabel;
+@property(retain, nonatomic) _INPBDataString *toLabel;
 @property(nonatomic) _Bool hasToDuration;
 @property(nonatomic) double toDuration;
 @property(readonly, nonatomic) _Bool hasTargetTimer;

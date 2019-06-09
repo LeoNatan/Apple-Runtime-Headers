@@ -17,6 +17,7 @@
     unsigned long long _couldHaveShown;
     NSString *_input;
     NSDate *_hideCompletionsAfterDate;
+    BOOL _hideZKW;
     BOOL _hideCompletions;
     unsigned long long _mustPrefixMatchLength;
     NSMutableArray *_zkwResults;

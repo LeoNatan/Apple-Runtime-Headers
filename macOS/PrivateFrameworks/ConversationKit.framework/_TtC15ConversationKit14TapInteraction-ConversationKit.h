@@ -9,6 +9,7 @@
 #import <ConversationKit/NSGestureRecognizerDelegate-Protocol.h>
 
 @interface _TtC15ConversationKit14TapInteraction (ConversationKit) <NSGestureRecognizerDelegate>
+- (BOOL)gestureRecognizer:(id)arg1 shouldAttemptToRecognizeWithEvent:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 @end
 

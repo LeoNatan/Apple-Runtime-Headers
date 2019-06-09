@@ -24,7 +24,6 @@
 - (void).cxx_destruct;
 - (struct CGSize)contentSizeForViewInPopover;
 - (id)navigationItem;
-- (void)composeRecipientViewControllerRecipientContainerViewDidResize:(id)arg1 fromFrame:(struct CGRect)arg2 toFrame:(struct CGRect)arg3;
 - (_Bool)_validateRecipientsToAdd:(id)arg1;
 - (void)_saveUserEnterredInfo;
 - (void)_doneAction:(id)arg1;

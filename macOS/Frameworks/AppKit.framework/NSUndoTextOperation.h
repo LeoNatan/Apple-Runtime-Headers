@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSLayoutManager, NSUndoManager;
+@class NSTextStorage, NSUndoManager;
 
 @interface NSUndoTextOperation : NSObject
 {
     struct _NSRange _affectedRange;
     NSUndoManager *_undoManager;
-    NSLayoutManager *_layoutManager;
+    NSTextStorage *_textStorage;
 }
 
 @property(nonatomic) struct _NSRange affectedRange; // @synthesize affectedRange=_affectedRange;
@@ -21,6 +21,7 @@
 - (id)firstTextViewForTextStorage:(id)arg1;
 - (void)undoRedo:(id)arg1;
 - (void)dealloc;
+- (id)initWithAffectedRange:(struct _NSRange)arg1 textStorage:(id)arg2 undoManager:(id)arg3;
 - (id)initWithAffectedRange:(struct _NSRange)arg1 layoutManager:(id)arg2 undoManager:(id)arg3;
 
 @end

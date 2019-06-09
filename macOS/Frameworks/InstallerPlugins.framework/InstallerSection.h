@@ -34,6 +34,7 @@
 - (BOOL)shouldExitPane:(id)arg1 inDirection:(long long)arg2;
 - (void)didEnterPane:(id)arg1 inDirection:(long long)arg2;
 - (void)willEnterPane:(id)arg1 inDirection:(long long)arg2;
+- (id)provides;
 - (id)nextPaneForActivePane:(id)arg1;
 - (void)setFirstPane:(id)arg1;
 @property(readonly) BOOL _loadMainNib;

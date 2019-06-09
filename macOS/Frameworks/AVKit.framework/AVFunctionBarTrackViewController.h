@@ -8,6 +8,7 @@
 
 @protocol AVFunctionBarTrackControlling><AVTimeControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarTrackViewController : NSViewController
 {
     BOOL _hasRoundedCorners;

@@ -7,6 +7,7 @@
 #import <Foundation/NSFunctionExpression.h>
 
 @interface NSFunctionExpression (_NSCoreDataSQLPredicateCategories)
+- (id)_keypathsForDerivedPropertyValidation:(id *)arg1;
 - (id)_mapKVCOperatorsToFunctionsInContext:(id)arg1;
 - (id)minimalFormInContext:(id)arg1;
 @end

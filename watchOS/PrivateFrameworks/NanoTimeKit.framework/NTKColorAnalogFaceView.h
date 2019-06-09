@@ -49,8 +49,7 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (_Bool)_wantsStatusBarIconShadow;
-- (void)_configureReusableTimeView:(id)arg1;
-- (id)_complicationSlotsHiddenByEditOption:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (id)_complicationContainerViewForSlot:(id)arg1;
 - (_Bool)_needsForegroundContainerView;
 - (void)_unloadSnapshotContentViews;

@@ -6,18 +6,20 @@
 
 #import <NanoTimeKit/NTKRichComplicationCornerGaugeCustomView.h>
 
-@class UIImageView;
+@class NTKRichComplicationImageView;
 
 @interface NTKRichComplicationCornerGaugeImageView : NTKRichComplicationCornerGaugeCustomView
 {
-    UIImageView *_imageView;
+    NTKRichComplicationImageView *_imageView;
 }
 
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
+- (void)setPaused:(_Bool)arg1;
 - (id)_outerView;
 
 @end

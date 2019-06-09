@@ -6,10 +6,10 @@
 
 #import <Message/NSObject-Protocol.h>
 
-@class MFObservable;
+@class EFObservable;
 
 @protocol MFActivityCondition <NSObject>
-@property(readonly, nonatomic) MFObservable *conditionsObservable;
+@property(readonly, nonatomic) EFObservable *conditionsObservable;
 @property(readonly, nonatomic, getter=isSatisfied) _Bool satisfied;
 @end
 

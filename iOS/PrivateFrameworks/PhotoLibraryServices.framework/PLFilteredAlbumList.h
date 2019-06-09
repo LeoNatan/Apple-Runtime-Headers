@@ -39,7 +39,6 @@
 - (void)insertFilteredAlbums:(id)arg1 atIndexes:(id)arg2;
 - (void)removeObjectFromFilteredAlbumsAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inFilteredAlbumsAtIndex:(unsigned long long)arg2;
-- (void)getFilteredAlbums:(id *)arg1 range:(struct _NSRange)arg2;
 - (id)filteredAlbumsAtIndexes:(id)arg1;
 - (id)objectInFilteredAlbumsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexInFilteredAlbumsOfObject:(id)arg1;
@@ -50,7 +49,7 @@
 - (_Bool)shouldIncludeObjectAtIndex:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) id <NSObject><NSCopying> cachedIndexMapState;
 @property(readonly, copy, nonatomic) NSIndexSet *filteredIndexes;
-@property(readonly, retain, nonatomic) PLIndexMapper *indexMapper;
+@property(readonly, nonatomic) PLIndexMapper *indexMapper;
 @property(readonly, nonatomic) unsigned long long unreadAlbumsCount;
 - (void)_invalidateFilteredIndexes;
 @property(readonly, retain, nonatomic) NSString *_prettyDescription;
@@ -64,10 +63,10 @@
 @property(readonly, nonatomic) unsigned long long containersCount;
 - (id)containers;
 @property(readonly, copy) NSString *description;
-@property(readonly, retain, nonatomic) PLPhotoLibrary *photoLibrary;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary;
 - (_Bool)hasAtLeastOneAlbum;
 @property(readonly, nonatomic) unsigned long long albumsCount;
-@property(readonly, retain, nonatomic) NSMutableOrderedSet *albums;
+@property(readonly, nonatomic) NSMutableOrderedSet *albums;
 - (void)preheatAlbumsAtIndexes:(id)arg1 forProperties:(id)arg2 relationships:(id)arg3;
 - (void)preheatAlbumsForProperties:(id)arg1 relationships:(id)arg2;
 - (void)updateAlbumsOrderIfNeeded;

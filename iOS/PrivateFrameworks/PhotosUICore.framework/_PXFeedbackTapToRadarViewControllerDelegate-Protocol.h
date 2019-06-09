@@ -6,8 +6,11 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
+@class NSArray, NSString;
+
 @protocol _PXFeedbackTapToRadarViewControllerDelegate <NSObject>
+- (NSArray *)availableRoutes;
 - (_Bool)shouldRequestScreenshotPermission;
-- (void)didSelectFileRadarButtonWithScreenshotAllowed:(_Bool)arg1;
+- (void)didSelectFileRadarButtonWithScreenshotAllowed:(_Bool)arg1 attachDiagnose:(_Bool)arg2 selectedRoute:(NSString *)arg3;
 @end
 

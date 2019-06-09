@@ -24,6 +24,8 @@
 @property(copy, nonatomic) NSArray *steps;
 @property(readonly, nonatomic) _Bool hasResponseTemplate;
 @property(copy, nonatomic) NSString *responseTemplate;
+@property(nonatomic) _Bool hasPrefersExecutionOnCompanion;
+@property(nonatomic) _Bool prefersExecutionOnCompanion;
 @property(readonly, nonatomic) _Bool hasParameters;
 @property(retain, nonatomic) _INPBDictionary *parameters;
 @property(readonly, nonatomic) _Bool hasLocalizedAppName;

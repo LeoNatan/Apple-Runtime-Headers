@@ -16,13 +16,13 @@ __attribute__((visibility("hidden")))
     OITSUColor *mEndColor;
 }
 
+- (void).cxx_destruct;
 - (void)createShading;
 - (id)endColor;
 - (id)startColor;
 - (void)setEndColor:(id)arg1;
 - (void)setStartColor:(id)arg1;
 - (void)setBounds:(struct CGRect)arg1;
-- (void)dealloc;
 
 @end
 

@@ -16,6 +16,7 @@
 
 + (Class)validatedClass;
 + (id)validatorWithObject:(id)arg1;
+- (BOOL)isValidWithAPIType:(unsigned long long)arg1 withError:(id *)arg2;
 - (BOOL)isValidWithError:(id *)arg1;
 - (id)initWithShippingMethod:(id)arg1;
 

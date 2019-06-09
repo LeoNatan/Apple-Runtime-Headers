@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (void)_syncChildAnnotationForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncInkPathForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncCornerRadiusForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
-- (void)_syncHighlightingStyleForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_updateDashedPatternForStrokeWidth:(double)arg1 isDashed:(_Bool)arg2;
 - (void)_syncDashedForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncArrowHeadStyleForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
@@ -32,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)_syncStrokeWidthForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncEndPointForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncStartPointForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
-- (void)_syncQuadPointsForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncContentsForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncAnnotationTextForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
 - (void)_syncModificationDateForAnnotation:(id)arg1 withKey:(id)arg2 andNewValue:(id)arg3;
@@ -53,7 +51,6 @@ __attribute__((visibility("hidden")))
 - (void)_syncWidgetFieldFlags:(unsigned long long)arg1;
 - (void)_syncWidgetDefaultValue:(id)arg1;
 - (void)_syncTextLabel:(id)arg1;
-- (void)_syncQuadPoints:(id)arg1;
 - (void)_syncPopup:(id)arg1;
 - (void)_syncParent:(id)arg1;
 - (void)_syncOpen:(_Bool)arg1;
@@ -63,7 +60,7 @@ __attribute__((visibility("hidden")))
 - (void)_syncInklist:(id)arg1;
 - (void)_syncHighlightingMode:(id)arg1;
 - (void)_syncDestination:(id)arg1;
-- (void)_syncQuadding:(unsigned long long)arg1;
+- (void)_syncQuadding:(long long)arg1;
 - (void)_syncDefaultAppearance:(id)arg1;
 - (void)_syncAppleExtras:(id)arg1;
 - (void)_syncRect:(struct CGRect)arg1;

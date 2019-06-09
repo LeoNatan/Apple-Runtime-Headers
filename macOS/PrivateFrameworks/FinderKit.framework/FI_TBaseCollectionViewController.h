@@ -64,7 +64,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)handleMouseDown:(id)arg1;
 - (void)moveToBeginningOfDocument:(id)arg1;
 - (void)moveToEndOfDocument:(id)arg1;
-- (void)scrollToAdjustingForContentInsets:(struct CGPoint)arg1;
 - (struct TFENode)firstNodeToSelectFromDirection:(int)arg1;
 - (void)selectFirstIconFromDirection:(int)arg1;
 - (void)prefetchIconsForNodes:(const struct TFENodeVector *)arg1;
@@ -101,7 +100,6 @@ __attribute__((visibility("hidden")))
 - (void)getVisibleNodes:(struct TFENodeVector *)arg1;
 - (unsigned long long)itemCount;
 - (int)viewStyle;
-- (id)iconImageForNode:(const struct TFENode *)arg1;
 - (id)indexPathsForNodes:(const struct TFENodeVector *)arg1 upTo:(unsigned long long)arg2;
 - (id)indexPathForNode:(const struct TFENode *)arg1;
 - (struct TFENode)nodeAtEventPoint:(id)arg1;

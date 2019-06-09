@@ -4,24 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreDuet/_DKSyncContextObject.h>
 
-@class NSDate, NSMutableArray, NSMutableDictionary, _DKKnowledgeStorage;
+@class NSDate, NSMutableArray, NSMutableDictionary, _DKKnowledgeStorage, _DKSyncPeer;
 
-@interface _DKSyncPeerStatusTracker : NSObject
+@interface _DKSyncPeerStatusTracker : _DKSyncContextObject
 {
     NSMutableDictionary *_peerInfos;
+    _DKSyncPeer *_pseudoPeer;
     NSMutableArray *_observers;
     NSMutableDictionary *_lastSuccessfulActivityDates;
     NSDate *_firstForeignPeersCountDate;
     _DKKnowledgeStorage *_storage;
 }
 
++ (id)stringForTransports:(int)arg1;
++ (id)syncPeerTransportsStrings;
++ (id)peerStatusTrackerWithContext:(id)arg1;
 + (id)sharedInstance;
 @property(nonatomic) __weak _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
 - (void)debugLogPeers;
-- (id)stringForTransports:(int)arg1;
 - (void)postCloudDeviceCountChangedNotification;
 - (void)_loadPeers;
 - (id)uuidWithUUIDString:(id)arg1;
@@ -37,19 +40,21 @@
 - (void)_modifyActiveTransportInPeer:(id)arg1 withNewTransportsBlock:(CDUnknownBlockType)arg2;
 - (int)activeTransportsForPeer:(id)arg1;
 - (id)_peerInfoForPeer:(id)arg1;
+- (_Bool)isSingleDevice;
 - (unsigned int)foreignPeersCount;
 - (id)peersWithActiveTransports:(int)arg1;
 - (id)peersWithAnyActiveTransports;
 - (id)allPeers;
 - (void)removePeer:(id)arg1;
 - (id)pseudoPeerForSyncTransportCloudUp;
+- (id)existingPeerWithIDSDeviceIdentifier:(id)arg1;
 - (id)existingPeerWithSourceDeviceID:(id)arg1;
 - (id)peerWithZoneName:(id)arg1 sourceDeviceID:(id)arg2;
 - (id)peerWithIDSDeviceIdentifier:(id)arg1;
 - (id)peerWithCompanionLinkDevice:(id)arg1;
 - (void)registerNewPeer:(id)arg1;
-- (void)setSourceDeviceID:(id)arg1 peer:(id)arg2;
-- (id)initWithStorage:(id)arg1;
+- (void)setSourceDeviceID:(id)arg1 version:(id)arg2 peer:(id)arg3;
+- (id)initWithContext:(id)arg1;
 
 @end
 

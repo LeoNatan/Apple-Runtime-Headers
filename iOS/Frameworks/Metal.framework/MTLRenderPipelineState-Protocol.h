@@ -16,6 +16,6 @@
 @property(readonly) unsigned long long maxTotalThreadsPerThreadgroup;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) NSString *label;
-- (unsigned long long)imageblockMemoryLengthForDimensions:(CDStruct_14f26992)arg1;
+- (unsigned long long)imageblockMemoryLengthForDimensions:(CDStruct_da2e99ad)arg1;
 @end
 

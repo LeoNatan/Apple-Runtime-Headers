@@ -13,6 +13,7 @@
 @class NSIndexPath, NSString, SKUIClientContext, SKUIPinnedFooterView, UITableView;
 @protocol SKUIRedeemIdManagerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemIdManager : NSObject <SKUIRedeemIdTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource>
 {
     id <SKUIRedeemIdManagerDelegate> _delegate;

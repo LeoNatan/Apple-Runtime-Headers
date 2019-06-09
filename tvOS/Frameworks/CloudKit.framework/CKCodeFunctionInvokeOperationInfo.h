@@ -6,20 +6,26 @@
 
 #import <CloudKit/CKDatabaseOperationInfo.h>
 
-@class NSArray, NSString;
+#import <CloudKit/NSSecureCoding-Protocol.h>
 
-@interface CKCodeFunctionInvokeOperationInfo : CKDatabaseOperationInfo
+@class NSArray, NSData, NSString;
+
+@interface CKCodeFunctionInvokeOperationInfo : CKDatabaseOperationInfo <NSSecureCoding>
 {
     _Bool _local;
     _Bool _shouldFetchAssetContentInMemory;
     NSString *_serviceName;
     NSString *_functionName;
     NSArray *_requestLocalSerializations;
+    NSArray *_requestLocalEnvelopes;
+    NSData *_permittedRemoteMeasurement;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool shouldFetchAssetContentInMemory; // @synthesize shouldFetchAssetContentInMemory=_shouldFetchAssetContentInMemory;
 @property(nonatomic) _Bool local; // @synthesize local=_local;
+@property(copy, nonatomic) NSData *permittedRemoteMeasurement; // @synthesize permittedRemoteMeasurement=_permittedRemoteMeasurement;
+@property(copy, nonatomic) NSArray *requestLocalEnvelopes; // @synthesize requestLocalEnvelopes=_requestLocalEnvelopes;
 @property(copy, nonatomic) NSArray *requestLocalSerializations; // @synthesize requestLocalSerializations=_requestLocalSerializations;
 @property(copy, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;

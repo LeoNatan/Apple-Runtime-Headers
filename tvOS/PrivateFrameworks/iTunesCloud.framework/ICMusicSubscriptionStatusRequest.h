@@ -13,23 +13,25 @@
 
 @interface ICMusicSubscriptionStatusRequest : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _shouldIgnoreCache;
     _Bool _allowsFallbackToExpiredStatus;
     _Bool _allowsFallbackToStatusNeedingReload;
-    _Bool _shouldIgnoreCache;
-    long long _carrierBundleProvisioningStyle;
+    _Bool _shouldReturnLastKnownStatusOnly;
+    ICStoreRequestContext *_storeRequestContext;
     long long _reason;
     long long _maximumRetryCount;
-    ICStoreRequestContext *_storeRequestContext;
+    long long _carrierBundleProvisioningStyle;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) ICStoreRequestContext *storeRequestContext; // @synthesize storeRequestContext=_storeRequestContext;
-@property(nonatomic) _Bool shouldIgnoreCache; // @synthesize shouldIgnoreCache=_shouldIgnoreCache;
-@property(nonatomic) long long maximumRetryCount; // @synthesize maximumRetryCount=_maximumRetryCount;
-@property(nonatomic) long long reason; // @synthesize reason=_reason;
 @property(nonatomic) long long carrierBundleProvisioningStyle; // @synthesize carrierBundleProvisioningStyle=_carrierBundleProvisioningStyle;
+@property(nonatomic) _Bool shouldReturnLastKnownStatusOnly; // @synthesize shouldReturnLastKnownStatusOnly=_shouldReturnLastKnownStatusOnly;
 @property(nonatomic) _Bool allowsFallbackToStatusNeedingReload; // @synthesize allowsFallbackToStatusNeedingReload=_allowsFallbackToStatusNeedingReload;
 @property(nonatomic) _Bool allowsFallbackToExpiredStatus; // @synthesize allowsFallbackToExpiredStatus=_allowsFallbackToExpiredStatus;
+@property(nonatomic) long long maximumRetryCount; // @synthesize maximumRetryCount=_maximumRetryCount;
+@property(nonatomic) _Bool shouldIgnoreCache; // @synthesize shouldIgnoreCache=_shouldIgnoreCache;
+@property(nonatomic) long long reason; // @synthesize reason=_reason;
+@property(copy, nonatomic) ICStoreRequestContext *storeRequestContext; // @synthesize storeRequestContext=_storeRequestContext;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

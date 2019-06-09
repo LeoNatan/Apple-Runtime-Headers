@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UITapRecognizerDelegate-Protocol.h>
 
-@class NSArray, NSMutableSet, NSObservation, NSString, UIDelayedAction, UIHeldAction, UITapRecognizer;
+@class NSArray, NSMutableSet, NSObservation, NSString, UIDelayedAction, UIHeldAction, UILongPressGestureVelocitySample, UITapRecognizer;
 
 @interface UILongPressGestureRecognizer : UIGestureRecognizer <UITapRecognizerDelegate>
 {
@@ -34,9 +34,22 @@
     unsigned int _allowsDynamicTouchesList:1;
     _Bool _requiresQuietImpulse;
     _Bool _requiresQuietImpulseForCurrentTouchSequence;
+    _Bool __prefersToBeExclusiveWithCompetingLongPressGestureRecognizers;
     long long _buttonType;
+    UILongPressGestureVelocitySample *_velocitySample;
+    UILongPressGestureVelocitySample *_previousVelocitySample;
+    double _lastTouchTime;
+    struct CGPoint _lastSceneReferenceLocation;
+    struct CGPoint _lastUnadjustedSceneReferenceLocation;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool _prefersToBeExclusiveWithCompetingLongPressGestureRecognizers; // @synthesize _prefersToBeExclusiveWithCompetingLongPressGestureRecognizers=__prefersToBeExclusiveWithCompetingLongPressGestureRecognizers;
+@property(nonatomic) double lastTouchTime; // @synthesize lastTouchTime=_lastTouchTime;
+@property(nonatomic) struct CGPoint lastUnadjustedSceneReferenceLocation; // @synthesize lastUnadjustedSceneReferenceLocation=_lastUnadjustedSceneReferenceLocation;
+@property(nonatomic) struct CGPoint lastSceneReferenceLocation; // @synthesize lastSceneReferenceLocation=_lastSceneReferenceLocation;
+@property(readonly, getter=_previousVelocitySample) UILongPressGestureVelocitySample *_previousVelocitySample; // @synthesize _previousVelocitySample;
+@property(readonly, getter=_velocitySample) UILongPressGestureVelocitySample *_velocitySample; // @synthesize _velocitySample;
 @property(nonatomic, setter=_setRequiresQuietImpulseForCurrentTouchSequence:) _Bool _requiresQuietImpulseForCurrentTouchSequence; // @synthesize _requiresQuietImpulseForCurrentTouchSequence;
 @property(nonatomic, setter=_setRequiresQuietImpulse:) _Bool _requiresQuietImpulse; // @synthesize _requiresQuietImpulse;
 @property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
@@ -45,6 +58,16 @@
 @property(retain, nonatomic) NSArray *touches; // @synthesize touches=_touches;
 - (void).cxx_destruct;
 - (_Bool)canPreventGestureRecognizer:(id)arg1;
+- (void)_centroidMovedTo:(struct CGPoint)arg1 atTime:(double)arg2 physicalTouch:(id)arg3;
+- (struct CGPoint)_adjustSceneReferenceLocation:(struct CGPoint)arg1;
+- (struct CGPoint)_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint)arg1;
+- (struct UIOffset)_offsetInViewFromSceneReferenceLocation:(struct CGPoint)arg1 toSceneReferenceLocation:(struct CGPoint)arg2;
+- (struct CGPoint)_locationOfTouches:(id)arg1;
+- (struct CGPoint)velocityInView:(id)arg1;
+- (struct CGPoint)_convertVelocitySample:(id)arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
+- (struct CGPoint)_convertPoint:(struct CGPoint)arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
+- (struct CGPoint)_convertPoint:(struct CGPoint)arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
+- (void)_resetVelocitySamples;
 - (struct CGPoint)locationOfTouch:(unsigned long long)arg1 inView:(id)arg2;
 - (unsigned long long)numberOfTouches;
 - (struct CGPoint)locationInView:(id)arg1;
@@ -85,6 +108,8 @@
 - (_Bool)activeTouchesExceedAllowableSeparation;
 - (void)_resetGestureRecognizer;
 - (void)setView:(id)arg1;
+- (double)_allowableTouchTimeSeparation;
+- (void)_setAllowableTouchTimeSeparation:(double)arg1;
 - (void)_setAllowableSeparation:(double)arg1;
 - (double)_allowableSeparation;
 - (void)_setAllowsDynamicTouchesList:(_Bool)arg1;

@@ -4,27 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ScreenTimeUI/STIntroSplashViewController.h>
+#import <UIKit/UIViewController.h>
 
 #import <ScreenTimeUI/UITableViewDataSource-Protocol.h>
 #import <ScreenTimeUI/UITableViewDelegate-Protocol.h>
 
-@class NSString, STAllowance, UITableView;
+@class NSLayoutConstraint, NSString, STAllowance, UITableView;
 
-@interface STIntroRestrictionsViewController : STIntroSplashViewController <UITableViewDataSource, UITableViewDelegate>
+__attribute__((visibility("hidden")))
+@interface STIntroRestrictionsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
     _Bool _showAllCategories;
     _Bool _showingDatePicker;
-    UITableView *_categoriesTableView;
-    UITableView *_settingsTableView;
     STAllowance *_allowance;
+    UITableView *_categoriesTableView;
+    NSLayoutConstraint *_categoriesHeightConstraint;
+    UITableView *_settingsTableView;
+    NSLayoutConstraint *_settingsHeightConstraint;
 }
 
 @property _Bool showingDatePicker; // @synthesize showingDatePicker=_showingDatePicker;
 @property _Bool showAllCategories; // @synthesize showAllCategories=_showAllCategories;
-@property(retain) STAllowance *allowance; // @synthesize allowance=_allowance;
+@property(retain) NSLayoutConstraint *settingsHeightConstraint; // @synthesize settingsHeightConstraint=_settingsHeightConstraint;
 @property(retain) UITableView *settingsTableView; // @synthesize settingsTableView=_settingsTableView;
+@property(retain) NSLayoutConstraint *categoriesHeightConstraint; // @synthesize categoriesHeightConstraint=_categoriesHeightConstraint;
 @property(retain) UITableView *categoriesTableView; // @synthesize categoriesTableView=_categoriesTableView;
+@property(retain) STAllowance *allowance; // @synthesize allowance=_allowance;
 - (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
@@ -36,10 +41,10 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)selectedCategories;
 - (_Bool)_hasSetTimeAmount;
-- (void)_updateSaveButton;
-- (void)datePickerChanged:(id)arg1;
+- (void)_datePickerChanged:(id)arg1;
 - (void)dealloc;
-- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)updateViewConstraints;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 

@@ -16,8 +16,9 @@
 }
 
 + (id)pl_sharedAccountStore;
+- (void).cxx_destruct;
 - (void)clearCachedProperties;
-@property(readonly) ACAccount *cachedPrimaryAppleAccount;
+@property(readonly) __weak ACAccount *cachedPrimaryAppleAccount;
 - (void)accountDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;

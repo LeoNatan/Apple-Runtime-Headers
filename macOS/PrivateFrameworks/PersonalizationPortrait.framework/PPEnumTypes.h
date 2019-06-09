@@ -10,15 +10,11 @@
 {
 }
 
-+ (id)rankingMethodValidValueList;
 + (id)locationConsumerValidValueList;
-+ (id)reverseRankingMethodMapping;
-+ (id)rankingMethodMapping;
 + (id)reverseLocationConsumerMapping;
 + (id)locationConsumerMapping;
 + (id)reverseDeviceFilterMapping;
 + (id)deviceFilterMapping;
-+ (id)stringForRankingMethod:(unsigned long long)arg1;
 + (id)stringForLocationConsumer:(unsigned long long)arg1;
 + (id)stringForDeviceFilter:(unsigned long long)arg1;
 

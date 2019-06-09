@@ -10,12 +10,12 @@
 
 @interface EOSDiagnosticSummary : NSObject
 {
-    BOOL _productionMode;
     BOOL _userAuth;
     BOOL _preflighted;
     BOOL _restoreAfterBootFailure;
     BOOL _submittedFailureLogsToCrashReporter;
     NSString *_fromBuild;
+    NSString *_productionMode;
     NSString *_clientName;
     NSString *_toBuild;
     NSString *_toVariant;
@@ -38,7 +38,7 @@
 @property(retain) NSString *toVariant; // @synthesize toVariant=_toVariant;
 @property(retain) NSString *toBuild; // @synthesize toBuild=_toBuild;
 @property(retain) NSString *clientName; // @synthesize clientName=_clientName;
-@property BOOL productionMode; // @synthesize productionMode=_productionMode;
+@property(retain) NSString *productionMode; // @synthesize productionMode=_productionMode;
 @property(retain) NSString *fromBuild; // @synthesize fromBuild=_fromBuild;
 - (void).cxx_destruct;
 - (void)_addRestoreUUIDToNVRAM;

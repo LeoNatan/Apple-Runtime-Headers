@@ -13,6 +13,7 @@
     _Bool _isRenderingImageTemplate;
     UIColor *_defaultColorForTemplate;
     UIColor *_highlightColorForTemplate;
+    UIColor *_overrideTextColor;
     _Bool _usePlatterStyle;
     struct UIEdgeInsets _hitTestEdgeInsets;
 }
@@ -31,9 +32,8 @@
 - (void)setHighlightColorForTemplate:(id)arg1;
 - (void)setDefaultColorForTemplate:(id)arg1;
 - (void)_setIsRenderingImageTemplate:(_Bool)arg1;
+- (void)setOverrideTextColor:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)_updateStyling;
 - (void)setHighlighted:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

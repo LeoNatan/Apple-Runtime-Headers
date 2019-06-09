@@ -14,10 +14,7 @@ __attribute__((visibility("hidden")))
 {
     NSObject<OS_dispatch_queue> *_additionalInfoQueue;
     unsigned int _flags;
-    unsigned int _unit;
     NSNumber *_version;
-    NSString *_unlocalizedDescription;
-    NSString *_localizedDescription;
     NSDictionary *_localizedDescriptionDictionary;
     NSData *_declaringBundleBookmark;
     NSString *_declaringBundleDelegate;
@@ -28,31 +25,33 @@ __attribute__((visibility("hidden")))
     NSArray *_iconFiles;
     NSURL *_parentIconURL;
     NSString *_referenceURLString;
+    NSString *_glyphName;
+    NSString *_iconName;
 }
 
 + (BOOL)supportsSecureCoding;
+- (id)_iconName;
+- (id)_glyphName;
 - (id)_kernelExtensionName;
-- (id)_unlocalizedDescription;
+- (id)_localizedDescriptionDictionary;
 - (id)parentIdentifiers;
 - (id)tagSpecification;
 - (id)version;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_localizedDescriptionWithPreferredLocalizations:(id)arg1 checkingParents:(BOOL)arg2;
 - (BOOL)_isWildcard;
 - (id)referenceURL;
 - (id)_iconURL;
-- (id)_localizedDescriptionDictionary;
 - (BOOL)_isAppleInternal;
 - (BOOL)_isPublic;
 - (BOOL)_isActive;
 - (BOOL)isDeclared;
 - (id)declaration;
 - (id)declaringBundleURL;
-- (id)initWithContext:(struct LSContext *)arg1 UTTypeID:(unsigned int)arg2 UTTypeData:(const CDStruct_2b3aadc0 *)arg3;
+- (id)localizedDescription;
+- (id)initWithContext:(struct LSContext *)arg1 UTTypeID:(unsigned int)arg2 UTTypeData:(const CDStruct_3253f94e *)arg3 propertiesToResolve:(unsigned long long)arg4;
 - (id)_iconURLCheckingParents:(BOOL)arg1;
-- (BOOL)validateCollectionTypes;
 - (BOOL)needsWorkaroundFor22092605;
 
 @end

@@ -13,8 +13,9 @@ __attribute__((visibility("hidden")))
     float _defaultLineHeight;
 }
 
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
-- (unsigned long long)_themeImageState;
+- (long long)_interiorContentStateInView:(id)arg1;
+- (long long)_interiorContentPresentationStateInView:(id)arg1;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (BOOL)_hasRolloverContentArt;
 - (long long)interiorBackgroundStyle;
 - (id)_textAttributes;

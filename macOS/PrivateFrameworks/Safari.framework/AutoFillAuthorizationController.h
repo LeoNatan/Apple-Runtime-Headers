@@ -6,21 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class LAUIAuthenticationSheetController, NSData;
+@class LAContext, LAUIAuthenticationSheetController, NSData, NSView;
 
-__attribute__((visibility("hidden")))
 @interface AutoFillAuthorizationController : NSObject
 {
     LAUIAuthenticationSheetController *_sheetController;
+    LAContext *_currentLAContext;
     CDUnknownBlockType _completionBlock;
 }
 
 - (void).cxx_destruct;
-- (void)_updateTouchIDAvailabilityIfNecessary:(id)arg1;
 - (void)_didToggleTouchIDToAutoFill:(id)arg1;
 - (void)dealloc;
 - (void)endSheet;
 @property(readonly, nonatomic) NSData *currentExternalizedContext;
+@property(readonly, nonatomic) NSView *view;
+- (void)setUpViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)beginSheetForWindow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithItemName:(id)arg1 autoFillAction:(long long)arg2;
 

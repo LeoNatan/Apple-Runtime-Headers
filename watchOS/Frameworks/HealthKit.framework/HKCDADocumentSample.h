@@ -32,7 +32,7 @@
 - (_Bool)_validateDocumentContentWithError:(id *)arg1;
 - (_Bool)prepareForDelivery:(id *)arg1;
 - (_Bool)prepareForSaving:(id *)arg1;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
 - (id)description;
 
 @end

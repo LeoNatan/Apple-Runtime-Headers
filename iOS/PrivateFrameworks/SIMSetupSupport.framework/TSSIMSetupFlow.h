@@ -20,6 +20,8 @@
 + (id)initWithAppName:(id)arg1 requireSetup:(_Bool)arg2;
 + (id)initActivationCodeRequireSetup:(_Bool)arg1;
 + (id)initWithSetupFlowWithIccid:(id)arg1 showAddPlan:(_Bool)arg2;
++ (id)initWithOptions:(id)arg1;
++ (void)needsToRunUsingMessageSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)needsToRun:(CDUnknownBlockType)arg1;
 @property __weak id <TSSIMSetupDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

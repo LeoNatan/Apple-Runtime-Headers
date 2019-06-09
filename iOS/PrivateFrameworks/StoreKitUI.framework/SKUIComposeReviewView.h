@@ -12,6 +12,7 @@
 @class NSString, SKUIComposeReviewHeaderView, SKUIReviewMetadata, SULoadingView, SUTextContentView, UIScrollView;
 @protocol SKUIComposeReviewViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIComposeReviewView : UIView <SKUIComposeReviewHeaderDelegate, UITextContentViewDelegate>
 {
     long long _currentBodyLength;

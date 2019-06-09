@@ -6,7 +6,6 @@
 
 #import <Navigation/MNCommuteDestinationScore.h>
 
-__attribute__((visibility("hidden")))
 @interface MNCommuteDestinationStartEndTimeScore : MNCommuteDestinationScore
 {
 }

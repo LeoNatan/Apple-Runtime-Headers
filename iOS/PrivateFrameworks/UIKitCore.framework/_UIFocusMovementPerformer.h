@@ -16,9 +16,14 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak id <_UIFocusMovementPerformerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (struct CGRect)_minimumSearchAreaForContainer:(id)arg1 inWindow:(id)arg2 shouldLoadScrollableContainer:(_Bool)arg3;
 - (struct CGRect)_minimumSearchAreaForContainer:(id)arg1 inWindow:(id)arg2;
-- (void)_loadScrollableContentForFocusMovement:(id)arg1;
+- (_Bool)_isMovementValidForFocusSequences:(id)arg1;
+- (id)_nextLinearCandidateLoadingScrollableContentForRequest:(id)arg1;
+- (id)_fakeFocusedViewForFocusMovement:(id)arg1 searchArea:(struct CGRect)arg2;
+- (id)_itemContainersToCheckForRequest:(id)arg1;
 - (id)_bestCandidateForFocusMovement:(id)arg1;
+- (id)_bestCandidateForHierarchicalFocusMovement:(id)arg1;
 - (id)_bestCandidateForLinearFocusMovement:(id)arg1;
 - (id)_bestCandidateForNonLinearFocusMovement:(id)arg1;
 - (id)_findFocusCandidateBySearchingLinearFocusMovementSequencesForRequest:(id)arg1;

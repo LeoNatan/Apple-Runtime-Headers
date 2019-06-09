@@ -16,6 +16,7 @@
 - (_Bool)composeChatControllerCanEditRecipients;
 
 @optional
+- (void)composeChatController:(CKComposeChatController *)arg1 didLoadEntryViewContentWithCompletion:(void (^)(NSValue *))arg2;
 - (void)composeChatController:(CKComposeChatController *)arg1 shouldSendComposition:(CKComposition *)arg2 inConversation:(CKConversation *)arg3 completion:(void (^)(_Bool))arg4;
 @end
 

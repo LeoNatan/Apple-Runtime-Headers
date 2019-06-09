@@ -13,17 +13,25 @@
 @interface SFRemoteHotspotDevice : NSObject <NSSecureCoding>
 {
     unsigned char _networkType;
+    _Bool _osSupportsAutoHotspot;
+    _Bool _supportsCompanionLink;
     _Bool _hasDuplicates;
     NSString *_deviceName;
     NSString *_deviceIdentifier;
     NSNumber *_batteryLife;
     NSNumber *_signalStrength;
+    NSString *_model;
+    long long _group;
     NSData *_advertisementData;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSData *advertisementData; // @synthesize advertisementData=_advertisementData;
 @property _Bool hasDuplicates; // @synthesize hasDuplicates=_hasDuplicates;
+@property(nonatomic) _Bool supportsCompanionLink; // @synthesize supportsCompanionLink=_supportsCompanionLink;
+@property long long group; // @synthesize group=_group;
+@property _Bool osSupportsAutoHotspot; // @synthesize osSupportsAutoHotspot=_osSupportsAutoHotspot;
+@property(retain) NSString *model; // @synthesize model=_model;
 @property(retain) NSNumber *signalStrength; // @synthesize signalStrength=_signalStrength;
 @property unsigned char networkType; // @synthesize networkType=_networkType;
 @property(retain) NSNumber *batteryLife; // @synthesize batteryLife=_batteryLife;
@@ -31,8 +39,13 @@
 @property(copy) NSString *deviceName; // @synthesize deviceName=_deviceName;
 - (void).cxx_destruct;
 - (unsigned char)networkTypeForIncomingType:(unsigned char)arg1;
+- (unsigned char)networkTypeFromInfo:(unsigned int)arg1;
+- (id)signalStrengthFromInfo:(unsigned int)arg1;
+- (id)batteryLifeFromInfo:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)updateWithHotspotInfo:(unsigned int)arg1;
+- (_Bool)componentsAreEqualTo:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;

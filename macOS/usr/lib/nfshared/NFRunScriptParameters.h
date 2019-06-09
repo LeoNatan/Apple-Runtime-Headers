@@ -15,7 +15,6 @@
     BOOL _checkWhitelist;
     BOOL _initialSelectBeforeRun;
     BOOL _includeAPDUDuration;
-    BOOL _deactivateAllApps;
     NSString *_seid;
     NSArray *_whitelistedAID;
     double _outTotalAPDUExecutionDuration;
@@ -25,7 +24,6 @@
 + (BOOL)supportsSecureCoding;
 @property unsigned long long outFinalSWStatus; // @synthesize outFinalSWStatus=_outFinalSWStatus;
 @property double outTotalAPDUExecutionDuration; // @synthesize outTotalAPDUExecutionDuration=_outTotalAPDUExecutionDuration;
-@property BOOL deactivateAllApps; // @synthesize deactivateAllApps=_deactivateAllApps;
 @property BOOL includeAPDUDuration; // @synthesize includeAPDUDuration=_includeAPDUDuration;
 @property BOOL initialSelectBeforeRun; // @synthesize initialSelectBeforeRun=_initialSelectBeforeRun;
 @property(retain) NSArray *whitelistedAID; // @synthesize whitelistedAID=_whitelistedAID;

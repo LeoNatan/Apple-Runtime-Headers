@@ -10,6 +10,7 @@
 
 @class OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface MFPen : NSObject <MFObject>
 {
     int m_penStyle;

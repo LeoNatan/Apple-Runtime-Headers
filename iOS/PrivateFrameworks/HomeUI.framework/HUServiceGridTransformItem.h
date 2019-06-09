@@ -6,22 +6,22 @@
 
 #import <Home/HFHomeKitTransformItem.h>
 
-#import <HomeUI/HFCharacteristicWriteActionBuilderFactory-Protocol.h>
+#import <HomeUI/HFActionBuilderFactory-Protocol.h>
 #import <HomeUI/HFServiceVendor-Protocol.h>
 
-@class HFItem, NSString;
-@protocol HFHomeKitItemProtocol><HFServiceVendor><HFCharacteristicWriteActionBuilderFactory;
+@class HFItem, NSSet, NSString;
+@protocol HFHomeKitItemProtocol><HFServiceVendor><HFActionBuilderFactory;
 
-@interface HUServiceGridTransformItem : HFHomeKitTransformItem <HFServiceVendor, HFCharacteristicWriteActionBuilderFactory>
+@interface HUServiceGridTransformItem : HFHomeKitTransformItem <HFServiceVendor, HFActionBuilderFactory>
 {
 }
 
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (_Bool)actionsMayRequireDeviceUnlock;
-- (_Bool)containsActionableCharacteristics;
+- (_Bool)containsActions;
 - (id)accessories;
-- (id)services;
-@property(readonly, nonatomic) HFItem<HFHomeKitItemProtocol><HFServiceVendor><HFCharacteristicWriteActionBuilderFactory> *sourceServicePickerItem;
+@property(readonly, nonatomic) NSSet *services;
+@property(readonly, nonatomic) HFItem<HFHomeKitItemProtocol><HFServiceVendor><HFActionBuilderFactory> *sourceServicePickerItem;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

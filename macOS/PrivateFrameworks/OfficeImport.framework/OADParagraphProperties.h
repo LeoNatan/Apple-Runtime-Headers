@@ -8,6 +8,7 @@
 
 @class NSArray, OADBulletColor, OADBulletFont, OADBulletProperties, OADBulletSize, OADTextSpacing;
 
+__attribute__((visibility("hidden")))
 @interface OADParagraphProperties : OADCharacterProperties
 {
     int mLevel;

@@ -131,6 +131,13 @@ struct os_unfair_lock_s {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long _field1;
+    id *_field2;
+    unsigned long long *_field3;
+    unsigned long long _field4[5];
+} CDStruct_70511ce9;
+
+typedef struct {
     char _field1;
     char _field2;
     char _field3;
@@ -146,6 +153,11 @@ typedef struct {
 } CDStruct_550fdc95;
 
 typedef struct {
+    char _field1;
+    long long _field2;
+} CDStruct_56eee5a4;
+
+typedef struct {
     double left;
     double top;
     double right;
@@ -153,10 +165,15 @@ typedef struct {
 } CDStruct_1edcc8d7;
 
 typedef struct {
-    int _field1;
-    int _field2;
-    void *_field3;
-} CDStruct_da23731b;
+    float _field1;
+    float _field2;
+    float _field3;
+} CDStruct_869f9c67;
+
+typedef struct {
+    float _field1;
+    float _field2;
+} CDStruct_b2fbf00d;
 
 typedef struct {
     int width;
@@ -209,4 +226,11 @@ typedef struct {
     CDStruct_e83c9415 source;
     CDStruct_e83c9415 target;
 } CDStruct_82206317;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    float relativeToEnclosingRegion;
+    long long cell;
+} CDUnion_4a99137e;
 

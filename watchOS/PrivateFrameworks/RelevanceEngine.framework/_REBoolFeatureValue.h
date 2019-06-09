@@ -11,6 +11,7 @@
 }
 
 + (id)featureValueWithBool:(_Bool)arg1;
+- (unsigned long long)_integralFeatureValue;
 - (unsigned int)type;
 
 @end

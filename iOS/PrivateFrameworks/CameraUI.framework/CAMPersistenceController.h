@@ -8,11 +8,12 @@
 
 #import <CameraUI/CAMCaptureService-Protocol.h>
 #import <CameraUI/CAMStillImagePersistenceCoordinatorDelegate-Protocol.h>
+#import <CameraUI/CAMVideoPersistenceCoordinationDelegate-Protocol.h>
 
 @class CAMBurstController, CAMIrisVideoController, CAMLocationController, CAMPowerController, CAMProtectionController, CAMThumbnailGenerator, NSMapTable, NSMutableArray, NSMutableDictionary, NSString;
 @protocol CAMPersistenceResultDelegate, OS_dispatch_queue;
 
-@interface CAMPersistenceController : NSObject <CAMStillImagePersistenceCoordinatorDelegate, CAMCaptureService>
+@interface CAMPersistenceController : NSObject <CAMStillImagePersistenceCoordinatorDelegate, CAMVideoPersistenceCoordinationDelegate, CAMCaptureService>
 {
     struct {
         _Bool respondsToDidCompleteAllLocalPersistenceForRequest;
@@ -32,17 +33,19 @@
     NSObject<OS_dispatch_queue> *__resultDelegateIsolationQueue;
     NSObject<OS_dispatch_queue> *__coordinationQueue;
     NSMapTable *__coordinationQueueGroupsByIdentifier;
-    NSMutableDictionary *__coordinationQueue_persistenceCoordinators;
+    NSMutableDictionary *__coordinationQueue_stillImagePersistenceCoordinators;
+    NSMutableDictionary *__coordinationQueue_videoPersistenceCoordinators;
 }
 
 + (id)uniquePathForAssetWithUUID:(id)arg1 captureTime:(double)arg2 extension:(id)arg3 usingIncomingDirectory:(_Bool)arg4;
 + (id)uniqueIncomingPathForAssetWithUUID:(id)arg1 captureTime:(double)arg2 extension:(id)arg3;
 + (id)_pathForIncomingDirectory;
 + (id)delimiterForIncomingAssetFilenames;
-+ (id)clientVideoMetadataForRequest:(id)arg1 withCreationDate:(id)arg2 isEV0ForHDR:(_Bool)arg3;
++ (id)clientVideoMetadataForRequest:(id)arg1 withCreationDate:(id)arg2 isEV0ForHDR:(_Bool)arg3 livePhotoIdentifierOverride:(id)arg4;
 + (id)clientVideoMetadataForLocation:(id)arg1 withCreationDate:(id)arg2;
 + (id)videoMetadataDateFormatter;
-@property(readonly, nonatomic) NSMutableDictionary *_coordinationQueue_persistenceCoordinators; // @synthesize _coordinationQueue_persistenceCoordinators=__coordinationQueue_persistenceCoordinators;
+@property(readonly, nonatomic) NSMutableDictionary *_coordinationQueue_videoPersistenceCoordinators; // @synthesize _coordinationQueue_videoPersistenceCoordinators=__coordinationQueue_videoPersistenceCoordinators;
+@property(readonly, nonatomic) NSMutableDictionary *_coordinationQueue_stillImagePersistenceCoordinators; // @synthesize _coordinationQueue_stillImagePersistenceCoordinators=__coordinationQueue_stillImagePersistenceCoordinators;
 @property(readonly, nonatomic) NSMapTable *_coordinationQueueGroupsByIdentifier; // @synthesize _coordinationQueueGroupsByIdentifier=__coordinationQueueGroupsByIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_coordinationQueue; // @synthesize _coordinationQueue=__coordinationQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_resultDelegateIsolationQueue; // @synthesize _resultDelegateIsolationQueue=__resultDelegateIsolationQueue;
@@ -70,14 +73,19 @@
 - (id)_persistVideoCaptureResult:(id)arg1 withRequest:(id)arg2;
 - (id)_stillPersistenceUUIDForRequest:(id)arg1 withVideoResult:(id)arg2;
 - (id)_videoPersistenceUUIDForRequest:(id)arg1 withResult:(id)arg2;
+- (void)_dispatchRemotePersistenceForLocalVideoPersistenceResult:(id)arg1 request:(id)arg2 powerAssertionReason:(unsigned int)arg3;
+- (void)_coordinateRemotePersistenceForVideoLocalResult:(id)arg1 coordinationInfo:(id)arg2 request:(id)arg3;
 - (void)_locallyPersistVideoCaptureResult:(id)arg1 forRequest:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_notifyDelegateOfCompletedVideoLocalPersistenceForRequest:(id)arg1 withResult:(id)arg2;
+- (void)videoPersistenceCoordinator:(id)arg1 requestsTimeoutScheduledForDeferredRemotePersistenceForCoordinationInfo:(id)arg2 request:(id)arg3;
+- (void)videoPersistenceCoordinator:(id)arg1 requestsRemotePersistenceForLocalPersistenceResult:(id)arg2 captureRequest:(id)arg3 powerAssertionReason:(unsigned int)arg4;
 - (void)_handleVideoPersistenceForRequest:(id)arg1 withResult:(id)arg2;
 - (void)_remotelyPersistStillImageJob:(id)arg1 forRequest:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_handleCompletedStillImageJobForRequest:(id)arg1 withReply:(id)arg2 fromBatchOfSize:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4 error:(id)arg5;
 - (void)_notifyDelegateOfCompletedStillImageRemotePersistenceForRequest:(id)arg1 withReply:(id)arg2 fromBatchOfSize:(unsigned long long)arg3 error:(id)arg4;
 - (id)_jobDictionaryForStillImageLocalResult:(id)arg1 fullsizeRenderLocalResult:(id)arg2 fromRequest:(id)arg3;
 - (id)_xmpEncodedDiagnosticDataFromDictionary:(id)arg1;
+- (id)_adjustmentsDataForRequest:(id)arg1 captureDimensions:(CDStruct_79c71658)arg2 portraitMetadata:(id)arg3;
 - (_Bool)_writeDataToURL:(id)arg1 withData:(id)arg2 duringBurst:(_Bool)arg3 error:(out id *)arg4;
 - (_Bool)_writeJPEGToURL:(id)arg1 withData:(id)arg2 thumbnail:(id)arg3 properties:(id)arg4 duringBurst:(_Bool)arg5 error:(out id *)arg6;
 - (struct __CFWriteStream *)_createOpenWriteStreamWithURL:(id)arg1 forBurst:(_Bool)arg2;

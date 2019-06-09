@@ -29,6 +29,7 @@
 - (void)setScaleCheckboxAction:(id)arg1;
 - (void)setObjectValue:(id)arg1;
 @property(readonly, nonatomic) QFilterImageInfo *imageInfo;
+- (void)dealloc;
 
 @end
 

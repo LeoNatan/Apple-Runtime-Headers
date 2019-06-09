@@ -15,8 +15,10 @@
     _Bool _isCancelled;
     _Bool _shouldShowCancelButton;
     _Bool _shouldShowCircularProgress;
+    _Bool _allowSingleUnitProgress;
     _Bool _progressViewControllerDidFinishPresenting;
     _Bool _shouldDismissProgressViewController;
+    NSString *_customCancelButtonTitle;
     NSString *_progressFormatString;
     struct UIViewController *_viewControllerToPresentFrom;
     struct UIWindow *_window;
@@ -42,9 +44,11 @@
 @property(retain, nonatomic) id keepAlive; // @synthesize keepAlive=_keepAlive;
 @property(nonatomic) double intervalBeforeOpeningProgressDialog; // @synthesize intervalBeforeOpeningProgressDialog=_intervalBeforeOpeningProgressDialog;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
+@property(nonatomic) _Bool allowSingleUnitProgress; // @synthesize allowSingleUnitProgress=_allowSingleUnitProgress;
 @property(nonatomic) _Bool shouldShowCircularProgress; // @synthesize shouldShowCircularProgress=_shouldShowCircularProgress;
 @property(retain, nonatomic) UIViewController *viewControllerToPresentFrom; // @synthesize viewControllerToPresentFrom=_viewControllerToPresentFrom;
 @property(copy, nonatomic) NSString *progressFormatString; // @synthesize progressFormatString=_progressFormatString;
+@property(retain, nonatomic) NSString *customCancelButtonTitle; // @synthesize customCancelButtonTitle=_customCancelButtonTitle;
 @property(nonatomic) _Bool shouldShowCancelButton; // @synthesize shouldShowCancelButton=_shouldShowCancelButton;
 @property(nonatomic) _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 - (void).cxx_destruct;

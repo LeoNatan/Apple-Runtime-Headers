@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface InternalNetworkStateRecord : NSObject
 {
     long long _stateAge;

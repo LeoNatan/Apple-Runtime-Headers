@@ -13,7 +13,7 @@
     NSString *tempDirectory;
 }
 
-+ (BOOL)needsDirectAccessToSendOrReceiveResult;
++ (BOOL)streamsResults;
 + (int)actionID;
 @property(retain) NSString *tempDirectory; // @synthesize tempDirectory;
 - (void).cxx_destruct;

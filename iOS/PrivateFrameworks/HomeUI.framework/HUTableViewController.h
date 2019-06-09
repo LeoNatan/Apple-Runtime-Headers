@@ -12,6 +12,7 @@
 
 @interface HUTableViewController : UITableViewController <HUResizableCellDelegate>
 {
+    _Bool _sectionContentInsetFollowsLayoutMargins;
     _Bool _viewLayingOut;
     NSHashTable *_childViewControllersAtViewWillAppearTime;
     NSHashTable *_childViewControllersAtViewWillDisappearTime;
@@ -22,6 +23,7 @@
 @property(retain, nonatomic) NSMapTable *installedChildViewControllersKeyedByCell; // @synthesize installedChildViewControllersKeyedByCell=_installedChildViewControllersKeyedByCell;
 @property(retain, nonatomic) NSHashTable *childViewControllersAtViewWillDisappearTime; // @synthesize childViewControllersAtViewWillDisappearTime=_childViewControllersAtViewWillDisappearTime;
 @property(retain, nonatomic) NSHashTable *childViewControllersAtViewWillAppearTime; // @synthesize childViewControllersAtViewWillAppearTime=_childViewControllersAtViewWillAppearTime;
+@property(nonatomic) _Bool sectionContentInsetFollowsLayoutMargins; // @synthesize sectionContentInsetFollowsLayoutMargins=_sectionContentInsetFollowsLayoutMargins;
 - (void).cxx_destruct;
 - (void)didUpdateRequiredHeightForCell:(id)arg1;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
@@ -35,6 +37,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (void)contentSizeCategoryDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

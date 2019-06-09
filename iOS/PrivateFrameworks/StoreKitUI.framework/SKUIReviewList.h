@@ -10,6 +10,7 @@
 
 @class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewList : NSObject <SKUICacheCoding>
 {
     NSDictionary *_dictionary;

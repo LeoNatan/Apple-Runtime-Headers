@@ -12,6 +12,7 @@
 @class NSString, SKUIClientContext, SKUIColorScheme, SKUIProductPageHeaderViewController, SKUIProductPagePlaceholderScrollView, UIActivityIndicatorView, UIScrollView;
 @protocol SKUIProductPageChildViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPagePlaceholderViewController : UIViewController <UIScrollViewDelegate, SKUIProductPageChildViewController>
 {
     SKUIClientContext *_clientContext;

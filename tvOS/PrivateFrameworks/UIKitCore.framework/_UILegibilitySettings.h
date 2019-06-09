@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <UIKitCore/BSXPCCoding-Protocol.h>
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
 
 @class NSString, UIColor;
 
-@interface _UILegibilitySettings : NSObject <NSSecureCoding, NSCopying>
+@interface _UILegibilitySettings : NSObject <NSSecureCoding, NSCopying, BSXPCCoding>
 {
     long long _style;
     UIColor *_contentColor;
@@ -37,9 +38,11 @@
 @property(retain, nonatomic) UIColor *primaryColor; // @synthesize primaryColor=_primaryColor;
 @property(retain, nonatomic) UIColor *contentColor; // @synthesize contentColor=_contentColor;
 @property(nonatomic) long long style; // @synthesize style=_style;
+- (void)encodeWithXPCDictionary:(id)arg1;
+- (id)initWithXPCDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (void)setPropertiesForStyle:(long long)arg1;
 - (void)dealloc;
@@ -49,6 +52,11 @@
 - (id)initWithContentColor:(id)arg1 contrast:(double)arg2;
 - (id)initWithContentColor:(id)arg1;
 - (id)initWithStyle:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

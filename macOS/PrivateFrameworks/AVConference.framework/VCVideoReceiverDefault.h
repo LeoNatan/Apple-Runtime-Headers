@@ -6,12 +6,14 @@
 
 #import <AVConference/VCVideoReceiverBase.h>
 
-@class VideoAttributes;
+@class VCDisplayLink, VCVideoStreamRateAdaptationFeedbackOnly, VideoAttributes;
 
 __attribute__((visibility("hidden")))
 @interface VCVideoReceiverDefault : VCVideoReceiverBase
 {
+    struct tagVCVideoReceiverConfig _videoReceiverConfig;
     struct tagHANDLE *_videoReceiverHandle;
+    struct tagHANDLE *_videoTransmitterHandle;
     long long _streamToken;
     void *_controlInfoGenerator;
     unsigned int remoteFrameWidth;
@@ -21,22 +23,26 @@ __attribute__((visibility("hidden")))
     BOOL _shouldEnableFaceZoom;
     double _lastKeyFrameRequestTime;
     unsigned short _lastKeyFrameRequestStreamID;
+    VCVideoStreamRateAdaptationFeedbackOnly *_rateAdaptation;
+    VCDisplayLink *_displayLink;
 }
 
 @property(nonatomic) BOOL shouldEnableFaceZoom; // @synthesize shouldEnableFaceZoom=_shouldEnableFaceZoom;
 @property(retain) VideoAttributes *remoteVideoAttributes; // @synthesize remoteVideoAttributes;
 - (void)handleActiveConnectionChange:(id)arg1;
-- (void)collectChannelMetrics:(CDStruct_1c8e0384 *)arg1 interval:(float)arg2;
+- (void)collectChannelMetrics:(CDStruct_3ab08b48 *)arg1 interval:(float)arg2;
 - (void)didSwitchFromStreamID:(unsigned short)arg1 toStreamID:(unsigned short)arg2;
 - (void)handleKeyFrameRequestWithSizeAndFistMBs:(unsigned short *)arg1 count:(int)arg2 didReceiveRTCPFB:(BOOL)arg3 didReceiveFIR:(BOOL)arg4;
 - (void)handleRequestingKeyFrameGenerationWithStreamID:(unsigned short)arg1;
 - (void)handleRemoteFrame:(struct __CVBuffer *)arg1 timestamp:(CDStruct_1b6d18a9)arg2 cameraStatusBits:(unsigned char)arg3;
 - (void)updateSourcePlayoutTimestamp:(CDStruct_1b6d18a9 *)arg1;
+- (void)displayLinkTick:(id)arg1;
 - (void)setEnableRateAdaptation:(BOOL)arg1 maxBitrate:(unsigned int)arg2 minBitrate:(unsigned int)arg3 adaptationInterval:(double)arg4;
 - (double)roundTripTime;
 - (void)setRoundTripTime:(double)arg1;
 - (void)rtcpSendIntervalElapsed;
 - (void)pauseVideo;
+- (unsigned int)lastDisplayedFrameRTPTimestamp;
 - (void)setTargetStreamID:(unsigned short)arg1;
 - (double)lastReceivedVideoRTCPPacketTime;
 - (double)lastReceivedVideoRTPPacketTime;
@@ -44,7 +50,7 @@ __attribute__((visibility("hidden")))
 - (void)startVideo;
 - (void)setEnableCVO:(BOOL)arg1 cvoExtensionID:(unsigned long long)arg2;
 - (void)dealloc;
-- (id)initWithConfig:(struct tagVCVideoReceiverConfig *)arg1 delegate:(id)arg2 reportingAgent:(struct opaqueRTCReporting *)arg3 statisticsCollector:(id)arg4;
+- (id)initWithConfig:(struct tagVCVideoReceiverConfig *)arg1 delegate:(id)arg2 reportingAgent:(struct opaqueRTCReporting *)arg3 statisticsCollector:(id)arg4 transmitterHandle:(struct tagHANDLE *)arg5;
 
 @end
 

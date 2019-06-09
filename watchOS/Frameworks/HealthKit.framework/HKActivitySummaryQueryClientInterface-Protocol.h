@@ -9,6 +9,6 @@
 @class NSArray, NSUUID;
 
 @protocol HKActivitySummaryQueryClientInterface <HKQueryClientInterface>
-- (void)client_deliverActivitySummaries:(NSArray *)arg1 queryUUID:(NSUUID *)arg2;
+- (void)client_deliverActivitySummaries:(NSArray *)arg1 isFinalBatch:(_Bool)arg2 clearPendingBatches:(_Bool)arg3 queryUUID:(NSUUID *)arg4;
 @end
 

@@ -17,16 +17,14 @@
     BOOL _everExpanded;
     BOOL _initiallyExpanded;
     struct {
-        unsigned int tappedItemIndex:1;
-        unsigned int everExpanded:1;
-        unsigned int initiallyExpanded:1;
-    } _has;
+        unsigned int has_tappedItemIndex:1;
+        unsigned int has_everExpanded:1;
+        unsigned int has_initiallyExpanded:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)proactiveItemType;
-@property(nonatomic) BOOL everExpanded; // @synthesize everExpanded=_everExpanded;
-@property(nonatomic) BOOL initiallyExpanded; // @synthesize initiallyExpanded=_initiallyExpanded;
-@property(retain, nonatomic) NSMutableArray *proactiveItems; // @synthesize proactiveItems=_proactiveItems;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,16 +33,20 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasTappedItemIndex;
-@property(nonatomic) int tappedItemIndex; // @synthesize tappedItemIndex=_tappedItemIndex;
+@property(nonatomic) int tappedItemIndex;
 @property(nonatomic) BOOL hasEverExpanded;
+@property(nonatomic) BOOL everExpanded;
 @property(nonatomic) BOOL hasInitiallyExpanded;
+@property(nonatomic) BOOL initiallyExpanded;
 - (id)proactiveItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)proactiveItemsCount;
 - (void)addProactiveItem:(id)arg1;
 - (void)clearProactiveItems;
+@property(retain, nonatomic) NSMutableArray *proactiveItems;
 
 @end
 

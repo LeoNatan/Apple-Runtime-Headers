@@ -43,6 +43,7 @@
 - (id)accountForHandle:(id)arg1;
 - (_Bool)accountExistsForHandle:(id)arg1;
 @property(readonly, nonatomic) NSArray *accounts;
+- (void)reset;
 - (void)stop;
 - (void)start;
 - (id)attributeDescriptions;

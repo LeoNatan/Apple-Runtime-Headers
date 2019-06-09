@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)_requiresDatabaseMappingEntitlement;
-- (_Bool)_shouldCacheResolvedResults;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (void)dealloc;
+- (void)yieldBundles:(const vector_12da65de *)arg1 context:(struct LSContext *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)initWithURL:(id)arg1;
 
 @end

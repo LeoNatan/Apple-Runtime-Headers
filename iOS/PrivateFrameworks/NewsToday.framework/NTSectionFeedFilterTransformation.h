@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) unsigned long long embedsLimit; // @synthesize embedsLimit=_embedsLimit;
 - (void).cxx_destruct;
 - (id)transformFeedItems:(id)arg1;
-- (id)initWithSubscribedTagIDs:(id)arg1 mutedTagIDs:(id)arg2 purchasedTagIDs:(id)arg3 readArticlesFilterMethod:(int)arg4 recentlyReadHistoryItems:(id)arg5 seenArticlesFilterMethod:(int)arg6 minimumTimeSinceFirstSeenToFilter:(double)arg7 recentlySeenHistoryItems:(id)arg8 supplementalFeedFilterOptions:(long long)arg9 embedsLimit:(unsigned long long)arg10 otherArticleIDs:(id)arg11 otherClusterIDs:(id)arg12 filterDate:(id)arg13;
+- (id)initWithTodayData:(id)arg1 configurationManager:(id)arg2 readArticlesFilterMethod:(int)arg3 seenArticlesFilterMethod:(int)arg4 minimumTimeSinceFirstSeenToFilter:(double)arg5 supplementalFeedFilterOptions:(long long)arg6 embedsLimit:(unsigned long long)arg7 otherArticleIDs:(id)arg8 otherClusterIDs:(id)arg9 filterDate:(id)arg10;
 - (id)init;
 
 // Remaining properties

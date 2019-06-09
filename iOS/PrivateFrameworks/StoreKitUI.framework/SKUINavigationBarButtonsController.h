@@ -10,6 +10,7 @@
 
 @class NSMapTable, NSString, SKUINavigationBarViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUINavigationBarButtonsController : SKUINavigationBarSectionController <SKUIItemOfferButtonDelegate>
 {
     NSMapTable *_buttonItemElements;

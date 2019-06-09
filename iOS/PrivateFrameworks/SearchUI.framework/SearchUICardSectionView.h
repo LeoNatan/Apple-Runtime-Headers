@@ -6,18 +6,14 @@
 
 #import <AppSupportUI/NUIContainerStackView.h>
 
-#import <SearchUI/NUIContainerStackViewDelegate-Protocol.h>
-
-@class NSString, SFCardSection, SearchUICardSectionRowModel, UIView;
+@class SFCardSection, SearchUICardSectionRowModel, UIView;
 @protocol SearchUIFeedbackDelegate;
 
-@interface SearchUICardSectionView : NUIContainerStackView <NUIContainerStackViewDelegate>
+@interface SearchUICardSectionView : NUIContainerStackView
 {
-    _Bool _spansFullWidth;
-    unsigned long long _style;
-    id <SearchUIFeedbackDelegate> _feedbackDelegate;
     UIView *_contentView;
     SearchUICardSectionRowModel *_rowModel;
+    id <SearchUIFeedbackDelegate> _feedbackDelegate;
     UIView *_chevronView;
 }
 
@@ -27,28 +23,24 @@
 + (_Bool)supportsRecyclingForCardSection:(id)arg1;
 + (int)separatorStyleForCardSection:(id)arg1;
 + (double)separatorInsetForLeadingImageForSection:(id)arg1;
-@property(retain) UIView *chevronView; // @synthesize chevronView=_chevronView;
+@property(retain, nonatomic) UIView *chevronView; // @synthesize chevronView=_chevronView;
+@property(nonatomic) __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
 @property(retain, nonatomic) SearchUICardSectionRowModel *rowModel; // @synthesize rowModel=_rowModel;
-@property(retain) UIView *contentView; // @synthesize contentView=_contentView;
-@property __weak id <SearchUIFeedbackDelegate> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
-@property(readonly) _Bool spansFullWidth; // @synthesize spansFullWidth=_spansFullWidth;
-@property unsigned long long style; // @synthesize style=_style;
+@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (id)description;
 - (void)presentViewController:(id)arg1;
 - (void)didInvalidateSizeAnimate:(_Bool)arg1;
 - (id)sendFeedbackForPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
 - (void)openPunchout:(id)arg1 triggerEvent:(unsigned long long)arg2;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)updateWithRowModel:(id)arg1;
 @property(readonly, nonatomic) SFCardSection *section;
 - (void)updateChevronVisible:(_Bool)arg1 leaveSpaceForChevron:(_Bool)arg2;
 - (id)setupContentView;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;
 
 @end
 

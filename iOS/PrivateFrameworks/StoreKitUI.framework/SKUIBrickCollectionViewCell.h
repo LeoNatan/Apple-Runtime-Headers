@@ -8,6 +8,7 @@
 
 @class NSString, SKUIClientContext, SKUICountdown, SKUICountdownView, UIColor, UIImage, UIImageView, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBrickCollectionViewCell : UICollectionViewCell
 {
     NSString *_accessibilityLabel;

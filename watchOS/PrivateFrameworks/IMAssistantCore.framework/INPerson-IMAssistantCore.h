@@ -15,6 +15,6 @@
 - (id)__im_assistant_initForContactResolutionResultWithContact:(id)arg1 type:(int)arg2 label:(id)arg3;
 - (id)__im_assistant_initWithContact:(id)arg1 imHandle:(id)arg2 type:(int)arg3 label:(id)arg4;
 - (id)__im_assistant_initWithContact:(id)arg1 imHandle:(id)arg2;
-- (id)__im_assistant_initWithContact:(id)arg1 unformattedPersonHandle:(id)arg2 account:(id)arg3;
+- (id)__im_assistant_initWithContact:(id)arg1 unformattedPersonHandle:(id)arg2 accountDataSource:(id)arg3;
 @end
 

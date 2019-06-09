@@ -18,6 +18,7 @@
     BOOL _showsDetailsPane;
     BOOL _showsStatusView;
     BOOL _wantsNowMode;
+    BOOL _isStreamAuthorized;
     BOOL _pause;
     CSKStreamSource *_source;
     id <CSKStreamViewControllerDelegate> _delegate;
@@ -56,6 +57,7 @@
 @property(readonly, nonatomic) CSKStreamMessagesObserver *messagesObserver; // @synthesize messagesObserver=_messagesObserver;
 @property(readonly, nonatomic) CSKStreamSQLMessagesObserver *messagesSQLObserver; // @synthesize messagesSQLObserver=_messagesSQLObserver;
 @property(readonly, nonatomic) CSKStream *stream; // @synthesize stream=_stream;
+@property(nonatomic) BOOL isStreamAuthorized; // @synthesize isStreamAuthorized=_isStreamAuthorized;
 @property(retain, nonatomic) NSFont *defaultFont; // @synthesize defaultFont=_defaultFont;
 @property(retain, nonatomic) NSString *messagesColumnLayoutAutosaveName; // @synthesize messagesColumnLayoutAutosaveName=_messagesColumnLayoutAutosaveName;
 @property(retain, nonatomic) NSString *activitiesColumnLayoutAutosaveName; // @synthesize activitiesColumnLayoutAutosaveName=_activitiesColumnLayoutAutosaveName;
@@ -97,6 +99,8 @@
 - (void)_updateDisplayedTextFontSize:(unsigned long long)arg1;
 - (void)_updateDisplayedCountAndNotifyDelegateWithItems:(unsigned long long)arg1;
 - (void)_updateWantsNowModeState:(BOOL)arg1;
+- (id)_filtersForLoadRange:(id)arg1;
+- (id)_updatedFiltersUsingFilters:(id)arg1;
 - (void)makeTextFontSizeSmaller;
 - (void)makeTextFontSizeBigger;
 - (void)makeTextFontStandardSize;
@@ -117,15 +121,13 @@
 - (id)currentFilters;
 - (void)applyFilters:(id)arg1;
 - (id)loadItemLocalizedTitleForIdentifier:(id)arg1;
-- (id)currentLoadItemInfo;
-- (void)updateLogItemInfo:(id)arg1;
-- (void)fillTableLogsMenu:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)updateSelectedLoadRange:(id)arg1;
+- (void)populateLoadRangeMenu:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)resumeStreaming;
 - (void)pauseStreaming;
 - (void)reload;
 - (void)loadMore;
 - (id)loadRangeValue;
-- (id)loadRangeValueItems;
 - (void)clear;
 - (long long)_viewControllerIndexInSplitView:(id)arg1;
 - (void)_transitionFromViewController:(id)arg1 toViewController:(id)arg2;
@@ -133,9 +135,10 @@
 - (void)_showStatusView:(BOOL)arg1;
 - (void)_showDetailsPane:(BOOL)arg1;
 - (void)_showActivitiesLayout:(BOOL)arg1;
+- (BOOL)_authenticate;
 - (void)performFindPanelAction:(id)arg1;
 - (void)performTextFinderAction:(id)arg1;
-- (void)viewDidLoad;
+- (void)viewDidAppear;
 - (void)loadView;
 - (void)dealloc;
 - (id)initWithStreamSource:(id)arg1 capacity:(unsigned long long)arg2;

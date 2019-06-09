@@ -11,7 +11,7 @@
 #import <NanoMediaRemote/NMROriginObserverDelegate-Protocol.h>
 
 @class NMRNowPlayingState, NMROrigin, NMRPlaybackQueue, NSString;
-@protocol NMROriginCommandHandler, NMROriginObserver, NMROriginObserverDelegate, OS_dispatch_queue;
+@protocol NMROriginCommandHandler, NMROriginObserver, NMROriginObserverDelegate;
 
 __attribute__((visibility("hidden")))
 @interface NMROriginController : NSObject <NMROriginObserver, NMROriginObserverDelegate, NMROriginCommandHandler>
@@ -24,16 +24,18 @@ __attribute__((visibility("hidden")))
     _Bool _hasPendingNowPlayingApplicationBundleIdentifierChange;
     _Bool _hasPendingTimestampChange;
     _Bool _hasPendingPlaybackQueueChange;
-    id <NMROriginCommandHandler> _originCommandHandler;
-    NSObject<OS_dispatch_queue> *_commandHandlerAccessQueue;
     _Bool _shouldObserveArtwork;
     _Bool _shouldObservePlaybackQueue;
+    _Bool _shouldObserveLibraryAddStatus;
     NMROrigin *_origin;
     id <NMROriginObserverDelegate> _delegate;
     id <NMROriginObserver> _originObserver;
+    id <NMROriginCommandHandler> _originCommandHandler;
 }
 
+@property(retain, nonatomic) id <NMROriginCommandHandler> originCommandHandler; // @synthesize originCommandHandler=_originCommandHandler;
 @property(retain, nonatomic) id <NMROriginObserver> originObserver; // @synthesize originObserver=_originObserver;
+@property(nonatomic) _Bool shouldObserveLibraryAddStatus; // @synthesize shouldObserveLibraryAddStatus=_shouldObserveLibraryAddStatus;
 @property(nonatomic) _Bool shouldObservePlaybackQueue; // @synthesize shouldObservePlaybackQueue=_shouldObservePlaybackQueue;
 @property(nonatomic) _Bool shouldObserveArtwork; // @synthesize shouldObserveArtwork=_shouldObserveArtwork;
 @property(nonatomic) __weak id <NMROriginObserverDelegate> delegate; // @synthesize delegate=_delegate;
@@ -53,8 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)originObserver:(id)arg1 didUpdatePlaybackStateForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingApplicationBundleIdentifierForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingInfoForOrigin:(id)arg2;
-- (void)sendMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 launchApp:(_Bool)arg3;
-@property(retain, nonatomic) id <NMROriginCommandHandler> originCommandHandler;
+- (void)sendMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 launchApp:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)updateNowPlayingStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)endObserving;
 - (void)beginObserving;

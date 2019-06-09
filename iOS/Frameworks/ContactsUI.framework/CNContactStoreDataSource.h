@@ -8,8 +8,8 @@
 
 #import <ContactsUI/CNContactDataSource-Protocol.h>
 
-@class CNContact, CNContactFilter, CNContactFormatter, CNContactStore, CNContactStoreFilter, CNContactStoreSnapshot, CNManagedConfiguration, CNiOSAddressBook, NSArray, NSDictionary, NSString;
-@protocol CNContactDataSourceDelegate, OS_dispatch_queue;
+@class CNContact, CNContactFilter, CNContactFormatter, CNContactStore, CNContactStoreFilter, CNContactStoreSnapshot, CNManagedConfiguration, NSArray, NSDictionary, NSString;
+@protocol CNContactDataSourceDelegate, NSObject, OS_dispatch_queue;
 
 @interface CNContactStoreDataSource : NSObject <CNContactDataSource>
 {
@@ -26,10 +26,16 @@
     CNManagedConfiguration *_managedConfiguration;
     NSArray *_keysToFetch;
     CNContact *_meContact;
+    id <NSObject> _contactStoreDidChangeNotificationToken;
+    id <NSObject> _contactStoreMeContactDidChangeNotificationToken;
+    NSDictionary *_localizedSectionIndices;
 }
 
 + (id)keyPathsForValuesAffectingEffectiveFilter;
 + (_Bool)isErrorPossiblyRelatedToExtraStores:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *localizedSectionIndices; // @synthesize localizedSectionIndices=_localizedSectionIndices;
+@property(retain, nonatomic) id <NSObject> contactStoreMeContactDidChangeNotificationToken; // @synthesize contactStoreMeContactDidChangeNotificationToken=_contactStoreMeContactDidChangeNotificationToken;
+@property(retain, nonatomic) id <NSObject> contactStoreDidChangeNotificationToken; // @synthesize contactStoreDidChangeNotificationToken=_contactStoreDidChangeNotificationToken;
 @property(nonatomic) _Bool meContactNeedsUpdate; // @synthesize meContactNeedsUpdate=_meContactNeedsUpdate;
 @property(copy, nonatomic) CNContact *meContact; // @synthesize meContact=_meContact;
 @property(nonatomic) _Bool fetchUnified; // @synthesize fetchUnified=_fetchUnified;
@@ -40,14 +46,11 @@
 @property(nonatomic) __weak id <CNContactDataSourceDelegate> delegate; // @synthesize delegate;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSDictionary *localizedSectionIndices;
-@property(readonly, nonatomic) NSDictionary *localizedSectionHeaders;
 @property(readonly, nonatomic) NSArray *indexSectionsArray;
+@property(readonly, nonatomic) NSDictionary *localizedSectionHeaders;
 @property(readonly, nonatomic) NSDictionary *sectionHeadersDictionary;
-@property(readonly, nonatomic) CNiOSAddressBook *addressBook;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) long long sortOrder;
-@property(readonly, nonatomic) unsigned int abSortOrder;
 @property(readonly, nonatomic) CNContactFilter *effectiveFilter;
 @property(retain, nonatomic) CNContactStoreSnapshot *currentSnapshot;
 - (void)_reloadSynchronously:(_Bool)arg1;

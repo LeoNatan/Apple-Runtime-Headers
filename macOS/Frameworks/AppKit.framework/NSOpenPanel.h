@@ -10,29 +10,35 @@
 
 @interface NSOpenPanel : NSSavePanel
 {
-    char _reservedOpenPanel[4];
-    void *_privateOpenPanel;
 }
 
 + (id)openPanel;
-- (id)makeTouchBar;
-- (void)_changeOptionsButtonTitleIfNecessary;
+- (void)delegateShouldCreateNewDocumentAtURL:(id)arg1;
+- (void)delegateRequestNewDocumentNameWithReply:(CDUnknownBlockType)arg1;
 @property(getter=isAccessoryViewDisclosed) BOOL accessoryViewDisclosed;
-- (void)newDocument:(id)arg1;
-- (void)_dismissModalForTerminate;
+- (BOOL)isMovable;
+- (BOOL)canBecomeMainWindow;
 - (BOOL)preventsApplicationTerminationWhenModal;
+- (void)beginForDirectory:(id)arg1 file:(id)arg2 types:(id)arg3 modelessDelegate:(id)arg4 didEndSelector:(SEL)arg5 contextInfo:(void *)arg6;
 @property BOOL canDownloadUbiquitousContents;
 @property BOOL canResolveUbiquitousConflicts;
 @property BOOL canChooseFiles;
 @property BOOL allowsMultipleSelection;
 @property BOOL canChooseDirectories;
 @property BOOL resolvesAliases;
-- (id)filenames;
 @property(readonly, copy) NSArray *URLs;
-- (void)_initSaveMode;
-- (BOOL)_allowsRootLayerBacking;
-- (void)_unregisterKVOWithViewBridgeService:(id)arg1 onBridge:(id)arg2;
-- (void)_registerKVOWithViewBridgeService:(id)arg1 onBridge:(id)arg2;
+- (id)filenames;
+- (BOOL)_isTitleHidden;
+- (struct CGRect)frameRectForContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
+- (BOOL)_canAddUnderTitlebarViews;
+- (struct CGRect)contentRectForFrameRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2;
+- (struct CGRect)startRectForSheet:(id)arg1;
+- (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
+- (unsigned long long)styleMaskForHostWindow;
+- (id)init;
+- (void)commonPrep:(CDUnknownBlockType)arg1 runningAsASheet:(BOOL)arg2 hostWindow_runningAsASheet:(BOOL)arg3;
+- (void)_setDefaultBridgeValues;
+- (void)configureContentView:(id)arg1;
 
 @end
 

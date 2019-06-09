@@ -14,7 +14,7 @@
 
 - (float)azimuth;
 - (float)altitude;
-- (unsigned int)type;
+- (int)type;
 - (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint)arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
 
 @end

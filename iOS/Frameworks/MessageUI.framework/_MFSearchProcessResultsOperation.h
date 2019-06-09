@@ -16,8 +16,8 @@
 }
 
 + (id)operationWithResultsOfType:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2 consumer:(id)arg3;
+- (void).cxx_destruct;
 - (void)main;
-- (void)dealloc;
 
 @end
 

@@ -15,6 +15,7 @@
     BOOL _loaded;
     NSURL *_URL;
     AVAsset *_asset;
+    CDStruct_1b6d18a9 _duration;
     CDStruct_d58201db _size;
     CDStruct_996ac03c _cleanAperture;
     long long _orientation;
@@ -26,25 +27,25 @@
 - (void).cxx_destruct;
 - (BOOL)requiresAudioMix;
 - (BOOL)requiresVideoComposition;
-- (id)_evaluateVideoProperties:(out id *)arg1;
-- (id)_evaluateImageProperties:(out id *)arg1;
+- (id)_evaluateVideoPropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
 - (id)_settingsForPipelineState:(id)arg1 ownedFrame:(BOOL)arg2;
 - (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
-- (id)preparedNodeWithSourceNode:(id)arg1 sourceSettings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (BOOL)supportsPipelineState:(id)arg1 error:(out id *)arg2;
-- (id)_evaluateVideoComposition:(out id *)arg1;
+- (id)_evaluateVideoCompositionWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateVideo:(out id *)arg1;
 @property(readonly) CDStruct_996ac03c cleanAperture;
-- (CDStruct_912cb5d2)pixelSize;
+- (CDStruct_912cb5d2)pixelSizeWithSourceOptions:(id)arg1;
+@property(readonly) CDStruct_1b6d18a9 duration;
 - (id)asset:(out id *)arg1;
 - (BOOL)load:(out id *)arg1;
 - (BOOL)_load:(out id *)arg1;
+- (id)sourceOptionsForSettings:(id)arg1 error:(out id *)arg2;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;
 - (long long)sourceOrientation;
 - (id)initWithSettings:(id)arg1;
-- (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 identifier:(id)arg2;
 
 @end
 

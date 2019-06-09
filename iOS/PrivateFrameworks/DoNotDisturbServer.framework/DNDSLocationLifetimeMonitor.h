@@ -17,6 +17,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     CLLocationManager *_locationManager;
     CLRegion *_currentRegion;
+    _Bool _regionEntered;
     _Bool _hasActiveLifetimes;
     NSArray *_activeLifetimeAssertionUUIDs;
     id <DNDSLifetimeMonitorDataSource> _dataSource;
@@ -31,11 +32,10 @@
 - (void)_queue_geofenceLocation:(id)arg1;
 - (void)_queue_stopMonitoringCurrentLocation;
 - (void)_queue_beginMonitoringCurrentLocation;
-- (id)_allRelevantAssertions;
 - (void)_queue_refreshMonitor;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
-- (void)locationManager:(id)arg1 didExitRegion:(id)arg2;
+- (void)locationManager:(id)arg1 didDetermineState:(long long)arg2 forRegion:(id)arg3;
 - (void)locationManager:(id)arg1 monitoringDidFailForRegion:(id)arg2 withError:(id)arg3;
 - (void)refreshMonitorForDate:(id)arg1;
 - (id)init;

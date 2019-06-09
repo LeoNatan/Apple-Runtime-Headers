@@ -14,16 +14,21 @@
 }
 
 + (id)sharedServiceClient;
+- (void)notifyPassKitPayment:(id)arg1 transaction:(id)arg2 info:(id)arg3;
 - (unsigned char)timeSyncMachTimeStamp:(unsigned long long *)arg1 oscarTimeStamp:(unsigned long long *)arg2;
 - (unsigned char)gyroCalibrationDatabaseSupportsMiniCalibration:(int *)arg1;
 - (unsigned char)setBackgroundIndicatorForBundleID:(const struct __CFString *)arg1 orBundlePath:(const struct __CFString *)arg2 enabled:(unsigned char)arg3;
-- (unsigned char)setAuthorizationStatusByType:(int)arg1 forBundleID:(const struct __CFString *)arg2 orBundlePath:(const struct __CFString *)arg3;
+- (unsigned char)setTemporaryAuthorizationGranted:(unsigned char)arg1 forBundleID:(const struct __CFString *)arg2 orBundlePath:(const struct __CFString *)arg3;
+- (unsigned char)setAuthorizationStatusByType:(int)arg1 withCorrectiveCompensation:(unsigned char)arg2 forBundleID:(const struct __CFString *)arg3 orBundlePath:(const struct __CFString *)arg4;
 - (const struct __CFArray *)copyActivityAlarms;
+- (id)getAccessoryMotionSensorLogs;
+- (id)getMotionSensorLogs;
+- (id)getPipelinedCache;
 - (int)getStatusBarIconState;
 - (unsigned char)getStatusBarIconEnabled:(_Bool *)arg1 forEntityClass:(unsigned int)arg2;
 - (unsigned char)setStatusBarIconEnabled:(_Bool)arg1 forEntityClass:(unsigned int)arg2;
 - (unsigned char)copyLastLog;
-- (void)setMapMatchingRouteHint:(unsigned long long *)arg1 count:(int)arg2;
+- (void)setMapMatchingRouteHint:(CDStruct_b7b5e951 *)arg1 count:(int)arg2 routingType:(int)arg3;
 - (unsigned char)getLocationForBundleID:(const struct __CFString *)arg1 orBundlePath:(const struct __CFString *)arg2 dynamicAccuracyReductionEnabled:(unsigned char)arg3 allowsAlteredAccessoryLocations:(unsigned char)arg4 location:(CDStruct_b79ad89f *)arg5;
 - (const struct __CFDictionary *)copyMonitoredRegionsForBundleIdentifier:(const struct __CFString *)arg1 orBundlePath:(const struct __CFString *)arg2;
 - (unsigned char)dumpLogs:(const struct __CFString *)arg1;
@@ -44,8 +49,10 @@
 - (void)setLocationDefaultForKey:(const struct __CFString *)arg1 value:(const void *)arg2;
 - (const struct __CFArray *)copyTechnologiesInUse;
 - (const struct __CFDictionary *)copyAppsUsingLocation;
+- (id)applyArchivedAuthorizationDecisions:(id)arg1;
+- (id)getArchivedAuthorizationDecisionsWithError:(id *)arg1;
 - (unsigned char)clearLocationAuthorizations;
-- (unsigned char)setAuthorizationStatus:(unsigned char)arg1 forBundleID:(const struct __CFString *)arg2 orBundlePath:(const struct __CFString *)arg3;
+- (unsigned char)setAuthorizationStatus:(unsigned char)arg1 withCorrectiveCompensation:(unsigned char)arg2 forBundleID:(const struct __CFString *)arg3 orBundlePath:(const struct __CFString *)arg4;
 - (id)synchronousRemoteObject;
 
 @end

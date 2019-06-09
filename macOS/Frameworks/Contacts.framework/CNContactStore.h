@@ -6,10 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@class NSData;
+
 @interface CNContactStore : NSObject
 {
 }
 
++ (BOOL)isAccessRestrictedForEntityType:(long long)arg1;
++ (id)allLabelsForPropertyWithKey:(id)arg1;
++ (id)standardLabelsForPropertyWithKey:(id)arg1 options:(unsigned long long)arg2;
 + (id)standardLabelsForPropertyWithKey:(id)arg1;
 + (long long)authorizationStatusForEntityType:(long long)arg1;
 + (id)internalIdentifierFromContactIdentifier:(id)arg1;
@@ -21,28 +26,54 @@
 + (id)storeWithEnvironment:(id)arg1 options:(unsigned long long)arg2;
 + (id)storeWithOptions:(unsigned long long)arg1;
 + (void)initialize;
++ (id)storeForFamilyMember:(id)arg1;
++ (BOOL)eraseAllDataAtURL:(id)arg1 error:(id *)arg2;
++ (BOOL)eraseAllDataAtLocationWithName:(id)arg1 error:(id *)arg2;
+- (id)authorizedKeysForContactKeys:(id)arg1;
+- (void)requestAuthorization:(long long)arg1 entityType:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)individualContactCountWithError:(id *)arg1;
+- (BOOL)verifyChangeHistoryForClientIdentifier:(id)arg1 error:(id *)arg2;
+- (id)latestConsumedChangeHistoryAnchorForClientIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)executeChangeHistoryClearRequest:(id)arg1 error:(id *)arg2;
 - (BOOL)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id *)arg3;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id *)arg2;
+- (BOOL)unregisterChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
 - (BOOL)unregisterChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)registerChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
 - (BOOL)registerChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
+@property(readonly, copy, nonatomic) NSData *currentHistoryToken;
 - (id)contactIdentifierWithMatchingDictionary:(id)arg1;
 - (id)contactWithMatchingDictionary:(id)arg1 keysToFetch:(id)arg2;
 - (id)matchingDictionaryForContact:(id)arg1;
 - (id)descriptorForRequiredKeysForMatchingDictionary;
 - (id)userActivityUserInfoForContact:(id)arg1;
 - (id)contactWithUserActivityUserInfo:(id)arg1 keysToFetch:(id)arg2;
+- (void)setLegacyTetheredSyncComputerAnchor:(id)arg1;
+- (id)legacyTetheredSyncComputerAnchor;
+- (void)setLegacyTetheredSyncDeviceAnchor:(id)arg1;
+- (id)legacyTetheredSyncDeviceAnchor;
+- (id)sectionListOffsetsForSortOrder:(long long)arg1 error:(id *)arg2;
+- (BOOL)setDefaultAccountIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)resetSortDataIfNeededWithError:(id *)arg1;
 - (id)mainContactStore;
 - (id)usedLabelsForPropertyWithKey:(id)arg1 error:(id *)arg2;
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)moveContacts:(id)arg1 fromContainer:(id)arg2 toContainer:(id)arg3 error:(id *)arg4;
 - (id)contactCountForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)unifiedContactCountWithError:(id *)arg1;
+- (int)saveSequenceCount;
 - (id)identifierWithError:(id *)arg1;
 - (id)executeFetchRequest:(id)arg1 progressiveResults:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)executeFetchRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)enumeratorForChangeHistoryFetchRequest:(id)arg1 error:(id *)arg2;
+- (id)enumeratorForContactFetchRequest:(id)arg1 error:(id *)arg2;
+- (id)countForFetchRequest:(id)arg1 error:(id *)arg2;
+- (id)executeFetchRequest:(id)arg1 error:(id *)arg2;
+- (BOOL)hasMultipleGroupsOrAccounts;
 - (id)defaultContainerIdentifier;
 - (BOOL)supportsSaveRequest:(id)arg1;
 - (BOOL)executeSaveRequest:(id)arg1 error:(id *)arg2;
-- (BOOL)executeSaveRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
+- (BOOL)executeSaveRequest:(id)arg1 response:(id *)arg2 authorizationContext:(id)arg3 error:(id *)arg4;
 - (id)accountsMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)containersMatchingPredicate:(id)arg1 error:(id *)arg2;
@@ -72,6 +103,7 @@
 - (id)initWithEnvironment:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithEnvironment:(id)arg1;
 - (id)init;
+- (id)initWithDataLocationName:(id)arg1;
 - (id)contactsMatchingPropertiesOfContact:(id)arg1 unifyResults:(BOOL)arg2 keysToFetch:(id)arg3 error:(id *)arg4;
 - (id)_executeFetchRequestsWithInfos:(id)arg1 unifyResults:(BOOL)arg2 keysToFetch:(id)arg3 error:(id *)arg4;
 - (id)_fetchRequestInfosForEmailOrPhoneForContact:(id)arg1;

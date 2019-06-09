@@ -54,6 +54,7 @@
     unsigned long long __numberOfRecoveryAttempts;
 }
 
++ (id)_cacheKeyForDeviceType:(id)arg1 position:(long long)arg2;
 + (void)preheatCaptureResources;
 @property(nonatomic, setter=_setNumberOfRecoveryAttempts:) unsigned long long _numberOfRecoveryAttempts; // @synthesize _numberOfRecoveryAttempts=__numberOfRecoveryAttempts;
 @property(nonatomic, getter=_isPerformingRecovery, setter=_setPerformingRecovery:) _Bool _performingRecovery; // @synthesize _performingRecovery=__performingRecovery;
@@ -94,13 +95,13 @@
 - (id)audioCaptureDeviceInput;
 - (id)panoramaConfiguration;
 - (id)audioCaptureDevice;
-- (id)_captureEngineDeviceForDevice:(long long)arg1;
+- (id)_captureEngineDeviceForDeviceType:(id)arg1 position:(long long)arg2;
 - (id)backDualCameraDevice;
 - (id)backTelephotoCameraDevice;
 - (id)backCameraDevice;
 - (id)frontPearlCameraDevice;
 - (id)frontCameraDevice;
-- (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 fromConnection:(id)arg3;
+- (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 forMetadataObjectTypes:(id)arg3 fromConnection:(id)arg4;
 - (void)captureOutput:(id)arg1 didDropSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
 - (void)videoThumbnailOutputWillEndRenderingThumbnails:(id)arg1;
@@ -112,8 +113,8 @@
 - (void)registerEffectsPreviewSampleBufferDelegate:(id)arg1;
 - (void)_updateEffectsSubgraph;
 - (void)panoramaProcessor:(id)arg1 didProcessSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 withStatus:(int)arg3 forRequest:(id)arg4;
-- (void)_panoramaSampleBufferQueue_stopPanoramaCaptureIfNecessary;
-- (void)stopPanoramaCapture;
+- (void)_panoramaSampleBufferQueue_stopPanoramaCaptureIfNecessaryInterrupted:(_Bool)arg1;
+- (void)stopPanoramaCaptureInterrupted:(_Bool)arg1;
 - (void)startPanoramaCaptureWithRequest:(id)arg1;
 - (void)changePanoramaEncodingBehaviorIfNeeded:(long long)arg1;
 - (void)changeToPanoramaDirection:(long long)arg1;
@@ -129,6 +130,8 @@
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)stopRecording;
 - (void)registerVideoCaptureRequest:(id)arg1;
+- (id)_previewFiltersForFilterType:(long long)arg1;
+- (void)_didFinishStillImageCaptureForUniqueID:(long long)arg1 error:(id)arg2;
 - (void)captureOutput:(id)arg1 didFinishCaptureForResolvedSettings:(id)arg2 error:(id)arg3;
 - (void)captureOutput:(id)arg1 didFinishProcessingLivePhotoToMovieFileAtURL:(id)arg2 duration:(CDStruct_1b6d18a9)arg3 photoDisplayTime:(CDStruct_1b6d18a9)arg4 resolvedSettings:(id)arg5 error:(id)arg6;
 - (void)captureOutput:(id)arg1 didFinishRecordingLivePhotoMovieForEventualFileAtURL:(id)arg2 resolvedSettings:(id)arg3;

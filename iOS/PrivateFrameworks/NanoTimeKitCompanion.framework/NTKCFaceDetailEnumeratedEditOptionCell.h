@@ -18,7 +18,7 @@
 @property(nonatomic) _Bool active; // @synthesize active=_active;
 @property(readonly, nonatomic) NTKEditOption *editOption; // @synthesize editOption=_editOption;
 - (void).cxx_destruct;
-- (id)initWithEditOption:(id)arg1;
+- (id)initWithEditOption:(id)arg1 overrideText:(id)arg2;
 - (double)rowHeight;
 
 @end

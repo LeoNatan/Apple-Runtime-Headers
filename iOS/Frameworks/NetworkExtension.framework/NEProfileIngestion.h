@@ -30,6 +30,7 @@
 - (_Bool)updateManagedAppRules:(id)arg1;
 - (id)findMostSpecificAppRuleForBundleID:(id)arg1 config:(id)arg2;
 - (_Bool)updateAppLayerVPNMappingRules:(id)arg1;
+- (_Bool)isAutoCreatedRule:(id)arg1;
 - (void)enableDefaultService;
 - (void)unlockConfigurations;
 - (_Bool)lockConfigurations;

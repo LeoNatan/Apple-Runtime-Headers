@@ -21,6 +21,7 @@
 - (_Bool)isManateeNotAvailableError;
 - (_Bool)isUnrecoverableDecryptionError;
 - (_Bool)isPartialError;
+- (_Bool)isZoneNotFoundError;
 - (_Bool)isChangeTokenExpired;
 - (id)initWithError:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;

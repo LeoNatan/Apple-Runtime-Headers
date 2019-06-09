@@ -15,15 +15,15 @@
 
 + (id)objectForID:(id)arg1;
 + (id)idForObject:(id)arg1;
-+ (void)queuePlayer:(id)arg1 replaceCurrentItemWithPlayerItem:(id)arg2;
++ (void)queuePlayer:(id)arg1 replaceCurrentItemWithPlayerItem:(id)arg2 reply:(CDUnknownBlockType)arg3;
 + (void)queuePlayer:(id)arg1 setRate:(float)arg2;
 + (void)queuePlayerRemoveAllItems:(id)arg1;
-+ (void)queuePlayer:(id)arg1 removeItem:(id)arg2;
-+ (void)queuePlayer:(id)arg1 appendItem:(id)arg2;
++ (void)queuePlayer:(id)arg1 removeItem:(id)arg2 reply:(CDUnknownBlockType)arg3;
++ (void)queuePlayer:(id)arg1 appendItem:(id)arg2 reply:(CDUnknownBlockType)arg3;
 + (void)queuePlayerAdvanceToNextItem:(id)arg1;
 + (void)sendDestroyQueuePlayer:(id)arg1;
 + (void)sendNewQueuePlayer:(id)arg1 reply:(CDUnknownBlockType)arg2;
-+ (void)playerItem:(id)arg1 setCurrentTime:(double)arg2;
++ (void)playerItem:(id)arg1 setCurrentTime:(double)arg2 reply:(CDUnknownBlockType)arg3;
 + (_Bool)playerItemCurrentTime:(id)arg1 reply:(CDUnknownBlockType)arg2;
 + (void)sendDestroyPlayerItem:(id)arg1;
 + (void)sendNewPlayerItem:(id)arg1 reply:(CDUnknownBlockType)arg2;

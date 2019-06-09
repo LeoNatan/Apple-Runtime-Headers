@@ -8,6 +8,7 @@
 
 @class NSArrayController, NSButton, NSString, NSTimer, NSView, ODCAddServerSheetController, ODCEmptyMessageTableView, ODCRemoveODServerSheetController, ODCUnbindFromADSheetController, ODSession;
 
+__attribute__((visibility("hidden")))
 @interface ODCServersViewController : ODCViewControllerBase
 {
     NSView *_view;

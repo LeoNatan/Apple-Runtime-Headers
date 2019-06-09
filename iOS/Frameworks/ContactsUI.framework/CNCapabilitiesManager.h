@@ -20,6 +20,7 @@
 + (void)_setDefaultCapabilitiesManager:(id)arg1;
 + (id)defaultCapabilitiesManager;
 - (void).cxx_destruct;
+- (_Bool)areFavoritesAvailable;
 - (_Bool)_isAppAvailable:(id)arg1;
 - (_Bool)isFaceTimeAppAvailable;
 - (_Bool)isMessagesAppAvailable;

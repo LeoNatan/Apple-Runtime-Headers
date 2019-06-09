@@ -95,7 +95,7 @@
 - (void)p_setupVertexData;
 - (void)p_setupParticleDataWithTexture:(id)arg1;
 - (void)p_setupDataBufferWithParticleCount:(unsigned long long)arg1 visibleParticleCount:(unsigned long long)arg2;
-- (void)p_setDataBufferAttribute:(id *)arg1 withName:(id)arg2 defaultDataType:(int)arg3 normalized:(_Bool)arg4 componentCount:(unsigned long long)arg5;
+- (void)p_setDataBufferAttribute:(id *)arg1 withName:(id)arg2 defaultDataType:(long long)arg3 normalized:(_Bool)arg4 componentCount:(unsigned long long)arg5;
 
 @end
 

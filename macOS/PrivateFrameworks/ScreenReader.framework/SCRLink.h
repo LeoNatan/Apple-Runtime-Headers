@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 
 - (BOOL)isLink;
 - (id)readContentsElement;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)shouldIncludeDescendants;
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
 - (BOOL)handleUntaggedOperationWithEvent:(id)arg1 request:(id)arg2;
@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (id)titleDescription;
 - (void)addItemTypeToRequest:(id)arg1;
 - (id)typeDescription;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (BOOL)isInternalLink;
 
 @end

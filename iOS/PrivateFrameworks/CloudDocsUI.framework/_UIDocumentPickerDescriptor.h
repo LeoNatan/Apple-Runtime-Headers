@@ -30,8 +30,8 @@ __attribute__((visibility("hidden")))
 + (id)allPickersForMode:(unsigned long long)arg1 documentTypes:(id)arg2;
 + (id)allPickers;
 + (_Bool)isInAddToiCloudDrive;
-+ (_Bool)sourceIsManaged;
-+ (void)setSourceIsManaged:(_Bool)arg1;
++ (_Bool)isContentManaged;
++ (void)setIsContentManaged:(_Bool)arg1;
 + (CDStruct_6ad76789)hostAuditToken;
 + (void)setHostAuditToken:(CDStruct_6ad76789)arg1;
 + (id)hostBundleID;

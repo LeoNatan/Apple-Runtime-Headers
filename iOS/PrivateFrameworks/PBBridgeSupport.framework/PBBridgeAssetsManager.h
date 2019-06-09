@@ -20,14 +20,13 @@
 @property(copy, nonatomic) CDUnknownBlockType assetDownloadCompletion; // @synthesize assetDownloadCompletion=_assetDownloadCompletion;
 - (void).cxx_destruct;
 - (id)_assetQueryForType:(unsigned long long)arg1 forDevice:(id)arg2 atlasDetails:(id)arg3;
-- (id)_assetQueryForType:(unsigned long long)arg1 deviceAttributes:(id)arg2 atlasDetails:(id)arg3;
-- (id)_assetQueryForPredicate:(id)arg1;
+- (id)_assetQueryForDeviceAttributes:(unsigned long long)arg1 deviceAttributes:(id)arg2 atlasDetails:(id)arg3;
 - (unsigned long long)hardwareGenerationForProductType:(id)arg1;
-- (id)_defaultDownloadOptions;
 - (void)_runAssetQuery:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_runMultipleAssetQueries:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_gatherQueries:(id)arg1 withAtlas:(id)arg2;
 - (void)_beginDownloadsForAssets:(id)arg1;
 - (void)_checkAssetDownloadStateWithAssets:(id)arg1;
-- (id)purgeAllAssetsAndReturnErrorLocalOnly:(_Bool)arg1;
 - (void)purgeAllAssetsLocalOnly:(_Bool)arg1;
 - (void)_beginPullingAssetsForDeviceAttributes:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginPullingAssetsForDevice:(id)arg1 completion:(CDUnknownBlockType)arg2;

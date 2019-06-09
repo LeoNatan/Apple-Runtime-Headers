@@ -29,6 +29,10 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cachedPrefsQueue; // @synthesize cachedPrefsQueue=_cachedPrefsQueue;
 @property(retain, nonatomic) NSMutableDictionary *cachedPrefs; // @synthesize cachedPrefs=_cachedPrefs;
 - (void).cxx_destruct;
+- (void)setForceUploadRequestActivitiesToRunImmediately:(BOOL)arg1;
+- (BOOL)forceUploadRequestActivitiesToRunImmediately;
+- (void)setIgnoreUploadRequestPushNotifications:(BOOL)arg1;
+- (BOOL)ignoreUploadRequestPushNotifications;
 - (id)recordNamesForFakingDecryptionFailure;
 - (double)minTTRPromptInterval;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
@@ -63,11 +67,13 @@
 - (void)setProductName:(id)arg1;
 - (id)productName;
 - (BOOL)_buildIsOverridden;
-- (double)maxTimeIntervalSinceLastZoneishPCSKeyRoll;
+- (long long)maxRecordPCSMasterKeyRolls;
 - (void)setContainerIDToForceFatalManateeZoneDecryptionFailure:(id)arg1;
 - (id)containerIDToForceFatalManateeZoneDecryptionFailure;
 - (void)setUseEnhancedPCSEncryptionContext:(BOOL)arg1;
 - (BOOL)useEnhancedPCSEncryptionContext;
+- (void)setRollZoneSharingKeys:(BOOL)arg1;
+- (BOOL)rollZoneSharingKeys;
 - (void)setRollZonePCSIdentities:(BOOL)arg1;
 - (BOOL)rollZonePCSIdentities;
 - (void)setRollRecordMasterKeysOnUnshare:(BOOL)arg1;
@@ -88,8 +94,6 @@
 - (double)PCSCacheMinTime;
 - (unsigned long long)PCSCacheSize;
 - (BOOL)sandboxCloudD;
-- (void)setEnableMescal:(BOOL)arg1;
-- (BOOL)enableMescal;
 - (BOOL)isAppleInternalInstall;
 - (double)packageGCPeriod;
 - (double)packageGCGracePeriod;
@@ -136,10 +140,6 @@
 - (BOOL)shouldProfileSQL;
 - (void)setDisableCaching:(BOOL)arg1;
 - (BOOL)disableCaching;
-- (void)setCKTimeLoggingDetailed:(BOOL)arg1;
-- (BOOL)CKTimeLoggingDetailed;
-- (void)setCKTimeLogging:(BOOL)arg1;
-- (BOOL)CKTimeLogging;
 - (void)setCFNetworkLogging:(BOOL)arg1;
 - (BOOL)CFNetworkLogging;
 - (void)setCKCtlPrompt:(char *)arg1;

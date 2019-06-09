@@ -25,8 +25,12 @@ __attribute__((visibility("hidden")))
     NSValue *alreadyFocusedWindow;
     NSView *lastNonNilFocusRingView;
     double nilFocusTime;
+    NSValue *forceRect;
+    BOOL isAccessibilityRequest;
 }
 
+@property BOOL isAccessibilityRequest; // @synthesize isAccessibilityRequest;
+@property(retain) NSValue *forceRect; // @synthesize forceRect;
 @property double nilFocusTime; // @synthesize nilFocusTime;
 @property NSView *lastNonNilFocusRingView; // @synthesize lastNonNilFocusRingView;
 @property(retain) NSValue *alreadyFocusedWindow; // @synthesize alreadyFocusedWindow;

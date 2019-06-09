@@ -14,13 +14,15 @@
     PKPaymentPassAction *_action;
 }
 
++ (float)widgetHeightWithAccessibilityLayout:(_Bool)arg1;
 + (float)glyphImageHeight;
 @property(nonatomic) _Bool usesAccessibilityLayout; // @synthesize usesAccessibilityLayout=_usesAccessibilityLayout;
 @property(retain, nonatomic) PKPaymentPassAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)_applyStyles;
 - (void)layoutSubviews;
-- (id)init;
+- (id)initWithWidgetViewStyle:(unsigned int)arg1;
 
 @end
 

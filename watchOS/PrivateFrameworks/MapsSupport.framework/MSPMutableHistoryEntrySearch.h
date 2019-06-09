@@ -8,7 +8,7 @@
 
 #import <MapsSupport/MSPHistoryEntrySearch-Protocol.h>
 
-@class GEOMapRegion, NSString;
+@class GEOMapRegion, NSDate, NSString;
 
 @interface MSPMutableHistoryEntrySearch : MSPMutableHistoryEntry <MSPHistoryEntrySearch>
 {
@@ -31,6 +31,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool tracksRAPReportingOnly;
+@property(readonly, copy, nonatomic) NSDate *usageDate;
 
 @end
 

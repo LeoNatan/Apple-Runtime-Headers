@@ -9,7 +9,6 @@
 #import <NetworkServiceProxy/NWNetworkAgent-Protocol.h>
 
 @class NSData, NSPAppRule, NSPConfiguration, NSString, NSUUID;
-@protocol NSPNetworkAgentDelegate;
 
 @interface NSPNetworkAgent : NSObject <NWNetworkAgent>
 {
@@ -23,7 +22,6 @@
     NSPConfiguration *_configuration;
     NSPAppRule *_appRule;
     NSData *_keybag;
-    id <NSPNetworkAgentDelegate> _delegate;
     NSData *_agentData;
 }
 
@@ -31,7 +29,6 @@
 + (id)agentType;
 + (id)agentDomain;
 @property(retain) NSData *agentData; // @synthesize agentData=_agentData;
-@property __weak id <NSPNetworkAgentDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSData *keybag; // @synthesize keybag=_keybag;
 @property(retain) NSPAppRule *appRule; // @synthesize appRule=_appRule;
 @property(retain) NSPConfiguration *configuration; // @synthesize configuration=_configuration;
@@ -42,8 +39,6 @@
 @property(copy, nonatomic) NSString *agentDescription; // @synthesize agentDescription;
 @property(copy, nonatomic) NSUUID *agentUUID; // @synthesize agentUUID;
 - (void).cxx_destruct;
-- (void)unassertAgentWithOptions:(id)arg1;
-- (BOOL)assertAgentWithOptions:(id)arg1;
 - (void)parseAgentData;
 - (id)copyAgentData;
 - (BOOL)isEqual:(id)arg1;
@@ -55,6 +50,8 @@
 @property(nonatomic) BOOL requiresAssert;
 @property(nonatomic, getter=isSpecificUseOnly) BOOL specificUseOnly;
 @property(nonatomic) BOOL supportsBrowseRequests;
+@property(nonatomic) BOOL supportsResolveRequests;
+@property(nonatomic) BOOL updateClientsImmediately;
 
 @end
 

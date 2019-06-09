@@ -11,7 +11,7 @@
 
 @interface MPSState : NSObject
 {
-    // Error parsing type: ^{MPSStateResource=S(?={MPSAutoTexture={atomic<void *>=A^v}{?=QQ}Q(?={?=^{MPSAutoTexture}II}{?=@(?={?=@}{?=@})})CC}{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}})}, name: _resources
+    // Error parsing type: ^{MPSStateResource=S(?={MPSAutoTexture={atomic<id<MTLTexture> >=A@}{?=QQ}Q{MPSPixelInfo=b10b6b4b4b4b4b8b1b1b1b1b1b1b1b1b1b6b4b3b2}(?={?=^{MPSAutoTexture}II}{?=@(?={?=^{MPSDevice}}{?=@})})CC}{MPSAutoBuffer={atomic<void *>=A^v}Q@@{?=QQ}})}, name: _resources
     unsigned long long _resourceCount;
     unsigned long long _readCount;
     NSString *_label;

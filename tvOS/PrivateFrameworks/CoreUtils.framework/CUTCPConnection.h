@@ -8,7 +8,7 @@
 
 #import <CoreUtils/CUReadWriteRequestable-Protocol.h>
 
-@class CUBonjourDevice, CUNANDataSession, CUNetLinkEndpoint, CUNetLinkManager, CUReadRequest, CUWriteRequest, NSString;
+@class CUBonjourDevice, CUNANDataSession, CUNetLinkEndpoint, CUNetLinkManager, CUReadRequest, CUWiFiManager, CUWriteRequest, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface CUTCPConnection : NSObject <CUReadWriteRequestable>
@@ -22,11 +22,16 @@
     unsigned char _writeSuspended;
     CUWriteRequest *_writeRequestCurrent;
     struct NSMutableArray *_writeRequests;
+    _Bool _activateCalled;
     CDUnknownBlockType _activateCompletion;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
+    struct _opaque_pthread_mutex_t _mutex;
     CUNetLinkEndpoint *_netLinkEndpoint;
+    unsigned int _trafficFlagsApplied;
+    _Bool _trafficFlagsPending;
     struct LogCategory *_ucat;
+    CUWiFiManager *_wifiTrafficManager;
     unsigned long long _ifExtendedFlags;
     unsigned int _ifFlags;
     unsigned int _ifIndex;
@@ -38,6 +43,7 @@
     int _keepAliveSeconds;
     unsigned int _netTransportType;
     int _socketFD;
+    unsigned int _trafficFlags;
     double _connectTimeoutSecs;
     double _dataTimeoutSecs;
     CUBonjourDevice *_destinationBonjour;
@@ -56,6 +62,7 @@
 }
 
 @property(copy, nonatomic) CDUnknownBlockType serverInvalidationHandler; // @synthesize serverInvalidationHandler=_serverInvalidationHandler;
+@property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(nonatomic) int socketFD; // @synthesize socketFD=_socketFD;
 @property(readonly, nonatomic) unsigned int netTransportType; // @synthesize netTransportType=_netTransportType;
 @property(retain, nonatomic) CUNetLinkManager *netLinkManager; // @synthesize netLinkManager=_netLinkManager;
@@ -90,6 +97,7 @@
 - (void)_prepareReadRequest:(id)arg1;
 - (void)_processReads:(_Bool)arg1;
 - (void)readWithRequest:(id)arg1;
+- (void)_updateTrafficRegistration;
 - (void)_netLinkStateChanged;
 - (_Bool)_setupIOAndReturnError:(id *)arg1;
 - (_Bool)_startConnectingToDestination:(id)arg1 error:(id *)arg2;
@@ -97,6 +105,7 @@
 - (void)_invalidated;
 - (void)_invalidate;
 - (void)invalidate;
+- (_Bool)_activateDirectAndReturnError:(id *)arg1;
 - (_Bool)activateDirectAndReturnError:(id *)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)description;

@@ -8,6 +8,7 @@
 
 @class AVDepthData;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureSynchronizedDepthDataInternal : NSObject
 {
     AVDepthData *depthData;

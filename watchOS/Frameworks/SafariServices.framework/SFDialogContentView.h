@@ -8,13 +8,14 @@
 
 #import <SafariServices/UITextFieldDelegate-Protocol.h>
 
-@class NSArray, NSString, SFDialogTextField, SFDialogTextView, UIStackView, _SFDialogView;
+@class NSArray, NSLayoutConstraint, NSString, SFDialogTextField, SFDialogTextView, UIButton, UIStackView, _SFDialogView;
 
 __attribute__((visibility("hidden")))
 @interface SFDialogContentView : UIView <UITextFieldDelegate>
 {
     NSArray *_actionButtons;
     UIStackView *_actionButtonsView;
+    UIButton *_closeButton;
     unsigned int _actionIndexTriggeredByEscapeKey;
     unsigned int _actionIndexTriggeredByReturnKey;
     _Bool _hasAttemptedHardwareKeyboardFocus;
@@ -24,6 +25,8 @@ __attribute__((visibility("hidden")))
     NSArray *_layoutConstraintsWhenInputAndPasswordAreVisible;
     SFDialogTextView *_messageTextView;
     SFDialogTextField *_passwordTextField;
+    NSLayoutConstraint *_actionButtonsLeadingConstraintForHorizontalStackAlignment;
+    NSLayoutConstraint *_actionButtonsLeadingConstraintForVerticalStackAlignment;
     _SFDialogView *_dialogView;
     NSArray *_actions;
 }
@@ -48,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (void)setTitleText:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
+- (float)_desiredButtonsWidth;
 - (void)updateConstraints;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (id)keyCommands;

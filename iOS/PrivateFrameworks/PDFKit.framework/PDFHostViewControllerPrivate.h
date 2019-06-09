@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSExtension, NSMutableArray, NSString, PDFExtensionTopView, PDFPageLabelView, PDFPanGestureRecognizer, PDFPasswordViewController, UILongPressGestureRecognizer, UIScrollView, UITapGestureRecognizer;
+@class NSExtension, NSString, PDFExtensionTopView, PDFPageLabelView, PDFPasswordViewController, UILongPressGestureRecognizer, UIScrollView, UITapGestureRecognizer;
 @protocol PDFExtensionProtocol, PDFHostViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -27,15 +27,10 @@ __attribute__((visibility("hidden")))
     double minScaleFactor;
     double maxScaleFactor;
     _Bool hasSelection;
-    NSMutableArray *selectionRects;
-    int textSelectionState;
-    struct CGPoint topLeftSelectionPoint;
-    struct CGPoint bottomRightSelectionPoint;
     UITapGestureRecognizer *tapGestureRecognizer;
     UITapGestureRecognizer *doubleTapGestureRecognizer;
     UILongPressGestureRecognizer *longPressGestureRecognizer;
-    PDFPanGestureRecognizer *panGestureRecognizer;
-    struct CGRect boundsInDocument;
+    struct CGRect insetBoundsInDocument;
     struct CGRect scrollViewFrame;
     struct UIEdgeInsets contentInset;
     struct UIEdgeInsets pdfSafeAreaInsets;
@@ -44,6 +39,7 @@ __attribute__((visibility("hidden")))
     _Bool pdfViewIsRotating;
     _Bool pdfViewNeedsUpdate;
     _Bool hostScrollViewObserverIsActive;
+    CDUnknownBlockType snapshotCompletion;
 }
 
 - (void).cxx_destruct;

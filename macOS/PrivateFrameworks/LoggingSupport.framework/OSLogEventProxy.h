@@ -65,7 +65,6 @@
                 _Bool has_context_data;
             } log_message;
             struct {
-                char *action;
                 _Bool persisted;
             } useraction;
             struct {
@@ -165,6 +164,7 @@
 - (void)_setFallbackTimezone;
 - (void)_setUUIDDBFileDescriptor:(int)arg1;
 - (void)_setTimesyncDatabase:(struct _os_timesync_db_s *)arg1;
+- (BOOL)_shouldIncludeSensitive;
 - (void)_setIncludeSensitive:(BOOL)arg1;
 - (void)_setThreadCrumb;
 - (void)_assertBalanced;

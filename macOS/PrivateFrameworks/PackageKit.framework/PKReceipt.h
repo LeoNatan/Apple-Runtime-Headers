@@ -21,7 +21,9 @@
 + (id)receiptsAtPath:(id)arg1;
 + (id)receiptWithPackageFileName:(id)arg1 volume:(id)arg2;
 + (id)receiptWithIdentifier:(id)arg1 volume:(id)arg2;
++ (id)receiptsOnVolumeAtPath:(id)arg1 matchingPackageIdentifier:(id)arg2;
 + (id)receiptsOnVolumeAtPath:(id)arg1;
++ (id)_sortedReceiptsByPackageVersion:(id)arg1;
 + (id)_findReceiptsOnVolumeAtPath:(id)arg1;
 + (id)__findBundleReceiptsFromDirectory:(id)arg1;
 + (id)__findReceiptsFromBOMsDirectory:(id)arg1;
@@ -30,7 +32,9 @@
 + (id)_searchDirectoriesForBOMReceiptsOnDestination:(id)arg1 returningSecureIndexes:(id *)arg2;
 + (id)_receiptsDirectoryPathForSandboxRoot:(id)arg1 destination:(id)arg2;
 + (id)_receiptsDirectoryPathForDestination:(id)arg1;
++ (id)_systemDataContentReceiptsDirectoryPathForDestination:(id)arg1;
 + (id)_systemContentReceiptsDirectoryPathForDestination:(id)arg1;
++ (id)_systemDataContentReceiptsDirectoryPathForSandboxRoot:(id)arg1 destination:(id)arg2;
 + (id)_systemContentReceiptsDirectoryPathForSandboxRoot:(id)arg1 destination:(id)arg2;
 + (void)_clearCacheWithNotification:(id)arg1;
 + (void)_clearCacheInOtherProcesses;

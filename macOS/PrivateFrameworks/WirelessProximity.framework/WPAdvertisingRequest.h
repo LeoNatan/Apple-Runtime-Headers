@@ -15,6 +15,7 @@
 {
     unsigned char _clientType;
     BOOL _connectable;
+    BOOL _stopOnAdvertisingAddressChange;
     NSData *_advertisingData;
     long long _advertisingRate;
     double _updateTime;
@@ -25,6 +26,7 @@
 + (id)requestForClientType:(unsigned char)arg1;
 + (BOOL)supportsSecureCoding;
 @property long long priorityValue; // @synthesize priorityValue=_priorityValue;
+@property BOOL stopOnAdvertisingAddressChange; // @synthesize stopOnAdvertisingAddressChange=_stopOnAdvertisingAddressChange;
 @property(retain) NSDictionary *advertisingOptions; // @synthesize advertisingOptions=_advertisingOptions;
 @property BOOL connectable; // @synthesize connectable=_connectable;
 @property double updateTime; // @synthesize updateTime=_updateTime;

@@ -8,5 +8,6 @@
 
 @interface NSBundle (NanoMediaRemote)
 + (id)nanoMediaRemoteBundle;
+- (id)matchingPlaybackAppBundleIdentifierForOrigin:(id)arg1;
 @end
 

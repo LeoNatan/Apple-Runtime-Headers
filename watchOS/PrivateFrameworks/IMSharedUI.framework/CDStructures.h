@@ -11,21 +11,40 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGPoint {
-    float _field1;
-    float _field2;
+    float x;
+    float y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
-    float _field1;
-    float _field2;
+    float width;
+    float height;
+};
+
+struct IMBalloonDescriptor_t {
+    char _field1;
+    char _field2;
+    char _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+    char _field6;
+    char _field7;
+};
+
+struct IMTextLayoutResults {
+    struct CGSize _field1;
+    _Bool _field2;
 };
 
 struct UIColor {
+    Class _field1;
+};
+
+struct UIImage {
     Class _field1;
 };
 

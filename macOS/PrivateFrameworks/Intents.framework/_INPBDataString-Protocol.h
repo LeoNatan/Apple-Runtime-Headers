@@ -12,6 +12,8 @@
 + (Class)alternativesType;
 @property(readonly, nonatomic) BOOL hasVocabularyIdentifier;
 @property(copy, nonatomic) NSString *vocabularyIdentifier;
+@property(readonly, nonatomic) BOOL hasPronunciationHint;
+@property(copy, nonatomic) NSString *pronunciationHint;
 @property(readonly, nonatomic) BOOL hasLocalizedValue;
 @property(copy, nonatomic) NSString *localizedValue;
 @property(readonly, nonatomic) unsigned long long alternativesCount;

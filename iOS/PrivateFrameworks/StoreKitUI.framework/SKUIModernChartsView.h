@@ -10,6 +10,7 @@
 
 @class NSArray, NSMutableArray, NSString, UIScrollView, _UIBackdropView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIModernChartsView : UIView <UIScrollViewDelegate>
 {
     _UIBackdropView *_backdropView;

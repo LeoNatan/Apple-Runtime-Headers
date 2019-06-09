@@ -11,7 +11,7 @@
 
 @interface PUCameraTransientAssetsMediaProvider : PUMediaProvider
 {
-    int _latestRequestId;
+    // Error parsing type: Ai, name: _latestRequestId
     CDUnknownBlockType _supplementaryLivePhotoImageSource;
     id <PUTransientImageManager> __transientImageManager;
     NSMutableDictionary *__livePhotoRequestsByRequestID;

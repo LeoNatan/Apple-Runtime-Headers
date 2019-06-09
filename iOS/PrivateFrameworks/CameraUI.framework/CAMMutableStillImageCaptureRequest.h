@@ -56,7 +56,7 @@
 @property(nonatomic) _Bool wantsSquareCrop; // @dynamic wantsSquareCrop;
 @property(nonatomic) _Bool wantsAudioForCapture; // @dynamic wantsAudioForCapture;
 @property(nonatomic) _Bool wantsAutoDualCameraFusion; // @dynamic wantsAutoDualCameraFusion;
-@property(nonatomic) _Bool usesStillImageStabilization; // @dynamic usesStillImageStabilization;
+@property(nonatomic) long long photoQualityPrioritization; // @dynamic photoQualityPrioritization;
 @property(retain, nonatomic) NSArray *originalFilters; // @dynamic originalFilters;
 @property(retain, nonatomic) NSArray *adjustmentFilters; // @dynamic adjustmentFilters;
 @property(nonatomic) _Bool wantsPortraitEffect; // @dynamic wantsPortraitEffect;

@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
+
 @class NSArray, NSDate, NSString;
 
-@protocol PPEventServerProtocol
+@protocol PPEventServerProtocol <PPFeedbackAccepting>
 - (void)sendRTCLogsWithWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)interactionSummaryMetricsWithQueryId:(unsigned long long)arg1;
 - (void)logEventInteractionForEventWithEventIdentifier:(NSString *)arg1 interface:(unsigned short)arg2 actionType:(unsigned short)arg3;

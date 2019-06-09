@@ -11,6 +11,7 @@
 @class AVFunctionBarCaptureInputSourceItem, NSArray, NSNumber, NSString;
 @protocol AVFunctionBarRecordingControlsControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarRecordingControlsController : NSObject <AVFunctionBarRecordingControlsControllingInternal>
 {
     id <AVFunctionBarRecordingControlsControlling> _externalFunctionBarRecordingControlsController;

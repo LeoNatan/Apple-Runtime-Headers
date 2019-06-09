@@ -8,6 +8,7 @@
 
 @class NSData;
 
+__attribute__((visibility("hidden")))
 @interface MCSessionPeerConnectionData : NSObject
 {
     _Bool _hasIdentitySet;

@@ -9,7 +9,7 @@
 @class UITextField, UIView;
 
 @protocol _UIAlertControllerTextFieldViewControllerContaining <NSObject>
-- (UIView *)_textFieldContainingViewWithTextField:(UITextField *)arg1;
+- (UIView *)_textFieldContainingViewWithTextField:(UITextField *)arg1 position:(long long)arg2;
 - (void)_returnKeyPressedInLastTextField;
 - (_Bool)_shouldSupportReturnKeyPresses;
 @end

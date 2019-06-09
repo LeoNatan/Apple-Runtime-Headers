@@ -15,7 +15,9 @@
     int _cachedNumberOfSections;
     _Bool _hasValidCachedNumberOfSections;
     NSCache *_itemsCache;
+    struct map<int, MPIdentifierSet *, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, MPIdentifierSet *>>> _itemIdentifierSetMap;
     NSCache *_sectionsCache;
+    struct map<int, MPIdentifierSet *, std::__1::less<int>, std::__1::allocator<std::__1::pair<const int, MPIdentifierSet *>>> _sectionIdentifierSetMap;
     id <MPLazySectionedCollectionDataSource> _dataSource;
 }
 
@@ -23,14 +25,19 @@
 @property(retain, nonatomic) id <MPLazySectionedCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_updateCacheWithObject:(id)arg1 atIndexPath:(id)arg2;
+- (id)_cachedObjectAtIndexPath:(id)arg1;
+- (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;
+- (id)identifiersForSectionAtIndex:(int)arg1;
+- (id)identifiersForItemAtIndexPath:(id)arg1;
+- (id)allItems;
+- (id)allSections;
 - (id)lastSection;
 - (id)itemsInSectionAtIndex:(int)arg1;
 - (id)firstSection;
 - (void)enumerateItemsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateItemsInSectionAtIndex:(int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateSectionsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)updateCacheWithObject:(id)arg1 atIndexPath:(id)arg2;
-- (id)cachedObjectAtIndexPath:(id)arg1;
 - (id)itemAtIndexPath:(id)arg1;
 - (int)numberOfItemsInSection:(int)arg1;
 - (id)sectionAtIndex:(int)arg1;
@@ -39,9 +46,6 @@
 - (_Bool)hasSameContentAsSectionedCollection:(id)arg1;
 - (id)firstItem;
 - (id)initWithDataSource:(id)arg1;
-- (id)indexPathForItemWithIdentifiersIntersectingSet:(id)arg1;
-- (id)identifiersForSectionAtIndex:(int)arg1;
-- (id)identifiersForItemAtIndexPath:(id)arg1;
 
 @end
 

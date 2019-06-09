@@ -15,6 +15,7 @@
 @property(readonly, retain) NSString *filenameSuggestedByServer;
 @property(readonly, retain) NSURL *urlOnDisk;
 @property(readonly, retain) NSString *attachmentIDOnServer;
+@property(readonly, retain) NSString *contentTypeFromServer;
 @property(readonly, retain) NSString *contentType;
 @end
 

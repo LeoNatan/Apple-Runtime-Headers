@@ -11,17 +11,18 @@
 #import <NewsCore/FCDerivedPersonalizationData-Protocol.h>
 #import <NewsCore/FCOperationThrottlerDelegate-Protocol.h>
 
-@class CKRecord, FCPersonalizationTreatment, NSMutableArray, NSMutableDictionary, NSObject, NSString;
+@class CKRecord, FCPersonalizationTreatment, NSData, NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol FCOperationThrottler, OS_dispatch_queue;
 
 @interface FCPersonalizationData : FCPrivateDataController <FCOperationThrottlerDelegate, FCCoreConfigurationObserving, FCAppActivityObserving, FCDerivedPersonalizationData>
 {
     _Bool _attemptingUpload;
+    NSData *_pbData;
     NSMutableDictionary *_aggregates;
     NSMutableDictionary *_openChangeGroupDeltas;
     NSMutableArray *_closedChangeGroups;
     CKRecord *_remoteRecord;
-    NSObject<OS_dispatch_queue> *_readWriteQueue;
+    NSObject<OS_dispatch_queue> *_accessQueue;
     FCPersonalizationTreatment *_treatment;
     id <FCOperationThrottler> _saveThrottler;
 }
@@ -39,15 +40,15 @@
 + (_Bool)requiresHighPriorityFirstSync;
 + (_Bool)requiresBatchedSync;
 + (_Bool)requiresPushNotificationSupport;
-+ (void)initialize;
 @property _Bool attemptingUpload; // @synthesize attemptingUpload=_attemptingUpload;
 @property(retain, nonatomic) id <FCOperationThrottler> saveThrottler; // @synthesize saveThrottler=_saveThrottler;
 @property(retain) FCPersonalizationTreatment *treatment; // @synthesize treatment=_treatment;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *readWriteQueue; // @synthesize readWriteQueue=_readWriteQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(retain, nonatomic) CKRecord *remoteRecord; // @synthesize remoteRecord=_remoteRecord;
 @property(retain, nonatomic) NSMutableArray *closedChangeGroups; // @synthesize closedChangeGroups=_closedChangeGroups;
 @property(retain, nonatomic) NSMutableDictionary *openChangeGroupDeltas; // @synthesize openChangeGroupDeltas=_openChangeGroupDeltas;
 @property(retain, nonatomic) NSMutableDictionary *aggregates; // @synthesize aggregates=_aggregates;
+@property(readonly, nonatomic) NSData *pbData; // @synthesize pbData=_pbData;
 - (void).cxx_destruct;
 - (void)operationThrottler:(id)arg1 performAsyncOperationWithCompletion:(CDUnknownBlockType)arg2;
 - (void)configurationManager:(id)arg1 configurationDidChange:(id)arg2;
@@ -55,9 +56,9 @@
 - (void)enumerateAggregatesUsingBlock:(CDUnknownBlockType)arg1;
 - (id)aggregatesForFeatureKeys:(id)arg1;
 - (void)activityObservingApplicationDidEnterBackground;
-- (void)_reloadTreatmentWithReliablyFetchedCoreConfig:(_Bool)arg1;
+- (void)_reloadTreatment;
 - (void)_applicationDidEnterBackground;
-- (void)_closeOpenChangeGroup;
+- (void)_closeOpenChangeGroupFromInstance:(id)arg1;
 - (void)_writeToLocalStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_updateWithRemoteRecord:(id)arg1 profile:(id)arg2;
 - (id)_instanceIdentifier;
@@ -74,6 +75,7 @@
 @property(readonly, nonatomic) FCPersonalizationTreatment *personalizationTreatment;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)initWithPBData:(id)arg1 treatment:(id)arg2;
 - (id)initWithContext:(id)arg1 pushNotificationCenter:(id)arg2 storeDirectory:(id)arg3;
 - (void)d_allResults:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)prepareAggregatesForUseWithCompletionHandler:(CDUnknownBlockType)arg1;

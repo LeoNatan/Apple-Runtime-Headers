@@ -26,6 +26,7 @@
 - (void)enumerateKeysWithBlock:(CDUnknownBlockType)arg1;
 - (_Bool)containsObjectForKey:(int)arg1;
 - (id)objectForKey:(int)arg1;
+- (id)allKeys;
 @property(readonly, nonatomic) unsigned int count;
 - (id)_initWithMapTable:(id)arg1 zeroIndexValue:(id)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;

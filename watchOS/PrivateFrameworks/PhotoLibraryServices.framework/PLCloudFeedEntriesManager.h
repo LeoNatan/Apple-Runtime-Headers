@@ -10,11 +10,11 @@
 
 @interface PLCloudFeedEntriesManager : NSObject
 {
-    PLPhotoLibrary *__library;
+    PLPhotoLibrary *_library;
 }
 
-+ (id)sharedManager;
-@property(readonly, retain, nonatomic) PLPhotoLibrary *_library; // @synthesize _library=__library;
+@property(readonly, nonatomic) PLPhotoLibrary *library; // @synthesize library=_library;
+- (void).cxx_destruct;
 - (_Bool)_tryMergingComment:(id)arg1 withEntry:(id)arg2;
 - (void)_mergeEntriesAroundDate:(id)arg1;
 - (void)_splitEntriesAtDate:(id)arg1;
@@ -57,8 +57,7 @@
 - (id)_firstEntryOnOrAfterDate:(id)arg1;
 - (id)_firstEntryAfterDate:(id)arg1;
 - (id)_firstEntryOnOrBeforeDate:(id)arg1;
-- (void)dealloc;
-- (id)init;
+- (id)initWithPhotoLibrary:(id)arg1;
 
 @end
 

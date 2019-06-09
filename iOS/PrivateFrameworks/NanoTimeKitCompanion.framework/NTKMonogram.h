@@ -11,6 +11,9 @@
 }
 
 + (id)_initialsForPerson:(id)arg1;
++ (id)_firstNameForPerson:(id)arg1;
++ (id)_currentUser;
++ (id)alternateMonogram;
 + (id)defaultMonogram;
 + (id)monogram;
 

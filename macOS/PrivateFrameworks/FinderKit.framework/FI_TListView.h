@@ -6,12 +6,12 @@
 
 #import <AppKit/NSOutlineView.h>
 
-@class FI_TListViewController;
+@class NSObject;
+@protocol TListViewDelegate, TableView_Common_Delegate;
 
 __attribute__((visibility("hidden")))
 @interface FI_TListView : NSOutlineView
 {
-    FI_TListViewController *_controller;
     unordered_map_f8b1458f _parentToChildrenInTableMap;
     _Bool _itemHitOnMouseDown;
     struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
@@ -25,12 +25,11 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSImmediateActionGestureRecognizer, void> _quickLookImmediateActionGestureRecognizer;
     struct TNSRef<NSImmediateActionGestureRecognizer, void> _renameImmediateActionGestureRecognizer;
     struct TNotificationCenterObserver _clipViewBoundsChangedObserver;
-    long long _retainCount;
+    struct TKeyValueObserver _delegateTornDownObserver;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
 @property(nonatomic) struct TFENode currentDropNode; // @synthesize currentDropNode=_currentDropNode;
-@property(nonatomic) FI_TListViewController *controller; // @synthesize controller=_controller;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_setUpImmediateActionGestureRecognizers;
@@ -47,10 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)updateDraggingItemsForDrag:(id)arg1;
 - (BOOL)shouldCollapseAutoExpandedItemsForDeposited:(BOOL)arg1;
 - (BOOL)canDragRowsWithIndexes:(id)arg1 atPoint:(struct CGPoint)arg2;
-- (void)dragImage:(id)arg1 at:(struct CGPoint)arg2 offset:(struct CGSize)arg3 event:(id)arg4 pasteboard:(id)arg5 source:(id)arg6 slideBack:(BOOL)arg7;
-- (id)dragImageForRowsWithIndexes:(id)arg1 tableColumns:(id)arg2 event:(id)arg3 offset:(struct CGPoint *)arg4;
 - (void)_drawDropHighlightOutlineForRow:(long long)arg1;
-- (id)viewController;
 - (id)stfEditorController;
 - (void)shrinkToFitTextViewAboutToClose;
 - (void)shrinkToFitTextViewEditingComplete:(id)arg1;
@@ -75,7 +71,7 @@ __attribute__((visibility("hidden")))
 - (id)inputContext;
 - (_Bool)_canUseWhiteDisclosureTriangles;
 - (_Bool)_wantsLiveResizeToUseCachedImage;
-- (void)enumerateAvailableBaseCellViewsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateAvailableBaseCellViewsUsingBlock:(const function_bab39997 *)arg1;
 - (id)nameCellViewAtRow:(long long)arg1;
 - (id)cellViewForColumnProperty:(int)arg1 row:(long long)arg2;
 - (id)baseCellViewForColumnProperty:(int)arg1 row:(long long)arg2;
@@ -101,22 +97,21 @@ __attribute__((visibility("hidden")))
 - (void)mouseDown:(id)arg1;
 - (_Bool)_typeSelectInterpretKeyEvent:(id)arg1;
 - (void)mouseDragged:(id)arg1;
-- (_Bool)commonMouseDownAndEarlyReturn:(id)arg1 controller:(id)arg2;
-- (void)_trackDisabledClickWithEvent:(id)arg1 controller:(id)arg2;
+- (_Bool)commonMouseDownAndEarlyReturn:(id)arg1;
+- (void)_trackDisabledClickWithEvent:(id)arg1;
 @property long long disabledTrackingRow; // @synthesize disabledTrackingRow=_disabledTrackingRow;
 - (_Bool)handleUnicodeTextInput:(id)arg1 atTime:(double)arg2;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)shouldDelayWindowOrderingForEvent:(id)arg1;
-- (void)setDelegate:(id)arg1;
+@property(readonly) __weak NSObject<TableView_Common_Delegate> *tvcDelegate;
+@property __weak NSObject<TListViewDelegate> *delegate; // @dynamic delegate;
 - (BOOL)_supportsTrackingAreasForCells;
 - (void)viewDidChangeBackingProperties;
 - (void)viewDidMoveToSuperview;
 - (void)viewWillMoveToSuperview:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)viewWillMoveToWindow:(id)arg1;
-- (void)didRemoveRowView:(id)arg1 forRow:(long long)arg2;
-- (void)didAddRowView:(id)arg1 forRow:(long long)arg2;
 - (void)_sizeToFitForUserColumnResizeWithOriginalWidths:(id)arg1;
 - (void)_setNeedsDisplayForColumn:(long long)arg1 draggedDelta:(double)arg2;
 - (void)moveColumn:(long long)arg1 toColumn:(long long)arg2;
@@ -124,11 +119,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (_Bool)_canUseUpdatedIdentation;
 - (BOOL)wantsUpdateLayer;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)initCommon;

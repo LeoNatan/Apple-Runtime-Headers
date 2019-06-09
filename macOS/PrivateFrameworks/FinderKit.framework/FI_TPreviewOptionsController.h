@@ -9,7 +9,6 @@
 __attribute__((visibility("hidden")))
 @interface FI_TPreviewOptionsController : NSObject
 {
-    struct TNSRef<FI_TPreviewOptions, void> _genericTypeOptions;
     struct unordered_map<TString, TNSRef<FI_TPreviewOptions, void>, std::__1::hash<TString>, std::__1::equal_to<TString>, std::__1::allocator<std::__1::pair<const TString, TNSRef<FI_TPreviewOptions, void>>>> _utiOptionsMap;
     struct unique_ptr<TMetadataAvailability, std::__1::default_delete<TMetadataAvailability>> _metadataSource;
 }
@@ -19,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)saveOptions:(id)arg1;
 - (id)optionsForUTI:(const struct TString *)arg1;
-- (id)init;
+- (id)_init;
 
 @end
 

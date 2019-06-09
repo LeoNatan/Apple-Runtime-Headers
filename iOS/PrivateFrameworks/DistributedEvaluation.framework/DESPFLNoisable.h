@@ -13,6 +13,11 @@
 @interface DESPFLNoisable : PBCodable <NSCopying>
 {
     struct {
+        float *list;
+        unsigned long long count;
+        unsigned long long size;
+    } _data32s;
+    struct {
         double *list;
         unsigned long long count;
         unsigned long long size;
@@ -42,6 +47,12 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (void)setData32s:(float *)arg1 count:(unsigned long long)arg2;
+- (float)data32AtIndex:(unsigned long long)arg1;
+- (void)addData32:(float)arg1;
+- (void)clearData32s;
+@property(readonly, nonatomic) float *data32s;
+@property(readonly, nonatomic) unsigned long long data32sCount;
 - (void)setDatas:(double *)arg1 count:(unsigned long long)arg2;
 - (double)dataAtIndex:(unsigned long long)arg1;
 - (void)addData:(double)arg1;

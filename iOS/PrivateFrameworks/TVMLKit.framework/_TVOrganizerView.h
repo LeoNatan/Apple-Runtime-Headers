@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     UIView *_lastFocusedView;
     UIView *_rightColumnDivider;
     UIView *_leftColumnDivider;
+    double _showcaseFactor;
     _Bool _columnDividersEnabled;
     _Bool _remembersLastFocusedItem;
     UIView *_backgroundImageView;
@@ -43,11 +44,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBecomeFocused;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct UIEdgeInsets)tv_alignmentInsetsForExpectedWidth:(double)arg1;
 @property(nonatomic) double cornerRadius;
 - (void)setComponentsNeedUpdate;
+@property(nonatomic) __weak UIView *preferredFocusedComponent;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

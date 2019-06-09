@@ -9,6 +9,7 @@
 @class UILabel, UIView;
 @protocol CKActionMenuItemView;
 
+__attribute__((visibility("hidden")))
 @interface CKActionMenuItem : NSObject
 {
     _Bool _enabled;

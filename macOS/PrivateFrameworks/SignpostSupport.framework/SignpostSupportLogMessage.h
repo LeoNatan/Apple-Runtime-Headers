@@ -13,6 +13,7 @@
 @interface SignpostSupportLogMessage : SignpostSupportObject <SignpostSupportLoggingSupportArchiveEvent>
 {
     unsigned char _messageType;
+    BOOL _hasNonScalarDynamicData;
     int _tv_usec;
     int _tz_minuteswest;
     int _tz_dsttime;
@@ -28,6 +29,7 @@
 }
 
 + (id)serializationTypeNumber;
+@property(nonatomic) BOOL hasNonScalarDynamicData; // @synthesize hasNonScalarDynamicData=_hasNonScalarDynamicData;
 @property(nonatomic) unsigned long long _machContinuousTimestamp; // @synthesize _machContinuousTimestamp=__machContinuousTimestamp;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
@@ -50,7 +52,7 @@
 - (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval *)arg4 unixTimeZone:(struct timezone *)arg5;
 - (id)initWithDictionary:(id)arg1;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1 shouldRedact:(BOOL)arg2;
 - (id)humanReadableType;
 
 // Remaining properties

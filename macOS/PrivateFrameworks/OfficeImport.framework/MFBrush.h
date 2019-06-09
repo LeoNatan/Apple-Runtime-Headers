@@ -8,6 +8,7 @@
 
 #import <OfficeImport/MFObject-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface MFBrush : NSObject <MFObject>
 {
 }

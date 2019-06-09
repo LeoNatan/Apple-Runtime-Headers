@@ -27,9 +27,12 @@
 - (void)stateDidChange:(long long)arg1;
 - (void)bandwidthStateUpdated:(id)arg1;
 - (void)central:(id)arg1 subscribed:(BOOL)arg2 toCharacteristic:(id)arg3 inService:(id)arg4;
+- (void)receivedData:(id)arg1 fromEndpoint:(id)arg2 forPeripheral:(id)arg3;
 - (void)receivedData:(id)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 forPeripheral:(id)arg4;
+- (void)sentData:(id)arg1 toEndpoint:(id)arg2 forPeripheral:(id)arg3 withError:(id)arg4;
 - (void)sentData:(id)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 forPeripheral:(id)arg4 withError:(id)arg5;
 - (void)sendData:(id)arg1 toPeer:(id)arg2;
+- (void)disconnectedDeviceOverLEPipe:(id)arg1 withError:(id)arg2;
 - (void)disconnectedDevice:(id)arg1 withError:(id)arg2;
 - (void)disconnectFromPeer:(id)arg1;
 - (void)updatedNotificationState:(BOOL)arg1 forCharacteristic:(id)arg2 inService:(id)arg3 withPeripheral:(id)arg4;
@@ -56,7 +59,7 @@
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2 peers:(id)arg3;
 - (void)startScanningForType:(long long)arg1 withData:(id)arg2;
 - (void)advertisingStartedOfType:(unsigned char)arg1;
-- (void)advertisingStoppedOfType:(unsigned char)arg1;
+- (void)advertisingStoppedOfType:(unsigned char)arg1 withError:(id)arg2;
 - (void)advertisingFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
 - (void)advertisingPendingOfType:(unsigned char)arg1;
 - (void)stopAdvertisingOfType:(long long)arg1;

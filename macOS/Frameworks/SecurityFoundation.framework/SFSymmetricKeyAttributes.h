@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
 @interface SFSymmetricKeyAttributes : NSObject <_SFKeyAttributes, SFKeychainItemAttributes>
 {
     id _symmetricKeyAttributesInternal;
+    NSString *persistentIdentifier;
 }
 
+@property(readonly, copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSString *keyDomain;
 - (void)setKeySpecifier:(id)arg1;
@@ -31,7 +33,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, copy, nonatomic) NSString *persistentIdentifier;
 @property(readonly) Class superclass;
 
 @end

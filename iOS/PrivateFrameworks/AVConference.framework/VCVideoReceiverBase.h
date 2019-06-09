@@ -30,8 +30,9 @@ __attribute__((visibility("hidden")))
 @property int remoteVideoOrientation; // @synthesize remoteVideoOrientation=_remoteVideoOrientation;
 @property(nonatomic) id <VCVideoReceiverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)handleActiveConnectionChange:(id)arg1;
+@property(readonly, nonatomic) unsigned int lastDisplayedFrameRTPTimestamp;
 - (void)setTargetStreamID:(unsigned short)arg1;
-- (void)collectChannelMetrics:(CDStruct_1c8e0384 *)arg1 interval:(float)arg2;
+- (void)collectChannelMetrics:(CDStruct_3ab08b48 *)arg1 interval:(float)arg2;
 - (void)updateSourcePlayoutTimestamp:(CDStruct_1b6d18a9 *)arg1;
 - (void)stopSynchronization;
 - (_Bool)startSynchronization:(id)arg1;

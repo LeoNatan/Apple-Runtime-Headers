@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTokenField.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKTokenField : NSTokenField
 {
 }

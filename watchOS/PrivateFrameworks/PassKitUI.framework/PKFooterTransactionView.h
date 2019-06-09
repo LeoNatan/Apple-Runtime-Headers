@@ -15,11 +15,11 @@
     PKStackedTextItemGroup *_displayItem;
     PKStackedTextItemGroupView *_headerView;
     PKStackedTextItemGroupView *_contentView;
+    UIView *_separatorView;
+    PKStackedTextItemGroupView *_footerView;
     UIImageView *_disclosureView;
     PKContinuousButton *_actionButton;
     PKPaymentPassAction *_action;
-    float _footerHeight;
-    float _currentHeightAdjustment;
     UIImageView *_imageView;
     _Bool _animated;
     unsigned int _deferUpdateCounter;
@@ -63,7 +63,6 @@
 - (id)_locationText;
 - (id)_merchantText;
 - (void)_updateContentAnimated:(_Bool)arg1;
-- (void)_computeSizeForFooter;
 - (void)_actionButtonTapped:(id)arg1;
 - (void)layoutSubviews;
 - (void)layoutIfNeededAnimated:(_Bool)arg1;

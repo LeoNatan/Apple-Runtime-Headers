@@ -18,6 +18,7 @@
     NSData *_signature;
 }
 
++ (id)newFromSqliteStatement:(struct sqlite3_stmt *)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) NSData *signature; // @synthesize signature=_signature;

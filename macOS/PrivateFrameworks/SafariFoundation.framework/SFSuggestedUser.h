@@ -32,6 +32,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithValue:(id)arg1 type:(long long)arg2;
+- (id)init;
 
 @end
 

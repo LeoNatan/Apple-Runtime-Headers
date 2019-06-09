@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFMyriadStereoPairManager, AFPowerAssertionManager, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, _DKKnowledgeStore;
+@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, _DKKnowledgeStore;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface AFMyriadCoordinator : NSObject
@@ -14,6 +14,7 @@
     unsigned long long _myriadState;
     unsigned long long _nextState;
     unsigned long long _previousState;
+    NSData *_incomingAudioData;
     NSData *_previousAdvertisedData;
     NSMutableDictionary *_replies;
     NSMutableDictionary *_replyCounts;
@@ -37,7 +38,6 @@
     NSObject<OS_dispatch_source> *_timer;
     NSObject<OS_dispatch_semaphore> *_wiproxReadinessSemaphore;
     AFPowerAssertionManager *_powerAssertionManager;
-    AFMyriadStereoPairManager *_pairManager;
     struct __CFNotificationCenter *_center;
     AFMyriadRecord *_triggerRecord;
     unsigned long long _voiceTriggerTime;
@@ -98,6 +98,7 @@
 - (_Bool)_isAPhone:(unsigned char)arg1;
 - (_Bool)_shouldHandleEmergency;
 - (_Bool)_shouldContinueFor:(id)arg1;
+- (id)emptyRecord;
 - (id)slowdownRecord:(unsigned short)arg1;
 - (id)responseObject:(unsigned short)arg1;
 - (id)emergencyHandledRecord;
@@ -153,20 +154,30 @@
 - (void)endAdvertisingAfterDelay:(float)arg1;
 - (void)startAdvertisingSlowdown:(unsigned short)arg1;
 - (void)startResponseAdvertising:(unsigned short)arg1;
+- (void)startAdvertisingFromAlertFiringVoiceTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromAlertFiringVoiceTrigger;
+- (void)startAdvertisingFromInTaskVoiceTriggerWithContext:(id)arg1;
+- (void)startAdvertisingFromInTaskTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromInTaskVoiceTrigger;
 - (void)startAdvertisingEmergency;
 - (void)startAdvertisingEmergencyHandled;
 - (void)startAdvertisingFromCarPlayTrigger;
 - (void)startAdvertisingFromInEarTrigger;
+- (void)startAdvertisingFromOutgoingTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromOutgoingTrigger;
+- (void)startAdvertisingFromDirectTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromDirectTrigger;
+- (void)startWatchAdvertisingFromDirectTriggerWithContext:(id)arg1;
 - (void)startWatchAdvertisingFromDirectTrigger;
+- (void)startWatchAdvertisingFromVoiceTriggerWithContext:(id)arg1;
 - (void)startWatchAdvertisingFromVoiceTrigger;
 - (double)_targetDelayAfterTrigger:(unsigned long long)arg1;
 - (void)_startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
+- (void)startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1 withContext:(id)arg2;
 - (void)startAdvertisingFromVoiceTriggerAdjusted:(BOOL)arg1;
+- (void)resetStateMachine;
 - (void)_startAdvertisingFromVoiceTrigger;
+- (void)startAdvertisingFromVoiceTriggerWithContext:(id)arg1;
 - (void)startAdvertisingFromVoiceTrigger;
 - (void)_initDeviceClassAndAdjustments;
 - (void)_readDefaults;

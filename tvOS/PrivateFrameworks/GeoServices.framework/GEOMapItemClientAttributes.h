@@ -8,20 +8,31 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapItemAddressBookAttributes, GEOMapItemCorrectedLocationAttributes, GEOMapItemRoutineAttributes, PBUnknownFields;
+@class GEOMapItemAddressBookAttributes, GEOMapItemCorrectedLocationAttributes, GEOMapItemRoutineAttributes, PBDataReader, PBUnknownFields;
 
 @interface GEOMapItemClientAttributes : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOMapItemAddressBookAttributes *_addressBookAttributes;
     GEOMapItemCorrectedLocationAttributes *_correctedLocationAttributes;
     GEOMapItemRoutineAttributes *_routineAttributes;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_addressBookAttributes:1;
+        unsigned int read_correctedLocationAttributes:1;
+        unsigned int read_routineAttributes:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_addressBookAttributes:1;
+        unsigned int wrote_correctedLocationAttributes:1;
+        unsigned int wrote_routineAttributes:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOMapItemCorrectedLocationAttributes *correctedLocationAttributes; // @synthesize correctedLocationAttributes=_correctedLocationAttributes;
-@property(retain, nonatomic) GEOMapItemRoutineAttributes *routineAttributes; // @synthesize routineAttributes=_routineAttributes;
-@property(retain, nonatomic) GEOMapItemAddressBookAttributes *addressBookAttributes; // @synthesize addressBookAttributes=_addressBookAttributes;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,11 +41,18 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOMapItemCorrectedLocationAttributes *correctedLocationAttributes;
 @property(readonly, nonatomic) _Bool hasCorrectedLocationAttributes;
+- (void)_readCorrectedLocationAttributes;
+@property(retain, nonatomic) GEOMapItemRoutineAttributes *routineAttributes;
 @property(readonly, nonatomic) _Bool hasRoutineAttributes;
+- (void)_readRoutineAttributes;
+@property(retain, nonatomic) GEOMapItemAddressBookAttributes *addressBookAttributes;
 @property(readonly, nonatomic) _Bool hasAddressBookAttributes;
+- (void)_readAddressBookAttributes;
 
 @end
 

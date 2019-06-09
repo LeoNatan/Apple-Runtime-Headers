@@ -11,15 +11,15 @@ __attribute__((visibility("hidden")))
 {
     long long _direction;
     double _distance;
-    int _adjustmentType;
+    long long _adjustmentType;
     unsigned long long _counter;
 }
 
 @property(nonatomic) unsigned long long counter; // @synthesize counter=_counter;
-@property(nonatomic) int adjustmentType; // @synthesize adjustmentType=_adjustmentType;
+@property(nonatomic) long long adjustmentType; // @synthesize adjustmentType=_adjustmentType;
 @property(nonatomic) double distance; // @synthesize distance=_distance;
 @property(nonatomic) long long direction; // @synthesize direction=_direction;
-- (id)initWithDirection:(long long)arg1 distance:(double)arg2 adjustmentType:(int)arg3;
+- (id)initWithDirection:(long long)arg1 distance:(double)arg2 adjustmentType:(long long)arg3;
 
 @end
 

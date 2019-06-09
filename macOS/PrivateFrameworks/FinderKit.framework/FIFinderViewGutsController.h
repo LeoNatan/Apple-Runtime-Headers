@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
     NSVisualEffectView *_visualEffectView;
     NSView *_topAccessoryContainerView;
     NSLayoutConstraint *_topAccessoryContainerCollapsingConstraint;
-    NSView *_topAccessory;
+    struct TNSRef<NSView, void> _topAccessory;
     struct TNSRef<FITopBarTitlebarAccessoryViewController, void> _topBarTitlebarAccessoryViewController;
     FI_TBrowserContentViewController *_contentViewController;
     FIContainerController *_activeContainer;
@@ -149,7 +149,7 @@ __attribute__((visibility("hidden")))
 - (id)seamlessOpener:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)seamlessOpener:(id)arg1 sourceFrameOnScreenForPreviewItem:(id)arg2;
 - (id)selectedSeamlessOpenerPreviewItems;
-- (void)disableHistoryAndDoWork:(CDUnknownBlockType)arg1;
+- (void)disableHistoryAndDoWork:(const function_b1fce659 *)arg1;
 - (id)defaultDirectoryURL;
 - (_Bool)showGotoWithInitialFilename:(id)arg1;
 - (void)_delegateConfigureForGotoWithFilename:(id)arg1;
@@ -174,6 +174,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)appCustomMenuItemsForNodes:(const struct TFENodeVector *)arg1;
 - (void)selectFirstKeyView;
 - (_Bool)sidebarContainsURL:(id)arg1;
 - (void)refreshContents;
@@ -231,7 +232,7 @@ __attribute__((visibility("hidden")))
 - (Class)browserContainerClass;
 - (int)_convertViewStyle:(int)arg1 forTargetPath:(const struct TFENodeVector *)arg2;
 - (void)setTargetNode:(const struct TFENode *)arg1 withViewStyle:(int)arg2;
-- (struct TFENode)validateCloudTarget:(const struct TFENode *)arg1;
+- (struct TFENode)transformedTarget:(const struct TFENode *)arg1;
 - (void)setTargetNode:(const struct TFENode *)arg1;
 - (double)fauxToolbarHeightForAppCentric:(BOOL)arg1 runningAsAService:(BOOL)arg2;
 - (void)setIsPopulationInProgress:(_Bool)arg1;

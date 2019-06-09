@@ -6,15 +6,10 @@
 
 #import <SystemMigration/SMMigrationEngineElement.h>
 
-@class NSProgress;
-
 @interface SMMigrationRebuildXPCCacheElement : SMMigrationEngineElement
 {
-    NSProgress *_progress;
 }
 
-@property(retain) NSProgress *progress; // @synthesize progress=_progress;
-- (void).cxx_destruct;
 - (double)estimateTimeRemaining;
 - (double)estimatedTimeToComplete;
 - (id)run;

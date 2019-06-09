@@ -15,16 +15,19 @@
     _Bool _canRunUserInitiatedForegroundAnalysis;
     _Bool _canUseNetwork;
     _Bool _turboMode;
+    _Bool _cancelsTurboMode;
 }
 
 + (id)constraintsWithAllAllowances;
 + (id)constraintsWithNoAllowances;
+@property(nonatomic) _Bool cancelsTurboMode; // @synthesize cancelsTurboMode=_cancelsTurboMode;
 @property(nonatomic, getter=isTurboMode) _Bool turboMode; // @synthesize turboMode=_turboMode;
 @property(readonly, nonatomic) _Bool canUseNetwork; // @synthesize canUseNetwork=_canUseNetwork;
 @property(readonly, nonatomic) _Bool canRunUserInitiatedForegroundAnalysis; // @synthesize canRunUserInitiatedForegroundAnalysis=_canRunUserInitiatedForegroundAnalysis;
 @property(readonly, nonatomic) _Bool canRunAutomaticForegroundAnalysis; // @synthesize canRunAutomaticForegroundAnalysis=_canRunAutomaticForegroundAnalysis;
 @property(readonly, nonatomic) _Bool canRunAutomaticBackgroundAnalysis; // @synthesize canRunAutomaticBackgroundAnalysis=_canRunAutomaticBackgroundAnalysis;
 - (id)statusAsDictionary;
+- (unsigned int)qosClassForProcessing;
 - (_Bool)isEqualToConstraints:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

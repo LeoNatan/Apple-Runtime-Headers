@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     _Bool _finished;
     _Bool _temporary;
     _Bool _shouldReadRawEncryptedData;
+    _Bool _shouldReadAssetContentUsingClientProxy;
     _Bool _isAlreadyRegistered;
     _Bool _isReaderReadFrom;
     _Bool _isRereferencedAssetUpload;
@@ -68,6 +69,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isRereferencedAssetUpload; // @synthesize isRereferencedAssetUpload=_isRereferencedAssetUpload;
 @property(nonatomic) _Bool isReaderReadFrom; // @synthesize isReaderReadFrom=_isReaderReadFrom;
 @property(nonatomic) _Bool isAlreadyRegistered; // @synthesize isAlreadyRegistered=_isAlreadyRegistered;
+@property(nonatomic) _Bool shouldReadAssetContentUsingClientProxy; // @synthesize shouldReadAssetContentUsingClientProxy=_shouldReadAssetContentUsingClientProxy;
 @property(nonatomic) _Bool shouldReadRawEncryptedData; // @synthesize shouldReadRawEncryptedData=_shouldReadRawEncryptedData;
 @property(nonatomic, getter=isTemporary) _Bool temporary; // @synthesize temporary=_temporary;
 @property(nonatomic) _Bool finished; // @synthesize finished=_finished;
@@ -118,6 +120,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *deviceID; // @synthesize deviceID=_deviceID;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
+- (id)readBytesOfInMemoryAssetContentWithProxy:(id)arg1 offset:(unsigned long long)arg2 length:(unsigned long long)arg3 error:(id *)arg4;
 - (id)getFileMetadataWithFileHandle:(id)arg1 error:(id *)arg2;
 - (id)getFileMetadataWithProxy:(id)arg1 fileHandle:(id)arg2 error:(id *)arg3;
 - (id)getFileSizeWithError:(id *)arg1;

@@ -31,6 +31,7 @@
 - (void)ensureConnected:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_defaultProxyErrorHandlerWithSimpleReplyCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
+- (void)_setupConnection;
 - (id)init;
 
 @end

@@ -74,6 +74,13 @@ struct map<unsigned int, apc::Any, std::__1::less<unsigned int>, std::__1::alloc
     } __tree_;
 };
 
+struct mutex {
+    struct _opaque_pthread_mutex_t {
+        long long __sig;
+        char __opaque[56];
+    } __m_;
+};
+
 struct unique_ptr<APCDecoderBase, std::__1::default_delete<APCDecoderBase>> {
     struct __compressed_pair<APCDecoderBase *, std::__1::default_delete<APCDecoderBase>> {
         struct APCDecoderBase *__value_;

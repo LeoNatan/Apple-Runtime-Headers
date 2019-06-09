@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     struct {
         unsigned int registeredSelectedChildrenMovedNotification:1;
-        unsigned int reserved:31;
     } _srlFlags;
     SCRCTargetSelectorTimer *_echoDelayTimer;
     struct CGRect _selectedChildrenBounds;
@@ -32,7 +31,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)allowFocusThroughSingleChild;
 - (BOOL)addPositionDescriptionForElement:(id)arg1 toRequest:(id)arg2;
 - (id)descriptionForSizeOffset:(double)arg1 forWidth:(BOOL)arg2;
+- (long long)measurementUnit;
 - (id)descriptionForSize:(struct CGSize)arg1 orientation:(long long)arg2;
+- (id)_offsetDescriptionForOrigin:(struct CGPoint)arg1 lastOrigin:(struct CGPoint)arg2;
+- (id)_offsetDescriptionForOrigin:(struct CGPoint)arg1 lastOrigin:(struct CGPoint)arg2 verticalUnitDescription:(id)arg3 horizontalUnitDescription:(id)arg4;
 - (void)_echoDescriptionForPositionChange:(id)arg1;
 - (id)descriptionForScreenPoint:(struct CGPoint)arg1;
 - (id)_valueDescriptionForPoint:(struct CGPoint)arg1;
@@ -40,7 +42,9 @@ __attribute__((visibility("hidden")))
 - (id)verticalUnitDescription;
 - (id)horizontalUnitDescription;
 - (struct CGSize)transformedSizeForSize:(struct CGSize)arg1;
+- (BOOL)supportsTransformedSizeForSize;
 - (struct CGPoint)transformedPointForPoint:(struct CGPoint)arg1;
+- (BOOL)supportsTransformedPointForPoint;
 - (void)setPreviousSelectionUIElements:(id)arg1;
 - (id)previousSelectionUIElements;
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;

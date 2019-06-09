@@ -10,7 +10,6 @@
 
 @class NSArray, NSLayoutConstraint, NSString, _TVAnimatedLabel;
 
-__attribute__((visibility("hidden")))
 @interface _TVStackingPosterView : UIView <TVAuxiliaryViewSelecting>
 {
     _Bool _requiresReconfiguration;
@@ -55,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (struct TVCellMetrics)_cellMetricsForMaxSize:(struct CGSize)arg1;
 - (void)_updateComponentConstraints;
 - (void)_configureSubviews;
+- (void)_updateSubviewHeirarchyWithComponents:(id)arg1;
 - (void)_resetSubviews;
 - (struct UIEdgeInsets)_mainImageComponentAspectFitMarginsForCellMetrics:(struct TVCellMetrics)arg1;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
@@ -74,6 +74,9 @@ __attribute__((visibility("hidden")))
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
 - (void)updateComponentLayout;
 - (void)setNeedsUpdateComponentLayout;
+- (void)setComponents:(id)arg1 mainImageComponent:(id)arg2;
+- (id)preferredFocusEnvironments;
+- (void)willMoveToWindow:(id)arg1;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

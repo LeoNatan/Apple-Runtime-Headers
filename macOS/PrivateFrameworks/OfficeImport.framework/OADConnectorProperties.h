@@ -8,6 +8,7 @@
 
 @class OADConnection;
 
+__attribute__((visibility("hidden")))
 @interface OADConnectorProperties : OADShapeProperties
 {
     OADConnection *mFrom;

@@ -6,10 +6,11 @@
 
 #import <NanoTimeKit/NSObject-Protocol.h>
 
-@class NTKComplicationDisplayWrapperView, UIView;
+@class NTKComplicationDisplayWrapperView, PUICClientSideAnimation, UIView;
 
 @protocol NTKComplicationDisplayWrapperViewAnimationDelegate <NSObject>
-- (void)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 startCustomDataAnimationFromEarlierView:(UIView *)arg2 laterView:(UIView *)arg3 isForward:(_Bool)arg4 completionBlock:(void (^)(void))arg5;
-- (_Bool)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 shouldStartCustomDataAnimationFromEarlierView:(UIView *)arg2 laterView:(UIView *)arg3 isForward:(_Bool)arg4;
+- (void)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 updateCustomDataAnimationFromEarlierView:(UIView *)arg2 laterView:(UIView *)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
+- (void)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 prepareCustomDataAnimation:(PUICClientSideAnimation *)arg2 fromEarlierView:(UIView *)arg3 laterView:(UIView *)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6;
+- (_Bool)complicationDisplayWrapperView:(NTKComplicationDisplayWrapperView *)arg1 shouldStartCustomDataAnimationFromEarlierView:(UIView *)arg2 laterView:(UIView *)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
 @end
 

@@ -10,5 +10,6 @@
 - (id)jsonString;
 - (id)jsonStringWithPrettyPrint:(BOOL)arg1;
 - (id)arrayForJSON;
+- (id)arrayCappedToMaxItems:(unsigned long long)arg1;
 @end
 

@@ -6,24 +6,26 @@
 
 #import <UIKitCore/_UIFeedbackEngine.h>
 
-#import <UIKitCore/_UIFeedbackPlayer-Protocol.h>
+#import <UIKitCore/_UIFeedbackPlayer_Internal-Protocol.h>
 
 __attribute__((visibility("hidden")))
-@interface _UIFeedbackDummyEngine : _UIFeedbackEngine <_UIFeedbackPlayer>
+@interface _UIFeedbackDummyEngine : _UIFeedbackEngine <_UIFeedbackPlayer_Internal>
 {
     CDUnknownBlockType _invalidationBlock;
 }
 
-+ (_Bool)_supportsPlayingFeedback:(id)arg1;
++ (_Bool)_supportsPlayingIndividualFeedback:(id)arg1;
 + (id)sharedEngine;
 @property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
 - (void).cxx_destruct;
 - (id)_stats_key;
+- (void)_internal_stopFeedbackData:(id)arg1 forFeedback:(id)arg2;
 - (void)_stopFeedback:(id)arg1;
+- (void)_internal_playFeedbackData:(id)arg1 forFeedback:(id)arg2 atTime:(double)arg3;
 - (void)_playFeedback:(id)arg1 atTime:(double)arg2;
 - (void)_updateValueForParameters:(id)arg1 withKey:(id)arg2;
-- (void)_dequeueReusableFeedbackPlayerWithCompletionBlock:(CDUnknownBlockType)arg1;
-- (void)_activateUnderlyingPlayerWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_internal_dequeueReusableFeedbackPlayerWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)_internal_activateUnderlyingPlayerWithCompletion:(CDUnknownBlockType)arg1;
 
 @end
 

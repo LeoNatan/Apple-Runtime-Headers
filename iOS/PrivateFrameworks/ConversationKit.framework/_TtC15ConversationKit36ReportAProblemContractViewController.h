@@ -6,7 +6,6 @@
 
 #import <UIKit/UIViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit36ReportAProblemContractViewController : UIViewController
 {
     // Error parsing type: , name: call

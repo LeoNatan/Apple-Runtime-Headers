@@ -8,6 +8,7 @@
 
 @class NSString, SKProductPageViewController, SUBarButtonItem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIITunesStoreUIPageViewController : SUStorePageViewController
 {
     SUBarButtonItem *_cancelButtonItem;

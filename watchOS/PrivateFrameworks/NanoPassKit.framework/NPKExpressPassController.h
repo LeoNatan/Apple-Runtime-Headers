@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSDistributedNotificationCenter, NSSet, PKPass, PKPassLibrary, PKPaymentService;
+#import <NanoPassKit/PKFieldDetectorObserver-Protocol.h>
+
+@class NSDictionary, NSDistributedNotificationCenter, NSSet, NSString, PKFieldDetector, PKPass, PKPassLibrary, PKPaymentService;
 @protocol NPKExpressPassControllerDelegate, OS_dispatch_queue;
 
-@interface NPKExpressPassController : NSObject
+@interface NPKExpressPassController : NSObject <PKFieldDetectorObserver>
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
@@ -22,13 +24,19 @@
     NSDistributedNotificationCenter *_distributedNotificationCenter;
     id <NPKExpressPassControllerDelegate> _delegate;
     NSDictionary *_expressPasses;
+    PKFieldDetector *_fieldDetector;
 }
 
+@property(retain, nonatomic) PKFieldDetector *fieldDetector; // @synthesize fieldDetector=_fieldDetector;
 @property(retain) NSDictionary *expressPasses; // @synthesize expressPasses=_expressPasses;
 @property(retain) NSSet *expressPassesInformation; // @synthesize expressPassesInformation=_expressPassesInformation;
 @property(retain, nonatomic) PKPass *currentTransactionPass; // @synthesize currentTransactionPass=_currentTransactionPass;
 @property __weak id <NPKExpressPassControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)fieldDetectorDidEnterField:(id)arg1 withProperties:(id)arg2;
+- (void)_stopFieldDetector;
+- (void)_startFieldDetector;
+- (id)_expressPassesInformationWithTCIs:(id)arg1;
 - (id)_expressPassesInformationWithAutomaticSelectionTechnologyType:(int)arg1;
 - (void)_queue_updateExpressPasses;
 - (void)updateExpressPasses;
@@ -43,8 +51,8 @@
 - (void)_handleExpressTransactionTimeOutNotification:(id)arg1;
 - (void)_handleExpressTransactionStartNotification:(id)arg1;
 - (void)_handleEnterNearFieldNotification:(id)arg1;
-- (void)_stopListeningNotifications;
-- (void)_startListeningNotifications;
+- (void)_stopListeningForExpressNotifications;
+- (void)_startListeningForExpressNotifications;
 - (void)_transitionToStatus:(unsigned int)arg1 forExpressPass:(id)arg2;
 @property(readonly, nonatomic) __weak NSDistributedNotificationCenter *distributedNotificationCenter; // @synthesize distributedNotificationCenter=_distributedNotificationCenter;
 @property(readonly, nonatomic) __weak PKPassLibrary *passLibrary; // @synthesize passLibrary=_passLibrary;
@@ -53,6 +61,12 @@
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 - (id)initWithPaymentService:(id)arg1 passLibrary:(id)arg2 distributedNotificationCenter:(id)arg3 delegate:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

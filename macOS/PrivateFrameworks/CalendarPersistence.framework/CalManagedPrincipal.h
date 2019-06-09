@@ -62,6 +62,8 @@
 - (void)stripPathAndSetOverrideBaseURL:(id)arg1;
 @property(retain) NSURL *overrideBaseURL;
 - (void)_setOverrideBaseURL:(id)arg1;
+@property(readonly) BOOL allowsTasks;
+@property(readonly) BOOL allowsEvents;
 @property(readonly) BOOL supportsPhoneNumbers;
 - (BOOL)supportsPrivateEvents;
 @property(readonly) BOOL supportsPush;

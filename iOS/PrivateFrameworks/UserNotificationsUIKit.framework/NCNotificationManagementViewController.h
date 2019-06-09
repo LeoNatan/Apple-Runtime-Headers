@@ -40,7 +40,7 @@
 - (void)notificationManagementController:(id)arg1 setDeliverQuietly:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
 - (void)notificationManagementController:(id)arg1 setAllowsNotifications:(_Bool)arg2 forNotificationRequest:(id)arg3 withSectionIdentifier:(id)arg4;
 - (id)notificationManagementController:(id)arg1 sectionSettingsForSectionIdentifier:(id)arg2;
-- (void)_offButtonTapped:(id)arg1;
+- (void)_onOffToggleButtonTapped:(id)arg1;
 - (void)_deliveryButtonTapped:(id)arg1;
 - (struct CGSize)preferredContentSize;
 - (_Bool)canResignFirstResponder;

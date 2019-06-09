@@ -11,20 +11,28 @@
 @interface VCPMovieHighlight : NSObject
 {
     BOOL _isAutoPlayable;
+    BOOL _isTrimmed;
     float _score;
     float _junkScore;
     float _qualityScore;
     float _expressionScore;
     float _actionScore;
     float _voiceScore;
+    float _humanActionScore;
+    float _humanPoseScore;
     VCPImageDescriptor *_descriptor;
     VCPVideoKeyFrame *_keyFrame;
+    struct CGRect _bestPlaybackCrop;
     CDStruct_e83c9415 _timerange;
 }
 
 @property(retain, nonatomic) VCPVideoKeyFrame *keyFrame; // @synthesize keyFrame=_keyFrame;
 @property(retain, nonatomic) VCPImageDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+@property(nonatomic) BOOL isTrimmed; // @synthesize isTrimmed=_isTrimmed;
 @property(nonatomic) BOOL isAutoPlayable; // @synthesize isAutoPlayable=_isAutoPlayable;
+@property(nonatomic) struct CGRect bestPlaybackCrop; // @synthesize bestPlaybackCrop=_bestPlaybackCrop;
+@property(nonatomic) float humanPoseScore; // @synthesize humanPoseScore=_humanPoseScore;
+@property(nonatomic) float humanActionScore; // @synthesize humanActionScore=_humanActionScore;
 @property(nonatomic) float voiceScore; // @synthesize voiceScore=_voiceScore;
 @property(nonatomic) float actionScore; // @synthesize actionScore=_actionScore;
 @property(nonatomic) float expressionScore; // @synthesize expressionScore=_expressionScore;

@@ -8,14 +8,13 @@
 
 #import <TVPlayback/TVPTransportBarThumbnailViewDelegate-Protocol.h>
 
-@class NSArray, NSNumber, NSString, TVPPlayheadView, TVPProgressBarView, TVPSpinnerView, TVPTimeRange, TVPTransportBarThumbnailView, TVPVideoNowPlayingDimmingView, UIColor, UIImageView, UILabel;
+@class NSNumber, NSString, TVPPlayheadView, TVPProgressBarView, TVPSpinnerView, TVPTimeRange, TVPTransportBarThumbnailView, TVPVideoNowPlayingDimmingView, UIColor, UIImageView, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface TVPTransportBarView : UIView <TVPTransportBarThumbnailViewDelegate>
 {
     UIView *_infoAccessoryView;
     UILabel *_infoHintLabel;
-    NSArray *_adMarkers;
     UIView *_backwardAccessoryView;
     UIImageView *_backwardTrackMask;
     UIImageView *_backwardTimeSkipMask;
@@ -108,7 +107,6 @@ __attribute__((visibility("hidden")))
 - (void)setPausedTimeTitle:(id)arg1;
 @property(copy, nonatomic) NSString *rightEdgeTitle;
 @property(copy, nonatomic) NSString *leftEdgeTitle;
-- (void)setAdMarkers:(id)arg1;
 - (struct CGRect)playerHeadFrameForRect:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)updateProgressBarPlayheadLocations;

@@ -9,7 +9,7 @@
 #import <Vision/VNClusteringCancelling-Protocol.h>
 #import <Vision/VNClusteringReadOnly-Protocol.h>
 
-@class NSData, NSNumber, NSString, VNClusteringLogger, VNSuggestionsLogger;
+@class NSData, NSString, VNClusteringLogger, VNSuggestionsLogger;
 
 __attribute__((visibility("hidden")))
 @interface VNGreedyClusteringReadOnly : NSObject <VNClusteringReadOnly, VNClusteringCancelling>
@@ -17,11 +17,16 @@ __attribute__((visibility("hidden")))
     VNClusteringLogger *_clusteringLogger;
     VNSuggestionsLogger *_suggestionsLogger;
     NSString *_cacheFolderPath;
-    NSNumber *_thresholdN;
-    NSNumber *_thresholdTorso;
+    float _thresholdN;
+    float _thresholdSL;
+    float _thresholdTorso;
     NSString *_type;
     NSData *_state;
-    NSNumber *_vectorMapReadOnlyFlagN;
+    _Bool _vectorMapReadOnlyFlag;
+    unsigned long long _faceprintRevision;
+    NSString *_ageClassifierFilePath;
+    float _ageClassifierBabyThreshold;
+    float _ageClassifierKidThreshold;
     shared_ptr_8fc713d1 m_ClusteringImpl_const;
 }
 
@@ -29,12 +34,14 @@ __attribute__((visibility("hidden")))
 + (id)getRepresentativenessForFaces:(id)arg1 error:(id *)arg2;
 + (void)addFaceObservations:(id)arg1 withGroupingIdentifiers:(id)arg2 toFaceDescriptorBuffer:(struct ImageDescriptorBufferJoint *)arg3;
 + (void)addFaceObservations:(id)arg1 toFaceDescriptorBuffer:(struct ImageDescriptorBufferFloat32 *)arg2;
++ (id)nonGroupedGroupID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)cancelClustering:(id *)arg1;
 - (id)maximumFaceIdInModelAndReturnError:(id *)arg1;
 - (id)getDistances:(id)arg1 to:(id)arg2 error:(id *)arg3;
 - (id)getClustersForClusterIds:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)getAllClustersFromStateAndReturnError:(id *)arg1;
 - (id)getDistanceBetweenLevel1Clusters:(id)arg1 error:(id *)arg2;
 - (id)getDistanceBetweenLevel0ClustersWithFaceId:(id)arg1 andFaceId:(id)arg2 error:(id *)arg3;
 - (id)getLevel1ClusteredIdsGroupedByLevel0ClustersForFaceId:(id)arg1 error:(id *)arg2;

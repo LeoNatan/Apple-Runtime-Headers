@@ -41,5 +41,8 @@
 - (_Bool)_containsPort:(id)arg1 forMode:(id)arg2;
 - (void)_portInvalidated:(id)arg1;
 - (void)_enumerateInfoPairsWithBlock:(CDUnknownBlockType)arg1;
+- (void)cancelPerformSelectorsWithTarget:(id)arg1;
+- (void)cancelPerformSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3;
+- (void)performSelector:(SEL)arg1 target:(id)arg2 argument:(id)arg3 order:(unsigned long long)arg4 modes:(id)arg5;
 @end
 

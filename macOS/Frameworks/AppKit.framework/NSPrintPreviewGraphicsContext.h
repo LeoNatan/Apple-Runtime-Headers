@@ -11,7 +11,6 @@
 __attribute__((visibility("hidden")))
 @interface NSPrintPreviewGraphicsContext : NSProxy
 {
-    id _paddingForAcrobat5454292;
     NSGraphicsContext *_previousContext;
 }
 

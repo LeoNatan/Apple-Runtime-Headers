@@ -6,10 +6,12 @@
 
 #import <UIKitCore/UIKeyboardMenuView.h>
 
+#import <UIKitCore/_UIInputSwitcherSplitMenu-Protocol.h>
+
 @class NSArray;
 
 __attribute__((visibility("hidden")))
-@interface UIKeyboardSplitControlMenu : UIKeyboardMenuView
+@interface UIKeyboardSplitControlMenu : UIKeyboardMenuView <_UIInputSwitcherSplitMenu>
 {
     struct CGSize m_preferredSize;
     NSArray *_items;
@@ -22,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)didFinishSplitTransition;
 - (void)didSelectItemAtIndex:(unsigned int)arg1;
 - (void)setSplitAndUndocked:(_Bool)arg1;
+- (_Bool)usesDeviceLanguageForItemAtIndex:(unsigned int)arg1;
 - (id)titleForItemAtIndex:(unsigned int)arg1;
 - (int)visibleItemForIndex:(unsigned int)arg1;
 - (unsigned int)defaultSelectedIndex;

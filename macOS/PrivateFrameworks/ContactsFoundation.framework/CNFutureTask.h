@@ -19,6 +19,7 @@
     CNFutureCompletionBlocks *_completionBlocks;
 }
 
+- (void).cxx_destruct;
 - (id)recover:(CDUnknownBlockType)arg1;
 - (id)flatMap:(CDUnknownBlockType)arg1;
 - (void)_flushCompletionBlocks;
@@ -43,7 +44,6 @@
 - (id)resultWithTimeout:(double)arg1 error:(id *)arg2;
 - (id)resultBeforeDate:(id)arg1 error:(id *)arg2;
 - (id)result:(id *)arg1;
-- (void)dealloc;
 - (id)initWithTask:(id)arg1;
 - (id)init;
 

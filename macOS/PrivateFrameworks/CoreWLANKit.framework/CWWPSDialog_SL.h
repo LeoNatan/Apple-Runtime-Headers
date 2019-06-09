@@ -6,14 +6,14 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class CWInterface, CWNetwork, NSButton, NSProgressIndicator, NSString, NSTextField;
+@class CWDisplayedScanResult, NSButton, NSProgressIndicator, NSString, NSTextField;
 
 @interface CWWPSDialog_SL : NSWindowController
 {
-    CWInterface *interface_;
-    CWNetwork *network_;
-    id delegate_;
-    NSString *pin_;
+    CWDisplayedScanResult *_scanResult;
+    id _delegate;
+    NSString *_pin;
+    BOOL _joinInProgress;
     NSTextField *windowTitleLabel;
     NSTextField *windowDescriptionLabel;
     NSButton *cancelButton;
@@ -22,14 +22,12 @@
     NSButton *warningButton;
     NSProgressIndicator *progressIndicator;
     NSButton *helpButton;
-    BOOL _joinInProgress;
 }
 
-+ (id)wpsDialogWithInterface:(id)arg1 network:(id)arg2;
-@property(copy) NSString *pin; // @synthesize pin=pin_;
-@property(copy) CWNetwork *network; // @synthesize network=network_;
-@property id delegate; // @synthesize delegate=delegate_;
-@property(retain) CWInterface *interface; // @synthesize interface=interface_;
++ (id)wpsDialogWithScanResult:(id)arg1 pin:(id)arg2;
+@property(copy) NSString *pin; // @synthesize pin=_pin;
+@property(copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
+@property id delegate; // @synthesize delegate=_delegate;
 - (void)onCancelButton:(id)arg1;
 - (void)onHelpButton:(id)arg1;
 - (void)windowDidLoad;
@@ -38,7 +36,7 @@
 - (void)clearPIN;
 - (void)updatePin;
 - (id)localizedStringForKey:(id)arg1;
-- (id)initWithInterface:(id)arg1 network:(id)arg2;
+- (id)initWithScanResult:(id)arg1 pin:(id)arg2;
 - (void)dealloc;
 
 @end

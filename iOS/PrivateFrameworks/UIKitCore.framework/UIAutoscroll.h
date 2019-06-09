@@ -9,7 +9,6 @@
 @class NSTimer, UIView;
 @protocol UIAutoscrollContainer;
 
-__attribute__((visibility("hidden")))
 @interface UIAutoscroll : NSObject
 {
     id m_target;

@@ -8,6 +8,7 @@
 
 @class AVWeakReference, NSArray, NSDictionary, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureMovieFileOutputInternal : NSObject
 {
     AVWeakReference *weakReference;

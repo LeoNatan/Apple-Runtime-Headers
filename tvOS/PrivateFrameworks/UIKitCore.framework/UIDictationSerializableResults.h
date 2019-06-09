@@ -15,10 +15,13 @@ __attribute__((visibility("hidden")))
 @interface UIDictationSerializableResults : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _fromKeyboard;
+    _Bool _showMultilingualAlternatives;
+    _Bool _lowConfidenceAboutLanguageDetection;
     _Bool _useServerCapitalization;
     _Bool _addTrailingSpace;
     _Bool _allowsAlternatives;
     NSArray *_phrases;
+    NSArray *_multilingualAlternatives;
     const struct __CFString *_transform;
     NSIndexPath *_indexPathOfInterpretations;
 }
@@ -29,15 +32,23 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool addTrailingSpace; // @synthesize addTrailingSpace=_addTrailingSpace;
 @property(nonatomic) _Bool useServerCapitalization; // @synthesize useServerCapitalization=_useServerCapitalization;
 @property(nonatomic) const struct __CFString *transform; // @synthesize transform=_transform;
+@property(nonatomic) _Bool lowConfidenceAboutLanguageDetection; // @synthesize lowConfidenceAboutLanguageDetection=_lowConfidenceAboutLanguageDetection;
+@property(nonatomic) _Bool showMultilingualAlternatives; // @synthesize showMultilingualAlternatives=_showMultilingualAlternatives;
 @property(nonatomic) _Bool fromKeyboard; // @synthesize fromKeyboard=_fromKeyboard;
+@property(copy, nonatomic) NSArray *multilingualAlternatives; // @synthesize multilingualAlternatives=_multilingualAlternatives;
 @property(copy, nonatomic) NSArray *phrases; // @synthesize phrases=_phrases;
 - (void).cxx_destruct;
 - (id)description;
 - (id)singleLineResult;
 - (id)bestResults;
 - (id)dictationPhraseArray;
+- (id)bestTextArrayForAlternatives:(id)arg1;
+- (id)secondBestTextArray;
 - (id)bestTextArray;
+- (id)textArrayForAlternatives:(id)arg1;
 - (id)textArray;
+- (id)bestTextForMultilingualAlternatives;
+- (id)secondBestText;
 - (id)bestText;
 - (id)text;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -45,6 +56,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithArrayOfArrayOfStrings:(id)arg1;
+- (id)initWithDetectedPhrases:(id)arg1 multilingualAlternatives:(id)arg2;
 - (id)initWithPhrases:(id)arg1;
 - (id)init;
 

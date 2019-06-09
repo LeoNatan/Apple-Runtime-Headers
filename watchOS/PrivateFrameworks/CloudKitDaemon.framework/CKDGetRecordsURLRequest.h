@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned int _requestedTTL;
     unsigned int _URLOptions;
     NSSet *_desiredAssetKeys;
+    NSArray *_desiredIndexedListKeys;
     CDUnknownBlockType _recordFetchedBlock;
     NSArray *_recordIDs;
     NSDictionary *_recordIDsToETags;
@@ -33,6 +34,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *recordIDs; // @synthesize recordIDs=_recordIDs;
 @property(copy, nonatomic) CDUnknownBlockType recordFetchedBlock; // @synthesize recordFetchedBlock=_recordFetchedBlock;
 @property(nonatomic) _Bool shouldFetchAssetContent; // @synthesize shouldFetchAssetContent=_shouldFetchAssetContent;
+@property(retain, nonatomic) NSArray *desiredIndexedListKeys; // @synthesize desiredIndexedListKeys=_desiredIndexedListKeys;
 @property(retain, nonatomic) NSSet *desiredAssetKeys; // @synthesize desiredAssetKeys=_desiredAssetKeys;
 @property(nonatomic) unsigned int URLOptions; // @synthesize URLOptions=_URLOptions;
 @property(nonatomic) unsigned int requestedTTL; // @synthesize requestedTTL=_requestedTTL;
@@ -40,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
+- (id)requestedListFieldsForDesiredIndexedListKeys;
 - (id)generateRequestOperations;
 - (_Bool)requestGETPreAuth;
 - (id)requestOperationClasses;

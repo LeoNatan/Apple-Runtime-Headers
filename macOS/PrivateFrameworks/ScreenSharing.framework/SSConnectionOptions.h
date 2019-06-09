@@ -6,43 +6,50 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface SSConnectionOptions : NSObject
 {
-    long long mMinimumEncryptionLevel;
-    BOOL mShouldGetUserInfo;
-    long long mControlType;
     BOOL mShouldFallbackToObserve;
-    long long mAuthMethod;
-    NSMutableDictionary *mHints;
-    NSArray *mVideoEncodings;
-    BOOL mSkipAddressPresentation;
-    void *mReservedForInstanceVariables;
     BOOL shouldScaleScreen;
     BOOL shouldCurtainScreen;
     BOOL shouldSharePasteboard;
+    BOOL mShouldGetUserInfo;
     BOOL openInFullScreen;
     BOOL showConnectionProgress;
+    BOOL mSkipAddressPresentation;
+    BOOL mShouldReturnToAddressBox;
     BOOL skipUserPassDialogIfPossible;
     BOOL _connectingToIOSdevice;
+    long long mMinimumEncryptionLevel;
     long long sessionSelectionAction;
     long long panningMode;
     long long screenQualityMode;
     unsigned long long selectedScreen;
+    NSDictionary *mHints;
+    NSArray *mVideoEncodings;
     NSString *idsDestination;
+    long long _controlType;
+    long long _authMethod;
+    NSString *_deviceID;
+    NSString *_displayName;
     struct CGSize maxSize;
     struct CGRect restoreWindowFrame;
     struct CGRect restoreContentFrame;
 }
 
 + (id)defaultOptions;
+@property(retain) NSString *displayName; // @synthesize displayName=_displayName;
+@property(retain) NSString *deviceID; // @synthesize deviceID=_deviceID;
 @property BOOL connectingToIOSdevice; // @synthesize connectingToIOSdevice=_connectingToIOSdevice;
+@property long long authMethod; // @synthesize authMethod=_authMethod;
+@property long long controlType; // @synthesize controlType=_controlType;
 @property(retain) NSString *idsDestination; // @synthesize idsDestination;
 @property BOOL skipUserPassDialogIfPossible; // @synthesize skipUserPassDialogIfPossible;
+@property BOOL shouldReturnToAddressBox; // @synthesize shouldReturnToAddressBox=mShouldReturnToAddressBox;
 @property BOOL skipAddressPresentation; // @synthesize skipAddressPresentation=mSkipAddressPresentation;
 @property(copy) NSArray *videoEncodings; // @synthesize videoEncodings=mVideoEncodings;
-@property(copy) NSMutableDictionary *hints; // @synthesize hints=mHints;
+@property(copy) NSDictionary *hints; // @synthesize hints=mHints;
 @property BOOL showConnectionProgress; // @synthesize showConnectionProgress;
 @property BOOL openInFullScreen; // @synthesize openInFullScreen;
 @property unsigned long long selectedScreen; // @synthesize selectedScreen;
@@ -52,12 +59,10 @@
 @property long long screenQualityMode; // @synthesize screenQualityMode;
 @property long long panningMode; // @synthesize panningMode;
 @property long long sessionSelectionAction; // @synthesize sessionSelectionAction;
-@property long long controlType; // @synthesize controlType=mControlType;
 @property BOOL shouldGetUserInfo; // @synthesize shouldGetUserInfo=mShouldGetUserInfo;
 @property BOOL shouldSharePasteboard; // @synthesize shouldSharePasteboard;
 @property BOOL shouldCurtainScreen; // @synthesize shouldCurtainScreen;
 @property BOOL shouldScaleScreen; // @synthesize shouldScaleScreen;
-@property long long authMethod; // @synthesize authMethod=mAuthMethod;
 @property BOOL shouldFallbackToObserve; // @synthesize shouldFallbackToObserve=mShouldFallbackToObserve;
 @property long long minimumEncryptionLevel; // @synthesize minimumEncryptionLevel=mMinimumEncryptionLevel;
 - (id)description;

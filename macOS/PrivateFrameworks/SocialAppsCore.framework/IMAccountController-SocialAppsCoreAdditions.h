@@ -20,5 +20,9 @@
 - (id)bestAccountForServiceWithABProperty:(id)arg1;
 - (BOOL)hasActiveLegacyAccount;
 - (id)accountsSupportingStatus;
+- (BOOL)iMessageAccountIsDisabled:(id)arg1;
+- (void)addiMessageAccountIfNeeded;
+- (void)_deleteExtraiMessageAccounts;
+- (void)deleteiMessageAccount:(id)arg1;
 @end
 

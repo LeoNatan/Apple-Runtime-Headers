@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-#import <UIFoundation/NSCoding-Protocol.h>
+#import <UIFoundation/NSSecureCoding-Protocol.h>
 #import <UIFoundation/NSTextLayoutOrientationProvider-Protocol.h>
 
-@class NSArray, NSDictionary, NSLayoutManager, UIView;
+@class NSArray, NSDictionary, NSLayoutManager, NSTextLayoutManager, UIView;
 @protocol NSTextContainerView;
 
-@interface NSTextContainer : NSObject <NSCoding, NSTextLayoutOrientationProvider>
+@interface NSTextContainer : NSObject <NSSecureCoding, NSTextLayoutOrientationProvider>
 {
     NSLayoutManager *_layoutManager;
     UIView<NSTextContainerView> *_textView;
@@ -27,6 +27,7 @@
         unsigned int oldAPI:1;
         unsigned int _reserved:8;
     } _tcFlags;
+    NSTextLayoutManager *_textLayoutManager;
     NSArray *_exclusionPaths;
     struct CGPath *_cachedBoundingPath;
     struct __CFArray *_cachedClippingAttributes;
@@ -39,6 +40,7 @@
     long long _applicationFrameworkContext;
 }
 
++ (_Bool)supportsSecureCoding;
 + (void)initialize;
 - (id)description;
 - (void)setLayoutOrientation:(long long)arg1;
@@ -46,6 +48,7 @@
 - (_Bool)containsPoint:(struct CGPoint)arg1;
 @property(readonly, nonatomic, getter=isSimpleRectangularTextContainer) _Bool simpleRectangularTextContainer;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 remainingRect:(struct CGRect *)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (struct CGRect)lineFragmentRectForProposedRect:(struct CGRect)arg1 atIndex:(unsigned long long)arg2 writingDirection:(long long)arg3 remainingRect:(struct CGRect *)arg4;
 @property(nonatomic) unsigned long long maximumNumberOfLines;
 @property(copy, nonatomic) NSArray *exclusionPaths;
@@ -63,6 +66,8 @@
 - (struct CGPoint)textContainerOrigin;
 - (void)replaceLayoutManager:(id)arg1;
 @property(nonatomic) NSLayoutManager *layoutManager;
+- (void)setTextLayoutManager:(id)arg1;
+- (id)textLayoutManager;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;

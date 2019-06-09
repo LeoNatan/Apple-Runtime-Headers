@@ -39,6 +39,7 @@
 @property(retain, nonatomic) CCUICAPackageDescription *glyphPackageDescription; // @synthesize glyphPackageDescription=_glyphPackageDescription;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)loadView;
 @property(copy, nonatomic) NSString *title; // @dynamic title;
 - (void)buttonTapped:(id)arg1;

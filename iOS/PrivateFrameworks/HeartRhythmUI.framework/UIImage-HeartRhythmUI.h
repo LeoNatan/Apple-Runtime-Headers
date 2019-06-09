@@ -10,7 +10,6 @@
 + (id)hrui_heartRateIconImage;
 + (id)hrui_atrialFibrillationDetectionIllustrationImage;
 + (id)hrui_waveformImage;
-+ (id)hrui_appleWatchSetupCompleteImage;
 + (id)hrui_fingerCrownImage;
 + (id)hrui_ECGAppIconImage;
 + (id)hrui_warningImage;

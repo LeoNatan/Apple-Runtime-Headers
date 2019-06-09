@@ -8,6 +8,7 @@
 
 @class EDResources, EDString;
 
+__attribute__((visibility("hidden")))
 @interface EDTableColumn : NSObject
 {
     EDResources *mResources;

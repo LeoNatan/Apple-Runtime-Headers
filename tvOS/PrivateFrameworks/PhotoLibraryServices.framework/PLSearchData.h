@@ -12,10 +12,12 @@
 {
 }
 
++ (id)entityName;
 
 // Remaining properties
 @property(retain, nonatomic) PLManagedAsset *asset; // @dynamic asset;
 @property(retain, nonatomic) NSData *data; // @dynamic data;
 @property(nonatomic) _Bool valid; // @dynamic valid;
+
 @end
 

@@ -16,12 +16,15 @@
     NSString *_name;
     NSString *_bundleIdentifier;
     _Bool _localDevice;
+    NSString *_owningAppBundleIdentifier;
     NSNumber *_sourceID;
     NSString *_productType;
     unsigned long long _options;
 }
 
 + (_Bool)supportsSecureCoding;
++ (unsigned long long)_sourceOptionsForAppEntitlements:(id)arg1;
++ (id)_sourceWithBundleIdentifier:(id)arg1 defaultBundleIdentifier:(id)arg2 appEntitlements:(id)arg3 name:(id)arg4;
 + (id)_publicSourceForGatewayExternalIdentifier:(id)arg1 name:(id)arg2;
 + (id)_privateSourceForClinicalAccountIdentifier:(id)arg1 name:(id)arg2;
 + (id)_sourceWithBundleIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 options:(unsigned long long)arg4;
@@ -34,14 +37,17 @@
 + (_Bool)_representsCurrentDeviceWithBundleIdentifier:(id)arg1;
 + (id)_connectedGymSource;
 + (id)_localDeviceSource;
++ (id)_uncachedDefaultSourceWithEntitlements:(id)arg1;
++ (id)_uncachedDefaultSource;
 + (id)defaultSource;
++ (id)hd_sourceForClient:(id)arg1 name:(id)arg2;
 @property(nonatomic, getter=_options, setter=_setOptions:) unsigned long long options; // @synthesize options=_options;
-@property(retain, nonatomic, getter=_productType, setter=_setProductType:) NSString *productType; // @synthesize productType=_productType;
+@property(copy, nonatomic, getter=_productType, setter=_setProductType:) NSString *productType; // @synthesize productType=_productType;
 @property(nonatomic, getter=_isLocalDevice, setter=_setLocalDevice:) _Bool localDevice; // @synthesize localDevice=_localDevice;
 @property(retain, nonatomic, getter=_sourceID, setter=_setSourceID:) NSNumber *sourceID; // @synthesize sourceID=_sourceID;
+@property(copy, nonatomic, getter=_owningAppBundleIdentifier, setter=_setOwningAppBundleIdentifier:) NSString *owningAppBundleIdentifier; // @synthesize owningAppBundleIdentifier=_owningAppBundleIdentifier;
 - (void).cxx_destruct;
 - (_Bool)_isConnectedGymSource;
-- (_Bool)_isConnectedGymBundleID;
 - (_Bool)_hasFirstPartyBundleID;
 - (_Bool)_isAppleDevice;
 - (_Bool)_isAppleWatch;

@@ -10,9 +10,8 @@
 {
 }
 
-+ (id)_lookupLocationsForDestinationIDs:(id)arg1 itemBlock:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
-+ (void)lookupLocationsForDestinationIDs:(id)arg1 itemBlock:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
-+ (id)lookupLocationsForDestinationIDs:(id)arg1;
++ (void)lookUpLocationsForDestinationIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (id)lookUpLocationsForDestinationIDs:(id)arg1;
 
 @end
 

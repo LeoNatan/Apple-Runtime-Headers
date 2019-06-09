@@ -25,6 +25,7 @@
     unsigned long long _mantissa;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(nonatomic) unsigned long long mantissa; // @synthesize mantissa=_mantissa;
 @property(nonatomic) _Bool isNegative; // @synthesize isNegative=_isNegative;
@@ -34,6 +35,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasValueMetadata;

@@ -4,25 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKit/NTKColoringImageView.h>
+#import <UIKit/UIView.h>
 
-@class CLKDevice, UIColor, UIImage, UIImageView;
+#import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKHandView : NTKColoringImageView
+@class CALayer, CLKDevice, NSString, NTKColoringImageView, UIColor, UIImage, UIImageView;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKHandView : UIView <CLKMonochromeComplicationView>
 {
-    CLKDevice *_device;
     UIImageView *_shadowImageView;
-    NTKColoringImageView *_inlayView;
+    CALayer *_inlayLayer;
+    UIView *_handDotView;
     _Bool _shadowsHidden;
+    id <CLKMonochromeFilterProvider> _filterProvider;
+    UIColor *_color;
+    UIImage *_image;
     float _zRotation;
     float _scale;
     UIColor *_inlayColor;
     UIImage *_shadowImage;
+    UIView *_transitionContainerView;
+    NTKColoringImageView *_handImageView;
+    CLKDevice *_device;
+    unsigned int _style;
     struct UIEdgeInsets _inlayInsets;
     struct UIEdgeInsets _shadowInsets;
 }
 
-+ (id)_resizableInlayImageForDevice:(id)arg1;
+@property(readonly, nonatomic) unsigned int style; // @synthesize style=_style;
+@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(readonly, nonatomic) NTKColoringImageView *handImageView; // @synthesize handImageView=_handImageView;
+@property(readonly, nonatomic) UIView *handDotView; // @synthesize handDotView=_handDotView;
+@property(retain, nonatomic) UIView *transitionContainerView; // @synthesize transitionContainerView=_transitionContainerView;
 @property(retain, nonatomic) UIImage *shadowImage; // @synthesize shadowImage=_shadowImage;
 @property(nonatomic) struct UIEdgeInsets shadowInsets; // @synthesize shadowInsets=_shadowInsets;
 @property(nonatomic) _Bool shadowsHidden; // @synthesize shadowsHidden=_shadowsHidden;
@@ -30,12 +44,27 @@
 @property(retain, nonatomic) UIColor *inlayColor; // @synthesize inlayColor=_inlayColor;
 @property(nonatomic) float scale; // @synthesize scale=_scale;
 @property(nonatomic) float zRotation; // @synthesize zRotation=_zRotation;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)_adjustHandImageSubviewOrder;
+- (void)setupHandDotViewWithDiameter:(float)arg1;
 - (void)_updateShadows;
-@property(readonly, nonatomic) NTKColoringImageView *inlayView;
+@property(readonly, nonatomic) CALayer *inlayLayer;
 - (void)_updateTransform;
+- (void)_layoutInlayLayer;
 - (void)layoutSubviews;
+- (id)initWithImage:(id)arg1 style:(unsigned int)arg2 forDevice:(id)arg3;
 - (id)initWithImage:(id)arg1 forDevice:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DoNotDisturbServer/DNDSObservableModeAssertionProvider-Protocol.h>
+#import <DoNotDisturbServer/NSObject-Protocol.h>
 
-@class NSDate;
+@class DNDSModeAssertionUpdateResult;
 @protocol DNDSAssertionSyncManagerDataSource, DNDSAssertionSyncManagerDelegate;
 
-@protocol DNDSAssertionSyncManager <DNDSObservableModeAssertionProvider>
+@protocol DNDSAssertionSyncManager <NSObject>
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDelegate> delegate;
 @property(nonatomic) __weak id <DNDSAssertionSyncManagerDataSource> dataSource;
-- (void)invalidateAllModeAssertionsTakenBeforeDate:(NSDate *)arg1 forReason:(unsigned int)arg2;
-- (void)updateForReason:(unsigned int)arg1;
 - (void)resume;
+
+@optional
+- (void)updateForReason:(unsigned int)arg1;
+- (void)updateForModeAssertionUpdateResult:(DNDSModeAssertionUpdateResult *)arg1;
 @end
 

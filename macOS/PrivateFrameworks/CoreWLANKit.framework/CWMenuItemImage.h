@@ -8,6 +8,7 @@
 
 @class NSImage, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CWMenuItemImage : NSObject
 {
     NSString *_text;

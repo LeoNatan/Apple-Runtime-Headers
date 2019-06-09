@@ -11,26 +11,26 @@
 #import <PhotosUICore/PXSectionedDataSourceManagerObserver-Protocol.h>
 #import <PhotosUICore/PXUIViewBasicTile-Protocol.h>
 
-@class NSArray, NSString, PXCMMAssetsProgressListener, PXCMMPeopleSuggestionsDataSourceManager, PXCMMPeopleSuggestionsMediaProvider, PXCMMPosterBannerView, PXCMMViewModel, UIView;
-@protocol PXCMMBannerTileControllerDelegate, PXImportStatusManager;
+@class NSArray, NSString, PXCMMPeopleSuggestionsDataSourceManager, PXCMMPeopleSuggestionsMediaProvider, PXCMMPosterBannerView, PXCMMViewModel, PXMomentShareStatusPresentation, UIView;
+@protocol PXAssetImportStatusManager, PXCMMBannerTileControllerDelegate;
 
-@interface PXCMMBannerTileController : NSObject <PXChangeObserver, PXSectionedDataSourceManagerObserver, PXUIViewBasicTile, PXReusableObject>
+@interface PXCMMBannerTileController : NSObject <PXChangeObserver, PXSectionedDataSourceManagerObserver, PXReusableObject, PXUIViewBasicTile>
 {
     unsigned long long _activityType;
     unsigned long long _sourceType;
     PXCMMViewModel *_viewModel;
-    id <PXImportStatusManager> _importStatusManager;
+    id <PXAssetImportStatusManager> _importStatusManager;
     NSArray *_displayNames;
-    PXCMMAssetsProgressListener *_assetsProgressListener;
+    PXMomentShareStatusPresentation *_momentShareStatusPresentation;
     id <PXCMMBannerTileControllerDelegate> _delegate;
     PXCMMPosterBannerView *_bannerView;
-    PXCMMPeopleSuggestionsDataSourceManager *_peopleSuggestionsDataSourceManager;
     PXCMMPeopleSuggestionsMediaProvider *_peopleSuggestionsMediaProvider;
+    PXCMMPeopleSuggestionsDataSourceManager *_peopleSuggestionsDataSourceManager;
 }
 
 + (id)new;
-@property(retain, nonatomic) PXCMMPeopleSuggestionsMediaProvider *peopleSuggestionsMediaProvider; // @synthesize peopleSuggestionsMediaProvider=_peopleSuggestionsMediaProvider;
 @property(retain, nonatomic) PXCMMPeopleSuggestionsDataSourceManager *peopleSuggestionsDataSourceManager; // @synthesize peopleSuggestionsDataSourceManager=_peopleSuggestionsDataSourceManager;
+@property(retain, nonatomic) PXCMMPeopleSuggestionsMediaProvider *peopleSuggestionsMediaProvider; // @synthesize peopleSuggestionsMediaProvider=_peopleSuggestionsMediaProvider;
 @property(retain, nonatomic) PXCMMPosterBannerView *bannerView; // @synthesize bannerView=_bannerView;
 @property(nonatomic) __weak id <PXCMMBannerTileControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -47,7 +47,7 @@
 - (void)_updateBannerActionButton;
 - (void)_updateCounts;
 - (void)setPeopleSuggestionDataSourceManager:(id)arg1 mediaProvider:(id)arg2;
-- (id)initWithActivityType:(unsigned long long)arg1 sourceType:(unsigned long long)arg2 viewModel:(id)arg3 assetsProgressListener:(id)arg4 importStatusManager:(id)arg5;
+- (id)initWithActivityType:(unsigned long long)arg1 sourceType:(unsigned long long)arg2 viewModel:(id)arg3 momentShareStatusPresentation:(id)arg4 importStatusManager:(id)arg5;
 - (id)init;
 
 // Remaining properties

@@ -4,47 +4,38 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <TVMLKit/TVContainerCollectionViewCell.h>
 
 #import <TVMLKit/TVAuxiliaryViewSelecting-Protocol.h>
 
-@class NSString, UIMotionEffectGroup, UIView;
-@protocol TVAuxiliaryViewSelecting;
+@class NSString, UIView;
+@protocol TVAuxiliaryViewSelecting, TVCollectionViewLockupCellDelegate;
 
 __attribute__((visibility("hidden")))
-@interface _TVCollectionViewLockupCell : UICollectionViewCell <TVAuxiliaryViewSelecting>
+@interface _TVCollectionViewLockupCell : TVContainerCollectionViewCell <TVAuxiliaryViewSelecting>
 {
-    UIMotionEffectGroup *_motionEffectGroup;
     _Bool _pressIsAnimating;
     UIView<TVAuxiliaryViewSelecting> *__selectingView;
     _Bool _unpressOnEndAnimating;
-    _Bool _allowsFocus;
+    _Bool _isFocusWithinCell;
+    id <TVCollectionViewLockupCellDelegate> _delegate;
 }
 
-@property(nonatomic) _Bool allowsFocus; // @synthesize allowsFocus=_allowsFocus;
+@property(nonatomic) __weak id <TVCollectionViewLockupCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
-- (void)_setFocused:(_Bool)arg1 animated:(_Bool)arg2 context:(id)arg3 coordinator:(id)arg4;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_showPressState;
-- (void)_setFocusDirection:(struct CGPoint)arg1;
 - (void)_handleSelect;
 - (id)_selectingView;
-- (void)_detachMotionEffects;
 - (void)_clearPressState;
-- (void)_attachMotionEffects;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
 - (_Bool)_descendantsShouldHighlight;
 - (id)_preferredConfigurationForFocusAnimation:(long long)arg1 inContext:(id)arg2;
+- (id)layeredImageContainerLayer;
 - (void)prepareForReuse;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (_Bool)canBecomeFocused;
-- (_Bool)_unapplyMotionEffect:(id)arg1;
-- (_Bool)_applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2;
-- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
-- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)_searchForFocusRegionsInContext:(id)arg1;
+- (id)selectingView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

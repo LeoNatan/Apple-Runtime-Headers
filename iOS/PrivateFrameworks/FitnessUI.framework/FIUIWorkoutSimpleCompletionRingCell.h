@@ -6,11 +6,11 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class HKRingsView, UIImageView, UILabel, UIView;
+@class ARUIRingsView, UIImageView, UILabel, UIView;
 
 @interface FIUIWorkoutSimpleCompletionRingCell : UITableViewCell
 {
-    HKRingsView *_ringsView;
+    ARUIRingsView *_ringsView;
     UIImageView *_ringImageView;
     UIImageView *_iconImageView;
     UIView *_lineView;
@@ -22,7 +22,7 @@
 @property(retain, nonatomic) UIView *lineView; // @synthesize lineView=_lineView;
 @property(retain, nonatomic) UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
 @property(retain, nonatomic) UIImageView *ringImageView; // @synthesize ringImageView=_ringImageView;
-@property(retain, nonatomic) HKRingsView *ringsView; // @synthesize ringsView=_ringsView;
+@property(retain, nonatomic) ARUIRingsView *ringsView; // @synthesize ringsView=_ringsView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)configureWithWorkout:(id)arg1;

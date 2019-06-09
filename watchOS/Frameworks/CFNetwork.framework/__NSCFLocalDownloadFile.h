@@ -9,7 +9,6 @@
 @class NSString;
 @protocol OS_dispatch_io, OS_dispatch_queue, __NSCFLocalDownloadFileOpener;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFLocalDownloadFile : NSObject
 {
     struct stat _stat;

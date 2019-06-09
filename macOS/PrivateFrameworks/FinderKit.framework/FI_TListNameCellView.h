@@ -9,7 +9,8 @@
 #import <FinderKit/TICloudBadgeButtonContainer-Protocol.h>
 #import <FinderKit/TInlineProgressViewContainer-Protocol.h>
 
-@class NSString;
+@class FI_TButton, NSLayoutConstraint, NSLayoutGuide, NSObject, NSString;
+@protocol TListNameFieldDelegate;
 
 __attribute__((visibility("hidden")))
 @interface FI_TListNameCellView : FI_TListBaseCellView <TICloudBadgeButtonContainer, TInlineProgressViewContainer>
@@ -18,46 +19,55 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSLayoutConstraint, void> _iconImageViewWidthConstraint;
     struct TNSRef<NSLayoutConstraint, void> _iconImageViewTrailingConstraint;
     struct TNSRef<FI_TListNameSubtitleTextField, void> _subtitleTextField;
-    struct TNSRef<NSLayoutGuide, void> _subtitleTextFieldLayoutGuide;
-    struct TNSRef<NSLayoutGuide, void> _subtitleTrailingSpaceLayoutGuide;
-    struct TNSRef<NSLayoutGuide, void> _tagsViewLayoutGuide;
+    NSLayoutGuide *_subtitleTextFieldLayoutGuide;
+    NSLayoutConstraint *_subtitleLayoutGuideLeadingFixedConstraint;
+    NSLayoutConstraint *_subtitleLayoutGuideLeadingFlexibleConstraint;
+    NSLayoutConstraint *_subtitleLayoutGuideTrailingFlexibleConstraint;
+    NSLayoutConstraint *_subtitleLayoutGuideTrailingFixedConstraint;
+    FI_TButton *_ejectButton;
+    NSLayoutConstraint *_ejectButtonTrailingConstraint;
+    struct TNSRef<NSImageView, void> _screenTimeImageView;
+    NSLayoutConstraint *_screenTimeTrailingConstraint;
+    NSLayoutConstraint *_screenTimeSpacingConstraintOnMaster;
     struct TNSRef<FI_TTagsImageView, void> _tagsImageView;
-    struct TNSRef<NSLayoutConstraint, void> _tagsViewMasterLayoutGuideConstraint;
-    struct TNSRef<NSLayoutConstraint, void> _tagsViewMasterWidthConstraint;
-    struct TNSRef<NSLayoutGuide, void> _badgeViewLayoutGuide;
-    struct TNSRef<FI_TICloudBadgeButton, void> _iCloudBadgeImageButton;
-    struct TNSRef<FI_TImageView, void> _syncExtensionBadgeImageView;
-    function_d15ff7cc _syncExtBadgeAndToolTipFunc;
-    struct TNSRef<NSLayoutConstraint, void> _badgeViewMasterLayoutGuideConstraint;
-    struct TNSRef<NSLayoutConstraint, void> _badgeViewMasterWidthConstraint;
+    NSLayoutConstraint *_tagsTrailingConstraint;
+    NSLayoutConstraint *_tagsSpacingConstraintOnMaster;
+    struct TNSRef<FI_TBasicImageView, void> _vendorBadgeImageView;
+    NSLayoutConstraint *_vendorBadgeTrailingConstraint;
+    NSLayoutConstraint *_vendorBadgeSpacingConstraintOnMaster;
+    struct TNSRef<FI_TICloudBadgeButton, void> _syncBadgeImageButton;
+    NSLayoutConstraint *_syncBadgeSpacingConstraintOnMaster;
     struct TNSRef<FI_TInlineProgressView, void> _progressView;
     struct TICloudStateCoordinator _iCloudStateCoordinator;
+    NSLayoutConstraint *_progressViewSpacingConstraintOnMaster;
+    NSLayoutGuide *_masterLayoutGuide;
 }
 
++ (double)interItemSpacing;
++ (struct NSEdgeInsets)contentInsets;
+@property(retain, nonatomic) NSLayoutGuide *masterLayoutGuide; // @synthesize masterLayoutGuide=_masterLayoutGuide;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setIconDimmed:(_Bool)arg1;
 - (void)setDimmed:(_Bool)arg1;
 - (void)updateProgressView;
 - (void)setProgressStatus:(const struct TNodeProgressStatus *)arg1;
-- (void)setBadgeViewMasterWidth:(double)arg1;
-- (void)setTagsViewMasterWidth:(double)arg1;
-- (void)deactiveMasterLayoutGuideConstraints;
-- (void)setMasterLayoutGuide:(id)arg1;
-- (void)updateBadgeViewMasterLayoutGuideConstraints;
-- (void)updateSyncExtensionBadgeImage;
+- (void)masterLayoutGuideFrameDidChange;
 - (void)setICloudBadge:(int)arg1 toolTip:(const struct TString *)arg2 clickHandler:(const function_b1fce659 *)arg3;
-- (void)setSyncExtBadgeAndToolTipFunc:(const function_d15ff7cc *)arg1;
+- (void)setVendorBadge:(id)arg1 toolTip:(const struct TString *)arg2;
 - (void)setTags:(const vector_12bd641b *)arg1;
-- (void)setSubtitleStringSet:(const unordered_set_66d0470b *)arg1;
+- (void)setScreenTimeBadge:(id)arg1 toolTip:(const struct TString *)arg2;
+- (void)setEjectButtonFunc:(const function_b1fce659 *)arg1;
+- (void)setSubtitleStringSet:(const unordered_set_66d0470b *)arg1 isTrailingAligned:(_Bool)arg2;
 - (id)titleCell;
-- (unsigned long long)titleAlignment;
+- (long long)titleAlignment;
 - (id)hitTestInTitle:(const struct CGPoint *)arg1;
 - (struct CGRect)titleEditorMaxFrame;
 - (struct CGRect)titleFrame;
 - (id)createTitleImage;
 - (void)setTitleShouldEdit:(_Bool)arg1;
 - (void)setTitleHidden:(_Bool)arg1;
-- (void)setController:(id)arg1;
+@property(nonatomic) __weak NSObject<TListNameFieldDelegate> *lnfDelegate; // @dynamic lnfDelegate;
 - (id)nameTextField;
 - (void)setTitleFont:(id)arg1;
 - (void)setTitleStr:(struct TString)arg1;
@@ -68,7 +78,6 @@ __attribute__((visibility("hidden")))
 - (void)layout;
 - (struct CGSize)idealSize;
 - (void)prepareForReuse;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

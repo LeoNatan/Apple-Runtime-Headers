@@ -14,6 +14,7 @@
 @interface AXMOutputManager : NSObject <AXMTaskDispatcherDelegate>
 {
     AXMTaskDispatcher *_outputRequests;
+    BOOL _usesPrivateAudioSession;
     AXMAudioSession *_audioSession;
     long long _state;
     NSObject<OS_dispatch_queue> *_queue;
@@ -24,14 +25,18 @@
 
 - (void).cxx_destruct;
 - (void)dispatcher:(id)arg1 handleTask:(id)arg2;
-- (void)playSound:(long long)arg1;
+- (id)playActiveSound:(id)arg1;
+- (void)playSound:(id)arg1;
 - (void)interruptPolitely;
 - (void)interruptImmediately;
 - (void)interrupt:(id)arg1;
 - (void)speak:(id)arg1;
-- (void)dispatchRequest:(id)arg1 options:(id)arg2;
+- (id)dispatchRequest:(id)arg1;
 - (void)enableWithCompletion:(CDUnknownBlockType)arg1;
+- (void)disable;
 @property(readonly, copy) NSString *description;
+- (id)initWithComponents:(unsigned long long)arg1 usingPrivateAudioSession:(BOOL)arg2;
+- (id)initUsingPrivateAudioSession:(BOOL)arg1;
 - (id)init;
 
 // Remaining properties

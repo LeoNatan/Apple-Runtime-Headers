@@ -33,6 +33,7 @@
 + (id)propertyGroupItemWithLabeledValue:(id)arg1 group:(id)arg2 contact:(id)arg3 environment:(id)arg4;
 + (id)propertyGroupItemWithLabel:(id)arg1 group:(id)arg2 contact:(id)arg3;
 + (id)propertyGroupItemWithLabeledValue:(id)arg1 group:(id)arg2 contact:(id)arg3;
++ (id)initialValueForLabel:(id)arg1 group:(id)arg2;
 + (id)emptyValueForLabel:(id)arg1;
 @property(nonatomic) unsigned long long policyFlags; // @synthesize policyFlags=_policyFlags;
 @property(readonly, nonatomic) CNUIContactsEnvironment *environment; // @synthesize environment=_environment;
@@ -68,13 +69,16 @@
 - (_Bool)isFavoriteOfActionType:(id)arg1 bundleIdentifier:(id)arg2;
 @property(readonly, nonatomic, getter=isFavorite) _Bool favorite;
 @property(readonly, nonatomic) _Bool canRemove;
+@property(readonly, nonatomic) _Bool supportsLabel;
 @property(readonly, nonatomic, getter=isReadonly) _Bool readonly;
 @property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (id)replacementForInvalidValue:(id)arg1;
 - (_Bool)isValidValue:(id)arg1;
 - (id)valueForDisplayString:(id)arg1;
 - (id)displayStringForValue:(id)arg1;
-@property(readonly, nonatomic) __weak NSArray *supportedLabels;
+@property(readonly, nonatomic) __weak NSArray *promotedExtendedLabels;
+@property(readonly, nonatomic) __weak NSArray *extendedLabels;
+@property(readonly, nonatomic) __weak NSArray *standardLabels;
 @property(readonly, nonatomic) NSString *placeholderString;
 @property(readonly, nonatomic) NSString *editingStringValue;
 @property(readonly, nonatomic) NSString *displayLabel;

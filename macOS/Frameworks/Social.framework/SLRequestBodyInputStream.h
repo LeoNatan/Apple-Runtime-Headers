@@ -9,6 +9,7 @@
 @class NSArray, SLRequestMultiPartInputStream;
 @protocol NSStreamDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SLRequestBodyInputStream : NSInputStream
 {
     NSArray *_inputStreams;

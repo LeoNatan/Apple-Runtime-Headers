@@ -33,8 +33,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isLockScreen;
 - (_Bool)isTransparent;
 - (_Bool)isTranslucent;
-- (_Bool)areTopCornersRounded;
-- (int)cornerStyle;
 - (float)heightForMetrics:(int)arg1;
 - (float)heightForOrientation:(int)arg1;
 - (int)idiom;

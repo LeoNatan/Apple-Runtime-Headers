@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DCIMServices/CAMBadgeTextView.h>
+#import <CameraEditKit/CEKBadgeTextView.h>
 
-@interface CAMFilterNameBadge : CAMBadgeTextView
+@interface CAMFilterNameBadge : CEKBadgeTextView
 {
     long long _filterType;
 }

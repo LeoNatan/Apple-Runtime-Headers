@@ -20,9 +20,14 @@
     _Bool __usesAppleIDContext;
 }
 
-+ (id)anisetteFreeURLSessionWithCacheProvider:(id)arg1;
++ (void)removeAllCachedResponses;
++ (id)_urlBagCache;
++ (id)sharedCacheReliantAnisetteFreeSession;
++ (id)sharedCacheEnabledAnisetteFreeSession;
++ (id)sharedCacheEnabledURLSession;
 + (id)sharedAnisetteFreeURLSession;
 + (id)sharedURLSession;
++ (id)_createURLSessionUsesAppleIDContext:(_Bool)arg1;
 @property(nonatomic) _Bool _usesAppleIDContext; // @synthesize _usesAppleIDContext=__usesAppleIDContext;
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

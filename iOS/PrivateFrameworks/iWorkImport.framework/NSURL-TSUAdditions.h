@@ -6,8 +6,13 @@
 
 #import <Foundation/NSURL.h>
 
-@interface NSURL (TSUAdditions)
+#import <iWorkImport/TSUURLWrapper-Protocol.h>
+
+@class NSString;
+
+@interface NSURL (TSUAdditions) <TSUURLWrapper>
 + (id)tsu_fileURLWithPath:(id)arg1;
++ (id)tsp_iWorkAVAssetURLWithUUID:(id)arg1 filename:(id)arg2 contentTypeUTI:(id)arg3;
 - (id)tsu_URLExceptPrivate;
 - (id)tsu_pathExceptPrivate;
 - (id)tsu_contentModificationDateWithLogContext:(id)arg1;
@@ -32,5 +37,23 @@
 - (void)tsu_performSecurityScopedResourceAccessAsynchronouslyUsingBlock:(CDUnknownBlockType)arg1;
 - (void)tsu_performSecurityScopedResourceAccessUsingBlock:(CDUnknownBlockType)arg1;
 - (id)tsu_documentIdentifier;
+- (_Bool)tsu_conformsToAnyUTI:(id)arg1;
+- (_Bool)tsu_conformsToUTI:(id)arg1;
+@property(readonly, nonatomic) NSString *tsu_UTI;
+@property(readonly) NSURL *URL;
+- (id)tsp_queryDictionary;
+- (_Bool)tsp_getIsUbiquitousValue:(_Bool *)arg1 promised:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)tsp_isUbiquitous;
+- (id)tsp_fileIdentifier;
+- (id)tsp_embeddedUTI;
+- (_Bool)tsp_matchesURL:(id)arg1 canCompareFileID:(_Bool)arg2;
+- (_Bool)tsp_matchesURL:(id)arg1;
+- (_Bool)tsp_isIWorkAVAssetURL;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

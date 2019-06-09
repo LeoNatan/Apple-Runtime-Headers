@@ -26,6 +26,7 @@
 - (_Bool)canExport;
 - (_Bool)canForward;
 - (_Bool)canCopy;
+- (struct CGSize)_transcoderGeneratedSizeFittingSize:(struct CGSize)arg1 sizeExists:(_Bool *)arg2;
 - (struct CGSize)loadSizeThatFits:(struct CGSize)arg1 textAlignmentInsets:(out struct UIEdgeInsets *)arg2;
 - (id)initWithIMChatItem:(id)arg1 maxWidth:(double)arg2;
 - (id)description;

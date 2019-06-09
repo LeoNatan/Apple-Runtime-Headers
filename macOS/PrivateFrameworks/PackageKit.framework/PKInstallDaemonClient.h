@@ -24,6 +24,7 @@
 }
 
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
+- (void)installWillProceedForState:(int)arg1 withSandbox:(id)arg2 withToken:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)installDidEndForToken:(id)arg1;
 - (void)installDidBeginCommitForToken:(id)arg1;
 - (void)installDidBeginForToken:(id)arg1;

@@ -10,15 +10,14 @@
 
 @protocol NLFirstGlanceEngineDataSource <NSObject>
 - (double)projectedDayDuration;
+- (NSArray *)workoutsCompletedDuringInterval:(NSDateInterval *)arg1;
+- (NSSet *)allActivitySharingFriends;
+- (NSDictionary *)weeklySummaryInfoForDate:(NSDate *)arg1;
+- (double)recommendedGoalForDate:(NSDate *)arg1;
 - (NSArray *)activitySummariesDuringInterval:(NSDateInterval *)arg1 calendar:(NSCalendar *)arg2;
 - (HKActivitySummary *)yesterdayActivitySummary;
-- (double)recommendedGoalInCaloriesForDate:(NSDate *)arg1;
-- (NSArray *)workoutsCompletedDuringInterval:(NSDateInterval *)arg1;
 - (ACHAchievement *)monthlyChallengeForDate:(NSDate *)arg1 calendar:(NSCalendar *)arg2;
 - (NSArray *)achievementsCompletedOnDay:(NSDateComponents *)arg1 calendar:(NSCalendar *)arg2;
 - (ACHAchievement *)achievementWithUniqueName:(NSString *)arg1;
-- (NSDictionary *)weeklySummaryInfoForDate:(NSDate *)arg1;
-- (int)firstDayOfFitnessWeek;
-- (NSSet *)allActivitySharingFriends;
 @end
 

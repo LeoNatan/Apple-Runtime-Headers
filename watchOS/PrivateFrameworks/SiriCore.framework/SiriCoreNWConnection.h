@@ -9,7 +9,7 @@
 #import <SiriCore/SiriCoreConnectionProvider-Protocol.h>
 
 @class NSArray, NSString, NSURL, SAConnectionPolicy, SAConnectionPolicyRoute, SiriCoreConnectionMetrics, SiriCoreConnectionType;
-@protocol OS_dispatch_queue, OS_dispatch_source, OS_nw_connection, OS_nw_endpoint, SiriCoreConnectionProviderDelegate;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_nw_connection, OS_nw_content_context, OS_nw_endpoint, SiriCoreConnectionProviderDelegate;
 
 @interface SiriCoreNWConnection : NSObject <SiriCoreConnectionProvider>
 {
@@ -19,6 +19,7 @@
     NSString *_resolvedHost;
     NSObject<OS_nw_connection> *_connection;
     NSObject<OS_nw_endpoint> *_endpoint;
+    NSObject<OS_nw_content_context> *_content_context;
     SAConnectionPolicyRoute *_route;
     SAConnectionPolicy *_policy;
     _Bool _prefersWWAN;

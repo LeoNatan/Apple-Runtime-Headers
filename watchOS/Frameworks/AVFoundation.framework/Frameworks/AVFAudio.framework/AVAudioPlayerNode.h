@@ -39,7 +39,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property(nonatomic) float volume;
+@property(nonatomic) float volume; // @dynamic volume;
 
 @end
 

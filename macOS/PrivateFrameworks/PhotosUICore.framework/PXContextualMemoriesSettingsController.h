@@ -22,7 +22,7 @@
 @property(nonatomic, getter=isRequestingUpdates) BOOL requestingUpdates; // @synthesize requestingUpdates=_requestingUpdates;
 @property(readonly, nonatomic) PXContextualMemoriesSettings *settings; // @synthesize settings=_settings;
 - (void).cxx_destruct;
-- (void)requestUpdatedContextualMemoriesSettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)requestUpdatedContextualMemoriesSettingsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end

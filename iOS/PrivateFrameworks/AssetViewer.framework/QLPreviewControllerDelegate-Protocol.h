@@ -12,6 +12,9 @@
 @protocol QLPreviewControllerDelegate <NSObject>
 
 @optional
+- (void)previewController:(QLPreviewController *)arg1 didSaveEditedCopyOfPreviewItem:(id <QLPreviewItem>)arg2 atURL:(NSURL *)arg3;
+- (void)previewController:(QLPreviewController *)arg1 didUpdateContentsOfPreviewItem:(id <QLPreviewItem>)arg2;
+- (long long)previewController:(QLPreviewController *)arg1 editingModeForPreviewItem:(id <QLPreviewItem>)arg2;
 - (UIView *)previewController:(QLPreviewController *)arg1 transitionViewForPreviewItem:(id <QLPreviewItem>)arg2;
 - (UIImage *)previewController:(QLPreviewController *)arg1 transitionImageForPreviewItem:(id <QLPreviewItem>)arg2 contentRect:(struct CGRect *)arg3;
 - (struct CGRect)previewController:(QLPreviewController *)arg1 frameForPreviewItem:(id <QLPreviewItem>)arg2 inSourceView:(id *)arg3;

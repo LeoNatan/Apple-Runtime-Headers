@@ -7,6 +7,7 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (DataHashingAdditions)
++ (id)_dataByDecompressingFileAtPath:(id)arg1;
 - (id)_MD5DigestString;
 - (id)_SHA1DigestString;
 - (id)_SHA1DigestData;

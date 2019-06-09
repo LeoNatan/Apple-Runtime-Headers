@@ -12,8 +12,8 @@
 {
     NSData *_data;
     const char *_datastring;
-    int _length;
-    int _cursor;
+    unsigned long long _length;
+    unsigned long long _cursor;
     char *_token;
     int _tokenType;
     int _expectedNextTokenType;

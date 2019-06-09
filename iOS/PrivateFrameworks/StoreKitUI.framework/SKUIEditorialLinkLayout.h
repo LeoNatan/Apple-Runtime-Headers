@@ -10,6 +10,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditorialLinkLayout : NSObject <SKUICachedLayout>
 {
     struct CGSize *_sizes;

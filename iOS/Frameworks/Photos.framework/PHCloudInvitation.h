@@ -41,6 +41,7 @@
 @property(readonly, nonatomic) NSString *invitationStateDescription;
 @property(readonly, nonatomic) NSArray *inviteePhones;
 @property(readonly, nonatomic) NSArray *inviteeEmails;
+- (id)personInfoManager;
 - (id)inviteeDisplayNameIncludingEmail:(_Bool)arg1;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;

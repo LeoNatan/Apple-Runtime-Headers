@@ -19,10 +19,12 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VUIPlistMediaDatabaseItem *databaseItem; // @synthesize databaseItem=_databaseItem;
 - (void).cxx_destruct;
 - (id)imageLoadParamsWithImageType:(unsigned long long)arg1;
+- (id)assetType;
 - (id)seasonTitle;
 - (id)seasonIdentifier;
 - (id)previewFrameImageIdentifier;
 - (id)_valueForPropertyDescriptor:(id)arg1;
+- (id)isLocal;
 - (id)seasonNumber;
 - (id)showTitle;
 - (id)showIdentifier;

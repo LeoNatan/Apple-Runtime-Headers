@@ -7,17 +7,18 @@
 #import <HealthDaemon/HDStandardTaskServer.h>
 
 #import <HealthDaemon/HKKeyValueDomainServerInterface-Protocol.h>
-#import <HealthDaemon/HKUnitTestingTaskServerInterface-Protocol.h>
 
 @class HDKeyValueDomain;
 
-@interface HDKeyValueDomainTaskServer : HDStandardTaskServer <HKKeyValueDomainServerInterface, HKUnitTestingTaskServerInterface>
+@interface HDKeyValueDomainTaskServer : HDStandardTaskServer <HKKeyValueDomainServerInterface>
 {
     HDKeyValueDomain *_keyValueDomain;
 }
 
-+ (_Bool)validateConfiguration:(id)arg1 error:(out id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
 + (Class)configurationClass;
++ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4 error:(id *)arg5;
++ (id)_entitlementForCategory:(long long)arg1;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
 - (void).cxx_destruct;
@@ -27,13 +28,15 @@
 - (void)remote_numberForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_removeValuesForKeys:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_setValuesWithDictionary:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_setString:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_setDate:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_setNumber:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)exportedInterface;
 - (id)remoteInterface;
 - (void)_unitTest_overrideKeyValueDomainCategory:(long long)arg1;
+- (_Bool)_performDatabaseTransactionWithError:(id *)arg1 block:(CDUnknownBlockType)arg2;
 - (Class)_keyValueEntityClass;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 @end
 

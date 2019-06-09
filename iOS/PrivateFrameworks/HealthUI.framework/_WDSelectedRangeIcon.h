@@ -11,8 +11,8 @@
 }
 
 + (id)_dataLabelImageForPlusSign:(_Bool)arg1 foregroundColor:(id)arg2 dimension:(double)arg3 strokeOffset:(double)arg4 strokeWidth:(double)arg5;
-+ (id)_cacheKeyForData:(id)arg1 foregroundColor:(id)arg2;
-+ (id)iconForData:(id)arg1 foregroundColor:(id)arg2;
++ (id)_cacheKeyForData:(id)arg1 foregroundColor:(id)arg2 font:(id)arg3;
++ (id)iconForData:(id)arg1 foregroundColor:(id)arg2 compatibleWithFont:(id)arg3;
 + (id)_iconCache;
 
 @end

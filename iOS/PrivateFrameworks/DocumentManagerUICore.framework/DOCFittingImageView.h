@@ -13,8 +13,6 @@
 
 @interface DOCFittingImageView : UIImageView <DOCThumbnailListener>
 {
-    _Bool _addDecoration;
-    _Bool _inTableMode;
     id <DOCFittingImageViewDelegate> _delegate;
     id <DOCThumbnail> _thumbnail;
     NSLayoutConstraint *_aspectRatioConstraint;
@@ -23,17 +21,14 @@
 
 @property(retain, nonatomic) NSLayoutConstraint *aspectRatioConstraint; // @synthesize aspectRatioConstraint=_aspectRatioConstraint;
 @property(nonatomic) struct CGSize fittingSize; // @synthesize fittingSize=_fittingSize;
-@property(nonatomic, getter=isInTableMode) _Bool inTableMode; // @synthesize inTableMode=_inTableMode;
-@property(nonatomic) _Bool addDecoration; // @synthesize addDecoration=_addDecoration;
 @property(retain, nonatomic) id <DOCThumbnail> thumbnail; // @synthesize thumbnail=_thumbnail;
 @property(nonatomic) __weak id <DOCFittingImageViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (void)updateCornerRadius;
-- (void)updateBorderWidth;
-- (void)updateImage:(id)arg1 addDecoration:(_Bool)arg2;
 - (void)thumbnailLoaded:(id)arg1;
+- (void)effectiveAppearanceDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)setImage:(id)arg1;
 - (id)initWithCoder:(id)arg1;

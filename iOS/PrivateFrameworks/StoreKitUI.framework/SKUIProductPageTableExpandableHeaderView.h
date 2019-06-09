@@ -8,6 +8,7 @@
 
 @class NSString, SKUIColorScheme, UIColor, UILabel, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageTableExpandableHeaderView : UIControl
 {
     UILabel *_actionLabel;

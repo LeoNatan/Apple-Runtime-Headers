@@ -8,6 +8,7 @@
 
 @class OITSUBezierPath;
 
+__attribute__((visibility("hidden")))
 @interface MFPhonePath : MFPath
 {
     OITSUBezierPath *m_path;

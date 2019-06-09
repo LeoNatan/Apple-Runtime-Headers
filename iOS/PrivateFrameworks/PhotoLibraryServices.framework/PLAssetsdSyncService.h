@@ -4,21 +4,40 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoLibraryServices/PLAbstractLibraryServicesManagerService.h>
 
 #import <PhotoLibraryServices/PLAssetsdSyncServiceProtocol-Protocol.h>
 
-@class NSString;
+@class NSObject, NSString, PLFileSystemAssetImporter, PLXPCTransaction;
+@protocol OS_dispatch_group, OS_dispatch_queue;
 
-@interface PLAssetsdSyncService : NSObject <PLAssetsdSyncServiceProtocol>
+@interface PLAssetsdSyncService : PLAbstractLibraryServicesManagerService <PLAssetsdSyncServiceProtocol>
 {
+    NSObject<OS_dispatch_queue> *_isolationQueue;
+    NSObject<OS_dispatch_group> *_updateGroup;
+    PLXPCTransaction *_libraryTransaction;
+    PLFileSystemAssetImporter *_importer;
 }
 
+- (void).cxx_destruct;
+- (void)_addAsset:(id)arg1 toAlbumsForUUID:(id)arg2;
+- (id)_readRestoreAlbumMetadataForAlbum:(id)arg1;
+- (id)_fileRestoreExclusionPaths;
+- (void)_cleanupAlbumMetadataAsideFilesAfterRestore;
+- (void)_recoverAsideFiles:(id)arg1;
+- (void)_linkPathsAside:(id)arg1;
+- (void)_updatePendingCountForMissingAsset:(id)arg1;
+- (void)_updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2 fixAddedDate:(_Bool)arg3;
+- (void)_finalizeOTARestoreEndedAndRecreateAlbums:(_Bool)arg1;
+- (void)finalizeOTARestoreRecreatingAlbums:(_Bool)arg1;
+- (void)updateRestoredAssetWithUUID:(id)arg1 paths:(id)arg2 fixAddedDate:(_Bool)arg3;
+- (id)initWithLibraryServicesManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+
 @end
 

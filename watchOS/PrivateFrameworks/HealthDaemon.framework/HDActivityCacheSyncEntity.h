@@ -10,11 +10,10 @@
 {
 }
 
++ (id)_basePruningPredicateForDate:(id)arg1 profile:(id)arg2;
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;
 + (id)syncEntityIdentifier;
-+ (unsigned int)syncObjectLimitForNanoSyncMessage;
-+ (id)_companionNanoSyncPredicateConjunctionForSession:(id)arg1;
 + (int)nanoSyncObjectType;
 
 @end

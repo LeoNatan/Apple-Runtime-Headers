@@ -11,6 +11,7 @@
 
 @class NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SpecificRedirectHandler : NSObject <ConfigurableObjectProtocol, SymptomAdditionalProtocol>
 {
     NSData *_triggerURL;

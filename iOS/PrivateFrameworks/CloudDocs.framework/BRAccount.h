@@ -14,10 +14,13 @@
     NSData *_perAppAccountIdentifier;
 }
 
++ (_Bool)forceLogoutAndClearStateWithError:(id *)arg1;
 + (_Bool)refreshCurrentLoggedInAccount;
++ (_Bool)refreshCurrentLoggedInAccountWithError:(id *)arg1;
 + (id)currentLoggedInAccountWithError:(id *)arg1;
 + (id)currentCachedLoggedInAccountWithError:(id *)arg1;
 + (_Bool)_refreshCurrentLoggedInAccountForcingRefresh:(_Bool)arg1 error:(id *)arg2;
++ (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)startAccountTokenChangeObserverIfNeeded;
 @property(copy, nonatomic) NSData *perAppAccountIdentifier; // @synthesize perAppAccountIdentifier=_perAppAccountIdentifier;
 - (void).cxx_destruct;

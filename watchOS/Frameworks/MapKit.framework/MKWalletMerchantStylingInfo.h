@@ -17,9 +17,12 @@
 
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+- (id)description;
 - (id)tintColorForScale:(float)arg1;
+- (id)imageForSize:(unsigned int)arg1 scale:(float)arg2 transparent:(_Bool)arg3;
 - (id)imageForSize:(unsigned int)arg1 scale:(float)arg2;
 - (id)_featureStyleAttributes;
+- (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStyleAttributes:(id)arg1;

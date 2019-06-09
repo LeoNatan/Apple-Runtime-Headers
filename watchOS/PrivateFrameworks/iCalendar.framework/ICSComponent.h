@@ -24,7 +24,7 @@
 + (id)stringFromRelationshipType:(unsigned int)arg1;
 + (unsigned int)relationshipTypeFromString:(id)arg1;
 + (id)inheritanceKeywords;
-@property(retain) NSMutableArray *components; // @synthesize components=_components;
+@property(retain, nonatomic) NSMutableArray *components; // @synthesize components=_components;
 - (void).cxx_destruct;
 - (_Bool)shouldObscureValue;
 - (id)parametersToObscure;

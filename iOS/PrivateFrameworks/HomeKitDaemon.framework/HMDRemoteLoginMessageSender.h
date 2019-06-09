@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDAppleMediaAccessory, HMDCentralMessageDispatcher, HMDDevice, NSObject, NSString, NSUUID;
+@class HMDAppleMediaAccessory, HMDDevice, HMDMessageDispatcher, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDRemoteLoginMessageSender : HMFObject <HMFLogging>
@@ -17,11 +17,11 @@
     HMDDevice *_device;
     HMDAppleMediaAccessory *_accessory;
     NSObject<OS_dispatch_queue> *_workQueue;
-    HMDCentralMessageDispatcher *_remoteMessageDispatcher;
+    HMDMessageDispatcher *_remoteMessageDispatcher;
 }
 
 + (id)logCategory;
-@property(readonly, nonatomic) HMDCentralMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
+@property(readonly, nonatomic) HMDMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) __weak HMDAppleMediaAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) HMDDevice *device; // @synthesize device=_device;

@@ -10,28 +10,41 @@
 #import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUI/UIScrollViewDelegate-Protocol.h>
 
-@class AVPlayer, NSString, PUFilmstripView, PUPlayheadView, PXVideoScrubberController, UIImage, UIScrollView;
+@class AVPlayer, NSString, PUPlayheadView, PXVideoScrubberController, UIImage, UIScrollView;
+@protocol PHVideoScrubberFilmstripView, PHVideoScrubberFilmstripViewProvider, PHVideoScrubberViewInteractionDelegate;
 
 @interface PHVideoScrubberView : UIView <PXVideoScrubberControllerDelegate, UIScrollViewDelegate, UIGestureRecognizerDelegate>
 {
     unsigned long long _previousPlayState;
+    struct {
+        _Bool didBeginTouching;
+        _Bool didEndTouching;
+        _Bool willBeginDragging;
+        _Bool didEndDragging;
+        _Bool willBeginDecelerating;
+        _Bool didEndDecelerating;
+    } _interactionDelegateRespondsTo;
     _Bool __needsUpdateFilmStripView;
     _Bool __needsUpdateVideoScrubberController;
     AVPlayer *_player;
     double _estimatedDuration;
     UIImage *_placeholderThumbnail;
-    PUFilmstripView *__filmStripView;
+    UIScrollView *_scrollView;
+    id <PHVideoScrubberViewInteractionDelegate> _interactionDelegate;
+    id <PHVideoScrubberFilmstripViewProvider> _filmstripViewProvider;
+    UIView<PHVideoScrubberFilmstripView> *__filmStripView;
     PXVideoScrubberController *__videoScrubberController;
-    UIScrollView *__scrollView;
     PUPlayheadView *__playheadView;
 }
 
 @property(retain, nonatomic, setter=_setPlayheadView:) PUPlayheadView *_playheadView; // @synthesize _playheadView=__playheadView;
-@property(retain, nonatomic, setter=_setScrollView:) UIScrollView *_scrollView; // @synthesize _scrollView=__scrollView;
 @property(retain, nonatomic, setter=_setVideoScrubberController:) PXVideoScrubberController *_videoScrubberController; // @synthesize _videoScrubberController=__videoScrubberController;
-@property(retain, nonatomic, setter=_setFilmStripView:) PUFilmstripView *_filmStripView; // @synthesize _filmStripView=__filmStripView;
+@property(retain, nonatomic, setter=_setFilmStripView:) UIView<PHVideoScrubberFilmstripView> *_filmStripView; // @synthesize _filmStripView=__filmStripView;
 @property(nonatomic, setter=_setNeedsUpdateVideoScrubberController:) _Bool _needsUpdateVideoScrubberController; // @synthesize _needsUpdateVideoScrubberController=__needsUpdateVideoScrubberController;
 @property(nonatomic, setter=_setNeedsUpdateFilmStripView:) _Bool _needsUpdateFilmStripView; // @synthesize _needsUpdateFilmStripView=__needsUpdateFilmStripView;
+@property(nonatomic) __weak id <PHVideoScrubberFilmstripViewProvider> filmstripViewProvider; // @synthesize filmstripViewProvider=_filmstripViewProvider;
+@property(nonatomic) __weak id <PHVideoScrubberViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
+@property(retain, nonatomic, setter=_setScrollView:) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(retain, nonatomic) UIImage *placeholderThumbnail; // @synthesize placeholderThumbnail=_placeholderThumbnail;
 @property(nonatomic) double estimatedDuration; // @synthesize estimatedDuration=_estimatedDuration;
 @property(retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
@@ -51,7 +64,9 @@
 - (void)_handleInteractionEndedAndTogglePlayState:(_Bool)arg1;
 - (void)_handleInteractionBegan;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_handleLongPressGesture:(id)arg1;
@@ -59,7 +74,9 @@
 - (void)_handleTapGesture:(id)arg1;
 - (_Bool)_playerIsPlaying;
 - (_Bool)_isUserInteractingWithScrollView;
+- (id)_currentVideoComposition;
 - (id)_currentAVAsset;
+- (id)_scrollView;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

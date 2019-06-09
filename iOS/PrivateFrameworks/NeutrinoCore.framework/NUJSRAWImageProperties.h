@@ -8,13 +8,14 @@
 
 #import <NeutrinoCore/NUJSRAWImagePropertiesExport-Protocol.h>
 
-@class NSString;
+@class NSString, NUJSRAWNoiseReductionProperties;
 @protocol NURAWImageProperties;
 
 @interface NUJSRAWImageProperties : NUJSProxy <NUJSRAWImagePropertiesExport>
 {
 }
 
+@property(readonly) NUJSRAWNoiseReductionProperties *noiseReductionProperties;
 @property(readonly) double tint;
 @property(readonly) double temperature;
 @property(readonly) NSString *decoderVersion;

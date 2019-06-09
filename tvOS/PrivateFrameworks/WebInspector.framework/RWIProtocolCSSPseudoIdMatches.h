@@ -13,8 +13,8 @@
 }
 
 @property(copy, nonatomic) NSArray *matches;
-@property(nonatomic) int pseudoId;
-- (id)initWithPseudoId:(int)arg1 matches:(id)arg2;
+@property(nonatomic) long long pseudoId;
+- (id)initWithPseudoId:(long long)arg1 matches:(id)arg2;
 
 @end
 

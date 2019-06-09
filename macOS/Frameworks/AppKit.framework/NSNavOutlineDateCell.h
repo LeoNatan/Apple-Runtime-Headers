@@ -15,8 +15,6 @@
     int _todayAndYesterdayLevel;
     double _detailLevelWidths[5];
     double _detailNaturalWidths[4];
-    id _emptySlot;
-    int _lastDetailLevel;
     NSString *_lastStringValue;
     unsigned int _useRelativeDates:1;
     unsigned int _reservedDC:31;

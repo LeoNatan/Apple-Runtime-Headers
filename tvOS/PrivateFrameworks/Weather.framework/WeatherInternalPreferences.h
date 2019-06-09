@@ -16,6 +16,7 @@
 + (id)sharedInternalPreferences;
 @property(retain) id <WeatherPreferencesPersistence> persistence; // @synthesize persistence=_persistence;
 - (void).cxx_destruct;
+@property(readonly) _Bool isV3Enabled;
 @property(readonly) _Bool isInternalInstall;
 
 @end

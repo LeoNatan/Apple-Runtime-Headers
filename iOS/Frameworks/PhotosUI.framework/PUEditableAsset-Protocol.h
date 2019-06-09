@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) NSDictionary *imageProperties;
 @property(readonly, nonatomic) PFVideoAVObjectBuilder *videoObjectBuilder;
 @property(readonly, nonatomic) unsigned long long livePhotoVisibilityState;
+@property(readonly, nonatomic, getter=isTrimmableType) _Bool trimmableType;
 @property(readonly, nonatomic) unsigned long long originalResourceChoice;
 @property(readonly, nonatomic, getter=isInPlaceVideoTrimAllowed) _Bool inPlaceVideoTrimAllowed;
 @property(readonly, nonatomic, getter=isLivePhotoVisibilityAdjustmentAllowed) _Bool livePhotoVisibilityAdjustmentAllowed;

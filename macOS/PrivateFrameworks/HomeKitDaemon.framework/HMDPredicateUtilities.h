@@ -12,6 +12,7 @@
 
 @interface HMDPredicateUtilities : HMFObject <HMFLogging>
 {
+    unsigned long long _cameraSignificantEvent;
     HMDHome *_home;
     NSString *_logString;
 }
@@ -19,6 +20,7 @@
 + (id)logCategory;
 @property(readonly, nonatomic) NSString *logString; // @synthesize logString=_logString;
 @property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
+@property unsigned long long cameraSignificantEvent; // @synthesize cameraSignificantEvent=_cameraSignificantEvent;
 - (void).cxx_destruct;
 - (void)fillMetric:(id)arg1 forPredicate:(id)arg2;
 - (id)metricFor:(id)arg1;

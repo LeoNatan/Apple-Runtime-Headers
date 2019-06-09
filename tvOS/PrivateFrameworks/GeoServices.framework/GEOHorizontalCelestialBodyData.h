@@ -14,7 +14,7 @@
 
 @property(readonly, nonatomic) double azimuth; // @synthesize azimuth=_azimuth;
 @property(readonly, nonatomic) double altitude; // @synthesize altitude=_altitude;
-- (void)_calcuateAzimuthandAltitudeForCoordinate:(CDStruct_c3b9c2ee)arg1 julianDay:(double)arg2 eclipticLongitude:(double)arg3 eclipticLatitude:(double)arg4 radius:(double)arg5;
+- (id)initWithLocation:(CDStruct_c3b9c2ee)arg1 julianDay:(double)arg2 body:(long long)arg3 useHighPrecision:(_Bool)arg4;
 - (id)initWithLocation:(CDStruct_c3b9c2ee)arg1 date:(id)arg2 body:(long long)arg3 useHighPrecision:(_Bool)arg4;
 - (id)initWithLocation:(CDStruct_c3b9c2ee)arg1 date:(id)arg2 body:(long long)arg3;
 

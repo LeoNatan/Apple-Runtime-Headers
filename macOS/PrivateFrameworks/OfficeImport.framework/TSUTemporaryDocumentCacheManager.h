@@ -6,6 +6,7 @@
 
 #import <OfficeImport/TSUTemporaryDirectoryManager.h>
 
+__attribute__((visibility("hidden")))
 @interface TSUTemporaryDocumentCacheManager : TSUTemporaryDirectoryManager
 {
 }

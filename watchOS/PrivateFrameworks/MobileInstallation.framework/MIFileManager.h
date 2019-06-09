@@ -11,6 +11,7 @@
 }
 
 + (id)defaultManager;
+- (unsigned long long)diskUsageForURL:(id)arg1;
 - (id)uniqueInstallIDForBundle:(id)arg1 error:(id *)arg2;
 - (_Bool)setUniqueInstallID:(id)arg1 onBundle:(id)arg2 error:(id *)arg3;
 - (id)installTypeForBundle:(id)arg1 error:(id *)arg2;
@@ -32,11 +33,16 @@
 - (id)destinationOfSymbolicLinkAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)createSymbolicLinkAtURL:(id)arg1 withDestinationURL:(id)arg2 error:(id *)arg3;
 - (id)urlsForItemsInDirectoryAtURL:(id)arg1 ignoringSymlinks:(_Bool)arg2 error:(id *)arg3;
-- (id)enumerateURLsForItemsInDirectoryAtURL:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (_Bool)verifySymlinksDoNotEscapeURL:(id)arg1 error:(id *)arg2;
+- (id)enumerateURLsForItemsInDirectoryAtURL:(id)arg1 ignoreSymlinks:(_Bool)arg2 withBlock:(CDUnknownBlockType)arg3;
+- (_Bool)validateSymlinksInURLDoNotEscapeURL:(id)arg1 error:(id *)arg2;
 - (_Bool)standardizeOwnershipAtURL:(id)arg1 toUID:(unsigned int)arg2 GID:(unsigned int)arg3 removeACLs:(_Bool)arg4 setProtectionClass:(_Bool)arg5 foundSymlink:(_Bool *)arg6 error:(id *)arg7;
+- (_Bool)stageURL:(id)arg1 toItemName:(id)arg2 inStagingDir:(id)arg3 stagingMode:(int)arg4 settingUID:(unsigned int)arg5 gid:(unsigned int)arg6 hasSymlink:(_Bool *)arg7 error:(id *)arg8;
+- (_Bool)_stageURLByCopying:(id)arg1 toItemName:(id)arg2 inStagingDir:(id)arg3 stagingMode:(int)arg4 settingUID:(unsigned int)arg5 gid:(unsigned int)arg6 hasSymlink:(_Bool *)arg7 error:(id *)arg8;
+- (_Bool)_stageURLByMoving:(id)arg1 toItemName:(id)arg2 inStagingDir:(id)arg3 settingUID:(unsigned int)arg4 gid:(unsigned int)arg5 hasSymlink:(_Bool *)arg6 error:(id *)arg7;
+- (_Bool)_bulkSetPropertiesForPath:(const char *)arg1 existingFD:(int)arg2 UID:(unsigned int)arg3 GID:(unsigned int)arg4 mode:(unsigned short)arg5 flags:(unsigned int)arg6 dataProtectionClass:(int)arg7 removeACL:(_Bool)arg8 error:(id *)arg9;
+- (_Bool)bulkSetPropertiesForPath:(const char *)arg1 UID:(unsigned int)arg2 GID:(unsigned int)arg3 mode:(unsigned short)arg4 flags:(unsigned int)arg5 dataProtectionClass:(int)arg6 removeACL:(_Bool)arg7 error:(id *)arg8;
+- (_Bool)bulkSetPropertiesForPath:(const char *)arg1 withOpenFD:(int)arg2 UID:(unsigned int)arg3 GID:(unsigned int)arg4 mode:(unsigned short)arg5 flags:(unsigned int)arg6 dataProtectionClass:(int)arg7 removeACL:(_Bool)arg8 error:(id *)arg9;
 - (_Bool)_removeACLAtPath:(const char *)arg1 isDir:(_Bool)arg2 error:(id *)arg3;
-- (_Bool)traverseDirectory:(id)arg1 error:(id *)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)createTemporaryDirectoryInDirectoryURL:(id)arg1 error:(id *)arg2;
 - (_Bool)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 - (_Bool)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;

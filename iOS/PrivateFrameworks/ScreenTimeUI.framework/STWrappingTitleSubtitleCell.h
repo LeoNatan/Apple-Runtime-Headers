@@ -6,6 +6,7 @@
 
 #import <ScreenTimeUI/STTitleSubtitleCell.h>
 
+__attribute__((visibility("hidden")))
 @interface STWrappingTitleSubtitleCell : STTitleSubtitleCell
 {
 }

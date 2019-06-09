@@ -6,105 +6,71 @@
 
 #import <objc/NSObject.h>
 
-#import <Rapport/NSSecureCoding-Protocol.h>
-#import <Rapport/RPAuthenticatable-Protocol.h>
-#import <Rapport/RPCloudXPCClientInterface-Protocol.h>
-#import <Rapport/RPMessageable-Protocol.h>
+#import <Rapport/CUReadWriteRequestable-Protocol.h>
 
-@class CUPairingSession, CUPairingStream, NSError, NSString, NSXPCConnection, RPCloudXPCConnection;
-@protocol OS_dispatch_queue;
+@class CUReadRequest, NSNumber, NSString, RPCloudDaemon;
+@protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface RPCloudSession : NSObject <NSSecureCoding, RPCloudXPCClientInterface, RPAuthenticatable, RPMessageable>
+@interface RPCloudSession : NSObject <CUReadWriteRequestable>
 {
     _Bool _activateCalled;
+    CDUnknownBlockType _activateCompletion;
+    _Bool _clientMode;
+    _Bool _guardSessionStarted;
+    NSObject<OS_dispatch_source> *_heartbeatTimer;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
-    _Bool _isClient;
-    CUPairingStream *_mainStream;
-    CUPairingSession *_pairSetupSession;
-    CUPairingSession *_pairVerifySession;
+    struct NSMutableArray *_readChunks;
+    CUReadRequest *_readRequestCurrent;
+    struct NSMutableArray *_readRequests;
+    int _state;
     struct LogCategory *_ucat;
-    NSXPCConnection *_xpcCnx;
-    int _internalState;
-    _Bool _stepDone;
-    NSError *_stepError;
-    unsigned int _pairSetupFlags;
-    unsigned int _pairVerifyFlags;
-    NSString *_password;
-    int _passwordType;
-    int _passwordTypeActual;
-    CDUnknownBlockType _authCompletionHandler;
-    CDUnknownBlockType _showPasswordHandler;
-    CDUnknownBlockType _hidePasswordHandler;
-    CDUnknownBlockType _promptForPasswordHandler;
+    struct NSMutableArray *_writeRequests;
+    _Bool _responseReceived;
+    RPCloudDaemon *_cloudDaemon;
     NSString *_destinationID;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    CDUnknownBlockType _interruptionHandler;
-    CDUnknownBlockType _invalidationHandler;
+    CDUnknownBlockType _errorHandler;
     NSString *_label;
-    NSString *_serviceIdentifier;
-    NSString *_destinationIDMulticast;
-    NSString *_destinationIDUnicast;
-    unsigned int _destinationPort;
-    RPCloudXPCConnection *_serverXPCCnx;
-    unsigned int _sourcePort;
+    CDUnknownBlockType _invalidationHandler;
+    NSNumber *_peerSessionID;
+    NSNumber *_selfSessionID;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(nonatomic) unsigned int sourcePort; // @synthesize sourcePort=_sourcePort;
-@property(retain, nonatomic) RPCloudXPCConnection *serverXPCCnx; // @synthesize serverXPCCnx=_serverXPCCnx;
-@property(nonatomic) unsigned int destinationPort; // @synthesize destinationPort=_destinationPort;
-@property(copy, nonatomic) NSString *destinationIDUnicast; // @synthesize destinationIDUnicast=_destinationIDUnicast;
-@property(copy, nonatomic) NSString *destinationIDMulticast; // @synthesize destinationIDMulticast=_destinationIDMulticast;
-@property(copy, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(copy, nonatomic) NSNumber *selfSessionID; // @synthesize selfSessionID=_selfSessionID;
+@property(nonatomic) _Bool responseReceived; // @synthesize responseReceived=_responseReceived;
+@property(copy, nonatomic) NSNumber *peerSessionID; // @synthesize peerSessionID=_peerSessionID;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
-@property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
-@property(retain, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
-@property(copy, nonatomic) CDUnknownBlockType promptForPasswordHandler; // @synthesize promptForPasswordHandler=_promptForPasswordHandler;
-@property(copy, nonatomic) CDUnknownBlockType hidePasswordHandler; // @synthesize hidePasswordHandler=_hidePasswordHandler;
-@property(copy, nonatomic) CDUnknownBlockType showPasswordHandler; // @synthesize showPasswordHandler=_showPasswordHandler;
-@property(copy, nonatomic) CDUnknownBlockType authCompletionHandler; // @synthesize authCompletionHandler=_authCompletionHandler;
-@property(readonly, nonatomic) int passwordTypeActual; // @synthesize passwordTypeActual=_passwordTypeActual;
-@property(nonatomic) int passwordType; // @synthesize passwordType=_passwordType;
-@property(copy, nonatomic) NSString *password; // @synthesize password=_password;
-@property(nonatomic) unsigned int pairVerifyFlags; // @synthesize pairVerifyFlags=_pairVerifyFlags;
-@property(nonatomic) unsigned int pairSetupFlags; // @synthesize pairSetupFlags=_pairSetupFlags;
+@property(copy, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
+@property(retain, nonatomic) RPCloudDaemon *cloudDaemon; // @synthesize cloudDaemon=_cloudDaemon;
 - (void).cxx_destruct;
-- (void)xpcCloudReceivedFrameData:(id)arg1 fromID:(id)arg2;
-- (void)sendRequestID:(id)arg1 request:(id)arg2 destinationID:(id)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
-- (void)deregisterRequestID:(id)arg1;
-- (void)registerRequestID:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)sendEventID:(id)arg1 event:(id)arg2 destinationID:(id)arg3 options:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)deregisterEventID:(id)arg1;
-- (void)registerEventID:(id)arg1 options:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_sendFrameType:(unsigned char)arg1 destinationID:(id)arg2 unencryptedObject:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_receivedStopUnencrypted:(id)arg1;
-- (void)_receivedFrameHeader:(const CDStruct_d0ed6788 *)arg1 unencryptedBodyPtr:(const char *)arg2 bodyLen:(unsigned long)arg3 fromID:(id)arg4;
-- (void)_receivedFrameHeader:(const CDStruct_d0ed6788 *)arg1 encryptedBodyPtr:(const char *)arg2 bodyLen:(unsigned long)arg3 fromID:(id)arg4;
-- (void)tryPassword:(id)arg1;
-- (void)_serverPairSetupCompleted:(id)arg1;
-- (void)_serverPairSetupNext:(id)arg1;
-- (void)_serverPairSetupStart;
-- (void)_serverRun;
-- (void)_clientPairSetupCompleted:(id)arg1;
-- (void)_clientPairSetup:(id)arg1 start:(_Bool)arg2;
-- (void)_clientStartResponse:(id)arg1 fromID:(id)arg2;
-- (void)_clientStartRequest;
-- (void)_clientRun;
+- (void)_completeWriteRequest:(id)arg1 error:(id)arg2;
+- (void)_abortWritesWithError:(id)arg1;
+- (void)_processWriteRequest:(id)arg1;
+- (void)_processWrites;
+- (void)writeWithRequest:(id)arg1;
+- (void)_completeReadRequest:(id)arg1 error:(id)arg2;
+- (void)_abortReadsWithError:(id)arg1;
+- (void)_prepareReadRequest:(id)arg1;
+- (void)_processReads;
+- (void)readWithRequest:(id)arg1;
+- (_Bool)_runSessionStart;
 - (void)_run;
-- (void)_pairVerifyInvalidate;
-- (void)_pairSetupInvalidate;
+- (void)_reportError:(id)arg1;
+- (void)_heartbeatTimerFired;
+- (void)receivedSessionData:(id)arg1;
+- (void)_receivedSessionStartResponse:(id)arg1 error:(id)arg2;
+- (void)receivedSessionStartResponse:(id)arg1 error:(id)arg2;
 - (void)_invalidated;
+- (void)_invalidate;
 - (void)invalidate;
-- (void)_interrupted;
-- (void)_ensureXPCStarted;
-- (void)_activateWithCompletion:(CDUnknownBlockType)arg1 reactivate:(_Bool)arg2;
+- (_Bool)activateDirectAndReturnError:(id *)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
+- (id)descriptionWithLevel:(int)arg1;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

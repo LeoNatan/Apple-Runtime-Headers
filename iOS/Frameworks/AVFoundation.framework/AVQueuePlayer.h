@@ -26,6 +26,7 @@
 - (void)dealloc;
 - (id)initWithItems:(id)arg1;
 - (id)init;
+- (_Bool)canOverlapPlaybackFromPlayerItem:(id)arg1 toPlayerItem:(id)arg2;
 
 @end
 

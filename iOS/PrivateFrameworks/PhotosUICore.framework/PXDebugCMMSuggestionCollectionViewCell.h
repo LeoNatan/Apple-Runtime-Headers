@@ -6,14 +6,14 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class PXCMMPosterView;
+@class PXCMMPosterUIView;
 
 @interface PXDebugCMMSuggestionCollectionViewCell : UICollectionViewCell
 {
-    PXCMMPosterView *_gadgetView;
+    PXCMMPosterUIView *_gadgetView;
 }
 
-@property(readonly, nonatomic) PXCMMPosterView *gadgetView; // @synthesize gadgetView=_gadgetView;
+@property(readonly, nonatomic) PXCMMPosterUIView *gadgetView; // @synthesize gadgetView=_gadgetView;
 - (void).cxx_destruct;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

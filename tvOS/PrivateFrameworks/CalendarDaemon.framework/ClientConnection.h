@@ -16,7 +16,7 @@
     _Bool _allowedEntityTypesValid;
     long long _eventAccess;
     long long _reminderAccess;
-    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}B@B}, name: _database
+    // Error parsing type: ^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}, name: _database
     id <CADAccountAccessHandler> _accountAccessHandler;
     id <CADAccountAccessHandler> _strictAccountAccessHandler;
     NSObject<OS_dispatch_queue> *_dbQueue;
@@ -38,7 +38,7 @@
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) ClientIdentity *identity; // @synthesize identity=_identity;
 // Error parsing type for property database:
-// Property attributes: T^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}B@B},N,V_database
+// Property attributes: T^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B},N,V_database
 
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(nonatomic) __weak id <ClientConnectionDelegate> delegate; // @synthesize delegate=_delegate;
@@ -47,6 +47,7 @@
 - (_Bool)isCalendarItemManaged:(void *)arg1;
 - (_Bool)isCalendarManaged:(void *)arg1;
 - (_Bool)isStoreManaged:(void *)arg1;
+- (_Bool)isNotificationRestricted:(void *)arg1 forAction:(unsigned long long)arg2;
 - (_Bool)isCalendarItemRestricted:(void *)arg1 forAction:(unsigned long long)arg2;
 - (_Bool)isCalendarRestricted:(void *)arg1 forAction:(unsigned long long)arg2;
 - (_Bool)isStoreRestricted:(void *)arg1 forAction:(unsigned long long)arg2 strict:(_Bool)arg3;
@@ -72,6 +73,7 @@
 - (void)handleDatabaseChanged;
 - (id)strictAccountAccessHandler;
 @property(readonly, nonatomic) id <CADAccountAccessHandler> accountAccessHandler;
+- (id)_createManagedConfigAccountAccessHandlerWithValidator:(id)arg1;
 - (void)_initAccountAccessHandler;
 - (id)initWithXPCConnection:(id)arg1;
 

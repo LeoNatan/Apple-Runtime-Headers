@@ -11,6 +11,7 @@
     long long _previousNumberOfLines;
     struct CGSize _cachedSizeThatFits;
     struct CGSize _previousTargetSize;
+    struct UIEdgeInsets _padding;
     struct CGRect _cachedTextRectForBounds;
     struct CGRect _previousBounds;
 }
@@ -20,7 +21,9 @@
 @property(nonatomic) long long previousNumberOfLines; // @synthesize previousNumberOfLines=_previousNumberOfLines;
 @property(nonatomic) struct CGRect previousBounds; // @synthesize previousBounds=_previousBounds;
 @property(nonatomic) struct CGRect cachedTextRectForBounds; // @synthesize cachedTextRectForBounds=_cachedTextRectForBounds;
+@property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 - (void)_clearCachedValues;
+- (void)drawTextInRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGRect)textRectForBounds:(struct CGRect)arg1 limitedToNumberOfLines:(long long)arg2;
 - (void)setBaselineAdjustment:(long long)arg1;

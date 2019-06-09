@@ -9,8 +9,12 @@
 @protocol CWInternalEventDelegate
 
 @optional
+- (void)internal_cleanupSidecarMetricsSocketManager:(void (^)(NSError *))arg1;
+- (void)internal_setupSidecarMetricsSocketManager:(NSString *)arg1 reply:(void (^)(NSError *, unsigned short))arg2;
+- (void)internal_showLowBatteryNotificationForTetherDevice:(CWTetherDevice *)arg1 interfaceName:(NSString *)arg2;
+- (void)internal_showAutoHotspotNotificationForTetherDevice:(CWTetherDevice *)arg1 retry:(BOOL)arg2 interfaceName:(NSString *)arg3;
 - (void)willShowJoinUIForWiFiNetwork:(CWNetwork *)arg1 interfaceName:(NSString *)arg2;
-- (void)joinWiFiNetworkWithUserAgent:(CWNetwork *)arg1 interfaceName:(NSString *)arg2 dialogToken:(long long)arg3 reply:(void (^)(NSError *, BOOL))arg4;
+- (void)joinWiFiNetworkWithUserAgent:(CWNetwork *)arg1 interfaceName:(NSString *)arg2 timestamp:(double)arg3 reply:(void (^)(NSError *))arg4;
 - (void)internal_enableTetherDevice:(CWTetherDevice *)arg1 reply:(void (^)(NSError *, NSString *, NSString *, NSNumber *))arg2;
 - (void)internal_stopBrowsingForTetherDevicesAndReply:(void (^)(NSError *))arg1;
 - (void)internal_startBrowsingForTetherDevicesAndReply:(void (^)(NSError *))arg1;

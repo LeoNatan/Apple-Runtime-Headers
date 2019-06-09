@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     struct Array _backgroundLoadPageBackList;
     BOOL _shouldSendExtensionNavigateWhenPageIsShown;
     BOOL _reissuedBecauseResultedInDownload;
+    BOOL _triggeringAppSSO;
     int _tryCloseOfDestinationPageCompletionAction;
     NSArray *_urls;
     NSString *_tabLabel;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak BrowserTabViewItem *destinationTabViewItem; // @synthesize destinationTabViewItem=_destinationTabViewItem;
 @property(nonatomic) __weak BrowserViewController *browserViewController; // @synthesize browserViewController=_browserViewController;
+@property(nonatomic, getter=isTriggeringAppSSO) BOOL triggeringAppSSO; // @synthesize triggeringAppSSO=_triggeringAppSSO;
 @property(nonatomic) BOOL reissuedBecauseResultedInDownload; // @synthesize reissuedBecauseResultedInDownload=_reissuedBecauseResultedInDownload;
 @property(readonly, nonatomic) struct BackForwardListItem backgroundLoadPageCurrentBackForwardListItem; // @synthesize backgroundLoadPageCurrentBackForwardListItem=_backgroundLoadPageCurrentBackForwardListItem;
 @property(nonatomic) int tryCloseOfDestinationPageCompletionAction; // @synthesize tryCloseOfDestinationPageCompletionAction=_tryCloseOfDestinationPageCompletionAction;

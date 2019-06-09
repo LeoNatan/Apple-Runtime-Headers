@@ -24,5 +24,14 @@
 + (id)SLTwitterNearbyPlacesURL;
 + (id)SLTwitterUpdateMultiPartStatusURL;
 + (id)SLTwitterUpdateStatusURL;
++ (id)URLForFacebookPageAtPath:(id)arg1;
++ (id)URLForFacebookGraphAPIWithDomain:(id)arg1 path:(id)arg2;
++ (id)URLForFacebookGraphAPIWithPath:(id)arg1;
++ (id)URLForFacebookRESTMethod:(id)arg1;
++ (_Bool)_isBetaSwitchEnabledForKey:(struct __CFString *)arg1;
+- (_Bool)loadingInUIWebViewWillLaunchAnotherApp;
+- (_Bool)isAssetURL;
+- (_Bool)isAppStoreURL;
+- (_Bool)isMusicStoreURL;
 @end
 

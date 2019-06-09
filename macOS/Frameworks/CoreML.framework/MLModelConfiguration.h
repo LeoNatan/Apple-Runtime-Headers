@@ -7,20 +7,45 @@
 #import <objc/NSObject.h>
 
 #import <CoreML/NSCopying-Protocol.h>
+#import <CoreML/NSSecureCoding-Protocol.h>
 
-@interface MLModelConfiguration : NSObject <NSCopying>
+@class NSDictionary, NSURL;
+@protocol MTLDevice;
+
+@interface MLModelConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
+    BOOL _allowBackgroundGPUComputeSetting;
     BOOL _useWatchSPIForScribble;
+    BOOL _allowLowPrecisionAccumulationOnGPU;
+    BOOL _enableTestVectorMode;
     long long _computeUnits;
+    id <MTLDevice> _preferredMetalDevice;
+    NSDictionary *_updateParameters;
+    NSDictionary *_modelParameters;
+    NSURL *_rootModelURL;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)defaultConfiguration;
+@property(retain) NSURL *rootModelURL; // @synthesize rootModelURL=_rootModelURL;
+@property(retain) NSDictionary *modelParameters; // @synthesize modelParameters=_modelParameters;
+@property(retain) NSDictionary *updateParameters; // @synthesize updateParameters=_updateParameters;
+@property(nonatomic) BOOL enableTestVectorMode; // @synthesize enableTestVectorMode=_enableTestVectorMode;
+@property(retain, nonatomic) id <MTLDevice> preferredMetalDevice; // @synthesize preferredMetalDevice=_preferredMetalDevice;
+@property BOOL allowLowPrecisionAccumulationOnGPU; // @synthesize allowLowPrecisionAccumulationOnGPU=_allowLowPrecisionAccumulationOnGPU;
 @property(nonatomic) BOOL useWatchSPIForScribble; // @synthesize useWatchSPIForScribble=_useWatchSPIForScribble;
+@property BOOL allowBackgroundGPUComputeSetting; // @synthesize allowBackgroundGPUComputeSetting=_allowBackgroundGPUComputeSetting;
 @property long long computeUnits; // @synthesize computeUnits=_computeUnits;
+- (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqualToModelConfiguration:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) BOOL allowBackgroundGPUCompute;
+@property(retain, nonatomic) id <MTLDevice> preferredMTLDevice;
+@property(nonatomic) BOOL allowFloat16AccumulationOnGPU;
 - (id)init;
 - (id)initWithComputeUnits:(long long)arg1;
 

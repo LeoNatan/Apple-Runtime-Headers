@@ -6,39 +6,52 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotosUI/PHPhotoLibraryChangeObserver-Protocol.h>
-
-@class NSArray, NSString, PHFetchResult;
+@class NSArray;
 @protocol OS_dispatch_queue, PUSearchZeroKeywordChangeDelegate;
 
-__attribute__((visibility("hidden")))
-@interface PUSearchZeroKeywordDataSource : NSObject <PHPhotoLibraryChangeObserver>
+@interface PUSearchZeroKeywordDataSource : NSObject
 {
     _Bool _fetchInProgress;
     id <PUSearchZeroKeywordChangeDelegate> _delegate;
-    PHFetchResult *_peopleFetchResult;
     NSObject<OS_dispatch_queue> *_fetchQueue;
     NSArray *_sections;
 }
 
 + (id)zeroKeywordLog;
++ (id)_sceneViewModelForKeywordDictionary:(id)arg1;
++ (id)_seasonViewModelForKeywordDictionary:(id)arg1;
++ (id)_meaningViewModelForKeywordDictionary:(id)arg1;
++ (id)_homeViewModelForKeywordDictionary:(id)arg1;
++ (id)_placeViewModelForKeywordDictionary:(id)arg1;
++ (id)_dateViewModelForKeywordDictionary:(id)arg1;
++ (id)_holidayViewModelForKeywordDictionary:(id)arg1;
++ (id)_socialGroupViewModelForKeywordDictionary:(id)arg1 peopleByKeyword:(id)arg2;
++ (id)_personViewModelForKeywordDictionary:(id)arg1 person:(id)arg2;
++ (id)_sectionsForZeroKeywords:(id)arg1 personsByLocalIdentifier:(id)arg2;
++ (id)_socialGroupsByKeywordwithPersonsByLocalIdentifier:(id)arg1 socialGroupZeroKeywords:(id)arg2;
++ (id)_personsByLocalIdentifiers:(id)arg1 allUniqueLocalIdentifiers:(id)arg2;
++ (id)_uniquePersonLocalIdentifiersForZeroKeywords:(id)arg1;
++ (id)_fetchKeyAssetForSceneIdentifier:(int)arg1;
++ (id)_fetchAssetsWithLocalIdentifiers:(id)arg1;
++ (id)_fetchKeyAssetOfAssetCollection:(id)arg1 withOptions:(id)arg2;
++ (id)_fetchAssetCollectionsForIdentifiers:(id)arg1;
++ (id)_zeroKeywordsFromDefaultKeywordStore;
++ (id)_personsForLocalIdentifiers:(id)arg1;
++ (void)_fetchAssetsForAssetViewModels:(id)arg1;
++ (void)_fetchKeyAssetsForAssetCollectionViewModels:(id)arg1;
++ (id)_fetchFinalMergeTargetPersonForPersonLocalIdentifier:(id)arg1;
++ (id)_fetchOptionsForPersonFetching;
 @property(copy, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
-@property(retain, nonatomic) PHFetchResult *peopleFetchResult; // @synthesize peopleFetchResult=_peopleFetchResult;
 @property(nonatomic) _Bool fetchInProgress; // @synthesize fetchInProgress=_fetchInProgress;
 @property(nonatomic) __weak id <PUSearchZeroKeywordChangeDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)debugDictionary;
 - (id)tapToRadarAttachments;
 - (void)ppt_prepareZeroKeywordRequest:(CDUnknownBlockType)arg1;
-- (void)photoLibraryDidChange:(id)arg1;
-- (id)_viewModelForKeywordDictionary:(id)arg1 ofType:(long long)arg2 peopleByKeyword:(id)arg3;
-- (void)_fetchAssetsForAssetViewModels:(id)arg1;
-- (void)_fetchKeyAssetsForViewModels:(id)arg1;
-- (id)_personsForLocalIdentifiers:(id)arg1;
+- (_Bool)_shouldFetchItems;
 - (id)_zeroKeywordsFromDefaultKeywordStore;
-- (id)predicateForPersonFetching;
 - (_Bool)hasZeroKeywords;
 - (void)fetchItems;
 - (long long)indexForPlaceKey:(id)arg1;
@@ -48,14 +61,7 @@ __attribute__((visibility("hidden")))
 - (long long)sectionTypeForSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfItemsInSection:(unsigned long long)arg1;
 - (unsigned long long)numberOfSections;
-- (void)_registerChangeObservers;
-- (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

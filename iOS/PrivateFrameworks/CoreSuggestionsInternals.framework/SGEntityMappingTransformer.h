@@ -22,8 +22,18 @@
 @property(retain) NSString *emailMapping; // @synthesize emailMapping=_emailMapping;
 @property(retain) NSDataDetector *dataDetector; // @synthesize dataDetector=_dataDetector;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToEntityMappingTransformer:(id)arg1;
+- (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (id)toPlistWithChunks:(id)arg1;
 - (id)transform:(id)arg1;
 - (id)initWithEmailMapping:(id)arg1 linkMapping:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

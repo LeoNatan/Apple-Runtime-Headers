@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, OADColor, OADFill, OADHyperlink, OADStroke;
 
+__attribute__((visibility("hidden")))
 @interface OADCharacterProperties : OADProperties <OADEffectsParent>
 {
     NSString *mLatinFont;

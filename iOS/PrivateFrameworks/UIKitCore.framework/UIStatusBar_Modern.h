@@ -13,15 +13,15 @@
     _UIStatusBar *_statusBar;
 }
 
-+ (double)_viewControllerAdjustmentForOrientation:(long long)arg1;
-+ (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 simulateLegacyAppearance:(_Bool)arg3 activeStyleOverride:(int *)arg4;
++ (long long)_defaultStyleForRequestedStyle:(long long)arg1 styleOverrides:(int)arg2 activeStyleOverride:(int *)arg3;
 + (double)_heightForStyle:(long long)arg1 orientation:(long long)arg2 forStatusBarFrame:(_Bool)arg3;
 + (Class)_implementationClass;
 @property(retain, nonatomic) _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 - (void).cxx_destruct;
 - (struct CGSize)intrinsicContentSize;
+- (void)statusBarStateProvider:(id)arg1 didPostStatusBarData:(const CDStruct_0942cde0 *)arg2 withActions:(int)arg3;
 - (void)statusBarServer:(id)arg1 didReceiveStyleOverrides:(int)arg2;
-- (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(const CDStruct_1916f467 *)arg2 withActions:(int)arg3;
+- (void)statusBarServer:(id)arg1 didReceiveStatusBarData:(const CDStruct_0942cde0 *)arg2 withActions:(int)arg3;
 - (void)forceUpdateData:(_Bool)arg1;
 - (void)forceUpdate:(_Bool)arg1;
 - (void)layoutSubviews;
@@ -37,26 +37,22 @@
 - (void)jiggleLockIcon;
 - (void)setOrientation:(long long)arg1;
 - (void)setMode:(long long)arg1;
-- (_Bool)_canShowInOrientation:(long long)arg1;
-- (double)heightForOrientation:(long long)arg1;
 - (double)defaultDoubleHeight;
-- (double)defaultHeight;
 - (void)setAvoidanceFrame:(struct CGRect)arg1;
 - (void)setLegibilityStyle:(long long)arg1 animationParameters:(id)arg2;
 - (void)setForegroundAlpha:(double)arg1 animationParameters:(id)arg2;
 - (void)setForegroundColor:(id)arg1 animationParameters:(id)arg2;
 - (void)setStyleRequest:(id)arg1 animationParameters:(id)arg2;
 - (long long)currentStyle;
-- (_Bool)isTranslucent;
-- (void)_requestStyle:(long long)arg1 animationParameters:(id)arg2 forced:(_Bool)arg3;
-- (void)_requestStyle:(long long)arg1 legibilityStyle:(long long)arg2 foregroundColor:(id)arg3 animationParameters:(id)arg4 forced:(_Bool)arg5;
+- (void)_requestStyle:(long long)arg1 partStyles:(id)arg2 animationParameters:(id)arg3 forced:(_Bool)arg4;
+- (void)_requestStyle:(long long)arg1 partStyles:(id)arg2 legibilityStyle:(long long)arg3 foregroundColor:(id)arg4 animationParameters:(id)arg5 forced:(_Bool)arg6;
 - (void)_updateWithData:(id)arg1 force:(_Bool)arg2;
 - (int)_implicitStyleOverrideForStyle:(long long)arg1;
 - (id)_effectiveDataFromData:(id)arg1 activeOverride:(int)arg2;
 - (long long)_effectiveStyleFromStyle:(long long)arg1;
-- (id)_dataFromLegacyData:(const CDStruct_1916f467 *)arg1;
-- (void)_updateSemanticContentAttributeFromLegacyData:(const CDStruct_1916f467 *)arg1;
-- (id)_initWithFrame:(struct CGRect)arg1 showForegroundView:(_Bool)arg2 inProcessStateProvider:(id)arg3;
+- (id)_dataFromLegacyData:(const CDStruct_0942cde0 *)arg1;
+- (void)_updateSemanticContentAttributeFromLegacyData:(const CDStruct_0942cde0 *)arg1;
+- (id)_initWithFrame:(struct CGRect)arg1 showForegroundView:(_Bool)arg2 wantsServer:(_Bool)arg3 inProcessStateProvider:(id)arg4;
 
 @end
 

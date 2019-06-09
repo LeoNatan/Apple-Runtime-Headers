@@ -6,6 +6,7 @@
 
 #import <ScreenTimeUI/STRootGroupSpecifierProvider.h>
 
+__attribute__((visibility("hidden")))
 @interface STAskForTimeGroupSpecifierProvider : STRootGroupSpecifierProvider
 {
 }

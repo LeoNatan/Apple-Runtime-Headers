@@ -7,26 +7,35 @@
 #import <MailCore/NSCopying-Protocol.h>
 #import <MailCore/NSObject-Protocol.h>
 
-@class NSArray, NSDate, NSString;
-@protocol ECMailbox, ECMimePart;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@protocol ECMailAccount, ECMailbox, ECMessageHeaders, ECMimePart;
 
 @protocol ECMessage <NSCopying, NSObject>
-@property(readonly, nonatomic) id <ECMimePart> messageBody;
-@property(readonly) BOOL conversationMuted;
-@property(readonly) BOOL conversationVIP;
-@property(readonly) BOOL senderVIP;
-@property(readonly) BOOL junk;
-@property(readonly) BOOL answered;
-@property(readonly) BOOL flagged;
+@property(readonly, nonatomic) ECAngleBracketIDHash *listIDHash;
+@property(readonly) unsigned long long numberOfAttachments;
+@property(readonly, copy, nonatomic) NSArray *references;
+@property(readonly, nonatomic) id <ECMessageHeaders> headers;
+@property(readonly, nonatomic) id <ECMailAccount> account;
+@property(readonly) NSSet *labels;
+@property(readonly) ECAngleBracketIDHash *messageIDHeaderHash;
+@property(readonly, copy, nonatomic) NSString *messageIDHeader;
+@property(readonly, copy, nonatomic) NSDictionary *headersDictionary;
+@property(readonly, nonatomic) id <ECMimePart> bodyPart;
+@property(readonly, nonatomic, getter=isPartOfExistingThread) BOOL partOfExistingThread;
+@property(readonly, nonatomic) ECMessageFlags *flags;
 @property(readonly) long long conversationID;
 @property(readonly, nonatomic) id <ECMailbox> mailbox;
 @property(readonly, copy) NSString *remoteID;
 @property(readonly, copy) NSArray *listUnsubscribe;
+@property(readonly) NSDate *dateSent;
 @property(readonly) NSDate *dateReceived;
+@property(readonly, copy) NSArray *senders;
+@property(readonly, copy) NSArray *bcc;
 @property(readonly, copy) NSArray *cc;
 @property(readonly, copy) NSArray *to;
 @property(readonly, copy) NSArray *from;
-@property(readonly, copy) NSString *subject;
+@property(readonly, copy) ECSubject *subject;
 @property(readonly, copy, nonatomic) NSString *persistentID;
+- (NSString *)bestAlternativePart:(char *)arg1;
 @end
 

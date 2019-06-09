@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSString, SCTGRL;
 
+__attribute__((visibility("hidden")))
 @interface SCTGRLTree : NSObject
 {
     NSString *mKey;

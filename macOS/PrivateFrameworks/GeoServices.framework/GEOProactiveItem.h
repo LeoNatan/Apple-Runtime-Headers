@@ -18,21 +18,17 @@
     BOOL _tapped;
     BOOL _visible;
     struct {
-        unsigned int proactiveItemType:1;
-        unsigned int timeSinceStart:1;
-        unsigned int deleted:1;
-        unsigned int edited:1;
-        unsigned int shared:1;
-        unsigned int tapped:1;
-        unsigned int visible:1;
-    } _has;
+        unsigned int has_proactiveItemType:1;
+        unsigned int has_timeSinceStart:1;
+        unsigned int has_deleted:1;
+        unsigned int has_edited:1;
+        unsigned int has_shared:1;
+        unsigned int has_tapped:1;
+        unsigned int has_visible:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL deleted; // @synthesize deleted=_deleted;
-@property(nonatomic) BOOL edited; // @synthesize edited=_edited;
-@property(nonatomic) BOOL shared; // @synthesize shared=_shared;
-@property(nonatomic) BOOL tapped; // @synthesize tapped=_tapped;
-@property(nonatomic) BOOL visible; // @synthesize visible=_visible;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -40,19 +36,25 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasDeleted;
+@property(nonatomic) BOOL deleted;
 @property(nonatomic) BOOL hasEdited;
+@property(nonatomic) BOOL edited;
 @property(nonatomic) BOOL hasShared;
+@property(nonatomic) BOOL shared;
 @property(nonatomic) BOOL hasTapped;
+@property(nonatomic) BOOL tapped;
 @property(nonatomic) BOOL hasVisible;
+@property(nonatomic) BOOL visible;
 @property(nonatomic) BOOL hasTimeSinceStart;
-@property(nonatomic) int timeSinceStart; // @synthesize timeSinceStart=_timeSinceStart;
+@property(nonatomic) int timeSinceStart;
 - (int)StringAsProactiveItemType:(id)arg1;
 - (id)proactiveItemTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasProactiveItemType;
-@property(nonatomic) int proactiveItemType; // @synthesize proactiveItemType=_proactiveItemType;
+@property(nonatomic) int proactiveItemType;
 
 @end
 

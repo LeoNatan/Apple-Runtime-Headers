@@ -16,7 +16,6 @@
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 - (void).cxx_destruct;
 - (void)_setLayoutEmptyRingsNoDot;
 - (void)_updateForTemplateChange;

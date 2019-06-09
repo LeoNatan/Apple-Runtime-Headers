@@ -6,6 +6,7 @@
 
 #import <AppKit/NSBrowser.h>
 
+@class NSObject;
 @protocol TColumnViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,7 +18,6 @@ __attribute__((visibility("hidden")))
     long long _targetRow;
     unsigned long long _targetDropOperation;
     unsigned long long _dragOperation;
-    long long _retainCount;
 }
 
 + (Class)tableColumnViewControllerClass;
@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)doClick:(id)arg1;
 - (void)_ensureValidSelection;
 - (void)addColumnForItem:(id)arg1;
+- (void)addColumn;
 - (void)loadColumnZero;
 - (void)setLastColumn:(long long)arg1;
 - (void)viewDidChangeBackingProperties;
@@ -55,14 +56,9 @@ __attribute__((visibility("hidden")))
 - (void)setFocusOnColumn:(long long)arg1;
 - (id)browserTableViewAtIndex:(long long)arg1;
 - (BOOL)wantsUpdateLayer;
-@property id <TColumnViewDelegate> delegate;
+@property __weak NSObject<TColumnViewDelegate> *delegate;
 - (id)controller;
 - (void)setFrame:(struct CGRect)arg1;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
 
 @end
 

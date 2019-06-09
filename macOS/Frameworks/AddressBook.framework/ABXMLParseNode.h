@@ -28,7 +28,6 @@
 - (void)addChild:(id)arg1;
 - (long long)nodeType;
 - (id)string;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithString:(id)arg1 nodeType:(long long)arg2;
 

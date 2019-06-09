@@ -11,6 +11,7 @@
 }
 
 + (id)arrayWithCapacity:(unsigned int)arg1;
+- (id)arrayByAddingObjectsFromArray:(id)arg1;
 - (id)initWithObjects:(const id *)arg1 count:(unsigned int)arg2;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (void)sortUsingSelector:(SEL)arg1;

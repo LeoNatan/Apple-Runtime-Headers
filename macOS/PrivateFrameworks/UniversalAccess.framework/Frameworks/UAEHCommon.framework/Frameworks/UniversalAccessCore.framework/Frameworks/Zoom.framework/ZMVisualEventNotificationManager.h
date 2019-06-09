@@ -11,6 +11,7 @@
 @class AXKApplicationController, AXKElementController, NSString;
 @protocol ZMVisualEventNotificationManagerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface ZMVisualEventNotificationManager : NSObject <AXKWorkspaceManagerDelegate>
 {
     BOOL _isStarted;

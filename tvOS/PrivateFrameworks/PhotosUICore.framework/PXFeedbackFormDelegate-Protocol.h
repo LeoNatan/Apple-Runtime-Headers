@@ -19,6 +19,7 @@
 - (NSString *)longTitleText;
 
 @optional
+- (void)userDidFinish:(_Bool)arg1;
 - (_Bool)shouldContinuePresentingFormAfterFeedback;
 - (_Bool)wantsPositiveFeedbackSection;
 - (_Bool)wantsCustomFeedbackSection;

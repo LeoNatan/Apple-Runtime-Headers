@@ -12,6 +12,7 @@
 + (id)secondaryAccountTypes;
 + (id)primaryAccountTypes;
 + (id)accountTypeForHostname:(id)arg1;
++ (id)otherAccountsSetupAccountTypes;
 - (id)localizedName;
 - (id)userNameFieldPlaceholder;
 - (id)defaultDomain;
@@ -22,5 +23,6 @@
 - (id)logo;
 - (id)squareIcon;
 - (id)_imageWithSuffix:(id)arg1;
+- (id)titleForOtherAccountsSetup;
 @end
 

@@ -20,6 +20,7 @@
     _Bool _trackHorizontal;
     _Bool _alwaysShowBackground;
     _Bool _alwaysFocusable;
+    _Bool _disableFocus;
     _Bool _needsTextSizeComputation;
     UIColor *_descriptionTextColor;
     UIColor *_descriptionTextHighlightColor;
@@ -50,6 +51,7 @@
 @property(retain, nonatomic) UITextView *descriptionTextView; // @synthesize descriptionTextView=_descriptionTextView;
 @property(copy, nonatomic) CDUnknownBlockType playHandler; // @synthesize playHandler=_playHandler;
 @property(copy, nonatomic) CDUnknownBlockType selectionHandler; // @synthesize selectionHandler=_selectionHandler;
+@property(nonatomic) _Bool disableFocus; // @synthesize disableFocus=_disableFocus;
 @property(nonatomic, getter=isAlwaysFocusable) _Bool alwaysFocusable; // @synthesize alwaysFocusable=_alwaysFocusable;
 @property(nonatomic) unsigned long long focusSizeIncrease; // @synthesize focusSizeIncrease=_focusSizeIncrease;
 @property(nonatomic) _Bool alwaysShowBackground; // @synthesize alwaysShowBackground=_alwaysShowBackground;

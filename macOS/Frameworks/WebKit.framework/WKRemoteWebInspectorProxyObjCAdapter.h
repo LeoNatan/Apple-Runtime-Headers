@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <WebKit/NSWindowDelegate-Protocol.h>
 #import <WebKit/WKInspectorViewControllerDelegate-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WKRemoteWebInspectorProxyObjCAdapter : NSObject <WKInspectorViewControllerDelegate>
+@interface WKRemoteWebInspectorProxyObjCAdapter : NSObject <NSWindowDelegate, WKInspectorViewControllerDelegate>
 {
     struct RemoteWebInspectorProxy *_inspectorProxy;
 }
@@ -19,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)inspectorViewControllerInspectorIsUnderTest:(id)arg1;
 - (void)inspectorViewControllerInspectorDidCrash:(id)arg1;
 - (id)initWithRemoteWebInspectorProxy:(struct RemoteWebInspectorProxy *)arg1;
+- (struct CGRect)window:(id)arg1 willPositionSheet:(id)arg2 usingRect:(struct CGRect)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,9 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CKDialogContext, CKStoreAccount;
+#import <CommerceKit/AMSURLProtocolDelegate-Protocol.h>
+#import <CommerceKit/NSURLSessionDelegate-Protocol.h>
 
-@interface CKStoreAccountSettingsContext : NSObject
+@class CKDialogContext, CKStoreAccount, NSString;
+
+@interface CKStoreAccountSettingsContext : NSObject <NSURLSessionDelegate, AMSURLProtocolDelegate>
 {
     CKStoreAccount *_account;
     CKDialogContext *_dialogContext;
@@ -18,9 +21,12 @@
 @property(retain) CKDialogContext *dialogContext; // @synthesize dialogContext=_dialogContext;
 @property(readonly) CKStoreAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (void)AMSURLSession:(id)arg1 task:(id)arg2 handleDialogRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)AMSURLSession:(id)arg1 task:(id)arg2 handleAuthenticateRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setTouchIDState:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (long long)touchIDState;
 - (void)eligibilityForService:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_bag;
 - (void)setPasswordSettings:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)passwordSettingsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_setEnabledAutomaticDownloadMediaKinds:(long long)arg1 withURL:(id)arg2 bodyPlist:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -29,6 +35,12 @@
 - (void)enableAutomaticDownloadForMediaKinds:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)enabledAutomaticDownloadMediaKindsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)initWithStoreAccount:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

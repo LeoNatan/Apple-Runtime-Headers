@@ -10,6 +10,7 @@
 
 @class DEProgressSheetController, DirEditorPlugin, NSArray, NSArrayController, NSButton, NSDictionary, NSIndexSet, NSMenu, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSProgressIndicator, NSSearchField, NSSegmentedControl, NSString, NSTableView, NSTextField, NSTimer, NSView, ODNode, ODQuery, ODSession, SFAuthorization;
 
+__attribute__((visibility("hidden")))
 @interface DirectoryEditorViewController : NSObject <ODQueryDelegate>
 {
     NSView *_view;

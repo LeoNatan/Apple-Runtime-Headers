@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)calloutViewClass;
 - (void).cxx_destruct;
-- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(float)arg2;
+- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(float)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
 - (_Bool)updateCalloutViewIfNeededAnimated:(_Bool)arg1;
 - (void)_addAnchorDotViewIfNeeded;
 - (_Bool)shouldShowCallout;

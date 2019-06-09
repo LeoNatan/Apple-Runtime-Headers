@@ -20,7 +20,7 @@
     double _interval;
     long long _count;
     long long _trafficClass;
-    long long _dataLength;
+    unsigned long long _dataLength;
     double _packetLoss;
     double _min;
     double _max;
@@ -42,7 +42,7 @@
 @property(nonatomic) double max; // @synthesize max=_max;
 @property(nonatomic) double min; // @synthesize min=_min;
 @property(nonatomic) double packetLoss; // @synthesize packetLoss=_packetLoss;
-@property(nonatomic) long long dataLength; // @synthesize dataLength=_dataLength;
+@property(nonatomic) unsigned long long dataLength; // @synthesize dataLength=_dataLength;
 @property(nonatomic) long long trafficClass; // @synthesize trafficClass=_trafficClass;
 @property(nonatomic) long long count; // @synthesize count=_count;
 @property(nonatomic) double interval; // @synthesize interval=_interval;

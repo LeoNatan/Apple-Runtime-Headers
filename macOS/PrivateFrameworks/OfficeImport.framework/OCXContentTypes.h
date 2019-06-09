@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, NSMutableSet;
 
+__attribute__((visibility("hidden")))
 @interface OCXContentTypes : NSObject
 {
     NSMutableArray *mContentTypes;

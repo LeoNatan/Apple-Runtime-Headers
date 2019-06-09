@@ -6,7 +6,7 @@
 
 #import <AppKit/NSScrollView.h>
 
-@class NSTimer, NSTrackingArea;
+@class NSImageView, NSTimer, NSTrackingArea, NSVisualEffectView, SSFrameBufferView;
 
 @interface SSPanningScrollView : NSScrollView
 {
@@ -22,10 +22,17 @@
     struct CGRect topRect;
     struct CGRect bottomRect;
     BOOL mDisablePanningEvents;
+    BOOL mShowDisconnectedBlurring;
     struct CGPoint lastPoint;
+    NSVisualEffectView *_fxView;
+    NSImageView *_myImageView;
+    SSFrameBufferView *_frameBufferView;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
+@property(retain) SSFrameBufferView *frameBufferView; // @synthesize frameBufferView=_frameBufferView;
+@property(retain) NSImageView *myImageView; // @synthesize myImageView=_myImageView;
+@property(retain) NSVisualEffectView *fxView; // @synthesize fxView=_fxView;
 @property struct CGPoint lastPoint; // @synthesize lastPoint;
 @property BOOL disablePanningEvents; // @synthesize disablePanningEvents=mDisablePanningEvents;
 - (void)setRightTracking:(BOOL)arg1;
@@ -49,6 +56,8 @@
 - (void)scrollWheel:(id)arg1;
 @property long long panningMode;
 - (void)restoreScrollPoint;
+@property BOOL showDisconnectedBlurring; // @synthesize showDisconnectedBlurring=mShowDisconnectedBlurring;
+- (BOOL)allowsVibrancy;
 - (void)dealloc;
 - (void)commonInitialization;
 - (id)initWithCoder:(id)arg1;

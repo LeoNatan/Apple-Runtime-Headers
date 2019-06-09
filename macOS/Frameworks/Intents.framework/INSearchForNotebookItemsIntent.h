@@ -24,6 +24,12 @@
 - (id)_dictionaryRepresentation;
 - (void)setNotebookItemIdentifier:(id)arg1;
 @property(readonly, copy) NSString *notebookItemIdentifier;
+@property BOOL includeAllNoteContents;
+@property(copy) INSpeakableString *groupName;
+- (void)setTaskPriority:(long long)arg1;
+@property(readonly) long long taskPriority;
+- (void)setTemporalEventTriggerTypes:(unsigned long long)arg1;
+@property(readonly) unsigned long long temporalEventTriggerTypes;
 - (void)setDateSearchType:(long long)arg1;
 @property(readonly) long long dateSearchType;
 - (void)setDateTime:(id)arg1;
@@ -40,12 +46,13 @@
 @property(readonly, copy) NSString *content;
 - (void)setTitle:(id)arg1;
 @property(readonly, copy) INSpeakableString *title;
-- (id)initWithTitle:(id)arg1 content:(id)arg2 itemType:(long long)arg3 status:(long long)arg4 location:(id)arg5 locationSearchType:(long long)arg6 dateTime:(id)arg7 dateSearchType:(long long)arg8 notebookItemIdentifier:(id)arg9;
+- (id)initWithTitle:(id)arg1 content:(id)arg2 itemType:(long long)arg3 status:(long long)arg4 location:(id)arg5 locationSearchType:(long long)arg6 dateTime:(id)arg7 dateSearchType:(long long)arg8 temporalEventTriggerTypes:(unsigned long long)arg9 taskPriority:(long long)arg10 notebookItemIdentifier:(id)arg11;
 - (id)_categoryVerb;
 - (long long)_intentCategory;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+- (id)initWithTitle:(id)arg1 content:(id)arg2 itemType:(long long)arg3 status:(long long)arg4 location:(id)arg5 locationSearchType:(long long)arg6 dateTime:(id)arg7 dateSearchType:(long long)arg8 notebookItemIdentifier:(id)arg9;
 - (id)initWithTitle:(id)arg1 content:(id)arg2 itemType:(long long)arg3 status:(long long)arg4 location:(id)arg5 locationSearchType:(long long)arg6 dateTime:(id)arg7 dateSearchType:(long long)arg8;
 
 // Remaining properties

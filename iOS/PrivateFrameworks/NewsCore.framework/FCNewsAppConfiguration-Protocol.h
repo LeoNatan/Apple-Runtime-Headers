@@ -52,6 +52,9 @@
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
 
 @optional
+@property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
+@property(readonly, nonatomic) long long maximumTrendingGroupSizeiPhone;
+@property(readonly, nonatomic) long long maximumTrendingGroupSizeiPad;
 @property(readonly, nonatomic) long long feedContentExposureTestMaximumInterval;
 @property(readonly, nonatomic) long long criticalStorageThreshold;
 @property(readonly, nonatomic) long long lowStorageThreshold;

@@ -14,6 +14,7 @@
     id <AVTAvatarRecord> _avatarRecord;
 }
 
++ (id)recordUpdateForDeletingRecord:(id)arg1 withDataSource:(id)arg2;
 @property(readonly, nonatomic) _Bool fromLeft; // @synthesize fromLeft=_fromLeft;
 @property(readonly, nonatomic) id <AVTAvatarRecord> avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 - (void).cxx_destruct;

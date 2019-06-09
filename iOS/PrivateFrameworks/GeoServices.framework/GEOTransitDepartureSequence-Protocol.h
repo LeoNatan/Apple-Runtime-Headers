@@ -28,6 +28,8 @@
 - (NSDate *)firstOpenOperatingDateOnOrAfterDate:(NSDate *)arg1;
 - (id <GEOTransitDepartureFrequency>)firstDepartureFrequencyOnOrAfterDate:(NSDate *)arg1;
 - (unsigned long long)numberOfDeparturesAfterDate:(NSDate *)arg1;
+- (unsigned long long)stopId;
+- (NSArray *)departures;
 - (id <GEOTransitDeparture>)firstDepartureAfterDate:(NSDate *)arg1;
 - (id <GEOTransitDeparture>)firstDepartureOnOrAfterDate:(NSDate *)arg1;
 @end

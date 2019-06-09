@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) struct OpaqueSecCertificateRef *secCertificate;
+@property(readonly, nonatomic) struct __SecCertificate *secCertificate;
 @property(readonly, nonatomic) NSData *serialNumber;
 @property(readonly, nonatomic) NSString *issuerName;
 @property(readonly, nonatomic) NSString *subject;
 @property(readonly, nonatomic) long long certificateType;
-- (id)initWithSecCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (id)initWithSecCertificate:(struct __SecCertificate *)arg1;
 
 @end
 

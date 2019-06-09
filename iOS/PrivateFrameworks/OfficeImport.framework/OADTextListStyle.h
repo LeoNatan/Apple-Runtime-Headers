@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultObject;
 @property(retain, nonatomic) NSString *language; // @synthesize language=mLanguage;
+- (void).cxx_destruct;
 - (id)description;
 - (void)enumerateParagraphPropertiesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeUnnecessaryOverrides;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (void)setPropertiesForListLevel:(unsigned long long)arg1 properties:(id)arg2;
 - (id)propertiesForListLevel:(unsigned long long)arg1;
 - (id)defaultProperties;
-- (void)dealloc;
 - (id)initWithDefaults;
 - (id)init;
 

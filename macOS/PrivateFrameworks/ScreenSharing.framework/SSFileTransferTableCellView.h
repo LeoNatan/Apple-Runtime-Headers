@@ -9,15 +9,8 @@
 @class NSButton, NSImage, NSImageView, NSLayoutConstraint, NSProgress, NSProgressIndicator, NSTextField, NSTimer, SSFileTransfer;
 @protocol SSFileTransferTableCellViewDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SSFileTransferTableCellView : NSTableCellView
 {
-    NSImageView *documentImageView;
-    NSProgressIndicator *progressIndicator;
-    NSTextField *upperTextField;
-    NSTextField *lowerTextField;
-    NSButton *cancelButton;
-    NSButton *revealButton;
     id <SSFileTransferTableCellViewDelegate> delegate;
     SSFileTransfer *fileTransfer;
     NSImage *cancelImagePressed;
@@ -26,7 +19,13 @@ __attribute__((visibility("hidden")))
     NSImage *revealImagePressed;
     NSImage *revealImageActive;
     NSImage *revealImageSelected;
+    NSProgressIndicator *progressIndicator;
+    NSButton *cancelButton;
+    NSButton *revealButton;
+    NSTextField *lowerTextField;
     NSProgress *progress;
+    NSImageView *_documentImageView;
+    NSTextField *_upperTextField;
     NSLayoutConstraint *_lowerTextBottomConstraint;
     NSLayoutConstraint *_upperTextTopConstraint;
     NSTimer *_progressUpdateTimer;
@@ -35,6 +34,8 @@ __attribute__((visibility("hidden")))
 @property(retain) NSTimer *progressUpdateTimer; // @synthesize progressUpdateTimer=_progressUpdateTimer;
 @property(retain) NSLayoutConstraint *upperTextTopConstraint; // @synthesize upperTextTopConstraint=_upperTextTopConstraint;
 @property(retain) NSLayoutConstraint *lowerTextBottomConstraint; // @synthesize lowerTextBottomConstraint=_lowerTextBottomConstraint;
+@property NSTextField *upperTextField; // @synthesize upperTextField=_upperTextField;
+@property NSImageView *documentImageView; // @synthesize documentImageView=_documentImageView;
 @property id <SSFileTransferTableCellViewDelegate> delegate; // @synthesize delegate;
 @property(retain) NSProgress *progress; // @synthesize progress;
 @property NSTextField *lowerTextField; // @synthesize lowerTextField;

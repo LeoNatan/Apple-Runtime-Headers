@@ -8,6 +8,7 @@
 
 @class UILabel;
 
+__attribute__((visibility("hidden")))
 @interface STNoUsageDataView : UIView
 {
     _Bool _localDevice;

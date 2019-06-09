@@ -11,7 +11,7 @@
     CDUnknownBlockType _resultHandler;
 }
 
-@property(readonly) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
+@property(readonly, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 - (void).cxx_destruct;
 - (void)handleCancellation;
 - (void)handleResponse:(id)arg1;

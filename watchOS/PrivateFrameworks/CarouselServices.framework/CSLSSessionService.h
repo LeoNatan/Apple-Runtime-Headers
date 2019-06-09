@@ -9,27 +9,43 @@
 #import <CarouselServices/CSLSSessionServiceClientInterface-Protocol.h>
 #import <CarouselServices/CSLSSessionServiceInterface-Protocol.h>
 
-@class NSMutableArray, NSString, NSXPCConnection, NSXPCInterface;
+@class NSMutableDictionary, NSMutableSet, NSString, NSXPCConnection, NSXPCInterface;
 
 @interface CSLSSessionService : NSObject <CSLSSessionServiceClientInterface, CSLSSessionServiceInterface>
 {
-    NSMutableArray *_sessions;
+    NSMutableSet *_runningSessions;
+    NSMutableDictionary *_scheduledSessions;
     NSXPCConnection *_connection;
     NSXPCInterface *_remoteInterface;
     NSXPCInterface *_exportedInterface;
+    NSMutableDictionary *_serviceObserversPerAppBundleID;
     _Bool _invalidated;
-    struct _opaque_pthread_mutex_t _lock;
+    struct os_unfair_recursive_lock_s _lock;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)sessionWithUUIDEnded:(id)arg1;
+- (void)sessionStarted:(id)arg1 error:(id)arg2;
+- (void)sessionWithUUIDEnded:(id)arg1 bundleID:(id)arg2 startWasScheduled:(_Bool)arg3 error:(id)arg4;
+- (void)fetchStickyCapableApps:(CDUnknownBlockType)arg1;
+- (void)defaultSession:(CDUnknownBlockType)arg1;
+- (void)removeSessionServiceObserver:(id)arg1 bundleID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)addSessionServiceObserver:(id)arg1 bundleID:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)existingScheduledSessionsForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)existingScheduledSessions:(CDUnknownBlockType)arg1;
+- (void)existingRunningSessionsForBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)existingRunningSessions:(CDUnknownBlockType)arg1;
+- (void)cancelScheduledSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)scheduleSession:(id)arg1 startDate:(id)arg2 options:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)endSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_sessionEnded:(id)arg1;
+- (void)_sessionEnded:(id)arg1 error:(id)arg2;
+- (void)startSession:(id)arg1 completionWithExpirationDate:(CDUnknownBlockType)arg2;
 - (void)startSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_performServerQuery:(CDUnknownBlockType)arg1;
+- (void)_handleInterruption;
 - (void)_handleInvalidation;
 - (void)_endAllSessions:(id)arg1;
+- (void)_startConnection;
 - (void)_connectIfNecessary;
 - (void)_withLock:(CDUnknownBlockType)arg1;
 - (void)dealloc;

@@ -6,23 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate;
+@class GEOCelestialRiseTransitSet, NSDate;
 
 __attribute__((visibility("hidden")))
 @interface GEOAlmanacRiseTransitSet : NSObject
 {
-    double _julianDay;
-    struct CAARiseTransitSetDetails _riseTransitSet;
-    NSDate *_sunrise;
-    NSDate *_transit;
-    NSDate *_sunset;
+    GEOCelestialRiseTransitSet *_celestialRiseTransitSet;
     unsigned long long _firstEventType;
     unsigned long long _lastEventType;
 }
 
-@property(readonly, nonatomic) struct CAARiseTransitSetDetails riseTransitSet; // @synthesize riseTransitSet=_riseTransitSet;
-@property(readonly, nonatomic) double julianDay; // @synthesize julianDay=_julianDay;
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (_Bool)isCompatibleWith:(id)arg1;
 - (long long)compareToDate:(id)arg1;
@@ -31,11 +24,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long lastEventType;
 @property(readonly, nonatomic) unsigned long long firstEventType;
 - (void)_calculateFirstAndLastEvents;
-@property(readonly, nonatomic) NSDate *sunset;
+@property(readonly, nonatomic) struct CAARiseTransitSetDetails riseTransitSet;
+@property(readonly, nonatomic) NSDate *set;
 @property(readonly, nonatomic) NSDate *transit;
-@property(readonly, nonatomic) NSDate *sunrise;
-- (id)_dateFromOffset:(double)arg1 ofJulianEphemerisDay:(double)arg2;
-- (id)initWithJulianEphemerisDay:(double)arg1 riseTransitSet:(struct CAARiseTransitSetDetails)arg2;
+@property(readonly, nonatomic) NSDate *rise;
+- (id)initWith:(id)arg1;
 
 @end
 

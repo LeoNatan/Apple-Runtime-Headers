@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)_baseDataObjectPredicate;
++ (id)_predicateForSyncSession:(id)arg1;
 + (id)_objectWithCodable:(id)arg1;
 + (Class)healthEntityClass;
 + (id)syncEntityIdentifier;

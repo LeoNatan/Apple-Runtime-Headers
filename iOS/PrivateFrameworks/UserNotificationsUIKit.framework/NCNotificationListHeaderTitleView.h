@@ -34,7 +34,6 @@
 - (void)_configureTitleLabelIfNecessary;
 - (void)_invalidateTitleLabel;
 - (id)_labelFont;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)adjustForLegibilitySettingsChange:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

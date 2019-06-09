@@ -7,6 +7,9 @@
 @class CPLMomentShare, CPLResource, CPLScopedIdentifier, NSArray, NSDictionary, NSString, NSURL;
 
 @protocol CPLDaemonLibraryManagerMinimalProtocol
+- (void)provideCloudResource:(CPLResource *)arg1 completionHandler:(void (^)(CPLResource *, unsigned int))arg2;
+- (void)provideRecordWithCloudScopeIdentifier:(CPLScopedIdentifier *)arg1 completionHandler:(void (^)(CPLRecordChange *, unsigned int))arg2;
+- (void)provideLibraryInfoForScopeWithIdentifier:(NSString *)arg1 completionHandler:(void (^)(CPLLibraryInfo *, unsigned int))arg2;
 - (void)unblockEngineElementOnce:(NSString *)arg1;
 - (void)unblockEngineElement:(NSString *)arg1;
 - (void)blockEngineElement:(NSString *)arg1;
@@ -54,5 +57,6 @@
 - (void)deactivateLibraryWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)closeLibraryWithCompletionHandler:(void (^)(NSError *))arg1;
 - (void)openLibraryWithClientLibraryBaseURL:(NSURL *)arg1 cloudLibraryStateStorageURL:(NSURL *)arg2 cloudLibraryResourceStorageURL:(NSURL *)arg3 libraryIdentifier:(NSString *)arg4 options:(unsigned int)arg5 completionHandler:(void (^)(NSError *, NSDictionary *, unsigned long long, unsigned long long, unsigned int, unsigned int, unsigned int, NSString *, NSString *, NSURL *))arg6;
+- (void)connectWithCompletionHandler:(void (^)(void))arg1;
 @end
 

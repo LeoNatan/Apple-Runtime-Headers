@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)currencyWithLassoCode:(id)arg1 langId:(int)arg2 xlSymbol:(id)arg3 isExport:(_Bool)arg4;
 + (id)currencyWithLassoCode:(id)arg1 langId:(int)arg2 xlSymbol:(id)arg3 accountingFormat:(int)arg4;
 + (id)currencyWithLassoCode:(id)arg1 langId:(int)arg2 xlSymbol:(id)arg3;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithLassoCode:(id)arg1 langId:(int)arg2 xlSymbol:(id)arg3 isExport:(_Bool)arg4 accountingFormat:(int)arg5;
 
 @end

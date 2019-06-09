@@ -11,5 +11,6 @@
 - (id)MSDeepCopyWithZone:(struct _NSZone *)arg1;
 - (id)MSMutableDeepCopy;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone *)arg1;
+- (id)MSDSPAssetCollectionWithMasterFileHash:(id)arg1;
 @end
 

@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (struct CGImage *)CGImageForProposedRect:(struct CGRect *)arg1 context:(id)arg2 hints:(id)arg3;
 - (void)drawInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;
-- (void)_drawMappingAlignmentRectToRect:(struct CGRect)arg1 withState:(unsigned long long)arg2 backgroundStyle:(int)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5 flip:(BOOL)arg6 hints:(id)arg7;
+- (void)_drawMappingAlignmentRectToRect:(struct CGRect)arg1 withState:(unsigned long long)arg2 backgroundStyle:(int)arg3 tintColor:(id)arg4 operation:(unsigned long long)arg5 fraction:(double)arg6 flip:(BOOL)arg7 hints:(id)arg8;
 - (id)description;
 
 @end

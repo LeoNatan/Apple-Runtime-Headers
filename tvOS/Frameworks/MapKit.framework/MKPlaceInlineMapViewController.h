@@ -16,23 +16,26 @@ __attribute__((visibility("hidden")))
     _MKPlaceInlineMapContentView *_contentView;
     MKMapItem *_updatingInlineMapItem;
     _Bool _bottomHairlineHidden;
+    _Bool _useWindowTrait;
     MKMapItem *_mapItem;
     _MKPlaceViewController *_owner;
     MKMapCamera *_mapCamera;
 }
 
-+ (id)inlineMapWithMapItem:(id)arg1;
++ (id)inlineMapWithMapItem:(id)arg1 options:(unsigned long long)arg2;
 @property(retain, nonatomic) MKMapCamera *mapCamera; // @synthesize mapCamera=_mapCamera;
+@property(nonatomic) _Bool useWindowTrait; // @synthesize useWindowTrait=_useWindowTrait;
 @property(nonatomic) __weak _MKPlaceViewController *owner; // @synthesize owner=_owner;
 @property(nonatomic, getter=isBottomHairlineHidden) _Bool bottomHairlineHidden; // @synthesize bottomHairlineHidden=_bottomHairlineHidden;
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
+- (long long)preferredUserInterfaceStyle;
+- (id)traitCollectionForSnapshot;
 - (void)_launchMaps;
 - (void)_handleTapOnMap;
 - (void)_updateSnapshotImage:(id)arg1;
-- (void)_updateInlineMapWithRefinedMapItems;
 - (struct CGSize)_mapSize;
-- (CDStruct_02837cd9)mapRectContainingMapItems;
+- (void)_updateInlineMapWithRefinedMapItems;
 - (void)updateInlineMapWithRefinedMapItems;
 - (void)_updateMap;
 - (id)snapshot;

@@ -14,23 +14,17 @@
 {
 }
 
-+ (id)logCategory;
 + (_Bool)supportsCloudSettings;
 + (id)sharedSettings;
-- (void)__updateHomeEnabled:(_Bool)arg1 userInitiated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)updateHomeEnabled:(_Bool)arg1 userInitiated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)__migrateHomePreferences;
-- (void)__registerForKeychainChangeNotifications;
-- (void)__synchronize;
++ (id)logCategory;
+- (void)updateHomeEnabled:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)synchronize;
-- (void)_notifyClientsOfUpdatedKeychainSyncState:(_Bool)arg1;
-@property(getter=isKeychainSyncEnabled) _Bool keychainSyncEnabled;
-- (void)_notifyClientsOfUpdatedHomeState:(_Bool)arg1 userInitiated:(_Bool)arg2;
-- (void)enableHome:(_Bool)arg1 userInitiated:(_Bool)arg2;
+@property(readonly, getter=isEphemeral) _Bool ephemeral;
+@property(readonly, getter=isManaged) _Bool managed;
+@property(readonly, getter=isKeychainSyncEnabled) _Bool keychainSyncEnabled;
 @property(readonly, getter=isHomeEnabled) _Bool homeEnabled;
 - (id)attributeDescriptions;
-- (void)dealloc;
-- (id)init;
+@property(readonly, getter=isEducationMode) _Bool educationMode;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

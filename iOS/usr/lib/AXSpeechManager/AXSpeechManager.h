@@ -8,41 +8,65 @@
 
 #import <AXSpeechManager/TTSSpeechSynthesizerDelegate-Protocol.h>
 
-@class AXSpeechThread, NSArray, NSMutableArray, NSNumber, NSString, TTSSpeechSynthesizer;
+@class AVAudioSession, AXDispatchTimer, AXSpeechAction, AXSpeechThread, NSArray, NSMutableArray, NSNumber, NSString, TTSSpeechSynthesizer;
+@protocol OS_dispatch_queue;
 
 @interface AXSpeechManager : NSObject <TTSSpeechSynthesizerDelegate>
 {
     NSMutableArray *_speechQueue;
     TTSSpeechSynthesizer *_synthesizer;
     AXSpeechThread *_runThread;
-    unsigned int _audioQueueFlags;
+    NSObject<OS_dispatch_queue> *_propertyQueue;
     _Bool _isSpeaking;
     _Bool _speechEnabled;
-    _Bool isPaused;
-    _Bool _showControlCenterControls;
+    _Bool _isPaused;
+    _Bool _isInAudioInterruption;
     _Bool _supportsAccurateWordCallbacks;
+    _Bool _showControlCenterControls;
+    _Bool _wasSpeakingBeforeAudioInterruption;
+    _Bool _didRequestStartSpeakingDuringAudioInterruption;
+    _Bool _didRequestPauseSpeakingDuringAudioInterruption;
+    _Bool _didRequestResumeSpeakingDuringAudioInterruption;
+    _Bool _shouldHandleAudioInterruptions;
+    unsigned int _audioQueueFlags;
+    AXSpeechAction *_requestedActionDuringAudioInterruption;
+    unsigned long long _audioSessionCategoryOptions;
+    NSString *_audioSessionCategory;
+    unsigned long long _setActiveOptions;
+    AVAudioSession *_audioSession;
     CDUnknownBlockType _requestWillStart;
     NSNumber *_originalSpeechRateForJobOverride;
+    AXDispatchTimer *_audioDeactivatorTimer;
+    double _audioInterruptionStartedTime;
 }
 
 + (void)test_setAvailableVoices:(id)arg1;
 + (void)test_setUnitTestMode:(_Bool)arg1;
 + (void)test_actionStartTap:(CDUnknownBlockType)arg1;
 + (id)remapLanguageCode:(id)arg1;
++ (id)audioFileSettingsForVoice:(id)arg1;
 + (id)matchedRangesForString:(id)arg1 withRegularExpression:(struct URegularExpression *)arg2;
 + (struct URegularExpression *)createRegularExpressionFromString:(id)arg1;
++ (id)_resetAvailableVoices:(_Bool)arg1;
 + (id)_resetAvailableVoices;
++ (id)availableVoices:(_Bool)arg1;
 + (id)availableVoices;
 + (id)availableLanguageCodes;
 + (id)pauseMarkupString:(id)arg1;
 + (id)spellOutMarkupString:(id)arg1 string:(id)arg2;
 + (id)currentLanguageCode;
+@property(nonatomic) _Bool shouldHandleAudioInterruptions; // @synthesize shouldHandleAudioInterruptions=_shouldHandleAudioInterruptions;
+@property(nonatomic) double audioInterruptionStartedTime; // @synthesize audioInterruptionStartedTime=_audioInterruptionStartedTime;
+@property(nonatomic) _Bool didRequestResumeSpeakingDuringAudioInterruption; // @synthesize didRequestResumeSpeakingDuringAudioInterruption=_didRequestResumeSpeakingDuringAudioInterruption;
+@property(nonatomic) _Bool didRequestPauseSpeakingDuringAudioInterruption; // @synthesize didRequestPauseSpeakingDuringAudioInterruption=_didRequestPauseSpeakingDuringAudioInterruption;
+@property(nonatomic) _Bool didRequestStartSpeakingDuringAudioInterruption; // @synthesize didRequestStartSpeakingDuringAudioInterruption=_didRequestStartSpeakingDuringAudioInterruption;
+@property(nonatomic) _Bool wasSpeakingBeforeAudioInterruption; // @synthesize wasSpeakingBeforeAudioInterruption=_wasSpeakingBeforeAudioInterruption;
+@property(retain, nonatomic) AXDispatchTimer *audioDeactivatorTimer; // @synthesize audioDeactivatorTimer=_audioDeactivatorTimer;
 @property(retain, nonatomic) NSNumber *originalSpeechRateForJobOverride; // @synthesize originalSpeechRateForJobOverride=_originalSpeechRateForJobOverride;
-@property(nonatomic) _Bool supportsAccurateWordCallbacks; // @synthesize supportsAccurateWordCallbacks=_supportsAccurateWordCallbacks;
 @property(copy, nonatomic) CDUnknownBlockType requestWillStart; // @synthesize requestWillStart=_requestWillStart;
 @property(readonly, nonatomic) _Bool showControlCenterControls; // @synthesize showControlCenterControls=_showControlCenterControls;
+@property(retain, nonatomic) AXSpeechAction *requestedActionDuringAudioInterruption; // @synthesize requestedActionDuringAudioInterruption=_requestedActionDuringAudioInterruption;
 @property(nonatomic) _Bool speechEnabled; // @synthesize speechEnabled=_speechEnabled;
-@property(nonatomic) _Bool isPaused; // @synthesize isPaused;
 - (void).cxx_destruct;
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange)arg2 forRequest:(id)arg3;
 - (void)speechSynthesizer:(id)arg1 didContinueSpeakingRequest:(id)arg2;
@@ -50,7 +74,7 @@
 - (void)speechSynthesizer:(id)arg1 didFinishSpeakingRequest:(id)arg2 successfully:(_Bool)arg3 withError:(id)arg4;
 - (void)__speechJobFinished:(id)arg1;
 - (void)speechSynthesizer:(id)arg1 didStartSpeakingRequest:(id)arg2;
-@property(nonatomic) unsigned int audioQueueFlags;
+@property(nonatomic) unsigned int audioQueueFlags; // @synthesize audioQueueFlags=_audioQueueFlags;
 @property(retain, nonatomic) NSArray *outputChannels;
 @property(readonly, nonatomic) _Bool isSpeaking; // @dynamic isSpeaking;
 - (void)_isSpeaking:(id)arg1;
@@ -71,7 +95,22 @@
 - (id)externalVoiceIdentifierUsedForLanguage:(id)arg1;
 - (void)_speechJobFinished:(_Bool)arg1 action:(id)arg2;
 - (void)_updateUserSubstitutions;
+@property(nonatomic) _Bool supportsAccurateWordCallbacks; // @synthesize supportsAccurateWordCallbacks=_supportsAccurateWordCallbacks;
+@property(nonatomic) _Bool isPaused; // @synthesize isPaused=_isPaused;
+@property(retain, nonatomic) AVAudioSession *audioSession; // @synthesize audioSession=_audioSession;
+@property(nonatomic) _Bool isInAudioInterruption; // @synthesize isInAudioInterruption=_isInAudioInterruption;
+@property(nonatomic) unsigned long long audioSessionCategoryOptions; // @synthesize audioSessionCategoryOptions=_audioSessionCategoryOptions;
+@property(retain, nonatomic) NSString *audioSessionCategory; // @synthesize audioSessionCategory=_audioSessionCategory;
+@property(nonatomic) unsigned long long setActiveOptions; // @synthesize setActiveOptions=_setActiveOptions;
 - (void)_initialize;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_updateAudioSessionProperties;
+- (void)_handleAudioInterruption:(id)arg1;
+- (void)_didBeginInterruption;
+- (void)_didEndInterruption;
+- (void)_resetInterruptionTracking;
+- (void)_handleMediaServicesWereReset:(id)arg1;
+- (void)_handleMediaServicesWereLost:(id)arg1;
 - (void)_tearDown;
 - (void)tearDown;
 - (void)dealloc;

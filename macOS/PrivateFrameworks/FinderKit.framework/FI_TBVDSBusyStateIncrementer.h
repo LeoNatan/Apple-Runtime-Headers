@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)aboutToTearDown;
-- (id)init;
 - (id)initWithDataSource:(id)arg1;
 
 @end

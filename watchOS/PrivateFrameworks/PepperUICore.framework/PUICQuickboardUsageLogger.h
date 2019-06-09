@@ -15,6 +15,8 @@
 
 + (id)sharedLogger;
 - (void).cxx_destruct;
+- (void)logUsedMemojiSticker;
+- (void)logUsedAnimojiSticker;
 - (void)logUsedAudioMessage;
 - (void)logUsedDictation;
 - (void)logUsedRecentHandwriting;

@@ -44,7 +44,6 @@
 - (_Bool)maximizePowerEfficiency;
 @property(nonatomic) _Bool alwaysCopiesSampleData;
 @property(readonly, nonatomic) NSString *mediaType;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

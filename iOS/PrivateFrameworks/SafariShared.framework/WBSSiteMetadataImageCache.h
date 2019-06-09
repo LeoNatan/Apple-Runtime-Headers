@@ -57,10 +57,11 @@
 - (void)_internalRemoveAllImages;
 - (void)removeAllImages;
 - (void)setImage:(id)arg1 forKeyString:(id)arg2;
-- (void)_internalSaveImageToDisk:(id)arg1 forKeyString:(id)arg2;
-- (void)saveImageToDisk:(id)arg1 forKeyString:(id)arg2;
+- (void)_internalSaveImageToDisk:(id)arg1 forKeyString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)saveImageToDisk:(id)arg1 forKeyString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_internalImageForKeyString:(id)arg1;
-- (id)imageForKeyString:(id)arg1;
+- (void)imageForKeyString:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)imageForKeyString:(id)arg1 getImageState:(long long *)arg2;
 - (void)_removeImagesPassingTest:(CDUnknownBlockType)arg1;
 - (void)_didLoadImage:(id)arg1 forKeyString:(id)arg2 fromDisk:(_Bool)arg3;
 - (id)_loadImageFromDiskForKeyString:(id)arg1;

@@ -15,8 +15,6 @@
 }
 
 + (id)_supportedEvents;
-- (void)_logErrorForEvent:(id)arg1 featureId:(id)arg2 reason:(id)arg3;
-- (void)_logDoubleValue:(double)arg1 forEvent:(id)arg2 featureId:(id)arg3 stringifiedProperties:(id)arg4;
 - (void)_logUnsignedIntegerValue:(unsigned long long)arg1 forEvent:(id)arg2 featureId:(id)arg3 stringifiedProperties:(id)arg4;
 - (void)logErrorForEvent:(id)arg1 featureId:(id)arg2 reason:(id)arg3;
 - (void)logDoubleValue:(double)arg1 forEvent:(id)arg2 featureId:(id)arg3 stringifiedProperties:(id)arg4 metaData:(id)arg5;

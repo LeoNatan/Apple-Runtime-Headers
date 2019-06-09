@@ -10,14 +10,13 @@
 #import <NanoTimeKitCompanion/PUICCrownInputSequencerDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKComplicationController, NTKDateComplicationLabel, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKLayoutRule, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@class NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKComplicationController, NTKDateComplicationLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKLayoutRule, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 
 @interface NTKSolarFaceView : NTKDigitalFaceView <NTKTimeView, PUICCrownInputSequencerDelegate, UIGestureRecognizerDelegate>
 {
     NTKDigitialUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKColorCurve *_preNoonComplicationColorCurve;
     NTKColorCurve *_postNoonComplicationColorCurve;
-    NTKDigitalTimeLabel *_digitalTimeLabel;
     NTKDigitalTimeLabelStyle *_digitalTimeLabelDefaultStyle;
     NTKDigitalTimeLabelStyle *_digitalTimeLabelSmallInUpperRightCornerStyle;
     UIView *_solarContentView;
@@ -46,6 +45,7 @@
     NTKSolarPath *_solarPath;
     UITapGestureRecognizer *_viewModeTapGesture;
     long long _previousViewMode;
+    long long _nextViewMode;
     struct NSNumber *_clockTimerToken;
     NTKComplicationController *_dateComplicationController;
     NTKDateComplicationLabel *_dateComplicationLabel;
@@ -72,6 +72,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)_digitalTimeLabelStyleFromViewMode:(long long)arg1 faceBounds:(struct CGRect)arg2;
+- (unsigned long long)_timeLabelOptions;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(long long)arg1;
 - (void)_configureForEditMode:(long long)arg1;
 - (void)_configureForTransitionFraction:(double)arg1 fromEditMode:(long long)arg2 toEditMode:(long long)arg3;
@@ -79,11 +81,8 @@
 - (void)_adjustUIForBoundsChange;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
-- (void)_bringForegroundViewsToFront;
 - (void)_layoutForegroundContainerView;
 - (_Bool)_needsForegroundContainerView;
-- (void)_layoutTimeLabelForViewMode:(long long)arg1;
-- (id)_digitalTimeLabelStyleForViewMode:(long long)arg1;
 - (void)_layoutSolarDiskViewForViewMode:(long long)arg1;
 - (void)_layoutSolarPathAndContainerForViewMode:(long long)arg1;
 - (void)_layoutHorizonForViewMode:(long long)arg1;
@@ -94,19 +93,19 @@
 - (void)_beginAnimatingForReason:(id)arg1;
 - (void)_cleanupAfterSettingViewMode:(long long)arg1;
 - (void)_prepareForSettingViewMode:(long long)arg1;
+- (void)_setViewMode:(long long)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setViewMode:(long long)arg1 animated:(_Bool)arg2;
 - (void)_interpolateFromViewMode:(long long)arg1 toViewMode:(long long)arg2 progress:(double)arg3;
 - (_Bool)_canEnterInteractiveMode;
-- (void)_updateToViewMode:(long long)arg1;
 - (void)_transitionToViewMode:(long long)arg1;
 - (void)_setSolarBezierPath:(id)arg1 animated:(_Bool)arg2;
 - (id)_createSolarBezierPath;
-- (void)_updateSolarPathForChangedDate:(id)arg1;
+- (void)_updateSolarPathForChangedDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateSolarPathForChangedLocation:(id)arg1;
 - (struct CGPoint)_pointOnSolarPathForPercentage:(double)arg1;
 - (id)_createWaypointView;
 - (void)_animateSolarDiskFromPercentage:(double)arg1 toPercentage:(double)arg2 reason:(id)arg3;
-- (void)_animateSolarDiskToRestPercentageIfNeeded;
+- (void)_animateSolarDiskToRestPercentageIfNeededForViewMode:(long long)arg1;
 - (void)_updateSolarDiskHaloViewPosition;
 - (void)_solarDiskPercentageChanged:(double)arg1;
 - (double)_solarDiskIdealizedDatePercentage;
@@ -138,17 +137,19 @@
 - (void)_applyDataMode;
 - (void)_stopClockUpdates;
 - (void)_startClockUpdates;
-- (void)_updateTimeScrubbingContent;
+- (void)_updateTimeScrubbingContentForViewMode:(long long)arg1;
 - (void)_buttonPressTimerFired;
 - (void)_wheelDelayTimerFired;
 - (_Bool)_handlePhysicalButton:(unsigned long long)arg1 event:(unsigned long long)arg2;
 - (_Bool)_wheelChangedWithEvent:(id)arg1;
 - (void)_disableCrown;
 - (void)_enableCrown;
-- (void)_updateDigitalTimeLabelStylesForBounds:(struct CGRect)arg1;
+- (_Bool)_shouldHandleHardwareEvents;
 - (void)layoutSubviews;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)setViewMode:(long long)arg1;
+- (void)_unloadViews;
+- (void)_setupViews;
 - (void)_becameInactiveFace;
 - (void)_becameActiveFace;
 - (void)_unloadSnapshotContentViews;

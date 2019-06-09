@@ -12,9 +12,10 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)description;
-- (void)_dispose;
+- (void)dealloc;
 - (void)_xref_dispose;
 - (id)init;
+- (oneway void)release;
 
 @end
 

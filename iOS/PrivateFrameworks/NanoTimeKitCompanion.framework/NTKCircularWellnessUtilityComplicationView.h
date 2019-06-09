@@ -16,9 +16,8 @@
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 - (void).cxx_destruct;
-- (void)_setLayoutEmptyRingsNoDot;
+- (void)_setLayoutEmptyRings;
 - (void)_updateForTemplateChange;
 - (id)_ringColor;
 - (void)_applyForegroundAlpha;

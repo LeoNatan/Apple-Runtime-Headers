@@ -6,20 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class UIImage, VKMapSnapshot;
+@class UIImage, UITraitCollection, VKMapSnapshot;
 
 @interface MKMapSnapshot : NSObject
 {
     VKMapSnapshot *_snapshot;
     UIImage *_image;
+    UITraitCollection *_traitCollection;
 }
 
+@property(readonly, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (_Bool)_hasNoDataPlaceholders;
 - (struct CLLocationCoordinate2D)_coordinateForPoint:(struct CGPoint)arg1;
 - (struct CGPoint)pointForCoordinate:(struct CLLocationCoordinate2D)arg1;
-- (id)_initWithSnapshot:(id)arg1 desiredScale:(double)arg2;
+- (id)_initWithSnapshot:(id)arg1 traitCollection:(id)arg2;
+- (void)_displayAppleLogoForMapType:(unsigned long long)arg1 withScale:(double)arg2 forDarkMode:(_Bool)arg3;
 - (void)_prepareForRenderWithAnnotationViews:(id)arg1;
 - (id)snapshotWithAnnotationView:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (id)snapshotWithAnnotationView:(id)arg1 atCoordinate:(struct CLLocationCoordinate2D)arg2;

@@ -8,6 +8,7 @@
 
 @class _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceInfoPhoneNumberView : MKPlaceInfoContactRowView
 {
     _MKUILabel *_optsOutOfAdsView;

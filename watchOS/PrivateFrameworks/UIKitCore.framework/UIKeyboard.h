@@ -65,7 +65,7 @@
 - (void)implBoundsHeightChangeDone:(float)arg1 suppressNotification:(_Bool)arg2;
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(_Bool)arg2;
 - (struct UIPeripheralAnimationGeometry)geometryForImplHeightDelta:(float)arg1;
-- (void)keyboardMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (void)keyboardMinMaximized:(_Bool)arg1;
 @property(nonatomic, getter=isMinimized) _Bool minimized;
 - (void)maximize;
 - (void)minimize;
@@ -150,6 +150,7 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)didMoveToWindow;
 - (void)willMoveToWindow:(id)arg1;
+- (_Bool)_isAutomaticKeyboard;
 - (void)clearActivePerScreenIfNeeded;
 - (_Bool)isActivePerScreen;
 - (void)dealloc;
@@ -163,6 +164,7 @@
 - (void)manualKeyboardWillBeOrderedOut;
 - (void)manualKeyboardWasOrderedIn;
 - (void)manualKeyboardWillBeOrderedIn;
+- (struct CGRect)_floatingKeyboardDraggableRect;
 - (int)_positionInCandidateList:(id)arg1;
 - (_Bool)_hasCandidates;
 - (void)_acceptCurrentCandidate;
@@ -180,7 +182,6 @@
 - (id)_getLocalizedInputMode;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
-- (_Bool)_isAutomaticKeyboard;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

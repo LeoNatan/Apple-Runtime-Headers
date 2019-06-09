@@ -18,9 +18,13 @@
     NSTimer *_suppressedUpdatesTimer;
 }
 
-+ (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 updateLastMessage:(_Bool)arg4;
++ (void)_displayDatabaseFullAlert;
++ (void)databaseNoLongerFull;
++ (void)databaseFull;
++ (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 updateLastMessage:(_Bool)arg4 calculateUnreadCount:(_Bool)arg5;
 + (id)sharedInstance;
 @property(retain) NSString *modificationStamp; // @synthesize modificationStamp=_modificationStamp;
+- (long long)lastSyncedMessageRowID;
 - (void)markMessageAsIgnoreButNeedingSyncWithROWID:(long long)arg1;
 - (void)markMessageAsCleanWithROWID:(long long)arg1;
 - (void)clearMessagesTombStoneTable;
@@ -36,10 +40,12 @@
 - (void)postCountChanges;
 - (void)rebuildUnreadMessageCount;
 - (void)rebuildLastFailedMessageDate;
+- (_Bool)_shouldUseBadgeUtilities;
 - (void)databaseChatSpamUpdated:(id)arg1;
 - (void)updateStamp;
 - (void)_postDBUpdate;
 - (void)__postDBUpdate;
+- (void)retractPostedNotificationsForMessageGUIDs:(id)arg1;
 - (void)setSuppressDatabaseUpdates:(_Bool)arg1;
 - (void)_suppressDBUpdateTimerFired;
 - (_Bool)isSuppressDatabaseUpdates;
@@ -59,12 +65,15 @@
 - (void)resolveUnformattedRepresentationsForHandles:(id)arg1 onService:(id)arg2 message:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (id)_cleanUnformattedPhoneNumber:(id)arg1 countryCode:(id)arg2;
 - (struct _IMDHandleRecordStruct *)_copyHandle:(id)arg1 onService:(id)arg2;
+- (id)_chatsForMessageIdentifier:(long long)arg1;
+- (id)chatForMessageIdentifier:(long long)arg1;
 - (id)_chatsForMessageGUID:(id)arg1 enableVerboseLogging:(_Bool)arg2;
 - (id)chatsForMessageGUID:(id)arg1;
 - (id)chatsForMessage:(id)arg1;
 - (id)chatForMessageGUID:(id)arg1 enableVerboseLogging:(_Bool)arg2;
 - (id)chatForMessageGUID:(id)arg1;
 - (id)chatForMessage:(id)arg1;
+- (id)messagesWithReplyToGUID:(id)arg1;
 - (id)frequentRepliesForForChatIdentifiers:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3;
 - (id)messageActionItemsForOriginalMessageGUID:(id)arg1;
 - (id)attachmentsWithRoomNames:(id)arg1 onServices:(id)arg2;
@@ -90,6 +99,7 @@
 - (id)messagesWithGUIDs:(id)arg1;
 - (id)messagesWithAssociatedGUID:(id)arg1 shouldLoadAttachments:(_Bool)arg2;
 - (id)messagesWithAssociatedGUID:(id)arg1;
+- (id)_fileTransferCenter;
 - (void)registerTransfersWithGUIDs:(id)arg1 forMessageGUID:(id)arg2;
 - (id)_unreadMessagesWithRoomNames:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3 fallbackGUID:(id)arg4;
 - (id)_unreadMessagesWithHandles:(id)arg1 onServices:(id)arg2 limit:(unsigned long long)arg3 fallbackGUID:(id)arg4;
@@ -100,13 +110,15 @@
 - (id)_itemsWithAssociatedGUID:(id)arg1 shouldLoadAttachments:(_Bool)arg2;
 - (_Bool)_hasMessagesWithGUIDs:(id)arg1;
 - (void)updateUnformattedID:(id)arg1 forBuddyID:(id)arg2 onService:(id)arg3;
-- (id)storeMessage:(id)arg1 forceReplace:(_Bool)arg2 modifyError:(_Bool)arg3 modifyFlags:(_Bool)arg4 flagMask:(unsigned long long)arg5 updateMessageCache:(_Bool)arg6;
+- (id)storeMessage:(id)arg1 forceReplace:(_Bool)arg2 modifyError:(_Bool)arg3 modifyFlags:(_Bool)arg4 flagMask:(unsigned long long)arg5 updateMessageCache:(_Bool)arg6 calculateUnreadCount:(_Bool)arg7 reindexMessage:(_Bool)arg8;
+- (id)storeMessage:(id)arg1 forceReplace:(_Bool)arg2 modifyError:(_Bool)arg3 modifyFlags:(_Bool)arg4 flagMask:(unsigned long long)arg5 updateMessageCache:(_Bool)arg6 calculateUnreadCount:(_Bool)arg7;
 - (id)storeMessage:(id)arg1 forceReplace:(_Bool)arg2 modifyError:(_Bool)arg3 modifyFlags:(_Bool)arg4 flagMask:(unsigned long long)arg5;
 - (id)storeItem:(id)arg1 forceReplace:(_Bool)arg2;
 - (void)updateFileTransfer:(id)arg1;
 - (void)_storeAttachmentsForMessage:(id)arg1;
 - (void)_performBlock:(CDUnknownBlockType)arg1 afterDelay:(double)arg2;
 - (void)_updateModificationDate;
+- (id)_chatRegistrySharedInstance;
 - (void)dealloc;
 - (void)performInitialHousekeeping;
 - (id)init;

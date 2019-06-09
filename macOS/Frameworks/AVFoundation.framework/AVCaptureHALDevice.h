@@ -6,7 +6,7 @@
 
 #import <AVFoundation/AVCaptureDevice.h>
 
-@class AVCaptureDeviceFormat, AVCaptureDeviceInputSource, NSArray, NSLock, NSString;
+@class AVCaptureDeviceFormat, AVCaptureDeviceInputSource, NSArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface AVCaptureHALDevice : AVCaptureDevice
@@ -21,18 +21,21 @@ __attribute__((visibility("hidden")))
     AVCaptureDeviceFormat *_activeFormat;
     NSArray *_inputSources;
     AVCaptureDeviceInputSource *_activeInputSource;
-    NSLock *_propertiesLock;
+    struct os_unfair_lock_s _propertiesLock;
     struct AudioStreamBasicDescription *_physicalASBDs;
     struct OpaqueCMClock *_deviceClock;
+    int _transportType;
 }
 
 + (id)_deviceFormatWithASBD:(struct AudioStreamBasicDescription *)arg1 deviceChannelCount:(unsigned int)arg2;
 + (id)deviceWithUniqueID:(id)arg1;
 + (id)defaultDeviceWithMediaType:(id)arg1;
-+ (void)_refreshDevicesFromCallback;
++ (id)defaultDeviceWithDeviceType:(id)arg1 mediaType:(id)arg2 position:(long long)arg3;
++ (void)_ensureDeviceList;
 + (void)_refreshDevices;
 + (id)devices;
 + (void)initialize;
+- (int)transportType;
 - (void)_postNotificationNamed:(id)arg1;
 - (void)relinquishDeviceMaster;
 - (BOOL)becomeDeviceMaster:(id *)arg1;
@@ -43,33 +46,32 @@ __attribute__((visibility("hidden")))
 - (BOOL)isConnected;
 - (BOOL)isAlive;
 - (BOOL)isInUseByAnotherApplication;
-- (void)_refreshInputSourcesFromCallback;
-- (void)_refreshInputSources;
-- (void)_refreshFormatsFromCallback;
-- (void)_refreshFormats;
+- (void)_refreshInputSourcesAndKVONotify:(BOOL)arg1;
+- (void)_refreshFormatsAndKVONotify:(BOOL)arg1;
 - (unsigned int)_getDeviceChannelCount;
-- (void)_refreshProperties;
+- (void)_refreshPropertiesAndKVONotify:(BOOL)arg1;
 - (void)setActiveInputSource:(id)arg1;
 - (id)activeInputSource;
 - (id)inputSources;
 - (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
-- (int)transportType;
 - (void)setActiveFormat:(id)arg1;
 - (id)activeFormat;
 - (id)formats;
 - (BOOL)isHidden;
+- (id)deviceType;
 - (id)manufacturer;
 - (id)localizedName;
 - (id)modelID;
 - (void)setConnectionID:(unsigned int)arg1;
+- (void)_refreshConnectionID:(unsigned int)arg1 KVONotify:(BOOL)arg2;
 - (unsigned int)connectionID;
 - (unsigned int)connectionUnitComponentSubType;
 - (unsigned int)deviceID;
 - (long long)deviceSystem;
 - (id)uniqueID;
-- (void)dealloc;
-- (void)finalize;
 - (void)_removePropertyListeners;
+- (void)_addPropertyListeners;
+- (void)dealloc;
 - (id)initWithUniqueID:(id)arg1 connectionID:(unsigned int)arg2 isHidden:(BOOL)arg3;
 - (id)init;
 

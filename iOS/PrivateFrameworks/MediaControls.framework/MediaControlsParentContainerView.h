@@ -6,20 +6,25 @@
 
 #import <UIKit/UIView.h>
 
-@class MediaControlsContainerView, MediaControlsTimeControl, MediaControlsTransportStackView;
+@class MediaControlsContainerView, MediaControlsSeparatorView, MediaControlsTimeControl, MediaControlsTransportStackView;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsParentContainerView : UIView
 {
     long long _style;
     long long _selectedMode;
     MediaControlsContainerView *_containerView;
     UIView *_routingView;
+    MediaControlsSeparatorView *_topDividerView;
+    MediaControlsSeparatorView *_bottomDividerView;
     UIView *_mediaControlsRoutingPickerView;
     long long _routingViewControllerAnimationCount;
 }
 
 @property(nonatomic) long long routingViewControllerAnimationCount; // @synthesize routingViewControllerAnimationCount=_routingViewControllerAnimationCount;
 @property(retain, nonatomic) UIView *mediaControlsRoutingPickerView; // @synthesize mediaControlsRoutingPickerView=_mediaControlsRoutingPickerView;
+@property(retain, nonatomic) MediaControlsSeparatorView *bottomDividerView; // @synthesize bottomDividerView=_bottomDividerView;
+@property(retain, nonatomic) MediaControlsSeparatorView *topDividerView; // @synthesize topDividerView=_topDividerView;
 @property(retain, nonatomic) UIView *routingView; // @synthesize routingView=_routingView;
 @property(retain, nonatomic) MediaControlsContainerView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic) long long selectedMode; // @synthesize selectedMode=_selectedMode;

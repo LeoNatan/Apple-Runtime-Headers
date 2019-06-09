@@ -10,6 +10,16 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct ButtonKey {
+    struct __CFString *_field1;
+    int _field2;
+};
+
+struct CGSize {
+    double _field1;
+    double _field2;
+};
+
 struct FairPlayHWInfo_ {
     unsigned int IDLength;
     unsigned char ID[20];

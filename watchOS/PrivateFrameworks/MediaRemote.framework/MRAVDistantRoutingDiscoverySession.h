@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
     unsigned int _endpointFeatures;
     unsigned int _discoveryMode;
+    _Bool _enableThrottling;
     NSArray *_distantEndpoints;
     NSArray *_distantOutputDevices;
     NSString *_routingContextUID;
@@ -50,7 +51,7 @@
 - (unsigned int)discoveryMode;
 - (unsigned int)endpointFeatures;
 - (void)dealloc;
-- (id)initWithEndpointFeatures:(unsigned int)arg1;
+- (id)initWithEndpointFeatures:(unsigned int)arg1 enableThrottling:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

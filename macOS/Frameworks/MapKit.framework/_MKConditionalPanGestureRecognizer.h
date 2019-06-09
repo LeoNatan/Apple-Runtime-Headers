@@ -6,6 +6,7 @@
 
 #import <AppKit/NSPanGestureRecognizer.h>
 
+__attribute__((visibility("hidden")))
 @interface _MKConditionalPanGestureRecognizer : NSPanGestureRecognizer
 {
     unsigned long long _modifierFlags;

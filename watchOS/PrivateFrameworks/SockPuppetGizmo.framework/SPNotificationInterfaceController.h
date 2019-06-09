@@ -6,12 +6,14 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <SockPuppetGizmo/SPHostingViewControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/SPInterfaceViewControllerDelegate-Protocol.h>
+#import <SockPuppetGizmo/SPViewControllerDelegate-Protocol.h>
 
-@class BBBulletin, NSBundle, NSDictionary, NSString, SPExtensionConnection, SPInterfaceViewController;
+@class BBBulletin, NSBundle, NSDictionary, NSString, SPExtensionConnection, SPViewController;
 @protocol SPRemoteNotificationViewHost;
 
-@interface SPNotificationInterfaceController : UIViewController <SPInterfaceViewControllerDelegate>
+@interface SPNotificationInterfaceController : UIViewController <SPInterfaceViewControllerDelegate, SPViewControllerDelegate, SPHostingViewControllerDelegate>
 {
     _Bool _linkedOnOrAfterGlory;
     _Bool _wantsHeaderBlur;
@@ -20,7 +22,7 @@
     NSString *_hostID;
     NSBundle *_appBundle;
     BBBulletin *_bulletin;
-    SPInterfaceViewController *_interfaceController;
+    SPViewController *_viewController;
     NSDictionary *_longLookCategories;
     NSString *_clientIdentifier;
     SPExtensionConnection *_extensionConnection;
@@ -35,29 +37,35 @@
 @property(readonly, copy, nonatomic) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(nonatomic) _Bool linkedOnOrAfterGlory; // @synthesize linkedOnOrAfterGlory=_linkedOnOrAfterGlory;
 @property(retain, nonatomic) NSDictionary *longLookCategories; // @synthesize longLookCategories=_longLookCategories;
-@property(retain, nonatomic) SPInterfaceViewController *interfaceController; // @synthesize interfaceController=_interfaceController;
+@property(retain, nonatomic) SPViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) BBBulletin *bulletin; // @synthesize bulletin=_bulletin;
 @property(retain, nonatomic) NSBundle *appBundle; // @synthesize appBundle=_appBundle;
 @property(readonly, copy, nonatomic) NSString *hostID; // @synthesize hostID=_hostID;
 @property(nonatomic) __weak id <SPRemoteNotificationViewHost> host; // @synthesize host=_host;
 - (void).cxx_destruct;
-- (void)xpcInterfaceViewController:(id)arg1 setProperties:(id)arg2 forInterfaceObjectNamed:(id)arg3;
-- (void)xpcInterfaceViewController:(id)arg1 crownData:(id)arg2;
+- (id)interfaceControllerForViewController:(id)arg1;
+- (void)viewControllerDidDisappearAfterModalPresentation:(id)arg1;
+- (void)viewControllerDidAppearAfterModalDismissal:(id)arg1;
+- (id)timerSupportViewControllerForHostingViewController:(id)arg1;
+- (id)timerSupportActionItemsForHostingViewController:(id)arg1;
+- (void)viewControllerDidUpdateFullScreen:(id)arg1;
+- (void)viewController:(id)arg1 crownData:(id)arg2;
 - (void)xpcInterfaceViewController:(id)arg1 gestureData:(id)arg2;
 - (void)interfaceViewController:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
-- (void)interfaceViewController:(id)arg1 sendAction:(id)arg2 withValue:(id)arg3;
+- (void)viewController:(id)arg1 sendAction:(id)arg2 withValue:(id)arg3 actionTarget:(id)arg4;
 - (void)interfaceContentSystemMinimumLayoutMargins:(id)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;
 - (void)interfaceContentSafeAreaInsets:(id)arg1 withValue:(struct UIEdgeInsets)arg2;
 - (void)interfaceOffsetDidScrollToBottom:(id)arg1;
 - (void)interfaceOffsetDidScrollToTop:(id)arg1;
 - (void)interfaceDidScrollToTop:(id)arg1;
-- (void)interfaceViewControllerWillDisappear:(id)arg1;
-- (void)interfaceViewControllerDidAppear:(id)arg1;
-- (void)interfaceViewControllerDidDeactivate:(id)arg1;
-- (void)interfaceViewControllerWillActivate:(id)arg1;
-- (void)interfaceViewControllerRelease:(id)arg1;
-- (void)interfaceViewController:(id)arg1 createCompanionControllerClass:(id)arg2 properties:(id)arg3 initializationContextID:(id)arg4;
-- (void)setupToVendInterface:(id)arg1 readyToGo:(_Bool)arg2 customizeHandler:(CDUnknownBlockType)arg3;
+- (void)viewController:(id)arg1 tappedActionWithUUID:(id)arg2;
+- (void)viewControllerWillDisappear:(id)arg1;
+- (void)viewControllerDidAppear:(id)arg1;
+- (void)viewControllerDidDeactivate:(id)arg1;
+- (void)viewControllerWillActivate:(id)arg1;
+- (void)viewControllerDidRelease:(id)arg1;
+- (void)viewController:(id)arg1 createWKInterfaceControllerClass:(id)arg2 properties:(id)arg3 contextID:(id)arg4 creationCompletion:(CDUnknownBlockType)arg5;
+- (void)setupToVendInterface:(id)arg1 isTimerSupport:(_Bool)arg2;
 @property(readonly) NSString *bulletinUniqueID;
 - (id)initWithBundle:(id)arg1 host:(id)arg2 hostID:(id)arg3 linkedOnOrAfterGlory:(_Bool)arg4;
 

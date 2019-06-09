@@ -11,7 +11,6 @@
 
 @interface IMKUICandidateController : NSResponder
 {
-    double _candidateThickness;
     IMKCandidateCanvas *_canvas;
     IMKCandidateData *_currentlyShownCandidates;
     IMKDefinitionToLayoutController *_definitionToLayoutController;
@@ -27,16 +26,8 @@
     NSArray *_sortingMethods;
     IMKCandidateUIProperties *_UIProperties;
     NSString *_UISettingName;
-    BOOL _hasCandidates;
-    BOOL _shouldLimitWindowSizeToCanvasSize;
-    BOOL _canExpand;
-    BOOL _shouldNotShowCandidates;
 }
 
-@property(readonly, nonatomic) BOOL shouldNotShowCandidates; // @synthesize shouldNotShowCandidates=_shouldNotShowCandidates;
-@property(readonly, nonatomic) BOOL canExpand; // @synthesize canExpand=_canExpand;
-@property(readonly, nonatomic) BOOL shouldLimitWindowSizeToCanvasSize; // @synthesize shouldLimitWindowSizeToCanvasSize=_shouldLimitWindowSizeToCanvasSize;
-@property(readonly, nonatomic) BOOL hasCandidates; // @synthesize hasCandidates=_hasCandidates;
 @property(copy, nonatomic) NSString *UISettingName; // @synthesize UISettingName=_UISettingName;
 @property(retain, nonatomic) IMKCandidateUIProperties *UIProperties; // @synthesize UIProperties=_UIProperties;
 @property(retain, nonatomic) NSArray *sortingMethods; // @synthesize sortingMethods=_sortingMethods;
@@ -52,6 +43,9 @@
 @property(retain, nonatomic) IMKDefinitionToLayoutController *definitionToLayoutController; // @synthesize definitionToLayoutController=_definitionToLayoutController;
 @property(retain, nonatomic) IMKCandidateData *currentlyShownCandidates; // @synthesize currentlyShownCandidates=_currentlyShownCandidates;
 @property(retain, nonatomic) IMKCandidateCanvas *canvas; // @synthesize canvas=_canvas;
+@property(readonly, nonatomic) BOOL shouldLimitWindowSizeToCanvasSize;
+@property(readonly, nonatomic) BOOL shouldNotShowCandidates;
+- (void)updateCandidateCanvas;
 @property(readonly, nonatomic) long long windowCategory;
 @property(readonly, nonatomic) BOOL isWindowBacked;
 @property(readonly, nonatomic) double numberOfRows;
@@ -64,7 +58,7 @@
 @property(nonatomic) long long UIType;
 @property(nonatomic) long long layoutOrientation;
 @property(nonatomic) long long layoutDirection;
-@property(nonatomic) double candidateThickness; // @synthesize candidateThickness=_candidateThickness;
+@property(nonatomic) double candidateThickness;
 - (void)selectCurrentlyFocusedItem;
 @property(readonly, nonatomic) IMKCandidateDefinitionUnit *currentlySelectedCandidate;
 @property(nonatomic) unsigned long long currentlySelectedIndex;

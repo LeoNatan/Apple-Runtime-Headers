@@ -5,11 +5,11 @@
 //
 
 #import <MapKit/NSObject-Protocol.h>
-#import <MapKit/_MKNanoPlaceCardSectionDataDelegate-Protocol.h>
+#import <MapKit/_MKNanoPlaceCardSectionProvidingDelegate-Protocol.h>
 
 @class NSString, _MKNanoPlaceCardBusinessDataSource;
 
-@protocol _MKNanoPlaceCardBusinessDataDelegate <_MKNanoPlaceCardSectionDataDelegate, NSObject>
+@protocol _MKNanoPlaceCardBusinessDataDelegate <_MKNanoPlaceCardSectionProvidingDelegate, NSObject>
 - (void)placeCardSection:(_MKNanoPlaceCardBusinessDataSource *)arg1 selectedPhoneNumber:(NSString *)arg2;
 @end
 

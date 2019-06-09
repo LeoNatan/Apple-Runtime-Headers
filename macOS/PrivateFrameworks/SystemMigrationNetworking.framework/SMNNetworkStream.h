@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSFileHandle, NSString;
+@class NSFileHandle, NSSet, NSString, SMNNetworkStreamMuxer;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface SMNNetworkStream : NSObject
@@ -17,6 +17,9 @@
     BOOL _downstreamWriteClosed;
     BOOL _sendData;
     unsigned int _streamID;
+    SMNNetworkStreamMuxer *_owningMuxer;
+    SMNNetworkStream *_pairedStream;
+    NSSet *_supportedActionCommands;
     NSObject<OS_dispatch_queue> *_stateQueue;
     NSString *_name;
     NSString *_streamDescription;
@@ -24,11 +27,11 @@
     unsigned long long _rawBytesWritten;
     unsigned long long _rawBytesRead;
     unsigned long long _muxerOverheadBytes;
+    unsigned long long _protocolVersion;
     NSFileHandle *_upstreamRead;
     NSFileHandle *_upstreamWrite;
     NSFileHandle *_downstreamRead;
     NSFileHandle *_downstreamWrite;
-    CDUnknownBlockType _streamClosedLocallyBlock;
     long long _downstreamInputPipe;
     long long _downstreamOutputPipe;
     long long _upstreamInputPipe;
@@ -41,7 +44,6 @@
 @property long long upstreamInputPipe; // @synthesize upstreamInputPipe=_upstreamInputPipe;
 @property long long downstreamOutputPipe; // @synthesize downstreamOutputPipe=_downstreamOutputPipe;
 @property long long downstreamInputPipe; // @synthesize downstreamInputPipe=_downstreamInputPipe;
-@property(copy, nonatomic) CDUnknownBlockType streamClosedLocallyBlock; // @synthesize streamClosedLocallyBlock=_streamClosedLocallyBlock;
 @property BOOL sendData; // @synthesize sendData=_sendData;
 @property BOOL downstreamWriteClosed; // @synthesize downstreamWriteClosed=_downstreamWriteClosed;
 @property BOOL downstreamReadClosed; // @synthesize downstreamReadClosed=_downstreamReadClosed;
@@ -51,6 +53,7 @@
 @property(retain) NSFileHandle *downstreamRead; // @synthesize downstreamRead=_downstreamRead;
 @property(retain) NSFileHandle *upstreamWrite; // @synthesize upstreamWrite=_upstreamWrite;
 @property(retain) NSFileHandle *upstreamRead; // @synthesize upstreamRead=_upstreamRead;
+@property unsigned long long protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property unsigned int streamID; // @synthesize streamID=_streamID;
 @property unsigned long long muxerOverheadBytes; // @synthesize muxerOverheadBytes=_muxerOverheadBytes;
 @property unsigned long long rawBytesRead; // @synthesize rawBytesRead=_rawBytesRead;
@@ -59,6 +62,9 @@
 @property(retain) NSString *streamDescription; // @synthesize streamDescription=_streamDescription;
 @property(retain) NSString *name; // @synthesize name=_name;
 @property(retain) NSObject<OS_dispatch_queue> *stateQueue; // @synthesize stateQueue=_stateQueue;
+@property(retain) NSSet *supportedActionCommands; // @synthesize supportedActionCommands=_supportedActionCommands;
+@property __weak SMNNetworkStream *pairedStream; // @synthesize pairedStream=_pairedStream;
+@property __weak SMNNetworkStreamMuxer *owningMuxer; // @synthesize owningMuxer=_owningMuxer;
 - (void).cxx_destruct;
 - (int)fileDescriptorForWriting;
 - (int)fileDescriptorForReading;
@@ -66,7 +72,11 @@
 - (void)setWriteHandleClosed:(BOOL)arg1;
 - (void)setWriteHandleClosed;
 - (void)closeWriteHandle;
+- (void)setReadHandleClosed:(BOOL)arg1;
 - (void)setReadHandleClosed;
+- (void)closeReadHandle;
+- (BOOL)readDictionary:(id *)arg1 error:(id *)arg2;
+- (BOOL)writeDictionary:(id)arg1 error:(id *)arg2;
 - (BOOL)writeData:(id)arg1;
 - (id)readDataOfLength:(unsigned long long)arg1;
 - (id)init;
@@ -74,12 +84,13 @@
 - (void)_addRawBytesRead:(unsigned long long)arg1;
 - (void)_addRawBytesWritten:(unsigned long long)arg1;
 - (void)closeUpwardWrite;
+- (void)closeUpwardRead:(BOOL)arg1;
 - (void)closeDownwardWrite:(BOOL)arg1;
 - (void)closeDownwardWrite;
 - (void)dealloc;
-- (id)initWithStreamID:(unsigned int)arg1 name:(id)arg2 directlyOnSocket:(id)arg3;
-- (id)initWithStreamID:(unsigned int)arg1 name:(id)arg2;
-- (id)_init;
+- (id)initWithStreamID:(unsigned int)arg1 name:(id)arg2 protocolVersion:(unsigned long long)arg3 directlyOnSocket:(id)arg4;
+- (id)initWithStreamID:(unsigned int)arg1 name:(id)arg2 protocolVersion:(unsigned long long)arg3;
+- (id)_initWithVersion:(unsigned long long)arg1;
 
 @end
 

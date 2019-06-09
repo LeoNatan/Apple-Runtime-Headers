@@ -21,7 +21,7 @@
 - (void)superscriptRange:(struct _NSRange)arg1;
 - (void)_changeIntAttribute:(id)arg1 by:(long long)arg2 range:(struct _NSRange)arg3;
 - (void)setBaseWritingDirection:(long long)arg1 range:(struct _NSRange)arg2;
-- (void)setAlignment:(unsigned long long)arg1 range:(struct _NSRange)arg2;
+- (void)setAlignment:(long long)arg1 range:(struct _NSRange)arg2;
 - (void)applyFontTraits:(unsigned long long)arg1 range:(struct _NSRange)arg2;
 - (void)fixGlyphInfoAttributeInRange:(struct _NSRange)arg1;
 - (void)_fixGlyphInfo:(id)arg1 inRange:(struct _NSRange)arg2;
@@ -32,5 +32,6 @@
 - (void)fixAttributesInRange:(struct _NSRange)arg1;
 - (void)_setAttributeFixingInProgress:(BOOL)arg1;
 - (BOOL)_attributeFixingInProgress;
+- (void)updateAttachmentsFromPath:(id)arg1;
 @end
 

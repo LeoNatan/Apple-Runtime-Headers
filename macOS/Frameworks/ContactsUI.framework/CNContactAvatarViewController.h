@@ -23,7 +23,6 @@
 @property(retain, nonatomic) CNAvatarViewController *avatarViewController; // @synthesize avatarViewController=_avatarViewController;
 - (void).cxx_destruct;
 - (BOOL)shouldBeIncludedInKeyViewLoop;
-- (void)invalidateLikenessCache;
 - (void)setLikeness:(id)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (double)customSpacingAfterWidget;

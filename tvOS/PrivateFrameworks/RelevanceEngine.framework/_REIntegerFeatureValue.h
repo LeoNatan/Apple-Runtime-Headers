@@ -14,6 +14,7 @@
 + (id)featureValueWithInt64:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned long long)_integralFeatureValue;
 - (unsigned long long)hash;
 - (unsigned long long)type;
 - (unsigned long long)int64Value;

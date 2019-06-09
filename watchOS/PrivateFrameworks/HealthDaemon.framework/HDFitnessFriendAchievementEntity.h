@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isConcreteEntity;
 + (_Bool)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
 + (id)samplesForFriend:(id)arg1 anchor:(id *)arg2 profile:(id)arg3 error:(id *)arg4;

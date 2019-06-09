@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (WLKAdditions)
+- (id)wlk_stringByAppendingPathComponents:(id)arg1;
 - (unsigned long long)wlk_unsignedLongLongValue;
 @end
 

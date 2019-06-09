@@ -18,13 +18,16 @@
     NSSet *_excludedFrames;
     NSMutableDictionary *_binaryImagePathToIdentifierMap;
     BOOL _usesLiteMode;
+    BOOL _coldestFrameIsNotThreadId;
 }
 
 @property(retain, nonatomic) NSSet *excludedFrames; // @synthesize excludedFrames=_excludedFrames;
 @property(readonly) VMUVMRegionTracker *regionTracker; // @synthesize regionTracker=_regionTracker;
+@property(readonly) BOOL coldestFrameIsNotThreadId; // @synthesize coldestFrameIsNotThreadId=_coldestFrameIsNotThreadId;
 @property(readonly) BOOL usesLiteMode; // @synthesize usesLiteMode=_usesLiteMode;
 @property(readonly) unsigned int task; // @synthesize task=_task;
 - (void).cxx_destruct;
+- (int)enumerateRecords:(CDUnknownBlockType)arg1;
 - (id)sourceFileNameAndLineNumberForPCaddress:(unsigned long long)arg1 fullPath:(BOOL)arg2;
 - (id)vmuVMRegionForAddress:(unsigned long long)arg1;
 - (unsigned int)sourceLineNumberForPCaddress:(unsigned long long)arg1;
@@ -37,7 +40,7 @@
 - (long long)getFramesForStackID:(unsigned long long)arg1 stackFramesBuffer:(unsigned long long *)arg2;
 - (long long)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(BOOL)arg3 stackFramesBuffer:(unsigned long long *)arg4;
 - (long long)getFramesForNode:(unsigned int)arg1 inLiteZone:(BOOL)arg2 stackFramesBuffer:(unsigned long long *)arg3;
-- (int)enumerateRecords:(CDUnknownBlockType)arg1;
+- (int)enumerateMSLRecordsAndPayloads:(CDUnknownBlockType)arg1;
 @property(readonly) BOOL inspectingLiveProcess;
 @property(readonly) BOOL is64bit;
 - (id)symbolicatedBacktraceForFrames:(unsigned long long *)arg1 frameCount:(long long)arg2 options:(unsigned long long)arg3;
@@ -49,6 +52,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long nodesInUniquingTable;
 @property(readonly) Class superclass;
 
 @end

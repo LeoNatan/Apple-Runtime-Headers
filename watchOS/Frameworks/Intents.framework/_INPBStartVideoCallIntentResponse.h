@@ -21,6 +21,7 @@
     NSArray *_targetContacts;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSArray *targetContacts; // @synthesize targetContacts=_targetContacts;
 @property(copy, nonatomic) NSString *status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBCallMetrics *metrics; // @synthesize metrics=_metrics;
@@ -30,6 +31,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)targetContactsAtIndex:(unsigned int)arg1;

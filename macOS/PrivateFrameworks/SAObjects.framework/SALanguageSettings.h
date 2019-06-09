@@ -14,6 +14,7 @@
 
 + (id)languageSettingsWithDictionary:(id)arg1 context:(id)arg2;
 + (id)languageSettings;
+- (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
 @property(copy, nonatomic) NSDictionary *configuredLocales;
 - (id)encodedClassName;

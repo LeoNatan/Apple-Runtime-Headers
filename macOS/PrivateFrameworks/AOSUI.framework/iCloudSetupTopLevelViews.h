@@ -6,45 +6,35 @@
 
 #import <objc/NSObject.h>
 
-@class NSButton, NSTextField, NSView;
+@class NSButton, NSImageView, NSTextField, NSView;
 
 @interface iCloudSetupTopLevelViews : NSObject
 {
     BOOL _servicesEnable;
     BOOL _FMMEnable;
-    NSView *_setupWithFMM;
-    NSView *_setupWithOutFMM;
-    NSButton *_serivesEnableButton;
-    NSButton *_serivesEnableButtonInWithOutFMM;
+    NSView *_setupView;
+    NSButton *_servicesEnableButton;
     NSButton *_FMMEnableButton;
+    NSImageView *_FMMIcon;
     NSTextField *_setupWithFMMAppsTitle;
     NSTextField *_setupWithFMMAppsDescription;
     NSTextField *_setupWithFMMFMMTitle;
     NSTextField *_setupWithFMMFMMDescription;
-    NSTextField *_setupWithOutFMMAppsTitle;
-    NSTextField *_setupWithOutFMMAppsDescription;
-    NSTextField *_FMMNotAvailibleRecoveryUpdateTitle;
-    NSTextField *_FMMNotAvailibleRecoveryUpdateText;
-    NSTextField *_FMMNotAvailibleNoRecoveryTitle;
 }
 
 + (id)sharedTopLevelViews;
-@property(retain) NSTextField *FMMNotAvailibleNoRecoveryTitle; // @synthesize FMMNotAvailibleNoRecoveryTitle=_FMMNotAvailibleNoRecoveryTitle;
-@property(retain) NSTextField *FMMNotAvailibleRecoveryUpdateText; // @synthesize FMMNotAvailibleRecoveryUpdateText=_FMMNotAvailibleRecoveryUpdateText;
-@property(retain) NSTextField *FMMNotAvailibleRecoveryUpdateTitle; // @synthesize FMMNotAvailibleRecoveryUpdateTitle=_FMMNotAvailibleRecoveryUpdateTitle;
-@property(retain) NSTextField *setupWithOutFMMAppsDescription; // @synthesize setupWithOutFMMAppsDescription=_setupWithOutFMMAppsDescription;
-@property(retain) NSTextField *setupWithOutFMMAppsTitle; // @synthesize setupWithOutFMMAppsTitle=_setupWithOutFMMAppsTitle;
-@property(retain) NSTextField *setupWithFMMFMMDescription; // @synthesize setupWithFMMFMMDescription=_setupWithFMMFMMDescription;
-@property(retain) NSTextField *setupWithFMMFMMTitle; // @synthesize setupWithFMMFMMTitle=_setupWithFMMFMMTitle;
-@property(retain) NSTextField *setupWithFMMAppsDescription; // @synthesize setupWithFMMAppsDescription=_setupWithFMMAppsDescription;
-@property(retain) NSTextField *setupWithFMMAppsTitle; // @synthesize setupWithFMMAppsTitle=_setupWithFMMAppsTitle;
-@property(retain) NSButton *FMMEnableButton; // @synthesize FMMEnableButton=_FMMEnableButton;
-@property(retain) NSButton *serivesEnableButtonInWithOutFMM; // @synthesize serivesEnableButtonInWithOutFMM=_serivesEnableButtonInWithOutFMM;
-@property(retain) NSButton *serivesEnableButton; // @synthesize serivesEnableButton=_serivesEnableButton;
-@property(retain) NSView *setupWithOutFMM; // @synthesize setupWithOutFMM=_setupWithOutFMM;
-@property(retain) NSView *setupWithFMM; // @synthesize setupWithFMM=_setupWithFMM;
+@property __weak NSTextField *setupWithFMMFMMDescription; // @synthesize setupWithFMMFMMDescription=_setupWithFMMFMMDescription;
+@property __weak NSTextField *setupWithFMMFMMTitle; // @synthesize setupWithFMMFMMTitle=_setupWithFMMFMMTitle;
+@property __weak NSTextField *setupWithFMMAppsDescription; // @synthesize setupWithFMMAppsDescription=_setupWithFMMAppsDescription;
+@property __weak NSTextField *setupWithFMMAppsTitle; // @synthesize setupWithFMMAppsTitle=_setupWithFMMAppsTitle;
+@property __weak NSImageView *FMMIcon; // @synthesize FMMIcon=_FMMIcon;
+@property __weak NSButton *FMMEnableButton; // @synthesize FMMEnableButton=_FMMEnableButton;
+@property __weak NSButton *servicesEnableButton; // @synthesize servicesEnableButton=_servicesEnableButton;
+@property(retain) NSView *setupView; // @synthesize setupView=_setupView;
 @property BOOL FMMEnable; // @synthesize FMMEnable=_FMMEnable;
 @property BOOL servicesEnable; // @synthesize servicesEnable=_servicesEnable;
+- (void).cxx_destruct;
+- (void)setFMMAvailable:(BOOL)arg1;
 - (void)reEnable;
 - (id)init;
 

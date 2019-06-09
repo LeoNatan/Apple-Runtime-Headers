@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSMutableDictionary, NSNetService, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ICDTCPIPDevice : ICDDevice <NSNetServiceDelegate>
 {
     NSMutableDictionary *_params;

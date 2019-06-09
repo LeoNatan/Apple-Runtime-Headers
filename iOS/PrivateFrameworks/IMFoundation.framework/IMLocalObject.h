@@ -43,6 +43,7 @@
 @property(readonly, nonatomic) NSObject<OS_xpc_object> *connection;
 - (void)_systemShutdown:(id)arg1;
 - (void)terminated;
+@property(readonly, nonatomic) _Bool wasInterrupted;
 - (void)_portDidBecomeInvalid;
 - (void)_portInterrupted;
 - (void)_cancelHandlerCompleted;

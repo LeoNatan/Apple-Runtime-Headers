@@ -4,16 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Spotlight/PRSParsecSimpleResult.h>
+#import <SpotlightServices/SFSearchResult_SpotlightExtras.h>
 
-@interface SPURLResult : PRSParsecSimpleResult
+@interface SPURLResult : SFSearchResult_SpotlightExtras
 {
 }
 
+- (id)previewItemURL;
 - (BOOL)shouldNotBeTopHit;
-- (BOOL)isTopHitCandidate;
-- (unsigned long long)rank;
-- (unsigned long long)score;
+- (int)isTopHit;
+-     // Error parsing type: T16@0:8, name: rank
+-     // Error parsing type: T16@0:8, name: score
 - (BOOL)isLocalResult;
 - (id)groupName;
 - (id)category;

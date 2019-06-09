@@ -29,10 +29,11 @@ __attribute__((visibility("hidden")))
 - (id)policyForContainerWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)serverSearchContainersMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)containersMatchingPredicate:(id)arg1 error:(id *)arg2;
-- (_Bool)executeSaveRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
+- (_Bool)executeSaveRequest:(id)arg1 response:(id *)arg2 authorizationContext:(id)arg3 error:(id *)arg4;
 - (_Bool)executeSaveRequest:(id)arg1 error:(id *)arg2;
 - (id)meContactIdentifiers:(id *)arg1;
 - (id)contactObservableForFetchRequest:(id)arg1;
+- (id)authorizedKeysForContactKeys:(id)arg1 error:(id *)arg2;
 - (_Bool)requestAccessForEntityType:(long long)arg1 error:(id *)arg2;
 - (void)requestAccessForEntityType:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithDonationStore:(id)arg1 environment:(id)arg2;
@@ -42,6 +43,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(retain, nonatomic) NSString *legacyTetheredSyncComputerAnchor;
+@property(retain, nonatomic) NSString *legacyTetheredSyncDeviceAnchor;
 @property(readonly) Class superclass;
 
 @end

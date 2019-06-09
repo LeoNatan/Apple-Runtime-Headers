@@ -13,11 +13,13 @@ __attribute__((visibility("hidden")))
     _Bool _splitWidthsChanged;
     _Bool _selfSizingChanged;
     _Bool _updateAssistantView;
+    _Bool _isSecureTextEntry;
     struct CGSize _size;
 }
 
 + (id)keyplaneChangeContextWithSize:(struct CGSize)arg1;
 + (id)keyplaneChangeContext;
+@property(nonatomic) _Bool isSecureTextEntry; // @synthesize isSecureTextEntry=_isSecureTextEntry;
 @property(nonatomic) _Bool updateAssistantView; // @synthesize updateAssistantView=_updateAssistantView;
 @property(nonatomic) _Bool selfSizingChanged; // @synthesize selfSizingChanged=_selfSizingChanged;
 @property(nonatomic) _Bool splitWidthsChanged; // @synthesize splitWidthsChanged=_splitWidthsChanged;

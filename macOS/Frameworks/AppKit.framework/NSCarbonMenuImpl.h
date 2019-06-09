@@ -51,6 +51,7 @@
 + (void)setupForNoMenuBar;
 + (void)prepareForCarbonMenuBar;
 - (struct CGRect)_boundsIfOpen;
+- (BOOL)_popUpMenuRelativeToRect:(struct CGRect)arg1 inView:(id)arg2 preferredEdge:(unsigned long long)arg3;
 - (unsigned long long)_privateFlagsForMenuDirectionInView:(id)arg1;
 - (BOOL)_popUpMenuPositioningItem:(id)arg1 atCocoaIndex:(unsigned long long)arg2 atLocation:(struct CGPoint)arg3 inView:(id)arg4 withPrivateFlags:(unsigned long long)arg5 appearance:(id)arg6;
 - (void)_image:(id *)arg1 frame:(struct CGRect *)arg2 forPopUpMenuPositioningItem:(id)arg3 atCocoaIndex:(unsigned long long)arg4 atLocation:(struct CGPoint)arg5 inView:(id)arg6 appearance:(id)arg7;
@@ -95,6 +96,8 @@
 - (struct OpaqueMenuRef *)_initialMenuRef;
 - (struct OpaqueMenuRef *)_principalMenuRefCreateIfNecessary;
 - (struct OpaqueMenuRef *)_principalMenuRef;
+- (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeSubmenuParentItemUnchoosableFrom:(BOOL)arg3 to:(BOOL)arg4;
+- (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeShowsBlockedByScreenTimeFrom:(BOOL)arg3 to:(BOOL)arg4;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeRequiresModifiersToBeVisibleFrom:(BOOL)arg3 to:(BOOL)arg4;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeImageSizeFrom:(struct CGSize)arg3 to:(struct CGSize)arg4;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeRespectsKeyEquivalentWhileHiddenFrom:(BOOL)arg3 to:(BOOL)arg4;
@@ -112,7 +115,9 @@
 - (void)_menuDidChangeAccessibilityOverriddenAttribute:(id)arg1 from:(id)arg2 to:(id)arg3;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeAccessibilityOverriddenAttribute:(id)arg3 from:(id)arg4 to:(id)arg5;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeHiddenFrom:(BOOL)arg3 to:(BOOL)arg4;
-- (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeCustomViewHandlesEventsFrom:(BOOL)arg3 to:(BOOL)arg4;
+- (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeCustomViewIsDrawingOnlyFrom:(BOOL)arg3 to:(BOOL)arg4 viewDidWantHIView:(BOOL)arg5;
+- (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeCustomViewHandlesEventsFrom:(BOOL)arg3 to:(BOOL)arg4 viewDidWantHIView:(BOOL)arg5;
+- (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeWantsHIViewTo:(BOOL)arg3;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeCustomViewFrom:(id)arg3 to:(id)arg4;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeTooltipFrom:(id)arg3 to:(id)arg4;
 - (void)_menuItem:(id)arg1 atIndex:(unsigned long long)arg2 didChangeIndentFrom:(long long)arg3 to:(long long)arg4;

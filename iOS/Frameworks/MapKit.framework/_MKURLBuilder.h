@@ -13,6 +13,7 @@
     GEOMapURLBuilder *_realBuilder;
 }
 
++ (id)URLForCollectionStorage:(id)arg1;
 + (id)URLForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 useWebPlaceCard:(_Bool)arg6 mapItemData:(id)arg7;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(struct CLLocationCoordinate2D)arg4 address:(id)arg5 useWebPlaceCard:(_Bool)arg6;
@@ -37,6 +38,7 @@
 + (id)URLForSearch:(id)arg1 at:(struct CLLocationCoordinate2D)arg2 span:(CDStruct_c3b9c2ee)arg3;
 + (id)URLForSearch:(id)arg1 near:(struct CLLocationCoordinate2D)arg2;
 + (id)URLForSearch:(id)arg1;
++ (id)URLForMuninViewState:(id)arg1;
 - (void).cxx_destruct;
 - (void)setContentProvider:(id)arg1;
 - (void)setMapType:(unsigned long long)arg1;

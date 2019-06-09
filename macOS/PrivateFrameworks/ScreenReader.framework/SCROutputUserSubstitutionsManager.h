@@ -21,17 +21,16 @@ __attribute__((visibility("hidden")))
 
 + (id)findAndReplaceSingleDoubleQuoteSymbolsInString:(id)arg1;
 + (id)defaultManager;
+- (void).cxx_destruct;
 - (void)loadUserSubstitutionsFromPrefs;
 - (void)_handleUserDefaultsTransactionNotification:(id)arg1;
 - (id)createUserSubstitutionsWithStorageArray:(id)arg1;
 - (BOOL)_replaceTextInString:(id)arg1 withSubstitution:(id)arg2 withPunctuationTable:(id)arg3;
-- (BOOL)makeSubstitutionInString:(id)arg1 componentName:(id)arg2 component:(id)arg3 domainIdentifier:(id)arg4 usePunctuationSettings:(BOOL)arg5 ignoreSinglePunctuation:(BOOL)arg6;
-- (BOOL)makeSubstitutionsInAction:(id)arg1 componentName:(id)arg2 component:(id)arg3 usePunctuationSettings:(BOOL)arg4;
+- (BOOL)makeSubstitutionInString:(id)arg1 componentName:(id)arg2 component:(id)arg3 domainIdentifier:(id)arg4 usePunctuationSettings:(BOOL)arg5 ignoreSinglePunctuation:(BOOL)arg6 ignorePunctuationOnlyStrings:(BOOL)arg7;
 - (BOOL)makeRegexSubstitutionsInAction:(id)arg1 componentName:(id)arg2 component:(id)arg3;
-- (void)_compileRegularExpressions:(int)arg1;
+- (void)_compileRegularExpressions:(long long)arg1;
 - (struct URegularExpression *)_createRegexFromString:(id)arg1;
 - (id)substituteComposedCharacter:(id)arg1 inAction:(id)arg2 component:(id)arg3;
-- (void)dealloc;
 - (id)init;
 
 @end

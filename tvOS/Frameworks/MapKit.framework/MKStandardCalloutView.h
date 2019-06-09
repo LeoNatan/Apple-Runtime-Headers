@@ -6,8 +6,9 @@
 
 #import <MapKit/MKCalloutView.h>
 
-@class MKSmallCalloutView, UIMotionEffectGroup, _MKCalloutContentView, _MKCalloutLayer;
+@class MKSmallCalloutView, UIMotionEffectGroup, UIVisualEffectView, _MKCalloutContentView, _MKCalloutLayer;
 
+__attribute__((visibility("hidden")))
 @interface MKStandardCalloutView : MKCalloutView
 {
     struct {
@@ -30,11 +31,14 @@
     _MKCalloutContentView *_contentView;
     MKSmallCalloutView *_calloutView;
     _MKCalloutLayer *_maskLayer;
+    UIVisualEffectView *_backdropView;
     UIMotionEffectGroup *_motionEffect;
 }
 
 + (double)defaultHeight;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)_adaptToUserInterfaceStyle;
 - (void)_updateTransformForMotionEffectDirection:(struct CGPoint)arg1;
 - (_Bool)_applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2;
 - (void)_removeMotionEffect;

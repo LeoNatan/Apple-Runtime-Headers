@@ -8,5 +8,9 @@
 
 @interface NSSet (PLAdditions)
 - (unsigned int)pl_countOfObjectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)_pl_prettyDescriptionWithIndent:(int)arg1;
+- (id)_pl_map:(CDUnknownBlockType)arg1;
+- (id)_pl_filter:(CDUnknownBlockType)arg1;
+- (id)_pl_firstObjectPassingTest:(CDUnknownBlockType)arg1;
 @end
 

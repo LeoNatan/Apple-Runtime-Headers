@@ -6,9 +6,12 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
+@class UIViewController;
+
 @protocol CKPluginEntryViewControllerDelegate <NSObject>
 
 @optional
+- (void)presentViewController:(UIViewController *)arg1 animated:(_Bool)arg2 completion:(void (^)(void))arg3;
 - (void)entryViewDidChangeSize;
 @end
 

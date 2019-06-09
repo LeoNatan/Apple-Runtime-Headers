@@ -17,6 +17,9 @@
     NSMutableDictionary *_secondaryCharactersMapping;
 }
 
++ (unsigned long long)modifiersWith:(unsigned long long)arg1 removedFrom:(unsigned long long)arg2;
++ (BOOL)modifiers:(unsigned long long)arg1 containsAny:(unsigned long long)arg2;
++ (BOOL)modifiers:(unsigned long long)arg1 containsAll:(unsigned long long)arg2;
 + (id)keyWithKeyCode:(unsigned short)arg1 primaryCharactersMapping:(id)arg2;
 + (id)keyWithKeyCode:(unsigned short)arg1 primaryCharacters:(id)arg2 at:(unsigned long long)arg3;
 + (id)keyWithKeyCode:(unsigned short)arg1;
@@ -31,6 +34,7 @@
 - (unsigned long long)primaryComposedCharactersCountAt:(unsigned long long)arg1;
 - (id)primaryCharactersAt:(unsigned long long)arg1;
 - (id)keyWithForwardRotatedPrimaryAlphaComposedCharacters;
+- (BOOL)isShortcutWhenModifiedWith:(unsigned long long)arg1;
 - (void)_forwardRotatePrimaryComposedCharactersAtModifiers:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL isTab;
 @property(readonly, nonatomic) BOOL isSpace;
@@ -43,8 +47,7 @@
 @property(readonly, nonatomic) BOOL isNumericKey;
 @property(readonly, nonatomic) BOOL isAlphabeticKey;
 - (BOOL)containsPrimaryCharacterIn:(id)arg1 at:(unsigned long long)arg2;
-@property(readonly, nonatomic) unsigned long long number;
-@property(readonly, nonatomic) unsigned int character;
+- (unsigned long long)numberAt:(unsigned long long)arg1;
 - (unsigned int)characterAt:(unsigned long long)arg1;
 - (id)charactersAt:(unsigned long long)arg1;
 - (id)characters:(long long)arg1 at:(unsigned long long)arg2;

@@ -12,16 +12,17 @@
 {
 }
 
-+ (id)entityInManagedObjectContext:(id)arg1;
-+ (id)entityName;
-+ (id)insertInManagedObjectContext:(id)arg1;
 + (id)copyUnmanagedAdjustmentFromSourceAsset:(id)arg1 forPlaceholderAsset:(id)arg2 inLibrary:(id)arg3 error:(id *)arg4;
 + (id)_convertRedEyeCorrection:(id)arg1 withOrientation:(int)arg2;
 + (id)_convertRedEyeCorrections:(id)arg1 withOrientation:(int)arg2;
 + (id)addUnmanagedAdjustmentFromXMPDataIfNeededForAsset:(id)arg1;
++ (id)entityName;
 - (void)willSave;
+- (void)awakeFromInsert;
 - (_Bool)isSyncableChange;
 - (_Bool)supportsCloudUpload;
+- (id)payloadForChangedKeys:(id)arg1;
+- (id)payloadID;
 
 // Remaining properties
 @property(retain, nonatomic) NSNumber *adjustmentBaseImageFormat; // @dynamic adjustmentBaseImageFormat;

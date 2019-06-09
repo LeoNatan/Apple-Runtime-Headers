@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 + (void)readFont:(struct _xmlNode *)arg1 characterProperties:(id)arg2;
 + (void)readFormatting:(struct _xmlNode *)arg1 characterProperties:(id)arg2 drawingState:(id)arg3;
 + (unsigned char)readUnderlineType:(id)arg1;
++ (id)oaxUnderlineMap;
 
 @end
 

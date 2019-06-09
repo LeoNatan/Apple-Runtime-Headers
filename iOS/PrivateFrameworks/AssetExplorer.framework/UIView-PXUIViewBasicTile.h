@@ -16,6 +16,8 @@
 - (void)becomeReusable;
 - (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;
 @property(readonly, nonatomic) UIView *view;
+- (void)setAssociatedAssetUUID:(id)arg1;
+- (id)associatedAssetUUID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

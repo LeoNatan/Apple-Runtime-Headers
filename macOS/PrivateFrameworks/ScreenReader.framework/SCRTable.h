@@ -6,26 +6,25 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class NSArray, NSMutableString, SCRBrailleLineManager, SCRTableHeaderManager, SCRUIElement;
+@class NSArray, NSMutableString, SCRTableHeaderManager, SCRUIElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRTable : SCRElement
 {
     struct {
-        unsigned int supportsAXVisibleRowsAttribute:1;
-        unsigned int supportsAXVisibleColumnsAttribute:1;
-        unsigned int supportsAXRowHeaderAttribute:1;
-        unsigned int registeredRowCountChangedNotification:1;
-        unsigned int registeredSelectedRowChangeNotification:1;
-        unsigned int registeredSelectedCellsChangedNotification:1;
-        unsigned int registeredRowExpandedNotification:1;
-        unsigned int registeredDisclosureLevelChangedNotification:1;
-        unsigned int supportsCellBasedAttributes:1;
         unsigned int isInHeader:1;
+        unsigned int registeredDisclosureLevelChangedNotification:1;
+        unsigned int registeredRowCountChangedNotification:1;
+        unsigned int registeredRowExpandedNotification:1;
+        unsigned int registeredSelectedCellsChangedNotification:1;
+        unsigned int registeredSelectedRowChangeNotification:1;
+        unsigned int supportsAXRowHeaderAttribute:1;
+        unsigned int supportsAXVisibleColumnsAttribute:1;
+        unsigned int supportsAXVisibleRowsAttribute:1;
+        unsigned int supportsCellBasedAttributes:1;
     } _srtFlags;
     struct SCRDataCell _focusedCell;
     struct SCRDataCell _lastFocusedCell;
-    SCRBrailleLineManager *_brailleLineManager;
     SCRElement *_readContentsElement;
     SCRUIElement *_readContentsRowUIElement;
     unsigned long long _readContentsRowIndex;
@@ -44,8 +43,11 @@ __attribute__((visibility("hidden")))
         unsigned long long rowSelectionDidChange;
     } _countSinceStart;
     SCRTableHeaderManager *_headerManager;
+    BOOL _isXcodeCodeCompletionTable;
 }
 
+@property(readonly, nonatomic) BOOL isXcodeCodeCompletionTable; // @synthesize isXcodeCodeCompletionTable=_isXcodeCodeCompletionTable;
+- (void).cxx_destruct;
 - (BOOL)trackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (void)prepareGestureTrackingChildren;
 - (id)gestureContainerOverviewDescription;
@@ -72,10 +74,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)mouseInsertAfterChildElement:(id)arg1;
 - (struct CGPoint)mouseInsertBeforeChildElement:(id)arg1;
 - (BOOL)allowBuildChildren;
-- (id)brailleLineElementForUIElement:(id)arg1;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (id)brailleLineManager;
+- (void)setBrailleLineWithFocusedElement:(id)arg1 forceRebuild:(BOOL)arg2;
 - (double)cellDescriptionDelayTime;
 - (void)_echoChangesFromCellUIElements:(id)arg1 toCellUIElements:(id)arg2 request:(id)arg3 descriptor:(CDUnknownBlockType)arg4 additionalRequirementForMultipleCellsUpdate:(BOOL)arg5 singleCellOutputHandler:(CDUnknownBlockType)arg6;
 - (void)echoChangesFromCellUIElements:(id)arg1 toCellUIElements:(id)arg2 descriptor:(CDUnknownBlockType)arg3;
@@ -97,10 +96,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)addKeyboardSelectionSummaryToRequest:(id)arg1;
 - (BOOL)_addSelectionDescriptionToRequest:(id)arg1 includesSelectedCount:(BOOL)arg2;
 - (BOOL)addSelectionDescriptionToRequest:(id)arg1;
-- (BOOL)addContainerSummaryToRequest:(id)arg1;
 - (BOOL)addColumnSummaryWithColumnIndex:(unsigned long long)arg1 fromRowIndex:(unsigned long long)arg2 toRequest:(id)arg3;
-- (BOOL)addRowSummaryWithRowIndex:(unsigned long long)arg1 fromColumnIndex:(unsigned long long)arg2 includeHeader:(BOOL)arg3 includeBlanks:(BOOL)arg4 includeSelected:(BOOL)arg5 toRequest:(id)arg6;
-- (id)_childrenForRow:(id)arg1;
+- (id)reorderedRowChildrenForSummaryDescription:(id)arg1;
+- (BOOL)_addDescriptionForEmptyRow:(id)arg1 request:(id)arg2;
+- (BOOL)_addSummaryForRow:(unsigned long long)arg1 fromColumnIndex:(unsigned long long)arg2 includeHeader:(BOOL)arg3 includeBlanks:(BOOL)arg4 includeSelected:(BOOL)arg5 request:(id)arg6;
+- (BOOL)addSummaryForRow:(unsigned long long)arg1 request:(id)arg2;
 - (void)addElementEnclosureSummaryToRequest:(id)arg1;
 - (id)rowHeaderInfoWithIndex:(unsigned long long)arg1 usedHeader:(char *)arg2;
 - (id)columnHeaderInfoWithIndex:(unsigned long long)arg1 usedHeader:(char *)arg2;
@@ -116,11 +116,10 @@ __attribute__((visibility("hidden")))
 - (id)emptyCellDescription;
 - (void)addBrailleItemDescriptionForFallbackToRequest:(id)arg1;
 - (void)addDescriptionForSelectedRowElement:(id)arg1 atCell:(struct SCRDataCell)arg2 toRequest:(id)arg3;
-- (void)_addDescriptionForRowElement:(id)arg1 toRequest:(id)arg2 includeHeader:(BOOL)arg3 headerIndex:(unsigned long long)arg4 headerOrientation:(long long)arg5 includeAlternateHeader:(BOOL)arg6 alternateHeaderIndex:(unsigned long long)arg7 alternateHeaderOrientation:(long long)arg8 includeCommandEcho:(BOOL)arg9 includeBlanks:(BOOL)arg10;
+- (void)_addDescriptionForRowElement:(id)arg1 toRequest:(id)arg2 includedHeader:(BOOL)arg3 includeBlanks:(BOOL)arg4 includeElementType:(BOOL)arg5;
 - (void)addDescriptionForRowElement:(id)arg1 toRequest:(id)arg2 includeHeader:(BOOL)arg3 headerIndex:(unsigned long long)arg4 headerOrientation:(long long)arg5 includeCommandEcho:(BOOL)arg6 includeBlanks:(BOOL)arg7;
-- (void)_addInfoOfHeaderAtIndex:(unsigned long long)arg1 withHeaderOrientation:(long long)arg2 toRequest:(id)arg3 forDescribingElement:(id)arg4 allowsFallbackToHeaderIndexDescription:(BOOL)arg5;
-- (BOOL)_shouldIncludeHeaderAtIndex:(unsigned long long)arg1 withHeaderOrientation:(long long)arg2 forDescribingElement:(id)arg3;
-- (void)addDescriptionForRowElement:(id)arg1 toRequest:(id)arg2 includeHeader:(BOOL)arg3 headerIndex:(unsigned long long)arg4 includeCommandEcho:(BOOL)arg5;
+- (void)_addInfoOfHeaderAtIndex:(unsigned long long)arg1 headerOrientation:(long long)arg2 request:(id)arg3 forDescribingElement:(id)arg4;
+- (BOOL)_headerAtIndex:(unsigned long long)arg1 headerOrientation:(long long)arg2 equalToUIElement:(id)arg3;
 - (void)addItemDescriptionForEndInteractionToRequest:(id)arg1;
 - (void)addInteractionDescriptionForFocusedItemToRequest:(id)arg1;
 - (void)addItemDescriptionForInteractionToRequest:(id)arg1;
@@ -128,26 +127,26 @@ __attribute__((visibility("hidden")))
 - (void)addGestureItemDescriptionForElement:(id)arg1 toRequest:(id)arg2;
 - (id)captionDescriptionContainsUserLabel:(char *)arg1 containsAncestorLabel:(char *)arg2;
 - (void)appendSelectedStatusDescription:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (BOOL)chainEvent:(id)arg1 request:(id)arg2;
 - (id)contentChooserTitle;
 - (id)contentChooserGuideItemsForResults:(id)arg1 guide:(id)arg2;
 - (id)contentChooserResultsFromElement:(id)arg1 limit:(unsigned long long)arg2 direction:(long long)arg3 startIndex:(unsigned long long *)arg4;
 - (BOOL)isSectionView;
-- (BOOL)jumpRightEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpLeftEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpBottomEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpTopEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
+- (BOOL)navigateAcrossFromCell:(id)arg1 direction:(long long)arg2 request:(id)arg3;
+- (void)_moveToCellWithRequest:(id)arg1 event:(id)arg2 direction:(long long)arg3;
 - (void)moveToCellBelowWithRequest:(id)arg1 event:(id)arg2;
 - (void)moveToCellAboveWithRequest:(id)arg1 event:(id)arg2;
 - (BOOL)nextNavigableCellToRight:(struct SCRDataCell *)arg1 fromCell:(struct SCRDataCell)arg2 didWrap:(char *)arg3 didChangeRows:(char *)arg4;
 - (BOOL)moveToRightCellWithRequest:(id)arg1 event:(id)arg2 allowFullWrapping:(BOOL)arg3;
+- (BOOL)moveToLeftCellWithRequest:(id)arg1 event:(id)arg2 allowFullWrapping:(BOOL)arg3;
 - (BOOL)allowMoveAttemptsPastBoundary:(BOOL)arg1 allowFullWrapping:(BOOL)arg2;
 - (void)moveToRightCellWithRequest:(id)arg1 event:(id)arg2;
 - (void)moveToLeftCellWithRequest:(id)arg1 event:(id)arg2;
 - (BOOL)_moveLastWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
 - (struct SCRDataCell)_cellForMoveToLastVisibleOnly:(BOOL)arg1 command:(id *)arg2 wrapped:(char *)arg3 shouldScroll:(char *)arg4;
 - (BOOL)_moveFirstWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
+- (struct SCRDataCell)_cellForMoveToFirstWithCurrentDataCell:(struct SCRDataCell)arg1 visibleOnly:(BOOL)arg2;
 - (void)setFocusedChild:(id)arg1;
 - (BOOL)_moveRightWithEvent:(id)arg1 request:(id)arg2 allowFullWrapping:(BOOL)arg3;
 - (BOOL)_moveLeftWithEvent:(id)arg1 request:(id)arg2 allowFullWrapping:(BOOL)arg3;
@@ -173,7 +172,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)isInteractive;
 - (void)moveSelectionBackwardWithRequest:(id)arg1;
 - (void)moveSelectionForwardWithRequest:(id)arg1;
@@ -185,6 +184,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)setSingleSelectionWithRequest:(id)arg1;
 - (BOOL)setSelectionForRowUIElement:(id)arg1;
 - (BOOL)canSetSelectionOnChildren;
+- (BOOL)allowDirectNavigationBetweenContentOfRows;
 - (BOOL)_toggleDisclosureTriangle:(id)arg1;
 - (BOOL)_toggleBetweenCellAndHeader:(id)arg1;
 - (void)_addItemToHeaderOrientationPickerGuide:(id)arg1 forOrientation:(long long)arg2;
@@ -206,13 +206,14 @@ __attribute__((visibility("hidden")))
 - (BOOL)canFocusOutInto;
 - (void)addDescendantsToArray:(id)arg1 additionalToRetain:(id)arg2 additionalToSkip:(id)arg3;
 - (void)setFocusedCellUIElement:(id)arg1 scrolling:(BOOL)arg2 selection:(BOOL)arg3 request:(id)arg4;
-- (id)_setFocusedCell:(struct SCRDataCell)arg1 scrolling:(BOOL)arg2 selectionMode:(int)arg3 request:(id)arg4 event:(id)arg5;
+- (id)_setFocusedCell:(struct SCRDataCell)arg1 scrolling:(BOOL)arg2 selectionMode:(long long)arg3 request:(id)arg4 event:(id)arg5 highlight:(BOOL)arg6;
 - (id)setFocusedCell:(struct SCRDataCell)arg1 scrolling:(BOOL)arg2 selection:(BOOL)arg3 request:(id)arg4 event:(id)arg5;
 - (void)setFocusedCell:(struct SCRDataCell)arg1 request:(id)arg2;
 - (void)setFocusedCell:(struct SCRDataCell)arg1;
 - (struct SCRDataCell)focusedCell;
 - (BOOL)shouldPromoteCells;
 - (struct SCRDataCell)cellForUIElement:(id)arg1;
+- (BOOL)uiElementIsAHeader:(id)arg1;
 - (BOOL)cellExists:(struct SCRDataCell *)arg1;
 - (id)cellForDataCell:(struct SCRDataCell)arg1;
 - (id)cellUIElementForRow:(unsigned long long)arg1 column:(unsigned long long)arg2;
@@ -230,6 +231,7 @@ __attribute__((visibility("hidden")))
 - (id)_textForRowUIElement:(id)arg1;
 - (id)rowHeaders;
 - (id)columnHeaders;
+- (id)header;
 - (unsigned long long)rowSpanForCell:(struct SCRDataCell)arg1;
 - (unsigned long long)columnSpanForCell:(struct SCRDataCell)arg1;
 - (unsigned long long)rowIndexForCell:(struct SCRDataCell)arg1;
@@ -251,7 +253,6 @@ __attribute__((visibility("hidden")))
 - (void)setIsEventHandler:(BOOL)arg1 isKeyboardHandler:(BOOL)arg2;
 - (void)_delayedHandledRowChanged;
 - (void)_selectedRowsDidChange:(id)arg1;
-- (BOOL)_incluideBlankCellsInRowDescription;
 - (BOOL)isNightOwl;
 - (BOOL)nightOwlRowText:(id)arg1 equalToRowText:(id)arg2;
 - (BOOL)isTable;

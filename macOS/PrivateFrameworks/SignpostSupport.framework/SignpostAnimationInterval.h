@@ -64,11 +64,14 @@
 - (id)_frameDescription;
 - (id)_animationStatsDescription;
 - (id)_statsStringForTimeIntervals:(id)arg1 label:(id)arg2;
+@property(readonly, nonatomic) double glitchTimeRatio;
+@property(readonly, nonatomic) NSArray *contributedGlitches;
+@property(readonly, nonatomic) NSArray *glitches;
 - (id)_poorPerfFrameDescription;
 - (id)_detailedFrameDescription;
 - (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
 - (id)_intervalTypeString;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1 shouldRedact:(BOOL)arg2;
 - (id)humanReadableType;
 - (id)initWithDictionary:(id)arg1;
 

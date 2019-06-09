@@ -58,6 +58,9 @@
 + (id)representationOfImageRepsInArray:(id)arg1 usingType:(unsigned long long)arg2 properties:(id)arg3;
 + (void)_setEnableFlippedImageFix:(BOOL)arg1;
 @property(retain, setter=_setBacking:) id _backing; // @synthesize _backing=_dataObj;
+- (id)description;
+- (void)_setImageNumber:(long long)arg1;
+- (long long)_imageNumber;
 - (void)colorizeByMappingGray:(double)arg1 toColor:(id)arg2 blackMapping:(id)arg3 whiteMapping:(id)arg4;
 - (id)_bitmapImageReps;
 - (id)TIFFRepresentationUsingCompression:(unsigned long long)arg1 factor:(float)arg2;
@@ -128,9 +131,6 @@
 - (void)_becomeBackedByCGImage:(struct CGImage *)arg1;
 - (void)_withoutChangingBackingPerformBlockUsingBackingCGImage:(CDUnknownBlockType)arg1;
 - (void)_performBlockUsingBacking:(CDUnknownBlockType)arg1;
-- (id)description;
-- (void)_setImageNumber:(long long)arg1;
-- (long long)_imageNumber;
 - (id)valueForProperty:(id)arg1;
 - (void)setProperty:(id)arg1 withValue:(id)arg2;
 - (id)representationUsingType:(unsigned long long)arg1 properties:(id)arg2;

@@ -8,6 +8,7 @@
 
 @class AVAssetImageGenerator, AVURLAsset, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVThumbnailGenerationRequest : NSObject
 {
     AVURLAsset *_asset;

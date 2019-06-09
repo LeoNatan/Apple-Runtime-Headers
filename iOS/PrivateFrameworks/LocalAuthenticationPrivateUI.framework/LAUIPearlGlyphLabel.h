@@ -62,6 +62,8 @@
 - (void)setText:(id)arg1 animated:(_Bool)arg2;
 - (void)setShimmerEnabled:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setStyle:(long long)arg1 animated:(_Bool)arg2;
+@property(nonatomic) _Bool inApplicationContext; // @dynamic inApplicationContext;
+- (void)invalidate;
 - (void)layoutSubviews;
 - (void)layoutIfNeededAnimated:(_Bool)arg1;
 - (void)didMoveToWindow;

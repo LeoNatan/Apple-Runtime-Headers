@@ -10,12 +10,11 @@
 
 @interface SSEncryptionKeyCredentials : SSCredentials
 {
-    NSData *mEncryptionKey;
-    void *mReservedForInstanceVariablesPassword;
+    NSData *_encryptionKey;
 }
 
 + (id)preauthorizedCredentialsWithKey:(id)arg1;
-@property(readonly) NSData *encryptionKey; // @synthesize encryptionKey=mEncryptionKey;
+@property(retain) NSData *encryptionKey; // @synthesize encryptionKey=_encryptionKey;
 - (void)dealloc;
 - (id)initWithAuthenticationType:(id)arg1 withEncryptionKey:(id)arg2;
 

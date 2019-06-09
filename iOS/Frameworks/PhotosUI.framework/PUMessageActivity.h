@@ -6,18 +6,19 @@
 
 #import <UIKit/UIMessageActivity.h>
 
-#import <PhotosUI/PUMomentShareActivity-Protocol.h>
+#import <PhotosUI/PXMomentShareSuggestionHandlingActivity-Protocol.h>
 
-@class NSString, PUActivityItemSourceController;
+@class NSString;
+@protocol PXActivityItemSourceController;
 
 __attribute__((visibility("hidden")))
-@interface PUMessageActivity : UIMessageActivity <PUMomentShareActivity>
+@interface PUMessageActivity : UIMessageActivity <PXMomentShareSuggestionHandlingActivity>
 {
-    PUActivityItemSourceController *_itemSourceController;
+    id <PXActivityItemSourceController> _itemSourceController;
 }
 
-+ (_Bool)wantsMomentShareLinkForAssetCount:(long long)arg1;
-@property(nonatomic) __weak PUActivityItemSourceController *itemSourceController; // @synthesize itemSourceController=_itemSourceController;
++ (_Bool)canPerformActivityAsIndividualItemsInSourceController:(id)arg1;
+@property(nonatomic) __weak id <PXActivityItemSourceController> itemSourceController; // @synthesize itemSourceController=_itemSourceController;
 - (void).cxx_destruct;
 - (void)performActivity;
 - (id)activityViewController;

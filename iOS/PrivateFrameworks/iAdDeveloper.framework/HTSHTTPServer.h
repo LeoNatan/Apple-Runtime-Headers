@@ -14,6 +14,7 @@
     int _listenSocket4;
     NSMutableArray *_activeConnections;
     NSObject<OS_dispatch_queue> *_serverQueue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_dispatch_source> *_listenSource4;
     NSString *_nodename;
     unsigned long long _bytesWritten;
@@ -24,7 +25,6 @@
     unsigned short _port;
     int _cacheMaxAge;
     id <HTSHTTPServerDelegate> _delegate;
-    NSObject<OS_dispatch_queue> *_delegateQueue;
     double _latency;
     double _latencyStddev;
     double _kbps;
@@ -45,7 +45,6 @@
 @property(nonatomic) double latency; // @synthesize latency=_latency;
 @property(nonatomic) _Bool digestAuthenticationEnabled; // @synthesize digestAuthenticationEnabled=_digestAuthenticationEnabled;
 @property(readonly, nonatomic) unsigned short port; // @synthesize port=_port;
-@property(nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) id <HTSHTTPServerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)consumedBandwidth:(unsigned long long)arg1;
 - (unsigned long long)availableBandwidth;
@@ -62,6 +61,7 @@
 - (id)_mimeTypeForExtension:(id)arg1;
 - (_Bool)_listenOnPort:(unsigned short)arg1;
 - (void)_cleanupListenSocket;
+@property(nonatomic) NSObject<OS_dispatch_queue> *delegateQueue;
 @property(readonly, nonatomic) NSString *urlString;
 - (id)init;
 - (id)initWithPort:(unsigned short)arg1 documentRoot:(id)arg2;

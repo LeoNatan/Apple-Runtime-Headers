@@ -10,28 +10,29 @@
 #import <Message/DAMailboxStreamingContentConsumer-Protocol.h>
 
 @class MFActivityMonitor, NSArray, NSConditionLock, NSMutableData, NSMutableDictionary, NSString;
+@protocol DAMailboxStreamingContentConsumer;
 
 @interface MFDAMailAccountSyncConsumer : MFDAMailAccountConsumer <DAMailboxRequestConsumer, DAMailboxStreamingContentConsumer>
 {
-    NSArray *_requests;
-    NSArray *_consumers;
-    NSString *_tag;
+    NSArray *_requestPairs;
     NSString *_accountID;
     MFActivityMonitor *_monitor;
-    id _streamConsumer;
     NSMutableData *_bodyData;
-    _Bool _moreAvailable;
     _Bool _receivedFirstItem;
     _Bool _firstSyncBatch;
     int _syncKeyResets;
     int _serverErrors;
     NSMutableDictionary *_syncResponseConsumersByMessageId;
     NSConditionLock *_accountHierarchyLock;
+    _Bool _moreAvailable;
+    NSString *_tag;
+    id <DAMailboxStreamingContentConsumer> _streamConsumer;
 }
 
 @property(readonly, nonatomic) _Bool moreAvailable; // @synthesize moreAvailable=_moreAvailable;
-@property(retain, nonatomic) id streamConsumer; // @synthesize streamConsumer=_streamConsumer;
-@property(readonly, nonatomic) NSString *tag; // @synthesize tag=_tag;
+@property(retain, nonatomic) id <DAMailboxStreamingContentConsumer> streamConsumer; // @synthesize streamConsumer=_streamConsumer;
+@property(copy, nonatomic) NSString *tag; // @synthesize tag=_tag;
+- (void).cxx_destruct;
 - (_Bool)refreshFolderHierarchyAndWait:(unsigned long long)arg1;
 - (void)accountHierarchyChanged:(id)arg1;
 - (void)taskFailed:(id)arg1 statusCode:(long long)arg2 error:(id)arg3;
@@ -43,10 +44,8 @@
 - (void)handleSyncResponses:(id)arg1;
 - (id)actionsConsumer;
 - (id)originalThreadMonitor;
-- (void)_setTag:(id)arg1;
 - (void)reset;
-- (void)dealloc;
-- (id)initWithCurrentTag:(id)arg1 accountID:(id)arg2 requests:(id)arg3 consumers:(id)arg4;
+- (id)initWithCurrentTag:(id)arg1 accountID:(id)arg2 requests:(id)arg3;
 
 @end
 

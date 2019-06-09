@@ -19,9 +19,7 @@
 @property(nonatomic) _Bool shouldAllowEditing; // @synthesize shouldAllowEditing=_shouldAllowEditing;
 @property(copy, nonatomic) NSArray *allowedBundleIDs; // @synthesize allowedBundleIDs=_allowedBundleIDs;
 - (void).cxx_destruct;
-- (id)defaultAlwaysAllowBundleIDs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithActivation:(id)arg1;
 - (id)initWithBlueprint:(id)arg1;
 - (id)init;
 

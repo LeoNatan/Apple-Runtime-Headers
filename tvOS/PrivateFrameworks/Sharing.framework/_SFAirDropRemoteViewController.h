@@ -8,25 +8,23 @@
 
 #import <Sharing/SFAirDropViewServiceHostProtocol-Protocol.h>
 
-@class NSExtension, NSString;
-@protocol NSCopying><NSObject, SFAirDropViewServiceHostProtocol;
+@class NSString;
+@protocol SFAirDropViewServiceHostProtocol;
 
+__attribute__((visibility("hidden")))
 @interface _SFAirDropRemoteViewController : _UIRemoteViewController <SFAirDropViewServiceHostProtocol>
 {
     id <SFAirDropViewServiceHostProtocol> _airDropHost;
-    NSExtension *_extension;
-    id <NSCopying><NSObject> _extensionRequestIdentifier;
 }
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
-+ (void)instantiateViewControllerWithInputItems:(id)arg1 connectionHandler:(CDUnknownBlockType)arg2;
-@property(copy, nonatomic) id <NSCopying><NSObject> extensionRequestIdentifier; // @synthesize extensionRequestIdentifier=_extensionRequestIdentifier;
-@property(retain, nonatomic) NSExtension *extension; // @synthesize extension=_extension;
 @property(nonatomic) __weak id <SFAirDropViewServiceHostProtocol> airDropHost; // @synthesize airDropHost=_airDropHost;
 - (void).cxx_destruct;
 - (void)airDropViewServiceDidRequestDismissal;
-- (void)airDropViewServiceRequestingSharedItemsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)airDropViewServiceRequestingSharedItemsWithDataRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)airDropViewServiceDidSuccessfullyCompleteTransfer;
+- (void)airDropViewServiceDidSuccessfullyStartTransfer;
 - (id)airDropExtensionService;
 
 // Remaining properties

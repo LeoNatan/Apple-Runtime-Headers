@@ -25,7 +25,7 @@
     HDIDSPersistentDictionary *_persistentContextStore;
     double _nextExpireTimerFireDate;
     NSObject<OS_dispatch_source> *_expireTimer;
-    int _invalidated;
+    // Error parsing type: AB, name: _invalidated
     id <HDIDSMessageCenterDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
 }

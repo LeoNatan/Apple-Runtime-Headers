@@ -10,6 +10,7 @@
 
 @class NSString, UIColor, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPageDividerCollectionViewCell : UICollectionViewCell <SKUIViewElementView>
 {
     struct UIEdgeInsets _contentInset;

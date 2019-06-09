@@ -10,6 +10,18 @@
 {
 }
 
+- (_Bool)isInternal;
+- (Class)uiSceneMinimumClass;
+- (Class)sceneSubstrateClass;
+- (Class)lifecycleMonitorClass;
+- (_Bool)isUIKitManaged;
+- (id)disconnectionHandlers;
+- (id)connectionHandlers;
+- (id)uiSceneSessionRole;
+- (id)baseSceneComponentClassDictionary;
+- (id)finalActionHandlers;
+- (id)initialActionHandlers;
+- (id)initialSettingsDiffActions;
 - (Class)transitionContextClass;
 - (Class)clientSettingsClass;
 - (Class)settingsClass;

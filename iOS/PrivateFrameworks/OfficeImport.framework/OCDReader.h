@@ -6,31 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSError, NSString, TCImportTracing;
+@class NSData, NSError, NSString;
 @protocol OCDReaderDelegate, TCCancelDelegate;
 
 __attribute__((visibility("hidden")))
 @interface OCDReader : NSObject
 {
     id <TCCancelDelegate> mCancelDelegate;
-    id <OCDReaderDelegate> mDelegate;
     _Bool mIsThumbnail;
-    TCImportTracing *mTracing;
     NSString *mFileName;
     NSData *mData;
     NSError *mStartError;
+    id <OCDReaderDelegate> _delegate;
 }
 
-@property(retain, nonatomic) TCImportTracing *tracing; // @synthesize tracing=mTracing;
+@property(nonatomic) __weak id <OCDReaderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool isThumbnail; // @synthesize isThumbnail=mIsThumbnail;
-@property(nonatomic) id <OCDReaderDelegate> delegate; // @synthesize delegate=mDelegate;
 @property(retain, nonatomic) id <TCCancelDelegate> cancelDelegate; // @synthesize cancelDelegate=mCancelDelegate;
 @property(retain, nonatomic) NSError *startError; // @synthesize startError=mStartError;
 @property(retain, nonatomic) NSData *data; // @synthesize data=mData;
 @property(retain, nonatomic) NSString *fileName; // @synthesize fileName=mFileName;
+- (void).cxx_destruct;
 - (void)setStartErrorMessageFromException:(id)arg1;
-- (void)dealloc;
-- (id)initWithCancelDelegate:(id)arg1 tracing:(id)arg2;
+- (id)initWithCancelDelegate:(id)arg1;
 - (_Bool)verifyFileFormat;
 - (id)read;
 - (_Bool)start;

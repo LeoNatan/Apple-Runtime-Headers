@@ -10,7 +10,7 @@
 #import <ContactsUI/UITableViewDelegate-Protocol.h>
 
 @class CNGeminiChannel, NSIndexPath, NSMutableArray, NSString, UITableViewController;
-@protocol CNPickerControllerDelegate;
+@protocol CNPickerControllerDelegate><UINavigationControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface CNGeminiPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate>
@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(nonatomic) __weak id <CNPickerControllerDelegate> delegate; // @dynamic delegate;
+@property(nonatomic) __weak id <CNPickerControllerDelegate><UINavigationControllerDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

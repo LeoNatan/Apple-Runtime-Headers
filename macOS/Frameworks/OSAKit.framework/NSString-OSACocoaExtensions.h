@@ -8,5 +8,7 @@
 
 @interface NSString (OSACocoaExtensions)
 - (id)_osa_hfsPath;
+- (id)camelCaseForClass:(BOOL)arg1;
+- (id)stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 @end
 

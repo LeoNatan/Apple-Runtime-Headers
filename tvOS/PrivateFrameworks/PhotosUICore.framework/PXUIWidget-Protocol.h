@@ -7,16 +7,17 @@
 #import <PhotosUICore/PXWidget-Protocol.h>
 
 @class NSObject, PXOneUpPresentation, PXPhotosDetailsContext, PXRegionOfInterest, PXUIViewControllerTransition, PXZoomAnimationCoordinator, UIFocusUpdateContext, UITraitCollection, UIViewController;
-@protocol UICoordinateSpace;
+@protocol PXUIImageViewBasicTile, UICoordinateSpace;
 
 @protocol PXUIWidget <PXWidget>
 
 @optional
 @property(retain, nonatomic) PXOneUpPresentation *oneUpPresentation;
+- (id <PXUIImageViewBasicTile>)imageViewBasicTileForPreviewingAtPoint:(struct CGPoint)arg1;
 - (_Bool)containsPoint:(struct CGPoint)arg1 forCoordinateSpace:(NSObject<UICoordinateSpace> *)arg2;
 - (void)commitPreviewViewController:(UIViewController *)arg1;
 - (void)didDismissPreviewViewController:(UIViewController *)arg1 committing:(_Bool)arg2;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2 outSourceRect:(out struct CGRect *)arg3;
+- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
 - (void)prepareForInteractiveTransition:(PXUIViewControllerTransition *)arg1;
 - (PXZoomAnimationCoordinator *)zoomAnimationCoordinatorForContext:(PXPhotosDetailsContext *)arg1;
 - (void)preloadWithSourceRegionOfInterest:(PXRegionOfInterest *)arg1 forContext:(PXPhotosDetailsContext *)arg2;

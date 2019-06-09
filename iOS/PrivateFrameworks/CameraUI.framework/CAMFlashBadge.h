@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DCIMServices/CAMBadgeView.h>
+#import <CameraEditKit/CEKBadgeView.h>
 
 @class NSString, UIImage;
 
-@interface CAMFlashBadge : CAMBadgeView
+@interface CAMFlashBadge : CEKBadgeView
 {
     UIImage *__contentImage;
     NSString *__contentSizeCategory;

@@ -15,10 +15,12 @@
 + (id)abstractClientCommandWithDictionary:(id)arg1 context:(id)arg2;
 + (id)abstractClientCommand;
 - (BOOL)requiresResponse;
+@property(nonatomic) BOOL shouldRestartContext;
 @property(nonatomic) BOOL shouldCacheScript;
 @property(copy, nonatomic) NSString *jsScript;
 @property(copy, nonatomic) NSString *jsParameters;
 @property(copy, nonatomic) NSArray *jsLibraries;
+@property(copy, nonatomic) NSString *jsFileNameSuffix;
 @property(copy, nonatomic) NSString *domain;
 - (id)encodedClassName;
 - (id)groupIdentifier;

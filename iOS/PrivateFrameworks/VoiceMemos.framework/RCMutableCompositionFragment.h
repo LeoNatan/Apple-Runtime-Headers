@@ -12,7 +12,7 @@
 {
 }
 
-- (void)intersectWithTimeRange:(CDStruct_73a5d3ca)arg1;
+- (_Bool)intersectWithTimeRange:(CDStruct_73a5d3ca)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSURL *AVOutputURL; // @dynamic AVOutputURL;

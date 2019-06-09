@@ -12,6 +12,7 @@
 {
     BOOL _prependSystemVersionToTitle;
     BOOL _appendStandardDisclaimerToDescription;
+    BOOL _appendSysdiagnoseHowTo;
     NSString *_title;
     NSString *_radarDescription;
     long long _component;
@@ -30,6 +31,7 @@
 @property(nonatomic) long long classification; // @synthesize classification=_classification;
 @property(nonatomic) long long reproducibility; // @synthesize reproducibility=_reproducibility;
 @property(nonatomic) long long component; // @synthesize component=_component;
+@property(nonatomic) BOOL appendSysdiagnoseHowTo; // @synthesize appendSysdiagnoseHowTo=_appendSysdiagnoseHowTo;
 @property(nonatomic) BOOL appendStandardDisclaimerToDescription; // @synthesize appendStandardDisclaimerToDescription=_appendStandardDisclaimerToDescription;
 @property(copy, nonatomic) NSString *radarDescription; // @synthesize radarDescription=_radarDescription;
 @property(nonatomic) BOOL prependSystemVersionToTitle; // @synthesize prependSystemVersionToTitle=_prependSystemVersionToTitle;

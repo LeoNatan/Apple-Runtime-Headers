@@ -8,7 +8,6 @@
 
 @class PHPerson;
 
-__attribute__((visibility("hidden")))
 @interface PUSearchZeroKeywordPersonViewModel : PUSearchZeroKeywordBaseViewModel
 {
     PHPerson *_person;

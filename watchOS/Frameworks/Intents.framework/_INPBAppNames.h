@@ -21,6 +21,7 @@
     NSString *_spotlightName;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *spotlightName; // @synthesize spotlightName=_spotlightName;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *axSpokenName; // @synthesize axSpokenName=_axSpokenName;
@@ -30,6 +31,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasSpotlightName;

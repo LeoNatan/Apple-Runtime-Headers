@@ -10,5 +10,11 @@
 - (struct CGSize)__ck_frameSizeForAlignmentRectSize:(struct CGSize)arg1;
 - (struct CGSize)__ck_alignmentRectSizeForFrameSize:(struct CGSize)arg1;
 - (_Bool)__ck_containsFirstResponder;
+- (void)messageAcknowledgmentShrinkViewToPoint:(struct CGPoint)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)messageAcknowledgmentBounceView:(CDUnknownBlockType)arg1;
+- (void)layoutGradientViewsIfNeeded;
+- (void)setGradientViewsNeedLayout;
+- (_Bool)pointMostlyInside:(struct CGPoint)arg1 threshold:(float)arg2 velocity:(struct CGPoint)arg3;
+- (id)__ck_addEqualityConstraintWithItem:(id)arg1 toItem:(id)arg2 usingAttribute:(int)arg3;
 @end
 

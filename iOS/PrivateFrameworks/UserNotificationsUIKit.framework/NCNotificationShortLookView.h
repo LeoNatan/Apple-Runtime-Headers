@@ -17,13 +17,15 @@
     NCNotificationContentView *_notificationContentView;
     NCNotificationGrabberView *_grabberView;
     NCAuxiliaryOptionsView *_auxiliaryOptionsView;
-    _Bool _mainOverlayLayoutValid;
     _Bool _defersAnimatedUpdates;
+    _Bool _notificationContentViewHidden;
     _Bool _banner;
+    _Bool _grabberVisible;
 }
 
-+ (unsigned long long)_optionsForMainOverlayForRecipe:(long long)arg1;
+@property(nonatomic, getter=_isGrabberVisible, setter=_setGrabberVisible:) _Bool grabberVisible; // @synthesize grabberVisible=_grabberVisible;
 @property(nonatomic, getter=_isBanner, setter=_setBanner:) _Bool banner; // @synthesize banner=_banner;
+@property(nonatomic, getter=isNotificationContentViewHidden) _Bool notificationContentViewHidden; // @synthesize notificationContentViewHidden=_notificationContentViewHidden;
 @property(nonatomic) _Bool defersAnimatedUpdates; // @synthesize defersAnimatedUpdates=_defersAnimatedUpdates;
 - (void).cxx_destruct;
 - (void)_layoutGrabber;
@@ -34,14 +36,16 @@
 - (void)_configureCustomContentView;
 - (void)_configureHeaderContentView;
 - (struct CGSize)_sizeThatFitsContentWithSize:(struct CGSize)arg1 withAuxiliaryOptionsViewVisible:(_Bool)arg2;
-- (void)nc_performDeferredActionsIfNeeded;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 @property(nonatomic) _Bool auxiliaryOptionsVisible;
 @property(readonly, nonatomic) NSArray *optionButtons;
 @property(nonatomic) unsigned long long numberOfOptionButtons;
 @property(copy, nonatomic) NSString *optionsSummaryText;
-@property(nonatomic) unsigned long long messageNumberOfLines;
+@property(nonatomic) unsigned long long maximumNumberOfSecondaryLargeTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfSecondaryTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfPrimaryLargeTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfPrimaryTextLines;
 @property(retain, nonatomic) UIView *accessoryView;
 @property(retain, nonatomic) UIImage *thumbnail;
 @property(copy, nonatomic) NSString *summaryText;
@@ -53,12 +57,7 @@
 - (struct CGSize)sizeThatFitsContentWithSize:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithRecipe:(long long)arg1 options:(unsigned long long)arg2;
-- (_Bool)_shouldShowGrabber;
 - (id)_newNotificationContentView;
-@property(readonly, nonatomic, getter=_grabberView) NCNotificationGrabberView *grabberView;
-- (void)_layoutMainOverlay;
-- (unsigned long long)_optionsForMainOverlay;
 @property(readonly, nonatomic, getter=_notificationContentView) NCNotificationContentView *notificationContentView;
 @property(retain, nonatomic, getter=_fontProvider, setter=_setFontProvider:) BSUIFontProvider *fontProvider;
 

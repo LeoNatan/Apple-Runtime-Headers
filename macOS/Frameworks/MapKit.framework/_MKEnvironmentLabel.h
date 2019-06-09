@@ -8,6 +8,7 @@
 
 @class NSString, NSTextField;
 
+__attribute__((visibility("hidden")))
 @interface _MKEnvironmentLabel : NSView
 {
     NSTextField *_label;

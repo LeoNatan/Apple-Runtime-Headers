@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     double mCustomOffsetY;
 }
 
+- (void).cxx_destruct;
 - (void)setCustomOffsetY:(double)arg1;
 - (double)customOffsetY;
 - (void)setCustomOffsetX:(double)arg1;
@@ -47,7 +48,6 @@ __attribute__((visibility("hidden")))
 - (id)presentationName;
 - (void)setLayoutTypeId:(id)arg1;
 - (id)layoutTypeId;
-- (void)dealloc;
 
 @end
 

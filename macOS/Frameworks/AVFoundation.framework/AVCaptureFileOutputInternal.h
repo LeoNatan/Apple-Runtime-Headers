@@ -6,21 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@protocol AVCaptureFileOutputDelegate;
+@class AVWeakReference;
 
 __attribute__((visibility("hidden")))
 @interface AVCaptureFileOutputInternal : NSObject
 {
     struct __CFDictionary *outputSettings;
     CDStruct_1b6d18a9 maxRecordedDuration;
-    struct os_unfair_lock_s maxRecordedDurationLock;
     long long maxRecordedFileSize;
-    struct os_unfair_lock_s maxRecordedFileSizeLock;
     long long minFreeDiskSpaceLimit;
-    struct os_unfair_lock_s minFreeDiskSpaceLimitLock;
-    id <AVCaptureFileOutputDelegate> delegate;
+    AVWeakReference *weakReferenceDelegate;
     BOOL delegateRequiresFrameAccurateStart;
     int compressorNodesMode;
+    struct os_unfair_lock_s internalLock;
 }
 
 @end

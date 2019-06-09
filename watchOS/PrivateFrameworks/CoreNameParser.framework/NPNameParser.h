@@ -17,6 +17,9 @@
 
 @property(retain) NPHMMClassifier *classifier; // @synthesize classifier=_classifier;
 - (void).cxx_destruct;
+- (unsigned int)genderMajorityForGivenName:(id)arg1;
+- (unsigned int)frequencyOfLatinGivenName:(id)arg1;
+- (unsigned int)frequencyOfLatinFamilyName:(id)arg1;
 - (struct _CFBurstTrie *)sharedNameFrequencyTrieRef;
 - (id)normalizedAffix:(id)arg1;
 - (_Bool)isSuffix:(id)arg1;

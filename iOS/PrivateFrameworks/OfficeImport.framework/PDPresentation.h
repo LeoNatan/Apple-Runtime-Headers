@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mCommentAuthors;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)removeUnnecessaryOverrides;
 - (void)setUpPropertyHierarchyPreservingEffectiveValues;
@@ -58,7 +59,6 @@ __attribute__((visibility("hidden")))
 - (void)addSlideMaster:(id)arg1;
 - (id)slideMasterAtIndex:(unsigned long long)arg1;
 - (unsigned long long)slideMasterCount;
-- (void)dealloc;
 - (id)init;
 - (void)cacheGraphicStylesForSlideBase:(id)arg1;
 - (void)cacheGraphicStyleForDrawable:(id)arg1 colorContext:(id)arg2;

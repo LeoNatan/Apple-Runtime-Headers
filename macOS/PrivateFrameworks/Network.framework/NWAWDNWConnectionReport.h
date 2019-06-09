@@ -8,7 +8,7 @@
 
 #import <Network/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, NWAWDNWL2Report;
 
 __attribute__((visibility("hidden")))
 @interface NWAWDNWConnectionReport : PBCodable <NSCopying>
@@ -57,6 +57,7 @@ __attribute__((visibility("hidden")))
     NSString *_connectionUUID;
     int _failureReason;
     int _firstAddressFamily;
+    NWAWDNWL2Report *_l2Report;
     NSString *_processName;
     int _stackLevel;
     int _tlsVersion;
@@ -67,7 +68,11 @@ __attribute__((visibility("hidden")))
     BOOL _ipv4Available;
     BOOL _ipv6Available;
     BOOL _isDaemon;
+    BOOL _isPathConstrained;
+    BOOL _isPathExpensive;
     BOOL _multipathConfigured;
+    BOOL _prohibitsConstrained;
+    BOOL _prohibitsExpensive;
     BOOL _resolutionRequired;
     BOOL _synthesizedExtraIPv6Address;
     BOOL _synthesizedIPv6Address;
@@ -132,7 +137,11 @@ __attribute__((visibility("hidden")))
         unsigned int ipv4Available:1;
         unsigned int ipv6Available:1;
         unsigned int isDaemon:1;
+        unsigned int isPathConstrained:1;
+        unsigned int isPathExpensive:1;
         unsigned int multipathConfigured:1;
+        unsigned int prohibitsConstrained:1;
+        unsigned int prohibitsExpensive:1;
         unsigned int resolutionRequired:1;
         unsigned int synthesizedExtraIPv6Address:1;
         unsigned int synthesizedIPv6Address:1;
@@ -149,6 +158,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)activitiesType;
+@property(retain, nonatomic) NWAWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
+@property(nonatomic) BOOL prohibitsConstrained; // @synthesize prohibitsConstrained=_prohibitsConstrained;
+@property(nonatomic) BOOL prohibitsExpensive; // @synthesize prohibitsExpensive=_prohibitsExpensive;
+@property(nonatomic) BOOL isPathConstrained; // @synthesize isPathConstrained=_isPathConstrained;
+@property(nonatomic) BOOL isPathExpensive; // @synthesize isPathExpensive=_isPathExpensive;
 @property(nonatomic) BOOL tlsHandshakeTimedOut; // @synthesize tlsHandshakeTimedOut=_tlsHandshakeTimedOut;
 @property(retain, nonatomic) NSString *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
 @property(retain, nonatomic) NSMutableArray *activities; // @synthesize activities=_activities;
@@ -216,6 +230,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasL2Report;
+@property(nonatomic) BOOL hasProhibitsConstrained;
+@property(nonatomic) BOOL hasProhibitsExpensive;
+@property(nonatomic) BOOL hasIsPathConstrained;
+@property(nonatomic) BOOL hasIsPathExpensive;
 @property(nonatomic) BOOL hasTlsHandshakeTimedOut;
 @property(readonly, nonatomic) BOOL hasConnectionUUID;
 - (id)activitiesAtIndex:(unsigned long long)arg1;

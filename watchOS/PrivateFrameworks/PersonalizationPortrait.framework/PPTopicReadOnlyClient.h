@@ -18,15 +18,12 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (void)feedbackMappedTopicsOverallEngagement:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackTopicsOverallEngagement:(id)arg1;
-- (void)feedbackEngagedMappedTopics:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackEngagedTopics:(id)arg1;
-- (void)feedbackUsedMappedTopics:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackUsedTopics:(id)arg1;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)unmapMappedTopicIdentifier:(id)arg1 mappingIdentifier:(id)arg2 error:(id *)arg3;
 - (_Bool)scoresForTopicMapping:(id)arg1 query:(id)arg2 error:(id *)arg3 handleBatch:(CDUnknownBlockType)arg4;
 - (_Bool)topicRecordsWithQuery:(id)arg1 error:(id *)arg2 handleBatch:(CDUnknownBlockType)arg3;
 - (_Bool)rankedTopicsWithQuery:(id)arg1 error:(id *)arg2 handleBatch:(CDUnknownBlockType)arg3;
+- (id)_synchronousRemoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_remoteObjectProxy;
 - (void)scoredMappedTopicBatch:(id)arg1 isLast:(_Bool)arg2 error:(id)arg3 queryId:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)topicRecordBatch:(id)arg1 isLast:(_Bool)arg2 error:(id)arg3 queryId:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;

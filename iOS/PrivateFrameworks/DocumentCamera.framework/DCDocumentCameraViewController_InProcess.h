@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void)documentCameraController:(id)arg1 didFinishWithDocInfoCollection:(id)arg2 imageCache:(id)arg3 warnUser:(_Bool)arg4;
 - (id)documentCameraControllerCreateDataCryptorIfNecessary;
 - (_Bool)documentCameraController:(id)arg1 canAddImages:(unsigned long long)arg2;
+- (long long)_preferredModalPresentationStyle;
 - (void)didReceiveMemoryWarning;
 - (id)initWithDelegate:(id)arg1;
 

@@ -8,11 +8,13 @@
 
 @interface CKInputView : UIInputView
 {
+    long long _lastContentSizeInterfaceOrientation;
     struct CGSize _lastContentSize;
 }
 
 + (struct CGSize)defaultContentSizeLargerThanKeyboard:(_Bool *)arg1;
 + (struct CGSize)defaultContentSize;
+@property(nonatomic) long long lastContentSizeInterfaceOrientation; // @synthesize lastContentSizeInterfaceOrientation=_lastContentSizeInterfaceOrientation;
 @property(nonatomic) struct CGSize lastContentSize; // @synthesize lastContentSize=_lastContentSize;
 - (struct CGSize)intrinsicContentSize;
 

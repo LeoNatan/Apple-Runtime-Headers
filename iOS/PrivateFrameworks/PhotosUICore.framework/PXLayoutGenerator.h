@@ -8,19 +8,22 @@
 
 #import <PhotosUICore/NSCopying-Protocol.h>
 
-@class NSIndexSet, PXLayoutMetrics;
+@class NSIndexSet, NSString, PXLayoutMetrics;
 
 @interface PXLayoutGenerator : NSObject <NSCopying>
 {
     PXLayoutMetrics *_metrics;
     unsigned long long _itemCount;
+    unsigned long long _keyItemIndex;
     CDUnknownBlockType _itemLayoutInfoBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType itemLayoutInfoBlock; // @synthesize itemLayoutInfoBlock=_itemLayoutInfoBlock;
+@property(nonatomic) unsigned long long keyItemIndex; // @synthesize keyItemIndex=_keyItemIndex;
 @property(nonatomic) unsigned long long itemCount; // @synthesize itemCount=_itemCount;
-@property(readonly, copy, nonatomic) PXLayoutMetrics *metrics; // @synthesize metrics=_metrics;
+@property(copy, nonatomic) PXLayoutMetrics *metrics; // @synthesize metrics=_metrics;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *diagnosticDescription;
 - (void)getGeometries:(struct _PXLayoutGeometry *)arg1 inRange:(struct _NSRange)arg2 withKind:(long long)arg3;
 - (unsigned long long)numberOfGeometriesWithKind:(long long)arg1;
 @property(readonly, nonatomic) NSIndexSet *geometryKinds;
@@ -30,6 +33,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMetrics:(id)arg1;
 - (id)init;
+@property(readonly, nonatomic) struct _PXCornerSpriteIndexes cornerSpriteIndexes;
 
 @end
 

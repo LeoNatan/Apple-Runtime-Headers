@@ -8,13 +8,11 @@
 
 #import <VoiceServices/VSSpeechConnectionDelegate-Protocol.h>
 
-@class NSString, VSKeepAlive, VSSpeechConnection;
+@class NSString, VSSpeechConnection;
 @protocol OS_dispatch_queue, VSSpeechSynthesizerDelegate;
 
 @interface VSSpeechSynthesizer : NSObject <VSSpeechConnectionDelegate>
 {
-    VSKeepAlive *_keepAlive;
-    VSKeepAlive *_inactiveKeepAlive;
     NSString *_clientBundleIdentifier;
     unsigned int _audioSessionID;
     unsigned int _audioQueueFlags;
@@ -93,6 +91,7 @@
 - (void)cleanUnusedAssets:(CDUnknownBlockType)arg1;
 - (void)endAudioPowerUpdate;
 - (void)beginAudioPowerUpdateWithReply:(CDUnknownBlockType)arg1;
+- (void)forwardStreamObject:(id)arg1;
 - (void)getTTSServerVoicesWithFilter:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)continueSpeakingWithError:(id *)arg1;
 - (_Bool)stopSpeakingAtNextBoundary:(long long)arg1 error:(id *)arg2;
@@ -151,7 +150,6 @@
 - (_Bool)queryPhaticCapability:(id)arg1;
 - (id)prewarmIfNeededWithRequest:(id)arg1;
 - (id)initForInputFeedback;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -16,6 +16,7 @@
 
 - (void)getRemotePlaybackQueueRepresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearPlaybackQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)insertIntoPlaybackQueueAtInsertionPosition:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resumePlayback;
 - (void)replacePlaybackQueueWhilePreventingAutomaticPlayback:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)mediaPlaybackCorePlaybackIntent;

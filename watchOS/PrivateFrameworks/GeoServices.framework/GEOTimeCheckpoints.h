@@ -8,12 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBDataReader, PBUnknownFields;
+
 @interface GEOTimeCheckpoints : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
+    PBUnknownFields *_unknownFields;
     CDStruct_084d6ede _distToNextCheckpoints;
     CDStruct_084d6ede _timeToNextCheckpoints;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_distToNextCheckpoints:1;
+        unsigned int read_timeToNextCheckpoints:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_distToNextCheckpoints:1;
+        unsigned int wrote_timeToNextCheckpoints:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -21,20 +38,25 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setTimeToNextCheckpoints:(unsigned int *)arg1 count:(unsigned int)arg2;
 - (unsigned int)timeToNextCheckpointAtIndex:(unsigned int)arg1;
+- (void)_addNoFlagsTimeToNextCheckpoint:(unsigned int)arg1;
 - (void)addTimeToNextCheckpoint:(unsigned int)arg1;
 - (void)clearTimeToNextCheckpoints;
 @property(readonly, nonatomic) unsigned int *timeToNextCheckpoints;
 @property(readonly, nonatomic) unsigned int timeToNextCheckpointsCount;
+- (void)_readTimeToNextCheckpoints;
 - (void)setDistToNextCheckpoints:(unsigned int *)arg1 count:(unsigned int)arg2;
 - (unsigned int)distToNextCheckpointAtIndex:(unsigned int)arg1;
+- (void)_addNoFlagsDistToNextCheckpoint:(unsigned int)arg1;
 - (void)addDistToNextCheckpoint:(unsigned int)arg1;
 - (void)clearDistToNextCheckpoints;
 @property(readonly, nonatomic) unsigned int *distToNextCheckpoints;
 @property(readonly, nonatomic) unsigned int distToNextCheckpointsCount;
+- (void)_readDistToNextCheckpoints;
 - (void)dealloc;
 
 @end

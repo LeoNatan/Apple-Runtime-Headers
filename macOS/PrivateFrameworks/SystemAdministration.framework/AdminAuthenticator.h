@@ -18,6 +18,8 @@
 - (BOOL)isAuthenticated;
 - (BOOL)authenticateUsingAuthorizationSync:(id)arg1;
 - (void)deauthenticate;
+- (BOOL)authenticateUsingExternalFormSync:(id)arg1;
+- (void)authenticateUsingExternalForm:(id)arg1;
 - (void)authenticateUsingAuthorizationSync:(id)arg1 userName:(id)arg2 password:(id)arg3;
 - (void)authenticateUsingAuthorization:(id)arg1 userName:(id)arg2 password:(id)arg3;
 - (void)authenticateUsingAuthorization:(id)arg1;

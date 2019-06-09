@@ -6,6 +6,7 @@
 
 #import <MapKit/MKMultiPartLabel.h>
 
+__attribute__((visibility("hidden")))
 @interface MKThemeMultiPartLabel : MKMultiPartLabel
 {
     CDUnknownBlockType __mapkit_themeColorProvider;
@@ -15,7 +16,7 @@
 @property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
 @property(copy, nonatomic) CDUnknownBlockType _mapkit_themeColorProvider; // @synthesize _mapkit_themeColorProvider=__mapkit_themeColorProvider;
 - (void).cxx_destruct;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)viewWillMoveToWindow:(id)arg1;
 
 @end

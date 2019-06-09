@@ -11,21 +11,24 @@
 @interface _PASArgOption : NSObject
 {
     int _longOptionFlag;
+    _Bool _required;
     NSString *_name;
     NSString *_shortName;
     NSString *_helpDescription;
     NSString *_argMetavar;
 }
 
++ (id)optionWithName:(id)arg1 shortName:(id)arg2 argMetavar:(id)arg3 help:(id)arg4 required:(_Bool)arg5;
 + (id)optionWithName:(id)arg1 shortName:(id)arg2 argMetavar:(id)arg3 help:(id)arg4;
 + (id)optionWithName:(id)arg1 shortName:(id)arg2 help:(id)arg3;
+@property(readonly, nonatomic) _Bool required; // @synthesize required=_required;
 @property(readonly, copy, nonatomic) NSString *argMetavar; // @synthesize argMetavar=_argMetavar;
 @property(readonly, copy, nonatomic) NSString *helpDescription; // @synthesize helpDescription=_helpDescription;
 @property(readonly, copy, nonatomic) NSString *shortName; // @synthesize shortName=_shortName;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithName:(id)arg1 shortName:(id)arg2 argMetavar:(id)arg3 help:(id)arg4;
+- (id)initWithName:(id)arg1 shortName:(id)arg2 argMetavar:(id)arg3 help:(id)arg4 required:(_Bool)arg5;
 
 @end
 

@@ -10,9 +10,30 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct AudioBuffer {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+};
+
+struct AudioBufferList {
+    unsigned int _field1;
+    struct AudioBuffer _field2[1];
+};
+
 struct CGSize {
     double _field1;
     double _field2;
+};
+
+struct DSPSplitComplex {
+    float *realp;
+    float *imagp;
+};
+
+struct MPCAudioSpectrumAnalyzerBand {
+    float _field1;
+    float _field2;
 };
 
 struct MPCModelStorePlaybackItemsRequestAccumulatorResult {
@@ -22,6 +43,14 @@ struct MPCModelStorePlaybackItemsRequestAccumulatorResult {
 
 struct NSMapTable {
     Class _field1;
+};
+
+struct _MPCAudioSpectrumAnalyzerBandInternal {
+    struct MPCAudioSpectrumAnalyzerBand _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    unsigned long long _field5;
 };
 
 struct _MPCModelStorePlaybackItemEligibility {
@@ -35,12 +64,8 @@ struct _MSVSignedRange {
 };
 
 struct _NSRange {
-    unsigned long long location;
-    unsigned long long length;
-};
-
-struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
-    struct __tree_node_base<void *> *__left_;
+    unsigned long long _field1;
+    unsigned long long _field2;
 };
 
 struct __va_list_tag {
@@ -50,19 +75,14 @@ struct __va_list_tag {
     void *_field4;
 };
 
-struct map<unsigned long, MPIdentifierSet *, std::__1::less<unsigned long>, std::__1::allocator<std::__1::pair<const unsigned long, MPIdentifierSet *>>> {
-    struct __tree<std::__1::__value_type<unsigned long, MPIdentifierSet *>, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, MPIdentifierSet *>, std::__1::less<unsigned long>, true>, std::__1::allocator<std::__1::__value_type<unsigned long, MPIdentifierSet *>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned long, MPIdentifierSet *>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned long, std::__1::__value_type<unsigned long, MPIdentifierSet *>, std::__1::less<unsigned long>, true>> {
-            unsigned long long __value_;
-        } __pair3_;
-    } __tree_;
-};
-
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    _Bool _field1;
+    _Bool _field2;
+    _Bool _field3;
+    _Bool _field4;
+} CDStruct_8024420c;
 
 typedef struct {
     double snapshotTime;
@@ -77,9 +97,21 @@ typedef struct {
 } CDStruct_fce57115;
 
 typedef struct {
+    long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
+
+typedef struct {
     long long reverseCount;
     long long forwardCount;
 } CDStruct_339ad95e;
+
+typedef struct {
+    CDStruct_198678f7 _field1;
+    CDStruct_198678f7 _field2;
+} CDStruct_3c1748cc;
 
 // Ambiguous groups
 typedef struct {

@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSMutableString *_string;
 }
 
+- (void).cxx_destruct;
 - (id)styleAttributeValue;
 - (void)addPropertyWithName:(id)arg1 value:(id)arg2;
 - (id)init;

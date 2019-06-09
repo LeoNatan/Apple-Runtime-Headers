@@ -6,66 +6,61 @@
 
 #import <objc/NSObject.h>
 
-#import <MapsSupport/MSPJournaling-Protocol.h>
+#import <MapsSupport/MSPCloudNotificationReceiver-Protocol.h>
+#import <MapsSupport/MSPCloudSynchronizerRunConditionsDelegate-Protocol.h>
 
-@class MSPJournal, MSPMapsPaths, NSDate, NSMutableArray, NSOperationQueue, NSString, NSTimer;
-@protocol MSPCloudAccess, MSPCloudSynchronizerDelegate;
+@class MSPCloudClientRegistration, MSPCloudKitAccountAccess, MSPCloudSynchronizerRunConditions, MSPJournal, NSArray, NSString, NSUUID;
+@protocol MSPCloudSynchronizerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface MSPCloudSynchronizer : NSObject <MSPJournaling>
+@interface MSPCloudSynchronizer : NSObject <MSPCloudSynchronizerRunConditionsDelegate, MSPCloudNotificationReceiver>
 {
-    id <MSPCloudAccess> _access;
-    _Bool _started;
-    MSPMapsPaths *_paths;
-    // Error parsing type: {atomic_flag="_Value"AB}, name: _didScheduleInitialMerge
-    NSOperationQueue *_taskAttemptsQueue;
-    _Bool _needsMerge;
-    unsigned long long _countOfInFlightMerges;
-    NSMutableArray *_mergeCompletionHandlers;
+    _Bool _isRunning;
+    _Bool _hasMigratedPreSync;
+    _Bool _hasMigrated;
+    NSString *_accountID;
+    MSPCloudSynchronizerRunConditions *_runConditions;
+    NSObject<OS_dispatch_source> *_mergeTimer;
+    NSUUID *_clientIdentifier;
+    MSPCloudClientRegistration *_clientRegistration;
     MSPJournal *_journal;
-    NSTimer *_identityRecheckTimer;
-    unsigned long long _failedResolutionAttempts;
-    NSDate *_minimumDateAfterTooManyFailedResolutionAttempts;
-    long long _loginStatus;
+    NSObject<OS_dispatch_queue> *_mergeQueue;
+    NSArray *_containers;
     id <MSPCloudSynchronizerDelegate> _delegate;
+    MSPCloudKitAccountAccess *_cloudAccess;
 }
 
-+ (double)_timeIntervalToWaitBetweenBoosts;
-+ (double)_minimumReattemptInterval;
-+ (double)_timeIntervalToWaitAfterTooManyResolutionAttempts;
-+ (long long)_maximumResolutionAttemptsCount;
-+ (long long)_boostedQualityOfServiceForOpportunisticTask;
-+ (long long)_boostedQualityOfServiceForUserObservableTask;
-+ (long long)_qualityOfServiceForOpportunisticTask;
-+ (long long)_qualityOfServiceForUserObservableTask;
-+ (long long)_qualityOfServiceForInitialDownload;
-+ (double)_batchingTimeInterval;
-+ (double)_identityRecheckInterval;
+@property(retain, nonatomic) MSPCloudKitAccountAccess *cloudAccess; // @synthesize cloudAccess=_cloudAccess;
 @property(nonatomic) __weak id <MSPCloudSynchronizerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
+@property(nonatomic) _Bool hasMigrated; // @synthesize hasMigrated=_hasMigrated;
+@property(nonatomic) _Bool hasMigratedPreSync; // @synthesize hasMigratedPreSync=_hasMigratedPreSync;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *mergeQueue; // @synthesize mergeQueue=_mergeQueue;
+@property(retain, nonatomic) MSPJournal *journal; // @synthesize journal=_journal;
+@property(retain, nonatomic) MSPCloudClientRegistration *clientRegistration; // @synthesize clientRegistration=_clientRegistration;
+@property(retain, nonatomic) NSUUID *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *mergeTimer; // @synthesize mergeTimer=_mergeTimer;
+@property(retain, nonatomic) MSPCloudSynchronizerRunConditions *runConditions; // @synthesize runConditions=_runConditions;
+@property(nonatomic) _Bool isRunning; // @synthesize isRunning=_isRunning;
+@property(retain, nonatomic) NSString *accountID; // @synthesize accountID=_accountID;
 - (void).cxx_destruct;
-- (id)_minimumReattemptDateForProposedDate:(id)arg1;
-- (void)_resetTooManyResolvingAttemptsHolds;
-- (void)_taskThatIncludedResolutionAttemptSucceeded;
-- (_Bool)_shouldContinueAfterFailingResolutionAttempt;
-- (_Bool)_mergesAreSuspendedAfterTooManyFailedResolvingAttempts;
-- (_Bool)shouldReportState:(id)arg1;
-- (_Bool)_wasTaskScheduledWhenTokenCreated:(id)arg1;
-- (void)_completeOperation:(id)arg1 isMerge:(_Bool)arg2 withError:(id)arg3 canReattempt:(_Bool)arg4 maxAttempts:(unsigned long long)arg5 minimumReattemptDate:(id)arg6 completion:(CDUnknownBlockType)arg7;
-- (id)_scheduleTaskIfAny:(id)arg1 isMerge:(_Bool)arg2 qualityOfService:(long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_enqueueOperation:(id)arg1 requireBeingLoggedIn:(_Bool)arg2;
-- (void)_scheduleMergeForUserObservableChange:(_Bool)arg1 isInitialMerge:(_Bool)arg2;
-- (void)_scheduleMergeForUserObservableChange:(_Bool)arg1;
-- (id)scheduleTask:(id)arg1;
-- (void)setNeedsMergeWithOptions:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setNeedsMergeForUserObservableChange:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)runConditionsChanged:(id)arg1;
+- (void)_merge;
+- (void)merge;
+- (void)performMigrationsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)performPreSyncMigrations:(CDUnknownBlockType)arg1;
+- (void)prepareForMergeWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)handleAccountChangeWithError:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)didReceiveRemoteNotification:(id)arg1;
+- (void)requestMergeWithReason:(unsigned long long)arg1;
+- (void)requestMerge;
+- (_Bool)isCurrentlyRunning;
 - (void)stop;
-- (void)_cancelAllOperationsWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_beginWaitingForAvailabilityAndStartQueueIfPossible;
-@property(getter=_loginStatus, setter=_setLoginStatus:) long long loginStatus; // @synthesize loginStatus=_loginStatus;
-- (void)_availabilityDidChange;
 - (void)start;
-- (long long)_boostIfNeededQualityOfServiceForTask:(id)arg1 thatIsUserObservable:(_Bool)arg2;
-- (id)initWithAccess:(id)arg1;
-- (id)init;
+- (void)dealloc;
+- (id)initWithCloudContainers:(id)arg1 clientRegistration:(id)arg2 runConditions:(id)arg3 cloudAccess:(id)arg4;
+- (id)initWithContainers:(id)arg1;
+- (id)initWithDefaultLocalContainers;
+- (id)initWithDefaultRemoteContainers;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

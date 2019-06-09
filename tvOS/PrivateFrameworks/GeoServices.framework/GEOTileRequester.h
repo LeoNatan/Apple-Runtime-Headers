@@ -31,6 +31,7 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(readonly, nonatomic) __weak id <GEOTileRequesterDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)activeTileSetForKey:(const struct _GEOTileKey *)arg1;
 - (unsigned int)tileSetForKey:(const struct _GEOTileKey *)arg1;
 - (void)reprioritizeKey:(const struct _GEOTileKey *)arg1 newPriority:(unsigned int)arg2;
 - (void)cancelKey:(const struct _GEOTileKey *)arg1;
@@ -38,6 +39,7 @@
 - (void)tearDown;
 - (void)start;
 - (id)initWithTileRequest:(id)arg1 delegateQueue:(id)arg2 delegate:(id)arg3;
+- (id)init;
 @property(readonly, nonatomic) GEOResourceManifestManager *resourceManifestManager;
 
 @end

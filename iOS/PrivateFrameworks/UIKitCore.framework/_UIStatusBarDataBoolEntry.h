@@ -20,7 +20,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
-- (id)initFromData:(const CDStruct_1916f467 *)arg1 type:(int)arg2 boolValue:(_Bool)arg3;
+- (id)initFromData:(const CDStruct_0942cde0 *)arg1 type:(int)arg2 boolValue:(_Bool)arg3;
 
 @end
 

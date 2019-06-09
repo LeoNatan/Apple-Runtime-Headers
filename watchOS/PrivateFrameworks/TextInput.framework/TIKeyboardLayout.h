@@ -17,15 +17,20 @@
     char *_strings;
     unsigned int _stringsSize;
     unsigned int _stringsCapacity;
+    struct CGRect _frame;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) struct CGRect frame; // @synthesize frame=_frame;
 @property(nonatomic) _Bool usesTwoHands; // @synthesize usesTwoHands=_usesTwoHands;
+- (id)description;
 - (int)keyContainingPoint:(struct CGPoint)arg1;
 - (void)enumerateKeysUsingBlock:(CDUnknownBlockType)arg1;
 - (void)addKeyWithString:(id)arg1 frame:(struct CGRect)arg2;
 - (void)ensureStringCapacity:(unsigned int)arg1;
 - (void)ensureFrameCapacity:(unsigned int)arg1;
+- (struct CGRect)_decodeCGRectForKey:(id)arg1 withDecoder:(id)arg2;
+- (void)_encodeCGRect:(struct CGRect)arg1 forKey:(id)arg2 withCoder:(id)arg3;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

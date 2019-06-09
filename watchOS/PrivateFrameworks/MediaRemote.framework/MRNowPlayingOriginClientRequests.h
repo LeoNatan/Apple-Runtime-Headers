@@ -8,18 +8,20 @@
 
 #import <MediaRemote/MRNowPlayingClientState-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, _MRDeviceInfoMessageProtobuf, _MRNowPlayingPlayerPathProtobuf, _MROriginProtobuf;
+@class NSMutableArray, NSMutableDictionary, NSNumber, _MRDeviceInfoMessageProtobuf, _MRNowPlayingPlayerPathProtobuf, _MROriginProtobuf;
 @protocol OS_dispatch_queue;
 
 @interface MRNowPlayingOriginClientRequests : NSObject <MRNowPlayingClientState>
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
     _MRDeviceInfoMessageProtobuf *_deviceInfo;
-    unsigned int _volumeCapabilities;
-    float _volume;
+    NSNumber *_volumeCapabilities;
+    NSNumber *_volume;
     NSMutableArray *_nowPlayingClients;
     NSMutableDictionary *_transactionCallbacks;
     NSMutableArray *_deviceInfoCompletions;
+    NSMutableArray *_volumeCompletions;
+    NSMutableArray *_volumeCapabilitiesCompletions;
     _MROriginProtobuf *_origin;
     _MRNowPlayingPlayerPathProtobuf *_playerPath;
 }
@@ -28,15 +30,17 @@
 @property(readonly, nonatomic) _MROriginProtobuf *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;
 - (void)restoreNowPlayingClientState;
+- (void)handleVolumeCapabilitiesRequestWithCompletion:(CDUnknownBlockType)arg1;
+- (void)handleVolumeRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handleDeviceInfoRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)transactionCallbackForName:(unsigned long long)arg1;
 - (void)setTransactionCallback:(CDUnknownBlockType)arg1 forName:(unsigned long long)arg2;
+@property(retain, nonatomic) NSNumber *volume;
+@property(retain, nonatomic) NSNumber *volumeCapabilities;
 @property(copy, nonatomic) _MRDeviceInfoMessageProtobuf *deviceInfo;
 - (void)removeClient:(id)arg1;
 - (id)existingNowPlayingClientRequestsForPlayerPath:(id)arg1;
 - (id)nowPlayingClientRequestsForPlayerPath:(id)arg1;
-@property(nonatomic) float volume;
-@property(nonatomic) unsigned int volumeCapabilities;
 - (id)nowPlayingClients;
 - (id)debugDescription;
 - (id)initWithOrigin:(id)arg1;

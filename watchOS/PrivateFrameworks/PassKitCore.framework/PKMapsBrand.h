@@ -9,28 +9,28 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoding-Protocol.h>
 
-@class NSString, NSURL;
+@class MKWalletMerchantStylingInfo, NSString, NSURL;
 
 @interface PKMapsBrand : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
-    _Bool _hasPOIType;
     int _resultProviderIdentifier;
     NSString *_name;
     NSString *_phoneNumber;
     NSURL *_url;
-    int _poiType;
     int _category;
     NSString *_detailedCategory;
+    MKWalletMerchantStylingInfo *_stylingInfo;
     NSURL *_logoURL;
+    NSURL *_businessChatURL;
     unsigned long long _identifier;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSURL *businessChatURL; // @synthesize businessChatURL=_businessChatURL;
 @property(copy, nonatomic) NSURL *logoURL; // @synthesize logoURL=_logoURL;
+@property(retain, nonatomic) MKWalletMerchantStylingInfo *stylingInfo; // @synthesize stylingInfo=_stylingInfo;
 @property(copy, nonatomic) NSString *detailedCategory; // @synthesize detailedCategory=_detailedCategory;
 @property(nonatomic) int category; // @synthesize category=_category;
-@property(nonatomic) int poiType; // @synthesize poiType=_poiType;
-@property(nonatomic) _Bool hasPOIType; // @synthesize hasPOIType=_hasPOIType;
 @property(copy, nonatomic, setter=setURL:) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;

@@ -12,19 +12,16 @@
 
 @interface NFAWDSERemoved : NSObject <NFAWDEventProtocol>
 {
-    BOOL _hasCardEmulationStarted;
     unsigned int _hardwareType;
     AWDNFCSERemovedEvent *_metric;
 }
 
 @property(retain, nonatomic) AWDNFCSERemovedEvent *metric; // @synthesize metric=_metric;
-@property(nonatomic) BOOL hasCardEmulationStarted; // @synthesize hasCardEmulationStarted=_hasCardEmulationStarted;
 @property(nonatomic) unsigned int hardwareType; // @synthesize hardwareType=_hardwareType;
 - (id)getMetric;
 - (unsigned int)getMetricId;
 - (void)updateExceptionUUID:(id)arg1;
-- (void)setHasCardemulationStarted:(BOOL)arg1;
-- (BOOL)hasCardemulationStarted;
+@property(nonatomic) BOOL hasCardEmulationStarted;
 @property(nonatomic) BOOL hasExpressTransactionStarted;
 @property(nonatomic) unsigned int reason;
 - (void)dealloc;

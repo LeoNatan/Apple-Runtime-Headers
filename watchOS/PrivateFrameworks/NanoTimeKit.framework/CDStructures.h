@@ -120,10 +120,6 @@ struct NTKAstronomyInteractionSettings {
     float _field4;
 };
 
-struct NTKCharacterPrograms {
-    struct NUProgram programs[6];
-};
-
 struct NTKKaleidoscopePathfinderPoint {
     float _field1[4];
 };
@@ -132,11 +128,6 @@ struct NTKLabelPosition {
     struct CGPoint _field1;
     int _field2;
     int _field3;
-};
-
-struct NUProgram {
-    unsigned int program;
-    int uniforms[13];
 };
 
 struct RingLayout {
@@ -165,6 +156,10 @@ struct jetsam_info {
     long long maxIntervalKB;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -189,6 +184,16 @@ typedef struct {
 } CDStruct_11f37819;
 
 typedef struct {
+    double *_field1;
+    float *_field2;
+    int _field3;
+} CDStruct_9edbfaa9;
+
+typedef struct {
+    int *_field1;
+} CDStruct_669ca518;
+
+typedef struct {
     float _field1;
     float _field2;
     float _field3;
@@ -206,10 +211,11 @@ typedef struct {
 } CDStruct_4dcbcf9b;
 
 typedef struct {
-    float activeEnergyPercentage;
-    float briskPercentage;
-    float sedentaryPercentage;
-} CDStruct_fbe50fab;
+    _Bool smallTicksMatchingMinutes;
+    _Bool hideHourTicks;
+    struct CGSize hourTickSize;
+    struct CGSize smallTickSize;
+} CDStruct_3c04bc85;
 
 typedef struct {
     struct CGColor *colors[3];
@@ -233,46 +239,10 @@ typedef struct {
     struct UIEdgeInsets _field13;
 } CDStruct_4eca2615;
 
-#pragma mark Named Unions
-
-union _GLKMatrix4 {
-    struct {
-        float m00;
-        float m01;
-        float m02;
-        float m03;
-        float m10;
-        float m11;
-        float m12;
-        float m13;
-        float m20;
-        float m21;
-        float m22;
-        float m23;
-        float m30;
-        float m31;
-        float m32;
-        float m33;
-    } ;
-    float m[16];
-};
-
-union _GLKVector2 {
-    struct {
-        float x;
-        float y;
-    } ;
-    struct {
-        float s;
-        float t;
-    } ;
-    float v[2];
-};
-
-union _GLKVector3 {
-    CDStruct_fbe50fab _field1;
-    CDStruct_fbe50fab _field2;
-    CDStruct_fbe50fab _field3;
-    float _field4[3];
-};
+// Ambiguous groups
+typedef struct {
+    float _field1;
+    float _field2;
+    float _field3;
+} CDStruct_869f9c67;
 

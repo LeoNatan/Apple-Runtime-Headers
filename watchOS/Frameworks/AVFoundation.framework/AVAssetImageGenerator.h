@@ -37,7 +37,6 @@
 - (id)_videoSettingWithSize:(struct CGSize)arg1;
 - (_Bool)_ensureFigAssetImageGeneratorReturningError:(id *)arg1;
 @property(readonly, nonatomic) AVAsset *asset;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1;
 - (id)init;

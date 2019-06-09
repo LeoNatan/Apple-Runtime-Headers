@@ -19,7 +19,6 @@
 
 + (BOOL)_isBlacklistedMessageForSharedAdmin:(id)arg1;
 + (BOOL)isBlackListedMessage:(id)arg1;
-+ (BOOL)_isWhitelistedMessageForSharedAdmin:(id)arg1;
 + (BOOL)isWhitelistedMessage:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *objectsContainedInHomes; // @synthesize objectsContainedInHomes=_objectsContainedInHomes;
 @property(retain, nonatomic) NSMutableDictionary *adminsOfHomes; // @synthesize adminsOfHomes=_adminsOfHomes;

@@ -8,6 +8,5 @@
 
 @interface GEORouteAttributes (MNExtras)
 + (id)defaultRouteAttributesForTransportType:(int)arg1;
-- (void)setDestinationInfoForWaypoint:(id)arg1;
 @end
 

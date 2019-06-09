@@ -8,6 +8,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarVideoTrackView : AVTouchBarTrackView
 {
     NSMutableArray *_thumbnailsAndFilteredImages;
@@ -22,6 +23,7 @@
 - (struct CGPoint)positionForPreviewLayerWithIndex:(long long)arg1;
 - (long long)numberOfPreviewLayersForWidth:(double)arg1;
 - (BOOL)allPreviewLayersHaveContent;
+- (id)makePreviewLayer;
 - (struct CGSize)previewLayerSize;
 - (id)thumbnailForTime:(double)arg1;
 - (double)thumbnailGenerationToleranceForCurrentSize;

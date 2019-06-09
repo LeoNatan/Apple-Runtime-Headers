@@ -33,9 +33,6 @@
 - (void)remote_finishAllWorkoutsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_startWatchAppWithWorkoutConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_generatePauseOrResumeRequestWithCompletion:(CDUnknownBlockType)arg1;
-- (void)remote_getCurrentWorkoutSnapshotWithCompletion:(CDUnknownBlockType)arg1;
-- (void)remote_getFirstPartyWorkoutSnapshotWithCompletion:(CDUnknownBlockType)arg1;
-- (void)remote_activeWorkoutApplicationIdentifier:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)_completionHandlerForReplaceWithOriginalWorkout:(id)arg1 newWorkout:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_replaceWorkout:(id)arg1 withWorkout:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)remote_addSamples:(id)arg1 toWorkout:(id)arg2 completion:(CDUnknownBlockType)arg3;

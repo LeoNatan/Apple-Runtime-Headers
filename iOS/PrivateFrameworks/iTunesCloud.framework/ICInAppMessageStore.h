@@ -14,7 +14,8 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableDictionary *_messageEntryCache;
-    NSMutableDictionary *_propertyCache;
+    NSMutableDictionary *_globalPropertyCache;
+    NSMutableDictionary *_applicationPropertyCache;
     NSMutableDictionary *_messageMetadataCache;
     NSMutableArray *_pendingEvents;
     NSString *_filePath;
@@ -41,6 +42,9 @@
 - (void)removeMessageEntry:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateMessageEntry:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addMessageEntry:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)allApplicationStorePropertiesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getStorePropertyForKey:(id)arg1 bundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)updateStoreProperty:(id)arg1 forKey:(id)arg2 bundleIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)allStorePropertiesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getStorePropertyForKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateStoreProperty:(id)arg1 forKey:(id)arg2 completion:(CDUnknownBlockType)arg3;

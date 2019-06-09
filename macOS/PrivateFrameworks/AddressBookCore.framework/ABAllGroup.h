@@ -36,7 +36,6 @@
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
 - (id)valueForProperty:(id)arg1;
 - (id)sharingUniqueId;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithRemoteLocation:(id)arg1 addressBook:(id)arg2;
 - (id)initWithRemoteLocation:(id)arg1;

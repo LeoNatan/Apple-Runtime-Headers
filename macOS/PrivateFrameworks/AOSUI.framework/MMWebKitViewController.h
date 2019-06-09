@@ -13,21 +13,12 @@
 
 @interface MMWebKitViewController : NSObject <MMWebKitControllerDelegate>
 {
-    id <MMWebKitViewControllerDelegate> _delegate;
     MMWebKitController *_webKitController;
     SEL _classCreationSelector;
-    NSWindow *_window;
     NSString *_accountID;
     NSString *_password;
     NSMutableDictionary *_authenticationResults;
     NSNumber *_librarySize;
-    NSTextField *_loadingText;
-    NSProgressIndicator *_loadingProgress;
-    NSView *_loadingView;
-    NSImageView *_serverErrorImageView;
-    NSTextField *_serverErrorTitle;
-    NSView *_serverErrorView;
-    NSView *_contentView;
     unsigned long long _mmWebKitViewType;
     NSMutableDictionary *_webKitContext;
     NSMutableDictionary *_storageContext;
@@ -40,21 +31,30 @@
         unsigned int delegateDidReceiveResponse:1;
         unsigned int padding:3;
     } _delegateFlags;
+    id <MMWebKitViewControllerDelegate> _delegate;
+    NSTextField *_loadingText;
+    NSProgressIndicator *_loadingProgress;
+    NSView *_loadingView;
+    NSImageView *_serverErrorImageView;
+    NSTextField *_serverErrorTitle;
+    NSView *_serverErrorView;
+    NSView *_contentView;
+    NSWindow *_window;
     NSWindow *_parentWindow;
 }
 
 @property(nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(copy, nonatomic) NSDictionary *storageContext; // @synthesize storageContext=_storageContext;
-@property(retain, nonatomic) NSWindow *window; // @synthesize window=_window;
-@property(retain, nonatomic) NSView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) __weak NSWindow *window; // @synthesize window=_window;
+@property(nonatomic) __weak NSView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) unsigned long long mmWebKitViewType; // @synthesize mmWebKitViewType=_mmWebKitViewType;
 @property(retain, nonatomic) NSView *serverErrorView; // @synthesize serverErrorView=_serverErrorView;
-@property(retain, nonatomic) NSTextField *serverErrorTitle; // @synthesize serverErrorTitle=_serverErrorTitle;
-@property(retain, nonatomic) NSImageView *serverErrorImageView; // @synthesize serverErrorImageView=_serverErrorImageView;
+@property(nonatomic) __weak NSTextField *serverErrorTitle; // @synthesize serverErrorTitle=_serverErrorTitle;
+@property(nonatomic) __weak NSImageView *serverErrorImageView; // @synthesize serverErrorImageView=_serverErrorImageView;
 @property(retain, nonatomic) NSMutableDictionary *webKitContext; // @synthesize webKitContext=_webKitContext;
-@property(retain, nonatomic) NSView *loadingView; // @synthesize loadingView=_loadingView;
-@property(retain, nonatomic) NSProgressIndicator *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
-@property(retain, nonatomic) NSTextField *loadingText; // @synthesize loadingText=_loadingText;
+@property(nonatomic) __weak NSView *loadingView; // @synthesize loadingView=_loadingView;
+@property(nonatomic) __weak NSProgressIndicator *loadingProgress; // @synthesize loadingProgress=_loadingProgress;
+@property(nonatomic) __weak NSTextField *loadingText; // @synthesize loadingText=_loadingText;
 @property(retain, nonatomic) NSNumber *librarySize; // @synthesize librarySize=_librarySize;
 @property(retain, nonatomic) NSMutableDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
@@ -62,6 +62,7 @@
 @property(retain, nonatomic) MMWebKitController *webKitController; // @synthesize webKitController=_webKitController;
 @property(nonatomic) SEL classCreationSelector; // @synthesize classCreationSelector=_classCreationSelector;
 @property(nonatomic) id <MMWebKitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (struct OpaqueJSClass *)_createTOSMailNotesClass;
 - (struct OpaqueJSClass *)_createQuotaClass;
 - (struct OpaqueJSClass *)_createAccountCreationClass;
@@ -84,7 +85,6 @@
 - (void)closeModalSheet;
 - (void)beginModalDialogWithParentWindow:(id)arg1 shouldNest:(BOOL)arg2;
 - (void)beginModalSheetForWindow:(id)arg1;
-- (void)dealloc;
 - (void)loadURLRequest:(id)arg1;
 - (id)initForStorageUpgradeWithAccountID:(id)arg1;
 - (id)initForStorageManagementWithAccountID:(id)arg1;

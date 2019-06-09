@@ -8,5 +8,7 @@
 
 @interface NSImage (SafariSharedExtras)
 + (id)safari_imageWithSize:(struct CGSize)arg1 actions:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) BOOL safari_transparencyAnalysisResultIsNotOpaque;
+@property(nonatomic, setter=safari_setTransparencyAnalysisResult:) long long safari_transparencyAnalysisResult;
 @end
 

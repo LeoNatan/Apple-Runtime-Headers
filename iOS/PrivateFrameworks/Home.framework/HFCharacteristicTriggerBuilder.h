@@ -21,6 +21,7 @@
 - (id)_allTriggerValuesForCharacteristic:(id)arg1 similarToValue:(id)arg2;
 - (id)_performValidation;
 - (id)_updateEvents;
+- (id)thresholdValueForCharacteristic:(id)arg1 thresholdValueRange:(id)arg2;
 - (_Bool)wouldFireForCharacteristic:(id)arg1 value:(id)arg2;
 @property(readonly, nonatomic) NSSet *characteristics;
 - (id)_existingEventsForCharacteristic:(id)arg1;

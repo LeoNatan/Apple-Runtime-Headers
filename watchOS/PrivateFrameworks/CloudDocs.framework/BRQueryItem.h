@@ -43,10 +43,13 @@
             unsigned int isDownloadActive:1;
             unsigned int isDownloadRequested:1;
             unsigned int shareOptions:3;
+            unsigned int isSharedFolderSubItem:1;
+            unsigned int editedSinceShared:1;
             unsigned int isHiddenExt:1;
             unsigned int isBRAlias:1;
             unsigned int isTrashed:1;
             unsigned int itemMode:3;
+            unsigned int isEvictable:1;
             unsigned int fromReadOnlyDB:1;
             unsigned char BRQueryItemKind;
             unsigned char kind;
@@ -95,8 +98,10 @@
 - (id)fp_spotlightDomainIdentifier;
 - (id)sharedItemRole;
 - (_Bool)isHiddenExt;
+@property(readonly, nonatomic) _Bool isEvictable;
 @property(readonly, nonatomic) _Bool isTrashed;
 @property(readonly, nonatomic) _Bool isBRAlias;
+@property(readonly, nonatomic) _Bool editedSinceShared;
 @property(readonly, nonatomic) _Bool isDocument;
 @property(readonly, nonatomic) _Bool isFinderBookmark;
 @property(readonly, nonatomic) _Bool isSymlink;
@@ -134,10 +139,15 @@
 - (id)containerDisplayName;
 @property(readonly, nonatomic) NSURL *url;
 - (id)sharingPermissions;
+- (id)fp_addedByNameComponents;
 - (id)mostRecentEditorNameComponents;
 - (id)ownerNameComponents;
 - (id)owner;
+- (_Bool)fp_isAddedByCurrentUser;
+- (_Bool)fp_isLastModifiedByCurrentUser;
 - (_Bool)isSharedByCurrentUser;
+- (_Bool)_isSharedFolderSubItem;
+- (_Bool)isTopLevelSharedItem;
 - (_Bool)isShared;
 - (id)hasUnresolvedConflicts;
 - (id)downloadingError;
@@ -153,8 +163,8 @@
 - (id)creationDate;
 - (id)fileSize;
 - (id)childItemCount;
+- (id)fp_cloudContainerIdentifier;
 - (_Bool)fp_isContainer;
-- (id)fp_appContainerBundleIdentifier;
 - (id)localizedFileNameIfDesktopOrDocuments;
 - (id)containerIDIfDesktopOrDocuments;
 

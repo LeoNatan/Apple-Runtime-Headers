@@ -14,8 +14,8 @@
     TSPObjectContext *_context;
     NSObject<OS_dispatch_queue> *_datasQueue;
     long long _nextNewIdentifier;
-    struct hash_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak>>> _identifierToDataMap;
-    struct hash_map<const std::__1::array<unsigned char, 20>, TSPData *__weak, TSP::DataDigestHash, TSP::DataDigestEqualTo, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>>> _digestToDataMap;
+    struct unordered_map<const long long, TSPData *__weak, TSP::ObjectIdentifierHash, std::__1::equal_to<const long long>, std::__1::allocator<std::__1::pair<const long long, TSPData *__weak>>> _identifierToDataMap;
+    struct unordered_map<const std::__1::array<unsigned char, 20>, TSPData *__weak, TSP::DataDigestHash, TSP::DataDigestEqualTo, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned char, 20>, TSPData *__weak>>> _digestToDataMap;
     NSObject<OS_dispatch_queue> *_temporaryDirectoryQueue;
     NSURL *_lastDocumentURL;
     NSURL *_temporaryDirectoryURL;

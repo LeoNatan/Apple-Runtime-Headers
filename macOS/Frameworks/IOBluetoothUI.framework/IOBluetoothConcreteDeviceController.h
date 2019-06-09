@@ -109,9 +109,9 @@
 - (void)cancelPanel;
 - (void)stopPanel;
 - (int)beginSheetModalForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4;
-- (int)continueModalRunForMainWindow;
-- (int)runModal:(BOOL)arg1;
-- (int)runModal;
+- (long long)continueModalRunForMainWindow;
+- (long long)runModal:(BOOL)arg1;
+- (long long)runModal;
 - (void)setPanelRunDate:(id)arg1;
 - (void)completePanelRun;
 - (void)preparePanelToRun;

@@ -8,15 +8,20 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKDPLocale : PBCodable <NSCopying>
 {
+    NSString *_activeKeyboard;
+    NSMutableArray *_enabledKeyboards;
     NSString *_languageCode;
     NSString *_regionCode;
 }
 
++ (Class)enabledKeyboardsType;
+@property(retain, nonatomic) NSString *activeKeyboard; // @synthesize activeKeyboard=_activeKeyboard;
+@property(retain, nonatomic) NSMutableArray *enabledKeyboards; // @synthesize enabledKeyboards=_enabledKeyboards;
 @property(retain, nonatomic) NSString *regionCode; // @synthesize regionCode=_regionCode;
 @property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 - (void).cxx_destruct;
@@ -29,6 +34,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasActiveKeyboard;
+- (id)enabledKeyboardsAtIndex:(unsigned long long)arg1;
+- (unsigned long long)enabledKeyboardsCount;
+- (void)addEnabledKeyboards:(id)arg1;
+- (void)clearEnabledKeyboards;
 @property(readonly, nonatomic) _Bool hasRegionCode;
 @property(readonly, nonatomic) _Bool hasLanguageCode;
 

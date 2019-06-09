@@ -6,7 +6,7 @@
 
 #import <CoreData/PFMirroredRelationship.h>
 
-@class NSManagedObjectID, NSRelationshipDescription, NSString;
+@class CKRecordID, NSManagedObjectID, NSRelationshipDescription;
 
 __attribute__((visibility("hidden")))
 @interface PFMirroredOneToManyRelationship : PFMirroredRelationship
@@ -14,16 +14,16 @@ __attribute__((visibility("hidden")))
     NSRelationshipDescription *_relationshipDescription;
     NSRelationshipDescription *_inverseRelationshipDescription;
     NSManagedObjectID *_objectID;
-    NSString *_relatedRecordName;
-    NSString *_recordName;
+    CKRecordID *_relatedRecordID;
+    CKRecordID *_recordID;
 }
 
-@property(readonly, nonatomic) NSString *relatedRecordName; // @synthesize relatedRecordName=_relatedRecordName;
-@property(readonly, nonatomic) NSString *recordName; // @synthesize recordName=_recordName;
+@property(readonly, nonatomic) CKRecordID *relatedObjectRecordID; // @synthesize relatedObjectRecordID=_relatedRecordID;
+@property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
 @property(readonly, nonatomic) NSRelationshipDescription *inverseRelationshipDescription; // @synthesize inverseRelationshipDescription=_inverseRelationshipDescription;
 @property(readonly, nonatomic) NSRelationshipDescription *relationshipDescription; // @synthesize relationshipDescription=_relationshipDescription;
-- (id)recordTypesToRecordNames;
+- (id)recordTypesToRecordIDs;
 - (BOOL)updateRelationshipValueUsingImportContext:(id)arg1 andManagedObjectContext:(id)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (id)initWithManagedObject:(id)arg1 withRecordName:(id)arg2 relatedToRecordWithRecordName:(id)arg3 byRelationship:(id)arg4;

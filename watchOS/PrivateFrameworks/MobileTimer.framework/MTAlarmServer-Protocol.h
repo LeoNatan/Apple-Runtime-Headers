@@ -4,17 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MobileTimer/NSObject-Protocol.h>
+#import <MobileTimer/MTXPCServer-Protocol.h>
 
 @class MTAlarm, NSString;
 
-@protocol MTAlarmServer <NSObject>
+@protocol MTAlarmServer <MTXPCServer>
 - (void)dismissAlarmWithIdentifier:(NSString *)arg1 dismissAction:(unsigned int)arg2 withCompletion:(void (^)(NSError *))arg3;
 - (void)snoozeAlarmWithIdentifier:(NSString *)arg1 snoozeAction:(unsigned int)arg2 withCompletion:(void (^)(NSError *))arg3;
 - (void)removeAlarm:(MTAlarm *)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)updateAlarm:(MTAlarm *)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)addAlarm:(MTAlarm *)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)getAlarmsWithCompletion:(void (^)(NSArray *, MTAlarm *, MTAlarm *, NSError *))arg1;
-- (void)checkIn;
 @end
 

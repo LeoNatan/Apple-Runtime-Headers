@@ -86,18 +86,13 @@
 - (const char *)fileSystemRepresentation;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToFile:(id)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (const struct stat *)cachedStat;
 - (void)uncacheStat;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1;
 - (id)initWithURL:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
 
 @end
 

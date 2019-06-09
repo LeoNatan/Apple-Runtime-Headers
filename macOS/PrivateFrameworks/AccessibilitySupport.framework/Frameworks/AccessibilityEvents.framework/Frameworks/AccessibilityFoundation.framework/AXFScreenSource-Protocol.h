@@ -6,12 +6,15 @@
 
 #import <AccessibilityFoundation/NSObject-Protocol.h>
 
-@class NSArray;
-@protocol AXFScreen;
+@class AXFScreen, NSArray;
+@protocol AXFScreenSourceDelegate;
 
 @protocol AXFScreenSource <NSObject>
-@property(readonly) id <AXFScreen> mainScreen;
-@property(readonly) struct CGRect totalScreenBounds;
-@property(readonly) NSArray *screens;
+@property(readonly, nonatomic) AXFScreen *mainScreen;
+@property(readonly, nonatomic) struct CGRect totalScreenBounds;
+@property(readonly, nonatomic) NSArray *screens;
+@property(nonatomic) __weak id <AXFScreenSourceDelegate> delegate;
+- (void)stop;
+- (void)start;
 @end
 

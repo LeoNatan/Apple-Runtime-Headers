@@ -18,6 +18,7 @@
 - (_Bool)isAnimating;
 - (void)stop:(_Bool)arg1;
 - (void)start:(_Bool)arg1;
+- (void)prewarm;
 - (void)setHidden:(_Bool)arg1;
 - (void)didMoveToSuperview;
 - (id)initWithStyle:(int)arg1 screenSize:(int)arg2;

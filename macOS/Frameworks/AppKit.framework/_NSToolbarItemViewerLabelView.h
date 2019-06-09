@@ -10,12 +10,7 @@
 {
 }
 
-- (void)setFrameOrigin:(struct CGPoint)arg1;
-- (BOOL)canSmoothFontsInLayer;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
-- (BOOL)_doHackForFS;
-- (BOOL)_isSelected;
-- (id)_containingToolbarItemViewer;
+- (long long)_preferredLayerContentsRedrawPolicy;
 - (id)_highlightColorForCell:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2;

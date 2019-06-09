@@ -16,14 +16,13 @@
     HDActivityCacheManager *_activityCacheManager;
 }
 
-+ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5 error:(id *)arg6;
++ (id)createTaskServerWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4 error:(id *)arg5;
 + (Class)queryClass;
 @property(nonatomic) __weak HDActivityCacheManager *activityCacheManager; // @synthesize activityCacheManager=_activityCacheManager;
 - (void).cxx_destruct;
 - (void)activityCacheManager:(id)arg1 changedHeartRateSummary:(id)arg2 isToday:(_Bool)arg3;
 - (void)activityCacheManager:(id)arg1 changedTodayActivityCache:(id)arg2;
 - (_Bool)_shouldExecuteWhenProtectedDataIsUnavailable;
-- (_Bool)_shouldListenForUpdates;
 - (void)_queue_stop;
 - (void)_queue_start;
 - (id)heartRateSummaryQueryClientProxy;

@@ -11,6 +11,7 @@
 
 @class EDString, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDContentFormat : NSObject <EDKeyedObject, NSCopying>
 {
     EDString *mFormatString;
@@ -22,6 +23,7 @@
 + (id)contentFormatWithFormatString:(id)arg1;
 + (id)contentFormatWithFormatString:(id)arg1 formatId:(unsigned long long)arg2;
 + (id)contentFormatWithNSString:(id)arg1 formatId:(unsigned long long)arg2 builtIn:(_Bool)arg3;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)referenced;
 - (_Bool)builtIn;
@@ -32,7 +34,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToContentFormat:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)setReferenced:(_Bool)arg1;
 - (void)setFormatId:(unsigned long long)arg1;

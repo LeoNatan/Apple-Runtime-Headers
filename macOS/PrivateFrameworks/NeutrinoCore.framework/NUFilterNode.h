@@ -20,6 +20,7 @@
 - (id)descriptionSubClassHook;
 - (unsigned long long)hash;
 - (BOOL)isEqualToRenderNode:(id)arg1;
+- (id)debugQuickLookObject;
 - (id)_evaluateImage:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (BOOL)isGeometryNode;

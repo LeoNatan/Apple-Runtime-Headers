@@ -21,7 +21,7 @@
 - (void)pushDebugGroup:(id)arg1;
 - (void)insertDebugSignpost:(id)arg1;
 - (void)endEncoding;
-- (void)setGlobalTraceObjectID:(unsigned long long)arg1;
+- (unsigned long long)numThisCommand;
 - (unsigned long long)globalTraceObjectID;
 @property(copy) NSString *label;
 - (void)addRetainedObject:(id)arg1;

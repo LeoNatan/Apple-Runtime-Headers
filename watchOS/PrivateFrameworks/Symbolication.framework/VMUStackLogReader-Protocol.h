@@ -11,6 +11,7 @@
 @protocol VMUStackLogReader <NSObject>
 @property(retain, nonatomic) NSSet *excludedFrames;
 @property(readonly) VMUVMRegionTracker *regionTracker;
+@property(readonly) _Bool coldestFrameIsNotThreadId;
 @property(readonly) _Bool usesLiteMode;
 @property(readonly) _Bool inspectingLiveProcess;
 @property(readonly) _Bool is64bit;
@@ -30,9 +31,14 @@
 - (int)getFramesForStackID:(unsigned long long)arg1 stackFramesBuffer:(unsigned long long *)arg2;
 - (int)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(_Bool)arg3 stackFramesBuffer:(unsigned long long *)arg4;
 - (int)getFramesForNode:(unsigned int)arg1 inLiteZone:(_Bool)arg2 stackFramesBuffer:(unsigned long long *)arg3;
+- (int)enumerateMSLRecordsAndPayloads:(void (^)(unsigned int, unsigned long long, unsigned long long, struct))arg1;
 - (int)enumerateRecords:(void (^)(unsigned int, unsigned long long, unsigned long long, unsigned long long))arg1;
 
 @optional
+@property(readonly) unsigned int nodesInUniquingTable;
+- (void)streamFullStackLogsToBlock:(int (^)(void *, unsigned long))arg1;
+- (CDStruct_69d7cc99)liteMSLPayloadforVMregionAddress:(unsigned long long)arg1;
+- (CDStruct_69d7cc99)liteMSLPayloadforMallocAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
 - (unsigned long long)liteModeStackIDforVMregionAddress:(unsigned long long)arg1;
 - (unsigned long long)liteModeStackIDforAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
 @end

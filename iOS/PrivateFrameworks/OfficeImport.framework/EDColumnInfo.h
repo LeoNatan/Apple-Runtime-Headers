@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setOutlineLevel:(unsigned char)arg1;
 - (unsigned char)outlineLevel;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (void)setWidth:(double)arg1;
 - (double)width;
 - (long long)key;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithResources:(id)arg1 worksheet:(id)arg2;
 - (void)setStyleIndex:(unsigned long long)arg1;

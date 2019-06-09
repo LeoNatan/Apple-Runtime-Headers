@@ -55,11 +55,12 @@
 - (void)_webView:(WKWebView *)arg1 mediaCaptureStateDidChange:(unsigned long long)arg2;
 - (void)_webView:(WKWebView *)arg1 checkUserMediaPermissionForURL:(NSURL *)arg2 mainFrameURL:(NSURL *)arg3 frameIdentifier:(unsigned long long)arg4 decisionHandler:(void (^)(NSString *, BOOL))arg5;
 - (void)_webView:(WKWebView *)arg1 requestUserMediaAuthorizationForDevices:(unsigned long long)arg2 url:(NSURL *)arg3 mainFrameURL:(NSURL *)arg4 decisionHandler:(void (^)(BOOL))arg5;
+- (void)_webView:(WKWebView *)arg1 includeSensitiveMediaDeviceDetails:(void (^)(BOOL))arg2;
+- (void)_webView:(WKWebView *)arg1 requestMediaCaptureAuthorization:(unsigned long long)arg2 decisionHandler:(void (^)(BOOL))arg3;
 - (NSDictionary *)_dataDetectionContextForWebView:(WKWebView *)arg1;
 - (void)_webView:(WKWebView *)arg1 imageOrMediaDocumentSizeChanged:(struct CGSize)arg2;
 - (void)_webView:(WKWebView *)arg1 hasVideoInPictureInPictureDidChange:(BOOL)arg2;
 - (void)_webViewDidLosePointerLock:(WKWebView *)arg1;
-- (void)_webViewDidClickGoBackFromSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewDidShowSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewDidRequestPointerLock:(WKWebView *)arg1 completionHandler:(void (^)(BOOL))arg2;
 - (void)_webViewRequestPointerLock:(WKWebView *)arg1;

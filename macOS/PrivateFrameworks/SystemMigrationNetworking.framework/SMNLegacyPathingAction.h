@@ -10,7 +10,6 @@
 
 @interface SMNLegacyPathingAction : SMNAction
 {
-    id _result;
     NSString *_operation;
     NSArray *_paths;
     NSArray *_omitPaths;
@@ -20,13 +19,12 @@
 @property(retain) NSArray *omitPaths; // @synthesize omitPaths=_omitPaths;
 @property(retain) NSArray *paths; // @synthesize paths=_paths;
 @property(retain) NSString *operation; // @synthesize operation=_operation;
-@property(retain) id result; // @synthesize result=_result;
 - (void).cxx_destruct;
 - (id)resultDictionary;
 - (id)slingshotServerInformation;
 - (BOOL)success;
 - (BOOL)returnsData;
-- (BOOL)setResultFromData:(id)arg1;
+- (BOOL)setResultFromDict:(id)arg1;
 - (id)resultData;
 - (id)description;
 - (id)requestPayload;

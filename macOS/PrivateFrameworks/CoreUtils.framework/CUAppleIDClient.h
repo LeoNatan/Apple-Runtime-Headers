@@ -10,12 +10,12 @@
 
 @interface CUAppleIDClient : NSObject
 {
-    struct OpaqueSecCertificateRef *_myCertificate;
-    struct OpaqueSecIdentityRef *_myIdentity;
-    struct OpaqueSecKeyRef *_mySecretKey;
+    struct __SecCertificate *_myCertificate;
+    struct __SecIdentity *_myIdentity;
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: _mySecretKey
     NSData *_myValidationData;
-    struct OpaqueSecCertificateRef *_peerCertificate;
-    struct OpaqueSecKeyRef *_peerPublicKey;
+    struct __SecCertificate *_peerCertificate;
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: _peerPublicKey
     BOOL _peerSignatureVerified;
     NSDictionary *_peerValidationDict;
     BOOL _peerValidated;
@@ -42,13 +42,13 @@
 @property(copy, nonatomic) NSString *myAppleID; // @synthesize myAppleID=_myAppleID;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) int securityLevel;
-- (struct OpaqueSecKeyRef *)_getPeerPublicKeyAndReturnError:(id *)arg1;
-- (struct OpaqueSecCertificateRef *)_getPeerCertificateAndReturnError:(id *)arg1;
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24@0:8^@16, name: _getPeerPublicKeyAndReturnError:
+- (struct __SecCertificate *)_getPeerCertificateAndReturnError:(id *)arg1;
 - (id)copyMyValidationDataAndReturnError:(id *)arg1;
-- (struct OpaqueSecKeyRef *)_getMySecretKeyAndReturnError:(id *)arg1;
-- (struct OpaqueSecIdentityRef *)_getMyIdentityAndReturnError:(id *)arg1;
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24@0:8^@16, name: _getMySecretKeyAndReturnError:
+- (struct __SecIdentity *)_getMyIdentityAndReturnError:(id *)arg1;
 - (id)copyMyCertificateDataAndReturnError:(id *)arg1;
-- (struct OpaqueSecCertificateRef *)_getMyCertificateAndReturnError:(id *)arg1;
+- (struct __SecCertificate *)_getMyCertificateAndReturnError:(id *)arg1;
 - (id)copyMyAppleIDAndReturnError:(id *)arg1;
 - (BOOL)verifyBytes:(const void *)arg1 verifyLength:(unsigned long long)arg2 signatureBytes:(const void *)arg3 signatureLength:(unsigned long long)arg4 error:(id *)arg5;
 - (BOOL)verifyData:(id)arg1 signature:(id)arg2 error:(id *)arg3;

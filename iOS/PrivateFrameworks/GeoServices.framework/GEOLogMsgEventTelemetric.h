@@ -15,8 +15,8 @@
     NSMutableArray *_telemetricEntitys;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)telemetricEntityType;
-@property(retain, nonatomic) NSMutableArray *telemetricEntitys; // @synthesize telemetricEntitys=_telemetricEntitys;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,12 +25,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)telemetricEntityAtIndex:(unsigned long long)arg1;
 - (unsigned long long)telemetricEntitysCount;
 - (void)addTelemetricEntity:(id)arg1;
 - (void)clearTelemetricEntitys;
+@property(retain, nonatomic) NSMutableArray *telemetricEntitys;
 
 @end
 

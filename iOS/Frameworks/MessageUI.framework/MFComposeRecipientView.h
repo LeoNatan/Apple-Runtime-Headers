@@ -14,19 +14,17 @@
 @class MFComposeRecipient, MFCorecipientsIndicatorAtom, MFModernComposeRecipientAtom, NSArray, NSCountedSet, NSMutableArray, NSMutableDictionary, NSString, NSTimer, UIButton, UIFont, UITapGestureRecognizer, UITextField, UIView, _MFMailRecipientTextField;
 @protocol MFComposeRecipientViewDelegate;
 
-@interface MFComposeRecipientView : MFComposeHeaderView <UITextFieldDelegate, UIGestureRecognizerDelegate, MFComposeRecipientAtomDelegate, MFCorecipientsIndicatorAtomDelegate>
+@interface MFComposeRecipientView : MFComposeHeaderView <MFCorecipientsIndicatorAtomDelegate, UITextFieldDelegate, UIGestureRecognizerDelegate, MFComposeRecipientAtomDelegate>
 {
     _MFMailRecipientTextField *_textField;
     NSArray *_textFieldConstraints;
     NSMutableArray *_recipients;
-    NSMutableDictionary *_atoms;
     NSCountedSet *_uncommentedAddresses;
     struct __CFDictionary *_atomPresentationOptionsByRecipient;
     unsigned long long _defaultAtomPresentationOptions;
     MFModernComposeRecipientAtom *_selectedAtom;
     MFComposeRecipient *_placeholderRecipient;
     long long _dragSourceOriginalIndex;
-    MFCorecipientsIndicatorAtom *_corecipientsIndicatorAtom;
     UIButton *_addButton;
     _Bool _editable;
     _Bool _picking;
@@ -42,18 +40,20 @@
     _Bool _needsReflow;
     _Bool _needsLayoutConstraintUpdate;
     UIFont *_baseFont;
-    id <MFComposeRecipientViewDelegate> _delegate;
     _Bool _didIgnoreFirstResponderResign;
     _Bool _allowsDragAndDrop;
     _Bool _separatorHidden;
     int _hideLastAtomComma;
+    MFCorecipientsIndicatorAtom *_corecipientsIndicatorAtom;
+    NSMutableDictionary *_atoms;
 }
 
+@property(retain, nonatomic) NSMutableDictionary *atoms; // @synthesize atoms=_atoms;
 @property(nonatomic) int hideLastAtomComma; // @synthesize hideLastAtomComma=_hideLastAtomComma;
 @property(nonatomic, getter=isSeparatorHidden) _Bool separatorHidden; // @synthesize separatorHidden=_separatorHidden;
 @property(nonatomic) _Bool allowsDragAndDrop; // @synthesize allowsDragAndDrop=_allowsDragAndDrop;
 @property(nonatomic) _Bool didIgnoreFirstResponderResign; // @synthesize didIgnoreFirstResponderResign=_didIgnoreFirstResponderResign;
-@property(readonly, nonatomic) MFCorecipientsIndicatorAtom *corecipientsIndicator; // @synthesize corecipientsIndicator=_corecipientsIndicatorAtom;
+@property(retain, nonatomic) MFCorecipientsIndicatorAtom *corecipientsIndicator; // @synthesize corecipientsIndicator=_corecipientsIndicatorAtom;
 @property(nonatomic) unsigned long long defaultAtomPresentationOptions; // @synthesize defaultAtomPresentationOptions=_defaultAtomPresentationOptions;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
 @property(readonly, nonatomic) UIView *addButton; // @synthesize addButton=_addButton;
@@ -62,6 +62,7 @@
 @property(nonatomic) double inputDelay; // @synthesize inputDelay=_inputDelay;
 @property(nonatomic) long long maxRecipients; // @synthesize maxRecipients=_maxRecipients;
 @property(nonatomic) _Bool editable; // @synthesize editable=_editable;
+- (void).cxx_destruct;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_tapGestureRecognized:(id)arg1;
 - (void)didMoveToSuperview;
@@ -131,7 +132,7 @@
 @property(readonly, nonatomic) double offsetForRowWithTextField;
 @property(readonly, nonatomic) NSString *text;
 - (void)setLabel:(id)arg1;
-@property(nonatomic) id <MFComposeRecipientViewDelegate> delegate; // @dynamic delegate;
+@property(nonatomic) __weak id <MFComposeRecipientViewDelegate> delegate; // @dynamic delegate;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

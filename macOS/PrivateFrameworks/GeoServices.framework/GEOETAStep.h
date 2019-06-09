@@ -8,27 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOTimeCheckpoints;
+@class GEOTimeCheckpoints, PBUnknownFields;
 
 @interface GEOETAStep : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
+    GEOTimeCheckpoints *_timeCheckpoints;
     unsigned int _distanceRemaining;
     unsigned int _expectedTime;
     unsigned int _stepID;
-    GEOTimeCheckpoints *_timeCheckpoints;
     int _zilchPointIndex;
     struct {
-        unsigned int distanceRemaining:1;
-        unsigned int expectedTime:1;
-        unsigned int stepID:1;
-        unsigned int zilchPointIndex:1;
-    } _has;
+        unsigned int has_distanceRemaining:1;
+        unsigned int has_expectedTime:1;
+        unsigned int has_stepID:1;
+        unsigned int has_zilchPointIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOTimeCheckpoints *timeCheckpoints; // @synthesize timeCheckpoints=_timeCheckpoints;
-@property(nonatomic) unsigned int expectedTime; // @synthesize expectedTime=_expectedTime;
-@property(nonatomic) unsigned int stepID; // @synthesize stepID=_stepID;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+@property(nonatomic) BOOL hasDistanceRemaining;
+@property(nonatomic) unsigned int distanceRemaining;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -36,15 +39,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOTimeCheckpoints *timeCheckpoints;
 @property(readonly, nonatomic) BOOL hasTimeCheckpoints;
 @property(nonatomic) BOOL hasZilchPointIndex;
-@property(nonatomic) int zilchPointIndex; // @synthesize zilchPointIndex=_zilchPointIndex;
+@property(nonatomic) int zilchPointIndex;
 @property(nonatomic) BOOL hasExpectedTime;
+@property(nonatomic) unsigned int expectedTime;
 @property(nonatomic) BOOL hasStepID;
-@property(nonatomic) BOOL hasDistanceRemaining;
-@property(nonatomic) unsigned int distanceRemaining;
+@property(nonatomic) unsigned int stepID;
 
 @end
 

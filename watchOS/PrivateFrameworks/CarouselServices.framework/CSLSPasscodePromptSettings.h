@@ -10,17 +10,32 @@
 #import <CarouselServices/NSCopying-Protocol.h>
 #import <CarouselServices/NSSecureCoding-Protocol.h>
 
+@class NSString;
+
 @interface CSLSPasscodePromptSettings : NSObject <NSCopying, NSCoding, NSSecureCoding>
 {
     _Bool _dismissable;
     _Bool _displaysWhileLocked;
+    _Bool _justPinEntry;
+    _Bool _justPinEntrySimpleCode;
     unsigned int _transitionStyle;
+    unsigned int _justPinEntryCodeLength;
+    unsigned int _justPinEntryMinCodeLength;
+    unsigned int _justPinEntryMaxCodeLength;
+    NSString *_justPinEntryCodeTitle;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *justPinEntryCodeTitle; // @synthesize justPinEntryCodeTitle=_justPinEntryCodeTitle;
+@property(nonatomic) unsigned int justPinEntryMaxCodeLength; // @synthesize justPinEntryMaxCodeLength=_justPinEntryMaxCodeLength;
+@property(nonatomic) unsigned int justPinEntryMinCodeLength; // @synthesize justPinEntryMinCodeLength=_justPinEntryMinCodeLength;
+@property(nonatomic) unsigned int justPinEntryCodeLength; // @synthesize justPinEntryCodeLength=_justPinEntryCodeLength;
+@property(nonatomic, getter=justPinEntryIsSimpleCode) _Bool justPinEntrySimpleCode; // @synthesize justPinEntrySimpleCode=_justPinEntrySimpleCode;
+@property(nonatomic, getter=isjustPinEntry) _Bool justPinEntry; // @synthesize justPinEntry=_justPinEntry;
 @property(nonatomic) unsigned int transitionStyle; // @synthesize transitionStyle=_transitionStyle;
 @property(nonatomic) _Bool displaysWhileLocked; // @synthesize displaysWhileLocked=_displaysWhileLocked;
 @property(nonatomic, getter=isDismissable) _Bool dismissable; // @synthesize dismissable=_dismissable;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -10,5 +10,8 @@
 - (id)messageForPluginPayloadString:(id)arg1 pluginPayload:(id)arg2 flags:(unsigned long long)arg3;
 - (id)messageForNonPluginPayloadString:(id)arg1 baseWritingDirection:(long long)arg2 flags:(unsigned long long)arg3;
 - (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2;
+- (id)facetimeConversationChatItemForGUID:(id)arg1;
+- (id)activeFaceTimeConversationChatItem;
+- (id)facetimeConversationChatItemItemForTUConversation:(id)arg1;
 @end
 

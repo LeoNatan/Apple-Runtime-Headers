@@ -8,6 +8,7 @@
 
 @class NSString, SKUIGiftDashView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftConfirmLabeledValue : UIView
 {
     SKUIGiftDashView *_dashView;

@@ -50,6 +50,7 @@
 - (void)groupStackViewDidBeginReordering:(id)arg1;
 - (void)groupStackView:(id)arg1 deleteConfirmedForPass:(id)arg2;
 - (void)reloadGroupsForGroupStackView:(id)arg1;
+- (_Bool)hasDiscoveryContent;
 - (unsigned int)indexOfSeparationGroup;
 - (unsigned int)indexOfGroup:(id)arg1;
 - (unsigned int)numberOfGroups;

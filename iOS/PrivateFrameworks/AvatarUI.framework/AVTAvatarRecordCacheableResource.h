@@ -13,11 +13,14 @@
 
 @interface AVTAvatarRecordCacheableResource : NSObject <AVTCacheableResource>
 {
+    _Bool _includeAvatarData;
     id <AVTAvatarRecord> _record;
     AVTUIEnvironment *_environment;
 }
 
++ (id)persistentIdentifierForRecordData:(id)arg1;
 + (id)persistentIdentifierPrefixForRecordWithIdentifier:(id)arg1;
+@property(readonly, nonatomic) _Bool includeAvatarData; // @synthesize includeAvatarData=_includeAvatarData;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(readonly, nonatomic) id <AVTAvatarRecord> record; // @synthesize record=_record;
 - (void).cxx_destruct;
@@ -28,7 +31,7 @@
 - (id)identifierForScope:(id)arg1;
 - (id)persistentIdentifierForScope:(id)arg1;
 - (id)volatileIdentifierForScope:(id)arg1;
-- (id)initWithAvatarRecord:(id)arg1 environment:(id)arg2;
+- (id)initWithAvatarRecord:(id)arg1 includeAvatarData:(_Bool)arg2 environment:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

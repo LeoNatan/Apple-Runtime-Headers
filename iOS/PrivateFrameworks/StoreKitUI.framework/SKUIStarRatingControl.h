@@ -8,6 +8,7 @@
 
 @class UIImage, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStarRatingControl : UIControl
 {
     long long _previousUserRating;

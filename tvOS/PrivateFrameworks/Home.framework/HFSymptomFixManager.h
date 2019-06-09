@@ -8,22 +8,21 @@
 
 #import <Home/HMSymptomFixSessionDelegate-Protocol.h>
 
-@class NSMapTable, NSString;
+@class NSMutableSet, NSString;
 
 @interface HFSymptomFixManager : NSObject <HMSymptomFixSessionDelegate>
 {
-    NSMapTable *_symptomToRepairSessionMapTable;
+    NSMutableSet *_items;
 }
 
 + (id)sharedManager;
-@property(retain, nonatomic) NSMapTable *symptomToRepairSessionMapTable; // @synthesize symptomToRepairSessionMapTable=_symptomToRepairSessionMapTable;
+@property(readonly, nonatomic) NSMutableSet *items; // @synthesize items=_items;
 - (void).cxx_destruct;
 - (void)fixSession:(id)arg1 didChangeState:(long long)arg2;
-- (id)fixableObjectForSession:(id)arg1;
-- (id)_mapTableKeyFromSymptom:(id)arg1 fixableObject:(id)arg2;
+- (id)_itemForFixSession:(id)arg1;
+- (id)_itemForSymptom:(id)arg1 accessory:(id)arg2;
 - (void)fixSymptom:(id)arg1 forFixableObject:(id)arg2 presentingViewController:(id)arg3;
-- (long long)fixStateForSymptom:(id)arg1 forFixableObject:(id)arg2;
-- (_Bool)symptomIsBeingFixed:(id)arg1 forFixableObject:(id)arg2;
+- (long long)fixStateForSymptom:(id)arg1 accessory:(id)arg2;
 - (_Bool)anySymptomIsBeingFixedForFixableObject:(id)arg1;
 - (id)init;
 

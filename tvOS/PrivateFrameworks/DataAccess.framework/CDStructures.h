@@ -4,73 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Function Pointers and Blocks
-
-typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
+#pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
-
-#pragma mark Named Structures
-
-struct ASContact {
-    Class _field1;
-    id _field2;
-    id _field3;
-    int _field4;
-    int _field5;
-    id _field6;
-    int _field7;
-    CDUnknownBlockType _field8;
-    int _field9;
-    id _field10;
-};
-
-struct ASEvent {
-    Class _field1;
-    id _field2;
-    id _field3;
-    int _field4;
-    int _field5;
-    id _field6;
-    int _field7;
-    CDUnknownBlockType _field8;
-    int _field9;
-    id _field10;
-};
-
-struct ASNote {
-    Class _field1;
-    id _field2;
-    id _field3;
-    int _field4;
-    int _field5;
-    id _field6;
-    int _field7;
-    CDUnknownBlockType _field8;
-    int _field9;
-    id _field10;
-};
-
-struct ASToDo {
-    Class _field1;
-    id _field2;
-    id _field3;
-    int _field4;
-    int _field5;
-    id _field6;
-    int _field7;
-    CDUnknownBlockType _field8;
-    int _field9;
-    id _field10;
-};
-
-#pragma mark Typedef'd Structures
-
-typedef struct {
-    long long version;
-    void *info;
-    CDUnknownFunctionPointerType retain;
-    CDUnknownFunctionPointerType release;
-    CDUnknownFunctionPointerType copyDescription;
-} CDStruct_4210025a;
 

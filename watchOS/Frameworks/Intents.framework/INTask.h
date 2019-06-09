@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INCacheableContainer-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INSpatialEventTrigger, INSpeakableString, INTemporalEventTrigger, NSDateComponents, NSString;
+@class INContactEventTrigger, INSpatialEventTrigger, INSpeakableString, INTemporalEventTrigger, NSDateComponents, NSString;
 
-@interface INTask : NSObject <NSCopying, NSSecureCoding>
+@interface INTask : NSObject <INCacheableContainer, INJSONSerializable, NSCopying, NSSecureCoding>
 {
     INSpeakableString *_title;
     int _status;
@@ -21,9 +23,18 @@
     NSDateComponents *_modifiedDateComponents;
     NSString *_identifier;
     int _taskType;
+    int _priority;
+    INContactEventTrigger *_contactEventTrigger;
+    int _taskReference;
+    NSString *_parentIdentifier;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (_Bool)supportsSecureCoding;
+@property(readonly, copy, nonatomic) NSString *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
+@property(readonly, nonatomic) int taskReference; // @synthesize taskReference=_taskReference;
+@property(readonly, copy, nonatomic) INContactEventTrigger *contactEventTrigger; // @synthesize contactEventTrigger=_contactEventTrigger;
+@property(readonly, nonatomic) int priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) int taskType; // @synthesize taskType=_taskType;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(readonly, copy, nonatomic) NSDateComponents *modifiedDateComponents; // @synthesize modifiedDateComponents=_modifiedDateComponents;
@@ -35,13 +46,25 @@
 - (void).cxx_destruct;
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (id)initWithTitle:(id)arg1 status:(int)arg2 taskType:(int)arg3 spatialEventTrigger:(id)arg4 temporalEventTrigger:(id)arg5 createdDateComponents:(id)arg6 modifiedDateComponents:(id)arg7 identifier:(id)arg8;
+- (id)initWithTitle:(id)arg1 status:(int)arg2 taskType:(int)arg3 spatialEventTrigger:(id)arg4 temporalEventTrigger:(id)arg5 createdDateComponents:(id)arg6 modifiedDateComponents:(id)arg7 identifier:(id)arg8 priority:(int)arg9 contactEventTrigger:(id)arg10 taskReference:(int)arg11 parentIdentifier:(id)arg12;
+- (id)initWithTitle:(id)arg1 status:(int)arg2 taskType:(int)arg3 spatialEventTrigger:(id)arg4 temporalEventTrigger:(id)arg5 createdDateComponents:(id)arg6 modifiedDateComponents:(id)arg7 identifier:(id)arg8 priority:(int)arg9;
+- (id)init;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (id)initWithTitle:(id)arg1 status:(int)arg2 taskType:(int)arg3 spatialEventTrigger:(id)arg4 temporalEventTrigger:(id)arg5 createdDateComponents:(id)arg6 modifiedDateComponents:(id)arg7 identifier:(id)arg8 contactEventTrigger:(id)arg9 taskReference:(int)arg10;
+- (void)_intents_updateContainerWithCache:(id)arg1;
+- (id)_intents_cacheableObjects;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class OITSUNoCopyDictionary, PDRootTimeNode;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimation : NSObject
 {
     PDRootTimeNode *mRootTimeNode;

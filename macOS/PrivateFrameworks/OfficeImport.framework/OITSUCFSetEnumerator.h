@@ -8,6 +8,7 @@
 
 #import <OfficeImport/NSFastEnumeration-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUCFSetEnumerator : NSEnumerator <NSFastEnumeration>
 {
     void *mInlineObjects[16];

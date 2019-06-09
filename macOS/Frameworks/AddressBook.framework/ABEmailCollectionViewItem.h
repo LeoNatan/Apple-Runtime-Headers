@@ -8,18 +8,24 @@
 
 #import <AddressBook/ABCollectionItemMessagingAvailabilityHelperDelegate-Protocol.h>
 
-@class ABCollectionItemMessagingAvailabilityHelper;
+@class ABCollectionItemMessagingAvailabilityHelper, CNFuture;
 
 @interface ABEmailCollectionViewItem : ABCollectionViewItem <ABCollectionItemMessagingAvailabilityHelperDelegate>
 {
     ABCollectionItemMessagingAvailabilityHelper *_messagingHelper;
+    CNFuture *_availabilityFuture;
 }
 
+@property(retain, nonatomic) CNFuture *availabilityFuture; // @synthesize availabilityFuture=_availabilityFuture;
+@property(readonly, nonatomic) ABCollectionItemMessagingAvailabilityHelper *messagingHelper; // @synthesize messagingHelper=_messagingHelper;
 - (void).cxx_destruct;
 - (void)messagingAvailabilityDidChangeHelper:(id)arg1;
 - (BOOL)shouldShowGlyphButton:(id)arg1;
+- (void)stopAvailabilityLookup;
+- (void)startAvailabilityLookup;
 - (void)didRemoveFromCollection:(id)arg1;
 - (void)didInsertIntoCollectionView:(id)arg1;
+- (void)dealloc;
 - (id)init;
 
 @end

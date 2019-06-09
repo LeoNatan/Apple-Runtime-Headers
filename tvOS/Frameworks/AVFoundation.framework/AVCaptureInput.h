@@ -14,6 +14,7 @@
 }
 
 + (void)initialize;
+- (id)videoDevice;
 - (void)performFigCaptureSessionOperationSafelyUsingBlock:(CDUnknownBlockType)arg1;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)detachFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;

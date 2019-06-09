@@ -10,6 +10,7 @@
 @protocol SKUITabBarControllerDelegate;
 
 @protocol SKUITabBarController <NSObject>
+@property(nonatomic) long long forcedUserInterfaceStyle;
 @property(readonly, nonatomic) NSArray *allViewControllers;
 @property(retain, nonatomic) UIViewController *transientViewController;
 @property(readonly, nonatomic) UIView *tabBar;
@@ -26,6 +27,5 @@
 @property(readonly, nonatomic) UIViewController *floatingOverlayViewController;
 @property(readonly, nonatomic) UINavigationController *moreNavigationController;
 - (void)setFloatingOverlayViewController:(UIViewController *)arg1 animated:(_Bool)arg2;
-- (void)setTabBarBackdropStyle:(long long)arg1;
 @end
 

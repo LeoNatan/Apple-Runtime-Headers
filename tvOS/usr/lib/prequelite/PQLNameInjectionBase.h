@@ -6,7 +6,6 @@
 
 #import <Foundation/NSData.h>
 
-__attribute__((visibility("hidden")))
 @interface PQLNameInjectionBase : NSData
 {
     unsigned long long _length;

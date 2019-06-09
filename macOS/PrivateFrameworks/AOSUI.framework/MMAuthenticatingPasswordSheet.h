@@ -19,7 +19,6 @@
     NSString *_cancelButtonString;
     NSString *_alternateButtonString;
     NSDictionary *_authenticationResults;
-    NSWindow *_parentWindow;
     NSURL *_iForgotURL;
     NSError *_authenticationError;
     NSImage *_displayImage;
@@ -29,6 +28,7 @@
     BOOL _shouldForceInteractiveAuth;
     BOOL _shouldOfferSecurityUpgrade;
     CDUnknownBlockType _helpHandler;
+    NSWindow *_parentWindow;
 }
 
 + (id)standardiForgotURL;
@@ -48,12 +48,12 @@
 @property(copy) NSString *rawPassword; // @synthesize rawPassword=_rawPassword;
 @property(copy) NSString *password; // @synthesize password=_password;
 @property(copy) NSString *accountID; // @synthesize accountID=_accountID;
+- (void).cxx_destruct;
 - (void)helpButtonPressed:(id)arg1;
 - (void)iForgotButtonPressed:(id)arg1;
 - (void)showAuthPasswordSheetUsingWindow:(id)arg1 shouldNest:(BOOL)arg2 helpHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)showAuthPasswordSheetUsingWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)showAuthPasswordSheetUsingWindow:(id)arg1;
-- (void)dealloc;
 - (id)initWithAccountID:(id)arg1 title:(id)arg2 message:(id)arg3 defaultButtonTitle:(id)arg4 cancelButtonTitle:(id)arg5 alternateButtonTitle:(id)arg6 icon:(id)arg7 iconLabel:(id)arg8;
 
 @end

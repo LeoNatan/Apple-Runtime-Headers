@@ -8,6 +8,7 @@
 
 @class OCFontSubfamily;
 
+__attribute__((visibility("hidden")))
 @interface OCFont : NSObject
 {
     BOOL _bold;

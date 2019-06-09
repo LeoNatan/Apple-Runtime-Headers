@@ -8,39 +8,52 @@
 
 @class NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SystemProperties : NSObject
 {
     BOOL _internalBuild;
-    BOOL _carrierSeedBuild;
+    BOOL _seedBuild;
+    BOOL _carrierBuild;
+    BOOL _dualSIMCapable;
+    BOOL _dualSIMEnabled;
     BOOL _basebandCapability;
-    BOOL _lowEndHardware;
-    BOOL _customerSeedBuild;
     BOOL _internalBuildDisabledByOverride;
     int _deviceClass;
+    NSString *_buildVariant;
     NSString *_productType;
     NSString *_productName;
     NSString *_productVersion;
     NSString *_buildVersion;
+    NSString *_buildVersionPrefix;
+    NSString *_buildPlatform;
     NSString *_basebandChipset;
     NSNumber *_carrierSeedBuildOverride;
+    NSNumber *_seedBuildOverride;
 }
 
 + (id)sharedInstance;
+@property(retain, nonatomic) NSNumber *seedBuildOverride; // @synthesize seedBuildOverride=_seedBuildOverride;
 @property(retain, nonatomic) NSNumber *carrierSeedBuildOverride; // @synthesize carrierSeedBuildOverride=_carrierSeedBuildOverride;
 @property(nonatomic) BOOL internalBuildDisabledByOverride; // @synthesize internalBuildDisabledByOverride=_internalBuildDisabledByOverride;
-@property(readonly) NSString *basebandChipset; // @synthesize basebandChipset=_basebandChipset;
-@property(readonly) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
-@property(readonly) NSString *productVersion; // @synthesize productVersion=_productVersion;
-@property(readonly) NSString *productName; // @synthesize productName=_productName;
-@property(readonly) BOOL customerSeedBuild; // @synthesize customerSeedBuild=_customerSeedBuild;
-@property(readonly) BOOL lowEndHardware; // @synthesize lowEndHardware=_lowEndHardware;
-@property(readonly) BOOL basebandCapability; // @synthesize basebandCapability=_basebandCapability;
-@property(readonly) int deviceClass; // @synthesize deviceClass=_deviceClass;
-@property(readonly) NSString *productType; // @synthesize productType=_productType;
+@property(readonly, nonatomic) NSString *basebandChipset; // @synthesize basebandChipset=_basebandChipset;
+@property(readonly, nonatomic) NSString *buildPlatform; // @synthesize buildPlatform=_buildPlatform;
+@property(readonly, nonatomic) NSString *buildVersionPrefix; // @synthesize buildVersionPrefix=_buildVersionPrefix;
+@property(readonly, nonatomic) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
+@property(readonly, nonatomic) NSString *productVersion; // @synthesize productVersion=_productVersion;
+@property(readonly, nonatomic) NSString *productName; // @synthesize productName=_productName;
+@property(readonly, nonatomic) BOOL basebandCapability; // @synthesize basebandCapability=_basebandCapability;
+@property(readonly, nonatomic) int deviceClass; // @synthesize deviceClass=_deviceClass;
+@property(readonly, nonatomic) NSString *productType; // @synthesize productType=_productType;
+@property(readonly, nonatomic) BOOL dualSIMEnabled; // @synthesize dualSIMEnabled=_dualSIMEnabled;
+@property(readonly, nonatomic) BOOL dualSIMCapable; // @synthesize dualSIMCapable=_dualSIMCapable;
 - (void).cxx_destruct;
-@property(readonly) BOOL carrierSeedBuild; // @synthesize carrierSeedBuild=_carrierSeedBuild;
-@property(readonly) BOOL internalBuild; // @synthesize internalBuild=_internalBuild;
-- (id)deviceClassString;
+@property(readonly, nonatomic) NSString *buildVariant; // @synthesize buildVariant=_buildVariant;
+@property(readonly, nonatomic) BOOL carrierSeedBuild; // @dynamic carrierSeedBuild;
+@property(readonly, nonatomic) BOOL carrierBuild; // @synthesize carrierBuild=_carrierBuild;
+@property(readonly, nonatomic) BOOL customerSeedBuild; // @dynamic customerSeedBuild;
+@property(readonly, nonatomic) BOOL seedBuild; // @synthesize seedBuild=_seedBuild;
+@property(readonly, nonatomic) BOOL internalBuild; // @synthesize internalBuild=_internalBuild;
+@property(readonly, nonatomic) NSString *deviceClassString;
 - (id)init;
 - (id)description;
 

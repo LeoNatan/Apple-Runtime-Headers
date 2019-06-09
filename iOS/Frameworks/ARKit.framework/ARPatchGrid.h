@@ -15,6 +15,7 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) float pivot;
 @property(readonly, nonatomic) const CDStruct_183601bc *patches;
 @property(readonly, nonatomic) unsigned long long size;

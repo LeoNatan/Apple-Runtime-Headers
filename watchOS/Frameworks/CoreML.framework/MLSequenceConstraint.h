@@ -8,18 +8,22 @@
 
 #import <CoreML/MLFeatureValueConstraint-Protocol.h>
 #import <CoreML/NSCopying-Protocol.h>
+#import <CoreML/NSSecureCoding-Protocol.h>
 
 @class MLFeatureDescription;
 
-@interface MLSequenceConstraint : NSObject <MLFeatureValueConstraint, NSCopying>
+@interface MLSequenceConstraint : NSObject <MLFeatureValueConstraint, NSCopying, NSSecureCoding>
 {
     MLFeatureDescription *_valueDescription;
     struct _NSRange _countRange;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) struct _NSRange countRange; // @synthesize countRange=_countRange;
 @property(readonly, nonatomic) MLFeatureDescription *valueDescription; // @synthesize valueDescription=_valueDescription;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isAllowedValue:(id)arg1 error:(id *)arg2;
 - (id)initWithValueDescription:(id)arg1 countRange:(struct _NSRange)arg2;

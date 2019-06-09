@@ -30,12 +30,12 @@
     NSURL *_resourceListURL;
     NSURL *_resourceSearchPathURL;
     NSAttributedString *_attributedText;
-    NSString *_voiceName;
     unsigned int _audioQueueFlags;
     NSString *_clientBundleIdentifier;
     CDUnknownBlockType _stopHandler;
     CDUnknownBlockType _pauseHandler;
     int _pointer;
+    NSString *_voiceName;
     double _rate;
     double _pitch;
     double _volume;
@@ -43,6 +43,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *voiceName; // @synthesize voiceName=_voiceName;
 @property(nonatomic) int pointer; // @synthesize pointer=_pointer;
 @property(copy, nonatomic) CDUnknownBlockType pauseHandler; // @synthesize pauseHandler=_pauseHandler;
 @property(copy, nonatomic) CDUnknownBlockType stopHandler; // @synthesize stopHandler=_stopHandler;
@@ -51,7 +52,6 @@
 @property(nonatomic) unsigned int audioQueueFlags; // @synthesize audioQueueFlags=_audioQueueFlags;
 @property(nonatomic) _Bool maintainsInput; // @synthesize maintainsInput=_maintainsInput;
 @property(nonatomic) _Bool audioSessionIDIsValid; // @synthesize audioSessionIDIsValid=_audioSessionIDIsValid;
-@property(copy, nonatomic) NSString *voiceName; // @synthesize voiceName=_voiceName;
 @property(nonatomic) _Bool useCustomVoice; // @synthesize useCustomVoice=_useCustomVoice;
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(copy, nonatomic) NSURL *resourceSearchPathURL; // @synthesize resourceSearchPathURL=_resourceSearchPathURL;

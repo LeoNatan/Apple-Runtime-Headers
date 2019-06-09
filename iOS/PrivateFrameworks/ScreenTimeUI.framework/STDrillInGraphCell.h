@@ -6,17 +6,18 @@
 
 #import <ScreenTimeUI/STTableCell.h>
 
-@class STUsageGraphView, STUsageItem, UILabel;
+@class STUsageGraphViewController, STUsageItem, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface STDrillInGraphCell : STTableCell
 {
     UILabel *_usageLabel;
-    STUsageGraphView *_usageGraphView;
+    STUsageGraphViewController *_usageGraphViewController;
     STUsageItem *_usageItem;
 }
 
 @property(readonly, nonatomic) STUsageItem *usageItem; // @synthesize usageItem=_usageItem;
-@property(readonly, nonatomic) STUsageGraphView *usageGraphView; // @synthesize usageGraphView=_usageGraphView;
+@property(readonly, nonatomic) STUsageGraphViewController *usageGraphViewController; // @synthesize usageGraphViewController=_usageGraphViewController;
 @property(readonly, nonatomic) UILabel *usageLabel; // @synthesize usageLabel=_usageLabel;
 - (void).cxx_destruct;
 - (void)setValue:(id)arg1;

@@ -6,13 +6,11 @@
 
 #import <UIKitCore/UITable-Protocol.h>
 
-@class NSArray, NSIndexPath, NSString, UITableViewCell, UITouch, UIView, _UITableViewCellActionButton;
+@class NSIndexPath, NSString, UITableViewCell, UITouch, UIView;
 
 @protocol UITable_UITableViewCellDelegate <UITable>
-@property(readonly, nonatomic, getter=_isEditingForSwipeDeletion) _Bool editingForSwipeDeletion;
 @property(retain, nonatomic, getter=_swipeToDeleteCell, setter=_setSwipeToDeleteCell:) UITableViewCell *swipeToDeleteCell;
-@property(readonly, nonatomic, getter=_usesModernSwipeActions) _Bool usesModernSwipeActions;
-@property(readonly, nonatomic, getter=_swipeActionButtons) NSArray *swipeActionButtons;
+@property(readonly, nonatomic, getter=_isEditingForSwipeDeletion) _Bool editingForSwipeDeletion;
 @property(readonly, nonatomic, getter=_wasEditing) _Bool wasEditing;
 @property(readonly, nonatomic, getter=_isInModalViewController) _Bool inModalViewController;
 @property(readonly, nonatomic, getter=_popoverControllerStyle) int popoverControllerStyle;
@@ -26,8 +24,6 @@
 - (void)_animateDeletionOfRowWithCell:(UITableViewCell *)arg1;
 - (void)_animateDeletionOfRowAtIndexPath:(NSIndexPath *)arg1;
 - (NSString *)_titleForDeleteConfirmationButton:(UITableViewCell *)arg1;
-- (void)_removeWasCanceledForCell:(UITableViewCell *)arg1;
-- (void)_finishedRemovingRemovalButtonForTableCell:(UITableViewCell *)arg1;
 - (void)_didInsertRowForTableCell:(UITableViewCell *)arg1;
 - (void)_endReorderingForCell:(UITableViewCell *)arg1 wasCancelled:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_draggingReorderingCell:(UITableViewCell *)arg1 yDelta:(float)arg2 touch:(UITouch *)arg3;
@@ -35,17 +31,6 @@
 - (_Bool)_isReorderControlActiveForCell:(UITableViewCell *)arg1;
 - (_Bool)_isCellReorderable:(UITableViewCell *)arg1;
 - (UIView *)_reorderingCell;
-- (double)_deleteConfirmationHorizontalVelocity;
-- (float)_deleteConfirmationHorizontalOffset;
-- (void)_configureDeleteConfirmationDecelerationRate:(float)arg1;
-- (void)_revealDeleteConfirmationButtonWithWidth:(float)arg1;
-- (void)_endSwipeToDeleteRowDidDelete:(_Bool)arg1;
-- (void)_endSwipeToDeleteGesture:(_Bool)arg1;
-- (void)_animateSwipeCancelation;
-- (void)_installSwipeToDeleteGobbler;
-- (void)_actionButton:(_UITableViewCellActionButton *)arg1 pushedInCell:(UITableViewCell *)arg2;
-- (void)_swipeAccessoryButtonPushedInCell:(UITableViewCell *)arg1;
-- (void)_setSwipeToDeleteCell:(UITableViewCell *)arg1 installGobbler:(_Bool)arg2;
 - (void)_swipeToDeleteCell:(UITableViewCell *)arg1;
 - (struct CGRect)_calloutTargetRectForCell:(UITableViewCell *)arg1;
 - (void)_performAction:(SEL)arg1 forCell:(UITableViewCell *)arg2 sender:(id)arg3;

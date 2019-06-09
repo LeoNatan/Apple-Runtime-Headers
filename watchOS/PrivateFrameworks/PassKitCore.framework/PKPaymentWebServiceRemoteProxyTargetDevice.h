@@ -21,11 +21,21 @@
 
 @property(readonly, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
+- (void)deleteApplePayTrustKeyWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)createApplePayTrustKeyWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)applePayTrustKeyForIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)invalidateRemoteProxyTargetDevice;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
 - (void)appleAccountInformationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)renewAppleAccountWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;
+- (void)updateAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)deviceMetadataWithFields:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)featureApplicationsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
+- (void)updatedAccountsForProvisioningWithCompletion:(CDUnknownBlockType)arg1;
+- (void)supportedFeatureIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
+- (void)supportsAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)supportsPeerPaymentRegistrationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removePass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)addPassData:(id)arg1 completion:(CDUnknownBlockType)arg2;

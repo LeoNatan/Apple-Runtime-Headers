@@ -8,6 +8,7 @@
 
 @class NSArray, NSNumber;
 
+__attribute__((visibility("hidden")))
 @interface STUsageReportGraphDataSet : NSObject
 {
     unsigned long long _timePeriod;
@@ -27,6 +28,7 @@
 @property(nonatomic) unsigned long long itemType; // @synthesize itemType=_itemType;
 @property(nonatomic) unsigned long long timePeriod; // @synthesize timePeriod=_timePeriod;
 - (void).cxx_destruct;
+- (id)initEmptyDataSetWithTimePeriod:(unsigned long long)arg1 referenceDate:(id)arg2;
 - (id)initWithTimePeriod:(unsigned long long)arg1 itemType:(unsigned long long)arg2 total:(id)arg3 max:(id)arg4 average:(id)arg5 averageAsPercentageOfMax:(double)arg6 dataPoints:(id)arg7;
 
 @end

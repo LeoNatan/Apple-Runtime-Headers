@@ -23,6 +23,8 @@
         unsigned int implementsInsertElement:1;
         unsigned int implementsMoveElement:1;
         unsigned int implementsIndexPathVisibility:1;
+        unsigned int implementsBeginRelevanceUpdate:1;
+        unsigned int implementsFinishedRelevanceUpdate:1;
     } _delegateCallbacks;
     NSArray *_hiddenIndices;
     NSMutableSet *_hiddenBundleIdentifiers;
@@ -49,6 +51,8 @@
 - (id)interactionTypeForElement:(id)arg1;
 - (_Bool)elementIsAvailable:(id)arg1;
 - (id)elementsOrdered:(unsigned long long)arg1 relativeToElement:(id)arg2;
+- (void)relevanceEngineDidFinishUpdatingRelevance:(id)arg1;
+- (void)relevanceEngineDidBeginUpdatingRelevance:(id)arg1;
 - (_Bool)relevanceEngine:(id)arg1 isElementAtPathVisible:(id)arg2;
 - (void)relevanceEngine:(id)arg1 didMoveElement:(id)arg2 fromPath:(id)arg3 toPath:(id)arg4;
 - (void)relevanceEngine:(id)arg1 didInsertElement:(id)arg2 atPath:(id)arg3;
@@ -61,10 +65,12 @@
 - (_Bool)_isElementHidden:(id)arg1;
 - (void)_setElement:(id)arg1 atIndexPath:(id)arg2 hidden:(_Bool)arg3;
 - (void)_enumerateEngineElementsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)_enumerateEngineElementsInSection:(unsigned long long)arg1 withOptions:(unsigned long long)arg2 usingBlock:(CDUnknownBlockType)arg3;
 - (id)_contentForElement:(id)arg1;
 - (_Bool)_sectionHasContent:(id)arg1;
 - (id)_sectionSupportingNoContentElements;
 - (void)_loadNewRelevanceEngine:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)predictedContentForSectionAtIndex:(unsigned long long)arg1 atDate:(id)arg2 limit:(long long)arg3;
 - (void)resignCurrent;
 - (void)makeCurrent;
 @property(readonly, nonatomic) REUITrainingContext *trainingContext;

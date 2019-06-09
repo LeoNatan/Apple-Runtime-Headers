@@ -7,21 +7,30 @@
 #import <objc/NSObject.h>
 
 #import <HomeKit/NSCopying-Protocol.h>
+#import <HomeKit/NSMutableCopying-Protocol.h>
 
-@interface HMHomeManagerConfiguration : NSObject <NSCopying>
+@class NSOperationQueue, NSURL;
+
+@interface HMHomeManagerConfiguration : NSObject <NSCopying, NSMutableCopying>
 {
-    _Bool _shouldConnect;
     unsigned int _cachePolicy;
+    _Bool _shouldConnect;
     unsigned int _options;
+    NSOperationQueue *_delegateQueue;
+    NSURL *_cacheURL;
 }
 
 + (id)defaultPrivateConfiguration;
 + (id)defaultConfiguration;
-@property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
-@property(nonatomic) unsigned int cachePolicy; // @synthesize cachePolicy=_cachePolicy;
+@property(readonly) NSURL *cacheURL; // @synthesize cacheURL=_cacheURL;
+@property(readonly) NSOperationQueue *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
+@property(readonly) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) _Bool shouldConnect; // @synthesize shouldConnect=_shouldConnect;
+@property(nonatomic) unsigned int cachePolicy; // @synthesize cachePolicy=_cachePolicy;
+- (void).cxx_destruct;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (_Bool)canUseCache;
+@property(readonly) _Bool canUseCache;
 - (id)initWithOptions:(unsigned int)arg1 cachePolicy:(unsigned int)arg2;
 - (id)init;
 

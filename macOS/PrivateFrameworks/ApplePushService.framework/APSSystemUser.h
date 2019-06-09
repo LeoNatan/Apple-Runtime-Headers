@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 + (id)systemUserWithUID:(unsigned int)arg1;
 + (id)systemUserWithUserID:(id)arg1;
 @property(readonly, nonatomic) NSString *userID; // @synthesize userID=_userID;
+- (void).cxx_destruct;
 - (id)debugDescription;
 @property(retain, nonatomic) NSString *status;
 - (BOOL)isDaemonUser;
@@ -27,7 +28,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isLoggedIn;
 - (void)updateStatus;
 @property(readonly, nonatomic) unsigned int uid;
-- (void)dealloc;
 - (id)initWithUserID:(id)arg1;
 
 @end

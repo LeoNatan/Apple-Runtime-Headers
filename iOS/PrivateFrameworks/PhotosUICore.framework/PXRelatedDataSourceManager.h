@@ -20,6 +20,7 @@
     unsigned long long _loadBatchSize;
     NSDate *_loadStartDate;
     _Bool _didLoadInitialDataSource;
+    _Bool _useItemIndexPaths;
     _Bool __canceled;
     unsigned long long __initialBatchSize;
     unsigned long long __loadBatchSize;
@@ -34,6 +35,7 @@
 @property(nonatomic, getter=_isCanceled, setter=_setCanceled:) _Bool _canceled; // @synthesize _canceled=__canceled;
 @property(readonly, nonatomic) PHFetchResult *_collectionListFetchResult; // @synthesize _collectionListFetchResult=__collectionListFetchResult;
 @property(readonly, nonatomic) PXPhotosDetailsContext *_context; // @synthesize _context=__context;
+@property(readonly, nonatomic) _Bool useItemIndexPaths; // @synthesize useItemIndexPaths=_useItemIndexPaths;
 @property(nonatomic) unsigned long long loadBatchSize; // @synthesize loadBatchSize=__loadBatchSize;
 @property(nonatomic) unsigned long long initialBatchSize; // @synthesize initialBatchSize=__initialBatchSize;
 - (void).cxx_destruct;
@@ -52,6 +54,7 @@
 - (void)registerChangeObserver:(id)arg1 context:(void *)arg2;
 - (void)cancelLoading;
 - (void)startLoading;
+- (id)initWithPhotosDetailsContext:(id)arg1 useItemIndexPaths:(_Bool)arg2;
 - (id)initWithPhotosDetailsContext:(id)arg1;
 - (id)init;
 

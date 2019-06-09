@@ -17,7 +17,7 @@
     NSData *data;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)data;
 - (_Bool)streamingDone;
 - (_Bool)streaming;

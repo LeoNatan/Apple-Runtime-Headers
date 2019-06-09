@@ -12,10 +12,13 @@
 
 @interface NNMKProtoAccountAuthenticationStatus : PBCodable <NSCopying>
 {
+    double _requestTime;
     NSMutableArray *_accountsStatus;
+    CDStruct_b7a4e4f9 _has;
 }
 
 + (Class)accountsStatusType;
+@property(nonatomic) double requestTime; // @synthesize requestTime=_requestTime;
 @property(retain, nonatomic) NSMutableArray *accountsStatus; // @synthesize accountsStatus=_accountsStatus;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -27,6 +30,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasRequestTime;
 - (id)accountsStatusAtIndex:(unsigned long long)arg1;
 - (unsigned long long)accountsStatusCount;
 - (void)addAccountsStatus:(id)arg1;

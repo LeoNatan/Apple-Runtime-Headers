@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double packetLossPercentage; // @synthesize packetLossPercentage=_packetLossPercentage;
 @property(readonly, nonatomic) _Bool isOperatingAtMaxBitrate; // @synthesize isOperatingAtMaxBitrate=_isOperatingAtMaxBitrate;
 @property(readonly, nonatomic) _Bool isOperatingAtMinBitrate; // @synthesize isOperatingAtMinBitrate=_isOperatingAtMinBitrate;
+@property(readonly, nonatomic) struct tagHANDLE *rtpHandle; // @synthesize rtpHandle=_rtpHandle;
 - (void)reportingVideoStreamEvent:(unsigned short)arg1;
 - (id)className;
 - (void)scheduleTMMBR:(unsigned int)arg1;
@@ -48,7 +49,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double nowrdShort;
 @property(readonly, nonatomic) double nowrd;
 @property(readonly, nonatomic) double owrd;
-- (void)updateRTPReceiveWithTimestamp:(unsigned int)arg1 sampleRate:(unsigned int)arg2 time:(double)arg3;
+- (void)updateRTPReceiveWithTimestamp:(unsigned int)arg1 sampleRate:(unsigned int)arg2 time:(double)arg3 size:(unsigned int)arg4 endOfFrame:(_Bool)arg5;
 - (void)updateVideoStall:(_Bool)arg1 withStallDuration:(unsigned int)arg2;
 - (void)receivedTMMBN:(unsigned int)arg1;
 - (_Bool)runVideoStreamRateAdaptation;

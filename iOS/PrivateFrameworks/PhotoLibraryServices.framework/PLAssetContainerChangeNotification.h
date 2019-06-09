@@ -17,6 +17,7 @@
 }
 
 + (id)notificationWithContainer:(id)arg1 snapshot:(id)arg2 changedAssets:(id)arg3;
+- (void).cxx_destruct;
 - (void)_calculateDiffs;
 - (_Bool)_getOldSet:(id *)arg1 newSet:(id *)arg2;
 - (id)_contentRelationshipName;
@@ -24,8 +25,8 @@
 - (_Bool)hasDeletes;
 @property(readonly, nonatomic) _Bool keyAssetDidChange;
 @property(readonly, nonatomic) _Bool titleDidChange;
-@property(readonly, retain, nonatomic) NSObject<PLAlbumProtocol> *album;
-@property(readonly, retain, nonatomic) id <PLAssetContainer> container;
+@property(readonly, nonatomic) NSObject<PLAlbumProtocol> *album;
+@property(readonly, nonatomic) id <PLAssetContainer> container;
 - (id)description;
 - (id)userInfo;
 - (id)name;

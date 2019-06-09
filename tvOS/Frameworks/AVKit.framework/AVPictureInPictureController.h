@@ -6,25 +6,79 @@
 
 #import <objc/NSObject.h>
 
-@interface AVPictureInPictureController : NSObject
+#import <AVKit/AVPictureInPictureControlsStyleAppearance-Protocol.h>
+#import <AVKit/AVPictureInPicturePlatformAdapterDelegate-Protocol.h>
+
+@class AVObservationController, AVPictureInPicturePlatformAdapter, AVPictureInPictureViewController, AVPlayerController, AVPlayerLayer, NSString;
+@protocol AVPictureInPictureContentSource, AVPictureInPictureControllerDelegate;
+
+@interface AVPictureInPictureController : NSObject <AVPictureInPicturePlatformAdapterDelegate, AVPictureInPictureControlsStyleAppearance>
 {
     _Bool _pictureInPicturePossible;
     _Bool _pictureInPictureActive;
     _Bool _pictureInPictureSuspended;
-    id _delegate;
+    _Bool _otherPictureInPictureActive;
+    _Bool _retainsSourceDuringPictureInPicturePlayback;
+    _Bool _allowsPictureInPicturePlayback;
+    _Bool _allowsPictureInPictureFromInlineWhenEnteringBackground;
+    _Bool _pictureInPictureWasStartedWhenEnteringBackground;
+    long long _controlsStyle;
+    AVPlayerLayer *_playerLayer;
+    id <AVPictureInPictureControllerDelegate> _delegate;
+    AVPictureInPicturePlatformAdapter *_platformAdapter;
+    AVObservationController *_observationController;
+    id <AVPictureInPictureContentSource> _sourceIfRetainedDuringPictureInPicturePlayback;
+    id <AVPictureInPictureContentSource> _source;
+    AVPlayerController *_playerController;
 }
 
++ (id)pictureInPictureButtonStopImage;
++ (id)pictureInPictureButtonStartImage;
++ (id)pictureInPictureButtonStopImageCompatibleWithTraitCollection:(id)arg1;
++ (id)pictureInPictureButtonStartImageCompatibleWithTraitCollection:(id)arg1;
 + (_Bool)isPictureInPictureSupported;
-@property(readonly, nonatomic, getter=isPictureInPictureSuspended) _Bool pictureInPictureSuspended; // @synthesize pictureInPictureSuspended=_pictureInPictureSuspended;
-@property(readonly, nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
-@property(readonly, nonatomic, getter=isPictureInPicturePossible) _Bool pictureInPicturePossible; // @synthesize pictureInPicturePossible=_pictureInPicturePossible;
-@property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) _Bool pictureInPictureWasStartedWhenEnteringBackground; // @synthesize pictureInPictureWasStartedWhenEnteringBackground=_pictureInPictureWasStartedWhenEnteringBackground;
+@property(nonatomic) _Bool allowsPictureInPictureFromInlineWhenEnteringBackground; // @synthesize allowsPictureInPictureFromInlineWhenEnteringBackground=_allowsPictureInPictureFromInlineWhenEnteringBackground;
+@property(nonatomic) _Bool allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
+@property(nonatomic) _Bool retainsSourceDuringPictureInPicturePlayback; // @synthesize retainsSourceDuringPictureInPicturePlayback=_retainsSourceDuringPictureInPicturePlayback;
+@property(retain, nonatomic) AVPlayerController *playerController; // @synthesize playerController=_playerController;
+@property(readonly, nonatomic) __weak id <AVPictureInPictureContentSource> source; // @synthesize source=_source;
+@property(nonatomic, getter=isOtherPictureInPictureActive) _Bool otherPictureInPictureActive; // @synthesize otherPictureInPictureActive=_otherPictureInPictureActive;
+@property(retain, nonatomic) id <AVPictureInPictureContentSource> sourceIfRetainedDuringPictureInPicturePlayback; // @synthesize sourceIfRetainedDuringPictureInPicturePlayback=_sourceIfRetainedDuringPictureInPicturePlayback;
+@property(readonly, nonatomic) AVObservationController *observationController; // @synthesize observationController=_observationController;
+@property(readonly, nonatomic) AVPictureInPicturePlatformAdapter *platformAdapter; // @synthesize platformAdapter=_platformAdapter;
+@property(nonatomic, getter=isPictureInPictureSuspended) _Bool pictureInPictureSuspended; // @synthesize pictureInPictureSuspended=_pictureInPictureSuspended;
+@property(nonatomic, getter=isPictureInPictureActive) _Bool pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
+@property(nonatomic, getter=isPictureInPicturePossible) _Bool pictureInPicturePossible; // @synthesize pictureInPicturePossible=_pictureInPicturePossible;
+@property(nonatomic) __weak id <AVPictureInPictureControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
+@property(nonatomic) long long controlsStyle; // @synthesize controlsStyle=_controlsStyle;
 - (void).cxx_destruct;
-- (void)cancelPictureInPicture;
+- (void)_stopPictureInPictureAndRestoreUserInterface:(_Bool)arg1;
+- (id)_delegateIfRespondsToSelector:(SEL)arg1;
+- (void)pictureInPicturePlatformAdapterPrepareToStopForDismissal:(id)arg1;
+- (void)pictureInPicturePlatformAdapter:(id)arg1 stopPictureInPictureAndRestoreUserInterface:(_Bool)arg2;
+- (void)pictureInPicturePlatformAdapter:(id)arg1 statusDidChange:(long long)arg2 fromStatus:(long long)arg3;
+- (void)pictureInPicturePlatformAdapter:(id)arg1 prepareToStopForRestoringUserInterface:(CDUnknownBlockType)arg2;
+- (void)pictureInPicturePlatformAdapter:(id)arg1 handlePlaybackCommand:(long long)arg2;
+- (void)pictureInPicturePlatformAdapter:(id)arg1 failedToStartError:(id)arg2;
+@property(readonly, nonatomic) AVPictureInPictureViewController *pictureInPictureViewController;
+- (void)contentSourceVideoRectInWindowChanged;
+- (void)invalidate;
+- (void)stopPictureInPictureEvenWhenInBackground;
 - (void)stopPictureInPicture;
 - (void)startPictureInPicture;
+- (void)dealloc;
+- (void)_commonInitWithSource:(id)arg1;
+- (id)initWithSource:(id)arg1;
 - (id)initWithPlayerLayer:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -12,7 +12,6 @@
 {
     _Bool __contentViewsOpaque;
     _Bool __timeViewBehindContentView;
-    UIView *_contentView;
     UIView *_dialComplicationContainerView;
     UIView *_zoomingClippingView;
     UIView *_borrowedCircleView;
@@ -20,7 +19,6 @@
     float _maxZoomingIconDiameter;
 }
 
-+ (void)_prewarmForDevice:(id)arg1;
 + (Class)_timeViewClass;
 @property(nonatomic, setter=_setTimeViewBehindContentView:) _Bool _timeViewBehindContentView; // @synthesize _timeViewBehindContentView=__timeViewBehindContentView;
 @property(nonatomic, getter=_contentViewsAreOpaque, setter=_setContentViewsOpaque:) _Bool _contentViewsOpaque; // @synthesize _contentViewsOpaque=__contentViewsOpaque;
@@ -29,8 +27,8 @@
 @property(nonatomic) __weak UIView *borrowedCircleView; // @synthesize borrowedCircleView=_borrowedCircleView;
 @property(retain, nonatomic) UIView *zoomingClippingView; // @synthesize zoomingClippingView=_zoomingClippingView;
 @property(readonly, nonatomic) UIView *dialComplicationContainerView; // @synthesize dialComplicationContainerView=_dialComplicationContainerView;
-@property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
+- (void)_createTimeViewIfNecessary;
 - (_Bool)_isComplicationSlotInsideDial:(id)arg1;
 - (void)_updateDateComplicationPositionIfNecessary;
 - (struct CGPoint)_dateComplicationCenterOffset;
@@ -39,18 +37,17 @@
 - (_Bool)_timeViewBehindContentForEditMode:(int)arg1;
 - (int)_backgroundedTimeViewEditModes;
 - (struct CGPoint)_contentCenterOffset;
-- (void)_prepareTimeViewForReuse:(id)arg1;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (void)_cleanupAfterZoom;
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
 - (_Bool)_usesCustomZoom;
-- (void)_bringForegroundViewsToFront;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
+- (_Bool)_isAnalog;
 - (id)_complicationContainerViewForSlot:(id)arg1;
 - (void)_loadContentToReplaceUnadornedSnapshot;
 - (void)_applyShowContentForUnadornedSnapshot;
@@ -64,7 +61,6 @@
 - (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)_canStartTimeScrubbing;
 - (_Bool)_supportsTimeScrubbing;
-- (void)_reuseTimeView;
 - (void)dealloc;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;

@@ -4,9 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary;
+#import <CryptoTokenKit/NSObject-Protocol.h>
 
-@protocol TKTokenDriverProtocol
-- (void)acquireTokenEndpointWithAttributes:(NSDictionary *)arg1 reply:(void (^)(NSXPCListenerEndpoint *, NSString *, NSError *))arg2;
+@class NSData, NSString, NSXPCListenerEndpoint;
+
+@protocol TKTokenDriverProtocol <NSObject>
+- (void)releaseTokenWithInstanceID:(NSString *)arg1 reply:(void (^)(void))arg2;
+- (void)configureWithReply:(void (^)(_Bool, NSError *))arg1;
+- (void)acquireTokenWithSlot:(NSXPCListenerEndpoint *)arg1 AID:(NSData *)arg2 reply:(void (^)(NSXPCListenerEndpoint *, NSString *, NSError *))arg3;
+- (void)acquireTokenWithInstanceID:(NSString *)arg1 reply:(void (^)(NSXPCListenerEndpoint *, NSError *))arg2;
 @end
 

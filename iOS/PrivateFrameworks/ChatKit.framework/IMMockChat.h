@@ -14,10 +14,12 @@
     IMHandle *_incomingHandle;
     IMHandle *_outgoingHandle;
     IMMessage *_lastMockIMMessage;
+    NSArray *_extraParticipants;
     unsigned long long _mockUnreadMessageCount;
 }
 
 @property(nonatomic) unsigned long long mockUnreadMessageCount; // @synthesize mockUnreadMessageCount=_mockUnreadMessageCount;
+@property(retain, nonatomic) NSArray *extraParticipants; // @synthesize extraParticipants=_extraParticipants;
 @property(retain, nonatomic) IMMessage *lastMockIMMessage; // @synthesize lastMockIMMessage=_lastMockIMMessage;
 @property(retain, nonatomic) IMHandle *outgoingHandle; // @synthesize outgoingHandle=_outgoingHandle;
 @property(retain, nonatomic) IMHandle *incomingHandle; // @synthesize incomingHandle=_incomingHandle;
@@ -39,6 +41,7 @@
 - (id)chatItems;
 - (id)recipient;
 - (id)participants;
+- (void)addExtraParticipants:(id)arg1;
 - (id)init;
 
 @end

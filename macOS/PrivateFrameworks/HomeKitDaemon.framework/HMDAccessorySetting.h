@@ -53,6 +53,7 @@
 @property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)shouldEncodeForCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_fixupMergeStrategyConstraints;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;

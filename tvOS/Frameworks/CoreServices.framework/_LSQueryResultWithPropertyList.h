@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, retain, nonatomic) id propertyList; // @synthesize propertyList=_propertyList;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)propertyListWithClass:(Class)arg1 valuesOfClass:(Class)arg2;
 - (id)propertyListWithClass:(Class)arg1;
-- (void)dealloc;
 - (id)initWithPropertyList:(id)arg1;
 
 @end

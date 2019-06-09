@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) BOOL shouldUseBatches; // @synthesize shouldUseBatches=_shouldUseBatches;
 - (BOOL)executeRequestUsingConnection:(id)arg1;
+- (void)executePrologue;
 - (id)_changeFromResult:(id)arg1 withTransaction:(id)arg2;
 - (id)_transactionFromResult:(id)arg1 withChanges:(id)arg2;
 - (id)_processResult:(id)arg1;

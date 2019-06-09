@@ -11,6 +11,7 @@
 @class AVPlayerControllerTimeResolver, AVPlayerLayer, AVTouchBarScrubberInternal, AVTouchBarTrackViewController, NSMutableArray, NSString;
 @protocol AVTouchBarScrubberControlling><AVTouchBarTrackControlling><AVTimeControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarScrubberController : NSViewController <AVTouchBarScrubberDelegateInternal>
 {
     id <AVTouchBarScrubberControlling><AVTouchBarTrackControlling><AVTimeControlling> _playerController;
@@ -38,10 +39,10 @@
 - (void)unbindAllObjects;
 - (void)unbindObject:(id)arg1;
 - (void)bindObject:(id)arg1 withBinding:(id)arg2 toObject:(id)arg3 withKeyPath:(id)arg4 options:(id)arg5;
-- (void)_cancelThumbnailAndAudioAmplitudeSampleGeneration;
-- (void)_reloadAudioAmplitudeSamplesForAudioTrackView:(id)arg1;
+- (void)_cancelThumbnailGeneration;
+- (void)_reloadAudioWaveformForAudioTrackView:(id)arg1;
 - (void)_reloadThumbnailsForVideoTrackView:(id)arg1;
-- (void)_reloadThumbailsOrAudioAmplitudeSamplesIfNeeded;
+- (void)_reloadThumbailsOrAudioWaveformIfNeeded;
 - (void)_startOrStopUpdatingPlayheadApplicationIsActive:(BOOL)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)touchBarScrubber:(id)arg1 thumbnailForTime:(double)arg2;
@@ -50,7 +51,7 @@
 - (void)viewDidDisappear;
 - (void)viewWillAppear;
 - (void)loadView;
-- (void)reloadThumbailsOrAudioAmplitudeSamples;
+- (void)reloadThumbailsOrAudioWaveform;
 @property(readonly, nonatomic) AVTouchBarScrubberInternal *scrubber;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

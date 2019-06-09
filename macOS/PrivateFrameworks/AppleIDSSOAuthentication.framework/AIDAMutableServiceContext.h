@@ -7,6 +7,7 @@
 #import <AppleIDSSOAuthentication/AIDAServiceContext.h>
 
 @class NSDictionary, NSWindow;
+@protocol CDPStateUIProvider;
 
 @interface AIDAMutableServiceContext : AIDAServiceContext
 {
@@ -15,6 +16,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(retain, nonatomic) NSWindow *hostWindow; // @dynamic hostWindow;
+@property(nonatomic) __weak id <CDPStateUIProvider> cdpUiProvider; // @dynamic cdpUiProvider;
 @property(nonatomic) BOOL shouldForceOperation; // @dynamic shouldForceOperation;
 @property(copy, nonatomic) NSDictionary *authenticationResults; // @dynamic authenticationResults;
 

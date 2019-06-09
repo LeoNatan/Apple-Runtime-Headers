@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
-@class NSString, UIButton, UILabel, UITraitCollection, _UIBackdropView;
+@class NSString, UIButton, UILabel, UITraitCollection, UIVisualEffectView;
 @protocol PUImportHistorySectionHeaderViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
     UILabel *_spacerLabel;
     UILabel *_secondaryLabel;
     UIButton *_actionButton;
-    _UIBackdropView *_backdropView;
+    UIVisualEffectView *_visualEffectView;
     UITraitCollection *_selfSizingTraits;
     struct PXSimpleIndexPath _sectionIndexPath;
     struct UIEdgeInsets _contentInsets;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic) UITraitCollection *selfSizingTraits; // @synthesize selfSizingTraits=_selfSizingTraits;
 @property(nonatomic) _Bool inLayoutTransition; // @synthesize inLayoutTransition=_inLayoutTransition;
-@property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
+@property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
 @property(retain, nonatomic) UIButton *actionButton; // @synthesize actionButton=_actionButton;
 @property(retain, nonatomic) UILabel *secondaryLabel; // @synthesize secondaryLabel=_secondaryLabel;
 @property(retain, nonatomic) UILabel *spacerLabel; // @synthesize spacerLabel=_spacerLabel;

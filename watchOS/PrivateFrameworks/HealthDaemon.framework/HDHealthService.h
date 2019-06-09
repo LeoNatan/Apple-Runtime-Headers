@@ -17,6 +17,7 @@
     NSMutableArray *_pendingObjectBuffer;
     NSMutableArray *_pendingCharacteristicBuffer;
     HDDeviceEntity *_deviceEntity;
+    // Error parsing type: AB, name: _deviceInformationLoaded
     _Bool _deliverData;
     _Bool _characteristicsDiscovered;
     HDProfile *_profile;
@@ -27,13 +28,11 @@
     NSMutableDictionary *_writableCharacteristics;
     NSObject<OS_dispatch_queue> *_writeQueue;
     NSMutableArray *_pendingWrites;
-    int _deviceInformationLoaded;
 }
 
 + (id)implementedProperties;
 + (id)serviceUUID;
 + (int)serviceType;
-@property(nonatomic) int deviceInformationLoaded; // @synthesize deviceInformationLoaded=_deviceInformationLoaded;
 @property(retain, nonatomic) NSMutableArray *pendingWrites; // @synthesize pendingWrites=_pendingWrites;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *writeQueue; // @synthesize writeQueue=_writeQueue;
 @property(retain, nonatomic) NSMutableDictionary *writableCharacteristics; // @synthesize writableCharacteristics=_writableCharacteristics;

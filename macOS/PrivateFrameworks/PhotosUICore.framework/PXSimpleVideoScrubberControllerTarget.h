@@ -12,6 +12,7 @@
 
 @interface PXSimpleVideoScrubberControllerTarget : NSObject <PXVideoScrubberControllerTarget>
 {
+    CDStruct_1b6d18a9 _currentItemDuration;
     CDUnknownBlockType statusChangeHandler;
     CDUnknownBlockType durationChangeHandler;
     CDUnknownBlockType playerItemChangeHandler;

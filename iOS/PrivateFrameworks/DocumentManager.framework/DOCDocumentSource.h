@@ -9,18 +9,20 @@
 #import <DocumentManager/NSCopying-Protocol.h>
 #import <DocumentManager/NSSecureCoding-Protocol.h>
 
-@class FPProvider, NSArray, NSString, UIImage;
+@class FPProviderDomain, NSArray, NSString, UIImage;
 
 @interface DOCDocumentSource : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _hasTemplateIcon;
     _Bool _hidden;
     NSString *_displayName;
+    NSString *_providerName;
+    NSString *_domainName;
     UIImage *_icon;
     NSString *_promptText;
     NSString *_identifier;
     NSArray *_documentTypes;
-    FPProvider *_searching_fileProvider;
+    FPProviderDomain *_searching_fileProviderDomain;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -33,16 +35,22 @@
 + (id)defaultSourceForBundleIdentifier:(id)arg1 defaultSourceIdentifier:(id)arg2 sources:(id)arg3;
 + (void)defaultSourceForBundleIdentifier:(id)arg1 selectedSourceIdentifier:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 + (id)defaultSourceIdentifierForBundleIdentifier:(id)arg1;
-+ (_Bool)isICloudFileProviderEnabledForBundleIdentifier:(id)arg1;
-@property FPProvider *searching_fileProvider; // @synthesize searching_fileProvider=_searching_fileProvider;
+@property FPProviderDomain *searching_fileProviderDomain; // @synthesize searching_fileProviderDomain=_searching_fileProviderDomain;
 @property(copy) NSArray *documentTypes; // @synthesize documentTypes=_documentTypes;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSString *promptText; // @synthesize promptText=_promptText;
 @property _Bool hidden; // @synthesize hidden=_hidden;
 @property _Bool hasTemplateIcon; // @synthesize hasTemplateIcon=_hasTemplateIcon;
 @property(retain) UIImage *icon; // @synthesize icon=_icon;
+@property(copy) NSString *domainName; // @synthesize domainName=_domainName;
+@property(copy) NSString *providerName; // @synthesize providerName=_providerName;
 @property(copy) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+@property(readonly) _Bool isiCloudBased;
+@property(readonly) _Bool appearsInMoveUI;
+@property(readonly, nonatomic) NSArray *supportedSearchFilters;
+@property(readonly) unsigned long long status;
+- (_Bool)isValidForConfiguration:(id)arg1;
 @property(readonly) _Bool isAvailableSystemWide;
 - (_Bool)usesEnumeration;
 - (id)sanitizedSource;

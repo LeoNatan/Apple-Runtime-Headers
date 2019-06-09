@@ -8,7 +8,6 @@
 
 @class CalDateRange, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface EKConflictDetails : NSObject
 {
     NSArray *_conflictingDates;

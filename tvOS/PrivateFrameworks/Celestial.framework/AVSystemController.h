@@ -13,11 +13,12 @@
 
 + (id)sharedAVSystemController;
 + (void)initialize;
++ (id)compatibleAudioRouteForRoute:(id)arg1;
 - (void)postEffectiveVolumeNotification:(void *)arg1;
 - (void)postFullMuteDidChangeNotification:(void *)arg1;
 - (void)handleServerDied;
 - (_Bool)okToNotifyFromThisThread;
-- (void)makeError:(id *)arg1 withDescription:(id)arg2 code:(int)arg3;
+- (id)errorWithCode:(int)arg1 description:(id)arg2;
 - (_Bool)setAttribute:(id)arg1 forKey:(id)arg2 error:(id *)arg3;
 - (id)attributeForKey:(id)arg1;
 - (_Bool)hasRouteSharingPolicyLongFormVideo:(id)arg1;

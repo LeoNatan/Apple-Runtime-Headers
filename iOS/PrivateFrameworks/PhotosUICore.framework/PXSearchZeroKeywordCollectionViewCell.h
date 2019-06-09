@@ -15,7 +15,8 @@
     PXRoundedCornerOverlayView *_imageCornerOverlayView;
 }
 
-+ (id)_thumbnailWidthInterpolator;
++ (id)thumbnailWidthInterpolator;
++ (double)verticalSpacing;
 + (_Bool)cellLabelTextNeedsMultipleLines:(id)arg1 cellWidth:(double)arg2;
 + (id)attributedStringForCellLabelWithString:(id)arg1;
 + (double)_calculateHeightNeededForTextLabelWithNumberOfLines:(unsigned long long)arg1;

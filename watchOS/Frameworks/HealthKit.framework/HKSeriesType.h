@@ -11,6 +11,7 @@
 }
 
 + (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
++ (id)heartbeatSeriesType;
 + (id)workoutRouteType;
 - (Class)dataObjectClass;
 

@@ -6,26 +6,31 @@
 
 #import <AssetsLibraryServices/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSSet, NSString, NSURL;
+@class NSArray, NSData, NSDictionary, NSSet, NSString;
 
 @protocol PLAssetsdLibraryInternalServiceProtocol <NSObject>
+- (void)invalidateBehavioralScoreOnAllAssetsWithReply:(void (^)(BOOL, NSError *))arg1;
+- (void)deleteiTunesSyncedContentWithCompletionHandler:(void (^)(BOOL, NSError *))arg1;
+- (void)getBackgroundJobServiceBundlesInQueueDictionaryWithReply:(void (^)(NSDictionary *))arg1;
+- (void)getBackgroundJobServiceStateWithReply:(void (^)(unsigned long long))arg1;
+- (void)registerBackgroundJobServiceIfNecessaryOnLibraryPath:(NSString *)arg1 reply:(void (^)(BOOL, NSError *))arg2;
+- (void)invalidateReverseLocationDataOnAllAssetsWithReply:(void (^)(BOOL, NSError *))arg1;
 - (void)setAssetKeywords:(NSSet *)arg1 forAssetUUID:(NSString *)arg2 reply:(void (^)(BOOL))arg3;
 - (void)applyGraphUpdates:(NSDictionary *)arg1 supportingData:(NSData *)arg2 reply:(void (^)(BOOL, NSError *))arg3;
 - (void)applySearchIndexUpdates:(NSDictionary *)arg1 reply:(void (^)(void))arg2;
 - (void)waitForSearchIndexExistenceWithReply:(void (^)(BOOL, NSError *))arg1;
 - (void)getSearchIndexProgressWithReply:(void (^)(unsigned long long))arg1;
 - (void)markPersonAsNeedingKeyFaceWithPersonUUID:(NSString *)arg1 reply:(void (^)(BOOL, NSError *))arg2;
-- (void)updateUnverifiedFaceCountThreshold;
 - (void)resetPendingAnalysisStatesWithReply:(void (^)(BOOL, NSError *))arg1;
 - (void)markAnalysisStatesProcessedForWorkerType:(unsigned long long)arg1 reply:(void (^)(BOOL, NSError *))arg2;
 - (void)removeAnalysisRecordsForDeletedAssetsWithUUIDs:(NSArray *)arg1 workerType:(unsigned long long)arg2;
-- (void)analyzeMomentWithObjectURI:(NSURL *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)reloadMomentGenerationOptions;
 - (void)repairMemoriesWithUUIDs:(NSArray *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)previewAssetLocalIdentifiersWithReply:(void (^)(NSArray *))arg1;
 - (void)previewRenderedContentURLAtIndex:(unsigned long long)arg1 reply:(void (^)(BOOL, NSURL *, NSError *))arg2;
 - (void)previewRenderedContentURLCountWithReply:(void (^)(unsigned long long))arg1;
 - (void)updateAssetLocationDataWithUUID:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)getSizeOfResourcesToUploadByCPLWithReply:(void (^)(BOOL, long long, NSError *))arg1;
 - (void)getLibrarySizesFromDB:(BOOL)arg1 reply:(void (^)(BOOL, NSDictionary *, NSError *))arg2;
 - (void)getAssetCountsWithReply:(void (^)(unsigned long long, unsigned long long, NSError *))arg1;
 @end

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSUImage.h>
 
+__attribute__((visibility("hidden")))
 @interface OI_TSUImageM : OITSUImage
 {
 }

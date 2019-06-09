@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSUserDefaults;
+@class NSDate, NSUserDefaults;
 
 @interface VSPreferencesInterface : NSObject
 {
@@ -17,7 +17,9 @@
 @property(retain, nonatomic) NSUserDefaults *defaults; // @synthesize defaults=_defaults;
 - (void).cxx_destruct;
 @property(retain, nonatomic) NSDate *lastTTSRequestDate;
-@property(retain, nonatomic) NSArray *autoDownloadedVoices;
+- (id)autoDownloadedVoicesForClientID:(id)arg1;
+- (void)setAutoDownloadedVoices:(id)arg1 withClientID:(id)arg2;
+- (void)migrateDefaults;
 - (id)initWithSuiteName:(id)arg1;
 
 @end

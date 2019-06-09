@@ -9,7 +9,13 @@
 @class NSData;
 
 @interface NSItemProvider (UIKitAdditions)
++ (id)itemProviderWithURL:(id)arg1 title:(id)arg2;
 - (Class)_highestFidelityClassForLoading:(id)arg1;
+- (id)dataAvailabilityByTypeIdentifier;
+- (void)setDataAvailability:(_Bool)arg1 forTypeIdentifier:(id)arg2;
+- (_Bool)isDataAvailableImmediatelyForTypeIdentifier:(id)arg1;
+- (void)registerFileRepresentationForTypeIdentifier:(id)arg1 dataAvailableImmediately:(_Bool)arg2 visibility:(long long)arg3 loadHandler:(CDUnknownBlockType)arg4;
+- (void)registerFileProviderItemForTypeIdentifier:(id)arg1 visibility:(long long)arg2 loadHandler:(CDUnknownBlockType)arg3;
 @property(nonatomic) long long preferredPresentationStyle;
 - (void)_NSItemProviderDidRegisterObject:(id)arg1;
 @property(nonatomic) struct CGSize preferredPresentationSize;

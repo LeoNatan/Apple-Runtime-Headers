@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (void)_startObservingSecondLevelPropertyOnNewCurrentValueForTopLevelDependencyProperty:(id)arg1;
 - (void)initializationIsCompleteForObject:(id)arg1;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithObject:(id)arg1 thatHasPropertyWithKey:(id)arg2 whoseValueDependsOnValueAtKeyPath:(id)arg3;
 

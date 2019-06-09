@@ -11,14 +11,13 @@
 @interface _IDSDataChannelLinkContext : NSObject
 {
     BOOL _linkID;
-    unsigned char _flags;
     unsigned char _networkType;
     long long _connectionType;
-    unsigned long long _RATType;
+    unsigned int _RATType;
     unsigned short _maxMTU;
     unsigned char _remoteNetworkType;
     long long _remoteConnectionType;
-    unsigned long long _remoteRATType;
+    unsigned int _remoteRATType;
     unsigned int _maxBitrate;
     NSUUID *_linkUUID;
     NSUUID *_QRSessionID;
@@ -26,6 +25,8 @@
     NSData *_relaySessionToken;
     NSData *_relaySessionKey;
     _Bool _serverIsDegraded;
+    unsigned short _localLinkFlags;
+    unsigned short _remoteLinkFlags;
 }
 
 - (void).cxx_destruct;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, NSURL;
 @protocol CKKnowledgeStoreDelegate;
 
 @interface CKKnowledgeStore : NSObject
@@ -23,12 +23,12 @@
 + (id)inMemoryKnowledgeStore;
 + (id)defaultSynchedKnowledgeStore;
 + (id)defaultKnowledgeStore;
-+ (id)directoryPath;
++ (id)directoryURL;
 - (void).cxx_destruct;
 - (id)init;
 - (_Bool)isEqual:(id)arg1;
 @property(nonatomic, readonly) int hash;
-@property(nonatomic, readonly) NSString *path;
+@property(nonatomic, readonly) NSURL *filePathURL;
 @property(nonatomic, readonly) NSString *name;
 @property(nonatomic, retain) id <CKKnowledgeStoreDelegate> delegate; // @synthesize delegate;
 - (void)disableSyncAndDeleteCloudDataWithCompletionHandler:(CDUnknownBlockType)arg1;

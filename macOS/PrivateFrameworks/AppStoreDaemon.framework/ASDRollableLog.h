@@ -15,7 +15,8 @@
 
 @property(readonly) ASDLogFileOptions *logOptions; // @synthesize logOptions=_logOptions;
 - (void).cxx_destruct;
-- (id)init;
+- (void)writeString:(id)arg1;
+- (id)initWithLogOptions:(id)arg1;
 
 @end
 

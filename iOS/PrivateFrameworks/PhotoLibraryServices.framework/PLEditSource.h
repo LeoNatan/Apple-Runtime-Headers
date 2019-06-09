@@ -17,6 +17,8 @@
 @property(readonly, nonatomic) long long mediaType; // @synthesize mediaType=_mediaType;
 @property(readonly, nonatomic) NUResolvedSource *resolvedSource; // @synthesize resolvedSource=_resolvedSource;
 - (void).cxx_destruct;
+- (id)description;
+@property(readonly, nonatomic) _Bool isRAWSource;
 - (void)setIdentifier:(id)arg1;
 @property(readonly, retain, nonatomic) NUSource *source;
 - (id)initWithResolvedSource:(id)arg1 mediaType:(long long)arg2;

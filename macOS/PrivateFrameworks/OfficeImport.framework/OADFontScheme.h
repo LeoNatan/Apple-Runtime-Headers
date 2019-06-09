@@ -8,6 +8,7 @@
 
 @class NSString, OADFontCollection;
 
+__attribute__((visibility("hidden")))
 @interface OADFontScheme : NSObject
 {
     NSString *_name;

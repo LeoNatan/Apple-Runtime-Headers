@@ -15,6 +15,7 @@
 {
     NSDictionary *_downloadAssetDictionary;
     NSDictionary *_downloadMetadataDictionary;
+    NSDictionary *_storeMusicAPIDictionary;
     NSDate *_expirationDate;
     _Bool _hasOverrideChildStorePlatformDictionaries;
     NSNumber *_hasSubscriptionOffer;
@@ -29,6 +30,7 @@
 @property(readonly, copy, nonatomic) MPStoreItemMetadata *parentStoreItemMetadata; // @synthesize parentStoreItemMetadata=_parentStoreItemMetadata;
 - (void).cxx_destruct;
 - (id)_storePlatformLastModifiedDateFormatter;
+- (id)_musicAPIDateFormatter;
 - (id)_storePlatformReleaseDateFormatter;
 - (id)metadataWithParentMetadata:(id)arg1;
 - (id)metadataWithChildStorePlatformDictionaries:(id)arg1;
@@ -47,6 +49,7 @@
 - (id)artworkRequestTokenForUberArtworkKind:(id)arg1;
 - (id)artworkRequestTokenForScreenshotArtwork;
 - (id)artworkRequestTokenForEditorialArtworkKind:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *radioStationProviderName;
 @property(readonly, nonatomic) _Bool isChart;
 @property(readonly, nonatomic) long long radioStationTypeID;
 @property(readonly, nonatomic, getter=isVerifiedPerson) _Bool verifiedPerson;
@@ -131,6 +134,7 @@
 - (id)initWithStorePlatformDictionary:(id)arg1 parentStoreItemMetadata:(id)arg2;
 - (id)initWithStorePlatformDictionary:(id)arg1 expirationDate:(id)arg2;
 - (id)initWithStorePlatformDictionary:(id)arg1;
+- (id)initWithStoreMusicAPIDictionary:(id)arg1;
 - (id)initWithDownloadAssetDictionary:(id)arg1;
 - (_Bool)hasMetadataForRequestReason:(unsigned long long)arg1;
 @property(readonly, copy, nonatomic) NSString *cacheableItemIdentifier;

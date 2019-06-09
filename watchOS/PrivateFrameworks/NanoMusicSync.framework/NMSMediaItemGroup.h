@@ -6,44 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class NMSMediaContainerQuotaData, NSDictionary;
+@class NMSMediaContainerQuotaData;
 
 @interface NMSMediaItemGroup : NSObject
 {
-    _Bool _offPowerSyncAllowed;
+    _Bool _manuallyAdded;
     _Bool _downloadedItemsOnly;
     id _referenceObj;
     NMSMediaContainerQuotaData *_quotaData;
     unsigned int _type;
-    NSDictionary *_itemSizesDict;
 }
 
-+ (id)_fetchSizeDictForItems:(id)arg1;
-+ (id)_itemsForContainerClass:(Class)arg1 containerIDs:(id)arg2 includingNonLibraryContent:(_Bool)arg3 includingDownloadedContentOnly:(_Bool)arg4 sizesDictOut:(id *)arg5;
++ (id)_itemsForContainerClass:(Class)arg1 containerIDs:(id)arg2 includingNonLibraryContent:(_Bool)arg3 includingDownloadedContentOnly:(_Bool)arg4 manuallyAdded:(_Bool)arg5;
 + (id)itemGroupWithQuotaRefObj:(id)arg1;
++ (id)itemGroupWithAudiobookIdentifier:(id)arg1 downloadLimit:(unsigned int)arg2 manuallyAdded:(_Bool)arg3 downloadedItemsOnly:(_Bool)arg4;
++ (id)itemGroupWithPodcastStationUUID:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
++ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2;
++ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2 episodeLimit:(unsigned int)arg3 manuallyAdded:(_Bool)arg4 downloadedItemsOnly:(_Bool)arg5;
 + (id)itemGroupWithStoreRecommendation:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
 + (id)itemGroupWithLibraryHeavyRotationRecommendation:(id)arg1 albumID:(id)arg2 downloadedItemsOnly:(_Bool)arg3;
 + (id)itemGroupWithLibraryHeavyRotationRecommendation:(id)arg1 playlistID:(id)arg2 downloadedItemsOnly:(_Bool)arg3;
-+ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2;
-+ (id)itemGroupWithPodcastFeedURL:(id)arg1 downloadOrder:(unsigned int)arg2 episodeLimit:(unsigned int)arg3 downloadedItemsOnly:(_Bool)arg4;
 + (id)itemGroupWithSyncedAlbumID:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
 + (id)itemGroupWithSyncedPlaylistID:(id)arg1 downloadedItemsOnly:(_Bool)arg2;
-@property(retain, nonatomic) NSDictionary *itemSizesDict; // @synthesize itemSizesDict=_itemSizesDict;
 @property(nonatomic) _Bool downloadedItemsOnly; // @synthesize downloadedItemsOnly=_downloadedItemsOnly;
-@property(nonatomic) _Bool offPowerSyncAllowed; // @synthesize offPowerSyncAllowed=_offPowerSyncAllowed;
+@property(nonatomic) _Bool manuallyAdded; // @synthesize manuallyAdded=_manuallyAdded;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(retain, nonatomic) NMSMediaContainerQuotaData *quotaData; // @synthesize quotaData=_quotaData;
 @property(retain, nonatomic) id referenceObj; // @synthesize referenceObj=_referenceObj;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isEstimate;
 - (id)itemList;
-- (id)libraryIdentifiersForContainerType:(unsigned int)arg1;
-- (id)libraryIdentifiers;
+- (id)identifiersForContainerType:(unsigned int)arg1;
+- (id)identifiers;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToContainer:(id)arg1;
-- (id)initWithType:(unsigned int)arg1 refObj:(id)arg2 offPowerSyncAllowed:(_Bool)arg3 quotaRefObj:(id)arg4 downloadedItemsOnly:(_Bool)arg5;
+- (id)initWithType:(unsigned int)arg1 refObj:(id)arg2 manuallyAdded:(_Bool)arg3 quotaRefObj:(id)arg4 downloadedItemsOnly:(_Bool)arg5;
 
 @end
 

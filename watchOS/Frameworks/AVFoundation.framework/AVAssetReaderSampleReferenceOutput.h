@@ -20,7 +20,6 @@
 - (id)mediaType;
 @property(readonly, nonatomic) AVAssetTrack *track;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithTrack:(id)arg1;
 - (id)init;

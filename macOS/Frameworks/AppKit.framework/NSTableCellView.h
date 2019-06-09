@@ -33,6 +33,7 @@
 - (void)_updateSourceListGroupRowAttributesInRowView:(id)arg1;
 - (id)_enclosingTableView;
 - (struct CGRect)_textFieldFrame;
+- (double)_imageToTextOffset;
 - (void)_updateFont;
 - (struct CGRect)_imageViewFrame;
 @property long long rowSizeStyle; // @synthesize rowSizeStyle=_rowSizeStyle;

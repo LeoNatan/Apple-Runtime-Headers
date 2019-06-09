@@ -30,12 +30,12 @@
 @property(readonly) MFMimePart *mimePart; // @synthesize mimePart=_htmlPart;
 @property(readonly) MFMimeBody *mimeBody; // @synthesize mimeBody=_mimeBody;
 @property(readonly) NSURL *baseURL; // @synthesize baseURL=_baseURL;
+- (void).cxx_destruct;
 - (id)fileWrapper;
 - (id)preferredCharacterSet;
 - (id)attachmentsInDocument;
 - (id)attachmentForURL:(id)arg1;
 - (id)mimePartForURL:(id)arg1;
-- (void)dealloc;
 - (id)initWithMimePart:(id)arg1 htmlData:(id)arg2 encoding:(unsigned long)arg3;
 - (id)initWithMimePart:(id)arg1;
 - (id)_initWithMimePart:(id)arg1 htmlData:(id)arg2;

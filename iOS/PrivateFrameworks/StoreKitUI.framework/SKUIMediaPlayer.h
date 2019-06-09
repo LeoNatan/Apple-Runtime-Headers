@@ -8,6 +8,7 @@
 
 @class MPAVController, MPAVItem, SKUIMediaPlayerItemStatus;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMediaPlayer : NSObject
 {
     _Bool _playing;

@@ -29,6 +29,9 @@
 @property(nonatomic) __weak id <MFCaptionLabelDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)_formattedAttributedString;
+- (id)_whitespaceStringWithWidth:(double)arg1;
+- (id)_chevronImage;
+- (id)_chevronAttributedString;
 - (void)updateLabelNow;
 - (id)_stringAtIndexForCombinedRecipientLists:(unsigned long long)arg1;
 - (void)_setNeedsLabelUpdate;
@@ -36,7 +39,6 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)dealloc;
 
 @end
 

@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) int batteryState;
 @property(nonatomic, getter=isBatteryMonitoringEnabled) _Bool batteryMonitoringEnabled;
 @property(readonly, nonatomic) float batteryLevel;
+@property(readonly, nonatomic) _Bool supportsAudioStreaming;
 @property(readonly, nonatomic) int waterResistanceRating;
 @property(readonly, copy, nonatomic) NSString *systemName;
 @property(readonly, copy, nonatomic) NSString *localizedModel;

@@ -6,6 +6,7 @@
 
 #import <UIKit/UICollectionViewLayoutInvalidationContext.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIZoomingShelfCollectionViewLayoutInvalidationContext : UICollectionViewLayoutInvalidationContext
 {
     _Bool _invalidateGeometryOnlyOfExistingLayoutAttributes;

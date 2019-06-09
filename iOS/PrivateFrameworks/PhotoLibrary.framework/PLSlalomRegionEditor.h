@@ -46,6 +46,7 @@
 @property(nonatomic) double trimHandleWidth; // @synthesize trimHandleWidth=_trimHandleWidth;
 @property(nonatomic) struct UIEdgeInsets trackInsets; // @synthesize trackInsets=_trackInsets;
 @property(nonatomic) id <PLSlalomRegionEditorDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (id)_handleImage;
 - (void)_drawCurveWithFlatEndsFromX:(double)arg1 fromY:(double)arg2 toX:(double)arg3 toY:(double)arg4;
 - (id)_handleTintColor;
@@ -75,8 +76,8 @@
 - (struct CGRect)_trackFrameNoZoom;
 - (double)_valueFromEndHandleFrame:(struct CGRect)arg1;
 - (double)_valueFromStartHandleFrame:(struct CGRect)arg1;
-- (struct CGRect)_endHandleFrame;
-- (struct CGRect)_startHandleFrame;
+@property(readonly, nonatomic) struct CGRect endHandleFrame;
+@property(readonly, nonatomic) struct CGRect startHandleFrame;
 - (_Bool)_isZoomed;
 - (double)_zoomMaxValue;
 - (double)_zoomMinValue;
@@ -86,7 +87,6 @@
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

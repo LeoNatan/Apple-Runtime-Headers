@@ -9,9 +9,8 @@
 @class NSURL;
 
 @interface NSFileManager (ICNFMCMailCoreAdditions)
-- (id)fileModificationDateAtPath:(id)arg1 traverseLink:(BOOL)arg2;
-- (long long)fileSizeAtPath:(id)arg1 traverseLink:(BOOL)arg2;
-@property(readonly, nonatomic) NSURL *URLForNonContainerizedHomeDirectory;
-- (id)createUniqueDirectoryAtPath:(id)arg1 withIntermediateDirectories:(BOOL)arg2 attributes:(id)arg3 error:(id *)arg4;
+- (long long)ic_fileSizeAtPath:(id)arg1 traverseLink:(BOOL)arg2;
+@property(readonly, nonatomic) NSURL *ic_URLForNonContainerizedHomeDirectory;
+- (id)ic_createUniqueDirectoryAtPath:(id)arg1 withIntermediateDirectories:(BOOL)arg2 attributes:(id)arg3 error:(id *)arg4;
 @end
 

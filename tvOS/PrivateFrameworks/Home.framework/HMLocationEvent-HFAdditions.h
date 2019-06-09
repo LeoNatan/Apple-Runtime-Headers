@@ -15,6 +15,7 @@
 + (unsigned long long)hf_locationEventTypeForRegion:(id)arg1;
 - (_Bool)hf_isRegionAtHome:(id)arg1;
 @property(readonly, nonatomic) unsigned long long hf_eventType;
+- (id)hf_stateDumpBuilderWithContext:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

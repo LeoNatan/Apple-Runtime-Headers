@@ -21,7 +21,7 @@
 + (id)__sharedInstance;
 - (void).cxx_destruct;
 - (void)childDataSourceManagerDataSourcesDidChange:(id)arg1;
-- (void)availableWidgetsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)discoverAvailableWidgetsWithError:(id *)arg1;
 - (void)removeChangeHandlersWithIdentifier:(id)arg1;
 - (void)addWidgetDataSourceChangeHandler:(CDUnknownBlockType)arg1 forIdentifier:(id)arg2;
 - (void)_stop:(CDUnknownBlockType)arg1;

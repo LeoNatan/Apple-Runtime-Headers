@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)_notifyClientsOfChange;
 - (void)_handlePrefsChanged;
+- (void)setNotificationsIndicatorEnabled:(_Bool)arg1;
 - (_Bool)_isNotificationsIndicatorEnabledInPreferences;
 - (_Bool)isNotificationsIndicatorEnabled;
 - (void)dealloc;

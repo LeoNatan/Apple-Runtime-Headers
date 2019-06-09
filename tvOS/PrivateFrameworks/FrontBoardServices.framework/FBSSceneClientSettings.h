@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <FrontBoardServices/BSDescriptionProviding-Protocol.h>
+#import <FrontBoardServices/BSXPCSecureCoding-Protocol.h>
 #import <FrontBoardServices/NSCopying-Protocol.h>
 #import <FrontBoardServices/NSMutableCopying-Protocol.h>
 
 @class BSSettings, NSSet, NSString;
 
-@interface FBSSceneClientSettings : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying>
+@interface FBSSceneClientSettings : NSObject <BSDescriptionProviding, BSXPCSecureCoding, NSCopying, NSMutableCopying>
 {
     double _preferredLevel;
     long long _preferredInterfaceOrientation;
@@ -22,12 +23,15 @@
 }
 
 + (_Bool)_isMutable;
++ (_Bool)supportsBSXPCSecureCoding;
 + (id)settings;
 @property(readonly, copy, nonatomic) NSString *preferredSceneHostIdentifier; // @synthesize preferredSceneHostIdentifier=_preferredSceneHostIdentifier;
 @property(readonly, copy, nonatomic) NSSet *occlusions; // @synthesize occlusions=_occlusions;
 @property(readonly, nonatomic) long long preferredInterfaceOrientation; // @synthesize preferredInterfaceOrientation=_preferredInterfaceOrientation;
 @property(readonly, nonatomic) double preferredLevel; // @synthesize preferredLevel=_preferredLevel;
 - (void).cxx_destruct;
+- (id)initWithBSXPCCoder:(id)arg1;
+- (void)encodeWithBSXPCCoder:(id)arg1;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

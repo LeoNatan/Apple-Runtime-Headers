@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (float)_spacingBetweenDismissButtonAndContent;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
+- (id)vibrancyEffectForTitleAndMessageLabel;
 
 @end
 

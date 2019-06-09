@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     OADColor *mColor;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)color;
-- (void)dealloc;
 - (id)initWithBulletColor:(id)arg1;
 
 @end

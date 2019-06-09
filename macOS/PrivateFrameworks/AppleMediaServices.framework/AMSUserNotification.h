@@ -26,9 +26,14 @@
     NSString *_threadIdentifier;
 }
 
-+ (BOOL)_canParseNotificationWithUserInfo:(id)arg1;
-+ (BOOL)shouldHandleNotificationResponse:(id)arg1;
 + (id)handleNotificationResponse:(id)arg1 bagContract:(id)arg2;
++ (BOOL)_canParseNotificationWithUserInfo:(id)arg1;
++ (BOOL)shouldHandleServiceExtensionNotificationRequest:(id)arg1;
++ (BOOL)shouldHandleNotificationResponse:(id)arg1;
++ (id)notificationCenter:(id)arg1 openSettingsForNotification:(id)arg2 bag:(id)arg3;
++ (id)notificationCenter:(id)arg1 didChangeSettings:(id)arg2 bag:(id)arg3;
++ (void)handleServiceExtensionNotificationRequest:(id)arg1 bag:(id)arg2 withContentHandler:(CDUnknownBlockType)arg3;
++ (id)handleNotificationResponse:(id)arg1 bag:(id)arg2;
 @property(retain) NSString *threadIdentifier; // @synthesize threadIdentifier=_threadIdentifier;
 @property(retain) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property long long intent; // @synthesize intent=_intent;
@@ -44,9 +49,10 @@
 @property(retain) NSURL *artworkUrl; // @synthesize artworkUrl=_artworkUrl;
 @property(retain) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
+- (id)handleSelectedButton:(id)arg1 bagContract:(id)arg2;
 - (void)_populatePropertiesFromStoredUserInfo:(id)arg1;
 - (id)_compileStoredUserInfo;
-- (id)handleSelectedButton:(id)arg1 bagContract:(id)arg2;
+- (id)handleSelectedButton:(id)arg1 bag:(id)arg2;
 - (void)addButtonAction:(id)arg1;
 - (id)createUNNotificationActions;
 - (id)createUNNotificationContent;

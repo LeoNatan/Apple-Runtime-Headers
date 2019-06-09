@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class CDPDCircleStateObserver;
+@class CDPDCircleStateObserver, NSArray;
 @protocol CDPDCircleDelegate, CDPDCircleProxy, CDPStateUIProviderInternal, OS_dispatch_queue;
 
 @interface CDPDCircleController : NSObject
 {
     CDPDCircleStateObserver *_circleJoinObserver;
     NSObject<OS_dispatch_queue> *_requestSynchronizationQueue;
+    NSObject<OS_dispatch_queue> *_retryQueue;
+    unsigned long long _cliqueStatusRetryCount;
+    NSArray *_retryIntervals;
     id <CDPStateUIProviderInternal> _uiProvider;
     NSObject<CDPDCircleDelegate> *_delegate;
     id <CDPDCircleProxy> _circleProxy;
@@ -32,16 +35,17 @@
 - (id)_peerDeviceNamesByPeerID;
 - (void)useCircleInfoToUpdateNameForDevices:(id)arg1;
 - (void)resetCircleIncludingCloudKitData:(_Bool)arg1 cloudKitResetReasonDescription:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
-- (void)joinCircleAfterRecoveryWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned long long)_peerCount;
 - (void)promptForCredentials:(CDUnknownBlockType)arg1;
+- (long long)nextRetryInterval;
+- (_Bool)canRetryCliqueStatus;
 - (void)_joinCircleIgnoringBackups:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)joinCircleIgnoringBackups:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)joinCircleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)prepareCircleStateForRecovery;
 - (_Bool)synchronizeCircleViews;
 - (id)peerID;
-- (int)circleStatus;
+- (unsigned long long)circleStatus;
 - (void)dealloc;
 - (id)initWithUiProvider:(id)arg1 delegate:(id)arg2 circleProxy:(id)arg3;
 

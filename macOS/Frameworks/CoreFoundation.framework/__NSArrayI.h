@@ -9,20 +9,24 @@
 __attribute__((visibility("hidden")))
 @interface __NSArrayI : NSArray
 {
-    unsigned long long _used;
-    id _list[0];
+    struct {
+        unsigned long long used;
+        id list[0];
+    } storage;
 }
 
-+ (id)__new:(const id *)arg1:(struct __va_list_tag [1])arg2:(unsigned long long)arg3:(BOOL)arg4;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)dealloc;
 - (id)objectAtIndexedSubscript:(unsigned long long)arg1;
 - (void)enumerateObjectsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_58648341 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (void)getObjects:(id *)arg1 range:(struct _NSRange)arg2;
+- (id)nothingAtIndex:(unsigned long long)arg1;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
 

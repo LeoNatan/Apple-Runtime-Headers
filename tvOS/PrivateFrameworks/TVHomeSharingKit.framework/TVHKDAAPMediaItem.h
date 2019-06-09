@@ -6,12 +6,12 @@
 
 #import <TVHomeSharingKit/TVHKMediaItem.h>
 
-@class NSDate, NSDictionary, NSString, TVHKDMAPMediaEntityIdentifier, TVHKGaplessConfiguration, TVHKMediaEntityIdentifier, TVHKMediaEntityType, TVHKVideoCredits, TVHSDMAPChangeTrackingEntity, TVPContentRating;
+@class NSDate, NSDictionary, NSString, TVHKDMAPMediaEntityIdentifier, TVHKGaplessConfiguration, TVHKMediaEntityIdentifier, TVHKMediaEntityType, TVHKVideoCredits, TVHSDMAPChangeTrackingEntity, _TVContentRating;
 
 __attribute__((visibility("hidden")))
 @interface TVHKDAAPMediaItem : TVHKMediaItem
 {
-    TVPContentRating *_contentRating;
+    _TVContentRating *_contentRating;
     NSDate *_expirationDate;
     TVHKGaplessConfiguration *_gaplessConfiguration;
     NSString *_imageIdentifier;

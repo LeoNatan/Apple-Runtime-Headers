@@ -8,7 +8,7 @@
 
 #import <EventKit/EKIdentityProtocol-Protocol.h>
 
-@class EKObjectID, NSString, NSURL;
+@class EKObjectID, EKSource, NSString, NSURL;
 
 @interface EKCalendarNotification : NSObject <EKIdentityProtocol>
 {
@@ -23,6 +23,7 @@
     _Bool _hiddenFromNotificationCenter;
     _Bool _alerted;
     _Bool _couldBeJunk;
+    EKSource *_source;
     NSString *_firstName;
     NSString *_lastName;
 }
@@ -30,6 +31,7 @@
 @property(nonatomic) _Bool couldBeJunk; // @synthesize couldBeJunk=_couldBeJunk;
 @property(retain, nonatomic) NSString *lastName; // @synthesize lastName=_lastName;
 @property(retain, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
+@property(retain, nonatomic) EKSource *source; // @synthesize source=_source;
 @property(nonatomic) _Bool alerted; // @synthesize alerted=_alerted;
 @property(nonatomic) _Bool hiddenFromNotificationCenter; // @synthesize hiddenFromNotificationCenter=_hiddenFromNotificationCenter;
 @property(nonatomic) struct CGColor *dotColor; // @synthesize dotColor=_dotColor;

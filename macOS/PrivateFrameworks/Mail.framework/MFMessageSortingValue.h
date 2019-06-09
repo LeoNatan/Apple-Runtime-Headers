@@ -8,7 +8,7 @@
 
 #import <Mail/MCMessageSortingInterface-Protocol.h>
 
-@class MFMailbox, NSArray, NSString;
+@class ECSubject, MFMailbox, NSArray, NSString;
 
 @interface MFMessageSortingValue : NSObject <MCMessageSortingInterface>
 {
@@ -29,11 +29,11 @@
 @property(readonly) double dateSentAsTimeIntervalSince1970;
 @property(readonly) double dateReceivedAsTimeIntervalSince1970;
 @property(readonly, copy) NSArray *to;
-@property(readonly) unsigned long long subjectPrefixLength;
-@property(readonly, copy) NSString *subject;
+@property(readonly, copy) ECSubject *subject;
 @property(readonly, nonatomic) unsigned long long numberOfAttachments;
 @property(readonly, nonatomic) unsigned long long messageSize;
 @property(readonly, copy, nonatomic) NSString *senderDisplayName;
+@property(readonly) unsigned long long conversationFlags;
 @property(readonly, nonatomic) unsigned char flagColorSet;
 @property(readonly, nonatomic) long long messageFlags;
 @property(readonly) double dateLastViewedAsTimeIntervalSince1970;

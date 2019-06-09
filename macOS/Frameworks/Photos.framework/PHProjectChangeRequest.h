@@ -4,31 +4,82 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Photos/PHChangeRequest.h>
 
-@class NSData, NSString, PHPhotoLibrary, PHProject, RDAlbum;
+#import <Photos/PHInsertChangeRequest-Protocol.h>
+#import <Photos/PHUpdateChangeRequest-Protocol.h>
 
-@interface PHProjectChangeRequest : NSObject
+@class NSData, NSManagedObjectID, NSString, PHProject, PHRelationshipChangeRequestHelper;
+
+@interface PHProjectChangeRequest : PHChangeRequest <PHInsertChangeRequest, PHUpdateChangeRequest>
 {
     PHProject *_originalProject;
-    RDAlbum *_mutableModel;
-    PHPhotoLibrary *_photoLibrary;
+    NSData *_previewImageData;
+    BOOL _didSetPreviewImage;
+    PHRelationshipChangeRequestHelper *_assetsHelper;
+    PHRelationshipChangeRequestHelper *_keyAssetHelper;
 }
 
-+ (id)creationRequestForProjectWithExtensionIdentifier:(id)arg1 documentType:(id)arg2;
-@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-@property(retain, nonatomic) RDAlbum *mutableModel; // @synthesize mutableModel=_mutableModel;
++ (void)expungeProjects:(id)arg1;
++ (void)undeleteProjects:(id)arg1;
++ (void)deleteProjects:(id)arg1;
++ (void)_deleteProjects:(id)arg1 withOperation:(long long)arg2;
++ (BOOL)canGenerateUUIDWithoutEntitlements;
++ (id)creationRequestForProjectCopyFromProject:(id)arg1;
++ (id)creationRequestForProjectWithDocumentType:(id)arg1 projectExtensionIdentifier:(id)arg2 assets:(id)arg3 title:(id)arg4;
++ (id)creationRequestForProjectWithDocumentType:(id)arg1 projectExtensionIdentifier:(id)arg2;
+@property(readonly, nonatomic) PHRelationshipChangeRequestHelper *keyAssetHelper; // @synthesize keyAssetHelper=_keyAssetHelper;
+@property(readonly, nonatomic) PHRelationshipChangeRequestHelper *assetsHelper; // @synthesize assetsHelper=_assetsHelper;
 - (void).cxx_destruct;
+- (void)didMutate;
+@property(readonly, nonatomic) NSManagedObjectID *objectID;
+- (id)uuid;
+@property(readonly, getter=isMutated) BOOL mutated;
+@property(readonly) BOOL isNewRequest;
+- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;
+- (BOOL)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
+- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id *)arg3;
+- (BOOL)validateInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
+- (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
+- (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) NSString *managedEntityName;
+- (BOOL)prepareForServicePreflightCheck:(id *)arg1;
+- (BOOL)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
+- (void)encodeToXPCDict:(id)arg1;
+- (void)moveAssetsAtIndexes:(id)arg1 toIndex:(unsigned long long)arg2;
+- (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
+- (void)removeAssetsAtIndexes:(id)arg1;
 - (void)removeAssets:(id)arg1;
-- (void)setProjectPreviewImage:(id)arg1;
-- (id)_tiffDataForImage:(id)arg1 size:(struct CGSize)arg2;
-@property(copy, nonatomic) NSString *title;
+- (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
+- (void)addAssets:(id)arg1;
+- (void)_prepareAssetIDsIfNeeded;
 - (void)setKeyAsset:(id)arg1;
+- (void)_prepareKeyAssetIDIfNeeded;
+- (id)placeholderForCreatedProject;
+- (id)projectData;
+- (void)setProjectPreviewImage:(id)arg1;
+- (void)_setOriginalProject:(id)arg1;
+- (void)setAssets:(id)arg1;
+- (void)setProjectData:(id)arg1;
+- (void)setProjectRenderUuid:(id)arg1;
+- (id)projectRenderUuid;
 @property(copy, nonatomic) NSData *projectExtensionData;
-@property(readonly, nonatomic) RDAlbum *model;
-@property(readonly, copy, nonatomic) NSString *localIdentifier;
+- (void)setProjectExtensionIdentifier:(id)arg1;
+- (id)projectExtensionIdentifier;
+@property(retain, nonatomic) NSString *projectDocumentType;
+@property(copy, nonatomic) NSString *title;
+- (id)initForNewObject;
+- (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 - (id)initWithProject:(id)arg1;
-- (id)initWithPhotoLibrary:(id)arg1;
+
+// Remaining properties
+@property(readonly, nonatomic, getter=isClientEntitled) BOOL clientEntitled;
+@property(readonly, nonatomic) NSString *clientName;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

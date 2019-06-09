@@ -10,15 +10,17 @@
 {
 }
 
++ (_Bool)_isCanceledError:(id)arg1;
 + (unsigned int)_ekAccountErrorFromSubCalErrorCode:(int)arg1;
 + (unsigned int)_ekAccountErrorFromDAValidationErrorCode:(unsigned int)arg1;
 + (unsigned int)_ekAccountErrorFromDAErrorCode:(int)arg1;
 + (unsigned int)_ekAccountErrorFromCoreDAVErrorCode:(int)arg1;
 + (unsigned int)_accountErrorForNSError:(id)arg1;
-+ (void)_updateStatusForStoreWithExternalID:(id)arg1 lastSyncStartDate:(id)arg2 lastSyncEndDate:(id)arg3 lastSyncError:(unsigned int *)arg4;
-+ (void)_updateStatusForSource:(id)arg1 lastSyncStartDate:(id)arg2 lastSyncEndDate:(id)arg3 lastSyncError:(unsigned int *)arg4;
++ (void)_updateStatusForStoreWithExternalID:(id)arg1 lastSyncStartDate:(id)arg2 lastSyncEndDate:(id)arg3 lastSyncError:(unsigned int *)arg4 canceled:(_Bool)arg5;
++ (void)_updateStatusForSource:(id)arg1 lastSyncStartDate:(id)arg2 lastSyncEndDate:(id)arg3 lastSyncError:(unsigned int *)arg4 canceled:(_Bool)arg5;
 + (id)_eventStore;
 + (id)_eventStorePurger;
++ (void)resetSyncStatusIfNecessaryForStoresOfType:(unsigned int)arg1;
 + (void)resetSyncStatusForAllStoresIfNecessary;
 + (void)syncEndedForStoreWithExternalID:(id)arg1 withError:(id)arg2;
 + (void)syncStartedForStoreWithExternalID:(id)arg1;

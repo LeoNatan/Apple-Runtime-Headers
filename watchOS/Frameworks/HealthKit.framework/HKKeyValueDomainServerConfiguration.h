@@ -15,7 +15,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
+@property(readonly, copy, nonatomic) NSString *domainName; // @synthesize domainName=_domainName;
 @property(readonly, nonatomic) int category; // @synthesize category=_category;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

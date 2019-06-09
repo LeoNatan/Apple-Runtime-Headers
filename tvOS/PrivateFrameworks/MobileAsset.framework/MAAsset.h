@@ -18,13 +18,14 @@
 
 + (void)startCatalogDownload:(id)arg1 options:(id)arg2 then:(CDUnknownBlockType)arg3;
 + (void)startCatalogDownload:(id)arg1 then:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) long long state; // @synthesize state=_state;
+@property(readonly) long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSString *assetId; // @synthesize assetId=_assetId;
 @property(readonly, nonatomic) NSString *assetType; // @synthesize assetType=_assetType;
 @property(readonly, nonatomic) NSDictionary *attributes; // @synthesize attributes=_attributes;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)refreshState;
 - (_Bool)spaceCheck:(long long *)arg1;
+- (_Bool)overrideGarbageCollectionThreshold:(unsigned long long)arg1;
 - (long long)configDownloadSync:(id)arg1;
 - (void)configDownload:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (long long)cancelDownloadSync;
@@ -32,6 +33,7 @@
 - (long long)purgeSync;
 - (void)purge:(CDUnknownBlockType)arg1;
 - (void)commonAssetDownload:(id)arg1 options:(id)arg2 then:(CDUnknownBlockType)arg3;
+- (void)invokeClientCompletion:(long long)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (long long)calculateTimeout;
 - (void)startDownload:(id)arg1 then:(CDUnknownBlockType)arg2;
 - (void)startDownload:(CDUnknownBlockType)arg1;
@@ -40,11 +42,13 @@
 - (void)startDownloadWithExtractor:(CDUnknownBlockType)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)startDownloadWithExtractor:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)logAsset;
+- (id)description;
 - (id)assetProperty:(id)arg1;
 - (id)getLocalUrl;
 - (id)getLocalFileUrl;
 - (void)attachProgressCallBack:(CDUnknownBlockType)arg1;
 - (id)assetServerUrl;
+- (unsigned long long)hash;
 - (void)dealloc;
 - (id)initWithAttributes:(id)arg1;
 

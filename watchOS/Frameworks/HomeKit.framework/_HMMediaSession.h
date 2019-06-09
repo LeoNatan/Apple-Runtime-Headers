@@ -12,6 +12,7 @@
 @class HMFUnfairLock, NSString, NSUUID, _HMContext;
 @protocol OS_dispatch_queue, _HMMediaSessionDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _HMMediaSession : NSObject <HMFMessageReceiver, HMObjectMerge>
 {
     HMFUnfairLock *_lock;

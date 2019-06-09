@@ -9,6 +9,8 @@
 @class NSArray, NSString;
 
 @protocol WBSOrderedTab <NSObject>
+@property(readonly, nonatomic) double lastActivationTime;
+@property(readonly, nonatomic, getter=isClosing) BOOL closing;
 @property(readonly, nonatomic) BOOL shouldSelectOriginatingTabWhenClosed;
 @property(readonly, nonatomic) BOOL isPinnedTab;
 @property(readonly, nonatomic) NSString *windowIdentifier;

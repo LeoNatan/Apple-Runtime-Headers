@@ -18,6 +18,7 @@
     NSNumber *_recentContactIDNumber;
 }
 
+- (void).cxx_destruct;
 - (id)completionForSubstring:(id)arg1;
 - (id)loginName;
 - (BOOL)isResource;
@@ -29,7 +30,6 @@
 - (id)firstName;
 - (id)displayedName;
 - (id)recentContactIDNumber;
-- (void)dealloc;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 displayedName:(id)arg3 address:(id)arg4 loginName:(id)arg5 type:(id)arg6 recentContactIDNumber:(id)arg7;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 displayedName:(id)arg3 address:(id)arg4 loginName:(id)arg5 type:(id)arg6;
 

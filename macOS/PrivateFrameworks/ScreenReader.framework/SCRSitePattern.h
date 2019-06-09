@@ -20,7 +20,7 @@
 
 + (id)patternWithSitePatternString:(id)arg1;
 + (id)displayFormattedSitePatternString:(id)arg1;
-+ (id)sitePatternStringFromURLString:(id)arg1 error:(id *)arg2;
++ (id)sitePatternStringFromURLString:(id)arg1;
 @property(retain, nonatomic, setter=_setHostComponents:) NSArray *_pathComponents; // @synthesize _pathComponents=__pathComponents;
 @property(copy, nonatomic, setter=_setPath:) NSString *_path; // @synthesize _path=__path;
 @property(nonatomic, setter=_setPort:) long long _port; // @synthesize _port=__port;

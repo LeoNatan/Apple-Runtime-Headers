@@ -18,8 +18,8 @@
 }
 
 + (id)sharedController;
-@property(nonatomic) BOOL isPressAndHold; // @synthesize isPressAndHold=_isPressAndHold;
 @property(nonatomic) BOOL inPressAndHoldEvent; // @synthesize inPressAndHoldEvent=_inPressAndHoldEvent;
+@property(nonatomic) BOOL isPressAndHold; // @synthesize isPressAndHold=_isPressAndHold;
 @property(copy, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
 @property(retain, nonatomic) IMKSimulatorWindow *currentWindow; // @synthesize currentWindow=_currentWindow;
 @property(readonly, nonatomic) id <IMKSimulatorDelegate><NSObject> simulatorDelegate;

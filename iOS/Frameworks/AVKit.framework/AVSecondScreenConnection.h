@@ -8,6 +8,7 @@
 
 @class AVDisplayCriteria, AVObservationController, AVPlayer, AVPlayerLayer, AVSecondScreen, AVSecondScreenDebugAssistant, AVSecondScreenViewController, UIView, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface AVSecondScreenConnection : NSObject
 {
     _Bool _readyToConnect;
@@ -37,7 +38,7 @@
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 @property(nonatomic) __weak AVSecondScreen *connectedSecondScreen; // @synthesize connectedSecondScreen=_connectedSecondScreen;
 @property(readonly, nonatomic, getter=isReadyToConnect) _Bool readyToConnect; // @synthesize readyToConnect=_readyToConnect;
-@property(nonatomic) __weak AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
+@property(readonly, nonatomic) __weak AVPlayerLayer *playerLayer; // @synthesize playerLayer=_playerLayer;
 @property(readonly, nonatomic) AVPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
 - (_Bool)_currentItemIsReadyToPlayVideoOrLoadingWhileActive;
@@ -48,8 +49,11 @@
 - (void)_startObservingPlayer;
 - (void)_postNotification:(id)arg1 oldValue:(id)arg2 newValue:(id)arg3;
 - (void)_loadSecondScreenViewControllerIfNeeded;
+@property(readonly, nonatomic) double videoDisplayScale;
+@property(readonly, nonatomic) struct CGSize videoDisplaySize;
 - (void)connectWithScreen:(id)arg1 active:(_Bool)arg2;
 - (void)setReadyToConnect:(_Bool)arg1;
+- (void)setPlayerLayer:(id)arg1;
 @property(readonly, nonatomic) AVSecondScreenDebugAssistant *debugAssistant; // @synthesize debugAssistant=_debugAssistant;
 @property(readonly, nonatomic) UIViewController *contentViewController;
 - (void)startUpdates;

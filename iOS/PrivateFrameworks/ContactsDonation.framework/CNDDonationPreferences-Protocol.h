@@ -6,7 +6,11 @@
 
 #import <ContactsDonation/NSObject-Protocol.h>
 
+@class CNObservable, NSNotificationCenter;
+@protocol CNDDonationPreferences, CNSchedulerProvider;
+
 @protocol CNDDonationPreferences <NSObject>
++ (CNObservable *)observableWithPreferences:(id <CNDDonationPreferences>)arg1 notificationCenter:(NSNotificationCenter *)arg2 schedulerProvider:(id <CNSchedulerProvider>)arg3;
 @property(nonatomic, getter=isDonationsEnabled) _Bool donationsEnabled;
 @end
 

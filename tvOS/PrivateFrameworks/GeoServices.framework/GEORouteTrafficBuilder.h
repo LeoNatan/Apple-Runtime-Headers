@@ -16,6 +16,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)trafficOffsets;
+- (id)trafficColors;
 - (void)copyTrafficToRoute:(id)arg1;
 - (void)_removeDuplicateTraffic;
 - (void)addTrafficFromETARoute:(id)arg1;

@@ -18,12 +18,16 @@
 + (_Bool)isWakeGestureOverrideEnabled;
 + (_Bool)isWakeGestureAvailable;
 + (id)sharedManager;
++ (id)stringForGestureState:(int)arg1;
 @property(nonatomic) int crown; // @synthesize crown=_crown;
 @property(nonatomic) int wrist; // @synthesize wrist=_wrist;
 @property(nonatomic) id <CMWakeGestureDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)logAssert;
+- (void)reset;
+- (_Bool)setFireAllEnabled:(_Bool)arg1;
 - (void)setDetectedStateEnabled:(_Bool)arg1;
 - (_Bool)setNightStandMode:(_Bool)arg1 withConfiguration:(int)arg2;
+- (void)simulateGesture:(int)arg1 after:(double)arg2;
 - (_Bool)simulateGestureWithDelay:(double)arg1 Duration:(double)arg2;
 - (void)stopWakeGestureUpdates;
 - (void)startWakeGestureUpdates;

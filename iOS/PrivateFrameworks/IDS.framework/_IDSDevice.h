@@ -6,37 +6,22 @@
 
 #import <objc/NSObject.h>
 
-#import <IDS/IDSDaemonListenerProtocol-Protocol.h>
+@class CUTWeakReference, NSArray, NSData, NSDate, NSDictionary, NSString, NSUUID;
 
-@class CUTWeakReference, NSArray, NSData, NSDate, NSDictionary, NSInputStream, NSOutputStream, NSString, NSUUID;
-@protocol OS_dispatch_queue;
-
-@interface _IDSDevice : NSObject <IDSDaemonListenerProtocol>
+@interface _IDSDevice : NSObject
 {
     NSDictionary *_info;
-    NSString *_serviceToken;
     CUTWeakReference *_account;
-    int _socket;
+    CUTWeakReference *_serviceReference;
     int _nearbyToken;
     _Bool _nearby;
     _Bool _connected;
     _Bool _immutableCloudConnected;
     _Bool _cloudConnected;
-    CDUnknownBlockType _openSocketCompletionHandler;
-    NSObject<OS_dispatch_queue> *_openSocketCompletionHandlerQueue;
-    NSString *_openSocketCompletionHandlerID;
-    NSInputStream *_inputStreamForSocket;
-    NSOutputStream *_outputStreamForSocket;
 }
 
 - (void).cxx_destruct;
-- (void)closeSocketForDomain:(id)arg1;
-- (void)xpcObject:(id)arg1 objectContext:(id)arg2;
-- (void)closeStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
-- (void)setStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
-- (void)closeSocket:(int)arg1;
-- (void)openSocketWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 onQueue:(id)arg3;
-- (int)socketForDomain:(id)arg1;
+- (void)_setService:(id)arg1;
 - (void)_setAccount:(id)arg1;
 - (void)_cloudConnectedStateChanged;
 - (void)_connectedStateChanged;
@@ -68,7 +53,7 @@
 @property(readonly, nonatomic, getter=isCloudConnected) _Bool cloudConnected;
 @property(readonly, nonatomic, getter=isConnected) _Bool connected;
 @property(readonly, nonatomic, getter=isNearby) _Bool nearby;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (id)fullDescription;
 @property(readonly, nonatomic) NSString *service;
 @property(readonly, nonatomic) NSString *name;
@@ -78,14 +63,8 @@
 @property(readonly, nonatomic) NSString *productBuildVersion;
 @property(readonly, nonatomic) NSString *uniqueIDOverride;
 @property(readonly, nonatomic) NSString *uniqueID;
-- (void)_connect;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

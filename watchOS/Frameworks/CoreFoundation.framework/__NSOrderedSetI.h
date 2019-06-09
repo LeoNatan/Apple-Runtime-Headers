@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
     id _list[0];
 }
 
-+ (id)__new:(const id *)arg1:(unsigned int)arg2:(_Bool)arg3;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (void)dealloc;

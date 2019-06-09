@@ -6,28 +6,30 @@
 
 #import <AppKit/NSView.h>
 
-@class NSMutableArray, NSScrollView, NSSegmentedControl, NSWindowController;
+@class NSButton, NSMutableArray, NSScrollView, NSSegmentedControl, NSTableView, NSTextField, NSWindowController;
 
 @interface AirPortOptionsTabView : NSView
 {
     id _owner;
-    id _networksTableLabel;
-    id _networksTable;
+    NSTextField *_networksTableLabel;
+    NSTableView *_networksTable;
     NSScrollView *_networksScrollView;
     NSSegmentedControl *_addRemoveEditButton;
-    id _alwaysRemember;
-    id _requireAdminIBSSCreationCheckbox;
-    id _requireAdminPowerToggleCheckbox;
-    id _requireAdminNetworkChangeCheckbox;
-    id _airportID;
-    id _airportIDLabel;
+    NSButton *_alwaysRemember;
+    NSButton *_requireAdminIBSSCreationCheckbox;
+    NSButton *_requireAdminPowerToggleCheckbox;
+    NSButton *_requireAdminNetworkChangeCheckbox;
+    NSTextField *_airportID;
+    NSTextField *_airportIDLabel;
     NSMutableArray *_preferredNetworks;
     NSMutableArray *_preferredNetworksCloudOnly;
     NSMutableArray *_removeNetworks;
     NSMutableArray *_removeNetworksLocalOnly;
     NSWindowController *_currentDialog;
+    BOOL _supportsWPA3Personal;
 }
 
+@property BOOL supportsWPA3Personal; // @synthesize supportsWPA3Personal=_supportsWPA3Personal;
 @property(retain) NSWindowController *currentDialog; // @synthesize currentDialog=_currentDialog;
 @property(retain) NSMutableArray *preferredNetworksCloudOnly; // @synthesize preferredNetworksCloudOnly=_preferredNetworksCloudOnly;
 @property(retain) NSMutableArray *preferredNetworks; // @synthesize preferredNetworks=_preferredNetworks;
@@ -65,13 +67,10 @@
 - (void)showBrowseDialog;
 - (void)showAddDialogWithNetworkProfile:(id)arg1;
 - (void)showAddDialogWithNetwork:(id)arg1;
-- (void)performScanWithSSIDList:(id)arg1;
-- (id)__cachedScanResults;
-- (id)__cachedPasspointANQPElements;
-- (void)selectedPasspointNetwork:(id)arg1 profile:(id)arg2 interface:(id)arg3;
-- (void)selectedNetwork:(id)arg1 interface:(id)arg2;
-- (void)stopScanningForNetworksWithInterface:(id)arg1;
-- (void)startScanningForNetworksWithInterface:(id)arg1;
+- (void)__selectedNetwork:(id)arg1 interface:(id)arg2;
+- (void)browseDialogSelectedScanResult:(id)arg1;
+- (void)browseDialogStopScanning:(id)arg1;
+- (void)browseDialogStartScanning:(id)arg1;
 - (void)addProfileDialogSelectedChooseNetwork:(id)arg1;
 - (void)addProfileDialog:(id)arg1 didConfigureEnterpriseProfile:(id)arg2 username:(id)arg3 password:(id)arg4 identity:(id)arg5 interface:(id)arg6;
 - (void)addProfileDialog:(id)arg1 didConfigurePasswordProfile:(id)arg2 password:(id)arg3 interface:(id)arg4;

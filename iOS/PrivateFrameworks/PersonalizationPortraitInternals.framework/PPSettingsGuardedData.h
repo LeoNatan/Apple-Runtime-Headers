@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSSet;
+@class NSData, NSDate, NSMutableDictionary, NSSet, NSString;
 
 @interface PPSettingsGuardedData : NSObject
 {
@@ -14,8 +14,12 @@
     NSSet *_donationDisabledBundleIdentifiers;
     NSSet *_cloudKitDisabledBundleIdentifiers;
     NSMutableDictionary *_donationDisabledChangeHandlers;
+    NSMutableDictionary *_queryPlanLoggingChangeHandlers;
     int _nextChangeHandlerToken;
     _Bool _appConnectionsLocationsEnabled;
+    NSDate *_entitiesBackfillTimestamp;
+    NSData *_entitiesMappingTrieSha256;
+    NSString *_abGroupOverride;
 }
 
 - (void).cxx_destruct;

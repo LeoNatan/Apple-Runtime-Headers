@@ -57,7 +57,7 @@
 - (id)_indicatorImage;
 - (id)_defaultIndicatorImage;
 - (id)_coreUIDefaultIndicatorImage;
-- (unsigned long long)_effectiveAlignment;
+- (long long)_effectiveAlignment;
 - (BOOL)_hasAttributedStringValue;
 - (id)attributedTitle;
 - (struct CGRect)drawTitle:(id)arg1 withFrame:(struct CGRect)arg2 inView:(id)arg3;
@@ -65,11 +65,11 @@
 - (BOOL)_shouldDrawTextWithDisabledAppearance;
 - (void)drawBorderAndBackgroundWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
-- (struct __CFDictionary *)_coreUIBezelDrawOptionsWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (const struct __CFDictionary *)_coreUIBezelDrawOptionsWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct __CFString *)_coreUIWidgetName;
 - (BOOL)_shouldDrawIndicatorOnlyForFrame:(struct CGRect)arg1;
-- (int)_effectiveBackgroundStyleInView:(id)arg1 isTemplate:(BOOL)arg2;
 - (long long)interiorBackgroundStyle;
+- (long long)_contentBacking;
 - (void)_drawIndicatorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (BOOL)_subclassOverridesAnyDrawMethodsAffectingVibrancy:(char *)arg1;
 - (BOOL)_shouldTweakRoundingBehaviorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -135,7 +135,7 @@
 - (unsigned long long)_popUpMenuFlags:(BOOL)arg1;
 - (double)_menuMinimumWidthForEvent:(id)arg1 inCellFrame:(struct CGRect)arg2 ofView:(id)arg3;
 - (struct CGPoint)_menuLocationForEvent:(id)arg1 inCellFrame:(struct CGRect)arg2 ofView:(id)arg3;
-- (double)_horzOffsetForTitleInFrame:(struct CGRect)arg1 withAlignment:(unsigned long long)arg2 direction:(long long)arg3 font:(id)arg4;
+- (double)_horzOffsetForTitleInFrame:(struct CGRect)arg1 withAlignment:(long long)arg2 direction:(long long)arg3 font:(id)arg4;
 - (BOOL)_positionsMenuRelativeToRightEdge;
 - (BOOL)_positionsMenuAsPullDown;
 - (void)_selectItemAtIndex:(long long)arg1 alteringState:(BOOL)arg2;

@@ -16,6 +16,7 @@
 + (id)_defaultPlayPunchoutURLWithPlayable:(id)arg1;
 + (id)_defaultOpenPunchoutURLWithPlayable:(id)arg1;
 + (_Bool)_playNonITunesPlayableUsingAssociatedApp:(id)arg1;
++ (id)_punchoutURLForDirectPlayback:(id)arg1 ignoreExtras:(_Bool)arg2;
 + (id)_watchListAppPunchoutURLWithPlayable:(id)arg1 forContentType:(unsigned long long)arg2 canonicalID:(id)arg3 showCanonicalID:(id)arg4 seasonCanonicalID:(id)arg5 allowPlayAction:(_Bool)arg6 isPlaybackURL:(_Bool *)arg7;
 + (id)_watchListAppOpenPunchoutURLWithITunesPlayable:(id)arg1 forContentType:(unsigned long long)arg2 canonicalID:(id)arg3 showCanonicalID:(id)arg4 seasonCanonicalID:(id)arg5;
 + (_Bool)_openNonITunesPlayableWatchListAppUnavailable:(id)arg1 forContentType:(unsigned long long)arg2 canonicalID:(id)arg3 showCanonicalID:(id)arg4 seasonCanonicalID:(id)arg5;

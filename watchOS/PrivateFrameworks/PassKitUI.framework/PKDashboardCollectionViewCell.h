@@ -12,20 +12,31 @@
 {
     UIView *_separatorView;
     _Bool _showsBottomSeparator;
+    _Bool _bottomSeparatorVisible;
     unsigned int _maskType;
     struct CGRect _previousMaskBounds;
     unsigned int _previousMaskType;
+    _Bool _customHorizontalInset;
+    float _horizontalInset;
     _Bool _wantsCustomAppearance;
+    _Bool _wantsDefaultHighlightBehavior;
 }
 
++ (id)defaultBackgroundColor;
 + (float)defaultHorizontalInset;
 @property(nonatomic) _Bool showsBottomSeparator; // @synthesize showsBottomSeparator=_showsBottomSeparator;
+@property(nonatomic) _Bool wantsDefaultHighlightBehavior; // @synthesize wantsDefaultHighlightBehavior=_wantsDefaultHighlightBehavior;
 @property(nonatomic) _Bool wantsCustomAppearance; // @synthesize wantsCustomAppearance=_wantsCustomAppearance;
 - (void).cxx_destruct;
 - (void)setHighlighted:(_Bool)arg1;
+- (float)_bottomSeparatorAlpha;
+- (void)setBottomSeparatorVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)updateMask;
 @property(nonatomic) unsigned int maskType;
+@property(nonatomic) float horizontalInset;
+- (void)prepareForReuse;
 - (void)layoutSubviews;
+- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

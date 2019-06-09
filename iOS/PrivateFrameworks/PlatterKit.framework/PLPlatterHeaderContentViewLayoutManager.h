@@ -11,10 +11,8 @@
 @interface PLPlatterHeaderContentViewLayoutManager : NSObject
 {
     PLPlatterHeaderContentView *_headerContentView;
-    UILabel *_outgoingTitleLabel;
 }
 
-@property(readonly, nonatomic, getter=_outgoingTitleLabel) UILabel *outgoingTitleLabel; // @synthesize outgoingTitleLabel=_outgoingTitleLabel;
 @property(readonly, nonatomic) __weak PLPlatterHeaderContentView *headerContentView; // @synthesize headerContentView=_headerContentView;
 - (void).cxx_destruct;
 - (struct CGRect)_titleLabelBoundsForSize:(struct CGSize)arg1 withNumberOfLines:(double)arg2;

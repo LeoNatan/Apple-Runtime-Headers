@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIItemViewElement, SKUILabelViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuViewElement : SKUIViewElement
 {
     BOOL _enabled;

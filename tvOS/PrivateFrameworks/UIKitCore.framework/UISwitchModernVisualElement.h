@@ -6,18 +6,20 @@
 
 #import <UIKitCore/UISwitchVisualElement.h>
 
+#import <UIKitCore/CAAnimationDelegate-Protocol.h>
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 #import <UIKitCore/UISwitchMVEGestureTrackingSessionElement-Protocol.h>
 
 @class NSString, UIColor, UIImage, UIImageView, UILongPressGestureRecognizer, UIPanGestureRecognizer, UISwitchMVEGestureTrackingSession, UIView;
 
 __attribute__((visibility("hidden")))
-@interface UISwitchModernVisualElement : UISwitchVisualElement <UIGestureRecognizerDelegate, UISwitchMVEGestureTrackingSessionElement>
+@interface UISwitchModernVisualElement : UISwitchVisualElement <UIGestureRecognizerDelegate, UISwitchMVEGestureTrackingSessionElement, CAAnimationDelegate>
 {
     UIView *_switchWellView;
     UIView *_leftSwitchWellView;
     UIView *_switchWellContainerView;
     UIView *_leftSwitchWellContainerView;
+    UIImageView *_switchWellImageView;
     UIView *_switchWellImageViewContainer;
     UIImageView *_switchWellOffImageView;
     UIImageView *_switchWellOnImageView;
@@ -36,6 +38,8 @@ __attribute__((visibility("hidden")))
     UIPanGestureRecognizer *_pan;
 }
 
++ (id)_modernThumbImageWithColor:(id)arg1 mask:(unsigned long long)arg2 traitCollection:(id)arg3;
++ (id)_modernGradientImageWithOnColor:(id)arg1 traitCollection:(id)arg2;
 + (struct CGSize)preferredContentSize;
 @property(retain, nonatomic) UIPanGestureRecognizer *pan; // @synthesize pan=_pan;
 @property(retain, nonatomic) UILongPressGestureRecognizer *longPress; // @synthesize longPress=_longPress;
@@ -51,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)setSemanticContentAttribute:(long long)arg1;
 - (void)_setPressed:(_Bool)arg1 on:(_Bool)arg2 animated:(_Bool)arg3 shouldAnimateLabels:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_updateDisplayAnimated:(_Bool)arg1;
+- (void)_updateDisplayWithAnimationIfNeeded;
 - (id)_effectiveOffImageTintColor;
 - (id)_effectiveOnImageTintColor;
 - (_Bool)_shouldUseLightTintOverColor:(id)arg1;
@@ -59,18 +64,24 @@ __attribute__((visibility("hidden")))
 - (id)_effectiveOffImage;
 - (id)_effectiveOnImage;
 - (id)_effectiveThumbImage;
+- (id)_effectiveGradientImage;
 - (id)_effectiveOffTextColor;
 - (id)_effectiveTintColor;
 - (id)_defaultOnTintColor;
 - (id)_effectiveOnTintColor;
 - (id)_labelOpacityAnimation;
+- (id)_switchTrackPositionSpringAnimationFromValue:(id)arg1 toValue:(id)arg2 on:(_Bool)arg3;
+- (id)_switchKnobWidthSpringAnimationFromValue:(id)arg1 toValue:(id)arg2 pressed:(_Bool)arg3;
+- (id)_switchKnobPositionSpringAnimationFromValue:(id)arg1 toValue:(id)arg2;
 - (id)_switchSpringAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3 pressed:(_Bool)arg4;
 - (id)_switchTrackColorAnimationWithFromValue:(id)arg1 toValue:(id)arg2;
 - (id)_switchTrackAnimationWithFromValue:(id)arg1 toValue:(id)arg2 on:(_Bool)arg3;
+- (id)_switchTrackPositionAnimationWithFromValue:(id)arg1 toValue:(id)arg2 on:(_Bool)arg3;
 - (struct CGPoint)_onImagePosition;
 - (struct CGPoint)_offImagePosition;
 - (struct CGColor *)_wellColorOn:(_Bool)arg1;
 - (double)_wellBorderWidthPressed:(_Bool)arg1 on:(_Bool)arg2;
+- (struct CGPoint)_wellPositionOn:(_Bool)arg1 forBounds:(struct CGRect)arg2;
 - (struct CGPoint)_leftSwitchWellContainerPositionOn:(_Bool)arg1 pressed:(_Bool)arg2;
 - (struct CGRect)_leftSwitchWellContainerBoundsOn:(_Bool)arg1 pressed:(_Bool)arg2;
 - (struct CGPoint)_switchWellPositionOn:(_Bool)arg1 pressed:(_Bool)arg2;
@@ -81,17 +92,21 @@ __attribute__((visibility("hidden")))
 - (void)_transitionImagesToPressed:(_Bool)arg1 on:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_transitionWellViewToOn:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_transitionWellViewToPressed:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_transitionWellViewToPressed:(_Bool)arg1 on:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
 - (void)_transitionKnobToOn:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_transitionKnobToPressed:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_transitionKnobToPressed:(_Bool)arg1 on:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)tintColorDidChange;
 - (void)setTintColor:(id)arg1;
 - (void)setOnTintColor:(id)arg1;
-- (id)_maskLayerForImageViews;
 - (void)_orderSubviews;
 - (void)_invalidateOnOffImages;
 - (void)_invalidateKnob;
 - (void)_invalidateWell;
+- (void)_switchToStaticMode:(_Bool)arg1;
 - (void)_invalidateControl;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)_handlePanWithGestureLocationInBounds:(struct CGPoint)arg1 horizontalTranslation:(double)arg2 gestureState:(long long)arg3 resetPanTranslationBlock:(CDUnknownBlockType)arg4;
 - (void)_handlePan:(id)arg1;
 - (void)_handleLongPressWithGestureLocationInBounds:(struct CGPoint)arg1 gestureState:(long long)arg2;

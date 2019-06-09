@@ -19,7 +19,7 @@
 - (id)initWithManager:(id)arg1 destination:(const struct sockaddr *)arg2 mask:(const struct sockaddr *)arg3 interface:(unsigned int)arg4;
 - (id)description;
 - (id)_currentSnapshot;
-- (int)handleDescriptor:(void *)arg1 length:(unsigned long long)arg2;
+- (int)handleDescriptor:(void *)arg1 length:(unsigned long long)arg2 events:(unsigned long long)arg3;
 
 @end
 

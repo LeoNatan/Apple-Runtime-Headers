@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _animationCompletionHandler;
     NSMutableIndexSet *_changedAutomaticRowHeights;
     NSMapTable *_cachedAutomaticRowHeights;
-    NSMutableSet *_vendedViews;
+    NSMutableSet *_rowViewPurgatory;
     unsigned int _updatingVisibleRows:1;
     unsigned int _animateFrames:1;
     unsigned int _updatingColumnWidths:1;
@@ -66,6 +66,7 @@ __attribute__((visibility("hidden")))
     unsigned int _ignoreTrackingAreas:1;
     unsigned int _scheduledCullOfViews:1;
     unsigned int _keyViewLoopIsDirty:1;
+    unsigned int _rowViewPurgatoryEnabled:1;
 }
 
 @property(readonly, nonatomic) NSMutableIndexSet *mutableHiddenRowIndexes; // @synthesize mutableHiddenRowIndexes=_hiddenRowIndexes;
@@ -238,8 +239,6 @@ __attribute__((visibility("hidden")))
 - (void)_handleChangedAutomaticRowHeights;
 - (void)_keepTopRowStable:(BOOL)arg1 andDoWorkUntilDone:(CDUnknownBlockType)arg2;
 - (void)cacheExistingSubviews;
-- (void)removePluckedRowView:(id)arg1;
-- (void)verifyAttachedRowEntries;
 - (void)_updateVisibleRowEntries;
 - (void)_updatePreparedContentRect;
 - (struct CGRect)_currentPreparedContentRect;
@@ -329,7 +328,6 @@ __attribute__((visibility("hidden")))
 - (void)removeTemporaryViews;
 - (double)_currentAnimationDuration;
 - (void)_removeViewAndAddToReuse:(id)arg1 forRow:(long long)arg2;
-- (void)_removeOrHideView:(id)arg1;
 - (void)_addViewsToRowView:(id)arg1 atRow:(long long)arg2;
 - (void)updateKeyViewLoopIfNeeded;
 - (void)_markUpdateKeyViewLoopDirtyForRowView:(id)arg1;

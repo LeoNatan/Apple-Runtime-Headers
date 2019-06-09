@@ -72,7 +72,6 @@
 - (id)_invalidStreamsResponseErrorUnderlyingError:(id)arg1;
 - (void)_sendMetadataToStreams;
 - (void)submitAssetCollectionsForPublication:(id)arg1 skipAssetCollections:(id)arg2;
-- (void)submitAssetCollectionsForPublication:(id)arg1;
 - (void)_didFinishUsingAssetCollections:(id)arg1;
 - (void)_removeAssetsInAssetCollectionWrappersFromAssetMap:(id)arg1;
 - (void)_removeAssetFromFileHashMap:(id)arg1;

@@ -69,10 +69,11 @@
 - (void)addPairing:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)stopPairingWithError:(id *)arg1;
 - (_Bool)tryPairingPassword:(id)arg1 error:(id *)arg2;
-- (void)startPairingWithConsentRequired:(_Bool)arg1;
+- (void)startPairingWithConsentRequired:(_Bool)arg1 config:(id)arg2 ownershipProof:(id)arg3;
 - (void)continuePairingUsingWAC;
 - (void)continuePairingAfterAuthPrompt;
 - (_Bool)matchesSetupID:(id)arg1;
+- (id)productData;
 @property(readonly, nonatomic, getter=isPaired) _Bool paired;
 - (void)reconfirm;
 - (void)notifyDelegateUpdatedCategory:(id)arg1;

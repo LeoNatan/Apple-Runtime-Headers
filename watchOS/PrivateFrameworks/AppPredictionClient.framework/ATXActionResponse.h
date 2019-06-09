@@ -8,14 +8,16 @@
 
 #import <AppPredictionClient/NSSecureCoding-Protocol.h>
 
-@class ATXAction, NSArray, NSData, NSDate, NSError, NSIndexSet, NSUUID;
+@class ATXAction, NSArray, NSData, NSDate, NSError, NSIndexSet, NSString, NSUUID;
 
 @interface ATXActionResponse : NSObject <NSSecureCoding>
 {
     NSIndexSet *_shownActionIndices;
     NSIndexSet *_explicitlyDismissedActionIndices;
     NSArray *_shownActionsCache;
+    _Bool _isRoutableInternal;
     unsigned char _consumerSubType;
+    _Bool _isRoutable;
     NSUUID *_uuid;
     NSArray *_scoredActions;
     NSDate *_predictionDate;
@@ -24,6 +26,8 @@
     unsigned int _feedbackStage;
     NSDate *_uiFeedbackDate;
     NSDate *_donatedIntentDate;
+    unsigned int _searchedActionType;
+    NSString *_engagedAppString;
     NSData *_cacheFileData;
     NSError *_error;
 }
@@ -31,6 +35,9 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSData *cacheFileData; // @synthesize cacheFileData=_cacheFileData;
+@property(readonly, nonatomic) _Bool isRoutable; // @synthesize isRoutable=_isRoutable;
+@property(readonly, nonatomic) NSString *engagedAppString; // @synthesize engagedAppString=_engagedAppString;
+@property(readonly, nonatomic) unsigned int searchedActionType; // @synthesize searchedActionType=_searchedActionType;
 @property(readonly, nonatomic) NSDate *donatedIntentDate; // @synthesize donatedIntentDate=_donatedIntentDate;
 @property(readonly, nonatomic) NSDate *uiFeedbackDate; // @synthesize uiFeedbackDate=_uiFeedbackDate;
 @property(readonly, nonatomic) unsigned int feedbackStage; // @synthesize feedbackStage=_feedbackStage;
@@ -43,20 +50,22 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (_Bool)isActionSpotlightCaptureRateAppEngagementType;
 - (id)jsonDescription;
 - (id)jsonData;
 - (id)json;
 - (unsigned int)hash;
 - (_Bool)isEqualToActionResponse:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)sessionId;
 @property(readonly, nonatomic) NSArray *explicitlyDismissedActions;
 @property(readonly, nonatomic) NSArray *shownActions;
 - (_Bool)indexWasShown:(unsigned int)arg1;
 @property(readonly, nonatomic) NSArray *actions;
 - (void)updateWithMatchingIntentDonatedAction:(id)arg1 intentDonationDate:(id)arg2;
-- (void)updateConsumerSubType:(unsigned char)arg1 engagedAction:(id)arg2 shownActions:(id)arg3 feedbackStage:(unsigned int)arg4 explicitlyDismissedActions:(id)arg5;
+- (void)updateConsumerSubType:(unsigned char)arg1 engagedAction:(id)arg2 shownActions:(id)arg3 feedbackStage:(unsigned int)arg4 explicitlyDismissedActions:(id)arg5 searchedActionType:(unsigned int)arg6 engagedAppString:(id)arg7;
 - (id)initWithScoredActions:(id)arg1 cacheFileData:(id)arg2 consumerSubType:(unsigned char)arg3 error:(id)arg4;
+- (id)routeDestinationType;
+- (void)setRoutableState:(_Bool)arg1;
 
 @end
 

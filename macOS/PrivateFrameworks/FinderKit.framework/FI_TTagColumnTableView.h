@@ -6,11 +6,15 @@
 
 #import <FinderKit/FI_TTableView.h>
 
+@class NSObject;
+@protocol TTagColumnTableViewDelegate;
+
 __attribute__((visibility("hidden")))
 @interface FI_TTagColumnTableView : FI_TTableView
 {
     struct TNSRef<FI_TTableViewShrinkToFitController, void> _stfController;
     struct TNotificationCenterObserver _clipViewBoundsDidChangeObserver;
+    struct TKeyValueObserver _delegateTornDownObserver;
 }
 
 - (id).cxx_construct;
@@ -20,8 +24,8 @@ __attribute__((visibility("hidden")))
 - (id)stfEditorController;
 - (id)menuForEvent:(id)arg1;
 - (BOOL)canDragRowsWithIndexes:(id)arg1 atPoint:(struct CGPoint)arg2;
+@property __weak NSObject<TTagColumnTableViewDelegate> *delegate;
 - (void)aboutToTearDown;
-- (id)tagColumnController;
 - (void)awakeCommon;
 - (id)initWithCoder:(id)arg1;
 

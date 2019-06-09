@@ -27,13 +27,13 @@
 @property(readonly, nonatomic) unsigned int statusSubject; // @synthesize statusSubject=_statusSubject;
 @property(readonly, nonatomic) unsigned int statusClass; // @synthesize statusClass=_statusClass;
 @property(readonly, nonatomic) int status; // @synthesize status=_status;
+- (void).cxx_destruct;
 - (id)description;
 - (id)errorMessageWithAddress:(id)arg1 defaultMessage:(id)arg2;
 - (int)failureReason;
 - (void)setLastResponseLine:(id)arg1;
 - (id)lastResponseLine;
 - (void)_updateEnhancedStatusCodesFromLastResponse;
-- (void)dealloc;
 - (void)setStatus:(int)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStatus:(int)arg1;

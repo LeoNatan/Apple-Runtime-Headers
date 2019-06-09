@@ -6,12 +6,12 @@
 
 #import <FrontBoardServices/FBSSceneSnapshotAction.h>
 
-@class BKSProcessAssertion, NSString;
+@class NSString, RBSAssertion;
 
 @interface FBSceneSnapshotAction : FBSSceneSnapshotAction
 {
     NSString *_sceneID;
-    BKSProcessAssertion *_assertion;
+    RBSAssertion *_assertion;
 }
 
 @property(readonly, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;

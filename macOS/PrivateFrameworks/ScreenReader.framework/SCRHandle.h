@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)_moveByOffset:(long long)arg1 vertically:(BOOL)arg2 request:(id)arg3;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)isAdjustable;
 - (BOOL)isInteractive;
 

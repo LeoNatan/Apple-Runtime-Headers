@@ -6,10 +6,11 @@
 
 #import <SiriUI/NSObject-Protocol.h>
 
-@class AceObject, NSError, NSString, NSURL, SAGuidanceGuideUpdate, SAPhonePlayVoiceMail, SASSpeechPartialResult, SASSpeechRecognized, SASmsPlayAudio, SAUIAddViews, SAUIAppPunchOut, SAUIClearScreen, SAUICloseAssistant, SAUIHideSiriOverlay, SAUIListenForPronunciation, SAUIOpenLink, SAUIRepeatIt, SAUISayIt, SAUIShowHelp, SAUIUpdateViews, SiriUIRequestOptions;
+@class AceObject, NSError, NSString, NSURL, SACardShowNextCard, SAGuidanceGuideUpdate, SAPhonePlayVoiceMail, SASSpeechPartialResult, SASSpeechRecognized, SASmsPlayAudio, SAUIAddViews, SAUIAppPunchOut, SAUIClearScreen, SAUICloseAssistant, SAUIHideSiriOverlay, SAUIListenForPronunciation, SAUIOpenLink, SAUIRepeatIt, SAUISayIt, SAUIShowHelp, SAUIUpdateViews, SiriUIRequestOptions;
 @protocol SAAceCommand;
 
 @protocol AFUISiriSessionDelegate <NSObject>
+- (void)siriSessionDidReceiveShowNextCardCommand:(SACardShowNextCard *)arg1 completion:(id)arg2;
 - (void)siriSessionSpeechRecordingDidFailWithError:(NSError *)arg1;
 - (void)siriSessionSpeechRecordingDidCancel;
 - (void)siriSessionSpeechRecordingDidEnd;

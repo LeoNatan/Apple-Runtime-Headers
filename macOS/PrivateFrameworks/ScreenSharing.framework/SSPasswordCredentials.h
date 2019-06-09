@@ -10,12 +10,11 @@
 
 @interface SSPasswordCredentials : SSCredentials
 {
-    NSString *mPassword;
-    void *mReservedForInstanceVariablesPassword;
+    NSString *_password;
 }
 
 + (id)vncAuthenticationCredentialsWithPassword:(id)arg1;
-@property(readonly) NSString *password; // @synthesize password=mPassword;
+@property(retain) NSString *password; // @synthesize password=_password;
 - (void)dealloc;
 - (id)initWithAuthenticationType:(id)arg1 withPassword:(id)arg2;
 

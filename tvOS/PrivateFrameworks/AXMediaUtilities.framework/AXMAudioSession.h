@@ -16,6 +16,7 @@
 @property(retain, nonatomic) NSMutableArray *notificationObserverTokens; // @synthesize notificationObserverTokens=_notificationObserverTokens;
 - (void).cxx_destruct;
 - (_Bool)activateSessionWithError:(id *)arg1;
+- (_Bool)deactivateSessionWithError:(id *)arg1;
 - (void)dealloc;
 - (id)init;
 

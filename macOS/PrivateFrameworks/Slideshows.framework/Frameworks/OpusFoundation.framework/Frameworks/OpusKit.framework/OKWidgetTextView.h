@@ -29,7 +29,7 @@
     double _fontSize;
     NSColor *_textColor;
     NSColor *_textBackgroundColor;
-    unsigned long long _alignment;
+    long long _alignment;
     long long _textGravity;
     long long _textVerticalAlignment;
     double _strokeWidth;
@@ -43,7 +43,7 @@
 @property(nonatomic) long long textGravity; // @synthesize textGravity=_textGravity;
 @property(nonatomic) BOOL isEditable; // @synthesize isEditable=_isEditable;
 @property(nonatomic) BOOL isUppercase; // @synthesize isUppercase=_isUppercase;
-@property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) NSColor *textBackgroundColor; // @synthesize textBackgroundColor=_textBackgroundColor;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
@@ -73,8 +73,8 @@
 - (id)settingAttributedText;
 - (void)setSettingText:(id)arg1;
 - (id)settingText;
-- (void)setSettingTextAlignment:(unsigned long long)arg1;
-- (unsigned long long)settingTextAlignment;
+- (void)setSettingTextAlignment:(long long)arg1;
+- (long long)settingTextAlignment;
 - (void)setSettingTextBackgroundColor:(id)arg1;
 - (id)settingTextBackgroundColor;
 - (void)setSettingTextColor:(id)arg1;

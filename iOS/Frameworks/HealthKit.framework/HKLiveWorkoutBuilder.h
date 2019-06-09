@@ -26,6 +26,7 @@
 - (void)stateMachine:(id)arg1 didEnterState:(id)arg2 date:(id)arg3 error:(id)arg4;
 @property(retain) HKLiveWorkoutDataSource *dataSource;
 @property(retain) NSArray *additionalDataSources;
+- (void)_resourceQueue_updateEvents:(id)arg1;
 - (void)_resourceQueue_updateElapsedTimeCache;
 @property(readonly) double elapsedTime;
 - (id)_privateDelegate;

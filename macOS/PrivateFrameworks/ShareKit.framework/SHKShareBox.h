@@ -11,7 +11,7 @@
 }
 
 - (void)drawRect:(struct CGRect)arg1;
-- (BOOL)accessibilityIsIgnored;
+- (BOOL)isAccessibilityElement;
 
 @end
 

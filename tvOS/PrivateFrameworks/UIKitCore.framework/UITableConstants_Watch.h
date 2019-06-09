@@ -4,14 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/UITableConstants_IOS.h>
+#import <UIKitCore/UITableConstants_Phone.h>
 
 __attribute__((visibility("hidden")))
-@interface UITableConstants_Watch : UITableConstants_IOS
+@interface UITableConstants_Watch : UITableConstants_Phone
 {
 }
 
 + (id)sharedConstants;
+- (id)defaultCheckmarkImageForCell:(id)arg1 inTableView:(id)arg2;
+- (id)defaultHeaderFooterBackgroundColorForView:(id)arg1 inTableView:(id)arg2;
 
 @end
 

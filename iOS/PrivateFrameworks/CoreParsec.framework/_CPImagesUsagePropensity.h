@@ -13,20 +13,16 @@
 
 @interface _CPImagesUsagePropensity : PBCodable <_CPImagesUsagePropensity, NSSecureCoding>
 {
-    int _configuredLookbackTimeInDays;
+    float _zkw;
+    float _recentResult;
     float _other;
     int _totalEngagements;
-    int _totalSessions;
-    long long _collectionStartTimestamp;
-    long long _collectionEndTimestamp;
 }
 
-@property(nonatomic) int totalSessions; // @synthesize totalSessions=_totalSessions;
 @property(nonatomic) int totalEngagements; // @synthesize totalEngagements=_totalEngagements;
 @property(nonatomic) float other; // @synthesize other=_other;
-@property(nonatomic) int configuredLookbackTimeInDays; // @synthesize configuredLookbackTimeInDays=_configuredLookbackTimeInDays;
-@property(nonatomic) long long collectionEndTimestamp; // @synthesize collectionEndTimestamp=_collectionEndTimestamp;
-@property(nonatomic) long long collectionStartTimestamp; // @synthesize collectionStartTimestamp=_collectionStartTimestamp;
+@property(nonatomic) float recentResult; // @synthesize recentResult=_recentResult;
+@property(nonatomic) float zkw; // @synthesize zkw=_zkw;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

@@ -6,6 +6,7 @@
 
 #import <AVFoundation/AVCaptureDeviceControlRequest.h>
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceFakeBiasControlRequest : AVCaptureDeviceControlRequest
 {
     float _fakeBias;

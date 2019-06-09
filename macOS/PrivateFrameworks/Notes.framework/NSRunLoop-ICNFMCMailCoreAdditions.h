@@ -7,6 +7,7 @@
 #import <Foundation/NSRunLoop.h>
 
 @interface NSRunLoop (ICNFMCMailCoreAdditions)
-+ (void)flushQueuedEvents;
++ (void)ic_flushQueuedEvents;
++ (BOOL)ic_flushQueuedEventsAddingSource:(BOOL)arg1;
 @end
 

@@ -23,9 +23,9 @@
     float _initialContentOffset;
 }
 
-+ (_Bool)isNotch:(CDStruct_51c09d0b)arg1 equalToNotch:(CDStruct_51c09d0b)arg2;
-+ (_Bool)doesNotchWithOffset:(CDStruct_51c09d0b)arg1 overlapNotch:(CDStruct_51c09d0b)arg2;
-+ (_Bool)doesNotch:(CDStruct_51c09d0b)arg1 overlapNotch:(CDStruct_51c09d0b)arg2;
++ (_Bool)isNotch:(CDStruct_b31d0695)arg1 equalToNotch:(CDStruct_b31d0695)arg2;
++ (_Bool)doesNotchWithOffset:(CDStruct_b31d0695)arg1 overlapNotch:(CDStruct_b31d0695)arg2;
++ (_Bool)doesNotch:(CDStruct_b31d0695)arg1 overlapNotch:(CDStruct_b31d0695)arg2;
 @property(nonatomic) _Bool notchAddDidFail; // @synthesize notchAddDidFail=_notchAddDidFail;
 @property(nonatomic) _Bool detentsEnabledForDevice; // @synthesize detentsEnabledForDevice=_detentsEnabledForDevice;
 @property(nonatomic) _Bool failForItemsTallerThanScreen; // @synthesize failForItemsTallerThanScreen=_failForItemsTallerThanScreen;

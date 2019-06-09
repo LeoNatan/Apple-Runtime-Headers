@@ -8,23 +8,31 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOPBTransitZoomRangeString : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_labelLanguage;
     NSString *_labelText;
     unsigned int _minZoom;
     struct {
-        unsigned int minZoom:1;
-    } _has;
+        unsigned int has_minZoom:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_labelLanguage:1;
+        unsigned int read_labelText:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_labelLanguage:1;
+        unsigned int wrote_labelText:1;
+        unsigned int wrote_minZoom:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *labelText; // @synthesize labelText=_labelText;
-@property(retain, nonatomic) NSString *labelLanguage; // @synthesize labelLanguage=_labelLanguage;
-@property(nonatomic) unsigned int minZoom; // @synthesize minZoom=_minZoom;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,11 +41,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *labelText;
 @property(readonly, nonatomic) BOOL hasLabelText;
+- (void)_readLabelText;
+@property(retain, nonatomic) NSString *labelLanguage;
 @property(readonly, nonatomic) BOOL hasLabelLanguage;
+- (void)_readLabelLanguage;
 @property(nonatomic) BOOL hasMinZoom;
+@property(nonatomic) unsigned int minZoom;
 
 @end
 

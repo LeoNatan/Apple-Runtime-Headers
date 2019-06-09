@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface PFCloudKitExporterOptions : NSObject
 {
-    CKRecordZone *_zone;
+    CKRecordZone *_recordZone;
     CKDatabase *_database;
     NSCloudKitMirroringDelegateOptions *_mirroringDelegateOptions;
     unsigned long long _perOperationBytesThreshold;
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long perOperationBytesThreshold; // @synthesize perOperationBytesThreshold=_perOperationBytesThreshold;
 @property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringDelegateOptions; // @synthesize mirroringDelegateOptions=_mirroringDelegateOptions;
 @property(readonly, nonatomic) CKDatabase *database; // @synthesize database=_database;
-@property(readonly, nonatomic) CKRecordZone *zone; // @synthesize zone=_zone;
+@property(readonly, nonatomic) CKRecordZone *recordZone; // @synthesize recordZone=_recordZone;
 - (id)copy;
 - (void)dealloc;
 - (id)initWithZone:(id)arg1 database:(id)arg2 options:(id)arg3;

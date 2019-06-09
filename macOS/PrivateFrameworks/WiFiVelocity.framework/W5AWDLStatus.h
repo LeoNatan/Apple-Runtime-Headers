@@ -27,12 +27,14 @@
     NSData *_awdlOpMode;
     NSData *_awdlSyncParameters;
     NSData *_awdlPeerDatabase;
+    NSData *_awdlSidecarDiagnostics;
     long long _airDropDiscoverableMode;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) long long airDropDiscoverableMode; // @synthesize airDropDiscoverableMode=_airDropDiscoverableMode;
 @property(nonatomic) BOOL isAWDLRealTimeMode; // @synthesize isAWDLRealTimeMode=_isAWDLRealTimeMode;
+@property(copy, nonatomic) NSData *awdlSidecarDiagnostics; // @synthesize awdlSidecarDiagnostics=_awdlSidecarDiagnostics;
 @property(copy, nonatomic) NSData *awdlPeerDatabase; // @synthesize awdlPeerDatabase=_awdlPeerDatabase;
 @property(copy, nonatomic) NSData *awdlSyncParameters; // @synthesize awdlSyncParameters=_awdlSyncParameters;
 @property(copy, nonatomic) NSData *awdlOpMode; // @synthesize awdlOpMode=_awdlOpMode;

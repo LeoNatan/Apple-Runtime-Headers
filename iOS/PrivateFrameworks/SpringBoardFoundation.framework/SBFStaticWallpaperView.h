@@ -6,24 +6,27 @@
 
 #import <SpringBoardFoundation/SBFWallpaperView.h>
 
-@class NSString, SBFColorBoxes, UIImage;
+@class NSData, NSString, SBFColorBoxes, UIImage;
 
 @interface SBFStaticWallpaperView : SBFWallpaperView
 {
-    UIImage *_image;
-    UIImage *_displayedImage;
     double _overallContrast;
     SBFColorBoxes *_colorBoxes;
-    NSString *_cacheGroup;
+    UIImage *_displayedImage;
     UIImage *_sampleImage;
+    NSData *_displayedImageHashData;
+    NSString *_displayedImageHashString;
 }
 
 + (_Bool)_allowsRasterization;
 + (_Bool)_allowsParallax;
-+ (id)imageByScalingImage:(id)arg1 withScaleFactor:(double)arg2 needsLuminanceTreatment:(_Bool)arg3;
++ (id)imageByScalingImage:(id)arg1 withScaleFactor:(double)arg2 needsLuminanceTreatment:(_Bool)arg3 needsDimmingTreatment:(_Bool)arg4;
++ (id)dimmingTreatmentFilters;
 + (id)luminanceTreatmentFilters;
 + (_Bool)_canDownscaleSampleImage;
 + (_Bool)_canCacheImages;
+@property(copy, nonatomic) NSString *displayedImageHashString; // @synthesize displayedImageHashString=_displayedImageHashString;
+@property(copy, nonatomic) NSData *displayedImageHashData; // @synthesize displayedImageHashData=_displayedImageHashData;
 @property(retain, nonatomic, getter=_sampleImage, setter=_setSampleImage:) UIImage *sampleImage; // @synthesize sampleImage=_sampleImage;
 @property(retain, nonatomic, getter=_displayedImage, setter=_setDisplayedImage:) UIImage *displayedImage; // @synthesize displayedImage=_displayedImage;
 - (void).cxx_destruct;
@@ -46,18 +49,16 @@
 - (_Bool)imageRequiresLuminanceTreatment;
 - (void)setContentsRect:(struct CGRect)arg1;
 - (_Bool)hasContentOutsideVisibleBounds;
-- (id)cacheGroup;
 - (id)snapshotImage;
 - (id)_computeAverageColor;
 - (id)wallpaperImage;
 - (_Bool)isDisplayingWallpaperWithConfiguration:(id)arg1 forVariant:(long long)arg2;
-- (id)initWithFrame:(struct CGRect)arg1 wallpaperImage:(id)arg2 cacheGroup:(id)arg3 variant:(long long)arg4 options:(unsigned long long)arg5 wallpaperSettingsProvider:(id)arg6;
 - (void)preheatImageData;
+- (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2 variant:(long long)arg3 cacheGroup:(id)arg4 delegate:(id)arg5 options:(unsigned long long)arg6;
+- (id)cacheUniqueIdentifier;
 - (void)_generateImageForImage:(id)arg1 options:(unsigned long long)arg2 downsampleFactor:(double)arg3 generationHandler:(CDUnknownBlockType)arg4;
-- (void)_setupWallpaperImage:(id)arg1 options:(unsigned long long)arg2;
+- (void)_setupWallpaperImageFromConfiguration:(id)arg1 options:(unsigned long long)arg2;
 - (long long)wallpaperType;
-- (id)initWithFrame:(struct CGRect)arg1 variant:(long long)arg2 wallpaperSettingsProvider:(id)arg3;
-- (id)initWithFrame:(struct CGRect)arg1 wallpaperImage:(id)arg2 variant:(long long)arg3 wallpaperSettingsProvider:(id)arg4;
 
 @end
 

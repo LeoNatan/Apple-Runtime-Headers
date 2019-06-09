@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class CDPContext, CDPStateController, SFDevice, SFSession;
+@class CDPContext, CDPStateController, NSData, NSString, SFDevice, SFDeviceDiscovery, SFSession;
 @protocol OS_dispatch_queue;
 
 @interface SFDeviceSetupSessioniOS : NSObject
 {
     _Bool _activateCalled;
+    unsigned int _appNextID;
     _Bool _buddyComplete;
     _Bool _configRequestSent;
     _Bool _configResponseReceived;
@@ -22,6 +23,10 @@
     int _preAuthPairSetupState;
     _Bool _preAuthRequestSent;
     _Bool _preAuthResponseReceived;
+    NSData *_resumeAuthTag;
+    SFDeviceDiscovery *_resumeDiscovery;
+    NSString *_resumePassword;
+    int _resumeState;
     SFSession *_sfSession;
     _Bool _sfSessionActivated;
     int _cdpState;
@@ -47,12 +52,17 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
 - (void)tryPIN:(id)arg1;
+- (void)sendAppEvent:(id)arg1;
 - (void)_receivedObject:(id)arg1 flags:(unsigned int)arg2;
+- (void)_handleSetupResumeFoundDevice:(id)arg1;
+- (void)_handleSetupPeerSuspended;
+- (void)_handleSetupActionSoftwareUpdate;
 - (void)_handleSetupActionRequest:(id)arg1 responseHandler:(CDUnknownBlockType)arg2;
 - (void)_startBuddySession;
 - (void)_sendPreAuthInfo;
 - (void)_receivedConfigResponse:(id)arg1;
 - (void)_sendConfigInfo;
+- (int)_runResume;
 - (int)_runCoreCDPSetup;
 - (int)_runPreAuthPairSetup;
 - (void)_runSFSessionActivated;

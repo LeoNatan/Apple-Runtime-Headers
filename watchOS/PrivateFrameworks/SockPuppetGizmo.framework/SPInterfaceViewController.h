@@ -4,44 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <SockPuppetGizmo/SPViewController.h>
 
 #import <SockPuppetGizmo/SPActivatingViewDelegate-Protocol.h>
 #import <SockPuppetGizmo/SPInterfaceDelegate-Protocol.h>
 #import <SockPuppetGizmo/UIScrollViewDelegate-Protocol.h>
 
-@class NSArray, NSBundle, NSDate, NSDictionary, NSMutableArray, NSNumber, NSString, NSURL, PUICActionGroup, PUICButton, PUICDeepScrollViewNotchProvider, SPActivatingView, SPAutoPlayManager, SPCrownSequencer, SPFullScreenView, SPIBContainerView, SPIBOuterScrollView, SPInterfaceGroupView, UIColor, UIImage, UIImageView, UILabel;
+@class NSArray, NSDate, NSMutableArray, NSString, NSURL, PUICButton, PUICDeepScrollViewNotchProvider, SPActivatingView, SPAutoPlayManager, SPIBContainerView, SPIBOuterScrollView, SPInterfaceGroupView, UIColor, UIImage, UIImageView, UILabel;
 @protocol SPInterfaceViewControllerDelegate, SPInterfaceViewControllerPreloadDelegate;
 
-@interface SPInterfaceViewController : UIViewController <SPActivatingViewDelegate, UIScrollViewDelegate, SPInterfaceDelegate>
+@interface SPInterfaceViewController : SPViewController <SPActivatingViewDelegate, UIScrollViewDelegate, SPInterfaceDelegate>
 {
     NSArray *_respondersForCrownInputFocus;
-    _Bool _isNotification;
     _Bool _isNotificationLinkedOnOrAfterGlory;
     _Bool _isGlanceInIB;
     _Bool _isVerticalPage;
-    _Bool _fullScreenEnabled;
     _Bool _fullBoundsEnabled;
-    _Bool _hasNowPlaying;
     _Bool _customNotificationWantsHeaderBlur;
     _Bool _classicMode;
-    _Bool _hasInterfaceActions;
     _Bool _hasLoaded;
     _Bool _displaysLoadingIndicator;
     _Bool _isActivating;
     _Bool _preloading;
     _Bool _alwaysBounceScrollView;
-    _Bool _extensionControllerCreated;
     _Bool _isInInterfaceBuilder;
     _Bool _firstLayout;
-    _Bool _reportDidAppearAfterModalDismissal;
-    id <SPInterfaceViewControllerDelegate> _vcdelegate;
     id <SPInterfaceViewControllerPreloadDelegate> _vcPreloadDelegate;
-    NSNumber *_initializationContextID;
-    NSDictionary *_interfaceDescription;
-    NSString *_teamID;
-    NSBundle *_bundle;
-    NSString *_stringsFileName;
     NSArray *_simulatorNotificationButtonsInfo;
     UIImage *_simulatorNotificationAppIcon;
     NSString *_simulatorNotificationAppName;
@@ -52,42 +40,28 @@
     NSString *_staticNotificationSubtitleLabelText;
     NSURL *_staticNotificationAttachmentURL;
     int _staticNotificationAttachmentType;
-    NSString *_activityType;
-    NSDictionary *_activityUserInfo;
-    NSURL *_activityWebpageURL;
     int _overrideSemanticContentAttribute;
     SPInterfaceGroupView *_rootGroupView;
-    SPFullScreenView *_fullScreenView;
     NSString *_UUID;
-    NSArray *_properties;
     NSString *_bundleID;
-    PUICActionGroup *_actionGroup;
-    NSMutableArray *_extraActions;
     NSMutableArray *_interfaceItemValueCache;
     SPActivatingView *_activatingView;
     NSDate *_lastUpdatedDate;
-    NSMutableArray *_extensionControllerCreatedCompletions;
     UIImageView *_simulatorNotificationSash;
     PUICButton *_simulatorNotificationDismissButton;
     SPIBOuterScrollView *_simulatorNotificationScrollView;
     UILabel *_simulatorNotificationTimeLabel;
     SPIBContainerView *_ibContainerView;
     NSMutableArray *_gestureRecognizers;
-    SPCrownSequencer *_crownSequencer;
     SPAutoPlayManager *_autoplayManager;
-    CDUnknownBlockType _didAppearBlock;
     PUICDeepScrollViewNotchProvider *_notchProvider;
     struct UIEdgeInsets _contentFrameInsets;
 }
 
-+ (id)interfaceViewControllerForIdentifier:(id)arg1;
 + (void)updateStaticValues;
 + (void)initialize;
 @property(retain, nonatomic) PUICDeepScrollViewNotchProvider *notchProvider; // @synthesize notchProvider=_notchProvider;
-@property(copy, nonatomic) CDUnknownBlockType didAppearBlock; // @synthesize didAppearBlock=_didAppearBlock;
-@property(nonatomic) _Bool reportDidAppearAfterModalDismissal; // @synthesize reportDidAppearAfterModalDismissal=_reportDidAppearAfterModalDismissal;
 @property(retain, nonatomic) SPAutoPlayManager *autoplayManager; // @synthesize autoplayManager=_autoplayManager;
-@property(retain, nonatomic) SPCrownSequencer *crownSequencer; // @synthesize crownSequencer=_crownSequencer;
 @property(retain, nonatomic) NSMutableArray *gestureRecognizers; // @synthesize gestureRecognizers=_gestureRecognizers;
 @property(nonatomic) _Bool firstLayout; // @synthesize firstLayout=_firstLayout;
 @property(nonatomic) _Bool isInInterfaceBuilder; // @synthesize isInInterfaceBuilder=_isInInterfaceBuilder;
@@ -96,8 +70,6 @@
 @property(retain, nonatomic) SPIBOuterScrollView *simulatorNotificationScrollView; // @synthesize simulatorNotificationScrollView=_simulatorNotificationScrollView;
 @property(retain, nonatomic) PUICButton *simulatorNotificationDismissButton; // @synthesize simulatorNotificationDismissButton=_simulatorNotificationDismissButton;
 @property(retain, nonatomic) UIImageView *simulatorNotificationSash; // @synthesize simulatorNotificationSash=_simulatorNotificationSash;
-@property(retain, nonatomic) NSMutableArray *extensionControllerCreatedCompletions; // @synthesize extensionControllerCreatedCompletions=_extensionControllerCreatedCompletions;
-@property(nonatomic) _Bool extensionControllerCreated; // @synthesize extensionControllerCreated=_extensionControllerCreated;
 @property _Bool alwaysBounceScrollView; // @synthesize alwaysBounceScrollView=_alwaysBounceScrollView;
 @property(getter=isPreloading) _Bool preloading; // @synthesize preloading=_preloading;
 @property(nonatomic) _Bool isActivating; // @synthesize isActivating=_isActivating;
@@ -106,21 +78,13 @@
 @property(nonatomic) _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 @property(retain, nonatomic) SPActivatingView *activatingView; // @synthesize activatingView=_activatingView;
 @property(retain, nonatomic) NSMutableArray *interfaceItemValueCache; // @synthesize interfaceItemValueCache=_interfaceItemValueCache;
-@property(nonatomic) _Bool hasInterfaceActions; // @synthesize hasInterfaceActions=_hasInterfaceActions;
-@property(retain, nonatomic) NSMutableArray *extraActions; // @synthesize extraActions=_extraActions;
-@property(retain, nonatomic) PUICActionGroup *actionGroup; // @synthesize actionGroup=_actionGroup;
 @property(copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(copy, nonatomic) NSArray *properties; // @synthesize properties=_properties;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
-@property(retain, nonatomic) SPFullScreenView *fullScreenView; // @synthesize fullScreenView=_fullScreenView;
 @property(retain, nonatomic) SPInterfaceGroupView *rootGroupView; // @synthesize rootGroupView=_rootGroupView;
 @property(nonatomic) struct UIEdgeInsets contentFrameInsets; // @synthesize contentFrameInsets=_contentFrameInsets;
 @property(nonatomic) _Bool classicMode; // @synthesize classicMode=_classicMode;
 @property(nonatomic) _Bool customNotificationWantsHeaderBlur; // @synthesize customNotificationWantsHeaderBlur=_customNotificationWantsHeaderBlur;
 @property(nonatomic) int overrideSemanticContentAttribute; // @synthesize overrideSemanticContentAttribute=_overrideSemanticContentAttribute;
-@property(readonly, copy, nonatomic) NSURL *activityWebpageURL; // @synthesize activityWebpageURL=_activityWebpageURL;
-@property(readonly, copy, nonatomic) NSDictionary *activityUserInfo; // @synthesize activityUserInfo=_activityUserInfo;
-@property(copy, nonatomic) NSString *activityType; // @synthesize activityType=_activityType;
 @property(nonatomic) int staticNotificationAttachmentType; // @synthesize staticNotificationAttachmentType=_staticNotificationAttachmentType;
 @property(copy, nonatomic) NSURL *staticNotificationAttachmentURL; // @synthesize staticNotificationAttachmentURL=_staticNotificationAttachmentURL;
 @property(copy, nonatomic) NSString *staticNotificationSubtitleLabelText; // @synthesize staticNotificationSubtitleLabelText=_staticNotificationSubtitleLabelText;
@@ -131,20 +95,11 @@
 @property(retain, nonatomic) NSString *simulatorNotificationAppName; // @synthesize simulatorNotificationAppName=_simulatorNotificationAppName;
 @property(retain, nonatomic) UIImage *simulatorNotificationAppIcon; // @synthesize simulatorNotificationAppIcon=_simulatorNotificationAppIcon;
 @property(retain, nonatomic) NSArray *simulatorNotificationButtonsInfo; // @synthesize simulatorNotificationButtonsInfo=_simulatorNotificationButtonsInfo;
-@property(nonatomic) _Bool hasNowPlaying; // @synthesize hasNowPlaying=_hasNowPlaying;
 @property(nonatomic) _Bool fullBoundsEnabled; // @synthesize fullBoundsEnabled=_fullBoundsEnabled;
-@property(nonatomic) _Bool fullScreenEnabled; // @synthesize fullScreenEnabled=_fullScreenEnabled;
 @property(nonatomic) _Bool isVerticalPage; // @synthesize isVerticalPage=_isVerticalPage;
 @property(nonatomic) _Bool isGlanceInIB; // @synthesize isGlanceInIB=_isGlanceInIB;
 @property(nonatomic) _Bool isNotificationLinkedOnOrAfterGlory; // @synthesize isNotificationLinkedOnOrAfterGlory=_isNotificationLinkedOnOrAfterGlory;
-@property(nonatomic) _Bool isNotification; // @synthesize isNotification=_isNotification;
-@property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
-@property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
-@property(retain, nonatomic) NSString *teamID; // @synthesize teamID=_teamID;
-@property(retain, nonatomic) NSDictionary *interfaceDescription; // @synthesize interfaceDescription=_interfaceDescription;
-@property(retain, nonatomic) NSNumber *initializationContextID; // @synthesize initializationContextID=_initializationContextID;
 @property(nonatomic) __weak id <SPInterfaceViewControllerPreloadDelegate> vcPreloadDelegate; // @synthesize vcPreloadDelegate=_vcPreloadDelegate;
-@property(nonatomic) __weak id <SPInterfaceViewControllerDelegate> vcdelegate; // @synthesize vcdelegate=_vcdelegate;
 - (void).cxx_destruct;
 - (void)_sendGestureData:(id)arg1 task:(id)arg2 specificData:(id)arg3;
 - (void)_updateSwipeGestureRecognizer:(id)arg1 gestureReplyData:(id)arg2;
@@ -172,7 +127,6 @@
 - (id)_lookupGestureRecognizerDataByIdentifier:(id)arg1;
 - (id)_lookupGestureRecognizerData:(id)arg1;
 - (void)_storeGestureRecognizerData:(id)arg1;
-- (void)updateCrownSequencerWithData:(id)arg1;
 - (void)updateFullBounds;
 - (void)updateInterfaceContentSystemMinimumLayoutMargins;
 - (void)updateInterfaceContentSafeAreaInsets;
@@ -188,22 +142,18 @@
 - (id)lastUpdatedDateForActivatingView:(id)arg1;
 - (id)appNameForActivatingView:(id)arg1;
 - (int)disconnectedModeForActivatingView:(id)arg1;
-- (int)loadingModeForActivatingView:(id)arg1;
+- (int)activatingViewLoadingMode;
 - (struct CGRect)frameForActivatingView:(id)arg1;
 - (id)parentViewForActivatingView:(id)arg1;
 - (void)activatingViewDidHide:(id)arg1;
 - (void)activatingViewWillShow:(id)arg1;
 - (void)activatingViewDidHideDisconnectedView:(id)arg1;
 - (void)activatingViewWillShowDisconnectedView:(id)arg1;
-- (void)updateUserActivity:(id)arg1;
-- (void)setUserActivity;
 - (void)interfaceGroupViewDidAdjustHeight:(id)arg1;
-- (void)setProperties:(id)arg1 forInterfaceObjectNamed:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)performAction:(id)arg1 withValue:(id)arg2;
+- (void)action:(id)arg1 value:(id)arg2;
 - (id)checkView:(id)arg1 forCompanionProperty:(id)arg2;
-- (void)purgeAndRecreate;
-- (_Bool)fullScreenTimeHidden;
 - (void)performActionWithItemID:(id)arg1 forNotificationID:(id)arg2 userInfo:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)setInterfaceValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
@@ -218,66 +168,54 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (_Bool)_requiresVerticalScrolling;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
-- (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_glanceUpdated;
-- (void)_finishedExtendedLaunchTest;
 - (void)_interfaceDidActivate;
 - (void)cleanupActivatingView;
 - (void)_hideLoadingView;
 - (void)_showLoadingView;
-- (void)performBlockOnViewDidAppear:(CDUnknownBlockType)arg1;
 - (void)performBlockWhenDoneLoading:(CDUnknownBlockType)arg1;
-- (void)_interfaceWillDeactivate;
-- (void)_interfaceWillActivate;
-- (void)_interfaceWillDisappear;
-- (void)_interfaceDidAppear;
+- (void)controllerWillActivate;
+- (void)controllerDidAppear;
 - (void)_preloadingCanceled;
 - (void)_cancelPreloading;
 - (void)_finishedPreloading;
 - (void)_preloadInterface;
-- (void)applicationDidFinishLaunchingInDock;
 - (void)applicationDidBecomeActive;
 - (void)applicationWillResignActive;
-- (void)applicationDidResignActiveInBackground;
-- (void)applicationDidBecomeActiveInBackground;
 - (_Bool)preloadInterface;
 - (void)viewDidLoad;
-- (void)_addExtensionControllerCreatedCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)traverseHierarchyForSpriteOrScene:(id)arg1;
-- (_Bool)_fullScreenAllowed;
+- (void)controllerDidUpdateFullScreenMode;
+- (_Bool)allowsFullScreenMode;
 - (void)_loadRemoteNowPlayingViewController;
 - (id)_enforceOnlyNowPlayingControlInThisControllerIterfaceDescription:(id)arg1;
 - (_Bool)_interfaceDescriptionContainsOnlyTable:(id)arg1;
 - (_Bool)_interfaceDescriptionContainsNowPlayingControl:(id)arg1;
 - (void)loadView;
-- (id)rootView;
+- (id)_rootView;
 - (id)_scrollView;
-- (id)actionController;
-- (void)menuAction:(id)arg1;
 - (_Bool)canProvideActionController;
 @property(readonly, nonatomic) struct CGRect contentFrame;
-@property(readonly, nonatomic) NSString *identifier;
 - (_Bool)prefersStatusBarHidden;
 - (void)createSimulatorNotificationButtonsInView:(id)arg1;
-- (void)forwardCrownDataToVCDelegate:(id)arg1;
-- (void)_wheelChangedWithEvent:(id)arg1;
-- (_Bool)canBecomeFirstResponder;
 - (void)setStaticNotificationAttachmentURL:(id)arg1 ofType:(int)arg2;
 - (struct CGSize)sizeThatFitsFromRootGroupView:(struct CGSize)arg1;
 - (id)notificationSashContentView;
-- (void)logInterfaceViewControllers;
 - (void)didRecieveContentSizeDidChangeNotification:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithRootItemDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3;
+- (id)initWithInterfaceDescription:(id)arg1 bundle:(id)arg2 stringsFileName:(id)arg3 isNotification:(_Bool)arg4;
 
 // Remaining properties
+@property(nonatomic) _Bool containsNowPlayingView; // @dynamic containsNowPlayingView;
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <SPInterfaceViewControllerDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isFullScreenModeEnabled) _Bool fullScreenModeEnabled; // @dynamic fullScreenModeEnabled;
 @property(readonly) unsigned int hash;
+@property(retain, nonatomic) NSArray *properties; // @dynamic properties;
 @property(readonly) Class superclass;
 
 @end

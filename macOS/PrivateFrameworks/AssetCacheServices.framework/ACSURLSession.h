@@ -63,6 +63,7 @@
 - (void)URLSession:(id)arg1 task:(id)arg2 willBeginDelayedRequest:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
+- (void)_copyAttributesFromNSURLTask:(id)arg1 toNSURLTask:(id)arg2;
 - (id)_linkedLocationWithLocation:(id)arg1;
 - (id)_errorWithResumeDataFromError:(id)arg1 originalRequest:(id)arg2 currentRequest:(id)arg3;
 - (BOOL)_resumeData:(id)arg1 toNSURLResumeData:(id *)arg2 originalRequest:(id *)arg3 currentRequest:(id *)arg4 error:(id *)arg5;

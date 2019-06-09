@@ -15,7 +15,11 @@
 @property(nonatomic) int type;
 @property(readonly, nonatomic) _Bool hasLabel;
 @property(copy, nonatomic) NSString *label;
+@property(nonatomic) _Bool hasEmergencyType;
+@property(nonatomic) int emergencyType;
 - (int)StringAsType:(NSString *)arg1;
 - (NSString *)typeAsString:(int)arg1;
+- (int)StringAsEmergencyType:(NSString *)arg1;
+- (NSString *)emergencyTypeAsString:(int)arg1;
 @end
 

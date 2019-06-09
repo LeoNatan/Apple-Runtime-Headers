@@ -7,6 +7,7 @@
 #import <Foundation/NSXPCConnection.h>
 
 @interface NSXPCConnection (CCSEntitlements)
+@property(readonly, nonatomic) _Bool ccs_hasEntitlementForListingModuleIdentifiers;
 - (_Bool)ccs_hasEntitlementForModuleIdentifier:(id)arg1;
 @end
 

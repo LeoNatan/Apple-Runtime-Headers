@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 @interface PUPreviewActionController : NSObject <PUBrowsingViewModelChangeObserver, PUAssetActionPerformerDelegate>
 {
     struct {
-        _Bool didDismissWithIdentifiedAction;
+        _Bool didDismissWithActionIdentifier;
         _Bool preventRevealInMomentAction;
     } _delegateRespondsTo;
     _Bool __needsUpdateActions;
@@ -24,13 +24,13 @@ __attribute__((visibility("hidden")))
     UIViewController *_presentingViewController;
     id <PUPreviewActionControllerDelegate> _delegate;
     PXActionManager *_photosUICoreActionManager;
-    NSArray *_previewActions;
+    NSArray *_actions;
     PUAssetActionPerformer *__activeActionPerformer;
 }
 
 @property(retain, nonatomic, setter=_setActiveActionPerformer:) PUAssetActionPerformer *_activeActionPerformer; // @synthesize _activeActionPerformer=__activeActionPerformer;
 @property(nonatomic, setter=_setNeedsUpdateActions:) _Bool _needsUpdateActions; // @synthesize _needsUpdateActions=__needsUpdateActions;
-@property(retain, nonatomic, setter=_setPreviewActions:) NSArray *previewActions; // @synthesize previewActions=_previewActions;
+@property(retain, nonatomic, setter=_setActions:) NSArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) PXActionManager *photosUICoreActionManager; // @synthesize photosUICoreActionManager=_photosUICoreActionManager;
 @property(nonatomic) __weak id <PUPreviewActionControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak UIViewController *presentingViewController; // @synthesize presentingViewController=_presentingViewController;
@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)_performTrashAction;
 - (void)_performRestoreAction;
 - (void)_performSimpleActionWithType:(unsigned long long)arg1;
-- (void)_notifiyDelegateOfIdentifiedAction:(id)arg1;
+- (void)_notifiyDelegateOfAction:(id)arg1;
 - (unsigned long long)_actionForPreferredAction:(unsigned long long)arg1;
 - (void)_updateActionsIfNeeded;
 - (void)_updateIfNeeded;

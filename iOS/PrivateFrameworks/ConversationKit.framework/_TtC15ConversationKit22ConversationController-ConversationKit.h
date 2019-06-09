@@ -9,6 +9,6 @@
 #import <ConversationKit/TUAudioFrequencyControllerDelegate-Protocol.h>
 
 @interface _TtC15ConversationKit22ConversationController (ConversationKit) <TUAudioFrequencyControllerDelegate>
-- (void)frequencyController:(id)arg1 audioPowerChanged:(float)arg2 forParticipantWithStreamToken:(unsigned long long)arg3;
+- (void)frequencyController:(id)arg1 audioPowerChanged:(float)arg2 forParticipantWithStreamToken:(long long)arg3;
 @end
 

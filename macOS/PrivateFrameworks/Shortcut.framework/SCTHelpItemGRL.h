@@ -8,6 +8,7 @@
 
 @class HPDQuery, HPDResult;
 
+__attribute__((visibility("hidden")))
 @interface SCTHelpItemGRL : SCTGRL
 {
     HPDResult *mSearchResult;

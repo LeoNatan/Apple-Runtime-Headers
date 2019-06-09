@@ -7,6 +7,7 @@
 #import <EventKitUI/NSObject-Protocol.h>
 
 @class EKEditItemViewController, EKEvent;
+@protocol EKEditItemViewControllerProtocol;
 
 @protocol EKEditItemViewControllerDelegate <NSObject>
 - (_Bool)editItemViewControllerShouldShowDetachAlert;
@@ -15,6 +16,6 @@
 @optional
 - (EKEvent *)editItemEventToDetach;
 - (void)editItemViewControllerWantsKeyboardPinned:(_Bool)arg1;
-- (_Bool)editItemViewControllerSave:(EKEditItemViewController *)arg1;
+- (_Bool)editItemViewControllerSave:(id <EKEditItemViewControllerProtocol>)arg1;
 @end
 

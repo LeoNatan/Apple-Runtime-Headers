@@ -8,20 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDVendorIDLink : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _reservationTypes;
     NSString *_externalItemId;
     NSString *_vendorId;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_reservationTypes:1;
+        unsigned int read_externalItemId:1;
+        unsigned int read_vendorId:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_reservationTypes:1;
+        unsigned int wrote_externalItemId:1;
+        unsigned int wrote_vendorId:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *externalItemId; // @synthesize externalItemId=_externalItemId;
-@property(retain, nonatomic) NSString *vendorId; // @synthesize vendorId=_vendorId;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,18 +42,25 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsReservationTypes:(id)arg1;
 - (id)reservationTypesAsString:(int)arg1;
 - (void)setReservationTypes:(int *)arg1 count:(unsigned long long)arg2;
 - (int)reservationTypeAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsReservationType:(int)arg1;
 - (void)addReservationType:(int)arg1;
 - (void)clearReservationTypes;
 @property(readonly, nonatomic) int *reservationTypes;
 @property(readonly, nonatomic) unsigned long long reservationTypesCount;
+- (void)_readReservationTypes;
+@property(retain, nonatomic) NSString *externalItemId;
 @property(readonly, nonatomic) BOOL hasExternalItemId;
+- (void)_readExternalItemId;
+@property(retain, nonatomic) NSString *vendorId;
 @property(readonly, nonatomic) BOOL hasVendorId;
+- (void)_readVendorId;
 - (void)dealloc;
 
 @end

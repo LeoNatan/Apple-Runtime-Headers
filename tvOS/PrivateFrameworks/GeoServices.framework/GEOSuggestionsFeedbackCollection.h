@@ -8,30 +8,36 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAutocompleteEntry, NSData;
+@class GEOPDAutocompleteEntry, NSData, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOSuggestionsFeedbackCollection : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     struct GEOSessionID _sessionID;
-    GEOPDAutocompleteEntry *_suggestionEntry;
-    int _suggestionEntryIndex;
     NSData *_suggestionEntryMetadata;
+    GEOPDAutocompleteEntry *_suggestionEntry;
     NSData *_suggestionMetadata;
+    int _suggestionEntryIndex;
     int _suggestionsEntryListIndex;
     struct {
-        unsigned int sessionID:1;
-        unsigned int suggestionEntryIndex:1;
-        unsigned int suggestionsEntryListIndex:1;
-    } _has;
+        unsigned int has_sessionID:1;
+        unsigned int has_suggestionEntryIndex:1;
+        unsigned int has_suggestionsEntryListIndex:1;
+        unsigned int read_suggestionEntryMetadata:1;
+        unsigned int read_suggestionEntry:1;
+        unsigned int read_suggestionMetadata:1;
+        unsigned int wrote_sessionID:1;
+        unsigned int wrote_suggestionEntryMetadata:1;
+        unsigned int wrote_suggestionEntry:1;
+        unsigned int wrote_suggestionMetadata:1;
+        unsigned int wrote_suggestionEntryIndex:1;
+        unsigned int wrote_suggestionsEntryListIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDAutocompleteEntry *suggestionEntry; // @synthesize suggestionEntry=_suggestionEntry;
-@property(retain, nonatomic) NSData *suggestionEntryMetadata; // @synthesize suggestionEntryMetadata=_suggestionEntryMetadata;
-@property(retain, nonatomic) NSData *suggestionMetadata; // @synthesize suggestionMetadata=_suggestionMetadata;
-@property(nonatomic) int suggestionEntryIndex; // @synthesize suggestionEntryIndex=_suggestionEntryIndex;
-@property(nonatomic) int suggestionsEntryListIndex; // @synthesize suggestionsEntryListIndex=_suggestionsEntryListIndex;
-@property(nonatomic) struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,14 +46,24 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDAutocompleteEntry *suggestionEntry;
 @property(readonly, nonatomic) _Bool hasSuggestionEntry;
+- (void)_readSuggestionEntry;
+@property(retain, nonatomic) NSData *suggestionEntryMetadata;
 @property(readonly, nonatomic) _Bool hasSuggestionEntryMetadata;
+- (void)_readSuggestionEntryMetadata;
+@property(retain, nonatomic) NSData *suggestionMetadata;
 @property(readonly, nonatomic) _Bool hasSuggestionMetadata;
+- (void)_readSuggestionMetadata;
 @property(nonatomic) _Bool hasSuggestionEntryIndex;
+@property(nonatomic) int suggestionEntryIndex;
 @property(nonatomic) _Bool hasSuggestionsEntryListIndex;
+@property(nonatomic) int suggestionsEntryListIndex;
 @property(nonatomic) _Bool hasSessionID;
+@property(nonatomic) struct GEOSessionID sessionID;
 
 @end
 

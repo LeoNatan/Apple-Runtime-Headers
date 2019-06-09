@@ -29,6 +29,7 @@
 - (_Bool)isStopped;
 - (void)stoppedAtOverallPosition:(unsigned long long)arg1 type:(id)arg2 reason:(id)arg3 eventData:(id)arg4;
 - (void)startedAtOverallPosition:(unsigned long long)arg1 type:(id)arg2 reason:(id)arg3 eventData:(id)arg4;
+- (unsigned long long)positionFromOverallPosition:(unsigned long long)arg1;
 - (id)initWithType:(long long)arg1 playlistItem:(id)arg2 vpafKit:(id)arg3;
 
 @end

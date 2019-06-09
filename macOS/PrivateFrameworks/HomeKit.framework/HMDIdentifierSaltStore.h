@@ -8,6 +8,7 @@
 
 @class HMFUnfairLock, NSData;
 
+__attribute__((visibility("hidden")))
 @interface HMDIdentifierSaltStore : NSObject
 {
     HMFUnfairLock *_lock;

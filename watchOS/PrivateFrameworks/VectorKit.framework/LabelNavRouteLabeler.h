@@ -20,11 +20,11 @@ __attribute__((visibility("hidden")))
     unsigned int _stepIndex;
     _Bool _checkOnRouteLabelsAlignment;
     _Bool _disableTileParseForOneLayout;
-    NSMutableSet *_tiles;
-    NSMutableSet *_pendingTiles;
+    unordered_set_6a3ab9f6 _tiles;
+    unordered_set_6a3ab9f6 _pendingTiles;
     NSMutableArray *_junctions;
     VKLabelNavRoadGraph *_roadGraph;
-    vector_1ad5c848 _activeSigns;
+    vector_e3e87145 _activeSigns;
     NSMutableArray *_fadingLabels;
     NSMutableDictionary *_visibleLabelsByName;
     NSMutableArray *_visibleLabels;
@@ -57,16 +57,17 @@ __attribute__((visibility("hidden")))
     _Bool _debugEnableShieldsOnRouteLine;
     shared_ptr_a3c46825 _styleManager;
     _Bool _shouldLabelOppositeCarriageways;
-    vector_83fb13fb _externalCollisionLabelsForLayout;
+    vector_7c356ace _externalCollisionLabelsForLayout;
     _Bool _hasPendingTilesInSnappingRegion;
+    _Bool _needsDebugConsoleClear;
 }
 
-@property(nonatomic) struct VKLabelNavArtworkCache *artworkCache; // @synthesize artworkCache=_artworkCache;
 @property(nonatomic) _Bool debugEnableShieldsOnRouteLine; // @synthesize debugEnableShieldsOnRouteLine=_debugEnableShieldsOnRouteLine;
+@property(nonatomic) struct VKLabelNavArtworkCache *artworkCache; // @synthesize artworkCache=_artworkCache;
 @property(nonatomic) _Bool debugDisableRoadSignLimit; // @synthesize debugDisableRoadSignLimit=_debugDisableRoadSignLimit;
 @property(retain, nonatomic) NSString *currentShieldGroup; // @synthesize currentShieldGroup=_currentShieldGroup;
 @property(retain, nonatomic) NSString *currentRoadName; // @synthesize currentRoadName=_currentRoadName;
-@property(readonly, nonatomic) const vector_1ad5c848 *activeSigns; // @synthesize activeSigns=_activeSigns;
+@property(readonly, nonatomic) const vector_e3e87145 *activeSigns; // @synthesize activeSigns=_activeSigns;
 @property(retain, nonatomic) NSString *currentLocationText; // @synthesize currentLocationText=_currentLocationText;
 @property(nonatomic) struct PolylineCoordinate routeUserOffset; // @synthesize routeUserOffset=_routeUserOffset;
 @property(nonatomic) _Bool drawRoadSigns; // @synthesize drawRoadSigns=_drawRoadSigns;
@@ -75,18 +76,20 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned char)computeRoutePositionForPOIAtPixel:(const Matrix_8746f91e *)arg1 currentPosition:(unsigned char)arg2 context:(struct NavContext *)arg3;
+- (_Bool)needsDebugDraw;
+- (void)debugDraw:(id)arg1 overlayConsole:(struct DebugConsole *)arg2 navContext:(struct NavContext *)arg3;
 - (_Bool)_updateActiveRouteRange;
-- (_Bool)_findRouteOverlappingJunctionFrom:(int)arg1 routeJunctions:(vector_34e67f61 *)arg2 lookBackward:(_Bool)arg3 firstOverlap:(int *)arg4 secondOverlap:(int *)arg5;
+- (_Bool)_findRouteOverlappingJunctionFrom:(int)arg1 routeJunctions:(vector_397bdcab *)arg2 lookBackward:(_Bool)arg3 firstOverlap:(int *)arg4 secondOverlap:(int *)arg5;
 - (void)_updateCurrentRoadInfo;
 - (void)_initalizeCurrentRoadInfo;
 - (void)_updatePreferredLabelPlacements;
 - (void)_updateRoadsInGuidance;
 - (void)_updateRoadStarts;
 - (void)_updateUniqueOffRouteRoads;
-- (_Bool)_addJunctionsForTile:(id)arg1;
+- (_Bool)_addJunctionsForTile:(const shared_ptr_702c344d *)arg1;
 - (void)_addLabelsForJunctions:(id)arg1 withContext:(struct NavContext *)arg2 maxLabelsToAdd:(unsigned int)arg3 useAllJunctions:(_Bool)arg4 placeShieldsFrontToBack:(_Bool)arg5;
 - (void)_addLabelsAtJunctions:(id)arg1 withContext:(struct NavContext *)arg2 maxLabelsToAdd:(unsigned int)arg3;
-- (void)layoutWithNavContext:(struct NavContext *)arg1 externalCollisionLabels:(const vector_83fb13fb *)arg2;
+- (void)layoutWithNavContext:(struct NavContext *)arg1 externalCollisionLabels:(const vector_7c356ace *)arg2;
 - (unsigned char)orientationForRoadSign:(id)arg1 roadLabel:(id)arg2 navContext:(struct NavContext *)arg3;
 - (void)_generateCurrentRoadSignWithContext:(struct NavContext *)arg1;
 - (_Bool)_collideLabel:(id)arg1 activeLabel:(id)arg2 labelsToRemove:(id)arg3;
@@ -94,7 +97,7 @@ __attribute__((visibility("hidden")))
 - (void)_tryAddRoadSignForRoad:(id)arg1 isShield:(_Bool)arg2 navContext:(struct NavContext *)arg3 labelCollisionEnabled:(_Bool)arg4;
 - (void)_createOrUpdateLabelForRoad:(id)arg1 isShield:(_Bool)arg2 navContext:(struct NavContext *)arg3;
 - (void)_tryAddRoadSignForJunction:(id)arg1 navContext:(struct NavContext *)arg2 labelCollisionEnabled:(_Bool)arg3;
-- (void)grabTilesFromScene:(id)arg1;
+- (void)grabTilesFromScene:(const struct SceneContext *)arg1;
 - (void)_refreshGuidanceRoadNames;
 - (void)_reloadRouteJunctions;
 - (void)clearSceneIsMemoryWarning:(_Bool)arg1;

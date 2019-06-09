@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, SKUIMenuPopoverController, SKUINavigationBarMenusView, UIControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUINavigationBarMenusController : SKUINavigationBarSectionController <SKUIMenuPopoverDelegate>
 {
     UIControl *_focusedMenuButton;

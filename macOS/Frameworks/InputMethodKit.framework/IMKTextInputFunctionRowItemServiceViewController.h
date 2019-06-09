@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ViewBridge/NSViewService.h>
+#import <ViewBridge/NSServiceViewController.h>
 
 #import <InputMethodKit/IMKTextInputTouchBarHostViewControllerProtocol-Protocol.h>
 
-@interface IMKTextInputFunctionRowItemServiceViewController : NSViewService <IMKTextInputTouchBarHostViewControllerProtocol>
+@interface IMKTextInputFunctionRowItemServiceViewController : NSServiceViewController <IMKTextInputTouchBarHostViewControllerProtocol>
 {
 }
 

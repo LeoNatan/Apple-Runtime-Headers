@@ -22,8 +22,6 @@
     PCPersistentTimer *_localNotificationTimer;
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _monitoringLocaleAndTimeChanges;
-    _Bool _userNotificationsEnabled;
-    _Bool _allowsUnlimitedLocalNotifications;
 }
 
 - (void).cxx_destruct;
@@ -40,13 +38,11 @@
 - (void)_queue_triggerDidFireForTimer:(id)arg1;
 - (void)_invalidateNotificationRecordTimersAndRegionMonitors;
 - (void)_updateTimersAndRegionMonitorsForPendingNotificationRecords:(id)arg1;
-- (_Bool)_canScheduledLocalNotificationTimers;
 - (void)_fireNotification:(id)arg1;
 - (id)_sanitizeNotificationRecords:(id)arg1;
 - (id)_pendingNotificationRecords;
 - (void)_setPendingNotificationRecords:(id)arg1;
 - (void)_setRequestDateForPendingNotificationRecords:(id)arg1;
-- (void)setUserNotificationsEnabled:(_Bool)arg1;
 - (void)handleSignificantTimeChange;
 - (void)handleLocaleChange;
 - (void)handleApplicationStateRestore;
@@ -59,7 +55,7 @@
 - (void)setPendingNotificationRecords:(id)arg1;
 - (void)addPendingNotificationRecords:(id)arg1;
 - (void)dealloc;
-- (id)initWithNotificationRepository:(id)arg1 pendingNotificationRepository:(id)arg2 notificationScheduleRepository:(id)arg3 locationMonitor:(id)arg4 bundleIdentifier:(id)arg5 allowsUnlimitedLocalNotifications:(_Bool)arg6 userNotificationsEnabled:(_Bool)arg7 queue:(id)arg8;
+- (id)initWithNotificationRepository:(id)arg1 pendingNotificationRepository:(id)arg2 notificationScheduleRepository:(id)arg3 locationMonitor:(id)arg4 bundleIdentifier:(id)arg5 queue:(id)arg6;
 - (id)_dateFormatter;
 
 // Remaining properties

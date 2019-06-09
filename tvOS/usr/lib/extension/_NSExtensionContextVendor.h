@@ -30,6 +30,7 @@
 @property(retain, nonatomic, setter=_setExtensionPrincipalObjects:) NSMutableDictionary *_extensionPrincipalObjects; // @synthesize _extensionPrincipalObjects=__extensionPrincipalObjects;
 @property(retain, nonatomic, setter=_setExtensionContexts:) NSMutableDictionary *_extensionContexts; // @synthesize _extensionContexts=__extensionContexts;
 @property(retain, nonatomic, setter=_setExtensionServiceConnections:) NSMutableDictionary *_extensionServiceConnections; // @synthesize _extensionServiceConnections=__extensionServiceConnections;
+- (void)_onGlobalStateQueueOnly_setPrincipalObject:(id)arg1 forUUID:(id)arg2;
 - (void)_setPrincipalObject:(id)arg1 forUUID:(id)arg2;
 - (id)_extensionContextForUUID:(id)arg1;
 - (void)_tearDownContextWithUUID:(id)arg1;

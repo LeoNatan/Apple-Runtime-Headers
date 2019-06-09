@@ -27,9 +27,11 @@
 - (void)privateUpdatePromptStyle:(id)arg1;
 - (void)privateUpdateOutputVolume:(id)arg1;
 - (_Bool)privateSetPropertyValue:(unsigned long)arg1 withBool:(_Bool)arg2 error:(id *)arg3;
+- (_Bool)enableNotifications:(_Bool)arg1 error:(id *)arg2;
 - (void)privateHandleServerConnectionCompletion:(struct ConnectionResult)arg1;
 - (void)privateHandleRoutingContextChange;
 - (void)privateUpdatePiPAvailabilityChange:(id)arg1;
+- (void)privateHandleOtherPrimaryAudioPlayStateChange;
 - (void)privateHandleSecondaryAudioHintChange:(id)arg1;
 - (void)privateHandlePickableRoutesChange;
 - (void)privateHandleServerDied;
@@ -70,6 +72,7 @@
 - (unsigned int)opaqueSessionID;
 - (id)audioClockDevice;
 - (_Bool)setAudioClockDevice:(id)arg1 error:(id *)arg2;
+- (id)pickedRoute;
 @property(readonly) AVAudioSessionRouteDescription *currentRoute;
 @property(readonly) AVAudioSessionPortDescription *preferredInput;
 - (_Bool)setPreferredInput:(id)arg1 error:(id *)arg2;
@@ -77,7 +80,6 @@
 - (_Bool)selectIndependentRoutingContext:(id *)arg1;
 - (id)routingContextUID;
 - (_Bool)privateNeedsTranslationForNoSpeakerCategory:(id)arg1;
-- (_Bool)privateSetRoutingContextUID:(id)arg1 error:(id *)arg2;
 - (_Bool)privateSetRouteSharingPolicy:(unsigned int)arg1 error:(id *)arg2;
 - (_Bool)setMode:(id)arg1 error:(id *)arg2;
 @property(readonly) NSString *mode;
@@ -114,6 +116,7 @@
 - (float)inputGain;
 - (_Bool)fixHardwareFormatToMultiChannel:(_Bool)arg1 error:(id *)arg2;
 - (_Bool)isHardwareFormatFixedToMultiChannel;
+- (_Bool)setInterruptionFadeDuration:(id)arg1 error:(id *)arg2;
 - (_Bool)setAudioHardwareControlFlags:(unsigned int)arg1 error:(id *)arg2;
 - (_Bool)setBypassRingerSwitchPolicy:(_Bool)arg1 error:(id *)arg2;
 - (void)setAllowAllBuiltInDataSources:(_Bool)arg1;
@@ -132,6 +135,8 @@
 - (_Bool)isDolbyDigitalEncoderAvailable;
 - (int)audioFormat;
 - (id)audioFormats;
+@property(readonly) _Bool allowHapticsAndSystemSoundsDuringRecording;
+- (_Bool)setAllowHapticsAndSystemSoundsDuringRecording:(_Bool)arg1 error:(id *)arg2;
 @property(readonly) unsigned int promptStyle;
 - (float)outputVolume;
 - (_Bool)setOutputDataSource:(id)arg1 error:(id *)arg2;

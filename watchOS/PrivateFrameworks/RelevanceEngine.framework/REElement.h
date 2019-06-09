@@ -8,11 +8,11 @@
 
 #import <RelevanceEngine/NSCoding-Protocol.h>
 #import <RelevanceEngine/NSCopying-Protocol.h>
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/REAutomaticExportedInterface-Protocol.h>
 
 @class NSArray, NSString, REContent, REElementAction;
 
-@interface REElement : NSObject <REIndentedDescription, NSCopying, NSCoding>
+@interface REElement : NSObject <REAutomaticExportedInterface, NSCopying, NSCoding>
 {
     NSString *_bundleIdentifier;
     NSString *_identifier;
@@ -32,9 +32,9 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned int hash;
-@property(readonly, copy) NSString *description;
-- (id)descriptionWithIndent:(unsigned int)arg1;
+- (_Bool)_relevanceProvidersEqualToElement:(id)arg1;
+- (unsigned int)hash;
+- (id)description;
 - (void)_updateIdentifier:(id)arg1;
 - (_Bool)isNoContentElement;
 - (void)setBundleIdentifier:(id)arg1;
@@ -50,10 +50,6 @@
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 action:(id)arg3 relevanceProviders:(id)arg4 privacyBehavior:(unsigned int)arg5;
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 action:(id)arg3 relevanceProviders:(id)arg4;
 - (id)initWithIdentifier:(id)arg1 content:(id)arg2 idealizedContent:(id)arg3 action:(id)arg4 relevanceProviders:(id)arg5;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

@@ -8,18 +8,25 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPProtectionInfo, CKDPRecordZoneIdentifier, NSData;
+@class CKDPProtectionInfo, CKDPRecordStableUrl, CKDPRecordZoneIdentifier, CKDPShareIdentifier, NSData, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface CKDPZone : PBCodable <NSCopying>
 {
-    NSData *_encryptedLastZoneishPCSRollDate;
+    NSData *_encryptedZoneishLastRollDate;
+    NSMutableArray *_invitedKeysToRemoves;
     CKDPProtectionInfo *_protectionInfo;
     CKDPProtectionInfo *_recordProtectionInfo;
+    CKDPShareIdentifier *_shareId;
+    CKDPRecordStableUrl *_stableUrl;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property(retain, nonatomic) NSData *encryptedLastZoneishPCSRollDate; // @synthesize encryptedLastZoneishPCSRollDate=_encryptedLastZoneishPCSRollDate;
++ (Class)invitedKeysToRemoveType;
+@property(retain, nonatomic) NSMutableArray *invitedKeysToRemoves; // @synthesize invitedKeysToRemoves=_invitedKeysToRemoves;
+@property(retain, nonatomic) CKDPShareIdentifier *shareId; // @synthesize shareId=_shareId;
+@property(retain, nonatomic) CKDPRecordStableUrl *stableUrl; // @synthesize stableUrl=_stableUrl;
+@property(retain, nonatomic) NSData *encryptedZoneishLastRollDate; // @synthesize encryptedZoneishLastRollDate=_encryptedZoneishLastRollDate;
 @property(retain, nonatomic) CKDPProtectionInfo *recordProtectionInfo; // @synthesize recordProtectionInfo=_recordProtectionInfo;
 @property(retain, nonatomic) CKDPProtectionInfo *protectionInfo; // @synthesize protectionInfo=_protectionInfo;
 @property(retain, nonatomic) CKDPRecordZoneIdentifier *zoneIdentifier; // @synthesize zoneIdentifier=_zoneIdentifier;
@@ -33,7 +40,13 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) BOOL hasEncryptedLastZoneishPCSRollDate;
+- (id)invitedKeysToRemoveAtIndex:(unsigned long long)arg1;
+- (unsigned long long)invitedKeysToRemovesCount;
+- (void)addInvitedKeysToRemove:(id)arg1;
+- (void)clearInvitedKeysToRemoves;
+@property(readonly, nonatomic) BOOL hasShareId;
+@property(readonly, nonatomic) BOOL hasStableUrl;
+@property(readonly, nonatomic) BOOL hasEncryptedZoneishLastRollDate;
 @property(readonly, nonatomic) BOOL hasRecordProtectionInfo;
 @property(readonly, nonatomic) BOOL hasProtectionInfo;
 @property(readonly, nonatomic) BOOL hasZoneIdentifier;

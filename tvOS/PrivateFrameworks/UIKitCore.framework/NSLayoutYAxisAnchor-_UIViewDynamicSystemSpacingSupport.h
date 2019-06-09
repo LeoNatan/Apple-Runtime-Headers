@@ -11,5 +11,8 @@
 - (id)constraintGreaterThanOrEqualToSystemSpacingBelowAnchor:(id)arg1;
 - (id)constraintEqualToSystemSpacingBelowAnchor:(id)arg1;
 - (id)_constraintBelowAnchor:(id)arg1 relation:(long long)arg2 multiplier:(double)arg3;
+- (id)constraintLessThanOrEqualToSystemSpacingBelowAnchor:(id)arg1 multiplier:(double)arg2;
+- (id)constraintGreaterThanOrEqualToSystemSpacingBelowAnchor:(id)arg1 multiplier:(double)arg2;
+- (id)constraintEqualToSystemSpacingBelowAnchor:(id)arg1 multiplier:(double)arg2;
 @end
 

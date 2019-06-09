@@ -26,8 +26,5 @@
 - (void)remote_generatePauseOrResumeRequestWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_replaceWorkout:(HKWorkout *)arg1 withWorkout:(HKWorkout *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)remote_addSamples:(NSArray *)arg1 toWorkout:(HKWorkout *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
-- (void)remote_getCurrentWorkoutSnapshotWithCompletion:(void (^)(_HKCurrentWorkoutSnapshot *, NSError *))arg1;
-- (void)remote_getFirstPartyWorkoutSnapshotWithCompletion:(void (^)(_HKFirstPartyWorkoutSnapshot *, NSError *))arg1;
-- (void)remote_activeWorkoutApplicationIdentifier:(void (^)(NSString *, NSError *))arg1;
 @end
 

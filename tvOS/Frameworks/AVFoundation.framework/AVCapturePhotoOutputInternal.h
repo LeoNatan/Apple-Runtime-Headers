@@ -9,6 +9,7 @@
 @class AVCapturePhotoSettings, AVWeakReference, NSArray, NSMutableArray, NSString;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AVCapturePhotoOutputInternal : NSObject
 {
     AVWeakReference *weakReference;
@@ -19,9 +20,6 @@
     NSArray *availablePhotoFileTypes;
     NSArray *availableRawPhotoFileTypes;
     _Bool stillImageStabilizationSupported;
-    _Bool dualCameraFusionSupported;
-    _Bool dualCameraDualPhotoDeliverySupported;
-    _Bool dualCameraDualPhotoDeliveryEnabled;
     NSArray *supportedHDRModes;
     NSArray *supportedFlashModes;
     _Bool highResolutionCaptureEnabled;
@@ -42,6 +40,9 @@
     _Bool optimizesImagesForOfflineVideoStabilization;
     CDStruct_79c71658 optimizedImageDimensionsForOfflineStabilization;
     _Bool livePhotoMovieProcessingSuspended;
+    _Bool videoCaptureSupported;
+    _Bool videoCaptureEnabled;
+    _Bool resumeLivePhotoMovieCaptureAfterVideoCaptureEnds;
     NSObject<OS_dispatch_queue> *sceneDetectionObserversDispatchQueue;
     int flashSceneObserverCount;
     int HDRSceneObserverCount;
@@ -51,7 +52,7 @@
     _Bool isStillImageStabilizationScene;
     AVCapturePhotoSettings *photoSettingsForSceneMonitoring;
     struct OpaqueFigSimpleMutex *requestsLock;
-    NSMutableArray *requests;
+    NSMutableArray *photoRequests;
     NSMutableArray *prepareRequests;
     NSObject<OS_dispatch_queue> *beginEndIrisMovieCaptureHostTimeQueue;
     NSObject<OS_dispatch_group> *beginEndIrisMovieCaptureHostTimeDispatchGroup;

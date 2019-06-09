@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCAsyncSerialQueue, NSString;
+@class NSString;
 @protocol FCContentContext, FCFlintHelper;
 
 @interface FCOfflineIssueFetchOperation : FCOperation
@@ -15,7 +15,6 @@
     double _progress;
     CDUnknownBlockType _progressHandler;
     CDUnknownBlockType _fetchCompletionHandler;
-    FCAsyncSerialQueue *_articleSerialQueue;
     id <FCContentContext> _context;
     id <FCFlintHelper> _flintHelper;
     NSString *_issueID;
@@ -26,14 +25,14 @@
 @property(copy, nonatomic) NSString *issueID; // @synthesize issueID=_issueID;
 @property(retain, nonatomic) id <FCFlintHelper> flintHelper; // @synthesize flintHelper=_flintHelper;
 @property(retain, nonatomic) id <FCContentContext> context; // @synthesize context=_context;
-@property(retain, nonatomic) FCAsyncSerialQueue *articleSerialQueue; // @synthesize articleSerialQueue=_articleSerialQueue;
 @property(copy, nonatomic) CDUnknownBlockType fetchCompletionHandler; // @synthesize fetchCompletionHandler=_fetchCompletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property double progress; // @synthesize progress=_progress;
 @property(nonatomic) _Bool cachedOnly; // @synthesize cachedOnly=_cachedOnly;
 - (void).cxx_destruct;
+- (id)_pdfArchiveURLForIssue:(id)arg1;
 - (void)_updateProgress:(double)arg1;
-- (id)_resourceIDsFromMetadataJSONAtPath:(id)arg1;
+- (id)_resourceIDsFromMetadataJSONData:(id)arg1;
 - (id)_promisePDFPagesForIssue:(id)arg1;
 - (id)_promiseANFArticlesForIssue:(id)arg1;
 - (id)_promiseCoverImageForIssue:(id)arg1;
@@ -41,7 +40,6 @@
 - (id)_promiseIssue;
 - (void)operationWillFinishWithError:(id)arg1;
 - (void)performOperation;
-- (void)prepareOperation;
 - (_Bool)validateOperation;
 - (id)initWithContext:(id)arg1 flintHelper:(id)arg2 issue:(id)arg3;
 - (id)initWithContext:(id)arg1 flintHelper:(id)arg2 issueID:(id)arg3;

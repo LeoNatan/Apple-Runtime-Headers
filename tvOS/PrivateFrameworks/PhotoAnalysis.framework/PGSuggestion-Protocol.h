@@ -27,5 +27,9 @@
 @property(readonly, nonatomic) unsigned short state;
 @property(readonly, nonatomic) unsigned short subtype;
 @property(readonly, nonatomic) unsigned short type;
+
+@optional
+@property(readonly, copy, nonatomic) NSArray *reasons;
+@property(readonly, nonatomic) _Bool isInvalid;
 @end
 

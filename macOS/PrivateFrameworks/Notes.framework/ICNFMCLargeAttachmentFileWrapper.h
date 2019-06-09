@@ -15,14 +15,14 @@
 }
 
 + (id)localAttachmentFilesDirectory;
++ (id)ic_fileWrapperWithDictionaryRepresentation:(id)arg1;
 + (id)fileWrapperWithURL:(id)arg1 andContentID:(id)arg2;
 @property(retain, nonatomic) NSURL *fileToCopy; // @synthesize fileToCopy=_fileToCopy;
 @property(nonatomic) unsigned long long approximateSize; // @synthesize approximateSize=_attachmentSize;
 - (void).cxx_destruct;
 - (BOOL)isALargeAttachment;
 - (id)symbolicLinkDestinationURL;
-- (id)archivedDataWithPartNumber:(id)arg1;
-- (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)ic_archivedDataWithPartNumber:(id)arg1;
 
 @end
 

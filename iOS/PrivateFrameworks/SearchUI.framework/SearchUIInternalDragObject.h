@@ -6,18 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <SearchUI/UIItemProviderWriting-Protocol.h>
+#import <SearchUI/NSItemProviderWriting-Protocol.h>
 
-@class NSArray, NSString;
-@protocol SearchUIDragObject;
+@class NSArray, NSString, SearchUIRowModel;
 
-@interface SearchUIInternalDragObject : NSObject <UIItemProviderWriting>
+@interface SearchUIInternalDragObject : NSObject <NSItemProviderWriting>
 {
-    id <SearchUIDragObject> _dragObject;
+    SearchUIRowModel *_dragObject;
 }
 
 + (id)writableTypeIdentifiersForItemProvider;
-@property(retain) id <SearchUIDragObject> dragObject; // @synthesize dragObject=_dragObject;
+@property(retain) SearchUIRowModel *dragObject; // @synthesize dragObject=_dragObject;
 - (void).cxx_destruct;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, copy, nonatomic) NSArray *writableTypeIdentifiersForItemProvider;

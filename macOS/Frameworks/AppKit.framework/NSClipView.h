@@ -11,8 +11,6 @@
 @interface NSClipView : NSView
 {
     NSColor *_backgroundColor;
-    NSView *_docView;
-    struct CGRect _docRect;
     struct CGRect _oldDocFrame;
     NSCursor *_cursor;
     id _scrollAnimationHelper;
@@ -43,6 +41,8 @@
         unsigned int hasOverlappingViews:1;
         unsigned int automaticallyCalculateContentSize:1;
     } _cvFlags;
+    NSView *_docView;
+    struct CGRect _docRect;
     struct CGPoint _scrollVelocity;
     struct NSEdgeInsets _contentInsets;
     struct CGSize _contentSize;
@@ -50,7 +50,7 @@
 }
 
 + (id)defaultAnimationForKey:(id)arg1;
-+ (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (id)_contentShadow;
 + (BOOL)isCompatibleWithResponsiveScrolling;
 + (double)_autoscrollResponseMultiplier;
@@ -79,7 +79,6 @@
 - (BOOL)_shouldAdjustPatternPhase;
 - (BOOL)_scrollInProgress;
 - (void)scrollToPoint:(struct CGPoint)arg1;
-- (BOOL)_needsClipViewAncestorDidScroll;
 - (void)_oldImmediateScrollToPoint:(struct CGPoint)arg1;
 - (void)_immediateScrollToPoint:(struct CGPoint)arg1;
 - (void)_invalidateFocusRingIfItBleedsIntoOurBounds;

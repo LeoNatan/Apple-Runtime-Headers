@@ -32,7 +32,7 @@
 - (void)_updateAlternateTextTimer;
 - (void)setText:(id)arg1;
 - (void)applyStyleAttributes:(id)arg1;
-@property(readonly, nonatomic) int overriddenVerticalAlignment;
+@property(readonly, nonatomic) _Bool prefersBaselineAlignment;
 @property(readonly, nonatomic) _Bool wantsCrossfade;
 - (id)initWithFrame:(struct CGRect)arg1;
 
@@ -40,6 +40,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic) int overriddenVerticalAlignment;
 @property(readonly) Class superclass;
 
 @end

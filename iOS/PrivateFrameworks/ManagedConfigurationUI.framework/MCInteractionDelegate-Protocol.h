@@ -13,6 +13,7 @@
 - (void)profileConnectionDidRequestCurrentPasscode:(MCProfileConnection *)arg1;
 - (void)profileConnection:(MCProfileConnection *)arg1 didFinishPreflightWithError:(NSError *)arg2;
 - (void)profileConnection:(MCProfileConnection *)arg1 didFinishInstallationWithIdentifier:(NSString *)arg2 error:(NSError *)arg3;
+- (void)profileConnection:(MCProfileConnection *)arg1 didRequestMAIDSignIn:(NSString *)arg2 personaID:(NSString *)arg3;
 - (void)profileConnection:(MCProfileConnection *)arg1 didRequestUserInput:(NSArray *)arg2;
 
 @optional

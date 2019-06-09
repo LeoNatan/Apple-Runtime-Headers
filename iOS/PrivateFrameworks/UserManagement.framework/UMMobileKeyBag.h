@@ -32,6 +32,8 @@
 + (id)loadUser:(id)arg1 withPasscodeData:(id)arg2;
 + (void)currentUserSwitchContextHasBeenUsed;
 + (id)currentUserSwitchContext;
++ (_Bool)adoptPersonaVoucherForAccoutID:(id)arg1 outError:(id *)arg2;
++ (id)currentPersona;
 + (id)allUsers;
 + (id)lastLoggedInUser;
 + (id)loginUser;

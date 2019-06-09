@@ -12,6 +12,7 @@
 {
     AVCapturePhotoOutputInternal *_internal;
     _Bool _autoRedEyeReductionSupported;
+    long long _maxPhotoQualityPrioritization;
 }
 
 + (struct __CFDictionary *)_copyAttachmentsAndPropagateFaceRegionsToExifAuxDictionaryForSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
@@ -23,12 +24,14 @@
 + (id)new;
 + (void)initialize;
 @property(readonly, nonatomic, getter=isAutoRedEyeReductionSupported) _Bool autoRedEyeReductionSupported; // @synthesize autoRedEyeReductionSupported=_autoRedEyeReductionSupported;
+@property(nonatomic) long long maxPhotoQualityPrioritization; // @synthesize maxPhotoQualityPrioritization=_maxPhotoQualityPrioritization;
 - (void)_handleDidFinishCaptureNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
-- (id)_avErrorUserInfoDictionaryForError:(int)arg1 request:(id)arg2 payload:(id)arg3 isOriginalMovie:(_Bool)arg4;
+- (id)_avErrorUserInfoDictionaryForError:(int)arg1 photoRequest:(id)arg2 payload:(id)arg3 isOriginalMovie:(_Bool)arg4;
 - (void)setFigCaptureSessionSectionProperty:(struct __CFString *)arg1 withHostTime:(CDStruct_1b6d18a9)arg2 settingStateVaribleToNoOnFailure:(_Bool *)arg3;
+- (void)_handleDidFinishRecordingVideoNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleDidFinishRecordingIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleDidRecordIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
-- (void)_handleStillImageCompleteNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
+- (void)_handleStillImageCompleteNotification:(id)arg1 withPayload:(id)arg2 forRequest:(id)arg3;
 - (void)_handleDidCaptureStillImageNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleWillCaptureStillImageNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleWillBeginCaptureNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
@@ -36,8 +39,8 @@
 - (void)_handlePreparationCompleteNotificationWithPayload:(id)arg1 settingsID:(long long)arg2;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (id)_photoRequestForUniqueID:(long long)arg1;
-- (void)_dispatchFailureCallbacks:(unsigned int)arg1 forRequest:(id)arg2 withError:(id)arg3 cleanupRequest:(_Bool)arg4;
-- (void)_dispatchFailureCallbacksForSettings:(id)arg1 toDelegate:(id)arg2 withError:(id)arg3;
+- (void)_dispatchFailureCallbacks:(unsigned int)arg1 forPhotoRequest:(id)arg2 withError:(id)arg3 cleanupRequest:(_Bool)arg4;
+- (void)_dispatchFailureCallbacksForPhotoSettings:(id)arg1 toDelegate:(id)arg2 withError:(id)arg3;
 - (id)_sanitizedSettingsForSettings:(id)arg1;
 - (id)_figCaptureIrisPreparedSettingsForRequest:(id)arg1;
 - (id)_figCaptureIrisStillImageSettingsForAVCapturePhotoSettings:(id)arg1 delegate:(id)arg2 connections:(id)arg3;
@@ -58,8 +61,8 @@
 - (void)_updateMaxBracketedCapturePhotoCountForSourceDevice:(id)arg1;
 - (void)_updateSupportedFlashModesForSourceDevice:(id)arg1;
 - (void)_updateSupportedHDRModesForSourceDevice:(id)arg1;
-- (void)_updateDualCameraDualPhotoDeliverySupportedForSourceDevice:(id)arg1;
-- (void)_updateDualCameraFusionSupportedForSourceDevice:(id)arg1;
+- (void)_updateVirtualDeviceConstituentPhotoDeliverySupportedForSourceDevice:(id)arg1;
+- (void)_updateVirtualDeviceFusionSupportedForSourceDevice:(id)arg1;
 - (void)_updateStillImageStabilizationSupportedForSourceDevice:(id)arg1;
 - (void)_updateAvailableRawPhotoFileTypesForSourceDevice:(id)arg1;
 - (_Bool)_HEVCAndHEIFAreAvailableForSourceDevice:(id)arg1;
@@ -74,9 +77,15 @@
 - (void)attachSafelyToFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id *)arg2;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 - (id)figCaptureIrisPreparedSettings;
+- (void)endCaptureWithUniqueID:(long long)arg1;
+- (void)commitCaptureWithSettings:(id)arg1 delegate:(id)arg2;
+- (void)initiateCaptureWithSettings:(id)arg1;
+- (_Bool)isVideoCaptureEnabled;
+- (void)setVideoCaptureEnabled:(_Bool)arg1;
+- (_Bool)isVideoCaptureSupported;
 - (void)userInitiatedCaptureRequestAtTime:(unsigned long long)arg1;
 - (void)setFilterRenderingEnabled:(_Bool)arg1;
 - (_Bool)isFilterRenderingEnabled;

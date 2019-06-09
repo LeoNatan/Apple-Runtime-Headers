@@ -4,38 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <MaterialKit/MTVisualStylingProvider.h>
 
-#import <MaterialKit/MTMaterialSettingsObserving-Protocol.h>
-
-@class NSPointerArray, NSString;
-@protocol MTMaterialSettings;
-
-@interface MTVibrantStylingProvider : NSObject <MTMaterialSettingsObserving>
+@interface MTVibrantStylingProvider : MTVisualStylingProvider
 {
-    NSPointerArray *_observers;
-    id <MTMaterialSettings> _materialSettings;
 }
 
++ (id)_vibrantStylingProviderForRecipe:(long long)arg1;
++ (Class)_visualStylingClass;
 + (id)vibrantStylingWithPrivateStyle:(long long)arg1 andRecipe:(long long)arg2;
 + (id)vibrantStylingWithStyle:(long long)arg1 andRecipe:(long long)arg2;
-- (void).cxx_destruct;
-- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
-- (void)_notifyObserversWithBlock:(CDUnknownBlockType)arg1;
-- (id)_observableMaterialSettings;
+- (id)_vibrantStylingForStyleName:(id)arg1;
 - (id)vibrantStylingWithStyle:(long long)arg1;
-- (long long)_privateStyleForStyle:(long long)arg1;
-- (void)dealloc;
 - (id)vibrantStylingWithPrivateStyle:(long long)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)addObserver:(id)arg1;
-- (id)initWithMaterialSettings:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

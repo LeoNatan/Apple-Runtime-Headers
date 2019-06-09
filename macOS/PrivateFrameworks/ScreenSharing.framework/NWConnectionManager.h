@@ -9,7 +9,6 @@
 @class NSRecursiveLock, NSString, NWConnection;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-__attribute__((visibility("hidden")))
 @interface NWConnectionManager : NSObject
 {
     NSObject<OS_dispatch_semaphore> *networkConnectionReadySemaphore;

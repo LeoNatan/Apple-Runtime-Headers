@@ -31,6 +31,7 @@
     _Bool _graphIs64bit;
 }
 
++ (void)encapsulateData:(id)arg1 to:(id)arg2 withSupplementalDataTag:(const char *)arg3 dataGeneratorBlock:(CDUnknownBlockType)arg4;
 + (id)directedGraphWithData:(id)arg1 error:(id *)arg2;
 + (id)_unarchivedObject:(id)arg1 ofClass:(Class)arg2 options:(unsigned long long)arg3;
 + (id)_archivedObject:(id)arg1 options:(unsigned long long)arg2;
@@ -83,10 +84,12 @@
 - (void)dealloc;
 - (id)plistRepresentationWithOptions:(unsigned long long)arg1;
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned long long)arg2;
-- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3;
+- (id)initWithArchived:(id)arg1 version:(long long)arg2 options:(unsigned long long)arg3 diskLogs:(id)arg4;
 - (id)initWithPlistRepresentation:(id)arg1 error:(id *)arg2;
 - (id)initWithPlistRepresentation:(id)arg1;
 - (id)decapsulateIPSheaderInData:(id)arg1 error:(id *)arg2;
+- (id)decapsulateSupplementalData:(id)arg1 forTag:(const char *)arg2;
+- (id)decapsulatePlistData:(id)arg1 error:(id *)arg2;
 - (void)setGraphVersion:(long long)arg1;
 - (void)setGraphCompatibilityVersion:(long long)arg1;
 - (id)initWithNodes:(unsigned int)arg1;

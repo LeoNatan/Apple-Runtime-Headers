@@ -36,6 +36,7 @@
 - (void).cxx_destruct;
 - (id)defaultFootprintString;
 - (id)defaultTypeString;
+- (id)serverVoiceNameForGender:(long)arg1;
 - (long)defaultVoiceFootprint;
 - (long)defaultVoiceType;
 - (long)defaultVoiceGender;

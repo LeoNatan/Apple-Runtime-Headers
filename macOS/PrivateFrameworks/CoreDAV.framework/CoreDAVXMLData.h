@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSMutableArray, NSMutableDictionary;
+@class CoreDAVXMLData_Impl, NSData, NSMutableArray, NSMutableDictionary;
 
 @interface CoreDAVXMLData : NSObject
 {
     BOOL _shouldAddFormattingSpaces;
-    struct _xmlTextWriter *_writer;
-    struct _xmlDoc *_doc;
+    CoreDAVXMLData_Impl *_dataImpl;
     BOOL _docHasEnded;
     NSMutableDictionary *_seenURIsToPrefixes;
     NSMutableDictionary *_seenURIsToDepth;

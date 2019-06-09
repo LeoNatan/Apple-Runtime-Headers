@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 + (id)collectionWithObject:(id)arg1;
 + (id)collection;
+- (void).cxx_destruct;
 - (id)description;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCollection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithObject:(id)arg1;
 - (id)init;
 

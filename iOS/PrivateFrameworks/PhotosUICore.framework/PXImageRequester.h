@@ -33,6 +33,7 @@
     struct CGSize _viewportSize;
     struct CGSize __targetSize;
     struct CGRect _desiredContentsRect;
+    struct CGRect _cropRect;
     struct CGRect _contentsRect;
 }
 
@@ -47,6 +48,7 @@
 @property(retain, nonatomic, setter=_setOpportunisticImage:) UIImage *opportunisticImage; // @synthesize opportunisticImage=_opportunisticImage;
 @property(retain, nonatomic, setter=_setImage:) UIImage *image; // @synthesize image=_image;
 @property(readonly, nonatomic) struct CGSize viewportSize; // @synthesize viewportSize=_viewportSize;
+@property(readonly, nonatomic) struct CGRect cropRect; // @synthesize cropRect=_cropRect;
 @property(readonly, nonatomic) struct CGRect desiredContentsRect; // @synthesize desiredContentsRect=_desiredContentsRect;
 @property(readonly, nonatomic) struct CGSize maximumRequestSize; // @synthesize maximumRequestSize=_maximumRequestSize;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
@@ -63,6 +65,7 @@
 - (void)setDesiredContentsRect:(struct CGRect)arg1;
 - (void)setMaximumRequestSize:(struct CGSize)arg1;
 - (void)setScale:(double)arg1;
+- (void)setCropRect:(struct CGRect)arg1;
 - (void)setContentSize:(struct CGSize)arg1;
 - (void)setAsset:(id)arg1;
 - (void)setMediaProvider:(id)arg1;

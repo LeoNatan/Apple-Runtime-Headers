@@ -8,28 +8,7 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct HDSyncAnchorRange {
-    long long _field1;
-    long long _field2;
-};
-
-struct NSObject {
-    Class _field1;
-};
-
-struct os_unfair_lock_s {
-    unsigned int _os_unfair_lock_opaque;
-};
-
 #pragma mark Typedef'd Structures
-
-typedef struct {
-    _Bool allowsHistoricalEvaluationFromBeginningOfTime;
-    int startDate;
-    int endDate;
-} CDStruct_f9ab334b;
 
 typedef struct {
     unsigned short year;
@@ -43,23 +22,4 @@ typedef struct {
     float green;
     float blue;
 } CDStruct_7e4c1c81;
-
-typedef struct {
-    long long _field1;
-    long long _field2;
-    double _field3;
-    double _field4;
-    double _field5;
-    double _field6;
-    double _field7;
-    int _field8;
-    int _field9;
-    int _field10;
-    int _field11;
-    double _field12;
-    double _field13;
-    _Bool _field14;
-    _Bool _field15;
-    double _field16;
-} CDStruct_9a304c14;
 

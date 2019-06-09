@@ -15,10 +15,10 @@
     CUTCheckpointRange *_waitForACK;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) CUTCheckpointRange *waitForACK; // @synthesize waitForACK=_waitForACK;
 @property(readonly, nonatomic) CUTCheckpointRange *messageOnQueue; // @synthesize messageOnQueue=_messageOnQueue;
 @property(readonly, nonatomic) CUTCheckpointRange *sendToDaemon; // @synthesize sendToDaemon=_sendToDaemon;
-- (void)dealloc;
 - (id)initWithUniqueIdentifier:(id)arg1;
 - (id)initWithStartDate:(id)arg1 endDate:(id)arg2 name:(id)arg3 uniqueIdentifier:(id)arg4;
 

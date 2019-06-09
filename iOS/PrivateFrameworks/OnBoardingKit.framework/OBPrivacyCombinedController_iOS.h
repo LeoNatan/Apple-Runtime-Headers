@@ -6,29 +6,34 @@
 
 #import <OnBoardingKit/OBPrivacyCombinedController.h>
 
-#import <OnBoardingKit/UIScrollViewDelegate-Protocol.h>
+#import <OnBoardingKit/OBNavigationBarTitleTransistor-Protocol.h>
+#import <OnBoardingKit/UITableViewDataSource-Protocol.h>
+#import <OnBoardingKit/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSString, OBBuddyPaneHeaderView, OBPrivacyCombinedTableViewController, OBPrivacySplashController;
+@class NSArray, NSLayoutConstraint, NSString;
 
 __attribute__((visibility("hidden")))
-@interface OBPrivacyCombinedController_iOS : OBPrivacyCombinedController <UIScrollViewDelegate>
+@interface OBPrivacyCombinedController_iOS : OBPrivacyCombinedController <OBNavigationBarTitleTransistor, UITableViewDelegate, UITableViewDataSource>
 {
-    OBPrivacySplashController *_initialSplashController;
-    OBPrivacyCombinedTableViewController *_tableViewController;
-    OBBuddyPaneHeaderView *_headerView;
-    _Bool _didFirstLayout;
+    NSLayoutConstraint *_tableViewHeightConstraint;
     NSArray *_identifiers;
+    NSArray *_privacyFlows;
 }
 
+@property(retain) NSArray *privacyFlows; // @synthesize privacyFlows=_privacyFlows;
+@property(retain, nonatomic) NSArray *identifiers; // @synthesize identifiers=_identifiers;
+@property(retain, nonatomic) NSLayoutConstraint *tableViewHeightConstraint; // @synthesize tableViewHeightConstraint=_tableViewHeightConstraint;
 - (void).cxx_destruct;
-- (void)scrollViewDidScroll:(id)arg1;
-- (void)setDarkMode:(_Bool)arg1;
-- (void)updateNavigationBarAnimated:(_Bool)arg1;
-- (void)updateBackgroundColor;
-- (void)viewDidLayoutSubviews;
-- (void)viewWillLayoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (long long)numberOfSectionsInTableView:(id)arg1;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)showPrivacyGateway:(id)arg1;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)loadView;
+- (void)viewDidLoad;
 - (id)initWithIdentifiers:(id)arg1;
 
 // Remaining properties

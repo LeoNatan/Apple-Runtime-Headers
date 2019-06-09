@@ -21,7 +21,6 @@
     BOOL _hasFocus;
     BOOL _hasKeyboardFocus;
     BOOL _isTruncatedValue;
-    int _bridgedProcessID;
     XCUIApplication *_application;
     unsigned long long _generation;
     id <XCTElementSnapshotAttributeDataSource> _dataSource;
@@ -45,6 +44,8 @@
     struct CGRect _frame;
 }
 
++ (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_iOS:(id)arg2 useLegacyElementType:(BOOL)arg3;
++ (unsigned long long)elementTypeForAccessibilityElement:(id)arg1 usingAXAttributes_macOS:(id)arg2 useLegacyElementType:(BOOL)arg3;
 + (id)axAttributesForSnapshotAttributes:(id)arg1 isMacOS:(BOOL)arg2;
 + (id)requiredAXAttributesForElementSnapshotHierarchyOnMacOS:(BOOL)arg1;
 + (id)sanitizedElementSnapshotHierarchyAttributesForAttributes:(id)arg1 isMacOS:(BOOL)arg2;
@@ -73,6 +74,7 @@
 @property(readonly) struct CGRect visibleFrame;
 @property(readonly) NSArray *disclosedChildRows;
 @property(readonly) XCElementSnapshot *outline;
+@property(readonly) BOOL isInRootMenu;
 @property(readonly) XCElementSnapshot *menuItem;
 @property(readonly) XCElementSnapshot *menu;
 @property(readonly) XCElementSnapshot *scrollView;
@@ -114,8 +116,6 @@
 @property long long horizontalSizeClass; // @synthesize horizontalSizeClass=_horizontalSizeClass;
 @property unsigned long long traits; // @synthesize traits=_traits;
 @property BOOL isMainWindow; // @synthesize isMainWindow=_isMainWindow;
-@property int bridgedProcessID; // @synthesize bridgedProcessID=_bridgedProcessID;
-@property(readonly, getter=isBridged) BOOL bridged;
 @property(getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property BOOL hasFocus; // @synthesize hasFocus=_hasFocus;

@@ -24,7 +24,9 @@
 @property(readonly, nonatomic) FCAssetHandle *nameImageCompactAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *nameImageAssetHandle;
 @property(readonly, nonatomic) FCAssetHandle *logoImageAssetHandle;
+@property(readonly, nonatomic) FCColor *darkStyleForegroundColor;
 @property(readonly, nonatomic) FCColor *foregroundColor;
+@property(readonly, nonatomic) FCColor *darkStyleBackgroundColor;
 @property(readonly, nonatomic) FCColor *backgroundColor;
 @property(readonly, copy, nonatomic) FCTextInfo *headlineBylineTextInfo;
 @property(readonly, copy, nonatomic) FCTextInfo *headlineExcerptTextInfo;

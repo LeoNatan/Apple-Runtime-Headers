@@ -18,10 +18,10 @@
 + (id)sharedController;
 @property(readonly) double greatestScreenScale; // @synthesize greatestScreenScale=_greatestScreenScale;
 @property(retain, nonatomic) GKEventEmitter *emitter; // @synthesize emitter=_emitter;
+- (void).cxx_destruct;
 - (void)_screensDidChange:(id)arg1;
 - (void)unregisterListener:(id)arg1;
 - (void)registerListener:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

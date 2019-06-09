@@ -12,5 +12,8 @@
 - (void)selectChallengeablePlayerIDs:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)issueChallengeToPlayers:(id)arg1 message:(id)arg2;
 - (id)challengeComposeControllerWithMessage:(id)arg1 players:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)loadImageWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)showBanner;
+- (id)imageURL;
 @end
 

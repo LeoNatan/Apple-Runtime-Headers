@@ -6,13 +6,20 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface NSURLRequestInternal : NSObject
 {
-    struct _CFURLRequest *request;
+    struct URLRequest _request;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)dealloc;
+- (id)_initWithMessage:(struct __CFHTTPMessage *)arg1 bodyParts:(struct __CFArray *)arg2 cachePolicy:(unsigned long long)arg3 timeout:(double)arg4 mainDocumentURL:(struct __CFURL *)arg5 mutable:(unsigned char)arg6;
+- (id)init;
+@property(readonly) struct URLRequest *_inner; // @dynamic _inner;
 
 @end
 

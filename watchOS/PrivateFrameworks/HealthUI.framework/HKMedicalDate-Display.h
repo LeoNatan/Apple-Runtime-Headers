@@ -8,7 +8,6 @@
 
 @interface HKMedicalDate (Display)
 + (id)displayStringForDate:(id)arg1 form:(int)arg2 originalTimeZoneString:(id)arg3;
-- (id)viewControllerTitleDisplayStringWithDateCache:(id)arg1;
 - (id)displayStringWithPreferredForm:(int)arg1 includeTimeZone:(_Bool)arg2;
 - (id)displayStringWithTimeZone;
 - (id)displayString;

@@ -12,23 +12,25 @@
 
 @interface MapsSuggestionsServerSideFilter : MapsSuggestionsBaseFilter <MapsSuggestionsFilter>
 {
-    _Bool _enableMapsSuggestionsEntryTypeUnknown;
-    _Bool _enableMapsSuggestionsEntryTypeHome;
-    _Bool _enableMapsSuggestionsEntryTypeWork;
-    _Bool _enableMapsSuggestionsEntryTypeCalendarEvent;
-    _Bool _enableMapsSuggestionsEntryTypeFrequentLocation;
-    _Bool _enableMapsSuggestionsEntryTypeRecentHistory;
-    _Bool _enableMapsSuggestionsEntryTypeFavoritePlace;
-    _Bool _enableMapsSuggestionsEntryTypeParkedCar;
-    _Bool _enableMapsSuggestionsEntryTypeRestaurantReservation;
-    _Bool _enableMapsSuggestionsEntryTypeRidesharing;
-    _Bool _enableMapsSuggestionsEntryTypeCarPlayLowEnergy;
-    _Bool _enableMapsSuggestionsEntryTypeResumeRoute;
-    _Bool _enableMapsSuggestionsEntryTypeAppConnection;
-    _Bool _enableMapsSuggestionsEntryTypeHotel;
-    _Bool _enableMapsSuggestionsEntryTypeCarRental;
-    _Bool _enableMapsSuggestionsEntryTypeTravelFlight;
-    _Bool _enableMapsSuggestionsEntryTypeTicketedEvent;
+    _Bool _enabledEntryTypeUnknown;
+    _Bool _enabledEntryTypeHome;
+    _Bool _enabledEntryTypeWork;
+    _Bool _enabledEntryTypeCalendarEvent;
+    _Bool _enabledEntryTypeFrequentLocation;
+    _Bool _enabledEntryTypeRecentHistory;
+    _Bool _enabledEntryTypeFavoritePlace;
+    _Bool _enabledEntryTypeParkedCar;
+    _Bool _enabledEntryTypeRestaurantReservation;
+    _Bool _enabledEntryTypeRidesharing;
+    _Bool _enabledEntryTypeCarPlayLowEnergy;
+    _Bool _enabledEntryTypeResumeRoute;
+    _Bool _enabledEntryTypeAppConnection;
+    _Bool _enabledEntryTypeHotel;
+    _Bool _enabledEntryTypeCarRental;
+    _Bool _enabledEntryTypeTravelFlight;
+    _Bool _enabledEntryTypeTicketedEvent;
+    _Bool _enabledEntryTypePortrait;
+    _Bool _enabledEntryTypeUserPlace;
 }
 
 + (_Bool)isEnabled;

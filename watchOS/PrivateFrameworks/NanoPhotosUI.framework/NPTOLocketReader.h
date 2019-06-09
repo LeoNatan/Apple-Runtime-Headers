@@ -12,6 +12,7 @@
 
 @interface NPTOLocketReader : NSObject <NSCopying>
 {
+    _Bool _syncing;
     _Bool _isAlbumContentsInvalid;
     CDUnknownBlockType _albumContentsLoaderBlock;
     PHFetchResult *_albumContents;
@@ -32,6 +33,7 @@
 - (id)_assetsInRange:(struct _NSRange)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)init;
 
 @end
 

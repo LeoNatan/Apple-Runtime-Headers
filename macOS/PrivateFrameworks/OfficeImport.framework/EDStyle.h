@@ -11,6 +11,7 @@
 
 @class EDAlignmentInfo, EDBorders, EDContentFormat, EDFill, EDFont, EDProtection, EDResources, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDStyle : NSObject <NSCopying, EDImmutableObject>
 {
     EDResources *mResources;

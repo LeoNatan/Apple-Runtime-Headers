@@ -33,7 +33,6 @@
 - (void)viewDidLoad;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)dealloc;
 - (id)initWithFilePath:(id)arg1 sourceURL:(id)arg2;
 
 // Remaining properties

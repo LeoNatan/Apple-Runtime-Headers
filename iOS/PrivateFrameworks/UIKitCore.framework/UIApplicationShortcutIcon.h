@@ -15,10 +15,10 @@
     SBSApplicationShortcutIcon *_sbsShortcutIcon;
 }
 
-+ (long long)sbsIconTypeForIconType:(long long)arg1;
 + (id)iconWithCustomImage:(id)arg1 isTemplate:(_Bool)arg2;
 + (id)iconWithCustomImage:(id)arg1;
 + (id)iconWithTemplateImageName:(id)arg1;
++ (id)iconWithSystemImageName:(id)arg1;
 + (id)iconWithType:(long long)arg1;
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) SBSApplicationShortcutIcon *sbsShortcutIcon; // @synthesize sbsShortcutIcon=_sbsShortcutIcon;

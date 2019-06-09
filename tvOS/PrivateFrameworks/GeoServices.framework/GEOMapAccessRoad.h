@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _roadID;
 }
 
-+ (double)estimatedWidthForRoad:(CDStruct_a2ef2718 *)arg1;
++ (double)estimatedWidthForRoad:(CDStruct_c8b5ad3f *)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;

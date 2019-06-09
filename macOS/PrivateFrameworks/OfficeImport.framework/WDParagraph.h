@@ -8,6 +8,7 @@
 
 @class NSMutableArray, WDParagraphProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDParagraph : WDBlock
 {
     WDParagraphProperties *mProperties;

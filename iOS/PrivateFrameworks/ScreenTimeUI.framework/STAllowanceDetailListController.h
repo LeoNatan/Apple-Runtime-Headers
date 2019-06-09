@@ -6,14 +6,14 @@
 
 #import <Preferences/PSListController.h>
 
-#import <ScreenTimeUI/STAllowanceSetupListControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STCustomizeDaysListControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/STUIDateTimePickerCellDelegate-Protocol.h>
 
 @class NSArray, NSObject, NSString, PSSpecifier, STAllowance, UIColor;
 @protocol STAllowanceDetailListControllerDelegate, STRootViewModelCoordinator;
 
-@interface STAllowanceDetailListController : PSListController <STUIDateTimePickerCellDelegate, STCustomizeDaysListControllerDelegate, STAllowanceSetupListControllerDelegate>
+__attribute__((visibility("hidden")))
+@interface STAllowanceDetailListController : PSListController <STCustomizeDaysListControllerDelegate, STUIDateTimePickerCellDelegate>
 {
     _Bool _isSetupController;
     _Bool _useBackButton;
@@ -46,8 +46,6 @@
 @property(copy, nonatomic) STAllowance *allowance; // @synthesize allowance=_allowance;
 @property(nonatomic) __weak id <STAllowanceDetailListControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)allowanceSetupListControllerDidCancel:(id)arg1;
-- (void)allowanceSetupListController:(id)arg1 didSelectAllowanceIdentifiers:(id)arg2;
 - (void)customizeDaysListController:(id)arg1 didFinishEditingTimeByDay:(id)arg2;
 - (id)datePickerForSpecifier:(id)arg1;
 - (void)datePickerChanged:(id)arg1;
@@ -58,10 +56,11 @@
 - (void)_setAllowanceEnabled:(id)arg1 specifier:(id)arg2;
 - (id)_askForMoreTime:(id)arg1;
 - (void)_setAskForMoreTime:(id)arg1 specifier:(id)arg2;
+- (id)_categoryDetailText:(id)arg1;
 - (id)createBudgetedItemSpecifiers;
 - (void)deleteAllowance:(id)arg1;
 - (void)confirmDeletion:(id)arg1;
-- (void)editApps:(id)arg1;
+- (void)_editListButtonPressed:(id)arg1;
 - (void)showCustomizeDaysController:(id)arg1;
 - (id)timeFooterText;
 - (id)budgetTime;

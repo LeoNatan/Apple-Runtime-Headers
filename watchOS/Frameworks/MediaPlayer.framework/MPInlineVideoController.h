@@ -13,7 +13,7 @@
 #import <MediaPlayer/MPVolumeControllerDelegate-Protocol.h>
 #import <MediaPlayer/UIAlertViewDelegate-Protocol.h>
 
-@class MPAVController, MPAVItem, MPInlineAudioOverlay, MPInlineVideoFullscreenViewController, MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, MPVideoContainerView, MPVideoPlaybackOverlayView, MPVideoView, MPVolumeController, MPWeakTimer, NSSet, NSString, UIActivityIndicatorView, UIAlertView, UIColor, UIImage, UINavigationController, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIWindow, _UIHostedWindow;
+@class MPAVController, MPAVItem, MPInlineVideoFullscreenViewController, MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, MPVideoContainerView, MPVideoPlaybackOverlayView, MPVideoView, MPVolumeController, MPWeakTimer, NSSet, NSString, UIActivityIndicatorView, UIAlertView, UIColor, UIImage, UINavigationController, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIWindow, _UIHostedWindow;
 @protocol MPVideoOverlay;
 
 @interface MPInlineVideoController : NSObject <MPVolumeControllerDelegate, MPVideoControllerProtocol, MPSwipableViewDelegate, MPVideoOverlayDelegate, MPTransportControlsTarget, UIAlertViewDelegate>
@@ -50,14 +50,12 @@
     MPSwipableView *_view;
     MPVideoPlaybackOverlayView *_videoOverlayView;
     unsigned long long _visibleParts;
-    int _audioOverlayStyle;
     _Bool _navigationBarHidden;
     NSString *_playbackErrorDescription;
     int _videoOverlayStyle;
     UIView *_advertisementView;
     UIAlertView *_alertSheet;
     UIWindow *_alternateTracksWindow;
-    MPInlineAudioOverlay *_audioOverlayView;
     unsigned int _backgroundTaskId;
     _Bool _batteryMonitoringWasEnabled;
     UINavigationController *_chaptersContainerController;
@@ -90,7 +88,6 @@
     MPVolumeController *_volumeController;
 }
 
-@property(nonatomic) int audioOverlayStyle; // @synthesize audioOverlayStyle=_audioOverlayStyle;
 @property(readonly, nonatomic) UIView *subtitlesView; // @synthesize subtitlesView=_subtitlesView;
 @property(copy, nonatomic) NSString *playbackErrorDescription; // @synthesize playbackErrorDescription=_playbackErrorDescription;
 @property(nonatomic) _Bool navigationBarHidden; // @synthesize navigationBarHidden=_navigationBarHidden;
@@ -167,7 +164,6 @@
 - (void)_doneWithChapters:(id)arg1;
 - (void)_destroyVideoSnapshotView;
 - (void)_destroyVideoOverlayView;
-- (void)_destroyAudioOverlayView;
 - (void)_delayedShowLoadingIndicator;
 - (_Bool)canShowQTAudioOnlyUI;
 - (_Bool)_canEnableAirPlayVideoRoutes;

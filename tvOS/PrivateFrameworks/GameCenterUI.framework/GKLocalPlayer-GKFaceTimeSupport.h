@@ -6,7 +6,60 @@
 
 #import <GameCenterFoundation/GKLocalPlayer.h>
 
-@interface GKLocalPlayer (GKFaceTimeSupport)
+#import <GameCenterUI/GKLocalPlayerAuthenticationUIPersonality-Protocol.h>
+
+@class NSString, UIViewController;
+@protocol GKAuthenticateViewController;
+
+@interface GKLocalPlayer (GKFaceTimeSupport) <GKLocalPlayerAuthenticationUIPersonality>
 + (id)accountName;
++ (_Bool)hasAuthenticatedAccount;
++ (id)sharedLocalPlayerAuthenticator;
++ (void)setAuthenticationPersonality:(id)arg1;
++ (id)authenticationPersonality;
+- (id)deleteAvatarAlertControllerWithHandler:(CDUnknownBlockType)arg1;
+- (void)deleteCachedMonogramsWithHandler:(CDUnknownBlockType)arg1;
+- (void)setPhoto:(id)arg1 avatarType:(long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)deletePhotoWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)deletePhoto;
+- (void)removeActiveViewControllerAnimated:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)showViewController:(id)arg1 wrapInNavController:(_Bool)arg2;
+@property(retain, nonatomic) UIViewController<GKAuthenticateViewController> *signInViewController;
+@property(retain, nonatomic) UIViewController *rootViewController;
+@property(retain, nonatomic) UIViewController *activeViewController;
+- (void)startLegacyAuthenticationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_showViewControllerForLegacyApps:(id)arg1;
+- (void)applicationDidEnterBackground:(id)arg1;
+- (void)applicationWillEnterForeground:(id)arg1;
+- (void)showAuthenticateViewControllerForGameCenter;
+- (void)validateAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)cancelAuthentication;
+- (void)authenticationShowSignInUIForLocalPlayer:(id)arg1;
+- (void)authenticateReturnAlertWithTitle:(id)arg1 message:(id)arg2 localPlayer:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void)authenticationShowGreenBuddyUIForLocalPlayer:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)authenticationShowGreenBuddyUIForLocalPlayer:(id)arg1;
+- (void)showOnboardingUI;
+- (_Bool)shouldShowPersonalization;
+- (_Bool)shouldShowPrivacyNotice;
+- (void)authenticationDidCompleteWithError:(id)arg1;
+- (_Bool)shouldShowOnBoardingUI;
+- (void)startAuthenticationForExistingPrimaryPlayer;
+- (void)_showWelcomeBanner;
+- (_Bool)isAuthenticating;
+- (_Bool)alertUserInStoreDemoModeEnabled;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
+- (void)showAlertForTag:(unsigned long long)arg1;
+- (void)showLoginFailedAlert;
+- (void)showSignInAccountRestrictedAlert;
+- (void)showEditAccountRestrictedAlert;
+- (void)showCreateAccountRestrictedAlert;
+- (void)_showActionRestrictedAlertWithTitle:(id)arg1 message:(id)arg2;
+- (void)showCancelledAlertForPlayer:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

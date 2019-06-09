@@ -9,5 +9,8 @@
 @interface UIViewController (NCBannerPresentationControllerAdditions)
 - (id)nc_presentingBannerPresentationController;
 - (id)nc_bannerPresentationController;
+- (id)nc_presentationContextDefiningViewController;
+- (id)nc_presentationControllerIfPresented;
+@property(nonatomic, setter=setNCTransitionAnimationState:) long long ncTransitionAnimationState; // @dynamic ncTransitionAnimationState;
 @end
 

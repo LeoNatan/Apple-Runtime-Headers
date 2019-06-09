@@ -6,21 +6,18 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class NSArray, NSDictionary;
+@class NSArray;
 
 @interface SMNWindowsPathInfoAction : SMNAction
 {
     BOOL _sizeDirectories;
-    NSDictionary *_result;
     NSArray *_paths;
 }
 
 + (int)actionID;
 @property(retain) NSArray *paths; // @synthesize paths=_paths;
 @property BOOL sizeDirectories; // @synthesize sizeDirectories=_sizeDirectories;
-@property(retain) NSDictionary *result; // @synthesize result=_result;
 - (void).cxx_destruct;
-- (BOOL)setResultFromData:(id)arg1;
 - (BOOL)expectsAResult;
 - (id)requestPayload;
 - (BOOL)isEqual:(id)arg1;

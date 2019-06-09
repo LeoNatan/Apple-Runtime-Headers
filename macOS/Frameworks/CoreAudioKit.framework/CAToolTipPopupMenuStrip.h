@@ -8,7 +8,6 @@
 
 @class NSArray, NSPopUpButton;
 
-__attribute__((visibility("hidden")))
 @interface CAToolTipPopupMenuStrip : CAToolTipParameterStrip
 {
     NSPopUpButton *valuePopup;

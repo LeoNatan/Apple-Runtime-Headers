@@ -39,7 +39,6 @@ __attribute__((visibility("hidden")))
 - (void)_buildApplicableDataRatesForSampleRates;
 - (void)_buildAvailableSampleRates;
 - (void)_buildAudioConverter;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

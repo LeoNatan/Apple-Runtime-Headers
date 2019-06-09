@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, SKUILockupViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditorialCardLayout : NSObject
 {
     NSMutableArray *_allLockups;

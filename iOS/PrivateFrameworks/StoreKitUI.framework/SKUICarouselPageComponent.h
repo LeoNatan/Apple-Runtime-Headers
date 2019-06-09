@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, SKUICarouselViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUICarouselPageComponent : SKUIPageComponent <SSMetricsEventFieldProvider>
 {
     NSArray *_carouselItems;

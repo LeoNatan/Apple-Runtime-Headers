@@ -11,6 +11,7 @@
 @protocol _TVAppNavigationControllerDelegate <NSObject>
 
 @optional
+- (void)appNavigationControllerWillDisappear:(_TVAppNavigationController *)arg1;
 - (void)appNavigationController:(_TVAppNavigationController *)arg1 willLoadAppDocumentWithController:(_TVAppDocumentController *)arg2;
 @end
 

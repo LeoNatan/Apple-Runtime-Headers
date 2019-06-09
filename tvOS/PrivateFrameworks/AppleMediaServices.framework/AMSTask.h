@@ -11,6 +11,8 @@
 
 @interface AMSTask : NSObject
 {
+    _Bool _cancelled;
+    long long _runMode;
     NSObject<OS_dispatch_queue> *_performTaskQueue;
     AMSPromise *_promise;
     NSObject<OS_dispatch_queue> *_promiseAccessQueue;
@@ -21,8 +23,12 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *promiseAccessQueue; // @synthesize promiseAccessQueue=_promiseAccessQueue;
 @property(retain, nonatomic) AMSPromise *promise; // @synthesize promise=_promise;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *performTaskQueue; // @synthesize performTaskQueue=_performTaskQueue;
+@property(nonatomic) long long runMode; // @synthesize runMode=_runMode;
+@property(readonly, nonatomic, getter=isCancelled) _Bool cancelled; // @synthesize cancelled=_cancelled;
 - (void).cxx_destruct;
 - (id)performTaskWithBlock:(CDUnknownBlockType)arg1;
+- (id)performBinaryTaskWithBlock:(CDUnknownBlockType)arg1;
+- (_Bool)cancel;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
 @property(readonly, nonatomic, getter=isFinished) _Bool finished;
 - (id)init;

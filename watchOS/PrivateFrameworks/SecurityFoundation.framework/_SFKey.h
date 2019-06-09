@@ -14,7 +14,7 @@
     NSData *_keyData;
 }
 
-+ (id)_specifierForSecKey:(struct __SecKey *)arg1;
++     // Error parsing type: @12@0:4^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v}8, name: _specifierForSecKey:
 + (Class)_attributesClass;
 @property(readonly, nonatomic) NSData *keyData; // @synthesize keyData=_keyData;
 - (void).cxx_destruct;

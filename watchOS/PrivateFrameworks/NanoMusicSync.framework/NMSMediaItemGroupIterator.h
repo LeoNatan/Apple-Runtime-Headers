@@ -6,35 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NMSQuotaEvaluationState, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet;
+@class NMSQuotaEvaluationState, NSArray, NSMutableArray, NSMutableOrderedSet;
 
 @interface NMSMediaItemGroupIterator : NSObject
 {
     NSArray *_itemGroups;
     NSMutableArray *_remainingContainers;
     NSMutableArray *_remainingItemLists;
-    NSMutableDictionary *_itemSizesDict;
     unsigned int _currentContainerIndex;
     unsigned int _currentItemIndex;
     NSMutableOrderedSet *_mutableItemListWithinQuota;
-    NSMutableOrderedSet *_mutableOffPowerItemListWithinQuota;
+    NSMutableOrderedSet *_mutableItemListOverQuota;
     NSMutableArray *_indexesToBeRemoved;
     unsigned long long _sizeForItemListWithinQuota;
-    unsigned long long _sizeForOffPowerItemListWithinQuota;
+    unsigned long long _sizeForItemListOverQuota;
     unsigned long long _nominatedItemSize;
 }
 
 @property(retain, nonatomic) NSMutableArray *indexesToBeRemoved; // @synthesize indexesToBeRemoved=_indexesToBeRemoved;
-@property(retain, nonatomic) NSMutableOrderedSet *mutableOffPowerItemListWithinQuota; // @synthesize mutableOffPowerItemListWithinQuota=_mutableOffPowerItemListWithinQuota;
+@property(retain, nonatomic) NSMutableOrderedSet *mutableItemListOverQuota; // @synthesize mutableItemListOverQuota=_mutableItemListOverQuota;
 @property(retain, nonatomic) NSMutableOrderedSet *mutableItemListWithinQuota; // @synthesize mutableItemListWithinQuota=_mutableItemListWithinQuota;
 @property(nonatomic) unsigned int currentItemIndex; // @synthesize currentItemIndex=_currentItemIndex;
 @property(nonatomic) unsigned int currentContainerIndex; // @synthesize currentContainerIndex=_currentContainerIndex;
-@property(retain, nonatomic) NSMutableDictionary *itemSizesDict; // @synthesize itemSizesDict=_itemSizesDict;
 @property(retain, nonatomic) NSMutableArray *remainingItemLists; // @synthesize remainingItemLists=_remainingItemLists;
 @property(retain, nonatomic) NSMutableArray *remainingContainers; // @synthesize remainingContainers=_remainingContainers;
 @property(retain, nonatomic) NSArray *itemGroups; // @synthesize itemGroups=_itemGroups;
 @property(nonatomic) unsigned long long nominatedItemSize; // @synthesize nominatedItemSize=_nominatedItemSize;
-@property(nonatomic) unsigned long long sizeForOffPowerItemListWithinQuota; // @synthesize sizeForOffPowerItemListWithinQuota=_sizeForOffPowerItemListWithinQuota;
+@property(nonatomic) unsigned long long sizeForItemListOverQuota; // @synthesize sizeForItemListOverQuota=_sizeForItemListOverQuota;
 @property(nonatomic) unsigned long long sizeForItemListWithinQuota; // @synthesize sizeForItemListWithinQuota=_sizeForItemListWithinQuota;
 - (void).cxx_destruct;
 - (void)_markToBeRemoved;
@@ -42,18 +40,19 @@
 - (id)identifiersForContainersOfType:(unsigned int)arg1;
 - (id)itemGroupForIdentifiers:(id)arg1;
 - (_Bool)isCurrentIdentifierEstimate;
-- (_Bool)isCurrentItemDownloadableOffPower;
+- (_Bool)isCurrentItemManuallyAdded;
 @property(readonly, nonatomic) unsigned long long sizeForCurrentIdentifier;
 - (void)resetToIterateOverQuotaIdentifiers;
+- (void)addCurrentIdentifierToOverQuotaList;
 - (void)addCurrentIdentifierToWithinQuotaList;
 - (void)removeCurrentIdentifier;
 - (void)skipCurrentIdentifier;
 - (void)_continueToNextIdentifier;
-- (id)currentIdentifier;
+- (id)currentItem;
 @property(readonly, nonatomic) unsigned int iteratingOrder;
 - (void)_generateItemListAndSizesDictIfNecessary;
-@property(readonly, nonatomic) NSArray *offPowerItemListWithinQuota;
-@property(readonly, nonatomic) NSArray *itemListWithinQuota;
+- (id)downloadInfoOverQuota;
+- (id)downloadInfoWithinQuota;
 - (id)initWithItemGroups:(id)arg1;
 @property(readonly, nonatomic) NMSQuotaEvaluationState *evaluationState;
 

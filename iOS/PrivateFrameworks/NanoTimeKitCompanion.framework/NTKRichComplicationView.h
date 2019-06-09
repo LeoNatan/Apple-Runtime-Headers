@@ -6,25 +6,31 @@
 
 #import <UIKit/UIView.h>
 
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
+#import <NanoTimeKitCompanion/CLKMonochromeFilterProvider-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTemplateComplicationDisplay-Protocol.h>
 
-@class CLKComplicationTemplate, CLKDevice, NSString, UIColor;
-@protocol NTKComplicationDisplayObserver;
+@class CLKComplicationTemplate, CLKDevice, NSDate, NSString, UIColor;
+@protocol CLKMonochromeFilterProvider, NTKComplicationDisplayObserver;
 
-@interface NTKRichComplicationView : UIView <NTKTemplateComplicationDisplay>
+@interface NTKRichComplicationView : UIView <NTKTemplateComplicationDisplay, CLKMonochromeComplicationView, CLKMonochromeFilterProvider>
 {
     long long _family;
     _Bool _editing;
     _Bool _highlighted;
+    NSDate *_timeTravelDate;
     _Bool canUseCurvedText;
     _Bool _paused;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     id <NTKComplicationDisplayObserver> displayObserver;
     CLKComplicationTemplate *_template;
     CLKDevice *_device;
     UIColor *_foregroundColor;
+    UIColor *_templateBackgroundColor;
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
+@property(retain, nonatomic) UIColor *templateBackgroundColor; // @synthesize templateBackgroundColor=_templateBackgroundColor;
 @property(retain, nonatomic) UIColor *foregroundColor; // @synthesize foregroundColor=_foregroundColor;
 @property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic) long long family; // @synthesize family=_family;
@@ -32,15 +38,25 @@
 @property(readonly, nonatomic) CLKComplicationTemplate *template; // @synthesize template=_template;
 @property(nonatomic) _Bool canUseCurvedText; // @synthesize canUseCurvedText;
 @property(nonatomic) __weak id <NTKComplicationDisplayObserver> displayObserver; // @synthesize displayObserver;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (_Bool)viewShouldIgnoreTwoPieceImage:(id)arg1;
+- (id)interpolatedColorForView:(id)arg1;
+- (id)colorForView:(id)arg1 accented:(_Bool)arg2;
+- (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)filterForView:(id)arg1 style:(long long)arg2;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)_enumerateLabelsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_transitToHighlightState:(_Bool)arg1 fraction:(double)arg2;
 - (void)_transitThemeFromTheme:(long long)arg1 toTheme:(long long)arg2 fraction:(double)arg3;
-- (void)_updateBackgroundColor:(id)arg1;
 - (void)_editingDidEnd;
 - (void)_setEditingTransitionFraction:(double)arg1 direction:(long long)arg2 position:(long long)arg3 type:(long long)arg4;
-- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_applyPausedUpdate;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
+@property(readonly, nonatomic) NSDate *timeTravelDate;
+@property(readonly, nonatomic) NSDate *complicationDate;
 - (void)setEditing:(_Bool)arg1;
 - (id)complicationTemplate;
 - (void)setComplicationTemplate:(id)arg1 reason:(long long)arg2;

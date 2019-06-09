@@ -6,7 +6,7 @@
 
 #import <AVFoundation/AVAssetTrackInspector.h>
 
-@class AVWeakReference, NSMutableArray, NSObject;
+@class AVDispatchOnce, AVWeakReference, NSMutableArray, NSObject;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
 {
     struct OpaqueFigAsset *_figAsset;
     struct OpaqueFigAssetTrack *_figAssetTrack;
-    long long _copyFigFormatReaderOnce;
+    AVDispatchOnce *_copyFigFormatReaderOnce;
     struct OpaqueFigFormatReader *_figFormatReader;
-    long long _copyFigTrackReaderOnce;
+    AVDispatchOnce *_copyFigTrackReaderOnce;
     struct OpaqueFigTrackReader *_figTrackReader;
-    long long _copySampleCursorServiceOnce;
+    AVDispatchOnce *_copySampleCursorServiceOnce;
     struct OpaqueFigSampleCursorService *_figSampleCursorService;
     BOOL _sampleCursorTimeAccuracyIsExact;
     struct OpaqueFigSimpleMutex *_loadingMutex;
@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
 - (void)_invokeCompletionHandlerForLoadingBatches:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isAudibleBooksContentAuthorized;
+- (BOOL)hasAudibleBooksContent;
 - (BOOL)hasProtectedContent;
 - (id)_trackReferences;
 - (BOOL)isExcludedFromAutoselectionInTrackGroup;
@@ -42,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (id)commonMetadata;
 - (id)segmentForTrackTime:(CDStruct_1b6d18a9)arg1;
 - (id)segments;
+- (CDStruct_1b6d18a9)latentBaseDecodeTimeStampOfFirstTrackFragment;
 - (CDStruct_1b6d18a9)minSampleDuration;
 - (float)nominalFrameRate;
 - (id)loudnessInfo;
@@ -52,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)naturalSize;
 - (id)extendedLanguageTag;
 - (id)languageCode;
+- (float)peakDataRate;
 - (float)estimatedDataRate;
 - (int)naturalTimeScale;
 - (BOOL)requiresFrameReordering;
@@ -83,7 +87,6 @@ __attribute__((visibility("hidden")))
 - (long long)_loadStatusForFigAssetTrackProperty:(id)arg1 error:(id *)arg2;
 - (void)_removeFigNotifications;
 - (void)_addFigNotifications;
-- (void)finalize;
 - (void)dealloc;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long long)arg3;
 

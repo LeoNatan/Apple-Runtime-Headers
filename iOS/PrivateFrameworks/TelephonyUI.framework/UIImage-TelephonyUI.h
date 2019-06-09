@@ -10,20 +10,22 @@
 + (id)telephonyUI_AudioControlsGlyphForDeviceType:(long long)arg1;
 + (id)telephonyUI_AudioRouteGlyphForDeviceType:(long long)arg1;
 + (id)telephonyUI_speakerAudioRouteGlyphImage;
-+ (id)telephonyUI_BluetoothAudioControlGlyphImage;
++ (id)telephonyUI_BluetoothAudioControlsGlyphImage;
 + (id)telephonyUI_BluetoothAudioRouteGlyphImage;
 + (id)telephonyUI_muteAudioRouteGlyphImage;
 + (id)telephonyUI_CarPlayAudioRouteGlyphImage;
++ (id)telephonyUI_headphonesAudioControlsGlyphImage;
 + (id)telephonyUI_headphonesAudioRouteGlyphImage;
 + (id)telephonyUI_iPodAudioRouteGlyphImage;
 + (id)telephonyUI_iPadAudioRouteGlyphImage;
 + (id)telephonyUI_iPhoneAudioRouteGlyphImage;
-+ (id)favoritesWidgetVideoGlyphImage;
-+ (id)favoritesWidgetTTYRelayGlyphImage;
-+ (id)favoritesWidgetTTYDirectGlyphImage;
-+ (id)favoritesWidgetMessageGlyphImage;
-+ (id)favoritesWidgetMailGlyphImage;
-+ (id)favoritesWidgetAudioGlyphImage;
++ (id)recentsGlyphForSymbolType:(long long)arg1;
++ (id)recentsTTYGlyphImage;
++ (id)recentsTTYRelayGlyphImage;
++ (id)recentsTTYDirectGlyphImage;
++ (id)recentsOutgoingVideoCallGlyphImage;
++ (id)recentsOutgoingAudioCallGlyphImage;
++ (id)favoritesGlyphForSymbolType:(long long)arg1;
 + (id)favoritesVideoGlyphImage;
 + (id)favoritesTTYRelayGlyphImage;
 + (id)favoritesTTYDirectGlyphImage;
@@ -33,7 +35,15 @@
 + (id)telephonyUIImageNamed:(id)arg1;
 + (id)telephonyUIUnreadIndicatorGlyphImage;
 + (id)telephonyUIActionButtonGlyphImage;
++ (id)systemImageNameForSymbolType:(long long)arg1;
++ (id)tpImageForSymbolType:(long long)arg1 configuration:(id)arg2;
++ (id)tpImageForSymbolType:(long long)arg1 pointSize:(double)arg2;
++ (id)tpImageForSymbolType:(long long)arg1 textStyle:(id)arg2 scale:(long long)arg3 isStaticSize:(_Bool)arg4;
++ (long long)scaleForTPScale:(long long)arg1;
++ (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)_tpImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 - (id)imageWithShadow:(id)arg1;
 - (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(double)arg2;
+- (id)tpFlattenedWithColor:(id)arg1;
 @end
 

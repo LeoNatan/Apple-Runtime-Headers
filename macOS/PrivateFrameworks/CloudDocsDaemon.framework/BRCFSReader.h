@@ -64,6 +64,7 @@
 - (void)fseventOnDocument:(id)arg1 flags:(unsigned int)arg2 lookup:(id)arg3;
 - (void)_fseventOnDocument:(id)arg1 flags:(unsigned int)arg2 options:(unsigned long long)arg3 item:(id)arg4 lookup:(id)arg5 unresolvedLastPathComponent:(id)arg6;
 - (void)_refaultItem:(id)arg1 withFaultPath:(id)arg2;
+- (void)cancelScanIfNecessaryOnDirectory:(id)arg1;
 - (void)scanContainerDocumentsIfNeeded:(id)arg1;
 - (void)fseventOnDirectory:(id)arg1 flags:(unsigned int)arg2 lookup:(id)arg3;
 - (id)itemForCreatedDocumentsDirectory:(id)arg1 appLibrary:(id)arg2 path:(id)arg3;

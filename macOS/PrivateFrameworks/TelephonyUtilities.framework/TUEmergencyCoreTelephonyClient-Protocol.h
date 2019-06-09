@@ -12,5 +12,6 @@
 - (BOOL)shouldShowEmergencyCallbackModeAlertForSubscriptionUUID:(NSUUID *)arg1 error:(id *)arg2;
 - (BOOL)isWhitelistedEmergencyNumberForDigits:(NSString *)arg1 subscriptionUUID:(NSUUID *)arg2 error:(id *)arg3;
 - (BOOL)isEmergencyNumberForDigits:(NSString *)arg1 subscriptionUUID:(NSUUID *)arg2 error:(id *)arg3;
+- (BOOL)inEmergencyMode;
 @end
 

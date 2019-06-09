@@ -19,6 +19,7 @@
     NSString *_uniqueIdentifier;
     NSObject<OS_dispatch_queue> *_externalDeviceQueue;
     NSArray *_distantOutputDevices;
+    NSArray *_distantPersonalOutputDevices;
     MRAVDistantOutputDevice *_distantGroupLeader;
     MRDistantExternalDevice *_distantExternalDevice;
     NSXPCListenerEndpoint *_externalDeviceListenerEndpoint;
@@ -28,6 +29,7 @@
 @property(retain, nonatomic) NSXPCListenerEndpoint *externalDeviceListenerEndpoint; // @synthesize externalDeviceListenerEndpoint=_externalDeviceListenerEndpoint;
 @property(retain, nonatomic) MRDistantExternalDevice *distantExternalDevice; // @synthesize distantExternalDevice=_distantExternalDevice;
 @property(retain, nonatomic) MRAVDistantOutputDevice *distantGroupLeader; // @synthesize distantGroupLeader=_distantGroupLeader;
+@property(copy, nonatomic) NSArray *distantPersonalOutputDevices; // @synthesize distantPersonalOutputDevices=_distantPersonalOutputDevices;
 @property(copy, nonatomic) NSArray *distantOutputDevices; // @synthesize distantOutputDevices=_distantOutputDevices;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *externalDeviceQueue; // @synthesize externalDeviceQueue=_externalDeviceQueue;
 - (void)setUniqueIdentifier:(id)arg1;
@@ -40,6 +42,7 @@
 - (_Bool)isProxyGroupPlayer;
 - (id)designatedGroupLeader;
 - (id)externalDevice;
+- (id)personalOutputDevices;
 - (id)outputDevices;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

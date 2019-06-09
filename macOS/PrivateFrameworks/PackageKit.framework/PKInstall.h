@@ -23,8 +23,11 @@
     int _installState;
     NSArray *_clientSideRegistrationPaths;
     NSSet *_previousPackageIdentifiersSharingGroupsWithCurrentRequest;
+    BOOL _shouldSetResponsibility;
 }
 
++ (BOOL)_DebuggingQoSEnabled;
+@property BOOL shouldSetResponsibility; // @synthesize shouldSetResponsibility=_shouldSetResponsibility;
 @property(retain) NSError *error; // @synthesize error=_error;
 @property(getter=isDone) BOOL done; // @synthesize done=_done;
 - (void)_clearResponsibilityForClientAuditToken:(CDStruct_4c969caf)arg1;

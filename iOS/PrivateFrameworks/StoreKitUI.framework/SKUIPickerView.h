@@ -12,6 +12,7 @@
 @class NSArray, NSString, UIPickerView, _UIBackdropView;
 @protocol SKUIPickerViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPickerView : UIView <UIPickerViewDataSource, UIPickerViewDelegate>
 {
     _UIBackdropView *_backdropView;

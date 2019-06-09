@@ -8,5 +8,9 @@
 
 @interface NSISEngine (UIKitAdditions)
 - (id)debugQuickLookObject;
+- (unsigned long long)_UIKitRowCount;
+- (void)_UIKitPerformPendingChangeNotifications;
+- (_Bool)_UIKitEngineTrackingOn;
+- (void)_setUIKitEngineTrackingOn:(_Bool)arg1;
 @end
 

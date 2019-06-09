@@ -6,9 +6,11 @@
 
 #import <CloudKit/CKDatabaseOperationInfo.h>
 
+#import <CloudKit/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSDictionary;
 
-@interface CKFetchShareParticipantKeyOperationInfo : CKDatabaseOperationInfo
+@interface CKFetchShareParticipantKeyOperationInfo : CKDatabaseOperationInfo <NSSecureCoding>
 {
     NSDictionary *_baseTokensByShareID;
     NSDictionary *_childRecordIDsByShareID;

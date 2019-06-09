@@ -8,17 +8,17 @@
 
 #import <FMFUI/AAUISpecifierProvider-Protocol.h>
 
-@class AAUIAccountManager, NSArray, NSString;
+@class AIDAAccountManager, NSArray, NSString;
 @protocol AAUISpecifierProviderDelegate;
 
 @interface FMFSpecifierProvider : NSObject <AAUISpecifierProvider>
 {
     id <AAUISpecifierProviderDelegate> _delegate;
     NSArray *_specifiers;
-    AAUIAccountManager *_accountManager;
+    AIDAAccountManager *_accountManager;
 }
 
-@property(retain, nonatomic) AAUIAccountManager *accountManager; // @synthesize accountManager=_accountManager;
+@property(retain, nonatomic) AIDAAccountManager *accountManager; // @synthesize accountManager=_accountManager;
 @property(copy, nonatomic) NSArray *specifiers; // @synthesize specifiers=_specifiers;
 @property(nonatomic) __weak id <AAUISpecifierProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

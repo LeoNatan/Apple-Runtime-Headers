@@ -14,10 +14,12 @@
 __attribute__((visibility("hidden")))
 @interface _UIInterfaceActionBlankSeparatorView : UIView <UIInterfaceActionVisualSeparatorDisplaying, UIInterfaceActionVisualSectionSeparatorDisplaying>
 {
+    float _horizontalLineLeadingInset;
     _UIInterfaceActionSeparatorConstraintController *_separatorViewConstraints;
 }
 
 @property(readonly, retain, nonatomic) _UIInterfaceActionSeparatorConstraintController *separatorViewConstraints; // @synthesize separatorViewConstraints=_separatorViewConstraints;
+@property(nonatomic) float horizontalLineLeadingInset; // @synthesize horizontalLineLeadingInset=_horizontalLineLeadingInset;
 - (void).cxx_destruct;
 - (void)updateConstraints;
 - (void)setConstantSizedAxis:(int)arg1;

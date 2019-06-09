@@ -6,23 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSSet, NSString;
 
 @interface BLTSectionIdentifierMapping : NSObject
 {
-    _Bool _remoteSectionIDVerified;
-    NSString *_localSectionID;
+    NSSet *_localSectionIDs;
     NSString *_remoteSectionID;
     NSString *_universalSectionID;
     NSString *_mirroredSectionID;
 }
 
-@property(nonatomic) _Bool remoteSectionIDVerified; // @synthesize remoteSectionIDVerified=_remoteSectionIDVerified;
 @property(copy, nonatomic) NSString *mirroredSectionID; // @synthesize mirroredSectionID=_mirroredSectionID;
 @property(copy, nonatomic) NSString *universalSectionID; // @synthesize universalSectionID=_universalSectionID;
 @property(copy, nonatomic) NSString *remoteSectionID; // @synthesize remoteSectionID=_remoteSectionID;
-@property(copy, nonatomic) NSString *localSectionID; // @synthesize localSectionID=_localSectionID;
+@property(copy, nonatomic) NSSet *localSectionIDs; // @synthesize localSectionIDs=_localSectionIDs;
 - (void).cxx_destruct;
+- (void)addLocalSectionID:(id)arg1;
 - (id)description;
 - (id)copy;
 

@@ -9,46 +9,37 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/IDSServiceDelegate-Protocol.h>
 
-@class IDSService, NSArray, NSMutableSet, NSObject, NSString;
-@protocol HMDWatchManagerDelegate, OS_dispatch_queue;
+@class IDSService, NSArray, NSObject, NSString;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDWatchManager : HMFObject <HMFLogging, IDSServiceDelegate>
 {
-    NSMutableSet *_connectedWatches;
+    id <HMFLocking> _lock;
+    NSObject<OS_dispatch_queue> *_queue;
     _Bool _pairedWithWatch;
-    id <HMDWatchManagerDelegate> _delegate;
-    NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
+    NSArray *_connectedWatches;
     IDSService *_service;
 }
 
 + (id)logCategory;
 + (id)shortDescription;
 + (_Bool)isCompatibleWatchDevice:(id)arg1;
++ (id)sharedManager;
 @property(readonly, nonatomic) IDSService *service; // @synthesize service=_service;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property __weak id <HMDWatchManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)service:(id)arg1 connectedDevicesChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (id)connectedWatchFromDeviceID:(id)arg1;
-- (void)_updateConnectedDevices:(id)arg1;
-- (void)notifyDelegateOfRemovedConnectedWatch:(id)arg1;
-- (void)removeConnectedWatch:(id)arg1;
-- (void)notifyDelegateOfAddedConnectedWatch:(id)arg1;
-- (void)addConnectedWatch:(id)arg1;
-@property(readonly, copy, nonatomic) NSArray *connectedWatches;
-@property(getter=isPairedWithWatch) _Bool pairedWithWatch; // @synthesize pairedWithWatch=_pairedWithWatch;
-@property(readonly, copy, nonatomic) NSArray *watches;
+@property(readonly, copy) NSArray *connectedWatches; // @synthesize connectedWatches=_connectedWatches;
+@property(readonly, getter=isPairedWithWatch) _Bool pairedWithWatch; // @synthesize pairedWithWatch=_pairedWithWatch;
+@property(readonly, copy) NSArray *watches;
 - (void)__initializeConnectedDevices;
-@property(readonly, copy) NSString *description;
-@property(readonly, copy) NSString *debugDescription;
-- (id)descriptionWithPointer:(_Bool)arg1;
-- (id)shortDescription;
+- (id)attributeDescriptions;
 - (id)init;
 
 // Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

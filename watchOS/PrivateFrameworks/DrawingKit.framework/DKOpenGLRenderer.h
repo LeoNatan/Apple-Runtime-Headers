@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
     unsigned int mWetPaintBufferFBO;
     unsigned int mWetPaintBufferT;
     // Error parsing type: , name: mWetPaintBufferSize
+    _Bool mSharedContext;
+    _Bool mPaperTexIsShared;
     unsigned int mPaperTex;
     // Error parsing type: , name: mWinSize
     // Error parsing type: , name: mCanvasSize
@@ -109,7 +111,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)init;
 - (id)initWithBounds:(struct CGRect)arg1 scale:(float)arg2;
-- (id)initWithBounds:(struct CGRect)arg1 scale:(float)arg2 bufferSize:(int)arg3;
+- (id)initWithBounds:(struct CGRect)arg1 scale:(float)arg2 bufferSize:(int)arg3 sharedContext:(_Bool)arg4;
 
 @end
 

@@ -37,6 +37,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)groupID;
 - (id)destinationURIs;
+- (id)normalizedURIStrings;
+- (id)normalizedURIs;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

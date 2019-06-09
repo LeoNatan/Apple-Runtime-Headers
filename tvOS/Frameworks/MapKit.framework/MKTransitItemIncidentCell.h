@@ -8,7 +8,6 @@
 
 @class MKTransitIncidentItemCellBackgroundView, NSLayoutConstraint, UIButton, UIImageView, _MKUILabel;
 
-__attribute__((visibility("hidden")))
 @interface MKTransitItemIncidentCell : MKCustomSeparatorTableViewCell
 {
     UIImageView *_incidentIconImageView;
@@ -20,8 +19,8 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_titleLabelToTopConstraint;
     NSLayoutConstraint *_summaryToTitleConstraint;
     NSLayoutConstraint *_lastUpdatedToSummaryConstraint;
-    NSLayoutConstraint *_titleToButtonConstraint;
-    NSLayoutConstraint *_titleToTrailingConstraint;
+    NSLayoutConstraint *_titleViewToButtonConstraint;
+    NSLayoutConstraint *_titleViewToTrailingConstraint;
     NSLayoutConstraint *_bottomToBackgroundConstraint;
     NSLayoutConstraint *_bottomToIconImageConstraint;
     NSLayoutConstraint *_bottomToUpdatedLabelConstraint;
@@ -47,9 +46,11 @@ __attribute__((visibility("hidden")))
 - (void)setSeparatorHidden:(_Bool)arg1;
 - (void)setTrailingSeparatorInset:(double)arg1;
 - (void)setLeadingSeparatorInset:(double)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)configureWithIncident:(id)arg1 referenceDate:(id)arg2 shouldShowImage:(_Bool)arg3 inSiri:(_Bool)arg4;
+- (void)configureViews;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end
 

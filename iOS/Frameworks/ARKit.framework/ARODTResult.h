@@ -10,9 +10,11 @@
 {
     unsigned long long _detectedObjectID;
     void *_imageContext;
+    double _estimatedScaleFactor;
     // Error parsing type: {?="columns"[4]}, name: _visionTransform
 }
 
+@property(nonatomic) double estimatedScaleFactor; // @synthesize estimatedScaleFactor=_estimatedScaleFactor;
 @property(nonatomic) void *imageContext; // @synthesize imageContext=_imageContext;
 // Error parsing type for property visionTransform:
 // Property attributes: T{?=[4]},N,V_visionTransform

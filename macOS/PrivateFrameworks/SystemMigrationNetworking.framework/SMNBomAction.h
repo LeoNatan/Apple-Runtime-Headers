@@ -36,7 +36,7 @@
 + (id)formattedExcludedPathsFromRaw:(id)arg1;
 + (BOOL)shouldCloseInboundStreamWhenDone;
 + (BOOL)shouldCloseOutboundStreamWhenDone;
-+ (BOOL)needsDirectAccessToSendOrReceiveResult;
++ (BOOL)streamsResults;
 + (int)actionID;
 @property(retain) NSObject<OS_dispatch_queue> *resumeQueue; // @synthesize resumeQueue=_resumeQueue;
 @property(retain) NSObject<OS_dispatch_source> *watchdogSource; // @synthesize watchdogSource=_watchdogSource;
@@ -65,6 +65,7 @@
 - (BOOL)receiveResultOnFd:(int)arg1 errorIsFatal:(char *)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)shouldSkip:(const char *)arg1 ofType:(int)arg2 andSize:(long long)arg3;
+- (id)description;
 - (id)requestPayload;
 - (id)initWithSource:(id)arg1 andDestination:(id)arg2 andRestartPoint:(id)arg3 andExcludedPaths:(id)arg4 andOptions:(id)arg5;
 

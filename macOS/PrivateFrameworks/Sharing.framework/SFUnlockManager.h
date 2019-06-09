@@ -19,6 +19,7 @@
 - (void)cancelStateRequestTimer;
 - (id)timerWithBlock:(CDUnknownBlockType)arg1;
 - (void)unlockStateForDevice:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)establishStashBagWithManifest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)establishStashBagWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)unlockEnabledWithDevice:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)disableUnlockWithDevice:(id)arg1;

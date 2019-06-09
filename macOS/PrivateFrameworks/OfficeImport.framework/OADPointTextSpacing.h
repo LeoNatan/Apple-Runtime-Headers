@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADTextSpacing.h>
 
+__attribute__((visibility("hidden")))
 @interface OADPointTextSpacing : OADTextSpacing
 {
     int mPoints;

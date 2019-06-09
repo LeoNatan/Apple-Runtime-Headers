@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate;
+@class ARFrame, NSDate;
 @protocol ARSessionMetricsReporting, OS_dispatch_queue;
 
 @interface ARSessionMetrics : NSObject
@@ -14,6 +14,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     id <ARSessionMetricsReporting> _reporter;
     Class _configClass;
+    id _currentConfiguration;
     NSDate *_startDate;
     NSDate *_frameStartDate;
     double _sessionTimeForLastBadFrameRecording;
@@ -23,8 +24,10 @@
     _Bool _positionInitialized;
     // Error parsing type: , name: _minPos
     // Error parsing type: , name: _maxPos
+    ARFrame *_lastUpdatedFrame;
     _Bool _hasInitialWorldMap;
     _Bool _relocalizingToInitialWorldMap;
+    unsigned long long _raycastCount;
 }
 
 - (void).cxx_destruct;
@@ -35,6 +38,7 @@
 - (id)configBasedKey:(id)arg1;
 - (void)_recordSessionEnd;
 - (void)sessionStopped;
+- (void)recordRaycast:(id)arg1 tracked:(_Bool)arg2 withResults:(unsigned long long)arg3;
 - (void)saveMapWithFrame:(id)arg1;
 - (void)sessionDidUpdateFrame:(id)arg1;
 - (void)sessionStartedWithConfiguration:(id)arg1;

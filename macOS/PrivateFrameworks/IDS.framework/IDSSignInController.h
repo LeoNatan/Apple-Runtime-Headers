@@ -6,38 +6,65 @@
 
 #import <objc/NSObject.h>
 
-#import <IDS/IDSServiceDelegate-Protocol.h>
+#import <IDS/IDSAccountControllerDelegate-Protocol.h>
+#import <IDS/IDSAccountRegistrationDelegate-Protocol.h>
 
-@class NSMapTable, NSMutableDictionary, NSNumber, NSString;
+@class NSMapTable, NSMutableDictionary, NSString;
+@protocol OS_dispatch_queue, _IDSPasswordManager;
 
-@interface IDSSignInController : NSObject <IDSServiceDelegate>
+@interface IDSSignInController : NSObject <IDSAccountRegistrationDelegate, IDSAccountControllerDelegate>
 {
-    NSMapTable *_serviceCallbackMap;
-    NSMutableDictionary *_nameServiceMap;
-    NSNumber *_faceTimePreviousEnabled;
+    NSMutableDictionary *_serviceNameAccountControllerMap;
+    NSMutableDictionary *_accountIDDescriptionMap;
+    NSMapTable *_delegateByServiceType;
+    NSMutableDictionary *_initialStateByService;
+    NSObject<OS_dispatch_queue> *_signInQueue;
+    id _passwordManager;
+    double _signInTimeout;
+    double _signInFuzz;
 }
 
-@property(retain, nonatomic) NSNumber *faceTimePreviousEnabled; // @synthesize faceTimePreviousEnabled=_faceTimePreviousEnabled;
-@property(retain, nonatomic) NSMutableDictionary *nameServiceMap; // @synthesize nameServiceMap=_nameServiceMap;
-@property(retain, nonatomic) NSMapTable *serviceCallbackMap; // @synthesize serviceCallbackMap=_serviceCallbackMap;
+@property(retain, nonatomic) NSMutableDictionary *initialStateByService; // @synthesize initialStateByService=_initialStateByService;
+@property(retain, nonatomic) NSMapTable *delegateByServiceType; // @synthesize delegateByServiceType=_delegateByServiceType;
+@property(nonatomic) double signInFuzz; // @synthesize signInFuzz=_signInFuzz;
+@property(nonatomic) double signInTimeout; // @synthesize signInTimeout=_signInTimeout;
+@property(retain, nonatomic) id <_IDSPasswordManager> passwordManager; // @synthesize passwordManager=_passwordManager;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *signInQueue; // @synthesize signInQueue=_signInQueue;
+@property(retain, nonatomic) NSMutableDictionary *accountIDDescriptionMap; // @synthesize accountIDDescriptionMap=_accountIDDescriptionMap;
+@property(retain, nonatomic) NSMutableDictionary *serviceNameAccountControllerMap; // @synthesize serviceNameAccountControllerMap=_serviceNameAccountControllerMap;
 - (void).cxx_destruct;
-- (id)_serviceForName:(id)arg1;
-- (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
-- (void)unregisterEnabledStatusChangedCallbackForService:(id)arg1;
-- (void)registerEnabledStatusChangedCallback:(CDUnknownBlockType)arg1 forService:(id)arg2;
-- (void)disableService:(id)arg1;
-- (void)enableService:(id)arg1;
-- (BOOL)isServiceCurrentlyEnabled:(id)arg1;
+- (void)accountController:(id)arg1 accountRemoved:(id)arg2;
+- (void)accountController:(id)arg1 accountDisabled:(id)arg2;
+- (void)accountController:(id)arg1 accountAdded:(id)arg2;
+- (void)refreshRegistrationForAccount:(id)arg1;
+- (void)_validateDelegateState;
+- (unsigned long long)_serviceTypeForName:(id)arg1;
+- (id)_serviceNameForType:(unsigned long long)arg1;
+- (id)_accountWithUniqueID:(id)arg1;
+- (id)_accountControllerForName:(id)arg1;
+- (id)_createAccountControllerForService:(id)arg1;
+- (BOOL)_actionOnAccountOfType:(unsigned long long)arg1 onService:(unsigned long long)arg2 actionBlock:(CDUnknownBlockType)arg3;
+- (unsigned long long)_statusOfAccount:(id)arg1;
+- (id)_createAccountWithDictionary:(id)arg1 accountID:(id)arg2 serviceName:(id)arg3;
+- (void)_validateStateForAccountID:(id)arg1 timeoutMode:(unsigned long long)arg2;
+- (void)_cleanupStateForAccountID:(id)arg1;
+- (void)_scheduleValidationAfter:(double)arg1 forAccountID:(id)arg2 allowFuzz:(BOOL)arg3;
+- (void)_initializeStateMachineForAccountID:(id)arg1 service:(id)arg2 state:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)signOutService:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)signInUsername:(id)arg1 withProvidedCredential:(id)arg2 onService:(unsigned long long)arg3 waitUntilRegistered:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)signInUsername:(id)arg1 onService:(unsigned long long)arg2 waitUntilRegistered:(BOOL)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)provideCredential:(id)arg1 forUser:(id)arg2 onService:(unsigned long long)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)statusOfUsersOnService:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)_statusOfUsersOnService:(unsigned long long)arg1;
+- (void)disableUserType:(unsigned long long)arg1 onService:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)enableUserType:(unsigned long long)arg1 onService:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)removeDelegateForService:(unsigned long long)arg1;
+- (void)setDelegate:(id)arg1 forService:(unsigned long long)arg2;
 - (id)init;
-- (void)unregisteriMessageEnabledStatusChangedCallback;
-- (void)registeriMessageEnabledStatusChangedCallback:(CDUnknownBlockType)arg1;
-- (void)disableiMessage;
-- (void)enableiMessage;
+- (id)initWithQueue:(id)arg1;
+- (id)initWithPasswordManager:(id)arg1 signInTimeout:(double)arg2 signInFuzz:(double)arg3 queue:(id)arg4;
+- (BOOL)_isServiceCurrentlyEnabled:(id)arg1;
 - (BOOL)isiMessageEnabled;
-- (void)unregisterFaceTimeEnabledStatusChangedCallback;
-- (void)registerFaceTimeEnabledStatusChangedCallback:(CDUnknownBlockType)arg1;
-- (void)disableFaceTime;
-- (void)enableFaceTime;
 - (BOOL)isFaceTimeEnabled;
 
 // Remaining properties

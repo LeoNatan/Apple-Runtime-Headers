@@ -8,16 +8,26 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKCDPError : PBCodable <NSCopying>
 {
+    int _auxiliaryCode;
+    NSString *_auxiliaryDomain;
+    NSMutableArray *_auxiliaryUserInfos;
     int _code;
     NSString *_message;
-    CDStruct_9ab06576 _has;
+    struct {
+        unsigned int auxiliaryCode:1;
+        unsigned int code:1;
+    } _has;
 }
 
++ (Class)auxiliaryUserInfoType;
+@property(retain, nonatomic) NSMutableArray *auxiliaryUserInfos; // @synthesize auxiliaryUserInfos=_auxiliaryUserInfos;
+@property(nonatomic) int auxiliaryCode; // @synthesize auxiliaryCode=_auxiliaryCode;
+@property(retain, nonatomic) NSString *auxiliaryDomain; // @synthesize auxiliaryDomain=_auxiliaryDomain;
 @property(retain, nonatomic) NSString *message; // @synthesize message=_message;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -29,6 +39,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)auxiliaryUserInfoAtIndex:(unsigned long long)arg1;
+- (unsigned long long)auxiliaryUserInfosCount;
+- (void)addAuxiliaryUserInfo:(id)arg1;
+- (void)clearAuxiliaryUserInfos;
+@property(nonatomic) BOOL hasAuxiliaryCode;
+@property(readonly, nonatomic) BOOL hasAuxiliaryDomain;
 @property(readonly, nonatomic) BOOL hasMessage;
 - (int)StringAsCode:(id)arg1;
 - (id)codeAsString:(int)arg1;

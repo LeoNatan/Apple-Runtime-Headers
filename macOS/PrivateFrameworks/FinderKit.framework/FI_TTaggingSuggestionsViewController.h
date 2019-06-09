@@ -11,9 +11,9 @@
 __attribute__((visibility("hidden")))
 @interface FI_TTaggingSuggestionsViewController : FI_TViewController
 {
-    FI_TTableView *_tableView;
-    FI_TLabelView *_labelColorView;
-    FI_TTaggingTokenField *_tokenField;
+    struct TNSRef<FI_TTableView, void> _tableView;
+    struct TNSRef<FI_TLabelView, void> _labelColorView;
+    struct TNSWeakPtr<FI_TTaggingTokenField, void> _weakTokenField;
     _Bool _showLabelColorView;
     _Bool _showingAll;
     _Bool _needShowAll;
@@ -33,9 +33,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSLayoutConstraint, void> _maxHeightConstraint;
 }
 
-@property(nonatomic) FI_TTableView *tableView; // @synthesize tableView=_tableView;
 @property(nonatomic) _Bool showLabelColorView; // @synthesize showLabelColorView=_showLabelColorView;
-@property(nonatomic) FI_TLabelView *labelColorView; // @synthesize labelColorView=_labelColorView;
 @property _Bool fadeScrolledRows; // @synthesize fadeScrolledRows=_fadeScrolledRows;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -65,13 +63,15 @@ __attribute__((visibility("hidden")))
 - (id)textView;
 - (id)tableView:(id)arg1 selectionIndexesForProposedSelection:(id)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
-- (void)setTaggingTokenField:(id)arg1;
+@property(nonatomic) __weak FI_TTaggingTokenField *taggingTokenField;
 - (void)tearDownClipViewMask;
 - (void)aboutToTearDown;
 - (id)suggestionsDataSource;
 - (id)nibName;
 - (id)dataSource;
 - (id)tableViewNoLoad;
+@property(retain, nonatomic) FI_TLabelView *labelColorView; // @dynamic labelColorView;
+@property(retain, nonatomic) FI_TTableView *tableView; // @dynamic tableView;
 - (id)stackView;
 - (void)viewLoaded;
 

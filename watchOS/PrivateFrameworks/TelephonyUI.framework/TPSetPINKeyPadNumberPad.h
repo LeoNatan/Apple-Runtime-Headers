@@ -6,6 +6,7 @@
 
 #import <TelephonyUI/TPSimpleNumberPad.h>
 
+__attribute__((visibility("hidden")))
 @interface TPSetPINKeyPadNumberPad : TPSimpleNumberPad
 {
 }

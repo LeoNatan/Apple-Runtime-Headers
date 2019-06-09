@@ -122,6 +122,7 @@
 - (void)_deleteFramebuffer:(unsigned int)arg1;
 - (unsigned int)_generateFramebuffer:(id)arg1;
 - (void)generateFramebuffer:(id)arg1;
+- (void)finish;
 - (id)description;
 @property(nonatomic) long long virtualScreen;
 - (id)simpleQuadVertexArray;

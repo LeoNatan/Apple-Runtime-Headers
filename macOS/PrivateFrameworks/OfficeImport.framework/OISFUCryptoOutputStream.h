@@ -11,6 +11,7 @@
 @class NSString, OISFUCryptor;
 @protocol SFUOutputStream;
 
+__attribute__((visibility("hidden")))
 @interface OISFUCryptoOutputStream : NSObject <SFUOutputStream>
 {
     id <SFUOutputStream> mBaseStream;

@@ -33,7 +33,6 @@
 @property(readonly, retain, nonatomic) AVAsset *asset;
 - (id)description;
 - (void)_tearDownFigAssetReader;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1 error:(id *)arg2;
 - (id)init;

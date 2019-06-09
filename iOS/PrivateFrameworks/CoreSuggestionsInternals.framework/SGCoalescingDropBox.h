@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue, OS_dispatch_source, OS_os_transaction;
 
 @interface SGCoalescingDropBox : NSObject
 {
+    const char *_name;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_source;
     CDUnknownBlockType _makeEmptyBox;
@@ -22,6 +23,7 @@
         long long __sig;
         char __opaque[40];
     } _cond;
+    NSObject<OS_os_transaction> *_transaction;
 }
 
 - (void).cxx_destruct;
@@ -30,7 +32,7 @@
 - (void)updateBox:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithBoxMaker:(CDUnknownBlockType)arg1 handler:(CDUnknownBlockType)arg2 qos:(unsigned int)arg3;
+- (id)initWithName:(const char *)arg1 boxMaker:(CDUnknownBlockType)arg2 handler:(CDUnknownBlockType)arg3 qos:(unsigned int)arg4;
 
 @end
 

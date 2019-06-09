@@ -9,7 +9,7 @@
 #import <IMAVCore/AVConferencePreviewClientDelegate-Protocol.h>
 #import <IMAVCore/IMSystemMonitorListener-Protocol.h>
 
-@class AVConferencePreview, IMAVCamera;
+@class AVConferencePreview;
 
 @interface IMAVLocalPreviewClient : NSObject <AVConferencePreviewClientDelegate, IMSystemMonitorListener>
 {
@@ -22,6 +22,7 @@
 
 + (id)sharedInstance;
 @property(retain, nonatomic) AVConferencePreview *conferencePreview; // @synthesize conferencePreview=_conferencePreview;
+- (void).cxx_destruct;
 - (void)cameraDidBecomeAvailableForUniqueID:(id)arg1;
 - (void)didReceiveErrorFromCameraUniqueID:(id)arg1 error:(id)arg2;
 - (void)didChangeLocalScreenAttributes:(id)arg1;
@@ -51,7 +52,6 @@
 - (id)localScreenAttributesForVideoAttributes:(id)arg1;
 @property(nonatomic) void *localVideoBackLayer;
 @property(nonatomic) void *localVideoLayer;
-@property(nonatomic) IMAVCamera *localCamera;
 @property(nonatomic) unsigned int cameraOrientation;
 @property(nonatomic) unsigned int cameraType;
 - (void)dealloc;

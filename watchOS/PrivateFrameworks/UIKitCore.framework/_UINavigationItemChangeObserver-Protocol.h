@@ -4,16 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class UINavigationItem, UISearchController;
+@class UINavigationItem, UISearchController, _UINavigationBarPalette;
 
 @protocol _UINavigationItemChangeObserver
-- (void)navigationItemUpdatedSearchController:(UINavigationItem *)arg1 oldSearchController:(UISearchController *)arg2 animated:(_Bool)arg3;
-- (void)navigationItemUpdatedBackgroundAppearance:(UINavigationItem *)arg1 animated:(_Bool)arg2;
-- (void)navigationItemUpdatedCanvasView:(UINavigationItem *)arg1 animated:(_Bool)arg2;
+- (void)navigationItemUpdatedBottomPalette:(UINavigationItem *)arg1 oldPalette:(_UINavigationBarPalette *)arg2;
+- (void)navigationItemUpdatedSearchController:(UINavigationItem *)arg1 oldSearchController:(UISearchController *)arg2;
+- (void)navigationItemUpdatedPromptContent:(UINavigationItem *)arg1;
+- (void)navigationItemUpdatedCanvasView:(UINavigationItem *)arg1;
+- (void)navigationItemUpdatedScrollEdgeProgress:(UINavigationItem *)arg1;
+- (void)navigationItemUpdatedBackgroundAppearance:(UINavigationItem *)arg1;
+- (void)navigationItemUpdatedAppearance:(UINavigationItem *)arg1;
+- (void)navigationItemUpdatedLargeTitleContent:(UINavigationItem *)arg1;
+- (void)navigationItemUpdatedLargeTitleDisplayMode:(UINavigationItem *)arg1;
+- (void)navigationItemUpdatedBackButtonContent:(UINavigationItem *)arg1 animated:(_Bool)arg2;
+- (void)navigationItemUpdatedContentLayout:(UINavigationItem *)arg1 animated:(_Bool)arg2;
 - (void)navigationItemUpdatedRightBarButtonItems:(UINavigationItem *)arg1 animated:(_Bool)arg2;
 - (void)navigationItemUpdatedLeftBarButtonItems:(UINavigationItem *)arg1 animated:(_Bool)arg2;
-- (void)navigationItemUpdatedBackButtonContent:(UINavigationItem *)arg1 animated:(_Bool)arg2;
-- (void)navigationItemUpdatedPromptContent:(UINavigationItem *)arg1 animated:(_Bool)arg2;
 - (void)navigationItemUpdatedTitleContent:(UINavigationItem *)arg1 animated:(_Bool)arg2;
+- (_Bool)navigationItemIsBackItem:(UINavigationItem *)arg1;
+- (_Bool)navigationItemIsTopItem:(UINavigationItem *)arg1;
 @end
 

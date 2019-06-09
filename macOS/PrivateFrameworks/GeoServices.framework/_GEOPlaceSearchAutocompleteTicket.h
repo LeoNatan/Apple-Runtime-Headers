@@ -18,7 +18,10 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic, getter=_searchQuery) NSString *searchQuery; // @synthesize searchQuery=_searchQuery;
 - (void).cxx_destruct;
+- (BOOL)showAutocompleteClientSource;
+- (BOOL)autocompleteTopSectionIsQuerySuggestions;
 - (id)sortPriorityMapping;
+- (id)clientRankingModel;
 - (BOOL)shouldDisplayNoResults;
 - (BOOL)hasShouldDisplayNoResults;
 - (double)retainSearchTime;
@@ -31,6 +34,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithRequest:(id)arg1 traits:(id)arg2 searchQuery:(id)arg3;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isCancelled) BOOL cancelled;
+@property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

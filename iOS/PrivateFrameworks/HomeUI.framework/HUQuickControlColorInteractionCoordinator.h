@@ -20,10 +20,11 @@
 @property(nonatomic) _Bool hasPendingColorPaletteChangeDelegateNotification; // @synthesize hasPendingColorPaletteChangeDelegateNotification=_hasPendingColorPaletteChangeDelegateNotification;
 @property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 - (void).cxx_destruct;
+- (void)cancelButtonTappedToDismissColorViewController;
+- (void)presentFullColorViewForControlView:(id)arg1 selectedColorIndexPath:(id)arg2;
 - (void)hideAuxiliaryViewForControlView:(id)arg1;
 - (void)controlView:(id)arg1 showAuxiliaryView:(id)arg2;
 - (void)controlView:(id)arg1 colorPaletteDidChange:(id)arg2;
-- (void)controlView:(id)arg1 activeModeDidChange:(unsigned long long)arg2;
 - (void)controlView:(id)arg1 interactionStateDidChange:(_Bool)arg2 forFirstTouch:(_Bool)arg3;
 - (void)_notifyDelegateOfColorPaletteChangeIfNecessary;
 - (id)initWithControlView:(id)arg1 colorPalette:(id)arg2 delegate:(id)arg3;

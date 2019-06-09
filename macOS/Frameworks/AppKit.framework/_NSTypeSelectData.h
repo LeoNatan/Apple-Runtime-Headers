@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     long long _initialSearchRow;
     long long _totalRows;
     NSView *_view;
-    id _cellValue;
     NSTypeSelectPanel *_typeSelectPanel;
     unsigned int _foundMatch:1;
     unsigned int _reserved:31;

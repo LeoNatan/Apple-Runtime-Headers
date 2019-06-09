@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDCentralMessageDispatcher, HMDDevice, HMDHomeManager, HMDUser, HMDUserPresenceFeedRetryTimer, HMDUserPresenceRegion, HMDUserPresenceUpdateReason, HMUserPresenceAuthorization, HMUserPresenceCompute, NSDate, NSString, NSUUID;
+@class HMDDevice, HMDHomeManager, HMDMessageDispatcher, HMDUser, HMDUserPresenceFeedRetryTimer, HMDUserPresenceRegion, HMDUserPresenceUpdateReason, HMUserPresenceAuthorization, HMUserPresenceCompute, NSDate, NSString, NSUUID;
 @protocol HMDUserPresenceFeedSessionDelegate, OS_dispatch_queue;
 
 @interface HMDUserPresenceFeedSession : NSObject <HMFLogging, HMFTimerDelegate>
@@ -18,7 +18,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
     HMDHomeManager *_homeManager;
     NSUUID *_targetUUID;
-    HMDCentralMessageDispatcher *_remoteMessageDispatcher;
+    HMDMessageDispatcher *_remoteMessageDispatcher;
     HMDDevice *_residentDevice;
     HMDUser *_user;
     HMUserPresenceAuthorization *_presenceAuthStatus;
@@ -40,7 +40,7 @@
 @property(readonly, nonatomic) HMUserPresenceAuthorization *presenceAuthStatus; // @synthesize presenceAuthStatus=_presenceAuthStatus;
 @property(readonly, nonatomic) HMDUser *user; // @synthesize user=_user;
 @property(readonly, nonatomic) HMDDevice *residentDevice; // @synthesize residentDevice=_residentDevice;
-@property(readonly, nonatomic) HMDCentralMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
+@property(readonly, nonatomic) HMDMessageDispatcher *remoteMessageDispatcher; // @synthesize remoteMessageDispatcher=_remoteMessageDispatcher;
 @property(readonly, nonatomic) NSUUID *targetUUID; // @synthesize targetUUID=_targetUUID;
 @property(readonly, nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;

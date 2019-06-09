@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <MessageUI/UIItemProviderReading-Protocol.h>
+#import <MessageUI/NSItemProviderReading-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface MFComposeRecipients : NSObject <UIItemProviderReading>
+@interface MFComposeRecipients : NSObject <NSItemProviderReading>
 {
     NSArray *_recipients;
 }

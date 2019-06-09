@@ -8,16 +8,17 @@
 
 #import <ScreenTimeUI/STUIDateTimePickerCellDelegate-Protocol.h>
 
-@class NSArray, NSString, PSSpecifier, STDeviceBedtime, STUser;
+@class NSArray, NSString, PSSpecifier, STDeviceBedtime, STUIUser;
 @protocol STDeviceBedtimeListControllerDelegate, STRootViewModelCoordinator;
 
+__attribute__((visibility("hidden")))
 @interface STDeviceBedtimeListController : PSListController <STUIDateTimePickerCellDelegate>
 {
     _Bool _canAskForMoreTime;
     id <STDeviceBedtimeListControllerDelegate> _delegate;
     id <STRootViewModelCoordinator> _coordinator;
     STDeviceBedtime *_bedtime;
-    STUser *_affectedUser;
+    STUIUser *_affectedUser;
     NSArray *_orderedWeekdayIndexes;
     NSArray *_orderedLocalizedWeekdayNames;
     PSSpecifier *_deviceBedtimeSpecifier;
@@ -49,7 +50,7 @@
 @property(readonly) NSArray *orderedLocalizedWeekdayNames; // @synthesize orderedLocalizedWeekdayNames=_orderedLocalizedWeekdayNames;
 @property(readonly) NSArray *orderedWeekdayIndexes; // @synthesize orderedWeekdayIndexes=_orderedWeekdayIndexes;
 @property(nonatomic) _Bool canAskForMoreTime; // @synthesize canAskForMoreTime=_canAskForMoreTime;
-@property(retain, nonatomic) STUser *affectedUser; // @synthesize affectedUser=_affectedUser;
+@property(retain, nonatomic) STUIUser *affectedUser; // @synthesize affectedUser=_affectedUser;
 @property(copy, nonatomic) STDeviceBedtime *bedtime; // @synthesize bedtime=_bedtime;
 @property(retain, nonatomic) id <STRootViewModelCoordinator> coordinator; // @synthesize coordinator=_coordinator;
 @property(nonatomic) __weak id <STDeviceBedtimeListControllerDelegate> delegate; // @synthesize delegate=_delegate;

@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
     struct _VCSessionParticipantProminenceInfo _prominenceInfo;
     TimingCollection *_perfTimers;
     BOOL _haveReportedPerfTimers;
+    struct _VCSessionParticipantSourceIO _sourceIO;
 }
 
 + (unsigned int)maxVideoNetworkBitrateForVideoQuality:(unsigned char)arg1 isLocalOnWiFi:(BOOL)arg2 isRedundancyRequested:(BOOL)arg3;
@@ -50,7 +51,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSNumber *optedInAudioStreamID; // @synthesize optedInAudioStreamID=_optedInAudioStreamID;
 @property(retain, nonatomic) NSNumber *optedInVideoStreamID; // @synthesize optedInVideoStreamID=_optedInVideoStreamID;
 - (void)reportParticipantsPerfTimingsOnce;
-- (void)pullAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
 - (void)vcMediaStream:(id)arg1 remoteMediaStalled:(BOOL)arg2;
 - (void)vcMediaStream:(id)arg1 didSwitchFromStreamID:(unsigned short)arg2 toStreamID:(unsigned short)arg3;
 - (void)vcMediaStream:(id)arg1 didSwitchToAudioStreamWithID:(unsigned short)arg2;
@@ -60,8 +60,8 @@ __attribute__((visibility("hidden")))
 - (void)vcMediaStreamDidRTCPTimeOut:(id)arg1;
 - (void)vcMediaStreamDidRTPTimeOut:(id)arg1;
 - (void)updateVideoPriority:(unsigned char)arg1;
-- (void)updateAudioPriority:(unsigned char)arg1;
 - (void)debounceAudioPriority:(unsigned char)arg1;
+- (void)updateSourcePlayoutTimestampWithSamples:(struct opaqueVCAudioBufferList *)arg1;
 - (void)setShouldEnableFaceZoom:(BOOL)arg1;
 - (void)updateShouldEnableFaceZoom;
 - (void)notifyChangeInActiveMediaBitrate:(BOOL)arg1;
@@ -78,14 +78,16 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSArray *mediaEntries;
 - (void)setVideoDegraded:(BOOL)arg1;
 - (void)updateVideoQualityNotification;
-- (void)collectAudioChannelMetrics:(CDStruct_1c8e0384 *)arg1;
-- (void)collectVideoChannelMetrics:(CDStruct_1c8e0384 *)arg1;
+- (void)collectAudioChannelMetrics:(CDStruct_3ab08b48 *)arg1;
+- (void)collectVideoChannelMetrics:(CDStruct_3ab08b48 *)arg1;
 - (void)redundancyController:(id)arg1 redundancyIntervalDidChange:(double)arg2;
 - (void)redundancyController:(id)arg1 redundancyPercentageDidChange:(unsigned int)arg2;
+@property(readonly, nonatomic) unsigned int lastDisplayedFrameRTPTimestamp;
 - (void)receivedMediaPacketAtTime:(double)arg1 isDecryptable:(BOOL)arg2;
 @property(readonly, nonatomic) VCSessionParticipantMediaStreamInfo *videoStreamInfo;
 @property(readonly, nonatomic) VCSessionParticipantMediaStreamInfo *audioStreamInfo;
 - (BOOL)isVideoActive;
+- (void)updateAudioSpectrumState;
 - (BOOL)isAudioActive;
 - (void)negotiateAudioRules:(id)arg1;
 - (id)recommendedStreamIDsForSelectedMediaEntries:(id)arg1 forceSeamlessTransition:(BOOL)arg2;
@@ -95,14 +97,18 @@ __attribute__((visibility("hidden")))
 - (id)entryForStreamID:(id)arg1;
 - (BOOL)setupAudioStreamFromMediaBlobWithIDSDestination:(id)arg1;
 - (BOOL)setupBandwidthAllocationTableForMediaStreamConfigs:(id)arg1 entryType:(unsigned char)arg2;
-- (id)newAudioStreamConfigurationWithMultiwayAudioNegotiationResult:(id)arg1;
+- (id)newAudioStreamConfigurationWithMultiwayAudioNegotiationResult:(id)arg1 maxIDSStreamIDCount:(unsigned int)arg2;
+- (BOOL)configureAudioIOWithDeviceRole:(int)arg1;
 - (id)setupStreamRTP:(id)arg1;
 - (BOOL)setupAudioStreamConfiguration:(id)arg1 audioRules:(id)arg2;
 - (BOOL)processParticipantInfo;
 - (void)updateDownlinkBandwithAllocatorClientConfigurations:(id)arg1;
 - (void)setVideoPaused:(BOOL)arg1;
 - (void)setAudioPaused:(BOOL)arg1;
-- (void)updateProminenceDefaults;
+- (void)onPauseAudioStreams;
+- (void)onDidResumeAudioStream:(id)arg1;
+- (void)onStartAudioIO;
+- (void)stopAudioIOCompletion;
 - (void)dealloc;
 - (id)initWithIDSDestination:(id)arg1 idsParticipantID:(unsigned long long)arg2 mediaNegotiator:(id)arg3 opaqueData:(id)arg4 delegate:(id)arg5 processId:(int)arg6 transportSessionID:(unsigned int)arg7 sessionUUID:(id)arg8 config:(id)arg9;
 

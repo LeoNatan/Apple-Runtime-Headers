@@ -11,5 +11,7 @@
 - (BOOL)containsString:(id)arg1;
 - (long long)messageAttributeEnum;
 - (id)SHA256;
+- (id)_cf_camelCase;
+- (id)_cf_fixCase:(BOOL)arg1;
 @end
 

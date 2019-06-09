@@ -18,9 +18,9 @@
 - (_Bool)accessibilitySceneIsRunningInForeground;
 - (_Bool)accessibilitySceneIsForegroundVisible;
 - (_Bool)accessibilitySceneIsSuspended;
-- (_Bool)accessibilityIsShowingSheet;
 - (_Bool)accessibilitySceneOwnerIsAUIApplication;
 - (_Bool)accessibilitySceneBelongsToTheSystemApp;
+- (_Bool)accessibilityIsSceneOnCarScreen;
 - (_Bool)accessibilityIsSceneOnMainScreen;
 - (id)accessibilitySceneDescription;
 @end

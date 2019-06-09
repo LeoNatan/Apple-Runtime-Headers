@@ -17,7 +17,7 @@
 - (_Bool)canDrawMapRect:(CDStruct_90e2a262)arg1 zoomScale:(double)arg2;
 - (void)drawMapRect:(CDStruct_90e2a262)arg1 zoomScale:(double)arg2 inContext:(struct CGContext *)arg3;
 - (CDStruct_c3b9c2ee)_originMapPoint;
-- (id)initWithPolyline:(id)arg1 locationReadings:(id)arg2;
+- (id)initWithOverlay:(id)arg1 locationReadings:(id)arg2;
 
 @end
 

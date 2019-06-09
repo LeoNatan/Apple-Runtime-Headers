@@ -9,11 +9,20 @@
 @interface NSImage (AppKit_SiriUIFrameworkAdditions)
 + (id)siriui_semiTransparentChevronImageAndAllowNaturalLayout:(BOOL)arg1;
 + (id)siriui_semiTransparentChevronImage;
++ (id)imageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)imageWithData:(id)arg1;
 - (void)siriui_colorTemplateImageWithColor:(id)arg1;
 - (id)siriui_pngFileRepresentation;
 - (id)siriui_bitmapImageRepresentation;
 - (id)siriui_imageByScalingToWidthAndCroppingToMaxRect:(struct CGRect)arg1;
 - (id)siriui_imageByCroppingToRect:(struct CGRect)arg1;
 - (BOOL)siriui_saveToURL:(id)arg1 error:(id *)arg2;
+- (id)_imageResizedToSize:(struct CGSize)arg1;
+- (id)_imageWithAlpha:(double)arg1;
+- (id)_flatImageWithColor:(id)arg1;
+- (void)drawAtPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4 respectFlipped:(BOOL)arg5;
+- (void)drawAtPoint:(struct CGPoint)arg1;
+- (struct CGImage *)CGImage;
+@property(readonly) double scale;
 @end
 

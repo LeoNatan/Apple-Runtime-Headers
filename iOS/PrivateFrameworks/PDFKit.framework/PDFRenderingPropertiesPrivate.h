@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     long long interpolationQuality;
     double lineWidthThreshold;
     UIColor *pageColor;
-    _Bool forceWebKitMainThread;
     _Bool enablePageShadows;
     _Bool enableTileEdgeColoring;
     _Bool enableAccessibilityDrawing;

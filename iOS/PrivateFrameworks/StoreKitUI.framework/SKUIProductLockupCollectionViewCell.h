@@ -13,6 +13,7 @@
 
 @class NSHashTable, NSMapTable, NSMutableArray, NSString, SKUIGradientView, SKUILockupViewElement, SKUIProductLockupLayout;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductLockupCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, SKUIPerspectiveView, SKUIViewElementView>
 {
     NSHashTable *_artworkRelatedChildViewElementViews;

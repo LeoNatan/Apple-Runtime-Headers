@@ -19,6 +19,8 @@
     NSString *_clientVersion;
     NSString *_requestingBundleIdentifier;
     NSString *_requestingBundleVersion;
+    NSString *_bagProfile;
+    NSString *_bagProfileVersion;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -32,8 +34,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_clientInfoCopyWithClass:(Class)arg1;
+@property(readonly, copy, nonatomic) NSString *bagProfileVersion;
+@property(readonly, copy, nonatomic) NSString *bagProfile;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
+- (id)initWithSystemApplicationType:(int)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 
 @end

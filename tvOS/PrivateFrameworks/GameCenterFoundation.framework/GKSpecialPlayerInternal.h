@@ -17,7 +17,11 @@
 - (id)photos;
 - (void)setAlias:(id)arg1;
 - (id)alias;
+- (void)setTeamPlayerID:(id)arg1;
+- (void)setGamePlayerID:(id)arg1;
 - (void)setPlayerID:(id)arg1;
+- (id)teamPlayerID;
+- (id)gamePlayerID;
 - (id)playerID;
 
 @end

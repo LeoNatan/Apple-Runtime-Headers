@@ -10,11 +10,15 @@ __attribute__((visibility("hidden")))
 @interface SAThreadStateMicrostackshot : SAThreadState
 {
     unsigned char _microstackshotFlags;
+    unsigned short _cpuSpeed100Mhz;
+    unsigned short _cpuNum;
 }
 
 + (id)stateWithMicrostackshot:(const struct micro_snapshot *)arg1 thread:(const struct thread_snapshot *)arg2 startTimestamp:(id)arg3 endTimestamp:(id)arg4 startSampleIndex:(unsigned long long)arg5 endSampleIndex:(unsigned long long)arg6 leafUserFrame:(id)arg7 leafKernelFrame:(id)arg8 machTimebase:(struct mach_timebase_info)arg9;
 - (id)initWithMicrostackshotFlags:(unsigned char)arg1;
 - (id)initWithMicrostackshot:(const struct micro_snapshot *)arg1 thread:(const struct thread_snapshot *)arg2 startTimestamp:(id)arg3 endTimestamp:(id)arg4 startSampleIndex:(unsigned long long)arg5 endSampleIndex:(unsigned long long)arg6 leafUserFrame:(id)arg7 leafKernelFrame:(id)arg8 machTimebase:(struct mach_timebase_info)arg9;
+- (unsigned int)cpuNum;
+- (unsigned int)cpuSpeedMhz;
 - (unsigned char)microstackshotFlags;
 - (BOOL)isOnBattery;
 - (BOOL)isUserActive;

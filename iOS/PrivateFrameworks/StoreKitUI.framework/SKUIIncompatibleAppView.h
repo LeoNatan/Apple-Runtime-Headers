@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSString, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIncompatibleAppView : UIView
 {
     NSMutableArray *_buttons;

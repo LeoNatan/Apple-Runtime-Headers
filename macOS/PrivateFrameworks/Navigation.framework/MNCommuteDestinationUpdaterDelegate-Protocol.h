@@ -9,7 +9,6 @@
 @class MNCommuteDestination, MNCommuteDestinationUpdater;
 
 @protocol MNCommuteDestinationUpdaterDelegate <NSObject>
-@property(readonly, nonatomic) BOOL isMapsActive;
 - (void)destinationUpdaterDidArrive:(MNCommuteDestinationUpdater *)arg1;
 - (void)destinationUpdater:(MNCommuteDestinationUpdater *)arg1 didUpdateDestination:(MNCommuteDestination *)arg2;
 @end

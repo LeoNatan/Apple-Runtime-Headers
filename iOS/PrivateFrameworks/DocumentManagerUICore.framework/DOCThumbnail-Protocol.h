@@ -6,15 +6,15 @@
 
 #import <DocumentManagerUICore/NSObject-Protocol.h>
 
-@class NSOperation, UIImage;
+@class UIImage;
 @protocol DOCThumbnailListener;
 
 @protocol DOCThumbnail <NSObject>
 @property(readonly) _Bool hasFinishedTryingToFetchCorrectThumbnail;
-@property(readonly, nonatomic) NSOperation *operation;
 @property(readonly, nonatomic) UIImage *thumbnail;
 @property(readonly, nonatomic) _Bool isRepresentativeIcon;
 @property(readonly, nonatomic, getter=isLoading) _Bool loading;
+- (_Bool)registerGenerationCompletionHandler:(void (^)(void))arg1;
 - (void)scheduleUpdateIfNeeded;
 - (void)removeListener:(id <DOCThumbnailListener>)arg1;
 - (void)addListener:(id <DOCThumbnailListener>)arg1;

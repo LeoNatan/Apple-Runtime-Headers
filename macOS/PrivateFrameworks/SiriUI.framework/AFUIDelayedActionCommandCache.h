@@ -9,7 +9,6 @@
 @class NSMutableDictionary;
 @protocol AFUIDelayedActionCommandCacheDelegate;
 
-__attribute__((visibility("hidden")))
 @interface AFUIDelayedActionCommandCache : NSObject
 {
     NSMutableDictionary *_delayedActionTimersByIdentifier;

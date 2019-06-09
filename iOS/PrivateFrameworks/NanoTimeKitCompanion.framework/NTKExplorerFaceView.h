@@ -64,7 +64,7 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
 - (_Bool)slotUsesCurvedText:(id)arg1;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (_Bool)_supportsTimeScrubbing;
 - (void)_applyShowsCanonicalContent;
 - (void)_applyFrozen;

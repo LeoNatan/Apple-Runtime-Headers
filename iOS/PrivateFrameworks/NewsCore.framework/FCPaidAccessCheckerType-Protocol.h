@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
-@protocol FCChannelProviding;
+@protocol FCBundleSubscriptionProviderType, FCChannelProviding, FCPurchaseProviderType;
 
 @protocol FCPaidAccessCheckerType
+@property(readonly, nonatomic) id <FCPurchaseProviderType> purchaseProvider;
+@property(readonly, nonatomic) id <FCBundleSubscriptionProviderType> bundleSubscriptionProvider;
 - (void)prepareForUseWithCompletion:(void (^)(void))arg1;
 - (_Bool)isPreparedForUse;
+- (_Bool)canGetBundleSubscriptionToChannel:(id <FCChannelProviding>)arg1;
 - (_Bool)canGetSubscriptionToChannel:(id <FCChannelProviding>)arg1;
 - (_Bool)canGetAccessToItemPaid:(_Bool)arg1 bundlePaid:(_Bool)arg2 channel:(id <FCChannelProviding>)arg3;
-- (_Bool)hasAccessToItemPaid:(_Bool)arg1 bundlePaid:(_Bool)arg2 channelID:(NSString *)arg3;
 @end
 

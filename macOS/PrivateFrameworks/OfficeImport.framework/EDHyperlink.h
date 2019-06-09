@@ -8,6 +8,7 @@
 
 @class EDReference, EDString;
 
+__attribute__((visibility("hidden")))
 @interface EDHyperlink : NSObject
 {
     EDString *mPath;

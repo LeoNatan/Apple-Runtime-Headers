@@ -81,7 +81,6 @@ __attribute__((visibility("hidden")))
 + (id)keyPathsForValuesAffectingIsAirDrop;
 + (id)keyPathsForValuesAffectingIsSearch;
 + (id)keyPathsForValuesAffectingGroupBy;
-+ (id)keyPathsForValuesAffectingFxShowArrangeByAndSortByPopups;
 + (void)setViewStyleInPrefs:(int)arg1 forName:(struct TString)arg2;
 + (int)viewStyleFromPrefsForName:(struct TString)arg1;
 + (void)setSettingsDictionaryInPrefs:(id)arg1 forName:(struct TString)arg2;
@@ -206,7 +205,7 @@ __attribute__((visibility("hidden")))
 - (void)updateIconViewArrangeByAfterGroupByChange;
 @property(nonatomic) int groupBy;
 @property(readonly, nonatomic) _Bool isGrouping;
-@property(readonly, nonatomic) _Bool fxShowArrangeByAndSortByPopups;
+@property(readonly, nonatomic) _Bool showGroupByPopup;
 @property(nonatomic) int nodeCustomViewStyleIndex;
 @property(nonatomic) _Bool nodeCanHaveCustomViewStyle;
 @property(nonatomic) _Bool nodeHasCustomViewStyle;

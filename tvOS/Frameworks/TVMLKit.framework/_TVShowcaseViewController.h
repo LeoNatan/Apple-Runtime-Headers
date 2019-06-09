@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) CDUnknownBlockType transitionHandler; // @synthesize transitionHandler=_transitionHandler;
 @property(copy, nonatomic) NSIndexPath *indexPathForFocusedItem; // @synthesize indexPathForFocusedItem=_indexPathForFocusedItem;
 - (void).cxx_destruct;
-- (void)_dispatchEventOfType:(unsigned long long)arg1 forItemAtIndexPath:(id)arg2;
+- (void)_dispatchEvent:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)_updateLockupInforViewForIndexPath:(id)arg1;
 - (void)_delayedUpdatePreview;
 - (_Bool)collectionView:(id)arg1 shouldHandleLongPressForItemAtIndexPath:(id)arg2;

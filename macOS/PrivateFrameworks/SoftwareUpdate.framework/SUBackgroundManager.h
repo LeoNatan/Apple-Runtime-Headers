@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSBackgroundActivityScheduler, NSError, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString;
+@class NSBackgroundActivityScheduler, NSError, NSMutableArray, NSMutableSet, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface SUBackgroundManager : NSObject
@@ -20,9 +20,7 @@
     NSMutableArray *_productsDownloadingInBackground;
     NSBackgroundActivityScheduler *_stageActivityScheduler;
     NSMutableSet *_errorUpdateKeys;
-    long long _autoInstallNotifyCount;
-    NSMutableArray *_autoInstallCustomNotifyStrings;
-    NSMutableDictionary *_autoInstalledJournalEntries;
+    NSMutableArray *_autoInstalledJournalEntries;
     BOOL _timeToScan;
     BOOL _canDownloadAndStage;
     BOOL _wasScanIncomplete;
@@ -41,15 +39,12 @@
 @property(nonatomic) BOOL suspended; // @synthesize suspended=_suspended;
 @property(retain) NSSet *previousIncompleteKeys; // @synthesize previousIncompleteKeys=_previousIncompleteKeys;
 @property long long numInflightOperations; // @synthesize numInflightOperations=_numInflightOperations;
-- (void)dumpDebugInfo;
 - (void)resetState;
 - (BOOL)shouldRetryAheadOfSchedule;
 - (id)error;
 - (id)incompleteProductKeys;
 - (void)clearAutoInstalledUpdates;
 - (id)autoInstalledJournalEntries;
-- (id)autoInstallNotificationStrings;
-- (long long)countOfUpdatesAutoInstalled;
 - (void)_markPendingCriticalUpdateForPostLogoutInstallIfAppropriate:(id)arg1;
 - (void)_stageProducts:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
 - (void)_scheduleStagingForQueuedProducts;
@@ -61,14 +56,12 @@
 - (void)addToAutoInstallJournalForProduct:(id)arg1 wasAdminAutoInstall:(BOOL)arg2;
 - (void)cancelBackgroundDownloadIfNecessaryForProductKeys:(id)arg1 replyWhenDone:(CDUnknownBlockType)arg2;
 - (void)downloadRecommendedUpdates;
-- (BOOL)_authorizeForDownloadService;
-- (void)clearAuthForDownloadService;
 - (id)_appropriateProductsForAction:(long long)arg1;
 - (BOOL)_isProductEligibleForAutoInstallOfRestartRequiredUpdates:(id)arg1;
 - (void)installStatus:(id)arg1 didChangeExternallyForProductKey:(id)arg2;
 - (long long)nextActionForProductKey:(id)arg1 returningProduct:(id *)arg2;
 - (void)_reevaluateAvailableUpdatesIfNecessary;
-- (BOOL)refreshAvailableUpdatesIfRequired;
+- (BOOL)refreshAvailableUpdatesIfRequiredWithSynchronousScan:(BOOL)arg1;
 - (BOOL)downloadAndStageUpdates:(id)arg1 doDownload:(BOOL)arg2 notifyWhenFinished:(BOOL)arg3 inForeground:(BOOL)arg4 withReply:(CDUnknownBlockType)arg5;
 - (BOOL)downloadUpdates:(id)arg1 notifyWhenFinished:(BOOL)arg2 inForeground:(BOOL)arg3 withReply:(CDUnknownBlockType)arg4;
 - (BOOL)_canDownloadAndStageUpdates;

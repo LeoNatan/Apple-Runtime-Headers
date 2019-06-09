@@ -4,17 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKit/NTKFaceView.h>
+#import <NanoTimeKit/NTKDigitalFaceView.h>
 
 #import <NanoTimeKit/NTKTimeModuleViewTapClient-Protocol.h>
 
-@class CLKTimeFormatter, NSDateComponentsFormatter, NSString, NTKLayoutRule, NTKTimeModuleView;
+@class CLKTimeFormatter, NSDateComponentsFormatter, NSString;
 
-@interface NTKDigitalModularFaceView : NTKFaceView <NTKTimeModuleViewTapClient>
+@interface NTKDigitalModularFaceView : NTKDigitalFaceView <NTKTimeModuleViewTapClient>
 {
-    NTKTimeModuleView *_timeModuleView;
-    NTKLayoutRule *_timeLayoutRuleNormal;
-    NTKLayoutRule *_timeLayoutRuleEditing;
     unsigned int _faceColor;
     _Bool _is24HourMode;
     CLKTimeFormatter *_dateFormatter;
@@ -25,14 +22,6 @@
 + (void)_performIfNonRichModuleView:(id)arg1 actions:(CDUnknownBlockType)arg2;
 - (void).cxx_destruct;
 - (void)_updateLocale;
-- (void)_layoutTimeTravelCaptionView:(id)arg1;
-- (void)_layoutTimeTravelStatusModule:(id)arg1;
-- (void)_endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
-- (void)_startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (float)_timeTravelStatusModuleCaptionConstraintPadding;
-- (_Bool)_wantsTimeTravelStatusModule;
-- (_Bool)_supportsTimeScrubbing;
 - (void)_applyFaceColor:(unsigned int)arg1 toModuleView:(id)arg2;
 - (void)_enumerateModuleViewsWithBlock:(CDUnknownBlockType)arg1;
 - (id)_moduleViewForComplicationSlot:(id)arg1;
@@ -50,11 +39,7 @@
 - (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
-- (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
 - (void)_configureForEditMode:(int)arg1;
-- (void)_cleanupAfterZoom;
-- (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
-- (void)_layoutForegroundContainerView;
 - (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (void)_loadLayoutRulesForState:(int)arg1 withTopGap:(float)arg2 largeModuleHeight:(float)arg3;
@@ -65,6 +50,8 @@
 - (void)performTapAction;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
+- (unsigned int)_timeLabelOptions;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
 - (void)dealloc;
 - (void)layoutSubviews;
 

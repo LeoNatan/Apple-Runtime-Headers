@@ -9,7 +9,6 @@
 @class NSArray;
 
 @protocol CLLocationManagerRoutineClientInterface <NSObject>
-- (void)didUpdatePredictedApplications:(NSArray *)arg1;
 - (void)didUpdateLocations:(NSArray *)arg1;
 @end
 

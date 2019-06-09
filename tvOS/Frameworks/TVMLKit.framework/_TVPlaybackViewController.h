@@ -6,11 +6,13 @@
 
 #import <UIKit/UIViewController.h>
 
-@class _TVMLPlaybackViewController, _TVPlayer;
+#import <TVMLKit/TVPlayingUI-Protocol.h>
+
+@class NSString, UITapGestureRecognizer, _TVMLPlayerViewController, _TVPlayer;
 @protocol _TVPlaybackViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface _TVPlaybackViewController : UIViewController
+@interface _TVPlaybackViewController : UIViewController <TVPlayingUI>
 {
     struct {
         _Bool respondsToCustomAnimatorForNavigationControllerOperation;
@@ -19,17 +21,35 @@ __attribute__((visibility("hidden")))
         _Bool respondsToViewWillDisappear;
         _Bool respondsToViewDidDisappear;
     } _delegateFlags;
+    _Bool _viewDidAppear;
+    _Bool _showsVideoControls;
+    _Bool _interactiveOverlayDismissable;
     _Bool _stopPlaybackWhenDismissed;
+    UITapGestureRecognizer *_interactiveOverlayDismissGestureRecognizer;
+    long long _resumeMenuBehavior;
+    UIViewController *_overlayViewController;
+    UIViewController *_interactiveOverlayViewController;
     _TVPlayer *_player;
     id <_TVPlaybackViewControllerDelegate> _delegate;
-    UIViewController *_playbackViewController;
+    UIViewController *_playerViewController;
 }
 
-@property(retain, nonatomic) UIViewController *playbackViewController; // @synthesize playbackViewController=_playbackViewController;
+@property(retain, nonatomic) UIViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(nonatomic) __weak id <_TVPlaybackViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) _TVPlayer *player; // @synthesize player=_player;
 @property(nonatomic) _Bool stopPlaybackWhenDismissed; // @synthesize stopPlaybackWhenDismissed=_stopPlaybackWhenDismissed;
+@property(retain, nonatomic) UIViewController *interactiveOverlayViewController; // @synthesize interactiveOverlayViewController=_interactiveOverlayViewController;
+@property(nonatomic, getter=isInteractiveOverlayDismissable) _Bool interactiveOverlayDismissable; // @synthesize interactiveOverlayDismissable=_interactiveOverlayDismissable;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UITapGestureRecognizer *interactiveOverlayDismissGestureRecognizer; // @synthesize interactiveOverlayDismissGestureRecognizer=_interactiveOverlayDismissGestureRecognizer;
+- (void)_presentInteractiveOverlay:(_Bool)arg1;
+- (void)setInteractiveOverlayViewController:(id)arg1 animated:(_Bool)arg2;
+- (void)_dismissPlayerFromInteractiveOverlay;
+- (void)_updateInteractiveOverlayDismissableState;
+@property(nonatomic) _Bool showsVideoControls; // @synthesize showsVideoControls=_showsVideoControls;
+@property(retain, nonatomic) UIViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
+@property(nonatomic) long long resumeMenuBehavior; // @synthesize resumeMenuBehavior=_resumeMenuBehavior;
+- (id)_tvPlayerUIViewController;
 - (void)_hostPlaybackViewController;
 - (void)_initPlaybackViewController;
 - (id)customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
@@ -40,8 +60,14 @@ __attribute__((visibility("hidden")))
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-@property(readonly, nonatomic) _TVMLPlaybackViewController *tvmlPlaybackViewController;
+@property(readonly, nonatomic) _TVMLPlayerViewController *tvmlPlaybackViewController;
 - (id)initWithPlayer:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

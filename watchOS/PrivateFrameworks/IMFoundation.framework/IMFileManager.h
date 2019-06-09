@@ -20,7 +20,6 @@
 - (id)UTITypeOfMimeType:(id)arg1;
 - (id)pathExtensionForMIMEType:(id)arg1;
 - (id)displayNameOfFileWithName:(id)arg1 hfsFlags:(unsigned short)arg2;
-- (id)attributesOfItemAtPath:(id)arg1 error:(id *)arg2;
 
 @end
 

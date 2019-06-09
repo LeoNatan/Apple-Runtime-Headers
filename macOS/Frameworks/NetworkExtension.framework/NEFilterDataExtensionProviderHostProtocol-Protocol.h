@@ -6,9 +6,10 @@
 
 #import <NetworkExtension/NEFilterExtensionProviderHostProtocol-Protocol.h>
 
-@class NEAppInfo, NEFilterFlow, NEFilterReport;
+@class NEAppInfo, NEFilterFlow, NEFilterReport, NEFilterSettings;
 
 @protocol NEFilterDataExtensionProviderHostProtocol <NEFilterExtensionProviderHostProtocol>
+- (void)applySettings:(NEFilterSettings *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)report:(NEFilterReport *)arg1;
 - (void)getSourceAppInfo:(NEAppInfo *)arg1 completionHandler:(void (^)(NEAppInfo *))arg2;
 - (void)fetchCurrentRulesForFlow:(NEFilterFlow *)arg1 completionHandler:(void (^)(NEFilterControlVerdict *))arg2;

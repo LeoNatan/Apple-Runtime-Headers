@@ -16,6 +16,7 @@
     BOOL followsZhuyin;
     BOOL spaceConfirmation;
     BOOL hardwareKeyboardMode;
+    BOOL followsIncompleteRomaji;
     BOOL _hasAutocorrection;
     BOOL _userSelectedCurrentCandidate;
     BOOL _showsCandidatesInLayout;
@@ -24,6 +25,7 @@
 @property(nonatomic) BOOL showsCandidatesInLayout; // @synthesize showsCandidatesInLayout=_showsCandidatesInLayout;
 @property(nonatomic) BOOL userSelectedCurrentCandidate; // @synthesize userSelectedCurrentCandidate=_userSelectedCurrentCandidate;
 @property(nonatomic) BOOL hasAutocorrection; // @synthesize hasAutocorrection=_hasAutocorrection;
+@property(nonatomic) BOOL followsIncompleteRomaji; // @synthesize followsIncompleteRomaji;
 @property(nonatomic) BOOL hardwareKeyboardMode; // @synthesize hardwareKeyboardMode;
 @property(nonatomic) BOOL spaceConfirmation; // @synthesize spaceConfirmation;
 @property(nonatomic) BOOL followsZhuyin; // @synthesize followsZhuyin;

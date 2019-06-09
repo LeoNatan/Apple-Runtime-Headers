@@ -6,30 +6,35 @@
 
 #import <NetworkExtension/NENetworkAgent.h>
 
-@class NSString, NWInterface;
+@class NSMutableArray, NSString;
 
 @interface NEPathControllerNetworkAgent : NENetworkAgent
 {
+    _Bool updateClientsImmediately;
+    _Bool _isForcedAdvisory;
     _Bool _weakAdvisory;
     _Bool _noAdvisoryTimer;
     CDUnknownBlockType _internalAssertHandler;
     CDUnknownBlockType _internalUnassertHandler;
-    NWInterface *_advisoryInterface;
+    NSMutableArray *_predictedInterfaceArray;
+    NSMutableArray *_advisoryInterfaceArray;
     NSString *_advisoryAgentDomain;
     NSString *_advisoryAgentType;
-    NWInterface *_predictedInterface;
 }
 
 + (id)agentFromData:(id)arg1;
 + (id)agentType;
 @property _Bool noAdvisoryTimer; // @synthesize noAdvisoryTimer=_noAdvisoryTimer;
 @property _Bool weakAdvisory; // @synthesize weakAdvisory=_weakAdvisory;
-@property(retain) NWInterface *predictedInterface; // @synthesize predictedInterface=_predictedInterface;
 @property(retain) NSString *advisoryAgentType; // @synthesize advisoryAgentType=_advisoryAgentType;
 @property(retain) NSString *advisoryAgentDomain; // @synthesize advisoryAgentDomain=_advisoryAgentDomain;
-@property(retain) NWInterface *advisoryInterface; // @synthesize advisoryInterface=_advisoryInterface;
+@property(retain) NSMutableArray *advisoryInterfaceArray; // @synthesize advisoryInterfaceArray=_advisoryInterfaceArray;
+@property(retain) NSMutableArray *predictedInterfaceArray; // @synthesize predictedInterfaceArray=_predictedInterfaceArray;
 @property(copy) CDUnknownBlockType internalUnassertHandler; // @synthesize internalUnassertHandler=_internalUnassertHandler;
 @property(copy) CDUnknownBlockType internalAssertHandler; // @synthesize internalAssertHandler=_internalAssertHandler;
+@property(nonatomic) _Bool isForcedAdvisory; // @synthesize isForcedAdvisory=_isForcedAdvisory;
+- (void)setUpdateClientsImmediately:(_Bool)arg1;
+- (_Bool)updateClientsImmediately;
 - (void).cxx_destruct;
 - (id)initWithAdvisoryAgentDomain:(id)arg1 agentType:(id)arg2 advisoryMode:(unsigned long long)arg3;
 - (id)initWithAdvisoryInterface:(id)arg1 advisoryMode:(unsigned long long)arg2;

@@ -6,9 +6,10 @@
 
 #import <CarouselServices/NSObject-Protocol.h>
 
-@class NSUUID;
+@class CSLSSession, NSError, NSString, NSUUID;
 
 @protocol CSLSSessionServiceClientInterface <NSObject>
-- (void)sessionWithUUIDEnded:(NSUUID *)arg1;
+- (void)sessionStarted:(CSLSSession *)arg1 error:(NSError *)arg2;
+- (void)sessionWithUUIDEnded:(NSUUID *)arg1 bundleID:(NSString *)arg2 startWasScheduled:(_Bool)arg3 error:(NSError *)arg4;
 @end
 

@@ -15,6 +15,7 @@
 + (id)classDescriptionForClass:(Class)arg1;
 + (void)invalidateClassDescriptionCache;
 + (void)registerClassDescription:(id)arg1 forClass:(Class)arg2;
++ (void)initialize;
 + (void)setClassDelegate:(id)arg1;
 + (id)classDelegate;
 - (id)inverseForRelationshipKey:(id)arg1;

@@ -6,22 +6,28 @@
 
 #import <Home/HFItem.h>
 
+#import <Home/HFActionBuilderFactory-Protocol.h>
 #import <Home/HFMediaAccessoryLikeItem-Protocol.h>
 
 @class NSSet, NSString;
-@protocol HFCharacteristicValueSource, HFHomeKitObject, HFMediaProfileContainer;
+@protocol HFCharacteristicValueSource, HFHomeKitObject, HFHomeKitSettingsVendor, HFMediaProfileContainer, HFMediaValueSource;
 
-@interface HFMediaAccessoryItem : HFItem <HFMediaAccessoryLikeItem>
+@interface HFMediaAccessoryItem : HFItem <HFMediaAccessoryLikeItem, HFActionBuilderFactory>
 {
     id <HFHomeKitObject> _homeKitObject;
-    id <HFMediaProfileContainer> _mediaProfileContainer;
+    id <HFHomeKitSettingsVendor> _homeKitSettingsVendor;
     id <HFCharacteristicValueSource> _valueSource;
+    id <HFMediaProfileContainer> _mediaProfileContainer;
 }
 
-@property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
+@property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
+@property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject; // @synthesize homeKitObject=_homeKitObject;
 - (void).cxx_destruct;
+- (id)currentStateActionBuildersForHome:(id)arg1;
+- (_Bool)actionsMayRequireDeviceUnlock;
+- (_Bool)containsActions;
 - (id)iconDescriptor;
 - (id)serviceNameComponents;
 - (_Bool)_isInstallingSoftwareUpdate;
@@ -46,15 +52,17 @@
 @property(readonly, nonatomic) _Bool isContainedWithinItemGroup;
 @property(readonly, nonatomic) unsigned int numberOfItemsContainedWithinGroup;
 @property(readonly, nonatomic) _Bool isItemGroup;
+- (id)namingComponentForHomeKitObject;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (id)accessories;
-- (id)services;
+@property(readonly, nonatomic) NSSet *services;
 - (unsigned int)_effectiveLoadingStateForSuggestedLoadingState:(unsigned int)arg1;
 - (id)copyWithValueSource:(id)arg1;
 - (id)settings;
 - (id)room;
 - (id)_subclass_updateWithOptions:(id)arg1;
 - (id)createControlItems;
+@property(readonly, nonatomic) id <HFMediaValueSource> mediaValueSource;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithValueSource:(id)arg1 homeKitObject:(id)arg2;

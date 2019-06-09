@@ -10,9 +10,14 @@
 {
 }
 
-+ (_Bool)_shouldAggregateMoment:(id)arg1;
-+ (id)processAggregationsWithItems:(id)arg1 itemsContainedInOtherHighlights:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
++ (id)processAggregationsWithSortedMomentClusters:(id)arg1 momentsContainedInOtherHighlights:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
++ (id)sortedNeighborMomentClustersOfMomentClusters:(id)arg1 forAllMomentClusters:(id)arg2;
++ (unsigned long long)maximumNumberOfDaysPerAggregation;
++ (unsigned long long)maximumNumberOfAssetsPerMoment;
++ (void)restoreDefaultEnablement;
++ (void)setEnabled:(_Bool)arg1;
 + (_Bool)isEnabled;
++ (void)initialize;
 
 @end
 

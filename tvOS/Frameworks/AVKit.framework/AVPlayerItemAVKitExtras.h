@@ -8,8 +8,9 @@
 
 #import <AVKit/NSCopying-Protocol.h>
 
-@class AVContentProposal, AVPlayerItem, NSArray, NSDate, NSNumber, NSString, NSValue;
+@class AVContentProposal, AVMediaContentRating, AVPlayerItem, NSArray, NSDate, NSNumber, NSString, NSValue;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerItemAVKitExtras : NSObject <NSCopying>
 {
     _Bool _airPlayedContent;
@@ -18,8 +19,6 @@
     NSArray *_interstitialTimeRanges;
     NSArray *_externalSubtitleOptionLanguages;
     NSString *_selectedExternalSubtitleOptionLanguage;
-    NSDate *_startDateForDisplay;
-    NSDate *_endDateForDisplay;
     AVContentProposal *_nextContentProposal;
     AVPlayerItem *_playerItemForScrubbing;
     CDUnknownBlockType _imageGeneratorForScrubbing;
@@ -27,6 +26,9 @@
     NSValue *_overrideForForwardPlaybackEndTime;
     NSValue *_overrideForReversePlaybackEndTime;
     long long _avkitMediaType;
+    NSDate *_validatedDate;
+    AVMediaContentRating *_validatedMediaContentRating;
+    id _playbackRestrictionsAuthorizationToken;
     double _pendingTimeBoundary;
     long long _progressiveDownloadContentState;
 }
@@ -34,6 +36,9 @@
 @property long long progressiveDownloadContentState; // @synthesize progressiveDownloadContentState=_progressiveDownloadContentState;
 @property double pendingTimeBoundary; // @synthesize pendingTimeBoundary=_pendingTimeBoundary;
 @property(nonatomic, getter=isAirPlayedContent) _Bool airPlayedContent; // @synthesize airPlayedContent=_airPlayedContent;
+@property(retain, nonatomic) id playbackRestrictionsAuthorizationToken; // @synthesize playbackRestrictionsAuthorizationToken=_playbackRestrictionsAuthorizationToken;
+@property(retain, nonatomic) AVMediaContentRating *validatedMediaContentRating; // @synthesize validatedMediaContentRating=_validatedMediaContentRating;
+@property(retain, nonatomic) NSDate *validatedDate; // @synthesize validatedDate=_validatedDate;
 @property(nonatomic) long long avkitMediaType; // @synthesize avkitMediaType=_avkitMediaType;
 @property(retain, nonatomic) NSValue *overrideForReversePlaybackEndTime; // @synthesize overrideForReversePlaybackEndTime=_overrideForReversePlaybackEndTime;
 @property(retain, nonatomic) NSValue *overrideForForwardPlaybackEndTime; // @synthesize overrideForForwardPlaybackEndTime=_overrideForForwardPlaybackEndTime;
@@ -41,8 +46,6 @@
 @property(copy, nonatomic) CDUnknownBlockType imageGeneratorForScrubbing; // @synthesize imageGeneratorForScrubbing=_imageGeneratorForScrubbing;
 @property(retain, nonatomic) AVPlayerItem *playerItemForScrubbing; // @synthesize playerItemForScrubbing=_playerItemForScrubbing;
 @property(retain, nonatomic) AVContentProposal *nextContentProposal; // @synthesize nextContentProposal=_nextContentProposal;
-@property(retain, nonatomic) NSDate *endDateForDisplay; // @synthesize endDateForDisplay=_endDateForDisplay;
-@property(retain, nonatomic) NSDate *startDateForDisplay; // @synthesize startDateForDisplay=_startDateForDisplay;
 @property(retain, nonatomic) NSString *selectedExternalSubtitleOptionLanguage; // @synthesize selectedExternalSubtitleOptionLanguage=_selectedExternalSubtitleOptionLanguage;
 @property(retain, nonatomic) NSArray *externalSubtitleOptionLanguages; // @synthesize externalSubtitleOptionLanguages=_externalSubtitleOptionLanguages;
 @property(retain, nonatomic) NSArray *interstitialTimeRanges; // @synthesize interstitialTimeRanges=_interstitialTimeRanges;

@@ -15,13 +15,16 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)_anchorWithRowidValue:(long long)arg1;
 + (id)_anchorWithRowid:(long long)arg1;
++ (id)latestAnchor;
 + (id)anchorFromValue:(unsigned long long)arg1;
 @property(nonatomic, getter=_rowid, setter=_setRowid:) long long rowid; // @synthesize rowid=_rowid;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (long long)compare:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 

@@ -6,9 +6,12 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class FBSScene, NSSet, _UICanvas;
+@class FBSScene, FBSSceneTransitionContext, NSSet, UICanvas, _UICanvasSceneLaunchOptions;
 
 @protocol _UICanvasSceneActionsHandler <NSObject>
-- (NSSet *)respondToActions:(NSSet *)arg1 forScene:(FBSScene *)arg2 inCanvas:(_UICanvas *)arg3;
+- (NSSet *)respondToActions:(NSSet *)arg1 forScene:(FBSScene *)arg2 inCanvas:(UICanvas *)arg3 fromTransitionContext:(FBSSceneTransitionContext *)arg4;
+
+@optional
+- (_UICanvasSceneLaunchOptions *)launchOptionsFromActions:(NSSet *)arg1 forScene:(FBSScene *)arg2 canvas:(UICanvas *)arg3 transitionContext:(FBSSceneTransitionContext *)arg4;
 @end
 

@@ -9,12 +9,14 @@
 @class NSDictionary, NSNumber, NSString, _WKFrameHandle;
 
 @protocol SFReaderEventsListener <NSObject>
+- (void)didCollectArticleContent:(NSDictionary *)arg1;
 - (void)readerTextWasExtracted:(NSString *)arg1 withMetadata:(NSDictionary *)arg2 wasDeterminingAvailabilility:(_Bool)arg3;
 - (void)didPrepareReaderContentForPrinting:(_WKFrameHandle *)arg1;
 - (void)didCollectReaderContentForMail:(NSString *)arg1;
 - (void)didCollectReadingListItemInfo:(NSDictionary *)arg1 bookmarkID:(NSNumber *)arg2;
 - (void)didSetReaderConfiguration:(NSDictionary *)arg1;
 - (void)contentDidBecomeReadyWithDetectedLanguage:(NSString *)arg1;
+- (void)didDetermineReaderAvailabilityForDynamicCheck:(_Bool)arg1;
 - (void)didDetermineReaderAvailability:(_Bool)arg1 dueToSameDocumentNavigation:(_Bool)arg2;
 @end
 

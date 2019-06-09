@@ -11,6 +11,8 @@
 @protocol NNMKNanoMailServiceDelegate <NSObject>
 
 @optional
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didChangeAccountValidationStatus:(unsigned int)arg2 accountName:(NSString *)arg3;
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithAddedSubsectionId:(NSString *)arg2 inParentSectionId:(NSString *)arg3;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithAllMessages:(NSArray *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithMessagesCount:(unsigned int)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didUpdateMailboxWithId:(NSString *)arg2 lastUpdate:(NSDate *)arg3;
@@ -41,6 +43,7 @@
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithFirstUnreadMessages:(NSArray *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithFailedComposedMessageIdsAndSubjects:(NSDictionary *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithComposedMessageIds:(NSDictionary *)arg2 progress:(NSDictionary *)arg3;
+- (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithEnabledMailboxFeatures:(NSArray *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithMailboxSelection:(NNMKMailboxSelection *)arg2;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didReplyWithAccounts:(NSArray *)arg2 error:(NSError *)arg3;
 - (void)nanoMailService:(NNMKNanoMailService *)arg1 didFailSyncingAttachment:(NSString *)arg2 messageId:(NSString *)arg3;

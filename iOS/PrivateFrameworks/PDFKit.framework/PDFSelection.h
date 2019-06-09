@@ -15,6 +15,8 @@
     PDFSelectionPrivate *_private;
 }
 
++ (id)defaultInactiveColor;
++ (id)defaultActiveColor;
 - (void).cxx_destruct;
 - (struct _NSRange)previewRangeAtIndex:(unsigned long long)arg1 onPage:(id)arg2;
 - (id)description;
@@ -22,8 +24,6 @@
 - (void)drawForPage:(id)arg1 withBox:(int)arg2 active:(_Bool)arg3 inContext:(struct CGContext *)arg4;
 - (void)setForceBreaks:(_Bool)arg1;
 - (_Bool)forceBreaks;
-- (void)setCornerRadius:(double)arg1;
-- (double)cornerRadius;
 - (void)setInactiveColor:(id)arg1;
 - (id)inactiveColor;
 - (void)setActiveColor:(id)arg1;
@@ -33,8 +33,6 @@
 - (id)html;
 - (id)attributedStringScaled:(double)arg1;
 - (id)createAttributedStringForCGSelection:(struct CGPDFSelection *)arg1 scaled:(double)arg2;
-- (id)colorWithCGColor:(struct CGColor *)arg1 space:(struct CGColorSpace *)arg2;
-- (_Bool)beginsAndEndsOnWordBoundaries;
 - (unsigned long long)pdfKitIndexOfLastCharacterOnPage:(id)arg1;
 - (unsigned long long)pdfKitIndexOfFirstCharacterOnPage:(id)arg1;
 - (unsigned long long)indexOfLastCharacterOnPage:(id)arg1;
@@ -44,7 +42,6 @@
 - (struct CGPoint)rightMostCharCenter;
 - (struct CGPoint)leftMostCharCenter;
 - (struct CGPoint)firstCharCenter;
-- (void)subtractSelectionCore:(id)arg1 normalize:(_Bool)arg2;
 - (void)addSelectionRange:(struct _NSRange)arg1 page:(id)arg2 normalize:(_Bool)arg3;
 - (void)addSelectionCore:(id)arg1 normalize:(_Bool)arg2;
 - (void)addSelectionNoNormalize:(id)arg1;
@@ -52,7 +49,6 @@
 - (id)cgSelectionPages;
 - (struct __CFArray *)cgSelections;
 - (void)addCGSelection:(struct CGPDFSelection *)arg1 forPage:(id)arg2;
-- (void)subtractSelection:(id)arg1;
 - (id)boundsArrayForPage:(id)arg1;
 - (long long)compare:(id)arg1;
 - (_Bool)isEmpty;
@@ -73,6 +69,7 @@
 - (struct CGRect)lastSpanBoundsForPage:(id)arg1;
 - (struct CGRect)firstSpanBoundsForPage:(id)arg1;
 - (struct CGRect)spanBoundsForPage:(id)arg1 atPoint:(struct CGPoint)arg2;
+- (_Bool)containsPoint:(struct CGPoint)arg1 onPage:(id)arg2;
 - (struct CGRect)boundsForPage:(id)arg1;
 @property(readonly, nonatomic) NSAttributedString *attributedString;
 @property(readonly, nonatomic) NSString *string;

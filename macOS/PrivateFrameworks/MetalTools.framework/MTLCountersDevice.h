@@ -12,6 +12,7 @@
 
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 deallocator:(CDUnknownBlockType)arg3 descriptor:(id)arg4 offset:(unsigned long long)arg5 bytesPerRow:(unsigned long long)arg6;
 - (id)newTiledTextureWithBytesNoCopy:(void *)arg1 length:(unsigned long long)arg2 descriptor:(id)arg3 offset:(unsigned long long)arg4 bytesPerRow:(unsigned long long)arg5;
+- (id)newBufferWithIOSurface:(struct __IOSurface *)arg1;
 - (id)newTextureWithDescriptor:(id)arg1 iosurface:(struct __IOSurface *)arg2 plane:(unsigned long long)arg3;
 - (id)newComputePipelineStateWithImageFilterFunctionsSPI:(id)arg1 imageFilterFunctionInfo:(const CDStruct_dbc1e4aa *)arg2 error:(id *)arg3;
 - (void)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -45,6 +46,8 @@
 - (id)newCommandQueueWithDescriptor:(id)arg1;
 - (id)newCommandQueueWithMaxCommandBufferCount:(unsigned long long)arg1;
 - (id)newCommandQueue;
+- (id)newFunctionWithGLIR:(void *)arg1 inputsDescription:(id)arg2 functionType:(unsigned long long)arg3;
+- (id)newFunctionWithGLIR:(void *)arg1 functionType:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 

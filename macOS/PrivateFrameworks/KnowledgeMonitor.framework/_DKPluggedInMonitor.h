@@ -12,7 +12,7 @@
     int _pluggedInToken;
 }
 
-+ (id)_eventWithState:(BOOL)arg1;
++ (id)_eventWithState:(BOOL)arg1 adapterType:(long long)arg2;
 + (void)setIsPluggedIn:(BOOL)arg1;
 + (BOOL)shouldMergeUnchangedEvents;
 + (id)entitlements;
@@ -20,8 +20,12 @@
 @property(nonatomic) int pluggedInToken; // @synthesize pluggedInToken=_pluggedInToken;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 - (void)synchronouslyReflectCurrentValue;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
+- (void)setCurrentState;
+- (long long)currentAdapterType;
+- (void)dealloc;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class OCCDecryptor;
 
+__attribute__((visibility("hidden")))
 @interface OCDEncryptedReader : OCDReader
 {
     OCCDecryptor *mDecryptor;

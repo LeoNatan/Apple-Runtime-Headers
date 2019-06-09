@@ -16,9 +16,9 @@
     MFDAFolderChangeResult *_result;
 }
 
+- (void).cxx_destruct;
 - (id)waitForResult;
 - (void)folderChange:(id)arg1 finishedWithStatus:(long long)arg2 error:(id)arg3;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -12,6 +12,5 @@
 - (void)graphBecameReady:(PGManager *)arg1 forPHAGraphManager:(PHAGraphManager *)arg2;
 - (void)photoAnalysisGraphManager:(PHAGraphManager *)arg1 graphIsConsistent:(_Bool)arg2;
 - (void)photoAnalysisGraphManager:(PHAGraphManager *)arg1 graphUpdateMadeProgress:(double)arg2;
-- (void)photoAnalysisGraphManager:(PHAGraphManager *)arg1 willShutdownGraph:(PGManager *)arg2;
 @end
 

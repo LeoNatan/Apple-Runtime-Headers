@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (id)formattedDescription:(unsigned int)arg1;
 - (id)bufferIndirectArgumentType;
 - (id)bufferPointerType;
+- (id)structType;
 - (id)bufferStructType;
 - (unsigned int)bufferDataSize;
 - (unsigned int)bufferALUType;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)bufferDataType;
 - (unsigned int)bufferAlignment;
 - (void)setStructType:(id)arg1;
+- (void)setStructType:(id)arg1 doRetain:(_Bool)arg2;
 - (_Bool)isVertexDescriptorBuffer;
 - (void)setVertexDescriptorBuffer:(_Bool)arg1;
 - (void)setAlignment:(unsigned int)arg1;

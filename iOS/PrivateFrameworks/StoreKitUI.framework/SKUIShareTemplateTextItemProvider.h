@@ -8,6 +8,7 @@
 
 @class SKUIClientContext, SKUIShareTemplateViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShareTemplateTextItemProvider : UIActivityItemProvider
 {
     SKUIClientContext *_clientContext;

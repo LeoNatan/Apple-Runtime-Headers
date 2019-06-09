@@ -21,9 +21,9 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithAuthToken:(id)arg1 personId:(id)arg2 hostName:(id)arg3;
-@property(nonatomic, readonly) NSString *hostName; // @synthesize hostName;
-@property(nonatomic, readonly) NSString *personId; // @synthesize personId;
-@property(nonatomic, readonly) NSString *authToken; // @synthesize authToken;
+@property(nonatomic, readonly) NSString *hostName;
+@property(nonatomic, readonly) NSString *personId;
+@property(nonatomic, readonly) NSString *authToken;
 
 @end
 

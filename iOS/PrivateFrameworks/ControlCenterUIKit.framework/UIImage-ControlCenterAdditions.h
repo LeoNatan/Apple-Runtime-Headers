@@ -7,7 +7,6 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (ControlCenterAdditions)
-- (id)ccuiSuitableCacheKeyForBitmapData;
 - (id)ccuiAlphaOnlyImageForMaskImage;
 @end
 

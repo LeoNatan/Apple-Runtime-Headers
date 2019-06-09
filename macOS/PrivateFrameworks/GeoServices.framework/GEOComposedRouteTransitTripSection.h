@@ -18,11 +18,11 @@
     CDStruct_2c43369c _fromNodeLocation;
     CDStruct_2c43369c _toNodeLocation;
     int _toNodeSignificance;
-    Matrix_5173352a _lineColor;
+    Color_124dee43 _lineColor;
     CDStruct_02837cd9 _originalBounds;
 }
 
-@property(readonly, nonatomic) Matrix_5173352a lineColor; // @synthesize lineColor=_lineColor;
+@property(readonly, nonatomic) Color_124dee43 lineColor; // @synthesize lineColor=_lineColor;
 @property(readonly, nonatomic) int toNodeSignificance; // @synthesize toNodeSignificance=_toNodeSignificance;
 @property(readonly, nonatomic) unsigned long long lineID; // @synthesize lineID=_lineID;
 @property(readonly, nonatomic) CDStruct_79c5c966 toNodeID; // @synthesize toNodeID=_toNodeID;
@@ -30,6 +30,8 @@
 - (id).cxx_construct;
 @property(readonly, copy) NSString *description;
 - (BOOL)_MapsCarPlay_isEqual:(id)arg1;
+- (void)initSupportWithRoute:(id)arg1 step:(id)arg2 toNodeSignificance:(int)arg3 currentTransitLineColor:(id)arg4;
+- (id)initWithRoute:(id)arg1 startPoint:(unsigned int)arg2 pointCount:(unsigned int)arg3 step:(id)arg4 stepIndex:(unsigned long long)arg5 toNodeSignificance:(int)arg6 currentTransitLineColor:(id)arg7 startDistance:(double)arg8 lengthScaleFactor:(double)arg9 fallbackStartCoordinate:(CDStruct_c3b9c2ee)arg10 fallbackEndCoordinate:(CDStruct_c3b9c2ee)arg11;
 - (id)initWithRoute:(id)arg1 startPoint:(unsigned int)arg2 pointCount:(unsigned int)arg3 step:(id)arg4 stepIndex:(unsigned long long)arg5 toNodeSignificance:(int)arg6 currentTransitLineColor:(id)arg7 startDistance:(double)arg8 lengthScaleFactor:(double)arg9;
 @property(readonly, nonatomic) BOOL isTransfer;
 

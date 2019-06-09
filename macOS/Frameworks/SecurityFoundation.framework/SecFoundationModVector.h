@@ -12,8 +12,8 @@
 {
     NSXPCConnection *_proxyConnection;
     struct AuthorizationOpaqueRef *_authRef;
-    struct OpaqueSecKeychainRef *_kcRef;
-    struct OpaqueSecKeychainRef *_tmpRef;
+    struct __SecKeychain *_kcRef;
+    struct __SecKeychain *_tmpRef;
     long long _err;
     long long _lock;
     unsigned int _uid;
@@ -21,16 +21,16 @@
     NSString *_tmpPath;
 }
 
-+ (id)pathForKeychain:(struct OpaqueSecKeychainRef *)arg1;
++ (id)pathForKeychain:(struct __SecKeychain *)arg1;
 + (BOOL)isAccessError:(int)arg1;
 + (id)sharedInstance;
 - (id)publicKeyPersistentRef;
 - (id)privateKeyPersistentRef;
-- (void)setKeyPrintNamesWithCommonName:(id)arg1 forKey:(struct OpaqueSecKeyRef *)arg2;
-- (int)createKeyPair:(struct OpaqueSecKeychainRef *)arg1 algorithm:(unsigned int)arg2 keySizeInBits:(unsigned int)arg3 contextHandle:(unsigned long long)arg4 publicKeyUsage:(unsigned int)arg5 publicKeyAttr:(unsigned int)arg6 privateKeyUsage:(unsigned int)arg7 privateKeyAttr:(unsigned int)arg8 initialAccess:(id)arg9 publicKey:(struct OpaqueSecKeyRef **)arg10 privateKey:(struct OpaqueSecKeyRef **)arg11 commonName:(id)arg12;
-- (int)addCertificate:(struct OpaqueSecCertificateRef *)arg1 toKeychain:(struct OpaqueSecKeychainRef *)arg2;
-- (int)addCertificate:(struct OpaqueSecCertificateRef *)arg1 toKeychain:(struct OpaqueSecKeychainRef *)arg2 domain:(unsigned int)arg3 settings:(struct __CFArray *)arg4;
-- (int)removeItem:(struct OpaqueSecKeychainItemRef *)arg1;
+- (void)setKeyPrintNamesWithCommonName:(id)arg1 forKey:(struct __SecKey *)arg2;
+- (int)createKeyPair:(struct __SecKeychain *)arg1 algorithm:(unsigned int)arg2 keySizeInBits:(unsigned int)arg3 contextHandle:(unsigned long long)arg4 publicKeyUsage:(unsigned int)arg5 publicKeyAttr:(unsigned int)arg6 privateKeyUsage:(unsigned int)arg7 privateKeyAttr:(unsigned int)arg8 initialAccess:(id)arg9 publicKey:(struct __SecKey **)arg10 privateKey:(struct __SecKey **)arg11 commonName:(id)arg12;
+- (int)addCertificate:(struct __SecCertificate *)arg1 toKeychain:(struct __SecKeychain *)arg2;
+- (int)addCertificate:(struct __SecCertificate *)arg1 toKeychain:(struct __SecKeychain *)arg2 domain:(unsigned int)arg3 settings:(struct __CFArray *)arg4;
+- (int)removeItem:(struct __SecKeychainItem *)arg1;
 - (BOOL)authorizationValid;
 - (long long)releaseAuthorization;
 - (long long)obtainAuthorization:(id)arg1;

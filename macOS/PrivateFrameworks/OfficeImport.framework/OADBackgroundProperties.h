@@ -8,6 +8,7 @@
 
 @class NSArray, OADFill;
 
+__attribute__((visibility("hidden")))
 @interface OADBackgroundProperties : OADBackground
 {
     OADFill *mFill;

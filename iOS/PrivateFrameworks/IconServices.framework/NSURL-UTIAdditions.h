@@ -9,11 +9,14 @@
 @interface NSURL (UTIAdditions)
 - (_Bool)__is_isAppExtension;
 - (_Bool)__is_isApplication;
+- (_Bool)__is_hasFileExtension:(id)arg1;
 - (_Bool)__is_isOnBootVolume;
 - (_Bool)__is_isBootVolume;
+- (_Bool)__has_ResourceFork;
 - (id)__is_volumeURL;
 - (_Bool)__is__isAliasFile;
 - (_Bool)__is__isVolume;
+- (long long)__is__fileSize;
 - (_Bool)__is__isDirectory;
 - (_Bool)__is__conformsToUTI:(id)arg1;
 @end

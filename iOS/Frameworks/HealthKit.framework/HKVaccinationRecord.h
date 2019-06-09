@@ -6,19 +6,20 @@
 
 #import <HealthKit/HKMedicalRecord.h>
 
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKMedicalCoding, HKMedicalDate, HKVaccinationRecordType, NSArray, NSString;
+@class HKConcept, HKMedicalCoding, HKMedicalDate, HKVaccinationRecordType, NSArray, NSLocale, NSString, NSUUID;
 
-@interface HKVaccinationRecord : HKMedicalRecord <NSSecureCoding, NSCopying>
+@interface HKVaccinationRecord : HKMedicalRecord <HKConceptIndexable, NSSecureCoding, NSCopying>
 {
     NSArray *_vaccinationCodings;
     HKMedicalDate *_expirationDate;
     NSString *_doseNumber;
     NSString *_doseQuantity;
     NSString *_performer;
-    NSArray *_bodySiteCoding;
+    NSArray *_bodySiteCodings;
     NSString *_reaction;
     _Bool _notGiven;
     HKMedicalDate *_administrationDate;
@@ -27,23 +28,44 @@
     NSArray *_routeCodings;
     NSArray *_reasonsCodings;
     NSArray *_reasonsNotGivenCodings;
+    HKConcept *_vaccination;
+    HKConcept *_bodySite;
+    HKConcept *_status;
+    HKConcept *_route;
+    NSArray *_reasons;
+    NSArray *_reasonsNotGiven;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 vaccinationCodings:(id)arg10 expirationDate:(id)arg11 doseNumber:(id)arg12 doseQuantity:(id)arg13 performer:(id)arg14 bodySiteCoding:(id)arg15 reaction:(id)arg16 notGiven:(_Bool)arg17 administrationDate:(id)arg18 statusCoding:(id)arg19 patientReported:(_Bool)arg20 routeCodings:(id)arg21 reasonsCodings:(id)arg22 reasonsNotGivenCodings:(id)arg23;
++ (id)_newVaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 vaccinationCodings:(id)arg11 expirationDate:(id)arg12 doseNumber:(id)arg13 doseQuantity:(id)arg14 performer:(id)arg15 bodySiteCodings:(id)arg16 reaction:(id)arg17 notGiven:(_Bool)arg18 administrationDate:(id)arg19 statusCoding:(id)arg20 patientReported:(_Bool)arg21 routeCodings:(id)arg22 reasonsCodings:(id)arg23 reasonsNotGivenCodings:(id)arg24 config:(CDUnknownBlockType)arg25;
++ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 vaccinationCodings:(id)arg11 expirationDate:(id)arg12 doseNumber:(id)arg13 doseQuantity:(id)arg14 performer:(id)arg15 bodySiteCodings:(id)arg16 reaction:(id)arg17 notGiven:(_Bool)arg18 administrationDate:(id)arg19 statusCoding:(id)arg20 patientReported:(_Bool)arg21 routeCodings:(id)arg22 reasonsCodings:(id)arg23 reasonsNotGivenCodings:(id)arg24;
 + (id)defaultDisplayString;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
 + (id)vaccinationCodingsPreferredSystems;
 + (id)statusCodingPreferredSystems;
 + (id)routeCodingsPreferredSystems;
 + (id)reasonsNotGivenCodingsPreferredSystems;
 + (id)reasonsCodingsPreferredSystems;
-+ (id)bodySiteCodingPreferredSystems;
-+ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(long long)arg6 device:(id)arg7 metadata:(id)arg8 vaccinationCodings:(id)arg9 expirationDate:(id)arg10 doseNumber:(id)arg11 doseQuantity:(id)arg12 performer:(id)arg13 bodySiteCoding:(id)arg14 reaction:(id)arg15 notGiven:(_Bool)arg16 administrationDate:(id)arg17 statusCoding:(id)arg18 patientReported:(_Bool)arg19 routeCodings:(id)arg20 reasonsCodings:(id)arg21 reasonsNotGivenCodings:(id)arg22;
++ (id)bodySiteCodingsPreferredSystems;
++ (id)vaccinationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(long long)arg7 device:(id)arg8 metadata:(id)arg9 vaccinationCodings:(id)arg10 expirationDate:(id)arg11 doseNumber:(id)arg12 doseQuantity:(id)arg13 performer:(id)arg14 bodySiteCodings:(id)arg15 reaction:(id)arg16 notGiven:(_Bool)arg17 administrationDate:(id)arg18 statusCoding:(id)arg19 patientReported:(_Bool)arg20 routeCodings:(id)arg21 reasonsCodings:(id)arg22 reasonsNotGivenCodings:(id)arg23;
 - (void).cxx_destruct;
 @property(readonly, copy) HKVaccinationRecordType *vaccinationRecordType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned long long)arg1;
+- (void)_setReasonsNotGiven:(id)arg1;
+@property(readonly, copy) NSArray *reasonsNotGiven;
+- (void)_setReasons:(id)arg1;
+@property(readonly, copy) NSArray *reasons;
+- (void)_setRoute:(id)arg1;
+@property(readonly, copy) HKConcept *route;
+- (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKConcept *status;
+- (void)_setBodySite:(id)arg1;
+@property(readonly, copy) HKConcept *bodySite;
+- (void)_setVaccination:(id)arg1;
+@property(readonly, copy) HKConcept *vaccination;
 - (void)_setReasonsNotGivenCodings:(id)arg1;
 @property(readonly, copy) NSArray *reasonsNotGivenCodings;
 - (void)_setReasonsCodings:(id)arg1;
@@ -60,8 +82,8 @@
 @property(readonly) _Bool notGiven;
 - (void)_setReaction:(id)arg1;
 @property(readonly, copy) NSString *reaction;
-- (void)_setBodySiteCoding:(id)arg1;
-@property(readonly, copy) NSArray *bodySiteCoding;
+- (void)_setBodySiteCodings:(id)arg1;
+@property(readonly, copy) NSArray *bodySiteCodings;
 - (void)_setPerformer:(id)arg1;
 @property(readonly, copy) NSString *performer;
 - (void)_setDoseQuantity:(id)arg1;
@@ -72,21 +94,42 @@
 @property(readonly, copy) HKMedicalDate *expirationDate;
 - (void)_setVaccinationCodings:(id)arg1;
 @property(readonly, copy) NSArray *vaccinationCodings;
+- (id)reasonsNotGivenCodingsContexts;
+- (id)reasonsNotGivenCodingsCollection;
+- (id)reasonsCodingsContexts;
+- (id)reasonsCodingsCollection;
+- (id)routeCodingsContext;
+- (id)routeCodingsCollection;
+- (id)statusCodingContext;
+- (id)statusCodingCollection;
+- (id)bodySiteCodingsContext;
+- (id)bodySiteCodingsCollection;
+- (id)vaccinationCodingsContext;
+- (id)vaccinationCodingsCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
 - (id)indexKeywords;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
 - (id)vaccinationCodingsTasks;
 - (id)statusCodingTasks;
 - (id)routeCodingsTasks;
 - (id)reasonsNotGivenCodingsTasks;
 - (id)reasonsCodingsTasks;
-- (id)bodySiteCodingTasks;
+- (id)bodySiteCodingsTasks;
+
+// Remaining properties
+@property(readonly) NSUUID *UUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly, copy, nonatomic) NSLocale *locale;
+@property(readonly) Class superclass;
 
 @end
 

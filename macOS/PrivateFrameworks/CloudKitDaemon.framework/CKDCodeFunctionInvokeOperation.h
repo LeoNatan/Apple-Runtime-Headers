@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDProtocolTranslator, NSArray, NSData, NSString;
+@class CKDProtocolTranslator, NSArray, NSData, NSString, PCCKey;
 
 __attribute__((visibility("hidden")))
 @interface CKDCodeFunctionInvokeOperation : CKDDatabaseOperation
@@ -21,8 +21,14 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _recordFetchCommandBlock;
     NSString *_serviceName;
     NSString *_functionName;
+    PCCKey *_pccKey;
+    NSArray *_pccWrappedKeys;
+    NSData *_attestationEntropy;
     NSArray *_requestLocalSerializations;
+    NSArray *_requestLocalEnvelopes;
+    NSData *_permittedRemoteMeasurement;
     NSArray *_requestRecords;
+    NSArray *_requestEnvelopes;
     NSData *_serializedArguments;
     NSData *_serializedResponse;
     NSArray *_responseRecords;
@@ -34,10 +40,16 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSArray *responseRecords; // @synthesize responseRecords=_responseRecords;
 @property(copy, nonatomic) NSData *serializedResponse; // @synthesize serializedResponse=_serializedResponse;
 @property(copy, nonatomic) NSData *serializedArguments; // @synthesize serializedArguments=_serializedArguments;
+@property(copy, nonatomic) NSArray *requestEnvelopes; // @synthesize requestEnvelopes=_requestEnvelopes;
 @property(copy, nonatomic) NSArray *requestRecords; // @synthesize requestRecords=_requestRecords;
 @property(nonatomic) BOOL shouldFetchAssetContentInMemory; // @synthesize shouldFetchAssetContentInMemory=_shouldFetchAssetContentInMemory;
 @property(nonatomic) BOOL local; // @synthesize local=_local;
+@property(copy, nonatomic) NSData *permittedRemoteMeasurement; // @synthesize permittedRemoteMeasurement=_permittedRemoteMeasurement;
+@property(copy, nonatomic) NSArray *requestLocalEnvelopes; // @synthesize requestLocalEnvelopes=_requestLocalEnvelopes;
 @property(copy, nonatomic) NSArray *requestLocalSerializations; // @synthesize requestLocalSerializations=_requestLocalSerializations;
+@property(retain, nonatomic) NSData *attestationEntropy; // @synthesize attestationEntropy=_attestationEntropy;
+@property(retain, nonatomic) NSArray *pccWrappedKeys; // @synthesize pccWrappedKeys=_pccWrappedKeys;
+@property(retain, nonatomic) PCCKey *pccKey; // @synthesize pccKey=_pccKey;
 @property(readonly, copy, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(readonly, copy, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
 @property(copy, nonatomic) CDUnknownBlockType recordFetchCommandBlock; // @synthesize recordFetchCommandBlock=_recordFetchCommandBlock;

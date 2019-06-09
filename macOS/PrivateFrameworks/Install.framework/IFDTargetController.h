@@ -8,11 +8,12 @@
 
 @interface IFDTargetController : NSObject
 {
-    struct IFDTargetController_Private *_private;
+    struct IFDTargetController_Private *_privateController;
 }
 
 + (void)initialize;
 + (void)_handleTargetRequests;
+@property struct IFDTargetController_Private *privateController; // @synthesize privateController=_privateController;
 - (id)initWithInstallController:(id)arg1;
 - (id)targetForSubPath:(id)arg1 ofTarget:(id)arg2;
 - (BOOL)validSubTargetLocationPath:(id)arg1 forTarget:(id)arg2;

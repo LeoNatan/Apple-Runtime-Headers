@@ -6,14 +6,16 @@
 
 #import <CloudKitDaemon/NSObject-Protocol.h>
 
-@class CKAcceptSharesOperationInfo, CKAggregateZonePCSOperationInfo, CKArchiveRecordsOperationInfo, CKCodeFunctionInvokeOperationInfo, CKCompleteParticipantVettingOperationInfo, CKContainerSetupInfo, CKDPResponseOperationResult, CKDatabaseOperationInfo, CKDiscoverUserIdentitiesOperationInfo, CKEventMetricInfo, CKFetchArchivedRecordsOperationInfo, CKFetchDatabaseChangesOperationInfo, CKFetchNotificationChangesOperationInfo, CKFetchRecordVersionsOperationInfo, CKFetchRecordZoneChangesOperationInfo, CKFetchRecordZonesOperationInfo, CKFetchRecordsOperationInfo, CKFetchShareMetadataOperationInfo, CKFetchShareParticipantKeyOperationInfo, CKFetchShareParticipantsOperationInfo, CKFetchSubscriptionsOperationInfo, CKFetchWebAuthTokenOperationInfo, CKInitiateParticipantVettingOperationInfo, CKMarkNotificationsReadOperationInfo, CKModifyBadgeOperationInfo, CKModifyRecordAccessOperationInfo, CKModifyRecordZonesOperationInfo, CKModifyRecordsOperationInfo, CKModifySubscriptionsOperationInfo, CKModifyWebSharingOperationInfo, CKOperationInfo, CKPublishAssetsOperationInfo, CKQueryOperationInfo, CKRecordID, CKRecordZoneID, CKRepairZonePCSOperationInfo, CKShare, NSArray, NSError, NSFileHandle, NSString;
+@class CKAcceptSharesOperationInfo, CKAggregateZonePCSOperationInfo, CKArchiveRecordsOperationInfo, CKCodeFunctionInvokeOperationInfo, CKCompleteParticipantVettingOperationInfo, CKContainerSetupInfo, CKDPResponseOperationResult, CKDatabaseOperationInfo, CKDiscoverUserIdentitiesOperationInfo, CKEventMetricInfo, CKFetchArchivedRecordsOperationInfo, CKFetchDatabaseChangesOperationInfo, CKFetchNotificationChangesOperationInfo, CKFetchRecordVersionsOperationInfo, CKFetchRecordZoneChangesOperationInfo, CKFetchRecordZonesOperationInfo, CKFetchRecordsOperationInfo, CKFetchShareMetadataOperationInfo, CKFetchShareParticipantKeyOperationInfo, CKFetchShareParticipantsOperationInfo, CKFetchSubscriptionsOperationInfo, CKFetchWebAuthTokenOperationInfo, CKInitiateParticipantVettingOperationInfo, CKMarkAssetBrokenOperationInfo, CKMarkNotificationsReadOperationInfo, CKModifyBadgeOperationInfo, CKModifyRecordAccessOperationInfo, CKModifyRecordZonesOperationInfo, CKModifyRecordsOperationInfo, CKModifySubscriptionsOperationInfo, CKModifyWebSharingOperationInfo, CKOperationInfo, CKPublishAssetsOperationInfo, CKQueryOperationInfo, CKRecordID, CKRecordZoneID, CKRepairAssetsOperationInfo, CKRepairZonePCSOperationInfo, CKShare, NSArray, NSError, NSFileHandle, NSString;
 
 @protocol CKXPCDaemon <NSObject>
+- (void)deviceCountWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(long long, NSError *))arg2;
+- (void)requestClientSyncWithOperationInfo:(CKOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)tossConfigWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)repairZonePCSWithOperationInfo:(CKRepairZonePCSOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)getRecordPCSDiagnosticsForZonesWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSArray *))arg2;
 - (void)getPCSDiagnosticsForZonesWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(CKPCSDiagnosticInformation *))arg2;
-- (void)submitClientEventMetric:(CKEventMetricInfo *)arg1 withSetupInfo:(CKContainerSetupInfo *)arg2;
+- (void)submitClientEventMetric:(CKEventMetricInfo *)arg1 withSetupInfo:(CKContainerSetupInfo *)arg2 completeWhenQueued:(BOOL)arg3 completionHandler:(void (^)(void))arg4;
 - (void)triggerAutoBugCaptureSnapshot;
 - (void)flushOperationMetricsToPowerLog;
 - (void)dataclassEnabled:(NSString *)arg1 withSetupInfo:(CKContainerSetupInfo *)arg2 completionHandler:(void (^)(NSString *, BOOL, NSError *))arg3;
@@ -24,9 +26,9 @@
 - (void)statusGroupsForApplicationPermission:(unsigned long long)arg1 setupInfo:(CKContainerSetupInfo *)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
 - (void)resetAllApplicationPermissionsWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)setApplicationPermission:(unsigned long long)arg1 enabled:(BOOL)arg2 setupInfo:(CKContainerSetupInfo *)arg3 completionHandler:(void (^)(long long, NSError *))arg4;
-- (void)accountChangedWithID:(NSString *)arg1;
+- (void)accountWithID:(NSString *)arg1 changedWithChangeType:(long long)arg2;
 - (void)accountsWillDeleteAccount:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)accountsDidRevokeAccessToBundleID:(NSString *)arg1 containerIdentifiers:(NSArray *)arg2;
+- (void)accountsDidRevokeAccessToBundleID:(NSString *)arg1 sourceApplicationBundleID:(NSString *)arg2 containerIdentifiers:(NSArray *)arg3;
 - (void)accountsDidGrantAccessToBundleID:(NSString *)arg1 containerIdentifiers:(NSArray *)arg2;
 - (void)getBehaviorOptionForKey:(NSString *)arg1 isContainerOption:(BOOL)arg2 completionHandler:(void (^)(id))arg3;
 - (void)clearPCSCachesForKnownContextsWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSError *))arg2;
@@ -38,6 +40,7 @@
 - (void)clearRecordCacheWithSetupInfo:(CKContainerSetupInfo *)arg1 databaseScope:(long long)arg2;
 - (void)showAssetCacheWithSetupInfo:(CKContainerSetupInfo *)arg1 databaseScope:(long long)arg2;
 - (void)clearAssetCacheWithSetupInfo:(CKContainerSetupInfo *)arg1 databaseScope:(long long)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)countAssetCacheItemsWithSetupInfo:(CKContainerSetupInfo *)arg1 databaseScope:(long long)arg2 completionHandler:(void (^)(unsigned long long, NSError *))arg3;
 - (void)setFakeResponseOperationResult:(CKDPResponseOperationResult *)arg1 forNextRequestOfClassName:(NSString *)arg2 forItemID:(id)arg3 withLifetime:(int)arg4 setupInfo:(CKContainerSetupInfo *)arg5;
 - (void)setFakeError:(NSError *)arg1 forNextRequestOfClassName:(NSString *)arg2 setupInfo:(CKContainerSetupInfo *)arg3;
 - (void)dumpDaemonStatusReportToFileHandle:(NSFileHandle *)arg1 completionHandler:(void (^)(NSError *))arg2;
@@ -70,9 +73,12 @@
 - (void)performModifySubscriptionsOperation:(CKModifySubscriptionsOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performQueryOperation:(CKQueryOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performModifyRecordAccessOperation:(CKModifyRecordAccessOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
+- (void)fetchXPCCriteriaWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSObject<OS_xpc_object> *, NSError *))arg2;
 - (void)getNewWebSharingIdentityDataWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(NSData *, NSError *))arg2;
 - (void)getNewWebSharingIdentityWithSetupInfo:(CKContainerSetupInfo *)arg1 completionHandler:(void (^)(CKEncryptedData *, NSError *))arg2;
 - (void)performModifyWebSharingOperation:(CKModifyWebSharingOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
+- (void)performMarkAssetBrokenOperation:(CKMarkAssetBrokenOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
+- (void)performRepairAssetsOperation:(CKRepairAssetsOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performPublishAssetsOperation:(CKPublishAssetsOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performArchiveRecordsOperation:(CKArchiveRecordsOperationInfo *)arg1 withBlock:(void (^)(void))arg2;
 - (void)performFetchArchivedRecordsOperation:(CKFetchArchivedRecordsOperationInfo *)arg1 withBlock:(void (^)(void))arg2;

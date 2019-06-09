@@ -9,7 +9,7 @@
 #import <StoreJavaScript/NSSecureCoding-Protocol.h>
 
 @class NSMutableArray, NSMutableDictionary, NSString, NSUUID;
-@protocol FRJSObjectDelegate;
+@protocol FRJSMessagingDelegate, FRJSObjectDelegate;
 
 @interface FRJSObject : NSObject <NSSecureCoding>
 {
@@ -21,16 +21,16 @@
     NSMutableDictionary *_properties;
     NSMutableArray *_registeredProperties;
     NSMutableArray *_registeredFunctions;
+    id <FRJSMessagingDelegate> _messagingDelegate;
 }
 
 + (BOOL)supportsSecureCoding;
 + (void)setJSClass:(struct OpaqueJSClass *)arg1 forClassName:(id)arg2;
 + (struct OpaqueJSClass *)jsClassForClassName:(id)arg1;
 + (Class)classForKeyedUnarchiver;
-+ (id)messagingDelegate;
-+ (void)setMessagingDelegate:(id)arg1;
 + (void)addObjectToGlobalCache:(id)arg1;
 + (id)objectForIdentifier:(id)arg1;
+@property(nonatomic) __weak id <FRJSMessagingDelegate> messagingDelegate; // @synthesize messagingDelegate=_messagingDelegate;
 @property(nonatomic) BOOL isBundleObject; // @synthesize isBundleObject=_isBundleObject;
 @property(retain, nonatomic) NSMutableArray *registeredFunctions; // @synthesize registeredFunctions=_registeredFunctions;
 @property(retain, nonatomic) NSMutableArray *registeredProperties; // @synthesize registeredProperties=_registeredProperties;

@@ -6,23 +6,12 @@
 
 #import <QTKit/QTExportOptions.h>
 
-@class NSArray;
-
 @interface QTMutableExportOptions : QTExportOptions
 {
 }
 
 + (id)_qtrainforestPortNameFromQTTrackType:(id)arg1;
 + (unsigned int)_qtrainforestTrackTypeFromQTTrackType:(id)arg1;
-- (id)_qtrainforestMediaIndexesForMediaType:(id)arg1 movie:(id)arg2;
-- (int)_qtcreateRFExportFromMovie:(id)arg1;
-- (id)portNamesForMediaType:(id)arg1;
-@property(readonly, copy) NSArray *exportMetadata;
-- (void)setExportMetadata:(id)arg1 metadataFormat:(id)arg2 replaceExisting:(BOOL)arg3;
-- (void)setMovieSource:(id)arg1;
-- (BOOL)setTrackSourceWithURL:(id)arg1 mediaType:(id)arg2 trackIndex:(int)arg3 forPortName:(id)arg4 options:(id)arg5 error:(id *)arg6;
-- (BOOL)setTrackSourceWithTrack:(id)arg1 forPortName:(id)arg2 options:(id)arg3 error:(id *)arg4;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end
 

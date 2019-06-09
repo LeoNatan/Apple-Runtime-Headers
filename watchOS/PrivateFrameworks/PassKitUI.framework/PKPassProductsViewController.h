@@ -31,9 +31,9 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)scrollViewDidScroll:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (float)pkui_preferredNavigationBarBackgroundOpacity;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
+- (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)_reloadContent;
 - (id)initWithPaymentPass:(id)arg1;

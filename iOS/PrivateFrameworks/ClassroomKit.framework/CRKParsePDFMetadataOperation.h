@@ -19,6 +19,9 @@
 @property(readonly, nonatomic) NSString *filePath; // @synthesize filePath=_filePath;
 @property(readonly, nonatomic) CRKBook *book; // @synthesize book=_book;
 - (void).cxx_destruct;
+- (id)fileName;
+- (id)titleFromDictionaryRef:(struct CGPDFDictionary *)arg1;
+- (void)updateTitleWithDictionaryRef:(struct CGPDFDictionary *)arg1;
 - (void)main;
 - (id)initWithPDFBook:(id)arg1 filePath:(id)arg2 parseImage:(_Bool)arg3;
 

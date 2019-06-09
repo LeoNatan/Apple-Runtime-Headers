@@ -4,24 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <QuartzCore/CAOpenGLLayer.h>
+#import <QuartzCore/CALayer.h>
 
-@class NUGLContext;
+@class NUColorSpace, NUGLContext, NUPixelFormat;
+@protocol NUSurfaceStorage;
 
-@interface NUGLLayer : CAOpenGLLayer
+@interface NUGLLayer : CALayer
 {
     NUGLContext *_context;
+    id <NUSurfaceStorage> _drawingStorage;
+    id <NUSurfaceStorage> _displayStorage;
+    NUPixelFormat *_pixelFormat;
+    NUColorSpace *_colorSpace;
 }
 
+@property(readonly, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
+@property(readonly, nonatomic) NUPixelFormat *pixelFormat; // @synthesize pixelFormat=_pixelFormat;
 - (void).cxx_destruct;
+- (void)_updateDisplay:(id)arg1;
+- (void)_updateDisplayWithIdentifier:(id)arg1;
+- (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)layerDidChangeDisplay:(unsigned int)arg1;
 - (void)reset:(id)arg1;
 - (void)draw:(id)arg1;
-- (void)_draw:(id)arg1;
-- (void)drawInCGLContext:(struct _CGLContextObject *)arg1 pixelFormat:(struct _CGLPixelFormatObject *)arg2 forLayerTime:(double)arg3 displayTime:(const CDStruct_e50ab651 *)arg4;
-- (void)releaseCGLContext:(struct _CGLContextObject *)arg1;
-- (struct _CGLContextObject *)copyCGLContextForPixelFormat:(struct _CGLPixelFormatObject *)arg1;
-- (void)releaseCGLPixelFormat:(struct _CGLPixelFormatObject *)arg1;
-- (struct _CGLPixelFormatObject *)copyCGLPixelFormatForDisplayMask:(unsigned int)arg1;
+- (void)_drawInTexture:(id)arg1 context:(id)arg2;
+- (void)_ensureDrawingStorageOfSize:(CDStruct_912cb5d2)arg1 format:(id)arg2;
+- (void)display;
+- (BOOL)contentsAreFlipped;
+- (void)_resetContents;
+- (void)dealloc;
 - (id)init;
 
 @end

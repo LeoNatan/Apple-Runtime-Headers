@@ -23,11 +23,16 @@
 - (id)sequencedRequestPreviousObservationsKey;
 - (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 - (BOOL)allowsCachingOfResults;
-- (id)initWithTargetedImageData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithTargetedImageURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithTargetedCIImage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithTargetedCGImage:(struct CGImage *)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)initWithTargetedCVPixelBuffer:(struct __CVBuffer *)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithTargetedImageData:(id)arg1 options:(id)arg2;
+- (id)initWithTargetedImageData:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithTargetedImageURL:(id)arg1 options:(id)arg2;
+- (id)initWithTargetedImageURL:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithTargetedCIImage:(id)arg1 options:(id)arg2;
+- (id)initWithTargetedCIImage:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithTargetedCGImage:(struct CGImage *)arg1 options:(id)arg2;
+- (id)initWithTargetedCGImage:(struct CGImage *)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithTargetedCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2;
+- (id)initWithTargetedCVPixelBuffer:(struct __CVBuffer *)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 
 @end

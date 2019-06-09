@@ -6,9 +6,10 @@
 
 #import <QuickLookUI/NSObject-Protocol.h>
 
-@class NSValue, QLPreview;
+@class QLExtensionPreview;
 
 @protocol QLPreviewExtensionContextProtocol <NSObject>
-- (void)loadWithPreview:(QLPreview *)arg1 size:(NSValue *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)setHostIsAnimating:(BOOL)arg1;
+- (void)loadWithPreview:(QLExtensionPreview *)arg1 isAnimating:(BOOL)arg2 completion:(void (^)(NSError *, NSDictionary *))arg3;
 @end
 

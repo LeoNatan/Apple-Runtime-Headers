@@ -20,6 +20,7 @@
 + (id)sharedInstance;
 @property(copy, nonatomic) CDUnknownBlockType actionCompletionBlock; // @synthesize actionCompletionBlock=_actionCompletionBlock;
 - (void).cxx_destruct;
+- (void)primeRTTServer;
 - (void)setTTYDictionaryAvailability:(_Bool)arg1;
 - (id)valueForTTYSetting:(id)arg1;
 - (_Bool)contactIsTTYContact:(id)arg1;

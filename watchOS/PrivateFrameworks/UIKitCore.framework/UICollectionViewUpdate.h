@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, UICollectionView, UICollectionViewData;
+#import <UIKitCore/_UICollectionViewUpdateTranslating-Protocol.h>
+
+@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, UICollectionView, UICollectionViewData;
 
 __attribute__((visibility("hidden")))
-@interface UICollectionViewUpdate : NSObject
+@interface UICollectionViewUpdate : NSObject <_UICollectionViewUpdateTranslating>
 {
     UICollectionView *_collectionView;
     NSArray *_updateItems;
@@ -40,14 +42,31 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (int)finalSectionCount;
+- (int)initialSectionCount;
+- (struct _NSRange)finalSectionGlobalItemRangeForSection:(int)arg1;
+- (struct _NSRange)initalSectionGlobalItemRangeForSection:(int)arg1;
+- (id)initialIndexPathForSupplementaryElementOfKind:(id)arg1 forFinalIndexPath:(id)arg2;
+- (id)finalIndexPathForSupplementaryElementOfKind:(id)arg1 forInitialIndexPath:(id)arg2;
+- (int)initialSectionIndexForFinalSectionIndex:(int)arg1;
+- (int)finalSectionIndexForInitialSectionIndex:(int)arg1;
+- (id)initialIndexPathForFinalIndexPath:(id)arg1;
+- (id)finalIndexPathForInitialIndexPath:(id)arg1;
+- (int)initialGlobalIndexForFinalGlobalIndex:(int)arg1;
+- (int)finalGlobalIndexForInitialGlobalIndex:(int)arg1;
 - (id)oldIndexPathForSupplementaryElementOfKind:(id)arg1 newIndexPath:(id)arg2;
 - (id)newIndexPathForSupplementaryElementOfKind:(id)arg1 oldIndexPath:(id)arg2;
 - (void)_computeSupplementaryUpdates;
 - (void)_computeItemUpdates;
 - (void)_computeSectionUpdates;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithCollectionView:(id)arg1 updateItems:(id)arg2 oldModel:(id)arg3 newModel:(id)arg4 oldVisibleBounds:(struct CGRect)arg5 newVisibleBounds:(struct CGRect)arg6;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface CUINamedImageDescription : NSObject
 {
     double _scale;
@@ -22,6 +24,7 @@
     CDStruct_3c058996 _alignmentEdgeInsets;
     long long _resizingMode;
     int _exifOrientation;
+    NSString *_appearanceName;
 }
 
 @property(nonatomic) int exifOrientation; // @synthesize exifOrientation=_exifOrientation;
@@ -31,6 +34,7 @@
 @property(nonatomic) long long imageType; // @synthesize imageType=_imageType;
 @property(nonatomic) long long templateRenderingMode; // @synthesize templateRenderingMode=_templateRenderingMode;
 @property(nonatomic) int blendMode; // @synthesize blendMode=_blendMode;
+@property(copy, nonatomic) NSString *appearanceName; // @synthesize appearanceName=_appearanceName;
 @property(nonatomic) long long layoutDirection; // @synthesize layoutDirection=_layoutDirection;
 @property(nonatomic) long long displayGamut; // @synthesize displayGamut=_displayGamut;
 @property(nonatomic) long long sizeClassVertical; // @synthesize sizeClassVertical=_sizeClassVertical;
@@ -40,6 +44,7 @@
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 - (id)description;
 @property(nonatomic) _Bool isTemplate;
+- (void)dealloc;
 
 @end
 

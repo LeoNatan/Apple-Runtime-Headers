@@ -13,6 +13,7 @@
 {
     NSURL *_storeLocation;
     NSURL *_imageStoreLocation;
+    NSURL *_stickerImageStoreLocation;
     NSURL *_imageCacheStoreLocation;
     id <AVTUILogger> _logger;
     id <AVTBlockScheduler> _scheduler;
@@ -21,6 +22,7 @@
     NSNotificationCenter *_notificationCenter;
 }
 
++ (id)stickerImageStoreLocation;
 + (id)imageCacheStoreLocationWithError:(id *)arg1;
 + (id)imageStoreLocation;
 + (id)storeLocation;
@@ -32,6 +34,7 @@
 @property(readonly, nonatomic) id <AVTBlockScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) id <AVTUILogger> logger; // @synthesize logger=_logger;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSURL *stickerImageStoreLocation;
 @property(readonly, copy, nonatomic) NSURL *imageCacheStoreLocation;
 @property(readonly, copy, nonatomic) NSURL *imageStoreLocation;
 @property(readonly, copy, nonatomic) NSURL *storeLocation;

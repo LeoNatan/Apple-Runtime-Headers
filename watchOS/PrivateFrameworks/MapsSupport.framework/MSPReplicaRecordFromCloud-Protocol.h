@@ -4,13 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapsSupport/NSObject-Protocol.h>
+#import <MapsSupport/MSPReplicaRecord-Protocol.h>
 
-@protocol MSPCloudRecord;
+@class CKRecord, CKRecordID, MSPReplicaEditInsertRecord, MSPReplicaEditUpdateContents, NSUUID;
+@protocol MSPReplicaRecordFromCloud;
 
-@protocol MSPReplicaRecordFromCloud <NSObject>
-+ (id)tombstone;
+@protocol MSPReplicaRecordFromCloud <MSPReplicaRecord>
++ (id <MSPReplicaRecordFromCloud>)recordFromInsertEdit:(MSPReplicaEditInsertRecord *)arg1;
++ (id <MSPReplicaRecordFromCloud>)tombstoneWithRecordIdentifier:(NSUUID *)arg1;
+@property(readonly, nonatomic, getter=recordIdentifier) NSUUID *recordIdentifier;
 @property(readonly, nonatomic, getter=isTombstoneRepresentedByCloudRecord) _Bool tombstoneRepresentedByCloudRecord;
-- (id)initWithCloudRecord:(id <MSPCloudRecord>)arg1;
+@property(retain, nonatomic) CKRecord *record;
+- (CKRecordID *)tombstoneRecordRepresentation;
+- (CKRecord *)recordRepresentation;
+- (void)applyUpdateEdit:(MSPReplicaEditUpdateContents *)arg1;
 @end
 

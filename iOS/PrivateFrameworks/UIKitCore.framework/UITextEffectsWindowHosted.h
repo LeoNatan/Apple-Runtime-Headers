@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isFullscreen;
 - (struct CGRect)actualSceneBounds;
 - (struct CGRect)actualSceneBoundsForLandscape:(_Bool)arg1;
+- (long long)_orientationForSceneTransform;
 - (long long)_orientationForRootTransform;
 - (long long)_orientationForViewTransform;
-- (_Bool)_isConstrainedByScreenJail;
 - (_Bool)_usesWindowServerHitTesting;
 - (_Bool)_isWindowServerHostingManaged;
 

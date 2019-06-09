@@ -30,6 +30,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)unregisterDragTypesForWindow:(id)arg1;
 - (BOOL)switchWindow:(id)arg1 dragRegistrationToRemoteContext:(unsigned int)arg2;
 - (int)registerDragTypes:(id)arg1 forWindow:(id)arg2;
+- (void)unregisterWindow:(id)arg1 foriOSMacContext:(unsigned int)arg2;
+- (void)registerWindow:(id)arg1 foriOSMacContext:(unsigned int)arg2;
 - (void)registerForCompletionOfDrag:(void *)arg1;
 
 @end

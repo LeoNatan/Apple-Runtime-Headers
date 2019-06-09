@@ -8,5 +8,15 @@
 
 @interface NSTabView (ASKContainerName)
 + (id)containerName_ask;
+- (id)handleSelectScriptCommand:(id)arg1;
+- (id)valueInTabViewItemsWithUniqueID:(long long)arg1;
+- (void)setTabViewType_ask:(unsigned long long)arg1;
+- (unsigned long long)tabViewType_ask;
+- (void)setControlTint_ask:(unsigned long long)arg1;
+- (unsigned long long)controlTint_ask;
+- (void)setControlSize_ask:(unsigned long long)arg1;
+- (unsigned long long)controlSize_ask;
+- (void)setSelectedTabViewItem:(id)arg1;
+- (id)contentRect_ask;
 @end
 

@@ -10,12 +10,8 @@ __attribute__((visibility("hidden")))
 @interface CKDAppContainerIntersectionMetadata : NSObject
 {
     int _tokenRegistered;
-    int _usesAPSPublicToken;
-    int _darkWakeEnabled;
 }
 
-@property(nonatomic) int darkWakeEnabled; // @synthesize darkWakeEnabled=_darkWakeEnabled;
-@property(nonatomic) int usesAPSPublicToken; // @synthesize usesAPSPublicToken=_usesAPSPublicToken;
 @property(nonatomic) int tokenRegistered; // @synthesize tokenRegistered=_tokenRegistered;
 - (id)init;
 

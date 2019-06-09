@@ -57,11 +57,15 @@
     NSString *_backgroundColorName;
     int _backgroundColorSpaceID;
     NSArray *_backgroundColorComponents;
+    int _textAlignment;
+    int _scalingStyle;
     float _maxPointSize;
     float _minPointSize;
     NSValue *_iconSize;
     NSString *_appearanceName;
     int _appearanceIdentifier;
+    NSString *_localizationName;
+    int _localizationIdentifier;
     struct CGSize _resizableSliceSize;
     struct CGSize _physicalSizeInMeters;
     struct CGSize _canvasSize;
@@ -70,11 +74,15 @@
     // Error parsing type: {?="columns"[4]}, name: _transformation
 }
 
+@property(nonatomic) int localizationIdentifier; // @synthesize localizationIdentifier=_localizationIdentifier;
+@property(copy, nonatomic) NSString *localizationName; // @synthesize localizationName=_localizationName;
 @property(nonatomic) int appearanceIdentifier; // @synthesize appearanceIdentifier=_appearanceIdentifier;
 @property(copy, nonatomic) NSString *appearanceName; // @synthesize appearanceName=_appearanceName;
 @property(copy, nonatomic) NSValue *iconSize; // @synthesize iconSize=_iconSize;
 @property(nonatomic) float minPointSize; // @synthesize minPointSize=_minPointSize;
 @property(nonatomic) float maxPointSize; // @synthesize maxPointSize=_maxPointSize;
+@property(nonatomic) int scalingStyle; // @synthesize scalingStyle=_scalingStyle;
+@property(nonatomic) int textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(copy, nonatomic) NSArray *backgroundColorComponents; // @synthesize backgroundColorComponents=_backgroundColorComponents;
 @property(nonatomic) int backgroundColorSpaceID; // @synthesize backgroundColorSpaceID=_backgroundColorSpaceID;
 @property(copy, nonatomic) NSString *backgroundColorName; // @synthesize backgroundColorName=_backgroundColorName;

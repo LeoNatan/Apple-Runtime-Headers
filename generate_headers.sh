@@ -20,6 +20,8 @@ mkdir -p tvOS/usr/lib
 mkdir -p macOS/Frameworks
 mkdir -p macOS/PrivateFrameworks
 mkdir -p macOS/usr/lib
+mkdir -p macOS/iOSSupport/Frameworks
+mkdir -p macOS/iOSSupport/PrivateFrameworks
 
 visitFrameworkOrApp() {
 	FRAMEWORK="$1"
@@ -45,19 +47,19 @@ visitFrameworkOrApp() {
 iOS() {
 	# iOS
 
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/*.framework ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/Frameworks/
 	done
 
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/*.framework ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/PrivateFrameworks/
 	done
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/*.dylib ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/usr/lib/
 	done
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 iOS/usr/lib/
 	done
 }
@@ -65,19 +67,19 @@ iOS() {
 watchOS() {
 	# watchOS
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/*.framework ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" i386 watchOS/Frameworks/
 	done
 
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/*.framework ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" i386 watchOS/PrivateFrameworks/
 	done
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/*.dylib ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" i386 watchOS/usr/lib/
 	done
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/WatchOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/watchOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" i386 watchOS/usr/lib/
 	done
 }
@@ -85,19 +87,19 @@ watchOS() {
 tvOS() {
 	# tvOS
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/*.framework ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/Frameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/Frameworks/
 	done
 
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/*.framework ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/PrivateFrameworks/
 	done
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/*.dylib ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/usr/lib/
 	done
 	
-	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Developer/Library/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
+	for FRAMEWORK in "$(xcode-select -p)"/Platforms/AppleTVOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/tvOS.simruntime/Contents/Resources/RuntimeRoot/usr/lib/system/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 tvOS/usr/lib/
 	done
 }
@@ -112,13 +114,21 @@ macOS() {
 	for FRAMEWORK in /System/Library/PrivateFrameworks/*.framework ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/PrivateFrameworks/
 	done
-	
+
 	for FRAMEWORK in /usr/lib/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/usr/lib/
 	done
-	
+
 	for FRAMEWORK in /usr/lib/system/*.dylib ; do
 		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/usr/lib/
+	done
+
+	for FRAMEWORK in /System/iOSSupport/System/Library/Frameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/iOSSupport/Frameworks/
+	done
+
+	for FRAMEWORK in /System/iOSSupport/System/Library/PrivateFrameworks/*.framework ; do
+		visitFrameworkOrApp "$FRAMEWORK" x86_64 macOS/iOSSupport/PrivateFrameworks/
 	done
 }
 

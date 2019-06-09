@@ -12,7 +12,6 @@
 @class MNCommuteDestination, NSDate, NSString;
 @protocol GEODirectionServiceTicket;
 
-__attribute__((visibility("hidden")))
 @interface MNCommuteDestinationETAScore : MNCommuteDestinationScore <MNCommuteDestinationObserver, MNCommuteDestinationComparisonScore>
 {
     int _score;

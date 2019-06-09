@@ -16,7 +16,6 @@
 + (void)addInitializationCompletionCallbackBlock:(CDUnknownBlockType)arg1;
 + (void)waitForInitialization;
 + (unsigned long long)initializationTrigger;
-+ (void)registerDeferredWorkItem:(id)arg1;
 + (id)workItem;
 + (id)_getWorkItem_completed;
 + (id)_getWorkItem;

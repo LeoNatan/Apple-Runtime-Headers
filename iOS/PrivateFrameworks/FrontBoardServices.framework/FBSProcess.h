@@ -9,25 +9,19 @@
 #import <FrontBoardServices/BSDescriptionProviding-Protocol.h>
 #import <FrontBoardServices/FBSProcessInternal-Protocol.h>
 
-@class BSMachPortTaskNameRight, FBSProcessHandle, NSString;
+@class BSMachPortTaskNameRight, BSProcessHandle, NSString, RBSProcessIdentity;
 
 @interface FBSProcess : NSObject <FBSProcessInternal, BSDescriptionProviding>
 {
-    int _pid;
-    NSString *_name;
-    NSString *_bundleIdentifier;
-    NSString *_launchdLabel;
-    long long _type;
+    BSProcessHandle *_handle;
+    RBSProcessIdentity *_identity;
     BSMachPortTaskNameRight *_taskNameRight;
+    _Bool _running;
 }
 
 + (id)currentProcess;
+@property(readonly, nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, retain, nonatomic) BSMachPortTaskNameRight *taskNameRight; // @synthesize taskNameRight=_taskNameRight;
-@property(readonly, copy, nonatomic) NSString *jobLabel; // @synthesize jobLabel=_launchdLabel;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, nonatomic) long long type; // @synthesize type=_type;
-@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
-@property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -39,11 +33,11 @@
 - (_Bool)_watchdog:(id)arg1 shouldTerminateWithDeclineReason:(out id *)arg2;
 - (void)_watchdogStopped:(id)arg1;
 - (void)_watchdogStarted:(id)arg1;
-@property(readonly, retain, nonatomic) FBSProcessHandle *handle;
-@property(readonly, nonatomic, getter=isRunning) _Bool running; // @dynamic running;
+@property(readonly, retain, nonatomic) RBSProcessIdentity *identity;
+@property(readonly, retain, nonatomic) BSProcessHandle *handle;
+@property(readonly, nonatomic) int pid;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithPID:(int)arg1 bundleID:(id)arg2;
 - (id)_initForCurrentProcess;
 
 // Remaining properties

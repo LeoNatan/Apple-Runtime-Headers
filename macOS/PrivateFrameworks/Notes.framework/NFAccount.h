@@ -12,11 +12,13 @@
 
 @interface NFAccount : NSManagedObject <ICNFMCPersistedAccount>
 {
-    ACAccount *_parentACAccount;
+    ACAccount *_internalParentACAccount;
 }
 
++ (id)keyPathsForValuesAffectingParentACAccount;
 + (id)sharedAccountStore;
 + (id)keyPathsForValuesAffectingDefaultFolder;
++ (id)keyPathsForValuesAffectingAccountDescription;
 + (id)_initialDefaultAccountWithContext:(id)arg1;
 + (id)defaultAccountWithContext:(id)arg1;
 + (void)setDefaultAccount:(id)arg1;
@@ -29,8 +31,9 @@
 + (id)allAccountsWithContext:(id)arg1;
 + (void)setSupportsACAccount:(BOOL)arg1;
 + (BOOL)supportsACAccount;
+@property(retain, nonatomic) ACAccount *internalParentACAccount; // @synthesize internalParentACAccount=_internalParentACAccount;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) ACAccount *parentACAccount; // @synthesize parentACAccount=_parentACAccount;
+@property(readonly, nonatomic) ACAccount *parentACAccount;
 @property(readonly, copy, nonatomic) NSString *internetAccountsUID;
 @property(readonly) BOOL participatesInInternetAccounts;
 @property(readonly, nonatomic) long long accountClassPriority;

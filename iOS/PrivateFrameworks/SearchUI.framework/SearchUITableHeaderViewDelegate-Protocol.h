@@ -9,7 +9,7 @@
 @class NSString, SFResultSection;
 
 @protocol SearchUITableHeaderViewDelegate <NSObject>
-@property(readonly) NSString *currentQueryString;
+@property(readonly) NSString *queryString;
 - (void)toggleExpansionForSection:(SFResultSection *)arg1;
 - (_Bool)sectionIsClearable:(SFResultSection *)arg1;
 - (void)clearResultsFromSection:(SFResultSection *)arg1;

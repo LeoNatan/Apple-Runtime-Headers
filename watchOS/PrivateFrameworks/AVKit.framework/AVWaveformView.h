@@ -9,6 +9,7 @@
 @class NSMutableArray;
 @protocol AVWaveformViewDataSource;
 
+__attribute__((visibility("hidden")))
 @interface AVWaveformView : UIView
 {
     _Bool _isCompact;

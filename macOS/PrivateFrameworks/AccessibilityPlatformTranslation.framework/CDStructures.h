@@ -25,3 +25,10 @@ struct CGSize {
     double _field2;
 };
 
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned long long elementOrHash;
+    unsigned long long elementID;
+} CDStruct_26bd94fa;
+

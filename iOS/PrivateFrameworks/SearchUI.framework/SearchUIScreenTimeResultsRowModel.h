@@ -4,44 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <SearchUI/SearchUIRowModel.h>
 
-#import <SearchUI/SearchUIRowModel-Protocol.h>
+@class NSString;
 
-@class NSArray, NSString;
-
-@interface SearchUIScreenTimeResultsRowModel : NSObject <SearchUIRowModel>
+@interface SearchUIScreenTimeResultsRowModel : SearchUIRowModel
 {
-    NSArray *_results;
     NSString *_title;
 }
 
-@property(retain) NSString *title; // @synthesize title=_title;
-@property(retain) NSArray *results; // @synthesize results=_results;
+@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-- (id)punchouts;
-- (id)cardSection;
-- (_Bool)isSuggestion;
-- (_Bool)isDraggable;
-- (id)dragURL;
-- (id)dragTitle;
-- (id)dragText;
-- (id)dragSubtitle;
-- (id)dragAppBundleID;
-- (double)leadingSeparatorImageInset;
-- (int)separatorStyle;
 - (_Bool)isTappable;
-- (id)nextCard;
-- (Class)viewClass;
-- (id)reuseIdentifier;
-- (id)identifyingResult;
+- (Class)cellViewClass;
 - (id)initWithSection:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

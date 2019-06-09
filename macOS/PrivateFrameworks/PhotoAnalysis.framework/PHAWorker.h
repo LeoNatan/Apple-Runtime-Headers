@@ -6,44 +6,43 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotoAnalysis/PHAServiceOperationHandling-Protocol.h>
 #import <PhotoAnalysis/PHAWorkerConfiguration-Protocol.h>
 
-@class NSString, NSURL, PHALibraryChangeListener, PHAManager, PHAServiceCancelableOperation, PHPhotoLibrary;
-@protocol OS_dispatch_queue, PHAAssetResourceDataLoading;
+@class NSString, NSURL, PFSerialQueue, PHAManager, PHAServiceCancelableOperation, PHPhotoLibrary;
+@protocol PHAAssetResourceDataLoading;
 
-@interface PHAWorker : NSObject <PHAWorkerConfiguration>
+@interface PHAWorker : NSObject <PHAWorkerConfiguration, PHAServiceOperationHandling>
 {
     PHAManager *_photoAnalysisManager;
+    PFSerialQueue *_userInitiatedRequestQueue;
     BOOL _shutdownHasBeenCalled;
     BOOL _warmedUp;
     id <PHAAssetResourceDataLoading> _dataLoader;
     PHAServiceCancelableOperation *_currentOperation;
-    NSObject<OS_dispatch_queue> *_userInitiatedRequestQueue;
 }
 
 + (void)configureXPCConnection:(id)arg1;
 + (BOOL)persistsState;
-+ (BOOL)wantsToReceiveXPCRequestsOnUserInitiatedRequestQueue;
 + (BOOL)runsExclusively;
 + (short)workerType;
 + (long long)applicationDataFolderIdentifier;
-@property(retain) NSObject<OS_dispatch_queue> *userInitiatedRequestQueue; // @synthesize userInitiatedRequestQueue=_userInitiatedRequestQueue;
 @property(retain) PHAServiceCancelableOperation *currentOperation; // @synthesize currentOperation=_currentOperation;
 @property(retain, nonatomic) id <PHAAssetResourceDataLoading> dataLoader; // @synthesize dataLoader=_dataLoader;
 @property(nonatomic, getter=isWarmedUp) BOOL warmedUp; // @synthesize warmedUp=_warmedUp;
 - (void).cxx_destruct;
+- (void)pingWorkerWithOptions:(id)arg1 context:(id)arg2 reply:(CDUnknownBlockType)arg3;
 @property(readonly, getter=isQuiescent) BOOL quiescent;
-- (BOOL)allowCooldownForWorkerChange:(id)arg1;
-- (BOOL)workerJobCausesCooldown:(id)arg1;
-- (BOOL)shouldCooldownForConstraintChange:(id)arg1;
-- (BOOL)shouldWarmupForConstraintChange:(id)arg1;
-- (BOOL)warmupBasedOnConstraintChanges;
+- (BOOL)canRunWhenGraphIsLoaded;
 - (id)nextAdditionalJobWithScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
 - (BOOL)hasAdditionalJobsForScenario:(unsigned long long)arg1 requestReason:(unsigned long long)arg2;
 - (BOOL)stopAcknowledgeDeletionsJob:(id)arg1 error:(id *)arg2;
 - (BOOL)startAcknowledgeDeletionsJob:(id)arg1 error:(id *)arg2;
 - (BOOL)stopAnalysisJob:(id)arg1 error:(id *)arg2;
 - (BOOL)startAnalysisJob:(id)arg1 error:(id *)arg2;
+- (void)handleOperation:(id)arg1;
+- (void)operationDidFinish:(id)arg1;
+- (void)operationWillStart:(id)arg1;
 - (void)shutdown;
 - (void)cooldown;
 - (void)warmup;
@@ -52,15 +51,12 @@
 - (void)setLibraryScopedWorkerPreferencesValue:(id)arg1 forKey:(id)arg2;
 - (void)updateLibraryScopedWorkerPreferencesWithEntriesFromDictionary:(id)arg1 keysToRemove:(id)arg2;
 - (id)libraryScopedWorkerPreferences;
-- (void)dispatchAsyncToExecutiveStateQueue:(CDUnknownBlockType)arg1;
 - (void)assertUserInitiatedRequestQueue;
-- (BOOL)dispatchSyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
-- (BOOL)dispatchAsyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
+- (void)dispatchSyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
+- (void)dispatchAsyncToUserInitiatedRequestQueue:(CDUnknownBlockType)arg1;
 - (id)statusAsDictionary;
 @property(readonly) BOOL isEnabled;
-@property(readonly) PHALibraryChangeListener *changeListener;
 @property(readonly) NSURL *persistentStorageDirectoryURL;
-@property(readonly) NSObject<OS_dispatch_queue> *executiveStateQueue;
 @property(readonly) PHPhotoLibrary *photoLibrary;
 @property(readonly) PHAManager *photoAnalysisManager;
 - (id)initWithPhotoAnalysisManager:(id)arg1 dataLoader:(id)arg2;

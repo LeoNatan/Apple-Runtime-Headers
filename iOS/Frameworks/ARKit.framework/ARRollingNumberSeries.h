@@ -6,22 +6,28 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
-
 @interface ARRollingNumberSeries : NSObject
 {
-    NSMutableArray *_series;
+    double *_series;
+    unsigned long long _currentIndex;
+    double _sumVariance;
     unsigned long long _windowSize;
+    unsigned long long _count;
+    double _sum;
+    double _average;
+    double _variance;
 }
 
+@property(readonly, nonatomic) double variance; // @synthesize variance=_variance;
+@property(readonly, nonatomic) double average; // @synthesize average=_average;
+@property(readonly, nonatomic) double sum; // @synthesize sum=_sum;
+@property(readonly, nonatomic) unsigned long long count; // @synthesize count=_count;
 @property(readonly, nonatomic) unsigned long long windowSize; // @synthesize windowSize=_windowSize;
-- (void).cxx_destruct;
 - (void)clear;
 - (void)appendNumber:(double)arg1;
 @property(readonly, nonatomic) double min;
 @property(readonly, nonatomic) double max;
-@property(readonly, nonatomic) unsigned long long count;
-- (id)init;
+- (void)dealloc;
 - (id)initWithWindowSize:(unsigned long long)arg1;
 
 @end

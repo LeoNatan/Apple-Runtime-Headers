@@ -14,6 +14,7 @@
 }
 
 @property(nonatomic) float priority; // @synthesize priority=_priority;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

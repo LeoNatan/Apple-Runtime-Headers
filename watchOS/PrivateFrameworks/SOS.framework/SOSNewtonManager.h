@@ -18,11 +18,17 @@
     CSLSOnWristMonitor *_wristMonitor;
     NSObject<OS_dispatch_semaphore> *_eventProcessingSemaphore;
     NSObject<OS_dispatch_queue> *_eventProcessingQueue;
+    NSString *_HKMedicalIDDidChangeNotification;
+    NSString *_HKUserCharacteristicsDidChangeNotification;
     _Bool _shouldAcceptNewEvents;
     id <SOSNewtonManagerDelegate> _delegate;
     CMAnomalyManager *_coreMotionAnomalyManager;
 }
 
++ (void)checkEligibilityForAutoEnableWithHealthStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)checkEligibilityForAutoEnableWithCompletion:(CDUnknownBlockType)arg1;
++ (void)newtonEligibilityWithHealthStore:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)newtonEligibilityWithCompletion:(CDUnknownBlockType)arg1;
 @property _Bool shouldAcceptNewEvents; // @synthesize shouldAcceptNewEvents=_shouldAcceptNewEvents;
 @property(retain, nonatomic) CMAnomalyManager *coreMotionAnomalyManager; // @synthesize coreMotionAnomalyManager=_coreMotionAnomalyManager;
 @property(nonatomic) __weak id <SOSNewtonManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -40,6 +46,7 @@
 - (void)stopDetection;
 - (void)startDetection;
 - (void)enabledStateChanged;
+- (void)_updateEligibility;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 

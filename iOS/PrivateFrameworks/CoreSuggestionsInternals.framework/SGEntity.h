@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CSPerson, NSData, NSMutableSet, NSSet, NSString, SGDuplicateKey, SGRecordId, SGSimpleTimeRange;
+@class CSPerson, NSData, NSMutableSet, NSSet, NSString, SGDuplicateKey, SGExtractionInfo, SGRecordId, SGSimpleTimeRange;
 
 @interface SGEntity : NSObject
 {
@@ -16,10 +16,12 @@
     unsigned int _state;
     SGRecordId *_recordId;
     SGDuplicateKey *_duplicateKey;
-    unsigned long long _extractionType;
+    SGExtractionInfo *_extractionInfo;
     NSString *_sourceKey;
     NSString *_content;
     NSString *_title;
+    NSString *_authorNickname;
+    NSString *_authorPhotoPath;
     CSPerson *_author;
     struct SGUnixTimestamp_ _creationTimestamp;
     struct SGUnixTimestamp_ _lastModifiedTimestamp;
@@ -29,9 +31,11 @@
     NSMutableSet *_locations;
     long long _masterEntityId;
     long long _groupId;
+    NSString *_operatingSystemVersion;
     struct _NSRange _contentRangeOfInterest;
 }
 
+@property(copy, nonatomic) NSString *operatingSystemVersion; // @synthesize operatingSystemVersion=_operatingSystemVersion;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(nonatomic) long long groupId; // @synthesize groupId=_groupId;
 @property(nonatomic) long long masterEntityId; // @synthesize masterEntityId=_masterEntityId;
@@ -42,11 +46,13 @@
 @property(nonatomic) struct SGUnixTimestamp_ lastModifiedTimestamp; // @synthesize lastModifiedTimestamp=_lastModifiedTimestamp;
 @property(nonatomic) struct SGUnixTimestamp_ creationTimestamp; // @synthesize creationTimestamp=_creationTimestamp;
 @property(retain, nonatomic) CSPerson *author; // @synthesize author=_author;
+@property(copy, nonatomic) NSString *authorPhotoPath; // @synthesize authorPhotoPath=_authorPhotoPath;
+@property(copy, nonatomic) NSString *authorNickname; // @synthesize authorNickname=_authorNickname;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) struct _NSRange contentRangeOfInterest; // @synthesize contentRangeOfInterest=_contentRangeOfInterest;
 @property(copy, nonatomic) NSString *content; // @synthesize content=_content;
 @property(copy, nonatomic) NSString *sourceKey; // @synthesize sourceKey=_sourceKey;
-@property(nonatomic) unsigned long long extractionType; // @synthesize extractionType=_extractionType;
+@property(retain, nonatomic) SGExtractionInfo *extractionInfo; // @synthesize extractionInfo=_extractionInfo;
 @property(retain, nonatomic) SGDuplicateKey *duplicateKey; // @synthesize duplicateKey=_duplicateKey;
 @property(retain, nonatomic) SGRecordId *recordId; // @synthesize recordId=_recordId;
 - (void).cxx_destruct;
@@ -56,6 +62,7 @@
 - (_Bool)isInhuman;
 - (id)templateShortName;
 - (id)extraKeyTag;
+- (_Bool)hasTag:(id)arg1;
 - (id)tags;
 - (void)addTag:(id)arg1;
 - (_Bool)isFromForwardedMessage;

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSError, WFAirQualityConditions, WFLocation, WFWeatherConditions;
+@class NSArray, NSDate, NSError, WFAirQualityConditions, WFLocation, WFWeatherConditions;
 
 @protocol NWKForecastObservable
 - (void)location:(WFLocation *)arg1 isUpdating:(_Bool)arg2 error:(NSError *)arg3;
-- (void)location:(WFLocation *)arg1 update:(unsigned int)arg2 current:(WFWeatherConditions *)arg3 hourly:(NSArray *)arg4 daily:(NSArray *)arg5 airQuality:(WFAirQualityConditions *)arg6;
+- (void)location:(WFLocation *)arg1 token:(unsigned int)arg2 updatedAt:(NSDate *)arg3 current:(WFWeatherConditions *)arg4 hourly:(NSArray *)arg5 daily:(NSArray *)arg6 airQuality:(WFAirQualityConditions *)arg7;
 - (void)connectionAcknowledgedForBulkUpdateOfLocations:(NSArray *)arg1;
 @end
 

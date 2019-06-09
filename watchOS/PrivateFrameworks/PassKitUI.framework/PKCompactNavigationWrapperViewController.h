@@ -4,34 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <PassKitUI/PKWrapperViewController.h>
 
-@interface PKCompactNavigationWrapperViewController : UIViewController
+@interface PKCompactNavigationWrapperViewController : PKWrapperViewController
 {
     _Bool _hasExplicitTargetNavigationHeight;
-    UIViewController *_wrappedViewController;
     float _targetNavigationHeight;
 }
 
 @property(nonatomic) float targetNavigationHeight; // @synthesize targetNavigationHeight=_targetNavigationHeight;
 @property(readonly, nonatomic) _Bool hasExplicitTargetNavigationHeight; // @synthesize hasExplicitTargetNavigationHeight=_hasExplicitTargetNavigationHeight;
-@property(readonly, nonatomic) UIViewController *wrappedViewController; // @synthesize wrappedViewController=_wrappedViewController;
-- (void).cxx_destruct;
 - (struct CGRect)_wrappedViewControllerFrameForBounds:(struct CGRect)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets)arg1;
-- (id)childViewControllerForWhitePointAdaptivityStyle;
-- (id)childViewControllerForScreenEdgesDeferringSystemGestures;
-- (id)childViewControllerForHomeIndicatorAutoHidden;
-- (id)childViewControllerForStatusBarHidden;
-- (id)childViewControllerForStatusBarStyle;
-- (_Bool)extendedLayoutIncludesOpaqueBars;
-- (unsigned int)edgesForExtendedLayout;
-- (void)didMoveToParentViewController:(id)arg1;
-- (void)loadView;
-- (id)initWithViewController:(id)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 @end
 

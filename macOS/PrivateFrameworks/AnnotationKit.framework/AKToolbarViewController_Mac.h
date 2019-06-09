@@ -8,7 +8,7 @@
 
 #import <AnnotationKit/NSPopoverDelegate-Protocol.h>
 
-@class AKLineStylesViewController_Mac, AKTextAttributesViewController, AKToolbarButtonItem_Mac, AKToolbarColorWellItem_Mac, NSMenu, NSMutableSet, NSPopover, NSString, NSView, NSWindow;
+@class AKLineStylesViewController_Mac, AKTextAttributesViewController, AKToolbarButtonItem_Mac, AKToolbarColorWellItem_Mac, AKToolbarSeparatorItem_Mac, NSMenu, NSMutableSet, NSPopover, NSString, NSView, NSWindow;
 
 @interface AKToolbarViewController_Mac : AKToolbarViewController <NSPopoverDelegate>
 {
@@ -29,6 +29,9 @@
     AKToolbarButtonItem_Mac *_cropButton;
     AKToolbarColorWellItem_Mac *_strokeColorWell;
     AKToolbarColorWellItem_Mac *_fillColorWell;
+    AKToolbarSeparatorItem_Mac *_sidecarLeftSeparator;
+    AKToolbarButtonItem_Mac *_sidecarButton;
+    AKToolbarSeparatorItem_Mac *_sidecarRightSeparator;
     NSMutableSet *_noteButtons;
     NSMutableSet *_highlightControls;
     NSView *_applyCropButton;
@@ -54,6 +57,7 @@
 @property(retain) NSView *simpleRotateRightButton; // @synthesize simpleRotateRightButton=_simpleRotateRightButton;
 @property(retain) NSView *simpleRotateLeftButton; // @synthesize simpleRotateLeftButton=_simpleRotateLeftButton;
 @property(retain) NSView *simpleHighlightButton; // @synthesize simpleHighlightButton=_simpleHighlightButton;
+@property(retain) NSView *sidecarButton; // @synthesize sidecarButton=_sidecarButton;
 @property(retain) NSView *fillColorWell; // @synthesize fillColorWell=_fillColorWell;
 @property(retain) NSView *strokeColorWell; // @synthesize strokeColorWell=_strokeColorWell;
 @property(readonly) NSView *applyCropButton; // @synthesize applyCropButton=_applyCropButton;
@@ -67,6 +71,8 @@
 @property(retain) NSView *textToolButton; // @synthesize textToolButton=_textToolButton;
 @property(retain) NSView *shapesButton; // @synthesize shapesButton=_shapesButton;
 - (void).cxx_destruct;
+- (void)sidecarConnectionUpdated:(id)arg1;
+- (void)sidecarDevicesUpdated:(id)arg1;
 - (void)windowWillCloseNotification:(id)arg1;
 - (void)_showSignaturesCreationWindow;
 - (void)_signatureMenuItemSelected:(id)arg1;
@@ -83,6 +89,8 @@
 - (void)setStrokeColorUIDisplayToColor:(id)arg1;
 - (void)setFillColorUIDisplayToColor:(id)arg1;
 - (void)revalidateItems;
+- (void)sidecarDeviceSelected:(id)arg1;
+- (void)sidecarButtonPressed:(id)arg1;
 - (void)signatureButtonClicked:(id)arg1;
 - (void)doodleButtonClicked:(id)arg1;
 - (void)applyCropButtonClicked:(id)arg1;

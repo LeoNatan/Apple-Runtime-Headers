@@ -32,8 +32,7 @@
 @property(getter=isPlaying) BOOL playing;
 - (void)controlsViewDidDisappear;
 - (void)controlsViewWillAppear;
-- (void)cancelThumbnailAndAudioAmplitudeSampleGeneration;
-- (void)generateTouchBarAudioAmplitudeSamples:(long long)arg1 completionHandler:(void (^)(NSArray *))arg2;
+- (void)cancelThumbnailGeneration;
 - (void)generateTouchBarThumbnailsForTimes:(NSArray *)arg1 tolerance:(double)arg2 size:(struct CGSize)arg3 thumbnailHandler:(void (^)(NSArray *, BOOL))arg4;
 - (void)endTouchBarScrubbing;
 - (void)beginTouchBarScrubbing;

@@ -6,9 +6,9 @@
 
 #import <HealthDaemon/NSObject-Protocol.h>
 
-@class HDXPCClient;
+@class HDHealthStoreClient;
 
 @protocol HDClientDataCollectionObservationStateMonitorDelegate <NSObject>
-- (void)dataCollectionObservationStateDidChangeForClient:(HDXPCClient *)arg1;
+- (void)dataCollectionObservationStateDidChangeForClient:(HDHealthStoreClient *)arg1;
 @end
 

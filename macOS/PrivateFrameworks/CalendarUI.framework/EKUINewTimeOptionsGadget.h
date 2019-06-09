@@ -9,12 +9,13 @@
 #import <CalendarUI/EKUINewTimeOptionViewDelegate-Protocol.h>
 #import <CalendarUI/EKUIShowMoreOptionViewDelegate-Protocol.h>
 
-@class CalUIControlView, EKEvent, EKInviteeAlternativeTimeSearcher, EKUINewTimeOptionView, EKUIShowMoreOptionView, NSArray, NSDate, NSStackView, NSString, NSView;
+@class CalUIControlView, EKEvent, EKInviteeAlternativeTimeSearcher, EKUINewTimeOptionView, EKUIProposedTimeDateTimeGadget, EKUIShowMoreOptionView, NSArray, NSDate, NSStackView, NSString, NSView;
 
 @interface EKUINewTimeOptionsGadget : EKUISingleViewGadget <EKUINewTimeOptionViewDelegate, EKUIShowMoreOptionViewDelegate>
 {
     BOOL _hasAvailabilityResults;
     CalUIControlView *_container;
+    EKUIProposedTimeDateTimeGadget *_proposedTimeDateTimeGadget;
     NSStackView *_containerStackView;
     NSStackView *_allInviteesStackView;
     NSStackView *_someInviteesStackView;
@@ -51,6 +52,7 @@
 @property(retain) NSStackView *someInviteesStackView; // @synthesize someInviteesStackView=_someInviteesStackView;
 @property(retain) NSStackView *allInviteesStackView; // @synthesize allInviteesStackView=_allInviteesStackView;
 @property(retain) NSStackView *containerStackView; // @synthesize containerStackView=_containerStackView;
+@property(retain) EKUIProposedTimeDateTimeGadget *proposedTimeDateTimeGadget; // @synthesize proposedTimeDateTimeGadget=_proposedTimeDateTimeGadget;
 @property(retain) CalUIControlView *container; // @synthesize container=_container;
 - (void).cxx_destruct;
 - (void)showMoreOptionsForView:(id)arg1;

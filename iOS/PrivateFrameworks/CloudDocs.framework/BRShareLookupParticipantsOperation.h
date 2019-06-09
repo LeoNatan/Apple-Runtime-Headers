@@ -14,6 +14,7 @@
     CDUnknownBlockType _lookupParticipantsCompletionBlock;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType lookupParticipantsCompletionBlock; // @synthesize lookupParticipantsCompletionBlock=_lookupParticipantsCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

@@ -27,8 +27,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) float _legacyButtonFontSize;
 @property(readonly, nonatomic) float _legacyRightTitleMargin;
 @property(readonly, nonatomic) float _legacyLeftTitleMargin;
-@property(readonly, nonatomic) float _legacyRightEdgeMargin;
-@property(readonly, nonatomic) float _legacyLeftEdgeMargin;
 - (id)defaultTitleColorForUserInterfaceStyle:(int)arg1 barStyle:(int)arg2;
 - (float)imageButtonMarginInNavigationBar:(id)arg1;
 - (float)textButtonMarginInNavigationBar:(id)arg1;

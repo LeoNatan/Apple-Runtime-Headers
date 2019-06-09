@@ -17,7 +17,7 @@
 - (NSString *)meNodeIdentifier;
 - (NSArray *)groupArraysFromGroupIdSets:(NSArray *)arg1 dateFilter:(PSIDateFilter *)arg2 progressBlock:(void (^)(double, _Bool *))arg3;
 - (NSArray *)wordEmbeddingMatchesForToken:(NSString *)arg1;
-- (PSIGroupResult *)groupResultWithDateFilter:(PSIDateFilter *)arg1;
+- (PSIGroupResult *)groupResultWithDateFilter:(PSIDateFilter *)arg1 datedTokens:(NSArray *)arg2;
 - (PSIGroup *)groupWithMatchingGroupId:(unsigned long long)arg1 dateFilter:(PSIDateFilter *)arg2;
 - (const struct __CFSet *)groupIdsMatchingString:(NSString *)arg1 categories:(NSIndexSet *)arg2 textIsSearchable:(_Bool)arg3;
 - (void)executeQuery:(PSIQuery *)arg1 resultsHandler:(void (^)(NSArray *))arg2;

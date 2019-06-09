@@ -6,15 +6,20 @@
 
 #import <objc/NSObject.h>
 
+#import <EmailAddressing/NSSecureCoding-Protocol.h>
+
 @class NSString;
 
-@interface _EAEmailAddress : NSObject
+@interface _EAEmailAddress : NSObject <NSSecureCoding>
 {
     NSString *_emailAddress;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *emailAddress; // @synthesize emailAddress=_emailAddress;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *rawAddress;

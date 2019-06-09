@@ -8,5 +8,8 @@
 
 @interface NSCoder (PBSDisplayAssistantPresentationRequest)
 - (id)pbs_decodeDisplayModeForKey:(id)arg1;
+- (id)decodeUserInfoForKey:(id)arg1;
+- (id)decodeDisplayModeForKey:(id)arg1;
+- (id)decodeNumberForKey:(id)arg1;
 @end
 

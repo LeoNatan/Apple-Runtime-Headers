@@ -12,9 +12,10 @@ __attribute__((visibility("hidden")))
 }
 
 - (_Bool)isEstimate;
+- (id)_fetchDownloadInfoForItems:(id)arg1;
 - (id)itemList;
 - (id)recommendation;
-- (id)libraryIdentifiersForContainerType:(unsigned int)arg1;
+- (id)identifiersForContainerType:(unsigned int)arg1;
 
 @end
 

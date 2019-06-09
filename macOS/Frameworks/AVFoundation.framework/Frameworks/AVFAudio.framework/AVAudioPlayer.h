@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioFormat, NSData, NSDictionary, NSString, NSURL;
+@class AVAudioFormat, NSArray, NSData, NSDictionary, NSString, NSURL;
 @protocol AVAudioPlayerDelegate;
 
 @interface AVAudioPlayer : NSObject
@@ -16,6 +16,7 @@
 
 - (void)setMixToUplink:(BOOL)arg1;
 - (BOOL)mixToUplink;
+@property(copy, nonatomic) NSArray *channelAssignments;
 @property(copy) NSString *currentDevice;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;
@@ -33,7 +34,7 @@
 @property(readonly) double duration;
 @property(readonly) AVAudioFormat *format;
 @property(readonly) NSDictionary *settings;
-@property id <AVAudioPlayerDelegate> delegate;
+@property __weak id <AVAudioPlayerDelegate> delegate;
 @property(readonly) NSData *data;
 @property(readonly) NSURL *url;
 @property(readonly, getter=isPlaying) BOOL playing;

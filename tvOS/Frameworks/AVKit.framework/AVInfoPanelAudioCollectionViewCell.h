@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint, NSString, UIImage, UIImageView, UILabel, UIStackView;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelAudioCollectionViewCell : UICollectionViewCell
 {
     UIStackView *_stackView;

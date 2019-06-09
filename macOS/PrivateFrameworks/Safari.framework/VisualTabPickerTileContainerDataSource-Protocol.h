@@ -10,7 +10,7 @@
 
 @protocol VisualTabPickerTileContainerDataSource <NSObject>
 - (NSImage *)siteIconForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1;
-- (int)muteButtonStateForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1;
+- (long long)muteButtonStateForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1;
 - (BOOL)visualTabPickerTileContainerViewShouldShowMuteButton:(VisualTabPickerTileContainerView *)arg1;
 - (struct CGRect)visibleBoundsForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1;
 - (NSView *)tileViewForVisualTabPickerTileContainerView:(VisualTabPickerTileContainerView *)arg1 lowResolution:(BOOL)arg2;

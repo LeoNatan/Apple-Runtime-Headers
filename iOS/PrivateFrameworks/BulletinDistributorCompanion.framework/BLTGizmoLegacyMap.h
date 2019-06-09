@@ -11,11 +11,14 @@
 
 @interface BLTGizmoLegacyMap : NSObject
 {
+    NSMutableDictionary *_gizmoBulletinKeyMap;
     NSMutableDictionary *_phoneBulletinKeyMap;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
+- (id)gizmoPublisherBulletinIDForPhoneKey:(id)arg1;
+- (id)phonePublisherBulletinIDForGizmoKey:(id)arg1;
 - (id)categoryIDForBulletinKey:(id)arg1;
 - (void)unmapBulletin:(id)arg1;
 - (void)mapBulletin:(id)arg1 bulletinMapProperty:(unsigned long long)arg2;

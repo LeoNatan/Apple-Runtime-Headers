@@ -10,6 +10,7 @@
 
 @class NSData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OISFUMemoryInputStream : NSObject <OISFUBufferedInputStream>
 {
     NSData *mData;

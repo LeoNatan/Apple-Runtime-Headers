@@ -40,7 +40,6 @@
 - (_Bool)createDirectoryAtURL:(id)arg1 withIntermediateDirectories:(_Bool)arg2 attributes:(id)arg3 error:(id *)arg4;
 - (_Bool)createDirectoryAtPath:(id)arg1 withIntermediateDirectories:(_Bool)arg2 attributes:(id)arg3 error:(id *)arg4;
 - (_Bool)setAttributes:(id)arg1 ofItemAtPath:(id)arg2 error:(id *)arg3;
-- (_Bool)trashItemAtURL:(id)arg1 resultingItemURL:(id *)arg2 error:(id *)arg3;
 - (_Bool)removeItemAtURL:(id)arg1 error:(id *)arg2;
 - (_Bool)removeItemAtPath:(id)arg1 error:(id *)arg2;
 - (_Bool)filesystemItemRemoveOperation:(id)arg1 shouldProceedAfterError:(id)arg2 removingItemAtPath:(id)arg3;
@@ -99,7 +98,6 @@
 - (_Bool)getRelationship:(long long *)arg1 ofDirectory:(unsigned long long)arg2 inDomain:(unsigned long long)arg3 toItemAtURL:(id)arg4 error:(id *)arg5;
 - (_Bool)getRelationship:(long long *)arg1 ofDirectoryAtURL:(id)arg2 toItemAtURL:(id)arg3 error:(id *)arg4;
 - (id)URLForDirectory:(unsigned long long)arg1 inDomain:(unsigned long long)arg2 appropriateForURL:(id)arg3 create:(_Bool)arg4 error:(id *)arg5;
-- (id)_URLForTrashingItemAtURL:(id)arg1 create:(_Bool)arg2 error:(id *)arg3;
 - (id)_URLForReplacingItemAtURL:(id)arg1 error:(id *)arg2;
 - (id)URLsForDirectory:(unsigned long long)arg1 inDomains:(unsigned long long)arg2;
 - (id)contentsOfDirectoryAtURL:(id)arg1 includingPropertiesForKeys:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;

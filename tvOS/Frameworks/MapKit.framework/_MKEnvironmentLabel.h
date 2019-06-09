@@ -6,13 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class CAShapeLayer, NSString, UILabel;
+@class NSString, UILabel;
 
 __attribute__((visibility("hidden")))
 @interface _MKEnvironmentLabel : UIView
 {
     UILabel *_label;
-    CAShapeLayer *_roundedCorner;
 }
 
 - (void).cxx_destruct;

@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)imageTypeConverterForType:(id)arg1;
-- (void)pasteboard:(id)arg1 provideDataForType:(id)arg2;
 - (id)_convertImageData:(id)arg1 toDataOfType:(id)arg2;
 - (void)dealloc;
 - (id)initWithType:(id)arg1;

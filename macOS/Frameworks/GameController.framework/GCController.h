@@ -6,13 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class GCExtendedGamepad, GCGamepad, GCMicroGamepad, GCMotion, NSArray, NSString;
+@class GCExtendedGamepad, GCGamepad, GCMicroGamepad, GCMotion, NSMutableArray, NSString;
 @protocol GCNamedProfile, OS_dispatch_queue;
 
 @interface GCController : NSObject
 {
+    NSString *_description;
+    BOOL _allHIDDevicesConnected;
+    BOOL _forwarded;
+    BOOL _snapshot;
+    BOOL _physicalDeviceUsesCompass;
+    BOOL _published;
+    unsigned int _service;
+    NSString *_vendorName;
+    NSString *_debugName;
+    CDUnknownBlockType _controllerPausedHandler;
+    NSObject<OS_dispatch_queue> *_handlerQueue;
+    long long _playerIndex;
+    NSString *_productCategory;
+    id <GCNamedProfile> _profile;
+    NSMutableArray *_hidServices;
+    struct IOUSBDeviceStruct942 **_device;
+    NSString *_physicalDeviceUniqueID;
+    unsigned long long _deviceHash;
 }
 
++ (BOOL)supportsSecureCoding;
++ (id)controllerWithExtendedGamepad;
++ (id)controllerWithMicroGamepad;
 + (void)stopWirelessControllerDiscovery;
 + (void)startWirelessControllerDiscoveryWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (void)_startWirelessControllerDiscoveryWithCompanions:(BOOL)arg1 btClassic:(BOOL)arg2 btle:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -29,30 +50,48 @@
 + (void)__openXPC_and_CBApplicationDidBecomeActive__;
 + (void)__openXPC__;
 + (void)__open__;
-@property(retain, nonatomic) NSString *physicalDeviceUniqueID;
-@property(nonatomic) BOOL physicalDeviceUsesCompass;
-@property(readonly, nonatomic) unsigned int service;
-@property(readonly, nonatomic) struct IOUSBDeviceStruct **device;
-@property(retain, nonatomic) id <GCNamedProfile> profile;
+@property(getter=isPublished) BOOL published; // @synthesize published=_published;
+@property(nonatomic) unsigned long long deviceHash; // @synthesize deviceHash=_deviceHash;
+@property(nonatomic) BOOL physicalDeviceUsesCompass; // @synthesize physicalDeviceUsesCompass=_physicalDeviceUsesCompass;
+@property(retain, nonatomic) NSString *physicalDeviceUniqueID; // @synthesize physicalDeviceUniqueID=_physicalDeviceUniqueID;
+@property(nonatomic) unsigned int service; // @synthesize service=_service;
+@property(nonatomic) struct IOUSBDeviceStruct942 **device; // @synthesize device=_device;
+@property(retain, nonatomic) NSMutableArray *hidServices; // @synthesize hidServices=_hidServices;
+@property(retain, nonatomic) id <GCNamedProfile> profile; // @synthesize profile=_profile;
+@property(retain, nonatomic) NSString *productCategory; // @synthesize productCategory=_productCategory;
+@property(nonatomic) long long playerIndex; // @synthesize playerIndex=_playerIndex;
+@property(readonly, getter=isSnapshot) BOOL snapshot; // @synthesize snapshot=_snapshot;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *handlerQueue; // @synthesize handlerQueue=_handlerQueue;
+@property(copy, nonatomic) CDUnknownBlockType controllerPausedHandler; // @synthesize controllerPausedHandler=_controllerPausedHandler;
+@property(copy, nonatomic) NSString *debugName; // @synthesize debugName=_debugName;
+- (void).cxx_destruct;
+- (void)clearServiceRef;
+- (void)encodeWithCoder:(id)arg1;
+- (void)dealloc;
+- (void)_setSnapshot:(BOOL)arg1;
+- (id)capture;
+- (id)description;
 @property(readonly, retain, nonatomic) GCMotion *motion;
 @property(readonly, retain, nonatomic) GCExtendedGamepad *extendedGamepad;
 @property(readonly, retain, nonatomic) GCMicroGamepad *microGamepad;
 @property(readonly, retain, nonatomic) GCGamepad *gamepad;
-- (BOOL)isForwarded;
 - (unsigned int)sampleRate;
 - (void)addServiceRefs:(id)arg1;
 - (void)removeServiceRef:(struct __IOHIDServiceClient *)arg1;
 - (void *)createInputBufferForDevice:(struct __IOHIDDevice *)arg1 withSize:(unsigned long long)arg2;
 - (BOOL)hasServiceRef:(struct __IOHIDServiceClient *)arg1;
 - (BOOL)isEqualToController:(id)arg1;
-@property(readonly, retain, nonatomic) NSArray *hidServices;
 - (BOOL)supportsMotionLite;
-- (unsigned long long)deviceHash;
-@property(nonatomic) long long playerIndex;
 @property(readonly, nonatomic, getter=isAttachedToDevice) BOOL attachedToDevice;
-@property(readonly, copy, nonatomic) NSString *vendorName;
-@property(retain) NSObject<OS_dispatch_queue> *handlerQueue;
-@property(copy, nonatomic) CDUnknownBlockType controllerPausedHandler;
+@property(getter=areAllHIDDevicesConnected) BOOL allHIDDevicesConnected; // @synthesize allHIDDevicesConnected=_allHIDDevicesConnected;
+@property(copy, nonatomic) NSString *vendorName; // @synthesize vendorName=_vendorName;
+- (BOOL)displayTrueSiriRemoteName;
+@property(nonatomic, getter=isForwarded) BOOL forwarded; // @synthesize forwarded=_forwarded;
+- (id)initWithUSBDevice:(struct IOUSBDeviceStruct942 **)arg1 service:(unsigned int)arg2;
+- (id)initWithServiceRef:(struct __IOHIDServiceClient *)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithProfile:(id)arg1;
+@property(copy, nonatomic) CDUnknownBlockType __deprecated_controllerPausedHandler;
 
 @end
 

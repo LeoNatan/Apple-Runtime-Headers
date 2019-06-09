@@ -6,6 +6,7 @@
 
 #import <Shortcut/SCTGRLResolver.h>
 
+__attribute__((visibility("hidden")))
 @interface SCTGUIStateGRLResolver : SCTGRLResolver
 {
 }

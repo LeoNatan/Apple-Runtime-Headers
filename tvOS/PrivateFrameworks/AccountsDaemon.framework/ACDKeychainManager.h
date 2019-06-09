@@ -45,7 +45,7 @@
 + (void)_accountTypeIdentifierFromComponents:(id)arg1 handler:(CDUnknownBlockType)arg2;
 + (void)componentsFromKeychainServiceName:(id)arg1 handler:(CDUnknownBlockType)arg2;
 + (id)keychainServiceNameForClientID:(id)arg1 accountTypeIdentifier:(id)arg2 additionalAccountTypeSegment:(id)arg3 key:(id)arg4;
-+ (void)_removeCredentialItemWithKey:(id)arg1 forAccountWithID:(id)arg2 username:(id)arg3 accountTypeID:(id)arg4 clientID:(id)arg5 options:(id)arg6 error:(id *)arg7;
++ (_Bool)_removeCredentialItemWithKey:(id)arg1 forAccountWithID:(id)arg2 username:(id)arg3 accountTypeID:(id)arg4 clientID:(id)arg5 options:(id)arg6 error:(id *)arg7;
 + (void)removeCredentialForAccount:(id)arg1 key:(id)arg2 error:(id *)arg3;
 + (void)_removeCredentialForAccountWithUsername:(id)arg1 accountQualifiedUsername:(id)arg2 accountIdentifier:(id)arg3 accountTypeIdentifier:(id)arg4 credentialType:(id)arg5 clientID:(id)arg6 options:(id)arg7 error:(id *)arg8;
 + (void)removeCredentialForAccount:(id)arg1 clientID:(id)arg2 error:(id *)arg3;
@@ -67,6 +67,8 @@
 + (id)credentialForManagedAccountObject:(id)arg1 clientID:(id)arg2;
 + (id)credentialForManagedAccountObject:(id)arg1 clientID:(id)arg2 error:(id *)arg3;
 + (id)_fetchOptionsForAccount:(id)arg1;
++ (void)setServer:(id)arg1;
++ (id)server;
 + (void)initialize;
 
 @end

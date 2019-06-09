@@ -18,6 +18,7 @@
         unsigned int audioRoute:1;
         unsigned int destinationType:1;
         unsigned int preferredCallProvider:1;
+        unsigned int recordTypeForRedialing:1;
         unsigned int ttyType:1;
     } _has;
     int _audioRoute;
@@ -25,14 +26,17 @@
     int _destinationType;
     _INPBIntentMetadata *_intentMetadata;
     int _preferredCallProvider;
+    int _recordTypeForRedialing;
     NSArray *_targetContacts;
     int _ttyType;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)targetContactsType;
 + (Class)contactType;
 @property(nonatomic) int ttyType; // @synthesize ttyType=_ttyType;
 @property(copy, nonatomic) NSArray *targetContacts; // @synthesize targetContacts=_targetContacts;
+@property(nonatomic) int recordTypeForRedialing; // @synthesize recordTypeForRedialing=_recordTypeForRedialing;
 @property(nonatomic) int preferredCallProvider; // @synthesize preferredCallProvider=_preferredCallProvider;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 @property(nonatomic) int destinationType; // @synthesize destinationType=_destinationType;
@@ -43,6 +47,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (int)StringAsTTYType:(id)arg1;
@@ -52,6 +58,9 @@
 @property(readonly, nonatomic) unsigned int targetContactsCount;
 - (void)addTargetContacts:(id)arg1;
 - (void)clearTargetContacts;
+- (int)StringAsRecordTypeForRedialing:(id)arg1;
+- (id)recordTypeForRedialingAsString:(int)arg1;
+@property(nonatomic) _Bool hasRecordTypeForRedialing;
 - (int)StringAsPreferredCallProvider:(id)arg1;
 - (id)preferredCallProviderAsString:(int)arg1;
 @property(nonatomic) _Bool hasPreferredCallProvider;

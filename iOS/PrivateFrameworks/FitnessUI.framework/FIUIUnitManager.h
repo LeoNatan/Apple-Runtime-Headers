@@ -46,7 +46,6 @@
 - (void)_storePreferredUnitsInDefaults:(id)arg1;
 - (void)_localeDidChange:(id)arg1;
 - (void)_userPreferencesDidChange:(id)arg1;
-- (void)dealloc;
 - (id)initWithHealthStore:(id)arg1;
 
 @end

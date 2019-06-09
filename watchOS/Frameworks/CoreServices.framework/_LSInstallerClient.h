@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic, getter=isUninstaller) _Bool uninstaller; // @synthesize uninstaller=_uninstaller;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *operationTypeString; // @dynamic operationTypeString;
 - (void)_invalidate;
 - (void)_waitForAllCallbackMessagesToExecute;
@@ -44,7 +45,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) _Bool allCallbacksDeleviered; // @synthesize allCallbacksDeleviered=_allCallbacksDeleviered;
 - (void)callbackDeliveryComplete;
 - (void)updateCallbackWithData:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

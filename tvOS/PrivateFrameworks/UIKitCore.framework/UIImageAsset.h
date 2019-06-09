@@ -27,24 +27,31 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)_assetGeneratingImagesWithDrawingBlock:(CDUnknownBlockType)arg1;
++ (id)_dynamicAssetNamed:(id)arg1 generator:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) CUINamedLayerStack *_layerStack; // @synthesize _layerStack=__layerStack;
 @property(copy, nonatomic) NSString *assetName; // @synthesize assetName=_assetName;
 @property(copy, nonatomic) CDUnknownBlockType creationBlock; // @synthesize creationBlock=_creationBlock;
 @property(readonly, nonatomic) __weak _UIAssetManager *_assetManager; // @synthesize _assetManager;
 - (void).cxx_destruct;
+- (id)_registeredAppearanceNames;
+- (id)_lookUpRegisteredObjectForTraitCollection:(id)arg1 withAccessorWithAppearanceName:(CDUnknownBlockType)arg2;
 - (void)_disconnectFromAssetManager;
 - (_Bool)_containsImagesInPath:(id)arg1;
 - (void)_clearResolvedImageResources;
-- (id)_defaultTraitCollection;
+@property(readonly, nonatomic) UITraitCollection *_defaultTraitCollection;
 - (id)_mutableCatalog;
-- (id)_updateAssetFromBlockGenerationWithTraitCollection:(id)arg1 resolvedCatalogImage:(id)arg2;
-- (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2 cache:(_Bool)arg3;
+- (id)_updateAssetFromBlockGenerationWithConfiguration:(id)arg1 resolvedCatalogImage:(id)arg2;
+- (void)_registerImage:(id)arg1 withConfiguration:(id)arg2;
+- (void)_registerImage:(id)arg1 withTraitCollection:(id)arg2;
 - (id)_nameForStoringRuntimeRegisteredImagesInMutableCatalog;
 - (_Bool)isEqual:(id)arg1;
 - (void)unregisterImageWithTraitCollection:(id)arg1;
+- (void)unregisterImageWithConfiguration:(id)arg1;
+- (void)registerImage:(id)arg1 withConfiguration:(id)arg2;
 - (void)registerImage:(id)arg1 withTraitCollection:(id)arg2;
+- (id)imageWithConfiguration:(id)arg1;
 - (id)imageWithTraitCollection:(id)arg1;
+- (id)_symbolConfiguration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

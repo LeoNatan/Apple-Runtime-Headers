@@ -11,6 +11,8 @@
 + (id)hk_componentsWithDays:(int)arg1;
 + (id)hk_oneWeek;
 + (id)hk_oneDay;
+- (int)hk_ageWithCurrentDate:(id)arg1;
+- (id)hk_negativeComponents;
 - (id)hk_translateDateComponentsToCalendar:(id)arg1 calendarUnits:(unsigned int)arg2;
 - (id)hk_populatedCalendarGregorianCalendarDefault;
 - (int)hk_maxComponentValue;

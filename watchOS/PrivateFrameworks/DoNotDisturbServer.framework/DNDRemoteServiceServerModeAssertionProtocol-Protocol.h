@@ -11,8 +11,9 @@
 @protocol DNDRemoteServiceServerModeAssertionProtocol <NSObject>
 - (void)registerForAssertionUpdatesWithRequestDetails:(DNDRequestDetails *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)invalidateAllActiveModeAssertionsWithRequestDetails:(DNDRequestDetails *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
+- (void)getLatestModeAssertionInvalidationWithRequestDetails:(DNDRequestDetails *)arg1 completionHandler:(void (^)(DNDModeAssertionInvalidation *, NSError *))arg2;
 - (void)getActiveModeAssertionWithRequestDetails:(DNDRequestDetails *)arg1 completionHandler:(void (^)(DNDModeAssertion *, NSError *))arg2;
 - (void)invalidateActiveModeAssertionWithRequestDetails:(DNDRequestDetails *)arg1 completionHandler:(void (^)(DNDModeAssertionInvalidation *, NSError *))arg2;
-- (void)takeModeAssertionWithDetails:(DNDModeAssertionDetails *)arg1 requestDetails:(DNDRequestDetails *)arg2 completionHandler:(void (^)(DNDModeAssertion *, DNDModeAssertionInvalidation *, NSError *))arg3;
+- (void)takeModeAssertionWithDetails:(DNDModeAssertionDetails *)arg1 requestDetails:(DNDRequestDetails *)arg2 completionHandler:(void (^)(DNDModeAssertion *, NSError *))arg3;
 @end
 

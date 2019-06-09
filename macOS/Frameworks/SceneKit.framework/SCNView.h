@@ -25,6 +25,7 @@
     unsigned int _rendersContinuously:1;
     unsigned int _firstDrawDone:1;
     unsigned int _drawOnMainThreadPending:1;
+    unsigned int _viewIsOffscreen:1;
     unsigned int _inRenderQueueForLayerBackedGLRendering:1;
     unsigned int _disableLinearRendering:1;
     unsigned int _isInLiveResize:1;
@@ -33,6 +34,7 @@
     SCNRenderer *_renderer;
     SCNScene *_scene;
     BOOL _displayLinkCreationRequested;
+    BOOL _skipFramesIfNoDrawableAvailable;
     SCNDisplayLink *_displayLink;
     long long _preferredFramePerSeconds;
     CALayer *_backingLayer;
@@ -40,6 +42,7 @@
     SCNRecursiveLock *_lock;
     NSColor *_backgroundColor;
     struct CGSize _boundsSize;
+    BOOL _asynchronousResizing;
     char *_snapshotImageData;
     unsigned long long _snapshotImageDataLength;
     id <SCNEventHandler> _navigationCameraController;
@@ -85,7 +88,6 @@
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
-- (void)drawForMetalBackingLayer;
 - (void)_drawInBackingLayerWithCGLContext:(struct _CGLContextObject *)arg1 atTime:(double)arg2;
 - (id)makeBackingLayer;
 - (void)setWantsLayer:(BOOL)arg1;
@@ -129,6 +131,8 @@
 - (BOOL)_showsAuthoringEnvironment;
 @property(nonatomic) unsigned long long debugOptions;
 - (void)_updateProbes:(id)arg1 withProgress:(id)arg2;
+- (void)set_enableARMode:(BOOL)arg1;
+- (BOOL)_enableARMode;
 - (void)set_disableLinearRendering:(BOOL)arg1;
 - (BOOL)_disableLinearRendering;
 - (void)set_enablesDeferredShading:(BOOL)arg1;
@@ -144,6 +148,7 @@
 @property(nonatomic) BOOL showsStatistics;
 - (void)_sceneDidUpdate:(id)arg1;
 - (void)_systemTimeAnimationStarted:(id)arg1;
+@property(nonatomic) BOOL usesReverseZ;
 - (void)_setNeedsDisplay;
 @property(nonatomic) long long preferredFramesPerSecond;
 - (BOOL)_checkAndUpdateDisplayLinkStateIfNeeded;
@@ -177,7 +182,7 @@
 - (id)navigationCameraController;
 - (id)eventHandler;
 - (void)setEventHandler:(id)arg1;
-@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (struct SCNVector3)unprojectPoint:(struct SCNVector3)arg1;
 - (struct SCNVector3)projectPoint:(struct SCNVector3)arg1;
@@ -201,6 +206,7 @@
 @property(readonly, nonatomic) AVAudioEngine *audioEngine;
 - (id)pointOfCulling;
 - (void)setPointOfCulling:(id)arg1;
+@property(readonly, nonatomic) struct CGRect currentViewport;
 @property(retain, nonatomic) SCNNode *pointOfView;
 - (void)setPointOfView:(id)arg1 animate:(BOOL)arg2;
 - (void)setWantsBestResolutionOpenGLSurface:(BOOL)arg1;
@@ -208,6 +214,7 @@
 - (void)_reshape;
 - (void)_drawAtTime:(double)arg1 WithContext:(struct _CGLContextObject *)arg2;
 - (struct CGSize)_updateBackingSize;
+- (struct CGSize)backingSizeForBoundSize:(struct CGSize)arg1;
 - (void)_updateContentsScaleFactor;
 - (void)_resetContentsScaleFactor;
 - (BOOL)_shouldInheritContentsScale:(float)arg1;
@@ -215,9 +222,14 @@
 - (void)SCN_displayLinkCallback:(double)arg1;
 - (id)_renderingQueue;
 - (BOOL)scn_inLiveResize;
+- (void)setAsynchronousResizing:(BOOL)arg1;
+- (BOOL)asynchronousResizing;
+@property BOOL drawableResizesAsynchronously;
+- (void)_scnUpdateContentsGravity;
 - (BOOL)_canJitter;
 - (BOOL)_supportsJitteringSyncRedraw;
 - (void)_jitterRedisplayWithContext:(struct _CGLContextObject *)arg1;
+@property(nonatomic, getter=isTemporalAntialiasingEnabled) BOOL temporalAntialiasingEnabled;
 @property(nonatomic, getter=isJitteringEnabled) BOOL jitteringEnabled;
 - (void)scn_setBackingLayer:(id)arg1;
 - (id)scn_backingLayer;
@@ -228,6 +240,8 @@
 - (void)set_screenTransform:(struct CATransform3D)arg1;
 - (double)_superSamplingFactor;
 - (void)set_superSamplingFactor:(double)arg1;
+- (void)setSkipFramesIfNoDrawableAvailable:(BOOL)arg1;
+- (BOOL)skipFramesIfNoDrawableAvailable;
 @property(retain, nonatomic) SCNScene *scene;
 - (void)presentScene:(id)arg1 withTransition:(id)arg2 incomingPointOfView:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)dealloc;

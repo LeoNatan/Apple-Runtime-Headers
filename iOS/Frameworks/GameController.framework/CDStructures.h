@@ -10,6 +10,18 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct GCExtendedGamepadElementInitInfo {
+    _Bool _field1;
+    _Bool _field2;
+};
+
+struct GCExtendedGamepadInitWithControllerInitInfo {
+    _Bool _field1;
+    _Bool _field2;
+    _Bool _field3;
+    struct GCExtendedGamepadElementInitInfo _field4[16];
+};
+
 struct GCQuaternion {
     double x;
     double y;

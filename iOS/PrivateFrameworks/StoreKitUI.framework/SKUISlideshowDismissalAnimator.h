@@ -10,6 +10,7 @@
 
 @class NSString, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUISlideshowDismissalAnimator : NSObject <UIViewControllerAnimatorTransitioning>
 {
     UIImageView *_imageView;

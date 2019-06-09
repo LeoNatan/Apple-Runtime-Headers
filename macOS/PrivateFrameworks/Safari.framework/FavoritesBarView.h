@@ -67,7 +67,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_dragSourceIndexMatchesDropIndex:(unsigned long long)arg1;
 - (unsigned long long)_dropIndexForProposedDropIndex:(unsigned long long)arg1;
 - (id)_addButtonForBookmark:(id)arg1;
-- (void)_createTab:(id)arg1;
 - (void)_setUpStartPageButtonIfNeeded;
 - (void)controlTextDidEndEditing:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;

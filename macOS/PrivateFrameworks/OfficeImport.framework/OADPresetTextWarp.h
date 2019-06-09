@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADTextWarp.h>
 
+__attribute__((visibility("hidden")))
 @interface OADPresetTextWarp : OADTextWarp
 {
     unsigned char mPresetTextWarpType;

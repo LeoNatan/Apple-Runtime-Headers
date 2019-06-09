@@ -27,6 +27,8 @@
     unsigned int _changeFlags;
     unsigned int _discoveryFlags;
     int _discoveryMode;
+    int _peopleDensity;
+    CDUnknownBlockType _peopleDensityChangedHandler;
     CDUnknownBlockType _personFoundHandler;
     CDUnknownBlockType _personLostHandler;
     CDUnknownBlockType _personChangedHandler;
@@ -36,6 +38,8 @@
 @property(copy, nonatomic) CDUnknownBlockType personChangedHandler; // @synthesize personChangedHandler=_personChangedHandler;
 @property(copy, nonatomic) CDUnknownBlockType personLostHandler; // @synthesize personLostHandler=_personLostHandler;
 @property(copy, nonatomic) CDUnknownBlockType personFoundHandler; // @synthesize personFoundHandler=_personFoundHandler;
+@property(copy, nonatomic) CDUnknownBlockType peopleDensityChangedHandler; // @synthesize peopleDensityChangedHandler=_peopleDensityChangedHandler;
+@property(readonly, nonatomic) int peopleDensity; // @synthesize peopleDensity=_peopleDensity;
 @property(nonatomic) int discoveryMode; // @synthesize discoveryMode=_discoveryMode;
 @property(nonatomic) unsigned int discoveryFlags; // @synthesize discoveryFlags=_discoveryFlags;
 @property(nonatomic) unsigned int changeFlags; // @synthesize changeFlags=_changeFlags;
@@ -49,6 +53,7 @@
 - (void)xpcPersonChanged:(id)arg1 changes:(unsigned int)arg2;
 - (void)xpcPersonLost:(id)arg1;
 - (void)xpcPersonFound:(id)arg1;
+- (void)_updatePeopleDensity:(unsigned int)arg1;
 - (void)_lostAllPeople;
 @property(readonly, copy, nonatomic) NSArray *discoveredPeople;
 - (void)_scheduleRetry;

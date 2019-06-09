@@ -61,7 +61,6 @@
 @property(readonly, nonatomic) long long connectionState;
 - (id)description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithDevice:(id)arg1 acceptor:(_Bool)arg2;
 
 @end

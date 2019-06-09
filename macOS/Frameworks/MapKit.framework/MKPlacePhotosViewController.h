@@ -28,12 +28,14 @@
     BOOL _loadAppImageCanceledOrFailed;
     BOOL _isRTL;
     unsigned long long _photosCount;
+    NSView *_externalView;
     MKMapItem *_mapItem;
     NSLayoutConstraint *_heightConstraint;
     NSLayoutConstraint *_bottomConstraint;
     NSArray *_photos;
     unsigned long long _mode;
     unsigned long long _originalMode;
+    unsigned long long _options;
     MKPlaceAttributionCell *_attributionCell;
     NSScrollView *_parentScrollView;
     _MKPlaceViewController *_owner;
@@ -44,6 +46,7 @@
 @property(nonatomic) __weak _MKPlaceViewController *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
 - (void)viewDidLayout;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)_callPhotoDelegateForPhotoAt:(unsigned long long)arg1;
 - (void)_photoTappedAtIndex:(unsigned long long)arg1;
@@ -51,12 +54,13 @@
 - (void)_loadPhotos;
 - (void)_cancelLoadPhotos;
 - (void)_updatePhotoBackgroundColor:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)updateAttributionPositionWithOffset:(double)arg1;
 - (void)scrollDidEndScrolling:(id)arg1;
 - (void)scrollBoundsDidChange:(id)arg1;
 - (struct CGSize)sizeForIndex:(unsigned long long)arg1;
 - (void)layoutImages;
+- (void)_applyCornerRadius;
 - (void)_createImageViews;
 - (void)openURL;
 - (id)attributionString;
@@ -65,9 +69,10 @@
 - (void)addAttributionCell;
 - (void)dealloc;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2;
+- (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2 options:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -29,7 +29,6 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithLookupDictionary:(id)arg1;
-- (id)initWithLookupItemOffer:(id)arg1;
 
 @end
 

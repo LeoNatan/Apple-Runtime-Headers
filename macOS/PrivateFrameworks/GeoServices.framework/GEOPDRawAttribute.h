@@ -8,19 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDRawAttribute : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_key;
     NSString *_value;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_key:1;
+        unsigned int read_value:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_key:1;
+        unsigned int wrote_value:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *value; // @synthesize value=_value;
-@property(retain, nonatomic) NSString *key; // @synthesize key=_key;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,10 +39,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *value;
 @property(readonly, nonatomic) BOOL hasValue;
+- (void)_readValue;
+@property(retain, nonatomic) NSString *key;
 @property(readonly, nonatomic) BOOL hasKey;
+- (void)_readKey;
 
 @end
 

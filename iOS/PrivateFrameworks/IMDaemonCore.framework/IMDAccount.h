@@ -14,6 +14,7 @@
 {
     NSMutableDictionary *_accountDefaults;
     NSString *_account;
+    long long _accountType;
     IMDService *_service;
     IMDServiceSession *_session;
     NSMutableDictionary *_myStatus;
@@ -62,6 +63,7 @@
 @property(nonatomic) _Bool wasDisabledAutomatically;
 @property(readonly, nonatomic) _Bool canMakeDowngradeRoutingChecks;
 @property(readonly, nonatomic) _Bool isActive;
+@property(readonly, nonatomic) long long accountType;
 - (void)dealloc;
 - (id)initWithAccountID:(id)arg1 defaults:(id)arg2 service:(id)arg3;
 

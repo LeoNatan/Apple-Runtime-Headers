@@ -9,15 +9,15 @@
 __attribute__((visibility("hidden")))
 @interface SCRDragSlideInfo : NSObject
 {
+    double _duration;
     struct CGPoint _startPoint;
     struct CGPoint _endPoint;
-    double _duration;
 }
 
 + (id)dragSlideInfoWithStartPoint:(struct CGPoint)arg1 endPoint:(struct CGPoint)arg2 duration:(double)arg3;
-- (double)duration;
-- (struct CGPoint)endPoint;
-- (struct CGPoint)startPoint;
+@property(readonly, nonatomic) double duration; // @synthesize duration=_duration;
+@property(readonly, nonatomic) struct CGPoint endPoint; // @synthesize endPoint=_endPoint;
+@property(readonly, nonatomic) struct CGPoint startPoint; // @synthesize startPoint=_startPoint;
 - (id)initWithStartPoint:(struct CGPoint)arg1 endPoint:(struct CGPoint)arg2 duration:(double)arg3;
 
 @end

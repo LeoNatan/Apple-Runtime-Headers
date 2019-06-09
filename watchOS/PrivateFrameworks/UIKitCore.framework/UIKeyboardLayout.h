@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIScreenEdgePanRecognizerDelegate-Protocol.h>
 #import <UIKitCore/_UIViewRepresentingKeyboardLayout-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUUID, UIKBCadenceMonitor, UIKBScreenTraits, UIKBTextEditingTraits, UIKeyboardTaskQueue, UITextInputTraits, _UIKBRTFingerDetection, _UIKBRTRecognizer, _UIKBRTTouchDrifting, _UIKBRTTouchVelocities, _UIScreenEdgePanRecognizer;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString, NSUUID, UIKBCadenceMonitor, UIKBScreenTraits, UIKBTextEditingTraits, UIKeyboardTaskQueue, UIKeyboardTypingStyleEstimator, UITextInputTraits, _UIKBRTFingerDetection, _UIKBRTRecognizer, _UIKBRTTouchDrifting, _UIKBRTTouchVelocities, _UIScreenEdgePanRecognizer;
 @protocol OS_dispatch_queue;
 
 @interface UIKeyboardLayout : UIView <_UIKBRTRecognizerDelegate, _UIKBRTTouchDriftingDelegate, _UIViewRepresentingKeyboardLayout, _UIScreenEdgePanRecognizerDelegate>
@@ -25,6 +25,7 @@
     unsigned int _cursorLocation;
     _Bool _disableInteraction;
     UIKeyboardTaskQueue *_taskQueue;
+    UIKeyboardTypingStyleEstimator *_typingStyleEstimator;
     _Bool hideKeysUnderIndicator;
     _Bool _hasPreferredHeight;
     _Bool _isExecutingDeferredTouchTasks;
@@ -74,6 +75,7 @@
 @property(nonatomic) unsigned int cursorLocation; // @synthesize cursorLocation=_cursorLocation;
 @property(retain, nonatomic) NSUUID *shiftKeyTouchUUID; // @synthesize shiftKeyTouchUUID=_shiftKeyTouchUUID;
 @property(retain, nonatomic) NSUUID *activeTouchUUID; // @synthesize activeTouchUUID=_activeTouchUUID;
+- (_Bool)hasActiveContinuousPathInput;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint)arg2 shouldTypeVariants:(_Bool)arg3 baseKeyForVariants:(_Bool)arg4;
 - (id)simulateTouch:(struct CGPoint)arg1;
 - (void)changeToKeyplane:(id)arg1;
@@ -86,15 +88,19 @@
 - (_Bool)shouldAllowSelectionGestures:(_Bool)arg1 atPoint:(struct CGPoint)arg2 toBegin:(_Bool)arg3;
 - (id)internationalKeyDisplayStringOnEmojiKeyboard;
 - (void)updateUndoKeyState;
+- (_Bool)showsDedicatedEmojiKeyAlongsideGlobeButton;
 - (_Bool)globeKeyDisplaysAsEmojiKey;
 - (void)setKeyboardBias:(int)arg1;
 - (void)updateGlobeKeyAndLayoutOriginBeforeSnapshotForInputView:(id)arg1;
+- (_Bool)isResized;
+- (_Bool)isResizing;
 - (_Bool)supportsEmoji;
 - (_Bool)isEmojiKeyplane;
 - (_Bool)keyplaneContainsEmojiKey;
 - (_Bool)keyplaneContainsDismissKey;
 - (void)triggerSpaceKeyplaneSwitchIfNecessary;
 - (id)currentKeyplane;
+- (void)traitCollectionDidChange:(id)arg1;
 - (float)biasedKeyboardWidthRatio;
 - (int)currentHandBias;
 - (void)cancelTouchesForTwoFingerTapGesture:(id)arg1;
@@ -236,11 +242,10 @@
 @property(readonly, nonatomic) int idiom;
 @property(readonly, nonatomic) int orientation;
 @property(retain, nonatomic) UIKeyboardTaskQueue *taskQueue;
+@property(readonly, nonatomic) UIKeyboardTypingStyleEstimator *typingStyleEstimator;
 - (void)willMoveToWindow:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)addWipeRecognizer;
-- (void)wipeGestureRecognized:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

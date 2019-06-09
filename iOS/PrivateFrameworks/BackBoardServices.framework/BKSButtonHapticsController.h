@@ -11,6 +11,7 @@
 }
 
 + (id)sharedInstance;
+- (void)playHapticIdentifier:(long long)arg1 speed:(unsigned long long)arg2;
 - (void)applyDefinitions:(id)arg1;
 
 @end

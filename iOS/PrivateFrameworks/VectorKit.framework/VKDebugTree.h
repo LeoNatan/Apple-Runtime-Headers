@@ -6,20 +6,40 @@
 
 #import <objc/NSObject.h>
 
+@class NSArray;
+
 @interface VKDebugTree : NSObject
 {
-    struct DebugTree _debugTree;
+    struct DebugTreeNode _debugTree;
+    bitset_dc343b9a _options;
+    NSArray *_nodes;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (_Bool)deserializeZippedTree:(id)arg1;
+- (id)serializeZippedTree;
 - (_Bool)deserializeTree:(id)arg1;
 - (id)serializeTree;
+- (optional_615f169e)_deserializeNode:(id)arg1;
+- (id)_serializeNode:(const struct DebugTreeNode *)arg1;
+- (optional_61f7b1bf)_deserializeProperty:(id)arg1;
+- (id)_serializeProperty:(const struct DebugTreeProperty *)arg1;
+- (optional_7a04703f)_deserializeValue:(id)arg1;
+- (id)_serializeValue:(const struct DebugTreeValue *)arg1;
 - (id)logTree;
 - (void)printTree;
-- (void)populateData;
-- (void)deactivate;
-- (void)activate:(id)arg1;
+- (void)_outputTree:(basic_ostream_374c280d *)arg1;
+- (id)nodes;
+- (const struct DebugTreeNode *)internalData;
+- (void)replaceInternalData:(const struct DebugTreeNode *)arg1;
+- (void)populateData:(id)arg1;
+- (void)_populateData;
+- (void)disableAllOptions;
+- (void)enableAllOptions;
+- (void)setOption:(unsigned long long)arg1 value:(_Bool)arg2;
+- (void)setOptions:(id)arg1;
+- (void)dealloc;
 
 @end
 

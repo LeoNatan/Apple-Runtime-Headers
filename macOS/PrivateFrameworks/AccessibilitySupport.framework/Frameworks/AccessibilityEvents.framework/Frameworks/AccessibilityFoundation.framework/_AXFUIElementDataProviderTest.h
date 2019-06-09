@@ -10,6 +10,10 @@
 
 @interface _AXFUIElementDataProviderTest : _AXFUIElementDataProvider
 {
+    int _applicationProcessIdentifier;
+    int _realApplicationProcessIdentifier;
+    struct ProcessSerialNumber _applicationProcessSerialNumber;
+    struct ProcessSerialNumber _realApplicationProcessSerialNumber;
     NSMutableDictionary *__attributes;
     NSMutableDictionary *__parameterizedAttributes;
     NSMutableDictionary *__actions;
@@ -18,13 +22,16 @@
 @property(retain, nonatomic) NSMutableDictionary *_actions; // @synthesize _actions=__actions;
 @property(retain, nonatomic) NSMutableDictionary *_parameterizedAttributes; // @synthesize _parameterizedAttributes=__parameterizedAttributes;
 @property(retain, nonatomic) NSMutableDictionary *_attributes; // @synthesize _attributes=__attributes;
+@property(nonatomic) struct ProcessSerialNumber realApplicationProcessSerialNumber; // @synthesize realApplicationProcessSerialNumber=_realApplicationProcessSerialNumber;
+@property(nonatomic) int realApplicationProcessIdentifier; // @synthesize realApplicationProcessIdentifier=_realApplicationProcessIdentifier;
+@property(nonatomic) struct ProcessSerialNumber applicationProcessSerialNumber; // @synthesize applicationProcessSerialNumber=_applicationProcessSerialNumber;
+@property(nonatomic) int applicationProcessIdentifier; // @synthesize applicationProcessIdentifier=_applicationProcessIdentifier;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (BOOL)_testIndexInParent:(unsigned long long *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (struct ProcessSerialNumber)realApplicationProcessSerialNumber;
-- (int)realApplicationProcessIdentifier;
 - (id)applicationElement;
-- (struct ProcessSerialNumber)applicationProcessSerialNumber;
-- (int)applicationProcessIdentifier;
 - (id)copyAXFUIElementAtPoint:(struct CGPoint)arg1;
 - (id)copyAXFUIElementAtPoint:(struct CGPoint)arg1 includeIgnored:(BOOL)arg2;
 - (void)setAttribute:(id)arg1 withAXFUIElementValues:(id)arg2;
@@ -40,8 +47,8 @@
 - (BOOL)canSetAttributeValue:(id)arg1;
 - (id)copyArrayForAttribute:(id)arg1 range:(struct _NSRange)arg2;
 - (unsigned long long)countForAttribute:(id)arg1;
-- (void *)copyParameterizedAttributeValue:(id)arg1 parameter:(void *)arg2;
-- (void *)copyAttributeValue:(id)arg1;
+- (const void *)copyParameterizedAttributeValue:(id)arg1 parameter:(void *)arg2;
+- (const void *)copyAttributeValue:(id)arg1;
 - (BOOL)supportsAttribute:(id)arg1;
 - (id)copyParameterizedAttributeNames;
 - (id)copyAttributeNames;

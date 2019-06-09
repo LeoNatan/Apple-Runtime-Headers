@@ -6,12 +6,13 @@
 
 #import <SockPuppetGizmo/NSObject-Protocol.h>
 
-@class BSMachPortSendRight, INIntent, NSArray, NSData, NSDictionary, NSNumber, NSString, NSUUID, NSUserActivity;
+@class BSMachPortSendRight, INIntent, NSArray, NSData, NSDictionary, NSError, NSNumber, NSString, NSUUID, NSUserActivity, UIViewController;
 @protocol SPRemoteNotificationViewHost;
 
 @protocol SPExtensionRemoteProtocol <NSObject>
 - (void)tearDownAccessibilityPortIfNecessaryWithCompletionHandler:(void (^)(void))arg1;
 - (void)exchangeAccessibilityPortInformation:(BSMachPortSendRight *)arg1 replyHandler:(void (^)(BSMachPortSendRight *, NSError *))arg2;
+- (NSString *)extendLaunchTest;
 - (void)runTest:(NSString *)arg1 options:(NSDictionary *)arg2 clientIdentifier:(NSString *)arg3;
 - (void)interfaceDidEndScrollingAnimation:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)interfaceContentSystemMinimumLayoutMargins:(NSString *)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;
@@ -32,11 +33,15 @@
 - (void)deactivateViewController:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)activateViewController:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)releaseViewController:(NSString *)arg1 clientIdentifier:(NSString *)arg2;
-- (void)createViewController:(NSString *)arg1 className:(NSString *)arg2 properties:(NSArray *)arg3 contextID:(NSNumber *)arg4 info:(NSDictionary *)arg5 gestureDescriptions:(NSDictionary *)arg6 clientIdentifier:(NSString *)arg7;
+- (void)createViewController:(NSString *)arg1 className:(NSString *)arg2 properties:(NSArray *)arg3 contextID:(NSNumber *)arg4 info:(NSDictionary *)arg5 gestureDescriptions:(NSDictionary *)arg6 clientIdentifier:(NSString *)arg7 interfaceControllerCreationCompletion:(void (^)(NSString *))arg8;
+- (void)didReceiveRemoteNotification:(NSDictionary *)arg1 clientIdentifier:(NSString *)arg2 fetchCompletionHandler:(void (^)(unsigned int))arg3;
+- (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)arg1 clientIdentifier:(NSString *)arg2;
+- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)arg1 clientIdentifier:(NSString *)arg2;
 - (void)willDeactivateDataConnection:(NSString *)arg1;
 - (void)didActivateDataConnection:(NSString *)arg1;
 - (void)appDidReceiveNotification:(NSData *)arg1 clientIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(unsigned int))arg3;
 - (void)appHandleWatchTasks:(NSDictionary *)arg1 reasonForSnapshot:(unsigned int)arg2 visibleVCID:(NSString *)arg3 barTaskUUID:(NSUUID *)arg4 clientIdentifier:(NSString *)arg5;
+- (void)appRecoverAnyExtendedRuntimeSession:(_Bool)arg1;
 - (void)appHandleIntent:(INIntent *)arg1 clientIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(INIntentResponse *))arg3;
 - (void)appReceiveContextData:(NSData *)arg1 clientIdentifier:(NSString *)arg2 withCompletionHandler:(void (^)(void))arg3;
 - (void)appHandleNSUserActivity:(NSUserActivity *)arg1 clientIdentifier:(NSString *)arg2;
@@ -51,8 +56,11 @@
 - (void)appWillResignActive:(NSString *)arg1;
 - (void)appDidFinishConnecting:(NSString *)arg1;
 - (void)receiveDataFromApplication:(NSData *)arg1 fromIdentifier:(NSString *)arg2;
-- (void)interfaceViewController:(NSString *)arg1 setProperties:(NSDictionary *)arg2 forInterfaceObjectNamed:(NSString *)arg3;
 - (void)interfaceViewController:(NSString *)arg1 gestureData:(NSDictionary *)arg2;
 - (void)interfaceViewController:(NSString *)arg1 crownData:(NSDictionary *)arg2;
+- (id)interfaceControllerForIdentifier:(NSString *)arg1;
+- (_Bool)isTimerSupportHostingControllerClass:(NSString *)arg1;
+- (UIViewController *)timerSupportViewControllerForInterfaceController:(NSString *)arg1;
+- (NSArray *)timerSupportActionItemsForInterfaceViewController:(NSString *)arg1;
 @end
 

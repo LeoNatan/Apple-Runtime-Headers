@@ -9,7 +9,7 @@
 #import <Home/HFServiceLikeBuilderCreating-Protocol.h>
 #import <Home/HFServiceLikeItem-Protocol.h>
 
-@class HMAccessory, NSString;
+@class HMAccessory, NSSet, NSString;
 @protocol HFCharacteristicValueSource, HFHomeKitObject;
 
 @interface HFTargetControlAccessoryItem : HFItem <HFServiceLikeItem, HFServiceLikeBuilderCreating>
@@ -21,12 +21,13 @@
 @property(retain, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(retain, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 - (void).cxx_destruct;
+- (id)namingComponentForHomeKitObject;
 - (id)currentStateActionBuildersForHome:(id)arg1;
 - (_Bool)actionsMayRequireDeviceUnlock;
-- (_Bool)containsActionableCharacteristics;
+- (_Bool)containsActions;
 - (id)serviceLikeBuilderInHome:(id)arg1;
 - (_Bool)shouldReduceOptionItemsForNotifyingCharacteristics;
-- (id)services;
+@property(readonly, nonatomic) NSSet *services;
 - (id)accessories;
 - (id)iconDescriptor;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;

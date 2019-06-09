@@ -11,10 +11,10 @@
     struct _NSRange _transitStepRange;
 }
 
++ (_Bool)supportsSecureCoding;
 - (struct _NSRange)transitStepRange;
-- (id)_accessPointsForTransitStep:(id)arg1;
-- (id)exitTransitAccessPoints;
-- (id)enterTransitAccessPoints;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)endingTransitStop;
 - (id)startingTransitStop;
 - (id)initWithComposedRoute:(id)arg1 routeLegType:(int)arg2 stepRange:(struct _NSRange)arg3 transitStepRange:(struct _NSRange)arg4 pointRange:(struct _NSRange)arg5;

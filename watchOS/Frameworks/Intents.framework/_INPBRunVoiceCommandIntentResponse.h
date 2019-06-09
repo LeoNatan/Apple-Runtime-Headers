@@ -19,11 +19,13 @@
         unsigned int customResponsesDisabled:1;
         unsigned int intentCategory:1;
         unsigned int interstitialDisabled:1;
+        unsigned int prefersExecutionOnCompanion:1;
         unsigned int toggleState:1;
     } _has;
     _Bool _continueRunning;
     _Bool _customResponsesDisabled;
     _Bool _interstitialDisabled;
+    _Bool _prefersExecutionOnCompanion;
     NSString *_appBundleId;
     int _intentCategory;
     NSString *_localizedAppName;
@@ -37,6 +39,7 @@
     NSString *_verb;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)stepType;
 @property(copy, nonatomic) NSString *verb; // @synthesize verb=_verb;
 @property(copy, nonatomic) NSString *underlyingIntentTitle; // @synthesize underlyingIntentTitle=_underlyingIntentTitle;
@@ -45,6 +48,7 @@
 @property(nonatomic) int toggleState; // @synthesize toggleState=_toggleState;
 @property(copy, nonatomic) NSArray *steps; // @synthesize steps=_steps;
 @property(copy, nonatomic) NSString *responseTemplate; // @synthesize responseTemplate=_responseTemplate;
+@property(nonatomic) _Bool prefersExecutionOnCompanion; // @synthesize prefersExecutionOnCompanion=_prefersExecutionOnCompanion;
 @property(retain, nonatomic) _INPBDictionary *parameters; // @synthesize parameters=_parameters;
 @property(copy, nonatomic) NSString *localizedAppName; // @synthesize localizedAppName=_localizedAppName;
 @property(nonatomic) _Bool interstitialDisabled; // @synthesize interstitialDisabled=_interstitialDisabled;
@@ -57,6 +61,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasVerb;
@@ -71,6 +77,7 @@
 - (void)addStep:(id)arg1;
 - (void)clearSteps;
 @property(readonly, nonatomic) _Bool hasResponseTemplate;
+@property(nonatomic) _Bool hasPrefersExecutionOnCompanion;
 @property(readonly, nonatomic) _Bool hasParameters;
 @property(readonly, nonatomic) _Bool hasLocalizedAppName;
 @property(nonatomic) _Bool hasInterstitialDisabled;

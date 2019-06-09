@@ -7,26 +7,37 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSMutableDictionary, NSString;
-@protocol SFAirDropBrowserBatchDelegate, SFAirDropBrowserDelegate;
+@protocol SFAirDropBrowserBatchDelegate, SFAirDropBrowserDelegate, SFAirDropBrowserDiffableDelegate;
 
 @interface SFAirDropBrowser : NSObject
 {
     struct __SFBrowser *_browser;
     NSMutableDictionary *_nodes;
     _Bool _shouldDeliverEmptyUpdates;
+    _Bool _includePeopleSuggestions;
     NSString *_sessionID;
     NSArray *_people;
     id <SFAirDropBrowserDelegate> _delegate;
     id <SFAirDropBrowserBatchDelegate> _batchDelegate;
+    NSString *_sendingAppBundleID;
+    NSArray *_urlsBeingShared;
+    NSArray *_photosAssetIDs;
+    id <SFAirDropBrowserDiffableDelegate> _diffableDelegate;
+    NSMutableDictionary *_nodeIDToNode;
 }
 
+@property(readonly, nonatomic) NSMutableDictionary *nodeIDToNode; // @synthesize nodeIDToNode=_nodeIDToNode;
+@property __weak id <SFAirDropBrowserDiffableDelegate> diffableDelegate; // @synthesize diffableDelegate=_diffableDelegate;
+@property(nonatomic) _Bool includePeopleSuggestions; // @synthesize includePeopleSuggestions=_includePeopleSuggestions;
+@property(copy, nonatomic) NSArray *photosAssetIDs; // @synthesize photosAssetIDs=_photosAssetIDs;
+@property(copy, nonatomic) NSArray *urlsBeingShared; // @synthesize urlsBeingShared=_urlsBeingShared;
+@property(copy, nonatomic) NSString *sendingAppBundleID; // @synthesize sendingAppBundleID=_sendingAppBundleID;
 @property __weak id <SFAirDropBrowserBatchDelegate> batchDelegate; // @synthesize batchDelegate=_batchDelegate;
 @property __weak id <SFAirDropBrowserDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *people; // @synthesize people=_people;
 @property(copy, nonatomic) NSString *sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
 - (void)getChangedIndexesForClientPeopleList:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)getChangedIndexesForClientPeopleList:(id)arg1 peopleList:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)updateDiscoveredPeople;
 - (void)handleBrowserCallBack;
 - (void)stop;

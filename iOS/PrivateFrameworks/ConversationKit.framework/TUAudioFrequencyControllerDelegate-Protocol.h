@@ -9,8 +9,6 @@
 @class TUAudioFrequencyController;
 
 @protocol TUAudioFrequencyControllerDelegate <NSObject>
-
-@optional
-- (void)frequencyController:(TUAudioFrequencyController *)arg1 audioPowerChanged:(float)arg2 forParticipantWithStreamToken:(unsigned long long)arg3;
+- (void)frequencyController:(TUAudioFrequencyController *)arg1 audioPowerChanged:(float)arg2 forParticipantWithStreamToken:(long long)arg3;
 @end
 

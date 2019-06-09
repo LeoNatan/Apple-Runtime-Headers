@@ -9,7 +9,6 @@
 @class QLAppearance;
 @protocol QLPreviewItemViewControllerDelegate;
 
-__attribute__((visibility("hidden")))
 @interface QLItemAggregatedViewController : QLItemViewController
 {
     _Bool _isVisible;
@@ -23,12 +22,14 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) QLItemViewController *currentPreviewViewController; // @synthesize currentPreviewViewController=_currentPreviewViewController;
 - (id)delegate;
 - (void).cxx_destruct;
+- (void)savePreviewEditedCopyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)draggableView;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)transitionWillFinish:(_Bool)arg1 didComplete:(_Bool)arg2;
 - (void)transitionDidFinish:(_Bool)arg1 didComplete:(_Bool)arg2;
 - (void)transitionDidStart:(_Bool)arg1;
 - (id)transitioningView;
+- (void)prepareForInvalidationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)fullscreenBackgroundColor;
 - (id)title;
 - (struct CGSize)preferredContentSize;
@@ -37,8 +38,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)automaticallyUpdateScrollViewIndicatorInset;
 - (_Bool)automaticallyUpdateScrollViewContentInset;
 - (_Bool)automaticallyUpdateScrollViewContentOffset;
-- (void)endPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1;
-- (void)beginPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (_Bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (id)parallaxView;
@@ -46,10 +45,12 @@ __attribute__((visibility("hidden")))
 - (_Bool)canShowNavBar;
 - (_Bool)canShowToolBar;
 - (_Bool)canPinchToDismiss;
+- (_Bool)canToggleFullScreen;
 - (_Bool)canSwipeToDismiss;
 - (id)safeAreaLayoutGuide;
 - (_Bool)shouldRecognizeGestureRecognizer:(id)arg1;
 - (_Bool)shouldAcceptTouch:(id)arg1 ofGestureRecognizer:(id)arg2;
+- (void)handlePerformedKeyCommandIfNeeded:(id)arg1;
 - (id)registeredKeyCommands;
 - (id)excludedToolbarButtonIdentifiersForTraitCollection:(id)arg1;
 - (id)toolbarButtonsForTraitCollection:(id)arg1;
@@ -67,8 +68,6 @@ __attribute__((visibility("hidden")))
 - (void)setAppearance:(id)arg1 animated:(_Bool)arg2;
 - (void)showPreviewViewController:(id)arg1;
 - (void)showPreviewViewController:(id)arg1 animatingWithCrossfade:(_Bool)arg2;
-- (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 
 @end
 

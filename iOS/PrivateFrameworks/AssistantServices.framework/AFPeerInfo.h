@@ -12,13 +12,19 @@
 
 @interface AFPeerInfo : NSObject <NSSecureCoding>
 {
+    _Bool _isDeviceOwnedByCurrentUser;
     NSString *_idsIdentifier;
     NSString *_idsFirstRoutableInternetDestination;
+    NSString *_rapportEffectiveIdentifier;
+    NSString *_mediaSystemIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *mediaSystemIdentifier; // @synthesize mediaSystemIdentifier=_mediaSystemIdentifier;
+@property(copy, nonatomic) NSString *rapportEffectiveIdentifier; // @synthesize rapportEffectiveIdentifier=_rapportEffectiveIdentifier;
 @property(copy, nonatomic) NSString *idsFirstRoutableInternetDestination; // @synthesize idsFirstRoutableInternetDestination=_idsFirstRoutableInternetDestination;
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
+@property(nonatomic, setter=setDeviceOwnedByCurrentUser:) _Bool isDeviceOwnedByCurrentUser; // @synthesize isDeviceOwnedByCurrentUser=_isDeviceOwnedByCurrentUser;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

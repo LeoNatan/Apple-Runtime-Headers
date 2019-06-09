@@ -15,12 +15,13 @@
     PBUnknownFields *_unknownFields;
     _Bool _suppressSiriRating;
     struct {
-        unsigned int suppressSiriRating:1;
-    } _has;
+        unsigned int has_suppressSiriRating:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool suppressSiriRating; // @synthesize suppressSiriRating=_suppressSiriRating;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,9 +30,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasSuppressSiriRating;
+@property(nonatomic) _Bool suppressSiriRating;
 
 @end
 

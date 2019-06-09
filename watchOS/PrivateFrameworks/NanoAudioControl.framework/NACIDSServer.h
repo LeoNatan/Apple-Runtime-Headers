@@ -45,7 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)_sendHapticState:(int)arg1;
 - (void)_sendSystemMutedState:(_Bool)arg1;
 - (void)_sendMutedState:(_Bool)arg1 target:(id)arg2;
-- (void)_sendVolumeWarningEnabled:(_Bool)arg1 target:(id)arg2;
+- (void)_sendVolumeWarningEnabled:(_Bool)arg1 volumeWarningState:(int)arg2 target:(id)arg3;
 - (void)_sendEUVolumeLimit:(float)arg1 target:(id)arg2;
 - (void)_sendVolumeControlAvailability:(_Bool)arg1 target:(id)arg2;
 - (void)_sendVolumeValue:(float)arg1 target:(id)arg2;

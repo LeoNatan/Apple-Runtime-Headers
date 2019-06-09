@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) __weak UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (void)_handleTouchObservingGestureRecognizer:(id)arg1;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (void)cancelInteraction;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;

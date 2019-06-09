@@ -14,12 +14,12 @@
     IMAVChatProxy *_chat;
 }
 
+- (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;
 - (_Bool)isLocalParticipant;
 @property(readonly, nonatomic) _Bool _inviteDelivered;
-@property(readonly, retain, nonatomic) NSString *name;
-@property(readonly, retain, nonatomic) IMAVChat *avChat;
-- (void)dealloc;
+@property(readonly, nonatomic) NSString *name;
+@property(readonly, nonatomic) IMAVChat *avChat;
 - (id)initWithDictionary:(id)arg1 chat:(id)arg2;
 
 @end

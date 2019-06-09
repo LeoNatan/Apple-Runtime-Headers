@@ -6,12 +6,9 @@
 
 #import <NanoWeatherKit/NSObject-Protocol.h>
 
-@class NSDate, NWKRoutineForecast;
+@class NWKRoutineForecast;
 
 @protocol NWKRoutineForecastObservable <NSObject>
-- (void)routineForecastServerUpdatedRoutineForecast:(NWKRoutineForecast *)arg1;
-- (void)routineForecastMonitoringStartedForStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2;
-- (void)routineForecastMonitoringFailedToStartForStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2;
-- (void)routineForecastFailedNotFound;
+- (void)routineForecast:(NWKRoutineForecast *)arg1;
 @end
 

@@ -25,8 +25,9 @@
 
 + (id)secondaryColorPresetsForCategory:(long long)arg1;
 + (id)colorPresetsForCategory:(long long)arg1;
++ (id)colorPresetsForCategory:(long long)arg1 colorIndex:(unsigned long long)arg2;
 + (id)_colorPresetsForCategory:(long long)arg1 palette:(id)arg2;
-+ (void)enumerateComponentType:(long long)arg1 variantDependencies:(CDUnknownBlockType)arg2;
++ (void)enumerateVariantDependenciesForComponentType:(long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 + (void)registerVariantNamed:(id)arg1 forComponentType:(long long)arg2;
 + (id)presetWithCategory:(long long)arg1 identifier:(id)arg2;
 + (id)findPresetWithIdentifier:(id)arg1 inPresets:(id)arg2;
@@ -41,8 +42,8 @@
 - (void)applyPresetOnAvatar:(id)arg1;
 - (id)colorPresets;
 - (void)enumerateVariantDependencies:(CDUnknownBlockType)arg1;
-- (void)enumerateOverrides:(CDUnknownBlockType)arg1;
-- (_Bool)hasOverride;
+- (void)enumeratePresetDependencies:(CDUnknownBlockType)arg1;
+- (_Bool)hasDependency;
 - (float)intensity;
 - (id)componentPaths;
 - (id)assets;

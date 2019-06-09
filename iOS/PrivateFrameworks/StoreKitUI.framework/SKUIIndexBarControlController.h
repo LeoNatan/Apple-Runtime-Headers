@@ -12,6 +12,7 @@
 @class NSMapTable, NSString, SKUIIndexBarControl, SKUIIndexBarEntryDescriptor, SKUIResourceLoader;
 @protocol SKUIIndexBarControlControllerDataSource, SKUIIndexBarControlControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIndexBarControlController : NSObject <SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate>
 {
     SKUIIndexBarEntryDescriptor *_combinedEntryDescriptor;

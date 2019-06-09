@@ -12,6 +12,7 @@
 @class ABCConfigurationManager, AnalyticsWorkspace, DiagnosticCaseStorageAnalytics, DiagnosticLiaison, DiagnosticStatisticsManager, DiagnosticsController, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString;
 @protocol DiagnosticCaseManagerStorageDelegate, OS_dispatch_queue, OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticCaseManager : NSObject <DiagnosticReportGeneratorDelegate, DiagnosticLiaisonDelegate>
 {
     AnalyticsWorkspace *_workspace;
@@ -84,8 +85,9 @@
 - (void)_processTriggerActions:(id)arg1 session:(id)arg2;
 - (void)_processReportActions:(id)arg1 session:(id)arg2;
 - (void)_processRemoteIDSTriggers:(id)arg1 validFor:(double)arg2 signature:(id)arg3 sessionID:(id)arg4 reply:(CDUnknownBlockType)arg5;
-- (id)_updateSignatureWithInternalFlags:(id)arg1;
-- (void)getAllDiagnosticCaseDictionaryRepresentations:(CDUnknownBlockType)arg1;
+- (id)_updateSignatureWithBuildVariantInfoAndFlags:(id)arg1;
+- (void)getHistoricalDiagnosicCaseDictionaryFromIdentifier:(id)arg1 withEvents:(BOOL)arg2 count:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
+- (id)diagnosticCaseDictionariesFromIdentifier:(id)arg1 withEvents:(BOOL)arg2 count:(unsigned long long)arg3;
 - (BOOL)statisticsRowForDiagnosticCase:(id)arg1 matchesWith:(id)arg2;
 - (BOOL)sendReportsForCase:(id)arg1;
 - (void)startCollectingNextReportForDiagnosticCase:(id)arg1;
@@ -105,12 +107,11 @@
 - (int)addToCaseWithId:(id)arg1 events:(id)arg2 payload:(id)arg3;
 - (void)_updateCaseStatisticsWithCase:(id)arg1;
 - (BOOL)finalizeDiagnosticCaseWithId:(id)arg1 closureType:(short)arg2 onlyIfReady:(BOOL)arg3;
-- (id)allDiagnosticCaseDictionaries;
-- (id)allDiagnosticCases;
 - (id)diagnosticCaseWithId:(id)arg1;
 - (id)createDiagnosticCaseWithSignature:(id)arg1 flags:(unsigned long long)arg2 events:(id)arg3 payload:(id)arg4 actions:(id)arg5;
 - (id)casesDiagnosedInTheLast:(double)arg1 from:(double)arg2 matchingDomain:(id)arg3;
 - (BOOL)isAdmissible:(id)arg1 dampenedBy:(short *)arg2;
+- (id)caseStorageAnalytics;
 - (unsigned int)dampeningFactorForSignature:(id)arg1 caseTime:(id)arg2;
 - (BOOL)allowDampeningExceptionFor:(id)arg1;
 - (void)removeTransientCasesWithSignature:(id)arg1 beforeTime:(double)arg2;
@@ -119,7 +120,7 @@
 - (void)saveAllCases;
 @property(readonly, nonatomic) ABCConfigurationManager *configManager;
 @property(readonly, nonatomic) DiagnosticsController *diagnosticsController;
-- (long long)dailyCountLimitForDomain:(id)arg1;
+- (long long)dailyCountLimitForDomain:(id)arg1 type:(id)arg2 subtype:(id)arg3;
 - (BOOL)disableDampening;
 - (void)configureWithWorkspace:(id)arg1;
 - (id)initWithWorkspace:(id)arg1 liaison:(id)arg2;

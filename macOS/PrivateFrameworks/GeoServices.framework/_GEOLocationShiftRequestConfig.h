@@ -12,8 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)standardConfig;
-- (BOOL)shouldThrottleRequests;
-- (int)dataRequestKindForRequest:(id)arg1;
+- (CDStruct_d1a7ebee)dataRequestKindForRequest:(id)arg1 traits:(id)arg2;
 - (unsigned long long)urlType;
 - (id)serviceTypeNumber;
 

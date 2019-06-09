@@ -8,47 +8,27 @@
 
 #import <UIKitCore/UISplitViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, UIDebuggingInformationRootTableViewController, UIDebuggingInformationStickyBehavior, UIDebuggingZoomViewController, UIDynamicAnimator, UIDynamicBehavior, UISplitViewController, UIView;
+@class UIDebuggingInformationContainerView, UIDebuggingInformationRootTableViewController, UINavigationController, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIDebuggingInformationOverlayViewController : UIViewController <UISplitViewControllerDelegate>
 {
+    UIDebuggingInformationContainerView *_shadowContainer;
+    UINavigationController *_navController;
     _Bool _isFullscreen;
-    UISplitViewController *_splitViewController;
-    UIView *_containerView;
     UIDebuggingInformationRootTableViewController *_rootTableViewController;
-    UIDynamicAnimator *_animator;
-    UIDynamicBehavior *_behavior;
-    UIDebuggingInformationStickyBehavior *_stickyBehavior;
-    UIDebuggingZoomViewController *_zoomViewController;
-    NSLayoutConstraint *_heightConstraint;
-    NSArray *_smallConstraints;
-    NSArray *_bigConstraints;
-    UIView *_shadowView;
     struct CGPoint _offset;
 }
 
-@property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
-@property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
-@property(retain, nonatomic) NSArray *bigConstraints; // @synthesize bigConstraints=_bigConstraints;
-@property(retain, nonatomic) NSArray *smallConstraints; // @synthesize smallConstraints=_smallConstraints;
-@property(retain, nonatomic) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
-@property(retain, nonatomic) UIDebuggingZoomViewController *zoomViewController; // @synthesize zoomViewController=_zoomViewController;
-@property(retain, nonatomic) UIDebuggingInformationStickyBehavior *stickyBehavior; // @synthesize stickyBehavior=_stickyBehavior;
-@property(retain, nonatomic) UIDynamicBehavior *behavior; // @synthesize behavior=_behavior;
-@property(retain, nonatomic) UIDynamicAnimator *animator; // @synthesize animator=_animator;
 @property struct CGPoint offset; // @synthesize offset=_offset;
+@property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
 @property(retain, nonatomic) UIDebuggingInformationRootTableViewController *rootTableViewController; // @synthesize rootTableViewController=_rootTableViewController;
-@property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
-@property(retain, nonatomic) UISplitViewController *splitViewController; // @synthesize splitViewController=_splitViewController;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
-- (id)splitViewController:(id)arg1 separateSecondaryViewControllerFromPrimaryViewController:(id)arg2;
-- (_Bool)splitViewController:(id)arg1 collapseSecondaryViewController:(id)arg2 ontoPrimaryViewController:(id)arg3;
 - (void)didReceiveGesture:(id)arg1;
-- (void)viewDidLayoutSubviews;
 - (void)toggleFullscreen;
+- (void)viewDidLayoutSubviews;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+@property(readonly, nonatomic) UIView *containerView;
 
 @end
 

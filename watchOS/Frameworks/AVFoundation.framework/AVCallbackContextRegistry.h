@@ -21,7 +21,6 @@
 - (id)callbackContextForToken:(void *)arg1;
 - (void)unregisterCallbackContextForToken:(void *)arg1;
 - (void *)registerCallbackContextObject:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

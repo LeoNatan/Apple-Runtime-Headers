@@ -19,6 +19,10 @@
 @property(nonatomic) double endTime;
 @property(nonatomic) double startTime;
 @property(nonatomic, getter=isPaused) _Bool paused;
+@property(nonatomic) double screenSpaceReflectionStride;
+@property(nonatomic) double screenSpaceReflectionMaximumDistance;
+@property(nonatomic) long long screenSpaceReflectionSampleCount;
+@property(nonatomic) _Bool wantsScreenSpaceReflection;
 @property(retain, nonatomic) id fogColor;
 @property(nonatomic) double fogDensityExponent;
 @property(nonatomic) double fogEndDistance;

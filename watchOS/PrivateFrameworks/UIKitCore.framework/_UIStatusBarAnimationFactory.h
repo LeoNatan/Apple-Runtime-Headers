@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 
 + (id)fadeAnimationWithDuration:(double)arg1 scale:(float)arg2;
 + (id)fadeAnimationWithDuration:(double)arg1;
++ (id)noAnimation;
 
 @end
 

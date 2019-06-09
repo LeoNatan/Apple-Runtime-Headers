@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIScrollingTabBarBackgroundView;
 
+__attribute__((visibility("hidden")))
 @interface SKUICrossFadingTabBar : UIView
 {
     SKUIScrollingTabBarBackgroundView *_backgroundView;

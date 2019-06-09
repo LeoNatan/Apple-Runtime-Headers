@@ -18,6 +18,7 @@
 
 @interface PKPaymentSetupPurchaseViewController : UIViewController <PKPaymentSetupPurchaseAmountViewDelegate, PKPaymentAuthorizationCoordinatorDelegate, PKPaymentAuthorizationCoordinatorPrivateDelegate, PKPaymentSetupViewControllerDelegate, PKPaymentSetupDelegate, PKPaymentSetupRequiresPreflightProtocol>
 {
+    _Bool _snapshotNeedsCorners;
     _Bool _fieldsVerified;
     _Bool _acceptedTerms;
     PKPaymentSetupProduct *_product;

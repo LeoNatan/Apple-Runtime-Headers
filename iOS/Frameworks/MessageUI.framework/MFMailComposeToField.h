@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFComposeRecipientTextView.h>
+#import <MessageUI/MFMailComposeRecipientTextView.h>
 
 @class MFComposeSMIMELockButton;
 @protocol MFMailComposeToFieldDelegate;
 
-@interface MFMailComposeToField : MFComposeRecipientTextView
+@interface MFMailComposeToField : MFMailComposeRecipientTextView
 {
     MFComposeSMIMELockButton *_smimeButton;
     _Bool _wantsEncryption;
@@ -21,7 +21,8 @@
 
 @property(nonatomic) _Bool smimeButtonEnabled; // @synthesize smimeButtonEnabled=_smimeButtonEnabled;
 @property(nonatomic) _Bool smimeButtonVisible; // @synthesize smimeButtonVisible=_smimeButtonVisible;
-@property(nonatomic) id <MFMailComposeToFieldDelegate> toFieldDelegate; // @synthesize toFieldDelegate=_toFieldDelegate;
+@property(nonatomic) __weak id <MFMailComposeToFieldDelegate> toFieldDelegate; // @synthesize toFieldDelegate=_toFieldDelegate;
+- (void).cxx_destruct;
 - (id)_textContainerExclusionPathsWithAddButton:(_Bool)arg1;
 - (void)_setSMIMEButtonVisible:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setWantsEncryption:(_Bool)arg1 canEncrypt:(_Bool)arg2 animated:(_Bool)arg3;

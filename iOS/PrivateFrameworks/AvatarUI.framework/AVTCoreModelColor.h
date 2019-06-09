@@ -34,6 +34,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, copy, nonatomic) NSString *identifier;
 @property(readonly, copy, nonatomic) NSString *localizedName;
+- (id)copyForPairedCategory:(long long)arg1;
 - (id)copyWithRangeMin:(float)arg1 rangeMax:(float)arg2 showSlider:(_Bool)arg3;
 - (id)initWithColorPreset:(id)arg1 settingKind:(CDStruct_597dd055)arg2 order:(unsigned long long)arg3 showSlider:(_Bool)arg4 rangeMin:(float)arg5 rangeMax:(float)arg6 derivedColorsByCategories:(id)arg7;
 - (id)initWithColorPreset:(id)arg1 settingKind:(CDStruct_597dd055)arg2 order:(unsigned long long)arg3 derivedColorsByCategories:(id)arg4;

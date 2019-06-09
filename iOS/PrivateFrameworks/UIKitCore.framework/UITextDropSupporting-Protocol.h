@@ -7,7 +7,7 @@
 #import <UIKitCore/UITextDroppable-Protocol.h>
 #import <UIKitCore/UITextPasteConfigurationSupporting-Protocol.h>
 
-@class NSMutableAttributedString;
+@class NSAttributedString, NSMutableAttributedString;
 
 @protocol UITextDropSupporting <UITextDroppable, UITextPasteConfigurationSupporting>
 - (void)droppingFinished;
@@ -20,5 +20,6 @@
 @optional
 @property(nonatomic) struct CGPoint contentOffsetForSameViewDrops;
 - (void)sanitizeAttributedText:(NSMutableAttributedString *)arg1;
+- (NSAttributedString *)_attributedStringForInsertionOfAttributedString:(NSAttributedString *)arg1;
 @end
 

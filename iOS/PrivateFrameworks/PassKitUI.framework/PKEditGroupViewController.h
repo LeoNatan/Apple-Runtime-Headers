@@ -8,12 +8,12 @@
 
 #import <PassKitUI/PKEditPassesDetailsResponder-Protocol.h>
 #import <PassKitUI/PKGroupDelegate-Protocol.h>
-#import <PassKitUI/UIViewControllerPreviewingDelegate-Protocol.h>
+#import <PassKitUI/_UIContextMenuInteractionDelegate-Protocol.h>
 
 @class NSString, PKGroup, PKPass, UIBarButtonItem, UITableView;
-@protocol PKEditGroupViewControllerDelegate, PKGroupDelegate, UIViewControllerPreviewing;
+@protocol PKEditGroupViewControllerDelegate, PKGroupDelegate;
 
-@interface PKEditGroupViewController : PKEditTableViewController <PKGroupDelegate, UIViewControllerPreviewingDelegate, PKEditPassesDetailsResponder>
+@interface PKEditGroupViewController : PKEditTableViewController <PKGroupDelegate, _UIContextMenuInteractionDelegate, PKEditPassesDetailsResponder>
 {
     PKGroup *_group;
     id <PKGroupDelegate> _savedDelegate;
@@ -22,7 +22,6 @@
     PKPass *_viewingPass;
     UITableView *_tableView;
     struct CGSize _imageSizeNeeded;
-    id <UIViewControllerPreviewing> _previewingContext;
     id <PKEditGroupViewControllerDelegate> _delegate;
 }
 
@@ -32,8 +31,9 @@
 - (_Bool)passExistsWithUniqueIdentifier:(id)arg1;
 - (void)prefetchItemsAtIndexPaths:(id)arg1;
 - (id)passAtIndexPath:(id)arg1;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
+- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
 - (id)viewControllerForRowAtIndexPath:(id)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -52,7 +52,7 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
-- (id)initWithGroup:(id)arg1 existingGroupsController:(id)arg2 delegate:(id)arg3;
+- (id)initWithGroup:(id)arg1 existingGroupsController:(id)arg2 placeholders:(id)arg3 delegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

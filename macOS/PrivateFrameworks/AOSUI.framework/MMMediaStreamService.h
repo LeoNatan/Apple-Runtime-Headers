@@ -10,10 +10,14 @@
 #import <AOSUI/MMServicePreflightProtocol-Protocol.h>
 #import <AOSUI/MMWebKitViewControllerDelegate-Protocol.h>
 
-@class CPSConfigurationClient, MMLinkTextField, MMPromptForLocalSecret, MMWebKitViewController, NSButton, NSImageView, NSLayoutConstraint, NSMutableDictionary, NSProgress, NSProgressIndicator, NSString, NSTextField, NSWindow;
+@class CPSConfigurationClient, MMLinkTextField, MMPromptForLocalSecret, MMWebKitViewController, NSButton, NSImageView, NSLayoutConstraint, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSWindow;
 
 @interface MMMediaStreamService : MMService <MMWebKitViewControllerDelegate, MMLinkTextFieldDelegate, MMServicePreflightProtocol>
 {
+    MMWebKitViewController *_webKitViewController;
+    BOOL _hasCheckedQuota;
+    BOOL _hasCheckedRampedState;
+    BOOL _didEncounterLoadError;
     NSWindow *_photoStreamOptionsSheet;
     NSImageView *_photoStreamOptionsIcon;
     NSButton *_icloudPhotosCheckbox;
@@ -24,15 +28,10 @@
     NSTextField *_classicPhotoStreamMessage;
     NSButton *_sharedPhotoStreamCheckbox;
     NSTextField *_sharedPhotoStreamMessage;
-    NSButton *_sharedPhotoStreamConfirmButton;
     NSImageView *_iCloudPhotosWarningIcon;
     NSTextField *_iCloudPhotosProgressMessage;
     NSProgressIndicator *_iCloudPhotosProgressIndicator;
-    NSProgress *_iCloudPhotosProgress;
-    MMWebKitViewController *_webKitViewController;
-    BOOL _hasCheckedQuota;
-    BOOL _hasCheckedRampedState;
-    BOOL _didEncounterLoadError;
+    NSButton *_sharedPhotoStreamConfirmButton;
     long long _enableOverride;
     NSString *_infoButtonURLString;
     NSMutableDictionary *_cachedExitingStatus;
@@ -48,21 +47,21 @@
 @property long long enableOverride; // @synthesize enableOverride=_enableOverride;
 @property BOOL hasCheckedRampedState; // @synthesize hasCheckedRampedState=_hasCheckedRampedState;
 @property(retain) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
-@property(retain) NSButton *sharedPhotoStreamConfirmButton; // @synthesize sharedPhotoStreamConfirmButton=_sharedPhotoStreamConfirmButton;
-@property(retain) NSProgress *iCloudPhotosProgress; // @synthesize iCloudPhotosProgress=_iCloudPhotosProgress;
-@property(retain) NSProgressIndicator *iCloudPhotosProgressIndicator; // @synthesize iCloudPhotosProgressIndicator=_iCloudPhotosProgressIndicator;
-@property(retain) NSTextField *iCloudPhotosProgressMessage; // @synthesize iCloudPhotosProgressMessage=_iCloudPhotosProgressMessage;
-@property(retain) NSImageView *iCloudPhotosWarningIcon; // @synthesize iCloudPhotosWarningIcon=_iCloudPhotosWarningIcon;
-@property(retain) NSTextField *sharedPhotoStreamMessage; // @synthesize sharedPhotoStreamMessage=_sharedPhotoStreamMessage;
-@property(retain) NSButton *sharedPhotoStreamCheckbox; // @synthesize sharedPhotoStreamCheckbox=_sharedPhotoStreamCheckbox;
-@property(retain) NSTextField *classicPhotoStreamMessage; // @synthesize classicPhotoStreamMessage=_classicPhotoStreamMessage;
-@property(retain) NSButton *classicPhotoStreamCheckbox; // @synthesize classicPhotoStreamCheckbox=_classicPhotoStreamCheckbox;
-@property(retain) NSLayoutConstraint *icloudPhotosMessageLeftIconConstraint; // @synthesize icloudPhotosMessageLeftIconConstraint=_icloudPhotosMessageLeftIconConstraint;
-@property(retain) NSLayoutConstraint *icloudPhotosMessageLeftCheckboxConstraint; // @synthesize icloudPhotosMessageLeftCheckboxConstraint=_icloudPhotosMessageLeftCheckboxConstraint;
-@property(retain) MMLinkTextField *icloudPhotosMessage; // @synthesize icloudPhotosMessage=_icloudPhotosMessage;
-@property(retain) NSButton *icloudPhotosCheckbox; // @synthesize icloudPhotosCheckbox=_icloudPhotosCheckbox;
-@property(retain) NSImageView *photoStreamOptionsIcon; // @synthesize photoStreamOptionsIcon=_photoStreamOptionsIcon;
+@property __weak NSButton *sharedPhotoStreamConfirmButton; // @synthesize sharedPhotoStreamConfirmButton=_sharedPhotoStreamConfirmButton;
+@property __weak NSProgressIndicator *iCloudPhotosProgressIndicator; // @synthesize iCloudPhotosProgressIndicator=_iCloudPhotosProgressIndicator;
+@property __weak NSTextField *iCloudPhotosProgressMessage; // @synthesize iCloudPhotosProgressMessage=_iCloudPhotosProgressMessage;
+@property __weak NSImageView *iCloudPhotosWarningIcon; // @synthesize iCloudPhotosWarningIcon=_iCloudPhotosWarningIcon;
+@property __weak NSTextField *sharedPhotoStreamMessage; // @synthesize sharedPhotoStreamMessage=_sharedPhotoStreamMessage;
+@property __weak NSButton *sharedPhotoStreamCheckbox; // @synthesize sharedPhotoStreamCheckbox=_sharedPhotoStreamCheckbox;
+@property __weak NSTextField *classicPhotoStreamMessage; // @synthesize classicPhotoStreamMessage=_classicPhotoStreamMessage;
+@property __weak NSButton *classicPhotoStreamCheckbox; // @synthesize classicPhotoStreamCheckbox=_classicPhotoStreamCheckbox;
+@property __weak NSLayoutConstraint *icloudPhotosMessageLeftIconConstraint; // @synthesize icloudPhotosMessageLeftIconConstraint=_icloudPhotosMessageLeftIconConstraint;
+@property __weak NSLayoutConstraint *icloudPhotosMessageLeftCheckboxConstraint; // @synthesize icloudPhotosMessageLeftCheckboxConstraint=_icloudPhotosMessageLeftCheckboxConstraint;
+@property __weak MMLinkTextField *icloudPhotosMessage; // @synthesize icloudPhotosMessage=_icloudPhotosMessage;
+@property __weak NSButton *icloudPhotosCheckbox; // @synthesize icloudPhotosCheckbox=_icloudPhotosCheckbox;
+@property __weak NSImageView *photoStreamOptionsIcon; // @synthesize photoStreamOptionsIcon=_photoStreamOptionsIcon;
 @property(retain) NSWindow *photoStreamOptionsSheet; // @synthesize photoStreamOptionsSheet=_photoStreamOptionsSheet;
+- (void).cxx_destruct;
 - (id)_simulateHasReferencedFiles;
 - (id)_simulateMediaServiceExitType;
 - (id)_simulateMediaServiceExitInterval;
@@ -109,7 +108,6 @@
 - (BOOL)_isiCloudPhotoLibraryEnabled;
 - (BOOL)_isClassicPhotoSteamEnabled;
 - (BOOL)_hasUnimportedPhotos;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)setProgressEnabled:(BOOL)arg1;
 - (void)setiCloudPhotosCheckboxEnabled:(BOOL)arg1 includeMessage:(BOOL)arg2;
 - (void)setiCloudPhotosEnabled;
@@ -149,7 +147,7 @@
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (_Bool)needsPassword;
 - (long long)_isEnabledForMixedDisplay;
-- (BOOL)isDeterminingStatus;
+- (BOOL)determiningStatus;
 - (BOOL)_supportsMixedEnableState;
 - (BOOL)_isEnabledForDisplay;
 - (void)_setEnabled:(BOOL)arg1 withOptions:(int)arg2;

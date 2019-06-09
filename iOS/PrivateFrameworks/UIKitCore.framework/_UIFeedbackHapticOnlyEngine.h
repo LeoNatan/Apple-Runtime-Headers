@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (_Bool)_supportsPlayingFeedback:(id)arg1;
++ (_Bool)_supportsPlayingIndividualFeedback:(id)arg1;
 + (id)sharedEngine;
 - (id)_createFeedbackPlayer;
 

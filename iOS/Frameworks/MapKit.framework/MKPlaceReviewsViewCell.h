@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_reviewLabelTopConstraint;
     NSLayoutConstraint *_reviewLabelToAuthorLabelConstraint;
     NSLayoutConstraint *_authorLabelBaselineConstraint;
+    _Bool _isLastReview;
     MKPlaceReviewAvatarGenerator *_avatarGenerator;
     unsigned long long _rating;
     NSString *_author;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(nonatomic) unsigned long long rating; // @synthesize rating=_rating;
 @property(retain, nonatomic) MKPlaceReviewAvatarGenerator *avatarGenerator; // @synthesize avatarGenerator=_avatarGenerator;
+@property(nonatomic) _Bool isLastReview; // @synthesize isLastReview=_isLastReview;
 - (void).cxx_destruct;
 - (unsigned long long)maxCharacters;
 - (id)detailLabelText;
@@ -34,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)setPicture:(id)arg1;
 - (void)setReview:(id)arg1;
 - (void)_updatePictureTheme:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)_updateBaselineConstraints;
 - (void)_contentSizeDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;

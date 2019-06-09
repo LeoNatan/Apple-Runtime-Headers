@@ -10,10 +10,10 @@
 @protocol MSPHistoryEntry;
 
 @protocol MSPHistoryEntry <MSPImmutableObject>
+@property(readonly, nonatomic) _Bool tracksRAPReportingOnly;
+@property(readonly, copy, nonatomic) NSDate *usageDate;
 - (_Bool)isFailed;
-- (_Bool)tracksRAPReportingOnly;
 - (_Bool)isUserVisibleDuplicateOfEntry:(id <MSPHistoryEntry>)arg1;
-- (NSDate *)usageDate;
 - (void)ifSearch:(void (^)(id <MSPHistoryEntrySearch>))arg1 ifRoute:(void (^)(id <MSPHistoryEntryRoute>))arg2 ifPlaceDisplay:(void (^)(id <MSPHistoryEntryPlaceDisplay>))arg3 ifTransitLineItem:(void (^)(id <MSPHistoryEntryTransitLineItem>))arg4;
 @end
 

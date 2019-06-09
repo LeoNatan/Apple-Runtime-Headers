@@ -22,10 +22,13 @@
 @property(nonatomic, getter=isGeoSupported) _Bool geoSupported; // @synthesize geoSupported=_geoSupported;
 - (void).cxx_destruct;
 - (void)fetchApplicationBundleIdentifiersForCarIntents:(CDUnknownBlockType)arg1;
+- (id)effectivePolicyForAppDeclaration:(id)arg1 inVehicleWithCertificateSerial:(id)arg2;
 - (id)effectivePolicyForAppDeclaration:(id)arg1;
+- (unsigned long long)_applicationCategoryForAppDeclaration:(id)arg1 policy:(id)arg2;
 - (_Bool)_appWithDeclaration:(id)arg1 supportsAnyIntents:(id)arg2;
 - (_Bool)_appWithDeclaration:(id)arg1 supportsAllIntents:(id)arg2;
-- (_Bool)_connectedProtocolsIntersectsAppProtocols:(id)arg1;
+- (_Bool)_vehicleProtocolsIntersectAppProtocols:(id)arg1 certificateSerial:(id)arg2;
+- (id)_vehicleProtocolsForCertificateSerial:(id)arg1;
 - (id)_sessionStatus;
 - (id)init;
 

@@ -17,18 +17,20 @@
     NSDictionary *_userInfo;
     NSObject<OS_xpc_object> *_xpcEndpoint;
     NSSet *_actions;
+    NSDictionary *_legacyAlertOptions;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSSet *actions; // @synthesize actions=_actions;
++ (id)configurationContextWithLegacyAlertOptions:(id)arg1;
+@property(readonly, copy, nonatomic) NSDictionary *legacyAlertOptions; // @synthesize legacyAlertOptions=_legacyAlertOptions;
+@property(copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcEndpoint; // @synthesize xpcEndpoint=_xpcEndpoint;
-@property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(copy, nonatomic) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

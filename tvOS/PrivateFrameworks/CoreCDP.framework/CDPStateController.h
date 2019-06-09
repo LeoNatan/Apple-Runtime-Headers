@@ -19,6 +19,8 @@
 - (_Bool)shouldPerformRepair:(id *)arg1;
 - (void)finishOfflineLocalSecretChangeWithCompletion:(CDUnknownBlockType)arg1;
 - (void)localSecretChangedTo:(id)arg1 secretType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)attemptToEscrowPreRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)attemptToEscrowPreRecord:(id)arg1 preRecordUUID:(id)arg2 secretType:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)recoverWithSquirrel:(CDUnknownBlockType)arg1;
 - (void)recoverAndSynchronizeWithSquirrel:(CDUnknownBlockType)arg1;
 - (void)startCircleApplicationApprovalServer:(CDUnknownBlockType)arg1;

@@ -18,6 +18,7 @@
 - (void)prominentHapticEnabled:(void (^)(_Bool))arg1;
 - (void)hapticIntensity:(void (^)(float))arg1;
 - (void)playProminentHapticPreview;
+- (void)playDefaultHapticPreview;
 - (void)playAudioAndHapticPreview;
 - (void)setHapticState:(int)arg1;
 - (void)setSystemMuted:(_Bool)arg1;
@@ -25,7 +26,7 @@
 - (void)systemMutedState:(void (^)(_Bool))arg1;
 - (void)setMuted:(_Bool)arg1 target:(NACProxyVolumeControlTarget *)arg2;
 - (void)setVolumeValue:(float)arg1 target:(NACProxyVolumeControlTarget *)arg2;
-- (void)volumeWarningForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(_Bool))arg2;
+- (void)volumeWarningForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(_Bool, int))arg2;
 - (void)EULimitForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(float))arg2;
 - (void)mutedStateForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(_Bool))arg2;
 - (void)volumeControlAvailabilityForTarget:(NACProxyVolumeControlTarget *)arg1 result:(void (^)(_Bool))arg2;

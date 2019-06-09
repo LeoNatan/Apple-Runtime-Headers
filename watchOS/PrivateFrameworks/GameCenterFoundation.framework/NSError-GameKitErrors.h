@@ -16,6 +16,8 @@
 + (id)userErrorForServerError:(id)arg1;
 + (id)userErrorForCode:(int)arg1 underlyingError:(id)arg2;
 + (id)userErrorForCode:(int)arg1 userInfo:(id)arg2;
++ (id)_gkUserErrorForGameSessionErrorCode:(int)arg1 userInfo:(id)arg2;
++ (id)_gkUserErrorForTournamentErrorCode:(int)arg1 reason:(id)arg2 userInfo:(id)arg3;
 - (_Bool)_gkIsUnauthenticatedError;
 @end
 

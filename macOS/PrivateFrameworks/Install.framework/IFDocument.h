@@ -12,6 +12,7 @@
 }
 
 + (id)documentWithPath:(id)arg1;
++ (id)_realRealPath:(id)arg1;
 + (id)fileURLForURL:(id)arg1;
 + (id)canonicalURLForPath:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;

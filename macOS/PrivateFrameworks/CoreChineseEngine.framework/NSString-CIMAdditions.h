@@ -40,5 +40,13 @@
 - (unsigned long long)UTF32Length;
 - (BOOL)isSingleComposedCharacter;
 - (BOOL)contentsExclusivelyInCharacterSet:(struct USet *)arg1;
+- (int)mecabraLanguage;
+- (BOOL)isZhuyinOrZhuyinEten;
+- (BOOL)isWubiXing;
+- (BOOL)isStroke;
+- (BOOL)isShuangpin;
+- (BOOL)isPinyinOrShuangpinTraditional;
+- (BOOL)isPinyinOrShuangpinSimplified;
+- (BOOL)isPinyinOrShuangpin;
 @end
 

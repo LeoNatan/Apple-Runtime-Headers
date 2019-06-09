@@ -38,5 +38,34 @@
 - (id)tsu_initWithUIntegers:(const unsigned long long *)arg1 count:(unsigned long long)arg2;
 - (id)tsu_initWithInts:(const int *)arg1 count:(unsigned long long)arg2;
 - (id)tsu_initWithCGFloats:(const double *)arg1 count:(unsigned long long)arg2;
+- (id)tsp_initWithNSRangeArray:(const RepeatedPtrField_6e0d89e6 *)arg1;
+- (void)tsp_saveToNSRangeArray:(RepeatedPtrField_6e0d89e6 *)arg1;
+- (id)tsp_initWithProtobufUUIDArray:(const RepeatedPtrField_c4607516 *)arg1;
+- (void)tsp_saveToProtobufUUIDArray:(RepeatedPtrField_c4607516 *)arg1;
+- (id)tsp_initWithUInt32Array:(const RepeatedField_018d745b *)arg1;
+- (void)tsp_saveToUInt32Array:(RepeatedField_018d745b *)arg1;
+- (id)tsp_initWithColorArray:(const RepeatedPtrField_c17961e4 *)arg1;
+- (void)tsp_saveToColorArray:(RepeatedPtrField_c17961e4 *)arg1;
+- (id)tsp_initWithProtobufStringArray:(const RepeatedPtrField_fe7cf120 *)arg1;
+- (void)tsp_saveToProtobufStringArray:(RepeatedPtrField_fe7cf120 *)arg1;
+- (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 objectMap:(id *)arg3 error:(id *)arg4;
+- (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)tsch_initTSCHChartGridValuesArrayWithProtobufGridRowArray:(const RepeatedPtrField_36342b27 *)arg1;
+- (void)tsch_saveTSCHChartGridValuesArrayToProtobufGridRowArray:(RepeatedPtrField_36342b27 *)arg1;
+-     // Error parsing type: @24@0:8r^{GridRow=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::GridValue>=^{Arena}ii^{Rep}}}16, name: tsch_initTSCHChartGridValuesWithProtobufGridRow:
+-     // Error parsing type: v24@0:8^{GridRow=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::GridValue>=^{Arena}ii^{Rep}}}16, name: tsch_saveTSCHChartGridValuesToProtobufGridRow:
+- (id)tsch_initWithSwapTuplesArray:(const RepeatedPtrField_e6d64692 *)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToSwapTuplesArray:(RepeatedPtrField_e6d64692 *)arg1 archiver:(id)arg2;
+-     // Error parsing type: @32@0:8r^{StyleSwapUndoTuplesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive>=^{Arena}ii^{Rep}}}16@24, name: tsch_initWithSwapTuples:unarchiver:
+-     // Error parsing type: v32@0:8^{StyleSwapUndoTuplesArchive=^^?{InternalMetadataWithArena=^v}{HasBits<1>=[1I]}{CachedSize={atomic<int>=Ai}}{RepeatedPtrField<TSCH::StyleSwapUndoTupleArchive>=^{Arena}ii^{Rep}}}16@24, name: tsch_saveToSwapTuples:archiver:
+- (id)tsch_initWithSwapTupleArray:(const RepeatedPtrField_6c786866 *)arg1 unarchiver:(id)arg2;
+- (void)tsch_saveToSwapTupleArray:(RepeatedPtrField_6c786866 *)arg1 archiver:(id)arg2;
+- (id)tsd_initWithGeometryArray:(const RepeatedPtrField_27865cdd *)arg1;
+- (void)tsd_saveToGeometryArray:(RepeatedPtrField_27865cdd *)arg1 archiver:(id)arg2;
+- (void)tsd_saveToExteriorTextWrapArray:(RepeatedPtrField_c7c49ab2 *)arg1 archiver:(id)arg2;
+- (id)tsd_initWithExteriorTextWrapArray:(const RepeatedPtrField_c7c49ab2 *)arg1;
+- (int)tss_propertyAtIndex:(unsigned int)arg1;
+- (_Bool)kn_isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
 @end
 

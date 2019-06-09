@@ -12,8 +12,12 @@
 {
 }
 
++ (id)keyPathsAffectingCurrentDataSourceManager;
++ (id)currentDataSourceManager;
++ (id)emptyDataSourceManager;
 
 // Remaining properties
 @property(readonly, nonatomic) PXCMMInvitationsDataSource *dataSource; // @dynamic dataSource;
+
 @end
 

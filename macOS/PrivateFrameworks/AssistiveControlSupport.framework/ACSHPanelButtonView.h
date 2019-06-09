@@ -12,6 +12,7 @@
 {
     BOOL _depressed;
     BOOL _locked;
+    BOOL _forceDeadKeyDrawing;
     BOOL _toggleOn;
     BOOL __hasExtraRect;
     ACSHPanelButton *_button;
@@ -51,6 +52,7 @@
 @property(nonatomic) unsigned long long textDisplayPosition; // @synthesize textDisplayPosition=_textDisplayPosition;
 @property(retain, nonatomic) NSColor *displayColor; // @synthesize displayColor=_displayColor;
 @property(nonatomic) BOOL toggleOn; // @synthesize toggleOn=_toggleOn;
+@property(nonatomic) BOOL forceDeadKeyDrawing; // @synthesize forceDeadKeyDrawing=_forceDeadKeyDrawing;
 @property(nonatomic) BOOL locked; // @synthesize locked=_locked;
 @property(nonatomic) BOOL depressed; // @synthesize depressed=_depressed;
 @property(nonatomic) __weak ACSHPanelButton *button; // @synthesize button=_button;
@@ -67,8 +69,10 @@
 - (void)_accessibilityValueChanged;
 @property(readonly, nonatomic) NSString *_accessibilityValueDescription;
 - (id)view:(id)arg1 stringForToolTip:(long long)arg2 point:(struct CGPoint)arg3 userData:(void *)arg4;
-@property(readonly) NSString *_currentToolTip;
+@property(readonly, nonatomic) NSString *_currentToolTip;
 - (void)_updateToolTip;
+- (void)_drawingAttributesForSecondary:(BOOL)arg1 returningTextColorAttribute:(unsigned long long *)arg2 iconColorAttribute:(unsigned long long *)arg3 background:(id *)arg4;
+@property(readonly, nonatomic) BOOL deadKey;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSemiHighlighted:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
@@ -94,7 +98,7 @@
 - (id)_validateDisplayText:(id)arg1;
 - (struct CGSize)sizeForFittingDisplayText;
 - (void)_updateDisplayText;
-- (id)_foregroundColorForTextColorAttribute:(unsigned long long)arg1 textNotImage:(BOOL)arg2;
+- (id)_foregroundColorForColorAttribute:(unsigned long long)arg1 textNotImage:(BOOL)arg2;
 - (BOOL)_shouldDisplaySecondaryKeyText:(id)arg1;
 - (double)_baseFontSizeForSecondaryKeyText:(id)arg1;
 - (id)_textFontForText:(id)arg1 baseFontSize:(double)arg2 frame:(struct CGRect)arg3;

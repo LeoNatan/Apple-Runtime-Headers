@@ -23,11 +23,13 @@
     NSString *_derivativesMasterThumbsDirectory;
     NSString *_resourcesCPLDataDirectory;
     NSString *_resourcesPhotoStreamsDataDirectory;
+    NSString *_resourcesPhotoCloudSharingDirectory;
     NSString *_resourcesPhotoCloudSharingDataDirectory;
     NSString *_resourcesPhotoCloudSharingMetadataDirectory;
     NSString *_resourcesPhotoCloudSharingCacheDirectory;
     NSString *_resourcesProjectsDataDirectory;
     NSString *_resourcesProjectsLegacyDirectory;
+    NSString *_resourcesMomentSharedDirectory;
     NSString *_externalDirectory;
     NSFileManager *_fm;
 }
@@ -39,19 +41,25 @@
 - (void)setExtendedAttributesWithIdentifier:(id)arg1;
 - (id)readOnlyUrlWithIdentifier:(id)arg1;
 - (id)urlWithIdentifier:(id)arg1;
+- (id)baseDirectoryForBundleScope:(unsigned char)arg1;
 - (id)syncInfoPath;
 - (id)pathToAssetsToAlbumsMapping;
 - (id)externalDirectoryWithSubType:(unsigned char)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3;
 - (id)privateCacheDirectoryWithSubType:(unsigned char)arg1;
 - (id)privateDirectoryWithSubType:(unsigned char)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3;
-- (id)pathsForClientAndPermissionCheck;
+- (id)extendedPathsWithError:(id *)arg1;
+- (id)corePathsWithError:(id *)arg1;
+- (BOOL)createPathsForNewLibrariesWithError:(id *)arg1;
+- (id)pathsForExternalWriters;
 - (id)pathsForPermissionCheck;
 - (id)pathsForClientAccess:(id)arg1;
 - (id)photoDirectoryWithType:(unsigned char)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3;
 - (id)photosDatabasePath;
 - (id)addToPath:(id)arg1 leafType:(unsigned char)arg2 additionalPathComponents:(id)arg3;
 - (id)convertPhotoLibraryPathType:(unsigned char)arg1;
+- (id)_externalDirectoryWithBundleIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)_privateDirectoryWithBundleIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2;
+- (id)_basePrivateDirectoryPath;
 - (id)initWithLibraryURL:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
 
 #import <NanoTimeKit/UIScrollViewDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSString, NTKDeadzonPanGestureRecognizer;
+@class CLKDevice, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NTKDeadzonPanGestureRecognizer, UILongPressGestureRecognizer, UIView;
 
 @interface NTKPageScrollView : UIScrollView <UIScrollViewDelegate>
 {
@@ -24,6 +24,13 @@
     struct CGPoint _swipeStartOffset;
     _Bool _swipeStartOffsetHasBeenSet;
     NTKDeadzonPanGestureRecognizer *_deadzoneGesture;
+    _Bool _isReordering;
+    UILongPressGestureRecognizer *_reorderGesture;
+    UIView *_viewBeingReordered;
+    unsigned int _indexOfViewBeingReordered;
+    unsigned int _currentReorderDestinationIndex;
+    NSTimer *_reorderScrollTimer;
+    CLKDevice *_device;
     _Bool _requiresFullScreenSwipeToPage;
     _Bool _tilingSuspended;
     _Bool _alwaysSettlesOnPages;
@@ -54,11 +61,17 @@
     CDUnknownBlockType _willAnimatePageDeletionHandler;
     CDUnknownBlockType _isAnimatingPageDeletionHandler;
     CDUnknownBlockType _didAnimatePageDeletionHandler;
+    CDUnknownBlockType _shouldBeginReorderingPageAtIndex;
+    CDUnknownBlockType _didBeginReorderingPageAtIndex;
+    CDUnknownBlockType _didReorderPage;
     struct CGPoint _targetOffsetWhenScalingOnRelease;
     struct UIEdgeInsets _visualInsets;
     struct UIEdgeInsets _touchInsets;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType didReorderPage; // @synthesize didReorderPage=_didReorderPage;
+@property(copy, nonatomic) CDUnknownBlockType didBeginReorderingPageAtIndex; // @synthesize didBeginReorderingPageAtIndex=_didBeginReorderingPageAtIndex;
+@property(copy, nonatomic) CDUnknownBlockType shouldBeginReorderingPageAtIndex; // @synthesize shouldBeginReorderingPageAtIndex=_shouldBeginReorderingPageAtIndex;
 @property(copy, nonatomic) CDUnknownBlockType didAnimatePageDeletionHandler; // @synthesize didAnimatePageDeletionHandler=_didAnimatePageDeletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType isAnimatingPageDeletionHandler; // @synthesize isAnimatingPageDeletionHandler=_isAnimatingPageDeletionHandler;
 @property(copy, nonatomic) CDUnknownBlockType willAnimatePageDeletionHandler; // @synthesize willAnimatePageDeletionHandler=_willAnimatePageDeletionHandler;
@@ -110,7 +123,7 @@
 - (void)_untilePageAtIndex:(unsigned int)arg1;
 - (void)_tilePagesEagerly:(_Bool)arg1;
 - (void)purgePages;
-- (void)_performSuppressingScrollCallbacks:(CDUnknownBlockType)arg1;
+- (void)performSuppressingScrollCallbacks:(CDUnknownBlockType)arg1;
 - (void)trimPageBuffers;
 - (void)_scrollViewDidStop;
 - (void)_scrollViewDidStart;
@@ -123,6 +136,9 @@
 @property(nonatomic) _Bool requiresFullScreenSwipeToPage; // @synthesize requiresFullScreenSwipeToPage=_requiresFullScreenSwipeToPage;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (_Bool)touchesShouldCancelInContentView:(id)arg1;
+- (void)longPressForReorder:(id)arg1;
+- (struct CGPoint)_restrictDragPosition:(struct CGPoint)arg1;
+- (void)_animateToCurrentDestinationPageForReorderWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
@@ -136,7 +152,7 @@
 - (void)enumeratePagesWithBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateVisiblePagesWithBlock:(CDUnknownBlockType)arg1;
 - (id)pageAtIndex:(unsigned int)arg1;
-- (void)getCurrentScrollFraction:(float *)arg1 lowPageIndex:(int *)arg2 highPageIndex:(int *)arg3;
+- (void)getCurrentScrollFraction:(float *)arg1 lowPageIndex:(int *)arg2 highPageIndex:(int *)arg3 reorderPageIndex:(int *)arg4;
 - (void)scrollToPageAtIndex:(unsigned int)arg1 animated:(_Bool)arg2;
 - (void)insertPageAtIndex:(unsigned int)arg1;
 - (void)limitScrollablePagesToLowIndex:(unsigned int)arg1 highIndex:(unsigned int)arg2;

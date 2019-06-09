@@ -6,18 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class MPArtworkCatalog, NSNumber, UIImage;
+@class MPArtworkCatalog, NSNumber;
 
 @interface NMUNowPlayingArtworkRequest : NSObject
 {
-    UIImage *_artworkImage;
     MPArtworkCatalog *_artworkCatalog;
     NSNumber *_itemPersistentID;
 }
 
 @property(retain, nonatomic) NSNumber *itemPersistentID; // @synthesize itemPersistentID=_itemPersistentID;
 @property(retain, nonatomic) MPArtworkCatalog *artworkCatalog; // @synthesize artworkCatalog=_artworkCatalog;
-@property(retain, nonatomic) UIImage *artworkImage; // @synthesize artworkImage=_artworkImage;
 - (void).cxx_destruct;
 
 @end

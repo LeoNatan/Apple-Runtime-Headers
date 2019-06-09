@@ -7,33 +7,47 @@
 #import <AppleMediaServices/AMSTask.h>
 
 #import <AppleMediaServices/PKPaymentAuthorizationControllerDelegate-Protocol.h>
+#import <AppleMediaServices/PKPaymentAuthorizationControllerPrivateDelegate-Protocol.h>
 
-@class AMSBinaryPromise, NSDictionary, NSString, PKPayment;
+@class AMSBinaryPromise, AMSMetricsEvent, NSDictionary, NSMutableArray, NSString, PKPayment;
 
-@interface AMSCardAuthorizationTask : AMSTask <PKPaymentAuthorizationControllerDelegate>
+@interface AMSCardAuthorizationTask : AMSTask <PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate>
 {
+    _Bool _didBiometricsLockout;
+    _Bool _didCancelHomeButton;
     long long _confirmationStyle;
     NSString *_countryCode;
     NSString *_currencyCode;
+    AMSMetricsEvent *_metricsEvent;
     NSString *_passSerialNumber;
     NSString *_passTypeIdentifier;
     NSDictionary *_paymentSession;
     AMSBinaryPromise *_authorizationPromise;
     PKPayment *_payment;
+    NSMutableArray *_userActions;
 }
 
-@property(retain) PKPayment *payment; // @synthesize payment=_payment;
-@property(retain) AMSBinaryPromise *authorizationPromise; // @synthesize authorizationPromise=_authorizationPromise;
+@property(retain, nonatomic) NSMutableArray *userActions; // @synthesize userActions=_userActions;
+@property(nonatomic) _Bool didCancelHomeButton; // @synthesize didCancelHomeButton=_didCancelHomeButton;
+@property(nonatomic) _Bool didBiometricsLockout; // @synthesize didBiometricsLockout=_didBiometricsLockout;
+@property(retain, nonatomic) PKPayment *payment; // @synthesize payment=_payment;
+@property(retain, nonatomic) AMSBinaryPromise *authorizationPromise; // @synthesize authorizationPromise=_authorizationPromise;
 @property(readonly, nonatomic) NSDictionary *paymentSession; // @synthesize paymentSession=_paymentSession;
 @property(retain, nonatomic) NSString *passTypeIdentifier; // @synthesize passTypeIdentifier=_passTypeIdentifier;
 @property(retain, nonatomic) NSString *passSerialNumber; // @synthesize passSerialNumber=_passSerialNumber;
+@property(copy, nonatomic) AMSMetricsEvent *metricsEvent; // @synthesize metricsEvent=_metricsEvent;
 @property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(nonatomic) long long confirmationStyle; // @synthesize confirmationStyle=_confirmationStyle;
 - (void).cxx_destruct;
+- (void)paymentAuthorizationController:(id)arg1 willFinishWithError:(id)arg2;
+- (void)paymentAuthorizationController:(id)arg1 didEncounterAuthorizationEvent:(unsigned long long)arg2;
 - (void)paymentAuthorizationController:(id)arg1 didAuthorizePayment:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)paymentAuthorizationControllerDidFinish:(id)arg1;
 - (id)_presentPaymentRequest:(id)arg1;
+- (id)_metricsUserActionDictionary;
+- (id)_metricsTimestamp;
+- (void)_metricsPost;
 - (id)performCardAuthorization;
 - (id)initWithPaymentSession:(id)arg1;
 

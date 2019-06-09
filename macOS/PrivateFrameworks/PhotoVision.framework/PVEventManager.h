@@ -8,7 +8,6 @@
 
 @class NSMutableArray, PVContext;
 
-__attribute__((visibility("hidden")))
 @interface PVEventManager : NSObject
 {
     NSMutableArray *_notificationListeners;

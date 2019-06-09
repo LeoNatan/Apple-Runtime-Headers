@@ -10,6 +10,9 @@
 {
 }
 
++ (id)dill;
++ (id)timing;
++ (id)signInController;
 + (id)watchPairing;
 + (id)voicemailSync;
 + (id)uniqueID;
@@ -60,11 +63,13 @@
 + (id)NRPairing;
 + (id)IDSService_oversized;
 + (id)IDSService;
++ (id)GDR_oversized;
 + (id)GDR;
 + (id)FTMessageDelivery_oversized;
 + (id)engram;
 + (id)ACKTracker;
 + (id)warning;
++ (id)registration_oversized;
 + (id)registration;
 
 @end

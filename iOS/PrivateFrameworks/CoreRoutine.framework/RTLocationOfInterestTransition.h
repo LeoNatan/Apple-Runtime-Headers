@@ -18,13 +18,11 @@
     NSDate *_stopDate;
     NSUUID *_visitIdentifierOrigin;
     NSUUID *_visitIdentifierDestination;
-    NSUUID *_routeIdentifier;
     long long _modeOfTransportation;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long modeOfTransportation; // @synthesize modeOfTransportation=_modeOfTransportation;
-@property(readonly, nonatomic) NSUUID *routeIdentifier; // @synthesize routeIdentifier=_routeIdentifier;
 @property(readonly, nonatomic) NSUUID *visitIdentifierDestination; // @synthesize visitIdentifierDestination=_visitIdentifierDestination;
 @property(readonly, nonatomic) NSUUID *visitIdentifierOrigin; // @synthesize visitIdentifierOrigin=_visitIdentifierOrigin;
 @property(readonly, copy, nonatomic) NSDate *stopDate; // @synthesize stopDate=_stopDate;
@@ -37,7 +35,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 startDate:(id)arg2 stopDate:(id)arg3 visitIdentifierOrigin:(id)arg4 visitIdentifierDestination:(id)arg5 routeIdentifier:(id)arg6 modeOfTransportation:(long long)arg7;
+- (id)initWithIdentifier:(id)arg1 startDate:(id)arg2 stopDate:(id)arg3 visitIdentifierOrigin:(id)arg4 visitIdentifierDestination:(id)arg5 modeOfTransportation:(long long)arg6;
 
 @end
 

@@ -8,25 +8,18 @@
 
 #import <GeoServices/GEOToolProxy-Protocol.h>
 
-@protocol GEOToolProxy;
-
 @interface GEOToolRequester : NSObject <GEOToolProxy>
 {
-    id <GEOToolProxy> _proxy;
 }
 
 + (id)sharedRequester;
-+ (void)useRemoteProxy;
-+ (void)useLocalProxy;
-+ (void)useProxy:(Class)arg1;
-- (void).cxx_destruct;
 - (void)invalidateTileCache;
 - (unsigned long long)freePurgableSpace:(unsigned long long)arg1 forUrgency:(int)arg2;
 - (unsigned long long)calculatePurgableSpaceForUrgency:(int)arg1;
 - (id)getDefault:(id)arg1 source:(int *)arg2;
 - (void)lockDBs;
 - (void)unlockDBs;
-- (id)init;
+- (id)ping;
 
 @end
 

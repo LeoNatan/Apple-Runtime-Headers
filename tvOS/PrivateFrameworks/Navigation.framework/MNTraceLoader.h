@@ -14,13 +14,14 @@
 }
 
 - (void).cxx_destruct;
+- (_Bool)_tableExists:(id)arg1;
 - (id)_handleUpdateError;
 - (_Bool)_executeQuery:(id)arg1 rowHandler:(CDUnknownBlockType)arg2;
 - (_Bool)_updateTraceFromVersion:(unsigned long long)arg1 outError:(id *)arg2;
 - (_Bool)_loadTraceVersion;
+- (_Bool)_loadMiscInfo;
 - (_Bool)_loadCommuteDirectionsRequestsTable;
 - (_Bool)_loadCommuteDestinationsTable;
-- (_Bool)_loadSignificantEventsTable;
 - (_Bool)_loadAnnotatedUserEnvironmentTable;
 - (_Bool)_loadAnnotatedUserBehaviorTable;
 - (_Bool)_loadRouteSelectionsTable;

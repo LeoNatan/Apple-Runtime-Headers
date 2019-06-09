@@ -8,6 +8,7 @@
 
 @class OADDrawable;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimationShapeTarget : PDAnimationTarget
 {
     OADDrawable *mDrawable;

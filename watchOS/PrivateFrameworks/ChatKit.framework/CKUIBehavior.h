@@ -12,6 +12,8 @@
 {
     int _HUDStyle;
     Class _navigationBarClass;
+    UIImage *_dndActionImage;
+    UIImage *_unDNDActionImage;
     Class _chatControllerClass;
     Class _businessChatControllerClass;
     UIImage *_messageReplyImage;
@@ -45,9 +47,22 @@
 @property(readonly, nonatomic) UIImage *messageReplyImage; // @synthesize messageReplyImage=_messageReplyImage;
 @property(readonly, nonatomic) Class businessChatControllerClass; // @synthesize businessChatControllerClass=_businessChatControllerClass;
 @property(readonly, nonatomic) Class chatControllerClass; // @synthesize chatControllerClass=_chatControllerClass;
+@property(readonly, nonatomic) UIImage *unDNDActionImage; // @synthesize unDNDActionImage=_unDNDActionImage;
+@property(readonly, nonatomic) UIImage *dndActionImage; // @synthesize dndActionImage=_dndActionImage;
 @property(readonly, nonatomic) Class navigationBarClass; // @synthesize navigationBarClass=_navigationBarClass;
 @property(nonatomic) int HUDStyle; // @synthesize HUDStyle=_HUDStyle;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) UIImage *carplayComposeButtonImage;
+@property(readonly, nonatomic) UIImage *carplayChevronImage;
+@property(readonly, nonatomic) UIFont *searchResultLabelBoldFont;
+@property(readonly, nonatomic) UIFont *searchResultLabelFont;
+@property(readonly, nonatomic) UIFont *searchDetailsHeaderFont;
+@property(readonly, nonatomic) UIFont *searchHeaderButtonFont;
+@property(readonly, nonatomic) UIFont *searchHeaderFont;
+@property(readonly, nonatomic) float searchPhotoThumbnailWidth;
+@property(readonly, nonatomic) float searchSectionTitleVertPadding;
+@property(readonly, nonatomic) float searchHeaderHeight;
+@property(readonly, nonatomic) struct UIEdgeInsets searchSectionInsets;
 @property(readonly, nonatomic) double callButtonLongPressDuration;
 @property(readonly, nonatomic) struct UIEdgeInsets callButtonImageInsets;
 @property(readonly, nonatomic) float callButtonSize;
@@ -80,7 +95,7 @@
 @property(readonly, nonatomic) float browserSwitcherExpandThreshold;
 @property(readonly, nonatomic) float browserSwitcherExpandedGrabberHeaderHeight;
 @property(readonly, nonatomic) float browserSwitcherCompactGrabberVisibleHeight;
-@property(readonly, nonatomic) float browserSwitcherCompactGrabberHeaderHeight;
+@property(readonly, nonatomic) float browserSwitcherCollapsedGrabberHeaderHeight;
 @property(readonly, nonatomic) unsigned int suggestedMinimumRecentsCount;
 @property(readonly, nonatomic) unsigned int suggestedAppStripLimit;
 @property(readonly, nonatomic) unsigned int appIconPrefetchLimit;
@@ -159,6 +174,9 @@
 @property(readonly, nonatomic) float avatarNameWidth;
 @property(readonly, nonatomic) float avatarSpacingMargin;
 @property(readonly, nonatomic) struct CGSize avatarSize;
+@property(readonly, nonatomic) UIImage *detailsViewMessagesImage;
+@property(readonly, nonatomic) UIImage *detailsViewPhoneImage;
+@property(readonly, nonatomic) UIImage *detailsViewFaceTimeVideoImage;
 @property(readonly, nonatomic) UIFont *iCloudTextFont;
 @property(readonly, nonatomic) UIFont *downloadButtonFont;
 @property(readonly, nonatomic) UIFont *headerFont;
@@ -197,8 +215,13 @@
 @property(readonly, nonatomic) float dividerHeight;
 @property(readonly, nonatomic) _Bool detailsSeperatorsFollowLayoutMargins;
 @property(readonly, nonatomic) _Bool shouldAnimateGifsInPhotoGrid;
+@property(readonly, nonatomic) NSString *entryViewPhotoButtonName;
+@property(readonly, nonatomic) NSString *entryViewArrowButtonName;
+@property(readonly, nonatomic) NSString *entryViewAudioButtonName;
+@property(readonly, nonatomic) NSString *entryViewSendButtonName;
 @property(readonly, nonatomic) UIFont *audioHintFont;
 @property(readonly, nonatomic) UIFont *characterCountFont;
+@property(readonly, nonatomic) float entryViewTopOverhead;
 @property(readonly, nonatomic) float entryViewMaxHandWritingPluginShelfHeight;
 @property(readonly, nonatomic) float entryViewMinPluginShelfHeight;
 @property(readonly, nonatomic) float entryViewMaxExtensionShelfHeight;
@@ -208,6 +231,7 @@
 @property(readonly, nonatomic) struct UIEdgeInsets entryViewVerticalCoverInsets;
 @property(readonly, nonatomic) float entryViewCoverMinHeight;
 @property(readonly, nonatomic) float entryFieldCoverLineWidth;
+@property(readonly, nonatomic) float sendButtonSize;
 @property(readonly, nonatomic) _Bool entryFieldShouldUseNewPhotoUI;
 @property(readonly, nonatomic) _Bool isAppStripInKeyboard;
 @property(readonly, nonatomic) _Bool entryFieldShouldUseBackdropView;
@@ -249,6 +273,7 @@
 @property(readonly, nonatomic) float contactBalloonMinWidth;
 @property(readonly, nonatomic) float contactBalloonInnerItemSpacing;
 @property(readonly, nonatomic) struct CGSize contactImageSize;
+@property(readonly, nonatomic) struct UIEdgeInsets attachmentBalloonRichIconInsets;
 @property(readonly, nonatomic) struct CGSize attachmentBalloonSize;
 @property(readonly, nonatomic) struct CGSize documentIconSize;
 @property(readonly, nonatomic) int playButtonBackdropStyle;
@@ -280,6 +305,7 @@
 - (id)imageNameForBalloonDescriptor:(struct CKBalloonDescriptor_t)arg1;
 - (id)imageNameForBalloonDescriptorWithStrokedStyle:(struct CKBalloonDescriptor_t)arg1;
 - (id)imageNameForBalloonDescriptorWithFilledStyle:(struct CKBalloonDescriptor_t)arg1;
+- (id)background_chevronImage;
 - (id)multiway_chevronImage;
 - (id)business_chevronImage;
 - (id)black_chevronImage;
@@ -371,6 +397,7 @@
 @property(readonly, nonatomic) NSDictionary *datestampTranscriptTextAttributes;
 @property(readonly, nonatomic) NSDictionary *stampTranscriptBoldTextAttributes;
 @property(readonly, nonatomic) NSDictionary *stampTranscriptTextAttributes;
+@property(readonly, nonatomic) NSDictionary *nickNameTranscriptTextAttributes;
 @property(readonly, nonatomic) NSDictionary *senderTranscriptTextAttributes;
 - (id)breadcrumbTranscriptTextAttributes;
 - (id)statusTranscriptBoldTextAttributesForOrientation:(BOOL)arg1;
@@ -453,8 +480,12 @@
 @property(readonly, nonatomic) _Bool shouldHideStatusBarForFullScreenEffects;
 @property(readonly, nonatomic) float sendProgressTitleTransitionProgressThreshold;
 @property(readonly, nonatomic) _Bool showsProgressInNavigationBar;
+@property(readonly, nonatomic) double transcriptResortTimeout;
+@property(readonly, nonatomic) double sendAnimationDuration;
 @property(readonly, nonatomic) _Bool shouldUseSendAnimation;
 @property(readonly, nonatomic) _Bool shouldBackfillTranscript;
+@property(readonly, nonatomic) UIFont *nicknameDescriptionFont;
+@property(readonly, nonatomic) UIFont *nicknameLabelFont;
 @property(readonly, nonatomic) UIImage *defaultWaveformImage;
 @property(readonly, nonatomic) UIImage *messageAcknowledgmentPickerBarBubbleImage;
 @property(readonly, nonatomic) UIImage *trashImage;
@@ -464,10 +495,13 @@
 @property(readonly, nonatomic) UIImage *unreadDNDImage;
 @property(readonly, nonatomic) UIImage *readDNDImage;
 @property(readonly, nonatomic) UIImage *unreadImage;
+@property(readonly, nonatomic) UIImage *optionsImage;
+@property(readonly, nonatomic) UIImage *newComposeImage;
 @property(readonly, nonatomic) UIFont *conversationListGroupCountFont;
 @property(readonly, nonatomic) UIFont *conversationListDateFont;
-@property(readonly, nonatomic) UIFont *conversationListSummaryFont;
 @property(readonly, nonatomic) UIFont *conversationListGroupSenderFont;
+@property(readonly, nonatomic) UIFont *conversationListBoldSummaryFont;
+@property(readonly, nonatomic) UIFont *conversationListSummaryFont;
 @property(readonly, nonatomic) UIFont *conversationListSenderFont;
 @property(readonly, nonatomic) float conversationListMultipleContactsImageDiameter;
 @property(readonly, nonatomic) float conversationListContactImageDiameter;
@@ -486,6 +520,8 @@
 @property(readonly, nonatomic) Class conversationListTableViewClass;
 @property(readonly, nonatomic) NSArray *acceptableUTIs;
 @property(readonly, nonatomic) UIImage *chevronImage;
+@property(readonly, nonatomic) UIFont *navbarDefaultLabelFont;
+@property(readonly, nonatomic) UIFont *navbarToLabelFont;
 @property(readonly, nonatomic) unsigned int conversationListCellMaxSummaryLength;
 @property(readonly, nonatomic) unsigned int conversationListCellSummaryNumberOfLines;
 @property(readonly, nonatomic) float conversationListCellRightMargin;
@@ -520,7 +556,6 @@
 @property(readonly, nonatomic) _Bool faceTimeAudioIsWhitelisted;
 @property(readonly, nonatomic) _Bool faceTimeVideoIsWhitelisted;
 @property(readonly, nonatomic) _Bool phoneIsWhitelisted;
-@property(readonly, nonatomic) _Bool isN56Device;
 @property(readonly, nonatomic) float actionMenuWindowLevel;
 @property(readonly, nonatomic) float videoControllerWindowLevel;
 @property(readonly, nonatomic) float presentationControllerWindowLevel;
@@ -543,9 +578,15 @@
 - (float)navigationBarExpandedHeightValue;
 - (float)navigationBarCollapsedHeightValue;
 @property(readonly, nonatomic) float navigationBarMaxHeight;
+- (_Bool)_isVerticallyCompact;
 - (id)disabledNavigationBarImageWithGlyph:(id)arg1;
 @property(readonly, nonatomic) UIImage *disabledFacetimeVideoImage;
 @property(readonly, nonatomic) UIImage *disabledFacetimeAudioImage;
+- (id)imageNamed:(id)arg1 pointSize:(float)arg2 insets:(struct UIEdgeInsets)arg3;
+@property(readonly, nonatomic) UIImage *navBarInfoImage;
+@property(readonly, nonatomic) UIImage *enabledFacetimeVideoImage;
+@property(readonly, nonatomic) UIImage *enabledFacetimeAudioImage;
+- (float)navBarButtonSymbolImageFontSize;
 - (id)disabledNavigationButtonStrokeColor;
 - (float)disabledNavigationButtonStrokeWidth;
 - (float)disabledNavigationButtonWidth;

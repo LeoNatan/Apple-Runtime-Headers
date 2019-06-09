@@ -7,8 +7,13 @@
 #import <HealthKit/HKObjectType.h>
 
 @interface HKObjectType (HKAdditions)
+- (id)hk_formatPrimaryMetadataValue:(id)arg1 displayType:(id)arg2 unitPreferencesController:(id)arg3;
+- (id)hk_formatPrimaryMetadataValueForObject:(id)arg1 unitPreferencesController:(id)arg2;
+- (id)hk_primaryMetadataValueDisplayType;
+- (id)hk_primaryMetadataKey;
 - (Class)hk_valueFormatterClass;
 - (id)hk_numberFormatterForUnit:(id)arg1 decimalPrecisionRule:(id)arg2 formattingContext:(int)arg3;
 - (id)hk_numberFormatterForUnit:(id)arg1 decimalPrecisionRule:(id)arg2;
+- (int)associatedSampleAggregationStyle;
 @end
 

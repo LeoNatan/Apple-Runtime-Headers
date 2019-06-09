@@ -12,11 +12,11 @@
 
 + (struct CGSize)thumbnailSizeForAsset:(id)arg1 withResources:(id)arg2;
 + (BOOL)canUseLastFrameOfAsset:(id)arg1 withResources:(id)arg2;
-- (int)distanceFromFeatureArray:(id)arg1 toFeatureArray:(id)arg2 distance:(float *)arg3;
-- (int)distanceFromAsset:(id)arg1 toAsset:(id)arg2 distance:(float *)arg3;
-- (int)generateFeatureForAsset:(id)arg1 withResources:(id)arg2 lastFrame:(BOOL)arg3 feature:(id *)arg4;
-- (struct __CVBuffer *)getThumbnailForAsset:(id)arg1 withResouces:(id)arg2;
-- (int)generateFeatureLastFrame:(id)arg1 feature:(id *)arg2;
+- (int)computeDistance:(float *)arg1 fromArray:(id)arg2 toArray:(id)arg3;
+- (int)computeDistance:(float *)arg1 withDescriptorClass:(id)arg2 fromAsset:(id)arg3 toAsset:(id)arg4;
+- (int)generateDistanceDescriptor:(struct NSObject **)arg1 withDescriptorClass:(Class)arg2 forAsset:(id)arg3 withResources:(id)arg4 lastFrame:(BOOL)arg5;
+- (struct __CVBuffer *)_getThumbnailForAsset:(id)arg1 withResouces:(id)arg2 andPixelFormat:(int)arg3;
+- (int)_generateLastFrameDistanceDescriptor:(struct NSObject **)arg1 withDescriptorClass:(Class)arg2 forAsset:(id)arg3;
 - (id)init;
 
 @end

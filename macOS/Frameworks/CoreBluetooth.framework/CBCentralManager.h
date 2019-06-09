@@ -6,7 +6,7 @@
 
 #import <CoreBluetooth/CBManager.h>
 
-@class NSMapTable;
+@class NSCondition, NSMapTable, NSMutableArray;
 @protocol CBCentralManagerDelegate;
 
 @interface CBCentralManager : CBManager
@@ -23,12 +23,23 @@
         unsigned int didLoseZone:1;
         unsigned int didUpdateConnectionParameters:1;
         unsigned int connectionEventDidOccur:1;
+        unsigned int didSendBytesToPeripheralWithError:1;
+        unsigned int didReceiveDataFromPeripheral:1;
+        unsigned int didDiscoverMultiplePeripherals:1;
+        unsigned int didUpdateANCSAuthorizationForPeripheral:1;
     } _delegateFlags;
     BOOL _isScanning;
+    BOOL _TCCDone;
     id <CBCentralManagerDelegate> _delegate;
     NSMapTable *_peripherals;
+    NSCondition *_TCCLock;
+    NSMutableArray *_discoveredPeripherals;
 }
 
++ (BOOL)supportsFeatures:(unsigned long long)arg1;
+@property(retain) NSMutableArray *discoveredPeripherals; // @synthesize discoveredPeripherals=_discoveredPeripherals;
+@property(nonatomic) BOOL TCCDone; // @synthesize TCCDone=_TCCDone;
+@property(retain, nonatomic) NSCondition *TCCLock; // @synthesize TCCLock=_TCCLock;
 @property(readonly, retain, nonatomic) NSMapTable *peripherals; // @synthesize peripherals=_peripherals;
 @property(nonatomic) BOOL isScanning; // @synthesize isScanning=_isScanning;
 @property(nonatomic) __weak id <CBCentralManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,6 +47,10 @@
 - (void)handleMsg:(unsigned short)arg1 args:(id)arg2;
 - (BOOL)isMsgAllowedAlways:(unsigned short)arg1;
 - (BOOL)isMsgAllowedWhenOff:(unsigned short)arg1;
+- (void)handleAncsAuthChanged:(id)arg1;
+- (void)handleDidReceiveDataFromPeripheral:(id)arg1;
+- (void)handleDidSendBytesToPeripheralwithError:(id)arg1;
+- (id)createPeripheralWithAddress:(id)arg1 andIdentifier:(id)arg2;
 - (id)retrievePeripheralWithAddress:(id)arg1;
 - (void)handleReadyForUpdates:(id)arg1;
 - (void)handleConnectionParametersUpdated:(id)arg1;
@@ -49,17 +64,30 @@
 - (void)handlePeripheralConnectionCompleted:(id)arg1;
 - (void)handlePeripheralDiscovered:(id)arg1;
 - (void)handleRestoringState:(id)arg1;
+- (void)handleSupportedFeatures:(id)arg1;
+- (void)setMatchActionRules:(id)arg1;
+- (void)setConnectionEventOptions:(id)arg1;
+- (void)sendData:(id)arg1 toPeripheral:(id)arg2;
 - (void)resumeScans;
 - (void)pauseScans;
 - (void)resumeLeConnectionManager;
 - (void)pauseLeConnectionManager;
-- (void)setConnectionEventOptions:(id)arg1;
+- (void)registerForConnectionEventsWithOptions:(id)arg1;
 - (void)enablePrivateModeForPeripheral:(id)arg1 forDuration:(unsigned short)arg2;
 - (void)stopTrackingPeripheral:(id)arg1 options:(id)arg2;
 - (void)startTrackingPeripheral:(id)arg1 options:(id)arg2;
 - (void)setDesiredConnectionLatency:(long long)arg1 forPeripheral:(id)arg2;
 - (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
 - (void)cancelPeripheralConnection:(id)arg1;
+- (void)cancelPeripheralConnection:(id)arg1 options:(id)arg2;
+- (unsigned short)getRemainingAdvancedMatchingRule;
+- (unsigned short)getTotalSupportedAdvancedMatchingRules;
+- (void)removeSingleEntryDuplicateFilter:(id)arg1;
+- (void)setEnhancedSetScanParamtersMultiCore:(id)arg1;
+- (void)setEnhancedScanEnable:(id)arg1;
+- (void)removeAdvancedMatchingRule:(id)arg1;
+- (void)addAdvancedMatchingRule:(id)arg1;
+- (void)wipeDuplicateFilterList:(id)arg1;
 - (void)randomizeAFHMapForPeripheral:(id)arg1;
 - (void)connectPeripheral:(id)arg1 options:(id)arg2;
 - (void)stopScan;

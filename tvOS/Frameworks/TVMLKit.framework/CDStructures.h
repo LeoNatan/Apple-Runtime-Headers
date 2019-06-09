@@ -58,6 +58,12 @@ struct TVRowMetrics {
     CDStruct_13b0aa87 rowMargin;
 };
 
+struct TVShowcaseConfig {
+    long long flavor;
+    long long transition;
+    double inset;
+};
+
 struct UIEdgeInsets {
     double top;
     double left;

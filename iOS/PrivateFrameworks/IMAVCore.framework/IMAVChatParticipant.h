@@ -64,8 +64,8 @@
 @property(readonly, nonatomic) unsigned int reasonChatEnded; // @synthesize reasonChatEnded=_chatEndedReason;
 @property(readonly, nonatomic) _Bool isInitiator; // @synthesize isInitiator=_isInitiator;
 @property(nonatomic, setter=setAVChat:) IMAVChat *avChat; // @synthesize avChat=_avChat;
-@property(readonly, retain, nonatomic) IMHandle *invitedBy; // @synthesize invitedBy=_inviter;
-@property(readonly, retain, nonatomic) IMHandle *imHandle; // @synthesize imHandle=_imHandle;
+@property(readonly, nonatomic) IMHandle *invitedBy; // @synthesize invitedBy=_inviter;
+@property(readonly, nonatomic) IMHandle *imHandle; // @synthesize imHandle=_imHandle;
 @property(setter=_setCameraOrientation:) unsigned int cameraOrientation; // @synthesize cameraOrientation=_cameraOrientation;
 @property(setter=_setCameraType:) unsigned int cameraType; // @synthesize cameraType=_cameraType;
 @property(retain, setter=setVCPartyID:) NSString *vcPartyID; // @synthesize vcPartyID=_vcPartyID;
@@ -78,6 +78,7 @@
 @property(readonly, nonatomic) _Bool isSendingVideo; // @synthesize isSendingVideo=_sendingVideo;
 @property(readonly, nonatomic) _Bool isSendingAudio; // @synthesize isSendingAudio=_sendingAudio;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
+- (void).cxx_destruct;
 - (struct CGSize)localAspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (struct CGSize)aspectRatioForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
 - (struct CGRect)contentRectForCameraOrientation:(unsigned int)arg1 cameraType:(unsigned int)arg2;
@@ -102,7 +103,7 @@
 - (id)_callInfoWithState:(long long)arg1;
 - (void)requestIconIfNecessary;
 @property(readonly, nonatomic) _Bool isLocalParticipant;
-@property(readonly, retain, nonatomic) NSString *name;
+@property(readonly, nonatomic) NSString *name;
 - (void)dealloc;
 - (id)description;
 - (void)disconnectFromAVChat;

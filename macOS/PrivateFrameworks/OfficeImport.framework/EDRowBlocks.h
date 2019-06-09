@@ -10,6 +10,7 @@
 
 @class EDCollection, EDWorksheet, NSMutableArray, NSRecursiveLock, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDRowBlocks : NSObject <TSUiOSMemoryWarningFlushable>
 {
     EDWorksheet *mWorksheet;

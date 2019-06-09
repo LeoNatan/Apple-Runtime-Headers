@@ -11,11 +11,13 @@
 __attribute__((visibility("hidden")))
 @interface CKDPZoneCapabilities : PBCodable <NSCopying>
 {
+    int _sharingType;
     BOOL _atomicSaves;
     BOOL _ckql;
     BOOL _fetchChanges;
     BOOL _sharing;
     struct {
+        unsigned int sharingType:1;
         unsigned int atomicSaves:1;
         unsigned int ckql:1;
         unsigned int fetchChanges:1;
@@ -36,6 +38,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsSharingType:(id)arg1;
+- (id)sharingTypeAsString:(int)arg1;
+@property(nonatomic) BOOL hasSharingType;
+@property(nonatomic) int sharingType; // @synthesize sharingType=_sharingType;
 @property(nonatomic) BOOL hasCkql;
 @property(nonatomic) BOOL hasSharing;
 @property(nonatomic) BOOL hasFetchChanges;

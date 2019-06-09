@@ -7,36 +7,38 @@
 #import <objc/NSObject.h>
 
 #import <DoNotDisturb/NSCopying-Protocol.h>
+#import <DoNotDisturb/NSMutableCopying-Protocol.h>
 #import <DoNotDisturb/NSSecureCoding-Protocol.h>
 
-@class DNDModeAssertionLifetime, NSString;
+@class DNDModeAssertionLifetime, NSDate, NSString;
 
-@interface DNDModeAssertionDetails : NSObject <NSCopying, NSSecureCoding>
+@interface DNDModeAssertionDetails : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
-    _Bool _userRequested;
     NSString *_identifier;
     NSString *_modeIdentifier;
     DNDModeAssertionLifetime *_lifetime;
-    unsigned int _syncSuppressionOptions;
+    NSDate *_userVisibleEndDate;
 }
 
-+ (id)_lifetimeClasses;
 + (_Bool)supportsSecureCoding;
-+ (id)userRequestedAssertionDetailsWithIdentifier:(id)arg1 modeIdentifier:(id)arg2 lifetime:(id)arg3;
 + (id)detailsWithIdentifier:(id)arg1 modeIdentifier:(id)arg2 lifetime:(id)arg3;
-@property(readonly, nonatomic) unsigned int syncSuppressionOptions; // @synthesize syncSuppressionOptions=_syncSuppressionOptions;
-@property(readonly, nonatomic, getter=isUserRequested) _Bool userRequested; // @synthesize userRequested=_userRequested;
++ (id)userRequestedAssertionDetailsWithIdentifier:(id)arg1 modeIdentifier:(id)arg2 lifetime:(id)arg3;
+@property(readonly, copy, nonatomic) NSDate *userVisibleEndDate; // @synthesize userVisibleEndDate=_userVisibleEndDate;
 @property(readonly, copy, nonatomic) DNDModeAssertionLifetime *lifetime; // @synthesize lifetime=_lifetime;
 @property(readonly, copy, nonatomic) NSString *modeIdentifier; // @synthesize modeIdentifier=_modeIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (id)initWithIdentifier:(id)arg1 modeIdentifier:(id)arg2 lifetime:(id)arg3 userRequested:(_Bool)arg4 syncSuppressionOptions:(unsigned int)arg5;
+- (id)_initWithIdentifier:(id)arg1 modeIdentifier:(id)arg2 lifetime:(id)arg3 userVisibleEndDate:(id)arg4;
+- (id)_initWithDetails:(id)arg1;
+- (id)init;
+@property(readonly, nonatomic, getter=isUserRequested) _Bool userRequested; // @dynamic userRequested;
 
 @end
 

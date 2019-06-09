@@ -56,6 +56,7 @@
 @property(readonly, nonatomic) RCMutableComposition *capturedComposition; // @synthesize capturedComposition=_capturedComposition;
 - (id)segmentsInCompositionByConvertingFromActiveLoadingFragment:(id)arg1;
 - (CDStruct_73a5d3ca)timeRangeToHighlight;
+- (id)waveformSegmentsIntersectingTimeRange:(CDStruct_73a5d3ca)arg1;
 - (id)waveformSegmentsInTimeRange:(CDStruct_73a5d3ca)arg1;
 - (void)updateCapturedDelta:(double)arg1;
 - (id)_captureSegmentsInComponentWaveform:(id)arg1 captureTimeRange:(CDStruct_73a5d3ca)arg2 componentWaveformSegmentOffset:(double)arg3;

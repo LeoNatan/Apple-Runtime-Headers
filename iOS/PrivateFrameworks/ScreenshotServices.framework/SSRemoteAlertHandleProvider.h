@@ -27,6 +27,7 @@
 - (void)_callDelegate:(CDUnknownBlockType)arg1;
 - (void)invalidate;
 - (void)prepare;
+- (void)preheat;
 @property(readonly, nonatomic) _Bool isActive;
 - (void)activate;
 - (id)init;

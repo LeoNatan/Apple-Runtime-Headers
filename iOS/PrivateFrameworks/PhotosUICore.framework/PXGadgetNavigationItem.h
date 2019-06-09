@@ -20,7 +20,7 @@
 }
 
 @property(readonly, nonatomic) _Bool animated; // @synthesize animated=_animated;
-@property(readonly, nonatomic) CDUnknownBlockType navigationBlock; // @synthesize navigationBlock=_navigationBlock;
+@property(readonly, copy, nonatomic) CDUnknownBlockType navigationBlock; // @synthesize navigationBlock=_navigationBlock;
 @property(readonly, nonatomic) long long navigationType; // @synthesize navigationType=_navigationType;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) id <PXGadget> gadget; // @synthesize gadget=_gadget;

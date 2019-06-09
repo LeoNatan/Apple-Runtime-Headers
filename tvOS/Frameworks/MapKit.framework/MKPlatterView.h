@@ -6,12 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, UIColor, UIFont, _MKUILabel;
+@class MKVibrantView, NSString, UIColor, UIFont, UIImageView;
 
 @interface MKPlatterView : UIView
 {
-    _MKUILabel *_glyphLabel;
-    UIView *_platterView;
+    UIImageView *_glyphImageView;
+    MKVibrantView *_platterView;
     _Bool _highlighted;
     NSString *_glyph;
     UIFont *_glyphFont;
@@ -26,7 +26,7 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)updateGlyph;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

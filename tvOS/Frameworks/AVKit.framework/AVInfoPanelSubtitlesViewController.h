@@ -7,11 +7,13 @@
 #import <AVKit/AVInfoPanelContentViewController.h>
 
 #import <AVKit/AVInfoPanelMediaOptionSelectionDelegate-Protocol.h>
+#import <AVKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 
 @class AVInfoPanelSubtitleCollectionViewController, NSArray, NSLayoutConstraint, NSString;
 @protocol AVInfoPanelSubtitlesDelegate;
 
-@interface AVInfoPanelSubtitlesViewController : AVInfoPanelContentViewController <AVInfoPanelMediaOptionSelectionDelegate>
+__attribute__((visibility("hidden")))
+@interface AVInfoPanelSubtitlesViewController : AVInfoPanelContentViewController <AVInfoPanelMediaOptionSelectionDelegate, UICollectionViewDelegateFlowLayout>
 {
     AVInfoPanelSubtitleCollectionViewController *_subtitleCollectionViewController;
     NSArray *_subtitleOptions;

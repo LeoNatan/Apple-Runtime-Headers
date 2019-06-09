@@ -6,37 +6,45 @@
 
 #import <MediaPlayer/MPPlaybackContext.h>
 
-@class MPAVItem, MPCModelRadioContentReference, MPCPlaybackRequestEnvironment, NSString, NSURL;
+#import <MediaPlaybackCore/MPCPlaybackContextPrivateListeningOverridable-Protocol.h>
+#import <MediaPlaybackCore/MPCPlaybackContextUserIdentityConsuming-Protocol.h>
 
-@interface MPCModelRadioPlaybackContext : MPPlaybackContext
+@class ICUserIdentity, MPCModelRadioContentReference, MPCPlaybackRequestEnvironment, MPModelRadioStation, NSString, NSURL;
+
+@interface MPCModelRadioPlaybackContext : MPPlaybackContext <MPCPlaybackContextUserIdentityConsuming, MPCPlaybackContextPrivateListeningOverridable>
 {
+    ICUserIdentity *_userIdentity;
     MPCPlaybackRequestEnvironment *_playbackRequestEnvironment;
     MPCModelRadioContentReference *_nowPlayingContentReference;
     MPCModelRadioContentReference *_seedContentReference;
-    NSString *_stationHash;
-    NSString *_stationName;
-    NSString *_stationStringID;
-    long long _stationID;
+    MPModelRadioStation *_radioStation;
     NSURL *_stationURL;
 }
 
 + (Class)queueFeederClass;
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSURL *stationURL; // @synthesize stationURL=_stationURL;
-@property(nonatomic) long long stationID; // @synthesize stationID=_stationID;
-@property(copy, nonatomic) NSString *stationStringID; // @synthesize stationStringID=_stationStringID;
-@property(copy, nonatomic) NSString *stationName; // @synthesize stationName=_stationName;
-@property(copy, nonatomic) NSString *stationHash; // @synthesize stationHash=_stationHash;
+@property(retain, nonatomic) MPModelRadioStation *radioStation; // @synthesize radioStation=_radioStation;
 @property(copy, nonatomic) MPCModelRadioContentReference *seedContentReference; // @synthesize seedContentReference=_seedContentReference;
 @property(copy, nonatomic) MPCModelRadioContentReference *nowPlayingContentReference; // @synthesize nowPlayingContentReference=_nowPlayingContentReference;
 @property(copy, nonatomic) MPCPlaybackRequestEnvironment *playbackRequestEnvironment; // @synthesize playbackRequestEnvironment=_playbackRequestEnvironment;
+@property(copy, nonatomic) ICUserIdentity *userIdentity; // @synthesize userIdentity=_userIdentity;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) MPAVItem *prefixItem;
+- (void)setPrivateListeningOverride:(id)arg1;
 - (id)descriptionComponents;
-- (id)initWithCoder:(id)arg1;
+- (long long)repeatType;
+- (long long)shuffleType;
+- (_Bool)containsTransportableContent;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)init;
 - (void)getRemotePlaybackQueueRepresentationWithPlayerPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,7 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@interface AMSDevice : NSObject
+#import <AppleMediaServices/AMSBagConsumer-Protocol.h>
+
+@class NSString;
+
+@interface AMSDevice : NSObject <AMSBagConsumer>
 {
 }
 
@@ -14,7 +18,7 @@
 + (_Bool)deviceIsInternalBuild;
 + (id)_systemVersionDictionary;
 + (id)_dataForNVRAMKey:(id)arg1;
-+ (id)_compatibleProductType;
++ (_Bool)deviceIsMac;
 + (_Bool)deviceIsiPod;
 + (_Bool)deviceIsiPhone;
 + (_Bool)deviceIsiPad;
@@ -25,8 +29,10 @@
 + (id)thinnedAppVariantId;
 + (id)serialNumber;
 + (id)screenScale;
++ (id)ROMAddress;
 + (id)productVersion;
 + (id)productType;
++ (id)operatingSystem;
 + (id)MLBSerialNumber;
 + (id)macAddressData;
 + (id)macAddress;
@@ -35,36 +41,44 @@
 + (id)hardwarePlatform;
 + (id)deviceName;
 + (id)deviceGUID;
++ (id)compatibleProductType;
 + (id)buildVersion;
-+ (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 logKey:(id)arg3;
-+ (_Bool)postDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 priority:(int)arg3 logKey:(id)arg4;
-+ (_Bool)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(int)arg2 logKey:(id)arg3;
-+ (id)deviceOffersForProductType:(unsigned int)arg1;
-+ (_Bool)deviceOffersContainProductType:(unsigned int)arg1;
 + (void)_performAuth;
 + (id)_notificationIdFromFollowUpId:(id)arg1 account:(id)arg2;
-+ (id)_followUpItemWithIdentifier:(id)arg1 account:(id)arg2 priority:(int)arg3 bagContract:(id)arg4 logKey:(id)arg5;
++ (id)_followUpItemWithIdentifier:(id)arg1 account:(id)arg2 priority:(int)arg3 bag:(id)arg4;
++ (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (id)bagSubProfileVersion;
++ (id)bagSubProfile;
++ (id)bagKeySet;
 + (_Bool)tearDownDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 logKey:(id)arg3;
 + (_Bool)tearDownAllDeviceOfferFollowUpsForAccount:(id)arg1 logKey:(id)arg2;
 + (_Bool)shouldPresentSetupOffersForAccount:(id)arg1 issues:(int *)arg2;
 + (_Bool)shouldPresentSetupOffersForAccount:(id)arg1;
 + (void)setDeviceOffersCheckEncodingForRequestParameters:(id)arg1;
 + (_Bool)saveDeviceOffersForAccount:(id)arg1 response:(id)arg2 logKey:(id)arg3;
-+ (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 bagContract:(id)arg3 logKey:(id)arg4;
++ (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 bag:(id)arg3 logKey:(id)arg4;
 + (void)registerCompanionWithSerialNumber:(id)arg1;
-+ (_Bool)postDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 priority:(int)arg3 bagContract:(id)arg4 logKey:(id)arg5;
-+ (_Bool)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(int)arg2 bagContract:(id)arg3 logKey:(id)arg4;
++ (_Bool)postDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 priority:(int)arg3 bag:(id)arg4 logKey:(id)arg5;
++ (_Bool)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(int)arg2 bag:(id)arg3 logKey:(id)arg4;
 + (id)deviceOffersForType:(unsigned int)arg1;
 + (_Bool)deviceOffersContainType:(unsigned int)arg1;
 + (_Bool)isGift;
 + (_Bool)isEligibleForOffers;
 + (_Bool)expressedIntent;
 + (id)deviceOffers;
-+ (void)_startListeningForDeviceLanguageChangeWithBagContract:(id)arg1 callback:(CDUnknownBlockType)arg2;
++ (void)removeDeviceOfferWithIdentifier:(id)arg1 account:(id)arg2 bagContract:(id)arg3 logKey:(id)arg4;
++ (_Bool)postDeviceOfferFollowUpWithIdentifier:(id)arg1 account:(id)arg2 priority:(int)arg3 bagContract:(id)arg4 logKey:(id)arg5;
++ (_Bool)postAllDeviceOfferFollowUpsForAccount:(id)arg1 priority:(int)arg2 bagContract:(id)arg3 logKey:(id)arg4;
 + (id)_appleLanguagesObservable;
 + (void)stopListeningForDeviceLanguageChange;
 + (void)startListeningForDeviceLanguageChangeWithBagContract:(id)arg1;
 + (id)language;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

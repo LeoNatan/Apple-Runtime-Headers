@@ -7,26 +7,35 @@
 #import <objc/NSObject.h>
 
 #import <NewsCore/NSCopying-Protocol.h>
+#import <NewsCore/NSSecureCoding-Protocol.h>
 
 @class FCBundleSubscription, NSSet;
 
-@interface FCPersonalizationUserProfile : NSObject <NSCopying>
+@interface FCPersonalizationUserProfile : NSObject <NSCopying, NSSecureCoding>
 {
     NSSet *_subscribedTagIDs;
     NSSet *_mutedTagIDs;
     NSSet *_autofavoritedTagIDs;
     NSSet *_purchasedTagIDs;
+    NSSet *_readArticleIDs;
+    NSSet *_seenArticleIDs;
     FCBundleSubscription *_bundleSubscription;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) FCBundleSubscription *bundleSubscription; // @synthesize bundleSubscription=_bundleSubscription;
+@property(readonly, nonatomic) NSSet *seenArticleIDs; // @synthesize seenArticleIDs=_seenArticleIDs;
+@property(readonly, nonatomic) NSSet *readArticleIDs; // @synthesize readArticleIDs=_readArticleIDs;
 @property(readonly, copy, nonatomic) NSSet *purchasedTagIDs; // @synthesize purchasedTagIDs=_purchasedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *autofavoritedTagIDs; // @synthesize autofavoritedTagIDs=_autofavoritedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *mutedTagIDs; // @synthesize mutedTagIDs=_mutedTagIDs;
 @property(readonly, copy, nonatomic) NSSet *subscribedTagIDs; // @synthesize subscribedTagIDs=_subscribedTagIDs;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSubscribedTagIDs:(id)arg1 mutedTagIDs:(id)arg2 autofavoritedTagIDs:(id)arg3 purchasedTagIDs:(id)arg4 bundleSubscription:(id)arg5;
+- (id)initWithSubscribedTagIDs:(id)arg1 mutedTagIDs:(id)arg2 autofavoritedTagIDs:(id)arg3 purchasedTagIDs:(id)arg4 readArticleIDs:(id)arg5 seenArticleIDs:(id)arg6 bundleSubscription:(id)arg7;
 
 @end
 

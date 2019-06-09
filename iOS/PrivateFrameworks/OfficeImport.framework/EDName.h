@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long sheetIndex; // @synthesize sheetIndex=_sheetIndex;
 @property(readonly, nonatomic) EDFormula *formula; // @synthesize formula=_formula;
 @property(retain, nonatomic) EDString *nameString; // @synthesize nameString=_nameString;
+- (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) OITSUPointerKeyDictionary *maxWorksheetReferences;
 - (void)setFormula:(id)arg1 workbook:(id)arg2;
@@ -31,7 +32,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToString:(id)arg1;
 - (_Bool)isEqualToEDName:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)setFormulaString:(id)arg1 workbook:(id)arg2;
 - (id)formulaString;

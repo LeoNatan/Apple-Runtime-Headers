@@ -8,8 +8,20 @@
 
 @interface NSError (TMDiskArbiterAdditions)
 + (id)tm_errorWithDADissenterRef:(struct __DADissenter *)arg1;
++ (id)_POSIXErrorForTMStructureErrorCode:(unsigned long long)arg1;
++ (id)errorWithTMStructureErrorCode:(unsigned long long)arg1 userInfo:(id)arg2;
++ (id)errorWithTMStructureErrorCode:(unsigned long long)arg1 structureType:(id)arg2;
++ (id)errorWithTMStructureErrorCode:(unsigned long long)arg1;
++ (id)tm_posixErrorWithCode:(int)arg1 forPath:(id)arg2;
++ (id)tm_posixErrorWithCode:(int)arg1;
++ (id)tm_dmErrorWithCode:(int)arg1 underlyingError:(id)arg2;
++ (id)tm_dmErrorWithCode:(int)arg1;
 - (int)tm_dissenterPID;
 - (struct __DADissenter *)tm_dissenterRef;
 - (BOOL)tm_isDiskArbitrationError;
+- (id)tm_underlyingErrorDomain;
+- (long long)tm_underlyingErrorCode;
+- (id)tm_underlyingError;
+- (id)tm_posixError;
 @end
 

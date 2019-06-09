@@ -35,7 +35,7 @@
 - (NSData *)decodeBase16:(NSString *)arg1;
 - (NSString *)encodeBase64:(NSData *)arg1;
 - (NSData *)decodeBase64:(NSString *)arg1;
-- (NSData *)signatureForData:(NSData *)arg1 withKey:(struct OpaqueSecKeyRef *)arg2;
-- (NSData *)encryptData:(NSData *)arg1 withKey:(struct OpaqueSecKeyRef *)arg2;
+-     // Error parsing type: @"NSData"32@0:8@"NSData"16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24, name: signatureForData:withKey:
+-     // Error parsing type: @"NSData"32@0:8@"NSData"16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24, name: encryptData:withKey:
 @end
 

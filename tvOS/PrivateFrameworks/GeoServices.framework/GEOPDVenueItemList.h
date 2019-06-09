@@ -8,20 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDVenueItemList : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_items;
     NSString *_title;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_items:1;
+        unsigned int read_title:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_items:1;
+        unsigned int wrote_title:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)itemType;
-@property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
-@property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,13 +40,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)itemsCount;
+- (void)_addNoFlagsItem:(id)arg1;
 - (void)addItem:(id)arg1;
 - (void)clearItems;
+@property(retain, nonatomic) NSMutableArray *items;
+- (void)_readItems;
+@property(retain, nonatomic) NSString *title;
 @property(readonly, nonatomic) _Bool hasTitle;
+- (void)_readTitle;
 
 @end
 

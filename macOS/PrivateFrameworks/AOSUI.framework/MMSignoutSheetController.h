@@ -30,12 +30,13 @@
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property(retain) NSMutableArray *serviceInfoList; // @synthesize serviceInfoList=_serviceInfoList;
-@property(retain) NSProgressIndicator *progressSpinner; // @synthesize progressSpinner=_progressSpinner;
-@property(retain) NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
-@property(retain) NSButton *continueButton; // @synthesize continueButton=_continueButton;
-@property(retain) NSTextField *messageText; // @synthesize messageText=_messageText;
-@property(retain) NSTableView *serviceTable; // @synthesize serviceTable=_serviceTable;
-@property(retain) NSWindow *signoutSheet; // @synthesize signoutSheet=_signoutSheet;
+@property __weak NSProgressIndicator *progressSpinner; // @synthesize progressSpinner=_progressSpinner;
+@property __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property __weak NSButton *continueButton; // @synthesize continueButton=_continueButton;
+@property __weak NSTextField *messageText; // @synthesize messageText=_messageText;
+@property __weak NSTableView *serviceTable; // @synthesize serviceTable=_serviceTable;
+@property __weak NSWindow *signoutSheet; // @synthesize signoutSheet=_signoutSheet;
+- (void).cxx_destruct;
 - (long long)countOfEnabledCheckboxes;
 - (id)enabledServices;
 - (void)hideProgress;
@@ -49,7 +50,6 @@
 - (void)dismissSignoutSheet;
 - (void)showSignoutSheetForServices:(id)arg1 usingWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 - (void)awakeFromNib;
 - (id)init;
 

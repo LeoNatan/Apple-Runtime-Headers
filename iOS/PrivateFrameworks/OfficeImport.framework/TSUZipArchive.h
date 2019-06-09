@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet;
+@class NSMutableDictionary, NSMutableOrderedSet;
 
 __attribute__((visibility("hidden")))
 @interface TSUZipArchive : NSObject
 {
     unsigned long long _options;
     NSMutableDictionary *_entriesMap;
-    NSMutableSet *_entries;
+    NSMutableOrderedSet *_entries;
+    long long _endOfLastEntry;
 }
 
+@property(readonly, nonatomic) long long endOfLastEntry; // @synthesize endOfLastEntry=_endOfLastEntry;
 - (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly, nonatomic) _Bool isValid;
@@ -47,6 +49,8 @@ __attribute__((visibility("hidden")))
 - (void)readZip64EndOfCentralDirectoryLocatorWithChannel:(id)arg1 eocdOffset:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)readEndOfCentralDirectoryData:(id)arg1 eocdOffset:(long long)arg2 channel:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)readArchiveWithQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly, nonatomic) _Bool hasNonEmptyEntries;
+@property(readonly, nonatomic) unsigned long long entriesCount;
 - (id)initWithOptions:(unsigned long long)arg1;
 - (id)init;
 

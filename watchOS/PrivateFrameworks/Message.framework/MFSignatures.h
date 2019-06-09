@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)stripSignatureMarkup:(id)arg1;
 + (id)signaturePlainTextFormat:(id)arg1;
 + (id)signatureMarkupFormat:(id)arg1;
 + (id)sharedInstance;
@@ -29,7 +28,6 @@
 - (id)_getValue:(id)arg1;
 - (id)defaultSignature;
 - (id)_modelSpecificLocalizedStringKeyForKey:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

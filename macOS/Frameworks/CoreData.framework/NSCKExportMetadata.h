@@ -13,11 +13,13 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)entityPath;
 
 // Remaining properties
 @property(retain, nonatomic) NSDate *exportedAt; // @dynamic exportedAt;
 @property(retain, nonatomic) NSPersistentHistoryToken *historyToken; // @dynamic historyToken;
 @property(retain, nonatomic) NSString *identifier; // @dynamic identifier;
 @property(retain, nonatomic) NSSet *operations; // @dynamic operations;
+
 @end
 

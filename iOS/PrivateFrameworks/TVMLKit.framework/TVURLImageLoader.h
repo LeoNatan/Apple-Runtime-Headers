@@ -10,20 +10,24 @@
 #import <TVMLKit/NSURLSessionTaskDelegate-Protocol.h>
 #import <TVMLKit/TVImageLoader-Protocol.h>
 
-@class NSMapTable, NSString, NSURLSession;
+@class NSMutableDictionary, NSString, NSURLSession;
 @protocol OS_dispatch_queue;
 
 @interface TVURLImageLoader : NSObject <NSURLSessionTaskDelegate, NSURLSessionDataDelegate, TVImageLoader>
 {
     _Bool _imageRotationEnabled;
     NSURLSession *_session;
-    NSMapTable *_dataTaskMap;
+    NSMutableDictionary *_loadOptionsByID;
+    NSMutableDictionary *_loadIDsByURL;
+    NSMutableDictionary *_taskOptionsByURL;
     NSObject<OS_dispatch_queue> *_processingQueue;
 }
 
 + (id)sharedInstance;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
-@property(readonly, nonatomic) NSMapTable *dataTaskMap; // @synthesize dataTaskMap=_dataTaskMap;
+@property(readonly, nonatomic) NSMutableDictionary *taskOptionsByURL; // @synthesize taskOptionsByURL=_taskOptionsByURL;
+@property(readonly, nonatomic) NSMutableDictionary *loadIDsByURL; // @synthesize loadIDsByURL=_loadIDsByURL;
+@property(readonly, nonatomic) NSMutableDictionary *loadOptionsByID; // @synthesize loadOptionsByID=_loadOptionsByID;
 @property(readonly, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(nonatomic, getter=isImageRotationEnabled) _Bool imageRotationEnabled; // @synthesize imageRotationEnabled=_imageRotationEnabled;
 - (void).cxx_destruct;

@@ -4,13 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class MFOfflineCacheOperation;
-@protocol MFDAOfflineCacheOperation;
-
 @protocol MFDAMailAccountRequest
 @property(readonly, nonatomic) _Bool isUserRequested;
 @property(readonly, nonatomic) _Bool shouldSend;
-- (MFOfflineCacheOperation<MFDAOfflineCacheOperation> *)deferredOperation;
 - (unsigned long long)generationNumber;
 @end
 

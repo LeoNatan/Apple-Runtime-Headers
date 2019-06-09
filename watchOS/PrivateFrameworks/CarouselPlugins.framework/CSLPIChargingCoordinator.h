@@ -7,34 +7,43 @@
 #import <objc/NSObject.h>
 
 #import <CarouselPlugins/CSLPIChargingCoordinating-Protocol.h>
+#import <CarouselPlugins/CSLPIChargingPresentationDelegate-Protocol.h>
 
-@class NSString;
+@class CSLPIChargingPresentation, NSString;
+@protocol CSLPIChargingCoordinatorDelegate;
 
-@interface CSLPIChargingCoordinator : NSObject <CSLPIChargingCoordinating>
+@interface CSLPIChargingCoordinator : NSObject <CSLPIChargingCoordinating, CSLPIChargingPresentationDelegate>
 {
+    id <CSLPIChargingCoordinatorDelegate> _strongDelegate;
+    id <CSLPIChargingCoordinatorDelegate> _delegate;
     CDUnknownBlockType _alertPresentationHandler;
     CDUnknownBlockType _alertDismissHandler;
     CDUnknownBlockType _endAnimationHandler;
     CDUnknownBlockType _nightstandChangeHandler;
+    CSLPIChargingPresentation *_activePresentation;
 }
 
-+ (void)clear;
-+ (id)allCoordinators;
++ (void)removeActiveCoordinator;
++ (id)activeCoordinator;
 + (void)removeCoordinator:(id)arg1;
 + (void)addCoordinator:(id)arg1;
 + (id)getManager;
 + (void)setManager:(id)arg1;
 + (void)_withClassLock:(CDUnknownBlockType)arg1;
+@property(retain, nonatomic) CSLPIChargingPresentation *activePresentation; // @synthesize activePresentation=_activePresentation;
 @property(copy, nonatomic) CDUnknownBlockType nightstandChangeHandler; // @synthesize nightstandChangeHandler=_nightstandChangeHandler;
 @property(copy, nonatomic) CDUnknownBlockType endAnimationHandler; // @synthesize endAnimationHandler=_endAnimationHandler;
 @property(copy, nonatomic) CDUnknownBlockType alertDismissHandler; // @synthesize alertDismissHandler=_alertDismissHandler;
 @property(copy, nonatomic) CDUnknownBlockType alertPresentationHandler; // @synthesize alertPresentationHandler=_alertPresentationHandler;
+@property(readonly, nonatomic) __weak id <CSLPIChargingCoordinatorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)chargingPresentation:(id)arg1 didAdvanceToStage:(unsigned int)arg2;
 - (id)addAssertionForAlertPolicy:(id)arg1;
 - (void)turnBacklightOff;
 - (void)turnBacklightOn:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithAlertPresentationHandler:(CDUnknownBlockType)arg1 alertDismissHandler:(CDUnknownBlockType)arg2 endAnimationHandler:(CDUnknownBlockType)arg3 nightstandChangeHandler:(CDUnknownBlockType)arg4;
+- (id)initWithDelegate:(id)arg1;
 - (void)nightstandChanged:(_Bool)arg1;
 - (void)endChargingAlertAnimation;
 - (void)dismissChargingAlert;

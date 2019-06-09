@@ -22,6 +22,7 @@
 - (void)assertQueueIsCurrent;
 - (void)performBlock:(CDUnknownBlockType)arg1 waitUntilDone:(_Bool)arg2;
 - (void)performBlock:(CDUnknownBlockType)arg1;
+- (id)initWithQueue:(id)arg1;
 - (id)initWithName:(char *)arg1 contextKey:(void *)arg2;
 - (id)init;
 

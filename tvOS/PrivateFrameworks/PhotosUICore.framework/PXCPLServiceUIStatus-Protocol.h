@@ -13,7 +13,7 @@
 @property(readonly, nonatomic) NSString *actionConfirmationAlertSubtitle;
 @property(readonly, nonatomic) NSString *actionConfirmationAlertTitle;
 @property(readonly, nonatomic) NSString *actionTitle;
-@property(readonly, nonatomic) CDUnknownBlockType action;
+@property(readonly, copy, nonatomic) CDUnknownBlockType action;
 @property(readonly, nonatomic) float progress;
 @property(readonly, nonatomic, getter=isPaused) _Bool paused;
 @property(readonly, nonatomic) NSString *failureDescription;

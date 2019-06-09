@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemIdValidateOperation : ISOperation <ISDialogOperationDelegate>
 {
     CDUnknownBlockType _resultBlock;

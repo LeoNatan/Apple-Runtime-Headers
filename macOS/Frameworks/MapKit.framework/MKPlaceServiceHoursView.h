@@ -6,6 +6,7 @@
 
 #import <MapKit/MKPlaceHoursView.h>
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceServiceHoursView : MKPlaceHoursView
 {
 }

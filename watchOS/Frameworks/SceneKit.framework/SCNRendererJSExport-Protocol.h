@@ -16,6 +16,7 @@
 @property(retain, nonatomic) SCNNode *pointOfView;
 @property(nonatomic) _Bool loops;
 @property(nonatomic, getter=isPlaying) _Bool playing;
+@property(nonatomic) _Bool temporalAntialiasingEnabled;
 @property(nonatomic) _Bool jitteringEnabled;
 @property(nonatomic) double currentTime;
 @property(readonly, nonatomic) double nextFrameTime;

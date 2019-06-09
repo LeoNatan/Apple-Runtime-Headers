@@ -11,6 +11,7 @@
 
 @interface AVAudioPCMBuffer (RCAdditions) <NSSecureCoding, NSCoding>
 + (_Bool)supportsSecureCoding;
+- (id)extractChannels:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @end

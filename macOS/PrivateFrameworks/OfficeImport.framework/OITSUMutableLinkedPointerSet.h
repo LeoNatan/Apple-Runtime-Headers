@@ -10,6 +10,7 @@
 
 @class OITSULinkedPointerSetEntry;
 
+__attribute__((visibility("hidden")))
 @interface OITSUMutableLinkedPointerSet : NSObject <NSFastEnumeration>
 {
     struct __CFDictionary *mDictionary;

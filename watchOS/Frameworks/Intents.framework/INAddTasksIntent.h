@@ -8,7 +8,7 @@
 
 #import <Intents/INAddTasksIntentExport-Protocol.h>
 
-@class INSpatialEventTrigger, INTaskList, INTemporalEventTrigger, NSArray, NSString;
+@class INContactEventTrigger, INSpatialEventTrigger, INTaskList, INTemporalEventTrigger, NSArray, NSString;
 
 @interface INAddTasksIntent : INIntent <INAddTasksIntentExport>
 {
@@ -22,6 +22,10 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+@property(copy, nonatomic) INIntent *intent;
+@property(copy, nonatomic) INContactEventTrigger *contactEventTrigger;
+- (void)setPriority:(int)arg1;
+@property(readonly, nonatomic) int priority;
 - (void)setTemporalEventTrigger:(id)arg1;
 @property(readonly, copy, nonatomic) INTemporalEventTrigger *temporalEventTrigger;
 - (void)setSpatialEventTrigger:(id)arg1;
@@ -30,12 +34,16 @@
 @property(readonly, copy, nonatomic) NSArray *taskTitles;
 - (void)setTargetTaskList:(id)arg1;
 @property(readonly, copy, nonatomic) INTaskList *targetTaskList;
-- (id)initWithTargetTaskList:(id)arg1 taskTitles:(id)arg2 spatialEventTrigger:(id)arg3 temporalEventTrigger:(id)arg4;
+@property(copy, nonatomic) NSArray *targetTaskListMembers;
+@property(nonatomic) int taskReference;
+- (id)initWithTargetTaskList:(id)arg1 taskTitles:(id)arg2 spatialEventTrigger:(id)arg3 temporalEventTrigger:(id)arg4 priority:(int)arg5;
 - (id)_categoryVerb;
 - (int)_intentCategory;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;
 - (id)_typedBackingStore;
+@property(copy, nonatomic) NSArray *contactEventTriggers;
+- (id)initWithTargetTaskList:(id)arg1 taskTitles:(id)arg2 spatialEventTrigger:(id)arg3 temporalEventTrigger:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

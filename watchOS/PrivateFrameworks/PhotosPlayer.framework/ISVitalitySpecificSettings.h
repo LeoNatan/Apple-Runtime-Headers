@@ -10,36 +10,31 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ISVitalitySpecificSettings : ISSettings <ISVitalitySettings>
 {
     int _behavior;
-    int _maximumNumberOfFrames;
     double _preDuration;
     double _postDuration;
     double _startSeekTolerance;
-    double _maximumRate;
-    double _maximumDeceleration;
-    double _relativeStart;
-    double _relativeEnd;
     double _playbackRate;
     double _endTimeOffset;
     double _minimumVisibilityFactor;
     double _maximumDelayBeforePlayback;
     double _minimumDurationForColorMismatch;
+    double _minimumPhotoTransitionDuration;
+    double _minimumColorAdjustedPhotoTransitionDuration;
 }
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
+@property(nonatomic) double minimumColorAdjustedPhotoTransitionDuration; // @synthesize minimumColorAdjustedPhotoTransitionDuration=_minimumColorAdjustedPhotoTransitionDuration;
+@property(nonatomic) double minimumPhotoTransitionDuration; // @synthesize minimumPhotoTransitionDuration=_minimumPhotoTransitionDuration;
 @property(nonatomic) double minimumDurationForColorMismatch; // @synthesize minimumDurationForColorMismatch=_minimumDurationForColorMismatch;
 @property(nonatomic) double maximumDelayBeforePlayback; // @synthesize maximumDelayBeforePlayback=_maximumDelayBeforePlayback;
 @property(nonatomic) double minimumVisibilityFactor; // @synthesize minimumVisibilityFactor=_minimumVisibilityFactor;
 @property(nonatomic) double endTimeOffset; // @synthesize endTimeOffset=_endTimeOffset;
 @property(nonatomic) double playbackRate; // @synthesize playbackRate=_playbackRate;
-@property(nonatomic) int maximumNumberOfFrames; // @synthesize maximumNumberOfFrames=_maximumNumberOfFrames;
-@property(nonatomic) double relativeEnd; // @synthesize relativeEnd=_relativeEnd;
-@property(nonatomic) double relativeStart; // @synthesize relativeStart=_relativeStart;
-@property(nonatomic) double maximumDeceleration; // @synthesize maximumDeceleration=_maximumDeceleration;
-@property(nonatomic) double maximumRate; // @synthesize maximumRate=_maximumRate;
 @property(nonatomic) double startSeekTolerance; // @synthesize startSeekTolerance=_startSeekTolerance;
 @property(nonatomic) double postDuration; // @synthesize postDuration=_postDuration;
 @property(nonatomic) double preDuration; // @synthesize preDuration=_preDuration;

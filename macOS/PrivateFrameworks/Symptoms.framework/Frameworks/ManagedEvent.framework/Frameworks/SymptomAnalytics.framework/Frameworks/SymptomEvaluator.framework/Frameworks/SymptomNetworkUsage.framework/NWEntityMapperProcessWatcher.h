@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWEntityMapperProcessWatcher : NWEntityMapper
 {
     NSMutableDictionary *_uuidProcessNameMap;

@@ -43,6 +43,7 @@
 @property(nonatomic) __weak id <AKSignaturesViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak AKController *controller; // @synthesize controller=_controller;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)signatureCreationControllerDidCreateSignature:(id)arg1;
 - (long long)positionForBar:(id)arg1;
 - (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
@@ -57,6 +58,7 @@
 - (void)_continueToCreateSignature:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)_configureUI;
+- (_Bool)_canShowWhileLocked;
 @property(readonly, nonatomic) double idealHeight;
 - (void)viewDidLoad;
 - (struct CGSize)preferredContentSize;

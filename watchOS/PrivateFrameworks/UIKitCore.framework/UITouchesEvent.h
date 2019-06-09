@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIEvent.h>
 
-@class NSMapTable, NSMutableSet, NSSet, _UITouchPredictionManager;
+@class NSMapTable, NSMutableSet, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface UITouchesEvent : UIEvent
@@ -19,9 +19,7 @@ __attribute__((visibility("hidden")))
     NSMapTable *_latentSystemGestureWindows;
     struct __CFDictionary *_coalescedTouches;
     struct __CFDictionary *_finalTouches;
-    struct __CFDictionary *_observedTouches;
-    struct __CFDictionary *_predictedTouches;
-    _UITouchPredictionManager *_predictionManager;
+    _Bool _isCallingEventObservers;
     long _singleAllowableExternalTouchPathIndex;
 }
 
@@ -58,13 +56,12 @@ __attribute__((visibility("hidden")))
 - (id)_touchesForWindow:(id)arg1;
 - (id)_touchesForKey:(id)arg1;
 - (void)_removeTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
-- (void)_observeTouch:(id)arg1;
-- (void)_clearObservedTouchesForTouch:(id)arg1;
 - (void)_removeTouch:(id)arg1;
 - (void)_clearViewForTouch:(id)arg1;
 - (void)_addTouch:(id)arg1 forDelayedDelivery:(_Bool)arg2;
 - (void)_addGestureRecognizersForView:(id)arg1 toTouch:(id)arg2;
 - (_Bool)_anyInterestedGestureRecognizersForTouchInView:(id)arg1;
+- (void)_collectGestureRecognizersForView:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)touchesForGestureRecognizer:(id)arg1;
 - (id)_touchesForGestureRecognizer:(id)arg1;
 - (id)touchesForView:(id)arg1;

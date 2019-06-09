@@ -6,12 +6,13 @@
 
 #import <FMF/NSObject-Protocol.h>
 
-@class FMFDevice, FMFFence, FMFFriendshipRequest, FMFHandle, NSDate, NSNumber, NSSet, NSString;
+@class FMFDevice, FMFFence, FMFFriendshipRequest, FMFHandle, NSDate, NSDictionary, NSNumber, NSSet, NSString, NSUUID;
 
 @protocol FMFXPCServerProtocol <NSObject>
 - (oneway void)removeFavorite:(FMFHandle *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)addFavorite:(FMFHandle *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)getFavoritesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
+- (oneway void)triggerWithUUID:(NSUUID *)arg1 forFenceWithID:(NSString *)arg2 withStatus:(NSString *)arg3 forDate:(NSDate *)arg4 completion:(void (^)(NSError *))arg5;
 - (oneway void)fencesForHandles:(NSSet *)arg1 completion:(void (^)(NSSet *, NSError *))arg2;
 - (oneway void)getFences:(void (^)(NSSet *, NSError *))arg1;
 - (oneway void)deleteFence:(FMFFence *)arg1 completion:(void (^)(NSError *))arg2;
@@ -46,6 +47,7 @@
 - (oneway void)sessionWasCreatedRefresh;
 - (oneway void)forceRefresh;
 - (oneway void)getAllLocations:(void (^)(NSSet *, NSError *))arg1;
+- (oneway void)sendIDSMessage:(NSDictionary *)arg1 toIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (oneway void)invalidateMappingPackets:(NSSet *)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)importMappingPacket:(NSString *)arg1 completion:(void (^)(NSString *, NSError *))arg2;
 - (oneway void)getHandlesWithPendingOffers:(void (^)(NSSet *, NSError *))arg1;
@@ -68,6 +70,9 @@
 - (oneway void)getPendingMappingPacketsForHandle:(FMFHandle *)arg1 groupId:(NSString *)arg2 completion:(void (^)(NSArray *, NSArray *, NSError *))arg3;
 - (oneway void)canShareLocationWithHandle:(FMFHandle *)arg1 groupId:(NSString *)arg2 callerId:(FMFHandle *)arg3 completion:(void (^)(_Bool, NSString *, NSError *))arg4;
 - (oneway void)setActiveDevice:(FMFDevice *)arg1 completion:(void (^)(NSError *))arg2;
+- (oneway void)getAccountEmailAddress:(void (^)(NSString *, NSError *))arg1;
+- (oneway void)isAllowFriendRequestsEnabled:(void (^)(_Bool, NSError *))arg1;
+- (oneway void)setAllowFriendRequestsEnabled:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)isMyLocationEnabled:(void (^)(_Bool, NSError *))arg1;
 - (oneway void)setHideMyLocationEnabled:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (oneway void)canGetLocationForHandle:(FMFHandle *)arg1 groupId:(NSString *)arg2 callerId:(FMFHandle *)arg3 completion:(void (^)(_Bool, NSString *, NSError *))arg4;

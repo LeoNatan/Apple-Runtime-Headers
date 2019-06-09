@@ -6,6 +6,7 @@
 
 #import <Foundation/NSMutableArray.h>
 
+__attribute__((visibility("hidden")))
 @interface NSSortedArray : NSMutableArray
 {
     NSMutableArray *_array;

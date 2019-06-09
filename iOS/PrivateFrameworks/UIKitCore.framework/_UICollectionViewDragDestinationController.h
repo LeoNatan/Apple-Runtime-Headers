@@ -55,7 +55,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_isLocalInteractiveMove;
 - (void)_resumeReorderingDisplayLink;
 - (void)_pauseReorderingDisplayLink;
-- (void)_configureReorderingDisplayLink;
+- (void)_configureReorderingDisplayLinkIfNeeded;
 - (void)_configureInteraction;
 - (id)_queryClientForPreviewParamtersForItemAtIndexPath:(id)arg1;
 - (void)_endInteractiveReorderingIfNeeded;
@@ -75,6 +75,7 @@ __attribute__((visibility("hidden")))
 - (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
 - (void)dropInteraction:(id)arg1 sessionDidEnter:(id)arg2;
 - (_Bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;
+- (void)deactivate;
 - (_Bool)hasPerformedReordering;
 - (void)dropWasCancelled;
 - (void)dragSourceSelectedItemCountDidChangeWithCount:(long long)arg1;

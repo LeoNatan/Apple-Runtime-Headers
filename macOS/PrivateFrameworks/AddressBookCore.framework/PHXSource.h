@@ -12,7 +12,7 @@
 
 @class ABAccountPersistence, ABAccountStatus, ABAddressBook, ABSimilarRecordMerger, ABWorkQueue, NSArray, NSDate, NSSecureTextField, NSString, NSView;
 
-@interface PHXSource : NSObject <ABAccountPersistenceDelegate, NSCopying, ABWorkQueueDelegate>
+@interface PHXSource : NSObject <ABAccountPersistenceDelegate, ABWorkQueueDelegate, NSCopying>
 {
     ABAddressBook *_addressBook;
     BOOL _addressBookWasSetManually;
@@ -25,6 +25,7 @@
     ABAccountPersistence *_persistence;
     BOOL _canCreateGroups;
     BOOL _canCreatePeople;
+    BOOL _guardianRestricted;
     NSDate *_lastRefreshDate;
     BOOL _unloaded;
     NSArray *_personConstraints;
@@ -41,12 +42,12 @@
 + (BOOL)setPassword:(id)arg1 forConfiguration:(id)arg2;
 + (id)passwordForConfiguration:(id)arg1;
 + (id)passwordForUser:(id)arg1 server:(id)arg2 port:(unsigned short)arg3 protocol:(void *)arg4 error:(id *)arg5;
-+ (BOOL)setPassword:(id)arg1 forUser:(id)arg2 server:(id)arg3 port:(unsigned short)arg4 protocol:(void *)arg5 access:(struct OpaqueSecAccessRef *)arg6 error:(id *)arg7;
++ (BOOL)setPassword:(id)arg1 forUser:(id)arg2 server:(id)arg3 port:(unsigned short)arg4 protocol:(void *)arg5 access:(struct __SecAccess *)arg6 error:(id *)arg7;
 + (BOOL)removePasswordForUser:(id)arg1 server:(id)arg2 port:(unsigned short)arg3 protocol:(void *)arg4 error:(id *)arg5;
 + (id)passwordForUser:(id)arg1 service:(id)arg2 error:(id *)arg3;
-+ (int)addKeychainItemForPassword:(id)arg1 user:(id)arg2 service:(id)arg3 access:(struct OpaqueSecAccessRef *)arg4;
++ (int)addKeychainItemForPassword:(id)arg1 user:(id)arg2 service:(id)arg3 access:(struct __SecAccess *)arg4;
 + (int)updateKeychainItemForPassword:(id)arg1 user:(id)arg2 service:(id)arg3;
-+ (BOOL)setPassword:(id)arg1 forUser:(id)arg2 service:(id)arg3 access:(struct OpaqueSecAccessRef *)arg4 error:(id *)arg5;
++ (BOOL)setPassword:(id)arg1 forUser:(id)arg2 service:(id)arg3 access:(struct __SecAccess *)arg4 error:(id *)arg5;
 + (BOOL)setPassword:(id)arg1 forUser:(id)arg2 service:(id)arg3 error:(id *)arg4;
 + (BOOL)removePasswordForUser:(id)arg1 service:(id)arg2 error:(id *)arg3;
 + (BOOL)_userCanConfigure;
@@ -101,6 +102,7 @@
 + (id)exchangeSourcesWithUsername:(id)arg1 host:(id)arg2;
 + (id)sourcesOfType:(id)arg1;
 + (Class)sourceClassForClassName:(id)arg1;
+@property(getter=isGuardianRestricted) BOOL guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(retain) ABAccountStatus *currentStatus; // @synthesize currentStatus=_currentStatus;
 @property(retain) ABSimilarRecordMerger *similarRecordMerger; // @synthesize similarRecordMerger=_similarRecordMerger;
 @property(retain) NSArray *personConstraints; // @synthesize personConstraints=_personConstraints;

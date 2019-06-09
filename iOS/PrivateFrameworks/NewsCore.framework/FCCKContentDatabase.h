@@ -12,12 +12,14 @@
 {
     _Bool _isProductionEnvironment;
     _Bool _shouldUseCloudd;
-    _Bool _shouldUseSecureConnectionForPermanentURLs;
+    _Bool _shouldUseSecureConnectionForCKAssetURLs;
+    _Bool _shouldBypassCDNForCKAssetURLs;
     NSString *_containerIdentifier;
     FCNetworkBehaviorMonitor *_networkBehaviorMonitor;
 }
 
-@property(nonatomic) _Bool shouldUseSecureConnectionForPermanentURLs; // @synthesize shouldUseSecureConnectionForPermanentURLs=_shouldUseSecureConnectionForPermanentURLs;
+@property(nonatomic) _Bool shouldBypassCDNForCKAssetURLs; // @synthesize shouldBypassCDNForCKAssetURLs=_shouldBypassCDNForCKAssetURLs;
+@property(nonatomic) _Bool shouldUseSecureConnectionForCKAssetURLs; // @synthesize shouldUseSecureConnectionForCKAssetURLs=_shouldUseSecureConnectionForCKAssetURLs;
 @property(readonly, nonatomic) _Bool shouldUseCloudd; // @synthesize shouldUseCloudd=_shouldUseCloudd;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 @property(readonly, nonatomic) _Bool isProductionEnvironment; // @synthesize isProductionEnvironment=_isProductionEnvironment;

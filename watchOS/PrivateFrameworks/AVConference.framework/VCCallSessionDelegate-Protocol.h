@@ -8,7 +8,7 @@
 
 @protocol VCCallSessionDelegate
 - (void)session:(VCCallSession *)arg1 didReceiveMomentsRequest:(NSDictionary *)arg2;
-- (void)session:(VCCallSession *)arg1 setMomentsCapabilities:(int)arg2;
+- (void)session:(VCCallSession *)arg1 setMomentsCapabilities:(int)arg2 imageType:(int)arg3 videoCodec:(int)arg4;
 - (struct AudioStreamBasicDescription)audioIOFormat;
 - (void)session:(VCCallSession *)arg1 setRemoteBasebandCodecType:(unsigned int)arg2 sampleRate:(double)arg3;
 - (void)session:(VCCallSession *)arg1 stopAudioWithCompletionHandler:(void (^)(_Bool, NSError *))arg2;

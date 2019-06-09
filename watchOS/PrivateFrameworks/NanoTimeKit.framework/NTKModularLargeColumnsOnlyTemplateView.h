@@ -6,7 +6,7 @@
 
 #import <NanoTimeKit/NTKModularLargeColumnTemplateView.h>
 
-@class CLKComplicationTemplateModularLargeColumns, NTKColoringLabel, UIView;
+@class NTKColoringLabel, UIView;
 @protocol NTKComplicationImageView;
 
 @interface NTKModularLargeColumnsOnlyTemplateView : NTKModularLargeColumnTemplateView
@@ -23,7 +23,6 @@
 }
 
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
 - (void).cxx_destruct;
 - (void)_update;
 - (void)_enumerateColumnRowsWithBlock:(CDUnknownBlockType)arg1;
@@ -31,9 +30,6 @@
 - (void)_enumerateForegroundColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_layoutContentView;
 - (id)initWithFrame:(struct CGRect)arg1;
-
-// Remaining properties
-@property(retain, nonatomic) CLKComplicationTemplateModularLargeColumns *complicationTemplate; // @dynamic complicationTemplate;
 
 @end
 

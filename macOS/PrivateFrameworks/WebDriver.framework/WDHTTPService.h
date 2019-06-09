@@ -13,21 +13,23 @@
 #import <WebDriver/WDSessionProvider-Protocol.h>
 #import <WebDriver/WDXPCService-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, WDHTTPDriverInterface, WDRemoteSessionManager;
+@class NSArray, NSString, NSXPCConnection, WDHTTPDriverInterface, WDRemoteSessionManager;
+@protocol OS_os_transaction;
 
 @interface WDHTTPService : NSObject <RWIManagerDelegate, RWIDriverInterfaceDelegate, WDSessionProvider, WDServiceHost, NSXPCListenerDelegate, WDXPCService>
 {
     WDRemoteSessionManager *_sessionManager;
-    NSMutableDictionary *_clientTransactions;
+    NSObject<OS_os_transaction> *_clientTransaction;
     WDHTTPDriverInterface *_driver;
-    NSMutableDictionary *_clientConnections;
+    NSXPCConnection *_clientConnection;
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) NSMutableDictionary *clientConnections; // @synthesize clientConnections=_clientConnections;
+@property(readonly, nonatomic) NSXPCConnection *clientConnection; // @synthesize clientConnection=_clientConnection;
 @property(readonly, nonatomic) WDHTTPDriverInterface *driver; // @synthesize driver=_driver;
 - (void).cxx_destruct;
-- (void)fetchAttributesForLocalFiles:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchContentsOfLocalFiles:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchAttributesOfLocalFiles:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)launchApplication:(id)arg1 forHost:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)destroySession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)requestSessionWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -45,7 +47,6 @@
 - (void)_removeDriverClient:(id)arg1;
 - (void)_addDriverClient:(id)arg1;
 - (CDUnknownBlockType)_defaultErrorHandler;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

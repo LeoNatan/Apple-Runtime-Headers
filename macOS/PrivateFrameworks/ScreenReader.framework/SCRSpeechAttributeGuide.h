@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSArray *__voiceGuideItems;
 }
 
-+ (unsigned long long)_currentSpeechAttributeTypeFromPreferences;
++ (long long)_currentSpeechAttributeTypeFromPreferences;
 @property(retain, nonatomic) NSArray *_voiceGuideItems; // @synthesize _voiceGuideItems=__voiceGuideItems;
 @property(readonly, nonatomic) NSArray *_percentValueGuideItems; // @synthesize _percentValueGuideItems=__percentValueGuideItems;
 @property(readonly, nonatomic) NSDictionary *_attributeTypeToKeyNames; // @synthesize _attributeTypeToKeyNames=__attributeTypeToKeyNames;
@@ -32,17 +32,17 @@ __attribute__((visibility("hidden")))
 - (void)_closeSpeechAttributeRotor;
 - (id)_buildSpeechAttributeVoiceGuideItems;
 - (id)_buildSpeechAttributePercentValueGuideItems;
-- (double)_valueAsPercentForAttribute:(unsigned long long)arg1;
+- (double)_valueAsPercentForAttribute:(long long)arg1;
 - (void)_persistCurrentAttributeValueToUserDefaults;
-- (unsigned long long)_indexOfGuideItemMatchingCurrentSettingsValueForAttribute:(unsigned long long)arg1;
-- (void)processPassiveEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (unsigned long long)_indexOfGuideItemMatchingCurrentSettingsValueForAttribute:(long long)arg1;
+- (void)eventTapManager:(id)arg1 passivelyTappedEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
 - (void)_closeWithOutputRequest:(id)arg1;
 - (void)_addDescriptionToOutputRequest:(id)arg1;
 - (void)selectItemAtIndex:(unsigned long long)arg1 indexForView:(unsigned long long)arg2;
-- (BOOL)_handleEvent:(id)arg1 request:(id)arg2;
+- (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (void)openWithSelectionIndex:(unsigned long long)arg1;
-@property(nonatomic) unsigned long long currentAttributeType;
-- (id)init;
+@property(nonatomic) long long currentAttributeType;
+- (id)initWithMenuWindow:(id)arg1 cursor:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

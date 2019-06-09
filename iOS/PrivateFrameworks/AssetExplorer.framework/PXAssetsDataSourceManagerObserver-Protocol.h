@@ -6,6 +6,11 @@
 
 #import <AssetExplorer/PXSectionedDataSourceManagerObserver-Protocol.h>
 
+@class PXAssetsDataSourceManager;
+
 @protocol PXAssetsDataSourceManagerObserver <PXSectionedDataSourceManagerObserver>
+
+@optional
+- (void)assetsDataSourceManagerDidFinishBackgroundFetching:(PXAssetsDataSourceManager *)arg1;
 @end
 

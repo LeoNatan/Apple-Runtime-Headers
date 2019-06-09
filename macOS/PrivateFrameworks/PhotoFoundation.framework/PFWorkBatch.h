@@ -10,7 +10,7 @@
 
 @interface PFWorkBatch : NSObject
 {
-    int _lock;
+    struct os_unfair_lock_s _lock;
     id _uuid;
     NSError *_beginResult;
     NSMutableArray *_jobs;

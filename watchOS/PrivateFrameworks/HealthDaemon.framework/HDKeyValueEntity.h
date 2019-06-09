@@ -16,7 +16,6 @@
 + (const CDStruct_4c492439 *)columnDefinitionsWithCount:(unsigned int *)arg1;
 + (id)databaseTable;
 + (id)_modDateForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 profile:(id)arg4 entity:(id *)arg5 error:(id *)arg6;
-+ (id)_safeDomainWithDomain:(id)arg1;
 + (_Bool)_validateEntityClassForCategory:(int)arg1;
 + (Class)_entityClassForKeyValueCategory:(int)arg1;
 + (id)_predicateForProvenance:(long long)arg1;

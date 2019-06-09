@@ -31,6 +31,7 @@
 - (id)localAndRemoteAppIdentifiersForDataSourceIdentifiers:(id)arg1;
 - (void)donatedAppIdentifiersWithCompletion:(CDUnknownBlockType)arg1;
 - (void)enumerateDataSources:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSSet *unrestrictedDataSourceIdentifiers;
 @property(readonly, nonatomic) NSSet *dataSourceIdentifiers;
 - (void)_applicationsStatesDidChange;
 - (void)dealloc;

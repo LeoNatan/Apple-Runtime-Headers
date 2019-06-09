@@ -20,8 +20,6 @@ __attribute__((visibility("hidden")))
     struct OpaqueEventHandlerRef *_myEventHandler;
     struct OpaqueEventHandlerRef *_myStructureViewEventHandler;
     struct OpaqueEventHandlerRef *_myContentViewEventHandler;
-    BOOL _passingCarbonWindowActivationEvents;
-    BOOL _handlingCarbonWindowActivationEvents;
     unsigned int _cwFlags;
 }
 
@@ -31,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (void)enableFlushWindow;
 - (void)_resetDragMargins;
 - (BOOL)_implicitlyTileable;
-- (BOOL)_allowsOrdering;
 - (void)_setEventMask:(unsigned long long)arg1;
 - (BOOL)reconcileToCarbonWindowBounds;
 - (BOOL)syncToViews;

@@ -8,6 +8,7 @@
 
 @class NSUUID;
 
+__attribute__((visibility("hidden")))
 @interface _NSIPCallbackSerialization : NSObject
 {
     CDUnknownBlockType _endBlock;

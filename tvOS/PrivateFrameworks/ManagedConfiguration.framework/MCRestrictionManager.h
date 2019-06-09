@@ -70,6 +70,12 @@
 + (id)objectForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (id)valueForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
 + (int)restrictedBoolForFeature:(id)arg1 withRestrictionsDictionary:(id)arg2;
++ (id)restrictionPayloadKeysAfterApplyingRestrictionPayloadKeys:(id)arg1 toRestrictionPayloadKeys:(id)arg2;
++ (id)restrictionPayloadKeysAfterApplyingRestrictionPayloadKeys:(id)arg1 toRestrictionPayloadKeys:(id)arg2 forRestrictionKey:(id)arg3;
++ (id)filterRestrictionDictionary:(id)arg1 toExcludeRestrictionsPayloadKeys:(id)arg2;
++ (id)_filterRestrictionDictionary:(id)arg1 toExcludeRestrictionsPayloadKeys:(id)arg2 forRestrictionKey:(id)arg3;
++ (id)deprecatedUnsupervisedRestrictionsPayloadKeys;
++ (id)restrictionKeys;
 + (id)filterUserSettingsForPublicUse:(id)arg1;
 + (id)filterRestrictionDictionary:(id)arg1 toIncludeOnlyRestrictionsThatDifferFromRestrictions:(id)arg2;
 + (id)filterRestrictionDictionary:(id)arg1 acceptedKeysDict:(id)arg2;

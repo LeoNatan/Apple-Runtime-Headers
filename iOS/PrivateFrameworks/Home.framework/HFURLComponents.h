@@ -18,6 +18,7 @@
 + (id)_URLComponentsForDestination:(unsigned long long)arg1;
 + (_Bool)isHomeAppURL:(id)arg1;
 + (id)symptomFromURL:(id)arg1 accessory:(id)arg2;
++ (id)fixSymptomURLForAccessoryWithUUID:(id)arg1 symptom:(id)arg2;
 + (id)fixSymptomURLForAccessory:(id)arg1 symptom:(id)arg2;
 + (id)musicLoginURL;
 + (id)locationPrivacyURL;
@@ -28,6 +29,7 @@
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (id)_homeKitIdentifier;
+- (id)valueForParameter:(id)arg1;
 - (id)description;
 @property(readonly, nonatomic) NAFuture *homeKitObjectFuture; // @dynamic homeKitObjectFuture;
 @property(readonly, nonatomic) unsigned long long secondaryDestination;

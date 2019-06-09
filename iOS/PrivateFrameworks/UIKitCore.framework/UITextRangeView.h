@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, NSMutableArray, UIResponder, UISelectionGrabber, UITextSelectionView, UITouch;
+@class NSArray, NSMutableArray, UIResponder, UISelectionGrabber, UITextGestureTuning, UITextSelectionView, UITouch;
 @protocol UITextInput;
 
 __attribute__((visibility("hidden")))
@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     NSArray *m_rects;
     NSMutableArray *m_rectViews;
     UITouch *m_activeTouch;
+    struct CGPoint m_initialPoint;
     struct CGRect m_startEdge;
     struct CGRect m_endEdge;
     struct CGPoint m_basePoint;
@@ -30,9 +31,11 @@ __attribute__((visibility("hidden")))
     UIView *m_rectContainerView;
     UISelectionGrabber *m_startGrabber;
     UISelectionGrabber *m_endGrabber;
+    UITextGestureTuning *m_gestureTuning;
     _Bool m_animateUpdate;
     _Bool m_baseIsStart;
     _Bool m_commandsWereShowing;
+    _Bool m_willBeginMagnifying;
     _Bool m_inGesture;
     _Bool m_magnifying;
     _Bool m_scrolling;
@@ -51,6 +54,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool isScrolling; // @synthesize isScrolling=m_scrolling;
 @property(nonatomic) _Bool inGesture; // @synthesize inGesture=m_inGesture;
 @property(nonatomic) _Bool magnifying; // @synthesize magnifying=m_magnifying;
+@property(nonatomic) _Bool willBeginMagnifying; // @synthesize willBeginMagnifying=m_willBeginMagnifying;
 @property(nonatomic) _Bool commandsWereShowing; // @synthesize commandsWereShowing=m_commandsWereShowing;
 @property(nonatomic) _Bool animateUpdate; // @synthesize animateUpdate=m_animateUpdate;
 @property(retain, nonatomic) UISelectionGrabber *endGrabber; // @synthesize endGrabber=m_endGrabber;
@@ -64,9 +68,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint basePoint; // @synthesize basePoint=m_basePoint;
 @property(nonatomic) struct CGRect endEdge; // @synthesize endEdge=m_endEdge;
 @property(nonatomic) struct CGRect startEdge; // @synthesize startEdge=m_startEdge;
+@property(nonatomic) struct CGPoint initialPoint; // @synthesize initialPoint=m_initialPoint;
 @property(nonatomic) _Bool baseIsStart; // @synthesize baseIsStart=m_baseIsStart;
 @property(retain, nonatomic) UITouch *activeTouch; // @synthesize activeTouch=m_activeTouch;
-@property(nonatomic) int mode; // @synthesize mode=m_mode;
 - (void).cxx_destruct;
 - (struct CGPoint)convertFromMagnifierPoint:(struct CGPoint)arg1;
 - (struct CGPoint)magnifierPoint;
@@ -77,6 +81,9 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_selectionClipRect;
 - (void)updateBaseAndExtentPointsFromEdges;
 - (void)beginMagnifying;
+- (void)animateHighlighterDelayedFadeInOnLayer:(id)arg1;
+- (void)animateHighlighterExpanderOnLayer:(id)arg1 withOffset:(struct CGPoint)arg2;
+- (void)animateHighlighterExpanderAnimation;
 @property(readonly, nonatomic) _Bool autoscrolled;
 - (struct CGPoint)applyTouchOffset:(struct CGPoint)arg1;
 - (void)setTouchOffset:(struct CGPoint)arg1 touchPoint:(struct CGPoint)arg2;
@@ -102,11 +109,15 @@ __attribute__((visibility("hidden")))
 - (void)updateEdges;
 @property(readonly, nonatomic) UIResponder<UITextInput> *container;
 @property(readonly, nonatomic) UITextSelectionView *selectionView;
+@property(nonatomic) int mode; // @synthesize mode=m_mode;
+- (void)updateAfterEffectiveModeChange;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 @property(readonly, nonatomic) struct CGPoint activeTouchPoint;
+- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
+- (void)_createGestureTuningIfNecessary;
 - (void)setMagnifierOrientation;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (struct CGRect)_endEdgeHitRect;

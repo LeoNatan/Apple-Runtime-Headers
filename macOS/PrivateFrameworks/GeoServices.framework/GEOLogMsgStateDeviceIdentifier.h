@@ -8,27 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEOLogMsgStateDeviceIdentifier : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_deviceHwIdentifier;
     NSString *_deviceOsVersion;
     BOOL _deviceDarkMode;
     BOOL _isInternalInstall;
     BOOL _isInternalTool;
     struct {
-        unsigned int deviceDarkMode:1;
-        unsigned int isInternalInstall:1;
-        unsigned int isInternalTool:1;
-    } _has;
+        unsigned int has_deviceDarkMode:1;
+        unsigned int has_isInternalInstall:1;
+        unsigned int has_isInternalTool:1;
+        unsigned int read_deviceHwIdentifier:1;
+        unsigned int read_deviceOsVersion:1;
+        unsigned int wrote_deviceHwIdentifier:1;
+        unsigned int wrote_deviceOsVersion:1;
+        unsigned int wrote_deviceDarkMode:1;
+        unsigned int wrote_isInternalInstall:1;
+        unsigned int wrote_isInternalTool:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL deviceDarkMode; // @synthesize deviceDarkMode=_deviceDarkMode;
-@property(nonatomic) BOOL isInternalInstall; // @synthesize isInternalInstall=_isInternalInstall;
-@property(nonatomic) BOOL isInternalTool; // @synthesize isInternalTool=_isInternalTool;
-@property(retain, nonatomic) NSString *deviceHwIdentifier; // @synthesize deviceHwIdentifier=_deviceHwIdentifier;
-@property(retain, nonatomic) NSString *deviceOsVersion; // @synthesize deviceOsVersion=_deviceOsVersion;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,13 +42,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasDeviceDarkMode;
+@property(nonatomic) BOOL deviceDarkMode;
 @property(nonatomic) BOOL hasIsInternalInstall;
+@property(nonatomic) BOOL isInternalInstall;
 @property(nonatomic) BOOL hasIsInternalTool;
+@property(nonatomic) BOOL isInternalTool;
+@property(retain, nonatomic) NSString *deviceHwIdentifier;
 @property(readonly, nonatomic) BOOL hasDeviceHwIdentifier;
+- (void)_readDeviceHwIdentifier;
+@property(retain, nonatomic) NSString *deviceOsVersion;
 @property(readonly, nonatomic) BOOL hasDeviceOsVersion;
+- (void)_readDeviceOsVersion;
 
 @end
 

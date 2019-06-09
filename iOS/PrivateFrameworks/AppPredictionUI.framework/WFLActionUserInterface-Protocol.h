@@ -6,15 +6,15 @@
 
 #import <AppPredictionUI/NSObject-Protocol.h>
 
-@class INIntentResponse, NSString, WFLAction, WFLHandleIntentAction;
+@class INIntentResponse, NSString, WFAction, WFHandleDonatedIntentAction;
 
 @protocol WFLActionUserInterface <NSObject>
 
 @optional
-- (void)action:(WFLAction *)arg1 requiresContinuingInAppWithProceedHandler:(void (^)(_Bool))arg2;
-- (void)handleIntentAction:(WFLHandleIntentAction *)arg1 requiresUserConfirmation:(_Bool)arg2 requiresUserAuthentication:(_Bool)arg3 withIntentResponse:(INIntentResponse *)arg4 proceedHandler:(void (^)(void))arg5;
-- (void)action:(WFLAction *)arg1 requiresUserConfirmation:(_Bool)arg2 requiresUserAuthentication:(_Bool)arg3 proceedHandler:(void (^)(void))arg4;
-- (void)action:(WFLAction *)arg1 requiresUserConfirmation:(_Bool)arg2 proceedHandler:(void (^)(void))arg3;
+- (void)action:(WFAction *)arg1 requiresContinuingInAppWithProceedHandler:(void (^)(_Bool))arg2;
+- (void)handleIntentAction:(WFHandleDonatedIntentAction *)arg1 requiresUserConfirmation:(_Bool)arg2 requiresUserAuthentication:(_Bool)arg3 withIntentResponse:(INIntentResponse *)arg4 proceedHandler:(void (^)(void))arg5;
+- (void)action:(WFAction *)arg1 requiresUserConfirmation:(_Bool)arg2 requiresUserAuthentication:(_Bool)arg3 proceedHandler:(void (^)(void))arg4;
+- (void)action:(WFAction *)arg1 requiresUserConfirmation:(_Bool)arg2 proceedHandler:(void (^)(void))arg3;
 - (void)logDebugInformation:(NSString *)arg1;
 @end
 

@@ -6,7 +6,6 @@
 
 #import <CFNetwork/_NSCFTranslatedFileURLProtocol.h>
 
-__attribute__((visibility("hidden")))
 @interface _NSCFTranslatedFileURLProtocol_PIMPL_0 : _NSCFTranslatedFileURLProtocol
 {
 }

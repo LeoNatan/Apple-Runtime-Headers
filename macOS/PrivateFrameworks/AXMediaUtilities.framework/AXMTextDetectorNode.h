@@ -8,34 +8,28 @@
 
 #import <AXMediaUtilities/NSSecureCoding-Protocol.h>
 
-@class AXMTextLayoutManager, FKTextDetector;
+@class AXMTextLayoutManager, NSArray;
 
 @interface AXMTextDetectorNode : AXMEvaluationNode <NSSecureCoding>
 {
-    FKTextDetector *_textDetector;
     AXMTextLayoutManager *_textLayoutManager;
-    BOOL _detectDiacritics;
-    BOOL _returnSubFeatures;
-    BOOL _minimizeFalsePositives;
-    unsigned long long _detectionFlavor;
-    double _minimumCharacterHeight;
+    NSArray *_recognitionLanguages;
+    NSArray *_customWords;
 }
 
-+ (id)supportedDetectionLanguages;
++ (id)supportedRecognitionLanguagesForFlavor:(unsigned long long)arg1 textRecognitionLevel:(unsigned long long)arg2 error:(id *)arg3;
++ (long long)_vnRequestTextRecognitionLevelForAXMTextRecognitionLevel:(unsigned long long)arg1;
 + (id)title;
 + (BOOL)isSupported;
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) BOOL minimizeFalsePositives; // @synthesize minimizeFalsePositives=_minimizeFalsePositives;
-@property(nonatomic) BOOL returnSubFeatures; // @synthesize returnSubFeatures=_returnSubFeatures;
-@property(nonatomic) BOOL detectDiacritics; // @synthesize detectDiacritics=_detectDiacritics;
-@property(nonatomic) double minimumCharacterHeight; // @synthesize minimumCharacterHeight=_minimumCharacterHeight;
-@property(nonatomic) unsigned long long detectionFlavor; // @synthesize detectionFlavor=_detectionFlavor;
+@property(copy, nonatomic) NSArray *customWords; // @synthesize customWords=_customWords;
+@property(copy, nonatomic) NSArray *recognitionLanguages; // @synthesize recognitionLanguages=_recognitionLanguages;
 - (void).cxx_destruct;
 - (void)evaluate:(id)arg1;
-- (void)_evaluateWithVisionFlavor:(id)arg1;
+- (void)_evaluateByRecognizingText:(id)arg1 textDetectionOptions:(id)arg2;
+- (void)_evaluateByDetectingTextRectangles:(id)arg1 textDetectionOptions:(id)arg2;
 - (BOOL)validateVisionKitSoftLinkSymbols;
-- (id)_visionTextDetectionOptionForLangauge:(id)arg1;
-- (void)_evaluateWithFutharkFlavor:(id)arg1;
+- (id)_visionTextDetectionOptionForLanguage:(id)arg1;
 - (BOOL)shouldEvaluate:(id)arg1;
 - (BOOL)requiresVisionFramework;
 - (void)encodeWithCoder:(id)arg1;

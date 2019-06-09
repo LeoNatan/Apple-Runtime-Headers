@@ -9,6 +9,7 @@
 @class ICDDeviceProfileHandler, NSDictionary, NSLock, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSNumber, NSObject, NSString;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface ICDDevice : _ICDDirectoryObject
 {
     unsigned int _connectionID;
@@ -59,9 +60,6 @@
 @property(readonly) struct __CFUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain) NSString *transportType; // @synthesize transportType=_transportType;
 @property(readonly) unsigned int connectionID; // @synthesize connectionID=_connectionID;
-- (BOOL)hasClientApps;
-- (void)handleClientDied:(id)arg1;
-- (void)addClientAppPID:(int)arg1;
 - (BOOL)shouldDeviceDisconnect;
 - (BOOL)disconnectIfSessionNotOpened;
 - (void)setDisconnectIfSessionNotOpened:(BOOL)arg1;
@@ -72,8 +70,10 @@
 - (void)invalidateMetaData;
 - (id)findICAObject:(unsigned int)arg1;
 - (void)addNewIndexedObject:(id)arg1;
+- (void)addObjectInfoForIndexes:(id)arg1;
 - (void)addObjectInfoForTree:(id)arg1;
 - (id)getObjectPropertyDictionary:(id)arg1;
+- (void)addIndexArrayToDictionary:(id)arg1;
 - (void)addTreeArrayToDictionary:(id)arg1;
 - (void)addDataArrayToDictionary:(id)arg1;
 - (void)addOptimizedDataArrayToDictionary:(id)arg1;

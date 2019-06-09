@@ -20,6 +20,9 @@
     NSArray *_activeTokenSets;
 }
 
++ (id)returnDelimiterData;
++ (id)utf16Tokens;
++ (id)singleByteTokens;
 - (void).cxx_destruct;
 - (BOOL)advancedPastToken:(int)arg1;
 - (BOOL)atEOF;
@@ -55,6 +58,7 @@
 - (id)trimData:(id)arg1 withPrefixLength:(unsigned long long)arg2 suffixLength:(unsigned long long)arg3;
 - (id)stringFromData:(id)arg1 encoding:(unsigned long long)arg2 prefixLength:(unsigned long long)arg3 suffixLength:(unsigned long long)arg4;
 - (id)unicodeStringByRoundingData:(id)arg1 toNextWholeCharacterUsingEncoding:(unsigned long long)arg2 prefixLength:(unsigned long long)arg3 suffixLength:(unsigned long long)arg4 maximumValueLength:(unsigned long long)arg5;
+- (id)clipAtGraphemeClusters:(id)arg1 maximumValueLength:(unsigned long long)arg2 addEllipsisIfClipped:(BOOL)arg3;
 - (id)stringByRoundingData:(id)arg1 toNextWholeCharacterUsingEncoding:(unsigned long long)arg2 prefixLength:(unsigned long long)arg3 suffixLength:(unsigned long long)arg4 maximumValueLength:(unsigned long long)arg5;
 - (struct _NSRange)emptyRangeStartingAtCursor;
 - (void)appendNextEscapedCharacterToData:(id)arg1;

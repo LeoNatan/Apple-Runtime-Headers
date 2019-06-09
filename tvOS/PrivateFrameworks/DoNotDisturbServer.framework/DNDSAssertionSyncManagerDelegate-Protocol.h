@@ -6,10 +6,9 @@
 
 #import <DoNotDisturbServer/NSObject-Protocol.h>
 
-@class NSDate;
 @protocol DNDSAssertionSyncManager;
 
 @protocol DNDSAssertionSyncManagerDelegate <NSObject>
-- (void)syncManager:(id <DNDSAssertionSyncManager>)arg1 invalidateAllModeAssertionsTakenBeforeDate:(NSDate *)arg2 forReason:(unsigned long long)arg3;
+- (void)syncManager:(id <DNDSAssertionSyncManager>)arg1 performModeAssertionUpdatesWithHandler:(_Bool (^)(id <DNDSModeAssertionUpdateContext>))arg2;
 @end
 

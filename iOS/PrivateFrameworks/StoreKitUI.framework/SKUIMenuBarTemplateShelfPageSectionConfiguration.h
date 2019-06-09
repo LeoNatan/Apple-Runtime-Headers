@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIShelfPageSectionConfiguration.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIMenuBarTemplateShelfPageSectionConfiguration : SKUIShelfPageSectionConfiguration
 {
     id _fixedElementsCollectionViewCell;

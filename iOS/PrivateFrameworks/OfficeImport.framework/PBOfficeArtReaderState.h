@@ -11,15 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface PBOfficeArtReaderState : OABReaderState
 {
-    PBPresentationReaderState *mPresentationState;
     PXPresentationState *mXmlDocumentState;
+    PBPresentationReaderState *mPresentationState;
 }
 
+@property(readonly) __weak PBPresentationReaderState *presentationState; // @synthesize presentationState=mPresentationState;
+- (void).cxx_destruct;
 - (id)drawableOnTgtSlideForShapeId:(int)arg1;
 - (id)xmlDocumentState;
 - (id)xmlDrawingState;
-- (id)presentationState;
-- (void)dealloc;
 - (id)initWithPresentationState:(id)arg1;
 
 @end

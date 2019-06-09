@@ -11,9 +11,9 @@
 }
 
 + (_Bool)_boolForPreferenceKey:(id)arg1 usingPreferencesController:(_Bool)arg2;
-+ (_Bool)needsToShowFeature:(long long)arg1 usingPreferencesController:(_Bool)arg2;
-+ (_Bool)needsToShowFeature:(long long)arg1;
-+ (_Bool)needsToShowAnyFeatureUsingPreferencesController:(_Bool)arg1;
++ (_Bool)needsToShowFeature:(long long)arg1 usingPreferencesController:(_Bool)arg2 usingDeviceProvider:(id)arg3;
++ (_Bool)needsToShowFeature:(long long)arg1 usingDeviceProvider:(id)arg2;
++ (_Bool)needsToShowAnyFeatureUsingPreferencesController:(_Bool)arg1 usingDeviceProvider:(id)arg2;
 
 @end
 

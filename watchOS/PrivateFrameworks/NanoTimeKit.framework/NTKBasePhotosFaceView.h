@@ -27,16 +27,17 @@
     _Bool _preloadedPhotoOnSleep;
     int _previousDataMode;
     unsigned int _dateAlignment;
-    NTKAlbumEmptyView *_noPhotosView;
     UIView *_cornerView;
     UIColor *_foregroundColor;
     UIColor *_shadowColor;
+    UIColor *_legibilityGradientColor;
     UIView *_currentGradientView;
     unsigned int _isContentLoaded:1;
     unsigned int _isInteractive:1;
     unsigned int _isUsingLegibility:1;
     NTKUtilityComplicationFactory *_complicationFactory;
     _Bool _noPhotosViewVisible;
+    NTKAlbumEmptyView *_noPhotosView;
 }
 
 + (id)_analyzeSidecarPhoto:(id)arg1 dateAlignment:(unsigned int)arg2;
@@ -44,6 +45,7 @@
 + (id)_analysisForPhoto:(id)arg1 dateAlignment:(unsigned int)arg2;
 + (id)_temporaryDirectory;
 @property(nonatomic, getter=isNoPhotosViewVisible) _Bool noPhotosViewVisible; // @synthesize noPhotosViewVisible=_noPhotosViewVisible;
+@property(readonly, nonatomic) NTKAlbumEmptyView *noPhotosView; // @synthesize noPhotosView=_noPhotosView;
 @property(readonly, nonatomic) _Bool isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(readonly, nonatomic) NTKPhotoImageView *posterImageView; // @synthesize posterImageView=_posterImageView;
 @property(readonly, nonatomic) UIView *cornerView; // @synthesize cornerView=_cornerView;
@@ -55,6 +57,7 @@
 - (void)imageViewDidBeginPlaying:(id)arg1;
 - (void)_setDateAttributes:(id)arg1 animated:(_Bool)arg2;
 - (id)_newGradientViewWithColor:(id)arg1;
+- (id)newGradientView;
 - (void)_cleanupAfterZoom;
 - (void)_setZoomFraction:(float)arg1 iconDiameter:(float)arg2;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
@@ -66,7 +69,8 @@
 - (void)_fadeToCurtainViewWithDuration:(double)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_hideCurtainView;
 - (void)_showCurtainView;
-- (void)_handleCSLPIBacklightWillTurnOff;
+- (_Bool)_canShowCurtainViewWhenScreenBlanked;
+- (void)handleScreenBlanked;
 - (void)_handleScreenWake;
 - (void)_handleOrdinaryScreenWake;
 - (void)_handleWristRaiseScreenWake;
@@ -116,7 +120,7 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
 - (void)_layoutForegroundContainerView;
-- (id)_digitalTimeLabelStyle;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
 - (float)_timeTravelYAdjustment;
 @property(readonly, nonatomic) unsigned int dateAlignment; // @dynamic dateAlignment;
 - (void)layoutSubviews;

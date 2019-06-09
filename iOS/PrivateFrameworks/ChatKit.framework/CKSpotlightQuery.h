@@ -11,6 +11,7 @@
 @class IMChatRegistry, MDSearchQuery, NSArray, NSMutableDictionary, NSString;
 @protocol OS_dispatch_group;
 
+__attribute__((visibility("hidden")))
 @interface CKSpotlightQuery : NSObject <MDSearchQueryDelegate>
 {
     MDSearchQuery *_currentQuery;

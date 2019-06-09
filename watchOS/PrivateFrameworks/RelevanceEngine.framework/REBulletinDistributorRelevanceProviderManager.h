@@ -19,8 +19,8 @@
 + (id)_features;
 - (void).cxx_destruct;
 - (void)bltSettingsServiceMuteNotificationsUpdated:(id)arg1;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (id)_valueForProvider:(id)arg1 feature:(id)arg2;
 - (id)initWithQueue:(id)arg1;
 

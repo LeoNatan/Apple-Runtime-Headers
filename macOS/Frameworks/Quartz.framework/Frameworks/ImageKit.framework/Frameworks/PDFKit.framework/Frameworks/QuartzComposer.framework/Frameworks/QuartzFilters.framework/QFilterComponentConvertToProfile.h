@@ -20,7 +20,7 @@
 - (BOOL)addProfileTuple:(id)arg1;
 - (BOOL)addProfileTuple:(int)arg1 data:(int)arg2 profile:(long long)arg3;
 - (id)growableItems;
-- (id)newGrowableItem;
+- (id)createGrowableItem;
 - (BOOL)canGrow;
 - (id)initWithFilterInfo:(id)arg1 parent:(id)arg2;
 - (id)keysForValuesToObserveForUndo;

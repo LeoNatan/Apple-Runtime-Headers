@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isSCSIDevice:(id)arg1;
 - (BOOL)isSCSIDeviceConnectedOverUSB:(unsigned int)arg1;
 - (unsigned short)productIDFromProperties:(id)arg1 andService:(unsigned int)arg2;
-- (struct IOUSBDeviceStruct **)deviceInterfaceForService:(unsigned int)arg1;
+- (struct IOUSBDeviceStruct942 **)deviceInterfaceForService:(unsigned int)arg1;
 - (int)determineUpdateMethod:(unsigned int)arg1;
 - (int)deviceAppearedHandler:(unsigned int)arg1;
 - (id)makePodFromService:(unsigned int)arg1;

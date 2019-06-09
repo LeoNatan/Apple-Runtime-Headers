@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class ACDDatabase;
+@class ACDDatabaseConnection;
 
 @interface ACDClientAuthorizationManager : NSObject
 {
-    ACDDatabase *_database;
+    ACDDatabaseConnection *_databaseConnection;
 }
 
 - (void).cxx_destruct;
@@ -25,7 +25,7 @@
 - (id)setAuthorization:(id)arg1 forClient:(id)arg2 onAccountType:(id)arg3;
 - (id)authorizationForClient:(id)arg1 accountTypeWithIdentifier:(id)arg2;
 - (id)authorizationForClient:(id)arg1 accountType:(id)arg2;
-- (id)initWithDatabase:(id)arg1;
+- (id)initWithDatabaseConnection:(id)arg1;
 
 @end
 

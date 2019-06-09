@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 - (id)resolvedAppearanceForWidget:(id)arg1;
 - (id)resolvedAppearanceForStyleName:(id)arg1 styleConfiguration:(id)arg2;
 - (BOOL)_isBuiltinAppearance;
-- (int)_callCoreUIWithBlock:(CDUnknownBlockType)arg1 options:(id)arg2;
+- (int)_callCoreUIWithBlock:(CDUnknownBlockType)arg1 options:(id)arg2 requireBezelTintColor:(BOOL)arg3;
 - (id)tintColor;
 - (id)appearanceByApplyingTintColor:(id)arg1;
 @property(copy) NSArray *appearances;

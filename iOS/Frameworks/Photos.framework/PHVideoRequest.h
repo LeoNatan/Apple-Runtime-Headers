@@ -4,25 +4,29 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Photos/PHImageManagerRequest.h>
+#import <Photos/PHMediaRequest.h>
 
-@class PHVideoRequestOptions;
+@class PHImageDisplaySpec, PHVideoRequestBehaviorSpec, PHVideoResult;
+@protocol PHVideoRequestDelegate;
 
-@interface PHVideoRequest : PHImageManagerRequest
+@interface PHVideoRequest : PHMediaRequest
 {
-    PHVideoRequestOptions *_options;
-    CDUnknownBlockType _resultHandler;
+    PHVideoResult *_videoResult;
+    id <PHVideoRequestDelegate> _delegate;
+    PHImageDisplaySpec *_displaySpec;
+    PHVideoRequestBehaviorSpec *_behaviorSpec;
 }
 
-+ (id)videoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
-@property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
-@property(readonly, nonatomic) PHVideoRequestOptions *options; // @synthesize options=_options;
+@property(readonly, nonatomic) PHVideoRequestBehaviorSpec *behaviorSpec; // @synthesize behaviorSpec=_behaviorSpec;
+@property(readonly, nonatomic) PHImageDisplaySpec *displaySpec; // @synthesize displaySpec=_displaySpec;
+@property(readonly, nonatomic) __weak id <PHVideoRequestDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)clearResultHandler;
-- (void)cloneIDAndResultHandlerFromRequest:(id)arg1;
-- (_Bool)isVideo;
-- (id)initVideoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(CDUnknownBlockType)arg4;
-- (id)description;
+- (void)videoURLBecameAvailable:(id)arg1 info:(id)arg2 error:(id)arg3;
+- (void)startRequest;
+- (_Bool)isSynchronous;
+- (void)_handleResultVideoURL:(id)arg1 info:(id)arg2 error:(id)arg3;
+- (void)_finish;
+- (id)initWithRequestID:(int)arg1 requestIndex:(unsigned long long)arg2 contextType:(long long)arg3 managerID:(unsigned long long)arg4 asset:(id)arg5 displaySpec:(id)arg6 behaviorSepc:(id)arg7 delegate:(id)arg8;
 
 @end
 

@@ -26,9 +26,15 @@
 - (void)_setTargetRect:(struct CGRect)arg1 inView:(id)arg2 animated:(_Bool)arg3;
 - (void)setTargetRect:(struct CGRect)arg1 inView:(id)arg2;
 - (void)_windowWillRotate:(id)arg1;
+- (void)hideMenu;
+- (void)hideMenuFromView:(id)arg1;
+- (void)showMenuFromView:(id)arg1 rect:(struct CGRect)arg2;
 - (void)setMenuVisible:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_hideMenuAnimated:(_Bool)arg1;
+- (void)_showMenuAnimated:(_Bool)arg1;
 - (_Bool)_menuHidden;
 @property(nonatomic, getter=isMenuVisible) _Bool menuVisible;
+- (void)_removeWindowWillRotateObserver;
 - (void)dealloc;
 - (id)init;
 - (_Bool)_updateAnimated:(_Bool)arg1 checkVisible:(_Bool)arg2;

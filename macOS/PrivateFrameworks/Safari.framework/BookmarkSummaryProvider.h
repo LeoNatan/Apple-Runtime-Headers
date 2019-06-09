@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)operationForRequest:(id)arg1;
 - (void)prepareResponseForRequest:(id)arg1 allowDelayedResponse:(BOOL)arg2;
 - (id)responseForRequest:(id)arg1 willProvideUpdates:(char *)arg2;
 - (BOOL)canHandleRequest:(id)arg1;

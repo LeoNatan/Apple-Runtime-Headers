@@ -13,6 +13,7 @@
     UIImageView *_imageView;
     PXStateBadgeView *_clusterStateBadgeView;
     PXStateBadgeView *_stateBadgeView;
+    PXStateBadgeView *_alternateStateBadgeView;
     PXDedupingBadgeView *_dedupingBadgeView;
     PXTextSymbolView *_sdofOrHDRBadgeView;
     PXTextSymbolView *_favoriteBadgeView;
@@ -20,6 +21,7 @@
     PXTextSymbolView *_blurryBadgeView;
     PXScoreView *_aestheticScoreView;
     PXScoreView *_contentScoreView;
+    PXScoreView *_criteriaScoreView;
     PXSymbolBadgeView *_symbolBadgeView;
     PXSymbolBadgeView *_dedupedSymbolBadgeView;
     PXIndexView *_indexView;
@@ -31,9 +33,11 @@
     NSString *_representedAssetIdentifier;
     NSDictionary *_debugInfo;
     NSString *_state;
+    NSString *_alternateState;
     NSString *_clusterState;
     double _aestheticScore;
     double _contentScore;
+    double _criteriaScore;
     NSNumber *_symbolIndex;
     NSString *_dedupingType;
     NSNumber *_dedupedSymbolIndex;
@@ -45,9 +49,11 @@
 @property(retain, nonatomic) NSNumber *dedupedSymbolIndex; // @synthesize dedupedSymbolIndex=_dedupedSymbolIndex;
 @property(retain, nonatomic) NSString *dedupingType; // @synthesize dedupingType=_dedupingType;
 @property(retain, nonatomic) NSNumber *symbolIndex; // @synthesize symbolIndex=_symbolIndex;
+@property(nonatomic) double criteriaScore; // @synthesize criteriaScore=_criteriaScore;
 @property(nonatomic) double contentScore; // @synthesize contentScore=_contentScore;
 @property(nonatomic) double aestheticScore; // @synthesize aestheticScore=_aestheticScore;
 @property(retain, nonatomic) NSString *clusterState; // @synthesize clusterState=_clusterState;
+@property(retain, nonatomic) NSString *alternateState; // @synthesize alternateState=_alternateState;
 @property(retain, nonatomic) NSString *state; // @synthesize state=_state;
 @property(retain, nonatomic) NSDictionary *debugInfo; // @synthesize debugInfo=_debugInfo;
 @property(retain, nonatomic) NSString *representedAssetIdentifier; // @synthesize representedAssetIdentifier=_representedAssetIdentifier;
@@ -57,6 +63,7 @@
 @property(nonatomic, getter=isUtility) _Bool utility; // @synthesize utility=_isUtility;
 @property(nonatomic, getter=isFavorite) _Bool favorite; // @synthesize favorite=_isFavorite;
 - (void).cxx_destruct;
+- (void)setComparisonMatch:(_Bool)arg1;
 - (void)setClusterParity:(unsigned long long)arg1;
 - (void)prepareForReuse;
 - (void)layoutSubviews;

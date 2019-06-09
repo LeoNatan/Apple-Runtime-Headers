@@ -14,14 +14,13 @@
     int _type;
     unsigned int _value;
     struct {
-        unsigned int maxValue:1;
-        unsigned int type:1;
-        unsigned int value:1;
-    } _has;
+        unsigned int has_maxValue:1;
+        unsigned int has_type:1;
+        unsigned int has_value:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int maxValue; // @synthesize maxValue=_maxValue;
-@property(nonatomic) unsigned int value; // @synthesize value=_value;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -29,14 +28,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasMaxValue;
+@property(nonatomic) unsigned int maxValue;
 @property(nonatomic) BOOL hasValue;
+@property(nonatomic) unsigned int value;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
 
 @end
 

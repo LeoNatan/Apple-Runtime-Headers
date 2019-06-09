@@ -13,6 +13,7 @@
 @interface ABRemoteAccountCollection (ABAddressBook) <ABAccountCollection>
 - (id)_accountFromRemoteAccount:(id)arg1;
 - (id)accountWithIdentifier:(id)arg1;
+@property(readonly, copy) NSArray *hiddenAccounts;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly, copy) NSArray *enabledAccounts;
 @property(readonly) ABAccount *defaultAccount;

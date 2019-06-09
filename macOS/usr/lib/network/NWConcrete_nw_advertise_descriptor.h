@@ -9,19 +9,20 @@
 #import <network/OS_nw_advertise_descriptor-Protocol.h>
 
 @class NSString;
+@protocol OS_nw_txt_record;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_advertise_descriptor : NSObject <OS_nw_advertise_descriptor>
 {
-    char *_name;
-    char *_type;
-    char *_domain;
-    char *_txtRecord;
-    unsigned long long _txtLength;
-    unsigned int _no_auto_rename:1;
+    char *name;
+    char *type;
+    char *domain;
+    NSObject<OS_nw_txt_record> *txt_record;
+    unsigned int no_auto_rename:1;
     unsigned int __pad_bits:7;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithName:(const char *)arg1 type:(const char *)arg2 domain:(const char *)arg3;

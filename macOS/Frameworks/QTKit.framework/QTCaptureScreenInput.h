@@ -6,33 +6,11 @@
 
 #import <QTKit/QTCaptureInput.h>
 
-@class QTCaptureScreenInputInternal;
-
 @interface QTCaptureScreenInput : QTCaptureInput
 {
-    QTCaptureScreenInputInternal *_internal;
-    long long _reserved4;
-    long long _reserved5;
-    long long _reserved6;
 }
 
 + (void)initialize;
-- (void)sessionWillUseOutputDecompressionOptions:(id)arg1 forConnection:(id)arg2;
-- (int)clockProviderNodeForConnection:(id)arg1;
-- (unsigned int)connectionUnitOutputNumberForConnection:(id)arg1;
-- (int)connectionGraphNodeForConnection:(id)arg1;
-- (void)removeInputUnitsForConnection:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
-- (BOOL)addInputUnitsForConnection:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
-- (id)connections;
-@property(nonatomic) int captureTimeScale; // @dynamic captureTimeScale;
-@property(nonatomic) BOOL usesMouseClickEffect; // @dynamic usesMouseClickEffect;
-- (unsigned int)_mouseClickEffect;
-@property(nonatomic) struct CGRect cropRect; // @dynamic cropRect;
-@property(nonatomic) double minimumVideoFrameInterval; // @dynamic minimumVideoFrameInterval;
-- (void)_syncScreenInputWithSessionDecompressionOptions;
-- (struct CGRect)_flippedCropRectForCropRect:(struct CGRect)arg1;
-- (int)_setInputUnitProperty:(unsigned int)arg1 bytes:(const void *)arg2 length:(unsigned int)arg3;
-- (void)dealloc;
 - (id)init;
 - (id)initWithDisplayID:(unsigned int)arg1;
 

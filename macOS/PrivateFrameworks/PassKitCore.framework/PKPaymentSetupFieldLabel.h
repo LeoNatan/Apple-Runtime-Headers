@@ -14,8 +14,16 @@
     NSString *_detailTitle;
     NSString *_detailSubtitle;
     NSString *_detailBody;
+    NSString *_businessChatButtonTitle;
+    NSString *_businessChatIdentifier;
+    NSString *_businessChatIntentName;
+    unsigned long long _alingment;
 }
 
+@property(nonatomic) unsigned long long alingment; // @synthesize alingment=_alingment;
+@property(copy, nonatomic) NSString *businessChatIntentName; // @synthesize businessChatIntentName=_businessChatIntentName;
+@property(copy, nonatomic) NSString *businessChatIdentifier; // @synthesize businessChatIdentifier=_businessChatIdentifier;
+@property(copy, nonatomic) NSString *businessChatButtonTitle; // @synthesize businessChatButtonTitle=_businessChatButtonTitle;
 @property(copy, nonatomic) NSString *detailBody; // @synthesize detailBody=_detailBody;
 @property(copy, nonatomic) NSString *detailSubtitle; // @synthesize detailSubtitle=_detailSubtitle;
 @property(copy, nonatomic) NSString *detailTitle; // @synthesize detailTitle=_detailTitle;

@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) double timeRemaining;
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) NSString *contentVersion;
+@property(readonly, nonatomic) long long expectedContentLength;
 @property(readonly, copy, nonatomic) NSNumber *contentLength;
 @property(readonly, nonatomic) float progress;
 @property(readonly, nonatomic) NSURL *contentURL;

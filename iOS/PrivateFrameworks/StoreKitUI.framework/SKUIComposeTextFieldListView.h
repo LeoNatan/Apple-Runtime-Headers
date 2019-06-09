@@ -9,6 +9,7 @@
 @class NSMutableArray, UIResponder;
 @protocol SKUIComposeTextFieldListViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIComposeTextFieldListView : UIView
 {
     id <SKUIComposeTextFieldListViewDelegate> _delegate;

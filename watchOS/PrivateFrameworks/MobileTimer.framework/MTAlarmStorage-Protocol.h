@@ -6,7 +6,7 @@
 
 #import <MobileTimer/NSObject-Protocol.h>
 
-@class MTAlarm, NSArray, NSDate, NSString;
+@class MTAlarm, MTChangeSet, NSArray, NSDate, NSString;
 @protocol MTAlarmObserver, MTSource;
 
 @protocol MTAlarmStorage <NSObject>
@@ -15,15 +15,16 @@
 @property(readonly, nonatomic) MTAlarm *nextAlarm;
 @property(readonly, nonatomic) MTAlarm *sleepAlarm;
 @property(readonly, nonatomic) NSArray *alarms;
+- (void)alarmWithIdentifier:(NSString *)arg1 withCompletion:(void (^)(MTAlarm *))arg2;
 - (void)dismissAlarmWithIdentifier:(NSString *)arg1 dismissDate:(NSDate *)arg2 dismissAction:(unsigned int)arg3 withCompletion:(void (^)(NSError *))arg4 source:(id <MTSource>)arg5;
 - (void)dismissAlarmWithIdentifier:(NSString *)arg1 dismissAction:(unsigned int)arg2 withCompletion:(void (^)(NSError *))arg3 source:(id <MTSource>)arg4;
 - (void)snoozeAlarmWithIdentifier:(NSString *)arg1 snoozeDate:(NSDate *)arg2 snoozeAction:(unsigned int)arg3 withCompletion:(void (^)(NSError *))arg4 source:(id <MTSource>)arg5;
 - (void)snoozeAlarmWithIdentifier:(NSString *)arg1 snoozeAction:(unsigned int)arg2 withCompletion:(void (^)(NSError *))arg3 source:(id <MTSource>)arg4;
 - (void)setAllAlarms:(NSArray *)arg1 sleepAlarm:(MTAlarm *)arg2 source:(id <MTSource>)arg3;
-- (void)mergeAlarms:(NSArray *)arg1 sleepAlarm:(MTAlarm *)arg2 source:(id <MTSource>)arg3;
 - (void)removeAllAlarmsForSource:(id <MTSource>)arg1;
 - (void)removeAlarmWithIdentifier:(NSString *)arg1 withCompletion:(void (^)(NSError *))arg2 source:(id <MTSource>)arg3;
 - (void)removeAlarm:(MTAlarm *)arg1 withCompletion:(void (^)(NSError *))arg2 source:(id <MTSource>)arg3;
+- (void)updateAlarmWithIdentifier:(NSString *)arg1 changeSet:(MTChangeSet *)arg2 withCompletion:(void (^)(NSError *))arg3 source:(id <MTSource>)arg4;
 - (void)updateAlarm:(MTAlarm *)arg1 withCompletion:(void (^)(NSError *))arg2 source:(id <MTSource>)arg3;
 - (void)addAlarm:(MTAlarm *)arg1 withCompletion:(void (^)(NSError *))arg2 source:(id <MTSource>)arg3;
 - (void)getAlarmsWithCompletion:(void (^)(NSArray *, MTAlarm *, MTAlarm *, NSError *))arg1;

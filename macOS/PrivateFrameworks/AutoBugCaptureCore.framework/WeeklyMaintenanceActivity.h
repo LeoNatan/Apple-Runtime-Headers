@@ -6,6 +6,7 @@
 
 #import <AutoBugCaptureCore/PeriodicMaintenanceActivity.h>
 
+__attribute__((visibility("hidden")))
 @interface WeeklyMaintenanceActivity : PeriodicMaintenanceActivity
 {
 }

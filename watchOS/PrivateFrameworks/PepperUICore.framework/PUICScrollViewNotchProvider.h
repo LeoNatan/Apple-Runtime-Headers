@@ -19,8 +19,8 @@
 @property(nonatomic) float deltaToContentOffset; // @synthesize deltaToContentOffset=_deltaToContentOffset;
 @property(nonatomic) __weak UIScrollView *targetScrollView; // @synthesize targetScrollView=_targetScrollView;
 - (void).cxx_destruct;
-- (struct UIEdgeInsets)_adjustedSafeAreaInsetForNotchesTriggerPoint:(struct UIEdgeInsets)arg1;
 - (id)_subviewsThatNeedNotches;
+- (struct UIEdgeInsets)adjustedSafeAreaInsetForNotchesTriggerPoint:(struct UIEdgeInsets)arg1;
 - (void)configureMinorDetentsBasedOnResultingNotches;
 - (void)generateNotches;
 - (_Bool)shouldGenerateNotches;

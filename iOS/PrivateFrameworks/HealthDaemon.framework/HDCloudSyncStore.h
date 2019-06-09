@@ -15,7 +15,9 @@
 {
     long long _syncProvenance;
     long long _syncEpoch;
+    int _syncProtocolVersion;
     _Bool _canPush;
+    _Bool _syncTombstonesOnly;
     NSUUID *_storeIdentifier;
     NSString *_ownerIdentifier;
     NSString *_containerIdentifier;
@@ -29,6 +31,7 @@
 + (id)syncStoreForProfile:(id)arg1 storeIdentifier:(id)arg2 syncCircleName:(id)arg3 ownerIdentifier:(id)arg4 containerIdentifier:(id)arg5 error:(id *)arg6;
 + (void)samplesDeletedInProfile:(id)arg1 byUser:(_Bool)arg2;
 @property(retain, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
+@property(readonly, nonatomic) _Bool syncTombstonesOnly; // @synthesize syncTombstonesOnly=_syncTombstonesOnly;
 @property(readonly, nonatomic) HDSharingPredicate *sharingPredicate; // @synthesize sharingPredicate=_sharingPredicate;
 @property(readonly, copy, nonatomic) NSString *sharingIdentifier; // @synthesize sharingIdentifier=_sharingIdentifier;
 @property(readonly, nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
@@ -44,7 +47,6 @@
 - (_Bool)shouldContinueAfterAnchorValidationError:(id)arg1;
 - (_Bool)supportsSpeculativeChangesForSyncEntityClass:(Class)arg1;
 - (_Bool)enforceSyncEntityOrdering;
-- (id)_excludedSyncEntities;
 - (id)orderedSyncEntities;
 - (_Bool)canRecieveSyncObjectsForEntityClass:(Class)arg1;
 - (id)syncEntityDependenciesForSyncEntity:(Class)arg1;
@@ -53,6 +55,7 @@
 - (id)syncStoreIdentifier;
 - (long long)syncEpoch;
 - (long long)syncProvenance;
+- (_Bool)replaceFrozenAnchorMap:(id)arg1 updateDate:(id)arg2 error:(id *)arg3;
 - (id)persistedStateWithError:(id *)arg1;
 - (_Bool)persistState:(id)arg1 error:(id *)arg2;
 - (id)getPersistedAnchorMapWithError:(id *)arg1;
@@ -62,6 +65,8 @@
 - (id)receivedSyncAnchorMapWithError:(id *)arg1;
 @property(readonly) long long syncStoreType;
 @property(readonly) int protocolVersion;
+- (id)syncStoreForTombstoneSyncOnly:(_Bool)arg1;
+- (id)syncStoreForProtocolVersion:(int)arg1;
 - (id)syncStoreForEpoch:(long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithProfile:(id)arg1 storeIdentifier:(id)arg2 syncCircleName:(id)arg3 ownerIdentifier:(id)arg4 containerIdentifier:(id)arg5 sharingIdentifier:(id)arg6 predicate:(id)arg7 error:(id *)arg8;

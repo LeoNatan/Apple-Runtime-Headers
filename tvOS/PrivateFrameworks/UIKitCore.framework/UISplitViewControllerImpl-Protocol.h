@@ -7,16 +7,16 @@
 #import <UIKitCore/NSObject-Protocol.h>
 
 @class NSArray, NSCoder, NSString, UIBarButtonItem, UIDimmingView, UIFocusAnimationCoordinator, UIFocusUpdateContext, UIPopoverController, UIPresentationController, UIResponder, UISplitViewController, UISplitViewControllerDisplayModeBarButtonItem, UITraitCollection, UIView, UIViewController;
-@protocol UIContentContainer, UISplitViewControllerDelegate, UIViewControllerTransitionCoordinator;
+@protocol UIContentContainer, UISplitViewControllerDelegate, UITraitEnvironment, UIViewControllerTransitionCoordinator;
 
 @protocol UISplitViewControllerImpl <NSObject>
+@property(nonatomic) long long primaryBackgroundStyle;
 @property(nonatomic, getter=_usesExtraWidePrimaryColumn, setter=_setUsesExtraWidePrimaryColumn:) _Bool usesExtraWidePrimaryColumn;
 @property(copy, nonatomic, setter=_setDisplayModeButtonItemTitle:) NSString *_displayModeButtonItemTitle;
 @property(nonatomic) _Bool usesDeviceOverlayPreferences;
 @property(nonatomic) _Bool prefersOverlayInRegularWidthPhone;
 @property(nonatomic) _Bool hidesMasterViewInPortrait;
 @property(nonatomic) float gutterWidth;
-@property(nonatomic) float masterColumnWidth;
 @property(nonatomic) long long primaryEdge;
 @property(nonatomic) double maximumPrimaryColumnWidth;
 @property(nonatomic) double minimumPrimaryColumnWidth;
@@ -34,12 +34,12 @@
 - (_Bool)_disableAutomaticKeyboardBehavior;
 - (UIResponder *)_primaryContentResponder;
 - (void)_didChangeToFirstResponder:(UIResponder *)arg1;
+- (UITraitCollection *)_traitCollectionForChildEnvironment:(id <UITraitEnvironment>)arg1;
 - (_Bool)_handlesCounterRotationForPresentation;
 - (_Bool)_hasPreferredInterfaceOrientationForPresentation;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (NSArray *)_childViewControllersToSendViewWillTransitionToSize;
 - (void)_getRotationContentSettings:(CDStruct_8bdd0ba6 *)arg1;
-- (_Bool)_shouldSynthesizeSupportedOrientations;
 - (double)_contentMarginForChildViewController:(UIViewController *)arg1;
 - (void)_updateChildContentMargins;
 - (void)_marginInfoForChild:(UIViewController *)arg1 leftMargin:(double *)arg2 rightMargin:(double *)arg3;
@@ -50,7 +50,6 @@
 - (void)_didUpdateFocusInContext:(UIFocusUpdateContext *)arg1 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg2;
 - (void)_didEndSnapshotSession;
 - (void)_willBeginSnapshotSession;
-- (void)purgeMemoryForReason:(int)arg1;
 - (void)unloadViewForced:(_Bool)arg1;
 - (long long)preferredInterfaceOrientationForPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
@@ -58,6 +57,9 @@
 - (void)willAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (UIViewController *)childViewControllerForStatusBarStyle;
+- (long long)preferredTrailingStatusBarStyle;
+- (long long)preferredLeadingStatusBarStyle;
 - (_Bool)shouldUpdateFocusInContext:(UIFocusUpdateContext *)arg1;
 - (NSArray *)preferredFocusEnvironments;
 - (UIView *)preferredFocusedView;

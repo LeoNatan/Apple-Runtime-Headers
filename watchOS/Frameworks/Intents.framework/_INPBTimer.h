@@ -18,14 +18,18 @@
         unsigned int duration:1;
         unsigned int remainingTime:1;
         unsigned int state:1;
+        unsigned int type:1;
     } _has;
     NSString *_identifier;
     _INPBDataString *_label;
     int _state;
+    int _type;
     double _duration;
     double _remainingTime;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(nonatomic) int type; // @synthesize type=_type;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
 @property(retain, nonatomic) _INPBDataString *label; // @synthesize label=_label;
@@ -36,8 +40,13 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (int)StringAsType:(id)arg1;
+- (id)typeAsString:(int)arg1;
+@property(nonatomic) _Bool hasType;
 - (int)StringAsState:(id)arg1;
 - (id)stateAsString:(int)arg1;
 @property(nonatomic) _Bool hasState;

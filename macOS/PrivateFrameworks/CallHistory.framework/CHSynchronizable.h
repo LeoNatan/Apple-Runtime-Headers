@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <CallHistory/CHSynchronizableProtocol-Protocol.h>
+#import <CallHistory/CHSynchronizable-Protocol.h>
 
+@class NSString;
 @protocol OS_dispatch_queue;
 
-@interface CHSynchronizable : NSObject <CHSynchronizableProtocol>
+@interface CHSynchronizable : NSObject <CHSynchronizable>
 {
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -23,6 +24,12 @@
 - (void)execute:(CDUnknownBlockType)arg1;
 - (id)initWithQueue:(id)arg1;
 - (id)initWithName:(const char *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

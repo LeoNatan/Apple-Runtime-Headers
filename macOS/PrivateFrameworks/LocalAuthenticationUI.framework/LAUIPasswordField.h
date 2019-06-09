@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)doCommandBySelector:(SEL)arg1;
 - (void)setIsTextFieldFirstResponder:(BOOL)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)updateTextFieldFirstResponderStatusIfNecessary;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_commonInit;

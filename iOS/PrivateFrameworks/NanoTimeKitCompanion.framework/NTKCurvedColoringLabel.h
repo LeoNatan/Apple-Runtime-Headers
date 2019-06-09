@@ -6,55 +6,28 @@
 
 #import <NanoTimeKitCompanion/NTKColoringLabel.h>
 
-@class CLKFont, NSAttributedString, NSLayoutManager, NSTextContainer, NSTextStorage, UIColor, UIView;
+@class CLKUICurvedLabel, UIView;
 
 @interface NTKCurvedColoringLabel : NTKColoringLabel
 {
-    NSTextStorage *_textStorage;
-    NSLayoutManager *_layoutManager;
-    NSTextContainer *_textContainer;
-    NSAttributedString *_attributedStringWithoutColorModification;
-    struct CGRect _cachedBounds;
-    struct CGRect _cachedGlyphsBoundingRect;
-    UIColor *_textColor;
-    double _viewAlpha;
-    CLKFont *_font;
-    _Bool _hasMonospacedNumbers;
-    _Bool _interior;
-    double _circleRadius;
-    double _centerAngle;
-    double _maxAngularWidth;
-    unsigned long long _imagePlacement;
-    double _imagePadding;
-    UIView *_imageView;
+    CLKUICurvedLabel *_curvedLabel;
 }
 
-@property(nonatomic) __weak UIView *imageView; // @synthesize imageView=_imageView;
-@property(nonatomic) double imagePadding; // @synthesize imagePadding=_imagePadding;
-@property(nonatomic) unsigned long long imagePlacement; // @synthesize imagePlacement=_imagePlacement;
-@property(nonatomic) double maxAngularWidth; // @synthesize maxAngularWidth=_maxAngularWidth;
-@property(nonatomic) double centerAngle; // @synthesize centerAngle=_centerAngle;
-@property(nonatomic) _Bool interior; // @synthesize interior=_interior;
-@property(nonatomic) double circleRadius; // @synthesize circleRadius=_circleRadius;
 - (void).cxx_destruct;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)_enumerateTransforms:(_Bool)arg1 callback:(CDUnknownBlockType)arg2;
-- (void)_transformForImage:(CDUnknownBlockType)arg1;
-- (void)_enumerateTransformsForDrawableCharacters:(CDUnknownBlockType)arg1;
-- (double)_distance;
-- (struct CGRect)_glyphsBoundingRect;
-- (struct CGPoint)_offsetOfBoundingRect:(struct CGRect)arg1 inRect:(struct CGRect)arg2;
+- (void)_setAnimationAlpha:(double)arg1;
+- (void)_setUpSnapshot;
 - (void)getTextCenter:(struct CGPoint *)arg1 startAngle:(double *)arg2 endAngle:(double *)arg3;
-- (struct __CTLine *)_newLineFromDrawableTextStorage;
-- (struct _NSRange)_drawableCharacterRange:(struct _NSRange *)arg1;
 @property(readonly, nonatomic) struct CGRect textBoundingRect;
-- (void)drawTextInRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)sizeToFit;
+- (void)setBounds:(struct CGRect)arg1;
+- (void)setFrame:(struct CGRect)arg1;
 - (void)layoutSubviews;
 - (void)invalidateCachedSize;
-- (_Bool)_hasImage;
 - (void)setImageView:(id)arg1 placement:(unsigned long long)arg2 padding:(double)arg3;
-- (void)_updateTracking;
+@property(nonatomic) __weak UIView *imageView;
+@property(nonatomic) double imagePadding;
+@property(nonatomic) unsigned long long imagePlacement;
 - (void)setTracking:(double)arg1;
 - (id)textProviderFont;
 - (void)setTextProviderFont:(id)arg1;
@@ -64,15 +37,24 @@
 - (void)setText:(id)arg1;
 - (id)attributedText;
 - (void)setAttributedText:(id)arg1;
+- (long long)numberOfLines;
 - (void)setNumberOfLines:(long long)arg1;
 - (double)alpha;
 - (void)setAlpha:(double)arg1;
+- (id)textColor;
+- (void)setTextColor:(id)arg1;
 - (id)color;
-- (void)_updateColor;
 - (void)setColor:(id)arg1;
-- (void)_updateMaxSize;
+@property(nonatomic) double maxAngularWidth;
+- (double)maxWidth;
 - (void)setMaxWidth:(double)arg1;
-- (void)dealloc;
+- (_Bool)isTextTruncated;
+- (void)setUsesTextProviderTintColoring:(_Bool)arg1;
+@property(nonatomic) double centerAngle;
+@property(nonatomic) double circleRadius;
+@property(nonatomic) _Bool interior;
+- (double)_firstLineBaseline;
+- (double)_lastLineBaseline;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

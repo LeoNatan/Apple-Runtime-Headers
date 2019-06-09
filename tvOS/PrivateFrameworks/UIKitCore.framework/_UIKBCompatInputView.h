@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
     UIView *_snapshotView;
 }
 
-+ (_Bool)_retroactivelyRequiresConstraintBasedLayout;
++ (_Bool)requiresConstraintBasedLayout;
 @property(retain, nonatomic) UIView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic) UIView *touchableView; // @synthesize touchableView=_touchableView;
 - (_Bool)_hasAutolayoutHeightConstraint;

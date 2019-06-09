@@ -8,6 +8,7 @@
 
 @class OCCancel, OITSUTemporaryDirectory;
 
+__attribute__((visibility("hidden")))
 @interface OCMapper : NSObject
 {
     OCCancel *mCancel;

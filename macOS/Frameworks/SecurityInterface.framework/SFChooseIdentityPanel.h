@@ -26,7 +26,7 @@
 - (void)setShowsHelp:(BOOL)arg1;
 - (id)helpAnchor;
 - (void)setHelpAnchor:(id)arg1;
-- (struct OpaqueSecIdentityRef *)identity;
+- (struct __SecIdentity *)identity;
 - (void)beginSheetForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4 identities:(id)arg5 message:(id)arg6;
 - (long long)runModalForIdentities:(id)arg1 message:(id)arg2;
 - (void)unlock;
@@ -103,7 +103,7 @@
 - (void)_runFullDialogSheet;
 - (long long)_runFullDialog;
 - (void)_chooseIdentitySheetDidEnd:(id)arg1 returnCode:(int)arg2 contextInfo:(void *)arg3;
-- (void)_updateIdentityPreference:(struct OpaqueSecIdentityRef *)arg1 domain:(id)arg2;
+- (void)_updateIdentityPreference:(struct __SecIdentity *)arg1 domain:(id)arg2;
 - (void)_prepPanel:(id)arg1 identities:(id)arg2;
 - (id)_initWithNib:(id)arg1;
 - (id)_reserved_SFChooseIdentityPanel;

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSString, NSUserDefaults;
+@class NSUserDefaults;
 
 @interface ICNFMCSharedPreferencesController : NSObject
 {
@@ -19,13 +19,8 @@
 - (void).cxx_destruct;
 - (void)_preferencesChangedExternally:(id)arg1;
 - (void)_postPreferencesDidChangeNotifications;
-@property(readonly) BOOL intranetDomainsManagedByProfile;
-@property BOOL shouldCheckIntranetDomains;
-@property(retain) NSArray *intranetDomains;
-@property long long addressDisplayMode;
 @property BOOL disableRemoteContent;
 @property BOOL shouldExpandGroups;
-@property(retain) NSString *defaultFromAddress;
 - (void)dealloc;
 - (id)init;
 

@@ -10,6 +10,7 @@
 @property(readonly, nonatomic) id <MTLCommandBuffer> metalCommandBuffer;
 @property(readonly, nonatomic) id <MTLTexture> metalTexture;
 @property(readonly, nonatomic) struct __CVBuffer *pixelBuffer;
+@property(readonly, nonatomic) struct __IOSurface *surface;
 @property(readonly, nonatomic) void *baseAddress;
 @property(readonly, nonatomic) int format;
 @property(readonly, nonatomic) unsigned long long bytesPerRow;

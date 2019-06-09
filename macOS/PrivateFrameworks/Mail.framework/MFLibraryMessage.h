@@ -6,12 +6,14 @@
 
 #import <MailCore/MCMessage.h>
 
+#import <Mail/EDIndexableMessage-Protocol.h>
+#import <Mail/EDLibraryMessage-Protocol.h>
 #import <Mail/IMAPPersistedMessage-Protocol.h>
 
-@class MFLibraryCalendarEvent, MFLibraryStore, MFMailAccount, MFMailbox, NSDate, NSString;
-@protocol IMAPMessageDataSource;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, MFLibraryCalendarEvent, MFLibraryStore, MFMailAccount, MFMailbox, NSArray, NSDate, NSDictionary, NSSet, NSString;
+@protocol ECMessageHeaders, ECMimePart, IMAPMessageDataSource;
 
-@interface MFLibraryMessage : MCMessage <IMAPPersistedMessage>
+@interface MFLibraryMessage : MCMessage <IMAPPersistedMessage, EDIndexableMessage, EDLibraryMessage>
 {
     long long _libraryID;
     MFLibraryStore *_dataSource;
@@ -53,9 +55,9 @@
 @property(readonly) BOOL shouldIndexAttachmentsForSpotlight;
 @property(readonly, nonatomic) BOOL shouldSnipAttachmentData;
 - (void)setData:(id)arg1 isPartial:(BOOL)arg2;
-- (void)setAttachmentFilenames:(id)arg1;
+- (void)setAttachmentMetadata:(id)arg1;
 - (id)messageDataFetchIfNotAvailable:(BOOL)arg1 newDocumentID:(id)arg2;
-- (void)setRemoteID:(const char *)arg1 documentID:(id)arg2 flags:(long long)arg3 size:(unsigned long long)arg4 mailboxID:(long long)arg5 color:(CDStruct_f4b747e6)arg6 conversationID:(long long)arg7 conversationPosition:(int)arg8;
+- (void)setRemoteID:(const char *)arg1 documentID:(id)arg2 flags:(long long)arg3 size:(unsigned long long)arg4 mailboxID:(long long)arg5 color:(CDStruct_f4b747e6)arg6 conversationID:(long long)arg7 conversationPosition:(int)arg8 conversationFlags:(unsigned long long)arg9;
 @property(readonly, nonatomic) MFMailAccount *account;
 - (id)path;
 @property(readonly, copy) NSString *description;
@@ -70,6 +72,7 @@
 @property CDStruct_f4b747e6 messageColor;
 - (void)setColor:(id)arg1;
 - (void)setColorHasBeenEvaluated:(BOOL)arg1;
+- (void)setConversationFlags:(unsigned long long)arg1;
 - (void)setFlags:(long long)arg1;
 - (void)setMessageFlags:(long long)arg1 mask:(long long)arg2;
 @property(readonly, copy, nonatomic) NSString *mailboxName;
@@ -90,27 +93,43 @@
 - (void)setDataSource:(id)arg1;
 @property(readonly) id <IMAPMessageDataSource> dataSource;
 - (id)_unlockedMessageStore;
-- (id)inReplyToHeaderDigest;
-- (id)messageIDHeaderDigest;
-- (id)cc;
-- (id)to;
+@property(readonly) ECAngleBracketIDHash *messageIDHeaderHash;
+@property(readonly, copy) NSArray *cc;
+@property(readonly, copy) NSArray *to;
 - (id)sender;
-@property(readonly, copy) NSString *subject;
+- (id)subjectString;
+@property(readonly, copy) ECSubject *subject;
 @property(retain) MFLibraryCalendarEvent *calendarEvent;
-- (void)setReferences:(id)arg1;
-- (id)references;
+- (void)setReferencesHashes:(id)arg1;
+- (id)referencesHashes;
 - (BOOL)type;
 - (id)documentID;
 @property(readonly, nonatomic) long long libraryID;
-- (id)persistentID;
+@property(readonly, copy, nonatomic) NSString *persistentID;
 @property(readonly, copy, nonatomic) NSString *messageID;
 - (void)dealloc;
 - (id)init;
 - (id)initWithLibraryID:(long long)arg1;
 
 // Remaining properties
+@property(readonly, copy) NSArray *bcc;
+@property(readonly, nonatomic) id <ECMimePart> bodyPart;
 @property(readonly) NSDate *dateReceived;
+@property(readonly) NSDate *dateSent;
+@property(readonly, nonatomic) unsigned long long fileSize;
+@property(readonly, nonatomic) ECMessageFlags *flags;
+@property(readonly, copy) NSArray *from;
 @property(readonly, nonatomic) BOOL hasAttachments;
+@property(readonly, nonatomic) id <ECMessageHeaders> headers;
+@property(readonly, copy, nonatomic) NSDictionary *headersDictionary;
+@property(readonly) NSSet *labels;
+@property(readonly, nonatomic) ECAngleBracketIDHash *listIDHash;
+@property(readonly, copy) NSArray *listUnsubscribe;
+@property(readonly, copy, nonatomic) NSString *messageIDHeader;
+@property(readonly) unsigned long long numberOfAttachments;
+@property(readonly, nonatomic, getter=isPartOfExistingThread) BOOL partOfExistingThread;
+@property(readonly, copy, nonatomic) NSArray *references;
+@property(readonly, copy) NSArray *senders;
 @property(readonly, nonatomic) BOOL shouldDeferBodyDownload;
 @property(readonly) Class superclass;
 

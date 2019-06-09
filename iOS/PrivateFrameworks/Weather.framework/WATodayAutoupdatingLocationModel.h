@@ -40,7 +40,7 @@
 - (_Bool)shouldNotUseUpdatedLocation;
 - (void)_willDeliverForecastModel:(id)arg1;
 - (void)_executeLocationUpdateWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_weatherPreferencesWereSynchronized:(id)arg1;
+- (void)weatherPreferencesWereSynchronized;
 - (_Bool)updateLocationTrackingStatus;
 - (void)syncLastUpdateTime;
 - (void)_teardownLocationManager;

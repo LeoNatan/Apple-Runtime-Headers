@@ -8,6 +8,7 @@
 
 #import <SymptomEvaluator/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsLaunchIntervalMetric : PBCodable <NSCopying>
 {
     unsigned long long _intervalSincePreviousLaunch;

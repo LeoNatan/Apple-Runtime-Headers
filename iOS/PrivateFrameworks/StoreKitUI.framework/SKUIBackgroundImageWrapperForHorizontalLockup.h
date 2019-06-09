@@ -8,6 +8,7 @@
 
 @class SKUIHorizontalLockupView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBackgroundImageWrapperForHorizontalLockup : SKUIImageView
 {
     SKUIHorizontalLockupView *_lockup;

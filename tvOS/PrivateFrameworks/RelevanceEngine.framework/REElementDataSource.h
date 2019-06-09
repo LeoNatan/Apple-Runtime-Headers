@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <RelevanceEngine/RELoggable-Protocol.h>
+#import <RelevanceEngine/REElementDataSourceProperties-Protocol.h>
 
-@class NSArray, NSString;
-@protocol REElementDataSourceDelegate;
+@class NSArray, NSDictionary, NSString;
+@protocol REElementDataSourceActivityDelegate, REElementDataSourceDelegate;
 
-@interface REElementDataSource : NSObject <RELoggable>
+@interface REElementDataSource : NSObject <REElementDataSourceProperties>
 {
+    id <REElementDataSourceActivityDelegate> _activityDelegate;
     _Bool _running;
     _Bool _allowsLocationUse;
     _Bool _unlockedSinceBoot;
@@ -21,6 +22,8 @@
     NSString *_logHeader;
 }
 
++ (unsigned long long)elementContentMode;
++ (_Bool)wantsAutomaticFetching;
 + (_Bool)wantsReloadForFirstDeviceUnlock;
 + (_Bool)wantsReloadForSignificantTimeChange;
 + (CDStruct_2ec95fd7)minimumSupportedSystemVersion;
@@ -40,7 +43,15 @@
 @property(readonly, nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(nonatomic) __weak id <REElementDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDictionary *dataSourceProperties;
+@property(readonly, nonatomic) NSString *name;
 - (void)loadLoggingHeader;
+- (void)finishActivity:(id)arg1;
+- (void)beginActivity:(id)arg1;
+- (void)setActivityDelegate:(id)arg1;
+- (id)activityDelegate;
+- (void)finishFetchingData;
+- (void)beginFetchingData;
 - (id)complicationDescriptor;
 - (void)setUnlockedSinceBoot:(_Bool)arg1;
 - (void)setRunning:(_Bool)arg1;
@@ -53,12 +64,6 @@
 @property(readonly, nonatomic) NSArray *supportedSections;
 - (id)init;
 - (void)collectLoggableState:(CDUnknownBlockType)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

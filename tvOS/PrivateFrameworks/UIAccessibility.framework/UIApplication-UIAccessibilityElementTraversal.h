@@ -6,11 +6,18 @@
 
 #import <UIKit/UIApplication.h>
 
+@class NSDate;
+
 @interface UIApplication (UIAccessibilityElementTraversal)
 - (id)_accessibilityElementWindowsWithOptions:(id)arg1 referenceWindow:(id)arg2;
 - (void)_accessibilityAddKeyboardWindowToArray:(id)arg1 forModalWindow:(id)arg2;
 - (id)_accessibilityViewChildrenWithOptions:(id)arg1 referenceWindow:(id)arg2;
 - (id)_accessibilityViewChildrenWithOptions:(id)arg1;
 - (_Bool)_accessibilityEnumerateSiblingsWithParent:(id *)arg1 options:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
+- (_Bool)_accessibilitySystemAppServerIsReady;
+- (_Bool)_accessibilityIsSystemAppServer;
+- (_Bool)_accessibilityIsAppReadyToBeProbed;
+@property(retain, nonatomic) NSDate *accessibilityLastGesturedTextInputStatusChange;
+- (id)accessibilityPresentingViewController;
 @end
 

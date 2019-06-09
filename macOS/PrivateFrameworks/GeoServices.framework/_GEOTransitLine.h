@@ -7,18 +7,23 @@
 #import <objc/NSObject.h>
 
 #import <GeoServices/GEOTransitLine-Protocol.h>
+#import <GeoServices/NSSecureCoding-Protocol.h>
 
 @class GEOMapItemIdentifier, GEOPBTransitLine, GEOStyleAttributes, NSArray, NSString;
 @protocol GEOTransitArtworkDataSource, GEOTransitSystem;
 
 __attribute__((visibility("hidden")))
-@interface _GEOTransitLine : NSObject <GEOTransitLine>
+@interface _GEOTransitLine : NSObject <GEOTransitLine, NSSecureCoding>
 {
     GEOPBTransitLine *_line;
     id <GEOTransitSystem> _system;
+    CDStruct_2c43369c _locationHint;
 }
 
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) NSArray *operatingHours;
 @property(readonly, nonatomic) GEOStyleAttributes *styleAttributes;
 @property(readonly, nonatomic) BOOL showVehicleNumber;
@@ -33,7 +38,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, nonatomic) GEOMapItemIdentifier *identifier;
 @property(readonly, nonatomic) unsigned long long muid;
-- (id)initWithLine:(id)arg1 system:(id)arg2;
+- (id)initWithLine:(id)arg1 system:(id)arg2 locationHint:(CDStruct_c3b9c2ee)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

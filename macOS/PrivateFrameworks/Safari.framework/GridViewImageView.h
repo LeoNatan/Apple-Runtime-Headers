@@ -14,16 +14,19 @@ __attribute__((visibility("hidden")))
     CALayer *_shadowLayer;
     CALayer *_shadowMask;
     CALayer *_imageLayer;
+    CALayer *_backgroundLayer;
     CALayer *_selectionOverlayLayer;
     NSShadow *_adjustedImageShadow;
     BOOL _usesCustomContentsRect;
     BOOL _roundsImage;
+    BOOL _usesAutomaticImageInset;
     NSShadow *_imageShadow;
     NSImage *_image;
     NSColor *_backgroundColor;
     long long _highlightState;
 }
 
+@property(nonatomic) BOOL usesAutomaticImageInset; // @synthesize usesAutomaticImageInset=_usesAutomaticImageInset;
 @property(nonatomic) BOOL roundsImage; // @synthesize roundsImage=_roundsImage;
 @property(nonatomic) long long highlightState; // @synthesize highlightState=_highlightState;
 @property(nonatomic) BOOL usesCustomContentsRect; // @synthesize usesCustomContentsRect=_usesCustomContentsRect;
@@ -32,6 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSShadow *imageShadow; // @synthesize imageShadow=_imageShadow;
 - (void).cxx_destruct;
 - (void)_updateCustomContentsRectIfNeeded;
+- (struct CGRect)_imageViewFrame;
 - (struct CGRect)_insetBounds;
 - (void)applyIconTreatment;
 - (void)layout;
@@ -43,9 +47,11 @@ __attribute__((visibility("hidden")))
 - (void)_setUpSelectionOverlayLayer;
 - (void)_createShadowLayerIfNeededUsingDebugColors:(BOOL)arg1;
 - (void)_createAdjustedImageShadowIfNeededUsingDebugColors:(BOOL)arg1;
+- (void)_setUpBackgroundLayer;
 - (void)_setUpImageLayer;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
+- (void)_updateBackgroundColor;
 - (void)_applyImageToLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 

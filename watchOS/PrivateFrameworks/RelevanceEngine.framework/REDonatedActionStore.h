@@ -11,6 +11,7 @@
 
 @interface REDonatedActionStore : REObservableSingleton
 {
+    _Bool _synchronized;
     NSObject<OS_dispatch_queue> *_queue;
     REUpNextScheduler *_donationsScheduler;
     REUpNextScheduler *_deletionsScheduler;
@@ -26,13 +27,15 @@
 - (void)_distributeAllDonatedActions;
 - (void)_finishLoadingData;
 - (void)_beginLoadingData;
+- (_Bool)_shouldLimitQueries;
 - (void)_subscribeToNotifications;
 - (void)triggerDistributeAllDonatedActions;
+- (void)synchronizeDonationsIfNecessary;
 - (void)fetchDonationWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)start;
 - (id)callbackQueue;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 
 @end
 

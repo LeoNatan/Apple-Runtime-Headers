@@ -9,6 +9,7 @@
 #import <SceneKit/NSSecureCoding-Protocol.h>
 
 @class NSData, NSString;
+@protocol MTLBuffer;
 
 @interface SCNGeometrySource : NSObject <NSSecureCoding>
 {
@@ -21,9 +22,14 @@
     int _dataOffset;
     int _dataStride;
     unsigned char _mkSemantic;
+    id <MTLBuffer> _mtlBuffer;
+    long _mtlVertexFormat;
+    _Bool _encodeDataAsHalf;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)_geometrySourceWithSource:(id)arg1 vertexFormat:(unsigned int)arg2;
++ (id)geometrySourceWithBuffer:(id)arg1 vertexFormat:(unsigned int)arg2 semantic:(id)arg3 vertexCount:(int)arg4 dataOffset:(int)arg5 dataStride:(int)arg6;
 + (id)geometrySourceWithColorComponents:(const float *)arg1 count:(int)arg2 hasAlpha:(_Bool)arg3 colorSpace:(struct CGColorSpace *)arg4;
 + (id)geometrySourceWithTextureCoordinates:(const struct CGPoint *)arg1 count:(int)arg2;
 + (id)geometrySourceWithNormals:(const struct SCNVector3 *)arg1 count:(int)arg2;
@@ -37,6 +43,7 @@
 + (id)geometrySourceWithMDLVertexAttribute:(id)arg1 mesh:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)_uninterleaveData:(id)arg1 count:(unsigned int)arg2 srcOffset:(unsigned int)arg3 srcStride:(unsigned int)arg4 dstStride:(unsigned int)arg5;
 -     // Error parsing type: r^{__C3DMeshSource={__C3DGenericSource={__C3DEntity={__CFRuntimeBase=IAI}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}i}^{__C3DSourceAccessor}(?=^{__CFData}^v^v)ib1b1b1}SCC}8@0:4, name: meshSource
 - (const void *)__CFObject;
 - (id)scene;
@@ -54,6 +61,9 @@
 @property(readonly, nonatomic) NSData *data;
 - (void)setMkSemantic:(id)arg1;
 - (id)mkSemantic;
+- (void)set_encodeDataAsHalf:(_Bool)arg1;
+- (_Bool)_encodeDataAsHalf;
+- (id)initWithBuffer:(id)arg1 vertexFormat:(unsigned int)arg2 semantic:(id)arg3 vertexCount:(int)arg4 dataOffset:(int)arg5 dataStride:(int)arg6;
 - (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 componentType:(short)arg4 componentCount:(unsigned int)arg5 dataOffset:(int)arg6 dataStride:(int)arg7;
 - (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(int)arg3 floatComponents:(_Bool)arg4 componentsPerVector:(int)arg5 bytesPerComponent:(int)arg6 dataOffset:(int)arg7 dataStride:(int)arg8;
 - (id)description;

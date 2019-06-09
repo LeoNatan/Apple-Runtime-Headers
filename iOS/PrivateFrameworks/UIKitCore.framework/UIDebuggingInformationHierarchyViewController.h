@@ -6,26 +6,29 @@
 
 #import <UIKitCore/UIViewController.h>
 
+#import <UIKitCore/UICollectionViewDataSource-Protocol.h>
+#import <UIKitCore/UICollectionViewDelegate-Protocol.h>
+#import <UIKitCore/UIDebuggingInformationHierarchyCellDelegate-Protocol.h>
+#import <UIKitCore/UIDebuggingInformationHierarchyLayoutDelegate-Protocol.h>
 #import <UIKitCore/UIDebuggingInformationTouchObserver-Protocol.h>
-#import <UIKitCore/UIDebuggingInformationValueViewObserver-Protocol.h>
 #import <UIKitCore/UIDebuggingInformationViewController-Protocol.h>
-#import <UIKitCore/UITableViewDataSource-Protocol.h>
-#import <UIKitCore/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, UIDebuggingInformationInspectorDetailViewController, UIRefreshControl, UITableView, UIView;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString, UICollectionView, UIDebuggingInformationInspectorDetailViewController, UIRefreshControl, UIView;
 
 __attribute__((visibility("hidden")))
-@interface UIDebuggingInformationHierarchyViewController : UIViewController <UIDebuggingInformationValueViewObserver, UIDebuggingInformationTouchObserver, UITableViewDataSource, UITableViewDelegate, UIDebuggingInformationViewController>
+@interface UIDebuggingInformationHierarchyViewController : UIViewController <UIDebuggingInformationTouchObserver, UICollectionViewDataSource, UIDebuggingInformationHierarchyLayoutDelegate, UICollectionViewDelegate, UIDebuggingInformationHierarchyCellDelegate, UIDebuggingInformationViewController>
 {
+    NSArray *_showingOverlayItems;
+    NSArray *_normalItems;
     NSMutableArray *_keys;
     NSMutableDictionary *_managedValues;
     NSMutableDictionary *_observersForKeys;
     NSMutableDictionary *_controlsForKeys;
     NSArray *_data;
     UIView *_rootViewForInspection;
-    UITableView *_tableView;
     UIRefreshControl *_refreshControl;
     UIView *_highlightedView;
+    UICollectionView *_collectionView;
     struct CGColor *_originalBorderColor;
     double _originalBorderWidth;
     UIDebuggingInformationInspectorDetailViewController *_detail;
@@ -34,9 +37,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIDebuggingInformationInspectorDetailViewController *detail; // @synthesize detail=_detail;
 @property(nonatomic) double originalBorderWidth; // @synthesize originalBorderWidth=_originalBorderWidth;
 @property(nonatomic) struct CGColor *originalBorderColor; // @synthesize originalBorderColor=_originalBorderColor;
+@property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(retain, nonatomic) UIView *highlightedView; // @synthesize highlightedView=_highlightedView;
 @property(retain, nonatomic) UIRefreshControl *refreshControl; // @synthesize refreshControl=_refreshControl;
-@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *rootViewForInspection; // @synthesize rootViewForInspection=_rootViewForInspection;
 @property(retain, nonatomic) NSArray *data; // @synthesize data=_data;
 @property(retain, nonatomic) NSMutableDictionary *controlsForKeys; // @synthesize controlsForKeys=_controlsForKeys;
@@ -44,26 +47,29 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSMutableDictionary *managedValues; // @synthesize managedValues=_managedValues;
 @property(retain, nonatomic) NSMutableArray *keys; // @synthesize keys=_keys;
 - (void).cxx_destruct;
-- (void)removePropertyObserver:(id)arg1 forKey:(id)arg2;
-- (void)addPropertyObserver:(id)arg1 forKey:(id)arg2;
-- (void)addPropertyForKey:(id)arg1 ofType:(long long)arg2 defaultValue:(id)arg3 minimumValue:(id)arg4 maximumValue:(id)arg5;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)highlightView:(id)arg1;
-- (long long)numberOfSectionsInTableView:(id)arg1;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)tableView:(id)arg1 indentationLevelForRowAtIndexPath:(id)arg2;
-- (void)valueWithKey:(id)arg1 changedToValue:(id)arg2;
-- (id)_observersForKey:(id)arg1;
+- (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (id)colorForIndentationLevel:(unsigned long long)arg1;
+- (unsigned long long)indentationLevelForIndexPath:(id)arg1;
+- (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
+- (_Bool)shouldCollapseAtIndexPath:(id)arg1;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (_Bool)shouldHighlightSelectedCells;
+- (void)expandBeneathCell:(id)arg1;
+- (void)collapseBeneathCell:(id)arg1;
+- (void)displayDetailsForCell:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (id)getViewsRecursiveWithLevel:(unsigned long long)arg1 forView:(id)arg2;
 - (void)refresh:(id)arg1;
 - (void)didReceiveNewView:(id)arg1;
 - (void)chooseNewTarget:(id)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)traitCollectionDidChange:(id)arg1;
+- (void)_showWindowChange;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

@@ -6,6 +6,7 @@
 
 #import <AutoBugCaptureCore/CrossDeviceTransportCore.h>
 
+__attribute__((visibility("hidden")))
 @interface IDSCrossDeviceTransport : CrossDeviceTransportCore
 {
 }

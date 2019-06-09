@@ -21,12 +21,12 @@
 @property(readonly, nonatomic) int type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long height; // @synthesize height=_height;
 @property(readonly, nonatomic) long long width; // @synthesize width=_width;
+- (void).cxx_destruct;
 - (long long)compareUsingWidth:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqualToChoosableItem:(id)arg1;
 - (id)description;
-- (void)dealloc;
 - (id)initWithCloudResource:(id)arg1;
 - (id)initWithWidth:(long long)arg1 height:(long long)arg2 type:(int)arg3 uniformTypeIdentifier:(id)arg4;
 

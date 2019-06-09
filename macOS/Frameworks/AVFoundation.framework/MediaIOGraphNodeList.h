@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
 - (id)nodeListByAppendingNodes:(int *)arg1 count:(unsigned long long)arg2;
 - (int)nodeAtIndex:(unsigned long long)arg1;
 - (unsigned long long)count;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithNodes:(int *)arg1 count:(unsigned long long)arg2;
 

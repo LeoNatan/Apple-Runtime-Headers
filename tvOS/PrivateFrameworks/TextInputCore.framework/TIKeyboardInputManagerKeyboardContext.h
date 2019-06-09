@@ -23,6 +23,7 @@
 - (void)acceptCandidate:(id)arg1;
 - (void)unmarkText:(id)arg1;
 - (void)deleteForward:(unsigned long long)arg1;
+- (void)deleteTextBackward:(id)arg1;
 - (void)deleteBackward:(unsigned long long)arg1;
 - (void)insertTextAfterSelection:(id)arg1;
 - (void)insertText:(id)arg1;

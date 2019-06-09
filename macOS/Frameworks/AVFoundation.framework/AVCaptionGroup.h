@@ -17,7 +17,6 @@
 @property(readonly, nonatomic) NSArray *captions;
 @property(readonly, nonatomic) CDStruct_e83c9415 timeRange;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithTimeRange:(CDStruct_e83c9415)arg1;
 - (id)initWithCaptions:(id)arg1 timeRange:(CDStruct_e83c9415)arg2;

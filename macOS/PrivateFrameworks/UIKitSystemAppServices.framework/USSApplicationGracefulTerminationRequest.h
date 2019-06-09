@@ -6,15 +6,16 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitSystemAppServices/USSXPCEncodable-Protocol.h>
+#import <UIKitSystemAppServices/NSSecureCoding-Protocol.h>
 
-@interface USSApplicationGracefulTerminationRequest : NSObject <USSXPCEncodable>
+@interface USSApplicationGracefulTerminationRequest : NSObject <NSSecureCoding>
 {
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)applicationGracefulTerminationRequest;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initCommon;
 
 @end

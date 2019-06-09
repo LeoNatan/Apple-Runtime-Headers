@@ -12,13 +12,14 @@
 #import <EventKitUI/UIDropInteractionDelegate-Protocol.h>
 #import <EventKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class EKCalendarDate, EKDayOccurrenceView, EKEvent, EKICSPreviewController, EKUIRecurrenceAlertController, NSString, NSTimer, UIDragInteraction, UIDropInteraction, UILongPressGestureRecognizer, UITapGestureRecognizer, _UIFeedbackDragSnappingBehavior;
+@class EKCalendarDate, EKDayOccurrenceView, EKEvent, EKICSPreviewController, EKUIRecurrenceAlertController, NSString, NSTimer, UIDragInteraction, UIDropInteraction, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView, _UIDragSnappingFeedbackGenerator;
 @protocol EKEventGestureControllerDelegate, EKEventGestureControllerUntimedDelegate;
 
 @interface EKEventGestureController : NSObject <UIDropInteractionDelegate, UIDragInteractionDelegate, EKICSPreviewControllerDelegate, UIGestureRecognizerDelegate, UIAlertViewDelegate>
 {
     UILongPressGestureRecognizer *_draggingGestureRecognizer;
     UITapGestureRecognizer *_tapGestureRecognizer;
+    UIView *_targetView;
     int _currentDraggingState;
     int _pendingDraggingState;
     int _queuedDraggingState;
@@ -53,10 +54,9 @@
     long long _consecutivePageTurnCount;
     _Bool _forcedStart;
     _Bool _needsCommit;
-    CDUnknownBlockType _alertSheetCompletionHandler;
-    EKICSPreviewController *_currentICSPreviewController;
     EKUIRecurrenceAlertController *_recurrenceAlertController;
-    _UIFeedbackDragSnappingBehavior *_dragSnappingFeedback;
+    _UIDragSnappingFeedbackGenerator *_dragSnappingFeedback;
+    EKICSPreviewController *_currentICSPreviewController;
     UIDropInteraction *_dropInteraction;
     UIDragInteraction *_dragInteraction;
     long long _currentDropDataOwnerCache;
@@ -85,12 +85,14 @@
 - (void).cxx_destruct;
 - (double)_Debug_HoursSinceStartOfDay:(double)arg1;
 - (_Bool)_isPointInCancelRegion:(struct CGPoint)arg1;
+- (double)_cancelRegionMargin;
 - (struct CGPoint)_computeOriginAtTouchPoint:(struct CGPoint)arg1 forDate:(double)arg2 isAllDay:(_Bool)arg3 allowXOffset:(_Bool)arg4 allowFloorAtRegionBottom:(_Bool)arg5;
 - (double)_computeHeightForOccurrenceViewOfDuration:(double)arg1 allDay:(_Bool)arg2;
 - (double)_computeWidthForOccurrenceView;
 - (void)_updateHorizontalDragLockForPoint:(struct CGPoint)arg1;
 - (double)_capOccurrenceViewYOrigin:(double)arg1;
 - (double)_alignedYOriginForAllDayOccurrence:(id)arg1 atPoint:(struct CGPoint)arg2 floorAtAllDayRegionBottom:(_Bool)arg3;
+- (double)_allDayBottomPadding;
 - (_Bool)_flingOrCancelDraggingViewIfNeeded;
 - (void)_cancel;
 - (void)_commit;
@@ -101,6 +103,7 @@
 - (void)_animateInNewEvent;
 - (id)_createTemporaryView:(id)arg1 animated:(_Bool)arg2;
 - (id)originalStartDateForEvent:(id)arg1 includingTravel:(_Bool)arg2;
+- (_Bool)_dragInteraction:(id)arg1 sessionSupportsSystemDrag:(id)arg2;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForAddingToSession:(id)arg2 withTouchAtPoint:(struct CGPoint)arg3;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (void)dragInteraction:(id)arg1 session:(id)arg2 didEndWithOperation:(unsigned long long)arg3;
@@ -129,6 +132,7 @@
 - (id)dropInteraction:(id)arg1 previewForDroppingItem:(id)arg2 withDefault:(id)arg3;
 - (void)dropInteraction:(id)arg1 item:(id)arg2 willAnimateDropWithAnimator:(id)arg3;
 - (void)dropInteraction:(id)arg1 concludeDrop:(id)arg2;
+- (void)_extractFileFromSession:(id)arg1;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
 - (void)dropInteraction:(id)arg1 sessionDidExit:(id)arg2;
 - (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
@@ -146,6 +150,8 @@
 - (_Bool)_dropSessionRequiresExternalDataExtraction:(id)arg1;
 - (unsigned long long)_dropOperationGivenDropSession:(id)arg1;
 - (id)_getEventUsingDropSession:(id)arg1;
+- (id)_acceptedFileExternalTypes;
+- (id)_acceptedNonFileExternalTypes;
 - (id)_acceptedExternalTypes;
 - (id)_acceptedTypes;
 - (_Bool)_calendarCanAcceptManagedData:(id)arg1;
@@ -190,7 +196,6 @@
 - (void)updateDraggingOccurrenceOrigin;
 @property(readonly, nonatomic) _Bool dragGestureInProgress;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(long long)arg2;
 - (void)promptUserForProposeNewTime:(id)arg1 forEvent:(id)arg2 whenFinished:(CDUnknownBlockType)arg3;
 - (void)promptUserForRecurrenceActionOnOccurrence:(id)arg1 whenFinished:(CDUnknownBlockType)arg2;
 - (void)removeDraggedOccurrence;

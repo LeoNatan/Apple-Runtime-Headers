@@ -21,6 +21,9 @@
 @property(readonly, copy, nonatomic) NSData *separator; // @synthesize separator=_separator;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+- (id)setPersistenceConversationFlags:(unsigned long long)arg1 forMessages:(id)arg2;
+- (void)unmuteConversationForMessages:(id)arg1;
+- (void)muteConversationForMessages:(id)arg1;
 - (id)uniquedString:(id)arg1;
 - (void)flushAllCaches;
 - (void)invalidateMessage:(id)arg1;
@@ -44,7 +47,7 @@
 - (id)bodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id *)arg2 fetchIfNotAvailable:(BOOL)arg3 allowPartial:(BOOL)arg4;
 - (id)bodyDataForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
 - (id)headerDataForMessage:(id)arg1 fetchIfNotAvailable:(BOOL)arg2 allowPartial:(BOOL)arg3;
-- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(id)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7;
+- (void)getTopLevelMimePart:(id *)arg1 headers:(id *)arg2 body:(id *)arg3 forMessage:(id)arg4 fetchIfNotAvailable:(BOOL)arg5 updateFlags:(BOOL)arg6 allowPartial:(BOOL)arg7 skipSignatureVerification:(BOOL)arg8;
 - (id)messageForMessageID:(id)arg1;
 @property(readonly, nonatomic) id <MCMailbox> mailbox;
 @property(readonly, nonatomic) id <MCMailAccount> account;

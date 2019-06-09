@@ -17,11 +17,11 @@
 }
 
 + (id)sharedManager;
-- (id)_placeholderImage;
-- (id)newPlaceholderImageForFormat:(int)arg1 photoImageSize:(struct CGSize)arg2;
-- (id)placeholderDataForFormat:(int)arg1 photoImageSize:(struct CGSize)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 imageDataOffset:(int *)arg8;
+- (void).cxx_destruct;
+- (struct NSObject *)_placeholderImage;
+- (struct NSObject *)newPlaceholderImageForFormat:(unsigned short)arg1 photoImageSize:(struct CGSize)arg2;
+- (id)placeholderDataForFormat:(unsigned short)arg1 photoImageSize:(struct CGSize)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 imageDataOffset:(int *)arg8;
 - (id)_cacheKeyForFormat:(id)arg1 photoImageSize:(struct CGSize)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

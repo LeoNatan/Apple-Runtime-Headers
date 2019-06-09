@@ -30,6 +30,7 @@
     unsigned long long _machineState;
     NSDate *_machineStartDate;
     NSDate *_machineStateUpdateDate;
+    NSDate *_machinePreferredUntilDate;
     NSArray *_oobDataArray;
 }
 
@@ -39,6 +40,7 @@
 @property(readonly, nonatomic) _Bool waitingOnBluetoothConnection; // @synthesize waitingOnBluetoothConnection=_waitingOnBluetoothConnection;
 @property(readonly, nonatomic) _Bool waitingOnMFA; // @synthesize waitingOnMFA=_waitingOnMFA;
 @property(readonly, nonatomic) _Bool dataTransferPermitted; // @synthesize dataTransferPermitted=_dataTransferPermitted;
+@property(retain, nonatomic) NSDate *machinePreferredUntilDate; // @synthesize machinePreferredUntilDate=_machinePreferredUntilDate;
 @property(retain, nonatomic) NSDate *machineStateUpdateDate; // @synthesize machineStateUpdateDate=_machineStateUpdateDate;
 @property(retain, nonatomic) NSDate *machineStartDate; // @synthesize machineStartDate=_machineStartDate;
 @property(nonatomic) unsigned long long machineState; // @synthesize machineState=_machineState;

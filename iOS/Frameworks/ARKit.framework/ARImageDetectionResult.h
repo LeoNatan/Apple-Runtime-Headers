@@ -13,6 +13,7 @@
 
 @interface ARImageDetectionResult : NSObject <NSCopying, NSSecureCoding>
 {
+    double _estimatedScaleFactor;
     ARReferenceImage *_referenceImage;
     void *_imageContext;
     // Error parsing type: {?="columns"[4]}, name: _visionTransform
@@ -25,6 +26,7 @@
 // Property attributes: T{?=[4]},N,V_worldTrackingCameraTransformAtDetection
 
 @property(retain, nonatomic) ARReferenceImage *referenceImage; // @synthesize referenceImage=_referenceImage;
+@property(nonatomic) double estimatedScaleFactor; // @synthesize estimatedScaleFactor=_estimatedScaleFactor;
 // Error parsing type for property visionTransform:
 // Property attributes: T{?=[4]},N,V_visionTransform
 

@@ -13,5 +13,6 @@
 - (id)getDefault:(NSString *)arg1 source:(long long *)arg2;
 - (void)lockDBs;
 - (void)unlockDBs;
+- (NSString *)ping;
 @end
 

@@ -11,12 +11,15 @@
 
 @interface PKNumberPadSuggestionsView : UIStackView
 {
+    NSArray *_suggestionButtons;
     id <PKNumberPadSuggestionsViewDelegate> _delegate;
     NSArray *_suggestions;
     UIColor *_buttonTextColor;
+    UIColor *_buttonBackgroundColor;
 }
 
 + (struct CGSize)defaultSize;
+@property(copy, nonatomic) UIColor *buttonBackgroundColor; // @synthesize buttonBackgroundColor=_buttonBackgroundColor;
 @property(copy, nonatomic) UIColor *buttonTextColor; // @synthesize buttonTextColor=_buttonTextColor;
 @property(copy, nonatomic) NSArray *suggestions; // @synthesize suggestions=_suggestions;
 @property(nonatomic) __weak id <PKNumberPadSuggestionsViewDelegate> delegate; // @synthesize delegate=_delegate;

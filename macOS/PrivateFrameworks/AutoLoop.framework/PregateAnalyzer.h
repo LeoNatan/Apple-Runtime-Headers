@@ -8,7 +8,6 @@
 
 @class NSArray, NSData, NSDictionary, PregateFeatureBuilder;
 
-__attribute__((visibility("hidden")))
 @interface PregateAnalyzer : NSObject
 {
     _Bool _haveInputVideoSize;

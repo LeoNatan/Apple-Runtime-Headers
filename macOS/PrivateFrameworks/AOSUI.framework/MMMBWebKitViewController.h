@@ -13,8 +13,6 @@
 
 @interface MMMBWebKitViewController : NSObject <MMWebKitControllerDelegate>
 {
-    id <MBUIDelegate> _mbUIDelegate;
-    id <MBWebKitViewControllerDelegate> _mbWebKitViewControllerDelegate;
     MMWebKitController *_webKitController;
     NSView *_parentView;
     MMJSDialogController *_mmJSDialogController;
@@ -46,6 +44,8 @@
         unsigned int delegateDidReceiveResponse:1;
         unsigned int padding:2;
     } _flags;
+    id <MBUIDelegate> _mbUIDelegate;
+    id <MBWebKitViewControllerDelegate> _mbWebKitViewControllerDelegate;
 }
 
 @property(copy, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
@@ -61,6 +61,7 @@
 @property(retain, nonatomic) MMWebKitController *webKitController; // @synthesize webKitController=_webKitController;
 @property(nonatomic) id <MBWebKitViewControllerDelegate> mbWebKitViewControllerDelegate; // @synthesize mbWebKitViewControllerDelegate=_mbWebKitViewControllerDelegate;
 @property(nonatomic) id <MBUIDelegate> mbUIDelegate; // @synthesize mbUIDelegate=_mbUIDelegate;
+- (void).cxx_destruct;
 - (id)mmWebKitControllerWindow;
 - (void)mmWebKitControllerWillSendRequest:(id)arg1 willSendRequest:(id)arg2;
 - (void)mmWebKitControllerDidReceiveResponse:(id)arg1 didReceiveResponse:(id)arg2;
@@ -71,7 +72,6 @@
 - (void)mmWebKitControllerConfigureForFrame:(id)arg1;
 - (void)mmWebView:(id)arg1 setFrame:(struct CGRect)arg2;
 - (void)_window:(id)arg1 setFrame:(struct CGRect)arg2;
-- (void)dealloc;
 - (void)alternateNavigationButtonClicked:(id)arg1;
 - (void)rightNavigationButtonClicked:(id)arg1;
 - (void)leftNavigationButtonClicked:(id)arg1;

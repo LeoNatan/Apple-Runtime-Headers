@@ -8,19 +8,19 @@
 
 #import <QuickLook/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, QLToolbarButtonItemRepresentation, QLToolbarUnderlyingButton, UIAlertController, UIImage;
+@class NSArray, NSString, QLToolbarButtonItemRepresentation, UIAlertController, UIImage;
 
 @interface QLToolbarButton : NSObject <NSSecureCoding>
 {
     QLToolbarButtonItemRepresentation *_currentItemRepresentation;
     UIAlertController *_alertController;
     id _target;
-    QLToolbarUnderlyingButton *_underlyingButton;
     SEL _action;
     _Bool _forceToNavBar;
     _Bool _selected;
     _Bool _enabled;
     _Bool _roundedSelectedIndicator;
+    _Bool _disappearsOnTap;
     NSString *_identifier;
     UIImage *_image;
     long long _systemItem;
@@ -31,6 +31,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property _Bool disappearsOnTap; // @synthesize disappearsOnTap=_disappearsOnTap;
 @property _Bool roundedSelectedIndicator; // @synthesize roundedSelectedIndicator=_roundedSelectedIndicator;
 @property _Bool enabled; // @synthesize enabled=_enabled;
 @property _Bool selected; // @synthesize selected=_selected;

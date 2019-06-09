@@ -10,6 +10,7 @@
 @protocol IMKCandidateMenuDelegate;
 
 @protocol IMKCandidateMenu <NSObject>
+@property(nonatomic) unsigned long long candidateStyle;
 @property(readonly, nonatomic) IMKCandidateList *visibleCandidates;
 @property(retain, nonatomic) IMKCandidate *focusedCandidate;
 @property(readonly, nonatomic) BOOL isShown;

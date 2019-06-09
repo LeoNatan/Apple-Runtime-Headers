@@ -8,7 +8,7 @@
 
 #import <SafariShared/WBSCloudBookmarksUserIdentityFetcher-Protocol.h>
 
-@class NSString, NSTimer, WBSCloudBookmarksMigrationRampEvaluator, WBSCloudBookmarksMigrationReadinessDecider;
+@class NSString, NSTimer, WBSCloudBookmarksMigrationReadinessDecider;
 @protocol OS_dispatch_queue, WBSCloudBookmarksDeviceEligibilityFetcher, WBSCloudBookmarksMigrationCoordinatorLocalDataProvider, WBSCloudBookmarksMigrationCoordinatorStorage, WBSCloudTabDeviceProvider, WBSLogger, WBSSafariBookmarksSyncAgentProtocol;
 
 @interface WBSCloudBookmarksMigrationCoordinator : NSObject <WBSCloudBookmarksUserIdentityFetcher>
@@ -18,13 +18,11 @@
     id <WBSCloudTabDeviceProvider> _cloudTabDeviceProvider;
     id <WBSCloudBookmarksDeviceEligibilityFetcher> _windowsDeviceEligibilityFetcher;
     NSObject<OS_dispatch_queue> *_processingQueue;
-    WBSCloudBookmarksMigrationRampEvaluator *_migrationRampEvaluator;
     WBSCloudBookmarksMigrationReadinessDecider *_migrationReadinessDecider;
     _Bool _readyToMigrate;
     long long _skipReason;
     NSTimer *_migrationReadinessReevaluationTimer;
     _Bool _migrationEnabled;
-    _Bool _rampEnabled;
     id <WBSCloudBookmarksMigrationCoordinatorLocalDataProvider> _localDataProvider;
     id <WBSLogger> _keyActionsLogger;
 }
@@ -48,7 +46,6 @@
 - (void)_logErrorAsKeyAction:(id)arg1;
 - (void)_logKeyAction:(id)arg1;
 @property(nonatomic, getter=isMigrationEnabled) _Bool migrationEnabled; // @synthesize migrationEnabled=_migrationEnabled;
-@property(nonatomic, getter=isRampEnabled) _Bool rampEnabled; // @synthesize rampEnabled=_rampEnabled;
 - (void)startCoordinatingMigration;
 @property(readonly, nonatomic) id <WBSCloudBookmarksDeviceEligibilityFetcher> windowsDeviceEligibilityFetcher;
 @property(readonly, nonatomic) id <WBSCloudTabDeviceProvider> cloudTabDeviceProvider;

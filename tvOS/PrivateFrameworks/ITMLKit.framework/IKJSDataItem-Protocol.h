@@ -11,9 +11,6 @@
 @protocol IKJSDataItem <JSExport>
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) NSString *type;
-- (void)touchPropertyPath:(NSString *)arg1;
-- (JSValue *)getPropertyPath:(NSString *)arg1;
-- (void)setPropertyPath:(NSString *)arg1:(JSValue *)arg2;
-- (id)initWithType:(NSString *)arg1:(NSString *)arg2;
+- (id)initConstructor:(JSValue *)arg1:(JSValue *)arg2;
 @end
 

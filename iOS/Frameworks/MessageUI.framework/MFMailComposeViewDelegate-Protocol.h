@@ -4,16 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFMailMarkupDelegate-Protocol.h>
 #import <MessageUI/UIDocumentPickerDelegate-Protocol.h>
 #import <MessageUI/UIPickerViewDelegate-Protocol.h>
 #import <MessageUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <MessageUI/UITableViewDataSource-Protocol.h>
 #import <MessageUI/UITableViewDelegate-Protocol.h>
 
-@class MFAttachment, MFFromAddressTableView, MFMailAccountProxy, MFMailComposeView, MFMailPopoverManager, NSArray, NSString, UIPickerView, UIViewController, _MFMailCompositionContext;
+@class MFAttachment, MFFromAddressTableView, MFMailAccountProxy, MFMailComposeView, MFMailPopoverManager, NSArray, NSDictionary, NSString, UIBarButtonItem, UIPickerView, UIView, UIViewController, _MFMailCompositionContext;
+@protocol MFComposeBodyField;
 
-@protocol MFMailComposeViewDelegate <UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource, UIDocumentPickerDelegate, UIPopoverPresentationControllerDelegate, MFMailMarkupDelegate>
+@protocol MFMailComposeViewDelegate <UIPickerViewDelegate, UITableViewDelegate, UITableViewDataSource, UIDocumentPickerDelegate, UIPopoverPresentationControllerDelegate>
 - (void)markupAttachment:(MFAttachment *)arg1;
 - (UIViewController *)presentationViewController;
 - (void)changeQuoteLevel:(long long)arg1;
@@ -21,6 +21,7 @@
 - (void)didInsertAttachment:(MFAttachment *)arg1;
 - (_MFMailCompositionContext *)compositionContext;
 - (MFMailPopoverManager *)popoverManager;
+- (void)scanDocument;
 - (void)insertDrawing;
 - (void)importDocument;
 - (void)showPhotoPickerWithSourceType:(long long)arg1 fromSource:(id)arg2;
@@ -43,7 +44,13 @@
 - (void)selectCurrentEntryForFromAddressPickerView:(UIPickerView *)arg1;
 
 @optional
+- (struct UIEdgeInsets)additionalContentInsetForBodyField:(UIView<MFComposeBodyField> *)arg1;
+- (void)showContentVariationPickerFromRect:(struct CGRect)arg1 inView:(UIView *)arg2;
+- (_Bool)canShowContentVariationPicker;
+- (NSString *)contentVariationName;
+- (void)showStyleSelector:(UIBarButtonItem *)arg1;
 - (void)composeViewBodyTextChanged:(MFMailComposeView *)arg1;
+- (void)composeBodyFieldDidChangeFontAttributes:(NSDictionary *)arg1;
 - (void)composeBodyFieldDidFinishLoad;
 @end
 

@@ -10,5 +10,10 @@
 - (int)integerForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1 defaultValue:(BOOL)arg2;
 - (BOOL)boolForKey:(id)arg1;
+- (id)shortVersionFromInfoDictionary;
+- (id)bundleIdentifierFromInfoDictionary;
+- (id)stringForKey:(id)arg1;
+- (void)taoDeepMutableRelease;
+- (id)taoDeepMutableCopy;
 @end
 

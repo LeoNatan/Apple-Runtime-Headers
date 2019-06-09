@@ -8,15 +8,18 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKCDPError, NSData;
+@class CKCDPError, NSData, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface CKCDPCodeServiceResponse : PBCodable <NSCopying>
 {
+    NSMutableArray *_assetAuthorizationResponses;
     CKCDPError *_error;
     NSData *_serializedResult;
 }
 
++ (Class)assetAuthorizationResponsesType;
+@property(retain, nonatomic) NSMutableArray *assetAuthorizationResponses; // @synthesize assetAuthorizationResponses=_assetAuthorizationResponses;
 @property(retain, nonatomic) CKCDPError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSData *serializedResult; // @synthesize serializedResult=_serializedResult;
 - (void).cxx_destruct;
@@ -29,6 +32,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)assetAuthorizationResponsesAtIndex:(unsigned int)arg1;
+- (unsigned int)assetAuthorizationResponsesCount;
+- (void)addAssetAuthorizationResponses:(id)arg1;
+- (void)clearAssetAuthorizationResponses;
 @property(readonly, nonatomic) _Bool hasError;
 @property(readonly, nonatomic) _Bool hasSerializedResult;
 

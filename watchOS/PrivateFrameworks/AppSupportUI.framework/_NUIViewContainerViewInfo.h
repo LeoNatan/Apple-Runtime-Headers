@@ -12,15 +12,11 @@ __attribute__((visibility("hidden")))
     struct nui_size_cache _sizeCache;
     struct CGSize _minSize;
     struct CGSize _maxSize;
-    float _customScreenScale;
     struct UIEdgeInsets _alignmentInsets;
-    float _topBaseline;
-    float _bottomBaseline;
+    CDStruct_a06d4fdd _baselines;
     struct {
-        unsigned int neverCache:1;
         unsigned int alsoInvalidateSuperview:1;
         unsigned int alignmentInsetsAreCustom:1;
-        unsigned int baselineRelativeInsets:1;
         unsigned int topBaselineIsCustom:1;
         unsigned int bottomBaselineIsCustom:1;
     } _flags;

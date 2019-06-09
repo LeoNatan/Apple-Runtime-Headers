@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class UIBarButtonItem, UIColor, UIFontDescriptor, UIImage;
+@class UIBarButtonItem, UIColor, UIImage, _UIBarButtonItemAppearanceStorage;
 
 @protocol _UIButtonBarAppearanceDelegate <NSObject>
 @property(readonly, nonatomic) float backButtonMaximumWidth;
@@ -17,13 +17,12 @@
 @property(readonly, nonatomic) UIColor *tintColor;
 @property(readonly, nonatomic) _Bool barWantsLetterpress;
 @property(readonly, nonatomic) _Bool isRTL;
-@property(readonly, nonatomic) int barMetrics;
+@property(readonly, nonatomic) _Bool compactMetrics;
 @property(readonly, nonatomic) int barType;
-@property(readonly, nonatomic) id appearanceStorage;
+@property(readonly, nonatomic) _UIBarButtonItemAppearanceStorage *appearanceStorage;
 - (float)absorptionForItem:(UIBarButtonItem *)arg1;
 - (UIImage *)backIndicatorMaskImage;
 - (UIImage *)backIndicatorImage;
-- (UIFontDescriptor *)defaultFontDescriptor;
 - (unsigned int)edgesPaddingBarButtonItem:(UIBarButtonItem *)arg1;
 @end
 

@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTextFieldCell.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKProgressStatusTextFieldCell : NSTextFieldCell
 {
 }

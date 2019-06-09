@@ -10,13 +10,14 @@
 #import <BulletinDistributorGizmo/BLTBulletinDistributorSubscriberDeviceDelegate-Protocol.h>
 #import <BulletinDistributorGizmo/BLTLightsAndSirensSystemStateProvider-Protocol.h>
 #import <BulletinDistributorGizmo/BLTRemoteCompanionServerClient-Protocol.h>
+#import <BulletinDistributorGizmo/BLTSectionIdentifierMapperDelegate-Protocol.h>
 #import <BulletinDistributorGizmo/BLTSettingSyncDelegate-Protocol.h>
 #import <BulletinDistributorGizmo/CSLSUIProvider-Protocol.h>
 
-@class BLTBulletinStore, BLTClientReplyTimeoutManager, BLTDataProviderConnection, BLTDataProviderManager, BLTLightsAndSirensCache, BLTLightsAndSirensServiceServer, BLTPingSubscriberManager, BLTRemoteCompanionServer, BLTSectionConfiguration, BLTSectionIdentifierMapper, BLTSectionInfoStore, BLTSettingSync, BLTSettingsServiceServer, BLTUserNotificationList, BLTWatchKitAppList, NSMutableArray, NSMutableDictionary, NSString;
+@class BLTBulletinStore, BLTClientReplyTimeoutManager, BLTDataProviderConnection, BLTDataProviderManager, BLTLightsAndSirensCache, BLTPingSubscriberManager, BLTRemoteCompanionServer, BLTSectionConfiguration, BLTSectionIdentifierMapper, BLTSectionInfoStore, BLTSettingSync, BLTSettingsServiceServer, BLTWatchKitAppList, NSMutableArray, NSMutableDictionary, NSString;
 @protocol BLTBulletinDistributorSystemStateProvider, OS_dispatch_queue;
 
-@interface BLTBulletinDistributorClient : NSObject <BLTBulletinActionResponder, CSLSUIProvider, BLTLightsAndSirensSystemStateProvider, BLTSettingSyncDelegate, BLTBulletinDistributorSubscriberDeviceDelegate, BLTRemoteCompanionServerClient>
+@interface BLTBulletinDistributorClient : NSObject <BLTBulletinActionResponder, CSLSUIProvider, BLTLightsAndSirensSystemStateProvider, BLTSettingSyncDelegate, BLTBulletinDistributorSubscriberDeviceDelegate, BLTSectionIdentifierMapperDelegate, BLTRemoteCompanionServerClient>
 {
     NSObject<OS_dispatch_queue> *_bulletinWorkQueue;
     NSMutableArray *_lightsAndSirensCompletionHandlers;
@@ -33,20 +34,16 @@
     BLTDataProviderConnection *_dataProviderConnection;
     BLTBulletinStore *_bulletinStore;
     BLTLightsAndSirensCache *_lightsAndSirensCache;
-    BLTLightsAndSirensServiceServer *_lightsAndSirensServiceServer;
     BLTClientReplyTimeoutManager *_clientReplyTimeoutManager;
     BLTSectionConfiguration *_sectionConfiguration;
-    BLTUserNotificationList *_userNotificationList;
     BLTPingSubscriberManager *_pingSubscriberManager;
     BLTSettingsServiceServer *_settingsServiceServer;
 }
 
 @property(retain, nonatomic) BLTSettingsServiceServer *settingsServiceServer; // @synthesize settingsServiceServer=_settingsServiceServer;
 @property(retain, nonatomic) BLTPingSubscriberManager *pingSubscriberManager; // @synthesize pingSubscriberManager=_pingSubscriberManager;
-@property(retain, nonatomic) BLTUserNotificationList *userNotificationList; // @synthesize userNotificationList=_userNotificationList;
 @property(retain, nonatomic) BLTSectionConfiguration *sectionConfiguration; // @synthesize sectionConfiguration=_sectionConfiguration;
 @property(retain, nonatomic) BLTClientReplyTimeoutManager *clientReplyTimeoutManager; // @synthesize clientReplyTimeoutManager=_clientReplyTimeoutManager;
-@property(retain, nonatomic) BLTLightsAndSirensServiceServer *lightsAndSirensServiceServer; // @synthesize lightsAndSirensServiceServer=_lightsAndSirensServiceServer;
 @property(retain, nonatomic) BLTLightsAndSirensCache *lightsAndSirensCache; // @synthesize lightsAndSirensCache=_lightsAndSirensCache;
 @property(retain, nonatomic) BLTBulletinStore *bulletinStore; // @synthesize bulletinStore=_bulletinStore;
 @property(retain, nonatomic) BLTDataProviderConnection *dataProviderConnection; // @synthesize dataProviderConnection=_dataProviderConnection;
@@ -60,6 +57,7 @@
 @property(retain, nonatomic) BLTSectionIdentifierMapper *sectionIdentifierMapper; // @synthesize sectionIdentifierMapper=_sectionIdentifierMapper;
 @property(nonatomic, getter=isCoordinationDisabled) _Bool coordinationDisabled; // @synthesize coordinationDisabled=_coordinationDisabled;
 - (void).cxx_destruct;
+- (_Bool)isLocallyConnectedToRemote;
 - (void)sendBulletinSummary:(id)arg1;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -68,27 +66,25 @@
 - (_Bool)isWristDetectDisabled;
 - (_Bool)isDeviceConnected;
 - (void)handleBulletinActionResponse:(id)arg1 sectionID:(id)arg2;
-- (id)_bulletinRequestFromBulletin:(id)arg1 localSectionID:(id)arg2;
+- (id)_bulletinRequestFromBulletin:(id)arg1 localSectionIDs:(id)arg2;
 - (id)_getAppNameFromBundleID:(id)arg1;
 - (id)_actionFromBLTPBAction:(id)arg1;
 - (void)handleClearBulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (id)_remoteForMirroredSectionID:(id)arg1;
-- (void)_queue_replyPlayLightsAndSirens:(id)arg1 bulletin:(id)arg2 batchAssertion:(id)arg3 replyToken:(id)arg4;
-- (void)shouldPlayLightsAndSirensForBulletin:(id)arg1 forFeed:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)_isCriticalBulletinsSection:(id)arg1;
+- (void)_queue_replyPlayLightsAndSirens:(id)arg1 bulletin:(id)arg2 batchAssertion:(id)arg3 replyToken:(id)arg4 companionPublicationDate:(id)arg5 receptionDate:(id)arg6;
+- (void)shouldPlayLightsAndSirensForBulletin:(id)arg1 forFeed:(unsigned int)arg2 universalComplete:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)_sectionHasFactorySectionIDWithSectionID:(id)arg1;
 - (_Bool)sectionShouldAlwaysAlert:(id)arg1;
 - (_Bool)sectionOptsOutOfNotificationTuning:(id)arg1;
 - (_Bool)sectionOverridesWaitForUserIdle:(id)arg1;
-- (_Bool)isLocalOnlyBulletin:(id)arg1;
-- (_Bool)isLocalOnlySection:(id)arg1;
-- (_Bool)isForwardedBulletin:(id)arg1;
-- (_Bool)_isForwardedSection:(id)arg1;
-- (id)_queue_cacheLightsAndSirens:(unsigned int)arg1 bulletin:(id)arg2 publisherMatchID:(id)arg3 knownSection:(id)arg4 andPublicationDate:(id)arg5 additionalLocalSection:(id)arg6 transmissionDate:(id)arg7 receptionDate:(id)arg8 localBulletin:(_Bool)arg9 isTrafficRestricted:(_Bool)arg10;
-- (id)_queue_cacheLightsAndSirens:(unsigned int)arg1 forLocalBulletin:(id)arg2 transmissionDate:(id)arg3 receptionDate:(id)arg4;
-- (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemoteBulletin:(id)arg2 publisherMatchID:(id)arg3 knownSection:(id)arg4 publicationDate:(id)arg5 additionalLocalSection:(id)arg6 feed:(unsigned int)arg7 transmissionDate:(id)arg8 receptionDate:(id)arg9 isTrafficRestricted:(_Bool)arg10;
-- (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemotePublisherMatchID:(id)arg2 knownSection:(id)arg3 feed:(unsigned int)arg4 transmissionDate:(id)arg5 receptionDate:(id)arg6;
-- (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemoteBulletin:(id)arg2 publicationDate:(id)arg3 additionalLocalSection:(id)arg4 feed:(unsigned int)arg5 transmissionDate:(id)arg6 receptionDate:(id)arg7 isTrafficRestricted:(_Bool)arg8;
+- (id)companionBundleIDForWatchKitBundleIDIfCompanionNotifies:(id)arg1;
+- (unsigned int)notificationDestinationForSection:(id)arg1;
+- (_Bool)_sectionAllowsNotifications:(id)arg1;
+- (id)_queue_cacheLightsAndSirens:(unsigned int)arg1 bulletin:(id)arg2 knownSectionID:(id)arg3 publisherMatchID:(id)arg4 universalSectionID:(id)arg5 transmissionDate:(id)arg6 isTrafficRestricted:(_Bool)arg7 singleNotificationExpected:(_Bool)arg8;
+- (id)_queue_cacheLightsAndSirens:(unsigned int)arg1 forLocalBulletin:(id)arg2;
+- (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemoteBulletin:(id)arg2 publisherMatchID:(id)arg3 universalSectionID:(id)arg4 knownSectionID:(id)arg5 feed:(unsigned int)arg6 transmissionDate:(id)arg7 isTrafficRestricted:(_Bool)arg8;
+- (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemotePublisherMatchID:(id)arg2 universalSectionID:(id)arg3 knownSectionID:(id)arg4 feed:(unsigned int)arg5 transmissionDate:(id)arg6;
+- (id)_queue_playLightsAndSirens:(unsigned int)arg1 forRemoteBulletin:(id)arg2 universalSectionID:(id)arg3 feed:(unsigned int)arg4 transmissionDate:(id)arg5 isTrafficRestricted:(_Bool)arg6;
 - (unsigned int)shouldCoordinateInSection:(id)arg1 forFeed:(unsigned int)arg2 subtype:(int)arg3;
 - (unsigned int)shouldCoordinateInSection:(id)arg1 subtype:(int)arg2;
 - (void)removeBulletins:(id)arg1;
@@ -98,7 +94,7 @@
 - (void)batchAssertionStateEntered:(int)arg1;
 - (void)updateBulletinList:(id)arg1;
 - (void)addBulletinSummary:(id)arg1;
-- (void)_queue_addBulletin:(id)arg1 playLightsAndSirens:(_Bool)arg2 updateType:(unsigned int)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 isTrafficRestricted:(_Bool)arg6 mapping:(id)arg7 forwardedOnly:(_Bool)arg8 batchAssertion:(id)arg9;
+- (void)_queue_addBulletin:(id)arg1 playLightsAndSirens:(_Bool)arg2 updateType:(unsigned int)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 isTrafficRestricted:(_Bool)arg6 mapping:(id)arg7 batchAssertion:(id)arg8;
 - (void)removeSectionWithSectionID:(id)arg1;
 - (void)addBulletin:(id)arg1 playLightsAndSirens:(_Bool)arg2 updateType:(unsigned int)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 isTrafficRestricted:(_Bool)arg6 batchAssertion:(id)arg7;
 - (void)addBulletin:(id)arg1 playLightsAndSirens:(_Bool)arg2 updateType:(unsigned int)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 isTrafficRestricted:(_Bool)arg6;

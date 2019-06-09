@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (_Bool)_inheritsPresentingViewControllerThemeLevel;
 - (void)_setPresentedViewController:(id)arg1;
 - (void)dismissalTransitionDidEnd:(_Bool)arg1;
 - (void)presentationTransitionDidEnd:(_Bool)arg1;
@@ -30,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)frameOfPresentedViewInContainerView;
 - (_Bool)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (_Bool)_shouldRespectDefinesPresentationContext;
-- (_Bool)shouldRemovePresentersView;
 - (_Bool)shouldPresentInFullscreen;
 - (void)dealloc;
 - (long long)presentationStyle;

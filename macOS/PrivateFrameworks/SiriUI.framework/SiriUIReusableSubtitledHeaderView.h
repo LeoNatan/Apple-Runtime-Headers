@@ -8,7 +8,6 @@
 
 @class NSAttributedString, NSString, NSTextField;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIReusableSubtitledHeaderView : SiriUIReusableHeaderView
 {
     NSAttributedString *_attributedSubtitleText;

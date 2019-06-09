@@ -13,6 +13,8 @@
     _Bool _crossfading;
     _Bool _marqueeNeeded;
     _Bool _marqueeing;
+    _Bool _starting;
+    _Bool _stopping;
     CALayer *_maskLayer;
     _Bool _animating;
     _Bool _paused;
@@ -47,11 +49,10 @@
 - (void)setMarqueeEnabled:(_Bool)arg1;
 - (void)_startMarqueeIfNeeded;
 - (_Bool)_shouldCycle;
-- (void)_clearLabelTextContents;
-- (void)_prepareNextMarquee;
-- (void)_nextAttributedString;
-- (id)_imageForText:(_Bool)arg1;
+- (void)_prepareNextMarqueeWithDelay:(double)arg1;
+- (id)_rasterizedTextWithMarquee:(_Bool)arg1;
 - (void)drawTextInRect:(struct CGRect)arg1;
+- (_Bool)_isRTL;
 - (void)stopAndResetScrollWithDuration:(double)arg1;
 - (void)stopAnimatingWithoutResetWithDuration:(double)arg1;
 - (void)stopAnimating;

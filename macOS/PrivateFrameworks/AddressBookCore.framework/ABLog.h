@@ -14,7 +14,6 @@
 }
 
 + (id)builtInProperties;
-- (void)finalize;
 - (void)dealloc;
 - (id)nts_DeletedUID;
 - (id)_deletedUID;

@@ -12,7 +12,6 @@
 
 @interface PKPaymentSetupMoreInfoViewController : UIViewController <UIScrollViewDelegate>
 {
-    _Bool _navigationBarOpaque;
     _Bool _isFinalViewController;
     PKPaymentPass *_pass;
     NSArray *_moreInfoItems;
@@ -28,9 +27,7 @@
 @property(readonly, retain, nonatomic) NSArray *moreInfoItems; // @synthesize moreInfoItems=_moreInfoItems;
 @property(readonly, retain, nonatomic) PKPaymentPass *pass; // @synthesize pass=_pass;
 - (void).cxx_destruct;
-- (void)_updateNavBarContent;
-- (float)pkui_preferredNavigationBarBackgroundOpacity;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
+- (int)preferredStatusBarStyle;
 - (void)_handleDismissal;
 - (void)_handlePush;
 - (void)_nextTapped:(id)arg1;

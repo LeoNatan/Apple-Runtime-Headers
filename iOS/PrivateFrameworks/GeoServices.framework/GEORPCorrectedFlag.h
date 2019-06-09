@@ -14,14 +14,13 @@
     _Bool _correctedValue;
     _Bool _originalValue;
     struct {
-        unsigned int flag:1;
-        unsigned int correctedValue:1;
-        unsigned int originalValue:1;
-    } _has;
+        unsigned int has_flag:1;
+        unsigned int has_correctedValue:1;
+        unsigned int has_originalValue:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool correctedValue; // @synthesize correctedValue=_correctedValue;
-@property(nonatomic) _Bool originalValue; // @synthesize originalValue=_originalValue;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -29,14 +28,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasCorrectedValue;
+@property(nonatomic) _Bool correctedValue;
 @property(nonatomic) _Bool hasOriginalValue;
+@property(nonatomic) _Bool originalValue;
 - (int)StringAsFlag:(id)arg1;
 - (id)flagAsString:(int)arg1;
 @property(nonatomic) _Bool hasFlag;
-@property(nonatomic) int flag; // @synthesize flag=_flag;
+@property(nonatomic) int flag;
 
 @end
 

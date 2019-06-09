@@ -11,6 +11,7 @@
 @interface ICRadioStationTrack : NSObject
 {
     NSDictionary *_responseDictionary;
+    long long _responseVersion;
     NSDate *_expirationDate;
     ICRadioStationTrack *_parentTrack;
 }
@@ -19,6 +20,7 @@
 @property(readonly, nonatomic) ICRadioStationTrack *parentTrack; // @synthesize parentTrack=_parentTrack;
 @property(readonly, copy, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 - (void).cxx_destruct;
+- (id)_hlsAssetFromAssetDictionary:(id)arg1;
 @property(readonly, nonatomic) long long trackType;
 @property(readonly, copy, nonatomic) ICStorePlatformMetadata *storePlatformMetadata;
 @property(readonly, copy, nonatomic) NSDictionary *serverTrackInfo;
@@ -31,7 +33,7 @@
 @property(readonly, copy, nonatomic) NSArray *fileAssets;
 @property(readonly, nonatomic) ICRadioStationTrack *beforePromoContentTrack;
 @property(readonly, nonatomic) ICRadioStationTrack *afterPromoContentTrack;
-- (id)initWithResponseDictionary:(id)arg1 expirationDate:(id)arg2;
+- (id)initWithResponseDictionary:(id)arg1 responseVersion:(long long)arg2 expirationDate:(id)arg3;
 
 @end
 

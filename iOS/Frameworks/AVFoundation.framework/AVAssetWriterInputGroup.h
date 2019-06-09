@@ -25,7 +25,6 @@
 @property(readonly, nonatomic) AVAssetWriterInput *defaultInput;
 @property(readonly, nonatomic) NSArray *inputs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithInputs:(id)arg1 defaultInput:(id)arg2;
 - (id)init;

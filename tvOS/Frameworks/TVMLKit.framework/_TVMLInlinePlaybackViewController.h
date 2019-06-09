@@ -6,19 +6,35 @@
 
 #import <AVKit/AVPlayerViewController.h>
 
-@class _TVMLPlayer;
+#import <TVMLKit/TVPlayingUI-Protocol.h>
 
-@interface _TVMLInlinePlaybackViewController : AVPlayerViewController
+@class NSString, UIViewController, _TVMLPlayer;
+
+@interface _TVMLInlinePlaybackViewController : AVPlayerViewController <TVPlayingUI>
 {
+    UIViewController *overlayViewController;
+    long long resumeMenuBehavior;
     _TVMLPlayer *_tvmlPlayer;
 }
 
 @property(readonly, nonatomic) _TVMLPlayer *tvmlPlayer; // @synthesize tvmlPlayer=_tvmlPlayer;
+- (void)setResumeMenuBehavior:(long long)arg1;
+- (long long)resumeMenuBehavior;
+- (void)setOverlayViewController:(id)arg1;
+- (id)overlayViewController;
 - (void).cxx_destruct;
+- (void)setShowsVideoControls:(_Bool)arg1;
+- (_Bool)showsVideoControls;
 - (void)_updateAVPlayer;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

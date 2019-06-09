@@ -6,6 +6,7 @@
 
 #import <MediaToolbox/FigBaseCALayer.h>
 
+__attribute__((visibility("hidden")))
 @interface FigSubtitleWebVTTRegionCALayer : FigBaseCALayer
 {
     struct OpaqueFigSubtitleWebVTTRegionCALayerInternal *layerInternal;
@@ -20,7 +21,6 @@
 - (void)setContent:(struct __CFDictionary *)arg1;
 - (struct __CFString *)getContentID;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 @end

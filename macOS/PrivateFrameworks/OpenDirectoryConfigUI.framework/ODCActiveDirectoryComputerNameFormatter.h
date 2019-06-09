@@ -6,6 +6,7 @@
 
 #import <OpenDirectoryConfigUI/XSDomainNameFormatter.h>
 
+__attribute__((visibility("hidden")))
 @interface ODCActiveDirectoryComputerNameFormatter : XSDomainNameFormatter
 {
 }

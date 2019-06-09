@@ -10,7 +10,7 @@ __attribute__((visibility("hidden")))
 @interface OITSUChunkedString : NSMutableString
 {
     unsigned long long _length;
-    struct vector<boost::shared_ptr<TSUStringChunk>, std::__1::allocator<boost::shared_ptr<TSUStringChunk>>> _chunks;
+    struct vector<std::__1::shared_ptr<TSUStringChunk>, std::__1::allocator<std::__1::shared_ptr<TSUStringChunk>>> _chunks;
     unsigned long long _chunkLength;
 }
 

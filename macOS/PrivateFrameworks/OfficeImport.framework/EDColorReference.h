@@ -10,6 +10,7 @@
 
 @class EDResources;
 
+__attribute__((visibility("hidden")))
 @interface EDColorReference : NSObject <NSCopying>
 {
     EDResources *mResources;

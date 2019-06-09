@@ -32,7 +32,7 @@
 - (void)_updateWindows;
 - (void)_stopListeningForNotifications;
 - (void)_startListeningForNotifications;
-- (void)_updateDisplayChange;
+- (void)_updateDisplayChange:(BOOL)arg1;
 - (void)_startOrUpdateDisplayReconfigurationTimer:(double)arg1;
 - (void)_endDisplayChange:(id)arg1;
 - (void)_displaysDidChange:(id)arg1;

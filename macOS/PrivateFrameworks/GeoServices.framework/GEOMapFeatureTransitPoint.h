@@ -31,7 +31,7 @@
 @property(readonly, nonatomic) GEOMapFeatureTransitHall *hall;
 @property(readonly, nonatomic) GEOMapFeatureTransitStop *stop;
 - (void)dealloc;
-- (void)updateWithGeometryFeature:(CDStruct_227fa288 *)arg1;
+- (void)updateWithGeometryFeature:(CDStruct_21580383 *)arg1;
 - (id)initWithFeature:(struct GEOTransitNodeFeature *)arg1;
 @property(readonly, nonatomic) struct GEOTransitNodeFeature *feature;
 @property(readonly, nonatomic) struct _GEOTileKey tileKey;

@@ -15,7 +15,6 @@
     unsigned int characterLimit;
     _NSServiceEntry *entry;
     id bundleIdentifier;
-    id fileType;
     id textScript;
     id textLanguage;
     NSArray *linkSchemes;
@@ -29,6 +28,8 @@
         unsigned int contentTypeFilePath:1;
         unsigned int contentTypeRadar:1;
         unsigned int contentTypeEmail:1;
+        unsigned int contentTypePhoneNumber:1;
+        unsigned int contentTypeTransitInformation:1;
         unsigned int requiresCJKInputSource:1;
         unsigned int requiresAnyCharacterBeHalfWidth:1;
         unsigned int requiresAnyCharacterBeFullWidth:1;
@@ -36,7 +37,7 @@
         unsigned int requiresNonIdentitySimpleToTraditionalConversion:1;
         unsigned int disqualified:1;
         unsigned int sense:1;
-        unsigned int reserved:18;
+        unsigned int reserved:16;
     } flags;
 }
 

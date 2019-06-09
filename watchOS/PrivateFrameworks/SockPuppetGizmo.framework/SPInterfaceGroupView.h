@@ -99,7 +99,6 @@
 - (void)setStaticNotificationAlertLabelText:(id)arg1;
 - (void)applyTableCellDefaultAppearance;
 - (void)applyNotificationDefaultAppearance;
-- (void)setProperties:(id)arg1 forInterfaceObjectNamed:(id)arg2;
 - (void)action:(id)arg1 value:(id)arg2;
 - (void)setHidden:(_Bool)arg1;
 - (void)layoutSubviews;

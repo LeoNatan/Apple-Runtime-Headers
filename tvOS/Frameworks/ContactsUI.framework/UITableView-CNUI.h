@@ -8,5 +8,7 @@
 
 @interface UITableView (CNUI)
 - (void)_cnui_adjustContentInset:(struct UIEdgeInsets)arg1;
+- (void)_cnui_applyContactStyleStark;
+- (void)_cnui_applyContactStyle;
 @end
 

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     float mAngle;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (float)blurRadius;
 - (void)setColor:(id)arg1;
 - (id)color;
-- (void)dealloc;
 - (id)initWithShadowEffect:(id)arg1 type:(int)arg2;
 - (id)initWithType:(int)arg1;
 

@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) id <IDSGroupContextCacheMiddlewareDaemonProtocol> groupContextCacheMiddleware;
 @property(readonly, nonatomic) id <IDSGroupContextDataSourceDaemonProtocol> groupContextDataSource;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
+- (id)init;
 
 @end
 

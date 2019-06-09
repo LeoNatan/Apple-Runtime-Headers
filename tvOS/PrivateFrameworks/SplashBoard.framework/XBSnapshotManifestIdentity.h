@@ -25,6 +25,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;
+@property(readonly, copy, nonatomic) NSString *defaultGroupIdentifier;
 - (id)initWithBundleIdentifier:(id)arg1 store:(id)arg2;
 - (id)init;
 

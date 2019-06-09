@@ -4,26 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewCell.h>
+#import <PepperUICore/PUICPlatterCell.h>
 
-@class NLActivityPickerCellLayoutCache, NSArray, UIButton, UIImageView, UILabel, UIView;
+@class NLActivityPickerCellLayoutCache, UIButton, UIImageView, UILabel;
 
-@interface FIUIActivityPickerCollectionViewCell : UICollectionViewCell
+@interface FIUIActivityPickerCollectionViewCell : PUICPlatterCell
 {
-    _Bool _useRoundedCornerMask;
     UIImageView *_iconImageView;
     UILabel *_activityTypeLabel;
     UILabel *_paceLabel;
     UILabel *_lastGoalLabel;
     UIButton *_configButton;
     CDUnknownBlockType _configurationButtonTappedHandler;
-    UIImageView *_backgroundImageView;
-    UIImageView *_topLeftCornerView;
-    UIImageView *_topRightCornerView;
-    UIImageView *_bottomRightCornerView;
-    UIImageView *_bottomLeftCornerView;
-    NSArray *_cornerViews;
-    UIView *_darkeningView;
     NLActivityPickerCellLayoutCache *_layoutCache;
     float _screenScale;
 }
@@ -32,14 +24,6 @@
 + (id)_workoutTypeLabelAttributes:(id)arg1;
 @property(nonatomic) float screenScale; // @synthesize screenScale=_screenScale;
 @property(retain, nonatomic) NLActivityPickerCellLayoutCache *layoutCache; // @synthesize layoutCache=_layoutCache;
-@property(retain, nonatomic) UIView *darkeningView; // @synthesize darkeningView=_darkeningView;
-@property(nonatomic) _Bool useRoundedCornerMask; // @synthesize useRoundedCornerMask=_useRoundedCornerMask;
-@property(retain, nonatomic) NSArray *cornerViews; // @synthesize cornerViews=_cornerViews;
-@property(retain, nonatomic) UIImageView *bottomLeftCornerView; // @synthesize bottomLeftCornerView=_bottomLeftCornerView;
-@property(retain, nonatomic) UIImageView *bottomRightCornerView; // @synthesize bottomRightCornerView=_bottomRightCornerView;
-@property(retain, nonatomic) UIImageView *topRightCornerView; // @synthesize topRightCornerView=_topRightCornerView;
-@property(retain, nonatomic) UIImageView *topLeftCornerView; // @synthesize topLeftCornerView=_topLeftCornerView;
-@property(retain, nonatomic) UIImageView *backgroundImageView; // @synthesize backgroundImageView=_backgroundImageView;
 @property(copy, nonatomic) CDUnknownBlockType configurationButtonTappedHandler; // @synthesize configurationButtonTappedHandler=_configurationButtonTappedHandler;
 @property(retain, nonatomic) UIButton *configButton; // @synthesize configButton=_configButton;
 @property(retain, nonatomic) UILabel *lastGoalLabel; // @synthesize lastGoalLabel=_lastGoalLabel;
@@ -51,17 +35,11 @@
 - (void)layoutSubviews;
 - (id)iconImageViewCopy;
 - (void)configButtonTapped:(id)arg1;
-- (void)applyLayoutAttributes:(id)arg1;
-- (_Bool)_allowResizeDuringScrolling;
 - (void)prepareForReuse;
 - (id)deepCopy;
-- (void)_updateAlphaForState;
-- (void)setSelected:(_Bool)arg1;
-- (void)setHighlighted:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (_Bool)_hasConfigurationButton;
 - (id)_cellBackgroundColor;
-- (_Bool)_useOpaqueCornerImages;
+- (_Bool)_hasConfigurationButton;
 
 @end
 

@@ -15,12 +15,12 @@
 + (id)nameOfType:(long long)arg1;
 + (id)invalidPosition;
 + (id)positionWithMarker:(const struct __AXTextMarker *)arg1 uiElement:(id)arg2;
-+ (id)positionWithIndex:(unsigned long long)arg1;
++ (id)positionWithIndex:(long long)arg1;
 + (id)NotFound;
 - (long long)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (const struct __AXTextMarker *)axTextMarkerValue;
-- (unsigned long long)indexValue;
+- (long long)indexValue;
 - (id)positionOffsetBy:(long long)arg1 withinLimit:(id)arg2;
 - (long long)offsetFromPosition:(id)arg1;
 - (BOOL)isCompatibleWithPosition:(id)arg1;

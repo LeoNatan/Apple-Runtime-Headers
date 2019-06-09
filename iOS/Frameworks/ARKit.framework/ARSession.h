@@ -6,17 +6,24 @@
 
 #import <objc/NSObject.h>
 
+#import <ARKit/ARDevicePerformanceMonitorDelegate-Protocol.h>
 #import <ARKit/ARSensorDelegate-Protocol.h>
 #import <ARKit/ARTechniqueDelegate-Protocol.h>
+#import <ARKit/ARWorldTrackingTechniqueObserver-Protocol.h>
 
-@class ARConfiguration, ARFrame, ARFrameContext, ARImageSensor, ARParentTechnique, ARQATracer, ARRenderSyncScheduler, ARSessionMetrics, ARTechnique, ARWorldTrackingTechnique, CMMotionManager, NSArray, NSDate, NSHashTable, NSString;
+@class ARBKSAccelerometer, ARConfiguration, ARDeviceOrientationData, ARDevicePerformanceLevel, ARDevicePerformanceMonitor, AREnvironmentTexturingTechnique, ARFrame, ARFrameContext, ARImageSensor, ARLocationData, ARLocationSensor, ARParentTechnique, ARQATracer, ARRecordingTechniquePublic, ARRenderSyncScheduler, ARSessionMetrics, ARTechnique, ARTrackedRaycastPostProcessor, ARVideoFormat, ARWorldTrackingTechnique, CMMotionManager, NSArray, NSDate, NSHashTable, NSString, NSUUID;
 @protocol ARSessionDelegate, OS_dispatch_queue, OS_dispatch_semaphore;
 
-@interface ARSession : NSObject <ARSensorDelegate, ARTechniqueDelegate>
+@interface ARSession : NSObject <ARSensorDelegate, ARTechniqueDelegate, ARWorldTrackingTechniqueObserver, ARDevicePerformanceMonitorDelegate>
 {
     ARTechnique *_renderingTechnique;
     ARWorldTrackingTechnique *_worldTrackingTechnique;
+    AREnvironmentTexturingTechnique *_environmentTexturingTechnique;
+    ARRecordingTechniquePublic *_recordingTechnique;
     _Bool _configuredForWorldTracking;
+    _Bool _vioFusionEnabled;
+    NSObject<OS_dispatch_semaphore> *_lastPredictedFrameSemaphore;
+    // Error parsing type: {?="columns"[4]}, name: _lastPredictedFrameTransform
     ARFrame *_lastProcessedFrame;
     NSObject<OS_dispatch_semaphore> *_lastProcessedFrameSemaphore;
     ARFrameContext *_nextFrameContext;
@@ -34,10 +41,25 @@
     double _currentTrackingStartingTimestamp;
     long long _featurePointAccumulationCount;
     ARRenderSyncScheduler *_resultRequestScheduler;
+    ARRenderSyncScheduler *_secondaryResultRequestScheduler;
     NSObject<OS_dispatch_queue> *_prepareTechniquesQueue;
     ARImageSensor *_imageSensor;
+    ARLocationSensor *_locationSensor;
+    // Error parsing type: {?="columns"[4]}, name: _cyclopToCameraTransform
+    _Bool _hasCyclopToCameraTransform;
+    NSObject<OS_dispatch_semaphore> *_cyclopToCameraSemaphore;
+    NSArray *resultDatasOfSecondaryFrameContexts;
+    NSObject<OS_dispatch_semaphore> *_resultDataOfSecondaryFrameContextsSemaphore;
+    ARDevicePerformanceMonitor *_deviceConditionMonitor;
+    ARDevicePerformanceLevel *_lastKnownDeviceCondition;
+    ARTrackedRaycastPostProcessor *_trackedRaycastPostProcessor;
+    ARBKSAccelerometer *_bksAccelerometer;
+    ARVideoFormat *_primaryVideoFormat;
+    _Bool _wantsPredictedAnchorTracking;
     _Bool _relocalizing;
     ARParentTechnique *_dontUseDirectlyTechnique;
+    ARParentTechnique *_dontUseDirectlySecondaryTechnique;
+    NSUUID *_identifier;
     id <ARSessionDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     unsigned long long _state;
@@ -47,12 +69,19 @@
     unsigned long long _pausedSensors;
     unsigned long long _powerUsage;
     ARQATracer *_tracer;
+    ARDeviceOrientationData *_latestDeviceOrientationData;
+    ARLocationData *_latestLocationData;
 }
 
-+ (void)_applySessionOverrides:(id)arg1;
++ (id)_applySessionOverrides:(id)arg1 outError:(id *)arg2;
++ (_Bool)presentationForceEnabled;
++ (void)setPresentationForceEnabled:(_Bool)arg1;
 + (void)initialize;
-@property(retain, nonatomic) ARQATracer *tracer; // @synthesize tracer=_tracer;
 @property _Bool relocalizing; // @synthesize relocalizing=_relocalizing;
+@property _Bool wantsPredictedAnchorTracking; // @synthesize wantsPredictedAnchorTracking=_wantsPredictedAnchorTracking;
+@property(retain) ARLocationData *latestLocationData; // @synthesize latestLocationData=_latestLocationData;
+@property(retain) ARDeviceOrientationData *latestDeviceOrientationData; // @synthesize latestDeviceOrientationData=_latestDeviceOrientationData;
+@property(retain, nonatomic) ARQATracer *tracer; // @synthesize tracer=_tracer;
 @property unsigned long long powerUsage; // @synthesize powerUsage=_powerUsage;
 @property(nonatomic) unsigned long long pausedSensors; // @synthesize pausedSensors=_pausedSensors;
 @property(nonatomic) unsigned long long runningSensors; // @synthesize runningSensors=_runningSensors;
@@ -61,8 +90,19 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *delegateQueue; // @synthesize delegateQueue=_delegateQueue;
 @property(nonatomic) __weak id <ARSessionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(retain) ARParentTechnique *secondaryTechnique; // @synthesize secondaryTechnique=_dontUseDirectlySecondaryTechnique;
 @property(retain) ARParentTechnique *technique; // @synthesize technique=_dontUseDirectlyTechnique;
 - (void).cxx_destruct;
+- (_Bool)isUserFaceTracking;
+- (_Bool)is6DofFaceTracking;
+- (double)minimumNotificationTimeWindow;
+- (void)deviceConditionMonitor:(id)arg1 deviceConditionChanged:(id)arg2;
+- (void)_enforceThermalMitigationPolicyForDeviceCondition:(id)arg1;
+- (void)_updateTechniquesWithPerformanceLevel:(id)arg1;
+- (void)technique:(id)arg1 didOutputCollaborationData:(id)arg2;
+- (void)technique:(id)arg1 didChangeState:(long long)arg2;
+- (void)_sessionDidOutputCollaborationData:(id)arg1;
 - (void)_sessionDidOutputAudioData:(id)arg1;
 - (void)_sessionShouldAttemptRelocalization;
 - (void)_sessionDidRemoveAnchors:(id)arg1;
@@ -76,12 +116,15 @@
 - (void)sensorDidPause:(id)arg1;
 - (void)sensor:(id)arg1 didFailWithError:(id)arg2;
 - (void)sensor:(id)arg1 didOutputSensorData:(id)arg2;
+- (_Bool)isPrimaryImageData:(id)arg1;
 - (void)_stopAllSensors;
 - (void)_stopSensorsWithDataTypes:(unsigned long long)arg1 keepingDataTypes:(unsigned long long)arg2;
+- (void)_configureSensorsForRecording;
 - (void)_startSensorsWithDataTypes:(unsigned long long)arg1;
 - (id)_imageSensorForConfiguration:(id)arg1 existingSensor:(id)arg2;
 - (void)_updateSensorsWithConfiguration:(id)arg1;
 - (void)_replaceOrAddSensor:(id)arg1;
+- (id)replaySensor;
 - (void)_updateAnchorsForFrame:(id)arg1 resultDatas:(id)arg2 context:(id)arg3 addedAnchors:(id)arg4 updatedAnchors:(id)arg5 removedAnchors:(id)arg6;
 - (void)_updateFeaturePointsForFrame:(id)arg1 previousFrame:(id)arg2 trackingStateChanged:(_Bool)arg3 context:(id)arg4;
 - (void)_updateOriginTransformForFrame:(id)arg1 previousFrame:(id)arg2 modifiers:(unsigned long long)arg3 context:(id)arg4;
@@ -90,11 +133,21 @@
 - (void)technique:(id)arg1 didOutputResultData:(id)arg2 timestamp:(double)arg3 context:(id)arg4;
 - (void)_updateSessionStateWithConfiguration:(id)arg1 options:(unsigned long long)arg2;
 - (void)_updateSessionWithConfiguration:(id)arg1 options:(unsigned long long)arg2;
-- (void)_setTechnique:(id)arg1;
+- (void)setupResultRequestSyncScheduler:(id)arg1 forTechnique:(id)arg2;
+- (void)setupSessionForTechniques:(id)arg1;
+- (void)_setPrimaryTechnique:(id)arg1 secondaryTechnique:(id)arg2;
+- (void)_setPrimaryTechnique:(id)arg1;
 - (id)_getObservers;
 - (void)_removeObserver:(id)arg1;
 - (void)_addObserver:(id)arg1;
+- (void)updateWithCollaborationData:(id)arg1;
+- (id)annotateAnchorToRaycastResults:(id)arg1;
+- (id)trackedRaycast:(id)arg1 updateHandler:(CDUnknownBlockType)arg2;
+- (id)raycast:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (id)frameWithCameraImage;
+- (id)predictedAppPointFrameAtTimestamp:(double)arg1 frame:(id)arg2;
+-     // Error parsing type: {?=[4]}24@0:8d16, name: predictedAppPointTransformAtTimestamp:
 - (id)_currentFrameContext;
 - (id)_stateQueue;
 - (void)_changePowerUsage:(unsigned long long)arg1;
@@ -103,9 +156,12 @@
 - (void)_endInterruption;
 - (void)_interruptSession;
 -     // Error parsing type: {?=[4]}24@0:8d16, name: predictedDeviceTransformAtTimestamp:
--     // Error parsing type: {?=[4]}24@0:8d16, name: cameraTransformAtTimestamp:
+// Error parsing type for property cyclopToCameraTransform:
+// Property attributes: T{?=[4]},N
+
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setOriginTransform:
 -     // Error parsing type: {?=[4]}16@0:8, name: originTransform
+- (void)_commonInitWithCreatePresentation:(_Bool)arg1;
 -     // Error parsing type: v120@0:8{?=[4]}168096@?112, name: createReferenceObjectWithTransform:center:extent:completionHandler:
 - (void)getCurrentWorldMapWithCompletionHandler:(CDUnknownBlockType)arg1;
 -     // Error parsing type: v80@0:8{?=[4]}16, name: setWorldOrigin:
@@ -117,6 +173,7 @@
 @property(readonly, copy, nonatomic) ARConfiguration *configuration;
 @property(readonly, copy, nonatomic) ARFrame *currentFrame;
 - (void)dealloc;
+- (id)initWithPresentation;
 - (id)init;
 
 // Remaining properties

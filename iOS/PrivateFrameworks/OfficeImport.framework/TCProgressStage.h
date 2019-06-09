@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     TCProgressContext *m_context;
 }
 
+- (void).cxx_destruct;
 - (double)currentPosition;
 - (id)parentStage;
 - (void)end;

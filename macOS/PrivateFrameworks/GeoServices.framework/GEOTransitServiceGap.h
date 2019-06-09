@@ -9,27 +9,27 @@
 #import <GeoServices/GEOServiceGap-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOFormattedString, NSDate, NSString;
+@class GEOFormattedString, NSDate, NSString, PBUnknownFields;
 @protocol GEOServerFormattedString;
 
 @interface GEOTransitServiceGap : PBCodable <GEOServiceGap, NSCopying>
 {
+    PBUnknownFields *_unknownFields;
+    GEOFormattedString *_displayMessage;
     unsigned int _absEndTime;
     unsigned int _absStartTime;
     unsigned int _appearsBeforeSuggestedRouteIndex;
-    GEOFormattedString *_displayMessage;
     struct {
-        unsigned int absEndTime:1;
-        unsigned int absStartTime:1;
-        unsigned int appearsBeforeSuggestedRouteIndex:1;
-    } _has;
+        unsigned int has_absEndTime:1;
+        unsigned int has_absStartTime:1;
+        unsigned int has_appearsBeforeSuggestedRouteIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOFormattedString *displayMessage; // @synthesize displayMessage=_displayMessage;
-@property(nonatomic) unsigned int absEndTime; // @synthesize absEndTime=_absEndTime;
-@property(nonatomic) unsigned int absStartTime; // @synthesize absStartTime=_absStartTime;
-@property(nonatomic) unsigned int appearsBeforeSuggestedRouteIndex; // @synthesize appearsBeforeSuggestedRouteIndex=_appearsBeforeSuggestedRouteIndex;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
@@ -37,12 +37,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) GEOFormattedString *displayMessage;
 @property(readonly, nonatomic) BOOL hasDisplayMessage;
 @property(nonatomic) BOOL hasAbsEndTime;
+@property(nonatomic) unsigned int absEndTime;
 @property(nonatomic) BOOL hasAbsStartTime;
+@property(nonatomic) unsigned int absStartTime;
 @property(nonatomic) BOOL hasAppearsBeforeSuggestedRouteIndex;
+@property(nonatomic) unsigned int appearsBeforeSuggestedRouteIndex;
 @property(readonly, nonatomic) id <GEOServerFormattedString> displayMessagFormatString;
 @property(readonly, nonatomic) unsigned long long routeListInsertBeforeIndex;
 @property(readonly, nonatomic) NSDate *endDate;

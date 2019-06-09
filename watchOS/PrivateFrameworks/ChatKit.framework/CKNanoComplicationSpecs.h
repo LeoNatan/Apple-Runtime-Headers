@@ -8,6 +8,7 @@
 
 @class UIColor;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoComplicationSpecs : NSObject
 {
     float _topPaddingCircular;

@@ -15,6 +15,9 @@
 
 @property(copy, nonatomic) NSArray *alertServiceNames; // @synthesize alertServiceNames=_alertServiceNames;
 - (void).cxx_destruct;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithIdentifier:(id)arg1 alertServiceNames:(id)arg2;
 
 @end

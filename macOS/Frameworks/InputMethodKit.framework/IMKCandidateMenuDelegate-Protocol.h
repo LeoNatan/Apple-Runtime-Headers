@@ -10,6 +10,7 @@
 @protocol IMKCandidateMenu;
 
 @protocol IMKCandidateMenuDelegate <NSObject>
+- (void)candidateMenuDidFinishInteracting:(id <IMKCandidateMenu>)arg1;
 - (void)candidateMenu:(id <IMKCandidateMenu>)arg1 didSelectCandidate:(IMKCandidate *)arg2;
 - (void)candidateMenu:(id <IMKCandidateMenu>)arg1 didChangeFocusTo:(IMKCandidate *)arg2;
 @end

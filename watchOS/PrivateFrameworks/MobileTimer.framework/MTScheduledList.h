@@ -19,6 +19,9 @@
 }
 
 + (id)_nextScheduledObjectInSets:(id)arg1;
++ (id)_filterScheduledObjects:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
++ (CDUnknownBlockType)_dateIntervalFilter:(id)arg1;
++ (CDUnknownBlockType)_scheduledObjectComparator;
 + (void)_sort:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *scheduledAlertMap; // @synthesize scheduledAlertMap=_scheduledAlertMap;
 @property(retain, nonatomic) NSMutableOrderedSet *orderedScheduledEvents; // @synthesize orderedScheduledEvents=_orderedScheduledEvents;

@@ -10,18 +10,14 @@
 #import <NetworkExtension/NEFilterExtensionProviderProtocol-Protocol.h>
 
 @class NSString;
-@protocol NEFilterExtensionProviderProtocol;
 
 @interface NEFilterExtensionProviderHostContext : NEExtensionProviderHostContext <NEFilterExtensionProviderProtocol, NEFilterExtensionProviderHostProtocol>
 {
-    id <NEFilterExtensionProviderProtocol> _vendorContext;
 }
 
-- (void).cxx_destruct;
++ (id)_extensionAuxiliaryHostProtocol;
++ (id)_extensionAuxiliaryVendorProtocol;
 - (void)startFilterWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)updateConfiguration:(id)arg1;
-- (void)setExtensionIdentifier:(id)arg1 deviceIdentifier:(id)arg2;
-@property(readonly) id <NEFilterExtensionProviderProtocol> vendorContext;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

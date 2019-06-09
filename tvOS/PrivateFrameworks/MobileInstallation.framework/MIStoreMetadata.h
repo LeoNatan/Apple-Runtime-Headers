@@ -54,12 +54,16 @@
     NSArray *_subGenres;
     NSString *_referrerURL;
     NSString *_referrerApp;
+    NSString *_enterpriseInstallURL;
+    NSString *_redownloadParams;
 }
 
 + (id)metadataFromDictionary:(id)arg1;
 + (id)metadataFromPlistAtURL:(id)arg1 error:(id *)arg2;
 + (id)metadataFromPlistData:(id)arg1 error:(id *)arg2;
 + (_Bool)supportsSecureCoding;
+@property(copy, nonatomic) NSString *redownloadParams; // @synthesize redownloadParams=_redownloadParams;
+@property(copy, nonatomic) NSString *enterpriseInstallURL; // @synthesize enterpriseInstallURL=_enterpriseInstallURL;
 @property(nonatomic) _Bool deviceBasedVPP; // @synthesize deviceBasedVPP=_deviceBasedVPP;
 @property(nonatomic) _Bool sideLoadedDeviceBasedVPP; // @synthesize sideLoadedDeviceBasedVPP=_sideLoadedDeviceBasedVPP;
 @property(copy, nonatomic) NSString *referrerApp; // @synthesize referrerApp=_referrerApp;

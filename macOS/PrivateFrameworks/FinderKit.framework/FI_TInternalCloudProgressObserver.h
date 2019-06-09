@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TInternalCloudProgressObserver : NSObject
 {
-    FI_TICloudProgressObserver *_observer;
+    struct TNSWeakPtr<FI_TICloudProgressObserver, void> _observer;
     struct TKeyValueObserver _localizedDescriptionObserver;
     struct TKeyValueObserver _localizedAdditionalDescriptionObserver;
     struct TKeyValueObserver _fractionCompletedObserver;
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)progressEnded:(id)arg1;
 - (void)fractionCompletedChanged:(id)arg1;
 - (void)progressStarting:(id)arg1;
+@property(readonly, nonatomic) __weak FI_TICloudProgressObserver *observer; // @dynamic observer;
 - (void)aboutToTearDown;
 - (id)initWithObserver:(id)arg1;
 

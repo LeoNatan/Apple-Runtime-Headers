@@ -15,6 +15,8 @@
 
 - (void).cxx_destruct;
 - (void)_updateTextProvider;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)_applyPausedUpdate;
 - (id)_createLabelViewWithFont:(id)arg1;

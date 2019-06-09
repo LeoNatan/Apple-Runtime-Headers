@@ -6,25 +6,22 @@
 
 #import <PhotoLibraryServices/PLResource-Protocol.h>
 
-@class NSString;
-@protocol PLCodecIdentity, PLColorSpaceIdentity, PLResourceDataStore, PLResourceDataStoreKey, PLUniformTypeIdentifierIdentity;
+@protocol PLCodecIdentity, PLResourceDataStore, PLResourceDataStoreKey, PLUniformTypeIdentifierIdentity;
 
 @protocol PLWriteableResource <PLResource>
-@property(nonatomic) short remoteAvailability;
-@property(nonatomic) long long dataLength;
-@property(retain, nonatomic) NSString *fingerprint;
-@property(retain, nonatomic) id <PLResourceDataStoreKey> dataStoreKey;
-@property(nonatomic) long long dataStoreSubtype;
-@property(retain, nonatomic) id <PLResourceDataStore> dataStore;
+@property(retain, nonatomic) id <PLUniformTypeIdentifierIdentity> uniformTypeIdentifierID;
+@property(retain, nonatomic) id <PLCodecIdentity> codecID;
 @property(nonatomic) int qualitySortValue;
 @property(nonatomic) long long unorientedHeight;
 @property(nonatomic) long long unorientedWidth;
+@property(nonatomic) float scale;
+@property(nonatomic) short remoteAvailability;
+@property(retain, nonatomic) id <PLResourceDataStoreKey> dataStoreKey;
+@property(nonatomic) long long dataStoreSubtype;
+@property(retain, nonatomic) id <PLResourceDataStore> dataStore;
 @property(nonatomic) unsigned int orientation;
-@property(retain, nonatomic) id <PLColorSpaceIdentity> colorSpaceID;
-@property(retain, nonatomic) id <PLCodecIdentity> codecID;
-@property(retain, nonatomic) id <PLUniformTypeIdentifierIdentity> uniformTypeIdentifierID;
 @property(nonatomic) unsigned int recipeID;
-@property(nonatomic) short version;
-@property(nonatomic) short resourceType;
+@property(nonatomic) unsigned int version;
+@property(nonatomic) unsigned int resourceType;
 @end
 

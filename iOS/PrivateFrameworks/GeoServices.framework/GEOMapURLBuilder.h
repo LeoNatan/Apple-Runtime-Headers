@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class GEOURLExtraStorage, NSMutableDictionary;
+@class GEOMuninViewState, GEOURLCollectionStorage, GEOURLExtraStorage, NSMutableDictionary;
 
 @interface GEOMapURLBuilder : NSObject
 {
     NSMutableDictionary *_dict;
+    GEOURLCollectionStorage *_collectionStorage;
     GEOURLExtraStorage *_extraStorage;
+    GEOMuninViewState *_muninViewState;
 }
 
++ (id)URLForCollectionStorage:(id)arg1;
 + (id)URLForShowFavoritesType:(long long)arg1;
 + (id)URLForTransitLine:(unsigned long long)arg1 withName:(id)arg2 mapRegion:(id)arg3;
 + (id)URLForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
@@ -21,6 +24,9 @@
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 address:(id)arg5 extraStorage:(id)arg6;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3 coordinate:(CDStruct_c3b9c2ee)arg4 address:(id)arg5;
 + (id)URLForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
++ (id)URLForMuninViewState:(id)arg1;
++ (id)URLForCameraAt:(CDStruct_c3b9c2ee)arg1 zoomLevel:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
++ (id)URLForCameraAt:(CDStruct_c3b9c2ee)arg1 altitude:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
 + (id)URLForDirectionsFromHereTo:(id)arg1 label:(id)arg2 muid:(unsigned long long)arg3 provider:(int)arg4 transport:(int)arg5;
 + (id)URLForDirectionsFromHereTo:(id)arg1;
 + (id)URLForDirectionsFromHereTo:(id)arg1 transport:(int)arg2;
@@ -37,16 +43,21 @@
 + (id)URLForSearch:(id)arg1 at:(CDStruct_c3b9c2ee)arg2 span:(CDStruct_c3b9c2ee)arg3;
 + (id)URLForSearch:(id)arg1 near:(CDStruct_c3b9c2ee)arg2;
 + (id)URLForSearch:(id)arg1;
+@property(retain, nonatomic) GEOMuninViewState *muninViewState; // @synthesize muninViewState=_muninViewState;
 @property(retain, nonatomic) GEOURLExtraStorage *extraStorage; // @synthesize extraStorage=_extraStorage;
+@property(retain, nonatomic) GEOURLCollectionStorage *collectionStorage; // @synthesize collectionStorage=_collectionStorage;
 - (void).cxx_destruct;
 - (void)_removeParametersAllBut:(id)arg1;
 - (id)_stringForCoordinateSpanPointer:(CDStruct_c3b9c2ee *)arg1;
 - (id)_stringForCoordinate2DPointer:(CDStruct_c3b9c2ee *)arg1;
+- (void)addCodable:(id)arg1 key:(id)arg2 compressedKey:(id)arg3;
 - (void)setContentProvider:(id)arg1;
 - (void)setMapType:(int)arg1;
 - (id)buildForWebPlaceCard;
+- (id)buildForCollections;
 - (id)buildForWeb;
 - (id)build;
+- (id)initForCollectionStorage:(id)arg1;
 - (id)initForShowFavoritesType:(long long)arg1;
 - (id)initForTransitLine:(unsigned long long)arg1 withName:(id)arg2 mapRegion:(id)arg3;
 - (void)setMapRegion:(id)arg1;
@@ -54,6 +65,9 @@
 - (void)setBusinessCoordinate:(CDStruct_c3b9c2ee)arg1;
 - (id)initForExternalBusiness:(id)arg1 id:(id)arg2 ofContentProvider:(id)arg3;
 - (id)initForInternalBusiness:(id)arg1 id:(unsigned long long)arg2 provider:(int)arg3;
+- (id)initForMuninViewState:(id)arg1;
+- (id)initForCameraAt:(CDStruct_c3b9c2ee)arg1 zoomLevel:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
+- (id)initForCameraAt:(CDStruct_c3b9c2ee)arg1 altitude:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 roll:(double)arg5;
 - (void)setDestinationMUID:(unsigned long long)arg1 provider:(int)arg2;
 - (void)setDestinationLabel:(id)arg1;
 - (void)setTransportType:(int)arg1;

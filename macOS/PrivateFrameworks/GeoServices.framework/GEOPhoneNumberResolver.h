@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@protocol GEOPhoneNumberResolving, OS_dispatch_queue;
+@protocol GEOPhoneNumberResolving;
 
 @interface GEOPhoneNumberResolver : NSObject
 {
     id <GEOPhoneNumberResolving> _resolver;
-    NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 + (void)useRemoteResolver;

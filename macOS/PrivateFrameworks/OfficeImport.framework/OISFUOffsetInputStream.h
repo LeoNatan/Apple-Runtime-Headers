@@ -11,6 +11,7 @@
 @class NSString;
 @protocol SFUInputStream;
 
+__attribute__((visibility("hidden")))
 @interface OISFUOffsetInputStream : NSObject <SFUInputStream>
 {
     id <SFUInputStream> mInputStream;

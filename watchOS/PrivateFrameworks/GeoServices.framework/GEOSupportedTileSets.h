@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_tileSets;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)tileSetType;
-@property(retain, nonatomic) NSMutableArray *tileSets; // @synthesize tileSets=_tileSets;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)tileSetAtIndex:(unsigned int)arg1;
 - (unsigned int)tileSetsCount;
 - (void)addTileSet:(id)arg1;
 - (void)clearTileSets;
+@property(retain, nonatomic) NSMutableArray *tileSets;
 
 @end
 

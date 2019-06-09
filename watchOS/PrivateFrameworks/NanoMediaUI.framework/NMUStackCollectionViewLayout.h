@@ -14,14 +14,14 @@
     int _numberOfSections;
     int _numberOfItems;
     _Bool _hasBackView;
-    int _numberOfStackItems;
     struct CGSize _itemSize;
+    float _backViewContentSizeHeight;
     struct CGSize _contentSize;
-    float _backViewRevealHeight;
+    float _backViewHeight;
 }
 
 + (Class)layoutAttributesClass;
-@property(nonatomic) float backViewRevealHeight; // @synthesize backViewRevealHeight=_backViewRevealHeight;
+@property(nonatomic) float backViewHeight; // @synthesize backViewHeight=_backViewHeight;
 @property(nonatomic) _Bool hasBackView; // @synthesize hasBackView=_hasBackView;
 - (void).cxx_destruct;
 - (void)_configureLayoutAttributes:(id)arg1 withAbsolutePosition:(int)arg2 applyRotation:(_Bool)arg3 applyAlpha:(_Bool)arg4;

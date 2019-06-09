@@ -8,6 +8,7 @@
 
 @class PDParallelTimeNodeBuildInfo;
 
+__attribute__((visibility("hidden")))
 @interface PDParallelTimeNode : PDTimeNode
 {
     PDParallelTimeNodeBuildInfo *mBuildInfo;

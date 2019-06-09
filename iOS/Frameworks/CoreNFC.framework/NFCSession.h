@@ -9,11 +9,12 @@
 @class NFWeakReference, NSLock, NSString, NSXPCConnection, NSXPCInterface;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface NFCSession : NSObject
 {
     NSLock *_connectionLock;
     NSXPCConnection *_connection;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_xpcQueue;
     NSXPCInterface *_remoteObjectInterface;
     NSXPCInterface *_exportedObjectInterface;
     NSString *_machServiceName;

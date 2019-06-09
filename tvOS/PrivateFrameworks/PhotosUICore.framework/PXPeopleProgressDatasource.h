@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotosUICore/PXPeopleProgressDataSource-Protocol.h>
 #import <PhotosUICore/PXPhotoLibraryUIChangeObserver-Protocol.h>
 
 @class NSString, PHFetchResult;
 @protocol OS_dispatch_queue;
 
-@interface PXPeopleProgressDatasource : NSObject <PXPhotoLibraryUIChangeObserver, PXPeopleProgressDataSource>
+@interface PXPeopleProgressDataSource : NSObject <PXPhotoLibraryUIChangeObserver>
 {
+    _Bool _isFaceProcessingComplete;
     _Bool _countCacheValid;
     _Bool _faceProcessingComplete;
     unsigned long long _cachedUnlockValue;
@@ -27,6 +27,7 @@
 }
 
 @property(nonatomic, getter=isFaceProcessingComplete) _Bool faceProcessingComplete; // @synthesize faceProcessingComplete=_faceProcessingComplete;
+@property(readonly, nonatomic) _Bool isFaceProcessingComplete; // @synthesize isFaceProcessingComplete=_isFaceProcessingComplete;
 @property(getter=isCountCacheValid) _Bool countCacheValid; // @synthesize countCacheValid=_countCacheValid;
 @property(readonly) NSObject<OS_dispatch_queue> *userInteractiveQueue; // @synthesize userInteractiveQueue=_userInteractiveQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *scanningProgressQueue; // @synthesize scanningProgressQueue=_scanningProgressQueue;
@@ -35,16 +36,16 @@
 @property(nonatomic) unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 @property(nonatomic) unsigned long long processedCount; // @synthesize processedCount=_processedCount;
 @property(nonatomic) unsigned long long pendingCount; // @synthesize pendingCount=_pendingCount;
-@property unsigned long long cachedUnlockValue; // @synthesize cachedUnlockValue=_cachedUnlockValue;
+@property(nonatomic) unsigned long long cachedUnlockValue; // @synthesize cachedUnlockValue=_cachedUnlockValue;
 - (void).cxx_destruct;
 - (void)_appWillEnterForeground;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1 withPreparedInfo:(id)arg2;
 - (double)_progressFromWorkerDictionary:(id)arg1;
-- (_Bool)isPersonPromoterDone;
-- (unsigned long long)totalAssetCount;
-- (unsigned long long)homeMembersCount;
-- (unsigned long long)processedAssetCount;
-- (unsigned long long)pendingAssetCount;
+@property(readonly, nonatomic) _Bool isPersonPromoterDone;
+@property(readonly, nonatomic) unsigned long long totalAssetCount;
+@property(readonly, nonatomic) unsigned long long homeMembersCount;
+@property(readonly, nonatomic) unsigned long long processedAssetCount;
+@property(readonly, nonatomic) unsigned long long pendingAssetCount;
 - (void)asyncPeopleScanningProgress:(CDUnknownBlockType)arg1;
 - (void)syncPeopleScanningProgress:(CDUnknownBlockType)arg1;
 - (void)updateProgressIfNeededWithWorkBlock:(CDUnknownBlockType)arg1;

@@ -21,6 +21,7 @@
     NSString *_rating;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSString *rating; // @synthesize rating=_rating;
 @property(copy, nonatomic) NSString *phoneNumber; // @synthesize phoneNumber=_phoneNumber;
 @property(retain, nonatomic) _INPBContactValue *person; // @synthesize person=_person;
@@ -30,6 +31,8 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasRating;

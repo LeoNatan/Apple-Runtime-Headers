@@ -18,7 +18,6 @@
     BOOL mGlobalIsMixedMode;
     BOOL mIsDisplayInfo2;
     BOOL mIsVNC;
-    void *mReservedForInstanceVariables;
 }
 
 @property BOOL isVNC; // @synthesize isVNC=mIsVNC;

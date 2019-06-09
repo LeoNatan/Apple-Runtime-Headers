@@ -14,6 +14,7 @@
 }
 
 + (id)defaultManager;
+- (void)synchronouslyGetFileProviderServicesForItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getFileProviderServicesForItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getFileProviderMessageInterfacesForItemAtURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)containerURLForSecurityApplicationGroupIdentifier:(id)arg1;
@@ -105,7 +106,6 @@
 - (BOOL)_removeFileAtPath:(id)arg1 handler:(id)arg2 shouldDeleteFork:(BOOL)arg3;
 - (BOOL)_replicatePath:(id)arg1 atPath:(id)arg2 operation:(int)arg3 fileMap:(id)arg4 handler:(id)arg5;
 - (BOOL)_newReplicatePath:(id)arg1 ref:(void *)arg2 atPath:(id)arg3 ref:(void *)arg4 operation:(int)arg5 fileMap:(id)arg6 handler:(id)arg7;
-- (id)_windowsPathComponentsWithPath:(id)arg1;
 - (id)_posixPathComponentsWithPath:(id)arg1;
 - (BOOL)_itemAtURLIsInAnyTrash:(id)arg1;
 - (id)_mountedVolumeURLsWithPhysicalDisksMatchingVolumeAtURL:(id)arg1 error:(id *)arg2;

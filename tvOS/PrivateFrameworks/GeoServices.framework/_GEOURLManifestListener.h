@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableArray;
+@class NSMutableArray;
 @protocol OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
 @interface _GEOURLManifestListener : NSObject
 {
     NSMutableArray *_handlers;
-    NSLock *_lock;
+    struct os_unfair_lock_s _lock;
     NSObject<OS_dispatch_source> *_timeoutTimer;
 }
 

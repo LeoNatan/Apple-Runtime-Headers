@@ -6,12 +6,11 @@
 
 #import <UIKitCore/CALayerDelegate-Protocol.h>
 
-@class NSArray, __UITextTiledLayer;
+@class NSArray, _UITextTiledLayer;
 
 @protocol _UITextTiledLayerDelegate <CALayerDelegate>
 
 @optional
-- (struct CGRect)_textTiledLayer:(__UITextTiledLayer *)arg1 constrainTileableBounds:(struct CGRect)arg2;
-- (NSArray *)_textTiledLayer:(__UITextTiledLayer *)arg1 maskedRectsInVisibleRect:(struct CGRect)arg2;
+- (NSArray *)_textTiledLayer:(_UITextTiledLayer *)arg1 maskedRectsInVisibleRect:(struct CGRect)arg2;
 @end
 

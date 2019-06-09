@@ -15,7 +15,7 @@
 }
 
 @property(retain, nonatomic) IKColor *tintColor; // @synthesize tintColor=_tintColor;
-@property(readonly, retain, nonatomic) IKBadgeElement *badge; // @synthesize badge=_badge;
+@property(readonly, nonatomic) __weak IKBadgeElement *badge; // @synthesize badge=_badge;
 - (void).cxx_destruct;
 - (id)initWithBadgeElement:(id)arg1;
 

@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class CLKDevice;
-@protocol NTKUtilityComplicationFactoryDelegate;
+#import <NanoTimeKitCompanion/NTKFaceViewComplicationFactory-Protocol.h>
 
-@interface NTKUtilityComplicationFactory : NSObject
+@class CLKDevice, CLKFont, NSString, NTKFaceView;
+@protocol NTKUtilityComplicationFactoryDelegate, NTKUtilityFlatComplicationViewDelegate;
+
+@interface NTKUtilityComplicationFactory : NSObject <NTKFaceViewComplicationFactory>
 {
     _Bool _accommodatesTwoTopComplications;
     CLKDevice *_device;
@@ -25,6 +27,12 @@
     double _foregroundImageAlpha;
     double _maxNormalLongWidth;
     double _crownIndicatorGap;
+    CLKFont *_topBezelLabelFont;
+    double _bezelLabelMaxWidthInDegree;
+    double _bezelLabelTopPadding;
+    double _bezelKeylineInnerCircleOffset;
+    double _dialDiameter;
+    NTKFaceView<NTKUtilityFlatComplicationViewDelegate> *_faceView;
     double _dateKeylineMaxWidth;
     double _dateHorizontalCenterOffset;
     double _dateVerticalCenterOffset;
@@ -39,6 +47,12 @@
 @property(nonatomic) double dateVerticalCenterOffset; // @synthesize dateVerticalCenterOffset=_dateVerticalCenterOffset;
 @property(nonatomic) double dateHorizontalCenterOffset; // @synthesize dateHorizontalCenterOffset=_dateHorizontalCenterOffset;
 @property(nonatomic) double dateKeylineMaxWidth; // @synthesize dateKeylineMaxWidth=_dateKeylineMaxWidth;
+@property(nonatomic) __weak NTKFaceView<NTKUtilityFlatComplicationViewDelegate> *faceView; // @synthesize faceView=_faceView;
+@property(nonatomic) double dialDiameter; // @synthesize dialDiameter=_dialDiameter;
+@property(nonatomic) double bezelKeylineInnerCircleOffset; // @synthesize bezelKeylineInnerCircleOffset=_bezelKeylineInnerCircleOffset;
+@property(nonatomic) double bezelLabelTopPadding; // @synthesize bezelLabelTopPadding=_bezelLabelTopPadding;
+@property(nonatomic) double bezelLabelMaxWidthInDegree; // @synthesize bezelLabelMaxWidthInDegree=_bezelLabelMaxWidthInDegree;
+@property(retain, nonatomic) CLKFont *topBezelLabelFont; // @synthesize topBezelLabelFont=_topBezelLabelFont;
 @property(nonatomic) double crownIndicatorGap; // @synthesize crownIndicatorGap=_crownIndicatorGap;
 @property(nonatomic) struct UIEdgeInsets screenEdgeInsets; // @synthesize screenEdgeInsets=_screenEdgeInsets;
 @property(nonatomic) double maxNormalLongWidth; // @synthesize maxNormalLongWidth=_maxNormalLongWidth;
@@ -56,6 +70,17 @@
 @property(nonatomic) __weak id <NTKUtilityComplicationFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
 - (void).cxx_destruct;
+- (long long)_utilitySlotForSlot:(id)arg1;
+- (id)newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
+- (void)loadLayoutRules;
+- (void)curvedComplicationCircleRadius:(double *)arg1 centerAngle:(double *)arg2 maxAngularWidth:(double *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
+- (_Bool)slotSupportsCurvedText:(id)arg1;
+- (long long)legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
+- (id)keylineViewForComplicationSlot:(id)arg1;
+- (unsigned long long)keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (id)curvedPickerMaskForSlot:(id)arg1;
+- (void)configureComplicationView:(id)arg1 forSlot:(id)arg2;
+- (long long)complicationPickerStyleForSlot:(id)arg1;
 - (double)_maxWidthForKeylineAndPadding;
 - (double)_maxDateWidthLeavingRoomForKeylines;
 - (double)_maxBottomCenterWidthLeavingRoomForKeylines:(struct CGRect)arg1;
@@ -70,6 +95,7 @@
 - (void)_configureTopRightAboveLayout:(id)arg1 withBounds:(struct CGRect)arg2;
 - (void)_configureDateLayout:(id)arg1 withBounds:(struct CGRect)arg2;
 - (void)_configureBottomCenterLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
+- (void)_configureTopBezelLayout:(id)arg1 withBounds:(struct CGRect)arg2 dialDiameter:(double)arg3;
 - (void)_configureBottomRightLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
 - (void)_configureBottomLeftLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
 - (void)_configureTopRightLayout:(id)arg1 withBounds:(struct CGRect)arg2 variant:(_Bool)arg3;
@@ -82,14 +108,25 @@
 - (id)curvedMaskForSlot:(long long)arg1;
 - (unsigned long long)keylineLabelAlignmentForSlot:(long long)arg1;
 - (double)keylineCornerRadiusForSlot:(long long)arg1;
+- (id)keylineViewForSlot:(long long)arg1 dialDiameter:(double)arg2;
 - (id)keylineViewForSlot:(long long)arg1;
 - (id)_curvedImageForSlot:(long long)arg1 filled:(_Bool)arg2;
 - (id)_curvedMaskImageForSlot:(long long)arg1;
 - (id)_curvedKeylineImageForSlot:(long long)arg1;
+- (void)configureComplicationLayout:(id)arg1 forSlot:(long long)arg2 bounds:(struct CGRect)arg3 dialDiameter:(double)arg4;
 - (void)configureComplicationLayout:(id)arg1 forSlot:(long long)arg2 withBounds:(struct CGRect)arg3;
+- (double)bezelComplicationMaxAngularWidth;
+- (double)bezelComplicationRadiusWithDialDiameter:(double)arg1;
+- (void)configureComplicationView:(id)arg1 forSlot:(id)arg2 dialDiameter:(double)arg3;
 - (id)newViewForComplication:(id)arg1 family:(long long)arg2 forSlot:(long long)arg3;
 - (long long)layoutOverrideForComplicationType:(unsigned long long)arg1 inSlot:(long long)arg2;
 - (id)initForDevice:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

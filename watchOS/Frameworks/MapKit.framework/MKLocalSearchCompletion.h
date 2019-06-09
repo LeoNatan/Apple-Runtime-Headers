@@ -6,12 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class GEODirectionIntent, GEOResolvedItem, GEORetainedSearchMetadata, GEOSearchCategory, MKMapItem, NSArray, NSString;
+@class GEODirectionIntent, GEOResolvedItem, GEORetainedSearchMetadata, GEOSearchCategory, GEOServerResultScoreMetadata, MKMapItem, NSArray, NSString;
 @protocol GEOCompletionItem;
 
 @interface MKLocalSearchCompletion : NSObject
 {
     id <GEOCompletionItem> _item;
+    unsigned int _serverSectionIndex;
+    unsigned int _serverItemIndexInSection;
     NSString *_sourceID;
     NSString *_localizedSectionHeader;
     MKMapItem *_mapItem;
@@ -26,6 +28,8 @@
 @property(readonly, nonatomic, getter=_alreadySentFeedback) _Bool alreadySentFeedback; // @synthesize alreadySentFeedback=_alreadySentFeedback;
 @property(copy, nonatomic) NSString *localizedSectionHeader; // @synthesize localizedSectionHeader=_localizedSectionHeader;
 @property(copy, nonatomic) NSString *sourceID; // @synthesize sourceID=_sourceID;
+@property(readonly, nonatomic) unsigned int serverItemIndexInSection; // @synthesize serverItemIndexInSection=_serverItemIndexInSection;
+@property(readonly, nonatomic) unsigned int serverSectionIndex; // @synthesize serverSectionIndex=_serverSectionIndex;
 - (void).cxx_destruct;
 - (id)iconWithScale:(float)arg1;
 - (id)highlightsForLine:(unsigned int)arg1;
@@ -39,6 +43,12 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+- (id)_geoCompletionItem;
+@property(readonly, nonatomic) NSString *queryAcceleratorCompletionString;
+@property(readonly, nonatomic) _Bool hasQueryAcceleratorAffordanceEnabled;
+@property(readonly, nonatomic) GEOServerResultScoreMetadata *serverResultScoreMetadata;
+@property(readonly, nonatomic) int autocompleteCellType;
+@property(readonly, nonatomic) int entryTapBehavior;
 @property(readonly, nonatomic) int sortPriority;
 @property(readonly, nonatomic) _Bool hasSortPriority;
 @property(readonly, nonatomic) GEORetainedSearchMetadata *retainedSearchMetadata;
@@ -54,7 +64,7 @@
 @property(readonly, nonatomic) NSArray *titleHighlightRanges;
 @property(readonly, nonatomic) NSString *title;
 - (_Bool)isKindOfClass:(Class)arg1;
-- (id)initWithGeoCompletionItem:(id)arg1;
+- (id)initWithGeoCompletionItem:(id)arg1 serverSectionIndex:(unsigned int)arg2 serverItemIndexInSection:(unsigned int)arg3;
 @property(readonly, nonatomic) id <GEOCompletionItem> geoCompletionItem;
 
 @end

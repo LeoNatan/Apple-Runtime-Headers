@@ -8,5 +8,11 @@
 
 @interface NSString (TPSCallWaitingAdditions)
 + (id)tps_stringWithTPSCallWaitingState:(long long)arg1;
++ (id)tps_stringWithTPSEncryptedIdentityType:(long long)arg1;
++ (id)tps_ctStringWithTPSEncryptedIdentityType:(long long)arg1;
++ (id)tps_stringWithCTPhoneBookName:(int)arg1;
++ (id)tps_stringWithTPSCallingLineIdRestrictionState:(long long)arg1;
++ (id)tps_stringWithTPSCallForwardingServiceType:(long long)arg1;
+@property(readonly, nonatomic) long long tps_encryptedIdentityType;
 @end
 

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADBackground.h>
 
+__attribute__((visibility("hidden")))
 @interface OADMasterBackground : OADBackground
 {
 }

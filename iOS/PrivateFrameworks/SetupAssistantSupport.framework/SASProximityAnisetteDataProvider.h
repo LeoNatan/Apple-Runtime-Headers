@@ -9,7 +9,7 @@
 #import <SetupAssistantSupport/AKAnisetteServiceProtocol-Protocol.h>
 #import <SetupAssistantSupport/NSCopying-Protocol.h>
 
-@class SASProximitySession;
+@class NSString, SASProximitySession;
 
 @interface SASProximityAnisetteDataProvider : NSObject <NSCopying, AKAnisetteServiceProtocol>
 {
@@ -24,6 +24,12 @@
 - (void)syncAnisetteWithSIMData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)provisionAnisetteWithCompletion:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

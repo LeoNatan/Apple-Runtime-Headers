@@ -13,10 +13,10 @@
 
 @interface PKMerchant : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
-    BOOL _hasFallbackPOIType;
-    int _fallbackPOIType;
     NSString *_displayName;
     NSURL *_originURL;
+    NSString *_webMerchantIdentifier;
+    NSString *_webMerchantName;
     long long _adamIdentifier;
     long long _industryCode;
     NSString *_industryCategory;
@@ -40,8 +40,6 @@
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) PKMapsBrand *mapsBrand; // @synthesize mapsBrand=_mapsBrand;
 @property(retain, nonatomic) PKMapsMerchant *mapsMerchant; // @synthesize mapsMerchant=_mapsMerchant;
-@property(nonatomic) int fallbackPOIType; // @synthesize fallbackPOIType=_fallbackPOIType;
-@property(nonatomic) BOOL hasFallbackPOIType; // @synthesize hasFallbackPOIType=_hasFallbackPOIType;
 @property(copy, nonatomic) NSString *fallbackDetailedCategory; // @synthesize fallbackDetailedCategory=_fallbackDetailedCategory;
 @property(nonatomic) long long fallbackcategory; // @synthesize fallbackcategory=_fallbackcategory;
 @property(nonatomic) long long cleanConfidenceLevel; // @synthesize cleanConfidenceLevel=_cleanConfidenceLevel;
@@ -58,10 +56,12 @@
 @property(copy, nonatomic) NSString *industryCategory; // @synthesize industryCategory=_industryCategory;
 @property(nonatomic) long long industryCode; // @synthesize industryCode=_industryCode;
 @property(nonatomic) long long adamIdentifier; // @synthesize adamIdentifier=_adamIdentifier;
+@property(copy, nonatomic) NSString *webMerchantName; // @synthesize webMerchantName=_webMerchantName;
+@property(copy, nonatomic) NSString *webMerchantIdentifier; // @synthesize webMerchantIdentifier=_webMerchantIdentifier;
 @property(copy, nonatomic) NSURL *originURL; // @synthesize originURL=_originURL;
 - (void).cxx_destruct;
+- (id)uniqueIdentifier;
 - (void)_regenerateDisplayName;
-@property(readonly, nonatomic) int poiType;
 @property(readonly, nonatomic) NSString *detailedCategory;
 @property(readonly, nonatomic) long long category;
 @property(readonly, nonatomic) BOOL isValid;

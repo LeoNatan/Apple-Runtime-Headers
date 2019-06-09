@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <RelevanceEngine/REElementDataSourceControllerProperties-Protocol.h>
 #import <RelevanceEngine/REElementDataSourceDelegate-Protocol.h>
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, REElementDataSource, RERelevanceEngine, RERelevanceProviderEnvironment, REUpNextScheduler;
 @protocol OS_dispatch_queue, REElementDataSourceControllerDelegate;
 
-@interface REElementDataSourceController : NSObject <REElementDataSourceDelegate>
+@interface REElementDataSourceController : NSObject <REElementDataSourceControllerProperties, REElementDataSourceDelegate>
 {
     NSString *_loggingHeader;
     NSMutableSet *_dataSourceElements;
@@ -23,6 +24,7 @@
     REUpNextScheduler *_reloadScheduler;
     _Bool _wantsReloadWhilePaused;
     _Bool _hasDataAvailable;
+    unsigned int _contentMode;
     _Bool _isPerformingReload;
     NSMutableArray *_enqueuedBlocks;
     NSSet *_supportedSections;
@@ -39,14 +41,12 @@
     id <REElementDataSourceControllerDelegate> _delegate;
 }
 
-+ (id)_sharedDataSourceQueue;
 @property(nonatomic) __weak id <REElementDataSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned int state; // @synthesize state=_state;
 @property(readonly, nonatomic) REElementDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, nonatomic) Class dataSourceClass; // @synthesize dataSourceClass=_dataSourceClass;
 - (void).cxx_destruct;
 - (void)_loadLoggingHeader;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier;
 @property(readonly, nonatomic) NSString *bundleIdentifier;
@@ -89,6 +89,7 @@
 - (void)_removeElementIdentifier:(id)arg1;
 - (void)_addElementIdentifier:(id)arg1;
 - (id)_updateRelevanceProvidersForElement:(id)arg1;
+- (_Bool)_supportsContentRelevanceProviderForElement:(id)arg1;
 - (_Bool)_validElement:(id)arg1;
 - (void)_namespaceElementIdentifier:(id)arg1 section:(id)arg2;
 - (id)_shallowCopiedElements:(id)arg1;
@@ -96,7 +97,15 @@
 - (void)_handleDeviceLockStateChange:(id)arg1;
 - (void)_handleSignifiantTimeChange:(id)arg1;
 - (void)dealloc;
+- (id)_initWithRelevanceEngine:(id)arg1 dataSourceClass:(Class)arg2 dataSource:(id)arg3;
 - (id)initWithRelevanceEngine:(id)arg1 dataSourceClass:(Class)arg2;
+- (id)initWithRelevanceEngine:(id)arg1 dataSource:(id)arg2;
+@property(readonly, nonatomic) NSArray *allProvidedElements;
+@property(readonly, nonatomic) unsigned int updateCount;
+@property(readonly, nonatomic) _Bool hasDataAvailable;
+@property(readonly, nonatomic) _Bool allowsLocationUse;
+@property(readonly, nonatomic) NSArray *supportedSections;
+@property(readonly, nonatomic) NSString *name;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

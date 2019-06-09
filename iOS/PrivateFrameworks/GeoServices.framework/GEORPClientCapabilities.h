@@ -16,18 +16,15 @@
     _Bool _hasNoOptInRequest;
     _Bool _hasSupportForIdsBasedNotifications;
     struct {
-        unsigned int transitMarketSupport:1;
-        unsigned int hasConstrainedProblemStatusSize:1;
-        unsigned int hasFeatureHandle:1;
-        unsigned int hasNoOptInRequest:1;
-        unsigned int hasSupportForIdsBasedNotifications:1;
-    } _has;
+        unsigned int has_transitMarketSupport:1;
+        unsigned int has_hasConstrainedProblemStatusSize:1;
+        unsigned int has_hasFeatureHandle:1;
+        unsigned int has_hasNoOptInRequest:1;
+        unsigned int has_hasSupportForIdsBasedNotifications:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool hasSupportForIdsBasedNotifications; // @synthesize hasSupportForIdsBasedNotifications=_hasSupportForIdsBasedNotifications;
-@property(nonatomic) _Bool hasFeatureHandle; // @synthesize hasFeatureHandle=_hasFeatureHandle;
-@property(nonatomic) _Bool hasNoOptInRequest; // @synthesize hasNoOptInRequest=_hasNoOptInRequest;
-@property(nonatomic) _Bool hasConstrainedProblemStatusSize; // @synthesize hasConstrainedProblemStatusSize=_hasConstrainedProblemStatusSize;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -35,16 +32,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsTransitMarketSupport:(id)arg1;
 - (id)transitMarketSupportAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransitMarketSupport;
-@property(nonatomic) int transitMarketSupport; // @synthesize transitMarketSupport=_transitMarketSupport;
+@property(nonatomic) int transitMarketSupport;
 @property(nonatomic) _Bool hasHasSupportForIdsBasedNotifications;
+@property(nonatomic) _Bool hasSupportForIdsBasedNotifications;
 @property(nonatomic) _Bool hasHasFeatureHandle;
+@property(nonatomic) _Bool hasFeatureHandle;
 @property(nonatomic) _Bool hasHasNoOptInRequest;
+@property(nonatomic) _Bool hasNoOptInRequest;
 @property(nonatomic) _Bool hasHasConstrainedProblemStatusSize;
+@property(nonatomic) _Bool hasConstrainedProblemStatusSize;
 
 @end
 

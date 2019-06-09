@@ -21,7 +21,7 @@
 }
 
 + (_Bool)restoreAlbumListFromPersistedDataAtPath:(id)arg1 library:(id)arg2;
-+ (void)persistAlbumListUUIDs:(id)arg1 type:(short)arg2 allowsOverwrite:(_Bool)arg3;
++ (void)persistAlbumListUUIDs:(id)arg1 type:(short)arg2 pathManager:(id)arg3 allowsOverwrite:(_Bool)arg4;
 + (_Bool)isValidPathForPersistence:(id)arg1;
 + (_Bool)isValidTypeForPersistence:(short)arg1;
 + (void)pushChangesFromAlbumContainer:(id)arg1 toAlbumContainer:(id)arg2;
@@ -51,6 +51,7 @@
 + (void)initialize;
 @property(nonatomic) _Bool didRegisteredWithUserInterfaceContext; // @synthesize didRegisteredWithUserInterfaceContext;
 @property(nonatomic) _Bool isRegisteredForChanges; // @synthesize isRegisteredForChanges;
+- (void).cxx_destruct;
 - (void)didSave;
 - (void)willSave;
 - (void)unregisterForChanges;
@@ -82,12 +83,15 @@
 @property(readonly, nonatomic) _Bool hasAtLeastOneAlbum;
 @property(readonly, nonatomic) unsigned long long albumsCount;
 - (id)_albumsCountFetchRequest;
-@property(readonly, retain, nonatomic) NSMutableOrderedSet *albums;
+@property(readonly, nonatomic) NSMutableOrderedSet *albums;
 @property(nonatomic) short albumListType;
 - (void)willTurnIntoFault;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;
 - (void)dealloc;
+- (id)payloadIDForTombstone:(id)arg1;
+- (id)payloadForChangedKeys:(id)arg1;
+- (id)payloadID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

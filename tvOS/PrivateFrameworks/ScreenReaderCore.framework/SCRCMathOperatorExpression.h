@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned short operatorChar; // @synthesize operatorChar=_operatorChar;
 - (id)mathMLString;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned long long)arg1 treePosition:(id)arg2;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(_Bool)arg2;
+- (id)speakableDescriptionWithSpeakingStyle:(long long)arg1 arePausesAllowed:(_Bool)arg2;
 - (id)latexFormatStringAsOver;
 - (_Bool)isFenceDelimiter;
 - (_Bool)isOperationSymbol;

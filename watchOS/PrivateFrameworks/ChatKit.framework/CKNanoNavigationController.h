@@ -6,6 +6,7 @@
 
 #import <PepperUICore/PUICNavigationController.h>
 
+__attribute__((visibility("hidden")))
 @interface CKNanoNavigationController : PUICNavigationController
 {
 }

@@ -11,6 +11,7 @@
 }
 
 + (void)simulateCrashWithDescription:(id)arg1;
++ (BOOL)isCoreDataTemporaryError:(id)arg1;
 + (BOOL)isCoreDataFatalError:(id)arg1;
 + (id)transformErrorForNSSecureCoding:(id)arg1;
 

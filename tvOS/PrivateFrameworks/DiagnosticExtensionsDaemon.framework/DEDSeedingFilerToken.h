@@ -12,12 +12,12 @@
 {
     NSNumber *_entityID;
     NSString *_token;
-    NSNumber *_dsid;
+    NSString *_dsid;
     long long _submissionType;
 }
 
 @property(readonly, nonatomic) long long submissionType; // @synthesize submissionType=_submissionType;
-@property(readonly, nonatomic) NSNumber *dsid; // @synthesize dsid=_dsid;
+@property(readonly, nonatomic) NSString *dsid; // @synthesize dsid=_dsid;
 @property(readonly, nonatomic) NSString *token; // @synthesize token=_token;
 @property(readonly, nonatomic) NSNumber *entityID; // @synthesize entityID=_entityID;
 - (void).cxx_destruct;

@@ -8,7 +8,7 @@
 
 #import <CoreSuggestionsInternals/PMLTransformerProtocol-Protocol.h>
 
-@class NSDictionary;
+@class NSDictionary, NSString;
 
 @interface SGStringMappingTransformer : NSObject <PMLTransformerProtocol>
 {
@@ -18,8 +18,20 @@
 + (id)withMappings:(id)arg1;
 @property(retain) NSDictionary *mappings; // @synthesize mappings=_mappings;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToStringMappingTransformer:(id)arg1;
+- (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (id)toPlistWithChunks:(id)arg1;
 - (id)transform:(id)arg1;
+- (id)initWithHelperMappingType:(id)arg1 andLanguage:(id)arg2;
 - (id)initWithMappings:(id)arg1;
+- (id)withHelperMappingType:(id)arg1 andLanguage:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

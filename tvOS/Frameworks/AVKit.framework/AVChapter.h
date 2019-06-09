@@ -10,6 +10,7 @@
 
 @class NSString, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVChapter : NSObject <NSCopying>
 {
     UIImage *_image;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class SFEditableTableViewCell, UIBarButtonItem, WBSSavedPassword;
+@class SFEditableTableViewCell, SFSafariViewController, UIBarButtonItem, WBSSavedPassword;
 @protocol SFPasswordDetailViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     UIBarButtonItem *_backBarButtonItem;
     SFEditableTableViewCell *_userCell;
     SFEditableTableViewCell *_passwordCell;
+    SFSafariViewController *_changePasswordSafariViewController;
     id <SFPasswordDetailViewControllerDelegate> _delegate;
 }
 
@@ -46,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)_configurePasswordCell:(id)arg1;
 - (void)_configureUserCell:(id)arg1;
 - (id)_editableCellWithCell:(id)arg1;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
@@ -56,6 +58,8 @@ __attribute__((visibility("hidden")))
 - (void)_doneBarButtonItemTapped:(id)arg1;
 - (void)_cancelBarButtonItemTapped:(id)arg1;
 - (void)_editBarButtonItemTapped:(id)arg1;
+- (void)_showChangePasswordSafariViewController;
+- (void)_passwordStoreDidUpdate;
 - (_Bool)_allowEditing;
 - (id)initWithSavedPassword:(id)arg1 type:(unsigned long long)arg2;
 

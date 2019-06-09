@@ -13,7 +13,7 @@
     NSMutableDictionary *_dictionary;
 }
 
-+ (void)setKeychainForCodesigning:(struct OpaqueSecKeychainRef *)arg1;
++ (void)setKeychainForCodesigning:(struct __SecKeychain *)arg1;
 + (id)appWithDictionary:(id)arg1;
 + (id)appWithPath:(id)arg1;
 + (id)appWithPath:(id)arg1 addingSubApps:(BOOL)arg2 creatingSignature:(BOOL)arg3 detached:(BOOL)arg4;

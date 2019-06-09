@@ -50,7 +50,6 @@
 - (void)setPayloadData:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithType:(long long)arg1;
 
 @end

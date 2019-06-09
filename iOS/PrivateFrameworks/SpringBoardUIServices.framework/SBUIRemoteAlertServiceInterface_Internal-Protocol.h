@@ -7,6 +7,10 @@
 #import <SpringBoardUIServices/SBUIRemoteAlertServiceInterface-Protocol.h>
 
 @protocol SBUIRemoteAlertServiceInterface_Internal <SBUIRemoteAlertServiceInterface>
+- (void)sb_dismissForAlertAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;
+- (void)sb_presentForAlertAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;
+- (void)sb_restoreInputViewsAnimated:(_Bool)arg1;
+- (void)sb_preserveInputViewsAnimated:(_Bool)arg1;
 - (void)sb_resignFirstResponder;
 - (void)sb_becomeFirstResponder;
 @end

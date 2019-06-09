@@ -63,10 +63,14 @@
 - (id)fetchWithCallTypes:(unsigned int)arg1;
 - (id)fetchAllNoLimit;
 - (id)fetchAll;
-- (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3;
+- (id)fetchCoalescedCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3 offset:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
+- (unsigned long long)fetchCoalescedCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
+- (id)fetchCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3 offset:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
+- (unsigned long long)fetchCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
 - (void)unRegisterForNotifications;
 - (void)registerForNotifications;
 - (id)init:(_Bool)arg1;
+- (id)convertToCHRecentCalls_sync:(id)arg1 limit:(unsigned long long)arg2;
 - (id)convertToCHRecentCalls_sync:(id)arg1;
 - (void)setClientObject_sync:(id)arg1 withStoreObject:(id)arg2;
 - (void)setStoreObject_sync:(id)arg1 withClientObject:(id)arg2;

@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIVisualEffectViewSubviewMonitoring-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, _UIVisualEffectBackdropView, _UIVisualEffectNode, _UIVisualEffectSubview, _UIVisualEffectViewBackdropCaptureGroup;
+@class NSArray, NSMutableArray, NSString, _UIVisualEffectBackdropView, _UIVisualEffectDescriptor, _UIVisualEffectSubview, _UIVisualEffectViewBackdropCaptureGroup;
 
 __attribute__((visibility("hidden")))
 @interface _UIVisualEffectHost : NSObject <_UIVisualEffectViewSubviewMonitoring>
@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
     _UIVisualEffectSubview *_contentView;
     _UIVisualEffectViewBackdropCaptureGroup *_primaryCaptureGroup;
     _UIVisualEffectBackdropView *_captureView;
-    _UIVisualEffectNode *_currentEffectNode;
-    _UIVisualEffectNode *_transitionEffectNode;
+    _UIVisualEffectDescriptor *_currentEffectDescriptor;
+    _UIVisualEffectDescriptor *_transitionEffectDescriptor;
 }
 
-@property(readonly, nonatomic) _UIVisualEffectNode *transitionEffectNode; // @synthesize transitionEffectNode=_transitionEffectNode;
-@property(retain, nonatomic) _UIVisualEffectNode *currentEffectNode; // @synthesize currentEffectNode=_currentEffectNode;
+@property(readonly, nonatomic) _UIVisualEffectDescriptor *transitionEffectDescriptor; // @synthesize transitionEffectDescriptor=_transitionEffectDescriptor;
+@property(retain, nonatomic) _UIVisualEffectDescriptor *currentEffectDescriptor; // @synthesize currentEffectDescriptor=_currentEffectDescriptor;
 @property(nonatomic) __weak _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
 @property(retain, nonatomic) _UIVisualEffectViewBackdropCaptureGroup *primaryCaptureGroup; // @synthesize primaryCaptureGroup=_primaryCaptureGroup;
 @property(readonly, nonatomic) NSArray *views; // @synthesize views=_views;
@@ -35,16 +35,17 @@ __attribute__((visibility("hidden")))
 - (void)_view:(id)arg1 willLoseDescendent:(id)arg2;
 - (void)_view:(id)arg1 willGainDescendent:(id)arg2;
 - (void)_view:(id)arg1 willMoveToWindow:(id)arg2;
-- (void)_applyRequestedNodeEffect;
-- (void)_applyIdentityNodeEffect;
+- (void)_applyRequestedDescriptorEffectInvertingView:(id)arg1;
+- (void)_applyIdentityDescriptorEffectInvertingView:(id)arg1;
+- (void)_iterateViews:(CDUnknownBlockType)arg1;
 - (void)_evaluateInPlaceFiltering;
 - (id)_cloneFilters:(id)arg1;
-- (void)_configureEffectNode:(id)arg1;
+- (void)_configureEffectDescriptor:(id)arg1;
 - (id)_viewForEntry:(id)arg1 fromCapturePool:(id)arg2 imagePool:(id)arg3 otherPool:(id)arg4;
-- (void)_applyEffectNode:(id)arg1;
+- (void)_applyEffectDescriptor:(id)arg1;
 - (void)endTransition;
 - (void)beginTransition;
-- (void)prepareToTransitionToEffectNode:(id)arg1;
+- (void)prepareToTransitionToEffectDescriptor:(id)arg1;
 - (void)_updateAdjustTintColors;
 - (void)_updateView:(id)arg1 shouldDrawWithTintColor:(_Bool)arg2;
 - (id)initWithContentView:(id)arg1;

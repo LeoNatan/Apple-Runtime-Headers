@@ -14,6 +14,7 @@
 
 @interface MPAbstractNetworkArtworkDataSource : NSObject <NSURLSessionDataDelegate, MPArtworkDataSource>
 {
+    _Bool _usesFallbackCache;
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSCache *_fallbackArtworkRepresentationCache;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) NSCache *fallbackArtworkRepresentationCache; // @synthesize fallbackArtworkRepresentationCache=_fallbackArtworkRepresentationCache;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
+@property(nonatomic) _Bool usesFallbackCache; // @synthesize usesFallbackCache=_usesFallbackCache;
 - (void).cxx_destruct;
 - (void)_performSyncBlock:(CDUnknownBlockType)arg1;
 - (void)_performAsyncBarrierBlock:(CDUnknownBlockType)arg1;

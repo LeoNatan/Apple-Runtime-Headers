@@ -8,6 +8,7 @@
 
 @class NSString, _UIBackdropView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIScrollingTabBarBackgroundView : UIView
 {
     _UIBackdropView *_backdropView;

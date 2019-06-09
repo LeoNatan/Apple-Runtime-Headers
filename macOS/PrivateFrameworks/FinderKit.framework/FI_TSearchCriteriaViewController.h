@@ -8,21 +8,23 @@
 
 #import <FinderKit/NSRuleEditorDelegate-Protocol.h>
 #import <FinderKit/NSTextFieldDelegate-Protocol.h>
+#import <FinderKit/TMarkTornDown-Protocol.h>
 #import <FinderKit/TSearchCriteriaSheetDelegate-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSObject, NSString;
 @protocol TSearchCriteriaViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface FI_TSearchCriteriaViewController : FI_TViewController <NSTextFieldDelegate, NSRuleEditorDelegate, TSearchCriteriaSheetDelegate>
+@interface FI_TSearchCriteriaViewController : FI_TViewController <NSTextFieldDelegate, NSRuleEditorDelegate, TSearchCriteriaSheetDelegate, TMarkTornDown>
 {
-    id <TSearchCriteriaViewControllerDelegate> _delegate;
+    struct TNSWeakPtr<NSObject<TSearchCriteriaViewControllerDelegate>, void> _weakDelegate;
     struct TKeyValueBinder _criteriaRuleEditorRowsBinder;
     struct TNSRef<NSMutableArray, void> _customFieldsArray;
     struct TNSRef<NSArray, void> _rootSliceAttributes;
     struct TNSRef<NSMutableArray<NSMutableDictionary *>, void> _boundRulesArray;
     struct TNSRef<FI_TSearchCriteriaSheetController, void> _sheetController;
     struct TNSRef<FI_TMDUserSearch, void> _search;
+    _Bool tornDown;
 }
 
 + (id)itemDisplayValueForCriterion:(id)arg1;
@@ -50,7 +52,7 @@ __attribute__((visibility("hidden")))
 + (id)labelMatchSlice:(short)arg1;
 + (id)tagNameMatchSlice:(id)arg1;
 + (id)displayValueForCriterion:(id)arg1;
-@property id <TSearchCriteriaViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)criterionWithSuggestion:(id)arg1;
@@ -100,6 +102,7 @@ __attribute__((visibility("hidden")))
 - (id)search;
 @property(copy, nonatomic) NSArray *boundRulesArray; // @dynamic boundRulesArray;
 - (id)criteriaRuleEditor;
+@property __weak NSObject<TSearchCriteriaViewControllerDelegate> *delegate; // @dynamic delegate;
 - (void)aboutToTearDown;
 - (void)viewLoaded;
 - (void)initCommon;

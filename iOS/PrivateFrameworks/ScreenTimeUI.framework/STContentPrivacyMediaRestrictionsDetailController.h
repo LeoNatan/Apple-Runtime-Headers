@@ -9,6 +9,7 @@
 @class NSObject;
 @protocol STContentPrivacyViewModelCoordinator;
 
+__attribute__((visibility("hidden")))
 @interface STContentPrivacyMediaRestrictionsDetailController : PSListController
 {
     NSObject<STContentPrivacyViewModelCoordinator> *_coordinator;

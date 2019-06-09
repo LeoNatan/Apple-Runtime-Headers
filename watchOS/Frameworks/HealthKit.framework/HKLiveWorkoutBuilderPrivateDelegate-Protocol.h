@@ -6,9 +6,10 @@
 
 #import <HealthKit/HKLiveWorkoutBuilderDelegate-Protocol.h>
 
-@class HKLiveWorkoutBuilder;
+@class HKLiveWorkoutBuilder, HKWorkoutEvent;
 
 @protocol HKLiveWorkoutBuilderPrivateDelegate <HKLiveWorkoutBuilderDelegate>
+- (void)workoutBuilder:(HKLiveWorkoutBuilder *)arg1 didCollectEvent:(HKWorkoutEvent *)arg2;
 - (void)workoutBuilderDidChangeMetadata:(HKLiveWorkoutBuilder *)arg1;
 @end
 

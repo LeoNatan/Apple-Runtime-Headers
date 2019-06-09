@@ -17,14 +17,21 @@
 }
 
 + (id)objectChangeWithProperties:(id)arg1;
++ (long long)objectType;
++ (int)entityType;
 + (void)callClientResultsHandler:(CDUnknownBlockType)arg1 changesTruncated:(_Bool)arg2 latestToken:(long long)arg3 changes:(id)arg4;
-+ (void)fetchChangesToObjectsOfEntityType:(int)arg1 inCalendar:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-+ (void)fetchChangesToObjectsOfEntityType:(int)arg1 inSource:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
-+ (void)fetchChangesToObjectsOfEntityType:(int)arg1 inStore:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 + (CDUnknownBlockType)processFetchResults:(CDUnknownBlockType)arg1;
++ (void)fetchChangesToObjectsOfTypes:(id)arg1 inCalendar:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
++ (void)fetchChangesToObjectsOfTypes:(id)arg1 inSource:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
++ (void)fetchChangesToObjectsOfTypes:(id)arg1 inStore:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 + (void)fetchObjectChangesInCalendar:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchObjectChangesInSource:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
 + (void)fetchObjectChangesInStore:(id)arg1 resultHandler:(CDUnknownBlockType)arg2;
++ (id)CADObjectChangeIDsFromEKObjectChanges:(id)arg1;
++ (CDUnknownBlockType)_filterObjectChangesNotConformingToOwnerIDProvidingProtocol:(CDUnknownBlockType)arg1;
++ (void)fetchChangesToOwnerIDProvidingObjectsOfTypes:(id)arg1 inCalendar:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
++ (void)fetchChangesToOwnerIDProvidingObjectsOfTypes:(id)arg1 inSource:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
++ (void)fetchChangesToOwnerIDProvidingObjectsOfTypes:(id)arg1 inStore:(id)arg2 resultHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) long long changeID; // @synthesize changeID=_changeID;
 @property(readonly, nonatomic) int changeType; // @synthesize changeType=_changeType;

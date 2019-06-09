@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, VMUClassInfo, VMUClassInfoMap, VMUNonOverlappingRangeArray, VMUSwiftRuntimeInfo, VMUTaskMemoryScanner;
+@class NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, VMUClassInfo, VMUClassInfoMap, VMUNonOverlappingRangeArray, VMUSwiftRuntimeInfo, VMUTaskMemoryScanner;
 
 @interface VMUObjectIdentifier : NSObject
 {
@@ -25,6 +25,7 @@
     VMUClassInfoMap *_unrealizedClassInfos;
     VMUClassInfoMap *_cfTypeIDToClassInfo;
     NSMutableDictionary *_nonobjectClassInfosDict;
+    NSMutableArray *_objCClassStructureClassInfoIndexes;
     unsigned long long _coreFoundationCFTypeIsa;
     unsigned long long _foundationCFTypeIsa;
     unsigned long long _objCClassCount;
@@ -46,8 +47,12 @@
     unsigned long long _cfBooleanTrueAddress;
     unsigned long long _cfBooleanFalseAddress;
     unsigned int _osDispatchMachOffsetInOSXPCConnection;
+    unsigned long long _taggedPointerMask;
+    unsigned long long _taggedPointerObfuscator;
 }
 
+@property(readonly, nonatomic) unsigned long long taggedPointerMask; // @synthesize taggedPointerMask=_taggedPointerMask;
+@property(readonly, nonatomic) struct libSwiftRemoteMirrorWrapper *swiftMirror; // @synthesize swiftMirror=_swiftMirror;
 @property(readonly, nonatomic) VMUSwiftRuntimeInfo *swiftRuntimeInfoStableABI; // @synthesize swiftRuntimeInfoStableABI=_swiftRuntimeInfoStableABI;
 @property(readonly, nonatomic) VMUSwiftRuntimeInfo *swiftRuntimeInfoPreABI; // @synthesize swiftRuntimeInfoPreABI=_swiftRuntimeInfoPreABI;
 @property(readonly, nonatomic) VMUClassInfoMap *realizedClasses; // @synthesize realizedClasses=_realizedIsaToClassInfo;
@@ -107,12 +112,15 @@
 - (id)labelForNSString:(void *)arg1 mappedSize:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3 printDetail:(BOOL)arg4;
 - (id)labelForNSString:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2 printDetail:(BOOL)arg3;
+- (id)classNameForTaggedPointer:(void *)arg1;
 - (id)labelForTaggedPointer:(void *)arg1;
 - (id)objectLabelHandlerForRemoteIsa:(unsigned long long)arg1;
 - (void)buildIsaToObjectLabelHandlerMap;
 - (id)osMajorMinorVersionString;
+- (struct _CSTypeRef)symbolForAddress:(unsigned long long)arg1;
 - (unsigned long long)addressOfSymbol:(const char *)arg1 inLibrary:(const char *)arg2;
 - (struct _VMURange)vmRegionRangeForAddress:(unsigned long long)arg1;
+- (unsigned long long)translateIsaPointer:(unsigned long long)arg1;
 - (void)findObjCclasses;
 - (void)findCFTypes;
 - (void)_faultClass:(unsigned long long)arg1 ofType:(unsigned int)arg2;
@@ -120,6 +128,8 @@
 - (id)classInfoForMemory:(void *)arg1 length:(unsigned long long)arg2 remoteAddress:(unsigned long long)arg3;
 - (id)classInfoForMemory:(void *)arg1 length:(unsigned long long)arg2;
 - (id)classInfoForNonobjectMemory:(void *)arg1 length:(unsigned long long)arg2;
+- (unsigned int)classInfoIndexForObjCClassStructurePointerType:(unsigned int)arg1;
+- (void)_generateClassInfosForObjCClassStructurePointerTypes;
 - (id)_classInfoWithPthreadType:(id)arg1;
 - (id)_classInfoWithNonobjectType:(id)arg1 binaryPath:(id)arg2;
 - (BOOL)_isValidInstanceLength:(unsigned long long)arg1 expectedLength:(unsigned long long)arg2;

@@ -84,6 +84,8 @@
 - (void)viewDidMoveToWindow;
 - (void)viewWillStartLiveResize;
 - (void)_axDidDisplayOptionChanged;
+- (void)_setFallbackFont:(id)arg1 forCharacter:(id)arg2 ofSection:(long long)arg3;
+- (id)_fallbackFontsForCharacter:(id)arg1 ofSection:(long long)arg2 fallbackType:(long long *)arg3;
 - (id)_menuForCharacterAtIndex:(long long)arg1 ofSection:(long long)arg2;
 - (void)_removeItemAtIndex:(long long)arg1 ofSection:(long long)arg2;
 - (void)_moveItemAtIndex:(long long)arg1 ofSection:(long long)arg2 toIndex:(long long)arg3;

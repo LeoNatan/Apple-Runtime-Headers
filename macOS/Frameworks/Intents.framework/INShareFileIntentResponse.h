@@ -8,11 +8,10 @@
 
 #import <Intents/INShareFileIntentResponseExport-Protocol.h>
 
-@class NSArray, NSNumber, NSString, _INPBShareFileIntentResponse;
+@class NSArray, NSNumber, NSString;
 
 @interface INShareFileIntentResponse : INIntentResponse <INShareFileIntentResponseExport>
 {
-    _INPBShareFileIntentResponse *_responseMessagePBRepresentation;
 }
 
 + (BOOL)_appLaunchRequestedFromCode:(long long)arg1;
@@ -20,7 +19,6 @@
 + (int)_typeFromCode:(long long)arg1;
 + (long long)_codeFromType:(int)arg1 errorCode:(int)arg2 appLaunchRequested:(BOOL)arg3;
 + (BOOL)supportsSecureCoding;
-- (void).cxx_destruct;
 - (void)setPropertiesByName:(id)arg1;
 - (id)propertiesByName;
 - (id)_dictionaryRepresentation;
@@ -28,7 +26,7 @@
 @property(copy) NSString *shareMode;
 @property(copy) NSNumber *success;
 @property(copy) NSNumber *confirm;
-- (id)_responseMessagePBRepresentation;
+- (long long)_codeWithName:(id)arg1;
 - (long long)_intentResponseCode;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

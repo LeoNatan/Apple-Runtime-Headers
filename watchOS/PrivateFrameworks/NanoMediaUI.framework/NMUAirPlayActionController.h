@@ -34,7 +34,7 @@
 }
 
 + (id)controllerWithAudioRoutingManager:(id)arg1;
-+ (id)controllerWithOrigin:(id)arg1;
++ (id)controllerWithOrigin:(id)arg1 audioRoutingManager:(id)arg2;
 @property(nonatomic) _Bool automaticallySelectsLoneAvailableRoute; // @synthesize automaticallySelectsLoneAvailableRoute=_automaticallySelectsLoneAvailableRoute;
 @property(retain, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
 - (void).cxx_destruct;

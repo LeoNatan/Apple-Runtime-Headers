@@ -22,10 +22,10 @@
 
 @property(retain, nonatomic) NSColor *templateTintColor; // @synthesize templateTintColor=_templateTintColor;
 @property(readonly, nonatomic) NSImageView *imageView; // @synthesize imageView=_imageView;
-@property BOOL shouldHighlight; // @synthesize shouldHighlight=_shouldHighlight;
+@property(nonatomic) BOOL shouldHighlight; // @synthesize shouldHighlight=_shouldHighlight;
 @property(retain, nonatomic) NSImage *highlightImage; // @synthesize highlightImage=_highlightImage;
 - (void).cxx_destruct;
-@property long long imageContentMode; // @synthesize imageContentMode=_imageContentMode;
+@property(nonatomic) long long imageContentMode; // @synthesize imageContentMode=_imageContentMode;
 - (void)setBackgroundStyle:(long long)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)sizeToFit;
